@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartRunResult::StartRunResult() : 
-    m_status(RunStatus::NOT_SET)
-{
-}
-
 StartRunResult::StartRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartRunResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ StartRunResult& StartRunResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RunStatusMapper::GetRunStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -56,26 +47,25 @@ StartRunResult& StartRunResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uuid"))
   {
     m_uuid = jsonValue.GetString("uuid");
-
+    m_uuidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runOutputUri"))
   {
     m_runOutputUri = jsonValue.GetString("runOutputUri");
-
+    m_runOutputUriHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

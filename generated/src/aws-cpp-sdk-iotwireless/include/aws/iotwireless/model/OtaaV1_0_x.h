@@ -31,7 +31,7 @@ namespace Model
   class OtaaV1_0_x
   {
   public:
-    AWS_IOTWIRELESS_API OtaaV1_0_x();
+    AWS_IOTWIRELESS_API OtaaV1_0_x() = default;
     AWS_IOTWIRELESS_API OtaaV1_0_x(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API OtaaV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The AppKey value.</p>
      */
-    inline const Aws::String& GetAppKey() const{ return m_appKey; }
+    inline const Aws::String& GetAppKey() const { return m_appKey; }
     inline bool AppKeyHasBeenSet() const { return m_appKeyHasBeenSet; }
-    inline void SetAppKey(const Aws::String& value) { m_appKeyHasBeenSet = true; m_appKey = value; }
-    inline void SetAppKey(Aws::String&& value) { m_appKeyHasBeenSet = true; m_appKey = std::move(value); }
-    inline void SetAppKey(const char* value) { m_appKeyHasBeenSet = true; m_appKey.assign(value); }
-    inline OtaaV1_0_x& WithAppKey(const Aws::String& value) { SetAppKey(value); return *this;}
-    inline OtaaV1_0_x& WithAppKey(Aws::String&& value) { SetAppKey(std::move(value)); return *this;}
-    inline OtaaV1_0_x& WithAppKey(const char* value) { SetAppKey(value); return *this;}
+    template<typename AppKeyT = Aws::String>
+    void SetAppKey(AppKeyT&& value) { m_appKeyHasBeenSet = true; m_appKey = std::forward<AppKeyT>(value); }
+    template<typename AppKeyT = Aws::String>
+    OtaaV1_0_x& WithAppKey(AppKeyT&& value) { SetAppKey(std::forward<AppKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
      * or v1.0.3.</p>
      */
-    inline const Aws::String& GetAppEui() const{ return m_appEui; }
+    inline const Aws::String& GetAppEui() const { return m_appEui; }
     inline bool AppEuiHasBeenSet() const { return m_appEuiHasBeenSet; }
-    inline void SetAppEui(const Aws::String& value) { m_appEuiHasBeenSet = true; m_appEui = value; }
-    inline void SetAppEui(Aws::String&& value) { m_appEuiHasBeenSet = true; m_appEui = std::move(value); }
-    inline void SetAppEui(const char* value) { m_appEuiHasBeenSet = true; m_appEui.assign(value); }
-    inline OtaaV1_0_x& WithAppEui(const Aws::String& value) { SetAppEui(value); return *this;}
-    inline OtaaV1_0_x& WithAppEui(Aws::String&& value) { SetAppEui(std::move(value)); return *this;}
-    inline OtaaV1_0_x& WithAppEui(const char* value) { SetAppEui(value); return *this;}
+    template<typename AppEuiT = Aws::String>
+    void SetAppEui(AppEuiT&& value) { m_appEuiHasBeenSet = true; m_appEui = std::forward<AppEuiT>(value); }
+    template<typename AppEuiT = Aws::String>
+    OtaaV1_0_x& WithAppEui(AppEuiT&& value) { SetAppEui(std::forward<AppEuiT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
      * LoRaWAN version v1.0.4.</p>
      */
-    inline const Aws::String& GetJoinEui() const{ return m_joinEui; }
+    inline const Aws::String& GetJoinEui() const { return m_joinEui; }
     inline bool JoinEuiHasBeenSet() const { return m_joinEuiHasBeenSet; }
-    inline void SetJoinEui(const Aws::String& value) { m_joinEuiHasBeenSet = true; m_joinEui = value; }
-    inline void SetJoinEui(Aws::String&& value) { m_joinEuiHasBeenSet = true; m_joinEui = std::move(value); }
-    inline void SetJoinEui(const char* value) { m_joinEuiHasBeenSet = true; m_joinEui.assign(value); }
-    inline OtaaV1_0_x& WithJoinEui(const Aws::String& value) { SetJoinEui(value); return *this;}
-    inline OtaaV1_0_x& WithJoinEui(Aws::String&& value) { SetJoinEui(std::move(value)); return *this;}
-    inline OtaaV1_0_x& WithJoinEui(const char* value) { SetJoinEui(value); return *this;}
+    template<typename JoinEuiT = Aws::String>
+    void SetJoinEui(JoinEuiT&& value) { m_joinEuiHasBeenSet = true; m_joinEui = std::forward<JoinEuiT>(value); }
+    template<typename JoinEuiT = Aws::String>
+    OtaaV1_0_x& WithJoinEui(JoinEuiT&& value) { SetJoinEui(std::forward<JoinEuiT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The GenAppKey value.</p>
      */
-    inline const Aws::String& GetGenAppKey() const{ return m_genAppKey; }
+    inline const Aws::String& GetGenAppKey() const { return m_genAppKey; }
     inline bool GenAppKeyHasBeenSet() const { return m_genAppKeyHasBeenSet; }
-    inline void SetGenAppKey(const Aws::String& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = value; }
-    inline void SetGenAppKey(Aws::String&& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = std::move(value); }
-    inline void SetGenAppKey(const char* value) { m_genAppKeyHasBeenSet = true; m_genAppKey.assign(value); }
-    inline OtaaV1_0_x& WithGenAppKey(const Aws::String& value) { SetGenAppKey(value); return *this;}
-    inline OtaaV1_0_x& WithGenAppKey(Aws::String&& value) { SetGenAppKey(std::move(value)); return *this;}
-    inline OtaaV1_0_x& WithGenAppKey(const char* value) { SetGenAppKey(value); return *this;}
+    template<typename GenAppKeyT = Aws::String>
+    void SetGenAppKey(GenAppKeyT&& value) { m_genAppKeyHasBeenSet = true; m_genAppKey = std::forward<GenAppKeyT>(value); }
+    template<typename GenAppKeyT = Aws::String>
+    OtaaV1_0_x& WithGenAppKey(GenAppKeyT&& value) { SetGenAppKey(std::forward<GenAppKeyT>(value)); return *this;}
     ///@}
   private:
 

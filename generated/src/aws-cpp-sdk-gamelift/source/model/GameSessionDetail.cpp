@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameSessionDetail::GameSessionDetail() : 
-    m_gameSessionHasBeenSet(false),
-    m_protectionPolicy(ProtectionPolicy::NOT_SET),
-    m_protectionPolicyHasBeenSet(false)
-{
-}
-
 GameSessionDetail::GameSessionDetail(JsonView jsonValue)
-  : GameSessionDetail()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GameSessionDetail& GameSessionDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GameSession"))
   {
     m_gameSession = jsonValue.GetObject("GameSession");
-
     m_gameSessionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectionPolicy"))
   {
     m_protectionPolicy = ProtectionPolicyMapper::GetProtectionPolicyForName(jsonValue.GetString("ProtectionPolicy"));
-
     m_protectionPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

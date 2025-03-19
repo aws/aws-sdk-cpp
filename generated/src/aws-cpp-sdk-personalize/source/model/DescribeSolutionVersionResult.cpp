@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSolutionVersionResult::DescribeSolutionVersionResult()
-{
-}
-
 DescribeSolutionVersionResult::DescribeSolutionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeSolutionVersionResult& DescribeSolutionVersionResult::operator =(const A
   if(jsonValue.ValueExists("solutionVersion"))
   {
     m_solutionVersion = jsonValue.GetObject("solutionVersion");
-
+    m_solutionVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

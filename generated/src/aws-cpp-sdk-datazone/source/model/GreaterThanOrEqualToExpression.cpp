@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GreaterThanOrEqualToExpression::GreaterThanOrEqualToExpression() : 
-    m_columnNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 GreaterThanOrEqualToExpression::GreaterThanOrEqualToExpression(JsonView jsonValue)
-  : GreaterThanOrEqualToExpression()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GreaterThanOrEqualToExpression& GreaterThanOrEqualToExpression::operator =(JsonV
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

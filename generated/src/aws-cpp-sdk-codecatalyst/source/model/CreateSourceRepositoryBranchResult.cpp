@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSourceRepositoryBranchResult::CreateSourceRepositoryBranchResult()
-{
-}
-
 CreateSourceRepositoryBranchResult::CreateSourceRepositoryBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ CreateSourceRepositoryBranchResult& CreateSourceRepositoryBranchResult::operator
   if(jsonValue.ValueExists("ref"))
   {
     m_ref = jsonValue.GetString("ref");
-
+    m_refHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
+    m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headCommitId"))
   {
     m_headCommitId = jsonValue.GetString("headCommitId");
-
+    m_headCommitIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

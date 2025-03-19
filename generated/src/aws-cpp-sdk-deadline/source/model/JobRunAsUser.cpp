@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobRunAsUser::JobRunAsUser() : 
-    m_posixHasBeenSet(false),
-    m_windowsHasBeenSet(false),
-    m_runAs(RunAs::NOT_SET),
-    m_runAsHasBeenSet(false)
-{
-}
-
 JobRunAsUser::JobRunAsUser(JsonView jsonValue)
-  : JobRunAsUser()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ JobRunAsUser& JobRunAsUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("posix"))
   {
     m_posix = jsonValue.GetObject("posix");
-
     m_posixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("windows"))
   {
     m_windows = jsonValue.GetObject("windows");
-
     m_windowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runAs"))
   {
     m_runAs = RunAsMapper::GetRunAsForName(jsonValue.GetString("runAs"));
-
     m_runAsHasBeenSet = true;
   }
-
   return *this;
 }
 

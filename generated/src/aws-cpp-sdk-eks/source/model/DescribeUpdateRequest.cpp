@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeUpdateRequest::DescribeUpdateRequest() : 
-    m_nameHasBeenSet(false),
-    m_updateIdHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUpdateRequest::SerializePayload() const
 {
   return {};

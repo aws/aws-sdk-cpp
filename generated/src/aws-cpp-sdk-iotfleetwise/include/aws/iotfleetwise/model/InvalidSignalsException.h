@@ -34,7 +34,7 @@ namespace Model
   class InvalidSignalsException
   {
   public:
-    AWS_IOTFLEETWISE_API InvalidSignalsException();
+    AWS_IOTFLEETWISE_API InvalidSignalsException() = default;
     AWS_IOTFLEETWISE_API InvalidSignalsException(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API InvalidSignalsException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidSignalsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidSignalsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidSignalsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidSignalsException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The signals which caused the exception.</p>
      */
-    inline const Aws::Vector<InvalidSignal>& GetInvalidSignals() const{ return m_invalidSignals; }
+    inline const Aws::Vector<InvalidSignal>& GetInvalidSignals() const { return m_invalidSignals; }
     inline bool InvalidSignalsHasBeenSet() const { return m_invalidSignalsHasBeenSet; }
-    inline void SetInvalidSignals(const Aws::Vector<InvalidSignal>& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals = value; }
-    inline void SetInvalidSignals(Aws::Vector<InvalidSignal>&& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals = std::move(value); }
-    inline InvalidSignalsException& WithInvalidSignals(const Aws::Vector<InvalidSignal>& value) { SetInvalidSignals(value); return *this;}
-    inline InvalidSignalsException& WithInvalidSignals(Aws::Vector<InvalidSignal>&& value) { SetInvalidSignals(std::move(value)); return *this;}
-    inline InvalidSignalsException& AddInvalidSignals(const InvalidSignal& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals.push_back(value); return *this; }
-    inline InvalidSignalsException& AddInvalidSignals(InvalidSignal&& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals.push_back(std::move(value)); return *this; }
+    template<typename InvalidSignalsT = Aws::Vector<InvalidSignal>>
+    void SetInvalidSignals(InvalidSignalsT&& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals = std::forward<InvalidSignalsT>(value); }
+    template<typename InvalidSignalsT = Aws::Vector<InvalidSignal>>
+    InvalidSignalsException& WithInvalidSignals(InvalidSignalsT&& value) { SetInvalidSignals(std::forward<InvalidSignalsT>(value)); return *this;}
+    template<typename InvalidSignalsT = InvalidSignal>
+    InvalidSignalsException& AddInvalidSignals(InvalidSignalsT&& value) { m_invalidSignalsHasBeenSet = true; m_invalidSignals.emplace_back(std::forward<InvalidSignalsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateDataKeyPairWithoutPlaintextResult::GenerateDataKeyPairWithoutPlaintextResult() : 
-    m_keyPairSpec(DataKeyPairSpec::NOT_SET)
-{
-}
-
 GenerateDataKeyPairWithoutPlaintextResult::GenerateDataKeyPairWithoutPlaintextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GenerateDataKeyPairWithoutPlaintextResult()
 {
   *this = result;
 }
@@ -35,31 +29,30 @@ GenerateDataKeyPairWithoutPlaintextResult& GenerateDataKeyPairWithoutPlaintextRe
   if(jsonValue.ValueExists("PrivateKeyCiphertextBlob"))
   {
     m_privateKeyCiphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("PrivateKeyCiphertextBlob"));
+    m_privateKeyCiphertextBlobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = HashingUtils::Base64Decode(jsonValue.GetString("PublicKey"));
+    m_publicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPairSpec"))
   {
     m_keyPairSpec = DataKeyPairSpecMapper::GetDataKeyPairSpecForName(jsonValue.GetString("KeyPairSpec"));
-
+    m_keyPairSpecHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

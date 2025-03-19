@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ZendeskSourceProperties::ZendeskSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 ZendeskSourceProperties::ZendeskSourceProperties(JsonView jsonValue)
-  : ZendeskSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ZendeskSourceProperties& ZendeskSourceProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Object"))
   {
     m_object = jsonValue.GetString("Object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

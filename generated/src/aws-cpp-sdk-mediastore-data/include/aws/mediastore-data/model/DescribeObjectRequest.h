@@ -21,7 +21,7 @@ namespace Model
   class DescribeObjectRequest : public MediaStoreDataRequest
   {
   public:
-    AWS_MEDIASTOREDATA_API DescribeObjectRequest();
+    AWS_MEDIASTOREDATA_API DescribeObjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The path (including the file name) where the object is stored in the
      * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline DescribeObjectRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline DescribeObjectRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline DescribeObjectRequest& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    DescribeObjectRequest& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

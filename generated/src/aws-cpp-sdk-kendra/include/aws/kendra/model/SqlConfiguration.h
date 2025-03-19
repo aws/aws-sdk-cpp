@@ -32,7 +32,7 @@ namespace Model
   class SqlConfiguration
   {
   public:
-    AWS_KENDRA_API SqlConfiguration();
+    AWS_KENDRA_API SqlConfiguration() = default;
     AWS_KENDRA_API SqlConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SqlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,16 +51,14 @@ namespace Model
      * <code>ansi_quotes</code> option when you set this field to
      * <code>DOUBLE_QUOTES</code>.</p>
      */
-    inline const QueryIdentifiersEnclosingOption& GetQueryIdentifiersEnclosingOption() const{ return m_queryIdentifiersEnclosingOption; }
+    inline QueryIdentifiersEnclosingOption GetQueryIdentifiersEnclosingOption() const { return m_queryIdentifiersEnclosingOption; }
     inline bool QueryIdentifiersEnclosingOptionHasBeenSet() const { return m_queryIdentifiersEnclosingOptionHasBeenSet; }
-    inline void SetQueryIdentifiersEnclosingOption(const QueryIdentifiersEnclosingOption& value) { m_queryIdentifiersEnclosingOptionHasBeenSet = true; m_queryIdentifiersEnclosingOption = value; }
-    inline void SetQueryIdentifiersEnclosingOption(QueryIdentifiersEnclosingOption&& value) { m_queryIdentifiersEnclosingOptionHasBeenSet = true; m_queryIdentifiersEnclosingOption = std::move(value); }
-    inline SqlConfiguration& WithQueryIdentifiersEnclosingOption(const QueryIdentifiersEnclosingOption& value) { SetQueryIdentifiersEnclosingOption(value); return *this;}
-    inline SqlConfiguration& WithQueryIdentifiersEnclosingOption(QueryIdentifiersEnclosingOption&& value) { SetQueryIdentifiersEnclosingOption(std::move(value)); return *this;}
+    inline void SetQueryIdentifiersEnclosingOption(QueryIdentifiersEnclosingOption value) { m_queryIdentifiersEnclosingOptionHasBeenSet = true; m_queryIdentifiersEnclosingOption = value; }
+    inline SqlConfiguration& WithQueryIdentifiersEnclosingOption(QueryIdentifiersEnclosingOption value) { SetQueryIdentifiersEnclosingOption(value); return *this;}
     ///@}
   private:
 
-    QueryIdentifiersEnclosingOption m_queryIdentifiersEnclosingOption;
+    QueryIdentifiersEnclosingOption m_queryIdentifiersEnclosingOption{QueryIdentifiersEnclosingOption::NOT_SET};
     bool m_queryIdentifiersEnclosingOptionHasBeenSet = false;
   };
 

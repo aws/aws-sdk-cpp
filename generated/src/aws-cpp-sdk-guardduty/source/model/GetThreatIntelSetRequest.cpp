@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetThreatIntelSetRequest::GetThreatIntelSetRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_threatIntelSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetThreatIntelSetRequest::SerializePayload() const
 {
   return {};

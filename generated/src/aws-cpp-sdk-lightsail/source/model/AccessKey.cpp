@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AccessKey::AccessKey() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUsedHasBeenSet(false)
-{
-}
-
 AccessKey::AccessKey(JsonView jsonValue)
-  : AccessKey()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AccessKey& AccessKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUsed"))
   {
     m_lastUsed = jsonValue.GetObject("lastUsed");
-
     m_lastUsedHasBeenSet = true;
   }
-
   return *this;
 }
 

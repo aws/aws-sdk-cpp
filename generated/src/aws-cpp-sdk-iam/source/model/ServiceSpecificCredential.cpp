@@ -20,20 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ServiceSpecificCredential::ServiceSpecificCredential() : 
-    m_createDateHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceUserNameHasBeenSet(false),
-    m_servicePasswordHasBeenSet(false),
-    m_serviceSpecificCredentialIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ServiceSpecificCredential::ServiceSpecificCredential(const XmlNode& xmlNode)
-  : ServiceSpecificCredential()
 {
   *this = xmlNode;
 }
@@ -83,7 +70,7 @@ ServiceSpecificCredential& ServiceSpecificCredential::operator =(const XmlNode& 
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

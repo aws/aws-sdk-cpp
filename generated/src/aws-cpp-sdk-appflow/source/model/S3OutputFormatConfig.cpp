@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-S3OutputFormatConfig::S3OutputFormatConfig() : 
-    m_fileType(FileType::NOT_SET),
-    m_fileTypeHasBeenSet(false),
-    m_prefixConfigHasBeenSet(false),
-    m_aggregationConfigHasBeenSet(false),
-    m_preserveSourceDataTyping(false),
-    m_preserveSourceDataTypingHasBeenSet(false)
-{
-}
-
 S3OutputFormatConfig::S3OutputFormatConfig(JsonView jsonValue)
-  : S3OutputFormatConfig()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ S3OutputFormatConfig& S3OutputFormatConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = FileTypeMapper::GetFileTypeForName(jsonValue.GetString("fileType"));
-
     m_fileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefixConfig"))
   {
     m_prefixConfig = jsonValue.GetObject("prefixConfig");
-
     m_prefixConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationConfig"))
   {
     m_aggregationConfig = jsonValue.GetObject("aggregationConfig");
-
     m_aggregationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preserveSourceDataTyping"))
   {
     m_preserveSourceDataTyping = jsonValue.GetBool("preserveSourceDataTyping");
-
     m_preserveSourceDataTypingHasBeenSet = true;
   }
-
   return *this;
 }
 

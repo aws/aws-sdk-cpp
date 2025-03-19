@@ -12,13 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutHypervisorPropertyMappingsRequest::PutHypervisorPropertyMappingsRequest() : 
-    m_hypervisorArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_vmwareToAwsTagMappingsHasBeenSet(false)
-{
-}
-
 Aws::String PutHypervisorPropertyMappingsRequest::SerializePayload() const
 {
   JsonValue payload;

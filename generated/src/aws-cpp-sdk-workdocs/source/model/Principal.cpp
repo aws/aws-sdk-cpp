@@ -18,16 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-Principal::Principal() : 
-    m_idHasBeenSet(false),
-    m_type(PrincipalType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_rolesHasBeenSet(false)
-{
-}
-
 Principal::Principal(JsonView jsonValue)
-  : Principal()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Principal& Principal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Roles"))
   {
     Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
@@ -57,7 +44,6 @@ Principal& Principal::operator =(JsonView jsonValue)
     }
     m_rolesHasBeenSet = true;
   }
-
   return *this;
 }
 

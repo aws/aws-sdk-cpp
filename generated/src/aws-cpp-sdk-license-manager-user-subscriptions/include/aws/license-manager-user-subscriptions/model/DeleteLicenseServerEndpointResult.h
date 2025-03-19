@@ -28,7 +28,7 @@ namespace Model
   class DeleteLicenseServerEndpointResult
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeleteLicenseServerEndpointResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeleteLicenseServerEndpointResult() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeleteLicenseServerEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeleteLicenseServerEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Shows details from the <code>LicenseServerEndpoint</code> resource that was
      * deleted.</p>
      */
-    inline const LicenseServerEndpoint& GetLicenseServerEndpoint() const{ return m_licenseServerEndpoint; }
-    inline void SetLicenseServerEndpoint(const LicenseServerEndpoint& value) { m_licenseServerEndpoint = value; }
-    inline void SetLicenseServerEndpoint(LicenseServerEndpoint&& value) { m_licenseServerEndpoint = std::move(value); }
-    inline DeleteLicenseServerEndpointResult& WithLicenseServerEndpoint(const LicenseServerEndpoint& value) { SetLicenseServerEndpoint(value); return *this;}
-    inline DeleteLicenseServerEndpointResult& WithLicenseServerEndpoint(LicenseServerEndpoint&& value) { SetLicenseServerEndpoint(std::move(value)); return *this;}
+    inline const LicenseServerEndpoint& GetLicenseServerEndpoint() const { return m_licenseServerEndpoint; }
+    template<typename LicenseServerEndpointT = LicenseServerEndpoint>
+    void SetLicenseServerEndpoint(LicenseServerEndpointT&& value) { m_licenseServerEndpointHasBeenSet = true; m_licenseServerEndpoint = std::forward<LicenseServerEndpointT>(value); }
+    template<typename LicenseServerEndpointT = LicenseServerEndpoint>
+    DeleteLicenseServerEndpointResult& WithLicenseServerEndpoint(LicenseServerEndpointT&& value) { SetLicenseServerEndpoint(std::forward<LicenseServerEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteLicenseServerEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteLicenseServerEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteLicenseServerEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteLicenseServerEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LicenseServerEndpoint m_licenseServerEndpoint;
+    bool m_licenseServerEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

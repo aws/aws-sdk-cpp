@@ -12,15 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationSettingsRequest::UpdateApplicationSettingsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_credentialsToAddOrUpdateHasBeenSet(false),
-    m_credentialsToRemoveHasBeenSet(false),
-    m_backintHasBeenSet(false),
-    m_databaseArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

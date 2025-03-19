@@ -32,7 +32,7 @@ namespace Model
   class IcebergMetadata
   {
   public:
-    AWS_S3TABLES_API IcebergMetadata();
+    AWS_S3TABLES_API IcebergMetadata() = default;
     AWS_S3TABLES_API IcebergMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API IcebergMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The schema for an Iceberg table.</p>
      */
-    inline const IcebergSchema& GetSchema() const{ return m_schema; }
+    inline const IcebergSchema& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const IcebergSchema& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(IcebergSchema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline IcebergMetadata& WithSchema(const IcebergSchema& value) { SetSchema(value); return *this;}
-    inline IcebergMetadata& WithSchema(IcebergSchema&& value) { SetSchema(std::move(value)); return *this;}
+    template<typename SchemaT = IcebergSchema>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = IcebergSchema>
+    IcebergMetadata& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
   private:
 

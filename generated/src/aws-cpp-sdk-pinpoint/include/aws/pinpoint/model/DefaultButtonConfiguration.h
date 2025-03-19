@@ -32,7 +32,7 @@ namespace Model
   class DefaultButtonConfiguration
   {
   public:
-    AWS_PINPOINT_API DefaultButtonConfiguration();
+    AWS_PINPOINT_API DefaultButtonConfiguration() = default;
     AWS_PINPOINT_API DefaultButtonConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API DefaultButtonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The background color of the button.</p>
      */
-    inline const Aws::String& GetBackgroundColor() const{ return m_backgroundColor; }
+    inline const Aws::String& GetBackgroundColor() const { return m_backgroundColor; }
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
-    inline void SetBackgroundColor(const Aws::String& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
-    inline void SetBackgroundColor(Aws::String&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
-    inline void SetBackgroundColor(const char* value) { m_backgroundColorHasBeenSet = true; m_backgroundColor.assign(value); }
-    inline DefaultButtonConfiguration& WithBackgroundColor(const Aws::String& value) { SetBackgroundColor(value); return *this;}
-    inline DefaultButtonConfiguration& WithBackgroundColor(Aws::String&& value) { SetBackgroundColor(std::move(value)); return *this;}
-    inline DefaultButtonConfiguration& WithBackgroundColor(const char* value) { SetBackgroundColor(value); return *this;}
+    template<typename BackgroundColorT = Aws::String>
+    void SetBackgroundColor(BackgroundColorT&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::forward<BackgroundColorT>(value); }
+    template<typename BackgroundColorT = Aws::String>
+    DefaultButtonConfiguration& WithBackgroundColor(BackgroundColorT&& value) { SetBackgroundColor(std::forward<BackgroundColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The border radius of the button.</p>
      */
-    inline int GetBorderRadius() const{ return m_borderRadius; }
+    inline int GetBorderRadius() const { return m_borderRadius; }
     inline bool BorderRadiusHasBeenSet() const { return m_borderRadiusHasBeenSet; }
     inline void SetBorderRadius(int value) { m_borderRadiusHasBeenSet = true; m_borderRadius = value; }
     inline DefaultButtonConfiguration& WithBorderRadius(int value) { SetBorderRadius(value); return *this;}
@@ -66,64 +64,56 @@ namespace Model
     /**
      * <p>Action triggered by the button.</p>
      */
-    inline const ButtonAction& GetButtonAction() const{ return m_buttonAction; }
+    inline ButtonAction GetButtonAction() const { return m_buttonAction; }
     inline bool ButtonActionHasBeenSet() const { return m_buttonActionHasBeenSet; }
-    inline void SetButtonAction(const ButtonAction& value) { m_buttonActionHasBeenSet = true; m_buttonAction = value; }
-    inline void SetButtonAction(ButtonAction&& value) { m_buttonActionHasBeenSet = true; m_buttonAction = std::move(value); }
-    inline DefaultButtonConfiguration& WithButtonAction(const ButtonAction& value) { SetButtonAction(value); return *this;}
-    inline DefaultButtonConfiguration& WithButtonAction(ButtonAction&& value) { SetButtonAction(std::move(value)); return *this;}
+    inline void SetButtonAction(ButtonAction value) { m_buttonActionHasBeenSet = true; m_buttonAction = value; }
+    inline DefaultButtonConfiguration& WithButtonAction(ButtonAction value) { SetButtonAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Button destination.</p>
      */
-    inline const Aws::String& GetLink() const{ return m_link; }
+    inline const Aws::String& GetLink() const { return m_link; }
     inline bool LinkHasBeenSet() const { return m_linkHasBeenSet; }
-    inline void SetLink(const Aws::String& value) { m_linkHasBeenSet = true; m_link = value; }
-    inline void SetLink(Aws::String&& value) { m_linkHasBeenSet = true; m_link = std::move(value); }
-    inline void SetLink(const char* value) { m_linkHasBeenSet = true; m_link.assign(value); }
-    inline DefaultButtonConfiguration& WithLink(const Aws::String& value) { SetLink(value); return *this;}
-    inline DefaultButtonConfiguration& WithLink(Aws::String&& value) { SetLink(std::move(value)); return *this;}
-    inline DefaultButtonConfiguration& WithLink(const char* value) { SetLink(value); return *this;}
+    template<typename LinkT = Aws::String>
+    void SetLink(LinkT&& value) { m_linkHasBeenSet = true; m_link = std::forward<LinkT>(value); }
+    template<typename LinkT = Aws::String>
+    DefaultButtonConfiguration& WithLink(LinkT&& value) { SetLink(std::forward<LinkT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Button text.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline DefaultButtonConfiguration& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline DefaultButtonConfiguration& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline DefaultButtonConfiguration& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DefaultButtonConfiguration& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text color of the button.</p>
      */
-    inline const Aws::String& GetTextColor() const{ return m_textColor; }
+    inline const Aws::String& GetTextColor() const { return m_textColor; }
     inline bool TextColorHasBeenSet() const { return m_textColorHasBeenSet; }
-    inline void SetTextColor(const Aws::String& value) { m_textColorHasBeenSet = true; m_textColor = value; }
-    inline void SetTextColor(Aws::String&& value) { m_textColorHasBeenSet = true; m_textColor = std::move(value); }
-    inline void SetTextColor(const char* value) { m_textColorHasBeenSet = true; m_textColor.assign(value); }
-    inline DefaultButtonConfiguration& WithTextColor(const Aws::String& value) { SetTextColor(value); return *this;}
-    inline DefaultButtonConfiguration& WithTextColor(Aws::String&& value) { SetTextColor(std::move(value)); return *this;}
-    inline DefaultButtonConfiguration& WithTextColor(const char* value) { SetTextColor(value); return *this;}
+    template<typename TextColorT = Aws::String>
+    void SetTextColor(TextColorT&& value) { m_textColorHasBeenSet = true; m_textColor = std::forward<TextColorT>(value); }
+    template<typename TextColorT = Aws::String>
+    DefaultButtonConfiguration& WithTextColor(TextColorT&& value) { SetTextColor(std::forward<TextColorT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backgroundColor;
     bool m_backgroundColorHasBeenSet = false;
 
-    int m_borderRadius;
+    int m_borderRadius{0};
     bool m_borderRadiusHasBeenSet = false;
 
-    ButtonAction m_buttonAction;
+    ButtonAction m_buttonAction{ButtonAction::NOT_SET};
     bool m_buttonActionHasBeenSet = false;
 
     Aws::String m_link;

@@ -32,7 +32,7 @@ namespace Model
   class Source
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API Source();
+    AWS_CONNECTCAMPAIGNSV2_API Source() = default;
     AWS_CONNECTCAMPAIGNSV2_API Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,24 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetCustomerProfilesSegmentArn() const{ return m_customerProfilesSegmentArn; }
+    inline const Aws::String& GetCustomerProfilesSegmentArn() const { return m_customerProfilesSegmentArn; }
     inline bool CustomerProfilesSegmentArnHasBeenSet() const { return m_customerProfilesSegmentArnHasBeenSet; }
-    inline void SetCustomerProfilesSegmentArn(const Aws::String& value) { m_customerProfilesSegmentArnHasBeenSet = true; m_customerProfilesSegmentArn = value; }
-    inline void SetCustomerProfilesSegmentArn(Aws::String&& value) { m_customerProfilesSegmentArnHasBeenSet = true; m_customerProfilesSegmentArn = std::move(value); }
-    inline void SetCustomerProfilesSegmentArn(const char* value) { m_customerProfilesSegmentArnHasBeenSet = true; m_customerProfilesSegmentArn.assign(value); }
-    inline Source& WithCustomerProfilesSegmentArn(const Aws::String& value) { SetCustomerProfilesSegmentArn(value); return *this;}
-    inline Source& WithCustomerProfilesSegmentArn(Aws::String&& value) { SetCustomerProfilesSegmentArn(std::move(value)); return *this;}
-    inline Source& WithCustomerProfilesSegmentArn(const char* value) { SetCustomerProfilesSegmentArn(value); return *this;}
+    template<typename CustomerProfilesSegmentArnT = Aws::String>
+    void SetCustomerProfilesSegmentArn(CustomerProfilesSegmentArnT&& value) { m_customerProfilesSegmentArnHasBeenSet = true; m_customerProfilesSegmentArn = std::forward<CustomerProfilesSegmentArnT>(value); }
+    template<typename CustomerProfilesSegmentArnT = Aws::String>
+    Source& WithCustomerProfilesSegmentArn(CustomerProfilesSegmentArnT&& value) { SetCustomerProfilesSegmentArn(std::forward<CustomerProfilesSegmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EventTrigger& GetEventTrigger() const{ return m_eventTrigger; }
+    inline const EventTrigger& GetEventTrigger() const { return m_eventTrigger; }
     inline bool EventTriggerHasBeenSet() const { return m_eventTriggerHasBeenSet; }
-    inline void SetEventTrigger(const EventTrigger& value) { m_eventTriggerHasBeenSet = true; m_eventTrigger = value; }
-    inline void SetEventTrigger(EventTrigger&& value) { m_eventTriggerHasBeenSet = true; m_eventTrigger = std::move(value); }
-    inline Source& WithEventTrigger(const EventTrigger& value) { SetEventTrigger(value); return *this;}
-    inline Source& WithEventTrigger(EventTrigger&& value) { SetEventTrigger(std::move(value)); return *this;}
+    template<typename EventTriggerT = EventTrigger>
+    void SetEventTrigger(EventTriggerT&& value) { m_eventTriggerHasBeenSet = true; m_eventTrigger = std::forward<EventTriggerT>(value); }
+    template<typename EventTriggerT = EventTrigger>
+    Source& WithEventTrigger(EventTriggerT&& value) { SetEventTrigger(std::forward<EventTriggerT>(value)); return *this;}
     ///@}
   private:
 

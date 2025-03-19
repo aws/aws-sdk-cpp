@@ -53,7 +53,7 @@ namespace Model
   class FindingProviderSeverity
   {
   public:
-    AWS_SECURITYHUB_API FindingProviderSeverity();
+    AWS_SECURITYHUB_API FindingProviderSeverity() = default;
     AWS_SECURITYHUB_API FindingProviderSeverity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FindingProviderSeverity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,10 @@ namespace Model
     /**
      * <p>The severity label assigned to the finding by the finding provider.</p>
      */
-    inline const SeverityLabel& GetLabel() const{ return m_label; }
+    inline SeverityLabel GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const SeverityLabel& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(SeverityLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline FindingProviderSeverity& WithLabel(const SeverityLabel& value) { SetLabel(value); return *this;}
-    inline FindingProviderSeverity& WithLabel(SeverityLabel&& value) { SetLabel(std::move(value)); return *this;}
+    inline void SetLabel(SeverityLabel value) { m_labelHasBeenSet = true; m_label = value; }
+    inline FindingProviderSeverity& WithLabel(SeverityLabel value) { SetLabel(value); return *this;}
     ///@}
 
     ///@{
@@ -76,18 +74,16 @@ namespace Model
      * <p>The finding provider's original value for the severity.</p> <p>Length
      * Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
-    inline const Aws::String& GetOriginal() const{ return m_original; }
+    inline const Aws::String& GetOriginal() const { return m_original; }
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
-    inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
-    inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
-    inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
-    inline FindingProviderSeverity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
-    inline FindingProviderSeverity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
-    inline FindingProviderSeverity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
+    template<typename OriginalT = Aws::String>
+    void SetOriginal(OriginalT&& value) { m_originalHasBeenSet = true; m_original = std::forward<OriginalT>(value); }
+    template<typename OriginalT = Aws::String>
+    FindingProviderSeverity& WithOriginal(OriginalT&& value) { SetOriginal(std::forward<OriginalT>(value)); return *this;}
     ///@}
   private:
 
-    SeverityLabel m_label;
+    SeverityLabel m_label{SeverityLabel::NOT_SET};
     bool m_labelHasBeenSet = false;
 
     Aws::String m_original;

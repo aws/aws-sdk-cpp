@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListContainerRecipesResult::ListContainerRecipesResult()
-{
-}
-
 ListContainerRecipesResult::ListContainerRecipesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListContainerRecipesResult& ListContainerRecipesResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerRecipeSummaryList"))
   {
     Aws::Utils::Array<JsonView> containerRecipeSummaryListJsonList = jsonValue.GetArray("containerRecipeSummaryList");
@@ -41,14 +36,13 @@ ListContainerRecipesResult& ListContainerRecipesResult::operator =(const Aws::Am
     {
       m_containerRecipeSummaryList.push_back(containerRecipeSummaryListJsonList[containerRecipeSummaryListIndex].AsObject());
     }
+    m_containerRecipeSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

@@ -34,7 +34,7 @@ namespace Model
   class LoginProfile
   {
   public:
-    AWS_IAM_API LoginProfile();
+    AWS_IAM_API LoginProfile() = default;
     AWS_IAM_API LoginProfile(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API LoginProfile& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,24 @@ namespace Model
      * <p>The name of the user, which can be used for signing in to the Amazon Web
      * Services Management Console.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline LoginProfile& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline LoginProfile& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline LoginProfile& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    LoginProfile& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the password for the user was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline LoginProfile& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline LoginProfile& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    LoginProfile& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * <p>Specifies whether the user is required to set a new password on next
      * sign-in.</p>
      */
-    inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
+    inline bool GetPasswordResetRequired() const { return m_passwordResetRequired; }
     inline bool PasswordResetRequiredHasBeenSet() const { return m_passwordResetRequiredHasBeenSet; }
     inline void SetPasswordResetRequired(bool value) { m_passwordResetRequiredHasBeenSet = true; m_passwordResetRequired = value; }
     inline LoginProfile& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
@@ -84,10 +82,10 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
-    bool m_passwordResetRequired;
+    bool m_passwordResetRequired{false};
     bool m_passwordResetRequiredHasBeenSet = false;
   };
 

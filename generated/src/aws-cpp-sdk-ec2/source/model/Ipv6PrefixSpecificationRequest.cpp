@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6PrefixSpecificationRequest::Ipv6PrefixSpecificationRequest() : 
-    m_ipv6PrefixHasBeenSet(false)
-{
-}
-
 Ipv6PrefixSpecificationRequest::Ipv6PrefixSpecificationRequest(const XmlNode& xmlNode)
-  : Ipv6PrefixSpecificationRequest()
 {
   *this = xmlNode;
 }

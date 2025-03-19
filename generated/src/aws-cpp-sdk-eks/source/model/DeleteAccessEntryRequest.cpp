@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessEntryRequest::DeleteAccessEntryRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessEntryRequest::SerializePayload() const
 {
   return {};

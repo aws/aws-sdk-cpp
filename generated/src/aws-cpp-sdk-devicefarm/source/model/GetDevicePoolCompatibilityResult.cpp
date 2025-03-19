@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult()
-{
-}
-
 GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(c
     {
       m_compatibleDevices.push_back(compatibleDevicesJsonList[compatibleDevicesIndex].AsObject());
     }
+    m_compatibleDevicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incompatibleDevices"))
   {
     Aws::Utils::Array<JsonView> incompatibleDevicesJsonList = jsonValue.GetArray("incompatibleDevices");
@@ -45,14 +41,15 @@ GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(c
     {
       m_incompatibleDevices.push_back(incompatibleDevicesJsonList[incompatibleDevicesIndex].AsObject());
     }
+    m_incompatibleDevicesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

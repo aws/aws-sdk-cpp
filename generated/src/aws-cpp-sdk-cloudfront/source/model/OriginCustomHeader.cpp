@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginCustomHeader::OriginCustomHeader() : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
-{
-}
-
 OriginCustomHeader::OriginCustomHeader(const XmlNode& xmlNode)
-  : OriginCustomHeader()
 {
   *this = xmlNode;
 }

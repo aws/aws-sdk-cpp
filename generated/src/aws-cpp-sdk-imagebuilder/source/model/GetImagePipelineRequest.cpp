@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetImagePipelineRequest::GetImagePipelineRequest() : 
-    m_imagePipelineArnHasBeenSet(false)
-{
-}
-
 Aws::String GetImagePipelineRequest::SerializePayload() const
 {
   return {};

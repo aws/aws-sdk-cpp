@@ -32,7 +32,7 @@ namespace Model
   class InAppMessageButton
   {
   public:
-    AWS_PINPOINT_API InAppMessageButton();
+    AWS_PINPOINT_API InAppMessageButton() = default;
     AWS_PINPOINT_API InAppMessageButton(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API InAppMessageButton& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,48 +42,48 @@ namespace Model
     /**
      * <p>Default button content.</p>
      */
-    inline const OverrideButtonConfiguration& GetAndroid() const{ return m_android; }
+    inline const OverrideButtonConfiguration& GetAndroid() const { return m_android; }
     inline bool AndroidHasBeenSet() const { return m_androidHasBeenSet; }
-    inline void SetAndroid(const OverrideButtonConfiguration& value) { m_androidHasBeenSet = true; m_android = value; }
-    inline void SetAndroid(OverrideButtonConfiguration&& value) { m_androidHasBeenSet = true; m_android = std::move(value); }
-    inline InAppMessageButton& WithAndroid(const OverrideButtonConfiguration& value) { SetAndroid(value); return *this;}
-    inline InAppMessageButton& WithAndroid(OverrideButtonConfiguration&& value) { SetAndroid(std::move(value)); return *this;}
+    template<typename AndroidT = OverrideButtonConfiguration>
+    void SetAndroid(AndroidT&& value) { m_androidHasBeenSet = true; m_android = std::forward<AndroidT>(value); }
+    template<typename AndroidT = OverrideButtonConfiguration>
+    InAppMessageButton& WithAndroid(AndroidT&& value) { SetAndroid(std::forward<AndroidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Default button content.</p>
      */
-    inline const DefaultButtonConfiguration& GetDefaultConfig() const{ return m_defaultConfig; }
+    inline const DefaultButtonConfiguration& GetDefaultConfig() const { return m_defaultConfig; }
     inline bool DefaultConfigHasBeenSet() const { return m_defaultConfigHasBeenSet; }
-    inline void SetDefaultConfig(const DefaultButtonConfiguration& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
-    inline void SetDefaultConfig(DefaultButtonConfiguration&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::move(value); }
-    inline InAppMessageButton& WithDefaultConfig(const DefaultButtonConfiguration& value) { SetDefaultConfig(value); return *this;}
-    inline InAppMessageButton& WithDefaultConfig(DefaultButtonConfiguration&& value) { SetDefaultConfig(std::move(value)); return *this;}
+    template<typename DefaultConfigT = DefaultButtonConfiguration>
+    void SetDefaultConfig(DefaultConfigT&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::forward<DefaultConfigT>(value); }
+    template<typename DefaultConfigT = DefaultButtonConfiguration>
+    InAppMessageButton& WithDefaultConfig(DefaultConfigT&& value) { SetDefaultConfig(std::forward<DefaultConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Default button content.</p>
      */
-    inline const OverrideButtonConfiguration& GetIOS() const{ return m_iOS; }
+    inline const OverrideButtonConfiguration& GetIOS() const { return m_iOS; }
     inline bool IOSHasBeenSet() const { return m_iOSHasBeenSet; }
-    inline void SetIOS(const OverrideButtonConfiguration& value) { m_iOSHasBeenSet = true; m_iOS = value; }
-    inline void SetIOS(OverrideButtonConfiguration&& value) { m_iOSHasBeenSet = true; m_iOS = std::move(value); }
-    inline InAppMessageButton& WithIOS(const OverrideButtonConfiguration& value) { SetIOS(value); return *this;}
-    inline InAppMessageButton& WithIOS(OverrideButtonConfiguration&& value) { SetIOS(std::move(value)); return *this;}
+    template<typename IOST = OverrideButtonConfiguration>
+    void SetIOS(IOST&& value) { m_iOSHasBeenSet = true; m_iOS = std::forward<IOST>(value); }
+    template<typename IOST = OverrideButtonConfiguration>
+    InAppMessageButton& WithIOS(IOST&& value) { SetIOS(std::forward<IOST>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Default button content.</p>
      */
-    inline const OverrideButtonConfiguration& GetWeb() const{ return m_web; }
+    inline const OverrideButtonConfiguration& GetWeb() const { return m_web; }
     inline bool WebHasBeenSet() const { return m_webHasBeenSet; }
-    inline void SetWeb(const OverrideButtonConfiguration& value) { m_webHasBeenSet = true; m_web = value; }
-    inline void SetWeb(OverrideButtonConfiguration&& value) { m_webHasBeenSet = true; m_web = std::move(value); }
-    inline InAppMessageButton& WithWeb(const OverrideButtonConfiguration& value) { SetWeb(value); return *this;}
-    inline InAppMessageButton& WithWeb(OverrideButtonConfiguration&& value) { SetWeb(std::move(value)); return *this;}
+    template<typename WebT = OverrideButtonConfiguration>
+    void SetWeb(WebT&& value) { m_webHasBeenSet = true; m_web = std::forward<WebT>(value); }
+    template<typename WebT = OverrideButtonConfiguration>
+    InAppMessageButton& WithWeb(WebT&& value) { SetWeb(std::forward<WebT>(value)); return *this;}
     ///@}
   private:
 

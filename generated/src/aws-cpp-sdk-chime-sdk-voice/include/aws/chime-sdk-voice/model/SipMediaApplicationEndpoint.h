@@ -32,7 +32,7 @@ namespace Model
   class SipMediaApplicationEndpoint
   {
   public:
-    AWS_CHIMESDKVOICE_API SipMediaApplicationEndpoint();
+    AWS_CHIMESDKVOICE_API SipMediaApplicationEndpoint() = default;
     AWS_CHIMESDKVOICE_API SipMediaApplicationEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API SipMediaApplicationEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * The function must be created in the same AWS Region as the SIP media
      * application.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline SipMediaApplicationEndpoint& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline SipMediaApplicationEndpoint& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline SipMediaApplicationEndpoint& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    SipMediaApplicationEndpoint& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
   private:
 

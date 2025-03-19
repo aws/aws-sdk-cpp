@@ -12,18 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutQueryDefinitionRequest::PutQueryDefinitionRequest() : 
-    m_queryLanguage(QueryLanguage::NOT_SET),
-    m_queryLanguageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_queryDefinitionIdHasBeenSet(false),
-    m_logGroupNamesHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String PutQueryDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

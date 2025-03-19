@@ -34,7 +34,7 @@ namespace Model
   class AnswerRecommendationAIAgentConfiguration
   {
   public:
-    AWS_QCONNECT_API AnswerRecommendationAIAgentConfiguration();
+    AWS_QCONNECT_API AnswerRecommendationAIAgentConfiguration() = default;
     AWS_QCONNECT_API AnswerRecommendationAIAgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AnswerRecommendationAIAgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
-    inline const Aws::String& GetAnswerGenerationAIGuardrailId() const{ return m_answerGenerationAIGuardrailId; }
+    inline const Aws::String& GetAnswerGenerationAIGuardrailId() const { return m_answerGenerationAIGuardrailId; }
     inline bool AnswerGenerationAIGuardrailIdHasBeenSet() const { return m_answerGenerationAIGuardrailIdHasBeenSet; }
-    inline void SetAnswerGenerationAIGuardrailId(const Aws::String& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = value; }
-    inline void SetAnswerGenerationAIGuardrailId(Aws::String&& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = std::move(value); }
-    inline void SetAnswerGenerationAIGuardrailId(const char* value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId.assign(value); }
-    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(const Aws::String& value) { SetAnswerGenerationAIGuardrailId(value); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(Aws::String&& value) { SetAnswerGenerationAIGuardrailId(std::move(value)); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(const char* value) { SetAnswerGenerationAIGuardrailId(value); return *this;}
+    template<typename AnswerGenerationAIGuardrailIdT = Aws::String>
+    void SetAnswerGenerationAIGuardrailId(AnswerGenerationAIGuardrailIdT&& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = std::forward<AnswerGenerationAIGuardrailIdT>(value); }
+    template<typename AnswerGenerationAIGuardrailIdT = Aws::String>
+    AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(AnswerGenerationAIGuardrailIdT&& value) { SetAnswerGenerationAIGuardrailId(std::forward<AnswerGenerationAIGuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,26 @@ namespace Model
      * <p>The AI Prompt identifier for the Answer Generation prompt used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
-    inline const Aws::String& GetAnswerGenerationAIPromptId() const{ return m_answerGenerationAIPromptId; }
+    inline const Aws::String& GetAnswerGenerationAIPromptId() const { return m_answerGenerationAIPromptId; }
     inline bool AnswerGenerationAIPromptIdHasBeenSet() const { return m_answerGenerationAIPromptIdHasBeenSet; }
-    inline void SetAnswerGenerationAIPromptId(const Aws::String& value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId = value; }
-    inline void SetAnswerGenerationAIPromptId(Aws::String&& value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId = std::move(value); }
-    inline void SetAnswerGenerationAIPromptId(const char* value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId.assign(value); }
-    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIPromptId(const Aws::String& value) { SetAnswerGenerationAIPromptId(value); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIPromptId(Aws::String&& value) { SetAnswerGenerationAIPromptId(std::move(value)); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIPromptId(const char* value) { SetAnswerGenerationAIPromptId(value); return *this;}
+    template<typename AnswerGenerationAIPromptIdT = Aws::String>
+    void SetAnswerGenerationAIPromptId(AnswerGenerationAIPromptIdT&& value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId = std::forward<AnswerGenerationAIPromptIdT>(value); }
+    template<typename AnswerGenerationAIPromptIdT = Aws::String>
+    AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIPromptId(AnswerGenerationAIPromptIdT&& value) { SetAnswerGenerationAIPromptId(std::forward<AnswerGenerationAIPromptIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The association configurations for overriding behavior on this AI Agent.</p>
      */
-    inline const Aws::Vector<AssociationConfiguration>& GetAssociationConfigurations() const{ return m_associationConfigurations; }
+    inline const Aws::Vector<AssociationConfiguration>& GetAssociationConfigurations() const { return m_associationConfigurations; }
     inline bool AssociationConfigurationsHasBeenSet() const { return m_associationConfigurationsHasBeenSet; }
-    inline void SetAssociationConfigurations(const Aws::Vector<AssociationConfiguration>& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = value; }
-    inline void SetAssociationConfigurations(Aws::Vector<AssociationConfiguration>&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = std::move(value); }
-    inline AnswerRecommendationAIAgentConfiguration& WithAssociationConfigurations(const Aws::Vector<AssociationConfiguration>& value) { SetAssociationConfigurations(value); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithAssociationConfigurations(Aws::Vector<AssociationConfiguration>&& value) { SetAssociationConfigurations(std::move(value)); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& AddAssociationConfigurations(const AssociationConfiguration& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(value); return *this; }
-    inline AnswerRecommendationAIAgentConfiguration& AddAssociationConfigurations(AssociationConfiguration&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename AssociationConfigurationsT = Aws::Vector<AssociationConfiguration>>
+    void SetAssociationConfigurations(AssociationConfigurationsT&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = std::forward<AssociationConfigurationsT>(value); }
+    template<typename AssociationConfigurationsT = Aws::Vector<AssociationConfiguration>>
+    AnswerRecommendationAIAgentConfiguration& WithAssociationConfigurations(AssociationConfigurationsT&& value) { SetAssociationConfigurations(std::forward<AssociationConfigurationsT>(value)); return *this;}
+    template<typename AssociationConfigurationsT = AssociationConfiguration>
+    AnswerRecommendationAIAgentConfiguration& AddAssociationConfigurations(AssociationConfigurationsT&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.emplace_back(std::forward<AssociationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>The AI Prompt identifier for the Intent Labeling prompt used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
-    inline const Aws::String& GetIntentLabelingGenerationAIPromptId() const{ return m_intentLabelingGenerationAIPromptId; }
+    inline const Aws::String& GetIntentLabelingGenerationAIPromptId() const { return m_intentLabelingGenerationAIPromptId; }
     inline bool IntentLabelingGenerationAIPromptIdHasBeenSet() const { return m_intentLabelingGenerationAIPromptIdHasBeenSet; }
-    inline void SetIntentLabelingGenerationAIPromptId(const Aws::String& value) { m_intentLabelingGenerationAIPromptIdHasBeenSet = true; m_intentLabelingGenerationAIPromptId = value; }
-    inline void SetIntentLabelingGenerationAIPromptId(Aws::String&& value) { m_intentLabelingGenerationAIPromptIdHasBeenSet = true; m_intentLabelingGenerationAIPromptId = std::move(value); }
-    inline void SetIntentLabelingGenerationAIPromptId(const char* value) { m_intentLabelingGenerationAIPromptIdHasBeenSet = true; m_intentLabelingGenerationAIPromptId.assign(value); }
-    inline AnswerRecommendationAIAgentConfiguration& WithIntentLabelingGenerationAIPromptId(const Aws::String& value) { SetIntentLabelingGenerationAIPromptId(value); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithIntentLabelingGenerationAIPromptId(Aws::String&& value) { SetIntentLabelingGenerationAIPromptId(std::move(value)); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithIntentLabelingGenerationAIPromptId(const char* value) { SetIntentLabelingGenerationAIPromptId(value); return *this;}
+    template<typename IntentLabelingGenerationAIPromptIdT = Aws::String>
+    void SetIntentLabelingGenerationAIPromptId(IntentLabelingGenerationAIPromptIdT&& value) { m_intentLabelingGenerationAIPromptIdHasBeenSet = true; m_intentLabelingGenerationAIPromptId = std::forward<IntentLabelingGenerationAIPromptIdT>(value); }
+    template<typename IntentLabelingGenerationAIPromptIdT = Aws::String>
+    AnswerRecommendationAIAgentConfiguration& WithIntentLabelingGenerationAIPromptId(IntentLabelingGenerationAIPromptIdT&& value) { SetIntentLabelingGenerationAIPromptId(std::forward<IntentLabelingGenerationAIPromptIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +102,12 @@ namespace Model
      * turn off recommendations triggered by contact transcripts for agent assistance,
      * as this feature is not supported in multiple languages.</p> 
      */
-    inline const Aws::String& GetLocale() const{ return m_locale; }
+    inline const Aws::String& GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
-    inline AnswerRecommendationAIAgentConfiguration& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithLocale(const char* value) { SetLocale(value); return *this;}
+    template<typename LocaleT = Aws::String>
+    void SetLocale(LocaleT&& value) { m_localeHasBeenSet = true; m_locale = std::forward<LocaleT>(value); }
+    template<typename LocaleT = Aws::String>
+    AnswerRecommendationAIAgentConfiguration& WithLocale(LocaleT&& value) { SetLocale(std::forward<LocaleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +115,12 @@ namespace Model
      * <p>The AI Prompt identifier for the Query Reformulation prompt used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
-    inline const Aws::String& GetQueryReformulationAIPromptId() const{ return m_queryReformulationAIPromptId; }
+    inline const Aws::String& GetQueryReformulationAIPromptId() const { return m_queryReformulationAIPromptId; }
     inline bool QueryReformulationAIPromptIdHasBeenSet() const { return m_queryReformulationAIPromptIdHasBeenSet; }
-    inline void SetQueryReformulationAIPromptId(const Aws::String& value) { m_queryReformulationAIPromptIdHasBeenSet = true; m_queryReformulationAIPromptId = value; }
-    inline void SetQueryReformulationAIPromptId(Aws::String&& value) { m_queryReformulationAIPromptIdHasBeenSet = true; m_queryReformulationAIPromptId = std::move(value); }
-    inline void SetQueryReformulationAIPromptId(const char* value) { m_queryReformulationAIPromptIdHasBeenSet = true; m_queryReformulationAIPromptId.assign(value); }
-    inline AnswerRecommendationAIAgentConfiguration& WithQueryReformulationAIPromptId(const Aws::String& value) { SetQueryReformulationAIPromptId(value); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithQueryReformulationAIPromptId(Aws::String&& value) { SetQueryReformulationAIPromptId(std::move(value)); return *this;}
-    inline AnswerRecommendationAIAgentConfiguration& WithQueryReformulationAIPromptId(const char* value) { SetQueryReformulationAIPromptId(value); return *this;}
+    template<typename QueryReformulationAIPromptIdT = Aws::String>
+    void SetQueryReformulationAIPromptId(QueryReformulationAIPromptIdT&& value) { m_queryReformulationAIPromptIdHasBeenSet = true; m_queryReformulationAIPromptId = std::forward<QueryReformulationAIPromptIdT>(value); }
+    template<typename QueryReformulationAIPromptIdT = Aws::String>
+    AnswerRecommendationAIAgentConfiguration& WithQueryReformulationAIPromptId(QueryReformulationAIPromptIdT&& value) { SetQueryReformulationAIPromptId(std::forward<QueryReformulationAIPromptIdT>(value)); return *this;}
     ///@}
   private:
 

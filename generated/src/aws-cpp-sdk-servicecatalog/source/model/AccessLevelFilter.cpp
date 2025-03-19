@@ -18,15 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-AccessLevelFilter::AccessLevelFilter() : 
-    m_key(AccessLevelFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AccessLevelFilter::AccessLevelFilter(JsonView jsonValue)
-  : AccessLevelFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AccessLevelFilter& AccessLevelFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = AccessLevelFilterKeyMapper::GetAccessLevelFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

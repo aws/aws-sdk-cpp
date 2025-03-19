@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-InvalidationList::InvalidationList() : 
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 InvalidationList::InvalidationList(const XmlNode& xmlNode)
-  : InvalidationList()
 {
   *this = xmlNode;
 }
@@ -79,6 +65,7 @@ InvalidationList& InvalidationList::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("InvalidationSummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

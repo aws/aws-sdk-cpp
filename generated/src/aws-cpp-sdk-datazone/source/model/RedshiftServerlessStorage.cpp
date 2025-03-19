@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftServerlessStorage::RedshiftServerlessStorage() : 
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 RedshiftServerlessStorage::RedshiftServerlessStorage(JsonView jsonValue)
-  : RedshiftServerlessStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RedshiftServerlessStorage& RedshiftServerlessStorage::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

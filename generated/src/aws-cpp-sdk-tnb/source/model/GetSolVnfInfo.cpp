@@ -18,15 +18,7 @@ namespace tnb
 namespace Model
 {
 
-GetSolVnfInfo::GetSolVnfInfo() : 
-    m_vnfState(VnfOperationalState::NOT_SET),
-    m_vnfStateHasBeenSet(false),
-    m_vnfcResourceInfoHasBeenSet(false)
-{
-}
-
 GetSolVnfInfo::GetSolVnfInfo(JsonView jsonValue)
-  : GetSolVnfInfo()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ GetSolVnfInfo& GetSolVnfInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vnfState"))
   {
     m_vnfState = VnfOperationalStateMapper::GetVnfOperationalStateForName(jsonValue.GetString("vnfState"));
-
     m_vnfStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfcResourceInfo"))
   {
     Aws::Utils::Array<JsonView> vnfcResourceInfoJsonList = jsonValue.GetArray("vnfcResourceInfo");
@@ -49,7 +39,6 @@ GetSolVnfInfo& GetSolVnfInfo::operator =(JsonView jsonValue)
     }
     m_vnfcResourceInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

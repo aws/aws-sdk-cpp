@@ -29,7 +29,7 @@ namespace Model
   class ListWorkerConfigurationsResult
   {
   public:
-    AWS_KAFKACONNECT_API ListWorkerConfigurationsResult();
+    AWS_KAFKACONNECT_API ListWorkerConfigurationsResult() = default;
     AWS_KAFKACONNECT_API ListWorkerConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API ListWorkerConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * include a NextToken. Send this NextToken in a subsequent request to continue
      * listing from where the previous operation left off.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorkerConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkerConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkerConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkerConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of worker configuration descriptions.</p>
      */
-    inline const Aws::Vector<WorkerConfigurationSummary>& GetWorkerConfigurations() const{ return m_workerConfigurations; }
-    inline void SetWorkerConfigurations(const Aws::Vector<WorkerConfigurationSummary>& value) { m_workerConfigurations = value; }
-    inline void SetWorkerConfigurations(Aws::Vector<WorkerConfigurationSummary>&& value) { m_workerConfigurations = std::move(value); }
-    inline ListWorkerConfigurationsResult& WithWorkerConfigurations(const Aws::Vector<WorkerConfigurationSummary>& value) { SetWorkerConfigurations(value); return *this;}
-    inline ListWorkerConfigurationsResult& WithWorkerConfigurations(Aws::Vector<WorkerConfigurationSummary>&& value) { SetWorkerConfigurations(std::move(value)); return *this;}
-    inline ListWorkerConfigurationsResult& AddWorkerConfigurations(const WorkerConfigurationSummary& value) { m_workerConfigurations.push_back(value); return *this; }
-    inline ListWorkerConfigurationsResult& AddWorkerConfigurations(WorkerConfigurationSummary&& value) { m_workerConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkerConfigurationSummary>& GetWorkerConfigurations() const { return m_workerConfigurations; }
+    template<typename WorkerConfigurationsT = Aws::Vector<WorkerConfigurationSummary>>
+    void SetWorkerConfigurations(WorkerConfigurationsT&& value) { m_workerConfigurationsHasBeenSet = true; m_workerConfigurations = std::forward<WorkerConfigurationsT>(value); }
+    template<typename WorkerConfigurationsT = Aws::Vector<WorkerConfigurationSummary>>
+    ListWorkerConfigurationsResult& WithWorkerConfigurations(WorkerConfigurationsT&& value) { SetWorkerConfigurations(std::forward<WorkerConfigurationsT>(value)); return *this;}
+    template<typename WorkerConfigurationsT = WorkerConfigurationSummary>
+    ListWorkerConfigurationsResult& AddWorkerConfigurations(WorkerConfigurationsT&& value) { m_workerConfigurationsHasBeenSet = true; m_workerConfigurations.emplace_back(std::forward<WorkerConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorkerConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorkerConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorkerConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorkerConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<WorkerConfigurationSummary> m_workerConfigurations;
+    bool m_workerConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

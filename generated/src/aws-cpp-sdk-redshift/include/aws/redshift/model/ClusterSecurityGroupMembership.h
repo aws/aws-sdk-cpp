@@ -31,7 +31,7 @@ namespace Model
   class ClusterSecurityGroupMembership
   {
   public:
-    AWS_REDSHIFT_API ClusterSecurityGroupMembership();
+    AWS_REDSHIFT_API ClusterSecurityGroupMembership() = default;
     AWS_REDSHIFT_API ClusterSecurityGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ClusterSecurityGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the cluster security group.</p>
      */
-    inline const Aws::String& GetClusterSecurityGroupName() const{ return m_clusterSecurityGroupName; }
+    inline const Aws::String& GetClusterSecurityGroupName() const { return m_clusterSecurityGroupName; }
     inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
-    inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
-    inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
-    inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
-    inline ClusterSecurityGroupMembership& WithClusterSecurityGroupName(const Aws::String& value) { SetClusterSecurityGroupName(value); return *this;}
-    inline ClusterSecurityGroupMembership& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
-    inline ClusterSecurityGroupMembership& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
+    template<typename ClusterSecurityGroupNameT = Aws::String>
+    void SetClusterSecurityGroupName(ClusterSecurityGroupNameT&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::forward<ClusterSecurityGroupNameT>(value); }
+    template<typename ClusterSecurityGroupNameT = Aws::String>
+    ClusterSecurityGroupMembership& WithClusterSecurityGroupName(ClusterSecurityGroupNameT&& value) { SetClusterSecurityGroupName(std::forward<ClusterSecurityGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the cluster security group.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ClusterSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ClusterSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ClusterSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ClusterSecurityGroupMembership& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

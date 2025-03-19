@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult() : 
-    m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 KnowledgeBaseRetrievalResult::KnowledgeBaseRetrievalResult(JsonView jsonValue)
-  : KnowledgeBaseRetrievalResult()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ KnowledgeBaseRetrievalResult& KnowledgeBaseRetrievalResult::operator =(JsonView 
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -58,14 +44,11 @@ KnowledgeBaseRetrievalResult& KnowledgeBaseRetrievalResult::operator =(JsonView 
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

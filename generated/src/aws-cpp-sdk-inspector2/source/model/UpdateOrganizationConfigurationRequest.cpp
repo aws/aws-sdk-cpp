@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest() : 
-    m_autoEnableHasBeenSet(false)
-{
-}
-
 Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

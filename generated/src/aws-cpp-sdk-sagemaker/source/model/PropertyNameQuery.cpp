@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PropertyNameQuery::PropertyNameQuery() : 
-    m_propertyNameHintHasBeenSet(false)
-{
-}
-
 PropertyNameQuery::PropertyNameQuery(JsonView jsonValue)
-  : PropertyNameQuery()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PropertyNameQuery& PropertyNameQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PropertyNameHint"))
   {
     m_propertyNameHint = jsonValue.GetString("PropertyNameHint");
-
     m_propertyNameHintHasBeenSet = true;
   }
-
   return *this;
 }
 

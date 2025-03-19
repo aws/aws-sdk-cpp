@@ -12,13 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRuleTypesRequest::ListRuleTypesRequest() : 
-    m_ruleOwnerFilter(RuleOwner::NOT_SET),
-    m_ruleOwnerFilterHasBeenSet(false),
-    m_regionFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListRuleTypesRequest::SerializePayload() const
 {
   JsonValue payload;

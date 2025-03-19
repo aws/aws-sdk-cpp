@@ -22,7 +22,7 @@ namespace Model
   class PutMLConfigurationRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API PutMLConfigurationRequest();
+    AWS_CLEANROOMSML_API PutMLConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The membership ID of the member that is being configured.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline PutMLConfigurationRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline PutMLConfigurationRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline PutMLConfigurationRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    PutMLConfigurationRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,12 +50,12 @@ namespace Model
      * <p>The default Amazon S3 location where ML output is stored for the specified
      * member.</p>
      */
-    inline const MLOutputConfiguration& GetDefaultOutputLocation() const{ return m_defaultOutputLocation; }
+    inline const MLOutputConfiguration& GetDefaultOutputLocation() const { return m_defaultOutputLocation; }
     inline bool DefaultOutputLocationHasBeenSet() const { return m_defaultOutputLocationHasBeenSet; }
-    inline void SetDefaultOutputLocation(const MLOutputConfiguration& value) { m_defaultOutputLocationHasBeenSet = true; m_defaultOutputLocation = value; }
-    inline void SetDefaultOutputLocation(MLOutputConfiguration&& value) { m_defaultOutputLocationHasBeenSet = true; m_defaultOutputLocation = std::move(value); }
-    inline PutMLConfigurationRequest& WithDefaultOutputLocation(const MLOutputConfiguration& value) { SetDefaultOutputLocation(value); return *this;}
-    inline PutMLConfigurationRequest& WithDefaultOutputLocation(MLOutputConfiguration&& value) { SetDefaultOutputLocation(std::move(value)); return *this;}
+    template<typename DefaultOutputLocationT = MLOutputConfiguration>
+    void SetDefaultOutputLocation(DefaultOutputLocationT&& value) { m_defaultOutputLocationHasBeenSet = true; m_defaultOutputLocation = std::forward<DefaultOutputLocationT>(value); }
+    template<typename DefaultOutputLocationT = MLOutputConfiguration>
+    PutMLConfigurationRequest& WithDefaultOutputLocation(DefaultOutputLocationT&& value) { SetDefaultOutputLocation(std::forward<DefaultOutputLocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ProbabilisticRuleValueUpdate::ProbabilisticRuleValueUpdate() : 
-    m_desiredSamplingPercentage(0.0),
-    m_desiredSamplingPercentageHasBeenSet(false)
-{
-}
-
 ProbabilisticRuleValueUpdate::ProbabilisticRuleValueUpdate(JsonView jsonValue)
-  : ProbabilisticRuleValueUpdate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProbabilisticRuleValueUpdate& ProbabilisticRuleValueUpdate::operator =(JsonView 
   if(jsonValue.ValueExists("DesiredSamplingPercentage"))
   {
     m_desiredSamplingPercentage = jsonValue.GetDouble("DesiredSamplingPercentage");
-
     m_desiredSamplingPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

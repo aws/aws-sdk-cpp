@@ -36,7 +36,7 @@ namespace Model
   class UpdateTaintsPayload
   {
   public:
-    AWS_EKS_API UpdateTaintsPayload();
+    AWS_EKS_API UpdateTaintsPayload() = default;
     AWS_EKS_API UpdateTaintsPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API UpdateTaintsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,28 @@ namespace Model
     /**
      * <p>Kubernetes taints to be added or updated.</p>
      */
-    inline const Aws::Vector<Taint>& GetAddOrUpdateTaints() const{ return m_addOrUpdateTaints; }
+    inline const Aws::Vector<Taint>& GetAddOrUpdateTaints() const { return m_addOrUpdateTaints; }
     inline bool AddOrUpdateTaintsHasBeenSet() const { return m_addOrUpdateTaintsHasBeenSet; }
-    inline void SetAddOrUpdateTaints(const Aws::Vector<Taint>& value) { m_addOrUpdateTaintsHasBeenSet = true; m_addOrUpdateTaints = value; }
-    inline void SetAddOrUpdateTaints(Aws::Vector<Taint>&& value) { m_addOrUpdateTaintsHasBeenSet = true; m_addOrUpdateTaints = std::move(value); }
-    inline UpdateTaintsPayload& WithAddOrUpdateTaints(const Aws::Vector<Taint>& value) { SetAddOrUpdateTaints(value); return *this;}
-    inline UpdateTaintsPayload& WithAddOrUpdateTaints(Aws::Vector<Taint>&& value) { SetAddOrUpdateTaints(std::move(value)); return *this;}
-    inline UpdateTaintsPayload& AddAddOrUpdateTaints(const Taint& value) { m_addOrUpdateTaintsHasBeenSet = true; m_addOrUpdateTaints.push_back(value); return *this; }
-    inline UpdateTaintsPayload& AddAddOrUpdateTaints(Taint&& value) { m_addOrUpdateTaintsHasBeenSet = true; m_addOrUpdateTaints.push_back(std::move(value)); return *this; }
+    template<typename AddOrUpdateTaintsT = Aws::Vector<Taint>>
+    void SetAddOrUpdateTaints(AddOrUpdateTaintsT&& value) { m_addOrUpdateTaintsHasBeenSet = true; m_addOrUpdateTaints = std::forward<AddOrUpdateTaintsT>(value); }
+    template<typename AddOrUpdateTaintsT = Aws::Vector<Taint>>
+    UpdateTaintsPayload& WithAddOrUpdateTaints(AddOrUpdateTaintsT&& value) { SetAddOrUpdateTaints(std::forward<AddOrUpdateTaintsT>(value)); return *this;}
+    template<typename AddOrUpdateTaintsT = Taint>
+    UpdateTaintsPayload& AddAddOrUpdateTaints(AddOrUpdateTaintsT&& value) { m_addOrUpdateTaintsHasBeenSet = true; m_addOrUpdateTaints.emplace_back(std::forward<AddOrUpdateTaintsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Kubernetes taints to remove.</p>
      */
-    inline const Aws::Vector<Taint>& GetRemoveTaints() const{ return m_removeTaints; }
+    inline const Aws::Vector<Taint>& GetRemoveTaints() const { return m_removeTaints; }
     inline bool RemoveTaintsHasBeenSet() const { return m_removeTaintsHasBeenSet; }
-    inline void SetRemoveTaints(const Aws::Vector<Taint>& value) { m_removeTaintsHasBeenSet = true; m_removeTaints = value; }
-    inline void SetRemoveTaints(Aws::Vector<Taint>&& value) { m_removeTaintsHasBeenSet = true; m_removeTaints = std::move(value); }
-    inline UpdateTaintsPayload& WithRemoveTaints(const Aws::Vector<Taint>& value) { SetRemoveTaints(value); return *this;}
-    inline UpdateTaintsPayload& WithRemoveTaints(Aws::Vector<Taint>&& value) { SetRemoveTaints(std::move(value)); return *this;}
-    inline UpdateTaintsPayload& AddRemoveTaints(const Taint& value) { m_removeTaintsHasBeenSet = true; m_removeTaints.push_back(value); return *this; }
-    inline UpdateTaintsPayload& AddRemoveTaints(Taint&& value) { m_removeTaintsHasBeenSet = true; m_removeTaints.push_back(std::move(value)); return *this; }
+    template<typename RemoveTaintsT = Aws::Vector<Taint>>
+    void SetRemoveTaints(RemoveTaintsT&& value) { m_removeTaintsHasBeenSet = true; m_removeTaints = std::forward<RemoveTaintsT>(value); }
+    template<typename RemoveTaintsT = Aws::Vector<Taint>>
+    UpdateTaintsPayload& WithRemoveTaints(RemoveTaintsT&& value) { SetRemoveTaints(std::forward<RemoveTaintsT>(value)); return *this;}
+    template<typename RemoveTaintsT = Taint>
+    UpdateTaintsPayload& AddRemoveTaints(RemoveTaintsT&& value) { m_removeTaintsHasBeenSet = true; m_removeTaints.emplace_back(std::forward<RemoveTaintsT>(value)); return *this; }
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class ImportDecoderManifestRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API ImportDecoderManifestRequest();
+    AWS_IOTFLEETWISE_API ImportDecoderManifestRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p> The name of the decoder manifest to import. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImportDecoderManifestRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImportDecoderManifestRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImportDecoderManifestRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImportDecoderManifestRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The file to load into an Amazon Web Services account. </p>
      */
-    inline const Aws::Vector<NetworkFileDefinition>& GetNetworkFileDefinitions() const{ return m_networkFileDefinitions; }
+    inline const Aws::Vector<NetworkFileDefinition>& GetNetworkFileDefinitions() const { return m_networkFileDefinitions; }
     inline bool NetworkFileDefinitionsHasBeenSet() const { return m_networkFileDefinitionsHasBeenSet; }
-    inline void SetNetworkFileDefinitions(const Aws::Vector<NetworkFileDefinition>& value) { m_networkFileDefinitionsHasBeenSet = true; m_networkFileDefinitions = value; }
-    inline void SetNetworkFileDefinitions(Aws::Vector<NetworkFileDefinition>&& value) { m_networkFileDefinitionsHasBeenSet = true; m_networkFileDefinitions = std::move(value); }
-    inline ImportDecoderManifestRequest& WithNetworkFileDefinitions(const Aws::Vector<NetworkFileDefinition>& value) { SetNetworkFileDefinitions(value); return *this;}
-    inline ImportDecoderManifestRequest& WithNetworkFileDefinitions(Aws::Vector<NetworkFileDefinition>&& value) { SetNetworkFileDefinitions(std::move(value)); return *this;}
-    inline ImportDecoderManifestRequest& AddNetworkFileDefinitions(const NetworkFileDefinition& value) { m_networkFileDefinitionsHasBeenSet = true; m_networkFileDefinitions.push_back(value); return *this; }
-    inline ImportDecoderManifestRequest& AddNetworkFileDefinitions(NetworkFileDefinition&& value) { m_networkFileDefinitionsHasBeenSet = true; m_networkFileDefinitions.push_back(std::move(value)); return *this; }
+    template<typename NetworkFileDefinitionsT = Aws::Vector<NetworkFileDefinition>>
+    void SetNetworkFileDefinitions(NetworkFileDefinitionsT&& value) { m_networkFileDefinitionsHasBeenSet = true; m_networkFileDefinitions = std::forward<NetworkFileDefinitionsT>(value); }
+    template<typename NetworkFileDefinitionsT = Aws::Vector<NetworkFileDefinition>>
+    ImportDecoderManifestRequest& WithNetworkFileDefinitions(NetworkFileDefinitionsT&& value) { SetNetworkFileDefinitions(std::forward<NetworkFileDefinitionsT>(value)); return *this;}
+    template<typename NetworkFileDefinitionsT = NetworkFileDefinition>
+    ImportDecoderManifestRequest& AddNetworkFileDefinitions(NetworkFileDefinitionsT&& value) { m_networkFileDefinitionsHasBeenSet = true; m_networkFileDefinitions.emplace_back(std::forward<NetworkFileDefinitionsT>(value)); return *this; }
     ///@}
   private:
 

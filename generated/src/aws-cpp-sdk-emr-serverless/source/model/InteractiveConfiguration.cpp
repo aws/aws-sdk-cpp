@@ -18,16 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-InteractiveConfiguration::InteractiveConfiguration() : 
-    m_studioEnabled(false),
-    m_studioEnabledHasBeenSet(false),
-    m_livyEndpointEnabled(false),
-    m_livyEndpointEnabledHasBeenSet(false)
-{
-}
-
 InteractiveConfiguration::InteractiveConfiguration(JsonView jsonValue)
-  : InteractiveConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InteractiveConfiguration& InteractiveConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("studioEnabled"))
   {
     m_studioEnabled = jsonValue.GetBool("studioEnabled");
-
     m_studioEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("livyEndpointEnabled"))
   {
     m_livyEndpointEnabled = jsonValue.GetBool("livyEndpointEnabled");
-
     m_livyEndpointEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

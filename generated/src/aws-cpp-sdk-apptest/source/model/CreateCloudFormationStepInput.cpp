@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CreateCloudFormationStepInput::CreateCloudFormationStepInput() : 
-    m_templateLocationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 CreateCloudFormationStepInput::CreateCloudFormationStepInput(JsonView jsonValue)
-  : CreateCloudFormationStepInput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CreateCloudFormationStepInput& CreateCloudFormationStepInput::operator =(JsonVie
   if(jsonValue.ValueExists("templateLocation"))
   {
     m_templateLocation = jsonValue.GetString("templateLocation");
-
     m_templateLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -48,7 +39,6 @@ CreateCloudFormationStepInput& CreateCloudFormationStepInput::operator =(JsonVie
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

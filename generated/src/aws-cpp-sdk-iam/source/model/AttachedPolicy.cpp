@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-AttachedPolicy::AttachedPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 AttachedPolicy::AttachedPolicy(const XmlNode& xmlNode)
-  : AttachedPolicy()
 {
   *this = xmlNode;
 }

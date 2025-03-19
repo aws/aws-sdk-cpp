@@ -34,7 +34,7 @@ namespace Model
   class EksSecret
   {
   public:
-    AWS_BATCH_API EksSecret();
+    AWS_BATCH_API EksSecret() = default;
     AWS_BATCH_API EksSecret(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksSecret& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,21 +47,19 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
      * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::String& GetSecretName() const{ return m_secretName; }
+    inline const Aws::String& GetSecretName() const { return m_secretName; }
     inline bool SecretNameHasBeenSet() const { return m_secretNameHasBeenSet; }
-    inline void SetSecretName(const Aws::String& value) { m_secretNameHasBeenSet = true; m_secretName = value; }
-    inline void SetSecretName(Aws::String&& value) { m_secretNameHasBeenSet = true; m_secretName = std::move(value); }
-    inline void SetSecretName(const char* value) { m_secretNameHasBeenSet = true; m_secretName.assign(value); }
-    inline EksSecret& WithSecretName(const Aws::String& value) { SetSecretName(value); return *this;}
-    inline EksSecret& WithSecretName(Aws::String&& value) { SetSecretName(std::move(value)); return *this;}
-    inline EksSecret& WithSecretName(const char* value) { SetSecretName(value); return *this;}
+    template<typename SecretNameT = Aws::String>
+    void SetSecretName(SecretNameT&& value) { m_secretNameHasBeenSet = true; m_secretName = std::forward<SecretNameT>(value); }
+    template<typename SecretNameT = Aws::String>
+    EksSecret& WithSecretName(SecretNameT&& value) { SetSecretName(std::forward<SecretNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the secret or the secret's keys must be defined.</p>
      */
-    inline bool GetOptional() const{ return m_optional; }
+    inline bool GetOptional() const { return m_optional; }
     inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
     inline void SetOptional(bool value) { m_optionalHasBeenSet = true; m_optional = value; }
     inline EksSecret& WithOptional(bool value) { SetOptional(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_secretName;
     bool m_secretNameHasBeenSet = false;
 
-    bool m_optional;
+    bool m_optional{false};
     bool m_optionalHasBeenSet = false;
   };
 

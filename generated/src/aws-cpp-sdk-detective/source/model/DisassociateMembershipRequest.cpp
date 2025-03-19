@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMembershipRequest::DisassociateMembershipRequest() : 
-    m_graphArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

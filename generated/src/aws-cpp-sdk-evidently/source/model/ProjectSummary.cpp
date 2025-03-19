@@ -18,30 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ProjectSummary::ProjectSummary() : 
-    m_activeExperimentCount(0),
-    m_activeExperimentCountHasBeenSet(false),
-    m_activeLaunchCount(0),
-    m_activeLaunchCountHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_experimentCount(0),
-    m_experimentCountHasBeenSet(false),
-    m_featureCount(0),
-    m_featureCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_launchCount(0),
-    m_launchCountHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ProjectSummary::ProjectSummary(JsonView jsonValue)
-  : ProjectSummary()
 {
   *this = jsonValue;
 }
@@ -51,80 +28,58 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activeExperimentCount"))
   {
     m_activeExperimentCount = jsonValue.GetInt64("activeExperimentCount");
-
     m_activeExperimentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeLaunchCount"))
   {
     m_activeLaunchCount = jsonValue.GetInt64("activeLaunchCount");
-
     m_activeLaunchCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("experimentCount"))
   {
     m_experimentCount = jsonValue.GetInt64("experimentCount");
-
     m_experimentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("featureCount"))
   {
     m_featureCount = jsonValue.GetInt64("featureCount");
-
     m_featureCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchCount"))
   {
     m_launchCount = jsonValue.GetInt64("launchCount");
-
     m_launchCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -134,7 +89,6 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

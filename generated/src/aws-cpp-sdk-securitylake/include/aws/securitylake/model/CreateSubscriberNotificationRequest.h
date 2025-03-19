@@ -22,7 +22,7 @@ namespace Model
   class CreateSubscriberNotificationRequest : public SecurityLakeRequest
   {
   public:
-    AWS_SECURITYLAKE_API CreateSubscriberNotificationRequest();
+    AWS_SECURITYLAKE_API CreateSubscriberNotificationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,26 +38,24 @@ namespace Model
      * <p>Specify the configuration using which you want to create the subscriber
      * notification.</p>
      */
-    inline const NotificationConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const NotificationConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const NotificationConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(NotificationConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateSubscriberNotificationRequest& WithConfiguration(const NotificationConfiguration& value) { SetConfiguration(value); return *this;}
-    inline CreateSubscriberNotificationRequest& WithConfiguration(NotificationConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = NotificationConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = NotificationConfiguration>
+    CreateSubscriberNotificationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscriber ID for the notification subscription.</p>
      */
-    inline const Aws::String& GetSubscriberId() const{ return m_subscriberId; }
+    inline const Aws::String& GetSubscriberId() const { return m_subscriberId; }
     inline bool SubscriberIdHasBeenSet() const { return m_subscriberIdHasBeenSet; }
-    inline void SetSubscriberId(const Aws::String& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = value; }
-    inline void SetSubscriberId(Aws::String&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::move(value); }
-    inline void SetSubscriberId(const char* value) { m_subscriberIdHasBeenSet = true; m_subscriberId.assign(value); }
-    inline CreateSubscriberNotificationRequest& WithSubscriberId(const Aws::String& value) { SetSubscriberId(value); return *this;}
-    inline CreateSubscriberNotificationRequest& WithSubscriberId(Aws::String&& value) { SetSubscriberId(std::move(value)); return *this;}
-    inline CreateSubscriberNotificationRequest& WithSubscriberId(const char* value) { SetSubscriberId(value); return *this;}
+    template<typename SubscriberIdT = Aws::String>
+    void SetSubscriberId(SubscriberIdT&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::forward<SubscriberIdT>(value); }
+    template<typename SubscriberIdT = Aws::String>
+    CreateSubscriberNotificationRequest& WithSubscriberId(SubscriberIdT&& value) { SetSubscriberId(std::forward<SubscriberIdT>(value)); return *this;}
     ///@}
   private:
 

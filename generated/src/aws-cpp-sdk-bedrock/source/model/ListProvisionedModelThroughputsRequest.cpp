@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProvisionedModelThroughputsRequest::ListProvisionedModelThroughputsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_statusEquals(ProvisionedModelStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_modelArnEqualsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(SortByProvisionedModels::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListProvisionedModelThroughputsRequest::SerializePayload() const
 {
   return {};

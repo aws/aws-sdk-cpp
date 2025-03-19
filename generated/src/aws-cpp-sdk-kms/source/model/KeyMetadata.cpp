@@ -18,45 +18,7 @@ namespace KMS
 namespace Model
 {
 
-KeyMetadata::KeyMetadata() : 
-    m_aWSAccountIdHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keyUsage(KeyUsageType::NOT_SET),
-    m_keyUsageHasBeenSet(false),
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_deletionDateHasBeenSet(false),
-    m_validToHasBeenSet(false),
-    m_origin(OriginType::NOT_SET),
-    m_originHasBeenSet(false),
-    m_customKeyStoreIdHasBeenSet(false),
-    m_cloudHsmClusterIdHasBeenSet(false),
-    m_expirationModel(ExpirationModelType::NOT_SET),
-    m_expirationModelHasBeenSet(false),
-    m_keyManager(KeyManagerType::NOT_SET),
-    m_keyManagerHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false),
-    m_keyAgreementAlgorithmsHasBeenSet(false),
-    m_multiRegion(false),
-    m_multiRegionHasBeenSet(false),
-    m_multiRegionConfigurationHasBeenSet(false),
-    m_pendingDeletionWindowInDays(0),
-    m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false),
-    m_xksKeyConfigurationHasBeenSet(false)
-{
-}
-
 KeyMetadata::KeyMetadata(JsonView jsonValue)
-  : KeyMetadata()
 {
   *this = jsonValue;
 }
@@ -66,115 +28,83 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AWSAccountId"))
   {
     m_aWSAccountId = jsonValue.GetString("AWSAccountId");
-
     m_aWSAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyUsage"))
   {
     m_keyUsage = KeyUsageTypeMapper::GetKeyUsageTypeForName(jsonValue.GetString("KeyUsage"));
-
     m_keyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyState"))
   {
     m_keyState = KeyStateMapper::GetKeyStateForName(jsonValue.GetString("KeyState"));
-
     m_keyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionDate"))
   {
     m_deletionDate = jsonValue.GetDouble("DeletionDate");
-
     m_deletionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidTo"))
   {
     m_validTo = jsonValue.GetDouble("ValidTo");
-
     m_validToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Origin"))
   {
     m_origin = OriginTypeMapper::GetOriginTypeForName(jsonValue.GetString("Origin"));
-
     m_originHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomKeyStoreId"))
   {
     m_customKeyStoreId = jsonValue.GetString("CustomKeyStoreId");
-
     m_customKeyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudHsmClusterId"))
   {
     m_cloudHsmClusterId = jsonValue.GetString("CloudHsmClusterId");
-
     m_cloudHsmClusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationModel"))
   {
     m_expirationModel = ExpirationModelTypeMapper::GetExpirationModelTypeForName(jsonValue.GetString("ExpirationModel"));
-
     m_expirationModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyManager"))
   {
     m_keyManager = KeyManagerTypeMapper::GetKeyManagerTypeForName(jsonValue.GetString("KeyManager"));
-
     m_keyManagerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySpec"))
   {
     m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
-
     m_keySpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionAlgorithms"))
   {
     Aws::Utils::Array<JsonView> encryptionAlgorithmsJsonList = jsonValue.GetArray("EncryptionAlgorithms");
@@ -184,7 +114,6 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     }
     m_encryptionAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningAlgorithms"))
   {
     Aws::Utils::Array<JsonView> signingAlgorithmsJsonList = jsonValue.GetArray("SigningAlgorithms");
@@ -194,7 +123,6 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     }
     m_signingAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAgreementAlgorithms"))
   {
     Aws::Utils::Array<JsonView> keyAgreementAlgorithmsJsonList = jsonValue.GetArray("KeyAgreementAlgorithms");
@@ -204,28 +132,21 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     }
     m_keyAgreementAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiRegion"))
   {
     m_multiRegion = jsonValue.GetBool("MultiRegion");
-
     m_multiRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiRegionConfiguration"))
   {
     m_multiRegionConfiguration = jsonValue.GetObject("MultiRegionConfiguration");
-
     m_multiRegionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingDeletionWindowInDays"))
   {
     m_pendingDeletionWindowInDays = jsonValue.GetInteger("PendingDeletionWindowInDays");
-
     m_pendingDeletionWindowInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MacAlgorithms"))
   {
     Aws::Utils::Array<JsonView> macAlgorithmsJsonList = jsonValue.GetArray("MacAlgorithms");
@@ -235,14 +156,11 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     }
     m_macAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XksKeyConfiguration"))
   {
     m_xksKeyConfiguration = jsonValue.GetObject("XksKeyConfiguration");
-
     m_xksKeyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeviceDefinitionRequest::UpdateDeviceDefinitionRequest() : 
-    m_deviceDefinitionIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeviceDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

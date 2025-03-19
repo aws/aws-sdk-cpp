@@ -35,7 +35,7 @@ namespace Model
   class TransformInput
   {
   public:
-    AWS_SAGEMAKER_API TransformInput();
+    AWS_SAGEMAKER_API TransformInput() = default;
     AWS_SAGEMAKER_API TransformInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TransformInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Describes the location of the channel data, which is, the S3 location of the
      * input data that the model can consume.</p>
      */
-    inline const TransformDataSource& GetDataSource() const{ return m_dataSource; }
+    inline const TransformDataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const TransformDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(TransformDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline TransformInput& WithDataSource(const TransformDataSource& value) { SetDataSource(value); return *this;}
-    inline TransformInput& WithDataSource(TransformDataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = TransformDataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = TransformDataSource>
+    TransformInput& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * SageMaker uses the MIME type with each http call to transfer data to the
      * transform job.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline TransformInput& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline TransformInput& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline TransformInput& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    TransformInput& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * SageMaker automatically decompresses the data for the transform job accordingly.
      * The default value is <code>None</code>.</p>
      */
-    inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline TransformInput& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
-    inline TransformInput& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline TransformInput& WithCompressionType(CompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +111,10 @@ namespace Model
      * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
-    inline const SplitType& GetSplitType() const{ return m_splitType; }
+    inline SplitType GetSplitType() const { return m_splitType; }
     inline bool SplitTypeHasBeenSet() const { return m_splitTypeHasBeenSet; }
-    inline void SetSplitType(const SplitType& value) { m_splitTypeHasBeenSet = true; m_splitType = value; }
-    inline void SetSplitType(SplitType&& value) { m_splitTypeHasBeenSet = true; m_splitType = std::move(value); }
-    inline TransformInput& WithSplitType(const SplitType& value) { SetSplitType(value); return *this;}
-    inline TransformInput& WithSplitType(SplitType&& value) { SetSplitType(std::move(value)); return *this;}
+    inline void SetSplitType(SplitType value) { m_splitTypeHasBeenSet = true; m_splitType = value; }
+    inline TransformInput& WithSplitType(SplitType value) { SetSplitType(value); return *this;}
     ///@}
   private:
 
@@ -130,10 +124,10 @@ namespace Model
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    CompressionType m_compressionType;
+    CompressionType m_compressionType{CompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
-    SplitType m_splitType;
+    SplitType m_splitType{SplitType::NOT_SET};
     bool m_splitTypeHasBeenSet = false;
   };
 

@@ -12,14 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeJobLogItemsRequest::DescribeJobLogItemsRequest() : 
-    m_jobIDHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobLogItemsRequest::SerializePayload() const
 {
   JsonValue payload;

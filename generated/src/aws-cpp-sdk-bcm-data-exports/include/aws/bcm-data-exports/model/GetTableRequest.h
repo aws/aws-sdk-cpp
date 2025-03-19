@@ -22,7 +22,7 @@ namespace Model
   class GetTableRequest : public BCMDataExportsRequest
   {
   public:
-    AWS_BCMDATAEXPORTS_API GetTableRequest();
+    AWS_BCMDATAEXPORTS_API GetTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline GetTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline GetTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline GetTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    GetTableRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,16 @@ namespace Model
      * Tables are not required to have any TableProperties. Each table property has a
      * default value that it assumes if not specified.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTableProperties() const{ return m_tableProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTableProperties() const { return m_tableProperties; }
     inline bool TablePropertiesHasBeenSet() const { return m_tablePropertiesHasBeenSet; }
-    inline void SetTableProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties = value; }
-    inline void SetTableProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties = std::move(value); }
-    inline GetTableRequest& WithTableProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetTableProperties(value); return *this;}
-    inline GetTableRequest& WithTableProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetTableProperties(std::move(value)); return *this;}
-    inline GetTableRequest& AddTableProperties(const Aws::String& key, const Aws::String& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, value); return *this; }
-    inline GetTableRequest& AddTableProperties(Aws::String&& key, const Aws::String& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::move(key), value); return *this; }
-    inline GetTableRequest& AddTableProperties(const Aws::String& key, Aws::String&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, std::move(value)); return *this; }
-    inline GetTableRequest& AddTableProperties(Aws::String&& key, Aws::String&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetTableRequest& AddTableProperties(const char* key, Aws::String&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, std::move(value)); return *this; }
-    inline GetTableRequest& AddTableProperties(Aws::String&& key, const char* value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::move(key), value); return *this; }
-    inline GetTableRequest& AddTableProperties(const char* key, const char* value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, value); return *this; }
+    template<typename TablePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetTableProperties(TablePropertiesT&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties = std::forward<TablePropertiesT>(value); }
+    template<typename TablePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    GetTableRequest& WithTableProperties(TablePropertiesT&& value) { SetTableProperties(std::forward<TablePropertiesT>(value)); return *this;}
+    template<typename TablePropertiesKeyT = Aws::String, typename TablePropertiesValueT = Aws::String>
+    GetTableRequest& AddTableProperties(TablePropertiesKeyT&& key, TablePropertiesValueT&& value) {
+      m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::forward<TablePropertiesKeyT>(key), std::forward<TablePropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

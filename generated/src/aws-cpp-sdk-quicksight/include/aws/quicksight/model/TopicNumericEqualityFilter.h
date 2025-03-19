@@ -34,7 +34,7 @@ namespace Model
   class TopicNumericEqualityFilter
   {
   public:
-    AWS_QUICKSIGHT_API TopicNumericEqualityFilter();
+    AWS_QUICKSIGHT_API TopicNumericEqualityFilter() = default;
     AWS_QUICKSIGHT_API TopicNumericEqualityFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicNumericEqualityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The constant used in a numeric equality filter.</p>
      */
-    inline const TopicSingularFilterConstant& GetConstant() const{ return m_constant; }
+    inline const TopicSingularFilterConstant& GetConstant() const { return m_constant; }
     inline bool ConstantHasBeenSet() const { return m_constantHasBeenSet; }
-    inline void SetConstant(const TopicSingularFilterConstant& value) { m_constantHasBeenSet = true; m_constant = value; }
-    inline void SetConstant(TopicSingularFilterConstant&& value) { m_constantHasBeenSet = true; m_constant = std::move(value); }
-    inline TopicNumericEqualityFilter& WithConstant(const TopicSingularFilterConstant& value) { SetConstant(value); return *this;}
-    inline TopicNumericEqualityFilter& WithConstant(TopicSingularFilterConstant&& value) { SetConstant(std::move(value)); return *this;}
+    template<typename ConstantT = TopicSingularFilterConstant>
+    void SetConstant(ConstantT&& value) { m_constantHasBeenSet = true; m_constant = std::forward<ConstantT>(value); }
+    template<typename ConstantT = TopicSingularFilterConstant>
+    TopicNumericEqualityFilter& WithConstant(ConstantT&& value) { SetConstant(std::forward<ConstantT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +61,17 @@ namespace Model
      * <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>,
      * <code>VAR</code>, and <code>VARP</code>.</p>
      */
-    inline const NamedFilterAggType& GetAggregation() const{ return m_aggregation; }
+    inline NamedFilterAggType GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const NamedFilterAggType& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(NamedFilterAggType&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline TopicNumericEqualityFilter& WithAggregation(const NamedFilterAggType& value) { SetAggregation(value); return *this;}
-    inline TopicNumericEqualityFilter& WithAggregation(NamedFilterAggType&& value) { SetAggregation(std::move(value)); return *this;}
+    inline void SetAggregation(NamedFilterAggType value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
+    inline TopicNumericEqualityFilter& WithAggregation(NamedFilterAggType value) { SetAggregation(value); return *this;}
     ///@}
   private:
 
     TopicSingularFilterConstant m_constant;
     bool m_constantHasBeenSet = false;
 
-    NamedFilterAggType m_aggregation;
+    NamedFilterAggType m_aggregation{NamedFilterAggType::NOT_SET};
     bool m_aggregationHasBeenSet = false;
   };
 

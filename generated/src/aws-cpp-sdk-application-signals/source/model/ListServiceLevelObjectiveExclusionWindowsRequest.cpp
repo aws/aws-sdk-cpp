@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListServiceLevelObjectiveExclusionWindowsRequest::ListServiceLevelObjectiveExclusionWindowsRequest() : 
-    m_idHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceLevelObjectiveExclusionWindowsRequest::SerializePayload() const
 {
   return {};

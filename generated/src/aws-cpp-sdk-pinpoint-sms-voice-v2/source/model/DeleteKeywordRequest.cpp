@@ -12,12 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKeywordRequest::DeleteKeywordRequest() : 
-    m_originationIdentityHasBeenSet(false),
-    m_keywordHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKeywordRequest::SerializePayload() const
 {
   JsonValue payload;

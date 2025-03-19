@@ -31,7 +31,7 @@ namespace Model
   class GetDeviceDiscoveryResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetDeviceDiscoveryResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetDeviceDiscoveryResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetDeviceDiscoveryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetDeviceDiscoveryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
     /**
      * <p>The id of the device discovery job request.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetDeviceDiscoveryResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetDeviceDiscoveryResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetDeviceDiscoveryResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the device discovery job request.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetDeviceDiscoveryResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetDeviceDiscoveryResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetDeviceDiscoveryResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,46 +63,40 @@ namespace Model
      * <p>The discovery type supporting the type of device to be discovered in the
      * device discovery job request.</p>
      */
-    inline const DiscoveryType& GetDiscoveryType() const{ return m_discoveryType; }
-    inline void SetDiscoveryType(const DiscoveryType& value) { m_discoveryType = value; }
-    inline void SetDiscoveryType(DiscoveryType&& value) { m_discoveryType = std::move(value); }
-    inline GetDeviceDiscoveryResult& WithDiscoveryType(const DiscoveryType& value) { SetDiscoveryType(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithDiscoveryType(DiscoveryType&& value) { SetDiscoveryType(std::move(value)); return *this;}
+    inline DiscoveryType GetDiscoveryType() const { return m_discoveryType; }
+    inline void SetDiscoveryType(DiscoveryType value) { m_discoveryTypeHasBeenSet = true; m_discoveryType = value; }
+    inline GetDeviceDiscoveryResult& WithDiscoveryType(DiscoveryType value) { SetDiscoveryType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the device discovery job request.</p>
      */
-    inline const DeviceDiscoveryStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DeviceDiscoveryStatus& value) { m_status = value; }
-    inline void SetStatus(DeviceDiscoveryStatus&& value) { m_status = std::move(value); }
-    inline GetDeviceDiscoveryResult& WithStatus(const DeviceDiscoveryStatus& value) { SetStatus(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithStatus(DeviceDiscoveryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DeviceDiscoveryStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DeviceDiscoveryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDeviceDiscoveryResult& WithStatus(DeviceDiscoveryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp value for the start time of the device discovery.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
-    inline GetDeviceDiscoveryResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    GetDeviceDiscoveryResult& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The id of the end-user's IoT hub.</p>
      */
-    inline const Aws::String& GetControllerId() const{ return m_controllerId; }
-    inline void SetControllerId(const Aws::String& value) { m_controllerId = value; }
-    inline void SetControllerId(Aws::String&& value) { m_controllerId = std::move(value); }
-    inline void SetControllerId(const char* value) { m_controllerId.assign(value); }
-    inline GetDeviceDiscoveryResult& WithControllerId(const Aws::String& value) { SetControllerId(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithControllerId(Aws::String&& value) { SetControllerId(std::move(value)); return *this;}
-    inline GetDeviceDiscoveryResult& WithControllerId(const char* value) { SetControllerId(value); return *this;}
+    inline const Aws::String& GetControllerId() const { return m_controllerId; }
+    template<typename ControllerIdT = Aws::String>
+    void SetControllerId(ControllerIdT&& value) { m_controllerIdHasBeenSet = true; m_controllerId = std::forward<ControllerIdT>(value); }
+    template<typename ControllerIdT = Aws::String>
+    GetDeviceDiscoveryResult& WithControllerId(ControllerIdT&& value) { SetControllerId(std::forward<ControllerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,24 +104,22 @@ namespace Model
      * <p>The ID tracking the current discovery process for one connector
      * association.</p>
      */
-    inline const Aws::String& GetConnectorAssociationId() const{ return m_connectorAssociationId; }
-    inline void SetConnectorAssociationId(const Aws::String& value) { m_connectorAssociationId = value; }
-    inline void SetConnectorAssociationId(Aws::String&& value) { m_connectorAssociationId = std::move(value); }
-    inline void SetConnectorAssociationId(const char* value) { m_connectorAssociationId.assign(value); }
-    inline GetDeviceDiscoveryResult& WithConnectorAssociationId(const Aws::String& value) { SetConnectorAssociationId(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithConnectorAssociationId(Aws::String&& value) { SetConnectorAssociationId(std::move(value)); return *this;}
-    inline GetDeviceDiscoveryResult& WithConnectorAssociationId(const char* value) { SetConnectorAssociationId(value); return *this;}
+    inline const Aws::String& GetConnectorAssociationId() const { return m_connectorAssociationId; }
+    template<typename ConnectorAssociationIdT = Aws::String>
+    void SetConnectorAssociationId(ConnectorAssociationIdT&& value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId = std::forward<ConnectorAssociationIdT>(value); }
+    template<typename ConnectorAssociationIdT = Aws::String>
+    GetDeviceDiscoveryResult& WithConnectorAssociationId(ConnectorAssociationIdT&& value) { SetConnectorAssociationId(std::forward<ConnectorAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp value for the completion time of the device discovery.</p>
      */
-    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
-    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAt = value; }
-    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = std::move(value); }
-    inline GetDeviceDiscoveryResult& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetFinishedAt() const { return m_finishedAt; }
+    template<typename FinishedAtT = Aws::Utils::DateTime>
+    void SetFinishedAt(FinishedAtT&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = std::forward<FinishedAtT>(value); }
+    template<typename FinishedAtT = Aws::Utils::DateTime>
+    GetDeviceDiscoveryResult& WithFinishedAt(FinishedAtT&& value) { SetFinishedAt(std::forward<FinishedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,51 +127,56 @@ namespace Model
      * <p>A set of key/value pairs that are used to manage the device discovery
      * request.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetDeviceDiscoveryResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetDeviceDiscoveryResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetDeviceDiscoveryResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDeviceDiscoveryResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDeviceDiscoveryResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDeviceDiscoveryResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetDeviceDiscoveryResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetDeviceDiscoveryResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetDeviceDiscoveryResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetDeviceDiscoveryResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeviceDiscoveryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeviceDiscoveryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeviceDiscoveryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeviceDiscoveryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    DiscoveryType m_discoveryType;
+    DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
+    bool m_discoveryTypeHasBeenSet = false;
 
-    DeviceDiscoveryStatus m_status;
+    DeviceDiscoveryStatus m_status{DeviceDiscoveryStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
+    bool m_startedAtHasBeenSet = false;
 
     Aws::String m_controllerId;
+    bool m_controllerIdHasBeenSet = false;
 
     Aws::String m_connectorAssociationId;
+    bool m_connectorAssociationIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_finishedAt{};
+    bool m_finishedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

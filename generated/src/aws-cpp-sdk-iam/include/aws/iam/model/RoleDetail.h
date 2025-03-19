@@ -41,7 +41,7 @@ namespace Model
   class RoleDetail
   {
   public:
-    AWS_IAM_API RoleDetail();
+    AWS_IAM_API RoleDetail() = default;
     AWS_IAM_API RoleDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API RoleDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,28 +55,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline RoleDetail& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline RoleDetail& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline RoleDetail& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    RoleDetail& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The friendly name that identifies the role.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline RoleDetail& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline RoleDetail& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline RoleDetail& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    RoleDetail& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +82,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::String& GetRoleId() const{ return m_roleId; }
+    inline const Aws::String& GetRoleId() const { return m_roleId; }
     inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
-    inline void SetRoleId(const Aws::String& value) { m_roleIdHasBeenSet = true; m_roleId = value; }
-    inline void SetRoleId(Aws::String&& value) { m_roleIdHasBeenSet = true; m_roleId = std::move(value); }
-    inline void SetRoleId(const char* value) { m_roleIdHasBeenSet = true; m_roleId.assign(value); }
-    inline RoleDetail& WithRoleId(const Aws::String& value) { SetRoleId(value); return *this;}
-    inline RoleDetail& WithRoleId(Aws::String&& value) { SetRoleId(std::move(value)); return *this;}
-    inline RoleDetail& WithRoleId(const char* value) { SetRoleId(value); return *this;}
+    template<typename RoleIdT = Aws::String>
+    void SetRoleId(RoleIdT&& value) { m_roleIdHasBeenSet = true; m_roleId = std::forward<RoleIdT>(value); }
+    template<typename RoleIdT = Aws::String>
+    RoleDetail& WithRoleId(RoleIdT&& value) { SetRoleId(std::forward<RoleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RoleDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RoleDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RoleDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RoleDetail& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,40 +105,38 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the role was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline RoleDetail& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline RoleDetail& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    RoleDetail& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The trust policy that grants permission to assume the role.</p>
      */
-    inline const Aws::String& GetAssumeRolePolicyDocument() const{ return m_assumeRolePolicyDocument; }
+    inline const Aws::String& GetAssumeRolePolicyDocument() const { return m_assumeRolePolicyDocument; }
     inline bool AssumeRolePolicyDocumentHasBeenSet() const { return m_assumeRolePolicyDocumentHasBeenSet; }
-    inline void SetAssumeRolePolicyDocument(const Aws::String& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = value; }
-    inline void SetAssumeRolePolicyDocument(Aws::String&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = std::move(value); }
-    inline void SetAssumeRolePolicyDocument(const char* value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument.assign(value); }
-    inline RoleDetail& WithAssumeRolePolicyDocument(const Aws::String& value) { SetAssumeRolePolicyDocument(value); return *this;}
-    inline RoleDetail& WithAssumeRolePolicyDocument(Aws::String&& value) { SetAssumeRolePolicyDocument(std::move(value)); return *this;}
-    inline RoleDetail& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
+    template<typename AssumeRolePolicyDocumentT = Aws::String>
+    void SetAssumeRolePolicyDocument(AssumeRolePolicyDocumentT&& value) { m_assumeRolePolicyDocumentHasBeenSet = true; m_assumeRolePolicyDocument = std::forward<AssumeRolePolicyDocumentT>(value); }
+    template<typename AssumeRolePolicyDocumentT = Aws::String>
+    RoleDetail& WithAssumeRolePolicyDocument(AssumeRolePolicyDocumentT&& value) { SetAssumeRolePolicyDocument(std::forward<AssumeRolePolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of instance profiles that contain this role.</p>
      */
-    inline const Aws::Vector<InstanceProfile>& GetInstanceProfileList() const{ return m_instanceProfileList; }
+    inline const Aws::Vector<InstanceProfile>& GetInstanceProfileList() const { return m_instanceProfileList; }
     inline bool InstanceProfileListHasBeenSet() const { return m_instanceProfileListHasBeenSet; }
-    inline void SetInstanceProfileList(const Aws::Vector<InstanceProfile>& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = value; }
-    inline void SetInstanceProfileList(Aws::Vector<InstanceProfile>&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = std::move(value); }
-    inline RoleDetail& WithInstanceProfileList(const Aws::Vector<InstanceProfile>& value) { SetInstanceProfileList(value); return *this;}
-    inline RoleDetail& WithInstanceProfileList(Aws::Vector<InstanceProfile>&& value) { SetInstanceProfileList(std::move(value)); return *this;}
-    inline RoleDetail& AddInstanceProfileList(const InstanceProfile& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(value); return *this; }
-    inline RoleDetail& AddInstanceProfileList(InstanceProfile&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(std::move(value)); return *this; }
+    template<typename InstanceProfileListT = Aws::Vector<InstanceProfile>>
+    void SetInstanceProfileList(InstanceProfileListT&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = std::forward<InstanceProfileListT>(value); }
+    template<typename InstanceProfileListT = Aws::Vector<InstanceProfile>>
+    RoleDetail& WithInstanceProfileList(InstanceProfileListT&& value) { SetInstanceProfileList(std::forward<InstanceProfileListT>(value)); return *this;}
+    template<typename InstanceProfileListT = InstanceProfile>
+    RoleDetail& AddInstanceProfileList(InstanceProfileListT&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.emplace_back(std::forward<InstanceProfileListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -154,14 +144,14 @@ namespace Model
      * <p>A list of inline policies embedded in the role. These policies are the role's
      * access (permissions) policies.</p>
      */
-    inline const Aws::Vector<PolicyDetail>& GetRolePolicyList() const{ return m_rolePolicyList; }
+    inline const Aws::Vector<PolicyDetail>& GetRolePolicyList() const { return m_rolePolicyList; }
     inline bool RolePolicyListHasBeenSet() const { return m_rolePolicyListHasBeenSet; }
-    inline void SetRolePolicyList(const Aws::Vector<PolicyDetail>& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList = value; }
-    inline void SetRolePolicyList(Aws::Vector<PolicyDetail>&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList = std::move(value); }
-    inline RoleDetail& WithRolePolicyList(const Aws::Vector<PolicyDetail>& value) { SetRolePolicyList(value); return *this;}
-    inline RoleDetail& WithRolePolicyList(Aws::Vector<PolicyDetail>&& value) { SetRolePolicyList(std::move(value)); return *this;}
-    inline RoleDetail& AddRolePolicyList(const PolicyDetail& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList.push_back(value); return *this; }
-    inline RoleDetail& AddRolePolicyList(PolicyDetail&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList.push_back(std::move(value)); return *this; }
+    template<typename RolePolicyListT = Aws::Vector<PolicyDetail>>
+    void SetRolePolicyList(RolePolicyListT&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList = std::forward<RolePolicyListT>(value); }
+    template<typename RolePolicyListT = Aws::Vector<PolicyDetail>>
+    RoleDetail& WithRolePolicyList(RolePolicyListT&& value) { SetRolePolicyList(std::forward<RolePolicyListT>(value)); return *this;}
+    template<typename RolePolicyListT = PolicyDetail>
+    RoleDetail& AddRolePolicyList(RolePolicyListT&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList.emplace_back(std::forward<RolePolicyListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -169,14 +159,14 @@ namespace Model
      * <p>A list of managed policies attached to the role. These policies are the
      * role's access (permissions) policies.</p>
      */
-    inline const Aws::Vector<AttachedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+    inline const Aws::Vector<AttachedPolicy>& GetAttachedManagedPolicies() const { return m_attachedManagedPolicies; }
     inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
-    inline void SetAttachedManagedPolicies(const Aws::Vector<AttachedPolicy>& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = value; }
-    inline void SetAttachedManagedPolicies(Aws::Vector<AttachedPolicy>&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::move(value); }
-    inline RoleDetail& WithAttachedManagedPolicies(const Aws::Vector<AttachedPolicy>& value) { SetAttachedManagedPolicies(value); return *this;}
-    inline RoleDetail& WithAttachedManagedPolicies(Aws::Vector<AttachedPolicy>&& value) { SetAttachedManagedPolicies(std::move(value)); return *this;}
-    inline RoleDetail& AddAttachedManagedPolicies(const AttachedPolicy& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(value); return *this; }
-    inline RoleDetail& AddAttachedManagedPolicies(AttachedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
+    template<typename AttachedManagedPoliciesT = Aws::Vector<AttachedPolicy>>
+    void SetAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies = std::forward<AttachedManagedPoliciesT>(value); }
+    template<typename AttachedManagedPoliciesT = Aws::Vector<AttachedPolicy>>
+    RoleDetail& WithAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { SetAttachedManagedPolicies(std::forward<AttachedManagedPoliciesT>(value)); return *this;}
+    template<typename AttachedManagedPoliciesT = AttachedPolicy>
+    RoleDetail& AddAttachedManagedPolicies(AttachedManagedPoliciesT&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.emplace_back(std::forward<AttachedManagedPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,12 +176,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+    inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const { return m_permissionsBoundary; }
     inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
-    inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
-    inline void SetPermissionsBoundary(AttachedPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
-    inline RoleDetail& WithPermissionsBoundary(const AttachedPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
-    inline RoleDetail& WithPermissionsBoundary(AttachedPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+    template<typename PermissionsBoundaryT = AttachedPermissionsBoundary>
+    void SetPermissionsBoundary(PermissionsBoundaryT&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::forward<PermissionsBoundaryT>(value); }
+    template<typename PermissionsBoundaryT = AttachedPermissionsBoundary>
+    RoleDetail& WithPermissionsBoundary(PermissionsBoundaryT&& value) { SetPermissionsBoundary(std::forward<PermissionsBoundaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,14 +191,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * resources</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RoleDetail& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RoleDetail& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RoleDetail& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RoleDetail& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RoleDetail& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RoleDetail& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -221,12 +211,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
      * where data is tracked</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const RoleLastUsed& GetRoleLastUsed() const{ return m_roleLastUsed; }
+    inline const RoleLastUsed& GetRoleLastUsed() const { return m_roleLastUsed; }
     inline bool RoleLastUsedHasBeenSet() const { return m_roleLastUsedHasBeenSet; }
-    inline void SetRoleLastUsed(const RoleLastUsed& value) { m_roleLastUsedHasBeenSet = true; m_roleLastUsed = value; }
-    inline void SetRoleLastUsed(RoleLastUsed&& value) { m_roleLastUsedHasBeenSet = true; m_roleLastUsed = std::move(value); }
-    inline RoleDetail& WithRoleLastUsed(const RoleLastUsed& value) { SetRoleLastUsed(value); return *this;}
-    inline RoleDetail& WithRoleLastUsed(RoleLastUsed&& value) { SetRoleLastUsed(std::move(value)); return *this;}
+    template<typename RoleLastUsedT = RoleLastUsed>
+    void SetRoleLastUsed(RoleLastUsedT&& value) { m_roleLastUsedHasBeenSet = true; m_roleLastUsed = std::forward<RoleLastUsedT>(value); }
+    template<typename RoleLastUsedT = RoleLastUsed>
+    RoleDetail& WithRoleLastUsed(RoleLastUsedT&& value) { SetRoleLastUsed(std::forward<RoleLastUsedT>(value)); return *this;}
     ///@}
   private:
 
@@ -242,7 +232,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
     Aws::String m_assumeRolePolicyDocument;

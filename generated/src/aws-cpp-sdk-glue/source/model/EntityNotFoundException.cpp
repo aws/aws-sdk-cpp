@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-EntityNotFoundException::EntityNotFoundException() : 
-    m_messageHasBeenSet(false),
-    m_fromFederationSource(false),
-    m_fromFederationSourceHasBeenSet(false)
-{
-}
-
 EntityNotFoundException::EntityNotFoundException(JsonView jsonValue)
-  : EntityNotFoundException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EntityNotFoundException& EntityNotFoundException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromFederationSource"))
   {
     m_fromFederationSource = jsonValue.GetBool("FromFederationSource");
-
     m_fromFederationSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

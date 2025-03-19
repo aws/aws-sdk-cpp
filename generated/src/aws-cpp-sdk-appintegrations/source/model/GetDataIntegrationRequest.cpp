@@ -12,11 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataIntegrationRequest::GetDataIntegrationRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetDataIntegrationRequest::SerializePayload() const
 {
   return {};

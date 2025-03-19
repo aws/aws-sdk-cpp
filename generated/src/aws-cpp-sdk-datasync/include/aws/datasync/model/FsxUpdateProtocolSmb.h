@@ -36,7 +36,7 @@ namespace Model
   class FsxUpdateProtocolSmb
   {
   public:
-    AWS_DATASYNC_API FsxUpdateProtocolSmb();
+    AWS_DATASYNC_API FsxUpdateProtocolSmb() = default;
     AWS_DATASYNC_API FsxUpdateProtocolSmb(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API FsxUpdateProtocolSmb& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,38 +49,34 @@ namespace Model
      * environment, configuring this parameter makes sure that DataSync connects to the
      * right SVM.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline FsxUpdateProtocolSmb& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline FsxUpdateProtocolSmb& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline FsxUpdateProtocolSmb& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    FsxUpdateProtocolSmb& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SmbMountOptions& GetMountOptions() const{ return m_mountOptions; }
+    inline const SmbMountOptions& GetMountOptions() const { return m_mountOptions; }
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
-    inline void SetMountOptions(const SmbMountOptions& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
-    inline void SetMountOptions(SmbMountOptions&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
-    inline FsxUpdateProtocolSmb& WithMountOptions(const SmbMountOptions& value) { SetMountOptions(value); return *this;}
-    inline FsxUpdateProtocolSmb& WithMountOptions(SmbMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
+    template<typename MountOptionsT = SmbMountOptions>
+    void SetMountOptions(MountOptionsT&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::forward<MountOptionsT>(value); }
+    template<typename MountOptionsT = SmbMountOptions>
+    FsxUpdateProtocolSmb& WithMountOptions(MountOptionsT&& value) { SetMountOptions(std::forward<MountOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the password of a user who has permission to access your SVM.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline FsxUpdateProtocolSmb& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline FsxUpdateProtocolSmb& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline FsxUpdateProtocolSmb& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    FsxUpdateProtocolSmb& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using
      * the SMB protocol</a>.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline FsxUpdateProtocolSmb& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline FsxUpdateProtocolSmb& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline FsxUpdateProtocolSmb& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    FsxUpdateProtocolSmb& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
   private:
 

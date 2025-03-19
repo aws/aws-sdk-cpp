@@ -12,24 +12,6 @@ using namespace Aws::RDSDataService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteStatementRequest::ExecuteStatementRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_sqlHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_includeResultMetadata(false),
-    m_includeResultMetadataHasBeenSet(false),
-    m_continueAfterTimeout(false),
-    m_continueAfterTimeoutHasBeenSet(false),
-    m_resultSetOptionsHasBeenSet(false),
-    m_formatRecordsAs(RecordsFormatType::NOT_SET),
-    m_formatRecordsAsHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataCpuOptionsDetails::AwsEc2LaunchTemplateDataCpuOptionsDetails() : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataCpuOptionsDetails::AwsEc2LaunchTemplateDataCpuOptionsDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataCpuOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsEc2LaunchTemplateDataCpuOptionsDetails& AwsEc2LaunchTemplateDataCpuOptionsDet
   if(jsonValue.ValueExists("CoreCount"))
   {
     m_coreCount = jsonValue.GetInteger("CoreCount");
-
     m_coreCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadsPerCore"))
   {
     m_threadsPerCore = jsonValue.GetInteger("ThreadsPerCore");
-
     m_threadsPerCoreHasBeenSet = true;
   }
-
   return *this;
 }
 

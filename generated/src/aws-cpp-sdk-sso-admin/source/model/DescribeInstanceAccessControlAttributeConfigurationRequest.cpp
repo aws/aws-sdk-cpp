@@ -12,11 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInstanceAccessControlAttributeConfigurationRequest::DescribeInstanceAccessControlAttributeConfigurationRequest() : 
-    m_instanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceAccessControlAttributeConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

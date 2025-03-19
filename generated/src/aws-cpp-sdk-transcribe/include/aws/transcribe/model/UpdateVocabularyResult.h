@@ -30,7 +30,7 @@ namespace Model
   class UpdateVocabularyResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult();
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult() = default;
     AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,24 +39,20 @@ namespace Model
     /**
      * <p>The name of the updated custom vocabulary.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyName.assign(value); }
-    inline UpdateVocabularyResult& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline UpdateVocabularyResult& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline UpdateVocabularyResult& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    UpdateVocabularyResult& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The language code you selected for your custom vocabulary.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
-    inline UpdateVocabularyResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline UpdateVocabularyResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline UpdateVocabularyResult& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -66,11 +62,11 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline UpdateVocabularyResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline UpdateVocabularyResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    UpdateVocabularyResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,34 +75,35 @@ namespace Model
      * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
-    inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
-    inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
-    inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
-    inline UpdateVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
-    inline UpdateVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}
+    inline VocabularyState GetVocabularyState() const { return m_vocabularyState; }
+    inline void SetVocabularyState(VocabularyState value) { m_vocabularyStateHasBeenSet = true; m_vocabularyState = value; }
+    inline UpdateVocabularyResult& WithVocabularyState(VocabularyState value) { SetVocabularyState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateVocabularyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateVocabularyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateVocabularyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateVocabularyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vocabularyName;
+    bool m_vocabularyNameHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
+    bool m_languageCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    VocabularyState m_vocabularyState;
+    VocabularyState m_vocabularyState{VocabularyState::NOT_SET};
+    bool m_vocabularyStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

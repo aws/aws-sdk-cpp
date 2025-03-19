@@ -12,10 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountStatusRequest::GetAccountStatusRequest()
-{
-}
-
 Aws::String GetAccountStatusRequest::SerializePayload() const
 {
   return {};

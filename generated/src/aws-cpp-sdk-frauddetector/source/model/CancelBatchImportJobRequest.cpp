@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelBatchImportJobRequest::CancelBatchImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelBatchImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

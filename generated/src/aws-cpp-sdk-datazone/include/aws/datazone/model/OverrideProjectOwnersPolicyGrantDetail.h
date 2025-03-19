@@ -30,7 +30,7 @@ namespace Model
   class OverrideProjectOwnersPolicyGrantDetail
   {
   public:
-    AWS_DATAZONE_API OverrideProjectOwnersPolicyGrantDetail();
+    AWS_DATAZONE_API OverrideProjectOwnersPolicyGrantDetail() = default;
     AWS_DATAZONE_API OverrideProjectOwnersPolicyGrantDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API OverrideProjectOwnersPolicyGrantDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Specifies whether the policy is inherited by child domain units.</p>
      */
-    inline bool GetIncludeChildDomainUnits() const{ return m_includeChildDomainUnits; }
+    inline bool GetIncludeChildDomainUnits() const { return m_includeChildDomainUnits; }
     inline bool IncludeChildDomainUnitsHasBeenSet() const { return m_includeChildDomainUnitsHasBeenSet; }
     inline void SetIncludeChildDomainUnits(bool value) { m_includeChildDomainUnitsHasBeenSet = true; m_includeChildDomainUnits = value; }
     inline OverrideProjectOwnersPolicyGrantDetail& WithIncludeChildDomainUnits(bool value) { SetIncludeChildDomainUnits(value); return *this;}
     ///@}
   private:
 
-    bool m_includeChildDomainUnits;
+    bool m_includeChildDomainUnits{false};
     bool m_includeChildDomainUnitsHasBeenSet = false;
   };
 

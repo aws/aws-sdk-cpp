@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePackageRequest::DescribePackageRequest() : 
-    m_packageIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePackageRequest::SerializePayload() const
 {
   return {};

@@ -12,12 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxClusterRequest::GetKxClusterRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKxClusterRequest::SerializePayload() const
 {
   return {};

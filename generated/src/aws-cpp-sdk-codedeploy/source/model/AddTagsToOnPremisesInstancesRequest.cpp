@@ -12,12 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToOnPremisesInstancesRequest::AddTagsToOnPremisesInstancesRequest() : 
-    m_tagsHasBeenSet(false),
-    m_instanceNamesHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToOnPremisesInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

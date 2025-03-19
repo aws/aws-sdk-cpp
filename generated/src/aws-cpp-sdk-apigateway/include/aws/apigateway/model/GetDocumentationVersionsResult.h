@@ -35,52 +35,51 @@ namespace Model
   class GetDocumentationVersionsResult
   {
   public:
-    AWS_APIGATEWAY_API GetDocumentationVersionsResult();
+    AWS_APIGATEWAY_API GetDocumentationVersionsResult() = default;
     AWS_APIGATEWAY_API GetDocumentationVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetDocumentationVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::String& value) { m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_position.assign(value); }
-    inline GetDocumentationVersionsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetDocumentationVersionsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetDocumentationVersionsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    inline const Aws::String& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetDocumentationVersionsResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current page of elements from this collection.</p>
      */
-    inline const Aws::Vector<DocumentationVersion>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<DocumentationVersion>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<DocumentationVersion>&& value) { m_items = std::move(value); }
-    inline GetDocumentationVersionsResult& WithItems(const Aws::Vector<DocumentationVersion>& value) { SetItems(value); return *this;}
-    inline GetDocumentationVersionsResult& WithItems(Aws::Vector<DocumentationVersion>&& value) { SetItems(std::move(value)); return *this;}
-    inline GetDocumentationVersionsResult& AddItems(const DocumentationVersion& value) { m_items.push_back(value); return *this; }
-    inline GetDocumentationVersionsResult& AddItems(DocumentationVersion&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DocumentationVersion>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<DocumentationVersion>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<DocumentationVersion>>
+    GetDocumentationVersionsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = DocumentationVersion>
+    GetDocumentationVersionsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDocumentationVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDocumentationVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDocumentationVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDocumentationVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<DocumentationVersion> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

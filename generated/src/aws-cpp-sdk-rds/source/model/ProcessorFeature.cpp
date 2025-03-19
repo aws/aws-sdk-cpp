@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ProcessorFeature::ProcessorFeature() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ProcessorFeature::ProcessorFeature(const XmlNode& xmlNode)
-  : ProcessorFeature()
 {
   *this = xmlNode;
 }

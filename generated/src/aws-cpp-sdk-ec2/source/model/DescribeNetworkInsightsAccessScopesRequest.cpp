@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeNetworkInsightsAccessScopesRequest::DescribeNetworkInsightsAccessScopesRequest() : 
-    m_networkInsightsAccessScopeIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNetworkInsightsAccessScopesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

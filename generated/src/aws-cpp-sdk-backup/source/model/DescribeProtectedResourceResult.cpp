@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProtectedResourceResult::DescribeProtectedResourceResult() : 
-    m_latestRestoreExecutionTimeMinutes(0)
-{
-}
-
 DescribeProtectedResourceResult::DescribeProtectedResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeProtectedResourceResult()
 {
   *this = result;
 }
@@ -34,63 +28,55 @@ DescribeProtectedResourceResult& DescribeProtectedResourceResult::operator =(con
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
+    m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastBackupTime"))
   {
     m_lastBackupTime = jsonValue.GetDouble("LastBackupTime");
-
+    m_lastBackupTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
+    m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastBackupVaultArn"))
   {
     m_lastBackupVaultArn = jsonValue.GetString("LastBackupVaultArn");
-
+    m_lastBackupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRecoveryPointArn"))
   {
     m_lastRecoveryPointArn = jsonValue.GetString("LastRecoveryPointArn");
-
+    m_lastRecoveryPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestRestoreExecutionTimeMinutes"))
   {
     m_latestRestoreExecutionTimeMinutes = jsonValue.GetInt64("LatestRestoreExecutionTimeMinutes");
-
+    m_latestRestoreExecutionTimeMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestRestoreJobCreationDate"))
   {
     m_latestRestoreJobCreationDate = jsonValue.GetDouble("LatestRestoreJobCreationDate");
-
+    m_latestRestoreJobCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestRestoreRecoveryPointCreationDate"))
   {
     m_latestRestoreRecoveryPointCreationDate = jsonValue.GetDouble("LatestRestoreRecoveryPointCreationDate");
-
+    m_latestRestoreRecoveryPointCreationDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

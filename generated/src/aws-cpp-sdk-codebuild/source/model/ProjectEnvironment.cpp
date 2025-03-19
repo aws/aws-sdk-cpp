@@ -18,26 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectEnvironment::ProjectEnvironment() : 
-    m_type(EnvironmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_computeConfigurationHasBeenSet(false),
-    m_fleetHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_registryCredentialHasBeenSet(false),
-    m_imagePullCredentialsType(ImagePullCredentialsType::NOT_SET),
-    m_imagePullCredentialsTypeHasBeenSet(false)
-{
-}
-
 ProjectEnvironment::ProjectEnvironment(JsonView jsonValue)
-  : ProjectEnvironment()
 {
   *this = jsonValue;
 }
@@ -47,38 +28,28 @@ ProjectEnvironment& ProjectEnvironment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = EnvironmentTypeMapper::GetEnvironmentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeType"))
   {
     m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
-
     m_computeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeConfiguration"))
   {
     m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
-
     m_computeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleet"))
   {
     m_fleet = jsonValue.GetObject("fleet");
-
     m_fleetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentVariables"))
   {
     Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
@@ -88,35 +59,26 @@ ProjectEnvironment& ProjectEnvironment::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privilegedMode"))
   {
     m_privilegedMode = jsonValue.GetBool("privilegedMode");
-
     m_privilegedModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificate"))
   {
     m_certificate = jsonValue.GetString("certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryCredential"))
   {
     m_registryCredential = jsonValue.GetObject("registryCredential");
-
     m_registryCredentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePullCredentialsType"))
   {
     m_imagePullCredentialsType = ImagePullCredentialsTypeMapper::GetImagePullCredentialsTypeForName(jsonValue.GetString("imagePullCredentialsType"));
-
     m_imagePullCredentialsTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteRepositoryPermissionsPolicyRequest::DeleteRepositoryPermissionsPolicyRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_policyRevisionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRepositoryPermissionsPolicyRequest::SerializePayload() const
 {
   return {};

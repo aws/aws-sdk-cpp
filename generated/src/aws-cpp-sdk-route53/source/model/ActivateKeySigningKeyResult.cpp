@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ActivateKeySigningKeyResult::ActivateKeySigningKeyResult()
-{
-}
-
 ActivateKeySigningKeyResult::ActivateKeySigningKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ActivateKeySigningKeyResult& ActivateKeySigningKeyResult::operator =(const Aws::
     if(!changeInfoNode.IsNull())
     {
       m_changeInfo = changeInfoNode;
+      m_changeInfoHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ ActivateKeySigningKeyResult& ActivateKeySigningKeyResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

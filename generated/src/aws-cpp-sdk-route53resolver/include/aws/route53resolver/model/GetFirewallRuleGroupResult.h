@@ -28,7 +28,7 @@ namespace Model
   class GetFirewallRuleGroupResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupResult();
+    AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupResult() = default;
     AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A collection of rules used to filter DNS network traffic. </p>
      */
-    inline const FirewallRuleGroup& GetFirewallRuleGroup() const{ return m_firewallRuleGroup; }
-    inline void SetFirewallRuleGroup(const FirewallRuleGroup& value) { m_firewallRuleGroup = value; }
-    inline void SetFirewallRuleGroup(FirewallRuleGroup&& value) { m_firewallRuleGroup = std::move(value); }
-    inline GetFirewallRuleGroupResult& WithFirewallRuleGroup(const FirewallRuleGroup& value) { SetFirewallRuleGroup(value); return *this;}
-    inline GetFirewallRuleGroupResult& WithFirewallRuleGroup(FirewallRuleGroup&& value) { SetFirewallRuleGroup(std::move(value)); return *this;}
+    inline const FirewallRuleGroup& GetFirewallRuleGroup() const { return m_firewallRuleGroup; }
+    template<typename FirewallRuleGroupT = FirewallRuleGroup>
+    void SetFirewallRuleGroup(FirewallRuleGroupT&& value) { m_firewallRuleGroupHasBeenSet = true; m_firewallRuleGroup = std::forward<FirewallRuleGroupT>(value); }
+    template<typename FirewallRuleGroupT = FirewallRuleGroup>
+    GetFirewallRuleGroupResult& WithFirewallRuleGroup(FirewallRuleGroupT&& value) { SetFirewallRuleGroup(std::forward<FirewallRuleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFirewallRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFirewallRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFirewallRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFirewallRuleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FirewallRuleGroup m_firewallRuleGroup;
+    bool m_firewallRuleGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

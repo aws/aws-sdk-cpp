@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-Destination::Destination() : 
-    m_s3BucketHasBeenSet(false),
-    m_firehoseStreamHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firehoseStream"))
   {
     m_firehoseStream = jsonValue.GetObject("firehoseStream");
-
     m_firehoseStreamHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateWebACLMigrationStackResult
   {
   public:
-    AWS_WAF_API CreateWebACLMigrationStackResult();
+    AWS_WAF_API CreateWebACLMigrationStackResult() = default;
     AWS_WAF_API CreateWebACLMigrationStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAF_API CreateWebACLMigrationStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The URL of the template created in Amazon S3. </p>
      */
-    inline const Aws::String& GetS3ObjectUrl() const{ return m_s3ObjectUrl; }
-    inline void SetS3ObjectUrl(const Aws::String& value) { m_s3ObjectUrl = value; }
-    inline void SetS3ObjectUrl(Aws::String&& value) { m_s3ObjectUrl = std::move(value); }
-    inline void SetS3ObjectUrl(const char* value) { m_s3ObjectUrl.assign(value); }
-    inline CreateWebACLMigrationStackResult& WithS3ObjectUrl(const Aws::String& value) { SetS3ObjectUrl(value); return *this;}
-    inline CreateWebACLMigrationStackResult& WithS3ObjectUrl(Aws::String&& value) { SetS3ObjectUrl(std::move(value)); return *this;}
-    inline CreateWebACLMigrationStackResult& WithS3ObjectUrl(const char* value) { SetS3ObjectUrl(value); return *this;}
+    inline const Aws::String& GetS3ObjectUrl() const { return m_s3ObjectUrl; }
+    template<typename S3ObjectUrlT = Aws::String>
+    void SetS3ObjectUrl(S3ObjectUrlT&& value) { m_s3ObjectUrlHasBeenSet = true; m_s3ObjectUrl = std::forward<S3ObjectUrlT>(value); }
+    template<typename S3ObjectUrlT = Aws::String>
+    CreateWebACLMigrationStackResult& WithS3ObjectUrl(S3ObjectUrlT&& value) { SetS3ObjectUrl(std::forward<S3ObjectUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWebACLMigrationStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWebACLMigrationStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWebACLMigrationStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWebACLMigrationStackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s3ObjectUrl;
+    bool m_s3ObjectUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

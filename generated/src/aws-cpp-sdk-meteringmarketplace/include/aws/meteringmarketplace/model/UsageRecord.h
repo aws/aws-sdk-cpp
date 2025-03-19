@@ -37,7 +37,7 @@ namespace Model
   class UsageRecord
   {
   public:
-    AWS_MARKETPLACEMETERING_API UsageRecord();
+    AWS_MARKETPLACEMETERING_API UsageRecord() = default;
     AWS_MARKETPLACEMETERING_API UsageRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEMETERING_API UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * application can meter usage for up to one hour in the past. Make sure the
      * <code>timestamp</code> value is not before the start of the software usage.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline UsageRecord& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline UsageRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    UsageRecord& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,12 @@ namespace Model
      * <code>ResolveCustomer</code> operation and represents an individual buyer in
      * your application.</p>
      */
-    inline const Aws::String& GetCustomerIdentifier() const{ return m_customerIdentifier; }
+    inline const Aws::String& GetCustomerIdentifier() const { return m_customerIdentifier; }
     inline bool CustomerIdentifierHasBeenSet() const { return m_customerIdentifierHasBeenSet; }
-    inline void SetCustomerIdentifier(const Aws::String& value) { m_customerIdentifierHasBeenSet = true; m_customerIdentifier = value; }
-    inline void SetCustomerIdentifier(Aws::String&& value) { m_customerIdentifierHasBeenSet = true; m_customerIdentifier = std::move(value); }
-    inline void SetCustomerIdentifier(const char* value) { m_customerIdentifierHasBeenSet = true; m_customerIdentifier.assign(value); }
-    inline UsageRecord& WithCustomerIdentifier(const Aws::String& value) { SetCustomerIdentifier(value); return *this;}
-    inline UsageRecord& WithCustomerIdentifier(Aws::String&& value) { SetCustomerIdentifier(std::move(value)); return *this;}
-    inline UsageRecord& WithCustomerIdentifier(const char* value) { SetCustomerIdentifier(value); return *this;}
+    template<typename CustomerIdentifierT = Aws::String>
+    void SetCustomerIdentifier(CustomerIdentifierT&& value) { m_customerIdentifierHasBeenSet = true; m_customerIdentifier = std::forward<CustomerIdentifierT>(value); }
+    template<typename CustomerIdentifierT = Aws::String>
+    UsageRecord& WithCustomerIdentifier(CustomerIdentifierT&& value) { SetCustomerIdentifier(std::forward<CustomerIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * <p>During the process of registering a product on AWS Marketplace, dimensions
      * are specified. These represent different units of value in your application.</p>
      */
-    inline const Aws::String& GetDimension() const{ return m_dimension; }
+    inline const Aws::String& GetDimension() const { return m_dimension; }
     inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
-    inline void SetDimension(const Aws::String& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
-    inline void SetDimension(Aws::String&& value) { m_dimensionHasBeenSet = true; m_dimension = std::move(value); }
-    inline void SetDimension(const char* value) { m_dimensionHasBeenSet = true; m_dimension.assign(value); }
-    inline UsageRecord& WithDimension(const Aws::String& value) { SetDimension(value); return *this;}
-    inline UsageRecord& WithDimension(Aws::String&& value) { SetDimension(std::move(value)); return *this;}
-    inline UsageRecord& WithDimension(const char* value) { SetDimension(value); return *this;}
+    template<typename DimensionT = Aws::String>
+    void SetDimension(DimensionT&& value) { m_dimensionHasBeenSet = true; m_dimension = std::forward<DimensionT>(value); }
+    template<typename DimensionT = Aws::String>
+    UsageRecord& WithDimension(DimensionT&& value) { SetDimension(std::forward<DimensionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +89,7 @@ namespace Model
      * <p>The quantity of usage consumed by the customer for the given dimension and
      * time. Defaults to <code>0</code> if not specified.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline UsageRecord& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -105,18 +101,18 @@ namespace Model
      * <code>UsageAllocation</code> quantities must equal the Quantity of the
      * <code>UsageRecord</code>.</p>
      */
-    inline const Aws::Vector<UsageAllocation>& GetUsageAllocations() const{ return m_usageAllocations; }
+    inline const Aws::Vector<UsageAllocation>& GetUsageAllocations() const { return m_usageAllocations; }
     inline bool UsageAllocationsHasBeenSet() const { return m_usageAllocationsHasBeenSet; }
-    inline void SetUsageAllocations(const Aws::Vector<UsageAllocation>& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations = value; }
-    inline void SetUsageAllocations(Aws::Vector<UsageAllocation>&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations = std::move(value); }
-    inline UsageRecord& WithUsageAllocations(const Aws::Vector<UsageAllocation>& value) { SetUsageAllocations(value); return *this;}
-    inline UsageRecord& WithUsageAllocations(Aws::Vector<UsageAllocation>&& value) { SetUsageAllocations(std::move(value)); return *this;}
-    inline UsageRecord& AddUsageAllocations(const UsageAllocation& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.push_back(value); return *this; }
-    inline UsageRecord& AddUsageAllocations(UsageAllocation&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.push_back(std::move(value)); return *this; }
+    template<typename UsageAllocationsT = Aws::Vector<UsageAllocation>>
+    void SetUsageAllocations(UsageAllocationsT&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations = std::forward<UsageAllocationsT>(value); }
+    template<typename UsageAllocationsT = Aws::Vector<UsageAllocation>>
+    UsageRecord& WithUsageAllocations(UsageAllocationsT&& value) { SetUsageAllocations(std::forward<UsageAllocationsT>(value)); return *this;}
+    template<typename UsageAllocationsT = UsageAllocation>
+    UsageRecord& AddUsageAllocations(UsageAllocationsT&& value) { m_usageAllocationsHasBeenSet = true; m_usageAllocations.emplace_back(std::forward<UsageAllocationsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_customerIdentifier;
@@ -125,7 +121,7 @@ namespace Model
     Aws::String m_dimension;
     bool m_dimensionHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<UsageAllocation> m_usageAllocations;

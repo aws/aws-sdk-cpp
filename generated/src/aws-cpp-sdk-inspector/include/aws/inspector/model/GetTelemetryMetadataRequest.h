@@ -21,7 +21,7 @@ namespace Model
   class GetTelemetryMetadataRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API GetTelemetryMetadataRequest();
+    AWS_INSPECTOR_API GetTelemetryMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ARN that specifies the assessment run that has the telemetry data that
      * you want to obtain.</p>
      */
-    inline const Aws::String& GetAssessmentRunArn() const{ return m_assessmentRunArn; }
+    inline const Aws::String& GetAssessmentRunArn() const { return m_assessmentRunArn; }
     inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
-    inline void SetAssessmentRunArn(const Aws::String& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = value; }
-    inline void SetAssessmentRunArn(Aws::String&& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = std::move(value); }
-    inline void SetAssessmentRunArn(const char* value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn.assign(value); }
-    inline GetTelemetryMetadataRequest& WithAssessmentRunArn(const Aws::String& value) { SetAssessmentRunArn(value); return *this;}
-    inline GetTelemetryMetadataRequest& WithAssessmentRunArn(Aws::String&& value) { SetAssessmentRunArn(std::move(value)); return *this;}
-    inline GetTelemetryMetadataRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
+    template<typename AssessmentRunArnT = Aws::String>
+    void SetAssessmentRunArn(AssessmentRunArnT&& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = std::forward<AssessmentRunArnT>(value); }
+    template<typename AssessmentRunArnT = Aws::String>
+    GetTelemetryMetadataRequest& WithAssessmentRunArn(AssessmentRunArnT&& value) { SetAssessmentRunArn(std::forward<AssessmentRunArnT>(value)); return *this;}
     ///@}
   private:
 

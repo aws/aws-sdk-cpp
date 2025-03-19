@@ -36,7 +36,7 @@ namespace Model
   class DescribeClusterSubnetGroupsResult
   {
   public:
-    AWS_REDSHIFT_API DescribeClusterSubnetGroupsResult();
+    AWS_REDSHIFT_API DescribeClusterSubnetGroupsResult() = default;
     AWS_REDSHIFT_API DescribeClusterSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeClusterSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -50,43 +50,44 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeClusterSubnetGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeClusterSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeClusterSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeClusterSubnetGroupsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
      */
-    inline const Aws::Vector<ClusterSubnetGroup>& GetClusterSubnetGroups() const{ return m_clusterSubnetGroups; }
-    inline void SetClusterSubnetGroups(const Aws::Vector<ClusterSubnetGroup>& value) { m_clusterSubnetGroups = value; }
-    inline void SetClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { m_clusterSubnetGroups = std::move(value); }
-    inline DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(const Aws::Vector<ClusterSubnetGroup>& value) { SetClusterSubnetGroups(value); return *this;}
-    inline DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(Aws::Vector<ClusterSubnetGroup>&& value) { SetClusterSubnetGroups(std::move(value)); return *this;}
-    inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(const ClusterSubnetGroup& value) { m_clusterSubnetGroups.push_back(value); return *this; }
-    inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(ClusterSubnetGroup&& value) { m_clusterSubnetGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClusterSubnetGroup>& GetClusterSubnetGroups() const { return m_clusterSubnetGroups; }
+    template<typename ClusterSubnetGroupsT = Aws::Vector<ClusterSubnetGroup>>
+    void SetClusterSubnetGroups(ClusterSubnetGroupsT&& value) { m_clusterSubnetGroupsHasBeenSet = true; m_clusterSubnetGroups = std::forward<ClusterSubnetGroupsT>(value); }
+    template<typename ClusterSubnetGroupsT = Aws::Vector<ClusterSubnetGroup>>
+    DescribeClusterSubnetGroupsResult& WithClusterSubnetGroups(ClusterSubnetGroupsT&& value) { SetClusterSubnetGroups(std::forward<ClusterSubnetGroupsT>(value)); return *this;}
+    template<typename ClusterSubnetGroupsT = ClusterSubnetGroup>
+    DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(ClusterSubnetGroupsT&& value) { m_clusterSubnetGroupsHasBeenSet = true; m_clusterSubnetGroups.emplace_back(std::forward<ClusterSubnetGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeClusterSubnetGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<ClusterSubnetGroup> m_clusterSubnetGroups;
+    bool m_clusterSubnetGroupsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

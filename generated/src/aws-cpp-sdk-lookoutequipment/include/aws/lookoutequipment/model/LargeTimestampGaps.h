@@ -32,7 +32,7 @@ namespace Model
   class LargeTimestampGaps
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps();
+    AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps() = default;
     AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,19 +43,17 @@ namespace Model
      * <p> Indicates whether there is a potential data issue related to large gaps in
      * timestamps. </p>
      */
-    inline const StatisticalIssueStatus& GetStatus() const{ return m_status; }
+    inline StatisticalIssueStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatisticalIssueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatisticalIssueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LargeTimestampGaps& WithStatus(const StatisticalIssueStatus& value) { SetStatus(value); return *this;}
-    inline LargeTimestampGaps& WithStatus(StatisticalIssueStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatisticalIssueStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LargeTimestampGaps& WithStatus(StatisticalIssueStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates the number of large timestamp gaps, if there are any. </p>
      */
-    inline int GetNumberOfLargeTimestampGaps() const{ return m_numberOfLargeTimestampGaps; }
+    inline int GetNumberOfLargeTimestampGaps() const { return m_numberOfLargeTimestampGaps; }
     inline bool NumberOfLargeTimestampGapsHasBeenSet() const { return m_numberOfLargeTimestampGapsHasBeenSet; }
     inline void SetNumberOfLargeTimestampGaps(int value) { m_numberOfLargeTimestampGapsHasBeenSet = true; m_numberOfLargeTimestampGaps = value; }
     inline LargeTimestampGaps& WithNumberOfLargeTimestampGaps(int value) { SetNumberOfLargeTimestampGaps(value); return *this;}
@@ -65,20 +63,20 @@ namespace Model
     /**
      * <p> Indicates the size of the largest timestamp gap, in days. </p>
      */
-    inline int GetMaxTimestampGapInDays() const{ return m_maxTimestampGapInDays; }
+    inline int GetMaxTimestampGapInDays() const { return m_maxTimestampGapInDays; }
     inline bool MaxTimestampGapInDaysHasBeenSet() const { return m_maxTimestampGapInDaysHasBeenSet; }
     inline void SetMaxTimestampGapInDays(int value) { m_maxTimestampGapInDaysHasBeenSet = true; m_maxTimestampGapInDays = value; }
     inline LargeTimestampGaps& WithMaxTimestampGapInDays(int value) { SetMaxTimestampGapInDays(value); return *this;}
     ///@}
   private:
 
-    StatisticalIssueStatus m_status;
+    StatisticalIssueStatus m_status{StatisticalIssueStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_numberOfLargeTimestampGaps;
+    int m_numberOfLargeTimestampGaps{0};
     bool m_numberOfLargeTimestampGapsHasBeenSet = false;
 
-    int m_maxTimestampGapInDays;
+    int m_maxTimestampGapInDays{0};
     bool m_maxTimestampGapInDaysHasBeenSet = false;
   };
 

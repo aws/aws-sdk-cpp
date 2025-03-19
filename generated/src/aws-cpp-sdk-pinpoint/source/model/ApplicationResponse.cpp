@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ApplicationResponse::ApplicationResponse() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 ApplicationResponse::ApplicationResponse(JsonView jsonValue)
-  : ApplicationResponse()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ApplicationResponse& ApplicationResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -65,14 +49,11 @@ ApplicationResponse& ApplicationResponse::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-LabelCategory::LabelCategory() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 LabelCategory::LabelCategory(JsonView jsonValue)
-  : LabelCategory()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LabelCategory& LabelCategory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

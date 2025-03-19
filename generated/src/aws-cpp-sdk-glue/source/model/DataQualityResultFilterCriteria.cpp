@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityResultFilterCriteria::DataQualityResultFilterCriteria() : 
-    m_dataSourceHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_startedAfterHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false)
-{
-}
-
 DataQualityResultFilterCriteria::DataQualityResultFilterCriteria(JsonView jsonValue)
-  : DataQualityResultFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataQualityResultFilterCriteria& DataQualityResultFilterCriteria::operator =(Jso
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunId"))
   {
     m_jobRunId = jsonValue.GetString("JobRunId");
-
     m_jobRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAfter"))
   {
     m_startedAfter = jsonValue.GetDouble("StartedAfter");
-
     m_startedAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedBefore"))
   {
     m_startedBefore = jsonValue.GetDouble("StartedBefore");
-
     m_startedBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

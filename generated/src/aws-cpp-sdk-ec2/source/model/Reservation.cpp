@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Reservation::Reservation() : 
-    m_reservationIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_requesterIdHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_instancesHasBeenSet(false)
-{
-}
-
 Reservation::Reservation(const XmlNode& xmlNode)
-  : Reservation()
 {
   *this = xmlNode;
 }
@@ -63,6 +53,7 @@ Reservation& Reservation::operator =(const XmlNode& xmlNode)
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember);
@@ -75,6 +66,7 @@ Reservation& Reservation::operator =(const XmlNode& xmlNode)
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);

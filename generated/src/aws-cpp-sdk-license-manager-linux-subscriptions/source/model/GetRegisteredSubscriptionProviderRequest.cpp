@@ -12,11 +12,6 @@ using namespace Aws::LicenseManagerLinuxSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegisteredSubscriptionProviderRequest::GetRegisteredSubscriptionProviderRequest() : 
-    m_subscriptionProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String GetRegisteredSubscriptionProviderRequest::SerializePayload() const
 {
   JsonValue payload;

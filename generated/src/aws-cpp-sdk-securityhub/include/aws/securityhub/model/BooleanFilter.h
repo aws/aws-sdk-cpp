@@ -29,7 +29,7 @@ namespace Model
   class BooleanFilter
   {
   public:
-    AWS_SECURITYHUB_API BooleanFilter();
+    AWS_SECURITYHUB_API BooleanFilter() = default;
     AWS_SECURITYHUB_API BooleanFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API BooleanFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The value of the boolean.</p>
      */
-    inline bool GetValue() const{ return m_value; }
+    inline bool GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
     inline BooleanFilter& WithValue(bool value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    bool m_value;
+    bool m_value{false};
     bool m_valueHasBeenSet = false;
   };
 

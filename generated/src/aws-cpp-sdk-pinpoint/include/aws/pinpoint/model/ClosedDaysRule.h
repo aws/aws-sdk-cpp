@@ -32,7 +32,7 @@ namespace Model
   class ClosedDaysRule
   {
   public:
-    AWS_PINPOINT_API ClosedDaysRule();
+    AWS_PINPOINT_API ClosedDaysRule() = default;
     AWS_PINPOINT_API ClosedDaysRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ClosedDaysRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The name of the closed day rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ClosedDaysRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ClosedDaysRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ClosedDaysRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ClosedDaysRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start DateTime ISO 8601 format</p>
      */
-    inline const Aws::String& GetStartDateTime() const{ return m_startDateTime; }
+    inline const Aws::String& GetStartDateTime() const { return m_startDateTime; }
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-    inline void SetStartDateTime(const Aws::String& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-    inline void SetStartDateTime(Aws::String&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-    inline void SetStartDateTime(const char* value) { m_startDateTimeHasBeenSet = true; m_startDateTime.assign(value); }
-    inline ClosedDaysRule& WithStartDateTime(const Aws::String& value) { SetStartDateTime(value); return *this;}
-    inline ClosedDaysRule& WithStartDateTime(Aws::String&& value) { SetStartDateTime(std::move(value)); return *this;}
-    inline ClosedDaysRule& WithStartDateTime(const char* value) { SetStartDateTime(value); return *this;}
+    template<typename StartDateTimeT = Aws::String>
+    void SetStartDateTime(StartDateTimeT&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::forward<StartDateTimeT>(value); }
+    template<typename StartDateTimeT = Aws::String>
+    ClosedDaysRule& WithStartDateTime(StartDateTimeT&& value) { SetStartDateTime(std::forward<StartDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>End DateTime ISO 8601 format</p>
      */
-    inline const Aws::String& GetEndDateTime() const{ return m_endDateTime; }
+    inline const Aws::String& GetEndDateTime() const { return m_endDateTime; }
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-    inline void SetEndDateTime(const Aws::String& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-    inline void SetEndDateTime(Aws::String&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-    inline void SetEndDateTime(const char* value) { m_endDateTimeHasBeenSet = true; m_endDateTime.assign(value); }
-    inline ClosedDaysRule& WithEndDateTime(const Aws::String& value) { SetEndDateTime(value); return *this;}
-    inline ClosedDaysRule& WithEndDateTime(Aws::String&& value) { SetEndDateTime(std::move(value)); return *this;}
-    inline ClosedDaysRule& WithEndDateTime(const char* value) { SetEndDateTime(value); return *this;}
+    template<typename EndDateTimeT = Aws::String>
+    void SetEndDateTime(EndDateTimeT&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::forward<EndDateTimeT>(value); }
+    template<typename EndDateTimeT = Aws::String>
+    ClosedDaysRule& WithEndDateTime(EndDateTimeT&& value) { SetEndDateTime(std::forward<EndDateTimeT>(value)); return *this;}
     ///@}
   private:
 

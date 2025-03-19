@@ -12,17 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDomainsRequest::ListDomainsRequest() : 
-    m_nextPageTokenHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_maximumPageSize(0),
-    m_maximumPageSizeHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainsRequest::SerializePayload() const
 {
   JsonValue payload;

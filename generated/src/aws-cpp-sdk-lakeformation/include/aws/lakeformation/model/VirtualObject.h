@@ -33,7 +33,7 @@ namespace Model
   class VirtualObject
   {
   public:
-    AWS_LAKEFORMATION_API VirtualObject();
+    AWS_LAKEFORMATION_API VirtualObject() = default;
     AWS_LAKEFORMATION_API VirtualObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API VirtualObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The path to the Amazon S3 object. Must start with s3://</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline VirtualObject& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline VirtualObject& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline VirtualObject& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    VirtualObject& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ETag of the Amazon S3 object.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline VirtualObject& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline VirtualObject& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline VirtualObject& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    VirtualObject& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
   private:
 

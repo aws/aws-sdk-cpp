@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PurchaseRequest::PurchaseRequest() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_purchaseTokenHasBeenSet(false)
-{
-}
-
 PurchaseRequest::PurchaseRequest(const XmlNode& xmlNode)
-  : PurchaseRequest()
 {
   *this = xmlNode;
 }

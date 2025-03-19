@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RemoteIpDetails::RemoteIpDetails() : 
-    m_cityHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_geoLocationHasBeenSet(false),
-    m_ipAddressV4HasBeenSet(false),
-    m_ipAddressV6HasBeenSet(false),
-    m_organizationHasBeenSet(false)
-{
-}
-
 RemoteIpDetails::RemoteIpDetails(JsonView jsonValue)
-  : RemoteIpDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RemoteIpDetails& RemoteIpDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetObject("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetObject("country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("geoLocation"))
   {
     m_geoLocation = jsonValue.GetObject("geoLocation");
-
     m_geoLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressV4"))
   {
     m_ipAddressV4 = jsonValue.GetString("ipAddressV4");
-
     m_ipAddressV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressV6"))
   {
     m_ipAddressV6 = jsonValue.GetString("ipAddressV6");
-
     m_ipAddressV6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organization"))
   {
     m_organization = jsonValue.GetObject("organization");
-
     m_organizationHasBeenSet = true;
   }
-
   return *this;
 }
 

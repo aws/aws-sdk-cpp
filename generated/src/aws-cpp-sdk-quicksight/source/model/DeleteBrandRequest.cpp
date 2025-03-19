@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBrandRequest::DeleteBrandRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_brandIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBrandRequest::SerializePayload() const
 {
   return {};

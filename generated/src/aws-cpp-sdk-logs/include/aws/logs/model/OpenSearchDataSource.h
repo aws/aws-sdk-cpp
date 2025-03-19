@@ -40,7 +40,7 @@ namespace Model
   class OpenSearchDataSource
   {
   public:
-    AWS_CLOUDWATCHLOGS_API OpenSearchDataSource();
+    AWS_CLOUDWATCHLOGS_API OpenSearchDataSource() = default;
     AWS_CLOUDWATCHLOGS_API OpenSearchDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API OpenSearchDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The name of the OpenSearch Service data source.</p>
      */
-    inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+    inline const Aws::String& GetDataSourceName() const { return m_dataSourceName; }
     inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
-    inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
-    inline void SetDataSourceName(const char* value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName.assign(value); }
-    inline OpenSearchDataSource& WithDataSourceName(const Aws::String& value) { SetDataSourceName(value); return *this;}
-    inline OpenSearchDataSource& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
-    inline OpenSearchDataSource& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+    template<typename DataSourceNameT = Aws::String>
+    void SetDataSourceName(DataSourceNameT&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::forward<DataSourceNameT>(value); }
+    template<typename DataSourceNameT = Aws::String>
+    OpenSearchDataSource& WithDataSourceName(DataSourceNameT&& value) { SetDataSourceName(std::forward<DataSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
      * <p>This structure contains information about the status of this OpenSearch
      * Service resource.</p>
      */
-    inline const OpenSearchResourceStatus& GetStatus() const{ return m_status; }
+    inline const OpenSearchResourceStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OpenSearchResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OpenSearchResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OpenSearchDataSource& WithStatus(const OpenSearchResourceStatus& value) { SetStatus(value); return *this;}
-    inline OpenSearchDataSource& WithStatus(OpenSearchResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OpenSearchResourceStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OpenSearchResourceStatus>
+    OpenSearchDataSource& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

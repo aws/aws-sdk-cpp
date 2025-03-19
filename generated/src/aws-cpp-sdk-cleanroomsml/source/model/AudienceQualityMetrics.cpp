@@ -18,15 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceQualityMetrics::AudienceQualityMetrics() : 
-    m_relevanceMetricsHasBeenSet(false),
-    m_recallMetric(0.0),
-    m_recallMetricHasBeenSet(false)
-{
-}
-
 AudienceQualityMetrics::AudienceQualityMetrics(JsonView jsonValue)
-  : AudienceQualityMetrics()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AudienceQualityMetrics& AudienceQualityMetrics::operator =(JsonView jsonValue)
     }
     m_relevanceMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recallMetric"))
   {
     m_recallMetric = jsonValue.GetDouble("recallMetric");
-
     m_recallMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

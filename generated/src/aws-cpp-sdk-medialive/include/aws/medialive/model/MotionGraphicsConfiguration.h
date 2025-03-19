@@ -32,7 +32,7 @@ namespace Model
   class MotionGraphicsConfiguration
   {
   public:
-    AWS_MEDIALIVE_API MotionGraphicsConfiguration();
+    AWS_MEDIALIVE_API MotionGraphicsConfiguration() = default;
     AWS_MEDIALIVE_API MotionGraphicsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MotionGraphicsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,28 +40,26 @@ namespace Model
 
     ///@{
     
-    inline const MotionGraphicsInsertion& GetMotionGraphicsInsertion() const{ return m_motionGraphicsInsertion; }
+    inline MotionGraphicsInsertion GetMotionGraphicsInsertion() const { return m_motionGraphicsInsertion; }
     inline bool MotionGraphicsInsertionHasBeenSet() const { return m_motionGraphicsInsertionHasBeenSet; }
-    inline void SetMotionGraphicsInsertion(const MotionGraphicsInsertion& value) { m_motionGraphicsInsertionHasBeenSet = true; m_motionGraphicsInsertion = value; }
-    inline void SetMotionGraphicsInsertion(MotionGraphicsInsertion&& value) { m_motionGraphicsInsertionHasBeenSet = true; m_motionGraphicsInsertion = std::move(value); }
-    inline MotionGraphicsConfiguration& WithMotionGraphicsInsertion(const MotionGraphicsInsertion& value) { SetMotionGraphicsInsertion(value); return *this;}
-    inline MotionGraphicsConfiguration& WithMotionGraphicsInsertion(MotionGraphicsInsertion&& value) { SetMotionGraphicsInsertion(std::move(value)); return *this;}
+    inline void SetMotionGraphicsInsertion(MotionGraphicsInsertion value) { m_motionGraphicsInsertionHasBeenSet = true; m_motionGraphicsInsertion = value; }
+    inline MotionGraphicsConfiguration& WithMotionGraphicsInsertion(MotionGraphicsInsertion value) { SetMotionGraphicsInsertion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Motion Graphics Settings
      */
-    inline const MotionGraphicsSettings& GetMotionGraphicsSettings() const{ return m_motionGraphicsSettings; }
+    inline const MotionGraphicsSettings& GetMotionGraphicsSettings() const { return m_motionGraphicsSettings; }
     inline bool MotionGraphicsSettingsHasBeenSet() const { return m_motionGraphicsSettingsHasBeenSet; }
-    inline void SetMotionGraphicsSettings(const MotionGraphicsSettings& value) { m_motionGraphicsSettingsHasBeenSet = true; m_motionGraphicsSettings = value; }
-    inline void SetMotionGraphicsSettings(MotionGraphicsSettings&& value) { m_motionGraphicsSettingsHasBeenSet = true; m_motionGraphicsSettings = std::move(value); }
-    inline MotionGraphicsConfiguration& WithMotionGraphicsSettings(const MotionGraphicsSettings& value) { SetMotionGraphicsSettings(value); return *this;}
-    inline MotionGraphicsConfiguration& WithMotionGraphicsSettings(MotionGraphicsSettings&& value) { SetMotionGraphicsSettings(std::move(value)); return *this;}
+    template<typename MotionGraphicsSettingsT = MotionGraphicsSettings>
+    void SetMotionGraphicsSettings(MotionGraphicsSettingsT&& value) { m_motionGraphicsSettingsHasBeenSet = true; m_motionGraphicsSettings = std::forward<MotionGraphicsSettingsT>(value); }
+    template<typename MotionGraphicsSettingsT = MotionGraphicsSettings>
+    MotionGraphicsConfiguration& WithMotionGraphicsSettings(MotionGraphicsSettingsT&& value) { SetMotionGraphicsSettings(std::forward<MotionGraphicsSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    MotionGraphicsInsertion m_motionGraphicsInsertion;
+    MotionGraphicsInsertion m_motionGraphicsInsertion{MotionGraphicsInsertion::NOT_SET};
     bool m_motionGraphicsInsertionHasBeenSet = false;
 
     MotionGraphicsSettings m_motionGraphicsSettings;

@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DirectSchemaChangePolicy::DirectSchemaChangePolicy() : 
-    m_enableUpdateCatalog(false),
-    m_enableUpdateCatalogHasBeenSet(false),
-    m_updateBehavior(UpdateCatalogBehavior::NOT_SET),
-    m_updateBehaviorHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false)
-{
-}
-
 DirectSchemaChangePolicy::DirectSchemaChangePolicy(JsonView jsonValue)
-  : DirectSchemaChangePolicy()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DirectSchemaChangePolicy& DirectSchemaChangePolicy::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("EnableUpdateCatalog"))
   {
     m_enableUpdateCatalog = jsonValue.GetBool("EnableUpdateCatalog");
-
     m_enableUpdateCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateBehavior"))
   {
     m_updateBehavior = UpdateCatalogBehaviorMapper::GetUpdateCatalogBehaviorForName(jsonValue.GetString("UpdateBehavior"));
-
     m_updateBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeThemeRequest::DescribeThemeRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_themeIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeThemeRequest::SerializePayload() const
 {
   return {};

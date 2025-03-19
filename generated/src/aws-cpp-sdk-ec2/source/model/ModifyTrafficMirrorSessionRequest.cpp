@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyTrafficMirrorSessionRequest::ModifyTrafficMirrorSessionRequest() : 
-    m_trafficMirrorSessionIdHasBeenSet(false),
-    m_trafficMirrorTargetIdHasBeenSet(false),
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_packetLength(0),
-    m_packetLengthHasBeenSet(false),
-    m_sessionNumber(0),
-    m_sessionNumberHasBeenSet(false),
-    m_virtualNetworkId(0),
-    m_virtualNetworkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_removeFieldsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyTrafficMirrorSessionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

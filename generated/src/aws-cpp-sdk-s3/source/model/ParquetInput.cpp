@@ -20,10 +20,6 @@ namespace S3
 namespace Model
 {
 
-ParquetInput::ParquetInput()
-{
-}
-
 ParquetInput::ParquetInput(const XmlNode& xmlNode)
 {
   *this = xmlNode;

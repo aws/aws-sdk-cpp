@@ -37,7 +37,7 @@ namespace Model
   class PropertyNotification
   {
   public:
-    AWS_IOTSITEWISE_API PropertyNotification();
+    AWS_IOTSITEWISE_API PropertyNotification() = default;
     AWS_IOTSITEWISE_API PropertyNotification(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API PropertyNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,33 +48,29 @@ namespace Model
      * <p>The MQTT topic to which IoT SiteWise publishes property value update
      * notifications.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline PropertyNotification& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline PropertyNotification& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline PropertyNotification& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    PropertyNotification& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current notification state.</p>
      */
-    inline const PropertyNotificationState& GetState() const{ return m_state; }
+    inline PropertyNotificationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const PropertyNotificationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(PropertyNotificationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline PropertyNotification& WithState(const PropertyNotificationState& value) { SetState(value); return *this;}
-    inline PropertyNotification& WithState(PropertyNotificationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(PropertyNotificationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline PropertyNotification& WithState(PropertyNotificationState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_topic;
     bool m_topicHasBeenSet = false;
 
-    PropertyNotificationState m_state;
+    PropertyNotificationState m_state{PropertyNotificationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

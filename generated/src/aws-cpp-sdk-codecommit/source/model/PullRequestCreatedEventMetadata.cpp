@@ -18,16 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-PullRequestCreatedEventMetadata::PullRequestCreatedEventMetadata() : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceCommitIdHasBeenSet(false),
-    m_destinationCommitIdHasBeenSet(false),
-    m_mergeBaseHasBeenSet(false)
-{
-}
-
 PullRequestCreatedEventMetadata::PullRequestCreatedEventMetadata(JsonView jsonValue)
-  : PullRequestCreatedEventMetadata()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PullRequestCreatedEventMetadata& PullRequestCreatedEventMetadata::operator =(Jso
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCommitId"))
   {
     m_sourceCommitId = jsonValue.GetString("sourceCommitId");
-
     m_sourceCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationCommitId"))
   {
     m_destinationCommitId = jsonValue.GetString("destinationCommitId");
-
     m_destinationCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeBase"))
   {
     m_mergeBase = jsonValue.GetString("mergeBase");
-
     m_mergeBaseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-LanguageWithScore::LanguageWithScore() : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 LanguageWithScore::LanguageWithScore(JsonView jsonValue)
-  : LanguageWithScore()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LanguageWithScore& LanguageWithScore::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

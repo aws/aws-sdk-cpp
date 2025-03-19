@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateAssessmentReportEvidenceFolderRequest::DisassociateAssessmentReportEvidenceFolderRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_evidenceFolderIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateAssessmentReportEvidenceFolderRequest::SerializePayload() const
 {
   JsonValue payload;

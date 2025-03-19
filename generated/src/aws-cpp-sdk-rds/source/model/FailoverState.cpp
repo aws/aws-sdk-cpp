@@ -20,18 +20,7 @@ namespace RDS
 namespace Model
 {
 
-FailoverState::FailoverState() : 
-    m_status(FailoverStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fromDbClusterArnHasBeenSet(false),
-    m_toDbClusterArnHasBeenSet(false),
-    m_isDataLossAllowed(false),
-    m_isDataLossAllowedHasBeenSet(false)
-{
-}
-
 FailoverState::FailoverState(const XmlNode& xmlNode)
-  : FailoverState()
 {
   *this = xmlNode;
 }
@@ -45,7 +34,7 @@ FailoverState& FailoverState::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = FailoverStatusMapper::GetFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = FailoverStatusMapper::GetFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode fromDbClusterArnNode = resultNode.FirstChild("FromDbClusterArn");

@@ -18,20 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SpotProvisioningSpecification::SpotProvisioningSpecification() : 
-    m_timeoutDurationMinutes(0),
-    m_timeoutDurationMinutesHasBeenSet(false),
-    m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
-    m_timeoutActionHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
-{
-}
-
 SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue)
-  : SpotProvisioningSpecification()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ SpotProvisioningSpecification& SpotProvisioningSpecification::operator =(JsonVie
   if(jsonValue.ValueExists("TimeoutDurationMinutes"))
   {
     m_timeoutDurationMinutes = jsonValue.GetInteger("TimeoutDurationMinutes");
-
     m_timeoutDurationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutAction"))
   {
     m_timeoutAction = SpotProvisioningTimeoutActionMapper::GetSpotProvisioningTimeoutActionForName(jsonValue.GetString("TimeoutAction"));
-
     m_timeoutActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockDurationMinutes"))
   {
     m_blockDurationMinutes = jsonValue.GetInteger("BlockDurationMinutes");
-
     m_blockDurationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocationStrategy"))
   {
     m_allocationStrategy = SpotProvisioningAllocationStrategyMapper::GetSpotProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
-
     m_allocationStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

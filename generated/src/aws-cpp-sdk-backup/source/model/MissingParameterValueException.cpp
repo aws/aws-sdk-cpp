@@ -18,16 +18,7 @@ namespace Backup
 namespace Model
 {
 
-MissingParameterValueException::MissingParameterValueException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 MissingParameterValueException::MissingParameterValueException(JsonView jsonValue)
-  : MissingParameterValueException()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MissingParameterValueException& MissingParameterValueException::operator =(JsonV
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     m_context = jsonValue.GetString("Context");
-
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

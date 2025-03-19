@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImageRequest::DescribeImageRequest() : 
-    m_imageNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImageRequest::SerializePayload() const
 {
   JsonValue payload;

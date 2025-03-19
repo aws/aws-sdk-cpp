@@ -18,21 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksContainer::EksContainer() : 
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imagePullPolicyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_envHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
-    m_securityContextHasBeenSet(false)
-{
-}
-
 EksContainer::EksContainer(JsonView jsonValue)
-  : EksContainer()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePullPolicy"))
   {
     m_imagePullPolicy = jsonValue.GetString("imagePullPolicy");
-
     m_imagePullPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("command"))
   {
     Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
@@ -69,7 +49,6 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("args"))
   {
     Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("args");
@@ -79,7 +58,6 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
     }
     m_argsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("env"))
   {
     Aws::Utils::Array<JsonView> envJsonList = jsonValue.GetArray("env");
@@ -89,14 +67,11 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
     }
     m_envHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     m_resources = jsonValue.GetObject("resources");
-
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeMounts"))
   {
     Aws::Utils::Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("volumeMounts");
@@ -106,14 +81,11 @@ EksContainer& EksContainer::operator =(JsonView jsonValue)
     }
     m_volumeMountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityContext"))
   {
     m_securityContext = jsonValue.GetObject("securityContext");
-
     m_securityContextHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetScanRequest::GetScanRequest() : 
-    m_runIdHasBeenSet(false),
-    m_scanNameHasBeenSet(false)
-{
-}
-
 Aws::String GetScanRequest::SerializePayload() const
 {
   return {};

@@ -18,27 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-AnswerSummary::AnswerSummary() : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_choicesHasBeenSet(false),
-    m_selectedChoicesHasBeenSet(false),
-    m_choiceAnswerSummariesHasBeenSet(false),
-    m_isApplicable(false),
-    m_isApplicableHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_questionType(QuestionType::NOT_SET),
-    m_questionTypeHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
-{
-}
-
 AnswerSummary::AnswerSummary(JsonView jsonValue)
-  : AnswerSummary()
 {
   *this = jsonValue;
 }
@@ -48,24 +28,18 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionTitle"))
   {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
-
     m_questionTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Choices"))
   {
     Aws::Utils::Array<JsonView> choicesJsonList = jsonValue.GetArray("Choices");
@@ -75,7 +49,6 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     }
     m_choicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedChoices"))
   {
     Aws::Utils::Array<JsonView> selectedChoicesJsonList = jsonValue.GetArray("SelectedChoices");
@@ -85,7 +58,6 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     }
     m_selectedChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChoiceAnswerSummaries"))
   {
     Aws::Utils::Array<JsonView> choiceAnswerSummariesJsonList = jsonValue.GetArray("ChoiceAnswerSummaries");
@@ -95,42 +67,31 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     }
     m_choiceAnswerSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsApplicable"))
   {
     m_isApplicable = jsonValue.GetBool("IsApplicable");
-
     m_isApplicableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Risk"))
   {
     m_risk = RiskMapper::GetRiskForName(jsonValue.GetString("Risk"));
-
     m_riskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = AnswerReasonMapper::GetAnswerReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionType"))
   {
     m_questionType = QuestionTypeMapper::GetQuestionTypeForName(jsonValue.GetString("QuestionType"));
-
     m_questionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraConfiguration"))
   {
     m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
-
     m_jiraConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLJobStepMetadata::AutoMLJobStepMetadata() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 AutoMLJobStepMetadata::AutoMLJobStepMetadata(JsonView jsonValue)
-  : AutoMLJobStepMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoMLJobStepMetadata& AutoMLJobStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

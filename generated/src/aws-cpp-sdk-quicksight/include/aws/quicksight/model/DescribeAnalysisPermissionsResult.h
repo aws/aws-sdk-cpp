@@ -29,7 +29,7 @@ namespace Model
   class DescribeAnalysisPermissionsResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeAnalysisPermissionsResult();
+    AWS_QUICKSIGHT_API DescribeAnalysisPermissionsResult() = default;
     AWS_QUICKSIGHT_API DescribeAnalysisPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeAnalysisPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The ID of the analysis whose permissions you're describing.</p>
      */
-    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-    inline void SetAnalysisId(const Aws::String& value) { m_analysisId = value; }
-    inline void SetAnalysisId(Aws::String&& value) { m_analysisId = std::move(value); }
-    inline void SetAnalysisId(const char* value) { m_analysisId.assign(value); }
-    inline DescribeAnalysisPermissionsResult& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
+    template<typename AnalysisIdT = Aws::String>
+    void SetAnalysisId(AnalysisIdT&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::forward<AnalysisIdT>(value); }
+    template<typename AnalysisIdT = Aws::String>
+    DescribeAnalysisPermissionsResult& WithAnalysisId(AnalysisIdT&& value) { SetAnalysisId(std::forward<AnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're
      * describing.</p>
      */
-    inline const Aws::String& GetAnalysisArn() const{ return m_analysisArn; }
-    inline void SetAnalysisArn(const Aws::String& value) { m_analysisArn = value; }
-    inline void SetAnalysisArn(Aws::String&& value) { m_analysisArn = std::move(value); }
-    inline void SetAnalysisArn(const char* value) { m_analysisArn.assign(value); }
-    inline DescribeAnalysisPermissionsResult& WithAnalysisArn(const Aws::String& value) { SetAnalysisArn(value); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithAnalysisArn(Aws::String&& value) { SetAnalysisArn(std::move(value)); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithAnalysisArn(const char* value) { SetAnalysisArn(value); return *this;}
+    inline const Aws::String& GetAnalysisArn() const { return m_analysisArn; }
+    template<typename AnalysisArnT = Aws::String>
+    void SetAnalysisArn(AnalysisArnT&& value) { m_analysisArnHasBeenSet = true; m_analysisArn = std::forward<AnalysisArnT>(value); }
+    template<typename AnalysisArnT = Aws::String>
+    DescribeAnalysisPermissionsResult& WithAnalysisArn(AnalysisArnT&& value) { SetAnalysisArn(std::forward<AnalysisArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,45 +62,48 @@ namespace Model
      * <p>A structure that describes the principals and the resource-level permissions
      * on an analysis.</p>
      */
-    inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
-    inline DescribeAnalysisPermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline DescribeAnalysisPermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
-    inline DescribeAnalysisPermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourcePermission>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    DescribeAnalysisPermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = ResourcePermission>
+    DescribeAnalysisPermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeAnalysisPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAnalysisPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAnalysisPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAnalysisPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_analysisId;
+    bool m_analysisIdHasBeenSet = false;
 
     Aws::String m_analysisArn;
+    bool m_analysisArnHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

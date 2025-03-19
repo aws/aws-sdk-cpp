@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAssetPropertyValueRequest::GetAssetPropertyValueRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false)
-{
-}
-
 Aws::String GetAssetPropertyValueRequest::SerializePayload() const
 {
   return {};

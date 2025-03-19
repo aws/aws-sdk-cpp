@@ -35,7 +35,7 @@ namespace Model
   class ImageCustomAction
   {
   public:
-    AWS_QUICKSIGHT_API ImageCustomAction();
+    AWS_QUICKSIGHT_API ImageCustomAction() = default;
     AWS_QUICKSIGHT_API ImageCustomAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ImageCustomAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,34 @@ namespace Model
     /**
      * <p>The ID of the custom action.</p>
      */
-    inline const Aws::String& GetCustomActionId() const{ return m_customActionId; }
+    inline const Aws::String& GetCustomActionId() const { return m_customActionId; }
     inline bool CustomActionIdHasBeenSet() const { return m_customActionIdHasBeenSet; }
-    inline void SetCustomActionId(const Aws::String& value) { m_customActionIdHasBeenSet = true; m_customActionId = value; }
-    inline void SetCustomActionId(Aws::String&& value) { m_customActionIdHasBeenSet = true; m_customActionId = std::move(value); }
-    inline void SetCustomActionId(const char* value) { m_customActionIdHasBeenSet = true; m_customActionId.assign(value); }
-    inline ImageCustomAction& WithCustomActionId(const Aws::String& value) { SetCustomActionId(value); return *this;}
-    inline ImageCustomAction& WithCustomActionId(Aws::String&& value) { SetCustomActionId(std::move(value)); return *this;}
-    inline ImageCustomAction& WithCustomActionId(const char* value) { SetCustomActionId(value); return *this;}
+    template<typename CustomActionIdT = Aws::String>
+    void SetCustomActionId(CustomActionIdT&& value) { m_customActionIdHasBeenSet = true; m_customActionId = std::forward<CustomActionIdT>(value); }
+    template<typename CustomActionIdT = Aws::String>
+    ImageCustomAction& WithCustomActionId(CustomActionIdT&& value) { SetCustomActionId(std::forward<CustomActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the custom action.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImageCustomAction& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImageCustomAction& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImageCustomAction& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImageCustomAction& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the custom action.</p>
      */
-    inline const WidgetStatus& GetStatus() const{ return m_status; }
+    inline WidgetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WidgetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WidgetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImageCustomAction& WithStatus(const WidgetStatus& value) { SetStatus(value); return *this;}
-    inline ImageCustomAction& WithStatus(WidgetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WidgetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImageCustomAction& WithStatus(WidgetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,10 @@ namespace Model
      * <code>MENU</code>: Initiates a custom action by right pointer click from the
      * menu.</p> </li> </ul>
      */
-    inline const ImageCustomActionTrigger& GetTrigger() const{ return m_trigger; }
+    inline ImageCustomActionTrigger GetTrigger() const { return m_trigger; }
     inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-    inline void SetTrigger(const ImageCustomActionTrigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-    inline void SetTrigger(ImageCustomActionTrigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-    inline ImageCustomAction& WithTrigger(const ImageCustomActionTrigger& value) { SetTrigger(value); return *this;}
-    inline ImageCustomAction& WithTrigger(ImageCustomActionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
+    inline void SetTrigger(ImageCustomActionTrigger value) { m_triggerHasBeenSet = true; m_trigger = value; }
+    inline ImageCustomAction& WithTrigger(ImageCustomActionTrigger value) { SetTrigger(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,14 @@ namespace Model
      * type structure. For this structure to be valid, only one of the attributes can
      * be defined.</p>
      */
-    inline const Aws::Vector<ImageCustomActionOperation>& GetActionOperations() const{ return m_actionOperations; }
+    inline const Aws::Vector<ImageCustomActionOperation>& GetActionOperations() const { return m_actionOperations; }
     inline bool ActionOperationsHasBeenSet() const { return m_actionOperationsHasBeenSet; }
-    inline void SetActionOperations(const Aws::Vector<ImageCustomActionOperation>& value) { m_actionOperationsHasBeenSet = true; m_actionOperations = value; }
-    inline void SetActionOperations(Aws::Vector<ImageCustomActionOperation>&& value) { m_actionOperationsHasBeenSet = true; m_actionOperations = std::move(value); }
-    inline ImageCustomAction& WithActionOperations(const Aws::Vector<ImageCustomActionOperation>& value) { SetActionOperations(value); return *this;}
-    inline ImageCustomAction& WithActionOperations(Aws::Vector<ImageCustomActionOperation>&& value) { SetActionOperations(std::move(value)); return *this;}
-    inline ImageCustomAction& AddActionOperations(const ImageCustomActionOperation& value) { m_actionOperationsHasBeenSet = true; m_actionOperations.push_back(value); return *this; }
-    inline ImageCustomAction& AddActionOperations(ImageCustomActionOperation&& value) { m_actionOperationsHasBeenSet = true; m_actionOperations.push_back(std::move(value)); return *this; }
+    template<typename ActionOperationsT = Aws::Vector<ImageCustomActionOperation>>
+    void SetActionOperations(ActionOperationsT&& value) { m_actionOperationsHasBeenSet = true; m_actionOperations = std::forward<ActionOperationsT>(value); }
+    template<typename ActionOperationsT = Aws::Vector<ImageCustomActionOperation>>
+    ImageCustomAction& WithActionOperations(ActionOperationsT&& value) { SetActionOperations(std::forward<ActionOperationsT>(value)); return *this;}
+    template<typename ActionOperationsT = ImageCustomActionOperation>
+    ImageCustomAction& AddActionOperations(ActionOperationsT&& value) { m_actionOperationsHasBeenSet = true; m_actionOperations.emplace_back(std::forward<ActionOperationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -120,10 +112,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    WidgetStatus m_status;
+    WidgetStatus m_status{WidgetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ImageCustomActionTrigger m_trigger;
+    ImageCustomActionTrigger m_trigger{ImageCustomActionTrigger::NOT_SET};
     bool m_triggerHasBeenSet = false;
 
     Aws::Vector<ImageCustomActionOperation> m_actionOperations;

@@ -28,7 +28,7 @@ namespace Model
   class PutRepositoryCatalogDataResult
   {
   public:
-    AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult();
+    AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult() = default;
     AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECRPUBLIC_API PutRepositoryCatalogDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The catalog data for the repository.</p>
      */
-    inline const RepositoryCatalogData& GetCatalogData() const{ return m_catalogData; }
-    inline void SetCatalogData(const RepositoryCatalogData& value) { m_catalogData = value; }
-    inline void SetCatalogData(RepositoryCatalogData&& value) { m_catalogData = std::move(value); }
-    inline PutRepositoryCatalogDataResult& WithCatalogData(const RepositoryCatalogData& value) { SetCatalogData(value); return *this;}
-    inline PutRepositoryCatalogDataResult& WithCatalogData(RepositoryCatalogData&& value) { SetCatalogData(std::move(value)); return *this;}
+    inline const RepositoryCatalogData& GetCatalogData() const { return m_catalogData; }
+    template<typename CatalogDataT = RepositoryCatalogData>
+    void SetCatalogData(CatalogDataT&& value) { m_catalogDataHasBeenSet = true; m_catalogData = std::forward<CatalogDataT>(value); }
+    template<typename CatalogDataT = RepositoryCatalogData>
+    PutRepositoryCatalogDataResult& WithCatalogData(CatalogDataT&& value) { SetCatalogData(std::forward<CatalogDataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRepositoryCatalogDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRepositoryCatalogDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRepositoryCatalogDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRepositoryCatalogDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RepositoryCatalogData m_catalogData;
+    bool m_catalogDataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

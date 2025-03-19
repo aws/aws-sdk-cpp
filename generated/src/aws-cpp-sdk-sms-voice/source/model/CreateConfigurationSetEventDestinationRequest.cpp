@@ -12,13 +12,6 @@ using namespace Aws::PinpointSMSVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfigurationSetEventDestinationRequest::CreateConfigurationSetEventDestinationRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfigurationSetEventDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

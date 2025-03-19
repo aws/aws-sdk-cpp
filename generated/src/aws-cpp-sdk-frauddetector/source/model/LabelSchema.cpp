@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-LabelSchema::LabelSchema() : 
-    m_labelMapperHasBeenSet(false),
-    m_unlabeledEventsTreatment(UnlabeledEventsTreatment::NOT_SET),
-    m_unlabeledEventsTreatmentHasBeenSet(false)
-{
-}
-
 LabelSchema::LabelSchema(JsonView jsonValue)
-  : LabelSchema()
 {
   *this = jsonValue;
 }
@@ -49,14 +41,11 @@ LabelSchema& LabelSchema::operator =(JsonView jsonValue)
     }
     m_labelMapperHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unlabeledEventsTreatment"))
   {
     m_unlabeledEventsTreatment = UnlabeledEventsTreatmentMapper::GetUnlabeledEventsTreatmentForName(jsonValue.GetString("unlabeledEventsTreatment"));
-
     m_unlabeledEventsTreatmentHasBeenSet = true;
   }
-
   return *this;
 }
 

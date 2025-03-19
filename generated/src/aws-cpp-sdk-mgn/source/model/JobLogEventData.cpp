@@ -18,16 +18,7 @@ namespace mgn
 namespace Model
 {
 
-JobLogEventData::JobLogEventData() : 
-    m_conversionServerIDHasBeenSet(false),
-    m_rawErrorHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_targetInstanceIDHasBeenSet(false)
-{
-}
-
 JobLogEventData::JobLogEventData(JsonView jsonValue)
-  : JobLogEventData()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ JobLogEventData& JobLogEventData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversionServerID"))
   {
     m_conversionServerID = jsonValue.GetString("conversionServerID");
-
     m_conversionServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawError"))
   {
     m_rawError = jsonValue.GetString("rawError");
-
     m_rawErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetInstanceID"))
   {
     m_targetInstanceID = jsonValue.GetString("targetInstanceID");
-
     m_targetInstanceIDHasBeenSet = true;
   }
-
   return *this;
 }
 

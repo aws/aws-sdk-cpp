@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGroupMembershipResult::CreateGroupMembershipResult()
-{
-}
-
 CreateGroupMembershipResult::CreateGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateGroupMembershipResult& CreateGroupMembershipResult::operator =(const Aws::
   if(jsonValue.ValueExists("MembershipId"))
   {
     m_membershipId = jsonValue.GetString("MembershipId");
-
+    m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-
+    m_identityStoreIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

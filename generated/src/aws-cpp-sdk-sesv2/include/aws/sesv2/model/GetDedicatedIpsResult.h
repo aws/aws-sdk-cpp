@@ -35,7 +35,7 @@ namespace Model
   class GetDedicatedIpsResult
   {
   public:
-    AWS_SESV2_API GetDedicatedIpsResult();
+    AWS_SESV2_API GetDedicatedIpsResult() = default;
     AWS_SESV2_API GetDedicatedIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetDedicatedIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,13 @@ namespace Model
      * <p>A list of dedicated IP addresses that are associated with your Amazon Web
      * Services account.</p>
      */
-    inline const Aws::Vector<DedicatedIp>& GetDedicatedIps() const{ return m_dedicatedIps; }
-    inline void SetDedicatedIps(const Aws::Vector<DedicatedIp>& value) { m_dedicatedIps = value; }
-    inline void SetDedicatedIps(Aws::Vector<DedicatedIp>&& value) { m_dedicatedIps = std::move(value); }
-    inline GetDedicatedIpsResult& WithDedicatedIps(const Aws::Vector<DedicatedIp>& value) { SetDedicatedIps(value); return *this;}
-    inline GetDedicatedIpsResult& WithDedicatedIps(Aws::Vector<DedicatedIp>&& value) { SetDedicatedIps(std::move(value)); return *this;}
-    inline GetDedicatedIpsResult& AddDedicatedIps(const DedicatedIp& value) { m_dedicatedIps.push_back(value); return *this; }
-    inline GetDedicatedIpsResult& AddDedicatedIps(DedicatedIp&& value) { m_dedicatedIps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DedicatedIp>& GetDedicatedIps() const { return m_dedicatedIps; }
+    template<typename DedicatedIpsT = Aws::Vector<DedicatedIp>>
+    void SetDedicatedIps(DedicatedIpsT&& value) { m_dedicatedIpsHasBeenSet = true; m_dedicatedIps = std::forward<DedicatedIpsT>(value); }
+    template<typename DedicatedIpsT = Aws::Vector<DedicatedIp>>
+    GetDedicatedIpsResult& WithDedicatedIps(DedicatedIpsT&& value) { SetDedicatedIps(std::forward<DedicatedIpsT>(value)); return *this;}
+    template<typename DedicatedIpsT = DedicatedIp>
+    GetDedicatedIpsResult& AddDedicatedIps(DedicatedIpsT&& value) { m_dedicatedIpsHasBeenSet = true; m_dedicatedIps.emplace_back(std::forward<DedicatedIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,32 +61,31 @@ namespace Model
      * <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetDedicatedIpsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetDedicatedIpsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetDedicatedIpsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetDedicatedIpsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDedicatedIpsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDedicatedIpsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDedicatedIpsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDedicatedIpsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DedicatedIp> m_dedicatedIps;
+    bool m_dedicatedIpsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CodeSnippetError::CodeSnippetError() : 
-    m_errorCode(CodeSnippetErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_findingArnHasBeenSet(false)
-{
-}
-
 CodeSnippetError::CodeSnippetError(JsonView jsonValue)
-  : CodeSnippetError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CodeSnippetError& CodeSnippetError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = CodeSnippetErrorCodeMapper::GetCodeSnippetErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingArn"))
   {
     m_findingArn = jsonValue.GetString("findingArn");
-
     m_findingArnHasBeenSet = true;
   }
-
   return *this;
 }
 

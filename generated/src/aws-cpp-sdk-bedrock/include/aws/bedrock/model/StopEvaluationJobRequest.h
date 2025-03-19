@@ -21,7 +21,7 @@ namespace Model
   class StopEvaluationJobRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API StopEvaluationJobRequest();
+    AWS_BEDROCK_API StopEvaluationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the evaluation job you want to stop.</p>
      */
-    inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
+    inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
-    inline void SetJobIdentifier(const Aws::String& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = value; }
-    inline void SetJobIdentifier(Aws::String&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::move(value); }
-    inline void SetJobIdentifier(const char* value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier.assign(value); }
-    inline StopEvaluationJobRequest& WithJobIdentifier(const Aws::String& value) { SetJobIdentifier(value); return *this;}
-    inline StopEvaluationJobRequest& WithJobIdentifier(Aws::String&& value) { SetJobIdentifier(std::move(value)); return *this;}
-    inline StopEvaluationJobRequest& WithJobIdentifier(const char* value) { SetJobIdentifier(value); return *this;}
+    template<typename JobIdentifierT = Aws::String>
+    void SetJobIdentifier(JobIdentifierT&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::forward<JobIdentifierT>(value); }
+    template<typename JobIdentifierT = Aws::String>
+    StopEvaluationJobRequest& WithJobIdentifier(JobIdentifierT&& value) { SetJobIdentifier(std::forward<JobIdentifierT>(value)); return *this;}
     ///@}
   private:
 

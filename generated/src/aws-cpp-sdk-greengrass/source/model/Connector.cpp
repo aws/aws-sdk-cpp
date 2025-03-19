@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-Connector::Connector() : 
-    m_connectorArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Connector::Connector(JsonView jsonValue)
-  : Connector()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Connector& Connector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectorArn"))
   {
     m_connectorArn = jsonValue.GetString("ConnectorArn");
-
     m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -56,7 +44,6 @@ Connector& Connector::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

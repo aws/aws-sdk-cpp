@@ -36,52 +36,51 @@ namespace Model
   class GetRestApisResult
   {
   public:
-    AWS_APIGATEWAY_API GetRestApisResult();
+    AWS_APIGATEWAY_API GetRestApisResult() = default;
     AWS_APIGATEWAY_API GetRestApisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetRestApisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::String& value) { m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_position.assign(value); }
-    inline GetRestApisResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetRestApisResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetRestApisResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    inline const Aws::String& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetRestApisResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current page of elements from this collection.</p>
      */
-    inline const Aws::Vector<RestApi>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<RestApi>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<RestApi>&& value) { m_items = std::move(value); }
-    inline GetRestApisResult& WithItems(const Aws::Vector<RestApi>& value) { SetItems(value); return *this;}
-    inline GetRestApisResult& WithItems(Aws::Vector<RestApi>&& value) { SetItems(std::move(value)); return *this;}
-    inline GetRestApisResult& AddItems(const RestApi& value) { m_items.push_back(value); return *this; }
-    inline GetRestApisResult& AddItems(RestApi&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RestApi>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<RestApi>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<RestApi>>
+    GetRestApisResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = RestApi>
+    GetRestApisResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRestApisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRestApisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRestApisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRestApisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<RestApi> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

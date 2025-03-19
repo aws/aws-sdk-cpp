@@ -39,7 +39,7 @@ namespace Model
   class RegionOfInterest
   {
   public:
-    AWS_REKOGNITION_API RegionOfInterest();
+    AWS_REKOGNITION_API RegionOfInterest() = default;
     AWS_REKOGNITION_API RegionOfInterest(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API RegionOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
     /**
      * <p>The box representing a region of interest on screen.</p>
      */
-    inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+    inline const BoundingBox& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline RegionOfInterest& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-    inline RegionOfInterest& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = BoundingBox>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = BoundingBox>
+    RegionOfInterest& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +62,14 @@ namespace Model
      * <p> Specifies a shape made up of up to 10 <code>Point</code> objects to define a
      * region of interest. </p>
      */
-    inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
+    inline const Aws::Vector<Point>& GetPolygon() const { return m_polygon; }
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-    inline void SetPolygon(const Aws::Vector<Point>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-    inline void SetPolygon(Aws::Vector<Point>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-    inline RegionOfInterest& WithPolygon(const Aws::Vector<Point>& value) { SetPolygon(value); return *this;}
-    inline RegionOfInterest& WithPolygon(Aws::Vector<Point>&& value) { SetPolygon(std::move(value)); return *this;}
-    inline RegionOfInterest& AddPolygon(const Point& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-    inline RegionOfInterest& AddPolygon(Point&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+    template<typename PolygonT = Aws::Vector<Point>>
+    void SetPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon = std::forward<PolygonT>(value); }
+    template<typename PolygonT = Aws::Vector<Point>>
+    RegionOfInterest& WithPolygon(PolygonT&& value) { SetPolygon(std::forward<PolygonT>(value)); return *this;}
+    template<typename PolygonT = Point>
+    RegionOfInterest& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
   private:
 

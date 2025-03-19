@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLocalGatewayRouteTableResponse::CreateLocalGatewayRouteTableResponse()
-{
-}
-
 CreateLocalGatewayRouteTableResponse::CreateLocalGatewayRouteTableResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateLocalGatewayRouteTableResponse& CreateLocalGatewayRouteTableResponse::oper
     if(!localGatewayRouteTableNode.IsNull())
     {
       m_localGatewayRouteTable = localGatewayRouteTableNode;
+      m_localGatewayRouteTableHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateLocalGatewayRouteTableResponse& CreateLocalGatewayRouteTableResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateLocalGatewayRouteTableResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

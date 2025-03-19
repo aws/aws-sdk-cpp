@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListComponentTypesResult::ListComponentTypesResult() : 
-    m_maxResults(0)
-{
-}
-
 ListComponentTypesResult::ListComponentTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListComponentTypesResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ ListComponentTypesResult& ListComponentTypesResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
+    m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentTypeSummaries"))
   {
     Aws::Utils::Array<JsonView> componentTypeSummariesJsonList = jsonValue.GetArray("componentTypeSummaries");
@@ -44,26 +37,25 @@ ListComponentTypesResult& ListComponentTypesResult::operator =(const Aws::Amazon
     {
       m_componentTypeSummaries.push_back(componentTypeSummariesJsonList[componentTypeSummariesIndex].AsObject());
     }
+    m_componentTypeSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxResults"))
   {
     m_maxResults = jsonValue.GetInteger("maxResults");
-
+    m_maxResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

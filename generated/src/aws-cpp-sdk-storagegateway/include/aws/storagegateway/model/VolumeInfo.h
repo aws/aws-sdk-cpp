@@ -31,7 +31,7 @@ namespace Model
   class VolumeInfo
   {
   public:
-    AWS_STORAGEGATEWAY_API VolumeInfo();
+    AWS_STORAGEGATEWAY_API VolumeInfo() = default;
     AWS_STORAGEGATEWAY_API VolumeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API VolumeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * </p> <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-    inline VolumeInfo& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline VolumeInfo& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline VolumeInfo& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    VolumeInfo& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,22 @@ namespace Model
      * operations.</p> <p>Valid Values: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline VolumeInfo& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline VolumeInfo& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline VolumeInfo& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    VolumeInfo& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline VolumeInfo& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline VolumeInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline VolumeInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    VolumeInfo& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * for other operations.</p> <p>Valid Values: 50 to 500 lowercase letters, numbers,
      * periods (.), and hyphens (-).</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline VolumeInfo& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline VolumeInfo& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline VolumeInfo& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    VolumeInfo& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +98,12 @@ namespace Model
      * <p>One of the VolumeType enumeration values describing the type of the
      * volume.</p>
      */
-    inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+    inline const Aws::String& GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
-    inline VolumeInfo& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
-    inline VolumeInfo& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
-    inline VolumeInfo& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
+    template<typename VolumeTypeT = Aws::String>
+    void SetVolumeType(VolumeTypeT&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::forward<VolumeTypeT>(value); }
+    template<typename VolumeTypeT = Aws::String>
+    VolumeInfo& WithVolumeType(VolumeTypeT&& value) { SetVolumeType(std::forward<VolumeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +111,7 @@ namespace Model
      * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
      * letters, numbers, periods (.), and hyphens (-).</p>
      */
-    inline long long GetVolumeSizeInBytes() const{ return m_volumeSizeInBytes; }
+    inline long long GetVolumeSizeInBytes() const { return m_volumeSizeInBytes; }
     inline bool VolumeSizeInBytesHasBeenSet() const { return m_volumeSizeInBytesHasBeenSet; }
     inline void SetVolumeSizeInBytes(long long value) { m_volumeSizeInBytesHasBeenSet = true; m_volumeSizeInBytes = value; }
     inline VolumeInfo& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
@@ -132,14 +122,12 @@ namespace Model
      * <p>One of the VolumeStatus values that indicates the state of the storage
      * volume.</p>
      */
-    inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
+    inline const Aws::String& GetVolumeAttachmentStatus() const { return m_volumeAttachmentStatus; }
     inline bool VolumeAttachmentStatusHasBeenSet() const { return m_volumeAttachmentStatusHasBeenSet; }
-    inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
-    inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
-    inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
-    inline VolumeInfo& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
-    inline VolumeInfo& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
-    inline VolumeInfo& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
+    template<typename VolumeAttachmentStatusT = Aws::String>
+    void SetVolumeAttachmentStatus(VolumeAttachmentStatusT&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::forward<VolumeAttachmentStatusT>(value); }
+    template<typename VolumeAttachmentStatusT = Aws::String>
+    VolumeInfo& WithVolumeAttachmentStatus(VolumeAttachmentStatusT&& value) { SetVolumeAttachmentStatus(std::forward<VolumeAttachmentStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,7 +146,7 @@ namespace Model
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet = false;
 
-    long long m_volumeSizeInBytes;
+    long long m_volumeSizeInBytes{0};
     bool m_volumeSizeInBytesHasBeenSet = false;
 
     Aws::String m_volumeAttachmentStatus;

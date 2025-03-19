@@ -20,26 +20,7 @@ namespace RDS
 namespace Model
 {
 
-TenantDatabase::TenantDatabase() : 
-    m_tenantDatabaseCreateTimeHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_tenantDatabaseResourceIdHasBeenSet(false),
-    m_tenantDatabaseARNHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_ncharCharacterSetNameHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 TenantDatabase::TenantDatabase(const XmlNode& xmlNode)
-  : TenantDatabase()
 {
   *this = xmlNode;
 }
@@ -126,6 +107,7 @@ TenantDatabase& TenantDatabase::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);

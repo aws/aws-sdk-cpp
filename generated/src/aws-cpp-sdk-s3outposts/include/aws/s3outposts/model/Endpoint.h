@@ -43,7 +43,7 @@ namespace Model
   class Endpoint
   {
   public:
-    AWS_S3OUTPOSTS_API Endpoint();
+    AWS_S3OUTPOSTS_API Endpoint() = default;
     AWS_S3OUTPOSTS_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3OUTPOSTS_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,122 +53,108 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline Endpoint& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline Endpoint& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline Endpoint& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    Endpoint& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Outposts.</p>
      */
-    inline const Aws::String& GetOutpostsId() const{ return m_outpostsId; }
+    inline const Aws::String& GetOutpostsId() const { return m_outpostsId; }
     inline bool OutpostsIdHasBeenSet() const { return m_outpostsIdHasBeenSet; }
-    inline void SetOutpostsId(const Aws::String& value) { m_outpostsIdHasBeenSet = true; m_outpostsId = value; }
-    inline void SetOutpostsId(Aws::String&& value) { m_outpostsIdHasBeenSet = true; m_outpostsId = std::move(value); }
-    inline void SetOutpostsId(const char* value) { m_outpostsIdHasBeenSet = true; m_outpostsId.assign(value); }
-    inline Endpoint& WithOutpostsId(const Aws::String& value) { SetOutpostsId(value); return *this;}
-    inline Endpoint& WithOutpostsId(Aws::String&& value) { SetOutpostsId(std::move(value)); return *this;}
-    inline Endpoint& WithOutpostsId(const char* value) { SetOutpostsId(value); return *this;}
+    template<typename OutpostsIdT = Aws::String>
+    void SetOutpostsId(OutpostsIdT&& value) { m_outpostsIdHasBeenSet = true; m_outpostsId = std::forward<OutpostsIdT>(value); }
+    template<typename OutpostsIdT = Aws::String>
+    Endpoint& WithOutpostsId(OutpostsIdT&& value) { SetOutpostsId(std::forward<OutpostsIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC CIDR committed by this endpoint.</p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline Endpoint& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline Endpoint& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline Endpoint& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    Endpoint& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the endpoint.</p>
      */
-    inline const EndpointStatus& GetStatus() const{ return m_status; }
+    inline EndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Endpoint& WithStatus(const EndpointStatus& value) { SetStatus(value); return *this;}
-    inline Endpoint& WithStatus(EndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Endpoint& WithStatus(EndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the endpoint was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Endpoint& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Endpoint& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Endpoint& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network interface of the endpoint.</p>
      */
-    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline Endpoint& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
-    inline Endpoint& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline Endpoint& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline Endpoint& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    Endpoint& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = NetworkInterface>
+    Endpoint& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC used for the endpoint.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline Endpoint& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline Endpoint& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline Endpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    Endpoint& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnet used for the endpoint.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline Endpoint& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline Endpoint& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline Endpoint& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    Endpoint& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the security group used for the endpoint.</p>
      */
-    inline const Aws::String& GetSecurityGroupId() const{ return m_securityGroupId; }
+    inline const Aws::String& GetSecurityGroupId() const { return m_securityGroupId; }
     inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
-    inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
-    inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::move(value); }
-    inline void SetSecurityGroupId(const char* value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId.assign(value); }
-    inline Endpoint& WithSecurityGroupId(const Aws::String& value) { SetSecurityGroupId(value); return *this;}
-    inline Endpoint& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(std::move(value)); return *this;}
-    inline Endpoint& WithSecurityGroupId(const char* value) { SetSecurityGroupId(value); return *this;}
+    template<typename SecurityGroupIdT = Aws::String>
+    void SetSecurityGroupId(SecurityGroupIdT&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::forward<SecurityGroupIdT>(value); }
+    template<typename SecurityGroupIdT = Aws::String>
+    Endpoint& WithSecurityGroupId(SecurityGroupIdT&& value) { SetSecurityGroupId(std::forward<SecurityGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,38 +162,34 @@ namespace Model
      * <p>The type of connectivity used to access the Amazon S3 on Outposts
      * endpoint.</p>
      */
-    inline const EndpointAccessType& GetAccessType() const{ return m_accessType; }
+    inline EndpointAccessType GetAccessType() const { return m_accessType; }
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
-    inline void SetAccessType(const EndpointAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
-    inline void SetAccessType(EndpointAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
-    inline Endpoint& WithAccessType(const EndpointAccessType& value) { SetAccessType(value); return *this;}
-    inline Endpoint& WithAccessType(EndpointAccessType&& value) { SetAccessType(std::move(value)); return *this;}
+    inline void SetAccessType(EndpointAccessType value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
+    inline Endpoint& WithAccessType(EndpointAccessType value) { SetAccessType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the customer-owned IPv4 address pool used for the endpoint.</p>
      */
-    inline const Aws::String& GetCustomerOwnedIpv4Pool() const{ return m_customerOwnedIpv4Pool; }
+    inline const Aws::String& GetCustomerOwnedIpv4Pool() const { return m_customerOwnedIpv4Pool; }
     inline bool CustomerOwnedIpv4PoolHasBeenSet() const { return m_customerOwnedIpv4PoolHasBeenSet; }
-    inline void SetCustomerOwnedIpv4Pool(const Aws::String& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = value; }
-    inline void SetCustomerOwnedIpv4Pool(Aws::String&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::move(value); }
-    inline void SetCustomerOwnedIpv4Pool(const char* value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool.assign(value); }
-    inline Endpoint& WithCustomerOwnedIpv4Pool(const Aws::String& value) { SetCustomerOwnedIpv4Pool(value); return *this;}
-    inline Endpoint& WithCustomerOwnedIpv4Pool(Aws::String&& value) { SetCustomerOwnedIpv4Pool(std::move(value)); return *this;}
-    inline Endpoint& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
+    template<typename CustomerOwnedIpv4PoolT = Aws::String>
+    void SetCustomerOwnedIpv4Pool(CustomerOwnedIpv4PoolT&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::forward<CustomerOwnedIpv4PoolT>(value); }
+    template<typename CustomerOwnedIpv4PoolT = Aws::String>
+    Endpoint& WithCustomerOwnedIpv4Pool(CustomerOwnedIpv4PoolT&& value) { SetCustomerOwnedIpv4Pool(std::forward<CustomerOwnedIpv4PoolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure reason, if any, for a create or delete endpoint operation.</p>
      */
-    inline const FailedReason& GetFailedReason() const{ return m_failedReason; }
+    inline const FailedReason& GetFailedReason() const { return m_failedReason; }
     inline bool FailedReasonHasBeenSet() const { return m_failedReasonHasBeenSet; }
-    inline void SetFailedReason(const FailedReason& value) { m_failedReasonHasBeenSet = true; m_failedReason = value; }
-    inline void SetFailedReason(FailedReason&& value) { m_failedReasonHasBeenSet = true; m_failedReason = std::move(value); }
-    inline Endpoint& WithFailedReason(const FailedReason& value) { SetFailedReason(value); return *this;}
-    inline Endpoint& WithFailedReason(FailedReason&& value) { SetFailedReason(std::move(value)); return *this;}
+    template<typename FailedReasonT = FailedReason>
+    void SetFailedReason(FailedReasonT&& value) { m_failedReasonHasBeenSet = true; m_failedReason = std::forward<FailedReasonT>(value); }
+    template<typename FailedReasonT = FailedReason>
+    Endpoint& WithFailedReason(FailedReasonT&& value) { SetFailedReason(std::forward<FailedReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -220,10 +202,10 @@ namespace Model
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet = false;
 
-    EndpointStatus m_status;
+    EndpointStatus m_status{EndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
@@ -238,7 +220,7 @@ namespace Model
     Aws::String m_securityGroupId;
     bool m_securityGroupIdHasBeenSet = false;
 
-    EndpointAccessType m_accessType;
+    EndpointAccessType m_accessType{EndpointAccessType::NOT_SET};
     bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;

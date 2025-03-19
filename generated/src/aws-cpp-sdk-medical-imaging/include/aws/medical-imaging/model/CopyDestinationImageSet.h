@@ -31,7 +31,7 @@ namespace Model
   class CopyDestinationImageSet
   {
   public:
-    AWS_MEDICALIMAGING_API CopyDestinationImageSet();
+    AWS_MEDICALIMAGING_API CopyDestinationImageSet() = default;
     AWS_MEDICALIMAGING_API CopyDestinationImageSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API CopyDestinationImageSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The image set identifier for the destination image set.</p>
      */
-    inline const Aws::String& GetImageSetId() const{ return m_imageSetId; }
+    inline const Aws::String& GetImageSetId() const { return m_imageSetId; }
     inline bool ImageSetIdHasBeenSet() const { return m_imageSetIdHasBeenSet; }
-    inline void SetImageSetId(const Aws::String& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = value; }
-    inline void SetImageSetId(Aws::String&& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = std::move(value); }
-    inline void SetImageSetId(const char* value) { m_imageSetIdHasBeenSet = true; m_imageSetId.assign(value); }
-    inline CopyDestinationImageSet& WithImageSetId(const Aws::String& value) { SetImageSetId(value); return *this;}
-    inline CopyDestinationImageSet& WithImageSetId(Aws::String&& value) { SetImageSetId(std::move(value)); return *this;}
-    inline CopyDestinationImageSet& WithImageSetId(const char* value) { SetImageSetId(value); return *this;}
+    template<typename ImageSetIdT = Aws::String>
+    void SetImageSetId(ImageSetIdT&& value) { m_imageSetIdHasBeenSet = true; m_imageSetId = std::forward<ImageSetIdT>(value); }
+    template<typename ImageSetIdT = Aws::String>
+    CopyDestinationImageSet& WithImageSetId(ImageSetIdT&& value) { SetImageSetId(std::forward<ImageSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest version identifier for the destination image set.</p>
      */
-    inline const Aws::String& GetLatestVersionId() const{ return m_latestVersionId; }
+    inline const Aws::String& GetLatestVersionId() const { return m_latestVersionId; }
     inline bool LatestVersionIdHasBeenSet() const { return m_latestVersionIdHasBeenSet; }
-    inline void SetLatestVersionId(const Aws::String& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = value; }
-    inline void SetLatestVersionId(Aws::String&& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = std::move(value); }
-    inline void SetLatestVersionId(const char* value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId.assign(value); }
-    inline CopyDestinationImageSet& WithLatestVersionId(const Aws::String& value) { SetLatestVersionId(value); return *this;}
-    inline CopyDestinationImageSet& WithLatestVersionId(Aws::String&& value) { SetLatestVersionId(std::move(value)); return *this;}
-    inline CopyDestinationImageSet& WithLatestVersionId(const char* value) { SetLatestVersionId(value); return *this;}
+    template<typename LatestVersionIdT = Aws::String>
+    void SetLatestVersionId(LatestVersionIdT&& value) { m_latestVersionIdHasBeenSet = true; m_latestVersionId = std::forward<LatestVersionIdT>(value); }
+    template<typename LatestVersionIdT = Aws::String>
+    CopyDestinationImageSet& WithLatestVersionId(LatestVersionIdT&& value) { SetLatestVersionId(std::forward<LatestVersionIdT>(value)); return *this;}
     ///@}
   private:
 

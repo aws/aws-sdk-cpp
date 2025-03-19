@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetArchitectureRecommendationsRequest::GetArchitectureRecommendationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_recoveryGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetArchitectureRecommendationsRequest::SerializePayload() const
 {
   return {};

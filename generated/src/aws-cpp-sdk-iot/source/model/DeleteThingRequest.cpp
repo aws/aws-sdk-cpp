@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteThingRequest::DeleteThingRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThingRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class PacketHeaderStatement
   {
   public:
-    AWS_EC2_API PacketHeaderStatement();
+    AWS_EC2_API PacketHeaderStatement() = default;
     AWS_EC2_API PacketHeaderStatement(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PacketHeaderStatement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,104 +45,97 @@ namespace Model
     /**
      * <p>The source addresses.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceAddresses() const{ return m_sourceAddresses; }
+    inline const Aws::Vector<Aws::String>& GetSourceAddresses() const { return m_sourceAddresses; }
     inline bool SourceAddressesHasBeenSet() const { return m_sourceAddressesHasBeenSet; }
-    inline void SetSourceAddresses(const Aws::Vector<Aws::String>& value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses = value; }
-    inline void SetSourceAddresses(Aws::Vector<Aws::String>&& value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses = std::move(value); }
-    inline PacketHeaderStatement& WithSourceAddresses(const Aws::Vector<Aws::String>& value) { SetSourceAddresses(value); return *this;}
-    inline PacketHeaderStatement& WithSourceAddresses(Aws::Vector<Aws::String>&& value) { SetSourceAddresses(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddSourceAddresses(const Aws::String& value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddSourceAddresses(Aws::String&& value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses.push_back(std::move(value)); return *this; }
-    inline PacketHeaderStatement& AddSourceAddresses(const char* value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses.push_back(value); return *this; }
+    template<typename SourceAddressesT = Aws::Vector<Aws::String>>
+    void SetSourceAddresses(SourceAddressesT&& value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses = std::forward<SourceAddressesT>(value); }
+    template<typename SourceAddressesT = Aws::Vector<Aws::String>>
+    PacketHeaderStatement& WithSourceAddresses(SourceAddressesT&& value) { SetSourceAddresses(std::forward<SourceAddressesT>(value)); return *this;}
+    template<typename SourceAddressesT = Aws::String>
+    PacketHeaderStatement& AddSourceAddresses(SourceAddressesT&& value) { m_sourceAddressesHasBeenSet = true; m_sourceAddresses.emplace_back(std::forward<SourceAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination addresses.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinationAddresses() const{ return m_destinationAddresses; }
+    inline const Aws::Vector<Aws::String>& GetDestinationAddresses() const { return m_destinationAddresses; }
     inline bool DestinationAddressesHasBeenSet() const { return m_destinationAddressesHasBeenSet; }
-    inline void SetDestinationAddresses(const Aws::Vector<Aws::String>& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses = value; }
-    inline void SetDestinationAddresses(Aws::Vector<Aws::String>&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses = std::move(value); }
-    inline PacketHeaderStatement& WithDestinationAddresses(const Aws::Vector<Aws::String>& value) { SetDestinationAddresses(value); return *this;}
-    inline PacketHeaderStatement& WithDestinationAddresses(Aws::Vector<Aws::String>&& value) { SetDestinationAddresses(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddDestinationAddresses(const Aws::String& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddDestinationAddresses(Aws::String&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.push_back(std::move(value)); return *this; }
-    inline PacketHeaderStatement& AddDestinationAddresses(const char* value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.push_back(value); return *this; }
+    template<typename DestinationAddressesT = Aws::Vector<Aws::String>>
+    void SetDestinationAddresses(DestinationAddressesT&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses = std::forward<DestinationAddressesT>(value); }
+    template<typename DestinationAddressesT = Aws::Vector<Aws::String>>
+    PacketHeaderStatement& WithDestinationAddresses(DestinationAddressesT&& value) { SetDestinationAddresses(std::forward<DestinationAddressesT>(value)); return *this;}
+    template<typename DestinationAddressesT = Aws::String>
+    PacketHeaderStatement& AddDestinationAddresses(DestinationAddressesT&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.emplace_back(std::forward<DestinationAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source ports.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourcePorts() const{ return m_sourcePorts; }
+    inline const Aws::Vector<Aws::String>& GetSourcePorts() const { return m_sourcePorts; }
     inline bool SourcePortsHasBeenSet() const { return m_sourcePortsHasBeenSet; }
-    inline void SetSourcePorts(const Aws::Vector<Aws::String>& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = value; }
-    inline void SetSourcePorts(Aws::Vector<Aws::String>&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::move(value); }
-    inline PacketHeaderStatement& WithSourcePorts(const Aws::Vector<Aws::String>& value) { SetSourcePorts(value); return *this;}
-    inline PacketHeaderStatement& WithSourcePorts(Aws::Vector<Aws::String>&& value) { SetSourcePorts(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddSourcePorts(const Aws::String& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddSourcePorts(Aws::String&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(std::move(value)); return *this; }
-    inline PacketHeaderStatement& AddSourcePorts(const char* value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(value); return *this; }
+    template<typename SourcePortsT = Aws::Vector<Aws::String>>
+    void SetSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::forward<SourcePortsT>(value); }
+    template<typename SourcePortsT = Aws::Vector<Aws::String>>
+    PacketHeaderStatement& WithSourcePorts(SourcePortsT&& value) { SetSourcePorts(std::forward<SourcePortsT>(value)); return *this;}
+    template<typename SourcePortsT = Aws::String>
+    PacketHeaderStatement& AddSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.emplace_back(std::forward<SourcePortsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination ports.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinationPorts() const{ return m_destinationPorts; }
+    inline const Aws::Vector<Aws::String>& GetDestinationPorts() const { return m_destinationPorts; }
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
-    inline void SetDestinationPorts(const Aws::Vector<Aws::String>& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = value; }
-    inline void SetDestinationPorts(Aws::Vector<Aws::String>&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::move(value); }
-    inline PacketHeaderStatement& WithDestinationPorts(const Aws::Vector<Aws::String>& value) { SetDestinationPorts(value); return *this;}
-    inline PacketHeaderStatement& WithDestinationPorts(Aws::Vector<Aws::String>&& value) { SetDestinationPorts(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddDestinationPorts(const Aws::String& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddDestinationPorts(Aws::String&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(std::move(value)); return *this; }
-    inline PacketHeaderStatement& AddDestinationPorts(const char* value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
+    template<typename DestinationPortsT = Aws::Vector<Aws::String>>
+    void SetDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::forward<DestinationPortsT>(value); }
+    template<typename DestinationPortsT = Aws::Vector<Aws::String>>
+    PacketHeaderStatement& WithDestinationPorts(DestinationPortsT&& value) { SetDestinationPorts(std::forward<DestinationPortsT>(value)); return *this;}
+    template<typename DestinationPortsT = Aws::String>
+    PacketHeaderStatement& AddDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.emplace_back(std::forward<DestinationPortsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source prefix lists.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourcePrefixLists() const{ return m_sourcePrefixLists; }
+    inline const Aws::Vector<Aws::String>& GetSourcePrefixLists() const { return m_sourcePrefixLists; }
     inline bool SourcePrefixListsHasBeenSet() const { return m_sourcePrefixListsHasBeenSet; }
-    inline void SetSourcePrefixLists(const Aws::Vector<Aws::String>& value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists = value; }
-    inline void SetSourcePrefixLists(Aws::Vector<Aws::String>&& value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists = std::move(value); }
-    inline PacketHeaderStatement& WithSourcePrefixLists(const Aws::Vector<Aws::String>& value) { SetSourcePrefixLists(value); return *this;}
-    inline PacketHeaderStatement& WithSourcePrefixLists(Aws::Vector<Aws::String>&& value) { SetSourcePrefixLists(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddSourcePrefixLists(const Aws::String& value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddSourcePrefixLists(Aws::String&& value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists.push_back(std::move(value)); return *this; }
-    inline PacketHeaderStatement& AddSourcePrefixLists(const char* value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists.push_back(value); return *this; }
+    template<typename SourcePrefixListsT = Aws::Vector<Aws::String>>
+    void SetSourcePrefixLists(SourcePrefixListsT&& value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists = std::forward<SourcePrefixListsT>(value); }
+    template<typename SourcePrefixListsT = Aws::Vector<Aws::String>>
+    PacketHeaderStatement& WithSourcePrefixLists(SourcePrefixListsT&& value) { SetSourcePrefixLists(std::forward<SourcePrefixListsT>(value)); return *this;}
+    template<typename SourcePrefixListsT = Aws::String>
+    PacketHeaderStatement& AddSourcePrefixLists(SourcePrefixListsT&& value) { m_sourcePrefixListsHasBeenSet = true; m_sourcePrefixLists.emplace_back(std::forward<SourcePrefixListsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination prefix lists.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinationPrefixLists() const{ return m_destinationPrefixLists; }
+    inline const Aws::Vector<Aws::String>& GetDestinationPrefixLists() const { return m_destinationPrefixLists; }
     inline bool DestinationPrefixListsHasBeenSet() const { return m_destinationPrefixListsHasBeenSet; }
-    inline void SetDestinationPrefixLists(const Aws::Vector<Aws::String>& value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists = value; }
-    inline void SetDestinationPrefixLists(Aws::Vector<Aws::String>&& value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists = std::move(value); }
-    inline PacketHeaderStatement& WithDestinationPrefixLists(const Aws::Vector<Aws::String>& value) { SetDestinationPrefixLists(value); return *this;}
-    inline PacketHeaderStatement& WithDestinationPrefixLists(Aws::Vector<Aws::String>&& value) { SetDestinationPrefixLists(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddDestinationPrefixLists(const Aws::String& value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddDestinationPrefixLists(Aws::String&& value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists.push_back(std::move(value)); return *this; }
-    inline PacketHeaderStatement& AddDestinationPrefixLists(const char* value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists.push_back(value); return *this; }
+    template<typename DestinationPrefixListsT = Aws::Vector<Aws::String>>
+    void SetDestinationPrefixLists(DestinationPrefixListsT&& value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists = std::forward<DestinationPrefixListsT>(value); }
+    template<typename DestinationPrefixListsT = Aws::Vector<Aws::String>>
+    PacketHeaderStatement& WithDestinationPrefixLists(DestinationPrefixListsT&& value) { SetDestinationPrefixLists(std::forward<DestinationPrefixListsT>(value)); return *this;}
+    template<typename DestinationPrefixListsT = Aws::String>
+    PacketHeaderStatement& AddDestinationPrefixLists(DestinationPrefixListsT&& value) { m_destinationPrefixListsHasBeenSet = true; m_destinationPrefixLists.emplace_back(std::forward<DestinationPrefixListsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The protocols.</p>
      */
-    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline PacketHeaderStatement& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
-    inline PacketHeaderStatement& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline PacketHeaderStatement& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline PacketHeaderStatement& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    PacketHeaderStatement& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline PacketHeaderStatement& AddProtocols(Protocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
   private:
 

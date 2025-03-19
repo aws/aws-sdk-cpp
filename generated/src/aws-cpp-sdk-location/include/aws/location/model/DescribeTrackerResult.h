@@ -30,7 +30,7 @@ namespace Model
   class DescribeTrackerResult
   {
   public:
-    AWS_LOCATIONSERVICE_API DescribeTrackerResult();
+    AWS_LOCATIONSERVICE_API DescribeTrackerResult() = default;
     AWS_LOCATIONSERVICE_API DescribeTrackerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API DescribeTrackerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The name of the tracker resource.</p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-    inline void SetTrackerName(const Aws::String& value) { m_trackerName = value; }
-    inline void SetTrackerName(Aws::String&& value) { m_trackerName = std::move(value); }
-    inline void SetTrackerName(const char* value) { m_trackerName.assign(value); }
-    inline DescribeTrackerResult& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-    inline DescribeTrackerResult& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-    inline DescribeTrackerResult& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    inline const Aws::String& GetTrackerName() const { return m_trackerName; }
+    template<typename TrackerNameT = Aws::String>
+    void SetTrackerName(TrackerNameT&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::forward<TrackerNameT>(value); }
+    template<typename TrackerNameT = Aws::String>
+    DescribeTrackerResult& WithTrackerName(TrackerNameT&& value) { SetTrackerName(std::forward<TrackerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,44 +53,37 @@ namespace Model
      * example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p>
      * </li> </ul>
      */
-    inline const Aws::String& GetTrackerArn() const{ return m_trackerArn; }
-    inline void SetTrackerArn(const Aws::String& value) { m_trackerArn = value; }
-    inline void SetTrackerArn(Aws::String&& value) { m_trackerArn = std::move(value); }
-    inline void SetTrackerArn(const char* value) { m_trackerArn.assign(value); }
-    inline DescribeTrackerResult& WithTrackerArn(const Aws::String& value) { SetTrackerArn(value); return *this;}
-    inline DescribeTrackerResult& WithTrackerArn(Aws::String&& value) { SetTrackerArn(std::move(value)); return *this;}
-    inline DescribeTrackerResult& WithTrackerArn(const char* value) { SetTrackerArn(value); return *this;}
+    inline const Aws::String& GetTrackerArn() const { return m_trackerArn; }
+    template<typename TrackerArnT = Aws::String>
+    void SetTrackerArn(TrackerArnT&& value) { m_trackerArnHasBeenSet = true; m_trackerArn = std::forward<TrackerArnT>(value); }
+    template<typename TrackerArnT = Aws::String>
+    DescribeTrackerResult& WithTrackerArn(TrackerArnT&& value) { SetTrackerArn(std::forward<TrackerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The optional description for the tracker resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeTrackerResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeTrackerResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeTrackerResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeTrackerResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the tracker resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeTrackerResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeTrackerResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeTrackerResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeTrackerResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeTrackerResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeTrackerResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeTrackerResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeTrackerResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeTrackerResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeTrackerResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeTrackerResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -101,11 +92,11 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline DescribeTrackerResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline DescribeTrackerResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    DescribeTrackerResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,11 +105,11 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline DescribeTrackerResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline DescribeTrackerResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    DescribeTrackerResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,24 +119,20 @@ namespace Model
      * Web Services KMS customer managed key</a> assigned to the Amazon Location
      * resource.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline DescribeTrackerResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline DescribeTrackerResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline DescribeTrackerResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    DescribeTrackerResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The position filtering method of the tracker resource.</p>
      */
-    inline const PositionFiltering& GetPositionFiltering() const{ return m_positionFiltering; }
-    inline void SetPositionFiltering(const PositionFiltering& value) { m_positionFiltering = value; }
-    inline void SetPositionFiltering(PositionFiltering&& value) { m_positionFiltering = std::move(value); }
-    inline DescribeTrackerResult& WithPositionFiltering(const PositionFiltering& value) { SetPositionFiltering(value); return *this;}
-    inline DescribeTrackerResult& WithPositionFiltering(PositionFiltering&& value) { SetPositionFiltering(std::move(value)); return *this;}
+    inline PositionFiltering GetPositionFiltering() const { return m_positionFiltering; }
+    inline void SetPositionFiltering(PositionFiltering value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = value; }
+    inline DescribeTrackerResult& WithPositionFiltering(PositionFiltering value) { SetPositionFiltering(value); return *this;}
     ///@}
 
     ///@{
@@ -154,8 +141,8 @@ namespace Model
      * enabled. If set to <code>true</code> these events will be sent to
      * EventBridge.</p>
      */
-    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
-    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabled = value; }
+    inline bool GetEventBridgeEnabled() const { return m_eventBridgeEnabled; }
+    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
     inline DescribeTrackerResult& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
     ///@}
 
@@ -174,44 +161,53 @@ namespace Model
      * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
      * updating a Tracker.</p> 
      */
-    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
-    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueries = value; }
+    inline bool GetKmsKeyEnableGeospatialQueries() const { return m_kmsKeyEnableGeospatialQueries; }
+    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
     inline DescribeTrackerResult& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrackerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrackerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrackerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrackerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trackerName;
+    bool m_trackerNameHasBeenSet = false;
 
     Aws::String m_trackerArn;
+    bool m_trackerArnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
-    PositionFiltering m_positionFiltering;
+    PositionFiltering m_positionFiltering{PositionFiltering::NOT_SET};
+    bool m_positionFilteringHasBeenSet = false;
 
-    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabled{false};
+    bool m_eventBridgeEnabledHasBeenSet = false;
 
-    bool m_kmsKeyEnableGeospatialQueries;
+    bool m_kmsKeyEnableGeospatialQueries{false};
+    bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

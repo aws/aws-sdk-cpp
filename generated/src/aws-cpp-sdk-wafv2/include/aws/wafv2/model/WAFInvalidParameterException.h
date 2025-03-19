@@ -39,7 +39,7 @@ namespace Model
   class WAFInvalidParameterException
   {
   public:
-    AWS_WAFV2_API WAFInvalidParameterException();
+    AWS_WAFV2_API WAFInvalidParameterException() = default;
     AWS_WAFV2_API WAFInvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API WAFInvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,61 +47,53 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline WAFInvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline WAFInvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline WAFInvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    WAFInvalidParameterException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The settings where the invalid parameter was found. </p>
      */
-    inline const ParameterExceptionField& GetField() const{ return m_field; }
+    inline ParameterExceptionField GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const ParameterExceptionField& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(ParameterExceptionField&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline WAFInvalidParameterException& WithField(const ParameterExceptionField& value) { SetField(value); return *this;}
-    inline WAFInvalidParameterException& WithField(ParameterExceptionField&& value) { SetField(std::move(value)); return *this;}
+    inline void SetField(ParameterExceptionField value) { m_fieldHasBeenSet = true; m_field = value; }
+    inline WAFInvalidParameterException& WithField(ParameterExceptionField value) { SetField(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invalid parameter that resulted in the exception. </p>
      */
-    inline const Aws::String& GetParameter() const{ return m_parameter; }
+    inline const Aws::String& GetParameter() const { return m_parameter; }
     inline bool ParameterHasBeenSet() const { return m_parameterHasBeenSet; }
-    inline void SetParameter(const Aws::String& value) { m_parameterHasBeenSet = true; m_parameter = value; }
-    inline void SetParameter(Aws::String&& value) { m_parameterHasBeenSet = true; m_parameter = std::move(value); }
-    inline void SetParameter(const char* value) { m_parameterHasBeenSet = true; m_parameter.assign(value); }
-    inline WAFInvalidParameterException& WithParameter(const Aws::String& value) { SetParameter(value); return *this;}
-    inline WAFInvalidParameterException& WithParameter(Aws::String&& value) { SetParameter(std::move(value)); return *this;}
-    inline WAFInvalidParameterException& WithParameter(const char* value) { SetParameter(value); return *this;}
+    template<typename ParameterT = Aws::String>
+    void SetParameter(ParameterT&& value) { m_parameterHasBeenSet = true; m_parameter = std::forward<ParameterT>(value); }
+    template<typename ParameterT = Aws::String>
+    WAFInvalidParameterException& WithParameter(ParameterT&& value) { SetParameter(std::forward<ParameterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the exception.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline WAFInvalidParameterException& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline WAFInvalidParameterException& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline WAFInvalidParameterException& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    WAFInvalidParameterException& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ParameterExceptionField m_field;
+    ParameterExceptionField m_field{ParameterExceptionField::NOT_SET};
     bool m_fieldHasBeenSet = false;
 
     Aws::String m_parameter;

@@ -33,7 +33,7 @@ namespace Model
   class LakeFormationConfiguration
   {
   public:
-    AWS_DATAZONE_API LakeFormationConfiguration();
+    AWS_DATAZONE_API LakeFormationConfiguration() = default;
     AWS_DATAZONE_API LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>Specifies certain Amazon S3 locations if you do not want Amazon DataZone to
      * automatically register them in hybrid mode. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLocationRegistrationExcludeS3Locations() const{ return m_locationRegistrationExcludeS3Locations; }
+    inline const Aws::Vector<Aws::String>& GetLocationRegistrationExcludeS3Locations() const { return m_locationRegistrationExcludeS3Locations; }
     inline bool LocationRegistrationExcludeS3LocationsHasBeenSet() const { return m_locationRegistrationExcludeS3LocationsHasBeenSet; }
-    inline void SetLocationRegistrationExcludeS3Locations(const Aws::Vector<Aws::String>& value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations = value; }
-    inline void SetLocationRegistrationExcludeS3Locations(Aws::Vector<Aws::String>&& value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations = std::move(value); }
-    inline LakeFormationConfiguration& WithLocationRegistrationExcludeS3Locations(const Aws::Vector<Aws::String>& value) { SetLocationRegistrationExcludeS3Locations(value); return *this;}
-    inline LakeFormationConfiguration& WithLocationRegistrationExcludeS3Locations(Aws::Vector<Aws::String>&& value) { SetLocationRegistrationExcludeS3Locations(std::move(value)); return *this;}
-    inline LakeFormationConfiguration& AddLocationRegistrationExcludeS3Locations(const Aws::String& value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations.push_back(value); return *this; }
-    inline LakeFormationConfiguration& AddLocationRegistrationExcludeS3Locations(Aws::String&& value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations.push_back(std::move(value)); return *this; }
-    inline LakeFormationConfiguration& AddLocationRegistrationExcludeS3Locations(const char* value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations.push_back(value); return *this; }
+    template<typename LocationRegistrationExcludeS3LocationsT = Aws::Vector<Aws::String>>
+    void SetLocationRegistrationExcludeS3Locations(LocationRegistrationExcludeS3LocationsT&& value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations = std::forward<LocationRegistrationExcludeS3LocationsT>(value); }
+    template<typename LocationRegistrationExcludeS3LocationsT = Aws::Vector<Aws::String>>
+    LakeFormationConfiguration& WithLocationRegistrationExcludeS3Locations(LocationRegistrationExcludeS3LocationsT&& value) { SetLocationRegistrationExcludeS3Locations(std::forward<LocationRegistrationExcludeS3LocationsT>(value)); return *this;}
+    template<typename LocationRegistrationExcludeS3LocationsT = Aws::String>
+    LakeFormationConfiguration& AddLocationRegistrationExcludeS3Locations(LocationRegistrationExcludeS3LocationsT&& value) { m_locationRegistrationExcludeS3LocationsHasBeenSet = true; m_locationRegistrationExcludeS3Locations.emplace_back(std::forward<LocationRegistrationExcludeS3LocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +60,12 @@ namespace Model
      * bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access
      * mode.</p>
      */
-    inline const Aws::String& GetLocationRegistrationRole() const{ return m_locationRegistrationRole; }
+    inline const Aws::String& GetLocationRegistrationRole() const { return m_locationRegistrationRole; }
     inline bool LocationRegistrationRoleHasBeenSet() const { return m_locationRegistrationRoleHasBeenSet; }
-    inline void SetLocationRegistrationRole(const Aws::String& value) { m_locationRegistrationRoleHasBeenSet = true; m_locationRegistrationRole = value; }
-    inline void SetLocationRegistrationRole(Aws::String&& value) { m_locationRegistrationRoleHasBeenSet = true; m_locationRegistrationRole = std::move(value); }
-    inline void SetLocationRegistrationRole(const char* value) { m_locationRegistrationRoleHasBeenSet = true; m_locationRegistrationRole.assign(value); }
-    inline LakeFormationConfiguration& WithLocationRegistrationRole(const Aws::String& value) { SetLocationRegistrationRole(value); return *this;}
-    inline LakeFormationConfiguration& WithLocationRegistrationRole(Aws::String&& value) { SetLocationRegistrationRole(std::move(value)); return *this;}
-    inline LakeFormationConfiguration& WithLocationRegistrationRole(const char* value) { SetLocationRegistrationRole(value); return *this;}
+    template<typename LocationRegistrationRoleT = Aws::String>
+    void SetLocationRegistrationRole(LocationRegistrationRoleT&& value) { m_locationRegistrationRoleHasBeenSet = true; m_locationRegistrationRole = std::forward<LocationRegistrationRoleT>(value); }
+    template<typename LocationRegistrationRoleT = Aws::String>
+    LakeFormationConfiguration& WithLocationRegistrationRole(LocationRegistrationRoleT&& value) { SetLocationRegistrationRole(std::forward<LocationRegistrationRoleT>(value)); return *this;}
     ///@}
   private:
 

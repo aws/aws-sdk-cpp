@@ -35,7 +35,7 @@ namespace Model
   class ListInputDeviceTransfersResult
   {
   public:
-    AWS_MEDIALIVE_API ListInputDeviceTransfersResult();
+    AWS_MEDIALIVE_API ListInputDeviceTransfersResult() = default;
     AWS_MEDIALIVE_API ListInputDeviceTransfersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API ListInputDeviceTransfersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
     /**
      * The list of devices that you are transferring or are being transferred to you.
      */
-    inline const Aws::Vector<TransferringInputDeviceSummary>& GetInputDeviceTransfers() const{ return m_inputDeviceTransfers; }
-    inline void SetInputDeviceTransfers(const Aws::Vector<TransferringInputDeviceSummary>& value) { m_inputDeviceTransfers = value; }
-    inline void SetInputDeviceTransfers(Aws::Vector<TransferringInputDeviceSummary>&& value) { m_inputDeviceTransfers = std::move(value); }
-    inline ListInputDeviceTransfersResult& WithInputDeviceTransfers(const Aws::Vector<TransferringInputDeviceSummary>& value) { SetInputDeviceTransfers(value); return *this;}
-    inline ListInputDeviceTransfersResult& WithInputDeviceTransfers(Aws::Vector<TransferringInputDeviceSummary>&& value) { SetInputDeviceTransfers(std::move(value)); return *this;}
-    inline ListInputDeviceTransfersResult& AddInputDeviceTransfers(const TransferringInputDeviceSummary& value) { m_inputDeviceTransfers.push_back(value); return *this; }
-    inline ListInputDeviceTransfersResult& AddInputDeviceTransfers(TransferringInputDeviceSummary&& value) { m_inputDeviceTransfers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransferringInputDeviceSummary>& GetInputDeviceTransfers() const { return m_inputDeviceTransfers; }
+    template<typename InputDeviceTransfersT = Aws::Vector<TransferringInputDeviceSummary>>
+    void SetInputDeviceTransfers(InputDeviceTransfersT&& value) { m_inputDeviceTransfersHasBeenSet = true; m_inputDeviceTransfers = std::forward<InputDeviceTransfersT>(value); }
+    template<typename InputDeviceTransfersT = Aws::Vector<TransferringInputDeviceSummary>>
+    ListInputDeviceTransfersResult& WithInputDeviceTransfers(InputDeviceTransfersT&& value) { SetInputDeviceTransfers(std::forward<InputDeviceTransfersT>(value)); return *this;}
+    template<typename InputDeviceTransfersT = TransferringInputDeviceSummary>
+    ListInputDeviceTransfersResult& AddInputDeviceTransfers(InputDeviceTransfersT&& value) { m_inputDeviceTransfersHasBeenSet = true; m_inputDeviceTransfers.emplace_back(std::forward<InputDeviceTransfersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A token to get additional list results.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListInputDeviceTransfersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInputDeviceTransfersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInputDeviceTransfersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInputDeviceTransfersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInputDeviceTransfersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInputDeviceTransfersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInputDeviceTransfersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInputDeviceTransfersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransferringInputDeviceSummary> m_inputDeviceTransfers;
+    bool m_inputDeviceTransfersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RunFleetAdvisorLsaAnalysisRequest::RunFleetAdvisorLsaAnalysisRequest()
-{
-}
-
 Aws::String RunFleetAdvisorLsaAnalysisRequest::SerializePayload() const
 {
   return "{}";

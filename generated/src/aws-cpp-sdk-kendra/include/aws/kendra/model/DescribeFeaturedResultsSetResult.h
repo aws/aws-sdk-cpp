@@ -31,7 +31,7 @@ namespace Model
   class DescribeFeaturedResultsSetResult
   {
   public:
-    AWS_KENDRA_API DescribeFeaturedResultsSetResult();
+    AWS_KENDRA_API DescribeFeaturedResultsSetResult() = default;
     AWS_KENDRA_API DescribeFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API DescribeFeaturedResultsSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,39 +40,33 @@ namespace Model
     /**
      * <p>The identifier of the set of featured results.</p>
      */
-    inline const Aws::String& GetFeaturedResultsSetId() const{ return m_featuredResultsSetId; }
-    inline void SetFeaturedResultsSetId(const Aws::String& value) { m_featuredResultsSetId = value; }
-    inline void SetFeaturedResultsSetId(Aws::String&& value) { m_featuredResultsSetId = std::move(value); }
-    inline void SetFeaturedResultsSetId(const char* value) { m_featuredResultsSetId.assign(value); }
-    inline DescribeFeaturedResultsSetResult& WithFeaturedResultsSetId(const Aws::String& value) { SetFeaturedResultsSetId(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithFeaturedResultsSetId(Aws::String&& value) { SetFeaturedResultsSetId(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithFeaturedResultsSetId(const char* value) { SetFeaturedResultsSetId(value); return *this;}
+    inline const Aws::String& GetFeaturedResultsSetId() const { return m_featuredResultsSetId; }
+    template<typename FeaturedResultsSetIdT = Aws::String>
+    void SetFeaturedResultsSetId(FeaturedResultsSetIdT&& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = std::forward<FeaturedResultsSetIdT>(value); }
+    template<typename FeaturedResultsSetIdT = Aws::String>
+    DescribeFeaturedResultsSetResult& WithFeaturedResultsSetId(FeaturedResultsSetIdT&& value) { SetFeaturedResultsSetId(std::forward<FeaturedResultsSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the set of featured results.</p>
      */
-    inline const Aws::String& GetFeaturedResultsSetName() const{ return m_featuredResultsSetName; }
-    inline void SetFeaturedResultsSetName(const Aws::String& value) { m_featuredResultsSetName = value; }
-    inline void SetFeaturedResultsSetName(Aws::String&& value) { m_featuredResultsSetName = std::move(value); }
-    inline void SetFeaturedResultsSetName(const char* value) { m_featuredResultsSetName.assign(value); }
-    inline DescribeFeaturedResultsSetResult& WithFeaturedResultsSetName(const Aws::String& value) { SetFeaturedResultsSetName(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithFeaturedResultsSetName(Aws::String&& value) { SetFeaturedResultsSetName(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithFeaturedResultsSetName(const char* value) { SetFeaturedResultsSetName(value); return *this;}
+    inline const Aws::String& GetFeaturedResultsSetName() const { return m_featuredResultsSetName; }
+    template<typename FeaturedResultsSetNameT = Aws::String>
+    void SetFeaturedResultsSetName(FeaturedResultsSetNameT&& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = std::forward<FeaturedResultsSetNameT>(value); }
+    template<typename FeaturedResultsSetNameT = Aws::String>
+    DescribeFeaturedResultsSetResult& WithFeaturedResultsSetName(FeaturedResultsSetNameT&& value) { SetFeaturedResultsSetName(std::forward<FeaturedResultsSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the set of featured results.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeFeaturedResultsSetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeFeaturedResultsSetResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,11 +80,9 @@ namespace Model
      * results set for each index, whether the status is <code>ACTIVE</code> or
      * <code>INACTIVE</code>.</p>
      */
-    inline const FeaturedResultsSetStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const FeaturedResultsSetStatus& value) { m_status = value; }
-    inline void SetStatus(FeaturedResultsSetStatus&& value) { m_status = std::move(value); }
-    inline DescribeFeaturedResultsSetResult& WithStatus(const FeaturedResultsSetStatus& value) { SetStatus(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithStatus(FeaturedResultsSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline FeaturedResultsSetStatus GetStatus() const { return m_status; }
+    inline void SetStatus(FeaturedResultsSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeFeaturedResultsSetResult& WithStatus(FeaturedResultsSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +91,13 @@ namespace Model
      * of queries, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueryTexts() const{ return m_queryTexts; }
-    inline void SetQueryTexts(const Aws::Vector<Aws::String>& value) { m_queryTexts = value; }
-    inline void SetQueryTexts(Aws::Vector<Aws::String>&& value) { m_queryTexts = std::move(value); }
-    inline DescribeFeaturedResultsSetResult& WithQueryTexts(const Aws::Vector<Aws::String>& value) { SetQueryTexts(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithQueryTexts(Aws::Vector<Aws::String>&& value) { SetQueryTexts(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& AddQueryTexts(const Aws::String& value) { m_queryTexts.push_back(value); return *this; }
-    inline DescribeFeaturedResultsSetResult& AddQueryTexts(Aws::String&& value) { m_queryTexts.push_back(std::move(value)); return *this; }
-    inline DescribeFeaturedResultsSetResult& AddQueryTexts(const char* value) { m_queryTexts.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetQueryTexts() const { return m_queryTexts; }
+    template<typename QueryTextsT = Aws::Vector<Aws::String>>
+    void SetQueryTexts(QueryTextsT&& value) { m_queryTextsHasBeenSet = true; m_queryTexts = std::forward<QueryTextsT>(value); }
+    template<typename QueryTextsT = Aws::Vector<Aws::String>>
+    DescribeFeaturedResultsSetResult& WithQueryTexts(QueryTextsT&& value) { SetQueryTexts(std::forward<QueryTextsT>(value)); return *this;}
+    template<typename QueryTextsT = Aws::String>
+    DescribeFeaturedResultsSetResult& AddQueryTexts(QueryTextsT&& value) { m_queryTextsHasBeenSet = true; m_queryTexts.emplace_back(std::forward<QueryTextsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,13 +107,13 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
      */
-    inline const Aws::Vector<FeaturedDocumentWithMetadata>& GetFeaturedDocumentsWithMetadata() const{ return m_featuredDocumentsWithMetadata; }
-    inline void SetFeaturedDocumentsWithMetadata(const Aws::Vector<FeaturedDocumentWithMetadata>& value) { m_featuredDocumentsWithMetadata = value; }
-    inline void SetFeaturedDocumentsWithMetadata(Aws::Vector<FeaturedDocumentWithMetadata>&& value) { m_featuredDocumentsWithMetadata = std::move(value); }
-    inline DescribeFeaturedResultsSetResult& WithFeaturedDocumentsWithMetadata(const Aws::Vector<FeaturedDocumentWithMetadata>& value) { SetFeaturedDocumentsWithMetadata(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithFeaturedDocumentsWithMetadata(Aws::Vector<FeaturedDocumentWithMetadata>&& value) { SetFeaturedDocumentsWithMetadata(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& AddFeaturedDocumentsWithMetadata(const FeaturedDocumentWithMetadata& value) { m_featuredDocumentsWithMetadata.push_back(value); return *this; }
-    inline DescribeFeaturedResultsSetResult& AddFeaturedDocumentsWithMetadata(FeaturedDocumentWithMetadata&& value) { m_featuredDocumentsWithMetadata.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeaturedDocumentWithMetadata>& GetFeaturedDocumentsWithMetadata() const { return m_featuredDocumentsWithMetadata; }
+    template<typename FeaturedDocumentsWithMetadataT = Aws::Vector<FeaturedDocumentWithMetadata>>
+    void SetFeaturedDocumentsWithMetadata(FeaturedDocumentsWithMetadataT&& value) { m_featuredDocumentsWithMetadataHasBeenSet = true; m_featuredDocumentsWithMetadata = std::forward<FeaturedDocumentsWithMetadataT>(value); }
+    template<typename FeaturedDocumentsWithMetadataT = Aws::Vector<FeaturedDocumentWithMetadata>>
+    DescribeFeaturedResultsSetResult& WithFeaturedDocumentsWithMetadata(FeaturedDocumentsWithMetadataT&& value) { SetFeaturedDocumentsWithMetadata(std::forward<FeaturedDocumentsWithMetadataT>(value)); return *this;}
+    template<typename FeaturedDocumentsWithMetadataT = FeaturedDocumentWithMetadata>
+    DescribeFeaturedResultsSetResult& AddFeaturedDocumentsWithMetadata(FeaturedDocumentsWithMetadataT&& value) { m_featuredDocumentsWithMetadataHasBeenSet = true; m_featuredDocumentsWithMetadata.emplace_back(std::forward<FeaturedDocumentsWithMetadataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,21 +125,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html">BatchGetDocumentStatus</a>
      * API.</p>
      */
-    inline const Aws::Vector<FeaturedDocumentMissing>& GetFeaturedDocumentsMissing() const{ return m_featuredDocumentsMissing; }
-    inline void SetFeaturedDocumentsMissing(const Aws::Vector<FeaturedDocumentMissing>& value) { m_featuredDocumentsMissing = value; }
-    inline void SetFeaturedDocumentsMissing(Aws::Vector<FeaturedDocumentMissing>&& value) { m_featuredDocumentsMissing = std::move(value); }
-    inline DescribeFeaturedResultsSetResult& WithFeaturedDocumentsMissing(const Aws::Vector<FeaturedDocumentMissing>& value) { SetFeaturedDocumentsMissing(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithFeaturedDocumentsMissing(Aws::Vector<FeaturedDocumentMissing>&& value) { SetFeaturedDocumentsMissing(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& AddFeaturedDocumentsMissing(const FeaturedDocumentMissing& value) { m_featuredDocumentsMissing.push_back(value); return *this; }
-    inline DescribeFeaturedResultsSetResult& AddFeaturedDocumentsMissing(FeaturedDocumentMissing&& value) { m_featuredDocumentsMissing.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeaturedDocumentMissing>& GetFeaturedDocumentsMissing() const { return m_featuredDocumentsMissing; }
+    template<typename FeaturedDocumentsMissingT = Aws::Vector<FeaturedDocumentMissing>>
+    void SetFeaturedDocumentsMissing(FeaturedDocumentsMissingT&& value) { m_featuredDocumentsMissingHasBeenSet = true; m_featuredDocumentsMissing = std::forward<FeaturedDocumentsMissingT>(value); }
+    template<typename FeaturedDocumentsMissingT = Aws::Vector<FeaturedDocumentMissing>>
+    DescribeFeaturedResultsSetResult& WithFeaturedDocumentsMissing(FeaturedDocumentsMissingT&& value) { SetFeaturedDocumentsMissing(std::forward<FeaturedDocumentsMissingT>(value)); return *this;}
+    template<typename FeaturedDocumentsMissingT = FeaturedDocumentMissing>
+    DescribeFeaturedResultsSetResult& AddFeaturedDocumentsMissing(FeaturedDocumentsMissingT&& value) { m_featuredDocumentsMissingHasBeenSet = true; m_featuredDocumentsMissing.emplace_back(std::forward<FeaturedDocumentsMissingT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the set of featured results was last updated.</p>
      */
-    inline long long GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-    inline void SetLastUpdatedTimestamp(long long value) { m_lastUpdatedTimestamp = value; }
+    inline long long GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
+    inline void SetLastUpdatedTimestamp(long long value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
     inline DescribeFeaturedResultsSetResult& WithLastUpdatedTimestamp(long long value) { SetLastUpdatedTimestamp(value); return *this;}
     ///@}
 
@@ -156,42 +147,50 @@ namespace Model
     /**
      * <p>The Unix timestamp when the set of the featured results was created.</p>
      */
-    inline long long GetCreationTimestamp() const{ return m_creationTimestamp; }
-    inline void SetCreationTimestamp(long long value) { m_creationTimestamp = value; }
+    inline long long GetCreationTimestamp() const { return m_creationTimestamp; }
+    inline void SetCreationTimestamp(long long value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
     inline DescribeFeaturedResultsSetResult& WithCreationTimestamp(long long value) { SetCreationTimestamp(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFeaturedResultsSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFeaturedResultsSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFeaturedResultsSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_featuredResultsSetId;
+    bool m_featuredResultsSetIdHasBeenSet = false;
 
     Aws::String m_featuredResultsSetName;
+    bool m_featuredResultsSetNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    FeaturedResultsSetStatus m_status;
+    FeaturedResultsSetStatus m_status{FeaturedResultsSetStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_queryTexts;
+    bool m_queryTextsHasBeenSet = false;
 
     Aws::Vector<FeaturedDocumentWithMetadata> m_featuredDocumentsWithMetadata;
+    bool m_featuredDocumentsWithMetadataHasBeenSet = false;
 
     Aws::Vector<FeaturedDocumentMissing> m_featuredDocumentsMissing;
+    bool m_featuredDocumentsMissingHasBeenSet = false;
 
-    long long m_lastUpdatedTimestamp;
+    long long m_lastUpdatedTimestamp{0};
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
-    long long m_creationTimestamp;
+    long long m_creationTimestamp{0};
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

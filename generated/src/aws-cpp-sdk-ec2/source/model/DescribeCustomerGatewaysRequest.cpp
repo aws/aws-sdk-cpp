@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeCustomerGatewaysRequest::DescribeCustomerGatewaysRequest() : 
-    m_customerGatewayIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCustomerGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;

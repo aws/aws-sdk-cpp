@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-FuotaTaskEventLogOption::FuotaTaskEventLogOption() : 
-    m_event(FuotaTaskEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 FuotaTaskEventLogOption::FuotaTaskEventLogOption(JsonView jsonValue)
-  : FuotaTaskEventLogOption()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FuotaTaskEventLogOption& FuotaTaskEventLogOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Event"))
   {
     m_event = FuotaTaskEventMapper::GetFuotaTaskEventForName(jsonValue.GetString("Event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

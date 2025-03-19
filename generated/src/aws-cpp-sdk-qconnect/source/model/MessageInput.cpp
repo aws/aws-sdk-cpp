@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageInput::MessageInput() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 MessageInput::MessageInput(JsonView jsonValue)
-  : MessageInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MessageInput& MessageInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

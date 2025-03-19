@@ -12,11 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLoggingConfigurationRequest::DeleteLoggingConfigurationRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

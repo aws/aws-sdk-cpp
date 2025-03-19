@@ -21,7 +21,7 @@ namespace Model
   class ImportApplicationUsageRequest : public ApplicationCostProfilerRequest
   {
   public:
-    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageRequest();
+    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>Amazon S3 location to import application usage data from.</p>
      */
-    inline const SourceS3Location& GetSourceS3Location() const{ return m_sourceS3Location; }
+    inline const SourceS3Location& GetSourceS3Location() const { return m_sourceS3Location; }
     inline bool SourceS3LocationHasBeenSet() const { return m_sourceS3LocationHasBeenSet; }
-    inline void SetSourceS3Location(const SourceS3Location& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = value; }
-    inline void SetSourceS3Location(SourceS3Location&& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = std::move(value); }
-    inline ImportApplicationUsageRequest& WithSourceS3Location(const SourceS3Location& value) { SetSourceS3Location(value); return *this;}
-    inline ImportApplicationUsageRequest& WithSourceS3Location(SourceS3Location&& value) { SetSourceS3Location(std::move(value)); return *this;}
+    template<typename SourceS3LocationT = SourceS3Location>
+    void SetSourceS3Location(SourceS3LocationT&& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = std::forward<SourceS3LocationT>(value); }
+    template<typename SourceS3LocationT = SourceS3Location>
+    ImportApplicationUsageRequest& WithSourceS3Location(SourceS3LocationT&& value) { SetSourceS3Location(std::forward<SourceS3LocationT>(value)); return *this;}
     ///@}
   private:
 

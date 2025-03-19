@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProtectionRequest::DeleteProtectionRequest() : 
-    m_protectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

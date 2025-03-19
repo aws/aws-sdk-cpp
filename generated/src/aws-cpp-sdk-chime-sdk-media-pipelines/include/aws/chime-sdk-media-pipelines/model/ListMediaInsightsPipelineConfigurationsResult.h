@@ -29,7 +29,7 @@ namespace Model
   class ListMediaInsightsPipelineConfigurationsResult
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaInsightsPipelineConfigurationsResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaInsightsPipelineConfigurationsResult() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ListMediaInsightsPipelineConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEDIAPIPELINES_API ListMediaInsightsPipelineConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The requested list of media insights pipeline configurations.</p>
      */
-    inline const Aws::Vector<MediaInsightsPipelineConfigurationSummary>& GetMediaInsightsPipelineConfigurations() const{ return m_mediaInsightsPipelineConfigurations; }
-    inline void SetMediaInsightsPipelineConfigurations(const Aws::Vector<MediaInsightsPipelineConfigurationSummary>& value) { m_mediaInsightsPipelineConfigurations = value; }
-    inline void SetMediaInsightsPipelineConfigurations(Aws::Vector<MediaInsightsPipelineConfigurationSummary>&& value) { m_mediaInsightsPipelineConfigurations = std::move(value); }
-    inline ListMediaInsightsPipelineConfigurationsResult& WithMediaInsightsPipelineConfigurations(const Aws::Vector<MediaInsightsPipelineConfigurationSummary>& value) { SetMediaInsightsPipelineConfigurations(value); return *this;}
-    inline ListMediaInsightsPipelineConfigurationsResult& WithMediaInsightsPipelineConfigurations(Aws::Vector<MediaInsightsPipelineConfigurationSummary>&& value) { SetMediaInsightsPipelineConfigurations(std::move(value)); return *this;}
-    inline ListMediaInsightsPipelineConfigurationsResult& AddMediaInsightsPipelineConfigurations(const MediaInsightsPipelineConfigurationSummary& value) { m_mediaInsightsPipelineConfigurations.push_back(value); return *this; }
-    inline ListMediaInsightsPipelineConfigurationsResult& AddMediaInsightsPipelineConfigurations(MediaInsightsPipelineConfigurationSummary&& value) { m_mediaInsightsPipelineConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MediaInsightsPipelineConfigurationSummary>& GetMediaInsightsPipelineConfigurations() const { return m_mediaInsightsPipelineConfigurations; }
+    template<typename MediaInsightsPipelineConfigurationsT = Aws::Vector<MediaInsightsPipelineConfigurationSummary>>
+    void SetMediaInsightsPipelineConfigurations(MediaInsightsPipelineConfigurationsT&& value) { m_mediaInsightsPipelineConfigurationsHasBeenSet = true; m_mediaInsightsPipelineConfigurations = std::forward<MediaInsightsPipelineConfigurationsT>(value); }
+    template<typename MediaInsightsPipelineConfigurationsT = Aws::Vector<MediaInsightsPipelineConfigurationSummary>>
+    ListMediaInsightsPipelineConfigurationsResult& WithMediaInsightsPipelineConfigurations(MediaInsightsPipelineConfigurationsT&& value) { SetMediaInsightsPipelineConfigurations(std::forward<MediaInsightsPipelineConfigurationsT>(value)); return *this;}
+    template<typename MediaInsightsPipelineConfigurationsT = MediaInsightsPipelineConfigurationSummary>
+    ListMediaInsightsPipelineConfigurationsResult& AddMediaInsightsPipelineConfigurations(MediaInsightsPipelineConfigurationsT&& value) { m_mediaInsightsPipelineConfigurationsHasBeenSet = true; m_mediaInsightsPipelineConfigurations.emplace_back(std::forward<MediaInsightsPipelineConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token used to return the next page of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMediaInsightsPipelineConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMediaInsightsPipelineConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMediaInsightsPipelineConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMediaInsightsPipelineConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMediaInsightsPipelineConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMediaInsightsPipelineConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMediaInsightsPipelineConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMediaInsightsPipelineConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MediaInsightsPipelineConfigurationSummary> m_mediaInsightsPipelineConfigurations;
+    bool m_mediaInsightsPipelineConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

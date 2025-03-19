@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmARNHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(const XmlNode& xmlNode)
-  : Alarm()
 {
   *this = xmlNode;
 }

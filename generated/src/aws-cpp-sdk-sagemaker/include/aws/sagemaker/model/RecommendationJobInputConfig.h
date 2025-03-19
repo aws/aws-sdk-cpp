@@ -39,7 +39,7 @@ namespace Model
   class RecommendationJobInputConfig
   {
   public:
-    AWS_SAGEMAKER_API RecommendationJobInputConfig();
+    AWS_SAGEMAKER_API RecommendationJobInputConfig() = default;
     AWS_SAGEMAKER_API RecommendationJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RecommendationJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
      */
-    inline const Aws::String& GetModelPackageVersionArn() const{ return m_modelPackageVersionArn; }
+    inline const Aws::String& GetModelPackageVersionArn() const { return m_modelPackageVersionArn; }
     inline bool ModelPackageVersionArnHasBeenSet() const { return m_modelPackageVersionArnHasBeenSet; }
-    inline void SetModelPackageVersionArn(const Aws::String& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = value; }
-    inline void SetModelPackageVersionArn(Aws::String&& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = std::move(value); }
-    inline void SetModelPackageVersionArn(const char* value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn.assign(value); }
-    inline RecommendationJobInputConfig& WithModelPackageVersionArn(const Aws::String& value) { SetModelPackageVersionArn(value); return *this;}
-    inline RecommendationJobInputConfig& WithModelPackageVersionArn(Aws::String&& value) { SetModelPackageVersionArn(std::move(value)); return *this;}
-    inline RecommendationJobInputConfig& WithModelPackageVersionArn(const char* value) { SetModelPackageVersionArn(value); return *this;}
+    template<typename ModelPackageVersionArnT = Aws::String>
+    void SetModelPackageVersionArn(ModelPackageVersionArnT&& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = std::forward<ModelPackageVersionArnT>(value); }
+    template<typename ModelPackageVersionArnT = Aws::String>
+    RecommendationJobInputConfig& WithModelPackageVersionArn(ModelPackageVersionArnT&& value) { SetModelPackageVersionArn(std::forward<ModelPackageVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the created model.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline RecommendationJobInputConfig& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline RecommendationJobInputConfig& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline RecommendationJobInputConfig& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    RecommendationJobInputConfig& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
      * 18,000 seconds.</p>
      */
-    inline int GetJobDurationInSeconds() const{ return m_jobDurationInSeconds; }
+    inline int GetJobDurationInSeconds() const { return m_jobDurationInSeconds; }
     inline bool JobDurationInSecondsHasBeenSet() const { return m_jobDurationInSecondsHasBeenSet; }
     inline void SetJobDurationInSeconds(int value) { m_jobDurationInSecondsHasBeenSet = true; m_jobDurationInSeconds = value; }
     inline RecommendationJobInputConfig& WithJobDurationInSeconds(int value) { SetJobDurationInSeconds(value); return *this;}
@@ -88,38 +84,38 @@ namespace Model
     /**
      * <p>Specifies the traffic pattern of the job.</p>
      */
-    inline const TrafficPattern& GetTrafficPattern() const{ return m_trafficPattern; }
+    inline const TrafficPattern& GetTrafficPattern() const { return m_trafficPattern; }
     inline bool TrafficPatternHasBeenSet() const { return m_trafficPatternHasBeenSet; }
-    inline void SetTrafficPattern(const TrafficPattern& value) { m_trafficPatternHasBeenSet = true; m_trafficPattern = value; }
-    inline void SetTrafficPattern(TrafficPattern&& value) { m_trafficPatternHasBeenSet = true; m_trafficPattern = std::move(value); }
-    inline RecommendationJobInputConfig& WithTrafficPattern(const TrafficPattern& value) { SetTrafficPattern(value); return *this;}
-    inline RecommendationJobInputConfig& WithTrafficPattern(TrafficPattern&& value) { SetTrafficPattern(std::move(value)); return *this;}
+    template<typename TrafficPatternT = TrafficPattern>
+    void SetTrafficPattern(TrafficPatternT&& value) { m_trafficPatternHasBeenSet = true; m_trafficPattern = std::forward<TrafficPatternT>(value); }
+    template<typename TrafficPatternT = TrafficPattern>
+    RecommendationJobInputConfig& WithTrafficPattern(TrafficPatternT&& value) { SetTrafficPattern(std::forward<TrafficPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the resource limit of the job.</p>
      */
-    inline const RecommendationJobResourceLimit& GetResourceLimit() const{ return m_resourceLimit; }
+    inline const RecommendationJobResourceLimit& GetResourceLimit() const { return m_resourceLimit; }
     inline bool ResourceLimitHasBeenSet() const { return m_resourceLimitHasBeenSet; }
-    inline void SetResourceLimit(const RecommendationJobResourceLimit& value) { m_resourceLimitHasBeenSet = true; m_resourceLimit = value; }
-    inline void SetResourceLimit(RecommendationJobResourceLimit&& value) { m_resourceLimitHasBeenSet = true; m_resourceLimit = std::move(value); }
-    inline RecommendationJobInputConfig& WithResourceLimit(const RecommendationJobResourceLimit& value) { SetResourceLimit(value); return *this;}
-    inline RecommendationJobInputConfig& WithResourceLimit(RecommendationJobResourceLimit&& value) { SetResourceLimit(std::move(value)); return *this;}
+    template<typename ResourceLimitT = RecommendationJobResourceLimit>
+    void SetResourceLimit(ResourceLimitT&& value) { m_resourceLimitHasBeenSet = true; m_resourceLimit = std::forward<ResourceLimitT>(value); }
+    template<typename ResourceLimitT = RecommendationJobResourceLimit>
+    RecommendationJobInputConfig& WithResourceLimit(ResourceLimitT&& value) { SetResourceLimit(std::forward<ResourceLimitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the endpoint configuration to use for a job.</p>
      */
-    inline const Aws::Vector<EndpointInputConfiguration>& GetEndpointConfigurations() const{ return m_endpointConfigurations; }
+    inline const Aws::Vector<EndpointInputConfiguration>& GetEndpointConfigurations() const { return m_endpointConfigurations; }
     inline bool EndpointConfigurationsHasBeenSet() const { return m_endpointConfigurationsHasBeenSet; }
-    inline void SetEndpointConfigurations(const Aws::Vector<EndpointInputConfiguration>& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = value; }
-    inline void SetEndpointConfigurations(Aws::Vector<EndpointInputConfiguration>&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::move(value); }
-    inline RecommendationJobInputConfig& WithEndpointConfigurations(const Aws::Vector<EndpointInputConfiguration>& value) { SetEndpointConfigurations(value); return *this;}
-    inline RecommendationJobInputConfig& WithEndpointConfigurations(Aws::Vector<EndpointInputConfiguration>&& value) { SetEndpointConfigurations(std::move(value)); return *this;}
-    inline RecommendationJobInputConfig& AddEndpointConfigurations(const EndpointInputConfiguration& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(value); return *this; }
-    inline RecommendationJobInputConfig& AddEndpointConfigurations(EndpointInputConfiguration&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(std::move(value)); return *this; }
+    template<typename EndpointConfigurationsT = Aws::Vector<EndpointInputConfiguration>>
+    void SetEndpointConfigurations(EndpointConfigurationsT&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::forward<EndpointConfigurationsT>(value); }
+    template<typename EndpointConfigurationsT = Aws::Vector<EndpointInputConfiguration>>
+    RecommendationJobInputConfig& WithEndpointConfigurations(EndpointConfigurationsT&& value) { SetEndpointConfigurations(std::forward<EndpointConfigurationsT>(value)); return *this;}
+    template<typename EndpointConfigurationsT = EndpointInputConfiguration>
+    RecommendationJobInputConfig& AddEndpointConfigurations(EndpointConfigurationsT&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.emplace_back(std::forward<EndpointConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,14 +141,12 @@ namespace Model
      * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
      * (Amazon Web Services KMS) documentation.</p>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline RecommendationJobInputConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline RecommendationJobInputConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline RecommendationJobInputConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    RecommendationJobInputConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,26 +155,26 @@ namespace Model
      * fields specified in <code>ContainerConfig</code> override the corresponding
      * fields in the model package.</p>
      */
-    inline const RecommendationJobContainerConfig& GetContainerConfig() const{ return m_containerConfig; }
+    inline const RecommendationJobContainerConfig& GetContainerConfig() const { return m_containerConfig; }
     inline bool ContainerConfigHasBeenSet() const { return m_containerConfigHasBeenSet; }
-    inline void SetContainerConfig(const RecommendationJobContainerConfig& value) { m_containerConfigHasBeenSet = true; m_containerConfig = value; }
-    inline void SetContainerConfig(RecommendationJobContainerConfig&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::move(value); }
-    inline RecommendationJobInputConfig& WithContainerConfig(const RecommendationJobContainerConfig& value) { SetContainerConfig(value); return *this;}
-    inline RecommendationJobInputConfig& WithContainerConfig(RecommendationJobContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
+    template<typename ContainerConfigT = RecommendationJobContainerConfig>
+    void SetContainerConfig(ContainerConfigT&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::forward<ContainerConfigT>(value); }
+    template<typename ContainerConfigT = RecommendationJobContainerConfig>
+    RecommendationJobInputConfig& WithContainerConfig(ContainerConfigT&& value) { SetContainerConfig(std::forward<ContainerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
      */
-    inline const Aws::Vector<EndpointInfo>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<EndpointInfo>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<EndpointInfo>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<EndpointInfo>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline RecommendationJobInputConfig& WithEndpoints(const Aws::Vector<EndpointInfo>& value) { SetEndpoints(value); return *this;}
-    inline RecommendationJobInputConfig& WithEndpoints(Aws::Vector<EndpointInfo>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline RecommendationJobInputConfig& AddEndpoints(const EndpointInfo& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline RecommendationJobInputConfig& AddEndpoints(EndpointInfo&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<EndpointInfo>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<EndpointInfo>>
+    RecommendationJobInputConfig& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = EndpointInfo>
+    RecommendationJobInputConfig& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,12 +182,12 @@ namespace Model
      * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
      * the inference recommendation job.</p>
      */
-    inline const RecommendationJobVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const RecommendationJobVpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const RecommendationJobVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(RecommendationJobVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline RecommendationJobInputConfig& WithVpcConfig(const RecommendationJobVpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline RecommendationJobInputConfig& WithVpcConfig(RecommendationJobVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = RecommendationJobVpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = RecommendationJobVpcConfig>
+    RecommendationJobInputConfig& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -203,7 +197,7 @@ namespace Model
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
 
-    int m_jobDurationInSeconds;
+    int m_jobDurationInSeconds{0};
     bool m_jobDurationInSecondsHasBeenSet = false;
 
     TrafficPattern m_trafficPattern;

@@ -12,12 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBGPPeerRequest::CreateBGPPeerRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_newBGPPeerHasBeenSet(false)
-{
-}
-
 Aws::String CreateBGPPeerRequest::SerializePayload() const
 {
   JsonValue payload;

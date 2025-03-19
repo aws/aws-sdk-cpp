@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOptedOutNumbersResult::DescribeOptedOutNumbersResult()
-{
-}
-
 DescribeOptedOutNumbersResult::DescribeOptedOutNumbersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeOptedOutNumbersResult& DescribeOptedOutNumbersResult::operator =(const A
   if(jsonValue.ValueExists("OptOutListArn"))
   {
     m_optOutListArn = jsonValue.GetString("OptOutListArn");
-
+    m_optOutListArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptOutListName"))
   {
     m_optOutListName = jsonValue.GetString("OptOutListName");
-
+    m_optOutListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptedOutNumbers"))
   {
     Aws::Utils::Array<JsonView> optedOutNumbersJsonList = jsonValue.GetArray("OptedOutNumbers");
@@ -48,20 +42,20 @@ DescribeOptedOutNumbersResult& DescribeOptedOutNumbersResult::operator =(const A
     {
       m_optedOutNumbers.push_back(optedOutNumbersJsonList[optedOutNumbersIndex].AsObject());
     }
+    m_optedOutNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

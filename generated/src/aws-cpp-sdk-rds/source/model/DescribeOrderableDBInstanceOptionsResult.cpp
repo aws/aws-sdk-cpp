@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrderableDBInstanceOptionsResult::DescribeOrderableDBInstanceOptionsResult()
-{
-}
-
 DescribeOrderableDBInstanceOptionsResult::DescribeOrderableDBInstanceOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResu
     if(!orderableDBInstanceOptionsNode.IsNull())
     {
       XmlNode orderableDBInstanceOptionsMember = orderableDBInstanceOptionsNode.FirstChild("OrderableDBInstanceOption");
+      m_orderableDBInstanceOptionsHasBeenSet = !orderableDBInstanceOptionsMember.IsNull();
       while(!orderableDBInstanceOptionsMember.IsNull())
       {
         m_orderableDBInstanceOptions.push_back(orderableDBInstanceOptionsMember);
         orderableDBInstanceOptionsMember = orderableDBInstanceOptionsMember.NextNode("OrderableDBInstanceOption");
       }
 
+      m_orderableDBInstanceOptionsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeOrderableDBInstanceOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

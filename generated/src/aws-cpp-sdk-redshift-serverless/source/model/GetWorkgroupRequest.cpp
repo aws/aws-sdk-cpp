@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkgroupRequest::GetWorkgroupRequest() : 
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkgroupRequest::SerializePayload() const
 {
   JsonValue payload;

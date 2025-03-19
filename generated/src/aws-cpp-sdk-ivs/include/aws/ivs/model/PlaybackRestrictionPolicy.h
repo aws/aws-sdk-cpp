@@ -34,7 +34,7 @@ namespace Model
   class PlaybackRestrictionPolicy
   {
   public:
-    AWS_IVS_API PlaybackRestrictionPolicy();
+    AWS_IVS_API PlaybackRestrictionPolicy() = default;
     AWS_IVS_API PlaybackRestrictionPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API PlaybackRestrictionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
      * codes. Default: All countries (an empty array).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedCountries() const{ return m_allowedCountries; }
+    inline const Aws::Vector<Aws::String>& GetAllowedCountries() const { return m_allowedCountries; }
     inline bool AllowedCountriesHasBeenSet() const { return m_allowedCountriesHasBeenSet; }
-    inline void SetAllowedCountries(const Aws::Vector<Aws::String>& value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries = value; }
-    inline void SetAllowedCountries(Aws::Vector<Aws::String>&& value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries = std::move(value); }
-    inline PlaybackRestrictionPolicy& WithAllowedCountries(const Aws::Vector<Aws::String>& value) { SetAllowedCountries(value); return *this;}
-    inline PlaybackRestrictionPolicy& WithAllowedCountries(Aws::Vector<Aws::String>&& value) { SetAllowedCountries(std::move(value)); return *this;}
-    inline PlaybackRestrictionPolicy& AddAllowedCountries(const Aws::String& value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries.push_back(value); return *this; }
-    inline PlaybackRestrictionPolicy& AddAllowedCountries(Aws::String&& value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries.push_back(std::move(value)); return *this; }
-    inline PlaybackRestrictionPolicy& AddAllowedCountries(const char* value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries.push_back(value); return *this; }
+    template<typename AllowedCountriesT = Aws::Vector<Aws::String>>
+    void SetAllowedCountries(AllowedCountriesT&& value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries = std::forward<AllowedCountriesT>(value); }
+    template<typename AllowedCountriesT = Aws::Vector<Aws::String>>
+    PlaybackRestrictionPolicy& WithAllowedCountries(AllowedCountriesT&& value) { SetAllowedCountries(std::forward<AllowedCountriesT>(value)); return *this;}
+    template<typename AllowedCountriesT = Aws::String>
+    PlaybackRestrictionPolicy& AddAllowedCountries(AllowedCountriesT&& value) { m_allowedCountriesHasBeenSet = true; m_allowedCountries.emplace_back(std::forward<AllowedCountriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,29 +64,26 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin</a>.
      * Default: All origins (an empty array).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedOrigins() const{ return m_allowedOrigins; }
+    inline const Aws::Vector<Aws::String>& GetAllowedOrigins() const { return m_allowedOrigins; }
     inline bool AllowedOriginsHasBeenSet() const { return m_allowedOriginsHasBeenSet; }
-    inline void SetAllowedOrigins(const Aws::Vector<Aws::String>& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = value; }
-    inline void SetAllowedOrigins(Aws::Vector<Aws::String>&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = std::move(value); }
-    inline PlaybackRestrictionPolicy& WithAllowedOrigins(const Aws::Vector<Aws::String>& value) { SetAllowedOrigins(value); return *this;}
-    inline PlaybackRestrictionPolicy& WithAllowedOrigins(Aws::Vector<Aws::String>&& value) { SetAllowedOrigins(std::move(value)); return *this;}
-    inline PlaybackRestrictionPolicy& AddAllowedOrigins(const Aws::String& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
-    inline PlaybackRestrictionPolicy& AddAllowedOrigins(Aws::String&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(std::move(value)); return *this; }
-    inline PlaybackRestrictionPolicy& AddAllowedOrigins(const char* value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
+    template<typename AllowedOriginsT = Aws::Vector<Aws::String>>
+    void SetAllowedOrigins(AllowedOriginsT&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = std::forward<AllowedOriginsT>(value); }
+    template<typename AllowedOriginsT = Aws::Vector<Aws::String>>
+    PlaybackRestrictionPolicy& WithAllowedOrigins(AllowedOriginsT&& value) { SetAllowedOrigins(std::forward<AllowedOriginsT>(value)); return *this;}
+    template<typename AllowedOriginsT = Aws::String>
+    PlaybackRestrictionPolicy& AddAllowedOrigins(AllowedOriginsT&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.emplace_back(std::forward<AllowedOriginsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Playback-restriction-policy ARN</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PlaybackRestrictionPolicy& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PlaybackRestrictionPolicy& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PlaybackRestrictionPolicy& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PlaybackRestrictionPolicy& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +91,7 @@ namespace Model
      * <p>Whether channel playback is constrained by origin site. Default:
      * <code>false</code>.</p>
      */
-    inline bool GetEnableStrictOriginEnforcement() const{ return m_enableStrictOriginEnforcement; }
+    inline bool GetEnableStrictOriginEnforcement() const { return m_enableStrictOriginEnforcement; }
     inline bool EnableStrictOriginEnforcementHasBeenSet() const { return m_enableStrictOriginEnforcementHasBeenSet; }
     inline void SetEnableStrictOriginEnforcement(bool value) { m_enableStrictOriginEnforcementHasBeenSet = true; m_enableStrictOriginEnforcement = value; }
     inline PlaybackRestrictionPolicy& WithEnableStrictOriginEnforcement(bool value) { SetEnableStrictOriginEnforcement(value); return *this;}
@@ -105,14 +101,12 @@ namespace Model
     /**
      * <p>Playback-restriction-policy name. The value does not need to be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PlaybackRestrictionPolicy& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PlaybackRestrictionPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PlaybackRestrictionPolicy& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PlaybackRestrictionPolicy& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,19 +119,16 @@ namespace Model
      * naming limits and requirements"; Amazon IVS has no service-specific constraints
      * beyond what is documented there.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PlaybackRestrictionPolicy& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline PlaybackRestrictionPolicy& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline PlaybackRestrictionPolicy& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline PlaybackRestrictionPolicy& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PlaybackRestrictionPolicy& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PlaybackRestrictionPolicy& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline PlaybackRestrictionPolicy& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PlaybackRestrictionPolicy& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PlaybackRestrictionPolicy& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    PlaybackRestrictionPolicy& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    PlaybackRestrictionPolicy& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -150,7 +141,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_enableStrictOriginEnforcement;
+    bool m_enableStrictOriginEnforcement{false};
     bool m_enableStrictOriginEnforcementHasBeenSet = false;
 
     Aws::String m_name;

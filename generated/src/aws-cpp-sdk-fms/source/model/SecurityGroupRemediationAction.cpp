@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-SecurityGroupRemediationAction::SecurityGroupRemediationAction() : 
-    m_remediationActionType(RemediationActionType::NOT_SET),
-    m_remediationActionTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationResultHasBeenSet(false),
-    m_isDefaultAction(false),
-    m_isDefaultActionHasBeenSet(false)
-{
-}
-
 SecurityGroupRemediationAction::SecurityGroupRemediationAction(JsonView jsonValue)
-  : SecurityGroupRemediationAction()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ SecurityGroupRemediationAction& SecurityGroupRemediationAction::operator =(JsonV
   if(jsonValue.ValueExists("RemediationActionType"))
   {
     m_remediationActionType = RemediationActionTypeMapper::GetRemediationActionTypeForName(jsonValue.GetString("RemediationActionType"));
-
     m_remediationActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemediationResult"))
   {
     m_remediationResult = jsonValue.GetObject("RemediationResult");
-
     m_remediationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefaultAction"))
   {
     m_isDefaultAction = jsonValue.GetBool("IsDefaultAction");
-
     m_isDefaultActionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -42,7 +42,7 @@ namespace Model
   class Group
   {
   public:
-    AWS_RESOURCEGROUPS_API Group();
+    AWS_RESOURCEGROUPS_API Group() = default;
     AWS_RESOURCEGROUPS_API Group(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,42 +52,36 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the resource group.</p>
      */
-    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+    inline const Aws::String& GetGroupArn() const { return m_groupArn; }
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
-    inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
-    inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
-    inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
-    inline Group& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-    inline Group& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-    inline Group& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+    template<typename GroupArnT = Aws::String>
+    void SetGroupArn(GroupArnT&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::forward<GroupArnT>(value); }
+    template<typename GroupArnT = Aws::String>
+    Group& WithGroupArn(GroupArnT&& value) { SetGroupArn(std::forward<GroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Group& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Group& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Group& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Group& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the resource group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Group& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Group& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Group& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Group& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * <p>The critical rank of the application group on a scale of 1 to 10, with a rank
      * of 1 being the most critical, and a rank of 10 being least critical.</p>
      */
-    inline int GetCriticality() const{ return m_criticality; }
+    inline int GetCriticality() const { return m_criticality; }
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
     inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
     inline Group& WithCriticality(int value) { SetCriticality(value); return *this;}
@@ -106,28 +100,24 @@ namespace Model
      * <p>A name, email address or other identifier for the person or group who is
      * considered as the owner of this application group within your organization. </p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline Group& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline Group& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline Group& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    Group& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application group, which you can change at any time. </p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Group& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Group& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Group& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Group& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,19 +125,16 @@ namespace Model
      * <p>A tag that defines the application group membership. This tag is only
      * supported for application groups. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetApplicationTag() const{ return m_applicationTag; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetApplicationTag() const { return m_applicationTag; }
     inline bool ApplicationTagHasBeenSet() const { return m_applicationTagHasBeenSet; }
-    inline void SetApplicationTag(const Aws::Map<Aws::String, Aws::String>& value) { m_applicationTagHasBeenSet = true; m_applicationTag = value; }
-    inline void SetApplicationTag(Aws::Map<Aws::String, Aws::String>&& value) { m_applicationTagHasBeenSet = true; m_applicationTag = std::move(value); }
-    inline Group& WithApplicationTag(const Aws::Map<Aws::String, Aws::String>& value) { SetApplicationTag(value); return *this;}
-    inline Group& WithApplicationTag(Aws::Map<Aws::String, Aws::String>&& value) { SetApplicationTag(std::move(value)); return *this;}
-    inline Group& AddApplicationTag(const Aws::String& key, const Aws::String& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, value); return *this; }
-    inline Group& AddApplicationTag(Aws::String&& key, const Aws::String& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::move(key), value); return *this; }
-    inline Group& AddApplicationTag(const Aws::String& key, Aws::String&& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, std::move(value)); return *this; }
-    inline Group& AddApplicationTag(Aws::String&& key, Aws::String&& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::move(key), std::move(value)); return *this; }
-    inline Group& AddApplicationTag(const char* key, Aws::String&& value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, std::move(value)); return *this; }
-    inline Group& AddApplicationTag(Aws::String&& key, const char* value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::move(key), value); return *this; }
-    inline Group& AddApplicationTag(const char* key, const char* value) { m_applicationTagHasBeenSet = true; m_applicationTag.emplace(key, value); return *this; }
+    template<typename ApplicationTagT = Aws::Map<Aws::String, Aws::String>>
+    void SetApplicationTag(ApplicationTagT&& value) { m_applicationTagHasBeenSet = true; m_applicationTag = std::forward<ApplicationTagT>(value); }
+    template<typename ApplicationTagT = Aws::Map<Aws::String, Aws::String>>
+    Group& WithApplicationTag(ApplicationTagT&& value) { SetApplicationTag(std::forward<ApplicationTagT>(value)); return *this;}
+    template<typename ApplicationTagKeyT = Aws::String, typename ApplicationTagValueT = Aws::String>
+    Group& AddApplicationTag(ApplicationTagKeyT&& key, ApplicationTagValueT&& value) {
+      m_applicationTagHasBeenSet = true; m_applicationTag.emplace(std::forward<ApplicationTagKeyT>(key), std::forward<ApplicationTagValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -160,7 +147,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    int m_criticality;
+    int m_criticality{0};
     bool m_criticalityHasBeenSet = false;
 
     Aws::String m_owner;

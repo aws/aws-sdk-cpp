@@ -33,7 +33,7 @@ namespace Model
   class TileLayoutStyle
   {
   public:
-    AWS_QUICKSIGHT_API TileLayoutStyle();
+    AWS_QUICKSIGHT_API TileLayoutStyle() = default;
     AWS_QUICKSIGHT_API TileLayoutStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TileLayoutStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The gutter settings that apply between tiles. </p>
      */
-    inline const GutterStyle& GetGutter() const{ return m_gutter; }
+    inline const GutterStyle& GetGutter() const { return m_gutter; }
     inline bool GutterHasBeenSet() const { return m_gutterHasBeenSet; }
-    inline void SetGutter(const GutterStyle& value) { m_gutterHasBeenSet = true; m_gutter = value; }
-    inline void SetGutter(GutterStyle&& value) { m_gutterHasBeenSet = true; m_gutter = std::move(value); }
-    inline TileLayoutStyle& WithGutter(const GutterStyle& value) { SetGutter(value); return *this;}
-    inline TileLayoutStyle& WithGutter(GutterStyle&& value) { SetGutter(std::move(value)); return *this;}
+    template<typename GutterT = GutterStyle>
+    void SetGutter(GutterT&& value) { m_gutterHasBeenSet = true; m_gutter = std::forward<GutterT>(value); }
+    template<typename GutterT = GutterStyle>
+    TileLayoutStyle& WithGutter(GutterT&& value) { SetGutter(std::forward<GutterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The margin settings that apply around the outside edge of sheets.</p>
      */
-    inline const MarginStyle& GetMargin() const{ return m_margin; }
+    inline const MarginStyle& GetMargin() const { return m_margin; }
     inline bool MarginHasBeenSet() const { return m_marginHasBeenSet; }
-    inline void SetMargin(const MarginStyle& value) { m_marginHasBeenSet = true; m_margin = value; }
-    inline void SetMargin(MarginStyle&& value) { m_marginHasBeenSet = true; m_margin = std::move(value); }
-    inline TileLayoutStyle& WithMargin(const MarginStyle& value) { SetMargin(value); return *this;}
-    inline TileLayoutStyle& WithMargin(MarginStyle&& value) { SetMargin(std::move(value)); return *this;}
+    template<typename MarginT = MarginStyle>
+    void SetMargin(MarginT&& value) { m_marginHasBeenSet = true; m_margin = std::forward<MarginT>(value); }
+    template<typename MarginT = MarginStyle>
+    TileLayoutStyle& WithMargin(MarginT&& value) { SetMargin(std::forward<MarginT>(value)); return *this;}
     ///@}
   private:
 

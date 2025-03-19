@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceRequest::DeleteServiceRequest() : 
-    m_serviceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceRequest::SerializePayload() const
 {
   JsonValue payload;

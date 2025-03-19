@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation() : 
-    m_networkAclAssociationIdHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkAclAssociation::AwsEc2NetworkAclAssociation(JsonView jsonValue)
-  : AwsEc2NetworkAclAssociation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsEc2NetworkAclAssociation& AwsEc2NetworkAclAssociation::operator =(JsonView js
   if(jsonValue.ValueExists("NetworkAclAssociationId"))
   {
     m_networkAclAssociationId = jsonValue.GetString("NetworkAclAssociationId");
-
     m_networkAclAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclId"))
   {
     m_networkAclId = jsonValue.GetString("NetworkAclId");
-
     m_networkAclIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

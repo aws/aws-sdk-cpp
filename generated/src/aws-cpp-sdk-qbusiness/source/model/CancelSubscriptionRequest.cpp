@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelSubscriptionRequest::CancelSubscriptionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelSubscriptionRequest::SerializePayload() const
 {
   return {};

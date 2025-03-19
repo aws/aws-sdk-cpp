@@ -28,7 +28,7 @@ namespace Model
   class UpdateComputeEnvironmentRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API UpdateComputeEnvironmentRequest();
+    AWS_BATCH_API UpdateComputeEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
      * update.</p>
      */
-    inline const Aws::String& GetComputeEnvironment() const{ return m_computeEnvironment; }
+    inline const Aws::String& GetComputeEnvironment() const { return m_computeEnvironment; }
     inline bool ComputeEnvironmentHasBeenSet() const { return m_computeEnvironmentHasBeenSet; }
-    inline void SetComputeEnvironment(const Aws::String& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
-    inline void SetComputeEnvironment(Aws::String&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::move(value); }
-    inline void SetComputeEnvironment(const char* value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment.assign(value); }
-    inline UpdateComputeEnvironmentRequest& WithComputeEnvironment(const Aws::String& value) { SetComputeEnvironment(value); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithComputeEnvironment(Aws::String&& value) { SetComputeEnvironment(std::move(value)); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithComputeEnvironment(const char* value) { SetComputeEnvironment(value); return *this;}
+    template<typename ComputeEnvironmentT = Aws::String>
+    void SetComputeEnvironment(ComputeEnvironmentT&& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = std::forward<ComputeEnvironmentT>(value); }
+    template<typename ComputeEnvironmentT = Aws::String>
+    UpdateComputeEnvironmentRequest& WithComputeEnvironment(ComputeEnvironmentT&& value) { SetComputeEnvironment(std::forward<ComputeEnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,10 @@ namespace Model
      * <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale
      * down to a <code>c5.large</code> instance.</p>
      */
-    inline const CEState& GetState() const{ return m_state; }
+    inline CEState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CEState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline UpdateComputeEnvironmentRequest& WithState(const CEState& value) { SetState(value); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CEState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateComputeEnvironmentRequest& WithState(CEState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +90,7 @@ namespace Model
      * for new share identifiers. If this parameter isn't provided for a fair share job
      * queue, no vCPU capacity is reserved.</p>
      */
-    inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
+    inline int GetUnmanagedvCpus() const { return m_unmanagedvCpus; }
     inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
     inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
     inline UpdateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
@@ -107,12 +103,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
      * Environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const ComputeResourceUpdate& GetComputeResources() const{ return m_computeResources; }
+    inline const ComputeResourceUpdate& GetComputeResources() const { return m_computeResources; }
     inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
-    inline void SetComputeResources(const ComputeResourceUpdate& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
-    inline void SetComputeResources(ComputeResourceUpdate&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::move(value); }
-    inline UpdateComputeEnvironmentRequest& WithComputeResources(const ComputeResourceUpdate& value) { SetComputeResources(value); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithComputeResources(ComputeResourceUpdate&& value) { SetComputeResources(std::move(value)); return *this;}
+    template<typename ComputeResourcesT = ComputeResourceUpdate>
+    void SetComputeResources(ComputeResourcesT&& value) { m_computeResourcesHasBeenSet = true; m_computeResources = std::forward<ComputeResourcesT>(value); }
+    template<typename ComputeResourcesT = ComputeResourceUpdate>
+    UpdateComputeEnvironmentRequest& WithComputeResources(ComputeResourcesT&& value) { SetComputeResources(std::forward<ComputeResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +135,12 @@ namespace Model
      * you specify the full ARN of your service role when you create compute
      * environments.</p> 
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline UpdateComputeEnvironmentRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    UpdateComputeEnvironmentRequest& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,36 +150,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      * compute environments</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const UpdatePolicy& GetUpdatePolicy() const{ return m_updatePolicy; }
+    inline const UpdatePolicy& GetUpdatePolicy() const { return m_updatePolicy; }
     inline bool UpdatePolicyHasBeenSet() const { return m_updatePolicyHasBeenSet; }
-    inline void SetUpdatePolicy(const UpdatePolicy& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = value; }
-    inline void SetUpdatePolicy(UpdatePolicy&& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = std::move(value); }
-    inline UpdateComputeEnvironmentRequest& WithUpdatePolicy(const UpdatePolicy& value) { SetUpdatePolicy(value); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithUpdatePolicy(UpdatePolicy&& value) { SetUpdatePolicy(std::move(value)); return *this;}
+    template<typename UpdatePolicyT = UpdatePolicy>
+    void SetUpdatePolicy(UpdatePolicyT&& value) { m_updatePolicyHasBeenSet = true; m_updatePolicy = std::forward<UpdatePolicyT>(value); }
+    template<typename UpdatePolicyT = UpdatePolicy>
+    UpdateComputeEnvironmentRequest& WithUpdatePolicy(UpdatePolicyT&& value) { SetUpdatePolicy(std::forward<UpdatePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetContext() const{ return m_context; }
+    inline const Aws::String& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline UpdateComputeEnvironmentRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline UpdateComputeEnvironmentRequest& WithContext(const char* value) { SetContext(value); return *this;}
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    UpdateComputeEnvironmentRequest& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_computeEnvironment;
     bool m_computeEnvironmentHasBeenSet = false;
 
-    CEState m_state;
+    CEState m_state{CEState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    int m_unmanagedvCpus;
+    int m_unmanagedvCpus{0};
     bool m_unmanagedvCpusHasBeenSet = false;
 
     ComputeResourceUpdate m_computeResources;

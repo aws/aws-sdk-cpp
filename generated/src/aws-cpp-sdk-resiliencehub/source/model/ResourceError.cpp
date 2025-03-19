@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ResourceError::ResourceError() : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ResourceError::ResourceError(JsonView jsonValue)
-  : ResourceError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourceError& ResourceError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logicalResourceId"))
   {
     m_logicalResourceId = jsonValue.GetString("logicalResourceId");
-
     m_logicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalResourceId"))
   {
     m_physicalResourceId = jsonValue.GetString("physicalResourceId");
-
     m_physicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

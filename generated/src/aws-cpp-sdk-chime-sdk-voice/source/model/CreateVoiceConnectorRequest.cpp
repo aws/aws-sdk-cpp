@@ -12,18 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVoiceConnectorRequest::CreateVoiceConnectorRequest() : 
-    m_nameHasBeenSet(false),
-    m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
-    m_awsRegionHasBeenSet(false),
-    m_requireEncryption(false),
-    m_requireEncryptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_integrationType(VoiceConnectorIntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateVoiceConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

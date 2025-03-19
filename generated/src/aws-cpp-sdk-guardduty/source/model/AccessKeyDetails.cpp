@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AccessKeyDetails::AccessKeyDetails() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
-{
-}
-
 AccessKeyDetails::AccessKeyDetails(JsonView jsonValue)
-  : AccessKeyDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AccessKeyDetails& AccessKeyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userName"))
   {
     m_userName = jsonValue.GetString("userName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userType"))
   {
     m_userType = jsonValue.GetString("userType");
-
     m_userTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

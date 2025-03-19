@@ -27,7 +27,7 @@ namespace Model
   class CreateLensVersionResult
   {
   public:
-    AWS_WELLARCHITECTED_API CreateLensVersionResult();
+    AWS_WELLARCHITECTED_API CreateLensVersionResult() = default;
     AWS_WELLARCHITECTED_API CreateLensVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API CreateLensVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The ARN for the lens.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArn.assign(value); }
-    inline CreateLensVersionResult& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline CreateLensVersionResult& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline CreateLensVersionResult& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    CreateLensVersionResult& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the lens.</p>
      */
-    inline const Aws::String& GetLensVersion() const{ return m_lensVersion; }
-    inline void SetLensVersion(const Aws::String& value) { m_lensVersion = value; }
-    inline void SetLensVersion(Aws::String&& value) { m_lensVersion = std::move(value); }
-    inline void SetLensVersion(const char* value) { m_lensVersion.assign(value); }
-    inline CreateLensVersionResult& WithLensVersion(const Aws::String& value) { SetLensVersion(value); return *this;}
-    inline CreateLensVersionResult& WithLensVersion(Aws::String&& value) { SetLensVersion(std::move(value)); return *this;}
-    inline CreateLensVersionResult& WithLensVersion(const char* value) { SetLensVersion(value); return *this;}
+    inline const Aws::String& GetLensVersion() const { return m_lensVersion; }
+    template<typename LensVersionT = Aws::String>
+    void SetLensVersion(LensVersionT&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::forward<LensVersionT>(value); }
+    template<typename LensVersionT = Aws::String>
+    CreateLensVersionResult& WithLensVersion(LensVersionT&& value) { SetLensVersion(std::forward<LensVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLensVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLensVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLensVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLensVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_lensArn;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_lensVersion;
+    bool m_lensVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

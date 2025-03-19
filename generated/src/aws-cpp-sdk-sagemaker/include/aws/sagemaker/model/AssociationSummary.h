@@ -36,7 +36,7 @@ namespace Model
   class AssociationSummary
   {
   public:
-    AWS_SAGEMAKER_API AssociationSummary();
+    AWS_SAGEMAKER_API AssociationSummary() = default;
     AWS_SAGEMAKER_API AssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,118 +46,104 @@ namespace Model
     /**
      * <p>The ARN of the source.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline AssociationSummary& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline AssociationSummary& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline AssociationSummary& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    AssociationSummary& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline AssociationSummary& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline AssociationSummary& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline AssociationSummary& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    AssociationSummary& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source type.</p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline AssociationSummary& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline AssociationSummary& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline AssociationSummary& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    AssociationSummary& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination type.</p>
      */
-    inline const Aws::String& GetDestinationType() const{ return m_destinationType; }
+    inline const Aws::String& GetDestinationType() const { return m_destinationType; }
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
-    inline void SetDestinationType(const Aws::String& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
-    inline void SetDestinationType(Aws::String&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
-    inline void SetDestinationType(const char* value) { m_destinationTypeHasBeenSet = true; m_destinationType.assign(value); }
-    inline AssociationSummary& WithDestinationType(const Aws::String& value) { SetDestinationType(value); return *this;}
-    inline AssociationSummary& WithDestinationType(Aws::String&& value) { SetDestinationType(std::move(value)); return *this;}
-    inline AssociationSummary& WithDestinationType(const char* value) { SetDestinationType(value); return *this;}
+    template<typename DestinationTypeT = Aws::String>
+    void SetDestinationType(DestinationTypeT&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::forward<DestinationTypeT>(value); }
+    template<typename DestinationTypeT = Aws::String>
+    AssociationSummary& WithDestinationType(DestinationTypeT&& value) { SetDestinationType(std::forward<DestinationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the association.</p>
      */
-    inline const AssociationEdgeType& GetAssociationType() const{ return m_associationType; }
+    inline AssociationEdgeType GetAssociationType() const { return m_associationType; }
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-    inline void SetAssociationType(const AssociationEdgeType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-    inline void SetAssociationType(AssociationEdgeType&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
-    inline AssociationSummary& WithAssociationType(const AssociationEdgeType& value) { SetAssociationType(value); return *this;}
-    inline AssociationSummary& WithAssociationType(AssociationEdgeType&& value) { SetAssociationType(std::move(value)); return *this;}
+    inline void SetAssociationType(AssociationEdgeType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
+    inline AssociationSummary& WithAssociationType(AssociationEdgeType value) { SetAssociationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source.</p>
      */
-    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
+    inline const Aws::String& GetSourceName() const { return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-    inline AssociationSummary& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-    inline AssociationSummary& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-    inline AssociationSummary& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    template<typename SourceNameT = Aws::String>
+    void SetSourceName(SourceNameT&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::forward<SourceNameT>(value); }
+    template<typename SourceNameT = Aws::String>
+    AssociationSummary& WithSourceName(SourceNameT&& value) { SetSourceName(std::forward<SourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the destination.</p>
      */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+    inline const Aws::String& GetDestinationName() const { return m_destinationName; }
     inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-    inline AssociationSummary& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-    inline AssociationSummary& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-    inline AssociationSummary& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+    template<typename DestinationNameT = Aws::String>
+    void SetDestinationName(DestinationNameT&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::forward<DestinationNameT>(value); }
+    template<typename DestinationNameT = Aws::String>
+    AssociationSummary& WithDestinationName(DestinationNameT&& value) { SetDestinationName(std::forward<DestinationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the association was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline AssociationSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline AssociationSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    AssociationSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline AssociationSummary& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline AssociationSummary& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    AssociationSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
   private:
 
@@ -173,7 +159,7 @@ namespace Model
     Aws::String m_destinationType;
     bool m_destinationTypeHasBeenSet = false;
 
-    AssociationEdgeType m_associationType;
+    AssociationEdgeType m_associationType{AssociationEdgeType::NOT_SET};
     bool m_associationTypeHasBeenSet = false;
 
     Aws::String m_sourceName;
@@ -182,7 +168,7 @@ namespace Model
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;

@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Metadata::Metadata() : 
-    m_eTagHasBeenSet(false),
-    m_fileSize(0),
-    m_fileSizeHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_mimeTypeHasBeenSet(false)
-{
-}
-
 Metadata::Metadata(JsonView jsonValue)
-  : Metadata()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Metadata& Metadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eTag"))
   {
     m_eTag = jsonValue.GetString("eTag");
-
     m_eTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSize"))
   {
     m_fileSize = jsonValue.GetInt64("fileSize");
-
     m_fileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetDouble("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mimeType"))
   {
     m_mimeType = jsonValue.GetString("mimeType");
-
     m_mimeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

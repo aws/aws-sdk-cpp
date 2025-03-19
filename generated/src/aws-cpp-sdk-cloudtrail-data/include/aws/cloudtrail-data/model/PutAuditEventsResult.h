@@ -30,7 +30,7 @@ namespace Model
   class PutAuditEventsResult
   {
   public:
-    AWS_CLOUDTRAILDATA_API PutAuditEventsResult();
+    AWS_CLOUDTRAILDATA_API PutAuditEventsResult() = default;
     AWS_CLOUDTRAILDATA_API PutAuditEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAILDATA_API PutAuditEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * CloudTrail, and includes the error code and error message returned for events
      * that could not be ingested.</p>
      */
-    inline const Aws::Vector<ResultErrorEntry>& GetFailed() const{ return m_failed; }
-    inline void SetFailed(const Aws::Vector<ResultErrorEntry>& value) { m_failed = value; }
-    inline void SetFailed(Aws::Vector<ResultErrorEntry>&& value) { m_failed = std::move(value); }
-    inline PutAuditEventsResult& WithFailed(const Aws::Vector<ResultErrorEntry>& value) { SetFailed(value); return *this;}
-    inline PutAuditEventsResult& WithFailed(Aws::Vector<ResultErrorEntry>&& value) { SetFailed(std::move(value)); return *this;}
-    inline PutAuditEventsResult& AddFailed(const ResultErrorEntry& value) { m_failed.push_back(value); return *this; }
-    inline PutAuditEventsResult& AddFailed(ResultErrorEntry&& value) { m_failed.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResultErrorEntry>& GetFailed() const { return m_failed; }
+    template<typename FailedT = Aws::Vector<ResultErrorEntry>>
+    void SetFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed = std::forward<FailedT>(value); }
+    template<typename FailedT = Aws::Vector<ResultErrorEntry>>
+    PutAuditEventsResult& WithFailed(FailedT&& value) { SetFailed(std::forward<FailedT>(value)); return *this;}
+    template<typename FailedT = ResultErrorEntry>
+    PutAuditEventsResult& AddFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed.emplace_back(std::forward<FailedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,33 @@ namespace Model
      * <p>Lists events in the provided event payload that were successfully ingested
      * into CloudTrail.</p>
      */
-    inline const Aws::Vector<AuditEventResultEntry>& GetSuccessful() const{ return m_successful; }
-    inline void SetSuccessful(const Aws::Vector<AuditEventResultEntry>& value) { m_successful = value; }
-    inline void SetSuccessful(Aws::Vector<AuditEventResultEntry>&& value) { m_successful = std::move(value); }
-    inline PutAuditEventsResult& WithSuccessful(const Aws::Vector<AuditEventResultEntry>& value) { SetSuccessful(value); return *this;}
-    inline PutAuditEventsResult& WithSuccessful(Aws::Vector<AuditEventResultEntry>&& value) { SetSuccessful(std::move(value)); return *this;}
-    inline PutAuditEventsResult& AddSuccessful(const AuditEventResultEntry& value) { m_successful.push_back(value); return *this; }
-    inline PutAuditEventsResult& AddSuccessful(AuditEventResultEntry&& value) { m_successful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuditEventResultEntry>& GetSuccessful() const { return m_successful; }
+    template<typename SuccessfulT = Aws::Vector<AuditEventResultEntry>>
+    void SetSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful = std::forward<SuccessfulT>(value); }
+    template<typename SuccessfulT = Aws::Vector<AuditEventResultEntry>>
+    PutAuditEventsResult& WithSuccessful(SuccessfulT&& value) { SetSuccessful(std::forward<SuccessfulT>(value)); return *this;}
+    template<typename SuccessfulT = AuditEventResultEntry>
+    PutAuditEventsResult& AddSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful.emplace_back(std::forward<SuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutAuditEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutAuditEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutAuditEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutAuditEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResultErrorEntry> m_failed;
+    bool m_failedHasBeenSet = false;
 
     Aws::Vector<AuditEventResultEntry> m_successful;
+    bool m_successfulHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

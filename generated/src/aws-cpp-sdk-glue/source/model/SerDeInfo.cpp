@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SerDeInfo::SerDeInfo() : 
-    m_nameHasBeenSet(false),
-    m_serializationLibraryHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 SerDeInfo::SerDeInfo(JsonView jsonValue)
-  : SerDeInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SerDeInfo& SerDeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SerializationLibrary"))
   {
     m_serializationLibrary = jsonValue.GetString("SerializationLibrary");
-
     m_serializationLibraryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -56,7 +44,6 @@ SerDeInfo& SerDeInfo::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

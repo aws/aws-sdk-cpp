@@ -12,20 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterActivityTypeRequest::RegisterActivityTypeRequest() : 
-    m_domainHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
-    m_defaultTaskHeartbeatTimeoutHasBeenSet(false),
-    m_defaultTaskListHasBeenSet(false),
-    m_defaultTaskPriorityHasBeenSet(false),
-    m_defaultTaskScheduleToStartTimeoutHasBeenSet(false),
-    m_defaultTaskScheduleToCloseTimeoutHasBeenSet(false)
-{
-}
-
 Aws::String RegisterActivityTypeRequest::SerializePayload() const
 {
   JsonValue payload;

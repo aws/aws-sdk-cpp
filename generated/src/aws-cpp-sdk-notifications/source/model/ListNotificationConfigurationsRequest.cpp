@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNotificationConfigurationsRequest::ListNotificationConfigurationsRequest() : 
-    m_eventRuleSourceHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_status(NotificationConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListNotificationConfigurationsRequest::SerializePayload() const
 {
   return {};

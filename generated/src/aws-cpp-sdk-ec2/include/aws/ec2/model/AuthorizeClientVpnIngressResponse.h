@@ -28,7 +28,7 @@ namespace Model
   class AuthorizeClientVpnIngressResponse
   {
   public:
-    AWS_EC2_API AuthorizeClientVpnIngressResponse();
+    AWS_EC2_API AuthorizeClientVpnIngressResponse() = default;
     AWS_EC2_API AuthorizeClientVpnIngressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AuthorizeClientVpnIngressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The current state of the authorization rule.</p>
      */
-    inline const ClientVpnAuthorizationRuleStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ClientVpnAuthorizationRuleStatus& value) { m_status = value; }
-    inline void SetStatus(ClientVpnAuthorizationRuleStatus&& value) { m_status = std::move(value); }
-    inline AuthorizeClientVpnIngressResponse& WithStatus(const ClientVpnAuthorizationRuleStatus& value) { SetStatus(value); return *this;}
-    inline AuthorizeClientVpnIngressResponse& WithStatus(ClientVpnAuthorizationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const ClientVpnAuthorizationRuleStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = ClientVpnAuthorizationRuleStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ClientVpnAuthorizationRuleStatus>
+    AuthorizeClientVpnIngressResponse& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AuthorizeClientVpnIngressResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AuthorizeClientVpnIngressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AuthorizeClientVpnIngressResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ClientVpnAuthorizationRuleStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

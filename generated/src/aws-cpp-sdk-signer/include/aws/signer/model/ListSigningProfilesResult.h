@@ -29,7 +29,7 @@ namespace Model
   class ListSigningProfilesResult
   {
   public:
-    AWS_SIGNER_API ListSigningProfilesResult();
+    AWS_SIGNER_API ListSigningProfilesResult() = default;
     AWS_SIGNER_API ListSigningProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SIGNER_API ListSigningProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * profiles with the status of <code>CANCELED</code> if the
      * <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
      */
-    inline const Aws::Vector<SigningProfile>& GetProfiles() const{ return m_profiles; }
-    inline void SetProfiles(const Aws::Vector<SigningProfile>& value) { m_profiles = value; }
-    inline void SetProfiles(Aws::Vector<SigningProfile>&& value) { m_profiles = std::move(value); }
-    inline ListSigningProfilesResult& WithProfiles(const Aws::Vector<SigningProfile>& value) { SetProfiles(value); return *this;}
-    inline ListSigningProfilesResult& WithProfiles(Aws::Vector<SigningProfile>&& value) { SetProfiles(std::move(value)); return *this;}
-    inline ListSigningProfilesResult& AddProfiles(const SigningProfile& value) { m_profiles.push_back(value); return *this; }
-    inline ListSigningProfilesResult& AddProfiles(SigningProfile&& value) { m_profiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SigningProfile>& GetProfiles() const { return m_profiles; }
+    template<typename ProfilesT = Aws::Vector<SigningProfile>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Vector<SigningProfile>>
+    ListSigningProfilesResult& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    template<typename ProfilesT = SigningProfile>
+    ListSigningProfilesResult& AddProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles.emplace_back(std::forward<ProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Value for specifying the next set of paginated results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSigningProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSigningProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSigningProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSigningProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSigningProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSigningProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSigningProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSigningProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SigningProfile> m_profiles;
+    bool m_profilesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

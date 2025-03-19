@@ -32,7 +32,7 @@ namespace Model
   class SavingsPlansUtilization
   {
   public:
-    AWS_COSTEXPLORER_API SavingsPlansUtilization();
+    AWS_COSTEXPLORER_API SavingsPlansUtilization() = default;
     AWS_COSTEXPLORER_API SavingsPlansUtilization(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API SavingsPlansUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The total amount of Savings Plans commitment that's been purchased in an
      * account (or set of accounts).</p>
      */
-    inline const Aws::String& GetTotalCommitment() const{ return m_totalCommitment; }
+    inline const Aws::String& GetTotalCommitment() const { return m_totalCommitment; }
     inline bool TotalCommitmentHasBeenSet() const { return m_totalCommitmentHasBeenSet; }
-    inline void SetTotalCommitment(const Aws::String& value) { m_totalCommitmentHasBeenSet = true; m_totalCommitment = value; }
-    inline void SetTotalCommitment(Aws::String&& value) { m_totalCommitmentHasBeenSet = true; m_totalCommitment = std::move(value); }
-    inline void SetTotalCommitment(const char* value) { m_totalCommitmentHasBeenSet = true; m_totalCommitment.assign(value); }
-    inline SavingsPlansUtilization& WithTotalCommitment(const Aws::String& value) { SetTotalCommitment(value); return *this;}
-    inline SavingsPlansUtilization& WithTotalCommitment(Aws::String&& value) { SetTotalCommitment(std::move(value)); return *this;}
-    inline SavingsPlansUtilization& WithTotalCommitment(const char* value) { SetTotalCommitment(value); return *this;}
+    template<typename TotalCommitmentT = Aws::String>
+    void SetTotalCommitment(TotalCommitmentT&& value) { m_totalCommitmentHasBeenSet = true; m_totalCommitment = std::forward<TotalCommitmentT>(value); }
+    template<typename TotalCommitmentT = Aws::String>
+    SavingsPlansUtilization& WithTotalCommitment(TotalCommitmentT&& value) { SetTotalCommitment(std::forward<TotalCommitmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The amount of your Savings Plans commitment that was consumed from Savings
      * Plans eligible usage in a specific period.</p>
      */
-    inline const Aws::String& GetUsedCommitment() const{ return m_usedCommitment; }
+    inline const Aws::String& GetUsedCommitment() const { return m_usedCommitment; }
     inline bool UsedCommitmentHasBeenSet() const { return m_usedCommitmentHasBeenSet; }
-    inline void SetUsedCommitment(const Aws::String& value) { m_usedCommitmentHasBeenSet = true; m_usedCommitment = value; }
-    inline void SetUsedCommitment(Aws::String&& value) { m_usedCommitmentHasBeenSet = true; m_usedCommitment = std::move(value); }
-    inline void SetUsedCommitment(const char* value) { m_usedCommitmentHasBeenSet = true; m_usedCommitment.assign(value); }
-    inline SavingsPlansUtilization& WithUsedCommitment(const Aws::String& value) { SetUsedCommitment(value); return *this;}
-    inline SavingsPlansUtilization& WithUsedCommitment(Aws::String&& value) { SetUsedCommitment(std::move(value)); return *this;}
-    inline SavingsPlansUtilization& WithUsedCommitment(const char* value) { SetUsedCommitment(value); return *this;}
+    template<typename UsedCommitmentT = Aws::String>
+    void SetUsedCommitment(UsedCommitmentT&& value) { m_usedCommitmentHasBeenSet = true; m_usedCommitment = std::forward<UsedCommitmentT>(value); }
+    template<typename UsedCommitmentT = Aws::String>
+    SavingsPlansUtilization& WithUsedCommitment(UsedCommitmentT&& value) { SetUsedCommitment(std::forward<UsedCommitmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The amount of your Savings Plans commitment that wasn't consumed from Savings
      * Plans eligible usage in a specific period.</p>
      */
-    inline const Aws::String& GetUnusedCommitment() const{ return m_unusedCommitment; }
+    inline const Aws::String& GetUnusedCommitment() const { return m_unusedCommitment; }
     inline bool UnusedCommitmentHasBeenSet() const { return m_unusedCommitmentHasBeenSet; }
-    inline void SetUnusedCommitment(const Aws::String& value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment = value; }
-    inline void SetUnusedCommitment(Aws::String&& value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment = std::move(value); }
-    inline void SetUnusedCommitment(const char* value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment.assign(value); }
-    inline SavingsPlansUtilization& WithUnusedCommitment(const Aws::String& value) { SetUnusedCommitment(value); return *this;}
-    inline SavingsPlansUtilization& WithUnusedCommitment(Aws::String&& value) { SetUnusedCommitment(std::move(value)); return *this;}
-    inline SavingsPlansUtilization& WithUnusedCommitment(const char* value) { SetUnusedCommitment(value); return *this;}
+    template<typename UnusedCommitmentT = Aws::String>
+    void SetUnusedCommitment(UnusedCommitmentT&& value) { m_unusedCommitmentHasBeenSet = true; m_unusedCommitment = std::forward<UnusedCommitmentT>(value); }
+    template<typename UnusedCommitmentT = Aws::String>
+    SavingsPlansUtilization& WithUnusedCommitment(UnusedCommitmentT&& value) { SetUnusedCommitment(std::forward<UnusedCommitmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The amount of <code>UsedCommitment</code> divided by the
      * <code>TotalCommitment</code> for your Savings Plans.</p>
      */
-    inline const Aws::String& GetUtilizationPercentage() const{ return m_utilizationPercentage; }
+    inline const Aws::String& GetUtilizationPercentage() const { return m_utilizationPercentage; }
     inline bool UtilizationPercentageHasBeenSet() const { return m_utilizationPercentageHasBeenSet; }
-    inline void SetUtilizationPercentage(const Aws::String& value) { m_utilizationPercentageHasBeenSet = true; m_utilizationPercentage = value; }
-    inline void SetUtilizationPercentage(Aws::String&& value) { m_utilizationPercentageHasBeenSet = true; m_utilizationPercentage = std::move(value); }
-    inline void SetUtilizationPercentage(const char* value) { m_utilizationPercentageHasBeenSet = true; m_utilizationPercentage.assign(value); }
-    inline SavingsPlansUtilization& WithUtilizationPercentage(const Aws::String& value) { SetUtilizationPercentage(value); return *this;}
-    inline SavingsPlansUtilization& WithUtilizationPercentage(Aws::String&& value) { SetUtilizationPercentage(std::move(value)); return *this;}
-    inline SavingsPlansUtilization& WithUtilizationPercentage(const char* value) { SetUtilizationPercentage(value); return *this;}
+    template<typename UtilizationPercentageT = Aws::String>
+    void SetUtilizationPercentage(UtilizationPercentageT&& value) { m_utilizationPercentageHasBeenSet = true; m_utilizationPercentage = std::forward<UtilizationPercentageT>(value); }
+    template<typename UtilizationPercentageT = Aws::String>
+    SavingsPlansUtilization& WithUtilizationPercentage(UtilizationPercentageT&& value) { SetUtilizationPercentage(std::forward<UtilizationPercentageT>(value)); return *this;}
     ///@}
   private:
 

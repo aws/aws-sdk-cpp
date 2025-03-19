@@ -12,11 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableCrlRequest::DisableCrlRequest() : 
-    m_crlIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableCrlRequest::SerializePayload() const
 {
   return {};

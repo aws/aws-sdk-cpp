@@ -34,7 +34,7 @@ namespace Model
   class QueryGenerationContext
   {
   public:
-    AWS_BEDROCKAGENT_API QueryGenerationContext();
+    AWS_BEDROCKAGENT_API QueryGenerationContext() = default;
     AWS_BEDROCKAGENT_API QueryGenerationContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API QueryGenerationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>An array of objects, each of which defines information about example queries
      * to help the query engine generate appropriate SQL queries.</p>
      */
-    inline const Aws::Vector<CuratedQuery>& GetCuratedQueries() const{ return m_curatedQueries; }
+    inline const Aws::Vector<CuratedQuery>& GetCuratedQueries() const { return m_curatedQueries; }
     inline bool CuratedQueriesHasBeenSet() const { return m_curatedQueriesHasBeenSet; }
-    inline void SetCuratedQueries(const Aws::Vector<CuratedQuery>& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries = value; }
-    inline void SetCuratedQueries(Aws::Vector<CuratedQuery>&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries = std::move(value); }
-    inline QueryGenerationContext& WithCuratedQueries(const Aws::Vector<CuratedQuery>& value) { SetCuratedQueries(value); return *this;}
-    inline QueryGenerationContext& WithCuratedQueries(Aws::Vector<CuratedQuery>&& value) { SetCuratedQueries(std::move(value)); return *this;}
-    inline QueryGenerationContext& AddCuratedQueries(const CuratedQuery& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries.push_back(value); return *this; }
-    inline QueryGenerationContext& AddCuratedQueries(CuratedQuery&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries.push_back(std::move(value)); return *this; }
+    template<typename CuratedQueriesT = Aws::Vector<CuratedQuery>>
+    void SetCuratedQueries(CuratedQueriesT&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries = std::forward<CuratedQueriesT>(value); }
+    template<typename CuratedQueriesT = Aws::Vector<CuratedQuery>>
+    QueryGenerationContext& WithCuratedQueries(CuratedQueriesT&& value) { SetCuratedQueries(std::forward<CuratedQueriesT>(value)); return *this;}
+    template<typename CuratedQueriesT = CuratedQuery>
+    QueryGenerationContext& AddCuratedQueries(CuratedQueriesT&& value) { m_curatedQueriesHasBeenSet = true; m_curatedQueries.emplace_back(std::forward<CuratedQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>An array of objects, each of which defines information about a table in the
      * database.</p>
      */
-    inline const Aws::Vector<QueryGenerationTable>& GetTables() const{ return m_tables; }
+    inline const Aws::Vector<QueryGenerationTable>& GetTables() const { return m_tables; }
     inline bool TablesHasBeenSet() const { return m_tablesHasBeenSet; }
-    inline void SetTables(const Aws::Vector<QueryGenerationTable>& value) { m_tablesHasBeenSet = true; m_tables = value; }
-    inline void SetTables(Aws::Vector<QueryGenerationTable>&& value) { m_tablesHasBeenSet = true; m_tables = std::move(value); }
-    inline QueryGenerationContext& WithTables(const Aws::Vector<QueryGenerationTable>& value) { SetTables(value); return *this;}
-    inline QueryGenerationContext& WithTables(Aws::Vector<QueryGenerationTable>&& value) { SetTables(std::move(value)); return *this;}
-    inline QueryGenerationContext& AddTables(const QueryGenerationTable& value) { m_tablesHasBeenSet = true; m_tables.push_back(value); return *this; }
-    inline QueryGenerationContext& AddTables(QueryGenerationTable&& value) { m_tablesHasBeenSet = true; m_tables.push_back(std::move(value)); return *this; }
+    template<typename TablesT = Aws::Vector<QueryGenerationTable>>
+    void SetTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables = std::forward<TablesT>(value); }
+    template<typename TablesT = Aws::Vector<QueryGenerationTable>>
+    QueryGenerationContext& WithTables(TablesT&& value) { SetTables(std::forward<TablesT>(value)); return *this;}
+    template<typename TablesT = QueryGenerationTable>
+    QueryGenerationContext& AddTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables.emplace_back(std::forward<TablesT>(value)); return *this; }
     ///@}
   private:
 

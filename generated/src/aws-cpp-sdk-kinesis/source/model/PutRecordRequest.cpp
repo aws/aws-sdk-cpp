@@ -13,16 +13,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRecordRequest::PutRecordRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false),
-    m_explicitHashKeyHasBeenSet(false),
-    m_sequenceNumberForOrderingHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String PutRecordRequest::SerializePayload() const
 {
   JsonValue payload;

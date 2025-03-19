@@ -18,18 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-ImpersonationRole::ImpersonationRole() : 
-    m_impersonationRoleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ImpersonationRoleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
-{
-}
-
 ImpersonationRole::ImpersonationRole(JsonView jsonValue)
-  : ImpersonationRole()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ImpersonationRole& ImpersonationRole::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImpersonationRoleId"))
   {
     m_impersonationRoleId = jsonValue.GetString("ImpersonationRoleId");
-
     m_impersonationRoleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ImpersonationRoleTypeMapper::GetImpersonationRoleTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("DateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateModified"))
   {
     m_dateModified = jsonValue.GetDouble("DateModified");
-
     m_dateModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class EpochLockingSettings
   {
   public:
-    AWS_MEDIALIVE_API EpochLockingSettings();
+    AWS_MEDIALIVE_API EpochLockingSettings() = default;
     AWS_MEDIALIVE_API EpochLockingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API EpochLockingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * custom epoch, in YYYY-MM-DDTHH:MM:SS in UTC. The time must be
      * 2000-01-01T00:00:00 or later. Always set the MM:SS portion to 00:00.
      */
-    inline const Aws::String& GetCustomEpoch() const{ return m_customEpoch; }
+    inline const Aws::String& GetCustomEpoch() const { return m_customEpoch; }
     inline bool CustomEpochHasBeenSet() const { return m_customEpochHasBeenSet; }
-    inline void SetCustomEpoch(const Aws::String& value) { m_customEpochHasBeenSet = true; m_customEpoch = value; }
-    inline void SetCustomEpoch(Aws::String&& value) { m_customEpochHasBeenSet = true; m_customEpoch = std::move(value); }
-    inline void SetCustomEpoch(const char* value) { m_customEpochHasBeenSet = true; m_customEpoch.assign(value); }
-    inline EpochLockingSettings& WithCustomEpoch(const Aws::String& value) { SetCustomEpoch(value); return *this;}
-    inline EpochLockingSettings& WithCustomEpoch(Aws::String&& value) { SetCustomEpoch(std::move(value)); return *this;}
-    inline EpochLockingSettings& WithCustomEpoch(const char* value) { SetCustomEpoch(value); return *this;}
+    template<typename CustomEpochT = Aws::String>
+    void SetCustomEpoch(CustomEpochT&& value) { m_customEpochHasBeenSet = true; m_customEpoch = std::forward<CustomEpochT>(value); }
+    template<typename CustomEpochT = Aws::String>
+    EpochLockingSettings& WithCustomEpoch(CustomEpochT&& value) { SetCustomEpoch(std::forward<CustomEpochT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * to encodes with frame rate of 29.97 or 59.94 FPS. To override, enter a time in
      * HH:MM:SS in UTC. Always set the MM:SS portion to 00:00.
      */
-    inline const Aws::String& GetJamSyncTime() const{ return m_jamSyncTime; }
+    inline const Aws::String& GetJamSyncTime() const { return m_jamSyncTime; }
     inline bool JamSyncTimeHasBeenSet() const { return m_jamSyncTimeHasBeenSet; }
-    inline void SetJamSyncTime(const Aws::String& value) { m_jamSyncTimeHasBeenSet = true; m_jamSyncTime = value; }
-    inline void SetJamSyncTime(Aws::String&& value) { m_jamSyncTimeHasBeenSet = true; m_jamSyncTime = std::move(value); }
-    inline void SetJamSyncTime(const char* value) { m_jamSyncTimeHasBeenSet = true; m_jamSyncTime.assign(value); }
-    inline EpochLockingSettings& WithJamSyncTime(const Aws::String& value) { SetJamSyncTime(value); return *this;}
-    inline EpochLockingSettings& WithJamSyncTime(Aws::String&& value) { SetJamSyncTime(std::move(value)); return *this;}
-    inline EpochLockingSettings& WithJamSyncTime(const char* value) { SetJamSyncTime(value); return *this;}
+    template<typename JamSyncTimeT = Aws::String>
+    void SetJamSyncTime(JamSyncTimeT&& value) { m_jamSyncTimeHasBeenSet = true; m_jamSyncTime = std::forward<JamSyncTimeT>(value); }
+    template<typename JamSyncTimeT = Aws::String>
+    EpochLockingSettings& WithJamSyncTime(JamSyncTimeT&& value) { SetJamSyncTime(std::forward<JamSyncTimeT>(value)); return *this;}
     ///@}
   private:
 

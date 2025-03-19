@@ -12,19 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateScheduledActionRequest::UpdateScheduledActionRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_scheduledActionDescriptionHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_targetActionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScheduledActionRequest::SerializePayload() const
 {
   JsonValue payload;

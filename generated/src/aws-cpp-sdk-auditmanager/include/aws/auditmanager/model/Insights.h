@@ -47,7 +47,7 @@ namespace Model
   class Insights
   {
   public:
-    AWS_AUDITMANAGER_API Insights();
+    AWS_AUDITMANAGER_API Insights() = default;
     AWS_AUDITMANAGER_API Insights(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Insights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The number of active assessments in Audit Manager. </p>
      */
-    inline int GetActiveAssessmentsCount() const{ return m_activeAssessmentsCount; }
+    inline int GetActiveAssessmentsCount() const { return m_activeAssessmentsCount; }
     inline bool ActiveAssessmentsCountHasBeenSet() const { return m_activeAssessmentsCountHasBeenSet; }
     inline void SetActiveAssessmentsCount(int value) { m_activeAssessmentsCountHasBeenSet = true; m_activeAssessmentsCount = value; }
     inline Insights& WithActiveAssessmentsCount(int value) { SetActiveAssessmentsCount(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
      * was collected from Security Hub with a <i>Fail</i> ruling, or collected from
      * Config with a <i>Non-compliant</i> ruling. </p>
      */
-    inline int GetNoncompliantEvidenceCount() const{ return m_noncompliantEvidenceCount; }
+    inline int GetNoncompliantEvidenceCount() const { return m_noncompliantEvidenceCount; }
     inline bool NoncompliantEvidenceCountHasBeenSet() const { return m_noncompliantEvidenceCountHasBeenSet; }
     inline void SetNoncompliantEvidenceCount(int value) { m_noncompliantEvidenceCountHasBeenSet = true; m_noncompliantEvidenceCount = value; }
     inline Insights& WithNoncompliantEvidenceCount(int value) { SetNoncompliantEvidenceCount(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
      * collected from Security Hub with a <i>Pass</i> ruling, or collected from Config
      * with a <i>Compliant</i> ruling. </p>
      */
-    inline int GetCompliantEvidenceCount() const{ return m_compliantEvidenceCount; }
+    inline int GetCompliantEvidenceCount() const { return m_compliantEvidenceCount; }
     inline bool CompliantEvidenceCountHasBeenSet() const { return m_compliantEvidenceCountHasBeenSet; }
     inline void SetCompliantEvidenceCount(int value) { m_compliantEvidenceCountHasBeenSet = true; m_compliantEvidenceCount = value; }
     inline Insights& WithCompliantEvidenceCount(int value) { SetCompliantEvidenceCount(value); return *this;}
@@ -99,7 +99,7 @@ namespace Model
      * compliance check status of <i>not applicable</i>, it's classed as
      * <i>inconclusive</i> in <code>Insights</code> data.</p> 
      */
-    inline int GetInconclusiveEvidenceCount() const{ return m_inconclusiveEvidenceCount; }
+    inline int GetInconclusiveEvidenceCount() const { return m_inconclusiveEvidenceCount; }
     inline bool InconclusiveEvidenceCountHasBeenSet() const { return m_inconclusiveEvidenceCountHasBeenSet; }
     inline void SetInconclusiveEvidenceCount(int value) { m_inconclusiveEvidenceCountHasBeenSet = true; m_inconclusiveEvidenceCount = value; }
     inline Insights& WithInconclusiveEvidenceCount(int value) { SetInconclusiveEvidenceCount(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * <p>The number of assessment controls that collected non-compliant evidence on
      * the <code>lastUpdated</code> date. </p>
      */
-    inline int GetAssessmentControlsCountByNoncompliantEvidence() const{ return m_assessmentControlsCountByNoncompliantEvidence; }
+    inline int GetAssessmentControlsCountByNoncompliantEvidence() const { return m_assessmentControlsCountByNoncompliantEvidence; }
     inline bool AssessmentControlsCountByNoncompliantEvidenceHasBeenSet() const { return m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet; }
     inline void SetAssessmentControlsCountByNoncompliantEvidence(int value) { m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = true; m_assessmentControlsCountByNoncompliantEvidence = value; }
     inline Insights& WithAssessmentControlsCountByNoncompliantEvidence(int value) { SetAssessmentControlsCountByNoncompliantEvidence(value); return *this;}
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>The total number of controls across all active assessments. </p>
      */
-    inline int GetTotalAssessmentControlsCount() const{ return m_totalAssessmentControlsCount; }
+    inline int GetTotalAssessmentControlsCount() const { return m_totalAssessmentControlsCount; }
     inline bool TotalAssessmentControlsCountHasBeenSet() const { return m_totalAssessmentControlsCountHasBeenSet; }
     inline void SetTotalAssessmentControlsCount(int value) { m_totalAssessmentControlsCountHasBeenSet = true; m_totalAssessmentControlsCount = value; }
     inline Insights& WithTotalAssessmentControlsCount(int value) { SetTotalAssessmentControlsCount(value); return *this;}
@@ -130,34 +130,34 @@ namespace Model
     /**
      * <p>The time when the cross-assessment insights were last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline Insights& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline Insights& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    Insights& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
   private:
 
-    int m_activeAssessmentsCount;
+    int m_activeAssessmentsCount{0};
     bool m_activeAssessmentsCountHasBeenSet = false;
 
-    int m_noncompliantEvidenceCount;
+    int m_noncompliantEvidenceCount{0};
     bool m_noncompliantEvidenceCountHasBeenSet = false;
 
-    int m_compliantEvidenceCount;
+    int m_compliantEvidenceCount{0};
     bool m_compliantEvidenceCountHasBeenSet = false;
 
-    int m_inconclusiveEvidenceCount;
+    int m_inconclusiveEvidenceCount{0};
     bool m_inconclusiveEvidenceCountHasBeenSet = false;
 
-    int m_assessmentControlsCountByNoncompliantEvidence;
+    int m_assessmentControlsCountByNoncompliantEvidence{0};
     bool m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = false;
 
-    int m_totalAssessmentControlsCount;
+    int m_totalAssessmentControlsCount{0};
     bool m_totalAssessmentControlsCountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
   };
 

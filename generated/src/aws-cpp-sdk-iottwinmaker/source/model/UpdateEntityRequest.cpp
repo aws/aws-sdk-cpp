@@ -12,17 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEntityRequest::UpdateEntityRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_entityNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_componentUpdatesHasBeenSet(false),
-    m_compositeComponentUpdatesHasBeenSet(false),
-    m_parentEntityUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEntityRequest::SerializePayload() const
 {
   JsonValue payload;

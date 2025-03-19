@@ -37,7 +37,7 @@ namespace Model
   class LambdaExecutionParameters
   {
   public:
-    AWS_GREENGRASSV2_API LambdaExecutionParameters();
+    AWS_GREENGRASSV2_API LambdaExecutionParameters() = default;
     AWS_GREENGRASSV2_API LambdaExecutionParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API LambdaExecutionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * subscribe this function to local publish/subscribe messages and Amazon Web
      * Services IoT Core MQTT messages.</p>
      */
-    inline const Aws::Vector<LambdaEventSource>& GetEventSources() const{ return m_eventSources; }
+    inline const Aws::Vector<LambdaEventSource>& GetEventSources() const { return m_eventSources; }
     inline bool EventSourcesHasBeenSet() const { return m_eventSourcesHasBeenSet; }
-    inline void SetEventSources(const Aws::Vector<LambdaEventSource>& value) { m_eventSourcesHasBeenSet = true; m_eventSources = value; }
-    inline void SetEventSources(Aws::Vector<LambdaEventSource>&& value) { m_eventSourcesHasBeenSet = true; m_eventSources = std::move(value); }
-    inline LambdaExecutionParameters& WithEventSources(const Aws::Vector<LambdaEventSource>& value) { SetEventSources(value); return *this;}
-    inline LambdaExecutionParameters& WithEventSources(Aws::Vector<LambdaEventSource>&& value) { SetEventSources(std::move(value)); return *this;}
-    inline LambdaExecutionParameters& AddEventSources(const LambdaEventSource& value) { m_eventSourcesHasBeenSet = true; m_eventSources.push_back(value); return *this; }
-    inline LambdaExecutionParameters& AddEventSources(LambdaEventSource&& value) { m_eventSourcesHasBeenSet = true; m_eventSources.push_back(std::move(value)); return *this; }
+    template<typename EventSourcesT = Aws::Vector<LambdaEventSource>>
+    void SetEventSources(EventSourcesT&& value) { m_eventSourcesHasBeenSet = true; m_eventSources = std::forward<EventSourcesT>(value); }
+    template<typename EventSourcesT = Aws::Vector<LambdaEventSource>>
+    LambdaExecutionParameters& WithEventSources(EventSourcesT&& value) { SetEventSources(std::forward<EventSourcesT>(value)); return *this;}
+    template<typename EventSourcesT = LambdaEventSource>
+    LambdaExecutionParameters& AddEventSources(EventSourcesT&& value) { m_eventSourcesHasBeenSet = true; m_eventSources.emplace_back(std::forward<EventSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,7 +66,7 @@ namespace Model
      * IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until
      * it can run the Lambda function to consume each message.</p>
      */
-    inline int GetMaxQueueSize() const{ return m_maxQueueSize; }
+    inline int GetMaxQueueSize() const { return m_maxQueueSize; }
     inline bool MaxQueueSizeHasBeenSet() const { return m_maxQueueSizeHasBeenSet; }
     inline void SetMaxQueueSize(int value) { m_maxQueueSizeHasBeenSet = true; m_maxQueueSize = value; }
     inline LambdaExecutionParameters& WithMaxQueueSize(int value) { SetMaxQueueSize(value); return *this;}
@@ -77,7 +77,7 @@ namespace Model
      * <p>The maximum number of instances that a non-pinned Lambda function can run at
      * the same time.</p>
      */
-    inline int GetMaxInstancesCount() const{ return m_maxInstancesCount; }
+    inline int GetMaxInstancesCount() const { return m_maxInstancesCount; }
     inline bool MaxInstancesCountHasBeenSet() const { return m_maxInstancesCountHasBeenSet; }
     inline void SetMaxInstancesCount(int value) { m_maxInstancesCountHasBeenSet = true; m_maxInstancesCount = value; }
     inline LambdaExecutionParameters& WithMaxInstancesCount(int value) { SetMaxInstancesCount(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
      * <p>The maximum amount of time in seconds that a non-pinned Lambda function can
      * idle before the IoT Greengrass Core software stops its process.</p>
      */
-    inline int GetMaxIdleTimeInSeconds() const{ return m_maxIdleTimeInSeconds; }
+    inline int GetMaxIdleTimeInSeconds() const { return m_maxIdleTimeInSeconds; }
     inline bool MaxIdleTimeInSecondsHasBeenSet() const { return m_maxIdleTimeInSecondsHasBeenSet; }
     inline void SetMaxIdleTimeInSeconds(int value) { m_maxIdleTimeInSecondsHasBeenSet = true; m_maxIdleTimeInSeconds = value; }
     inline LambdaExecutionParameters& WithMaxIdleTimeInSeconds(int value) { SetMaxIdleTimeInSeconds(value); return *this;}
@@ -99,7 +99,7 @@ namespace Model
      * <p>The maximum amount of time in seconds that the Lambda function can process a
      * work item.</p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline LambdaExecutionParameters& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * <p>The interval in seconds at which a pinned (also known as long-lived) Lambda
      * function component sends status updates to the Lambda manager component.</p>
      */
-    inline int GetStatusTimeoutInSeconds() const{ return m_statusTimeoutInSeconds; }
+    inline int GetStatusTimeoutInSeconds() const { return m_statusTimeoutInSeconds; }
     inline bool StatusTimeoutInSecondsHasBeenSet() const { return m_statusTimeoutInSecondsHasBeenSet; }
     inline void SetStatusTimeoutInSeconds(int value) { m_statusTimeoutInSecondsHasBeenSet = true; m_statusTimeoutInSeconds = value; }
     inline LambdaExecutionParameters& WithStatusTimeoutInSeconds(int value) { SetStatusTimeoutInSeconds(value); return *this;}
@@ -126,7 +126,7 @@ namespace Model
      * IoT Greengrass Core software creates multiple instances of the function.</p>
      * </li> </ul> <p>Default: <code>true</code> </p>
      */
-    inline bool GetPinned() const{ return m_pinned; }
+    inline bool GetPinned() const { return m_pinned; }
     inline bool PinnedHasBeenSet() const { return m_pinnedHasBeenSet; }
     inline void SetPinned(bool value) { m_pinnedHasBeenSet = true; m_pinned = value; }
     inline LambdaExecutionParameters& WithPinned(bool value) { SetPinned(value); return *this;}
@@ -137,27 +137,24 @@ namespace Model
      * <p>The encoding type that the Lambda function supports.</p> <p>Default:
      * <code>json</code> </p>
      */
-    inline const LambdaInputPayloadEncodingType& GetInputPayloadEncodingType() const{ return m_inputPayloadEncodingType; }
+    inline LambdaInputPayloadEncodingType GetInputPayloadEncodingType() const { return m_inputPayloadEncodingType; }
     inline bool InputPayloadEncodingTypeHasBeenSet() const { return m_inputPayloadEncodingTypeHasBeenSet; }
-    inline void SetInputPayloadEncodingType(const LambdaInputPayloadEncodingType& value) { m_inputPayloadEncodingTypeHasBeenSet = true; m_inputPayloadEncodingType = value; }
-    inline void SetInputPayloadEncodingType(LambdaInputPayloadEncodingType&& value) { m_inputPayloadEncodingTypeHasBeenSet = true; m_inputPayloadEncodingType = std::move(value); }
-    inline LambdaExecutionParameters& WithInputPayloadEncodingType(const LambdaInputPayloadEncodingType& value) { SetInputPayloadEncodingType(value); return *this;}
-    inline LambdaExecutionParameters& WithInputPayloadEncodingType(LambdaInputPayloadEncodingType&& value) { SetInputPayloadEncodingType(std::move(value)); return *this;}
+    inline void SetInputPayloadEncodingType(LambdaInputPayloadEncodingType value) { m_inputPayloadEncodingTypeHasBeenSet = true; m_inputPayloadEncodingType = value; }
+    inline LambdaExecutionParameters& WithInputPayloadEncodingType(LambdaInputPayloadEncodingType value) { SetInputPayloadEncodingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of arguments to pass to the Lambda function when it runs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExecArgs() const{ return m_execArgs; }
+    inline const Aws::Vector<Aws::String>& GetExecArgs() const { return m_execArgs; }
     inline bool ExecArgsHasBeenSet() const { return m_execArgsHasBeenSet; }
-    inline void SetExecArgs(const Aws::Vector<Aws::String>& value) { m_execArgsHasBeenSet = true; m_execArgs = value; }
-    inline void SetExecArgs(Aws::Vector<Aws::String>&& value) { m_execArgsHasBeenSet = true; m_execArgs = std::move(value); }
-    inline LambdaExecutionParameters& WithExecArgs(const Aws::Vector<Aws::String>& value) { SetExecArgs(value); return *this;}
-    inline LambdaExecutionParameters& WithExecArgs(Aws::Vector<Aws::String>&& value) { SetExecArgs(std::move(value)); return *this;}
-    inline LambdaExecutionParameters& AddExecArgs(const Aws::String& value) { m_execArgsHasBeenSet = true; m_execArgs.push_back(value); return *this; }
-    inline LambdaExecutionParameters& AddExecArgs(Aws::String&& value) { m_execArgsHasBeenSet = true; m_execArgs.push_back(std::move(value)); return *this; }
-    inline LambdaExecutionParameters& AddExecArgs(const char* value) { m_execArgsHasBeenSet = true; m_execArgs.push_back(value); return *this; }
+    template<typename ExecArgsT = Aws::Vector<Aws::String>>
+    void SetExecArgs(ExecArgsT&& value) { m_execArgsHasBeenSet = true; m_execArgs = std::forward<ExecArgsT>(value); }
+    template<typename ExecArgsT = Aws::Vector<Aws::String>>
+    LambdaExecutionParameters& WithExecArgs(ExecArgsT&& value) { SetExecArgs(std::forward<ExecArgsT>(value)); return *this;}
+    template<typename ExecArgsT = Aws::String>
+    LambdaExecutionParameters& AddExecArgs(ExecArgsT&& value) { m_execArgsHasBeenSet = true; m_execArgs.emplace_back(std::forward<ExecArgsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,56 +162,53 @@ namespace Model
      * <p>The map of environment variables that are available to the Lambda function
      * when it runs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
-    inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
-    inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
-    inline LambdaExecutionParameters& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
-    inline LambdaExecutionParameters& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
-    inline LambdaExecutionParameters& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
-    inline LambdaExecutionParameters& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
-    inline LambdaExecutionParameters& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
-    inline LambdaExecutionParameters& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline LambdaExecutionParameters& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
-    inline LambdaExecutionParameters& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
-    inline LambdaExecutionParameters& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::forward<EnvironmentVariablesT>(value); }
+    template<typename EnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    LambdaExecutionParameters& WithEnvironmentVariables(EnvironmentVariablesT&& value) { SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value)); return *this;}
+    template<typename EnvironmentVariablesKeyT = Aws::String, typename EnvironmentVariablesValueT = Aws::String>
+    LambdaExecutionParameters& AddEnvironmentVariables(EnvironmentVariablesKeyT&& key, EnvironmentVariablesValueT&& value) {
+      m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::forward<EnvironmentVariablesKeyT>(key), std::forward<EnvironmentVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The parameters for the Linux process that contains the Lambda function.</p>
      */
-    inline const LambdaLinuxProcessParams& GetLinuxProcessParams() const{ return m_linuxProcessParams; }
+    inline const LambdaLinuxProcessParams& GetLinuxProcessParams() const { return m_linuxProcessParams; }
     inline bool LinuxProcessParamsHasBeenSet() const { return m_linuxProcessParamsHasBeenSet; }
-    inline void SetLinuxProcessParams(const LambdaLinuxProcessParams& value) { m_linuxProcessParamsHasBeenSet = true; m_linuxProcessParams = value; }
-    inline void SetLinuxProcessParams(LambdaLinuxProcessParams&& value) { m_linuxProcessParamsHasBeenSet = true; m_linuxProcessParams = std::move(value); }
-    inline LambdaExecutionParameters& WithLinuxProcessParams(const LambdaLinuxProcessParams& value) { SetLinuxProcessParams(value); return *this;}
-    inline LambdaExecutionParameters& WithLinuxProcessParams(LambdaLinuxProcessParams&& value) { SetLinuxProcessParams(std::move(value)); return *this;}
+    template<typename LinuxProcessParamsT = LambdaLinuxProcessParams>
+    void SetLinuxProcessParams(LinuxProcessParamsT&& value) { m_linuxProcessParamsHasBeenSet = true; m_linuxProcessParams = std::forward<LinuxProcessParamsT>(value); }
+    template<typename LinuxProcessParamsT = LambdaLinuxProcessParams>
+    LambdaExecutionParameters& WithLinuxProcessParams(LinuxProcessParamsT&& value) { SetLinuxProcessParams(std::forward<LinuxProcessParamsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LambdaEventSource> m_eventSources;
     bool m_eventSourcesHasBeenSet = false;
 
-    int m_maxQueueSize;
+    int m_maxQueueSize{0};
     bool m_maxQueueSizeHasBeenSet = false;
 
-    int m_maxInstancesCount;
+    int m_maxInstancesCount{0};
     bool m_maxInstancesCountHasBeenSet = false;
 
-    int m_maxIdleTimeInSeconds;
+    int m_maxIdleTimeInSeconds{0};
     bool m_maxIdleTimeInSecondsHasBeenSet = false;
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
-    int m_statusTimeoutInSeconds;
+    int m_statusTimeoutInSeconds{0};
     bool m_statusTimeoutInSecondsHasBeenSet = false;
 
-    bool m_pinned;
+    bool m_pinned{false};
     bool m_pinnedHasBeenSet = false;
 
-    LambdaInputPayloadEncodingType m_inputPayloadEncodingType;
+    LambdaInputPayloadEncodingType m_inputPayloadEncodingType{LambdaInputPayloadEncodingType::NOT_SET};
     bool m_inputPayloadEncodingTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_execArgs;

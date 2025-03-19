@@ -21,7 +21,7 @@ namespace Model
   class DisassociateFileSystemRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DisassociateFileSystemRequest();
+    AWS_STORAGEGATEWAY_API DisassociateFileSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the file system association to be
      * deleted.</p>
      */
-    inline const Aws::String& GetFileSystemAssociationARN() const{ return m_fileSystemAssociationARN; }
+    inline const Aws::String& GetFileSystemAssociationARN() const { return m_fileSystemAssociationARN; }
     inline bool FileSystemAssociationARNHasBeenSet() const { return m_fileSystemAssociationARNHasBeenSet; }
-    inline void SetFileSystemAssociationARN(const Aws::String& value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN = value; }
-    inline void SetFileSystemAssociationARN(Aws::String&& value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN = std::move(value); }
-    inline void SetFileSystemAssociationARN(const char* value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN.assign(value); }
-    inline DisassociateFileSystemRequest& WithFileSystemAssociationARN(const Aws::String& value) { SetFileSystemAssociationARN(value); return *this;}
-    inline DisassociateFileSystemRequest& WithFileSystemAssociationARN(Aws::String&& value) { SetFileSystemAssociationARN(std::move(value)); return *this;}
-    inline DisassociateFileSystemRequest& WithFileSystemAssociationARN(const char* value) { SetFileSystemAssociationARN(value); return *this;}
+    template<typename FileSystemAssociationARNT = Aws::String>
+    void SetFileSystemAssociationARN(FileSystemAssociationARNT&& value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN = std::forward<FileSystemAssociationARNT>(value); }
+    template<typename FileSystemAssociationARNT = Aws::String>
+    DisassociateFileSystemRequest& WithFileSystemAssociationARN(FileSystemAssociationARNT&& value) { SetFileSystemAssociationARN(std::forward<FileSystemAssociationARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * is set to false, the Amazon FSx file system does not disassociate until all data
      * is uploaded.</p>
      */
-    inline bool GetForceDelete() const{ return m_forceDelete; }
+    inline bool GetForceDelete() const { return m_forceDelete; }
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
     inline DisassociateFileSystemRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_fileSystemAssociationARN;
     bool m_fileSystemAssociationARNHasBeenSet = false;
 
-    bool m_forceDelete;
+    bool m_forceDelete{false};
     bool m_forceDeleteHasBeenSet = false;
   };
 

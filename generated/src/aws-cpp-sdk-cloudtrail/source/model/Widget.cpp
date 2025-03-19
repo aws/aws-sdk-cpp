@@ -18,16 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-Widget::Widget() : 
-    m_queryAliasHasBeenSet(false),
-    m_queryStatementHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_viewPropertiesHasBeenSet(false)
-{
-}
-
 Widget::Widget(JsonView jsonValue)
-  : Widget()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Widget& Widget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryAlias"))
   {
     m_queryAlias = jsonValue.GetString("QueryAlias");
-
     m_queryAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatement"))
   {
     m_queryStatement = jsonValue.GetString("QueryStatement");
-
     m_queryStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryParameters"))
   {
     Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
@@ -57,7 +44,6 @@ Widget& Widget::operator =(JsonView jsonValue)
     }
     m_queryParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewProperties"))
   {
     Aws::Map<Aws::String, JsonView> viewPropertiesJsonMap = jsonValue.GetObject("ViewProperties").GetAllObjects();
@@ -67,7 +53,6 @@ Widget& Widget::operator =(JsonView jsonValue)
     }
     m_viewPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

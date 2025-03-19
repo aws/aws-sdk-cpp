@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelCompilationConfig::ModelCompilationConfig() : 
-    m_imageHasBeenSet(false),
-    m_overrideEnvironmentHasBeenSet(false)
-{
-}
-
 ModelCompilationConfig::ModelCompilationConfig(JsonView jsonValue)
-  : ModelCompilationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ModelCompilationConfig& ModelCompilationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Image"))
   {
     m_image = jsonValue.GetString("Image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideEnvironment"))
   {
     Aws::Map<Aws::String, JsonView> overrideEnvironmentJsonMap = jsonValue.GetObject("OverrideEnvironment").GetAllObjects();
@@ -48,7 +39,6 @@ ModelCompilationConfig& ModelCompilationConfig::operator =(JsonView jsonValue)
     }
     m_overrideEnvironmentHasBeenSet = true;
   }
-
   return *this;
 }
 

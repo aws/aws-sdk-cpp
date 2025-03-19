@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLDataSplitConfig::AutoMLDataSplitConfig() : 
-    m_validationFraction(0.0),
-    m_validationFractionHasBeenSet(false)
-{
-}
-
 AutoMLDataSplitConfig::AutoMLDataSplitConfig(JsonView jsonValue)
-  : AutoMLDataSplitConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AutoMLDataSplitConfig& AutoMLDataSplitConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ValidationFraction"))
   {
     m_validationFraction = jsonValue.GetDouble("ValidationFraction");
-
     m_validationFractionHasBeenSet = true;
   }
-
   return *this;
 }
 

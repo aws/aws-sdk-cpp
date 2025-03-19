@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBulkDeploymentStatusResult::GetBulkDeploymentStatusResult() : 
-    m_bulkDeploymentStatus(BulkDeploymentStatus::NOT_SET)
-{
-}
-
 GetBulkDeploymentStatusResult::GetBulkDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetBulkDeploymentStatusResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetBulkDeploymentStatusResult& GetBulkDeploymentStatusResult::operator =(const A
   if(jsonValue.ValueExists("BulkDeploymentMetrics"))
   {
     m_bulkDeploymentMetrics = jsonValue.GetObject("BulkDeploymentMetrics");
-
+    m_bulkDeploymentMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BulkDeploymentStatus"))
   {
     m_bulkDeploymentStatus = BulkDeploymentStatusMapper::GetBulkDeploymentStatusForName(jsonValue.GetString("BulkDeploymentStatus"));
-
+    m_bulkDeploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
@@ -56,14 +47,13 @@ GetBulkDeploymentStatusResult& GetBulkDeploymentStatusResult::operator =(const A
     {
       m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
     }
+    m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -71,14 +61,15 @@ GetBulkDeploymentStatusResult& GetBulkDeploymentStatusResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

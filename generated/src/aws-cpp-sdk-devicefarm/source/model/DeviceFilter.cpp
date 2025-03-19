@@ -18,17 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-DeviceFilter::DeviceFilter() : 
-    m_attribute(DeviceFilterAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_operator(RuleOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DeviceFilter::DeviceFilter(JsonView jsonValue)
-  : DeviceFilter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ DeviceFilter& DeviceFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = DeviceFilterAttributeMapper::GetDeviceFilterAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = RuleOperatorMapper::GetRuleOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ DeviceFilter& DeviceFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

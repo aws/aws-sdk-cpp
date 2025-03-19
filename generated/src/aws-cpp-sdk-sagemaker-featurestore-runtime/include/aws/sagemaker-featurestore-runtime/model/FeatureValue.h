@@ -32,7 +32,7 @@ namespace Model
   class FeatureValue
   {
   public:
-    AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue() = default;
     AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of a feature that a feature value corresponds to.</p>
      */
-    inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+    inline const Aws::String& GetFeatureName() const { return m_featureName; }
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
-    inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
-    inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
-    inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
-    inline FeatureValue& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
-    inline FeatureValue& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
-    inline FeatureValue& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
+    template<typename FeatureNameT = Aws::String>
+    void SetFeatureName(FeatureNameT&& value) { m_featureNameHasBeenSet = true; m_featureName = std::forward<FeatureNameT>(value); }
+    template<typename FeatureNameT = Aws::String>
+    FeatureValue& WithFeatureName(FeatureNameT&& value) { SetFeatureName(std::forward<FeatureNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. This
      * value represents all three types as a string.</p>
      */
-    inline const Aws::String& GetValueAsString() const{ return m_valueAsString; }
+    inline const Aws::String& GetValueAsString() const { return m_valueAsString; }
     inline bool ValueAsStringHasBeenSet() const { return m_valueAsStringHasBeenSet; }
-    inline void SetValueAsString(const Aws::String& value) { m_valueAsStringHasBeenSet = true; m_valueAsString = value; }
-    inline void SetValueAsString(Aws::String&& value) { m_valueAsStringHasBeenSet = true; m_valueAsString = std::move(value); }
-    inline void SetValueAsString(const char* value) { m_valueAsStringHasBeenSet = true; m_valueAsString.assign(value); }
-    inline FeatureValue& WithValueAsString(const Aws::String& value) { SetValueAsString(value); return *this;}
-    inline FeatureValue& WithValueAsString(Aws::String&& value) { SetValueAsString(std::move(value)); return *this;}
-    inline FeatureValue& WithValueAsString(const char* value) { SetValueAsString(value); return *this;}
+    template<typename ValueAsStringT = Aws::String>
+    void SetValueAsString(ValueAsStringT&& value) { m_valueAsStringHasBeenSet = true; m_valueAsString = std::forward<ValueAsStringT>(value); }
+    template<typename ValueAsStringT = Aws::String>
+    FeatureValue& WithValueAsString(ValueAsStringT&& value) { SetValueAsString(std::forward<ValueAsStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +73,14 @@ namespace Model
      * <code>Integral</code>, or <code>Fractional</code>. These values represents all
      * three types as a string.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValueAsStringList() const{ return m_valueAsStringList; }
+    inline const Aws::Vector<Aws::String>& GetValueAsStringList() const { return m_valueAsStringList; }
     inline bool ValueAsStringListHasBeenSet() const { return m_valueAsStringListHasBeenSet; }
-    inline void SetValueAsStringList(const Aws::Vector<Aws::String>& value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList = value; }
-    inline void SetValueAsStringList(Aws::Vector<Aws::String>&& value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList = std::move(value); }
-    inline FeatureValue& WithValueAsStringList(const Aws::Vector<Aws::String>& value) { SetValueAsStringList(value); return *this;}
-    inline FeatureValue& WithValueAsStringList(Aws::Vector<Aws::String>&& value) { SetValueAsStringList(std::move(value)); return *this;}
-    inline FeatureValue& AddValueAsStringList(const Aws::String& value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList.push_back(value); return *this; }
-    inline FeatureValue& AddValueAsStringList(Aws::String&& value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList.push_back(std::move(value)); return *this; }
-    inline FeatureValue& AddValueAsStringList(const char* value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList.push_back(value); return *this; }
+    template<typename ValueAsStringListT = Aws::Vector<Aws::String>>
+    void SetValueAsStringList(ValueAsStringListT&& value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList = std::forward<ValueAsStringListT>(value); }
+    template<typename ValueAsStringListT = Aws::Vector<Aws::String>>
+    FeatureValue& WithValueAsStringList(ValueAsStringListT&& value) { SetValueAsStringList(std::forward<ValueAsStringListT>(value)); return *this;}
+    template<typename ValueAsStringListT = Aws::String>
+    FeatureValue& AddValueAsStringList(ValueAsStringListT&& value) { m_valueAsStringListHasBeenSet = true; m_valueAsStringList.emplace_back(std::forward<ValueAsStringListT>(value)); return *this; }
     ///@}
   private:
 

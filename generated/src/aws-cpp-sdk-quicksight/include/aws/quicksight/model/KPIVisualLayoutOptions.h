@@ -32,7 +32,7 @@ namespace Model
   class KPIVisualLayoutOptions
   {
   public:
-    AWS_QUICKSIGHT_API KPIVisualLayoutOptions();
+    AWS_QUICKSIGHT_API KPIVisualLayoutOptions() = default;
     AWS_QUICKSIGHT_API KPIVisualLayoutOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API KPIVisualLayoutOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The standard layout of the KPI visual.</p>
      */
-    inline const KPIVisualStandardLayout& GetStandardLayout() const{ return m_standardLayout; }
+    inline const KPIVisualStandardLayout& GetStandardLayout() const { return m_standardLayout; }
     inline bool StandardLayoutHasBeenSet() const { return m_standardLayoutHasBeenSet; }
-    inline void SetStandardLayout(const KPIVisualStandardLayout& value) { m_standardLayoutHasBeenSet = true; m_standardLayout = value; }
-    inline void SetStandardLayout(KPIVisualStandardLayout&& value) { m_standardLayoutHasBeenSet = true; m_standardLayout = std::move(value); }
-    inline KPIVisualLayoutOptions& WithStandardLayout(const KPIVisualStandardLayout& value) { SetStandardLayout(value); return *this;}
-    inline KPIVisualLayoutOptions& WithStandardLayout(KPIVisualStandardLayout&& value) { SetStandardLayout(std::move(value)); return *this;}
+    template<typename StandardLayoutT = KPIVisualStandardLayout>
+    void SetStandardLayout(StandardLayoutT&& value) { m_standardLayoutHasBeenSet = true; m_standardLayout = std::forward<StandardLayoutT>(value); }
+    template<typename StandardLayoutT = KPIVisualStandardLayout>
+    KPIVisualLayoutOptions& WithStandardLayout(StandardLayoutT&& value) { SetStandardLayout(std::forward<StandardLayoutT>(value)); return *this;}
     ///@}
   private:
 

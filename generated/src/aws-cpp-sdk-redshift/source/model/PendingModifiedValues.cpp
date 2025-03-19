@@ -20,27 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-PendingModifiedValues::PendingModifiedValues() : 
-    m_masterUserPasswordHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false),
-    m_automatedSnapshotRetentionPeriod(0),
-    m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_encryptionTypeHasBeenSet(false)
-{
-}
-
 PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode)
-  : PendingModifiedValues()
 {
   *this = xmlNode;
 }

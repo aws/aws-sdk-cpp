@@ -31,7 +31,7 @@ namespace Model
   class WorkerConfigurationDescription
   {
   public:
-    AWS_KAFKACONNECT_API WorkerConfigurationDescription();
+    AWS_KAFKACONNECT_API WorkerConfigurationDescription() = default;
     AWS_KAFKACONNECT_API WorkerConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API WorkerConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The revision of the worker configuration.</p>
      */
-    inline long long GetRevision() const{ return m_revision; }
+    inline long long GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
     inline void SetRevision(long long value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline WorkerConfigurationDescription& WithRevision(long long value) { SetRevision(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
      */
-    inline const Aws::String& GetWorkerConfigurationArn() const{ return m_workerConfigurationArn; }
+    inline const Aws::String& GetWorkerConfigurationArn() const { return m_workerConfigurationArn; }
     inline bool WorkerConfigurationArnHasBeenSet() const { return m_workerConfigurationArnHasBeenSet; }
-    inline void SetWorkerConfigurationArn(const Aws::String& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = value; }
-    inline void SetWorkerConfigurationArn(Aws::String&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::move(value); }
-    inline void SetWorkerConfigurationArn(const char* value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn.assign(value); }
-    inline WorkerConfigurationDescription& WithWorkerConfigurationArn(const Aws::String& value) { SetWorkerConfigurationArn(value); return *this;}
-    inline WorkerConfigurationDescription& WithWorkerConfigurationArn(Aws::String&& value) { SetWorkerConfigurationArn(std::move(value)); return *this;}
-    inline WorkerConfigurationDescription& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
+    template<typename WorkerConfigurationArnT = Aws::String>
+    void SetWorkerConfigurationArn(WorkerConfigurationArnT&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::forward<WorkerConfigurationArnT>(value); }
+    template<typename WorkerConfigurationArnT = Aws::String>
+    WorkerConfigurationDescription& WithWorkerConfigurationArn(WorkerConfigurationArnT&& value) { SetWorkerConfigurationArn(std::forward<WorkerConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_revision;
+    long long m_revision{0};
     bool m_revisionHasBeenSet = false;
 
     Aws::String m_workerConfigurationArn;

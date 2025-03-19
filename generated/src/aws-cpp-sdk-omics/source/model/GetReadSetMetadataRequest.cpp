@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReadSetMetadataRequest::GetReadSetMetadataRequest() : 
-    m_idHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false)
-{
-}
-
 Aws::String GetReadSetMetadataRequest::SerializePayload() const
 {
   return {};

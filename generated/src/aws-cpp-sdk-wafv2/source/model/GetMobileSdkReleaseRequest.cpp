@@ -12,13 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMobileSdkReleaseRequest::GetMobileSdkReleaseRequest() : 
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_releaseVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetMobileSdkReleaseRequest::SerializePayload() const
 {
   JsonValue payload;

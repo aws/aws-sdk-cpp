@@ -18,26 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-Instance::Instance() : 
-    m_amiLaunchIndex(0),
-    m_amiLaunchIndexHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -47,10 +28,8 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amiLaunchIndex"))
   {
     m_amiLaunchIndex = jsonValue.GetInteger("amiLaunchIndex");
-
     m_amiLaunchIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockDeviceMappings"))
   {
     Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
@@ -60,63 +39,46 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_blockDeviceMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpuOptions"))
   {
     m_cpuOptions = jsonValue.GetObject("cpuOptions");
-
     m_cpuOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetString("imageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIpAddress"))
   {
     m_publicIpAddress = jsonValue.GetString("publicIpAddress");
-
     m_publicIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootDeviceName"))
   {
     m_rootDeviceName = jsonValue.GetString("rootDeviceName");
-
     m_rootDeviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -126,21 +88,16 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

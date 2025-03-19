@@ -35,50 +35,51 @@ namespace Model
   class PutOutboundRequestBatchResult
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API PutOutboundRequestBatchResult();
+    AWS_CONNECTCAMPAIGNSV2_API PutOutboundRequestBatchResult() = default;
     AWS_CONNECTCAMPAIGNSV2_API PutOutboundRequestBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCAMPAIGNSV2_API PutOutboundRequestBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<SuccessfulRequest>& GetSuccessfulRequests() const{ return m_successfulRequests; }
-    inline void SetSuccessfulRequests(const Aws::Vector<SuccessfulRequest>& value) { m_successfulRequests = value; }
-    inline void SetSuccessfulRequests(Aws::Vector<SuccessfulRequest>&& value) { m_successfulRequests = std::move(value); }
-    inline PutOutboundRequestBatchResult& WithSuccessfulRequests(const Aws::Vector<SuccessfulRequest>& value) { SetSuccessfulRequests(value); return *this;}
-    inline PutOutboundRequestBatchResult& WithSuccessfulRequests(Aws::Vector<SuccessfulRequest>&& value) { SetSuccessfulRequests(std::move(value)); return *this;}
-    inline PutOutboundRequestBatchResult& AddSuccessfulRequests(const SuccessfulRequest& value) { m_successfulRequests.push_back(value); return *this; }
-    inline PutOutboundRequestBatchResult& AddSuccessfulRequests(SuccessfulRequest&& value) { m_successfulRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuccessfulRequest>& GetSuccessfulRequests() const { return m_successfulRequests; }
+    template<typename SuccessfulRequestsT = Aws::Vector<SuccessfulRequest>>
+    void SetSuccessfulRequests(SuccessfulRequestsT&& value) { m_successfulRequestsHasBeenSet = true; m_successfulRequests = std::forward<SuccessfulRequestsT>(value); }
+    template<typename SuccessfulRequestsT = Aws::Vector<SuccessfulRequest>>
+    PutOutboundRequestBatchResult& WithSuccessfulRequests(SuccessfulRequestsT&& value) { SetSuccessfulRequests(std::forward<SuccessfulRequestsT>(value)); return *this;}
+    template<typename SuccessfulRequestsT = SuccessfulRequest>
+    PutOutboundRequestBatchResult& AddSuccessfulRequests(SuccessfulRequestsT&& value) { m_successfulRequestsHasBeenSet = true; m_successfulRequests.emplace_back(std::forward<SuccessfulRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<FailedRequest>& GetFailedRequests() const{ return m_failedRequests; }
-    inline void SetFailedRequests(const Aws::Vector<FailedRequest>& value) { m_failedRequests = value; }
-    inline void SetFailedRequests(Aws::Vector<FailedRequest>&& value) { m_failedRequests = std::move(value); }
-    inline PutOutboundRequestBatchResult& WithFailedRequests(const Aws::Vector<FailedRequest>& value) { SetFailedRequests(value); return *this;}
-    inline PutOutboundRequestBatchResult& WithFailedRequests(Aws::Vector<FailedRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
-    inline PutOutboundRequestBatchResult& AddFailedRequests(const FailedRequest& value) { m_failedRequests.push_back(value); return *this; }
-    inline PutOutboundRequestBatchResult& AddFailedRequests(FailedRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedRequest>& GetFailedRequests() const { return m_failedRequests; }
+    template<typename FailedRequestsT = Aws::Vector<FailedRequest>>
+    void SetFailedRequests(FailedRequestsT&& value) { m_failedRequestsHasBeenSet = true; m_failedRequests = std::forward<FailedRequestsT>(value); }
+    template<typename FailedRequestsT = Aws::Vector<FailedRequest>>
+    PutOutboundRequestBatchResult& WithFailedRequests(FailedRequestsT&& value) { SetFailedRequests(std::forward<FailedRequestsT>(value)); return *this;}
+    template<typename FailedRequestsT = FailedRequest>
+    PutOutboundRequestBatchResult& AddFailedRequests(FailedRequestsT&& value) { m_failedRequestsHasBeenSet = true; m_failedRequests.emplace_back(std::forward<FailedRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutOutboundRequestBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutOutboundRequestBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutOutboundRequestBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutOutboundRequestBatchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SuccessfulRequest> m_successfulRequests;
+    bool m_successfulRequestsHasBeenSet = false;
 
     Aws::Vector<FailedRequest> m_failedRequests;
+    bool m_failedRequestsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

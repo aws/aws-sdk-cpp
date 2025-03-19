@@ -18,14 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-SecureNamespaceInfo::SecureNamespaceInfo() : 
-    m_clusterIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 SecureNamespaceInfo::SecureNamespaceInfo(JsonView jsonValue)
-  : SecureNamespaceInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecureNamespaceInfo& SecureNamespaceInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterId"))
   {
     m_clusterId = jsonValue.GetString("clusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

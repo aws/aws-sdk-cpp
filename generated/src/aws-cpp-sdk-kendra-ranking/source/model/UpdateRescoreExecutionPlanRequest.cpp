@@ -12,14 +12,6 @@ using namespace Aws::KendraRanking::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRescoreExecutionPlanRequest::UpdateRescoreExecutionPlanRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_capacityUnitsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRescoreExecutionPlanRequest::SerializePayload() const
 {
   JsonValue payload;

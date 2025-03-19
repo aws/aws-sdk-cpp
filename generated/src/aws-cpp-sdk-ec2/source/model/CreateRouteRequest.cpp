@@ -10,27 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateRouteRequest::CreateRouteRequest() : 
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_carrierGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false),
-    m_egressOnlyInternetGatewayIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

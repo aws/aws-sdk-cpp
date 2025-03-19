@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLComputeConfig::AutoMLComputeConfig() : 
-    m_emrServerlessComputeConfigHasBeenSet(false)
-{
-}
-
 AutoMLComputeConfig::AutoMLComputeConfig(JsonView jsonValue)
-  : AutoMLComputeConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoMLComputeConfig& AutoMLComputeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EmrServerlessComputeConfig"))
   {
     m_emrServerlessComputeConfig = jsonValue.GetObject("EmrServerlessComputeConfig");
-
     m_emrServerlessComputeConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

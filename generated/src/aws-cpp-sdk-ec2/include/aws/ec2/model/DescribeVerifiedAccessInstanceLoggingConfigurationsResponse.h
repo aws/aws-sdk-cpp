@@ -30,7 +30,7 @@ namespace Model
   class DescribeVerifiedAccessInstanceLoggingConfigurationsResponse
   {
   public:
-    AWS_EC2_API DescribeVerifiedAccessInstanceLoggingConfigurationsResponse();
+    AWS_EC2_API DescribeVerifiedAccessInstanceLoggingConfigurationsResponse() = default;
     AWS_EC2_API DescribeVerifiedAccessInstanceLoggingConfigurationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The logging configuration for the Verified Access instances.</p>
      */
-    inline const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& GetLoggingConfigurations() const{ return m_loggingConfigurations; }
-    inline void SetLoggingConfigurations(const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& value) { m_loggingConfigurations = value; }
-    inline void SetLoggingConfigurations(Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>&& value) { m_loggingConfigurations = std::move(value); }
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithLoggingConfigurations(const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& value) { SetLoggingConfigurations(value); return *this;}
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithLoggingConfigurations(Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>&& value) { SetLoggingConfigurations(std::move(value)); return *this;}
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& AddLoggingConfigurations(const VerifiedAccessInstanceLoggingConfiguration& value) { m_loggingConfigurations.push_back(value); return *this; }
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& AddLoggingConfigurations(VerifiedAccessInstanceLoggingConfiguration&& value) { m_loggingConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& GetLoggingConfigurations() const { return m_loggingConfigurations; }
+    template<typename LoggingConfigurationsT = Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>>
+    void SetLoggingConfigurations(LoggingConfigurationsT&& value) { m_loggingConfigurationsHasBeenSet = true; m_loggingConfigurations = std::forward<LoggingConfigurationsT>(value); }
+    template<typename LoggingConfigurationsT = Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>>
+    DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithLoggingConfigurations(LoggingConfigurationsT&& value) { SetLoggingConfigurations(std::forward<LoggingConfigurationsT>(value)); return *this;}
+    template<typename LoggingConfigurationsT = VerifiedAccessInstanceLoggingConfiguration>
+    DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& AddLoggingConfigurations(LoggingConfigurationsT&& value) { m_loggingConfigurationsHasBeenSet = true; m_loggingConfigurations.emplace_back(std::forward<LoggingConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VerifiedAccessInstanceLoggingConfiguration> m_loggingConfigurations;
+    bool m_loggingConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

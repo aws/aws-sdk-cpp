@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-SplitterConfiguration::SplitterConfiguration() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 SplitterConfiguration::SplitterConfiguration(JsonView jsonValue)
-  : SplitterConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SplitterConfiguration& SplitterConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

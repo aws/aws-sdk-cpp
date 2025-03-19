@@ -32,7 +32,7 @@ namespace Model
   class LocalIpDetails
   {
   public:
-    AWS_GUARDDUTY_API LocalIpDetails();
+    AWS_GUARDDUTY_API LocalIpDetails() = default;
     AWS_GUARDDUTY_API LocalIpDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API LocalIpDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The IPv4 local address of the connection.</p>
      */
-    inline const Aws::String& GetIpAddressV4() const{ return m_ipAddressV4; }
+    inline const Aws::String& GetIpAddressV4() const { return m_ipAddressV4; }
     inline bool IpAddressV4HasBeenSet() const { return m_ipAddressV4HasBeenSet; }
-    inline void SetIpAddressV4(const Aws::String& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = value; }
-    inline void SetIpAddressV4(Aws::String&& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = std::move(value); }
-    inline void SetIpAddressV4(const char* value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4.assign(value); }
-    inline LocalIpDetails& WithIpAddressV4(const Aws::String& value) { SetIpAddressV4(value); return *this;}
-    inline LocalIpDetails& WithIpAddressV4(Aws::String&& value) { SetIpAddressV4(std::move(value)); return *this;}
-    inline LocalIpDetails& WithIpAddressV4(const char* value) { SetIpAddressV4(value); return *this;}
+    template<typename IpAddressV4T = Aws::String>
+    void SetIpAddressV4(IpAddressV4T&& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = std::forward<IpAddressV4T>(value); }
+    template<typename IpAddressV4T = Aws::String>
+    LocalIpDetails& WithIpAddressV4(IpAddressV4T&& value) { SetIpAddressV4(std::forward<IpAddressV4T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IPv6 local address of the connection.</p>
      */
-    inline const Aws::String& GetIpAddressV6() const{ return m_ipAddressV6; }
+    inline const Aws::String& GetIpAddressV6() const { return m_ipAddressV6; }
     inline bool IpAddressV6HasBeenSet() const { return m_ipAddressV6HasBeenSet; }
-    inline void SetIpAddressV6(const Aws::String& value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6 = value; }
-    inline void SetIpAddressV6(Aws::String&& value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6 = std::move(value); }
-    inline void SetIpAddressV6(const char* value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6.assign(value); }
-    inline LocalIpDetails& WithIpAddressV6(const Aws::String& value) { SetIpAddressV6(value); return *this;}
-    inline LocalIpDetails& WithIpAddressV6(Aws::String&& value) { SetIpAddressV6(std::move(value)); return *this;}
-    inline LocalIpDetails& WithIpAddressV6(const char* value) { SetIpAddressV6(value); return *this;}
+    template<typename IpAddressV6T = Aws::String>
+    void SetIpAddressV6(IpAddressV6T&& value) { m_ipAddressV6HasBeenSet = true; m_ipAddressV6 = std::forward<IpAddressV6T>(value); }
+    template<typename IpAddressV6T = Aws::String>
+    LocalIpDetails& WithIpAddressV6(IpAddressV6T&& value) { SetIpAddressV6(std::forward<IpAddressV6T>(value)); return *this;}
     ///@}
   private:
 

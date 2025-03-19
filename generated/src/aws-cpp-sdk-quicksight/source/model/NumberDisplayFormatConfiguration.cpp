@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumberDisplayFormatConfiguration::NumberDisplayFormatConfiguration() : 
-    m_prefixHasBeenSet(false),
-    m_suffixHasBeenSet(false),
-    m_separatorConfigurationHasBeenSet(false),
-    m_decimalPlacesConfigurationHasBeenSet(false),
-    m_numberScale(NumberScale::NOT_SET),
-    m_numberScaleHasBeenSet(false),
-    m_negativeValueConfigurationHasBeenSet(false),
-    m_nullValueFormatConfigurationHasBeenSet(false)
-{
-}
-
 NumberDisplayFormatConfiguration::NumberDisplayFormatConfiguration(JsonView jsonValue)
-  : NumberDisplayFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ NumberDisplayFormatConfiguration& NumberDisplayFormatConfiguration::operator =(J
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Suffix"))
   {
     m_suffix = jsonValue.GetString("Suffix");
-
     m_suffixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeparatorConfiguration"))
   {
     m_separatorConfiguration = jsonValue.GetObject("SeparatorConfiguration");
-
     m_separatorConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecimalPlacesConfiguration"))
   {
     m_decimalPlacesConfiguration = jsonValue.GetObject("DecimalPlacesConfiguration");
-
     m_decimalPlacesConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberScale"))
   {
     m_numberScale = NumberScaleMapper::GetNumberScaleForName(jsonValue.GetString("NumberScale"));
-
     m_numberScaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NegativeValueConfiguration"))
   {
     m_negativeValueConfiguration = jsonValue.GetObject("NegativeValueConfiguration");
-
     m_negativeValueConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullValueFormatConfiguration"))
   {
     m_nullValueFormatConfiguration = jsonValue.GetObject("NullValueFormatConfiguration");
-
     m_nullValueFormatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

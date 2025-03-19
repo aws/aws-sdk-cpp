@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspaceAssociationsRequest::DescribeWorkspaceAssociationsRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_associatedResourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspaceAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

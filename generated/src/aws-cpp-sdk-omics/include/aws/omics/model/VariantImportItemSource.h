@@ -31,7 +31,7 @@ namespace Model
   class VariantImportItemSource
   {
   public:
-    AWS_OMICS_API VariantImportItemSource();
+    AWS_OMICS_API VariantImportItemSource() = default;
     AWS_OMICS_API VariantImportItemSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API VariantImportItemSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The source file's location in Amazon S3.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline VariantImportItemSource& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline VariantImportItemSource& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline VariantImportItemSource& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    VariantImportItemSource& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

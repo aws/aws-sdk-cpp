@@ -38,7 +38,7 @@ namespace Model
   class EntityRecognizerInputDataConfig
   {
   public:
-    AWS_COMPREHEND_API EntityRecognizerInputDataConfig();
+    AWS_COMPREHEND_API EntityRecognizerInputDataConfig() = default;
     AWS_COMPREHEND_API EntityRecognizerInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityRecognizerInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,12 +62,10 @@ namespace Model
      * request.</p> </li> </ul> <p>If you don't specify a value, Amazon Comprehend uses
      * <code>COMPREHEND_CSV</code> as the default.</p>
      */
-    inline const EntityRecognizerDataFormat& GetDataFormat() const{ return m_dataFormat; }
+    inline EntityRecognizerDataFormat GetDataFormat() const { return m_dataFormat; }
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-    inline void SetDataFormat(const EntityRecognizerDataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-    inline void SetDataFormat(EntityRecognizerDataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-    inline EntityRecognizerInputDataConfig& WithDataFormat(const EntityRecognizerDataFormat& value) { SetDataFormat(value); return *this;}
-    inline EntityRecognizerInputDataConfig& WithDataFormat(EntityRecognizerDataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline void SetDataFormat(EntityRecognizerDataFormat value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline EntityRecognizerInputDataConfig& WithDataFormat(EntityRecognizerDataFormat value) { SetDataFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,14 @@ namespace Model
      * (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      */
-    inline const Aws::Vector<EntityTypesListItem>& GetEntityTypes() const{ return m_entityTypes; }
+    inline const Aws::Vector<EntityTypesListItem>& GetEntityTypes() const { return m_entityTypes; }
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
-    inline void SetEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
-    inline void SetEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
-    inline EntityRecognizerInputDataConfig& WithEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { SetEntityTypes(value); return *this;}
-    inline EntityRecognizerInputDataConfig& WithEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { SetEntityTypes(std::move(value)); return *this;}
-    inline EntityRecognizerInputDataConfig& AddEntityTypes(const EntityTypesListItem& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
-    inline EntityRecognizerInputDataConfig& AddEntityTypes(EntityTypesListItem&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
+    template<typename EntityTypesT = Aws::Vector<EntityTypesListItem>>
+    void SetEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::forward<EntityTypesT>(value); }
+    template<typename EntityTypesT = Aws::Vector<EntityTypesListItem>>
+    EntityRecognizerInputDataConfig& WithEntityTypes(EntityTypesT&& value) { SetEntityTypes(std::forward<EntityTypesT>(value)); return *this;}
+    template<typename EntityTypesT = EntityTypesListItem>
+    EntityRecognizerInputDataConfig& AddEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.emplace_back(std::forward<EntityTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,24 +94,24 @@ namespace Model
      * custom entity recognizer.</p> <p>This parameter is required if you set
      * <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
      */
-    inline const EntityRecognizerDocuments& GetDocuments() const{ return m_documents; }
+    inline const EntityRecognizerDocuments& GetDocuments() const { return m_documents; }
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
-    inline void SetDocuments(const EntityRecognizerDocuments& value) { m_documentsHasBeenSet = true; m_documents = value; }
-    inline void SetDocuments(EntityRecognizerDocuments&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
-    inline EntityRecognizerInputDataConfig& WithDocuments(const EntityRecognizerDocuments& value) { SetDocuments(value); return *this;}
-    inline EntityRecognizerInputDataConfig& WithDocuments(EntityRecognizerDocuments&& value) { SetDocuments(std::move(value)); return *this;}
+    template<typename DocumentsT = EntityRecognizerDocuments>
+    void SetDocuments(DocumentsT&& value) { m_documentsHasBeenSet = true; m_documents = std::forward<DocumentsT>(value); }
+    template<typename DocumentsT = EntityRecognizerDocuments>
+    EntityRecognizerInputDataConfig& WithDocuments(DocumentsT&& value) { SetDocuments(std::forward<DocumentsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 location of the CSV file that annotates your training documents.</p>
      */
-    inline const EntityRecognizerAnnotations& GetAnnotations() const{ return m_annotations; }
+    inline const EntityRecognizerAnnotations& GetAnnotations() const { return m_annotations; }
     inline bool AnnotationsHasBeenSet() const { return m_annotationsHasBeenSet; }
-    inline void SetAnnotations(const EntityRecognizerAnnotations& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
-    inline void SetAnnotations(EntityRecognizerAnnotations&& value) { m_annotationsHasBeenSet = true; m_annotations = std::move(value); }
-    inline EntityRecognizerInputDataConfig& WithAnnotations(const EntityRecognizerAnnotations& value) { SetAnnotations(value); return *this;}
-    inline EntityRecognizerInputDataConfig& WithAnnotations(EntityRecognizerAnnotations&& value) { SetAnnotations(std::move(value)); return *this;}
+    template<typename AnnotationsT = EntityRecognizerAnnotations>
+    void SetAnnotations(AnnotationsT&& value) { m_annotationsHasBeenSet = true; m_annotations = std::forward<AnnotationsT>(value); }
+    template<typename AnnotationsT = EntityRecognizerAnnotations>
+    EntityRecognizerInputDataConfig& WithAnnotations(AnnotationsT&& value) { SetAnnotations(std::forward<AnnotationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +119,12 @@ namespace Model
      * <p>The S3 location of the CSV file that has the entity list for your custom
      * entity recognizer.</p>
      */
-    inline const EntityRecognizerEntityList& GetEntityList() const{ return m_entityList; }
+    inline const EntityRecognizerEntityList& GetEntityList() const { return m_entityList; }
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
-    inline void SetEntityList(const EntityRecognizerEntityList& value) { m_entityListHasBeenSet = true; m_entityList = value; }
-    inline void SetEntityList(EntityRecognizerEntityList&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
-    inline EntityRecognizerInputDataConfig& WithEntityList(const EntityRecognizerEntityList& value) { SetEntityList(value); return *this;}
-    inline EntityRecognizerInputDataConfig& WithEntityList(EntityRecognizerEntityList&& value) { SetEntityList(std::move(value)); return *this;}
+    template<typename EntityListT = EntityRecognizerEntityList>
+    void SetEntityList(EntityListT&& value) { m_entityListHasBeenSet = true; m_entityList = std::forward<EntityListT>(value); }
+    template<typename EntityListT = EntityRecognizerEntityList>
+    EntityRecognizerInputDataConfig& WithEntityList(EntityListT&& value) { SetEntityList(std::forward<EntityListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,18 +134,18 @@ namespace Model
      * Amazon SageMaker Ground Truth.</p> <p>This parameter is required if you set
      * <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
      */
-    inline const Aws::Vector<AugmentedManifestsListItem>& GetAugmentedManifests() const{ return m_augmentedManifests; }
+    inline const Aws::Vector<AugmentedManifestsListItem>& GetAugmentedManifests() const { return m_augmentedManifests; }
     inline bool AugmentedManifestsHasBeenSet() const { return m_augmentedManifestsHasBeenSet; }
-    inline void SetAugmentedManifests(const Aws::Vector<AugmentedManifestsListItem>& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests = value; }
-    inline void SetAugmentedManifests(Aws::Vector<AugmentedManifestsListItem>&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests = std::move(value); }
-    inline EntityRecognizerInputDataConfig& WithAugmentedManifests(const Aws::Vector<AugmentedManifestsListItem>& value) { SetAugmentedManifests(value); return *this;}
-    inline EntityRecognizerInputDataConfig& WithAugmentedManifests(Aws::Vector<AugmentedManifestsListItem>&& value) { SetAugmentedManifests(std::move(value)); return *this;}
-    inline EntityRecognizerInputDataConfig& AddAugmentedManifests(const AugmentedManifestsListItem& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests.push_back(value); return *this; }
-    inline EntityRecognizerInputDataConfig& AddAugmentedManifests(AugmentedManifestsListItem&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests.push_back(std::move(value)); return *this; }
+    template<typename AugmentedManifestsT = Aws::Vector<AugmentedManifestsListItem>>
+    void SetAugmentedManifests(AugmentedManifestsT&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests = std::forward<AugmentedManifestsT>(value); }
+    template<typename AugmentedManifestsT = Aws::Vector<AugmentedManifestsListItem>>
+    EntityRecognizerInputDataConfig& WithAugmentedManifests(AugmentedManifestsT&& value) { SetAugmentedManifests(std::forward<AugmentedManifestsT>(value)); return *this;}
+    template<typename AugmentedManifestsT = AugmentedManifestsListItem>
+    EntityRecognizerInputDataConfig& AddAugmentedManifests(AugmentedManifestsT&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests.emplace_back(std::forward<AugmentedManifestsT>(value)); return *this; }
     ///@}
   private:
 
-    EntityRecognizerDataFormat m_dataFormat;
+    EntityRecognizerDataFormat m_dataFormat{EntityRecognizerDataFormat::NOT_SET};
     bool m_dataFormatHasBeenSet = false;
 
     Aws::Vector<EntityTypesListItem> m_entityTypes;

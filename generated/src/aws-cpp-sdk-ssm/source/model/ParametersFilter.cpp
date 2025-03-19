@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ParametersFilter::ParametersFilter() : 
-    m_key(ParametersFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ParametersFilter::ParametersFilter(JsonView jsonValue)
-  : ParametersFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ParametersFilter& ParametersFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = ParametersFilterKeyMapper::GetParametersFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ ParametersFilter& ParametersFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

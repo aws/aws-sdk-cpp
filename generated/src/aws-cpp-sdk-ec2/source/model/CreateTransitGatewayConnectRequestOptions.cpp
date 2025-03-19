@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateTransitGatewayConnectRequestOptions::CreateTransitGatewayConnectRequestOptions() : 
-    m_protocol(ProtocolValue::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 CreateTransitGatewayConnectRequestOptions::CreateTransitGatewayConnectRequestOptions(const XmlNode& xmlNode)
-  : CreateTransitGatewayConnectRequestOptions()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ CreateTransitGatewayConnectRequestOptions& CreateTransitGatewayConnectRequestOpt
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolValueMapper::GetProtocolValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolValueMapper::GetProtocolValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
   }

@@ -30,7 +30,7 @@ namespace Model
   class UpdateTargetGroupResult
   {
   public:
-    AWS_VPCLATTICE_API UpdateTargetGroupResult();
+    AWS_VPCLATTICE_API UpdateTargetGroupResult() = default;
     AWS_VPCLATTICE_API UpdateTargetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API UpdateTargetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,99 +39,94 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateTargetGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateTargetGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateTargetGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateTargetGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target group configuration.</p>
      */
-    inline const TargetGroupConfig& GetConfig() const{ return m_config; }
-    inline void SetConfig(const TargetGroupConfig& value) { m_config = value; }
-    inline void SetConfig(TargetGroupConfig&& value) { m_config = std::move(value); }
-    inline UpdateTargetGroupResult& WithConfig(const TargetGroupConfig& value) { SetConfig(value); return *this;}
-    inline UpdateTargetGroupResult& WithConfig(TargetGroupConfig&& value) { SetConfig(std::move(value)); return *this;}
+    inline const TargetGroupConfig& GetConfig() const { return m_config; }
+    template<typename ConfigT = TargetGroupConfig>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = TargetGroupConfig>
+    UpdateTargetGroupResult& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the target group.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateTargetGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateTargetGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateTargetGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateTargetGroupResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateTargetGroupResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateTargetGroupResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateTargetGroupResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTargetGroupResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status.</p>
      */
-    inline const TargetGroupStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TargetGroupStatus& value) { m_status = value; }
-    inline void SetStatus(TargetGroupStatus&& value) { m_status = std::move(value); }
-    inline UpdateTargetGroupResult& WithStatus(const TargetGroupStatus& value) { SetStatus(value); return *this;}
-    inline UpdateTargetGroupResult& WithStatus(TargetGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TargetGroupStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TargetGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateTargetGroupResult& WithStatus(TargetGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target group type.</p>
      */
-    inline const TargetGroupType& GetType() const{ return m_type; }
-    inline void SetType(const TargetGroupType& value) { m_type = value; }
-    inline void SetType(TargetGroupType&& value) { m_type = std::move(value); }
-    inline UpdateTargetGroupResult& WithType(const TargetGroupType& value) { SetType(value); return *this;}
-    inline UpdateTargetGroupResult& WithType(TargetGroupType&& value) { SetType(std::move(value)); return *this;}
+    inline TargetGroupType GetType() const { return m_type; }
+    inline void SetType(TargetGroupType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UpdateTargetGroupResult& WithType(TargetGroupType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTargetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTargetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTargetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTargetGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     TargetGroupConfig m_config;
+    bool m_configHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    TargetGroupStatus m_status;
+    TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    TargetGroupType m_type;
+    TargetGroupType m_type{TargetGroupType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

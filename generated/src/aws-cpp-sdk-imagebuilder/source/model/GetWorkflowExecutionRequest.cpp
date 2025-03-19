@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetWorkflowExecutionRequest::GetWorkflowExecutionRequest() : 
-    m_workflowExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowExecutionRequest::SerializePayload() const
 {
   return {};

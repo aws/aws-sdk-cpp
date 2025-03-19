@@ -18,18 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-StandbyWorkspace::StandbyWorkspace() : 
-    m_primaryWorkspaceIdHasBeenSet(false),
-    m_volumeEncryptionKeyHasBeenSet(false),
-    m_directoryIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataReplication(DataReplication::NOT_SET),
-    m_dataReplicationHasBeenSet(false)
-{
-}
-
 StandbyWorkspace::StandbyWorkspace(JsonView jsonValue)
-  : StandbyWorkspace()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ StandbyWorkspace& StandbyWorkspace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryWorkspaceId"))
   {
     m_primaryWorkspaceId = jsonValue.GetString("PrimaryWorkspaceId");
-
     m_primaryWorkspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeEncryptionKey"))
   {
     m_volumeEncryptionKey = jsonValue.GetString("VolumeEncryptionKey");
-
     m_volumeEncryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -66,14 +49,11 @@ StandbyWorkspace& StandbyWorkspace::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataReplication"))
   {
     m_dataReplication = DataReplicationMapper::GetDataReplicationForName(jsonValue.GetString("DataReplication"));
-
     m_dataReplicationHasBeenSet = true;
   }
-
   return *this;
 }
 

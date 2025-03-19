@@ -39,7 +39,7 @@ namespace Model
   class ActiveContext
   {
   public:
-    AWS_LEXRUNTIMEV2_API ActiveContext();
+    AWS_LEXRUNTIMEV2_API ActiveContext() = default;
     AWS_LEXRUNTIMEV2_API ActiveContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API ActiveContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name of the context.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ActiveContext& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ActiveContext& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ActiveContext& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ActiveContext& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * <p>Indicates the number of turns or seconds that the context is active. Once the
      * time to live expires, the context is no longer returned in a response.</p>
      */
-    inline const ActiveContextTimeToLive& GetTimeToLive() const{ return m_timeToLive; }
+    inline const ActiveContextTimeToLive& GetTimeToLive() const { return m_timeToLive; }
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
-    inline void SetTimeToLive(const ActiveContextTimeToLive& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
-    inline void SetTimeToLive(ActiveContextTimeToLive&& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = std::move(value); }
-    inline ActiveContext& WithTimeToLive(const ActiveContextTimeToLive& value) { SetTimeToLive(value); return *this;}
-    inline ActiveContext& WithTimeToLive(ActiveContextTimeToLive&& value) { SetTimeToLive(std::move(value)); return *this;}
+    template<typename TimeToLiveT = ActiveContextTimeToLive>
+    void SetTimeToLive(TimeToLiveT&& value) { m_timeToLiveHasBeenSet = true; m_timeToLive = std::forward<TimeToLiveT>(value); }
+    template<typename TimeToLiveT = ActiveContextTimeToLive>
+    ActiveContext& WithTimeToLive(TimeToLiveT&& value) { SetTimeToLive(std::forward<TimeToLiveT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,19 +78,16 @@ namespace Model
      * list of contexts for the session. If you specify an empty list, all contexts for
      * the session are cleared. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContextAttributes() const{ return m_contextAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetContextAttributes() const { return m_contextAttributes; }
     inline bool ContextAttributesHasBeenSet() const { return m_contextAttributesHasBeenSet; }
-    inline void SetContextAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = value; }
-    inline void SetContextAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = std::move(value); }
-    inline ActiveContext& WithContextAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetContextAttributes(value); return *this;}
-    inline ActiveContext& WithContextAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetContextAttributes(std::move(value)); return *this;}
-    inline ActiveContext& AddContextAttributes(const Aws::String& key, const Aws::String& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, value); return *this; }
-    inline ActiveContext& AddContextAttributes(Aws::String&& key, const Aws::String& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), value); return *this; }
-    inline ActiveContext& AddContextAttributes(const Aws::String& key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, std::move(value)); return *this; }
-    inline ActiveContext& AddContextAttributes(Aws::String&& key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ActiveContext& AddContextAttributes(const char* key, Aws::String&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, std::move(value)); return *this; }
-    inline ActiveContext& AddContextAttributes(Aws::String&& key, const char* value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::move(key), value); return *this; }
-    inline ActiveContext& AddContextAttributes(const char* key, const char* value) { m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(key, value); return *this; }
+    template<typename ContextAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetContextAttributes(ContextAttributesT&& value) { m_contextAttributesHasBeenSet = true; m_contextAttributes = std::forward<ContextAttributesT>(value); }
+    template<typename ContextAttributesT = Aws::Map<Aws::String, Aws::String>>
+    ActiveContext& WithContextAttributes(ContextAttributesT&& value) { SetContextAttributes(std::forward<ContextAttributesT>(value)); return *this;}
+    template<typename ContextAttributesKeyT = Aws::String, typename ContextAttributesValueT = Aws::String>
+    ActiveContext& AddContextAttributes(ContextAttributesKeyT&& key, ContextAttributesValueT&& value) {
+      m_contextAttributesHasBeenSet = true; m_contextAttributes.emplace(std::forward<ContextAttributesKeyT>(key), std::forward<ContextAttributesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

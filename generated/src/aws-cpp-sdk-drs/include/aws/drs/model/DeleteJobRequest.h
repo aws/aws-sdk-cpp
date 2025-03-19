@@ -21,7 +21,7 @@ namespace Model
   class DeleteJobRequest : public DrsRequest
   {
   public:
-    AWS_DRS_API DeleteJobRequest();
+    AWS_DRS_API DeleteJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the Job to be deleted.</p>
      */
-    inline const Aws::String& GetJobID() const{ return m_jobID; }
+    inline const Aws::String& GetJobID() const { return m_jobID; }
     inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
-    inline void SetJobID(const Aws::String& value) { m_jobIDHasBeenSet = true; m_jobID = value; }
-    inline void SetJobID(Aws::String&& value) { m_jobIDHasBeenSet = true; m_jobID = std::move(value); }
-    inline void SetJobID(const char* value) { m_jobIDHasBeenSet = true; m_jobID.assign(value); }
-    inline DeleteJobRequest& WithJobID(const Aws::String& value) { SetJobID(value); return *this;}
-    inline DeleteJobRequest& WithJobID(Aws::String&& value) { SetJobID(std::move(value)); return *this;}
-    inline DeleteJobRequest& WithJobID(const char* value) { SetJobID(value); return *this;}
+    template<typename JobIDT = Aws::String>
+    void SetJobID(JobIDT&& value) { m_jobIDHasBeenSet = true; m_jobID = std::forward<JobIDT>(value); }
+    template<typename JobIDT = Aws::String>
+    DeleteJobRequest& WithJobID(JobIDT&& value) { SetJobID(std::forward<JobIDT>(value)); return *this;}
     ///@}
   private:
 

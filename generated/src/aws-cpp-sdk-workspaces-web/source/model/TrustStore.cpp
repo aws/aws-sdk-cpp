@@ -18,14 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-TrustStore::TrustStore() : 
-    m_associatedPortalArnsHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 TrustStore::TrustStore(JsonView jsonValue)
-  : TrustStore()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TrustStore& TrustStore::operator =(JsonView jsonValue)
     }
     m_associatedPortalArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trustStoreArn"))
   {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
-
     m_trustStoreArnHasBeenSet = true;
   }
-
   return *this;
 }
 

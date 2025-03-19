@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Workteam::Workteam() : 
-    m_workteamNameHasBeenSet(false),
-    m_memberDefinitionsHasBeenSet(false),
-    m_workteamArnHasBeenSet(false),
-    m_workforceArnHasBeenSet(false),
-    m_productListingIdsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subDomainHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false),
-    m_workerAccessConfigurationHasBeenSet(false)
-{
-}
-
 Workteam::Workteam(JsonView jsonValue)
-  : Workteam()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ Workteam& Workteam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkteamName"))
   {
     m_workteamName = jsonValue.GetString("WorkteamName");
-
     m_workteamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberDefinitions"))
   {
     Aws::Utils::Array<JsonView> memberDefinitionsJsonList = jsonValue.GetArray("MemberDefinitions");
@@ -57,21 +39,16 @@ Workteam& Workteam::operator =(JsonView jsonValue)
     }
     m_memberDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkteamArn"))
   {
     m_workteamArn = jsonValue.GetString("WorkteamArn");
-
     m_workteamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkforceArn"))
   {
     m_workforceArn = jsonValue.GetString("WorkforceArn");
-
     m_workforceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductListingIds"))
   {
     Aws::Utils::Array<JsonView> productListingIdsJsonList = jsonValue.GetArray("ProductListingIds");
@@ -81,49 +58,36 @@ Workteam& Workteam::operator =(JsonView jsonValue)
     }
     m_productListingIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubDomain"))
   {
     m_subDomain = jsonValue.GetString("SubDomain");
-
     m_subDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("LastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfiguration"))
   {
     m_notificationConfiguration = jsonValue.GetObject("NotificationConfiguration");
-
     m_notificationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerAccessConfiguration"))
   {
     m_workerAccessConfiguration = jsonValue.GetObject("WorkerAccessConfiguration");
-
     m_workerAccessConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

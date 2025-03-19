@@ -12,12 +12,6 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnsubscribeRequest::UnsubscribeRequest() : 
-    m_arnHasBeenSet(false),
-    m_targetAddressHasBeenSet(false)
-{
-}
-
 Aws::String UnsubscribeRequest::SerializePayload() const
 {
   JsonValue payload;

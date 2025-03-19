@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateConfiguredTableAssociationResult::UpdateConfiguredTableAssociationResult()
-{
-}
-
 UpdateConfiguredTableAssociationResult::UpdateConfiguredTableAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateConfiguredTableAssociationResult& UpdateConfiguredTableAssociationResult::
   if(jsonValue.ValueExists("configuredTableAssociation"))
   {
     m_configuredTableAssociation = jsonValue.GetObject("configuredTableAssociation");
-
+    m_configuredTableAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

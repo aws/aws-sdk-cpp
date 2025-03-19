@@ -34,7 +34,7 @@ namespace Model
   class TemplatesResponse
   {
   public:
-    AWS_PINPOINT_API TemplatesResponse();
+    AWS_PINPOINT_API TemplatesResponse() = default;
     AWS_PINPOINT_API TemplatesResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API TemplatesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * your Amazon Pinpoint account and meets any filter criteria that you specified in
      * the request.</p>
      */
-    inline const Aws::Vector<TemplateResponse>& GetItem() const{ return m_item; }
+    inline const Aws::Vector<TemplateResponse>& GetItem() const { return m_item; }
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-    inline void SetItem(const Aws::Vector<TemplateResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
-    inline void SetItem(Aws::Vector<TemplateResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-    inline TemplatesResponse& WithItem(const Aws::Vector<TemplateResponse>& value) { SetItem(value); return *this;}
-    inline TemplatesResponse& WithItem(Aws::Vector<TemplateResponse>&& value) { SetItem(std::move(value)); return *this;}
-    inline TemplatesResponse& AddItem(const TemplateResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
-    inline TemplatesResponse& AddItem(TemplateResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+    template<typename ItemT = Aws::Vector<TemplateResponse>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Vector<TemplateResponse>>
+    TemplatesResponse& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemT = TemplateResponse>
+    TemplatesResponse& AddItem(ItemT&& value) { m_itemHasBeenSet = true; m_item.emplace_back(std::forward<ItemT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline TemplatesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline TemplatesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline TemplatesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    TemplatesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

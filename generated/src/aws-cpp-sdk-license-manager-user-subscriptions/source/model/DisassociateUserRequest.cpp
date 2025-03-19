@@ -12,15 +12,6 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateUserRequest::DisassociateUserRequest() : 
-    m_domainHasBeenSet(false),
-    m_identityProviderHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceUserArnHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateUserRequest::SerializePayload() const
 {
   JsonValue payload;

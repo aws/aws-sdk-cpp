@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-StudioLifecycleConfigDetails::StudioLifecycleConfigDetails() : 
-    m_studioLifecycleConfigArnHasBeenSet(false),
-    m_studioLifecycleConfigNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_studioLifecycleConfigAppType(StudioLifecycleConfigAppType::NOT_SET),
-    m_studioLifecycleConfigAppTypeHasBeenSet(false)
-{
-}
-
 StudioLifecycleConfigDetails::StudioLifecycleConfigDetails(JsonView jsonValue)
-  : StudioLifecycleConfigDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ StudioLifecycleConfigDetails& StudioLifecycleConfigDetails::operator =(JsonView 
   if(jsonValue.ValueExists("StudioLifecycleConfigArn"))
   {
     m_studioLifecycleConfigArn = jsonValue.GetString("StudioLifecycleConfigArn");
-
     m_studioLifecycleConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StudioLifecycleConfigName"))
   {
     m_studioLifecycleConfigName = jsonValue.GetString("StudioLifecycleConfigName");
-
     m_studioLifecycleConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StudioLifecycleConfigAppType"))
   {
     m_studioLifecycleConfigAppType = StudioLifecycleConfigAppTypeMapper::GetStudioLifecycleConfigAppTypeForName(jsonValue.GetString("StudioLifecycleConfigAppType"));
-
     m_studioLifecycleConfigAppTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

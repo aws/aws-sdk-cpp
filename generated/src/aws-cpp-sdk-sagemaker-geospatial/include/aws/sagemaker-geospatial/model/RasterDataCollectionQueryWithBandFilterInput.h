@@ -36,7 +36,7 @@ namespace Model
   class RasterDataCollectionQueryWithBandFilterInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput();
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,51 +46,50 @@ namespace Model
     /**
      * <p>The Area of interest to be used in the search query.</p>
      */
-    inline const AreaOfInterest& GetAreaOfInterest() const{ return m_areaOfInterest; }
+    inline const AreaOfInterest& GetAreaOfInterest() const { return m_areaOfInterest; }
     inline bool AreaOfInterestHasBeenSet() const { return m_areaOfInterestHasBeenSet; }
-    inline void SetAreaOfInterest(const AreaOfInterest& value) { m_areaOfInterestHasBeenSet = true; m_areaOfInterest = value; }
-    inline void SetAreaOfInterest(AreaOfInterest&& value) { m_areaOfInterestHasBeenSet = true; m_areaOfInterest = std::move(value); }
-    inline RasterDataCollectionQueryWithBandFilterInput& WithAreaOfInterest(const AreaOfInterest& value) { SetAreaOfInterest(value); return *this;}
-    inline RasterDataCollectionQueryWithBandFilterInput& WithAreaOfInterest(AreaOfInterest&& value) { SetAreaOfInterest(std::move(value)); return *this;}
+    template<typename AreaOfInterestT = AreaOfInterest>
+    void SetAreaOfInterest(AreaOfInterestT&& value) { m_areaOfInterestHasBeenSet = true; m_areaOfInterest = std::forward<AreaOfInterestT>(value); }
+    template<typename AreaOfInterestT = AreaOfInterest>
+    RasterDataCollectionQueryWithBandFilterInput& WithAreaOfInterest(AreaOfInterestT&& value) { SetAreaOfInterest(std::forward<AreaOfInterestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of Bands to be displayed in the result for each item.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBandFilter() const{ return m_bandFilter; }
+    inline const Aws::Vector<Aws::String>& GetBandFilter() const { return m_bandFilter; }
     inline bool BandFilterHasBeenSet() const { return m_bandFilterHasBeenSet; }
-    inline void SetBandFilter(const Aws::Vector<Aws::String>& value) { m_bandFilterHasBeenSet = true; m_bandFilter = value; }
-    inline void SetBandFilter(Aws::Vector<Aws::String>&& value) { m_bandFilterHasBeenSet = true; m_bandFilter = std::move(value); }
-    inline RasterDataCollectionQueryWithBandFilterInput& WithBandFilter(const Aws::Vector<Aws::String>& value) { SetBandFilter(value); return *this;}
-    inline RasterDataCollectionQueryWithBandFilterInput& WithBandFilter(Aws::Vector<Aws::String>&& value) { SetBandFilter(std::move(value)); return *this;}
-    inline RasterDataCollectionQueryWithBandFilterInput& AddBandFilter(const Aws::String& value) { m_bandFilterHasBeenSet = true; m_bandFilter.push_back(value); return *this; }
-    inline RasterDataCollectionQueryWithBandFilterInput& AddBandFilter(Aws::String&& value) { m_bandFilterHasBeenSet = true; m_bandFilter.push_back(std::move(value)); return *this; }
-    inline RasterDataCollectionQueryWithBandFilterInput& AddBandFilter(const char* value) { m_bandFilterHasBeenSet = true; m_bandFilter.push_back(value); return *this; }
+    template<typename BandFilterT = Aws::Vector<Aws::String>>
+    void SetBandFilter(BandFilterT&& value) { m_bandFilterHasBeenSet = true; m_bandFilter = std::forward<BandFilterT>(value); }
+    template<typename BandFilterT = Aws::Vector<Aws::String>>
+    RasterDataCollectionQueryWithBandFilterInput& WithBandFilter(BandFilterT&& value) { SetBandFilter(std::forward<BandFilterT>(value)); return *this;}
+    template<typename BandFilterT = Aws::String>
+    RasterDataCollectionQueryWithBandFilterInput& AddBandFilter(BandFilterT&& value) { m_bandFilterHasBeenSet = true; m_bandFilter.emplace_back(std::forward<BandFilterT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Property Filters used in the search query.</p>
      */
-    inline const PropertyFilters& GetPropertyFilters() const{ return m_propertyFilters; }
+    inline const PropertyFilters& GetPropertyFilters() const { return m_propertyFilters; }
     inline bool PropertyFiltersHasBeenSet() const { return m_propertyFiltersHasBeenSet; }
-    inline void SetPropertyFilters(const PropertyFilters& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = value; }
-    inline void SetPropertyFilters(PropertyFilters&& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = std::move(value); }
-    inline RasterDataCollectionQueryWithBandFilterInput& WithPropertyFilters(const PropertyFilters& value) { SetPropertyFilters(value); return *this;}
-    inline RasterDataCollectionQueryWithBandFilterInput& WithPropertyFilters(PropertyFilters&& value) { SetPropertyFilters(std::move(value)); return *this;}
+    template<typename PropertyFiltersT = PropertyFilters>
+    void SetPropertyFilters(PropertyFiltersT&& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = std::forward<PropertyFiltersT>(value); }
+    template<typename PropertyFiltersT = PropertyFilters>
+    RasterDataCollectionQueryWithBandFilterInput& WithPropertyFilters(PropertyFiltersT&& value) { SetPropertyFilters(std::forward<PropertyFiltersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The TimeRange Filter used in the search query.</p>
      */
-    inline const TimeRangeFilterInput& GetTimeRangeFilter() const{ return m_timeRangeFilter; }
+    inline const TimeRangeFilterInput& GetTimeRangeFilter() const { return m_timeRangeFilter; }
     inline bool TimeRangeFilterHasBeenSet() const { return m_timeRangeFilterHasBeenSet; }
-    inline void SetTimeRangeFilter(const TimeRangeFilterInput& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = value; }
-    inline void SetTimeRangeFilter(TimeRangeFilterInput&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::move(value); }
-    inline RasterDataCollectionQueryWithBandFilterInput& WithTimeRangeFilter(const TimeRangeFilterInput& value) { SetTimeRangeFilter(value); return *this;}
-    inline RasterDataCollectionQueryWithBandFilterInput& WithTimeRangeFilter(TimeRangeFilterInput&& value) { SetTimeRangeFilter(std::move(value)); return *this;}
+    template<typename TimeRangeFilterT = TimeRangeFilterInput>
+    void SetTimeRangeFilter(TimeRangeFilterT&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::forward<TimeRangeFilterT>(value); }
+    template<typename TimeRangeFilterT = TimeRangeFilterInput>
+    RasterDataCollectionQueryWithBandFilterInput& WithTimeRangeFilter(TimeRangeFilterT&& value) { SetTimeRangeFilter(std::forward<TimeRangeFilterT>(value)); return *this;}
     ///@}
   private:
 

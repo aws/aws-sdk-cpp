@@ -33,7 +33,7 @@ namespace Model
   class QueryGenerationColumn
   {
   public:
-    AWS_BEDROCKAGENT_API QueryGenerationColumn();
+    AWS_BEDROCKAGENT_API QueryGenerationColumn() = default;
     AWS_BEDROCKAGENT_API QueryGenerationColumn(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API QueryGenerationColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A description of the column that helps the query engine understand the
      * contents of the column.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline QueryGenerationColumn& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline QueryGenerationColumn& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline QueryGenerationColumn& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    QueryGenerationColumn& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,33 +58,29 @@ namespace Model
      * If you specify <code>EXCLUDE</code>, the column will be ignored. If you specify
      * <code>INCLUDE</code>, all other columns in the table will be ignored.</p>
      */
-    inline const IncludeExclude& GetInclusion() const{ return m_inclusion; }
+    inline IncludeExclude GetInclusion() const { return m_inclusion; }
     inline bool InclusionHasBeenSet() const { return m_inclusionHasBeenSet; }
-    inline void SetInclusion(const IncludeExclude& value) { m_inclusionHasBeenSet = true; m_inclusion = value; }
-    inline void SetInclusion(IncludeExclude&& value) { m_inclusionHasBeenSet = true; m_inclusion = std::move(value); }
-    inline QueryGenerationColumn& WithInclusion(const IncludeExclude& value) { SetInclusion(value); return *this;}
-    inline QueryGenerationColumn& WithInclusion(IncludeExclude&& value) { SetInclusion(std::move(value)); return *this;}
+    inline void SetInclusion(IncludeExclude value) { m_inclusionHasBeenSet = true; m_inclusion = value; }
+    inline QueryGenerationColumn& WithInclusion(IncludeExclude value) { SetInclusion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the column for which the other fields in this object apply.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline QueryGenerationColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline QueryGenerationColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline QueryGenerationColumn& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    QueryGenerationColumn& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    IncludeExclude m_inclusion;
+    IncludeExclude m_inclusion{IncludeExclude::NOT_SET};
     bool m_inclusionHasBeenSet = false;
 
     Aws::String m_name;

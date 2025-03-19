@@ -19,7 +19,7 @@ namespace Model
   class DisassociateAdminAccountRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API DisassociateAdminAccountRequest();
+    AWS_FMS_API DisassociateAdminAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

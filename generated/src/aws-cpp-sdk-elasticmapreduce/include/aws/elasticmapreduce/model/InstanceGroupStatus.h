@@ -33,7 +33,7 @@ namespace Model
   class InstanceGroupStatus
   {
   public:
-    AWS_EMR_API InstanceGroupStatus();
+    AWS_EMR_API InstanceGroupStatus() = default;
     AWS_EMR_API InstanceGroupStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceGroupStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,38 @@ namespace Model
     /**
      * <p>The current state of the instance group.</p>
      */
-    inline const InstanceGroupState& GetState() const{ return m_state; }
+    inline InstanceGroupState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const InstanceGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(InstanceGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline InstanceGroupStatus& WithState(const InstanceGroupState& value) { SetState(value); return *this;}
-    inline InstanceGroupStatus& WithState(InstanceGroupState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(InstanceGroupState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InstanceGroupStatus& WithState(InstanceGroupState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status change reason details for the instance group.</p>
      */
-    inline const InstanceGroupStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+    inline const InstanceGroupStateChangeReason& GetStateChangeReason() const { return m_stateChangeReason; }
     inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
-    inline void SetStateChangeReason(const InstanceGroupStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
-    inline void SetStateChangeReason(InstanceGroupStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
-    inline InstanceGroupStatus& WithStateChangeReason(const InstanceGroupStateChangeReason& value) { SetStateChangeReason(value); return *this;}
-    inline InstanceGroupStatus& WithStateChangeReason(InstanceGroupStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+    template<typename StateChangeReasonT = InstanceGroupStateChangeReason>
+    void SetStateChangeReason(StateChangeReasonT&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::forward<StateChangeReasonT>(value); }
+    template<typename StateChangeReasonT = InstanceGroupStateChangeReason>
+    InstanceGroupStatus& WithStateChangeReason(StateChangeReasonT&& value) { SetStateChangeReason(std::forward<StateChangeReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timeline of the instance group status over time.</p>
      */
-    inline const InstanceGroupTimeline& GetTimeline() const{ return m_timeline; }
+    inline const InstanceGroupTimeline& GetTimeline() const { return m_timeline; }
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-    inline void SetTimeline(const InstanceGroupTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-    inline void SetTimeline(InstanceGroupTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-    inline InstanceGroupStatus& WithTimeline(const InstanceGroupTimeline& value) { SetTimeline(value); return *this;}
-    inline InstanceGroupStatus& WithTimeline(InstanceGroupTimeline&& value) { SetTimeline(std::move(value)); return *this;}
+    template<typename TimelineT = InstanceGroupTimeline>
+    void SetTimeline(TimelineT&& value) { m_timelineHasBeenSet = true; m_timeline = std::forward<TimelineT>(value); }
+    template<typename TimelineT = InstanceGroupTimeline>
+    InstanceGroupStatus& WithTimeline(TimelineT&& value) { SetTimeline(std::forward<TimelineT>(value)); return *this;}
     ///@}
   private:
 
-    InstanceGroupState m_state;
+    InstanceGroupState m_state{InstanceGroupState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     InstanceGroupStateChangeReason m_stateChangeReason;

@@ -37,7 +37,7 @@ namespace Model
   class ListAccountAssociationsFilter
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter();
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter() = default;
     AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
      * accounts that are associated to the provided Billing Group Arn.</p>
      */
-    inline const Aws::String& GetAssociation() const{ return m_association; }
+    inline const Aws::String& GetAssociation() const { return m_association; }
     inline bool AssociationHasBeenSet() const { return m_associationHasBeenSet; }
-    inline void SetAssociation(const Aws::String& value) { m_associationHasBeenSet = true; m_association = value; }
-    inline void SetAssociation(Aws::String&& value) { m_associationHasBeenSet = true; m_association = std::move(value); }
-    inline void SetAssociation(const char* value) { m_associationHasBeenSet = true; m_association.assign(value); }
-    inline ListAccountAssociationsFilter& WithAssociation(const Aws::String& value) { SetAssociation(value); return *this;}
-    inline ListAccountAssociationsFilter& WithAssociation(Aws::String&& value) { SetAssociation(std::move(value)); return *this;}
-    inline ListAccountAssociationsFilter& WithAssociation(const char* value) { SetAssociation(value); return *this;}
+    template<typename AssociationT = Aws::String>
+    void SetAssociation(AssociationT&& value) { m_associationHasBeenSet = true; m_association = std::forward<AssociationT>(value); }
+    template<typename AssociationT = Aws::String>
+    ListAccountAssociationsFilter& WithAssociation(AssociationT&& value) { SetAssociation(std::forward<AssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID to filter on.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListAccountAssociationsFilter& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListAccountAssociationsFilter& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListAccountAssociationsFilter& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListAccountAssociationsFilter& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,15 +75,14 @@ namespace Model
      * <p> The list of Amazon Web Services IDs to retrieve their associated billing
      * group for a given time range. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline ListAccountAssociationsFilter& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline ListAccountAssociationsFilter& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline ListAccountAssociationsFilter& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline ListAccountAssociationsFilter& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline ListAccountAssociationsFilter& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    ListAccountAssociationsFilter& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    ListAccountAssociationsFilter& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
   private:
 

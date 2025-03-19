@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-BadRequestException::BadRequestException() : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
-{
-}
-
 BadRequestException::BadRequestException(JsonView jsonValue)
-  : BadRequestException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BadRequestException& BadRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestID"))
   {
     m_requestID = jsonValue.GetString("RequestID");
-
     m_requestIDHasBeenSet = true;
   }
-
   return *this;
 }
 

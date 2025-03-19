@@ -52,7 +52,7 @@ namespace Model
   class GameServerContainerDefinition
   {
   public:
-    AWS_GAMELIFT_API GameServerContainerDefinition();
+    AWS_GAMELIFT_API GameServerContainerDefinition() = default;
     AWS_GAMELIFT_API GameServerContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameServerContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * <p>The container definition identifier. Container names are unique within a
      * container group definition.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline GameServerContainerDefinition& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline GameServerContainerDefinition& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    GameServerContainerDefinition& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,14 @@ namespace Model
      * same container group during startup and shutdown sequences. A container might
      * have dependencies on multiple containers.</p>
      */
-    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline GameServerContainerDefinition& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
-    inline GameServerContainerDefinition& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline GameServerContainerDefinition& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+    template<typename DependsOnT = Aws::Vector<ContainerDependency>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<ContainerDependency>>
+    GameServerContainerDefinition& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = ContainerDependency>
+    GameServerContainerDefinition& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +92,14 @@ namespace Model
      * <p>A mount point that binds a path inside the container to a file or directory
      * on the host system and lets it access the file or directory.</p>
      */
-    inline const Aws::Vector<ContainerMountPoint>& GetMountPoints() const{ return m_mountPoints; }
+    inline const Aws::Vector<ContainerMountPoint>& GetMountPoints() const { return m_mountPoints; }
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
-    inline void SetMountPoints(const Aws::Vector<ContainerMountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
-    inline void SetMountPoints(Aws::Vector<ContainerMountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
-    inline GameServerContainerDefinition& WithMountPoints(const Aws::Vector<ContainerMountPoint>& value) { SetMountPoints(value); return *this;}
-    inline GameServerContainerDefinition& WithMountPoints(Aws::Vector<ContainerMountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& AddMountPoints(const ContainerMountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
-    inline GameServerContainerDefinition& AddMountPoints(ContainerMountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+    template<typename MountPointsT = Aws::Vector<ContainerMountPoint>>
+    void SetMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::forward<MountPointsT>(value); }
+    template<typename MountPointsT = Aws::Vector<ContainerMountPoint>>
+    GameServerContainerDefinition& WithMountPoints(MountPointsT&& value) { SetMountPoints(std::forward<MountPointsT>(value)); return *this;}
+    template<typename MountPointsT = ContainerMountPoint>
+    GameServerContainerDefinition& AddMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.emplace_back(std::forward<MountPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,14 +109,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html#ECS-Type-ContainerDefinition-environment">ContainerDefinition::environment</a>
      * parameter in the <i>Amazon Elastic Container Service API Reference</i>.</p>
      */
-    inline const Aws::Vector<ContainerEnvironment>& GetEnvironmentOverride() const{ return m_environmentOverride; }
+    inline const Aws::Vector<ContainerEnvironment>& GetEnvironmentOverride() const { return m_environmentOverride; }
     inline bool EnvironmentOverrideHasBeenSet() const { return m_environmentOverrideHasBeenSet; }
-    inline void SetEnvironmentOverride(const Aws::Vector<ContainerEnvironment>& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride = value; }
-    inline void SetEnvironmentOverride(Aws::Vector<ContainerEnvironment>&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride = std::move(value); }
-    inline GameServerContainerDefinition& WithEnvironmentOverride(const Aws::Vector<ContainerEnvironment>& value) { SetEnvironmentOverride(value); return *this;}
-    inline GameServerContainerDefinition& WithEnvironmentOverride(Aws::Vector<ContainerEnvironment>&& value) { SetEnvironmentOverride(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& AddEnvironmentOverride(const ContainerEnvironment& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride.push_back(value); return *this; }
-    inline GameServerContainerDefinition& AddEnvironmentOverride(ContainerEnvironment&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentOverrideT = Aws::Vector<ContainerEnvironment>>
+    void SetEnvironmentOverride(EnvironmentOverrideT&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride = std::forward<EnvironmentOverrideT>(value); }
+    template<typename EnvironmentOverrideT = Aws::Vector<ContainerEnvironment>>
+    GameServerContainerDefinition& WithEnvironmentOverride(EnvironmentOverrideT&& value) { SetEnvironmentOverride(std::forward<EnvironmentOverrideT>(value)); return *this;}
+    template<typename EnvironmentOverrideT = ContainerEnvironment>
+    GameServerContainerDefinition& AddEnvironmentOverride(EnvironmentOverrideT&& value) { m_environmentOverrideHasBeenSet = true; m_environmentOverride.emplace_back(std::forward<EnvironmentOverrideT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,14 +125,12 @@ namespace Model
      * to a container fleet. For a more specific identifier, see
      * <code>ResolvedImageDigest</code>. </p>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline GameServerContainerDefinition& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline GameServerContainerDefinition& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    GameServerContainerDefinition& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +142,12 @@ namespace Model
      * connection ports, which are assigned as needed from the container fleet's
      * <code>ConnectionPortRange</code>. </p>
      */
-    inline const ContainerPortConfiguration& GetPortConfiguration() const{ return m_portConfiguration; }
+    inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
     inline bool PortConfigurationHasBeenSet() const { return m_portConfigurationHasBeenSet; }
-    inline void SetPortConfiguration(const ContainerPortConfiguration& value) { m_portConfigurationHasBeenSet = true; m_portConfiguration = value; }
-    inline void SetPortConfiguration(ContainerPortConfiguration&& value) { m_portConfigurationHasBeenSet = true; m_portConfiguration = std::move(value); }
-    inline GameServerContainerDefinition& WithPortConfiguration(const ContainerPortConfiguration& value) { SetPortConfiguration(value); return *this;}
-    inline GameServerContainerDefinition& WithPortConfiguration(ContainerPortConfiguration&& value) { SetPortConfiguration(std::move(value)); return *this;}
+    template<typename PortConfigurationT = ContainerPortConfiguration>
+    void SetPortConfiguration(PortConfigurationT&& value) { m_portConfigurationHasBeenSet = true; m_portConfiguration = std::forward<PortConfigurationT>(value); }
+    template<typename PortConfigurationT = ContainerPortConfiguration>
+    GameServerContainerDefinition& WithPortConfiguration(PortConfigurationT&& value) { SetPortConfiguration(std::forward<PortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +155,12 @@ namespace Model
      * <p>A unique and immutable identifier for the container image. The digest is a
      * SHA 256 hash of the container image manifest. </p>
      */
-    inline const Aws::String& GetResolvedImageDigest() const{ return m_resolvedImageDigest; }
+    inline const Aws::String& GetResolvedImageDigest() const { return m_resolvedImageDigest; }
     inline bool ResolvedImageDigestHasBeenSet() const { return m_resolvedImageDigestHasBeenSet; }
-    inline void SetResolvedImageDigest(const Aws::String& value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest = value; }
-    inline void SetResolvedImageDigest(Aws::String&& value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest = std::move(value); }
-    inline void SetResolvedImageDigest(const char* value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest.assign(value); }
-    inline GameServerContainerDefinition& WithResolvedImageDigest(const Aws::String& value) { SetResolvedImageDigest(value); return *this;}
-    inline GameServerContainerDefinition& WithResolvedImageDigest(Aws::String&& value) { SetResolvedImageDigest(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& WithResolvedImageDigest(const char* value) { SetResolvedImageDigest(value); return *this;}
+    template<typename ResolvedImageDigestT = Aws::String>
+    void SetResolvedImageDigest(ResolvedImageDigestT&& value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest = std::forward<ResolvedImageDigestT>(value); }
+    template<typename ResolvedImageDigestT = Aws::String>
+    GameServerContainerDefinition& WithResolvedImageDigest(ResolvedImageDigestT&& value) { SetResolvedImageDigest(std::forward<ResolvedImageDigestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,14 +169,12 @@ namespace Model
      * with. Only game servers using 5.2.0 or higher are compatible with container
      * fleets.</p>
      */
-    inline const Aws::String& GetServerSdkVersion() const{ return m_serverSdkVersion; }
+    inline const Aws::String& GetServerSdkVersion() const { return m_serverSdkVersion; }
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }
-    inline void SetServerSdkVersion(const Aws::String& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = value; }
-    inline void SetServerSdkVersion(Aws::String&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::move(value); }
-    inline void SetServerSdkVersion(const char* value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion.assign(value); }
-    inline GameServerContainerDefinition& WithServerSdkVersion(const Aws::String& value) { SetServerSdkVersion(value); return *this;}
-    inline GameServerContainerDefinition& WithServerSdkVersion(Aws::String&& value) { SetServerSdkVersion(std::move(value)); return *this;}
-    inline GameServerContainerDefinition& WithServerSdkVersion(const char* value) { SetServerSdkVersion(value); return *this;}
+    template<typename ServerSdkVersionT = Aws::String>
+    void SetServerSdkVersion(ServerSdkVersionT&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::forward<ServerSdkVersionT>(value); }
+    template<typename ServerSdkVersionT = Aws::String>
+    GameServerContainerDefinition& WithServerSdkVersion(ServerSdkVersionT&& value) { SetServerSdkVersion(std::forward<ServerSdkVersionT>(value)); return *this;}
     ///@}
   private:
 

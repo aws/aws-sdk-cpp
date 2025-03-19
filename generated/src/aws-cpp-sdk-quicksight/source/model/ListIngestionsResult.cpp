@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIngestionsResult::ListIngestionsResult() : 
-    m_status(0)
-{
-}
-
 ListIngestionsResult::ListIngestionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListIngestionsResult()
 {
   *this = result;
 }
@@ -38,24 +32,24 @@ ListIngestionsResult& ListIngestionsResult::operator =(const Aws::AmazonWebServi
     {
       m_ingestions.push_back(ingestionsJsonList[ingestionsIndex].AsObject());
     }
+    m_ingestionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

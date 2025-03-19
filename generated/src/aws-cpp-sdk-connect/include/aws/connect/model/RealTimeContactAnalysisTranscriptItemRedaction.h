@@ -33,7 +33,7 @@ namespace Model
   class RealTimeContactAnalysisTranscriptItemRedaction
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemRedaction();
+    AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemRedaction() = default;
     AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemRedaction(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisTranscriptItemRedaction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * contains data that can be redacted. For <code> OutputType.Redacted</code>, part
      * of the string with redaction tag.</p>
      */
-    inline const Aws::Vector<RealTimeContactAnalysisCharacterInterval>& GetCharacterOffsets() const{ return m_characterOffsets; }
+    inline const Aws::Vector<RealTimeContactAnalysisCharacterInterval>& GetCharacterOffsets() const { return m_characterOffsets; }
     inline bool CharacterOffsetsHasBeenSet() const { return m_characterOffsetsHasBeenSet; }
-    inline void SetCharacterOffsets(const Aws::Vector<RealTimeContactAnalysisCharacterInterval>& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = value; }
-    inline void SetCharacterOffsets(Aws::Vector<RealTimeContactAnalysisCharacterInterval>&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::move(value); }
-    inline RealTimeContactAnalysisTranscriptItemRedaction& WithCharacterOffsets(const Aws::Vector<RealTimeContactAnalysisCharacterInterval>& value) { SetCharacterOffsets(value); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemRedaction& WithCharacterOffsets(Aws::Vector<RealTimeContactAnalysisCharacterInterval>&& value) { SetCharacterOffsets(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisTranscriptItemRedaction& AddCharacterOffsets(const RealTimeContactAnalysisCharacterInterval& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets.push_back(value); return *this; }
-    inline RealTimeContactAnalysisTranscriptItemRedaction& AddCharacterOffsets(RealTimeContactAnalysisCharacterInterval&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets.push_back(std::move(value)); return *this; }
+    template<typename CharacterOffsetsT = Aws::Vector<RealTimeContactAnalysisCharacterInterval>>
+    void SetCharacterOffsets(CharacterOffsetsT&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::forward<CharacterOffsetsT>(value); }
+    template<typename CharacterOffsetsT = Aws::Vector<RealTimeContactAnalysisCharacterInterval>>
+    RealTimeContactAnalysisTranscriptItemRedaction& WithCharacterOffsets(CharacterOffsetsT&& value) { SetCharacterOffsets(std::forward<CharacterOffsetsT>(value)); return *this;}
+    template<typename CharacterOffsetsT = RealTimeContactAnalysisCharacterInterval>
+    RealTimeContactAnalysisTranscriptItemRedaction& AddCharacterOffsets(CharacterOffsetsT&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets.emplace_back(std::forward<CharacterOffsetsT>(value)); return *this; }
     ///@}
   private:
 

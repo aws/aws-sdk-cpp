@@ -18,26 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServiceTemplateVersion::ServiceTemplateVersion() : 
-    m_arnHasBeenSet(false),
-    m_compatibleEnvironmentTemplatesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_recommendedMinorVersionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_status(TemplateVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_supportedComponentSourcesHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 ServiceTemplateVersion::ServiceTemplateVersion(JsonView jsonValue)
-  : ServiceTemplateVersion()
 {
   *this = jsonValue;
 }
@@ -47,10 +28,8 @@ ServiceTemplateVersion& ServiceTemplateVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compatibleEnvironmentTemplates"))
   {
     Aws::Utils::Array<JsonView> compatibleEnvironmentTemplatesJsonList = jsonValue.GetArray("compatibleEnvironmentTemplates");
@@ -60,70 +39,51 @@ ServiceTemplateVersion& ServiceTemplateVersion::operator =(JsonView jsonValue)
     }
     m_compatibleEnvironmentTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("majorVersion"))
   {
     m_majorVersion = jsonValue.GetString("majorVersion");
-
     m_majorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minorVersion"))
   {
     m_minorVersion = jsonValue.GetString("minorVersion");
-
     m_minorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedMinorVersion"))
   {
     m_recommendedMinorVersion = jsonValue.GetString("recommendedMinorVersion");
-
     m_recommendedMinorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetString("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TemplateVersionStatusMapper::GetTemplateVersionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedComponentSources"))
   {
     Aws::Utils::Array<JsonView> supportedComponentSourcesJsonList = jsonValue.GetArray("supportedComponentSources");
@@ -133,14 +93,11 @@ ServiceTemplateVersion& ServiceTemplateVersion::operator =(JsonView jsonValue)
     }
     m_supportedComponentSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

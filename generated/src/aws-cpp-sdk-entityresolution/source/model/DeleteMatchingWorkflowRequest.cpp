@@ -12,11 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMatchingWorkflowRequest::DeleteMatchingWorkflowRequest() : 
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMatchingWorkflowRequest::SerializePayload() const
 {
   return {};

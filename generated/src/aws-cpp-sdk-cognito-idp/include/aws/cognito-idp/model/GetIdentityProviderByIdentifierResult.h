@@ -28,7 +28,7 @@ namespace Model
   class GetIdentityProviderByIdentifierResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult();
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * identifiers, the IdP name and type, and trust-relationship details like the
      * issuer URL.</p>
      */
-    inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
-    inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }
-    inline void SetIdentityProvider(IdentityProviderType&& value) { m_identityProvider = std::move(value); }
-    inline GetIdentityProviderByIdentifierResult& WithIdentityProvider(const IdentityProviderType& value) { SetIdentityProvider(value); return *this;}
-    inline GetIdentityProviderByIdentifierResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    inline const IdentityProviderType& GetIdentityProvider() const { return m_identityProvider; }
+    template<typename IdentityProviderT = IdentityProviderType>
+    void SetIdentityProvider(IdentityProviderT&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::forward<IdentityProviderT>(value); }
+    template<typename IdentityProviderT = IdentityProviderType>
+    GetIdentityProviderByIdentifierResult& WithIdentityProvider(IdentityProviderT&& value) { SetIdentityProvider(std::forward<IdentityProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIdentityProviderByIdentifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIdentityProviderByIdentifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIdentityProviderByIdentifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIdentityProviderByIdentifierResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IdentityProviderType m_identityProvider;
+    bool m_identityProviderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserSettingsRequest::DeleteUserSettingsRequest() : 
-    m_userSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserSettingsRequest::SerializePayload() const
 {
   return {};

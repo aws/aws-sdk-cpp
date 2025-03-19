@@ -19,7 +19,7 @@ namespace Model
   class GetRegistryPolicyRequest : public ECRRequest
   {
   public:
-    AWS_ECR_API GetRegistryPolicyRequest();
+    AWS_ECR_API GetRegistryPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

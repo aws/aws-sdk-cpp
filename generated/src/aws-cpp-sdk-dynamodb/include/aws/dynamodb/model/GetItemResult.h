@@ -36,7 +36,7 @@ namespace Model
   class GetItemResult
   {
   public:
-    AWS_DYNAMODB_API GetItemResult();
+    AWS_DYNAMODB_API GetItemResult() = default;
     AWS_DYNAMODB_API GetItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API GetItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,17 +46,15 @@ namespace Model
      * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
      * by <code>ProjectionExpression</code>.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
-    inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_item = value; }
-    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_item = std::move(value); }
-    inline GetItemResult& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
-    inline GetItemResult& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
-    inline GetItemResult& AddItem(const Aws::String& key, const AttributeValue& value) { m_item.emplace(key, value); return *this; }
-    inline GetItemResult& AddItem(Aws::String&& key, const AttributeValue& value) { m_item.emplace(std::move(key), value); return *this; }
-    inline GetItemResult& AddItem(const Aws::String& key, AttributeValue&& value) { m_item.emplace(key, std::move(value)); return *this; }
-    inline GetItemResult& AddItem(Aws::String&& key, AttributeValue&& value) { m_item.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetItemResult& AddItem(const char* key, AttributeValue&& value) { m_item.emplace(key, std::move(value)); return *this; }
-    inline GetItemResult& AddItem(const char* key, const AttributeValue& value) { m_item.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const { return m_item; }
+    template<typename ItemT = Aws::Map<Aws::String, AttributeValue>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Map<Aws::String, AttributeValue>>
+    GetItemResult& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemKeyT = Aws::String, typename ItemValueT = AttributeValue>
+    GetItemResult& AddItem(ItemKeyT&& key, ItemValueT&& value) {
+      m_itemHasBeenSet = true; m_item.emplace(std::forward<ItemKeyT>(key), std::forward<ItemValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -71,30 +69,31 @@ namespace Model
      * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
      */
-    inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
-    inline GetItemResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
-    inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+    inline const ConsumedCapacity& GetConsumedCapacity() const { return m_consumedCapacity; }
+    template<typename ConsumedCapacityT = ConsumedCapacity>
+    void SetConsumedCapacity(ConsumedCapacityT&& value) { m_consumedCapacityHasBeenSet = true; m_consumedCapacity = std::forward<ConsumedCapacityT>(value); }
+    template<typename ConsumedCapacityT = ConsumedCapacity>
+    GetItemResult& WithConsumedCapacity(ConsumedCapacityT&& value) { SetConsumedCapacity(std::forward<ConsumedCapacityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_item;
+    bool m_itemHasBeenSet = false;
 
     ConsumedCapacity m_consumedCapacity;
+    bool m_consumedCapacityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

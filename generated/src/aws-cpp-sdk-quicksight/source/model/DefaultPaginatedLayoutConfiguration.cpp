@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration() : 
-    m_sectionBasedHasBeenSet(false)
-{
-}
-
 DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration(JsonView jsonValue)
-  : DefaultPaginatedLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DefaultPaginatedLayoutConfiguration& DefaultPaginatedLayoutConfiguration::operat
   if(jsonValue.ValueExists("SectionBased"))
   {
     m_sectionBased = jsonValue.GetObject("SectionBased");
-
     m_sectionBasedHasBeenSet = true;
   }
-
   return *this;
 }
 

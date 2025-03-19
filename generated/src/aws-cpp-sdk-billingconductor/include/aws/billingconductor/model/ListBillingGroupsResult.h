@@ -29,7 +29,7 @@ namespace Model
   class ListBillingGroupsResult
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult();
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult() = default;
     AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
      */
-    inline const Aws::Vector<BillingGroupListElement>& GetBillingGroups() const{ return m_billingGroups; }
-    inline void SetBillingGroups(const Aws::Vector<BillingGroupListElement>& value) { m_billingGroups = value; }
-    inline void SetBillingGroups(Aws::Vector<BillingGroupListElement>&& value) { m_billingGroups = std::move(value); }
-    inline ListBillingGroupsResult& WithBillingGroups(const Aws::Vector<BillingGroupListElement>& value) { SetBillingGroups(value); return *this;}
-    inline ListBillingGroupsResult& WithBillingGroups(Aws::Vector<BillingGroupListElement>&& value) { SetBillingGroups(std::move(value)); return *this;}
-    inline ListBillingGroupsResult& AddBillingGroups(const BillingGroupListElement& value) { m_billingGroups.push_back(value); return *this; }
-    inline ListBillingGroupsResult& AddBillingGroups(BillingGroupListElement&& value) { m_billingGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BillingGroupListElement>& GetBillingGroups() const { return m_billingGroups; }
+    template<typename BillingGroupsT = Aws::Vector<BillingGroupListElement>>
+    void SetBillingGroups(BillingGroupsT&& value) { m_billingGroupsHasBeenSet = true; m_billingGroups = std::forward<BillingGroupsT>(value); }
+    template<typename BillingGroupsT = Aws::Vector<BillingGroupListElement>>
+    ListBillingGroupsResult& WithBillingGroups(BillingGroupsT&& value) { SetBillingGroups(std::forward<BillingGroupsT>(value)); return *this;}
+    template<typename BillingGroupsT = BillingGroupListElement>
+    ListBillingGroupsResult& AddBillingGroups(BillingGroupsT&& value) { m_billingGroupsHasBeenSet = true; m_billingGroups.emplace_back(std::forward<BillingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token that's used on subsequent calls to get billing groups.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBillingGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBillingGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBillingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBillingGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBillingGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBillingGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBillingGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBillingGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BillingGroupListElement> m_billingGroups;
+    bool m_billingGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

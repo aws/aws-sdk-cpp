@@ -35,7 +35,7 @@ namespace Model
   class InstanceMetadataOptions
   {
   public:
-    AWS_AUTOSCALING_API InstanceMetadataOptions();
+    AWS_AUTOSCALING_API InstanceMetadataOptions() = default;
     AWS_AUTOSCALING_API InstanceMetadataOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API InstanceMetadataOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,12 +57,10 @@ namespace Model
      * retrieving the IAM role credentials always returns the version 2.0 credentials;
      * the version 1.0 credentials are not available.</p>
      */
-    inline const InstanceMetadataHttpTokensState& GetHttpTokens() const{ return m_httpTokens; }
+    inline InstanceMetadataHttpTokensState GetHttpTokens() const { return m_httpTokens; }
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
-    inline void SetHttpTokens(const InstanceMetadataHttpTokensState& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
-    inline void SetHttpTokens(InstanceMetadataHttpTokensState&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
-    inline InstanceMetadataOptions& WithHttpTokens(const InstanceMetadataHttpTokensState& value) { SetHttpTokens(value); return *this;}
-    inline InstanceMetadataOptions& WithHttpTokens(InstanceMetadataHttpTokensState&& value) { SetHttpTokens(std::move(value)); return *this;}
+    inline void SetHttpTokens(InstanceMetadataHttpTokensState value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
+    inline InstanceMetadataOptions& WithHttpTokens(InstanceMetadataHttpTokensState value) { SetHttpTokens(value); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +69,7 @@ namespace Model
      * larger the number, the further instance metadata requests can travel.</p>
      * <p>Default: 1</p>
      */
-    inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
+    inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
     inline InstanceMetadataOptions& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
@@ -85,22 +83,20 @@ namespace Model
      * <code>disabled</code>, you will not be able to access your instance metadata.
      * </p> 
      */
-    inline const InstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
+    inline InstanceMetadataEndpointState GetHttpEndpoint() const { return m_httpEndpoint; }
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
-    inline void SetHttpEndpoint(const InstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
-    inline void SetHttpEndpoint(InstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
-    inline InstanceMetadataOptions& WithHttpEndpoint(const InstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
-    inline InstanceMetadataOptions& WithHttpEndpoint(InstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
+    inline void SetHttpEndpoint(InstanceMetadataEndpointState value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
+    inline InstanceMetadataOptions& WithHttpEndpoint(InstanceMetadataEndpointState value) { SetHttpEndpoint(value); return *this;}
     ///@}
   private:
 
-    InstanceMetadataHttpTokensState m_httpTokens;
+    InstanceMetadataHttpTokensState m_httpTokens{InstanceMetadataHttpTokensState::NOT_SET};
     bool m_httpTokensHasBeenSet = false;
 
-    int m_httpPutResponseHopLimit;
+    int m_httpPutResponseHopLimit{0};
     bool m_httpPutResponseHopLimitHasBeenSet = false;
 
-    InstanceMetadataEndpointState m_httpEndpoint;
+    InstanceMetadataEndpointState m_httpEndpoint{InstanceMetadataEndpointState::NOT_SET};
     bool m_httpEndpointHasBeenSet = false;
   };
 

@@ -23,7 +23,7 @@ namespace Model
   class PutInsightSelectorsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API PutInsightSelectorsRequest();
+    AWS_CLOUDTRAIL_API PutInsightSelectorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * selectors.</p> <p>You cannot use this parameter with the
      * <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
      */
-    inline const Aws::String& GetTrailName() const{ return m_trailName; }
+    inline const Aws::String& GetTrailName() const { return m_trailName; }
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
-    inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
-    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
-    inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
-    inline PutInsightSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
-    inline PutInsightSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
-    inline PutInsightSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
+    template<typename TrailNameT = Aws::String>
+    void SetTrailName(TrailNameT&& value) { m_trailNameHasBeenSet = true; m_trailName = std::forward<TrailNameT>(value); }
+    template<typename TrailNameT = Aws::String>
+    PutInsightSelectorsRequest& WithTrailName(TrailNameT&& value) { SetTrailName(std::forward<TrailNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ namespace Model
      * calls that result in error codes. The error is shown if the API call is
      * unsuccessful.</p>
      */
-    inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const{ return m_insightSelectors; }
+    inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const { return m_insightSelectors; }
     inline bool InsightSelectorsHasBeenSet() const { return m_insightSelectorsHasBeenSet; }
-    inline void SetInsightSelectors(const Aws::Vector<InsightSelector>& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = value; }
-    inline void SetInsightSelectors(Aws::Vector<InsightSelector>&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = std::move(value); }
-    inline PutInsightSelectorsRequest& WithInsightSelectors(const Aws::Vector<InsightSelector>& value) { SetInsightSelectors(value); return *this;}
-    inline PutInsightSelectorsRequest& WithInsightSelectors(Aws::Vector<InsightSelector>&& value) { SetInsightSelectors(std::move(value)); return *this;}
-    inline PutInsightSelectorsRequest& AddInsightSelectors(const InsightSelector& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.push_back(value); return *this; }
-    inline PutInsightSelectorsRequest& AddInsightSelectors(InsightSelector&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.push_back(std::move(value)); return *this; }
+    template<typename InsightSelectorsT = Aws::Vector<InsightSelector>>
+    void SetInsightSelectors(InsightSelectorsT&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = std::forward<InsightSelectorsT>(value); }
+    template<typename InsightSelectorsT = Aws::Vector<InsightSelector>>
+    PutInsightSelectorsRequest& WithInsightSelectors(InsightSelectorsT&& value) { SetInsightSelectors(std::forward<InsightSelectorsT>(value)); return *this;}
+    template<typename InsightSelectorsT = InsightSelector>
+    PutInsightSelectorsRequest& AddInsightSelectors(InsightSelectorsT&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.emplace_back(std::forward<InsightSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * <code>InsightsDestination</code> parameters.</p> <p>You cannot use this
      * parameter with the <code>TrailName</code> parameter.</p>
      */
-    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
+    inline const Aws::String& GetEventDataStore() const { return m_eventDataStore; }
     inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-    inline PutInsightSelectorsRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-    inline PutInsightSelectorsRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-    inline PutInsightSelectorsRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
+    template<typename EventDataStoreT = Aws::String>
+    void SetEventDataStore(EventDataStoreT&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::forward<EventDataStoreT>(value); }
+    template<typename EventDataStoreT = Aws::String>
+    PutInsightSelectorsRequest& WithEventDataStore(EventDataStoreT&& value) { SetEventDataStore(std::forward<EventDataStoreT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * <code>InsightsDestination</code> parameters. </p> <p>You cannot use this
      * parameter with the <code>TrailName</code> parameter.</p>
      */
-    inline const Aws::String& GetInsightsDestination() const{ return m_insightsDestination; }
+    inline const Aws::String& GetInsightsDestination() const { return m_insightsDestination; }
     inline bool InsightsDestinationHasBeenSet() const { return m_insightsDestinationHasBeenSet; }
-    inline void SetInsightsDestination(const Aws::String& value) { m_insightsDestinationHasBeenSet = true; m_insightsDestination = value; }
-    inline void SetInsightsDestination(Aws::String&& value) { m_insightsDestinationHasBeenSet = true; m_insightsDestination = std::move(value); }
-    inline void SetInsightsDestination(const char* value) { m_insightsDestinationHasBeenSet = true; m_insightsDestination.assign(value); }
-    inline PutInsightSelectorsRequest& WithInsightsDestination(const Aws::String& value) { SetInsightsDestination(value); return *this;}
-    inline PutInsightSelectorsRequest& WithInsightsDestination(Aws::String&& value) { SetInsightsDestination(std::move(value)); return *this;}
-    inline PutInsightSelectorsRequest& WithInsightsDestination(const char* value) { SetInsightsDestination(value); return *this;}
+    template<typename InsightsDestinationT = Aws::String>
+    void SetInsightsDestination(InsightsDestinationT&& value) { m_insightsDestinationHasBeenSet = true; m_insightsDestination = std::forward<InsightsDestinationT>(value); }
+    template<typename InsightsDestinationT = Aws::String>
+    PutInsightSelectorsRequest& WithInsightsDestination(InsightsDestinationT&& value) { SetInsightsDestination(std::forward<InsightsDestinationT>(value)); return *this;}
     ///@}
   private:
 

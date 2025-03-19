@@ -28,7 +28,7 @@ namespace Model
   class CreateVoiceConnectorResult
   {
   public:
-    AWS_CHIMESDKVOICE_API CreateVoiceConnectorResult();
+    AWS_CHIMESDKVOICE_API CreateVoiceConnectorResult() = default;
     AWS_CHIMESDKVOICE_API CreateVoiceConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API CreateVoiceConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the Voice Connector.</p>
      */
-    inline const VoiceConnector& GetVoiceConnector() const{ return m_voiceConnector; }
-    inline void SetVoiceConnector(const VoiceConnector& value) { m_voiceConnector = value; }
-    inline void SetVoiceConnector(VoiceConnector&& value) { m_voiceConnector = std::move(value); }
-    inline CreateVoiceConnectorResult& WithVoiceConnector(const VoiceConnector& value) { SetVoiceConnector(value); return *this;}
-    inline CreateVoiceConnectorResult& WithVoiceConnector(VoiceConnector&& value) { SetVoiceConnector(std::move(value)); return *this;}
+    inline const VoiceConnector& GetVoiceConnector() const { return m_voiceConnector; }
+    template<typename VoiceConnectorT = VoiceConnector>
+    void SetVoiceConnector(VoiceConnectorT&& value) { m_voiceConnectorHasBeenSet = true; m_voiceConnector = std::forward<VoiceConnectorT>(value); }
+    template<typename VoiceConnectorT = VoiceConnector>
+    CreateVoiceConnectorResult& WithVoiceConnector(VoiceConnectorT&& value) { SetVoiceConnector(std::forward<VoiceConnectorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVoiceConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVoiceConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVoiceConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVoiceConnectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VoiceConnector m_voiceConnector;
+    bool m_voiceConnectorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

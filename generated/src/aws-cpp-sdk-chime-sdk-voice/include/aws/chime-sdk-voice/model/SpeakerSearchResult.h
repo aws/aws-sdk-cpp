@@ -31,7 +31,7 @@ namespace Model
   class SpeakerSearchResult
   {
   public:
-    AWS_CHIMESDKVOICE_API SpeakerSearchResult();
+    AWS_CHIMESDKVOICE_API SpeakerSearchResult() = default;
     AWS_CHIMESDKVOICE_API SpeakerSearchResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API SpeakerSearchResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The confidence score in the speaker search analysis.</p>
      */
-    inline double GetConfidenceScore() const{ return m_confidenceScore; }
+    inline double GetConfidenceScore() const { return m_confidenceScore; }
     inline bool ConfidenceScoreHasBeenSet() const { return m_confidenceScoreHasBeenSet; }
     inline void SetConfidenceScore(double value) { m_confidenceScoreHasBeenSet = true; m_confidenceScore = value; }
     inline SpeakerSearchResult& WithConfidenceScore(double value) { SetConfidenceScore(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
     /**
      * <p>The voice profile ID.</p>
      */
-    inline const Aws::String& GetVoiceProfileId() const{ return m_voiceProfileId; }
+    inline const Aws::String& GetVoiceProfileId() const { return m_voiceProfileId; }
     inline bool VoiceProfileIdHasBeenSet() const { return m_voiceProfileIdHasBeenSet; }
-    inline void SetVoiceProfileId(const Aws::String& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = value; }
-    inline void SetVoiceProfileId(Aws::String&& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = std::move(value); }
-    inline void SetVoiceProfileId(const char* value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId.assign(value); }
-    inline SpeakerSearchResult& WithVoiceProfileId(const Aws::String& value) { SetVoiceProfileId(value); return *this;}
-    inline SpeakerSearchResult& WithVoiceProfileId(Aws::String&& value) { SetVoiceProfileId(std::move(value)); return *this;}
-    inline SpeakerSearchResult& WithVoiceProfileId(const char* value) { SetVoiceProfileId(value); return *this;}
+    template<typename VoiceProfileIdT = Aws::String>
+    void SetVoiceProfileId(VoiceProfileIdT&& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = std::forward<VoiceProfileIdT>(value); }
+    template<typename VoiceProfileIdT = Aws::String>
+    SpeakerSearchResult& WithVoiceProfileId(VoiceProfileIdT&& value) { SetVoiceProfileId(std::forward<VoiceProfileIdT>(value)); return *this;}
     ///@}
   private:
 
-    double m_confidenceScore;
+    double m_confidenceScore{0.0};
     bool m_confidenceScoreHasBeenSet = false;
 
     Aws::String m_voiceProfileId;

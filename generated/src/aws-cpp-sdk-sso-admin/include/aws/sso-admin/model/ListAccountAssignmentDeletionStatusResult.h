@@ -29,7 +29,7 @@ namespace Model
   class ListAccountAssignmentDeletionStatusResult
   {
   public:
-    AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult();
+    AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult() = default;
     AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API ListAccountAssignmentDeletionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The status object for the account assignment deletion operation.</p>
      */
-    inline const Aws::Vector<AccountAssignmentOperationStatusMetadata>& GetAccountAssignmentsDeletionStatus() const{ return m_accountAssignmentsDeletionStatus; }
-    inline void SetAccountAssignmentsDeletionStatus(const Aws::Vector<AccountAssignmentOperationStatusMetadata>& value) { m_accountAssignmentsDeletionStatus = value; }
-    inline void SetAccountAssignmentsDeletionStatus(Aws::Vector<AccountAssignmentOperationStatusMetadata>&& value) { m_accountAssignmentsDeletionStatus = std::move(value); }
-    inline ListAccountAssignmentDeletionStatusResult& WithAccountAssignmentsDeletionStatus(const Aws::Vector<AccountAssignmentOperationStatusMetadata>& value) { SetAccountAssignmentsDeletionStatus(value); return *this;}
-    inline ListAccountAssignmentDeletionStatusResult& WithAccountAssignmentsDeletionStatus(Aws::Vector<AccountAssignmentOperationStatusMetadata>&& value) { SetAccountAssignmentsDeletionStatus(std::move(value)); return *this;}
-    inline ListAccountAssignmentDeletionStatusResult& AddAccountAssignmentsDeletionStatus(const AccountAssignmentOperationStatusMetadata& value) { m_accountAssignmentsDeletionStatus.push_back(value); return *this; }
-    inline ListAccountAssignmentDeletionStatusResult& AddAccountAssignmentsDeletionStatus(AccountAssignmentOperationStatusMetadata&& value) { m_accountAssignmentsDeletionStatus.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountAssignmentOperationStatusMetadata>& GetAccountAssignmentsDeletionStatus() const { return m_accountAssignmentsDeletionStatus; }
+    template<typename AccountAssignmentsDeletionStatusT = Aws::Vector<AccountAssignmentOperationStatusMetadata>>
+    void SetAccountAssignmentsDeletionStatus(AccountAssignmentsDeletionStatusT&& value) { m_accountAssignmentsDeletionStatusHasBeenSet = true; m_accountAssignmentsDeletionStatus = std::forward<AccountAssignmentsDeletionStatusT>(value); }
+    template<typename AccountAssignmentsDeletionStatusT = Aws::Vector<AccountAssignmentOperationStatusMetadata>>
+    ListAccountAssignmentDeletionStatusResult& WithAccountAssignmentsDeletionStatus(AccountAssignmentsDeletionStatusT&& value) { SetAccountAssignmentsDeletionStatus(std::forward<AccountAssignmentsDeletionStatusT>(value)); return *this;}
+    template<typename AccountAssignmentsDeletionStatusT = AccountAssignmentOperationStatusMetadata>
+    ListAccountAssignmentDeletionStatusResult& AddAccountAssignmentsDeletionStatus(AccountAssignmentsDeletionStatusT&& value) { m_accountAssignmentsDeletionStatusHasBeenSet = true; m_accountAssignmentsDeletionStatus.emplace_back(std::forward<AccountAssignmentsDeletionStatusT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token for the list API. Initially the value is null. Use the
      * output of previous API calls to make subsequent calls.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAccountAssignmentDeletionStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountAssignmentDeletionStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountAssignmentDeletionStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountAssignmentDeletionStatusResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccountAssignmentDeletionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccountAssignmentDeletionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccountAssignmentDeletionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccountAssignmentDeletionStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountAssignmentOperationStatusMetadata> m_accountAssignmentsDeletionStatus;
+    bool m_accountAssignmentsDeletionStatusHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

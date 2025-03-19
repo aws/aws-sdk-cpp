@@ -18,19 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ThreatDetectedByName::ThreatDetectedByName() : 
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_uniqueThreatNameCount(0),
-    m_uniqueThreatNameCountHasBeenSet(false),
-    m_shortened(false),
-    m_shortenedHasBeenSet(false),
-    m_threatNamesHasBeenSet(false)
-{
-}
-
 ThreatDetectedByName::ThreatDetectedByName(JsonView jsonValue)
-  : ThreatDetectedByName()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ ThreatDetectedByName& ThreatDetectedByName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("itemCount"))
   {
     m_itemCount = jsonValue.GetInteger("itemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uniqueThreatNameCount"))
   {
     m_uniqueThreatNameCount = jsonValue.GetInteger("uniqueThreatNameCount");
-
     m_uniqueThreatNameCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shortened"))
   {
     m_shortened = jsonValue.GetBool("shortened");
-
     m_shortenedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threatNames"))
   {
     Aws::Utils::Array<JsonView> threatNamesJsonList = jsonValue.GetArray("threatNames");
@@ -67,7 +49,6 @@ ThreatDetectedByName& ThreatDetectedByName::operator =(JsonView jsonValue)
     }
     m_threatNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

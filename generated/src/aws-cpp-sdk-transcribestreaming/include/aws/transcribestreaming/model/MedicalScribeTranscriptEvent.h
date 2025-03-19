@@ -33,7 +33,7 @@ namespace Model
   class MedicalScribeTranscriptEvent
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalScribeTranscriptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The <code>TranscriptSegment</code> associated with a
      * <code>MedicalScribeTranscriptEvent</code>. </p>
      */
-    inline const MedicalScribeTranscriptSegment& GetTranscriptSegment() const{ return m_transcriptSegment; }
+    inline const MedicalScribeTranscriptSegment& GetTranscriptSegment() const { return m_transcriptSegment; }
     inline bool TranscriptSegmentHasBeenSet() const { return m_transcriptSegmentHasBeenSet; }
-    inline void SetTranscriptSegment(const MedicalScribeTranscriptSegment& value) { m_transcriptSegmentHasBeenSet = true; m_transcriptSegment = value; }
-    inline void SetTranscriptSegment(MedicalScribeTranscriptSegment&& value) { m_transcriptSegmentHasBeenSet = true; m_transcriptSegment = std::move(value); }
-    inline MedicalScribeTranscriptEvent& WithTranscriptSegment(const MedicalScribeTranscriptSegment& value) { SetTranscriptSegment(value); return *this;}
-    inline MedicalScribeTranscriptEvent& WithTranscriptSegment(MedicalScribeTranscriptSegment&& value) { SetTranscriptSegment(std::move(value)); return *this;}
+    template<typename TranscriptSegmentT = MedicalScribeTranscriptSegment>
+    void SetTranscriptSegment(TranscriptSegmentT&& value) { m_transcriptSegmentHasBeenSet = true; m_transcriptSegment = std::forward<TranscriptSegmentT>(value); }
+    template<typename TranscriptSegmentT = MedicalScribeTranscriptSegment>
+    MedicalScribeTranscriptEvent& WithTranscriptSegment(TranscriptSegmentT&& value) { SetTranscriptSegment(std::forward<TranscriptSegmentT>(value)); return *this;}
     ///@}
   private:
 

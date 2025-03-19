@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FollowModeScheduleActionStartSettings::FollowModeScheduleActionStartSettings() : 
-    m_followPoint(FollowPoint::NOT_SET),
-    m_followPointHasBeenSet(false),
-    m_referenceActionNameHasBeenSet(false)
-{
-}
-
 FollowModeScheduleActionStartSettings::FollowModeScheduleActionStartSettings(JsonView jsonValue)
-  : FollowModeScheduleActionStartSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FollowModeScheduleActionStartSettings& FollowModeScheduleActionStartSettings::op
   if(jsonValue.ValueExists("followPoint"))
   {
     m_followPoint = FollowPointMapper::GetFollowPointForName(jsonValue.GetString("followPoint"));
-
     m_followPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceActionName"))
   {
     m_referenceActionName = jsonValue.GetString("referenceActionName");
-
     m_referenceActionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class SlotValueOverride
   {
   public:
-    AWS_LEXMODELSV2_API SlotValueOverride();
+    AWS_LEXMODELSV2_API SlotValueOverride() = default;
     AWS_LEXMODELSV2_API SlotValueOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotValueOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,22 @@ namespace Model
      * <code>Scalar</code>, it indicates that the <code>value</code> field contains a
      * single value.</p>
      */
-    inline const SlotShape& GetShape() const{ return m_shape; }
+    inline SlotShape GetShape() const { return m_shape; }
     inline bool ShapeHasBeenSet() const { return m_shapeHasBeenSet; }
-    inline void SetShape(const SlotShape& value) { m_shapeHasBeenSet = true; m_shape = value; }
-    inline void SetShape(SlotShape&& value) { m_shapeHasBeenSet = true; m_shape = std::move(value); }
-    inline SlotValueOverride& WithShape(const SlotShape& value) { SetShape(value); return *this;}
-    inline SlotValueOverride& WithShape(SlotShape&& value) { SetShape(std::move(value)); return *this;}
+    inline void SetShape(SlotShape value) { m_shapeHasBeenSet = true; m_shape = value; }
+    inline SlotValueOverride& WithShape(SlotShape value) { SetShape(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current value of the slot.</p>
      */
-    inline const SlotValue& GetValue() const{ return m_value; }
+    inline const SlotValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const SlotValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(SlotValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline SlotValueOverride& WithValue(const SlotValue& value) { SetValue(value); return *this;}
-    inline SlotValueOverride& WithValue(SlotValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = SlotValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = SlotValue>
+    SlotValueOverride& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,18 @@ namespace Model
      * example, for a slot that elicits pizza toppings, the values might be "pepperoni"
      * and "pineapple."</p>
      */
-    inline const Aws::Vector<SlotValueOverride>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<SlotValueOverride>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<SlotValueOverride>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<SlotValueOverride>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SlotValueOverride& WithValues(const Aws::Vector<SlotValueOverride>& value) { SetValues(value); return *this;}
-    inline SlotValueOverride& WithValues(Aws::Vector<SlotValueOverride>&& value) { SetValues(std::move(value)); return *this;}
-    inline SlotValueOverride& AddValues(const SlotValueOverride& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SlotValueOverride& AddValues(SlotValueOverride&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<SlotValueOverride>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<SlotValueOverride>>
+    SlotValueOverride& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = SlotValueOverride>
+    SlotValueOverride& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    SlotShape m_shape;
+    SlotShape m_shape{SlotShape::NOT_SET};
     bool m_shapeHasBeenSet = false;
 
     SlotValue m_value;

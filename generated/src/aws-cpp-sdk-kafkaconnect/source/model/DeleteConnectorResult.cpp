@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteConnectorResult::DeleteConnectorResult() : 
-    m_connectorState(ConnectorState::NOT_SET)
-{
-}
-
 DeleteConnectorResult::DeleteConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteConnectorResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteConnectorResult& DeleteConnectorResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("connectorArn"))
   {
     m_connectorArn = jsonValue.GetString("connectorArn");
-
+    m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorState"))
   {
     m_connectorState = ConnectorStateMapper::GetConnectorStateForName(jsonValue.GetString("connectorState"));
-
+    m_connectorStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

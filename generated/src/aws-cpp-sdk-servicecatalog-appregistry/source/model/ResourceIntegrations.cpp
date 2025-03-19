@@ -18,13 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-ResourceIntegrations::ResourceIntegrations() : 
-    m_resourceGroupHasBeenSet(false)
-{
-}
-
 ResourceIntegrations::ResourceIntegrations(JsonView jsonValue)
-  : ResourceIntegrations()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceIntegrations& ResourceIntegrations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceGroup"))
   {
     m_resourceGroup = jsonValue.GetObject("resourceGroup");
-
     m_resourceGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

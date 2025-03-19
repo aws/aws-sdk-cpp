@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ManagedExecution::ManagedExecution() : 
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 ManagedExecution::ManagedExecution(const XmlNode& xmlNode)
-  : ManagedExecution()
 {
   *this = xmlNode;
 }

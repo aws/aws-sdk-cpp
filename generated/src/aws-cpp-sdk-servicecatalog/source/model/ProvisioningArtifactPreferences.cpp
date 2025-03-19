@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifactPreferences::ProvisioningArtifactPreferences() : 
-    m_stackSetAccountsHasBeenSet(false),
-    m_stackSetRegionsHasBeenSet(false)
-{
-}
-
 ProvisioningArtifactPreferences::ProvisioningArtifactPreferences(JsonView jsonValue)
-  : ProvisioningArtifactPreferences()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ProvisioningArtifactPreferences& ProvisioningArtifactPreferences::operator =(Jso
     }
     m_stackSetAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetRegions"))
   {
     Aws::Utils::Array<JsonView> stackSetRegionsJsonList = jsonValue.GetArray("StackSetRegions");
@@ -51,7 +43,6 @@ ProvisioningArtifactPreferences& ProvisioningArtifactPreferences::operator =(Jso
     }
     m_stackSetRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DropFields::DropFields() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_pathsHasBeenSet(false)
-{
-}
-
 DropFields::DropFields(JsonView jsonValue)
-  : DropFields()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DropFields& DropFields::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -49,7 +39,6 @@ DropFields& DropFields::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Paths"))
   {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
@@ -66,7 +55,6 @@ DropFields& DropFields::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   return *this;
 }
 

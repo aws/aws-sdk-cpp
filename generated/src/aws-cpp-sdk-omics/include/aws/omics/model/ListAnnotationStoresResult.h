@@ -29,7 +29,7 @@ namespace Model
   class ListAnnotationStoresResult
   {
   public:
-    AWS_OMICS_API ListAnnotationStoresResult();
+    AWS_OMICS_API ListAnnotationStoresResult() = default;
     AWS_OMICS_API ListAnnotationStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListAnnotationStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of stores.</p>
      */
-    inline const Aws::Vector<AnnotationStoreItem>& GetAnnotationStores() const{ return m_annotationStores; }
-    inline void SetAnnotationStores(const Aws::Vector<AnnotationStoreItem>& value) { m_annotationStores = value; }
-    inline void SetAnnotationStores(Aws::Vector<AnnotationStoreItem>&& value) { m_annotationStores = std::move(value); }
-    inline ListAnnotationStoresResult& WithAnnotationStores(const Aws::Vector<AnnotationStoreItem>& value) { SetAnnotationStores(value); return *this;}
-    inline ListAnnotationStoresResult& WithAnnotationStores(Aws::Vector<AnnotationStoreItem>&& value) { SetAnnotationStores(std::move(value)); return *this;}
-    inline ListAnnotationStoresResult& AddAnnotationStores(const AnnotationStoreItem& value) { m_annotationStores.push_back(value); return *this; }
-    inline ListAnnotationStoresResult& AddAnnotationStores(AnnotationStoreItem&& value) { m_annotationStores.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnnotationStoreItem>& GetAnnotationStores() const { return m_annotationStores; }
+    template<typename AnnotationStoresT = Aws::Vector<AnnotationStoreItem>>
+    void SetAnnotationStores(AnnotationStoresT&& value) { m_annotationStoresHasBeenSet = true; m_annotationStores = std::forward<AnnotationStoresT>(value); }
+    template<typename AnnotationStoresT = Aws::Vector<AnnotationStoreItem>>
+    ListAnnotationStoresResult& WithAnnotationStores(AnnotationStoresT&& value) { SetAnnotationStores(std::forward<AnnotationStoresT>(value)); return *this;}
+    template<typename AnnotationStoresT = AnnotationStoreItem>
+    ListAnnotationStoresResult& AddAnnotationStores(AnnotationStoresT&& value) { m_annotationStoresHasBeenSet = true; m_annotationStores.emplace_back(std::forward<AnnotationStoresT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAnnotationStoresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnnotationStoresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnnotationStoresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnnotationStoresResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAnnotationStoresResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAnnotationStoresResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAnnotationStoresResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAnnotationStoresResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnnotationStoreItem> m_annotationStores;
+    bool m_annotationStoresHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

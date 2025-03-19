@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetVoiceToneAnalysisTaskRequest::GetVoiceToneAnalysisTaskRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_voiceToneAnalysisTaskIdHasBeenSet(false),
-    m_isCaller(false),
-    m_isCallerHasBeenSet(false)
-{
-}
-
 Aws::String GetVoiceToneAnalysisTaskRequest::SerializePayload() const
 {
   return {};

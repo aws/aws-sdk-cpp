@@ -18,21 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-OrganizationStatistics::OrganizationStatistics() : 
-    m_totalAccountsCount(0),
-    m_totalAccountsCountHasBeenSet(false),
-    m_memberAccountsCount(0),
-    m_memberAccountsCountHasBeenSet(false),
-    m_activeAccountsCount(0),
-    m_activeAccountsCountHasBeenSet(false),
-    m_enabledAccountsCount(0),
-    m_enabledAccountsCountHasBeenSet(false),
-    m_countByFeatureHasBeenSet(false)
-{
-}
-
 OrganizationStatistics::OrganizationStatistics(JsonView jsonValue)
-  : OrganizationStatistics()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ OrganizationStatistics& OrganizationStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalAccountsCount"))
   {
     m_totalAccountsCount = jsonValue.GetInteger("totalAccountsCount");
-
     m_totalAccountsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberAccountsCount"))
   {
     m_memberAccountsCount = jsonValue.GetInteger("memberAccountsCount");
-
     m_memberAccountsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeAccountsCount"))
   {
     m_activeAccountsCount = jsonValue.GetInteger("activeAccountsCount");
-
     m_activeAccountsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabledAccountsCount"))
   {
     m_enabledAccountsCount = jsonValue.GetInteger("enabledAccountsCount");
-
     m_enabledAccountsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("countByFeature"))
   {
     Aws::Utils::Array<JsonView> countByFeatureJsonList = jsonValue.GetArray("countByFeature");
@@ -76,7 +54,6 @@ OrganizationStatistics& OrganizationStatistics::operator =(JsonView jsonValue)
     }
     m_countByFeatureHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class InputStartingPositionConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API InputStartingPositionConfiguration();
+    AWS_KINESISANALYTICSV2_API InputStartingPositionConfiguration() = default;
     AWS_KINESISANALYTICSV2_API InputStartingPositionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API InputStartingPositionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application
      * last stopped reading.</p> </li> </ul>
      */
-    inline const InputStartingPosition& GetInputStartingPosition() const{ return m_inputStartingPosition; }
+    inline InputStartingPosition GetInputStartingPosition() const { return m_inputStartingPosition; }
     inline bool InputStartingPositionHasBeenSet() const { return m_inputStartingPositionHasBeenSet; }
-    inline void SetInputStartingPosition(const InputStartingPosition& value) { m_inputStartingPositionHasBeenSet = true; m_inputStartingPosition = value; }
-    inline void SetInputStartingPosition(InputStartingPosition&& value) { m_inputStartingPositionHasBeenSet = true; m_inputStartingPosition = std::move(value); }
-    inline InputStartingPositionConfiguration& WithInputStartingPosition(const InputStartingPosition& value) { SetInputStartingPosition(value); return *this;}
-    inline InputStartingPositionConfiguration& WithInputStartingPosition(InputStartingPosition&& value) { SetInputStartingPosition(std::move(value)); return *this;}
+    inline void SetInputStartingPosition(InputStartingPosition value) { m_inputStartingPositionHasBeenSet = true; m_inputStartingPosition = value; }
+    inline InputStartingPositionConfiguration& WithInputStartingPosition(InputStartingPosition value) { SetInputStartingPosition(value); return *this;}
     ///@}
   private:
 
-    InputStartingPosition m_inputStartingPosition;
+    InputStartingPosition m_inputStartingPosition{InputStartingPosition::NOT_SET};
     bool m_inputStartingPositionHasBeenSet = false;
   };
 

@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ExportTask::ExportTask() : 
-    m_descriptionHasBeenSet(false),
-    m_exportTaskIdHasBeenSet(false),
-    m_exportToS3TaskHasBeenSet(false),
-    m_instanceExportDetailsHasBeenSet(false),
-    m_state(ExportTaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ExportTask::ExportTask(const XmlNode& xmlNode)
-  : ExportTask()
 {
   *this = xmlNode;
 }
@@ -71,7 +58,7 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ExportTaskStateMapper::GetExportTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ExportTaskStateMapper::GetExportTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
@@ -84,6 +71,7 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

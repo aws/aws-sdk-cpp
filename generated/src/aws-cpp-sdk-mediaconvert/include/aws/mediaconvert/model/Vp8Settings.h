@@ -35,7 +35,7 @@ namespace Model
   class Vp8Settings
   {
   public:
-    AWS_MEDIACONVERT_API Vp8Settings();
+    AWS_MEDIACONVERT_API Vp8Settings() = default;
     AWS_MEDIACONVERT_API Vp8Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Vp8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * Target bitrate in bits/second. For example, enter five megabits per second as
      * 5000000.
      */
-    inline int GetBitrate() const{ return m_bitrate; }
+    inline int GetBitrate() const { return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
     inline Vp8Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
@@ -61,12 +61,10 @@ namespace Model
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction.
      */
-    inline const Vp8FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline Vp8FramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const Vp8FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(Vp8FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline Vp8Settings& WithFramerateControl(const Vp8FramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline Vp8Settings& WithFramerateControl(Vp8FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(Vp8FramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline Vp8Settings& WithFramerateControl(Vp8FramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const Vp8FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline Vp8FramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const Vp8FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(Vp8FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline Vp8Settings& WithFramerateConversionAlgorithm(const Vp8FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline Vp8Settings& WithFramerateConversionAlgorithm(Vp8FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(Vp8FramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline Vp8Settings& WithFramerateConversionAlgorithm(Vp8FramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +101,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline Vp8Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -120,7 +116,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline Vp8Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -130,7 +126,7 @@ namespace Model
     /**
      * GOP Length (keyframe interval) in frames. Must be greater than zero.
      */
-    inline double GetGopSize() const{ return m_gopSize; }
+    inline double GetGopSize() const { return m_gopSize; }
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
     inline Vp8Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
@@ -141,7 +137,7 @@ namespace Model
      * Optional. Size of buffer (HRD buffer model) in bits. For example, enter five
      * megabits as 5000000.
      */
-    inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
+    inline int GetHrdBufferSize() const { return m_hrdBufferSize; }
     inline bool HrdBufferSizeHasBeenSet() const { return m_hrdBufferSizeHasBeenSet; }
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
     inline Vp8Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
@@ -154,7 +150,7 @@ namespace Model
      * second as 5000000. The default behavior uses twice the target bitrate as the
      * maximum bitrate.
      */
-    inline int GetMaxBitrate() const{ return m_maxBitrate; }
+    inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
     inline Vp8Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
@@ -168,12 +164,10 @@ namespace Model
      * value other than Follow source. When you choose SPECIFIED for this setting, you
      * must also specify values for the parNumerator and parDenominator settings.
      */
-    inline const Vp8ParControl& GetParControl() const{ return m_parControl; }
+    inline Vp8ParControl GetParControl() const { return m_parControl; }
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
-    inline void SetParControl(const Vp8ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
-    inline void SetParControl(Vp8ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
-    inline Vp8Settings& WithParControl(const Vp8ParControl& value) { SetParControl(value); return *this;}
-    inline Vp8Settings& WithParControl(Vp8ParControl&& value) { SetParControl(std::move(value)); return *this;}
+    inline void SetParControl(Vp8ParControl value) { m_parControlHasBeenSet = true; m_parControl = value; }
+    inline Vp8Settings& WithParControl(Vp8ParControl value) { SetParControl(value); return *this;}
     ///@}
 
     ///@{
@@ -184,7 +178,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
-    inline int GetParDenominator() const{ return m_parDenominator; }
+    inline int GetParDenominator() const { return m_parDenominator; }
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
     inline Vp8Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
@@ -198,7 +192,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
-    inline int GetParNumerator() const{ return m_parNumerator; }
+    inline int GetParNumerator() const { return m_parNumerator; }
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
     inline Vp8Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
@@ -210,12 +204,10 @@ namespace Model
      * speed for output video quality. The default behavior is faster, lower quality,
      * multi-pass encoding.
      */
-    inline const Vp8QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
+    inline Vp8QualityTuningLevel GetQualityTuningLevel() const { return m_qualityTuningLevel; }
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
-    inline void SetQualityTuningLevel(const Vp8QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
-    inline void SetQualityTuningLevel(Vp8QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
-    inline Vp8Settings& WithQualityTuningLevel(const Vp8QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
-    inline Vp8Settings& WithQualityTuningLevel(Vp8QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+    inline void SetQualityTuningLevel(Vp8QualityTuningLevel value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
+    inline Vp8Settings& WithQualityTuningLevel(Vp8QualityTuningLevel value) { SetQualityTuningLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -223,52 +215,50 @@ namespace Model
      * With the VP8 codec, you can use only the variable bitrate (VBR) rate control
      * mode.
      */
-    inline const Vp8RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
+    inline Vp8RateControlMode GetRateControlMode() const { return m_rateControlMode; }
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
-    inline void SetRateControlMode(const Vp8RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
-    inline void SetRateControlMode(Vp8RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
-    inline Vp8Settings& WithRateControlMode(const Vp8RateControlMode& value) { SetRateControlMode(value); return *this;}
-    inline Vp8Settings& WithRateControlMode(Vp8RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
+    inline void SetRateControlMode(Vp8RateControlMode value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
+    inline Vp8Settings& WithRateControlMode(Vp8RateControlMode value) { SetRateControlMode(value); return *this;}
     ///@}
   private:
 
-    int m_bitrate;
+    int m_bitrate{0};
     bool m_bitrateHasBeenSet = false;
 
-    Vp8FramerateControl m_framerateControl;
+    Vp8FramerateControl m_framerateControl{Vp8FramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    Vp8FramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    Vp8FramerateConversionAlgorithm m_framerateConversionAlgorithm{Vp8FramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    double m_gopSize;
+    double m_gopSize{0.0};
     bool m_gopSizeHasBeenSet = false;
 
-    int m_hrdBufferSize;
+    int m_hrdBufferSize{0};
     bool m_hrdBufferSizeHasBeenSet = false;
 
-    int m_maxBitrate;
+    int m_maxBitrate{0};
     bool m_maxBitrateHasBeenSet = false;
 
-    Vp8ParControl m_parControl;
+    Vp8ParControl m_parControl{Vp8ParControl::NOT_SET};
     bool m_parControlHasBeenSet = false;
 
-    int m_parDenominator;
+    int m_parDenominator{0};
     bool m_parDenominatorHasBeenSet = false;
 
-    int m_parNumerator;
+    int m_parNumerator{0};
     bool m_parNumeratorHasBeenSet = false;
 
-    Vp8QualityTuningLevel m_qualityTuningLevel;
+    Vp8QualityTuningLevel m_qualityTuningLevel{Vp8QualityTuningLevel::NOT_SET};
     bool m_qualityTuningLevelHasBeenSet = false;
 
-    Vp8RateControlMode m_rateControlMode;
+    Vp8RateControlMode m_rateControlMode{Vp8RateControlMode::NOT_SET};
     bool m_rateControlModeHasBeenSet = false;
   };
 

@@ -22,7 +22,7 @@ namespace Model
   class DescribeServiceDeploymentsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DescribeServiceDeploymentsRequest();
+    AWS_ECS_API DescribeServiceDeploymentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p>The ARN of the service deployment.</p> <p>You can specify a maximum of 20
      * ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServiceDeploymentArns() const{ return m_serviceDeploymentArns; }
+    inline const Aws::Vector<Aws::String>& GetServiceDeploymentArns() const { return m_serviceDeploymentArns; }
     inline bool ServiceDeploymentArnsHasBeenSet() const { return m_serviceDeploymentArnsHasBeenSet; }
-    inline void SetServiceDeploymentArns(const Aws::Vector<Aws::String>& value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns = value; }
-    inline void SetServiceDeploymentArns(Aws::Vector<Aws::String>&& value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns = std::move(value); }
-    inline DescribeServiceDeploymentsRequest& WithServiceDeploymentArns(const Aws::Vector<Aws::String>& value) { SetServiceDeploymentArns(value); return *this;}
-    inline DescribeServiceDeploymentsRequest& WithServiceDeploymentArns(Aws::Vector<Aws::String>&& value) { SetServiceDeploymentArns(std::move(value)); return *this;}
-    inline DescribeServiceDeploymentsRequest& AddServiceDeploymentArns(const Aws::String& value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns.push_back(value); return *this; }
-    inline DescribeServiceDeploymentsRequest& AddServiceDeploymentArns(Aws::String&& value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns.push_back(std::move(value)); return *this; }
-    inline DescribeServiceDeploymentsRequest& AddServiceDeploymentArns(const char* value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns.push_back(value); return *this; }
+    template<typename ServiceDeploymentArnsT = Aws::Vector<Aws::String>>
+    void SetServiceDeploymentArns(ServiceDeploymentArnsT&& value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns = std::forward<ServiceDeploymentArnsT>(value); }
+    template<typename ServiceDeploymentArnsT = Aws::Vector<Aws::String>>
+    DescribeServiceDeploymentsRequest& WithServiceDeploymentArns(ServiceDeploymentArnsT&& value) { SetServiceDeploymentArns(std::forward<ServiceDeploymentArnsT>(value)); return *this;}
+    template<typename ServiceDeploymentArnsT = Aws::String>
+    DescribeServiceDeploymentsRequest& AddServiceDeploymentArns(ServiceDeploymentArnsT&& value) { m_serviceDeploymentArnsHasBeenSet = true; m_serviceDeploymentArns.emplace_back(std::forward<ServiceDeploymentArnsT>(value)); return *this; }
     ///@}
   private:
 

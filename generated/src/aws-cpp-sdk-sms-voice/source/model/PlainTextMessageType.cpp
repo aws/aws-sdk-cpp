@@ -18,15 +18,7 @@ namespace PinpointSMSVoice
 namespace Model
 {
 
-PlainTextMessageType::PlainTextMessageType() : 
-    m_languageCodeHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
-{
-}
-
 PlainTextMessageType::PlainTextMessageType(JsonView jsonValue)
-  : PlainTextMessageType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PlainTextMessageType& PlainTextMessageType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = jsonValue.GetString("LanguageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceId"))
   {
     m_voiceId = jsonValue.GetString("VoiceId");
-
     m_voiceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

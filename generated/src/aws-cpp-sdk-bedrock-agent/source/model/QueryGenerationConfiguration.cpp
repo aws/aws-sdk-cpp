@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-QueryGenerationConfiguration::QueryGenerationConfiguration() : 
-    m_executionTimeoutSeconds(0),
-    m_executionTimeoutSecondsHasBeenSet(false),
-    m_generationContextHasBeenSet(false)
-{
-}
-
 QueryGenerationConfiguration::QueryGenerationConfiguration(JsonView jsonValue)
-  : QueryGenerationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ QueryGenerationConfiguration& QueryGenerationConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("executionTimeoutSeconds"))
   {
     m_executionTimeoutSeconds = jsonValue.GetInteger("executionTimeoutSeconds");
-
     m_executionTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generationContext"))
   {
     m_generationContext = jsonValue.GetObject("generationContext");
-
     m_generationContextHasBeenSet = true;
   }
-
   return *this;
 }
 

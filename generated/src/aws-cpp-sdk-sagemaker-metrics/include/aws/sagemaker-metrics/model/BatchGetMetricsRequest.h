@@ -22,7 +22,7 @@ namespace Model
   class BatchGetMetricsRequest : public SageMakerMetricsRequest
   {
   public:
-    AWS_SAGEMAKERMETRICS_API BatchGetMetricsRequest();
+    AWS_SAGEMAKERMETRICS_API BatchGetMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>Queries made to retrieve training metrics from SageMaker.</p>
      */
-    inline const Aws::Vector<MetricQuery>& GetMetricQueries() const{ return m_metricQueries; }
+    inline const Aws::Vector<MetricQuery>& GetMetricQueries() const { return m_metricQueries; }
     inline bool MetricQueriesHasBeenSet() const { return m_metricQueriesHasBeenSet; }
-    inline void SetMetricQueries(const Aws::Vector<MetricQuery>& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = value; }
-    inline void SetMetricQueries(Aws::Vector<MetricQuery>&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = std::move(value); }
-    inline BatchGetMetricsRequest& WithMetricQueries(const Aws::Vector<MetricQuery>& value) { SetMetricQueries(value); return *this;}
-    inline BatchGetMetricsRequest& WithMetricQueries(Aws::Vector<MetricQuery>&& value) { SetMetricQueries(std::move(value)); return *this;}
-    inline BatchGetMetricsRequest& AddMetricQueries(const MetricQuery& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.push_back(value); return *this; }
-    inline BatchGetMetricsRequest& AddMetricQueries(MetricQuery&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.push_back(std::move(value)); return *this; }
+    template<typename MetricQueriesT = Aws::Vector<MetricQuery>>
+    void SetMetricQueries(MetricQueriesT&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = std::forward<MetricQueriesT>(value); }
+    template<typename MetricQueriesT = Aws::Vector<MetricQuery>>
+    BatchGetMetricsRequest& WithMetricQueries(MetricQueriesT&& value) { SetMetricQueries(std::forward<MetricQueriesT>(value)); return *this;}
+    template<typename MetricQueriesT = MetricQuery>
+    BatchGetMetricsRequest& AddMetricQueries(MetricQueriesT&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.emplace_back(std::forward<MetricQueriesT>(value)); return *this; }
     ///@}
   private:
 

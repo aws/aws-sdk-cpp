@@ -45,7 +45,7 @@ namespace Model
   class RequestCancelActivityTaskDecisionAttributes
   {
   public:
-    AWS_SWF_API RequestCancelActivityTaskDecisionAttributes();
+    AWS_SWF_API RequestCancelActivityTaskDecisionAttributes() = default;
     AWS_SWF_API RequestCancelActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API RequestCancelActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>The <code>activityId</code> of the activity task to be canceled.</p>
      */
-    inline const Aws::String& GetActivityId() const{ return m_activityId; }
+    inline const Aws::String& GetActivityId() const { return m_activityId; }
     inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
-    inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
-    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
-    inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
-    inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
-    inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
-    inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
+    template<typename ActivityIdT = Aws::String>
+    void SetActivityId(ActivityIdT&& value) { m_activityIdHasBeenSet = true; m_activityId = std::forward<ActivityIdT>(value); }
+    template<typename ActivityIdT = Aws::String>
+    RequestCancelActivityTaskDecisionAttributes& WithActivityId(ActivityIdT&& value) { SetActivityId(std::forward<ActivityIdT>(value)); return *this;}
     ///@}
   private:
 

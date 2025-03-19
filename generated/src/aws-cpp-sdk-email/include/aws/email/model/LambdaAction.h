@@ -42,7 +42,7 @@ namespace Model
   class LambdaAction
   {
   public:
-    AWS_SES_API LambdaAction();
+    AWS_SES_API LambdaAction() = default;
     AWS_SES_API LambdaAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API LambdaAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -60,14 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline LambdaAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline LambdaAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline LambdaAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    LambdaAction& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
      * Services Lambda Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline LambdaAction& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    LambdaAction& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +99,10 @@ namespace Model
      * only to make a mail flow decision, such as whether to stop the receipt rule or
      * the receipt rule set.</p> 
      */
-    inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
+    inline InvocationType GetInvocationType() const { return m_invocationType; }
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
-    inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
-    inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
-    inline LambdaAction& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
-    inline LambdaAction& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
+    inline void SetInvocationType(InvocationType value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
+    inline LambdaAction& WithInvocationType(InvocationType value) { SetInvocationType(value); return *this;}
     ///@}
   private:
 
@@ -118,7 +112,7 @@ namespace Model
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet = false;
 
-    InvocationType m_invocationType;
+    InvocationType m_invocationType{InvocationType::NOT_SET};
     bool m_invocationTypeHasBeenSet = false;
   };
 

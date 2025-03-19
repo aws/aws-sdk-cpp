@@ -23,7 +23,7 @@ namespace Model
   class PutFindingsPublicationConfigurationRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API PutFindingsPublicationConfigurationRequest();
+    AWS_MACIE2_API PutFindingsPublicationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
      * the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline PutFindingsPublicationConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline PutFindingsPublicationConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline PutFindingsPublicationConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    PutFindingsPublicationConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
-    inline const SecurityHubConfiguration& GetSecurityHubConfiguration() const{ return m_securityHubConfiguration; }
+    inline const SecurityHubConfiguration& GetSecurityHubConfiguration() const { return m_securityHubConfiguration; }
     inline bool SecurityHubConfigurationHasBeenSet() const { return m_securityHubConfigurationHasBeenSet; }
-    inline void SetSecurityHubConfiguration(const SecurityHubConfiguration& value) { m_securityHubConfigurationHasBeenSet = true; m_securityHubConfiguration = value; }
-    inline void SetSecurityHubConfiguration(SecurityHubConfiguration&& value) { m_securityHubConfigurationHasBeenSet = true; m_securityHubConfiguration = std::move(value); }
-    inline PutFindingsPublicationConfigurationRequest& WithSecurityHubConfiguration(const SecurityHubConfiguration& value) { SetSecurityHubConfiguration(value); return *this;}
-    inline PutFindingsPublicationConfigurationRequest& WithSecurityHubConfiguration(SecurityHubConfiguration&& value) { SetSecurityHubConfiguration(std::move(value)); return *this;}
+    template<typename SecurityHubConfigurationT = SecurityHubConfiguration>
+    void SetSecurityHubConfiguration(SecurityHubConfigurationT&& value) { m_securityHubConfigurationHasBeenSet = true; m_securityHubConfiguration = std::forward<SecurityHubConfigurationT>(value); }
+    template<typename SecurityHubConfigurationT = SecurityHubConfiguration>
+    PutFindingsPublicationConfigurationRequest& WithSecurityHubConfiguration(SecurityHubConfigurationT&& value) { SetSecurityHubConfiguration(std::forward<SecurityHubConfigurationT>(value)); return *this;}
     ///@}
   private:
 

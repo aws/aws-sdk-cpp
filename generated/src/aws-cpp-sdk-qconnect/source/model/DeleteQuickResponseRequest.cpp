@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQuickResponseRequest::DeleteQuickResponseRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_quickResponseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQuickResponseRequest::SerializePayload() const
 {
   return {};

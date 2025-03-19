@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-AnomalySourceMetadata::AnomalySourceMetadata() : 
-    m_sourceHasBeenSet(false),
-    m_sourceResourceNameHasBeenSet(false),
-    m_sourceResourceTypeHasBeenSet(false)
-{
-}
-
 AnomalySourceMetadata::AnomalySourceMetadata(JsonView jsonValue)
-  : AnomalySourceMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AnomalySourceMetadata& AnomalySourceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceName"))
   {
     m_sourceResourceName = jsonValue.GetString("SourceResourceName");
-
     m_sourceResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceType"))
   {
     m_sourceResourceType = jsonValue.GetString("SourceResourceType");
-
     m_sourceResourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

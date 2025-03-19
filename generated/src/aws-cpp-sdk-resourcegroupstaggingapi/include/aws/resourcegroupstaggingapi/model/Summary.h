@@ -32,7 +32,7 @@ namespace Model
   class Summary
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API Summary();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Summary() = default;
     AWS_RESOURCEGROUPSTAGGINGAPI_API Summary(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPSTAGGINGAPI_API Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The timestamp that shows when this summary was generated in this Region. </p>
      */
-    inline const Aws::String& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::String& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::String& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::String&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline void SetLastUpdated(const char* value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated.assign(value); }
-    inline Summary& WithLastUpdated(const Aws::String& value) { SetLastUpdated(value); return *this;}
-    inline Summary& WithLastUpdated(Aws::String&& value) { SetLastUpdated(std::move(value)); return *this;}
-    inline Summary& WithLastUpdated(const char* value) { SetLastUpdated(value); return *this;}
+    template<typename LastUpdatedT = Aws::String>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::String>
+    Summary& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,61 +57,53 @@ namespace Model
      * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a>
      * API.</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline Summary& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline Summary& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline Summary& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    Summary& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the target is an account, an OU, or the organization root.</p>
      */
-    inline const TargetIdType& GetTargetIdType() const{ return m_targetIdType; }
+    inline TargetIdType GetTargetIdType() const { return m_targetIdType; }
     inline bool TargetIdTypeHasBeenSet() const { return m_targetIdTypeHasBeenSet; }
-    inline void SetTargetIdType(const TargetIdType& value) { m_targetIdTypeHasBeenSet = true; m_targetIdType = value; }
-    inline void SetTargetIdType(TargetIdType&& value) { m_targetIdTypeHasBeenSet = true; m_targetIdType = std::move(value); }
-    inline Summary& WithTargetIdType(const TargetIdType& value) { SetTargetIdType(value); return *this;}
-    inline Summary& WithTargetIdType(TargetIdType&& value) { SetTargetIdType(std::move(value)); return *this;}
+    inline void SetTargetIdType(TargetIdType value) { m_targetIdTypeHasBeenSet = true; m_targetIdType = value; }
+    inline Summary& WithTargetIdType(TargetIdType value) { SetTargetIdType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region that the summary applies to.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Summary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Summary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Summary& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Summary& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services resource type.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline Summary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline Summary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline Summary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    Summary& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The count of noncompliant resources.</p>
      */
-    inline long long GetNonCompliantResources() const{ return m_nonCompliantResources; }
+    inline long long GetNonCompliantResources() const { return m_nonCompliantResources; }
     inline bool NonCompliantResourcesHasBeenSet() const { return m_nonCompliantResourcesHasBeenSet; }
     inline void SetNonCompliantResources(long long value) { m_nonCompliantResourcesHasBeenSet = true; m_nonCompliantResources = value; }
     inline Summary& WithNonCompliantResources(long long value) { SetNonCompliantResources(value); return *this;}
@@ -126,7 +116,7 @@ namespace Model
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
-    TargetIdType m_targetIdType;
+    TargetIdType m_targetIdType{TargetIdType::NOT_SET};
     bool m_targetIdTypeHasBeenSet = false;
 
     Aws::String m_region;
@@ -135,7 +125,7 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    long long m_nonCompliantResources;
+    long long m_nonCompliantResources{0};
     bool m_nonCompliantResourcesHasBeenSet = false;
   };
 

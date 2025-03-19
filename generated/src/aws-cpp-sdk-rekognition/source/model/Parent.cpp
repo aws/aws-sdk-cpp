@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Parent::Parent() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Parent::Parent(JsonView jsonValue)
-  : Parent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Parent& Parent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class EnableFastSnapshotRestoreStateErrorItem
   {
   public:
-    AWS_EC2_API EnableFastSnapshotRestoreStateErrorItem();
+    AWS_EC2_API EnableFastSnapshotRestoreStateErrorItem() = default;
     AWS_EC2_API EnableFastSnapshotRestoreStateErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EnableFastSnapshotRestoreStateErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline EnableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline EnableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline EnableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    EnableFastSnapshotRestoreStateErrorItem& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error.</p>
      */
-    inline const EnableFastSnapshotRestoreStateError& GetError() const{ return m_error; }
+    inline const EnableFastSnapshotRestoreStateError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const EnableFastSnapshotRestoreStateError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(EnableFastSnapshotRestoreStateError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline EnableFastSnapshotRestoreStateErrorItem& WithError(const EnableFastSnapshotRestoreStateError& value) { SetError(value); return *this;}
-    inline EnableFastSnapshotRestoreStateErrorItem& WithError(EnableFastSnapshotRestoreStateError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = EnableFastSnapshotRestoreStateError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = EnableFastSnapshotRestoreStateError>
+    EnableFastSnapshotRestoreStateErrorItem& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

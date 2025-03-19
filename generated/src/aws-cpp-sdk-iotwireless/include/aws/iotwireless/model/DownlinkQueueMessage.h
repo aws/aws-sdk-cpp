@@ -32,7 +32,7 @@ namespace Model
   class DownlinkQueueMessage
   {
   public:
-    AWS_IOTWIRELESS_API DownlinkQueueMessage();
+    AWS_IOTWIRELESS_API DownlinkQueueMessage() = default;
     AWS_IOTWIRELESS_API DownlinkQueueMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API DownlinkQueueMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The message ID assigned by IoT Wireless to each downlink message, which
      * helps identify the message.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline DownlinkQueueMessage& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline DownlinkQueueMessage& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline DownlinkQueueMessage& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    DownlinkQueueMessage& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
      * mode).</p>
      */
-    inline int GetTransmitMode() const{ return m_transmitMode; }
+    inline int GetTransmitMode() const { return m_transmitMode; }
     inline bool TransmitModeHasBeenSet() const { return m_transmitModeHasBeenSet; }
     inline void SetTransmitMode(int value) { m_transmitModeHasBeenSet = true; m_transmitMode = value; }
     inline DownlinkQueueMessage& WithTransmitMode(int value) { SetTransmitMode(value); return *this;}
@@ -69,31 +67,29 @@ namespace Model
     /**
      * <p>The time at which Iot Wireless received the downlink message.</p>
      */
-    inline const Aws::String& GetReceivedAt() const{ return m_receivedAt; }
+    inline const Aws::String& GetReceivedAt() const { return m_receivedAt; }
     inline bool ReceivedAtHasBeenSet() const { return m_receivedAtHasBeenSet; }
-    inline void SetReceivedAt(const Aws::String& value) { m_receivedAtHasBeenSet = true; m_receivedAt = value; }
-    inline void SetReceivedAt(Aws::String&& value) { m_receivedAtHasBeenSet = true; m_receivedAt = std::move(value); }
-    inline void SetReceivedAt(const char* value) { m_receivedAtHasBeenSet = true; m_receivedAt.assign(value); }
-    inline DownlinkQueueMessage& WithReceivedAt(const Aws::String& value) { SetReceivedAt(value); return *this;}
-    inline DownlinkQueueMessage& WithReceivedAt(Aws::String&& value) { SetReceivedAt(std::move(value)); return *this;}
-    inline DownlinkQueueMessage& WithReceivedAt(const char* value) { SetReceivedAt(value); return *this;}
+    template<typename ReceivedAtT = Aws::String>
+    void SetReceivedAt(ReceivedAtT&& value) { m_receivedAtHasBeenSet = true; m_receivedAt = std::forward<ReceivedAtT>(value); }
+    template<typename ReceivedAtT = Aws::String>
+    DownlinkQueueMessage& WithReceivedAt(ReceivedAtT&& value) { SetReceivedAt(std::forward<ReceivedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LoRaWANSendDataToDevice& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANSendDataToDevice& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANSendDataToDevice& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANSendDataToDevice&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline DownlinkQueueMessage& WithLoRaWAN(const LoRaWANSendDataToDevice& value) { SetLoRaWAN(value); return *this;}
-    inline DownlinkQueueMessage& WithLoRaWAN(LoRaWANSendDataToDevice&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANSendDataToDevice>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANSendDataToDevice>
+    DownlinkQueueMessage& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    int m_transmitMode;
+    int m_transmitMode{0};
     bool m_transmitModeHasBeenSet = false;
 
     Aws::String m_receivedAt;

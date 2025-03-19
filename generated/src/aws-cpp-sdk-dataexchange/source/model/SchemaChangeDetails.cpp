@@ -18,16 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-SchemaChangeDetails::SchemaChangeDetails() : 
-    m_nameHasBeenSet(false),
-    m_type(SchemaChangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 SchemaChangeDetails::SchemaChangeDetails(JsonView jsonValue)
-  : SchemaChangeDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SchemaChangeDetails& SchemaChangeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SchemaChangeTypeMapper::GetSchemaChangeTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

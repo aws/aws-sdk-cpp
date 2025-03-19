@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-StartDeclarativePoliciesReportRequest::StartDeclarativePoliciesReportRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String StartDeclarativePoliciesReportRequest::SerializePayload() const
 {
   Aws::StringStream ss;

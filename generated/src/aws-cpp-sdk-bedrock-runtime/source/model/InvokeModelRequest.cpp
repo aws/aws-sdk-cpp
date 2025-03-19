@@ -15,18 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeModelRequest::InvokeModelRequest() : 
-    m_acceptHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_trace(Trace::NOT_SET),
-    m_traceHasBeenSet(false),
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false),
-    m_performanceConfigLatency(PerformanceConfigLatency::NOT_SET),
-    m_performanceConfigLatencyHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection InvokeModelRequest::GetRequestSpecificHeaders() const

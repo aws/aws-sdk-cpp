@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLicenseResult::DeleteLicenseResult() : 
-    m_status(LicenseDeletionStatus::NOT_SET)
-{
-}
-
 DeleteLicenseResult::DeleteLicenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteLicenseResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteLicenseResult& DeleteLicenseResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LicenseDeletionStatusMapper::GetLicenseDeletionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionDate"))
   {
     m_deletionDate = jsonValue.GetString("DeletionDate");
-
+    m_deletionDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

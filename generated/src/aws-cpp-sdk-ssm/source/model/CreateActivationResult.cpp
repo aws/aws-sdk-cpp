@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateActivationResult::CreateActivationResult()
-{
-}
-
 CreateActivationResult::CreateActivationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateActivationResult& CreateActivationResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ActivationId"))
   {
     m_activationId = jsonValue.GetString("ActivationId");
-
+    m_activationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivationCode"))
   {
     m_activationCode = jsonValue.GetString("ActivationCode");
-
+    m_activationCodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

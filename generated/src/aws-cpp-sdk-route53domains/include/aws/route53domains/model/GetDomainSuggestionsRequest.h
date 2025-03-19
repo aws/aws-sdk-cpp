@@ -21,7 +21,7 @@ namespace Model
   class GetDomainSuggestionsRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API GetDomainSuggestionsRequest();
+    AWS_ROUTE53DOMAINS_API GetDomainSuggestionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
      * that You Can Register with Amazon Route 53</a>. </p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline GetDomainSuggestionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline GetDomainSuggestionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline GetDomainSuggestionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    GetDomainSuggestionsRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * <p>The number of suggested domain names that you want Route 53 to return.
      * Specify a value between 1 and 50.</p>
      */
-    inline int GetSuggestionCount() const{ return m_suggestionCount; }
+    inline int GetSuggestionCount() const { return m_suggestionCount; }
     inline bool SuggestionCountHasBeenSet() const { return m_suggestionCountHasBeenSet; }
     inline void SetSuggestionCount(int value) { m_suggestionCountHasBeenSet = true; m_suggestionCount = value; }
     inline GetDomainSuggestionsRequest& WithSuggestionCount(int value) { SetSuggestionCount(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
      * available, you can call <code>checkDomainAvailability</code> for each
      * suggestion.</p>
      */
-    inline bool GetOnlyAvailable() const{ return m_onlyAvailable; }
+    inline bool GetOnlyAvailable() const { return m_onlyAvailable; }
     inline bool OnlyAvailableHasBeenSet() const { return m_onlyAvailableHasBeenSet; }
     inline void SetOnlyAvailable(bool value) { m_onlyAvailableHasBeenSet = true; m_onlyAvailable = value; }
     inline GetDomainSuggestionsRequest& WithOnlyAvailable(bool value) { SetOnlyAvailable(value); return *this;}
@@ -92,10 +90,10 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    int m_suggestionCount;
+    int m_suggestionCount{0};
     bool m_suggestionCountHasBeenSet = false;
 
-    bool m_onlyAvailable;
+    bool m_onlyAvailable{false};
     bool m_onlyAvailableHasBeenSet = false;
   };
 

@@ -23,7 +23,7 @@ namespace Model
   class ListAvailableResourceMetricsRequest : public PIRequest
   {
   public:
-    AWS_PI_API ListAvailableResourceMetricsRequest();
+    AWS_PI_API ListAvailableResourceMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,10 @@ namespace Model
      * <p>The Amazon Web Services service for which Performance Insights returns
      * metrics.</p>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline ListAvailableResourceMetricsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline ListAvailableResourceMetricsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline ListAvailableResourceMetricsRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <code>DbiResourceId</code> value. For example, specify
      * <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ListAvailableResourceMetricsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ListAvailableResourceMetricsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ListAvailableResourceMetricsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ListAvailableResourceMetricsRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +73,14 @@ namespace Model
      * <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines
      * except for Amazon DocumentDB</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricTypes() const{ return m_metricTypes; }
+    inline const Aws::Vector<Aws::String>& GetMetricTypes() const { return m_metricTypes; }
     inline bool MetricTypesHasBeenSet() const { return m_metricTypesHasBeenSet; }
-    inline void SetMetricTypes(const Aws::Vector<Aws::String>& value) { m_metricTypesHasBeenSet = true; m_metricTypes = value; }
-    inline void SetMetricTypes(Aws::Vector<Aws::String>&& value) { m_metricTypesHasBeenSet = true; m_metricTypes = std::move(value); }
-    inline ListAvailableResourceMetricsRequest& WithMetricTypes(const Aws::Vector<Aws::String>& value) { SetMetricTypes(value); return *this;}
-    inline ListAvailableResourceMetricsRequest& WithMetricTypes(Aws::Vector<Aws::String>&& value) { SetMetricTypes(std::move(value)); return *this;}
-    inline ListAvailableResourceMetricsRequest& AddMetricTypes(const Aws::String& value) { m_metricTypesHasBeenSet = true; m_metricTypes.push_back(value); return *this; }
-    inline ListAvailableResourceMetricsRequest& AddMetricTypes(Aws::String&& value) { m_metricTypesHasBeenSet = true; m_metricTypes.push_back(std::move(value)); return *this; }
-    inline ListAvailableResourceMetricsRequest& AddMetricTypes(const char* value) { m_metricTypesHasBeenSet = true; m_metricTypes.push_back(value); return *this; }
+    template<typename MetricTypesT = Aws::Vector<Aws::String>>
+    void SetMetricTypes(MetricTypesT&& value) { m_metricTypesHasBeenSet = true; m_metricTypes = std::forward<MetricTypesT>(value); }
+    template<typename MetricTypesT = Aws::Vector<Aws::String>>
+    ListAvailableResourceMetricsRequest& WithMetricTypes(MetricTypesT&& value) { SetMetricTypes(std::forward<MetricTypesT>(value)); return *this;}
+    template<typename MetricTypesT = Aws::String>
+    ListAvailableResourceMetricsRequest& AddMetricTypes(MetricTypesT&& value) { m_metricTypesHasBeenSet = true; m_metricTypes.emplace_back(std::forward<MetricTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +89,12 @@ namespace Model
      * parameter is specified, the response includes only records beyond the token, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAvailableResourceMetricsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAvailableResourceMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAvailableResourceMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAvailableResourceMetricsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +103,14 @@ namespace Model
      * is less than the number of existing items, the response includes a pagination
      * token. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAvailableResourceMetricsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
@@ -129,7 +122,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

@@ -38,7 +38,7 @@ namespace Model
   class Deserializer
   {
   public:
-    AWS_FIREHOSE_API Deserializer();
+    AWS_FIREHOSE_API Deserializer() = default;
     AWS_FIREHOSE_API Deserializer(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Deserializer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * depending on which one offers the functionality you need. The other option is
      * the native Hive / HCatalog JsonSerDe.</p>
      */
-    inline const OpenXJsonSerDe& GetOpenXJsonSerDe() const{ return m_openXJsonSerDe; }
+    inline const OpenXJsonSerDe& GetOpenXJsonSerDe() const { return m_openXJsonSerDe; }
     inline bool OpenXJsonSerDeHasBeenSet() const { return m_openXJsonSerDeHasBeenSet; }
-    inline void SetOpenXJsonSerDe(const OpenXJsonSerDe& value) { m_openXJsonSerDeHasBeenSet = true; m_openXJsonSerDe = value; }
-    inline void SetOpenXJsonSerDe(OpenXJsonSerDe&& value) { m_openXJsonSerDeHasBeenSet = true; m_openXJsonSerDe = std::move(value); }
-    inline Deserializer& WithOpenXJsonSerDe(const OpenXJsonSerDe& value) { SetOpenXJsonSerDe(value); return *this;}
-    inline Deserializer& WithOpenXJsonSerDe(OpenXJsonSerDe&& value) { SetOpenXJsonSerDe(std::move(value)); return *this;}
+    template<typename OpenXJsonSerDeT = OpenXJsonSerDe>
+    void SetOpenXJsonSerDe(OpenXJsonSerDeT&& value) { m_openXJsonSerDeHasBeenSet = true; m_openXJsonSerDe = std::forward<OpenXJsonSerDeT>(value); }
+    template<typename OpenXJsonSerDeT = OpenXJsonSerDe>
+    Deserializer& WithOpenXJsonSerDe(OpenXJsonSerDeT&& value) { SetOpenXJsonSerDe(std::forward<OpenXJsonSerDeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,12 @@ namespace Model
      * you can choose, depending on which one offers the functionality you need. The
      * other option is the OpenX SerDe.</p>
      */
-    inline const HiveJsonSerDe& GetHiveJsonSerDe() const{ return m_hiveJsonSerDe; }
+    inline const HiveJsonSerDe& GetHiveJsonSerDe() const { return m_hiveJsonSerDe; }
     inline bool HiveJsonSerDeHasBeenSet() const { return m_hiveJsonSerDeHasBeenSet; }
-    inline void SetHiveJsonSerDe(const HiveJsonSerDe& value) { m_hiveJsonSerDeHasBeenSet = true; m_hiveJsonSerDe = value; }
-    inline void SetHiveJsonSerDe(HiveJsonSerDe&& value) { m_hiveJsonSerDeHasBeenSet = true; m_hiveJsonSerDe = std::move(value); }
-    inline Deserializer& WithHiveJsonSerDe(const HiveJsonSerDe& value) { SetHiveJsonSerDe(value); return *this;}
-    inline Deserializer& WithHiveJsonSerDe(HiveJsonSerDe&& value) { SetHiveJsonSerDe(std::move(value)); return *this;}
+    template<typename HiveJsonSerDeT = HiveJsonSerDe>
+    void SetHiveJsonSerDe(HiveJsonSerDeT&& value) { m_hiveJsonSerDeHasBeenSet = true; m_hiveJsonSerDe = std::forward<HiveJsonSerDeT>(value); }
+    template<typename HiveJsonSerDeT = HiveJsonSerDe>
+    Deserializer& WithHiveJsonSerDe(HiveJsonSerDeT&& value) { SetHiveJsonSerDe(std::forward<HiveJsonSerDeT>(value)); return *this;}
     ///@}
   private:
 

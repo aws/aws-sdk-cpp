@@ -19,7 +19,7 @@ namespace Model
   class EndpointOperationRequest : public JsonProtocolRequest
   {
   public:
-    AWS_JSONPROTOCOL_API EndpointOperationRequest();
+    AWS_JSONPROTOCOL_API EndpointOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

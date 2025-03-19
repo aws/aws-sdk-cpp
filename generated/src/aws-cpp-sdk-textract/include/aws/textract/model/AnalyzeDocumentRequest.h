@@ -26,7 +26,7 @@ namespace Model
   class AnalyzeDocumentRequest : public TextractRequest
   {
   public:
-    AWS_TEXTRACT_API AnalyzeDocumentRequest();
+    AWS_TEXTRACT_API AnalyzeDocumentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,12 @@ namespace Model
      * using an AWS SDK to call Amazon Textract, you might not need to base64-encode
      * image bytes that are passed using the <code>Bytes</code> field. </p>
      */
-    inline const Document& GetDocument() const{ return m_document; }
+    inline const Document& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline AnalyzeDocumentRequest& WithDocument(const Document& value) { SetDocument(value); return *this;}
-    inline AnalyzeDocumentRequest& WithDocument(Document&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = Document>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Document>
+    AnalyzeDocumentRequest& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +65,13 @@ namespace Model
      * response (including text that isn't related to the value of
      * <code>FeatureTypes</code>). </p>
      */
-    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
+    inline const Aws::Vector<FeatureType>& GetFeatureTypes() const { return m_featureTypes; }
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
-    inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
-    inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
-    inline AnalyzeDocumentRequest& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
-    inline AnalyzeDocumentRequest& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
-    inline AnalyzeDocumentRequest& AddFeatureTypes(const FeatureType& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
-    inline AnalyzeDocumentRequest& AddFeatureTypes(FeatureType&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    void SetFeatureTypes(FeatureTypesT&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::forward<FeatureTypesT>(value); }
+    template<typename FeatureTypesT = Aws::Vector<FeatureType>>
+    AnalyzeDocumentRequest& WithFeatureTypes(FeatureTypesT&& value) { SetFeatureTypes(std::forward<FeatureTypesT>(value)); return *this;}
+    inline AnalyzeDocumentRequest& AddFeatureTypes(FeatureType value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -80,12 +79,12 @@ namespace Model
      * <p>Sets the configuration for the human in the loop workflow for analyzing
      * documents.</p>
      */
-    inline const HumanLoopConfig& GetHumanLoopConfig() const{ return m_humanLoopConfig; }
+    inline const HumanLoopConfig& GetHumanLoopConfig() const { return m_humanLoopConfig; }
     inline bool HumanLoopConfigHasBeenSet() const { return m_humanLoopConfigHasBeenSet; }
-    inline void SetHumanLoopConfig(const HumanLoopConfig& value) { m_humanLoopConfigHasBeenSet = true; m_humanLoopConfig = value; }
-    inline void SetHumanLoopConfig(HumanLoopConfig&& value) { m_humanLoopConfigHasBeenSet = true; m_humanLoopConfig = std::move(value); }
-    inline AnalyzeDocumentRequest& WithHumanLoopConfig(const HumanLoopConfig& value) { SetHumanLoopConfig(value); return *this;}
-    inline AnalyzeDocumentRequest& WithHumanLoopConfig(HumanLoopConfig&& value) { SetHumanLoopConfig(std::move(value)); return *this;}
+    template<typename HumanLoopConfigT = HumanLoopConfig>
+    void SetHumanLoopConfig(HumanLoopConfigT&& value) { m_humanLoopConfigHasBeenSet = true; m_humanLoopConfig = std::forward<HumanLoopConfigT>(value); }
+    template<typename HumanLoopConfigT = HumanLoopConfig>
+    AnalyzeDocumentRequest& WithHumanLoopConfig(HumanLoopConfigT&& value) { SetHumanLoopConfig(std::forward<HumanLoopConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,24 +92,24 @@ namespace Model
      * <p>Contains Queries and the alias for those Queries, as determined by the input.
      * </p>
      */
-    inline const QueriesConfig& GetQueriesConfig() const{ return m_queriesConfig; }
+    inline const QueriesConfig& GetQueriesConfig() const { return m_queriesConfig; }
     inline bool QueriesConfigHasBeenSet() const { return m_queriesConfigHasBeenSet; }
-    inline void SetQueriesConfig(const QueriesConfig& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = value; }
-    inline void SetQueriesConfig(QueriesConfig&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::move(value); }
-    inline AnalyzeDocumentRequest& WithQueriesConfig(const QueriesConfig& value) { SetQueriesConfig(value); return *this;}
-    inline AnalyzeDocumentRequest& WithQueriesConfig(QueriesConfig&& value) { SetQueriesConfig(std::move(value)); return *this;}
+    template<typename QueriesConfigT = QueriesConfig>
+    void SetQueriesConfig(QueriesConfigT&& value) { m_queriesConfigHasBeenSet = true; m_queriesConfig = std::forward<QueriesConfigT>(value); }
+    template<typename QueriesConfigT = QueriesConfig>
+    AnalyzeDocumentRequest& WithQueriesConfig(QueriesConfigT&& value) { SetQueriesConfig(std::forward<QueriesConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the adapter to be used when analyzing a document.</p>
      */
-    inline const AdaptersConfig& GetAdaptersConfig() const{ return m_adaptersConfig; }
+    inline const AdaptersConfig& GetAdaptersConfig() const { return m_adaptersConfig; }
     inline bool AdaptersConfigHasBeenSet() const { return m_adaptersConfigHasBeenSet; }
-    inline void SetAdaptersConfig(const AdaptersConfig& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = value; }
-    inline void SetAdaptersConfig(AdaptersConfig&& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = std::move(value); }
-    inline AnalyzeDocumentRequest& WithAdaptersConfig(const AdaptersConfig& value) { SetAdaptersConfig(value); return *this;}
-    inline AnalyzeDocumentRequest& WithAdaptersConfig(AdaptersConfig&& value) { SetAdaptersConfig(std::move(value)); return *this;}
+    template<typename AdaptersConfigT = AdaptersConfig>
+    void SetAdaptersConfig(AdaptersConfigT&& value) { m_adaptersConfigHasBeenSet = true; m_adaptersConfig = std::forward<AdaptersConfigT>(value); }
+    template<typename AdaptersConfigT = AdaptersConfig>
+    AnalyzeDocumentRequest& WithAdaptersConfig(AdaptersConfigT&& value) { SetAdaptersConfig(std::forward<AdaptersConfigT>(value)); return *this;}
     ///@}
   private:
 

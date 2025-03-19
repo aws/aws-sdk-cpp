@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DifferentialPrivacyParameters::DifferentialPrivacyParameters() : 
-    m_sensitivityParametersHasBeenSet(false)
-{
-}
-
 DifferentialPrivacyParameters::DifferentialPrivacyParameters(JsonView jsonValue)
-  : DifferentialPrivacyParameters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DifferentialPrivacyParameters& DifferentialPrivacyParameters::operator =(JsonVie
     }
     m_sensitivityParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

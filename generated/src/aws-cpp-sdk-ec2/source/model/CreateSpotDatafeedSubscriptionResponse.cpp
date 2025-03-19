@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSpotDatafeedSubscriptionResponse::CreateSpotDatafeedSubscriptionResponse()
-{
-}
-
 CreateSpotDatafeedSubscriptionResponse::CreateSpotDatafeedSubscriptionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateSpotDatafeedSubscriptionResponse& CreateSpotDatafeedSubscriptionResponse::
     if(!spotDatafeedSubscriptionNode.IsNull())
     {
       m_spotDatafeedSubscription = spotDatafeedSubscriptionNode;
+      m_spotDatafeedSubscriptionHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateSpotDatafeedSubscriptionResponse& CreateSpotDatafeedSubscriptionResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateSpotDatafeedSubscriptionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

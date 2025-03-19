@@ -36,7 +36,7 @@ namespace Model
   class Condition
   {
   public:
-    AWS_SSMINCIDENTS_API Condition();
+    AWS_SSMINCIDENTS_API Condition() = default;
     AWS_SSMINCIDENTS_API Condition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,43 +46,43 @@ namespace Model
     /**
      * <p>After the specified timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetAfter() const{ return m_after; }
+    inline const Aws::Utils::DateTime& GetAfter() const { return m_after; }
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
-    inline void SetAfter(const Aws::Utils::DateTime& value) { m_afterHasBeenSet = true; m_after = value; }
-    inline void SetAfter(Aws::Utils::DateTime&& value) { m_afterHasBeenSet = true; m_after = std::move(value); }
-    inline Condition& WithAfter(const Aws::Utils::DateTime& value) { SetAfter(value); return *this;}
-    inline Condition& WithAfter(Aws::Utils::DateTime&& value) { SetAfter(std::move(value)); return *this;}
+    template<typename AfterT = Aws::Utils::DateTime>
+    void SetAfter(AfterT&& value) { m_afterHasBeenSet = true; m_after = std::forward<AfterT>(value); }
+    template<typename AfterT = Aws::Utils::DateTime>
+    Condition& WithAfter(AfterT&& value) { SetAfter(std::forward<AfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Before the specified timestamp</p>
      */
-    inline const Aws::Utils::DateTime& GetBefore() const{ return m_before; }
+    inline const Aws::Utils::DateTime& GetBefore() const { return m_before; }
     inline bool BeforeHasBeenSet() const { return m_beforeHasBeenSet; }
-    inline void SetBefore(const Aws::Utils::DateTime& value) { m_beforeHasBeenSet = true; m_before = value; }
-    inline void SetBefore(Aws::Utils::DateTime&& value) { m_beforeHasBeenSet = true; m_before = std::move(value); }
-    inline Condition& WithBefore(const Aws::Utils::DateTime& value) { SetBefore(value); return *this;}
-    inline Condition& WithBefore(Aws::Utils::DateTime&& value) { SetBefore(std::move(value)); return *this;}
+    template<typename BeforeT = Aws::Utils::DateTime>
+    void SetBefore(BeforeT&& value) { m_beforeHasBeenSet = true; m_before = std::forward<BeforeT>(value); }
+    template<typename BeforeT = Aws::Utils::DateTime>
+    Condition& WithBefore(BeforeT&& value) { SetBefore(std::forward<BeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value is equal to the provided string or integer. </p>
      */
-    inline const AttributeValueList& GetEquals() const{ return m_equals; }
+    inline const AttributeValueList& GetEquals() const { return m_equals; }
     inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
-    inline void SetEquals(const AttributeValueList& value) { m_equalsHasBeenSet = true; m_equals = value; }
-    inline void SetEquals(AttributeValueList&& value) { m_equalsHasBeenSet = true; m_equals = std::move(value); }
-    inline Condition& WithEquals(const AttributeValueList& value) { SetEquals(value); return *this;}
-    inline Condition& WithEquals(AttributeValueList&& value) { SetEquals(std::move(value)); return *this;}
+    template<typename EqualsT = AttributeValueList>
+    void SetEquals(EqualsT&& value) { m_equalsHasBeenSet = true; m_equals = std::forward<EqualsT>(value); }
+    template<typename EqualsT = AttributeValueList>
+    Condition& WithEquals(EqualsT&& value) { SetEquals(std::forward<EqualsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_after;
+    Aws::Utils::DateTime m_after{};
     bool m_afterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_before;
+    Aws::Utils::DateTime m_before{};
     bool m_beforeHasBeenSet = false;
 
     AttributeValueList m_equals;

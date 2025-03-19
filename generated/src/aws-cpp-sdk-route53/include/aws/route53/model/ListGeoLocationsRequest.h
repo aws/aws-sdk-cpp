@@ -29,7 +29,7 @@ namespace Model
   class ListGeoLocationsRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListGeoLocationsRequest();
+    AWS_ROUTE53_API ListGeoLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * continents. Don't include <code>startcontinentcode</code> when you're listing
      * countries or countries with their subdivisions.</p>
      */
-    inline const Aws::String& GetStartContinentCode() const{ return m_startContinentCode; }
+    inline const Aws::String& GetStartContinentCode() const { return m_startContinentCode; }
     inline bool StartContinentCodeHasBeenSet() const { return m_startContinentCodeHasBeenSet; }
-    inline void SetStartContinentCode(const Aws::String& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = value; }
-    inline void SetStartContinentCode(Aws::String&& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = std::move(value); }
-    inline void SetStartContinentCode(const char* value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode.assign(value); }
-    inline ListGeoLocationsRequest& WithStartContinentCode(const Aws::String& value) { SetStartContinentCode(value); return *this;}
-    inline ListGeoLocationsRequest& WithStartContinentCode(Aws::String&& value) { SetStartContinentCode(std::move(value)); return *this;}
-    inline ListGeoLocationsRequest& WithStartContinentCode(const char* value) { SetStartContinentCode(value); return *this;}
+    template<typename StartContinentCodeT = Aws::String>
+    void SetStartContinentCode(StartContinentCodeT&& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = std::forward<StartContinentCodeT>(value); }
+    template<typename StartContinentCodeT = Aws::String>
+    ListGeoLocationsRequest& WithStartContinentCode(StartContinentCodeT&& value) { SetStartContinentCode(std::forward<StartContinentCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * that value in <code>startcountrycode</code> to return the next page of
      * results.</p>
      */
-    inline const Aws::String& GetStartCountryCode() const{ return m_startCountryCode; }
+    inline const Aws::String& GetStartCountryCode() const { return m_startCountryCode; }
     inline bool StartCountryCodeHasBeenSet() const { return m_startCountryCodeHasBeenSet; }
-    inline void SetStartCountryCode(const Aws::String& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = value; }
-    inline void SetStartCountryCode(Aws::String&& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = std::move(value); }
-    inline void SetStartCountryCode(const char* value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode.assign(value); }
-    inline ListGeoLocationsRequest& WithStartCountryCode(const Aws::String& value) { SetStartCountryCode(value); return *this;}
-    inline ListGeoLocationsRequest& WithStartCountryCode(Aws::String&& value) { SetStartCountryCode(std::move(value)); return *this;}
-    inline ListGeoLocationsRequest& WithStartCountryCode(const char* value) { SetStartCountryCode(value); return *this;}
+    template<typename StartCountryCodeT = Aws::String>
+    void SetStartCountryCode(StartCountryCodeT&& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = std::forward<StartCountryCodeT>(value); }
+    template<typename StartCountryCodeT = Aws::String>
+    ListGeoLocationsRequest& WithStartCountryCode(StartCountryCodeT&& value) { SetStartCountryCode(std::forward<StartCountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * must include both <code>startcountrycode</code> and
      * <code>startsubdivisioncode</code>.</p>
      */
-    inline const Aws::String& GetStartSubdivisionCode() const{ return m_startSubdivisionCode; }
+    inline const Aws::String& GetStartSubdivisionCode() const { return m_startSubdivisionCode; }
     inline bool StartSubdivisionCodeHasBeenSet() const { return m_startSubdivisionCodeHasBeenSet; }
-    inline void SetStartSubdivisionCode(const Aws::String& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = value; }
-    inline void SetStartSubdivisionCode(Aws::String&& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = std::move(value); }
-    inline void SetStartSubdivisionCode(const char* value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode.assign(value); }
-    inline ListGeoLocationsRequest& WithStartSubdivisionCode(const Aws::String& value) { SetStartSubdivisionCode(value); return *this;}
-    inline ListGeoLocationsRequest& WithStartSubdivisionCode(Aws::String&& value) { SetStartSubdivisionCode(std::move(value)); return *this;}
-    inline ListGeoLocationsRequest& WithStartSubdivisionCode(const char* value) { SetStartSubdivisionCode(value); return *this;}
+    template<typename StartSubdivisionCodeT = Aws::String>
+    void SetStartSubdivisionCode(StartSubdivisionCodeT&& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = std::forward<StartSubdivisionCodeT>(value); }
+    template<typename StartSubdivisionCodeT = Aws::String>
+    ListGeoLocationsRequest& WithStartSubdivisionCode(StartSubdivisionCodeT&& value) { SetStartSubdivisionCode(std::forward<StartSubdivisionCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * be listed, then the value of the <code>IsTruncated</code> element in the
      * response is <code>true</code>.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListGeoLocationsRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListGeoLocationsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListGeoLocationsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListGeoLocationsRequest& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
   private:
 

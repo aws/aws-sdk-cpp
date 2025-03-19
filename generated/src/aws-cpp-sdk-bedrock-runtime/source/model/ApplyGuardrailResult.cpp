@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ApplyGuardrailResult::ApplyGuardrailResult() : 
-    m_action(GuardrailAction::NOT_SET)
-{
-}
-
 ApplyGuardrailResult::ApplyGuardrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ApplyGuardrailResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ApplyGuardrailResult& ApplyGuardrailResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("usage"))
   {
     m_usage = jsonValue.GetObject("usage");
-
+    m_usageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailActionMapper::GetGuardrailActionForName(jsonValue.GetString("action"));
-
+    m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
@@ -50,8 +42,8 @@ ApplyGuardrailResult& ApplyGuardrailResult::operator =(const Aws::AmazonWebServi
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
     }
+    m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessments"))
   {
     Aws::Utils::Array<JsonView> assessmentsJsonList = jsonValue.GetArray("assessments");
@@ -59,20 +51,20 @@ ApplyGuardrailResult& ApplyGuardrailResult::operator =(const Aws::AmazonWebServi
     {
       m_assessments.push_back(assessmentsJsonList[assessmentsIndex].AsObject());
     }
+    m_assessmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailCoverage"))
   {
     m_guardrailCoverage = jsonValue.GetObject("guardrailCoverage");
-
+    m_guardrailCoverageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchPutAssetPropertyError::BatchPutAssetPropertyError() : 
-    m_errorCode(BatchPutAssetPropertyValueErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_timestampsHasBeenSet(false)
-{
-}
-
 BatchPutAssetPropertyError::BatchPutAssetPropertyError(JsonView jsonValue)
-  : BatchPutAssetPropertyError()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BatchPutAssetPropertyError& BatchPutAssetPropertyError::operator =(JsonView json
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = BatchPutAssetPropertyValueErrorCodeMapper::GetBatchPutAssetPropertyValueErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
@@ -57,7 +44,6 @@ BatchPutAssetPropertyError& BatchPutAssetPropertyError::operator =(JsonView json
     }
     m_timestampsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class GetCrlRequest : public RolesAnywhereRequest
   {
   public:
-    AWS_ROLESANYWHERE_API GetCrlRequest();
+    AWS_ROLESANYWHERE_API GetCrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the certificate revocation list (CRL).</p>
      */
-    inline const Aws::String& GetCrlId() const{ return m_crlId; }
+    inline const Aws::String& GetCrlId() const { return m_crlId; }
     inline bool CrlIdHasBeenSet() const { return m_crlIdHasBeenSet; }
-    inline void SetCrlId(const Aws::String& value) { m_crlIdHasBeenSet = true; m_crlId = value; }
-    inline void SetCrlId(Aws::String&& value) { m_crlIdHasBeenSet = true; m_crlId = std::move(value); }
-    inline void SetCrlId(const char* value) { m_crlIdHasBeenSet = true; m_crlId.assign(value); }
-    inline GetCrlRequest& WithCrlId(const Aws::String& value) { SetCrlId(value); return *this;}
-    inline GetCrlRequest& WithCrlId(Aws::String&& value) { SetCrlId(std::move(value)); return *this;}
-    inline GetCrlRequest& WithCrlId(const char* value) { SetCrlId(value); return *this;}
+    template<typename CrlIdT = Aws::String>
+    void SetCrlId(CrlIdT&& value) { m_crlIdHasBeenSet = true; m_crlId = std::forward<CrlIdT>(value); }
+    template<typename CrlIdT = Aws::String>
+    GetCrlRequest& WithCrlId(CrlIdT&& value) { SetCrlId(std::forward<CrlIdT>(value)); return *this;}
     ///@}
   private:
 

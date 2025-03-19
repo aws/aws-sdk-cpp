@@ -27,7 +27,7 @@ namespace Model
   class ChannelFlowCallbackResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ChannelFlowCallbackResult();
+    AWS_CHIMESDKMESSAGING_API ChannelFlowCallbackResult() = default;
     AWS_CHIMESDKMESSAGING_API ChannelFlowCallbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API ChannelFlowCallbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The ARN of the channel.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-    inline ChannelFlowCallbackResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline ChannelFlowCallbackResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline ChannelFlowCallbackResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    ChannelFlowCallbackResult& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The call back ID passed in the request.</p>
      */
-    inline const Aws::String& GetCallbackId() const{ return m_callbackId; }
-    inline void SetCallbackId(const Aws::String& value) { m_callbackId = value; }
-    inline void SetCallbackId(Aws::String&& value) { m_callbackId = std::move(value); }
-    inline void SetCallbackId(const char* value) { m_callbackId.assign(value); }
-    inline ChannelFlowCallbackResult& WithCallbackId(const Aws::String& value) { SetCallbackId(value); return *this;}
-    inline ChannelFlowCallbackResult& WithCallbackId(Aws::String&& value) { SetCallbackId(std::move(value)); return *this;}
-    inline ChannelFlowCallbackResult& WithCallbackId(const char* value) { SetCallbackId(value); return *this;}
+    inline const Aws::String& GetCallbackId() const { return m_callbackId; }
+    template<typename CallbackIdT = Aws::String>
+    void SetCallbackId(CallbackIdT&& value) { m_callbackIdHasBeenSet = true; m_callbackId = std::forward<CallbackIdT>(value); }
+    template<typename CallbackIdT = Aws::String>
+    ChannelFlowCallbackResult& WithCallbackId(CallbackIdT&& value) { SetCallbackId(std::forward<CallbackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ChannelFlowCallbackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ChannelFlowCallbackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ChannelFlowCallbackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ChannelFlowCallbackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelArn;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_callbackId;
+    bool m_callbackIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

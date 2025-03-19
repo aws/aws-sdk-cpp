@@ -33,7 +33,7 @@ namespace Model
   class AwsEcsTaskVolumeDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskVolumeDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskVolumeDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskVolumeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskVolumeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsEcsTaskVolumeDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsEcsTaskVolumeDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsEcsTaskVolumeDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsEcsTaskVolumeDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * contents of the <code>host</code> parameter determine whether your bind mount
      * host volume persists on the host container instance and where it's stored. </p>
      */
-    inline const AwsEcsTaskVolumeHostDetails& GetHost() const{ return m_host; }
+    inline const AwsEcsTaskVolumeHostDetails& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const AwsEcsTaskVolumeHostDetails& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(AwsEcsTaskVolumeHostDetails&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline AwsEcsTaskVolumeDetails& WithHost(const AwsEcsTaskVolumeHostDetails& value) { SetHost(value); return *this;}
-    inline AwsEcsTaskVolumeDetails& WithHost(AwsEcsTaskVolumeHostDetails&& value) { SetHost(std::move(value)); return *this;}
+    template<typename HostT = AwsEcsTaskVolumeHostDetails>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = AwsEcsTaskVolumeHostDetails>
+    AwsEcsTaskVolumeDetails& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
   private:
 

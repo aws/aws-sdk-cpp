@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FindingProviderSeverity::FindingProviderSeverity() : 
-    m_label(SeverityLabel::NOT_SET),
-    m_labelHasBeenSet(false),
-    m_originalHasBeenSet(false)
-{
-}
-
 FindingProviderSeverity::FindingProviderSeverity(JsonView jsonValue)
-  : FindingProviderSeverity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FindingProviderSeverity& FindingProviderSeverity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Label"))
   {
     m_label = SeverityLabelMapper::GetSeverityLabelForName(jsonValue.GetString("Label"));
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Original"))
   {
     m_original = jsonValue.GetString("Original");
-
     m_originalHasBeenSet = true;
   }
-
   return *this;
 }
 

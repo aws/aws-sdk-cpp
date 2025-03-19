@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeSpotFleetInstancesRequest::DescribeSpotFleetInstancesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSpotFleetInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

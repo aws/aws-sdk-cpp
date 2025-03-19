@@ -33,7 +33,7 @@ namespace Model
   class DescribeRouteResult
   {
   public:
-    AWS_APPMESH_API DescribeRouteResult();
+    AWS_APPMESH_API DescribeRouteResult() = default;
     AWS_APPMESH_API DescribeRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API DescribeRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The full description of your route.</p>
      */
-    inline const RouteData& GetRoute() const{ return m_route; }
-    inline void SetRoute(const RouteData& value) { m_route = value; }
-    inline void SetRoute(RouteData&& value) { m_route = std::move(value); }
-    inline DescribeRouteResult& WithRoute(const RouteData& value) { SetRoute(value); return *this;}
-    inline DescribeRouteResult& WithRoute(RouteData&& value) { SetRoute(std::move(value)); return *this;}
+    inline const RouteData& GetRoute() const { return m_route; }
+    template<typename RouteT = RouteData>
+    void SetRoute(RouteT&& value) { m_routeHasBeenSet = true; m_route = std::forward<RouteT>(value); }
+    template<typename RouteT = RouteData>
+    DescribeRouteResult& WithRoute(RouteT&& value) { SetRoute(std::forward<RouteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRouteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRouteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRouteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RouteData m_route;
+    bool m_routeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

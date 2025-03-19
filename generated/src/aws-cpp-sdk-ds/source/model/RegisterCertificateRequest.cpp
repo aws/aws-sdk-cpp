@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterCertificateRequest::RegisterCertificateRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_certificateDataHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_clientCertAuthSettingsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

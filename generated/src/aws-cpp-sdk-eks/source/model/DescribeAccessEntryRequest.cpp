@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccessEntryRequest::DescribeAccessEntryRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccessEntryRequest::SerializePayload() const
 {
   return {};

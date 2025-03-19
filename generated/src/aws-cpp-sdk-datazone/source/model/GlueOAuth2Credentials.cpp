@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GlueOAuth2Credentials::GlueOAuth2Credentials() : 
-    m_accessTokenHasBeenSet(false),
-    m_jwtTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_userManagedClientApplicationClientSecretHasBeenSet(false)
-{
-}
-
 GlueOAuth2Credentials::GlueOAuth2Credentials(JsonView jsonValue)
-  : GlueOAuth2Credentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ GlueOAuth2Credentials& GlueOAuth2Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jwtToken"))
   {
     m_jwtToken = jsonValue.GetString("jwtToken");
-
     m_jwtTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshToken"))
   {
     m_refreshToken = jsonValue.GetString("refreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userManagedClientApplicationClientSecret"))
   {
     m_userManagedClientApplicationClientSecret = jsonValue.GetString("userManagedClientApplicationClientSecret");
-
     m_userManagedClientApplicationClientSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

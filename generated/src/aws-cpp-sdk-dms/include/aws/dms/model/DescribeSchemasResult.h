@@ -33,7 +33,7 @@ namespace Model
   class DescribeSchemasResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeSchemasResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeSchemasResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeSchemasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeSchemasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,46 +44,44 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeSchemasResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeSchemasResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeSchemasResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeSchemasResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The described schema.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSchemas() const{ return m_schemas; }
-    inline void SetSchemas(const Aws::Vector<Aws::String>& value) { m_schemas = value; }
-    inline void SetSchemas(Aws::Vector<Aws::String>&& value) { m_schemas = std::move(value); }
-    inline DescribeSchemasResult& WithSchemas(const Aws::Vector<Aws::String>& value) { SetSchemas(value); return *this;}
-    inline DescribeSchemasResult& WithSchemas(Aws::Vector<Aws::String>&& value) { SetSchemas(std::move(value)); return *this;}
-    inline DescribeSchemasResult& AddSchemas(const Aws::String& value) { m_schemas.push_back(value); return *this; }
-    inline DescribeSchemasResult& AddSchemas(Aws::String&& value) { m_schemas.push_back(std::move(value)); return *this; }
-    inline DescribeSchemasResult& AddSchemas(const char* value) { m_schemas.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSchemas() const { return m_schemas; }
+    template<typename SchemasT = Aws::Vector<Aws::String>>
+    void SetSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas = std::forward<SchemasT>(value); }
+    template<typename SchemasT = Aws::Vector<Aws::String>>
+    DescribeSchemasResult& WithSchemas(SchemasT&& value) { SetSchemas(std::forward<SchemasT>(value)); return *this;}
+    template<typename SchemasT = Aws::String>
+    DescribeSchemasResult& AddSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas.emplace_back(std::forward<SchemasT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSchemasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSchemasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSchemasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSchemasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_schemas;
+    bool m_schemasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

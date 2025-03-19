@@ -32,7 +32,7 @@ namespace Model
   class AutomationExecution
   {
   public:
-    AWS_SSMINCIDENTS_API AutomationExecution();
+    AWS_SSMINCIDENTS_API AutomationExecution() = default;
     AWS_SSMINCIDENTS_API AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the automation process.</p>
      */
-    inline const Aws::String& GetSsmExecutionArn() const{ return m_ssmExecutionArn; }
+    inline const Aws::String& GetSsmExecutionArn() const { return m_ssmExecutionArn; }
     inline bool SsmExecutionArnHasBeenSet() const { return m_ssmExecutionArnHasBeenSet; }
-    inline void SetSsmExecutionArn(const Aws::String& value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn = value; }
-    inline void SetSsmExecutionArn(Aws::String&& value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn = std::move(value); }
-    inline void SetSsmExecutionArn(const char* value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn.assign(value); }
-    inline AutomationExecution& WithSsmExecutionArn(const Aws::String& value) { SetSsmExecutionArn(value); return *this;}
-    inline AutomationExecution& WithSsmExecutionArn(Aws::String&& value) { SetSsmExecutionArn(std::move(value)); return *this;}
-    inline AutomationExecution& WithSsmExecutionArn(const char* value) { SetSsmExecutionArn(value); return *this;}
+    template<typename SsmExecutionArnT = Aws::String>
+    void SetSsmExecutionArn(SsmExecutionArnT&& value) { m_ssmExecutionArnHasBeenSet = true; m_ssmExecutionArn = std::forward<SsmExecutionArnT>(value); }
+    template<typename SsmExecutionArnT = Aws::String>
+    AutomationExecution& WithSsmExecutionArn(SsmExecutionArnT&& value) { SetSsmExecutionArn(std::forward<SsmExecutionArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGroupCertificateConfigurationRequest::GetGroupCertificateConfigurationRequest() : 
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupCertificateConfigurationRequest::SerializePayload() const
 {
   return {};

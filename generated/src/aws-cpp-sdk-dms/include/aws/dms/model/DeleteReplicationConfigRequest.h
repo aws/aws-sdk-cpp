@@ -24,7 +24,7 @@ namespace Model
   class DeleteReplicationConfigRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationConfigRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The replication config to delete.</p>
      */
-    inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
+    inline const Aws::String& GetReplicationConfigArn() const { return m_replicationConfigArn; }
     inline bool ReplicationConfigArnHasBeenSet() const { return m_replicationConfigArnHasBeenSet; }
-    inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = value; }
-    inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::move(value); }
-    inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn.assign(value); }
-    inline DeleteReplicationConfigRequest& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
-    inline DeleteReplicationConfigRequest& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
-    inline DeleteReplicationConfigRequest& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
+    template<typename ReplicationConfigArnT = Aws::String>
+    void SetReplicationConfigArn(ReplicationConfigArnT&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::forward<ReplicationConfigArnT>(value); }
+    template<typename ReplicationConfigArnT = Aws::String>
+    DeleteReplicationConfigRequest& WithReplicationConfigArn(ReplicationConfigArnT&& value) { SetReplicationConfigArn(std::forward<ReplicationConfigArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_CUSTOMERPROFILES_API Filter();
+    AWS_CUSTOMERPROFILES_API Filter() = default;
     AWS_CUSTOMERPROFILES_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,28 @@ namespace Model
      * <p>Define whether to include or exclude objects for Calculated Attributed
      * calculation that fit the filter groups criteria.</p>
      */
-    inline const Include& GetInclude() const{ return m_include; }
+    inline Include GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Include& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Include&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline Filter& WithInclude(const Include& value) { SetInclude(value); return *this;}
-    inline Filter& WithInclude(Include&& value) { SetInclude(std::move(value)); return *this;}
+    inline void SetInclude(Include value) { m_includeHasBeenSet = true; m_include = value; }
+    inline Filter& WithInclude(Include value) { SetInclude(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Holds the list of Filter groups within the Filter definition.</p>
      */
-    inline const Aws::Vector<FilterGroup>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<FilterGroup>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<FilterGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<FilterGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline Filter& WithGroups(const Aws::Vector<FilterGroup>& value) { SetGroups(value); return *this;}
-    inline Filter& WithGroups(Aws::Vector<FilterGroup>&& value) { SetGroups(std::move(value)); return *this;}
-    inline Filter& AddGroups(const FilterGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline Filter& AddGroups(FilterGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    template<typename GroupsT = Aws::Vector<FilterGroup>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<FilterGroup>>
+    Filter& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = FilterGroup>
+    Filter& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
   private:
 
-    Include m_include;
+    Include m_include{Include::NOT_SET};
     bool m_includeHasBeenSet = false;
 
     Aws::Vector<FilterGroup> m_groups;

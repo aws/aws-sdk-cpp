@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageTemplateOrderField::MessageTemplateOrderField() : 
-    m_nameHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 MessageTemplateOrderField::MessageTemplateOrderField(JsonView jsonValue)
-  : MessageTemplateOrderField()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MessageTemplateOrderField& MessageTemplateOrderField::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = OrderMapper::GetOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace IoT1ClickProjects
 namespace Model
 {
 
-TooManyRequestsException::TooManyRequestsException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-  : TooManyRequestsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

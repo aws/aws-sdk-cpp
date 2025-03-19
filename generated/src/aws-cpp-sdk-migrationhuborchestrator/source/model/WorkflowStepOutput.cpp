@@ -18,18 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-WorkflowStepOutput::WorkflowStepOutput() : 
-    m_nameHasBeenSet(false),
-    m_dataType(DataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 WorkflowStepOutput::WorkflowStepOutput(JsonView jsonValue)
-  : WorkflowStepOutput()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ WorkflowStepOutput& WorkflowStepOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = DataTypeMapper::GetDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

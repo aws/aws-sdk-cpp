@@ -18,16 +18,7 @@ namespace signer
 namespace Model
 {
 
-Permission::Permission() : 
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_profileVersionHasBeenSet(false)
-{
-}
-
 Permission::Permission(JsonView jsonValue)
-  : Permission()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Permission& Permission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetString("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statementId"))
   {
     m_statementId = jsonValue.GetString("statementId");
-
     m_statementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileVersion"))
   {
     m_profileVersion = jsonValue.GetString("profileVersion");
-
     m_profileVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

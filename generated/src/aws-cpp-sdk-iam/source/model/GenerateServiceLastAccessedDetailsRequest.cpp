@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GenerateServiceLastAccessedDetailsRequest::GenerateServiceLastAccessedDetailsRequest() : 
-    m_arnHasBeenSet(false),
-    m_granularity(AccessAdvisorUsageGranularityType::NOT_SET),
-    m_granularityHasBeenSet(false)
-{
-}
-
 Aws::String GenerateServiceLastAccessedDetailsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

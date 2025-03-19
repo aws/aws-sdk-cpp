@@ -22,7 +22,7 @@ namespace Model
   class DescribeCommandsRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeCommandsRequest();
+    AWS_OPSWORKS_API DescribeCommandsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the commands associated
      * with the specified deployment.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline DescribeCommandsRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline DescribeCommandsRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline DescribeCommandsRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    DescribeCommandsRequest& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * returns a description of the commands associated with the specified
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribeCommandsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribeCommandsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribeCommandsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribeCommandsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,15 +69,14 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the specified commands.
      * Otherwise, it returns a description of every command.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommandIds() const{ return m_commandIds; }
+    inline const Aws::Vector<Aws::String>& GetCommandIds() const { return m_commandIds; }
     inline bool CommandIdsHasBeenSet() const { return m_commandIdsHasBeenSet; }
-    inline void SetCommandIds(const Aws::Vector<Aws::String>& value) { m_commandIdsHasBeenSet = true; m_commandIds = value; }
-    inline void SetCommandIds(Aws::Vector<Aws::String>&& value) { m_commandIdsHasBeenSet = true; m_commandIds = std::move(value); }
-    inline DescribeCommandsRequest& WithCommandIds(const Aws::Vector<Aws::String>& value) { SetCommandIds(value); return *this;}
-    inline DescribeCommandsRequest& WithCommandIds(Aws::Vector<Aws::String>&& value) { SetCommandIds(std::move(value)); return *this;}
-    inline DescribeCommandsRequest& AddCommandIds(const Aws::String& value) { m_commandIdsHasBeenSet = true; m_commandIds.push_back(value); return *this; }
-    inline DescribeCommandsRequest& AddCommandIds(Aws::String&& value) { m_commandIdsHasBeenSet = true; m_commandIds.push_back(std::move(value)); return *this; }
-    inline DescribeCommandsRequest& AddCommandIds(const char* value) { m_commandIdsHasBeenSet = true; m_commandIds.push_back(value); return *this; }
+    template<typename CommandIdsT = Aws::Vector<Aws::String>>
+    void SetCommandIds(CommandIdsT&& value) { m_commandIdsHasBeenSet = true; m_commandIds = std::forward<CommandIdsT>(value); }
+    template<typename CommandIdsT = Aws::Vector<Aws::String>>
+    DescribeCommandsRequest& WithCommandIds(CommandIdsT&& value) { SetCommandIds(std::forward<CommandIdsT>(value)); return *this;}
+    template<typename CommandIdsT = Aws::String>
+    DescribeCommandsRequest& AddCommandIds(CommandIdsT&& value) { m_commandIdsHasBeenSet = true; m_commandIds.emplace_back(std::forward<CommandIdsT>(value)); return *this; }
     ///@}
   private:
 

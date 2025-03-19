@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DatasetDefinition::DatasetDefinition() : 
-    m_athenaDatasetDefinitionHasBeenSet(false),
-    m_redshiftDatasetDefinitionHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_dataDistributionType(DataDistributionType::NOT_SET),
-    m_dataDistributionTypeHasBeenSet(false),
-    m_inputMode(InputMode::NOT_SET),
-    m_inputModeHasBeenSet(false)
-{
-}
-
 DatasetDefinition::DatasetDefinition(JsonView jsonValue)
-  : DatasetDefinition()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DatasetDefinition& DatasetDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AthenaDatasetDefinition"))
   {
     m_athenaDatasetDefinition = jsonValue.GetObject("AthenaDatasetDefinition");
-
     m_athenaDatasetDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDatasetDefinition"))
   {
     m_redshiftDatasetDefinition = jsonValue.GetObject("RedshiftDatasetDefinition");
-
     m_redshiftDatasetDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalPath"))
   {
     m_localPath = jsonValue.GetString("LocalPath");
-
     m_localPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataDistributionType"))
   {
     m_dataDistributionType = DataDistributionTypeMapper::GetDataDistributionTypeForName(jsonValue.GetString("DataDistributionType"));
-
     m_dataDistributionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputMode"))
   {
     m_inputMode = InputModeMapper::GetInputModeForName(jsonValue.GetString("InputMode"));
-
     m_inputModeHasBeenSet = true;
   }
-
   return *this;
 }
 

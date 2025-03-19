@@ -18,16 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-UploadConfiguration::UploadConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_uploadBehavior(UploadBehavior::NOT_SET),
-    m_uploadBehaviorHasBeenSet(false)
-{
-}
-
 UploadConfiguration::UploadConfiguration(JsonView jsonValue)
-  : UploadConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UploadConfiguration& UploadConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadBehavior"))
   {
     m_uploadBehavior = UploadBehaviorMapper::GetUploadBehaviorForName(jsonValue.GetString("uploadBehavior"));
-
     m_uploadBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

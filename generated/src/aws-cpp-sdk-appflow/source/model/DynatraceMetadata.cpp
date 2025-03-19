@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-DynatraceMetadata::DynatraceMetadata()
-{
-}
-
 DynatraceMetadata::DynatraceMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

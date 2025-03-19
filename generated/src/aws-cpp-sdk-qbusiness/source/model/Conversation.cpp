@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Conversation::Conversation() : 
-    m_conversationIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Conversation::Conversation(JsonView jsonValue)
-  : Conversation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Conversation& Conversation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

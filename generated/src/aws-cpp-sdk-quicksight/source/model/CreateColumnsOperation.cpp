@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CreateColumnsOperation::CreateColumnsOperation() : 
-    m_columnsHasBeenSet(false)
-{
-}
-
 CreateColumnsOperation::CreateColumnsOperation(JsonView jsonValue)
-  : CreateColumnsOperation()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CreateColumnsOperation& CreateColumnsOperation::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

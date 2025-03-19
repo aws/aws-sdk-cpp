@@ -12,14 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddProfileKeyRequest::AddProfileKeyRequest() : 
-    m_profileIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String AddProfileKeyRequest::SerializePayload() const
 {
   JsonValue payload;

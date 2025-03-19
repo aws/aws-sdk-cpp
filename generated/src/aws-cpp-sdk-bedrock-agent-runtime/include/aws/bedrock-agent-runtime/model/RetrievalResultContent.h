@@ -44,7 +44,7 @@ namespace Model
   class RetrievalResultContent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultContent();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultContent() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * the following format: returned in the following format:
      * <code>data:image/jpeg;base64,${base64-encoded string}</code>.</p>
      */
-    inline const Aws::String& GetByteContent() const{ return m_byteContent; }
+    inline const Aws::String& GetByteContent() const { return m_byteContent; }
     inline bool ByteContentHasBeenSet() const { return m_byteContentHasBeenSet; }
-    inline void SetByteContent(const Aws::String& value) { m_byteContentHasBeenSet = true; m_byteContent = value; }
-    inline void SetByteContent(Aws::String&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::move(value); }
-    inline void SetByteContent(const char* value) { m_byteContentHasBeenSet = true; m_byteContent.assign(value); }
-    inline RetrievalResultContent& WithByteContent(const Aws::String& value) { SetByteContent(value); return *this;}
-    inline RetrievalResultContent& WithByteContent(Aws::String&& value) { SetByteContent(std::move(value)); return *this;}
-    inline RetrievalResultContent& WithByteContent(const char* value) { SetByteContent(value); return *this;}
+    template<typename ByteContentT = Aws::String>
+    void SetByteContent(ByteContentT&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::forward<ByteContentT>(value); }
+    template<typename ByteContentT = Aws::String>
+    RetrievalResultContent& WithByteContent(ByteContentT&& value) { SetByteContent(std::forward<ByteContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,40 +69,36 @@ namespace Model
      * <p>Specifies information about the rows with the cells to return in
      * retrieval.</p>
      */
-    inline const Aws::Vector<RetrievalResultContentColumn>& GetRow() const{ return m_row; }
+    inline const Aws::Vector<RetrievalResultContentColumn>& GetRow() const { return m_row; }
     inline bool RowHasBeenSet() const { return m_rowHasBeenSet; }
-    inline void SetRow(const Aws::Vector<RetrievalResultContentColumn>& value) { m_rowHasBeenSet = true; m_row = value; }
-    inline void SetRow(Aws::Vector<RetrievalResultContentColumn>&& value) { m_rowHasBeenSet = true; m_row = std::move(value); }
-    inline RetrievalResultContent& WithRow(const Aws::Vector<RetrievalResultContentColumn>& value) { SetRow(value); return *this;}
-    inline RetrievalResultContent& WithRow(Aws::Vector<RetrievalResultContentColumn>&& value) { SetRow(std::move(value)); return *this;}
-    inline RetrievalResultContent& AddRow(const RetrievalResultContentColumn& value) { m_rowHasBeenSet = true; m_row.push_back(value); return *this; }
-    inline RetrievalResultContent& AddRow(RetrievalResultContentColumn&& value) { m_rowHasBeenSet = true; m_row.push_back(std::move(value)); return *this; }
+    template<typename RowT = Aws::Vector<RetrievalResultContentColumn>>
+    void SetRow(RowT&& value) { m_rowHasBeenSet = true; m_row = std::forward<RowT>(value); }
+    template<typename RowT = Aws::Vector<RetrievalResultContentColumn>>
+    RetrievalResultContent& WithRow(RowT&& value) { SetRow(std::forward<RowT>(value)); return *this;}
+    template<typename RowT = RetrievalResultContentColumn>
+    RetrievalResultContent& AddRow(RowT&& value) { m_rowHasBeenSet = true; m_row.emplace_back(std::forward<RowT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The cited text from the data source.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline RetrievalResultContent& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline RetrievalResultContent& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline RetrievalResultContent& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    RetrievalResultContent& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of content in the retrieval result.</p>
      */
-    inline const RetrievalResultContentType& GetType() const{ return m_type; }
+    inline RetrievalResultContentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RetrievalResultContentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RetrievalResultContentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RetrievalResultContent& WithType(const RetrievalResultContentType& value) { SetType(value); return *this;}
-    inline RetrievalResultContent& WithType(RetrievalResultContentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RetrievalResultContentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RetrievalResultContent& WithType(RetrievalResultContentType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -117,7 +111,7 @@ namespace Model
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    RetrievalResultContentType m_type;
+    RetrievalResultContentType m_type{RetrievalResultContentType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

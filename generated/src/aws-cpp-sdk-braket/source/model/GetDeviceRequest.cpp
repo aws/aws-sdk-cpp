@@ -12,11 +12,6 @@ using namespace Aws::Braket::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceRequest::GetDeviceRequest() : 
-    m_deviceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceRequest::SerializePayload() const
 {
   return {};

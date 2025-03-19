@@ -21,7 +21,7 @@ namespace Model
   class SetDefaultAuthorizerRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API SetDefaultAuthorizerRequest();
+    AWS_IOT_API SetDefaultAuthorizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
-    inline const Aws::String& GetAuthorizerName() const{ return m_authorizerName; }
+    inline const Aws::String& GetAuthorizerName() const { return m_authorizerName; }
     inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
-    inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
-    inline void SetAuthorizerName(Aws::String&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::move(value); }
-    inline void SetAuthorizerName(const char* value) { m_authorizerNameHasBeenSet = true; m_authorizerName.assign(value); }
-    inline SetDefaultAuthorizerRequest& WithAuthorizerName(const Aws::String& value) { SetAuthorizerName(value); return *this;}
-    inline SetDefaultAuthorizerRequest& WithAuthorizerName(Aws::String&& value) { SetAuthorizerName(std::move(value)); return *this;}
-    inline SetDefaultAuthorizerRequest& WithAuthorizerName(const char* value) { SetAuthorizerName(value); return *this;}
+    template<typename AuthorizerNameT = Aws::String>
+    void SetAuthorizerName(AuthorizerNameT&& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = std::forward<AuthorizerNameT>(value); }
+    template<typename AuthorizerNameT = Aws::String>
+    SetDefaultAuthorizerRequest& WithAuthorizerName(AuthorizerNameT&& value) { SetAuthorizerName(std::forward<AuthorizerNameT>(value)); return *this;}
     ///@}
   private:
 

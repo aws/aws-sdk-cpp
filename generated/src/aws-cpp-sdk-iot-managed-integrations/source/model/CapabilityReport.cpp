@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-CapabilityReport::CapabilityReport() : 
-    m_versionHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
-{
-}
-
 CapabilityReport::CapabilityReport(JsonView jsonValue)
-  : CapabilityReport()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CapabilityReport& CapabilityReport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeId"))
   {
     m_nodeId = jsonValue.GetString("nodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -56,7 +44,6 @@ CapabilityReport& CapabilityReport::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

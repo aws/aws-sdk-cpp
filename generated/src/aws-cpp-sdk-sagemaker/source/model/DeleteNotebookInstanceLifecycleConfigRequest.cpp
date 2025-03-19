@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNotebookInstanceLifecycleConfigRequest::DeleteNotebookInstanceLifecycleConfigRequest() : 
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotebookInstanceLifecycleConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class BatchRestrictions
   {
   public:
-    AWS_CODEBUILD_API BatchRestrictions();
+    AWS_CODEBUILD_API BatchRestrictions() = default;
     AWS_CODEBUILD_API BatchRestrictions(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API BatchRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Specifies the maximum number of builds allowed.</p>
      */
-    inline int GetMaximumBuildsAllowed() const{ return m_maximumBuildsAllowed; }
+    inline int GetMaximumBuildsAllowed() const { return m_maximumBuildsAllowed; }
     inline bool MaximumBuildsAllowedHasBeenSet() const { return m_maximumBuildsAllowedHasBeenSet; }
     inline void SetMaximumBuildsAllowed(int value) { m_maximumBuildsAllowedHasBeenSet = true; m_maximumBuildsAllowed = value; }
     inline BatchRestrictions& WithMaximumBuildsAllowed(int value) { SetMaximumBuildsAllowed(value); return *this;}
@@ -56,15 +56,14 @@ namespace Model
      * environment compute types</a> in the <i>CodeBuild User Guide</i> for these
      * values. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetComputeTypesAllowed() const{ return m_computeTypesAllowed; }
+    inline const Aws::Vector<Aws::String>& GetComputeTypesAllowed() const { return m_computeTypesAllowed; }
     inline bool ComputeTypesAllowedHasBeenSet() const { return m_computeTypesAllowedHasBeenSet; }
-    inline void SetComputeTypesAllowed(const Aws::Vector<Aws::String>& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed = value; }
-    inline void SetComputeTypesAllowed(Aws::Vector<Aws::String>&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed = std::move(value); }
-    inline BatchRestrictions& WithComputeTypesAllowed(const Aws::Vector<Aws::String>& value) { SetComputeTypesAllowed(value); return *this;}
-    inline BatchRestrictions& WithComputeTypesAllowed(Aws::Vector<Aws::String>&& value) { SetComputeTypesAllowed(std::move(value)); return *this;}
-    inline BatchRestrictions& AddComputeTypesAllowed(const Aws::String& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(value); return *this; }
-    inline BatchRestrictions& AddComputeTypesAllowed(Aws::String&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(std::move(value)); return *this; }
-    inline BatchRestrictions& AddComputeTypesAllowed(const char* value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.push_back(value); return *this; }
+    template<typename ComputeTypesAllowedT = Aws::Vector<Aws::String>>
+    void SetComputeTypesAllowed(ComputeTypesAllowedT&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed = std::forward<ComputeTypesAllowedT>(value); }
+    template<typename ComputeTypesAllowedT = Aws::Vector<Aws::String>>
+    BatchRestrictions& WithComputeTypesAllowed(ComputeTypesAllowedT&& value) { SetComputeTypesAllowed(std::forward<ComputeTypesAllowedT>(value)); return *this;}
+    template<typename ComputeTypesAllowedT = Aws::String>
+    BatchRestrictions& AddComputeTypesAllowed(ComputeTypesAllowedT&& value) { m_computeTypesAllowedHasBeenSet = true; m_computeTypesAllowed.emplace_back(std::forward<ComputeTypesAllowedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,19 +74,18 @@ namespace Model
      * builds on reserved capacity fleets</a> in the <i>CodeBuild User Guide</i> for
      * more information. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFleetsAllowed() const{ return m_fleetsAllowed; }
+    inline const Aws::Vector<Aws::String>& GetFleetsAllowed() const { return m_fleetsAllowed; }
     inline bool FleetsAllowedHasBeenSet() const { return m_fleetsAllowedHasBeenSet; }
-    inline void SetFleetsAllowed(const Aws::Vector<Aws::String>& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed = value; }
-    inline void SetFleetsAllowed(Aws::Vector<Aws::String>&& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed = std::move(value); }
-    inline BatchRestrictions& WithFleetsAllowed(const Aws::Vector<Aws::String>& value) { SetFleetsAllowed(value); return *this;}
-    inline BatchRestrictions& WithFleetsAllowed(Aws::Vector<Aws::String>&& value) { SetFleetsAllowed(std::move(value)); return *this;}
-    inline BatchRestrictions& AddFleetsAllowed(const Aws::String& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.push_back(value); return *this; }
-    inline BatchRestrictions& AddFleetsAllowed(Aws::String&& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.push_back(std::move(value)); return *this; }
-    inline BatchRestrictions& AddFleetsAllowed(const char* value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.push_back(value); return *this; }
+    template<typename FleetsAllowedT = Aws::Vector<Aws::String>>
+    void SetFleetsAllowed(FleetsAllowedT&& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed = std::forward<FleetsAllowedT>(value); }
+    template<typename FleetsAllowedT = Aws::Vector<Aws::String>>
+    BatchRestrictions& WithFleetsAllowed(FleetsAllowedT&& value) { SetFleetsAllowed(std::forward<FleetsAllowedT>(value)); return *this;}
+    template<typename FleetsAllowedT = Aws::String>
+    BatchRestrictions& AddFleetsAllowed(FleetsAllowedT&& value) { m_fleetsAllowedHasBeenSet = true; m_fleetsAllowed.emplace_back(std::forward<FleetsAllowedT>(value)); return *this; }
     ///@}
   private:
 
-    int m_maximumBuildsAllowed;
+    int m_maximumBuildsAllowed{0};
     bool m_maximumBuildsAllowedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_computeTypesAllowed;

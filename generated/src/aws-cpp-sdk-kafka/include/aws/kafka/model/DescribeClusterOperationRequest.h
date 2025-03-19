@@ -21,7 +21,7 @@ namespace Model
   class DescribeClusterOperationRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API DescribeClusterOperationRequest();
+    AWS_KAFKA_API DescribeClusterOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * cluster operation.</p>
          
      */
-    inline const Aws::String& GetClusterOperationArn() const{ return m_clusterOperationArn; }
+    inline const Aws::String& GetClusterOperationArn() const { return m_clusterOperationArn; }
     inline bool ClusterOperationArnHasBeenSet() const { return m_clusterOperationArnHasBeenSet; }
-    inline void SetClusterOperationArn(const Aws::String& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = value; }
-    inline void SetClusterOperationArn(Aws::String&& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = std::move(value); }
-    inline void SetClusterOperationArn(const char* value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn.assign(value); }
-    inline DescribeClusterOperationRequest& WithClusterOperationArn(const Aws::String& value) { SetClusterOperationArn(value); return *this;}
-    inline DescribeClusterOperationRequest& WithClusterOperationArn(Aws::String&& value) { SetClusterOperationArn(std::move(value)); return *this;}
-    inline DescribeClusterOperationRequest& WithClusterOperationArn(const char* value) { SetClusterOperationArn(value); return *this;}
+    template<typename ClusterOperationArnT = Aws::String>
+    void SetClusterOperationArn(ClusterOperationArnT&& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = std::forward<ClusterOperationArnT>(value); }
+    template<typename ClusterOperationArnT = Aws::String>
+    DescribeClusterOperationRequest& WithClusterOperationArn(ClusterOperationArnT&& value) { SetClusterOperationArn(std::forward<ClusterOperationArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class DnsProperties
   {
   public:
-    AWS_SERVICEDISCOVERY_API DnsProperties();
+    AWS_SERVICEDISCOVERY_API DnsProperties() = default;
     AWS_SERVICEDISCOVERY_API DnsProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API DnsProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The ID for the Route 53 hosted zone that Cloud Map creates when you create a
      * namespace.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline DnsProperties& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline DnsProperties& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline DnsProperties& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    DnsProperties& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start of Authority (SOA) record for the hosted zone.</p>
      */
-    inline const SOA& GetSOA() const{ return m_sOA; }
+    inline const SOA& GetSOA() const { return m_sOA; }
     inline bool SOAHasBeenSet() const { return m_sOAHasBeenSet; }
-    inline void SetSOA(const SOA& value) { m_sOAHasBeenSet = true; m_sOA = value; }
-    inline void SetSOA(SOA&& value) { m_sOAHasBeenSet = true; m_sOA = std::move(value); }
-    inline DnsProperties& WithSOA(const SOA& value) { SetSOA(value); return *this;}
-    inline DnsProperties& WithSOA(SOA&& value) { SetSOA(std::move(value)); return *this;}
+    template<typename SOAT = SOA>
+    void SetSOA(SOAT&& value) { m_sOAHasBeenSet = true; m_sOA = std::forward<SOAT>(value); }
+    template<typename SOAT = SOA>
+    DnsProperties& WithSOA(SOAT&& value) { SetSOA(std::forward<SOAT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class Ec2ReservedInstancesConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstancesConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstancesConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstancesConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Ec2ReservedInstancesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The account scope that you want your recommendations for.</p>
      */
-    inline const Aws::String& GetAccountScope() const{ return m_accountScope; }
+    inline const Aws::String& GetAccountScope() const { return m_accountScope; }
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
-    inline void SetAccountScope(const Aws::String& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
-    inline void SetAccountScope(Aws::String&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
-    inline void SetAccountScope(const char* value) { m_accountScopeHasBeenSet = true; m_accountScope.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithAccountScope(const Aws::String& value) { SetAccountScope(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithAccountScope(Aws::String&& value) { SetAccountScope(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithAccountScope(const char* value) { SetAccountScope(value); return *this;}
+    template<typename AccountScopeT = Aws::String>
+    void SetAccountScope(AccountScopeT&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::forward<AccountScopeT>(value); }
+    template<typename AccountScopeT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithAccountScope(AccountScopeT&& value) { SetAccountScope(std::forward<AccountScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service that you want your recommendations for.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,42 +67,36 @@ namespace Model
      * <p>The number of normalized units that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const Aws::String& GetNormalizedUnitsToPurchase() const{ return m_normalizedUnitsToPurchase; }
+    inline const Aws::String& GetNormalizedUnitsToPurchase() const { return m_normalizedUnitsToPurchase; }
     inline bool NormalizedUnitsToPurchaseHasBeenSet() const { return m_normalizedUnitsToPurchaseHasBeenSet; }
-    inline void SetNormalizedUnitsToPurchase(const Aws::String& value) { m_normalizedUnitsToPurchaseHasBeenSet = true; m_normalizedUnitsToPurchase = value; }
-    inline void SetNormalizedUnitsToPurchase(Aws::String&& value) { m_normalizedUnitsToPurchaseHasBeenSet = true; m_normalizedUnitsToPurchase = std::move(value); }
-    inline void SetNormalizedUnitsToPurchase(const char* value) { m_normalizedUnitsToPurchaseHasBeenSet = true; m_normalizedUnitsToPurchase.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(const Aws::String& value) { SetNormalizedUnitsToPurchase(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(Aws::String&& value) { SetNormalizedUnitsToPurchase(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(const char* value) { SetNormalizedUnitsToPurchase(value); return *this;}
+    template<typename NormalizedUnitsToPurchaseT = Aws::String>
+    void SetNormalizedUnitsToPurchase(NormalizedUnitsToPurchaseT&& value) { m_normalizedUnitsToPurchaseHasBeenSet = true; m_normalizedUnitsToPurchase = std::forward<NormalizedUnitsToPurchaseT>(value); }
+    template<typename NormalizedUnitsToPurchaseT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithNormalizedUnitsToPurchase(NormalizedUnitsToPurchaseT&& value) { SetNormalizedUnitsToPurchase(std::forward<NormalizedUnitsToPurchaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reserved instances recommendation term in years.</p>
      */
-    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline const Aws::String& GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    template<typename TermT = Aws::String>
+    void SetTerm(TermT&& value) { m_termHasBeenSet = true; m_term = std::forward<TermT>(value); }
+    template<typename TermT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithTerm(TermT&& value) { SetTerm(std::forward<TermT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment option for the commitment.</p>
      */
-    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
+    inline const Aws::String& GetPaymentOption() const { return m_paymentOption; }
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
+    template<typename PaymentOptionT = Aws::String>
+    void SetPaymentOption(PaymentOptionT&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::forward<PaymentOptionT>(value); }
+    template<typename PaymentOptionT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithPaymentOption(PaymentOptionT&& value) { SetPaymentOption(std::forward<PaymentOptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +104,12 @@ namespace Model
      * <p>The number of instances that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const Aws::String& GetNumberOfInstancesToPurchase() const{ return m_numberOfInstancesToPurchase; }
+    inline const Aws::String& GetNumberOfInstancesToPurchase() const { return m_numberOfInstancesToPurchase; }
     inline bool NumberOfInstancesToPurchaseHasBeenSet() const { return m_numberOfInstancesToPurchaseHasBeenSet; }
-    inline void SetNumberOfInstancesToPurchase(const Aws::String& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = value; }
-    inline void SetNumberOfInstancesToPurchase(Aws::String&& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = std::move(value); }
-    inline void SetNumberOfInstancesToPurchase(const char* value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(const Aws::String& value) { SetNumberOfInstancesToPurchase(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(Aws::String&& value) { SetNumberOfInstancesToPurchase(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(const char* value) { SetNumberOfInstancesToPurchase(value); return *this;}
+    template<typename NumberOfInstancesToPurchaseT = Aws::String>
+    void SetNumberOfInstancesToPurchase(NumberOfInstancesToPurchaseT&& value) { m_numberOfInstancesToPurchaseHasBeenSet = true; m_numberOfInstancesToPurchase = std::forward<NumberOfInstancesToPurchaseT>(value); }
+    template<typename NumberOfInstancesToPurchaseT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithNumberOfInstancesToPurchase(NumberOfInstancesToPurchaseT&& value) { SetNumberOfInstancesToPurchase(std::forward<NumberOfInstancesToPurchaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,56 +117,48 @@ namespace Model
      * <p>Indicates whether the recommendation is for standard or convertible
      * reservations.</p>
      */
-    inline const Aws::String& GetOfferingClass() const{ return m_offeringClass; }
+    inline const Aws::String& GetOfferingClass() const { return m_offeringClass; }
     inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
-    inline void SetOfferingClass(const Aws::String& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
-    inline void SetOfferingClass(Aws::String&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
-    inline void SetOfferingClass(const char* value) { m_offeringClassHasBeenSet = true; m_offeringClass.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithOfferingClass(const Aws::String& value) { SetOfferingClass(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithOfferingClass(Aws::String&& value) { SetOfferingClass(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithOfferingClass(const char* value) { SetOfferingClass(value); return *this;}
+    template<typename OfferingClassT = Aws::String>
+    void SetOfferingClass(OfferingClassT&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::forward<OfferingClassT>(value); }
+    template<typename OfferingClassT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithOfferingClass(OfferingClassT&& value) { SetOfferingClass(std::forward<OfferingClassT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance family of the recommended reservation.</p>
      */
-    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+    inline const Aws::String& GetInstanceFamily() const { return m_instanceFamily; }
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
+    template<typename InstanceFamilyT = Aws::String>
+    void SetInstanceFamily(InstanceFamilyT&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::forward<InstanceFamilyT>(value); }
+    template<typename InstanceFamilyT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithInstanceFamily(InstanceFamilyT&& value) { SetInstanceFamily(std::forward<InstanceFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of instance that Amazon Web Services recommends.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region of the commitment.</p>
      */
-    inline const Aws::String& GetReservedInstancesRegion() const{ return m_reservedInstancesRegion; }
+    inline const Aws::String& GetReservedInstancesRegion() const { return m_reservedInstancesRegion; }
     inline bool ReservedInstancesRegionHasBeenSet() const { return m_reservedInstancesRegionHasBeenSet; }
-    inline void SetReservedInstancesRegion(const Aws::String& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = value; }
-    inline void SetReservedInstancesRegion(Aws::String&& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = std::move(value); }
-    inline void SetReservedInstancesRegion(const char* value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(const Aws::String& value) { SetReservedInstancesRegion(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(Aws::String&& value) { SetReservedInstancesRegion(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(const char* value) { SetReservedInstancesRegion(value); return *this;}
+    template<typename ReservedInstancesRegionT = Aws::String>
+    void SetReservedInstancesRegion(ReservedInstancesRegionT&& value) { m_reservedInstancesRegionHasBeenSet = true; m_reservedInstancesRegion = std::forward<ReservedInstancesRegionT>(value); }
+    template<typename ReservedInstancesRegionT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithReservedInstancesRegion(ReservedInstancesRegionT&& value) { SetReservedInstancesRegion(std::forward<ReservedInstancesRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,14 +166,12 @@ namespace Model
      * <p>Determines whether the recommendation is for a current generation
      * instance.</p>
      */
-    inline const Aws::String& GetCurrentGeneration() const{ return m_currentGeneration; }
+    inline const Aws::String& GetCurrentGeneration() const { return m_currentGeneration; }
     inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
-    inline void SetCurrentGeneration(const Aws::String& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
-    inline void SetCurrentGeneration(Aws::String&& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = std::move(value); }
-    inline void SetCurrentGeneration(const char* value) { m_currentGenerationHasBeenSet = true; m_currentGeneration.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(const Aws::String& value) { SetCurrentGeneration(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(Aws::String&& value) { SetCurrentGeneration(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithCurrentGeneration(const char* value) { SetCurrentGeneration(value); return *this;}
+    template<typename CurrentGenerationT = Aws::String>
+    void SetCurrentGeneration(CurrentGenerationT&& value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = std::forward<CurrentGenerationT>(value); }
+    template<typename CurrentGenerationT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithCurrentGeneration(CurrentGenerationT&& value) { SetCurrentGeneration(std::forward<CurrentGenerationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -201,35 +179,31 @@ namespace Model
      * <p>The platform of the recommended reservation. The platform is the specific
      * combination of operating system, license model, and software on an instance.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines whether the recommended reservation is dedicated or shared.</p>
      */
-    inline const Aws::String& GetTenancy() const{ return m_tenancy; }
+    inline const Aws::String& GetTenancy() const { return m_tenancy; }
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(Aws::String&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline void SetTenancy(const char* value) { m_tenancyHasBeenSet = true; m_tenancy.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithTenancy(const Aws::String& value) { SetTenancy(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithTenancy(Aws::String&& value) { SetTenancy(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithTenancy(const char* value) { SetTenancy(value); return *this;}
+    template<typename TenancyT = Aws::String>
+    void SetTenancy(TenancyT&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::forward<TenancyT>(value); }
+    template<typename TenancyT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithTenancy(TenancyT&& value) { SetTenancy(std::forward<TenancyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines whether the recommendation is size flexible.</p>
      */
-    inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+    inline bool GetSizeFlexEligible() const { return m_sizeFlexEligible; }
     inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
     inline void SetSizeFlexEligible(bool value) { m_sizeFlexEligibleHasBeenSet = true; m_sizeFlexEligible = value; }
     inline Ec2ReservedInstancesConfiguration& WithSizeFlexEligible(bool value) { SetSizeFlexEligible(value); return *this;}
@@ -239,28 +213,24 @@ namespace Model
     /**
      * <p>How much purchasing this instance costs you upfront.</p>
      */
-    inline const Aws::String& GetUpfrontCost() const{ return m_upfrontCost; }
+    inline const Aws::String& GetUpfrontCost() const { return m_upfrontCost; }
     inline bool UpfrontCostHasBeenSet() const { return m_upfrontCostHasBeenSet; }
-    inline void SetUpfrontCost(const Aws::String& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = value; }
-    inline void SetUpfrontCost(Aws::String&& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = std::move(value); }
-    inline void SetUpfrontCost(const char* value) { m_upfrontCostHasBeenSet = true; m_upfrontCost.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithUpfrontCost(const Aws::String& value) { SetUpfrontCost(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithUpfrontCost(Aws::String&& value) { SetUpfrontCost(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithUpfrontCost(const char* value) { SetUpfrontCost(value); return *this;}
+    template<typename UpfrontCostT = Aws::String>
+    void SetUpfrontCost(UpfrontCostT&& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = std::forward<UpfrontCostT>(value); }
+    template<typename UpfrontCostT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithUpfrontCost(UpfrontCostT&& value) { SetUpfrontCost(std::forward<UpfrontCostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How much purchasing reserved instances costs you on a monthly basis.</p>
      */
-    inline const Aws::String& GetMonthlyRecurringCost() const{ return m_monthlyRecurringCost; }
+    inline const Aws::String& GetMonthlyRecurringCost() const { return m_monthlyRecurringCost; }
     inline bool MonthlyRecurringCostHasBeenSet() const { return m_monthlyRecurringCostHasBeenSet; }
-    inline void SetMonthlyRecurringCost(const Aws::String& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = value; }
-    inline void SetMonthlyRecurringCost(Aws::String&& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = std::move(value); }
-    inline void SetMonthlyRecurringCost(const char* value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost.assign(value); }
-    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(const Aws::String& value) { SetMonthlyRecurringCost(value); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(Aws::String&& value) { SetMonthlyRecurringCost(std::move(value)); return *this;}
-    inline Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(const char* value) { SetMonthlyRecurringCost(value); return *this;}
+    template<typename MonthlyRecurringCostT = Aws::String>
+    void SetMonthlyRecurringCost(MonthlyRecurringCostT&& value) { m_monthlyRecurringCostHasBeenSet = true; m_monthlyRecurringCost = std::forward<MonthlyRecurringCostT>(value); }
+    template<typename MonthlyRecurringCostT = Aws::String>
+    Ec2ReservedInstancesConfiguration& WithMonthlyRecurringCost(MonthlyRecurringCostT&& value) { SetMonthlyRecurringCost(std::forward<MonthlyRecurringCostT>(value)); return *this;}
     ///@}
   private:
 
@@ -303,7 +273,7 @@ namespace Model
     Aws::String m_tenancy;
     bool m_tenancyHasBeenSet = false;
 
-    bool m_sizeFlexEligible;
+    bool m_sizeFlexEligible{false};
     bool m_sizeFlexEligibleHasBeenSet = false;
 
     Aws::String m_upfrontCost;

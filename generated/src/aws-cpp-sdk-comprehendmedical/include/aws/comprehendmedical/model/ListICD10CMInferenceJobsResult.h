@@ -29,7 +29,7 @@ namespace Model
   class ListICD10CMInferenceJobsResult
   {
   public:
-    AWS_COMPREHENDMEDICAL_API ListICD10CMInferenceJobsResult();
+    AWS_COMPREHENDMEDICAL_API ListICD10CMInferenceJobsResult() = default;
     AWS_COMPREHENDMEDICAL_API ListICD10CMInferenceJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHENDMEDICAL_API ListICD10CMInferenceJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list containing the properties of each job that is returned.</p>
      */
-    inline const Aws::Vector<ComprehendMedicalAsyncJobProperties>& GetComprehendMedicalAsyncJobPropertiesList() const{ return m_comprehendMedicalAsyncJobPropertiesList; }
-    inline void SetComprehendMedicalAsyncJobPropertiesList(const Aws::Vector<ComprehendMedicalAsyncJobProperties>& value) { m_comprehendMedicalAsyncJobPropertiesList = value; }
-    inline void SetComprehendMedicalAsyncJobPropertiesList(Aws::Vector<ComprehendMedicalAsyncJobProperties>&& value) { m_comprehendMedicalAsyncJobPropertiesList = std::move(value); }
-    inline ListICD10CMInferenceJobsResult& WithComprehendMedicalAsyncJobPropertiesList(const Aws::Vector<ComprehendMedicalAsyncJobProperties>& value) { SetComprehendMedicalAsyncJobPropertiesList(value); return *this;}
-    inline ListICD10CMInferenceJobsResult& WithComprehendMedicalAsyncJobPropertiesList(Aws::Vector<ComprehendMedicalAsyncJobProperties>&& value) { SetComprehendMedicalAsyncJobPropertiesList(std::move(value)); return *this;}
-    inline ListICD10CMInferenceJobsResult& AddComprehendMedicalAsyncJobPropertiesList(const ComprehendMedicalAsyncJobProperties& value) { m_comprehendMedicalAsyncJobPropertiesList.push_back(value); return *this; }
-    inline ListICD10CMInferenceJobsResult& AddComprehendMedicalAsyncJobPropertiesList(ComprehendMedicalAsyncJobProperties&& value) { m_comprehendMedicalAsyncJobPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComprehendMedicalAsyncJobProperties>& GetComprehendMedicalAsyncJobPropertiesList() const { return m_comprehendMedicalAsyncJobPropertiesList; }
+    template<typename ComprehendMedicalAsyncJobPropertiesListT = Aws::Vector<ComprehendMedicalAsyncJobProperties>>
+    void SetComprehendMedicalAsyncJobPropertiesList(ComprehendMedicalAsyncJobPropertiesListT&& value) { m_comprehendMedicalAsyncJobPropertiesListHasBeenSet = true; m_comprehendMedicalAsyncJobPropertiesList = std::forward<ComprehendMedicalAsyncJobPropertiesListT>(value); }
+    template<typename ComprehendMedicalAsyncJobPropertiesListT = Aws::Vector<ComprehendMedicalAsyncJobProperties>>
+    ListICD10CMInferenceJobsResult& WithComprehendMedicalAsyncJobPropertiesList(ComprehendMedicalAsyncJobPropertiesListT&& value) { SetComprehendMedicalAsyncJobPropertiesList(std::forward<ComprehendMedicalAsyncJobPropertiesListT>(value)); return *this;}
+    template<typename ComprehendMedicalAsyncJobPropertiesListT = ComprehendMedicalAsyncJobProperties>
+    ListICD10CMInferenceJobsResult& AddComprehendMedicalAsyncJobPropertiesList(ComprehendMedicalAsyncJobPropertiesListT&& value) { m_comprehendMedicalAsyncJobPropertiesListHasBeenSet = true; m_comprehendMedicalAsyncJobPropertiesList.emplace_back(std::forward<ComprehendMedicalAsyncJobPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListICD10CMInferenceJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListICD10CMInferenceJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListICD10CMInferenceJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListICD10CMInferenceJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListICD10CMInferenceJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListICD10CMInferenceJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListICD10CMInferenceJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListICD10CMInferenceJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ComprehendMedicalAsyncJobProperties> m_comprehendMedicalAsyncJobPropertiesList;
+    bool m_comprehendMedicalAsyncJobPropertiesListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

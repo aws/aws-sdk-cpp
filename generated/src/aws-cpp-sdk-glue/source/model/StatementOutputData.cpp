@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-StatementOutputData::StatementOutputData() : 
-    m_textPlainHasBeenSet(false)
-{
-}
-
 StatementOutputData::StatementOutputData(JsonView jsonValue)
-  : StatementOutputData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StatementOutputData& StatementOutputData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TextPlain"))
   {
     m_textPlain = jsonValue.GetString("TextPlain");
-
     m_textPlainHasBeenSet = true;
   }
-
   return *this;
 }
 

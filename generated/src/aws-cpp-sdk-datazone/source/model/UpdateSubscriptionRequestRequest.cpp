@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriptionRequestRequest::UpdateSubscriptionRequestRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_requestReasonHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriptionRequestRequest::SerializePayload() const
 {
   JsonValue payload;

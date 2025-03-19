@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-MemberDataSourceConfiguration::MemberDataSourceConfiguration() : 
-    m_accountIdHasBeenSet(false),
-    m_featuresHasBeenSet(false)
-{
-}
-
 MemberDataSourceConfiguration::MemberDataSourceConfiguration(JsonView jsonValue)
-  : MemberDataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MemberDataSourceConfiguration& MemberDataSourceConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("features"))
   {
     Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
@@ -48,7 +39,6 @@ MemberDataSourceConfiguration& MemberDataSourceConfiguration::operator =(JsonVie
     }
     m_featuresHasBeenSet = true;
   }
-
   return *this;
 }
 

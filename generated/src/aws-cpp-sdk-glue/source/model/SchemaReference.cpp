@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaReference::SchemaReference() : 
-    m_schemaIdHasBeenSet(false),
-    m_schemaVersionIdHasBeenSet(false),
-    m_schemaVersionNumber(0),
-    m_schemaVersionNumberHasBeenSet(false)
-{
-}
-
 SchemaReference::SchemaReference(JsonView jsonValue)
-  : SchemaReference()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SchemaReference& SchemaReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaId"))
   {
     m_schemaId = jsonValue.GetObject("SchemaId");
-
     m_schemaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersionId"))
   {
     m_schemaVersionId = jsonValue.GetString("SchemaVersionId");
-
     m_schemaVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersionNumber"))
   {
     m_schemaVersionNumber = jsonValue.GetInt64("SchemaVersionNumber");
-
     m_schemaVersionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

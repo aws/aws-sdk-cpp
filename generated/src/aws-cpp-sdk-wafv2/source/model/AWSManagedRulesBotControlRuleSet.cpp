@@ -18,16 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet() : 
-    m_inspectionLevel(InspectionLevel::NOT_SET),
-    m_inspectionLevelHasBeenSet(false),
-    m_enableMachineLearning(false),
-    m_enableMachineLearningHasBeenSet(false)
-{
-}
-
 AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet(JsonView jsonValue)
-  : AWSManagedRulesBotControlRuleSet()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AWSManagedRulesBotControlRuleSet& AWSManagedRulesBotControlRuleSet::operator =(J
   if(jsonValue.ValueExists("InspectionLevel"))
   {
     m_inspectionLevel = InspectionLevelMapper::GetInspectionLevelForName(jsonValue.GetString("InspectionLevel"));
-
     m_inspectionLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableMachineLearning"))
   {
     m_enableMachineLearning = jsonValue.GetBool("EnableMachineLearning");
-
     m_enableMachineLearningHasBeenSet = true;
   }
-
   return *this;
 }
 

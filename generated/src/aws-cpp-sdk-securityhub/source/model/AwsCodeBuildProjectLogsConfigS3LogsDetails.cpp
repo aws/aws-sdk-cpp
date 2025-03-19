@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsDetails() : 
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectLogsConfigS3LogsDetails::AwsCodeBuildProjectLogsConfigS3LogsDetails(JsonView jsonValue)
-  : AwsCodeBuildProjectLogsConfigS3LogsDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsCodeBuildProjectLogsConfigS3LogsDetails& AwsCodeBuildProjectLogsConfigS3LogsD
   if(jsonValue.ValueExists("EncryptionDisabled"))
   {
     m_encryptionDisabled = jsonValue.GetBool("EncryptionDisabled");
-
     m_encryptionDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class DeregisterIdentityProviderRequest : public LicenseManagerUserSubscriptionsRequest
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderRequest();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
      * <p>An object that specifies details for the Active Directory identity
      * provider.</p>
      */
-    inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
+    inline const IdentityProvider& GetIdentityProvider() const { return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
-    inline void SetIdentityProvider(const IdentityProvider& value) { m_identityProviderHasBeenSet = true; m_identityProvider = value; }
-    inline void SetIdentityProvider(IdentityProvider&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::move(value); }
-    inline DeregisterIdentityProviderRequest& WithIdentityProvider(const IdentityProvider& value) { SetIdentityProvider(value); return *this;}
-    inline DeregisterIdentityProviderRequest& WithIdentityProvider(IdentityProvider&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    template<typename IdentityProviderT = IdentityProvider>
+    void SetIdentityProvider(IdentityProviderT&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::forward<IdentityProviderT>(value); }
+    template<typename IdentityProviderT = IdentityProvider>
+    DeregisterIdentityProviderRequest& WithIdentityProvider(IdentityProviderT&& value) { SetIdentityProvider(std::forward<IdentityProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +51,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the identity provider to
      * deregister.</p>
      */
-    inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
+    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
     inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-    inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
-    inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
-    inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
-    inline DeregisterIdentityProviderRequest& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
-    inline DeregisterIdentityProviderRequest& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
-    inline DeregisterIdentityProviderRequest& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
+    template<typename IdentityProviderArnT = Aws::String>
+    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
+    template<typename IdentityProviderArnT = Aws::String>
+    DeregisterIdentityProviderRequest& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * | <code>OFFICE_PROFESSIONAL_PLUS</code> | <code>REMOTE_DESKTOP_SERVICES</code>
      * </p>
      */
-    inline const Aws::String& GetProduct() const{ return m_product; }
+    inline const Aws::String& GetProduct() const { return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-    inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-    inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-    inline DeregisterIdentityProviderRequest& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-    inline DeregisterIdentityProviderRequest& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-    inline DeregisterIdentityProviderRequest& WithProduct(const char* value) { SetProduct(value); return *this;}
+    template<typename ProductT = Aws::String>
+    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
+    template<typename ProductT = Aws::String>
+    DeregisterIdentityProviderRequest& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FeatureActivations::FeatureActivations() : 
-    m_inputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions::NOT_SET),
-    m_inputPrepareScheduleActionsHasBeenSet(false),
-    m_outputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions::NOT_SET),
-    m_outputStaticImageOverlayScheduleActionsHasBeenSet(false)
-{
-}
-
 FeatureActivations::FeatureActivations(JsonView jsonValue)
-  : FeatureActivations()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FeatureActivations& FeatureActivations::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputPrepareScheduleActions"))
   {
     m_inputPrepareScheduleActions = FeatureActivationsInputPrepareScheduleActionsMapper::GetFeatureActivationsInputPrepareScheduleActionsForName(jsonValue.GetString("inputPrepareScheduleActions"));
-
     m_inputPrepareScheduleActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputStaticImageOverlayScheduleActions"))
   {
     m_outputStaticImageOverlayScheduleActions = FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::GetFeatureActivationsOutputStaticImageOverlayScheduleActionsForName(jsonValue.GetString("outputStaticImageOverlayScheduleActions"));
-
     m_outputStaticImageOverlayScheduleActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

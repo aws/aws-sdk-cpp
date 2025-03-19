@@ -18,13 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-AccessControlAttributeValue::AccessControlAttributeValue() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 AccessControlAttributeValue::AccessControlAttributeValue(JsonView jsonValue)
-  : AccessControlAttributeValue()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AccessControlAttributeValue& AccessControlAttributeValue::operator =(JsonView js
     }
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

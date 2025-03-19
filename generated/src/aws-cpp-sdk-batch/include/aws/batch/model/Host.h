@@ -35,7 +35,7 @@ namespace Model
   class Host
   {
   public:
-    AWS_BATCH_API Host();
+    AWS_BATCH_API Host() = default;
     AWS_BATCH_API Host(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Host& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * applicable to jobs that run on Fargate resources. Don't provide this for these
      * jobs.</p> 
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline Host& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline Host& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline Host& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    Host& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
   private:
 

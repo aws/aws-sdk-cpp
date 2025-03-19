@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReportPlanRequest::DescribeReportPlanRequest() : 
-    m_reportPlanNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReportPlanRequest::SerializePayload() const
 {
   return {};

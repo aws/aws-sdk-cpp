@@ -21,7 +21,7 @@ namespace Model
   class ListGlobalTablesRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API ListGlobalTablesRequest();
+    AWS_DYNAMODB_API ListGlobalTablesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The first global table name that this operation will evaluate.</p>
      */
-    inline const Aws::String& GetExclusiveStartGlobalTableName() const{ return m_exclusiveStartGlobalTableName; }
+    inline const Aws::String& GetExclusiveStartGlobalTableName() const { return m_exclusiveStartGlobalTableName; }
     inline bool ExclusiveStartGlobalTableNameHasBeenSet() const { return m_exclusiveStartGlobalTableNameHasBeenSet; }
-    inline void SetExclusiveStartGlobalTableName(const Aws::String& value) { m_exclusiveStartGlobalTableNameHasBeenSet = true; m_exclusiveStartGlobalTableName = value; }
-    inline void SetExclusiveStartGlobalTableName(Aws::String&& value) { m_exclusiveStartGlobalTableNameHasBeenSet = true; m_exclusiveStartGlobalTableName = std::move(value); }
-    inline void SetExclusiveStartGlobalTableName(const char* value) { m_exclusiveStartGlobalTableNameHasBeenSet = true; m_exclusiveStartGlobalTableName.assign(value); }
-    inline ListGlobalTablesRequest& WithExclusiveStartGlobalTableName(const Aws::String& value) { SetExclusiveStartGlobalTableName(value); return *this;}
-    inline ListGlobalTablesRequest& WithExclusiveStartGlobalTableName(Aws::String&& value) { SetExclusiveStartGlobalTableName(std::move(value)); return *this;}
-    inline ListGlobalTablesRequest& WithExclusiveStartGlobalTableName(const char* value) { SetExclusiveStartGlobalTableName(value); return *this;}
+    template<typename ExclusiveStartGlobalTableNameT = Aws::String>
+    void SetExclusiveStartGlobalTableName(ExclusiveStartGlobalTableNameT&& value) { m_exclusiveStartGlobalTableNameHasBeenSet = true; m_exclusiveStartGlobalTableName = std::forward<ExclusiveStartGlobalTableNameT>(value); }
+    template<typename ExclusiveStartGlobalTableNameT = Aws::String>
+    ListGlobalTablesRequest& WithExclusiveStartGlobalTableName(ExclusiveStartGlobalTableNameT&& value) { SetExclusiveStartGlobalTableName(std::forward<ExclusiveStartGlobalTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to
      * the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListGlobalTablesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
     /**
      * <p>Lists the global tables in a specific Region.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline ListGlobalTablesRequest& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline ListGlobalTablesRequest& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline ListGlobalTablesRequest& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    ListGlobalTablesRequest& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_exclusiveStartGlobalTableName;
     bool m_exclusiveStartGlobalTableNameHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_regionName;

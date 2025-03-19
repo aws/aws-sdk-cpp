@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateSubnetCidrBlockResponse::AssociateSubnetCidrBlockResponse()
-{
-}
-
 AssociateSubnetCidrBlockResponse::AssociateSubnetCidrBlockResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(c
     if(!ipv6CidrBlockAssociationNode.IsNull())
     {
       m_ipv6CidrBlockAssociation = ipv6CidrBlockAssociationNode;
+      m_ipv6CidrBlockAssociationHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
+      m_subnetIdHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateSubnetCidrBlockResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

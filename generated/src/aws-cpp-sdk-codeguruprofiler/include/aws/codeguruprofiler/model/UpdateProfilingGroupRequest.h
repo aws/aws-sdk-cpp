@@ -26,7 +26,7 @@ namespace Model
   class UpdateProfilingGroupRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API UpdateProfilingGroupRequest();
+    AWS_CODEGURUPROFILER_API UpdateProfilingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,24 @@ namespace Model
      * <p> Specifies whether profiling is enabled or disabled for a profiling group.
      * </p>
      */
-    inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const{ return m_agentOrchestrationConfig; }
+    inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const { return m_agentOrchestrationConfig; }
     inline bool AgentOrchestrationConfigHasBeenSet() const { return m_agentOrchestrationConfigHasBeenSet; }
-    inline void SetAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = value; }
-    inline void SetAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::move(value); }
-    inline UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { SetAgentOrchestrationConfig(value); return *this;}
-    inline UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { SetAgentOrchestrationConfig(std::move(value)); return *this;}
+    template<typename AgentOrchestrationConfigT = AgentOrchestrationConfig>
+    void SetAgentOrchestrationConfig(AgentOrchestrationConfigT&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::forward<AgentOrchestrationConfigT>(value); }
+    template<typename AgentOrchestrationConfigT = AgentOrchestrationConfig>
+    UpdateProfilingGroupRequest& WithAgentOrchestrationConfig(AgentOrchestrationConfigT&& value) { SetAgentOrchestrationConfig(std::forward<AgentOrchestrationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the profiling group to update.</p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-    inline UpdateProfilingGroupRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline UpdateProfilingGroupRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline UpdateProfilingGroupRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    UpdateProfilingGroupRequest& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
   private:
 

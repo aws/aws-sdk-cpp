@@ -18,15 +18,7 @@ namespace ECR
 namespace Model
 {
 
-RegistryScanningRule::RegistryScanningRule() : 
-    m_scanFrequency(ScanFrequency::NOT_SET),
-    m_scanFrequencyHasBeenSet(false),
-    m_repositoryFiltersHasBeenSet(false)
-{
-}
-
 RegistryScanningRule::RegistryScanningRule(JsonView jsonValue)
-  : RegistryScanningRule()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RegistryScanningRule& RegistryScanningRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scanFrequency"))
   {
     m_scanFrequency = ScanFrequencyMapper::GetScanFrequencyForName(jsonValue.GetString("scanFrequency"));
-
     m_scanFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryFilters"))
   {
     Aws::Utils::Array<JsonView> repositoryFiltersJsonList = jsonValue.GetArray("repositoryFilters");
@@ -49,7 +39,6 @@ RegistryScanningRule& RegistryScanningRule::operator =(JsonView jsonValue)
     }
     m_repositoryFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

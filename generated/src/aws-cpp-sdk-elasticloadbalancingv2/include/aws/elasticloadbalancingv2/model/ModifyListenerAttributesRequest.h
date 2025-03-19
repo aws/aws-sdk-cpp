@@ -23,7 +23,7 @@ namespace Model
   class ModifyListenerAttributesRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ModifyListenerAttributesRequest();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyListenerAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline const Aws::String& GetListenerArn() const{ return m_listenerArn; }
+    inline const Aws::String& GetListenerArn() const { return m_listenerArn; }
     inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
-    inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
-    inline void SetListenerArn(const char* value) { m_listenerArnHasBeenSet = true; m_listenerArn.assign(value); }
-    inline ModifyListenerAttributesRequest& WithListenerArn(const Aws::String& value) { SetListenerArn(value); return *this;}
-    inline ModifyListenerAttributesRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
-    inline ModifyListenerAttributesRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+    template<typename ListenerArnT = Aws::String>
+    void SetListenerArn(ListenerArnT&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::forward<ListenerArnT>(value); }
+    template<typename ListenerArnT = Aws::String>
+    ModifyListenerAttributesRequest& WithListenerArn(ListenerArnT&& value) { SetListenerArn(std::forward<ListenerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The listener attributes.</p>
      */
-    inline const Aws::Vector<ListenerAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<ListenerAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<ListenerAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<ListenerAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline ModifyListenerAttributesRequest& WithAttributes(const Aws::Vector<ListenerAttribute>& value) { SetAttributes(value); return *this;}
-    inline ModifyListenerAttributesRequest& WithAttributes(Aws::Vector<ListenerAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ModifyListenerAttributesRequest& AddAttributes(const ListenerAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline ModifyListenerAttributesRequest& AddAttributes(ListenerAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<ListenerAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<ListenerAttribute>>
+    ModifyListenerAttributesRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = ListenerAttribute>
+    ModifyListenerAttributesRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

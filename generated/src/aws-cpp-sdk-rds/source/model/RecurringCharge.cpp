@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RecurringCharge::RecurringCharge() : 
-    m_recurringChargeAmount(0.0),
-    m_recurringChargeAmountHasBeenSet(false),
-    m_recurringChargeFrequencyHasBeenSet(false)
-{
-}
-
 RecurringCharge::RecurringCharge(const XmlNode& xmlNode)
-  : RecurringCharge()
 {
   *this = xmlNode;
 }

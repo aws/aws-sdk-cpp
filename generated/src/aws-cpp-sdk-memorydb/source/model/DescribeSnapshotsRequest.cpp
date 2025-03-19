@@ -12,18 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSnapshotsRequest::DescribeSnapshotsRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_showDetail(false),
-    m_showDetailHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

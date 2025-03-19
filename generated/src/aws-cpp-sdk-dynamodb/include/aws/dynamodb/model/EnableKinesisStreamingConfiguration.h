@@ -32,7 +32,7 @@ namespace Model
   class EnableKinesisStreamingConfiguration
   {
   public:
-    AWS_DYNAMODB_API EnableKinesisStreamingConfiguration();
+    AWS_DYNAMODB_API EnableKinesisStreamingConfiguration() = default;
     AWS_DYNAMODB_API EnableKinesisStreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API EnableKinesisStreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Toggle for the precision of Kinesis data stream timestamp. The values are
      * either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
      */
-    inline const ApproximateCreationDateTimePrecision& GetApproximateCreationDateTimePrecision() const{ return m_approximateCreationDateTimePrecision; }
+    inline ApproximateCreationDateTimePrecision GetApproximateCreationDateTimePrecision() const { return m_approximateCreationDateTimePrecision; }
     inline bool ApproximateCreationDateTimePrecisionHasBeenSet() const { return m_approximateCreationDateTimePrecisionHasBeenSet; }
-    inline void SetApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = value; }
-    inline void SetApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = std::move(value); }
-    inline EnableKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { SetApproximateCreationDateTimePrecision(value); return *this;}
-    inline EnableKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { SetApproximateCreationDateTimePrecision(std::move(value)); return *this;}
+    inline void SetApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = value; }
+    inline EnableKinesisStreamingConfiguration& WithApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision value) { SetApproximateCreationDateTimePrecision(value); return *this;}
     ///@}
   private:
 
-    ApproximateCreationDateTimePrecision m_approximateCreationDateTimePrecision;
+    ApproximateCreationDateTimePrecision m_approximateCreationDateTimePrecision{ApproximateCreationDateTimePrecision::NOT_SET};
     bool m_approximateCreationDateTimePrecisionHasBeenSet = false;
   };
 

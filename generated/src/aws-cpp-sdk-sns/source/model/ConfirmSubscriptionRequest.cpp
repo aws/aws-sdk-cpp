@@ -10,13 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-ConfirmSubscriptionRequest::ConfirmSubscriptionRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_authenticateOnUnsubscribeHasBeenSet(false)
-{
-}
-
 Aws::String ConfirmSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

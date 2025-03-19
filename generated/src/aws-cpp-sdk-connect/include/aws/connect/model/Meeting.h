@@ -33,7 +33,7 @@ namespace Model
   class Meeting
   {
   public:
-    AWS_CONNECT_API Meeting();
+    AWS_CONNECT_API Meeting() = default;
     AWS_CONNECT_API Meeting(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Meeting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,48 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region in which you create the meeting.</p>
      */
-    inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
+    inline const Aws::String& GetMediaRegion() const { return m_mediaRegion; }
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
-    inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
-    inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
-    inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
-    inline Meeting& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
-    inline Meeting& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
-    inline Meeting& WithMediaRegion(const char* value) { SetMediaRegion(value); return *this;}
+    template<typename MediaRegionT = Aws::String>
+    void SetMediaRegion(MediaRegionT&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::forward<MediaRegionT>(value); }
+    template<typename MediaRegionT = Aws::String>
+    Meeting& WithMediaRegion(MediaRegionT&& value) { SetMediaRegion(std::forward<MediaRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The media placement for the meeting.</p>
      */
-    inline const MediaPlacement& GetMediaPlacement() const{ return m_mediaPlacement; }
+    inline const MediaPlacement& GetMediaPlacement() const { return m_mediaPlacement; }
     inline bool MediaPlacementHasBeenSet() const { return m_mediaPlacementHasBeenSet; }
-    inline void SetMediaPlacement(const MediaPlacement& value) { m_mediaPlacementHasBeenSet = true; m_mediaPlacement = value; }
-    inline void SetMediaPlacement(MediaPlacement&& value) { m_mediaPlacementHasBeenSet = true; m_mediaPlacement = std::move(value); }
-    inline Meeting& WithMediaPlacement(const MediaPlacement& value) { SetMediaPlacement(value); return *this;}
-    inline Meeting& WithMediaPlacement(MediaPlacement&& value) { SetMediaPlacement(std::move(value)); return *this;}
+    template<typename MediaPlacementT = MediaPlacement>
+    void SetMediaPlacement(MediaPlacementT&& value) { m_mediaPlacementHasBeenSet = true; m_mediaPlacement = std::forward<MediaPlacementT>(value); }
+    template<typename MediaPlacementT = MediaPlacement>
+    Meeting& WithMediaPlacement(MediaPlacementT&& value) { SetMediaPlacement(std::forward<MediaPlacementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration settings of the features available to a meeting.</p>
      */
-    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const{ return m_meetingFeatures; }
+    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const { return m_meetingFeatures; }
     inline bool MeetingFeaturesHasBeenSet() const { return m_meetingFeaturesHasBeenSet; }
-    inline void SetMeetingFeatures(const MeetingFeaturesConfiguration& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = value; }
-    inline void SetMeetingFeatures(MeetingFeaturesConfiguration&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::move(value); }
-    inline Meeting& WithMeetingFeatures(const MeetingFeaturesConfiguration& value) { SetMeetingFeatures(value); return *this;}
-    inline Meeting& WithMeetingFeatures(MeetingFeaturesConfiguration&& value) { SetMeetingFeatures(std::move(value)); return *this;}
+    template<typename MeetingFeaturesT = MeetingFeaturesConfiguration>
+    void SetMeetingFeatures(MeetingFeaturesT&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::forward<MeetingFeaturesT>(value); }
+    template<typename MeetingFeaturesT = MeetingFeaturesConfiguration>
+    Meeting& WithMeetingFeatures(MeetingFeaturesT&& value) { SetMeetingFeatures(std::forward<MeetingFeaturesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Chime SDK meeting ID.</p>
      */
-    inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
+    inline const Aws::String& GetMeetingId() const { return m_meetingId; }
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-    inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-    inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-    inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-    inline Meeting& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-    inline Meeting& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-    inline Meeting& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    template<typename MeetingIdT = Aws::String>
+    void SetMeetingId(MeetingIdT&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::forward<MeetingIdT>(value); }
+    template<typename MeetingIdT = Aws::String>
+    Meeting& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
     ///@}
   private:
 

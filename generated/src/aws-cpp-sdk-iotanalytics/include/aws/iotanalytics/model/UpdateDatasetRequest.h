@@ -28,7 +28,7 @@ namespace Model
   class UpdateDatasetRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API UpdateDatasetRequest();
+    AWS_IOTANALYTICS_API UpdateDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The name of the dataset to update.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline UpdateDatasetRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline UpdateDatasetRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline UpdateDatasetRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    UpdateDatasetRequest& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>DatasetAction</code> objects.</p>
      */
-    inline const Aws::Vector<DatasetAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<DatasetAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<DatasetAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<DatasetAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline UpdateDatasetRequest& WithActions(const Aws::Vector<DatasetAction>& value) { SetActions(value); return *this;}
-    inline UpdateDatasetRequest& WithActions(Aws::Vector<DatasetAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline UpdateDatasetRequest& AddActions(const DatasetAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline UpdateDatasetRequest& AddActions(DatasetAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<DatasetAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<DatasetAction>>
+    UpdateDatasetRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = DatasetAction>
+    UpdateDatasetRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,14 +70,14 @@ namespace Model
      * <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can
      * contain up to five <code>DatasetTrigger</code> objects.</p>
      */
-    inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
+    inline const Aws::Vector<DatasetTrigger>& GetTriggers() const { return m_triggers; }
     inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
-    inline void SetTriggers(const Aws::Vector<DatasetTrigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
-    inline void SetTriggers(Aws::Vector<DatasetTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
-    inline UpdateDatasetRequest& WithTriggers(const Aws::Vector<DatasetTrigger>& value) { SetTriggers(value); return *this;}
-    inline UpdateDatasetRequest& WithTriggers(Aws::Vector<DatasetTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
-    inline UpdateDatasetRequest& AddTriggers(const DatasetTrigger& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
-    inline UpdateDatasetRequest& AddTriggers(DatasetTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
+    template<typename TriggersT = Aws::Vector<DatasetTrigger>>
+    void SetTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers = std::forward<TriggersT>(value); }
+    template<typename TriggersT = Aws::Vector<DatasetTrigger>>
+    UpdateDatasetRequest& WithTriggers(TriggersT&& value) { SetTriggers(std::forward<TriggersT>(value)); return *this;}
+    template<typename TriggersT = DatasetTrigger>
+    UpdateDatasetRequest& AddTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers.emplace_back(std::forward<TriggersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,26 +85,26 @@ namespace Model
      * <p>When dataset contents are created, they are delivered to destinations
      * specified here.</p>
      */
-    inline const Aws::Vector<DatasetContentDeliveryRule>& GetContentDeliveryRules() const{ return m_contentDeliveryRules; }
+    inline const Aws::Vector<DatasetContentDeliveryRule>& GetContentDeliveryRules() const { return m_contentDeliveryRules; }
     inline bool ContentDeliveryRulesHasBeenSet() const { return m_contentDeliveryRulesHasBeenSet; }
-    inline void SetContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = value; }
-    inline void SetContentDeliveryRules(Aws::Vector<DatasetContentDeliveryRule>&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = std::move(value); }
-    inline UpdateDatasetRequest& WithContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { SetContentDeliveryRules(value); return *this;}
-    inline UpdateDatasetRequest& WithContentDeliveryRules(Aws::Vector<DatasetContentDeliveryRule>&& value) { SetContentDeliveryRules(std::move(value)); return *this;}
-    inline UpdateDatasetRequest& AddContentDeliveryRules(const DatasetContentDeliveryRule& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.push_back(value); return *this; }
-    inline UpdateDatasetRequest& AddContentDeliveryRules(DatasetContentDeliveryRule&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.push_back(std::move(value)); return *this; }
+    template<typename ContentDeliveryRulesT = Aws::Vector<DatasetContentDeliveryRule>>
+    void SetContentDeliveryRules(ContentDeliveryRulesT&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = std::forward<ContentDeliveryRulesT>(value); }
+    template<typename ContentDeliveryRulesT = Aws::Vector<DatasetContentDeliveryRule>>
+    UpdateDatasetRequest& WithContentDeliveryRules(ContentDeliveryRulesT&& value) { SetContentDeliveryRules(std::forward<ContentDeliveryRulesT>(value)); return *this;}
+    template<typename ContentDeliveryRulesT = DatasetContentDeliveryRule>
+    UpdateDatasetRequest& AddContentDeliveryRules(ContentDeliveryRulesT&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.emplace_back(std::forward<ContentDeliveryRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>How long, in days, dataset contents are kept for the dataset.</p>
      */
-    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline const RetentionPeriod& GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-    inline UpdateDatasetRequest& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-    inline UpdateDatasetRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    template<typename RetentionPeriodT = RetentionPeriod>
+    void SetRetentionPeriod(RetentionPeriodT&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::forward<RetentionPeriodT>(value); }
+    template<typename RetentionPeriodT = RetentionPeriod>
+    UpdateDatasetRequest& WithRetentionPeriod(RetentionPeriodT&& value) { SetRetentionPeriod(std::forward<RetentionPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +117,12 @@ namespace Model
      * Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
      * Guide</i>.</p>
      */
-    inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
+    inline const VersioningConfiguration& GetVersioningConfiguration() const { return m_versioningConfiguration; }
     inline bool VersioningConfigurationHasBeenSet() const { return m_versioningConfigurationHasBeenSet; }
-    inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
-    inline void SetVersioningConfiguration(VersioningConfiguration&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::move(value); }
-    inline UpdateDatasetRequest& WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
-    inline UpdateDatasetRequest& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
+    template<typename VersioningConfigurationT = VersioningConfiguration>
+    void SetVersioningConfiguration(VersioningConfigurationT&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::forward<VersioningConfigurationT>(value); }
+    template<typename VersioningConfigurationT = VersioningConfiguration>
+    UpdateDatasetRequest& WithVersioningConfiguration(VersioningConfigurationT&& value) { SetVersioningConfiguration(std::forward<VersioningConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +132,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
      * filter.</p>
      */
-    inline const Aws::Vector<LateDataRule>& GetLateDataRules() const{ return m_lateDataRules; }
+    inline const Aws::Vector<LateDataRule>& GetLateDataRules() const { return m_lateDataRules; }
     inline bool LateDataRulesHasBeenSet() const { return m_lateDataRulesHasBeenSet; }
-    inline void SetLateDataRules(const Aws::Vector<LateDataRule>& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules = value; }
-    inline void SetLateDataRules(Aws::Vector<LateDataRule>&& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules = std::move(value); }
-    inline UpdateDatasetRequest& WithLateDataRules(const Aws::Vector<LateDataRule>& value) { SetLateDataRules(value); return *this;}
-    inline UpdateDatasetRequest& WithLateDataRules(Aws::Vector<LateDataRule>&& value) { SetLateDataRules(std::move(value)); return *this;}
-    inline UpdateDatasetRequest& AddLateDataRules(const LateDataRule& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules.push_back(value); return *this; }
-    inline UpdateDatasetRequest& AddLateDataRules(LateDataRule&& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules.push_back(std::move(value)); return *this; }
+    template<typename LateDataRulesT = Aws::Vector<LateDataRule>>
+    void SetLateDataRules(LateDataRulesT&& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules = std::forward<LateDataRulesT>(value); }
+    template<typename LateDataRulesT = Aws::Vector<LateDataRule>>
+    UpdateDatasetRequest& WithLateDataRules(LateDataRulesT&& value) { SetLateDataRules(std::forward<LateDataRulesT>(value)); return *this;}
+    template<typename LateDataRulesT = LateDataRule>
+    UpdateDatasetRequest& AddLateDataRules(LateDataRulesT&& value) { m_lateDataRulesHasBeenSet = true; m_lateDataRules.emplace_back(std::forward<LateDataRulesT>(value)); return *this; }
     ///@}
   private:
 

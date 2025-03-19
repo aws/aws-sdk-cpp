@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStreamConsumerResult::DescribeStreamConsumerResult()
-{
-}
-
 DescribeStreamConsumerResult::DescribeStreamConsumerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeStreamConsumerResult& DescribeStreamConsumerResult::operator =(const Aws
   if(jsonValue.ValueExists("ConsumerDescription"))
   {
     m_consumerDescription = jsonValue.GetObject("ConsumerDescription");
-
+    m_consumerDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

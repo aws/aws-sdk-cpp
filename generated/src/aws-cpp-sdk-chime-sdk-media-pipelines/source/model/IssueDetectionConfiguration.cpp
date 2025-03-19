@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-IssueDetectionConfiguration::IssueDetectionConfiguration() : 
-    m_ruleNameHasBeenSet(false)
-{
-}
-
 IssueDetectionConfiguration::IssueDetectionConfiguration(JsonView jsonValue)
-  : IssueDetectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IssueDetectionConfiguration& IssueDetectionConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   return *this;
 }
 

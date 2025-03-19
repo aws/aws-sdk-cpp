@@ -27,7 +27,7 @@ namespace Model
   class GetQuantumTaskRequest : public BraketRequest
   {
   public:
-    AWS_BRAKET_API GetQuantumTaskRequest();
+    AWS_BRAKET_API GetQuantumTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,25 @@ namespace Model
     /**
      * <p>A list of attributes to return information for.</p>
      */
-    inline const Aws::Vector<QuantumTaskAdditionalAttributeName>& GetAdditionalAttributeNames() const{ return m_additionalAttributeNames; }
+    inline const Aws::Vector<QuantumTaskAdditionalAttributeName>& GetAdditionalAttributeNames() const { return m_additionalAttributeNames; }
     inline bool AdditionalAttributeNamesHasBeenSet() const { return m_additionalAttributeNamesHasBeenSet; }
-    inline void SetAdditionalAttributeNames(const Aws::Vector<QuantumTaskAdditionalAttributeName>& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = value; }
-    inline void SetAdditionalAttributeNames(Aws::Vector<QuantumTaskAdditionalAttributeName>&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = std::move(value); }
-    inline GetQuantumTaskRequest& WithAdditionalAttributeNames(const Aws::Vector<QuantumTaskAdditionalAttributeName>& value) { SetAdditionalAttributeNames(value); return *this;}
-    inline GetQuantumTaskRequest& WithAdditionalAttributeNames(Aws::Vector<QuantumTaskAdditionalAttributeName>&& value) { SetAdditionalAttributeNames(std::move(value)); return *this;}
-    inline GetQuantumTaskRequest& AddAdditionalAttributeNames(const QuantumTaskAdditionalAttributeName& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(value); return *this; }
-    inline GetQuantumTaskRequest& AddAdditionalAttributeNames(QuantumTaskAdditionalAttributeName&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(std::move(value)); return *this; }
+    template<typename AdditionalAttributeNamesT = Aws::Vector<QuantumTaskAdditionalAttributeName>>
+    void SetAdditionalAttributeNames(AdditionalAttributeNamesT&& value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames = std::forward<AdditionalAttributeNamesT>(value); }
+    template<typename AdditionalAttributeNamesT = Aws::Vector<QuantumTaskAdditionalAttributeName>>
+    GetQuantumTaskRequest& WithAdditionalAttributeNames(AdditionalAttributeNamesT&& value) { SetAdditionalAttributeNames(std::forward<AdditionalAttributeNamesT>(value)); return *this;}
+    inline GetQuantumTaskRequest& AddAdditionalAttributeNames(QuantumTaskAdditionalAttributeName value) { m_additionalAttributeNamesHasBeenSet = true; m_additionalAttributeNames.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the task to retrieve.</p>
      */
-    inline const Aws::String& GetQuantumTaskArn() const{ return m_quantumTaskArn; }
+    inline const Aws::String& GetQuantumTaskArn() const { return m_quantumTaskArn; }
     inline bool QuantumTaskArnHasBeenSet() const { return m_quantumTaskArnHasBeenSet; }
-    inline void SetQuantumTaskArn(const Aws::String& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = value; }
-    inline void SetQuantumTaskArn(Aws::String&& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = std::move(value); }
-    inline void SetQuantumTaskArn(const char* value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn.assign(value); }
-    inline GetQuantumTaskRequest& WithQuantumTaskArn(const Aws::String& value) { SetQuantumTaskArn(value); return *this;}
-    inline GetQuantumTaskRequest& WithQuantumTaskArn(Aws::String&& value) { SetQuantumTaskArn(std::move(value)); return *this;}
-    inline GetQuantumTaskRequest& WithQuantumTaskArn(const char* value) { SetQuantumTaskArn(value); return *this;}
+    template<typename QuantumTaskArnT = Aws::String>
+    void SetQuantumTaskArn(QuantumTaskArnT&& value) { m_quantumTaskArnHasBeenSet = true; m_quantumTaskArn = std::forward<QuantumTaskArnT>(value); }
+    template<typename QuantumTaskArnT = Aws::String>
+    GetQuantumTaskRequest& WithQuantumTaskArn(QuantumTaskArnT&& value) { SetQuantumTaskArn(std::forward<QuantumTaskArnT>(value)); return *this;}
     ///@}
   private:
 

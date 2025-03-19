@@ -30,7 +30,7 @@ namespace Model
   class DeleteScraperRequest : public PrometheusServiceRequest
   {
   public:
-    AWS_PROMETHEUSSERVICE_API DeleteScraperRequest();
+    AWS_PROMETHEUSSERVICE_API DeleteScraperRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,28 +48,24 @@ namespace Model
      * <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure
      * the idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteScraperRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteScraperRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteScraperRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteScraperRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the scraper to delete.</p>
      */
-    inline const Aws::String& GetScraperId() const{ return m_scraperId; }
+    inline const Aws::String& GetScraperId() const { return m_scraperId; }
     inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-    inline void SetScraperId(const Aws::String& value) { m_scraperIdHasBeenSet = true; m_scraperId = value; }
-    inline void SetScraperId(Aws::String&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::move(value); }
-    inline void SetScraperId(const char* value) { m_scraperIdHasBeenSet = true; m_scraperId.assign(value); }
-    inline DeleteScraperRequest& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-    inline DeleteScraperRequest& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-    inline DeleteScraperRequest& WithScraperId(const char* value) { SetScraperId(value); return *this;}
+    template<typename ScraperIdT = Aws::String>
+    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
+    template<typename ScraperIdT = Aws::String>
+    DeleteScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
     ///@}
   private:
 

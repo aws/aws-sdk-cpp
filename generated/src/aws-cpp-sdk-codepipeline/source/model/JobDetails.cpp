@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-JobDetails::JobDetails() : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 JobDetails::JobDetails(JsonView jsonValue)
-  : JobDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ JobDetails& JobDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetObject("data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

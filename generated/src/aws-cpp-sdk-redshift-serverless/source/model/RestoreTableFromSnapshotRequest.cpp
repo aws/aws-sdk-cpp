@@ -12,21 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreTableFromSnapshotRequest::RestoreTableFromSnapshotRequest() : 
-    m_activateCaseSensitiveIdentifier(false),
-    m_activateCaseSensitiveIdentifierHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_newTableNameHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_sourceDatabaseNameHasBeenSet(false),
-    m_sourceSchemaNameHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_targetDatabaseNameHasBeenSet(false),
-    m_targetSchemaNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String RestoreTableFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

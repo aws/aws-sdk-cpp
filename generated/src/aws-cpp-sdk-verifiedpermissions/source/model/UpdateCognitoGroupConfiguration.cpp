@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-UpdateCognitoGroupConfiguration::UpdateCognitoGroupConfiguration() : 
-    m_groupEntityTypeHasBeenSet(false)
-{
-}
-
 UpdateCognitoGroupConfiguration::UpdateCognitoGroupConfiguration(JsonView jsonValue)
-  : UpdateCognitoGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateCognitoGroupConfiguration& UpdateCognitoGroupConfiguration::operator =(Jso
   if(jsonValue.ValueExists("groupEntityType"))
   {
     m_groupEntityType = jsonValue.GetString("groupEntityType");
-
     m_groupEntityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

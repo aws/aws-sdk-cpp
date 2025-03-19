@@ -12,12 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRecordRequest::PutRecordRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_recordHasBeenSet(false)
-{
-}
-
 Aws::String PutRecordRequest::SerializePayload() const
 {
   JsonValue payload;

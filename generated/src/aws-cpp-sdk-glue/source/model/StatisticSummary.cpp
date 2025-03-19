@@ -18,25 +18,7 @@ namespace Glue
 namespace Model
 {
 
-StatisticSummary::StatisticSummary() : 
-    m_statisticIdHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_runIdentifierHasBeenSet(false),
-    m_statisticNameHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_evaluationLevel(StatisticEvaluationLevel::NOT_SET),
-    m_evaluationLevelHasBeenSet(false),
-    m_columnsReferencedHasBeenSet(false),
-    m_referencedDatasetsHasBeenSet(false),
-    m_statisticPropertiesHasBeenSet(false),
-    m_recordedOnHasBeenSet(false),
-    m_inclusionAnnotationHasBeenSet(false)
-{
-}
-
 StatisticSummary::StatisticSummary(JsonView jsonValue)
-  : StatisticSummary()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ StatisticSummary& StatisticSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatisticId"))
   {
     m_statisticId = jsonValue.GetString("StatisticId");
-
     m_statisticIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunIdentifier"))
   {
     m_runIdentifier = jsonValue.GetObject("RunIdentifier");
-
     m_runIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatisticName"))
   {
     m_statisticName = jsonValue.GetString("StatisticName");
-
     m_statisticNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DoubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("DoubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationLevel"))
   {
     m_evaluationLevel = StatisticEvaluationLevelMapper::GetStatisticEvaluationLevelForName(jsonValue.GetString("EvaluationLevel"));
-
     m_evaluationLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnsReferenced"))
   {
     Aws::Utils::Array<JsonView> columnsReferencedJsonList = jsonValue.GetArray("ColumnsReferenced");
@@ -94,7 +64,6 @@ StatisticSummary& StatisticSummary::operator =(JsonView jsonValue)
     }
     m_columnsReferencedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferencedDatasets"))
   {
     Aws::Utils::Array<JsonView> referencedDatasetsJsonList = jsonValue.GetArray("ReferencedDatasets");
@@ -104,7 +73,6 @@ StatisticSummary& StatisticSummary::operator =(JsonView jsonValue)
     }
     m_referencedDatasetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatisticProperties"))
   {
     Aws::Map<Aws::String, JsonView> statisticPropertiesJsonMap = jsonValue.GetObject("StatisticProperties").GetAllObjects();
@@ -114,21 +82,16 @@ StatisticSummary& StatisticSummary::operator =(JsonView jsonValue)
     }
     m_statisticPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordedOn"))
   {
     m_recordedOn = jsonValue.GetDouble("RecordedOn");
-
     m_recordedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionAnnotation"))
   {
     m_inclusionAnnotation = jsonValue.GetObject("InclusionAnnotation");
-
     m_inclusionAnnotationHasBeenSet = true;
   }
-
   return *this;
 }
 

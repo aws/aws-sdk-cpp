@@ -52,7 +52,7 @@ namespace Model
   class UserPoolType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserPoolType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,28 +62,24 @@ namespace Model
     /**
      * <p>The ID of the user pool.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UserPoolType& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UserPoolType& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UserPoolType& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UserPoolType& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user pool.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UserPoolType& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UserPoolType& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UserPoolType& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UserPoolType& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +87,12 @@ namespace Model
      * <p>A list of user pool policies. Contains the policy that sets
      * password-complexity requirements.</p>
      */
-    inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
+    inline const UserPoolPolicyType& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const UserPoolPolicyType& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(UserPoolPolicyType&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline UserPoolType& WithPolicies(const UserPoolPolicyType& value) { SetPolicies(value); return *this;}
-    inline UserPoolType& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
+    template<typename PoliciesT = UserPoolPolicyType>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = UserPoolPolicyType>
+    UserPoolType& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +106,10 @@ namespace Model
      * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
      * request.</p>
      */
-    inline const DeletionProtectionType& GetDeletionProtection() const{ return m_deletionProtection; }
+    inline DeletionProtectionType GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
-    inline void SetDeletionProtection(const DeletionProtectionType& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
-    inline void SetDeletionProtection(DeletionProtectionType&& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = std::move(value); }
-    inline UserPoolType& WithDeletionProtection(const DeletionProtectionType& value) { SetDeletionProtection(value); return *this;}
-    inline UserPoolType& WithDeletionProtection(DeletionProtectionType&& value) { SetDeletionProtection(std::move(value)); return *this;}
+    inline void SetDeletionProtection(DeletionProtectionType value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+    inline UserPoolType& WithDeletionProtection(DeletionProtectionType value) { SetDeletionProtection(value); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +118,12 @@ namespace Model
      * several possible stages of user pool operations. Triggers can modify the outcome
      * of the operations that invoked them.</p>
      */
-    inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
+    inline const LambdaConfigType& GetLambdaConfig() const { return m_lambdaConfig; }
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
-    inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
-    inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
-    inline UserPoolType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
-    inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
+    template<typename LambdaConfigT = LambdaConfigType>
+    void SetLambdaConfig(LambdaConfigT&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::forward<LambdaConfigT>(value); }
+    template<typename LambdaConfigT = LambdaConfigType>
+    UserPoolType& WithLambdaConfig(LambdaConfigT&& value) { SetLambdaConfig(std::forward<LambdaConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +132,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline UserPoolType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline UserPoolType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    UserPoolType& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +146,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline UserPoolType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline UserPoolType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    UserPoolType& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,28 +166,27 @@ namespace Model
      * developer-only attributes only with IAM-authenticated API operations. Use app
      * client read/write permissions instead.</p>
      */
-    inline const Aws::Vector<SchemaAttributeType>& GetSchemaAttributes() const{ return m_schemaAttributes; }
+    inline const Aws::Vector<SchemaAttributeType>& GetSchemaAttributes() const { return m_schemaAttributes; }
     inline bool SchemaAttributesHasBeenSet() const { return m_schemaAttributesHasBeenSet; }
-    inline void SetSchemaAttributes(const Aws::Vector<SchemaAttributeType>& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes = value; }
-    inline void SetSchemaAttributes(Aws::Vector<SchemaAttributeType>&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes = std::move(value); }
-    inline UserPoolType& WithSchemaAttributes(const Aws::Vector<SchemaAttributeType>& value) { SetSchemaAttributes(value); return *this;}
-    inline UserPoolType& WithSchemaAttributes(Aws::Vector<SchemaAttributeType>&& value) { SetSchemaAttributes(std::move(value)); return *this;}
-    inline UserPoolType& AddSchemaAttributes(const SchemaAttributeType& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes.push_back(value); return *this; }
-    inline UserPoolType& AddSchemaAttributes(SchemaAttributeType&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes.push_back(std::move(value)); return *this; }
+    template<typename SchemaAttributesT = Aws::Vector<SchemaAttributeType>>
+    void SetSchemaAttributes(SchemaAttributesT&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes = std::forward<SchemaAttributesT>(value); }
+    template<typename SchemaAttributesT = Aws::Vector<SchemaAttributeType>>
+    UserPoolType& WithSchemaAttributes(SchemaAttributesT&& value) { SetSchemaAttributes(std::forward<SchemaAttributesT>(value)); return *this;}
+    template<typename SchemaAttributesT = SchemaAttributeType>
+    UserPoolType& AddSchemaAttributes(SchemaAttributesT&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes.emplace_back(std::forward<SchemaAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The attributes that are auto-verified in a user pool.</p>
      */
-    inline const Aws::Vector<VerifiedAttributeType>& GetAutoVerifiedAttributes() const{ return m_autoVerifiedAttributes; }
+    inline const Aws::Vector<VerifiedAttributeType>& GetAutoVerifiedAttributes() const { return m_autoVerifiedAttributes; }
     inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
-    inline void SetAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = value; }
-    inline void SetAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = std::move(value); }
-    inline UserPoolType& WithAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { SetAutoVerifiedAttributes(value); return *this;}
-    inline UserPoolType& WithAutoVerifiedAttributes(Aws::Vector<VerifiedAttributeType>&& value) { SetAutoVerifiedAttributes(std::move(value)); return *this;}
-    inline UserPoolType& AddAutoVerifiedAttributes(const VerifiedAttributeType& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(value); return *this; }
-    inline UserPoolType& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
+    template<typename AutoVerifiedAttributesT = Aws::Vector<VerifiedAttributeType>>
+    void SetAutoVerifiedAttributes(AutoVerifiedAttributesT&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = std::forward<AutoVerifiedAttributesT>(value); }
+    template<typename AutoVerifiedAttributesT = Aws::Vector<VerifiedAttributeType>>
+    UserPoolType& WithAutoVerifiedAttributes(AutoVerifiedAttributesT&& value) { SetAutoVerifiedAttributes(std::forward<AutoVerifiedAttributesT>(value)); return *this;}
+    inline UserPoolType& AddAutoVerifiedAttributes(VerifiedAttributeType value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -202,14 +195,13 @@ namespace Model
      * that users can enter as an alternative username. Possible values:
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
-    inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const{ return m_aliasAttributes; }
+    inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const { return m_aliasAttributes; }
     inline bool AliasAttributesHasBeenSet() const { return m_aliasAttributesHasBeenSet; }
-    inline void SetAliasAttributes(const Aws::Vector<AliasAttributeType>& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = value; }
-    inline void SetAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = std::move(value); }
-    inline UserPoolType& WithAliasAttributes(const Aws::Vector<AliasAttributeType>& value) { SetAliasAttributes(value); return *this;}
-    inline UserPoolType& WithAliasAttributes(Aws::Vector<AliasAttributeType>&& value) { SetAliasAttributes(std::move(value)); return *this;}
-    inline UserPoolType& AddAliasAttributes(const AliasAttributeType& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(value); return *this; }
-    inline UserPoolType& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(std::move(value)); return *this; }
+    template<typename AliasAttributesT = Aws::Vector<AliasAttributeType>>
+    void SetAliasAttributes(AliasAttributesT&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes = std::forward<AliasAttributesT>(value); }
+    template<typename AliasAttributesT = Aws::Vector<AliasAttributeType>>
+    UserPoolType& WithAliasAttributes(AliasAttributesT&& value) { SetAliasAttributes(std::forward<AliasAttributesT>(value)); return *this;}
+    inline UserPoolType& AddAliasAttributes(AliasAttributeType value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -217,56 +209,49 @@ namespace Model
      * <p>Specifies whether a user can use an email address or phone number as a
      * username when they sign up.</p>
      */
-    inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const{ return m_usernameAttributes; }
+    inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const { return m_usernameAttributes; }
     inline bool UsernameAttributesHasBeenSet() const { return m_usernameAttributesHasBeenSet; }
-    inline void SetUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = value; }
-    inline void SetUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = std::move(value); }
-    inline UserPoolType& WithUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { SetUsernameAttributes(value); return *this;}
-    inline UserPoolType& WithUsernameAttributes(Aws::Vector<UsernameAttributeType>&& value) { SetUsernameAttributes(std::move(value)); return *this;}
-    inline UserPoolType& AddUsernameAttributes(const UsernameAttributeType& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(value); return *this; }
-    inline UserPoolType& AddUsernameAttributes(UsernameAttributeType&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(std::move(value)); return *this; }
+    template<typename UsernameAttributesT = Aws::Vector<UsernameAttributeType>>
+    void SetUsernameAttributes(UsernameAttributesT&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = std::forward<UsernameAttributesT>(value); }
+    template<typename UsernameAttributesT = Aws::Vector<UsernameAttributeType>>
+    UserPoolType& WithUsernameAttributes(UsernameAttributesT&& value) { SetUsernameAttributes(std::forward<UsernameAttributesT>(value)); return *this;}
+    inline UserPoolType& AddUsernameAttributes(UsernameAttributeType value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>This parameter is no longer used.</p>
      */
-    inline const Aws::String& GetSmsVerificationMessage() const{ return m_smsVerificationMessage; }
+    inline const Aws::String& GetSmsVerificationMessage() const { return m_smsVerificationMessage; }
     inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
-    inline void SetSmsVerificationMessage(const Aws::String& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = value; }
-    inline void SetSmsVerificationMessage(Aws::String&& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = std::move(value); }
-    inline void SetSmsVerificationMessage(const char* value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage.assign(value); }
-    inline UserPoolType& WithSmsVerificationMessage(const Aws::String& value) { SetSmsVerificationMessage(value); return *this;}
-    inline UserPoolType& WithSmsVerificationMessage(Aws::String&& value) { SetSmsVerificationMessage(std::move(value)); return *this;}
-    inline UserPoolType& WithSmsVerificationMessage(const char* value) { SetSmsVerificationMessage(value); return *this;}
+    template<typename SmsVerificationMessageT = Aws::String>
+    void SetSmsVerificationMessage(SmsVerificationMessageT&& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = std::forward<SmsVerificationMessageT>(value); }
+    template<typename SmsVerificationMessageT = Aws::String>
+    UserPoolType& WithSmsVerificationMessage(SmsVerificationMessageT&& value) { SetSmsVerificationMessage(std::forward<SmsVerificationMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This parameter is no longer used.</p>
      */
-    inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
+    inline const Aws::String& GetEmailVerificationMessage() const { return m_emailVerificationMessage; }
     inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
-    inline void SetEmailVerificationMessage(const Aws::String& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = value; }
-    inline void SetEmailVerificationMessage(Aws::String&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = std::move(value); }
-    inline void SetEmailVerificationMessage(const char* value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage.assign(value); }
-    inline UserPoolType& WithEmailVerificationMessage(const Aws::String& value) { SetEmailVerificationMessage(value); return *this;}
-    inline UserPoolType& WithEmailVerificationMessage(Aws::String&& value) { SetEmailVerificationMessage(std::move(value)); return *this;}
-    inline UserPoolType& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
+    template<typename EmailVerificationMessageT = Aws::String>
+    void SetEmailVerificationMessage(EmailVerificationMessageT&& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = std::forward<EmailVerificationMessageT>(value); }
+    template<typename EmailVerificationMessageT = Aws::String>
+    UserPoolType& WithEmailVerificationMessage(EmailVerificationMessageT&& value) { SetEmailVerificationMessage(std::forward<EmailVerificationMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This parameter is no longer used.</p>
      */
-    inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
+    inline const Aws::String& GetEmailVerificationSubject() const { return m_emailVerificationSubject; }
     inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
-    inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
-    inline void SetEmailVerificationSubject(Aws::String&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::move(value); }
-    inline void SetEmailVerificationSubject(const char* value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject.assign(value); }
-    inline UserPoolType& WithEmailVerificationSubject(const Aws::String& value) { SetEmailVerificationSubject(value); return *this;}
-    inline UserPoolType& WithEmailVerificationSubject(Aws::String&& value) { SetEmailVerificationSubject(std::move(value)); return *this;}
-    inline UserPoolType& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
+    template<typename EmailVerificationSubjectT = Aws::String>
+    void SetEmailVerificationSubject(EmailVerificationSubjectT&& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = std::forward<EmailVerificationSubjectT>(value); }
+    template<typename EmailVerificationSubjectT = Aws::String>
+    UserPoolType& WithEmailVerificationSubject(EmailVerificationSubjectT&& value) { SetEmailVerificationSubject(std::forward<EmailVerificationSubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -274,26 +259,24 @@ namespace Model
      * <p>The template for the verification message that your user pool delivers to
      * users who set an email address or phone number attribute.</p>
      */
-    inline const VerificationMessageTemplateType& GetVerificationMessageTemplate() const{ return m_verificationMessageTemplate; }
+    inline const VerificationMessageTemplateType& GetVerificationMessageTemplate() const { return m_verificationMessageTemplate; }
     inline bool VerificationMessageTemplateHasBeenSet() const { return m_verificationMessageTemplateHasBeenSet; }
-    inline void SetVerificationMessageTemplate(const VerificationMessageTemplateType& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = value; }
-    inline void SetVerificationMessageTemplate(VerificationMessageTemplateType&& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = std::move(value); }
-    inline UserPoolType& WithVerificationMessageTemplate(const VerificationMessageTemplateType& value) { SetVerificationMessageTemplate(value); return *this;}
-    inline UserPoolType& WithVerificationMessageTemplate(VerificationMessageTemplateType&& value) { SetVerificationMessageTemplate(std::move(value)); return *this;}
+    template<typename VerificationMessageTemplateT = VerificationMessageTemplateType>
+    void SetVerificationMessageTemplate(VerificationMessageTemplateT&& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = std::forward<VerificationMessageTemplateT>(value); }
+    template<typename VerificationMessageTemplateT = VerificationMessageTemplateType>
+    UserPoolType& WithVerificationMessageTemplate(VerificationMessageTemplateT&& value) { SetVerificationMessageTemplate(std::forward<VerificationMessageTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contents of the SMS authentication message.</p>
      */
-    inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
+    inline const Aws::String& GetSmsAuthenticationMessage() const { return m_smsAuthenticationMessage; }
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
-    inline void SetSmsAuthenticationMessage(const Aws::String& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = value; }
-    inline void SetSmsAuthenticationMessage(Aws::String&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = std::move(value); }
-    inline void SetSmsAuthenticationMessage(const char* value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage.assign(value); }
-    inline UserPoolType& WithSmsAuthenticationMessage(const Aws::String& value) { SetSmsAuthenticationMessage(value); return *this;}
-    inline UserPoolType& WithSmsAuthenticationMessage(Aws::String&& value) { SetSmsAuthenticationMessage(std::move(value)); return *this;}
-    inline UserPoolType& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
+    template<typename SmsAuthenticationMessageT = Aws::String>
+    void SetSmsAuthenticationMessage(SmsAuthenticationMessageT&& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = std::forward<SmsAuthenticationMessageT>(value); }
+    template<typename SmsAuthenticationMessageT = Aws::String>
+    UserPoolType& WithSmsAuthenticationMessage(SmsAuthenticationMessageT&& value) { SetSmsAuthenticationMessage(std::forward<SmsAuthenticationMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -305,12 +288,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
      * Verifying updates to email addresses and phone numbers</a>.</p>
      */
-    inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const{ return m_userAttributeUpdateSettings; }
+    inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const { return m_userAttributeUpdateSettings; }
     inline bool UserAttributeUpdateSettingsHasBeenSet() const { return m_userAttributeUpdateSettingsHasBeenSet; }
-    inline void SetUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = value; }
-    inline void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::move(value); }
-    inline UserPoolType& WithUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { SetUserAttributeUpdateSettings(value); return *this;}
-    inline UserPoolType& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { SetUserAttributeUpdateSettings(std::move(value)); return *this;}
+    template<typename UserAttributeUpdateSettingsT = UserAttributeUpdateSettingsType>
+    void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsT&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::forward<UserAttributeUpdateSettingsT>(value); }
+    template<typename UserAttributeUpdateSettingsT = UserAttributeUpdateSettingsType>
+    UserPoolType& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsT&& value) { SetUserAttributeUpdateSettings(std::forward<UserAttributeUpdateSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -322,12 +305,10 @@ namespace Model
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
-    inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
+    inline UserPoolMfaType GetMfaConfiguration() const { return m_mfaConfiguration; }
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
-    inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
-    inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = std::move(value); }
-    inline UserPoolType& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
-    inline UserPoolType& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
+    inline void SetMfaConfiguration(UserPoolMfaType value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
+    inline UserPoolType& WithMfaConfiguration(UserPoolMfaType value) { SetMfaConfiguration(value); return *this;}
     ///@}
 
     ///@{
@@ -337,19 +318,19 @@ namespace Model
      * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
      * activate the Amazon Cognito device-remembering feature.</p> 
      */
-    inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+    inline const DeviceConfigurationType& GetDeviceConfiguration() const { return m_deviceConfiguration; }
     inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
-    inline void SetDeviceConfiguration(const DeviceConfigurationType& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
-    inline void SetDeviceConfiguration(DeviceConfigurationType&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
-    inline UserPoolType& WithDeviceConfiguration(const DeviceConfigurationType& value) { SetDeviceConfiguration(value); return *this;}
-    inline UserPoolType& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+    template<typename DeviceConfigurationT = DeviceConfigurationType>
+    void SetDeviceConfiguration(DeviceConfigurationT&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::forward<DeviceConfigurationT>(value); }
+    template<typename DeviceConfigurationT = DeviceConfigurationType>
+    UserPoolType& WithDeviceConfiguration(DeviceConfigurationT&& value) { SetDeviceConfiguration(std::forward<DeviceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A number estimating the size of the user pool.</p>
      */
-    inline int GetEstimatedNumberOfUsers() const{ return m_estimatedNumberOfUsers; }
+    inline int GetEstimatedNumberOfUsers() const { return m_estimatedNumberOfUsers; }
     inline bool EstimatedNumberOfUsersHasBeenSet() const { return m_estimatedNumberOfUsersHasBeenSet; }
     inline void SetEstimatedNumberOfUsers(int value) { m_estimatedNumberOfUsersHasBeenSet = true; m_estimatedNumberOfUsers = value; }
     inline UserPoolType& WithEstimatedNumberOfUsers(int value) { SetEstimatedNumberOfUsers(value); return *this;}
@@ -361,12 +342,12 @@ namespace Model
      * your preferred sending method, Amazon Web Services Region, and sender for
      * messages from your user pool.</p>
      */
-    inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
+    inline const EmailConfigurationType& GetEmailConfiguration() const { return m_emailConfiguration; }
     inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
-    inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
-    inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::move(value); }
-    inline UserPoolType& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
-    inline UserPoolType& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
+    template<typename EmailConfigurationT = EmailConfigurationType>
+    void SetEmailConfiguration(EmailConfigurationT&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = std::forward<EmailConfigurationT>(value); }
+    template<typename EmailConfigurationT = EmailConfigurationType>
+    UserPoolType& WithEmailConfiguration(EmailConfigurationT&& value) { SetEmailConfiguration(std::forward<EmailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -376,12 +357,12 @@ namespace Model
      * Services Region that you want, the Amazon Cognito user pool uses an Identity and
      * Access Management (IAM) role in your Amazon Web Services account.</p>
      */
-    inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
+    inline const SmsConfigurationType& GetSmsConfiguration() const { return m_smsConfiguration; }
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
-    inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
-    inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::move(value); }
-    inline UserPoolType& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
-    inline UserPoolType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
+    template<typename SmsConfigurationT = SmsConfigurationType>
+    void SetSmsConfiguration(SmsConfigurationT&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = std::forward<SmsConfigurationT>(value); }
+    template<typename SmsConfigurationT = SmsConfigurationType>
+    UserPoolType& WithSmsConfiguration(SmsConfigurationT&& value) { SetSmsConfiguration(std::forward<SmsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -390,19 +371,16 @@ namespace Model
      * apply to user pools to categorize and manage them in different ways, such as by
      * purpose, owner, environment, or other criteria.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const{ return m_userPoolTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const { return m_userPoolTags; }
     inline bool UserPoolTagsHasBeenSet() const { return m_userPoolTagsHasBeenSet; }
-    inline void SetUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
-    inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = std::move(value); }
-    inline UserPoolType& WithUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetUserPoolTags(value); return *this;}
-    inline UserPoolType& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(std::move(value)); return *this;}
-    inline UserPoolType& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
-    inline UserPoolType& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
-    inline UserPoolType& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
-    inline UserPoolType& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UserPoolType& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
-    inline UserPoolType& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
-    inline UserPoolType& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
+    template<typename UserPoolTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetUserPoolTags(UserPoolTagsT&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = std::forward<UserPoolTagsT>(value); }
+    template<typename UserPoolTagsT = Aws::Map<Aws::String, Aws::String>>
+    UserPoolType& WithUserPoolTags(UserPoolTagsT&& value) { SetUserPoolTags(std::forward<UserPoolTagsT>(value)); return *this;}
+    template<typename UserPoolTagsKeyT = Aws::String, typename UserPoolTagsValueT = Aws::String>
+    UserPoolType& AddUserPoolTags(UserPoolTagsKeyT&& key, UserPoolTagsValueT&& value) {
+      m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::forward<UserPoolTagsKeyT>(key), std::forward<UserPoolTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -422,14 +400,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
      * out of the SMS sandbox</a>.</p> </dd> </dl>
      */
-    inline const Aws::String& GetSmsConfigurationFailure() const{ return m_smsConfigurationFailure; }
+    inline const Aws::String& GetSmsConfigurationFailure() const { return m_smsConfigurationFailure; }
     inline bool SmsConfigurationFailureHasBeenSet() const { return m_smsConfigurationFailureHasBeenSet; }
-    inline void SetSmsConfigurationFailure(const Aws::String& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = value; }
-    inline void SetSmsConfigurationFailure(Aws::String&& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = std::move(value); }
-    inline void SetSmsConfigurationFailure(const char* value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure.assign(value); }
-    inline UserPoolType& WithSmsConfigurationFailure(const Aws::String& value) { SetSmsConfigurationFailure(value); return *this;}
-    inline UserPoolType& WithSmsConfigurationFailure(Aws::String&& value) { SetSmsConfigurationFailure(std::move(value)); return *this;}
-    inline UserPoolType& WithSmsConfigurationFailure(const char* value) { SetSmsConfigurationFailure(value); return *this;}
+    template<typename SmsConfigurationFailureT = Aws::String>
+    void SetSmsConfigurationFailure(SmsConfigurationFailureT&& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = std::forward<SmsConfigurationFailureT>(value); }
+    template<typename SmsConfigurationFailureT = Aws::String>
+    UserPoolType& WithSmsConfigurationFailure(SmsConfigurationFailureT&& value) { SetSmsConfigurationFailure(std::forward<SmsConfigurationFailureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -438,28 +414,24 @@ namespace Model
      * <code>EventSource:cognito-idp.amazonaws.com</code> in CloudTrail for information
      * about problems with user pool email configuration.</p>
      */
-    inline const Aws::String& GetEmailConfigurationFailure() const{ return m_emailConfigurationFailure; }
+    inline const Aws::String& GetEmailConfigurationFailure() const { return m_emailConfigurationFailure; }
     inline bool EmailConfigurationFailureHasBeenSet() const { return m_emailConfigurationFailureHasBeenSet; }
-    inline void SetEmailConfigurationFailure(const Aws::String& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = value; }
-    inline void SetEmailConfigurationFailure(Aws::String&& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = std::move(value); }
-    inline void SetEmailConfigurationFailure(const char* value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure.assign(value); }
-    inline UserPoolType& WithEmailConfigurationFailure(const Aws::String& value) { SetEmailConfigurationFailure(value); return *this;}
-    inline UserPoolType& WithEmailConfigurationFailure(Aws::String&& value) { SetEmailConfigurationFailure(std::move(value)); return *this;}
-    inline UserPoolType& WithEmailConfigurationFailure(const char* value) { SetEmailConfigurationFailure(value); return *this;}
+    template<typename EmailConfigurationFailureT = Aws::String>
+    void SetEmailConfigurationFailure(EmailConfigurationFailureT&& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = std::forward<EmailConfigurationFailureT>(value); }
+    template<typename EmailConfigurationFailureT = Aws::String>
+    UserPoolType& WithEmailConfigurationFailure(EmailConfigurationFailureT&& value) { SetEmailConfigurationFailure(std::forward<EmailConfigurationFailureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain prefix, if the user pool has a domain associated with it.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline UserPoolType& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline UserPoolType& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    UserPoolType& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -472,26 +444,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
      * Your Own Domain for the Hosted UI</a>.</p>
      */
-    inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
+    inline const Aws::String& GetCustomDomain() const { return m_customDomain; }
     inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
-    inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
-    inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
-    inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
-    inline UserPoolType& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
-    inline UserPoolType& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
-    inline UserPoolType& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
+    template<typename CustomDomainT = Aws::String>
+    void SetCustomDomain(CustomDomainT&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::forward<CustomDomainT>(value); }
+    template<typename CustomDomainT = Aws::String>
+    UserPoolType& WithCustomDomain(CustomDomainT&& value) { SetCustomDomain(std::forward<CustomDomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
-    inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
+    inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const { return m_adminCreateUserConfig; }
     inline bool AdminCreateUserConfigHasBeenSet() const { return m_adminCreateUserConfigHasBeenSet; }
-    inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
-    inline void SetAdminCreateUserConfig(AdminCreateUserConfigType&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = std::move(value); }
-    inline UserPoolType& WithAdminCreateUserConfig(const AdminCreateUserConfigType& value) { SetAdminCreateUserConfig(value); return *this;}
-    inline UserPoolType& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
+    template<typename AdminCreateUserConfigT = AdminCreateUserConfigType>
+    void SetAdminCreateUserConfig(AdminCreateUserConfigT&& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = std::forward<AdminCreateUserConfigT>(value); }
+    template<typename AdminCreateUserConfigT = AdminCreateUserConfigType>
+    UserPoolType& WithAdminCreateUserConfig(AdminCreateUserConfigT&& value) { SetAdminCreateUserConfig(std::forward<AdminCreateUserConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -507,12 +477,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
      * Plus tier</a>.</p>
      */
-    inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
+    inline const UserPoolAddOnsType& GetUserPoolAddOns() const { return m_userPoolAddOns; }
     inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
-    inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
-    inline void SetUserPoolAddOns(UserPoolAddOnsType&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::move(value); }
-    inline UserPoolType& WithUserPoolAddOns(const UserPoolAddOnsType& value) { SetUserPoolAddOns(value); return *this;}
-    inline UserPoolType& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
+    template<typename UserPoolAddOnsT = UserPoolAddOnsType>
+    void SetUserPoolAddOns(UserPoolAddOnsT&& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = std::forward<UserPoolAddOnsT>(value); }
+    template<typename UserPoolAddOnsT = UserPoolAddOnsType>
+    UserPoolType& WithUserPoolAddOns(UserPoolAddOnsT&& value) { SetUserPoolAddOns(std::forward<UserPoolAddOnsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -527,26 +497,24 @@ namespace Model
      * Cognito treats any variation in case as the same user, and prevents a case
      * variation from being assigned to the same attribute for a different user.</p>
      */
-    inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
+    inline const UsernameConfigurationType& GetUsernameConfiguration() const { return m_usernameConfiguration; }
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
-    inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
-    inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
-    inline UserPoolType& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
-    inline UserPoolType& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
+    template<typename UsernameConfigurationT = UsernameConfigurationType>
+    void SetUsernameConfiguration(UsernameConfigurationT&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::forward<UsernameConfigurationT>(value); }
+    template<typename UsernameConfigurationT = UsernameConfigurationType>
+    UserPoolType& WithUsernameConfiguration(UsernameConfigurationT&& value) { SetUsernameConfiguration(std::forward<UsernameConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user pool.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UserPoolType& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UserPoolType& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UserPoolType& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UserPoolType& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -559,12 +527,12 @@ namespace Model
      * setting, Amazon Cognito uses the legacy behavior to determine the recovery
      * method where SMS is preferred through email.</p>
      */
-    inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
+    inline const AccountRecoverySettingType& GetAccountRecoverySetting() const { return m_accountRecoverySetting; }
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
-    inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
-    inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
-    inline UserPoolType& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
-    inline UserPoolType& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
+    template<typename AccountRecoverySettingT = AccountRecoverySettingType>
+    void SetAccountRecoverySetting(AccountRecoverySettingT&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::forward<AccountRecoverySettingT>(value); }
+    template<typename AccountRecoverySettingT = AccountRecoverySettingType>
+    UserPoolType& WithAccountRecoverySetting(AccountRecoverySettingT&& value) { SetAccountRecoverySetting(std::forward<AccountRecoverySettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -575,12 +543,10 @@ namespace Model
      * for features like managed login, access-token customization, and threat
      * protection. Defaults to <code>ESSENTIALS</code>.</p>
      */
-    inline const UserPoolTierType& GetUserPoolTier() const{ return m_userPoolTier; }
+    inline UserPoolTierType GetUserPoolTier() const { return m_userPoolTier; }
     inline bool UserPoolTierHasBeenSet() const { return m_userPoolTierHasBeenSet; }
-    inline void SetUserPoolTier(const UserPoolTierType& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = value; }
-    inline void SetUserPoolTier(UserPoolTierType&& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = std::move(value); }
-    inline UserPoolType& WithUserPoolTier(const UserPoolTierType& value) { SetUserPoolTier(value); return *this;}
-    inline UserPoolType& WithUserPoolTier(UserPoolTierType&& value) { SetUserPoolTier(std::move(value)); return *this;}
+    inline void SetUserPoolTier(UserPoolTierType value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = value; }
+    inline UserPoolType& WithUserPoolTier(UserPoolTierType value) { SetUserPoolTier(value); return *this;}
     ///@}
   private:
 
@@ -593,16 +559,16 @@ namespace Model
     UserPoolPolicyType m_policies;
     bool m_policiesHasBeenSet = false;
 
-    DeletionProtectionType m_deletionProtection;
+    DeletionProtectionType m_deletionProtection{DeletionProtectionType::NOT_SET};
     bool m_deletionProtectionHasBeenSet = false;
 
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     Aws::Vector<SchemaAttributeType> m_schemaAttributes;
@@ -635,13 +601,13 @@ namespace Model
     UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
     bool m_userAttributeUpdateSettingsHasBeenSet = false;
 
-    UserPoolMfaType m_mfaConfiguration;
+    UserPoolMfaType m_mfaConfiguration{UserPoolMfaType::NOT_SET};
     bool m_mfaConfigurationHasBeenSet = false;
 
     DeviceConfigurationType m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet = false;
 
-    int m_estimatedNumberOfUsers;
+    int m_estimatedNumberOfUsers{0};
     bool m_estimatedNumberOfUsersHasBeenSet = false;
 
     EmailConfigurationType m_emailConfiguration;
@@ -680,7 +646,7 @@ namespace Model
     AccountRecoverySettingType m_accountRecoverySetting;
     bool m_accountRecoverySettingHasBeenSet = false;
 
-    UserPoolTierType m_userPoolTier;
+    UserPoolTierType m_userPoolTier{UserPoolTierType::NOT_SET};
     bool m_userPoolTierHasBeenSet = false;
   };
 

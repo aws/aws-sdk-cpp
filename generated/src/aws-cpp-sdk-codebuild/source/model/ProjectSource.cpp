@@ -18,26 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectSource::ProjectSource() : 
-    m_type(SourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_gitCloneDepth(0),
-    m_gitCloneDepthHasBeenSet(false),
-    m_gitSubmodulesConfigHasBeenSet(false),
-    m_buildspecHasBeenSet(false),
-    m_authHasBeenSet(false),
-    m_reportBuildStatus(false),
-    m_reportBuildStatusHasBeenSet(false),
-    m_buildStatusConfigHasBeenSet(false),
-    m_insecureSsl(false),
-    m_insecureSslHasBeenSet(false),
-    m_sourceIdentifierHasBeenSet(false)
-{
-}
-
 ProjectSource::ProjectSource(JsonView jsonValue)
-  : ProjectSource()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ ProjectSource& ProjectSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gitCloneDepth"))
   {
     m_gitCloneDepth = jsonValue.GetInteger("gitCloneDepth");
-
     m_gitCloneDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gitSubmodulesConfig"))
   {
     m_gitSubmodulesConfig = jsonValue.GetObject("gitSubmodulesConfig");
-
     m_gitSubmodulesConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildspec"))
   {
     m_buildspec = jsonValue.GetString("buildspec");
-
     m_buildspecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("auth"))
   {
     m_auth = jsonValue.GetObject("auth");
-
     m_authHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportBuildStatus"))
   {
     m_reportBuildStatus = jsonValue.GetBool("reportBuildStatus");
-
     m_reportBuildStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildStatusConfig"))
   {
     m_buildStatusConfig = jsonValue.GetObject("buildStatusConfig");
-
     m_buildStatusConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("insecureSsl"))
   {
     m_insecureSsl = jsonValue.GetBool("insecureSsl");
-
     m_insecureSslHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceIdentifier"))
   {
     m_sourceIdentifier = jsonValue.GetString("sourceIdentifier");
-
     m_sourceIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionOriginGroups::AwsCloudFrontDistributionOriginGroups() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionOriginGroups::AwsCloudFrontDistributionOriginGroups(JsonView jsonValue)
-  : AwsCloudFrontDistributionOriginGroups()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsCloudFrontDistributionOriginGroups& AwsCloudFrontDistributionOriginGroups::op
     }
     m_itemsHasBeenSet = true;
   }
-
   return *this;
 }
 

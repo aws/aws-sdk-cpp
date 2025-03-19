@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrialComponentSourceDetail::TrialComponentSourceDetail() : 
-    m_sourceArnHasBeenSet(false),
-    m_trainingJobHasBeenSet(false),
-    m_processingJobHasBeenSet(false),
-    m_transformJobHasBeenSet(false)
-{
-}
-
 TrialComponentSourceDetail::TrialComponentSourceDetail(JsonView jsonValue)
-  : TrialComponentSourceDetail()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TrialComponentSourceDetail& TrialComponentSourceDetail::operator =(JsonView json
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingJob"))
   {
     m_trainingJob = jsonValue.GetObject("TrainingJob");
-
     m_trainingJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingJob"))
   {
     m_processingJob = jsonValue.GetObject("ProcessingJob");
-
     m_processingJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformJob"))
   {
     m_transformJob = jsonValue.GetObject("TransformJob");
-
     m_transformJobHasBeenSet = true;
   }
-
   return *this;
 }
 

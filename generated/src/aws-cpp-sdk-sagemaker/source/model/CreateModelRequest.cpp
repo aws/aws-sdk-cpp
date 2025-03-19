@@ -12,19 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelRequest::CreateModelRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_primaryContainerHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_inferenceExecutionConfigHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelRequest::SerializePayload() const
 {
   JsonValue payload;

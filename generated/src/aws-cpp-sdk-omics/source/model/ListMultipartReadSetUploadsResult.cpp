@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMultipartReadSetUploadsResult::ListMultipartReadSetUploadsResult()
-{
-}
-
 ListMultipartReadSetUploadsResult::ListMultipartReadSetUploadsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMultipartReadSetUploadsResult& ListMultipartReadSetUploadsResult::operator =
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploads"))
   {
     Aws::Utils::Array<JsonView> uploadsJsonList = jsonValue.GetArray("uploads");
@@ -42,14 +37,15 @@ ListMultipartReadSetUploadsResult& ListMultipartReadSetUploadsResult::operator =
     {
       m_uploads.push_back(uploadsJsonList[uploadsIndex].AsObject());
     }
+    m_uploadsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

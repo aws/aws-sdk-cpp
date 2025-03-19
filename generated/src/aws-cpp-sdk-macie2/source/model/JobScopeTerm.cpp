@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-JobScopeTerm::JobScopeTerm() : 
-    m_simpleScopeTermHasBeenSet(false),
-    m_tagScopeTermHasBeenSet(false)
-{
-}
-
 JobScopeTerm::JobScopeTerm(JsonView jsonValue)
-  : JobScopeTerm()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobScopeTerm& JobScopeTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("simpleScopeTerm"))
   {
     m_simpleScopeTerm = jsonValue.GetObject("simpleScopeTerm");
-
     m_simpleScopeTermHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagScopeTerm"))
   {
     m_tagScopeTerm = jsonValue.GetObject("tagScopeTerm");
-
     m_tagScopeTermHasBeenSet = true;
   }
-
   return *this;
 }
 

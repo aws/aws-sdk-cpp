@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RelationalCatalogSource::RelationalCatalogSource() : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
-{
-}
-
 RelationalCatalogSource::RelationalCatalogSource(JsonView jsonValue)
-  : RelationalCatalogSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RelationalCatalogSource& RelationalCatalogSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   return *this;
 }
 

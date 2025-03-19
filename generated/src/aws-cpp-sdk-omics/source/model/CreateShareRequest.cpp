@@ -12,13 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateShareRequest::CreateShareRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_principalSubscriberHasBeenSet(false),
-    m_shareNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateShareRequest::SerializePayload() const
 {
   JsonValue payload;

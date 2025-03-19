@@ -12,31 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeploymentGroupRequest::UpdateDeploymentGroupRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentDeploymentGroupNameHasBeenSet(false),
-    m_newDeploymentGroupNameHasBeenSet(false),
-    m_deploymentConfigNameHasBeenSet(false),
-    m_ec2TagFiltersHasBeenSet(false),
-    m_onPremisesInstanceTagFiltersHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_triggerConfigurationsHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_autoRollbackConfigurationHasBeenSet(false),
-    m_outdatedInstancesStrategy(OutdatedInstancesStrategy::NOT_SET),
-    m_outdatedInstancesStrategyHasBeenSet(false),
-    m_deploymentStyleHasBeenSet(false),
-    m_blueGreenDeploymentConfigurationHasBeenSet(false),
-    m_loadBalancerInfoHasBeenSet(false),
-    m_ec2TagSetHasBeenSet(false),
-    m_ecsServicesHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false),
-    m_terminationHookEnabled(false),
-    m_terminationHookEnabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 {
   JsonValue payload;

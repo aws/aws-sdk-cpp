@@ -18,13 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-DatasetGroundTruthManifest::DatasetGroundTruthManifest() : 
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 DatasetGroundTruthManifest::DatasetGroundTruthManifest(JsonView jsonValue)
-  : DatasetGroundTruthManifest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatasetGroundTruthManifest& DatasetGroundTruthManifest::operator =(JsonView json
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ResolveComponentCandidatesResult
   {
   public:
-    AWS_GREENGRASSV2_API ResolveComponentCandidatesResult();
+    AWS_GREENGRASSV2_API ResolveComponentCandidatesResult() = default;
     AWS_GREENGRASSV2_API ResolveComponentCandidatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API ResolveComponentCandidatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * request. This list includes each component's recipe that you can use to install
      * the component.</p>
      */
-    inline const Aws::Vector<ResolvedComponentVersion>& GetResolvedComponentVersions() const{ return m_resolvedComponentVersions; }
-    inline void SetResolvedComponentVersions(const Aws::Vector<ResolvedComponentVersion>& value) { m_resolvedComponentVersions = value; }
-    inline void SetResolvedComponentVersions(Aws::Vector<ResolvedComponentVersion>&& value) { m_resolvedComponentVersions = std::move(value); }
-    inline ResolveComponentCandidatesResult& WithResolvedComponentVersions(const Aws::Vector<ResolvedComponentVersion>& value) { SetResolvedComponentVersions(value); return *this;}
-    inline ResolveComponentCandidatesResult& WithResolvedComponentVersions(Aws::Vector<ResolvedComponentVersion>&& value) { SetResolvedComponentVersions(std::move(value)); return *this;}
-    inline ResolveComponentCandidatesResult& AddResolvedComponentVersions(const ResolvedComponentVersion& value) { m_resolvedComponentVersions.push_back(value); return *this; }
-    inline ResolveComponentCandidatesResult& AddResolvedComponentVersions(ResolvedComponentVersion&& value) { m_resolvedComponentVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResolvedComponentVersion>& GetResolvedComponentVersions() const { return m_resolvedComponentVersions; }
+    template<typename ResolvedComponentVersionsT = Aws::Vector<ResolvedComponentVersion>>
+    void SetResolvedComponentVersions(ResolvedComponentVersionsT&& value) { m_resolvedComponentVersionsHasBeenSet = true; m_resolvedComponentVersions = std::forward<ResolvedComponentVersionsT>(value); }
+    template<typename ResolvedComponentVersionsT = Aws::Vector<ResolvedComponentVersion>>
+    ResolveComponentCandidatesResult& WithResolvedComponentVersions(ResolvedComponentVersionsT&& value) { SetResolvedComponentVersions(std::forward<ResolvedComponentVersionsT>(value)); return *this;}
+    template<typename ResolvedComponentVersionsT = ResolvedComponentVersion>
+    ResolveComponentCandidatesResult& AddResolvedComponentVersions(ResolvedComponentVersionsT&& value) { m_resolvedComponentVersionsHasBeenSet = true; m_resolvedComponentVersions.emplace_back(std::forward<ResolvedComponentVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ResolveComponentCandidatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResolveComponentCandidatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResolveComponentCandidatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResolveComponentCandidatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResolvedComponentVersion> m_resolvedComponentVersions;
+    bool m_resolvedComponentVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

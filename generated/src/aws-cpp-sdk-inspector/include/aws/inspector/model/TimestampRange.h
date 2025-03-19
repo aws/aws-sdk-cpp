@@ -32,7 +32,7 @@ namespace Model
   class TimestampRange
   {
   public:
-    AWS_INSPECTOR_API TimestampRange();
+    AWS_INSPECTOR_API TimestampRange() = default;
     AWS_INSPECTOR_API TimestampRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API TimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,31 @@ namespace Model
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
-    inline const Aws::Utils::DateTime& GetBeginDate() const{ return m_beginDate; }
+    inline const Aws::Utils::DateTime& GetBeginDate() const { return m_beginDate; }
     inline bool BeginDateHasBeenSet() const { return m_beginDateHasBeenSet; }
-    inline void SetBeginDate(const Aws::Utils::DateTime& value) { m_beginDateHasBeenSet = true; m_beginDate = value; }
-    inline void SetBeginDate(Aws::Utils::DateTime&& value) { m_beginDateHasBeenSet = true; m_beginDate = std::move(value); }
-    inline TimestampRange& WithBeginDate(const Aws::Utils::DateTime& value) { SetBeginDate(value); return *this;}
-    inline TimestampRange& WithBeginDate(Aws::Utils::DateTime&& value) { SetBeginDate(std::move(value)); return *this;}
+    template<typename BeginDateT = Aws::Utils::DateTime>
+    void SetBeginDate(BeginDateT&& value) { m_beginDateHasBeenSet = true; m_beginDate = std::forward<BeginDateT>(value); }
+    template<typename BeginDateT = Aws::Utils::DateTime>
+    TimestampRange& WithBeginDate(BeginDateT&& value) { SetBeginDate(std::forward<BeginDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum value of the timestamp range.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline TimestampRange& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline TimestampRange& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    TimestampRange& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_beginDate;
+    Aws::Utils::DateTime m_beginDate{};
     bool m_beginDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
   };
 

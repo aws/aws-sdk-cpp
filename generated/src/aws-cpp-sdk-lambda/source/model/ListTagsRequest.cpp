@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsRequest::ListTagsRequest() : 
-    m_resourceHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsRequest::SerializePayload() const
 {
   return {};

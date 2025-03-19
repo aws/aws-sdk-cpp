@@ -41,7 +41,7 @@ namespace Model
   class GeoMatchSetUpdate
   {
   public:
-    AWS_WAFREGIONAL_API GeoMatchSetUpdate();
+    AWS_WAFREGIONAL_API GeoMatchSetUpdate() = default;
     AWS_WAFREGIONAL_API GeoMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API GeoMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * <p>Specifies whether to insert or delete a country with
      * <a>UpdateGeoMatchSet</a>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline GeoMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline GeoMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GeoMatchSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -65,16 +63,16 @@ namespace Model
      * <p>The country from which web requests originate that you want AWS WAF to search
      * for.</p>
      */
-    inline const GeoMatchConstraint& GetGeoMatchConstraint() const{ return m_geoMatchConstraint; }
+    inline const GeoMatchConstraint& GetGeoMatchConstraint() const { return m_geoMatchConstraint; }
     inline bool GeoMatchConstraintHasBeenSet() const { return m_geoMatchConstraintHasBeenSet; }
-    inline void SetGeoMatchConstraint(const GeoMatchConstraint& value) { m_geoMatchConstraintHasBeenSet = true; m_geoMatchConstraint = value; }
-    inline void SetGeoMatchConstraint(GeoMatchConstraint&& value) { m_geoMatchConstraintHasBeenSet = true; m_geoMatchConstraint = std::move(value); }
-    inline GeoMatchSetUpdate& WithGeoMatchConstraint(const GeoMatchConstraint& value) { SetGeoMatchConstraint(value); return *this;}
-    inline GeoMatchSetUpdate& WithGeoMatchConstraint(GeoMatchConstraint&& value) { SetGeoMatchConstraint(std::move(value)); return *this;}
+    template<typename GeoMatchConstraintT = GeoMatchConstraint>
+    void SetGeoMatchConstraint(GeoMatchConstraintT&& value) { m_geoMatchConstraintHasBeenSet = true; m_geoMatchConstraint = std::forward<GeoMatchConstraintT>(value); }
+    template<typename GeoMatchConstraintT = GeoMatchConstraint>
+    GeoMatchSetUpdate& WithGeoMatchConstraint(GeoMatchConstraintT&& value) { SetGeoMatchConstraint(std::forward<GeoMatchConstraintT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     GeoMatchConstraint m_geoMatchConstraint;

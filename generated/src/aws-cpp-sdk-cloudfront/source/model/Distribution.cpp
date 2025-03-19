@@ -20,23 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Distribution::Distribution() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_inProgressInvalidationBatches(0),
-    m_inProgressInvalidationBatchesHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_activeTrustedSignersHasBeenSet(false),
-    m_activeTrustedKeyGroupsHasBeenSet(false),
-    m_distributionConfigHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false)
-{
-}
-
 Distribution::Distribution(const XmlNode& xmlNode)
-  : Distribution()
 {
   *this = xmlNode;
 }
@@ -105,6 +89,7 @@ Distribution& Distribution::operator =(const XmlNode& xmlNode)
     if(!aliasICPRecordalsNode.IsNull())
     {
       XmlNode aliasICPRecordalsMember = aliasICPRecordalsNode.FirstChild("AliasICPRecordal");
+      m_aliasICPRecordalsHasBeenSet = !aliasICPRecordalsMember.IsNull();
       while(!aliasICPRecordalsMember.IsNull())
       {
         m_aliasICPRecordals.push_back(aliasICPRecordalsMember);

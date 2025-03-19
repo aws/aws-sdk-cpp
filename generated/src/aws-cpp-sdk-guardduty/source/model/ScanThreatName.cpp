@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ScanThreatName::ScanThreatName() : 
-    m_nameHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_filePathsHasBeenSet(false)
-{
-}
-
 ScanThreatName::ScanThreatName(JsonView jsonValue)
-  : ScanThreatName()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ScanThreatName& ScanThreatName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = jsonValue.GetString("severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("itemCount"))
   {
     m_itemCount = jsonValue.GetInteger("itemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePaths"))
   {
     Aws::Utils::Array<JsonView> filePathsJsonList = jsonValue.GetArray("filePaths");
@@ -65,7 +49,6 @@ ScanThreatName& ScanThreatName::operator =(JsonView jsonValue)
     }
     m_filePathsHasBeenSet = true;
   }
-
   return *this;
 }
 

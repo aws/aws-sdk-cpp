@@ -28,35 +28,35 @@ namespace Model
   class PutAccountSettingsResult
   {
   public:
-    AWS_ARTIFACT_API PutAccountSettingsResult();
+    AWS_ARTIFACT_API PutAccountSettingsResult() = default;
     AWS_ARTIFACT_API PutAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARTIFACT_API PutAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
-    inline void SetAccountSettings(const AccountSettings& value) { m_accountSettings = value; }
-    inline void SetAccountSettings(AccountSettings&& value) { m_accountSettings = std::move(value); }
-    inline PutAccountSettingsResult& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
-    inline PutAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
+    inline const AccountSettings& GetAccountSettings() const { return m_accountSettings; }
+    template<typename AccountSettingsT = AccountSettings>
+    void SetAccountSettings(AccountSettingsT&& value) { m_accountSettingsHasBeenSet = true; m_accountSettings = std::forward<AccountSettingsT>(value); }
+    template<typename AccountSettingsT = AccountSettings>
+    PutAccountSettingsResult& WithAccountSettings(AccountSettingsT&& value) { SetAccountSettings(std::forward<AccountSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutAccountSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutAccountSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutAccountSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutAccountSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountSettings m_accountSettings;
+    bool m_accountSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

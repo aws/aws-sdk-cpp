@@ -12,15 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBlueprintRequest::UpdateBlueprintRequest() : 
-    m_blueprintArnHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_blueprintStage(BlueprintStage::NOT_SET),
-    m_blueprintStageHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBlueprintRequest::SerializePayload() const
 {
   JsonValue payload;

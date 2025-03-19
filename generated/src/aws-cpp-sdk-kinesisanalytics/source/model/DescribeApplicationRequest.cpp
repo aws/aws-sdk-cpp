@@ -12,11 +12,6 @@ using namespace Aws::KinesisAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicationRequest::DescribeApplicationRequest() : 
-    m_applicationNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

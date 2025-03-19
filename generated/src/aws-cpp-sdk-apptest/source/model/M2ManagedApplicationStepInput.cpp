@@ -18,20 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-M2ManagedApplicationStepInput::M2ManagedApplicationStepInput() : 
-    m_applicationIdHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_vpcEndpointServiceNameHasBeenSet(false),
-    m_listenerPort(0),
-    m_listenerPortHasBeenSet(false),
-    m_actionType(M2ManagedActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 M2ManagedApplicationStepInput::M2ManagedApplicationStepInput(JsonView jsonValue)
-  : M2ManagedApplicationStepInput()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ M2ManagedApplicationStepInput& M2ManagedApplicationStepInput::operator =(JsonVie
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtime"))
   {
     m_runtime = jsonValue.GetString("runtime");
-
     m_runtimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointServiceName"))
   {
     m_vpcEndpointServiceName = jsonValue.GetString("vpcEndpointServiceName");
-
     m_vpcEndpointServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listenerPort"))
   {
     m_listenerPort = jsonValue.GetInteger("listenerPort");
-
     m_listenerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = M2ManagedActionTypeMapper::GetM2ManagedActionTypeForName(jsonValue.GetString("actionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     m_properties = jsonValue.GetObject("properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

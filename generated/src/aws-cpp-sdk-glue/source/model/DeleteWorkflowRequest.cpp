@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkflowRequest::DeleteWorkflowRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

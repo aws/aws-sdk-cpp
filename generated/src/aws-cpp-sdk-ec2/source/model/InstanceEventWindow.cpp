@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceEventWindow::InstanceEventWindow() : 
-    m_instanceEventWindowIdHasBeenSet(false),
-    m_timeRangesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_associationTargetHasBeenSet(false),
-    m_state(InstanceEventWindowState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InstanceEventWindow::InstanceEventWindow(const XmlNode& xmlNode)
-  : InstanceEventWindow()
 {
   *this = xmlNode;
 }
@@ -54,6 +41,7 @@ InstanceEventWindow& InstanceEventWindow::operator =(const XmlNode& xmlNode)
     if(!timeRangesNode.IsNull())
     {
       XmlNode timeRangesMember = timeRangesNode.FirstChild("item");
+      m_timeRangesHasBeenSet = !timeRangesMember.IsNull();
       while(!timeRangesMember.IsNull())
       {
         m_timeRanges.push_back(timeRangesMember);
@@ -83,13 +71,14 @@ InstanceEventWindow& InstanceEventWindow::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = InstanceEventWindowStateMapper::GetInstanceEventWindowStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = InstanceEventWindowStateMapper::GetInstanceEventWindowStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

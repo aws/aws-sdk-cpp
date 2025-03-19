@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-Content::Content() : 
-    m_dataHasBeenSet(false),
-    m_charsetHasBeenSet(false)
-{
-}
-
 Content::Content(const XmlNode& xmlNode)
-  : Content()
 {
   *this = xmlNode;
 }

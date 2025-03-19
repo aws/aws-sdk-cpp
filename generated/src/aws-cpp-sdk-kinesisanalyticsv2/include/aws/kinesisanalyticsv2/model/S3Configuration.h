@@ -34,7 +34,7 @@ namespace Model
   class S3Configuration
   {
   public:
-    AWS_KINESISANALYTICSV2_API S3Configuration();
+    AWS_KINESISANALYTICSV2_API S3Configuration() = default;
     AWS_KINESISANALYTICSV2_API S3Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket that contains the data.</p>
      */
-    inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
+    inline const Aws::String& GetBucketARN() const { return m_bucketARN; }
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
-    inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
-    inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
-    inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
-    inline S3Configuration& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
-    inline S3Configuration& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
-    inline S3Configuration& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
+    template<typename BucketARNT = Aws::String>
+    void SetBucketARN(BucketARNT&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::forward<BucketARNT>(value); }
+    template<typename BucketARNT = Aws::String>
+    S3Configuration& WithBucketARN(BucketARNT&& value) { SetBucketARN(std::forward<BucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the object that contains the data.</p>
      */
-    inline const Aws::String& GetFileKey() const{ return m_fileKey; }
+    inline const Aws::String& GetFileKey() const { return m_fileKey; }
     inline bool FileKeyHasBeenSet() const { return m_fileKeyHasBeenSet; }
-    inline void SetFileKey(const Aws::String& value) { m_fileKeyHasBeenSet = true; m_fileKey = value; }
-    inline void SetFileKey(Aws::String&& value) { m_fileKeyHasBeenSet = true; m_fileKey = std::move(value); }
-    inline void SetFileKey(const char* value) { m_fileKeyHasBeenSet = true; m_fileKey.assign(value); }
-    inline S3Configuration& WithFileKey(const Aws::String& value) { SetFileKey(value); return *this;}
-    inline S3Configuration& WithFileKey(Aws::String&& value) { SetFileKey(std::move(value)); return *this;}
-    inline S3Configuration& WithFileKey(const char* value) { SetFileKey(value); return *this;}
+    template<typename FileKeyT = Aws::String>
+    void SetFileKey(FileKeyT&& value) { m_fileKeyHasBeenSet = true; m_fileKey = std::forward<FileKeyT>(value); }
+    template<typename FileKeyT = Aws::String>
+    S3Configuration& WithFileKey(FileKeyT&& value) { SetFileKey(std::forward<FileKeyT>(value)); return *this;}
     ///@}
   private:
 

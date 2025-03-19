@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTrainingDatasetResult::CreateTrainingDatasetResult()
-{
-}
-
 CreateTrainingDatasetResult::CreateTrainingDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTrainingDatasetResult& CreateTrainingDatasetResult::operator =(const Aws::
   if(jsonValue.ValueExists("trainingDatasetArn"))
   {
     m_trainingDatasetArn = jsonValue.GetString("trainingDatasetArn");
-
+    m_trainingDatasetArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

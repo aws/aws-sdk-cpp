@@ -31,7 +31,7 @@ namespace Model
   class HttpGatewayRoutePathRewrite
   {
   public:
-    AWS_APPMESH_API HttpGatewayRoutePathRewrite();
+    AWS_APPMESH_API HttpGatewayRoutePathRewrite() = default;
     AWS_APPMESH_API HttpGatewayRoutePathRewrite(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API HttpGatewayRoutePathRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The exact path to rewrite.</p>
      */
-    inline const Aws::String& GetExact() const{ return m_exact; }
+    inline const Aws::String& GetExact() const { return m_exact; }
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-    inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-    inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-    inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-    inline HttpGatewayRoutePathRewrite& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-    inline HttpGatewayRoutePathRewrite& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-    inline HttpGatewayRoutePathRewrite& WithExact(const char* value) { SetExact(value); return *this;}
+    template<typename ExactT = Aws::String>
+    void SetExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact = std::forward<ExactT>(value); }
+    template<typename ExactT = Aws::String>
+    HttpGatewayRoutePathRewrite& WithExact(ExactT&& value) { SetExact(std::forward<ExactT>(value)); return *this;}
     ///@}
   private:
 

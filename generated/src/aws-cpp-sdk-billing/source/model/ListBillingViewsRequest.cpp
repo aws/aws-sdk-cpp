@@ -12,17 +12,6 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBillingViewsRequest::ListBillingViewsRequest() : 
-    m_activeTimeRangeHasBeenSet(false),
-    m_arnsHasBeenSet(false),
-    m_billingViewTypesHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListBillingViewsRequest::SerializePayload() const
 {
   JsonValue payload;

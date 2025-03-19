@@ -30,7 +30,7 @@ namespace Model
   class DescribeTransitGatewaysResponse
   {
   public:
-    AWS_EC2_API DescribeTransitGatewaysResponse();
+    AWS_EC2_API DescribeTransitGatewaysResponse() = default;
     AWS_EC2_API DescribeTransitGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeTransitGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the transit gateways.</p>
      */
-    inline const Aws::Vector<TransitGateway>& GetTransitGateways() const{ return m_transitGateways; }
-    inline void SetTransitGateways(const Aws::Vector<TransitGateway>& value) { m_transitGateways = value; }
-    inline void SetTransitGateways(Aws::Vector<TransitGateway>&& value) { m_transitGateways = std::move(value); }
-    inline DescribeTransitGatewaysResponse& WithTransitGateways(const Aws::Vector<TransitGateway>& value) { SetTransitGateways(value); return *this;}
-    inline DescribeTransitGatewaysResponse& WithTransitGateways(Aws::Vector<TransitGateway>&& value) { SetTransitGateways(std::move(value)); return *this;}
-    inline DescribeTransitGatewaysResponse& AddTransitGateways(const TransitGateway& value) { m_transitGateways.push_back(value); return *this; }
-    inline DescribeTransitGatewaysResponse& AddTransitGateways(TransitGateway&& value) { m_transitGateways.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransitGateway>& GetTransitGateways() const { return m_transitGateways; }
+    template<typename TransitGatewaysT = Aws::Vector<TransitGateway>>
+    void SetTransitGateways(TransitGatewaysT&& value) { m_transitGatewaysHasBeenSet = true; m_transitGateways = std::forward<TransitGatewaysT>(value); }
+    template<typename TransitGatewaysT = Aws::Vector<TransitGateway>>
+    DescribeTransitGatewaysResponse& WithTransitGateways(TransitGatewaysT&& value) { SetTransitGateways(std::forward<TransitGatewaysT>(value)); return *this;}
+    template<typename TransitGatewaysT = TransitGateway>
+    DescribeTransitGatewaysResponse& AddTransitGateways(TransitGatewaysT&& value) { m_transitGatewaysHasBeenSet = true; m_transitGateways.emplace_back(std::forward<TransitGatewaysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeTransitGatewaysResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTransitGatewaysResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTransitGatewaysResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTransitGatewaysResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTransitGatewaysResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTransitGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTransitGatewaysResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransitGateway> m_transitGateways;
+    bool m_transitGatewaysHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

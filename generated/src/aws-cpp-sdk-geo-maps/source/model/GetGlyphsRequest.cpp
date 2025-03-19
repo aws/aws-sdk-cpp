@@ -12,12 +12,6 @@ using namespace Aws::GeoMaps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGlyphsRequest::GetGlyphsRequest() : 
-    m_fontStackHasBeenSet(false),
-    m_fontUnicodeRangeHasBeenSet(false)
-{
-}
-
 Aws::String GetGlyphsRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class MaintenanceWindow
   {
   public:
-    AWS_IOT_API MaintenanceWindow();
+    AWS_IOT_API MaintenanceWindow() = default;
     AWS_IOT_API MaintenanceWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MaintenanceWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>Displays the start time of the next maintenance window.</p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline MaintenanceWindow& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline MaintenanceWindow& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline MaintenanceWindow& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    MaintenanceWindow& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Displays the duration of the next maintenance window.</p>
      */
-    inline int GetDurationInMinutes() const{ return m_durationInMinutes; }
+    inline int GetDurationInMinutes() const { return m_durationInMinutes; }
     inline bool DurationInMinutesHasBeenSet() const { return m_durationInMinutesHasBeenSet; }
     inline void SetDurationInMinutes(int value) { m_durationInMinutesHasBeenSet = true; m_durationInMinutes = value; }
     inline MaintenanceWindow& WithDurationInMinutes(int value) { SetDurationInMinutes(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_startTime;
     bool m_startTimeHasBeenSet = false;
 
-    int m_durationInMinutes;
+    int m_durationInMinutes{0};
     bool m_durationInMinutesHasBeenSet = false;
   };
 

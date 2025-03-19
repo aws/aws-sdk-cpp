@@ -18,13 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-UploaderConfig::UploaderConfig() : 
-    m_scheduleConfigHasBeenSet(false)
-{
-}
-
 UploaderConfig::UploaderConfig(JsonView jsonValue)
-  : UploaderConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UploaderConfig& UploaderConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScheduleConfig"))
   {
     m_scheduleConfig = jsonValue.GetObject("ScheduleConfig");
-
     m_scheduleConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

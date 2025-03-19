@@ -29,7 +29,7 @@ namespace Model
   class RunInstancesMonitoringEnabled
   {
   public:
-    AWS_EC2_API RunInstancesMonitoringEnabled();
+    AWS_EC2_API RunInstancesMonitoringEnabled() = default;
     AWS_EC2_API RunInstancesMonitoringEnabled(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RunInstancesMonitoringEnabled& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline RunInstancesMonitoringEnabled& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

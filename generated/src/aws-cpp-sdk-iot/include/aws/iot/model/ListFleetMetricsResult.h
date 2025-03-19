@@ -29,7 +29,7 @@ namespace Model
   class ListFleetMetricsResult
   {
   public:
-    AWS_IOT_API ListFleetMetricsResult();
+    AWS_IOT_API ListFleetMetricsResult() = default;
     AWS_IOT_API ListFleetMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListFleetMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of fleet metrics objects.</p>
      */
-    inline const Aws::Vector<FleetMetricNameAndArn>& GetFleetMetrics() const{ return m_fleetMetrics; }
-    inline void SetFleetMetrics(const Aws::Vector<FleetMetricNameAndArn>& value) { m_fleetMetrics = value; }
-    inline void SetFleetMetrics(Aws::Vector<FleetMetricNameAndArn>&& value) { m_fleetMetrics = std::move(value); }
-    inline ListFleetMetricsResult& WithFleetMetrics(const Aws::Vector<FleetMetricNameAndArn>& value) { SetFleetMetrics(value); return *this;}
-    inline ListFleetMetricsResult& WithFleetMetrics(Aws::Vector<FleetMetricNameAndArn>&& value) { SetFleetMetrics(std::move(value)); return *this;}
-    inline ListFleetMetricsResult& AddFleetMetrics(const FleetMetricNameAndArn& value) { m_fleetMetrics.push_back(value); return *this; }
-    inline ListFleetMetricsResult& AddFleetMetrics(FleetMetricNameAndArn&& value) { m_fleetMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FleetMetricNameAndArn>& GetFleetMetrics() const { return m_fleetMetrics; }
+    template<typename FleetMetricsT = Aws::Vector<FleetMetricNameAndArn>>
+    void SetFleetMetrics(FleetMetricsT&& value) { m_fleetMetricsHasBeenSet = true; m_fleetMetrics = std::forward<FleetMetricsT>(value); }
+    template<typename FleetMetricsT = Aws::Vector<FleetMetricNameAndArn>>
+    ListFleetMetricsResult& WithFleetMetrics(FleetMetricsT&& value) { SetFleetMetrics(std::forward<FleetMetricsT>(value)); return *this;}
+    template<typename FleetMetricsT = FleetMetricNameAndArn>
+    ListFleetMetricsResult& AddFleetMetrics(FleetMetricsT&& value) { m_fleetMetricsHasBeenSet = true; m_fleetMetrics.emplace_back(std::forward<FleetMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. Will not be returned if the operation
      * has returned all results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFleetMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFleetMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFleetMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFleetMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFleetMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFleetMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFleetMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFleetMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FleetMetricNameAndArn> m_fleetMetrics;
+    bool m_fleetMetricsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

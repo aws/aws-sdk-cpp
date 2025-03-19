@@ -37,7 +37,7 @@ namespace Model
   class CrossRegionCopyAction
   {
   public:
-    AWS_DLM_API CrossRegionCopyAction();
+    AWS_DLM_API CrossRegionCopyAction() = default;
     AWS_DLM_API CrossRegionCopyAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API CrossRegionCopyAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,36 +47,34 @@ namespace Model
     /**
      * <p>The target Region.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline CrossRegionCopyAction& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline CrossRegionCopyAction& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline CrossRegionCopyAction& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    CrossRegionCopyAction& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The encryption settings for the copied snapshot.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline CrossRegionCopyAction& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline CrossRegionCopyAction& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    CrossRegionCopyAction& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CrossRegionCopyRetainRule& GetRetainRule() const{ return m_retainRule; }
+    inline const CrossRegionCopyRetainRule& GetRetainRule() const { return m_retainRule; }
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
-    inline void SetRetainRule(const CrossRegionCopyRetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
-    inline void SetRetainRule(CrossRegionCopyRetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
-    inline CrossRegionCopyAction& WithRetainRule(const CrossRegionCopyRetainRule& value) { SetRetainRule(value); return *this;}
-    inline CrossRegionCopyAction& WithRetainRule(CrossRegionCopyRetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
+    template<typename RetainRuleT = CrossRegionCopyRetainRule>
+    void SetRetainRule(RetainRuleT&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::forward<RetainRuleT>(value); }
+    template<typename RetainRuleT = CrossRegionCopyRetainRule>
+    CrossRegionCopyAction& WithRetainRule(RetainRuleT&& value) { SetRetainRule(std::forward<RetainRuleT>(value)); return *this;}
     ///@}
   private:
 

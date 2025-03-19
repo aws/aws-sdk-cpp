@@ -18,21 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-NotificationSettingDetail::NotificationSettingDetail() : 
-    m_channel(NotificationChannel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_configuredByHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_event(NotificationEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_threshold(0),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 NotificationSettingDetail::NotificationSettingDetail(JsonView jsonValue)
-  : NotificationSettingDetail()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ NotificationSettingDetail& NotificationSettingDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredBy"))
   {
     m_configuredBy = jsonValue.GetString("configuredBy");
-
     m_configuredByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("event"))
   {
     m_event = NotificationEventMapper::GetNotificationEventForName(jsonValue.GetString("event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetInteger("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

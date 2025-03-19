@@ -12,13 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRecoveryGroupRequest::CreateRecoveryGroupRequest() : 
-    m_cellsHasBeenSet(false),
-    m_recoveryGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRecoveryGroupRequest::SerializePayload() const
 {
   JsonValue payload;

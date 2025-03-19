@@ -33,7 +33,7 @@ namespace Model
   class ResponseResourceMetricKey
   {
   public:
-    AWS_PI_API ResponseResourceMetricKey();
+    AWS_PI_API ResponseResourceMetricKey() = default;
     AWS_PI_API ResponseResourceMetricKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API ResponseResourceMetricKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,33 +61,28 @@ namespace Model
      * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use
      * cases, you can query <code>db.load.avg</code> only. </p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline ResponseResourceMetricKey& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline ResponseResourceMetricKey& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline ResponseResourceMetricKey& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    ResponseResourceMetricKey& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The valid dimensions for the metric.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline ResponseResourceMetricKey& WithDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensions(value); return *this;}
-    inline ResponseResourceMetricKey& WithDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline ResponseResourceMetricKey& AddDimensions(const Aws::String& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
-    inline ResponseResourceMetricKey& AddDimensions(Aws::String&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline ResponseResourceMetricKey& AddDimensions(const Aws::String& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline ResponseResourceMetricKey& AddDimensions(Aws::String&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
-    inline ResponseResourceMetricKey& AddDimensions(const char* key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline ResponseResourceMetricKey& AddDimensions(Aws::String&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline ResponseResourceMetricKey& AddDimensions(const char* key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
+    template<typename DimensionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Map<Aws::String, Aws::String>>
+    ResponseResourceMetricKey& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsKeyT = Aws::String, typename DimensionsValueT = Aws::String>
+    ResponseResourceMetricKey& AddDimensions(DimensionsKeyT&& key, DimensionsValueT&& value) {
+      m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::forward<DimensionsKeyT>(key), std::forward<DimensionsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

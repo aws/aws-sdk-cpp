@@ -18,21 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-DirectConnectGatewayAttachment::DirectConnectGatewayAttachment() : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_virtualInterfaceRegionHasBeenSet(false),
-    m_virtualInterfaceOwnerAccountHasBeenSet(false),
-    m_attachmentState(DirectConnectGatewayAttachmentState::NOT_SET),
-    m_attachmentStateHasBeenSet(false),
-    m_attachmentType(DirectConnectGatewayAttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_stateChangeErrorHasBeenSet(false)
-{
-}
-
 DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValue)
-  : DirectConnectGatewayAttachment()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ DirectConnectGatewayAttachment& DirectConnectGatewayAttachment::operator =(JsonV
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-
     m_directConnectGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceId"))
   {
     m_virtualInterfaceId = jsonValue.GetString("virtualInterfaceId");
-
     m_virtualInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceRegion"))
   {
     m_virtualInterfaceRegion = jsonValue.GetString("virtualInterfaceRegion");
-
     m_virtualInterfaceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceOwnerAccount"))
   {
     m_virtualInterfaceOwnerAccount = jsonValue.GetString("virtualInterfaceOwnerAccount");
-
     m_virtualInterfaceOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentState"))
   {
     m_attachmentState = DirectConnectGatewayAttachmentStateMapper::GetDirectConnectGatewayAttachmentStateForName(jsonValue.GetString("attachmentState"));
-
     m_attachmentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentType"))
   {
     m_attachmentType = DirectConnectGatewayAttachmentTypeMapper::GetDirectConnectGatewayAttachmentTypeForName(jsonValue.GetString("attachmentType"));
-
     m_attachmentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChangeError"))
   {
     m_stateChangeError = jsonValue.GetString("stateChangeError");
-
     m_stateChangeErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

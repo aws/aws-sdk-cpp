@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails() : 
-    m_artifactIdentifierHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespaceTypeHasBeenSet(false),
-    m_overrideArtifactName(false),
-    m_overrideArtifactNameHasBeenSet(false),
-    m_packagingHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectArtifactsDetails::AwsCodeBuildProjectArtifactsDetails(JsonView jsonValue)
-  : AwsCodeBuildProjectArtifactsDetails()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ AwsCodeBuildProjectArtifactsDetails& AwsCodeBuildProjectArtifactsDetails::operat
   if(jsonValue.ValueExists("ArtifactIdentifier"))
   {
     m_artifactIdentifier = jsonValue.GetString("ArtifactIdentifier");
-
     m_artifactIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionDisabled"))
   {
     m_encryptionDisabled = jsonValue.GetBool("EncryptionDisabled");
-
     m_encryptionDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamespaceType"))
   {
     m_namespaceType = jsonValue.GetString("NamespaceType");
-
     m_namespaceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideArtifactName"))
   {
     m_overrideArtifactName = jsonValue.GetBool("OverrideArtifactName");
-
     m_overrideArtifactNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Packaging"))
   {
     m_packaging = jsonValue.GetString("Packaging");
-
     m_packagingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-RecordOutput::RecordOutput() : 
-    m_outputKeyHasBeenSet(false),
-    m_outputValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 RecordOutput::RecordOutput(JsonView jsonValue)
-  : RecordOutput()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RecordOutput& RecordOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputKey"))
   {
     m_outputKey = jsonValue.GetString("OutputKey");
-
     m_outputKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputValue"))
   {
     m_outputValue = jsonValue.GetString("OutputValue");
-
     m_outputValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

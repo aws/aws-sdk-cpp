@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CloseCaseResult::CloseCaseResult() : 
-    m_caseStatus(CaseStatus::NOT_SET)
-{
-}
-
 CloseCaseResult::CloseCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CloseCaseResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CloseCaseResult& CloseCaseResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("caseStatus"))
   {
     m_caseStatus = CaseStatusMapper::GetCaseStatusForName(jsonValue.GetString("caseStatus"));
-
+    m_caseStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("closedDate"))
   {
     m_closedDate = jsonValue.GetDouble("closedDate");
-
+    m_closedDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

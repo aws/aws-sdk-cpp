@@ -20,17 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_versionLabelHasBeenSet(false),
-    m_deploymentId(0),
-    m_deploymentIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_deploymentTimeHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(const XmlNode& xmlNode)
-  : Deployment()
 {
   *this = xmlNode;
 }

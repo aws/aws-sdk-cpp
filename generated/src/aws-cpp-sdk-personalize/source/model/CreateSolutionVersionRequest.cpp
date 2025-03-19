@@ -12,15 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSolutionVersionRequest::CreateSolutionVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_trainingMode(TrainingMode::NOT_SET),
-    m_trainingModeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSolutionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

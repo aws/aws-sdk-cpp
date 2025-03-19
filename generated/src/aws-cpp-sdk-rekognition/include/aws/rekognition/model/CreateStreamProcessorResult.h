@@ -27,7 +27,7 @@ namespace Model
   class CreateStreamProcessorResult
   {
   public:
-    AWS_REKOGNITION_API CreateStreamProcessorResult();
+    AWS_REKOGNITION_API CreateStreamProcessorResult() = default;
     AWS_REKOGNITION_API CreateStreamProcessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API CreateStreamProcessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
-    inline const Aws::String& GetStreamProcessorArn() const{ return m_streamProcessorArn; }
-    inline void SetStreamProcessorArn(const Aws::String& value) { m_streamProcessorArn = value; }
-    inline void SetStreamProcessorArn(Aws::String&& value) { m_streamProcessorArn = std::move(value); }
-    inline void SetStreamProcessorArn(const char* value) { m_streamProcessorArn.assign(value); }
-    inline CreateStreamProcessorResult& WithStreamProcessorArn(const Aws::String& value) { SetStreamProcessorArn(value); return *this;}
-    inline CreateStreamProcessorResult& WithStreamProcessorArn(Aws::String&& value) { SetStreamProcessorArn(std::move(value)); return *this;}
-    inline CreateStreamProcessorResult& WithStreamProcessorArn(const char* value) { SetStreamProcessorArn(value); return *this;}
+    inline const Aws::String& GetStreamProcessorArn() const { return m_streamProcessorArn; }
+    template<typename StreamProcessorArnT = Aws::String>
+    void SetStreamProcessorArn(StreamProcessorArnT&& value) { m_streamProcessorArnHasBeenSet = true; m_streamProcessorArn = std::forward<StreamProcessorArnT>(value); }
+    template<typename StreamProcessorArnT = Aws::String>
+    CreateStreamProcessorResult& WithStreamProcessorArn(StreamProcessorArnT&& value) { SetStreamProcessorArn(std::forward<StreamProcessorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStreamProcessorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStreamProcessorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStreamProcessorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStreamProcessorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamProcessorArn;
+    bool m_streamProcessorArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

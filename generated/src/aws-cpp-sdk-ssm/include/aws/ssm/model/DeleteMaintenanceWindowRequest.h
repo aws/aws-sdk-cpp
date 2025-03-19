@@ -21,7 +21,7 @@ namespace Model
   class DeleteMaintenanceWindowRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DeleteMaintenanceWindowRequest();
+    AWS_SSM_API DeleteMaintenanceWindowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the maintenance window to delete.</p>
      */
-    inline const Aws::String& GetWindowId() const{ return m_windowId; }
+    inline const Aws::String& GetWindowId() const { return m_windowId; }
     inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
-    inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
-    inline void SetWindowId(Aws::String&& value) { m_windowIdHasBeenSet = true; m_windowId = std::move(value); }
-    inline void SetWindowId(const char* value) { m_windowIdHasBeenSet = true; m_windowId.assign(value); }
-    inline DeleteMaintenanceWindowRequest& WithWindowId(const Aws::String& value) { SetWindowId(value); return *this;}
-    inline DeleteMaintenanceWindowRequest& WithWindowId(Aws::String&& value) { SetWindowId(std::move(value)); return *this;}
-    inline DeleteMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+    template<typename WindowIdT = Aws::String>
+    void SetWindowId(WindowIdT&& value) { m_windowIdHasBeenSet = true; m_windowId = std::forward<WindowIdT>(value); }
+    template<typename WindowIdT = Aws::String>
+    DeleteMaintenanceWindowRequest& WithWindowId(WindowIdT&& value) { SetWindowId(std::forward<WindowIdT>(value)); return *this;}
     ///@}
   private:
 

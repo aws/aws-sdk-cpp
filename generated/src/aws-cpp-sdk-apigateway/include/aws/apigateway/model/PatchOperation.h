@@ -34,7 +34,7 @@ namespace Model
   class PatchOperation
   {
   public:
-    AWS_APIGATEWAY_API PatchOperation();
+    AWS_APIGATEWAY_API PatchOperation() = default;
     AWS_APIGATEWAY_API PatchOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API PatchOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * contexts. Attempts to apply an unsupported operation on a resource will return
      * an error message..</p>
      */
-    inline const Op& GetOp() const{ return m_op; }
+    inline Op GetOp() const { return m_op; }
     inline bool OpHasBeenSet() const { return m_opHasBeenSet; }
-    inline void SetOp(const Op& value) { m_opHasBeenSet = true; m_op = value; }
-    inline void SetOp(Op&& value) { m_opHasBeenSet = true; m_op = std::move(value); }
-    inline PatchOperation& WithOp(const Op& value) { SetOp(value); return *this;}
-    inline PatchOperation& WithOp(Op&& value) { SetOp(std::move(value)); return *this;}
+    inline void SetOp(Op value) { m_opHasBeenSet = true; m_op = value; }
+    inline PatchOperation& WithOp(Op value) { SetOp(value); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * escaped with "~1", as shown in the example above. Each op operation can have
      * only one path associated with it.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline PatchOperation& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline PatchOperation& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline PatchOperation& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    PatchOperation& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * enclose the JSON object with a pair of single quotes in a Linux shell, e.g.,
      * '{"a": ...}'.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PatchOperation& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PatchOperation& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PatchOperation& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PatchOperation& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,18 +97,16 @@ namespace Model
      * with "op":"copy", "from":"/canarySettings/deploymentId" and
      * "path":"/deploymentId".</p>
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline PatchOperation& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline PatchOperation& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline PatchOperation& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    PatchOperation& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
   private:
 
-    Op m_op;
+    Op m_op{Op::NOT_SET};
     bool m_opHasBeenSet = false;
 
     Aws::String m_path;

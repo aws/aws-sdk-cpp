@@ -18,17 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FormCTA::FormCTA() : 
-    m_position(FormButtonsPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_clearHasBeenSet(false),
-    m_cancelHasBeenSet(false),
-    m_submitHasBeenSet(false)
-{
-}
-
 FormCTA::FormCTA(JsonView jsonValue)
-  : FormCTA()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ FormCTA& FormCTA::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("position"))
   {
     m_position = FormButtonsPositionMapper::GetFormButtonsPositionForName(jsonValue.GetString("position"));
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clear"))
   {
     m_clear = jsonValue.GetObject("clear");
-
     m_clearHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cancel"))
   {
     m_cancel = jsonValue.GetObject("cancel");
-
     m_cancelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submit"))
   {
     m_submit = jsonValue.GetObject("submit");
-
     m_submitHasBeenSet = true;
   }
-
   return *this;
 }
 

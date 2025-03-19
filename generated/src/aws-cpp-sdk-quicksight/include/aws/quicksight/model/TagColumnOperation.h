@@ -34,7 +34,7 @@ namespace Model
   class TagColumnOperation
   {
   public:
-    AWS_QUICKSIGHT_API TagColumnOperation();
+    AWS_QUICKSIGHT_API TagColumnOperation() = default;
     AWS_QUICKSIGHT_API TagColumnOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TagColumnOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The column that this operation acts on.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline TagColumnOperation& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline TagColumnOperation& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline TagColumnOperation& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    TagColumnOperation& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      *  <p>This is not tags for the Amazon Web Services tagging feature.</p>
      * 
      */
-    inline const Aws::Vector<ColumnTag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<ColumnTag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<ColumnTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<ColumnTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TagColumnOperation& WithTags(const Aws::Vector<ColumnTag>& value) { SetTags(value); return *this;}
-    inline TagColumnOperation& WithTags(Aws::Vector<ColumnTag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TagColumnOperation& AddTags(const ColumnTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TagColumnOperation& AddTags(ColumnTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<ColumnTag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<ColumnTag>>
+    TagColumnOperation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = ColumnTag>
+    TagColumnOperation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

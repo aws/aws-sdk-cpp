@@ -34,7 +34,7 @@ namespace Model
   class PredictorBaseline
   {
   public:
-    AWS_FORECASTSERVICE_API PredictorBaseline();
+    AWS_FORECASTSERVICE_API PredictorBaseline() = default;
     AWS_FORECASTSERVICE_API PredictorBaseline(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API PredictorBaseline& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * metrics</a> for the predictor. Use these metrics as a baseline for comparison
      * purposes as you use your predictor and the metrics change.</p>
      */
-    inline const Aws::Vector<BaselineMetric>& GetBaselineMetrics() const{ return m_baselineMetrics; }
+    inline const Aws::Vector<BaselineMetric>& GetBaselineMetrics() const { return m_baselineMetrics; }
     inline bool BaselineMetricsHasBeenSet() const { return m_baselineMetricsHasBeenSet; }
-    inline void SetBaselineMetrics(const Aws::Vector<BaselineMetric>& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics = value; }
-    inline void SetBaselineMetrics(Aws::Vector<BaselineMetric>&& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics = std::move(value); }
-    inline PredictorBaseline& WithBaselineMetrics(const Aws::Vector<BaselineMetric>& value) { SetBaselineMetrics(value); return *this;}
-    inline PredictorBaseline& WithBaselineMetrics(Aws::Vector<BaselineMetric>&& value) { SetBaselineMetrics(std::move(value)); return *this;}
-    inline PredictorBaseline& AddBaselineMetrics(const BaselineMetric& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics.push_back(value); return *this; }
-    inline PredictorBaseline& AddBaselineMetrics(BaselineMetric&& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics.push_back(std::move(value)); return *this; }
+    template<typename BaselineMetricsT = Aws::Vector<BaselineMetric>>
+    void SetBaselineMetrics(BaselineMetricsT&& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics = std::forward<BaselineMetricsT>(value); }
+    template<typename BaselineMetricsT = Aws::Vector<BaselineMetric>>
+    PredictorBaseline& WithBaselineMetrics(BaselineMetricsT&& value) { SetBaselineMetrics(std::forward<BaselineMetricsT>(value)); return *this;}
+    template<typename BaselineMetricsT = BaselineMetric>
+    PredictorBaseline& AddBaselineMetrics(BaselineMetricsT&& value) { m_baselineMetricsHasBeenSet = true; m_baselineMetrics.emplace_back(std::forward<BaselineMetricsT>(value)); return *this; }
     ///@}
   private:
 

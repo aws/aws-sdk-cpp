@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbClusterMember::AwsRdsDbClusterMember() : 
-    m_isClusterWriter(false),
-    m_isClusterWriterHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_dbInstanceIdentifierHasBeenSet(false),
-    m_dbClusterParameterGroupStatusHasBeenSet(false)
-{
-}
-
 AwsRdsDbClusterMember::AwsRdsDbClusterMember(JsonView jsonValue)
-  : AwsRdsDbClusterMember()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsRdsDbClusterMember& AwsRdsDbClusterMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsClusterWriter"))
   {
     m_isClusterWriter = jsonValue.GetBool("IsClusterWriter");
-
     m_isClusterWriterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PromotionTier"))
   {
     m_promotionTier = jsonValue.GetInteger("PromotionTier");
-
     m_promotionTierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbInstanceIdentifier"))
   {
     m_dbInstanceIdentifier = jsonValue.GetString("DbInstanceIdentifier");
-
     m_dbInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterParameterGroupStatus"))
   {
     m_dbClusterParameterGroupStatus = jsonValue.GetString("DbClusterParameterGroupStatus");
-
     m_dbClusterParameterGroupStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

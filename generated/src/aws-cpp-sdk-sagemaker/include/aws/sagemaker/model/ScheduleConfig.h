@@ -32,7 +32,7 @@ namespace Model
   class ScheduleConfig
   {
   public:
-    AWS_SAGEMAKER_API ScheduleConfig();
+    AWS_SAGEMAKER_API ScheduleConfig() = default;
     AWS_SAGEMAKER_API ScheduleConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ScheduleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,14 +62,12 @@ namespace Model
      * the keyword <code>NOW</code> to run the monitoring job immediately, one time,
      * without recurring.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline ScheduleConfig& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline ScheduleConfig& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline ScheduleConfig& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    ScheduleConfig& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +83,12 @@ namespace Model
      * <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is
      * required.</p>
      */
-    inline const Aws::String& GetDataAnalysisStartTime() const{ return m_dataAnalysisStartTime; }
+    inline const Aws::String& GetDataAnalysisStartTime() const { return m_dataAnalysisStartTime; }
     inline bool DataAnalysisStartTimeHasBeenSet() const { return m_dataAnalysisStartTimeHasBeenSet; }
-    inline void SetDataAnalysisStartTime(const Aws::String& value) { m_dataAnalysisStartTimeHasBeenSet = true; m_dataAnalysisStartTime = value; }
-    inline void SetDataAnalysisStartTime(Aws::String&& value) { m_dataAnalysisStartTimeHasBeenSet = true; m_dataAnalysisStartTime = std::move(value); }
-    inline void SetDataAnalysisStartTime(const char* value) { m_dataAnalysisStartTimeHasBeenSet = true; m_dataAnalysisStartTime.assign(value); }
-    inline ScheduleConfig& WithDataAnalysisStartTime(const Aws::String& value) { SetDataAnalysisStartTime(value); return *this;}
-    inline ScheduleConfig& WithDataAnalysisStartTime(Aws::String&& value) { SetDataAnalysisStartTime(std::move(value)); return *this;}
-    inline ScheduleConfig& WithDataAnalysisStartTime(const char* value) { SetDataAnalysisStartTime(value); return *this;}
+    template<typename DataAnalysisStartTimeT = Aws::String>
+    void SetDataAnalysisStartTime(DataAnalysisStartTimeT&& value) { m_dataAnalysisStartTimeHasBeenSet = true; m_dataAnalysisStartTime = std::forward<DataAnalysisStartTimeT>(value); }
+    template<typename DataAnalysisStartTimeT = Aws::String>
+    ScheduleConfig& WithDataAnalysisStartTime(DataAnalysisStartTimeT&& value) { SetDataAnalysisStartTime(std::forward<DataAnalysisStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +104,12 @@ namespace Model
      * <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is
      * required.</p>
      */
-    inline const Aws::String& GetDataAnalysisEndTime() const{ return m_dataAnalysisEndTime; }
+    inline const Aws::String& GetDataAnalysisEndTime() const { return m_dataAnalysisEndTime; }
     inline bool DataAnalysisEndTimeHasBeenSet() const { return m_dataAnalysisEndTimeHasBeenSet; }
-    inline void SetDataAnalysisEndTime(const Aws::String& value) { m_dataAnalysisEndTimeHasBeenSet = true; m_dataAnalysisEndTime = value; }
-    inline void SetDataAnalysisEndTime(Aws::String&& value) { m_dataAnalysisEndTimeHasBeenSet = true; m_dataAnalysisEndTime = std::move(value); }
-    inline void SetDataAnalysisEndTime(const char* value) { m_dataAnalysisEndTimeHasBeenSet = true; m_dataAnalysisEndTime.assign(value); }
-    inline ScheduleConfig& WithDataAnalysisEndTime(const Aws::String& value) { SetDataAnalysisEndTime(value); return *this;}
-    inline ScheduleConfig& WithDataAnalysisEndTime(Aws::String&& value) { SetDataAnalysisEndTime(std::move(value)); return *this;}
-    inline ScheduleConfig& WithDataAnalysisEndTime(const char* value) { SetDataAnalysisEndTime(value); return *this;}
+    template<typename DataAnalysisEndTimeT = Aws::String>
+    void SetDataAnalysisEndTime(DataAnalysisEndTimeT&& value) { m_dataAnalysisEndTimeHasBeenSet = true; m_dataAnalysisEndTime = std::forward<DataAnalysisEndTimeT>(value); }
+    template<typename DataAnalysisEndTimeT = Aws::String>
+    ScheduleConfig& WithDataAnalysisEndTime(DataAnalysisEndTimeT&& value) { SetDataAnalysisEndTime(std::forward<DataAnalysisEndTimeT>(value)); return *this;}
     ///@}
   private:
 

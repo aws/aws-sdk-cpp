@@ -30,7 +30,7 @@ namespace Model
   class IdMappingConfig
   {
   public:
-    AWS_CLEANROOMS_API IdMappingConfig();
+    AWS_CLEANROOMS_API IdMappingConfig() = default;
     AWS_CLEANROOMS_API IdMappingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API IdMappingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * the ID mapping table (<code>TRUE</code>) or not (<code>FALSE</code>).</p>
      * <p>Default is <code>FALSE</code>.</p>
      */
-    inline bool GetAllowUseAsDimensionColumn() const{ return m_allowUseAsDimensionColumn; }
+    inline bool GetAllowUseAsDimensionColumn() const { return m_allowUseAsDimensionColumn; }
     inline bool AllowUseAsDimensionColumnHasBeenSet() const { return m_allowUseAsDimensionColumnHasBeenSet; }
     inline void SetAllowUseAsDimensionColumn(bool value) { m_allowUseAsDimensionColumnHasBeenSet = true; m_allowUseAsDimensionColumn = value; }
     inline IdMappingConfig& WithAllowUseAsDimensionColumn(bool value) { SetAllowUseAsDimensionColumn(value); return *this;}
     ///@}
   private:
 
-    bool m_allowUseAsDimensionColumn;
+    bool m_allowUseAsDimensionColumn{false};
     bool m_allowUseAsDimensionColumnHasBeenSet = false;
   };
 

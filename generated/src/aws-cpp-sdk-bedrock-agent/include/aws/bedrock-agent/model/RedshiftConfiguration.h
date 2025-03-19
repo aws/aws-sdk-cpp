@@ -38,7 +38,7 @@ namespace Model
   class RedshiftConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RedshiftConfiguration();
+    AWS_BEDROCKAGENT_API RedshiftConfiguration() = default;
     AWS_BEDROCKAGENT_API RedshiftConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RedshiftConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,38 +48,38 @@ namespace Model
     /**
      * <p>Specifies configurations for an Amazon Redshift query engine.</p>
      */
-    inline const RedshiftQueryEngineConfiguration& GetQueryEngineConfiguration() const{ return m_queryEngineConfiguration; }
+    inline const RedshiftQueryEngineConfiguration& GetQueryEngineConfiguration() const { return m_queryEngineConfiguration; }
     inline bool QueryEngineConfigurationHasBeenSet() const { return m_queryEngineConfigurationHasBeenSet; }
-    inline void SetQueryEngineConfiguration(const RedshiftQueryEngineConfiguration& value) { m_queryEngineConfigurationHasBeenSet = true; m_queryEngineConfiguration = value; }
-    inline void SetQueryEngineConfiguration(RedshiftQueryEngineConfiguration&& value) { m_queryEngineConfigurationHasBeenSet = true; m_queryEngineConfiguration = std::move(value); }
-    inline RedshiftConfiguration& WithQueryEngineConfiguration(const RedshiftQueryEngineConfiguration& value) { SetQueryEngineConfiguration(value); return *this;}
-    inline RedshiftConfiguration& WithQueryEngineConfiguration(RedshiftQueryEngineConfiguration&& value) { SetQueryEngineConfiguration(std::move(value)); return *this;}
+    template<typename QueryEngineConfigurationT = RedshiftQueryEngineConfiguration>
+    void SetQueryEngineConfiguration(QueryEngineConfigurationT&& value) { m_queryEngineConfigurationHasBeenSet = true; m_queryEngineConfiguration = std::forward<QueryEngineConfigurationT>(value); }
+    template<typename QueryEngineConfigurationT = RedshiftQueryEngineConfiguration>
+    RedshiftConfiguration& WithQueryEngineConfiguration(QueryEngineConfigurationT&& value) { SetQueryEngineConfiguration(std::forward<QueryEngineConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies configurations for generating queries.</p>
      */
-    inline const QueryGenerationConfiguration& GetQueryGenerationConfiguration() const{ return m_queryGenerationConfiguration; }
+    inline const QueryGenerationConfiguration& GetQueryGenerationConfiguration() const { return m_queryGenerationConfiguration; }
     inline bool QueryGenerationConfigurationHasBeenSet() const { return m_queryGenerationConfigurationHasBeenSet; }
-    inline void SetQueryGenerationConfiguration(const QueryGenerationConfiguration& value) { m_queryGenerationConfigurationHasBeenSet = true; m_queryGenerationConfiguration = value; }
-    inline void SetQueryGenerationConfiguration(QueryGenerationConfiguration&& value) { m_queryGenerationConfigurationHasBeenSet = true; m_queryGenerationConfiguration = std::move(value); }
-    inline RedshiftConfiguration& WithQueryGenerationConfiguration(const QueryGenerationConfiguration& value) { SetQueryGenerationConfiguration(value); return *this;}
-    inline RedshiftConfiguration& WithQueryGenerationConfiguration(QueryGenerationConfiguration&& value) { SetQueryGenerationConfiguration(std::move(value)); return *this;}
+    template<typename QueryGenerationConfigurationT = QueryGenerationConfiguration>
+    void SetQueryGenerationConfiguration(QueryGenerationConfigurationT&& value) { m_queryGenerationConfigurationHasBeenSet = true; m_queryGenerationConfiguration = std::forward<QueryGenerationConfigurationT>(value); }
+    template<typename QueryGenerationConfigurationT = QueryGenerationConfiguration>
+    RedshiftConfiguration& WithQueryGenerationConfiguration(QueryGenerationConfigurationT&& value) { SetQueryGenerationConfiguration(std::forward<QueryGenerationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies configurations for Amazon Redshift database storage.</p>
      */
-    inline const Aws::Vector<RedshiftQueryEngineStorageConfiguration>& GetStorageConfigurations() const{ return m_storageConfigurations; }
+    inline const Aws::Vector<RedshiftQueryEngineStorageConfiguration>& GetStorageConfigurations() const { return m_storageConfigurations; }
     inline bool StorageConfigurationsHasBeenSet() const { return m_storageConfigurationsHasBeenSet; }
-    inline void SetStorageConfigurations(const Aws::Vector<RedshiftQueryEngineStorageConfiguration>& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations = value; }
-    inline void SetStorageConfigurations(Aws::Vector<RedshiftQueryEngineStorageConfiguration>&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations = std::move(value); }
-    inline RedshiftConfiguration& WithStorageConfigurations(const Aws::Vector<RedshiftQueryEngineStorageConfiguration>& value) { SetStorageConfigurations(value); return *this;}
-    inline RedshiftConfiguration& WithStorageConfigurations(Aws::Vector<RedshiftQueryEngineStorageConfiguration>&& value) { SetStorageConfigurations(std::move(value)); return *this;}
-    inline RedshiftConfiguration& AddStorageConfigurations(const RedshiftQueryEngineStorageConfiguration& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations.push_back(value); return *this; }
-    inline RedshiftConfiguration& AddStorageConfigurations(RedshiftQueryEngineStorageConfiguration&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations.push_back(std::move(value)); return *this; }
+    template<typename StorageConfigurationsT = Aws::Vector<RedshiftQueryEngineStorageConfiguration>>
+    void SetStorageConfigurations(StorageConfigurationsT&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations = std::forward<StorageConfigurationsT>(value); }
+    template<typename StorageConfigurationsT = Aws::Vector<RedshiftQueryEngineStorageConfiguration>>
+    RedshiftConfiguration& WithStorageConfigurations(StorageConfigurationsT&& value) { SetStorageConfigurations(std::forward<StorageConfigurationsT>(value)); return *this;}
+    template<typename StorageConfigurationsT = RedshiftQueryEngineStorageConfiguration>
+    RedshiftConfiguration& AddStorageConfigurations(StorageConfigurationsT&& value) { m_storageConfigurationsHasBeenSet = true; m_storageConfigurations.emplace_back(std::forward<StorageConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

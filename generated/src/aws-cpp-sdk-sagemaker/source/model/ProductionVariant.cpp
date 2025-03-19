@@ -18,36 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariant::ProductionVariant() : 
-    m_variantNameHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_initialInstanceCount(0),
-    m_initialInstanceCountHasBeenSet(false),
-    m_instanceType(ProductionVariantInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_initialVariantWeight(0.0),
-    m_initialVariantWeightHasBeenSet(false),
-    m_acceleratorType(ProductionVariantAcceleratorType::NOT_SET),
-    m_acceleratorTypeHasBeenSet(false),
-    m_coreDumpConfigHasBeenSet(false),
-    m_serverlessConfigHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_modelDataDownloadTimeoutInSeconds(0),
-    m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
-    m_containerStartupHealthCheckTimeoutInSeconds(0),
-    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false),
-    m_enableSSMAccess(false),
-    m_enableSSMAccessHasBeenSet(false),
-    m_managedInstanceScalingHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_inferenceAmiVersion(ProductionVariantInferenceAmiVersion::NOT_SET),
-    m_inferenceAmiVersionHasBeenSet(false)
-{
-}
-
 ProductionVariant::ProductionVariant(JsonView jsonValue)
-  : ProductionVariant()
 {
   *this = jsonValue;
 }
@@ -57,108 +28,78 @@ ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VariantName"))
   {
     m_variantName = jsonValue.GetString("VariantName");
-
     m_variantNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialInstanceCount"))
   {
     m_initialInstanceCount = jsonValue.GetInteger("InitialInstanceCount");
-
     m_initialInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ProductionVariantInstanceTypeMapper::GetProductionVariantInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialVariantWeight"))
   {
     m_initialVariantWeight = jsonValue.GetDouble("InitialVariantWeight");
-
     m_initialVariantWeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceleratorType"))
   {
     m_acceleratorType = ProductionVariantAcceleratorTypeMapper::GetProductionVariantAcceleratorTypeForName(jsonValue.GetString("AcceleratorType"));
-
     m_acceleratorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreDumpConfig"))
   {
     m_coreDumpConfig = jsonValue.GetObject("CoreDumpConfig");
-
     m_coreDumpConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerlessConfig"))
   {
     m_serverlessConfig = jsonValue.GetObject("ServerlessConfig");
-
     m_serverlessConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelDataDownloadTimeoutInSeconds"))
   {
     m_modelDataDownloadTimeoutInSeconds = jsonValue.GetInteger("ModelDataDownloadTimeoutInSeconds");
-
     m_modelDataDownloadTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerStartupHealthCheckTimeoutInSeconds"))
   {
     m_containerStartupHealthCheckTimeoutInSeconds = jsonValue.GetInteger("ContainerStartupHealthCheckTimeoutInSeconds");
-
     m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableSSMAccess"))
   {
     m_enableSSMAccess = jsonValue.GetBool("EnableSSMAccess");
-
     m_enableSSMAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedInstanceScaling"))
   {
     m_managedInstanceScaling = jsonValue.GetObject("ManagedInstanceScaling");
-
     m_managedInstanceScalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingConfig"))
   {
     m_routingConfig = jsonValue.GetObject("RoutingConfig");
-
     m_routingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceAmiVersion"))
   {
     m_inferenceAmiVersion = ProductionVariantInferenceAmiVersionMapper::GetProductionVariantInferenceAmiVersionForName(jsonValue.GetString("InferenceAmiVersion"));
-
     m_inferenceAmiVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

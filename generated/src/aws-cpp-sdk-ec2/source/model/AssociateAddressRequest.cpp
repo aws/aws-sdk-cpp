@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateAddressRequest::AssociateAddressRequest() : 
-    m_allocationIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_allowReassociation(false),
-    m_allowReassociationHasBeenSet(false)
-{
-}
-
 Aws::String AssociateAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

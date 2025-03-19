@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationGroup::CapacityReservationGroup() : 
-    m_groupArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 CapacityReservationGroup::CapacityReservationGroup(const XmlNode& xmlNode)
-  : CapacityReservationGroup()
 {
   *this = xmlNode;
 }

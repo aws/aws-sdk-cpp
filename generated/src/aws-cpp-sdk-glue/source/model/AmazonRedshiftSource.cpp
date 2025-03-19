@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AmazonRedshiftSource::AmazonRedshiftSource() : 
-    m_nameHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 AmazonRedshiftSource::AmazonRedshiftSource(JsonView jsonValue)
-  : AmazonRedshiftSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AmazonRedshiftSource& AmazonRedshiftSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetObject("Data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateStackRefactorResult
   {
   public:
-    AWS_CLOUDFORMATION_API CreateStackRefactorResult();
+    AWS_CLOUDFORMATION_API CreateStackRefactorResult() = default;
     AWS_CLOUDFORMATION_API CreateStackRefactorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API CreateStackRefactorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The ID associated with the stack refactor created from the
      * <a>CreateStackRefactor</a> action.</p>
      */
-    inline const Aws::String& GetStackRefactorId() const{ return m_stackRefactorId; }
-    inline void SetStackRefactorId(const Aws::String& value) { m_stackRefactorId = value; }
-    inline void SetStackRefactorId(Aws::String&& value) { m_stackRefactorId = std::move(value); }
-    inline void SetStackRefactorId(const char* value) { m_stackRefactorId.assign(value); }
-    inline CreateStackRefactorResult& WithStackRefactorId(const Aws::String& value) { SetStackRefactorId(value); return *this;}
-    inline CreateStackRefactorResult& WithStackRefactorId(Aws::String&& value) { SetStackRefactorId(std::move(value)); return *this;}
-    inline CreateStackRefactorResult& WithStackRefactorId(const char* value) { SetStackRefactorId(value); return *this;}
+    inline const Aws::String& GetStackRefactorId() const { return m_stackRefactorId; }
+    template<typename StackRefactorIdT = Aws::String>
+    void SetStackRefactorId(StackRefactorIdT&& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = std::forward<StackRefactorIdT>(value); }
+    template<typename StackRefactorIdT = Aws::String>
+    CreateStackRefactorResult& WithStackRefactorId(StackRefactorIdT&& value) { SetStackRefactorId(std::forward<StackRefactorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateStackRefactorResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateStackRefactorResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateStackRefactorResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stackRefactorId;
+    bool m_stackRefactorIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupRule::SecurityGroupRule() : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupOwnerIdHasBeenSet(false),
-    m_isEgress(false),
-    m_isEgressHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_cidrIpv4HasBeenSet(false),
-    m_cidrIpv6HasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_referencedGroupInfoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityGroupRuleArnHasBeenSet(false)
-{
-}
-
 SecurityGroupRule::SecurityGroupRule(const XmlNode& xmlNode)
-  : SecurityGroupRule()
 {
   *this = xmlNode;
 }
@@ -129,6 +107,7 @@ SecurityGroupRule& SecurityGroupRule::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

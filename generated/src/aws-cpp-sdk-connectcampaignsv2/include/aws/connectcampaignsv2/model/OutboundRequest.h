@@ -33,7 +33,7 @@ namespace Model
   class OutboundRequest
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API OutboundRequest();
+    AWS_CONNECTCAMPAIGNSV2_API OutboundRequest() = default;
     AWS_CONNECTCAMPAIGNSV2_API OutboundRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API OutboundRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,41 +41,39 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline OutboundRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline OutboundRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline OutboundRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    OutboundRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
+    inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
-    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
-    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
-    inline OutboundRequest& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
-    inline OutboundRequest& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    void SetExpirationTime(ExpirationTimeT&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::forward<ExpirationTimeT>(value); }
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    OutboundRequest& WithExpirationTime(ExpirationTimeT&& value) { SetExpirationTime(std::forward<ExpirationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ChannelSubtypeParameters& GetChannelSubtypeParameters() const{ return m_channelSubtypeParameters; }
+    inline const ChannelSubtypeParameters& GetChannelSubtypeParameters() const { return m_channelSubtypeParameters; }
     inline bool ChannelSubtypeParametersHasBeenSet() const { return m_channelSubtypeParametersHasBeenSet; }
-    inline void SetChannelSubtypeParameters(const ChannelSubtypeParameters& value) { m_channelSubtypeParametersHasBeenSet = true; m_channelSubtypeParameters = value; }
-    inline void SetChannelSubtypeParameters(ChannelSubtypeParameters&& value) { m_channelSubtypeParametersHasBeenSet = true; m_channelSubtypeParameters = std::move(value); }
-    inline OutboundRequest& WithChannelSubtypeParameters(const ChannelSubtypeParameters& value) { SetChannelSubtypeParameters(value); return *this;}
-    inline OutboundRequest& WithChannelSubtypeParameters(ChannelSubtypeParameters&& value) { SetChannelSubtypeParameters(std::move(value)); return *this;}
+    template<typename ChannelSubtypeParametersT = ChannelSubtypeParameters>
+    void SetChannelSubtypeParameters(ChannelSubtypeParametersT&& value) { m_channelSubtypeParametersHasBeenSet = true; m_channelSubtypeParameters = std::forward<ChannelSubtypeParametersT>(value); }
+    template<typename ChannelSubtypeParametersT = ChannelSubtypeParameters>
+    OutboundRequest& WithChannelSubtypeParameters(ChannelSubtypeParametersT&& value) { SetChannelSubtypeParameters(std::forward<ChannelSubtypeParametersT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTime;
+    Aws::Utils::DateTime m_expirationTime{};
     bool m_expirationTimeHasBeenSet = false;
 
     ChannelSubtypeParameters m_channelSubtypeParameters;

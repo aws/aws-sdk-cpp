@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobOutputConfig::LabelingJobOutputConfig() : 
-    m_s3OutputPathHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false)
-{
-}
-
 LabelingJobOutputConfig::LabelingJobOutputConfig(JsonView jsonValue)
-  : LabelingJobOutputConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LabelingJobOutputConfig& LabelingJobOutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

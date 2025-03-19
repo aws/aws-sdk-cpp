@@ -18,13 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateCloudWatchLogsLogConfigurationInput::ExperimentTemplateCloudWatchLogsLogConfigurationInput() : 
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 ExperimentTemplateCloudWatchLogsLogConfigurationInput::ExperimentTemplateCloudWatchLogsLogConfigurationInput(JsonView jsonValue)
-  : ExperimentTemplateCloudWatchLogsLogConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExperimentTemplateCloudWatchLogsLogConfigurationInput& ExperimentTemplateCloudWa
   if(jsonValue.ValueExists("logGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("logGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class UserQuickConnectConfig
   {
   public:
-    AWS_CONNECT_API UserQuickConnectConfig();
+    AWS_CONNECT_API UserQuickConnectConfig() = default;
     AWS_CONNECT_API UserQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The identifier of the user.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline UserQuickConnectConfig& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline UserQuickConnectConfig& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline UserQuickConnectConfig& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    UserQuickConnectConfig& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the flow.</p>
      */
-    inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
+    inline const Aws::String& GetContactFlowId() const { return m_contactFlowId; }
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
-    inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
-    inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
-    inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
-    inline UserQuickConnectConfig& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
-    inline UserQuickConnectConfig& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
-    inline UserQuickConnectConfig& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
+    template<typename ContactFlowIdT = Aws::String>
+    void SetContactFlowId(ContactFlowIdT&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::forward<ContactFlowIdT>(value); }
+    template<typename ContactFlowIdT = Aws::String>
+    UserQuickConnectConfig& WithContactFlowId(ContactFlowIdT&& value) { SetContactFlowId(std::forward<ContactFlowIdT>(value)); return *this;}
     ///@}
   private:
 

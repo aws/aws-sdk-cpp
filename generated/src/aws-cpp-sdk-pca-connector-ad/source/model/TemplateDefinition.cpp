@@ -18,15 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-TemplateDefinition::TemplateDefinition() : 
-    m_templateV2HasBeenSet(false),
-    m_templateV3HasBeenSet(false),
-    m_templateV4HasBeenSet(false)
-{
-}
-
 TemplateDefinition::TemplateDefinition(JsonView jsonValue)
-  : TemplateDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TemplateDefinition& TemplateDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TemplateV2"))
   {
     m_templateV2 = jsonValue.GetObject("TemplateV2");
-
     m_templateV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateV3"))
   {
     m_templateV3 = jsonValue.GetObject("TemplateV3");
-
     m_templateV3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateV4"))
   {
     m_templateV4 = jsonValue.GetObject("TemplateV4");
-
     m_templateV4HasBeenSet = true;
   }
-
   return *this;
 }
 

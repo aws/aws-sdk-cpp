@@ -42,7 +42,7 @@ namespace Model
   class EventSelector
   {
   public:
-    AWS_CLOUDTRAIL_API EventSelector();
+    AWS_CLOUDTRAIL_API EventSelector() = default;
     AWS_CLOUDTRAIL_API EventSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API EventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * operation and <code>RunInstances</code> is a write-only API operation.</p> <p>
      * By default, the value is <code>All</code>.</p>
      */
-    inline const ReadWriteType& GetReadWriteType() const{ return m_readWriteType; }
+    inline ReadWriteType GetReadWriteType() const { return m_readWriteType; }
     inline bool ReadWriteTypeHasBeenSet() const { return m_readWriteTypeHasBeenSet; }
-    inline void SetReadWriteType(const ReadWriteType& value) { m_readWriteTypeHasBeenSet = true; m_readWriteType = value; }
-    inline void SetReadWriteType(ReadWriteType&& value) { m_readWriteTypeHasBeenSet = true; m_readWriteType = std::move(value); }
-    inline EventSelector& WithReadWriteType(const ReadWriteType& value) { SetReadWriteType(value); return *this;}
-    inline EventSelector& WithReadWriteType(ReadWriteType&& value) { SetReadWriteType(std::move(value)); return *this;}
+    inline void SetReadWriteType(ReadWriteType value) { m_readWriteTypeHasBeenSet = true; m_readWriteType = value; }
+    inline EventSelector& WithReadWriteType(ReadWriteType value) { SetReadWriteType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
      * Pricing</a>.</p>
      */
-    inline bool GetIncludeManagementEvents() const{ return m_includeManagementEvents; }
+    inline bool GetIncludeManagementEvents() const { return m_includeManagementEvents; }
     inline bool IncludeManagementEventsHasBeenSet() const { return m_includeManagementEventsHasBeenSet; }
     inline void SetIncludeManagementEvents(bool value) { m_includeManagementEventsHasBeenSet = true; m_includeManagementEvents = value; }
     inline EventSelector& WithIncludeManagementEvents(bool value) { SetIncludeManagementEvents(value); return *this;}
@@ -100,14 +98,14 @@ namespace Model
      * You must also use <code>AdvancedEventSelectors</code> if you want to filter on
      * the <code>eventName</code> field.</p> 
      */
-    inline const Aws::Vector<DataResource>& GetDataResources() const{ return m_dataResources; }
+    inline const Aws::Vector<DataResource>& GetDataResources() const { return m_dataResources; }
     inline bool DataResourcesHasBeenSet() const { return m_dataResourcesHasBeenSet; }
-    inline void SetDataResources(const Aws::Vector<DataResource>& value) { m_dataResourcesHasBeenSet = true; m_dataResources = value; }
-    inline void SetDataResources(Aws::Vector<DataResource>&& value) { m_dataResourcesHasBeenSet = true; m_dataResources = std::move(value); }
-    inline EventSelector& WithDataResources(const Aws::Vector<DataResource>& value) { SetDataResources(value); return *this;}
-    inline EventSelector& WithDataResources(Aws::Vector<DataResource>&& value) { SetDataResources(std::move(value)); return *this;}
-    inline EventSelector& AddDataResources(const DataResource& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(value); return *this; }
-    inline EventSelector& AddDataResources(DataResource&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(std::move(value)); return *this; }
+    template<typename DataResourcesT = Aws::Vector<DataResource>>
+    void SetDataResources(DataResourcesT&& value) { m_dataResourcesHasBeenSet = true; m_dataResources = std::forward<DataResourcesT>(value); }
+    template<typename DataResourcesT = Aws::Vector<DataResource>>
+    EventSelector& WithDataResources(DataResourcesT&& value) { SetDataResources(std::forward<DataResourcesT>(value)); return *this;}
+    template<typename DataResourcesT = DataResource>
+    EventSelector& AddDataResources(DataResourcesT&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.emplace_back(std::forward<DataResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,22 +119,21 @@ namespace Model
      * API events are logged to your trail. You can exclude management event sources
      * only in Regions that support the event source.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeManagementEventSources() const{ return m_excludeManagementEventSources; }
+    inline const Aws::Vector<Aws::String>& GetExcludeManagementEventSources() const { return m_excludeManagementEventSources; }
     inline bool ExcludeManagementEventSourcesHasBeenSet() const { return m_excludeManagementEventSourcesHasBeenSet; }
-    inline void SetExcludeManagementEventSources(const Aws::Vector<Aws::String>& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = value; }
-    inline void SetExcludeManagementEventSources(Aws::Vector<Aws::String>&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = std::move(value); }
-    inline EventSelector& WithExcludeManagementEventSources(const Aws::Vector<Aws::String>& value) { SetExcludeManagementEventSources(value); return *this;}
-    inline EventSelector& WithExcludeManagementEventSources(Aws::Vector<Aws::String>&& value) { SetExcludeManagementEventSources(std::move(value)); return *this;}
-    inline EventSelector& AddExcludeManagementEventSources(const Aws::String& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(value); return *this; }
-    inline EventSelector& AddExcludeManagementEventSources(Aws::String&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(std::move(value)); return *this; }
-    inline EventSelector& AddExcludeManagementEventSources(const char* value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.push_back(value); return *this; }
+    template<typename ExcludeManagementEventSourcesT = Aws::Vector<Aws::String>>
+    void SetExcludeManagementEventSources(ExcludeManagementEventSourcesT&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources = std::forward<ExcludeManagementEventSourcesT>(value); }
+    template<typename ExcludeManagementEventSourcesT = Aws::Vector<Aws::String>>
+    EventSelector& WithExcludeManagementEventSources(ExcludeManagementEventSourcesT&& value) { SetExcludeManagementEventSources(std::forward<ExcludeManagementEventSourcesT>(value)); return *this;}
+    template<typename ExcludeManagementEventSourcesT = Aws::String>
+    EventSelector& AddExcludeManagementEventSources(ExcludeManagementEventSourcesT&& value) { m_excludeManagementEventSourcesHasBeenSet = true; m_excludeManagementEventSources.emplace_back(std::forward<ExcludeManagementEventSourcesT>(value)); return *this; }
     ///@}
   private:
 
-    ReadWriteType m_readWriteType;
+    ReadWriteType m_readWriteType{ReadWriteType::NOT_SET};
     bool m_readWriteTypeHasBeenSet = false;
 
-    bool m_includeManagementEvents;
+    bool m_includeManagementEvents{false};
     bool m_includeManagementEventsHasBeenSet = false;
 
     Aws::Vector<DataResource> m_dataResources;

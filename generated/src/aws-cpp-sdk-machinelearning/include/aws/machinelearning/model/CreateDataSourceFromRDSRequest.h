@@ -22,7 +22,7 @@ namespace Model
   class CreateDataSourceFromRDSRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API CreateDataSourceFromRDSRequest();
+    AWS_MACHINELEARNING_API CreateDataSourceFromRDSRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * Typically, an Amazon Resource Number (ARN) becomes the ID for a
      * <code>DataSource</code>.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline CreateDataSourceFromRDSRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    CreateDataSourceFromRDSRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
      */
-    inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+    inline const Aws::String& GetDataSourceName() const { return m_dataSourceName; }
     inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
-    inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
-    inline void SetDataSourceName(const char* value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName.assign(value); }
-    inline CreateDataSourceFromRDSRequest& WithDataSourceName(const Aws::String& value) { SetDataSourceName(value); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+    template<typename DataSourceNameT = Aws::String>
+    void SetDataSourceName(DataSourceNameT&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::forward<DataSourceNameT>(value); }
+    template<typename DataSourceNameT = Aws::String>
+    CreateDataSourceFromRDSRequest& WithDataSourceName(DataSourceNameT&& value) { SetDataSourceName(std::forward<DataSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +95,12 @@ namespace Model
      * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
      * </li> </ul>
      */
-    inline const RDSDataSpec& GetRDSData() const{ return m_rDSData; }
+    inline const RDSDataSpec& GetRDSData() const { return m_rDSData; }
     inline bool RDSDataHasBeenSet() const { return m_rDSDataHasBeenSet; }
-    inline void SetRDSData(const RDSDataSpec& value) { m_rDSDataHasBeenSet = true; m_rDSData = value; }
-    inline void SetRDSData(RDSDataSpec&& value) { m_rDSDataHasBeenSet = true; m_rDSData = std::move(value); }
-    inline CreateDataSourceFromRDSRequest& WithRDSData(const RDSDataSpec& value) { SetRDSData(value); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithRDSData(RDSDataSpec&& value) { SetRDSData(std::move(value)); return *this;}
+    template<typename RDSDataT = RDSDataSpec>
+    void SetRDSData(RDSDataT&& value) { m_rDSDataHasBeenSet = true; m_rDSData = std::forward<RDSDataT>(value); }
+    template<typename RDSDataT = RDSDataSpec>
+    CreateDataSourceFromRDSRequest& WithRDSData(RDSDataT&& value) { SetRDSData(std::forward<RDSDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +109,12 @@ namespace Model
      * a data pipeline in the user's account and copy data using the
      * <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p> <p/>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline CreateDataSourceFromRDSRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline CreateDataSourceFromRDSRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    CreateDataSourceFromRDSRequest& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +125,7 @@ namespace Model
      * This parameter must be set to <code>true</code> if the <code/>DataSource<code/>
      * needs to be used for <code>MLModel</code> training. </p>
      */
-    inline bool GetComputeStatistics() const{ return m_computeStatistics; }
+    inline bool GetComputeStatistics() const { return m_computeStatistics; }
     inline bool ComputeStatisticsHasBeenSet() const { return m_computeStatisticsHasBeenSet; }
     inline void SetComputeStatistics(bool value) { m_computeStatisticsHasBeenSet = true; m_computeStatistics = value; }
     inline CreateDataSourceFromRDSRequest& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
@@ -150,7 +144,7 @@ namespace Model
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
 
-    bool m_computeStatistics;
+    bool m_computeStatistics{false};
     bool m_computeStatisticsHasBeenSet = false;
   };
 

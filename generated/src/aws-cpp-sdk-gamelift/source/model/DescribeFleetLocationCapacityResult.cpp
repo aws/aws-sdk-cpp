@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFleetLocationCapacityResult::DescribeFleetLocationCapacityResult()
-{
-}
-
 DescribeFleetLocationCapacityResult::DescribeFleetLocationCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeFleetLocationCapacityResult& DescribeFleetLocationCapacityResult::operat
   if(jsonValue.ValueExists("FleetCapacity"))
   {
     m_fleetCapacity = jsonValue.GetObject("FleetCapacity");
-
+    m_fleetCapacityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

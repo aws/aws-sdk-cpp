@@ -18,17 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-SourceConfiguration::SourceConfiguration() : 
-    m_type(SourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_iotSiteWiseConfigurationHasBeenSet(false),
-    m_iotTwinMakerConfigurationHasBeenSet(false)
-{
-}
-
 SourceConfiguration::SourceConfiguration(JsonView jsonValue)
-  : SourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SourceConfiguration& SourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotSiteWiseConfiguration"))
   {
     m_iotSiteWiseConfiguration = jsonValue.GetObject("iotSiteWiseConfiguration");
-
     m_iotSiteWiseConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotTwinMakerConfiguration"))
   {
     m_iotTwinMakerConfiguration = jsonValue.GetObject("iotTwinMakerConfiguration");
-
     m_iotTwinMakerConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class Subscriber
   {
   public:
-    AWS_BUDGETS_API Subscriber();
+    AWS_BUDGETS_API Subscriber() = default;
     AWS_BUDGETS_API Subscriber(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Subscriber& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
      */
-    inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
+    inline SubscriptionType GetSubscriptionType() const { return m_subscriptionType; }
     inline bool SubscriptionTypeHasBeenSet() const { return m_subscriptionTypeHasBeenSet; }
-    inline void SetSubscriptionType(const SubscriptionType& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
-    inline void SetSubscriptionType(SubscriptionType&& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = std::move(value); }
-    inline Subscriber& WithSubscriptionType(const SubscriptionType& value) { SetSubscriptionType(value); return *this;}
-    inline Subscriber& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(std::move(value)); return *this;}
+    inline void SetSubscriptionType(SubscriptionType value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
+    inline Subscriber& WithSubscriptionType(SubscriptionType value) { SetSubscriptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,16 @@ namespace Model
      * SNS topic or an email.</p> <p>When you create a subscriber, the value of
      * <code>Address</code> can't contain line breaks.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline Subscriber& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline Subscriber& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline Subscriber& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    Subscriber& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
   private:
 
-    SubscriptionType m_subscriptionType;
+    SubscriptionType m_subscriptionType{SubscriptionType::NOT_SET};
     bool m_subscriptionTypeHasBeenSet = false;
 
     Aws::String m_address;

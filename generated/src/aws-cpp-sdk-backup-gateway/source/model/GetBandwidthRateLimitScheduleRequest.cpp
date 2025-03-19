@@ -12,11 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBandwidthRateLimitScheduleRequest::GetBandwidthRateLimitScheduleRequest() : 
-    m_gatewayArnHasBeenSet(false)
-{
-}
-
 Aws::String GetBandwidthRateLimitScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

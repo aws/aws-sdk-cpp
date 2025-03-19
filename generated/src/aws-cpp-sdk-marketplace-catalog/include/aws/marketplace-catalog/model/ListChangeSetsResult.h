@@ -29,7 +29,7 @@ namespace Model
   class ListChangeSetsResult
   {
   public:
-    AWS_MARKETPLACECATALOG_API ListChangeSetsResult();
+    AWS_MARKETPLACECATALOG_API ListChangeSetsResult() = default;
     AWS_MARKETPLACECATALOG_API ListChangeSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MARKETPLACECATALOG_API ListChangeSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
      */
-    inline const Aws::Vector<ChangeSetSummaryListItem>& GetChangeSetSummaryList() const{ return m_changeSetSummaryList; }
-    inline void SetChangeSetSummaryList(const Aws::Vector<ChangeSetSummaryListItem>& value) { m_changeSetSummaryList = value; }
-    inline void SetChangeSetSummaryList(Aws::Vector<ChangeSetSummaryListItem>&& value) { m_changeSetSummaryList = std::move(value); }
-    inline ListChangeSetsResult& WithChangeSetSummaryList(const Aws::Vector<ChangeSetSummaryListItem>& value) { SetChangeSetSummaryList(value); return *this;}
-    inline ListChangeSetsResult& WithChangeSetSummaryList(Aws::Vector<ChangeSetSummaryListItem>&& value) { SetChangeSetSummaryList(std::move(value)); return *this;}
-    inline ListChangeSetsResult& AddChangeSetSummaryList(const ChangeSetSummaryListItem& value) { m_changeSetSummaryList.push_back(value); return *this; }
-    inline ListChangeSetsResult& AddChangeSetSummaryList(ChangeSetSummaryListItem&& value) { m_changeSetSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChangeSetSummaryListItem>& GetChangeSetSummaryList() const { return m_changeSetSummaryList; }
+    template<typename ChangeSetSummaryListT = Aws::Vector<ChangeSetSummaryListItem>>
+    void SetChangeSetSummaryList(ChangeSetSummaryListT&& value) { m_changeSetSummaryListHasBeenSet = true; m_changeSetSummaryList = std::forward<ChangeSetSummaryListT>(value); }
+    template<typename ChangeSetSummaryListT = Aws::Vector<ChangeSetSummaryListItem>>
+    ListChangeSetsResult& WithChangeSetSummaryList(ChangeSetSummaryListT&& value) { SetChangeSetSummaryList(std::forward<ChangeSetSummaryListT>(value)); return *this;}
+    template<typename ChangeSetSummaryListT = ChangeSetSummaryListItem>
+    ListChangeSetsResult& AddChangeSetSummaryList(ChangeSetSummaryListT&& value) { m_changeSetSummaryListHasBeenSet = true; m_changeSetSummaryList.emplace_back(std::forward<ChangeSetSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The value of the next token, if it exists. Null if there are no more
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListChangeSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListChangeSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListChangeSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListChangeSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListChangeSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListChangeSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListChangeSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListChangeSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChangeSetSummaryListItem> m_changeSetSummaryList;
+    bool m_changeSetSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

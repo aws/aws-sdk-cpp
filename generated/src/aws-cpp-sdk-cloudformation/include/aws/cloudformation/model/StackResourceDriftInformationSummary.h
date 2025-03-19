@@ -34,7 +34,7 @@ namespace Model
   class StackResourceDriftInformationSummary
   {
   public:
-    AWS_CLOUDFORMATION_API StackResourceDriftInformationSummary();
+    AWS_CLOUDFORMATION_API StackResourceDriftInformationSummary() = default;
     AWS_CLOUDFORMATION_API StackResourceDriftInformationSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackResourceDriftInformationSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -63,12 +63,10 @@ namespace Model
      * <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its
      * expected configuration.</p> </li> </ul>
      */
-    inline const StackResourceDriftStatus& GetStackResourceDriftStatus() const{ return m_stackResourceDriftStatus; }
+    inline StackResourceDriftStatus GetStackResourceDriftStatus() const { return m_stackResourceDriftStatus; }
     inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
-    inline void SetStackResourceDriftStatus(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
-    inline void SetStackResourceDriftStatus(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = std::move(value); }
-    inline StackResourceDriftInformationSummary& WithStackResourceDriftStatus(const StackResourceDriftStatus& value) { SetStackResourceDriftStatus(value); return *this;}
-    inline StackResourceDriftInformationSummary& WithStackResourceDriftStatus(StackResourceDriftStatus&& value) { SetStackResourceDriftStatus(std::move(value)); return *this;}
+    inline void SetStackResourceDriftStatus(StackResourceDriftStatus value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
+    inline StackResourceDriftInformationSummary& WithStackResourceDriftStatus(StackResourceDriftStatus value) { SetStackResourceDriftStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -76,19 +74,19 @@ namespace Model
      * <p>When CloudFormation last checked if the resource had drifted from its
      * expected configuration.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastCheckTimestamp() const{ return m_lastCheckTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastCheckTimestamp() const { return m_lastCheckTimestamp; }
     inline bool LastCheckTimestampHasBeenSet() const { return m_lastCheckTimestampHasBeenSet; }
-    inline void SetLastCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = value; }
-    inline void SetLastCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = std::move(value); }
-    inline StackResourceDriftInformationSummary& WithLastCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastCheckTimestamp(value); return *this;}
-    inline StackResourceDriftInformationSummary& WithLastCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastCheckTimestamp(std::move(value)); return *this;}
+    template<typename LastCheckTimestampT = Aws::Utils::DateTime>
+    void SetLastCheckTimestamp(LastCheckTimestampT&& value) { m_lastCheckTimestampHasBeenSet = true; m_lastCheckTimestamp = std::forward<LastCheckTimestampT>(value); }
+    template<typename LastCheckTimestampT = Aws::Utils::DateTime>
+    StackResourceDriftInformationSummary& WithLastCheckTimestamp(LastCheckTimestampT&& value) { SetLastCheckTimestamp(std::forward<LastCheckTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    StackResourceDriftStatus m_stackResourceDriftStatus;
+    StackResourceDriftStatus m_stackResourceDriftStatus{StackResourceDriftStatus::NOT_SET};
     bool m_stackResourceDriftStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastCheckTimestamp;
+    Aws::Utils::DateTime m_lastCheckTimestamp{};
     bool m_lastCheckTimestampHasBeenSet = false;
   };
 

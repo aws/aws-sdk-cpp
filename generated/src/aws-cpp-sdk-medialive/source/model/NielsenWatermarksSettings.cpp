@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-NielsenWatermarksSettings::NielsenWatermarksSettings() : 
-    m_nielsenCbetSettingsHasBeenSet(false),
-    m_nielsenDistributionType(NielsenWatermarksDistributionTypes::NOT_SET),
-    m_nielsenDistributionTypeHasBeenSet(false),
-    m_nielsenNaesIiNwSettingsHasBeenSet(false)
-{
-}
-
 NielsenWatermarksSettings::NielsenWatermarksSettings(JsonView jsonValue)
-  : NielsenWatermarksSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NielsenWatermarksSettings& NielsenWatermarksSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("nielsenCbetSettings"))
   {
     m_nielsenCbetSettings = jsonValue.GetObject("nielsenCbetSettings");
-
     m_nielsenCbetSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nielsenDistributionType"))
   {
     m_nielsenDistributionType = NielsenWatermarksDistributionTypesMapper::GetNielsenWatermarksDistributionTypesForName(jsonValue.GetString("nielsenDistributionType"));
-
     m_nielsenDistributionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nielsenNaesIiNwSettings"))
   {
     m_nielsenNaesIiNwSettings = jsonValue.GetObject("nielsenNaesIiNwSettings");
-
     m_nielsenNaesIiNwSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

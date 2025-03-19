@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-TimeShiftConfiguration::TimeShiftConfiguration() : 
-    m_maxTimeDelaySeconds(0),
-    m_maxTimeDelaySecondsHasBeenSet(false)
-{
-}
-
 TimeShiftConfiguration::TimeShiftConfiguration(JsonView jsonValue)
-  : TimeShiftConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TimeShiftConfiguration& TimeShiftConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxTimeDelaySeconds"))
   {
     m_maxTimeDelaySeconds = jsonValue.GetInteger("MaxTimeDelaySeconds");
-
     m_maxTimeDelaySecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

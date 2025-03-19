@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult() : 
-    m_isAlreadyVerified(false)
-{
-}
-
 ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ResendContactReachabilityEmailResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ ResendContactReachabilityEmailResult& ResendContactReachabilityEmailResult::oper
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailAddress"))
   {
     m_emailAddress = jsonValue.GetString("emailAddress");
-
+    m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isAlreadyVerified"))
   {
     m_isAlreadyVerified = jsonValue.GetBool("isAlreadyVerified");
-
+    m_isAlreadyVerifiedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

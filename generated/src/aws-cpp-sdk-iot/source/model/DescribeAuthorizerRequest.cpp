@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAuthorizerRequest::DescribeAuthorizerRequest() : 
-    m_authorizerNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAuthorizerRequest::SerializePayload() const
 {
   return {};

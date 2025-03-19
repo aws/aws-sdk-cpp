@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-TrafficConfig::TrafficConfig() : 
-    m_singleWeightConfigHasBeenSet(false),
-    m_singleHeaderConfigHasBeenSet(false),
-    m_type(ContinuousDeploymentPolicyType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 TrafficConfig::TrafficConfig(const XmlNode& xmlNode)
-  : TrafficConfig()
 {
   *this = xmlNode;
 }
@@ -55,7 +46,7 @@ TrafficConfig& TrafficConfig::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ContinuousDeploymentPolicyTypeMapper::GetContinuousDeploymentPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ContinuousDeploymentPolicyTypeMapper::GetContinuousDeploymentPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
   }

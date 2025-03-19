@@ -23,7 +23,7 @@ namespace Model
   class DescribeAvailabilityZonesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeAvailabilityZonesRequest();
+    AWS_EC2_API DescribeAvailabilityZonesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The names of the Availability Zones, Local Zones, and Wavelength Zones.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetZoneNames() const{ return m_zoneNames; }
+    inline const Aws::Vector<Aws::String>& GetZoneNames() const { return m_zoneNames; }
     inline bool ZoneNamesHasBeenSet() const { return m_zoneNamesHasBeenSet; }
-    inline void SetZoneNames(const Aws::Vector<Aws::String>& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = value; }
-    inline void SetZoneNames(Aws::Vector<Aws::String>&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = std::move(value); }
-    inline DescribeAvailabilityZonesRequest& WithZoneNames(const Aws::Vector<Aws::String>& value) { SetZoneNames(value); return *this;}
-    inline DescribeAvailabilityZonesRequest& WithZoneNames(Aws::Vector<Aws::String>&& value) { SetZoneNames(std::move(value)); return *this;}
-    inline DescribeAvailabilityZonesRequest& AddZoneNames(const Aws::String& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
-    inline DescribeAvailabilityZonesRequest& AddZoneNames(Aws::String&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(std::move(value)); return *this; }
-    inline DescribeAvailabilityZonesRequest& AddZoneNames(const char* value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
+    template<typename ZoneNamesT = Aws::Vector<Aws::String>>
+    void SetZoneNames(ZoneNamesT&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = std::forward<ZoneNamesT>(value); }
+    template<typename ZoneNamesT = Aws::Vector<Aws::String>>
+    DescribeAvailabilityZonesRequest& WithZoneNames(ZoneNamesT&& value) { SetZoneNames(std::forward<ZoneNamesT>(value)); return *this;}
+    template<typename ZoneNamesT = Aws::String>
+    DescribeAvailabilityZonesRequest& AddZoneNames(ZoneNamesT&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.emplace_back(std::forward<ZoneNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the Availability Zones, Local Zones, and Wavelength Zones.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetZoneIds() const{ return m_zoneIds; }
+    inline const Aws::Vector<Aws::String>& GetZoneIds() const { return m_zoneIds; }
     inline bool ZoneIdsHasBeenSet() const { return m_zoneIdsHasBeenSet; }
-    inline void SetZoneIds(const Aws::Vector<Aws::String>& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = value; }
-    inline void SetZoneIds(Aws::Vector<Aws::String>&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::move(value); }
-    inline DescribeAvailabilityZonesRequest& WithZoneIds(const Aws::Vector<Aws::String>& value) { SetZoneIds(value); return *this;}
-    inline DescribeAvailabilityZonesRequest& WithZoneIds(Aws::Vector<Aws::String>&& value) { SetZoneIds(std::move(value)); return *this;}
-    inline DescribeAvailabilityZonesRequest& AddZoneIds(const Aws::String& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
-    inline DescribeAvailabilityZonesRequest& AddZoneIds(Aws::String&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(std::move(value)); return *this; }
-    inline DescribeAvailabilityZonesRequest& AddZoneIds(const char* value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
+    template<typename ZoneIdsT = Aws::Vector<Aws::String>>
+    void SetZoneIds(ZoneIdsT&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::forward<ZoneIdsT>(value); }
+    template<typename ZoneIdsT = Aws::Vector<Aws::String>>
+    DescribeAvailabilityZonesRequest& WithZoneIds(ZoneIdsT&& value) { SetZoneIds(std::forward<ZoneIdsT>(value)); return *this;}
+    template<typename ZoneIdsT = Aws::String>
+    DescribeAvailabilityZonesRequest& AddZoneIds(ZoneIdsT&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.emplace_back(std::forward<ZoneIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * include only the zones for the Regions where you have chosen the option to opt
      * in.</p>
      */
-    inline bool GetAllAvailabilityZones() const{ return m_allAvailabilityZones; }
+    inline bool GetAllAvailabilityZones() const { return m_allAvailabilityZones; }
     inline bool AllAvailabilityZonesHasBeenSet() const { return m_allAvailabilityZonesHasBeenSet; }
     inline void SetAllAvailabilityZones(bool value) { m_allAvailabilityZonesHasBeenSet = true; m_allAvailabilityZones = value; }
     inline DescribeAvailabilityZonesRequest& WithAllAvailabilityZones(bool value) { SetAllAvailabilityZones(value); return *this;}
@@ -88,7 +86,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeAvailabilityZonesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -127,14 +125,14 @@ namespace Model
      * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
      * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeAvailabilityZonesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeAvailabilityZonesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
@@ -144,10 +142,10 @@ namespace Model
     Aws::Vector<Aws::String> m_zoneIds;
     bool m_zoneIdsHasBeenSet = false;
 
-    bool m_allAvailabilityZones;
+    bool m_allAvailabilityZones{false};
     bool m_allAvailabilityZonesHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;

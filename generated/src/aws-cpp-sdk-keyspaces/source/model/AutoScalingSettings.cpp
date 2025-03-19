@@ -18,19 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-AutoScalingSettings::AutoScalingSettings() : 
-    m_autoScalingDisabled(false),
-    m_autoScalingDisabledHasBeenSet(false),
-    m_minimumUnits(0),
-    m_minimumUnitsHasBeenSet(false),
-    m_maximumUnits(0),
-    m_maximumUnitsHasBeenSet(false),
-    m_scalingPolicyHasBeenSet(false)
-{
-}
-
 AutoScalingSettings::AutoScalingSettings(JsonView jsonValue)
-  : AutoScalingSettings()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AutoScalingSettings& AutoScalingSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoScalingDisabled"))
   {
     m_autoScalingDisabled = jsonValue.GetBool("autoScalingDisabled");
-
     m_autoScalingDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumUnits"))
   {
     m_minimumUnits = jsonValue.GetInt64("minimumUnits");
-
     m_minimumUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumUnits"))
   {
     m_maximumUnits = jsonValue.GetInt64("maximumUnits");
-
     m_maximumUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingPolicy"))
   {
     m_scalingPolicy = jsonValue.GetObject("scalingPolicy");
-
     m_scalingPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

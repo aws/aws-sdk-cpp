@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonMapsResult::JsonMapsResult()
-{
-}
-
 JsonMapsResult::JsonMapsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ JsonMapsResult& JsonMapsResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_denseStructMap[denseStructMapItem.first] = denseStructMapItem.second.AsObject();
     }
+    m_denseStructMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denseNumberMap"))
   {
     Aws::Map<Aws::String, JsonView> denseNumberMapJsonMap = jsonValue.GetObject("denseNumberMap").GetAllObjects();
@@ -45,8 +41,8 @@ JsonMapsResult& JsonMapsResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_denseNumberMap[denseNumberMapItem.first] = denseNumberMapItem.second.AsInteger();
     }
+    m_denseNumberMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denseBooleanMap"))
   {
     Aws::Map<Aws::String, JsonView> denseBooleanMapJsonMap = jsonValue.GetObject("denseBooleanMap").GetAllObjects();
@@ -54,8 +50,8 @@ JsonMapsResult& JsonMapsResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_denseBooleanMap[denseBooleanMapItem.first] = denseBooleanMapItem.second.AsBool();
     }
+    m_denseBooleanMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denseStringMap"))
   {
     Aws::Map<Aws::String, JsonView> denseStringMapJsonMap = jsonValue.GetObject("denseStringMap").GetAllObjects();
@@ -63,8 +59,8 @@ JsonMapsResult& JsonMapsResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_denseStringMap[denseStringMapItem.first] = denseStringMapItem.second.AsString();
     }
+    m_denseStringMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denseSetMap"))
   {
     Aws::Map<Aws::String, JsonView> denseSetMapJsonMap = jsonValue.GetObject("denseSetMap").GetAllObjects();
@@ -79,14 +75,15 @@ JsonMapsResult& JsonMapsResult::operator =(const Aws::AmazonWebServiceResult<Jso
       }
       m_denseSetMap[denseSetMapItem.first] = std::move(stringSetList);
     }
+    m_denseSetMapHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

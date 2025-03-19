@@ -35,7 +35,7 @@ namespace Model
   class HlsSettings
   {
   public:
-    AWS_MEDIACONVERT_API HlsSettings();
+    AWS_MEDIACONVERT_API HlsSettings() = default;
     AWS_MEDIACONVERT_API HlsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * Specifies the group to which the audio rendition belongs.
      */
-    inline const Aws::String& GetAudioGroupId() const{ return m_audioGroupId; }
+    inline const Aws::String& GetAudioGroupId() const { return m_audioGroupId; }
     inline bool AudioGroupIdHasBeenSet() const { return m_audioGroupIdHasBeenSet; }
-    inline void SetAudioGroupId(const Aws::String& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = value; }
-    inline void SetAudioGroupId(Aws::String&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::move(value); }
-    inline void SetAudioGroupId(const char* value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId.assign(value); }
-    inline HlsSettings& WithAudioGroupId(const Aws::String& value) { SetAudioGroupId(value); return *this;}
-    inline HlsSettings& WithAudioGroupId(Aws::String&& value) { SetAudioGroupId(std::move(value)); return *this;}
-    inline HlsSettings& WithAudioGroupId(const char* value) { SetAudioGroupId(value); return *this;}
+    template<typename AudioGroupIdT = Aws::String>
+    void SetAudioGroupId(AudioGroupIdT&& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = std::forward<AudioGroupIdT>(value); }
+    template<typename AudioGroupIdT = Aws::String>
+    HlsSettings& WithAudioGroupId(AudioGroupIdT&& value) { SetAudioGroupId(std::forward<AudioGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * value that you specify here, if this output has video, the service will place
      * the output into an MPEG2-TS container.
      */
-    inline const HlsAudioOnlyContainer& GetAudioOnlyContainer() const{ return m_audioOnlyContainer; }
+    inline HlsAudioOnlyContainer GetAudioOnlyContainer() const { return m_audioOnlyContainer; }
     inline bool AudioOnlyContainerHasBeenSet() const { return m_audioOnlyContainerHasBeenSet; }
-    inline void SetAudioOnlyContainer(const HlsAudioOnlyContainer& value) { m_audioOnlyContainerHasBeenSet = true; m_audioOnlyContainer = value; }
-    inline void SetAudioOnlyContainer(HlsAudioOnlyContainer&& value) { m_audioOnlyContainerHasBeenSet = true; m_audioOnlyContainer = std::move(value); }
-    inline HlsSettings& WithAudioOnlyContainer(const HlsAudioOnlyContainer& value) { SetAudioOnlyContainer(value); return *this;}
-    inline HlsSettings& WithAudioOnlyContainer(HlsAudioOnlyContainer&& value) { SetAudioOnlyContainer(std::move(value)); return *this;}
+    inline void SetAudioOnlyContainer(HlsAudioOnlyContainer value) { m_audioOnlyContainerHasBeenSet = true; m_audioOnlyContainer = value; }
+    inline HlsSettings& WithAudioOnlyContainer(HlsAudioOnlyContainer value) { SetAudioOnlyContainer(value); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * List all the audio groups that are used with the video output stream. Input all
      * the audio GROUP-IDs that are associated to the video, separate by ','.
      */
-    inline const Aws::String& GetAudioRenditionSets() const{ return m_audioRenditionSets; }
+    inline const Aws::String& GetAudioRenditionSets() const { return m_audioRenditionSets; }
     inline bool AudioRenditionSetsHasBeenSet() const { return m_audioRenditionSetsHasBeenSet; }
-    inline void SetAudioRenditionSets(const Aws::String& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = value; }
-    inline void SetAudioRenditionSets(Aws::String&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::move(value); }
-    inline void SetAudioRenditionSets(const char* value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets.assign(value); }
-    inline HlsSettings& WithAudioRenditionSets(const Aws::String& value) { SetAudioRenditionSets(value); return *this;}
-    inline HlsSettings& WithAudioRenditionSets(Aws::String&& value) { SetAudioRenditionSets(std::move(value)); return *this;}
-    inline HlsSettings& WithAudioRenditionSets(const char* value) { SetAudioRenditionSets(value); return *this;}
+    template<typename AudioRenditionSetsT = Aws::String>
+    void SetAudioRenditionSets(AudioRenditionSetsT&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::forward<AudioRenditionSetsT>(value); }
+    template<typename AudioRenditionSetsT = Aws::String>
+    HlsSettings& WithAudioRenditionSets(AudioRenditionSetsT&& value) { SetAudioRenditionSets(std::forward<AudioRenditionSetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +94,10 @@ namespace Model
      * default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO,
      * AUTOSELECT=NO
      */
-    inline const HlsAudioTrackType& GetAudioTrackType() const{ return m_audioTrackType; }
+    inline HlsAudioTrackType GetAudioTrackType() const { return m_audioTrackType; }
     inline bool AudioTrackTypeHasBeenSet() const { return m_audioTrackTypeHasBeenSet; }
-    inline void SetAudioTrackType(const HlsAudioTrackType& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
-    inline void SetAudioTrackType(HlsAudioTrackType&& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = std::move(value); }
-    inline HlsSettings& WithAudioTrackType(const HlsAudioTrackType& value) { SetAudioTrackType(value); return *this;}
-    inline HlsSettings& WithAudioTrackType(HlsAudioTrackType&& value) { SetAudioTrackType(std::move(value)); return *this;}
+    inline void SetAudioTrackType(HlsAudioTrackType value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
+    inline HlsSettings& WithAudioTrackType(HlsAudioTrackType value) { SetAudioTrackType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,12 +109,10 @@ namespace Model
      * MediaConvert leaves this parameter out. The DVS flag can help with accessibility
      * on Apple devices. For more information, see the Apple documentation.
      */
-    inline const HlsDescriptiveVideoServiceFlag& GetDescriptiveVideoServiceFlag() const{ return m_descriptiveVideoServiceFlag; }
+    inline HlsDescriptiveVideoServiceFlag GetDescriptiveVideoServiceFlag() const { return m_descriptiveVideoServiceFlag; }
     inline bool DescriptiveVideoServiceFlagHasBeenSet() const { return m_descriptiveVideoServiceFlagHasBeenSet; }
-    inline void SetDescriptiveVideoServiceFlag(const HlsDescriptiveVideoServiceFlag& value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = value; }
-    inline void SetDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag&& value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = std::move(value); }
-    inline HlsSettings& WithDescriptiveVideoServiceFlag(const HlsDescriptiveVideoServiceFlag& value) { SetDescriptiveVideoServiceFlag(value); return *this;}
-    inline HlsSettings& WithDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag&& value) { SetDescriptiveVideoServiceFlag(std::move(value)); return *this;}
+    inline void SetDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag value) { m_descriptiveVideoServiceFlagHasBeenSet = true; m_descriptiveVideoServiceFlag = value; }
+    inline HlsSettings& WithDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag value) { SetDescriptiveVideoServiceFlag(value); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +124,10 @@ namespace Model
      * manifest and the regular child manifest to the parent manifest. When you don't
      * need the I-frame only child manifest, keep the default value Exclude.
      */
-    inline const HlsIFrameOnlyManifest& GetIFrameOnlyManifest() const{ return m_iFrameOnlyManifest; }
+    inline HlsIFrameOnlyManifest GetIFrameOnlyManifest() const { return m_iFrameOnlyManifest; }
     inline bool IFrameOnlyManifestHasBeenSet() const { return m_iFrameOnlyManifestHasBeenSet; }
-    inline void SetIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
-    inline void SetIFrameOnlyManifest(HlsIFrameOnlyManifest&& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = std::move(value); }
-    inline HlsSettings& WithIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { SetIFrameOnlyManifest(value); return *this;}
-    inline HlsSettings& WithIFrameOnlyManifest(HlsIFrameOnlyManifest&& value) { SetIFrameOnlyManifest(std::move(value)); return *this;}
+    inline void SetIFrameOnlyManifest(HlsIFrameOnlyManifest value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
+    inline HlsSettings& WithIFrameOnlyManifest(HlsIFrameOnlyManifest value) { SetIFrameOnlyManifest(value); return *this;}
     ///@}
 
     ///@{
@@ -149,33 +137,31 @@ namespace Model
      * You can use format identifiers in the string. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
-    inline const Aws::String& GetSegmentModifier() const{ return m_segmentModifier; }
+    inline const Aws::String& GetSegmentModifier() const { return m_segmentModifier; }
     inline bool SegmentModifierHasBeenSet() const { return m_segmentModifierHasBeenSet; }
-    inline void SetSegmentModifier(const Aws::String& value) { m_segmentModifierHasBeenSet = true; m_segmentModifier = value; }
-    inline void SetSegmentModifier(Aws::String&& value) { m_segmentModifierHasBeenSet = true; m_segmentModifier = std::move(value); }
-    inline void SetSegmentModifier(const char* value) { m_segmentModifierHasBeenSet = true; m_segmentModifier.assign(value); }
-    inline HlsSettings& WithSegmentModifier(const Aws::String& value) { SetSegmentModifier(value); return *this;}
-    inline HlsSettings& WithSegmentModifier(Aws::String&& value) { SetSegmentModifier(std::move(value)); return *this;}
-    inline HlsSettings& WithSegmentModifier(const char* value) { SetSegmentModifier(value); return *this;}
+    template<typename SegmentModifierT = Aws::String>
+    void SetSegmentModifier(SegmentModifierT&& value) { m_segmentModifierHasBeenSet = true; m_segmentModifier = std::forward<SegmentModifierT>(value); }
+    template<typename SegmentModifierT = Aws::String>
+    HlsSettings& WithSegmentModifier(SegmentModifierT&& value) { SetSegmentModifier(std::forward<SegmentModifierT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_audioGroupId;
     bool m_audioGroupIdHasBeenSet = false;
 
-    HlsAudioOnlyContainer m_audioOnlyContainer;
+    HlsAudioOnlyContainer m_audioOnlyContainer{HlsAudioOnlyContainer::NOT_SET};
     bool m_audioOnlyContainerHasBeenSet = false;
 
     Aws::String m_audioRenditionSets;
     bool m_audioRenditionSetsHasBeenSet = false;
 
-    HlsAudioTrackType m_audioTrackType;
+    HlsAudioTrackType m_audioTrackType{HlsAudioTrackType::NOT_SET};
     bool m_audioTrackTypeHasBeenSet = false;
 
-    HlsDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag;
+    HlsDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag{HlsDescriptiveVideoServiceFlag::NOT_SET};
     bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
-    HlsIFrameOnlyManifest m_iFrameOnlyManifest;
+    HlsIFrameOnlyManifest m_iFrameOnlyManifest{HlsIFrameOnlyManifest::NOT_SET};
     bool m_iFrameOnlyManifestHasBeenSet = false;
 
     Aws::String m_segmentModifier;

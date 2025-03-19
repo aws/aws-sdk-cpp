@@ -40,7 +40,7 @@ namespace Model
   class EntitiesDefinition
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API EntitiesDefinition();
+    AWS_VERIFIEDPERMISSIONS_API EntitiesDefinition() = default;
     AWS_VERIFIEDPERMISSIONS_API EntitiesDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API EntitiesDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,14 @@ namespace Model
      * <code>identifier</code>, only the last one is processed in the request.</p>
      * 
      */
-    inline const Aws::Vector<EntityItem>& GetEntityList() const{ return m_entityList; }
+    inline const Aws::Vector<EntityItem>& GetEntityList() const { return m_entityList; }
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
-    inline void SetEntityList(const Aws::Vector<EntityItem>& value) { m_entityListHasBeenSet = true; m_entityList = value; }
-    inline void SetEntityList(Aws::Vector<EntityItem>&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
-    inline EntitiesDefinition& WithEntityList(const Aws::Vector<EntityItem>& value) { SetEntityList(value); return *this;}
-    inline EntitiesDefinition& WithEntityList(Aws::Vector<EntityItem>&& value) { SetEntityList(std::move(value)); return *this;}
-    inline EntitiesDefinition& AddEntityList(const EntityItem& value) { m_entityListHasBeenSet = true; m_entityList.push_back(value); return *this; }
-    inline EntitiesDefinition& AddEntityList(EntityItem&& value) { m_entityListHasBeenSet = true; m_entityList.push_back(std::move(value)); return *this; }
+    template<typename EntityListT = Aws::Vector<EntityItem>>
+    void SetEntityList(EntityListT&& value) { m_entityListHasBeenSet = true; m_entityList = std::forward<EntityListT>(value); }
+    template<typename EntityListT = Aws::Vector<EntityItem>>
+    EntitiesDefinition& WithEntityList(EntityListT&& value) { SetEntityList(std::forward<EntityListT>(value)); return *this;}
+    template<typename EntityListT = EntityItem>
+    EntitiesDefinition& AddEntityList(EntityListT&& value) { m_entityListHasBeenSet = true; m_entityList.emplace_back(std::forward<EntityListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,14 +72,12 @@ namespace Model
      * "[{\"uid\":{\"type\":\"Photo\",\"id\":\"VacationPhoto94.jpg\"},\"attrs\":{\"accessLevel\":\"public\"},\"parents\":[]}]"}</code>
      * </p>
      */
-    inline const Aws::String& GetCedarJson() const{ return m_cedarJson; }
+    inline const Aws::String& GetCedarJson() const { return m_cedarJson; }
     inline bool CedarJsonHasBeenSet() const { return m_cedarJsonHasBeenSet; }
-    inline void SetCedarJson(const Aws::String& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = value; }
-    inline void SetCedarJson(Aws::String&& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = std::move(value); }
-    inline void SetCedarJson(const char* value) { m_cedarJsonHasBeenSet = true; m_cedarJson.assign(value); }
-    inline EntitiesDefinition& WithCedarJson(const Aws::String& value) { SetCedarJson(value); return *this;}
-    inline EntitiesDefinition& WithCedarJson(Aws::String&& value) { SetCedarJson(std::move(value)); return *this;}
-    inline EntitiesDefinition& WithCedarJson(const char* value) { SetCedarJson(value); return *this;}
+    template<typename CedarJsonT = Aws::String>
+    void SetCedarJson(CedarJsonT&& value) { m_cedarJsonHasBeenSet = true; m_cedarJson = std::forward<CedarJsonT>(value); }
+    template<typename CedarJsonT = Aws::String>
+    EntitiesDefinition& WithCedarJson(CedarJsonT&& value) { SetCedarJson(std::forward<CedarJsonT>(value)); return *this;}
     ///@}
   private:
 

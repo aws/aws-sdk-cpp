@@ -35,7 +35,7 @@ namespace Model
   class AccessRules
   {
   public:
-    AWS_LIGHTSAIL_API AccessRules();
+    AWS_LIGHTSAIL_API AccessRules() = default;
     AWS_LIGHTSAIL_API AccessRules(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API AccessRules& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * <code>public-read</code> ACL. Individual objects with a <code>public-read</code>
      * ACL are readable by anyone in the world.</p> </li> </ul>
      */
-    inline const AccessType& GetGetObject() const{ return m_getObject; }
+    inline AccessType GetGetObject() const { return m_getObject; }
     inline bool GetObjectHasBeenSet() const { return m_getObjectHasBeenSet; }
-    inline void SetGetObject(const AccessType& value) { m_getObjectHasBeenSet = true; m_getObject = value; }
-    inline void SetGetObject(AccessType&& value) { m_getObjectHasBeenSet = true; m_getObject = std::move(value); }
-    inline AccessRules& WithGetObject(const AccessType& value) { SetGetObject(value); return *this;}
-    inline AccessRules& WithGetObject(AccessType&& value) { SetGetObject(std::move(value)); return *this;}
+    inline void SetGetObject(AccessType value) { m_getObjectHasBeenSet = true; m_getObject = value; }
+    inline AccessRules& WithGetObject(AccessType value) { SetGetObject(value); return *this;}
     ///@}
 
     ///@{
@@ -76,17 +74,17 @@ namespace Model
      * <code>public-read</code> ACL, or to private using the <code>private</code>
      * ACL.</p>
      */
-    inline bool GetAllowPublicOverrides() const{ return m_allowPublicOverrides; }
+    inline bool GetAllowPublicOverrides() const { return m_allowPublicOverrides; }
     inline bool AllowPublicOverridesHasBeenSet() const { return m_allowPublicOverridesHasBeenSet; }
     inline void SetAllowPublicOverrides(bool value) { m_allowPublicOverridesHasBeenSet = true; m_allowPublicOverrides = value; }
     inline AccessRules& WithAllowPublicOverrides(bool value) { SetAllowPublicOverrides(value); return *this;}
     ///@}
   private:
 
-    AccessType m_getObject;
+    AccessType m_getObject{AccessType::NOT_SET};
     bool m_getObjectHasBeenSet = false;
 
-    bool m_allowPublicOverrides;
+    bool m_allowPublicOverrides{false};
     bool m_allowPublicOverridesHasBeenSet = false;
   };
 

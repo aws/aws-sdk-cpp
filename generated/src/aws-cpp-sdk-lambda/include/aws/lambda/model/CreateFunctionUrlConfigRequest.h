@@ -28,7 +28,7 @@ namespace Model
   class CreateFunctionUrlConfigRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API CreateFunctionUrlConfigRequest();
+    AWS_LAMBDA_API CreateFunctionUrlConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,28 +52,24 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline CreateFunctionUrlConfigRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    CreateFunctionUrlConfigRequest& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias name.</p>
      */
-    inline const Aws::String& GetQualifier() const{ return m_qualifier; }
+    inline const Aws::String& GetQualifier() const { return m_qualifier; }
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
-    inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
-    inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
-    inline CreateFunctionUrlConfigRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
+    template<typename QualifierT = Aws::String>
+    void SetQualifier(QualifierT&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::forward<QualifierT>(value); }
+    template<typename QualifierT = Aws::String>
+    CreateFunctionUrlConfigRequest& WithQualifier(QualifierT&& value) { SetQualifier(std::forward<QualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
-    inline const FunctionUrlAuthType& GetAuthType() const{ return m_authType; }
+    inline FunctionUrlAuthType GetAuthType() const { return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(const FunctionUrlAuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline void SetAuthType(FunctionUrlAuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-    inline CreateFunctionUrlConfigRequest& WithAuthType(const FunctionUrlAuthType& value) { SetAuthType(value); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithAuthType(FunctionUrlAuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    inline void SetAuthType(FunctionUrlAuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline CreateFunctionUrlConfigRequest& WithAuthType(FunctionUrlAuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,12 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin
      * resource sharing (CORS)</a> settings for your function URL.</p>
      */
-    inline const Cors& GetCors() const{ return m_cors; }
+    inline const Cors& GetCors() const { return m_cors; }
     inline bool CorsHasBeenSet() const { return m_corsHasBeenSet; }
-    inline void SetCors(const Cors& value) { m_corsHasBeenSet = true; m_cors = value; }
-    inline void SetCors(Cors&& value) { m_corsHasBeenSet = true; m_cors = std::move(value); }
-    inline CreateFunctionUrlConfigRequest& WithCors(const Cors& value) { SetCors(value); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithCors(Cors&& value) { SetCors(std::move(value)); return *this;}
+    template<typename CorsT = Cors>
+    void SetCors(CorsT&& value) { m_corsHasBeenSet = true; m_cors = std::forward<CorsT>(value); }
+    template<typename CorsT = Cors>
+    CreateFunctionUrlConfigRequest& WithCors(CorsT&& value) { SetCors(std::forward<CorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +114,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
      * a quota increase</a>.</p> </li> </ul>
      */
-    inline const InvokeMode& GetInvokeMode() const{ return m_invokeMode; }
+    inline InvokeMode GetInvokeMode() const { return m_invokeMode; }
     inline bool InvokeModeHasBeenSet() const { return m_invokeModeHasBeenSet; }
-    inline void SetInvokeMode(const InvokeMode& value) { m_invokeModeHasBeenSet = true; m_invokeMode = value; }
-    inline void SetInvokeMode(InvokeMode&& value) { m_invokeModeHasBeenSet = true; m_invokeMode = std::move(value); }
-    inline CreateFunctionUrlConfigRequest& WithInvokeMode(const InvokeMode& value) { SetInvokeMode(value); return *this;}
-    inline CreateFunctionUrlConfigRequest& WithInvokeMode(InvokeMode&& value) { SetInvokeMode(std::move(value)); return *this;}
+    inline void SetInvokeMode(InvokeMode value) { m_invokeModeHasBeenSet = true; m_invokeMode = value; }
+    inline CreateFunctionUrlConfigRequest& WithInvokeMode(InvokeMode value) { SetInvokeMode(value); return *this;}
     ///@}
   private:
 
@@ -135,13 +127,13 @@ namespace Model
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet = false;
 
-    FunctionUrlAuthType m_authType;
+    FunctionUrlAuthType m_authType{FunctionUrlAuthType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
     Cors m_cors;
     bool m_corsHasBeenSet = false;
 
-    InvokeMode m_invokeMode;
+    InvokeMode m_invokeMode{InvokeMode::NOT_SET};
     bool m_invokeModeHasBeenSet = false;
   };
 

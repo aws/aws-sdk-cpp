@@ -29,7 +29,7 @@ namespace Model
   class GetConfigurationProfileResult
   {
   public:
-    AWS_APPCONFIG_API GetConfigurationProfileResult();
+    AWS_APPCONFIG_API GetConfigurationProfileResult() = default;
     AWS_APPCONFIG_API GetConfigurationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPCONFIG_API GetConfigurationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,65 +38,55 @@ namespace Model
     /**
      * <p>The application ID.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
-    inline GetConfigurationProfileResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline GetConfigurationProfileResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    GetConfigurationProfileResult& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetConfigurationProfileResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetConfigurationProfileResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetConfigurationProfileResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration profile.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetConfigurationProfileResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetConfigurationProfileResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetConfigurationProfileResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration profile description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetConfigurationProfileResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetConfigurationProfileResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetConfigurationProfileResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI location of the configuration.</p>
      */
-    inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
-    inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
-    inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
-    inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
-    inline GetConfigurationProfileResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
-    inline GetConfigurationProfileResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
+    inline const Aws::String& GetLocationUri() const { return m_locationUri; }
+    template<typename LocationUriT = Aws::String>
+    void SetLocationUri(LocationUriT&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::forward<LocationUriT>(value); }
+    template<typename LocationUriT = Aws::String>
+    GetConfigurationProfileResult& WithLocationUri(LocationUriT&& value) { SetLocationUri(std::forward<LocationUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,26 +94,24 @@ namespace Model
      * <p>The ARN of an IAM role with permission to access the configuration at the
      * specified <code>LocationUri</code>.</p>
      */
-    inline const Aws::String& GetRetrievalRoleArn() const{ return m_retrievalRoleArn; }
-    inline void SetRetrievalRoleArn(const Aws::String& value) { m_retrievalRoleArn = value; }
-    inline void SetRetrievalRoleArn(Aws::String&& value) { m_retrievalRoleArn = std::move(value); }
-    inline void SetRetrievalRoleArn(const char* value) { m_retrievalRoleArn.assign(value); }
-    inline GetConfigurationProfileResult& WithRetrievalRoleArn(const Aws::String& value) { SetRetrievalRoleArn(value); return *this;}
-    inline GetConfigurationProfileResult& WithRetrievalRoleArn(Aws::String&& value) { SetRetrievalRoleArn(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithRetrievalRoleArn(const char* value) { SetRetrievalRoleArn(value); return *this;}
+    inline const Aws::String& GetRetrievalRoleArn() const { return m_retrievalRoleArn; }
+    template<typename RetrievalRoleArnT = Aws::String>
+    void SetRetrievalRoleArn(RetrievalRoleArnT&& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = std::forward<RetrievalRoleArnT>(value); }
+    template<typename RetrievalRoleArnT = Aws::String>
+    GetConfigurationProfileResult& WithRetrievalRoleArn(RetrievalRoleArnT&& value) { SetRetrievalRoleArn(std::forward<RetrievalRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of methods for validating the configuration.</p>
      */
-    inline const Aws::Vector<Validator>& GetValidators() const{ return m_validators; }
-    inline void SetValidators(const Aws::Vector<Validator>& value) { m_validators = value; }
-    inline void SetValidators(Aws::Vector<Validator>&& value) { m_validators = std::move(value); }
-    inline GetConfigurationProfileResult& WithValidators(const Aws::Vector<Validator>& value) { SetValidators(value); return *this;}
-    inline GetConfigurationProfileResult& WithValidators(Aws::Vector<Validator>&& value) { SetValidators(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& AddValidators(const Validator& value) { m_validators.push_back(value); return *this; }
-    inline GetConfigurationProfileResult& AddValidators(Validator&& value) { m_validators.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Validator>& GetValidators() const { return m_validators; }
+    template<typename ValidatorsT = Aws::Vector<Validator>>
+    void SetValidators(ValidatorsT&& value) { m_validatorsHasBeenSet = true; m_validators = std::forward<ValidatorsT>(value); }
+    template<typename ValidatorsT = Aws::Vector<Validator>>
+    GetConfigurationProfileResult& WithValidators(ValidatorsT&& value) { SetValidators(std::forward<ValidatorsT>(value)); return *this;}
+    template<typename ValidatorsT = Validator>
+    GetConfigurationProfileResult& AddValidators(ValidatorsT&& value) { m_validatorsHasBeenSet = true; m_validators.emplace_back(std::forward<ValidatorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,13 +124,11 @@ namespace Model
      * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
      * <code>AWS.Freeform</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
-    inline void SetType(const Aws::String& value) { m_type = value; }
-    inline void SetType(Aws::String&& value) { m_type = std::move(value); }
-    inline void SetType(const char* value) { m_type.assign(value); }
-    inline GetConfigurationProfileResult& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline GetConfigurationProfileResult& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithType(const char* value) { SetType(value); return *this;}
+    inline const Aws::String& GetType() const { return m_type; }
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    GetConfigurationProfileResult& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,13 +139,11 @@ namespace Model
      * data managed in other configuration stores, see the documentation for how to
      * specify an KMS key for that particular service.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-    inline GetConfigurationProfileResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline GetConfigurationProfileResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    GetConfigurationProfileResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,48 +151,55 @@ namespace Model
      * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
      * provided when the resource was created or updated.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
-    inline GetConfigurationProfileResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline GetConfigurationProfileResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    GetConfigurationProfileResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConfigurationProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConfigurationProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConfigurationProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConfigurationProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_locationUri;
+    bool m_locationUriHasBeenSet = false;
 
     Aws::String m_retrievalRoleArn;
+    bool m_retrievalRoleArnHasBeenSet = false;
 
     Aws::Vector<Validator> m_validators;
+    bool m_validatorsHasBeenSet = false;
 
     Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

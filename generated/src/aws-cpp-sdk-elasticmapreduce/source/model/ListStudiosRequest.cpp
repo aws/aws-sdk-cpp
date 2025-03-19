@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStudiosRequest::ListStudiosRequest() : 
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListStudiosRequest::SerializePayload() const
 {
   JsonValue payload;

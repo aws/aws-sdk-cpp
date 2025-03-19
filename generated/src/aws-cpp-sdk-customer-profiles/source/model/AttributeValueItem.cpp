@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AttributeValueItem::AttributeValueItem() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 AttributeValueItem::AttributeValueItem(JsonView jsonValue)
-  : AttributeValueItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AttributeValueItem& AttributeValueItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

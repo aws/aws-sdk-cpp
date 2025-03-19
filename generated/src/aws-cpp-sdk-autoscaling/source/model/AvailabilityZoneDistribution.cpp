@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AvailabilityZoneDistribution::AvailabilityZoneDistribution() : 
-    m_capacityDistributionStrategy(CapacityDistributionStrategy::NOT_SET),
-    m_capacityDistributionStrategyHasBeenSet(false)
-{
-}
-
 AvailabilityZoneDistribution::AvailabilityZoneDistribution(const XmlNode& xmlNode)
-  : AvailabilityZoneDistribution()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ AvailabilityZoneDistribution& AvailabilityZoneDistribution::operator =(const Xml
     XmlNode capacityDistributionStrategyNode = resultNode.FirstChild("CapacityDistributionStrategy");
     if(!capacityDistributionStrategyNode.IsNull())
     {
-      m_capacityDistributionStrategy = CapacityDistributionStrategyMapper::GetCapacityDistributionStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityDistributionStrategyNode.GetText()).c_str()).c_str());
+      m_capacityDistributionStrategy = CapacityDistributionStrategyMapper::GetCapacityDistributionStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityDistributionStrategyNode.GetText()).c_str()));
       m_capacityDistributionStrategyHasBeenSet = true;
     }
   }

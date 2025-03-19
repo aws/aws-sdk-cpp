@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchLocalGatewayRoutesResponse::SearchLocalGatewayRoutesResponse()
-{
-}
-
 SearchLocalGatewayRoutesResponse::SearchLocalGatewayRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ SearchLocalGatewayRoutesResponse& SearchLocalGatewayRoutesResponse::operator =(c
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
+      m_routesHasBeenSet = !routesMember.IsNull();
       while(!routesMember.IsNull())
       {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
 
+      m_routesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ SearchLocalGatewayRoutesResponse& SearchLocalGatewayRoutesResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchLocalGatewayRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

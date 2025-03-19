@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-WebCrawlerLimits::WebCrawlerLimits() : 
-    m_maxPages(0),
-    m_maxPagesHasBeenSet(false),
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false)
-{
-}
-
 WebCrawlerLimits::WebCrawlerLimits(JsonView jsonValue)
-  : WebCrawlerLimits()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WebCrawlerLimits& WebCrawlerLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxPages"))
   {
     m_maxPages = jsonValue.GetInteger("maxPages");
-
     m_maxPagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateLimit"))
   {
     m_rateLimit = jsonValue.GetInteger("rateLimit");
-
     m_rateLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

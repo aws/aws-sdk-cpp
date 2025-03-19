@@ -25,7 +25,7 @@ namespace Model
   class SendVoiceMessageRequest : public PinpointSMSVoiceRequest
   {
   public:
-    AWS_PINPOINTSMSVOICE_API SendVoiceMessageRequest();
+    AWS_PINPOINTSMSVOICE_API SendVoiceMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,52 +41,46 @@ namespace Model
      * The phone number that appears on recipients' devices when they receive the
      * message.
      */
-    inline const Aws::String& GetCallerId() const{ return m_callerId; }
+    inline const Aws::String& GetCallerId() const { return m_callerId; }
     inline bool CallerIdHasBeenSet() const { return m_callerIdHasBeenSet; }
-    inline void SetCallerId(const Aws::String& value) { m_callerIdHasBeenSet = true; m_callerId = value; }
-    inline void SetCallerId(Aws::String&& value) { m_callerIdHasBeenSet = true; m_callerId = std::move(value); }
-    inline void SetCallerId(const char* value) { m_callerIdHasBeenSet = true; m_callerId.assign(value); }
-    inline SendVoiceMessageRequest& WithCallerId(const Aws::String& value) { SetCallerId(value); return *this;}
-    inline SendVoiceMessageRequest& WithCallerId(Aws::String&& value) { SetCallerId(std::move(value)); return *this;}
-    inline SendVoiceMessageRequest& WithCallerId(const char* value) { SetCallerId(value); return *this;}
+    template<typename CallerIdT = Aws::String>
+    void SetCallerId(CallerIdT&& value) { m_callerIdHasBeenSet = true; m_callerId = std::forward<CallerIdT>(value); }
+    template<typename CallerIdT = Aws::String>
+    SendVoiceMessageRequest& WithCallerId(CallerIdT&& value) { SetCallerId(std::forward<CallerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the configuration set that you want to use to send the message.
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline SendVoiceMessageRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline SendVoiceMessageRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline SendVoiceMessageRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    SendVoiceMessageRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VoiceMessageContent& GetContent() const{ return m_content; }
+    inline const VoiceMessageContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const VoiceMessageContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(VoiceMessageContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline SendVoiceMessageRequest& WithContent(const VoiceMessageContent& value) { SetContent(value); return *this;}
-    inline SendVoiceMessageRequest& WithContent(VoiceMessageContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = VoiceMessageContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = VoiceMessageContent>
+    SendVoiceMessageRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The phone number that you want to send the voice message to.
      */
-    inline const Aws::String& GetDestinationPhoneNumber() const{ return m_destinationPhoneNumber; }
+    inline const Aws::String& GetDestinationPhoneNumber() const { return m_destinationPhoneNumber; }
     inline bool DestinationPhoneNumberHasBeenSet() const { return m_destinationPhoneNumberHasBeenSet; }
-    inline void SetDestinationPhoneNumber(const Aws::String& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = value; }
-    inline void SetDestinationPhoneNumber(Aws::String&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::move(value); }
-    inline void SetDestinationPhoneNumber(const char* value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber.assign(value); }
-    inline SendVoiceMessageRequest& WithDestinationPhoneNumber(const Aws::String& value) { SetDestinationPhoneNumber(value); return *this;}
-    inline SendVoiceMessageRequest& WithDestinationPhoneNumber(Aws::String&& value) { SetDestinationPhoneNumber(std::move(value)); return *this;}
-    inline SendVoiceMessageRequest& WithDestinationPhoneNumber(const char* value) { SetDestinationPhoneNumber(value); return *this;}
+    template<typename DestinationPhoneNumberT = Aws::String>
+    void SetDestinationPhoneNumber(DestinationPhoneNumberT&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::forward<DestinationPhoneNumberT>(value); }
+    template<typename DestinationPhoneNumberT = Aws::String>
+    SendVoiceMessageRequest& WithDestinationPhoneNumber(DestinationPhoneNumberT&& value) { SetDestinationPhoneNumber(std::forward<DestinationPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * receive the message, because you can specify a CallerId parameter in the
      * request.
      */
-    inline const Aws::String& GetOriginationPhoneNumber() const{ return m_originationPhoneNumber; }
+    inline const Aws::String& GetOriginationPhoneNumber() const { return m_originationPhoneNumber; }
     inline bool OriginationPhoneNumberHasBeenSet() const { return m_originationPhoneNumberHasBeenSet; }
-    inline void SetOriginationPhoneNumber(const Aws::String& value) { m_originationPhoneNumberHasBeenSet = true; m_originationPhoneNumber = value; }
-    inline void SetOriginationPhoneNumber(Aws::String&& value) { m_originationPhoneNumberHasBeenSet = true; m_originationPhoneNumber = std::move(value); }
-    inline void SetOriginationPhoneNumber(const char* value) { m_originationPhoneNumberHasBeenSet = true; m_originationPhoneNumber.assign(value); }
-    inline SendVoiceMessageRequest& WithOriginationPhoneNumber(const Aws::String& value) { SetOriginationPhoneNumber(value); return *this;}
-    inline SendVoiceMessageRequest& WithOriginationPhoneNumber(Aws::String&& value) { SetOriginationPhoneNumber(std::move(value)); return *this;}
-    inline SendVoiceMessageRequest& WithOriginationPhoneNumber(const char* value) { SetOriginationPhoneNumber(value); return *this;}
+    template<typename OriginationPhoneNumberT = Aws::String>
+    void SetOriginationPhoneNumber(OriginationPhoneNumberT&& value) { m_originationPhoneNumberHasBeenSet = true; m_originationPhoneNumber = std::forward<OriginationPhoneNumberT>(value); }
+    template<typename OriginationPhoneNumberT = Aws::String>
+    SendVoiceMessageRequest& WithOriginationPhoneNumber(OriginationPhoneNumberT&& value) { SetOriginationPhoneNumber(std::forward<OriginationPhoneNumberT>(value)); return *this;}
     ///@}
   private:
 

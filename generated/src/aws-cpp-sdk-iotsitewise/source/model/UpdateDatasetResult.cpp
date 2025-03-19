@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDatasetResult::UpdateDatasetResult()
-{
-}
-
 UpdateDatasetResult::UpdateDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateDatasetResult& UpdateDatasetResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("datasetId"))
   {
     m_datasetId = jsonValue.GetString("datasetId");
-
+    m_datasetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetArn"))
   {
     m_datasetArn = jsonValue.GetString("datasetArn");
-
+    m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetStatus"))
   {
     m_datasetStatus = jsonValue.GetObject("datasetStatus");
-
+    m_datasetStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

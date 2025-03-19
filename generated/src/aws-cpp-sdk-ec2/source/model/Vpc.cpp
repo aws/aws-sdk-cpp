@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Vpc::Vpc() : 
-    m_ownerIdHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_cidrBlockAssociationSetHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_encryptionControlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_blockPublicAccessStatesHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_state(VpcState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false)
-{
-}
-
 Vpc::Vpc(const XmlNode& xmlNode)
-  : Vpc()
 {
   *this = xmlNode;
 }
@@ -60,13 +40,14 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     XmlNode instanceTenancyNode = resultNode.FirstChild("instanceTenancy");
     if(!instanceTenancyNode.IsNull())
     {
-      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()).c_str());
+      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()));
       m_instanceTenancyHasBeenSet = true;
     }
     XmlNode ipv6CidrBlockAssociationSetNode = resultNode.FirstChild("ipv6CidrBlockAssociationSet");
     if(!ipv6CidrBlockAssociationSetNode.IsNull())
     {
       XmlNode ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetNode.FirstChild("item");
+      m_ipv6CidrBlockAssociationSetHasBeenSet = !ipv6CidrBlockAssociationSetMember.IsNull();
       while(!ipv6CidrBlockAssociationSetMember.IsNull())
       {
         m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetMember);
@@ -79,6 +60,7 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     if(!cidrBlockAssociationSetNode.IsNull())
     {
       XmlNode cidrBlockAssociationSetMember = cidrBlockAssociationSetNode.FirstChild("item");
+      m_cidrBlockAssociationSetHasBeenSet = !cidrBlockAssociationSetMember.IsNull();
       while(!cidrBlockAssociationSetMember.IsNull())
       {
         m_cidrBlockAssociationSet.push_back(cidrBlockAssociationSetMember);
@@ -103,6 +85,7 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -126,7 +109,7 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcStateMapper::GetVpcStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcStateMapper::GetVpcStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");

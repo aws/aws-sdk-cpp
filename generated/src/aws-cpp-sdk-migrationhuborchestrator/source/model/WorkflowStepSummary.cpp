@@ -18,31 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-WorkflowStepSummary::WorkflowStepSummary() : 
-    m_stepIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_stepActionType(StepActionType::NOT_SET),
-    m_stepActionTypeHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false),
-    m_status(StepStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_noOfSrvCompleted(0),
-    m_noOfSrvCompletedHasBeenSet(false),
-    m_noOfSrvFailed(0),
-    m_noOfSrvFailedHasBeenSet(false),
-    m_totalNoOfSrv(0),
-    m_totalNoOfSrvHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scriptLocationHasBeenSet(false)
-{
-}
-
 WorkflowStepSummary::WorkflowStepSummary(JsonView jsonValue)
-  : WorkflowStepSummary()
 {
   *this = jsonValue;
 }
@@ -52,31 +28,23 @@ WorkflowStepSummary& WorkflowStepSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepActionType"))
   {
     m_stepActionType = StepActionTypeMapper::GetStepActionTypeForName(jsonValue.GetString("stepActionType"));
-
     m_stepActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = OwnerMapper::GetOwnerForName(jsonValue.GetString("owner"));
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previous"))
   {
     Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
@@ -86,7 +54,6 @@ WorkflowStepSummary& WorkflowStepSummary::operator =(JsonView jsonValue)
     }
     m_previousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
@@ -96,56 +63,41 @@ WorkflowStepSummary& WorkflowStepSummary::operator =(JsonView jsonValue)
     }
     m_nextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StepStatusMapper::GetStepStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noOfSrvCompleted"))
   {
     m_noOfSrvCompleted = jsonValue.GetInteger("noOfSrvCompleted");
-
     m_noOfSrvCompletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noOfSrvFailed"))
   {
     m_noOfSrvFailed = jsonValue.GetInteger("noOfSrvFailed");
-
     m_noOfSrvFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalNoOfSrv"))
   {
     m_totalNoOfSrv = jsonValue.GetInteger("totalNoOfSrv");
-
     m_totalNoOfSrvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptLocation"))
   {
     m_scriptLocation = jsonValue.GetString("scriptLocation");
-
     m_scriptLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

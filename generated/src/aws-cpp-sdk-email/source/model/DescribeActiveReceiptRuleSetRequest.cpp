@@ -10,10 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DescribeActiveReceiptRuleSetRequest::DescribeActiveReceiptRuleSetRequest()
-{
-}
-
 Aws::String DescribeActiveReceiptRuleSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

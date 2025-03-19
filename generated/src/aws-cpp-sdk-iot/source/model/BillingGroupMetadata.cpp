@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-BillingGroupMetadata::BillingGroupMetadata() : 
-    m_creationDateHasBeenSet(false)
-{
-}
-
 BillingGroupMetadata::BillingGroupMetadata(JsonView jsonValue)
-  : BillingGroupMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BillingGroupMetadata& BillingGroupMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

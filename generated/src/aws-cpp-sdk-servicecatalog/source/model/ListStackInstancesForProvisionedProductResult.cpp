@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStackInstancesForProvisionedProductResult::ListStackInstancesForProvisionedProductResult()
-{
-}
-
 ListStackInstancesForProvisionedProductResult::ListStackInstancesForProvisionedProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListStackInstancesForProvisionedProductResult& ListStackInstancesForProvisionedP
     {
       m_stackInstances.push_back(stackInstancesJsonList[stackInstancesIndex].AsObject());
     }
+    m_stackInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

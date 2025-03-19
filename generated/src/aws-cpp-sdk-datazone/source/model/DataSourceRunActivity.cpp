@@ -18,24 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataSourceRunActivity::DataSourceRunActivity() : 
-    m_createdAtHasBeenSet(false),
-    m_dataAssetIdHasBeenSet(false),
-    m_dataAssetStatus(DataAssetActivityStatus::NOT_SET),
-    m_dataAssetStatusHasBeenSet(false),
-    m_dataSourceRunIdHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lineageSummaryHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_technicalDescriptionHasBeenSet(false),
-    m_technicalNameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DataSourceRunActivity::DataSourceRunActivity(JsonView jsonValue)
-  : DataSourceRunActivity()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ DataSourceRunActivity& DataSourceRunActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAssetId"))
   {
     m_dataAssetId = jsonValue.GetString("dataAssetId");
-
     m_dataAssetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAssetStatus"))
   {
     m_dataAssetStatus = DataAssetActivityStatusMapper::GetDataAssetActivityStatusForName(jsonValue.GetString("dataAssetStatus"));
-
     m_dataAssetStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceRunId"))
   {
     m_dataSourceRunId = jsonValue.GetString("dataSourceRunId");
-
     m_dataSourceRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("database"))
   {
     m_database = jsonValue.GetString("database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetObject("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineageSummary"))
   {
     m_lineageSummary = jsonValue.GetObject("lineageSummary");
-
     m_lineageSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("technicalDescription"))
   {
     m_technicalDescription = jsonValue.GetString("technicalDescription");
-
     m_technicalDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("technicalName"))
   {
     m_technicalName = jsonValue.GetString("technicalName");
-
     m_technicalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

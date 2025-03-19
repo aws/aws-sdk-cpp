@@ -34,7 +34,7 @@ namespace Model
   class MedicalItem
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalItem();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalItem() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The start time, in milliseconds, of the transcribed item.</p>
      */
-    inline double GetStartTime() const{ return m_startTime; }
+    inline double GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
     inline MedicalItem& WithStartTime(double value) { SetStartTime(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The end time, in milliseconds, of the transcribed item.</p>
      */
-    inline double GetEndTime() const{ return m_endTime; }
+    inline double GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
     inline MedicalItem& WithEndTime(double value) { SetEndTime(value); return *this;}
@@ -65,26 +65,22 @@ namespace Model
      * <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken
      * words) and <code>PUNCTUATION</code>.</p>
      */
-    inline const ItemType& GetType() const{ return m_type; }
+    inline ItemType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ItemType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ItemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MedicalItem& WithType(const ItemType& value) { SetType(value); return *this;}
-    inline MedicalItem& WithType(ItemType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ItemType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MedicalItem& WithType(ItemType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The word or punctuation that was transcribed.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline MedicalItem& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline MedicalItem& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline MedicalItem& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    MedicalItem& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +90,7 @@ namespace Model
      * higher probability that the identified item correctly matches the item spoken in
      * your media.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline MedicalItem& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -105,30 +101,28 @@ namespace Model
      * <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker
      * of the specified item.</p>
      */
-    inline const Aws::String& GetSpeaker() const{ return m_speaker; }
+    inline const Aws::String& GetSpeaker() const { return m_speaker; }
     inline bool SpeakerHasBeenSet() const { return m_speakerHasBeenSet; }
-    inline void SetSpeaker(const Aws::String& value) { m_speakerHasBeenSet = true; m_speaker = value; }
-    inline void SetSpeaker(Aws::String&& value) { m_speakerHasBeenSet = true; m_speaker = std::move(value); }
-    inline void SetSpeaker(const char* value) { m_speakerHasBeenSet = true; m_speaker.assign(value); }
-    inline MedicalItem& WithSpeaker(const Aws::String& value) { SetSpeaker(value); return *this;}
-    inline MedicalItem& WithSpeaker(Aws::String&& value) { SetSpeaker(std::move(value)); return *this;}
-    inline MedicalItem& WithSpeaker(const char* value) { SetSpeaker(value); return *this;}
+    template<typename SpeakerT = Aws::String>
+    void SetSpeaker(SpeakerT&& value) { m_speakerHasBeenSet = true; m_speaker = std::forward<SpeakerT>(value); }
+    template<typename SpeakerT = Aws::String>
+    MedicalItem& WithSpeaker(SpeakerT&& value) { SetSpeaker(std::forward<SpeakerT>(value)); return *this;}
     ///@}
   private:
 
-    double m_startTime;
+    double m_startTime{0.0};
     bool m_startTimeHasBeenSet = false;
 
-    double m_endTime;
+    double m_endTime{0.0};
     bool m_endTimeHasBeenSet = false;
 
-    ItemType m_type;
+    ItemType m_type{ItemType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::String m_speaker;

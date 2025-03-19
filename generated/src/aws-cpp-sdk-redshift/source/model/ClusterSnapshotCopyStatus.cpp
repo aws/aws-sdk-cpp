@@ -20,18 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus() : 
-    m_destinationRegionHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_snapshotCopyGrantNameHasBeenSet(false)
-{
-}
-
 ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus(const XmlNode& xmlNode)
-  : ClusterSnapshotCopyStatus()
 {
   *this = xmlNode;
 }

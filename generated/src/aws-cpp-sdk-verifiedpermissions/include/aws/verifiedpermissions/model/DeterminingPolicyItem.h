@@ -41,7 +41,7 @@ namespace Model
   class DeterminingPolicyItem
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API DeterminingPolicyItem();
+    AWS_VERIFIEDPERMISSIONS_API DeterminingPolicyItem() = default;
     AWS_VERIFIEDPERMISSIONS_API DeterminingPolicyItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API DeterminingPolicyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <p>The Id of a policy that determined to an authorization decision.</p>
      * <p>Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> </p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline DeterminingPolicyItem& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline DeterminingPolicyItem& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline DeterminingPolicyItem& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    DeterminingPolicyItem& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
   private:
 

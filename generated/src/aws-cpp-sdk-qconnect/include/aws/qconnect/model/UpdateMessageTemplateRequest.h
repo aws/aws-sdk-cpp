@@ -23,7 +23,7 @@ namespace Model
   class UpdateMessageTemplateRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API UpdateMessageTemplateRequest();
+    AWS_QCONNECT_API UpdateMessageTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
     /**
      * <p>The content of the message template.</p>
      */
-    inline const MessageTemplateContentProvider& GetContent() const{ return m_content; }
+    inline const MessageTemplateContentProvider& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const MessageTemplateContentProvider& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(MessageTemplateContentProvider&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline UpdateMessageTemplateRequest& WithContent(const MessageTemplateContentProvider& value) { SetContent(value); return *this;}
-    inline UpdateMessageTemplateRequest& WithContent(MessageTemplateContentProvider&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = MessageTemplateContentProvider>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = MessageTemplateContentProvider>
+    UpdateMessageTemplateRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +53,12 @@ namespace Model
      * Each key defines a variable or placeholder in the message template. The
      * corresponding value defines the default value for that variable.</p>
      */
-    inline const MessageTemplateAttributes& GetDefaultAttributes() const{ return m_defaultAttributes; }
+    inline const MessageTemplateAttributes& GetDefaultAttributes() const { return m_defaultAttributes; }
     inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
-    inline void SetDefaultAttributes(const MessageTemplateAttributes& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = value; }
-    inline void SetDefaultAttributes(MessageTemplateAttributes&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::move(value); }
-    inline UpdateMessageTemplateRequest& WithDefaultAttributes(const MessageTemplateAttributes& value) { SetDefaultAttributes(value); return *this;}
-    inline UpdateMessageTemplateRequest& WithDefaultAttributes(MessageTemplateAttributes&& value) { SetDefaultAttributes(std::move(value)); return *this;}
+    template<typename DefaultAttributesT = MessageTemplateAttributes>
+    void SetDefaultAttributes(DefaultAttributesT&& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = std::forward<DefaultAttributesT>(value); }
+    template<typename DefaultAttributesT = MessageTemplateAttributes>
+    UpdateMessageTemplateRequest& WithDefaultAttributes(DefaultAttributesT&& value) { SetDefaultAttributes(std::forward<DefaultAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +66,12 @@ namespace Model
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline UpdateMessageTemplateRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline UpdateMessageTemplateRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline UpdateMessageTemplateRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    UpdateMessageTemplateRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +82,12 @@ namespace Model
      * <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>,
      * <code>zh_CN</code>, <code>zh_TW</code> </p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline UpdateMessageTemplateRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline UpdateMessageTemplateRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline UpdateMessageTemplateRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    UpdateMessageTemplateRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * <p>The identifier of the message template. Can be either the ID or the ARN. It
      * cannot contain any qualifier.</p>
      */
-    inline const Aws::String& GetMessageTemplateId() const{ return m_messageTemplateId; }
+    inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
     inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
-    inline void SetMessageTemplateId(const Aws::String& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = value; }
-    inline void SetMessageTemplateId(Aws::String&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::move(value); }
-    inline void SetMessageTemplateId(const char* value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId.assign(value); }
-    inline UpdateMessageTemplateRequest& WithMessageTemplateId(const Aws::String& value) { SetMessageTemplateId(value); return *this;}
-    inline UpdateMessageTemplateRequest& WithMessageTemplateId(Aws::String&& value) { SetMessageTemplateId(std::move(value)); return *this;}
-    inline UpdateMessageTemplateRequest& WithMessageTemplateId(const char* value) { SetMessageTemplateId(value); return *this;}
+    template<typename MessageTemplateIdT = Aws::String>
+    void SetMessageTemplateId(MessageTemplateIdT&& value) { m_messageTemplateIdHasBeenSet = true; m_messageTemplateId = std::forward<MessageTemplateIdT>(value); }
+    template<typename MessageTemplateIdT = Aws::String>
+    UpdateMessageTemplateRequest& WithMessageTemplateId(MessageTemplateIdT&& value) { SetMessageTemplateId(std::forward<MessageTemplateIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class GeospatialGradientColor
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialGradientColor();
+    AWS_QUICKSIGHT_API GeospatialGradientColor() = default;
     AWS_QUICKSIGHT_API GeospatialGradientColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialGradientColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,43 @@ namespace Model
     /**
      * <p>A list of gradient step colors for the gradient.</p>
      */
-    inline const Aws::Vector<GeospatialGradientStepColor>& GetStepColors() const{ return m_stepColors; }
+    inline const Aws::Vector<GeospatialGradientStepColor>& GetStepColors() const { return m_stepColors; }
     inline bool StepColorsHasBeenSet() const { return m_stepColorsHasBeenSet; }
-    inline void SetStepColors(const Aws::Vector<GeospatialGradientStepColor>& value) { m_stepColorsHasBeenSet = true; m_stepColors = value; }
-    inline void SetStepColors(Aws::Vector<GeospatialGradientStepColor>&& value) { m_stepColorsHasBeenSet = true; m_stepColors = std::move(value); }
-    inline GeospatialGradientColor& WithStepColors(const Aws::Vector<GeospatialGradientStepColor>& value) { SetStepColors(value); return *this;}
-    inline GeospatialGradientColor& WithStepColors(Aws::Vector<GeospatialGradientStepColor>&& value) { SetStepColors(std::move(value)); return *this;}
-    inline GeospatialGradientColor& AddStepColors(const GeospatialGradientStepColor& value) { m_stepColorsHasBeenSet = true; m_stepColors.push_back(value); return *this; }
-    inline GeospatialGradientColor& AddStepColors(GeospatialGradientStepColor&& value) { m_stepColorsHasBeenSet = true; m_stepColors.push_back(std::move(value)); return *this; }
+    template<typename StepColorsT = Aws::Vector<GeospatialGradientStepColor>>
+    void SetStepColors(StepColorsT&& value) { m_stepColorsHasBeenSet = true; m_stepColors = std::forward<StepColorsT>(value); }
+    template<typename StepColorsT = Aws::Vector<GeospatialGradientStepColor>>
+    GeospatialGradientColor& WithStepColors(StepColorsT&& value) { SetStepColors(std::forward<StepColorsT>(value)); return *this;}
+    template<typename StepColorsT = GeospatialGradientStepColor>
+    GeospatialGradientColor& AddStepColors(StepColorsT&& value) { m_stepColorsHasBeenSet = true; m_stepColors.emplace_back(std::forward<StepColorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The state of visibility for null data.</p>
      */
-    inline const Visibility& GetNullDataVisibility() const{ return m_nullDataVisibility; }
+    inline Visibility GetNullDataVisibility() const { return m_nullDataVisibility; }
     inline bool NullDataVisibilityHasBeenSet() const { return m_nullDataVisibilityHasBeenSet; }
-    inline void SetNullDataVisibility(const Visibility& value) { m_nullDataVisibilityHasBeenSet = true; m_nullDataVisibility = value; }
-    inline void SetNullDataVisibility(Visibility&& value) { m_nullDataVisibilityHasBeenSet = true; m_nullDataVisibility = std::move(value); }
-    inline GeospatialGradientColor& WithNullDataVisibility(const Visibility& value) { SetNullDataVisibility(value); return *this;}
-    inline GeospatialGradientColor& WithNullDataVisibility(Visibility&& value) { SetNullDataVisibility(std::move(value)); return *this;}
+    inline void SetNullDataVisibility(Visibility value) { m_nullDataVisibilityHasBeenSet = true; m_nullDataVisibility = value; }
+    inline GeospatialGradientColor& WithNullDataVisibility(Visibility value) { SetNullDataVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The null data visualization settings.</p>
      */
-    inline const GeospatialNullDataSettings& GetNullDataSettings() const{ return m_nullDataSettings; }
+    inline const GeospatialNullDataSettings& GetNullDataSettings() const { return m_nullDataSettings; }
     inline bool NullDataSettingsHasBeenSet() const { return m_nullDataSettingsHasBeenSet; }
-    inline void SetNullDataSettings(const GeospatialNullDataSettings& value) { m_nullDataSettingsHasBeenSet = true; m_nullDataSettings = value; }
-    inline void SetNullDataSettings(GeospatialNullDataSettings&& value) { m_nullDataSettingsHasBeenSet = true; m_nullDataSettings = std::move(value); }
-    inline GeospatialGradientColor& WithNullDataSettings(const GeospatialNullDataSettings& value) { SetNullDataSettings(value); return *this;}
-    inline GeospatialGradientColor& WithNullDataSettings(GeospatialNullDataSettings&& value) { SetNullDataSettings(std::move(value)); return *this;}
+    template<typename NullDataSettingsT = GeospatialNullDataSettings>
+    void SetNullDataSettings(NullDataSettingsT&& value) { m_nullDataSettingsHasBeenSet = true; m_nullDataSettings = std::forward<NullDataSettingsT>(value); }
+    template<typename NullDataSettingsT = GeospatialNullDataSettings>
+    GeospatialGradientColor& WithNullDataSettings(NullDataSettingsT&& value) { SetNullDataSettings(std::forward<NullDataSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default opacity for the gradient color.</p>
      */
-    inline double GetDefaultOpacity() const{ return m_defaultOpacity; }
+    inline double GetDefaultOpacity() const { return m_defaultOpacity; }
     inline bool DefaultOpacityHasBeenSet() const { return m_defaultOpacityHasBeenSet; }
     inline void SetDefaultOpacity(double value) { m_defaultOpacityHasBeenSet = true; m_defaultOpacity = value; }
     inline GeospatialGradientColor& WithDefaultOpacity(double value) { SetDefaultOpacity(value); return *this;}
@@ -92,13 +90,13 @@ namespace Model
     Aws::Vector<GeospatialGradientStepColor> m_stepColors;
     bool m_stepColorsHasBeenSet = false;
 
-    Visibility m_nullDataVisibility;
+    Visibility m_nullDataVisibility{Visibility::NOT_SET};
     bool m_nullDataVisibilityHasBeenSet = false;
 
     GeospatialNullDataSettings m_nullDataSettings;
     bool m_nullDataSettingsHasBeenSet = false;
 
-    double m_defaultOpacity;
+    double m_defaultOpacity{0.0};
     bool m_defaultOpacityHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteGatewayResult::DeleteGatewayResult()
-{
-}
-
 DeleteGatewayResult::DeleteGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteGatewayResult& DeleteGatewayResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("gatewayArn"))
   {
     m_gatewayArn = jsonValue.GetString("gatewayArn");
-
+    m_gatewayArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

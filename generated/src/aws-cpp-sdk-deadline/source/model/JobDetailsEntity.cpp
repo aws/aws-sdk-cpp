@@ -18,20 +18,7 @@ namespace deadline
 namespace Model
 {
 
-JobDetailsEntity::JobDetailsEntity() : 
-    m_jobIdHasBeenSet(false),
-    m_jobAttachmentSettingsHasBeenSet(false),
-    m_jobRunAsUserHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_queueRoleArnHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_pathMappingRulesHasBeenSet(false)
-{
-}
-
 JobDetailsEntity::JobDetailsEntity(JsonView jsonValue)
-  : JobDetailsEntity()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobAttachmentSettings"))
   {
     m_jobAttachmentSettings = jsonValue.GetObject("jobAttachmentSettings");
-
     m_jobAttachmentSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobRunAsUser"))
   {
     m_jobRunAsUser = jsonValue.GetObject("jobRunAsUser");
-
     m_jobRunAsUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueRoleArn"))
   {
     m_queueRoleArn = jsonValue.GetString("queueRoleArn");
-
     m_queueRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -82,14 +59,11 @@ JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pathMappingRules"))
   {
     Aws::Utils::Array<JsonView> pathMappingRulesJsonList = jsonValue.GetArray("pathMappingRules");
@@ -99,7 +73,6 @@ JobDetailsEntity& JobDetailsEntity::operator =(JsonView jsonValue)
     }
     m_pathMappingRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

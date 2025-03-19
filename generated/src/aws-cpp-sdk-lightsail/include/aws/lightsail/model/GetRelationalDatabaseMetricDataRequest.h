@@ -26,7 +26,7 @@ namespace Model
   class GetRelationalDatabaseMetricDataRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseMetricDataRequest();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of your database from which to get metric data.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
+    inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-    inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-    inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-    inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-    inline GetRelationalDatabaseMetricDataRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    template<typename RelationalDatabaseNameT = Aws::String>
+    void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value); }
+    template<typename RelationalDatabaseNameT = Aws::String>
+    GetRelationalDatabaseMetricDataRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) { SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,10 @@ namespace Model
      * <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p>
      * </li> </ul>
      */
-    inline const RelationalDatabaseMetricName& GetMetricName() const{ return m_metricName; }
+    inline RelationalDatabaseMetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const RelationalDatabaseMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(RelationalDatabaseMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline GetRelationalDatabaseMetricDataRequest& WithMetricName(const RelationalDatabaseMetricName& value) { SetMetricName(value); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithMetricName(RelationalDatabaseMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(RelationalDatabaseMetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline GetRelationalDatabaseMetricDataRequest& WithMetricName(RelationalDatabaseMetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +97,7 @@ namespace Model
      * relational database metric data is available in 1-minute (60 seconds)
      * granularity.</p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetRelationalDatabaseMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -115,12 +111,12 @@ namespace Model
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetRelationalDatabaseMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetRelationalDatabaseMetricDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +127,12 @@ namespace Model
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetRelationalDatabaseMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetRelationalDatabaseMetricDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +141,10 @@ namespace Model
      * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
-    inline const MetricUnit& GetUnit() const{ return m_unit; }
+    inline MetricUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline GetRelationalDatabaseMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(MetricUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline GetRelationalDatabaseMetricDataRequest& WithUnit(MetricUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -171,33 +165,32 @@ namespace Model
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
-    inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<MetricStatistic>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<MetricStatistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline GetRelationalDatabaseMetricDataRequest& WithStatistics(const Aws::Vector<MetricStatistic>& value) { SetStatistics(value); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetRelationalDatabaseMetricDataRequest& AddStatistics(const MetricStatistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline GetRelationalDatabaseMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    GetRelationalDatabaseMetricDataRequest& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    inline GetRelationalDatabaseMetricDataRequest& AddStatistics(MetricStatistic value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_relationalDatabaseName;
     bool m_relationalDatabaseNameHasBeenSet = false;
 
-    RelationalDatabaseMetricName m_metricName;
+    RelationalDatabaseMetricName m_metricName{RelationalDatabaseMetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    MetricUnit m_unit;
+    MetricUnit m_unit{MetricUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
     Aws::Vector<MetricStatistic> m_statistics;

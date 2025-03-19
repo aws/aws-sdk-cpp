@@ -19,7 +19,7 @@ namespace Model
   class XmlIntEnumsRequest : public EC2ProtocolRequest
   {
   public:
-    AWS_EC2PROTOCOL_API XmlIntEnumsRequest();
+    AWS_EC2PROTOCOL_API XmlIntEnumsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

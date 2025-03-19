@@ -29,7 +29,7 @@ namespace Model
   class GetBucketVersioningResult
   {
   public:
-    AWS_S3CRT_API GetBucketVersioningResult();
+    AWS_S3CRT_API GetBucketVersioningResult() = default;
     AWS_S3CRT_API GetBucketVersioningResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetBucketVersioningResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,9 @@ namespace Model
     /**
      * <p>The versioning state of the bucket.</p>
      */
-    inline const BucketVersioningStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const BucketVersioningStatus& value) { m_status = value; }
-    inline void SetStatus(BucketVersioningStatus&& value) { m_status = std::move(value); }
-    inline GetBucketVersioningResult& WithStatus(const BucketVersioningStatus& value) { SetStatus(value); return *this;}
-    inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline BucketVersioningStatus GetStatus() const { return m_status; }
+    inline void SetStatus(BucketVersioningStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -52,30 +50,29 @@ namespace Model
      * with MFA delete. If the bucket has never been so configured, this element is not
      * returned.</p>
      */
-    inline const MFADeleteStatus& GetMFADelete() const{ return m_mFADelete; }
-    inline void SetMFADelete(const MFADeleteStatus& value) { m_mFADelete = value; }
-    inline void SetMFADelete(MFADeleteStatus&& value) { m_mFADelete = std::move(value); }
-    inline GetBucketVersioningResult& WithMFADelete(const MFADeleteStatus& value) { SetMFADelete(value); return *this;}
-    inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus&& value) { SetMFADelete(std::move(value)); return *this;}
+    inline MFADeleteStatus GetMFADelete() const { return m_mFADelete; }
+    inline void SetMFADelete(MFADeleteStatus value) { m_mFADeleteHasBeenSet = true; m_mFADelete = value; }
+    inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus value) { SetMFADelete(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketVersioningResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketVersioningResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketVersioningResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketVersioningResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    BucketVersioningStatus m_status;
+    BucketVersioningStatus m_status{BucketVersioningStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    MFADeleteStatus m_mFADelete;
+    MFADeleteStatus m_mFADelete{MFADeleteStatus::NOT_SET};
+    bool m_mFADeleteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

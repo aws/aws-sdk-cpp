@@ -22,7 +22,7 @@ namespace Model
   class DetectCustomLabelsRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DetectCustomLabelsRequest();
+    AWS_REKOGNITION_API DetectCustomLabelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,24 +42,22 @@ namespace Model
      * to a model version associated with a project for a different feature type, then
      * an InvalidParameterException is returned.</p>
      */
-    inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
+    inline const Aws::String& GetProjectVersionArn() const { return m_projectVersionArn; }
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
-    inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
-    inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
-    inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
-    inline DetectCustomLabelsRequest& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
-    inline DetectCustomLabelsRequest& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
-    inline DetectCustomLabelsRequest& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
+    template<typename ProjectVersionArnT = Aws::String>
+    void SetProjectVersionArn(ProjectVersionArnT&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::forward<ProjectVersionArnT>(value); }
+    template<typename ProjectVersionArnT = Aws::String>
+    DetectCustomLabelsRequest& WithProjectVersionArn(ProjectVersionArnT&& value) { SetProjectVersionArn(std::forward<ProjectVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline DetectCustomLabelsRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline DetectCustomLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    DetectCustomLabelsRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * service returns the specified number of highest confidence labels ranked from
      * highest confidence to lowest.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DetectCustomLabelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based
      * on the assumed threshold of each label.</p>
      */
-    inline double GetMinConfidence() const{ return m_minConfidence; }
+    inline double GetMinConfidence() const { return m_minConfidence; }
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
     inline DetectCustomLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
@@ -97,10 +95,10 @@ namespace Model
     Image m_image;
     bool m_imageHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    double m_minConfidence;
+    double m_minConfidence{0.0};
     bool m_minConfidenceHasBeenSet = false;
   };
 

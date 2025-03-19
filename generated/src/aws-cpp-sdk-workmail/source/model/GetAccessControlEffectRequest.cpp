@@ -12,15 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccessControlEffectRequest::GetAccessControlEffectRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_impersonationRoleIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessControlEffectRequest::SerializePayload() const
 {
   JsonValue payload;

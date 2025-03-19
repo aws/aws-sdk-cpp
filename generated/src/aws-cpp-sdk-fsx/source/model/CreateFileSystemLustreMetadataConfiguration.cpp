@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CreateFileSystemLustreMetadataConfiguration::CreateFileSystemLustreMetadataConfiguration() : 
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_mode(MetadataConfigurationMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 CreateFileSystemLustreMetadataConfiguration::CreateFileSystemLustreMetadataConfiguration(JsonView jsonValue)
-  : CreateFileSystemLustreMetadataConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CreateFileSystemLustreMetadataConfiguration& CreateFileSystemLustreMetadataConfi
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = MetadataConfigurationModeMapper::GetMetadataConfigurationModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

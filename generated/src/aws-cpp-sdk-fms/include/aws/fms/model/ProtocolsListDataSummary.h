@@ -32,7 +32,7 @@ namespace Model
   class ProtocolsListDataSummary
   {
   public:
-    AWS_FMS_API ProtocolsListDataSummary();
+    AWS_FMS_API ProtocolsListDataSummary() = default;
     AWS_FMS_API ProtocolsListDataSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API ProtocolsListDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,57 +42,50 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
      */
-    inline const Aws::String& GetListArn() const{ return m_listArn; }
+    inline const Aws::String& GetListArn() const { return m_listArn; }
     inline bool ListArnHasBeenSet() const { return m_listArnHasBeenSet; }
-    inline void SetListArn(const Aws::String& value) { m_listArnHasBeenSet = true; m_listArn = value; }
-    inline void SetListArn(Aws::String&& value) { m_listArnHasBeenSet = true; m_listArn = std::move(value); }
-    inline void SetListArn(const char* value) { m_listArnHasBeenSet = true; m_listArn.assign(value); }
-    inline ProtocolsListDataSummary& WithListArn(const Aws::String& value) { SetListArn(value); return *this;}
-    inline ProtocolsListDataSummary& WithListArn(Aws::String&& value) { SetListArn(std::move(value)); return *this;}
-    inline ProtocolsListDataSummary& WithListArn(const char* value) { SetListArn(value); return *this;}
+    template<typename ListArnT = Aws::String>
+    void SetListArn(ListArnT&& value) { m_listArnHasBeenSet = true; m_listArn = std::forward<ListArnT>(value); }
+    template<typename ListArnT = Aws::String>
+    ProtocolsListDataSummary& WithListArn(ListArnT&& value) { SetListArn(std::forward<ListArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the specified protocols list.</p>
      */
-    inline const Aws::String& GetListId() const{ return m_listId; }
+    inline const Aws::String& GetListId() const { return m_listId; }
     inline bool ListIdHasBeenSet() const { return m_listIdHasBeenSet; }
-    inline void SetListId(const Aws::String& value) { m_listIdHasBeenSet = true; m_listId = value; }
-    inline void SetListId(Aws::String&& value) { m_listIdHasBeenSet = true; m_listId = std::move(value); }
-    inline void SetListId(const char* value) { m_listIdHasBeenSet = true; m_listId.assign(value); }
-    inline ProtocolsListDataSummary& WithListId(const Aws::String& value) { SetListId(value); return *this;}
-    inline ProtocolsListDataSummary& WithListId(Aws::String&& value) { SetListId(std::move(value)); return *this;}
-    inline ProtocolsListDataSummary& WithListId(const char* value) { SetListId(value); return *this;}
+    template<typename ListIdT = Aws::String>
+    void SetListId(ListIdT&& value) { m_listIdHasBeenSet = true; m_listId = std::forward<ListIdT>(value); }
+    template<typename ListIdT = Aws::String>
+    ProtocolsListDataSummary& WithListId(ListIdT&& value) { SetListId(std::forward<ListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the specified protocols list.</p>
      */
-    inline const Aws::String& GetListName() const{ return m_listName; }
+    inline const Aws::String& GetListName() const { return m_listName; }
     inline bool ListNameHasBeenSet() const { return m_listNameHasBeenSet; }
-    inline void SetListName(const Aws::String& value) { m_listNameHasBeenSet = true; m_listName = value; }
-    inline void SetListName(Aws::String&& value) { m_listNameHasBeenSet = true; m_listName = std::move(value); }
-    inline void SetListName(const char* value) { m_listNameHasBeenSet = true; m_listName.assign(value); }
-    inline ProtocolsListDataSummary& WithListName(const Aws::String& value) { SetListName(value); return *this;}
-    inline ProtocolsListDataSummary& WithListName(Aws::String&& value) { SetListName(std::move(value)); return *this;}
-    inline ProtocolsListDataSummary& WithListName(const char* value) { SetListName(value); return *this;}
+    template<typename ListNameT = Aws::String>
+    void SetListName(ListNameT&& value) { m_listNameHasBeenSet = true; m_listName = std::forward<ListNameT>(value); }
+    template<typename ListNameT = Aws::String>
+    ProtocolsListDataSummary& WithListName(ListNameT&& value) { SetListName(std::forward<ListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProtocolsList() const{ return m_protocolsList; }
+    inline const Aws::Vector<Aws::String>& GetProtocolsList() const { return m_protocolsList; }
     inline bool ProtocolsListHasBeenSet() const { return m_protocolsListHasBeenSet; }
-    inline void SetProtocolsList(const Aws::Vector<Aws::String>& value) { m_protocolsListHasBeenSet = true; m_protocolsList = value; }
-    inline void SetProtocolsList(Aws::Vector<Aws::String>&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::move(value); }
-    inline ProtocolsListDataSummary& WithProtocolsList(const Aws::Vector<Aws::String>& value) { SetProtocolsList(value); return *this;}
-    inline ProtocolsListDataSummary& WithProtocolsList(Aws::Vector<Aws::String>&& value) { SetProtocolsList(std::move(value)); return *this;}
-    inline ProtocolsListDataSummary& AddProtocolsList(const Aws::String& value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(value); return *this; }
-    inline ProtocolsListDataSummary& AddProtocolsList(Aws::String&& value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(std::move(value)); return *this; }
-    inline ProtocolsListDataSummary& AddProtocolsList(const char* value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(value); return *this; }
+    template<typename ProtocolsListT = Aws::Vector<Aws::String>>
+    void SetProtocolsList(ProtocolsListT&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::forward<ProtocolsListT>(value); }
+    template<typename ProtocolsListT = Aws::Vector<Aws::String>>
+    ProtocolsListDataSummary& WithProtocolsList(ProtocolsListT&& value) { SetProtocolsList(std::forward<ProtocolsListT>(value)); return *this;}
+    template<typename ProtocolsListT = Aws::String>
+    ProtocolsListDataSummary& AddProtocolsList(ProtocolsListT&& value) { m_protocolsListHasBeenSet = true; m_protocolsList.emplace_back(std::forward<ProtocolsListT>(value)); return *this; }
     ///@}
   private:
 

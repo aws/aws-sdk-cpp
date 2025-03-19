@@ -12,12 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ChangeMessageVisibilityBatchRequest::ChangeMessageVisibilityBatchRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String ChangeMessageVisibilityBatchRequest::SerializePayload() const
 {
   JsonValue payload;

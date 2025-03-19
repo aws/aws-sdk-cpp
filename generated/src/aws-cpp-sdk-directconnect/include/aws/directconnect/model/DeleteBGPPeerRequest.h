@@ -21,7 +21,7 @@ namespace Model
   class DeleteBGPPeerRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API DeleteBGPPeerRequest();
+    AWS_DIRECTCONNECT_API DeleteBGPPeerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
-    inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
+    inline const Aws::String& GetVirtualInterfaceId() const { return m_virtualInterfaceId; }
     inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
-    inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
-    inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
-    inline DeleteBGPPeerRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
-    inline DeleteBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
-    inline DeleteBGPPeerRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+    template<typename VirtualInterfaceIdT = Aws::String>
+    void SetVirtualInterfaceId(VirtualInterfaceIdT&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::forward<VirtualInterfaceIdT>(value); }
+    template<typename VirtualInterfaceIdT = Aws::String>
+    DeleteBGPPeerRequest& WithVirtualInterfaceId(VirtualInterfaceIdT&& value) { SetVirtualInterfaceId(std::forward<VirtualInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
      * configuration.</p>
      */
-    inline int GetAsn() const{ return m_asn; }
+    inline int GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
     inline DeleteBGPPeerRequest& WithAsn(int value) { SetAsn(value); return *this;}
@@ -63,35 +61,31 @@ namespace Model
     /**
      * <p>The IP address assigned to the customer interface.</p>
      */
-    inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
+    inline const Aws::String& GetCustomerAddress() const { return m_customerAddress; }
     inline bool CustomerAddressHasBeenSet() const { return m_customerAddressHasBeenSet; }
-    inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
-    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
-    inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
-    inline DeleteBGPPeerRequest& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
-    inline DeleteBGPPeerRequest& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
-    inline DeleteBGPPeerRequest& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
+    template<typename CustomerAddressT = Aws::String>
+    void SetCustomerAddress(CustomerAddressT&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::forward<CustomerAddressT>(value); }
+    template<typename CustomerAddressT = Aws::String>
+    DeleteBGPPeerRequest& WithCustomerAddress(CustomerAddressT&& value) { SetCustomerAddress(std::forward<CustomerAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the BGP peer.</p>
      */
-    inline const Aws::String& GetBgpPeerId() const{ return m_bgpPeerId; }
+    inline const Aws::String& GetBgpPeerId() const { return m_bgpPeerId; }
     inline bool BgpPeerIdHasBeenSet() const { return m_bgpPeerIdHasBeenSet; }
-    inline void SetBgpPeerId(const Aws::String& value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId = value; }
-    inline void SetBgpPeerId(Aws::String&& value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId = std::move(value); }
-    inline void SetBgpPeerId(const char* value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId.assign(value); }
-    inline DeleteBGPPeerRequest& WithBgpPeerId(const Aws::String& value) { SetBgpPeerId(value); return *this;}
-    inline DeleteBGPPeerRequest& WithBgpPeerId(Aws::String&& value) { SetBgpPeerId(std::move(value)); return *this;}
-    inline DeleteBGPPeerRequest& WithBgpPeerId(const char* value) { SetBgpPeerId(value); return *this;}
+    template<typename BgpPeerIdT = Aws::String>
+    void SetBgpPeerId(BgpPeerIdT&& value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId = std::forward<BgpPeerIdT>(value); }
+    template<typename BgpPeerIdT = Aws::String>
+    DeleteBGPPeerRequest& WithBgpPeerId(BgpPeerIdT&& value) { SetBgpPeerId(std::forward<BgpPeerIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_virtualInterfaceId;
     bool m_virtualInterfaceIdHasBeenSet = false;
 
-    int m_asn;
+    int m_asn{0};
     bool m_asnHasBeenSet = false;
 
     Aws::String m_customerAddress;

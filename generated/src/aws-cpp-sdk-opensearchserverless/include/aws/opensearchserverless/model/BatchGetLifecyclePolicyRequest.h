@@ -22,7 +22,7 @@ namespace Model
   class BatchGetLifecyclePolicyRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API BatchGetLifecyclePolicyRequest();
+    AWS_OPENSEARCHSERVERLESS_API BatchGetLifecyclePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The unique identifiers of policy types and policy names.</p>
      */
-    inline const Aws::Vector<LifecyclePolicyIdentifier>& GetIdentifiers() const{ return m_identifiers; }
+    inline const Aws::Vector<LifecyclePolicyIdentifier>& GetIdentifiers() const { return m_identifiers; }
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-    inline void SetIdentifiers(const Aws::Vector<LifecyclePolicyIdentifier>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-    inline void SetIdentifiers(Aws::Vector<LifecyclePolicyIdentifier>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-    inline BatchGetLifecyclePolicyRequest& WithIdentifiers(const Aws::Vector<LifecyclePolicyIdentifier>& value) { SetIdentifiers(value); return *this;}
-    inline BatchGetLifecyclePolicyRequest& WithIdentifiers(Aws::Vector<LifecyclePolicyIdentifier>&& value) { SetIdentifiers(std::move(value)); return *this;}
-    inline BatchGetLifecyclePolicyRequest& AddIdentifiers(const LifecyclePolicyIdentifier& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-    inline BatchGetLifecyclePolicyRequest& AddIdentifiers(LifecyclePolicyIdentifier&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
+    template<typename IdentifiersT = Aws::Vector<LifecyclePolicyIdentifier>>
+    void SetIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::forward<IdentifiersT>(value); }
+    template<typename IdentifiersT = Aws::Vector<LifecyclePolicyIdentifier>>
+    BatchGetLifecyclePolicyRequest& WithIdentifiers(IdentifiersT&& value) { SetIdentifiers(std::forward<IdentifiersT>(value)); return *this;}
+    template<typename IdentifiersT = LifecyclePolicyIdentifier>
+    BatchGetLifecyclePolicyRequest& AddIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers.emplace_back(std::forward<IdentifiersT>(value)); return *this; }
     ///@}
   private:
 

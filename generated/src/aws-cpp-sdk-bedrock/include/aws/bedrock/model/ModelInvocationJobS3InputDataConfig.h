@@ -33,7 +33,7 @@ namespace Model
   class ModelInvocationJobS3InputDataConfig
   {
   public:
-    AWS_BEDROCK_API ModelInvocationJobS3InputDataConfig();
+    AWS_BEDROCK_API ModelInvocationJobS3InputDataConfig() = default;
     AWS_BEDROCK_API ModelInvocationJobS3InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ModelInvocationJobS3InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The format of the input data.</p>
      */
-    inline const S3InputFormat& GetS3InputFormat() const{ return m_s3InputFormat; }
+    inline S3InputFormat GetS3InputFormat() const { return m_s3InputFormat; }
     inline bool S3InputFormatHasBeenSet() const { return m_s3InputFormatHasBeenSet; }
-    inline void SetS3InputFormat(const S3InputFormat& value) { m_s3InputFormatHasBeenSet = true; m_s3InputFormat = value; }
-    inline void SetS3InputFormat(S3InputFormat&& value) { m_s3InputFormatHasBeenSet = true; m_s3InputFormat = std::move(value); }
-    inline ModelInvocationJobS3InputDataConfig& WithS3InputFormat(const S3InputFormat& value) { SetS3InputFormat(value); return *this;}
-    inline ModelInvocationJobS3InputDataConfig& WithS3InputFormat(S3InputFormat&& value) { SetS3InputFormat(std::move(value)); return *this;}
+    inline void SetS3InputFormat(S3InputFormat value) { m_s3InputFormatHasBeenSet = true; m_s3InputFormat = value; }
+    inline ModelInvocationJobS3InputDataConfig& WithS3InputFormat(S3InputFormat value) { SetS3InputFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 location of the input data.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline ModelInvocationJobS3InputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline ModelInvocationJobS3InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline ModelInvocationJobS3InputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    ModelInvocationJobS3InputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +66,16 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the S3 bucket containing
      * the input data.</p>
      */
-    inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
+    inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
-    inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
-    inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
-    inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
-    inline ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
-    inline ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
-    inline ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
+    template<typename S3BucketOwnerT = Aws::String>
+    void SetS3BucketOwner(S3BucketOwnerT&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::forward<S3BucketOwnerT>(value); }
+    template<typename S3BucketOwnerT = Aws::String>
+    ModelInvocationJobS3InputDataConfig& WithS3BucketOwner(S3BucketOwnerT&& value) { SetS3BucketOwner(std::forward<S3BucketOwnerT>(value)); return *this;}
     ///@}
   private:
 
-    S3InputFormat m_s3InputFormat;
+    S3InputFormat m_s3InputFormat{S3InputFormat::NOT_SET};
     bool m_s3InputFormatHasBeenSet = false;
 
     Aws::String m_s3Uri;

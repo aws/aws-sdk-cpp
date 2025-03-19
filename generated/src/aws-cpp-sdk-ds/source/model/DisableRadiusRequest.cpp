@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableRadiusRequest::DisableRadiusRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableRadiusRequest::SerializePayload() const
 {
   JsonValue payload;

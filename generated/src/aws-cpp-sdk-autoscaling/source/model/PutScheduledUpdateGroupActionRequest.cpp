@@ -10,23 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-PutScheduledUpdateGroupActionRequest::PutScheduledUpdateGroupActionRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
-{
-}
-
 Aws::String PutScheduledUpdateGroupActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

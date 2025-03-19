@@ -34,7 +34,7 @@ namespace Model
   class TopicTemplate
   {
   public:
-    AWS_QUICKSIGHT_API TopicTemplate();
+    AWS_QUICKSIGHT_API TopicTemplate() = default;
     AWS_QUICKSIGHT_API TopicTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The template type for the <code>TopicTemplate</code>.</p>
      */
-    inline const Aws::String& GetTemplateType() const{ return m_templateType; }
+    inline const Aws::String& GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const Aws::String& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(Aws::String&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline void SetTemplateType(const char* value) { m_templateTypeHasBeenSet = true; m_templateType.assign(value); }
-    inline TopicTemplate& WithTemplateType(const Aws::String& value) { SetTemplateType(value); return *this;}
-    inline TopicTemplate& WithTemplateType(Aws::String&& value) { SetTemplateType(std::move(value)); return *this;}
-    inline TopicTemplate& WithTemplateType(const char* value) { SetTemplateType(value); return *this;}
+    template<typename TemplateTypeT = Aws::String>
+    void SetTemplateType(TemplateTypeT&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::forward<TemplateTypeT>(value); }
+    template<typename TemplateTypeT = Aws::String>
+    TopicTemplate& WithTemplateType(TemplateTypeT&& value) { SetTemplateType(std::forward<TemplateTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The slots for the <code>TopicTemplate</code>.</p>
      */
-    inline const Aws::Vector<Slot>& GetSlots() const{ return m_slots; }
+    inline const Aws::Vector<Slot>& GetSlots() const { return m_slots; }
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-    inline void SetSlots(const Aws::Vector<Slot>& value) { m_slotsHasBeenSet = true; m_slots = value; }
-    inline void SetSlots(Aws::Vector<Slot>&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-    inline TopicTemplate& WithSlots(const Aws::Vector<Slot>& value) { SetSlots(value); return *this;}
-    inline TopicTemplate& WithSlots(Aws::Vector<Slot>&& value) { SetSlots(std::move(value)); return *this;}
-    inline TopicTemplate& AddSlots(const Slot& value) { m_slotsHasBeenSet = true; m_slots.push_back(value); return *this; }
-    inline TopicTemplate& AddSlots(Slot&& value) { m_slotsHasBeenSet = true; m_slots.push_back(std::move(value)); return *this; }
+    template<typename SlotsT = Aws::Vector<Slot>>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::Vector<Slot>>
+    TopicTemplate& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
+    template<typename SlotsT = Slot>
+    TopicTemplate& AddSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots.emplace_back(std::forward<SlotsT>(value)); return *this; }
     ///@}
   private:
 

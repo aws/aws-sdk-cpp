@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ZonalShiftConfigResponse::ZonalShiftConfigResponse() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 ZonalShiftConfigResponse::ZonalShiftConfigResponse(JsonView jsonValue)
-  : ZonalShiftConfigResponse()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ZonalShiftConfigResponse& ZonalShiftConfigResponse::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

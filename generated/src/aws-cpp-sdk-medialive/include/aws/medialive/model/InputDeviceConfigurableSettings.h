@@ -35,7 +35,7 @@ namespace Model
   class InputDeviceConfigurableSettings
   {
   public:
-    AWS_MEDIALIVE_API InputDeviceConfigurableSettings();
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings() = default;
     AWS_MEDIALIVE_API InputDeviceConfigurableSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputDeviceConfigurableSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * specify Auto. If the device has sources connected to both its input ports, and
      * you want to use a specific source, specify the source.
      */
-    inline const InputDeviceConfiguredInput& GetConfiguredInput() const{ return m_configuredInput; }
+    inline InputDeviceConfiguredInput GetConfiguredInput() const { return m_configuredInput; }
     inline bool ConfiguredInputHasBeenSet() const { return m_configuredInputHasBeenSet; }
-    inline void SetConfiguredInput(const InputDeviceConfiguredInput& value) { m_configuredInputHasBeenSet = true; m_configuredInput = value; }
-    inline void SetConfiguredInput(InputDeviceConfiguredInput&& value) { m_configuredInputHasBeenSet = true; m_configuredInput = std::move(value); }
-    inline InputDeviceConfigurableSettings& WithConfiguredInput(const InputDeviceConfiguredInput& value) { SetConfiguredInput(value); return *this;}
-    inline InputDeviceConfigurableSettings& WithConfiguredInput(InputDeviceConfiguredInput&& value) { SetConfiguredInput(std::move(value)); return *this;}
+    inline void SetConfiguredInput(InputDeviceConfiguredInput value) { m_configuredInputHasBeenSet = true; m_configuredInput = value; }
+    inline InputDeviceConfigurableSettings& WithConfiguredInput(InputDeviceConfiguredInput value) { SetConfiguredInput(value); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * The maximum bitrate in bits per second. Set a value here to throttle the bitrate
      * of the source video.
      */
-    inline int GetMaxBitrate() const{ return m_maxBitrate; }
+    inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
     inline InputDeviceConfigurableSettings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     /**
      * The Link device's buffer size (latency) in milliseconds (ms).
      */
-    inline int GetLatencyMs() const{ return m_latencyMs; }
+    inline int GetLatencyMs() const { return m_latencyMs; }
     inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
     inline void SetLatencyMs(int value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
     inline InputDeviceConfigurableSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
@@ -82,12 +80,10 @@ namespace Model
      * Choose the codec for the video that the device produces. Only UHD devices can
      * specify this parameter.
      */
-    inline const InputDeviceCodec& GetCodec() const{ return m_codec; }
+    inline InputDeviceCodec GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
-    inline void SetCodec(const InputDeviceCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
-    inline void SetCodec(InputDeviceCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
-    inline InputDeviceConfigurableSettings& WithCodec(const InputDeviceCodec& value) { SetCodec(value); return *this;}
-    inline InputDeviceConfigurableSettings& WithCodec(InputDeviceCodec&& value) { SetCodec(std::move(value)); return *this;}
+    inline void SetCodec(InputDeviceCodec value) { m_codecHasBeenSet = true; m_codec = value; }
+    inline InputDeviceConfigurableSettings& WithCodec(InputDeviceCodec value) { SetCodec(value); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,12 @@ namespace Model
      * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
      * UHD devices can specify this parameter.
      */
-    inline const InputDeviceMediaConnectConfigurableSettings& GetMediaconnectSettings() const{ return m_mediaconnectSettings; }
+    inline const InputDeviceMediaConnectConfigurableSettings& GetMediaconnectSettings() const { return m_mediaconnectSettings; }
     inline bool MediaconnectSettingsHasBeenSet() const { return m_mediaconnectSettingsHasBeenSet; }
-    inline void SetMediaconnectSettings(const InputDeviceMediaConnectConfigurableSettings& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = value; }
-    inline void SetMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings&& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = std::move(value); }
-    inline InputDeviceConfigurableSettings& WithMediaconnectSettings(const InputDeviceMediaConnectConfigurableSettings& value) { SetMediaconnectSettings(value); return *this;}
-    inline InputDeviceConfigurableSettings& WithMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings&& value) { SetMediaconnectSettings(std::move(value)); return *this;}
+    template<typename MediaconnectSettingsT = InputDeviceMediaConnectConfigurableSettings>
+    void SetMediaconnectSettings(MediaconnectSettingsT&& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = std::forward<MediaconnectSettingsT>(value); }
+    template<typename MediaconnectSettingsT = InputDeviceMediaConnectConfigurableSettings>
+    InputDeviceConfigurableSettings& WithMediaconnectSettings(MediaconnectSettingsT&& value) { SetMediaconnectSettings(std::forward<MediaconnectSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,27 +109,27 @@ namespace Model
      * flow. For an HD device, you configure the audio by setting up audio selectors in
      * the channel configuration.
      */
-    inline const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& GetAudioChannelPairs() const{ return m_audioChannelPairs; }
+    inline const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& GetAudioChannelPairs() const { return m_audioChannelPairs; }
     inline bool AudioChannelPairsHasBeenSet() const { return m_audioChannelPairsHasBeenSet; }
-    inline void SetAudioChannelPairs(const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = value; }
-    inline void SetAudioChannelPairs(Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = std::move(value); }
-    inline InputDeviceConfigurableSettings& WithAudioChannelPairs(const Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>& value) { SetAudioChannelPairs(value); return *this;}
-    inline InputDeviceConfigurableSettings& WithAudioChannelPairs(Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>&& value) { SetAudioChannelPairs(std::move(value)); return *this;}
-    inline InputDeviceConfigurableSettings& AddAudioChannelPairs(const InputDeviceConfigurableAudioChannelPairConfig& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.push_back(value); return *this; }
-    inline InputDeviceConfigurableSettings& AddAudioChannelPairs(InputDeviceConfigurableAudioChannelPairConfig&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.push_back(std::move(value)); return *this; }
+    template<typename AudioChannelPairsT = Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>>
+    void SetAudioChannelPairs(AudioChannelPairsT&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs = std::forward<AudioChannelPairsT>(value); }
+    template<typename AudioChannelPairsT = Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig>>
+    InputDeviceConfigurableSettings& WithAudioChannelPairs(AudioChannelPairsT&& value) { SetAudioChannelPairs(std::forward<AudioChannelPairsT>(value)); return *this;}
+    template<typename AudioChannelPairsT = InputDeviceConfigurableAudioChannelPairConfig>
+    InputDeviceConfigurableSettings& AddAudioChannelPairs(AudioChannelPairsT&& value) { m_audioChannelPairsHasBeenSet = true; m_audioChannelPairs.emplace_back(std::forward<AudioChannelPairsT>(value)); return *this; }
     ///@}
   private:
 
-    InputDeviceConfiguredInput m_configuredInput;
+    InputDeviceConfiguredInput m_configuredInput{InputDeviceConfiguredInput::NOT_SET};
     bool m_configuredInputHasBeenSet = false;
 
-    int m_maxBitrate;
+    int m_maxBitrate{0};
     bool m_maxBitrateHasBeenSet = false;
 
-    int m_latencyMs;
+    int m_latencyMs{0};
     bool m_latencyMsHasBeenSet = false;
 
-    InputDeviceCodec m_codec;
+    InputDeviceCodec m_codec{InputDeviceCodec::NOT_SET};
     bool m_codecHasBeenSet = false;
 
     InputDeviceMediaConnectConfigurableSettings m_mediaconnectSettings;

@@ -29,7 +29,7 @@ namespace Model
   class ListRestoreJobsByProtectedResourceResult
   {
   public:
-    AWS_BACKUP_API ListRestoreJobsByProtectedResourceResult();
+    AWS_BACKUP_API ListRestoreJobsByProtectedResourceResult() = default;
     AWS_BACKUP_API ListRestoreJobsByProtectedResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API ListRestoreJobsByProtectedResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of objects that contain detailed information about jobs to restore
      * saved resources.&gt;</p>
      */
-    inline const Aws::Vector<RestoreJobsListMember>& GetRestoreJobs() const{ return m_restoreJobs; }
-    inline void SetRestoreJobs(const Aws::Vector<RestoreJobsListMember>& value) { m_restoreJobs = value; }
-    inline void SetRestoreJobs(Aws::Vector<RestoreJobsListMember>&& value) { m_restoreJobs = std::move(value); }
-    inline ListRestoreJobsByProtectedResourceResult& WithRestoreJobs(const Aws::Vector<RestoreJobsListMember>& value) { SetRestoreJobs(value); return *this;}
-    inline ListRestoreJobsByProtectedResourceResult& WithRestoreJobs(Aws::Vector<RestoreJobsListMember>&& value) { SetRestoreJobs(std::move(value)); return *this;}
-    inline ListRestoreJobsByProtectedResourceResult& AddRestoreJobs(const RestoreJobsListMember& value) { m_restoreJobs.push_back(value); return *this; }
-    inline ListRestoreJobsByProtectedResourceResult& AddRestoreJobs(RestoreJobsListMember&& value) { m_restoreJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RestoreJobsListMember>& GetRestoreJobs() const { return m_restoreJobs; }
+    template<typename RestoreJobsT = Aws::Vector<RestoreJobsListMember>>
+    void SetRestoreJobs(RestoreJobsT&& value) { m_restoreJobsHasBeenSet = true; m_restoreJobs = std::forward<RestoreJobsT>(value); }
+    template<typename RestoreJobsT = Aws::Vector<RestoreJobsListMember>>
+    ListRestoreJobsByProtectedResourceResult& WithRestoreJobs(RestoreJobsT&& value) { SetRestoreJobs(std::forward<RestoreJobsT>(value)); return *this;}
+    template<typename RestoreJobsT = RestoreJobsListMember>
+    ListRestoreJobsByProtectedResourceResult& AddRestoreJobs(RestoreJobsT&& value) { m_restoreJobsHasBeenSet = true; m_restoreJobs.emplace_back(std::forward<RestoreJobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * <code>NextToken</code> allows youto return more items in your list starting at
      * the location pointed to by the next token</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRestoreJobsByProtectedResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRestoreJobsByProtectedResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRestoreJobsByProtectedResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRestoreJobsByProtectedResourceResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRestoreJobsByProtectedResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRestoreJobsByProtectedResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRestoreJobsByProtectedResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRestoreJobsByProtectedResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RestoreJobsListMember> m_restoreJobs;
+    bool m_restoreJobsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

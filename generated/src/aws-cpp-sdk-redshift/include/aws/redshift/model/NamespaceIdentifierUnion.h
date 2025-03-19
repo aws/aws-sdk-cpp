@@ -33,7 +33,7 @@ namespace Model
   class NamespaceIdentifierUnion
   {
   public:
-    AWS_REDSHIFT_API NamespaceIdentifierUnion();
+    AWS_REDSHIFT_API NamespaceIdentifierUnion() = default;
     AWS_REDSHIFT_API NamespaceIdentifierUnion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API NamespaceIdentifierUnion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The identifier for a serverless namespace.</p>
      */
-    inline const ServerlessIdentifier& GetServerlessIdentifier() const{ return m_serverlessIdentifier; }
+    inline const ServerlessIdentifier& GetServerlessIdentifier() const { return m_serverlessIdentifier; }
     inline bool ServerlessIdentifierHasBeenSet() const { return m_serverlessIdentifierHasBeenSet; }
-    inline void SetServerlessIdentifier(const ServerlessIdentifier& value) { m_serverlessIdentifierHasBeenSet = true; m_serverlessIdentifier = value; }
-    inline void SetServerlessIdentifier(ServerlessIdentifier&& value) { m_serverlessIdentifierHasBeenSet = true; m_serverlessIdentifier = std::move(value); }
-    inline NamespaceIdentifierUnion& WithServerlessIdentifier(const ServerlessIdentifier& value) { SetServerlessIdentifier(value); return *this;}
-    inline NamespaceIdentifierUnion& WithServerlessIdentifier(ServerlessIdentifier&& value) { SetServerlessIdentifier(std::move(value)); return *this;}
+    template<typename ServerlessIdentifierT = ServerlessIdentifier>
+    void SetServerlessIdentifier(ServerlessIdentifierT&& value) { m_serverlessIdentifierHasBeenSet = true; m_serverlessIdentifier = std::forward<ServerlessIdentifierT>(value); }
+    template<typename ServerlessIdentifierT = ServerlessIdentifier>
+    NamespaceIdentifierUnion& WithServerlessIdentifier(ServerlessIdentifierT&& value) { SetServerlessIdentifier(std::forward<ServerlessIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a provisioned cluster.</p>
      */
-    inline const ProvisionedIdentifier& GetProvisionedIdentifier() const{ return m_provisionedIdentifier; }
+    inline const ProvisionedIdentifier& GetProvisionedIdentifier() const { return m_provisionedIdentifier; }
     inline bool ProvisionedIdentifierHasBeenSet() const { return m_provisionedIdentifierHasBeenSet; }
-    inline void SetProvisionedIdentifier(const ProvisionedIdentifier& value) { m_provisionedIdentifierHasBeenSet = true; m_provisionedIdentifier = value; }
-    inline void SetProvisionedIdentifier(ProvisionedIdentifier&& value) { m_provisionedIdentifierHasBeenSet = true; m_provisionedIdentifier = std::move(value); }
-    inline NamespaceIdentifierUnion& WithProvisionedIdentifier(const ProvisionedIdentifier& value) { SetProvisionedIdentifier(value); return *this;}
-    inline NamespaceIdentifierUnion& WithProvisionedIdentifier(ProvisionedIdentifier&& value) { SetProvisionedIdentifier(std::move(value)); return *this;}
+    template<typename ProvisionedIdentifierT = ProvisionedIdentifier>
+    void SetProvisionedIdentifier(ProvisionedIdentifierT&& value) { m_provisionedIdentifierHasBeenSet = true; m_provisionedIdentifier = std::forward<ProvisionedIdentifierT>(value); }
+    template<typename ProvisionedIdentifierT = ProvisionedIdentifier>
+    NamespaceIdentifierUnion& WithProvisionedIdentifier(ProvisionedIdentifierT&& value) { SetProvisionedIdentifier(std::forward<ProvisionedIdentifierT>(value)); return *this;}
     ///@}
   private:
 

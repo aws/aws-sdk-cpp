@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterSubscriptionProviderResult::RegisterSubscriptionProviderResult() : 
-    m_subscriptionProviderSource(SubscriptionProviderSource::NOT_SET),
-    m_subscriptionProviderStatus(SubscriptionProviderStatus::NOT_SET)
-{
-}
-
 RegisterSubscriptionProviderResult::RegisterSubscriptionProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RegisterSubscriptionProviderResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ RegisterSubscriptionProviderResult& RegisterSubscriptionProviderResult::operator
   if(jsonValue.ValueExists("SubscriptionProviderArn"))
   {
     m_subscriptionProviderArn = jsonValue.GetString("SubscriptionProviderArn");
-
+    m_subscriptionProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionProviderSource"))
   {
     m_subscriptionProviderSource = SubscriptionProviderSourceMapper::GetSubscriptionProviderSourceForName(jsonValue.GetString("SubscriptionProviderSource"));
-
+    m_subscriptionProviderSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionProviderStatus"))
   {
     m_subscriptionProviderStatus = SubscriptionProviderStatusMapper::GetSubscriptionProviderStatusForName(jsonValue.GetString("SubscriptionProviderStatus"));
-
+    m_subscriptionProviderStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -36,7 +36,7 @@ namespace Model
   class User
   {
   public:
-    AWS_MQ_API User();
+    AWS_MQ_API User() = default;
     AWS_MQ_API User(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not
      * apply to RabbitMQ brokers.</p>
      */
-    inline bool GetConsoleAccess() const{ return m_consoleAccess; }
+    inline bool GetConsoleAccess() const { return m_consoleAccess; }
     inline bool ConsoleAccessHasBeenSet() const { return m_consoleAccessHasBeenSet; }
     inline void SetConsoleAccess(bool value) { m_consoleAccessHasBeenSet = true; m_consoleAccess = value; }
     inline User& WithConsoleAccess(bool value) { SetConsoleAccess(value); return *this;}
@@ -60,15 +60,14 @@ namespace Model
      * and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply
      * to RabbitMQ brokers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<Aws::String>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline User& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-    inline User& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-    inline User& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline User& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-    inline User& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    User& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = Aws::String>
+    User& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,14 +76,12 @@ namespace Model
      * long, must contain at least 4 unique characters, and must not contain commas,
      * colons, or equal signs (,:=).</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline User& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline User& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline User& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    User& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,28 +99,26 @@ namespace Model
      * Web Services services, including CloudWatch Logs. Broker usernames are not
      * intended to be used for private or sensitive data.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline User& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline User& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline User& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    User& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines if this user is intended for CRDR replication purposes.</p>
      */
-    inline bool GetReplicationUser() const{ return m_replicationUser; }
+    inline bool GetReplicationUser() const { return m_replicationUser; }
     inline bool ReplicationUserHasBeenSet() const { return m_replicationUserHasBeenSet; }
     inline void SetReplicationUser(bool value) { m_replicationUserHasBeenSet = true; m_replicationUser = value; }
     inline User& WithReplicationUser(bool value) { SetReplicationUser(value); return *this;}
     ///@}
   private:
 
-    bool m_consoleAccess;
+    bool m_consoleAccess{false};
     bool m_consoleAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
@@ -135,7 +130,7 @@ namespace Model
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;
 
-    bool m_replicationUser;
+    bool m_replicationUser{false};
     bool m_replicationUserHasBeenSet = false;
   };
 

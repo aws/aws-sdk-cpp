@@ -18,16 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-UpdateThemeData::UpdateThemeData() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 UpdateThemeData::UpdateThemeData(JsonView jsonValue)
-  : UpdateThemeData()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UpdateThemeData& UpdateThemeData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -57,7 +44,6 @@ UpdateThemeData& UpdateThemeData::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrides"))
   {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
@@ -67,7 +53,6 @@ UpdateThemeData& UpdateThemeData::operator =(JsonView jsonValue)
     }
     m_overridesHasBeenSet = true;
   }
-
   return *this;
 }
 

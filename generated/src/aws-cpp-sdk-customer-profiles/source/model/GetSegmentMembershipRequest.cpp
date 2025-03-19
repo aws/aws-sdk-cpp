@@ -12,13 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSegmentMembershipRequest::GetSegmentMembershipRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_segmentDefinitionNameHasBeenSet(false),
-    m_profileIdsHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

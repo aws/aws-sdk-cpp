@@ -18,15 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-ContactTargetInfo::ContactTargetInfo() : 
-    m_contactIdHasBeenSet(false),
-    m_isEssential(false),
-    m_isEssentialHasBeenSet(false)
-{
-}
-
 ContactTargetInfo::ContactTargetInfo(JsonView jsonValue)
-  : ContactTargetInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContactTargetInfo& ContactTargetInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsEssential"))
   {
     m_isEssential = jsonValue.GetBool("IsEssential");
-
     m_isEssentialHasBeenSet = true;
   }
-
   return *this;
 }
 

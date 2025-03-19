@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-SystemControl::SystemControl() : 
-    m_namespaceHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SystemControl::SystemControl(JsonView jsonValue)
-  : SystemControl()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SystemControl& SystemControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

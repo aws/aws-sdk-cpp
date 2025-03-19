@@ -21,7 +21,7 @@ namespace Model
   class UpdateQueueMaxContactsRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateQueueMaxContactsRequest();
+    AWS_CONNECT_API UpdateQueueMaxContactsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateQueueMaxContactsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateQueueMaxContactsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateQueueMaxContactsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateQueueMaxContactsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the queue.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline UpdateQueueMaxContactsRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline UpdateQueueMaxContactsRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline UpdateQueueMaxContactsRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    UpdateQueueMaxContactsRequest& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +63,7 @@ namespace Model
      * <p>The maximum number of contacts that can be in the queue before it is
      * considered full.</p>
      */
-    inline int GetMaxContacts() const{ return m_maxContacts; }
+    inline int GetMaxContacts() const { return m_maxContacts; }
     inline bool MaxContactsHasBeenSet() const { return m_maxContactsHasBeenSet; }
     inline void SetMaxContacts(int value) { m_maxContactsHasBeenSet = true; m_maxContacts = value; }
     inline UpdateQueueMaxContactsRequest& WithMaxContacts(int value) { SetMaxContacts(value); return *this;}
@@ -80,7 +76,7 @@ namespace Model
     Aws::String m_queueId;
     bool m_queueIdHasBeenSet = false;
 
-    int m_maxContacts;
+    int m_maxContacts{0};
     bool m_maxContactsHasBeenSet = false;
   };
 

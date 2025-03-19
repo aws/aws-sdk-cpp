@@ -18,16 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-BlueprintItem::BlueprintItem() : 
-    m_blueprintArnHasBeenSet(false),
-    m_blueprintVersionHasBeenSet(false),
-    m_blueprintStage(BlueprintStage::NOT_SET),
-    m_blueprintStageHasBeenSet(false)
-{
-}
-
 BlueprintItem::BlueprintItem(JsonView jsonValue)
-  : BlueprintItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BlueprintItem& BlueprintItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blueprintArn"))
   {
     m_blueprintArn = jsonValue.GetString("blueprintArn");
-
     m_blueprintArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintVersion"))
   {
     m_blueprintVersion = jsonValue.GetString("blueprintVersion");
-
     m_blueprintVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintStage"))
   {
     m_blueprintStage = BlueprintStageMapper::GetBlueprintStageForName(jsonValue.GetString("blueprintStage"));
-
     m_blueprintStageHasBeenSet = true;
   }
-
   return *this;
 }
 

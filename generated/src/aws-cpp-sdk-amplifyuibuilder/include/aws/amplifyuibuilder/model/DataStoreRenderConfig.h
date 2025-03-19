@@ -30,7 +30,7 @@ namespace Model
   class DataStoreRenderConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API DataStoreRenderConfig();
+    AWS_AMPLIFYUIBUILDER_API DataStoreRenderConfig() = default;
     AWS_AMPLIFYUIBUILDER_API DataStoreRenderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API DataStoreRenderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-OfferTargetingFilter::OfferTargetingFilter() : 
-    m_valueListHasBeenSet(false)
-{
-}
-
 OfferTargetingFilter::OfferTargetingFilter(JsonView jsonValue)
-  : OfferTargetingFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OfferTargetingFilter& OfferTargetingFilter::operator =(JsonView jsonValue)
     }
     m_valueListHasBeenSet = true;
   }
-
   return *this;
 }
 

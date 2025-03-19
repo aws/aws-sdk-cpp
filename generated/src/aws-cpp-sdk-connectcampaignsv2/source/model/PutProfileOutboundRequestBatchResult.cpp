@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutProfileOutboundRequestBatchResult::PutProfileOutboundRequestBatchResult()
-{
-}
-
 PutProfileOutboundRequestBatchResult::PutProfileOutboundRequestBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ PutProfileOutboundRequestBatchResult& PutProfileOutboundRequestBatchResult::oper
     {
       m_successfulRequests.push_back(successfulRequestsJsonList[successfulRequestsIndex].AsObject());
     }
+    m_successfulRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedRequests"))
   {
     Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("failedRequests");
@@ -45,14 +41,15 @@ PutProfileOutboundRequestBatchResult& PutProfileOutboundRequestBatchResult::oper
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());
     }
+    m_failedRequestsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

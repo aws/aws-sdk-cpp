@@ -39,7 +39,7 @@ namespace Model
   class GetBucketNotificationConfigurationResult
   {
   public:
-    AWS_S3_API GetBucketNotificationConfigurationResult();
+    AWS_S3_API GetBucketNotificationConfigurationResult() = default;
     AWS_S3_API GetBucketNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API GetBucketNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -49,13 +49,13 @@ namespace Model
      * <p>The topic to which notifications are sent and the events for which
      * notifications are generated.</p>
      */
-    inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const{ return m_topicConfigurations; }
-    inline void SetTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { m_topicConfigurations = value; }
-    inline void SetTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { m_topicConfigurations = std::move(value); }
-    inline GetBucketNotificationConfigurationResult& WithTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { SetTopicConfigurations(value); return *this;}
-    inline GetBucketNotificationConfigurationResult& WithTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { SetTopicConfigurations(std::move(value)); return *this;}
-    inline GetBucketNotificationConfigurationResult& AddTopicConfigurations(const TopicConfiguration& value) { m_topicConfigurations.push_back(value); return *this; }
-    inline GetBucketNotificationConfigurationResult& AddTopicConfigurations(TopicConfiguration&& value) { m_topicConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const { return m_topicConfigurations; }
+    template<typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+    void SetTopicConfigurations(TopicConfigurationsT&& value) { m_topicConfigurationsHasBeenSet = true; m_topicConfigurations = std::forward<TopicConfigurationsT>(value); }
+    template<typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+    GetBucketNotificationConfigurationResult& WithTopicConfigurations(TopicConfigurationsT&& value) { SetTopicConfigurations(std::forward<TopicConfigurationsT>(value)); return *this;}
+    template<typename TopicConfigurationsT = TopicConfiguration>
+    GetBucketNotificationConfigurationResult& AddTopicConfigurations(TopicConfigurationsT&& value) { m_topicConfigurationsHasBeenSet = true; m_topicConfigurations.emplace_back(std::forward<TopicConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,13 +63,13 @@ namespace Model
      * <p>The Amazon Simple Queue Service queues to publish messages to and the events
      * for which to publish messages.</p>
      */
-    inline const Aws::Vector<QueueConfiguration>& GetQueueConfigurations() const{ return m_queueConfigurations; }
-    inline void SetQueueConfigurations(const Aws::Vector<QueueConfiguration>& value) { m_queueConfigurations = value; }
-    inline void SetQueueConfigurations(Aws::Vector<QueueConfiguration>&& value) { m_queueConfigurations = std::move(value); }
-    inline GetBucketNotificationConfigurationResult& WithQueueConfigurations(const Aws::Vector<QueueConfiguration>& value) { SetQueueConfigurations(value); return *this;}
-    inline GetBucketNotificationConfigurationResult& WithQueueConfigurations(Aws::Vector<QueueConfiguration>&& value) { SetQueueConfigurations(std::move(value)); return *this;}
-    inline GetBucketNotificationConfigurationResult& AddQueueConfigurations(const QueueConfiguration& value) { m_queueConfigurations.push_back(value); return *this; }
-    inline GetBucketNotificationConfigurationResult& AddQueueConfigurations(QueueConfiguration&& value) { m_queueConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueueConfiguration>& GetQueueConfigurations() const { return m_queueConfigurations; }
+    template<typename QueueConfigurationsT = Aws::Vector<QueueConfiguration>>
+    void SetQueueConfigurations(QueueConfigurationsT&& value) { m_queueConfigurationsHasBeenSet = true; m_queueConfigurations = std::forward<QueueConfigurationsT>(value); }
+    template<typename QueueConfigurationsT = Aws::Vector<QueueConfiguration>>
+    GetBucketNotificationConfigurationResult& WithQueueConfigurations(QueueConfigurationsT&& value) { SetQueueConfigurations(std::forward<QueueConfigurationsT>(value)); return *this;}
+    template<typename QueueConfigurationsT = QueueConfiguration>
+    GetBucketNotificationConfigurationResult& AddQueueConfigurations(QueueConfigurationsT&& value) { m_queueConfigurationsHasBeenSet = true; m_queueConfigurations.emplace_back(std::forward<QueueConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,47 +77,50 @@ namespace Model
      * <p>Describes the Lambda functions to invoke and the events for which to invoke
      * them.</p>
      */
-    inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
-    inline void SetLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { m_lambdaFunctionConfigurations = value; }
-    inline void SetLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { m_lambdaFunctionConfigurations = std::move(value); }
-    inline GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(const Aws::Vector<LambdaFunctionConfiguration>& value) { SetLambdaFunctionConfigurations(value); return *this;}
-    inline GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(Aws::Vector<LambdaFunctionConfiguration>&& value) { SetLambdaFunctionConfigurations(std::move(value)); return *this;}
-    inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(const LambdaFunctionConfiguration& value) { m_lambdaFunctionConfigurations.push_back(value); return *this; }
-    inline GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const { return m_lambdaFunctionConfigurations; }
+    template<typename LambdaFunctionConfigurationsT = Aws::Vector<LambdaFunctionConfiguration>>
+    void SetLambdaFunctionConfigurations(LambdaFunctionConfigurationsT&& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations = std::forward<LambdaFunctionConfigurationsT>(value); }
+    template<typename LambdaFunctionConfigurationsT = Aws::Vector<LambdaFunctionConfiguration>>
+    GetBucketNotificationConfigurationResult& WithLambdaFunctionConfigurations(LambdaFunctionConfigurationsT&& value) { SetLambdaFunctionConfigurations(std::forward<LambdaFunctionConfigurationsT>(value)); return *this;}
+    template<typename LambdaFunctionConfigurationsT = LambdaFunctionConfiguration>
+    GetBucketNotificationConfigurationResult& AddLambdaFunctionConfigurations(LambdaFunctionConfigurationsT&& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations.emplace_back(std::forward<LambdaFunctionConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Enables delivery of events to Amazon EventBridge.</p>
      */
-    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const{ return m_eventBridgeConfiguration; }
-    inline void SetEventBridgeConfiguration(const EventBridgeConfiguration& value) { m_eventBridgeConfiguration = value; }
-    inline void SetEventBridgeConfiguration(EventBridgeConfiguration&& value) { m_eventBridgeConfiguration = std::move(value); }
-    inline GetBucketNotificationConfigurationResult& WithEventBridgeConfiguration(const EventBridgeConfiguration& value) { SetEventBridgeConfiguration(value); return *this;}
-    inline GetBucketNotificationConfigurationResult& WithEventBridgeConfiguration(EventBridgeConfiguration&& value) { SetEventBridgeConfiguration(std::move(value)); return *this;}
+    inline const EventBridgeConfiguration& GetEventBridgeConfiguration() const { return m_eventBridgeConfiguration; }
+    template<typename EventBridgeConfigurationT = EventBridgeConfiguration>
+    void SetEventBridgeConfiguration(EventBridgeConfigurationT&& value) { m_eventBridgeConfigurationHasBeenSet = true; m_eventBridgeConfiguration = std::forward<EventBridgeConfigurationT>(value); }
+    template<typename EventBridgeConfigurationT = EventBridgeConfiguration>
+    GetBucketNotificationConfigurationResult& WithEventBridgeConfiguration(EventBridgeConfigurationT&& value) { SetEventBridgeConfiguration(std::forward<EventBridgeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketNotificationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketNotificationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketNotificationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketNotificationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
+    bool m_topicConfigurationsHasBeenSet = false;
 
     Aws::Vector<QueueConfiguration> m_queueConfigurations;
+    bool m_queueConfigurationsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
+    bool m_lambdaFunctionConfigurationsHasBeenSet = false;
 
     EventBridgeConfiguration m_eventBridgeConfiguration;
+    bool m_eventBridgeConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

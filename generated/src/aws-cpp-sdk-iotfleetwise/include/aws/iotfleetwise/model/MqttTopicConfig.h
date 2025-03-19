@@ -39,7 +39,7 @@ namespace Model
   class MqttTopicConfig
   {
   public:
-    AWS_IOTFLEETWISE_API MqttTopicConfig();
+    AWS_IOTFLEETWISE_API MqttTopicConfig() = default;
     AWS_IOTFLEETWISE_API MqttTopicConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API MqttTopicConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The ARN of the MQTT topic.</p>
      */
-    inline const Aws::String& GetMqttTopicArn() const{ return m_mqttTopicArn; }
+    inline const Aws::String& GetMqttTopicArn() const { return m_mqttTopicArn; }
     inline bool MqttTopicArnHasBeenSet() const { return m_mqttTopicArnHasBeenSet; }
-    inline void SetMqttTopicArn(const Aws::String& value) { m_mqttTopicArnHasBeenSet = true; m_mqttTopicArn = value; }
-    inline void SetMqttTopicArn(Aws::String&& value) { m_mqttTopicArnHasBeenSet = true; m_mqttTopicArn = std::move(value); }
-    inline void SetMqttTopicArn(const char* value) { m_mqttTopicArnHasBeenSet = true; m_mqttTopicArn.assign(value); }
-    inline MqttTopicConfig& WithMqttTopicArn(const Aws::String& value) { SetMqttTopicArn(value); return *this;}
-    inline MqttTopicConfig& WithMqttTopicArn(Aws::String&& value) { SetMqttTopicArn(std::move(value)); return *this;}
-    inline MqttTopicConfig& WithMqttTopicArn(const char* value) { SetMqttTopicArn(value); return *this;}
+    template<typename MqttTopicArnT = Aws::String>
+    void SetMqttTopicArn(MqttTopicArnT&& value) { m_mqttTopicArnHasBeenSet = true; m_mqttTopicArn = std::forward<MqttTopicArnT>(value); }
+    template<typename MqttTopicArnT = Aws::String>
+    MqttTopicConfig& WithMqttTopicArn(MqttTopicArnT&& value) { SetMqttTopicArn(std::forward<MqttTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The ARN of the role that grants Amazon Web Services IoT FleetWise permission
      * to access and act on messages sent to the MQTT topic.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline MqttTopicConfig& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline MqttTopicConfig& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline MqttTopicConfig& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    MqttTopicConfig& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
   private:
 

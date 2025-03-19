@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeregisterWirelessDeviceRequest::DeregisterWirelessDeviceRequest() : 
-    m_identifierHasBeenSet(false),
-    m_wirelessDeviceType(WirelessDeviceType::NOT_SET),
-    m_wirelessDeviceTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterWirelessDeviceRequest::SerializePayload() const
 {
   return {};

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchUsersRequest::SearchUsersRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_realmHasBeenSet(false),
-    m_searchAttributesHasBeenSet(false),
-    m_searchStringHasBeenSet(false)
-{
-}
-
 Aws::String SearchUsersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class StorageLensGroupFilter
   {
   public:
-    AWS_S3CONTROL_API StorageLensGroupFilter();
+    AWS_S3CONTROL_API StorageLensGroupFilter() = default;
     AWS_S3CONTROL_API StorageLensGroupFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensGroupFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,15 +50,14 @@ namespace Model
      * <p> Contains a list of prefixes. At least one prefix must be specified. Up to 10
      * prefixes are allowed. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const{ return m_matchAnyPrefix; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnyPrefix() const { return m_matchAnyPrefix; }
     inline bool MatchAnyPrefixHasBeenSet() const { return m_matchAnyPrefixHasBeenSet; }
-    inline void SetMatchAnyPrefix(const Aws::Vector<Aws::String>& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = value; }
-    inline void SetMatchAnyPrefix(Aws::Vector<Aws::String>&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = std::move(value); }
-    inline StorageLensGroupFilter& WithMatchAnyPrefix(const Aws::Vector<Aws::String>& value) { SetMatchAnyPrefix(value); return *this;}
-    inline StorageLensGroupFilter& WithMatchAnyPrefix(Aws::Vector<Aws::String>&& value) { SetMatchAnyPrefix(std::move(value)); return *this;}
-    inline StorageLensGroupFilter& AddMatchAnyPrefix(const Aws::String& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(value); return *this; }
-    inline StorageLensGroupFilter& AddMatchAnyPrefix(Aws::String&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(std::move(value)); return *this; }
-    inline StorageLensGroupFilter& AddMatchAnyPrefix(const char* value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.push_back(value); return *this; }
+    template<typename MatchAnyPrefixT = Aws::Vector<Aws::String>>
+    void SetMatchAnyPrefix(MatchAnyPrefixT&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix = std::forward<MatchAnyPrefixT>(value); }
+    template<typename MatchAnyPrefixT = Aws::Vector<Aws::String>>
+    StorageLensGroupFilter& WithMatchAnyPrefix(MatchAnyPrefixT&& value) { SetMatchAnyPrefix(std::forward<MatchAnyPrefixT>(value)); return *this;}
+    template<typename MatchAnyPrefixT = Aws::String>
+    StorageLensGroupFilter& AddMatchAnyPrefix(MatchAnyPrefixT&& value) { m_matchAnyPrefixHasBeenSet = true; m_matchAnyPrefix.emplace_back(std::forward<MatchAnyPrefixT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,15 +65,14 @@ namespace Model
      * <p> Contains a list of suffixes. At least one suffix must be specified. Up to 10
      * suffixes are allowed. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const{ return m_matchAnySuffix; }
+    inline const Aws::Vector<Aws::String>& GetMatchAnySuffix() const { return m_matchAnySuffix; }
     inline bool MatchAnySuffixHasBeenSet() const { return m_matchAnySuffixHasBeenSet; }
-    inline void SetMatchAnySuffix(const Aws::Vector<Aws::String>& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = value; }
-    inline void SetMatchAnySuffix(Aws::Vector<Aws::String>&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = std::move(value); }
-    inline StorageLensGroupFilter& WithMatchAnySuffix(const Aws::Vector<Aws::String>& value) { SetMatchAnySuffix(value); return *this;}
-    inline StorageLensGroupFilter& WithMatchAnySuffix(Aws::Vector<Aws::String>&& value) { SetMatchAnySuffix(std::move(value)); return *this;}
-    inline StorageLensGroupFilter& AddMatchAnySuffix(const Aws::String& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(value); return *this; }
-    inline StorageLensGroupFilter& AddMatchAnySuffix(Aws::String&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(std::move(value)); return *this; }
-    inline StorageLensGroupFilter& AddMatchAnySuffix(const char* value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.push_back(value); return *this; }
+    template<typename MatchAnySuffixT = Aws::Vector<Aws::String>>
+    void SetMatchAnySuffix(MatchAnySuffixT&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix = std::forward<MatchAnySuffixT>(value); }
+    template<typename MatchAnySuffixT = Aws::Vector<Aws::String>>
+    StorageLensGroupFilter& WithMatchAnySuffix(MatchAnySuffixT&& value) { SetMatchAnySuffix(std::forward<MatchAnySuffixT>(value)); return *this;}
+    template<typename MatchAnySuffixT = Aws::String>
+    StorageLensGroupFilter& AddMatchAnySuffix(MatchAnySuffixT&& value) { m_matchAnySuffixHasBeenSet = true; m_matchAnySuffix.emplace_back(std::forward<MatchAnySuffixT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +80,14 @@ namespace Model
      * <p> Contains the list of S3 object tags. At least one object tag must be
      * specified. Up to 10 object tags are allowed. </p>
      */
-    inline const Aws::Vector<S3Tag>& GetMatchAnyTag() const{ return m_matchAnyTag; }
+    inline const Aws::Vector<S3Tag>& GetMatchAnyTag() const { return m_matchAnyTag; }
     inline bool MatchAnyTagHasBeenSet() const { return m_matchAnyTagHasBeenSet; }
-    inline void SetMatchAnyTag(const Aws::Vector<S3Tag>& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag = value; }
-    inline void SetMatchAnyTag(Aws::Vector<S3Tag>&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag = std::move(value); }
-    inline StorageLensGroupFilter& WithMatchAnyTag(const Aws::Vector<S3Tag>& value) { SetMatchAnyTag(value); return *this;}
-    inline StorageLensGroupFilter& WithMatchAnyTag(Aws::Vector<S3Tag>&& value) { SetMatchAnyTag(std::move(value)); return *this;}
-    inline StorageLensGroupFilter& AddMatchAnyTag(const S3Tag& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag.push_back(value); return *this; }
-    inline StorageLensGroupFilter& AddMatchAnyTag(S3Tag&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag.push_back(std::move(value)); return *this; }
+    template<typename MatchAnyTagT = Aws::Vector<S3Tag>>
+    void SetMatchAnyTag(MatchAnyTagT&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag = std::forward<MatchAnyTagT>(value); }
+    template<typename MatchAnyTagT = Aws::Vector<S3Tag>>
+    StorageLensGroupFilter& WithMatchAnyTag(MatchAnyTagT&& value) { SetMatchAnyTag(std::forward<MatchAnyTagT>(value)); return *this;}
+    template<typename MatchAnyTagT = S3Tag>
+    StorageLensGroupFilter& AddMatchAnyTag(MatchAnyTagT&& value) { m_matchAnyTagHasBeenSet = true; m_matchAnyTag.emplace_back(std::forward<MatchAnyTagT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,12 +95,12 @@ namespace Model
      * <p> Contains <code>DaysGreaterThan</code> and <code>DaysLessThan</code> to
      * define the object age range (minimum and maximum number of days). </p>
      */
-    inline const MatchObjectAge& GetMatchObjectAge() const{ return m_matchObjectAge; }
+    inline const MatchObjectAge& GetMatchObjectAge() const { return m_matchObjectAge; }
     inline bool MatchObjectAgeHasBeenSet() const { return m_matchObjectAgeHasBeenSet; }
-    inline void SetMatchObjectAge(const MatchObjectAge& value) { m_matchObjectAgeHasBeenSet = true; m_matchObjectAge = value; }
-    inline void SetMatchObjectAge(MatchObjectAge&& value) { m_matchObjectAgeHasBeenSet = true; m_matchObjectAge = std::move(value); }
-    inline StorageLensGroupFilter& WithMatchObjectAge(const MatchObjectAge& value) { SetMatchObjectAge(value); return *this;}
-    inline StorageLensGroupFilter& WithMatchObjectAge(MatchObjectAge&& value) { SetMatchObjectAge(std::move(value)); return *this;}
+    template<typename MatchObjectAgeT = MatchObjectAge>
+    void SetMatchObjectAge(MatchObjectAgeT&& value) { m_matchObjectAgeHasBeenSet = true; m_matchObjectAge = std::forward<MatchObjectAgeT>(value); }
+    template<typename MatchObjectAgeT = MatchObjectAge>
+    StorageLensGroupFilter& WithMatchObjectAge(MatchObjectAgeT&& value) { SetMatchObjectAge(std::forward<MatchObjectAgeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +108,12 @@ namespace Model
      * <p> Contains <code>BytesGreaterThan</code> and <code>BytesLessThan</code> to
      * define the object size range (minimum and maximum number of Bytes). </p>
      */
-    inline const MatchObjectSize& GetMatchObjectSize() const{ return m_matchObjectSize; }
+    inline const MatchObjectSize& GetMatchObjectSize() const { return m_matchObjectSize; }
     inline bool MatchObjectSizeHasBeenSet() const { return m_matchObjectSizeHasBeenSet; }
-    inline void SetMatchObjectSize(const MatchObjectSize& value) { m_matchObjectSizeHasBeenSet = true; m_matchObjectSize = value; }
-    inline void SetMatchObjectSize(MatchObjectSize&& value) { m_matchObjectSizeHasBeenSet = true; m_matchObjectSize = std::move(value); }
-    inline StorageLensGroupFilter& WithMatchObjectSize(const MatchObjectSize& value) { SetMatchObjectSize(value); return *this;}
-    inline StorageLensGroupFilter& WithMatchObjectSize(MatchObjectSize&& value) { SetMatchObjectSize(std::move(value)); return *this;}
+    template<typename MatchObjectSizeT = MatchObjectSize>
+    void SetMatchObjectSize(MatchObjectSizeT&& value) { m_matchObjectSizeHasBeenSet = true; m_matchObjectSize = std::forward<MatchObjectSizeT>(value); }
+    template<typename MatchObjectSizeT = MatchObjectSize>
+    StorageLensGroupFilter& WithMatchObjectSize(MatchObjectSizeT&& value) { SetMatchObjectSize(std::forward<MatchObjectSizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +123,12 @@ namespace Model
      * the listed filter conditions that are joined by the <code>And</code> logical
      * operator. Only one of each filter condition is allowed.</p>
      */
-    inline const StorageLensGroupAndOperator& GetAnd() const{ return m_and; }
+    inline const StorageLensGroupAndOperator& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const StorageLensGroupAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(StorageLensGroupAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline StorageLensGroupFilter& WithAnd(const StorageLensGroupAndOperator& value) { SetAnd(value); return *this;}
-    inline StorageLensGroupFilter& WithAnd(StorageLensGroupAndOperator&& value) { SetAnd(std::move(value)); return *this;}
+    template<typename AndT = StorageLensGroupAndOperator>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = StorageLensGroupAndOperator>
+    StorageLensGroupFilter& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +138,12 @@ namespace Model
      * by the <code>Or</code> logical operator. Only one of each filter condition is
      * allowed. </p>
      */
-    inline const StorageLensGroupOrOperator& GetOr() const{ return m_or; }
+    inline const StorageLensGroupOrOperator& GetOr() const { return m_or; }
     inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
-    inline void SetOr(const StorageLensGroupOrOperator& value) { m_orHasBeenSet = true; m_or = value; }
-    inline void SetOr(StorageLensGroupOrOperator&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
-    inline StorageLensGroupFilter& WithOr(const StorageLensGroupOrOperator& value) { SetOr(value); return *this;}
-    inline StorageLensGroupFilter& WithOr(StorageLensGroupOrOperator&& value) { SetOr(std::move(value)); return *this;}
+    template<typename OrT = StorageLensGroupOrOperator>
+    void SetOr(OrT&& value) { m_orHasBeenSet = true; m_or = std::forward<OrT>(value); }
+    template<typename OrT = StorageLensGroupOrOperator>
+    StorageLensGroupFilter& WithOr(OrT&& value) { SetOr(std::forward<OrT>(value)); return *this;}
     ///@}
   private:
 

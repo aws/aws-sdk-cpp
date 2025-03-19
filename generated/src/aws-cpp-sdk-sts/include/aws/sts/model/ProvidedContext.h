@@ -33,7 +33,7 @@ namespace Model
   class ProvidedContext
   {
   public:
-    AWS_STS_API ProvidedContext();
+    AWS_STS_API ProvidedContext() = default;
     AWS_STS_API ProvidedContext(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_STS_API ProvidedContext& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * <p>The context provider ARN from which the trusted context assertion was
      * generated.</p>
      */
-    inline const Aws::String& GetProviderArn() const{ return m_providerArn; }
+    inline const Aws::String& GetProviderArn() const { return m_providerArn; }
     inline bool ProviderArnHasBeenSet() const { return m_providerArnHasBeenSet; }
-    inline void SetProviderArn(const Aws::String& value) { m_providerArnHasBeenSet = true; m_providerArn = value; }
-    inline void SetProviderArn(Aws::String&& value) { m_providerArnHasBeenSet = true; m_providerArn = std::move(value); }
-    inline void SetProviderArn(const char* value) { m_providerArnHasBeenSet = true; m_providerArn.assign(value); }
-    inline ProvidedContext& WithProviderArn(const Aws::String& value) { SetProviderArn(value); return *this;}
-    inline ProvidedContext& WithProviderArn(Aws::String&& value) { SetProviderArn(std::move(value)); return *this;}
-    inline ProvidedContext& WithProviderArn(const char* value) { SetProviderArn(value); return *this;}
+    template<typename ProviderArnT = Aws::String>
+    void SetProviderArn(ProviderArnT&& value) { m_providerArnHasBeenSet = true; m_providerArn = std::forward<ProviderArnT>(value); }
+    template<typename ProviderArnT = Aws::String>
+    ProvidedContext& WithProviderArn(ProviderArnT&& value) { SetProviderArn(std::forward<ProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * provider. The trusted context assertion is signed and encrypted by Amazon Web
      * Services STS.</p>
      */
-    inline const Aws::String& GetContextAssertion() const{ return m_contextAssertion; }
+    inline const Aws::String& GetContextAssertion() const { return m_contextAssertion; }
     inline bool ContextAssertionHasBeenSet() const { return m_contextAssertionHasBeenSet; }
-    inline void SetContextAssertion(const Aws::String& value) { m_contextAssertionHasBeenSet = true; m_contextAssertion = value; }
-    inline void SetContextAssertion(Aws::String&& value) { m_contextAssertionHasBeenSet = true; m_contextAssertion = std::move(value); }
-    inline void SetContextAssertion(const char* value) { m_contextAssertionHasBeenSet = true; m_contextAssertion.assign(value); }
-    inline ProvidedContext& WithContextAssertion(const Aws::String& value) { SetContextAssertion(value); return *this;}
-    inline ProvidedContext& WithContextAssertion(Aws::String&& value) { SetContextAssertion(std::move(value)); return *this;}
-    inline ProvidedContext& WithContextAssertion(const char* value) { SetContextAssertion(value); return *this;}
+    template<typename ContextAssertionT = Aws::String>
+    void SetContextAssertion(ContextAssertionT&& value) { m_contextAssertionHasBeenSet = true; m_contextAssertion = std::forward<ContextAssertionT>(value); }
+    template<typename ContextAssertionT = Aws::String>
+    ProvidedContext& WithContextAssertion(ContextAssertionT&& value) { SetContextAssertion(std::forward<ContextAssertionT>(value)); return *this;}
     ///@}
   private:
 

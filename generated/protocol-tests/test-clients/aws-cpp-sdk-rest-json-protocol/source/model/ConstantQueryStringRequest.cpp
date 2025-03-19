@@ -12,11 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConstantQueryStringRequest::ConstantQueryStringRequest() : 
-    m_helloHasBeenSet(false)
-{
-}
-
 Aws::String ConstantQueryStringRequest::SerializePayload() const
 {
   return {};

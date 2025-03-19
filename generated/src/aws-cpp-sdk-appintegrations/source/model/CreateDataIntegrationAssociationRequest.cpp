@@ -12,18 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataIntegrationAssociationRequest::CreateDataIntegrationAssociationRequest() : 
-    m_dataIntegrationIdentifierHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_objectConfigurationHasBeenSet(false),
-    m_destinationURIHasBeenSet(false),
-    m_clientAssociationMetadataHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_executionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataIntegrationAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

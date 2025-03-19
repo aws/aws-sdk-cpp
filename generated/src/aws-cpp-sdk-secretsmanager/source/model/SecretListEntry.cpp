@@ -18,30 +18,7 @@ namespace SecretsManager
 namespace Model
 {
 
-SecretListEntry::SecretListEntry() : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_rotationEnabled(false),
-    m_rotationEnabledHasBeenSet(false),
-    m_rotationLambdaARNHasBeenSet(false),
-    m_rotationRulesHasBeenSet(false),
-    m_lastRotatedDateHasBeenSet(false),
-    m_lastChangedDateHasBeenSet(false),
-    m_lastAccessedDateHasBeenSet(false),
-    m_deletedDateHasBeenSet(false),
-    m_nextRotationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_secretVersionsToStagesHasBeenSet(false),
-    m_owningServiceHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_primaryRegionHasBeenSet(false)
-{
-}
-
 SecretListEntry::SecretListEntry(JsonView jsonValue)
-  : SecretListEntry()
 {
   *this = jsonValue;
 }
@@ -51,87 +28,63 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationEnabled"))
   {
     m_rotationEnabled = jsonValue.GetBool("RotationEnabled");
-
     m_rotationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationLambdaARN"))
   {
     m_rotationLambdaARN = jsonValue.GetString("RotationLambdaARN");
-
     m_rotationLambdaARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationRules"))
   {
     m_rotationRules = jsonValue.GetObject("RotationRules");
-
     m_rotationRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRotatedDate"))
   {
     m_lastRotatedDate = jsonValue.GetDouble("LastRotatedDate");
-
     m_lastRotatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastChangedDate"))
   {
     m_lastChangedDate = jsonValue.GetDouble("LastChangedDate");
-
     m_lastChangedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessedDate"))
   {
     m_lastAccessedDate = jsonValue.GetDouble("LastAccessedDate");
-
     m_lastAccessedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletedDate"))
   {
     m_deletedDate = jsonValue.GetDouble("DeletedDate");
-
     m_deletedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextRotationDate"))
   {
     m_nextRotationDate = jsonValue.GetDouble("NextRotationDate");
-
     m_nextRotationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -141,7 +94,6 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretVersionsToStages"))
   {
     Aws::Map<Aws::String, JsonView> secretVersionsToStagesJsonMap = jsonValue.GetObject("SecretVersionsToStages").GetAllObjects();
@@ -158,28 +110,21 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     }
     m_secretVersionsToStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwningService"))
   {
     m_owningService = jsonValue.GetString("OwningService");
-
     m_owningServiceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryRegion"))
   {
     m_primaryRegion = jsonValue.GetString("PrimaryRegion");
-
     m_primaryRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportSourceNetworkCfnTemplateRequest::ExportSourceNetworkCfnTemplateRequest() : 
-    m_sourceNetworkIDHasBeenSet(false)
-{
-}
-
 Aws::String ExportSourceNetworkCfnTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

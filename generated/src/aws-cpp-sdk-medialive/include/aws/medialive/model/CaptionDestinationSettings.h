@@ -43,7 +43,7 @@ namespace Model
   class CaptionDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API CaptionDestinationSettings();
+    AWS_MEDIALIVE_API CaptionDestinationSettings() = default;
     AWS_MEDIALIVE_API CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,132 +51,132 @@ namespace Model
 
     ///@{
     
-    inline const AribDestinationSettings& GetAribDestinationSettings() const{ return m_aribDestinationSettings; }
+    inline const AribDestinationSettings& GetAribDestinationSettings() const { return m_aribDestinationSettings; }
     inline bool AribDestinationSettingsHasBeenSet() const { return m_aribDestinationSettingsHasBeenSet; }
-    inline void SetAribDestinationSettings(const AribDestinationSettings& value) { m_aribDestinationSettingsHasBeenSet = true; m_aribDestinationSettings = value; }
-    inline void SetAribDestinationSettings(AribDestinationSettings&& value) { m_aribDestinationSettingsHasBeenSet = true; m_aribDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithAribDestinationSettings(const AribDestinationSettings& value) { SetAribDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithAribDestinationSettings(AribDestinationSettings&& value) { SetAribDestinationSettings(std::move(value)); return *this;}
+    template<typename AribDestinationSettingsT = AribDestinationSettings>
+    void SetAribDestinationSettings(AribDestinationSettingsT&& value) { m_aribDestinationSettingsHasBeenSet = true; m_aribDestinationSettings = std::forward<AribDestinationSettingsT>(value); }
+    template<typename AribDestinationSettingsT = AribDestinationSettings>
+    CaptionDestinationSettings& WithAribDestinationSettings(AribDestinationSettingsT&& value) { SetAribDestinationSettings(std::forward<AribDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BurnInDestinationSettings& GetBurnInDestinationSettings() const{ return m_burnInDestinationSettings; }
+    inline const BurnInDestinationSettings& GetBurnInDestinationSettings() const { return m_burnInDestinationSettings; }
     inline bool BurnInDestinationSettingsHasBeenSet() const { return m_burnInDestinationSettingsHasBeenSet; }
-    inline void SetBurnInDestinationSettings(const BurnInDestinationSettings& value) { m_burnInDestinationSettingsHasBeenSet = true; m_burnInDestinationSettings = value; }
-    inline void SetBurnInDestinationSettings(BurnInDestinationSettings&& value) { m_burnInDestinationSettingsHasBeenSet = true; m_burnInDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithBurnInDestinationSettings(const BurnInDestinationSettings& value) { SetBurnInDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithBurnInDestinationSettings(BurnInDestinationSettings&& value) { SetBurnInDestinationSettings(std::move(value)); return *this;}
+    template<typename BurnInDestinationSettingsT = BurnInDestinationSettings>
+    void SetBurnInDestinationSettings(BurnInDestinationSettingsT&& value) { m_burnInDestinationSettingsHasBeenSet = true; m_burnInDestinationSettings = std::forward<BurnInDestinationSettingsT>(value); }
+    template<typename BurnInDestinationSettingsT = BurnInDestinationSettings>
+    CaptionDestinationSettings& WithBurnInDestinationSettings(BurnInDestinationSettingsT&& value) { SetBurnInDestinationSettings(std::forward<BurnInDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DvbSubDestinationSettings& GetDvbSubDestinationSettings() const{ return m_dvbSubDestinationSettings; }
+    inline const DvbSubDestinationSettings& GetDvbSubDestinationSettings() const { return m_dvbSubDestinationSettings; }
     inline bool DvbSubDestinationSettingsHasBeenSet() const { return m_dvbSubDestinationSettingsHasBeenSet; }
-    inline void SetDvbSubDestinationSettings(const DvbSubDestinationSettings& value) { m_dvbSubDestinationSettingsHasBeenSet = true; m_dvbSubDestinationSettings = value; }
-    inline void SetDvbSubDestinationSettings(DvbSubDestinationSettings&& value) { m_dvbSubDestinationSettingsHasBeenSet = true; m_dvbSubDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithDvbSubDestinationSettings(const DvbSubDestinationSettings& value) { SetDvbSubDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithDvbSubDestinationSettings(DvbSubDestinationSettings&& value) { SetDvbSubDestinationSettings(std::move(value)); return *this;}
+    template<typename DvbSubDestinationSettingsT = DvbSubDestinationSettings>
+    void SetDvbSubDestinationSettings(DvbSubDestinationSettingsT&& value) { m_dvbSubDestinationSettingsHasBeenSet = true; m_dvbSubDestinationSettings = std::forward<DvbSubDestinationSettingsT>(value); }
+    template<typename DvbSubDestinationSettingsT = DvbSubDestinationSettings>
+    CaptionDestinationSettings& WithDvbSubDestinationSettings(DvbSubDestinationSettingsT&& value) { SetDvbSubDestinationSettings(std::forward<DvbSubDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EbuTtDDestinationSettings& GetEbuTtDDestinationSettings() const{ return m_ebuTtDDestinationSettings; }
+    inline const EbuTtDDestinationSettings& GetEbuTtDDestinationSettings() const { return m_ebuTtDDestinationSettings; }
     inline bool EbuTtDDestinationSettingsHasBeenSet() const { return m_ebuTtDDestinationSettingsHasBeenSet; }
-    inline void SetEbuTtDDestinationSettings(const EbuTtDDestinationSettings& value) { m_ebuTtDDestinationSettingsHasBeenSet = true; m_ebuTtDDestinationSettings = value; }
-    inline void SetEbuTtDDestinationSettings(EbuTtDDestinationSettings&& value) { m_ebuTtDDestinationSettingsHasBeenSet = true; m_ebuTtDDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithEbuTtDDestinationSettings(const EbuTtDDestinationSettings& value) { SetEbuTtDDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithEbuTtDDestinationSettings(EbuTtDDestinationSettings&& value) { SetEbuTtDDestinationSettings(std::move(value)); return *this;}
+    template<typename EbuTtDDestinationSettingsT = EbuTtDDestinationSettings>
+    void SetEbuTtDDestinationSettings(EbuTtDDestinationSettingsT&& value) { m_ebuTtDDestinationSettingsHasBeenSet = true; m_ebuTtDDestinationSettings = std::forward<EbuTtDDestinationSettingsT>(value); }
+    template<typename EbuTtDDestinationSettingsT = EbuTtDDestinationSettings>
+    CaptionDestinationSettings& WithEbuTtDDestinationSettings(EbuTtDDestinationSettingsT&& value) { SetEbuTtDDestinationSettings(std::forward<EbuTtDDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EmbeddedDestinationSettings& GetEmbeddedDestinationSettings() const{ return m_embeddedDestinationSettings; }
+    inline const EmbeddedDestinationSettings& GetEmbeddedDestinationSettings() const { return m_embeddedDestinationSettings; }
     inline bool EmbeddedDestinationSettingsHasBeenSet() const { return m_embeddedDestinationSettingsHasBeenSet; }
-    inline void SetEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = value; }
-    inline void SetEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { SetEmbeddedDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { SetEmbeddedDestinationSettings(std::move(value)); return *this;}
+    template<typename EmbeddedDestinationSettingsT = EmbeddedDestinationSettings>
+    void SetEmbeddedDestinationSettings(EmbeddedDestinationSettingsT&& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = std::forward<EmbeddedDestinationSettingsT>(value); }
+    template<typename EmbeddedDestinationSettingsT = EmbeddedDestinationSettings>
+    CaptionDestinationSettings& WithEmbeddedDestinationSettings(EmbeddedDestinationSettingsT&& value) { SetEmbeddedDestinationSettings(std::forward<EmbeddedDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EmbeddedPlusScte20DestinationSettings& GetEmbeddedPlusScte20DestinationSettings() const{ return m_embeddedPlusScte20DestinationSettings; }
+    inline const EmbeddedPlusScte20DestinationSettings& GetEmbeddedPlusScte20DestinationSettings() const { return m_embeddedPlusScte20DestinationSettings; }
     inline bool EmbeddedPlusScte20DestinationSettingsHasBeenSet() const { return m_embeddedPlusScte20DestinationSettingsHasBeenSet; }
-    inline void SetEmbeddedPlusScte20DestinationSettings(const EmbeddedPlusScte20DestinationSettings& value) { m_embeddedPlusScte20DestinationSettingsHasBeenSet = true; m_embeddedPlusScte20DestinationSettings = value; }
-    inline void SetEmbeddedPlusScte20DestinationSettings(EmbeddedPlusScte20DestinationSettings&& value) { m_embeddedPlusScte20DestinationSettingsHasBeenSet = true; m_embeddedPlusScte20DestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithEmbeddedPlusScte20DestinationSettings(const EmbeddedPlusScte20DestinationSettings& value) { SetEmbeddedPlusScte20DestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithEmbeddedPlusScte20DestinationSettings(EmbeddedPlusScte20DestinationSettings&& value) { SetEmbeddedPlusScte20DestinationSettings(std::move(value)); return *this;}
+    template<typename EmbeddedPlusScte20DestinationSettingsT = EmbeddedPlusScte20DestinationSettings>
+    void SetEmbeddedPlusScte20DestinationSettings(EmbeddedPlusScte20DestinationSettingsT&& value) { m_embeddedPlusScte20DestinationSettingsHasBeenSet = true; m_embeddedPlusScte20DestinationSettings = std::forward<EmbeddedPlusScte20DestinationSettingsT>(value); }
+    template<typename EmbeddedPlusScte20DestinationSettingsT = EmbeddedPlusScte20DestinationSettings>
+    CaptionDestinationSettings& WithEmbeddedPlusScte20DestinationSettings(EmbeddedPlusScte20DestinationSettingsT&& value) { SetEmbeddedPlusScte20DestinationSettings(std::forward<EmbeddedPlusScte20DestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RtmpCaptionInfoDestinationSettings& GetRtmpCaptionInfoDestinationSettings() const{ return m_rtmpCaptionInfoDestinationSettings; }
+    inline const RtmpCaptionInfoDestinationSettings& GetRtmpCaptionInfoDestinationSettings() const { return m_rtmpCaptionInfoDestinationSettings; }
     inline bool RtmpCaptionInfoDestinationSettingsHasBeenSet() const { return m_rtmpCaptionInfoDestinationSettingsHasBeenSet; }
-    inline void SetRtmpCaptionInfoDestinationSettings(const RtmpCaptionInfoDestinationSettings& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = value; }
-    inline void SetRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettings&& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(const RtmpCaptionInfoDestinationSettings& value) { SetRtmpCaptionInfoDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettings&& value) { SetRtmpCaptionInfoDestinationSettings(std::move(value)); return *this;}
+    template<typename RtmpCaptionInfoDestinationSettingsT = RtmpCaptionInfoDestinationSettings>
+    void SetRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettingsT&& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = std::forward<RtmpCaptionInfoDestinationSettingsT>(value); }
+    template<typename RtmpCaptionInfoDestinationSettingsT = RtmpCaptionInfoDestinationSettings>
+    CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettingsT&& value) { SetRtmpCaptionInfoDestinationSettings(std::forward<RtmpCaptionInfoDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Scte20PlusEmbeddedDestinationSettings& GetScte20PlusEmbeddedDestinationSettings() const{ return m_scte20PlusEmbeddedDestinationSettings; }
+    inline const Scte20PlusEmbeddedDestinationSettings& GetScte20PlusEmbeddedDestinationSettings() const { return m_scte20PlusEmbeddedDestinationSettings; }
     inline bool Scte20PlusEmbeddedDestinationSettingsHasBeenSet() const { return m_scte20PlusEmbeddedDestinationSettingsHasBeenSet; }
-    inline void SetScte20PlusEmbeddedDestinationSettings(const Scte20PlusEmbeddedDestinationSettings& value) { m_scte20PlusEmbeddedDestinationSettingsHasBeenSet = true; m_scte20PlusEmbeddedDestinationSettings = value; }
-    inline void SetScte20PlusEmbeddedDestinationSettings(Scte20PlusEmbeddedDestinationSettings&& value) { m_scte20PlusEmbeddedDestinationSettingsHasBeenSet = true; m_scte20PlusEmbeddedDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithScte20PlusEmbeddedDestinationSettings(const Scte20PlusEmbeddedDestinationSettings& value) { SetScte20PlusEmbeddedDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithScte20PlusEmbeddedDestinationSettings(Scte20PlusEmbeddedDestinationSettings&& value) { SetScte20PlusEmbeddedDestinationSettings(std::move(value)); return *this;}
+    template<typename Scte20PlusEmbeddedDestinationSettingsT = Scte20PlusEmbeddedDestinationSettings>
+    void SetScte20PlusEmbeddedDestinationSettings(Scte20PlusEmbeddedDestinationSettingsT&& value) { m_scte20PlusEmbeddedDestinationSettingsHasBeenSet = true; m_scte20PlusEmbeddedDestinationSettings = std::forward<Scte20PlusEmbeddedDestinationSettingsT>(value); }
+    template<typename Scte20PlusEmbeddedDestinationSettingsT = Scte20PlusEmbeddedDestinationSettings>
+    CaptionDestinationSettings& WithScte20PlusEmbeddedDestinationSettings(Scte20PlusEmbeddedDestinationSettingsT&& value) { SetScte20PlusEmbeddedDestinationSettings(std::forward<Scte20PlusEmbeddedDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Scte27DestinationSettings& GetScte27DestinationSettings() const{ return m_scte27DestinationSettings; }
+    inline const Scte27DestinationSettings& GetScte27DestinationSettings() const { return m_scte27DestinationSettings; }
     inline bool Scte27DestinationSettingsHasBeenSet() const { return m_scte27DestinationSettingsHasBeenSet; }
-    inline void SetScte27DestinationSettings(const Scte27DestinationSettings& value) { m_scte27DestinationSettingsHasBeenSet = true; m_scte27DestinationSettings = value; }
-    inline void SetScte27DestinationSettings(Scte27DestinationSettings&& value) { m_scte27DestinationSettingsHasBeenSet = true; m_scte27DestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithScte27DestinationSettings(const Scte27DestinationSettings& value) { SetScte27DestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithScte27DestinationSettings(Scte27DestinationSettings&& value) { SetScte27DestinationSettings(std::move(value)); return *this;}
+    template<typename Scte27DestinationSettingsT = Scte27DestinationSettings>
+    void SetScte27DestinationSettings(Scte27DestinationSettingsT&& value) { m_scte27DestinationSettingsHasBeenSet = true; m_scte27DestinationSettings = std::forward<Scte27DestinationSettingsT>(value); }
+    template<typename Scte27DestinationSettingsT = Scte27DestinationSettings>
+    CaptionDestinationSettings& WithScte27DestinationSettings(Scte27DestinationSettingsT&& value) { SetScte27DestinationSettings(std::forward<Scte27DestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SmpteTtDestinationSettings& GetSmpteTtDestinationSettings() const{ return m_smpteTtDestinationSettings; }
+    inline const SmpteTtDestinationSettings& GetSmpteTtDestinationSettings() const { return m_smpteTtDestinationSettings; }
     inline bool SmpteTtDestinationSettingsHasBeenSet() const { return m_smpteTtDestinationSettingsHasBeenSet; }
-    inline void SetSmpteTtDestinationSettings(const SmpteTtDestinationSettings& value) { m_smpteTtDestinationSettingsHasBeenSet = true; m_smpteTtDestinationSettings = value; }
-    inline void SetSmpteTtDestinationSettings(SmpteTtDestinationSettings&& value) { m_smpteTtDestinationSettingsHasBeenSet = true; m_smpteTtDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithSmpteTtDestinationSettings(const SmpteTtDestinationSettings& value) { SetSmpteTtDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithSmpteTtDestinationSettings(SmpteTtDestinationSettings&& value) { SetSmpteTtDestinationSettings(std::move(value)); return *this;}
+    template<typename SmpteTtDestinationSettingsT = SmpteTtDestinationSettings>
+    void SetSmpteTtDestinationSettings(SmpteTtDestinationSettingsT&& value) { m_smpteTtDestinationSettingsHasBeenSet = true; m_smpteTtDestinationSettings = std::forward<SmpteTtDestinationSettingsT>(value); }
+    template<typename SmpteTtDestinationSettingsT = SmpteTtDestinationSettings>
+    CaptionDestinationSettings& WithSmpteTtDestinationSettings(SmpteTtDestinationSettingsT&& value) { SetSmpteTtDestinationSettings(std::forward<SmpteTtDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TeletextDestinationSettings& GetTeletextDestinationSettings() const{ return m_teletextDestinationSettings; }
+    inline const TeletextDestinationSettings& GetTeletextDestinationSettings() const { return m_teletextDestinationSettings; }
     inline bool TeletextDestinationSettingsHasBeenSet() const { return m_teletextDestinationSettingsHasBeenSet; }
-    inline void SetTeletextDestinationSettings(const TeletextDestinationSettings& value) { m_teletextDestinationSettingsHasBeenSet = true; m_teletextDestinationSettings = value; }
-    inline void SetTeletextDestinationSettings(TeletextDestinationSettings&& value) { m_teletextDestinationSettingsHasBeenSet = true; m_teletextDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithTeletextDestinationSettings(const TeletextDestinationSettings& value) { SetTeletextDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithTeletextDestinationSettings(TeletextDestinationSettings&& value) { SetTeletextDestinationSettings(std::move(value)); return *this;}
+    template<typename TeletextDestinationSettingsT = TeletextDestinationSettings>
+    void SetTeletextDestinationSettings(TeletextDestinationSettingsT&& value) { m_teletextDestinationSettingsHasBeenSet = true; m_teletextDestinationSettings = std::forward<TeletextDestinationSettingsT>(value); }
+    template<typename TeletextDestinationSettingsT = TeletextDestinationSettings>
+    CaptionDestinationSettings& WithTeletextDestinationSettings(TeletextDestinationSettingsT&& value) { SetTeletextDestinationSettings(std::forward<TeletextDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TtmlDestinationSettings& GetTtmlDestinationSettings() const{ return m_ttmlDestinationSettings; }
+    inline const TtmlDestinationSettings& GetTtmlDestinationSettings() const { return m_ttmlDestinationSettings; }
     inline bool TtmlDestinationSettingsHasBeenSet() const { return m_ttmlDestinationSettingsHasBeenSet; }
-    inline void SetTtmlDestinationSettings(const TtmlDestinationSettings& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = value; }
-    inline void SetTtmlDestinationSettings(TtmlDestinationSettings&& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithTtmlDestinationSettings(const TtmlDestinationSettings& value) { SetTtmlDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithTtmlDestinationSettings(TtmlDestinationSettings&& value) { SetTtmlDestinationSettings(std::move(value)); return *this;}
+    template<typename TtmlDestinationSettingsT = TtmlDestinationSettings>
+    void SetTtmlDestinationSettings(TtmlDestinationSettingsT&& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = std::forward<TtmlDestinationSettingsT>(value); }
+    template<typename TtmlDestinationSettingsT = TtmlDestinationSettings>
+    CaptionDestinationSettings& WithTtmlDestinationSettings(TtmlDestinationSettingsT&& value) { SetTtmlDestinationSettings(std::forward<TtmlDestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WebvttDestinationSettings& GetWebvttDestinationSettings() const{ return m_webvttDestinationSettings; }
+    inline const WebvttDestinationSettings& GetWebvttDestinationSettings() const { return m_webvttDestinationSettings; }
     inline bool WebvttDestinationSettingsHasBeenSet() const { return m_webvttDestinationSettingsHasBeenSet; }
-    inline void SetWebvttDestinationSettings(const WebvttDestinationSettings& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = value; }
-    inline void SetWebvttDestinationSettings(WebvttDestinationSettings&& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = std::move(value); }
-    inline CaptionDestinationSettings& WithWebvttDestinationSettings(const WebvttDestinationSettings& value) { SetWebvttDestinationSettings(value); return *this;}
-    inline CaptionDestinationSettings& WithWebvttDestinationSettings(WebvttDestinationSettings&& value) { SetWebvttDestinationSettings(std::move(value)); return *this;}
+    template<typename WebvttDestinationSettingsT = WebvttDestinationSettings>
+    void SetWebvttDestinationSettings(WebvttDestinationSettingsT&& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = std::forward<WebvttDestinationSettingsT>(value); }
+    template<typename WebvttDestinationSettingsT = WebvttDestinationSettings>
+    CaptionDestinationSettings& WithWebvttDestinationSettings(WebvttDestinationSettingsT&& value) { SetWebvttDestinationSettings(std::forward<WebvttDestinationSettingsT>(value)); return *this;}
     ///@}
   private:
 

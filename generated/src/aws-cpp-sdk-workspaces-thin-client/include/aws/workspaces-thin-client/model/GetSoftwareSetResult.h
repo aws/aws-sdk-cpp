@@ -28,7 +28,7 @@ namespace Model
   class GetSoftwareSetResult
   {
   public:
-    AWS_WORKSPACESTHINCLIENT_API GetSoftwareSetResult();
+    AWS_WORKSPACESTHINCLIENT_API GetSoftwareSetResult() = default;
     AWS_WORKSPACESTHINCLIENT_API GetSoftwareSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESTHINCLIENT_API GetSoftwareSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Describes a software set.</p>
      */
-    inline const SoftwareSet& GetSoftwareSet() const{ return m_softwareSet; }
-    inline void SetSoftwareSet(const SoftwareSet& value) { m_softwareSet = value; }
-    inline void SetSoftwareSet(SoftwareSet&& value) { m_softwareSet = std::move(value); }
-    inline GetSoftwareSetResult& WithSoftwareSet(const SoftwareSet& value) { SetSoftwareSet(value); return *this;}
-    inline GetSoftwareSetResult& WithSoftwareSet(SoftwareSet&& value) { SetSoftwareSet(std::move(value)); return *this;}
+    inline const SoftwareSet& GetSoftwareSet() const { return m_softwareSet; }
+    template<typename SoftwareSetT = SoftwareSet>
+    void SetSoftwareSet(SoftwareSetT&& value) { m_softwareSetHasBeenSet = true; m_softwareSet = std::forward<SoftwareSetT>(value); }
+    template<typename SoftwareSetT = SoftwareSet>
+    GetSoftwareSetResult& WithSoftwareSet(SoftwareSetT&& value) { SetSoftwareSet(std::forward<SoftwareSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSoftwareSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSoftwareSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSoftwareSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSoftwareSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SoftwareSet m_softwareSet;
+    bool m_softwareSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-GlueDataCatalogConfig::GlueDataCatalogConfig() : 
-    m_roleArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tablePrefixHasBeenSet(false)
-{
-}
-
 GlueDataCatalogConfig::GlueDataCatalogConfig(JsonView jsonValue)
-  : GlueDataCatalogConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GlueDataCatalogConfig& GlueDataCatalogConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tablePrefix"))
   {
     m_tablePrefix = jsonValue.GetString("tablePrefix");
-
     m_tablePrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AgentDetails::AgentDetails() : 
-    m_versionHasBeenSet(false)
-{
-}
-
 AgentDetails::AgentDetails(JsonView jsonValue)
-  : AgentDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentDetails& AgentDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

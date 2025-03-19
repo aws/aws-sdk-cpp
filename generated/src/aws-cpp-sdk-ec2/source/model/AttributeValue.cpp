@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(const XmlNode& xmlNode)
-  : AttributeValue()
 {
   *this = xmlNode;
 }

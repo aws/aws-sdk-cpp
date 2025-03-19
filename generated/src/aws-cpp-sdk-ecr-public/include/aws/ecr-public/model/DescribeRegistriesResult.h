@@ -29,7 +29,7 @@ namespace Model
   class DescribeRegistriesResult
   {
   public:
-    AWS_ECRPUBLIC_API DescribeRegistriesResult();
+    AWS_ECRPUBLIC_API DescribeRegistriesResult() = default;
     AWS_ECRPUBLIC_API DescribeRegistriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECRPUBLIC_API DescribeRegistriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An object that contains the details for a public registry.</p>
      */
-    inline const Aws::Vector<Registry>& GetRegistries() const{ return m_registries; }
-    inline void SetRegistries(const Aws::Vector<Registry>& value) { m_registries = value; }
-    inline void SetRegistries(Aws::Vector<Registry>&& value) { m_registries = std::move(value); }
-    inline DescribeRegistriesResult& WithRegistries(const Aws::Vector<Registry>& value) { SetRegistries(value); return *this;}
-    inline DescribeRegistriesResult& WithRegistries(Aws::Vector<Registry>&& value) { SetRegistries(std::move(value)); return *this;}
-    inline DescribeRegistriesResult& AddRegistries(const Registry& value) { m_registries.push_back(value); return *this; }
-    inline DescribeRegistriesResult& AddRegistries(Registry&& value) { m_registries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Registry>& GetRegistries() const { return m_registries; }
+    template<typename RegistriesT = Aws::Vector<Registry>>
+    void SetRegistries(RegistriesT&& value) { m_registriesHasBeenSet = true; m_registries = std::forward<RegistriesT>(value); }
+    template<typename RegistriesT = Aws::Vector<Registry>>
+    DescribeRegistriesResult& WithRegistries(RegistriesT&& value) { SetRegistries(std::forward<RegistriesT>(value)); return *this;}
+    template<typename RegistriesT = Registry>
+    DescribeRegistriesResult& AddRegistries(RegistriesT&& value) { m_registriesHasBeenSet = true; m_registries.emplace_back(std::forward<RegistriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * can use this value to retrieve the next page of results. If there are no more
      * results, this value is <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeRegistriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRegistriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRegistriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRegistriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRegistriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRegistriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRegistriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRegistriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Registry> m_registries;
+    bool m_registriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

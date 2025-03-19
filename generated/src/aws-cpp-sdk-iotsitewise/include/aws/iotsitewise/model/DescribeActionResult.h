@@ -30,7 +30,7 @@ namespace Model
   class DescribeActionResult
   {
   public:
-    AWS_IOTSITEWISE_API DescribeActionResult();
+    AWS_IOTSITEWISE_API DescribeActionResult() = default;
     AWS_IOTSITEWISE_API DescribeActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API DescribeActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,84 +39,84 @@ namespace Model
     /**
      * <p>The ID of the action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
-    inline void SetActionId(const Aws::String& value) { m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionId.assign(value); }
-    inline DescribeActionResult& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline DescribeActionResult& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline DescribeActionResult& WithActionId(const char* value) { SetActionId(value); return *this;}
+    inline const Aws::String& GetActionId() const { return m_actionId; }
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    DescribeActionResult& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource the action will be taken on.</p>
      */
-    inline const TargetResource& GetTargetResource() const{ return m_targetResource; }
-    inline void SetTargetResource(const TargetResource& value) { m_targetResource = value; }
-    inline void SetTargetResource(TargetResource&& value) { m_targetResource = std::move(value); }
-    inline DescribeActionResult& WithTargetResource(const TargetResource& value) { SetTargetResource(value); return *this;}
-    inline DescribeActionResult& WithTargetResource(TargetResource&& value) { SetTargetResource(std::move(value)); return *this;}
+    inline const TargetResource& GetTargetResource() const { return m_targetResource; }
+    template<typename TargetResourceT = TargetResource>
+    void SetTargetResource(TargetResourceT&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::forward<TargetResourceT>(value); }
+    template<typename TargetResourceT = TargetResource>
+    DescribeActionResult& WithTargetResource(TargetResourceT&& value) { SetTargetResource(std::forward<TargetResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the action definition.</p>
      */
-    inline const Aws::String& GetActionDefinitionId() const{ return m_actionDefinitionId; }
-    inline void SetActionDefinitionId(const Aws::String& value) { m_actionDefinitionId = value; }
-    inline void SetActionDefinitionId(Aws::String&& value) { m_actionDefinitionId = std::move(value); }
-    inline void SetActionDefinitionId(const char* value) { m_actionDefinitionId.assign(value); }
-    inline DescribeActionResult& WithActionDefinitionId(const Aws::String& value) { SetActionDefinitionId(value); return *this;}
-    inline DescribeActionResult& WithActionDefinitionId(Aws::String&& value) { SetActionDefinitionId(std::move(value)); return *this;}
-    inline DescribeActionResult& WithActionDefinitionId(const char* value) { SetActionDefinitionId(value); return *this;}
+    inline const Aws::String& GetActionDefinitionId() const { return m_actionDefinitionId; }
+    template<typename ActionDefinitionIdT = Aws::String>
+    void SetActionDefinitionId(ActionDefinitionIdT&& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = std::forward<ActionDefinitionIdT>(value); }
+    template<typename ActionDefinitionIdT = Aws::String>
+    DescribeActionResult& WithActionDefinitionId(ActionDefinitionIdT&& value) { SetActionDefinitionId(std::forward<ActionDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON payload of the action.</p>
      */
-    inline const ActionPayload& GetActionPayload() const{ return m_actionPayload; }
-    inline void SetActionPayload(const ActionPayload& value) { m_actionPayload = value; }
-    inline void SetActionPayload(ActionPayload&& value) { m_actionPayload = std::move(value); }
-    inline DescribeActionResult& WithActionPayload(const ActionPayload& value) { SetActionPayload(value); return *this;}
-    inline DescribeActionResult& WithActionPayload(ActionPayload&& value) { SetActionPayload(std::move(value)); return *this;}
+    inline const ActionPayload& GetActionPayload() const { return m_actionPayload; }
+    template<typename ActionPayloadT = ActionPayload>
+    void SetActionPayload(ActionPayloadT&& value) { m_actionPayloadHasBeenSet = true; m_actionPayload = std::forward<ActionPayloadT>(value); }
+    template<typename ActionPayloadT = ActionPayload>
+    DescribeActionResult& WithActionPayload(ActionPayloadT&& value) { SetActionPayload(std::forward<ActionPayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the action was executed.</p>
      */
-    inline const Aws::Utils::DateTime& GetExecutionTime() const{ return m_executionTime; }
-    inline void SetExecutionTime(const Aws::Utils::DateTime& value) { m_executionTime = value; }
-    inline void SetExecutionTime(Aws::Utils::DateTime&& value) { m_executionTime = std::move(value); }
-    inline DescribeActionResult& WithExecutionTime(const Aws::Utils::DateTime& value) { SetExecutionTime(value); return *this;}
-    inline DescribeActionResult& WithExecutionTime(Aws::Utils::DateTime&& value) { SetExecutionTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExecutionTime() const { return m_executionTime; }
+    template<typename ExecutionTimeT = Aws::Utils::DateTime>
+    void SetExecutionTime(ExecutionTimeT&& value) { m_executionTimeHasBeenSet = true; m_executionTime = std::forward<ExecutionTimeT>(value); }
+    template<typename ExecutionTimeT = Aws::Utils::DateTime>
+    DescribeActionResult& WithExecutionTime(ExecutionTimeT&& value) { SetExecutionTime(std::forward<ExecutionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionId;
+    bool m_actionIdHasBeenSet = false;
 
     TargetResource m_targetResource;
+    bool m_targetResourceHasBeenSet = false;
 
     Aws::String m_actionDefinitionId;
+    bool m_actionDefinitionIdHasBeenSet = false;
 
     ActionPayload m_actionPayload;
+    bool m_actionPayloadHasBeenSet = false;
 
-    Aws::Utils::DateTime m_executionTime;
+    Aws::Utils::DateTime m_executionTime{};
+    bool m_executionTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

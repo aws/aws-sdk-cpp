@@ -18,18 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementResourceAssociationSummary::EngagementResourceAssociationSummary() : 
-    m_catalogHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_engagementIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 EngagementResourceAssociationSummary::EngagementResourceAssociationSummary(JsonView jsonValue)
-  : EngagementResourceAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EngagementResourceAssociationSummary& EngagementResourceAssociationSummary::oper
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngagementId"))
   {
     m_engagementId = jsonValue.GetString("EngagementId");
-
     m_engagementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

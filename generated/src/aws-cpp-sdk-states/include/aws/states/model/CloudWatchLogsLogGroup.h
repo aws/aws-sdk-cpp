@@ -31,7 +31,7 @@ namespace Model
   class CloudWatchLogsLogGroup
   {
   public:
-    AWS_SFN_API CloudWatchLogsLogGroup();
+    AWS_SFN_API CloudWatchLogsLogGroup() = default;
     AWS_SFN_API CloudWatchLogsLogGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API CloudWatchLogsLogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The ARN of the the CloudWatch log group to which you want your logs emitted
      * to. The ARN must end with <code>:*</code> </p>
      */
-    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+    inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-    inline CloudWatchLogsLogGroup& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-    inline CloudWatchLogsLogGroup& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-    inline CloudWatchLogsLogGroup& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
+    template<typename LogGroupArnT = Aws::String>
+    void SetLogGroupArn(LogGroupArnT&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::forward<LogGroupArnT>(value); }
+    template<typename LogGroupArnT = Aws::String>
+    CloudWatchLogsLogGroup& WithLogGroupArn(LogGroupArnT&& value) { SetLogGroupArn(std::forward<LogGroupArnT>(value)); return *this;}
     ///@}
   private:
 

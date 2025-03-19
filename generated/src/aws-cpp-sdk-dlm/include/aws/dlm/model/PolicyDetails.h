@@ -43,7 +43,7 @@ namespace Model
   class PolicyDetails
   {
   public:
-    AWS_DLM_API PolicyDetails();
+    AWS_DLM_API PolicyDetails() = default;
     AWS_DLM_API PolicyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API PolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * in your Amazon Web Services account.</p> <p>The default is
      * <code>EBS_SNAPSHOT_MANAGEMENT</code>.</p>
      */
-    inline const PolicyTypeValues& GetPolicyType() const{ return m_policyType; }
+    inline PolicyTypeValues GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const PolicyTypeValues& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(PolicyTypeValues&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline PolicyDetails& WithPolicyType(const PolicyTypeValues& value) { SetPolicyType(value); return *this;}
-    inline PolicyDetails& WithPolicyType(PolicyTypeValues&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(PolicyTypeValues value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline PolicyDetails& WithPolicyType(PolicyTypeValues value) { SetPolicyType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,13 @@ namespace Model
      * individual volumes or use <code>INSTANCE</code> to create multi-volume snapshots
      * from the volumes for an instance.</p>
      */
-    inline const Aws::Vector<ResourceTypeValues>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ResourceTypeValues>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ResourceTypeValues>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ResourceTypeValues>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline PolicyDetails& WithResourceTypes(const Aws::Vector<ResourceTypeValues>& value) { SetResourceTypes(value); return *this;}
-    inline PolicyDetails& WithResourceTypes(Aws::Vector<ResourceTypeValues>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline PolicyDetails& AddResourceTypes(const ResourceTypeValues& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline PolicyDetails& AddResourceTypes(ResourceTypeValues&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ResourceTypeValues>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ResourceTypeValues>>
+    PolicyDetails& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline PolicyDetails& AddResourceTypes(ResourceTypeValues value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -99,14 +96,13 @@ namespace Model
      * specified type with matching target tags across all of the Outposts in your
      * account.</p> </li> </ul> <p/>
      */
-    inline const Aws::Vector<ResourceLocationValues>& GetResourceLocations() const{ return m_resourceLocations; }
+    inline const Aws::Vector<ResourceLocationValues>& GetResourceLocations() const { return m_resourceLocations; }
     inline bool ResourceLocationsHasBeenSet() const { return m_resourceLocationsHasBeenSet; }
-    inline void SetResourceLocations(const Aws::Vector<ResourceLocationValues>& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = value; }
-    inline void SetResourceLocations(Aws::Vector<ResourceLocationValues>&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = std::move(value); }
-    inline PolicyDetails& WithResourceLocations(const Aws::Vector<ResourceLocationValues>& value) { SetResourceLocations(value); return *this;}
-    inline PolicyDetails& WithResourceLocations(Aws::Vector<ResourceLocationValues>&& value) { SetResourceLocations(std::move(value)); return *this;}
-    inline PolicyDetails& AddResourceLocations(const ResourceLocationValues& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(value); return *this; }
-    inline PolicyDetails& AddResourceLocations(ResourceLocationValues&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(std::move(value)); return *this; }
+    template<typename ResourceLocationsT = Aws::Vector<ResourceLocationValues>>
+    void SetResourceLocations(ResourceLocationsT&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = std::forward<ResourceLocationsT>(value); }
+    template<typename ResourceLocationsT = Aws::Vector<ResourceLocationValues>>
+    PolicyDetails& WithResourceLocations(ResourceLocationsT&& value) { SetResourceLocations(std::forward<ResourceLocationsT>(value)); return *this;}
+    inline PolicyDetails& AddResourceLocations(ResourceLocationValues value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -114,14 +110,14 @@ namespace Model
      * <p> <b>[Custom snapshot and AMI policies only]</b> The single tag that
      * identifies targeted resources for this policy.</p>
      */
-    inline const Aws::Vector<Tag>& GetTargetTags() const{ return m_targetTags; }
+    inline const Aws::Vector<Tag>& GetTargetTags() const { return m_targetTags; }
     inline bool TargetTagsHasBeenSet() const { return m_targetTagsHasBeenSet; }
-    inline void SetTargetTags(const Aws::Vector<Tag>& value) { m_targetTagsHasBeenSet = true; m_targetTags = value; }
-    inline void SetTargetTags(Aws::Vector<Tag>&& value) { m_targetTagsHasBeenSet = true; m_targetTags = std::move(value); }
-    inline PolicyDetails& WithTargetTags(const Aws::Vector<Tag>& value) { SetTargetTags(value); return *this;}
-    inline PolicyDetails& WithTargetTags(Aws::Vector<Tag>&& value) { SetTargetTags(std::move(value)); return *this;}
-    inline PolicyDetails& AddTargetTags(const Tag& value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(value); return *this; }
-    inline PolicyDetails& AddTargetTags(Tag&& value) { m_targetTagsHasBeenSet = true; m_targetTags.push_back(std::move(value)); return *this; }
+    template<typename TargetTagsT = Aws::Vector<Tag>>
+    void SetTargetTags(TargetTagsT&& value) { m_targetTagsHasBeenSet = true; m_targetTags = std::forward<TargetTagsT>(value); }
+    template<typename TargetTagsT = Aws::Vector<Tag>>
+    PolicyDetails& WithTargetTags(TargetTagsT&& value) { SetTargetTags(std::forward<TargetTagsT>(value)); return *this;}
+    template<typename TargetTagsT = Tag>
+    PolicyDetails& AddTargetTags(TargetTagsT&& value) { m_targetTagsHasBeenSet = true; m_targetTags.emplace_back(std::forward<TargetTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,14 +127,14 @@ namespace Model
      * have up to four schedules—one mandatory schedule and up to three optional
      * schedules.</p>
      */
-    inline const Aws::Vector<Schedule>& GetSchedules() const{ return m_schedules; }
+    inline const Aws::Vector<Schedule>& GetSchedules() const { return m_schedules; }
     inline bool SchedulesHasBeenSet() const { return m_schedulesHasBeenSet; }
-    inline void SetSchedules(const Aws::Vector<Schedule>& value) { m_schedulesHasBeenSet = true; m_schedules = value; }
-    inline void SetSchedules(Aws::Vector<Schedule>&& value) { m_schedulesHasBeenSet = true; m_schedules = std::move(value); }
-    inline PolicyDetails& WithSchedules(const Aws::Vector<Schedule>& value) { SetSchedules(value); return *this;}
-    inline PolicyDetails& WithSchedules(Aws::Vector<Schedule>&& value) { SetSchedules(std::move(value)); return *this;}
-    inline PolicyDetails& AddSchedules(const Schedule& value) { m_schedulesHasBeenSet = true; m_schedules.push_back(value); return *this; }
-    inline PolicyDetails& AddSchedules(Schedule&& value) { m_schedulesHasBeenSet = true; m_schedules.push_back(std::move(value)); return *this; }
+    template<typename SchedulesT = Aws::Vector<Schedule>>
+    void SetSchedules(SchedulesT&& value) { m_schedulesHasBeenSet = true; m_schedules = std::forward<SchedulesT>(value); }
+    template<typename SchedulesT = Aws::Vector<Schedule>>
+    PolicyDetails& WithSchedules(SchedulesT&& value) { SetSchedules(std::forward<SchedulesT>(value)); return *this;}
+    template<typename SchedulesT = Schedule>
+    PolicyDetails& AddSchedules(SchedulesT&& value) { m_schedulesHasBeenSet = true; m_schedules.emplace_back(std::forward<SchedulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -150,12 +146,12 @@ namespace Model
      * default values or the new values that you require. You can't omit this parameter
      * or set its values to null.</p> 
      */
-    inline const Parameters& GetParameters() const{ return m_parameters; }
+    inline const Parameters& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline PolicyDetails& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
-    inline PolicyDetails& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
+    template<typename ParametersT = Parameters>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Parameters>
+    PolicyDetails& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +159,12 @@ namespace Model
      * <p> <b>[Event-based policies only]</b> The event that activates the event-based
      * policy.</p>
      */
-    inline const EventSource& GetEventSource() const{ return m_eventSource; }
+    inline const EventSource& GetEventSource() const { return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
-    inline void SetEventSource(const EventSource& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
-    inline void SetEventSource(EventSource&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
-    inline PolicyDetails& WithEventSource(const EventSource& value) { SetEventSource(value); return *this;}
-    inline PolicyDetails& WithEventSource(EventSource&& value) { SetEventSource(std::move(value)); return *this;}
+    template<typename EventSourceT = EventSource>
+    void SetEventSource(EventSourceT&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::forward<EventSourceT>(value); }
+    template<typename EventSourceT = EventSource>
+    PolicyDetails& WithEventSource(EventSourceT&& value) { SetEventSource(std::forward<EventSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +172,14 @@ namespace Model
      * <p> <b>[Event-based policies only]</b> The actions to be performed when the
      * event-based policy is activated. You can specify only one action per policy.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline PolicyDetails& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline PolicyDetails& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline PolicyDetails& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline PolicyDetails& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    PolicyDetails& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    PolicyDetails& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -192,12 +188,10 @@ namespace Model
      * <code>SIMPLIFIED</code> To create a default policy.</p> </li> <li> <p>
      * <code>STANDARD</code> To create a custom policy.</p> </li> </ul>
      */
-    inline const PolicyLanguageValues& GetPolicyLanguage() const{ return m_policyLanguage; }
+    inline PolicyLanguageValues GetPolicyLanguage() const { return m_policyLanguage; }
     inline bool PolicyLanguageHasBeenSet() const { return m_policyLanguageHasBeenSet; }
-    inline void SetPolicyLanguage(const PolicyLanguageValues& value) { m_policyLanguageHasBeenSet = true; m_policyLanguage = value; }
-    inline void SetPolicyLanguage(PolicyLanguageValues&& value) { m_policyLanguageHasBeenSet = true; m_policyLanguage = std::move(value); }
-    inline PolicyDetails& WithPolicyLanguage(const PolicyLanguageValues& value) { SetPolicyLanguage(value); return *this;}
-    inline PolicyDetails& WithPolicyLanguage(PolicyLanguageValues&& value) { SetPolicyLanguage(std::move(value)); return *this;}
+    inline void SetPolicyLanguage(PolicyLanguageValues value) { m_policyLanguageHasBeenSet = true; m_policyLanguage = value; }
+    inline PolicyDetails& WithPolicyLanguage(PolicyLanguageValues value) { SetPolicyLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -209,12 +203,10 @@ namespace Model
      * EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region
      * that do not have recent backups, specify <code>INSTANCE</code>.</p> </li> </ul>
      */
-    inline const ResourceTypeValues& GetResourceType() const{ return m_resourceType; }
+    inline ResourceTypeValues GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceTypeValues& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceTypeValues&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline PolicyDetails& WithResourceType(const ResourceTypeValues& value) { SetResourceType(value); return *this;}
-    inline PolicyDetails& WithResourceType(ResourceTypeValues&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceTypeValues value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline PolicyDetails& WithResourceType(ResourceTypeValues value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -223,7 +215,7 @@ namespace Model
      * create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If
      * you do not specify a value, the default is 1.</p> <p>Default: 1</p>
      */
-    inline int GetCreateInterval() const{ return m_createInterval; }
+    inline int GetCreateInterval() const { return m_createInterval; }
     inline bool CreateIntervalHasBeenSet() const { return m_createIntervalHasBeenSet; }
     inline void SetCreateInterval(int value) { m_createIntervalHasBeenSet = true; m_createInterval = value; }
     inline PolicyDetails& WithCreateInterval(int value) { SetCreateInterval(value); return *this;}
@@ -237,7 +229,7 @@ namespace Model
      * policy retains at least 1 snapshot or AMI at any given time. If you do not
      * specify a value, the default is 7.</p> <p>Default: 7</p>
      */
-    inline int GetRetainInterval() const{ return m_retainInterval; }
+    inline int GetRetainInterval() const { return m_retainInterval; }
     inline bool RetainIntervalHasBeenSet() const { return m_retainIntervalHasBeenSet; }
     inline void SetRetainInterval(int value) { m_retainIntervalHasBeenSet = true; m_retainInterval = value; }
     inline PolicyDetails& WithRetainInterval(int value) { SetRetainInterval(value); return *this;}
@@ -249,7 +241,7 @@ namespace Model
      * from the source resource to the snapshot or AMI. If you do not specify a value,
      * the default is <code>false</code>.</p> <p>Default: false</p>
      */
-    inline bool GetCopyTags() const{ return m_copyTags; }
+    inline bool GetCopyTags() const { return m_copyTags; }
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
     inline PolicyDetails& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
@@ -261,14 +253,14 @@ namespace Model
      * AMI copies. You can specify up to 3 destination Regions. If you do not want to
      * create cross-Region copies, omit this parameter.</p>
      */
-    inline const Aws::Vector<CrossRegionCopyTarget>& GetCrossRegionCopyTargets() const{ return m_crossRegionCopyTargets; }
+    inline const Aws::Vector<CrossRegionCopyTarget>& GetCrossRegionCopyTargets() const { return m_crossRegionCopyTargets; }
     inline bool CrossRegionCopyTargetsHasBeenSet() const { return m_crossRegionCopyTargetsHasBeenSet; }
-    inline void SetCrossRegionCopyTargets(const Aws::Vector<CrossRegionCopyTarget>& value) { m_crossRegionCopyTargetsHasBeenSet = true; m_crossRegionCopyTargets = value; }
-    inline void SetCrossRegionCopyTargets(Aws::Vector<CrossRegionCopyTarget>&& value) { m_crossRegionCopyTargetsHasBeenSet = true; m_crossRegionCopyTargets = std::move(value); }
-    inline PolicyDetails& WithCrossRegionCopyTargets(const Aws::Vector<CrossRegionCopyTarget>& value) { SetCrossRegionCopyTargets(value); return *this;}
-    inline PolicyDetails& WithCrossRegionCopyTargets(Aws::Vector<CrossRegionCopyTarget>&& value) { SetCrossRegionCopyTargets(std::move(value)); return *this;}
-    inline PolicyDetails& AddCrossRegionCopyTargets(const CrossRegionCopyTarget& value) { m_crossRegionCopyTargetsHasBeenSet = true; m_crossRegionCopyTargets.push_back(value); return *this; }
-    inline PolicyDetails& AddCrossRegionCopyTargets(CrossRegionCopyTarget&& value) { m_crossRegionCopyTargetsHasBeenSet = true; m_crossRegionCopyTargets.push_back(std::move(value)); return *this; }
+    template<typename CrossRegionCopyTargetsT = Aws::Vector<CrossRegionCopyTarget>>
+    void SetCrossRegionCopyTargets(CrossRegionCopyTargetsT&& value) { m_crossRegionCopyTargetsHasBeenSet = true; m_crossRegionCopyTargets = std::forward<CrossRegionCopyTargetsT>(value); }
+    template<typename CrossRegionCopyTargetsT = Aws::Vector<CrossRegionCopyTarget>>
+    PolicyDetails& WithCrossRegionCopyTargets(CrossRegionCopyTargetsT&& value) { SetCrossRegionCopyTargets(std::forward<CrossRegionCopyTargetsT>(value)); return *this;}
+    template<typename CrossRegionCopyTargetsT = CrossRegionCopyTarget>
+    PolicyDetails& AddCrossRegionCopyTargets(CrossRegionCopyTargetsT&& value) { m_crossRegionCopyTargetsHasBeenSet = true; m_crossRegionCopyTargets.emplace_back(std::forward<CrossRegionCopyTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -289,7 +281,7 @@ namespace Model
      * override both default behaviors simultaneously.</p> <p>If you do not specify a
      * value, the default is <code>false</code>.</p> <p>Default: false</p>
      */
-    inline bool GetExtendDeletion() const{ return m_extendDeletion; }
+    inline bool GetExtendDeletion() const { return m_extendDeletion; }
     inline bool ExtendDeletionHasBeenSet() const { return m_extendDeletionHasBeenSet; }
     inline void SetExtendDeletion(bool value) { m_extendDeletionHasBeenSet = true; m_extendDeletion = value; }
     inline PolicyDetails& WithExtendDeletion(bool value) { SetExtendDeletion(value); return *this;}
@@ -302,16 +294,16 @@ namespace Model
      * not create snapshots or AMIs for target resources that match any of the
      * specified exclusion parameters.</p>
      */
-    inline const Exclusions& GetExclusions() const{ return m_exclusions; }
+    inline const Exclusions& GetExclusions() const { return m_exclusions; }
     inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
-    inline void SetExclusions(const Exclusions& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
-    inline void SetExclusions(Exclusions&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
-    inline PolicyDetails& WithExclusions(const Exclusions& value) { SetExclusions(value); return *this;}
-    inline PolicyDetails& WithExclusions(Exclusions&& value) { SetExclusions(std::move(value)); return *this;}
+    template<typename ExclusionsT = Exclusions>
+    void SetExclusions(ExclusionsT&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::forward<ExclusionsT>(value); }
+    template<typename ExclusionsT = Exclusions>
+    PolicyDetails& WithExclusions(ExclusionsT&& value) { SetExclusions(std::forward<ExclusionsT>(value)); return *this;}
     ///@}
   private:
 
-    PolicyTypeValues m_policyType;
+    PolicyTypeValues m_policyType{PolicyTypeValues::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
 
     Aws::Vector<ResourceTypeValues> m_resourceTypes;
@@ -335,25 +327,25 @@ namespace Model
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet = false;
 
-    PolicyLanguageValues m_policyLanguage;
+    PolicyLanguageValues m_policyLanguage{PolicyLanguageValues::NOT_SET};
     bool m_policyLanguageHasBeenSet = false;
 
-    ResourceTypeValues m_resourceType;
+    ResourceTypeValues m_resourceType{ResourceTypeValues::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    int m_createInterval;
+    int m_createInterval{0};
     bool m_createIntervalHasBeenSet = false;
 
-    int m_retainInterval;
+    int m_retainInterval{0};
     bool m_retainIntervalHasBeenSet = false;
 
-    bool m_copyTags;
+    bool m_copyTags{false};
     bool m_copyTagsHasBeenSet = false;
 
     Aws::Vector<CrossRegionCopyTarget> m_crossRegionCopyTargets;
     bool m_crossRegionCopyTargetsHasBeenSet = false;
 
-    bool m_extendDeletion;
+    bool m_extendDeletion{false};
     bool m_extendDeletionHasBeenSet = false;
 
     Exclusions m_exclusions;

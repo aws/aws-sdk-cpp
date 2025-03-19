@@ -35,7 +35,7 @@ namespace Model
   class AccessKeyLastUsed
   {
   public:
-    AWS_IAM_API AccessKeyLastUsed();
+    AWS_IAM_API AccessKeyLastUsed() = default;
     AWS_IAM_API AccessKeyLastUsed(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API AccessKeyLastUsed& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,12 +52,12 @@ namespace Model
      * IAM began tracking this information.</p> </li> <li> <p>There is no sign-in data
      * associated with the user.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastUsedDate() const{ return m_lastUsedDate; }
+    inline const Aws::Utils::DateTime& GetLastUsedDate() const { return m_lastUsedDate; }
     inline bool LastUsedDateHasBeenSet() const { return m_lastUsedDateHasBeenSet; }
-    inline void SetLastUsedDate(const Aws::Utils::DateTime& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
-    inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
-    inline AccessKeyLastUsed& WithLastUsedDate(const Aws::Utils::DateTime& value) { SetLastUsedDate(value); return *this;}
-    inline AccessKeyLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
+    template<typename LastUsedDateT = Aws::Utils::DateTime>
+    void SetLastUsedDate(LastUsedDateT&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::forward<LastUsedDateT>(value); }
+    template<typename LastUsedDateT = Aws::Utils::DateTime>
+    AccessKeyLastUsed& WithLastUsedDate(LastUsedDateT&& value) { SetLastUsedDate(std::forward<LastUsedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +69,12 @@ namespace Model
      * this information.</p> </li> <li> <p>There is no sign-in data associated with the
      * user.</p> </li> </ul>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline AccessKeyLastUsed& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline AccessKeyLastUsed& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline AccessKeyLastUsed& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    AccessKeyLastUsed& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,18 +88,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * endpoints</a> in the Amazon Web Services General Reference.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline AccessKeyLastUsed& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline AccessKeyLastUsed& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline AccessKeyLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    AccessKeyLastUsed& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastUsedDate;
+    Aws::Utils::DateTime m_lastUsedDate{};
     bool m_lastUsedDateHasBeenSet = false;
 
     Aws::String m_serviceName;

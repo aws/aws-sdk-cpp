@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-OwnershipControlsRule::OwnershipControlsRule() : 
-    m_objectOwnership(ObjectOwnership::NOT_SET),
-    m_objectOwnershipHasBeenSet(false)
-{
-}
-
 OwnershipControlsRule::OwnershipControlsRule(const XmlNode& xmlNode)
-  : OwnershipControlsRule()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ OwnershipControlsRule& OwnershipControlsRule::operator =(const XmlNode& xmlNode)
     XmlNode objectOwnershipNode = resultNode.FirstChild("ObjectOwnership");
     if(!objectOwnershipNode.IsNull())
     {
-      m_objectOwnership = ObjectOwnershipMapper::GetObjectOwnershipForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectOwnershipNode.GetText()).c_str()).c_str());
+      m_objectOwnership = ObjectOwnershipMapper::GetObjectOwnershipForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectOwnershipNode.GetText()).c_str()));
       m_objectOwnershipHasBeenSet = true;
     }
   }

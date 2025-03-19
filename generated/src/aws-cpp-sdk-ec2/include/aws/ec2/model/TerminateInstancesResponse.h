@@ -29,7 +29,7 @@ namespace Model
   class TerminateInstancesResponse
   {
   public:
-    AWS_EC2_API TerminateInstancesResponse();
+    AWS_EC2_API TerminateInstancesResponse() = default;
     AWS_EC2_API TerminateInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API TerminateInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the terminated instances.</p>
      */
-    inline const Aws::Vector<InstanceStateChange>& GetTerminatingInstances() const{ return m_terminatingInstances; }
-    inline void SetTerminatingInstances(const Aws::Vector<InstanceStateChange>& value) { m_terminatingInstances = value; }
-    inline void SetTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { m_terminatingInstances = std::move(value); }
-    inline TerminateInstancesResponse& WithTerminatingInstances(const Aws::Vector<InstanceStateChange>& value) { SetTerminatingInstances(value); return *this;}
-    inline TerminateInstancesResponse& WithTerminatingInstances(Aws::Vector<InstanceStateChange>&& value) { SetTerminatingInstances(std::move(value)); return *this;}
-    inline TerminateInstancesResponse& AddTerminatingInstances(const InstanceStateChange& value) { m_terminatingInstances.push_back(value); return *this; }
-    inline TerminateInstancesResponse& AddTerminatingInstances(InstanceStateChange&& value) { m_terminatingInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceStateChange>& GetTerminatingInstances() const { return m_terminatingInstances; }
+    template<typename TerminatingInstancesT = Aws::Vector<InstanceStateChange>>
+    void SetTerminatingInstances(TerminatingInstancesT&& value) { m_terminatingInstancesHasBeenSet = true; m_terminatingInstances = std::forward<TerminatingInstancesT>(value); }
+    template<typename TerminatingInstancesT = Aws::Vector<InstanceStateChange>>
+    TerminateInstancesResponse& WithTerminatingInstances(TerminatingInstancesT&& value) { SetTerminatingInstances(std::forward<TerminatingInstancesT>(value)); return *this;}
+    template<typename TerminatingInstancesT = InstanceStateChange>
+    TerminateInstancesResponse& AddTerminatingInstances(TerminatingInstancesT&& value) { m_terminatingInstancesHasBeenSet = true; m_terminatingInstances.emplace_back(std::forward<TerminatingInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline TerminateInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline TerminateInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    TerminateInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceStateChange> m_terminatingInstances;
+    bool m_terminatingInstancesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTestConfigurationRequest::DeleteTestConfigurationRequest() : 
-    m_testConfigurationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTestConfigurationRequest::SerializePayload() const
 {
   return {};

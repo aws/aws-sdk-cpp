@@ -28,7 +28,7 @@ namespace Model
   class GetPreparedStatementResult
   {
   public:
-    AWS_ATHENA_API GetPreparedStatementResult();
+    AWS_ATHENA_API GetPreparedStatementResult() = default;
     AWS_ATHENA_API GetPreparedStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetPreparedStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The name of the prepared statement that was retrieved.</p>
      */
-    inline const PreparedStatement& GetPreparedStatement() const{ return m_preparedStatement; }
-    inline void SetPreparedStatement(const PreparedStatement& value) { m_preparedStatement = value; }
-    inline void SetPreparedStatement(PreparedStatement&& value) { m_preparedStatement = std::move(value); }
-    inline GetPreparedStatementResult& WithPreparedStatement(const PreparedStatement& value) { SetPreparedStatement(value); return *this;}
-    inline GetPreparedStatementResult& WithPreparedStatement(PreparedStatement&& value) { SetPreparedStatement(std::move(value)); return *this;}
+    inline const PreparedStatement& GetPreparedStatement() const { return m_preparedStatement; }
+    template<typename PreparedStatementT = PreparedStatement>
+    void SetPreparedStatement(PreparedStatementT&& value) { m_preparedStatementHasBeenSet = true; m_preparedStatement = std::forward<PreparedStatementT>(value); }
+    template<typename PreparedStatementT = PreparedStatement>
+    GetPreparedStatementResult& WithPreparedStatement(PreparedStatementT&& value) { SetPreparedStatement(std::forward<PreparedStatementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPreparedStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPreparedStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPreparedStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPreparedStatementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PreparedStatement m_preparedStatement;
+    bool m_preparedStatementHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-ExpressionFilter::ExpressionFilter() : 
-    m_keyHasBeenSet(false),
-    m_matchOptionsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ExpressionFilter::ExpressionFilter(JsonView jsonValue)
-  : ExpressionFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ExpressionFilter& ExpressionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchOptions"))
   {
     Aws::Utils::Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("matchOptions");
@@ -49,7 +39,6 @@ ExpressionFilter& ExpressionFilter::operator =(JsonView jsonValue)
     }
     m_matchOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -59,7 +48,6 @@ ExpressionFilter& ExpressionFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

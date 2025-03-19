@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteAutomationRulesRequest::BatchDeleteAutomationRulesRequest() : 
-    m_automationRulesArnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteAutomationRulesRequest::SerializePayload() const
 {
   JsonValue payload;

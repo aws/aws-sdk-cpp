@@ -18,18 +18,7 @@ namespace ECS
 namespace Model
 {
 
-InstanceHealthCheckResult::InstanceHealthCheckResult() : 
-    m_type(InstanceHealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(InstanceHealthCheckState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false)
-{
-}
-
 InstanceHealthCheckResult::InstanceHealthCheckResult(JsonView jsonValue)
-  : InstanceHealthCheckResult()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ InstanceHealthCheckResult& InstanceHealthCheckResult::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("type"))
   {
     m_type = InstanceHealthCheckTypeMapper::GetInstanceHealthCheckTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = InstanceHealthCheckStateMapper::GetInstanceHealthCheckStateForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatusChange"))
   {
     m_lastStatusChange = jsonValue.GetDouble("lastStatusChange");
-
     m_lastStatusChangeHasBeenSet = true;
   }
-
   return *this;
 }
 

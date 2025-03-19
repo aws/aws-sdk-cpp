@@ -33,7 +33,7 @@ namespace Model
   class ManagedThingSchemaListItem
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API ManagedThingSchemaListItem();
+    AWS_IOTMANAGEDINTEGRATIONS_API ManagedThingSchemaListItem() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API ManagedThingSchemaListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API ManagedThingSchemaListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The id of the endpoint for a managed thing.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline ManagedThingSchemaListItem& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline ManagedThingSchemaListItem& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline ManagedThingSchemaListItem& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    ManagedThingSchemaListItem& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The id of the capability for a managed thing.</p>
      */
-    inline const Aws::String& GetCapabilityId() const{ return m_capabilityId; }
+    inline const Aws::String& GetCapabilityId() const { return m_capabilityId; }
     inline bool CapabilityIdHasBeenSet() const { return m_capabilityIdHasBeenSet; }
-    inline void SetCapabilityId(const Aws::String& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = value; }
-    inline void SetCapabilityId(Aws::String&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::move(value); }
-    inline void SetCapabilityId(const char* value) { m_capabilityIdHasBeenSet = true; m_capabilityId.assign(value); }
-    inline ManagedThingSchemaListItem& WithCapabilityId(const Aws::String& value) { SetCapabilityId(value); return *this;}
-    inline ManagedThingSchemaListItem& WithCapabilityId(Aws::String&& value) { SetCapabilityId(std::move(value)); return *this;}
-    inline ManagedThingSchemaListItem& WithCapabilityId(const char* value) { SetCapabilityId(value); return *this;}
+    template<typename CapabilityIdT = Aws::String>
+    void SetCapabilityId(CapabilityIdT&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::forward<CapabilityIdT>(value); }
+    template<typename CapabilityIdT = Aws::String>
+    ManagedThingSchemaListItem& WithCapabilityId(CapabilityIdT&& value) { SetCapabilityId(std::forward<CapabilityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>The validation schema for one schema item associated with a managed
      * thing.</p>
      */
-    inline Aws::Utils::DocumentView GetSchema() const{ return m_schema; }
+    inline Aws::Utils::DocumentView GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::Utils::Document& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::Utils::Document&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline ManagedThingSchemaListItem& WithSchema(const Aws::Utils::Document& value) { SetSchema(value); return *this;}
-    inline ManagedThingSchemaListItem& WithSchema(Aws::Utils::Document&& value) { SetSchema(std::move(value)); return *this;}
+    template<typename SchemaT = Aws::Utils::Document>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::Utils::Document>
+    ManagedThingSchemaListItem& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
   private:
 

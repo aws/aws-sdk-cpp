@@ -30,7 +30,7 @@ namespace Model
   class TimeRange
   {
   public:
-    AWS_CLOUDWATCHRUM_API TimeRange();
+    AWS_CLOUDWATCHRUM_API TimeRange() = default;
     AWS_CLOUDWATCHRUM_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The beginning of the time range to retrieve performance events from.</p>
      */
-    inline long long GetAfter() const{ return m_after; }
+    inline long long GetAfter() const { return m_after; }
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
     inline void SetAfter(long long value) { m_afterHasBeenSet = true; m_after = value; }
     inline TimeRange& WithAfter(long long value) { SetAfter(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p>The end of the time range to retrieve performance events from. If you omit
      * this, the time range extends to the time that this operation is performed.</p>
      */
-    inline long long GetBefore() const{ return m_before; }
+    inline long long GetBefore() const { return m_before; }
     inline bool BeforeHasBeenSet() const { return m_beforeHasBeenSet; }
     inline void SetBefore(long long value) { m_beforeHasBeenSet = true; m_before = value; }
     inline TimeRange& WithBefore(long long value) { SetBefore(value); return *this;}
     ///@}
   private:
 
-    long long m_after;
+    long long m_after{0};
     bool m_afterHasBeenSet = false;
 
-    long long m_before;
+    long long m_before{0};
     bool m_beforeHasBeenSet = false;
   };
 

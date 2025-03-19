@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteInstanceConnectEndpointRequest::DeleteInstanceConnectEndpointRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceConnectEndpointIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceConnectEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

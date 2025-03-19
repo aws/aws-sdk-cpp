@@ -25,7 +25,7 @@ namespace Model
   class ListEndpointsRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListEndpointsRequest();
+    AWS_SAGEMAKER_API ListEndpointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,24 +42,20 @@ namespace Model
     /**
      * <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
      */
-    inline const EndpointSortKey& GetSortBy() const{ return m_sortBy; }
+    inline EndpointSortKey GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const EndpointSortKey& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(EndpointSortKey&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListEndpointsRequest& WithSortBy(const EndpointSortKey& value) { SetSortBy(value); return *this;}
-    inline ListEndpointsRequest& WithSortBy(EndpointSortKey&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(EndpointSortKey value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListEndpointsRequest& WithSortBy(EndpointSortKey value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
-    inline const OrderKey& GetSortOrder() const{ return m_sortOrder; }
+    inline OrderKey GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const OrderKey& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(OrderKey&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListEndpointsRequest& WithSortOrder(const OrderKey& value) { SetSortOrder(value); return *this;}
-    inline ListEndpointsRequest& WithSortOrder(OrderKey&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(OrderKey value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListEndpointsRequest& WithSortOrder(OrderKey value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * response includes a <code>NextToken</code>. To retrieve the next set of
      * endpoints, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEndpointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEndpointsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +77,7 @@ namespace Model
      * <p>The maximum number of endpoints to return in the response. This value
      * defaults to 10.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -94,14 +88,12 @@ namespace Model
      * <p>A string in endpoint names. This filter returns only endpoints whose name
      * contains the specified string.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline ListEndpointsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline ListEndpointsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline ListEndpointsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    ListEndpointsRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +101,12 @@ namespace Model
      * <p>A filter that returns only endpoints that were created before the specified
      * time (timestamp).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListEndpointsRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListEndpointsRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListEndpointsRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +114,12 @@ namespace Model
      * <p>A filter that returns only endpoints with a creation time greater than or
      * equal to the specified time (timestamp).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListEndpointsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListEndpointsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListEndpointsRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +127,12 @@ namespace Model
      * <p> A filter that returns only endpoints that were modified before the specified
      * timestamp. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimeBefore() const{ return m_lastModifiedTimeBefore; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTimeBefore() const { return m_lastModifiedTimeBefore; }
     inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
-    inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
-    inline void SetLastModifiedTimeBefore(Aws::Utils::DateTime&& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = std::move(value); }
-    inline ListEndpointsRequest& WithLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { SetLastModifiedTimeBefore(value); return *this;}
-    inline ListEndpointsRequest& WithLastModifiedTimeBefore(Aws::Utils::DateTime&& value) { SetLastModifiedTimeBefore(std::move(value)); return *this;}
+    template<typename LastModifiedTimeBeforeT = Aws::Utils::DateTime>
+    void SetLastModifiedTimeBefore(LastModifiedTimeBeforeT&& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = std::forward<LastModifiedTimeBeforeT>(value); }
+    template<typename LastModifiedTimeBeforeT = Aws::Utils::DateTime>
+    ListEndpointsRequest& WithLastModifiedTimeBefore(LastModifiedTimeBeforeT&& value) { SetLastModifiedTimeBefore(std::forward<LastModifiedTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,55 +140,53 @@ namespace Model
      * <p> A filter that returns only endpoints that were modified after the specified
      * timestamp. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const { return m_lastModifiedTimeAfter; }
     inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
-    inline void SetLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = value; }
-    inline void SetLastModifiedTimeAfter(Aws::Utils::DateTime&& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = std::move(value); }
-    inline ListEndpointsRequest& WithLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { SetLastModifiedTimeAfter(value); return *this;}
-    inline ListEndpointsRequest& WithLastModifiedTimeAfter(Aws::Utils::DateTime&& value) { SetLastModifiedTimeAfter(std::move(value)); return *this;}
+    template<typename LastModifiedTimeAfterT = Aws::Utils::DateTime>
+    void SetLastModifiedTimeAfter(LastModifiedTimeAfterT&& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = std::forward<LastModifiedTimeAfterT>(value); }
+    template<typename LastModifiedTimeAfterT = Aws::Utils::DateTime>
+    ListEndpointsRequest& WithLastModifiedTimeAfter(LastModifiedTimeAfterT&& value) { SetLastModifiedTimeAfter(std::forward<LastModifiedTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A filter that returns only endpoints with the specified status.</p>
      */
-    inline const EndpointStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline EndpointStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const EndpointStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(EndpointStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListEndpointsRequest& WithStatusEquals(const EndpointStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListEndpointsRequest& WithStatusEquals(EndpointStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(EndpointStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListEndpointsRequest& WithStatusEquals(EndpointStatus value) { SetStatusEquals(value); return *this;}
     ///@}
   private:
 
-    EndpointSortKey m_sortBy;
+    EndpointSortKey m_sortBy{EndpointSortKey::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    OrderKey m_sortOrder;
+    OrderKey m_sortOrder{OrderKey::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimeBefore;
+    Aws::Utils::DateTime m_lastModifiedTimeBefore{};
     bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimeAfter;
+    Aws::Utils::DateTime m_lastModifiedTimeAfter{};
     bool m_lastModifiedTimeAfterHasBeenSet = false;
 
-    EndpointStatus m_statusEquals;
+    EndpointStatus m_statusEquals{EndpointStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
   };
 

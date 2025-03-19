@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaId::SchemaId() : 
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_registryNameHasBeenSet(false)
-{
-}
-
 SchemaId::SchemaId(JsonView jsonValue)
-  : SchemaId()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SchemaId& SchemaId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
     m_registryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

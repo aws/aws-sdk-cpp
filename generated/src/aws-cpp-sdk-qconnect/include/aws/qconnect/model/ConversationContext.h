@@ -33,7 +33,7 @@ namespace Model
   class ConversationContext
   {
   public:
-    AWS_QCONNECT_API ConversationContext();
+    AWS_QCONNECT_API ConversationContext() = default;
     AWS_QCONNECT_API ConversationContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ConversationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The self service conversation history before the Amazon Q in Connect
      * session.</p>
      */
-    inline const Aws::Vector<SelfServiceConversationHistory>& GetSelfServiceConversationHistory() const{ return m_selfServiceConversationHistory; }
+    inline const Aws::Vector<SelfServiceConversationHistory>& GetSelfServiceConversationHistory() const { return m_selfServiceConversationHistory; }
     inline bool SelfServiceConversationHistoryHasBeenSet() const { return m_selfServiceConversationHistoryHasBeenSet; }
-    inline void SetSelfServiceConversationHistory(const Aws::Vector<SelfServiceConversationHistory>& value) { m_selfServiceConversationHistoryHasBeenSet = true; m_selfServiceConversationHistory = value; }
-    inline void SetSelfServiceConversationHistory(Aws::Vector<SelfServiceConversationHistory>&& value) { m_selfServiceConversationHistoryHasBeenSet = true; m_selfServiceConversationHistory = std::move(value); }
-    inline ConversationContext& WithSelfServiceConversationHistory(const Aws::Vector<SelfServiceConversationHistory>& value) { SetSelfServiceConversationHistory(value); return *this;}
-    inline ConversationContext& WithSelfServiceConversationHistory(Aws::Vector<SelfServiceConversationHistory>&& value) { SetSelfServiceConversationHistory(std::move(value)); return *this;}
-    inline ConversationContext& AddSelfServiceConversationHistory(const SelfServiceConversationHistory& value) { m_selfServiceConversationHistoryHasBeenSet = true; m_selfServiceConversationHistory.push_back(value); return *this; }
-    inline ConversationContext& AddSelfServiceConversationHistory(SelfServiceConversationHistory&& value) { m_selfServiceConversationHistoryHasBeenSet = true; m_selfServiceConversationHistory.push_back(std::move(value)); return *this; }
+    template<typename SelfServiceConversationHistoryT = Aws::Vector<SelfServiceConversationHistory>>
+    void SetSelfServiceConversationHistory(SelfServiceConversationHistoryT&& value) { m_selfServiceConversationHistoryHasBeenSet = true; m_selfServiceConversationHistory = std::forward<SelfServiceConversationHistoryT>(value); }
+    template<typename SelfServiceConversationHistoryT = Aws::Vector<SelfServiceConversationHistory>>
+    ConversationContext& WithSelfServiceConversationHistory(SelfServiceConversationHistoryT&& value) { SetSelfServiceConversationHistory(std::forward<SelfServiceConversationHistoryT>(value)); return *this;}
+    template<typename SelfServiceConversationHistoryT = SelfServiceConversationHistory>
+    ConversationContext& AddSelfServiceConversationHistory(SelfServiceConversationHistoryT&& value) { m_selfServiceConversationHistoryHasBeenSet = true; m_selfServiceConversationHistory.emplace_back(std::forward<SelfServiceConversationHistoryT>(value)); return *this; }
     ///@}
   private:
 

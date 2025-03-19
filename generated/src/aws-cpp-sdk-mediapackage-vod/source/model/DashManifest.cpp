@@ -18,22 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-DashManifest::DashManifest() : 
-    m_manifestLayout(ManifestLayout::NOT_SET),
-    m_manifestLayoutHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_profile(Profile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_scteMarkersSource(ScteMarkersSource::NOT_SET),
-    m_scteMarkersSourceHasBeenSet(false),
-    m_streamSelectionHasBeenSet(false)
-{
-}
-
 DashManifest::DashManifest(JsonView jsonValue)
-  : DashManifest()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ DashManifest& DashManifest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("manifestLayout"))
   {
     m_manifestLayout = ManifestLayoutMapper::GetManifestLayoutForName(jsonValue.GetString("manifestLayout"));
-
     m_manifestLayoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestName"))
   {
     m_manifestName = jsonValue.GetString("manifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minBufferTimeSeconds"))
   {
     m_minBufferTimeSeconds = jsonValue.GetInteger("minBufferTimeSeconds");
-
     m_minBufferTimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profile"))
   {
     m_profile = ProfileMapper::GetProfileForName(jsonValue.GetString("profile"));
-
     m_profileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scteMarkersSource"))
   {
     m_scteMarkersSource = ScteMarkersSourceMapper::GetScteMarkersSourceForName(jsonValue.GetString("scteMarkersSource"));
-
     m_scteMarkersSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamSelection"))
   {
     m_streamSelection = jsonValue.GetObject("streamSelection");
-
     m_streamSelectionHasBeenSet = true;
   }
-
   return *this;
 }
 

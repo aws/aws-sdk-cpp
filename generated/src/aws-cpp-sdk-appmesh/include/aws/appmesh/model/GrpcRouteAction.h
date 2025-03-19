@@ -33,7 +33,7 @@ namespace Model
   class GrpcRouteAction
   {
   public:
-    AWS_APPMESH_API GrpcRouteAction();
+    AWS_APPMESH_API GrpcRouteAction() = default;
     AWS_APPMESH_API GrpcRouteAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API GrpcRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>An object that represents the targets that traffic is routed to when a
      * request matches the route.</p>
      */
-    inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const{ return m_weightedTargets; }
+    inline const Aws::Vector<WeightedTarget>& GetWeightedTargets() const { return m_weightedTargets; }
     inline bool WeightedTargetsHasBeenSet() const { return m_weightedTargetsHasBeenSet; }
-    inline void SetWeightedTargets(const Aws::Vector<WeightedTarget>& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = value; }
-    inline void SetWeightedTargets(Aws::Vector<WeightedTarget>&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = std::move(value); }
-    inline GrpcRouteAction& WithWeightedTargets(const Aws::Vector<WeightedTarget>& value) { SetWeightedTargets(value); return *this;}
-    inline GrpcRouteAction& WithWeightedTargets(Aws::Vector<WeightedTarget>&& value) { SetWeightedTargets(std::move(value)); return *this;}
-    inline GrpcRouteAction& AddWeightedTargets(const WeightedTarget& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.push_back(value); return *this; }
-    inline GrpcRouteAction& AddWeightedTargets(WeightedTarget&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.push_back(std::move(value)); return *this; }
+    template<typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
+    void SetWeightedTargets(WeightedTargetsT&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = std::forward<WeightedTargetsT>(value); }
+    template<typename WeightedTargetsT = Aws::Vector<WeightedTarget>>
+    GrpcRouteAction& WithWeightedTargets(WeightedTargetsT&& value) { SetWeightedTargets(std::forward<WeightedTargetsT>(value)); return *this;}
+    template<typename WeightedTargetsT = WeightedTarget>
+    GrpcRouteAction& AddWeightedTargets(WeightedTargetsT&& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets.emplace_back(std::forward<WeightedTargetsT>(value)); return *this; }
     ///@}
   private:
 

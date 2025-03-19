@@ -31,7 +31,7 @@ namespace Model
   class IpRange
   {
   public:
-    AWS_EC2_API IpRange();
+    AWS_EC2_API IpRange() = default;
     AWS_EC2_API IpRange(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
      * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline IpRange& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline IpRange& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline IpRange& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IpRange& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * CIDR block (such as 100.68.0.0/18), the API throws an duplicate rule error.</p>
      * 
      */
-    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
+    inline const Aws::String& GetCidrIp() const { return m_cidrIp; }
     inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
-    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-    inline IpRange& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-    inline IpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-    inline IpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
+    template<typename CidrIpT = Aws::String>
+    void SetCidrIp(CidrIpT&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::forward<CidrIpT>(value); }
+    template<typename CidrIpT = Aws::String>
+    IpRange& WithCidrIp(CidrIpT&& value) { SetCidrIp(std::forward<CidrIpT>(value)); return *this;}
     ///@}
   private:
 

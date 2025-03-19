@@ -33,7 +33,7 @@ namespace Model
   class PreviewPrivacyImpactParametersInput
   {
   public:
-    AWS_CLEANROOMS_API PreviewPrivacyImpactParametersInput();
+    AWS_CLEANROOMS_API PreviewPrivacyImpactParametersInput() = default;
     AWS_CLEANROOMS_API PreviewPrivacyImpactParametersInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API PreviewPrivacyImpactParametersInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>An array that specifies the epsilon and noise parameters.</p>
      */
-    inline const DifferentialPrivacyPreviewParametersInput& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
+    inline const DifferentialPrivacyPreviewParametersInput& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
     inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-    inline void SetDifferentialPrivacy(const DifferentialPrivacyPreviewParametersInput& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
-    inline void SetDifferentialPrivacy(DifferentialPrivacyPreviewParametersInput&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
-    inline PreviewPrivacyImpactParametersInput& WithDifferentialPrivacy(const DifferentialPrivacyPreviewParametersInput& value) { SetDifferentialPrivacy(value); return *this;}
-    inline PreviewPrivacyImpactParametersInput& WithDifferentialPrivacy(DifferentialPrivacyPreviewParametersInput&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
+    template<typename DifferentialPrivacyT = DifferentialPrivacyPreviewParametersInput>
+    void SetDifferentialPrivacy(DifferentialPrivacyT&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value); }
+    template<typename DifferentialPrivacyT = DifferentialPrivacyPreviewParametersInput>
+    PreviewPrivacyImpactParametersInput& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
     ///@}
   private:
 

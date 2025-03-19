@@ -29,7 +29,7 @@ namespace Model
   class ListEffectiveDeploymentsResult
   {
   public:
-    AWS_GREENGRASSV2_API ListEffectiveDeploymentsResult();
+    AWS_GREENGRASSV2_API ListEffectiveDeploymentsResult() = default;
     AWS_GREENGRASSV2_API ListEffectiveDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API ListEffectiveDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list that summarizes each deployment on the core device.</p>
      */
-    inline const Aws::Vector<EffectiveDeployment>& GetEffectiveDeployments() const{ return m_effectiveDeployments; }
-    inline void SetEffectiveDeployments(const Aws::Vector<EffectiveDeployment>& value) { m_effectiveDeployments = value; }
-    inline void SetEffectiveDeployments(Aws::Vector<EffectiveDeployment>&& value) { m_effectiveDeployments = std::move(value); }
-    inline ListEffectiveDeploymentsResult& WithEffectiveDeployments(const Aws::Vector<EffectiveDeployment>& value) { SetEffectiveDeployments(value); return *this;}
-    inline ListEffectiveDeploymentsResult& WithEffectiveDeployments(Aws::Vector<EffectiveDeployment>&& value) { SetEffectiveDeployments(std::move(value)); return *this;}
-    inline ListEffectiveDeploymentsResult& AddEffectiveDeployments(const EffectiveDeployment& value) { m_effectiveDeployments.push_back(value); return *this; }
-    inline ListEffectiveDeploymentsResult& AddEffectiveDeployments(EffectiveDeployment&& value) { m_effectiveDeployments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EffectiveDeployment>& GetEffectiveDeployments() const { return m_effectiveDeployments; }
+    template<typename EffectiveDeploymentsT = Aws::Vector<EffectiveDeployment>>
+    void SetEffectiveDeployments(EffectiveDeploymentsT&& value) { m_effectiveDeploymentsHasBeenSet = true; m_effectiveDeployments = std::forward<EffectiveDeploymentsT>(value); }
+    template<typename EffectiveDeploymentsT = Aws::Vector<EffectiveDeployment>>
+    ListEffectiveDeploymentsResult& WithEffectiveDeployments(EffectiveDeploymentsT&& value) { SetEffectiveDeployments(std::forward<EffectiveDeploymentsT>(value)); return *this;}
+    template<typename EffectiveDeploymentsT = EffectiveDeployment>
+    ListEffectiveDeploymentsResult& AddEffectiveDeployments(EffectiveDeploymentsT&& value) { m_effectiveDeploymentsHasBeenSet = true; m_effectiveDeployments.emplace_back(std::forward<EffectiveDeploymentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEffectiveDeploymentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEffectiveDeploymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEffectiveDeploymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEffectiveDeploymentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEffectiveDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEffectiveDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEffectiveDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEffectiveDeploymentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EffectiveDeployment> m_effectiveDeployments;
+    bool m_effectiveDeploymentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

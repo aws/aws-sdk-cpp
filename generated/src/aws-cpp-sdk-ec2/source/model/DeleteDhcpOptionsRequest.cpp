@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteDhcpOptionsRequest::DeleteDhcpOptionsRequest() : 
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDhcpOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

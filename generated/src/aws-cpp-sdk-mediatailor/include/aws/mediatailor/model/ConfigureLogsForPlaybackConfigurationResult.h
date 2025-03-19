@@ -29,7 +29,7 @@ namespace Model
   class ConfigureLogsForPlaybackConfigurationResult
   {
   public:
-    AWS_MEDIATAILOR_API ConfigureLogsForPlaybackConfigurationResult();
+    AWS_MEDIATAILOR_API ConfigureLogsForPlaybackConfigurationResult() = default;
     AWS_MEDIATAILOR_API ConfigureLogsForPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIATAILOR_API ConfigureLogsForPlaybackConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,8 +39,8 @@ namespace Model
      * <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs
      * account.</p>
      */
-    inline int GetPercentEnabled() const{ return m_percentEnabled; }
-    inline void SetPercentEnabled(int value) { m_percentEnabled = value; }
+    inline int GetPercentEnabled() const { return m_percentEnabled; }
+    inline void SetPercentEnabled(int value) { m_percentEnabledHasBeenSet = true; m_percentEnabled = value; }
     inline ConfigureLogsForPlaybackConfigurationResult& WithPercentEnabled(int value) { SetPercentEnabled(value); return *this;}
     ///@}
 
@@ -48,13 +48,11 @@ namespace Model
     /**
      * <p>The name of the playback configuration.</p>
      */
-    inline const Aws::String& GetPlaybackConfigurationName() const{ return m_playbackConfigurationName; }
-    inline void SetPlaybackConfigurationName(const Aws::String& value) { m_playbackConfigurationName = value; }
-    inline void SetPlaybackConfigurationName(Aws::String&& value) { m_playbackConfigurationName = std::move(value); }
-    inline void SetPlaybackConfigurationName(const char* value) { m_playbackConfigurationName.assign(value); }
-    inline ConfigureLogsForPlaybackConfigurationResult& WithPlaybackConfigurationName(const Aws::String& value) { SetPlaybackConfigurationName(value); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationResult& WithPlaybackConfigurationName(Aws::String&& value) { SetPlaybackConfigurationName(std::move(value)); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationResult& WithPlaybackConfigurationName(const char* value) { SetPlaybackConfigurationName(value); return *this;}
+    inline const Aws::String& GetPlaybackConfigurationName() const { return m_playbackConfigurationName; }
+    template<typename PlaybackConfigurationNameT = Aws::String>
+    void SetPlaybackConfigurationName(PlaybackConfigurationNameT&& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = std::forward<PlaybackConfigurationNameT>(value); }
+    template<typename PlaybackConfigurationNameT = Aws::String>
+    ConfigureLogsForPlaybackConfigurationResult& WithPlaybackConfigurationName(PlaybackConfigurationNameT&& value) { SetPlaybackConfigurationName(std::forward<PlaybackConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,34 +64,35 @@ namespace Model
      * destination of choice. Supported destinations are CloudWatch Logs log group,
      * Amazon S3 bucket, and Amazon Data Firehose stream. </p>
      */
-    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const{ return m_enabledLoggingStrategies; }
-    inline void SetEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { m_enabledLoggingStrategies = value; }
-    inline void SetEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { m_enabledLoggingStrategies = std::move(value); }
-    inline ConfigureLogsForPlaybackConfigurationResult& WithEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { SetEnabledLoggingStrategies(value); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationResult& WithEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { SetEnabledLoggingStrategies(std::move(value)); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationResult& AddEnabledLoggingStrategies(const LoggingStrategy& value) { m_enabledLoggingStrategies.push_back(value); return *this; }
-    inline ConfigureLogsForPlaybackConfigurationResult& AddEnabledLoggingStrategies(LoggingStrategy&& value) { m_enabledLoggingStrategies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const { return m_enabledLoggingStrategies; }
+    template<typename EnabledLoggingStrategiesT = Aws::Vector<LoggingStrategy>>
+    void SetEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = std::forward<EnabledLoggingStrategiesT>(value); }
+    template<typename EnabledLoggingStrategiesT = Aws::Vector<LoggingStrategy>>
+    ConfigureLogsForPlaybackConfigurationResult& WithEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { SetEnabledLoggingStrategies(std::forward<EnabledLoggingStrategiesT>(value)); return *this;}
+    inline ConfigureLogsForPlaybackConfigurationResult& AddEnabledLoggingStrategies(LoggingStrategy value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfigureLogsForPlaybackConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfigureLogsForPlaybackConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_percentEnabled;
+    int m_percentEnabled{0};
+    bool m_percentEnabledHasBeenSet = false;
 
     Aws::String m_playbackConfigurationName;
+    bool m_playbackConfigurationNameHasBeenSet = false;
 
     Aws::Vector<LoggingStrategy> m_enabledLoggingStrategies;
+    bool m_enabledLoggingStrategiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

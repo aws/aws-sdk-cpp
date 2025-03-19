@@ -32,7 +32,7 @@ namespace Model
   class EngineVersion
   {
   public:
-    AWS_ATHENA_API EngineVersion();
+    AWS_ATHENA_API EngineVersion() = default;
     AWS_ATHENA_API EngineVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API EngineVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * the output of <code>ListEngineVersions</code>, including AUTO. The default is
      * AUTO.</p>
      */
-    inline const Aws::String& GetSelectedEngineVersion() const{ return m_selectedEngineVersion; }
+    inline const Aws::String& GetSelectedEngineVersion() const { return m_selectedEngineVersion; }
     inline bool SelectedEngineVersionHasBeenSet() const { return m_selectedEngineVersionHasBeenSet; }
-    inline void SetSelectedEngineVersion(const Aws::String& value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion = value; }
-    inline void SetSelectedEngineVersion(Aws::String&& value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion = std::move(value); }
-    inline void SetSelectedEngineVersion(const char* value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion.assign(value); }
-    inline EngineVersion& WithSelectedEngineVersion(const Aws::String& value) { SetSelectedEngineVersion(value); return *this;}
-    inline EngineVersion& WithSelectedEngineVersion(Aws::String&& value) { SetSelectedEngineVersion(std::move(value)); return *this;}
-    inline EngineVersion& WithSelectedEngineVersion(const char* value) { SetSelectedEngineVersion(value); return *this;}
+    template<typename SelectedEngineVersionT = Aws::String>
+    void SetSelectedEngineVersion(SelectedEngineVersionT&& value) { m_selectedEngineVersionHasBeenSet = true; m_selectedEngineVersion = std::forward<SelectedEngineVersionT>(value); }
+    template<typename SelectedEngineVersionT = Aws::String>
+    EngineVersion& WithSelectedEngineVersion(SelectedEngineVersionT&& value) { SetSelectedEngineVersion(std::forward<SelectedEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code>
      * field is ignored.</p>
      */
-    inline const Aws::String& GetEffectiveEngineVersion() const{ return m_effectiveEngineVersion; }
+    inline const Aws::String& GetEffectiveEngineVersion() const { return m_effectiveEngineVersion; }
     inline bool EffectiveEngineVersionHasBeenSet() const { return m_effectiveEngineVersionHasBeenSet; }
-    inline void SetEffectiveEngineVersion(const Aws::String& value) { m_effectiveEngineVersionHasBeenSet = true; m_effectiveEngineVersion = value; }
-    inline void SetEffectiveEngineVersion(Aws::String&& value) { m_effectiveEngineVersionHasBeenSet = true; m_effectiveEngineVersion = std::move(value); }
-    inline void SetEffectiveEngineVersion(const char* value) { m_effectiveEngineVersionHasBeenSet = true; m_effectiveEngineVersion.assign(value); }
-    inline EngineVersion& WithEffectiveEngineVersion(const Aws::String& value) { SetEffectiveEngineVersion(value); return *this;}
-    inline EngineVersion& WithEffectiveEngineVersion(Aws::String&& value) { SetEffectiveEngineVersion(std::move(value)); return *this;}
-    inline EngineVersion& WithEffectiveEngineVersion(const char* value) { SetEffectiveEngineVersion(value); return *this;}
+    template<typename EffectiveEngineVersionT = Aws::String>
+    void SetEffectiveEngineVersion(EffectiveEngineVersionT&& value) { m_effectiveEngineVersionHasBeenSet = true; m_effectiveEngineVersion = std::forward<EffectiveEngineVersionT>(value); }
+    template<typename EffectiveEngineVersionT = Aws::String>
+    EngineVersion& WithEffectiveEngineVersion(EffectiveEngineVersionT&& value) { SetEffectiveEngineVersion(std::forward<EffectiveEngineVersionT>(value)); return *this;}
     ///@}
   private:
 

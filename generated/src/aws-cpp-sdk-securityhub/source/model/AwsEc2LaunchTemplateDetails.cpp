@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDetails::AwsEc2LaunchTemplateDetails() : 
-    m_launchTemplateNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_launchTemplateDataHasBeenSet(false),
-    m_defaultVersionNumber(0),
-    m_defaultVersionNumberHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDetails::AwsEc2LaunchTemplateDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AwsEc2LaunchTemplateDetails& AwsEc2LaunchTemplateDetails::operator =(JsonView js
   if(jsonValue.ValueExists("LaunchTemplateName"))
   {
     m_launchTemplateName = jsonValue.GetString("LaunchTemplateName");
-
     m_launchTemplateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchTemplateData"))
   {
     m_launchTemplateData = jsonValue.GetObject("LaunchTemplateData");
-
     m_launchTemplateDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultVersionNumber"))
   {
     m_defaultVersionNumber = jsonValue.GetInt64("DefaultVersionNumber");
-
     m_defaultVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionNumber"))
   {
     m_latestVersionNumber = jsonValue.GetInt64("LatestVersionNumber");
-
     m_latestVersionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

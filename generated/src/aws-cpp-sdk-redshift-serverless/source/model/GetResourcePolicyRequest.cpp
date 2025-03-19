@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcePolicyRequest::GetResourcePolicyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

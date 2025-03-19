@@ -30,7 +30,7 @@ namespace Model
   class AutoStopConfig
   {
   public:
-    AWS_EMRSERVERLESS_API AutoStopConfig();
+    AWS_EMRSERVERLESS_API AutoStopConfig() = default;
     AWS_EMRSERVERLESS_API AutoStopConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API AutoStopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Enables the application to automatically stop after a certain amount of time
      * being idle. Defaults to true.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AutoStopConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The amount of idle time in minutes after which your application will
      * automatically stop. Defaults to 15 minutes.</p>
      */
-    inline int GetIdleTimeoutMinutes() const{ return m_idleTimeoutMinutes; }
+    inline int GetIdleTimeoutMinutes() const { return m_idleTimeoutMinutes; }
     inline bool IdleTimeoutMinutesHasBeenSet() const { return m_idleTimeoutMinutesHasBeenSet; }
     inline void SetIdleTimeoutMinutes(int value) { m_idleTimeoutMinutesHasBeenSet = true; m_idleTimeoutMinutes = value; }
     inline AutoStopConfig& WithIdleTimeoutMinutes(int value) { SetIdleTimeoutMinutes(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_idleTimeoutMinutes;
+    int m_idleTimeoutMinutes{0};
     bool m_idleTimeoutMinutesHasBeenSet = false;
   };
 

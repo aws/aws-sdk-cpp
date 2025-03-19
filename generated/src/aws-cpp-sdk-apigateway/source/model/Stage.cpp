@@ -19,34 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-Stage::Stage() : 
-    m_deploymentIdHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_cacheClusterEnabled(false),
-    m_cacheClusterEnabledHasBeenSet(false),
-    m_cacheClusterSize(CacheClusterSize::NOT_SET),
-    m_cacheClusterSizeHasBeenSet(false),
-    m_cacheClusterStatus(CacheClusterStatus::NOT_SET),
-    m_cacheClusterStatusHasBeenSet(false),
-    m_methodSettingsHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_documentationVersionHasBeenSet(false),
-    m_accessLogSettingsHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false),
-    m_tracingEnabled(false),
-    m_tracingEnabledHasBeenSet(false),
-    m_webAclArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Stage::Stage(JsonView jsonValue)
-  : Stage()
 {
   *this = jsonValue;
 }
@@ -56,52 +29,38 @@ Stage& Stage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientCertificateId"))
   {
     m_clientCertificateId = jsonValue.GetString("clientCertificateId");
-
     m_clientCertificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageName"))
   {
     m_stageName = jsonValue.GetString("stageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheClusterEnabled"))
   {
     m_cacheClusterEnabled = jsonValue.GetBool("cacheClusterEnabled");
-
     m_cacheClusterEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheClusterSize"))
   {
     m_cacheClusterSize = CacheClusterSizeMapper::GetCacheClusterSizeForName(jsonValue.GetString("cacheClusterSize"));
-
     m_cacheClusterSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheClusterStatus"))
   {
     m_cacheClusterStatus = CacheClusterStatusMapper::GetCacheClusterStatusForName(jsonValue.GetString("cacheClusterStatus"));
-
     m_cacheClusterStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("methodSettings"))
   {
     Aws::Map<Aws::String, JsonView> methodSettingsJsonMap = jsonValue.GetObject("methodSettings").GetAllObjects();
@@ -111,7 +70,6 @@ Stage& Stage::operator =(JsonView jsonValue)
     }
     m_methodSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variables"))
   {
     Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("variables").GetAllObjects();
@@ -121,42 +79,31 @@ Stage& Stage::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentationVersion"))
   {
     m_documentationVersion = jsonValue.GetString("documentationVersion");
-
     m_documentationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessLogSettings"))
   {
     m_accessLogSettings = jsonValue.GetObject("accessLogSettings");
-
     m_accessLogSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canarySettings"))
   {
     m_canarySettings = jsonValue.GetObject("canarySettings");
-
     m_canarySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tracingEnabled"))
   {
     m_tracingEnabled = jsonValue.GetBool("tracingEnabled");
-
     m_tracingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webAclArn"))
   {
     m_webAclArn = jsonValue.GetString("webAclArn");
-
     m_webAclArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -166,21 +113,16 @@ Stage& Stage::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

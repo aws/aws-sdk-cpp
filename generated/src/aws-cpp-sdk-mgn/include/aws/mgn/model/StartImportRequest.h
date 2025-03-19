@@ -26,7 +26,7 @@ namespace Model
   class StartImportRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API StartImportRequest();
+    AWS_MGN_API StartImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,24 @@ namespace Model
     /**
      * <p>Start import request client token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartImportRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartImportRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartImportRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartImportRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start import request s3 bucket source.</p>
      */
-    inline const S3BucketSource& GetS3BucketSource() const{ return m_s3BucketSource; }
+    inline const S3BucketSource& GetS3BucketSource() const { return m_s3BucketSource; }
     inline bool S3BucketSourceHasBeenSet() const { return m_s3BucketSourceHasBeenSet; }
-    inline void SetS3BucketSource(const S3BucketSource& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = value; }
-    inline void SetS3BucketSource(S3BucketSource&& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = std::move(value); }
-    inline StartImportRequest& WithS3BucketSource(const S3BucketSource& value) { SetS3BucketSource(value); return *this;}
-    inline StartImportRequest& WithS3BucketSource(S3BucketSource&& value) { SetS3BucketSource(std::move(value)); return *this;}
+    template<typename S3BucketSourceT = S3BucketSource>
+    void SetS3BucketSource(S3BucketSourceT&& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = std::forward<S3BucketSourceT>(value); }
+    template<typename S3BucketSourceT = S3BucketSource>
+    StartImportRequest& WithS3BucketSource(S3BucketSourceT&& value) { SetS3BucketSource(std::forward<S3BucketSourceT>(value)); return *this;}
     ///@}
   private:
 

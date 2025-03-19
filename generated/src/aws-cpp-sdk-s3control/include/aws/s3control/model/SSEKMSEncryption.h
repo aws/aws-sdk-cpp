@@ -31,7 +31,7 @@ namespace Model
   class SSEKMSEncryption
   {
   public:
-    AWS_S3CONTROL_API SSEKMSEncryption();
+    AWS_S3CONTROL_API SSEKMSEncryption() = default;
     AWS_S3CONTROL_API SSEKMSEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API SSEKMSEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * Web Services KMS) symmetric encryption customer managed key to use for
      * encrypting generated manifest objects.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline SSEKMSEncryption& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline SSEKMSEncryption& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline SSEKMSEncryption& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    SSEKMSEncryption& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
   private:
 

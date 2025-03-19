@@ -12,12 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddFlowMediaStreamsRequest::AddFlowMediaStreamsRequest() : 
-    m_flowArnHasBeenSet(false),
-    m_mediaStreamsHasBeenSet(false)
-{
-}
-
 Aws::String AddFlowMediaStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

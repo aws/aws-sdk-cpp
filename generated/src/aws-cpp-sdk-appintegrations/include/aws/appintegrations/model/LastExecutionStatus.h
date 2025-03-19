@@ -32,7 +32,7 @@ namespace Model
   class LastExecutionStatus
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API LastExecutionStatus();
+    AWS_APPINTEGRATIONSSERVICE_API LastExecutionStatus() = default;
     AWS_APPINTEGRATIONSSERVICE_API LastExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API LastExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The job status enum string.</p>
      */
-    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
+    inline ExecutionStatus GetExecutionStatus() const { return m_executionStatus; }
     inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
-    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
-    inline LastExecutionStatus& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
-    inline LastExecutionStatus& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+    inline void SetExecutionStatus(ExecutionStatus value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+    inline LastExecutionStatus& WithExecutionStatus(ExecutionStatus value) { SetExecutionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message of a job.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline LastExecutionStatus& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline LastExecutionStatus& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline LastExecutionStatus& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    LastExecutionStatus& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    ExecutionStatus m_executionStatus;
+    ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
     bool m_executionStatusHasBeenSet = false;
 
     Aws::String m_statusMessage;

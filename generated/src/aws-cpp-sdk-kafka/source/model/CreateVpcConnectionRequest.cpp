@@ -12,16 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcConnectionRequest::CreateVpcConnectionRequest() : 
-    m_targetClusterArnHasBeenSet(false),
-    m_authenticationHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_clientSubnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

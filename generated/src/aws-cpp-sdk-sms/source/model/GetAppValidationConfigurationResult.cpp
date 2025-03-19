@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppValidationConfigurationResult::GetAppValidationConfigurationResult()
-{
-}
-
 GetAppValidationConfigurationResult::GetAppValidationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetAppValidationConfigurationResult& GetAppValidationConfigurationResult::operat
     {
       m_appValidationConfigurations.push_back(appValidationConfigurationsJsonList[appValidationConfigurationsIndex].AsObject());
     }
+    m_appValidationConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverGroupValidationConfigurations"))
   {
     Aws::Utils::Array<JsonView> serverGroupValidationConfigurationsJsonList = jsonValue.GetArray("serverGroupValidationConfigurations");
@@ -45,14 +41,15 @@ GetAppValidationConfigurationResult& GetAppValidationConfigurationResult::operat
     {
       m_serverGroupValidationConfigurations.push_back(serverGroupValidationConfigurationsJsonList[serverGroupValidationConfigurationsIndex].AsObject());
     }
+    m_serverGroupValidationConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

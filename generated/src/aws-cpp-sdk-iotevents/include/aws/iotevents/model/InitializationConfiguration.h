@@ -30,7 +30,7 @@ namespace Model
   class InitializationConfiguration
   {
   public:
-    AWS_IOTEVENTS_API InitializationConfiguration();
+    AWS_IOTEVENTS_API InitializationConfiguration() = default;
     AWS_IOTEVENTS_API InitializationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API InitializationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <code>FALSE</code>, all alarm instances created based on the alarm model are
      * activated. The default value is <code>TRUE</code>.</p>
      */
-    inline bool GetDisabledOnInitialization() const{ return m_disabledOnInitialization; }
+    inline bool GetDisabledOnInitialization() const { return m_disabledOnInitialization; }
     inline bool DisabledOnInitializationHasBeenSet() const { return m_disabledOnInitializationHasBeenSet; }
     inline void SetDisabledOnInitialization(bool value) { m_disabledOnInitializationHasBeenSet = true; m_disabledOnInitialization = value; }
     inline InitializationConfiguration& WithDisabledOnInitialization(bool value) { SetDisabledOnInitialization(value); return *this;}
     ///@}
   private:
 
-    bool m_disabledOnInitialization;
+    bool m_disabledOnInitialization{false};
     bool m_disabledOnInitializationHasBeenSet = false;
   };
 

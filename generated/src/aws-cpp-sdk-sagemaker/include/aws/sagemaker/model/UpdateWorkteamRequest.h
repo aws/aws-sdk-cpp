@@ -25,7 +25,7 @@ namespace Model
   class UpdateWorkteamRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateWorkteamRequest();
+    AWS_SAGEMAKER_API UpdateWorkteamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the work team to update.</p>
      */
-    inline const Aws::String& GetWorkteamName() const{ return m_workteamName; }
+    inline const Aws::String& GetWorkteamName() const { return m_workteamName; }
     inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
-    inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
-    inline void SetWorkteamName(Aws::String&& value) { m_workteamNameHasBeenSet = true; m_workteamName = std::move(value); }
-    inline void SetWorkteamName(const char* value) { m_workteamNameHasBeenSet = true; m_workteamName.assign(value); }
-    inline UpdateWorkteamRequest& WithWorkteamName(const Aws::String& value) { SetWorkteamName(value); return *this;}
-    inline UpdateWorkteamRequest& WithWorkteamName(Aws::String&& value) { SetWorkteamName(std::move(value)); return *this;}
-    inline UpdateWorkteamRequest& WithWorkteamName(const char* value) { SetWorkteamName(value); return *this;}
+    template<typename WorkteamNameT = Aws::String>
+    void SetWorkteamName(WorkteamNameT&& value) { m_workteamNameHasBeenSet = true; m_workteamName = std::forward<WorkteamNameT>(value); }
+    template<typename WorkteamNameT = Aws::String>
+    UpdateWorkteamRequest& WithWorkteamName(WorkteamNameT&& value) { SetWorkteamName(std::forward<WorkteamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,40 +75,38 @@ namespace Model
      * on the work team. If you do not include these user groups, they will no longer
      * be associated with the work team you update. </p>
      */
-    inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
+    inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const { return m_memberDefinitions; }
     inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
-    inline void SetMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = value; }
-    inline void SetMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = std::move(value); }
-    inline UpdateWorkteamRequest& WithMemberDefinitions(const Aws::Vector<MemberDefinition>& value) { SetMemberDefinitions(value); return *this;}
-    inline UpdateWorkteamRequest& WithMemberDefinitions(Aws::Vector<MemberDefinition>&& value) { SetMemberDefinitions(std::move(value)); return *this;}
-    inline UpdateWorkteamRequest& AddMemberDefinitions(const MemberDefinition& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(value); return *this; }
-    inline UpdateWorkteamRequest& AddMemberDefinitions(MemberDefinition&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.push_back(std::move(value)); return *this; }
+    template<typename MemberDefinitionsT = Aws::Vector<MemberDefinition>>
+    void SetMemberDefinitions(MemberDefinitionsT&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions = std::forward<MemberDefinitionsT>(value); }
+    template<typename MemberDefinitionsT = Aws::Vector<MemberDefinition>>
+    UpdateWorkteamRequest& WithMemberDefinitions(MemberDefinitionsT&& value) { SetMemberDefinitions(std::forward<MemberDefinitionsT>(value)); return *this;}
+    template<typename MemberDefinitionsT = MemberDefinition>
+    UpdateWorkteamRequest& AddMemberDefinitions(MemberDefinitionsT&& value) { m_memberDefinitionsHasBeenSet = true; m_memberDefinitions.emplace_back(std::forward<MemberDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An updated description for the work team.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateWorkteamRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateWorkteamRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateWorkteamRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateWorkteamRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configures SNS topic notifications for available or expiring work items</p>
      */
-    inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+    inline const NotificationConfiguration& GetNotificationConfiguration() const { return m_notificationConfiguration; }
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
-    inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
-    inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
-    inline UpdateWorkteamRequest& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-    inline UpdateWorkteamRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    template<typename NotificationConfigurationT = NotificationConfiguration>
+    void SetNotificationConfiguration(NotificationConfigurationT&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::forward<NotificationConfigurationT>(value); }
+    template<typename NotificationConfigurationT = NotificationConfiguration>
+    UpdateWorkteamRequest& WithNotificationConfiguration(NotificationConfigurationT&& value) { SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +115,12 @@ namespace Model
      * based on the IP address using supported IAM global condition keys. The Amazon S3
      * resource is accessed in the worker portal using a Amazon S3 presigned URL.</p>
      */
-    inline const WorkerAccessConfiguration& GetWorkerAccessConfiguration() const{ return m_workerAccessConfiguration; }
+    inline const WorkerAccessConfiguration& GetWorkerAccessConfiguration() const { return m_workerAccessConfiguration; }
     inline bool WorkerAccessConfigurationHasBeenSet() const { return m_workerAccessConfigurationHasBeenSet; }
-    inline void SetWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = value; }
-    inline void SetWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = std::move(value); }
-    inline UpdateWorkteamRequest& WithWorkerAccessConfiguration(const WorkerAccessConfiguration& value) { SetWorkerAccessConfiguration(value); return *this;}
-    inline UpdateWorkteamRequest& WithWorkerAccessConfiguration(WorkerAccessConfiguration&& value) { SetWorkerAccessConfiguration(std::move(value)); return *this;}
+    template<typename WorkerAccessConfigurationT = WorkerAccessConfiguration>
+    void SetWorkerAccessConfiguration(WorkerAccessConfigurationT&& value) { m_workerAccessConfigurationHasBeenSet = true; m_workerAccessConfiguration = std::forward<WorkerAccessConfigurationT>(value); }
+    template<typename WorkerAccessConfigurationT = WorkerAccessConfiguration>
+    UpdateWorkteamRequest& WithWorkerAccessConfiguration(WorkerAccessConfigurationT&& value) { SetWorkerAccessConfiguration(std::forward<WorkerAccessConfigurationT>(value)); return *this;}
     ///@}
   private:
 

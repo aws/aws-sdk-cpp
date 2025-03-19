@@ -12,11 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInstanceRequest::GetInstanceRequest() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataProtectionPolicyRequest::GetDataProtectionPolicyRequest() : 
-    m_logGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetDataProtectionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

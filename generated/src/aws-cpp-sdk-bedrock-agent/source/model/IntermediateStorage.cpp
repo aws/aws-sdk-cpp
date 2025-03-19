@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-IntermediateStorage::IntermediateStorage() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 IntermediateStorage::IntermediateStorage(JsonView jsonValue)
-  : IntermediateStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IntermediateStorage& IntermediateStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

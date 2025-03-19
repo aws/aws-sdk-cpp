@@ -35,7 +35,7 @@ namespace Model
   class OperationFilter
   {
   public:
-    AWS_SERVICEDISCOVERY_API OperationFilter();
+    AWS_SERVICEDISCOVERY_API OperationFilter() = default;
     AWS_SERVICEDISCOVERY_API OperationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API OperationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * operation.</p> </li> <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed
      * status during a specified date/time range. </p> </li> </ul>
      */
-    inline const OperationFilterName& GetName() const{ return m_name; }
+    inline OperationFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OperationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OperationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline OperationFilter& WithName(const OperationFilterName& value) { SetName(value); return *this;}
-    inline OperationFilter& WithName(OperationFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OperationFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline OperationFilter& WithName(OperationFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +72,14 @@ namespace Model
      * a start date and an end date in Unix date/time format and Coordinated Universal
      * Time (UTC). The start date must be the first value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline OperationFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline OperationFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline OperationFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline OperationFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline OperationFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    OperationFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    OperationFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -102,22 +99,20 @@ namespace Model
      * value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p>
      * </li> </ul>
      */
-    inline const FilterCondition& GetCondition() const{ return m_condition; }
+    inline FilterCondition GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const FilterCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(FilterCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline OperationFilter& WithCondition(const FilterCondition& value) { SetCondition(value); return *this;}
-    inline OperationFilter& WithCondition(FilterCondition&& value) { SetCondition(std::move(value)); return *this;}
+    inline void SetCondition(FilterCondition value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline OperationFilter& WithCondition(FilterCondition value) { SetCondition(value); return *this;}
     ///@}
   private:
 
-    OperationFilterName m_name;
+    OperationFilterName m_name{OperationFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    FilterCondition m_condition;
+    FilterCondition m_condition{FilterCondition::NOT_SET};
     bool m_conditionHasBeenSet = false;
   };
 

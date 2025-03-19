@@ -32,7 +32,7 @@ namespace Model
   class DataSecurityConfig
   {
   public:
-    AWS_COMPREHEND_API DataSecurityConfig();
+    AWS_COMPREHEND_API DataSecurityConfig() = default;
     AWS_COMPREHEND_API DataSecurityConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DataSecurityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
+    inline const Aws::String& GetModelKmsKeyId() const { return m_modelKmsKeyId; }
     inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
-    inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
-    inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
-    inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
-    inline DataSecurityConfig& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
-    inline DataSecurityConfig& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
-    inline DataSecurityConfig& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
+    template<typename ModelKmsKeyIdT = Aws::String>
+    void SetModelKmsKeyId(ModelKmsKeyIdT&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::forward<ModelKmsKeyIdT>(value); }
+    template<typename ModelKmsKeyIdT = Aws::String>
+    DataSecurityConfig& WithModelKmsKeyId(ModelKmsKeyIdT&& value) { SetModelKmsKeyId(std::forward<ModelKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID for the KMS key that Amazon Comprehend uses to encrypt the volume.</p>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline DataSecurityConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline DataSecurityConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline DataSecurityConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    DataSecurityConfig& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,24 +72,22 @@ namespace Model
      * <p>ID for the KMS key that Amazon Comprehend uses to encrypt the data in the
      * data lake.</p>
      */
-    inline const Aws::String& GetDataLakeKmsKeyId() const{ return m_dataLakeKmsKeyId; }
+    inline const Aws::String& GetDataLakeKmsKeyId() const { return m_dataLakeKmsKeyId; }
     inline bool DataLakeKmsKeyIdHasBeenSet() const { return m_dataLakeKmsKeyIdHasBeenSet; }
-    inline void SetDataLakeKmsKeyId(const Aws::String& value) { m_dataLakeKmsKeyIdHasBeenSet = true; m_dataLakeKmsKeyId = value; }
-    inline void SetDataLakeKmsKeyId(Aws::String&& value) { m_dataLakeKmsKeyIdHasBeenSet = true; m_dataLakeKmsKeyId = std::move(value); }
-    inline void SetDataLakeKmsKeyId(const char* value) { m_dataLakeKmsKeyIdHasBeenSet = true; m_dataLakeKmsKeyId.assign(value); }
-    inline DataSecurityConfig& WithDataLakeKmsKeyId(const Aws::String& value) { SetDataLakeKmsKeyId(value); return *this;}
-    inline DataSecurityConfig& WithDataLakeKmsKeyId(Aws::String&& value) { SetDataLakeKmsKeyId(std::move(value)); return *this;}
-    inline DataSecurityConfig& WithDataLakeKmsKeyId(const char* value) { SetDataLakeKmsKeyId(value); return *this;}
+    template<typename DataLakeKmsKeyIdT = Aws::String>
+    void SetDataLakeKmsKeyId(DataLakeKmsKeyIdT&& value) { m_dataLakeKmsKeyIdHasBeenSet = true; m_dataLakeKmsKeyId = std::forward<DataLakeKmsKeyIdT>(value); }
+    template<typename DataLakeKmsKeyIdT = Aws::String>
+    DataSecurityConfig& WithDataLakeKmsKeyId(DataLakeKmsKeyIdT&& value) { SetDataLakeKmsKeyId(std::forward<DataLakeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline DataSecurityConfig& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline DataSecurityConfig& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    DataSecurityConfig& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
   private:
 

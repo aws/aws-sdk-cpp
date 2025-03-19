@@ -31,7 +31,7 @@ namespace Model
   class HttpUrlDestinationSummary
   {
   public:
-    AWS_IOT_API HttpUrlDestinationSummary();
+    AWS_IOT_API HttpUrlDestinationSummary() = default;
     AWS_IOT_API HttpUrlDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API HttpUrlDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The URL used to confirm ownership of or access to the HTTP topic rule
      * destination URL.</p>
      */
-    inline const Aws::String& GetConfirmationUrl() const{ return m_confirmationUrl; }
+    inline const Aws::String& GetConfirmationUrl() const { return m_confirmationUrl; }
     inline bool ConfirmationUrlHasBeenSet() const { return m_confirmationUrlHasBeenSet; }
-    inline void SetConfirmationUrl(const Aws::String& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = value; }
-    inline void SetConfirmationUrl(Aws::String&& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = std::move(value); }
-    inline void SetConfirmationUrl(const char* value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl.assign(value); }
-    inline HttpUrlDestinationSummary& WithConfirmationUrl(const Aws::String& value) { SetConfirmationUrl(value); return *this;}
-    inline HttpUrlDestinationSummary& WithConfirmationUrl(Aws::String&& value) { SetConfirmationUrl(std::move(value)); return *this;}
-    inline HttpUrlDestinationSummary& WithConfirmationUrl(const char* value) { SetConfirmationUrl(value); return *this;}
+    template<typename ConfirmationUrlT = Aws::String>
+    void SetConfirmationUrl(ConfirmationUrlT&& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = std::forward<ConfirmationUrlT>(value); }
+    template<typename ConfirmationUrlT = Aws::String>
+    HttpUrlDestinationSummary& WithConfirmationUrl(ConfirmationUrlT&& value) { SetConfirmationUrl(std::forward<ConfirmationUrlT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DriftCheckExplainability::DriftCheckExplainability() : 
-    m_constraintsHasBeenSet(false),
-    m_configFileHasBeenSet(false)
-{
-}
-
 DriftCheckExplainability::DriftCheckExplainability(JsonView jsonValue)
-  : DriftCheckExplainability()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DriftCheckExplainability& DriftCheckExplainability::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");
-
     m_constraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigFile"))
   {
     m_configFile = jsonValue.GetObject("ConfigFile");
-
     m_configFileHasBeenSet = true;
   }
-
   return *this;
 }
 

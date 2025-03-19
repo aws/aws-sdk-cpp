@@ -32,7 +32,7 @@ namespace Model
   class NetworkPayload
   {
   public:
-    AWS_PANORAMA_API NetworkPayload();
+    AWS_PANORAMA_API NetworkPayload() = default;
     AWS_PANORAMA_API NetworkPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API NetworkPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,36 +42,36 @@ namespace Model
     /**
      * <p>Settings for Ethernet port 0.</p>
      */
-    inline const EthernetPayload& GetEthernet0() const{ return m_ethernet0; }
+    inline const EthernetPayload& GetEthernet0() const { return m_ethernet0; }
     inline bool Ethernet0HasBeenSet() const { return m_ethernet0HasBeenSet; }
-    inline void SetEthernet0(const EthernetPayload& value) { m_ethernet0HasBeenSet = true; m_ethernet0 = value; }
-    inline void SetEthernet0(EthernetPayload&& value) { m_ethernet0HasBeenSet = true; m_ethernet0 = std::move(value); }
-    inline NetworkPayload& WithEthernet0(const EthernetPayload& value) { SetEthernet0(value); return *this;}
-    inline NetworkPayload& WithEthernet0(EthernetPayload&& value) { SetEthernet0(std::move(value)); return *this;}
+    template<typename Ethernet0T = EthernetPayload>
+    void SetEthernet0(Ethernet0T&& value) { m_ethernet0HasBeenSet = true; m_ethernet0 = std::forward<Ethernet0T>(value); }
+    template<typename Ethernet0T = EthernetPayload>
+    NetworkPayload& WithEthernet0(Ethernet0T&& value) { SetEthernet0(std::forward<Ethernet0T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings for Ethernet port 1.</p>
      */
-    inline const EthernetPayload& GetEthernet1() const{ return m_ethernet1; }
+    inline const EthernetPayload& GetEthernet1() const { return m_ethernet1; }
     inline bool Ethernet1HasBeenSet() const { return m_ethernet1HasBeenSet; }
-    inline void SetEthernet1(const EthernetPayload& value) { m_ethernet1HasBeenSet = true; m_ethernet1 = value; }
-    inline void SetEthernet1(EthernetPayload&& value) { m_ethernet1HasBeenSet = true; m_ethernet1 = std::move(value); }
-    inline NetworkPayload& WithEthernet1(const EthernetPayload& value) { SetEthernet1(value); return *this;}
-    inline NetworkPayload& WithEthernet1(EthernetPayload&& value) { SetEthernet1(std::move(value)); return *this;}
+    template<typename Ethernet1T = EthernetPayload>
+    void SetEthernet1(Ethernet1T&& value) { m_ethernet1HasBeenSet = true; m_ethernet1 = std::forward<Ethernet1T>(value); }
+    template<typename Ethernet1T = EthernetPayload>
+    NetworkPayload& WithEthernet1(Ethernet1T&& value) { SetEthernet1(std::forward<Ethernet1T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network time protocol (NTP) server settings.</p>
      */
-    inline const NtpPayload& GetNtp() const{ return m_ntp; }
+    inline const NtpPayload& GetNtp() const { return m_ntp; }
     inline bool NtpHasBeenSet() const { return m_ntpHasBeenSet; }
-    inline void SetNtp(const NtpPayload& value) { m_ntpHasBeenSet = true; m_ntp = value; }
-    inline void SetNtp(NtpPayload&& value) { m_ntpHasBeenSet = true; m_ntp = std::move(value); }
-    inline NetworkPayload& WithNtp(const NtpPayload& value) { SetNtp(value); return *this;}
-    inline NetworkPayload& WithNtp(NtpPayload&& value) { SetNtp(std::move(value)); return *this;}
+    template<typename NtpT = NtpPayload>
+    void SetNtp(NtpT&& value) { m_ntpHasBeenSet = true; m_ntp = std::forward<NtpT>(value); }
+    template<typename NtpT = NtpPayload>
+    NetworkPayload& WithNtp(NtpT&& value) { SetNtp(std::forward<NtpT>(value)); return *this;}
     ///@}
   private:
 

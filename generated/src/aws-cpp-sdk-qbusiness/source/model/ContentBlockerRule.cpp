@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ContentBlockerRule::ContentBlockerRule() : 
-    m_systemMessageOverrideHasBeenSet(false)
-{
-}
-
 ContentBlockerRule::ContentBlockerRule(JsonView jsonValue)
-  : ContentBlockerRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContentBlockerRule& ContentBlockerRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("systemMessageOverride"))
   {
     m_systemMessageOverride = jsonValue.GetString("systemMessageOverride");
-
     m_systemMessageOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

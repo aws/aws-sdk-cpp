@@ -32,7 +32,7 @@ namespace Model
   class AwsRedshiftClusterDeferredMaintenanceWindow
   {
   public:
-    AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow();
+    AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow() = default;
     AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetDeferMaintenanceEndTime() const{ return m_deferMaintenanceEndTime; }
+    inline const Aws::String& GetDeferMaintenanceEndTime() const { return m_deferMaintenanceEndTime; }
     inline bool DeferMaintenanceEndTimeHasBeenSet() const { return m_deferMaintenanceEndTimeHasBeenSet; }
-    inline void SetDeferMaintenanceEndTime(const Aws::String& value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime = value; }
-    inline void SetDeferMaintenanceEndTime(Aws::String&& value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime = std::move(value); }
-    inline void SetDeferMaintenanceEndTime(const char* value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime.assign(value); }
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(const Aws::String& value) { SetDeferMaintenanceEndTime(value); return *this;}
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(Aws::String&& value) { SetDeferMaintenanceEndTime(std::move(value)); return *this;}
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(const char* value) { SetDeferMaintenanceEndTime(value); return *this;}
+    template<typename DeferMaintenanceEndTimeT = Aws::String>
+    void SetDeferMaintenanceEndTime(DeferMaintenanceEndTimeT&& value) { m_deferMaintenanceEndTimeHasBeenSet = true; m_deferMaintenanceEndTime = std::forward<DeferMaintenanceEndTimeT>(value); }
+    template<typename DeferMaintenanceEndTimeT = Aws::String>
+    AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceEndTime(DeferMaintenanceEndTimeT&& value) { SetDeferMaintenanceEndTime(std::forward<DeferMaintenanceEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the maintenance window.</p>
      */
-    inline const Aws::String& GetDeferMaintenanceIdentifier() const{ return m_deferMaintenanceIdentifier; }
+    inline const Aws::String& GetDeferMaintenanceIdentifier() const { return m_deferMaintenanceIdentifier; }
     inline bool DeferMaintenanceIdentifierHasBeenSet() const { return m_deferMaintenanceIdentifierHasBeenSet; }
-    inline void SetDeferMaintenanceIdentifier(const Aws::String& value) { m_deferMaintenanceIdentifierHasBeenSet = true; m_deferMaintenanceIdentifier = value; }
-    inline void SetDeferMaintenanceIdentifier(Aws::String&& value) { m_deferMaintenanceIdentifierHasBeenSet = true; m_deferMaintenanceIdentifier = std::move(value); }
-    inline void SetDeferMaintenanceIdentifier(const char* value) { m_deferMaintenanceIdentifierHasBeenSet = true; m_deferMaintenanceIdentifier.assign(value); }
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceIdentifier(const Aws::String& value) { SetDeferMaintenanceIdentifier(value); return *this;}
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceIdentifier(Aws::String&& value) { SetDeferMaintenanceIdentifier(std::move(value)); return *this;}
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceIdentifier(const char* value) { SetDeferMaintenanceIdentifier(value); return *this;}
+    template<typename DeferMaintenanceIdentifierT = Aws::String>
+    void SetDeferMaintenanceIdentifier(DeferMaintenanceIdentifierT&& value) { m_deferMaintenanceIdentifierHasBeenSet = true; m_deferMaintenanceIdentifier = std::forward<DeferMaintenanceIdentifierT>(value); }
+    template<typename DeferMaintenanceIdentifierT = Aws::String>
+    AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceIdentifier(DeferMaintenanceIdentifierT&& value) { SetDeferMaintenanceIdentifier(std::forward<DeferMaintenanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetDeferMaintenanceStartTime() const{ return m_deferMaintenanceStartTime; }
+    inline const Aws::String& GetDeferMaintenanceStartTime() const { return m_deferMaintenanceStartTime; }
     inline bool DeferMaintenanceStartTimeHasBeenSet() const { return m_deferMaintenanceStartTimeHasBeenSet; }
-    inline void SetDeferMaintenanceStartTime(const Aws::String& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = value; }
-    inline void SetDeferMaintenanceStartTime(Aws::String&& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = std::move(value); }
-    inline void SetDeferMaintenanceStartTime(const char* value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime.assign(value); }
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(const Aws::String& value) { SetDeferMaintenanceStartTime(value); return *this;}
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(Aws::String&& value) { SetDeferMaintenanceStartTime(std::move(value)); return *this;}
-    inline AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(const char* value) { SetDeferMaintenanceStartTime(value); return *this;}
+    template<typename DeferMaintenanceStartTimeT = Aws::String>
+    void SetDeferMaintenanceStartTime(DeferMaintenanceStartTimeT&& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = std::forward<DeferMaintenanceStartTimeT>(value); }
+    template<typename DeferMaintenanceStartTimeT = Aws::String>
+    AwsRedshiftClusterDeferredMaintenanceWindow& WithDeferMaintenanceStartTime(DeferMaintenanceStartTimeT&& value) { SetDeferMaintenanceStartTime(std::forward<DeferMaintenanceStartTimeT>(value)); return *this;}
     ///@}
   private:
 

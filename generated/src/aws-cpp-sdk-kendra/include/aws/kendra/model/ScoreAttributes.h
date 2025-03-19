@@ -32,7 +32,7 @@ namespace Model
   class ScoreAttributes
   {
   public:
-    AWS_KENDRA_API ScoreAttributes();
+    AWS_KENDRA_API ScoreAttributes() = default;
     AWS_KENDRA_API ScoreAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ScoreAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>A relative ranking for how relevant the response is to the query.</p>
      */
-    inline const ScoreConfidence& GetScoreConfidence() const{ return m_scoreConfidence; }
+    inline ScoreConfidence GetScoreConfidence() const { return m_scoreConfidence; }
     inline bool ScoreConfidenceHasBeenSet() const { return m_scoreConfidenceHasBeenSet; }
-    inline void SetScoreConfidence(const ScoreConfidence& value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = value; }
-    inline void SetScoreConfidence(ScoreConfidence&& value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = std::move(value); }
-    inline ScoreAttributes& WithScoreConfidence(const ScoreConfidence& value) { SetScoreConfidence(value); return *this;}
-    inline ScoreAttributes& WithScoreConfidence(ScoreConfidence&& value) { SetScoreConfidence(std::move(value)); return *this;}
+    inline void SetScoreConfidence(ScoreConfidence value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = value; }
+    inline ScoreAttributes& WithScoreConfidence(ScoreConfidence value) { SetScoreConfidence(value); return *this;}
     ///@}
   private:
 
-    ScoreConfidence m_scoreConfidence;
+    ScoreConfidence m_scoreConfidence{ScoreConfidence::NOT_SET};
     bool m_scoreConfidenceHasBeenSet = false;
   };
 

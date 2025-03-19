@@ -32,7 +32,7 @@ namespace Model
   class ResourceStateUpdateExclusionRules
   {
   public:
-    AWS_IMAGEBUILDER_API ResourceStateUpdateExclusionRules();
+    AWS_IMAGEBUILDER_API ResourceStateUpdateExclusionRules() = default;
     AWS_IMAGEBUILDER_API ResourceStateUpdateExclusionRules(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ResourceStateUpdateExclusionRules& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const LifecyclePolicyDetailExclusionRulesAmis& GetAmis() const{ return m_amis; }
+    inline const LifecyclePolicyDetailExclusionRulesAmis& GetAmis() const { return m_amis; }
     inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }
-    inline void SetAmis(const LifecyclePolicyDetailExclusionRulesAmis& value) { m_amisHasBeenSet = true; m_amis = value; }
-    inline void SetAmis(LifecyclePolicyDetailExclusionRulesAmis&& value) { m_amisHasBeenSet = true; m_amis = std::move(value); }
-    inline ResourceStateUpdateExclusionRules& WithAmis(const LifecyclePolicyDetailExclusionRulesAmis& value) { SetAmis(value); return *this;}
-    inline ResourceStateUpdateExclusionRules& WithAmis(LifecyclePolicyDetailExclusionRulesAmis&& value) { SetAmis(std::move(value)); return *this;}
+    template<typename AmisT = LifecyclePolicyDetailExclusionRulesAmis>
+    void SetAmis(AmisT&& value) { m_amisHasBeenSet = true; m_amis = std::forward<AmisT>(value); }
+    template<typename AmisT = LifecyclePolicyDetailExclusionRulesAmis>
+    ResourceStateUpdateExclusionRules& WithAmis(AmisT&& value) { SetAmis(std::forward<AmisT>(value)); return *this;}
     ///@}
   private:
 

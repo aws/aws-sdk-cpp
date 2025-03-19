@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-PropertyDifference::PropertyDifference() : 
-    m_propertyPathHasBeenSet(false),
-    m_expectedValueHasBeenSet(false),
-    m_actualValueHasBeenSet(false),
-    m_differenceType(DifferenceType::NOT_SET),
-    m_differenceTypeHasBeenSet(false)
-{
-}
-
 PropertyDifference::PropertyDifference(const XmlNode& xmlNode)
-  : PropertyDifference()
 {
   *this = xmlNode;
 }
@@ -62,7 +52,7 @@ PropertyDifference& PropertyDifference::operator =(const XmlNode& xmlNode)
     XmlNode differenceTypeNode = resultNode.FirstChild("DifferenceType");
     if(!differenceTypeNode.IsNull())
     {
-      m_differenceType = DifferenceTypeMapper::GetDifferenceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(differenceTypeNode.GetText()).c_str()).c_str());
+      m_differenceType = DifferenceTypeMapper::GetDifferenceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(differenceTypeNode.GetText()).c_str()));
       m_differenceTypeHasBeenSet = true;
     }
   }

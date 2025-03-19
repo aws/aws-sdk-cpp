@@ -34,7 +34,7 @@ namespace Model
   class AutoSubscriptionConfiguration
   {
   public:
-    AWS_QBUSINESS_API AutoSubscriptionConfiguration();
+    AWS_QBUSINESS_API AutoSubscriptionConfiguration() = default;
     AWS_QBUSINESS_API AutoSubscriptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AutoSubscriptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>Describes whether automatic subscriptions are enabled for an Amazon Q
      * Business application using IAM identity federation for user management.</p>
      */
-    inline const AutoSubscriptionStatus& GetAutoSubscribe() const{ return m_autoSubscribe; }
+    inline AutoSubscriptionStatus GetAutoSubscribe() const { return m_autoSubscribe; }
     inline bool AutoSubscribeHasBeenSet() const { return m_autoSubscribeHasBeenSet; }
-    inline void SetAutoSubscribe(const AutoSubscriptionStatus& value) { m_autoSubscribeHasBeenSet = true; m_autoSubscribe = value; }
-    inline void SetAutoSubscribe(AutoSubscriptionStatus&& value) { m_autoSubscribeHasBeenSet = true; m_autoSubscribe = std::move(value); }
-    inline AutoSubscriptionConfiguration& WithAutoSubscribe(const AutoSubscriptionStatus& value) { SetAutoSubscribe(value); return *this;}
-    inline AutoSubscriptionConfiguration& WithAutoSubscribe(AutoSubscriptionStatus&& value) { SetAutoSubscribe(std::move(value)); return *this;}
+    inline void SetAutoSubscribe(AutoSubscriptionStatus value) { m_autoSubscribeHasBeenSet = true; m_autoSubscribe = value; }
+    inline AutoSubscriptionConfiguration& WithAutoSubscribe(AutoSubscriptionStatus value) { SetAutoSubscribe(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <code>autoSubscribe</code> is set to <code>ENABLED</code> you must select a
      * value for this field.</p>
      */
-    inline const SubscriptionType& GetDefaultSubscriptionType() const{ return m_defaultSubscriptionType; }
+    inline SubscriptionType GetDefaultSubscriptionType() const { return m_defaultSubscriptionType; }
     inline bool DefaultSubscriptionTypeHasBeenSet() const { return m_defaultSubscriptionTypeHasBeenSet; }
-    inline void SetDefaultSubscriptionType(const SubscriptionType& value) { m_defaultSubscriptionTypeHasBeenSet = true; m_defaultSubscriptionType = value; }
-    inline void SetDefaultSubscriptionType(SubscriptionType&& value) { m_defaultSubscriptionTypeHasBeenSet = true; m_defaultSubscriptionType = std::move(value); }
-    inline AutoSubscriptionConfiguration& WithDefaultSubscriptionType(const SubscriptionType& value) { SetDefaultSubscriptionType(value); return *this;}
-    inline AutoSubscriptionConfiguration& WithDefaultSubscriptionType(SubscriptionType&& value) { SetDefaultSubscriptionType(std::move(value)); return *this;}
+    inline void SetDefaultSubscriptionType(SubscriptionType value) { m_defaultSubscriptionTypeHasBeenSet = true; m_defaultSubscriptionType = value; }
+    inline AutoSubscriptionConfiguration& WithDefaultSubscriptionType(SubscriptionType value) { SetDefaultSubscriptionType(value); return *this;}
     ///@}
   private:
 
-    AutoSubscriptionStatus m_autoSubscribe;
+    AutoSubscriptionStatus m_autoSubscribe{AutoSubscriptionStatus::NOT_SET};
     bool m_autoSubscribeHasBeenSet = false;
 
-    SubscriptionType m_defaultSubscriptionType;
+    SubscriptionType m_defaultSubscriptionType{SubscriptionType::NOT_SET};
     bool m_defaultSubscriptionTypeHasBeenSet = false;
   };
 

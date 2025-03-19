@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCidrBlocksResult::ListCidrBlocksResult()
-{
-}
-
 ListCidrBlocksResult::ListCidrBlocksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ ListCidrBlocksResult& ListCidrBlocksResult::operator =(const Aws::AmazonWebServi
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode cidrBlocksNode = resultNode.FirstChild("CidrBlocks");
     if(!cidrBlocksNode.IsNull())
     {
       XmlNode cidrBlocksMember = cidrBlocksNode.FirstChild("member");
+      m_cidrBlocksHasBeenSet = !cidrBlocksMember.IsNull();
       while(!cidrBlocksMember.IsNull())
       {
         m_cidrBlocks.push_back(cidrBlocksMember);
         cidrBlocksMember = cidrBlocksMember.NextNode("member");
       }
 
+      m_cidrBlocksHasBeenSet = true;
     }
   }
 
@@ -55,6 +54,7 @@ ListCidrBlocksResult& ListCidrBlocksResult::operator =(const Aws::AmazonWebServi
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -32,7 +32,7 @@ namespace Model
   class PrefixList
   {
   public:
-    AWS_EC2_API PrefixList();
+    AWS_EC2_API PrefixList() = default;
     AWS_EC2_API PrefixList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PrefixList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,43 +44,38 @@ namespace Model
     /**
      * <p>The IP address range of the Amazon Web Services service.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
+    inline const Aws::Vector<Aws::String>& GetCidrs() const { return m_cidrs; }
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
-    inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
-    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
-    inline PrefixList& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
-    inline PrefixList& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
-    inline PrefixList& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
-    inline PrefixList& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
-    inline PrefixList& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    void SetCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::forward<CidrsT>(value); }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    PrefixList& WithCidrs(CidrsT&& value) { SetCidrs(std::forward<CidrsT>(value)); return *this;}
+    template<typename CidrsT = Aws::String>
+    PrefixList& AddCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs.emplace_back(std::forward<CidrsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+    inline const Aws::String& GetPrefixListId() const { return m_prefixListId; }
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-    inline PrefixList& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-    inline PrefixList& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-    inline PrefixList& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+    template<typename PrefixListIdT = Aws::String>
+    void SetPrefixListId(PrefixListIdT&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::forward<PrefixListIdT>(value); }
+    template<typename PrefixListIdT = Aws::String>
+    PrefixList& WithPrefixListId(PrefixListIdT&& value) { SetPrefixListId(std::forward<PrefixListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the prefix.</p>
      */
-    inline const Aws::String& GetPrefixListName() const{ return m_prefixListName; }
+    inline const Aws::String& GetPrefixListName() const { return m_prefixListName; }
     inline bool PrefixListNameHasBeenSet() const { return m_prefixListNameHasBeenSet; }
-    inline void SetPrefixListName(const Aws::String& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = value; }
-    inline void SetPrefixListName(Aws::String&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::move(value); }
-    inline void SetPrefixListName(const char* value) { m_prefixListNameHasBeenSet = true; m_prefixListName.assign(value); }
-    inline PrefixList& WithPrefixListName(const Aws::String& value) { SetPrefixListName(value); return *this;}
-    inline PrefixList& WithPrefixListName(Aws::String&& value) { SetPrefixListName(std::move(value)); return *this;}
-    inline PrefixList& WithPrefixListName(const char* value) { SetPrefixListName(value); return *this;}
+    template<typename PrefixListNameT = Aws::String>
+    void SetPrefixListName(PrefixListNameT&& value) { m_prefixListNameHasBeenSet = true; m_prefixListName = std::forward<PrefixListNameT>(value); }
+    template<typename PrefixListNameT = Aws::String>
+    PrefixList& WithPrefixListName(PrefixListNameT&& value) { SetPrefixListName(std::forward<PrefixListNameT>(value)); return *this;}
     ///@}
   private:
 

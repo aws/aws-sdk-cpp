@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteAuthenticationProfileRequest::DeleteAuthenticationProfileRequest() : 
-    m_authenticationProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAuthenticationProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

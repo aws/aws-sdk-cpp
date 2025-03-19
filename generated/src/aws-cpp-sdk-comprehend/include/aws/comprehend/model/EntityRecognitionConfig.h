@@ -33,7 +33,7 @@ namespace Model
   class EntityRecognitionConfig
   {
   public:
-    AWS_COMPREHEND_API EntityRecognitionConfig();
+    AWS_COMPREHEND_API EntityRecognitionConfig() = default;
     AWS_COMPREHEND_API EntityRecognitionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityRecognitionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Up to 25 entity types that the model is trained to recognize.</p>
      */
-    inline const Aws::Vector<EntityTypesListItem>& GetEntityTypes() const{ return m_entityTypes; }
+    inline const Aws::Vector<EntityTypesListItem>& GetEntityTypes() const { return m_entityTypes; }
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
-    inline void SetEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
-    inline void SetEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
-    inline EntityRecognitionConfig& WithEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { SetEntityTypes(value); return *this;}
-    inline EntityRecognitionConfig& WithEntityTypes(Aws::Vector<EntityTypesListItem>&& value) { SetEntityTypes(std::move(value)); return *this;}
-    inline EntityRecognitionConfig& AddEntityTypes(const EntityTypesListItem& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
-    inline EntityRecognitionConfig& AddEntityTypes(EntityTypesListItem&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
+    template<typename EntityTypesT = Aws::Vector<EntityTypesListItem>>
+    void SetEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::forward<EntityTypesT>(value); }
+    template<typename EntityTypesT = Aws::Vector<EntityTypesListItem>>
+    EntityRecognitionConfig& WithEntityTypes(EntityTypesT&& value) { SetEntityTypes(std::forward<EntityTypesT>(value)); return *this;}
+    template<typename EntityTypesT = EntityTypesListItem>
+    EntityRecognitionConfig& AddEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.emplace_back(std::forward<EntityTypesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,25 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Insights::Insights() : 
-    m_activeAssessmentsCount(0),
-    m_activeAssessmentsCountHasBeenSet(false),
-    m_noncompliantEvidenceCount(0),
-    m_noncompliantEvidenceCountHasBeenSet(false),
-    m_compliantEvidenceCount(0),
-    m_compliantEvidenceCountHasBeenSet(false),
-    m_inconclusiveEvidenceCount(0),
-    m_inconclusiveEvidenceCountHasBeenSet(false),
-    m_assessmentControlsCountByNoncompliantEvidence(0),
-    m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet(false),
-    m_totalAssessmentControlsCount(0),
-    m_totalAssessmentControlsCountHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
-{
-}
-
 Insights::Insights(JsonView jsonValue)
-  : Insights()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ Insights& Insights::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activeAssessmentsCount"))
   {
     m_activeAssessmentsCount = jsonValue.GetInteger("activeAssessmentsCount");
-
     m_activeAssessmentsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noncompliantEvidenceCount"))
   {
     m_noncompliantEvidenceCount = jsonValue.GetInteger("noncompliantEvidenceCount");
-
     m_noncompliantEvidenceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compliantEvidenceCount"))
   {
     m_compliantEvidenceCount = jsonValue.GetInteger("compliantEvidenceCount");
-
     m_compliantEvidenceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inconclusiveEvidenceCount"))
   {
     m_inconclusiveEvidenceCount = jsonValue.GetInteger("inconclusiveEvidenceCount");
-
     m_inconclusiveEvidenceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentControlsCountByNoncompliantEvidence"))
   {
     m_assessmentControlsCountByNoncompliantEvidence = jsonValue.GetInteger("assessmentControlsCountByNoncompliantEvidence");
-
     m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalAssessmentControlsCount"))
   {
     m_totalAssessmentControlsCount = jsonValue.GetInteger("totalAssessmentControlsCount");
-
     m_totalAssessmentControlsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   return *this;
 }
 

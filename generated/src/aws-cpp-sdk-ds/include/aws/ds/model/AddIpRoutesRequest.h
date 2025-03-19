@@ -23,7 +23,7 @@ namespace Model
   class AddIpRoutesRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API AddIpRoutesRequest();
+    AWS_DIRECTORYSERVICE_API AddIpRoutesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline AddIpRoutesRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline AddIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline AddIpRoutesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    AddIpRoutesRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,14 @@ namespace Model
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
      * the IP address block of the DNS server used for your self-managed domain.</p>
      */
-    inline const Aws::Vector<IpRoute>& GetIpRoutes() const{ return m_ipRoutes; }
+    inline const Aws::Vector<IpRoute>& GetIpRoutes() const { return m_ipRoutes; }
     inline bool IpRoutesHasBeenSet() const { return m_ipRoutesHasBeenSet; }
-    inline void SetIpRoutes(const Aws::Vector<IpRoute>& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes = value; }
-    inline void SetIpRoutes(Aws::Vector<IpRoute>&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes = std::move(value); }
-    inline AddIpRoutesRequest& WithIpRoutes(const Aws::Vector<IpRoute>& value) { SetIpRoutes(value); return *this;}
-    inline AddIpRoutesRequest& WithIpRoutes(Aws::Vector<IpRoute>&& value) { SetIpRoutes(std::move(value)); return *this;}
-    inline AddIpRoutesRequest& AddIpRoutes(const IpRoute& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes.push_back(value); return *this; }
-    inline AddIpRoutesRequest& AddIpRoutes(IpRoute&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes.push_back(std::move(value)); return *this; }
+    template<typename IpRoutesT = Aws::Vector<IpRoute>>
+    void SetIpRoutes(IpRoutesT&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes = std::forward<IpRoutesT>(value); }
+    template<typename IpRoutesT = Aws::Vector<IpRoute>>
+    AddIpRoutesRequest& WithIpRoutes(IpRoutesT&& value) { SetIpRoutes(std::forward<IpRoutesT>(value)); return *this;}
+    template<typename IpRoutesT = IpRoute>
+    AddIpRoutesRequest& AddIpRoutes(IpRoutesT&& value) { m_ipRoutesHasBeenSet = true; m_ipRoutes.emplace_back(std::forward<IpRoutesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,7 +97,7 @@ namespace Model
      * <p>These security rules impact an internal network interface that is not exposed
      * publicly.</p>
      */
-    inline bool GetUpdateSecurityGroupForDirectoryControllers() const{ return m_updateSecurityGroupForDirectoryControllers; }
+    inline bool GetUpdateSecurityGroupForDirectoryControllers() const { return m_updateSecurityGroupForDirectoryControllers; }
     inline bool UpdateSecurityGroupForDirectoryControllersHasBeenSet() const { return m_updateSecurityGroupForDirectoryControllersHasBeenSet; }
     inline void SetUpdateSecurityGroupForDirectoryControllers(bool value) { m_updateSecurityGroupForDirectoryControllersHasBeenSet = true; m_updateSecurityGroupForDirectoryControllers = value; }
     inline AddIpRoutesRequest& WithUpdateSecurityGroupForDirectoryControllers(bool value) { SetUpdateSecurityGroupForDirectoryControllers(value); return *this;}
@@ -112,7 +110,7 @@ namespace Model
     Aws::Vector<IpRoute> m_ipRoutes;
     bool m_ipRoutesHasBeenSet = false;
 
-    bool m_updateSecurityGroupForDirectoryControllers;
+    bool m_updateSecurityGroupForDirectoryControllers{false};
     bool m_updateSecurityGroupForDirectoryControllersHasBeenSet = false;
   };
 

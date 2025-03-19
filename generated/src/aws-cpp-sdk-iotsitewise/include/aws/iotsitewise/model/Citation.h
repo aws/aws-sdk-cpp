@@ -34,7 +34,7 @@ namespace Model
   class Citation
   {
   public:
-    AWS_IOTSITEWISE_API Citation();
+    AWS_IOTSITEWISE_API Citation() = default;
     AWS_IOTSITEWISE_API Citation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Citation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>Contains information about the data source.</p>
      */
-    inline const Reference& GetReference() const{ return m_reference; }
+    inline const Reference& GetReference() const { return m_reference; }
     inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
-    inline void SetReference(const Reference& value) { m_referenceHasBeenSet = true; m_reference = value; }
-    inline void SetReference(Reference&& value) { m_referenceHasBeenSet = true; m_reference = std::move(value); }
-    inline Citation& WithReference(const Reference& value) { SetReference(value); return *this;}
-    inline Citation& WithReference(Reference&& value) { SetReference(std::move(value)); return *this;}
+    template<typename ReferenceT = Reference>
+    void SetReference(ReferenceT&& value) { m_referenceHasBeenSet = true; m_reference = std::forward<ReferenceT>(value); }
+    template<typename ReferenceT = Reference>
+    Citation& WithReference(ReferenceT&& value) { SetReference(std::forward<ReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the cited text from the data source.</p>
      */
-    inline const Content& GetContent() const{ return m_content; }
+    inline const Content& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Content& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Content&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline Citation& WithContent(const Content& value) { SetContent(value); return *this;}
-    inline Citation& WithContent(Content&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = Content>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Content>
+    Citation& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,27 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-MedicalScribeJob::MedicalScribeJob() : 
-    m_medicalScribeJobNameHasBeenSet(false),
-    m_medicalScribeJobStatus(MedicalScribeJobStatus::NOT_SET),
-    m_medicalScribeJobStatusHasBeenSet(false),
-    m_languageCode(MedicalScribeLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_medicalScribeOutputHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 MedicalScribeJob::MedicalScribeJob(JsonView jsonValue)
-  : MedicalScribeJob()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ MedicalScribeJob& MedicalScribeJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MedicalScribeJobName"))
   {
     m_medicalScribeJobName = jsonValue.GetString("MedicalScribeJobName");
-
     m_medicalScribeJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MedicalScribeJobStatus"))
   {
     m_medicalScribeJobStatus = MedicalScribeJobStatusMapper::GetMedicalScribeJobStatusForName(jsonValue.GetString("MedicalScribeJobStatus"));
-
     m_medicalScribeJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = MedicalScribeLanguageCodeMapper::GetMedicalScribeLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Media"))
   {
     m_media = jsonValue.GetObject("Media");
-
     m_mediaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MedicalScribeOutput"))
   {
     m_medicalScribeOutput = jsonValue.GetObject("MedicalScribeOutput");
-
     m_medicalScribeOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelDefinitions"))
   {
     Aws::Utils::Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
@@ -131,7 +89,6 @@ MedicalScribeJob& MedicalScribeJob::operator =(JsonView jsonValue)
     }
     m_channelDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -141,7 +98,6 @@ MedicalScribeJob& MedicalScribeJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

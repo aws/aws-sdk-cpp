@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInvalidation2020_05_31Result::CreateInvalidation2020_05_31Result()
-{
-}
-
 CreateInvalidation2020_05_31Result::CreateInvalidation2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ CreateInvalidation2020_05_31Result& CreateInvalidation2020_05_31Result::operator
   if(!resultNode.IsNull())
   {
     m_invalidation = resultNode;
+    m_invalidationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,12 +37,14 @@ CreateInvalidation2020_05_31Result& CreateInvalidation2020_05_31Result::operator
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

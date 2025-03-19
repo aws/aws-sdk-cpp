@@ -18,13 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-DestinationConfigurations::DestinationConfigurations() : 
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 DestinationConfigurations::DestinationConfigurations(JsonView jsonValue)
-  : DestinationConfigurations()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DestinationConfigurations& DestinationConfigurations::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("S3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("S3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

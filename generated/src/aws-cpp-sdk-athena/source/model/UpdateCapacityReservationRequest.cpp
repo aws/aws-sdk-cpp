@@ -12,13 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCapacityReservationRequest::UpdateCapacityReservationRequest() : 
-    m_targetDpus(0),
-    m_targetDpusHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCapacityReservationRequest::SerializePayload() const
 {
   JsonValue payload;

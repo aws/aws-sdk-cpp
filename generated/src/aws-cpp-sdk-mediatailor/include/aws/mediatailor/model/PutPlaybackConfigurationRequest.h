@@ -30,7 +30,7 @@ namespace Model
   class PutPlaybackConfigurationRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API PutPlaybackConfigurationRequest();
+    AWS_MEDIATAILOR_API PutPlaybackConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * needed when calling the ADS. Alternately, for testing you can provide a static
      * VAST URL. The maximum length is 25,000 characters.</p>
      */
-    inline const Aws::String& GetAdDecisionServerUrl() const{ return m_adDecisionServerUrl; }
+    inline const Aws::String& GetAdDecisionServerUrl() const { return m_adDecisionServerUrl; }
     inline bool AdDecisionServerUrlHasBeenSet() const { return m_adDecisionServerUrlHasBeenSet; }
-    inline void SetAdDecisionServerUrl(const Aws::String& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = value; }
-    inline void SetAdDecisionServerUrl(Aws::String&& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = std::move(value); }
-    inline void SetAdDecisionServerUrl(const char* value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl.assign(value); }
-    inline PutPlaybackConfigurationRequest& WithAdDecisionServerUrl(const Aws::String& value) { SetAdDecisionServerUrl(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithAdDecisionServerUrl(Aws::String&& value) { SetAdDecisionServerUrl(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& WithAdDecisionServerUrl(const char* value) { SetAdDecisionServerUrl(value); return *this;}
+    template<typename AdDecisionServerUrlT = Aws::String>
+    void SetAdDecisionServerUrl(AdDecisionServerUrlT&& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = std::forward<AdDecisionServerUrlT>(value); }
+    template<typename AdDecisionServerUrlT = Aws::String>
+    PutPlaybackConfigurationRequest& WithAdDecisionServerUrl(AdDecisionServerUrlT&& value) { SetAdDecisionServerUrl(std::forward<AdDecisionServerUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
      * Suppression</a>.</p>
      */
-    inline const AvailSuppression& GetAvailSuppression() const{ return m_availSuppression; }
+    inline const AvailSuppression& GetAvailSuppression() const { return m_availSuppression; }
     inline bool AvailSuppressionHasBeenSet() const { return m_availSuppressionHasBeenSet; }
-    inline void SetAvailSuppression(const AvailSuppression& value) { m_availSuppressionHasBeenSet = true; m_availSuppression = value; }
-    inline void SetAvailSuppression(AvailSuppression&& value) { m_availSuppressionHasBeenSet = true; m_availSuppression = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithAvailSuppression(const AvailSuppression& value) { SetAvailSuppression(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithAvailSuppression(AvailSuppression&& value) { SetAvailSuppression(std::move(value)); return *this;}
+    template<typename AvailSuppressionT = AvailSuppression>
+    void SetAvailSuppression(AvailSuppressionT&& value) { m_availSuppressionHasBeenSet = true; m_availSuppression = std::forward<AvailSuppressionT>(value); }
+    template<typename AvailSuppressionT = AvailSuppression>
+    PutPlaybackConfigurationRequest& WithAvailSuppression(AvailSuppressionT&& value) { SetAvailSuppression(std::forward<AvailSuppressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +79,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
      */
-    inline const Bumper& GetBumper() const{ return m_bumper; }
+    inline const Bumper& GetBumper() const { return m_bumper; }
     inline bool BumperHasBeenSet() const { return m_bumperHasBeenSet; }
-    inline void SetBumper(const Bumper& value) { m_bumperHasBeenSet = true; m_bumper = value; }
-    inline void SetBumper(Bumper&& value) { m_bumperHasBeenSet = true; m_bumper = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithBumper(const Bumper& value) { SetBumper(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithBumper(Bumper&& value) { SetBumper(std::move(value)); return *this;}
+    template<typename BumperT = Bumper>
+    void SetBumper(BumperT&& value) { m_bumperHasBeenSet = true; m_bumper = std::forward<BumperT>(value); }
+    template<typename BumperT = Bumper>
+    PutPlaybackConfigurationRequest& WithBumper(BumperT&& value) { SetBumper(std::forward<BumperT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +92,12 @@ namespace Model
      * <p>The configuration for using a content delivery network (CDN), like Amazon
      * CloudFront, for content and ad segment management.</p>
      */
-    inline const CdnConfiguration& GetCdnConfiguration() const{ return m_cdnConfiguration; }
+    inline const CdnConfiguration& GetCdnConfiguration() const { return m_cdnConfiguration; }
     inline bool CdnConfigurationHasBeenSet() const { return m_cdnConfigurationHasBeenSet; }
-    inline void SetCdnConfiguration(const CdnConfiguration& value) { m_cdnConfigurationHasBeenSet = true; m_cdnConfiguration = value; }
-    inline void SetCdnConfiguration(CdnConfiguration&& value) { m_cdnConfigurationHasBeenSet = true; m_cdnConfiguration = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithCdnConfiguration(const CdnConfiguration& value) { SetCdnConfiguration(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithCdnConfiguration(CdnConfiguration&& value) { SetCdnConfiguration(std::move(value)); return *this;}
+    template<typename CdnConfigurationT = CdnConfiguration>
+    void SetCdnConfiguration(CdnConfigurationT&& value) { m_cdnConfigurationHasBeenSet = true; m_cdnConfiguration = std::forward<CdnConfigurationT>(value); }
+    template<typename CdnConfigurationT = CdnConfiguration>
+    PutPlaybackConfigurationRequest& WithCdnConfiguration(CdnConfigurationT&& value) { SetCdnConfiguration(std::forward<CdnConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,30 +107,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain
      * Variables</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetConfigurationAliases() const{ return m_configurationAliases; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetConfigurationAliases() const { return m_configurationAliases; }
     inline bool ConfigurationAliasesHasBeenSet() const { return m_configurationAliasesHasBeenSet; }
-    inline void SetConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases = value; }
-    inline void SetConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetConfigurationAliases(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetConfigurationAliases(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, value); return *this; }
-    inline PutPlaybackConfigurationRequest& AddConfigurationAliases(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(std::move(key), value); return *this; }
-    inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, std::move(value)); return *this; }
-    inline PutPlaybackConfigurationRequest& AddConfigurationAliases(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, std::move(value)); return *this; }
-    inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, value); return *this; }
+    template<typename ConfigurationAliasesT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    void SetConfigurationAliases(ConfigurationAliasesT&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases = std::forward<ConfigurationAliasesT>(value); }
+    template<typename ConfigurationAliasesT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    PutPlaybackConfigurationRequest& WithConfigurationAliases(ConfigurationAliasesT&& value) { SetConfigurationAliases(std::forward<ConfigurationAliasesT>(value)); return *this;}
+    template<typename ConfigurationAliasesKeyT = Aws::String, typename ConfigurationAliasesValueT = Aws::Map<Aws::String, Aws::String>>
+    PutPlaybackConfigurationRequest& AddConfigurationAliases(ConfigurationAliasesKeyT&& key, ConfigurationAliasesValueT&& value) {
+      m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(std::forward<ConfigurationAliasesKeyT>(key), std::forward<ConfigurationAliasesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The configuration for DASH content.</p>
      */
-    inline const DashConfigurationForPut& GetDashConfiguration() const{ return m_dashConfiguration; }
+    inline const DashConfigurationForPut& GetDashConfiguration() const { return m_dashConfiguration; }
     inline bool DashConfigurationHasBeenSet() const { return m_dashConfigurationHasBeenSet; }
-    inline void SetDashConfiguration(const DashConfigurationForPut& value) { m_dashConfigurationHasBeenSet = true; m_dashConfiguration = value; }
-    inline void SetDashConfiguration(DashConfigurationForPut&& value) { m_dashConfigurationHasBeenSet = true; m_dashConfiguration = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithDashConfiguration(const DashConfigurationForPut& value) { SetDashConfiguration(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithDashConfiguration(DashConfigurationForPut&& value) { SetDashConfiguration(std::move(value)); return *this;}
+    template<typename DashConfigurationT = DashConfigurationForPut>
+    void SetDashConfiguration(DashConfigurationT&& value) { m_dashConfigurationHasBeenSet = true; m_dashConfiguration = std::forward<DashConfigurationT>(value); }
+    template<typename DashConfigurationT = DashConfigurationForPut>
+    PutPlaybackConfigurationRequest& WithDashConfiguration(DashConfigurationT&& value) { SetDashConfiguration(std::forward<DashConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,24 +140,22 @@ namespace Model
      * session-initialization time. The default for players that do not specify an
      * insertion mode is stitched.</p>
      */
-    inline const InsertionMode& GetInsertionMode() const{ return m_insertionMode; }
+    inline InsertionMode GetInsertionMode() const { return m_insertionMode; }
     inline bool InsertionModeHasBeenSet() const { return m_insertionModeHasBeenSet; }
-    inline void SetInsertionMode(const InsertionMode& value) { m_insertionModeHasBeenSet = true; m_insertionMode = value; }
-    inline void SetInsertionMode(InsertionMode&& value) { m_insertionModeHasBeenSet = true; m_insertionMode = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithInsertionMode(const InsertionMode& value) { SetInsertionMode(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithInsertionMode(InsertionMode&& value) { SetInsertionMode(std::move(value)); return *this;}
+    inline void SetInsertionMode(InsertionMode value) { m_insertionModeHasBeenSet = true; m_insertionMode = value; }
+    inline PutPlaybackConfigurationRequest& WithInsertionMode(InsertionMode value) { SetInsertionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for pre-roll ad insertion.</p>
      */
-    inline const LivePreRollConfiguration& GetLivePreRollConfiguration() const{ return m_livePreRollConfiguration; }
+    inline const LivePreRollConfiguration& GetLivePreRollConfiguration() const { return m_livePreRollConfiguration; }
     inline bool LivePreRollConfigurationHasBeenSet() const { return m_livePreRollConfigurationHasBeenSet; }
-    inline void SetLivePreRollConfiguration(const LivePreRollConfiguration& value) { m_livePreRollConfigurationHasBeenSet = true; m_livePreRollConfiguration = value; }
-    inline void SetLivePreRollConfiguration(LivePreRollConfiguration&& value) { m_livePreRollConfigurationHasBeenSet = true; m_livePreRollConfiguration = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithLivePreRollConfiguration(const LivePreRollConfiguration& value) { SetLivePreRollConfiguration(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
+    template<typename LivePreRollConfigurationT = LivePreRollConfiguration>
+    void SetLivePreRollConfiguration(LivePreRollConfigurationT&& value) { m_livePreRollConfigurationHasBeenSet = true; m_livePreRollConfiguration = std::forward<LivePreRollConfigurationT>(value); }
+    template<typename LivePreRollConfigurationT = LivePreRollConfiguration>
+    PutPlaybackConfigurationRequest& WithLivePreRollConfiguration(LivePreRollConfigurationT&& value) { SetLivePreRollConfiguration(std::forward<LivePreRollConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,26 +163,24 @@ namespace Model
      * <p>The configuration for manifest processing rules. Manifest processing rules
      * enable customization of the personalized manifests created by MediaTailor.</p>
      */
-    inline const ManifestProcessingRules& GetManifestProcessingRules() const{ return m_manifestProcessingRules; }
+    inline const ManifestProcessingRules& GetManifestProcessingRules() const { return m_manifestProcessingRules; }
     inline bool ManifestProcessingRulesHasBeenSet() const { return m_manifestProcessingRulesHasBeenSet; }
-    inline void SetManifestProcessingRules(const ManifestProcessingRules& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = value; }
-    inline void SetManifestProcessingRules(ManifestProcessingRules&& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithManifestProcessingRules(const ManifestProcessingRules& value) { SetManifestProcessingRules(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithManifestProcessingRules(ManifestProcessingRules&& value) { SetManifestProcessingRules(std::move(value)); return *this;}
+    template<typename ManifestProcessingRulesT = ManifestProcessingRules>
+    void SetManifestProcessingRules(ManifestProcessingRulesT&& value) { m_manifestProcessingRulesHasBeenSet = true; m_manifestProcessingRules = std::forward<ManifestProcessingRulesT>(value); }
+    template<typename ManifestProcessingRulesT = ManifestProcessingRules>
+    PutPlaybackConfigurationRequest& WithManifestProcessingRules(ManifestProcessingRulesT&& value) { SetManifestProcessingRules(std::forward<ManifestProcessingRulesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the playback configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutPlaybackConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutPlaybackConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,7 +195,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
      * Behavior in AWS Elemental MediaTailor</a>.</p>
      */
-    inline int GetPersonalizationThresholdSeconds() const{ return m_personalizationThresholdSeconds; }
+    inline int GetPersonalizationThresholdSeconds() const { return m_personalizationThresholdSeconds; }
     inline bool PersonalizationThresholdSecondsHasBeenSet() const { return m_personalizationThresholdSecondsHasBeenSet; }
     inline void SetPersonalizationThresholdSeconds(int value) { m_personalizationThresholdSecondsHasBeenSet = true; m_personalizationThresholdSeconds = value; }
     inline PutPlaybackConfigurationRequest& WithPersonalizationThresholdSeconds(int value) { SetPersonalizationThresholdSeconds(value); return *this;}
@@ -218,14 +210,12 @@ namespace Model
      * in the slots that are designated for dynamic ad content. The slate must be a
      * high-quality asset that contains both audio and video.</p>
      */
-    inline const Aws::String& GetSlateAdUrl() const{ return m_slateAdUrl; }
+    inline const Aws::String& GetSlateAdUrl() const { return m_slateAdUrl; }
     inline bool SlateAdUrlHasBeenSet() const { return m_slateAdUrlHasBeenSet; }
-    inline void SetSlateAdUrl(const Aws::String& value) { m_slateAdUrlHasBeenSet = true; m_slateAdUrl = value; }
-    inline void SetSlateAdUrl(Aws::String&& value) { m_slateAdUrlHasBeenSet = true; m_slateAdUrl = std::move(value); }
-    inline void SetSlateAdUrl(const char* value) { m_slateAdUrlHasBeenSet = true; m_slateAdUrl.assign(value); }
-    inline PutPlaybackConfigurationRequest& WithSlateAdUrl(const Aws::String& value) { SetSlateAdUrl(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithSlateAdUrl(Aws::String&& value) { SetSlateAdUrl(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& WithSlateAdUrl(const char* value) { SetSlateAdUrl(value); return *this;}
+    template<typename SlateAdUrlT = Aws::String>
+    void SetSlateAdUrl(SlateAdUrlT&& value) { m_slateAdUrlHasBeenSet = true; m_slateAdUrl = std::forward<SlateAdUrlT>(value); }
+    template<typename SlateAdUrlT = Aws::String>
+    PutPlaybackConfigurationRequest& WithSlateAdUrl(SlateAdUrlT&& value) { SetSlateAdUrl(std::forward<SlateAdUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -236,19 +226,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
      * AWS Elemental MediaTailor Resources</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline PutPlaybackConfigurationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PutPlaybackConfigurationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PutPlaybackConfigurationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutPlaybackConfigurationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline PutPlaybackConfigurationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline PutPlaybackConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    PutPlaybackConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    PutPlaybackConfigurationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -258,14 +245,12 @@ namespace Model
      * MediaTailor. Use this only if you have already set up custom profiles with the
      * help of AWS Support.</p>
      */
-    inline const Aws::String& GetTranscodeProfileName() const{ return m_transcodeProfileName; }
+    inline const Aws::String& GetTranscodeProfileName() const { return m_transcodeProfileName; }
     inline bool TranscodeProfileNameHasBeenSet() const { return m_transcodeProfileNameHasBeenSet; }
-    inline void SetTranscodeProfileName(const Aws::String& value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName = value; }
-    inline void SetTranscodeProfileName(Aws::String&& value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName = std::move(value); }
-    inline void SetTranscodeProfileName(const char* value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName.assign(value); }
-    inline PutPlaybackConfigurationRequest& WithTranscodeProfileName(const Aws::String& value) { SetTranscodeProfileName(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithTranscodeProfileName(Aws::String&& value) { SetTranscodeProfileName(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& WithTranscodeProfileName(const char* value) { SetTranscodeProfileName(value); return *this;}
+    template<typename TranscodeProfileNameT = Aws::String>
+    void SetTranscodeProfileName(TranscodeProfileNameT&& value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName = std::forward<TranscodeProfileNameT>(value); }
+    template<typename TranscodeProfileNameT = Aws::String>
+    PutPlaybackConfigurationRequest& WithTranscodeProfileName(TranscodeProfileNameT&& value) { SetTranscodeProfileName(std::forward<TranscodeProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,14 +258,12 @@ namespace Model
      * <p>The URL prefix for the parent manifest for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
-    inline const Aws::String& GetVideoContentSourceUrl() const{ return m_videoContentSourceUrl; }
+    inline const Aws::String& GetVideoContentSourceUrl() const { return m_videoContentSourceUrl; }
     inline bool VideoContentSourceUrlHasBeenSet() const { return m_videoContentSourceUrlHasBeenSet; }
-    inline void SetVideoContentSourceUrl(const Aws::String& value) { m_videoContentSourceUrlHasBeenSet = true; m_videoContentSourceUrl = value; }
-    inline void SetVideoContentSourceUrl(Aws::String&& value) { m_videoContentSourceUrlHasBeenSet = true; m_videoContentSourceUrl = std::move(value); }
-    inline void SetVideoContentSourceUrl(const char* value) { m_videoContentSourceUrlHasBeenSet = true; m_videoContentSourceUrl.assign(value); }
-    inline PutPlaybackConfigurationRequest& WithVideoContentSourceUrl(const Aws::String& value) { SetVideoContentSourceUrl(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithVideoContentSourceUrl(Aws::String&& value) { SetVideoContentSourceUrl(std::move(value)); return *this;}
-    inline PutPlaybackConfigurationRequest& WithVideoContentSourceUrl(const char* value) { SetVideoContentSourceUrl(value); return *this;}
+    template<typename VideoContentSourceUrlT = Aws::String>
+    void SetVideoContentSourceUrl(VideoContentSourceUrlT&& value) { m_videoContentSourceUrlHasBeenSet = true; m_videoContentSourceUrl = std::forward<VideoContentSourceUrlT>(value); }
+    template<typename VideoContentSourceUrlT = Aws::String>
+    PutPlaybackConfigurationRequest& WithVideoContentSourceUrl(VideoContentSourceUrlT&& value) { SetVideoContentSourceUrl(std::forward<VideoContentSourceUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -289,12 +272,12 @@ namespace Model
      * that the ad decision server (ADS) returns, and what priority MediaTailor uses
      * when inserting ads. </p>
      */
-    inline const AdConditioningConfiguration& GetAdConditioningConfiguration() const{ return m_adConditioningConfiguration; }
+    inline const AdConditioningConfiguration& GetAdConditioningConfiguration() const { return m_adConditioningConfiguration; }
     inline bool AdConditioningConfigurationHasBeenSet() const { return m_adConditioningConfigurationHasBeenSet; }
-    inline void SetAdConditioningConfiguration(const AdConditioningConfiguration& value) { m_adConditioningConfigurationHasBeenSet = true; m_adConditioningConfiguration = value; }
-    inline void SetAdConditioningConfiguration(AdConditioningConfiguration&& value) { m_adConditioningConfigurationHasBeenSet = true; m_adConditioningConfiguration = std::move(value); }
-    inline PutPlaybackConfigurationRequest& WithAdConditioningConfiguration(const AdConditioningConfiguration& value) { SetAdConditioningConfiguration(value); return *this;}
-    inline PutPlaybackConfigurationRequest& WithAdConditioningConfiguration(AdConditioningConfiguration&& value) { SetAdConditioningConfiguration(std::move(value)); return *this;}
+    template<typename AdConditioningConfigurationT = AdConditioningConfiguration>
+    void SetAdConditioningConfiguration(AdConditioningConfigurationT&& value) { m_adConditioningConfigurationHasBeenSet = true; m_adConditioningConfiguration = std::forward<AdConditioningConfigurationT>(value); }
+    template<typename AdConditioningConfigurationT = AdConditioningConfiguration>
+    PutPlaybackConfigurationRequest& WithAdConditioningConfiguration(AdConditioningConfigurationT&& value) { SetAdConditioningConfiguration(std::forward<AdConditioningConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -316,7 +299,7 @@ namespace Model
     DashConfigurationForPut m_dashConfiguration;
     bool m_dashConfigurationHasBeenSet = false;
 
-    InsertionMode m_insertionMode;
+    InsertionMode m_insertionMode{InsertionMode::NOT_SET};
     bool m_insertionModeHasBeenSet = false;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
@@ -328,7 +311,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_personalizationThresholdSeconds;
+    int m_personalizationThresholdSeconds{0};
     bool m_personalizationThresholdSecondsHasBeenSet = false;
 
     Aws::String m_slateAdUrl;

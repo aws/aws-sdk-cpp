@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetServiceEndpointRequest::GetServiceEndpointRequest() : 
-    m_serviceType(WirelessGatewayServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceEndpointRequest::SerializePayload() const
 {
   return {};

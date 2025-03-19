@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterDbRevision::ClusterDbRevision() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_currentDatabaseRevisionHasBeenSet(false),
-    m_databaseRevisionReleaseDateHasBeenSet(false),
-    m_revisionTargetsHasBeenSet(false)
-{
-}
-
 ClusterDbRevision::ClusterDbRevision(const XmlNode& xmlNode)
-  : ClusterDbRevision()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ ClusterDbRevision& ClusterDbRevision::operator =(const XmlNode& xmlNode)
     if(!revisionTargetsNode.IsNull())
     {
       XmlNode revisionTargetsMember = revisionTargetsNode.FirstChild("RevisionTarget");
+      m_revisionTargetsHasBeenSet = !revisionTargetsMember.IsNull();
       while(!revisionTargetsMember.IsNull())
       {
         m_revisionTargets.push_back(revisionTargetsMember);

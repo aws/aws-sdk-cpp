@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AutoTuneDetails::AutoTuneDetails() : 
-    m_scheduledAutoTuneDetailsHasBeenSet(false)
-{
-}
-
 AutoTuneDetails::AutoTuneDetails(JsonView jsonValue)
-  : AutoTuneDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoTuneDetails& AutoTuneDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScheduledAutoTuneDetails"))
   {
     m_scheduledAutoTuneDetails = jsonValue.GetObject("ScheduledAutoTuneDetails");
-
     m_scheduledAutoTuneDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

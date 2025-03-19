@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAssociationRequest::DescribeAssociationRequest() : 
-    m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_associationVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

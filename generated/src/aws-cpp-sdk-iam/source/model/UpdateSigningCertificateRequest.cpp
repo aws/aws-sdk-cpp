@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateSigningCertificateRequest::UpdateSigningCertificateRequest() : 
-    m_userNameHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSigningCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

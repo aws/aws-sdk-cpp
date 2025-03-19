@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-SpainAdditionalInfo::SpainAdditionalInfo() : 
-    m_registrationType(RegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false)
-{
-}
-
 SpainAdditionalInfo::SpainAdditionalInfo(JsonView jsonValue)
-  : SpainAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SpainAdditionalInfo& SpainAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("registrationType"))
   {
     m_registrationType = RegistrationTypeMapper::GetRegistrationTypeForName(jsonValue.GetString("registrationType"));
-
     m_registrationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

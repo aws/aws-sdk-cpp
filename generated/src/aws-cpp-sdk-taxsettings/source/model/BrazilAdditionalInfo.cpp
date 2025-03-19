@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-BrazilAdditionalInfo::BrazilAdditionalInfo() : 
-    m_ccmCodeHasBeenSet(false),
-    m_legalNatureCodeHasBeenSet(false)
-{
-}
-
 BrazilAdditionalInfo::BrazilAdditionalInfo(JsonView jsonValue)
-  : BrazilAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BrazilAdditionalInfo& BrazilAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ccmCode"))
   {
     m_ccmCode = jsonValue.GetString("ccmCode");
-
     m_ccmCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("legalNatureCode"))
   {
     m_legalNatureCode = jsonValue.GetString("legalNatureCode");
-
     m_legalNatureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

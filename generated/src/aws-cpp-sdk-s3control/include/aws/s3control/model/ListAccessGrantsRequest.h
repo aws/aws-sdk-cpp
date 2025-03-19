@@ -27,7 +27,7 @@ namespace Model
   class ListAccessGrantsRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API ListAccessGrantsRequest();
+    AWS_S3CONTROL_API ListAccessGrantsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListAccessGrantsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListAccessGrantsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListAccessGrantsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListAccessGrantsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * a subsequent <code>List Access Grants</code> request in order to retrieve the
      * next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccessGrantsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccessGrantsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccessGrantsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccessGrantsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +81,7 @@ namespace Model
      * token <code>NextToken</code>, make another call using the <code>NextToken</code>
      * to determine if there are more results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAccessGrantsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -104,12 +100,10 @@ namespace Model
      * Center and associated the IAM Identity Center instance with your S3 Access
      * Grants instance.</p> </li> </ul>
      */
-    inline const GranteeType& GetGranteeType() const{ return m_granteeType; }
+    inline GranteeType GetGranteeType() const { return m_granteeType; }
     inline bool GranteeTypeHasBeenSet() const { return m_granteeTypeHasBeenSet; }
-    inline void SetGranteeType(const GranteeType& value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
-    inline void SetGranteeType(GranteeType&& value) { m_granteeTypeHasBeenSet = true; m_granteeType = std::move(value); }
-    inline ListAccessGrantsRequest& WithGranteeType(const GranteeType& value) { SetGranteeType(value); return *this;}
-    inline ListAccessGrantsRequest& WithGranteeType(GranteeType&& value) { SetGranteeType(std::move(value)); return *this;}
+    inline void SetGranteeType(GranteeType value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
+    inline ListAccessGrantsRequest& WithGranteeType(GranteeType value) { SetGranteeType(value); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,12 @@ namespace Model
      * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from
      * your Amazon Web Services IAM Identity Center instance.</p>
      */
-    inline const Aws::String& GetGranteeIdentifier() const{ return m_granteeIdentifier; }
+    inline const Aws::String& GetGranteeIdentifier() const { return m_granteeIdentifier; }
     inline bool GranteeIdentifierHasBeenSet() const { return m_granteeIdentifierHasBeenSet; }
-    inline void SetGranteeIdentifier(const Aws::String& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = value; }
-    inline void SetGranteeIdentifier(Aws::String&& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = std::move(value); }
-    inline void SetGranteeIdentifier(const char* value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier.assign(value); }
-    inline ListAccessGrantsRequest& WithGranteeIdentifier(const Aws::String& value) { SetGranteeIdentifier(value); return *this;}
-    inline ListAccessGrantsRequest& WithGranteeIdentifier(Aws::String&& value) { SetGranteeIdentifier(std::move(value)); return *this;}
-    inline ListAccessGrantsRequest& WithGranteeIdentifier(const char* value) { SetGranteeIdentifier(value); return *this;}
+    template<typename GranteeIdentifierT = Aws::String>
+    void SetGranteeIdentifier(GranteeIdentifierT&& value) { m_granteeIdentifierHasBeenSet = true; m_granteeIdentifier = std::forward<GranteeIdentifierT>(value); }
+    template<typename GranteeIdentifierT = Aws::String>
+    ListAccessGrantsRequest& WithGranteeIdentifier(GranteeIdentifierT&& value) { SetGranteeIdentifier(std::forward<GranteeIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +131,10 @@ namespace Model
      * access to the S3 data.</p> </li> <li> <p> <code>READWRITE</code> – Grant both
      * read and write access to the S3 data.</p> </li> </ul>
      */
-    inline const Permission& GetPermission() const{ return m_permission; }
+    inline Permission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline ListAccessGrantsRequest& WithPermission(const Permission& value) { SetPermission(value); return *this;}
-    inline ListAccessGrantsRequest& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(Permission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline ListAccessGrantsRequest& WithPermission(Permission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +142,12 @@ namespace Model
      * <p>The S3 path of the data to which you are granting access. It is the result of
      * appending the <code>Subprefix</code> to the location scope.</p>
      */
-    inline const Aws::String& GetGrantScope() const{ return m_grantScope; }
+    inline const Aws::String& GetGrantScope() const { return m_grantScope; }
     inline bool GrantScopeHasBeenSet() const { return m_grantScopeHasBeenSet; }
-    inline void SetGrantScope(const Aws::String& value) { m_grantScopeHasBeenSet = true; m_grantScope = value; }
-    inline void SetGrantScope(Aws::String&& value) { m_grantScopeHasBeenSet = true; m_grantScope = std::move(value); }
-    inline void SetGrantScope(const char* value) { m_grantScopeHasBeenSet = true; m_grantScope.assign(value); }
-    inline ListAccessGrantsRequest& WithGrantScope(const Aws::String& value) { SetGrantScope(value); return *this;}
-    inline ListAccessGrantsRequest& WithGrantScope(Aws::String&& value) { SetGrantScope(std::move(value)); return *this;}
-    inline ListAccessGrantsRequest& WithGrantScope(const char* value) { SetGrantScope(value); return *this;}
+    template<typename GrantScopeT = Aws::String>
+    void SetGrantScope(GrantScopeT&& value) { m_grantScopeHasBeenSet = true; m_grantScope = std::forward<GrantScopeT>(value); }
+    template<typename GrantScopeT = Aws::String>
+    ListAccessGrantsRequest& WithGrantScope(GrantScopeT&& value) { SetGrantScope(std::forward<GrantScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +157,12 @@ namespace Model
      * an application ARN, the grantee can only access the S3 data through this
      * application. </p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline ListAccessGrantsRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline ListAccessGrantsRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline ListAccessGrantsRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    ListAccessGrantsRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -186,16 +172,16 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    GranteeType m_granteeType;
+    GranteeType m_granteeType{GranteeType::NOT_SET};
     bool m_granteeTypeHasBeenSet = false;
 
     Aws::String m_granteeIdentifier;
     bool m_granteeIdentifierHasBeenSet = false;
 
-    Permission m_permission;
+    Permission m_permission{Permission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
     Aws::String m_grantScope;

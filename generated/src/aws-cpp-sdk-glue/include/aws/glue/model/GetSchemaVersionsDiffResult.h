@@ -27,7 +27,7 @@ namespace Model
   class GetSchemaVersionsDiffResult
   {
   public:
-    AWS_GLUE_API GetSchemaVersionsDiffResult();
+    AWS_GLUE_API GetSchemaVersionsDiffResult() = default;
     AWS_GLUE_API GetSchemaVersionsDiffResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetSchemaVersionsDiffResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The difference between schemas as a string in JsonPatch format.</p>
      */
-    inline const Aws::String& GetDiff() const{ return m_diff; }
-    inline void SetDiff(const Aws::String& value) { m_diff = value; }
-    inline void SetDiff(Aws::String&& value) { m_diff = std::move(value); }
-    inline void SetDiff(const char* value) { m_diff.assign(value); }
-    inline GetSchemaVersionsDiffResult& WithDiff(const Aws::String& value) { SetDiff(value); return *this;}
-    inline GetSchemaVersionsDiffResult& WithDiff(Aws::String&& value) { SetDiff(std::move(value)); return *this;}
-    inline GetSchemaVersionsDiffResult& WithDiff(const char* value) { SetDiff(value); return *this;}
+    inline const Aws::String& GetDiff() const { return m_diff; }
+    template<typename DiffT = Aws::String>
+    void SetDiff(DiffT&& value) { m_diffHasBeenSet = true; m_diff = std::forward<DiffT>(value); }
+    template<typename DiffT = Aws::String>
+    GetSchemaVersionsDiffResult& WithDiff(DiffT&& value) { SetDiff(std::forward<DiffT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSchemaVersionsDiffResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSchemaVersionsDiffResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSchemaVersionsDiffResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSchemaVersionsDiffResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_diff;
+    bool m_diffHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

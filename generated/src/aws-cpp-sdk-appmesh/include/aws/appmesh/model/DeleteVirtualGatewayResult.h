@@ -28,7 +28,7 @@ namespace Model
   class DeleteVirtualGatewayResult
   {
   public:
-    AWS_APPMESH_API DeleteVirtualGatewayResult();
+    AWS_APPMESH_API DeleteVirtualGatewayResult() = default;
     AWS_APPMESH_API DeleteVirtualGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API DeleteVirtualGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The virtual gateway that was deleted.</p>
      */
-    inline const VirtualGatewayData& GetVirtualGateway() const{ return m_virtualGateway; }
-    inline void SetVirtualGateway(const VirtualGatewayData& value) { m_virtualGateway = value; }
-    inline void SetVirtualGateway(VirtualGatewayData&& value) { m_virtualGateway = std::move(value); }
-    inline DeleteVirtualGatewayResult& WithVirtualGateway(const VirtualGatewayData& value) { SetVirtualGateway(value); return *this;}
-    inline DeleteVirtualGatewayResult& WithVirtualGateway(VirtualGatewayData&& value) { SetVirtualGateway(std::move(value)); return *this;}
+    inline const VirtualGatewayData& GetVirtualGateway() const { return m_virtualGateway; }
+    template<typename VirtualGatewayT = VirtualGatewayData>
+    void SetVirtualGateway(VirtualGatewayT&& value) { m_virtualGatewayHasBeenSet = true; m_virtualGateway = std::forward<VirtualGatewayT>(value); }
+    template<typename VirtualGatewayT = VirtualGatewayData>
+    DeleteVirtualGatewayResult& WithVirtualGateway(VirtualGatewayT&& value) { SetVirtualGateway(std::forward<VirtualGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteVirtualGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteVirtualGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteVirtualGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteVirtualGatewayResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualGatewayData m_virtualGateway;
+    bool m_virtualGatewayHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

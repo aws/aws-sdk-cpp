@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Bounce::Bounce() : 
-    m_bounceType(BounceType::NOT_SET),
-    m_bounceTypeHasBeenSet(false),
-    m_bounceSubTypeHasBeenSet(false),
-    m_diagnosticCodeHasBeenSet(false)
-{
-}
-
 Bounce::Bounce(JsonView jsonValue)
-  : Bounce()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Bounce& Bounce::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BounceType"))
   {
     m_bounceType = BounceTypeMapper::GetBounceTypeForName(jsonValue.GetString("BounceType"));
-
     m_bounceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BounceSubType"))
   {
     m_bounceSubType = jsonValue.GetString("BounceSubType");
-
     m_bounceSubTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiagnosticCode"))
   {
     m_diagnosticCode = jsonValue.GetString("DiagnosticCode");
-
     m_diagnosticCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

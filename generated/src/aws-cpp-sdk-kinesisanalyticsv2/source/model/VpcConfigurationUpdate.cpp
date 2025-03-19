@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-VpcConfigurationUpdate::VpcConfigurationUpdate() : 
-    m_vpcConfigurationIdHasBeenSet(false),
-    m_subnetIdUpdatesHasBeenSet(false),
-    m_securityGroupIdUpdatesHasBeenSet(false)
-{
-}
-
 VpcConfigurationUpdate::VpcConfigurationUpdate(JsonView jsonValue)
-  : VpcConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ VpcConfigurationUpdate& VpcConfigurationUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcConfigurationId"))
   {
     m_vpcConfigurationId = jsonValue.GetString("VpcConfigurationId");
-
     m_vpcConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIdUpdates"))
   {
     Aws::Utils::Array<JsonView> subnetIdUpdatesJsonList = jsonValue.GetArray("SubnetIdUpdates");
@@ -49,7 +39,6 @@ VpcConfigurationUpdate& VpcConfigurationUpdate::operator =(JsonView jsonValue)
     }
     m_subnetIdUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIdUpdates"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdUpdatesJsonList = jsonValue.GetArray("SecurityGroupIdUpdates");
@@ -59,7 +48,6 @@ VpcConfigurationUpdate& VpcConfigurationUpdate::operator =(JsonView jsonValue)
     }
     m_securityGroupIdUpdatesHasBeenSet = true;
   }
-
   return *this;
 }
 

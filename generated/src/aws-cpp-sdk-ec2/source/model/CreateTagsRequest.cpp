@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTagsRequest::CreateTagsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -33,7 +33,7 @@ namespace Model
   class AutoExportRevisionToS3RequestDetails
   {
   public:
-    AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails();
+    AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails() = default;
     AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Encryption configuration for the auto export job.</p>
      */
-    inline const ExportServerSideEncryption& GetEncryption() const{ return m_encryption; }
+    inline const ExportServerSideEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const ExportServerSideEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(ExportServerSideEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline AutoExportRevisionToS3RequestDetails& WithEncryption(const ExportServerSideEncryption& value) { SetEncryption(value); return *this;}
-    inline AutoExportRevisionToS3RequestDetails& WithEncryption(ExportServerSideEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = ExportServerSideEncryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = ExportServerSideEncryption>
+    AutoExportRevisionToS3RequestDetails& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>A revision destination is the Amazon S3 bucket folder destination to where
      * the export will be sent.</p>
      */
-    inline const AutoExportRevisionDestinationEntry& GetRevisionDestination() const{ return m_revisionDestination; }
+    inline const AutoExportRevisionDestinationEntry& GetRevisionDestination() const { return m_revisionDestination; }
     inline bool RevisionDestinationHasBeenSet() const { return m_revisionDestinationHasBeenSet; }
-    inline void SetRevisionDestination(const AutoExportRevisionDestinationEntry& value) { m_revisionDestinationHasBeenSet = true; m_revisionDestination = value; }
-    inline void SetRevisionDestination(AutoExportRevisionDestinationEntry&& value) { m_revisionDestinationHasBeenSet = true; m_revisionDestination = std::move(value); }
-    inline AutoExportRevisionToS3RequestDetails& WithRevisionDestination(const AutoExportRevisionDestinationEntry& value) { SetRevisionDestination(value); return *this;}
-    inline AutoExportRevisionToS3RequestDetails& WithRevisionDestination(AutoExportRevisionDestinationEntry&& value) { SetRevisionDestination(std::move(value)); return *this;}
+    template<typename RevisionDestinationT = AutoExportRevisionDestinationEntry>
+    void SetRevisionDestination(RevisionDestinationT&& value) { m_revisionDestinationHasBeenSet = true; m_revisionDestination = std::forward<RevisionDestinationT>(value); }
+    template<typename RevisionDestinationT = AutoExportRevisionDestinationEntry>
+    AutoExportRevisionToS3RequestDetails& WithRevisionDestination(RevisionDestinationT&& value) { SetRevisionDestination(std::forward<RevisionDestinationT>(value)); return *this;}
     ///@}
   private:
 

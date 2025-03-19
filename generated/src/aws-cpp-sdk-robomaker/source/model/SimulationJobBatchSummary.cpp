@@ -18,23 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-SimulationJobBatchSummary::SimulationJobBatchSummary() : 
-    m_arnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(SimulationJobBatchStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failedRequestCount(0),
-    m_failedRequestCountHasBeenSet(false),
-    m_pendingRequestCount(0),
-    m_pendingRequestCountHasBeenSet(false),
-    m_createdRequestCount(0),
-    m_createdRequestCountHasBeenSet(false)
-{
-}
-
 SimulationJobBatchSummary::SimulationJobBatchSummary(JsonView jsonValue)
-  : SimulationJobBatchSummary()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ SimulationJobBatchSummary& SimulationJobBatchSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SimulationJobBatchStatusMapper::GetSimulationJobBatchStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedRequestCount"))
   {
     m_failedRequestCount = jsonValue.GetInteger("failedRequestCount");
-
     m_failedRequestCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingRequestCount"))
   {
     m_pendingRequestCount = jsonValue.GetInteger("pendingRequestCount");
-
     m_pendingRequestCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdRequestCount"))
   {
     m_createdRequestCount = jsonValue.GetInteger("createdRequestCount");
-
     m_createdRequestCountHasBeenSet = true;
   }
-
   return *this;
 }
 

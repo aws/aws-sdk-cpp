@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentClosingSetting::IntentClosingSetting() : 
-    m_closingResponseHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_nextStepHasBeenSet(false),
-    m_conditionalHasBeenSet(false)
-{
-}
-
 IntentClosingSetting::IntentClosingSetting(JsonView jsonValue)
-  : IntentClosingSetting()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ IntentClosingSetting& IntentClosingSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("closingResponse"))
   {
     m_closingResponse = jsonValue.GetObject("closingResponse");
-
     m_closingResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextStep"))
   {
     m_nextStep = jsonValue.GetObject("nextStep");
-
     m_nextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditional"))
   {
     m_conditional = jsonValue.GetObject("conditional");
-
     m_conditionalHasBeenSet = true;
   }
-
   return *this;
 }
 

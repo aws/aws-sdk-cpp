@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-NodeFilter::NodeFilter() : 
-    m_key(NodeFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_type(NodeFilterOperatorType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 NodeFilter::NodeFilter(JsonView jsonValue)
-  : NodeFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ NodeFilter& NodeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = NodeFilterKeyMapper::GetNodeFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,14 +39,11 @@ NodeFilter& NodeFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = NodeFilterOperatorTypeMapper::GetNodeFilterOperatorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

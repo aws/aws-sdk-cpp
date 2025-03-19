@@ -34,7 +34,7 @@ namespace Model
   class AccountAttribute
   {
   public:
-    AWS_REDSHIFT_API AccountAttribute();
+    AWS_REDSHIFT_API AccountAttribute() = default;
     AWS_REDSHIFT_API AccountAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API AccountAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline AccountAttribute& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline AccountAttribute& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline AccountAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    AccountAttribute& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of attribute values.</p>
      */
-    inline const Aws::Vector<AttributeValueTarget>& GetAttributeValues() const{ return m_attributeValues; }
+    inline const Aws::Vector<AttributeValueTarget>& GetAttributeValues() const { return m_attributeValues; }
     inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
-    inline void SetAttributeValues(const Aws::Vector<AttributeValueTarget>& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
-    inline void SetAttributeValues(Aws::Vector<AttributeValueTarget>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
-    inline AccountAttribute& WithAttributeValues(const Aws::Vector<AttributeValueTarget>& value) { SetAttributeValues(value); return *this;}
-    inline AccountAttribute& WithAttributeValues(Aws::Vector<AttributeValueTarget>&& value) { SetAttributeValues(std::move(value)); return *this;}
-    inline AccountAttribute& AddAttributeValues(const AttributeValueTarget& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
-    inline AccountAttribute& AddAttributeValues(AttributeValueTarget&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
+    template<typename AttributeValuesT = Aws::Vector<AttributeValueTarget>>
+    void SetAttributeValues(AttributeValuesT&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::forward<AttributeValuesT>(value); }
+    template<typename AttributeValuesT = Aws::Vector<AttributeValueTarget>>
+    AccountAttribute& WithAttributeValues(AttributeValuesT&& value) { SetAttributeValues(std::forward<AttributeValuesT>(value)); return *this;}
+    template<typename AttributeValuesT = AttributeValueTarget>
+    AccountAttribute& AddAttributeValues(AttributeValuesT&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.emplace_back(std::forward<AttributeValuesT>(value)); return *this; }
     ///@}
   private:
 

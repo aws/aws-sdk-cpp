@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCallAnalyticsJobRequest::GetCallAnalyticsJobRequest() : 
-    m_callAnalyticsJobNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCallAnalyticsJobRequest::SerializePayload() const
 {
   JsonValue payload;

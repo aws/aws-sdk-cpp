@@ -32,7 +32,7 @@ namespace Model
   class PerformanceTarget
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API PerformanceTarget();
+    AWS_REDSHIFTSERVERLESS_API PerformanceTarget() = default;
     AWS_REDSHIFTSERVERLESS_API PerformanceTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API PerformanceTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * 25, 50, 75, and 100. These correspond to the price performance levels LOW_COST,
      * ECONOMICAL, BALANCED, RESOURCEFUL, and HIGH_PERFORMANCE.</p>
      */
-    inline int GetLevel() const{ return m_level; }
+    inline int GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
     inline void SetLevel(int value) { m_levelHasBeenSet = true; m_level = value; }
     inline PerformanceTarget& WithLevel(int value) { SetLevel(value); return *this;}
@@ -54,19 +54,17 @@ namespace Model
     /**
      * <p>Whether the price performance target is enabled for the workgroup.</p>
      */
-    inline const PerformanceTargetStatus& GetStatus() const{ return m_status; }
+    inline PerformanceTargetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PerformanceTargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PerformanceTargetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PerformanceTarget& WithStatus(const PerformanceTargetStatus& value) { SetStatus(value); return *this;}
-    inline PerformanceTarget& WithStatus(PerformanceTargetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PerformanceTargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PerformanceTarget& WithStatus(PerformanceTargetStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    int m_level;
+    int m_level{0};
     bool m_levelHasBeenSet = false;
 
-    PerformanceTargetStatus m_status;
+    PerformanceTargetStatus m_status{PerformanceTargetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResponseHeadersPolicy2020_05_31Result::GetResponseHeadersPolicy2020_05_31Result()
-{
-}
-
 GetResponseHeadersPolicy2020_05_31Result::GetResponseHeadersPolicy2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetResponseHeadersPolicy2020_05_31Result& GetResponseHeadersPolicy2020_05_31Resu
   if(!resultNode.IsNull())
   {
     m_responseHeadersPolicy = resultNode;
+    m_responseHeadersPolicyHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,12 +37,14 @@ GetResponseHeadersPolicy2020_05_31Result& GetResponseHeadersPolicy2020_05_31Resu
   if(eTagIter != headers.end())
   {
     m_eTag = eTagIter->second;
+    m_eTagHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

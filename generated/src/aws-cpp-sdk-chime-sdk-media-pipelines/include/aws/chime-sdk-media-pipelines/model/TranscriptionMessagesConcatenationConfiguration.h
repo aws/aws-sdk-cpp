@@ -32,7 +32,7 @@ namespace Model
   class TranscriptionMessagesConcatenationConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Enables or disables the configuration object.</p>
      */
-    inline const ArtifactsConcatenationState& GetState() const{ return m_state; }
+    inline ArtifactsConcatenationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ArtifactsConcatenationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ArtifactsConcatenationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline TranscriptionMessagesConcatenationConfiguration& WithState(const ArtifactsConcatenationState& value) { SetState(value); return *this;}
-    inline TranscriptionMessagesConcatenationConfiguration& WithState(ArtifactsConcatenationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ArtifactsConcatenationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TranscriptionMessagesConcatenationConfiguration& WithState(ArtifactsConcatenationState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    ArtifactsConcatenationState m_state;
+    ArtifactsConcatenationState m_state{ArtifactsConcatenationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

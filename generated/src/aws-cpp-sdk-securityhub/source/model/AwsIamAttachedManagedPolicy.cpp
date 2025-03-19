@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamAttachedManagedPolicy::AwsIamAttachedManagedPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 AwsIamAttachedManagedPolicy::AwsIamAttachedManagedPolicy(JsonView jsonValue)
-  : AwsIamAttachedManagedPolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsIamAttachedManagedPolicy& AwsIamAttachedManagedPolicy::operator =(JsonView js
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyArn"))
   {
     m_policyArn = jsonValue.GetString("PolicyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

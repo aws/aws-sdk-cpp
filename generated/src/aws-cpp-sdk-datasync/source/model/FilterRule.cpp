@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-FilterRule::FilterRule() : 
-    m_filterType(FilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FilterRule::FilterRule(JsonView jsonValue)
-  : FilterRule()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FilterRule& FilterRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterType"))
   {
     m_filterType = FilterTypeMapper::GetFilterTypeForName(jsonValue.GetString("FilterType"));
-
     m_filterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

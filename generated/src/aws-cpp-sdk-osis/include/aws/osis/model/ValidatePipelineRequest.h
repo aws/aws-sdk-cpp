@@ -21,7 +21,7 @@ namespace Model
   class ValidatePipelineRequest : public OSISRequest
   {
   public:
-    AWS_OSIS_API ValidatePipelineRequest();
+    AWS_OSIS_API ValidatePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * configuration as a string, each new line must be escaped with
      * <code>\n</code>.</p>
      */
-    inline const Aws::String& GetPipelineConfigurationBody() const{ return m_pipelineConfigurationBody; }
+    inline const Aws::String& GetPipelineConfigurationBody() const { return m_pipelineConfigurationBody; }
     inline bool PipelineConfigurationBodyHasBeenSet() const { return m_pipelineConfigurationBodyHasBeenSet; }
-    inline void SetPipelineConfigurationBody(const Aws::String& value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody = value; }
-    inline void SetPipelineConfigurationBody(Aws::String&& value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody = std::move(value); }
-    inline void SetPipelineConfigurationBody(const char* value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody.assign(value); }
-    inline ValidatePipelineRequest& WithPipelineConfigurationBody(const Aws::String& value) { SetPipelineConfigurationBody(value); return *this;}
-    inline ValidatePipelineRequest& WithPipelineConfigurationBody(Aws::String&& value) { SetPipelineConfigurationBody(std::move(value)); return *this;}
-    inline ValidatePipelineRequest& WithPipelineConfigurationBody(const char* value) { SetPipelineConfigurationBody(value); return *this;}
+    template<typename PipelineConfigurationBodyT = Aws::String>
+    void SetPipelineConfigurationBody(PipelineConfigurationBodyT&& value) { m_pipelineConfigurationBodyHasBeenSet = true; m_pipelineConfigurationBody = std::forward<PipelineConfigurationBodyT>(value); }
+    template<typename PipelineConfigurationBodyT = Aws::String>
+    ValidatePipelineRequest& WithPipelineConfigurationBody(PipelineConfigurationBodyT&& value) { SetPipelineConfigurationBody(std::forward<PipelineConfigurationBodyT>(value)); return *this;}
     ///@}
   private:
 

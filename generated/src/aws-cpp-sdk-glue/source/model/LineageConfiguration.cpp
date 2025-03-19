@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-LineageConfiguration::LineageConfiguration() : 
-    m_crawlerLineageSettings(CrawlerLineageSettings::NOT_SET),
-    m_crawlerLineageSettingsHasBeenSet(false)
-{
-}
-
 LineageConfiguration::LineageConfiguration(JsonView jsonValue)
-  : LineageConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LineageConfiguration& LineageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CrawlerLineageSettings"))
   {
     m_crawlerLineageSettings = CrawlerLineageSettingsMapper::GetCrawlerLineageSettingsForName(jsonValue.GetString("CrawlerLineageSettings"));
-
     m_crawlerLineageSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

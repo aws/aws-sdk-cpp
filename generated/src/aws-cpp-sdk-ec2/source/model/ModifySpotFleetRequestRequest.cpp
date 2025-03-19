@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifySpotFleetRequestRequest::ModifySpotFleetRequestRequest() : 
-    m_launchTemplateConfigsHasBeenSet(false),
-    m_onDemandTargetCapacity(0),
-    m_onDemandTargetCapacityHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_targetCapacity(0),
-    m_targetCapacityHasBeenSet(false),
-    m_excessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy::NOT_SET),
-    m_excessCapacityTerminationPolicyHasBeenSet(false)
-{
-}
-
 Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
 {
   Aws::StringStream ss;

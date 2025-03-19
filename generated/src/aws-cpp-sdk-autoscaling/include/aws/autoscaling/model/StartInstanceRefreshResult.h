@@ -28,7 +28,7 @@ namespace Model
   class StartInstanceRefreshResult
   {
   public:
-    AWS_AUTOSCALING_API StartInstanceRefreshResult();
+    AWS_AUTOSCALING_API StartInstanceRefreshResult() = default;
     AWS_AUTOSCALING_API StartInstanceRefreshResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API StartInstanceRefreshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A unique ID for tracking the progress of the instance refresh.</p>
      */
-    inline const Aws::String& GetInstanceRefreshId() const{ return m_instanceRefreshId; }
-    inline void SetInstanceRefreshId(const Aws::String& value) { m_instanceRefreshId = value; }
-    inline void SetInstanceRefreshId(Aws::String&& value) { m_instanceRefreshId = std::move(value); }
-    inline void SetInstanceRefreshId(const char* value) { m_instanceRefreshId.assign(value); }
-    inline StartInstanceRefreshResult& WithInstanceRefreshId(const Aws::String& value) { SetInstanceRefreshId(value); return *this;}
-    inline StartInstanceRefreshResult& WithInstanceRefreshId(Aws::String&& value) { SetInstanceRefreshId(std::move(value)); return *this;}
-    inline StartInstanceRefreshResult& WithInstanceRefreshId(const char* value) { SetInstanceRefreshId(value); return *this;}
+    inline const Aws::String& GetInstanceRefreshId() const { return m_instanceRefreshId; }
+    template<typename InstanceRefreshIdT = Aws::String>
+    void SetInstanceRefreshId(InstanceRefreshIdT&& value) { m_instanceRefreshIdHasBeenSet = true; m_instanceRefreshId = std::forward<InstanceRefreshIdT>(value); }
+    template<typename InstanceRefreshIdT = Aws::String>
+    StartInstanceRefreshResult& WithInstanceRefreshId(InstanceRefreshIdT&& value) { SetInstanceRefreshId(std::forward<InstanceRefreshIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline StartInstanceRefreshResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline StartInstanceRefreshResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    StartInstanceRefreshResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceRefreshId;
+    bool m_instanceRefreshIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

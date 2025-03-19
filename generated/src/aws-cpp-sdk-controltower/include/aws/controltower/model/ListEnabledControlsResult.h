@@ -29,7 +29,7 @@ namespace Model
   class ListEnabledControlsResult
   {
   public:
-    AWS_CONTROLTOWER_API ListEnabledControlsResult();
+    AWS_CONTROLTOWER_API ListEnabledControlsResult() = default;
     AWS_CONTROLTOWER_API ListEnabledControlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLTOWER_API ListEnabledControlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>Lists the controls enabled by Amazon Web Services Control Tower on the
      * specified organizational unit and the accounts it contains.</p>
      */
-    inline const Aws::Vector<EnabledControlSummary>& GetEnabledControls() const{ return m_enabledControls; }
-    inline void SetEnabledControls(const Aws::Vector<EnabledControlSummary>& value) { m_enabledControls = value; }
-    inline void SetEnabledControls(Aws::Vector<EnabledControlSummary>&& value) { m_enabledControls = std::move(value); }
-    inline ListEnabledControlsResult& WithEnabledControls(const Aws::Vector<EnabledControlSummary>& value) { SetEnabledControls(value); return *this;}
-    inline ListEnabledControlsResult& WithEnabledControls(Aws::Vector<EnabledControlSummary>&& value) { SetEnabledControls(std::move(value)); return *this;}
-    inline ListEnabledControlsResult& AddEnabledControls(const EnabledControlSummary& value) { m_enabledControls.push_back(value); return *this; }
-    inline ListEnabledControlsResult& AddEnabledControls(EnabledControlSummary&& value) { m_enabledControls.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnabledControlSummary>& GetEnabledControls() const { return m_enabledControls; }
+    template<typename EnabledControlsT = Aws::Vector<EnabledControlSummary>>
+    void SetEnabledControls(EnabledControlsT&& value) { m_enabledControlsHasBeenSet = true; m_enabledControls = std::forward<EnabledControlsT>(value); }
+    template<typename EnabledControlsT = Aws::Vector<EnabledControlSummary>>
+    ListEnabledControlsResult& WithEnabledControls(EnabledControlsT&& value) { SetEnabledControls(std::forward<EnabledControlsT>(value)); return *this;}
+    template<typename EnabledControlsT = EnabledControlSummary>
+    ListEnabledControlsResult& AddEnabledControls(EnabledControlsT&& value) { m_enabledControlsHasBeenSet = true; m_enabledControls.emplace_back(std::forward<EnabledControlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>Retrieves the next page of results. If the string is empty, the response is
      * the end of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEnabledControlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEnabledControlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEnabledControlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEnabledControlsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEnabledControlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEnabledControlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEnabledControlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEnabledControlsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EnabledControlSummary> m_enabledControls;
+    bool m_enabledControlsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

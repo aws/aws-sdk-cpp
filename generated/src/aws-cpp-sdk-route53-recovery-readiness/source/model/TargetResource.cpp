@@ -18,14 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-TargetResource::TargetResource() : 
-    m_nLBResourceHasBeenSet(false),
-    m_r53ResourceHasBeenSet(false)
-{
-}
-
 TargetResource::TargetResource(JsonView jsonValue)
-  : TargetResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TargetResource& TargetResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nLBResource"))
   {
     m_nLBResource = jsonValue.GetObject("nLBResource");
-
     m_nLBResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("r53Resource"))
   {
     m_r53Resource = jsonValue.GetObject("r53Resource");
-
     m_r53ResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

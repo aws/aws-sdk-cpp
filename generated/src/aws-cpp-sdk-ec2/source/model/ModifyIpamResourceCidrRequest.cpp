@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyIpamResourceCidrRequest::ModifyIpamResourceCidrRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_currentIpamScopeIdHasBeenSet(false),
-    m_destinationIpamScopeIdHasBeenSet(false),
-    m_monitored(false),
-    m_monitoredHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIpamResourceCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

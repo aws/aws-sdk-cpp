@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SessionSummaryConfiguration::SessionSummaryConfiguration() : 
-    m_maxRecentSessions(0),
-    m_maxRecentSessionsHasBeenSet(false)
-{
-}
-
 SessionSummaryConfiguration::SessionSummaryConfiguration(JsonView jsonValue)
-  : SessionSummaryConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SessionSummaryConfiguration& SessionSummaryConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("maxRecentSessions"))
   {
     m_maxRecentSessions = jsonValue.GetInteger("maxRecentSessions");
-
     m_maxRecentSessionsHasBeenSet = true;
   }
-
   return *this;
 }
 

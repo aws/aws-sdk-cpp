@@ -34,7 +34,7 @@ namespace Model
   class OpsItemRelatedItemSummary
   {
   public:
-    AWS_SSM_API OpsItemRelatedItemSummary();
+    AWS_SSM_API OpsItemRelatedItemSummary() = default;
     AWS_SSM_API OpsItemRelatedItemSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API OpsItemRelatedItemSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,114 +44,104 @@ namespace Model
     /**
      * <p>The OpsItem ID.</p>
      */
-    inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
+    inline const Aws::String& GetOpsItemId() const { return m_opsItemId; }
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-    inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-    inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-    inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-    inline OpsItemRelatedItemSummary& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-    inline OpsItemRelatedItemSummary& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+    template<typename OpsItemIdT = Aws::String>
+    void SetOpsItemId(OpsItemIdT&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::forward<OpsItemIdT>(value); }
+    template<typename OpsItemIdT = Aws::String>
+    OpsItemRelatedItemSummary& WithOpsItemId(OpsItemIdT&& value) { SetOpsItemId(std::forward<OpsItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The association ID.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline OpsItemRelatedItemSummary& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline OpsItemRelatedItemSummary& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    OpsItemRelatedItemSummary& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline OpsItemRelatedItemSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline OpsItemRelatedItemSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    OpsItemRelatedItemSummary& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The association type.</p>
      */
-    inline const Aws::String& GetAssociationType() const{ return m_associationType; }
+    inline const Aws::String& GetAssociationType() const { return m_associationType; }
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-    inline void SetAssociationType(const Aws::String& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-    inline void SetAssociationType(Aws::String&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
-    inline void SetAssociationType(const char* value) { m_associationTypeHasBeenSet = true; m_associationType.assign(value); }
-    inline OpsItemRelatedItemSummary& WithAssociationType(const Aws::String& value) { SetAssociationType(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithAssociationType(Aws::String&& value) { SetAssociationType(std::move(value)); return *this;}
-    inline OpsItemRelatedItemSummary& WithAssociationType(const char* value) { SetAssociationType(value); return *this;}
+    template<typename AssociationTypeT = Aws::String>
+    void SetAssociationType(AssociationTypeT&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::forward<AssociationTypeT>(value); }
+    template<typename AssociationTypeT = Aws::String>
+    OpsItemRelatedItemSummary& WithAssociationType(AssociationTypeT&& value) { SetAssociationType(std::forward<AssociationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
      */
-    inline const Aws::String& GetResourceUri() const{ return m_resourceUri; }
+    inline const Aws::String& GetResourceUri() const { return m_resourceUri; }
     inline bool ResourceUriHasBeenSet() const { return m_resourceUriHasBeenSet; }
-    inline void SetResourceUri(const Aws::String& value) { m_resourceUriHasBeenSet = true; m_resourceUri = value; }
-    inline void SetResourceUri(Aws::String&& value) { m_resourceUriHasBeenSet = true; m_resourceUri = std::move(value); }
-    inline void SetResourceUri(const char* value) { m_resourceUriHasBeenSet = true; m_resourceUri.assign(value); }
-    inline OpsItemRelatedItemSummary& WithResourceUri(const Aws::String& value) { SetResourceUri(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithResourceUri(Aws::String&& value) { SetResourceUri(std::move(value)); return *this;}
-    inline OpsItemRelatedItemSummary& WithResourceUri(const char* value) { SetResourceUri(value); return *this;}
+    template<typename ResourceUriT = Aws::String>
+    void SetResourceUri(ResourceUriT&& value) { m_resourceUriHasBeenSet = true; m_resourceUri = std::forward<ResourceUriT>(value); }
+    template<typename ResourceUriT = Aws::String>
+    OpsItemRelatedItemSummary& WithResourceUri(ResourceUriT&& value) { SetResourceUri(std::forward<ResourceUriT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OpsItemIdentity& GetCreatedBy() const{ return m_createdBy; }
+    inline const OpsItemIdentity& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const OpsItemIdentity& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(OpsItemIdentity&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline OpsItemRelatedItemSummary& WithCreatedBy(const OpsItemIdentity& value) { SetCreatedBy(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithCreatedBy(OpsItemIdentity&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = OpsItemIdentity>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = OpsItemIdentity>
+    OpsItemRelatedItemSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the related-item association was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline OpsItemRelatedItemSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    OpsItemRelatedItemSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OpsItemIdentity& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+    inline const OpsItemIdentity& GetLastModifiedBy() const { return m_lastModifiedBy; }
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-    inline void SetLastModifiedBy(const OpsItemIdentity& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(OpsItemIdentity&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
-    inline OpsItemRelatedItemSummary& WithLastModifiedBy(const OpsItemIdentity& value) { SetLastModifiedBy(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithLastModifiedBy(OpsItemIdentity&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    template<typename LastModifiedByT = OpsItemIdentity>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = OpsItemIdentity>
+    OpsItemRelatedItemSummary& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the related-item association was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline OpsItemRelatedItemSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline OpsItemRelatedItemSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    OpsItemRelatedItemSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -173,13 +163,13 @@ namespace Model
     OpsItemIdentity m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     OpsItemIdentity m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

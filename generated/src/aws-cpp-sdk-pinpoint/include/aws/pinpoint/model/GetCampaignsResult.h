@@ -28,35 +28,35 @@ namespace Model
   class GetCampaignsResult
   {
   public:
-    AWS_PINPOINT_API GetCampaignsResult();
+    AWS_PINPOINT_API GetCampaignsResult() = default;
     AWS_PINPOINT_API GetCampaignsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetCampaignsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const CampaignsResponse& GetCampaignsResponse() const{ return m_campaignsResponse; }
-    inline void SetCampaignsResponse(const CampaignsResponse& value) { m_campaignsResponse = value; }
-    inline void SetCampaignsResponse(CampaignsResponse&& value) { m_campaignsResponse = std::move(value); }
-    inline GetCampaignsResult& WithCampaignsResponse(const CampaignsResponse& value) { SetCampaignsResponse(value); return *this;}
-    inline GetCampaignsResult& WithCampaignsResponse(CampaignsResponse&& value) { SetCampaignsResponse(std::move(value)); return *this;}
+    inline const CampaignsResponse& GetCampaignsResponse() const { return m_campaignsResponse; }
+    template<typename CampaignsResponseT = CampaignsResponse>
+    void SetCampaignsResponse(CampaignsResponseT&& value) { m_campaignsResponseHasBeenSet = true; m_campaignsResponse = std::forward<CampaignsResponseT>(value); }
+    template<typename CampaignsResponseT = CampaignsResponse>
+    GetCampaignsResult& WithCampaignsResponse(CampaignsResponseT&& value) { SetCampaignsResponse(std::forward<CampaignsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCampaignsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCampaignsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCampaignsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCampaignsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CampaignsResponse m_campaignsResponse;
+    bool m_campaignsResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPullRequestsRequest::ListPullRequestsRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_authorArnHasBeenSet(false),
-    m_pullRequestStatus(PullRequestStatusEnum::NOT_SET),
-    m_pullRequestStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPullRequestsRequest::SerializePayload() const
 {
   JsonValue payload;

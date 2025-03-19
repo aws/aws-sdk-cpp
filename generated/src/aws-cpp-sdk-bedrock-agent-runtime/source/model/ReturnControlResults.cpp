@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ReturnControlResults::ReturnControlResults() : 
-    m_invocationIdHasBeenSet(false),
-    m_returnControlInvocationResultsHasBeenSet(false)
-{
-}
-
 ReturnControlResults::ReturnControlResults(JsonView jsonValue)
-  : ReturnControlResults()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReturnControlResults& ReturnControlResults::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
-
     m_invocationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("returnControlInvocationResults"))
   {
     Aws::Utils::Array<JsonView> returnControlInvocationResultsJsonList = jsonValue.GetArray("returnControlInvocationResults");
@@ -48,7 +39,6 @@ ReturnControlResults& ReturnControlResults::operator =(JsonView jsonValue)
     }
     m_returnControlInvocationResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

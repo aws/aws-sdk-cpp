@@ -28,7 +28,7 @@ namespace Model
   class CreateStackResult
   {
   public:
-    AWS_APPSTREAM_API CreateStackResult();
+    AWS_APPSTREAM_API CreateStackResult() = default;
     AWS_APPSTREAM_API CreateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CreateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the stack.</p>
      */
-    inline const Stack& GetStack() const{ return m_stack; }
-    inline void SetStack(const Stack& value) { m_stack = value; }
-    inline void SetStack(Stack&& value) { m_stack = std::move(value); }
-    inline CreateStackResult& WithStack(const Stack& value) { SetStack(value); return *this;}
-    inline CreateStackResult& WithStack(Stack&& value) { SetStack(std::move(value)); return *this;}
+    inline const Stack& GetStack() const { return m_stack; }
+    template<typename StackT = Stack>
+    void SetStack(StackT&& value) { m_stackHasBeenSet = true; m_stack = std::forward<StackT>(value); }
+    template<typename StackT = Stack>
+    CreateStackResult& WithStack(StackT&& value) { SetStack(std::forward<StackT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Stack m_stack;
+    bool m_stackHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

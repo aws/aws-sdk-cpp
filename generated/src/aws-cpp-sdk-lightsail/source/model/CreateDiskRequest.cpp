@@ -12,16 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDiskRequest::CreateDiskRequest() : 
-    m_diskNameHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_addOnsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDiskRequest::SerializePayload() const
 {
   JsonValue payload;

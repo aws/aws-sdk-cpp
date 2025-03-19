@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualRouterListener::VirtualRouterListener() : 
-    m_portMappingHasBeenSet(false)
-{
-}
-
 VirtualRouterListener::VirtualRouterListener(JsonView jsonValue)
-  : VirtualRouterListener()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualRouterListener& VirtualRouterListener::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("portMapping"))
   {
     m_portMapping = jsonValue.GetObject("portMapping");
-
     m_portMappingHasBeenSet = true;
   }
-
   return *this;
 }
 

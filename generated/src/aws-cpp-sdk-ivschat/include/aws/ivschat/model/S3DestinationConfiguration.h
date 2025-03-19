@@ -32,7 +32,7 @@ namespace Model
   class S3DestinationConfiguration
   {
   public:
-    AWS_IVSCHAT_API S3DestinationConfiguration();
+    AWS_IVSCHAT_API S3DestinationConfiguration() = default;
     AWS_IVSCHAT_API S3DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API S3DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3DestinationConfiguration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3DestinationConfiguration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3DestinationConfiguration& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
   private:
 

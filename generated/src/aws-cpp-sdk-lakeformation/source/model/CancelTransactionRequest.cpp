@@ -12,11 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelTransactionRequest::CancelTransactionRequest() : 
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

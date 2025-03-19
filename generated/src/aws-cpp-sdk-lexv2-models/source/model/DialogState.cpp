@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DialogState::DialogState() : 
-    m_dialogActionHasBeenSet(false),
-    m_intentHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false)
-{
-}
-
 DialogState::DialogState(JsonView jsonValue)
-  : DialogState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DialogState& DialogState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dialogAction"))
   {
     m_dialogAction = jsonValue.GetObject("dialogAction");
-
     m_dialogActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intent"))
   {
     m_intent = jsonValue.GetObject("intent");
-
     m_intentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionAttributes"))
   {
     Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
@@ -56,7 +44,6 @@ DialogState& DialogState::operator =(JsonView jsonValue)
     }
     m_sessionAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMultiplexRequest::CreateMultiplexRequest() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_multiplexSettingsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMultiplexRequest::SerializePayload() const
 {
   JsonValue payload;

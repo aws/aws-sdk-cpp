@@ -31,7 +31,7 @@ namespace Model
   class S3Logs
   {
   public:
-    AWS_IMAGEBUILDER_API S3Logs();
+    AWS_IMAGEBUILDER_API S3Logs() = default;
     AWS_IMAGEBUILDER_API S3Logs(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API S3Logs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The S3 bucket in which to store the logs.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline S3Logs& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline S3Logs& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline S3Logs& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    S3Logs& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 path to the bucket where the logs are stored.</p>
      */
-    inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
-    inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
-    inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
-    inline S3Logs& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
-    inline S3Logs& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
-    inline S3Logs& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+    template<typename S3KeyPrefixT = Aws::String>
+    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
+    template<typename S3KeyPrefixT = Aws::String>
+    S3Logs& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
     ///@}
   private:
 

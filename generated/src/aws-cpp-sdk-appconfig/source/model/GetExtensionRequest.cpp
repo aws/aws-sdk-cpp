@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetExtensionRequest::GetExtensionRequest() : 
-    m_extensionIdentifierHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetExtensionRequest::SerializePayload() const
 {
   return {};

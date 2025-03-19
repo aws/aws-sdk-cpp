@@ -18,16 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-ConfigurableUpfrontPricingTerm::ConfigurableUpfrontPricingTerm() : 
-    m_configurationHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_rateCardsHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ConfigurableUpfrontPricingTerm::ConfigurableUpfrontPricingTerm(JsonView jsonValue)
-  : ConfigurableUpfrontPricingTerm()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConfigurableUpfrontPricingTerm& ConfigurableUpfrontPricingTerm::operator =(JsonV
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currencyCode"))
   {
     m_currencyCode = jsonValue.GetString("currencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateCards"))
   {
     Aws::Utils::Array<JsonView> rateCardsJsonList = jsonValue.GetArray("rateCards");
@@ -57,14 +44,11 @@ ConfigurableUpfrontPricingTerm& ConfigurableUpfrontPricingTerm::operator =(JsonV
     }
     m_rateCardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

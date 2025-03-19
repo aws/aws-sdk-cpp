@@ -12,11 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInstanceRequest::DeleteInstanceRequest() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceRequest::SerializePayload() const
 {
   return {};

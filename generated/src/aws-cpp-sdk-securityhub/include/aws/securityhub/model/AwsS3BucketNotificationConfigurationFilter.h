@@ -32,7 +32,7 @@ namespace Model
   class AwsS3BucketNotificationConfigurationFilter
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter() = default;
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Details for an Amazon S3 filter.</p>
      */
-    inline const AwsS3BucketNotificationConfigurationS3KeyFilter& GetS3KeyFilter() const{ return m_s3KeyFilter; }
+    inline const AwsS3BucketNotificationConfigurationS3KeyFilter& GetS3KeyFilter() const { return m_s3KeyFilter; }
     inline bool S3KeyFilterHasBeenSet() const { return m_s3KeyFilterHasBeenSet; }
-    inline void SetS3KeyFilter(const AwsS3BucketNotificationConfigurationS3KeyFilter& value) { m_s3KeyFilterHasBeenSet = true; m_s3KeyFilter = value; }
-    inline void SetS3KeyFilter(AwsS3BucketNotificationConfigurationS3KeyFilter&& value) { m_s3KeyFilterHasBeenSet = true; m_s3KeyFilter = std::move(value); }
-    inline AwsS3BucketNotificationConfigurationFilter& WithS3KeyFilter(const AwsS3BucketNotificationConfigurationS3KeyFilter& value) { SetS3KeyFilter(value); return *this;}
-    inline AwsS3BucketNotificationConfigurationFilter& WithS3KeyFilter(AwsS3BucketNotificationConfigurationS3KeyFilter&& value) { SetS3KeyFilter(std::move(value)); return *this;}
+    template<typename S3KeyFilterT = AwsS3BucketNotificationConfigurationS3KeyFilter>
+    void SetS3KeyFilter(S3KeyFilterT&& value) { m_s3KeyFilterHasBeenSet = true; m_s3KeyFilter = std::forward<S3KeyFilterT>(value); }
+    template<typename S3KeyFilterT = AwsS3BucketNotificationConfigurationS3KeyFilter>
+    AwsS3BucketNotificationConfigurationFilter& WithS3KeyFilter(S3KeyFilterT&& value) { SetS3KeyFilter(std::forward<S3KeyFilterT>(value)); return *this;}
     ///@}
   private:
 

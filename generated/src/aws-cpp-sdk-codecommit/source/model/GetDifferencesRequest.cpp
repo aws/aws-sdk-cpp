@@ -12,18 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDifferencesRequest::GetDifferencesRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_beforeCommitSpecifierHasBeenSet(false),
-    m_afterCommitSpecifierHasBeenSet(false),
-    m_beforePathHasBeenSet(false),
-    m_afterPathHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetDifferencesRequest::SerializePayload() const
 {
   JsonValue payload;

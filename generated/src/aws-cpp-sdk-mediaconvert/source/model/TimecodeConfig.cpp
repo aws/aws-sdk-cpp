@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TimecodeConfig::TimecodeConfig() : 
-    m_anchorHasBeenSet(false),
-    m_source(TimecodeSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_timestampOffsetHasBeenSet(false)
-{
-}
-
 TimecodeConfig::TimecodeConfig(JsonView jsonValue)
-  : TimecodeConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TimecodeConfig& TimecodeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("anchor"))
   {
     m_anchor = jsonValue.GetString("anchor");
-
     m_anchorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = TimecodeSourceMapper::GetTimecodeSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetString("start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestampOffset"))
   {
     m_timestampOffset = jsonValue.GetString("timestampOffset");
-
     m_timestampOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

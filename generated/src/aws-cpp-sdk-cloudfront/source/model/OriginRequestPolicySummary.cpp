@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginRequestPolicySummary::OriginRequestPolicySummary() : 
-    m_type(OriginRequestPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_originRequestPolicyHasBeenSet(false)
-{
-}
-
 OriginRequestPolicySummary::OriginRequestPolicySummary(const XmlNode& xmlNode)
-  : OriginRequestPolicySummary()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ OriginRequestPolicySummary& OriginRequestPolicySummary::operator =(const XmlNode
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = OriginRequestPolicyTypeMapper::GetOriginRequestPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = OriginRequestPolicyTypeMapper::GetOriginRequestPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode originRequestPolicyNode = resultNode.FirstChild("OriginRequestPolicy");

@@ -18,14 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-DuplicateRequest::DuplicateRequest() : 
-    m_messageHasBeenSet(false),
-    m_duplicateOperationIdHasBeenSet(false)
-{
-}
-
 DuplicateRequest::DuplicateRequest(JsonView jsonValue)
-  : DuplicateRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DuplicateRequest& DuplicateRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DuplicateOperationId"))
   {
     m_duplicateOperationId = jsonValue.GetString("DuplicateOperationId");
-
     m_duplicateOperationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

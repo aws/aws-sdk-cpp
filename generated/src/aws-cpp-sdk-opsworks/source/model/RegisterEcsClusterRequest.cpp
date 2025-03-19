@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterEcsClusterRequest::RegisterEcsClusterRequest() : 
-    m_ecsClusterArnHasBeenSet(false),
-    m_stackIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterEcsClusterRequest::SerializePayload() const
 {
   JsonValue payload;

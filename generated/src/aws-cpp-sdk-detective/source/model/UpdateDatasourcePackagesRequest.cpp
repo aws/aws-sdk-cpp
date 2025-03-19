@@ -12,12 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDatasourcePackagesRequest::UpdateDatasourcePackagesRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_datasourcePackagesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDatasourcePackagesRequest::SerializePayload() const
 {
   JsonValue payload;

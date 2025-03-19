@@ -18,14 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-BatchDeleteGeofenceError::BatchDeleteGeofenceError() : 
-    m_geofenceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 BatchDeleteGeofenceError::BatchDeleteGeofenceError(JsonView jsonValue)
-  : BatchDeleteGeofenceError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchDeleteGeofenceError& BatchDeleteGeofenceError::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("GeofenceId"))
   {
     m_geofenceId = jsonValue.GetString("GeofenceId");
-
     m_geofenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

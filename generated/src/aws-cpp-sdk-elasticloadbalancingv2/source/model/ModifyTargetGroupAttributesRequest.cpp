@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyTargetGroupAttributesRequest::ModifyTargetGroupAttributesRequest() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String ModifyTargetGroupAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

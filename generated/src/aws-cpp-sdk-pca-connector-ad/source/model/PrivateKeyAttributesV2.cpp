@@ -18,17 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-PrivateKeyAttributesV2::PrivateKeyAttributesV2() : 
-    m_cryptoProvidersHasBeenSet(false),
-    m_keySpec(KeySpec::NOT_SET),
-    m_keySpecHasBeenSet(false),
-    m_minimalKeyLength(0),
-    m_minimalKeyLengthHasBeenSet(false)
-{
-}
-
 PrivateKeyAttributesV2::PrivateKeyAttributesV2(JsonView jsonValue)
-  : PrivateKeyAttributesV2()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ PrivateKeyAttributesV2& PrivateKeyAttributesV2::operator =(JsonView jsonValue)
     }
     m_cryptoProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySpec"))
   {
     m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
-
     m_keySpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimalKeyLength"))
   {
     m_minimalKeyLength = jsonValue.GetInteger("MinimalKeyLength");
-
     m_minimalKeyLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

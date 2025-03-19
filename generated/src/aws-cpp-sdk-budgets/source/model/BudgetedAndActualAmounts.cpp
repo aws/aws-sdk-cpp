@@ -18,15 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-BudgetedAndActualAmounts::BudgetedAndActualAmounts() : 
-    m_budgetedAmountHasBeenSet(false),
-    m_actualAmountHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
-{
-}
-
 BudgetedAndActualAmounts::BudgetedAndActualAmounts(JsonView jsonValue)
-  : BudgetedAndActualAmounts()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BudgetedAndActualAmounts& BudgetedAndActualAmounts::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("BudgetedAmount"))
   {
     m_budgetedAmount = jsonValue.GetObject("BudgetedAmount");
-
     m_budgetedAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualAmount"))
   {
     m_actualAmount = jsonValue.GetObject("ActualAmount");
-
     m_actualAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

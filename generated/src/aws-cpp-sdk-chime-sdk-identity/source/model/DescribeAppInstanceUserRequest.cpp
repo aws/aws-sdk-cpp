@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAppInstanceUserRequest::DescribeAppInstanceUserRequest() : 
-    m_appInstanceUserArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAppInstanceUserRequest::SerializePayload() const
 {
   return {};

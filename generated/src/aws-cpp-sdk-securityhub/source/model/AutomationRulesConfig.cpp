@@ -18,26 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AutomationRulesConfig::AutomationRulesConfig() : 
-    m_ruleArnHasBeenSet(false),
-    m_ruleStatus(RuleStatus::NOT_SET),
-    m_ruleStatusHasBeenSet(false),
-    m_ruleOrder(0),
-    m_ruleOrderHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isTerminal(false),
-    m_isTerminalHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 AutomationRulesConfig::AutomationRulesConfig(JsonView jsonValue)
-  : AutomationRulesConfig()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ AutomationRulesConfig& AutomationRulesConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleArn"))
   {
     m_ruleArn = jsonValue.GetString("RuleArn");
-
     m_ruleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleStatus"))
   {
     m_ruleStatus = RuleStatusMapper::GetRuleStatusForName(jsonValue.GetString("RuleStatus"));
-
     m_ruleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleOrder"))
   {
     m_ruleOrder = jsonValue.GetInteger("RuleOrder");
-
     m_ruleOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleName"))
   {
     m_ruleName = jsonValue.GetString("RuleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsTerminal"))
   {
     m_isTerminal = jsonValue.GetBool("IsTerminal");
-
     m_isTerminalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criteria"))
   {
     m_criteria = jsonValue.GetObject("Criteria");
-
     m_criteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -102,28 +69,21 @@ AutomationRulesConfig& AutomationRulesConfig::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

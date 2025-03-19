@@ -32,7 +32,7 @@ namespace Model
   class SiemensIE
   {
   public:
-    AWS_IOTSITEWISE_API SiemensIE();
+    AWS_IOTSITEWISE_API SiemensIE() = default;
     AWS_IOTSITEWISE_API SiemensIE(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API SiemensIE& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the IoT Thing for your SiteWise Edge gateway.</p>
      */
-    inline const Aws::String& GetIotCoreThingName() const{ return m_iotCoreThingName; }
+    inline const Aws::String& GetIotCoreThingName() const { return m_iotCoreThingName; }
     inline bool IotCoreThingNameHasBeenSet() const { return m_iotCoreThingNameHasBeenSet; }
-    inline void SetIotCoreThingName(const Aws::String& value) { m_iotCoreThingNameHasBeenSet = true; m_iotCoreThingName = value; }
-    inline void SetIotCoreThingName(Aws::String&& value) { m_iotCoreThingNameHasBeenSet = true; m_iotCoreThingName = std::move(value); }
-    inline void SetIotCoreThingName(const char* value) { m_iotCoreThingNameHasBeenSet = true; m_iotCoreThingName.assign(value); }
-    inline SiemensIE& WithIotCoreThingName(const Aws::String& value) { SetIotCoreThingName(value); return *this;}
-    inline SiemensIE& WithIotCoreThingName(Aws::String&& value) { SetIotCoreThingName(std::move(value)); return *this;}
-    inline SiemensIE& WithIotCoreThingName(const char* value) { SetIotCoreThingName(value); return *this;}
+    template<typename IotCoreThingNameT = Aws::String>
+    void SetIotCoreThingName(IotCoreThingNameT&& value) { m_iotCoreThingNameHasBeenSet = true; m_iotCoreThingName = std::forward<IotCoreThingNameT>(value); }
+    template<typename IotCoreThingNameT = Aws::String>
+    SiemensIE& WithIotCoreThingName(IotCoreThingNameT&& value) { SetIotCoreThingName(std::forward<IotCoreThingNameT>(value)); return *this;}
     ///@}
   private:
 

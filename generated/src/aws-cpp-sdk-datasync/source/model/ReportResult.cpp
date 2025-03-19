@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ReportResult::ReportResult() : 
-    m_status(PhaseStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
-{
-}
-
 ReportResult::ReportResult(JsonView jsonValue)
-  : ReportResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReportResult& ReportResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PhaseStatusMapper::GetPhaseStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetail"))
   {
     m_errorDetail = jsonValue.GetString("ErrorDetail");
-
     m_errorDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListExecutorsResult
   {
   public:
-    AWS_ATHENA_API ListExecutorsResult();
+    AWS_ATHENA_API ListExecutorsResult() = default;
     AWS_ATHENA_API ListExecutorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListExecutorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The session ID.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline ListExecutorsResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ListExecutorsResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ListExecutorsResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ListExecutorsResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,47 +52,47 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListExecutorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExecutorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExecutorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExecutorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains summary information about the executor.</p>
      */
-    inline const Aws::Vector<ExecutorsSummary>& GetExecutorsSummary() const{ return m_executorsSummary; }
-    inline void SetExecutorsSummary(const Aws::Vector<ExecutorsSummary>& value) { m_executorsSummary = value; }
-    inline void SetExecutorsSummary(Aws::Vector<ExecutorsSummary>&& value) { m_executorsSummary = std::move(value); }
-    inline ListExecutorsResult& WithExecutorsSummary(const Aws::Vector<ExecutorsSummary>& value) { SetExecutorsSummary(value); return *this;}
-    inline ListExecutorsResult& WithExecutorsSummary(Aws::Vector<ExecutorsSummary>&& value) { SetExecutorsSummary(std::move(value)); return *this;}
-    inline ListExecutorsResult& AddExecutorsSummary(const ExecutorsSummary& value) { m_executorsSummary.push_back(value); return *this; }
-    inline ListExecutorsResult& AddExecutorsSummary(ExecutorsSummary&& value) { m_executorsSummary.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExecutorsSummary>& GetExecutorsSummary() const { return m_executorsSummary; }
+    template<typename ExecutorsSummaryT = Aws::Vector<ExecutorsSummary>>
+    void SetExecutorsSummary(ExecutorsSummaryT&& value) { m_executorsSummaryHasBeenSet = true; m_executorsSummary = std::forward<ExecutorsSummaryT>(value); }
+    template<typename ExecutorsSummaryT = Aws::Vector<ExecutorsSummary>>
+    ListExecutorsResult& WithExecutorsSummary(ExecutorsSummaryT&& value) { SetExecutorsSummary(std::forward<ExecutorsSummaryT>(value)); return *this;}
+    template<typename ExecutorsSummaryT = ExecutorsSummary>
+    ListExecutorsResult& AddExecutorsSummary(ExecutorsSummaryT&& value) { m_executorsSummaryHasBeenSet = true; m_executorsSummary.emplace_back(std::forward<ExecutorsSummaryT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListExecutorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListExecutorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListExecutorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListExecutorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ExecutorsSummary> m_executorsSummary;
+    bool m_executorsSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

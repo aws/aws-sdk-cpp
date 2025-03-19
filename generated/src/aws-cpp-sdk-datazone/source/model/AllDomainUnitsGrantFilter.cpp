@@ -18,10 +18,6 @@ namespace DataZone
 namespace Model
 {
 
-AllDomainUnitsGrantFilter::AllDomainUnitsGrantFilter()
-{
-}
-
 AllDomainUnitsGrantFilter::AllDomainUnitsGrantFilter(JsonView jsonValue)
 {
   *this = jsonValue;

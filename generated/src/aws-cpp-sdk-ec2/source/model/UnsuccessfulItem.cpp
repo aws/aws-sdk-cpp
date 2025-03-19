@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UnsuccessfulItem::UnsuccessfulItem() : 
-    m_errorHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 UnsuccessfulItem::UnsuccessfulItem(const XmlNode& xmlNode)
-  : UnsuccessfulItem()
 {
   *this = xmlNode;
 }

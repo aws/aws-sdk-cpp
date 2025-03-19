@@ -41,7 +41,7 @@ namespace Model
   class ConfluenceConfiguration
   {
   public:
-    AWS_KENDRA_API ConfluenceConfiguration();
+    AWS_KENDRA_API ConfluenceConfiguration() = default;
     AWS_KENDRA_API ConfluenceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ConfluenceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * example, <i>https://server.example.com:port/</i>. You can also use an IP
      * address, for example, <i>https://192.168.1.113/</i>.</p>
      */
-    inline const Aws::String& GetServerUrl() const{ return m_serverUrl; }
+    inline const Aws::String& GetServerUrl() const { return m_serverUrl; }
     inline bool ServerUrlHasBeenSet() const { return m_serverUrlHasBeenSet; }
-    inline void SetServerUrl(const Aws::String& value) { m_serverUrlHasBeenSet = true; m_serverUrl = value; }
-    inline void SetServerUrl(Aws::String&& value) { m_serverUrlHasBeenSet = true; m_serverUrl = std::move(value); }
-    inline void SetServerUrl(const char* value) { m_serverUrlHasBeenSet = true; m_serverUrl.assign(value); }
-    inline ConfluenceConfiguration& WithServerUrl(const Aws::String& value) { SetServerUrl(value); return *this;}
-    inline ConfluenceConfiguration& WithServerUrl(Aws::String&& value) { SetServerUrl(std::move(value)); return *this;}
-    inline ConfluenceConfiguration& WithServerUrl(const char* value) { SetServerUrl(value); return *this;}
+    template<typename ServerUrlT = Aws::String>
+    void SetServerUrl(ServerUrlT&& value) { m_serverUrlHasBeenSet = true; m_serverUrl = std::forward<ServerUrlT>(value); }
+    template<typename ServerUrlT = Aws::String>
+    ConfluenceConfiguration& WithServerUrl(ServerUrlT&& value) { SetServerUrl(std::forward<ServerUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,62 +71,58 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
      * a Confluence data source</a>.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline ConfluenceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    ConfluenceConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version or the type of Confluence installation to connect to.</p>
      */
-    inline const ConfluenceVersion& GetVersion() const{ return m_version; }
+    inline ConfluenceVersion GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const ConfluenceVersion& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(ConfluenceVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline ConfluenceConfiguration& WithVersion(const ConfluenceVersion& value) { SetVersion(value); return *this;}
-    inline ConfluenceConfiguration& WithVersion(ConfluenceVersion&& value) { SetVersion(std::move(value)); return *this;}
+    inline void SetVersion(ConfluenceVersion value) { m_versionHasBeenSet = true; m_version = value; }
+    inline ConfluenceConfiguration& WithVersion(ConfluenceVersion value) { SetVersion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for indexing Confluence spaces.</p>
      */
-    inline const ConfluenceSpaceConfiguration& GetSpaceConfiguration() const{ return m_spaceConfiguration; }
+    inline const ConfluenceSpaceConfiguration& GetSpaceConfiguration() const { return m_spaceConfiguration; }
     inline bool SpaceConfigurationHasBeenSet() const { return m_spaceConfigurationHasBeenSet; }
-    inline void SetSpaceConfiguration(const ConfluenceSpaceConfiguration& value) { m_spaceConfigurationHasBeenSet = true; m_spaceConfiguration = value; }
-    inline void SetSpaceConfiguration(ConfluenceSpaceConfiguration&& value) { m_spaceConfigurationHasBeenSet = true; m_spaceConfiguration = std::move(value); }
-    inline ConfluenceConfiguration& WithSpaceConfiguration(const ConfluenceSpaceConfiguration& value) { SetSpaceConfiguration(value); return *this;}
-    inline ConfluenceConfiguration& WithSpaceConfiguration(ConfluenceSpaceConfiguration&& value) { SetSpaceConfiguration(std::move(value)); return *this;}
+    template<typename SpaceConfigurationT = ConfluenceSpaceConfiguration>
+    void SetSpaceConfiguration(SpaceConfigurationT&& value) { m_spaceConfigurationHasBeenSet = true; m_spaceConfiguration = std::forward<SpaceConfigurationT>(value); }
+    template<typename SpaceConfigurationT = ConfluenceSpaceConfiguration>
+    ConfluenceConfiguration& WithSpaceConfiguration(SpaceConfigurationT&& value) { SetSpaceConfiguration(std::forward<SpaceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for indexing Confluence pages.</p>
      */
-    inline const ConfluencePageConfiguration& GetPageConfiguration() const{ return m_pageConfiguration; }
+    inline const ConfluencePageConfiguration& GetPageConfiguration() const { return m_pageConfiguration; }
     inline bool PageConfigurationHasBeenSet() const { return m_pageConfigurationHasBeenSet; }
-    inline void SetPageConfiguration(const ConfluencePageConfiguration& value) { m_pageConfigurationHasBeenSet = true; m_pageConfiguration = value; }
-    inline void SetPageConfiguration(ConfluencePageConfiguration&& value) { m_pageConfigurationHasBeenSet = true; m_pageConfiguration = std::move(value); }
-    inline ConfluenceConfiguration& WithPageConfiguration(const ConfluencePageConfiguration& value) { SetPageConfiguration(value); return *this;}
-    inline ConfluenceConfiguration& WithPageConfiguration(ConfluencePageConfiguration&& value) { SetPageConfiguration(std::move(value)); return *this;}
+    template<typename PageConfigurationT = ConfluencePageConfiguration>
+    void SetPageConfiguration(PageConfigurationT&& value) { m_pageConfigurationHasBeenSet = true; m_pageConfiguration = std::forward<PageConfigurationT>(value); }
+    template<typename PageConfigurationT = ConfluencePageConfiguration>
+    ConfluenceConfiguration& WithPageConfiguration(PageConfigurationT&& value) { SetPageConfiguration(std::forward<PageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for indexing Confluence blogs.</p>
      */
-    inline const ConfluenceBlogConfiguration& GetBlogConfiguration() const{ return m_blogConfiguration; }
+    inline const ConfluenceBlogConfiguration& GetBlogConfiguration() const { return m_blogConfiguration; }
     inline bool BlogConfigurationHasBeenSet() const { return m_blogConfigurationHasBeenSet; }
-    inline void SetBlogConfiguration(const ConfluenceBlogConfiguration& value) { m_blogConfigurationHasBeenSet = true; m_blogConfiguration = value; }
-    inline void SetBlogConfiguration(ConfluenceBlogConfiguration&& value) { m_blogConfigurationHasBeenSet = true; m_blogConfiguration = std::move(value); }
-    inline ConfluenceConfiguration& WithBlogConfiguration(const ConfluenceBlogConfiguration& value) { SetBlogConfiguration(value); return *this;}
-    inline ConfluenceConfiguration& WithBlogConfiguration(ConfluenceBlogConfiguration&& value) { SetBlogConfiguration(std::move(value)); return *this;}
+    template<typename BlogConfigurationT = ConfluenceBlogConfiguration>
+    void SetBlogConfiguration(BlogConfigurationT&& value) { m_blogConfigurationHasBeenSet = true; m_blogConfiguration = std::forward<BlogConfigurationT>(value); }
+    template<typename BlogConfigurationT = ConfluenceBlogConfiguration>
+    ConfluenceConfiguration& WithBlogConfiguration(BlogConfigurationT&& value) { SetBlogConfiguration(std::forward<BlogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +130,12 @@ namespace Model
      * <p>Configuration information for indexing attachments to Confluence blogs and
      * pages.</p>
      */
-    inline const ConfluenceAttachmentConfiguration& GetAttachmentConfiguration() const{ return m_attachmentConfiguration; }
+    inline const ConfluenceAttachmentConfiguration& GetAttachmentConfiguration() const { return m_attachmentConfiguration; }
     inline bool AttachmentConfigurationHasBeenSet() const { return m_attachmentConfigurationHasBeenSet; }
-    inline void SetAttachmentConfiguration(const ConfluenceAttachmentConfiguration& value) { m_attachmentConfigurationHasBeenSet = true; m_attachmentConfiguration = value; }
-    inline void SetAttachmentConfiguration(ConfluenceAttachmentConfiguration&& value) { m_attachmentConfigurationHasBeenSet = true; m_attachmentConfiguration = std::move(value); }
-    inline ConfluenceConfiguration& WithAttachmentConfiguration(const ConfluenceAttachmentConfiguration& value) { SetAttachmentConfiguration(value); return *this;}
-    inline ConfluenceConfiguration& WithAttachmentConfiguration(ConfluenceAttachmentConfiguration&& value) { SetAttachmentConfiguration(std::move(value)); return *this;}
+    template<typename AttachmentConfigurationT = ConfluenceAttachmentConfiguration>
+    void SetAttachmentConfiguration(AttachmentConfigurationT&& value) { m_attachmentConfigurationHasBeenSet = true; m_attachmentConfiguration = std::forward<AttachmentConfigurationT>(value); }
+    template<typename AttachmentConfigurationT = ConfluenceAttachmentConfiguration>
+    ConfluenceConfiguration& WithAttachmentConfiguration(AttachmentConfigurationT&& value) { SetAttachmentConfiguration(std::forward<AttachmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +145,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
-    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline ConfluenceConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline ConfluenceConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = DataSourceVpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = DataSourceVpcConfiguration>
+    ConfluenceConfiguration& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,15 +162,14 @@ namespace Model
      * exclusion pattern takes precedence and the content isn't included in the
      * index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const { return m_inclusionPatterns; }
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
-    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
-    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
-    inline ConfluenceConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
-    inline ConfluenceConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
-    inline ConfluenceConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
-    inline ConfluenceConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
-    inline ConfluenceConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::forward<InclusionPatternsT>(value); }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    ConfluenceConfiguration& WithInclusionPatterns(InclusionPatternsT&& value) { SetInclusionPatterns(std::forward<InclusionPatternsT>(value)); return *this;}
+    template<typename InclusionPatternsT = Aws::String>
+    ConfluenceConfiguration& AddInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.emplace_back(std::forward<InclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,15 +181,14 @@ namespace Model
      * exclusion pattern takes precedence and the content isn't included in the
      * index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const { return m_exclusionPatterns; }
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
-    inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
-    inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
-    inline ConfluenceConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
-    inline ConfluenceConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
-    inline ConfluenceConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
-    inline ConfluenceConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
-    inline ConfluenceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::forward<ExclusionPatternsT>(value); }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    ConfluenceConfiguration& WithExclusionPatterns(ExclusionPatternsT&& value) { SetExclusionPatterns(std::forward<ExclusionPatternsT>(value)); return *this;}
+    template<typename ExclusionPatternsT = Aws::String>
+    ConfluenceConfiguration& AddExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.emplace_back(std::forward<ExclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -215,12 +207,12 @@ namespace Model
      * occur at the same time could strain the load on your proxy. It is recommended
      * you prepare your proxy beforehand for any security and load requirements.</p>
      */
-    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+    inline const ProxyConfiguration& GetProxyConfiguration() const { return m_proxyConfiguration; }
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
-    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
-    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
-    inline ConfluenceConfiguration& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
-    inline ConfluenceConfiguration& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+    template<typename ProxyConfigurationT = ProxyConfiguration>
+    void SetProxyConfiguration(ProxyConfigurationT&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::forward<ProxyConfigurationT>(value); }
+    template<typename ProxyConfigurationT = ProxyConfiguration>
+    ConfluenceConfiguration& WithProxyConfiguration(ProxyConfigurationT&& value) { SetProxyConfiguration(std::forward<ProxyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,12 +221,10 @@ namespace Model
      * name and password, or a personal access token. You can use a personal access
      * token for Confluence Server.</p>
      */
-    inline const ConfluenceAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline ConfluenceAuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const ConfluenceAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(ConfluenceAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline ConfluenceConfiguration& WithAuthenticationType(const ConfluenceAuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline ConfluenceConfiguration& WithAuthenticationType(ConfluenceAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(ConfluenceAuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline ConfluenceConfiguration& WithAuthenticationType(ConfluenceAuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
   private:
 
@@ -244,7 +234,7 @@ namespace Model
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
 
-    ConfluenceVersion m_version;
+    ConfluenceVersion m_version{ConfluenceVersion::NOT_SET};
     bool m_versionHasBeenSet = false;
 
     ConfluenceSpaceConfiguration m_spaceConfiguration;
@@ -271,7 +261,7 @@ namespace Model
     ProxyConfiguration m_proxyConfiguration;
     bool m_proxyConfigurationHasBeenSet = false;
 
-    ConfluenceAuthenticationType m_authenticationType;
+    ConfluenceAuthenticationType m_authenticationType{ConfluenceAuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
   };
 

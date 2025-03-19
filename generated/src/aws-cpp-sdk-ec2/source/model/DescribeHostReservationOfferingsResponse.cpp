@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHostReservationOfferingsResponse::DescribeHostReservationOfferingsResponse()
-{
-}
-
 DescribeHostReservationOfferingsResponse::DescribeHostReservationOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode offeringSetNode = resultNode.FirstChild("offeringSet");
     if(!offeringSetNode.IsNull())
     {
       XmlNode offeringSetMember = offeringSetNode.FirstChild("item");
+      m_offeringSetHasBeenSet = !offeringSetMember.IsNull();
       while(!offeringSetMember.IsNull())
       {
         m_offeringSet.push_back(offeringSetMember);
         offeringSetMember = offeringSetMember.NextNode("item");
       }
 
+      m_offeringSetHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeHostReservationOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,27 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImageScanFinding::ImageScanFinding() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_imageBuildVersionArnHasBeenSet(false),
-    m_imagePipelineArnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_inspectorScore(0.0),
-    m_inspectorScoreHasBeenSet(false),
-    m_inspectorScoreDetailsHasBeenSet(false),
-    m_packageVulnerabilityDetailsHasBeenSet(false),
-    m_fixAvailableHasBeenSet(false)
-{
-}
-
 ImageScanFinding::ImageScanFinding(JsonView jsonValue)
-  : ImageScanFinding()
 {
   *this = jsonValue;
 }
@@ -48,101 +28,73 @@ ImageScanFinding& ImageScanFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBuildVersionArn"))
   {
     m_imageBuildVersionArn = jsonValue.GetString("imageBuildVersionArn");
-
     m_imageBuildVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePipelineArn"))
   {
     m_imagePipelineArn = jsonValue.GetString("imagePipelineArn");
-
     m_imagePipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remediation"))
   {
     m_remediation = jsonValue.GetObject("remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = jsonValue.GetString("severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstObservedAt"))
   {
     m_firstObservedAt = jsonValue.GetDouble("firstObservedAt");
-
     m_firstObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inspectorScore"))
   {
     m_inspectorScore = jsonValue.GetDouble("inspectorScore");
-
     m_inspectorScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inspectorScoreDetails"))
   {
     m_inspectorScoreDetails = jsonValue.GetObject("inspectorScoreDetails");
-
     m_inspectorScoreDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageVulnerabilityDetails"))
   {
     m_packageVulnerabilityDetails = jsonValue.GetObject("packageVulnerabilityDetails");
-
     m_packageVulnerabilityDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixAvailable"))
   {
     m_fixAvailable = jsonValue.GetString("fixAvailable");
-
     m_fixAvailableHasBeenSet = true;
   }
-
   return *this;
 }
 

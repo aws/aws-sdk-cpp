@@ -32,7 +32,7 @@ namespace Model
   class IngressIpToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API IngressIpToEvaluate();
+    AWS_MAILMANAGER_API IngressIpToEvaluate() = default;
     AWS_MAILMANAGER_API IngressIpToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressIpToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>An enum type representing the allowed attribute types for an IP
      * condition.</p>
      */
-    inline const IngressIpv4Attribute& GetAttribute() const{ return m_attribute; }
+    inline IngressIpv4Attribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const IngressIpv4Attribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(IngressIpv4Attribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline IngressIpToEvaluate& WithAttribute(const IngressIpv4Attribute& value) { SetAttribute(value); return *this;}
-    inline IngressIpToEvaluate& WithAttribute(IngressIpv4Attribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(IngressIpv4Attribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline IngressIpToEvaluate& WithAttribute(IngressIpv4Attribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    IngressIpv4Attribute m_attribute;
+    IngressIpv4Attribute m_attribute{IngressIpv4Attribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-OptedOutNumberInformation::OptedOutNumberInformation() : 
-    m_optedOutNumberHasBeenSet(false),
-    m_optedOutTimestampHasBeenSet(false),
-    m_endUserOptedOut(false),
-    m_endUserOptedOutHasBeenSet(false)
-{
-}
-
 OptedOutNumberInformation::OptedOutNumberInformation(JsonView jsonValue)
-  : OptedOutNumberInformation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ OptedOutNumberInformation& OptedOutNumberInformation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("OptedOutNumber"))
   {
     m_optedOutNumber = jsonValue.GetString("OptedOutNumber");
-
     m_optedOutNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptedOutTimestamp"))
   {
     m_optedOutTimestamp = jsonValue.GetDouble("OptedOutTimestamp");
-
     m_optedOutTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndUserOptedOut"))
   {
     m_endUserOptedOut = jsonValue.GetBool("EndUserOptedOut");
-
     m_endUserOptedOutHasBeenSet = true;
   }
-
   return *this;
 }
 

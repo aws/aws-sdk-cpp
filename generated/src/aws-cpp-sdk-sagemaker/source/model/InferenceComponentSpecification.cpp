@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceComponentSpecification::InferenceComponentSpecification() : 
-    m_modelNameHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_startupParametersHasBeenSet(false),
-    m_computeResourceRequirementsHasBeenSet(false),
-    m_baseInferenceComponentNameHasBeenSet(false)
-{
-}
-
 InferenceComponentSpecification::InferenceComponentSpecification(JsonView jsonValue)
-  : InferenceComponentSpecification()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ InferenceComponentSpecification& InferenceComponentSpecification::operator =(Jso
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Container"))
   {
     m_container = jsonValue.GetObject("Container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartupParameters"))
   {
     m_startupParameters = jsonValue.GetObject("StartupParameters");
-
     m_startupParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeResourceRequirements"))
   {
     m_computeResourceRequirements = jsonValue.GetObject("ComputeResourceRequirements");
-
     m_computeResourceRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseInferenceComponentName"))
   {
     m_baseInferenceComponentName = jsonValue.GetString("BaseInferenceComponentName");
-
     m_baseInferenceComponentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

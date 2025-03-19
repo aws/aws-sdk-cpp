@@ -35,7 +35,7 @@ namespace Model
   class CertificateSummary
   {
   public:
-    AWS_LIGHTSAIL_API CertificateSummary();
+    AWS_LIGHTSAIL_API CertificateSummary() = default;
     AWS_LIGHTSAIL_API CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,54 +45,48 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline CertificateSummary& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline CertificateSummary& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline CertificateSummary& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    CertificateSummary& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+    inline const Aws::String& GetCertificateName() const { return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
-    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
-    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
-    inline CertificateSummary& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
-    inline CertificateSummary& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
-    inline CertificateSummary& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+    template<typename CertificateNameT = Aws::String>
+    void SetCertificateName(CertificateNameT&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::forward<CertificateNameT>(value); }
+    template<typename CertificateNameT = Aws::String>
+    CertificateSummary& WithCertificateName(CertificateNameT&& value) { SetCertificateName(std::forward<CertificateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name of the certificate.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CertificateSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CertificateSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CertificateSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CertificateSummary& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that describes a certificate in detail.</p>
      */
-    inline const Certificate& GetCertificateDetail() const{ return m_certificateDetail; }
+    inline const Certificate& GetCertificateDetail() const { return m_certificateDetail; }
     inline bool CertificateDetailHasBeenSet() const { return m_certificateDetailHasBeenSet; }
-    inline void SetCertificateDetail(const Certificate& value) { m_certificateDetailHasBeenSet = true; m_certificateDetail = value; }
-    inline void SetCertificateDetail(Certificate&& value) { m_certificateDetailHasBeenSet = true; m_certificateDetail = std::move(value); }
-    inline CertificateSummary& WithCertificateDetail(const Certificate& value) { SetCertificateDetail(value); return *this;}
-    inline CertificateSummary& WithCertificateDetail(Certificate&& value) { SetCertificateDetail(std::move(value)); return *this;}
+    template<typename CertificateDetailT = Certificate>
+    void SetCertificateDetail(CertificateDetailT&& value) { m_certificateDetailHasBeenSet = true; m_certificateDetail = std::forward<CertificateDetailT>(value); }
+    template<typename CertificateDetailT = Certificate>
+    CertificateSummary& WithCertificateDetail(CertificateDetailT&& value) { SetCertificateDetail(std::forward<CertificateDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CertificateSummary& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CertificateSummary& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CertificateSummary& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CertificateSummary& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CertificateSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CertificateSummary& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSyncJobRequest::GetSyncJobRequest() : 
-    m_syncSourceHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSyncJobRequest::SerializePayload() const
 {
   return {};

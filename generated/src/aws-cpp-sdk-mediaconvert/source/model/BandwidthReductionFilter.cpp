@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-BandwidthReductionFilter::BandwidthReductionFilter() : 
-    m_sharpening(BandwidthReductionFilterSharpening::NOT_SET),
-    m_sharpeningHasBeenSet(false),
-    m_strength(BandwidthReductionFilterStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
-{
-}
-
 BandwidthReductionFilter::BandwidthReductionFilter(JsonView jsonValue)
-  : BandwidthReductionFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BandwidthReductionFilter& BandwidthReductionFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("sharpening"))
   {
     m_sharpening = BandwidthReductionFilterSharpeningMapper::GetBandwidthReductionFilterSharpeningForName(jsonValue.GetString("sharpening"));
-
     m_sharpeningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strength"))
   {
     m_strength = BandwidthReductionFilterStrengthMapper::GetBandwidthReductionFilterStrengthForName(jsonValue.GetString("strength"));
-
     m_strengthHasBeenSet = true;
   }
-
   return *this;
 }
 

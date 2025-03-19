@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportNotebookRequest::ExportNotebookRequest() : 
-    m_notebookIdHasBeenSet(false)
-{
-}
-
 Aws::String ExportNotebookRequest::SerializePayload() const
 {
   JsonValue payload;

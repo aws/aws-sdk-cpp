@@ -12,12 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTemplateRequest::GetTemplateRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTemplateRequest::SerializePayload() const
 {
   return {};

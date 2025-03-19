@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheEngineVersion::CacheEngineVersion() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_cacheEngineDescriptionHasBeenSet(false),
-    m_cacheEngineVersionDescriptionHasBeenSet(false)
-{
-}
-
 CacheEngineVersion::CacheEngineVersion(const XmlNode& xmlNode)
-  : CacheEngineVersion()
 {
   *this = xmlNode;
 }

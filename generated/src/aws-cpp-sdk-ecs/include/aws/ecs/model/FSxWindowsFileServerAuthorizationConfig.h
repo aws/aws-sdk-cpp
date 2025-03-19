@@ -38,7 +38,7 @@ namespace Model
   class FSxWindowsFileServerAuthorizationConfig
   {
   public:
-    AWS_ECS_API FSxWindowsFileServerAuthorizationConfig();
+    AWS_ECS_API FSxWindowsFileServerAuthorizationConfig() = default;
     AWS_ECS_API FSxWindowsFileServerAuthorizationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API FSxWindowsFileServerAuthorizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
-    inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
+    inline const Aws::String& GetCredentialsParameter() const { return m_credentialsParameter; }
     inline bool CredentialsParameterHasBeenSet() const { return m_credentialsParameterHasBeenSet; }
-    inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
-    inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
-    inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
-    inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
-    inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
-    inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
+    template<typename CredentialsParameterT = Aws::String>
+    void SetCredentialsParameter(CredentialsParameterT&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::forward<CredentialsParameterT>(value); }
+    template<typename CredentialsParameterT = Aws::String>
+    FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(CredentialsParameterT&& value) { SetCredentialsParameter(std::forward<CredentialsParameterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon
      * EC2.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline FSxWindowsFileServerAuthorizationConfig& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline FSxWindowsFileServerAuthorizationConfig& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline FSxWindowsFileServerAuthorizationConfig& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    FSxWindowsFileServerAuthorizationConfig& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
   private:
 

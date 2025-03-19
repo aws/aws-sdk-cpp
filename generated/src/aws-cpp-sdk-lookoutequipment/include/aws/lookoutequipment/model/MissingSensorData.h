@@ -30,7 +30,7 @@ namespace Model
   class MissingSensorData
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API MissingSensorData();
+    AWS_LOOKOUTEQUIPMENT_API MissingSensorData() = default;
     AWS_LOOKOUTEQUIPMENT_API MissingSensorData(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API MissingSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> Indicates the number of sensors that have atleast some data missing. </p>
      */
-    inline int GetAffectedSensorCount() const{ return m_affectedSensorCount; }
+    inline int GetAffectedSensorCount() const { return m_affectedSensorCount; }
     inline bool AffectedSensorCountHasBeenSet() const { return m_affectedSensorCountHasBeenSet; }
     inline void SetAffectedSensorCount(int value) { m_affectedSensorCountHasBeenSet = true; m_affectedSensorCount = value; }
     inline MissingSensorData& WithAffectedSensorCount(int value) { SetAffectedSensorCount(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p> Indicates the total number of missing values across all the sensors. </p>
      */
-    inline int GetTotalNumberOfMissingValues() const{ return m_totalNumberOfMissingValues; }
+    inline int GetTotalNumberOfMissingValues() const { return m_totalNumberOfMissingValues; }
     inline bool TotalNumberOfMissingValuesHasBeenSet() const { return m_totalNumberOfMissingValuesHasBeenSet; }
     inline void SetTotalNumberOfMissingValues(int value) { m_totalNumberOfMissingValuesHasBeenSet = true; m_totalNumberOfMissingValues = value; }
     inline MissingSensorData& WithTotalNumberOfMissingValues(int value) { SetTotalNumberOfMissingValues(value); return *this;}
     ///@}
   private:
 
-    int m_affectedSensorCount;
+    int m_affectedSensorCount{0};
     bool m_affectedSensorCountHasBeenSet = false;
 
-    int m_totalNumberOfMissingValues;
+    int m_totalNumberOfMissingValues{0};
     bool m_totalNumberOfMissingValuesHasBeenSet = false;
   };
 

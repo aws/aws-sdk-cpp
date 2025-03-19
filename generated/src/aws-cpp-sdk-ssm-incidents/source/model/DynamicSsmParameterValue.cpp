@@ -18,14 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-DynamicSsmParameterValue::DynamicSsmParameterValue() : 
-    m_variable(VariableType::NOT_SET),
-    m_variableHasBeenSet(false)
-{
-}
-
 DynamicSsmParameterValue::DynamicSsmParameterValue(JsonView jsonValue)
-  : DynamicSsmParameterValue()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DynamicSsmParameterValue& DynamicSsmParameterValue::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("variable"))
   {
     m_variable = VariableTypeMapper::GetVariableTypeForName(jsonValue.GetString("variable"));
-
     m_variableHasBeenSet = true;
   }
-
   return *this;
 }
 

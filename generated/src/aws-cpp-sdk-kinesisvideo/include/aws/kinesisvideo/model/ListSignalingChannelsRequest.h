@@ -22,7 +22,7 @@ namespace Model
   class ListSignalingChannelsRequest : public KinesisVideoRequest
   {
   public:
-    AWS_KINESISVIDEO_API ListSignalingChannelsRequest();
+    AWS_KINESISVIDEO_API ListSignalingChannelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
      * <p>The maximum number of channels to return in the response. The default is
      * 500.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSignalingChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -51,30 +51,28 @@ namespace Model
      * <code>NextToken</code> in the response. To get another batch of channels,
      * provide this token in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSignalingChannelsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSignalingChannelsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSignalingChannelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSignalingChannelsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional: Returns only the channels that satisfy a specific condition.</p>
      */
-    inline const ChannelNameCondition& GetChannelNameCondition() const{ return m_channelNameCondition; }
+    inline const ChannelNameCondition& GetChannelNameCondition() const { return m_channelNameCondition; }
     inline bool ChannelNameConditionHasBeenSet() const { return m_channelNameConditionHasBeenSet; }
-    inline void SetChannelNameCondition(const ChannelNameCondition& value) { m_channelNameConditionHasBeenSet = true; m_channelNameCondition = value; }
-    inline void SetChannelNameCondition(ChannelNameCondition&& value) { m_channelNameConditionHasBeenSet = true; m_channelNameCondition = std::move(value); }
-    inline ListSignalingChannelsRequest& WithChannelNameCondition(const ChannelNameCondition& value) { SetChannelNameCondition(value); return *this;}
-    inline ListSignalingChannelsRequest& WithChannelNameCondition(ChannelNameCondition&& value) { SetChannelNameCondition(std::move(value)); return *this;}
+    template<typename ChannelNameConditionT = ChannelNameCondition>
+    void SetChannelNameCondition(ChannelNameConditionT&& value) { m_channelNameConditionHasBeenSet = true; m_channelNameCondition = std::forward<ChannelNameConditionT>(value); }
+    template<typename ChannelNameConditionT = ChannelNameCondition>
+    ListSignalingChannelsRequest& WithChannelNameCondition(ChannelNameConditionT&& value) { SetChannelNameCondition(std::forward<ChannelNameConditionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

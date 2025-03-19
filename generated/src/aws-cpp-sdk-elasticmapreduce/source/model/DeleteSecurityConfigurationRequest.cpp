@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSecurityConfigurationRequest::DeleteSecurityConfigurationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSecurityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

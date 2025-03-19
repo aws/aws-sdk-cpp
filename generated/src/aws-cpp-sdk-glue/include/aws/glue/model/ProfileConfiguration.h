@@ -34,7 +34,7 @@ namespace Model
   class ProfileConfiguration
   {
   public:
-    AWS_GLUE_API ProfileConfiguration();
+    AWS_GLUE_API ProfileConfiguration() = default;
     AWS_GLUE_API ProfileConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ProfileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,32 @@ namespace Model
     /**
      * <p>A key-value map of configuration parameters for Glue sessions. </p>
      */
-    inline const Aws::Map<Aws::String, ConfigurationObject>& GetSessionConfiguration() const{ return m_sessionConfiguration; }
+    inline const Aws::Map<Aws::String, ConfigurationObject>& GetSessionConfiguration() const { return m_sessionConfiguration; }
     inline bool SessionConfigurationHasBeenSet() const { return m_sessionConfigurationHasBeenSet; }
-    inline void SetSessionConfiguration(const Aws::Map<Aws::String, ConfigurationObject>& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = value; }
-    inline void SetSessionConfiguration(Aws::Map<Aws::String, ConfigurationObject>&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = std::move(value); }
-    inline ProfileConfiguration& WithSessionConfiguration(const Aws::Map<Aws::String, ConfigurationObject>& value) { SetSessionConfiguration(value); return *this;}
-    inline ProfileConfiguration& WithSessionConfiguration(Aws::Map<Aws::String, ConfigurationObject>&& value) { SetSessionConfiguration(std::move(value)); return *this;}
-    inline ProfileConfiguration& AddSessionConfiguration(const Aws::String& key, const ConfigurationObject& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(key, value); return *this; }
-    inline ProfileConfiguration& AddSessionConfiguration(Aws::String&& key, const ConfigurationObject& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(std::move(key), value); return *this; }
-    inline ProfileConfiguration& AddSessionConfiguration(const Aws::String& key, ConfigurationObject&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(key, std::move(value)); return *this; }
-    inline ProfileConfiguration& AddSessionConfiguration(Aws::String&& key, ConfigurationObject&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProfileConfiguration& AddSessionConfiguration(const char* key, ConfigurationObject&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(key, std::move(value)); return *this; }
-    inline ProfileConfiguration& AddSessionConfiguration(const char* key, const ConfigurationObject& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(key, value); return *this; }
+    template<typename SessionConfigurationT = Aws::Map<Aws::String, ConfigurationObject>>
+    void SetSessionConfiguration(SessionConfigurationT&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = std::forward<SessionConfigurationT>(value); }
+    template<typename SessionConfigurationT = Aws::Map<Aws::String, ConfigurationObject>>
+    ProfileConfiguration& WithSessionConfiguration(SessionConfigurationT&& value) { SetSessionConfiguration(std::forward<SessionConfigurationT>(value)); return *this;}
+    template<typename SessionConfigurationKeyT = Aws::String, typename SessionConfigurationValueT = ConfigurationObject>
+    ProfileConfiguration& AddSessionConfiguration(SessionConfigurationKeyT&& key, SessionConfigurationValueT&& value) {
+      m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration.emplace(std::forward<SessionConfigurationKeyT>(key), std::forward<SessionConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A key-value map of configuration parameters for Glue jobs. </p>
      */
-    inline const Aws::Map<Aws::String, ConfigurationObject>& GetJobConfiguration() const{ return m_jobConfiguration; }
+    inline const Aws::Map<Aws::String, ConfigurationObject>& GetJobConfiguration() const { return m_jobConfiguration; }
     inline bool JobConfigurationHasBeenSet() const { return m_jobConfigurationHasBeenSet; }
-    inline void SetJobConfiguration(const Aws::Map<Aws::String, ConfigurationObject>& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration = value; }
-    inline void SetJobConfiguration(Aws::Map<Aws::String, ConfigurationObject>&& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration = std::move(value); }
-    inline ProfileConfiguration& WithJobConfiguration(const Aws::Map<Aws::String, ConfigurationObject>& value) { SetJobConfiguration(value); return *this;}
-    inline ProfileConfiguration& WithJobConfiguration(Aws::Map<Aws::String, ConfigurationObject>&& value) { SetJobConfiguration(std::move(value)); return *this;}
-    inline ProfileConfiguration& AddJobConfiguration(const Aws::String& key, const ConfigurationObject& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(key, value); return *this; }
-    inline ProfileConfiguration& AddJobConfiguration(Aws::String&& key, const ConfigurationObject& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(std::move(key), value); return *this; }
-    inline ProfileConfiguration& AddJobConfiguration(const Aws::String& key, ConfigurationObject&& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(key, std::move(value)); return *this; }
-    inline ProfileConfiguration& AddJobConfiguration(Aws::String&& key, ConfigurationObject&& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProfileConfiguration& AddJobConfiguration(const char* key, ConfigurationObject&& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(key, std::move(value)); return *this; }
-    inline ProfileConfiguration& AddJobConfiguration(const char* key, const ConfigurationObject& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(key, value); return *this; }
+    template<typename JobConfigurationT = Aws::Map<Aws::String, ConfigurationObject>>
+    void SetJobConfiguration(JobConfigurationT&& value) { m_jobConfigurationHasBeenSet = true; m_jobConfiguration = std::forward<JobConfigurationT>(value); }
+    template<typename JobConfigurationT = Aws::Map<Aws::String, ConfigurationObject>>
+    ProfileConfiguration& WithJobConfiguration(JobConfigurationT&& value) { SetJobConfiguration(std::forward<JobConfigurationT>(value)); return *this;}
+    template<typename JobConfigurationKeyT = Aws::String, typename JobConfigurationValueT = ConfigurationObject>
+    ProfileConfiguration& AddJobConfiguration(JobConfigurationKeyT&& key, JobConfigurationValueT&& value) {
+      m_jobConfigurationHasBeenSet = true; m_jobConfiguration.emplace(std::forward<JobConfigurationKeyT>(key), std::forward<JobConfigurationValueT>(value)); return *this;
+    }
     ///@}
   private:
 

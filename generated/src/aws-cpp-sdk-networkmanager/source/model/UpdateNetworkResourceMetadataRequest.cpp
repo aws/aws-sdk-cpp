@@ -12,13 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNetworkResourceMetadataRequest::UpdateNetworkResourceMetadataRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNetworkResourceMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,26 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SplunkDestinationDescription::SplunkDestinationDescription() : 
-    m_hECEndpointHasBeenSet(false),
-    m_hECEndpointType(HECEndpointType::NOT_SET),
-    m_hECEndpointTypeHasBeenSet(false),
-    m_hECTokenHasBeenSet(false),
-    m_hECAcknowledgmentTimeoutInSeconds(0),
-    m_hECAcknowledgmentTimeoutInSecondsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(SplunkS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_secretsManagerConfigurationHasBeenSet(false)
-{
-}
-
 SplunkDestinationDescription::SplunkDestinationDescription(JsonView jsonValue)
-  : SplunkDestinationDescription()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ SplunkDestinationDescription& SplunkDestinationDescription::operator =(JsonView 
   if(jsonValue.ValueExists("HECEndpoint"))
   {
     m_hECEndpoint = jsonValue.GetString("HECEndpoint");
-
     m_hECEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HECEndpointType"))
   {
     m_hECEndpointType = HECEndpointTypeMapper::GetHECEndpointTypeForName(jsonValue.GetString("HECEndpointType"));
-
     m_hECEndpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HECToken"))
   {
     m_hECToken = jsonValue.GetString("HECToken");
-
     m_hECTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HECAcknowledgmentTimeoutInSeconds"))
   {
     m_hECAcknowledgmentTimeoutInSeconds = jsonValue.GetInteger("HECAcknowledgmentTimeoutInSeconds");
-
     m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryOptions"))
   {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
-
     m_retryOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BackupMode"))
   {
     m_s3BackupMode = SplunkS3BackupModeMapper::GetSplunkS3BackupModeForName(jsonValue.GetString("S3BackupMode"));
-
     m_s3BackupModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DestinationDescription"))
   {
     m_s3DestinationDescription = jsonValue.GetObject("S3DestinationDescription");
-
     m_s3DestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingConfiguration"))
   {
     m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
-
     m_processingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
-
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferingHints"))
   {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
-
     m_bufferingHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerConfiguration"))
   {
     m_secretsManagerConfiguration = jsonValue.GetObject("SecretsManagerConfiguration");
-
     m_secretsManagerConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

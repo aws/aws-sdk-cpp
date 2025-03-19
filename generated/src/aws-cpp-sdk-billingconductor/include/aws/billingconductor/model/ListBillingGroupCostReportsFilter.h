@@ -33,7 +33,7 @@ namespace Model
   class ListBillingGroupCostReportsFilter
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter();
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter() = default;
     AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>The list of Amazon Resource Names (ARNs) used to filter billing groups to
      * retrieve reports. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetBillingGroupArns() const{ return m_billingGroupArns; }
+    inline const Aws::Vector<Aws::String>& GetBillingGroupArns() const { return m_billingGroupArns; }
     inline bool BillingGroupArnsHasBeenSet() const { return m_billingGroupArnsHasBeenSet; }
-    inline void SetBillingGroupArns(const Aws::Vector<Aws::String>& value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns = value; }
-    inline void SetBillingGroupArns(Aws::Vector<Aws::String>&& value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns = std::move(value); }
-    inline ListBillingGroupCostReportsFilter& WithBillingGroupArns(const Aws::Vector<Aws::String>& value) { SetBillingGroupArns(value); return *this;}
-    inline ListBillingGroupCostReportsFilter& WithBillingGroupArns(Aws::Vector<Aws::String>&& value) { SetBillingGroupArns(std::move(value)); return *this;}
-    inline ListBillingGroupCostReportsFilter& AddBillingGroupArns(const Aws::String& value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns.push_back(value); return *this; }
-    inline ListBillingGroupCostReportsFilter& AddBillingGroupArns(Aws::String&& value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns.push_back(std::move(value)); return *this; }
-    inline ListBillingGroupCostReportsFilter& AddBillingGroupArns(const char* value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns.push_back(value); return *this; }
+    template<typename BillingGroupArnsT = Aws::Vector<Aws::String>>
+    void SetBillingGroupArns(BillingGroupArnsT&& value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns = std::forward<BillingGroupArnsT>(value); }
+    template<typename BillingGroupArnsT = Aws::Vector<Aws::String>>
+    ListBillingGroupCostReportsFilter& WithBillingGroupArns(BillingGroupArnsT&& value) { SetBillingGroupArns(std::forward<BillingGroupArnsT>(value)); return *this;}
+    template<typename BillingGroupArnsT = Aws::String>
+    ListBillingGroupCostReportsFilter& AddBillingGroupArns(BillingGroupArnsT&& value) { m_billingGroupArnsHasBeenSet = true; m_billingGroupArns.emplace_back(std::forward<BillingGroupArnsT>(value)); return *this; }
     ///@}
   private:
 

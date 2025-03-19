@@ -12,20 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApplicationRevisionsRequest::ListApplicationRevisionsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_sortBy(ApplicationRevisionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_deployed(ListStateFilterAction::NOT_SET),
-    m_deployedHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationRevisionsRequest::SerializePayload() const
 {
   JsonValue payload;

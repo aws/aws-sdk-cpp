@@ -12,17 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFindingAggregationsRequest::ListFindingAggregationsRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_aggregationRequestHasBeenSet(false),
-    m_aggregationType(AggregationType::NOT_SET),
-    m_aggregationTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListFindingAggregationsRequest::SerializePayload() const
 {
   JsonValue payload;

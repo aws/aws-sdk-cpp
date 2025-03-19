@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PineconeConfiguration::PineconeConfiguration() : 
-    m_connectionStringHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 PineconeConfiguration::PineconeConfiguration(JsonView jsonValue)
-  : PineconeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PineconeConfiguration& PineconeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectionString"))
   {
     m_connectionString = jsonValue.GetString("connectionString");
-
     m_connectionStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialsSecretArn"))
   {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-
     m_credentialsSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
-
     m_fieldMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

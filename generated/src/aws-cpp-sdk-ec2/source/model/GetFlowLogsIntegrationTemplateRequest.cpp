@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetFlowLogsIntegrationTemplateRequest::GetFlowLogsIntegrationTemplateRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_flowLogIdHasBeenSet(false),
-    m_configDeliveryS3DestinationArnHasBeenSet(false),
-    m_integrateServicesHasBeenSet(false)
-{
-}
-
 Aws::String GetFlowLogsIntegrationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

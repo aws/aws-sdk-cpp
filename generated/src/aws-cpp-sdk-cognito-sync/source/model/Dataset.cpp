@@ -18,21 +18,7 @@ namespace CognitoSync
 namespace Model
 {
 
-Dataset::Dataset() : 
-    m_identityIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_dataStorage(0),
-    m_dataStorageHasBeenSet(false),
-    m_numRecords(0),
-    m_numRecordsHasBeenSet(false)
-{
-}
-
 Dataset::Dataset(JsonView jsonValue)
-  : Dataset()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ Dataset& Dataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
     m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetName"))
   {
     m_datasetName = jsonValue.GetString("DatasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataStorage"))
   {
     m_dataStorage = jsonValue.GetInt64("DataStorage");
-
     m_dataStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumRecords"))
   {
     m_numRecords = jsonValue.GetInt64("NumRecords");
-
     m_numRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

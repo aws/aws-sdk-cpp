@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ChangeTagsForResourceResult::ChangeTagsForResourceResult()
-{
-}
-
 ChangeTagsForResourceResult::ChangeTagsForResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -39,6 +35,7 @@ ChangeTagsForResourceResult& ChangeTagsForResourceResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

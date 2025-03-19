@@ -32,7 +32,7 @@ namespace Model
   class DiscoveryServerConfiguration
   {
   public:
-    AWS_DATASYNC_API DiscoveryServerConfiguration();
+    AWS_DATASYNC_API DiscoveryServerConfiguration() = default;
     AWS_DATASYNC_API DiscoveryServerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API DiscoveryServerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
      * <p>The domain name or IP address of your storage system's management
      * interface.</p>
      */
-    inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
+    inline const Aws::String& GetServerHostname() const { return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
-    inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
-    inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
-    inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
-    inline DiscoveryServerConfiguration& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
-    inline DiscoveryServerConfiguration& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
-    inline DiscoveryServerConfiguration& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    template<typename ServerHostnameT = Aws::String>
+    void SetServerHostname(ServerHostnameT&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::forward<ServerHostnameT>(value); }
+    template<typename ServerHostnameT = Aws::String>
+    DiscoveryServerConfiguration& WithServerHostname(ServerHostnameT&& value) { SetServerHostname(std::forward<ServerHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network port for accessing the storage system's management interface.</p>
      */
-    inline int GetServerPort() const{ return m_serverPort; }
+    inline int GetServerPort() const { return m_serverPort; }
     inline bool ServerPortHasBeenSet() const { return m_serverPortHasBeenSet; }
     inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
     inline DiscoveryServerConfiguration& WithServerPort(int value) { SetServerPort(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_serverHostname;
     bool m_serverHostnameHasBeenSet = false;
 
-    int m_serverPort;
+    int m_serverPort{0};
     bool m_serverPortHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class RetrievalResultSqlLocation
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSqlLocation();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSqlLocation() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSqlLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultSqlLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The SQL query used to retrieve the result.</p>
      */
-    inline const Aws::String& GetQuery() const{ return m_query; }
+    inline const Aws::String& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-    inline RetrievalResultSqlLocation& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-    inline RetrievalResultSqlLocation& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-    inline RetrievalResultSqlLocation& WithQuery(const char* value) { SetQuery(value); return *this;}
+    template<typename QueryT = Aws::String>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Aws::String>
+    RetrievalResultSqlLocation& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
   private:
 

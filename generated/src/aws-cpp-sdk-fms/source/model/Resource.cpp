@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-Resource::Resource() : 
-    m_uRIHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("URI"))
   {
     m_uRI = jsonValue.GetString("URI");
-
     m_uRIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

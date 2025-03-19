@@ -33,7 +33,7 @@ namespace Model
   class DetectEntitiesResult
   {
   public:
-    AWS_COMPREHEND_API DetectEntitiesResult();
+    AWS_COMPREHEND_API DetectEntitiesResult() = default;
     AWS_COMPREHEND_API DetectEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DetectEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -50,13 +50,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
      * in the Comprehend Developer Guide. </p>
      */
-    inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<Entity>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<Entity>&& value) { m_entities = std::move(value); }
-    inline DetectEntitiesResult& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
-    inline DetectEntitiesResult& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline DetectEntitiesResult& AddEntities(const Entity& value) { m_entities.push_back(value); return *this; }
-    inline DetectEntitiesResult& AddEntities(Entity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Entity>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    DetectEntitiesResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = Entity>
+    DetectEntitiesResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,11 +65,11 @@ namespace Model
      * is present in the response only if your request used the <code>Byte</code>
      * parameter. </p>
      */
-    inline const DocumentMetadata& GetDocumentMetadata() const{ return m_documentMetadata; }
-    inline void SetDocumentMetadata(const DocumentMetadata& value) { m_documentMetadata = value; }
-    inline void SetDocumentMetadata(DocumentMetadata&& value) { m_documentMetadata = std::move(value); }
-    inline DetectEntitiesResult& WithDocumentMetadata(const DocumentMetadata& value) { SetDocumentMetadata(value); return *this;}
-    inline DetectEntitiesResult& WithDocumentMetadata(DocumentMetadata&& value) { SetDocumentMetadata(std::move(value)); return *this;}
+    inline const DocumentMetadata& GetDocumentMetadata() const { return m_documentMetadata; }
+    template<typename DocumentMetadataT = DocumentMetadata>
+    void SetDocumentMetadata(DocumentMetadataT&& value) { m_documentMetadataHasBeenSet = true; m_documentMetadata = std::forward<DocumentMetadataT>(value); }
+    template<typename DocumentMetadataT = DocumentMetadata>
+    DetectEntitiesResult& WithDocumentMetadata(DocumentMetadataT&& value) { SetDocumentMetadata(std::forward<DocumentMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,13 +77,13 @@ namespace Model
      * <p>The document type for each page in the input document. This field is present
      * in the response only if your request used the <code>Byte</code> parameter. </p>
      */
-    inline const Aws::Vector<DocumentTypeListItem>& GetDocumentType() const{ return m_documentType; }
-    inline void SetDocumentType(const Aws::Vector<DocumentTypeListItem>& value) { m_documentType = value; }
-    inline void SetDocumentType(Aws::Vector<DocumentTypeListItem>&& value) { m_documentType = std::move(value); }
-    inline DetectEntitiesResult& WithDocumentType(const Aws::Vector<DocumentTypeListItem>& value) { SetDocumentType(value); return *this;}
-    inline DetectEntitiesResult& WithDocumentType(Aws::Vector<DocumentTypeListItem>&& value) { SetDocumentType(std::move(value)); return *this;}
-    inline DetectEntitiesResult& AddDocumentType(const DocumentTypeListItem& value) { m_documentType.push_back(value); return *this; }
-    inline DetectEntitiesResult& AddDocumentType(DocumentTypeListItem&& value) { m_documentType.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DocumentTypeListItem>& GetDocumentType() const { return m_documentType; }
+    template<typename DocumentTypeT = Aws::Vector<DocumentTypeListItem>>
+    void SetDocumentType(DocumentTypeT&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::forward<DocumentTypeT>(value); }
+    template<typename DocumentTypeT = Aws::Vector<DocumentTypeListItem>>
+    DetectEntitiesResult& WithDocumentType(DocumentTypeT&& value) { SetDocumentType(std::forward<DocumentTypeT>(value)); return *this;}
+    template<typename DocumentTypeT = DocumentTypeListItem>
+    DetectEntitiesResult& AddDocumentType(DocumentTypeT&& value) { m_documentTypeHasBeenSet = true; m_documentType.emplace_back(std::forward<DocumentTypeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,13 +95,13 @@ namespace Model
      * <code>Block</code> field is not present in the response for plain-text
      * inputs.</p>
      */
-    inline const Aws::Vector<Block>& GetBlocks() const{ return m_blocks; }
-    inline void SetBlocks(const Aws::Vector<Block>& value) { m_blocks = value; }
-    inline void SetBlocks(Aws::Vector<Block>&& value) { m_blocks = std::move(value); }
-    inline DetectEntitiesResult& WithBlocks(const Aws::Vector<Block>& value) { SetBlocks(value); return *this;}
-    inline DetectEntitiesResult& WithBlocks(Aws::Vector<Block>&& value) { SetBlocks(std::move(value)); return *this;}
-    inline DetectEntitiesResult& AddBlocks(const Block& value) { m_blocks.push_back(value); return *this; }
-    inline DetectEntitiesResult& AddBlocks(Block&& value) { m_blocks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Block>& GetBlocks() const { return m_blocks; }
+    template<typename BlocksT = Aws::Vector<Block>>
+    void SetBlocks(BlocksT&& value) { m_blocksHasBeenSet = true; m_blocks = std::forward<BlocksT>(value); }
+    template<typename BlocksT = Aws::Vector<Block>>
+    DetectEntitiesResult& WithBlocks(BlocksT&& value) { SetBlocks(std::forward<BlocksT>(value)); return *this;}
+    template<typename BlocksT = Block>
+    DetectEntitiesResult& AddBlocks(BlocksT&& value) { m_blocksHasBeenSet = true; m_blocks.emplace_back(std::forward<BlocksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,38 +109,42 @@ namespace Model
      * <p>Page-level errors that the system detected while processing the input
      * document. The field is empty if the system encountered no errors.</p>
      */
-    inline const Aws::Vector<ErrorsListItem>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ErrorsListItem>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ErrorsListItem>&& value) { m_errors = std::move(value); }
-    inline DetectEntitiesResult& WithErrors(const Aws::Vector<ErrorsListItem>& value) { SetErrors(value); return *this;}
-    inline DetectEntitiesResult& WithErrors(Aws::Vector<ErrorsListItem>&& value) { SetErrors(std::move(value)); return *this;}
-    inline DetectEntitiesResult& AddErrors(const ErrorsListItem& value) { m_errors.push_back(value); return *this; }
-    inline DetectEntitiesResult& AddErrors(ErrorsListItem&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ErrorsListItem>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ErrorsListItem>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ErrorsListItem>>
+    DetectEntitiesResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ErrorsListItem>
+    DetectEntitiesResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectEntitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectEntitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectEntitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectEntitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Entity> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     DocumentMetadata m_documentMetadata;
+    bool m_documentMetadataHasBeenSet = false;
 
     Aws::Vector<DocumentTypeListItem> m_documentType;
+    bool m_documentTypeHasBeenSet = false;
 
     Aws::Vector<Block> m_blocks;
+    bool m_blocksHasBeenSet = false;
 
     Aws::Vector<ErrorsListItem> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

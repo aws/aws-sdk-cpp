@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ListWavesRequestFilters::ListWavesRequestFilters() : 
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_waveIDsHasBeenSet(false)
-{
-}
-
 ListWavesRequestFilters::ListWavesRequestFilters(JsonView jsonValue)
-  : ListWavesRequestFilters()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ListWavesRequestFilters& ListWavesRequestFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isArchived"))
   {
     m_isArchived = jsonValue.GetBool("isArchived");
-
     m_isArchivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waveIDs"))
   {
     Aws::Utils::Array<JsonView> waveIDsJsonList = jsonValue.GetArray("waveIDs");
@@ -49,7 +39,6 @@ ListWavesRequestFilters& ListWavesRequestFilters::operator =(JsonView jsonValue)
     }
     m_waveIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

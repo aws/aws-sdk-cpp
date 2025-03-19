@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeInboundIntegrationsRequest::DescribeInboundIntegrationsRequest() : 
-    m_integrationArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInboundIntegrationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

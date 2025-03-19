@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListContactFlowsRequest::ListContactFlowsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactFlowTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListContactFlowsRequest::SerializePayload() const
 {
   return {};

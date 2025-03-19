@@ -82,7 +82,7 @@ namespace Model
   class CrlConfiguration
   {
   public:
-    AWS_ACMPCA_API CrlConfiguration();
+    AWS_ACMPCA_API CrlConfiguration() = default;
     AWS_ACMPCA_API CrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API CrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -98,7 +98,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
      * action. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CrlConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -108,7 +108,7 @@ namespace Model
     /**
      * <p>Validity period of the CRL in days.</p>
      */
-    inline int GetExpirationInDays() const{ return m_expirationInDays; }
+    inline int GetExpirationInDays() const { return m_expirationInDays; }
     inline bool ExpirationInDaysHasBeenSet() const { return m_expirationInDaysHasBeenSet; }
     inline void SetExpirationInDays(int value) { m_expirationInDaysHasBeenSet = true; m_expirationInDays = value; }
     inline CrlConfiguration& WithExpirationInDays(int value) { SetExpirationInDays(value); return *this;}
@@ -124,14 +124,12 @@ namespace Model
      * of special characters in URIs. Additionally, the value of the CNAME must not
      * include a protocol prefix such as "http://" or "https://".</p> 
      */
-    inline const Aws::String& GetCustomCname() const{ return m_customCname; }
+    inline const Aws::String& GetCustomCname() const { return m_customCname; }
     inline bool CustomCnameHasBeenSet() const { return m_customCnameHasBeenSet; }
-    inline void SetCustomCname(const Aws::String& value) { m_customCnameHasBeenSet = true; m_customCname = value; }
-    inline void SetCustomCname(Aws::String&& value) { m_customCnameHasBeenSet = true; m_customCname = std::move(value); }
-    inline void SetCustomCname(const char* value) { m_customCnameHasBeenSet = true; m_customCname.assign(value); }
-    inline CrlConfiguration& WithCustomCname(const Aws::String& value) { SetCustomCname(value); return *this;}
-    inline CrlConfiguration& WithCustomCname(Aws::String&& value) { SetCustomCname(std::move(value)); return *this;}
-    inline CrlConfiguration& WithCustomCname(const char* value) { SetCustomCname(value); return *this;}
+    template<typename CustomCnameT = Aws::String>
+    void SetCustomCname(CustomCnameT&& value) { m_customCnameHasBeenSet = true; m_customCname = std::forward<CustomCnameT>(value); }
+    template<typename CustomCnameT = Aws::String>
+    CrlConfiguration& WithCustomCname(CustomCnameT&& value) { SetCustomCname(std::forward<CustomCnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +147,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
      * bucket naming rules</a>.</p> 
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline CrlConfiguration& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline CrlConfiguration& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline CrlConfiguration& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    CrlConfiguration& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,12 +172,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
      * public access to the S3 bucket</a>.</p>
      */
-    inline const S3ObjectAcl& GetS3ObjectAcl() const{ return m_s3ObjectAcl; }
+    inline S3ObjectAcl GetS3ObjectAcl() const { return m_s3ObjectAcl; }
     inline bool S3ObjectAclHasBeenSet() const { return m_s3ObjectAclHasBeenSet; }
-    inline void SetS3ObjectAcl(const S3ObjectAcl& value) { m_s3ObjectAclHasBeenSet = true; m_s3ObjectAcl = value; }
-    inline void SetS3ObjectAcl(S3ObjectAcl&& value) { m_s3ObjectAclHasBeenSet = true; m_s3ObjectAcl = std::move(value); }
-    inline CrlConfiguration& WithS3ObjectAcl(const S3ObjectAcl& value) { SetS3ObjectAcl(value); return *this;}
-    inline CrlConfiguration& WithS3ObjectAcl(S3ObjectAcl&& value) { SetS3ObjectAcl(std::move(value)); return *this;}
+    inline void SetS3ObjectAcl(S3ObjectAcl value) { m_s3ObjectAclHasBeenSet = true; m_s3ObjectAcl = value; }
+    inline CrlConfiguration& WithS3ObjectAcl(S3ObjectAcl value) { SetS3ObjectAcl(value); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +185,12 @@ namespace Model
      * provided, then the CRl Distribution Point Extension will be present and contain
      * the default CRL URL.</p>
      */
-    inline const CrlDistributionPointExtensionConfiguration& GetCrlDistributionPointExtensionConfiguration() const{ return m_crlDistributionPointExtensionConfiguration; }
+    inline const CrlDistributionPointExtensionConfiguration& GetCrlDistributionPointExtensionConfiguration() const { return m_crlDistributionPointExtensionConfiguration; }
     inline bool CrlDistributionPointExtensionConfigurationHasBeenSet() const { return m_crlDistributionPointExtensionConfigurationHasBeenSet; }
-    inline void SetCrlDistributionPointExtensionConfiguration(const CrlDistributionPointExtensionConfiguration& value) { m_crlDistributionPointExtensionConfigurationHasBeenSet = true; m_crlDistributionPointExtensionConfiguration = value; }
-    inline void SetCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfiguration&& value) { m_crlDistributionPointExtensionConfigurationHasBeenSet = true; m_crlDistributionPointExtensionConfiguration = std::move(value); }
-    inline CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(const CrlDistributionPointExtensionConfiguration& value) { SetCrlDistributionPointExtensionConfiguration(value); return *this;}
-    inline CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfiguration&& value) { SetCrlDistributionPointExtensionConfiguration(std::move(value)); return *this;}
+    template<typename CrlDistributionPointExtensionConfigurationT = CrlDistributionPointExtensionConfiguration>
+    void SetCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfigurationT&& value) { m_crlDistributionPointExtensionConfigurationHasBeenSet = true; m_crlDistributionPointExtensionConfiguration = std::forward<CrlDistributionPointExtensionConfigurationT>(value); }
+    template<typename CrlDistributionPointExtensionConfigurationT = CrlDistributionPointExtensionConfiguration>
+    CrlConfiguration& WithCrlDistributionPointExtensionConfiguration(CrlDistributionPointExtensionConfigurationT&& value) { SetCrlDistributionPointExtensionConfiguration(std::forward<CrlDistributionPointExtensionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,12 +213,10 @@ namespace Model
      * Services Private CA marks the IDP extension as critical, which your client must
      * be able to process. </p>  </li> </ul>
      */
-    inline const CrlType& GetCrlType() const{ return m_crlType; }
+    inline CrlType GetCrlType() const { return m_crlType; }
     inline bool CrlTypeHasBeenSet() const { return m_crlTypeHasBeenSet; }
-    inline void SetCrlType(const CrlType& value) { m_crlTypeHasBeenSet = true; m_crlType = value; }
-    inline void SetCrlType(CrlType&& value) { m_crlTypeHasBeenSet = true; m_crlType = std::move(value); }
-    inline CrlConfiguration& WithCrlType(const CrlType& value) { SetCrlType(value); return *this;}
-    inline CrlConfiguration& WithCrlType(CrlType&& value) { SetCrlType(std::move(value)); return *this;}
+    inline void SetCrlType(CrlType value) { m_crlTypeHasBeenSet = true; m_crlType = value; }
+    inline CrlConfiguration& WithCrlType(CrlType value) { SetCrlType(value); return *this;}
     ///@}
 
     ///@{
@@ -233,21 +225,19 @@ namespace Model
      * <code>http://&lt;CustomName&gt;/
      * &lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. </p>
      */
-    inline const Aws::String& GetCustomPath() const{ return m_customPath; }
+    inline const Aws::String& GetCustomPath() const { return m_customPath; }
     inline bool CustomPathHasBeenSet() const { return m_customPathHasBeenSet; }
-    inline void SetCustomPath(const Aws::String& value) { m_customPathHasBeenSet = true; m_customPath = value; }
-    inline void SetCustomPath(Aws::String&& value) { m_customPathHasBeenSet = true; m_customPath = std::move(value); }
-    inline void SetCustomPath(const char* value) { m_customPathHasBeenSet = true; m_customPath.assign(value); }
-    inline CrlConfiguration& WithCustomPath(const Aws::String& value) { SetCustomPath(value); return *this;}
-    inline CrlConfiguration& WithCustomPath(Aws::String&& value) { SetCustomPath(std::move(value)); return *this;}
-    inline CrlConfiguration& WithCustomPath(const char* value) { SetCustomPath(value); return *this;}
+    template<typename CustomPathT = Aws::String>
+    void SetCustomPath(CustomPathT&& value) { m_customPathHasBeenSet = true; m_customPath = std::forward<CustomPathT>(value); }
+    template<typename CustomPathT = Aws::String>
+    CrlConfiguration& WithCustomPath(CustomPathT&& value) { SetCustomPath(std::forward<CustomPathT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_expirationInDays;
+    int m_expirationInDays{0};
     bool m_expirationInDaysHasBeenSet = false;
 
     Aws::String m_customCname;
@@ -256,13 +246,13 @@ namespace Model
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet = false;
 
-    S3ObjectAcl m_s3ObjectAcl;
+    S3ObjectAcl m_s3ObjectAcl{S3ObjectAcl::NOT_SET};
     bool m_s3ObjectAclHasBeenSet = false;
 
     CrlDistributionPointExtensionConfiguration m_crlDistributionPointExtensionConfiguration;
     bool m_crlDistributionPointExtensionConfigurationHasBeenSet = false;
 
-    CrlType m_crlType;
+    CrlType m_crlType{CrlType::NOT_SET};
     bool m_crlTypeHasBeenSet = false;
 
     Aws::String m_customPath;

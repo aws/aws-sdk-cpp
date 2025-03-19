@@ -22,7 +22,7 @@ namespace Model
   class UpdateConsumableResourceRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API UpdateConsumableResourceRequest();
+    AWS_BATCH_API UpdateConsumableResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The name or ARN of the consumable resource to be updated.</p>
      */
-    inline const Aws::String& GetConsumableResource() const{ return m_consumableResource; }
+    inline const Aws::String& GetConsumableResource() const { return m_consumableResource; }
     inline bool ConsumableResourceHasBeenSet() const { return m_consumableResourceHasBeenSet; }
-    inline void SetConsumableResource(const Aws::String& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = value; }
-    inline void SetConsumableResource(Aws::String&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::move(value); }
-    inline void SetConsumableResource(const char* value) { m_consumableResourceHasBeenSet = true; m_consumableResource.assign(value); }
-    inline UpdateConsumableResourceRequest& WithConsumableResource(const Aws::String& value) { SetConsumableResource(value); return *this;}
-    inline UpdateConsumableResourceRequest& WithConsumableResource(Aws::String&& value) { SetConsumableResource(std::move(value)); return *this;}
-    inline UpdateConsumableResourceRequest& WithConsumableResource(const char* value) { SetConsumableResource(value); return *this;}
+    template<typename ConsumableResourceT = Aws::String>
+    void SetConsumableResource(ConsumableResourceT&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::forward<ConsumableResourceT>(value); }
+    template<typename ConsumableResourceT = Aws::String>
+    UpdateConsumableResourceRequest& WithConsumableResource(ConsumableResourceT&& value) { SetConsumableResource(std::forward<ConsumableResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p> <code>REMOVE</code> </p> <p>Reduces the quantity of the resource by the
      * value specified by the <code>quantity</code> parameter.</p> </li> </ul>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline UpdateConsumableResourceRequest& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline UpdateConsumableResourceRequest& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline UpdateConsumableResourceRequest& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    UpdateConsumableResourceRequest& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * will be the new total quantity, or the amount by which the total quantity will
      * be increased or reduced. Must be a non-negative value.</p>
      */
-    inline long long GetQuantity() const{ return m_quantity; }
+    inline long long GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(long long value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline UpdateConsumableResourceRequest& WithQuantity(long long value) { SetQuantity(value); return *this;}
@@ -88,14 +84,12 @@ namespace Model
      * <code>clientToken</code> is valid for 8 hours or until one hour after the
      * consumable resource is deleted, whichever is less.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateConsumableResourceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateConsumableResourceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateConsumableResourceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateConsumableResourceRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_operation;
     bool m_operationHasBeenSet = false;
 
-    long long m_quantity;
+    long long m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::String m_clientToken;

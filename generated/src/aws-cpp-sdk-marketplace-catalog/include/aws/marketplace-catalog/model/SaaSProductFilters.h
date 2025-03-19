@@ -36,7 +36,7 @@ namespace Model
   class SaaSProductFilters
   {
   public:
-    AWS_MARKETPLACECATALOG_API SaaSProductFilters();
+    AWS_MARKETPLACECATALOG_API SaaSProductFilters() = default;
     AWS_MARKETPLACECATALOG_API SaaSProductFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API SaaSProductFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,48 @@ namespace Model
     /**
      * <p>Unique identifier for the SaaS product.</p>
      */
-    inline const SaaSProductEntityIdFilter& GetEntityId() const{ return m_entityId; }
+    inline const SaaSProductEntityIdFilter& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const SaaSProductEntityIdFilter& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(SaaSProductEntityIdFilter&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline SaaSProductFilters& WithEntityId(const SaaSProductEntityIdFilter& value) { SetEntityId(value); return *this;}
-    inline SaaSProductFilters& WithEntityId(SaaSProductEntityIdFilter&& value) { SetEntityId(std::move(value)); return *this;}
+    template<typename EntityIdT = SaaSProductEntityIdFilter>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = SaaSProductEntityIdFilter>
+    SaaSProductFilters& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the SaaS product.</p>
      */
-    inline const SaaSProductTitleFilter& GetProductTitle() const{ return m_productTitle; }
+    inline const SaaSProductTitleFilter& GetProductTitle() const { return m_productTitle; }
     inline bool ProductTitleHasBeenSet() const { return m_productTitleHasBeenSet; }
-    inline void SetProductTitle(const SaaSProductTitleFilter& value) { m_productTitleHasBeenSet = true; m_productTitle = value; }
-    inline void SetProductTitle(SaaSProductTitleFilter&& value) { m_productTitleHasBeenSet = true; m_productTitle = std::move(value); }
-    inline SaaSProductFilters& WithProductTitle(const SaaSProductTitleFilter& value) { SetProductTitle(value); return *this;}
-    inline SaaSProductFilters& WithProductTitle(SaaSProductTitleFilter&& value) { SetProductTitle(std::move(value)); return *this;}
+    template<typename ProductTitleT = SaaSProductTitleFilter>
+    void SetProductTitle(ProductTitleT&& value) { m_productTitleHasBeenSet = true; m_productTitle = std::forward<ProductTitleT>(value); }
+    template<typename ProductTitleT = SaaSProductTitleFilter>
+    SaaSProductFilters& WithProductTitle(ProductTitleT&& value) { SetProductTitle(std::forward<ProductTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility of the SaaS product.</p>
      */
-    inline const SaaSProductVisibilityFilter& GetVisibility() const{ return m_visibility; }
+    inline const SaaSProductVisibilityFilter& GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const SaaSProductVisibilityFilter& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(SaaSProductVisibilityFilter&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline SaaSProductFilters& WithVisibility(const SaaSProductVisibilityFilter& value) { SetVisibility(value); return *this;}
-    inline SaaSProductFilters& WithVisibility(SaaSProductVisibilityFilter&& value) { SetVisibility(std::move(value)); return *this;}
+    template<typename VisibilityT = SaaSProductVisibilityFilter>
+    void SetVisibility(VisibilityT&& value) { m_visibilityHasBeenSet = true; m_visibility = std::forward<VisibilityT>(value); }
+    template<typename VisibilityT = SaaSProductVisibilityFilter>
+    SaaSProductFilters& WithVisibility(VisibilityT&& value) { SetVisibility(std::forward<VisibilityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last date on which the SaaS product was modified.</p>
      */
-    inline const SaaSProductLastModifiedDateFilter& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const SaaSProductLastModifiedDateFilter& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const SaaSProductLastModifiedDateFilter& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(SaaSProductLastModifiedDateFilter&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline SaaSProductFilters& WithLastModifiedDate(const SaaSProductLastModifiedDateFilter& value) { SetLastModifiedDate(value); return *this;}
-    inline SaaSProductFilters& WithLastModifiedDate(SaaSProductLastModifiedDateFilter&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = SaaSProductLastModifiedDateFilter>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = SaaSProductLastModifiedDateFilter>
+    SaaSProductFilters& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace RAM
 namespace Model
 {
 
-ReplacePermissionAssociationsWork::ReplacePermissionAssociationsWork() : 
-    m_idHasBeenSet(false),
-    m_fromPermissionArnHasBeenSet(false),
-    m_fromPermissionVersionHasBeenSet(false),
-    m_toPermissionArnHasBeenSet(false),
-    m_toPermissionVersionHasBeenSet(false),
-    m_status(ReplacePermissionAssociationsWorkStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ReplacePermissionAssociationsWork::ReplacePermissionAssociationsWork(JsonView jsonValue)
-  : ReplacePermissionAssociationsWork()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ ReplacePermissionAssociationsWork& ReplacePermissionAssociationsWork::operator =
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromPermissionArn"))
   {
     m_fromPermissionArn = jsonValue.GetString("fromPermissionArn");
-
     m_fromPermissionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromPermissionVersion"))
   {
     m_fromPermissionVersion = jsonValue.GetString("fromPermissionVersion");
-
     m_fromPermissionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toPermissionArn"))
   {
     m_toPermissionArn = jsonValue.GetString("toPermissionArn");
-
     m_toPermissionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toPermissionVersion"))
   {
     m_toPermissionVersion = jsonValue.GetString("toPermissionVersion");
-
     m_toPermissionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReplacePermissionAssociationsWorkStatusMapper::GetReplacePermissionAssociationsWorkStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

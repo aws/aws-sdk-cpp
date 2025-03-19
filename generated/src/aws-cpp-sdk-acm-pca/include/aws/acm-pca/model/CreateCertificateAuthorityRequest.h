@@ -28,7 +28,7 @@ namespace Model
   class CreateCertificateAuthorityRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API CreateCertificateAuthorityRequest();
+    AWS_ACMPCA_API CreateCertificateAuthorityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,12 @@ namespace Model
      * <p>Name and bit size of the private key algorithm, the name of the signing
      * algorithm, and X.500 certificate subject information.</p>
      */
-    inline const CertificateAuthorityConfiguration& GetCertificateAuthorityConfiguration() const{ return m_certificateAuthorityConfiguration; }
+    inline const CertificateAuthorityConfiguration& GetCertificateAuthorityConfiguration() const { return m_certificateAuthorityConfiguration; }
     inline bool CertificateAuthorityConfigurationHasBeenSet() const { return m_certificateAuthorityConfigurationHasBeenSet; }
-    inline void SetCertificateAuthorityConfiguration(const CertificateAuthorityConfiguration& value) { m_certificateAuthorityConfigurationHasBeenSet = true; m_certificateAuthorityConfiguration = value; }
-    inline void SetCertificateAuthorityConfiguration(CertificateAuthorityConfiguration&& value) { m_certificateAuthorityConfigurationHasBeenSet = true; m_certificateAuthorityConfiguration = std::move(value); }
-    inline CreateCertificateAuthorityRequest& WithCertificateAuthorityConfiguration(const CertificateAuthorityConfiguration& value) { SetCertificateAuthorityConfiguration(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithCertificateAuthorityConfiguration(CertificateAuthorityConfiguration&& value) { SetCertificateAuthorityConfiguration(std::move(value)); return *this;}
+    template<typename CertificateAuthorityConfigurationT = CertificateAuthorityConfiguration>
+    void SetCertificateAuthorityConfiguration(CertificateAuthorityConfigurationT&& value) { m_certificateAuthorityConfigurationHasBeenSet = true; m_certificateAuthorityConfiguration = std::forward<CertificateAuthorityConfigurationT>(value); }
+    template<typename CertificateAuthorityConfigurationT = CertificateAuthorityConfiguration>
+    CreateCertificateAuthorityRequest& WithCertificateAuthorityConfiguration(CertificateAuthorityConfigurationT&& value) { SetCertificateAuthorityConfiguration(std::forward<CertificateAuthorityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,24 +78,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
      * types.</p>
      */
-    inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
+    inline const RevocationConfiguration& GetRevocationConfiguration() const { return m_revocationConfiguration; }
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
-    inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
-    inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
-    inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
+    template<typename RevocationConfigurationT = RevocationConfiguration>
+    void SetRevocationConfiguration(RevocationConfigurationT&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::forward<RevocationConfigurationT>(value); }
+    template<typename RevocationConfigurationT = RevocationConfiguration>
+    CreateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfigurationT&& value) { SetRevocationConfiguration(std::forward<RevocationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the certificate authority.</p>
      */
-    inline const CertificateAuthorityType& GetCertificateAuthorityType() const{ return m_certificateAuthorityType; }
+    inline CertificateAuthorityType GetCertificateAuthorityType() const { return m_certificateAuthorityType; }
     inline bool CertificateAuthorityTypeHasBeenSet() const { return m_certificateAuthorityTypeHasBeenSet; }
-    inline void SetCertificateAuthorityType(const CertificateAuthorityType& value) { m_certificateAuthorityTypeHasBeenSet = true; m_certificateAuthorityType = value; }
-    inline void SetCertificateAuthorityType(CertificateAuthorityType&& value) { m_certificateAuthorityTypeHasBeenSet = true; m_certificateAuthorityType = std::move(value); }
-    inline CreateCertificateAuthorityRequest& WithCertificateAuthorityType(const CertificateAuthorityType& value) { SetCertificateAuthorityType(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithCertificateAuthorityType(CertificateAuthorityType&& value) { SetCertificateAuthorityType(std::move(value)); return *this;}
+    inline void SetCertificateAuthorityType(CertificateAuthorityType value) { m_certificateAuthorityTypeHasBeenSet = true; m_certificateAuthorityType = value; }
+    inline CreateCertificateAuthorityRequest& WithCertificateAuthorityType(CertificateAuthorityType value) { SetCertificateAuthorityType(value); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +107,12 @@ namespace Model
      * the idempotency token for each call, Amazon Web Services Private CA recognizes
      * that you are requesting multiple certificate authorities.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    CreateCertificateAuthorityRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +130,10 @@ namespace Model
      * and security compliance of Amazon Web Services Private CA private keys</a>.</p>
      * 
      */
-    inline const KeyStorageSecurityStandard& GetKeyStorageSecurityStandard() const{ return m_keyStorageSecurityStandard; }
+    inline KeyStorageSecurityStandard GetKeyStorageSecurityStandard() const { return m_keyStorageSecurityStandard; }
     inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }
-    inline void SetKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
-    inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = std::move(value); }
-    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { SetKeyStorageSecurityStandard(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}
+    inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
+    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard value) { SetKeyStorageSecurityStandard(value); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +144,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
      * Access Using IAM Tags</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCertificateAuthorityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateCertificateAuthorityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateCertificateAuthorityRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateCertificateAuthorityRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -167,12 +161,10 @@ namespace Model
      * omit revocation because they expire quickly. Short-lived certificate validity is
      * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
      */
-    inline const CertificateAuthorityUsageMode& GetUsageMode() const{ return m_usageMode; }
+    inline CertificateAuthorityUsageMode GetUsageMode() const { return m_usageMode; }
     inline bool UsageModeHasBeenSet() const { return m_usageModeHasBeenSet; }
-    inline void SetUsageMode(const CertificateAuthorityUsageMode& value) { m_usageModeHasBeenSet = true; m_usageMode = value; }
-    inline void SetUsageMode(CertificateAuthorityUsageMode&& value) { m_usageModeHasBeenSet = true; m_usageMode = std::move(value); }
-    inline CreateCertificateAuthorityRequest& WithUsageMode(const CertificateAuthorityUsageMode& value) { SetUsageMode(value); return *this;}
-    inline CreateCertificateAuthorityRequest& WithUsageMode(CertificateAuthorityUsageMode&& value) { SetUsageMode(std::move(value)); return *this;}
+    inline void SetUsageMode(CertificateAuthorityUsageMode value) { m_usageModeHasBeenSet = true; m_usageMode = value; }
+    inline CreateCertificateAuthorityRequest& WithUsageMode(CertificateAuthorityUsageMode value) { SetUsageMode(value); return *this;}
     ///@}
   private:
 
@@ -182,19 +174,19 @@ namespace Model
     RevocationConfiguration m_revocationConfiguration;
     bool m_revocationConfigurationHasBeenSet = false;
 
-    CertificateAuthorityType m_certificateAuthorityType;
+    CertificateAuthorityType m_certificateAuthorityType{CertificateAuthorityType::NOT_SET};
     bool m_certificateAuthorityTypeHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet = false;
 
-    KeyStorageSecurityStandard m_keyStorageSecurityStandard;
+    KeyStorageSecurityStandard m_keyStorageSecurityStandard{KeyStorageSecurityStandard::NOT_SET};
     bool m_keyStorageSecurityStandardHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    CertificateAuthorityUsageMode m_usageMode;
+    CertificateAuthorityUsageMode m_usageMode{CertificateAuthorityUsageMode::NOT_SET};
     bool m_usageModeHasBeenSet = false;
   };
 

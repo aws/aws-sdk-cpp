@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-ScriptSummary::ScriptSummary() : 
-    m_scriptLocationHasBeenSet(false),
-    m_type(ScriptType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ScriptSummary::ScriptSummary(JsonView jsonValue)
-  : ScriptSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScriptSummary& ScriptSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scriptLocation"))
   {
     m_scriptLocation = jsonValue.GetString("scriptLocation");
-
     m_scriptLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ScriptTypeMapper::GetScriptTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetColumnStatisticsForPartitionRequest::GetColumnStatisticsForPartitionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_partitionValuesHasBeenSet(false),
-    m_columnNamesHasBeenSet(false)
-{
-}
-
 Aws::String GetColumnStatisticsForPartitionRequest::SerializePayload() const
 {
   JsonValue payload;

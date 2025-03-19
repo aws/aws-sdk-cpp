@@ -23,7 +23,7 @@ namespace Model
   class InvokeAssistantRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API InvokeAssistantRequest();
+    AWS_IOTSITEWISE_API InvokeAssistantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -62,28 +62,24 @@ namespace Model
      * to have your own ID, you must specify it here in UUID format. If you specify
      * your own ID, it must be globally unique.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline InvokeAssistantRequest& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline InvokeAssistantRequest& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline InvokeAssistantRequest& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    InvokeAssistantRequest& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A text message sent to the SiteWise Assistant by the user.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvokeAssistantRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvokeAssistantRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvokeAssistantRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvokeAssistantRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * <p>Specifies if to turn trace on or not. It is used to track the SiteWise
      * Assistant's reasoning, and data access process.</p>
      */
-    inline bool GetEnableTrace() const{ return m_enableTrace; }
+    inline bool GetEnableTrace() const { return m_enableTrace; }
     inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
     inline void SetEnableTrace(bool value) { m_enableTraceHasBeenSet = true; m_enableTrace = value; }
     inline InvokeAssistantRequest& WithEnableTrace(bool value) { SetEnableTrace(value); return *this;}
@@ -104,10 +100,10 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    bool m_enableTrace;
+    bool m_enableTrace{false};
     bool m_enableTraceHasBeenSet = false;
     InvokeAssistantHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

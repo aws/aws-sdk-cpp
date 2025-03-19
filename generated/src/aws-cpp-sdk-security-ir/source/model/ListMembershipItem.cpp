@@ -18,19 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-ListMembershipItem::ListMembershipItem() : 
-    m_membershipIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_region(AwsRegion::NOT_SET),
-    m_regionHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_membershipStatus(MembershipStatus::NOT_SET),
-    m_membershipStatusHasBeenSet(false)
-{
-}
-
 ListMembershipItem::ListMembershipItem(JsonView jsonValue)
-  : ListMembershipItem()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ListMembershipItem& ListMembershipItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("membershipId"))
   {
     m_membershipId = jsonValue.GetString("membershipId");
-
     m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = AwsRegionMapper::GetAwsRegionForName(jsonValue.GetString("region"));
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipArn"))
   {
     m_membershipArn = jsonValue.GetString("membershipArn");
-
     m_membershipArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipStatus"))
   {
     m_membershipStatus = MembershipStatusMapper::GetMembershipStatusForName(jsonValue.GetString("membershipStatus"));
-
     m_membershipStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

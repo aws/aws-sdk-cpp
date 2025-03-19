@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-HumanLoopQuotaExceededException::HumanLoopQuotaExceededException() : 
-    m_resourceTypeHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 HumanLoopQuotaExceededException::HumanLoopQuotaExceededException(JsonView jsonValue)
-  : HumanLoopQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HumanLoopQuotaExceededException& HumanLoopQuotaExceededException::operator =(Jso
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaCode"))
   {
     m_quotaCode = jsonValue.GetString("QuotaCode");
-
     m_quotaCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

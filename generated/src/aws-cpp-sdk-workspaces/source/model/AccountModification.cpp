@@ -18,20 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-AccountModification::AccountModification() : 
-    m_modificationState(DedicatedTenancyModificationStateEnum::NOT_SET),
-    m_modificationStateHasBeenSet(false),
-    m_dedicatedTenancySupport(DedicatedTenancySupportResultEnum::NOT_SET),
-    m_dedicatedTenancySupportHasBeenSet(false),
-    m_dedicatedTenancyManagementCidrRangeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 AccountModification::AccountModification(JsonView jsonValue)
-  : AccountModification()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ AccountModification& AccountModification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModificationState"))
   {
     m_modificationState = DedicatedTenancyModificationStateEnumMapper::GetDedicatedTenancyModificationStateEnumForName(jsonValue.GetString("ModificationState"));
-
     m_modificationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedTenancySupport"))
   {
     m_dedicatedTenancySupport = DedicatedTenancySupportResultEnumMapper::GetDedicatedTenancySupportResultEnumForName(jsonValue.GetString("DedicatedTenancySupport"));
-
     m_dedicatedTenancySupportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DedicatedTenancyManagementCidrRange"))
   {
     m_dedicatedTenancyManagementCidrRange = jsonValue.GetString("DedicatedTenancyManagementCidrRange");
-
     m_dedicatedTenancyManagementCidrRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

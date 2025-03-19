@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector() : 
-    m_producerTimestamp(0),
-    m_producerTimestampHasBeenSet(false),
-    m_fragmentNumberHasBeenSet(false)
-{
-}
-
 KinesisVideoStreamStartSelector::KinesisVideoStreamStartSelector(JsonView jsonValue)
-  : KinesisVideoStreamStartSelector()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KinesisVideoStreamStartSelector& KinesisVideoStreamStartSelector::operator =(Jso
   if(jsonValue.ValueExists("ProducerTimestamp"))
   {
     m_producerTimestamp = jsonValue.GetInt64("ProducerTimestamp");
-
     m_producerTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FragmentNumber"))
   {
     m_fragmentNumber = jsonValue.GetString("FragmentNumber");
-
     m_fragmentNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

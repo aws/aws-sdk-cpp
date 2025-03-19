@@ -37,7 +37,7 @@ namespace Model
   class SiteMapsConfiguration
   {
   public:
-    AWS_KENDRA_API SiteMapsConfiguration();
+    AWS_KENDRA_API SiteMapsConfiguration() = default;
     AWS_KENDRA_API SiteMapsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SiteMapsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * <p>The list of sitemap URLs of the websites you want to crawl.</p> <p>The list
      * can include a maximum of three sitemap URLs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSiteMaps() const{ return m_siteMaps; }
+    inline const Aws::Vector<Aws::String>& GetSiteMaps() const { return m_siteMaps; }
     inline bool SiteMapsHasBeenSet() const { return m_siteMapsHasBeenSet; }
-    inline void SetSiteMaps(const Aws::Vector<Aws::String>& value) { m_siteMapsHasBeenSet = true; m_siteMaps = value; }
-    inline void SetSiteMaps(Aws::Vector<Aws::String>&& value) { m_siteMapsHasBeenSet = true; m_siteMaps = std::move(value); }
-    inline SiteMapsConfiguration& WithSiteMaps(const Aws::Vector<Aws::String>& value) { SetSiteMaps(value); return *this;}
-    inline SiteMapsConfiguration& WithSiteMaps(Aws::Vector<Aws::String>&& value) { SetSiteMaps(std::move(value)); return *this;}
-    inline SiteMapsConfiguration& AddSiteMaps(const Aws::String& value) { m_siteMapsHasBeenSet = true; m_siteMaps.push_back(value); return *this; }
-    inline SiteMapsConfiguration& AddSiteMaps(Aws::String&& value) { m_siteMapsHasBeenSet = true; m_siteMaps.push_back(std::move(value)); return *this; }
-    inline SiteMapsConfiguration& AddSiteMaps(const char* value) { m_siteMapsHasBeenSet = true; m_siteMaps.push_back(value); return *this; }
+    template<typename SiteMapsT = Aws::Vector<Aws::String>>
+    void SetSiteMaps(SiteMapsT&& value) { m_siteMapsHasBeenSet = true; m_siteMaps = std::forward<SiteMapsT>(value); }
+    template<typename SiteMapsT = Aws::Vector<Aws::String>>
+    SiteMapsConfiguration& WithSiteMaps(SiteMapsT&& value) { SetSiteMaps(std::forward<SiteMapsT>(value)); return *this;}
+    template<typename SiteMapsT = Aws::String>
+    SiteMapsConfiguration& AddSiteMaps(SiteMapsT&& value) { m_siteMapsHasBeenSet = true; m_siteMaps.emplace_back(std::forward<SiteMapsT>(value)); return *this; }
     ///@}
   private:
 

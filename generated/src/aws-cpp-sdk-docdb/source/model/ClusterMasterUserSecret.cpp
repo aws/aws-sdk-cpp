@@ -20,15 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-ClusterMasterUserSecret::ClusterMasterUserSecret() : 
-    m_secretArnHasBeenSet(false),
-    m_secretStatusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ClusterMasterUserSecret::ClusterMasterUserSecret(const XmlNode& xmlNode)
-  : ClusterMasterUserSecret()
 {
   *this = xmlNode;
 }

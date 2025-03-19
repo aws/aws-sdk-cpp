@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RangeEndsLabelType::RangeEndsLabelType() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 RangeEndsLabelType::RangeEndsLabelType(JsonView jsonValue)
-  : RangeEndsLabelType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RangeEndsLabelType& RangeEndsLabelType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

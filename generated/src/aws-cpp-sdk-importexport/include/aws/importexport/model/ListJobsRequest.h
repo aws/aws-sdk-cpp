@@ -24,7 +24,7 @@ namespace Model
   class ListJobsRequest : public ImportExportRequest
   {
   public:
-    AWS_IMPORTEXPORT_API ListJobsRequest();
+    AWS_IMPORTEXPORT_API ListJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     
-    inline int GetMaxJobs() const{ return m_maxJobs; }
+    inline int GetMaxJobs() const { return m_maxJobs; }
     inline bool MaxJobsHasBeenSet() const { return m_maxJobsHasBeenSet; }
     inline void SetMaxJobs(int value) { m_maxJobsHasBeenSet = true; m_maxJobs = value; }
     inline ListJobsRequest& WithMaxJobs(int value) { SetMaxJobs(value); return *this;}
@@ -49,30 +49,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListJobsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListJobsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListJobsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListJobsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
+    inline const Aws::String& GetAPIVersion() const { return m_aPIVersion; }
     inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
-    inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }
-    inline void SetAPIVersion(Aws::String&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::move(value); }
-    inline void SetAPIVersion(const char* value) { m_aPIVersionHasBeenSet = true; m_aPIVersion.assign(value); }
-    inline ListJobsRequest& WithAPIVersion(const Aws::String& value) { SetAPIVersion(value); return *this;}
-    inline ListJobsRequest& WithAPIVersion(Aws::String&& value) { SetAPIVersion(std::move(value)); return *this;}
-    inline ListJobsRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
+    template<typename APIVersionT = Aws::String>
+    void SetAPIVersion(APIVersionT&& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = std::forward<APIVersionT>(value); }
+    template<typename APIVersionT = Aws::String>
+    ListJobsRequest& WithAPIVersion(APIVersionT&& value) { SetAPIVersion(std::forward<APIVersionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxJobs;
+    int m_maxJobs{0};
     bool m_maxJobsHasBeenSet = false;
 
     Aws::String m_marker;

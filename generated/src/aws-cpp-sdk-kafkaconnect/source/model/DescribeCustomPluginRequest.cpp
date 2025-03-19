@@ -12,11 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCustomPluginRequest::DescribeCustomPluginRequest() : 
-    m_customPluginArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCustomPluginRequest::SerializePayload() const
 {
   return {};

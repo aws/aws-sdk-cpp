@@ -18,19 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-ResponseItem::ResponseItem() : 
-    m_resourceType(ResponseItemType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_webUrlHasBeenSet(false),
-    m_documentMetadataHasBeenSet(false),
-    m_folderMetadataHasBeenSet(false),
-    m_commentMetadataHasBeenSet(false),
-    m_documentVersionMetadataHasBeenSet(false)
-{
-}
-
 ResponseItem::ResponseItem(JsonView jsonValue)
-  : ResponseItem()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ResponseItem& ResponseItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResponseItemTypeMapper::GetResponseItemTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebUrl"))
   {
     m_webUrl = jsonValue.GetString("WebUrl");
-
     m_webUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentMetadata"))
   {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
-
     m_documentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderMetadata"))
   {
     m_folderMetadata = jsonValue.GetObject("FolderMetadata");
-
     m_folderMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommentMetadata"))
   {
     m_commentMetadata = jsonValue.GetObject("CommentMetadata");
-
     m_commentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersionMetadata"))
   {
     m_documentVersionMetadata = jsonValue.GetObject("DocumentVersionMetadata");
-
     m_documentVersionMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

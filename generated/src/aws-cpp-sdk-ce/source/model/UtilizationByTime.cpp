@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-UtilizationByTime::UtilizationByTime() : 
-    m_timePeriodHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_totalHasBeenSet(false)
-{
-}
-
 UtilizationByTime::UtilizationByTime(JsonView jsonValue)
-  : UtilizationByTime()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ UtilizationByTime& UtilizationByTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
@@ -49,14 +39,11 @@ UtilizationByTime& UtilizationByTime::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

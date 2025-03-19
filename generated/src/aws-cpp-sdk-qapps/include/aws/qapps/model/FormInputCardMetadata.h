@@ -31,7 +31,7 @@ namespace Model
   class FormInputCardMetadata
   {
   public:
-    AWS_QAPPS_API FormInputCardMetadata();
+    AWS_QAPPS_API FormInputCardMetadata() = default;
     AWS_QAPPS_API FormInputCardMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API FormInputCardMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The JSON schema that defines the shape of the response data.</p>
      */
-    inline Aws::Utils::DocumentView GetSchema() const{ return m_schema; }
+    inline Aws::Utils::DocumentView GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::Utils::Document& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::Utils::Document&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline FormInputCardMetadata& WithSchema(const Aws::Utils::Document& value) { SetSchema(value); return *this;}
-    inline FormInputCardMetadata& WithSchema(Aws::Utils::Document&& value) { SetSchema(std::move(value)); return *this;}
+    template<typename SchemaT = Aws::Utils::Document>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::Utils::Document>
+    FormInputCardMetadata& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
   private:
 

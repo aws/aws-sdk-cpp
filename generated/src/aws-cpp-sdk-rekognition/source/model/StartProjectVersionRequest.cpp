@@ -12,15 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartProjectVersionRequest::StartProjectVersionRequest() : 
-    m_projectVersionArnHasBeenSet(false),
-    m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false),
-    m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false)
-{
-}
-
 Aws::String StartProjectVersionRequest::SerializePayload() const
 {
   JsonValue payload;

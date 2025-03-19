@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeCapacityReservationBillingRequestsRequest::DescribeCapacityReservationBillingRequestsRequest() : 
-    m_capacityReservationIdsHasBeenSet(false),
-    m_role(CallerRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCapacityReservationBillingRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

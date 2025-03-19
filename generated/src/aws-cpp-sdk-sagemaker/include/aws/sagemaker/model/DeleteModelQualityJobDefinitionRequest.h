@@ -21,7 +21,7 @@ namespace Model
   class DeleteModelQualityJobDefinitionRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteModelQualityJobDefinitionRequest();
+    AWS_SAGEMAKER_API DeleteModelQualityJobDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the model quality monitoring job definition to delete.</p>
      */
-    inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
+    inline const Aws::String& GetJobDefinitionName() const { return m_jobDefinitionName; }
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
-    inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
-    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
-    inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
-    inline DeleteModelQualityJobDefinitionRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
-    inline DeleteModelQualityJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
-    inline DeleteModelQualityJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
+    template<typename JobDefinitionNameT = Aws::String>
+    void SetJobDefinitionName(JobDefinitionNameT&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::forward<JobDefinitionNameT>(value); }
+    template<typename JobDefinitionNameT = Aws::String>
+    DeleteModelQualityJobDefinitionRequest& WithJobDefinitionName(JobDefinitionNameT&& value) { SetJobDefinitionName(std::forward<JobDefinitionNameT>(value)); return *this;}
     ///@}
   private:
 

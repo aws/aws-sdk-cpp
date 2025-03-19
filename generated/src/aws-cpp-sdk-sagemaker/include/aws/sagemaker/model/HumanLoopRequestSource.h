@@ -32,7 +32,7 @@ namespace Model
   class HumanLoopRequestSource
   {
   public:
-    AWS_SAGEMAKER_API HumanLoopRequestSource();
+    AWS_SAGEMAKER_API HumanLoopRequestSource() = default;
     AWS_SAGEMAKER_API HumanLoopRequestSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HumanLoopRequestSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * integration source. The default field settings and JSON parsing rules are
      * different based on the integration source. Valid values:</p>
      */
-    inline const AwsManagedHumanLoopRequestSource& GetAwsManagedHumanLoopRequestSource() const{ return m_awsManagedHumanLoopRequestSource; }
+    inline AwsManagedHumanLoopRequestSource GetAwsManagedHumanLoopRequestSource() const { return m_awsManagedHumanLoopRequestSource; }
     inline bool AwsManagedHumanLoopRequestSourceHasBeenSet() const { return m_awsManagedHumanLoopRequestSourceHasBeenSet; }
-    inline void SetAwsManagedHumanLoopRequestSource(const AwsManagedHumanLoopRequestSource& value) { m_awsManagedHumanLoopRequestSourceHasBeenSet = true; m_awsManagedHumanLoopRequestSource = value; }
-    inline void SetAwsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource&& value) { m_awsManagedHumanLoopRequestSourceHasBeenSet = true; m_awsManagedHumanLoopRequestSource = std::move(value); }
-    inline HumanLoopRequestSource& WithAwsManagedHumanLoopRequestSource(const AwsManagedHumanLoopRequestSource& value) { SetAwsManagedHumanLoopRequestSource(value); return *this;}
-    inline HumanLoopRequestSource& WithAwsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource&& value) { SetAwsManagedHumanLoopRequestSource(std::move(value)); return *this;}
+    inline void SetAwsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource value) { m_awsManagedHumanLoopRequestSourceHasBeenSet = true; m_awsManagedHumanLoopRequestSource = value; }
+    inline HumanLoopRequestSource& WithAwsManagedHumanLoopRequestSource(AwsManagedHumanLoopRequestSource value) { SetAwsManagedHumanLoopRequestSource(value); return *this;}
     ///@}
   private:
 
-    AwsManagedHumanLoopRequestSource m_awsManagedHumanLoopRequestSource;
+    AwsManagedHumanLoopRequestSource m_awsManagedHumanLoopRequestSource{AwsManagedHumanLoopRequestSource::NOT_SET};
     bool m_awsManagedHumanLoopRequestSourceHasBeenSet = false;
   };
 

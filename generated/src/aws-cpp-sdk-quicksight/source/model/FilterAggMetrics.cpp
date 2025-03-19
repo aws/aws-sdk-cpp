@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterAggMetrics::FilterAggMetrics() : 
-    m_metricOperandHasBeenSet(false),
-    m_function(AggType::NOT_SET),
-    m_functionHasBeenSet(false),
-    m_sortDirection(TopicSortDirection::NOT_SET),
-    m_sortDirectionHasBeenSet(false)
-{
-}
-
 FilterAggMetrics::FilterAggMetrics(JsonView jsonValue)
-  : FilterAggMetrics()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ FilterAggMetrics& FilterAggMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricOperand"))
   {
     m_metricOperand = jsonValue.GetObject("MetricOperand");
-
     m_metricOperandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Function"))
   {
     m_function = AggTypeMapper::GetAggTypeForName(jsonValue.GetString("Function"));
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortDirection"))
   {
     m_sortDirection = TopicSortDirectionMapper::GetTopicSortDirectionForName(jsonValue.GetString("SortDirection"));
-
     m_sortDirectionHasBeenSet = true;
   }
-
   return *this;
 }
 

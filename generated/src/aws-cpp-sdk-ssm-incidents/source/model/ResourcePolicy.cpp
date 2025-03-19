@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_policyDocumentHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_ramResourceShareRegionHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-  : ResourcePolicy()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyDocument"))
   {
     m_policyDocument = jsonValue.GetString("policyDocument");
-
     m_policyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyId"))
   {
     m_policyId = jsonValue.GetString("policyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramResourceShareRegion"))
   {
     m_ramResourceShareRegion = jsonValue.GetString("ramResourceShareRegion");
-
     m_ramResourceShareRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

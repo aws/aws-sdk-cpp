@@ -38,7 +38,7 @@ namespace Model
   class ModelCopyJobSummary
   {
   public:
-    AWS_BEDROCK_API ModelCopyJobSummary();
+    AWS_BEDROCK_API ModelCopyJobSummary() = default;
     AWS_BEDROCK_API ModelCopyJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ModelCopyJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,66 +48,58 @@ namespace Model
     /**
      * <p>The Amazon Resoource Name (ARN) of the model copy job.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-    inline ModelCopyJobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline ModelCopyJobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    ModelCopyJobSummary& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the model copy job.</p>
      */
-    inline const ModelCopyJobStatus& GetStatus() const{ return m_status; }
+    inline ModelCopyJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ModelCopyJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ModelCopyJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ModelCopyJobSummary& WithStatus(const ModelCopyJobStatus& value) { SetStatus(value); return *this;}
-    inline ModelCopyJobSummary& WithStatus(ModelCopyJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ModelCopyJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ModelCopyJobSummary& WithStatus(ModelCopyJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the model copy job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ModelCopyJobSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ModelCopyJobSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ModelCopyJobSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the copied model.</p>
      */
-    inline const Aws::String& GetTargetModelArn() const{ return m_targetModelArn; }
+    inline const Aws::String& GetTargetModelArn() const { return m_targetModelArn; }
     inline bool TargetModelArnHasBeenSet() const { return m_targetModelArnHasBeenSet; }
-    inline void SetTargetModelArn(const Aws::String& value) { m_targetModelArnHasBeenSet = true; m_targetModelArn = value; }
-    inline void SetTargetModelArn(Aws::String&& value) { m_targetModelArnHasBeenSet = true; m_targetModelArn = std::move(value); }
-    inline void SetTargetModelArn(const char* value) { m_targetModelArnHasBeenSet = true; m_targetModelArn.assign(value); }
-    inline ModelCopyJobSummary& WithTargetModelArn(const Aws::String& value) { SetTargetModelArn(value); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelArn(Aws::String&& value) { SetTargetModelArn(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelArn(const char* value) { SetTargetModelArn(value); return *this;}
+    template<typename TargetModelArnT = Aws::String>
+    void SetTargetModelArn(TargetModelArnT&& value) { m_targetModelArnHasBeenSet = true; m_targetModelArn = std::forward<TargetModelArnT>(value); }
+    template<typename TargetModelArnT = Aws::String>
+    ModelCopyJobSummary& WithTargetModelArn(TargetModelArnT&& value) { SetTargetModelArn(std::forward<TargetModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the copied model.</p>
      */
-    inline const Aws::String& GetTargetModelName() const{ return m_targetModelName; }
+    inline const Aws::String& GetTargetModelName() const { return m_targetModelName; }
     inline bool TargetModelNameHasBeenSet() const { return m_targetModelNameHasBeenSet; }
-    inline void SetTargetModelName(const Aws::String& value) { m_targetModelNameHasBeenSet = true; m_targetModelName = value; }
-    inline void SetTargetModelName(Aws::String&& value) { m_targetModelNameHasBeenSet = true; m_targetModelName = std::move(value); }
-    inline void SetTargetModelName(const char* value) { m_targetModelNameHasBeenSet = true; m_targetModelName.assign(value); }
-    inline ModelCopyJobSummary& WithTargetModelName(const Aws::String& value) { SetTargetModelName(value); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelName(Aws::String&& value) { SetTargetModelName(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelName(const char* value) { SetTargetModelName(value); return *this;}
+    template<typename TargetModelNameT = Aws::String>
+    void SetTargetModelName(TargetModelNameT&& value) { m_targetModelNameHasBeenSet = true; m_targetModelName = std::forward<TargetModelNameT>(value); }
+    template<typename TargetModelNameT = Aws::String>
+    ModelCopyJobSummary& WithTargetModelName(TargetModelNameT&& value) { SetTargetModelName(std::forward<TargetModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,28 +107,24 @@ namespace Model
      * <p>The unique identifier of the account that the model being copied originated
      * from.</p>
      */
-    inline const Aws::String& GetSourceAccountId() const{ return m_sourceAccountId; }
+    inline const Aws::String& GetSourceAccountId() const { return m_sourceAccountId; }
     inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
-    inline void SetSourceAccountId(const Aws::String& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = value; }
-    inline void SetSourceAccountId(Aws::String&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::move(value); }
-    inline void SetSourceAccountId(const char* value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId.assign(value); }
-    inline ModelCopyJobSummary& WithSourceAccountId(const Aws::String& value) { SetSourceAccountId(value); return *this;}
-    inline ModelCopyJobSummary& WithSourceAccountId(Aws::String&& value) { SetSourceAccountId(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithSourceAccountId(const char* value) { SetSourceAccountId(value); return *this;}
+    template<typename SourceAccountIdT = Aws::String>
+    void SetSourceAccountId(SourceAccountIdT&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::forward<SourceAccountIdT>(value); }
+    template<typename SourceAccountIdT = Aws::String>
+    ModelCopyJobSummary& WithSourceAccountId(SourceAccountIdT&& value) { SetSourceAccountId(std::forward<SourceAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the original model being copied.</p>
      */
-    inline const Aws::String& GetSourceModelArn() const{ return m_sourceModelArn; }
+    inline const Aws::String& GetSourceModelArn() const { return m_sourceModelArn; }
     inline bool SourceModelArnHasBeenSet() const { return m_sourceModelArnHasBeenSet; }
-    inline void SetSourceModelArn(const Aws::String& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = value; }
-    inline void SetSourceModelArn(Aws::String&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::move(value); }
-    inline void SetSourceModelArn(const char* value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn.assign(value); }
-    inline ModelCopyJobSummary& WithSourceModelArn(const Aws::String& value) { SetSourceModelArn(value); return *this;}
-    inline ModelCopyJobSummary& WithSourceModelArn(Aws::String&& value) { SetSourceModelArn(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
+    template<typename SourceModelArnT = Aws::String>
+    void SetSourceModelArn(SourceModelArnT&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::forward<SourceModelArnT>(value); }
+    template<typename SourceModelArnT = Aws::String>
+    ModelCopyJobSummary& WithSourceModelArn(SourceModelArnT&& value) { SetSourceModelArn(std::forward<SourceModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,28 +132,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the copied
      * model.</p>
      */
-    inline const Aws::String& GetTargetModelKmsKeyArn() const{ return m_targetModelKmsKeyArn; }
+    inline const Aws::String& GetTargetModelKmsKeyArn() const { return m_targetModelKmsKeyArn; }
     inline bool TargetModelKmsKeyArnHasBeenSet() const { return m_targetModelKmsKeyArnHasBeenSet; }
-    inline void SetTargetModelKmsKeyArn(const Aws::String& value) { m_targetModelKmsKeyArnHasBeenSet = true; m_targetModelKmsKeyArn = value; }
-    inline void SetTargetModelKmsKeyArn(Aws::String&& value) { m_targetModelKmsKeyArnHasBeenSet = true; m_targetModelKmsKeyArn = std::move(value); }
-    inline void SetTargetModelKmsKeyArn(const char* value) { m_targetModelKmsKeyArnHasBeenSet = true; m_targetModelKmsKeyArn.assign(value); }
-    inline ModelCopyJobSummary& WithTargetModelKmsKeyArn(const Aws::String& value) { SetTargetModelKmsKeyArn(value); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelKmsKeyArn(Aws::String&& value) { SetTargetModelKmsKeyArn(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelKmsKeyArn(const char* value) { SetTargetModelKmsKeyArn(value); return *this;}
+    template<typename TargetModelKmsKeyArnT = Aws::String>
+    void SetTargetModelKmsKeyArn(TargetModelKmsKeyArnT&& value) { m_targetModelKmsKeyArnHasBeenSet = true; m_targetModelKmsKeyArn = std::forward<TargetModelKmsKeyArnT>(value); }
+    template<typename TargetModelKmsKeyArnT = Aws::String>
+    ModelCopyJobSummary& WithTargetModelKmsKeyArn(TargetModelKmsKeyArnT&& value) { SetTargetModelKmsKeyArn(std::forward<TargetModelKmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags associated with the copied model.</p>
      */
-    inline const Aws::Vector<Tag>& GetTargetModelTags() const{ return m_targetModelTags; }
+    inline const Aws::Vector<Tag>& GetTargetModelTags() const { return m_targetModelTags; }
     inline bool TargetModelTagsHasBeenSet() const { return m_targetModelTagsHasBeenSet; }
-    inline void SetTargetModelTags(const Aws::Vector<Tag>& value) { m_targetModelTagsHasBeenSet = true; m_targetModelTags = value; }
-    inline void SetTargetModelTags(Aws::Vector<Tag>&& value) { m_targetModelTagsHasBeenSet = true; m_targetModelTags = std::move(value); }
-    inline ModelCopyJobSummary& WithTargetModelTags(const Aws::Vector<Tag>& value) { SetTargetModelTags(value); return *this;}
-    inline ModelCopyJobSummary& WithTargetModelTags(Aws::Vector<Tag>&& value) { SetTargetModelTags(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& AddTargetModelTags(const Tag& value) { m_targetModelTagsHasBeenSet = true; m_targetModelTags.push_back(value); return *this; }
-    inline ModelCopyJobSummary& AddTargetModelTags(Tag&& value) { m_targetModelTagsHasBeenSet = true; m_targetModelTags.push_back(std::move(value)); return *this; }
+    template<typename TargetModelTagsT = Aws::Vector<Tag>>
+    void SetTargetModelTags(TargetModelTagsT&& value) { m_targetModelTagsHasBeenSet = true; m_targetModelTags = std::forward<TargetModelTagsT>(value); }
+    template<typename TargetModelTagsT = Aws::Vector<Tag>>
+    ModelCopyJobSummary& WithTargetModelTags(TargetModelTagsT&& value) { SetTargetModelTags(std::forward<TargetModelTagsT>(value)); return *this;}
+    template<typename TargetModelTagsT = Tag>
+    ModelCopyJobSummary& AddTargetModelTags(TargetModelTagsT&& value) { m_targetModelTagsHasBeenSet = true; m_targetModelTags.emplace_back(std::forward<TargetModelTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -173,38 +159,34 @@ namespace Model
      * <p>If a model fails to be copied, a message describing why the job failed is
      * included here.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline ModelCopyJobSummary& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline ModelCopyJobSummary& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    ModelCopyJobSummary& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the original model being copied.</p>
      */
-    inline const Aws::String& GetSourceModelName() const{ return m_sourceModelName; }
+    inline const Aws::String& GetSourceModelName() const { return m_sourceModelName; }
     inline bool SourceModelNameHasBeenSet() const { return m_sourceModelNameHasBeenSet; }
-    inline void SetSourceModelName(const Aws::String& value) { m_sourceModelNameHasBeenSet = true; m_sourceModelName = value; }
-    inline void SetSourceModelName(Aws::String&& value) { m_sourceModelNameHasBeenSet = true; m_sourceModelName = std::move(value); }
-    inline void SetSourceModelName(const char* value) { m_sourceModelNameHasBeenSet = true; m_sourceModelName.assign(value); }
-    inline ModelCopyJobSummary& WithSourceModelName(const Aws::String& value) { SetSourceModelName(value); return *this;}
-    inline ModelCopyJobSummary& WithSourceModelName(Aws::String&& value) { SetSourceModelName(std::move(value)); return *this;}
-    inline ModelCopyJobSummary& WithSourceModelName(const char* value) { SetSourceModelName(value); return *this;}
+    template<typename SourceModelNameT = Aws::String>
+    void SetSourceModelName(SourceModelNameT&& value) { m_sourceModelNameHasBeenSet = true; m_sourceModelName = std::forward<SourceModelNameT>(value); }
+    template<typename SourceModelNameT = Aws::String>
+    ModelCopyJobSummary& WithSourceModelName(SourceModelNameT&& value) { SetSourceModelName(std::forward<SourceModelNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobArn;
     bool m_jobArnHasBeenSet = false;
 
-    ModelCopyJobStatus m_status;
+    ModelCopyJobStatus m_status{ModelCopyJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_targetModelArn;

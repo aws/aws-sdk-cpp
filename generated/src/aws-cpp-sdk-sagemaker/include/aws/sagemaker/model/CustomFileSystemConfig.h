@@ -34,7 +34,7 @@ namespace Model
   class CustomFileSystemConfig
   {
   public:
-    AWS_SAGEMAKER_API CustomFileSystemConfig();
+    AWS_SAGEMAKER_API CustomFileSystemConfig() = default;
     AWS_SAGEMAKER_API CustomFileSystemConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CustomFileSystemConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The settings for a custom Amazon EFS file system.</p>
      */
-    inline const EFSFileSystemConfig& GetEFSFileSystemConfig() const{ return m_eFSFileSystemConfig; }
+    inline const EFSFileSystemConfig& GetEFSFileSystemConfig() const { return m_eFSFileSystemConfig; }
     inline bool EFSFileSystemConfigHasBeenSet() const { return m_eFSFileSystemConfigHasBeenSet; }
-    inline void SetEFSFileSystemConfig(const EFSFileSystemConfig& value) { m_eFSFileSystemConfigHasBeenSet = true; m_eFSFileSystemConfig = value; }
-    inline void SetEFSFileSystemConfig(EFSFileSystemConfig&& value) { m_eFSFileSystemConfigHasBeenSet = true; m_eFSFileSystemConfig = std::move(value); }
-    inline CustomFileSystemConfig& WithEFSFileSystemConfig(const EFSFileSystemConfig& value) { SetEFSFileSystemConfig(value); return *this;}
-    inline CustomFileSystemConfig& WithEFSFileSystemConfig(EFSFileSystemConfig&& value) { SetEFSFileSystemConfig(std::move(value)); return *this;}
+    template<typename EFSFileSystemConfigT = EFSFileSystemConfig>
+    void SetEFSFileSystemConfig(EFSFileSystemConfigT&& value) { m_eFSFileSystemConfigHasBeenSet = true; m_eFSFileSystemConfig = std::forward<EFSFileSystemConfigT>(value); }
+    template<typename EFSFileSystemConfigT = EFSFileSystemConfig>
+    CustomFileSystemConfig& WithEFSFileSystemConfig(EFSFileSystemConfigT&& value) { SetEFSFileSystemConfig(std::forward<EFSFileSystemConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The settings for a custom Amazon FSx for Lustre file system.</p>
      */
-    inline const FSxLustreFileSystemConfig& GetFSxLustreFileSystemConfig() const{ return m_fSxLustreFileSystemConfig; }
+    inline const FSxLustreFileSystemConfig& GetFSxLustreFileSystemConfig() const { return m_fSxLustreFileSystemConfig; }
     inline bool FSxLustreFileSystemConfigHasBeenSet() const { return m_fSxLustreFileSystemConfigHasBeenSet; }
-    inline void SetFSxLustreFileSystemConfig(const FSxLustreFileSystemConfig& value) { m_fSxLustreFileSystemConfigHasBeenSet = true; m_fSxLustreFileSystemConfig = value; }
-    inline void SetFSxLustreFileSystemConfig(FSxLustreFileSystemConfig&& value) { m_fSxLustreFileSystemConfigHasBeenSet = true; m_fSxLustreFileSystemConfig = std::move(value); }
-    inline CustomFileSystemConfig& WithFSxLustreFileSystemConfig(const FSxLustreFileSystemConfig& value) { SetFSxLustreFileSystemConfig(value); return *this;}
-    inline CustomFileSystemConfig& WithFSxLustreFileSystemConfig(FSxLustreFileSystemConfig&& value) { SetFSxLustreFileSystemConfig(std::move(value)); return *this;}
+    template<typename FSxLustreFileSystemConfigT = FSxLustreFileSystemConfig>
+    void SetFSxLustreFileSystemConfig(FSxLustreFileSystemConfigT&& value) { m_fSxLustreFileSystemConfigHasBeenSet = true; m_fSxLustreFileSystemConfig = std::forward<FSxLustreFileSystemConfigT>(value); }
+    template<typename FSxLustreFileSystemConfigT = FSxLustreFileSystemConfig>
+    CustomFileSystemConfig& WithFSxLustreFileSystemConfig(FSxLustreFileSystemConfigT&& value) { SetFSxLustreFileSystemConfig(std::forward<FSxLustreFileSystemConfigT>(value)); return *this;}
     ///@}
   private:
 

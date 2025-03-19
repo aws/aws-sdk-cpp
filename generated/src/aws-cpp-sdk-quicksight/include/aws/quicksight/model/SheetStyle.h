@@ -32,7 +32,7 @@ namespace Model
   class SheetStyle
   {
   public:
-    AWS_QUICKSIGHT_API SheetStyle();
+    AWS_QUICKSIGHT_API SheetStyle() = default;
     AWS_QUICKSIGHT_API SheetStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The display options for tiles.</p>
      */
-    inline const TileStyle& GetTile() const{ return m_tile; }
+    inline const TileStyle& GetTile() const { return m_tile; }
     inline bool TileHasBeenSet() const { return m_tileHasBeenSet; }
-    inline void SetTile(const TileStyle& value) { m_tileHasBeenSet = true; m_tile = value; }
-    inline void SetTile(TileStyle&& value) { m_tileHasBeenSet = true; m_tile = std::move(value); }
-    inline SheetStyle& WithTile(const TileStyle& value) { SetTile(value); return *this;}
-    inline SheetStyle& WithTile(TileStyle&& value) { SetTile(std::move(value)); return *this;}
+    template<typename TileT = TileStyle>
+    void SetTile(TileT&& value) { m_tileHasBeenSet = true; m_tile = std::forward<TileT>(value); }
+    template<typename TileT = TileStyle>
+    SheetStyle& WithTile(TileT&& value) { SetTile(std::forward<TileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The layout options for tiles.</p>
      */
-    inline const TileLayoutStyle& GetTileLayout() const{ return m_tileLayout; }
+    inline const TileLayoutStyle& GetTileLayout() const { return m_tileLayout; }
     inline bool TileLayoutHasBeenSet() const { return m_tileLayoutHasBeenSet; }
-    inline void SetTileLayout(const TileLayoutStyle& value) { m_tileLayoutHasBeenSet = true; m_tileLayout = value; }
-    inline void SetTileLayout(TileLayoutStyle&& value) { m_tileLayoutHasBeenSet = true; m_tileLayout = std::move(value); }
-    inline SheetStyle& WithTileLayout(const TileLayoutStyle& value) { SetTileLayout(value); return *this;}
-    inline SheetStyle& WithTileLayout(TileLayoutStyle&& value) { SetTileLayout(std::move(value)); return *this;}
+    template<typename TileLayoutT = TileLayoutStyle>
+    void SetTileLayout(TileLayoutT&& value) { m_tileLayoutHasBeenSet = true; m_tileLayout = std::forward<TileLayoutT>(value); }
+    template<typename TileLayoutT = TileLayoutStyle>
+    SheetStyle& WithTileLayout(TileLayoutT&& value) { SetTileLayout(std::forward<TileLayoutT>(value)); return *this;}
     ///@}
   private:
 

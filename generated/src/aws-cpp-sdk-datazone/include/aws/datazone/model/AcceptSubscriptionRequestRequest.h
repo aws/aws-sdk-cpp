@@ -23,7 +23,7 @@ namespace Model
   class AcceptSubscriptionRequestRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API AcceptSubscriptionRequestRequest();
+    AWS_DATAZONE_API AcceptSubscriptionRequestRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
     /**
      * <p>The asset scopes of the accept subscription request.</p>
      */
-    inline const Aws::Vector<AcceptedAssetScope>& GetAssetScopes() const{ return m_assetScopes; }
+    inline const Aws::Vector<AcceptedAssetScope>& GetAssetScopes() const { return m_assetScopes; }
     inline bool AssetScopesHasBeenSet() const { return m_assetScopesHasBeenSet; }
-    inline void SetAssetScopes(const Aws::Vector<AcceptedAssetScope>& value) { m_assetScopesHasBeenSet = true; m_assetScopes = value; }
-    inline void SetAssetScopes(Aws::Vector<AcceptedAssetScope>&& value) { m_assetScopesHasBeenSet = true; m_assetScopes = std::move(value); }
-    inline AcceptSubscriptionRequestRequest& WithAssetScopes(const Aws::Vector<AcceptedAssetScope>& value) { SetAssetScopes(value); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithAssetScopes(Aws::Vector<AcceptedAssetScope>&& value) { SetAssetScopes(std::move(value)); return *this;}
-    inline AcceptSubscriptionRequestRequest& AddAssetScopes(const AcceptedAssetScope& value) { m_assetScopesHasBeenSet = true; m_assetScopes.push_back(value); return *this; }
-    inline AcceptSubscriptionRequestRequest& AddAssetScopes(AcceptedAssetScope&& value) { m_assetScopesHasBeenSet = true; m_assetScopes.push_back(std::move(value)); return *this; }
+    template<typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
+    void SetAssetScopes(AssetScopesT&& value) { m_assetScopesHasBeenSet = true; m_assetScopes = std::forward<AssetScopesT>(value); }
+    template<typename AssetScopesT = Aws::Vector<AcceptedAssetScope>>
+    AcceptSubscriptionRequestRequest& WithAssetScopes(AssetScopesT&& value) { SetAssetScopes(std::forward<AssetScopesT>(value)); return *this;}
+    template<typename AssetScopesT = AcceptedAssetScope>
+    AcceptSubscriptionRequestRequest& AddAssetScopes(AssetScopesT&& value) { m_assetScopesHasBeenSet = true; m_assetScopes.emplace_back(std::forward<AssetScopesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,14 +53,12 @@ namespace Model
      * <p>A description that specifies the reason for accepting the specified
      * subscription request.</p>
      */
-    inline const Aws::String& GetDecisionComment() const{ return m_decisionComment; }
+    inline const Aws::String& GetDecisionComment() const { return m_decisionComment; }
     inline bool DecisionCommentHasBeenSet() const { return m_decisionCommentHasBeenSet; }
-    inline void SetDecisionComment(const Aws::String& value) { m_decisionCommentHasBeenSet = true; m_decisionComment = value; }
-    inline void SetDecisionComment(Aws::String&& value) { m_decisionCommentHasBeenSet = true; m_decisionComment = std::move(value); }
-    inline void SetDecisionComment(const char* value) { m_decisionCommentHasBeenSet = true; m_decisionComment.assign(value); }
-    inline AcceptSubscriptionRequestRequest& WithDecisionComment(const Aws::String& value) { SetDecisionComment(value); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithDecisionComment(Aws::String&& value) { SetDecisionComment(std::move(value)); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithDecisionComment(const char* value) { SetDecisionComment(value); return *this;}
+    template<typename DecisionCommentT = Aws::String>
+    void SetDecisionComment(DecisionCommentT&& value) { m_decisionCommentHasBeenSet = true; m_decisionComment = std::forward<DecisionCommentT>(value); }
+    template<typename DecisionCommentT = Aws::String>
+    AcceptSubscriptionRequestRequest& WithDecisionComment(DecisionCommentT&& value) { SetDecisionComment(std::forward<DecisionCommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,28 +66,24 @@ namespace Model
      * <p>The Amazon DataZone domain where the specified subscription request is being
      * accepted.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline AcceptSubscriptionRequestRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    AcceptSubscriptionRequestRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the subscription request that is to be accepted.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline AcceptSubscriptionRequestRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline AcceptSubscriptionRequestRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    AcceptSubscriptionRequestRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

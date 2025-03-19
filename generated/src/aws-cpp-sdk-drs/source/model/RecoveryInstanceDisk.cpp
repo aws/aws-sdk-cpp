@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstanceDisk::RecoveryInstanceDisk() : 
-    m_bytes(0),
-    m_bytesHasBeenSet(false),
-    m_ebsVolumeIDHasBeenSet(false),
-    m_internalDeviceNameHasBeenSet(false)
-{
-}
-
 RecoveryInstanceDisk::RecoveryInstanceDisk(JsonView jsonValue)
-  : RecoveryInstanceDisk()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RecoveryInstanceDisk& RecoveryInstanceDisk::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bytes"))
   {
     m_bytes = jsonValue.GetInt64("bytes");
-
     m_bytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebsVolumeID"))
   {
     m_ebsVolumeID = jsonValue.GetString("ebsVolumeID");
-
     m_ebsVolumeIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("internalDeviceName"))
   {
     m_internalDeviceName = jsonValue.GetString("internalDeviceName");
-
     m_internalDeviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails() : 
-    m_errorMessageHasBeenSet(false),
-    m_errorType(VectorEnrichmentJobErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
-{
-}
-
 VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails(JsonView jsonValue)
-  : VectorEnrichmentJobErrorDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VectorEnrichmentJobErrorDetails& VectorEnrichmentJobErrorDetails::operator =(Jso
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorType"))
   {
     m_errorType = VectorEnrichmentJobErrorTypeMapper::GetVectorEnrichmentJobErrorTypeForName(jsonValue.GetString("ErrorType"));
-
     m_errorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

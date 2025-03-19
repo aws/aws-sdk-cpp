@@ -28,7 +28,7 @@ namespace Model
   class CreateBackupResult
   {
   public:
-    AWS_DYNAMODB_API CreateBackupResult();
+    AWS_DYNAMODB_API CreateBackupResult() = default;
     AWS_DYNAMODB_API CreateBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API CreateBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains the details of the backup created for the table.</p>
      */
-    inline const BackupDetails& GetBackupDetails() const{ return m_backupDetails; }
-    inline void SetBackupDetails(const BackupDetails& value) { m_backupDetails = value; }
-    inline void SetBackupDetails(BackupDetails&& value) { m_backupDetails = std::move(value); }
-    inline CreateBackupResult& WithBackupDetails(const BackupDetails& value) { SetBackupDetails(value); return *this;}
-    inline CreateBackupResult& WithBackupDetails(BackupDetails&& value) { SetBackupDetails(std::move(value)); return *this;}
+    inline const BackupDetails& GetBackupDetails() const { return m_backupDetails; }
+    template<typename BackupDetailsT = BackupDetails>
+    void SetBackupDetails(BackupDetailsT&& value) { m_backupDetailsHasBeenSet = true; m_backupDetails = std::forward<BackupDetailsT>(value); }
+    template<typename BackupDetailsT = BackupDetails>
+    CreateBackupResult& WithBackupDetails(BackupDetailsT&& value) { SetBackupDetails(std::forward<BackupDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBackupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BackupDetails m_backupDetails;
+    bool m_backupDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIdentityProviderConfigurationRequest::DeleteIdentityProviderConfigurationRequest() : 
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdentityProviderConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

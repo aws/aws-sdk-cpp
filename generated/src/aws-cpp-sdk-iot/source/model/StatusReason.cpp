@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StatusReason::StatusReason() : 
-    m_reasonCodeHasBeenSet(false),
-    m_reasonDescriptionHasBeenSet(false)
-{
-}
-
 StatusReason::StatusReason(JsonView jsonValue)
-  : StatusReason()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StatusReason& StatusReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reasonCode"))
   {
     m_reasonCode = jsonValue.GetString("reasonCode");
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasonDescription"))
   {
     m_reasonDescription = jsonValue.GetString("reasonDescription");
-
     m_reasonDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

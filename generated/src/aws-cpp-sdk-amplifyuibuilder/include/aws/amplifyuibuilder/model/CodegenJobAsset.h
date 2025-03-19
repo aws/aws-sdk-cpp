@@ -31,7 +31,7 @@ namespace Model
   class CodegenJobAsset
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API CodegenJobAsset();
+    AWS_AMPLIFYUIBUILDER_API CodegenJobAsset() = default;
     AWS_AMPLIFYUIBUILDER_API CodegenJobAsset(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API CodegenJobAsset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The URL to use to access the asset.</p>
      */
-    inline const Aws::String& GetDownloadUrl() const{ return m_downloadUrl; }
+    inline const Aws::String& GetDownloadUrl() const { return m_downloadUrl; }
     inline bool DownloadUrlHasBeenSet() const { return m_downloadUrlHasBeenSet; }
-    inline void SetDownloadUrl(const Aws::String& value) { m_downloadUrlHasBeenSet = true; m_downloadUrl = value; }
-    inline void SetDownloadUrl(Aws::String&& value) { m_downloadUrlHasBeenSet = true; m_downloadUrl = std::move(value); }
-    inline void SetDownloadUrl(const char* value) { m_downloadUrlHasBeenSet = true; m_downloadUrl.assign(value); }
-    inline CodegenJobAsset& WithDownloadUrl(const Aws::String& value) { SetDownloadUrl(value); return *this;}
-    inline CodegenJobAsset& WithDownloadUrl(Aws::String&& value) { SetDownloadUrl(std::move(value)); return *this;}
-    inline CodegenJobAsset& WithDownloadUrl(const char* value) { SetDownloadUrl(value); return *this;}
+    template<typename DownloadUrlT = Aws::String>
+    void SetDownloadUrl(DownloadUrlT&& value) { m_downloadUrlHasBeenSet = true; m_downloadUrl = std::forward<DownloadUrlT>(value); }
+    template<typename DownloadUrlT = Aws::String>
+    CodegenJobAsset& WithDownloadUrl(DownloadUrlT&& value) { SetDownloadUrl(std::forward<DownloadUrlT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-EbsBlockDeviceConfig::EbsBlockDeviceConfig() : 
-    m_volumeSpecificationHasBeenSet(false),
-    m_volumesPerInstance(0),
-    m_volumesPerInstanceHasBeenSet(false)
-{
-}
-
 EbsBlockDeviceConfig::EbsBlockDeviceConfig(JsonView jsonValue)
-  : EbsBlockDeviceConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EbsBlockDeviceConfig& EbsBlockDeviceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeSpecification"))
   {
     m_volumeSpecification = jsonValue.GetObject("VolumeSpecification");
-
     m_volumeSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumesPerInstance"))
   {
     m_volumesPerInstance = jsonValue.GetInteger("VolumesPerInstance");
-
     m_volumesPerInstanceHasBeenSet = true;
   }
-
   return *this;
 }
 

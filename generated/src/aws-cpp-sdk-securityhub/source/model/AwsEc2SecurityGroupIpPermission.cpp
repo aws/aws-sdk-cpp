@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2SecurityGroupIpPermission::AwsEc2SecurityGroupIpPermission() : 
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_userIdGroupPairsHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_ipv6RangesHasBeenSet(false),
-    m_prefixListIdsHasBeenSet(false)
-{
-}
-
 AwsEc2SecurityGroupIpPermission::AwsEc2SecurityGroupIpPermission(JsonView jsonValue)
-  : AwsEc2SecurityGroupIpPermission()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
   if(jsonValue.ValueExists("IpProtocol"))
   {
     m_ipProtocol = jsonValue.GetString("IpProtocol");
-
     m_ipProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromPort"))
   {
     m_fromPort = jsonValue.GetInteger("FromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToPort"))
   {
     m_toPort = jsonValue.GetInteger("ToPort");
-
     m_toPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserIdGroupPairs"))
   {
     Aws::Utils::Array<JsonView> userIdGroupPairsJsonList = jsonValue.GetArray("UserIdGroupPairs");
@@ -69,7 +49,6 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
     }
     m_userIdGroupPairsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRanges"))
   {
     Aws::Utils::Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
@@ -79,7 +58,6 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
     }
     m_ipRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6Ranges"))
   {
     Aws::Utils::Array<JsonView> ipv6RangesJsonList = jsonValue.GetArray("Ipv6Ranges");
@@ -89,7 +67,6 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
     }
     m_ipv6RangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrefixListIds"))
   {
     Aws::Utils::Array<JsonView> prefixListIdsJsonList = jsonValue.GetArray("PrefixListIds");
@@ -99,7 +76,6 @@ AwsEc2SecurityGroupIpPermission& AwsEc2SecurityGroupIpPermission::operator =(Jso
     }
     m_prefixListIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class DocumentOutputFormat
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DocumentOutputFormat();
+    AWS_BEDROCKDATAAUTOMATION_API DocumentOutputFormat() = default;
     AWS_BEDROCKDATAAUTOMATION_API DocumentOutputFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API DocumentOutputFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const DocumentOutputTextFormat& GetTextFormat() const{ return m_textFormat; }
+    inline const DocumentOutputTextFormat& GetTextFormat() const { return m_textFormat; }
     inline bool TextFormatHasBeenSet() const { return m_textFormatHasBeenSet; }
-    inline void SetTextFormat(const DocumentOutputTextFormat& value) { m_textFormatHasBeenSet = true; m_textFormat = value; }
-    inline void SetTextFormat(DocumentOutputTextFormat&& value) { m_textFormatHasBeenSet = true; m_textFormat = std::move(value); }
-    inline DocumentOutputFormat& WithTextFormat(const DocumentOutputTextFormat& value) { SetTextFormat(value); return *this;}
-    inline DocumentOutputFormat& WithTextFormat(DocumentOutputTextFormat&& value) { SetTextFormat(std::move(value)); return *this;}
+    template<typename TextFormatT = DocumentOutputTextFormat>
+    void SetTextFormat(TextFormatT&& value) { m_textFormatHasBeenSet = true; m_textFormat = std::forward<TextFormatT>(value); }
+    template<typename TextFormatT = DocumentOutputTextFormat>
+    DocumentOutputFormat& WithTextFormat(TextFormatT&& value) { SetTextFormat(std::forward<TextFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentOutputAdditionalFileFormat& GetAdditionalFileFormat() const{ return m_additionalFileFormat; }
+    inline const DocumentOutputAdditionalFileFormat& GetAdditionalFileFormat() const { return m_additionalFileFormat; }
     inline bool AdditionalFileFormatHasBeenSet() const { return m_additionalFileFormatHasBeenSet; }
-    inline void SetAdditionalFileFormat(const DocumentOutputAdditionalFileFormat& value) { m_additionalFileFormatHasBeenSet = true; m_additionalFileFormat = value; }
-    inline void SetAdditionalFileFormat(DocumentOutputAdditionalFileFormat&& value) { m_additionalFileFormatHasBeenSet = true; m_additionalFileFormat = std::move(value); }
-    inline DocumentOutputFormat& WithAdditionalFileFormat(const DocumentOutputAdditionalFileFormat& value) { SetAdditionalFileFormat(value); return *this;}
-    inline DocumentOutputFormat& WithAdditionalFileFormat(DocumentOutputAdditionalFileFormat&& value) { SetAdditionalFileFormat(std::move(value)); return *this;}
+    template<typename AdditionalFileFormatT = DocumentOutputAdditionalFileFormat>
+    void SetAdditionalFileFormat(AdditionalFileFormatT&& value) { m_additionalFileFormatHasBeenSet = true; m_additionalFileFormat = std::forward<AdditionalFileFormatT>(value); }
+    template<typename AdditionalFileFormatT = DocumentOutputAdditionalFileFormat>
+    DocumentOutputFormat& WithAdditionalFileFormat(AdditionalFileFormatT&& value) { SetAdditionalFileFormat(std::forward<AdditionalFileFormatT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-AddBridgeNetworkOutputRequest::AddBridgeNetworkOutputRequest() : 
-    m_ipAddressHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_ttl(0),
-    m_ttlHasBeenSet(false)
-{
-}
-
 AddBridgeNetworkOutputRequest::AddBridgeNetworkOutputRequest(JsonView jsonValue)
-  : AddBridgeNetworkOutputRequest()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AddBridgeNetworkOutputRequest& AddBridgeNetworkOutputRequest::operator =(JsonVie
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkName"))
   {
     m_networkName = jsonValue.GetString("networkName");
-
     m_networkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ttl"))
   {
     m_ttl = jsonValue.GetInteger("ttl");
-
     m_ttlHasBeenSet = true;
   }
-
   return *this;
 }
 

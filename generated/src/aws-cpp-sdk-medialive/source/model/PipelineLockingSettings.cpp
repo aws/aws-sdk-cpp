@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-PipelineLockingSettings::PipelineLockingSettings()
-{
-}
-
 PipelineLockingSettings::PipelineLockingSettings(JsonView jsonValue)
 {
   *this = jsonValue;

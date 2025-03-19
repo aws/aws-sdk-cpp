@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-S3ContentLocation::S3ContentLocation() : 
-    m_bucketARNHasBeenSet(false),
-    m_fileKeyHasBeenSet(false),
-    m_objectVersionHasBeenSet(false)
-{
-}
-
 S3ContentLocation::S3ContentLocation(JsonView jsonValue)
-  : S3ContentLocation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3ContentLocation& S3ContentLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketARN"))
   {
     m_bucketARN = jsonValue.GetString("BucketARN");
-
     m_bucketARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileKey"))
   {
     m_fileKey = jsonValue.GetString("FileKey");
-
     m_fileKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectVersion"))
   {
     m_objectVersion = jsonValue.GetString("ObjectVersion");
-
     m_objectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

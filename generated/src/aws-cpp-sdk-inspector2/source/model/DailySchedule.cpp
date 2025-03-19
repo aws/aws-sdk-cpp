@@ -18,13 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-DailySchedule::DailySchedule() : 
-    m_startTimeHasBeenSet(false)
-{
-}
-
 DailySchedule::DailySchedule(JsonView jsonValue)
-  : DailySchedule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DailySchedule& DailySchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetObject("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-IngestConfigurationSummary::IngestConfigurationSummary() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_ingestProtocol(IngestProtocol::NOT_SET),
-    m_ingestProtocolHasBeenSet(false),
-    m_stageArnHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_state(IngestConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 IngestConfigurationSummary::IngestConfigurationSummary(JsonView jsonValue)
-  : IngestConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ IngestConfigurationSummary& IngestConfigurationSummary::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestProtocol"))
   {
     m_ingestProtocol = IngestProtocolMapper::GetIngestProtocolForName(jsonValue.GetString("ingestProtocol"));
-
     m_ingestProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageArn"))
   {
     m_stageArn = jsonValue.GetString("stageArn");
-
     m_stageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("participantId"))
   {
     m_participantId = jsonValue.GetString("participantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = IngestConfigurationStateMapper::GetIngestConfigurationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

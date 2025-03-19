@@ -32,7 +32,7 @@ namespace Model
   class EbsVolume
   {
   public:
-    AWS_EMR_API EbsVolume();
+    AWS_EMR_API EbsVolume() = default;
     AWS_EMR_API EbsVolume(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API EbsVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
-    inline const Aws::String& GetDevice() const{ return m_device; }
+    inline const Aws::String& GetDevice() const { return m_device; }
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-    inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-    inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
-    inline EbsVolume& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-    inline EbsVolume& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-    inline EbsVolume& WithDevice(const char* value) { SetDevice(value); return *this;}
+    template<typename DeviceT = Aws::String>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Aws::String>
+    EbsVolume& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The volume identifier of the EBS volume.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline EbsVolume& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline EbsVolume& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline EbsVolume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    EbsVolume& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
   private:
 

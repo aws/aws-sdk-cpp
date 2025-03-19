@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AccessConfigResponse::AccessConfigResponse() : 
-    m_bootstrapClusterCreatorAdminPermissions(false),
-    m_bootstrapClusterCreatorAdminPermissionsHasBeenSet(false),
-    m_authenticationMode(AuthenticationMode::NOT_SET),
-    m_authenticationModeHasBeenSet(false)
-{
-}
-
 AccessConfigResponse::AccessConfigResponse(JsonView jsonValue)
-  : AccessConfigResponse()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccessConfigResponse& AccessConfigResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bootstrapClusterCreatorAdminPermissions"))
   {
     m_bootstrapClusterCreatorAdminPermissions = jsonValue.GetBool("bootstrapClusterCreatorAdminPermissions");
-
     m_bootstrapClusterCreatorAdminPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authenticationMode"))
   {
     m_authenticationMode = AuthenticationModeMapper::GetAuthenticationModeForName(jsonValue.GetString("authenticationMode"));
-
     m_authenticationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

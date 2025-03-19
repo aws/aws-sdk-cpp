@@ -22,7 +22,7 @@ namespace Model
   class GetInvoiceUnitRequest : public InvoicingRequest
   {
   public:
-    AWS_INVOICING_API GetInvoiceUnitRequest();
+    AWS_INVOICING_API GetInvoiceUnitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p> The ARN to identify an invoice unit. This information can't be modified or
      * deleted. </p>
      */
-    inline const Aws::String& GetInvoiceUnitArn() const{ return m_invoiceUnitArn; }
+    inline const Aws::String& GetInvoiceUnitArn() const { return m_invoiceUnitArn; }
     inline bool InvoiceUnitArnHasBeenSet() const { return m_invoiceUnitArnHasBeenSet; }
-    inline void SetInvoiceUnitArn(const Aws::String& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = value; }
-    inline void SetInvoiceUnitArn(Aws::String&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::move(value); }
-    inline void SetInvoiceUnitArn(const char* value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn.assign(value); }
-    inline GetInvoiceUnitRequest& WithInvoiceUnitArn(const Aws::String& value) { SetInvoiceUnitArn(value); return *this;}
-    inline GetInvoiceUnitRequest& WithInvoiceUnitArn(Aws::String&& value) { SetInvoiceUnitArn(std::move(value)); return *this;}
-    inline GetInvoiceUnitRequest& WithInvoiceUnitArn(const char* value) { SetInvoiceUnitArn(value); return *this;}
+    template<typename InvoiceUnitArnT = Aws::String>
+    void SetInvoiceUnitArn(InvoiceUnitArnT&& value) { m_invoiceUnitArnHasBeenSet = true; m_invoiceUnitArn = std::forward<InvoiceUnitArnT>(value); }
+    template<typename InvoiceUnitArnT = Aws::String>
+    GetInvoiceUnitRequest& WithInvoiceUnitArn(InvoiceUnitArnT&& value) { SetInvoiceUnitArn(std::forward<InvoiceUnitArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,19 @@ namespace Model
      * it was deleted. If an <code>AsOf</code> is not provided, the default value is
      * the current time. </p>
      */
-    inline const Aws::Utils::DateTime& GetAsOf() const{ return m_asOf; }
+    inline const Aws::Utils::DateTime& GetAsOf() const { return m_asOf; }
     inline bool AsOfHasBeenSet() const { return m_asOfHasBeenSet; }
-    inline void SetAsOf(const Aws::Utils::DateTime& value) { m_asOfHasBeenSet = true; m_asOf = value; }
-    inline void SetAsOf(Aws::Utils::DateTime&& value) { m_asOfHasBeenSet = true; m_asOf = std::move(value); }
-    inline GetInvoiceUnitRequest& WithAsOf(const Aws::Utils::DateTime& value) { SetAsOf(value); return *this;}
-    inline GetInvoiceUnitRequest& WithAsOf(Aws::Utils::DateTime&& value) { SetAsOf(std::move(value)); return *this;}
+    template<typename AsOfT = Aws::Utils::DateTime>
+    void SetAsOf(AsOfT&& value) { m_asOfHasBeenSet = true; m_asOf = std::forward<AsOfT>(value); }
+    template<typename AsOfT = Aws::Utils::DateTime>
+    GetInvoiceUnitRequest& WithAsOf(AsOfT&& value) { SetAsOf(std::forward<AsOfT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_invoiceUnitArn;
     bool m_invoiceUnitArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_asOf;
+    Aws::Utils::DateTime m_asOf{};
     bool m_asOfHasBeenSet = false;
   };
 

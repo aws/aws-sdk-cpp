@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-RecommendationRelatedAnomaly::RecommendationRelatedAnomaly() : 
-    m_resourcesHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false),
-    m_anomalyIdHasBeenSet(false)
-{
-}
-
 RecommendationRelatedAnomaly::RecommendationRelatedAnomaly(JsonView jsonValue)
-  : RecommendationRelatedAnomaly()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ RecommendationRelatedAnomaly& RecommendationRelatedAnomaly::operator =(JsonView 
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDetails"))
   {
     Aws::Utils::Array<JsonView> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
@@ -52,14 +43,11 @@ RecommendationRelatedAnomaly& RecommendationRelatedAnomaly::operator =(JsonView 
     }
     m_sourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyId"))
   {
     m_anomalyId = jsonValue.GetString("AnomalyId");
-
     m_anomalyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

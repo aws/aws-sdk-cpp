@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifyTrustRequest::VerifyTrustRequest() : 
-    m_trustIdHasBeenSet(false)
-{
-}
-
 Aws::String VerifyTrustRequest::SerializePayload() const
 {
   JsonValue payload;

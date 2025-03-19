@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-PropertyType::PropertyType() : 
-    m_attributeHasBeenSet(false),
-    m_measurementHasBeenSet(false),
-    m_transformHasBeenSet(false),
-    m_metricHasBeenSet(false)
-{
-}
-
 PropertyType::PropertyType(JsonView jsonValue)
-  : PropertyType()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PropertyType& PropertyType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = jsonValue.GetObject("attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("measurement"))
   {
     m_measurement = jsonValue.GetObject("measurement");
-
     m_measurementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transform"))
   {
     m_transform = jsonValue.GetObject("transform");
-
     m_transformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metric"))
   {
     m_metric = jsonValue.GetObject("metric");
-
     m_metricHasBeenSet = true;
   }
-
   return *this;
 }
 

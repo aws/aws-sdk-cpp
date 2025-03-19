@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerBackendServerDescription::AwsElbLoadBalancerBackendServerDescription() : 
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerBackendServerDescription::AwsElbLoadBalancerBackendServerDescription(JsonView jsonValue)
-  : AwsElbLoadBalancerBackendServerDescription()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AwsElbLoadBalancerBackendServerDescription& AwsElbLoadBalancerBackendServerDescr
   if(jsonValue.ValueExists("InstancePort"))
   {
     m_instancePort = jsonValue.GetInteger("InstancePort");
-
     m_instancePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyNames"))
   {
     Aws::Utils::Array<JsonView> policyNamesJsonList = jsonValue.GetArray("PolicyNames");
@@ -49,7 +39,6 @@ AwsElbLoadBalancerBackendServerDescription& AwsElbLoadBalancerBackendServerDescr
     }
     m_policyNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

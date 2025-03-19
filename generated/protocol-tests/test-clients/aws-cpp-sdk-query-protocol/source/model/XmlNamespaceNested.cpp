@@ -20,14 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-XmlNamespaceNested::XmlNamespaceNested() : 
-    m_fooHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 XmlNamespaceNested::XmlNamespaceNested(const XmlNode& xmlNode)
-  : XmlNamespaceNested()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ XmlNamespaceNested& XmlNamespaceNested::operator =(const XmlNode& xmlNode)
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

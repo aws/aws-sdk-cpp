@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-RdsDbSnapshotConfiguration::RdsDbSnapshotConfiguration() : 
-    m_attributesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 RdsDbSnapshotConfiguration::RdsDbSnapshotConfiguration(JsonView jsonValue)
-  : RdsDbSnapshotConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ RdsDbSnapshotConfiguration& RdsDbSnapshotConfiguration::operator =(JsonView json
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

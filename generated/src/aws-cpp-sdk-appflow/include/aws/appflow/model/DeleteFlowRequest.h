@@ -21,7 +21,7 @@ namespace Model
   class DeleteFlowRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API DeleteFlowRequest();
+    AWS_APPFLOW_API DeleteFlowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p> The specified name of the flow. Spaces are not allowed. Use underscores (_)
      * or hyphens (-) only. </p>
      */
-    inline const Aws::String& GetFlowName() const{ return m_flowName; }
+    inline const Aws::String& GetFlowName() const { return m_flowName; }
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
-    inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
-    inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
-    inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
-    inline DeleteFlowRequest& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
-    inline DeleteFlowRequest& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
-    inline DeleteFlowRequest& WithFlowName(const char* value) { SetFlowName(value); return *this;}
+    template<typename FlowNameT = Aws::String>
+    void SetFlowName(FlowNameT&& value) { m_flowNameHasBeenSet = true; m_flowName = std::forward<FlowNameT>(value); }
+    template<typename FlowNameT = Aws::String>
+    DeleteFlowRequest& WithFlowName(FlowNameT&& value) { SetFlowName(std::forward<FlowNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +50,7 @@ namespace Model
      * <p> Indicates whether Amazon AppFlow should delete the flow, even if it is
      * currently in use. </p>
      */
-    inline bool GetForceDelete() const{ return m_forceDelete; }
+    inline bool GetForceDelete() const { return m_forceDelete; }
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
     inline DeleteFlowRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
@@ -62,7 +60,7 @@ namespace Model
     Aws::String m_flowName;
     bool m_flowNameHasBeenSet = false;
 
-    bool m_forceDelete;
+    bool m_forceDelete{false};
     bool m_forceDeleteHasBeenSet = false;
   };
 

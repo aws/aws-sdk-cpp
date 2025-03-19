@@ -28,35 +28,35 @@ namespace Model
   class HttpPayloadWithXmlNameResult
   {
   public:
-    AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNameResult();
+    AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNameResult() = default;
     AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOL_API HttpPayloadWithXmlNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const PayloadWithXmlName& GetNested() const{ return m_nested; }
-    inline void SetNested(const PayloadWithXmlName& value) { m_nested = value; }
-    inline void SetNested(PayloadWithXmlName&& value) { m_nested = std::move(value); }
-    inline HttpPayloadWithXmlNameResult& WithNested(const PayloadWithXmlName& value) { SetNested(value); return *this;}
-    inline HttpPayloadWithXmlNameResult& WithNested(PayloadWithXmlName&& value) { SetNested(std::move(value)); return *this;}
+    inline const PayloadWithXmlName& GetNested() const { return m_nested; }
+    template<typename NestedT = PayloadWithXmlName>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = PayloadWithXmlName>
+    HttpPayloadWithXmlNameResult& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline HttpPayloadWithXmlNameResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpPayloadWithXmlNameResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpPayloadWithXmlNameResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpPayloadWithXmlNameResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PayloadWithXmlName m_nested;
+    bool m_nestedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

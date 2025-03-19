@@ -12,11 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTelemetryMetadataRequest::GetTelemetryMetadataRequest() : 
-    m_assessmentRunArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTelemetryMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

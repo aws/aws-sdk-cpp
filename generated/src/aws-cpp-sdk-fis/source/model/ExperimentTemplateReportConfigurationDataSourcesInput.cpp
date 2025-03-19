@@ -18,13 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateReportConfigurationDataSourcesInput::ExperimentTemplateReportConfigurationDataSourcesInput() : 
-    m_cloudWatchDashboardsHasBeenSet(false)
-{
-}
-
 ExperimentTemplateReportConfigurationDataSourcesInput::ExperimentTemplateReportConfigurationDataSourcesInput(JsonView jsonValue)
-  : ExperimentTemplateReportConfigurationDataSourcesInput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ExperimentTemplateReportConfigurationDataSourcesInput& ExperimentTemplateReportC
     }
     m_cloudWatchDashboardsHasBeenSet = true;
   }
-
   return *this;
 }
 

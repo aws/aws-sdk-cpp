@@ -31,7 +31,7 @@ namespace Model
   class ConfigurationDetails
   {
   public:
-    AWS_CLEANROOMS_API ConfigurationDetails();
+    AWS_CLEANROOMS_API ConfigurationDetails() = default;
     AWS_CLEANROOMS_API ConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> The direct analysis configuration details.</p>
      */
-    inline const DirectAnalysisConfigurationDetails& GetDirectAnalysisConfigurationDetails() const{ return m_directAnalysisConfigurationDetails; }
+    inline const DirectAnalysisConfigurationDetails& GetDirectAnalysisConfigurationDetails() const { return m_directAnalysisConfigurationDetails; }
     inline bool DirectAnalysisConfigurationDetailsHasBeenSet() const { return m_directAnalysisConfigurationDetailsHasBeenSet; }
-    inline void SetDirectAnalysisConfigurationDetails(const DirectAnalysisConfigurationDetails& value) { m_directAnalysisConfigurationDetailsHasBeenSet = true; m_directAnalysisConfigurationDetails = value; }
-    inline void SetDirectAnalysisConfigurationDetails(DirectAnalysisConfigurationDetails&& value) { m_directAnalysisConfigurationDetailsHasBeenSet = true; m_directAnalysisConfigurationDetails = std::move(value); }
-    inline ConfigurationDetails& WithDirectAnalysisConfigurationDetails(const DirectAnalysisConfigurationDetails& value) { SetDirectAnalysisConfigurationDetails(value); return *this;}
-    inline ConfigurationDetails& WithDirectAnalysisConfigurationDetails(DirectAnalysisConfigurationDetails&& value) { SetDirectAnalysisConfigurationDetails(std::move(value)); return *this;}
+    template<typename DirectAnalysisConfigurationDetailsT = DirectAnalysisConfigurationDetails>
+    void SetDirectAnalysisConfigurationDetails(DirectAnalysisConfigurationDetailsT&& value) { m_directAnalysisConfigurationDetailsHasBeenSet = true; m_directAnalysisConfigurationDetails = std::forward<DirectAnalysisConfigurationDetailsT>(value); }
+    template<typename DirectAnalysisConfigurationDetailsT = DirectAnalysisConfigurationDetails>
+    ConfigurationDetails& WithDirectAnalysisConfigurationDetails(DirectAnalysisConfigurationDetailsT&& value) { SetDirectAnalysisConfigurationDetails(std::forward<DirectAnalysisConfigurationDetailsT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AssociationOverview::AssociationOverview() : 
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_associationStatusAggregatedCountHasBeenSet(false)
-{
-}
-
 AssociationOverview::AssociationOverview(JsonView jsonValue)
-  : AssociationOverview()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssociationOverview& AssociationOverview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailedStatus"))
   {
     m_detailedStatus = jsonValue.GetString("DetailedStatus");
-
     m_detailedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationStatusAggregatedCount"))
   {
     Aws::Map<Aws::String, JsonView> associationStatusAggregatedCountJsonMap = jsonValue.GetObject("AssociationStatusAggregatedCount").GetAllObjects();
@@ -56,7 +44,6 @@ AssociationOverview& AssociationOverview::operator =(JsonView jsonValue)
     }
     m_associationStatusAggregatedCountHasBeenSet = true;
   }
-
   return *this;
 }
 

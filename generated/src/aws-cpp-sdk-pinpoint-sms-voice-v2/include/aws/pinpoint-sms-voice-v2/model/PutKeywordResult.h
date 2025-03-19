@@ -28,7 +28,7 @@ namespace Model
   class PutKeywordResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API PutKeywordResult();
+    AWS_PINPOINTSMSVOICEV2_API PutKeywordResult() = default;
     AWS_PINPOINTSMSVOICEV2_API PutKeywordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API PutKeywordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,88 +37,82 @@ namespace Model
     /**
      * <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
      */
-    inline const Aws::String& GetOriginationIdentityArn() const{ return m_originationIdentityArn; }
-    inline void SetOriginationIdentityArn(const Aws::String& value) { m_originationIdentityArn = value; }
-    inline void SetOriginationIdentityArn(Aws::String&& value) { m_originationIdentityArn = std::move(value); }
-    inline void SetOriginationIdentityArn(const char* value) { m_originationIdentityArn.assign(value); }
-    inline PutKeywordResult& WithOriginationIdentityArn(const Aws::String& value) { SetOriginationIdentityArn(value); return *this;}
-    inline PutKeywordResult& WithOriginationIdentityArn(Aws::String&& value) { SetOriginationIdentityArn(std::move(value)); return *this;}
-    inline PutKeywordResult& WithOriginationIdentityArn(const char* value) { SetOriginationIdentityArn(value); return *this;}
+    inline const Aws::String& GetOriginationIdentityArn() const { return m_originationIdentityArn; }
+    template<typename OriginationIdentityArnT = Aws::String>
+    void SetOriginationIdentityArn(OriginationIdentityArnT&& value) { m_originationIdentityArnHasBeenSet = true; m_originationIdentityArn = std::forward<OriginationIdentityArnT>(value); }
+    template<typename OriginationIdentityArnT = Aws::String>
+    PutKeywordResult& WithOriginationIdentityArn(OriginationIdentityArnT&& value) { SetOriginationIdentityArn(std::forward<OriginationIdentityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
      */
-    inline const Aws::String& GetOriginationIdentity() const{ return m_originationIdentity; }
-    inline void SetOriginationIdentity(const Aws::String& value) { m_originationIdentity = value; }
-    inline void SetOriginationIdentity(Aws::String&& value) { m_originationIdentity = std::move(value); }
-    inline void SetOriginationIdentity(const char* value) { m_originationIdentity.assign(value); }
-    inline PutKeywordResult& WithOriginationIdentity(const Aws::String& value) { SetOriginationIdentity(value); return *this;}
-    inline PutKeywordResult& WithOriginationIdentity(Aws::String&& value) { SetOriginationIdentity(std::move(value)); return *this;}
-    inline PutKeywordResult& WithOriginationIdentity(const char* value) { SetOriginationIdentity(value); return *this;}
+    inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
+    template<typename OriginationIdentityT = Aws::String>
+    void SetOriginationIdentity(OriginationIdentityT&& value) { m_originationIdentityHasBeenSet = true; m_originationIdentity = std::forward<OriginationIdentityT>(value); }
+    template<typename OriginationIdentityT = Aws::String>
+    PutKeywordResult& WithOriginationIdentity(OriginationIdentityT&& value) { SetOriginationIdentity(std::forward<OriginationIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keyword that was added.</p>
      */
-    inline const Aws::String& GetKeyword() const{ return m_keyword; }
-    inline void SetKeyword(const Aws::String& value) { m_keyword = value; }
-    inline void SetKeyword(Aws::String&& value) { m_keyword = std::move(value); }
-    inline void SetKeyword(const char* value) { m_keyword.assign(value); }
-    inline PutKeywordResult& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
-    inline PutKeywordResult& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
-    inline PutKeywordResult& WithKeyword(const char* value) { SetKeyword(value); return *this;}
+    inline const Aws::String& GetKeyword() const { return m_keyword; }
+    template<typename KeywordT = Aws::String>
+    void SetKeyword(KeywordT&& value) { m_keywordHasBeenSet = true; m_keyword = std::forward<KeywordT>(value); }
+    template<typename KeywordT = Aws::String>
+    PutKeywordResult& WithKeyword(KeywordT&& value) { SetKeyword(std::forward<KeywordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message associated with the keyword.</p>
      */
-    inline const Aws::String& GetKeywordMessage() const{ return m_keywordMessage; }
-    inline void SetKeywordMessage(const Aws::String& value) { m_keywordMessage = value; }
-    inline void SetKeywordMessage(Aws::String&& value) { m_keywordMessage = std::move(value); }
-    inline void SetKeywordMessage(const char* value) { m_keywordMessage.assign(value); }
-    inline PutKeywordResult& WithKeywordMessage(const Aws::String& value) { SetKeywordMessage(value); return *this;}
-    inline PutKeywordResult& WithKeywordMessage(Aws::String&& value) { SetKeywordMessage(std::move(value)); return *this;}
-    inline PutKeywordResult& WithKeywordMessage(const char* value) { SetKeywordMessage(value); return *this;}
+    inline const Aws::String& GetKeywordMessage() const { return m_keywordMessage; }
+    template<typename KeywordMessageT = Aws::String>
+    void SetKeywordMessage(KeywordMessageT&& value) { m_keywordMessageHasBeenSet = true; m_keywordMessage = std::forward<KeywordMessageT>(value); }
+    template<typename KeywordMessageT = Aws::String>
+    PutKeywordResult& WithKeywordMessage(KeywordMessageT&& value) { SetKeywordMessage(std::forward<KeywordMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action to perform when the keyword is used.</p>
      */
-    inline const KeywordAction& GetKeywordAction() const{ return m_keywordAction; }
-    inline void SetKeywordAction(const KeywordAction& value) { m_keywordAction = value; }
-    inline void SetKeywordAction(KeywordAction&& value) { m_keywordAction = std::move(value); }
-    inline PutKeywordResult& WithKeywordAction(const KeywordAction& value) { SetKeywordAction(value); return *this;}
-    inline PutKeywordResult& WithKeywordAction(KeywordAction&& value) { SetKeywordAction(std::move(value)); return *this;}
+    inline KeywordAction GetKeywordAction() const { return m_keywordAction; }
+    inline void SetKeywordAction(KeywordAction value) { m_keywordActionHasBeenSet = true; m_keywordAction = value; }
+    inline PutKeywordResult& WithKeywordAction(KeywordAction value) { SetKeywordAction(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutKeywordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutKeywordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutKeywordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutKeywordResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_originationIdentityArn;
+    bool m_originationIdentityArnHasBeenSet = false;
 
     Aws::String m_originationIdentity;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_keyword;
+    bool m_keywordHasBeenSet = false;
 
     Aws::String m_keywordMessage;
+    bool m_keywordMessageHasBeenSet = false;
 
-    KeywordAction m_keywordAction;
+    KeywordAction m_keywordAction{KeywordAction::NOT_SET};
+    bool m_keywordActionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

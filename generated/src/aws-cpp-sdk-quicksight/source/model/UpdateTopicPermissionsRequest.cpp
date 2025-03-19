@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTopicPermissionsRequest::UpdateTopicPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_grantPermissionsHasBeenSet(false),
-    m_revokePermissionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTopicPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

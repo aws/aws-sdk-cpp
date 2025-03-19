@@ -18,16 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-SchemaField::SchemaField() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
-{
-}
-
 SchemaField::SchemaField(JsonView jsonValue)
-  : SchemaField()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SchemaField& SchemaField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

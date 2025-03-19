@@ -18,14 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-ColumnStatisticsConfiguration::ColumnStatisticsConfiguration() : 
-    m_selectorsHasBeenSet(false),
-    m_statisticsHasBeenSet(false)
-{
-}
-
 ColumnStatisticsConfiguration::ColumnStatisticsConfiguration(JsonView jsonValue)
-  : ColumnStatisticsConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ColumnStatisticsConfiguration& ColumnStatisticsConfiguration::operator =(JsonVie
     }
     m_selectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-DatasetGroupSummary::DatasetGroupSummary() : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_datasetGroupNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 DatasetGroupSummary::DatasetGroupSummary(JsonView jsonValue)
-  : DatasetGroupSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DatasetGroupSummary& DatasetGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("DatasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetGroupName"))
   {
     m_datasetGroupName = jsonValue.GetString("DatasetGroupName");
-
     m_datasetGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

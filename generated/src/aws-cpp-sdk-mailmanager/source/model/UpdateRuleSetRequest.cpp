@@ -12,13 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuleSetRequest::UpdateRuleSetRequest() : 
-    m_ruleSetIdHasBeenSet(false),
-    m_ruleSetNameHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuleSetRequest::SerializePayload() const
 {
   JsonValue payload;

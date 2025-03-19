@@ -18,20 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-LicenseConfigurationUsage::LicenseConfigurationUsage() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_associationTimeHasBeenSet(false),
-    m_consumedLicenses(0),
-    m_consumedLicensesHasBeenSet(false)
-{
-}
-
 LicenseConfigurationUsage::LicenseConfigurationUsage(JsonView jsonValue)
-  : LicenseConfigurationUsage()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ LicenseConfigurationUsage& LicenseConfigurationUsage::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceStatus"))
   {
     m_resourceStatus = jsonValue.GetString("ResourceStatus");
-
     m_resourceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceOwnerId"))
   {
     m_resourceOwnerId = jsonValue.GetString("ResourceOwnerId");
-
     m_resourceOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationTime"))
   {
     m_associationTime = jsonValue.GetDouble("AssociationTime");
-
     m_associationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLicenses"))
   {
     m_consumedLicenses = jsonValue.GetInt64("ConsumedLicenses");
-
     m_consumedLicensesHasBeenSet = true;
   }
-
   return *this;
 }
 

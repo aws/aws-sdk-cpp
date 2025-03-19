@@ -18,22 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-Address::Address() : 
-    m_streetNameHasBeenSet(false),
-    m_streetSuffixHasBeenSet(false),
-    m_postDirectionalHasBeenSet(false),
-    m_preDirectionalHasBeenSet(false),
-    m_streetNumberHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_postalCodePlus4HasBeenSet(false),
-    m_countryHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streetName"))
   {
     m_streetName = jsonValue.GetString("streetName");
-
     m_streetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streetSuffix"))
   {
     m_streetSuffix = jsonValue.GetString("streetSuffix");
-
     m_streetSuffixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postDirectional"))
   {
     m_postDirectional = jsonValue.GetString("postDirectional");
-
     m_postDirectionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preDirectional"))
   {
     m_preDirectional = jsonValue.GetString("preDirectional");
-
     m_preDirectionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streetNumber"))
   {
     m_streetNumber = jsonValue.GetString("streetNumber");
-
     m_streetNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCode"))
   {
     m_postalCode = jsonValue.GetString("postalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCodePlus4"))
   {
     m_postalCodePlus4 = jsonValue.GetString("postalCodePlus4");
-
     m_postalCodePlus4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("country"))
   {
     m_country = jsonValue.GetString("country");
-
     m_countryHasBeenSet = true;
   }
-
   return *this;
 }
 

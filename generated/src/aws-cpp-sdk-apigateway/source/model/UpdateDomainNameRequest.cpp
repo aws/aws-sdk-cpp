@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateDomainNameRequest::UpdateDomainNameRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainNameIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainNameRequest::SerializePayload() const
 {
   JsonValue payload;

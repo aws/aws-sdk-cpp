@@ -29,7 +29,7 @@ namespace Model
   class ListCapabilitiesResult
   {
   public:
-    AWS_B2BI_API ListCapabilitiesResult();
+    AWS_B2BI_API ListCapabilitiesResult() = default;
     AWS_B2BI_API ListCapabilitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_B2BI_API ListCapabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns one or more capabilities associated with this partnership.</p>
      */
-    inline const Aws::Vector<CapabilitySummary>& GetCapabilities() const{ return m_capabilities; }
-    inline void SetCapabilities(const Aws::Vector<CapabilitySummary>& value) { m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<CapabilitySummary>&& value) { m_capabilities = std::move(value); }
-    inline ListCapabilitiesResult& WithCapabilities(const Aws::Vector<CapabilitySummary>& value) { SetCapabilities(value); return *this;}
-    inline ListCapabilitiesResult& WithCapabilities(Aws::Vector<CapabilitySummary>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline ListCapabilitiesResult& AddCapabilities(const CapabilitySummary& value) { m_capabilities.push_back(value); return *this; }
-    inline ListCapabilitiesResult& AddCapabilities(CapabilitySummary&& value) { m_capabilities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapabilitySummary>& GetCapabilities() const { return m_capabilities; }
+    template<typename CapabilitiesT = Aws::Vector<CapabilitySummary>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<CapabilitySummary>>
+    ListCapabilitiesResult& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    template<typename CapabilitiesT = CapabilitySummary>
+    ListCapabilitiesResult& AddCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.emplace_back(std::forward<CapabilitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * the <code>NextToken</code> parameter in a subsequent command to continue listing
      * additional resources.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCapabilitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCapabilitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCapabilitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCapabilitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCapabilitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCapabilitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCapabilitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCapabilitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CapabilitySummary> m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,24 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-FileSourceSettings::FileSourceSettings() : 
-    m_byteRateLimit(CaptionSourceByteRateLimit::NOT_SET),
-    m_byteRateLimitHasBeenSet(false),
-    m_convert608To708(FileSourceConvert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_convertPaintToPop(CaptionSourceConvertPaintOnToPopOn::NOT_SET),
-    m_convertPaintToPopHasBeenSet(false),
-    m_framerateHasBeenSet(false),
-    m_sourceFileHasBeenSet(false),
-    m_timeDelta(0),
-    m_timeDeltaHasBeenSet(false),
-    m_timeDeltaUnits(FileSourceTimeDeltaUnits::NOT_SET),
-    m_timeDeltaUnitsHasBeenSet(false)
-{
-}
-
 FileSourceSettings::FileSourceSettings(JsonView jsonValue)
-  : FileSourceSettings()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("byteRateLimit"))
   {
     m_byteRateLimit = CaptionSourceByteRateLimitMapper::GetCaptionSourceByteRateLimitForName(jsonValue.GetString("byteRateLimit"));
-
     m_byteRateLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("convert608To708"))
   {
     m_convert608To708 = FileSourceConvert608To708Mapper::GetFileSourceConvert608To708ForName(jsonValue.GetString("convert608To708"));
-
     m_convert608To708HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("convertPaintToPop"))
   {
     m_convertPaintToPop = CaptionSourceConvertPaintOnToPopOnMapper::GetCaptionSourceConvertPaintOnToPopOnForName(jsonValue.GetString("convertPaintToPop"));
-
     m_convertPaintToPopHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerate"))
   {
     m_framerate = jsonValue.GetObject("framerate");
-
     m_framerateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceFile"))
   {
     m_sourceFile = jsonValue.GetString("sourceFile");
-
     m_sourceFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeDelta"))
   {
     m_timeDelta = jsonValue.GetInteger("timeDelta");
-
     m_timeDeltaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeDeltaUnits"))
   {
     m_timeDeltaUnits = FileSourceTimeDeltaUnitsMapper::GetFileSourceTimeDeltaUnitsForName(jsonValue.GetString("timeDeltaUnits"));
-
     m_timeDeltaUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

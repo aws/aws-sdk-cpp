@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationDatasetMetricConfig::EvaluationDatasetMetricConfig() : 
-    m_taskType(EvaluationTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_datasetHasBeenSet(false),
-    m_metricNamesHasBeenSet(false)
-{
-}
-
 EvaluationDatasetMetricConfig::EvaluationDatasetMetricConfig(JsonView jsonValue)
-  : EvaluationDatasetMetricConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EvaluationDatasetMetricConfig& EvaluationDatasetMetricConfig::operator =(JsonVie
   if(jsonValue.ValueExists("taskType"))
   {
     m_taskType = EvaluationTaskTypeMapper::GetEvaluationTaskTypeForName(jsonValue.GetString("taskType"));
-
     m_taskTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataset"))
   {
     m_dataset = jsonValue.GetObject("dataset");
-
     m_datasetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricNames"))
   {
     Aws::Utils::Array<JsonView> metricNamesJsonList = jsonValue.GetArray("metricNames");
@@ -57,7 +44,6 @@ EvaluationDatasetMetricConfig& EvaluationDatasetMetricConfig::operator =(JsonVie
     }
     m_metricNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

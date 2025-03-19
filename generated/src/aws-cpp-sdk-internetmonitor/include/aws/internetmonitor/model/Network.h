@@ -32,7 +32,7 @@ namespace Model
   class Network
   {
   public:
-    AWS_INTERNETMONITOR_API Network();
+    AWS_INTERNETMONITOR_API Network() = default;
     AWS_INTERNETMONITOR_API Network(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Network& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
-    inline const Aws::String& GetASName() const{ return m_aSName; }
+    inline const Aws::String& GetASName() const { return m_aSName; }
     inline bool ASNameHasBeenSet() const { return m_aSNameHasBeenSet; }
-    inline void SetASName(const Aws::String& value) { m_aSNameHasBeenSet = true; m_aSName = value; }
-    inline void SetASName(Aws::String&& value) { m_aSNameHasBeenSet = true; m_aSName = std::move(value); }
-    inline void SetASName(const char* value) { m_aSNameHasBeenSet = true; m_aSName.assign(value); }
-    inline Network& WithASName(const Aws::String& value) { SetASName(value); return *this;}
-    inline Network& WithASName(Aws::String&& value) { SetASName(std::move(value)); return *this;}
-    inline Network& WithASName(const char* value) { SetASName(value); return *this;}
+    template<typename ASNameT = Aws::String>
+    void SetASName(ASNameT&& value) { m_aSNameHasBeenSet = true; m_aSName = std::forward<ASNameT>(value); }
+    template<typename ASNameT = Aws::String>
+    Network& WithASName(ASNameT&& value) { SetASName(std::forward<ASNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
      */
-    inline long long GetASNumber() const{ return m_aSNumber; }
+    inline long long GetASNumber() const { return m_aSNumber; }
     inline bool ASNumberHasBeenSet() const { return m_aSNumberHasBeenSet; }
     inline void SetASNumber(long long value) { m_aSNumberHasBeenSet = true; m_aSNumber = value; }
     inline Network& WithASNumber(long long value) { SetASNumber(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_aSName;
     bool m_aSNameHasBeenSet = false;
 
-    long long m_aSNumber;
+    long long m_aSNumber{0};
     bool m_aSNumberHasBeenSet = false;
   };
 

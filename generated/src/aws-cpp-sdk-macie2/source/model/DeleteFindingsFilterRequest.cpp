@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFindingsFilterRequest::DeleteFindingsFilterRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFindingsFilterRequest::SerializePayload() const
 {
   return {};

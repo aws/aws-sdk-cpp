@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListUsersRequest::ListUsersRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_realmHasBeenSet(false)
-{
-}
-
 Aws::String ListUsersRequest::SerializePayload() const
 {
   JsonValue payload;

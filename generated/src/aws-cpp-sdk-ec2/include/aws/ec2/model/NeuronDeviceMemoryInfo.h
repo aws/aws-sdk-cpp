@@ -30,7 +30,7 @@ namespace Model
   class NeuronDeviceMemoryInfo
   {
   public:
-    AWS_EC2_API NeuronDeviceMemoryInfo();
+    AWS_EC2_API NeuronDeviceMemoryInfo() = default;
     AWS_EC2_API NeuronDeviceMemoryInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NeuronDeviceMemoryInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The size of the memory available to the neuron accelerator, in MiB.</p>
      */
-    inline int GetSizeInMiB() const{ return m_sizeInMiB; }
+    inline int GetSizeInMiB() const { return m_sizeInMiB; }
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
     inline void SetSizeInMiB(int value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
     inline NeuronDeviceMemoryInfo& WithSizeInMiB(int value) { SetSizeInMiB(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInMiB;
+    int m_sizeInMiB{0};
     bool m_sizeInMiBHasBeenSet = false;
   };
 

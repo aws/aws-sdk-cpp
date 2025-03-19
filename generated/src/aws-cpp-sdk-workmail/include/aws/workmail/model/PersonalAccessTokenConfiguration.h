@@ -31,7 +31,7 @@ namespace Model
   class PersonalAccessTokenConfiguration
   {
   public:
-    AWS_WORKMAIL_API PersonalAccessTokenConfiguration();
+    AWS_WORKMAIL_API PersonalAccessTokenConfiguration() = default;
     AWS_WORKMAIL_API PersonalAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API PersonalAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,29 +49,27 @@ namespace Model
      * Personal Access Tokens and can’t use them to connect to their mailboxes from
      * desktop or mobile email clients.</p> </li> </ul>
      */
-    inline const PersonalAccessTokenConfigurationStatus& GetStatus() const{ return m_status; }
+    inline PersonalAccessTokenConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PersonalAccessTokenConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PersonalAccessTokenConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PersonalAccessTokenConfiguration& WithStatus(const PersonalAccessTokenConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline PersonalAccessTokenConfiguration& WithStatus(PersonalAccessTokenConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PersonalAccessTokenConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PersonalAccessTokenConfiguration& WithStatus(PersonalAccessTokenConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The validity of the Personal Access Token status in days. </p>
      */
-    inline int GetLifetimeInDays() const{ return m_lifetimeInDays; }
+    inline int GetLifetimeInDays() const { return m_lifetimeInDays; }
     inline bool LifetimeInDaysHasBeenSet() const { return m_lifetimeInDaysHasBeenSet; }
     inline void SetLifetimeInDays(int value) { m_lifetimeInDaysHasBeenSet = true; m_lifetimeInDays = value; }
     inline PersonalAccessTokenConfiguration& WithLifetimeInDays(int value) { SetLifetimeInDays(value); return *this;}
     ///@}
   private:
 
-    PersonalAccessTokenConfigurationStatus m_status;
+    PersonalAccessTokenConfigurationStatus m_status{PersonalAccessTokenConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_lifetimeInDays;
+    int m_lifetimeInDays{0};
     bool m_lifetimeInDaysHasBeenSet = false;
   };
 

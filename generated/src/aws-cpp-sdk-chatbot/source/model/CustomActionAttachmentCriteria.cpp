@@ -18,16 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-CustomActionAttachmentCriteria::CustomActionAttachmentCriteria() : 
-    m_operator(CustomActionAttachmentCriteriaOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_variableNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CustomActionAttachmentCriteria::CustomActionAttachmentCriteria(JsonView jsonValue)
-  : CustomActionAttachmentCriteria()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomActionAttachmentCriteria& CustomActionAttachmentCriteria::operator =(JsonV
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = CustomActionAttachmentCriteriaOperatorMapper::GetCustomActionAttachmentCriteriaOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VariableName"))
   {
     m_variableName = jsonValue.GetString("VariableName");
-
     m_variableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class EbsStatusDetails
   {
   public:
-    AWS_EC2_API EbsStatusDetails();
+    AWS_EC2_API EbsStatusDetails() = default;
     AWS_EC2_API EbsStatusDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EbsStatusDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,46 +46,42 @@ namespace Model
     /**
      * <p>The date and time when the attached EBS status check failed.</p>
      */
-    inline const Aws::Utils::DateTime& GetImpairedSince() const{ return m_impairedSince; }
+    inline const Aws::Utils::DateTime& GetImpairedSince() const { return m_impairedSince; }
     inline bool ImpairedSinceHasBeenSet() const { return m_impairedSinceHasBeenSet; }
-    inline void SetImpairedSince(const Aws::Utils::DateTime& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
-    inline void SetImpairedSince(Aws::Utils::DateTime&& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = std::move(value); }
-    inline EbsStatusDetails& WithImpairedSince(const Aws::Utils::DateTime& value) { SetImpairedSince(value); return *this;}
-    inline EbsStatusDetails& WithImpairedSince(Aws::Utils::DateTime&& value) { SetImpairedSince(std::move(value)); return *this;}
+    template<typename ImpairedSinceT = Aws::Utils::DateTime>
+    void SetImpairedSince(ImpairedSinceT&& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = std::forward<ImpairedSinceT>(value); }
+    template<typename ImpairedSinceT = Aws::Utils::DateTime>
+    EbsStatusDetails& WithImpairedSince(ImpairedSinceT&& value) { SetImpairedSince(std::forward<ImpairedSinceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the attached EBS status check.</p>
      */
-    inline const StatusName& GetName() const{ return m_name; }
+    inline StatusName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const StatusName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(StatusName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline EbsStatusDetails& WithName(const StatusName& value) { SetName(value); return *this;}
-    inline EbsStatusDetails& WithName(StatusName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(StatusName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline EbsStatusDetails& WithName(StatusName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result of the attached EBS status check.</p>
      */
-    inline const StatusType& GetStatus() const{ return m_status; }
+    inline StatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EbsStatusDetails& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-    inline EbsStatusDetails& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EbsStatusDetails& WithStatus(StatusType value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_impairedSince;
+    Aws::Utils::DateTime m_impairedSince{};
     bool m_impairedSinceHasBeenSet = false;
 
-    StatusName m_name;
+    StatusName m_name{StatusName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    StatusType m_status;
+    StatusType m_status{StatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

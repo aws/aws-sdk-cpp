@@ -12,12 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePipelineRequest::UpdatePipelineRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineActivitiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

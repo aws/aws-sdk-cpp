@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-HookConfiguration::HookConfiguration() : 
-    m_invocationConditionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false),
-    m_s3BucketHasBeenSet(false)
-{
-}
-
 HookConfiguration::HookConfiguration(JsonView jsonValue)
-  : HookConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HookConfiguration& HookConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvocationCondition"))
   {
     m_invocationCondition = jsonValue.GetObject("InvocationCondition");
-
     m_invocationConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   return *this;
 }
 

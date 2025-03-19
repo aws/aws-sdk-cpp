@@ -29,7 +29,7 @@ namespace Model
   class ListAccountSettingsResult
   {
   public:
-    AWS_ECS_API ListAccountSettingsResult();
+    AWS_ECS_API ListAccountSettingsResult() = default;
     AWS_ECS_API ListAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API ListAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The account settings for the resource.</p>
      */
-    inline const Aws::Vector<Setting>& GetSettings() const{ return m_settings; }
-    inline void SetSettings(const Aws::Vector<Setting>& value) { m_settings = value; }
-    inline void SetSettings(Aws::Vector<Setting>&& value) { m_settings = std::move(value); }
-    inline ListAccountSettingsResult& WithSettings(const Aws::Vector<Setting>& value) { SetSettings(value); return *this;}
-    inline ListAccountSettingsResult& WithSettings(Aws::Vector<Setting>&& value) { SetSettings(std::move(value)); return *this;}
-    inline ListAccountSettingsResult& AddSettings(const Setting& value) { m_settings.push_back(value); return *this; }
-    inline ListAccountSettingsResult& AddSettings(Setting&& value) { m_settings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Setting>& GetSettings() const { return m_settings; }
+    template<typename SettingsT = Aws::Vector<Setting>>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Aws::Vector<Setting>>
+    ListAccountSettingsResult& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
+    template<typename SettingsT = Setting>
+    ListAccountSettingsResult& AddSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings.emplace_back(std::forward<SettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAccountSettingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountSettingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountSettingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountSettingsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccountSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccountSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccountSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccountSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Setting> m_settings;
+    bool m_settingsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

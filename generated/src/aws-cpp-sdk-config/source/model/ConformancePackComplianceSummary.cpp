@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackComplianceSummary::ConformancePackComplianceSummary() : 
-    m_conformancePackNameHasBeenSet(false),
-    m_conformancePackComplianceStatus(ConformancePackComplianceType::NOT_SET),
-    m_conformancePackComplianceStatusHasBeenSet(false)
-{
-}
-
 ConformancePackComplianceSummary::ConformancePackComplianceSummary(JsonView jsonValue)
-  : ConformancePackComplianceSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConformancePackComplianceSummary& ConformancePackComplianceSummary::operator =(J
   if(jsonValue.ValueExists("ConformancePackName"))
   {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
-
     m_conformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackComplianceStatus"))
   {
     m_conformancePackComplianceStatus = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ConformancePackComplianceStatus"));
-
     m_conformancePackComplianceStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

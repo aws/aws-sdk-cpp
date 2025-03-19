@@ -18,18 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-MixedMeasureMapping::MixedMeasureMapping() : 
-    m_measureNameHasBeenSet(false),
-    m_sourceColumnHasBeenSet(false),
-    m_targetMeasureNameHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_multiMeasureAttributeMappingsHasBeenSet(false)
-{
-}
-
 MixedMeasureMapping::MixedMeasureMapping(JsonView jsonValue)
-  : MixedMeasureMapping()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MixedMeasureMapping& MixedMeasureMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MeasureName"))
   {
     m_measureName = jsonValue.GetString("MeasureName");
-
     m_measureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceColumn"))
   {
     m_sourceColumn = jsonValue.GetString("SourceColumn");
-
     m_sourceColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetMeasureName"))
   {
     m_targetMeasureName = jsonValue.GetString("TargetMeasureName");
-
     m_targetMeasureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValueType"))
   {
     m_measureValueType = MeasureValueTypeMapper::GetMeasureValueTypeForName(jsonValue.GetString("MeasureValueType"));
-
     m_measureValueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiMeasureAttributeMappings"))
   {
     Aws::Utils::Array<JsonView> multiMeasureAttributeMappingsJsonList = jsonValue.GetArray("MultiMeasureAttributeMappings");
@@ -73,7 +54,6 @@ MixedMeasureMapping& MixedMeasureMapping::operator =(JsonView jsonValue)
     }
     m_multiMeasureAttributeMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -39,7 +39,7 @@ namespace Model
   class ContainerDefinition
   {
   public:
-    AWS_SAGEMAKER_API ContainerDefinition();
+    AWS_SAGEMAKER_API ContainerDefinition() = default;
     AWS_SAGEMAKER_API ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,14 +61,12 @@ namespace Model
      * specify a value for the <code>ContainerHostName</code> parameter of every
      * <code>ContainerDefinition</code> in that pipeline.</p>
      */
-    inline const Aws::String& GetContainerHostname() const{ return m_containerHostname; }
+    inline const Aws::String& GetContainerHostname() const { return m_containerHostname; }
     inline bool ContainerHostnameHasBeenSet() const { return m_containerHostnameHasBeenSet; }
-    inline void SetContainerHostname(const Aws::String& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = value; }
-    inline void SetContainerHostname(Aws::String&& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = std::move(value); }
-    inline void SetContainerHostname(const char* value) { m_containerHostnameHasBeenSet = true; m_containerHostname.assign(value); }
-    inline ContainerDefinition& WithContainerHostname(const Aws::String& value) { SetContainerHostname(value); return *this;}
-    inline ContainerDefinition& WithContainerHostname(Aws::String&& value) { SetContainerHostname(std::move(value)); return *this;}
-    inline ContainerDefinition& WithContainerHostname(const char* value) { SetContainerHostname(value); return *this;}
+    template<typename ContainerHostnameT = Aws::String>
+    void SetContainerHostname(ContainerHostnameT&& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = std::forward<ContainerHostnameT>(value); }
+    template<typename ContainerHostnameT = Aws::String>
+    ContainerDefinition& WithContainerHostname(ContainerHostnameT&& value) { SetContainerHostname(std::forward<ContainerHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * Amazon EC2 Container Registry must be in the same region as the model or
      * endpoint you are creating.</p> 
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    ContainerDefinition& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,24 +104,22 @@ namespace Model
      * container in Amazon EC2 Container Registry must be in the same region as the
      * model or endpoint you are creating.</p> 
      */
-    inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
+    inline const ImageConfig& GetImageConfig() const { return m_imageConfig; }
     inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
-    inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
-    inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
-    inline ContainerDefinition& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
-    inline ContainerDefinition& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
+    template<typename ImageConfigT = ImageConfig>
+    void SetImageConfig(ImageConfigT&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::forward<ImageConfigT>(value); }
+    template<typename ImageConfigT = ImageConfig>
+    ContainerDefinition& WithImageConfig(ImageConfigT&& value) { SetImageConfig(std::forward<ImageConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the container hosts a single model or multiple models.</p>
      */
-    inline const ContainerMode& GetMode() const{ return m_mode; }
+    inline ContainerMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ContainerMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ContainerMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ContainerDefinition& WithMode(const ContainerMode& value) { SetMode(value); return *this;}
-    inline ContainerDefinition& WithMode(ContainerMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ContainerMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ContainerDefinition& WithMode(ContainerMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +144,12 @@ namespace Model
      * requires that you provide a S3 path to the model artifacts in
      * <code>ModelDataUrl</code>.</p> 
      */
-    inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
+    inline const Aws::String& GetModelDataUrl() const { return m_modelDataUrl; }
     inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
-    inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
-    inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
-    inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
-    inline ContainerDefinition& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
-    inline ContainerDefinition& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
-    inline ContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
+    template<typename ModelDataUrlT = Aws::String>
+    void SetModelDataUrl(ModelDataUrlT&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::forward<ModelDataUrlT>(value); }
+    template<typename ModelDataUrlT = Aws::String>
+    ContainerDefinition& WithModelDataUrl(ModelDataUrlT&& value) { SetModelDataUrl(std::forward<ModelDataUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,12 +159,12 @@ namespace Model
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */
-    inline const ModelDataSource& GetModelDataSource() const{ return m_modelDataSource; }
+    inline const ModelDataSource& GetModelDataSource() const { return m_modelDataSource; }
     inline bool ModelDataSourceHasBeenSet() const { return m_modelDataSourceHasBeenSet; }
-    inline void SetModelDataSource(const ModelDataSource& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = value; }
-    inline void SetModelDataSource(ModelDataSource&& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = std::move(value); }
-    inline ContainerDefinition& WithModelDataSource(const ModelDataSource& value) { SetModelDataSource(value); return *this;}
-    inline ContainerDefinition& WithModelDataSource(ModelDataSource&& value) { SetModelDataSource(std::move(value)); return *this;}
+    template<typename ModelDataSourceT = ModelDataSource>
+    void SetModelDataSource(ModelDataSourceT&& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = std::forward<ModelDataSourceT>(value); }
+    template<typename ModelDataSourceT = ModelDataSource>
+    ContainerDefinition& WithModelDataSource(ModelDataSourceT&& value) { SetModelDataSource(std::forward<ModelDataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,14 +173,14 @@ namespace Model
      * specify for <code>ModelDataSource</code> when you use the
      * <code>CreateModel</code> action.</p>
      */
-    inline const Aws::Vector<AdditionalModelDataSource>& GetAdditionalModelDataSources() const{ return m_additionalModelDataSources; }
+    inline const Aws::Vector<AdditionalModelDataSource>& GetAdditionalModelDataSources() const { return m_additionalModelDataSources; }
     inline bool AdditionalModelDataSourcesHasBeenSet() const { return m_additionalModelDataSourcesHasBeenSet; }
-    inline void SetAdditionalModelDataSources(const Aws::Vector<AdditionalModelDataSource>& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources = value; }
-    inline void SetAdditionalModelDataSources(Aws::Vector<AdditionalModelDataSource>&& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources = std::move(value); }
-    inline ContainerDefinition& WithAdditionalModelDataSources(const Aws::Vector<AdditionalModelDataSource>& value) { SetAdditionalModelDataSources(value); return *this;}
-    inline ContainerDefinition& WithAdditionalModelDataSources(Aws::Vector<AdditionalModelDataSource>&& value) { SetAdditionalModelDataSources(std::move(value)); return *this;}
-    inline ContainerDefinition& AddAdditionalModelDataSources(const AdditionalModelDataSource& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources.push_back(value); return *this; }
-    inline ContainerDefinition& AddAdditionalModelDataSources(AdditionalModelDataSource&& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources.push_back(std::move(value)); return *this; }
+    template<typename AdditionalModelDataSourcesT = Aws::Vector<AdditionalModelDataSource>>
+    void SetAdditionalModelDataSources(AdditionalModelDataSourcesT&& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources = std::forward<AdditionalModelDataSourcesT>(value); }
+    template<typename AdditionalModelDataSourcesT = Aws::Vector<AdditionalModelDataSource>>
+    ContainerDefinition& WithAdditionalModelDataSources(AdditionalModelDataSourcesT&& value) { SetAdditionalModelDataSources(std::forward<AdditionalModelDataSourcesT>(value)); return *this;}
+    template<typename AdditionalModelDataSourcesT = AdditionalModelDataSource>
+    ContainerDefinition& AddAdditionalModelDataSources(AdditionalModelDataSourcesT&& value) { m_additionalModelDataSourcesHasBeenSet = true; m_additionalModelDataSources.emplace_back(std::forward<AdditionalModelDataSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -200,19 +192,16 @@ namespace Model
      * multiple containers to a <code>CreateModel</code> request, then the maximum
      * length of all of their maps, combined, is also 32 KB.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline ContainerDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline ContainerDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline ContainerDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline ContainerDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline ContainerDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline ContainerDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline ContainerDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline ContainerDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline ContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    ContainerDefinition& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    ContainerDefinition& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -220,40 +209,36 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the model package to use to create
      * the model.</p>
      */
-    inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
+    inline const Aws::String& GetModelPackageName() const { return m_modelPackageName; }
     inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
-    inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
-    inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
-    inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
-    inline ContainerDefinition& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
-    inline ContainerDefinition& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
-    inline ContainerDefinition& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+    template<typename ModelPackageNameT = Aws::String>
+    void SetModelPackageName(ModelPackageNameT&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::forward<ModelPackageNameT>(value); }
+    template<typename ModelPackageNameT = Aws::String>
+    ContainerDefinition& WithModelPackageName(ModelPackageNameT&& value) { SetModelPackageName(std::forward<ModelPackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The inference specification name in the model package version.</p>
      */
-    inline const Aws::String& GetInferenceSpecificationName() const{ return m_inferenceSpecificationName; }
+    inline const Aws::String& GetInferenceSpecificationName() const { return m_inferenceSpecificationName; }
     inline bool InferenceSpecificationNameHasBeenSet() const { return m_inferenceSpecificationNameHasBeenSet; }
-    inline void SetInferenceSpecificationName(const Aws::String& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = value; }
-    inline void SetInferenceSpecificationName(Aws::String&& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = std::move(value); }
-    inline void SetInferenceSpecificationName(const char* value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName.assign(value); }
-    inline ContainerDefinition& WithInferenceSpecificationName(const Aws::String& value) { SetInferenceSpecificationName(value); return *this;}
-    inline ContainerDefinition& WithInferenceSpecificationName(Aws::String&& value) { SetInferenceSpecificationName(std::move(value)); return *this;}
-    inline ContainerDefinition& WithInferenceSpecificationName(const char* value) { SetInferenceSpecificationName(value); return *this;}
+    template<typename InferenceSpecificationNameT = Aws::String>
+    void SetInferenceSpecificationName(InferenceSpecificationNameT&& value) { m_inferenceSpecificationNameHasBeenSet = true; m_inferenceSpecificationName = std::forward<InferenceSpecificationNameT>(value); }
+    template<typename InferenceSpecificationNameT = Aws::String>
+    ContainerDefinition& WithInferenceSpecificationName(InferenceSpecificationNameT&& value) { SetInferenceSpecificationName(std::forward<InferenceSpecificationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies additional configuration for multi-model endpoints.</p>
      */
-    inline const MultiModelConfig& GetMultiModelConfig() const{ return m_multiModelConfig; }
+    inline const MultiModelConfig& GetMultiModelConfig() const { return m_multiModelConfig; }
     inline bool MultiModelConfigHasBeenSet() const { return m_multiModelConfigHasBeenSet; }
-    inline void SetMultiModelConfig(const MultiModelConfig& value) { m_multiModelConfigHasBeenSet = true; m_multiModelConfig = value; }
-    inline void SetMultiModelConfig(MultiModelConfig&& value) { m_multiModelConfigHasBeenSet = true; m_multiModelConfig = std::move(value); }
-    inline ContainerDefinition& WithMultiModelConfig(const MultiModelConfig& value) { SetMultiModelConfig(value); return *this;}
-    inline ContainerDefinition& WithMultiModelConfig(MultiModelConfig&& value) { SetMultiModelConfig(std::move(value)); return *this;}
+    template<typename MultiModelConfigT = MultiModelConfig>
+    void SetMultiModelConfig(MultiModelConfigT&& value) { m_multiModelConfigHasBeenSet = true; m_multiModelConfig = std::forward<MultiModelConfigT>(value); }
+    template<typename MultiModelConfigT = MultiModelConfig>
+    ContainerDefinition& WithMultiModelConfig(MultiModelConfigT&& value) { SetMultiModelConfig(std::forward<MultiModelConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -266,7 +251,7 @@ namespace Model
     ImageConfig m_imageConfig;
     bool m_imageConfigHasBeenSet = false;
 
-    ContainerMode m_mode;
+    ContainerMode m_mode{ContainerMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     Aws::String m_modelDataUrl;

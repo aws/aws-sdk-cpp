@@ -18,19 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteEnterHighwayStepDetails::RouteEnterHighwayStepDetails() : 
-    m_intersectionHasBeenSet(false),
-    m_steeringDirection(RouteSteeringDirection::NOT_SET),
-    m_steeringDirectionHasBeenSet(false),
-    m_turnAngle(0.0),
-    m_turnAngleHasBeenSet(false),
-    m_turnIntensity(RouteTurnIntensity::NOT_SET),
-    m_turnIntensityHasBeenSet(false)
-{
-}
-
 RouteEnterHighwayStepDetails::RouteEnterHighwayStepDetails(JsonView jsonValue)
-  : RouteEnterHighwayStepDetails()
 {
   *this = jsonValue;
 }
@@ -46,28 +34,21 @@ RouteEnterHighwayStepDetails& RouteEnterHighwayStepDetails::operator =(JsonView 
     }
     m_intersectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SteeringDirection"))
   {
     m_steeringDirection = RouteSteeringDirectionMapper::GetRouteSteeringDirectionForName(jsonValue.GetString("SteeringDirection"));
-
     m_steeringDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurnAngle"))
   {
     m_turnAngle = jsonValue.GetDouble("TurnAngle");
-
     m_turnAngleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurnIntensity"))
   {
     m_turnIntensity = RouteTurnIntensityMapper::GetRouteTurnIntensityForName(jsonValue.GetString("TurnIntensity"));
-
     m_turnIntensityHasBeenSet = true;
   }
-
   return *this;
 }
 

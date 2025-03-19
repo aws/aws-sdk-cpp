@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig() : 
-    m_serviceRoleHasBeenSet(false),
-    m_versionLifecycleConfigHasBeenSet(false)
-{
-}
-
 ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig(const XmlNode& xmlNode)
-  : ApplicationResourceLifecycleConfig()
 {
   *this = xmlNode;
 }

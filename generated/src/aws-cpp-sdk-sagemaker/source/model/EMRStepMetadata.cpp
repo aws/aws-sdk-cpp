@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EMRStepMetadata::EMRStepMetadata() : 
-    m_clusterIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_logFilePathHasBeenSet(false)
-{
-}
-
 EMRStepMetadata::EMRStepMetadata(JsonView jsonValue)
-  : EMRStepMetadata()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EMRStepMetadata& EMRStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepId"))
   {
     m_stepId = jsonValue.GetString("StepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepName"))
   {
     m_stepName = jsonValue.GetString("StepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogFilePath"))
   {
     m_logFilePath = jsonValue.GetString("LogFilePath");
-
     m_logFilePathHasBeenSet = true;
   }
-
   return *this;
 }
 

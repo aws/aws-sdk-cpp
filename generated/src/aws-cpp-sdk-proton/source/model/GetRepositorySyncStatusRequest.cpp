@@ -12,16 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositorySyncStatusRequest::GetRepositorySyncStatusRequest() : 
-    m_branchHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_syncType(SyncType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositorySyncStatusRequest::SerializePayload() const
 {
   JsonValue payload;

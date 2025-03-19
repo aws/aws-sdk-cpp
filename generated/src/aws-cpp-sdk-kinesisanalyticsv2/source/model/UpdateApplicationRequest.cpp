@@ -12,20 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentApplicationVersionId(0),
-    m_currentApplicationVersionIdHasBeenSet(false),
-    m_applicationConfigurationUpdateHasBeenSet(false),
-    m_serviceExecutionRoleUpdateHasBeenSet(false),
-    m_runConfigurationUpdateHasBeenSet(false),
-    m_cloudWatchLoggingOptionUpdatesHasBeenSet(false),
-    m_conditionalTokenHasBeenSet(false),
-    m_runtimeEnvironmentUpdate(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

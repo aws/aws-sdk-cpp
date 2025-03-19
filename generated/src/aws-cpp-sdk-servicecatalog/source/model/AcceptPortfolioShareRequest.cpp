@@ -12,14 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptPortfolioShareRequest::AcceptPortfolioShareRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false),
-    m_portfolioShareType(PortfolioShareType::NOT_SET),
-    m_portfolioShareTypeHasBeenSet(false)
-{
-}
-
 Aws::String AcceptPortfolioShareRequest::SerializePayload() const
 {
   JsonValue payload;

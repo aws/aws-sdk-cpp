@@ -33,7 +33,7 @@ namespace Model
   class DataIntegrationFlowTarget
   {
   public:
-    AWS_SUPPLYCHAIN_API DataIntegrationFlowTarget();
+    AWS_SUPPLYCHAIN_API DataIntegrationFlowTarget() = default;
     AWS_SUPPLYCHAIN_API DataIntegrationFlowTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataIntegrationFlowTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,38 @@ namespace Model
     /**
      * <p>The DataIntegrationFlow target type.</p>
      */
-    inline const DataIntegrationFlowTargetType& GetTargetType() const{ return m_targetType; }
+    inline DataIntegrationFlowTargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const DataIntegrationFlowTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(DataIntegrationFlowTargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline DataIntegrationFlowTarget& WithTargetType(const DataIntegrationFlowTargetType& value) { SetTargetType(value); return *this;}
-    inline DataIntegrationFlowTarget& WithTargetType(DataIntegrationFlowTargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(DataIntegrationFlowTargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline DataIntegrationFlowTarget& WithTargetType(DataIntegrationFlowTargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 DataIntegrationFlow target.</p>
      */
-    inline const DataIntegrationFlowS3TargetConfiguration& GetS3Target() const{ return m_s3Target; }
+    inline const DataIntegrationFlowS3TargetConfiguration& GetS3Target() const { return m_s3Target; }
     inline bool S3TargetHasBeenSet() const { return m_s3TargetHasBeenSet; }
-    inline void SetS3Target(const DataIntegrationFlowS3TargetConfiguration& value) { m_s3TargetHasBeenSet = true; m_s3Target = value; }
-    inline void SetS3Target(DataIntegrationFlowS3TargetConfiguration&& value) { m_s3TargetHasBeenSet = true; m_s3Target = std::move(value); }
-    inline DataIntegrationFlowTarget& WithS3Target(const DataIntegrationFlowS3TargetConfiguration& value) { SetS3Target(value); return *this;}
-    inline DataIntegrationFlowTarget& WithS3Target(DataIntegrationFlowS3TargetConfiguration&& value) { SetS3Target(std::move(value)); return *this;}
+    template<typename S3TargetT = DataIntegrationFlowS3TargetConfiguration>
+    void SetS3Target(S3TargetT&& value) { m_s3TargetHasBeenSet = true; m_s3Target = std::forward<S3TargetT>(value); }
+    template<typename S3TargetT = DataIntegrationFlowS3TargetConfiguration>
+    DataIntegrationFlowTarget& WithS3Target(S3TargetT&& value) { SetS3Target(std::forward<S3TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset DataIntegrationFlow target.</p>
      */
-    inline const DataIntegrationFlowDatasetTargetConfiguration& GetDatasetTarget() const{ return m_datasetTarget; }
+    inline const DataIntegrationFlowDatasetTargetConfiguration& GetDatasetTarget() const { return m_datasetTarget; }
     inline bool DatasetTargetHasBeenSet() const { return m_datasetTargetHasBeenSet; }
-    inline void SetDatasetTarget(const DataIntegrationFlowDatasetTargetConfiguration& value) { m_datasetTargetHasBeenSet = true; m_datasetTarget = value; }
-    inline void SetDatasetTarget(DataIntegrationFlowDatasetTargetConfiguration&& value) { m_datasetTargetHasBeenSet = true; m_datasetTarget = std::move(value); }
-    inline DataIntegrationFlowTarget& WithDatasetTarget(const DataIntegrationFlowDatasetTargetConfiguration& value) { SetDatasetTarget(value); return *this;}
-    inline DataIntegrationFlowTarget& WithDatasetTarget(DataIntegrationFlowDatasetTargetConfiguration&& value) { SetDatasetTarget(std::move(value)); return *this;}
+    template<typename DatasetTargetT = DataIntegrationFlowDatasetTargetConfiguration>
+    void SetDatasetTarget(DatasetTargetT&& value) { m_datasetTargetHasBeenSet = true; m_datasetTarget = std::forward<DatasetTargetT>(value); }
+    template<typename DatasetTargetT = DataIntegrationFlowDatasetTargetConfiguration>
+    DataIntegrationFlowTarget& WithDatasetTarget(DatasetTargetT&& value) { SetDatasetTarget(std::forward<DatasetTargetT>(value)); return *this;}
     ///@}
   private:
 
-    DataIntegrationFlowTargetType m_targetType;
+    DataIntegrationFlowTargetType m_targetType{DataIntegrationFlowTargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     DataIntegrationFlowS3TargetConfiguration m_s3Target;

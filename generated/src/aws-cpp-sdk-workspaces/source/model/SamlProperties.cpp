@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-SamlProperties::SamlProperties() : 
-    m_status(SamlStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_userAccessUrlHasBeenSet(false),
-    m_relayStateParameterNameHasBeenSet(false)
-{
-}
-
 SamlProperties::SamlProperties(JsonView jsonValue)
-  : SamlProperties()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SamlProperties& SamlProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SamlStatusEnumMapper::GetSamlStatusEnumForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAccessUrl"))
   {
     m_userAccessUrl = jsonValue.GetString("UserAccessUrl");
-
     m_userAccessUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelayStateParameterName"))
   {
     m_relayStateParameterName = jsonValue.GetString("RelayStateParameterName");
-
     m_relayStateParameterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class SetStatusRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API SetStatusRequest();
+    AWS_DATAPIPELINE_API SetStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the pipeline that contains the objects.</p>
      */
-    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    inline const Aws::String& GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-    inline SetStatusRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-    inline SetStatusRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-    inline SetStatusRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    template<typename PipelineIdT = Aws::String>
+    void SetPipelineId(PipelineIdT&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::forward<PipelineIdT>(value); }
+    template<typename PipelineIdT = Aws::String>
+    SetStatusRequest& WithPipelineId(PipelineIdT&& value) { SetPipelineId(std::forward<PipelineIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,15 +55,14 @@ namespace Model
      * <p>The IDs of the objects. The corresponding objects can be either physical or
      * components, but not a mix of both types.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectIds() const{ return m_objectIds; }
+    inline const Aws::Vector<Aws::String>& GetObjectIds() const { return m_objectIds; }
     inline bool ObjectIdsHasBeenSet() const { return m_objectIdsHasBeenSet; }
-    inline void SetObjectIds(const Aws::Vector<Aws::String>& value) { m_objectIdsHasBeenSet = true; m_objectIds = value; }
-    inline void SetObjectIds(Aws::Vector<Aws::String>&& value) { m_objectIdsHasBeenSet = true; m_objectIds = std::move(value); }
-    inline SetStatusRequest& WithObjectIds(const Aws::Vector<Aws::String>& value) { SetObjectIds(value); return *this;}
-    inline SetStatusRequest& WithObjectIds(Aws::Vector<Aws::String>&& value) { SetObjectIds(std::move(value)); return *this;}
-    inline SetStatusRequest& AddObjectIds(const Aws::String& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
-    inline SetStatusRequest& AddObjectIds(Aws::String&& value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(std::move(value)); return *this; }
-    inline SetStatusRequest& AddObjectIds(const char* value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
+    template<typename ObjectIdsT = Aws::Vector<Aws::String>>
+    void SetObjectIds(ObjectIdsT&& value) { m_objectIdsHasBeenSet = true; m_objectIds = std::forward<ObjectIdsT>(value); }
+    template<typename ObjectIdsT = Aws::Vector<Aws::String>>
+    SetStatusRequest& WithObjectIds(ObjectIdsT&& value) { SetObjectIds(std::forward<ObjectIdsT>(value)); return *this;}
+    template<typename ObjectIdsT = Aws::String>
+    SetStatusRequest& AddObjectIds(ObjectIdsT&& value) { m_objectIdsHasBeenSet = true; m_objectIds.emplace_back(std::forward<ObjectIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,14 +72,12 @@ namespace Model
      * use <code>TRY_CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline SetStatusRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline SetStatusRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline SetStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    SetStatusRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

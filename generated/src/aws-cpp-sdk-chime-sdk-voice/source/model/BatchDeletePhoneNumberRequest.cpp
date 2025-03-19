@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeletePhoneNumberRequest::BatchDeletePhoneNumberRequest() : 
-    m_phoneNumberIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeletePhoneNumberRequest::SerializePayload() const
 {
   JsonValue payload;

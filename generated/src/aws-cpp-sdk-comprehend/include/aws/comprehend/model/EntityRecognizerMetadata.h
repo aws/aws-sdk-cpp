@@ -34,7 +34,7 @@ namespace Model
   class EntityRecognizerMetadata
   {
   public:
-    AWS_COMPREHEND_API EntityRecognizerMetadata();
+    AWS_COMPREHEND_API EntityRecognizerMetadata() = default;
     AWS_COMPREHEND_API EntityRecognizerMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityRecognizerMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p> The number of documents in the input data that were used to train the entity
      * recognizer. Typically this is 80 to 90 percent of the input documents.</p>
      */
-    inline int GetNumberOfTrainedDocuments() const{ return m_numberOfTrainedDocuments; }
+    inline int GetNumberOfTrainedDocuments() const { return m_numberOfTrainedDocuments; }
     inline bool NumberOfTrainedDocumentsHasBeenSet() const { return m_numberOfTrainedDocumentsHasBeenSet; }
     inline void SetNumberOfTrainedDocuments(int value) { m_numberOfTrainedDocumentsHasBeenSet = true; m_numberOfTrainedDocuments = value; }
     inline EntityRecognizerMetadata& WithNumberOfTrainedDocuments(int value) { SetNumberOfTrainedDocuments(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p> The number of documents in the input data that were used to test the entity
      * recognizer. Typically this is 10 to 20 percent of the input documents.</p>
      */
-    inline int GetNumberOfTestDocuments() const{ return m_numberOfTestDocuments; }
+    inline int GetNumberOfTestDocuments() const { return m_numberOfTestDocuments; }
     inline bool NumberOfTestDocumentsHasBeenSet() const { return m_numberOfTestDocumentsHasBeenSet; }
     inline void SetNumberOfTestDocuments(int value) { m_numberOfTestDocumentsHasBeenSet = true; m_numberOfTestDocuments = value; }
     inline EntityRecognizerMetadata& WithNumberOfTestDocuments(int value) { SetNumberOfTestDocuments(value); return *this;}
@@ -66,33 +66,33 @@ namespace Model
     /**
      * <p>Detailed information about the accuracy of an entity recognizer.</p>
      */
-    inline const EntityRecognizerEvaluationMetrics& GetEvaluationMetrics() const{ return m_evaluationMetrics; }
+    inline const EntityRecognizerEvaluationMetrics& GetEvaluationMetrics() const { return m_evaluationMetrics; }
     inline bool EvaluationMetricsHasBeenSet() const { return m_evaluationMetricsHasBeenSet; }
-    inline void SetEvaluationMetrics(const EntityRecognizerEvaluationMetrics& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = value; }
-    inline void SetEvaluationMetrics(EntityRecognizerEvaluationMetrics&& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = std::move(value); }
-    inline EntityRecognizerMetadata& WithEvaluationMetrics(const EntityRecognizerEvaluationMetrics& value) { SetEvaluationMetrics(value); return *this;}
-    inline EntityRecognizerMetadata& WithEvaluationMetrics(EntityRecognizerEvaluationMetrics&& value) { SetEvaluationMetrics(std::move(value)); return *this;}
+    template<typename EvaluationMetricsT = EntityRecognizerEvaluationMetrics>
+    void SetEvaluationMetrics(EvaluationMetricsT&& value) { m_evaluationMetricsHasBeenSet = true; m_evaluationMetrics = std::forward<EvaluationMetricsT>(value); }
+    template<typename EvaluationMetricsT = EntityRecognizerEvaluationMetrics>
+    EntityRecognizerMetadata& WithEvaluationMetrics(EvaluationMetricsT&& value) { SetEvaluationMetrics(std::forward<EvaluationMetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Entity types from the metadata of an entity recognizer.</p>
      */
-    inline const Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>& GetEntityTypes() const{ return m_entityTypes; }
+    inline const Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>& GetEntityTypes() const { return m_entityTypes; }
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
-    inline void SetEntityTypes(const Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
-    inline void SetEntityTypes(Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
-    inline EntityRecognizerMetadata& WithEntityTypes(const Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>& value) { SetEntityTypes(value); return *this;}
-    inline EntityRecognizerMetadata& WithEntityTypes(Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>&& value) { SetEntityTypes(std::move(value)); return *this;}
-    inline EntityRecognizerMetadata& AddEntityTypes(const EntityRecognizerMetadataEntityTypesListItem& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
-    inline EntityRecognizerMetadata& AddEntityTypes(EntityRecognizerMetadataEntityTypesListItem&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
+    template<typename EntityTypesT = Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>>
+    void SetEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::forward<EntityTypesT>(value); }
+    template<typename EntityTypesT = Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>>
+    EntityRecognizerMetadata& WithEntityTypes(EntityTypesT&& value) { SetEntityTypes(std::forward<EntityTypesT>(value)); return *this;}
+    template<typename EntityTypesT = EntityRecognizerMetadataEntityTypesListItem>
+    EntityRecognizerMetadata& AddEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.emplace_back(std::forward<EntityTypesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_numberOfTrainedDocuments;
+    int m_numberOfTrainedDocuments{0};
     bool m_numberOfTrainedDocumentsHasBeenSet = false;
 
-    int m_numberOfTestDocuments;
+    int m_numberOfTestDocuments{0};
     bool m_numberOfTestDocumentsHasBeenSet = false;
 
     EntityRecognizerEvaluationMetrics m_evaluationMetrics;

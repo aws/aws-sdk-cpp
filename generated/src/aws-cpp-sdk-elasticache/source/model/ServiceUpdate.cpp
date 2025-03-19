@@ -20,28 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServiceUpdate::ServiceUpdate() : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateReleaseDateHasBeenSet(false),
-    m_serviceUpdateEndDateHasBeenSet(false),
-    m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
-    m_serviceUpdateSeverityHasBeenSet(false),
-    m_serviceUpdateRecommendedApplyByDateHasBeenSet(false),
-    m_serviceUpdateStatus(ServiceUpdateStatus::NOT_SET),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateDescriptionHasBeenSet(false),
-    m_serviceUpdateType(ServiceUpdateType::NOT_SET),
-    m_serviceUpdateTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoUpdateAfterRecommendedApplyByDate(false),
-    m_autoUpdateAfterRecommendedApplyByDateHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false)
-{
-}
-
 ServiceUpdate::ServiceUpdate(const XmlNode& xmlNode)
-  : ServiceUpdate()
 {
   *this = xmlNode;
 }
@@ -73,7 +52,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateSeverityNode = resultNode.FirstChild("ServiceUpdateSeverity");
     if(!serviceUpdateSeverityNode.IsNull())
     {
-      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()).c_str());
+      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()));
       m_serviceUpdateSeverityHasBeenSet = true;
     }
     XmlNode serviceUpdateRecommendedApplyByDateNode = resultNode.FirstChild("ServiceUpdateRecommendedApplyByDate");
@@ -85,7 +64,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateStatusNode = resultNode.FirstChild("ServiceUpdateStatus");
     if(!serviceUpdateStatusNode.IsNull())
     {
-      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()).c_str());
+      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()));
       m_serviceUpdateStatusHasBeenSet = true;
     }
     XmlNode serviceUpdateDescriptionNode = resultNode.FirstChild("ServiceUpdateDescription");
@@ -97,7 +76,7 @@ ServiceUpdate& ServiceUpdate::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateTypeNode = resultNode.FirstChild("ServiceUpdateType");
     if(!serviceUpdateTypeNode.IsNull())
     {
-      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()).c_str());
+      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()));
       m_serviceUpdateTypeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");

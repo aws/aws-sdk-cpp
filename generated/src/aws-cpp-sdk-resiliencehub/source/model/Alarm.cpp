@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_alarmArnHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(JsonView jsonValue)
-  : Alarm()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Alarm& Alarm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alarmArn"))
   {
     m_alarmArn = jsonValue.GetString("alarmArn");
-
     m_alarmArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

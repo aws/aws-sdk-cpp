@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-FilterCriteriaError::FilterCriteriaError() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 FilterCriteriaError::FilterCriteriaError(JsonView jsonValue)
-  : FilterCriteriaError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FilterCriteriaError& FilterCriteriaError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

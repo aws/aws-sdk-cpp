@@ -29,7 +29,7 @@ namespace Model
   class DescribeInstanceResult
   {
   public:
-    AWS_SSOADMIN_API DescribeInstanceResult();
+    AWS_SSOADMIN_API DescribeInstanceResult() = default;
     AWS_SSOADMIN_API DescribeInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API DescribeInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>The date the instance was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline DescribeInstanceResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline DescribeInstanceResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    DescribeInstanceResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +50,11 @@ namespace Model
      * <p>The identifier of the identity store that is connected to the instance of IAM
      * Identity Center.</p>
      */
-    inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
-    inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreId = value; }
-    inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreId = std::move(value); }
-    inline void SetIdentityStoreId(const char* value) { m_identityStoreId.assign(value); }
-    inline DescribeInstanceResult& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-    inline DescribeInstanceResult& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-    inline DescribeInstanceResult& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+    template<typename IdentityStoreIdT = Aws::String>
+    void SetIdentityStoreId(IdentityStoreIdT&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::forward<IdentityStoreIdT>(value); }
+    template<typename IdentityStoreIdT = Aws::String>
+    DescribeInstanceResult& WithIdentityStoreId(IdentityStoreIdT&& value) { SetIdentityStoreId(std::forward<IdentityStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,22 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArn.assign(value); }
-    inline DescribeInstanceResult& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline DescribeInstanceResult& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline DescribeInstanceResult& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    DescribeInstanceResult& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the instance name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeInstanceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeInstanceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeInstanceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeInstanceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,51 +88,52 @@ namespace Model
      * <p>The identifier of the Amazon Web Services account for which the instance was
      * created.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountId.assign(value); }
-    inline DescribeInstanceResult& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline DescribeInstanceResult& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline DescribeInstanceResult& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    DescribeInstanceResult& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the instance. </p>
      */
-    inline const InstanceStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const InstanceStatus& value) { m_status = value; }
-    inline void SetStatus(InstanceStatus&& value) { m_status = std::move(value); }
-    inline DescribeInstanceResult& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
-    inline DescribeInstanceResult& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline InstanceStatus GetStatus() const { return m_status; }
+    inline void SetStatus(InstanceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeInstanceResult& WithStatus(InstanceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_identityStoreId;
+    bool m_identityStoreIdHasBeenSet = false;
 
     Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
+    bool m_ownerAccountIdHasBeenSet = false;
 
-    InstanceStatus m_status;
+    InstanceStatus m_status{InstanceStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

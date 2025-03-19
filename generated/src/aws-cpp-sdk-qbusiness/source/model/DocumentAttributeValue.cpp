@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DocumentAttributeValue::DocumentAttributeValue() : 
-    m_stringValueHasBeenSet(false),
-    m_stringListValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_dateValueHasBeenSet(false)
-{
-}
-
 DocumentAttributeValue::DocumentAttributeValue(JsonView jsonValue)
-  : DocumentAttributeValue()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringListValue"))
   {
     Aws::Utils::Array<JsonView> stringListValueJsonList = jsonValue.GetArray("stringListValue");
@@ -51,21 +39,16 @@ DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
     }
     m_stringListValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longValue"))
   {
     m_longValue = jsonValue.GetInt64("longValue");
-
     m_longValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateValue"))
   {
     m_dateValue = jsonValue.GetDouble("dateValue");
-
     m_dateValueHasBeenSet = true;
   }
-
   return *this;
 }
 

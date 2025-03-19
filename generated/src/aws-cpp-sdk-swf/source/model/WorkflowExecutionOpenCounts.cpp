@@ -18,22 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts() : 
-    m_openActivityTasks(0),
-    m_openActivityTasksHasBeenSet(false),
-    m_openDecisionTasks(0),
-    m_openDecisionTasksHasBeenSet(false),
-    m_openTimers(0),
-    m_openTimersHasBeenSet(false),
-    m_openChildWorkflowExecutions(0),
-    m_openChildWorkflowExecutionsHasBeenSet(false),
-    m_openLambdaFunctions(0),
-    m_openLambdaFunctionsHasBeenSet(false)
-{
-}
-
 WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts(JsonView jsonValue)
-  : WorkflowExecutionOpenCounts()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ WorkflowExecutionOpenCounts& WorkflowExecutionOpenCounts::operator =(JsonView js
   if(jsonValue.ValueExists("openActivityTasks"))
   {
     m_openActivityTasks = jsonValue.GetInteger("openActivityTasks");
-
     m_openActivityTasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openDecisionTasks"))
   {
     m_openDecisionTasks = jsonValue.GetInteger("openDecisionTasks");
-
     m_openDecisionTasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openTimers"))
   {
     m_openTimers = jsonValue.GetInteger("openTimers");
-
     m_openTimersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openChildWorkflowExecutions"))
   {
     m_openChildWorkflowExecutions = jsonValue.GetInteger("openChildWorkflowExecutions");
-
     m_openChildWorkflowExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openLambdaFunctions"))
   {
     m_openLambdaFunctions = jsonValue.GetInteger("openLambdaFunctions");
-
     m_openLambdaFunctionsHasBeenSet = true;
   }
-
   return *this;
 }
 

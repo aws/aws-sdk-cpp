@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVoiceProfileDomainRequest::CreateVoiceProfileDomainRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVoiceProfileDomainRequest::SerializePayload() const
 {
   JsonValue payload;

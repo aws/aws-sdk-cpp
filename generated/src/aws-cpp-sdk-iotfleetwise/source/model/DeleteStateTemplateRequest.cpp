@@ -12,11 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStateTemplateRequest::DeleteStateTemplateRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

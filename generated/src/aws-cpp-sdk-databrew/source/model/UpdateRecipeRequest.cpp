@@ -12,13 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRecipeRequest::UpdateRecipeRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_stepsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRecipeRequest::SerializePayload() const
 {
   JsonValue payload;

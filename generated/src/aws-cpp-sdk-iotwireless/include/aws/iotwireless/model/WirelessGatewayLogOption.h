@@ -35,7 +35,7 @@ namespace Model
   class WirelessGatewayLogOption
   {
   public:
-    AWS_IOTWIRELESS_API WirelessGatewayLogOption();
+    AWS_IOTWIRELESS_API WirelessGatewayLogOption() = default;
     AWS_IOTWIRELESS_API WirelessGatewayLogOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API WirelessGatewayLogOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,41 +43,37 @@ namespace Model
 
     ///@{
     
-    inline const WirelessGatewayType& GetType() const{ return m_type; }
+    inline WirelessGatewayType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WirelessGatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WirelessGatewayType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WirelessGatewayLogOption& WithType(const WirelessGatewayType& value) { SetType(value); return *this;}
-    inline WirelessGatewayLogOption& WithType(WirelessGatewayType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WirelessGatewayType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WirelessGatewayLogOption& WithType(WirelessGatewayType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline WirelessGatewayLogOption& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline WirelessGatewayLogOption& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline WirelessGatewayLogOption& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<WirelessGatewayEventLogOption>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<WirelessGatewayEventLogOption>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<WirelessGatewayEventLogOption>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<WirelessGatewayEventLogOption>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline WirelessGatewayLogOption& WithEvents(const Aws::Vector<WirelessGatewayEventLogOption>& value) { SetEvents(value); return *this;}
-    inline WirelessGatewayLogOption& WithEvents(Aws::Vector<WirelessGatewayEventLogOption>&& value) { SetEvents(std::move(value)); return *this;}
-    inline WirelessGatewayLogOption& AddEvents(const WirelessGatewayEventLogOption& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline WirelessGatewayLogOption& AddEvents(WirelessGatewayEventLogOption&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<WirelessGatewayEventLogOption>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<WirelessGatewayEventLogOption>>
+    WirelessGatewayLogOption& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = WirelessGatewayEventLogOption>
+    WirelessGatewayLogOption& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
   private:
 
-    WirelessGatewayType m_type;
+    WirelessGatewayType m_type{WirelessGatewayType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
 
     Aws::Vector<WirelessGatewayEventLogOption> m_events;

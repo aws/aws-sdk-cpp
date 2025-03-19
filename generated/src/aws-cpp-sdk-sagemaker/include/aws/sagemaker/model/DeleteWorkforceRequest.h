@@ -21,7 +21,7 @@ namespace Model
   class DeleteWorkforceRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteWorkforceRequest();
+    AWS_SAGEMAKER_API DeleteWorkforceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the workforce.</p>
      */
-    inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
+    inline const Aws::String& GetWorkforceName() const { return m_workforceName; }
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
-    inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
-    inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
-    inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
-    inline DeleteWorkforceRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
-    inline DeleteWorkforceRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
-    inline DeleteWorkforceRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
+    template<typename WorkforceNameT = Aws::String>
+    void SetWorkforceName(WorkforceNameT&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::forward<WorkforceNameT>(value); }
+    template<typename WorkforceNameT = Aws::String>
+    DeleteWorkforceRequest& WithWorkforceName(WorkforceNameT&& value) { SetWorkforceName(std::forward<WorkforceNameT>(value)); return *this;}
     ///@}
   private:
 

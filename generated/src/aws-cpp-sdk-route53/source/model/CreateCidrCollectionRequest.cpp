@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateCidrCollectionRequest::CreateCidrCollectionRequest() : 
-    m_nameHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false)
-{
-}
 
 Aws::String CreateCidrCollectionRequest::SerializePayload() const
 {

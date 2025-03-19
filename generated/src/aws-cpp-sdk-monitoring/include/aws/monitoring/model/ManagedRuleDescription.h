@@ -33,7 +33,7 @@ namespace Model
   class ManagedRuleDescription
   {
   public:
-    AWS_CLOUDWATCH_API ManagedRuleDescription();
+    AWS_CLOUDWATCH_API ManagedRuleDescription() = default;
     AWS_CLOUDWATCH_API ManagedRuleDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API ManagedRuleDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * <p> The template name for the managed rule. Used to enable managed rules using
      * <code>PutManagedInsightRules</code>. </p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline ManagedRuleDescription& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline ManagedRuleDescription& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline ManagedRuleDescription& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    ManagedRuleDescription& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p> If a managed rule is enabled, this is the ARN for the related Amazon Web
      * Services resource. </p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline ManagedRuleDescription& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline ManagedRuleDescription& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline ManagedRuleDescription& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    ManagedRuleDescription& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,12 @@ namespace Model
      * about the Contributor Insights rule that contains information about the related
      * Amazon Web Services resource. </p>
      */
-    inline const ManagedRuleState& GetRuleState() const{ return m_ruleState; }
+    inline const ManagedRuleState& GetRuleState() const { return m_ruleState; }
     inline bool RuleStateHasBeenSet() const { return m_ruleStateHasBeenSet; }
-    inline void SetRuleState(const ManagedRuleState& value) { m_ruleStateHasBeenSet = true; m_ruleState = value; }
-    inline void SetRuleState(ManagedRuleState&& value) { m_ruleStateHasBeenSet = true; m_ruleState = std::move(value); }
-    inline ManagedRuleDescription& WithRuleState(const ManagedRuleState& value) { SetRuleState(value); return *this;}
-    inline ManagedRuleDescription& WithRuleState(ManagedRuleState&& value) { SetRuleState(std::move(value)); return *this;}
+    template<typename RuleStateT = ManagedRuleState>
+    void SetRuleState(RuleStateT&& value) { m_ruleStateHasBeenSet = true; m_ruleState = std::forward<RuleStateT>(value); }
+    template<typename RuleStateT = ManagedRuleState>
+    ManagedRuleDescription& WithRuleState(RuleStateT&& value) { SetRuleState(std::forward<RuleStateT>(value)); return *this;}
     ///@}
   private:
 

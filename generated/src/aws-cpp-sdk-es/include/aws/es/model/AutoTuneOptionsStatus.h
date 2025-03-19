@@ -33,7 +33,7 @@ namespace Model
   class AutoTuneOptionsStatus
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsStatus();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsStatus() = default;
     AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p> Specifies Auto-Tune options for the specified Elasticsearch domain.</p>
      */
-    inline const AutoTuneOptions& GetOptions() const{ return m_options; }
+    inline const AutoTuneOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const AutoTuneOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(AutoTuneOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline AutoTuneOptionsStatus& WithOptions(const AutoTuneOptions& value) { SetOptions(value); return *this;}
-    inline AutoTuneOptionsStatus& WithOptions(AutoTuneOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = AutoTuneOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = AutoTuneOptions>
+    AutoTuneOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p> Specifies Status of the Auto-Tune options for the specified Elasticsearch
      * domain.</p>
      */
-    inline const AutoTuneStatus& GetStatus() const{ return m_status; }
+    inline const AutoTuneStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutoTuneStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutoTuneStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AutoTuneOptionsStatus& WithStatus(const AutoTuneStatus& value) { SetStatus(value); return *this;}
-    inline AutoTuneOptionsStatus& WithStatus(AutoTuneStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = AutoTuneStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = AutoTuneStatus>
+    AutoTuneOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

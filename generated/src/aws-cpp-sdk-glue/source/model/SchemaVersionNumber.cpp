@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaVersionNumber::SchemaVersionNumber() : 
-    m_latestVersion(false),
-    m_latestVersionHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 SchemaVersionNumber::SchemaVersionNumber(JsonView jsonValue)
-  : SchemaVersionNumber()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SchemaVersionNumber& SchemaVersionNumber::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LatestVersion"))
   {
     m_latestVersion = jsonValue.GetBool("LatestVersion");
-
     m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSegmentEstimateRequest::GetSegmentEstimateRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_estimateIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentEstimateRequest::SerializePayload() const
 {
   return {};

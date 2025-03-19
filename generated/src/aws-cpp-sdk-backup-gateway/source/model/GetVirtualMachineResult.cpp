@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVirtualMachineResult::GetVirtualMachineResult()
-{
-}
-
 GetVirtualMachineResult::GetVirtualMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVirtualMachineResult& GetVirtualMachineResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("VirtualMachine"))
   {
     m_virtualMachine = jsonValue.GetObject("VirtualMachine");
-
+    m_virtualMachineHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

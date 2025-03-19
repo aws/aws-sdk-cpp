@@ -37,7 +37,7 @@ namespace Model
   class SourceProperties
   {
   public:
-    AWS_MGN_API SourceProperties();
+    AWS_MGN_API SourceProperties() = default;
     AWS_MGN_API SourceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,87 +47,85 @@ namespace Model
     /**
      * <p>Source Server CPUs.</p>
      */
-    inline const Aws::Vector<CPU>& GetCpus() const{ return m_cpus; }
+    inline const Aws::Vector<CPU>& GetCpus() const { return m_cpus; }
     inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
-    inline void SetCpus(const Aws::Vector<CPU>& value) { m_cpusHasBeenSet = true; m_cpus = value; }
-    inline void SetCpus(Aws::Vector<CPU>&& value) { m_cpusHasBeenSet = true; m_cpus = std::move(value); }
-    inline SourceProperties& WithCpus(const Aws::Vector<CPU>& value) { SetCpus(value); return *this;}
-    inline SourceProperties& WithCpus(Aws::Vector<CPU>&& value) { SetCpus(std::move(value)); return *this;}
-    inline SourceProperties& AddCpus(const CPU& value) { m_cpusHasBeenSet = true; m_cpus.push_back(value); return *this; }
-    inline SourceProperties& AddCpus(CPU&& value) { m_cpusHasBeenSet = true; m_cpus.push_back(std::move(value)); return *this; }
+    template<typename CpusT = Aws::Vector<CPU>>
+    void SetCpus(CpusT&& value) { m_cpusHasBeenSet = true; m_cpus = std::forward<CpusT>(value); }
+    template<typename CpusT = Aws::Vector<CPU>>
+    SourceProperties& WithCpus(CpusT&& value) { SetCpus(std::forward<CpusT>(value)); return *this;}
+    template<typename CpusT = CPU>
+    SourceProperties& AddCpus(CpusT&& value) { m_cpusHasBeenSet = true; m_cpus.emplace_back(std::forward<CpusT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Source Server disks.</p>
      */
-    inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
+    inline const Aws::Vector<Disk>& GetDisks() const { return m_disks; }
     inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
-    inline void SetDisks(const Aws::Vector<Disk>& value) { m_disksHasBeenSet = true; m_disks = value; }
-    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disksHasBeenSet = true; m_disks = std::move(value); }
-    inline SourceProperties& WithDisks(const Aws::Vector<Disk>& value) { SetDisks(value); return *this;}
-    inline SourceProperties& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
-    inline SourceProperties& AddDisks(const Disk& value) { m_disksHasBeenSet = true; m_disks.push_back(value); return *this; }
-    inline SourceProperties& AddDisks(Disk&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
+    template<typename DisksT = Aws::Vector<Disk>>
+    void SetDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks = std::forward<DisksT>(value); }
+    template<typename DisksT = Aws::Vector<Disk>>
+    SourceProperties& WithDisks(DisksT&& value) { SetDisks(std::forward<DisksT>(value)); return *this;}
+    template<typename DisksT = Disk>
+    SourceProperties& AddDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks.emplace_back(std::forward<DisksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Source server identification hints.</p>
      */
-    inline const IdentificationHints& GetIdentificationHints() const{ return m_identificationHints; }
+    inline const IdentificationHints& GetIdentificationHints() const { return m_identificationHints; }
     inline bool IdentificationHintsHasBeenSet() const { return m_identificationHintsHasBeenSet; }
-    inline void SetIdentificationHints(const IdentificationHints& value) { m_identificationHintsHasBeenSet = true; m_identificationHints = value; }
-    inline void SetIdentificationHints(IdentificationHints&& value) { m_identificationHintsHasBeenSet = true; m_identificationHints = std::move(value); }
-    inline SourceProperties& WithIdentificationHints(const IdentificationHints& value) { SetIdentificationHints(value); return *this;}
-    inline SourceProperties& WithIdentificationHints(IdentificationHints&& value) { SetIdentificationHints(std::move(value)); return *this;}
+    template<typename IdentificationHintsT = IdentificationHints>
+    void SetIdentificationHints(IdentificationHintsT&& value) { m_identificationHintsHasBeenSet = true; m_identificationHints = std::forward<IdentificationHintsT>(value); }
+    template<typename IdentificationHintsT = IdentificationHints>
+    SourceProperties& WithIdentificationHints(IdentificationHintsT&& value) { SetIdentificationHints(std::forward<IdentificationHintsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Source server last update date and time.</p>
      */
-    inline const Aws::String& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::String& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::String& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::String&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline void SetLastUpdatedDateTime(const char* value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime.assign(value); }
-    inline SourceProperties& WithLastUpdatedDateTime(const Aws::String& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline SourceProperties& WithLastUpdatedDateTime(Aws::String&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
-    inline SourceProperties& WithLastUpdatedDateTime(const char* value) { SetLastUpdatedDateTime(value); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::String>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::String>
+    SourceProperties& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Source server network interfaces.</p>
      */
-    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline SourceProperties& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
-    inline SourceProperties& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline SourceProperties& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline SourceProperties& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    SourceProperties& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = NetworkInterface>
+    SourceProperties& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Source server OS.</p>
      */
-    inline const OS& GetOs() const{ return m_os; }
+    inline const OS& GetOs() const { return m_os; }
     inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
-    inline void SetOs(const OS& value) { m_osHasBeenSet = true; m_os = value; }
-    inline void SetOs(OS&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
-    inline SourceProperties& WithOs(const OS& value) { SetOs(value); return *this;}
-    inline SourceProperties& WithOs(OS&& value) { SetOs(std::move(value)); return *this;}
+    template<typename OsT = OS>
+    void SetOs(OsT&& value) { m_osHasBeenSet = true; m_os = std::forward<OsT>(value); }
+    template<typename OsT = OS>
+    SourceProperties& WithOs(OsT&& value) { SetOs(std::forward<OsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Source server RAM in bytes.</p>
      */
-    inline long long GetRamBytes() const{ return m_ramBytes; }
+    inline long long GetRamBytes() const { return m_ramBytes; }
     inline bool RamBytesHasBeenSet() const { return m_ramBytesHasBeenSet; }
     inline void SetRamBytes(long long value) { m_ramBytesHasBeenSet = true; m_ramBytes = value; }
     inline SourceProperties& WithRamBytes(long long value) { SetRamBytes(value); return *this;}
@@ -137,14 +135,12 @@ namespace Model
     /**
      * <p>Source server recommended instance type.</p>
      */
-    inline const Aws::String& GetRecommendedInstanceType() const{ return m_recommendedInstanceType; }
+    inline const Aws::String& GetRecommendedInstanceType() const { return m_recommendedInstanceType; }
     inline bool RecommendedInstanceTypeHasBeenSet() const { return m_recommendedInstanceTypeHasBeenSet; }
-    inline void SetRecommendedInstanceType(const Aws::String& value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType = value; }
-    inline void SetRecommendedInstanceType(Aws::String&& value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType = std::move(value); }
-    inline void SetRecommendedInstanceType(const char* value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType.assign(value); }
-    inline SourceProperties& WithRecommendedInstanceType(const Aws::String& value) { SetRecommendedInstanceType(value); return *this;}
-    inline SourceProperties& WithRecommendedInstanceType(Aws::String&& value) { SetRecommendedInstanceType(std::move(value)); return *this;}
-    inline SourceProperties& WithRecommendedInstanceType(const char* value) { SetRecommendedInstanceType(value); return *this;}
+    template<typename RecommendedInstanceTypeT = Aws::String>
+    void SetRecommendedInstanceType(RecommendedInstanceTypeT&& value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType = std::forward<RecommendedInstanceTypeT>(value); }
+    template<typename RecommendedInstanceTypeT = Aws::String>
+    SourceProperties& WithRecommendedInstanceType(RecommendedInstanceTypeT&& value) { SetRecommendedInstanceType(std::forward<RecommendedInstanceTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -166,7 +162,7 @@ namespace Model
     OS m_os;
     bool m_osHasBeenSet = false;
 
-    long long m_ramBytes;
+    long long m_ramBytes{0};
     bool m_ramBytesHasBeenSet = false;
 
     Aws::String m_recommendedInstanceType;

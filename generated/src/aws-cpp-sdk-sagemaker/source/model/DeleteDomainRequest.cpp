@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDomainRequest::DeleteDomainRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_retentionPolicyHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainRequest::SerializePayload() const
 {
   JsonValue payload;

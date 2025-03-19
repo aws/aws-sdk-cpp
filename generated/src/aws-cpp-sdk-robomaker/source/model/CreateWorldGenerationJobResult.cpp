@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWorldGenerationJobResult::CreateWorldGenerationJobResult() : 
-    m_status(WorldGenerationJobStatus::NOT_SET),
-    m_failureCode(WorldGenerationJobErrorCode::NOT_SET)
-{
-}
-
 CreateWorldGenerationJobResult::CreateWorldGenerationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateWorldGenerationJobResult()
 {
   *this = result;
 }
@@ -35,45 +28,38 @@ CreateWorldGenerationJobResult& CreateWorldGenerationJobResult::operator =(const
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorldGenerationJobStatusMapper::GetWorldGenerationJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = WorldGenerationJobErrorCodeMapper::GetWorldGenerationJobErrorCodeForName(jsonValue.GetString("failureCode"));
-
+    m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
+    m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("template"))
   {
     m_template = jsonValue.GetString("template");
-
+    m_templateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("worldCount"))
   {
     m_worldCount = jsonValue.GetObject("worldCount");
-
+    m_worldCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -81,8 +67,8 @@ CreateWorldGenerationJobResult& CreateWorldGenerationJobResult::operator =(const
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("worldTags"))
   {
     Aws::Map<Aws::String, JsonView> worldTagsJsonMap = jsonValue.GetObject("worldTags").GetAllObjects();
@@ -90,14 +76,15 @@ CreateWorldGenerationJobResult& CreateWorldGenerationJobResult::operator =(const
     {
       m_worldTags[worldTagsItem.first] = worldTagsItem.second.AsString();
     }
+    m_worldTagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

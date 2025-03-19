@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotReplicaSummary::BotReplicaSummary() : 
-    m_replicaRegionHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_botReplicaStatus(BotReplicaStatus::NOT_SET),
-    m_botReplicaStatusHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false)
-{
-}
-
 BotReplicaSummary::BotReplicaSummary(JsonView jsonValue)
-  : BotReplicaSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ BotReplicaSummary& BotReplicaSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("replicaRegion"))
   {
     m_replicaRegion = jsonValue.GetString("replicaRegion");
-
     m_replicaRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botReplicaStatus"))
   {
     m_botReplicaStatus = BotReplicaStatusMapper::GetBotReplicaStatusForName(jsonValue.GetString("botReplicaStatus"));
-
     m_botReplicaStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
@@ -65,7 +49,6 @@ BotReplicaSummary& BotReplicaSummary::operator =(JsonView jsonValue)
     }
     m_failureReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

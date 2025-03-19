@@ -18,24 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsControl::StandardsControl() : 
-    m_standardsControlArnHasBeenSet(false),
-    m_controlStatus(ControlStatus::NOT_SET),
-    m_controlStatusHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false),
-    m_controlStatusUpdatedAtHasBeenSet(false),
-    m_controlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationUrlHasBeenSet(false),
-    m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false),
-    m_relatedRequirementsHasBeenSet(false)
-{
-}
-
 StandardsControl::StandardsControl(JsonView jsonValue)
-  : StandardsControl()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ StandardsControl& StandardsControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StandardsControlArn"))
   {
     m_standardsControlArn = jsonValue.GetString("StandardsControlArn");
-
     m_standardsControlArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlStatus"))
   {
     m_controlStatus = ControlStatusMapper::GetControlStatusForName(jsonValue.GetString("ControlStatus"));
-
     m_controlStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledReason"))
   {
     m_disabledReason = jsonValue.GetString("DisabledReason");
-
     m_disabledReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlStatusUpdatedAt"))
   {
     m_controlStatusUpdatedAt = jsonValue.GetString("ControlStatusUpdatedAt");
-
     m_controlStatusUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlId"))
   {
     m_controlId = jsonValue.GetString("ControlId");
-
     m_controlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemediationUrl"))
   {
     m_remediationUrl = jsonValue.GetString("RemediationUrl");
-
     m_remediationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeverityRating"))
   {
     m_severityRating = SeverityRatingMapper::GetSeverityRatingForName(jsonValue.GetString("SeverityRating"));
-
     m_severityRatingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedRequirements"))
   {
     Aws::Utils::Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
@@ -114,7 +79,6 @@ StandardsControl& StandardsControl::operator =(JsonView jsonValue)
     }
     m_relatedRequirementsHasBeenSet = true;
   }
-
   return *this;
 }
 

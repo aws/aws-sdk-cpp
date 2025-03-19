@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfigureLogsForChannelRequest::ConfigureLogsForChannelRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_logTypesHasBeenSet(false)
-{
-}
-
 Aws::String ConfigureLogsForChannelRequest::SerializePayload() const
 {
   JsonValue payload;

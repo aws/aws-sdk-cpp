@@ -12,13 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStreamProcessorsRequest::ListStreamProcessorsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamProcessorsRequest::SerializePayload() const
 {
   JsonValue payload;

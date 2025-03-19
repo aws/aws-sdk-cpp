@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRepositoryResult::CreateRepositoryResult()
-{
-}
-
 CreateRepositoryResult::CreateRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateRepositoryResult& CreateRepositoryResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("repositoryMetadata"))
   {
     m_repositoryMetadata = jsonValue.GetObject("repositoryMetadata");
-
+    m_repositoryMetadataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

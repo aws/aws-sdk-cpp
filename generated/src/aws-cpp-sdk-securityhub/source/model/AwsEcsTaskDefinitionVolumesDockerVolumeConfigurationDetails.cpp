@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails() : 
-    m_autoprovision(false),
-    m_autoprovisionHasBeenSet(false),
-    m_driverHasBeenSet(false),
-    m_driverOptsHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AwsEcsTaskDefinitio
   if(jsonValue.ValueExists("Autoprovision"))
   {
     m_autoprovision = jsonValue.GetBool("Autoprovision");
-
     m_autoprovisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Driver"))
   {
     m_driver = jsonValue.GetString("Driver");
-
     m_driverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DriverOpts"))
   {
     Aws::Map<Aws::String, JsonView> driverOptsJsonMap = jsonValue.GetObject("DriverOpts").GetAllObjects();
@@ -59,7 +44,6 @@ AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AwsEcsTaskDefinitio
     }
     m_driverOptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Map<Aws::String, JsonView> labelsJsonMap = jsonValue.GetObject("Labels").GetAllObjects();
@@ -69,14 +53,11 @@ AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AwsEcsTaskDefinitio
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetString("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEventBridgeRuleTemplateGroupsRequest::ListEventBridgeRuleTemplateGroupsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_signalMapIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListEventBridgeRuleTemplateGroupsRequest::SerializePayload() const
 {
   return {};

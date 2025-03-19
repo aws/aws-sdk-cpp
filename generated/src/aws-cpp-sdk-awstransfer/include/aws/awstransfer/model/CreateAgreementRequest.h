@@ -27,7 +27,7 @@ namespace Model
   class CreateAgreementRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API CreateAgreementRequest();
+    AWS_TRANSFER_API CreateAgreementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A name or short description to identify the agreement. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAgreementRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAgreementRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAgreementRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAgreementRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,42 +57,36 @@ namespace Model
      * <p>A system-assigned unique identifier for a server instance. This is the
      * specific server that the agreement uses.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline CreateAgreementRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline CreateAgreementRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline CreateAgreementRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    CreateAgreementRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the AS2 local profile.</p>
      */
-    inline const Aws::String& GetLocalProfileId() const{ return m_localProfileId; }
+    inline const Aws::String& GetLocalProfileId() const { return m_localProfileId; }
     inline bool LocalProfileIdHasBeenSet() const { return m_localProfileIdHasBeenSet; }
-    inline void SetLocalProfileId(const Aws::String& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = value; }
-    inline void SetLocalProfileId(Aws::String&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::move(value); }
-    inline void SetLocalProfileId(const char* value) { m_localProfileIdHasBeenSet = true; m_localProfileId.assign(value); }
-    inline CreateAgreementRequest& WithLocalProfileId(const Aws::String& value) { SetLocalProfileId(value); return *this;}
-    inline CreateAgreementRequest& WithLocalProfileId(Aws::String&& value) { SetLocalProfileId(std::move(value)); return *this;}
-    inline CreateAgreementRequest& WithLocalProfileId(const char* value) { SetLocalProfileId(value); return *this;}
+    template<typename LocalProfileIdT = Aws::String>
+    void SetLocalProfileId(LocalProfileIdT&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::forward<LocalProfileIdT>(value); }
+    template<typename LocalProfileIdT = Aws::String>
+    CreateAgreementRequest& WithLocalProfileId(LocalProfileIdT&& value) { SetLocalProfileId(std::forward<LocalProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the partner profile used in the agreement.</p>
      */
-    inline const Aws::String& GetPartnerProfileId() const{ return m_partnerProfileId; }
+    inline const Aws::String& GetPartnerProfileId() const { return m_partnerProfileId; }
     inline bool PartnerProfileIdHasBeenSet() const { return m_partnerProfileIdHasBeenSet; }
-    inline void SetPartnerProfileId(const Aws::String& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = value; }
-    inline void SetPartnerProfileId(Aws::String&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::move(value); }
-    inline void SetPartnerProfileId(const char* value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId.assign(value); }
-    inline CreateAgreementRequest& WithPartnerProfileId(const Aws::String& value) { SetPartnerProfileId(value); return *this;}
-    inline CreateAgreementRequest& WithPartnerProfileId(Aws::String&& value) { SetPartnerProfileId(std::move(value)); return *this;}
-    inline CreateAgreementRequest& WithPartnerProfileId(const char* value) { SetPartnerProfileId(value); return *this;}
+    template<typename PartnerProfileIdT = Aws::String>
+    void SetPartnerProfileId(PartnerProfileIdT&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::forward<PartnerProfileIdT>(value); }
+    template<typename PartnerProfileIdT = Aws::String>
+    CreateAgreementRequest& WithPartnerProfileId(PartnerProfileIdT&& value) { SetPartnerProfileId(std::forward<PartnerProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,12 @@ namespace Model
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
      * <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
      */
-    inline const Aws::String& GetBaseDirectory() const{ return m_baseDirectory; }
+    inline const Aws::String& GetBaseDirectory() const { return m_baseDirectory; }
     inline bool BaseDirectoryHasBeenSet() const { return m_baseDirectoryHasBeenSet; }
-    inline void SetBaseDirectory(const Aws::String& value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory = value; }
-    inline void SetBaseDirectory(Aws::String&& value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory = std::move(value); }
-    inline void SetBaseDirectory(const char* value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory.assign(value); }
-    inline CreateAgreementRequest& WithBaseDirectory(const Aws::String& value) { SetBaseDirectory(value); return *this;}
-    inline CreateAgreementRequest& WithBaseDirectory(Aws::String&& value) { SetBaseDirectory(std::move(value)); return *this;}
-    inline CreateAgreementRequest& WithBaseDirectory(const char* value) { SetBaseDirectory(value); return *this;}
+    template<typename BaseDirectoryT = Aws::String>
+    void SetBaseDirectory(BaseDirectoryT&& value) { m_baseDirectoryHasBeenSet = true; m_baseDirectory = std::forward<BaseDirectoryT>(value); }
+    template<typename BaseDirectoryT = Aws::String>
+    CreateAgreementRequest& WithBaseDirectory(BaseDirectoryT&& value) { SetBaseDirectory(std::forward<BaseDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +130,12 @@ namespace Model
      * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
      * Manager.</p>
      */
-    inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
+    inline const Aws::String& GetAccessRole() const { return m_accessRole; }
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
-    inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
-    inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
-    inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
-    inline CreateAgreementRequest& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
-    inline CreateAgreementRequest& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
-    inline CreateAgreementRequest& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
+    template<typename AccessRoleT = Aws::String>
+    void SetAccessRole(AccessRoleT&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::forward<AccessRoleT>(value); }
+    template<typename AccessRoleT = Aws::String>
+    CreateAgreementRequest& WithAccessRole(AccessRoleT&& value) { SetAccessRole(std::forward<AccessRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,26 +143,24 @@ namespace Model
      * <p>The status of the agreement. The agreement can be either <code>ACTIVE</code>
      * or <code>INACTIVE</code>.</p>
      */
-    inline const AgreementStatusType& GetStatus() const{ return m_status; }
+    inline AgreementStatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AgreementStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AgreementStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CreateAgreementRequest& WithStatus(const AgreementStatusType& value) { SetStatus(value); return *this;}
-    inline CreateAgreementRequest& WithStatus(AgreementStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AgreementStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateAgreementRequest& WithStatus(AgreementStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs that can be used to group and search for agreements.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAgreementRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAgreementRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAgreementRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAgreementRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAgreementRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAgreementRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,12 +174,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File
      * names and locations</a>.</p> </li> </ul>
      */
-    inline const PreserveFilenameType& GetPreserveFilename() const{ return m_preserveFilename; }
+    inline PreserveFilenameType GetPreserveFilename() const { return m_preserveFilename; }
     inline bool PreserveFilenameHasBeenSet() const { return m_preserveFilenameHasBeenSet; }
-    inline void SetPreserveFilename(const PreserveFilenameType& value) { m_preserveFilenameHasBeenSet = true; m_preserveFilename = value; }
-    inline void SetPreserveFilename(PreserveFilenameType&& value) { m_preserveFilenameHasBeenSet = true; m_preserveFilename = std::move(value); }
-    inline CreateAgreementRequest& WithPreserveFilename(const PreserveFilenameType& value) { SetPreserveFilename(value); return *this;}
-    inline CreateAgreementRequest& WithPreserveFilename(PreserveFilenameType&& value) { SetPreserveFilename(std::move(value)); return *this;}
+    inline void SetPreserveFilename(PreserveFilenameType value) { m_preserveFilenameHasBeenSet = true; m_preserveFilename = value; }
+    inline CreateAgreementRequest& WithPreserveFilename(PreserveFilenameType value) { SetPreserveFilename(value); return *this;}
     ///@}
 
     ///@{
@@ -204,12 +188,10 @@ namespace Model
      * <code>DISABLED</code> (default value): Transfer Family accepts unsigned messages
      * from your trading partner.</p> </li> </ul>
      */
-    inline const EnforceMessageSigningType& GetEnforceMessageSigning() const{ return m_enforceMessageSigning; }
+    inline EnforceMessageSigningType GetEnforceMessageSigning() const { return m_enforceMessageSigning; }
     inline bool EnforceMessageSigningHasBeenSet() const { return m_enforceMessageSigningHasBeenSet; }
-    inline void SetEnforceMessageSigning(const EnforceMessageSigningType& value) { m_enforceMessageSigningHasBeenSet = true; m_enforceMessageSigning = value; }
-    inline void SetEnforceMessageSigning(EnforceMessageSigningType&& value) { m_enforceMessageSigningHasBeenSet = true; m_enforceMessageSigning = std::move(value); }
-    inline CreateAgreementRequest& WithEnforceMessageSigning(const EnforceMessageSigningType& value) { SetEnforceMessageSigning(value); return *this;}
-    inline CreateAgreementRequest& WithEnforceMessageSigning(EnforceMessageSigningType&& value) { SetEnforceMessageSigning(std::move(value)); return *this;}
+    inline void SetEnforceMessageSigning(EnforceMessageSigningType value) { m_enforceMessageSigningHasBeenSet = true; m_enforceMessageSigning = value; }
+    inline CreateAgreementRequest& WithEnforceMessageSigning(EnforceMessageSigningType value) { SetEnforceMessageSigning(value); return *this;}
     ///@}
 
     ///@{
@@ -220,12 +202,12 @@ namespace Model
      * </li> <li> <p>MDN files</p> </li> <li> <p>Payload files</p> </li> <li> <p>Status
      * files</p> </li> <li> <p>Temporary files</p> </li> </ul>
      */
-    inline const CustomDirectoriesType& GetCustomDirectories() const{ return m_customDirectories; }
+    inline const CustomDirectoriesType& GetCustomDirectories() const { return m_customDirectories; }
     inline bool CustomDirectoriesHasBeenSet() const { return m_customDirectoriesHasBeenSet; }
-    inline void SetCustomDirectories(const CustomDirectoriesType& value) { m_customDirectoriesHasBeenSet = true; m_customDirectories = value; }
-    inline void SetCustomDirectories(CustomDirectoriesType&& value) { m_customDirectoriesHasBeenSet = true; m_customDirectories = std::move(value); }
-    inline CreateAgreementRequest& WithCustomDirectories(const CustomDirectoriesType& value) { SetCustomDirectories(value); return *this;}
-    inline CreateAgreementRequest& WithCustomDirectories(CustomDirectoriesType&& value) { SetCustomDirectories(std::move(value)); return *this;}
+    template<typename CustomDirectoriesT = CustomDirectoriesType>
+    void SetCustomDirectories(CustomDirectoriesT&& value) { m_customDirectoriesHasBeenSet = true; m_customDirectories = std::forward<CustomDirectoriesT>(value); }
+    template<typename CustomDirectoriesT = CustomDirectoriesType>
+    CreateAgreementRequest& WithCustomDirectories(CustomDirectoriesT&& value) { SetCustomDirectories(std::forward<CustomDirectoriesT>(value)); return *this;}
     ///@}
   private:
 
@@ -247,16 +229,16 @@ namespace Model
     Aws::String m_accessRole;
     bool m_accessRoleHasBeenSet = false;
 
-    AgreementStatusType m_status;
+    AgreementStatusType m_status{AgreementStatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    PreserveFilenameType m_preserveFilename;
+    PreserveFilenameType m_preserveFilename{PreserveFilenameType::NOT_SET};
     bool m_preserveFilenameHasBeenSet = false;
 
-    EnforceMessageSigningType m_enforceMessageSigning;
+    EnforceMessageSigningType m_enforceMessageSigning{EnforceMessageSigningType::NOT_SET};
     bool m_enforceMessageSigningHasBeenSet = false;
 
     CustomDirectoriesType m_customDirectories;

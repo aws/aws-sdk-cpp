@@ -30,7 +30,7 @@ namespace Model
   class ContainerInstanceDetails
   {
   public:
-    AWS_GUARDDUTY_API ContainerInstanceDetails();
+    AWS_GUARDDUTY_API ContainerInstanceDetails() = default;
     AWS_GUARDDUTY_API ContainerInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ContainerInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Represents the nodes in the Amazon ECS cluster that has a
      * <code>HEALTHY</code> coverage status.</p>
      */
-    inline long long GetCoveredContainerInstances() const{ return m_coveredContainerInstances; }
+    inline long long GetCoveredContainerInstances() const { return m_coveredContainerInstances; }
     inline bool CoveredContainerInstancesHasBeenSet() const { return m_coveredContainerInstancesHasBeenSet; }
     inline void SetCoveredContainerInstances(long long value) { m_coveredContainerInstancesHasBeenSet = true; m_coveredContainerInstances = value; }
     inline ContainerInstanceDetails& WithCoveredContainerInstances(long long value) { SetCoveredContainerInstances(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>Represents total number of nodes in the Amazon ECS cluster.</p>
      */
-    inline long long GetCompatibleContainerInstances() const{ return m_compatibleContainerInstances; }
+    inline long long GetCompatibleContainerInstances() const { return m_compatibleContainerInstances; }
     inline bool CompatibleContainerInstancesHasBeenSet() const { return m_compatibleContainerInstancesHasBeenSet; }
     inline void SetCompatibleContainerInstances(long long value) { m_compatibleContainerInstancesHasBeenSet = true; m_compatibleContainerInstances = value; }
     inline ContainerInstanceDetails& WithCompatibleContainerInstances(long long value) { SetCompatibleContainerInstances(value); return *this;}
     ///@}
   private:
 
-    long long m_coveredContainerInstances;
+    long long m_coveredContainerInstances{0};
     bool m_coveredContainerInstancesHasBeenSet = false;
 
-    long long m_compatibleContainerInstances;
+    long long m_compatibleContainerInstances{0};
     bool m_compatibleContainerInstancesHasBeenSet = false;
   };
 

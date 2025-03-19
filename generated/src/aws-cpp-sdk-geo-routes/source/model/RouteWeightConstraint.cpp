@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteWeightConstraint::RouteWeightConstraint() : 
-    m_type(RouteWeightConstraintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 RouteWeightConstraint::RouteWeightConstraint(JsonView jsonValue)
-  : RouteWeightConstraint()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteWeightConstraint& RouteWeightConstraint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RouteWeightConstraintTypeMapper::GetRouteWeightConstraintTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInt64("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

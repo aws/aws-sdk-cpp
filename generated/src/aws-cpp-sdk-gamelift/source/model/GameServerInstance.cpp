@@ -18,17 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameServerInstance::GameServerInstance() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_gameServerGroupArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStatus(GameServerInstanceStatus::NOT_SET),
-    m_instanceStatusHasBeenSet(false)
-{
-}
-
 GameServerInstance::GameServerInstance(JsonView jsonValue)
-  : GameServerInstance()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GameServerInstance& GameServerInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GameServerGroupName"))
   {
     m_gameServerGroupName = jsonValue.GetString("GameServerGroupName");
-
     m_gameServerGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameServerGroupArn"))
   {
     m_gameServerGroupArn = jsonValue.GetString("GameServerGroupArn");
-
     m_gameServerGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceStatus"))
   {
     m_instanceStatus = GameServerInstanceStatusMapper::GetGameServerInstanceStatusForName(jsonValue.GetString("InstanceStatus"));
-
     m_instanceStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

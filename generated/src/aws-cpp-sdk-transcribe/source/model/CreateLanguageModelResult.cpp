@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLanguageModelResult::CreateLanguageModelResult() : 
-    m_languageCode(CLMLanguageCode::NOT_SET),
-    m_baseModelName(BaseModelName::NOT_SET),
-    m_modelStatus(ModelStatus::NOT_SET)
-{
-}
-
 CreateLanguageModelResult::CreateLanguageModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateLanguageModelResult()
 {
   *this = result;
 }
@@ -36,39 +28,35 @@ CreateLanguageModelResult& CreateLanguageModelResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = CLMLanguageCodeMapper::GetCLMLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
+    m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseModelName"))
   {
     m_baseModelName = BaseModelNameMapper::GetBaseModelNameForName(jsonValue.GetString("BaseModelName"));
-
+    m_baseModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
+    m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
-
+    m_inputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelStatus"))
   {
     m_modelStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("ModelStatus"));
-
+    m_modelStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFindingAggregationsResult::ListFindingAggregationsResult() : 
-    m_aggregationType(AggregationType::NOT_SET)
-{
-}
-
 ListFindingAggregationsResult::ListFindingAggregationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListFindingAggregationsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListFindingAggregationsResult& ListFindingAggregationsResult::operator =(const A
   if(jsonValue.ValueExists("aggregationType"))
   {
     m_aggregationType = AggregationTypeMapper::GetAggregationTypeForName(jsonValue.GetString("aggregationType"));
-
+    m_aggregationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responses"))
   {
     Aws::Utils::Array<JsonView> responsesJsonList = jsonValue.GetArray("responses");
@@ -50,14 +42,15 @@ ListFindingAggregationsResult& ListFindingAggregationsResult::operator =(const A
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());
     }
+    m_responsesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

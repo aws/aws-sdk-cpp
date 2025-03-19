@@ -20,21 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-CustomizedMetricSpecification::CustomizedMetricSpecification() : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statistic(MetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 CustomizedMetricSpecification::CustomizedMetricSpecification(const XmlNode& xmlNode)
-  : CustomizedMetricSpecification()
 {
   *this = xmlNode;
 }
@@ -61,6 +47,7 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
@@ -72,7 +59,7 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = MetricStatisticMapper::GetMetricStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = MetricStatisticMapper::GetMetricStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
@@ -91,6 +78,7 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);

@@ -28,7 +28,7 @@ namespace Model
   class GetConnectAttachmentResult
   {
   public:
-    AWS_NETWORKMANAGER_API GetConnectAttachmentResult();
+    AWS_NETWORKMANAGER_API GetConnectAttachmentResult() = default;
     AWS_NETWORKMANAGER_API GetConnectAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API GetConnectAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the Connect attachment.</p>
      */
-    inline const ConnectAttachment& GetConnectAttachment() const{ return m_connectAttachment; }
-    inline void SetConnectAttachment(const ConnectAttachment& value) { m_connectAttachment = value; }
-    inline void SetConnectAttachment(ConnectAttachment&& value) { m_connectAttachment = std::move(value); }
-    inline GetConnectAttachmentResult& WithConnectAttachment(const ConnectAttachment& value) { SetConnectAttachment(value); return *this;}
-    inline GetConnectAttachmentResult& WithConnectAttachment(ConnectAttachment&& value) { SetConnectAttachment(std::move(value)); return *this;}
+    inline const ConnectAttachment& GetConnectAttachment() const { return m_connectAttachment; }
+    template<typename ConnectAttachmentT = ConnectAttachment>
+    void SetConnectAttachment(ConnectAttachmentT&& value) { m_connectAttachmentHasBeenSet = true; m_connectAttachment = std::forward<ConnectAttachmentT>(value); }
+    template<typename ConnectAttachmentT = ConnectAttachment>
+    GetConnectAttachmentResult& WithConnectAttachment(ConnectAttachmentT&& value) { SetConnectAttachment(std::forward<ConnectAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConnectAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConnectAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConnectAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConnectAttachmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConnectAttachment m_connectAttachment;
+    bool m_connectAttachmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

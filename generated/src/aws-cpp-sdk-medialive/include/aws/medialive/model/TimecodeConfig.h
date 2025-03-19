@@ -31,7 +31,7 @@ namespace Model
   class TimecodeConfig
   {
   public:
-    AWS_MEDIALIVE_API TimecodeConfig();
+    AWS_MEDIALIVE_API TimecodeConfig() = default;
     AWS_MEDIALIVE_API TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
 -Start at 0 (zerobased): The time of the first frame of the event
      * will be 00:00:00:00.
      */
-    inline const TimecodeConfigSource& GetSource() const{ return m_source; }
+    inline TimecodeConfigSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const TimecodeConfigSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(TimecodeConfigSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline TimecodeConfig& WithSource(const TimecodeConfigSource& value) { SetSource(value); return *this;}
-    inline TimecodeConfig& WithSource(TimecodeConfigSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(TimecodeConfigSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline TimecodeConfig& WithSource(TimecodeConfigSource value) { SetSource(value); return *this;}
     ///@}
 
     ///@{
@@ -64,17 +62,17 @@ namespace Model
      * discontinuities in the output timecode. No timecode sync when this is not
      * specified.
      */
-    inline int GetSyncThreshold() const{ return m_syncThreshold; }
+    inline int GetSyncThreshold() const { return m_syncThreshold; }
     inline bool SyncThresholdHasBeenSet() const { return m_syncThresholdHasBeenSet; }
     inline void SetSyncThreshold(int value) { m_syncThresholdHasBeenSet = true; m_syncThreshold = value; }
     inline TimecodeConfig& WithSyncThreshold(int value) { SetSyncThreshold(value); return *this;}
     ///@}
   private:
 
-    TimecodeConfigSource m_source;
+    TimecodeConfigSource m_source{TimecodeConfigSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
-    int m_syncThreshold;
+    int m_syncThreshold{0};
     bool m_syncThresholdHasBeenSet = false;
   };
 

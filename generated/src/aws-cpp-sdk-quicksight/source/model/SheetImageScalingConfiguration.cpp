@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetImageScalingConfiguration::SheetImageScalingConfiguration() : 
-    m_scalingType(SheetImageScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false)
-{
-}
-
 SheetImageScalingConfiguration::SheetImageScalingConfiguration(JsonView jsonValue)
-  : SheetImageScalingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SheetImageScalingConfiguration& SheetImageScalingConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("ScalingType"))
   {
     m_scalingType = SheetImageScalingTypeMapper::GetSheetImageScalingTypeForName(jsonValue.GetString("ScalingType"));
-
     m_scalingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

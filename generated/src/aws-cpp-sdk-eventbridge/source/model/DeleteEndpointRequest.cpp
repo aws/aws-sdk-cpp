@@ -12,11 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEndpointRequest::DeleteEndpointRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace Translate
 namespace Model
 {
 
-ParallelDataConfig::ParallelDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_format(ParallelDataFormat::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 ParallelDataConfig::ParallelDataConfig(JsonView jsonValue)
-  : ParallelDataConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ParallelDataConfig& ParallelDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = ParallelDataFormatMapper::GetParallelDataFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class MonitorSummary
   {
   public:
-    AWS_NETWORKMONITOR_API MonitorSummary();
+    AWS_NETWORKMONITOR_API MonitorSummary() = default;
     AWS_NETWORKMONITOR_API MonitorSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMONITOR_API MonitorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The ARN of the monitor.</p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-    inline MonitorSummary& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline MonitorSummary& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline MonitorSummary& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    MonitorSummary& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the monitor.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline MonitorSummary& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline MonitorSummary& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline MonitorSummary& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    MonitorSummary& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the monitor.</p>
      */
-    inline const MonitorState& GetState() const{ return m_state; }
+    inline MonitorState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const MonitorState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(MonitorState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline MonitorSummary& WithState(const MonitorState& value) { SetState(value); return *this;}
-    inline MonitorSummary& WithState(MonitorState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(MonitorState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline MonitorSummary& WithState(MonitorState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +78,7 @@ namespace Model
      * <p>The time, in seconds, that metrics are collected and sent to Amazon
      * CloudWatch. Valid values are either <code>30</code> or <code>60</code>.</p>
      */
-    inline long long GetAggregationPeriod() const{ return m_aggregationPeriod; }
+    inline long long GetAggregationPeriod() const { return m_aggregationPeriod; }
     inline bool AggregationPeriodHasBeenSet() const { return m_aggregationPeriodHasBeenSet; }
     inline void SetAggregationPeriod(long long value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = value; }
     inline MonitorSummary& WithAggregationPeriod(long long value) { SetAggregationPeriod(value); return *this;}
@@ -94,19 +88,16 @@ namespace Model
     /**
      * <p>The list of key-value pairs assigned to the monitor.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline MonitorSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline MonitorSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline MonitorSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline MonitorSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline MonitorSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline MonitorSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline MonitorSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline MonitorSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline MonitorSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    MonitorSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    MonitorSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -116,10 +107,10 @@ namespace Model
     Aws::String m_monitorName;
     bool m_monitorNameHasBeenSet = false;
 
-    MonitorState m_state;
+    MonitorState m_state{MonitorState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    long long m_aggregationPeriod;
+    long long m_aggregationPeriod{0};
     bool m_aggregationPeriodHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

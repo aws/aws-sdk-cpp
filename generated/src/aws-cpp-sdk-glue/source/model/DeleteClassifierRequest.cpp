@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClassifierRequest::DeleteClassifierRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

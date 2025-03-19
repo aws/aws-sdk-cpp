@@ -26,7 +26,7 @@ namespace Model
   class ListFilteredTransactionEventsRequest : public ManagedBlockchainQueryRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsRequest();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The blockchain network where the transaction occurred.</p> <p>Valid Values:
      * <code>BITCOIN_MAINNET</code> | <code>BITCOIN_TESTNET</code> </p>
      */
-    inline const Aws::String& GetNetwork() const{ return m_network; }
+    inline const Aws::String& GetNetwork() const { return m_network; }
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    inline void SetNetwork(const Aws::String& value) { m_networkHasBeenSet = true; m_network = value; }
-    inline void SetNetwork(Aws::String&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-    inline void SetNetwork(const char* value) { m_networkHasBeenSet = true; m_network.assign(value); }
-    inline ListFilteredTransactionEventsRequest& WithNetwork(const Aws::String& value) { SetNetwork(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithNetwork(Aws::String&& value) { SetNetwork(std::move(value)); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithNetwork(const char* value) { SetNetwork(value); return *this;}
+    template<typename NetworkT = Aws::String>
+    void SetNetwork(NetworkT&& value) { m_networkHasBeenSet = true; m_network = std::forward<NetworkT>(value); }
+    template<typename NetworkT = Aws::String>
+    ListFilteredTransactionEventsRequest& WithNetwork(NetworkT&& value) { SetNetwork(std::forward<NetworkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>This is the unique public address on the blockchain for which the transaction
      * events are being requested.</p>
      */
-    inline const AddressIdentifierFilter& GetAddressIdentifierFilter() const{ return m_addressIdentifierFilter; }
+    inline const AddressIdentifierFilter& GetAddressIdentifierFilter() const { return m_addressIdentifierFilter; }
     inline bool AddressIdentifierFilterHasBeenSet() const { return m_addressIdentifierFilterHasBeenSet; }
-    inline void SetAddressIdentifierFilter(const AddressIdentifierFilter& value) { m_addressIdentifierFilterHasBeenSet = true; m_addressIdentifierFilter = value; }
-    inline void SetAddressIdentifierFilter(AddressIdentifierFilter&& value) { m_addressIdentifierFilterHasBeenSet = true; m_addressIdentifierFilter = std::move(value); }
-    inline ListFilteredTransactionEventsRequest& WithAddressIdentifierFilter(const AddressIdentifierFilter& value) { SetAddressIdentifierFilter(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithAddressIdentifierFilter(AddressIdentifierFilter&& value) { SetAddressIdentifierFilter(std::move(value)); return *this;}
+    template<typename AddressIdentifierFilterT = AddressIdentifierFilter>
+    void SetAddressIdentifierFilter(AddressIdentifierFilterT&& value) { m_addressIdentifierFilterHasBeenSet = true; m_addressIdentifierFilter = std::forward<AddressIdentifierFilterT>(value); }
+    template<typename AddressIdentifierFilterT = AddressIdentifierFilter>
+    ListFilteredTransactionEventsRequest& WithAddressIdentifierFilter(AddressIdentifierFilterT&& value) { SetAddressIdentifierFilter(std::forward<AddressIdentifierFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,12 @@ namespace Model
      * <p>This container specifies the time frame for the transaction events returned
      * in the response.</p>
      */
-    inline const TimeFilter& GetTimeFilter() const{ return m_timeFilter; }
+    inline const TimeFilter& GetTimeFilter() const { return m_timeFilter; }
     inline bool TimeFilterHasBeenSet() const { return m_timeFilterHasBeenSet; }
-    inline void SetTimeFilter(const TimeFilter& value) { m_timeFilterHasBeenSet = true; m_timeFilter = value; }
-    inline void SetTimeFilter(TimeFilter&& value) { m_timeFilterHasBeenSet = true; m_timeFilter = std::move(value); }
-    inline ListFilteredTransactionEventsRequest& WithTimeFilter(const TimeFilter& value) { SetTimeFilter(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithTimeFilter(TimeFilter&& value) { SetTimeFilter(std::move(value)); return *this;}
+    template<typename TimeFilterT = TimeFilter>
+    void SetTimeFilter(TimeFilterT&& value) { m_timeFilterHasBeenSet = true; m_timeFilter = std::forward<TimeFilterT>(value); }
+    template<typename TimeFilterT = TimeFilter>
+    ListFilteredTransactionEventsRequest& WithTimeFilter(TimeFilterT&& value) { SetTimeFilter(std::forward<TimeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,48 +81,46 @@ namespace Model
      * <p>This container specifies filtering attributes related to BITCOIN_VOUT event
      * types</p>
      */
-    inline const VoutFilter& GetVoutFilter() const{ return m_voutFilter; }
+    inline const VoutFilter& GetVoutFilter() const { return m_voutFilter; }
     inline bool VoutFilterHasBeenSet() const { return m_voutFilterHasBeenSet; }
-    inline void SetVoutFilter(const VoutFilter& value) { m_voutFilterHasBeenSet = true; m_voutFilter = value; }
-    inline void SetVoutFilter(VoutFilter&& value) { m_voutFilterHasBeenSet = true; m_voutFilter = std::move(value); }
-    inline ListFilteredTransactionEventsRequest& WithVoutFilter(const VoutFilter& value) { SetVoutFilter(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithVoutFilter(VoutFilter&& value) { SetVoutFilter(std::move(value)); return *this;}
+    template<typename VoutFilterT = VoutFilter>
+    void SetVoutFilter(VoutFilterT&& value) { m_voutFilterHasBeenSet = true; m_voutFilter = std::forward<VoutFilterT>(value); }
+    template<typename VoutFilterT = VoutFilter>
+    ListFilteredTransactionEventsRequest& WithVoutFilter(VoutFilterT&& value) { SetVoutFilter(std::forward<VoutFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConfirmationStatusFilter& GetConfirmationStatusFilter() const{ return m_confirmationStatusFilter; }
+    inline const ConfirmationStatusFilter& GetConfirmationStatusFilter() const { return m_confirmationStatusFilter; }
     inline bool ConfirmationStatusFilterHasBeenSet() const { return m_confirmationStatusFilterHasBeenSet; }
-    inline void SetConfirmationStatusFilter(const ConfirmationStatusFilter& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = value; }
-    inline void SetConfirmationStatusFilter(ConfirmationStatusFilter&& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = std::move(value); }
-    inline ListFilteredTransactionEventsRequest& WithConfirmationStatusFilter(const ConfirmationStatusFilter& value) { SetConfirmationStatusFilter(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithConfirmationStatusFilter(ConfirmationStatusFilter&& value) { SetConfirmationStatusFilter(std::move(value)); return *this;}
+    template<typename ConfirmationStatusFilterT = ConfirmationStatusFilter>
+    void SetConfirmationStatusFilter(ConfirmationStatusFilterT&& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = std::forward<ConfirmationStatusFilterT>(value); }
+    template<typename ConfirmationStatusFilterT = ConfirmationStatusFilter>
+    ListFilteredTransactionEventsRequest& WithConfirmationStatusFilter(ConfirmationStatusFilterT&& value) { SetConfirmationStatusFilter(std::forward<ConfirmationStatusFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order by which the results will be sorted.</p>
      */
-    inline const ListFilteredTransactionEventsSort& GetSort() const{ return m_sort; }
+    inline const ListFilteredTransactionEventsSort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const ListFilteredTransactionEventsSort& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(ListFilteredTransactionEventsSort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListFilteredTransactionEventsRequest& WithSort(const ListFilteredTransactionEventsSort& value) { SetSort(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithSort(ListFilteredTransactionEventsSort&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = ListFilteredTransactionEventsSort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = ListFilteredTransactionEventsSort>
+    ListFilteredTransactionEventsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFilteredTransactionEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFilteredTransactionEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFilteredTransactionEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +133,7 @@ namespace Model
      * <code>nextToken</code> is <code>null</code> when there are no more results to
      * return</p> 
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFilteredTransactionEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -165,7 +161,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

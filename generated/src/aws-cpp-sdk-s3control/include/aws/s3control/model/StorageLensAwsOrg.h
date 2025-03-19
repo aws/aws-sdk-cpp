@@ -31,7 +31,7 @@ namespace Model
   class StorageLensAwsOrg
   {
   public:
-    AWS_S3CONTROL_API StorageLensAwsOrg();
+    AWS_S3CONTROL_API StorageLensAwsOrg() = default;
     AWS_S3CONTROL_API StorageLensAwsOrg(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API StorageLensAwsOrg& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
      * </code> </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline StorageLensAwsOrg& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline StorageLensAwsOrg& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline StorageLensAwsOrg& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    StorageLensAwsOrg& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

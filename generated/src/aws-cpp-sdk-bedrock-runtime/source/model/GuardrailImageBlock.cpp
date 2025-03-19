@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailImageBlock::GuardrailImageBlock() : 
-    m_format(GuardrailImageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 GuardrailImageBlock::GuardrailImageBlock(JsonView jsonValue)
-  : GuardrailImageBlock()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GuardrailImageBlock& GuardrailImageBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = GuardrailImageFormatMapper::GetGuardrailImageFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

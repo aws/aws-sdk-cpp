@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFunctionConcurrencyRequest::GetFunctionConcurrencyRequest() : 
-    m_functionNameHasBeenSet(false)
-{
-}
-
 Aws::String GetFunctionConcurrencyRequest::SerializePayload() const
 {
   return {};

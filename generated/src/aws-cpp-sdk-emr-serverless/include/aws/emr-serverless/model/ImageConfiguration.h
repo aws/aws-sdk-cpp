@@ -31,7 +31,7 @@ namespace Model
   class ImageConfiguration
   {
   public:
-    AWS_EMRSERVERLESS_API ImageConfiguration();
+    AWS_EMRSERVERLESS_API ImageConfiguration() = default;
     AWS_EMRSERVERLESS_API ImageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API ImageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The image URI.</p>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline ImageConfiguration& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline ImageConfiguration& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline ImageConfiguration& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    ImageConfiguration& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * application is configured for. The image digest doesn't exist until an
      * application has started.</p>
      */
-    inline const Aws::String& GetResolvedImageDigest() const{ return m_resolvedImageDigest; }
+    inline const Aws::String& GetResolvedImageDigest() const { return m_resolvedImageDigest; }
     inline bool ResolvedImageDigestHasBeenSet() const { return m_resolvedImageDigestHasBeenSet; }
-    inline void SetResolvedImageDigest(const Aws::String& value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest = value; }
-    inline void SetResolvedImageDigest(Aws::String&& value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest = std::move(value); }
-    inline void SetResolvedImageDigest(const char* value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest.assign(value); }
-    inline ImageConfiguration& WithResolvedImageDigest(const Aws::String& value) { SetResolvedImageDigest(value); return *this;}
-    inline ImageConfiguration& WithResolvedImageDigest(Aws::String&& value) { SetResolvedImageDigest(std::move(value)); return *this;}
-    inline ImageConfiguration& WithResolvedImageDigest(const char* value) { SetResolvedImageDigest(value); return *this;}
+    template<typename ResolvedImageDigestT = Aws::String>
+    void SetResolvedImageDigest(ResolvedImageDigestT&& value) { m_resolvedImageDigestHasBeenSet = true; m_resolvedImageDigest = std::forward<ResolvedImageDigestT>(value); }
+    template<typename ResolvedImageDigestT = Aws::String>
+    ImageConfiguration& WithResolvedImageDigest(ResolvedImageDigestT&& value) { SetResolvedImageDigest(std::forward<ResolvedImageDigestT>(value)); return *this;}
     ///@}
   private:
 

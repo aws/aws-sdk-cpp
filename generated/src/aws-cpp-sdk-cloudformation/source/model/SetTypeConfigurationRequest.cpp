@@ -10,16 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-SetTypeConfigurationRequest::SetTypeConfigurationRequest() : 
-    m_typeArnHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_configurationAliasHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String SetTypeConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

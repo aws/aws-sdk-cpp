@@ -12,12 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartFlywheelIterationRequest::StartFlywheelIterationRequest() : 
-    m_flywheelArnHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String StartFlywheelIterationRequest::SerializePayload() const
 {
   JsonValue payload;

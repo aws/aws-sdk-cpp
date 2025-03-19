@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIndexRequest::GetIndexRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIndexRequest::SerializePayload() const
 {
   return {};

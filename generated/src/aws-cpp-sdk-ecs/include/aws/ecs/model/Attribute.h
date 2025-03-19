@@ -37,7 +37,7 @@ namespace Model
   class Attribute
   {
   public:
-    AWS_ECS_API Attribute();
+    AWS_ECS_API Attribute() = default;
     AWS_ECS_API Attribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods
      * (.).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Attribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Attribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Attribute& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Attribute& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * back slashes (\), colons (:), or spaces. The value can't start or end with a
      * space.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Attribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Attribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,10 @@ namespace Model
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
+    inline TargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline Attribute& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline Attribute& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline Attribute& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * <p>The ID of the target. You can specify the short form ID for a resource or the
      * full Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline Attribute& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline Attribute& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline Attribute& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    Attribute& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,7 +106,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetId;

@@ -37,7 +37,7 @@ namespace Model
   class ShadowModeConfig
   {
   public:
-    AWS_SAGEMAKER_API ShadowModeConfig();
+    AWS_SAGEMAKER_API ShadowModeConfig() = default;
     AWS_SAGEMAKER_API ShadowModeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ShadowModeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,26 @@ namespace Model
      * <p> The name of the production variant, which takes all the inference requests.
      * </p>
      */
-    inline const Aws::String& GetSourceModelVariantName() const{ return m_sourceModelVariantName; }
+    inline const Aws::String& GetSourceModelVariantName() const { return m_sourceModelVariantName; }
     inline bool SourceModelVariantNameHasBeenSet() const { return m_sourceModelVariantNameHasBeenSet; }
-    inline void SetSourceModelVariantName(const Aws::String& value) { m_sourceModelVariantNameHasBeenSet = true; m_sourceModelVariantName = value; }
-    inline void SetSourceModelVariantName(Aws::String&& value) { m_sourceModelVariantNameHasBeenSet = true; m_sourceModelVariantName = std::move(value); }
-    inline void SetSourceModelVariantName(const char* value) { m_sourceModelVariantNameHasBeenSet = true; m_sourceModelVariantName.assign(value); }
-    inline ShadowModeConfig& WithSourceModelVariantName(const Aws::String& value) { SetSourceModelVariantName(value); return *this;}
-    inline ShadowModeConfig& WithSourceModelVariantName(Aws::String&& value) { SetSourceModelVariantName(std::move(value)); return *this;}
-    inline ShadowModeConfig& WithSourceModelVariantName(const char* value) { SetSourceModelVariantName(value); return *this;}
+    template<typename SourceModelVariantNameT = Aws::String>
+    void SetSourceModelVariantName(SourceModelVariantNameT&& value) { m_sourceModelVariantNameHasBeenSet = true; m_sourceModelVariantName = std::forward<SourceModelVariantNameT>(value); }
+    template<typename SourceModelVariantNameT = Aws::String>
+    ShadowModeConfig& WithSourceModelVariantName(SourceModelVariantNameT&& value) { SetSourceModelVariantName(std::forward<SourceModelVariantNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of shadow variant configurations.</p>
      */
-    inline const Aws::Vector<ShadowModelVariantConfig>& GetShadowModelVariants() const{ return m_shadowModelVariants; }
+    inline const Aws::Vector<ShadowModelVariantConfig>& GetShadowModelVariants() const { return m_shadowModelVariants; }
     inline bool ShadowModelVariantsHasBeenSet() const { return m_shadowModelVariantsHasBeenSet; }
-    inline void SetShadowModelVariants(const Aws::Vector<ShadowModelVariantConfig>& value) { m_shadowModelVariantsHasBeenSet = true; m_shadowModelVariants = value; }
-    inline void SetShadowModelVariants(Aws::Vector<ShadowModelVariantConfig>&& value) { m_shadowModelVariantsHasBeenSet = true; m_shadowModelVariants = std::move(value); }
-    inline ShadowModeConfig& WithShadowModelVariants(const Aws::Vector<ShadowModelVariantConfig>& value) { SetShadowModelVariants(value); return *this;}
-    inline ShadowModeConfig& WithShadowModelVariants(Aws::Vector<ShadowModelVariantConfig>&& value) { SetShadowModelVariants(std::move(value)); return *this;}
-    inline ShadowModeConfig& AddShadowModelVariants(const ShadowModelVariantConfig& value) { m_shadowModelVariantsHasBeenSet = true; m_shadowModelVariants.push_back(value); return *this; }
-    inline ShadowModeConfig& AddShadowModelVariants(ShadowModelVariantConfig&& value) { m_shadowModelVariantsHasBeenSet = true; m_shadowModelVariants.push_back(std::move(value)); return *this; }
+    template<typename ShadowModelVariantsT = Aws::Vector<ShadowModelVariantConfig>>
+    void SetShadowModelVariants(ShadowModelVariantsT&& value) { m_shadowModelVariantsHasBeenSet = true; m_shadowModelVariants = std::forward<ShadowModelVariantsT>(value); }
+    template<typename ShadowModelVariantsT = Aws::Vector<ShadowModelVariantConfig>>
+    ShadowModeConfig& WithShadowModelVariants(ShadowModelVariantsT&& value) { SetShadowModelVariants(std::forward<ShadowModelVariantsT>(value)); return *this;}
+    template<typename ShadowModelVariantsT = ShadowModelVariantConfig>
+    ShadowModeConfig& AddShadowModelVariants(ShadowModelVariantsT&& value) { m_shadowModelVariantsHasBeenSet = true; m_shadowModelVariants.emplace_back(std::forward<ShadowModelVariantsT>(value)); return *this; }
     ///@}
   private:
 

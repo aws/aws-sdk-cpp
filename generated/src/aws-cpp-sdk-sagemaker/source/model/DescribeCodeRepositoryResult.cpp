@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCodeRepositoryResult::DescribeCodeRepositoryResult()
-{
-}
-
 DescribeCodeRepositoryResult::DescribeCodeRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ DescribeCodeRepositoryResult& DescribeCodeRepositoryResult::operator =(const Aws
   if(jsonValue.ValueExists("CodeRepositoryName"))
   {
     m_codeRepositoryName = jsonValue.GetString("CodeRepositoryName");
-
+    m_codeRepositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeRepositoryArn"))
   {
     m_codeRepositoryArn = jsonValue.GetString("CodeRepositoryArn");
-
+    m_codeRepositoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitConfig"))
   {
     m_gitConfig = jsonValue.GetObject("GitConfig");
-
+    m_gitConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

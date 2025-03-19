@@ -41,7 +41,7 @@ namespace Model
   class TimeAlignmentBoundary
   {
   public:
-    AWS_FORECASTSERVICE_API TimeAlignmentBoundary();
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary() = default;
     AWS_FORECASTSERVICE_API TimeAlignmentBoundary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API TimeAlignmentBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,19 +52,17 @@ namespace Model
      * <p>The month to use for time alignment during aggregation. The month must be in
      * uppercase.</p>
      */
-    inline const Month& GetMonth() const{ return m_month; }
+    inline Month GetMonth() const { return m_month; }
     inline bool MonthHasBeenSet() const { return m_monthHasBeenSet; }
-    inline void SetMonth(const Month& value) { m_monthHasBeenSet = true; m_month = value; }
-    inline void SetMonth(Month&& value) { m_monthHasBeenSet = true; m_month = std::move(value); }
-    inline TimeAlignmentBoundary& WithMonth(const Month& value) { SetMonth(value); return *this;}
-    inline TimeAlignmentBoundary& WithMonth(Month&& value) { SetMonth(std::move(value)); return *this;}
+    inline void SetMonth(Month value) { m_monthHasBeenSet = true; m_month = value; }
+    inline TimeAlignmentBoundary& WithMonth(Month value) { SetMonth(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The day of the month to use for time alignment during aggregation.</p>
      */
-    inline int GetDayOfMonth() const{ return m_dayOfMonth; }
+    inline int GetDayOfMonth() const { return m_dayOfMonth; }
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
     inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
     inline TimeAlignmentBoundary& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
@@ -75,35 +73,33 @@ namespace Model
      * <p>The day of week to use for time alignment during aggregation. The day must be
      * in uppercase.</p>
      */
-    inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline DayOfWeek GetDayOfWeek() const { return m_dayOfWeek; }
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-    inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
-    inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
-    inline TimeAlignmentBoundary& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
-    inline TimeAlignmentBoundary& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
+    inline void SetDayOfWeek(DayOfWeek value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
+    inline TimeAlignmentBoundary& WithDayOfWeek(DayOfWeek value) { SetDayOfWeek(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hour of day to use for time alignment during aggregation.</p>
      */
-    inline int GetHour() const{ return m_hour; }
+    inline int GetHour() const { return m_hour; }
     inline bool HourHasBeenSet() const { return m_hourHasBeenSet; }
     inline void SetHour(int value) { m_hourHasBeenSet = true; m_hour = value; }
     inline TimeAlignmentBoundary& WithHour(int value) { SetHour(value); return *this;}
     ///@}
   private:
 
-    Month m_month;
+    Month m_month{Month::NOT_SET};
     bool m_monthHasBeenSet = false;
 
-    int m_dayOfMonth;
+    int m_dayOfMonth{0};
     bool m_dayOfMonthHasBeenSet = false;
 
-    DayOfWeek m_dayOfWeek;
+    DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
     bool m_dayOfWeekHasBeenSet = false;
 
-    int m_hour;
+    int m_hour{0};
     bool m_hourHasBeenSet = false;
   };
 

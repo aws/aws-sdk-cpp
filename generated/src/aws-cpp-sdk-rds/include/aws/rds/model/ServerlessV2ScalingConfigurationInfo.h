@@ -33,7 +33,7 @@ namespace Model
   class ServerlessV2ScalingConfigurationInfo
   {
   public:
-    AWS_RDS_API ServerlessV2ScalingConfigurationInfo();
+    AWS_RDS_API ServerlessV2ScalingConfigurationInfo() = default;
     AWS_RDS_API ServerlessV2ScalingConfigurationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API ServerlessV2ScalingConfigurationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,7 +50,7 @@ namespace Model
      * 0. For versions that don't support Aurora Serverless v2 auto-pause, the smallest
      * value that you can use is 0.5. </p>
      */
-    inline double GetMinCapacity() const{ return m_minCapacity; }
+    inline double GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(double value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ServerlessV2ScalingConfigurationInfo& WithMinCapacity(double value) { SetMinCapacity(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * increments, such as 32, 32.5, 33, and so on. The largest value that you can use
      * is 256 for recent Aurora versions, or 128 for older versions.</p>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ServerlessV2ScalingConfigurationInfo& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
@@ -79,20 +79,20 @@ namespace Model
      * unless you specify it again. </p> <p>This value ranges between 300 seconds (five
      * minutes) and 86,400 seconds (one day). The default is 300 seconds.</p>
      */
-    inline int GetSecondsUntilAutoPause() const{ return m_secondsUntilAutoPause; }
+    inline int GetSecondsUntilAutoPause() const { return m_secondsUntilAutoPause; }
     inline bool SecondsUntilAutoPauseHasBeenSet() const { return m_secondsUntilAutoPauseHasBeenSet; }
     inline void SetSecondsUntilAutoPause(int value) { m_secondsUntilAutoPauseHasBeenSet = true; m_secondsUntilAutoPause = value; }
     inline ServerlessV2ScalingConfigurationInfo& WithSecondsUntilAutoPause(int value) { SetSecondsUntilAutoPause(value); return *this;}
     ///@}
   private:
 
-    double m_minCapacity;
+    double m_minCapacity{0.0};
     bool m_minCapacityHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
 
-    int m_secondsUntilAutoPause;
+    int m_secondsUntilAutoPause{0};
     bool m_secondsUntilAutoPauseHasBeenSet = false;
   };
 

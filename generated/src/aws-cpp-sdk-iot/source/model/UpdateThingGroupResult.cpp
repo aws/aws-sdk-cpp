@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateThingGroupResult::UpdateThingGroupResult() : 
-    m_version(0)
-{
-}
-
 UpdateThingGroupResult::UpdateThingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateThingGroupResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ UpdateThingGroupResult& UpdateThingGroupResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");
-
+    m_versionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

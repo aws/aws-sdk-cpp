@@ -21,7 +21,7 @@ namespace Model
   class DescribeCampaignRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DescribeCampaignRequest();
+    AWS_PERSONALIZE_API DescribeCampaignRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the campaign.</p>
      */
-    inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
+    inline const Aws::String& GetCampaignArn() const { return m_campaignArn; }
     inline bool CampaignArnHasBeenSet() const { return m_campaignArnHasBeenSet; }
-    inline void SetCampaignArn(const Aws::String& value) { m_campaignArnHasBeenSet = true; m_campaignArn = value; }
-    inline void SetCampaignArn(Aws::String&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::move(value); }
-    inline void SetCampaignArn(const char* value) { m_campaignArnHasBeenSet = true; m_campaignArn.assign(value); }
-    inline DescribeCampaignRequest& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-    inline DescribeCampaignRequest& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-    inline DescribeCampaignRequest& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    template<typename CampaignArnT = Aws::String>
+    void SetCampaignArn(CampaignArnT&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::forward<CampaignArnT>(value); }
+    template<typename CampaignArnT = Aws::String>
+    DescribeCampaignRequest& WithCampaignArn(CampaignArnT&& value) { SetCampaignArn(std::forward<CampaignArnT>(value)); return *this;}
     ///@}
   private:
 

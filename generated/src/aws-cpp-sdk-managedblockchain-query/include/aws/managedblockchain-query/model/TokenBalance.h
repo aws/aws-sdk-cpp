@@ -34,7 +34,7 @@ namespace Model
   class TokenBalance
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API TokenBalance();
+    AWS_MANAGEDBLOCKCHAINQUERY_API TokenBalance() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API TokenBalance(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API TokenBalance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The container for the identifier of the owner.</p>
      */
-    inline const OwnerIdentifier& GetOwnerIdentifier() const{ return m_ownerIdentifier; }
+    inline const OwnerIdentifier& GetOwnerIdentifier() const { return m_ownerIdentifier; }
     inline bool OwnerIdentifierHasBeenSet() const { return m_ownerIdentifierHasBeenSet; }
-    inline void SetOwnerIdentifier(const OwnerIdentifier& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = value; }
-    inline void SetOwnerIdentifier(OwnerIdentifier&& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = std::move(value); }
-    inline TokenBalance& WithOwnerIdentifier(const OwnerIdentifier& value) { SetOwnerIdentifier(value); return *this;}
-    inline TokenBalance& WithOwnerIdentifier(OwnerIdentifier&& value) { SetOwnerIdentifier(std::move(value)); return *this;}
+    template<typename OwnerIdentifierT = OwnerIdentifier>
+    void SetOwnerIdentifier(OwnerIdentifierT&& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = std::forward<OwnerIdentifierT>(value); }
+    template<typename OwnerIdentifierT = OwnerIdentifier>
+    TokenBalance& WithOwnerIdentifier(OwnerIdentifierT&& value) { SetOwnerIdentifier(std::forward<OwnerIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,26 +57,24 @@ namespace Model
      * <p>The identifier for the token, including the unique token ID and its
      * blockchain network.</p>
      */
-    inline const TokenIdentifier& GetTokenIdentifier() const{ return m_tokenIdentifier; }
+    inline const TokenIdentifier& GetTokenIdentifier() const { return m_tokenIdentifier; }
     inline bool TokenIdentifierHasBeenSet() const { return m_tokenIdentifierHasBeenSet; }
-    inline void SetTokenIdentifier(const TokenIdentifier& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = value; }
-    inline void SetTokenIdentifier(TokenIdentifier&& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = std::move(value); }
-    inline TokenBalance& WithTokenIdentifier(const TokenIdentifier& value) { SetTokenIdentifier(value); return *this;}
-    inline TokenBalance& WithTokenIdentifier(TokenIdentifier&& value) { SetTokenIdentifier(std::move(value)); return *this;}
+    template<typename TokenIdentifierT = TokenIdentifier>
+    void SetTokenIdentifier(TokenIdentifierT&& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = std::forward<TokenIdentifierT>(value); }
+    template<typename TokenIdentifierT = TokenIdentifier>
+    TokenBalance& WithTokenIdentifier(TokenIdentifierT&& value) { SetTokenIdentifier(std::forward<TokenIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container of the token balance.</p>
      */
-    inline const Aws::String& GetBalance() const{ return m_balance; }
+    inline const Aws::String& GetBalance() const { return m_balance; }
     inline bool BalanceHasBeenSet() const { return m_balanceHasBeenSet; }
-    inline void SetBalance(const Aws::String& value) { m_balanceHasBeenSet = true; m_balance = value; }
-    inline void SetBalance(Aws::String&& value) { m_balanceHasBeenSet = true; m_balance = std::move(value); }
-    inline void SetBalance(const char* value) { m_balanceHasBeenSet = true; m_balance.assign(value); }
-    inline TokenBalance& WithBalance(const Aws::String& value) { SetBalance(value); return *this;}
-    inline TokenBalance& WithBalance(Aws::String&& value) { SetBalance(std::move(value)); return *this;}
-    inline TokenBalance& WithBalance(const char* value) { SetBalance(value); return *this;}
+    template<typename BalanceT = Aws::String>
+    void SetBalance(BalanceT&& value) { m_balanceHasBeenSet = true; m_balance = std::forward<BalanceT>(value); }
+    template<typename BalanceT = Aws::String>
+    TokenBalance& WithBalance(BalanceT&& value) { SetBalance(std::forward<BalanceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * is not provided in the request.</p>  <p>This time will only be recorded up
      * to the second.</p> 
      */
-    inline const BlockchainInstant& GetAtBlockchainInstant() const{ return m_atBlockchainInstant; }
+    inline const BlockchainInstant& GetAtBlockchainInstant() const { return m_atBlockchainInstant; }
     inline bool AtBlockchainInstantHasBeenSet() const { return m_atBlockchainInstantHasBeenSet; }
-    inline void SetAtBlockchainInstant(const BlockchainInstant& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = value; }
-    inline void SetAtBlockchainInstant(BlockchainInstant&& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = std::move(value); }
-    inline TokenBalance& WithAtBlockchainInstant(const BlockchainInstant& value) { SetAtBlockchainInstant(value); return *this;}
-    inline TokenBalance& WithAtBlockchainInstant(BlockchainInstant&& value) { SetAtBlockchainInstant(std::move(value)); return *this;}
+    template<typename AtBlockchainInstantT = BlockchainInstant>
+    void SetAtBlockchainInstant(AtBlockchainInstantT&& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = std::forward<AtBlockchainInstantT>(value); }
+    template<typename AtBlockchainInstantT = BlockchainInstant>
+    TokenBalance& WithAtBlockchainInstant(AtBlockchainInstantT&& value) { SetAtBlockchainInstant(std::forward<AtBlockchainInstantT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,12 @@ namespace Model
      * <p>The <code>Timestamp</code> of the last transaction at which the balance for
      * the token in the wallet was updated.</p>
      */
-    inline const BlockchainInstant& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const BlockchainInstant& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const BlockchainInstant& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(BlockchainInstant&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline TokenBalance& WithLastUpdatedTime(const BlockchainInstant& value) { SetLastUpdatedTime(value); return *this;}
-    inline TokenBalance& WithLastUpdatedTime(BlockchainInstant&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = BlockchainInstant>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = BlockchainInstant>
+    TokenBalance& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
   private:
 

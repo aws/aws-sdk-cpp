@@ -12,14 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEndpointSettingsRequest::DescribeEndpointSettingsRequest() : 
-    m_engineNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEndpointSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

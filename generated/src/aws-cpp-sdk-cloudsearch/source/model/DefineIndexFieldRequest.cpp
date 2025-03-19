@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DefineIndexFieldRequest::DefineIndexFieldRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_indexFieldHasBeenSet(false)
-{
-}
-
 Aws::String DefineIndexFieldRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class TrustedAdvisorCategorySpecificSummary
   {
   public:
-    AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary();
+    AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary() = default;
     AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The summary information about cost savings for a Trusted Advisor check that
      * is in the Cost Optimizing category.</p>
      */
-    inline const TrustedAdvisorCostOptimizingSummary& GetCostOptimizing() const{ return m_costOptimizing; }
+    inline const TrustedAdvisorCostOptimizingSummary& GetCostOptimizing() const { return m_costOptimizing; }
     inline bool CostOptimizingHasBeenSet() const { return m_costOptimizingHasBeenSet; }
-    inline void SetCostOptimizing(const TrustedAdvisorCostOptimizingSummary& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = value; }
-    inline void SetCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::move(value); }
-    inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(const TrustedAdvisorCostOptimizingSummary& value) { SetCostOptimizing(value); return *this;}
-    inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { SetCostOptimizing(std::move(value)); return *this;}
+    template<typename CostOptimizingT = TrustedAdvisorCostOptimizingSummary>
+    void SetCostOptimizing(CostOptimizingT&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::forward<CostOptimizingT>(value); }
+    template<typename CostOptimizingT = TrustedAdvisorCostOptimizingSummary>
+    TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(CostOptimizingT&& value) { SetCostOptimizing(std::forward<CostOptimizingT>(value)); return *this;}
     ///@}
   private:
 

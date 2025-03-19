@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableConfiguration::PivotTableConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_tableOptionsHasBeenSet(false),
-    m_totalOptionsHasBeenSet(false),
-    m_fieldOptionsHasBeenSet(false),
-    m_paginatedReportOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 PivotTableConfiguration::PivotTableConfiguration(JsonView jsonValue)
-  : PivotTableConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ PivotTableConfiguration& PivotTableConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableOptions"))
   {
     m_tableOptions = jsonValue.GetObject("TableOptions");
-
     m_tableOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalOptions"))
   {
     m_totalOptions = jsonValue.GetObject("TotalOptions");
-
     m_totalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldOptions"))
   {
     m_fieldOptions = jsonValue.GetObject("FieldOptions");
-
     m_fieldOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaginatedReportOptions"))
   {
     m_paginatedReportOptions = jsonValue.GetObject("PaginatedReportOptions");
-
     m_paginatedReportOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

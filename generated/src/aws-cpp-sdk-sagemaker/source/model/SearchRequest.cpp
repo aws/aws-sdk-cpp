@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchRequest::SearchRequest() : 
-    m_resource(ResourceType::NOT_SET),
-    m_resourceHasBeenSet(false),
-    m_searchExpressionHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SearchSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_crossAccountFilterOption(CrossAccountFilterOption::NOT_SET),
-    m_crossAccountFilterOptionHasBeenSet(false),
-    m_visibilityConditionsHasBeenSet(false)
-{
-}
-
 Aws::String SearchRequest::SerializePayload() const
 {
   JsonValue payload;

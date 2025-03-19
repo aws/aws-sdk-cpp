@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftLineageSyncConfigurationOutput::RedshiftLineageSyncConfigurationOutput() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lineageJobIdHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 RedshiftLineageSyncConfigurationOutput::RedshiftLineageSyncConfigurationOutput(JsonView jsonValue)
-  : RedshiftLineageSyncConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RedshiftLineageSyncConfigurationOutput& RedshiftLineageSyncConfigurationOutput::
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineageJobId"))
   {
     m_lineageJobId = jsonValue.GetString("lineageJobId");
-
     m_lineageJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

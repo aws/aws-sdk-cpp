@@ -21,7 +21,7 @@ namespace Model
   class DeleteLicenseConfigurationRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API DeleteLicenseConfigurationRequest();
+    AWS_LICENSEMANAGER_API DeleteLicenseConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>ID of the license configuration.</p>
      */
-    inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
+    inline const Aws::String& GetLicenseConfigurationArn() const { return m_licenseConfigurationArn; }
     inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
-    inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
-    inline void SetLicenseConfigurationArn(Aws::String&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::move(value); }
-    inline void SetLicenseConfigurationArn(const char* value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn.assign(value); }
-    inline DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(const Aws::String& value) { SetLicenseConfigurationArn(value); return *this;}
-    inline DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(Aws::String&& value) { SetLicenseConfigurationArn(std::move(value)); return *this;}
-    inline DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
+    template<typename LicenseConfigurationArnT = Aws::String>
+    void SetLicenseConfigurationArn(LicenseConfigurationArnT&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::forward<LicenseConfigurationArnT>(value); }
+    template<typename LicenseConfigurationArnT = Aws::String>
+    DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(LicenseConfigurationArnT&& value) { SetLicenseConfigurationArn(std::forward<LicenseConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

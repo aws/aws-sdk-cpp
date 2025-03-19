@@ -29,7 +29,7 @@ namespace Model
   class ListTimeSeriesResult
   {
   public:
-    AWS_IOTSITEWISE_API ListTimeSeriesResult();
+    AWS_IOTSITEWISE_API ListTimeSeriesResult() = default;
     AWS_IOTSITEWISE_API ListTimeSeriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API ListTimeSeriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>One or more time series summaries to list.</p>
      */
-    inline const Aws::Vector<TimeSeriesSummary>& GetTimeSeriesSummaries() const{ return m_timeSeriesSummaries; }
-    inline void SetTimeSeriesSummaries(const Aws::Vector<TimeSeriesSummary>& value) { m_timeSeriesSummaries = value; }
-    inline void SetTimeSeriesSummaries(Aws::Vector<TimeSeriesSummary>&& value) { m_timeSeriesSummaries = std::move(value); }
-    inline ListTimeSeriesResult& WithTimeSeriesSummaries(const Aws::Vector<TimeSeriesSummary>& value) { SetTimeSeriesSummaries(value); return *this;}
-    inline ListTimeSeriesResult& WithTimeSeriesSummaries(Aws::Vector<TimeSeriesSummary>&& value) { SetTimeSeriesSummaries(std::move(value)); return *this;}
-    inline ListTimeSeriesResult& AddTimeSeriesSummaries(const TimeSeriesSummary& value) { m_timeSeriesSummaries.push_back(value); return *this; }
-    inline ListTimeSeriesResult& AddTimeSeriesSummaries(TimeSeriesSummary&& value) { m_timeSeriesSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TimeSeriesSummary>& GetTimeSeriesSummaries() const { return m_timeSeriesSummaries; }
+    template<typename TimeSeriesSummariesT = Aws::Vector<TimeSeriesSummary>>
+    void SetTimeSeriesSummaries(TimeSeriesSummariesT&& value) { m_timeSeriesSummariesHasBeenSet = true; m_timeSeriesSummaries = std::forward<TimeSeriesSummariesT>(value); }
+    template<typename TimeSeriesSummariesT = Aws::Vector<TimeSeriesSummary>>
+    ListTimeSeriesResult& WithTimeSeriesSummaries(TimeSeriesSummariesT&& value) { SetTimeSeriesSummaries(std::forward<TimeSeriesSummariesT>(value)); return *this;}
+    template<typename TimeSeriesSummariesT = TimeSeriesSummary>
+    ListTimeSeriesResult& AddTimeSeriesSummaries(TimeSeriesSummariesT&& value) { m_timeSeriesSummariesHasBeenSet = true; m_timeSeriesSummaries.emplace_back(std::forward<TimeSeriesSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTimeSeriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTimeSeriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTimeSeriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTimeSeriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTimeSeriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTimeSeriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTimeSeriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTimeSeriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TimeSeriesSummary> m_timeSeriesSummaries;
+    bool m_timeSeriesSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

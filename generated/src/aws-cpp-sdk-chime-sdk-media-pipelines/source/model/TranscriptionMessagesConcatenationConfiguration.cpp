@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-TranscriptionMessagesConcatenationConfiguration::TranscriptionMessagesConcatenationConfiguration() : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 TranscriptionMessagesConcatenationConfiguration::TranscriptionMessagesConcatenationConfiguration(JsonView jsonValue)
-  : TranscriptionMessagesConcatenationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TranscriptionMessagesConcatenationConfiguration& TranscriptionMessagesConcatenat
   if(jsonValue.ValueExists("State"))
   {
     m_state = ArtifactsConcatenationStateMapper::GetArtifactsConcatenationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

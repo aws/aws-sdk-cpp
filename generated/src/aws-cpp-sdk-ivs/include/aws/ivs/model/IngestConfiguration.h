@@ -39,7 +39,7 @@ namespace Model
   class IngestConfiguration
   {
   public:
-    AWS_IVS_API IngestConfiguration();
+    AWS_IVS_API IngestConfiguration() = default;
     AWS_IVS_API IngestConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API IngestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,24 @@ namespace Model
     /**
      * <p>Encoder settings for audio.</p>
      */
-    inline const AudioConfiguration& GetAudio() const{ return m_audio; }
+    inline const AudioConfiguration& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioConfiguration& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioConfiguration&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline IngestConfiguration& WithAudio(const AudioConfiguration& value) { SetAudio(value); return *this;}
-    inline IngestConfiguration& WithAudio(AudioConfiguration&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioConfiguration>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioConfiguration>
+    IngestConfiguration& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Encoder settings for video.</p>
      */
-    inline const VideoConfiguration& GetVideo() const{ return m_video; }
+    inline const VideoConfiguration& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoConfiguration& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoConfiguration&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline IngestConfiguration& WithVideo(const VideoConfiguration& value) { SetVideo(value); return *this;}
-    inline IngestConfiguration& WithVideo(VideoConfiguration&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = VideoConfiguration>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = VideoConfiguration>
+    IngestConfiguration& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
   private:
 

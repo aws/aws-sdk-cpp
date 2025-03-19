@@ -12,11 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMembershipRequest::DeleteMembershipRequest() : 
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMembershipRequest::SerializePayload() const
 {
   return {};

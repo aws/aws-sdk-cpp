@@ -29,7 +29,7 @@ namespace Model
   class BatchGetMetricsResult
   {
   public:
-    AWS_SAGEMAKERMETRICS_API BatchGetMetricsResult();
+    AWS_SAGEMAKERMETRICS_API BatchGetMetricsResult() = default;
     AWS_SAGEMAKERMETRICS_API BatchGetMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKERMETRICS_API BatchGetMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The results of a query to retrieve training metrics from SageMaker.</p>
      */
-    inline const Aws::Vector<MetricQueryResult>& GetMetricQueryResults() const{ return m_metricQueryResults; }
-    inline void SetMetricQueryResults(const Aws::Vector<MetricQueryResult>& value) { m_metricQueryResults = value; }
-    inline void SetMetricQueryResults(Aws::Vector<MetricQueryResult>&& value) { m_metricQueryResults = std::move(value); }
-    inline BatchGetMetricsResult& WithMetricQueryResults(const Aws::Vector<MetricQueryResult>& value) { SetMetricQueryResults(value); return *this;}
-    inline BatchGetMetricsResult& WithMetricQueryResults(Aws::Vector<MetricQueryResult>&& value) { SetMetricQueryResults(std::move(value)); return *this;}
-    inline BatchGetMetricsResult& AddMetricQueryResults(const MetricQueryResult& value) { m_metricQueryResults.push_back(value); return *this; }
-    inline BatchGetMetricsResult& AddMetricQueryResults(MetricQueryResult&& value) { m_metricQueryResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricQueryResult>& GetMetricQueryResults() const { return m_metricQueryResults; }
+    template<typename MetricQueryResultsT = Aws::Vector<MetricQueryResult>>
+    void SetMetricQueryResults(MetricQueryResultsT&& value) { m_metricQueryResultsHasBeenSet = true; m_metricQueryResults = std::forward<MetricQueryResultsT>(value); }
+    template<typename MetricQueryResultsT = Aws::Vector<MetricQueryResult>>
+    BatchGetMetricsResult& WithMetricQueryResults(MetricQueryResultsT&& value) { SetMetricQueryResults(std::forward<MetricQueryResultsT>(value)); return *this;}
+    template<typename MetricQueryResultsT = MetricQueryResult>
+    BatchGetMetricsResult& AddMetricQueryResults(MetricQueryResultsT&& value) { m_metricQueryResultsHasBeenSet = true; m_metricQueryResults.emplace_back(std::forward<MetricQueryResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MetricQueryResult> m_metricQueryResults;
+    bool m_metricQueryResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkspaceImageRequest::DeleteWorkspaceImageRequest() : 
-    m_imageIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkspaceImageRequest::SerializePayload() const
 {
   JsonValue payload;

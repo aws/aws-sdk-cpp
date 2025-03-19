@@ -32,7 +32,7 @@ namespace Model
   class AthenaSourceConfig
   {
   public:
-    AWS_LOOKOUTMETRICS_API AthenaSourceConfig();
+    AWS_LOOKOUTMETRICS_API AthenaSourceConfig() = default;
     AWS_LOOKOUTMETRICS_API AthenaSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API AthenaSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,96 +43,84 @@ namespace Model
      * <p>An IAM role that gives Amazon Lookout for Metrics permission to access the
      * data.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AthenaSourceConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AthenaSourceConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AthenaSourceConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AthenaSourceConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database's name.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline AthenaSourceConfig& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline AthenaSourceConfig& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline AthenaSourceConfig& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    AthenaSourceConfig& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database's data catalog.</p>
      */
-    inline const Aws::String& GetDataCatalog() const{ return m_dataCatalog; }
+    inline const Aws::String& GetDataCatalog() const { return m_dataCatalog; }
     inline bool DataCatalogHasBeenSet() const { return m_dataCatalogHasBeenSet; }
-    inline void SetDataCatalog(const Aws::String& value) { m_dataCatalogHasBeenSet = true; m_dataCatalog = value; }
-    inline void SetDataCatalog(Aws::String&& value) { m_dataCatalogHasBeenSet = true; m_dataCatalog = std::move(value); }
-    inline void SetDataCatalog(const char* value) { m_dataCatalogHasBeenSet = true; m_dataCatalog.assign(value); }
-    inline AthenaSourceConfig& WithDataCatalog(const Aws::String& value) { SetDataCatalog(value); return *this;}
-    inline AthenaSourceConfig& WithDataCatalog(Aws::String&& value) { SetDataCatalog(std::move(value)); return *this;}
-    inline AthenaSourceConfig& WithDataCatalog(const char* value) { SetDataCatalog(value); return *this;}
+    template<typename DataCatalogT = Aws::String>
+    void SetDataCatalog(DataCatalogT&& value) { m_dataCatalogHasBeenSet = true; m_dataCatalog = std::forward<DataCatalogT>(value); }
+    template<typename DataCatalogT = Aws::String>
+    AthenaSourceConfig& WithDataCatalog(DataCatalogT&& value) { SetDataCatalog(std::forward<DataCatalogT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database's table name.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline AthenaSourceConfig& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline AthenaSourceConfig& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline AthenaSourceConfig& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    AthenaSourceConfig& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database's work group name.</p>
      */
-    inline const Aws::String& GetWorkGroupName() const{ return m_workGroupName; }
+    inline const Aws::String& GetWorkGroupName() const { return m_workGroupName; }
     inline bool WorkGroupNameHasBeenSet() const { return m_workGroupNameHasBeenSet; }
-    inline void SetWorkGroupName(const Aws::String& value) { m_workGroupNameHasBeenSet = true; m_workGroupName = value; }
-    inline void SetWorkGroupName(Aws::String&& value) { m_workGroupNameHasBeenSet = true; m_workGroupName = std::move(value); }
-    inline void SetWorkGroupName(const char* value) { m_workGroupNameHasBeenSet = true; m_workGroupName.assign(value); }
-    inline AthenaSourceConfig& WithWorkGroupName(const Aws::String& value) { SetWorkGroupName(value); return *this;}
-    inline AthenaSourceConfig& WithWorkGroupName(Aws::String&& value) { SetWorkGroupName(std::move(value)); return *this;}
-    inline AthenaSourceConfig& WithWorkGroupName(const char* value) { SetWorkGroupName(value); return *this;}
+    template<typename WorkGroupNameT = Aws::String>
+    void SetWorkGroupName(WorkGroupNameT&& value) { m_workGroupNameHasBeenSet = true; m_workGroupName = std::forward<WorkGroupNameT>(value); }
+    template<typename WorkGroupNameT = Aws::String>
+    AthenaSourceConfig& WithWorkGroupName(WorkGroupNameT&& value) { SetWorkGroupName(std::forward<WorkGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database's results path.</p>
      */
-    inline const Aws::String& GetS3ResultsPath() const{ return m_s3ResultsPath; }
+    inline const Aws::String& GetS3ResultsPath() const { return m_s3ResultsPath; }
     inline bool S3ResultsPathHasBeenSet() const { return m_s3ResultsPathHasBeenSet; }
-    inline void SetS3ResultsPath(const Aws::String& value) { m_s3ResultsPathHasBeenSet = true; m_s3ResultsPath = value; }
-    inline void SetS3ResultsPath(Aws::String&& value) { m_s3ResultsPathHasBeenSet = true; m_s3ResultsPath = std::move(value); }
-    inline void SetS3ResultsPath(const char* value) { m_s3ResultsPathHasBeenSet = true; m_s3ResultsPath.assign(value); }
-    inline AthenaSourceConfig& WithS3ResultsPath(const Aws::String& value) { SetS3ResultsPath(value); return *this;}
-    inline AthenaSourceConfig& WithS3ResultsPath(Aws::String&& value) { SetS3ResultsPath(std::move(value)); return *this;}
-    inline AthenaSourceConfig& WithS3ResultsPath(const char* value) { SetS3ResultsPath(value); return *this;}
+    template<typename S3ResultsPathT = Aws::String>
+    void SetS3ResultsPath(S3ResultsPathT&& value) { m_s3ResultsPathHasBeenSet = true; m_s3ResultsPath = std::forward<S3ResultsPathT>(value); }
+    template<typename S3ResultsPathT = Aws::String>
+    AthenaSourceConfig& WithS3ResultsPath(S3ResultsPathT&& value) { SetS3ResultsPath(std::forward<S3ResultsPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings for backtest mode.</p>
      */
-    inline const BackTestConfiguration& GetBackTestConfiguration() const{ return m_backTestConfiguration; }
+    inline const BackTestConfiguration& GetBackTestConfiguration() const { return m_backTestConfiguration; }
     inline bool BackTestConfigurationHasBeenSet() const { return m_backTestConfigurationHasBeenSet; }
-    inline void SetBackTestConfiguration(const BackTestConfiguration& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = value; }
-    inline void SetBackTestConfiguration(BackTestConfiguration&& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = std::move(value); }
-    inline AthenaSourceConfig& WithBackTestConfiguration(const BackTestConfiguration& value) { SetBackTestConfiguration(value); return *this;}
-    inline AthenaSourceConfig& WithBackTestConfiguration(BackTestConfiguration&& value) { SetBackTestConfiguration(std::move(value)); return *this;}
+    template<typename BackTestConfigurationT = BackTestConfiguration>
+    void SetBackTestConfiguration(BackTestConfigurationT&& value) { m_backTestConfigurationHasBeenSet = true; m_backTestConfiguration = std::forward<BackTestConfigurationT>(value); }
+    template<typename BackTestConfigurationT = BackTestConfiguration>
+    AthenaSourceConfig& WithBackTestConfiguration(BackTestConfigurationT&& value) { SetBackTestConfiguration(std::forward<BackTestConfigurationT>(value)); return *this;}
     ///@}
   private:
 

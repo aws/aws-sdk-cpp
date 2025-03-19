@@ -12,13 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLayoutRequest::CreateLayoutRequest() : 
-    m_contentHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateLayoutRequest::SerializePayload() const
 {
   JsonValue payload;

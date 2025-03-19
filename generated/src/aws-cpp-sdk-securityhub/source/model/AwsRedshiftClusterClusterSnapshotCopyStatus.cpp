@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCopyStatus() : 
-    m_destinationRegionHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_snapshotCopyGrantNameHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterClusterSnapshotCopyStatus::AwsRedshiftClusterClusterSnapshotCopyStatus(JsonView jsonValue)
-  : AwsRedshiftClusterClusterSnapshotCopyStatus()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsRedshiftClusterClusterSnapshotCopyStatus& AwsRedshiftClusterClusterSnapshotCo
   if(jsonValue.ValueExists("DestinationRegion"))
   {
     m_destinationRegion = jsonValue.GetString("DestinationRegion");
-
     m_destinationRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManualSnapshotRetentionPeriod"))
   {
     m_manualSnapshotRetentionPeriod = jsonValue.GetInteger("ManualSnapshotRetentionPeriod");
-
     m_manualSnapshotRetentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriod"))
   {
     m_retentionPeriod = jsonValue.GetInteger("RetentionPeriod");
-
     m_retentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotCopyGrantName"))
   {
     m_snapshotCopyGrantName = jsonValue.GetString("SnapshotCopyGrantName");
-
     m_snapshotCopyGrantNameHasBeenSet = true;
   }
-
   return *this;
 }
 

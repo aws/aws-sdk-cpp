@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOfferingPromotionsRequest::ListOfferingPromotionsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListOfferingPromotionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class HttpGatewayRoute
   {
   public:
-    AWS_APPMESH_API HttpGatewayRoute();
+    AWS_APPMESH_API HttpGatewayRoute() = default;
     AWS_APPMESH_API HttpGatewayRoute(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API HttpGatewayRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>An object that represents the action to take if a match is determined.</p>
      */
-    inline const HttpGatewayRouteAction& GetAction() const{ return m_action; }
+    inline const HttpGatewayRouteAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const HttpGatewayRouteAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(HttpGatewayRouteAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline HttpGatewayRoute& WithAction(const HttpGatewayRouteAction& value) { SetAction(value); return *this;}
-    inline HttpGatewayRoute& WithAction(HttpGatewayRouteAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = HttpGatewayRouteAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = HttpGatewayRouteAction>
+    HttpGatewayRoute& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents the criteria for determining a request match.</p>
      */
-    inline const HttpGatewayRouteMatch& GetMatch() const{ return m_match; }
+    inline const HttpGatewayRouteMatch& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const HttpGatewayRouteMatch& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(HttpGatewayRouteMatch&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline HttpGatewayRoute& WithMatch(const HttpGatewayRouteMatch& value) { SetMatch(value); return *this;}
-    inline HttpGatewayRoute& WithMatch(HttpGatewayRouteMatch&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = HttpGatewayRouteMatch>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = HttpGatewayRouteMatch>
+    HttpGatewayRoute& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
   private:
 

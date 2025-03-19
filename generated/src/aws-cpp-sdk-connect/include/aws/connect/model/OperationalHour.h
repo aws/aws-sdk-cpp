@@ -32,7 +32,7 @@ namespace Model
   class OperationalHour
   {
   public:
-    AWS_CONNECT_API OperationalHour();
+    AWS_CONNECT_API OperationalHour() = default;
     AWS_CONNECT_API OperationalHour(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API OperationalHour& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The start time that your contact center opens.</p>
      */
-    inline const OverrideTimeSlice& GetStart() const{ return m_start; }
+    inline const OverrideTimeSlice& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const OverrideTimeSlice& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(OverrideTimeSlice&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline OperationalHour& WithStart(const OverrideTimeSlice& value) { SetStart(value); return *this;}
-    inline OperationalHour& WithStart(OverrideTimeSlice&& value) { SetStart(std::move(value)); return *this;}
+    template<typename StartT = OverrideTimeSlice>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = OverrideTimeSlice>
+    OperationalHour& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time that your contact center closes.</p>
      */
-    inline const OverrideTimeSlice& GetEnd() const{ return m_end; }
+    inline const OverrideTimeSlice& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const OverrideTimeSlice& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(OverrideTimeSlice&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline OperationalHour& WithEnd(const OverrideTimeSlice& value) { SetEnd(value); return *this;}
-    inline OperationalHour& WithEnd(OverrideTimeSlice&& value) { SetEnd(std::move(value)); return *this;}
+    template<typename EndT = OverrideTimeSlice>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = OverrideTimeSlice>
+    OperationalHour& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
   private:
 

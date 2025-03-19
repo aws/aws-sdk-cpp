@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIntegrationsRequest::ListIntegrationsRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_includeHidden(false),
-    m_includeHiddenHasBeenSet(false)
-{
-}
-
 Aws::String ListIntegrationsRequest::SerializePayload() const
 {
   return {};

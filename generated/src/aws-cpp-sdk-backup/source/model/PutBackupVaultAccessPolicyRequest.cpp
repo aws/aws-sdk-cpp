@@ -12,12 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBackupVaultAccessPolicyRequest::PutBackupVaultAccessPolicyRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutBackupVaultAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

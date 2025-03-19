@@ -18,26 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ConflictMetadata::ConflictMetadata() : 
-    m_filePathHasBeenSet(false),
-    m_fileSizesHasBeenSet(false),
-    m_fileModesHasBeenSet(false),
-    m_objectTypesHasBeenSet(false),
-    m_numberOfConflicts(0),
-    m_numberOfConflictsHasBeenSet(false),
-    m_isBinaryFileHasBeenSet(false),
-    m_contentConflict(false),
-    m_contentConflictHasBeenSet(false),
-    m_fileModeConflict(false),
-    m_fileModeConflictHasBeenSet(false),
-    m_objectTypeConflict(false),
-    m_objectTypeConflictHasBeenSet(false),
-    m_mergeOperationsHasBeenSet(false)
-{
-}
-
 ConflictMetadata::ConflictMetadata(JsonView jsonValue)
-  : ConflictMetadata()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ ConflictMetadata& ConflictMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSizes"))
   {
     m_fileSizes = jsonValue.GetObject("fileSizes");
-
     m_fileSizesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileModes"))
   {
     m_fileModes = jsonValue.GetObject("fileModes");
-
     m_fileModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectTypes"))
   {
     m_objectTypes = jsonValue.GetObject("objectTypes");
-
     m_objectTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfConflicts"))
   {
     m_numberOfConflicts = jsonValue.GetInteger("numberOfConflicts");
-
     m_numberOfConflictsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isBinaryFile"))
   {
     m_isBinaryFile = jsonValue.GetObject("isBinaryFile");
-
     m_isBinaryFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentConflict"))
   {
     m_contentConflict = jsonValue.GetBool("contentConflict");
-
     m_contentConflictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileModeConflict"))
   {
     m_fileModeConflict = jsonValue.GetBool("fileModeConflict");
-
     m_fileModeConflictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectTypeConflict"))
   {
     m_objectTypeConflict = jsonValue.GetBool("objectTypeConflict");
-
     m_objectTypeConflictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeOperations"))
   {
     m_mergeOperations = jsonValue.GetObject("mergeOperations");
-
     m_mergeOperationsHasBeenSet = true;
   }
-
   return *this;
 }
 

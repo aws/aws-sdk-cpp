@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataProtectionSettingsRequest::DeleteDataProtectionSettingsRequest() : 
-    m_dataProtectionSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataProtectionSettingsRequest::SerializePayload() const
 {
   return {};

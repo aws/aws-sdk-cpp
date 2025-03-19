@@ -18,22 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AssetModelPropertySummary::AssetModelPropertySummary() : 
-    m_idHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dataType(PropertyDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataTypeSpecHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_assetModelCompositeModelIdHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 AssetModelPropertySummary::AssetModelPropertySummary(JsonView jsonValue)
-  : AssetModelPropertySummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AssetModelPropertySummary& AssetModelPropertySummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = PropertyDataTypeMapper::GetPropertyDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTypeSpec"))
   {
     m_dataTypeSpec = jsonValue.GetString("dataTypeSpec");
-
     m_dataTypeSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelId"))
   {
     m_assetModelCompositeModelId = jsonValue.GetString("assetModelCompositeModelId");
-
     m_assetModelCompositeModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("path");
@@ -105,7 +74,6 @@ AssetModelPropertySummary& AssetModelPropertySummary::operator =(JsonView jsonVa
     }
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AggregationDetail
   {
   public:
-    AWS_NOTIFICATIONS_API AggregationDetail();
+    AWS_NOTIFICATIONS_API AggregationDetail() = default;
     AWS_NOTIFICATIONS_API AggregationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API AggregationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Properties used to summarize aggregated events.</p>
      */
-    inline const Aws::Vector<SummarizationDimensionDetail>& GetSummarizationDimensions() const{ return m_summarizationDimensions; }
+    inline const Aws::Vector<SummarizationDimensionDetail>& GetSummarizationDimensions() const { return m_summarizationDimensions; }
     inline bool SummarizationDimensionsHasBeenSet() const { return m_summarizationDimensionsHasBeenSet; }
-    inline void SetSummarizationDimensions(const Aws::Vector<SummarizationDimensionDetail>& value) { m_summarizationDimensionsHasBeenSet = true; m_summarizationDimensions = value; }
-    inline void SetSummarizationDimensions(Aws::Vector<SummarizationDimensionDetail>&& value) { m_summarizationDimensionsHasBeenSet = true; m_summarizationDimensions = std::move(value); }
-    inline AggregationDetail& WithSummarizationDimensions(const Aws::Vector<SummarizationDimensionDetail>& value) { SetSummarizationDimensions(value); return *this;}
-    inline AggregationDetail& WithSummarizationDimensions(Aws::Vector<SummarizationDimensionDetail>&& value) { SetSummarizationDimensions(std::move(value)); return *this;}
-    inline AggregationDetail& AddSummarizationDimensions(const SummarizationDimensionDetail& value) { m_summarizationDimensionsHasBeenSet = true; m_summarizationDimensions.push_back(value); return *this; }
-    inline AggregationDetail& AddSummarizationDimensions(SummarizationDimensionDetail&& value) { m_summarizationDimensionsHasBeenSet = true; m_summarizationDimensions.push_back(std::move(value)); return *this; }
+    template<typename SummarizationDimensionsT = Aws::Vector<SummarizationDimensionDetail>>
+    void SetSummarizationDimensions(SummarizationDimensionsT&& value) { m_summarizationDimensionsHasBeenSet = true; m_summarizationDimensions = std::forward<SummarizationDimensionsT>(value); }
+    template<typename SummarizationDimensionsT = Aws::Vector<SummarizationDimensionDetail>>
+    AggregationDetail& WithSummarizationDimensions(SummarizationDimensionsT&& value) { SetSummarizationDimensions(std::forward<SummarizationDimensionsT>(value)); return *this;}
+    template<typename SummarizationDimensionsT = SummarizationDimensionDetail>
+    AggregationDetail& AddSummarizationDimensions(SummarizationDimensionsT&& value) { m_summarizationDimensionsHasBeenSet = true; m_summarizationDimensions.emplace_back(std::forward<SummarizationDimensionsT>(value)); return *this; }
     ///@}
   private:
 

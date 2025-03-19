@@ -33,7 +33,7 @@ namespace Model
   class AddressSummary
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AddressSummary();
+    AWS_PARTNERCENTRALSELLING_API AddressSummary() = default;
     AWS_PARTNERCENTRALSELLING_API AddressSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AddressSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Specifies the end <code>Customer</code>'s city associated with the
      * <code>Opportunity</code>.</p>
      */
-    inline const Aws::String& GetCity() const{ return m_city; }
+    inline const Aws::String& GetCity() const { return m_city; }
     inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
-    inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
-    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = std::move(value); }
-    inline void SetCity(const char* value) { m_cityHasBeenSet = true; m_city.assign(value); }
-    inline AddressSummary& WithCity(const Aws::String& value) { SetCity(value); return *this;}
-    inline AddressSummary& WithCity(Aws::String&& value) { SetCity(std::move(value)); return *this;}
-    inline AddressSummary& WithCity(const char* value) { SetCity(value); return *this;}
+    template<typename CityT = Aws::String>
+    void SetCity(CityT&& value) { m_cityHasBeenSet = true; m_city = std::forward<CityT>(value); }
+    template<typename CityT = Aws::String>
+    AddressSummary& WithCity(CityT&& value) { SetCity(std::forward<CityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>Specifies the end <code>Customer</code>'s country associated with the
      * <code>Opportunity</code>.</p>
      */
-    inline const CountryCode& GetCountryCode() const{ return m_countryCode; }
+    inline CountryCode GetCountryCode() const { return m_countryCode; }
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(const CountryCode& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline void SetCountryCode(CountryCode&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-    inline AddressSummary& WithCountryCode(const CountryCode& value) { SetCountryCode(value); return *this;}
-    inline AddressSummary& WithCountryCode(CountryCode&& value) { SetCountryCode(std::move(value)); return *this;}
+    inline void SetCountryCode(CountryCode value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
+    inline AddressSummary& WithCountryCode(CountryCode value) { SetCountryCode(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>Specifies the end <code>Customer</code>'s postal code associated with the
      * <code>Opportunity</code>.</p>
      */
-    inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
+    inline const Aws::String& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
-    inline void SetPostalCode(const Aws::String& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
-    inline void SetPostalCode(Aws::String&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::move(value); }
-    inline void SetPostalCode(const char* value) { m_postalCodeHasBeenSet = true; m_postalCode.assign(value); }
-    inline AddressSummary& WithPostalCode(const Aws::String& value) { SetPostalCode(value); return *this;}
-    inline AddressSummary& WithPostalCode(Aws::String&& value) { SetPostalCode(std::move(value)); return *this;}
-    inline AddressSummary& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
+    template<typename PostalCodeT = Aws::String>
+    void SetPostalCode(PostalCodeT&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::forward<PostalCodeT>(value); }
+    template<typename PostalCodeT = Aws::String>
+    AddressSummary& WithPostalCode(PostalCodeT&& value) { SetPostalCode(std::forward<PostalCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,21 +91,19 @@ namespace Model
      * Vermont | Virginia | Virgin Islands | Washington | West Virginia | Wisconsin |
      * Wyoming | APO/AE | AFO/FPO | FPO, AP</code> </p>
      */
-    inline const Aws::String& GetStateOrRegion() const{ return m_stateOrRegion; }
+    inline const Aws::String& GetStateOrRegion() const { return m_stateOrRegion; }
     inline bool StateOrRegionHasBeenSet() const { return m_stateOrRegionHasBeenSet; }
-    inline void SetStateOrRegion(const Aws::String& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = value; }
-    inline void SetStateOrRegion(Aws::String&& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = std::move(value); }
-    inline void SetStateOrRegion(const char* value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion.assign(value); }
-    inline AddressSummary& WithStateOrRegion(const Aws::String& value) { SetStateOrRegion(value); return *this;}
-    inline AddressSummary& WithStateOrRegion(Aws::String&& value) { SetStateOrRegion(std::move(value)); return *this;}
-    inline AddressSummary& WithStateOrRegion(const char* value) { SetStateOrRegion(value); return *this;}
+    template<typename StateOrRegionT = Aws::String>
+    void SetStateOrRegion(StateOrRegionT&& value) { m_stateOrRegionHasBeenSet = true; m_stateOrRegion = std::forward<StateOrRegionT>(value); }
+    template<typename StateOrRegionT = Aws::String>
+    AddressSummary& WithStateOrRegion(StateOrRegionT&& value) { SetStateOrRegion(std::forward<StateOrRegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_city;
     bool m_cityHasBeenSet = false;
 
-    CountryCode m_countryCode;
+    CountryCode m_countryCode{CountryCode::NOT_SET};
     bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_postalCode;

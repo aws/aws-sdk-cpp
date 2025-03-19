@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrafficMirrorFilterRule::TrafficMirrorFilterRule() : 
-    m_trafficMirrorFilterRuleIdHasBeenSet(false),
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_trafficDirection(TrafficDirection::NOT_SET),
-    m_trafficDirectionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false),
-    m_ruleAction(TrafficMirrorRuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_protocol(0),
-    m_protocolHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_sourceCidrBlockHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TrafficMirrorFilterRule::TrafficMirrorFilterRule(const XmlNode& xmlNode)
-  : TrafficMirrorFilterRule()
 {
   *this = xmlNode;
 }
@@ -67,7 +46,7 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     XmlNode trafficDirectionNode = resultNode.FirstChild("trafficDirection");
     if(!trafficDirectionNode.IsNull())
     {
-      m_trafficDirection = TrafficDirectionMapper::GetTrafficDirectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficDirectionNode.GetText()).c_str()).c_str());
+      m_trafficDirection = TrafficDirectionMapper::GetTrafficDirectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficDirectionNode.GetText()).c_str()));
       m_trafficDirectionHasBeenSet = true;
     }
     XmlNode ruleNumberNode = resultNode.FirstChild("ruleNumber");
@@ -79,7 +58,7 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     XmlNode ruleActionNode = resultNode.FirstChild("ruleAction");
     if(!ruleActionNode.IsNull())
     {
-      m_ruleAction = TrafficMirrorRuleActionMapper::GetTrafficMirrorRuleActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText()).c_str()).c_str());
+      m_ruleAction = TrafficMirrorRuleActionMapper::GetTrafficMirrorRuleActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText()).c_str()));
       m_ruleActionHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
@@ -122,6 +101,7 @@ TrafficMirrorFilterRule& TrafficMirrorFilterRule::operator =(const XmlNode& xmlN
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

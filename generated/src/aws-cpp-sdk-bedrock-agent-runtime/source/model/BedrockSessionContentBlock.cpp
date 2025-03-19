@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-BedrockSessionContentBlock::BedrockSessionContentBlock() : 
-    m_imageHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 BedrockSessionContentBlock::BedrockSessionContentBlock(JsonView jsonValue)
-  : BedrockSessionContentBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BedrockSessionContentBlock& BedrockSessionContentBlock::operator =(JsonView json
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

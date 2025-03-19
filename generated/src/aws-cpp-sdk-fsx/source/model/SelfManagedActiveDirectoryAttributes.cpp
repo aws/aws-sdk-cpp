@@ -18,17 +18,7 @@ namespace FSx
 namespace Model
 {
 
-SelfManagedActiveDirectoryAttributes::SelfManagedActiveDirectoryAttributes() : 
-    m_domainNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false),
-    m_fileSystemAdministratorsGroupHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
-{
-}
-
 SelfManagedActiveDirectoryAttributes::SelfManagedActiveDirectoryAttributes(JsonView jsonValue)
-  : SelfManagedActiveDirectoryAttributes()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SelfManagedActiveDirectoryAttributes& SelfManagedActiveDirectoryAttributes::oper
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedName"))
   {
     m_organizationalUnitDistinguishedName = jsonValue.GetString("OrganizationalUnitDistinguishedName");
-
     m_organizationalUnitDistinguishedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemAdministratorsGroup"))
   {
     m_fileSystemAdministratorsGroup = jsonValue.GetString("FileSystemAdministratorsGroup");
-
     m_fileSystemAdministratorsGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIps"))
   {
     Aws::Utils::Array<JsonView> dnsIpsJsonList = jsonValue.GetArray("DnsIps");
@@ -72,7 +54,6 @@ SelfManagedActiveDirectoryAttributes& SelfManagedActiveDirectoryAttributes::oper
     }
     m_dnsIpsHasBeenSet = true;
   }
-
   return *this;
 }
 

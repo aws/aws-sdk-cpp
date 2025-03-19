@@ -18,22 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DataSetImportSummary::DataSetImportSummary() : 
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_succeeded(0),
-    m_succeededHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
-{
-}
-
 DataSetImportSummary::DataSetImportSummary(JsonView jsonValue)
-  : DataSetImportSummary()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ DataSetImportSummary& DataSetImportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failed"))
   {
     m_failed = jsonValue.GetInteger("failed");
-
     m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inProgress"))
   {
     m_inProgress = jsonValue.GetInteger("inProgress");
-
     m_inProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pending"))
   {
     m_pending = jsonValue.GetInteger("pending");
-
     m_pendingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("succeeded"))
   {
     m_succeeded = jsonValue.GetInteger("succeeded");
-
     m_succeededHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInteger("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

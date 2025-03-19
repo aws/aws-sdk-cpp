@@ -21,7 +21,7 @@ namespace Model
   class DeleteRouteResponseRequest : public ApiGatewayV2Request
   {
   public:
-    AWS_APIGATEWAYV2_API DeleteRouteResponseRequest();
+    AWS_APIGATEWAYV2_API DeleteRouteResponseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline DeleteRouteResponseRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline DeleteRouteResponseRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline DeleteRouteResponseRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    DeleteRouteResponseRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The route ID.</p>
      */
-    inline const Aws::String& GetRouteId() const{ return m_routeId; }
+    inline const Aws::String& GetRouteId() const { return m_routeId; }
     inline bool RouteIdHasBeenSet() const { return m_routeIdHasBeenSet; }
-    inline void SetRouteId(const Aws::String& value) { m_routeIdHasBeenSet = true; m_routeId = value; }
-    inline void SetRouteId(Aws::String&& value) { m_routeIdHasBeenSet = true; m_routeId = std::move(value); }
-    inline void SetRouteId(const char* value) { m_routeIdHasBeenSet = true; m_routeId.assign(value); }
-    inline DeleteRouteResponseRequest& WithRouteId(const Aws::String& value) { SetRouteId(value); return *this;}
-    inline DeleteRouteResponseRequest& WithRouteId(Aws::String&& value) { SetRouteId(std::move(value)); return *this;}
-    inline DeleteRouteResponseRequest& WithRouteId(const char* value) { SetRouteId(value); return *this;}
+    template<typename RouteIdT = Aws::String>
+    void SetRouteId(RouteIdT&& value) { m_routeIdHasBeenSet = true; m_routeId = std::forward<RouteIdT>(value); }
+    template<typename RouteIdT = Aws::String>
+    DeleteRouteResponseRequest& WithRouteId(RouteIdT&& value) { SetRouteId(std::forward<RouteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The route response ID.</p>
      */
-    inline const Aws::String& GetRouteResponseId() const{ return m_routeResponseId; }
+    inline const Aws::String& GetRouteResponseId() const { return m_routeResponseId; }
     inline bool RouteResponseIdHasBeenSet() const { return m_routeResponseIdHasBeenSet; }
-    inline void SetRouteResponseId(const Aws::String& value) { m_routeResponseIdHasBeenSet = true; m_routeResponseId = value; }
-    inline void SetRouteResponseId(Aws::String&& value) { m_routeResponseIdHasBeenSet = true; m_routeResponseId = std::move(value); }
-    inline void SetRouteResponseId(const char* value) { m_routeResponseIdHasBeenSet = true; m_routeResponseId.assign(value); }
-    inline DeleteRouteResponseRequest& WithRouteResponseId(const Aws::String& value) { SetRouteResponseId(value); return *this;}
-    inline DeleteRouteResponseRequest& WithRouteResponseId(Aws::String&& value) { SetRouteResponseId(std::move(value)); return *this;}
-    inline DeleteRouteResponseRequest& WithRouteResponseId(const char* value) { SetRouteResponseId(value); return *this;}
+    template<typename RouteResponseIdT = Aws::String>
+    void SetRouteResponseId(RouteResponseIdT&& value) { m_routeResponseIdHasBeenSet = true; m_routeResponseId = std::forward<RouteResponseIdT>(value); }
+    template<typename RouteResponseIdT = Aws::String>
+    DeleteRouteResponseRequest& WithRouteResponseId(RouteResponseIdT&& value) { SetRouteResponseId(std::forward<RouteResponseIdT>(value)); return *this;}
     ///@}
   private:
 

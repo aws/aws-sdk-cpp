@@ -18,16 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcEndpointsHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(JsonView jsonValue)
-  : Endpoint()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetString("address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpoints"))
   {
     Aws::Utils::Array<JsonView> vpcEndpointsJsonList = jsonValue.GetArray("vpcEndpoints");
@@ -57,7 +44,6 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_vpcEndpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

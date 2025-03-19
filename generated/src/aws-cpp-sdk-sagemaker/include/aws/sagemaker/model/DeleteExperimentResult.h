@@ -27,7 +27,7 @@ namespace Model
   class DeleteExperimentResult
   {
   public:
-    AWS_SAGEMAKER_API DeleteExperimentResult();
+    AWS_SAGEMAKER_API DeleteExperimentResult() = default;
     AWS_SAGEMAKER_API DeleteExperimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DeleteExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the experiment that is being deleted.</p>
      */
-    inline const Aws::String& GetExperimentArn() const{ return m_experimentArn; }
-    inline void SetExperimentArn(const Aws::String& value) { m_experimentArn = value; }
-    inline void SetExperimentArn(Aws::String&& value) { m_experimentArn = std::move(value); }
-    inline void SetExperimentArn(const char* value) { m_experimentArn.assign(value); }
-    inline DeleteExperimentResult& WithExperimentArn(const Aws::String& value) { SetExperimentArn(value); return *this;}
-    inline DeleteExperimentResult& WithExperimentArn(Aws::String&& value) { SetExperimentArn(std::move(value)); return *this;}
-    inline DeleteExperimentResult& WithExperimentArn(const char* value) { SetExperimentArn(value); return *this;}
+    inline const Aws::String& GetExperimentArn() const { return m_experimentArn; }
+    template<typename ExperimentArnT = Aws::String>
+    void SetExperimentArn(ExperimentArnT&& value) { m_experimentArnHasBeenSet = true; m_experimentArn = std::forward<ExperimentArnT>(value); }
+    template<typename ExperimentArnT = Aws::String>
+    DeleteExperimentResult& WithExperimentArn(ExperimentArnT&& value) { SetExperimentArn(std::forward<ExperimentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteExperimentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteExperimentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteExperimentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteExperimentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_experimentArn;
+    bool m_experimentArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

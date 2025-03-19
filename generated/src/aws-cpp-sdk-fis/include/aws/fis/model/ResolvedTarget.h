@@ -32,7 +32,7 @@ namespace Model
   class ResolvedTarget
   {
   public:
-    AWS_FIS_API ResolvedTarget();
+    AWS_FIS_API ResolvedTarget() = default;
     AWS_FIS_API ResolvedTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ResolvedTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,47 +42,40 @@ namespace Model
     /**
      * <p>The resource type of the target.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ResolvedTarget& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ResolvedTarget& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ResolvedTarget& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ResolvedTarget& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target.</p>
      */
-    inline const Aws::String& GetTargetName() const{ return m_targetName; }
+    inline const Aws::String& GetTargetName() const { return m_targetName; }
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-    inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-    inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-    inline ResolvedTarget& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-    inline ResolvedTarget& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-    inline ResolvedTarget& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+    template<typename TargetNameT = Aws::String>
+    void SetTargetName(TargetNameT&& value) { m_targetNameHasBeenSet = true; m_targetName = std::forward<TargetNameT>(value); }
+    template<typename TargetNameT = Aws::String>
+    ResolvedTarget& WithTargetName(TargetNameT&& value) { SetTargetName(std::forward<TargetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the target.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTargetInformation() const{ return m_targetInformation; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTargetInformation() const { return m_targetInformation; }
     inline bool TargetInformationHasBeenSet() const { return m_targetInformationHasBeenSet; }
-    inline void SetTargetInformation(const Aws::Map<Aws::String, Aws::String>& value) { m_targetInformationHasBeenSet = true; m_targetInformation = value; }
-    inline void SetTargetInformation(Aws::Map<Aws::String, Aws::String>&& value) { m_targetInformationHasBeenSet = true; m_targetInformation = std::move(value); }
-    inline ResolvedTarget& WithTargetInformation(const Aws::Map<Aws::String, Aws::String>& value) { SetTargetInformation(value); return *this;}
-    inline ResolvedTarget& WithTargetInformation(Aws::Map<Aws::String, Aws::String>&& value) { SetTargetInformation(std::move(value)); return *this;}
-    inline ResolvedTarget& AddTargetInformation(const Aws::String& key, const Aws::String& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, value); return *this; }
-    inline ResolvedTarget& AddTargetInformation(Aws::String&& key, const Aws::String& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::move(key), value); return *this; }
-    inline ResolvedTarget& AddTargetInformation(const Aws::String& key, Aws::String&& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, std::move(value)); return *this; }
-    inline ResolvedTarget& AddTargetInformation(Aws::String&& key, Aws::String&& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::move(key), std::move(value)); return *this; }
-    inline ResolvedTarget& AddTargetInformation(const char* key, Aws::String&& value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, std::move(value)); return *this; }
-    inline ResolvedTarget& AddTargetInformation(Aws::String&& key, const char* value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::move(key), value); return *this; }
-    inline ResolvedTarget& AddTargetInformation(const char* key, const char* value) { m_targetInformationHasBeenSet = true; m_targetInformation.emplace(key, value); return *this; }
+    template<typename TargetInformationT = Aws::Map<Aws::String, Aws::String>>
+    void SetTargetInformation(TargetInformationT&& value) { m_targetInformationHasBeenSet = true; m_targetInformation = std::forward<TargetInformationT>(value); }
+    template<typename TargetInformationT = Aws::Map<Aws::String, Aws::String>>
+    ResolvedTarget& WithTargetInformation(TargetInformationT&& value) { SetTargetInformation(std::forward<TargetInformationT>(value)); return *this;}
+    template<typename TargetInformationKeyT = Aws::String, typename TargetInformationValueT = Aws::String>
+    ResolvedTarget& AddTargetInformation(TargetInformationKeyT&& key, TargetInformationValueT&& value) {
+      m_targetInformationHasBeenSet = true; m_targetInformation.emplace(std::forward<TargetInformationKeyT>(key), std::forward<TargetInformationValueT>(value)); return *this;
+    }
     ///@}
   private:
 

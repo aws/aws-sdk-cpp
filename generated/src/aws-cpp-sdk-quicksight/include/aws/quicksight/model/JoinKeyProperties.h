@@ -30,7 +30,7 @@ namespace Model
   class JoinKeyProperties
   {
   public:
-    AWS_QUICKSIGHT_API JoinKeyProperties();
+    AWS_QUICKSIGHT_API JoinKeyProperties() = default;
     AWS_QUICKSIGHT_API JoinKeyProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API JoinKeyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * columns in a join key. This is used by Amazon QuickSight to optimize query
      * performance.</p>
      */
-    inline bool GetUniqueKey() const{ return m_uniqueKey; }
+    inline bool GetUniqueKey() const { return m_uniqueKey; }
     inline bool UniqueKeyHasBeenSet() const { return m_uniqueKeyHasBeenSet; }
     inline void SetUniqueKey(bool value) { m_uniqueKeyHasBeenSet = true; m_uniqueKey = value; }
     inline JoinKeyProperties& WithUniqueKey(bool value) { SetUniqueKey(value); return *this;}
     ///@}
   private:
 
-    bool m_uniqueKey;
+    bool m_uniqueKey{false};
     bool m_uniqueKeyHasBeenSet = false;
   };
 

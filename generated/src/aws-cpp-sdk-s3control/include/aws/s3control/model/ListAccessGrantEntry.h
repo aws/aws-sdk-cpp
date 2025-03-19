@@ -34,7 +34,7 @@ namespace Model
   class ListAccessGrantEntry
   {
   public:
-    AWS_S3CONTROL_API ListAccessGrantEntry();
+    AWS_S3CONTROL_API ListAccessGrantEntry() = default;
     AWS_S3CONTROL_API ListAccessGrantEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ListAccessGrantEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The date and time when you created the S3 Access Grants instance. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ListAccessGrantEntry& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ListAccessGrantEntry& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ListAccessGrantEntry& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +58,24 @@ namespace Model
      * <p>The ID of the access grant. S3 Access Grants auto-generates this ID when you
      * create the access grant.</p>
      */
-    inline const Aws::String& GetAccessGrantId() const{ return m_accessGrantId; }
+    inline const Aws::String& GetAccessGrantId() const { return m_accessGrantId; }
     inline bool AccessGrantIdHasBeenSet() const { return m_accessGrantIdHasBeenSet; }
-    inline void SetAccessGrantId(const Aws::String& value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId = value; }
-    inline void SetAccessGrantId(Aws::String&& value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId = std::move(value); }
-    inline void SetAccessGrantId(const char* value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId.assign(value); }
-    inline ListAccessGrantEntry& WithAccessGrantId(const Aws::String& value) { SetAccessGrantId(value); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantId(Aws::String&& value) { SetAccessGrantId(std::move(value)); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantId(const char* value) { SetAccessGrantId(value); return *this;}
+    template<typename AccessGrantIdT = Aws::String>
+    void SetAccessGrantId(AccessGrantIdT&& value) { m_accessGrantIdHasBeenSet = true; m_accessGrantId = std::forward<AccessGrantIdT>(value); }
+    template<typename AccessGrantIdT = Aws::String>
+    ListAccessGrantEntry& WithAccessGrantId(AccessGrantIdT&& value) { SetAccessGrantId(std::forward<AccessGrantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the access grant. </p>
      */
-    inline const Aws::String& GetAccessGrantArn() const{ return m_accessGrantArn; }
+    inline const Aws::String& GetAccessGrantArn() const { return m_accessGrantArn; }
     inline bool AccessGrantArnHasBeenSet() const { return m_accessGrantArnHasBeenSet; }
-    inline void SetAccessGrantArn(const Aws::String& value) { m_accessGrantArnHasBeenSet = true; m_accessGrantArn = value; }
-    inline void SetAccessGrantArn(Aws::String&& value) { m_accessGrantArnHasBeenSet = true; m_accessGrantArn = std::move(value); }
-    inline void SetAccessGrantArn(const char* value) { m_accessGrantArnHasBeenSet = true; m_accessGrantArn.assign(value); }
-    inline ListAccessGrantEntry& WithAccessGrantArn(const Aws::String& value) { SetAccessGrantArn(value); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantArn(Aws::String&& value) { SetAccessGrantArn(std::move(value)); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantArn(const char* value) { SetAccessGrantArn(value); return *this;}
+    template<typename AccessGrantArnT = Aws::String>
+    void SetAccessGrantArn(AccessGrantArnT&& value) { m_accessGrantArnHasBeenSet = true; m_accessGrantArn = std::forward<AccessGrantArnT>(value); }
+    template<typename AccessGrantArnT = Aws::String>
+    ListAccessGrantEntry& WithAccessGrantArn(AccessGrantArnT&& value) { SetAccessGrantArn(std::forward<AccessGrantArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +86,12 @@ namespace Model
      * instance with your S3 Access Grants instance, the grantee can also be a
      * corporate directory user or group.</p>
      */
-    inline const Grantee& GetGrantee() const{ return m_grantee; }
+    inline const Grantee& GetGrantee() const { return m_grantee; }
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
-    inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
-    inline void SetGrantee(Grantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
-    inline ListAccessGrantEntry& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
-    inline ListAccessGrantEntry& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
+    template<typename GranteeT = Grantee>
+    void SetGrantee(GranteeT&& value) { m_granteeHasBeenSet = true; m_grantee = std::forward<GranteeT>(value); }
+    template<typename GranteeT = Grantee>
+    ListAccessGrantEntry& WithGrantee(GranteeT&& value) { SetGrantee(std::forward<GranteeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +102,10 @@ namespace Model
      * to the S3 data.</p> </li> <li> <p> <code>READWRITE</code> – Grant both read and
      * write access to the S3 data.</p> </li> </ul>
      */
-    inline const Permission& GetPermission() const{ return m_permission; }
+    inline Permission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline ListAccessGrantEntry& WithPermission(const Permission& value) { SetPermission(value); return *this;}
-    inline ListAccessGrantEntry& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(Permission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline ListAccessGrantEntry& WithPermission(Permission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,12 @@ namespace Model
      * the ID <code>default</code> to the default location <code>s3://</code> and
      * assigns an auto-generated ID to other locations that you register. </p>
      */
-    inline const Aws::String& GetAccessGrantsLocationId() const{ return m_accessGrantsLocationId; }
+    inline const Aws::String& GetAccessGrantsLocationId() const { return m_accessGrantsLocationId; }
     inline bool AccessGrantsLocationIdHasBeenSet() const { return m_accessGrantsLocationIdHasBeenSet; }
-    inline void SetAccessGrantsLocationId(const Aws::String& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = value; }
-    inline void SetAccessGrantsLocationId(Aws::String&& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = std::move(value); }
-    inline void SetAccessGrantsLocationId(const char* value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId.assign(value); }
-    inline ListAccessGrantEntry& WithAccessGrantsLocationId(const Aws::String& value) { SetAccessGrantsLocationId(value); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantsLocationId(Aws::String&& value) { SetAccessGrantsLocationId(std::move(value)); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantsLocationId(const char* value) { SetAccessGrantsLocationId(value); return *this;}
+    template<typename AccessGrantsLocationIdT = Aws::String>
+    void SetAccessGrantsLocationId(AccessGrantsLocationIdT&& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = std::forward<AccessGrantsLocationIdT>(value); }
+    template<typename AccessGrantsLocationIdT = Aws::String>
+    ListAccessGrantEntry& WithAccessGrantsLocationId(AccessGrantsLocationIdT&& value) { SetAccessGrantsLocationId(std::forward<AccessGrantsLocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +128,12 @@ namespace Model
      * <p>The configuration options of the grant location. The grant location is the S3
      * path to the data to which you are granting access. </p>
      */
-    inline const AccessGrantsLocationConfiguration& GetAccessGrantsLocationConfiguration() const{ return m_accessGrantsLocationConfiguration; }
+    inline const AccessGrantsLocationConfiguration& GetAccessGrantsLocationConfiguration() const { return m_accessGrantsLocationConfiguration; }
     inline bool AccessGrantsLocationConfigurationHasBeenSet() const { return m_accessGrantsLocationConfigurationHasBeenSet; }
-    inline void SetAccessGrantsLocationConfiguration(const AccessGrantsLocationConfiguration& value) { m_accessGrantsLocationConfigurationHasBeenSet = true; m_accessGrantsLocationConfiguration = value; }
-    inline void SetAccessGrantsLocationConfiguration(AccessGrantsLocationConfiguration&& value) { m_accessGrantsLocationConfigurationHasBeenSet = true; m_accessGrantsLocationConfiguration = std::move(value); }
-    inline ListAccessGrantEntry& WithAccessGrantsLocationConfiguration(const AccessGrantsLocationConfiguration& value) { SetAccessGrantsLocationConfiguration(value); return *this;}
-    inline ListAccessGrantEntry& WithAccessGrantsLocationConfiguration(AccessGrantsLocationConfiguration&& value) { SetAccessGrantsLocationConfiguration(std::move(value)); return *this;}
+    template<typename AccessGrantsLocationConfigurationT = AccessGrantsLocationConfiguration>
+    void SetAccessGrantsLocationConfiguration(AccessGrantsLocationConfigurationT&& value) { m_accessGrantsLocationConfigurationHasBeenSet = true; m_accessGrantsLocationConfiguration = std::forward<AccessGrantsLocationConfigurationT>(value); }
+    template<typename AccessGrantsLocationConfigurationT = AccessGrantsLocationConfiguration>
+    ListAccessGrantEntry& WithAccessGrantsLocationConfiguration(AccessGrantsLocationConfigurationT&& value) { SetAccessGrantsLocationConfiguration(std::forward<AccessGrantsLocationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +141,12 @@ namespace Model
      * <p>The S3 path of the data to which you are granting access. It is the result of
      * appending the <code>Subprefix</code> to the location scope.</p>
      */
-    inline const Aws::String& GetGrantScope() const{ return m_grantScope; }
+    inline const Aws::String& GetGrantScope() const { return m_grantScope; }
     inline bool GrantScopeHasBeenSet() const { return m_grantScopeHasBeenSet; }
-    inline void SetGrantScope(const Aws::String& value) { m_grantScopeHasBeenSet = true; m_grantScope = value; }
-    inline void SetGrantScope(Aws::String&& value) { m_grantScopeHasBeenSet = true; m_grantScope = std::move(value); }
-    inline void SetGrantScope(const char* value) { m_grantScopeHasBeenSet = true; m_grantScope.assign(value); }
-    inline ListAccessGrantEntry& WithGrantScope(const Aws::String& value) { SetGrantScope(value); return *this;}
-    inline ListAccessGrantEntry& WithGrantScope(Aws::String&& value) { SetGrantScope(std::move(value)); return *this;}
-    inline ListAccessGrantEntry& WithGrantScope(const char* value) { SetGrantScope(value); return *this;}
+    template<typename GrantScopeT = Aws::String>
+    void SetGrantScope(GrantScopeT&& value) { m_grantScopeHasBeenSet = true; m_grantScope = std::forward<GrantScopeT>(value); }
+    template<typename GrantScopeT = Aws::String>
+    ListAccessGrantEntry& WithGrantScope(GrantScopeT&& value) { SetGrantScope(std::forward<GrantScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,18 +156,16 @@ namespace Model
      * an application ARN, the grantee can only access the S3 data through this
      * application. </p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline ListAccessGrantEntry& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline ListAccessGrantEntry& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline ListAccessGrantEntry& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    ListAccessGrantEntry& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_accessGrantId;
@@ -189,7 +177,7 @@ namespace Model
     Grantee m_grantee;
     bool m_granteeHasBeenSet = false;
 
-    Permission m_permission;
+    Permission m_permission{Permission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
     Aws::String m_accessGrantsLocationId;

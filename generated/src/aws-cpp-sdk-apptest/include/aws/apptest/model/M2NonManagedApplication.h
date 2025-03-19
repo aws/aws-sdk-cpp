@@ -33,7 +33,7 @@ namespace Model
   class M2NonManagedApplication
   {
   public:
-    AWS_APPTEST_API M2NonManagedApplication();
+    AWS_APPTEST_API M2NonManagedApplication() = default;
     AWS_APPTEST_API M2NonManagedApplication(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2NonManagedApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The VPC endpoint service name of the AWS Mainframe Modernization non-managed
      * application.</p>
      */
-    inline const Aws::String& GetVpcEndpointServiceName() const{ return m_vpcEndpointServiceName; }
+    inline const Aws::String& GetVpcEndpointServiceName() const { return m_vpcEndpointServiceName; }
     inline bool VpcEndpointServiceNameHasBeenSet() const { return m_vpcEndpointServiceNameHasBeenSet; }
-    inline void SetVpcEndpointServiceName(const Aws::String& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = value; }
-    inline void SetVpcEndpointServiceName(Aws::String&& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = std::move(value); }
-    inline void SetVpcEndpointServiceName(const char* value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName.assign(value); }
-    inline M2NonManagedApplication& WithVpcEndpointServiceName(const Aws::String& value) { SetVpcEndpointServiceName(value); return *this;}
-    inline M2NonManagedApplication& WithVpcEndpointServiceName(Aws::String&& value) { SetVpcEndpointServiceName(std::move(value)); return *this;}
-    inline M2NonManagedApplication& WithVpcEndpointServiceName(const char* value) { SetVpcEndpointServiceName(value); return *this;}
+    template<typename VpcEndpointServiceNameT = Aws::String>
+    void SetVpcEndpointServiceName(VpcEndpointServiceNameT&& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = std::forward<VpcEndpointServiceNameT>(value); }
+    template<typename VpcEndpointServiceNameT = Aws::String>
+    M2NonManagedApplication& WithVpcEndpointServiceName(VpcEndpointServiceNameT&& value) { SetVpcEndpointServiceName(std::forward<VpcEndpointServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,26 +57,22 @@ namespace Model
      * <p>The listener port of the AWS Mainframe Modernization non-managed
      * application.</p>
      */
-    inline const Aws::String& GetListenerPort() const{ return m_listenerPort; }
+    inline const Aws::String& GetListenerPort() const { return m_listenerPort; }
     inline bool ListenerPortHasBeenSet() const { return m_listenerPortHasBeenSet; }
-    inline void SetListenerPort(const Aws::String& value) { m_listenerPortHasBeenSet = true; m_listenerPort = value; }
-    inline void SetListenerPort(Aws::String&& value) { m_listenerPortHasBeenSet = true; m_listenerPort = std::move(value); }
-    inline void SetListenerPort(const char* value) { m_listenerPortHasBeenSet = true; m_listenerPort.assign(value); }
-    inline M2NonManagedApplication& WithListenerPort(const Aws::String& value) { SetListenerPort(value); return *this;}
-    inline M2NonManagedApplication& WithListenerPort(Aws::String&& value) { SetListenerPort(std::move(value)); return *this;}
-    inline M2NonManagedApplication& WithListenerPort(const char* value) { SetListenerPort(value); return *this;}
+    template<typename ListenerPortT = Aws::String>
+    void SetListenerPort(ListenerPortT&& value) { m_listenerPortHasBeenSet = true; m_listenerPort = std::forward<ListenerPortT>(value); }
+    template<typename ListenerPortT = Aws::String>
+    M2NonManagedApplication& WithListenerPort(ListenerPortT&& value) { SetListenerPort(std::forward<ListenerPortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime of the AWS Mainframe Modernization non-managed application.</p>
      */
-    inline const M2NonManagedRuntime& GetRuntime() const{ return m_runtime; }
+    inline M2NonManagedRuntime GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const M2NonManagedRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(M2NonManagedRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline M2NonManagedApplication& WithRuntime(const M2NonManagedRuntime& value) { SetRuntime(value); return *this;}
-    inline M2NonManagedApplication& WithRuntime(M2NonManagedRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+    inline void SetRuntime(M2NonManagedRuntime value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline M2NonManagedApplication& WithRuntime(M2NonManagedRuntime value) { SetRuntime(value); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <p>The web application name of the AWS Mainframe Modernization non-managed
      * application.</p>
      */
-    inline const Aws::String& GetWebAppName() const{ return m_webAppName; }
+    inline const Aws::String& GetWebAppName() const { return m_webAppName; }
     inline bool WebAppNameHasBeenSet() const { return m_webAppNameHasBeenSet; }
-    inline void SetWebAppName(const Aws::String& value) { m_webAppNameHasBeenSet = true; m_webAppName = value; }
-    inline void SetWebAppName(Aws::String&& value) { m_webAppNameHasBeenSet = true; m_webAppName = std::move(value); }
-    inline void SetWebAppName(const char* value) { m_webAppNameHasBeenSet = true; m_webAppName.assign(value); }
-    inline M2NonManagedApplication& WithWebAppName(const Aws::String& value) { SetWebAppName(value); return *this;}
-    inline M2NonManagedApplication& WithWebAppName(Aws::String&& value) { SetWebAppName(std::move(value)); return *this;}
-    inline M2NonManagedApplication& WithWebAppName(const char* value) { SetWebAppName(value); return *this;}
+    template<typename WebAppNameT = Aws::String>
+    void SetWebAppName(WebAppNameT&& value) { m_webAppNameHasBeenSet = true; m_webAppName = std::forward<WebAppNameT>(value); }
+    template<typename WebAppNameT = Aws::String>
+    M2NonManagedApplication& WithWebAppName(WebAppNameT&& value) { SetWebAppName(std::forward<WebAppNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +95,7 @@ namespace Model
     Aws::String m_listenerPort;
     bool m_listenerPortHasBeenSet = false;
 
-    M2NonManagedRuntime m_runtime;
+    M2NonManagedRuntime m_runtime{M2NonManagedRuntime::NOT_SET};
     bool m_runtimeHasBeenSet = false;
 
     Aws::String m_webAppName;

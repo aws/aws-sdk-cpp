@@ -18,18 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DirectQueryDataSource::DirectQueryDataSource() : 
-    m_dataSourceNameHasBeenSet(false),
-    m_dataSourceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_openSearchArnsHasBeenSet(false),
-    m_dataSourceArnHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 DirectQueryDataSource::DirectQueryDataSource(JsonView jsonValue)
-  : DirectQueryDataSource()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DirectQueryDataSource& DirectQueryDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSourceName"))
   {
     m_dataSourceName = jsonValue.GetString("DataSourceName");
-
     m_dataSourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceType"))
   {
     m_dataSourceType = jsonValue.GetObject("DataSourceType");
-
     m_dataSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenSearchArns"))
   {
     Aws::Utils::Array<JsonView> openSearchArnsJsonList = jsonValue.GetArray("OpenSearchArns");
@@ -66,14 +49,11 @@ DirectQueryDataSource& DirectQueryDataSource::operator =(JsonView jsonValue)
     }
     m_openSearchArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
-
     m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
@@ -83,7 +63,6 @@ DirectQueryDataSource& DirectQueryDataSource::operator =(JsonView jsonValue)
     }
     m_tagListHasBeenSet = true;
   }
-
   return *this;
 }
 

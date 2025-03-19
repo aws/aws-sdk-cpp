@@ -18,13 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-ResourcePermission::ResourcePermission() : 
-    m_permissionHasBeenSet(false)
-{
-}
-
 ResourcePermission::ResourcePermission(JsonView jsonValue)
-  : ResourcePermission()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourcePermission& ResourcePermission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = jsonValue.GetString("permission");
-
     m_permissionHasBeenSet = true;
   }
-
   return *this;
 }
 

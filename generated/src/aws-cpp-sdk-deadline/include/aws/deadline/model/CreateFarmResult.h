@@ -27,7 +27,7 @@ namespace Model
   class CreateFarmResult
   {
   public:
-    AWS_DEADLINE_API CreateFarmResult();
+    AWS_DEADLINE_API CreateFarmResult() = default;
     AWS_DEADLINE_API CreateFarmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API CreateFarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The farm ID.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
-    inline void SetFarmId(const Aws::String& value) { m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmId.assign(value); }
-    inline CreateFarmResult& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline CreateFarmResult& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline CreateFarmResult& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    CreateFarmResult& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFarmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFarmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFarmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFarmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_farmId;
+    bool m_farmIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

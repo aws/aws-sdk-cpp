@@ -18,13 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-AuditContext::AuditContext() : 
-    m_additionalAuditContextHasBeenSet(false)
-{
-}
-
 AuditContext::AuditContext(JsonView jsonValue)
-  : AuditContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AuditContext& AuditContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdditionalAuditContext"))
   {
     m_additionalAuditContext = jsonValue.GetString("AdditionalAuditContext");
-
     m_additionalAuditContextHasBeenSet = true;
   }
-
   return *this;
 }
 

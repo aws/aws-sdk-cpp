@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-RecordingStreamConfiguration::RecordingStreamConfiguration() : 
-    m_streamArnHasBeenSet(false)
-{
-}
-
 RecordingStreamConfiguration::RecordingStreamConfiguration(JsonView jsonValue)
-  : RecordingStreamConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecordingStreamConfiguration& RecordingStreamConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   return *this;
 }
 

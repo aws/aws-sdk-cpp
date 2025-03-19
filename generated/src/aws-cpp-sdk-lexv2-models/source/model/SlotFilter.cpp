@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotFilter::SlotFilter() : 
-    m_name(SlotFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(SlotFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 SlotFilter::SlotFilter(JsonView jsonValue)
-  : SlotFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ SlotFilter& SlotFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = SlotFilterNameMapper::GetSlotFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -51,14 +39,11 @@ SlotFilter& SlotFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = SlotFilterOperatorMapper::GetSlotFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

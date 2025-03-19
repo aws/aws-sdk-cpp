@@ -12,14 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelRequest::CreateChannelRequest() : 
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;

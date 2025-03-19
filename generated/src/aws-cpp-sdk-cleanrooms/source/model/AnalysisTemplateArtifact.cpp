@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisTemplateArtifact::AnalysisTemplateArtifact() : 
-    m_locationHasBeenSet(false)
-{
-}
-
 AnalysisTemplateArtifact::AnalysisTemplateArtifact(JsonView jsonValue)
-  : AnalysisTemplateArtifact()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisTemplateArtifact& AnalysisTemplateArtifact::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriptionGrantRequest::CreateSubscriptionGrantRequest() : 
-    m_assetTargetNamesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_grantedEntityHasBeenSet(false),
-    m_subscriptionTargetIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubscriptionGrantRequest::SerializePayload() const
 {
   JsonValue payload;

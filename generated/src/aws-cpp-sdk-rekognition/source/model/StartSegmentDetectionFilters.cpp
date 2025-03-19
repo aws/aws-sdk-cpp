@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StartSegmentDetectionFilters::StartSegmentDetectionFilters() : 
-    m_technicalCueFilterHasBeenSet(false),
-    m_shotFilterHasBeenSet(false)
-{
-}
-
 StartSegmentDetectionFilters::StartSegmentDetectionFilters(JsonView jsonValue)
-  : StartSegmentDetectionFilters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StartSegmentDetectionFilters& StartSegmentDetectionFilters::operator =(JsonView 
   if(jsonValue.ValueExists("TechnicalCueFilter"))
   {
     m_technicalCueFilter = jsonValue.GetObject("TechnicalCueFilter");
-
     m_technicalCueFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShotFilter"))
   {
     m_shotFilter = jsonValue.GetObject("ShotFilter");
-
     m_shotFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFlowAssociationResult::GetFlowAssociationResult() : 
-    m_resourceType(FlowAssociationResourceType::NOT_SET)
-{
-}
-
 GetFlowAssociationResult::GetFlowAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetFlowAssociationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetFlowAssociationResult& GetFlowAssociationResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
+    m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowId"))
   {
     m_flowId = jsonValue.GetString("FlowId");
-
+    m_flowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = FlowAssociationResourceTypeMapper::GetFlowAssociationResourceTypeForName(jsonValue.GetString("ResourceType"));
-
+    m_resourceTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

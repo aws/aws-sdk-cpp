@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations() : 
-    m_amazonIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_amazonIdEventTopicHasBeenSet(false)
-{
-}
-
 SidewalkEventNotificationConfigurations::SidewalkEventNotificationConfigurations(JsonView jsonValue)
-  : SidewalkEventNotificationConfigurations()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SidewalkEventNotificationConfigurations& SidewalkEventNotificationConfigurations
   if(jsonValue.ValueExists("AmazonIdEventTopic"))
   {
     m_amazonIdEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("AmazonIdEventTopic"));
-
     m_amazonIdEventTopicHasBeenSet = true;
   }
-
   return *this;
 }
 

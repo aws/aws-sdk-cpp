@@ -33,7 +33,7 @@ namespace Model
   class LocationTimestamp
   {
   public:
-    AWS_IOT_API LocationTimestamp();
+    AWS_IOT_API LocationTimestamp() = default;
     AWS_IOT_API LocationTimestamp(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API LocationTimestamp& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>An expression that returns a long epoch time value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline LocationTimestamp& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline LocationTimestamp& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline LocationTimestamp& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    LocationTimestamp& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <code>MILLISECONDS</code> | <code>MICROSECONDS</code> |
      * <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline LocationTimestamp& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline LocationTimestamp& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline LocationTimestamp& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    LocationTimestamp& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
   private:
 

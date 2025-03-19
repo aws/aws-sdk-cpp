@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DialogCodeHookInvocationSetting::DialogCodeHookInvocationSetting() : 
-    m_enableCodeHookInvocation(false),
-    m_enableCodeHookInvocationHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_invocationLabelHasBeenSet(false),
-    m_postCodeHookSpecificationHasBeenSet(false)
-{
-}
-
 DialogCodeHookInvocationSetting::DialogCodeHookInvocationSetting(JsonView jsonValue)
-  : DialogCodeHookInvocationSetting()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DialogCodeHookInvocationSetting& DialogCodeHookInvocationSetting::operator =(Jso
   if(jsonValue.ValueExists("enableCodeHookInvocation"))
   {
     m_enableCodeHookInvocation = jsonValue.GetBool("enableCodeHookInvocation");
-
     m_enableCodeHookInvocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationLabel"))
   {
     m_invocationLabel = jsonValue.GetString("invocationLabel");
-
     m_invocationLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postCodeHookSpecification"))
   {
     m_postCodeHookSpecification = jsonValue.GetObject("postCodeHookSpecification");
-
     m_postCodeHookSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

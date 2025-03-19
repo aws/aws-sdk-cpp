@@ -12,13 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisconnectUserRequest::DisconnectUserRequest() : 
-    m_roomIdentifierHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String DisconnectUserRequest::SerializePayload() const
 {
   JsonValue payload;

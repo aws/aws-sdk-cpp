@@ -36,7 +36,7 @@ namespace Model
   class MediaStreamOutputConfigurationRequest
   {
   public:
-    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest();
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest() = default;
     AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * The transport parameters that you want to associate with the media stream.
      */
-    inline const Aws::Vector<DestinationConfigurationRequest>& GetDestinationConfigurations() const{ return m_destinationConfigurations; }
+    inline const Aws::Vector<DestinationConfigurationRequest>& GetDestinationConfigurations() const { return m_destinationConfigurations; }
     inline bool DestinationConfigurationsHasBeenSet() const { return m_destinationConfigurationsHasBeenSet; }
-    inline void SetDestinationConfigurations(const Aws::Vector<DestinationConfigurationRequest>& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = value; }
-    inline void SetDestinationConfigurations(Aws::Vector<DestinationConfigurationRequest>&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = std::move(value); }
-    inline MediaStreamOutputConfigurationRequest& WithDestinationConfigurations(const Aws::Vector<DestinationConfigurationRequest>& value) { SetDestinationConfigurations(value); return *this;}
-    inline MediaStreamOutputConfigurationRequest& WithDestinationConfigurations(Aws::Vector<DestinationConfigurationRequest>&& value) { SetDestinationConfigurations(std::move(value)); return *this;}
-    inline MediaStreamOutputConfigurationRequest& AddDestinationConfigurations(const DestinationConfigurationRequest& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations.push_back(value); return *this; }
-    inline MediaStreamOutputConfigurationRequest& AddDestinationConfigurations(DestinationConfigurationRequest&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DestinationConfigurationsT = Aws::Vector<DestinationConfigurationRequest>>
+    void SetDestinationConfigurations(DestinationConfigurationsT&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = std::forward<DestinationConfigurationsT>(value); }
+    template<typename DestinationConfigurationsT = Aws::Vector<DestinationConfigurationRequest>>
+    MediaStreamOutputConfigurationRequest& WithDestinationConfigurations(DestinationConfigurationsT&& value) { SetDestinationConfigurations(std::forward<DestinationConfigurationsT>(value)); return *this;}
+    template<typename DestinationConfigurationsT = DestinationConfigurationRequest>
+    MediaStreamOutputConfigurationRequest& AddDestinationConfigurations(DestinationConfigurationsT&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations.emplace_back(std::forward<DestinationConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,12 +63,10 @@ namespace Model
      * For video, 2110 streams, set the encoding name to raw. For video, JPEG XS
      * streams, set the encoding name to jxsv.
      */
-    inline const EncodingName& GetEncodingName() const{ return m_encodingName; }
+    inline EncodingName GetEncodingName() const { return m_encodingName; }
     inline bool EncodingNameHasBeenSet() const { return m_encodingNameHasBeenSet; }
-    inline void SetEncodingName(const EncodingName& value) { m_encodingNameHasBeenSet = true; m_encodingName = value; }
-    inline void SetEncodingName(EncodingName&& value) { m_encodingNameHasBeenSet = true; m_encodingName = std::move(value); }
-    inline MediaStreamOutputConfigurationRequest& WithEncodingName(const EncodingName& value) { SetEncodingName(value); return *this;}
-    inline MediaStreamOutputConfigurationRequest& WithEncodingName(EncodingName&& value) { SetEncodingName(std::move(value)); return *this;}
+    inline void SetEncodingName(EncodingName value) { m_encodingNameHasBeenSet = true; m_encodingName = value; }
+    inline MediaStreamOutputConfigurationRequest& WithEncodingName(EncodingName value) { SetEncodingName(value); return *this;}
     ///@}
 
     ///@{
@@ -76,33 +74,31 @@ namespace Model
      * A collection of parameters that determine how MediaConnect will convert the
      * content. These fields only apply to outputs on flows that have a CDI source.
      */
-    inline const EncodingParametersRequest& GetEncodingParameters() const{ return m_encodingParameters; }
+    inline const EncodingParametersRequest& GetEncodingParameters() const { return m_encodingParameters; }
     inline bool EncodingParametersHasBeenSet() const { return m_encodingParametersHasBeenSet; }
-    inline void SetEncodingParameters(const EncodingParametersRequest& value) { m_encodingParametersHasBeenSet = true; m_encodingParameters = value; }
-    inline void SetEncodingParameters(EncodingParametersRequest&& value) { m_encodingParametersHasBeenSet = true; m_encodingParameters = std::move(value); }
-    inline MediaStreamOutputConfigurationRequest& WithEncodingParameters(const EncodingParametersRequest& value) { SetEncodingParameters(value); return *this;}
-    inline MediaStreamOutputConfigurationRequest& WithEncodingParameters(EncodingParametersRequest&& value) { SetEncodingParameters(std::move(value)); return *this;}
+    template<typename EncodingParametersT = EncodingParametersRequest>
+    void SetEncodingParameters(EncodingParametersT&& value) { m_encodingParametersHasBeenSet = true; m_encodingParameters = std::forward<EncodingParametersT>(value); }
+    template<typename EncodingParametersT = EncodingParametersRequest>
+    MediaStreamOutputConfigurationRequest& WithEncodingParameters(EncodingParametersT&& value) { SetEncodingParameters(std::forward<EncodingParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the media stream that is associated with the output.
      */
-    inline const Aws::String& GetMediaStreamName() const{ return m_mediaStreamName; }
+    inline const Aws::String& GetMediaStreamName() const { return m_mediaStreamName; }
     inline bool MediaStreamNameHasBeenSet() const { return m_mediaStreamNameHasBeenSet; }
-    inline void SetMediaStreamName(const Aws::String& value) { m_mediaStreamNameHasBeenSet = true; m_mediaStreamName = value; }
-    inline void SetMediaStreamName(Aws::String&& value) { m_mediaStreamNameHasBeenSet = true; m_mediaStreamName = std::move(value); }
-    inline void SetMediaStreamName(const char* value) { m_mediaStreamNameHasBeenSet = true; m_mediaStreamName.assign(value); }
-    inline MediaStreamOutputConfigurationRequest& WithMediaStreamName(const Aws::String& value) { SetMediaStreamName(value); return *this;}
-    inline MediaStreamOutputConfigurationRequest& WithMediaStreamName(Aws::String&& value) { SetMediaStreamName(std::move(value)); return *this;}
-    inline MediaStreamOutputConfigurationRequest& WithMediaStreamName(const char* value) { SetMediaStreamName(value); return *this;}
+    template<typename MediaStreamNameT = Aws::String>
+    void SetMediaStreamName(MediaStreamNameT&& value) { m_mediaStreamNameHasBeenSet = true; m_mediaStreamName = std::forward<MediaStreamNameT>(value); }
+    template<typename MediaStreamNameT = Aws::String>
+    MediaStreamOutputConfigurationRequest& WithMediaStreamName(MediaStreamNameT&& value) { SetMediaStreamName(std::forward<MediaStreamNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DestinationConfigurationRequest> m_destinationConfigurations;
     bool m_destinationConfigurationsHasBeenSet = false;
 
-    EncodingName m_encodingName;
+    EncodingName m_encodingName{EncodingName::NOT_SET};
     bool m_encodingNameHasBeenSet = false;
 
     EncodingParametersRequest m_encodingParameters;

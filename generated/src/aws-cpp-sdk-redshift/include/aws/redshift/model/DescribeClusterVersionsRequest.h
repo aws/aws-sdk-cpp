@@ -24,7 +24,7 @@ namespace Model
   class DescribeClusterVersionsRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeClusterVersionsRequest();
+    AWS_REDSHIFT_API DescribeClusterVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The specific cluster version to return.</p> <p>Example: <code>1.0</code> </p>
      */
-    inline const Aws::String& GetClusterVersion() const{ return m_clusterVersion; }
+    inline const Aws::String& GetClusterVersion() const { return m_clusterVersion; }
     inline bool ClusterVersionHasBeenSet() const { return m_clusterVersionHasBeenSet; }
-    inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
-    inline void SetClusterVersion(Aws::String&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::move(value); }
-    inline void SetClusterVersion(const char* value) { m_clusterVersionHasBeenSet = true; m_clusterVersion.assign(value); }
-    inline DescribeClusterVersionsRequest& WithClusterVersion(const Aws::String& value) { SetClusterVersion(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterVersion(Aws::String&& value) { SetClusterVersion(std::move(value)); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
+    template<typename ClusterVersionT = Aws::String>
+    void SetClusterVersion(ClusterVersionT&& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = std::forward<ClusterVersionT>(value); }
+    template<typename ClusterVersionT = Aws::String>
+    DescribeClusterVersionsRequest& WithClusterVersion(ClusterVersionT&& value) { SetClusterVersion(std::forward<ClusterVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
-    inline const Aws::String& GetClusterParameterGroupFamily() const{ return m_clusterParameterGroupFamily; }
+    inline const Aws::String& GetClusterParameterGroupFamily() const { return m_clusterParameterGroupFamily; }
     inline bool ClusterParameterGroupFamilyHasBeenSet() const { return m_clusterParameterGroupFamilyHasBeenSet; }
-    inline void SetClusterParameterGroupFamily(const Aws::String& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = value; }
-    inline void SetClusterParameterGroupFamily(Aws::String&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = std::move(value); }
-    inline void SetClusterParameterGroupFamily(const char* value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily.assign(value); }
-    inline DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(const Aws::String& value) { SetClusterParameterGroupFamily(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(Aws::String&& value) { SetClusterParameterGroupFamily(std::move(value)); return *this;}
-    inline DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(const char* value) { SetClusterParameterGroupFamily(value); return *this;}
+    template<typename ClusterParameterGroupFamilyT = Aws::String>
+    void SetClusterParameterGroupFamily(ClusterParameterGroupFamilyT&& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = std::forward<ClusterParameterGroupFamilyT>(value); }
+    template<typename ClusterParameterGroupFamilyT = Aws::String>
+    DescribeClusterVersionsRequest& WithClusterParameterGroupFamily(ClusterParameterGroupFamilyT&& value) { SetClusterParameterGroupFamily(std::forward<ClusterParameterGroupFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeClusterVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -94,14 +90,12 @@ namespace Model
      * retrieve the next set of response records by providing the returned marker value
      * in the <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeClusterVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeClusterVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeClusterVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeClusterVersionsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -111,7 +105,7 @@ namespace Model
     Aws::String m_clusterParameterGroupFamily;
     bool m_clusterParameterGroupFamilyHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

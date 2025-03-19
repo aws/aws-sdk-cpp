@@ -33,7 +33,7 @@ namespace Model
   class CloudTrailProperties
   {
   public:
-    AWS_ACCESSANALYZER_API CloudTrailProperties();
+    AWS_ACCESSANALYZER_API CloudTrailProperties() = default;
     AWS_ACCESSANALYZER_API CloudTrailProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API CloudTrailProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A <code>TrailProperties</code> object that contains settings for trail
      * properties.</p>
      */
-    inline const Aws::Vector<TrailProperties>& GetTrailProperties() const{ return m_trailProperties; }
+    inline const Aws::Vector<TrailProperties>& GetTrailProperties() const { return m_trailProperties; }
     inline bool TrailPropertiesHasBeenSet() const { return m_trailPropertiesHasBeenSet; }
-    inline void SetTrailProperties(const Aws::Vector<TrailProperties>& value) { m_trailPropertiesHasBeenSet = true; m_trailProperties = value; }
-    inline void SetTrailProperties(Aws::Vector<TrailProperties>&& value) { m_trailPropertiesHasBeenSet = true; m_trailProperties = std::move(value); }
-    inline CloudTrailProperties& WithTrailProperties(const Aws::Vector<TrailProperties>& value) { SetTrailProperties(value); return *this;}
-    inline CloudTrailProperties& WithTrailProperties(Aws::Vector<TrailProperties>&& value) { SetTrailProperties(std::move(value)); return *this;}
-    inline CloudTrailProperties& AddTrailProperties(const TrailProperties& value) { m_trailPropertiesHasBeenSet = true; m_trailProperties.push_back(value); return *this; }
-    inline CloudTrailProperties& AddTrailProperties(TrailProperties&& value) { m_trailPropertiesHasBeenSet = true; m_trailProperties.push_back(std::move(value)); return *this; }
+    template<typename TrailPropertiesT = Aws::Vector<TrailProperties>>
+    void SetTrailProperties(TrailPropertiesT&& value) { m_trailPropertiesHasBeenSet = true; m_trailProperties = std::forward<TrailPropertiesT>(value); }
+    template<typename TrailPropertiesT = Aws::Vector<TrailProperties>>
+    CloudTrailProperties& WithTrailProperties(TrailPropertiesT&& value) { SetTrailProperties(std::forward<TrailPropertiesT>(value)); return *this;}
+    template<typename TrailPropertiesT = TrailProperties>
+    CloudTrailProperties& AddTrailProperties(TrailPropertiesT&& value) { m_trailPropertiesHasBeenSet = true; m_trailProperties.emplace_back(std::forward<TrailPropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * CloudTrail events. Events with a timestamp before this time are not considered
      * to generate a policy.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CloudTrailProperties& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CloudTrailProperties& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CloudTrailProperties& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,22 +75,22 @@ namespace Model
      * generate a policy. If this is not included in the request, the default value is
      * the current time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline CloudTrailProperties& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline CloudTrailProperties& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    CloudTrailProperties& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrailProperties> m_trailProperties;
     bool m_trailPropertiesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class AwsEventSchemasRegistryDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEventSchemasRegistryDetails();
+    AWS_SECURITYHUB_API AwsEventSchemasRegistryDetails() = default;
     AWS_SECURITYHUB_API AwsEventSchemasRegistryDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEventSchemasRegistryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p> A description of the registry to be created. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AwsEventSchemasRegistryDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AwsEventSchemasRegistryDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsEventSchemasRegistryDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AwsEventSchemasRegistryDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the registry. </p>
      */
-    inline const Aws::String& GetRegistryArn() const{ return m_registryArn; }
+    inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
     inline bool RegistryArnHasBeenSet() const { return m_registryArnHasBeenSet; }
-    inline void SetRegistryArn(const Aws::String& value) { m_registryArnHasBeenSet = true; m_registryArn = value; }
-    inline void SetRegistryArn(Aws::String&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::move(value); }
-    inline void SetRegistryArn(const char* value) { m_registryArnHasBeenSet = true; m_registryArn.assign(value); }
-    inline AwsEventSchemasRegistryDetails& WithRegistryArn(const Aws::String& value) { SetRegistryArn(value); return *this;}
-    inline AwsEventSchemasRegistryDetails& WithRegistryArn(Aws::String&& value) { SetRegistryArn(std::move(value)); return *this;}
-    inline AwsEventSchemasRegistryDetails& WithRegistryArn(const char* value) { SetRegistryArn(value); return *this;}
+    template<typename RegistryArnT = Aws::String>
+    void SetRegistryArn(RegistryArnT&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::forward<RegistryArnT>(value); }
+    template<typename RegistryArnT = Aws::String>
+    AwsEventSchemasRegistryDetails& WithRegistryArn(RegistryArnT&& value) { SetRegistryArn(std::forward<RegistryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the schema registry. </p>
      */
-    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
+    inline const Aws::String& GetRegistryName() const { return m_registryName; }
     inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
-    inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
-    inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
-    inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
-    inline AwsEventSchemasRegistryDetails& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-    inline AwsEventSchemasRegistryDetails& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-    inline AwsEventSchemasRegistryDetails& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    template<typename RegistryNameT = Aws::String>
+    void SetRegistryName(RegistryNameT&& value) { m_registryNameHasBeenSet = true; m_registryName = std::forward<RegistryNameT>(value); }
+    template<typename RegistryNameT = Aws::String>
+    AwsEventSchemasRegistryDetails& WithRegistryName(RegistryNameT&& value) { SetRegistryName(std::forward<RegistryNameT>(value)); return *this;}
     ///@}
   private:
 

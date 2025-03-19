@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVectorEnrichmentJobsResult::ListVectorEnrichmentJobsResult()
-{
-}
-
 ListVectorEnrichmentJobsResult::ListVectorEnrichmentJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListVectorEnrichmentJobsResult& ListVectorEnrichmentJobsResult::operator =(const
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VectorEnrichmentJobSummaries"))
   {
     Aws::Utils::Array<JsonView> vectorEnrichmentJobSummariesJsonList = jsonValue.GetArray("VectorEnrichmentJobSummaries");
@@ -42,14 +37,15 @@ ListVectorEnrichmentJobsResult& ListVectorEnrichmentJobsResult::operator =(const
     {
       m_vectorEnrichmentJobSummaries.push_back(vectorEnrichmentJobSummariesJsonList[vectorEnrichmentJobSummariesIndex].AsObject());
     }
+    m_vectorEnrichmentJobSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

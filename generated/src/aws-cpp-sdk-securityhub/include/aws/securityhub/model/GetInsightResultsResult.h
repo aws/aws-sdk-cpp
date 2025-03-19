@@ -28,7 +28,7 @@ namespace Model
   class GetInsightResultsResult
   {
   public:
-    AWS_SECURITYHUB_API GetInsightResultsResult();
+    AWS_SECURITYHUB_API GetInsightResultsResult() = default;
     AWS_SECURITYHUB_API GetInsightResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API GetInsightResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The insight results returned by the operation.</p>
      */
-    inline const InsightResults& GetInsightResults() const{ return m_insightResults; }
-    inline void SetInsightResults(const InsightResults& value) { m_insightResults = value; }
-    inline void SetInsightResults(InsightResults&& value) { m_insightResults = std::move(value); }
-    inline GetInsightResultsResult& WithInsightResults(const InsightResults& value) { SetInsightResults(value); return *this;}
-    inline GetInsightResultsResult& WithInsightResults(InsightResults&& value) { SetInsightResults(std::move(value)); return *this;}
+    inline const InsightResults& GetInsightResults() const { return m_insightResults; }
+    template<typename InsightResultsT = InsightResults>
+    void SetInsightResults(InsightResultsT&& value) { m_insightResultsHasBeenSet = true; m_insightResults = std::forward<InsightResultsT>(value); }
+    template<typename InsightResultsT = InsightResults>
+    GetInsightResultsResult& WithInsightResults(InsightResultsT&& value) { SetInsightResults(std::forward<InsightResultsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInsightResultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInsightResultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInsightResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInsightResultsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InsightResults m_insightResults;
+    bool m_insightResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

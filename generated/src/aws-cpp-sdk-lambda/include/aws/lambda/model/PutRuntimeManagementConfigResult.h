@@ -28,7 +28,7 @@ namespace Model
   class PutRuntimeManagementConfigResult
   {
   public:
-    AWS_LAMBDA_API PutRuntimeManagementConfigResult();
+    AWS_LAMBDA_API PutRuntimeManagementConfigResult() = default;
     AWS_LAMBDA_API PutRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API PutRuntimeManagementConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,24 +37,20 @@ namespace Model
     /**
      * <p>The runtime update mode.</p>
      */
-    inline const UpdateRuntimeOn& GetUpdateRuntimeOn() const{ return m_updateRuntimeOn; }
-    inline void SetUpdateRuntimeOn(const UpdateRuntimeOn& value) { m_updateRuntimeOn = value; }
-    inline void SetUpdateRuntimeOn(UpdateRuntimeOn&& value) { m_updateRuntimeOn = std::move(value); }
-    inline PutRuntimeManagementConfigResult& WithUpdateRuntimeOn(const UpdateRuntimeOn& value) { SetUpdateRuntimeOn(value); return *this;}
-    inline PutRuntimeManagementConfigResult& WithUpdateRuntimeOn(UpdateRuntimeOn&& value) { SetUpdateRuntimeOn(std::move(value)); return *this;}
+    inline UpdateRuntimeOn GetUpdateRuntimeOn() const { return m_updateRuntimeOn; }
+    inline void SetUpdateRuntimeOn(UpdateRuntimeOn value) { m_updateRuntimeOnHasBeenSet = true; m_updateRuntimeOn = value; }
+    inline PutRuntimeManagementConfigResult& WithUpdateRuntimeOn(UpdateRuntimeOn value) { SetUpdateRuntimeOn(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the function</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArn.assign(value); }
-    inline PutRuntimeManagementConfigResult& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline PutRuntimeManagementConfigResult& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline PutRuntimeManagementConfigResult& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    PutRuntimeManagementConfigResult& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,34 +59,34 @@ namespace Model
      * update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code>
      * is returned.</p>
      */
-    inline const Aws::String& GetRuntimeVersionArn() const{ return m_runtimeVersionArn; }
-    inline void SetRuntimeVersionArn(const Aws::String& value) { m_runtimeVersionArn = value; }
-    inline void SetRuntimeVersionArn(Aws::String&& value) { m_runtimeVersionArn = std::move(value); }
-    inline void SetRuntimeVersionArn(const char* value) { m_runtimeVersionArn.assign(value); }
-    inline PutRuntimeManagementConfigResult& WithRuntimeVersionArn(const Aws::String& value) { SetRuntimeVersionArn(value); return *this;}
-    inline PutRuntimeManagementConfigResult& WithRuntimeVersionArn(Aws::String&& value) { SetRuntimeVersionArn(std::move(value)); return *this;}
-    inline PutRuntimeManagementConfigResult& WithRuntimeVersionArn(const char* value) { SetRuntimeVersionArn(value); return *this;}
+    inline const Aws::String& GetRuntimeVersionArn() const { return m_runtimeVersionArn; }
+    template<typename RuntimeVersionArnT = Aws::String>
+    void SetRuntimeVersionArn(RuntimeVersionArnT&& value) { m_runtimeVersionArnHasBeenSet = true; m_runtimeVersionArn = std::forward<RuntimeVersionArnT>(value); }
+    template<typename RuntimeVersionArnT = Aws::String>
+    PutRuntimeManagementConfigResult& WithRuntimeVersionArn(RuntimeVersionArnT&& value) { SetRuntimeVersionArn(std::forward<RuntimeVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRuntimeManagementConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRuntimeManagementConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRuntimeManagementConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRuntimeManagementConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    UpdateRuntimeOn m_updateRuntimeOn;
+    UpdateRuntimeOn m_updateRuntimeOn{UpdateRuntimeOn::NOT_SET};
+    bool m_updateRuntimeOnHasBeenSet = false;
 
     Aws::String m_functionArn;
+    bool m_functionArnHasBeenSet = false;
 
     Aws::String m_runtimeVersionArn;
+    bool m_runtimeVersionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

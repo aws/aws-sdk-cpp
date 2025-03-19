@@ -18,15 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-ReferenceDataSource::ReferenceDataSource() : 
-    m_tableNameHasBeenSet(false),
-    m_s3ReferenceDataSourceHasBeenSet(false),
-    m_referenceSchemaHasBeenSet(false)
-{
-}
-
 ReferenceDataSource::ReferenceDataSource(JsonView jsonValue)
-  : ReferenceDataSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReferenceDataSource& ReferenceDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ReferenceDataSource"))
   {
     m_s3ReferenceDataSource = jsonValue.GetObject("S3ReferenceDataSource");
-
     m_s3ReferenceDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceSchema"))
   {
     m_referenceSchema = jsonValue.GetObject("ReferenceSchema");
-
     m_referenceSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

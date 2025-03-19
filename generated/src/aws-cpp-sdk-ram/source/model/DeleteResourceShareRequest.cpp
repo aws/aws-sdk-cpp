@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteResourceShareRequest::DeleteResourceShareRequest() : 
-    m_resourceShareArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceShareRequest::SerializePayload() const
 {
   return {};

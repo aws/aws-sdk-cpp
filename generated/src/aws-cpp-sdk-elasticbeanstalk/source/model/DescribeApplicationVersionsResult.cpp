@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeApplicationVersionsResult::DescribeApplicationVersionsResult()
-{
-}
-
 DescribeApplicationVersionsResult::DescribeApplicationVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeApplicationVersionsResult& DescribeApplicationVersionsResult::operator =
     if(!applicationVersionsNode.IsNull())
     {
       XmlNode applicationVersionsMember = applicationVersionsNode.FirstChild("member");
+      m_applicationVersionsHasBeenSet = !applicationVersionsMember.IsNull();
       while(!applicationVersionsMember.IsNull())
       {
         m_applicationVersions.push_back(applicationVersionsMember);
         applicationVersionsMember = applicationVersionsMember.NextNode("member");
       }
 
+      m_applicationVersionsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeApplicationVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

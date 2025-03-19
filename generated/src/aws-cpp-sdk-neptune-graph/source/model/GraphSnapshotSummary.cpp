@@ -18,20 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-GraphSnapshotSummary::GraphSnapshotSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_sourceGraphIdHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_status(SnapshotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false)
-{
-}
-
 GraphSnapshotSummary::GraphSnapshotSummary(JsonView jsonValue)
-  : GraphSnapshotSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ GraphSnapshotSummary& GraphSnapshotSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceGraphId"))
   {
     m_sourceGraphId = jsonValue.GetString("sourceGraphId");
-
     m_sourceGraphIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotCreateTime"))
   {
     m_snapshotCreateTime = jsonValue.GetDouble("snapshotCreateTime");
-
     m_snapshotCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SnapshotStatusMapper::GetSnapshotStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyIdentifier"))
   {
     m_kmsKeyIdentifier = jsonValue.GetString("kmsKeyIdentifier");
-
     m_kmsKeyIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

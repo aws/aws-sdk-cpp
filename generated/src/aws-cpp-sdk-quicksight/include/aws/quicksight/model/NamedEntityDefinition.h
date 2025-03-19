@@ -34,7 +34,7 @@ namespace Model
   class NamedEntityDefinition
   {
   public:
-    AWS_QUICKSIGHT_API NamedEntityDefinition();
+    AWS_QUICKSIGHT_API NamedEntityDefinition() = default;
     AWS_QUICKSIGHT_API NamedEntityDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NamedEntityDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the entity.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline NamedEntityDefinition& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline NamedEntityDefinition& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline NamedEntityDefinition& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    NamedEntityDefinition& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property name to be used for the named entity.</p>
      */
-    inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
+    inline const Aws::String& GetPropertyName() const { return m_propertyName; }
     inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
-    inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
-    inline void SetPropertyName(Aws::String&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::move(value); }
-    inline void SetPropertyName(const char* value) { m_propertyNameHasBeenSet = true; m_propertyName.assign(value); }
-    inline NamedEntityDefinition& WithPropertyName(const Aws::String& value) { SetPropertyName(value); return *this;}
-    inline NamedEntityDefinition& WithPropertyName(Aws::String&& value) { SetPropertyName(std::move(value)); return *this;}
-    inline NamedEntityDefinition& WithPropertyName(const char* value) { SetPropertyName(value); return *this;}
+    template<typename PropertyNameT = Aws::String>
+    void SetPropertyName(PropertyNameT&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::forward<PropertyNameT>(value); }
+    template<typename PropertyNameT = Aws::String>
+    NamedEntityDefinition& WithPropertyName(PropertyNameT&& value) { SetPropertyName(std::forward<PropertyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * <p>The property role. Valid values for this structure are <code>PRIMARY</code>
      * and <code>ID</code>.</p>
      */
-    inline const PropertyRole& GetPropertyRole() const{ return m_propertyRole; }
+    inline PropertyRole GetPropertyRole() const { return m_propertyRole; }
     inline bool PropertyRoleHasBeenSet() const { return m_propertyRoleHasBeenSet; }
-    inline void SetPropertyRole(const PropertyRole& value) { m_propertyRoleHasBeenSet = true; m_propertyRole = value; }
-    inline void SetPropertyRole(PropertyRole&& value) { m_propertyRoleHasBeenSet = true; m_propertyRole = std::move(value); }
-    inline NamedEntityDefinition& WithPropertyRole(const PropertyRole& value) { SetPropertyRole(value); return *this;}
-    inline NamedEntityDefinition& WithPropertyRole(PropertyRole&& value) { SetPropertyRole(std::move(value)); return *this;}
+    inline void SetPropertyRole(PropertyRole value) { m_propertyRoleHasBeenSet = true; m_propertyRole = value; }
+    inline NamedEntityDefinition& WithPropertyRole(PropertyRole value) { SetPropertyRole(value); return *this;}
     ///@}
 
     ///@{
@@ -86,24 +80,22 @@ namespace Model
      * <p>The property usage. Valid values for this structure are <code>INHERIT</code>,
      * <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
      */
-    inline const PropertyUsage& GetPropertyUsage() const{ return m_propertyUsage; }
+    inline PropertyUsage GetPropertyUsage() const { return m_propertyUsage; }
     inline bool PropertyUsageHasBeenSet() const { return m_propertyUsageHasBeenSet; }
-    inline void SetPropertyUsage(const PropertyUsage& value) { m_propertyUsageHasBeenSet = true; m_propertyUsage = value; }
-    inline void SetPropertyUsage(PropertyUsage&& value) { m_propertyUsageHasBeenSet = true; m_propertyUsage = std::move(value); }
-    inline NamedEntityDefinition& WithPropertyUsage(const PropertyUsage& value) { SetPropertyUsage(value); return *this;}
-    inline NamedEntityDefinition& WithPropertyUsage(PropertyUsage&& value) { SetPropertyUsage(std::move(value)); return *this;}
+    inline void SetPropertyUsage(PropertyUsage value) { m_propertyUsageHasBeenSet = true; m_propertyUsage = value; }
+    inline NamedEntityDefinition& WithPropertyUsage(PropertyUsage value) { SetPropertyUsage(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of a metric.</p>
      */
-    inline const NamedEntityDefinitionMetric& GetMetric() const{ return m_metric; }
+    inline const NamedEntityDefinitionMetric& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const NamedEntityDefinitionMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(NamedEntityDefinitionMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline NamedEntityDefinition& WithMetric(const NamedEntityDefinitionMetric& value) { SetMetric(value); return *this;}
-    inline NamedEntityDefinition& WithMetric(NamedEntityDefinitionMetric&& value) { SetMetric(std::move(value)); return *this;}
+    template<typename MetricT = NamedEntityDefinitionMetric>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = NamedEntityDefinitionMetric>
+    NamedEntityDefinition& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,10 +105,10 @@ namespace Model
     Aws::String m_propertyName;
     bool m_propertyNameHasBeenSet = false;
 
-    PropertyRole m_propertyRole;
+    PropertyRole m_propertyRole{PropertyRole::NOT_SET};
     bool m_propertyRoleHasBeenSet = false;
 
-    PropertyUsage m_propertyUsage;
+    PropertyUsage m_propertyUsage{PropertyUsage::NOT_SET};
     bool m_propertyUsageHasBeenSet = false;
 
     NamedEntityDefinitionMetric m_metric;

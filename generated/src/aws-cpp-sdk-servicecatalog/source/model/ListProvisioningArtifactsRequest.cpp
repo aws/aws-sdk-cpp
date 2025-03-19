@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProvisioningArtifactsRequest::ListProvisioningArtifactsRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_productIdHasBeenSet(false)
-{
-}
-
 Aws::String ListProvisioningArtifactsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-ColorSpacePassthroughSettings::ColorSpacePassthroughSettings()
-{
-}
-
 ColorSpacePassthroughSettings::ColorSpacePassthroughSettings(JsonView jsonValue)
 {
   *this = jsonValue;

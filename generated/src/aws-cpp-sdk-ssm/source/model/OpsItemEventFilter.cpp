@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemEventFilter::OpsItemEventFilter() : 
-    m_key(OpsItemEventFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(OpsItemEventFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 OpsItemEventFilter::OpsItemEventFilter(JsonView jsonValue)
-  : OpsItemEventFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ OpsItemEventFilter& OpsItemEventFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = OpsItemEventFilterKeyMapper::GetOpsItemEventFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,14 +39,11 @@ OpsItemEventFilter& OpsItemEventFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OpsItemEventFilterOperatorMapper::GetOpsItemEventFilterOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

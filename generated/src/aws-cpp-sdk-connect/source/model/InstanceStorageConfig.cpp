@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InstanceStorageConfig::InstanceStorageConfig() : 
-    m_associationIdHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_s3ConfigHasBeenSet(false),
-    m_kinesisVideoStreamConfigHasBeenSet(false),
-    m_kinesisStreamConfigHasBeenSet(false),
-    m_kinesisFirehoseConfigHasBeenSet(false)
-{
-}
-
 InstanceStorageConfig::InstanceStorageConfig(JsonView jsonValue)
-  : InstanceStorageConfig()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ InstanceStorageConfig& InstanceStorageConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("StorageType"));
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Config"))
   {
     m_s3Config = jsonValue.GetObject("S3Config");
-
     m_s3ConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisVideoStreamConfig"))
   {
     m_kinesisVideoStreamConfig = jsonValue.GetObject("KinesisVideoStreamConfig");
-
     m_kinesisVideoStreamConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisStreamConfig"))
   {
     m_kinesisStreamConfig = jsonValue.GetObject("KinesisStreamConfig");
-
     m_kinesisStreamConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisFirehoseConfig"))
   {
     m_kinesisFirehoseConfig = jsonValue.GetObject("KinesisFirehoseConfig");
-
     m_kinesisFirehoseConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

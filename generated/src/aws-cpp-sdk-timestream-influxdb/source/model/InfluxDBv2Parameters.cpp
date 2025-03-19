@@ -18,72 +18,7 @@ namespace TimestreamInfluxDB
 namespace Model
 {
 
-InfluxDBv2Parameters::InfluxDBv2Parameters() : 
-    m_fluxLogEnabled(false),
-    m_fluxLogEnabledHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_noTasks(false),
-    m_noTasksHasBeenSet(false),
-    m_queryConcurrency(0),
-    m_queryConcurrencyHasBeenSet(false),
-    m_queryQueueSize(0),
-    m_queryQueueSizeHasBeenSet(false),
-    m_tracingType(TracingType::NOT_SET),
-    m_tracingTypeHasBeenSet(false),
-    m_metricsDisabled(false),
-    m_metricsDisabledHasBeenSet(false),
-    m_httpIdleTimeoutHasBeenSet(false),
-    m_httpReadHeaderTimeoutHasBeenSet(false),
-    m_httpReadTimeoutHasBeenSet(false),
-    m_httpWriteTimeoutHasBeenSet(false),
-    m_influxqlMaxSelectBuckets(0),
-    m_influxqlMaxSelectBucketsHasBeenSet(false),
-    m_influxqlMaxSelectPoint(0),
-    m_influxqlMaxSelectPointHasBeenSet(false),
-    m_influxqlMaxSelectSeries(0),
-    m_influxqlMaxSelectSeriesHasBeenSet(false),
-    m_pprofDisabled(false),
-    m_pprofDisabledHasBeenSet(false),
-    m_queryInitialMemoryBytes(0),
-    m_queryInitialMemoryBytesHasBeenSet(false),
-    m_queryMaxMemoryBytes(0),
-    m_queryMaxMemoryBytesHasBeenSet(false),
-    m_queryMemoryBytes(0),
-    m_queryMemoryBytesHasBeenSet(false),
-    m_sessionLength(0),
-    m_sessionLengthHasBeenSet(false),
-    m_sessionRenewDisabled(false),
-    m_sessionRenewDisabledHasBeenSet(false),
-    m_storageCacheMaxMemorySize(0),
-    m_storageCacheMaxMemorySizeHasBeenSet(false),
-    m_storageCacheSnapshotMemorySize(0),
-    m_storageCacheSnapshotMemorySizeHasBeenSet(false),
-    m_storageCacheSnapshotWriteColdDurationHasBeenSet(false),
-    m_storageCompactFullWriteColdDurationHasBeenSet(false),
-    m_storageCompactThroughputBurst(0),
-    m_storageCompactThroughputBurstHasBeenSet(false),
-    m_storageMaxConcurrentCompactions(0),
-    m_storageMaxConcurrentCompactionsHasBeenSet(false),
-    m_storageMaxIndexLogFileSize(0),
-    m_storageMaxIndexLogFileSizeHasBeenSet(false),
-    m_storageNoValidateFieldSize(false),
-    m_storageNoValidateFieldSizeHasBeenSet(false),
-    m_storageRetentionCheckIntervalHasBeenSet(false),
-    m_storageSeriesFileMaxConcurrentSnapshotCompactions(0),
-    m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet(false),
-    m_storageSeriesIdSetCacheSize(0),
-    m_storageSeriesIdSetCacheSizeHasBeenSet(false),
-    m_storageWalMaxConcurrentWrites(0),
-    m_storageWalMaxConcurrentWritesHasBeenSet(false),
-    m_storageWalMaxWriteDelayHasBeenSet(false),
-    m_uiDisabled(false),
-    m_uiDisabledHasBeenSet(false)
-{
-}
-
 InfluxDBv2Parameters::InfluxDBv2Parameters(JsonView jsonValue)
-  : InfluxDBv2Parameters()
 {
   *this = jsonValue;
 }
@@ -93,241 +28,173 @@ InfluxDBv2Parameters& InfluxDBv2Parameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fluxLogEnabled"))
   {
     m_fluxLogEnabled = jsonValue.GetBool("fluxLogEnabled");
-
     m_fluxLogEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noTasks"))
   {
     m_noTasks = jsonValue.GetBool("noTasks");
-
     m_noTasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryConcurrency"))
   {
     m_queryConcurrency = jsonValue.GetInteger("queryConcurrency");
-
     m_queryConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryQueueSize"))
   {
     m_queryQueueSize = jsonValue.GetInteger("queryQueueSize");
-
     m_queryQueueSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tracingType"))
   {
     m_tracingType = TracingTypeMapper::GetTracingTypeForName(jsonValue.GetString("tracingType"));
-
     m_tracingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricsDisabled"))
   {
     m_metricsDisabled = jsonValue.GetBool("metricsDisabled");
-
     m_metricsDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpIdleTimeout"))
   {
     m_httpIdleTimeout = jsonValue.GetObject("httpIdleTimeout");
-
     m_httpIdleTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpReadHeaderTimeout"))
   {
     m_httpReadHeaderTimeout = jsonValue.GetObject("httpReadHeaderTimeout");
-
     m_httpReadHeaderTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpReadTimeout"))
   {
     m_httpReadTimeout = jsonValue.GetObject("httpReadTimeout");
-
     m_httpReadTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpWriteTimeout"))
   {
     m_httpWriteTimeout = jsonValue.GetObject("httpWriteTimeout");
-
     m_httpWriteTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("influxqlMaxSelectBuckets"))
   {
     m_influxqlMaxSelectBuckets = jsonValue.GetInt64("influxqlMaxSelectBuckets");
-
     m_influxqlMaxSelectBucketsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("influxqlMaxSelectPoint"))
   {
     m_influxqlMaxSelectPoint = jsonValue.GetInt64("influxqlMaxSelectPoint");
-
     m_influxqlMaxSelectPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("influxqlMaxSelectSeries"))
   {
     m_influxqlMaxSelectSeries = jsonValue.GetInt64("influxqlMaxSelectSeries");
-
     m_influxqlMaxSelectSeriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pprofDisabled"))
   {
     m_pprofDisabled = jsonValue.GetBool("pprofDisabled");
-
     m_pprofDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryInitialMemoryBytes"))
   {
     m_queryInitialMemoryBytes = jsonValue.GetInt64("queryInitialMemoryBytes");
-
     m_queryInitialMemoryBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryMaxMemoryBytes"))
   {
     m_queryMaxMemoryBytes = jsonValue.GetInt64("queryMaxMemoryBytes");
-
     m_queryMaxMemoryBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryMemoryBytes"))
   {
     m_queryMemoryBytes = jsonValue.GetInt64("queryMemoryBytes");
-
     m_queryMemoryBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionLength"))
   {
     m_sessionLength = jsonValue.GetInteger("sessionLength");
-
     m_sessionLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionRenewDisabled"))
   {
     m_sessionRenewDisabled = jsonValue.GetBool("sessionRenewDisabled");
-
     m_sessionRenewDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCacheMaxMemorySize"))
   {
     m_storageCacheMaxMemorySize = jsonValue.GetInt64("storageCacheMaxMemorySize");
-
     m_storageCacheMaxMemorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCacheSnapshotMemorySize"))
   {
     m_storageCacheSnapshotMemorySize = jsonValue.GetInt64("storageCacheSnapshotMemorySize");
-
     m_storageCacheSnapshotMemorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCacheSnapshotWriteColdDuration"))
   {
     m_storageCacheSnapshotWriteColdDuration = jsonValue.GetObject("storageCacheSnapshotWriteColdDuration");
-
     m_storageCacheSnapshotWriteColdDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCompactFullWriteColdDuration"))
   {
     m_storageCompactFullWriteColdDuration = jsonValue.GetObject("storageCompactFullWriteColdDuration");
-
     m_storageCompactFullWriteColdDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageCompactThroughputBurst"))
   {
     m_storageCompactThroughputBurst = jsonValue.GetInt64("storageCompactThroughputBurst");
-
     m_storageCompactThroughputBurstHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageMaxConcurrentCompactions"))
   {
     m_storageMaxConcurrentCompactions = jsonValue.GetInteger("storageMaxConcurrentCompactions");
-
     m_storageMaxConcurrentCompactionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageMaxIndexLogFileSize"))
   {
     m_storageMaxIndexLogFileSize = jsonValue.GetInt64("storageMaxIndexLogFileSize");
-
     m_storageMaxIndexLogFileSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageNoValidateFieldSize"))
   {
     m_storageNoValidateFieldSize = jsonValue.GetBool("storageNoValidateFieldSize");
-
     m_storageNoValidateFieldSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageRetentionCheckInterval"))
   {
     m_storageRetentionCheckInterval = jsonValue.GetObject("storageRetentionCheckInterval");
-
     m_storageRetentionCheckIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageSeriesFileMaxConcurrentSnapshotCompactions"))
   {
     m_storageSeriesFileMaxConcurrentSnapshotCompactions = jsonValue.GetInteger("storageSeriesFileMaxConcurrentSnapshotCompactions");
-
     m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageSeriesIdSetCacheSize"))
   {
     m_storageSeriesIdSetCacheSize = jsonValue.GetInt64("storageSeriesIdSetCacheSize");
-
     m_storageSeriesIdSetCacheSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageWalMaxConcurrentWrites"))
   {
     m_storageWalMaxConcurrentWrites = jsonValue.GetInteger("storageWalMaxConcurrentWrites");
-
     m_storageWalMaxConcurrentWritesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageWalMaxWriteDelay"))
   {
     m_storageWalMaxWriteDelay = jsonValue.GetObject("storageWalMaxWriteDelay");
-
     m_storageWalMaxWriteDelayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uiDisabled"))
   {
     m_uiDisabled = jsonValue.GetBool("uiDisabled");
-
     m_uiDisabledHasBeenSet = true;
   }
-
   return *this;
 }
 

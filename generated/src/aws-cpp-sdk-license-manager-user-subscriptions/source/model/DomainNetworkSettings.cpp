@@ -18,13 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-DomainNetworkSettings::DomainNetworkSettings() : 
-    m_subnetsHasBeenSet(false)
-{
-}
-
 DomainNetworkSettings::DomainNetworkSettings(JsonView jsonValue)
-  : DomainNetworkSettings()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DomainNetworkSettings& DomainNetworkSettings::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

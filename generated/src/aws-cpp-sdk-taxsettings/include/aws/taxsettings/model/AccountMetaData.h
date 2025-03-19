@@ -36,7 +36,7 @@ namespace Model
   class AccountMetaData
   {
   public:
-    AWS_TAXSETTINGS_API AccountMetaData();
+    AWS_TAXSETTINGS_API AccountMetaData() = default;
     AWS_TAXSETTINGS_API AccountMetaData(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API AccountMetaData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,22 @@ namespace Model
     /**
      * <p> The Amazon Web Services accounts name. </p>
      */
-    inline const Aws::String& GetAccountName() const{ return m_accountName; }
+    inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
-    inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
-    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
-    inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
-    inline AccountMetaData& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
-    inline AccountMetaData& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
-    inline AccountMetaData& WithAccountName(const char* value) { SetAccountName(value); return *this;}
+    template<typename AccountNameT = Aws::String>
+    void SetAccountName(AccountNameT&& value) { m_accountNameHasBeenSet = true; m_accountName = std::forward<AccountNameT>(value); }
+    template<typename AccountNameT = Aws::String>
+    AccountMetaData& WithAccountName(AccountNameT&& value) { SetAccountName(std::forward<AccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Address& GetAddress() const{ return m_address; }
+    inline const Address& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Address& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline AccountMetaData& WithAddress(const Address& value) { SetAddress(value); return *this;}
-    inline AccountMetaData& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    template<typename AddressT = Address>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Address>
+    AccountMetaData& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,42 +69,37 @@ namespace Model
      * <p> Address roles associated with the account containing country code
      * information. </p>
      */
-    inline const Aws::Map<AddressRoleType, Jurisdiction>& GetAddressRoleMap() const{ return m_addressRoleMap; }
+    inline const Aws::Map<AddressRoleType, Jurisdiction>& GetAddressRoleMap() const { return m_addressRoleMap; }
     inline bool AddressRoleMapHasBeenSet() const { return m_addressRoleMapHasBeenSet; }
-    inline void SetAddressRoleMap(const Aws::Map<AddressRoleType, Jurisdiction>& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap = value; }
-    inline void SetAddressRoleMap(Aws::Map<AddressRoleType, Jurisdiction>&& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap = std::move(value); }
-    inline AccountMetaData& WithAddressRoleMap(const Aws::Map<AddressRoleType, Jurisdiction>& value) { SetAddressRoleMap(value); return *this;}
-    inline AccountMetaData& WithAddressRoleMap(Aws::Map<AddressRoleType, Jurisdiction>&& value) { SetAddressRoleMap(std::move(value)); return *this;}
-    inline AccountMetaData& AddAddressRoleMap(const AddressRoleType& key, const Jurisdiction& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap.emplace(key, value); return *this; }
-    inline AccountMetaData& AddAddressRoleMap(AddressRoleType&& key, const Jurisdiction& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap.emplace(std::move(key), value); return *this; }
-    inline AccountMetaData& AddAddressRoleMap(const AddressRoleType& key, Jurisdiction&& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap.emplace(key, std::move(value)); return *this; }
-    inline AccountMetaData& AddAddressRoleMap(AddressRoleType&& key, Jurisdiction&& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename AddressRoleMapT = Aws::Map<AddressRoleType, Jurisdiction>>
+    void SetAddressRoleMap(AddressRoleMapT&& value) { m_addressRoleMapHasBeenSet = true; m_addressRoleMap = std::forward<AddressRoleMapT>(value); }
+    template<typename AddressRoleMapT = Aws::Map<AddressRoleType, Jurisdiction>>
+    AccountMetaData& WithAddressRoleMap(AddressRoleMapT&& value) { SetAddressRoleMap(std::forward<AddressRoleMapT>(value)); return *this;}
+    inline AccountMetaData& AddAddressRoleMap(AddressRoleType key, Jurisdiction value) {
+      m_addressRoleMapHasBeenSet = true; m_addressRoleMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p> The type of address associated with the legal profile. </p>
      */
-    inline const AddressRoleType& GetAddressType() const{ return m_addressType; }
+    inline AddressRoleType GetAddressType() const { return m_addressType; }
     inline bool AddressTypeHasBeenSet() const { return m_addressTypeHasBeenSet; }
-    inline void SetAddressType(const AddressRoleType& value) { m_addressTypeHasBeenSet = true; m_addressType = value; }
-    inline void SetAddressType(AddressRoleType&& value) { m_addressTypeHasBeenSet = true; m_addressType = std::move(value); }
-    inline AccountMetaData& WithAddressType(const AddressRoleType& value) { SetAddressType(value); return *this;}
-    inline AccountMetaData& WithAddressType(AddressRoleType&& value) { SetAddressType(std::move(value)); return *this;}
+    inline void SetAddressType(AddressRoleType value) { m_addressTypeHasBeenSet = true; m_addressType = value; }
+    inline AccountMetaData& WithAddressType(AddressRoleType value) { SetAddressType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Seller information associated with the account. </p>
      */
-    inline const Aws::String& GetSeller() const{ return m_seller; }
+    inline const Aws::String& GetSeller() const { return m_seller; }
     inline bool SellerHasBeenSet() const { return m_sellerHasBeenSet; }
-    inline void SetSeller(const Aws::String& value) { m_sellerHasBeenSet = true; m_seller = value; }
-    inline void SetSeller(Aws::String&& value) { m_sellerHasBeenSet = true; m_seller = std::move(value); }
-    inline void SetSeller(const char* value) { m_sellerHasBeenSet = true; m_seller.assign(value); }
-    inline AccountMetaData& WithSeller(const Aws::String& value) { SetSeller(value); return *this;}
-    inline AccountMetaData& WithSeller(Aws::String&& value) { SetSeller(std::move(value)); return *this;}
-    inline AccountMetaData& WithSeller(const char* value) { SetSeller(value); return *this;}
+    template<typename SellerT = Aws::String>
+    void SetSeller(SellerT&& value) { m_sellerHasBeenSet = true; m_seller = std::forward<SellerT>(value); }
+    template<typename SellerT = Aws::String>
+    AccountMetaData& WithSeller(SellerT&& value) { SetSeller(std::forward<SellerT>(value)); return *this;}
     ///@}
   private:
 
@@ -119,7 +112,7 @@ namespace Model
     Aws::Map<AddressRoleType, Jurisdiction> m_addressRoleMap;
     bool m_addressRoleMapHasBeenSet = false;
 
-    AddressRoleType m_addressType;
+    AddressRoleType m_addressType{AddressRoleType::NOT_SET};
     bool m_addressTypeHasBeenSet = false;
 
     Aws::String m_seller;

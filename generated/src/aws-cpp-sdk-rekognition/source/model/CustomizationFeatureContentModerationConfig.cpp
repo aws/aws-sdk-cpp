@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CustomizationFeatureContentModerationConfig::CustomizationFeatureContentModerationConfig() : 
-    m_confidenceThreshold(0.0),
-    m_confidenceThresholdHasBeenSet(false)
-{
-}
-
 CustomizationFeatureContentModerationConfig::CustomizationFeatureContentModerationConfig(JsonView jsonValue)
-  : CustomizationFeatureContentModerationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomizationFeatureContentModerationConfig& CustomizationFeatureContentModerati
   if(jsonValue.ValueExists("ConfidenceThreshold"))
   {
     m_confidenceThreshold = jsonValue.GetDouble("ConfidenceThreshold");
-
     m_confidenceThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

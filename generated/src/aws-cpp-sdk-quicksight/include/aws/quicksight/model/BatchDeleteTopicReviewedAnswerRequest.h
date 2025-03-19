@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteTopicReviewedAnswerRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API BatchDeleteTopicReviewedAnswerRequest();
+    AWS_QUICKSIGHT_API BatchDeleteTopicReviewedAnswerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that you want to delete a reviewed
      * answers in.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline BatchDeleteTopicReviewedAnswerRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline BatchDeleteTopicReviewedAnswerRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline BatchDeleteTopicReviewedAnswerRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    BatchDeleteTopicReviewedAnswerRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,29 +51,26 @@ namespace Model
      * <p>The ID for the topic reviewed answer that you want to delete. This ID is
      * unique per Amazon Web Services Region for each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetTopicId() const{ return m_topicId; }
+    inline const Aws::String& GetTopicId() const { return m_topicId; }
     inline bool TopicIdHasBeenSet() const { return m_topicIdHasBeenSet; }
-    inline void SetTopicId(const Aws::String& value) { m_topicIdHasBeenSet = true; m_topicId = value; }
-    inline void SetTopicId(Aws::String&& value) { m_topicIdHasBeenSet = true; m_topicId = std::move(value); }
-    inline void SetTopicId(const char* value) { m_topicIdHasBeenSet = true; m_topicId.assign(value); }
-    inline BatchDeleteTopicReviewedAnswerRequest& WithTopicId(const Aws::String& value) { SetTopicId(value); return *this;}
-    inline BatchDeleteTopicReviewedAnswerRequest& WithTopicId(Aws::String&& value) { SetTopicId(std::move(value)); return *this;}
-    inline BatchDeleteTopicReviewedAnswerRequest& WithTopicId(const char* value) { SetTopicId(value); return *this;}
+    template<typename TopicIdT = Aws::String>
+    void SetTopicId(TopicIdT&& value) { m_topicIdHasBeenSet = true; m_topicId = std::forward<TopicIdT>(value); }
+    template<typename TopicIdT = Aws::String>
+    BatchDeleteTopicReviewedAnswerRequest& WithTopicId(TopicIdT&& value) { SetTopicId(std::forward<TopicIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Answer IDs of the Answers to be deleted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAnswerIds() const{ return m_answerIds; }
+    inline const Aws::Vector<Aws::String>& GetAnswerIds() const { return m_answerIds; }
     inline bool AnswerIdsHasBeenSet() const { return m_answerIdsHasBeenSet; }
-    inline void SetAnswerIds(const Aws::Vector<Aws::String>& value) { m_answerIdsHasBeenSet = true; m_answerIds = value; }
-    inline void SetAnswerIds(Aws::Vector<Aws::String>&& value) { m_answerIdsHasBeenSet = true; m_answerIds = std::move(value); }
-    inline BatchDeleteTopicReviewedAnswerRequest& WithAnswerIds(const Aws::Vector<Aws::String>& value) { SetAnswerIds(value); return *this;}
-    inline BatchDeleteTopicReviewedAnswerRequest& WithAnswerIds(Aws::Vector<Aws::String>&& value) { SetAnswerIds(std::move(value)); return *this;}
-    inline BatchDeleteTopicReviewedAnswerRequest& AddAnswerIds(const Aws::String& value) { m_answerIdsHasBeenSet = true; m_answerIds.push_back(value); return *this; }
-    inline BatchDeleteTopicReviewedAnswerRequest& AddAnswerIds(Aws::String&& value) { m_answerIdsHasBeenSet = true; m_answerIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteTopicReviewedAnswerRequest& AddAnswerIds(const char* value) { m_answerIdsHasBeenSet = true; m_answerIds.push_back(value); return *this; }
+    template<typename AnswerIdsT = Aws::Vector<Aws::String>>
+    void SetAnswerIds(AnswerIdsT&& value) { m_answerIdsHasBeenSet = true; m_answerIds = std::forward<AnswerIdsT>(value); }
+    template<typename AnswerIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteTopicReviewedAnswerRequest& WithAnswerIds(AnswerIdsT&& value) { SetAnswerIds(std::forward<AnswerIdsT>(value)); return *this;}
+    template<typename AnswerIdsT = Aws::String>
+    BatchDeleteTopicReviewedAnswerRequest& AddAnswerIds(AnswerIdsT&& value) { m_answerIdsHasBeenSet = true; m_answerIds.emplace_back(std::forward<AnswerIdsT>(value)); return *this; }
     ///@}
   private:
 

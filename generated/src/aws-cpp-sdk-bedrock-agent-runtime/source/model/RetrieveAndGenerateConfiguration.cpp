@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration() : 
-    m_externalSourcesConfigurationHasBeenSet(false),
-    m_knowledgeBaseConfigurationHasBeenSet(false),
-    m_type(RetrieveAndGenerateType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView jsonValue)
-  : RetrieveAndGenerateConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator =(J
   if(jsonValue.ValueExists("externalSourcesConfiguration"))
   {
     m_externalSourcesConfiguration = jsonValue.GetObject("externalSourcesConfiguration");
-
     m_externalSourcesConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseConfiguration"))
   {
     m_knowledgeBaseConfiguration = jsonValue.GetObject("knowledgeBaseConfiguration");
-
     m_knowledgeBaseConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-PrivateIp::PrivateIp() : 
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 PrivateIp::PrivateIp(JsonView jsonValue)
-  : PrivateIp()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PrivateIp& PrivateIp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("privateDnsName"))
   {
     m_privateDnsName = jsonValue.GetString("privateDnsName");
-
     m_privateDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

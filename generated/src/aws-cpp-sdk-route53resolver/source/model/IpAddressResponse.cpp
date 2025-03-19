@@ -18,21 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-IpAddressResponse::IpAddressResponse() : 
-    m_ipIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_ipv6HasBeenSet(false),
-    m_status(IpAddressStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
-{
-}
-
 IpAddressResponse::IpAddressResponse(JsonView jsonValue)
-  : IpAddressResponse()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ IpAddressResponse& IpAddressResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpId"))
   {
     m_ipId = jsonValue.GetString("IpId");
-
     m_ipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ip"))
   {
     m_ip = jsonValue.GetString("Ip");
-
     m_ipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6"))
   {
     m_ipv6 = jsonValue.GetString("Ipv6");
-
     m_ipv6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IpAddressStatusMapper::GetIpAddressStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModificationTime"))
   {
     m_modificationTime = jsonValue.GetString("ModificationTime");
-
     m_modificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

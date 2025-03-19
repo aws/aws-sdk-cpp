@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DisableFastSnapshotRestoreStateError::DisableFastSnapshotRestoreStateError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DisableFastSnapshotRestoreStateError::DisableFastSnapshotRestoreStateError(const XmlNode& xmlNode)
-  : DisableFastSnapshotRestoreStateError()
 {
   *this = xmlNode;
 }

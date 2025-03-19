@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-DockerVolumeConfiguration::DockerVolumeConfiguration() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_autoprovision(false),
-    m_autoprovisionHasBeenSet(false),
-    m_driverHasBeenSet(false),
-    m_driverOptsHasBeenSet(false),
-    m_labelsHasBeenSet(false)
-{
-}
-
 DockerVolumeConfiguration::DockerVolumeConfiguration(JsonView jsonValue)
-  : DockerVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ DockerVolumeConfiguration& DockerVolumeConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = ScopeMapper::GetScopeForName(jsonValue.GetString("scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoprovision"))
   {
     m_autoprovision = jsonValue.GetBool("autoprovision");
-
     m_autoprovisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("driver"))
   {
     m_driver = jsonValue.GetString("driver");
-
     m_driverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("driverOpts"))
   {
     Aws::Map<Aws::String, JsonView> driverOptsJsonMap = jsonValue.GetObject("driverOpts").GetAllObjects();
@@ -67,7 +49,6 @@ DockerVolumeConfiguration& DockerVolumeConfiguration::operator =(JsonView jsonVa
     }
     m_driverOptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labels"))
   {
     Aws::Map<Aws::String, JsonView> labelsJsonMap = jsonValue.GetObject("labels").GetAllObjects();
@@ -77,7 +58,6 @@ DockerVolumeConfiguration& DockerVolumeConfiguration::operator =(JsonView jsonVa
     }
     m_labelsHasBeenSet = true;
   }
-
   return *this;
 }
 

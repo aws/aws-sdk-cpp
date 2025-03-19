@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NetworkEthereumAttributes::NetworkEthereumAttributes() : 
-    m_chainIdHasBeenSet(false)
-{
-}
-
 NetworkEthereumAttributes::NetworkEthereumAttributes(JsonView jsonValue)
-  : NetworkEthereumAttributes()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkEthereumAttributes& NetworkEthereumAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ChainId"))
   {
     m_chainId = jsonValue.GetString("ChainId");
-
     m_chainIdHasBeenSet = true;
   }
-
   return *this;
 }
 

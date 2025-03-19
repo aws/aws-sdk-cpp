@@ -12,14 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGroupResourcesRequest::ListGroupResourcesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListGroupResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

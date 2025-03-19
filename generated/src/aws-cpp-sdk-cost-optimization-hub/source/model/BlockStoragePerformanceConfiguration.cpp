@@ -18,16 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-BlockStoragePerformanceConfiguration::BlockStoragePerformanceConfiguration() : 
-    m_iops(0.0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0.0),
-    m_throughputHasBeenSet(false)
-{
-}
-
 BlockStoragePerformanceConfiguration::BlockStoragePerformanceConfiguration(JsonView jsonValue)
-  : BlockStoragePerformanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BlockStoragePerformanceConfiguration& BlockStoragePerformanceConfiguration::oper
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetDouble("iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throughput"))
   {
     m_throughput = jsonValue.GetDouble("throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   return *this;
 }
 

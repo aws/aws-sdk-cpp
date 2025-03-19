@@ -12,18 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendMessageRequest::SendMessageRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_messageBodyHasBeenSet(false),
-    m_delaySeconds(0),
-    m_delaySecondsHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageSystemAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String SendMessageRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InfraCheckConfig::InfraCheckConfig() : 
-    m_enableInfraCheck(false),
-    m_enableInfraCheckHasBeenSet(false)
-{
-}
-
 InfraCheckConfig::InfraCheckConfig(JsonView jsonValue)
-  : InfraCheckConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InfraCheckConfig& InfraCheckConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableInfraCheck"))
   {
     m_enableInfraCheck = jsonValue.GetBool("EnableInfraCheck");
-
     m_enableInfraCheckHasBeenSet = true;
   }
-
   return *this;
 }
 

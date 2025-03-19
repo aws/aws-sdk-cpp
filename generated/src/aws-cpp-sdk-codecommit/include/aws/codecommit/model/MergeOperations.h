@@ -32,7 +32,7 @@ namespace Model
   class MergeOperations
   {
   public:
-    AWS_CODECOMMIT_API MergeOperations();
+    AWS_CODECOMMIT_API MergeOperations() = default;
     AWS_CODECOMMIT_API MergeOperations(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API MergeOperations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
      * <p>The operation (add, modify, or delete) on a file in the source of a merge or
      * pull request.</p>
      */
-    inline const ChangeTypeEnum& GetSource() const{ return m_source; }
+    inline ChangeTypeEnum GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ChangeTypeEnum& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ChangeTypeEnum&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline MergeOperations& WithSource(const ChangeTypeEnum& value) { SetSource(value); return *this;}
-    inline MergeOperations& WithSource(ChangeTypeEnum&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(ChangeTypeEnum value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline MergeOperations& WithSource(ChangeTypeEnum value) { SetSource(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operation on a file in the destination of a merge or pull request.</p>
      */
-    inline const ChangeTypeEnum& GetDestination() const{ return m_destination; }
+    inline ChangeTypeEnum GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const ChangeTypeEnum& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(ChangeTypeEnum&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline MergeOperations& WithDestination(const ChangeTypeEnum& value) { SetDestination(value); return *this;}
-    inline MergeOperations& WithDestination(ChangeTypeEnum&& value) { SetDestination(std::move(value)); return *this;}
+    inline void SetDestination(ChangeTypeEnum value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline MergeOperations& WithDestination(ChangeTypeEnum value) { SetDestination(value); return *this;}
     ///@}
   private:
 
-    ChangeTypeEnum m_source;
+    ChangeTypeEnum m_source{ChangeTypeEnum::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
-    ChangeTypeEnum m_destination;
+    ChangeTypeEnum m_destination{ChangeTypeEnum::NOT_SET};
     bool m_destinationHasBeenSet = false;
   };
 

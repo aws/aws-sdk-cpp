@@ -18,15 +18,7 @@ namespace ECR
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("encryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKey"))
   {
     m_kmsKey = jsonValue.GetString("kmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

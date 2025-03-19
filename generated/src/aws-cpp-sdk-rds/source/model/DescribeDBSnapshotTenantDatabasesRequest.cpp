@@ -10,18 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBSnapshotTenantDatabasesRequest::DescribeDBSnapshotTenantDatabasesRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBSnapshotTenantDatabasesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

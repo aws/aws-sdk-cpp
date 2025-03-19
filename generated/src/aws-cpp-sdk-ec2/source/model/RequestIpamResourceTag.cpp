@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RequestIpamResourceTag::RequestIpamResourceTag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 RequestIpamResourceTag::RequestIpamResourceTag(const XmlNode& xmlNode)
-  : RequestIpamResourceTag()
 {
   *this = xmlNode;
 }

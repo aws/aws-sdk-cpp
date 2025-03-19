@@ -28,7 +28,7 @@ namespace Model
   class GetEnvironmentAccountConnectionResult
   {
   public:
-    AWS_PROTON_API GetEnvironmentAccountConnectionResult();
+    AWS_PROTON_API GetEnvironmentAccountConnectionResult() = default;
     AWS_PROTON_API GetEnvironmentAccountConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API GetEnvironmentAccountConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the requested environment account connection.</p>
      */
-    inline const EnvironmentAccountConnection& GetEnvironmentAccountConnection() const{ return m_environmentAccountConnection; }
-    inline void SetEnvironmentAccountConnection(const EnvironmentAccountConnection& value) { m_environmentAccountConnection = value; }
-    inline void SetEnvironmentAccountConnection(EnvironmentAccountConnection&& value) { m_environmentAccountConnection = std::move(value); }
-    inline GetEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(const EnvironmentAccountConnection& value) { SetEnvironmentAccountConnection(value); return *this;}
-    inline GetEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(EnvironmentAccountConnection&& value) { SetEnvironmentAccountConnection(std::move(value)); return *this;}
+    inline const EnvironmentAccountConnection& GetEnvironmentAccountConnection() const { return m_environmentAccountConnection; }
+    template<typename EnvironmentAccountConnectionT = EnvironmentAccountConnection>
+    void SetEnvironmentAccountConnection(EnvironmentAccountConnectionT&& value) { m_environmentAccountConnectionHasBeenSet = true; m_environmentAccountConnection = std::forward<EnvironmentAccountConnectionT>(value); }
+    template<typename EnvironmentAccountConnectionT = EnvironmentAccountConnection>
+    GetEnvironmentAccountConnectionResult& WithEnvironmentAccountConnection(EnvironmentAccountConnectionT&& value) { SetEnvironmentAccountConnection(std::forward<EnvironmentAccountConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEnvironmentAccountConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEnvironmentAccountConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEnvironmentAccountConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEnvironmentAccountConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EnvironmentAccountConnection m_environmentAccountConnection;
+    bool m_environmentAccountConnectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

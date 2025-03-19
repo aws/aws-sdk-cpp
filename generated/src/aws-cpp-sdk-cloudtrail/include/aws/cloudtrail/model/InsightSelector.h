@@ -32,7 +32,7 @@ namespace Model
   class InsightSelector
   {
   public:
-    AWS_CLOUDTRAIL_API InsightSelector();
+    AWS_CLOUDTRAIL_API InsightSelector() = default;
     AWS_CLOUDTRAIL_API InsightSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API InsightSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * type analyzes management API calls that result in error codes. The error is
      * shown if the API call is unsuccessful.</p>
      */
-    inline const InsightType& GetInsightType() const{ return m_insightType; }
+    inline InsightType GetInsightType() const { return m_insightType; }
     inline bool InsightTypeHasBeenSet() const { return m_insightTypeHasBeenSet; }
-    inline void SetInsightType(const InsightType& value) { m_insightTypeHasBeenSet = true; m_insightType = value; }
-    inline void SetInsightType(InsightType&& value) { m_insightTypeHasBeenSet = true; m_insightType = std::move(value); }
-    inline InsightSelector& WithInsightType(const InsightType& value) { SetInsightType(value); return *this;}
-    inline InsightSelector& WithInsightType(InsightType&& value) { SetInsightType(std::move(value)); return *this;}
+    inline void SetInsightType(InsightType value) { m_insightTypeHasBeenSet = true; m_insightType = value; }
+    inline InsightSelector& WithInsightType(InsightType value) { SetInsightType(value); return *this;}
     ///@}
   private:
 
-    InsightType m_insightType;
+    InsightType m_insightType{InsightType::NOT_SET};
     bool m_insightTypeHasBeenSet = false;
   };
 

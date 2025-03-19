@@ -18,15 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ProbeResult::ProbeResult() : 
-    m_containerHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_trackMappingsHasBeenSet(false)
-{
-}
-
 ProbeResult::ProbeResult(JsonView jsonValue)
-  : ProbeResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProbeResult& ProbeResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("container"))
   {
     m_container = jsonValue.GetObject("container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackMappings"))
   {
     Aws::Utils::Array<JsonView> trackMappingsJsonList = jsonValue.GetArray("trackMappings");
@@ -56,7 +44,6 @@ ProbeResult& ProbeResult::operator =(JsonView jsonValue)
     }
     m_trackMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

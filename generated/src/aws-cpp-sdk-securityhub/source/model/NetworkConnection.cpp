@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkConnection::NetworkConnection() : 
-    m_direction(ConnectionDirection::NOT_SET),
-    m_directionHasBeenSet(false)
-{
-}
-
 NetworkConnection::NetworkConnection(JsonView jsonValue)
-  : NetworkConnection()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NetworkConnection& NetworkConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = ConnectionDirectionMapper::GetConnectionDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   return *this;
 }
 

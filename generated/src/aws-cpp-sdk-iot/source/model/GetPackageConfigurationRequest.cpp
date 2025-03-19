@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPackageConfigurationRequest::GetPackageConfigurationRequest()
-{
-}
-
 Aws::String GetPackageConfigurationRequest::SerializePayload() const
 {
   return {};

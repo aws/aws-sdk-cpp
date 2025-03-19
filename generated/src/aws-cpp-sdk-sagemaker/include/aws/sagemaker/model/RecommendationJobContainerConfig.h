@@ -40,7 +40,7 @@ namespace Model
   class RecommendationJobContainerConfig
   {
   public:
-    AWS_SAGEMAKER_API RecommendationJobContainerConfig();
+    AWS_SAGEMAKER_API RecommendationJobContainerConfig() = default;
     AWS_SAGEMAKER_API RecommendationJobContainerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RecommendationJobContainerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING |
      * MACHINE_LEARNING</code> </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline RecommendationJobContainerConfig& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline RecommendationJobContainerConfig& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    RecommendationJobContainerConfig& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION |
      * IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code> </p>
      */
-    inline const Aws::String& GetTask() const{ return m_task; }
+    inline const Aws::String& GetTask() const { return m_task; }
     inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
-    inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
-    inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
-    inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
-    inline RecommendationJobContainerConfig& WithTask(const Aws::String& value) { SetTask(value); return *this;}
-    inline RecommendationJobContainerConfig& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& WithTask(const char* value) { SetTask(value); return *this;}
+    template<typename TaskT = Aws::String>
+    void SetTask(TaskT&& value) { m_taskHasBeenSet = true; m_task = std::forward<TaskT>(value); }
+    template<typename TaskT = Aws::String>
+    RecommendationJobContainerConfig& WithTask(TaskT&& value) { SetTask(std::forward<TaskT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,28 +79,24 @@ namespace Model
      * <p>The machine learning framework of the container image.</p> <p>Valid Values:
      * <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code> </p>
      */
-    inline const Aws::String& GetFramework() const{ return m_framework; }
+    inline const Aws::String& GetFramework() const { return m_framework; }
     inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
-    inline void SetFramework(const Aws::String& value) { m_frameworkHasBeenSet = true; m_framework = value; }
-    inline void SetFramework(Aws::String&& value) { m_frameworkHasBeenSet = true; m_framework = std::move(value); }
-    inline void SetFramework(const char* value) { m_frameworkHasBeenSet = true; m_framework.assign(value); }
-    inline RecommendationJobContainerConfig& WithFramework(const Aws::String& value) { SetFramework(value); return *this;}
-    inline RecommendationJobContainerConfig& WithFramework(Aws::String&& value) { SetFramework(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& WithFramework(const char* value) { SetFramework(value); return *this;}
+    template<typename FrameworkT = Aws::String>
+    void SetFramework(FrameworkT&& value) { m_frameworkHasBeenSet = true; m_framework = std::forward<FrameworkT>(value); }
+    template<typename FrameworkT = Aws::String>
+    RecommendationJobContainerConfig& WithFramework(FrameworkT&& value) { SetFramework(std::forward<FrameworkT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The framework version of the container image.</p>
      */
-    inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
+    inline const Aws::String& GetFrameworkVersion() const { return m_frameworkVersion; }
     inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
-    inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
-    inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
-    inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
-    inline RecommendationJobContainerConfig& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
-    inline RecommendationJobContainerConfig& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
+    template<typename FrameworkVersionT = Aws::String>
+    void SetFrameworkVersion(FrameworkVersionT&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::forward<FrameworkVersionT>(value); }
+    template<typename FrameworkVersionT = Aws::String>
+    RecommendationJobContainerConfig& WithFrameworkVersion(FrameworkVersionT&& value) { SetFrameworkVersion(std::forward<FrameworkVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +104,12 @@ namespace Model
      * <p>Specifies the <code>SamplePayloadUrl</code> and all other sample
      * payload-related fields.</p>
      */
-    inline const RecommendationJobPayloadConfig& GetPayloadConfig() const{ return m_payloadConfig; }
+    inline const RecommendationJobPayloadConfig& GetPayloadConfig() const { return m_payloadConfig; }
     inline bool PayloadConfigHasBeenSet() const { return m_payloadConfigHasBeenSet; }
-    inline void SetPayloadConfig(const RecommendationJobPayloadConfig& value) { m_payloadConfigHasBeenSet = true; m_payloadConfig = value; }
-    inline void SetPayloadConfig(RecommendationJobPayloadConfig&& value) { m_payloadConfigHasBeenSet = true; m_payloadConfig = std::move(value); }
-    inline RecommendationJobContainerConfig& WithPayloadConfig(const RecommendationJobPayloadConfig& value) { SetPayloadConfig(value); return *this;}
-    inline RecommendationJobContainerConfig& WithPayloadConfig(RecommendationJobPayloadConfig&& value) { SetPayloadConfig(std::move(value)); return *this;}
+    template<typename PayloadConfigT = RecommendationJobPayloadConfig>
+    void SetPayloadConfig(PayloadConfigT&& value) { m_payloadConfigHasBeenSet = true; m_payloadConfig = std::forward<PayloadConfigT>(value); }
+    template<typename PayloadConfigT = RecommendationJobPayloadConfig>
+    RecommendationJobContainerConfig& WithPayloadConfig(PayloadConfigT&& value) { SetPayloadConfig(std::forward<PayloadConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +121,12 @@ namespace Model
      * resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased
      * | xceptionV1-keras | resnet50 | retinanet</code> </p>
      */
-    inline const Aws::String& GetNearestModelName() const{ return m_nearestModelName; }
+    inline const Aws::String& GetNearestModelName() const { return m_nearestModelName; }
     inline bool NearestModelNameHasBeenSet() const { return m_nearestModelNameHasBeenSet; }
-    inline void SetNearestModelName(const Aws::String& value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName = value; }
-    inline void SetNearestModelName(Aws::String&& value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName = std::move(value); }
-    inline void SetNearestModelName(const char* value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName.assign(value); }
-    inline RecommendationJobContainerConfig& WithNearestModelName(const Aws::String& value) { SetNearestModelName(value); return *this;}
-    inline RecommendationJobContainerConfig& WithNearestModelName(Aws::String&& value) { SetNearestModelName(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& WithNearestModelName(const char* value) { SetNearestModelName(value); return *this;}
+    template<typename NearestModelNameT = Aws::String>
+    void SetNearestModelName(NearestModelNameT&& value) { m_nearestModelNameHasBeenSet = true; m_nearestModelName = std::forward<NearestModelNameT>(value); }
+    template<typename NearestModelNameT = Aws::String>
+    RecommendationJobContainerConfig& WithNearestModelName(NearestModelNameT&& value) { SetNearestModelName(std::forward<NearestModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,15 +134,14 @@ namespace Model
      * <p>A list of the instance types that are used to generate inferences in
      * real-time.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedInstanceTypes() const{ return m_supportedInstanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetSupportedInstanceTypes() const { return m_supportedInstanceTypes; }
     inline bool SupportedInstanceTypesHasBeenSet() const { return m_supportedInstanceTypesHasBeenSet; }
-    inline void SetSupportedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes = value; }
-    inline void SetSupportedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes = std::move(value); }
-    inline RecommendationJobContainerConfig& WithSupportedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetSupportedInstanceTypes(value); return *this;}
-    inline RecommendationJobContainerConfig& WithSupportedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetSupportedInstanceTypes(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& AddSupportedInstanceTypes(const Aws::String& value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes.push_back(value); return *this; }
-    inline RecommendationJobContainerConfig& AddSupportedInstanceTypes(Aws::String&& value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes.push_back(std::move(value)); return *this; }
-    inline RecommendationJobContainerConfig& AddSupportedInstanceTypes(const char* value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes.push_back(value); return *this; }
+    template<typename SupportedInstanceTypesT = Aws::Vector<Aws::String>>
+    void SetSupportedInstanceTypes(SupportedInstanceTypesT&& value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes = std::forward<SupportedInstanceTypesT>(value); }
+    template<typename SupportedInstanceTypesT = Aws::Vector<Aws::String>>
+    RecommendationJobContainerConfig& WithSupportedInstanceTypes(SupportedInstanceTypesT&& value) { SetSupportedInstanceTypes(std::forward<SupportedInstanceTypesT>(value)); return *this;}
+    template<typename SupportedInstanceTypesT = Aws::String>
+    RecommendationJobContainerConfig& AddSupportedInstanceTypes(SupportedInstanceTypesT&& value) { m_supportedInstanceTypesHasBeenSet = true; m_supportedInstanceTypes.emplace_back(std::forward<SupportedInstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,12 +151,10 @@ namespace Model
      * both real-time and serverless benchmarks. By specifying a value for this field,
      * you can receive a longer list of benchmarks for the desired endpoint type.</p>
      */
-    inline const RecommendationJobSupportedEndpointType& GetSupportedEndpointType() const{ return m_supportedEndpointType; }
+    inline RecommendationJobSupportedEndpointType GetSupportedEndpointType() const { return m_supportedEndpointType; }
     inline bool SupportedEndpointTypeHasBeenSet() const { return m_supportedEndpointTypeHasBeenSet; }
-    inline void SetSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = value; }
-    inline void SetSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = std::move(value); }
-    inline RecommendationJobContainerConfig& WithSupportedEndpointType(const RecommendationJobSupportedEndpointType& value) { SetSupportedEndpointType(value); return *this;}
-    inline RecommendationJobContainerConfig& WithSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { SetSupportedEndpointType(std::move(value)); return *this;}
+    inline void SetSupportedEndpointType(RecommendationJobSupportedEndpointType value) { m_supportedEndpointTypeHasBeenSet = true; m_supportedEndpointType = value; }
+    inline RecommendationJobContainerConfig& WithSupportedEndpointType(RecommendationJobSupportedEndpointType value) { SetSupportedEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -177,29 +164,26 @@ namespace Model
      * using SageMaker Neo. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
      */
-    inline const Aws::String& GetDataInputConfig() const{ return m_dataInputConfig; }
+    inline const Aws::String& GetDataInputConfig() const { return m_dataInputConfig; }
     inline bool DataInputConfigHasBeenSet() const { return m_dataInputConfigHasBeenSet; }
-    inline void SetDataInputConfig(const Aws::String& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = value; }
-    inline void SetDataInputConfig(Aws::String&& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = std::move(value); }
-    inline void SetDataInputConfig(const char* value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig.assign(value); }
-    inline RecommendationJobContainerConfig& WithDataInputConfig(const Aws::String& value) { SetDataInputConfig(value); return *this;}
-    inline RecommendationJobContainerConfig& WithDataInputConfig(Aws::String&& value) { SetDataInputConfig(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& WithDataInputConfig(const char* value) { SetDataInputConfig(value); return *this;}
+    template<typename DataInputConfigT = Aws::String>
+    void SetDataInputConfig(DataInputConfigT&& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = std::forward<DataInputConfigT>(value); }
+    template<typename DataInputConfigT = Aws::String>
+    RecommendationJobContainerConfig& WithDataInputConfig(DataInputConfigT&& value) { SetDataInputConfig(std::forward<DataInputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The supported MIME types for the output data.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedResponseMIMETypes() const{ return m_supportedResponseMIMETypes; }
+    inline const Aws::Vector<Aws::String>& GetSupportedResponseMIMETypes() const { return m_supportedResponseMIMETypes; }
     inline bool SupportedResponseMIMETypesHasBeenSet() const { return m_supportedResponseMIMETypesHasBeenSet; }
-    inline void SetSupportedResponseMIMETypes(const Aws::Vector<Aws::String>& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = value; }
-    inline void SetSupportedResponseMIMETypes(Aws::Vector<Aws::String>&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = std::move(value); }
-    inline RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(const Aws::Vector<Aws::String>& value) { SetSupportedResponseMIMETypes(value); return *this;}
-    inline RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(Aws::Vector<Aws::String>&& value) { SetSupportedResponseMIMETypes(std::move(value)); return *this;}
-    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(const Aws::String& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(value); return *this; }
-    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(Aws::String&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(std::move(value)); return *this; }
-    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(const char* value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(value); return *this; }
+    template<typename SupportedResponseMIMETypesT = Aws::Vector<Aws::String>>
+    void SetSupportedResponseMIMETypes(SupportedResponseMIMETypesT&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = std::forward<SupportedResponseMIMETypesT>(value); }
+    template<typename SupportedResponseMIMETypesT = Aws::Vector<Aws::String>>
+    RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(SupportedResponseMIMETypesT&& value) { SetSupportedResponseMIMETypes(std::forward<SupportedResponseMIMETypesT>(value)); return *this;}
+    template<typename SupportedResponseMIMETypesT = Aws::String>
+    RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(SupportedResponseMIMETypesT&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.emplace_back(std::forward<SupportedResponseMIMETypesT>(value)); return *this; }
     ///@}
   private:
 
@@ -224,7 +208,7 @@ namespace Model
     Aws::Vector<Aws::String> m_supportedInstanceTypes;
     bool m_supportedInstanceTypesHasBeenSet = false;
 
-    RecommendationJobSupportedEndpointType m_supportedEndpointType;
+    RecommendationJobSupportedEndpointType m_supportedEndpointType{RecommendationJobSupportedEndpointType::NOT_SET};
     bool m_supportedEndpointTypeHasBeenSet = false;
 
     Aws::String m_dataInputConfig;

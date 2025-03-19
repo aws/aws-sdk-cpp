@@ -35,7 +35,7 @@ namespace Model
   class ColumnTag
   {
   public:
-    AWS_QUICKSIGHT_API ColumnTag();
+    AWS_QUICKSIGHT_API ColumnTag() = default;
     AWS_QUICKSIGHT_API ColumnTag(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColumnTag& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>A geospatial role for a column.</p>
      */
-    inline const GeoSpatialDataRole& GetColumnGeographicRole() const{ return m_columnGeographicRole; }
+    inline GeoSpatialDataRole GetColumnGeographicRole() const { return m_columnGeographicRole; }
     inline bool ColumnGeographicRoleHasBeenSet() const { return m_columnGeographicRoleHasBeenSet; }
-    inline void SetColumnGeographicRole(const GeoSpatialDataRole& value) { m_columnGeographicRoleHasBeenSet = true; m_columnGeographicRole = value; }
-    inline void SetColumnGeographicRole(GeoSpatialDataRole&& value) { m_columnGeographicRoleHasBeenSet = true; m_columnGeographicRole = std::move(value); }
-    inline ColumnTag& WithColumnGeographicRole(const GeoSpatialDataRole& value) { SetColumnGeographicRole(value); return *this;}
-    inline ColumnTag& WithColumnGeographicRole(GeoSpatialDataRole&& value) { SetColumnGeographicRole(std::move(value)); return *this;}
+    inline void SetColumnGeographicRole(GeoSpatialDataRole value) { m_columnGeographicRoleHasBeenSet = true; m_columnGeographicRole = value; }
+    inline ColumnTag& WithColumnGeographicRole(GeoSpatialDataRole value) { SetColumnGeographicRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for a column.</p>
      */
-    inline const ColumnDescription& GetColumnDescription() const{ return m_columnDescription; }
+    inline const ColumnDescription& GetColumnDescription() const { return m_columnDescription; }
     inline bool ColumnDescriptionHasBeenSet() const { return m_columnDescriptionHasBeenSet; }
-    inline void SetColumnDescription(const ColumnDescription& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = value; }
-    inline void SetColumnDescription(ColumnDescription&& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = std::move(value); }
-    inline ColumnTag& WithColumnDescription(const ColumnDescription& value) { SetColumnDescription(value); return *this;}
-    inline ColumnTag& WithColumnDescription(ColumnDescription&& value) { SetColumnDescription(std::move(value)); return *this;}
+    template<typename ColumnDescriptionT = ColumnDescription>
+    void SetColumnDescription(ColumnDescriptionT&& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = std::forward<ColumnDescriptionT>(value); }
+    template<typename ColumnDescriptionT = ColumnDescription>
+    ColumnTag& WithColumnDescription(ColumnDescriptionT&& value) { SetColumnDescription(std::forward<ColumnDescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    GeoSpatialDataRole m_columnGeographicRole;
+    GeoSpatialDataRole m_columnGeographicRole{GeoSpatialDataRole::NOT_SET};
     bool m_columnGeographicRoleHasBeenSet = false;
 
     ColumnDescription m_columnDescription;

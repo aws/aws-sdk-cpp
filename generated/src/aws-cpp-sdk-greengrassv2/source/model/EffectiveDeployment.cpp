@@ -18,24 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-EffectiveDeployment::EffectiveDeployment() : 
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentNameHasBeenSet(false),
-    m_iotJobIdHasBeenSet(false),
-    m_iotJobArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_coreDeviceExecutionStatus(EffectiveDeploymentExecutionStatus::NOT_SET),
-    m_coreDeviceExecutionStatusHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false)
-{
-}
-
 EffectiveDeployment::EffectiveDeployment(JsonView jsonValue)
-  : EffectiveDeployment()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ EffectiveDeployment& EffectiveDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentName"))
   {
     m_deploymentName = jsonValue.GetString("deploymentName");
-
     m_deploymentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotJobId"))
   {
     m_iotJobId = jsonValue.GetString("iotJobId");
-
     m_iotJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iotJobArn"))
   {
     m_iotJobArn = jsonValue.GetString("iotJobArn");
-
     m_iotJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("coreDeviceExecutionStatus"))
   {
     m_coreDeviceExecutionStatus = EffectiveDeploymentExecutionStatusMapper::GetEffectiveDeploymentExecutionStatusForName(jsonValue.GetString("coreDeviceExecutionStatus"));
-
     m_coreDeviceExecutionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("creationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedTimestamp"))
   {
     m_modifiedTimestamp = jsonValue.GetDouble("modifiedTimestamp");
-
     m_modifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusDetails"))
   {
     m_statusDetails = jsonValue.GetObject("statusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

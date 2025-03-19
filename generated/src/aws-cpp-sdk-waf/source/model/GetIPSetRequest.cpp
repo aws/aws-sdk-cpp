@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIPSetRequest::GetIPSetRequest() : 
-    m_iPSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIPSetRequest::SerializePayload() const
 {
   JsonValue payload;

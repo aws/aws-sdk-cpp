@@ -32,7 +32,7 @@ namespace Model
   class CoverageHours
   {
   public:
-    AWS_COSTEXPLORER_API CoverageHours();
+    AWS_COSTEXPLORER_API CoverageHours() = default;
     AWS_COSTEXPLORER_API CoverageHours(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CoverageHours& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>The number of instance running hours that On-Demand Instances covered.</p>
      */
-    inline const Aws::String& GetOnDemandHours() const{ return m_onDemandHours; }
+    inline const Aws::String& GetOnDemandHours() const { return m_onDemandHours; }
     inline bool OnDemandHoursHasBeenSet() const { return m_onDemandHoursHasBeenSet; }
-    inline void SetOnDemandHours(const Aws::String& value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours = value; }
-    inline void SetOnDemandHours(Aws::String&& value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours = std::move(value); }
-    inline void SetOnDemandHours(const char* value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours.assign(value); }
-    inline CoverageHours& WithOnDemandHours(const Aws::String& value) { SetOnDemandHours(value); return *this;}
-    inline CoverageHours& WithOnDemandHours(Aws::String&& value) { SetOnDemandHours(std::move(value)); return *this;}
-    inline CoverageHours& WithOnDemandHours(const char* value) { SetOnDemandHours(value); return *this;}
+    template<typename OnDemandHoursT = Aws::String>
+    void SetOnDemandHours(OnDemandHoursT&& value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours = std::forward<OnDemandHoursT>(value); }
+    template<typename OnDemandHoursT = Aws::String>
+    CoverageHours& WithOnDemandHours(OnDemandHoursT&& value) { SetOnDemandHours(std::forward<OnDemandHoursT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instance running hours that reservations covered.</p>
      */
-    inline const Aws::String& GetReservedHours() const{ return m_reservedHours; }
+    inline const Aws::String& GetReservedHours() const { return m_reservedHours; }
     inline bool ReservedHoursHasBeenSet() const { return m_reservedHoursHasBeenSet; }
-    inline void SetReservedHours(const Aws::String& value) { m_reservedHoursHasBeenSet = true; m_reservedHours = value; }
-    inline void SetReservedHours(Aws::String&& value) { m_reservedHoursHasBeenSet = true; m_reservedHours = std::move(value); }
-    inline void SetReservedHours(const char* value) { m_reservedHoursHasBeenSet = true; m_reservedHours.assign(value); }
-    inline CoverageHours& WithReservedHours(const Aws::String& value) { SetReservedHours(value); return *this;}
-    inline CoverageHours& WithReservedHours(Aws::String&& value) { SetReservedHours(std::move(value)); return *this;}
-    inline CoverageHours& WithReservedHours(const char* value) { SetReservedHours(value); return *this;}
+    template<typename ReservedHoursT = Aws::String>
+    void SetReservedHours(ReservedHoursT&& value) { m_reservedHoursHasBeenSet = true; m_reservedHours = std::forward<ReservedHoursT>(value); }
+    template<typename ReservedHoursT = Aws::String>
+    CoverageHours& WithReservedHours(ReservedHoursT&& value) { SetReservedHours(std::forward<ReservedHoursT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total instance usage, in hours.</p>
      */
-    inline const Aws::String& GetTotalRunningHours() const{ return m_totalRunningHours; }
+    inline const Aws::String& GetTotalRunningHours() const { return m_totalRunningHours; }
     inline bool TotalRunningHoursHasBeenSet() const { return m_totalRunningHoursHasBeenSet; }
-    inline void SetTotalRunningHours(const Aws::String& value) { m_totalRunningHoursHasBeenSet = true; m_totalRunningHours = value; }
-    inline void SetTotalRunningHours(Aws::String&& value) { m_totalRunningHoursHasBeenSet = true; m_totalRunningHours = std::move(value); }
-    inline void SetTotalRunningHours(const char* value) { m_totalRunningHoursHasBeenSet = true; m_totalRunningHours.assign(value); }
-    inline CoverageHours& WithTotalRunningHours(const Aws::String& value) { SetTotalRunningHours(value); return *this;}
-    inline CoverageHours& WithTotalRunningHours(Aws::String&& value) { SetTotalRunningHours(std::move(value)); return *this;}
-    inline CoverageHours& WithTotalRunningHours(const char* value) { SetTotalRunningHours(value); return *this;}
+    template<typename TotalRunningHoursT = Aws::String>
+    void SetTotalRunningHours(TotalRunningHoursT&& value) { m_totalRunningHoursHasBeenSet = true; m_totalRunningHours = std::forward<TotalRunningHoursT>(value); }
+    template<typename TotalRunningHoursT = Aws::String>
+    CoverageHours& WithTotalRunningHours(TotalRunningHoursT&& value) { SetTotalRunningHours(std::forward<TotalRunningHoursT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage of instance hours that a reservation covered.</p>
      */
-    inline const Aws::String& GetCoverageHoursPercentage() const{ return m_coverageHoursPercentage; }
+    inline const Aws::String& GetCoverageHoursPercentage() const { return m_coverageHoursPercentage; }
     inline bool CoverageHoursPercentageHasBeenSet() const { return m_coverageHoursPercentageHasBeenSet; }
-    inline void SetCoverageHoursPercentage(const Aws::String& value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage = value; }
-    inline void SetCoverageHoursPercentage(Aws::String&& value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage = std::move(value); }
-    inline void SetCoverageHoursPercentage(const char* value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage.assign(value); }
-    inline CoverageHours& WithCoverageHoursPercentage(const Aws::String& value) { SetCoverageHoursPercentage(value); return *this;}
-    inline CoverageHours& WithCoverageHoursPercentage(Aws::String&& value) { SetCoverageHoursPercentage(std::move(value)); return *this;}
-    inline CoverageHours& WithCoverageHoursPercentage(const char* value) { SetCoverageHoursPercentage(value); return *this;}
+    template<typename CoverageHoursPercentageT = Aws::String>
+    void SetCoverageHoursPercentage(CoverageHoursPercentageT&& value) { m_coverageHoursPercentageHasBeenSet = true; m_coverageHoursPercentage = std::forward<CoverageHoursPercentageT>(value); }
+    template<typename CoverageHoursPercentageT = Aws::String>
+    CoverageHours& WithCoverageHoursPercentage(CoverageHoursPercentageT&& value) { SetCoverageHoursPercentage(std::forward<CoverageHoursPercentageT>(value)); return *this;}
     ///@}
   private:
 

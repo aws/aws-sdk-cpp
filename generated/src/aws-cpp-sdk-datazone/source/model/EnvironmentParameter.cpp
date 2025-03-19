@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentParameter::EnvironmentParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EnvironmentParameter::EnvironmentParameter(JsonView jsonValue)
-  : EnvironmentParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EnvironmentParameter& EnvironmentParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

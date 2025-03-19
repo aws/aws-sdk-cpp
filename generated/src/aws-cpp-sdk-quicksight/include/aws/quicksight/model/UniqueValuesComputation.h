@@ -32,7 +32,7 @@ namespace Model
   class UniqueValuesComputation
   {
   public:
-    AWS_QUICKSIGHT_API UniqueValuesComputation();
+    AWS_QUICKSIGHT_API UniqueValuesComputation() = default;
     AWS_QUICKSIGHT_API UniqueValuesComputation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API UniqueValuesComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The ID for a computation.</p>
      */
-    inline const Aws::String& GetComputationId() const{ return m_computationId; }
+    inline const Aws::String& GetComputationId() const { return m_computationId; }
     inline bool ComputationIdHasBeenSet() const { return m_computationIdHasBeenSet; }
-    inline void SetComputationId(const Aws::String& value) { m_computationIdHasBeenSet = true; m_computationId = value; }
-    inline void SetComputationId(Aws::String&& value) { m_computationIdHasBeenSet = true; m_computationId = std::move(value); }
-    inline void SetComputationId(const char* value) { m_computationIdHasBeenSet = true; m_computationId.assign(value); }
-    inline UniqueValuesComputation& WithComputationId(const Aws::String& value) { SetComputationId(value); return *this;}
-    inline UniqueValuesComputation& WithComputationId(Aws::String&& value) { SetComputationId(std::move(value)); return *this;}
-    inline UniqueValuesComputation& WithComputationId(const char* value) { SetComputationId(value); return *this;}
+    template<typename ComputationIdT = Aws::String>
+    void SetComputationId(ComputationIdT&& value) { m_computationIdHasBeenSet = true; m_computationId = std::forward<ComputationIdT>(value); }
+    template<typename ComputationIdT = Aws::String>
+    UniqueValuesComputation& WithComputationId(ComputationIdT&& value) { SetComputationId(std::forward<ComputationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a computation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UniqueValuesComputation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UniqueValuesComputation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UniqueValuesComputation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UniqueValuesComputation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The category field that is used in a computation.</p>
      */
-    inline const DimensionField& GetCategory() const{ return m_category; }
+    inline const DimensionField& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline UniqueValuesComputation& WithCategory(const DimensionField& value) { SetCategory(value); return *this;}
-    inline UniqueValuesComputation& WithCategory(DimensionField&& value) { SetCategory(std::move(value)); return *this;}
+    template<typename CategoryT = DimensionField>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = DimensionField>
+    UniqueValuesComputation& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
   private:
 

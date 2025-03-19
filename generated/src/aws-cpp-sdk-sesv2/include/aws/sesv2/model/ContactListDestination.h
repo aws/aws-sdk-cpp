@@ -33,7 +33,7 @@ namespace Model
   class ContactListDestination
   {
   public:
-    AWS_SESV2_API ContactListDestination();
+    AWS_SESV2_API ContactListDestination() = default;
     AWS_SESV2_API ContactListDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ContactListDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the contact list.</p>
      */
-    inline const Aws::String& GetContactListName() const{ return m_contactListName; }
+    inline const Aws::String& GetContactListName() const { return m_contactListName; }
     inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
-    inline void SetContactListName(const Aws::String& value) { m_contactListNameHasBeenSet = true; m_contactListName = value; }
-    inline void SetContactListName(Aws::String&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::move(value); }
-    inline void SetContactListName(const char* value) { m_contactListNameHasBeenSet = true; m_contactListName.assign(value); }
-    inline ContactListDestination& WithContactListName(const Aws::String& value) { SetContactListName(value); return *this;}
-    inline ContactListDestination& WithContactListName(Aws::String&& value) { SetContactListName(std::move(value)); return *this;}
-    inline ContactListDestination& WithContactListName(const char* value) { SetContactListName(value); return *this;}
+    template<typename ContactListNameT = Aws::String>
+    void SetContactListName(ContactListNameT&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::forward<ContactListNameT>(value); }
+    template<typename ContactListNameT = Aws::String>
+    ContactListDestination& WithContactListName(ContactListNameT&& value) { SetContactListName(std::forward<ContactListNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * the record already exists, it will override it with the new value.</p> </li>
      * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
-    inline const ContactListImportAction& GetContactListImportAction() const{ return m_contactListImportAction; }
+    inline ContactListImportAction GetContactListImportAction() const { return m_contactListImportAction; }
     inline bool ContactListImportActionHasBeenSet() const { return m_contactListImportActionHasBeenSet; }
-    inline void SetContactListImportAction(const ContactListImportAction& value) { m_contactListImportActionHasBeenSet = true; m_contactListImportAction = value; }
-    inline void SetContactListImportAction(ContactListImportAction&& value) { m_contactListImportActionHasBeenSet = true; m_contactListImportAction = std::move(value); }
-    inline ContactListDestination& WithContactListImportAction(const ContactListImportAction& value) { SetContactListImportAction(value); return *this;}
-    inline ContactListDestination& WithContactListImportAction(ContactListImportAction&& value) { SetContactListImportAction(std::move(value)); return *this;}
+    inline void SetContactListImportAction(ContactListImportAction value) { m_contactListImportActionHasBeenSet = true; m_contactListImportAction = value; }
+    inline ContactListDestination& WithContactListImportAction(ContactListImportAction value) { SetContactListImportAction(value); return *this;}
     ///@}
   private:
 
     Aws::String m_contactListName;
     bool m_contactListNameHasBeenSet = false;
 
-    ContactListImportAction m_contactListImportAction;
+    ContactListImportAction m_contactListImportAction{ContactListImportAction::NOT_SET};
     bool m_contactListImportActionHasBeenSet = false;
   };
 

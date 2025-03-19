@@ -18,31 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-MethodSetting::MethodSetting() : 
-    m_metricsEnabled(false),
-    m_metricsEnabledHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_dataTraceEnabled(false),
-    m_dataTraceEnabledHasBeenSet(false),
-    m_throttlingBurstLimit(0),
-    m_throttlingBurstLimitHasBeenSet(false),
-    m_throttlingRateLimit(0.0),
-    m_throttlingRateLimitHasBeenSet(false),
-    m_cachingEnabled(false),
-    m_cachingEnabledHasBeenSet(false),
-    m_cacheTtlInSeconds(0),
-    m_cacheTtlInSecondsHasBeenSet(false),
-    m_cacheDataEncrypted(false),
-    m_cacheDataEncryptedHasBeenSet(false),
-    m_requireAuthorizationForCacheControl(false),
-    m_requireAuthorizationForCacheControlHasBeenSet(false),
-    m_unauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy::NOT_SET),
-    m_unauthorizedCacheControlHeaderStrategyHasBeenSet(false)
-{
-}
-
 MethodSetting::MethodSetting(JsonView jsonValue)
-  : MethodSetting()
 {
   *this = jsonValue;
 }
@@ -52,73 +28,53 @@ MethodSetting& MethodSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metricsEnabled"))
   {
     m_metricsEnabled = jsonValue.GetBool("metricsEnabled");
-
     m_metricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loggingLevel"))
   {
     m_loggingLevel = jsonValue.GetString("loggingLevel");
-
     m_loggingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTraceEnabled"))
   {
     m_dataTraceEnabled = jsonValue.GetBool("dataTraceEnabled");
-
     m_dataTraceEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throttlingBurstLimit"))
   {
     m_throttlingBurstLimit = jsonValue.GetInteger("throttlingBurstLimit");
-
     m_throttlingBurstLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throttlingRateLimit"))
   {
     m_throttlingRateLimit = jsonValue.GetDouble("throttlingRateLimit");
-
     m_throttlingRateLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cachingEnabled"))
   {
     m_cachingEnabled = jsonValue.GetBool("cachingEnabled");
-
     m_cachingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheTtlInSeconds"))
   {
     m_cacheTtlInSeconds = jsonValue.GetInteger("cacheTtlInSeconds");
-
     m_cacheTtlInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheDataEncrypted"))
   {
     m_cacheDataEncrypted = jsonValue.GetBool("cacheDataEncrypted");
-
     m_cacheDataEncryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requireAuthorizationForCacheControl"))
   {
     m_requireAuthorizationForCacheControl = jsonValue.GetBool("requireAuthorizationForCacheControl");
-
     m_requireAuthorizationForCacheControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unauthorizedCacheControlHeaderStrategy"))
   {
     m_unauthorizedCacheControlHeaderStrategy = UnauthorizedCacheControlHeaderStrategyMapper::GetUnauthorizedCacheControlHeaderStrategyForName(jsonValue.GetString("unauthorizedCacheControlHeaderStrategy"));
-
     m_unauthorizedCacheControlHeaderStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

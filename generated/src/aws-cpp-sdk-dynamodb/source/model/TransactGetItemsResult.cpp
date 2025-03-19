@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TransactGetItemsResult::TransactGetItemsResult()
-{
-}
-
 TransactGetItemsResult::TransactGetItemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ TransactGetItemsResult& TransactGetItemsResult::operator =(const Aws::AmazonWebS
     {
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
     }
+    m_consumedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Responses"))
   {
     Aws::Utils::Array<JsonView> responsesJsonList = jsonValue.GetArray("Responses");
@@ -45,14 +41,15 @@ TransactGetItemsResult& TransactGetItemsResult::operator =(const Aws::AmazonWebS
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());
     }
+    m_responsesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

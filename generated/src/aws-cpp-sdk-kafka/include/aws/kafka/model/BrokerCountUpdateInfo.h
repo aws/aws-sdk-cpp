@@ -34,7 +34,7 @@ namespace Model
   class BrokerCountUpdateInfo
   {
   public:
-    AWS_KAFKA_API BrokerCountUpdateInfo();
+    AWS_KAFKA_API BrokerCountUpdateInfo() = default;
     AWS_KAFKA_API BrokerCountUpdateInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API BrokerCountUpdateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
             <p>Kafka Broker IDs of brokers being created.</p>
          
      */
-    inline const Aws::Vector<double>& GetCreatedBrokerIds() const{ return m_createdBrokerIds; }
+    inline const Aws::Vector<double>& GetCreatedBrokerIds() const { return m_createdBrokerIds; }
     inline bool CreatedBrokerIdsHasBeenSet() const { return m_createdBrokerIdsHasBeenSet; }
-    inline void SetCreatedBrokerIds(const Aws::Vector<double>& value) { m_createdBrokerIdsHasBeenSet = true; m_createdBrokerIds = value; }
-    inline void SetCreatedBrokerIds(Aws::Vector<double>&& value) { m_createdBrokerIdsHasBeenSet = true; m_createdBrokerIds = std::move(value); }
-    inline BrokerCountUpdateInfo& WithCreatedBrokerIds(const Aws::Vector<double>& value) { SetCreatedBrokerIds(value); return *this;}
-    inline BrokerCountUpdateInfo& WithCreatedBrokerIds(Aws::Vector<double>&& value) { SetCreatedBrokerIds(std::move(value)); return *this;}
+    template<typename CreatedBrokerIdsT = Aws::Vector<double>>
+    void SetCreatedBrokerIds(CreatedBrokerIdsT&& value) { m_createdBrokerIdsHasBeenSet = true; m_createdBrokerIds = std::forward<CreatedBrokerIdsT>(value); }
+    template<typename CreatedBrokerIdsT = Aws::Vector<double>>
+    BrokerCountUpdateInfo& WithCreatedBrokerIds(CreatedBrokerIdsT&& value) { SetCreatedBrokerIds(std::forward<CreatedBrokerIdsT>(value)); return *this;}
     inline BrokerCountUpdateInfo& AddCreatedBrokerIds(double value) { m_createdBrokerIdsHasBeenSet = true; m_createdBrokerIds.push_back(value); return *this; }
     ///@}
 
@@ -61,12 +61,12 @@ namespace Model
             <p>Kafka Broker IDs of brokers being deleted.</p>
          
      */
-    inline const Aws::Vector<double>& GetDeletedBrokerIds() const{ return m_deletedBrokerIds; }
+    inline const Aws::Vector<double>& GetDeletedBrokerIds() const { return m_deletedBrokerIds; }
     inline bool DeletedBrokerIdsHasBeenSet() const { return m_deletedBrokerIdsHasBeenSet; }
-    inline void SetDeletedBrokerIds(const Aws::Vector<double>& value) { m_deletedBrokerIdsHasBeenSet = true; m_deletedBrokerIds = value; }
-    inline void SetDeletedBrokerIds(Aws::Vector<double>&& value) { m_deletedBrokerIdsHasBeenSet = true; m_deletedBrokerIds = std::move(value); }
-    inline BrokerCountUpdateInfo& WithDeletedBrokerIds(const Aws::Vector<double>& value) { SetDeletedBrokerIds(value); return *this;}
-    inline BrokerCountUpdateInfo& WithDeletedBrokerIds(Aws::Vector<double>&& value) { SetDeletedBrokerIds(std::move(value)); return *this;}
+    template<typename DeletedBrokerIdsT = Aws::Vector<double>>
+    void SetDeletedBrokerIds(DeletedBrokerIdsT&& value) { m_deletedBrokerIdsHasBeenSet = true; m_deletedBrokerIds = std::forward<DeletedBrokerIdsT>(value); }
+    template<typename DeletedBrokerIdsT = Aws::Vector<double>>
+    BrokerCountUpdateInfo& WithDeletedBrokerIds(DeletedBrokerIdsT&& value) { SetDeletedBrokerIds(std::forward<DeletedBrokerIdsT>(value)); return *this;}
     inline BrokerCountUpdateInfo& AddDeletedBrokerIds(double value) { m_deletedBrokerIdsHasBeenSet = true; m_deletedBrokerIds.push_back(value); return *this; }
     ///@}
   private:

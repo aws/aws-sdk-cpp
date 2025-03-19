@@ -28,7 +28,7 @@ namespace Model
   class CreateChimeWebhookConfigurationResult
   {
   public:
-    AWS_CHATBOT_API CreateChimeWebhookConfigurationResult();
+    AWS_CHATBOT_API CreateChimeWebhookConfigurationResult() = default;
     AWS_CHATBOT_API CreateChimeWebhookConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API CreateChimeWebhookConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An Amazon Chime webhook configuration.</p>
      */
-    inline const ChimeWebhookConfiguration& GetWebhookConfiguration() const{ return m_webhookConfiguration; }
-    inline void SetWebhookConfiguration(const ChimeWebhookConfiguration& value) { m_webhookConfiguration = value; }
-    inline void SetWebhookConfiguration(ChimeWebhookConfiguration&& value) { m_webhookConfiguration = std::move(value); }
-    inline CreateChimeWebhookConfigurationResult& WithWebhookConfiguration(const ChimeWebhookConfiguration& value) { SetWebhookConfiguration(value); return *this;}
-    inline CreateChimeWebhookConfigurationResult& WithWebhookConfiguration(ChimeWebhookConfiguration&& value) { SetWebhookConfiguration(std::move(value)); return *this;}
+    inline const ChimeWebhookConfiguration& GetWebhookConfiguration() const { return m_webhookConfiguration; }
+    template<typename WebhookConfigurationT = ChimeWebhookConfiguration>
+    void SetWebhookConfiguration(WebhookConfigurationT&& value) { m_webhookConfigurationHasBeenSet = true; m_webhookConfiguration = std::forward<WebhookConfigurationT>(value); }
+    template<typename WebhookConfigurationT = ChimeWebhookConfiguration>
+    CreateChimeWebhookConfigurationResult& WithWebhookConfiguration(WebhookConfigurationT&& value) { SetWebhookConfiguration(std::forward<WebhookConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateChimeWebhookConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateChimeWebhookConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateChimeWebhookConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateChimeWebhookConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChimeWebhookConfiguration m_webhookConfiguration;
+    bool m_webhookConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

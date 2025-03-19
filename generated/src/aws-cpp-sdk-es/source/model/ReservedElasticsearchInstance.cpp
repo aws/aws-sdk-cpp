@@ -18,31 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-ReservedElasticsearchInstance::ReservedElasticsearchInstance() : 
-    m_reservationNameHasBeenSet(false),
-    m_reservedElasticsearchInstanceIdHasBeenSet(false),
-    m_reservedElasticsearchInstanceOfferingIdHasBeenSet(false),
-    m_elasticsearchInstanceType(ESPartitionInstanceType::NOT_SET),
-    m_elasticsearchInstanceTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_elasticsearchInstanceCount(0),
-    m_elasticsearchInstanceCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_paymentOption(ReservedElasticsearchInstancePaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
-{
-}
-
 ReservedElasticsearchInstance::ReservedElasticsearchInstance(JsonView jsonValue)
-  : ReservedElasticsearchInstance()
 {
   *this = jsonValue;
 }
@@ -52,87 +28,63 @@ ReservedElasticsearchInstance& ReservedElasticsearchInstance::operator =(JsonVie
   if(jsonValue.ValueExists("ReservationName"))
   {
     m_reservationName = jsonValue.GetString("ReservationName");
-
     m_reservationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedElasticsearchInstanceId"))
   {
     m_reservedElasticsearchInstanceId = jsonValue.GetString("ReservedElasticsearchInstanceId");
-
     m_reservedElasticsearchInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedElasticsearchInstanceOfferingId"))
   {
     m_reservedElasticsearchInstanceOfferingId = jsonValue.GetString("ReservedElasticsearchInstanceOfferingId");
-
     m_reservedElasticsearchInstanceOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticsearchInstanceType"))
   {
     m_elasticsearchInstanceType = ESPartitionInstanceTypeMapper::GetESPartitionInstanceTypeForName(jsonValue.GetString("ElasticsearchInstanceType"));
-
     m_elasticsearchInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedPrice"))
   {
     m_fixedPrice = jsonValue.GetDouble("FixedPrice");
-
     m_fixedPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsagePrice"))
   {
     m_usagePrice = jsonValue.GetDouble("UsagePrice");
-
     m_usagePriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticsearchInstanceCount"))
   {
     m_elasticsearchInstanceCount = jsonValue.GetInteger("ElasticsearchInstanceCount");
-
     m_elasticsearchInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = ReservedElasticsearchInstancePaymentOptionMapper::GetReservedElasticsearchInstancePaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringCharges"))
   {
     Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
@@ -142,7 +94,6 @@ ReservedElasticsearchInstance& ReservedElasticsearchInstance::operator =(JsonVie
     }
     m_recurringChargesHasBeenSet = true;
   }
-
   return *this;
 }
 

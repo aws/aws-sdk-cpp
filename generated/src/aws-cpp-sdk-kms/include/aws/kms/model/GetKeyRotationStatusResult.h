@@ -28,7 +28,7 @@ namespace Model
   class GetKeyRotationStatusResult
   {
   public:
-    AWS_KMS_API GetKeyRotationStatusResult();
+    AWS_KMS_API GetKeyRotationStatusResult() = default;
     AWS_KMS_API GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API GetKeyRotationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>A Boolean value that specifies whether key rotation is enabled.</p>
      */
-    inline bool GetKeyRotationEnabled() const{ return m_keyRotationEnabled; }
-    inline void SetKeyRotationEnabled(bool value) { m_keyRotationEnabled = value; }
+    inline bool GetKeyRotationEnabled() const { return m_keyRotationEnabled; }
+    inline void SetKeyRotationEnabled(bool value) { m_keyRotationEnabledHasBeenSet = true; m_keyRotationEnabled = value; }
     inline GetKeyRotationStatusResult& WithKeyRotationEnabled(bool value) { SetKeyRotationEnabled(value); return *this;}
     ///@}
 
@@ -46,13 +46,11 @@ namespace Model
     /**
      * <p>Identifies the specified symmetric encryption KMS key.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline GetKeyRotationStatusResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline GetKeyRotationStatusResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline GetKeyRotationStatusResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    GetKeyRotationStatusResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,8 +58,8 @@ namespace Model
      * <p>The number of days between each automatic rotation. The default value is 365
      * days.</p>
      */
-    inline int GetRotationPeriodInDays() const{ return m_rotationPeriodInDays; }
-    inline void SetRotationPeriodInDays(int value) { m_rotationPeriodInDays = value; }
+    inline int GetRotationPeriodInDays() const { return m_rotationPeriodInDays; }
+    inline void SetRotationPeriodInDays(int value) { m_rotationPeriodInDaysHasBeenSet = true; m_rotationPeriodInDays = value; }
     inline GetKeyRotationStatusResult& WithRotationPeriodInDays(int value) { SetRotationPeriodInDays(value); return *this;}
     ///@}
 
@@ -69,11 +67,11 @@ namespace Model
     /**
      * <p>The next date that KMS will automatically rotate the key material.</p>
      */
-    inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
-    inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDate = value; }
-    inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDate = std::move(value); }
-    inline GetKeyRotationStatusResult& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
-    inline GetKeyRotationStatusResult& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetNextRotationDate() const { return m_nextRotationDate; }
+    template<typename NextRotationDateT = Aws::Utils::DateTime>
+    void SetNextRotationDate(NextRotationDateT&& value) { m_nextRotationDateHasBeenSet = true; m_nextRotationDate = std::forward<NextRotationDateT>(value); }
+    template<typename NextRotationDateT = Aws::Utils::DateTime>
+    GetKeyRotationStatusResult& WithNextRotationDate(NextRotationDateT&& value) { SetNextRotationDate(std::forward<NextRotationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,36 +84,40 @@ namespace Model
      * rotation's completion. Once the on-demand rotation is complete, use
      * <a>ListKeyRotations</a> to view the details of the on-demand rotation.</p>
      */
-    inline const Aws::Utils::DateTime& GetOnDemandRotationStartDate() const{ return m_onDemandRotationStartDate; }
-    inline void SetOnDemandRotationStartDate(const Aws::Utils::DateTime& value) { m_onDemandRotationStartDate = value; }
-    inline void SetOnDemandRotationStartDate(Aws::Utils::DateTime&& value) { m_onDemandRotationStartDate = std::move(value); }
-    inline GetKeyRotationStatusResult& WithOnDemandRotationStartDate(const Aws::Utils::DateTime& value) { SetOnDemandRotationStartDate(value); return *this;}
-    inline GetKeyRotationStatusResult& WithOnDemandRotationStartDate(Aws::Utils::DateTime&& value) { SetOnDemandRotationStartDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetOnDemandRotationStartDate() const { return m_onDemandRotationStartDate; }
+    template<typename OnDemandRotationStartDateT = Aws::Utils::DateTime>
+    void SetOnDemandRotationStartDate(OnDemandRotationStartDateT&& value) { m_onDemandRotationStartDateHasBeenSet = true; m_onDemandRotationStartDate = std::forward<OnDemandRotationStartDateT>(value); }
+    template<typename OnDemandRotationStartDateT = Aws::Utils::DateTime>
+    GetKeyRotationStatusResult& WithOnDemandRotationStartDate(OnDemandRotationStartDateT&& value) { SetOnDemandRotationStartDate(std::forward<OnDemandRotationStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetKeyRotationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetKeyRotationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetKeyRotationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetKeyRotationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_keyRotationEnabled;
+    bool m_keyRotationEnabled{false};
+    bool m_keyRotationEnabledHasBeenSet = false;
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    int m_rotationPeriodInDays;
+    int m_rotationPeriodInDays{0};
+    bool m_rotationPeriodInDaysHasBeenSet = false;
 
-    Aws::Utils::DateTime m_nextRotationDate;
+    Aws::Utils::DateTime m_nextRotationDate{};
+    bool m_nextRotationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_onDemandRotationStartDate;
+    Aws::Utils::DateTime m_onDemandRotationStartDate{};
+    bool m_onDemandRotationStartDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

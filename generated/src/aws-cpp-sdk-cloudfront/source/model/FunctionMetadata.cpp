@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionMetadata::FunctionMetadata() : 
-    m_functionARNHasBeenSet(false),
-    m_stage(FunctionStage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 FunctionMetadata::FunctionMetadata(const XmlNode& xmlNode)
-  : FunctionMetadata()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ FunctionMetadata& FunctionMetadata::operator =(const XmlNode& xmlNode)
     XmlNode stageNode = resultNode.FirstChild("Stage");
     if(!stageNode.IsNull())
     {
-      m_stage = FunctionStageMapper::GetFunctionStageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stageNode.GetText()).c_str()).c_str());
+      m_stage = FunctionStageMapper::GetFunctionStageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stageNode.GetText()).c_str()));
       m_stageHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");

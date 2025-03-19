@@ -22,10 +22,9 @@ namespace Model
   class GetImageSetMetadataResult
   {
   public:
-    AWS_MEDICALIMAGING_API GetImageSetMetadataResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_MEDICALIMAGING_API GetImageSetMetadataResult(GetImageSetMetadataResult&&);
-    AWS_MEDICALIMAGING_API GetImageSetMetadataResult& operator=(GetImageSetMetadataResult&&);
+    AWS_MEDICALIMAGING_API GetImageSetMetadataResult() = default;
+    AWS_MEDICALIMAGING_API GetImageSetMetadataResult(GetImageSetMetadataResult&&) = default;
+    AWS_MEDICALIMAGING_API GetImageSetMetadataResult& operator=(GetImageSetMetadataResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetImageSetMetadataResult(const GetImageSetMetadataResult&) = delete;
@@ -52,13 +51,11 @@ namespace Model
      * <p>The format in which the study metadata is returned to the customer. Default
      * is <code>text/plain</code>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetImageSetMetadataResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetImageSetMetadataResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetImageSetMetadataResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetImageSetMetadataResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,34 +63,34 @@ namespace Model
      * <p>The compression format in which image set metadata attributes are
      * returned.</p>
      */
-    inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
-    inline void SetContentEncoding(const Aws::String& value) { m_contentEncoding = value; }
-    inline void SetContentEncoding(Aws::String&& value) { m_contentEncoding = std::move(value); }
-    inline void SetContentEncoding(const char* value) { m_contentEncoding.assign(value); }
-    inline GetImageSetMetadataResult& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
-    inline GetImageSetMetadataResult& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
-    inline GetImageSetMetadataResult& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
+    inline const Aws::String& GetContentEncoding() const { return m_contentEncoding; }
+    template<typename ContentEncodingT = Aws::String>
+    void SetContentEncoding(ContentEncodingT&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::forward<ContentEncodingT>(value); }
+    template<typename ContentEncodingT = Aws::String>
+    GetImageSetMetadataResult& WithContentEncoding(ContentEncodingT&& value) { SetContentEncoding(std::forward<ContentEncodingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetImageSetMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetImageSetMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetImageSetMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetImageSetMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_imageSetMetadataBlob;
+    Aws::Utils::Stream::ResponseStream m_imageSetMetadataBlob{};
+    bool m_imageSetMetadataBlobHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_contentEncoding;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

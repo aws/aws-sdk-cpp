@@ -12,16 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAnomalyGroupSummariesRequest::ListAnomalyGroupSummariesRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_sensitivityThreshold(0),
-    m_sensitivityThresholdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAnomalyGroupSummariesRequest::SerializePayload() const
 {
   JsonValue payload;

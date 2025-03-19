@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyContentSecurityPolicy::ResponseHeadersPolicyContentSecurityPolicy() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_contentSecurityPolicyHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyContentSecurityPolicy::ResponseHeadersPolicyContentSecurityPolicy(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyContentSecurityPolicy()
 {
   *this = xmlNode;
 }

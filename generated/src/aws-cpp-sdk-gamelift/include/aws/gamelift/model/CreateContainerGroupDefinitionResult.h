@@ -28,7 +28,7 @@ namespace Model
   class CreateContainerGroupDefinitionResult
   {
   public:
-    AWS_GAMELIFT_API CreateContainerGroupDefinitionResult();
+    AWS_GAMELIFT_API CreateContainerGroupDefinitionResult() = default;
     AWS_GAMELIFT_API CreateContainerGroupDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreateContainerGroupDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The properties of the new container group definition resource. You can use
      * this resource to create a container fleet.</p>
      */
-    inline const ContainerGroupDefinition& GetContainerGroupDefinition() const{ return m_containerGroupDefinition; }
-    inline void SetContainerGroupDefinition(const ContainerGroupDefinition& value) { m_containerGroupDefinition = value; }
-    inline void SetContainerGroupDefinition(ContainerGroupDefinition&& value) { m_containerGroupDefinition = std::move(value); }
-    inline CreateContainerGroupDefinitionResult& WithContainerGroupDefinition(const ContainerGroupDefinition& value) { SetContainerGroupDefinition(value); return *this;}
-    inline CreateContainerGroupDefinitionResult& WithContainerGroupDefinition(ContainerGroupDefinition&& value) { SetContainerGroupDefinition(std::move(value)); return *this;}
+    inline const ContainerGroupDefinition& GetContainerGroupDefinition() const { return m_containerGroupDefinition; }
+    template<typename ContainerGroupDefinitionT = ContainerGroupDefinition>
+    void SetContainerGroupDefinition(ContainerGroupDefinitionT&& value) { m_containerGroupDefinitionHasBeenSet = true; m_containerGroupDefinition = std::forward<ContainerGroupDefinitionT>(value); }
+    template<typename ContainerGroupDefinitionT = ContainerGroupDefinition>
+    CreateContainerGroupDefinitionResult& WithContainerGroupDefinition(ContainerGroupDefinitionT&& value) { SetContainerGroupDefinition(std::forward<ContainerGroupDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContainerGroupDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContainerGroupDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContainerGroupDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContainerGroupDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContainerGroupDefinition m_containerGroupDefinition;
+    bool m_containerGroupDefinitionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,10 +28,9 @@ namespace Model
   class DeleteThingShadowResult
   {
   public:
-    AWS_IOTDATAPLANE_API DeleteThingShadowResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_IOTDATAPLANE_API DeleteThingShadowResult(DeleteThingShadowResult&&);
-    AWS_IOTDATAPLANE_API DeleteThingShadowResult& operator=(DeleteThingShadowResult&&);
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult() = default;
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult(DeleteThingShadowResult&&) = default;
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult& operator=(DeleteThingShadowResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     DeleteThingShadowResult(const DeleteThingShadowResult&) = delete;
@@ -54,19 +53,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteThingShadowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteThingShadowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteThingShadowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteThingShadowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_payload;
+    Aws::Utils::Stream::ResponseStream m_payload{};
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

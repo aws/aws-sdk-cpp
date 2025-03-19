@@ -32,7 +32,7 @@ namespace Model
   class LogTarget
   {
   public:
-    AWS_IOT_API LogTarget();
+    AWS_IOT_API LogTarget() = default;
     AWS_IOT_API LogTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API LogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The target type.</p>
      */
-    inline const LogTargetType& GetTargetType() const{ return m_targetType; }
+    inline LogTargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const LogTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(LogTargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline LogTarget& WithTargetType(const LogTargetType& value) { SetTargetType(value); return *this;}
-    inline LogTarget& WithTargetType(LogTargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(LogTargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline LogTarget& WithTargetType(LogTargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target name.</p>
      */
-    inline const Aws::String& GetTargetName() const{ return m_targetName; }
+    inline const Aws::String& GetTargetName() const { return m_targetName; }
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-    inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-    inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-    inline LogTarget& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-    inline LogTarget& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-    inline LogTarget& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+    template<typename TargetNameT = Aws::String>
+    void SetTargetName(TargetNameT&& value) { m_targetNameHasBeenSet = true; m_targetName = std::forward<TargetNameT>(value); }
+    template<typename TargetNameT = Aws::String>
+    LogTarget& WithTargetName(TargetNameT&& value) { SetTargetName(std::forward<TargetNameT>(value)); return *this;}
     ///@}
   private:
 
-    LogTargetType m_targetType;
+    LogTargetType m_targetType{LogTargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetName;

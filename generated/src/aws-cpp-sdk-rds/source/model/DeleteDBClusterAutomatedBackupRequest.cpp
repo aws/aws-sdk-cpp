@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBClusterAutomatedBackupRequest::DeleteDBClusterAutomatedBackupRequest() : 
-    m_dbClusterResourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBClusterAutomatedBackupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

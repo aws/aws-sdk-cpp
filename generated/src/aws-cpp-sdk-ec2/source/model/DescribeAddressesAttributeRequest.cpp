@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeAddressesAttributeRequest::DescribeAddressesAttributeRequest() : 
-    m_allocationIdsHasBeenSet(false),
-    m_attribute(AddressAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddressesAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

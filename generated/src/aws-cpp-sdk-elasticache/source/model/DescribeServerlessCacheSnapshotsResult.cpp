@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeServerlessCacheSnapshotsResult::DescribeServerlessCacheSnapshotsResult()
-{
-}
-
 DescribeServerlessCacheSnapshotsResult::DescribeServerlessCacheSnapshotsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeServerlessCacheSnapshotsResult& DescribeServerlessCacheSnapshotsResult::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode serverlessCacheSnapshotsNode = resultNode.FirstChild("ServerlessCacheSnapshots");
     if(!serverlessCacheSnapshotsNode.IsNull())
     {
       XmlNode serverlessCacheSnapshotsMember = serverlessCacheSnapshotsNode.FirstChild("ServerlessCacheSnapshot");
+      m_serverlessCacheSnapshotsHasBeenSet = !serverlessCacheSnapshotsMember.IsNull();
       while(!serverlessCacheSnapshotsMember.IsNull())
       {
         m_serverlessCacheSnapshots.push_back(serverlessCacheSnapshotsMember);
         serverlessCacheSnapshotsMember = serverlessCacheSnapshotsMember.NextNode("ServerlessCacheSnapshot");
       }
 
+      m_serverlessCacheSnapshotsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeServerlessCacheSnapshotsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

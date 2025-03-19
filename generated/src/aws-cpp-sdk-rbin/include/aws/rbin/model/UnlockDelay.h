@@ -34,7 +34,7 @@ namespace Model
   class UnlockDelay
   {
   public:
-    AWS_RECYCLEBIN_API UnlockDelay();
+    AWS_RECYCLEBIN_API UnlockDelay() = default;
     AWS_RECYCLEBIN_API UnlockDelay(Aws::Utils::Json::JsonView jsonValue);
     AWS_RECYCLEBIN_API UnlockDelay& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The unlock delay period, measured in the unit specified for <b>
      * UnlockDelayUnit</b>.</p>
      */
-    inline int GetUnlockDelayValue() const{ return m_unlockDelayValue; }
+    inline int GetUnlockDelayValue() const { return m_unlockDelayValue; }
     inline bool UnlockDelayValueHasBeenSet() const { return m_unlockDelayValueHasBeenSet; }
     inline void SetUnlockDelayValue(int value) { m_unlockDelayValueHasBeenSet = true; m_unlockDelayValue = value; }
     inline UnlockDelay& WithUnlockDelayValue(int value) { SetUnlockDelayValue(value); return *this;}
@@ -56,19 +56,17 @@ namespace Model
      * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
      * delay can be measure only in days.</p>
      */
-    inline const UnlockDelayUnit& GetUnlockDelayUnit() const{ return m_unlockDelayUnit; }
+    inline UnlockDelayUnit GetUnlockDelayUnit() const { return m_unlockDelayUnit; }
     inline bool UnlockDelayUnitHasBeenSet() const { return m_unlockDelayUnitHasBeenSet; }
-    inline void SetUnlockDelayUnit(const UnlockDelayUnit& value) { m_unlockDelayUnitHasBeenSet = true; m_unlockDelayUnit = value; }
-    inline void SetUnlockDelayUnit(UnlockDelayUnit&& value) { m_unlockDelayUnitHasBeenSet = true; m_unlockDelayUnit = std::move(value); }
-    inline UnlockDelay& WithUnlockDelayUnit(const UnlockDelayUnit& value) { SetUnlockDelayUnit(value); return *this;}
-    inline UnlockDelay& WithUnlockDelayUnit(UnlockDelayUnit&& value) { SetUnlockDelayUnit(std::move(value)); return *this;}
+    inline void SetUnlockDelayUnit(UnlockDelayUnit value) { m_unlockDelayUnitHasBeenSet = true; m_unlockDelayUnit = value; }
+    inline UnlockDelay& WithUnlockDelayUnit(UnlockDelayUnit value) { SetUnlockDelayUnit(value); return *this;}
     ///@}
   private:
 
-    int m_unlockDelayValue;
+    int m_unlockDelayValue{0};
     bool m_unlockDelayValueHasBeenSet = false;
 
-    UnlockDelayUnit m_unlockDelayUnit;
+    UnlockDelayUnit m_unlockDelayUnit{UnlockDelayUnit::NOT_SET};
     bool m_unlockDelayUnitHasBeenSet = false;
   };
 

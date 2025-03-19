@@ -13,11 +13,6 @@ using namespace Aws::SSO::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-LogoutRequest::LogoutRequest() : 
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 Aws::String LogoutRequest::SerializePayload() const
 {
   return {};

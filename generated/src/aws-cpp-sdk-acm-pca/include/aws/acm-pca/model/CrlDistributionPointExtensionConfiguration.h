@@ -34,7 +34,7 @@ namespace Model
   class CrlDistributionPointExtensionConfiguration
   {
   public:
-    AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration();
+    AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration() = default;
     AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * Ledger</p> <p>This configuration cannot be enabled with a custom CNAME set.</p>
      * 
      */
-    inline bool GetOmitExtension() const{ return m_omitExtension; }
+    inline bool GetOmitExtension() const { return m_omitExtension; }
     inline bool OmitExtensionHasBeenSet() const { return m_omitExtensionHasBeenSet; }
     inline void SetOmitExtension(bool value) { m_omitExtensionHasBeenSet = true; m_omitExtension = value; }
     inline CrlDistributionPointExtensionConfiguration& WithOmitExtension(bool value) { SetOmitExtension(value); return *this;}
     ///@}
   private:
 
-    bool m_omitExtension;
+    bool m_omitExtension{false};
     bool m_omitExtensionHasBeenSet = false;
   };
 

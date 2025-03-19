@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutTaxRegistrationResult::PutTaxRegistrationResult() : 
-    m_status(TaxRegistrationStatus::NOT_SET)
-{
-}
-
 PutTaxRegistrationResult::PutTaxRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutTaxRegistrationResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ PutTaxRegistrationResult& PutTaxRegistrationResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaxRegistrationStatusMapper::GetTaxRegistrationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

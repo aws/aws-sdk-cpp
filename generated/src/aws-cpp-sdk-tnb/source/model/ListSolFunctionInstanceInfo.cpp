@@ -18,21 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ListSolFunctionInstanceInfo::ListSolFunctionInstanceInfo() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instantiatedVnfInfoHasBeenSet(false),
-    m_instantiationState(VnfInstantiationState::NOT_SET),
-    m_instantiationStateHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsInstanceIdHasBeenSet(false),
-    m_vnfPkgIdHasBeenSet(false),
-    m_vnfPkgNameHasBeenSet(false)
-{
-}
-
 ListSolFunctionInstanceInfo::ListSolFunctionInstanceInfo(JsonView jsonValue)
-  : ListSolFunctionInstanceInfo()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ListSolFunctionInstanceInfo& ListSolFunctionInstanceInfo::operator =(JsonView js
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instantiatedVnfInfo"))
   {
     m_instantiatedVnfInfo = jsonValue.GetObject("instantiatedVnfInfo");
-
     m_instantiatedVnfInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instantiationState"))
   {
     m_instantiationState = VnfInstantiationStateMapper::GetVnfInstantiationStateForName(jsonValue.GetString("instantiationState"));
-
     m_instantiationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsInstanceId"))
   {
     m_nsInstanceId = jsonValue.GetString("nsInstanceId");
-
     m_nsInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfPkgId"))
   {
     m_vnfPkgId = jsonValue.GetString("vnfPkgId");
-
     m_vnfPkgIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfPkgName"))
   {
     m_vnfPkgName = jsonValue.GetString("vnfPkgName");
-
     m_vnfPkgNameHasBeenSet = true;
   }
-
   return *this;
 }
 

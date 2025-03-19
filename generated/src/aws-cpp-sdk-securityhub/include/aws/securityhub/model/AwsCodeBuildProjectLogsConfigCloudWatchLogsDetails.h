@@ -32,7 +32,7 @@ namespace Model
   class AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails() = default;
     AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The group name of the logs in CloudWatch Logs.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the logs in CloudWatch Logs for a build project.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix of the stream name of the CloudWatch Logs.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
   private:
 

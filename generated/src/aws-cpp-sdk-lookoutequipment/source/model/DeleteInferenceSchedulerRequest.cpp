@@ -12,11 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInferenceSchedulerRequest::DeleteInferenceSchedulerRequest() : 
-    m_inferenceSchedulerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInferenceSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

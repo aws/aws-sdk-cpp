@@ -40,7 +40,7 @@ namespace Model
   class CodeReviewType
   {
   public:
-    AWS_CODEGURUREVIEWER_API CodeReviewType();
+    AWS_CODEGURUREVIEWER_API CodeReviewType() = default;
     AWS_CODEGURUREVIEWER_API CodeReviewType(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API CodeReviewType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,12 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
      */
-    inline const RepositoryAnalysis& GetRepositoryAnalysis() const{ return m_repositoryAnalysis; }
+    inline const RepositoryAnalysis& GetRepositoryAnalysis() const { return m_repositoryAnalysis; }
     inline bool RepositoryAnalysisHasBeenSet() const { return m_repositoryAnalysisHasBeenSet; }
-    inline void SetRepositoryAnalysis(const RepositoryAnalysis& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = value; }
-    inline void SetRepositoryAnalysis(RepositoryAnalysis&& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = std::move(value); }
-    inline CodeReviewType& WithRepositoryAnalysis(const RepositoryAnalysis& value) { SetRepositoryAnalysis(value); return *this;}
-    inline CodeReviewType& WithRepositoryAnalysis(RepositoryAnalysis&& value) { SetRepositoryAnalysis(std::move(value)); return *this;}
+    template<typename RepositoryAnalysisT = RepositoryAnalysis>
+    void SetRepositoryAnalysis(RepositoryAnalysisT&& value) { m_repositoryAnalysisHasBeenSet = true; m_repositoryAnalysis = std::forward<RepositoryAnalysisT>(value); }
+    template<typename RepositoryAnalysisT = RepositoryAnalysis>
+    CodeReviewType& WithRepositoryAnalysis(RepositoryAnalysisT&& value) { SetRepositoryAnalysis(std::forward<RepositoryAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +67,13 @@ namespace Model
      * request review. You can specify either <code>Security</code>,
      * <code>CodeQuality</code>, or both.</p>
      */
-    inline const Aws::Vector<AnalysisType>& GetAnalysisTypes() const{ return m_analysisTypes; }
+    inline const Aws::Vector<AnalysisType>& GetAnalysisTypes() const { return m_analysisTypes; }
     inline bool AnalysisTypesHasBeenSet() const { return m_analysisTypesHasBeenSet; }
-    inline void SetAnalysisTypes(const Aws::Vector<AnalysisType>& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = value; }
-    inline void SetAnalysisTypes(Aws::Vector<AnalysisType>&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = std::move(value); }
-    inline CodeReviewType& WithAnalysisTypes(const Aws::Vector<AnalysisType>& value) { SetAnalysisTypes(value); return *this;}
-    inline CodeReviewType& WithAnalysisTypes(Aws::Vector<AnalysisType>&& value) { SetAnalysisTypes(std::move(value)); return *this;}
-    inline CodeReviewType& AddAnalysisTypes(const AnalysisType& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(value); return *this; }
-    inline CodeReviewType& AddAnalysisTypes(AnalysisType&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(std::move(value)); return *this; }
+    template<typename AnalysisTypesT = Aws::Vector<AnalysisType>>
+    void SetAnalysisTypes(AnalysisTypesT&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = std::forward<AnalysisTypesT>(value); }
+    template<typename AnalysisTypesT = Aws::Vector<AnalysisType>>
+    CodeReviewType& WithAnalysisTypes(AnalysisTypesT&& value) { SetAnalysisTypes(std::forward<AnalysisTypesT>(value)); return *this;}
+    inline CodeReviewType& AddAnalysisTypes(AnalysisType value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(value); return *this; }
     ///@}
   private:
 

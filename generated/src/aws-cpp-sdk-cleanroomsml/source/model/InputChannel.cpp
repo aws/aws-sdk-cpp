@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InputChannel::InputChannel() : 
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 InputChannel::InputChannel(JsonView jsonValue)
-  : InputChannel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputChannel& InputChannel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = jsonValue.GetObject("dataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcBlockPublicAccessOptionsResponse::DescribeVpcBlockPublicAccessOptionsResponse()
-{
-}
-
 DescribeVpcBlockPublicAccessOptionsResponse::DescribeVpcBlockPublicAccessOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVpcBlockPublicAccessOptionsResponse& DescribeVpcBlockPublicAccessOptions
     if(!vpcBlockPublicAccessOptionsNode.IsNull())
     {
       m_vpcBlockPublicAccessOptions = vpcBlockPublicAccessOptionsNode;
+      m_vpcBlockPublicAccessOptionsHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DescribeVpcBlockPublicAccessOptionsResponse& DescribeVpcBlockPublicAccessOptions
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcBlockPublicAccessOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

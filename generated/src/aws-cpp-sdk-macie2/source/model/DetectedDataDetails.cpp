@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-DetectedDataDetails::DetectedDataDetails() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 DetectedDataDetails::DetectedDataDetails(JsonView jsonValue)
-  : DetectedDataDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DetectedDataDetails& DetectedDataDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

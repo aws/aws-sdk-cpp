@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifySnapshotTierResponse::ModifySnapshotTierResponse()
-{
-}
-
 ModifySnapshotTierResponse::ModifySnapshotTierResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ ModifySnapshotTierResponse& ModifySnapshotTierResponse::operator =(const Aws::Am
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+      m_snapshotIdHasBeenSet = true;
     }
     XmlNode tieringStartTimeNode = resultNode.FirstChild("tieringStartTime");
     if(!tieringStartTimeNode.IsNull())
     {
       m_tieringStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tieringStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_tieringStartTimeHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ ModifySnapshotTierResponse& ModifySnapshotTierResponse::operator =(const Aws::Am
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifySnapshotTierResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

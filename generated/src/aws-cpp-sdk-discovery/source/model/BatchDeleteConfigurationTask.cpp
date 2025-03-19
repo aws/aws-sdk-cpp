@@ -18,23 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-BatchDeleteConfigurationTask::BatchDeleteConfigurationTask() : 
-    m_taskIdHasBeenSet(false),
-    m_status(BatchDeleteConfigurationTaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_configurationType(DeletionConfigurationItemType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_requestedConfigurationsHasBeenSet(false),
-    m_deletedConfigurationsHasBeenSet(false),
-    m_failedConfigurationsHasBeenSet(false),
-    m_deletionWarningsHasBeenSet(false)
-{
-}
-
 BatchDeleteConfigurationTask::BatchDeleteConfigurationTask(JsonView jsonValue)
-  : BatchDeleteConfigurationTask()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView 
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BatchDeleteConfigurationTaskStatusMapper::GetBatchDeleteConfigurationTaskStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationType"))
   {
     m_configurationType = DeletionConfigurationItemTypeMapper::GetDeletionConfigurationItemTypeForName(jsonValue.GetString("configurationType"));
-
     m_configurationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedConfigurations"))
   {
     Aws::Utils::Array<JsonView> requestedConfigurationsJsonList = jsonValue.GetArray("requestedConfigurations");
@@ -85,7 +59,6 @@ BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView 
     }
     m_requestedConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletedConfigurations"))
   {
     Aws::Utils::Array<JsonView> deletedConfigurationsJsonList = jsonValue.GetArray("deletedConfigurations");
@@ -95,7 +68,6 @@ BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView 
     }
     m_deletedConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedConfigurations"))
   {
     Aws::Utils::Array<JsonView> failedConfigurationsJsonList = jsonValue.GetArray("failedConfigurations");
@@ -105,7 +77,6 @@ BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView 
     }
     m_failedConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletionWarnings"))
   {
     Aws::Utils::Array<JsonView> deletionWarningsJsonList = jsonValue.GetArray("deletionWarnings");
@@ -115,7 +86,6 @@ BatchDeleteConfigurationTask& BatchDeleteConfigurationTask::operator =(JsonView 
     }
     m_deletionWarningsHasBeenSet = true;
   }
-
   return *this;
 }
 

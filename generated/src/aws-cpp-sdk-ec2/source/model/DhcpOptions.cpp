@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DhcpOptions::DhcpOptions() : 
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
-    m_dhcpConfigurationsHasBeenSet(false)
-{
-}
-
 DhcpOptions::DhcpOptions(const XmlNode& xmlNode)
-  : DhcpOptions()
 {
   *this = xmlNode;
 }
@@ -50,6 +41,7 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -68,6 +60,7 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
     if(!dhcpConfigurationsNode.IsNull())
     {
       XmlNode dhcpConfigurationsMember = dhcpConfigurationsNode.FirstChild("item");
+      m_dhcpConfigurationsHasBeenSet = !dhcpConfigurationsMember.IsNull();
       while(!dhcpConfigurationsMember.IsNull())
       {
         m_dhcpConfigurations.push_back(dhcpConfigurationsMember);

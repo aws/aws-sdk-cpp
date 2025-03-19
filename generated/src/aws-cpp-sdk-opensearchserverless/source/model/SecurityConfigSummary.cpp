@@ -18,21 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-SecurityConfigSummary::SecurityConfigSummary() : 
-    m_idHasBeenSet(false),
-    m_type(SecurityConfigType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_configVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 SecurityConfigSummary::SecurityConfigSummary(JsonView jsonValue)
-  : SecurityConfigSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ SecurityConfigSummary& SecurityConfigSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SecurityConfigTypeMapper::GetSecurityConfigTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configVersion"))
   {
     m_configVersion = jsonValue.GetString("configVersion");
-
     m_configVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetInt64("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

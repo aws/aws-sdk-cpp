@@ -34,7 +34,7 @@ namespace Model
   class ParameterSelectableValues
   {
   public:
-    AWS_QUICKSIGHT_API ParameterSelectableValues();
+    AWS_QUICKSIGHT_API ParameterSelectableValues() = default;
     AWS_QUICKSIGHT_API ParameterSelectableValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ParameterSelectableValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,27 +44,26 @@ namespace Model
     /**
      * <p>The values that are used in <code>ParameterSelectableValues</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ParameterSelectableValues& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ParameterSelectableValues& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ParameterSelectableValues& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ParameterSelectableValues& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ParameterSelectableValues& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ParameterSelectableValues& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ParameterSelectableValues& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The column identifier that fetches values from the data set.</p>
      */
-    inline const ColumnIdentifier& GetLinkToDataSetColumn() const{ return m_linkToDataSetColumn; }
+    inline const ColumnIdentifier& GetLinkToDataSetColumn() const { return m_linkToDataSetColumn; }
     inline bool LinkToDataSetColumnHasBeenSet() const { return m_linkToDataSetColumnHasBeenSet; }
-    inline void SetLinkToDataSetColumn(const ColumnIdentifier& value) { m_linkToDataSetColumnHasBeenSet = true; m_linkToDataSetColumn = value; }
-    inline void SetLinkToDataSetColumn(ColumnIdentifier&& value) { m_linkToDataSetColumnHasBeenSet = true; m_linkToDataSetColumn = std::move(value); }
-    inline ParameterSelectableValues& WithLinkToDataSetColumn(const ColumnIdentifier& value) { SetLinkToDataSetColumn(value); return *this;}
-    inline ParameterSelectableValues& WithLinkToDataSetColumn(ColumnIdentifier&& value) { SetLinkToDataSetColumn(std::move(value)); return *this;}
+    template<typename LinkToDataSetColumnT = ColumnIdentifier>
+    void SetLinkToDataSetColumn(LinkToDataSetColumnT&& value) { m_linkToDataSetColumnHasBeenSet = true; m_linkToDataSetColumn = std::forward<LinkToDataSetColumnT>(value); }
+    template<typename LinkToDataSetColumnT = ColumnIdentifier>
+    ParameterSelectableValues& WithLinkToDataSetColumn(LinkToDataSetColumnT&& value) { SetLinkToDataSetColumn(std::forward<LinkToDataSetColumnT>(value)); return *this;}
     ///@}
   private:
 

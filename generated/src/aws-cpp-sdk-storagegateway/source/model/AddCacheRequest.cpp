@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddCacheRequest::AddCacheRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_diskIdsHasBeenSet(false)
-{
-}
-
 Aws::String AddCacheRequest::SerializePayload() const
 {
   JsonValue payload;

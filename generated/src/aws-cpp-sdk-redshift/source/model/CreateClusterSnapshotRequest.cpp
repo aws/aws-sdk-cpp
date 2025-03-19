@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateClusterSnapshotRequest::CreateClusterSnapshotRequest() : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

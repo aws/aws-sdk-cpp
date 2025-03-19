@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceComponentRollingUpdatePolicy::InferenceComponentRollingUpdatePolicy() : 
-    m_maximumBatchSizeHasBeenSet(false),
-    m_waitIntervalInSeconds(0),
-    m_waitIntervalInSecondsHasBeenSet(false),
-    m_maximumExecutionTimeoutInSeconds(0),
-    m_maximumExecutionTimeoutInSecondsHasBeenSet(false),
-    m_rollbackMaximumBatchSizeHasBeenSet(false)
-{
-}
-
 InferenceComponentRollingUpdatePolicy::InferenceComponentRollingUpdatePolicy(JsonView jsonValue)
-  : InferenceComponentRollingUpdatePolicy()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ InferenceComponentRollingUpdatePolicy& InferenceComponentRollingUpdatePolicy::op
   if(jsonValue.ValueExists("MaximumBatchSize"))
   {
     m_maximumBatchSize = jsonValue.GetObject("MaximumBatchSize");
-
     m_maximumBatchSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitIntervalInSeconds"))
   {
     m_waitIntervalInSeconds = jsonValue.GetInteger("WaitIntervalInSeconds");
-
     m_waitIntervalInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionTimeoutInSeconds"))
   {
     m_maximumExecutionTimeoutInSeconds = jsonValue.GetInteger("MaximumExecutionTimeoutInSeconds");
-
     m_maximumExecutionTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollbackMaximumBatchSize"))
   {
     m_rollbackMaximumBatchSize = jsonValue.GetObject("RollbackMaximumBatchSize");
-
     m_rollbackMaximumBatchSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

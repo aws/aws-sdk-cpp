@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LineageInfo::LineageInfo() : 
-    m_errorMessageHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_eventStatus(LineageEventProcessingStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false)
-{
-}
-
 LineageInfo::LineageInfo(JsonView jsonValue)
-  : LineageInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LineageInfo& LineageInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventStatus"))
   {
     m_eventStatus = LineageEventProcessingStatusMapper::GetLineageEventProcessingStatusForName(jsonValue.GetString("eventStatus"));
-
     m_eventStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

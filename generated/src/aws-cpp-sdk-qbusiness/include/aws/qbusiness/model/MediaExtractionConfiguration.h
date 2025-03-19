@@ -34,7 +34,7 @@ namespace Model
   class MediaExtractionConfiguration
   {
   public:
-    AWS_QBUSINESS_API MediaExtractionConfiguration();
+    AWS_QBUSINESS_API MediaExtractionConfiguration() = default;
     AWS_QBUSINESS_API MediaExtractionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API MediaExtractionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting
      * semantic meaning from images and visuals</a>. </p>
      */
-    inline const ImageExtractionConfiguration& GetImageExtractionConfiguration() const{ return m_imageExtractionConfiguration; }
+    inline const ImageExtractionConfiguration& GetImageExtractionConfiguration() const { return m_imageExtractionConfiguration; }
     inline bool ImageExtractionConfigurationHasBeenSet() const { return m_imageExtractionConfigurationHasBeenSet; }
-    inline void SetImageExtractionConfiguration(const ImageExtractionConfiguration& value) { m_imageExtractionConfigurationHasBeenSet = true; m_imageExtractionConfiguration = value; }
-    inline void SetImageExtractionConfiguration(ImageExtractionConfiguration&& value) { m_imageExtractionConfigurationHasBeenSet = true; m_imageExtractionConfiguration = std::move(value); }
-    inline MediaExtractionConfiguration& WithImageExtractionConfiguration(const ImageExtractionConfiguration& value) { SetImageExtractionConfiguration(value); return *this;}
-    inline MediaExtractionConfiguration& WithImageExtractionConfiguration(ImageExtractionConfiguration&& value) { SetImageExtractionConfiguration(std::move(value)); return *this;}
+    template<typename ImageExtractionConfigurationT = ImageExtractionConfiguration>
+    void SetImageExtractionConfiguration(ImageExtractionConfigurationT&& value) { m_imageExtractionConfigurationHasBeenSet = true; m_imageExtractionConfiguration = std::forward<ImageExtractionConfigurationT>(value); }
+    template<typename ImageExtractionConfigurationT = ImageExtractionConfiguration>
+    MediaExtractionConfiguration& WithImageExtractionConfiguration(ImageExtractionConfigurationT&& value) { SetImageExtractionConfiguration(std::forward<ImageExtractionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>Configuration settings for extracting and processing audio content from media
      * files.</p>
      */
-    inline const AudioExtractionConfiguration& GetAudioExtractionConfiguration() const{ return m_audioExtractionConfiguration; }
+    inline const AudioExtractionConfiguration& GetAudioExtractionConfiguration() const { return m_audioExtractionConfiguration; }
     inline bool AudioExtractionConfigurationHasBeenSet() const { return m_audioExtractionConfigurationHasBeenSet; }
-    inline void SetAudioExtractionConfiguration(const AudioExtractionConfiguration& value) { m_audioExtractionConfigurationHasBeenSet = true; m_audioExtractionConfiguration = value; }
-    inline void SetAudioExtractionConfiguration(AudioExtractionConfiguration&& value) { m_audioExtractionConfigurationHasBeenSet = true; m_audioExtractionConfiguration = std::move(value); }
-    inline MediaExtractionConfiguration& WithAudioExtractionConfiguration(const AudioExtractionConfiguration& value) { SetAudioExtractionConfiguration(value); return *this;}
-    inline MediaExtractionConfiguration& WithAudioExtractionConfiguration(AudioExtractionConfiguration&& value) { SetAudioExtractionConfiguration(std::move(value)); return *this;}
+    template<typename AudioExtractionConfigurationT = AudioExtractionConfiguration>
+    void SetAudioExtractionConfiguration(AudioExtractionConfigurationT&& value) { m_audioExtractionConfigurationHasBeenSet = true; m_audioExtractionConfiguration = std::forward<AudioExtractionConfigurationT>(value); }
+    template<typename AudioExtractionConfigurationT = AudioExtractionConfiguration>
+    MediaExtractionConfiguration& WithAudioExtractionConfiguration(AudioExtractionConfigurationT&& value) { SetAudioExtractionConfiguration(std::forward<AudioExtractionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>Configuration settings for extracting and processing video content from media
      * files.</p>
      */
-    inline const VideoExtractionConfiguration& GetVideoExtractionConfiguration() const{ return m_videoExtractionConfiguration; }
+    inline const VideoExtractionConfiguration& GetVideoExtractionConfiguration() const { return m_videoExtractionConfiguration; }
     inline bool VideoExtractionConfigurationHasBeenSet() const { return m_videoExtractionConfigurationHasBeenSet; }
-    inline void SetVideoExtractionConfiguration(const VideoExtractionConfiguration& value) { m_videoExtractionConfigurationHasBeenSet = true; m_videoExtractionConfiguration = value; }
-    inline void SetVideoExtractionConfiguration(VideoExtractionConfiguration&& value) { m_videoExtractionConfigurationHasBeenSet = true; m_videoExtractionConfiguration = std::move(value); }
-    inline MediaExtractionConfiguration& WithVideoExtractionConfiguration(const VideoExtractionConfiguration& value) { SetVideoExtractionConfiguration(value); return *this;}
-    inline MediaExtractionConfiguration& WithVideoExtractionConfiguration(VideoExtractionConfiguration&& value) { SetVideoExtractionConfiguration(std::move(value)); return *this;}
+    template<typename VideoExtractionConfigurationT = VideoExtractionConfiguration>
+    void SetVideoExtractionConfiguration(VideoExtractionConfigurationT&& value) { m_videoExtractionConfigurationHasBeenSet = true; m_videoExtractionConfiguration = std::forward<VideoExtractionConfigurationT>(value); }
+    template<typename VideoExtractionConfigurationT = VideoExtractionConfiguration>
+    MediaExtractionConfiguration& WithVideoExtractionConfiguration(VideoExtractionConfigurationT&& value) { SetVideoExtractionConfiguration(std::forward<VideoExtractionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

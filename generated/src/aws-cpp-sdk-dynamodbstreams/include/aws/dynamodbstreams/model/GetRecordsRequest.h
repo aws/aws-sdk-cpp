@@ -25,7 +25,7 @@ namespace Model
   class GetRecordsRequest : public DynamoDBStreamsRequest
   {
   public:
-    AWS_DYNAMODBSTREAMS_API GetRecordsRequest();
+    AWS_DYNAMODBSTREAMS_API GetRecordsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * operation. This iterator can be used to access the stream records in this
      * shard.</p>
      */
-    inline const Aws::String& GetShardIterator() const{ return m_shardIterator; }
+    inline const Aws::String& GetShardIterator() const { return m_shardIterator; }
     inline bool ShardIteratorHasBeenSet() const { return m_shardIteratorHasBeenSet; }
-    inline void SetShardIterator(const Aws::String& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = value; }
-    inline void SetShardIterator(Aws::String&& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = std::move(value); }
-    inline void SetShardIterator(const char* value) { m_shardIteratorHasBeenSet = true; m_shardIterator.assign(value); }
-    inline GetRecordsRequest& WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
-    inline GetRecordsRequest& WithShardIterator(Aws::String&& value) { SetShardIterator(std::move(value)); return *this;}
-    inline GetRecordsRequest& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
+    template<typename ShardIteratorT = Aws::String>
+    void SetShardIterator(ShardIteratorT&& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = std::forward<ShardIteratorT>(value); }
+    template<typename ShardIteratorT = Aws::String>
+    GetRecordsRequest& WithShardIterator(ShardIteratorT&& value) { SetShardIterator(std::forward<ShardIteratorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The maximum number of records to return from the shard. The upper limit is
      * 1000.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetRecordsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_shardIterator;
     bool m_shardIteratorHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

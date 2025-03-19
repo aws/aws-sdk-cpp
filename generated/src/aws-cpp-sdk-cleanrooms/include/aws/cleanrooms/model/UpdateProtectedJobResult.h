@@ -28,7 +28,7 @@ namespace Model
   class UpdateProtectedJobResult
   {
   public:
-    AWS_CLEANROOMS_API UpdateProtectedJobResult();
+    AWS_CLEANROOMS_API UpdateProtectedJobResult() = default;
     AWS_CLEANROOMS_API UpdateProtectedJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API UpdateProtectedJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The protected job output.</p>
      */
-    inline const ProtectedJob& GetProtectedJob() const{ return m_protectedJob; }
-    inline void SetProtectedJob(const ProtectedJob& value) { m_protectedJob = value; }
-    inline void SetProtectedJob(ProtectedJob&& value) { m_protectedJob = std::move(value); }
-    inline UpdateProtectedJobResult& WithProtectedJob(const ProtectedJob& value) { SetProtectedJob(value); return *this;}
-    inline UpdateProtectedJobResult& WithProtectedJob(ProtectedJob&& value) { SetProtectedJob(std::move(value)); return *this;}
+    inline const ProtectedJob& GetProtectedJob() const { return m_protectedJob; }
+    template<typename ProtectedJobT = ProtectedJob>
+    void SetProtectedJob(ProtectedJobT&& value) { m_protectedJobHasBeenSet = true; m_protectedJob = std::forward<ProtectedJobT>(value); }
+    template<typename ProtectedJobT = ProtectedJob>
+    UpdateProtectedJobResult& WithProtectedJob(ProtectedJobT&& value) { SetProtectedJob(std::forward<ProtectedJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProtectedJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProtectedJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProtectedJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProtectedJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProtectedJob m_protectedJob;
+    bool m_protectedJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

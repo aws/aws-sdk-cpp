@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeModelQualityJobDefinitionRequest::DescribeModelQualityJobDefinitionRequest() : 
-    m_jobDefinitionNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeModelQualityJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

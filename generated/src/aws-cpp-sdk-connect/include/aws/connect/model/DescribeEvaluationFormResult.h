@@ -28,7 +28,7 @@ namespace Model
   class DescribeEvaluationFormResult
   {
   public:
-    AWS_CONNECT_API DescribeEvaluationFormResult();
+    AWS_CONNECT_API DescribeEvaluationFormResult() = default;
     AWS_CONNECT_API DescribeEvaluationFormResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeEvaluationFormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the evaluation form.</p>
      */
-    inline const EvaluationForm& GetEvaluationForm() const{ return m_evaluationForm; }
-    inline void SetEvaluationForm(const EvaluationForm& value) { m_evaluationForm = value; }
-    inline void SetEvaluationForm(EvaluationForm&& value) { m_evaluationForm = std::move(value); }
-    inline DescribeEvaluationFormResult& WithEvaluationForm(const EvaluationForm& value) { SetEvaluationForm(value); return *this;}
-    inline DescribeEvaluationFormResult& WithEvaluationForm(EvaluationForm&& value) { SetEvaluationForm(std::move(value)); return *this;}
+    inline const EvaluationForm& GetEvaluationForm() const { return m_evaluationForm; }
+    template<typename EvaluationFormT = EvaluationForm>
+    void SetEvaluationForm(EvaluationFormT&& value) { m_evaluationFormHasBeenSet = true; m_evaluationForm = std::forward<EvaluationFormT>(value); }
+    template<typename EvaluationFormT = EvaluationForm>
+    DescribeEvaluationFormResult& WithEvaluationForm(EvaluationFormT&& value) { SetEvaluationForm(std::forward<EvaluationFormT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEvaluationFormResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEvaluationFormResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEvaluationFormResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEvaluationFormResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EvaluationForm m_evaluationForm;
+    bool m_evaluationFormHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

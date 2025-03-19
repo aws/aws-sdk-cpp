@@ -18,16 +18,7 @@ namespace SMS
 namespace Model
 {
 
-NotificationContext::NotificationContext() : 
-    m_validationIdHasBeenSet(false),
-    m_status(ValidationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 NotificationContext::NotificationContext(JsonView jsonValue)
-  : NotificationContext()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NotificationContext& NotificationContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("validationId"))
   {
     m_validationId = jsonValue.GetString("validationId");
-
     m_validationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

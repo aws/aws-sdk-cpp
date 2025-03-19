@@ -32,7 +32,7 @@ namespace Model
   class FileBatchJobIdentifier
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier();
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier() = default;
     AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The file name for the batch job identifier.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline FileBatchJobIdentifier& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline FileBatchJobIdentifier& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline FileBatchJobIdentifier& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    FileBatchJobIdentifier& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relative path to the file name for the batch job identifier.</p>
      */
-    inline const Aws::String& GetFolderPath() const{ return m_folderPath; }
+    inline const Aws::String& GetFolderPath() const { return m_folderPath; }
     inline bool FolderPathHasBeenSet() const { return m_folderPathHasBeenSet; }
-    inline void SetFolderPath(const Aws::String& value) { m_folderPathHasBeenSet = true; m_folderPath = value; }
-    inline void SetFolderPath(Aws::String&& value) { m_folderPathHasBeenSet = true; m_folderPath = std::move(value); }
-    inline void SetFolderPath(const char* value) { m_folderPathHasBeenSet = true; m_folderPath.assign(value); }
-    inline FileBatchJobIdentifier& WithFolderPath(const Aws::String& value) { SetFolderPath(value); return *this;}
-    inline FileBatchJobIdentifier& WithFolderPath(Aws::String&& value) { SetFolderPath(std::move(value)); return *this;}
-    inline FileBatchJobIdentifier& WithFolderPath(const char* value) { SetFolderPath(value); return *this;}
+    template<typename FolderPathT = Aws::String>
+    void SetFolderPath(FolderPathT&& value) { m_folderPathHasBeenSet = true; m_folderPath = std::forward<FolderPathT>(value); }
+    template<typename FolderPathT = Aws::String>
+    FileBatchJobIdentifier& WithFolderPath(FolderPathT&& value) { SetFolderPath(std::forward<FolderPathT>(value)); return *this;}
     ///@}
   private:
 

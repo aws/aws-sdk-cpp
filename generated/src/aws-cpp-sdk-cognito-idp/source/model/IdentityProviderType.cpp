@@ -18,21 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-IdentityProviderType::IdentityProviderType() : 
-    m_userPoolIdHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_providerType(IdentityProviderTypeType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_providerDetailsHasBeenSet(false),
-    m_attributeMappingHasBeenSet(false),
-    m_idpIdentifiersHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 IdentityProviderType::IdentityProviderType(JsonView jsonValue)
-  : IdentityProviderType()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ IdentityProviderType& IdentityProviderType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderName"))
   {
     m_providerName = jsonValue.GetString("ProviderName");
-
     m_providerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = IdentityProviderTypeTypeMapper::GetIdentityProviderTypeTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderDetails"))
   {
     Aws::Map<Aws::String, JsonView> providerDetailsJsonMap = jsonValue.GetObject("ProviderDetails").GetAllObjects();
@@ -69,7 +49,6 @@ IdentityProviderType& IdentityProviderType::operator =(JsonView jsonValue)
     }
     m_providerDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeMapping"))
   {
     Aws::Map<Aws::String, JsonView> attributeMappingJsonMap = jsonValue.GetObject("AttributeMapping").GetAllObjects();
@@ -79,7 +58,6 @@ IdentityProviderType& IdentityProviderType::operator =(JsonView jsonValue)
     }
     m_attributeMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdpIdentifiers"))
   {
     Aws::Utils::Array<JsonView> idpIdentifiersJsonList = jsonValue.GetArray("IdpIdentifiers");
@@ -89,21 +67,16 @@ IdentityProviderType& IdentityProviderType::operator =(JsonView jsonValue)
     }
     m_idpIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

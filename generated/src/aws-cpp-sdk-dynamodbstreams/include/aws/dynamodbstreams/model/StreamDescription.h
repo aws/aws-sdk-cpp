@@ -38,7 +38,7 @@ namespace Model
   class StreamDescription
   {
   public:
-    AWS_DYNAMODBSTREAMS_API StreamDescription();
+    AWS_DYNAMODBSTREAMS_API StreamDescription() = default;
     AWS_DYNAMODBSTREAMS_API StreamDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API StreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline StreamDescription& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline StreamDescription& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline StreamDescription& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    StreamDescription& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
      * <code>StreamLabel</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStreamLabel() const{ return m_streamLabel; }
+    inline const Aws::String& GetStreamLabel() const { return m_streamLabel; }
     inline bool StreamLabelHasBeenSet() const { return m_streamLabelHasBeenSet; }
-    inline void SetStreamLabel(const Aws::String& value) { m_streamLabelHasBeenSet = true; m_streamLabel = value; }
-    inline void SetStreamLabel(Aws::String&& value) { m_streamLabelHasBeenSet = true; m_streamLabel = std::move(value); }
-    inline void SetStreamLabel(const char* value) { m_streamLabelHasBeenSet = true; m_streamLabel.assign(value); }
-    inline StreamDescription& WithStreamLabel(const Aws::String& value) { SetStreamLabel(value); return *this;}
-    inline StreamDescription& WithStreamLabel(Aws::String&& value) { SetStreamLabel(std::move(value)); return *this;}
-    inline StreamDescription& WithStreamLabel(const char* value) { SetStreamLabel(value); return *this;}
+    template<typename StreamLabelT = Aws::String>
+    void SetStreamLabel(StreamLabelT&& value) { m_streamLabelHasBeenSet = true; m_streamLabel = std::forward<StreamLabelT>(value); }
+    template<typename StreamLabelT = Aws::String>
+    StreamDescription& WithStreamLabel(StreamLabelT&& value) { SetStreamLabel(std::forward<StreamLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,10 @@ namespace Model
      * the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is
      * disabled.</p> </li> </ul>
      */
-    inline const StreamStatus& GetStreamStatus() const{ return m_streamStatus; }
+    inline StreamStatus GetStreamStatus() const { return m_streamStatus; }
     inline bool StreamStatusHasBeenSet() const { return m_streamStatusHasBeenSet; }
-    inline void SetStreamStatus(const StreamStatus& value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
-    inline void SetStreamStatus(StreamStatus&& value) { m_streamStatusHasBeenSet = true; m_streamStatus = std::move(value); }
-    inline StreamDescription& WithStreamStatus(const StreamStatus& value) { SetStreamStatus(value); return *this;}
-    inline StreamDescription& WithStreamStatus(StreamStatus&& value) { SetStreamStatus(std::move(value)); return *this;}
+    inline void SetStreamStatus(StreamStatus value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
+    inline StreamDescription& WithStreamStatus(StreamStatus value) { SetStreamStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -105,66 +99,62 @@ namespace Model
      * they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both
      * the new and the old images of the items from the table.</p> </li> </ul>
      */
-    inline const StreamViewType& GetStreamViewType() const{ return m_streamViewType; }
+    inline StreamViewType GetStreamViewType() const { return m_streamViewType; }
     inline bool StreamViewTypeHasBeenSet() const { return m_streamViewTypeHasBeenSet; }
-    inline void SetStreamViewType(const StreamViewType& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
-    inline void SetStreamViewType(StreamViewType&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = std::move(value); }
-    inline StreamDescription& WithStreamViewType(const StreamViewType& value) { SetStreamViewType(value); return *this;}
-    inline StreamDescription& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
+    inline void SetStreamViewType(StreamViewType value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
+    inline StreamDescription& WithStreamViewType(StreamViewType value) { SetStreamViewType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the request to create this stream was issued.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationRequestDateTime() const{ return m_creationRequestDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationRequestDateTime() const { return m_creationRequestDateTime; }
     inline bool CreationRequestDateTimeHasBeenSet() const { return m_creationRequestDateTimeHasBeenSet; }
-    inline void SetCreationRequestDateTime(const Aws::Utils::DateTime& value) { m_creationRequestDateTimeHasBeenSet = true; m_creationRequestDateTime = value; }
-    inline void SetCreationRequestDateTime(Aws::Utils::DateTime&& value) { m_creationRequestDateTimeHasBeenSet = true; m_creationRequestDateTime = std::move(value); }
-    inline StreamDescription& WithCreationRequestDateTime(const Aws::Utils::DateTime& value) { SetCreationRequestDateTime(value); return *this;}
-    inline StreamDescription& WithCreationRequestDateTime(Aws::Utils::DateTime&& value) { SetCreationRequestDateTime(std::move(value)); return *this;}
+    template<typename CreationRequestDateTimeT = Aws::Utils::DateTime>
+    void SetCreationRequestDateTime(CreationRequestDateTimeT&& value) { m_creationRequestDateTimeHasBeenSet = true; m_creationRequestDateTime = std::forward<CreationRequestDateTimeT>(value); }
+    template<typename CreationRequestDateTimeT = Aws::Utils::DateTime>
+    StreamDescription& WithCreationRequestDateTime(CreationRequestDateTimeT&& value) { SetCreationRequestDateTime(std::forward<CreationRequestDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DynamoDB table with which the stream is associated.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline StreamDescription& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline StreamDescription& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline StreamDescription& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    StreamDescription& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key attribute(s) of the stream's DynamoDB table.</p>
      */
-    inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+    inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const { return m_keySchema; }
     inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
-    inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
-    inline void SetKeySchema(Aws::Vector<KeySchemaElement>&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::move(value); }
-    inline StreamDescription& WithKeySchema(const Aws::Vector<KeySchemaElement>& value) { SetKeySchema(value); return *this;}
-    inline StreamDescription& WithKeySchema(Aws::Vector<KeySchemaElement>&& value) { SetKeySchema(std::move(value)); return *this;}
-    inline StreamDescription& AddKeySchema(const KeySchemaElement& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(value); return *this; }
-    inline StreamDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
+    template<typename KeySchemaT = Aws::Vector<KeySchemaElement>>
+    void SetKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema = std::forward<KeySchemaT>(value); }
+    template<typename KeySchemaT = Aws::Vector<KeySchemaElement>>
+    StreamDescription& WithKeySchema(KeySchemaT&& value) { SetKeySchema(std::forward<KeySchemaT>(value)); return *this;}
+    template<typename KeySchemaT = KeySchemaElement>
+    StreamDescription& AddKeySchema(KeySchemaT&& value) { m_keySchemaHasBeenSet = true; m_keySchema.emplace_back(std::forward<KeySchemaT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The shards that comprise the stream.</p>
      */
-    inline const Aws::Vector<Shard>& GetShards() const{ return m_shards; }
+    inline const Aws::Vector<Shard>& GetShards() const { return m_shards; }
     inline bool ShardsHasBeenSet() const { return m_shardsHasBeenSet; }
-    inline void SetShards(const Aws::Vector<Shard>& value) { m_shardsHasBeenSet = true; m_shards = value; }
-    inline void SetShards(Aws::Vector<Shard>&& value) { m_shardsHasBeenSet = true; m_shards = std::move(value); }
-    inline StreamDescription& WithShards(const Aws::Vector<Shard>& value) { SetShards(value); return *this;}
-    inline StreamDescription& WithShards(Aws::Vector<Shard>&& value) { SetShards(std::move(value)); return *this;}
-    inline StreamDescription& AddShards(const Shard& value) { m_shardsHasBeenSet = true; m_shards.push_back(value); return *this; }
-    inline StreamDescription& AddShards(Shard&& value) { m_shardsHasBeenSet = true; m_shards.push_back(std::move(value)); return *this; }
+    template<typename ShardsT = Aws::Vector<Shard>>
+    void SetShards(ShardsT&& value) { m_shardsHasBeenSet = true; m_shards = std::forward<ShardsT>(value); }
+    template<typename ShardsT = Aws::Vector<Shard>>
+    StreamDescription& WithShards(ShardsT&& value) { SetShards(std::forward<ShardsT>(value)); return *this;}
+    template<typename ShardsT = Shard>
+    StreamDescription& AddShards(ShardsT&& value) { m_shardsHasBeenSet = true; m_shards.emplace_back(std::forward<ShardsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -178,14 +168,12 @@ namespace Model
      * The only way to know when you have reached the end of the result set is when
      * <code>LastEvaluatedShardId</code> is empty.</p>
      */
-    inline const Aws::String& GetLastEvaluatedShardId() const{ return m_lastEvaluatedShardId; }
+    inline const Aws::String& GetLastEvaluatedShardId() const { return m_lastEvaluatedShardId; }
     inline bool LastEvaluatedShardIdHasBeenSet() const { return m_lastEvaluatedShardIdHasBeenSet; }
-    inline void SetLastEvaluatedShardId(const Aws::String& value) { m_lastEvaluatedShardIdHasBeenSet = true; m_lastEvaluatedShardId = value; }
-    inline void SetLastEvaluatedShardId(Aws::String&& value) { m_lastEvaluatedShardIdHasBeenSet = true; m_lastEvaluatedShardId = std::move(value); }
-    inline void SetLastEvaluatedShardId(const char* value) { m_lastEvaluatedShardIdHasBeenSet = true; m_lastEvaluatedShardId.assign(value); }
-    inline StreamDescription& WithLastEvaluatedShardId(const Aws::String& value) { SetLastEvaluatedShardId(value); return *this;}
-    inline StreamDescription& WithLastEvaluatedShardId(Aws::String&& value) { SetLastEvaluatedShardId(std::move(value)); return *this;}
-    inline StreamDescription& WithLastEvaluatedShardId(const char* value) { SetLastEvaluatedShardId(value); return *this;}
+    template<typename LastEvaluatedShardIdT = Aws::String>
+    void SetLastEvaluatedShardId(LastEvaluatedShardIdT&& value) { m_lastEvaluatedShardIdHasBeenSet = true; m_lastEvaluatedShardId = std::forward<LastEvaluatedShardIdT>(value); }
+    template<typename LastEvaluatedShardIdT = Aws::String>
+    StreamDescription& WithLastEvaluatedShardId(LastEvaluatedShardIdT&& value) { SetLastEvaluatedShardId(std::forward<LastEvaluatedShardIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -195,13 +183,13 @@ namespace Model
     Aws::String m_streamLabel;
     bool m_streamLabelHasBeenSet = false;
 
-    StreamStatus m_streamStatus;
+    StreamStatus m_streamStatus{StreamStatus::NOT_SET};
     bool m_streamStatusHasBeenSet = false;
 
-    StreamViewType m_streamViewType;
+    StreamViewType m_streamViewType{StreamViewType::NOT_SET};
     bool m_streamViewTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationRequestDateTime;
+    Aws::Utils::DateTime m_creationRequestDateTime{};
     bool m_creationRequestDateTimeHasBeenSet = false;
 
     Aws::String m_tableName;

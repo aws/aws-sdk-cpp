@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReservedNodeExchangeConfigurationOptionsResult::GetReservedNodeExchangeConfigurationOptionsResult()
-{
-}
-
 GetReservedNodeExchangeConfigurationOptionsResult::GetReservedNodeExchangeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ GetReservedNodeExchangeConfigurationOptionsResult& GetReservedNodeExchangeConfig
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode reservedNodeConfigurationOptionListNode = resultNode.FirstChild("ReservedNodeConfigurationOptionList");
     if(!reservedNodeConfigurationOptionListNode.IsNull())
     {
       XmlNode reservedNodeConfigurationOptionListMember = reservedNodeConfigurationOptionListNode.FirstChild("ReservedNodeConfigurationOption");
+      m_reservedNodeConfigurationOptionListHasBeenSet = !reservedNodeConfigurationOptionListMember.IsNull();
       while(!reservedNodeConfigurationOptionListMember.IsNull())
       {
         m_reservedNodeConfigurationOptionList.push_back(reservedNodeConfigurationOptionListMember);
         reservedNodeConfigurationOptionListMember = reservedNodeConfigurationOptionListMember.NextNode("ReservedNodeConfigurationOption");
       }
 
+      m_reservedNodeConfigurationOptionListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::GetReservedNodeExchangeConfigurationOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

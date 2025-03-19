@@ -18,18 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SourceContentDataDetails::SourceContentDataDetails() : 
-    m_citationSpanHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_rankingDataHasBeenSet(false),
-    m_textDataHasBeenSet(false),
-    m_type(SourceContentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SourceContentDataDetails::SourceContentDataDetails(JsonView jsonValue)
-  : SourceContentDataDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SourceContentDataDetails& SourceContentDataDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("citationSpan"))
   {
     m_citationSpan = jsonValue.GetObject("citationSpan");
-
     m_citationSpanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rankingData"))
   {
     m_rankingData = jsonValue.GetObject("rankingData");
-
     m_rankingDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textData"))
   {
     m_textData = jsonValue.GetObject("textData");
-
     m_textDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SourceContentTypeMapper::GetSourceContentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

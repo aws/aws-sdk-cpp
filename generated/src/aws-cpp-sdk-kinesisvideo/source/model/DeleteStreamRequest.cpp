@@ -12,12 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStreamRequest::DeleteStreamRequest() : 
-    m_streamARNHasBeenSet(false),
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStreamRequest::SerializePayload() const
 {
   JsonValue payload;

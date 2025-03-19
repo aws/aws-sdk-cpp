@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisSourceMetadata::AnalysisSourceMetadata() : 
-    m_artifactsHasBeenSet(false)
-{
-}
-
 AnalysisSourceMetadata::AnalysisSourceMetadata(JsonView jsonValue)
-  : AnalysisSourceMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisSourceMetadata& AnalysisSourceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("artifacts"))
   {
     m_artifacts = jsonValue.GetObject("artifacts");
-
     m_artifactsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeCostCategoryDefinitionRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API DescribeCostCategoryDefinitionRequest();
+    AWS_COSTEXPLORER_API DescribeCostCategoryDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The unique identifier for your Cost Category. </p>
      */
-    inline const Aws::String& GetCostCategoryArn() const{ return m_costCategoryArn; }
+    inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
     inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
-    inline void SetCostCategoryArn(const Aws::String& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = value; }
-    inline void SetCostCategoryArn(Aws::String&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::move(value); }
-    inline void SetCostCategoryArn(const char* value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn.assign(value); }
-    inline DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(const Aws::String& value) { SetCostCategoryArn(value); return *this;}
-    inline DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(Aws::String&& value) { SetCostCategoryArn(std::move(value)); return *this;}
-    inline DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
+    template<typename CostCategoryArnT = Aws::String>
+    void SetCostCategoryArn(CostCategoryArnT&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::forward<CostCategoryArnT>(value); }
+    template<typename CostCategoryArnT = Aws::String>
+    DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(CostCategoryArnT&& value) { SetCostCategoryArn(std::forward<CostCategoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the Cost Category was effective. </p>
      */
-    inline const Aws::String& GetEffectiveOn() const{ return m_effectiveOn; }
+    inline const Aws::String& GetEffectiveOn() const { return m_effectiveOn; }
     inline bool EffectiveOnHasBeenSet() const { return m_effectiveOnHasBeenSet; }
-    inline void SetEffectiveOn(const Aws::String& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
-    inline void SetEffectiveOn(Aws::String&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = std::move(value); }
-    inline void SetEffectiveOn(const char* value) { m_effectiveOnHasBeenSet = true; m_effectiveOn.assign(value); }
-    inline DescribeCostCategoryDefinitionRequest& WithEffectiveOn(const Aws::String& value) { SetEffectiveOn(value); return *this;}
-    inline DescribeCostCategoryDefinitionRequest& WithEffectiveOn(Aws::String&& value) { SetEffectiveOn(std::move(value)); return *this;}
-    inline DescribeCostCategoryDefinitionRequest& WithEffectiveOn(const char* value) { SetEffectiveOn(value); return *this;}
+    template<typename EffectiveOnT = Aws::String>
+    void SetEffectiveOn(EffectiveOnT&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = std::forward<EffectiveOnT>(value); }
+    template<typename EffectiveOnT = Aws::String>
+    DescribeCostCategoryDefinitionRequest& WithEffectiveOn(EffectiveOnT&& value) { SetEffectiveOn(std::forward<EffectiveOnT>(value)); return *this;}
     ///@}
   private:
 

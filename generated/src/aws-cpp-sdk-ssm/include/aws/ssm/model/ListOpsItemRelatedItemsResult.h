@@ -29,7 +29,7 @@ namespace Model
   class ListOpsItemRelatedItemsResult
   {
   public:
-    AWS_SSM_API ListOpsItemRelatedItemsResult();
+    AWS_SSM_API ListOpsItemRelatedItemsResult() = default;
     AWS_SSM_API ListOpsItemRelatedItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API ListOpsItemRelatedItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOpsItemRelatedItemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOpsItemRelatedItemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOpsItemRelatedItemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOpsItemRelatedItemsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of related-item resources for the specified OpsItem.</p>
      */
-    inline const Aws::Vector<OpsItemRelatedItemSummary>& GetSummaries() const{ return m_summaries; }
-    inline void SetSummaries(const Aws::Vector<OpsItemRelatedItemSummary>& value) { m_summaries = value; }
-    inline void SetSummaries(Aws::Vector<OpsItemRelatedItemSummary>&& value) { m_summaries = std::move(value); }
-    inline ListOpsItemRelatedItemsResult& WithSummaries(const Aws::Vector<OpsItemRelatedItemSummary>& value) { SetSummaries(value); return *this;}
-    inline ListOpsItemRelatedItemsResult& WithSummaries(Aws::Vector<OpsItemRelatedItemSummary>&& value) { SetSummaries(std::move(value)); return *this;}
-    inline ListOpsItemRelatedItemsResult& AddSummaries(const OpsItemRelatedItemSummary& value) { m_summaries.push_back(value); return *this; }
-    inline ListOpsItemRelatedItemsResult& AddSummaries(OpsItemRelatedItemSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OpsItemRelatedItemSummary>& GetSummaries() const { return m_summaries; }
+    template<typename SummariesT = Aws::Vector<OpsItemRelatedItemSummary>>
+    void SetSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries = std::forward<SummariesT>(value); }
+    template<typename SummariesT = Aws::Vector<OpsItemRelatedItemSummary>>
+    ListOpsItemRelatedItemsResult& WithSummaries(SummariesT&& value) { SetSummaries(std::forward<SummariesT>(value)); return *this;}
+    template<typename SummariesT = OpsItemRelatedItemSummary>
+    ListOpsItemRelatedItemsResult& AddSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries.emplace_back(std::forward<SummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOpsItemRelatedItemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOpsItemRelatedItemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOpsItemRelatedItemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOpsItemRelatedItemsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<OpsItemRelatedItemSummary> m_summaries;
+    bool m_summariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

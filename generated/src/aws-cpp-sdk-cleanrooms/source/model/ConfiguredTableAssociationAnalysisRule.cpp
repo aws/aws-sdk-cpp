@@ -18,20 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConfiguredTableAssociationAnalysisRule::ConfiguredTableAssociationAnalysisRule() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_configuredTableAssociationIdHasBeenSet(false),
-    m_configuredTableAssociationArnHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_type(ConfiguredTableAssociationAnalysisRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ConfiguredTableAssociationAnalysisRule::ConfiguredTableAssociationAnalysisRule(JsonView jsonValue)
-  : ConfiguredTableAssociationAnalysisRule()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ConfiguredTableAssociationAnalysisRule& ConfiguredTableAssociationAnalysisRule::
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
-
     m_membershipIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredTableAssociationId"))
   {
     m_configuredTableAssociationId = jsonValue.GetString("configuredTableAssociationId");
-
     m_configuredTableAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredTableAssociationArn"))
   {
     m_configuredTableAssociationArn = jsonValue.GetString("configuredTableAssociationArn");
-
     m_configuredTableAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetObject("policy");
-
     m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ConfiguredTableAssociationAnalysisRuleTypeMapper::GetConfiguredTableAssociationAnalysisRuleTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

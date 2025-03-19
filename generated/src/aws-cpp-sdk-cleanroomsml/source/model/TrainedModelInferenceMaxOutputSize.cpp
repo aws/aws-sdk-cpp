@@ -18,16 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelInferenceMaxOutputSize::TrainedModelInferenceMaxOutputSize() : 
-    m_unit(TrainedModelInferenceMaxOutputSizeUnitType::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 TrainedModelInferenceMaxOutputSize::TrainedModelInferenceMaxOutputSize(JsonView jsonValue)
-  : TrainedModelInferenceMaxOutputSize()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TrainedModelInferenceMaxOutputSize& TrainedModelInferenceMaxOutputSize::operator
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = TrainedModelInferenceMaxOutputSizeUnitTypeMapper::GetTrainedModelInferenceMaxOutputSizeUnitTypeForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

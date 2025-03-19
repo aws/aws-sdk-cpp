@@ -12,17 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportClientBrandingRequest::ImportClientBrandingRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_deviceTypeWindowsHasBeenSet(false),
-    m_deviceTypeOsxHasBeenSet(false),
-    m_deviceTypeAndroidHasBeenSet(false),
-    m_deviceTypeIosHasBeenSet(false),
-    m_deviceTypeLinuxHasBeenSet(false),
-    m_deviceTypeWebHasBeenSet(false)
-{
-}
-
 Aws::String ImportClientBrandingRequest::SerializePayload() const
 {
   JsonValue payload;

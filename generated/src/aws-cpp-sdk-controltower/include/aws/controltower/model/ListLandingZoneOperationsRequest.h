@@ -22,7 +22,7 @@ namespace Model
   class ListLandingZoneOperationsRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API ListLandingZoneOperationsRequest();
+    AWS_CONTROLTOWER_API ListLandingZoneOperationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,19 +38,19 @@ namespace Model
      * <p>An input filter for the <code>ListLandingZoneOperations</code> API that lets
      * you select the types of landing zone operations to view.</p>
      */
-    inline const LandingZoneOperationFilter& GetFilter() const{ return m_filter; }
+    inline const LandingZoneOperationFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const LandingZoneOperationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(LandingZoneOperationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListLandingZoneOperationsRequest& WithFilter(const LandingZoneOperationFilter& value) { SetFilter(value); return *this;}
-    inline ListLandingZoneOperationsRequest& WithFilter(LandingZoneOperationFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = LandingZoneOperationFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = LandingZoneOperationFilter>
+    ListLandingZoneOperationsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How many results to return per API call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLandingZoneOperationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -61,21 +61,19 @@ namespace Model
      * <p>The token to continue the list from a previous API call with the same
      * parameters.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLandingZoneOperationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLandingZoneOperationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLandingZoneOperationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLandingZoneOperationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     LandingZoneOperationFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

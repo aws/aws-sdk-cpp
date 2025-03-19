@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConflictingAliases2020_05_31Request::ListConflictingAliases2020_05_31Request() : 
-    m_distributionIdHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListConflictingAliases2020_05_31Request::SerializePayload() const
 {

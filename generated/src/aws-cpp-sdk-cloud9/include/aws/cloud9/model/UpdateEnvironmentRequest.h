@@ -22,7 +22,7 @@ namespace Model
   class UpdateEnvironmentRequest : public Cloud9Request
   {
   public:
-    AWS_CLOUD9_API UpdateEnvironmentRequest();
+    AWS_CLOUD9_API UpdateEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
     /**
      * <p>The ID of the environment to change settings.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline UpdateEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline UpdateEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    UpdateEnvironmentRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A replacement name for the environment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateEnvironmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateEnvironmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateEnvironmentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any new or replacement description for the environment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateEnvironmentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateEnvironmentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,10 @@ namespace Model
      * off managed temporary credentials is made by an account that's not the
      * environment owner.</p> 
      */
-    inline const ManagedCredentialsAction& GetManagedCredentialsAction() const{ return m_managedCredentialsAction; }
+    inline ManagedCredentialsAction GetManagedCredentialsAction() const { return m_managedCredentialsAction; }
     inline bool ManagedCredentialsActionHasBeenSet() const { return m_managedCredentialsActionHasBeenSet; }
-    inline void SetManagedCredentialsAction(const ManagedCredentialsAction& value) { m_managedCredentialsActionHasBeenSet = true; m_managedCredentialsAction = value; }
-    inline void SetManagedCredentialsAction(ManagedCredentialsAction&& value) { m_managedCredentialsActionHasBeenSet = true; m_managedCredentialsAction = std::move(value); }
-    inline UpdateEnvironmentRequest& WithManagedCredentialsAction(const ManagedCredentialsAction& value) { SetManagedCredentialsAction(value); return *this;}
-    inline UpdateEnvironmentRequest& WithManagedCredentialsAction(ManagedCredentialsAction&& value) { SetManagedCredentialsAction(std::move(value)); return *this;}
+    inline void SetManagedCredentialsAction(ManagedCredentialsAction value) { m_managedCredentialsActionHasBeenSet = true; m_managedCredentialsAction = value; }
+    inline UpdateEnvironmentRequest& WithManagedCredentialsAction(ManagedCredentialsAction value) { SetManagedCredentialsAction(value); return *this;}
     ///@}
   private:
 
@@ -106,7 +98,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ManagedCredentialsAction m_managedCredentialsAction;
+    ManagedCredentialsAction m_managedCredentialsAction{ManagedCredentialsAction::NOT_SET};
     bool m_managedCredentialsActionHasBeenSet = false;
   };
 

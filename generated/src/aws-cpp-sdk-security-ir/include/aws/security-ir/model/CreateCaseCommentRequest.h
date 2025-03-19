@@ -22,7 +22,7 @@ namespace Model
   class CreateCaseCommentRequest : public SecurityIRRequest
   {
   public:
-    AWS_SECURITYIR_API CreateCaseCommentRequest();
+    AWS_SECURITYIR_API CreateCaseCommentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * <p>Required element used in combination with CreateCaseComment to specify a case
      * ID.</p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline CreateCaseCommentRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline CreateCaseCommentRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline CreateCaseCommentRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    CreateCaseCommentRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional element used in combination with CreateCaseComment.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateCaseCommentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateCaseCommentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateCaseCommentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateCaseCommentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * <p>Required element used in combination with CreateCaseComment to add content
      * for the new comment.</p>
      */
-    inline const Aws::String& GetRequestBody() const{ return m_requestBody; }
+    inline const Aws::String& GetRequestBody() const { return m_requestBody; }
     inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
-    inline void SetRequestBody(const Aws::String& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
-    inline void SetRequestBody(Aws::String&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::move(value); }
-    inline void SetRequestBody(const char* value) { m_requestBodyHasBeenSet = true; m_requestBody.assign(value); }
-    inline CreateCaseCommentRequest& WithRequestBody(const Aws::String& value) { SetRequestBody(value); return *this;}
-    inline CreateCaseCommentRequest& WithRequestBody(Aws::String&& value) { SetRequestBody(std::move(value)); return *this;}
-    inline CreateCaseCommentRequest& WithRequestBody(const char* value) { SetRequestBody(value); return *this;}
+    template<typename RequestBodyT = Aws::String>
+    void SetRequestBody(RequestBodyT&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::forward<RequestBodyT>(value); }
+    template<typename RequestBodyT = Aws::String>
+    CreateCaseCommentRequest& WithRequestBody(RequestBodyT&& value) { SetRequestBody(std::forward<RequestBodyT>(value)); return *this;}
     ///@}
   private:
 

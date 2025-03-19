@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityBlockExtensionOffering::CapacityBlockExtensionOffering() : 
-    m_capacityBlockExtensionOfferingIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_capacityBlockExtensionStartDateHasBeenSet(false),
-    m_capacityBlockExtensionEndDateHasBeenSet(false),
-    m_capacityBlockExtensionDurationHours(0),
-    m_capacityBlockExtensionDurationHoursHasBeenSet(false),
-    m_upfrontFeeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false)
-{
-}
-
 CapacityBlockExtensionOffering::CapacityBlockExtensionOffering(const XmlNode& xmlNode)
-  : CapacityBlockExtensionOffering()
 {
   *this = xmlNode;
 }
@@ -120,7 +100,7 @@ CapacityBlockExtensionOffering& CapacityBlockExtensionOffering::operator =(const
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
   }

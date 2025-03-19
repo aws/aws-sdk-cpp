@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorldTemplateRequest::DeleteWorldTemplateRequest() : 
-    m_templateHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorldTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

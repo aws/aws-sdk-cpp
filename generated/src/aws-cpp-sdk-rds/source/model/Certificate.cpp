@@ -20,21 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_certificateIdentifierHasBeenSet(false),
-    m_certificateTypeHasBeenSet(false),
-    m_thumbprintHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validTillHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_customerOverride(false),
-    m_customerOverrideHasBeenSet(false),
-    m_customerOverrideValidTillHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(const XmlNode& xmlNode)
-  : Certificate()
 {
   *this = xmlNode;
 }

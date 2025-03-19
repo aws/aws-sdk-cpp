@@ -35,7 +35,7 @@ namespace Model
   class AccountAssignment
   {
   public:
-    AWS_SSOADMIN_API AccountAssignment();
+    AWS_SSOADMIN_API AccountAssignment() = default;
     AWS_SSOADMIN_API AccountAssignment(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AccountAssignment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountAssignment& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountAssignment& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountAssignment& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountAssignment& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-    inline AccountAssignment& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-    inline AccountAssignment& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-    inline AccountAssignment& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    AccountAssignment& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,26 +76,22 @@ namespace Model
      * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
      * Center Identity Store API Reference</a>.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline AccountAssignment& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline AccountAssignment& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline AccountAssignment& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    AccountAssignment& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity type for which the assignment will be created.</p>
      */
-    inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
-    inline AccountAssignment& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
-    inline AccountAssignment& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline AccountAssignment& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet = false;
 
-    PrincipalType m_principalType;
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
     bool m_principalTypeHasBeenSet = false;
   };
 

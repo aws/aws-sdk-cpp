@@ -18,24 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-TargetedSentimentMention::TargetedSentimentMention() : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_groupScore(0.0),
-    m_groupScoreHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_type(TargetedSentimentEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_mentionSentimentHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
-{
-}
-
 TargetedSentimentMention::TargetedSentimentMention(JsonView jsonValue)
-  : TargetedSentimentMention()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ TargetedSentimentMention& TargetedSentimentMention::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupScore"))
   {
     m_groupScore = jsonValue.GetDouble("GroupScore");
-
     m_groupScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TargetedSentimentEntityTypeMapper::GetTargetedSentimentEntityTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MentionSentiment"))
   {
     m_mentionSentiment = jsonValue.GetObject("MentionSentiment");
-
     m_mentionSentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

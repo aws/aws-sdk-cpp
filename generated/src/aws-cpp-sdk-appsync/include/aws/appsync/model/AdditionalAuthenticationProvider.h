@@ -35,7 +35,7 @@ namespace Model
   class AdditionalAuthenticationProvider
   {
   public:
-    AWS_APPSYNC_API AdditionalAuthenticationProvider();
+    AWS_APPSYNC_API AdditionalAuthenticationProvider() = default;
     AWS_APPSYNC_API AdditionalAuthenticationProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API AdditionalAuthenticationProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,52 +46,50 @@ namespace Model
      * <p>The authentication type: API key, Identity and Access Management (IAM),
      * OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
      */
-    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline AdditionalAuthenticationProvider& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline AdditionalAuthenticationProvider& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline AdditionalAuthenticationProvider& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OIDC configuration.</p>
      */
-    inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
+    inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const { return m_openIDConnectConfig; }
     inline bool OpenIDConnectConfigHasBeenSet() const { return m_openIDConnectConfigHasBeenSet; }
-    inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
-    inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
-    inline AdditionalAuthenticationProvider& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
-    inline AdditionalAuthenticationProvider& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
+    template<typename OpenIDConnectConfigT = OpenIDConnectConfig>
+    void SetOpenIDConnectConfig(OpenIDConnectConfigT&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::forward<OpenIDConnectConfigT>(value); }
+    template<typename OpenIDConnectConfigT = OpenIDConnectConfig>
+    AdditionalAuthenticationProvider& WithOpenIDConnectConfig(OpenIDConnectConfigT&& value) { SetOpenIDConnectConfig(std::forward<OpenIDConnectConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Cognito user pool configuration.</p>
      */
-    inline const CognitoUserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
+    inline const CognitoUserPoolConfig& GetUserPoolConfig() const { return m_userPoolConfig; }
     inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
-    inline void SetUserPoolConfig(const CognitoUserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
-    inline void SetUserPoolConfig(CognitoUserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
-    inline AdditionalAuthenticationProvider& WithUserPoolConfig(const CognitoUserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
-    inline AdditionalAuthenticationProvider& WithUserPoolConfig(CognitoUserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
+    template<typename UserPoolConfigT = CognitoUserPoolConfig>
+    void SetUserPoolConfig(UserPoolConfigT&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::forward<UserPoolConfigT>(value); }
+    template<typename UserPoolConfigT = CognitoUserPoolConfig>
+    AdditionalAuthenticationProvider& WithUserPoolConfig(UserPoolConfigT&& value) { SetUserPoolConfig(std::forward<UserPoolConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration for Lambda function authorization.</p>
      */
-    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
+    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const { return m_lambdaAuthorizerConfig; }
     inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
-    inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
-    inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
-    inline AdditionalAuthenticationProvider& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
-    inline AdditionalAuthenticationProvider& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
+    template<typename LambdaAuthorizerConfigT = LambdaAuthorizerConfig>
+    void SetLambdaAuthorizerConfig(LambdaAuthorizerConfigT&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::forward<LambdaAuthorizerConfigT>(value); }
+    template<typename LambdaAuthorizerConfigT = LambdaAuthorizerConfig>
+    AdditionalAuthenticationProvider& WithLambdaAuthorizerConfig(LambdaAuthorizerConfigT&& value) { SetLambdaAuthorizerConfig(std::forward<LambdaAuthorizerConfigT>(value)); return *this;}
     ///@}
   private:
 
-    AuthenticationType m_authenticationType;
+    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
     OpenIDConnectConfig m_openIDConnectConfig;

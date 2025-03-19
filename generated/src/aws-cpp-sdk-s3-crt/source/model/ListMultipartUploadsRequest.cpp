@@ -17,22 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMultipartUploadsRequest::ListMultipartUploadsRequest() : 
-    m_bucketHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_encodingType(EncodingType::NOT_SET),
-    m_encodingTypeHasBeenSet(false),
-    m_keyMarkerHasBeenSet(false),
-    m_maxUploads(0),
-    m_maxUploadsHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_uploadIdMarkerHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool ListMultipartUploadsRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

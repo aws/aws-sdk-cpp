@@ -33,7 +33,7 @@ namespace Model
   class ReplicaAutoScalingSpecification
   {
   public:
-    AWS_KEYSPACES_API ReplicaAutoScalingSpecification();
+    AWS_KEYSPACES_API ReplicaAutoScalingSpecification() = default;
     AWS_KEYSPACES_API ReplicaAutoScalingSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API ReplicaAutoScalingSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline ReplicaAutoScalingSpecification& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline ReplicaAutoScalingSpecification& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline ReplicaAutoScalingSpecification& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    ReplicaAutoScalingSpecification& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>The auto scaling settings for a multi-Region table in the specified Amazon
      * Web Services Region.</p>
      */
-    inline const AutoScalingSpecification& GetAutoScalingSpecification() const{ return m_autoScalingSpecification; }
+    inline const AutoScalingSpecification& GetAutoScalingSpecification() const { return m_autoScalingSpecification; }
     inline bool AutoScalingSpecificationHasBeenSet() const { return m_autoScalingSpecificationHasBeenSet; }
-    inline void SetAutoScalingSpecification(const AutoScalingSpecification& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = value; }
-    inline void SetAutoScalingSpecification(AutoScalingSpecification&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::move(value); }
-    inline ReplicaAutoScalingSpecification& WithAutoScalingSpecification(const AutoScalingSpecification& value) { SetAutoScalingSpecification(value); return *this;}
-    inline ReplicaAutoScalingSpecification& WithAutoScalingSpecification(AutoScalingSpecification&& value) { SetAutoScalingSpecification(std::move(value)); return *this;}
+    template<typename AutoScalingSpecificationT = AutoScalingSpecification>
+    void SetAutoScalingSpecification(AutoScalingSpecificationT&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::forward<AutoScalingSpecificationT>(value); }
+    template<typename AutoScalingSpecificationT = AutoScalingSpecification>
+    ReplicaAutoScalingSpecification& WithAutoScalingSpecification(AutoScalingSpecificationT&& value) { SetAutoScalingSpecification(std::forward<AutoScalingSpecificationT>(value)); return *this;}
     ///@}
   private:
 

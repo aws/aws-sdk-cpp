@@ -12,14 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStarterMappingTemplateRequest::CreateStarterMappingTemplateRequest() : 
-    m_outputSampleLocationHasBeenSet(false),
-    m_mappingType(MappingType::NOT_SET),
-    m_mappingTypeHasBeenSet(false),
-    m_templateDetailsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStarterMappingTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

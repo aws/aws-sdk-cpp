@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-NodeExporter::NodeExporter() : 
-    m_enabledInBroker(false),
-    m_enabledInBrokerHasBeenSet(false)
-{
-}
-
 NodeExporter::NodeExporter(JsonView jsonValue)
-  : NodeExporter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NodeExporter& NodeExporter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabledInBroker"))
   {
     m_enabledInBroker = jsonValue.GetBool("enabledInBroker");
-
     m_enabledInBrokerHasBeenSet = true;
   }
-
   return *this;
 }
 

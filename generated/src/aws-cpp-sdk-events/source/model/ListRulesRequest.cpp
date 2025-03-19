@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRulesRequest::ListRulesRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListRulesRequest::SerializePayload() const
 {
   JsonValue payload;

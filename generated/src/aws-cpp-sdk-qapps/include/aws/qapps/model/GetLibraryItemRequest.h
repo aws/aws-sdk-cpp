@@ -25,7 +25,7 @@ namespace Model
   class GetLibraryItemRequest : public QAppsRequest
   {
   public:
-    AWS_QAPPS_API GetLibraryItemRequest();
+    AWS_QAPPS_API GetLibraryItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * <p>The unique identifier of the Amazon Q Business application environment
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetLibraryItemRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetLibraryItemRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetLibraryItemRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetLibraryItemRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the library item to retrieve.</p>
      */
-    inline const Aws::String& GetLibraryItemId() const{ return m_libraryItemId; }
+    inline const Aws::String& GetLibraryItemId() const { return m_libraryItemId; }
     inline bool LibraryItemIdHasBeenSet() const { return m_libraryItemIdHasBeenSet; }
-    inline void SetLibraryItemId(const Aws::String& value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId = value; }
-    inline void SetLibraryItemId(Aws::String&& value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId = std::move(value); }
-    inline void SetLibraryItemId(const char* value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId.assign(value); }
-    inline GetLibraryItemRequest& WithLibraryItemId(const Aws::String& value) { SetLibraryItemId(value); return *this;}
-    inline GetLibraryItemRequest& WithLibraryItemId(Aws::String&& value) { SetLibraryItemId(std::move(value)); return *this;}
-    inline GetLibraryItemRequest& WithLibraryItemId(const char* value) { SetLibraryItemId(value); return *this;}
+    template<typename LibraryItemIdT = Aws::String>
+    void SetLibraryItemId(LibraryItemIdT&& value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId = std::forward<LibraryItemIdT>(value); }
+    template<typename LibraryItemIdT = Aws::String>
+    GetLibraryItemRequest& WithLibraryItemId(LibraryItemIdT&& value) { SetLibraryItemId(std::forward<LibraryItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The unique identifier of the Amazon Q App associated with the library
      * item.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline GetLibraryItemRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GetLibraryItemRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GetLibraryItemRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GetLibraryItemRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LookbackWindow::LookbackWindow() : 
-    m_columnNameHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_sizeUnit(LookbackWindowSizeUnit::NOT_SET),
-    m_sizeUnitHasBeenSet(false)
-{
-}
-
 LookbackWindow::LookbackWindow(JsonView jsonValue)
-  : LookbackWindow()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LookbackWindow& LookbackWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInt64("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeUnit"))
   {
     m_sizeUnit = LookbackWindowSizeUnitMapper::GetLookbackWindowSizeUnitForName(jsonValue.GetString("SizeUnit"));
-
     m_sizeUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

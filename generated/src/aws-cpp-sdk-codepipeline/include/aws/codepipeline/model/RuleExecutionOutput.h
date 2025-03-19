@@ -32,7 +32,7 @@ namespace Model
   class RuleExecutionOutput
   {
   public:
-    AWS_CODEPIPELINE_API RuleExecutionOutput();
+    AWS_CODEPIPELINE_API RuleExecutionOutput() = default;
     AWS_CODEPIPELINE_API RuleExecutionOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API RuleExecutionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Execution result information listed in the output details for a rule
      * execution.</p>
      */
-    inline const RuleExecutionResult& GetExecutionResult() const{ return m_executionResult; }
+    inline const RuleExecutionResult& GetExecutionResult() const { return m_executionResult; }
     inline bool ExecutionResultHasBeenSet() const { return m_executionResultHasBeenSet; }
-    inline void SetExecutionResult(const RuleExecutionResult& value) { m_executionResultHasBeenSet = true; m_executionResult = value; }
-    inline void SetExecutionResult(RuleExecutionResult&& value) { m_executionResultHasBeenSet = true; m_executionResult = std::move(value); }
-    inline RuleExecutionOutput& WithExecutionResult(const RuleExecutionResult& value) { SetExecutionResult(value); return *this;}
-    inline RuleExecutionOutput& WithExecutionResult(RuleExecutionResult&& value) { SetExecutionResult(std::move(value)); return *this;}
+    template<typename ExecutionResultT = RuleExecutionResult>
+    void SetExecutionResult(ExecutionResultT&& value) { m_executionResultHasBeenSet = true; m_executionResult = std::forward<ExecutionResultT>(value); }
+    template<typename ExecutionResultT = RuleExecutionResult>
+    RuleExecutionOutput& WithExecutionResult(ExecutionResultT&& value) { SetExecutionResult(std::forward<ExecutionResultT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class GetQueryResultsWorkloadInsightsTopContributorsRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API GetQueryResultsWorkloadInsightsTopContributorsRequest();
+    AWS_NETWORKFLOWMONITOR_API GetQueryResultsWorkloadInsightsTopContributorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * results for. A scope ID is an internally-generated identifier that includes all
      * the resources for a specific root account.</p>
      */
-    inline const Aws::String& GetScopeId() const{ return m_scopeId; }
+    inline const Aws::String& GetScopeId() const { return m_scopeId; }
     inline bool ScopeIdHasBeenSet() const { return m_scopeIdHasBeenSet; }
-    inline void SetScopeId(const Aws::String& value) { m_scopeIdHasBeenSet = true; m_scopeId = value; }
-    inline void SetScopeId(Aws::String&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::move(value); }
-    inline void SetScopeId(const char* value) { m_scopeIdHasBeenSet = true; m_scopeId.assign(value); }
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithScopeId(const Aws::String& value) { SetScopeId(value); return *this;}
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithScopeId(Aws::String&& value) { SetScopeId(std::move(value)); return *this;}
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithScopeId(const char* value) { SetScopeId(value); return *this;}
+    template<typename ScopeIdT = Aws::String>
+    void SetScopeId(ScopeIdT&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::forward<ScopeIdT>(value); }
+    template<typename ScopeIdT = Aws::String>
+    GetQueryResultsWorkloadInsightsTopContributorsRequest& WithScopeId(ScopeIdT&& value) { SetScopeId(std::forward<ScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The identifier for the query. A query ID is an internally-generated
      * identifier for a specific query returned from an API call to start a query.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    GetQueryResultsWorkloadInsightsTopContributorsRequest& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,21 +70,19 @@ namespace Model
      * <p>The token for the next set of results. You receive this token from a previous
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetQueryResultsWorkloadInsightsTopContributorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of query results that you want to return with this call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetQueryResultsWorkloadInsightsTopContributorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

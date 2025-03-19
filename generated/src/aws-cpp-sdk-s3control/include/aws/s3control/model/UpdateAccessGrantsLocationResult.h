@@ -28,7 +28,7 @@ namespace Model
   class UpdateAccessGrantsLocationResult
   {
   public:
-    AWS_S3CONTROL_API UpdateAccessGrantsLocationResult();
+    AWS_S3CONTROL_API UpdateAccessGrantsLocationResult() = default;
     AWS_S3CONTROL_API UpdateAccessGrantsLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API UpdateAccessGrantsLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>The date and time when you registered the location. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateAccessGrantsLocationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateAccessGrantsLocationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,13 +51,11 @@ namespace Model
      * assigns the ID <code>default</code> to the default location <code>s3://</code>
      * and assigns an auto-generated ID to other locations that you register. </p>
      */
-    inline const Aws::String& GetAccessGrantsLocationId() const{ return m_accessGrantsLocationId; }
-    inline void SetAccessGrantsLocationId(const Aws::String& value) { m_accessGrantsLocationId = value; }
-    inline void SetAccessGrantsLocationId(Aws::String&& value) { m_accessGrantsLocationId = std::move(value); }
-    inline void SetAccessGrantsLocationId(const char* value) { m_accessGrantsLocationId.assign(value); }
-    inline UpdateAccessGrantsLocationResult& WithAccessGrantsLocationId(const Aws::String& value) { SetAccessGrantsLocationId(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithAccessGrantsLocationId(Aws::String&& value) { SetAccessGrantsLocationId(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithAccessGrantsLocationId(const char* value) { SetAccessGrantsLocationId(value); return *this;}
+    inline const Aws::String& GetAccessGrantsLocationId() const { return m_accessGrantsLocationId; }
+    template<typename AccessGrantsLocationIdT = Aws::String>
+    void SetAccessGrantsLocationId(AccessGrantsLocationIdT&& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = std::forward<AccessGrantsLocationIdT>(value); }
+    template<typename AccessGrantsLocationIdT = Aws::String>
+    UpdateAccessGrantsLocationResult& WithAccessGrantsLocationId(AccessGrantsLocationIdT&& value) { SetAccessGrantsLocationId(std::forward<AccessGrantsLocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,13 +63,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the registered location that you are
      * updating. </p>
      */
-    inline const Aws::String& GetAccessGrantsLocationArn() const{ return m_accessGrantsLocationArn; }
-    inline void SetAccessGrantsLocationArn(const Aws::String& value) { m_accessGrantsLocationArn = value; }
-    inline void SetAccessGrantsLocationArn(Aws::String&& value) { m_accessGrantsLocationArn = std::move(value); }
-    inline void SetAccessGrantsLocationArn(const char* value) { m_accessGrantsLocationArn.assign(value); }
-    inline UpdateAccessGrantsLocationResult& WithAccessGrantsLocationArn(const Aws::String& value) { SetAccessGrantsLocationArn(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithAccessGrantsLocationArn(Aws::String&& value) { SetAccessGrantsLocationArn(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithAccessGrantsLocationArn(const char* value) { SetAccessGrantsLocationArn(value); return *this;}
+    inline const Aws::String& GetAccessGrantsLocationArn() const { return m_accessGrantsLocationArn; }
+    template<typename AccessGrantsLocationArnT = Aws::String>
+    void SetAccessGrantsLocationArn(AccessGrantsLocationArnT&& value) { m_accessGrantsLocationArnHasBeenSet = true; m_accessGrantsLocationArn = std::forward<AccessGrantsLocationArnT>(value); }
+    template<typename AccessGrantsLocationArnT = Aws::String>
+    UpdateAccessGrantsLocationResult& WithAccessGrantsLocationArn(AccessGrantsLocationArnT&& value) { SetAccessGrantsLocationArn(std::forward<AccessGrantsLocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,13 +78,11 @@ namespace Model
      * <code>s3://&lt;bucket&gt;</code>, or the S3 path to a bucket and prefix
      * <code>s3://&lt;bucket&gt;/&lt;prefix&gt;</code>. </p>
      */
-    inline const Aws::String& GetLocationScope() const{ return m_locationScope; }
-    inline void SetLocationScope(const Aws::String& value) { m_locationScope = value; }
-    inline void SetLocationScope(Aws::String&& value) { m_locationScope = std::move(value); }
-    inline void SetLocationScope(const char* value) { m_locationScope.assign(value); }
-    inline UpdateAccessGrantsLocationResult& WithLocationScope(const Aws::String& value) { SetLocationScope(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithLocationScope(Aws::String&& value) { SetLocationScope(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithLocationScope(const char* value) { SetLocationScope(value); return *this;}
+    inline const Aws::String& GetLocationScope() const { return m_locationScope; }
+    template<typename LocationScopeT = Aws::String>
+    void SetLocationScope(LocationScopeT&& value) { m_locationScopeHasBeenSet = true; m_locationScope = std::forward<LocationScopeT>(value); }
+    template<typename LocationScopeT = Aws::String>
+    UpdateAccessGrantsLocationResult& WithLocationScope(LocationScopeT&& value) { SetLocationScope(std::forward<LocationScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,55 +91,56 @@ namespace Model
      * Access Grants assumes this role to manage access to the registered location.
      * </p>
      */
-    inline const Aws::String& GetIAMRoleArn() const{ return m_iAMRoleArn; }
-    inline void SetIAMRoleArn(const Aws::String& value) { m_iAMRoleArn = value; }
-    inline void SetIAMRoleArn(Aws::String&& value) { m_iAMRoleArn = std::move(value); }
-    inline void SetIAMRoleArn(const char* value) { m_iAMRoleArn.assign(value); }
-    inline UpdateAccessGrantsLocationResult& WithIAMRoleArn(const Aws::String& value) { SetIAMRoleArn(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithIAMRoleArn(Aws::String&& value) { SetIAMRoleArn(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithIAMRoleArn(const char* value) { SetIAMRoleArn(value); return *this;}
+    inline const Aws::String& GetIAMRoleArn() const { return m_iAMRoleArn; }
+    template<typename IAMRoleArnT = Aws::String>
+    void SetIAMRoleArn(IAMRoleArnT&& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = std::forward<IAMRoleArnT>(value); }
+    template<typename IAMRoleArnT = Aws::String>
+    UpdateAccessGrantsLocationResult& WithIAMRoleArn(IAMRoleArnT&& value) { SetIAMRoleArn(std::forward<IAMRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAccessGrantsLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAccessGrantsLocationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline UpdateAccessGrantsLocationResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    UpdateAccessGrantsLocationResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_accessGrantsLocationId;
+    bool m_accessGrantsLocationIdHasBeenSet = false;
 
     Aws::String m_accessGrantsLocationArn;
+    bool m_accessGrantsLocationArnHasBeenSet = false;
 
     Aws::String m_locationScope;
+    bool m_locationScopeHasBeenSet = false;
 
     Aws::String m_iAMRoleArn;
+    bool m_iAMRoleArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

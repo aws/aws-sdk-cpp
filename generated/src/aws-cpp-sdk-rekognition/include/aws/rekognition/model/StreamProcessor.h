@@ -37,7 +37,7 @@ namespace Model
   class StreamProcessor
   {
   public:
-    AWS_REKOGNITION_API StreamProcessor();
+    AWS_REKOGNITION_API StreamProcessor() = default;
     AWS_REKOGNITION_API StreamProcessor(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,33 +47,29 @@ namespace Model
     /**
      * <p>Name of the Amazon Rekognition stream processor. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StreamProcessor& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StreamProcessor& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StreamProcessor& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StreamProcessor& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current status of the Amazon Rekognition stream processor.</p>
      */
-    inline const StreamProcessorStatus& GetStatus() const{ return m_status; }
+    inline StreamProcessorStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StreamProcessorStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StreamProcessorStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StreamProcessor& WithStatus(const StreamProcessorStatus& value) { SetStatus(value); return *this;}
-    inline StreamProcessor& WithStatus(StreamProcessorStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StreamProcessorStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StreamProcessor& WithStatus(StreamProcessorStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    StreamProcessorStatus m_status;
+    StreamProcessorStatus m_status{StreamProcessorStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

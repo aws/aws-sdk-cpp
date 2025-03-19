@@ -21,7 +21,7 @@ namespace Model
   class DeleteProvisionedProductPlanRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API DeleteProvisionedProductPlanRequest();
+    AWS_SERVICECATALOG_API DeleteProvisionedProductPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline DeleteProvisionedProductPlanRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline DeleteProvisionedProductPlanRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline DeleteProvisionedProductPlanRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    DeleteProvisionedProductPlanRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The plan identifier.</p>
      */
-    inline const Aws::String& GetPlanId() const{ return m_planId; }
+    inline const Aws::String& GetPlanId() const { return m_planId; }
     inline bool PlanIdHasBeenSet() const { return m_planIdHasBeenSet; }
-    inline void SetPlanId(const Aws::String& value) { m_planIdHasBeenSet = true; m_planId = value; }
-    inline void SetPlanId(Aws::String&& value) { m_planIdHasBeenSet = true; m_planId = std::move(value); }
-    inline void SetPlanId(const char* value) { m_planIdHasBeenSet = true; m_planId.assign(value); }
-    inline DeleteProvisionedProductPlanRequest& WithPlanId(const Aws::String& value) { SetPlanId(value); return *this;}
-    inline DeleteProvisionedProductPlanRequest& WithPlanId(Aws::String&& value) { SetPlanId(std::move(value)); return *this;}
-    inline DeleteProvisionedProductPlanRequest& WithPlanId(const char* value) { SetPlanId(value); return *this;}
+    template<typename PlanIdT = Aws::String>
+    void SetPlanId(PlanIdT&& value) { m_planIdHasBeenSet = true; m_planId = std::forward<PlanIdT>(value); }
+    template<typename PlanIdT = Aws::String>
+    DeleteProvisionedProductPlanRequest& WithPlanId(PlanIdT&& value) { SetPlanId(std::forward<PlanIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +64,7 @@ namespace Model
      * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
-    inline bool GetIgnoreErrors() const{ return m_ignoreErrors; }
+    inline bool GetIgnoreErrors() const { return m_ignoreErrors; }
     inline bool IgnoreErrorsHasBeenSet() const { return m_ignoreErrorsHasBeenSet; }
     inline void SetIgnoreErrors(bool value) { m_ignoreErrorsHasBeenSet = true; m_ignoreErrors = value; }
     inline DeleteProvisionedProductPlanRequest& WithIgnoreErrors(bool value) { SetIgnoreErrors(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     Aws::String m_planId;
     bool m_planIdHasBeenSet = false;
 
-    bool m_ignoreErrors;
+    bool m_ignoreErrors{false};
     bool m_ignoreErrorsHasBeenSet = false;
   };
 

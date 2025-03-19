@@ -18,18 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-Choice::Choice() : 
-    m_choiceIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_helpfulResourceHasBeenSet(false),
-    m_improvementPlanHasBeenSet(false),
-    m_additionalResourcesHasBeenSet(false)
-{
-}
-
 Choice::Choice(JsonView jsonValue)
-  : Choice()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Choice& Choice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChoiceId"))
   {
     m_choiceId = jsonValue.GetString("ChoiceId");
-
     m_choiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HelpfulResource"))
   {
     m_helpfulResource = jsonValue.GetObject("HelpfulResource");
-
     m_helpfulResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementPlan"))
   {
     m_improvementPlan = jsonValue.GetObject("ImprovementPlan");
-
     m_improvementPlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalResources"))
   {
     Aws::Utils::Array<JsonView> additionalResourcesJsonList = jsonValue.GetArray("AdditionalResources");
@@ -80,7 +59,6 @@ Choice& Choice::operator =(JsonView jsonValue)
     }
     m_additionalResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

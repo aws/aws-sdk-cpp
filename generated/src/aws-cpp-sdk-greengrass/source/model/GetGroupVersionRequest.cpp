@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGroupVersionRequest::GetGroupVersionRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_groupVersionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupVersionRequest::SerializePayload() const
 {
   return {};

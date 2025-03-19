@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StatusReason::StatusReason() : 
-    m_reasonCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 StatusReason::StatusReason(JsonView jsonValue)
-  : StatusReason()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StatusReason& StatusReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReasonCode"))
   {
     m_reasonCode = jsonValue.GetString("ReasonCode");
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

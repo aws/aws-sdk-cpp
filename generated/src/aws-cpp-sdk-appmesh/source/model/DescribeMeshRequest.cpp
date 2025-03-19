@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeMeshRequest::DescribeMeshRequest() : 
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMeshRequest::SerializePayload() const
 {
   return {};

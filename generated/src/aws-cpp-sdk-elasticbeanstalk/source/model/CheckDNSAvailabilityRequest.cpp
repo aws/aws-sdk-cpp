@@ -10,11 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-CheckDNSAvailabilityRequest::CheckDNSAvailabilityRequest() : 
-    m_cNAMEPrefixHasBeenSet(false)
-{
-}
-
 Aws::String CheckDNSAvailabilityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

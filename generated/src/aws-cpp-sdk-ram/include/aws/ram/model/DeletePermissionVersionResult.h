@@ -28,7 +28,7 @@ namespace Model
   class DeletePermissionVersionResult
   {
   public:
-    AWS_RAM_API DeletePermissionVersionResult();
+    AWS_RAM_API DeletePermissionVersionResult() = default;
     AWS_RAM_API DeletePermissionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RAM_API DeletePermissionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>A boolean value that indicates whether the operation is successful.</p>
      */
-    inline bool GetReturnValue() const{ return m_returnValue; }
-    inline void SetReturnValue(bool value) { m_returnValue = value; }
+    inline bool GetReturnValue() const { return m_returnValue; }
+    inline void SetReturnValue(bool value) { m_returnValueHasBeenSet = true; m_returnValue = value; }
     inline DeletePermissionVersionResult& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
     ///@}
 
@@ -50,13 +50,11 @@ namespace Model
      * other parameters must also have the same values that you used in the first
      * call.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline DeletePermissionVersionResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeletePermissionVersionResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeletePermissionVersionResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeletePermissionVersionResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,32 +62,32 @@ namespace Model
      * <p>This operation is performed asynchronously, and this response parameter
      * indicates the current status.</p>
      */
-    inline const PermissionStatus& GetPermissionStatus() const{ return m_permissionStatus; }
-    inline void SetPermissionStatus(const PermissionStatus& value) { m_permissionStatus = value; }
-    inline void SetPermissionStatus(PermissionStatus&& value) { m_permissionStatus = std::move(value); }
-    inline DeletePermissionVersionResult& WithPermissionStatus(const PermissionStatus& value) { SetPermissionStatus(value); return *this;}
-    inline DeletePermissionVersionResult& WithPermissionStatus(PermissionStatus&& value) { SetPermissionStatus(std::move(value)); return *this;}
+    inline PermissionStatus GetPermissionStatus() const { return m_permissionStatus; }
+    inline void SetPermissionStatus(PermissionStatus value) { m_permissionStatusHasBeenSet = true; m_permissionStatus = value; }
+    inline DeletePermissionVersionResult& WithPermissionStatus(PermissionStatus value) { SetPermissionStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePermissionVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePermissionVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePermissionVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePermissionVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_returnValue;
+    bool m_returnValue{false};
+    bool m_returnValueHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
-    PermissionStatus m_permissionStatus;
+    PermissionStatus m_permissionStatus{PermissionStatus::NOT_SET};
+    bool m_permissionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

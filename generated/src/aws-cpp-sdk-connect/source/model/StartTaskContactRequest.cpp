@@ -12,24 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTaskContactRequest::StartTaskContactRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_previousContactIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_scheduledTimeHasBeenSet(false),
-    m_taskTemplateIdHasBeenSet(false),
-    m_quickConnectIdHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false)
-{
-}
-
 Aws::String StartTaskContactRequest::SerializePayload() const
 {
   JsonValue payload;

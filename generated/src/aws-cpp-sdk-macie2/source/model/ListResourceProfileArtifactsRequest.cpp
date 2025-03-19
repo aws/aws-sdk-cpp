@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListResourceProfileArtifactsRequest::ListResourceProfileArtifactsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceProfileArtifactsRequest::SerializePayload() const
 {
   return {};

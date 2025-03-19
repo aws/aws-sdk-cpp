@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteLifecycleHookRequest::DeleteLifecycleHookRequest() : 
-    m_lifecycleHookNameHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLifecycleHookRequest::SerializePayload() const
 {
   Aws::StringStream ss;

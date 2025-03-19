@@ -46,7 +46,7 @@ namespace Model
   class LaunchTemplateOverrides
   {
   public:
-    AWS_AUTOSCALING_API LaunchTemplateOverrides();
+    AWS_AUTOSCALING_API LaunchTemplateOverrides() = default;
     AWS_AUTOSCALING_API LaunchTemplateOverrides(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API LaunchTemplateOverrides& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -63,14 +63,12 @@ namespace Model
      * types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <p>You
      * can specify up to 40 instance types per Auto Scaling group.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline LaunchTemplateOverrides& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline LaunchTemplateOverrides& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline LaunchTemplateOverrides& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    LaunchTemplateOverrides& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +95,12 @@ namespace Model
      * types, you must specify these sizes with the same units that you use for
      * weighting instances. </p> 
      */
-    inline const Aws::String& GetWeightedCapacity() const{ return m_weightedCapacity; }
+    inline const Aws::String& GetWeightedCapacity() const { return m_weightedCapacity; }
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
-    inline void SetWeightedCapacity(const Aws::String& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
-    inline void SetWeightedCapacity(Aws::String&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::move(value); }
-    inline void SetWeightedCapacity(const char* value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity.assign(value); }
-    inline LaunchTemplateOverrides& WithWeightedCapacity(const Aws::String& value) { SetWeightedCapacity(value); return *this;}
-    inline LaunchTemplateOverrides& WithWeightedCapacity(Aws::String&& value) { SetWeightedCapacity(std::move(value)); return *this;}
-    inline LaunchTemplateOverrides& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
+    template<typename WeightedCapacityT = Aws::String>
+    void SetWeightedCapacity(WeightedCapacityT&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::forward<WeightedCapacityT>(value); }
+    template<typename WeightedCapacityT = Aws::String>
+    LaunchTemplateOverrides& WithWeightedCapacity(WeightedCapacityT&& value) { SetWeightedCapacity(std::forward<WeightedCapacityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +116,12 @@ namespace Model
      * Auto Scaling group. The launch templates specified in the overrides and in the
      * <code>LaunchTemplate</code> definition count towards this limit.</p>
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplateSpecification() const { return m_launchTemplateSpecification; }
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
-    inline void SetLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
-    inline void SetLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
-    inline LaunchTemplateOverrides& WithLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
-    inline LaunchTemplateOverrides& WithLaunchTemplateSpecification(LaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+    template<typename LaunchTemplateSpecificationT = LaunchTemplateSpecification>
+    void SetLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::forward<LaunchTemplateSpecificationT>(value); }
+    template<typename LaunchTemplateSpecificationT = LaunchTemplateSpecification>
+    LaunchTemplateOverrides& WithLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { SetLaunchTemplateSpecification(std::forward<LaunchTemplateSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +137,12 @@ namespace Model
      * <code>InstanceRequirements</code>, you can't specify
      * <code>InstanceType</code>.</p> 
      */
-    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+    inline const InstanceRequirements& GetInstanceRequirements() const { return m_instanceRequirements; }
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
-    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
-    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
-    inline LaunchTemplateOverrides& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
-    inline LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+    template<typename InstanceRequirementsT = InstanceRequirements>
+    void SetInstanceRequirements(InstanceRequirementsT&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::forward<InstanceRequirementsT>(value); }
+    template<typename InstanceRequirementsT = InstanceRequirements>
+    LaunchTemplateOverrides& WithInstanceRequirements(InstanceRequirementsT&& value) { SetInstanceRequirements(std::forward<InstanceRequirementsT>(value)); return *this;}
     ///@}
   private:
 

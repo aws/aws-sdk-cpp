@@ -18,20 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-DatasetDescription::DatasetDescription() : 
-    m_projectNameHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_imageStatsHasBeenSet(false)
-{
-}
-
 DatasetDescription::DatasetDescription(JsonView jsonValue)
-  : DatasetDescription()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ DatasetDescription& DatasetDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProjectName"))
   {
     m_projectName = jsonValue.GetString("ProjectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetType"))
   {
     m_datasetType = jsonValue.GetString("DatasetType");
-
     m_datasetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageStats"))
   {
     m_imageStats = jsonValue.GetObject("ImageStats");
-
     m_imageStatsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class ToolConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ToolConfiguration();
+    AWS_BEDROCKAGENT_API ToolConfiguration() = default;
     AWS_BEDROCKAGENT_API ToolConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ToolConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,26 @@ namespace Model
     /**
      * <p>Defines which tools the model should request when invoked.</p>
      */
-    inline const ToolChoice& GetToolChoice() const{ return m_toolChoice; }
+    inline const ToolChoice& GetToolChoice() const { return m_toolChoice; }
     inline bool ToolChoiceHasBeenSet() const { return m_toolChoiceHasBeenSet; }
-    inline void SetToolChoice(const ToolChoice& value) { m_toolChoiceHasBeenSet = true; m_toolChoice = value; }
-    inline void SetToolChoice(ToolChoice&& value) { m_toolChoiceHasBeenSet = true; m_toolChoice = std::move(value); }
-    inline ToolConfiguration& WithToolChoice(const ToolChoice& value) { SetToolChoice(value); return *this;}
-    inline ToolConfiguration& WithToolChoice(ToolChoice&& value) { SetToolChoice(std::move(value)); return *this;}
+    template<typename ToolChoiceT = ToolChoice>
+    void SetToolChoice(ToolChoiceT&& value) { m_toolChoiceHasBeenSet = true; m_toolChoice = std::forward<ToolChoiceT>(value); }
+    template<typename ToolChoiceT = ToolChoice>
+    ToolConfiguration& WithToolChoice(ToolChoiceT&& value) { SetToolChoice(std::forward<ToolChoiceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of tools to pass to a model.</p>
      */
-    inline const Aws::Vector<Tool>& GetTools() const{ return m_tools; }
+    inline const Aws::Vector<Tool>& GetTools() const { return m_tools; }
     inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
-    inline void SetTools(const Aws::Vector<Tool>& value) { m_toolsHasBeenSet = true; m_tools = value; }
-    inline void SetTools(Aws::Vector<Tool>&& value) { m_toolsHasBeenSet = true; m_tools = std::move(value); }
-    inline ToolConfiguration& WithTools(const Aws::Vector<Tool>& value) { SetTools(value); return *this;}
-    inline ToolConfiguration& WithTools(Aws::Vector<Tool>&& value) { SetTools(std::move(value)); return *this;}
-    inline ToolConfiguration& AddTools(const Tool& value) { m_toolsHasBeenSet = true; m_tools.push_back(value); return *this; }
-    inline ToolConfiguration& AddTools(Tool&& value) { m_toolsHasBeenSet = true; m_tools.push_back(std::move(value)); return *this; }
+    template<typename ToolsT = Aws::Vector<Tool>>
+    void SetTools(ToolsT&& value) { m_toolsHasBeenSet = true; m_tools = std::forward<ToolsT>(value); }
+    template<typename ToolsT = Aws::Vector<Tool>>
+    ToolConfiguration& WithTools(ToolsT&& value) { SetTools(std::forward<ToolsT>(value)); return *this;}
+    template<typename ToolsT = Tool>
+    ToolConfiguration& AddTools(ToolsT&& value) { m_toolsHasBeenSet = true; m_tools.emplace_back(std::forward<ToolsT>(value)); return *this; }
     ///@}
   private:
 

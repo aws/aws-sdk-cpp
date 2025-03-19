@@ -32,7 +32,7 @@ namespace Model
   class WebhookAuthConfiguration
   {
   public:
-    AWS_CODEPIPELINE_API WebhookAuthConfiguration();
+    AWS_CODEPIPELINE_API WebhookAuthConfiguration() = default;
     AWS_CODEPIPELINE_API WebhookAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API WebhookAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * For IP, only the <code>AllowedIPRange</code> property must be set. This property
      * must be set to a valid CIDR range.</p>
      */
-    inline const Aws::String& GetAllowedIPRange() const{ return m_allowedIPRange; }
+    inline const Aws::String& GetAllowedIPRange() const { return m_allowedIPRange; }
     inline bool AllowedIPRangeHasBeenSet() const { return m_allowedIPRangeHasBeenSet; }
-    inline void SetAllowedIPRange(const Aws::String& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = value; }
-    inline void SetAllowedIPRange(Aws::String&& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = std::move(value); }
-    inline void SetAllowedIPRange(const char* value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange.assign(value); }
-    inline WebhookAuthConfiguration& WithAllowedIPRange(const Aws::String& value) { SetAllowedIPRange(value); return *this;}
-    inline WebhookAuthConfiguration& WithAllowedIPRange(Aws::String&& value) { SetAllowedIPRange(std::move(value)); return *this;}
-    inline WebhookAuthConfiguration& WithAllowedIPRange(const char* value) { SetAllowedIPRange(value); return *this;}
+    template<typename AllowedIPRangeT = Aws::String>
+    void SetAllowedIPRange(AllowedIPRangeT&& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = std::forward<AllowedIPRangeT>(value); }
+    template<typename AllowedIPRangeT = Aws::String>
+    WebhookAuthConfiguration& WithAllowedIPRange(AllowedIPRangeT&& value) { SetAllowedIPRange(std::forward<AllowedIPRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      *   <p>If a secret token was provided, it will be redacted in
      * the response.</p> 
      */
-    inline const Aws::String& GetSecretToken() const{ return m_secretToken; }
+    inline const Aws::String& GetSecretToken() const { return m_secretToken; }
     inline bool SecretTokenHasBeenSet() const { return m_secretTokenHasBeenSet; }
-    inline void SetSecretToken(const Aws::String& value) { m_secretTokenHasBeenSet = true; m_secretToken = value; }
-    inline void SetSecretToken(Aws::String&& value) { m_secretTokenHasBeenSet = true; m_secretToken = std::move(value); }
-    inline void SetSecretToken(const char* value) { m_secretTokenHasBeenSet = true; m_secretToken.assign(value); }
-    inline WebhookAuthConfiguration& WithSecretToken(const Aws::String& value) { SetSecretToken(value); return *this;}
-    inline WebhookAuthConfiguration& WithSecretToken(Aws::String&& value) { SetSecretToken(std::move(value)); return *this;}
-    inline WebhookAuthConfiguration& WithSecretToken(const char* value) { SetSecretToken(value); return *this;}
+    template<typename SecretTokenT = Aws::String>
+    void SetSecretToken(SecretTokenT&& value) { m_secretTokenHasBeenSet = true; m_secretToken = std::forward<SecretTokenT>(value); }
+    template<typename SecretTokenT = Aws::String>
+    WebhookAuthConfiguration& WithSecretToken(SecretTokenT&& value) { SetSecretToken(std::forward<SecretTokenT>(value)); return *this;}
     ///@}
   private:
 

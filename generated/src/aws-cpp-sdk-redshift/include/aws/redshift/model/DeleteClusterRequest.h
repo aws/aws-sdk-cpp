@@ -24,7 +24,7 @@ namespace Model
   class DeleteClusterRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DeleteClusterRequest();
+    AWS_REDSHIFT_API DeleteClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline DeleteClusterRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline DeleteClusterRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline DeleteClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    DeleteClusterRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
      * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
-    inline bool GetSkipFinalClusterSnapshot() const{ return m_skipFinalClusterSnapshot; }
+    inline bool GetSkipFinalClusterSnapshot() const { return m_skipFinalClusterSnapshot; }
     inline bool SkipFinalClusterSnapshotHasBeenSet() const { return m_skipFinalClusterSnapshotHasBeenSet; }
     inline void SetSkipFinalClusterSnapshot(bool value) { m_skipFinalClusterSnapshotHasBeenSet = true; m_skipFinalClusterSnapshot = value; }
     inline DeleteClusterRequest& WithSkipFinalClusterSnapshot(bool value) { SetSkipFinalClusterSnapshot(value); return *this;}
@@ -81,14 +79,12 @@ namespace Model
      * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
      * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
-    inline const Aws::String& GetFinalClusterSnapshotIdentifier() const{ return m_finalClusterSnapshotIdentifier; }
+    inline const Aws::String& GetFinalClusterSnapshotIdentifier() const { return m_finalClusterSnapshotIdentifier; }
     inline bool FinalClusterSnapshotIdentifierHasBeenSet() const { return m_finalClusterSnapshotIdentifierHasBeenSet; }
-    inline void SetFinalClusterSnapshotIdentifier(const Aws::String& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = value; }
-    inline void SetFinalClusterSnapshotIdentifier(Aws::String&& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = std::move(value); }
-    inline void SetFinalClusterSnapshotIdentifier(const char* value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier.assign(value); }
-    inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(const Aws::String& value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
-    inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(Aws::String&& value) { SetFinalClusterSnapshotIdentifier(std::move(value)); return *this;}
-    inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(const char* value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
+    template<typename FinalClusterSnapshotIdentifierT = Aws::String>
+    void SetFinalClusterSnapshotIdentifier(FinalClusterSnapshotIdentifierT&& value) { m_finalClusterSnapshotIdentifierHasBeenSet = true; m_finalClusterSnapshotIdentifier = std::forward<FinalClusterSnapshotIdentifierT>(value); }
+    template<typename FinalClusterSnapshotIdentifierT = Aws::String>
+    DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(FinalClusterSnapshotIdentifierT&& value) { SetFinalClusterSnapshotIdentifier(std::forward<FinalClusterSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +93,7 @@ namespace Model
      * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
      * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
      */
-    inline int GetFinalClusterSnapshotRetentionPeriod() const{ return m_finalClusterSnapshotRetentionPeriod; }
+    inline int GetFinalClusterSnapshotRetentionPeriod() const { return m_finalClusterSnapshotRetentionPeriod; }
     inline bool FinalClusterSnapshotRetentionPeriodHasBeenSet() const { return m_finalClusterSnapshotRetentionPeriodHasBeenSet; }
     inline void SetFinalClusterSnapshotRetentionPeriod(int value) { m_finalClusterSnapshotRetentionPeriodHasBeenSet = true; m_finalClusterSnapshotRetentionPeriod = value; }
     inline DeleteClusterRequest& WithFinalClusterSnapshotRetentionPeriod(int value) { SetFinalClusterSnapshotRetentionPeriod(value); return *this;}
@@ -107,13 +103,13 @@ namespace Model
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet = false;
 
-    bool m_skipFinalClusterSnapshot;
+    bool m_skipFinalClusterSnapshot{false};
     bool m_skipFinalClusterSnapshotHasBeenSet = false;
 
     Aws::String m_finalClusterSnapshotIdentifier;
     bool m_finalClusterSnapshotIdentifierHasBeenSet = false;
 
-    int m_finalClusterSnapshotRetentionPeriod;
+    int m_finalClusterSnapshotRetentionPeriod{0};
     bool m_finalClusterSnapshotRetentionPeriodHasBeenSet = false;
   };
 

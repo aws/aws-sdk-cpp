@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-NotebookS3LocationFromInput::NotebookS3LocationFromInput() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 NotebookS3LocationFromInput::NotebookS3LocationFromInput(JsonView jsonValue)
-  : NotebookS3LocationFromInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotebookS3LocationFromInput& NotebookS3LocationFromInput::operator =(JsonView js
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

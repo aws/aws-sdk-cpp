@@ -28,7 +28,7 @@ namespace Model
   class GetTaxInheritanceResult
   {
   public:
-    AWS_TAXSETTINGS_API GetTaxInheritanceResult();
+    AWS_TAXSETTINGS_API GetTaxInheritanceResult() = default;
     AWS_TAXSETTINGS_API GetTaxInheritanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API GetTaxInheritanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The tax inheritance status. </p>
      */
-    inline const HeritageStatus& GetHeritageStatus() const{ return m_heritageStatus; }
-    inline void SetHeritageStatus(const HeritageStatus& value) { m_heritageStatus = value; }
-    inline void SetHeritageStatus(HeritageStatus&& value) { m_heritageStatus = std::move(value); }
-    inline GetTaxInheritanceResult& WithHeritageStatus(const HeritageStatus& value) { SetHeritageStatus(value); return *this;}
-    inline GetTaxInheritanceResult& WithHeritageStatus(HeritageStatus&& value) { SetHeritageStatus(std::move(value)); return *this;}
+    inline HeritageStatus GetHeritageStatus() const { return m_heritageStatus; }
+    inline void SetHeritageStatus(HeritageStatus value) { m_heritageStatusHasBeenSet = true; m_heritageStatus = value; }
+    inline GetTaxInheritanceResult& WithHeritageStatus(HeritageStatus value) { SetHeritageStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTaxInheritanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTaxInheritanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTaxInheritanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTaxInheritanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    HeritageStatus m_heritageStatus;
+    HeritageStatus m_heritageStatus{HeritageStatus::NOT_SET};
+    bool m_heritageStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

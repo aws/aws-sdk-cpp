@@ -12,17 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlowEntitlementRequest::UpdateFlowEntitlementRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_entitlementStatus(EntitlementStatus::NOT_SET),
-    m_entitlementStatusHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFlowEntitlementRequest::SerializePayload() const
 {
   JsonValue payload;

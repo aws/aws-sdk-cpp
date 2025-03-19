@@ -32,7 +32,7 @@ namespace Model
   class GuardianOptions
   {
   public:
-    AWS_SESV2_API GuardianOptions();
+    AWS_SESV2_API GuardianOptions() = default;
     AWS_SESV2_API GuardianOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API GuardianOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the
      * configuration set.</p> </li> </ul>
      */
-    inline const FeatureStatus& GetOptimizedSharedDelivery() const{ return m_optimizedSharedDelivery; }
+    inline FeatureStatus GetOptimizedSharedDelivery() const { return m_optimizedSharedDelivery; }
     inline bool OptimizedSharedDeliveryHasBeenSet() const { return m_optimizedSharedDeliveryHasBeenSet; }
-    inline void SetOptimizedSharedDelivery(const FeatureStatus& value) { m_optimizedSharedDeliveryHasBeenSet = true; m_optimizedSharedDelivery = value; }
-    inline void SetOptimizedSharedDelivery(FeatureStatus&& value) { m_optimizedSharedDeliveryHasBeenSet = true; m_optimizedSharedDelivery = std::move(value); }
-    inline GuardianOptions& WithOptimizedSharedDelivery(const FeatureStatus& value) { SetOptimizedSharedDelivery(value); return *this;}
-    inline GuardianOptions& WithOptimizedSharedDelivery(FeatureStatus&& value) { SetOptimizedSharedDelivery(std::move(value)); return *this;}
+    inline void SetOptimizedSharedDelivery(FeatureStatus value) { m_optimizedSharedDeliveryHasBeenSet = true; m_optimizedSharedDelivery = value; }
+    inline GuardianOptions& WithOptimizedSharedDelivery(FeatureStatus value) { SetOptimizedSharedDelivery(value); return *this;}
     ///@}
   private:
 
-    FeatureStatus m_optimizedSharedDelivery;
+    FeatureStatus m_optimizedSharedDelivery{FeatureStatus::NOT_SET};
     bool m_optimizedSharedDeliveryHasBeenSet = false;
   };
 

@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomEntityTypeRequest::CreateCustomEntityTypeRequest() : 
-    m_nameHasBeenSet(false),
-    m_regexStringHasBeenSet(false),
-    m_contextWordsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomEntityTypeRequest::SerializePayload() const
 {
   JsonValue payload;

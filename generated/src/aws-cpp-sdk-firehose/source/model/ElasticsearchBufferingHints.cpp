@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-ElasticsearchBufferingHints::ElasticsearchBufferingHints() : 
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false)
-{
-}
-
 ElasticsearchBufferingHints::ElasticsearchBufferingHints(JsonView jsonValue)
-  : ElasticsearchBufferingHints()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ElasticsearchBufferingHints& ElasticsearchBufferingHints::operator =(JsonView js
   if(jsonValue.ValueExists("IntervalInSeconds"))
   {
     m_intervalInSeconds = jsonValue.GetInteger("IntervalInSeconds");
-
     m_intervalInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeInMBs"))
   {
     m_sizeInMBs = jsonValue.GetInteger("SizeInMBs");
-
     m_sizeInMBsHasBeenSet = true;
   }
-
   return *this;
 }
 

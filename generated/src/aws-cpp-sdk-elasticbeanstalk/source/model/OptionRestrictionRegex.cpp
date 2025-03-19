@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-OptionRestrictionRegex::OptionRestrictionRegex() : 
-    m_patternHasBeenSet(false),
-    m_labelHasBeenSet(false)
-{
-}
-
 OptionRestrictionRegex::OptionRestrictionRegex(const XmlNode& xmlNode)
-  : OptionRestrictionRegex()
 {
   *this = xmlNode;
 }

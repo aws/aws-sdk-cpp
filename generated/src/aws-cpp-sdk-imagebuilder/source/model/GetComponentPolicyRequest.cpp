@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetComponentPolicyRequest::GetComponentPolicyRequest() : 
-    m_componentArnHasBeenSet(false)
-{
-}
-
 Aws::String GetComponentPolicyRequest::SerializePayload() const
 {
   return {};

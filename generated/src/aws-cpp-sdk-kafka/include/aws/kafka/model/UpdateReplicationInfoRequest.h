@@ -27,7 +27,7 @@ namespace Model
   class UpdateReplicationInfoRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API UpdateReplicationInfoRequest();
+    AWS_KAFKA_API UpdateReplicationInfoRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,80 +42,72 @@ namespace Model
     /**
      * <p>Updated consumer group replication information.</p>
      */
-    inline const ConsumerGroupReplicationUpdate& GetConsumerGroupReplication() const{ return m_consumerGroupReplication; }
+    inline const ConsumerGroupReplicationUpdate& GetConsumerGroupReplication() const { return m_consumerGroupReplication; }
     inline bool ConsumerGroupReplicationHasBeenSet() const { return m_consumerGroupReplicationHasBeenSet; }
-    inline void SetConsumerGroupReplication(const ConsumerGroupReplicationUpdate& value) { m_consumerGroupReplicationHasBeenSet = true; m_consumerGroupReplication = value; }
-    inline void SetConsumerGroupReplication(ConsumerGroupReplicationUpdate&& value) { m_consumerGroupReplicationHasBeenSet = true; m_consumerGroupReplication = std::move(value); }
-    inline UpdateReplicationInfoRequest& WithConsumerGroupReplication(const ConsumerGroupReplicationUpdate& value) { SetConsumerGroupReplication(value); return *this;}
-    inline UpdateReplicationInfoRequest& WithConsumerGroupReplication(ConsumerGroupReplicationUpdate&& value) { SetConsumerGroupReplication(std::move(value)); return *this;}
+    template<typename ConsumerGroupReplicationT = ConsumerGroupReplicationUpdate>
+    void SetConsumerGroupReplication(ConsumerGroupReplicationT&& value) { m_consumerGroupReplicationHasBeenSet = true; m_consumerGroupReplication = std::forward<ConsumerGroupReplicationT>(value); }
+    template<typename ConsumerGroupReplicationT = ConsumerGroupReplicationUpdate>
+    UpdateReplicationInfoRequest& WithConsumerGroupReplication(ConsumerGroupReplicationT&& value) { SetConsumerGroupReplication(std::forward<ConsumerGroupReplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current replicator version.</p>
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline UpdateReplicationInfoRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline UpdateReplicationInfoRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline UpdateReplicationInfoRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    UpdateReplicationInfoRequest& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the replicator to be updated.</p>
      */
-    inline const Aws::String& GetReplicatorArn() const{ return m_replicatorArn; }
+    inline const Aws::String& GetReplicatorArn() const { return m_replicatorArn; }
     inline bool ReplicatorArnHasBeenSet() const { return m_replicatorArnHasBeenSet; }
-    inline void SetReplicatorArn(const Aws::String& value) { m_replicatorArnHasBeenSet = true; m_replicatorArn = value; }
-    inline void SetReplicatorArn(Aws::String&& value) { m_replicatorArnHasBeenSet = true; m_replicatorArn = std::move(value); }
-    inline void SetReplicatorArn(const char* value) { m_replicatorArnHasBeenSet = true; m_replicatorArn.assign(value); }
-    inline UpdateReplicationInfoRequest& WithReplicatorArn(const Aws::String& value) { SetReplicatorArn(value); return *this;}
-    inline UpdateReplicationInfoRequest& WithReplicatorArn(Aws::String&& value) { SetReplicatorArn(std::move(value)); return *this;}
-    inline UpdateReplicationInfoRequest& WithReplicatorArn(const char* value) { SetReplicatorArn(value); return *this;}
+    template<typename ReplicatorArnT = Aws::String>
+    void SetReplicatorArn(ReplicatorArnT&& value) { m_replicatorArnHasBeenSet = true; m_replicatorArn = std::forward<ReplicatorArnT>(value); }
+    template<typename ReplicatorArnT = Aws::String>
+    UpdateReplicationInfoRequest& WithReplicatorArn(ReplicatorArnT&& value) { SetReplicatorArn(std::forward<ReplicatorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the source Kafka cluster.</p>
      */
-    inline const Aws::String& GetSourceKafkaClusterArn() const{ return m_sourceKafkaClusterArn; }
+    inline const Aws::String& GetSourceKafkaClusterArn() const { return m_sourceKafkaClusterArn; }
     inline bool SourceKafkaClusterArnHasBeenSet() const { return m_sourceKafkaClusterArnHasBeenSet; }
-    inline void SetSourceKafkaClusterArn(const Aws::String& value) { m_sourceKafkaClusterArnHasBeenSet = true; m_sourceKafkaClusterArn = value; }
-    inline void SetSourceKafkaClusterArn(Aws::String&& value) { m_sourceKafkaClusterArnHasBeenSet = true; m_sourceKafkaClusterArn = std::move(value); }
-    inline void SetSourceKafkaClusterArn(const char* value) { m_sourceKafkaClusterArnHasBeenSet = true; m_sourceKafkaClusterArn.assign(value); }
-    inline UpdateReplicationInfoRequest& WithSourceKafkaClusterArn(const Aws::String& value) { SetSourceKafkaClusterArn(value); return *this;}
-    inline UpdateReplicationInfoRequest& WithSourceKafkaClusterArn(Aws::String&& value) { SetSourceKafkaClusterArn(std::move(value)); return *this;}
-    inline UpdateReplicationInfoRequest& WithSourceKafkaClusterArn(const char* value) { SetSourceKafkaClusterArn(value); return *this;}
+    template<typename SourceKafkaClusterArnT = Aws::String>
+    void SetSourceKafkaClusterArn(SourceKafkaClusterArnT&& value) { m_sourceKafkaClusterArnHasBeenSet = true; m_sourceKafkaClusterArn = std::forward<SourceKafkaClusterArnT>(value); }
+    template<typename SourceKafkaClusterArnT = Aws::String>
+    UpdateReplicationInfoRequest& WithSourceKafkaClusterArn(SourceKafkaClusterArnT&& value) { SetSourceKafkaClusterArn(std::forward<SourceKafkaClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the target Kafka cluster.</p>
      */
-    inline const Aws::String& GetTargetKafkaClusterArn() const{ return m_targetKafkaClusterArn; }
+    inline const Aws::String& GetTargetKafkaClusterArn() const { return m_targetKafkaClusterArn; }
     inline bool TargetKafkaClusterArnHasBeenSet() const { return m_targetKafkaClusterArnHasBeenSet; }
-    inline void SetTargetKafkaClusterArn(const Aws::String& value) { m_targetKafkaClusterArnHasBeenSet = true; m_targetKafkaClusterArn = value; }
-    inline void SetTargetKafkaClusterArn(Aws::String&& value) { m_targetKafkaClusterArnHasBeenSet = true; m_targetKafkaClusterArn = std::move(value); }
-    inline void SetTargetKafkaClusterArn(const char* value) { m_targetKafkaClusterArnHasBeenSet = true; m_targetKafkaClusterArn.assign(value); }
-    inline UpdateReplicationInfoRequest& WithTargetKafkaClusterArn(const Aws::String& value) { SetTargetKafkaClusterArn(value); return *this;}
-    inline UpdateReplicationInfoRequest& WithTargetKafkaClusterArn(Aws::String&& value) { SetTargetKafkaClusterArn(std::move(value)); return *this;}
-    inline UpdateReplicationInfoRequest& WithTargetKafkaClusterArn(const char* value) { SetTargetKafkaClusterArn(value); return *this;}
+    template<typename TargetKafkaClusterArnT = Aws::String>
+    void SetTargetKafkaClusterArn(TargetKafkaClusterArnT&& value) { m_targetKafkaClusterArnHasBeenSet = true; m_targetKafkaClusterArn = std::forward<TargetKafkaClusterArnT>(value); }
+    template<typename TargetKafkaClusterArnT = Aws::String>
+    UpdateReplicationInfoRequest& WithTargetKafkaClusterArn(TargetKafkaClusterArnT&& value) { SetTargetKafkaClusterArn(std::forward<TargetKafkaClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updated topic replication information.</p>
      */
-    inline const TopicReplicationUpdate& GetTopicReplication() const{ return m_topicReplication; }
+    inline const TopicReplicationUpdate& GetTopicReplication() const { return m_topicReplication; }
     inline bool TopicReplicationHasBeenSet() const { return m_topicReplicationHasBeenSet; }
-    inline void SetTopicReplication(const TopicReplicationUpdate& value) { m_topicReplicationHasBeenSet = true; m_topicReplication = value; }
-    inline void SetTopicReplication(TopicReplicationUpdate&& value) { m_topicReplicationHasBeenSet = true; m_topicReplication = std::move(value); }
-    inline UpdateReplicationInfoRequest& WithTopicReplication(const TopicReplicationUpdate& value) { SetTopicReplication(value); return *this;}
-    inline UpdateReplicationInfoRequest& WithTopicReplication(TopicReplicationUpdate&& value) { SetTopicReplication(std::move(value)); return *this;}
+    template<typename TopicReplicationT = TopicReplicationUpdate>
+    void SetTopicReplication(TopicReplicationT&& value) { m_topicReplicationHasBeenSet = true; m_topicReplication = std::forward<TopicReplicationT>(value); }
+    template<typename TopicReplicationT = TopicReplicationUpdate>
+    UpdateReplicationInfoRequest& WithTopicReplication(TopicReplicationT&& value) { SetTopicReplication(std::forward<TopicReplicationT>(value)); return *this;}
     ///@}
   private:
 

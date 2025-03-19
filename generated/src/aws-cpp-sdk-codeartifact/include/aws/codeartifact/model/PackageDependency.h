@@ -31,7 +31,7 @@ namespace Model
   class PackageDependency
   {
   public:
-    AWS_CODEARTIFACT_API PackageDependency();
+    AWS_CODEARTIFACT_API PackageDependency() = default;
     AWS_CODEARTIFACT_API PackageDependency(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * Ruby, and Cargo package versions do not contain a corresponding component,
      * package versions of those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline PackageDependency& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline PackageDependency& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline PackageDependency& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PackageDependency& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the package that this package depends on. </p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
+    inline const Aws::String& GetPackage() const { return m_package; }
     inline bool PackageHasBeenSet() const { return m_packageHasBeenSet; }
-    inline void SetPackage(const Aws::String& value) { m_packageHasBeenSet = true; m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_packageHasBeenSet = true; m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_packageHasBeenSet = true; m_package.assign(value); }
-    inline PackageDependency& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline PackageDependency& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline PackageDependency& WithPackage(const char* value) { SetPackage(value); return *this;}
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    PackageDependency& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * is never set for NuGet packages.</p> </li> <li> <p>pypi:
      * <code>Requires-Dist</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetDependencyType() const{ return m_dependencyType; }
+    inline const Aws::String& GetDependencyType() const { return m_dependencyType; }
     inline bool DependencyTypeHasBeenSet() const { return m_dependencyTypeHasBeenSet; }
-    inline void SetDependencyType(const Aws::String& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = value; }
-    inline void SetDependencyType(Aws::String&& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = std::move(value); }
-    inline void SetDependencyType(const char* value) { m_dependencyTypeHasBeenSet = true; m_dependencyType.assign(value); }
-    inline PackageDependency& WithDependencyType(const Aws::String& value) { SetDependencyType(value); return *this;}
-    inline PackageDependency& WithDependencyType(Aws::String&& value) { SetDependencyType(std::move(value)); return *this;}
-    inline PackageDependency& WithDependencyType(const char* value) { SetDependencyType(value); return *this;}
+    template<typename DependencyTypeT = Aws::String>
+    void SetDependencyType(DependencyTypeT&& value) { m_dependencyTypeHasBeenSet = true; m_dependencyType = std::forward<DependencyTypeT>(value); }
+    template<typename DependencyTypeT = Aws::String>
+    PackageDependency& WithDependencyType(DependencyTypeT&& value) { SetDependencyType(std::forward<DependencyTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * following are possible valid required versions: <code>1.2.3</code>,
      * <code>^2.3.4</code>, or <code>4.x</code>. </p>
      */
-    inline const Aws::String& GetVersionRequirement() const{ return m_versionRequirement; }
+    inline const Aws::String& GetVersionRequirement() const { return m_versionRequirement; }
     inline bool VersionRequirementHasBeenSet() const { return m_versionRequirementHasBeenSet; }
-    inline void SetVersionRequirement(const Aws::String& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = value; }
-    inline void SetVersionRequirement(Aws::String&& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = std::move(value); }
-    inline void SetVersionRequirement(const char* value) { m_versionRequirementHasBeenSet = true; m_versionRequirement.assign(value); }
-    inline PackageDependency& WithVersionRequirement(const Aws::String& value) { SetVersionRequirement(value); return *this;}
-    inline PackageDependency& WithVersionRequirement(Aws::String&& value) { SetVersionRequirement(std::move(value)); return *this;}
-    inline PackageDependency& WithVersionRequirement(const char* value) { SetVersionRequirement(value); return *this;}
+    template<typename VersionRequirementT = Aws::String>
+    void SetVersionRequirement(VersionRequirementT&& value) { m_versionRequirementHasBeenSet = true; m_versionRequirement = std::forward<VersionRequirementT>(value); }
+    template<typename VersionRequirementT = Aws::String>
+    PackageDependency& WithVersionRequirement(VersionRequirementT&& value) { SetVersionRequirement(std::forward<VersionRequirementT>(value)); return *this;}
     ///@}
   private:
 

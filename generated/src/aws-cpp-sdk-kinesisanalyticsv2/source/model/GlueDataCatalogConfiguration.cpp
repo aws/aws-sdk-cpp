@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-GlueDataCatalogConfiguration::GlueDataCatalogConfiguration() : 
-    m_databaseARNHasBeenSet(false)
-{
-}
-
 GlueDataCatalogConfiguration::GlueDataCatalogConfiguration(JsonView jsonValue)
-  : GlueDataCatalogConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GlueDataCatalogConfiguration& GlueDataCatalogConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("DatabaseARN"))
   {
     m_databaseARN = jsonValue.GetString("DatabaseARN");
-
     m_databaseARNHasBeenSet = true;
   }
-
   return *this;
 }
 

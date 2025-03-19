@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-BlueGreenUpdatePolicy::BlueGreenUpdatePolicy() : 
-    m_trafficRoutingConfigurationHasBeenSet(false),
-    m_terminationWaitInSeconds(0),
-    m_terminationWaitInSecondsHasBeenSet(false),
-    m_maximumExecutionTimeoutInSeconds(0),
-    m_maximumExecutionTimeoutInSecondsHasBeenSet(false)
-{
-}
-
 BlueGreenUpdatePolicy::BlueGreenUpdatePolicy(JsonView jsonValue)
-  : BlueGreenUpdatePolicy()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ BlueGreenUpdatePolicy& BlueGreenUpdatePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrafficRoutingConfiguration"))
   {
     m_trafficRoutingConfiguration = jsonValue.GetObject("TrafficRoutingConfiguration");
-
     m_trafficRoutingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminationWaitInSeconds"))
   {
     m_terminationWaitInSeconds = jsonValue.GetInteger("TerminationWaitInSeconds");
-
     m_terminationWaitInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionTimeoutInSeconds"))
   {
     m_maximumExecutionTimeoutInSeconds = jsonValue.GetInteger("MaximumExecutionTimeoutInSeconds");
-
     m_maximumExecutionTimeoutInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

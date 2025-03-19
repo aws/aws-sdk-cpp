@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2VpnConnectionOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Whether the VPN connection uses static routes only.</p>
      */
-    inline bool GetStaticRoutesOnly() const{ return m_staticRoutesOnly; }
+    inline bool GetStaticRoutesOnly() const { return m_staticRoutesOnly; }
     inline bool StaticRoutesOnlyHasBeenSet() const { return m_staticRoutesOnlyHasBeenSet; }
     inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
     inline AwsEc2VpnConnectionOptionsDetails& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
@@ -52,18 +52,18 @@ namespace Model
     /**
      * <p>The VPN tunnel options.</p>
      */
-    inline const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& GetTunnelOptions() const{ return m_tunnelOptions; }
+    inline const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& GetTunnelOptions() const { return m_tunnelOptions; }
     inline bool TunnelOptionsHasBeenSet() const { return m_tunnelOptionsHasBeenSet; }
-    inline void SetTunnelOptions(const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = value; }
-    inline void SetTunnelOptions(Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = std::move(value); }
-    inline AwsEc2VpnConnectionOptionsDetails& WithTunnelOptions(const Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>& value) { SetTunnelOptions(value); return *this;}
-    inline AwsEc2VpnConnectionOptionsDetails& WithTunnelOptions(Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>&& value) { SetTunnelOptions(std::move(value)); return *this;}
-    inline AwsEc2VpnConnectionOptionsDetails& AddTunnelOptions(const AwsEc2VpnConnectionOptionsTunnelOptionsDetails& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(value); return *this; }
-    inline AwsEc2VpnConnectionOptionsDetails& AddTunnelOptions(AwsEc2VpnConnectionOptionsTunnelOptionsDetails&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(std::move(value)); return *this; }
+    template<typename TunnelOptionsT = Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>
+    void SetTunnelOptions(TunnelOptionsT&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions = std::forward<TunnelOptionsT>(value); }
+    template<typename TunnelOptionsT = Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>
+    AwsEc2VpnConnectionOptionsDetails& WithTunnelOptions(TunnelOptionsT&& value) { SetTunnelOptions(std::forward<TunnelOptionsT>(value)); return *this;}
+    template<typename TunnelOptionsT = AwsEc2VpnConnectionOptionsTunnelOptionsDetails>
+    AwsEc2VpnConnectionOptionsDetails& AddTunnelOptions(TunnelOptionsT&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.emplace_back(std::forward<TunnelOptionsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_staticRoutesOnly;
+    bool m_staticRoutesOnly{false};
     bool m_staticRoutesOnlyHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails> m_tunnelOptions;

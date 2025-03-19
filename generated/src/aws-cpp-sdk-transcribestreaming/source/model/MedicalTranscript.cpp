@@ -18,13 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalTranscript::MedicalTranscript() : 
-    m_resultsHasBeenSet(false)
-{
-}
-
 MedicalTranscript::MedicalTranscript(JsonView jsonValue)
-  : MedicalTranscript()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ MedicalTranscript& MedicalTranscript::operator =(JsonView jsonValue)
     }
     m_resultsHasBeenSet = true;
   }
-
   return *this;
 }
 

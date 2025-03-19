@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TaskRunProperties::TaskRunProperties() : 
-    m_taskType(TaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_importLabelsTaskRunPropertiesHasBeenSet(false),
-    m_exportLabelsTaskRunPropertiesHasBeenSet(false),
-    m_labelingSetGenerationTaskRunPropertiesHasBeenSet(false),
-    m_findMatchesTaskRunPropertiesHasBeenSet(false)
-{
-}
-
 TaskRunProperties::TaskRunProperties(JsonView jsonValue)
-  : TaskRunProperties()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ TaskRunProperties& TaskRunProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TaskType"))
   {
     m_taskType = TaskTypeMapper::GetTaskTypeForName(jsonValue.GetString("TaskType"));
-
     m_taskTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportLabelsTaskRunProperties"))
   {
     m_importLabelsTaskRunProperties = jsonValue.GetObject("ImportLabelsTaskRunProperties");
-
     m_importLabelsTaskRunPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportLabelsTaskRunProperties"))
   {
     m_exportLabelsTaskRunProperties = jsonValue.GetObject("ExportLabelsTaskRunProperties");
-
     m_exportLabelsTaskRunPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelingSetGenerationTaskRunProperties"))
   {
     m_labelingSetGenerationTaskRunProperties = jsonValue.GetObject("LabelingSetGenerationTaskRunProperties");
-
     m_labelingSetGenerationTaskRunPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindMatchesTaskRunProperties"))
   {
     m_findMatchesTaskRunProperties = jsonValue.GetObject("FindMatchesTaskRunProperties");
-
     m_findMatchesTaskRunPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

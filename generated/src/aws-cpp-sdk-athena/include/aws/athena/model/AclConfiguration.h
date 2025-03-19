@@ -38,7 +38,7 @@ namespace Model
   class AclConfiguration
   {
   public:
-    AWS_ATHENA_API AclConfiguration();
+    AWS_ATHENA_API AclConfiguration() = default;
     AWS_ATHENA_API AclConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API AclConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,16 +56,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl">Canned
      * ACL</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const S3AclOption& GetS3AclOption() const{ return m_s3AclOption; }
+    inline S3AclOption GetS3AclOption() const { return m_s3AclOption; }
     inline bool S3AclOptionHasBeenSet() const { return m_s3AclOptionHasBeenSet; }
-    inline void SetS3AclOption(const S3AclOption& value) { m_s3AclOptionHasBeenSet = true; m_s3AclOption = value; }
-    inline void SetS3AclOption(S3AclOption&& value) { m_s3AclOptionHasBeenSet = true; m_s3AclOption = std::move(value); }
-    inline AclConfiguration& WithS3AclOption(const S3AclOption& value) { SetS3AclOption(value); return *this;}
-    inline AclConfiguration& WithS3AclOption(S3AclOption&& value) { SetS3AclOption(std::move(value)); return *this;}
+    inline void SetS3AclOption(S3AclOption value) { m_s3AclOptionHasBeenSet = true; m_s3AclOption = value; }
+    inline AclConfiguration& WithS3AclOption(S3AclOption value) { SetS3AclOption(value); return *this;}
     ///@}
   private:
 
-    S3AclOption m_s3AclOption;
+    S3AclOption m_s3AclOption{S3AclOption::NOT_SET};
     bool m_s3AclOptionHasBeenSet = false;
   };
 

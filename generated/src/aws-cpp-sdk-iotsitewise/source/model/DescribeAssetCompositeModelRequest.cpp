@@ -12,12 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAssetCompositeModelRequest::DescribeAssetCompositeModelRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_assetCompositeModelIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAssetCompositeModelRequest::SerializePayload() const
 {
   return {};

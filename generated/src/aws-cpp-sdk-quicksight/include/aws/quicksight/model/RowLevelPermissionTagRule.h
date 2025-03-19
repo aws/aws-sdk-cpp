@@ -31,7 +31,7 @@ namespace Model
   class RowLevelPermissionTagRule
   {
   public:
-    AWS_QUICKSIGHT_API RowLevelPermissionTagRule();
+    AWS_QUICKSIGHT_API RowLevelPermissionTagRule() = default;
     AWS_QUICKSIGHT_API RowLevelPermissionTagRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RowLevelPermissionTagRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The unique key for a tag.</p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline RowLevelPermissionTagRule& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline RowLevelPermissionTagRule& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline RowLevelPermissionTagRule& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    RowLevelPermissionTagRule& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column name that a tag key is assigned to.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline RowLevelPermissionTagRule& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline RowLevelPermissionTagRule& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline RowLevelPermissionTagRule& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    RowLevelPermissionTagRule& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>A string that you want to use to delimit the values when you pass the values
      * at run time. For example, you can delimit the values with a comma.</p>
      */
-    inline const Aws::String& GetTagMultiValueDelimiter() const{ return m_tagMultiValueDelimiter; }
+    inline const Aws::String& GetTagMultiValueDelimiter() const { return m_tagMultiValueDelimiter; }
     inline bool TagMultiValueDelimiterHasBeenSet() const { return m_tagMultiValueDelimiterHasBeenSet; }
-    inline void SetTagMultiValueDelimiter(const Aws::String& value) { m_tagMultiValueDelimiterHasBeenSet = true; m_tagMultiValueDelimiter = value; }
-    inline void SetTagMultiValueDelimiter(Aws::String&& value) { m_tagMultiValueDelimiterHasBeenSet = true; m_tagMultiValueDelimiter = std::move(value); }
-    inline void SetTagMultiValueDelimiter(const char* value) { m_tagMultiValueDelimiterHasBeenSet = true; m_tagMultiValueDelimiter.assign(value); }
-    inline RowLevelPermissionTagRule& WithTagMultiValueDelimiter(const Aws::String& value) { SetTagMultiValueDelimiter(value); return *this;}
-    inline RowLevelPermissionTagRule& WithTagMultiValueDelimiter(Aws::String&& value) { SetTagMultiValueDelimiter(std::move(value)); return *this;}
-    inline RowLevelPermissionTagRule& WithTagMultiValueDelimiter(const char* value) { SetTagMultiValueDelimiter(value); return *this;}
+    template<typename TagMultiValueDelimiterT = Aws::String>
+    void SetTagMultiValueDelimiter(TagMultiValueDelimiterT&& value) { m_tagMultiValueDelimiterHasBeenSet = true; m_tagMultiValueDelimiter = std::forward<TagMultiValueDelimiterT>(value); }
+    template<typename TagMultiValueDelimiterT = Aws::String>
+    RowLevelPermissionTagRule& WithTagMultiValueDelimiter(TagMultiValueDelimiterT&& value) { SetTagMultiValueDelimiter(std::forward<TagMultiValueDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * dataset and don’t want to list the values one by one. For example, you can use
      * an asterisk as your match all value.</p>
      */
-    inline const Aws::String& GetMatchAllValue() const{ return m_matchAllValue; }
+    inline const Aws::String& GetMatchAllValue() const { return m_matchAllValue; }
     inline bool MatchAllValueHasBeenSet() const { return m_matchAllValueHasBeenSet; }
-    inline void SetMatchAllValue(const Aws::String& value) { m_matchAllValueHasBeenSet = true; m_matchAllValue = value; }
-    inline void SetMatchAllValue(Aws::String&& value) { m_matchAllValueHasBeenSet = true; m_matchAllValue = std::move(value); }
-    inline void SetMatchAllValue(const char* value) { m_matchAllValueHasBeenSet = true; m_matchAllValue.assign(value); }
-    inline RowLevelPermissionTagRule& WithMatchAllValue(const Aws::String& value) { SetMatchAllValue(value); return *this;}
-    inline RowLevelPermissionTagRule& WithMatchAllValue(Aws::String&& value) { SetMatchAllValue(std::move(value)); return *this;}
-    inline RowLevelPermissionTagRule& WithMatchAllValue(const char* value) { SetMatchAllValue(value); return *this;}
+    template<typename MatchAllValueT = Aws::String>
+    void SetMatchAllValue(MatchAllValueT&& value) { m_matchAllValueHasBeenSet = true; m_matchAllValue = std::forward<MatchAllValueT>(value); }
+    template<typename MatchAllValueT = Aws::String>
+    RowLevelPermissionTagRule& WithMatchAllValue(MatchAllValueT&& value) { SetMatchAllValue(std::forward<MatchAllValueT>(value)); return *this;}
     ///@}
   private:
 

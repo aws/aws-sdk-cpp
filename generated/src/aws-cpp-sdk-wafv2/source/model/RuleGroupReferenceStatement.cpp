@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RuleGroupReferenceStatement::RuleGroupReferenceStatement() : 
-    m_aRNHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false),
-    m_ruleActionOverridesHasBeenSet(false)
-{
-}
-
 RuleGroupReferenceStatement::RuleGroupReferenceStatement(JsonView jsonValue)
-  : RuleGroupReferenceStatement()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RuleGroupReferenceStatement& RuleGroupReferenceStatement::operator =(JsonView js
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludedRules"))
   {
     Aws::Utils::Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
@@ -49,7 +39,6 @@ RuleGroupReferenceStatement& RuleGroupReferenceStatement::operator =(JsonView js
     }
     m_excludedRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleActionOverrides"))
   {
     Aws::Utils::Array<JsonView> ruleActionOverridesJsonList = jsonValue.GetArray("RuleActionOverrides");
@@ -59,7 +48,6 @@ RuleGroupReferenceStatement& RuleGroupReferenceStatement::operator =(JsonView js
     }
     m_ruleActionOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

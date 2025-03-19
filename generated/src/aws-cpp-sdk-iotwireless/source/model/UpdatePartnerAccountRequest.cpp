@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdatePartnerAccountRequest::UpdatePartnerAccountRequest() : 
-    m_sidewalkHasBeenSet(false),
-    m_partnerAccountIdHasBeenSet(false),
-    m_partnerType(PartnerType::NOT_SET),
-    m_partnerTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePartnerAccountRequest::SerializePayload() const
 {
   JsonValue payload;

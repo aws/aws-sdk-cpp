@@ -18,14 +18,7 @@ namespace SSOOIDC
 namespace Model
 {
 
-InvalidScopeException::InvalidScopeException() : 
-    m_errorHasBeenSet(false),
-    m_error_descriptionHasBeenSet(false)
-{
-}
-
 InvalidScopeException::InvalidScopeException(JsonView jsonValue)
-  : InvalidScopeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidScopeException& InvalidScopeException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error_description"))
   {
     m_error_description = jsonValue.GetString("error_description");
-
     m_error_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

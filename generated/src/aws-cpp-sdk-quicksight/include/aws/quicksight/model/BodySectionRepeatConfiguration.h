@@ -35,7 +35,7 @@ namespace Model
   class BodySectionRepeatConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API BodySectionRepeatConfiguration();
+    AWS_QUICKSIGHT_API BodySectionRepeatConfiguration() = default;
     AWS_QUICKSIGHT_API BodySectionRepeatConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BodySectionRepeatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,26 @@ namespace Model
      * describe the dataset column and constraints for the column used to repeat the
      * contents of a section.</p>
      */
-    inline const Aws::Vector<BodySectionRepeatDimensionConfiguration>& GetDimensionConfigurations() const{ return m_dimensionConfigurations; }
+    inline const Aws::Vector<BodySectionRepeatDimensionConfiguration>& GetDimensionConfigurations() const { return m_dimensionConfigurations; }
     inline bool DimensionConfigurationsHasBeenSet() const { return m_dimensionConfigurationsHasBeenSet; }
-    inline void SetDimensionConfigurations(const Aws::Vector<BodySectionRepeatDimensionConfiguration>& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = value; }
-    inline void SetDimensionConfigurations(Aws::Vector<BodySectionRepeatDimensionConfiguration>&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = std::move(value); }
-    inline BodySectionRepeatConfiguration& WithDimensionConfigurations(const Aws::Vector<BodySectionRepeatDimensionConfiguration>& value) { SetDimensionConfigurations(value); return *this;}
-    inline BodySectionRepeatConfiguration& WithDimensionConfigurations(Aws::Vector<BodySectionRepeatDimensionConfiguration>&& value) { SetDimensionConfigurations(std::move(value)); return *this;}
-    inline BodySectionRepeatConfiguration& AddDimensionConfigurations(const BodySectionRepeatDimensionConfiguration& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(value); return *this; }
-    inline BodySectionRepeatConfiguration& AddDimensionConfigurations(BodySectionRepeatDimensionConfiguration&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DimensionConfigurationsT = Aws::Vector<BodySectionRepeatDimensionConfiguration>>
+    void SetDimensionConfigurations(DimensionConfigurationsT&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = std::forward<DimensionConfigurationsT>(value); }
+    template<typename DimensionConfigurationsT = Aws::Vector<BodySectionRepeatDimensionConfiguration>>
+    BodySectionRepeatConfiguration& WithDimensionConfigurations(DimensionConfigurationsT&& value) { SetDimensionConfigurations(std::forward<DimensionConfigurationsT>(value)); return *this;}
+    template<typename DimensionConfigurationsT = BodySectionRepeatDimensionConfiguration>
+    BodySectionRepeatConfiguration& AddDimensionConfigurations(DimensionConfigurationsT&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.emplace_back(std::forward<DimensionConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Page break configuration to apply for each repeating instance.</p>
      */
-    inline const BodySectionRepeatPageBreakConfiguration& GetPageBreakConfiguration() const{ return m_pageBreakConfiguration; }
+    inline const BodySectionRepeatPageBreakConfiguration& GetPageBreakConfiguration() const { return m_pageBreakConfiguration; }
     inline bool PageBreakConfigurationHasBeenSet() const { return m_pageBreakConfigurationHasBeenSet; }
-    inline void SetPageBreakConfiguration(const BodySectionRepeatPageBreakConfiguration& value) { m_pageBreakConfigurationHasBeenSet = true; m_pageBreakConfiguration = value; }
-    inline void SetPageBreakConfiguration(BodySectionRepeatPageBreakConfiguration&& value) { m_pageBreakConfigurationHasBeenSet = true; m_pageBreakConfiguration = std::move(value); }
-    inline BodySectionRepeatConfiguration& WithPageBreakConfiguration(const BodySectionRepeatPageBreakConfiguration& value) { SetPageBreakConfiguration(value); return *this;}
-    inline BodySectionRepeatConfiguration& WithPageBreakConfiguration(BodySectionRepeatPageBreakConfiguration&& value) { SetPageBreakConfiguration(std::move(value)); return *this;}
+    template<typename PageBreakConfigurationT = BodySectionRepeatPageBreakConfiguration>
+    void SetPageBreakConfiguration(PageBreakConfigurationT&& value) { m_pageBreakConfigurationHasBeenSet = true; m_pageBreakConfiguration = std::forward<PageBreakConfigurationT>(value); }
+    template<typename PageBreakConfigurationT = BodySectionRepeatPageBreakConfiguration>
+    BodySectionRepeatConfiguration& WithPageBreakConfiguration(PageBreakConfigurationT&& value) { SetPageBreakConfiguration(std::forward<PageBreakConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,15 +75,14 @@ namespace Model
      * will render identically, and ignore the repeating configurations in all
      * repeating instances.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNonRepeatingVisuals() const{ return m_nonRepeatingVisuals; }
+    inline const Aws::Vector<Aws::String>& GetNonRepeatingVisuals() const { return m_nonRepeatingVisuals; }
     inline bool NonRepeatingVisualsHasBeenSet() const { return m_nonRepeatingVisualsHasBeenSet; }
-    inline void SetNonRepeatingVisuals(const Aws::Vector<Aws::String>& value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals = value; }
-    inline void SetNonRepeatingVisuals(Aws::Vector<Aws::String>&& value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals = std::move(value); }
-    inline BodySectionRepeatConfiguration& WithNonRepeatingVisuals(const Aws::Vector<Aws::String>& value) { SetNonRepeatingVisuals(value); return *this;}
-    inline BodySectionRepeatConfiguration& WithNonRepeatingVisuals(Aws::Vector<Aws::String>&& value) { SetNonRepeatingVisuals(std::move(value)); return *this;}
-    inline BodySectionRepeatConfiguration& AddNonRepeatingVisuals(const Aws::String& value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals.push_back(value); return *this; }
-    inline BodySectionRepeatConfiguration& AddNonRepeatingVisuals(Aws::String&& value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals.push_back(std::move(value)); return *this; }
-    inline BodySectionRepeatConfiguration& AddNonRepeatingVisuals(const char* value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals.push_back(value); return *this; }
+    template<typename NonRepeatingVisualsT = Aws::Vector<Aws::String>>
+    void SetNonRepeatingVisuals(NonRepeatingVisualsT&& value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals = std::forward<NonRepeatingVisualsT>(value); }
+    template<typename NonRepeatingVisualsT = Aws::Vector<Aws::String>>
+    BodySectionRepeatConfiguration& WithNonRepeatingVisuals(NonRepeatingVisualsT&& value) { SetNonRepeatingVisuals(std::forward<NonRepeatingVisualsT>(value)); return *this;}
+    template<typename NonRepeatingVisualsT = Aws::String>
+    BodySectionRepeatConfiguration& AddNonRepeatingVisuals(NonRepeatingVisualsT&& value) { m_nonRepeatingVisualsHasBeenSet = true; m_nonRepeatingVisuals.emplace_back(std::forward<NonRepeatingVisualsT>(value)); return *this; }
     ///@}
   private:
 

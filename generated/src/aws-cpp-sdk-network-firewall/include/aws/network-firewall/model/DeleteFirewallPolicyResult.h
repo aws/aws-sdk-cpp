@@ -28,7 +28,7 @@ namespace Model
   class DeleteFirewallPolicyResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DeleteFirewallPolicyResult();
+    AWS_NETWORKFIREWALL_API DeleteFirewallPolicyResult() = default;
     AWS_NETWORKFIREWALL_API DeleteFirewallPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DeleteFirewallPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The object containing the definition of the <a>FirewallPolicyResponse</a>
      * that you asked to delete. </p>
      */
-    inline const FirewallPolicyResponse& GetFirewallPolicyResponse() const{ return m_firewallPolicyResponse; }
-    inline void SetFirewallPolicyResponse(const FirewallPolicyResponse& value) { m_firewallPolicyResponse = value; }
-    inline void SetFirewallPolicyResponse(FirewallPolicyResponse&& value) { m_firewallPolicyResponse = std::move(value); }
-    inline DeleteFirewallPolicyResult& WithFirewallPolicyResponse(const FirewallPolicyResponse& value) { SetFirewallPolicyResponse(value); return *this;}
-    inline DeleteFirewallPolicyResult& WithFirewallPolicyResponse(FirewallPolicyResponse&& value) { SetFirewallPolicyResponse(std::move(value)); return *this;}
+    inline const FirewallPolicyResponse& GetFirewallPolicyResponse() const { return m_firewallPolicyResponse; }
+    template<typename FirewallPolicyResponseT = FirewallPolicyResponse>
+    void SetFirewallPolicyResponse(FirewallPolicyResponseT&& value) { m_firewallPolicyResponseHasBeenSet = true; m_firewallPolicyResponse = std::forward<FirewallPolicyResponseT>(value); }
+    template<typename FirewallPolicyResponseT = FirewallPolicyResponse>
+    DeleteFirewallPolicyResult& WithFirewallPolicyResponse(FirewallPolicyResponseT&& value) { SetFirewallPolicyResponse(std::forward<FirewallPolicyResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteFirewallPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteFirewallPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteFirewallPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteFirewallPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FirewallPolicyResponse m_firewallPolicyResponse;
+    bool m_firewallPolicyResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

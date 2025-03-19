@@ -12,22 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTrainedModelInferenceJobRequest::StartTrainedModelInferenceJobRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false),
-    m_configuredModelAlgorithmAssociationArnHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_containerExecutionParametersHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartTrainedModelInferenceJobRequest::SerializePayload() const
 {
   JsonValue payload;

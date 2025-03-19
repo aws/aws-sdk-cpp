@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAccountResult::UpdateAccountResult()
-{
-}
-
 UpdateAccountResult::UpdateAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ UpdateAccountResult& UpdateAccountResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("cloudwatchRoleArn"))
   {
     m_cloudwatchRoleArn = jsonValue.GetString("cloudwatchRoleArn");
-
+    m_cloudwatchRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throttleSettings"))
   {
     m_throttleSettings = jsonValue.GetObject("throttleSettings");
-
+    m_throttleSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("features"))
   {
     Aws::Utils::Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
@@ -48,20 +42,20 @@ UpdateAccountResult& UpdateAccountResult::operator =(const Aws::AmazonWebService
     {
       m_features.push_back(featuresJsonList[featuresIndex].AsString());
     }
+    m_featuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKeyVersion"))
   {
     m_apiKeyVersion = jsonValue.GetString("apiKeyVersion");
-
+    m_apiKeyVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

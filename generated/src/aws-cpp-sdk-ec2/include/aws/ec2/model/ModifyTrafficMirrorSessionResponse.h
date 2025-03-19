@@ -28,7 +28,7 @@ namespace Model
   class ModifyTrafficMirrorSessionResponse
   {
   public:
-    AWS_EC2_API ModifyTrafficMirrorSessionResponse();
+    AWS_EC2_API ModifyTrafficMirrorSessionResponse() = default;
     AWS_EC2_API ModifyTrafficMirrorSessionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyTrafficMirrorSessionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the Traffic Mirror session.</p>
      */
-    inline const TrafficMirrorSession& GetTrafficMirrorSession() const{ return m_trafficMirrorSession; }
-    inline void SetTrafficMirrorSession(const TrafficMirrorSession& value) { m_trafficMirrorSession = value; }
-    inline void SetTrafficMirrorSession(TrafficMirrorSession&& value) { m_trafficMirrorSession = std::move(value); }
-    inline ModifyTrafficMirrorSessionResponse& WithTrafficMirrorSession(const TrafficMirrorSession& value) { SetTrafficMirrorSession(value); return *this;}
-    inline ModifyTrafficMirrorSessionResponse& WithTrafficMirrorSession(TrafficMirrorSession&& value) { SetTrafficMirrorSession(std::move(value)); return *this;}
+    inline const TrafficMirrorSession& GetTrafficMirrorSession() const { return m_trafficMirrorSession; }
+    template<typename TrafficMirrorSessionT = TrafficMirrorSession>
+    void SetTrafficMirrorSession(TrafficMirrorSessionT&& value) { m_trafficMirrorSessionHasBeenSet = true; m_trafficMirrorSession = std::forward<TrafficMirrorSessionT>(value); }
+    template<typename TrafficMirrorSessionT = TrafficMirrorSession>
+    ModifyTrafficMirrorSessionResponse& WithTrafficMirrorSession(TrafficMirrorSessionT&& value) { SetTrafficMirrorSession(std::forward<TrafficMirrorSessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyTrafficMirrorSessionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyTrafficMirrorSessionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyTrafficMirrorSessionResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TrafficMirrorSession m_trafficMirrorSession;
+    bool m_trafficMirrorSessionHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

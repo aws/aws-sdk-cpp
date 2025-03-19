@@ -28,7 +28,7 @@ namespace Model
   class UpdateConfiguredTableResult
   {
   public:
-    AWS_CLEANROOMS_API UpdateConfiguredTableResult();
+    AWS_CLEANROOMS_API UpdateConfiguredTableResult() = default;
     AWS_CLEANROOMS_API UpdateConfiguredTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API UpdateConfiguredTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated configured table.</p>
      */
-    inline const ConfiguredTable& GetConfiguredTable() const{ return m_configuredTable; }
-    inline void SetConfiguredTable(const ConfiguredTable& value) { m_configuredTable = value; }
-    inline void SetConfiguredTable(ConfiguredTable&& value) { m_configuredTable = std::move(value); }
-    inline UpdateConfiguredTableResult& WithConfiguredTable(const ConfiguredTable& value) { SetConfiguredTable(value); return *this;}
-    inline UpdateConfiguredTableResult& WithConfiguredTable(ConfiguredTable&& value) { SetConfiguredTable(std::move(value)); return *this;}
+    inline const ConfiguredTable& GetConfiguredTable() const { return m_configuredTable; }
+    template<typename ConfiguredTableT = ConfiguredTable>
+    void SetConfiguredTable(ConfiguredTableT&& value) { m_configuredTableHasBeenSet = true; m_configuredTable = std::forward<ConfiguredTableT>(value); }
+    template<typename ConfiguredTableT = ConfiguredTable>
+    UpdateConfiguredTableResult& WithConfiguredTable(ConfiguredTableT&& value) { SetConfiguredTable(std::forward<ConfiguredTableT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateConfiguredTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateConfiguredTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateConfiguredTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateConfiguredTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConfiguredTable m_configuredTable;
+    bool m_configuredTableHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

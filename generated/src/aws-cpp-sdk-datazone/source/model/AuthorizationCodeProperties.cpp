@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AuthorizationCodeProperties::AuthorizationCodeProperties() : 
-    m_authorizationCodeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
-{
-}
-
 AuthorizationCodeProperties::AuthorizationCodeProperties(JsonView jsonValue)
-  : AuthorizationCodeProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuthorizationCodeProperties& AuthorizationCodeProperties::operator =(JsonView js
   if(jsonValue.ValueExists("authorizationCode"))
   {
     m_authorizationCode = jsonValue.GetString("authorizationCode");
-
     m_authorizationCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redirectUri"))
   {
     m_redirectUri = jsonValue.GetString("redirectUri");
-
     m_redirectUriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ServiceHealth::ServiceHealth() : 
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_insightHasBeenSet(false),
-    m_analyzedResourceCount(0),
-    m_analyzedResourceCountHasBeenSet(false)
-{
-}
-
 ServiceHealth::ServiceHealth(JsonView jsonValue)
-  : ServiceHealth()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ServiceHealth& ServiceHealth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = ServiceNameMapper::GetServiceNameForName(jsonValue.GetString("ServiceName"));
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Insight"))
   {
     m_insight = jsonValue.GetObject("Insight");
-
     m_insightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzedResourceCount"))
   {
     m_analyzedResourceCount = jsonValue.GetInt64("AnalyzedResourceCount");
-
     m_analyzedResourceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

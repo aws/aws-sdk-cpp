@@ -33,7 +33,7 @@ namespace Model
   class LifeCycleLastTest
   {
   public:
-    AWS_MGN_API LifeCycleLastTest();
+    AWS_MGN_API LifeCycleLastTest() = default;
     AWS_MGN_API LifeCycleLastTest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API LifeCycleLastTest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>Lifecycle last Test finalized.</p>
      */
-    inline const LifeCycleLastTestFinalized& GetFinalized() const{ return m_finalized; }
+    inline const LifeCycleLastTestFinalized& GetFinalized() const { return m_finalized; }
     inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
-    inline void SetFinalized(const LifeCycleLastTestFinalized& value) { m_finalizedHasBeenSet = true; m_finalized = value; }
-    inline void SetFinalized(LifeCycleLastTestFinalized&& value) { m_finalizedHasBeenSet = true; m_finalized = std::move(value); }
-    inline LifeCycleLastTest& WithFinalized(const LifeCycleLastTestFinalized& value) { SetFinalized(value); return *this;}
-    inline LifeCycleLastTest& WithFinalized(LifeCycleLastTestFinalized&& value) { SetFinalized(std::move(value)); return *this;}
+    template<typename FinalizedT = LifeCycleLastTestFinalized>
+    void SetFinalized(FinalizedT&& value) { m_finalizedHasBeenSet = true; m_finalized = std::forward<FinalizedT>(value); }
+    template<typename FinalizedT = LifeCycleLastTestFinalized>
+    LifeCycleLastTest& WithFinalized(FinalizedT&& value) { SetFinalized(std::forward<FinalizedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lifecycle last Test initiated.</p>
      */
-    inline const LifeCycleLastTestInitiated& GetInitiated() const{ return m_initiated; }
+    inline const LifeCycleLastTestInitiated& GetInitiated() const { return m_initiated; }
     inline bool InitiatedHasBeenSet() const { return m_initiatedHasBeenSet; }
-    inline void SetInitiated(const LifeCycleLastTestInitiated& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
-    inline void SetInitiated(LifeCycleLastTestInitiated&& value) { m_initiatedHasBeenSet = true; m_initiated = std::move(value); }
-    inline LifeCycleLastTest& WithInitiated(const LifeCycleLastTestInitiated& value) { SetInitiated(value); return *this;}
-    inline LifeCycleLastTest& WithInitiated(LifeCycleLastTestInitiated&& value) { SetInitiated(std::move(value)); return *this;}
+    template<typename InitiatedT = LifeCycleLastTestInitiated>
+    void SetInitiated(InitiatedT&& value) { m_initiatedHasBeenSet = true; m_initiated = std::forward<InitiatedT>(value); }
+    template<typename InitiatedT = LifeCycleLastTestInitiated>
+    LifeCycleLastTest& WithInitiated(InitiatedT&& value) { SetInitiated(std::forward<InitiatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lifecycle last Test reverted.</p>
      */
-    inline const LifeCycleLastTestReverted& GetReverted() const{ return m_reverted; }
+    inline const LifeCycleLastTestReverted& GetReverted() const { return m_reverted; }
     inline bool RevertedHasBeenSet() const { return m_revertedHasBeenSet; }
-    inline void SetReverted(const LifeCycleLastTestReverted& value) { m_revertedHasBeenSet = true; m_reverted = value; }
-    inline void SetReverted(LifeCycleLastTestReverted&& value) { m_revertedHasBeenSet = true; m_reverted = std::move(value); }
-    inline LifeCycleLastTest& WithReverted(const LifeCycleLastTestReverted& value) { SetReverted(value); return *this;}
-    inline LifeCycleLastTest& WithReverted(LifeCycleLastTestReverted&& value) { SetReverted(std::move(value)); return *this;}
+    template<typename RevertedT = LifeCycleLastTestReverted>
+    void SetReverted(RevertedT&& value) { m_revertedHasBeenSet = true; m_reverted = std::forward<RevertedT>(value); }
+    template<typename RevertedT = LifeCycleLastTestReverted>
+    LifeCycleLastTest& WithReverted(RevertedT&& value) { SetReverted(std::forward<RevertedT>(value)); return *this;}
     ///@}
   private:
 

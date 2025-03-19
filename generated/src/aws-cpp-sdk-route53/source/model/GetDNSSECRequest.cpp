@@ -14,10 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetDNSSECRequest::GetDNSSECRequest() : 
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
 
 Aws::String GetDNSSECRequest::SerializePayload() const
 {

@@ -29,7 +29,7 @@ namespace Model
   class ListSessionMetricsResult
   {
   public:
-    AWS_LEXMODELSV2_API ListSessionMetricsResult();
+    AWS_LEXMODELSV2_API ListSessionMetricsResult() = default;
     AWS_LEXMODELSV2_API ListSessionMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListSessionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The identifier for the bot for which you retrieved session metrics.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListSessionMetricsResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListSessionMetricsResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListSessionMetricsResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListSessionMetricsResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The results for the session metrics.</p>
      */
-    inline const Aws::Vector<AnalyticsSessionResult>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<AnalyticsSessionResult>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<AnalyticsSessionResult>&& value) { m_results = std::move(value); }
-    inline ListSessionMetricsResult& WithResults(const Aws::Vector<AnalyticsSessionResult>& value) { SetResults(value); return *this;}
-    inline ListSessionMetricsResult& WithResults(Aws::Vector<AnalyticsSessionResult>&& value) { SetResults(std::move(value)); return *this;}
-    inline ListSessionMetricsResult& AddResults(const AnalyticsSessionResult& value) { m_results.push_back(value); return *this; }
-    inline ListSessionMetricsResult& AddResults(AnalyticsSessionResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalyticsSessionResult>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<AnalyticsSessionResult>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<AnalyticsSessionResult>>
+    ListSessionMetricsResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = AnalyticsSessionResult>
+    ListSessionMetricsResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,34 +67,34 @@ namespace Model
      * set of results, call the ListSessionMetrics operation until the nextToken
      * returned in the response is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSessionMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSessionMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSessionMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSessionMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSessionMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSessionMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSessionMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSessionMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::Vector<AnalyticsSessionResult> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

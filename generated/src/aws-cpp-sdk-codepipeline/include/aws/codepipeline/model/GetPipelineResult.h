@@ -35,7 +35,7 @@ namespace Model
   class GetPipelineResult
   {
   public:
-    AWS_CODEPIPELINE_API GetPipelineResult();
+    AWS_CODEPIPELINE_API GetPipelineResult() = default;
     AWS_CODEPIPELINE_API GetPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API GetPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,11 +45,11 @@ namespace Model
      * <p>Represents the structure of actions and stages to be performed in the
      * pipeline. </p>
      */
-    inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
-    inline void SetPipeline(const PipelineDeclaration& value) { m_pipeline = value; }
-    inline void SetPipeline(PipelineDeclaration&& value) { m_pipeline = std::move(value); }
-    inline GetPipelineResult& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
-    inline GetPipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
+    inline const PipelineDeclaration& GetPipeline() const { return m_pipeline; }
+    template<typename PipelineT = PipelineDeclaration>
+    void SetPipeline(PipelineT&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::forward<PipelineT>(value); }
+    template<typename PipelineT = PipelineDeclaration>
+    GetPipelineResult& WithPipeline(PipelineT&& value) { SetPipeline(std::forward<PipelineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,30 +57,31 @@ namespace Model
      * <p>Represents the pipeline metadata information returned as part of the output
      * of a <code>GetPipeline</code> action.</p>
      */
-    inline const PipelineMetadata& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const PipelineMetadata& value) { m_metadata = value; }
-    inline void SetMetadata(PipelineMetadata&& value) { m_metadata = std::move(value); }
-    inline GetPipelineResult& WithMetadata(const PipelineMetadata& value) { SetMetadata(value); return *this;}
-    inline GetPipelineResult& WithMetadata(PipelineMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const PipelineMetadata& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = PipelineMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = PipelineMetadata>
+    GetPipelineResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PipelineDeclaration m_pipeline;
+    bool m_pipelineHasBeenSet = false;
 
     PipelineMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

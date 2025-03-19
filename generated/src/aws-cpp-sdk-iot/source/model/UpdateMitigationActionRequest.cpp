@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMitigationActionRequest::UpdateMitigationActionRequest() : 
-    m_actionNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_actionParamsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMitigationActionRequest::SerializePayload() const
 {
   JsonValue payload;

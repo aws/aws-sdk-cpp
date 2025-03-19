@@ -33,7 +33,7 @@ namespace Model
   class Matcher
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API Matcher();
+    AWS_ELASTICLOADBALANCINGV2_API Matcher() = default;
     AWS_ELASTICLOADBALANCINGV2_API Matcher(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API Matcher& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * this must be "200–399".</p> <p>Note that when using shorthand syntax, some
      * values such as commas need to be escaped.</p>
      */
-    inline const Aws::String& GetHttpCode() const{ return m_httpCode; }
+    inline const Aws::String& GetHttpCode() const { return m_httpCode; }
     inline bool HttpCodeHasBeenSet() const { return m_httpCodeHasBeenSet; }
-    inline void SetHttpCode(const Aws::String& value) { m_httpCodeHasBeenSet = true; m_httpCode = value; }
-    inline void SetHttpCode(Aws::String&& value) { m_httpCodeHasBeenSet = true; m_httpCode = std::move(value); }
-    inline void SetHttpCode(const char* value) { m_httpCodeHasBeenSet = true; m_httpCode.assign(value); }
-    inline Matcher& WithHttpCode(const Aws::String& value) { SetHttpCode(value); return *this;}
-    inline Matcher& WithHttpCode(Aws::String&& value) { SetHttpCode(std::move(value)); return *this;}
-    inline Matcher& WithHttpCode(const char* value) { SetHttpCode(value); return *this;}
+    template<typename HttpCodeT = Aws::String>
+    void SetHttpCode(HttpCodeT&& value) { m_httpCodeHasBeenSet = true; m_httpCode = std::forward<HttpCodeT>(value); }
+    template<typename HttpCodeT = Aws::String>
+    Matcher& WithHttpCode(HttpCodeT&& value) { SetHttpCode(std::forward<HttpCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * example, "0,1") or a range of values (for example, "0-5"). The default value is
      * 12.</p>
      */
-    inline const Aws::String& GetGrpcCode() const{ return m_grpcCode; }
+    inline const Aws::String& GetGrpcCode() const { return m_grpcCode; }
     inline bool GrpcCodeHasBeenSet() const { return m_grpcCodeHasBeenSet; }
-    inline void SetGrpcCode(const Aws::String& value) { m_grpcCodeHasBeenSet = true; m_grpcCode = value; }
-    inline void SetGrpcCode(Aws::String&& value) { m_grpcCodeHasBeenSet = true; m_grpcCode = std::move(value); }
-    inline void SetGrpcCode(const char* value) { m_grpcCodeHasBeenSet = true; m_grpcCode.assign(value); }
-    inline Matcher& WithGrpcCode(const Aws::String& value) { SetGrpcCode(value); return *this;}
-    inline Matcher& WithGrpcCode(Aws::String&& value) { SetGrpcCode(std::move(value)); return *this;}
-    inline Matcher& WithGrpcCode(const char* value) { SetGrpcCode(value); return *this;}
+    template<typename GrpcCodeT = Aws::String>
+    void SetGrpcCode(GrpcCodeT&& value) { m_grpcCodeHasBeenSet = true; m_grpcCode = std::forward<GrpcCodeT>(value); }
+    template<typename GrpcCodeT = Aws::String>
+    Matcher& WithGrpcCode(GrpcCodeT&& value) { SetGrpcCode(std::forward<GrpcCodeT>(value)); return *this;}
     ///@}
   private:
 

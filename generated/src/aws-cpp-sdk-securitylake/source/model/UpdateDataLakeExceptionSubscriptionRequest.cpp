@@ -12,14 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataLakeExceptionSubscriptionRequest::UpdateDataLakeExceptionSubscriptionRequest() : 
-    m_exceptionTimeToLive(0),
-    m_exceptionTimeToLiveHasBeenSet(false),
-    m_notificationEndpointHasBeenSet(false),
-    m_subscriptionProtocolHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataLakeExceptionSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

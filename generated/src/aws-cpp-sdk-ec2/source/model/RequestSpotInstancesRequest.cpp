@@ -10,28 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RequestSpotInstancesRequest::RequestSpotInstancesRequest() : 
-    m_launchSpecificationHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_spotPriceHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_type(SpotInstanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_validFromHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_launchGroupHasBeenSet(false),
-    m_availabilityZoneGroupHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false)
-{
-}
-
 Aws::String RequestSpotInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

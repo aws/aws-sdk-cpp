@@ -10,26 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CopyImageRequest::CopyImageRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceImageIdHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_destinationOutpostArnHasBeenSet(false),
-    m_copyImageTags(false),
-    m_copyImageTagsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_snapshotCopyCompletionDurationMinutes(0),
-    m_snapshotCopyCompletionDurationMinutesHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CopyImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -21,7 +21,7 @@ namespace Model
   class DescribeRoutingControlRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeRoutingControlRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DescribeRoutingControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the routing control.</p>
      */
-    inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
+    inline const Aws::String& GetRoutingControlArn() const { return m_routingControlArn; }
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
-    inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
-    inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
-    inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
-    inline DescribeRoutingControlRequest& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
-    inline DescribeRoutingControlRequest& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
-    inline DescribeRoutingControlRequest& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
+    template<typename RoutingControlArnT = Aws::String>
+    void SetRoutingControlArn(RoutingControlArnT&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::forward<RoutingControlArnT>(value); }
+    template<typename RoutingControlArnT = Aws::String>
+    DescribeRoutingControlRequest& WithRoutingControlArn(RoutingControlArnT&& value) { SetRoutingControlArn(std::forward<RoutingControlArnT>(value)); return *this;}
     ///@}
   private:
 

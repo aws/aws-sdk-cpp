@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringStatisticsResource::MonitoringStatisticsResource() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 MonitoringStatisticsResource::MonitoringStatisticsResource(JsonView jsonValue)
-  : MonitoringStatisticsResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitoringStatisticsResource& MonitoringStatisticsResource::operator =(JsonView 
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

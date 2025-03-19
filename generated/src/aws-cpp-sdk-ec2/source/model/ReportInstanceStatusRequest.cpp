@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReportInstanceStatusRequest::ReportInstanceStatusRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_status(ReportStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_reasonCodesHasBeenSet(false)
-{
-}
-
 Aws::String ReportInstanceStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

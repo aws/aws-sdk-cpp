@@ -18,18 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Threshold::Threshold() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_type(ThresholdType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_unit(ThresholdUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 Threshold::Threshold(JsonView jsonValue)
-  : Threshold()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Threshold& Threshold::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ThresholdTypeMapper::GetThresholdTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = ThresholdUnitMapper::GetThresholdUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

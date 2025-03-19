@@ -22,7 +22,7 @@ namespace Model
   class DisassociateManagedNotificationAccountContactRequest : public NotificationsRequest
   {
   public:
-    AWS_NOTIFICATIONS_API DisassociateManagedNotificationAccountContactRequest();
+    AWS_NOTIFICATIONS_API DisassociateManagedNotificationAccountContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,10 @@ namespace Model
      * <p>The unique value of an Account Contact Type to associate with the
      * <code>ManagedNotificationConfiguration</code>.</p>
      */
-    inline const AccountContactType& GetContactIdentifier() const{ return m_contactIdentifier; }
+    inline AccountContactType GetContactIdentifier() const { return m_contactIdentifier; }
     inline bool ContactIdentifierHasBeenSet() const { return m_contactIdentifierHasBeenSet; }
-    inline void SetContactIdentifier(const AccountContactType& value) { m_contactIdentifierHasBeenSet = true; m_contactIdentifier = value; }
-    inline void SetContactIdentifier(AccountContactType&& value) { m_contactIdentifierHasBeenSet = true; m_contactIdentifier = std::move(value); }
-    inline DisassociateManagedNotificationAccountContactRequest& WithContactIdentifier(const AccountContactType& value) { SetContactIdentifier(value); return *this;}
-    inline DisassociateManagedNotificationAccountContactRequest& WithContactIdentifier(AccountContactType&& value) { SetContactIdentifier(std::move(value)); return *this;}
+    inline void SetContactIdentifier(AccountContactType value) { m_contactIdentifierHasBeenSet = true; m_contactIdentifier = value; }
+    inline DisassociateManagedNotificationAccountContactRequest& WithContactIdentifier(AccountContactType value) { SetContactIdentifier(value); return *this;}
     ///@}
 
     ///@{
@@ -52,18 +50,16 @@ namespace Model
      * <code>ManagedNotificationConfiguration</code> to associate with the Account
      * Contact.</p>
      */
-    inline const Aws::String& GetManagedNotificationConfigurationArn() const{ return m_managedNotificationConfigurationArn; }
+    inline const Aws::String& GetManagedNotificationConfigurationArn() const { return m_managedNotificationConfigurationArn; }
     inline bool ManagedNotificationConfigurationArnHasBeenSet() const { return m_managedNotificationConfigurationArnHasBeenSet; }
-    inline void SetManagedNotificationConfigurationArn(const Aws::String& value) { m_managedNotificationConfigurationArnHasBeenSet = true; m_managedNotificationConfigurationArn = value; }
-    inline void SetManagedNotificationConfigurationArn(Aws::String&& value) { m_managedNotificationConfigurationArnHasBeenSet = true; m_managedNotificationConfigurationArn = std::move(value); }
-    inline void SetManagedNotificationConfigurationArn(const char* value) { m_managedNotificationConfigurationArnHasBeenSet = true; m_managedNotificationConfigurationArn.assign(value); }
-    inline DisassociateManagedNotificationAccountContactRequest& WithManagedNotificationConfigurationArn(const Aws::String& value) { SetManagedNotificationConfigurationArn(value); return *this;}
-    inline DisassociateManagedNotificationAccountContactRequest& WithManagedNotificationConfigurationArn(Aws::String&& value) { SetManagedNotificationConfigurationArn(std::move(value)); return *this;}
-    inline DisassociateManagedNotificationAccountContactRequest& WithManagedNotificationConfigurationArn(const char* value) { SetManagedNotificationConfigurationArn(value); return *this;}
+    template<typename ManagedNotificationConfigurationArnT = Aws::String>
+    void SetManagedNotificationConfigurationArn(ManagedNotificationConfigurationArnT&& value) { m_managedNotificationConfigurationArnHasBeenSet = true; m_managedNotificationConfigurationArn = std::forward<ManagedNotificationConfigurationArnT>(value); }
+    template<typename ManagedNotificationConfigurationArnT = Aws::String>
+    DisassociateManagedNotificationAccountContactRequest& WithManagedNotificationConfigurationArn(ManagedNotificationConfigurationArnT&& value) { SetManagedNotificationConfigurationArn(std::forward<ManagedNotificationConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 
-    AccountContactType m_contactIdentifier;
+    AccountContactType m_contactIdentifier{AccountContactType::NOT_SET};
     bool m_contactIdentifierHasBeenSet = false;
 
     Aws::String m_managedNotificationConfigurationArn;

@@ -32,7 +32,7 @@ namespace Model
   class ErrorInformation
   {
   public:
-    AWS_CODEDEPLOY_API ErrorInformation();
+    AWS_CODEDEPLOY_API ErrorInformation() = default;
     AWS_CODEDEPLOY_API ErrorInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API ErrorInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,30 +67,26 @@ namespace Model
      * error code is most likely raised if the revision is deleted after the deployment
      * is created, but before it is started.</p> </li> </ul>
      */
-    inline const ErrorCode& GetCode() const{ return m_code; }
+    inline ErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ErrorInformation& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
-    inline ErrorInformation& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ErrorInformation& WithCode(ErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An accompanying error message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ErrorInformation& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ErrorInformation& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ErrorInformation& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ErrorInformation& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    ErrorCode m_code;
+    ErrorCode m_code{ErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

@@ -29,7 +29,7 @@ namespace Model
   class ListAnalysisReportsResult
   {
   public:
-    AWS_NETWORKFIREWALL_API ListAnalysisReportsResult();
+    AWS_NETWORKFIREWALL_API ListAnalysisReportsResult() = default;
     AWS_NETWORKFIREWALL_API ListAnalysisReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API ListAnalysisReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The <code>id</code> and <code>ReportTime</code> associated with a requested
      * analysis report. Does not provide the status of the analysis report. </p>
      */
-    inline const Aws::Vector<AnalysisReport>& GetAnalysisReports() const{ return m_analysisReports; }
-    inline void SetAnalysisReports(const Aws::Vector<AnalysisReport>& value) { m_analysisReports = value; }
-    inline void SetAnalysisReports(Aws::Vector<AnalysisReport>&& value) { m_analysisReports = std::move(value); }
-    inline ListAnalysisReportsResult& WithAnalysisReports(const Aws::Vector<AnalysisReport>& value) { SetAnalysisReports(value); return *this;}
-    inline ListAnalysisReportsResult& WithAnalysisReports(Aws::Vector<AnalysisReport>&& value) { SetAnalysisReports(std::move(value)); return *this;}
-    inline ListAnalysisReportsResult& AddAnalysisReports(const AnalysisReport& value) { m_analysisReports.push_back(value); return *this; }
-    inline ListAnalysisReportsResult& AddAnalysisReports(AnalysisReport&& value) { m_analysisReports.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalysisReport>& GetAnalysisReports() const { return m_analysisReports; }
+    template<typename AnalysisReportsT = Aws::Vector<AnalysisReport>>
+    void SetAnalysisReports(AnalysisReportsT&& value) { m_analysisReportsHasBeenSet = true; m_analysisReports = std::forward<AnalysisReportsT>(value); }
+    template<typename AnalysisReportsT = Aws::Vector<AnalysisReport>>
+    ListAnalysisReportsResult& WithAnalysisReports(AnalysisReportsT&& value) { SetAnalysisReports(std::forward<AnalysisReportsT>(value)); return *this;}
+    template<typename AnalysisReportsT = AnalysisReport>
+    ListAnalysisReportsResult& AddAnalysisReports(AnalysisReportsT&& value) { m_analysisReportsHasBeenSet = true; m_analysisReports.emplace_back(std::forward<AnalysisReportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAnalysisReportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnalysisReportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnalysisReportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnalysisReportsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAnalysisReportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAnalysisReportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAnalysisReportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAnalysisReportsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnalysisReport> m_analysisReports;
+    bool m_analysisReportsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class InlineRedactionConfiguration
   {
   public:
-    AWS_WORKSPACESWEB_API InlineRedactionConfiguration();
+    AWS_WORKSPACESWEB_API InlineRedactionConfiguration() = default;
     AWS_WORKSPACESWEB_API InlineRedactionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API InlineRedactionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,7 +52,7 @@ namespace Model
      * without keyword. This is applied to patterns that do not have a pattern-level
      * confidence level. Defaults to confidence level 2.</p>
      */
-    inline int GetGlobalConfidenceLevel() const{ return m_globalConfidenceLevel; }
+    inline int GetGlobalConfidenceLevel() const { return m_globalConfidenceLevel; }
     inline bool GlobalConfidenceLevelHasBeenSet() const { return m_globalConfidenceLevelHasBeenSet; }
     inline void SetGlobalConfidenceLevel(int value) { m_globalConfidenceLevelHasBeenSet = true; m_globalConfidenceLevel = value; }
     inline InlineRedactionConfiguration& WithGlobalConfidenceLevel(int value) { SetGlobalConfidenceLevel(value); return *this;}
@@ -64,15 +64,14 @@ namespace Model
      * This is applied to patterns that do not have a pattern-level enforced URL
      * list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGlobalEnforcedUrls() const{ return m_globalEnforcedUrls; }
+    inline const Aws::Vector<Aws::String>& GetGlobalEnforcedUrls() const { return m_globalEnforcedUrls; }
     inline bool GlobalEnforcedUrlsHasBeenSet() const { return m_globalEnforcedUrlsHasBeenSet; }
-    inline void SetGlobalEnforcedUrls(const Aws::Vector<Aws::String>& value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls = value; }
-    inline void SetGlobalEnforcedUrls(Aws::Vector<Aws::String>&& value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls = std::move(value); }
-    inline InlineRedactionConfiguration& WithGlobalEnforcedUrls(const Aws::Vector<Aws::String>& value) { SetGlobalEnforcedUrls(value); return *this;}
-    inline InlineRedactionConfiguration& WithGlobalEnforcedUrls(Aws::Vector<Aws::String>&& value) { SetGlobalEnforcedUrls(std::move(value)); return *this;}
-    inline InlineRedactionConfiguration& AddGlobalEnforcedUrls(const Aws::String& value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls.push_back(value); return *this; }
-    inline InlineRedactionConfiguration& AddGlobalEnforcedUrls(Aws::String&& value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls.push_back(std::move(value)); return *this; }
-    inline InlineRedactionConfiguration& AddGlobalEnforcedUrls(const char* value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls.push_back(value); return *this; }
+    template<typename GlobalEnforcedUrlsT = Aws::Vector<Aws::String>>
+    void SetGlobalEnforcedUrls(GlobalEnforcedUrlsT&& value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls = std::forward<GlobalEnforcedUrlsT>(value); }
+    template<typename GlobalEnforcedUrlsT = Aws::Vector<Aws::String>>
+    InlineRedactionConfiguration& WithGlobalEnforcedUrls(GlobalEnforcedUrlsT&& value) { SetGlobalEnforcedUrls(std::forward<GlobalEnforcedUrlsT>(value)); return *this;}
+    template<typename GlobalEnforcedUrlsT = Aws::String>
+    InlineRedactionConfiguration& AddGlobalEnforcedUrls(GlobalEnforcedUrlsT&& value) { m_globalEnforcedUrlsHasBeenSet = true; m_globalEnforcedUrls.emplace_back(std::forward<GlobalEnforcedUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,15 +80,14 @@ namespace Model
      * This is applied to patterns that do not have a pattern-level exempt URL
      * list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGlobalExemptUrls() const{ return m_globalExemptUrls; }
+    inline const Aws::Vector<Aws::String>& GetGlobalExemptUrls() const { return m_globalExemptUrls; }
     inline bool GlobalExemptUrlsHasBeenSet() const { return m_globalExemptUrlsHasBeenSet; }
-    inline void SetGlobalExemptUrls(const Aws::Vector<Aws::String>& value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls = value; }
-    inline void SetGlobalExemptUrls(Aws::Vector<Aws::String>&& value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls = std::move(value); }
-    inline InlineRedactionConfiguration& WithGlobalExemptUrls(const Aws::Vector<Aws::String>& value) { SetGlobalExemptUrls(value); return *this;}
-    inline InlineRedactionConfiguration& WithGlobalExemptUrls(Aws::Vector<Aws::String>&& value) { SetGlobalExemptUrls(std::move(value)); return *this;}
-    inline InlineRedactionConfiguration& AddGlobalExemptUrls(const Aws::String& value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls.push_back(value); return *this; }
-    inline InlineRedactionConfiguration& AddGlobalExemptUrls(Aws::String&& value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls.push_back(std::move(value)); return *this; }
-    inline InlineRedactionConfiguration& AddGlobalExemptUrls(const char* value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls.push_back(value); return *this; }
+    template<typename GlobalExemptUrlsT = Aws::Vector<Aws::String>>
+    void SetGlobalExemptUrls(GlobalExemptUrlsT&& value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls = std::forward<GlobalExemptUrlsT>(value); }
+    template<typename GlobalExemptUrlsT = Aws::Vector<Aws::String>>
+    InlineRedactionConfiguration& WithGlobalExemptUrls(GlobalExemptUrlsT&& value) { SetGlobalExemptUrls(std::forward<GlobalExemptUrlsT>(value)); return *this;}
+    template<typename GlobalExemptUrlsT = Aws::String>
+    InlineRedactionConfiguration& AddGlobalExemptUrls(GlobalExemptUrlsT&& value) { m_globalExemptUrlsHasBeenSet = true; m_globalExemptUrls.emplace_back(std::forward<GlobalExemptUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,18 +95,18 @@ namespace Model
      * <p>The inline redaction patterns to be enabled for the inline redaction
      * configuration.</p>
      */
-    inline const Aws::Vector<InlineRedactionPattern>& GetInlineRedactionPatterns() const{ return m_inlineRedactionPatterns; }
+    inline const Aws::Vector<InlineRedactionPattern>& GetInlineRedactionPatterns() const { return m_inlineRedactionPatterns; }
     inline bool InlineRedactionPatternsHasBeenSet() const { return m_inlineRedactionPatternsHasBeenSet; }
-    inline void SetInlineRedactionPatterns(const Aws::Vector<InlineRedactionPattern>& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns = value; }
-    inline void SetInlineRedactionPatterns(Aws::Vector<InlineRedactionPattern>&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns = std::move(value); }
-    inline InlineRedactionConfiguration& WithInlineRedactionPatterns(const Aws::Vector<InlineRedactionPattern>& value) { SetInlineRedactionPatterns(value); return *this;}
-    inline InlineRedactionConfiguration& WithInlineRedactionPatterns(Aws::Vector<InlineRedactionPattern>&& value) { SetInlineRedactionPatterns(std::move(value)); return *this;}
-    inline InlineRedactionConfiguration& AddInlineRedactionPatterns(const InlineRedactionPattern& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns.push_back(value); return *this; }
-    inline InlineRedactionConfiguration& AddInlineRedactionPatterns(InlineRedactionPattern&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns.push_back(std::move(value)); return *this; }
+    template<typename InlineRedactionPatternsT = Aws::Vector<InlineRedactionPattern>>
+    void SetInlineRedactionPatterns(InlineRedactionPatternsT&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns = std::forward<InlineRedactionPatternsT>(value); }
+    template<typename InlineRedactionPatternsT = Aws::Vector<InlineRedactionPattern>>
+    InlineRedactionConfiguration& WithInlineRedactionPatterns(InlineRedactionPatternsT&& value) { SetInlineRedactionPatterns(std::forward<InlineRedactionPatternsT>(value)); return *this;}
+    template<typename InlineRedactionPatternsT = InlineRedactionPattern>
+    InlineRedactionConfiguration& AddInlineRedactionPatterns(InlineRedactionPatternsT&& value) { m_inlineRedactionPatternsHasBeenSet = true; m_inlineRedactionPatterns.emplace_back(std::forward<InlineRedactionPatternsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_globalConfidenceLevel;
+    int m_globalConfidenceLevel{0};
     bool m_globalConfidenceLevelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_globalEnforcedUrls;

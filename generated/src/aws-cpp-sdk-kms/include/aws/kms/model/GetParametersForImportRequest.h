@@ -23,7 +23,7 @@ namespace Model
   class GetParametersForImportRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API GetParametersForImportRequest();
+    AWS_KMS_API GetParametersForImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline GetParametersForImportRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline GetParametersForImportRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline GetParametersForImportRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    GetParametersForImportRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,10 @@ namespace Model
      * October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
      * algorithm.</p> </li> </ul>
      */
-    inline const AlgorithmSpec& GetWrappingAlgorithm() const{ return m_wrappingAlgorithm; }
+    inline AlgorithmSpec GetWrappingAlgorithm() const { return m_wrappingAlgorithm; }
     inline bool WrappingAlgorithmHasBeenSet() const { return m_wrappingAlgorithmHasBeenSet; }
-    inline void SetWrappingAlgorithm(const AlgorithmSpec& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = value; }
-    inline void SetWrappingAlgorithm(AlgorithmSpec&& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = std::move(value); }
-    inline GetParametersForImportRequest& WithWrappingAlgorithm(const AlgorithmSpec& value) { SetWrappingAlgorithm(value); return *this;}
-    inline GetParametersForImportRequest& WithWrappingAlgorithm(AlgorithmSpec&& value) { SetWrappingAlgorithm(std::move(value)); return *this;}
+    inline void SetWrappingAlgorithm(AlgorithmSpec value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = value; }
+    inline GetParametersForImportRequest& WithWrappingAlgorithm(AlgorithmSpec value) { SetWrappingAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -102,22 +98,20 @@ namespace Model
      * private key. Instead, use an RSA_AES wrapping algorithm or choose a longer RSA
      * public key.</p>
      */
-    inline const WrappingKeySpec& GetWrappingKeySpec() const{ return m_wrappingKeySpec; }
+    inline WrappingKeySpec GetWrappingKeySpec() const { return m_wrappingKeySpec; }
     inline bool WrappingKeySpecHasBeenSet() const { return m_wrappingKeySpecHasBeenSet; }
-    inline void SetWrappingKeySpec(const WrappingKeySpec& value) { m_wrappingKeySpecHasBeenSet = true; m_wrappingKeySpec = value; }
-    inline void SetWrappingKeySpec(WrappingKeySpec&& value) { m_wrappingKeySpecHasBeenSet = true; m_wrappingKeySpec = std::move(value); }
-    inline GetParametersForImportRequest& WithWrappingKeySpec(const WrappingKeySpec& value) { SetWrappingKeySpec(value); return *this;}
-    inline GetParametersForImportRequest& WithWrappingKeySpec(WrappingKeySpec&& value) { SetWrappingKeySpec(std::move(value)); return *this;}
+    inline void SetWrappingKeySpec(WrappingKeySpec value) { m_wrappingKeySpecHasBeenSet = true; m_wrappingKeySpec = value; }
+    inline GetParametersForImportRequest& WithWrappingKeySpec(WrappingKeySpec value) { SetWrappingKeySpec(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    AlgorithmSpec m_wrappingAlgorithm;
+    AlgorithmSpec m_wrappingAlgorithm{AlgorithmSpec::NOT_SET};
     bool m_wrappingAlgorithmHasBeenSet = false;
 
-    WrappingKeySpec m_wrappingKeySpec;
+    WrappingKeySpec m_wrappingKeySpec{WrappingKeySpec::NOT_SET};
     bool m_wrappingKeySpecHasBeenSet = false;
   };
 

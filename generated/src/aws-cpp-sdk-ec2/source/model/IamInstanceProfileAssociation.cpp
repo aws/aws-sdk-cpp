@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IamInstanceProfileAssociation::IamInstanceProfileAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_state(IamInstanceProfileAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 IamInstanceProfileAssociation::IamInstanceProfileAssociation(const XmlNode& xmlNode)
-  : IamInstanceProfileAssociation()
 {
   *this = xmlNode;
 }
@@ -63,7 +52,7 @@ IamInstanceProfileAssociation& IamInstanceProfileAssociation::operator =(const X
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IamInstanceProfileAssociationStateMapper::GetIamInstanceProfileAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IamInstanceProfileAssociationStateMapper::GetIamInstanceProfileAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");

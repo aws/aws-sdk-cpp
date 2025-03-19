@@ -36,7 +36,7 @@ namespace Model
   class MessageData
   {
   public:
-    AWS_CLOUDWATCH_API MessageData();
+    AWS_CLOUDWATCH_API MessageData() = default;
     AWS_CLOUDWATCH_API MessageData(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MessageData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The error code or status code associated with the message.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline MessageData& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline MessageData& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline MessageData& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    MessageData& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message text.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline MessageData& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline MessageData& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline MessageData& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    MessageData& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

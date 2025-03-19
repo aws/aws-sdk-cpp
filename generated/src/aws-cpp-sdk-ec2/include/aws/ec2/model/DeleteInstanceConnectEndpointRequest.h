@@ -21,7 +21,7 @@ namespace Model
   class DeleteInstanceConnectEndpointRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteInstanceConnectEndpointRequest();
+    AWS_EC2_API DeleteInstanceConnectEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteInstanceConnectEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The ID of the EC2 Instance Connect Endpoint to delete.</p>
      */
-    inline const Aws::String& GetInstanceConnectEndpointId() const{ return m_instanceConnectEndpointId; }
+    inline const Aws::String& GetInstanceConnectEndpointId() const { return m_instanceConnectEndpointId; }
     inline bool InstanceConnectEndpointIdHasBeenSet() const { return m_instanceConnectEndpointIdHasBeenSet; }
-    inline void SetInstanceConnectEndpointId(const Aws::String& value) { m_instanceConnectEndpointIdHasBeenSet = true; m_instanceConnectEndpointId = value; }
-    inline void SetInstanceConnectEndpointId(Aws::String&& value) { m_instanceConnectEndpointIdHasBeenSet = true; m_instanceConnectEndpointId = std::move(value); }
-    inline void SetInstanceConnectEndpointId(const char* value) { m_instanceConnectEndpointIdHasBeenSet = true; m_instanceConnectEndpointId.assign(value); }
-    inline DeleteInstanceConnectEndpointRequest& WithInstanceConnectEndpointId(const Aws::String& value) { SetInstanceConnectEndpointId(value); return *this;}
-    inline DeleteInstanceConnectEndpointRequest& WithInstanceConnectEndpointId(Aws::String&& value) { SetInstanceConnectEndpointId(std::move(value)); return *this;}
-    inline DeleteInstanceConnectEndpointRequest& WithInstanceConnectEndpointId(const char* value) { SetInstanceConnectEndpointId(value); return *this;}
+    template<typename InstanceConnectEndpointIdT = Aws::String>
+    void SetInstanceConnectEndpointId(InstanceConnectEndpointIdT&& value) { m_instanceConnectEndpointIdHasBeenSet = true; m_instanceConnectEndpointId = std::forward<InstanceConnectEndpointIdT>(value); }
+    template<typename InstanceConnectEndpointIdT = Aws::String>
+    DeleteInstanceConnectEndpointRequest& WithInstanceConnectEndpointId(InstanceConnectEndpointIdT&& value) { SetInstanceConnectEndpointId(std::forward<InstanceConnectEndpointIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceConnectEndpointId;

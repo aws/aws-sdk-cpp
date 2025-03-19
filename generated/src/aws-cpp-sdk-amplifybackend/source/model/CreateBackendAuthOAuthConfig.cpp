@@ -18,19 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-CreateBackendAuthOAuthConfig::CreateBackendAuthOAuthConfig() : 
-    m_domainPrefixHasBeenSet(false),
-    m_oAuthGrantType(OAuthGrantType::NOT_SET),
-    m_oAuthGrantTypeHasBeenSet(false),
-    m_oAuthScopesHasBeenSet(false),
-    m_redirectSignInURIsHasBeenSet(false),
-    m_redirectSignOutURIsHasBeenSet(false),
-    m_socialProviderSettingsHasBeenSet(false)
-{
-}
-
 CreateBackendAuthOAuthConfig::CreateBackendAuthOAuthConfig(JsonView jsonValue)
-  : CreateBackendAuthOAuthConfig()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ CreateBackendAuthOAuthConfig& CreateBackendAuthOAuthConfig::operator =(JsonView 
   if(jsonValue.ValueExists("domainPrefix"))
   {
     m_domainPrefix = jsonValue.GetString("domainPrefix");
-
     m_domainPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthGrantType"))
   {
     m_oAuthGrantType = OAuthGrantTypeMapper::GetOAuthGrantTypeForName(jsonValue.GetString("oAuthGrantType"));
-
     m_oAuthGrantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthScopes"))
   {
     Aws::Utils::Array<JsonView> oAuthScopesJsonList = jsonValue.GetArray("oAuthScopes");
@@ -60,7 +44,6 @@ CreateBackendAuthOAuthConfig& CreateBackendAuthOAuthConfig::operator =(JsonView 
     }
     m_oAuthScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redirectSignInURIs"))
   {
     Aws::Utils::Array<JsonView> redirectSignInURIsJsonList = jsonValue.GetArray("redirectSignInURIs");
@@ -70,7 +53,6 @@ CreateBackendAuthOAuthConfig& CreateBackendAuthOAuthConfig::operator =(JsonView 
     }
     m_redirectSignInURIsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redirectSignOutURIs"))
   {
     Aws::Utils::Array<JsonView> redirectSignOutURIsJsonList = jsonValue.GetArray("redirectSignOutURIs");
@@ -80,14 +62,11 @@ CreateBackendAuthOAuthConfig& CreateBackendAuthOAuthConfig::operator =(JsonView 
     }
     m_redirectSignOutURIsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("socialProviderSettings"))
   {
     m_socialProviderSettings = jsonValue.GetObject("socialProviderSettings");
-
     m_socialProviderSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

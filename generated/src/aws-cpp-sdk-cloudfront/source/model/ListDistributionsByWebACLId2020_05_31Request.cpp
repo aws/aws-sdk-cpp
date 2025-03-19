@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDistributionsByWebACLId2020_05_31Request::ListDistributionsByWebACLId2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_webACLIdHasBeenSet(false)
-{
-}
 
 Aws::String ListDistributionsByWebACLId2020_05_31Request::SerializePayload() const
 {

@@ -33,7 +33,7 @@ namespace Model
   class Evidence
   {
   public:
-    AWS_GUARDDUTY_API Evidence();
+    AWS_GUARDDUTY_API Evidence() = default;
     AWS_GUARDDUTY_API Evidence(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Evidence& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of threat intelligence details related to the evidence.</p>
      */
-    inline const Aws::Vector<ThreatIntelligenceDetail>& GetThreatIntelligenceDetails() const{ return m_threatIntelligenceDetails; }
+    inline const Aws::Vector<ThreatIntelligenceDetail>& GetThreatIntelligenceDetails() const { return m_threatIntelligenceDetails; }
     inline bool ThreatIntelligenceDetailsHasBeenSet() const { return m_threatIntelligenceDetailsHasBeenSet; }
-    inline void SetThreatIntelligenceDetails(const Aws::Vector<ThreatIntelligenceDetail>& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails = value; }
-    inline void SetThreatIntelligenceDetails(Aws::Vector<ThreatIntelligenceDetail>&& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails = std::move(value); }
-    inline Evidence& WithThreatIntelligenceDetails(const Aws::Vector<ThreatIntelligenceDetail>& value) { SetThreatIntelligenceDetails(value); return *this;}
-    inline Evidence& WithThreatIntelligenceDetails(Aws::Vector<ThreatIntelligenceDetail>&& value) { SetThreatIntelligenceDetails(std::move(value)); return *this;}
-    inline Evidence& AddThreatIntelligenceDetails(const ThreatIntelligenceDetail& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails.push_back(value); return *this; }
-    inline Evidence& AddThreatIntelligenceDetails(ThreatIntelligenceDetail&& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails.push_back(std::move(value)); return *this; }
+    template<typename ThreatIntelligenceDetailsT = Aws::Vector<ThreatIntelligenceDetail>>
+    void SetThreatIntelligenceDetails(ThreatIntelligenceDetailsT&& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails = std::forward<ThreatIntelligenceDetailsT>(value); }
+    template<typename ThreatIntelligenceDetailsT = Aws::Vector<ThreatIntelligenceDetail>>
+    Evidence& WithThreatIntelligenceDetails(ThreatIntelligenceDetailsT&& value) { SetThreatIntelligenceDetails(std::forward<ThreatIntelligenceDetailsT>(value)); return *this;}
+    template<typename ThreatIntelligenceDetailsT = ThreatIntelligenceDetail>
+    Evidence& AddThreatIntelligenceDetails(ThreatIntelligenceDetailsT&& value) { m_threatIntelligenceDetailsHasBeenSet = true; m_threatIntelligenceDetails.emplace_back(std::forward<ThreatIntelligenceDetailsT>(value)); return *this; }
     ///@}
   private:
 

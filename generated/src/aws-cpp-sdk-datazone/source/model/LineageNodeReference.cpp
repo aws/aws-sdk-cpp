@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LineageNodeReference::LineageNodeReference() : 
-    m_eventTimestampHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 LineageNodeReference::LineageNodeReference(JsonView jsonValue)
-  : LineageNodeReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LineageNodeReference& LineageNodeReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventTimestamp"))
   {
     m_eventTimestamp = jsonValue.GetDouble("eventTimestamp");
-
     m_eventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

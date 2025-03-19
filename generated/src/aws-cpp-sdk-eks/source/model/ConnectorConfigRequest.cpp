@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ConnectorConfigRequest::ConnectorConfigRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_provider(ConnectorConfigProvider::NOT_SET),
-    m_providerHasBeenSet(false)
-{
-}
-
 ConnectorConfigRequest::ConnectorConfigRequest(JsonView jsonValue)
-  : ConnectorConfigRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConnectorConfigRequest& ConnectorConfigRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = ConnectorConfigProviderMapper::GetConnectorConfigProviderForName(jsonValue.GetString("provider"));
-
     m_providerHasBeenSet = true;
   }
-
   return *this;
 }
 

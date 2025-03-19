@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-GraphLink::GraphLink() : 
-    m_referenceTypeHasBeenSet(false),
-    m_sourceTraceIdHasBeenSet(false),
-    m_destinationTraceIdsHasBeenSet(false)
-{
-}
-
 GraphLink::GraphLink(JsonView jsonValue)
-  : GraphLink()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GraphLink& GraphLink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReferenceType"))
   {
     m_referenceType = jsonValue.GetString("ReferenceType");
-
     m_referenceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceTraceId"))
   {
     m_sourceTraceId = jsonValue.GetString("SourceTraceId");
-
     m_sourceTraceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationTraceIds"))
   {
     Aws::Utils::Array<JsonView> destinationTraceIdsJsonList = jsonValue.GetArray("DestinationTraceIds");
@@ -56,7 +44,6 @@ GraphLink& GraphLink::operator =(JsonView jsonValue)
     }
     m_destinationTraceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

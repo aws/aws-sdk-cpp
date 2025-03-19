@@ -33,7 +33,7 @@ namespace Model
   class Submission
   {
   public:
-    AWS_QAPPS_API Submission();
+    AWS_QAPPS_API Submission() = default;
     AWS_QAPPS_API Submission(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Submission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,36 @@ namespace Model
     /**
      * <p>The data submitted by the user.</p>
      */
-    inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
+    inline Aws::Utils::DocumentView GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline Submission& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-    inline Submission& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::Document>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::Document>
+    Submission& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the submission.</p>
      */
-    inline const Aws::String& GetSubmissionId() const{ return m_submissionId; }
+    inline const Aws::String& GetSubmissionId() const { return m_submissionId; }
     inline bool SubmissionIdHasBeenSet() const { return m_submissionIdHasBeenSet; }
-    inline void SetSubmissionId(const Aws::String& value) { m_submissionIdHasBeenSet = true; m_submissionId = value; }
-    inline void SetSubmissionId(Aws::String&& value) { m_submissionIdHasBeenSet = true; m_submissionId = std::move(value); }
-    inline void SetSubmissionId(const char* value) { m_submissionIdHasBeenSet = true; m_submissionId.assign(value); }
-    inline Submission& WithSubmissionId(const Aws::String& value) { SetSubmissionId(value); return *this;}
-    inline Submission& WithSubmissionId(Aws::String&& value) { SetSubmissionId(std::move(value)); return *this;}
-    inline Submission& WithSubmissionId(const char* value) { SetSubmissionId(value); return *this;}
+    template<typename SubmissionIdT = Aws::String>
+    void SetSubmissionId(SubmissionIdT&& value) { m_submissionIdHasBeenSet = true; m_submissionId = std::forward<SubmissionIdT>(value); }
+    template<typename SubmissionIdT = Aws::String>
+    Submission& WithSubmissionId(SubmissionIdT&& value) { SetSubmissionId(std::forward<SubmissionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the card is submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline Submission& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline Submission& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    Submission& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -84,7 +82,7 @@ namespace Model
     Aws::String m_submissionId;
     bool m_submissionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

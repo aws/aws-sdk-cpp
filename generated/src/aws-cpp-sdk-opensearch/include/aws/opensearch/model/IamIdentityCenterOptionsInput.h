@@ -31,7 +31,7 @@ namespace Model
   class IamIdentityCenterOptionsInput
   {
   public:
-    AWS_OPENSEARCHSERVICE_API IamIdentityCenterOptionsInput();
+    AWS_OPENSEARCHSERVICE_API IamIdentityCenterOptionsInput() = default;
     AWS_OPENSEARCHSERVICE_API IamIdentityCenterOptionsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API IamIdentityCenterOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Enable/disable settings for IAM Identity Center.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline IamIdentityCenterOptionsInput& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -49,32 +49,28 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetIamIdentityCenterInstanceArn() const{ return m_iamIdentityCenterInstanceArn; }
+    inline const Aws::String& GetIamIdentityCenterInstanceArn() const { return m_iamIdentityCenterInstanceArn; }
     inline bool IamIdentityCenterInstanceArnHasBeenSet() const { return m_iamIdentityCenterInstanceArnHasBeenSet; }
-    inline void SetIamIdentityCenterInstanceArn(const Aws::String& value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn = value; }
-    inline void SetIamIdentityCenterInstanceArn(Aws::String&& value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn = std::move(value); }
-    inline void SetIamIdentityCenterInstanceArn(const char* value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn.assign(value); }
-    inline IamIdentityCenterOptionsInput& WithIamIdentityCenterInstanceArn(const Aws::String& value) { SetIamIdentityCenterInstanceArn(value); return *this;}
-    inline IamIdentityCenterOptionsInput& WithIamIdentityCenterInstanceArn(Aws::String&& value) { SetIamIdentityCenterInstanceArn(std::move(value)); return *this;}
-    inline IamIdentityCenterOptionsInput& WithIamIdentityCenterInstanceArn(const char* value) { SetIamIdentityCenterInstanceArn(value); return *this;}
+    template<typename IamIdentityCenterInstanceArnT = Aws::String>
+    void SetIamIdentityCenterInstanceArn(IamIdentityCenterInstanceArnT&& value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn = std::forward<IamIdentityCenterInstanceArnT>(value); }
+    template<typename IamIdentityCenterInstanceArnT = Aws::String>
+    IamIdentityCenterOptionsInput& WithIamIdentityCenterInstanceArn(IamIdentityCenterInstanceArnT&& value) { SetIamIdentityCenterInstanceArn(std::forward<IamIdentityCenterInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon Resource Name of IAM Identity Center's application.</p>
      */
-    inline const Aws::String& GetIamRoleForIdentityCenterApplicationArn() const{ return m_iamRoleForIdentityCenterApplicationArn; }
+    inline const Aws::String& GetIamRoleForIdentityCenterApplicationArn() const { return m_iamRoleForIdentityCenterApplicationArn; }
     inline bool IamRoleForIdentityCenterApplicationArnHasBeenSet() const { return m_iamRoleForIdentityCenterApplicationArnHasBeenSet; }
-    inline void SetIamRoleForIdentityCenterApplicationArn(const Aws::String& value) { m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true; m_iamRoleForIdentityCenterApplicationArn = value; }
-    inline void SetIamRoleForIdentityCenterApplicationArn(Aws::String&& value) { m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true; m_iamRoleForIdentityCenterApplicationArn = std::move(value); }
-    inline void SetIamRoleForIdentityCenterApplicationArn(const char* value) { m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true; m_iamRoleForIdentityCenterApplicationArn.assign(value); }
-    inline IamIdentityCenterOptionsInput& WithIamRoleForIdentityCenterApplicationArn(const Aws::String& value) { SetIamRoleForIdentityCenterApplicationArn(value); return *this;}
-    inline IamIdentityCenterOptionsInput& WithIamRoleForIdentityCenterApplicationArn(Aws::String&& value) { SetIamRoleForIdentityCenterApplicationArn(std::move(value)); return *this;}
-    inline IamIdentityCenterOptionsInput& WithIamRoleForIdentityCenterApplicationArn(const char* value) { SetIamRoleForIdentityCenterApplicationArn(value); return *this;}
+    template<typename IamRoleForIdentityCenterApplicationArnT = Aws::String>
+    void SetIamRoleForIdentityCenterApplicationArn(IamRoleForIdentityCenterApplicationArnT&& value) { m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true; m_iamRoleForIdentityCenterApplicationArn = std::forward<IamRoleForIdentityCenterApplicationArnT>(value); }
+    template<typename IamRoleForIdentityCenterApplicationArnT = Aws::String>
+    IamIdentityCenterOptionsInput& WithIamRoleForIdentityCenterApplicationArn(IamRoleForIdentityCenterApplicationArnT&& value) { SetIamRoleForIdentityCenterApplicationArn(std::forward<IamRoleForIdentityCenterApplicationArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_iamIdentityCenterInstanceArn;

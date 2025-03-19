@@ -12,15 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProfileRequest::UpdateProfileRequest() : 
-    m_profileIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_phoneHasBeenSet(false),
-    m_businessNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

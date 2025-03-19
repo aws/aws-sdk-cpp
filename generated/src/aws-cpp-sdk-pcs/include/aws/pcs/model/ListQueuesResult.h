@@ -29,7 +29,7 @@ namespace Model
   class ListQueuesResult
   {
   public:
-    AWS_PCS_API ListQueuesResult();
+    AWS_PCS_API ListQueuesResult() = default;
     AWS_PCS_API ListQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PCS_API ListQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of queues associated with the cluster.</p>
      */
-    inline const Aws::Vector<QueueSummary>& GetQueues() const{ return m_queues; }
-    inline void SetQueues(const Aws::Vector<QueueSummary>& value) { m_queues = value; }
-    inline void SetQueues(Aws::Vector<QueueSummary>&& value) { m_queues = std::move(value); }
-    inline ListQueuesResult& WithQueues(const Aws::Vector<QueueSummary>& value) { SetQueues(value); return *this;}
-    inline ListQueuesResult& WithQueues(Aws::Vector<QueueSummary>&& value) { SetQueues(std::move(value)); return *this;}
-    inline ListQueuesResult& AddQueues(const QueueSummary& value) { m_queues.push_back(value); return *this; }
-    inline ListQueuesResult& AddQueues(QueueSummary&& value) { m_queues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueueSummary>& GetQueues() const { return m_queues; }
+    template<typename QueuesT = Aws::Vector<QueueSummary>>
+    void SetQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues = std::forward<QueuesT>(value); }
+    template<typename QueuesT = Aws::Vector<QueueSummary>>
+    ListQueuesResult& WithQueues(QueuesT&& value) { SetQueues(std::forward<QueuesT>(value)); return *this;}
+    template<typename QueuesT = QueueSummary>
+    ListQueuesResult& AddQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues.emplace_back(std::forward<QueuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * after 24 hours. Using an expired pagination token returns an <code>HTTP 400
      * InvalidToken</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListQueuesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQueuesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQueuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQueuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQueuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQueuesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QueueSummary> m_queues;
+    bool m_queuesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

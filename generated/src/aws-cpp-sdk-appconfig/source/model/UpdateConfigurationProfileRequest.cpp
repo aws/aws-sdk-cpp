@@ -12,17 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationProfileRequest::UpdateConfigurationProfileRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_retrievalRoleArnHasBeenSet(false),
-    m_validatorsHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationProfileRequest::SerializePayload() const
 {
   JsonValue payload;

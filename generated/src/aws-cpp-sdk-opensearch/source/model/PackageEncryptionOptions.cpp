@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PackageEncryptionOptions::PackageEncryptionOptions() : 
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_encryptionEnabled(false),
-    m_encryptionEnabledHasBeenSet(false)
-{
-}
-
 PackageEncryptionOptions::PackageEncryptionOptions(JsonView jsonValue)
-  : PackageEncryptionOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PackageEncryptionOptions& PackageEncryptionOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("KmsKeyIdentifier"))
   {
     m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
-
     m_kmsKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionEnabled"))
   {
     m_encryptionEnabled = jsonValue.GetBool("EncryptionEnabled");
-
     m_encryptionEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-FailureInfo::FailureInfo() : 
-    m_failedRecordsS3UrlHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailureInfo::FailureInfo(JsonView jsonValue)
-  : FailureInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailureInfo& FailureInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailedRecordsS3Url"))
   {
     m_failedRecordsS3Url = jsonValue.GetString("FailedRecordsS3Url");
-
     m_failedRecordsS3UrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

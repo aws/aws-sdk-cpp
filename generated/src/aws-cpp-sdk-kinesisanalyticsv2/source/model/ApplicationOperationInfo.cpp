@@ -18,18 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationOperationInfo::ApplicationOperationInfo() : 
-    m_operationHasBeenSet(false),
-    m_operationIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false)
-{
-}
-
 ApplicationOperationInfo::ApplicationOperationInfo(JsonView jsonValue)
-  : ApplicationOperationInfo()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ApplicationOperationInfo& ApplicationOperationInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = jsonValue.GetString("Operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");
-
     m_operationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationStatus"))
   {
     m_operationStatus = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("OperationStatus"));
-
     m_operationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

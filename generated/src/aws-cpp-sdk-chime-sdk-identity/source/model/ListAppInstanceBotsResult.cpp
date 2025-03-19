@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAppInstanceBotsResult::ListAppInstanceBotsResult()
-{
-}
-
 ListAppInstanceBotsResult::ListAppInstanceBotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAppInstanceBotsResult& ListAppInstanceBotsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("AppInstanceArn"))
   {
     m_appInstanceArn = jsonValue.GetString("AppInstanceArn");
-
+    m_appInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppInstanceBots"))
   {
     Aws::Utils::Array<JsonView> appInstanceBotsJsonList = jsonValue.GetArray("AppInstanceBots");
@@ -42,20 +37,20 @@ ListAppInstanceBotsResult& ListAppInstanceBotsResult::operator =(const Aws::Amaz
     {
       m_appInstanceBots.push_back(appInstanceBotsJsonList[appInstanceBotsIndex].AsObject());
     }
+    m_appInstanceBotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

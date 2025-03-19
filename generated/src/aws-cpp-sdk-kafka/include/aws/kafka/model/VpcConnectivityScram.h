@@ -32,7 +32,7 @@ namespace Model
   class VpcConnectivityScram
   {
   public:
-    AWS_KAFKA_API VpcConnectivityScram();
+    AWS_KAFKA_API VpcConnectivityScram() = default;
     AWS_KAFKA_API VpcConnectivityScram(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API VpcConnectivityScram& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * connectivity.</p>
          
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VpcConnectivityScram& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

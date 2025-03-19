@@ -33,7 +33,7 @@ namespace Model
   class ColumnGroup
   {
   public:
-    AWS_QUICKSIGHT_API ColumnGroup();
+    AWS_QUICKSIGHT_API ColumnGroup() = default;
     AWS_QUICKSIGHT_API ColumnGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColumnGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Geospatial column group that denotes a hierarchy.</p>
      */
-    inline const GeoSpatialColumnGroup& GetGeoSpatialColumnGroup() const{ return m_geoSpatialColumnGroup; }
+    inline const GeoSpatialColumnGroup& GetGeoSpatialColumnGroup() const { return m_geoSpatialColumnGroup; }
     inline bool GeoSpatialColumnGroupHasBeenSet() const { return m_geoSpatialColumnGroupHasBeenSet; }
-    inline void SetGeoSpatialColumnGroup(const GeoSpatialColumnGroup& value) { m_geoSpatialColumnGroupHasBeenSet = true; m_geoSpatialColumnGroup = value; }
-    inline void SetGeoSpatialColumnGroup(GeoSpatialColumnGroup&& value) { m_geoSpatialColumnGroupHasBeenSet = true; m_geoSpatialColumnGroup = std::move(value); }
-    inline ColumnGroup& WithGeoSpatialColumnGroup(const GeoSpatialColumnGroup& value) { SetGeoSpatialColumnGroup(value); return *this;}
-    inline ColumnGroup& WithGeoSpatialColumnGroup(GeoSpatialColumnGroup&& value) { SetGeoSpatialColumnGroup(std::move(value)); return *this;}
+    template<typename GeoSpatialColumnGroupT = GeoSpatialColumnGroup>
+    void SetGeoSpatialColumnGroup(GeoSpatialColumnGroupT&& value) { m_geoSpatialColumnGroupHasBeenSet = true; m_geoSpatialColumnGroup = std::forward<GeoSpatialColumnGroupT>(value); }
+    template<typename GeoSpatialColumnGroupT = GeoSpatialColumnGroup>
+    ColumnGroup& WithGeoSpatialColumnGroup(GeoSpatialColumnGroupT&& value) { SetGeoSpatialColumnGroup(std::forward<GeoSpatialColumnGroupT>(value)); return *this;}
     ///@}
   private:
 

@@ -40,7 +40,7 @@ namespace Model
   class EcsTaskProperties
   {
   public:
-    AWS_BATCH_API EcsTaskProperties();
+    AWS_BATCH_API EcsTaskProperties() = default;
     AWS_BATCH_API EcsTaskProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EcsTaskProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
     /**
      * <p>This object is a list of containers.</p>
      */
-    inline const Aws::Vector<TaskContainerProperties>& GetContainers() const{ return m_containers; }
+    inline const Aws::Vector<TaskContainerProperties>& GetContainers() const { return m_containers; }
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-    inline void SetContainers(const Aws::Vector<TaskContainerProperties>& value) { m_containersHasBeenSet = true; m_containers = value; }
-    inline void SetContainers(Aws::Vector<TaskContainerProperties>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-    inline EcsTaskProperties& WithContainers(const Aws::Vector<TaskContainerProperties>& value) { SetContainers(value); return *this;}
-    inline EcsTaskProperties& WithContainers(Aws::Vector<TaskContainerProperties>&& value) { SetContainers(std::move(value)); return *this;}
-    inline EcsTaskProperties& AddContainers(const TaskContainerProperties& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
-    inline EcsTaskProperties& AddContainers(TaskContainerProperties&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+    template<typename ContainersT = Aws::Vector<TaskContainerProperties>>
+    void SetContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers = std::forward<ContainersT>(value); }
+    template<typename ContainersT = Aws::Vector<TaskContainerProperties>>
+    EcsTaskProperties& WithContainers(ContainersT&& value) { SetContainers(std::forward<ContainersT>(value)); return *this;}
+    template<typename ContainersT = TaskContainerProperties>
+    EcsTaskProperties& AddContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers.emplace_back(std::forward<ContainersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,12 +66,12 @@ namespace Model
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate.</p>
      */
-    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+    inline const EphemeralStorage& GetEphemeralStorage() const { return m_ephemeralStorage; }
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
-    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
-    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
-    inline EcsTaskProperties& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
-    inline EcsTaskProperties& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+    template<typename EphemeralStorageT = EphemeralStorage>
+    void SetEphemeralStorage(EphemeralStorageT&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::forward<EphemeralStorageT>(value); }
+    template<typename EphemeralStorageT = EphemeralStorage>
+    EcsTaskProperties& WithEphemeralStorage(EphemeralStorageT&& value) { SetEphemeralStorage(std::forward<EphemeralStorageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +82,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch
      * execution IAM role</a> in the <i>Batch User Guide</i>.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline EcsTaskProperties& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline EcsTaskProperties& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline EcsTaskProperties& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    EcsTaskProperties& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +101,12 @@ namespace Model
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline EcsTaskProperties& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline EcsTaskProperties& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline EcsTaskProperties& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    EcsTaskProperties& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +125,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
      * settings</a> in the Docker run reference.</p>
      */
-    inline const Aws::String& GetIpcMode() const{ return m_ipcMode; }
+    inline const Aws::String& GetIpcMode() const { return m_ipcMode; }
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
-    inline void SetIpcMode(const Aws::String& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
-    inline void SetIpcMode(Aws::String&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
-    inline void SetIpcMode(const char* value) { m_ipcModeHasBeenSet = true; m_ipcMode.assign(value); }
-    inline EcsTaskProperties& WithIpcMode(const Aws::String& value) { SetIpcMode(value); return *this;}
-    inline EcsTaskProperties& WithIpcMode(Aws::String&& value) { SetIpcMode(std::move(value)); return *this;}
-    inline EcsTaskProperties& WithIpcMode(const char* value) { SetIpcMode(value); return *this;}
+    template<typename IpcModeT = Aws::String>
+    void SetIpcMode(IpcModeT&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::forward<IpcModeT>(value); }
+    template<typename IpcModeT = Aws::String>
+    EcsTaskProperties& WithIpcMode(IpcModeT&& value) { SetIpcMode(std::forward<IpcModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +140,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ContainerProperties.html">ContainerProperties:jobRoleArn</a>.</p>
      * 
      */
-    inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
+    inline const Aws::String& GetTaskRoleArn() const { return m_taskRoleArn; }
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
-    inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
-    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
-    inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
-    inline EcsTaskProperties& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
-    inline EcsTaskProperties& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
-    inline EcsTaskProperties& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+    template<typename TaskRoleArnT = Aws::String>
+    void SetTaskRoleArn(TaskRoleArnT&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::forward<TaskRoleArnT>(value); }
+    template<typename TaskRoleArnT = Aws::String>
+    EcsTaskProperties& WithTaskRoleArn(TaskRoleArnT&& value) { SetTaskRoleArn(std::forward<TaskRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +163,12 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
      * settings</a> in the Docker run reference.</p>
      */
-    inline const Aws::String& GetPidMode() const{ return m_pidMode; }
+    inline const Aws::String& GetPidMode() const { return m_pidMode; }
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
-    inline void SetPidMode(const Aws::String& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
-    inline void SetPidMode(Aws::String&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
-    inline void SetPidMode(const char* value) { m_pidModeHasBeenSet = true; m_pidMode.assign(value); }
-    inline EcsTaskProperties& WithPidMode(const Aws::String& value) { SetPidMode(value); return *this;}
-    inline EcsTaskProperties& WithPidMode(Aws::String&& value) { SetPidMode(std::move(value)); return *this;}
-    inline EcsTaskProperties& WithPidMode(const char* value) { SetPidMode(value); return *this;}
+    template<typename PidModeT = Aws::String>
+    void SetPidMode(PidModeT&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::forward<PidModeT>(value); }
+    template<typename PidModeT = Aws::String>
+    EcsTaskProperties& WithPidMode(PidModeT&& value) { SetPidMode(std::forward<PidModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,12 +177,12 @@ namespace Model
      * Jobs that are running on Amazon EC2 resources must not specify this
      * parameter.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline EcsTaskProperties& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline EcsTaskProperties& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    EcsTaskProperties& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,26 +190,26 @@ namespace Model
      * <p>An object that represents the compute environment architecture for Batch jobs
      * on Fargate.</p>
      */
-    inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
+    inline const RuntimePlatform& GetRuntimePlatform() const { return m_runtimePlatform; }
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
-    inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
-    inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
-    inline EcsTaskProperties& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
-    inline EcsTaskProperties& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+    template<typename RuntimePlatformT = RuntimePlatform>
+    void SetRuntimePlatform(RuntimePlatformT&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::forward<RuntimePlatformT>(value); }
+    template<typename RuntimePlatformT = RuntimePlatform>
+    EcsTaskProperties& WithRuntimePlatform(RuntimePlatformT&& value) { SetRuntimePlatform(std::forward<RuntimePlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of volumes that are associated with the job.</p>
      */
-    inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+    inline const Aws::Vector<Volume>& GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
-    inline EcsTaskProperties& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
-    inline EcsTaskProperties& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
-    inline EcsTaskProperties& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
-    inline EcsTaskProperties& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    void SetVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes = std::forward<VolumesT>(value); }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    EcsTaskProperties& WithVolumes(VolumesT&& value) { SetVolumes(std::forward<VolumesT>(value)); return *this;}
+    template<typename VolumesT = Volume>
+    EcsTaskProperties& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingProfileReference::RoutingProfileReference() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 RoutingProfileReference::RoutingProfileReference(JsonView jsonValue)
-  : RoutingProfileReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RoutingProfileReference& RoutingProfileReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

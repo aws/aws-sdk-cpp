@@ -18,24 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline() : 
-    m_queryQueueTimeInMillis(0),
-    m_queryQueueTimeInMillisHasBeenSet(false),
-    m_servicePreProcessingTimeInMillis(0),
-    m_servicePreProcessingTimeInMillisHasBeenSet(false),
-    m_queryPlanningTimeInMillis(0),
-    m_queryPlanningTimeInMillisHasBeenSet(false),
-    m_engineExecutionTimeInMillis(0),
-    m_engineExecutionTimeInMillisHasBeenSet(false),
-    m_serviceProcessingTimeInMillis(0),
-    m_serviceProcessingTimeInMillisHasBeenSet(false),
-    m_totalExecutionTimeInMillis(0),
-    m_totalExecutionTimeInMillisHasBeenSet(false)
-{
-}
-
 QueryRuntimeStatisticsTimeline::QueryRuntimeStatisticsTimeline(JsonView jsonValue)
-  : QueryRuntimeStatisticsTimeline()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ QueryRuntimeStatisticsTimeline& QueryRuntimeStatisticsTimeline::operator =(JsonV
   if(jsonValue.ValueExists("QueryQueueTimeInMillis"))
   {
     m_queryQueueTimeInMillis = jsonValue.GetInt64("QueryQueueTimeInMillis");
-
     m_queryQueueTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServicePreProcessingTimeInMillis"))
   {
     m_servicePreProcessingTimeInMillis = jsonValue.GetInt64("ServicePreProcessingTimeInMillis");
-
     m_servicePreProcessingTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryPlanningTimeInMillis"))
   {
     m_queryPlanningTimeInMillis = jsonValue.GetInt64("QueryPlanningTimeInMillis");
-
     m_queryPlanningTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineExecutionTimeInMillis"))
   {
     m_engineExecutionTimeInMillis = jsonValue.GetInt64("EngineExecutionTimeInMillis");
-
     m_engineExecutionTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceProcessingTimeInMillis"))
   {
     m_serviceProcessingTimeInMillis = jsonValue.GetInt64("ServiceProcessingTimeInMillis");
-
     m_serviceProcessingTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalExecutionTimeInMillis"))
   {
     m_totalExecutionTimeInMillis = jsonValue.GetInt64("TotalExecutionTimeInMillis");
-
     m_totalExecutionTimeInMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

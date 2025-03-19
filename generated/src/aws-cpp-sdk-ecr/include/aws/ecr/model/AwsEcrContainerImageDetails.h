@@ -34,7 +34,7 @@ namespace Model
   class AwsEcrContainerImageDetails
   {
   public:
-    AWS_ECR_API AwsEcrContainerImageDetails();
+    AWS_ECR_API AwsEcrContainerImageDetails() = default;
     AWS_ECR_API AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,111 +44,98 @@ namespace Model
     /**
      * <p>The architecture of the Amazon ECR container image.</p>
      */
-    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
+    inline const Aws::String& GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-    inline AwsEcrContainerImageDetails& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    template<typename ArchitectureT = Aws::String>
+    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
+    template<typename ArchitectureT = Aws::String>
+    AwsEcrContainerImageDetails& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image author of the Amazon ECR container image.</p>
      */
-    inline const Aws::String& GetAuthor() const{ return m_author; }
+    inline const Aws::String& GetAuthor() const { return m_author; }
     inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
-    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
-    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
-    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
-    inline AwsEcrContainerImageDetails& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+    template<typename AuthorT = Aws::String>
+    void SetAuthor(AuthorT&& value) { m_authorHasBeenSet = true; m_author = std::forward<AuthorT>(value); }
+    template<typename AuthorT = Aws::String>
+    AwsEcrContainerImageDetails& WithAuthor(AuthorT&& value) { SetAuthor(std::forward<AuthorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image hash of the Amazon ECR container image.</p>
      */
-    inline const Aws::String& GetImageHash() const{ return m_imageHash; }
+    inline const Aws::String& GetImageHash() const { return m_imageHash; }
     inline bool ImageHashHasBeenSet() const { return m_imageHashHasBeenSet; }
-    inline void SetImageHash(const Aws::String& value) { m_imageHashHasBeenSet = true; m_imageHash = value; }
-    inline void SetImageHash(Aws::String&& value) { m_imageHashHasBeenSet = true; m_imageHash = std::move(value); }
-    inline void SetImageHash(const char* value) { m_imageHashHasBeenSet = true; m_imageHash.assign(value); }
-    inline AwsEcrContainerImageDetails& WithImageHash(const Aws::String& value) { SetImageHash(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithImageHash(Aws::String&& value) { SetImageHash(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& WithImageHash(const char* value) { SetImageHash(value); return *this;}
+    template<typename ImageHashT = Aws::String>
+    void SetImageHash(ImageHashT&& value) { m_imageHashHasBeenSet = true; m_imageHash = std::forward<ImageHashT>(value); }
+    template<typename ImageHashT = Aws::String>
+    AwsEcrContainerImageDetails& WithImageHash(ImageHashT&& value) { SetImageHash(std::forward<ImageHashT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image tags attached to the Amazon ECR container image.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageTags() const{ return m_imageTags; }
+    inline const Aws::Vector<Aws::String>& GetImageTags() const { return m_imageTags; }
     inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
-    inline void SetImageTags(const Aws::Vector<Aws::String>& value) { m_imageTagsHasBeenSet = true; m_imageTags = value; }
-    inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::move(value); }
-    inline AwsEcrContainerImageDetails& WithImageTags(const Aws::Vector<Aws::String>& value) { SetImageTags(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& AddImageTags(const Aws::String& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
-    inline AwsEcrContainerImageDetails& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(std::move(value)); return *this; }
-    inline AwsEcrContainerImageDetails& AddImageTags(const char* value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    void SetImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::forward<ImageTagsT>(value); }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    AwsEcrContainerImageDetails& WithImageTags(ImageTagsT&& value) { SetImageTags(std::forward<ImageTagsT>(value)); return *this;}
+    template<typename ImageTagsT = Aws::String>
+    AwsEcrContainerImageDetails& AddImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags.emplace_back(std::forward<ImageTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The platform of the Amazon ECR container image.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline AwsEcrContainerImageDetails& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    AwsEcrContainerImageDetails& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the Amazon ECR container image was pushed.</p>
      */
-    inline const Aws::Utils::DateTime& GetPushedAt() const{ return m_pushedAt; }
+    inline const Aws::Utils::DateTime& GetPushedAt() const { return m_pushedAt; }
     inline bool PushedAtHasBeenSet() const { return m_pushedAtHasBeenSet; }
-    inline void SetPushedAt(const Aws::Utils::DateTime& value) { m_pushedAtHasBeenSet = true; m_pushedAt = value; }
-    inline void SetPushedAt(Aws::Utils::DateTime&& value) { m_pushedAtHasBeenSet = true; m_pushedAt = std::move(value); }
-    inline AwsEcrContainerImageDetails& WithPushedAt(const Aws::Utils::DateTime& value) { SetPushedAt(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithPushedAt(Aws::Utils::DateTime&& value) { SetPushedAt(std::move(value)); return *this;}
+    template<typename PushedAtT = Aws::Utils::DateTime>
+    void SetPushedAt(PushedAtT&& value) { m_pushedAtHasBeenSet = true; m_pushedAt = std::forward<PushedAtT>(value); }
+    template<typename PushedAtT = Aws::Utils::DateTime>
+    AwsEcrContainerImageDetails& WithPushedAt(PushedAtT&& value) { SetPushedAt(std::forward<PushedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The registry the Amazon ECR container image belongs to.</p>
      */
-    inline const Aws::String& GetRegistry() const{ return m_registry; }
+    inline const Aws::String& GetRegistry() const { return m_registry; }
     inline bool RegistryHasBeenSet() const { return m_registryHasBeenSet; }
-    inline void SetRegistry(const Aws::String& value) { m_registryHasBeenSet = true; m_registry = value; }
-    inline void SetRegistry(Aws::String&& value) { m_registryHasBeenSet = true; m_registry = std::move(value); }
-    inline void SetRegistry(const char* value) { m_registryHasBeenSet = true; m_registry.assign(value); }
-    inline AwsEcrContainerImageDetails& WithRegistry(const Aws::String& value) { SetRegistry(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithRegistry(Aws::String&& value) { SetRegistry(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& WithRegistry(const char* value) { SetRegistry(value); return *this;}
+    template<typename RegistryT = Aws::String>
+    void SetRegistry(RegistryT&& value) { m_registryHasBeenSet = true; m_registry = std::forward<RegistryT>(value); }
+    template<typename RegistryT = Aws::String>
+    AwsEcrContainerImageDetails& WithRegistry(RegistryT&& value) { SetRegistry(std::forward<RegistryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository the Amazon ECR container image resides in.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline AwsEcrContainerImageDetails& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline AwsEcrContainerImageDetails& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline AwsEcrContainerImageDetails& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    AwsEcrContainerImageDetails& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -167,7 +154,7 @@ namespace Model
     Aws::String m_platform;
     bool m_platformHasBeenSet = false;
 
-    Aws::Utils::DateTime m_pushedAt;
+    Aws::Utils::DateTime m_pushedAt{};
     bool m_pushedAtHasBeenSet = false;
 
     Aws::String m_registry;

@@ -32,7 +32,7 @@ namespace Model
   class DescribeEphemerisResult
   {
   public:
-    AWS_GROUNDSTATION_API DescribeEphemerisResult();
+    AWS_GROUNDSTATION_API DescribeEphemerisResult() = default;
     AWS_GROUNDSTATION_API DescribeEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API DescribeEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>The time the ephemeris was uploaded in UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeEphemerisResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeEphemerisResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeEphemerisResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether or not the ephemeris is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
-    inline void SetEnabled(bool value) { m_enabled = value; }
+    inline bool GetEnabled() const { return m_enabled; }
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline DescribeEphemerisResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
 
@@ -61,13 +61,11 @@ namespace Model
     /**
      * <p>The AWS Ground Station ephemeris ID.</p>
      */
-    inline const Aws::String& GetEphemerisId() const{ return m_ephemerisId; }
-    inline void SetEphemerisId(const Aws::String& value) { m_ephemerisId = value; }
-    inline void SetEphemerisId(Aws::String&& value) { m_ephemerisId = std::move(value); }
-    inline void SetEphemerisId(const char* value) { m_ephemerisId.assign(value); }
-    inline DescribeEphemerisResult& WithEphemerisId(const Aws::String& value) { SetEphemerisId(value); return *this;}
-    inline DescribeEphemerisResult& WithEphemerisId(Aws::String&& value) { SetEphemerisId(std::move(value)); return *this;}
-    inline DescribeEphemerisResult& WithEphemerisId(const char* value) { SetEphemerisId(value); return *this;}
+    inline const Aws::String& GetEphemerisId() const { return m_ephemerisId; }
+    template<typename EphemerisIdT = Aws::String>
+    void SetEphemerisId(EphemerisIdT&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::forward<EphemerisIdT>(value); }
+    template<typename EphemerisIdT = Aws::String>
+    DescribeEphemerisResult& WithEphemerisId(EphemerisIdT&& value) { SetEphemerisId(std::forward<EphemerisIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,11 +73,9 @@ namespace Model
      * <p>Reason that an ephemeris failed validation. Only provided for ephemerides
      * with <code>INVALID</code> status.</p>
      */
-    inline const EphemerisInvalidReason& GetInvalidReason() const{ return m_invalidReason; }
-    inline void SetInvalidReason(const EphemerisInvalidReason& value) { m_invalidReason = value; }
-    inline void SetInvalidReason(EphemerisInvalidReason&& value) { m_invalidReason = std::move(value); }
-    inline DescribeEphemerisResult& WithInvalidReason(const EphemerisInvalidReason& value) { SetInvalidReason(value); return *this;}
-    inline DescribeEphemerisResult& WithInvalidReason(EphemerisInvalidReason&& value) { SetInvalidReason(std::move(value)); return *this;}
+    inline EphemerisInvalidReason GetInvalidReason() const { return m_invalidReason; }
+    inline void SetInvalidReason(EphemerisInvalidReason value) { m_invalidReasonHasBeenSet = true; m_invalidReason = value; }
+    inline DescribeEphemerisResult& WithInvalidReason(EphemerisInvalidReason value) { SetInvalidReason(value); return *this;}
     ///@}
 
     ///@{
@@ -87,13 +83,11 @@ namespace Model
      * <p>A name string associated with the ephemeris. Used as a human-readable
      * identifier for the ephemeris.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeEphemerisResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeEphemerisResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeEphemerisResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeEphemerisResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,8 +97,8 @@ namespace Model
      * priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or
      * greater</p>
      */
-    inline int GetPriority() const{ return m_priority; }
-    inline void SetPriority(int value) { m_priority = value; }
+    inline int GetPriority() const { return m_priority; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline DescribeEphemerisResult& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
 
@@ -112,88 +106,90 @@ namespace Model
     /**
      * <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
      */
-    inline const Aws::String& GetSatelliteId() const{ return m_satelliteId; }
-    inline void SetSatelliteId(const Aws::String& value) { m_satelliteId = value; }
-    inline void SetSatelliteId(Aws::String&& value) { m_satelliteId = std::move(value); }
-    inline void SetSatelliteId(const char* value) { m_satelliteId.assign(value); }
-    inline DescribeEphemerisResult& WithSatelliteId(const Aws::String& value) { SetSatelliteId(value); return *this;}
-    inline DescribeEphemerisResult& WithSatelliteId(Aws::String&& value) { SetSatelliteId(std::move(value)); return *this;}
-    inline DescribeEphemerisResult& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
+    inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
+    template<typename SatelliteIdT = Aws::String>
+    void SetSatelliteId(SatelliteIdT&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::forward<SatelliteIdT>(value); }
+    template<typename SatelliteIdT = Aws::String>
+    DescribeEphemerisResult& WithSatelliteId(SatelliteIdT&& value) { SetSatelliteId(std::forward<SatelliteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the ephemeris.</p>
      */
-    inline const EphemerisStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const EphemerisStatus& value) { m_status = value; }
-    inline void SetStatus(EphemerisStatus&& value) { m_status = std::move(value); }
-    inline DescribeEphemerisResult& WithStatus(const EphemerisStatus& value) { SetStatus(value); return *this;}
-    inline DescribeEphemerisResult& WithStatus(EphemerisStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline EphemerisStatus GetStatus() const { return m_status; }
+    inline void SetStatus(EphemerisStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeEphemerisResult& WithStatus(EphemerisStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Supplied ephemeris data.</p>
      */
-    inline const EphemerisTypeDescription& GetSuppliedData() const{ return m_suppliedData; }
-    inline void SetSuppliedData(const EphemerisTypeDescription& value) { m_suppliedData = value; }
-    inline void SetSuppliedData(EphemerisTypeDescription&& value) { m_suppliedData = std::move(value); }
-    inline DescribeEphemerisResult& WithSuppliedData(const EphemerisTypeDescription& value) { SetSuppliedData(value); return *this;}
-    inline DescribeEphemerisResult& WithSuppliedData(EphemerisTypeDescription&& value) { SetSuppliedData(std::move(value)); return *this;}
+    inline const EphemerisTypeDescription& GetSuppliedData() const { return m_suppliedData; }
+    template<typename SuppliedDataT = EphemerisTypeDescription>
+    void SetSuppliedData(SuppliedDataT&& value) { m_suppliedDataHasBeenSet = true; m_suppliedData = std::forward<SuppliedDataT>(value); }
+    template<typename SuppliedDataT = EphemerisTypeDescription>
+    DescribeEphemerisResult& WithSuppliedData(SuppliedDataT&& value) { SetSuppliedData(std::forward<SuppliedDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags assigned to an ephemeris.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeEphemerisResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeEphemerisResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeEphemerisResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeEphemerisResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeEphemerisResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeEphemerisResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeEphemerisResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeEphemerisResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeEphemerisResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeEphemerisResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeEphemerisResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEphemerisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEphemerisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEphemerisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEphemerisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_ephemerisId;
+    bool m_ephemerisIdHasBeenSet = false;
 
-    EphemerisInvalidReason m_invalidReason;
+    EphemerisInvalidReason m_invalidReason{EphemerisInvalidReason::NOT_SET};
+    bool m_invalidReasonHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_satelliteId;
+    bool m_satelliteIdHasBeenSet = false;
 
-    EphemerisStatus m_status;
+    EphemerisStatus m_status{EphemerisStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     EphemerisTypeDescription m_suppliedData;
+    bool m_suppliedDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

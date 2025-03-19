@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorldRequest::DescribeWorldRequest() : 
-    m_worldHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorldRequest::SerializePayload() const
 {
   JsonValue payload;

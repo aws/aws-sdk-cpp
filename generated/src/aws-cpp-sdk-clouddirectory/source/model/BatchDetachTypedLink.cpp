@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDetachTypedLink::BatchDetachTypedLink() : 
-    m_typedLinkSpecifierHasBeenSet(false)
-{
-}
-
 BatchDetachTypedLink::BatchDetachTypedLink(JsonView jsonValue)
-  : BatchDetachTypedLink()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchDetachTypedLink& BatchDetachTypedLink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");
-
     m_typedLinkSpecifierHasBeenSet = true;
   }
-
   return *this;
 }
 

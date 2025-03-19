@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantServerlessUpdateConfig::ProductionVariantServerlessUpdateConfig() : 
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false),
-    m_provisionedConcurrency(0),
-    m_provisionedConcurrencyHasBeenSet(false)
-{
-}
-
 ProductionVariantServerlessUpdateConfig::ProductionVariantServerlessUpdateConfig(JsonView jsonValue)
-  : ProductionVariantServerlessUpdateConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ProductionVariantServerlessUpdateConfig& ProductionVariantServerlessUpdateConfig
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetInteger("MaxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedConcurrency"))
   {
     m_provisionedConcurrency = jsonValue.GetInteger("ProvisionedConcurrency");
-
     m_provisionedConcurrencyHasBeenSet = true;
   }
-
   return *this;
 }
 

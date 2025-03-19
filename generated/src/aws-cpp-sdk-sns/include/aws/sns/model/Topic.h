@@ -33,7 +33,7 @@ namespace Model
   class Topic
   {
   public:
-    AWS_SNS_API Topic();
+    AWS_SNS_API Topic() = default;
     AWS_SNS_API Topic(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SNS_API Topic& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The topic's ARN.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline Topic& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline Topic& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline Topic& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    Topic& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
   private:
 

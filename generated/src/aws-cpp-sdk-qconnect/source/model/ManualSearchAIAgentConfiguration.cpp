@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ManualSearchAIAgentConfiguration::ManualSearchAIAgentConfiguration() : 
-    m_answerGenerationAIGuardrailIdHasBeenSet(false),
-    m_answerGenerationAIPromptIdHasBeenSet(false),
-    m_associationConfigurationsHasBeenSet(false),
-    m_localeHasBeenSet(false)
-{
-}
-
 ManualSearchAIAgentConfiguration::ManualSearchAIAgentConfiguration(JsonView jsonValue)
-  : ManualSearchAIAgentConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ManualSearchAIAgentConfiguration& ManualSearchAIAgentConfiguration::operator =(J
   if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
   {
     m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
-
     m_answerGenerationAIGuardrailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("answerGenerationAIPromptId"))
   {
     m_answerGenerationAIPromptId = jsonValue.GetString("answerGenerationAIPromptId");
-
     m_answerGenerationAIPromptIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationConfigurations"))
   {
     Aws::Utils::Array<JsonView> associationConfigurationsJsonList = jsonValue.GetArray("associationConfigurations");
@@ -57,14 +44,11 @@ ManualSearchAIAgentConfiguration& ManualSearchAIAgentConfiguration::operator =(J
     }
     m_associationConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locale"))
   {
     m_locale = jsonValue.GetString("locale");
-
     m_localeHasBeenSet = true;
   }
-
   return *this;
 }
 

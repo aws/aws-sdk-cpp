@@ -28,7 +28,7 @@ namespace Model
   class CreateLocationResult
   {
   public:
-    AWS_GAMELIFT_API CreateLocationResult();
+    AWS_GAMELIFT_API CreateLocationResult() = default;
     AWS_GAMELIFT_API CreateLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreateLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the custom location you created.</p>
      */
-    inline const LocationModel& GetLocation() const{ return m_location; }
-    inline void SetLocation(const LocationModel& value) { m_location = value; }
-    inline void SetLocation(LocationModel&& value) { m_location = std::move(value); }
-    inline CreateLocationResult& WithLocation(const LocationModel& value) { SetLocation(value); return *this;}
-    inline CreateLocationResult& WithLocation(LocationModel&& value) { SetLocation(std::move(value)); return *this;}
+    inline const LocationModel& GetLocation() const { return m_location; }
+    template<typename LocationT = LocationModel>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = LocationModel>
+    CreateLocationResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLocationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LocationModel m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

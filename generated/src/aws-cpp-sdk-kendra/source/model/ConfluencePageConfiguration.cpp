@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConfluencePageConfiguration::ConfluencePageConfiguration() : 
-    m_pageFieldMappingsHasBeenSet(false)
-{
-}
-
 ConfluencePageConfiguration::ConfluencePageConfiguration(JsonView jsonValue)
-  : ConfluencePageConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConfluencePageConfiguration& ConfluencePageConfiguration::operator =(JsonView js
     }
     m_pageFieldMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

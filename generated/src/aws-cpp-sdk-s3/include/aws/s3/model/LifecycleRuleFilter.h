@@ -37,7 +37,7 @@ namespace Model
   class LifecycleRuleFilter
   {
   public:
-    AWS_S3_API LifecycleRuleFilter();
+    AWS_S3_API LifecycleRuleFilter() = default;
     AWS_S3_API LifecycleRuleFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API LifecycleRuleFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,14 +53,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline LifecycleRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline LifecycleRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline LifecycleRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    LifecycleRuleFilter& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,19 +67,19 @@ namespace Model
      * apply.</p>  <p>This parameter applies to general purpose buckets only. It
      * is not supported for directory bucket lifecycle configurations.</p> 
      */
-    inline const Tag& GetTag() const{ return m_tag; }
+    inline const Tag& GetTag() const { return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-    inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
-    inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-    inline LifecycleRuleFilter& WithTag(const Tag& value) { SetTag(value); return *this;}
-    inline LifecycleRuleFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
+    template<typename TagT = Tag>
+    void SetTag(TagT&& value) { m_tagHasBeenSet = true; m_tag = std::forward<TagT>(value); }
+    template<typename TagT = Tag>
+    LifecycleRuleFilter& WithTag(TagT&& value) { SetTag(std::forward<TagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Minimum object size to which the rule applies.</p>
      */
-    inline long long GetObjectSizeGreaterThan() const{ return m_objectSizeGreaterThan; }
+    inline long long GetObjectSizeGreaterThan() const { return m_objectSizeGreaterThan; }
     inline bool ObjectSizeGreaterThanHasBeenSet() const { return m_objectSizeGreaterThanHasBeenSet; }
     inline void SetObjectSizeGreaterThan(long long value) { m_objectSizeGreaterThanHasBeenSet = true; m_objectSizeGreaterThan = value; }
     inline LifecycleRuleFilter& WithObjectSizeGreaterThan(long long value) { SetObjectSizeGreaterThan(value); return *this;}
@@ -91,7 +89,7 @@ namespace Model
     /**
      * <p>Maximum object size to which the rule applies.</p>
      */
-    inline long long GetObjectSizeLessThan() const{ return m_objectSizeLessThan; }
+    inline long long GetObjectSizeLessThan() const { return m_objectSizeLessThan; }
     inline bool ObjectSizeLessThanHasBeenSet() const { return m_objectSizeLessThanHasBeenSet; }
     inline void SetObjectSizeLessThan(long long value) { m_objectSizeLessThanHasBeenSet = true; m_objectSizeLessThan = value; }
     inline LifecycleRuleFilter& WithObjectSizeLessThan(long long value) { SetObjectSizeLessThan(value); return *this;}
@@ -99,12 +97,12 @@ namespace Model
 
     ///@{
     
-    inline const LifecycleRuleAndOperator& GetAnd() const{ return m_and; }
+    inline const LifecycleRuleAndOperator& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const LifecycleRuleAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(LifecycleRuleAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline LifecycleRuleFilter& WithAnd(const LifecycleRuleAndOperator& value) { SetAnd(value); return *this;}
-    inline LifecycleRuleFilter& WithAnd(LifecycleRuleAndOperator&& value) { SetAnd(std::move(value)); return *this;}
+    template<typename AndT = LifecycleRuleAndOperator>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = LifecycleRuleAndOperator>
+    LifecycleRuleFilter& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,10 +112,10 @@ namespace Model
     Tag m_tag;
     bool m_tagHasBeenSet = false;
 
-    long long m_objectSizeGreaterThan;
+    long long m_objectSizeGreaterThan{0};
     bool m_objectSizeGreaterThanHasBeenSet = false;
 
-    long long m_objectSizeLessThan;
+    long long m_objectSizeLessThan{0};
     bool m_objectSizeLessThanHasBeenSet = false;
 
     LifecycleRuleAndOperator m_and;

@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-EndTimeRange::EndTimeRange() : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
-{
-}
-
 EndTimeRange::EndTimeRange(JsonView jsonValue)
-  : EndTimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EndTimeRange& EndTimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromTime"))
   {
     m_fromTime = jsonValue.GetDouble("FromTime");
-
     m_fromTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToTime"))
   {
     m_toTime = jsonValue.GetDouble("ToTime");
-
     m_toTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

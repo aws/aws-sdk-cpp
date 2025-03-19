@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisRulePolicy::AnalysisRulePolicy() : 
-    m_v1HasBeenSet(false)
-{
-}
-
 AnalysisRulePolicy::AnalysisRulePolicy(JsonView jsonValue)
-  : AnalysisRulePolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisRulePolicy& AnalysisRulePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("v1"))
   {
     m_v1 = jsonValue.GetObject("v1");
-
     m_v1HasBeenSet = true;
   }
-
   return *this;
 }
 

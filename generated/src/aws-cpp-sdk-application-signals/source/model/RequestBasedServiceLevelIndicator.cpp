@@ -18,17 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-RequestBasedServiceLevelIndicator::RequestBasedServiceLevelIndicator() : 
-    m_requestBasedSliMetricHasBeenSet(false),
-    m_metricThreshold(0.0),
-    m_metricThresholdHasBeenSet(false),
-    m_comparisonOperator(ServiceLevelIndicatorComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false)
-{
-}
-
 RequestBasedServiceLevelIndicator::RequestBasedServiceLevelIndicator(JsonView jsonValue)
-  : RequestBasedServiceLevelIndicator()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RequestBasedServiceLevelIndicator& RequestBasedServiceLevelIndicator::operator =
   if(jsonValue.ValueExists("RequestBasedSliMetric"))
   {
     m_requestBasedSliMetric = jsonValue.GetObject("RequestBasedSliMetric");
-
     m_requestBasedSliMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricThreshold"))
   {
     m_metricThreshold = jsonValue.GetDouble("MetricThreshold");
-
     m_metricThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ServiceLevelIndicatorComparisonOperatorMapper::GetServiceLevelIndicatorComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

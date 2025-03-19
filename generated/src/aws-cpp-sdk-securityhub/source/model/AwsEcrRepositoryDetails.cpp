@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcrRepositoryDetails::AwsEcrRepositoryDetails() : 
-    m_arnHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_lifecyclePolicyHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryPolicyTextHasBeenSet(false)
-{
-}
-
 AwsEcrRepositoryDetails::AwsEcrRepositoryDetails(JsonView jsonValue)
-  : AwsEcrRepositoryDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AwsEcrRepositoryDetails& AwsEcrRepositoryDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageScanningConfiguration"))
   {
     m_imageScanningConfiguration = jsonValue.GetObject("ImageScanningConfiguration");
-
     m_imageScanningConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageTagMutability"))
   {
     m_imageTagMutability = jsonValue.GetString("ImageTagMutability");
-
     m_imageTagMutabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecyclePolicy"))
   {
     m_lifecyclePolicy = jsonValue.GetObject("LifecyclePolicy");
-
     m_lifecyclePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryName"))
   {
     m_repositoryName = jsonValue.GetString("RepositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryPolicyText"))
   {
     m_repositoryPolicyText = jsonValue.GetString("RepositoryPolicyText");
-
     m_repositoryPolicyTextHasBeenSet = true;
   }
-
   return *this;
 }
 

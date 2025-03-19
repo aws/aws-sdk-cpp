@@ -18,17 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-ConfiguredTeam::ConfiguredTeam() : 
-    m_tenantIdHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_teamNameHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 ConfiguredTeam::ConfiguredTeam(JsonView jsonValue)
-  : ConfiguredTeam()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ConfiguredTeam& ConfiguredTeam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TenantId"))
   {
     m_tenantId = jsonValue.GetString("TenantId");
-
     m_tenantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TeamId"))
   {
     m_teamId = jsonValue.GetString("TeamId");
-
     m_teamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TeamName"))
   {
     m_teamName = jsonValue.GetString("TeamName");
-
     m_teamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

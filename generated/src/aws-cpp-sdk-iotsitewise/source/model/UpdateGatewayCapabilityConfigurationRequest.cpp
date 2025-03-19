@@ -12,13 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGatewayCapabilityConfigurationRequest::UpdateGatewayCapabilityConfigurationRequest() : 
-    m_gatewayIdHasBeenSet(false),
-    m_capabilityNamespaceHasBeenSet(false),
-    m_capabilityConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGatewayCapabilityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

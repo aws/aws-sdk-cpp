@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChannelNamespaceRequest::GetChannelNamespaceRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetChannelNamespaceRequest::SerializePayload() const
 {
   return {};

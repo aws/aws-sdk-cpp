@@ -22,7 +22,7 @@ namespace Model
   class StartContactRecordingRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API StartContactRecordingRequest();
+    AWS_CONNECT_API StartContactRecordingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline StartContactRecordingRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline StartContactRecordingRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline StartContactRecordingRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    StartContactRecordingRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the contact.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline StartContactRecordingRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline StartContactRecordingRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline StartContactRecordingRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    StartContactRecordingRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +64,24 @@ namespace Model
      * <p>The identifier of the contact. This is the identifier of the contact
      * associated with the first interaction with the contact center.</p>
      */
-    inline const Aws::String& GetInitialContactId() const{ return m_initialContactId; }
+    inline const Aws::String& GetInitialContactId() const { return m_initialContactId; }
     inline bool InitialContactIdHasBeenSet() const { return m_initialContactIdHasBeenSet; }
-    inline void SetInitialContactId(const Aws::String& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = value; }
-    inline void SetInitialContactId(Aws::String&& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = std::move(value); }
-    inline void SetInitialContactId(const char* value) { m_initialContactIdHasBeenSet = true; m_initialContactId.assign(value); }
-    inline StartContactRecordingRequest& WithInitialContactId(const Aws::String& value) { SetInitialContactId(value); return *this;}
-    inline StartContactRecordingRequest& WithInitialContactId(Aws::String&& value) { SetInitialContactId(std::move(value)); return *this;}
-    inline StartContactRecordingRequest& WithInitialContactId(const char* value) { SetInitialContactId(value); return *this;}
+    template<typename InitialContactIdT = Aws::String>
+    void SetInitialContactId(InitialContactIdT&& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = std::forward<InitialContactIdT>(value); }
+    template<typename InitialContactIdT = Aws::String>
+    StartContactRecordingRequest& WithInitialContactId(InitialContactIdT&& value) { SetInitialContactId(std::forward<InitialContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The person being recorded.</p>
      */
-    inline const VoiceRecordingConfiguration& GetVoiceRecordingConfiguration() const{ return m_voiceRecordingConfiguration; }
+    inline const VoiceRecordingConfiguration& GetVoiceRecordingConfiguration() const { return m_voiceRecordingConfiguration; }
     inline bool VoiceRecordingConfigurationHasBeenSet() const { return m_voiceRecordingConfigurationHasBeenSet; }
-    inline void SetVoiceRecordingConfiguration(const VoiceRecordingConfiguration& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = value; }
-    inline void SetVoiceRecordingConfiguration(VoiceRecordingConfiguration&& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = std::move(value); }
-    inline StartContactRecordingRequest& WithVoiceRecordingConfiguration(const VoiceRecordingConfiguration& value) { SetVoiceRecordingConfiguration(value); return *this;}
-    inline StartContactRecordingRequest& WithVoiceRecordingConfiguration(VoiceRecordingConfiguration&& value) { SetVoiceRecordingConfiguration(std::move(value)); return *this;}
+    template<typename VoiceRecordingConfigurationT = VoiceRecordingConfiguration>
+    void SetVoiceRecordingConfiguration(VoiceRecordingConfigurationT&& value) { m_voiceRecordingConfigurationHasBeenSet = true; m_voiceRecordingConfiguration = std::forward<VoiceRecordingConfigurationT>(value); }
+    template<typename VoiceRecordingConfigurationT = VoiceRecordingConfiguration>
+    StartContactRecordingRequest& WithVoiceRecordingConfiguration(VoiceRecordingConfigurationT&& value) { SetVoiceRecordingConfiguration(std::forward<VoiceRecordingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

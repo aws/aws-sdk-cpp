@@ -12,12 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppAuthorizationRequest::GetAppAuthorizationRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_appAuthorizationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAppAuthorizationRequest::SerializePayload() const
 {
   return {};

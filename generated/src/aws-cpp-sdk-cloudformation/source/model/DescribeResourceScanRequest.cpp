@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeResourceScanRequest::DescribeResourceScanRequest() : 
-    m_resourceScanIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourceScanRequest::SerializePayload() const
 {
   Aws::StringStream ss;

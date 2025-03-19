@@ -18,20 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageTemplateQueryField::MessageTemplateQueryField() : 
-    m_allowFuzziness(false),
-    m_allowFuzzinessHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_operator(MessageTemplateQueryOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_priority(Priority::NOT_SET),
-    m_priorityHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 MessageTemplateQueryField::MessageTemplateQueryField(JsonView jsonValue)
-  : MessageTemplateQueryField()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MessageTemplateQueryField& MessageTemplateQueryField::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("allowFuzziness"))
   {
     m_allowFuzziness = jsonValue.GetBool("allowFuzziness");
-
     m_allowFuzzinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = MessageTemplateQueryOperatorMapper::GetMessageTemplateQueryOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = PriorityMapper::GetPriorityForName(jsonValue.GetString("priority"));
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -75,7 +54,6 @@ MessageTemplateQueryField& MessageTemplateQueryField::operator =(JsonView jsonVa
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class AwsLambdaTransformation
   {
   public:
-    AWS_S3CONTROL_API AwsLambdaTransformation();
+    AWS_S3CONTROL_API AwsLambdaTransformation() = default;
     AWS_S3CONTROL_API AwsLambdaTransformation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AwsLambdaTransformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline AwsLambdaTransformation& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline AwsLambdaTransformation& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline AwsLambdaTransformation& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    AwsLambdaTransformation& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>Additional JSON that provides supplemental data to the Lambda function used
      * to transform objects.</p>
      */
-    inline const Aws::String& GetFunctionPayload() const{ return m_functionPayload; }
+    inline const Aws::String& GetFunctionPayload() const { return m_functionPayload; }
     inline bool FunctionPayloadHasBeenSet() const { return m_functionPayloadHasBeenSet; }
-    inline void SetFunctionPayload(const Aws::String& value) { m_functionPayloadHasBeenSet = true; m_functionPayload = value; }
-    inline void SetFunctionPayload(Aws::String&& value) { m_functionPayloadHasBeenSet = true; m_functionPayload = std::move(value); }
-    inline void SetFunctionPayload(const char* value) { m_functionPayloadHasBeenSet = true; m_functionPayload.assign(value); }
-    inline AwsLambdaTransformation& WithFunctionPayload(const Aws::String& value) { SetFunctionPayload(value); return *this;}
-    inline AwsLambdaTransformation& WithFunctionPayload(Aws::String&& value) { SetFunctionPayload(std::move(value)); return *this;}
-    inline AwsLambdaTransformation& WithFunctionPayload(const char* value) { SetFunctionPayload(value); return *this;}
+    template<typename FunctionPayloadT = Aws::String>
+    void SetFunctionPayload(FunctionPayloadT&& value) { m_functionPayloadHasBeenSet = true; m_functionPayload = std::forward<FunctionPayloadT>(value); }
+    template<typename FunctionPayloadT = Aws::String>
+    AwsLambdaTransformation& WithFunctionPayload(FunctionPayloadT&& value) { SetFunctionPayload(std::forward<FunctionPayloadT>(value)); return *this;}
     ///@}
   private:
 

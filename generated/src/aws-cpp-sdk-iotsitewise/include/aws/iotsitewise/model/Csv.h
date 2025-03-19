@@ -32,7 +32,7 @@ namespace Model
   class Csv
   {
   public:
-    AWS_IOTSITEWISE_API Csv();
+    AWS_IOTSITEWISE_API Csv() = default;
     AWS_IOTSITEWISE_API Csv(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Csv& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,13 @@ namespace Model
     /**
      * <p>The column names specified in the .csv file.</p>
      */
-    inline const Aws::Vector<ColumnName>& GetColumnNames() const{ return m_columnNames; }
+    inline const Aws::Vector<ColumnName>& GetColumnNames() const { return m_columnNames; }
     inline bool ColumnNamesHasBeenSet() const { return m_columnNamesHasBeenSet; }
-    inline void SetColumnNames(const Aws::Vector<ColumnName>& value) { m_columnNamesHasBeenSet = true; m_columnNames = value; }
-    inline void SetColumnNames(Aws::Vector<ColumnName>&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::move(value); }
-    inline Csv& WithColumnNames(const Aws::Vector<ColumnName>& value) { SetColumnNames(value); return *this;}
-    inline Csv& WithColumnNames(Aws::Vector<ColumnName>&& value) { SetColumnNames(std::move(value)); return *this;}
-    inline Csv& AddColumnNames(const ColumnName& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
-    inline Csv& AddColumnNames(ColumnName&& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(std::move(value)); return *this; }
+    template<typename ColumnNamesT = Aws::Vector<ColumnName>>
+    void SetColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::forward<ColumnNamesT>(value); }
+    template<typename ColumnNamesT = Aws::Vector<ColumnName>>
+    Csv& WithColumnNames(ColumnNamesT&& value) { SetColumnNames(std::forward<ColumnNamesT>(value)); return *this;}
+    inline Csv& AddColumnNames(ColumnName value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
     ///@}
   private:
 

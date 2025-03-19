@@ -28,7 +28,7 @@ namespace Model
   class ListTargetsForPolicyResult
   {
   public:
-    AWS_IOT_API ListTargetsForPolicyResult();
+    AWS_IOT_API ListTargetsForPolicyResult() = default;
     AWS_IOT_API ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListTargetsForPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,46 +37,44 @@ namespace Model
     /**
      * <p>The policy targets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
-    inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targets = value; }
-    inline void SetTargets(Aws::Vector<Aws::String>&& value) { m_targets = std::move(value); }
-    inline ListTargetsForPolicyResult& WithTargets(const Aws::Vector<Aws::String>& value) { SetTargets(value); return *this;}
-    inline ListTargetsForPolicyResult& WithTargets(Aws::Vector<Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-    inline ListTargetsForPolicyResult& AddTargets(const Aws::String& value) { m_targets.push_back(value); return *this; }
-    inline ListTargetsForPolicyResult& AddTargets(Aws::String&& value) { m_targets.push_back(std::move(value)); return *this; }
-    inline ListTargetsForPolicyResult& AddTargets(const char* value) { m_targets.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetTargets() const { return m_targets; }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Aws::String>>
+    ListTargetsForPolicyResult& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Aws::String>
+    ListTargetsForPolicyResult& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A marker used to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListTargetsForPolicyResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListTargetsForPolicyResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListTargetsForPolicyResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListTargetsForPolicyResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTargetsForPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTargetsForPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTargetsForPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTargetsForPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_targets;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

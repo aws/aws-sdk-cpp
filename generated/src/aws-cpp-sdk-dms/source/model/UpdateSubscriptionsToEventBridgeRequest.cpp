@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriptionsToEventBridgeRequest::UpdateSubscriptionsToEventBridgeRequest() : 
-    m_forceMove(false),
-    m_forceMoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriptionsToEventBridgeRequest::SerializePayload() const
 {
   JsonValue payload;

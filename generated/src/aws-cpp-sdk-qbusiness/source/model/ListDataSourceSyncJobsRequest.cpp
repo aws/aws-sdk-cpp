@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDataSourceSyncJobsRequest::ListDataSourceSyncJobsRequest() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusFilter(DataSourceSyncJobStatus::NOT_SET),
-    m_statusFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListDataSourceSyncJobsRequest::SerializePayload() const
 {
   return {};

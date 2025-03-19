@@ -12,18 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointRequest::UpdateEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false),
-    m_retainAllVariantProperties(false),
-    m_retainAllVariantPropertiesHasBeenSet(false),
-    m_excludeRetainedVariantPropertiesHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false),
-    m_retainDeploymentConfig(false),
-    m_retainDeploymentConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

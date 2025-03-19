@@ -10,14 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DescribeSuggestersRequest::DescribeSuggestersRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_suggesterNamesHasBeenSet(false),
-    m_deployed(false),
-    m_deployedHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSuggestersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

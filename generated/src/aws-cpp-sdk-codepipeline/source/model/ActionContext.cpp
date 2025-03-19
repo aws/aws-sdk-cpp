@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionContext::ActionContext() : 
-    m_nameHasBeenSet(false),
-    m_actionExecutionIdHasBeenSet(false)
-{
-}
-
 ActionContext::ActionContext(JsonView jsonValue)
-  : ActionContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActionContext& ActionContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionExecutionId"))
   {
     m_actionExecutionId = jsonValue.GetString("actionExecutionId");
-
     m_actionExecutionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

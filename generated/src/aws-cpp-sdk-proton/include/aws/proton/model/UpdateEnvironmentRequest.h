@@ -23,7 +23,7 @@ namespace Model
   class UpdateEnvironmentRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API UpdateEnvironmentRequest();
+    AWS_PROTON_API UpdateEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to
      * provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
      */
-    inline const Aws::String& GetCodebuildRoleArn() const{ return m_codebuildRoleArn; }
+    inline const Aws::String& GetCodebuildRoleArn() const { return m_codebuildRoleArn; }
     inline bool CodebuildRoleArnHasBeenSet() const { return m_codebuildRoleArnHasBeenSet; }
-    inline void SetCodebuildRoleArn(const Aws::String& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = value; }
-    inline void SetCodebuildRoleArn(Aws::String&& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = std::move(value); }
-    inline void SetCodebuildRoleArn(const char* value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn.assign(value); }
-    inline UpdateEnvironmentRequest& WithCodebuildRoleArn(const Aws::String& value) { SetCodebuildRoleArn(value); return *this;}
-    inline UpdateEnvironmentRequest& WithCodebuildRoleArn(Aws::String&& value) { SetCodebuildRoleArn(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithCodebuildRoleArn(const char* value) { SetCodebuildRoleArn(value); return *this;}
+    template<typename CodebuildRoleArnT = Aws::String>
+    void SetCodebuildRoleArn(CodebuildRoleArnT&& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = std::forward<CodebuildRoleArnT>(value); }
+    template<typename CodebuildRoleArnT = Aws::String>
+    UpdateEnvironmentRequest& WithCodebuildRoleArn(CodebuildRoleArnT&& value) { SetCodebuildRoleArn(std::forward<CodebuildRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
-    inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
+    inline const Aws::String& GetComponentRoleArn() const { return m_componentRoleArn; }
     inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
-    inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
-    inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
-    inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
-    inline UpdateEnvironmentRequest& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
-    inline UpdateEnvironmentRequest& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
+    template<typename ComponentRoleArnT = Aws::String>
+    void SetComponentRoleArn(ComponentRoleArnT&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::forward<ComponentRoleArnT>(value); }
+    template<typename ComponentRoleArnT = Aws::String>
+    UpdateEnvironmentRequest& WithComponentRoleArn(ComponentRoleArnT&& value) { SetComponentRoleArn(std::forward<ComponentRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,26 +88,22 @@ namespace Model
      * that is higher than the major version in use and a minor version (optional).</p>
      * </dd> </dl>
      */
-    inline const DeploymentUpdateType& GetDeploymentType() const{ return m_deploymentType; }
+    inline DeploymentUpdateType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const DeploymentUpdateType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(DeploymentUpdateType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline UpdateEnvironmentRequest& WithDeploymentType(const DeploymentUpdateType& value) { SetDeploymentType(value); return *this;}
-    inline UpdateEnvironmentRequest& WithDeploymentType(DeploymentUpdateType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(DeploymentUpdateType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline UpdateEnvironmentRequest& WithDeploymentType(DeploymentUpdateType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the environment update.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateEnvironmentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateEnvironmentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,28 +113,24 @@ namespace Model
      * account that the current environment account connection was created in and is
      * associated with the current environment.</p>
      */
-    inline const Aws::String& GetEnvironmentAccountConnectionId() const{ return m_environmentAccountConnectionId; }
+    inline const Aws::String& GetEnvironmentAccountConnectionId() const { return m_environmentAccountConnectionId; }
     inline bool EnvironmentAccountConnectionIdHasBeenSet() const { return m_environmentAccountConnectionIdHasBeenSet; }
-    inline void SetEnvironmentAccountConnectionId(const Aws::String& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = value; }
-    inline void SetEnvironmentAccountConnectionId(Aws::String&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::move(value); }
-    inline void SetEnvironmentAccountConnectionId(const char* value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId.assign(value); }
-    inline UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(const Aws::String& value) { SetEnvironmentAccountConnectionId(value); return *this;}
-    inline UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(Aws::String&& value) { SetEnvironmentAccountConnectionId(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(const char* value) { SetEnvironmentAccountConnectionId(value); return *this;}
+    template<typename EnvironmentAccountConnectionIdT = Aws::String>
+    void SetEnvironmentAccountConnectionId(EnvironmentAccountConnectionIdT&& value) { m_environmentAccountConnectionIdHasBeenSet = true; m_environmentAccountConnectionId = std::forward<EnvironmentAccountConnectionIdT>(value); }
+    template<typename EnvironmentAccountConnectionIdT = Aws::String>
+    UpdateEnvironmentRequest& WithEnvironmentAccountConnectionId(EnvironmentAccountConnectionIdT&& value) { SetEnvironmentAccountConnectionId(std::forward<EnvironmentAccountConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the environment to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateEnvironmentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateEnvironmentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateEnvironmentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +138,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton
      * to make API calls to other services your behalf.</p>
      */
-    inline const Aws::String& GetProtonServiceRoleArn() const{ return m_protonServiceRoleArn; }
+    inline const Aws::String& GetProtonServiceRoleArn() const { return m_protonServiceRoleArn; }
     inline bool ProtonServiceRoleArnHasBeenSet() const { return m_protonServiceRoleArnHasBeenSet; }
-    inline void SetProtonServiceRoleArn(const Aws::String& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = value; }
-    inline void SetProtonServiceRoleArn(Aws::String&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::move(value); }
-    inline void SetProtonServiceRoleArn(const char* value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn.assign(value); }
-    inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(const Aws::String& value) { SetProtonServiceRoleArn(value); return *this;}
-    inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(Aws::String&& value) { SetProtonServiceRoleArn(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithProtonServiceRoleArn(const char* value) { SetProtonServiceRoleArn(value); return *this;}
+    template<typename ProtonServiceRoleArnT = Aws::String>
+    void SetProtonServiceRoleArn(ProtonServiceRoleArnT&& value) { m_protonServiceRoleArnHasBeenSet = true; m_protonServiceRoleArn = std::forward<ProtonServiceRoleArnT>(value); }
+    template<typename ProtonServiceRoleArnT = Aws::String>
+    UpdateEnvironmentRequest& WithProtonServiceRoleArn(ProtonServiceRoleArnT&& value) { SetProtonServiceRoleArn(std::forward<ProtonServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,54 +153,48 @@ namespace Model
      * that has been registered with Proton. For more information, see
      * <a>CreateRepository</a>.</p>
      */
-    inline const RepositoryBranchInput& GetProvisioningRepository() const{ return m_provisioningRepository; }
+    inline const RepositoryBranchInput& GetProvisioningRepository() const { return m_provisioningRepository; }
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
-    inline void SetProvisioningRepository(const RepositoryBranchInput& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
-    inline void SetProvisioningRepository(RepositoryBranchInput&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
-    inline UpdateEnvironmentRequest& WithProvisioningRepository(const RepositoryBranchInput& value) { SetProvisioningRepository(value); return *this;}
-    inline UpdateEnvironmentRequest& WithProvisioningRepository(RepositoryBranchInput&& value) { SetProvisioningRepository(std::move(value)); return *this;}
+    template<typename ProvisioningRepositoryT = RepositoryBranchInput>
+    void SetProvisioningRepository(ProvisioningRepositoryT&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::forward<ProvisioningRepositoryT>(value); }
+    template<typename ProvisioningRepositoryT = RepositoryBranchInput>
+    UpdateEnvironmentRequest& WithProvisioningRepository(ProvisioningRepositoryT&& value) { SetProvisioningRepository(std::forward<ProvisioningRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The formatted specification that defines the update.</p>
      */
-    inline const Aws::String& GetSpec() const{ return m_spec; }
+    inline const Aws::String& GetSpec() const { return m_spec; }
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
-    inline void SetSpec(const Aws::String& value) { m_specHasBeenSet = true; m_spec = value; }
-    inline void SetSpec(Aws::String&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
-    inline void SetSpec(const char* value) { m_specHasBeenSet = true; m_spec.assign(value); }
-    inline UpdateEnvironmentRequest& WithSpec(const Aws::String& value) { SetSpec(value); return *this;}
-    inline UpdateEnvironmentRequest& WithSpec(Aws::String&& value) { SetSpec(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithSpec(const char* value) { SetSpec(value); return *this;}
+    template<typename SpecT = Aws::String>
+    void SetSpec(SpecT&& value) { m_specHasBeenSet = true; m_spec = std::forward<SpecT>(value); }
+    template<typename SpecT = Aws::String>
+    UpdateEnvironmentRequest& WithSpec(SpecT&& value) { SetSpec(std::forward<SpecT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The major version of the environment to update.</p>
      */
-    inline const Aws::String& GetTemplateMajorVersion() const{ return m_templateMajorVersion; }
+    inline const Aws::String& GetTemplateMajorVersion() const { return m_templateMajorVersion; }
     inline bool TemplateMajorVersionHasBeenSet() const { return m_templateMajorVersionHasBeenSet; }
-    inline void SetTemplateMajorVersion(const Aws::String& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = value; }
-    inline void SetTemplateMajorVersion(Aws::String&& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = std::move(value); }
-    inline void SetTemplateMajorVersion(const char* value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion.assign(value); }
-    inline UpdateEnvironmentRequest& WithTemplateMajorVersion(const Aws::String& value) { SetTemplateMajorVersion(value); return *this;}
-    inline UpdateEnvironmentRequest& WithTemplateMajorVersion(Aws::String&& value) { SetTemplateMajorVersion(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithTemplateMajorVersion(const char* value) { SetTemplateMajorVersion(value); return *this;}
+    template<typename TemplateMajorVersionT = Aws::String>
+    void SetTemplateMajorVersion(TemplateMajorVersionT&& value) { m_templateMajorVersionHasBeenSet = true; m_templateMajorVersion = std::forward<TemplateMajorVersionT>(value); }
+    template<typename TemplateMajorVersionT = Aws::String>
+    UpdateEnvironmentRequest& WithTemplateMajorVersion(TemplateMajorVersionT&& value) { SetTemplateMajorVersion(std::forward<TemplateMajorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minor version of the environment to update.</p>
      */
-    inline const Aws::String& GetTemplateMinorVersion() const{ return m_templateMinorVersion; }
+    inline const Aws::String& GetTemplateMinorVersion() const { return m_templateMinorVersion; }
     inline bool TemplateMinorVersionHasBeenSet() const { return m_templateMinorVersionHasBeenSet; }
-    inline void SetTemplateMinorVersion(const Aws::String& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = value; }
-    inline void SetTemplateMinorVersion(Aws::String&& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = std::move(value); }
-    inline void SetTemplateMinorVersion(const char* value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion.assign(value); }
-    inline UpdateEnvironmentRequest& WithTemplateMinorVersion(const Aws::String& value) { SetTemplateMinorVersion(value); return *this;}
-    inline UpdateEnvironmentRequest& WithTemplateMinorVersion(Aws::String&& value) { SetTemplateMinorVersion(std::move(value)); return *this;}
-    inline UpdateEnvironmentRequest& WithTemplateMinorVersion(const char* value) { SetTemplateMinorVersion(value); return *this;}
+    template<typename TemplateMinorVersionT = Aws::String>
+    void SetTemplateMinorVersion(TemplateMinorVersionT&& value) { m_templateMinorVersionHasBeenSet = true; m_templateMinorVersion = std::forward<TemplateMinorVersionT>(value); }
+    template<typename TemplateMinorVersionT = Aws::String>
+    UpdateEnvironmentRequest& WithTemplateMinorVersion(TemplateMinorVersionT&& value) { SetTemplateMinorVersion(std::forward<TemplateMinorVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -224,7 +204,7 @@ namespace Model
     Aws::String m_componentRoleArn;
     bool m_componentRoleArnHasBeenSet = false;
 
-    DeploymentUpdateType m_deploymentType;
+    DeploymentUpdateType m_deploymentType{DeploymentUpdateType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_description;

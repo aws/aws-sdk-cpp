@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BatchTableOptimizer::BatchTableOptimizer() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tableOptimizerHasBeenSet(false)
-{
-}
-
 BatchTableOptimizer::BatchTableOptimizer(JsonView jsonValue)
-  : BatchTableOptimizer()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BatchTableOptimizer& BatchTableOptimizer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("catalogId"))
   {
     m_catalogId = jsonValue.GetString("catalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableOptimizer"))
   {
     m_tableOptimizer = jsonValue.GetObject("tableOptimizer");
-
     m_tableOptimizerHasBeenSet = true;
   }
-
   return *this;
 }
 

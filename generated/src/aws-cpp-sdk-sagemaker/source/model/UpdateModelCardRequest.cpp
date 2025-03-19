@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateModelCardRequest::UpdateModelCardRequest() : 
-    m_modelCardNameHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateModelCardRequest::SerializePayload() const
 {
   JsonValue payload;

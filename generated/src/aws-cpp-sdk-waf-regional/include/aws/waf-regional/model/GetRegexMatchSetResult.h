@@ -28,7 +28,7 @@ namespace Model
   class GetRegexMatchSetResult
   {
   public:
-    AWS_WAFREGIONAL_API GetRegexMatchSetResult();
+    AWS_WAFREGIONAL_API GetRegexMatchSetResult() = default;
     AWS_WAFREGIONAL_API GetRegexMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API GetRegexMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * <code>GetRegexMatchSet</code> request. For more information, see
      * <a>RegexMatchTuple</a>.</p>
      */
-    inline const RegexMatchSet& GetRegexMatchSet() const{ return m_regexMatchSet; }
-    inline void SetRegexMatchSet(const RegexMatchSet& value) { m_regexMatchSet = value; }
-    inline void SetRegexMatchSet(RegexMatchSet&& value) { m_regexMatchSet = std::move(value); }
-    inline GetRegexMatchSetResult& WithRegexMatchSet(const RegexMatchSet& value) { SetRegexMatchSet(value); return *this;}
-    inline GetRegexMatchSetResult& WithRegexMatchSet(RegexMatchSet&& value) { SetRegexMatchSet(std::move(value)); return *this;}
+    inline const RegexMatchSet& GetRegexMatchSet() const { return m_regexMatchSet; }
+    template<typename RegexMatchSetT = RegexMatchSet>
+    void SetRegexMatchSet(RegexMatchSetT&& value) { m_regexMatchSetHasBeenSet = true; m_regexMatchSet = std::forward<RegexMatchSetT>(value); }
+    template<typename RegexMatchSetT = RegexMatchSet>
+    GetRegexMatchSetResult& WithRegexMatchSet(RegexMatchSetT&& value) { SetRegexMatchSet(std::forward<RegexMatchSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRegexMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRegexMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRegexMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRegexMatchSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RegexMatchSet m_regexMatchSet;
+    bool m_regexMatchSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

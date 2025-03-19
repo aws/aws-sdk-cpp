@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails() : 
-    m_authTtL(0),
-    m_authTtLHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_iatTtL(0),
-    m_iatTtLHasBeenSet(false),
-    m_issuerHasBeenSet(false)
-{
-}
-
 AwsAppSyncGraphQlApiOpenIdConnectConfigDetails::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails(JsonView jsonValue)
-  : AwsAppSyncGraphQlApiOpenIdConnectConfigDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& AwsAppSyncGraphQlApiOpenIdConnec
   if(jsonValue.ValueExists("AuthTtL"))
   {
     m_authTtL = jsonValue.GetInt64("AuthTtL");
-
     m_authTtLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IatTtL"))
   {
     m_iatTtL = jsonValue.GetInt64("IatTtL");
-
     m_iatTtLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   return *this;
 }
 

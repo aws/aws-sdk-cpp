@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateComputerResult::CreateComputerResult()
-{
-}
-
 CreateComputerResult::CreateComputerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateComputerResult& CreateComputerResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Computer"))
   {
     m_computer = jsonValue.GetObject("Computer");
-
+    m_computerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

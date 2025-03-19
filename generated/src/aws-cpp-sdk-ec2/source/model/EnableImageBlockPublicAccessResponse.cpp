@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableImageBlockPublicAccessResponse::EnableImageBlockPublicAccessResponse() : 
-    m_imageBlockPublicAccessState(ImageBlockPublicAccessEnabledState::NOT_SET)
-{
-}
-
 EnableImageBlockPublicAccessResponse::EnableImageBlockPublicAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : EnableImageBlockPublicAccessResponse()
 {
   *this = result;
 }
@@ -43,7 +37,8 @@ EnableImageBlockPublicAccessResponse& EnableImageBlockPublicAccessResponse::oper
     XmlNode imageBlockPublicAccessStateNode = resultNode.FirstChild("imageBlockPublicAccessState");
     if(!imageBlockPublicAccessStateNode.IsNull())
     {
-      m_imageBlockPublicAccessState = ImageBlockPublicAccessEnabledStateMapper::GetImageBlockPublicAccessEnabledStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageBlockPublicAccessStateNode.GetText()).c_str()).c_str());
+      m_imageBlockPublicAccessState = ImageBlockPublicAccessEnabledStateMapper::GetImageBlockPublicAccessEnabledStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageBlockPublicAccessStateNode.GetText()).c_str()));
+      m_imageBlockPublicAccessStateHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ EnableImageBlockPublicAccessResponse& EnableImageBlockPublicAccessResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableImageBlockPublicAccessResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -33,7 +33,7 @@ namespace Model
   class SpeakerSearchDetails
   {
   public:
-    AWS_CHIMESDKVOICE_API SpeakerSearchDetails();
+    AWS_CHIMESDKVOICE_API SpeakerSearchDetails() = default;
     AWS_CHIMESDKVOICE_API SpeakerSearchDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API SpeakerSearchDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The result value in the speaker search details.</p>
      */
-    inline const Aws::Vector<SpeakerSearchResult>& GetResults() const{ return m_results; }
+    inline const Aws::Vector<SpeakerSearchResult>& GetResults() const { return m_results; }
     inline bool ResultsHasBeenSet() const { return m_resultsHasBeenSet; }
-    inline void SetResults(const Aws::Vector<SpeakerSearchResult>& value) { m_resultsHasBeenSet = true; m_results = value; }
-    inline void SetResults(Aws::Vector<SpeakerSearchResult>&& value) { m_resultsHasBeenSet = true; m_results = std::move(value); }
-    inline SpeakerSearchDetails& WithResults(const Aws::Vector<SpeakerSearchResult>& value) { SetResults(value); return *this;}
-    inline SpeakerSearchDetails& WithResults(Aws::Vector<SpeakerSearchResult>&& value) { SetResults(std::move(value)); return *this;}
-    inline SpeakerSearchDetails& AddResults(const SpeakerSearchResult& value) { m_resultsHasBeenSet = true; m_results.push_back(value); return *this; }
-    inline SpeakerSearchDetails& AddResults(SpeakerSearchResult&& value) { m_resultsHasBeenSet = true; m_results.push_back(std::move(value)); return *this; }
+    template<typename ResultsT = Aws::Vector<SpeakerSearchResult>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<SpeakerSearchResult>>
+    SpeakerSearchDetails& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = SpeakerSearchResult>
+    SpeakerSearchDetails& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <code>VoiceprintGenerationSuccess</code> or
      * <code>VoiceprintGenerationFailure</code>..</p>
      */
-    inline const Aws::String& GetVoiceprintGenerationStatus() const{ return m_voiceprintGenerationStatus; }
+    inline const Aws::String& GetVoiceprintGenerationStatus() const { return m_voiceprintGenerationStatus; }
     inline bool VoiceprintGenerationStatusHasBeenSet() const { return m_voiceprintGenerationStatusHasBeenSet; }
-    inline void SetVoiceprintGenerationStatus(const Aws::String& value) { m_voiceprintGenerationStatusHasBeenSet = true; m_voiceprintGenerationStatus = value; }
-    inline void SetVoiceprintGenerationStatus(Aws::String&& value) { m_voiceprintGenerationStatusHasBeenSet = true; m_voiceprintGenerationStatus = std::move(value); }
-    inline void SetVoiceprintGenerationStatus(const char* value) { m_voiceprintGenerationStatusHasBeenSet = true; m_voiceprintGenerationStatus.assign(value); }
-    inline SpeakerSearchDetails& WithVoiceprintGenerationStatus(const Aws::String& value) { SetVoiceprintGenerationStatus(value); return *this;}
-    inline SpeakerSearchDetails& WithVoiceprintGenerationStatus(Aws::String&& value) { SetVoiceprintGenerationStatus(std::move(value)); return *this;}
-    inline SpeakerSearchDetails& WithVoiceprintGenerationStatus(const char* value) { SetVoiceprintGenerationStatus(value); return *this;}
+    template<typename VoiceprintGenerationStatusT = Aws::String>
+    void SetVoiceprintGenerationStatus(VoiceprintGenerationStatusT&& value) { m_voiceprintGenerationStatusHasBeenSet = true; m_voiceprintGenerationStatus = std::forward<VoiceprintGenerationStatusT>(value); }
+    template<typename VoiceprintGenerationStatusT = Aws::String>
+    SpeakerSearchDetails& WithVoiceprintGenerationStatus(VoiceprintGenerationStatusT&& value) { SetVoiceprintGenerationStatus(std::forward<VoiceprintGenerationStatusT>(value)); return *this;}
     ///@}
   private:
 

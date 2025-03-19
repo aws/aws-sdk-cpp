@@ -33,7 +33,7 @@ namespace Model
   class CodeConfiguration
   {
   public:
-    AWS_APPRUNNER_API CodeConfiguration();
+    AWS_APPRUNNER_API CodeConfiguration() = default;
     AWS_APPRUNNER_API CodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API CodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code>
      * file in the source code repository.</p> </li> </ul>
      */
-    inline const ConfigurationSource& GetConfigurationSource() const{ return m_configurationSource; }
+    inline ConfigurationSource GetConfigurationSource() const { return m_configurationSource; }
     inline bool ConfigurationSourceHasBeenSet() const { return m_configurationSourceHasBeenSet; }
-    inline void SetConfigurationSource(const ConfigurationSource& value) { m_configurationSourceHasBeenSet = true; m_configurationSource = value; }
-    inline void SetConfigurationSource(ConfigurationSource&& value) { m_configurationSourceHasBeenSet = true; m_configurationSource = std::move(value); }
-    inline CodeConfiguration& WithConfigurationSource(const ConfigurationSource& value) { SetConfigurationSource(value); return *this;}
-    inline CodeConfiguration& WithConfigurationSource(ConfigurationSource&& value) { SetConfigurationSource(std::move(value)); return *this;}
+    inline void SetConfigurationSource(ConfigurationSource value) { m_configurationSourceHasBeenSet = true; m_configurationSource = value; }
+    inline CodeConfiguration& WithConfigurationSource(ConfigurationSource value) { SetConfigurationSource(value); return *this;}
     ///@}
 
     ///@{
@@ -64,16 +62,16 @@ namespace Model
      * <code>apprunner.yaml</code> file in the source code repository (or ignoring the
      * file if it exists).</p>
      */
-    inline const CodeConfigurationValues& GetCodeConfigurationValues() const{ return m_codeConfigurationValues; }
+    inline const CodeConfigurationValues& GetCodeConfigurationValues() const { return m_codeConfigurationValues; }
     inline bool CodeConfigurationValuesHasBeenSet() const { return m_codeConfigurationValuesHasBeenSet; }
-    inline void SetCodeConfigurationValues(const CodeConfigurationValues& value) { m_codeConfigurationValuesHasBeenSet = true; m_codeConfigurationValues = value; }
-    inline void SetCodeConfigurationValues(CodeConfigurationValues&& value) { m_codeConfigurationValuesHasBeenSet = true; m_codeConfigurationValues = std::move(value); }
-    inline CodeConfiguration& WithCodeConfigurationValues(const CodeConfigurationValues& value) { SetCodeConfigurationValues(value); return *this;}
-    inline CodeConfiguration& WithCodeConfigurationValues(CodeConfigurationValues&& value) { SetCodeConfigurationValues(std::move(value)); return *this;}
+    template<typename CodeConfigurationValuesT = CodeConfigurationValues>
+    void SetCodeConfigurationValues(CodeConfigurationValuesT&& value) { m_codeConfigurationValuesHasBeenSet = true; m_codeConfigurationValues = std::forward<CodeConfigurationValuesT>(value); }
+    template<typename CodeConfigurationValuesT = CodeConfigurationValues>
+    CodeConfiguration& WithCodeConfigurationValues(CodeConfigurationValuesT&& value) { SetCodeConfigurationValues(std::forward<CodeConfigurationValuesT>(value)); return *this;}
     ///@}
   private:
 
-    ConfigurationSource m_configurationSource;
+    ConfigurationSource m_configurationSource{ConfigurationSource::NOT_SET};
     bool m_configurationSourceHasBeenSet = false;
 
     CodeConfigurationValues m_codeConfigurationValues;

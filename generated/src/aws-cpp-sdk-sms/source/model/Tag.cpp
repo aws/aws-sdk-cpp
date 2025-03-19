@@ -18,14 +18,7 @@ namespace SMS
 namespace Model
 {
 
-Tag::Tag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Tag::Tag(JsonView jsonValue)
-  : Tag()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Tag& Tag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

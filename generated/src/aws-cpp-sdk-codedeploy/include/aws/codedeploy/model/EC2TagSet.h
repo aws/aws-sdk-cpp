@@ -33,7 +33,7 @@ namespace Model
   class EC2TagSet
   {
   public:
-    AWS_CODEDEPLOY_API EC2TagSet();
+    AWS_CODEDEPLOY_API EC2TagSet() = default;
     AWS_CODEDEPLOY_API EC2TagSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API EC2TagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * instance to be included in the deployment group, it must be identified by all of
      * the tag groups in the list.</p>
      */
-    inline const Aws::Vector<Aws::Vector<EC2TagFilter>>& GetEc2TagSetList() const{ return m_ec2TagSetList; }
+    inline const Aws::Vector<Aws::Vector<EC2TagFilter>>& GetEc2TagSetList() const { return m_ec2TagSetList; }
     inline bool Ec2TagSetListHasBeenSet() const { return m_ec2TagSetListHasBeenSet; }
-    inline void SetEc2TagSetList(const Aws::Vector<Aws::Vector<EC2TagFilter>>& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = value; }
-    inline void SetEc2TagSetList(Aws::Vector<Aws::Vector<EC2TagFilter>>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = std::move(value); }
-    inline EC2TagSet& WithEc2TagSetList(const Aws::Vector<Aws::Vector<EC2TagFilter>>& value) { SetEc2TagSetList(value); return *this;}
-    inline EC2TagSet& WithEc2TagSetList(Aws::Vector<Aws::Vector<EC2TagFilter>>&& value) { SetEc2TagSetList(std::move(value)); return *this;}
-    inline EC2TagSet& AddEc2TagSetList(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(value); return *this; }
-    inline EC2TagSet& AddEc2TagSetList(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(std::move(value)); return *this; }
+    template<typename Ec2TagSetListT = Aws::Vector<Aws::Vector<EC2TagFilter>>>
+    void SetEc2TagSetList(Ec2TagSetListT&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = std::forward<Ec2TagSetListT>(value); }
+    template<typename Ec2TagSetListT = Aws::Vector<Aws::Vector<EC2TagFilter>>>
+    EC2TagSet& WithEc2TagSetList(Ec2TagSetListT&& value) { SetEc2TagSetList(std::forward<Ec2TagSetListT>(value)); return *this;}
+    template<typename Ec2TagSetListT = Aws::Vector<EC2TagFilter>>
+    EC2TagSet& AddEc2TagSetList(Ec2TagSetListT&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.emplace_back(std::forward<Ec2TagSetListT>(value)); return *this; }
     ///@}
   private:
 

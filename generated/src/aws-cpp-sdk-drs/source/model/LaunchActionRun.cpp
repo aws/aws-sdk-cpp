@@ -18,17 +18,7 @@ namespace drs
 namespace Model
 {
 
-LaunchActionRun::LaunchActionRun() : 
-    m_actionHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_status(LaunchActionRunStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 LaunchActionRun::LaunchActionRun(JsonView jsonValue)
-  : LaunchActionRun()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LaunchActionRun& LaunchActionRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = LaunchActionRunStatusMapper::GetLaunchActionRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

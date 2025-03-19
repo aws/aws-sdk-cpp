@@ -28,7 +28,7 @@ namespace Model
   class GetSecurityPolicyResult
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API GetSecurityPolicyResult();
+    AWS_OPENSEARCHSERVERLESS_API GetSecurityPolicyResult() = default;
     AWS_OPENSEARCHSERVERLESS_API GetSecurityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVERLESS_API GetSecurityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the requested security policy.</p>
      */
-    inline const SecurityPolicyDetail& GetSecurityPolicyDetail() const{ return m_securityPolicyDetail; }
-    inline void SetSecurityPolicyDetail(const SecurityPolicyDetail& value) { m_securityPolicyDetail = value; }
-    inline void SetSecurityPolicyDetail(SecurityPolicyDetail&& value) { m_securityPolicyDetail = std::move(value); }
-    inline GetSecurityPolicyResult& WithSecurityPolicyDetail(const SecurityPolicyDetail& value) { SetSecurityPolicyDetail(value); return *this;}
-    inline GetSecurityPolicyResult& WithSecurityPolicyDetail(SecurityPolicyDetail&& value) { SetSecurityPolicyDetail(std::move(value)); return *this;}
+    inline const SecurityPolicyDetail& GetSecurityPolicyDetail() const { return m_securityPolicyDetail; }
+    template<typename SecurityPolicyDetailT = SecurityPolicyDetail>
+    void SetSecurityPolicyDetail(SecurityPolicyDetailT&& value) { m_securityPolicyDetailHasBeenSet = true; m_securityPolicyDetail = std::forward<SecurityPolicyDetailT>(value); }
+    template<typename SecurityPolicyDetailT = SecurityPolicyDetail>
+    GetSecurityPolicyResult& WithSecurityPolicyDetail(SecurityPolicyDetailT&& value) { SetSecurityPolicyDetail(std::forward<SecurityPolicyDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSecurityPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSecurityPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSecurityPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSecurityPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SecurityPolicyDetail m_securityPolicyDetail;
+    bool m_securityPolicyDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

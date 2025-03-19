@@ -34,7 +34,7 @@ namespace Model
   class ValidateConfigurationSettingsResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult();
+    AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult() = default;
     AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,30 @@ namespace Model
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
      */
-    inline const Aws::Vector<ValidationMessage>& GetMessages() const{ return m_messages; }
-    inline void SetMessages(const Aws::Vector<ValidationMessage>& value) { m_messages = value; }
-    inline void SetMessages(Aws::Vector<ValidationMessage>&& value) { m_messages = std::move(value); }
-    inline ValidateConfigurationSettingsResult& WithMessages(const Aws::Vector<ValidationMessage>& value) { SetMessages(value); return *this;}
-    inline ValidateConfigurationSettingsResult& WithMessages(Aws::Vector<ValidationMessage>&& value) { SetMessages(std::move(value)); return *this;}
-    inline ValidateConfigurationSettingsResult& AddMessages(const ValidationMessage& value) { m_messages.push_back(value); return *this; }
-    inline ValidateConfigurationSettingsResult& AddMessages(ValidationMessage&& value) { m_messages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidationMessage>& GetMessages() const { return m_messages; }
+    template<typename MessagesT = Aws::Vector<ValidationMessage>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<ValidationMessage>>
+    ValidateConfigurationSettingsResult& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = ValidationMessage>
+    ValidateConfigurationSettingsResult& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ValidateConfigurationSettingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ValidateConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ValidateConfigurationSettingsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ValidationMessage> m_messages;
+    bool m_messagesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

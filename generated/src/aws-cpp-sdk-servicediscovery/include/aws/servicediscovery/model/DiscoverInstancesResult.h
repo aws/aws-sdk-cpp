@@ -29,7 +29,7 @@ namespace Model
   class DiscoverInstancesResult
   {
   public:
-    AWS_SERVICEDISCOVERY_API DiscoverInstancesResult();
+    AWS_SERVICEDISCOVERY_API DiscoverInstancesResult() = default;
     AWS_SERVICEDISCOVERY_API DiscoverInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICEDISCOVERY_API DiscoverInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A complex type that contains one <code>HttpInstanceSummary</code> for each
      * registered instance.</p>
      */
-    inline const Aws::Vector<HttpInstanceSummary>& GetInstances() const{ return m_instances; }
-    inline void SetInstances(const Aws::Vector<HttpInstanceSummary>& value) { m_instances = value; }
-    inline void SetInstances(Aws::Vector<HttpInstanceSummary>&& value) { m_instances = std::move(value); }
-    inline DiscoverInstancesResult& WithInstances(const Aws::Vector<HttpInstanceSummary>& value) { SetInstances(value); return *this;}
-    inline DiscoverInstancesResult& WithInstances(Aws::Vector<HttpInstanceSummary>&& value) { SetInstances(std::move(value)); return *this;}
-    inline DiscoverInstancesResult& AddInstances(const HttpInstanceSummary& value) { m_instances.push_back(value); return *this; }
-    inline DiscoverInstancesResult& AddInstances(HttpInstanceSummary&& value) { m_instances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HttpInstanceSummary>& GetInstances() const { return m_instances; }
+    template<typename InstancesT = Aws::Vector<HttpInstanceSummary>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<HttpInstanceSummary>>
+    DiscoverInstancesResult& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = HttpInstanceSummary>
+    DiscoverInstancesResult& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,28 +55,29 @@ namespace Model
      * updates. The health status updates don't update
      * <code>InstancesRevision</code>.</p>
      */
-    inline long long GetInstancesRevision() const{ return m_instancesRevision; }
-    inline void SetInstancesRevision(long long value) { m_instancesRevision = value; }
+    inline long long GetInstancesRevision() const { return m_instancesRevision; }
+    inline void SetInstancesRevision(long long value) { m_instancesRevisionHasBeenSet = true; m_instancesRevision = value; }
     inline DiscoverInstancesResult& WithInstancesRevision(long long value) { SetInstancesRevision(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DiscoverInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DiscoverInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DiscoverInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DiscoverInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HttpInstanceSummary> m_instances;
+    bool m_instancesHasBeenSet = false;
 
-    long long m_instancesRevision;
+    long long m_instancesRevision{0};
+    bool m_instancesRevisionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

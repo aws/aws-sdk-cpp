@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopAssessmentRequest::StopAssessmentRequest() : 
-    m_assessmentIdHasBeenSet(false)
-{
-}
-
 Aws::String StopAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;

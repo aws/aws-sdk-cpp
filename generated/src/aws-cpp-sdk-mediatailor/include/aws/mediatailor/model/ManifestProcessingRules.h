@@ -33,7 +33,7 @@ namespace Model
   class ManifestProcessingRules
   {
   public:
-    AWS_MEDIATAILOR_API ManifestProcessingRules();
+    AWS_MEDIATAILOR_API ManifestProcessingRules() = default;
     AWS_MEDIATAILOR_API ManifestProcessingRules(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API ManifestProcessingRules& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <code>60</code>, but no ads are filled for that ad break, MediaTailor will not
      * set the value to <code>0</code>.</p>
      */
-    inline const AdMarkerPassthrough& GetAdMarkerPassthrough() const{ return m_adMarkerPassthrough; }
+    inline const AdMarkerPassthrough& GetAdMarkerPassthrough() const { return m_adMarkerPassthrough; }
     inline bool AdMarkerPassthroughHasBeenSet() const { return m_adMarkerPassthroughHasBeenSet; }
-    inline void SetAdMarkerPassthrough(const AdMarkerPassthrough& value) { m_adMarkerPassthroughHasBeenSet = true; m_adMarkerPassthrough = value; }
-    inline void SetAdMarkerPassthrough(AdMarkerPassthrough&& value) { m_adMarkerPassthroughHasBeenSet = true; m_adMarkerPassthrough = std::move(value); }
-    inline ManifestProcessingRules& WithAdMarkerPassthrough(const AdMarkerPassthrough& value) { SetAdMarkerPassthrough(value); return *this;}
-    inline ManifestProcessingRules& WithAdMarkerPassthrough(AdMarkerPassthrough&& value) { SetAdMarkerPassthrough(std::move(value)); return *this;}
+    template<typename AdMarkerPassthroughT = AdMarkerPassthrough>
+    void SetAdMarkerPassthrough(AdMarkerPassthroughT&& value) { m_adMarkerPassthroughHasBeenSet = true; m_adMarkerPassthrough = std::forward<AdMarkerPassthroughT>(value); }
+    template<typename AdMarkerPassthroughT = AdMarkerPassthrough>
+    ManifestProcessingRules& WithAdMarkerPassthrough(AdMarkerPassthroughT&& value) { SetAdMarkerPassthrough(std::forward<AdMarkerPassthroughT>(value)); return *this;}
     ///@}
   private:
 

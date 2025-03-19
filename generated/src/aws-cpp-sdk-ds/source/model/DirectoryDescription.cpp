@@ -18,48 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryDescription::DirectoryDescription() : 
-    m_directoryIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortNameHasBeenSet(false),
-    m_size(DirectorySize::NOT_SET),
-    m_sizeHasBeenSet(false),
-    m_edition(DirectoryEdition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_accessUrlHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false),
-    m_stage(DirectoryStage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false),
-    m_shareMethod(ShareMethod::NOT_SET),
-    m_shareMethodHasBeenSet(false),
-    m_shareNotesHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_stageLastUpdatedDateTimeHasBeenSet(false),
-    m_type(DirectoryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false),
-    m_connectSettingsHasBeenSet(false),
-    m_radiusSettingsHasBeenSet(false),
-    m_radiusStatus(RadiusStatus::NOT_SET),
-    m_radiusStatusHasBeenSet(false),
-    m_stageReasonHasBeenSet(false),
-    m_ssoEnabled(false),
-    m_ssoEnabledHasBeenSet(false),
-    m_desiredNumberOfDomainControllers(0),
-    m_desiredNumberOfDomainControllersHasBeenSet(false),
-    m_ownerDirectoryDescriptionHasBeenSet(false),
-    m_regionsInfoHasBeenSet(false),
-    m_osVersion(OSVersion::NOT_SET),
-    m_osVersionHasBeenSet(false)
-{
-}
-
 DirectoryDescription::DirectoryDescription(JsonView jsonValue)
-  : DirectoryDescription()
 {
   *this = jsonValue;
 }
@@ -69,59 +28,43 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortName"))
   {
     m_shortName = jsonValue.GetString("ShortName");
-
     m_shortNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = DirectorySizeMapper::GetDirectorySizeForName(jsonValue.GetString("Size"));
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edition"))
   {
     m_edition = DirectoryEditionMapper::GetDirectoryEditionForName(jsonValue.GetString("Edition"));
-
     m_editionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetString("Alias");
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessUrl"))
   {
     m_accessUrl = jsonValue.GetString("AccessUrl");
-
     m_accessUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
     Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
@@ -131,126 +74,91 @@ DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
     }
     m_dnsIpAddrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stage"))
   {
     m_stage = DirectoryStageMapper::GetDirectoryStageForName(jsonValue.GetString("Stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareStatus"))
   {
     m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("ShareStatus"));
-
     m_shareStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareMethod"))
   {
     m_shareMethod = ShareMethodMapper::GetShareMethodForName(jsonValue.GetString("ShareMethod"));
-
     m_shareMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareNotes"))
   {
     m_shareNotes = jsonValue.GetString("ShareNotes");
-
     m_shareNotesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchTime"))
   {
     m_launchTime = jsonValue.GetDouble("LaunchTime");
-
     m_launchTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageLastUpdatedDateTime"))
   {
     m_stageLastUpdatedDateTime = jsonValue.GetDouble("StageLastUpdatedDateTime");
-
     m_stageLastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DirectoryTypeMapper::GetDirectoryTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSettings"))
   {
     m_vpcSettings = jsonValue.GetObject("VpcSettings");
-
     m_vpcSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectSettings"))
   {
     m_connectSettings = jsonValue.GetObject("ConnectSettings");
-
     m_connectSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusSettings"))
   {
     m_radiusSettings = jsonValue.GetObject("RadiusSettings");
-
     m_radiusSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RadiusStatus"))
   {
     m_radiusStatus = RadiusStatusMapper::GetRadiusStatusForName(jsonValue.GetString("RadiusStatus"));
-
     m_radiusStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageReason"))
   {
     m_stageReason = jsonValue.GetString("StageReason");
-
     m_stageReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SsoEnabled"))
   {
     m_ssoEnabled = jsonValue.GetBool("SsoEnabled");
-
     m_ssoEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredNumberOfDomainControllers"))
   {
     m_desiredNumberOfDomainControllers = jsonValue.GetInteger("DesiredNumberOfDomainControllers");
-
     m_desiredNumberOfDomainControllersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerDirectoryDescription"))
   {
     m_ownerDirectoryDescription = jsonValue.GetObject("OwnerDirectoryDescription");
-
     m_ownerDirectoryDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionsInfo"))
   {
     m_regionsInfo = jsonValue.GetObject("RegionsInfo");
-
     m_regionsInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OsVersion"))
   {
     m_osVersion = OSVersionMapper::GetOSVersionForName(jsonValue.GetString("OsVersion"));
-
     m_osVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

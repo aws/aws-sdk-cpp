@@ -12,14 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProtectionsRequest::ListProtectionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_inclusionFiltersHasBeenSet(false)
-{
-}
-
 Aws::String ListProtectionsRequest::SerializePayload() const
 {
   JsonValue payload;

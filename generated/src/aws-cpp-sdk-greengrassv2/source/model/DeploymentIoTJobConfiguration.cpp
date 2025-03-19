@@ -18,15 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration() : 
-    m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_abortConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false)
-{
-}
-
 DeploymentIoTJobConfiguration::DeploymentIoTJobConfiguration(JsonView jsonValue)
-  : DeploymentIoTJobConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeploymentIoTJobConfiguration& DeploymentIoTJobConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("jobExecutionsRolloutConfig"))
   {
     m_jobExecutionsRolloutConfig = jsonValue.GetObject("jobExecutionsRolloutConfig");
-
     m_jobExecutionsRolloutConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("abortConfig"))
   {
     m_abortConfig = jsonValue.GetObject("abortConfig");
-
     m_abortConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutConfig"))
   {
     m_timeoutConfig = jsonValue.GetObject("timeoutConfig");
-
     m_timeoutConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

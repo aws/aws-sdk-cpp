@@ -32,7 +32,7 @@ namespace Model
   class AcceptedAssetScope
   {
   public:
-    AWS_DATAZONE_API AcceptedAssetScope();
+    AWS_DATAZONE_API AcceptedAssetScope() = default;
     AWS_DATAZONE_API AcceptedAssetScope(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AcceptedAssetScope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,26 @@ namespace Model
     /**
      * <p>The asset ID of the accepted asset scope.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline AcceptedAssetScope& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline AcceptedAssetScope& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline AcceptedAssetScope& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    AcceptedAssetScope& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter IDs of the accepted asset scope.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFilterIds() const{ return m_filterIds; }
+    inline const Aws::Vector<Aws::String>& GetFilterIds() const { return m_filterIds; }
     inline bool FilterIdsHasBeenSet() const { return m_filterIdsHasBeenSet; }
-    inline void SetFilterIds(const Aws::Vector<Aws::String>& value) { m_filterIdsHasBeenSet = true; m_filterIds = value; }
-    inline void SetFilterIds(Aws::Vector<Aws::String>&& value) { m_filterIdsHasBeenSet = true; m_filterIds = std::move(value); }
-    inline AcceptedAssetScope& WithFilterIds(const Aws::Vector<Aws::String>& value) { SetFilterIds(value); return *this;}
-    inline AcceptedAssetScope& WithFilterIds(Aws::Vector<Aws::String>&& value) { SetFilterIds(std::move(value)); return *this;}
-    inline AcceptedAssetScope& AddFilterIds(const Aws::String& value) { m_filterIdsHasBeenSet = true; m_filterIds.push_back(value); return *this; }
-    inline AcceptedAssetScope& AddFilterIds(Aws::String&& value) { m_filterIdsHasBeenSet = true; m_filterIds.push_back(std::move(value)); return *this; }
-    inline AcceptedAssetScope& AddFilterIds(const char* value) { m_filterIdsHasBeenSet = true; m_filterIds.push_back(value); return *this; }
+    template<typename FilterIdsT = Aws::Vector<Aws::String>>
+    void SetFilterIds(FilterIdsT&& value) { m_filterIdsHasBeenSet = true; m_filterIds = std::forward<FilterIdsT>(value); }
+    template<typename FilterIdsT = Aws::Vector<Aws::String>>
+    AcceptedAssetScope& WithFilterIds(FilterIdsT&& value) { SetFilterIds(std::forward<FilterIdsT>(value)); return *this;}
+    template<typename FilterIdsT = Aws::String>
+    AcceptedAssetScope& AddFilterIds(FilterIdsT&& value) { m_filterIdsHasBeenSet = true; m_filterIds.emplace_back(std::forward<FilterIdsT>(value)); return *this; }
     ///@}
   private:
 

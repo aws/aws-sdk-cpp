@@ -20,38 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Host::Host() : 
-    m_autoPlacement(AutoPlacement::NOT_SET),
-    m_autoPlacementHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availableCapacityHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_allocationTimeHasBeenSet(false),
-    m_releaseTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false),
-    m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
-    m_allowsMultipleInstanceTypesHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_memberOfServiceLinkedResourceGroup(false),
-    m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false),
-    m_assetIdHasBeenSet(false)
-{
-}
-
 Host::Host(const XmlNode& xmlNode)
-  : Host()
 {
   *this = xmlNode;
 }
@@ -65,7 +34,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode autoPlacementNode = resultNode.FirstChild("autoPlacement");
     if(!autoPlacementNode.IsNull())
     {
-      m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPlacementNode.GetText()).c_str()).c_str());
+      m_autoPlacement = AutoPlacementMapper::GetAutoPlacementForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoPlacementNode.GetText()).c_str()));
       m_autoPlacementHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
@@ -108,6 +77,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("item");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
@@ -119,7 +89,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode allocationTimeNode = resultNode.FirstChild("allocationTime");
@@ -138,6 +108,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -149,13 +120,13 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode hostRecoveryNode = resultNode.FirstChild("hostRecovery");
     if(!hostRecoveryNode.IsNull())
     {
-      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostRecoveryNode.GetText()).c_str()).c_str());
+      m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostRecoveryNode.GetText()).c_str()));
       m_hostRecoveryHasBeenSet = true;
     }
     XmlNode allowsMultipleInstanceTypesNode = resultNode.FirstChild("allowsMultipleInstanceTypes");
     if(!allowsMultipleInstanceTypesNode.IsNull())
     {
-      m_allowsMultipleInstanceTypes = AllowsMultipleInstanceTypesMapper::GetAllowsMultipleInstanceTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsMultipleInstanceTypesNode.GetText()).c_str()).c_str());
+      m_allowsMultipleInstanceTypes = AllowsMultipleInstanceTypesMapper::GetAllowsMultipleInstanceTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsMultipleInstanceTypesNode.GetText()).c_str()));
       m_allowsMultipleInstanceTypesHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
@@ -185,7 +156,7 @@ Host& Host::operator =(const XmlNode& xmlNode)
     XmlNode hostMaintenanceNode = resultNode.FirstChild("hostMaintenance");
     if(!hostMaintenanceNode.IsNull())
     {
-      m_hostMaintenance = HostMaintenanceMapper::GetHostMaintenanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostMaintenanceNode.GetText()).c_str()).c_str());
+      m_hostMaintenance = HostMaintenanceMapper::GetHostMaintenanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostMaintenanceNode.GetText()).c_str()));
       m_hostMaintenanceHasBeenSet = true;
     }
     XmlNode assetIdNode = resultNode.FirstChild("assetId");

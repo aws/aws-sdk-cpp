@@ -18,16 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ResourceChangeDetail::ResourceChangeDetail() : 
-    m_targetHasBeenSet(false),
-    m_evaluation(EvaluationType::NOT_SET),
-    m_evaluationHasBeenSet(false),
-    m_causingEntityHasBeenSet(false)
-{
-}
-
 ResourceChangeDetail::ResourceChangeDetail(JsonView jsonValue)
-  : ResourceChangeDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceChangeDetail& ResourceChangeDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetObject("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Evaluation"))
   {
     m_evaluation = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("Evaluation"));
-
     m_evaluationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CausingEntity"))
   {
     m_causingEntity = jsonValue.GetString("CausingEntity");
-
     m_causingEntityHasBeenSet = true;
   }
-
   return *this;
 }
 

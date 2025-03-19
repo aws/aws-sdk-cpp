@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteTemplateShareRequest::DeleteTemplateShareRequest() : 
-    m_shareIdHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteTemplateShareRequest::SerializePayload() const
 {
   return {};

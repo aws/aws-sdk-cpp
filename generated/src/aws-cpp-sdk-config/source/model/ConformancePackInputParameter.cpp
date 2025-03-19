@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackInputParameter::ConformancePackInputParameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 ConformancePackInputParameter::ConformancePackInputParameter(JsonView jsonValue)
-  : ConformancePackInputParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConformancePackInputParameter& ConformancePackInputParameter::operator =(JsonVie
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterValue"))
   {
     m_parameterValue = jsonValue.GetString("ParameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

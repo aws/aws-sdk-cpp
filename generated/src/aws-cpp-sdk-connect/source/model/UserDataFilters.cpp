@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserDataFilters::UserDataFilters() : 
-    m_queuesHasBeenSet(false),
-    m_contactFilterHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false),
-    m_agentsHasBeenSet(false),
-    m_userHierarchyGroupsHasBeenSet(false)
-{
-}
-
 UserDataFilters::UserDataFilters(JsonView jsonValue)
-  : UserDataFilters()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ UserDataFilters& UserDataFilters::operator =(JsonView jsonValue)
     }
     m_queuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactFilter"))
   {
     m_contactFilter = jsonValue.GetObject("ContactFilter");
-
     m_contactFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingProfiles"))
   {
     Aws::Utils::Array<JsonView> routingProfilesJsonList = jsonValue.GetArray("RoutingProfiles");
@@ -61,7 +48,6 @@ UserDataFilters& UserDataFilters::operator =(JsonView jsonValue)
     }
     m_routingProfilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Agents"))
   {
     Aws::Utils::Array<JsonView> agentsJsonList = jsonValue.GetArray("Agents");
@@ -71,7 +57,6 @@ UserDataFilters& UserDataFilters::operator =(JsonView jsonValue)
     }
     m_agentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserHierarchyGroups"))
   {
     Aws::Utils::Array<JsonView> userHierarchyGroupsJsonList = jsonValue.GetArray("UserHierarchyGroups");
@@ -81,7 +66,6 @@ UserDataFilters& UserDataFilters::operator =(JsonView jsonValue)
     }
     m_userHierarchyGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

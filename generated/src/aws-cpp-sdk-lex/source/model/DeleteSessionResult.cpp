@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSessionResult::DeleteSessionResult()
-{
-}
-
 DeleteSessionResult::DeleteSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ DeleteSessionResult& DeleteSessionResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("botName"))
   {
     m_botName = jsonValue.GetString("botName");
-
+    m_botNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botAlias"))
   {
     m_botAlias = jsonValue.GetString("botAlias");
-
+    m_botAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
+    m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

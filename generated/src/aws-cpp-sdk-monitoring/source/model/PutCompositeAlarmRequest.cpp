@@ -10,24 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutCompositeAlarmRequest::PutCompositeAlarmRequest() : 
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_alarmRuleHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_oKActionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_actionsSuppressorHasBeenSet(false),
-    m_actionsSuppressorWaitPeriod(0),
-    m_actionsSuppressorWaitPeriodHasBeenSet(false),
-    m_actionsSuppressorExtensionPeriod(0),
-    m_actionsSuppressorExtensionPeriodHasBeenSet(false)
-{
-}
-
 Aws::String PutCompositeAlarmRequest::SerializePayload() const
 {
   Aws::StringStream ss;

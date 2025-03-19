@@ -30,7 +30,7 @@ namespace Model
   class CreateFleetRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API CreateFleetRequest();
+    AWS_CODEBUILD_API CreateFleetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the compute fleet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateFleetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFleetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <p>The initial number of machines allocated to the ﬂeet, which deﬁnes the number
      * of builds that can run in parallel.</p>
      */
-    inline int GetBaseCapacity() const{ return m_baseCapacity; }
+    inline int GetBaseCapacity() const { return m_baseCapacity; }
     inline bool BaseCapacityHasBeenSet() const { return m_baseCapacityHasBeenSet; }
     inline void SetBaseCapacity(int value) { m_baseCapacityHasBeenSet = true; m_baseCapacity = value; }
     inline CreateFleetRequest& WithBaseCapacity(int value) { SetBaseCapacity(value); return *this;}
@@ -110,12 +108,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
-    inline const EnvironmentType& GetEnvironmentType() const{ return m_environmentType; }
+    inline EnvironmentType GetEnvironmentType() const { return m_environmentType; }
     inline bool EnvironmentTypeHasBeenSet() const { return m_environmentTypeHasBeenSet; }
-    inline void SetEnvironmentType(const EnvironmentType& value) { m_environmentTypeHasBeenSet = true; m_environmentType = value; }
-    inline void SetEnvironmentType(EnvironmentType&& value) { m_environmentTypeHasBeenSet = true; m_environmentType = std::move(value); }
-    inline CreateFleetRequest& WithEnvironmentType(const EnvironmentType& value) { SetEnvironmentType(value); return *this;}
-    inline CreateFleetRequest& WithEnvironmentType(EnvironmentType&& value) { SetEnvironmentType(std::move(value)); return *this;}
+    inline void SetEnvironmentType(EnvironmentType value) { m_environmentTypeHasBeenSet = true; m_environmentType = value; }
+    inline CreateFleetRequest& WithEnvironmentType(EnvironmentType value) { SetEnvironmentType(value); return *this;}
     ///@}
 
     ///@{
@@ -169,12 +165,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types">On-demand
      * environment types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
-    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+    inline ComputeType GetComputeType() const { return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
-    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
-    inline CreateFleetRequest& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
-    inline CreateFleetRequest& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    inline void SetComputeType(ComputeType value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline CreateFleetRequest& WithComputeType(ComputeType value) { SetComputeType(value); return *this;}
     ///@}
 
     ///@{
@@ -182,24 +176,24 @@ namespace Model
      * <p>The compute configuration of the compute fleet. This is only required if
      * <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
      */
-    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
     inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
-    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
-    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
-    inline CreateFleetRequest& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
-    inline CreateFleetRequest& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    void SetComputeConfiguration(ComputeConfigurationT&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::forward<ComputeConfigurationT>(value); }
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    CreateFleetRequest& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scaling configuration of the compute fleet.</p>
      */
-    inline const ScalingConfigurationInput& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+    inline const ScalingConfigurationInput& GetScalingConfiguration() const { return m_scalingConfiguration; }
     inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
-    inline void SetScalingConfiguration(const ScalingConfigurationInput& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
-    inline void SetScalingConfiguration(ScalingConfigurationInput&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
-    inline CreateFleetRequest& WithScalingConfiguration(const ScalingConfigurationInput& value) { SetScalingConfiguration(value); return *this;}
-    inline CreateFleetRequest& WithScalingConfiguration(ScalingConfigurationInput&& value) { SetScalingConfiguration(std::move(value)); return *this;}
+    template<typename ScalingConfigurationT = ScalingConfigurationInput>
+    void SetScalingConfiguration(ScalingConfigurationT&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::forward<ScalingConfigurationT>(value); }
+    template<typename ScalingConfigurationT = ScalingConfigurationInput>
+    CreateFleetRequest& WithScalingConfiguration(ScalingConfigurationT&& value) { SetScalingConfiguration(std::forward<ScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,48 +209,44 @@ namespace Model
      * policy statement to allow CodeBuild access to Amazon Web Services services
      * required to create a VPC network interface</a>.</p>  </li> </ul>
      */
-    inline const FleetOverflowBehavior& GetOverflowBehavior() const{ return m_overflowBehavior; }
+    inline FleetOverflowBehavior GetOverflowBehavior() const { return m_overflowBehavior; }
     inline bool OverflowBehaviorHasBeenSet() const { return m_overflowBehaviorHasBeenSet; }
-    inline void SetOverflowBehavior(const FleetOverflowBehavior& value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = value; }
-    inline void SetOverflowBehavior(FleetOverflowBehavior&& value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = std::move(value); }
-    inline CreateFleetRequest& WithOverflowBehavior(const FleetOverflowBehavior& value) { SetOverflowBehavior(value); return *this;}
-    inline CreateFleetRequest& WithOverflowBehavior(FleetOverflowBehavior&& value) { SetOverflowBehavior(std::move(value)); return *this;}
+    inline void SetOverflowBehavior(FleetOverflowBehavior value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = value; }
+    inline CreateFleetRequest& WithOverflowBehavior(FleetOverflowBehavior value) { SetOverflowBehavior(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline CreateFleetRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline CreateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    CreateFleetRequest& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The proxy configuration of the compute fleet.</p>
      */
-    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+    inline const ProxyConfiguration& GetProxyConfiguration() const { return m_proxyConfiguration; }
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
-    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
-    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
-    inline CreateFleetRequest& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
-    inline CreateFleetRequest& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+    template<typename ProxyConfigurationT = ProxyConfiguration>
+    void SetProxyConfiguration(ProxyConfigurationT&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::forward<ProxyConfigurationT>(value); }
+    template<typename ProxyConfigurationT = ProxyConfiguration>
+    CreateFleetRequest& WithProxyConfiguration(ProxyConfigurationT&& value) { SetProxyConfiguration(std::forward<ProxyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline CreateFleetRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline CreateFleetRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    CreateFleetRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,14 +257,12 @@ namespace Model
      * Allow a user to add a permission policy for a fleet service role</a> in the
      * <i>CodeBuild User Guide</i>.</p>
      */
-    inline const Aws::String& GetFleetServiceRole() const{ return m_fleetServiceRole; }
+    inline const Aws::String& GetFleetServiceRole() const { return m_fleetServiceRole; }
     inline bool FleetServiceRoleHasBeenSet() const { return m_fleetServiceRoleHasBeenSet; }
-    inline void SetFleetServiceRole(const Aws::String& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = value; }
-    inline void SetFleetServiceRole(Aws::String&& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = std::move(value); }
-    inline void SetFleetServiceRole(const char* value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole.assign(value); }
-    inline CreateFleetRequest& WithFleetServiceRole(const Aws::String& value) { SetFleetServiceRole(value); return *this;}
-    inline CreateFleetRequest& WithFleetServiceRole(Aws::String&& value) { SetFleetServiceRole(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithFleetServiceRole(const char* value) { SetFleetServiceRole(value); return *this;}
+    template<typename FleetServiceRoleT = Aws::String>
+    void SetFleetServiceRole(FleetServiceRoleT&& value) { m_fleetServiceRoleHasBeenSet = true; m_fleetServiceRole = std::forward<FleetServiceRoleT>(value); }
+    template<typename FleetServiceRoleT = Aws::String>
+    CreateFleetRequest& WithFleetServiceRole(FleetServiceRoleT&& value) { SetFleetServiceRole(std::forward<FleetServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -283,27 +271,27 @@ namespace Model
      * <p>These tags are available for use by Amazon Web Services services that support
      * CodeBuild build project tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFleetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFleetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFleetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFleetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFleetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFleetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_baseCapacity;
+    int m_baseCapacity{0};
     bool m_baseCapacityHasBeenSet = false;
 
-    EnvironmentType m_environmentType;
+    EnvironmentType m_environmentType{EnvironmentType::NOT_SET};
     bool m_environmentTypeHasBeenSet = false;
 
-    ComputeType m_computeType;
+    ComputeType m_computeType{ComputeType::NOT_SET};
     bool m_computeTypeHasBeenSet = false;
 
     ComputeConfiguration m_computeConfiguration;
@@ -312,7 +300,7 @@ namespace Model
     ScalingConfigurationInput m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet = false;
 
-    FleetOverflowBehavior m_overflowBehavior;
+    FleetOverflowBehavior m_overflowBehavior{FleetOverflowBehavior::NOT_SET};
     bool m_overflowBehaviorHasBeenSet = false;
 
     VpcConfig m_vpcConfig;

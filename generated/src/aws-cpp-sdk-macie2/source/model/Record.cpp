@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Record::Record() : 
-    m_jsonPathHasBeenSet(false),
-    m_recordIndex(0),
-    m_recordIndexHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Record& Record::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jsonPath"))
   {
     m_jsonPath = jsonValue.GetString("jsonPath");
-
     m_jsonPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordIndex"))
   {
     m_recordIndex = jsonValue.GetInt64("recordIndex");
-
     m_recordIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

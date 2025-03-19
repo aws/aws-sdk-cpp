@@ -33,7 +33,7 @@ namespace Model
   class AppIntegrationsConfiguration
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration();
+    AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration() = default;
     AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API AppIntegrationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -74,14 +74,12 @@ namespace Model
      * <code>s3:GetBucketLocation</code> against the bucket.</p>  </li>
      * </ul>
      */
-    inline const Aws::String& GetAppIntegrationArn() const{ return m_appIntegrationArn; }
+    inline const Aws::String& GetAppIntegrationArn() const { return m_appIntegrationArn; }
     inline bool AppIntegrationArnHasBeenSet() const { return m_appIntegrationArnHasBeenSet; }
-    inline void SetAppIntegrationArn(const Aws::String& value) { m_appIntegrationArnHasBeenSet = true; m_appIntegrationArn = value; }
-    inline void SetAppIntegrationArn(Aws::String&& value) { m_appIntegrationArnHasBeenSet = true; m_appIntegrationArn = std::move(value); }
-    inline void SetAppIntegrationArn(const char* value) { m_appIntegrationArnHasBeenSet = true; m_appIntegrationArn.assign(value); }
-    inline AppIntegrationsConfiguration& WithAppIntegrationArn(const Aws::String& value) { SetAppIntegrationArn(value); return *this;}
-    inline AppIntegrationsConfiguration& WithAppIntegrationArn(Aws::String&& value) { SetAppIntegrationArn(std::move(value)); return *this;}
-    inline AppIntegrationsConfiguration& WithAppIntegrationArn(const char* value) { SetAppIntegrationArn(value); return *this;}
+    template<typename AppIntegrationArnT = Aws::String>
+    void SetAppIntegrationArn(AppIntegrationArnT&& value) { m_appIntegrationArnHasBeenSet = true; m_appIntegrationArn = std::forward<AppIntegrationArnT>(value); }
+    template<typename AppIntegrationArnT = Aws::String>
+    AppIntegrationsConfiguration& WithAppIntegrationArn(AppIntegrationArnT&& value) { SetAppIntegrationArn(std::forward<AppIntegrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,15 +102,14 @@ namespace Model
      * to include additional fields. These fields are indexed and used to source
      * recommendations. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectFields() const{ return m_objectFields; }
+    inline const Aws::Vector<Aws::String>& GetObjectFields() const { return m_objectFields; }
     inline bool ObjectFieldsHasBeenSet() const { return m_objectFieldsHasBeenSet; }
-    inline void SetObjectFields(const Aws::Vector<Aws::String>& value) { m_objectFieldsHasBeenSet = true; m_objectFields = value; }
-    inline void SetObjectFields(Aws::Vector<Aws::String>&& value) { m_objectFieldsHasBeenSet = true; m_objectFields = std::move(value); }
-    inline AppIntegrationsConfiguration& WithObjectFields(const Aws::Vector<Aws::String>& value) { SetObjectFields(value); return *this;}
-    inline AppIntegrationsConfiguration& WithObjectFields(Aws::Vector<Aws::String>&& value) { SetObjectFields(std::move(value)); return *this;}
-    inline AppIntegrationsConfiguration& AddObjectFields(const Aws::String& value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(value); return *this; }
-    inline AppIntegrationsConfiguration& AddObjectFields(Aws::String&& value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(std::move(value)); return *this; }
-    inline AppIntegrationsConfiguration& AddObjectFields(const char* value) { m_objectFieldsHasBeenSet = true; m_objectFields.push_back(value); return *this; }
+    template<typename ObjectFieldsT = Aws::Vector<Aws::String>>
+    void SetObjectFields(ObjectFieldsT&& value) { m_objectFieldsHasBeenSet = true; m_objectFields = std::forward<ObjectFieldsT>(value); }
+    template<typename ObjectFieldsT = Aws::Vector<Aws::String>>
+    AppIntegrationsConfiguration& WithObjectFields(ObjectFieldsT&& value) { SetObjectFields(std::forward<ObjectFieldsT>(value)); return *this;}
+    template<typename ObjectFieldsT = Aws::String>
+    AppIntegrationsConfiguration& AddObjectFields(ObjectFieldsT&& value) { m_objectFieldsHasBeenSet = true; m_objectFields.emplace_back(std::forward<ObjectFieldsT>(value)); return *this; }
     ///@}
   private:
 

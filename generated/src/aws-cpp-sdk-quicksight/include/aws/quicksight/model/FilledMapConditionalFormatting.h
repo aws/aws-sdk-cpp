@@ -33,7 +33,7 @@ namespace Model
   class FilledMapConditionalFormatting
   {
   public:
-    AWS_QUICKSIGHT_API FilledMapConditionalFormatting();
+    AWS_QUICKSIGHT_API FilledMapConditionalFormatting() = default;
     AWS_QUICKSIGHT_API FilledMapConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilledMapConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Conditional formatting options of a <code>FilledMapVisual</code>.</p>
      */
-    inline const Aws::Vector<FilledMapConditionalFormattingOption>& GetConditionalFormattingOptions() const{ return m_conditionalFormattingOptions; }
+    inline const Aws::Vector<FilledMapConditionalFormattingOption>& GetConditionalFormattingOptions() const { return m_conditionalFormattingOptions; }
     inline bool ConditionalFormattingOptionsHasBeenSet() const { return m_conditionalFormattingOptionsHasBeenSet; }
-    inline void SetConditionalFormattingOptions(const Aws::Vector<FilledMapConditionalFormattingOption>& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = value; }
-    inline void SetConditionalFormattingOptions(Aws::Vector<FilledMapConditionalFormattingOption>&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = std::move(value); }
-    inline FilledMapConditionalFormatting& WithConditionalFormattingOptions(const Aws::Vector<FilledMapConditionalFormattingOption>& value) { SetConditionalFormattingOptions(value); return *this;}
-    inline FilledMapConditionalFormatting& WithConditionalFormattingOptions(Aws::Vector<FilledMapConditionalFormattingOption>&& value) { SetConditionalFormattingOptions(std::move(value)); return *this;}
-    inline FilledMapConditionalFormatting& AddConditionalFormattingOptions(const FilledMapConditionalFormattingOption& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(value); return *this; }
-    inline FilledMapConditionalFormatting& AddConditionalFormattingOptions(FilledMapConditionalFormattingOption&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(std::move(value)); return *this; }
+    template<typename ConditionalFormattingOptionsT = Aws::Vector<FilledMapConditionalFormattingOption>>
+    void SetConditionalFormattingOptions(ConditionalFormattingOptionsT&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = std::forward<ConditionalFormattingOptionsT>(value); }
+    template<typename ConditionalFormattingOptionsT = Aws::Vector<FilledMapConditionalFormattingOption>>
+    FilledMapConditionalFormatting& WithConditionalFormattingOptions(ConditionalFormattingOptionsT&& value) { SetConditionalFormattingOptions(std::forward<ConditionalFormattingOptionsT>(value)); return *this;}
+    template<typename ConditionalFormattingOptionsT = FilledMapConditionalFormattingOption>
+    FilledMapConditionalFormatting& AddConditionalFormattingOptions(ConditionalFormattingOptionsT&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.emplace_back(std::forward<ConditionalFormattingOptionsT>(value)); return *this; }
     ///@}
   private:
 

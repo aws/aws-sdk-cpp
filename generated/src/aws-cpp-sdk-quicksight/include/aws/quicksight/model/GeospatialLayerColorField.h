@@ -34,7 +34,7 @@ namespace Model
   class GeospatialLayerColorField
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLayerColorField();
+    AWS_QUICKSIGHT_API GeospatialLayerColorField() = default;
     AWS_QUICKSIGHT_API GeospatialLayerColorField(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLayerColorField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>A list of color dimension fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetColorDimensionsFields() const{ return m_colorDimensionsFields; }
+    inline const Aws::Vector<DimensionField>& GetColorDimensionsFields() const { return m_colorDimensionsFields; }
     inline bool ColorDimensionsFieldsHasBeenSet() const { return m_colorDimensionsFieldsHasBeenSet; }
-    inline void SetColorDimensionsFields(const Aws::Vector<DimensionField>& value) { m_colorDimensionsFieldsHasBeenSet = true; m_colorDimensionsFields = value; }
-    inline void SetColorDimensionsFields(Aws::Vector<DimensionField>&& value) { m_colorDimensionsFieldsHasBeenSet = true; m_colorDimensionsFields = std::move(value); }
-    inline GeospatialLayerColorField& WithColorDimensionsFields(const Aws::Vector<DimensionField>& value) { SetColorDimensionsFields(value); return *this;}
-    inline GeospatialLayerColorField& WithColorDimensionsFields(Aws::Vector<DimensionField>&& value) { SetColorDimensionsFields(std::move(value)); return *this;}
-    inline GeospatialLayerColorField& AddColorDimensionsFields(const DimensionField& value) { m_colorDimensionsFieldsHasBeenSet = true; m_colorDimensionsFields.push_back(value); return *this; }
-    inline GeospatialLayerColorField& AddColorDimensionsFields(DimensionField&& value) { m_colorDimensionsFieldsHasBeenSet = true; m_colorDimensionsFields.push_back(std::move(value)); return *this; }
+    template<typename ColorDimensionsFieldsT = Aws::Vector<DimensionField>>
+    void SetColorDimensionsFields(ColorDimensionsFieldsT&& value) { m_colorDimensionsFieldsHasBeenSet = true; m_colorDimensionsFields = std::forward<ColorDimensionsFieldsT>(value); }
+    template<typename ColorDimensionsFieldsT = Aws::Vector<DimensionField>>
+    GeospatialLayerColorField& WithColorDimensionsFields(ColorDimensionsFieldsT&& value) { SetColorDimensionsFields(std::forward<ColorDimensionsFieldsT>(value)); return *this;}
+    template<typename ColorDimensionsFieldsT = DimensionField>
+    GeospatialLayerColorField& AddColorDimensionsFields(ColorDimensionsFieldsT&& value) { m_colorDimensionsFieldsHasBeenSet = true; m_colorDimensionsFields.emplace_back(std::forward<ColorDimensionsFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of color measure fields.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetColorValuesFields() const{ return m_colorValuesFields; }
+    inline const Aws::Vector<MeasureField>& GetColorValuesFields() const { return m_colorValuesFields; }
     inline bool ColorValuesFieldsHasBeenSet() const { return m_colorValuesFieldsHasBeenSet; }
-    inline void SetColorValuesFields(const Aws::Vector<MeasureField>& value) { m_colorValuesFieldsHasBeenSet = true; m_colorValuesFields = value; }
-    inline void SetColorValuesFields(Aws::Vector<MeasureField>&& value) { m_colorValuesFieldsHasBeenSet = true; m_colorValuesFields = std::move(value); }
-    inline GeospatialLayerColorField& WithColorValuesFields(const Aws::Vector<MeasureField>& value) { SetColorValuesFields(value); return *this;}
-    inline GeospatialLayerColorField& WithColorValuesFields(Aws::Vector<MeasureField>&& value) { SetColorValuesFields(std::move(value)); return *this;}
-    inline GeospatialLayerColorField& AddColorValuesFields(const MeasureField& value) { m_colorValuesFieldsHasBeenSet = true; m_colorValuesFields.push_back(value); return *this; }
-    inline GeospatialLayerColorField& AddColorValuesFields(MeasureField&& value) { m_colorValuesFieldsHasBeenSet = true; m_colorValuesFields.push_back(std::move(value)); return *this; }
+    template<typename ColorValuesFieldsT = Aws::Vector<MeasureField>>
+    void SetColorValuesFields(ColorValuesFieldsT&& value) { m_colorValuesFieldsHasBeenSet = true; m_colorValuesFields = std::forward<ColorValuesFieldsT>(value); }
+    template<typename ColorValuesFieldsT = Aws::Vector<MeasureField>>
+    GeospatialLayerColorField& WithColorValuesFields(ColorValuesFieldsT&& value) { SetColorValuesFields(std::forward<ColorValuesFieldsT>(value)); return *this;}
+    template<typename ColorValuesFieldsT = MeasureField>
+    GeospatialLayerColorField& AddColorValuesFields(ColorValuesFieldsT&& value) { m_colorValuesFieldsHasBeenSet = true; m_colorValuesFields.emplace_back(std::forward<ColorValuesFieldsT>(value)); return *this; }
     ///@}
   private:
 

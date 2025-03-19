@@ -18,15 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-GlueDataSource::GlueDataSource() : 
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 GlueDataSource::GlueDataSource(JsonView jsonValue)
-  : GlueDataSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GlueDataSource& GlueDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("catalogId"))
   {
     m_catalogId = jsonValue.GetString("catalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   return *this;
 }
 

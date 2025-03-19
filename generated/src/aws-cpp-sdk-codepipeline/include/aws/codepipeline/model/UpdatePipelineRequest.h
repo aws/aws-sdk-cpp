@@ -25,7 +25,7 @@ namespace Model
   class UpdatePipelineRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API UpdatePipelineRequest();
+    AWS_CODEPIPELINE_API UpdatePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The name of the pipeline to be updated.</p>
      */
-    inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
+    inline const PipelineDeclaration& GetPipeline() const { return m_pipeline; }
     inline bool PipelineHasBeenSet() const { return m_pipelineHasBeenSet; }
-    inline void SetPipeline(const PipelineDeclaration& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
-    inline void SetPipeline(PipelineDeclaration&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
-    inline UpdatePipelineRequest& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
-    inline UpdatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
+    template<typename PipelineT = PipelineDeclaration>
+    void SetPipeline(PipelineT&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::forward<PipelineT>(value); }
+    template<typename PipelineT = PipelineDeclaration>
+    UpdatePipelineRequest& WithPipeline(PipelineT&& value) { SetPipeline(std::forward<PipelineT>(value)); return *this;}
     ///@}
   private:
 

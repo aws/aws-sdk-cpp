@@ -18,14 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration() : 
-    m_instanceIdHasBeenSet(false),
-    m_autoScalingScheduleHasBeenSet(false)
-{
-}
-
 TimeBasedAutoScalingConfiguration::TimeBasedAutoScalingConfiguration(JsonView jsonValue)
-  : TimeBasedAutoScalingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimeBasedAutoScalingConfiguration& TimeBasedAutoScalingConfiguration::operator =
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingSchedule"))
   {
     m_autoScalingSchedule = jsonValue.GetObject("AutoScalingSchedule");
-
     m_autoScalingScheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

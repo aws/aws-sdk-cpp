@@ -12,15 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBatchLoadTasksRequest::ListBatchLoadTasksRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_taskStatus(BatchLoadStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListBatchLoadTasksRequest::SerializePayload() const
 {
   JsonValue payload;

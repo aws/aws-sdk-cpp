@@ -16,18 +16,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-ChatRequest::ChatRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_parentMessageIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 std::shared_ptr<Aws::IOStream> ChatRequest::GetBody() const
 {
     return m_inputStream;

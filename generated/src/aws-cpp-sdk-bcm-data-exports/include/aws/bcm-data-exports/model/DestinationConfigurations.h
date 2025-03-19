@@ -31,7 +31,7 @@ namespace Model
   class DestinationConfigurations
   {
   public:
-    AWS_BCMDATAEXPORTS_API DestinationConfigurations();
+    AWS_BCMDATAEXPORTS_API DestinationConfigurations() = default;
     AWS_BCMDATAEXPORTS_API DestinationConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API DestinationConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>An object that describes the destination of the data exports file.</p>
      */
-    inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline DestinationConfigurations& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-    inline DestinationConfigurations& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3Destination>
+    DestinationConfigurations& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

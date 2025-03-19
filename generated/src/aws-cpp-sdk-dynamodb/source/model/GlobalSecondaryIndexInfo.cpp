@@ -18,17 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-GlobalSecondaryIndexInfo::GlobalSecondaryIndexInfo() : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false)
-{
-}
-
 GlobalSecondaryIndexInfo::GlobalSecondaryIndexInfo(JsonView jsonValue)
-  : GlobalSecondaryIndexInfo()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ GlobalSecondaryIndexInfo& GlobalSecondaryIndexInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -51,28 +39,21 @@ GlobalSecondaryIndexInfo& GlobalSecondaryIndexInfo::operator =(JsonView jsonValu
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Projection"))
   {
     m_projection = jsonValue.GetObject("Projection");
-
     m_projectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughput"))
   {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
-
     m_onDemandThroughputHasBeenSet = true;
   }
-
   return *this;
 }
 

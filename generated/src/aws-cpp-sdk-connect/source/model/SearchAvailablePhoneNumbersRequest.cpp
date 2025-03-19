@@ -12,20 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchAvailablePhoneNumbersRequest::SearchAvailablePhoneNumbersRequest() : 
-    m_targetArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
-    m_phoneNumberCountryCodeHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false),
-    m_phoneNumberPrefixHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchAvailablePhoneNumbersRequest::SerializePayload() const
 {
   JsonValue payload;

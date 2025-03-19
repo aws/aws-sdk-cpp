@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DomainSettings::DomainSettings() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false),
-    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false),
-    m_dockerSettingsHasBeenSet(false),
-    m_amazonQSettingsHasBeenSet(false)
-{
-}
-
 DomainSettings::DomainSettings(JsonView jsonValue)
-  : DomainSettings()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RStudioServerProDomainSettings"))
   {
     m_rStudioServerProDomainSettings = jsonValue.GetObject("RStudioServerProDomainSettings");
-
     m_rStudioServerProDomainSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleIdentityConfig"))
   {
     m_executionRoleIdentityConfig = ExecutionRoleIdentityConfigMapper::GetExecutionRoleIdentityConfigForName(jsonValue.GetString("ExecutionRoleIdentityConfig"));
-
     m_executionRoleIdentityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DockerSettings"))
   {
     m_dockerSettings = jsonValue.GetObject("DockerSettings");
-
     m_dockerSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonQSettings"))
   {
     m_amazonQSettings = jsonValue.GetObject("AmazonQSettings");
-
     m_amazonQSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

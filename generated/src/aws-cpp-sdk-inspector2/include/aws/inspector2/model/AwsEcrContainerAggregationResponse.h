@@ -34,7 +34,7 @@ namespace Model
   class AwsEcrContainerAggregationResponse
   {
   public:
-    AWS_INSPECTOR2_API AwsEcrContainerAggregationResponse();
+    AWS_INSPECTOR2_API AwsEcrContainerAggregationResponse() = default;
     AWS_INSPECTOR2_API AwsEcrContainerAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API AwsEcrContainerAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,97 +45,86 @@ namespace Model
      * <p>The Amazon Web Services account ID of the account that owns the
      * container.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AwsEcrContainerAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The architecture of the container.</p>
      */
-    inline const Aws::String& GetArchitecture() const{ return m_architecture; }
+    inline const Aws::String& GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-    inline AwsEcrContainerAggregationResponse& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    template<typename ArchitectureT = Aws::String>
+    void SetArchitecture(ArchitectureT&& value) { m_architectureHasBeenSet = true; m_architecture = std::forward<ArchitectureT>(value); }
+    template<typename ArchitectureT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithArchitecture(ArchitectureT&& value) { SetArchitecture(std::forward<ArchitectureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SHA value of the container image.</p>
      */
-    inline const Aws::String& GetImageSha() const{ return m_imageSha; }
+    inline const Aws::String& GetImageSha() const { return m_imageSha; }
     inline bool ImageShaHasBeenSet() const { return m_imageShaHasBeenSet; }
-    inline void SetImageSha(const Aws::String& value) { m_imageShaHasBeenSet = true; m_imageSha = value; }
-    inline void SetImageSha(Aws::String&& value) { m_imageShaHasBeenSet = true; m_imageSha = std::move(value); }
-    inline void SetImageSha(const char* value) { m_imageShaHasBeenSet = true; m_imageSha.assign(value); }
-    inline AwsEcrContainerAggregationResponse& WithImageSha(const Aws::String& value) { SetImageSha(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithImageSha(Aws::String&& value) { SetImageSha(std::move(value)); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithImageSha(const char* value) { SetImageSha(value); return *this;}
+    template<typename ImageShaT = Aws::String>
+    void SetImageSha(ImageShaT&& value) { m_imageShaHasBeenSet = true; m_imageSha = std::forward<ImageShaT>(value); }
+    template<typename ImageShaT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithImageSha(ImageShaT&& value) { SetImageSha(std::forward<ImageShaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container image stags.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageTags() const{ return m_imageTags; }
+    inline const Aws::Vector<Aws::String>& GetImageTags() const { return m_imageTags; }
     inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
-    inline void SetImageTags(const Aws::Vector<Aws::String>& value) { m_imageTagsHasBeenSet = true; m_imageTags = value; }
-    inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::move(value); }
-    inline AwsEcrContainerAggregationResponse& WithImageTags(const Aws::Vector<Aws::String>& value) { SetImageTags(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(std::move(value)); return *this;}
-    inline AwsEcrContainerAggregationResponse& AddImageTags(const Aws::String& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
-    inline AwsEcrContainerAggregationResponse& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(std::move(value)); return *this; }
-    inline AwsEcrContainerAggregationResponse& AddImageTags(const char* value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    void SetImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::forward<ImageTagsT>(value); }
+    template<typename ImageTagsT = Aws::Vector<Aws::String>>
+    AwsEcrContainerAggregationResponse& WithImageTags(ImageTagsT&& value) { SetImageTags(std::forward<ImageTagsT>(value)); return *this;}
+    template<typename ImageTagsT = Aws::String>
+    AwsEcrContainerAggregationResponse& AddImageTags(ImageTagsT&& value) { m_imageTagsHasBeenSet = true; m_imageTags.emplace_back(std::forward<ImageTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The container repository.</p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline AwsEcrContainerAggregationResponse& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ID of the container.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline AwsEcrContainerAggregationResponse& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AwsEcrContainerAggregationResponse& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of finding by severity.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline AwsEcrContainerAggregationResponse& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline AwsEcrContainerAggregationResponse& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    AwsEcrContainerAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
   private:
 

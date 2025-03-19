@@ -32,7 +32,7 @@ namespace Model
   class WafAction
   {
   public:
-    AWS_SECURITYHUB_API WafAction();
+    AWS_SECURITYHUB_API WafAction() = default;
     AWS_SECURITYHUB_API WafAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API WafAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * ACL. You can't specify <code>COUNT</code> for the default action for a web
      * ACL.</p> </li> </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline WafAction& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline WafAction& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline WafAction& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    WafAction& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

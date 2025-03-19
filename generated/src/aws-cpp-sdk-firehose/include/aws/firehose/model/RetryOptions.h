@@ -30,7 +30,7 @@ namespace Model
   class RetryOptions
   {
   public:
-    AWS_FIREHOSE_API RetryOptions();
+    AWS_FIREHOSE_API RetryOptions() = default;
     AWS_FIREHOSE_API RetryOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API RetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The period of time during which Firehose retries to deliver data to the
      * specified destination.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline RetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class PatchSource
   {
   public:
-    AWS_SSM_API PatchSource();
+    AWS_SSM_API PatchSource() = default;
     AWS_SSM_API PatchSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name specified to identify the patch source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PatchSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PatchSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PatchSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PatchSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
      * For lists of supported product values, see <a>PatchFilter</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProducts() const{ return m_products; }
+    inline const Aws::Vector<Aws::String>& GetProducts() const { return m_products; }
     inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
-    inline void SetProducts(const Aws::Vector<Aws::String>& value) { m_productsHasBeenSet = true; m_products = value; }
-    inline void SetProducts(Aws::Vector<Aws::String>&& value) { m_productsHasBeenSet = true; m_products = std::move(value); }
-    inline PatchSource& WithProducts(const Aws::Vector<Aws::String>& value) { SetProducts(value); return *this;}
-    inline PatchSource& WithProducts(Aws::Vector<Aws::String>&& value) { SetProducts(std::move(value)); return *this;}
-    inline PatchSource& AddProducts(const Aws::String& value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
-    inline PatchSource& AddProducts(Aws::String&& value) { m_productsHasBeenSet = true; m_products.push_back(std::move(value)); return *this; }
-    inline PatchSource& AddProducts(const char* value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
+    template<typename ProductsT = Aws::Vector<Aws::String>>
+    void SetProducts(ProductsT&& value) { m_productsHasBeenSet = true; m_products = std::forward<ProductsT>(value); }
+    template<typename ProductsT = Aws::Vector<Aws::String>>
+    PatchSource& WithProducts(ProductsT&& value) { SetProducts(std::forward<ProductsT>(value)); return *this;}
+    template<typename ProductsT = Aws::String>
+    PatchSource& AddProducts(ProductsT&& value) { m_productsHasBeenSet = true; m_products.emplace_back(std::forward<ProductsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,14 +78,12 @@ namespace Model
      * href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
      * 
      */
-    inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+    inline const Aws::String& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
-    inline PatchSource& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
-    inline PatchSource& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline PatchSource& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
+    template<typename ConfigurationT = Aws::String>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::String>
+    PatchSource& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

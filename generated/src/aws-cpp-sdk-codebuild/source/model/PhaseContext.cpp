@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-PhaseContext::PhaseContext() : 
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PhaseContext::PhaseContext(JsonView jsonValue)
-  : PhaseContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PhaseContext& PhaseContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

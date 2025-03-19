@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListStreamsRequest::ListStreamsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamsRequest::SerializePayload() const
 {
   return {};

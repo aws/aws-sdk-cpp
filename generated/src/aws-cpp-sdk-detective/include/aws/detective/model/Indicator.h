@@ -36,7 +36,7 @@ namespace Model
   class Indicator
   {
   public:
-    AWS_DETECTIVE_API Indicator();
+    AWS_DETECTIVE_API Indicator() = default;
     AWS_DETECTIVE_API Indicator(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Indicator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>The type of indicator. </p>
      */
-    inline const IndicatorType& GetIndicatorType() const{ return m_indicatorType; }
+    inline IndicatorType GetIndicatorType() const { return m_indicatorType; }
     inline bool IndicatorTypeHasBeenSet() const { return m_indicatorTypeHasBeenSet; }
-    inline void SetIndicatorType(const IndicatorType& value) { m_indicatorTypeHasBeenSet = true; m_indicatorType = value; }
-    inline void SetIndicatorType(IndicatorType&& value) { m_indicatorTypeHasBeenSet = true; m_indicatorType = std::move(value); }
-    inline Indicator& WithIndicatorType(const IndicatorType& value) { SetIndicatorType(value); return *this;}
-    inline Indicator& WithIndicatorType(IndicatorType&& value) { SetIndicatorType(std::move(value)); return *this;}
+    inline void SetIndicatorType(IndicatorType value) { m_indicatorTypeHasBeenSet = true; m_indicatorType = value; }
+    inline Indicator& WithIndicatorType(IndicatorType value) { SetIndicatorType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,16 +60,16 @@ namespace Model
      * high level of confidence) identify malicious activity or a security
      * incident.</p>
      */
-    inline const IndicatorDetail& GetIndicatorDetail() const{ return m_indicatorDetail; }
+    inline const IndicatorDetail& GetIndicatorDetail() const { return m_indicatorDetail; }
     inline bool IndicatorDetailHasBeenSet() const { return m_indicatorDetailHasBeenSet; }
-    inline void SetIndicatorDetail(const IndicatorDetail& value) { m_indicatorDetailHasBeenSet = true; m_indicatorDetail = value; }
-    inline void SetIndicatorDetail(IndicatorDetail&& value) { m_indicatorDetailHasBeenSet = true; m_indicatorDetail = std::move(value); }
-    inline Indicator& WithIndicatorDetail(const IndicatorDetail& value) { SetIndicatorDetail(value); return *this;}
-    inline Indicator& WithIndicatorDetail(IndicatorDetail&& value) { SetIndicatorDetail(std::move(value)); return *this;}
+    template<typename IndicatorDetailT = IndicatorDetail>
+    void SetIndicatorDetail(IndicatorDetailT&& value) { m_indicatorDetailHasBeenSet = true; m_indicatorDetail = std::forward<IndicatorDetailT>(value); }
+    template<typename IndicatorDetailT = IndicatorDetail>
+    Indicator& WithIndicatorDetail(IndicatorDetailT&& value) { SetIndicatorDetail(std::forward<IndicatorDetailT>(value)); return *this;}
     ///@}
   private:
 
-    IndicatorType m_indicatorType;
+    IndicatorType m_indicatorType{IndicatorType::NOT_SET};
     bool m_indicatorTypeHasBeenSet = false;
 
     IndicatorDetail m_indicatorDetail;

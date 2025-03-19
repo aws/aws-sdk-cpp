@@ -43,7 +43,7 @@ namespace Model
   class AudioCodecSettings
   {
   public:
-    AWS_MEDIACONVERT_API AudioCodecSettings();
+    AWS_MEDIACONVERT_API AudioCodecSettings() = default;
     AWS_MEDIACONVERT_API AudioCodecSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AudioCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,36 +57,36 @@ namespace Model
      * control the audio quality with the setting VBR quality. In CBR mode, you use the
      * setting Bitrate. Defaults and valid values depend on the rate control mode.
      */
-    inline const AacSettings& GetAacSettings() const{ return m_aacSettings; }
+    inline const AacSettings& GetAacSettings() const { return m_aacSettings; }
     inline bool AacSettingsHasBeenSet() const { return m_aacSettingsHasBeenSet; }
-    inline void SetAacSettings(const AacSettings& value) { m_aacSettingsHasBeenSet = true; m_aacSettings = value; }
-    inline void SetAacSettings(AacSettings&& value) { m_aacSettingsHasBeenSet = true; m_aacSettings = std::move(value); }
-    inline AudioCodecSettings& WithAacSettings(const AacSettings& value) { SetAacSettings(value); return *this;}
-    inline AudioCodecSettings& WithAacSettings(AacSettings&& value) { SetAacSettings(std::move(value)); return *this;}
+    template<typename AacSettingsT = AacSettings>
+    void SetAacSettings(AacSettingsT&& value) { m_aacSettingsHasBeenSet = true; m_aacSettings = std::forward<AacSettingsT>(value); }
+    template<typename AacSettingsT = AacSettings>
+    AudioCodecSettings& WithAacSettings(AacSettingsT&& value) { SetAacSettings(std::forward<AacSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value AC3.
      */
-    inline const Ac3Settings& GetAc3Settings() const{ return m_ac3Settings; }
+    inline const Ac3Settings& GetAc3Settings() const { return m_ac3Settings; }
     inline bool Ac3SettingsHasBeenSet() const { return m_ac3SettingsHasBeenSet; }
-    inline void SetAc3Settings(const Ac3Settings& value) { m_ac3SettingsHasBeenSet = true; m_ac3Settings = value; }
-    inline void SetAc3Settings(Ac3Settings&& value) { m_ac3SettingsHasBeenSet = true; m_ac3Settings = std::move(value); }
-    inline AudioCodecSettings& WithAc3Settings(const Ac3Settings& value) { SetAc3Settings(value); return *this;}
-    inline AudioCodecSettings& WithAc3Settings(Ac3Settings&& value) { SetAc3Settings(std::move(value)); return *this;}
+    template<typename Ac3SettingsT = Ac3Settings>
+    void SetAc3Settings(Ac3SettingsT&& value) { m_ac3SettingsHasBeenSet = true; m_ac3Settings = std::forward<Ac3SettingsT>(value); }
+    template<typename Ac3SettingsT = Ac3Settings>
+    AudioCodecSettings& WithAc3Settings(Ac3SettingsT&& value) { SetAc3Settings(std::forward<Ac3SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value AIFF.
      */
-    inline const AiffSettings& GetAiffSettings() const{ return m_aiffSettings; }
+    inline const AiffSettings& GetAiffSettings() const { return m_aiffSettings; }
     inline bool AiffSettingsHasBeenSet() const { return m_aiffSettingsHasBeenSet; }
-    inline void SetAiffSettings(const AiffSettings& value) { m_aiffSettingsHasBeenSet = true; m_aiffSettings = value; }
-    inline void SetAiffSettings(AiffSettings&& value) { m_aiffSettingsHasBeenSet = true; m_aiffSettings = std::move(value); }
-    inline AudioCodecSettings& WithAiffSettings(const AiffSettings& value) { SetAiffSettings(value); return *this;}
-    inline AudioCodecSettings& WithAiffSettings(AiffSettings&& value) { SetAiffSettings(std::move(value)); return *this;}
+    template<typename AiffSettingsT = AiffSettings>
+    void SetAiffSettings(AiffSettingsT&& value) { m_aiffSettingsHasBeenSet = true; m_aiffSettings = std::forward<AiffSettingsT>(value); }
+    template<typename AiffSettingsT = AiffSettings>
+    AudioCodecSettings& WithAiffSettings(AiffSettingsT&& value) { SetAiffSettings(std::forward<AiffSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,36 +102,34 @@ namespace Model
      * and
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
-    inline const AudioCodec& GetCodec() const{ return m_codec; }
+    inline AudioCodec GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
-    inline void SetCodec(const AudioCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
-    inline void SetCodec(AudioCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
-    inline AudioCodecSettings& WithCodec(const AudioCodec& value) { SetCodec(value); return *this;}
-    inline AudioCodecSettings& WithCodec(AudioCodec&& value) { SetCodec(std::move(value)); return *this;}
+    inline void SetCodec(AudioCodec value) { m_codecHasBeenSet = true; m_codec = value; }
+    inline AudioCodecSettings& WithCodec(AudioCodec value) { SetCodec(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value EAC3_ATMOS.
      */
-    inline const Eac3AtmosSettings& GetEac3AtmosSettings() const{ return m_eac3AtmosSettings; }
+    inline const Eac3AtmosSettings& GetEac3AtmosSettings() const { return m_eac3AtmosSettings; }
     inline bool Eac3AtmosSettingsHasBeenSet() const { return m_eac3AtmosSettingsHasBeenSet; }
-    inline void SetEac3AtmosSettings(const Eac3AtmosSettings& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = value; }
-    inline void SetEac3AtmosSettings(Eac3AtmosSettings&& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = std::move(value); }
-    inline AudioCodecSettings& WithEac3AtmosSettings(const Eac3AtmosSettings& value) { SetEac3AtmosSettings(value); return *this;}
-    inline AudioCodecSettings& WithEac3AtmosSettings(Eac3AtmosSettings&& value) { SetEac3AtmosSettings(std::move(value)); return *this;}
+    template<typename Eac3AtmosSettingsT = Eac3AtmosSettings>
+    void SetEac3AtmosSettings(Eac3AtmosSettingsT&& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = std::forward<Eac3AtmosSettingsT>(value); }
+    template<typename Eac3AtmosSettingsT = Eac3AtmosSettings>
+    AudioCodecSettings& WithEac3AtmosSettings(Eac3AtmosSettingsT&& value) { SetEac3AtmosSettings(std::forward<Eac3AtmosSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value EAC3.
      */
-    inline const Eac3Settings& GetEac3Settings() const{ return m_eac3Settings; }
+    inline const Eac3Settings& GetEac3Settings() const { return m_eac3Settings; }
     inline bool Eac3SettingsHasBeenSet() const { return m_eac3SettingsHasBeenSet; }
-    inline void SetEac3Settings(const Eac3Settings& value) { m_eac3SettingsHasBeenSet = true; m_eac3Settings = value; }
-    inline void SetEac3Settings(Eac3Settings&& value) { m_eac3SettingsHasBeenSet = true; m_eac3Settings = std::move(value); }
-    inline AudioCodecSettings& WithEac3Settings(const Eac3Settings& value) { SetEac3Settings(value); return *this;}
-    inline AudioCodecSettings& WithEac3Settings(Eac3Settings&& value) { SetEac3Settings(std::move(value)); return *this;}
+    template<typename Eac3SettingsT = Eac3Settings>
+    void SetEac3Settings(Eac3SettingsT&& value) { m_eac3SettingsHasBeenSet = true; m_eac3Settings = std::forward<Eac3SettingsT>(value); }
+    template<typename Eac3SettingsT = Eac3Settings>
+    AudioCodecSettings& WithEac3Settings(Eac3SettingsT&& value) { SetEac3Settings(std::forward<Eac3SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,24 +137,24 @@ namespace Model
      * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
      * FLAC.
      */
-    inline const FlacSettings& GetFlacSettings() const{ return m_flacSettings; }
+    inline const FlacSettings& GetFlacSettings() const { return m_flacSettings; }
     inline bool FlacSettingsHasBeenSet() const { return m_flacSettingsHasBeenSet; }
-    inline void SetFlacSettings(const FlacSettings& value) { m_flacSettingsHasBeenSet = true; m_flacSettings = value; }
-    inline void SetFlacSettings(FlacSettings&& value) { m_flacSettingsHasBeenSet = true; m_flacSettings = std::move(value); }
-    inline AudioCodecSettings& WithFlacSettings(const FlacSettings& value) { SetFlacSettings(value); return *this;}
-    inline AudioCodecSettings& WithFlacSettings(FlacSettings&& value) { SetFlacSettings(std::move(value)); return *this;}
+    template<typename FlacSettingsT = FlacSettings>
+    void SetFlacSettings(FlacSettingsT&& value) { m_flacSettingsHasBeenSet = true; m_flacSettings = std::forward<FlacSettingsT>(value); }
+    template<typename FlacSettingsT = FlacSettings>
+    AudioCodecSettings& WithFlacSettings(FlacSettingsT&& value) { SetFlacSettings(std::forward<FlacSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value MP2.
      */
-    inline const Mp2Settings& GetMp2Settings() const{ return m_mp2Settings; }
+    inline const Mp2Settings& GetMp2Settings() const { return m_mp2Settings; }
     inline bool Mp2SettingsHasBeenSet() const { return m_mp2SettingsHasBeenSet; }
-    inline void SetMp2Settings(const Mp2Settings& value) { m_mp2SettingsHasBeenSet = true; m_mp2Settings = value; }
-    inline void SetMp2Settings(Mp2Settings&& value) { m_mp2SettingsHasBeenSet = true; m_mp2Settings = std::move(value); }
-    inline AudioCodecSettings& WithMp2Settings(const Mp2Settings& value) { SetMp2Settings(value); return *this;}
-    inline AudioCodecSettings& WithMp2Settings(Mp2Settings&& value) { SetMp2Settings(std::move(value)); return *this;}
+    template<typename Mp2SettingsT = Mp2Settings>
+    void SetMp2Settings(Mp2SettingsT&& value) { m_mp2SettingsHasBeenSet = true; m_mp2Settings = std::forward<Mp2SettingsT>(value); }
+    template<typename Mp2SettingsT = Mp2Settings>
+    AudioCodecSettings& WithMp2Settings(Mp2SettingsT&& value) { SetMp2Settings(std::forward<Mp2SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,12 +162,12 @@ namespace Model
      * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
      * MP3.
      */
-    inline const Mp3Settings& GetMp3Settings() const{ return m_mp3Settings; }
+    inline const Mp3Settings& GetMp3Settings() const { return m_mp3Settings; }
     inline bool Mp3SettingsHasBeenSet() const { return m_mp3SettingsHasBeenSet; }
-    inline void SetMp3Settings(const Mp3Settings& value) { m_mp3SettingsHasBeenSet = true; m_mp3Settings = value; }
-    inline void SetMp3Settings(Mp3Settings&& value) { m_mp3SettingsHasBeenSet = true; m_mp3Settings = std::move(value); }
-    inline AudioCodecSettings& WithMp3Settings(const Mp3Settings& value) { SetMp3Settings(value); return *this;}
-    inline AudioCodecSettings& WithMp3Settings(Mp3Settings&& value) { SetMp3Settings(std::move(value)); return *this;}
+    template<typename Mp3SettingsT = Mp3Settings>
+    void SetMp3Settings(Mp3SettingsT&& value) { m_mp3SettingsHasBeenSet = true; m_mp3Settings = std::forward<Mp3SettingsT>(value); }
+    template<typename Mp3SettingsT = Mp3Settings>
+    AudioCodecSettings& WithMp3Settings(Mp3SettingsT&& value) { SetMp3Settings(std::forward<Mp3SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +175,12 @@ namespace Model
      * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
      * OPUS.
      */
-    inline const OpusSettings& GetOpusSettings() const{ return m_opusSettings; }
+    inline const OpusSettings& GetOpusSettings() const { return m_opusSettings; }
     inline bool OpusSettingsHasBeenSet() const { return m_opusSettingsHasBeenSet; }
-    inline void SetOpusSettings(const OpusSettings& value) { m_opusSettingsHasBeenSet = true; m_opusSettings = value; }
-    inline void SetOpusSettings(OpusSettings&& value) { m_opusSettingsHasBeenSet = true; m_opusSettings = std::move(value); }
-    inline AudioCodecSettings& WithOpusSettings(const OpusSettings& value) { SetOpusSettings(value); return *this;}
-    inline AudioCodecSettings& WithOpusSettings(OpusSettings&& value) { SetOpusSettings(std::move(value)); return *this;}
+    template<typename OpusSettingsT = OpusSettings>
+    void SetOpusSettings(OpusSettingsT&& value) { m_opusSettingsHasBeenSet = true; m_opusSettings = std::forward<OpusSettingsT>(value); }
+    template<typename OpusSettingsT = OpusSettings>
+    AudioCodecSettings& WithOpusSettings(OpusSettingsT&& value) { SetOpusSettings(std::forward<OpusSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,24 +188,24 @@ namespace Model
      * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
      * Vorbis.
      */
-    inline const VorbisSettings& GetVorbisSettings() const{ return m_vorbisSettings; }
+    inline const VorbisSettings& GetVorbisSettings() const { return m_vorbisSettings; }
     inline bool VorbisSettingsHasBeenSet() const { return m_vorbisSettingsHasBeenSet; }
-    inline void SetVorbisSettings(const VorbisSettings& value) { m_vorbisSettingsHasBeenSet = true; m_vorbisSettings = value; }
-    inline void SetVorbisSettings(VorbisSettings&& value) { m_vorbisSettingsHasBeenSet = true; m_vorbisSettings = std::move(value); }
-    inline AudioCodecSettings& WithVorbisSettings(const VorbisSettings& value) { SetVorbisSettings(value); return *this;}
-    inline AudioCodecSettings& WithVorbisSettings(VorbisSettings&& value) { SetVorbisSettings(std::move(value)); return *this;}
+    template<typename VorbisSettingsT = VorbisSettings>
+    void SetVorbisSettings(VorbisSettingsT&& value) { m_vorbisSettingsHasBeenSet = true; m_vorbisSettings = std::forward<VorbisSettingsT>(value); }
+    template<typename VorbisSettingsT = VorbisSettings>
+    AudioCodecSettings& WithVorbisSettings(VorbisSettingsT&& value) { SetVorbisSettings(std::forward<VorbisSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Required when you set Codec to the value WAV.
      */
-    inline const WavSettings& GetWavSettings() const{ return m_wavSettings; }
+    inline const WavSettings& GetWavSettings() const { return m_wavSettings; }
     inline bool WavSettingsHasBeenSet() const { return m_wavSettingsHasBeenSet; }
-    inline void SetWavSettings(const WavSettings& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = value; }
-    inline void SetWavSettings(WavSettings&& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = std::move(value); }
-    inline AudioCodecSettings& WithWavSettings(const WavSettings& value) { SetWavSettings(value); return *this;}
-    inline AudioCodecSettings& WithWavSettings(WavSettings&& value) { SetWavSettings(std::move(value)); return *this;}
+    template<typename WavSettingsT = WavSettings>
+    void SetWavSettings(WavSettingsT&& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = std::forward<WavSettingsT>(value); }
+    template<typename WavSettingsT = WavSettings>
+    AudioCodecSettings& WithWavSettings(WavSettingsT&& value) { SetWavSettings(std::forward<WavSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -220,7 +218,7 @@ namespace Model
     AiffSettings m_aiffSettings;
     bool m_aiffSettingsHasBeenSet = false;
 
-    AudioCodec m_codec;
+    AudioCodec m_codec{AudioCodec::NOT_SET};
     bool m_codecHasBeenSet = false;
 
     Eac3AtmosSettings m_eac3AtmosSettings;

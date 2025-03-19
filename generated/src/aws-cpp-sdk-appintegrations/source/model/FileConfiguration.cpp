@@ -18,14 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-FileConfiguration::FileConfiguration() : 
-    m_foldersHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 FileConfiguration::FileConfiguration(JsonView jsonValue)
-  : FileConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ FileConfiguration& FileConfiguration::operator =(JsonView jsonValue)
     }
     m_foldersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     Aws::Map<Aws::String, JsonView> filtersJsonMap = jsonValue.GetObject("Filters").GetAllObjects();
@@ -58,7 +50,6 @@ FileConfiguration& FileConfiguration::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class GetAdminScopeResult
   {
   public:
-    AWS_FMS_API GetAdminScopeResult();
+    AWS_FMS_API GetAdminScopeResult() = default;
     AWS_FMS_API GetAdminScopeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API GetAdminScopeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Contains details about the administrative scope of the requested account.</p>
      */
-    inline const AdminScope& GetAdminScope() const{ return m_adminScope; }
-    inline void SetAdminScope(const AdminScope& value) { m_adminScope = value; }
-    inline void SetAdminScope(AdminScope&& value) { m_adminScope = std::move(value); }
-    inline GetAdminScopeResult& WithAdminScope(const AdminScope& value) { SetAdminScope(value); return *this;}
-    inline GetAdminScopeResult& WithAdminScope(AdminScope&& value) { SetAdminScope(std::move(value)); return *this;}
+    inline const AdminScope& GetAdminScope() const { return m_adminScope; }
+    template<typename AdminScopeT = AdminScope>
+    void SetAdminScope(AdminScopeT&& value) { m_adminScopeHasBeenSet = true; m_adminScope = std::forward<AdminScopeT>(value); }
+    template<typename AdminScopeT = AdminScope>
+    GetAdminScopeResult& WithAdminScope(AdminScopeT&& value) { SetAdminScope(std::forward<AdminScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,30 +57,29 @@ namespace Model
      * <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an
      * Firewall Manager administrator.</p> </li> </ul>
      */
-    inline const OrganizationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const OrganizationStatus& value) { m_status = value; }
-    inline void SetStatus(OrganizationStatus&& value) { m_status = std::move(value); }
-    inline GetAdminScopeResult& WithStatus(const OrganizationStatus& value) { SetStatus(value); return *this;}
-    inline GetAdminScopeResult& WithStatus(OrganizationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline OrganizationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(OrganizationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAdminScopeResult& WithStatus(OrganizationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAdminScopeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAdminScopeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAdminScopeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAdminScopeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AdminScope m_adminScope;
+    bool m_adminScopeHasBeenSet = false;
 
-    OrganizationStatus m_status;
+    OrganizationStatus m_status{OrganizationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

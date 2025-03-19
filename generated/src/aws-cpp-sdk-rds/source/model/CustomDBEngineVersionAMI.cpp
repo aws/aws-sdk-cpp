@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-CustomDBEngineVersionAMI::CustomDBEngineVersionAMI() : 
-    m_imageIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 CustomDBEngineVersionAMI::CustomDBEngineVersionAMI(const XmlNode& xmlNode)
-  : CustomDBEngineVersionAMI()
 {
   *this = xmlNode;
 }

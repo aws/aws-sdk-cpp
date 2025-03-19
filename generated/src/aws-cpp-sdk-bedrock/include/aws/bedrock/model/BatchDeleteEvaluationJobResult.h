@@ -30,7 +30,7 @@ namespace Model
   class BatchDeleteEvaluationJobResult
   {
   public:
-    AWS_BEDROCK_API BatchDeleteEvaluationJobResult();
+    AWS_BEDROCK_API BatchDeleteEvaluationJobResult() = default;
     AWS_BEDROCK_API BatchDeleteEvaluationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API BatchDeleteEvaluationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,46 @@ namespace Model
      * <p>A JSON object containing the HTTP status codes and the ARNs of evaluation
      * jobs that failed to be deleted.</p>
      */
-    inline const Aws::Vector<BatchDeleteEvaluationJobError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteEvaluationJobError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteEvaluationJobError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteEvaluationJobResult& WithErrors(const Aws::Vector<BatchDeleteEvaluationJobError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteEvaluationJobResult& WithErrors(Aws::Vector<BatchDeleteEvaluationJobError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobResult& AddErrors(const BatchDeleteEvaluationJobError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteEvaluationJobResult& AddErrors(BatchDeleteEvaluationJobError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteEvaluationJobError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteEvaluationJobError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteEvaluationJobError>>
+    BatchDeleteEvaluationJobResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteEvaluationJobError>
+    BatchDeleteEvaluationJobResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of evaluation jobs for deletion.</p>
      */
-    inline const Aws::Vector<BatchDeleteEvaluationJobItem>& GetEvaluationJobs() const{ return m_evaluationJobs; }
-    inline void SetEvaluationJobs(const Aws::Vector<BatchDeleteEvaluationJobItem>& value) { m_evaluationJobs = value; }
-    inline void SetEvaluationJobs(Aws::Vector<BatchDeleteEvaluationJobItem>&& value) { m_evaluationJobs = std::move(value); }
-    inline BatchDeleteEvaluationJobResult& WithEvaluationJobs(const Aws::Vector<BatchDeleteEvaluationJobItem>& value) { SetEvaluationJobs(value); return *this;}
-    inline BatchDeleteEvaluationJobResult& WithEvaluationJobs(Aws::Vector<BatchDeleteEvaluationJobItem>&& value) { SetEvaluationJobs(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobResult& AddEvaluationJobs(const BatchDeleteEvaluationJobItem& value) { m_evaluationJobs.push_back(value); return *this; }
-    inline BatchDeleteEvaluationJobResult& AddEvaluationJobs(BatchDeleteEvaluationJobItem&& value) { m_evaluationJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteEvaluationJobItem>& GetEvaluationJobs() const { return m_evaluationJobs; }
+    template<typename EvaluationJobsT = Aws::Vector<BatchDeleteEvaluationJobItem>>
+    void SetEvaluationJobs(EvaluationJobsT&& value) { m_evaluationJobsHasBeenSet = true; m_evaluationJobs = std::forward<EvaluationJobsT>(value); }
+    template<typename EvaluationJobsT = Aws::Vector<BatchDeleteEvaluationJobItem>>
+    BatchDeleteEvaluationJobResult& WithEvaluationJobs(EvaluationJobsT&& value) { SetEvaluationJobs(std::forward<EvaluationJobsT>(value)); return *this;}
+    template<typename EvaluationJobsT = BatchDeleteEvaluationJobItem>
+    BatchDeleteEvaluationJobResult& AddEvaluationJobs(EvaluationJobsT&& value) { m_evaluationJobsHasBeenSet = true; m_evaluationJobs.emplace_back(std::forward<EvaluationJobsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteEvaluationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteEvaluationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteEvaluationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteEvaluationJobError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<BatchDeleteEvaluationJobItem> m_evaluationJobs;
+    bool m_evaluationJobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

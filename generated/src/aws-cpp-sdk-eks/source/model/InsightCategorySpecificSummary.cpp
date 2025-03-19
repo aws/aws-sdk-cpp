@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-InsightCategorySpecificSummary::InsightCategorySpecificSummary() : 
-    m_deprecationDetailsHasBeenSet(false),
-    m_addonCompatibilityDetailsHasBeenSet(false)
-{
-}
-
 InsightCategorySpecificSummary::InsightCategorySpecificSummary(JsonView jsonValue)
-  : InsightCategorySpecificSummary()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ InsightCategorySpecificSummary& InsightCategorySpecificSummary::operator =(JsonV
     }
     m_deprecationDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addonCompatibilityDetails"))
   {
     Aws::Utils::Array<JsonView> addonCompatibilityDetailsJsonList = jsonValue.GetArray("addonCompatibilityDetails");
@@ -51,7 +43,6 @@ InsightCategorySpecificSummary& InsightCategorySpecificSummary::operator =(JsonV
     }
     m_addonCompatibilityDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

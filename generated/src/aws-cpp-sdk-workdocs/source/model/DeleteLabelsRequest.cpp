@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteLabelsRequest::DeleteLabelsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_authenticationTokenHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_deleteAll(false),
-    m_deleteAllHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLabelsRequest::SerializePayload() const
 {
   return {};

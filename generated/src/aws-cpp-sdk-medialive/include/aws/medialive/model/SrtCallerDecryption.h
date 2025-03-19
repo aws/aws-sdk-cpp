@@ -33,7 +33,7 @@ namespace Model
   class SrtCallerDecryption
   {
   public:
-    AWS_MEDIALIVE_API SrtCallerDecryption();
+    AWS_MEDIALIVE_API SrtCallerDecryption() = default;
     AWS_MEDIALIVE_API SrtCallerDecryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SrtCallerDecryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * The algorithm used to encrypt content.
      */
-    inline const Algorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline Algorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const Algorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(Algorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline SrtCallerDecryption& WithAlgorithm(const Algorithm& value) { SetAlgorithm(value); return *this;}
-    inline SrtCallerDecryption& WithAlgorithm(Algorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(Algorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline SrtCallerDecryption& WithAlgorithm(Algorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * create a secret and provide you with its ARN. The secret holds the passphrase
      * that MediaLive uses to decrypt the source content.
      */
-    inline const Aws::String& GetPassphraseSecretArn() const{ return m_passphraseSecretArn; }
+    inline const Aws::String& GetPassphraseSecretArn() const { return m_passphraseSecretArn; }
     inline bool PassphraseSecretArnHasBeenSet() const { return m_passphraseSecretArnHasBeenSet; }
-    inline void SetPassphraseSecretArn(const Aws::String& value) { m_passphraseSecretArnHasBeenSet = true; m_passphraseSecretArn = value; }
-    inline void SetPassphraseSecretArn(Aws::String&& value) { m_passphraseSecretArnHasBeenSet = true; m_passphraseSecretArn = std::move(value); }
-    inline void SetPassphraseSecretArn(const char* value) { m_passphraseSecretArnHasBeenSet = true; m_passphraseSecretArn.assign(value); }
-    inline SrtCallerDecryption& WithPassphraseSecretArn(const Aws::String& value) { SetPassphraseSecretArn(value); return *this;}
-    inline SrtCallerDecryption& WithPassphraseSecretArn(Aws::String&& value) { SetPassphraseSecretArn(std::move(value)); return *this;}
-    inline SrtCallerDecryption& WithPassphraseSecretArn(const char* value) { SetPassphraseSecretArn(value); return *this;}
+    template<typename PassphraseSecretArnT = Aws::String>
+    void SetPassphraseSecretArn(PassphraseSecretArnT&& value) { m_passphraseSecretArnHasBeenSet = true; m_passphraseSecretArn = std::forward<PassphraseSecretArnT>(value); }
+    template<typename PassphraseSecretArnT = Aws::String>
+    SrtCallerDecryption& WithPassphraseSecretArn(PassphraseSecretArnT&& value) { SetPassphraseSecretArn(std::forward<PassphraseSecretArnT>(value)); return *this;}
     ///@}
   private:
 
-    Algorithm m_algorithm;
+    Algorithm m_algorithm{Algorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
     Aws::String m_passphraseSecretArn;

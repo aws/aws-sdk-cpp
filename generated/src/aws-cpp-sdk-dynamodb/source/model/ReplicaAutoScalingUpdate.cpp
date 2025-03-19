@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaAutoScalingUpdate::ReplicaAutoScalingUpdate() : 
-    m_regionNameHasBeenSet(false),
-    m_replicaGlobalSecondaryIndexUpdatesHasBeenSet(false),
-    m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet(false)
-{
-}
-
 ReplicaAutoScalingUpdate::ReplicaAutoScalingUpdate(JsonView jsonValue)
-  : ReplicaAutoScalingUpdate()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ReplicaAutoScalingUpdate& ReplicaAutoScalingUpdate::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexUpdates"))
   {
     Aws::Utils::Array<JsonView> replicaGlobalSecondaryIndexUpdatesJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexUpdates");
@@ -49,14 +39,11 @@ ReplicaAutoScalingUpdate& ReplicaAutoScalingUpdate::operator =(JsonView jsonValu
     }
     m_replicaGlobalSecondaryIndexUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityAutoScalingUpdate"))
   {
     m_replicaProvisionedReadCapacityAutoScalingUpdate = jsonValue.GetObject("ReplicaProvisionedReadCapacityAutoScalingUpdate");
-
     m_replicaProvisionedReadCapacityAutoScalingUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

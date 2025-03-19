@@ -12,18 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListComputeRequest::ListComputeRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_containerGroupDefinitionNameHasBeenSet(false),
-    m_computeStatus(ListComputeInputStatus::NOT_SET),
-    m_computeStatusHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListComputeRequest::SerializePayload() const
 {
   JsonValue payload;

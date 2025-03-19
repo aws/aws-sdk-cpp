@@ -21,7 +21,7 @@ namespace Model
   class PostUnionWithJsonNameRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameRequest();
+    AWS_RESTJSONPROTOCOL_API PostUnionWithJsonNameRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const UnionWithJsonName& GetValue() const{ return m_value; }
+    inline const UnionWithJsonName& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const UnionWithJsonName& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(UnionWithJsonName&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline PostUnionWithJsonNameRequest& WithValue(const UnionWithJsonName& value) { SetValue(value); return *this;}
-    inline PostUnionWithJsonNameRequest& WithValue(UnionWithJsonName&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = UnionWithJsonName>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = UnionWithJsonName>
+    PostUnionWithJsonNameRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

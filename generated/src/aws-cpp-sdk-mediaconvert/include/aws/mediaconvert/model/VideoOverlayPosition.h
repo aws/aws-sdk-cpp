@@ -31,7 +31,7 @@ namespace Model
   class VideoOverlayPosition
   {
   public:
-    AWS_MEDIACONVERT_API VideoOverlayPosition();
+    AWS_MEDIACONVERT_API VideoOverlayPosition() = default;
     AWS_MEDIACONVERT_API VideoOverlayPosition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoOverlayPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * maintaining its original aspect ratio, enter a value for Height and leave Width
      * blank.
      */
-    inline int GetHeight() const{ return m_height; }
+    inline int GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
     inline VideoOverlayPosition& WithHeight(int value) { SetHeight(value); return *this;}
@@ -61,12 +61,10 @@ namespace Model
      * Width, or Height. You can choose Pixels or Percentage. Leave blank to use the
      * default value, Pixels.
      */
-    inline const VideoOverlayUnit& GetUnit() const{ return m_unit; }
+    inline VideoOverlayUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const VideoOverlayUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(VideoOverlayUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline VideoOverlayPosition& WithUnit(const VideoOverlayUnit& value) { SetUnit(value); return *this;}
-    inline VideoOverlayPosition& WithUnit(VideoOverlayUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(VideoOverlayUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline VideoOverlayPosition& WithUnit(VideoOverlayUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +79,7 @@ namespace Model
      * maintaining its original aspect ratio, enter a value for Width and leave Height
      * blank.
      */
-    inline int GetWidth() const{ return m_width; }
+    inline int GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
     inline VideoOverlayPosition& WithWidth(int value) { SetWidth(value); return *this;}
@@ -99,7 +97,7 @@ namespace Model
      * is 1920x1080, your video overlay will be positioned 192 pixels from the left
      * edge of the base input video's frame.
      */
-    inline int GetXPosition() const{ return m_xPosition; }
+    inline int GetXPosition() const { return m_xPosition; }
     inline bool XPositionHasBeenSet() const { return m_xPositionHasBeenSet; }
     inline void SetXPosition(int value) { m_xPositionHasBeenSet = true; m_xPosition = value; }
     inline VideoOverlayPosition& WithXPosition(int value) { SetXPosition(value); return *this;}
@@ -117,26 +115,26 @@ namespace Model
      * your video overlay will be positioned 108 pixels from the top edge of the base
      * input video's frame.
      */
-    inline int GetYPosition() const{ return m_yPosition; }
+    inline int GetYPosition() const { return m_yPosition; }
     inline bool YPositionHasBeenSet() const { return m_yPositionHasBeenSet; }
     inline void SetYPosition(int value) { m_yPositionHasBeenSet = true; m_yPosition = value; }
     inline VideoOverlayPosition& WithYPosition(int value) { SetYPosition(value); return *this;}
     ///@}
   private:
 
-    int m_height;
+    int m_height{0};
     bool m_heightHasBeenSet = false;
 
-    VideoOverlayUnit m_unit;
+    VideoOverlayUnit m_unit{VideoOverlayUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_width;
+    int m_width{0};
     bool m_widthHasBeenSet = false;
 
-    int m_xPosition;
+    int m_xPosition{0};
     bool m_xPositionHasBeenSet = false;
 
-    int m_yPosition;
+    int m_yPosition{0};
     bool m_yPositionHasBeenSet = false;
   };
 

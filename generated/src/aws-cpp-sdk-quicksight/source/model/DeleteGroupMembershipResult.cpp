@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteGroupMembershipResult::DeleteGroupMembershipResult() : 
-    m_status(0)
-{
-}
-
 DeleteGroupMembershipResult::DeleteGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteGroupMembershipResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteGroupMembershipResult& DeleteGroupMembershipResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

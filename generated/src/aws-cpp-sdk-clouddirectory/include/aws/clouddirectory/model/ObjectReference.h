@@ -31,7 +31,7 @@ namespace Model
   class ObjectReference
   {
   public:
-    AWS_CLOUDDIRECTORY_API ObjectReference();
+    AWS_CLOUDDIRECTORY_API ObjectReference() = default;
     AWS_CLOUDDIRECTORY_API ObjectReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API ObjectReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the
      * object in a batch call</p> </li> </ul>
      */
-    inline const Aws::String& GetSelector() const{ return m_selector; }
+    inline const Aws::String& GetSelector() const { return m_selector; }
     inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
-    inline void SetSelector(const Aws::String& value) { m_selectorHasBeenSet = true; m_selector = value; }
-    inline void SetSelector(Aws::String&& value) { m_selectorHasBeenSet = true; m_selector = std::move(value); }
-    inline void SetSelector(const char* value) { m_selectorHasBeenSet = true; m_selector.assign(value); }
-    inline ObjectReference& WithSelector(const Aws::String& value) { SetSelector(value); return *this;}
-    inline ObjectReference& WithSelector(Aws::String&& value) { SetSelector(std::move(value)); return *this;}
-    inline ObjectReference& WithSelector(const char* value) { SetSelector(value); return *this;}
+    template<typename SelectorT = Aws::String>
+    void SetSelector(SelectorT&& value) { m_selectorHasBeenSet = true; m_selector = std::forward<SelectorT>(value); }
+    template<typename SelectorT = Aws::String>
+    ObjectReference& WithSelector(SelectorT&& value) { SetSelector(std::forward<SelectorT>(value)); return *this;}
     ///@}
   private:
 

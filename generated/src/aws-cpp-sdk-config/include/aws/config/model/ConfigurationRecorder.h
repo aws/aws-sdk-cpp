@@ -38,7 +38,7 @@ namespace Model
   class ConfigurationRecorder
   {
   public:
-    AWS_CONFIGSERVICE_API ConfigurationRecorder();
+    AWS_CONFIGSERVICE_API ConfigurationRecorder() = default;
     AWS_CONFIGSERVICE_API ConfigurationRecorder(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConfigurationRecorder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the specified configuration recorder.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ConfigurationRecorder& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ConfigurationRecorder& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ConfigurationRecorder& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ConfigurationRecorder& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * recorder with a new name.</p> <p>You cannot change the name of a service-linked
      * configuration recorder.</p> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConfigurationRecorder& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConfigurationRecorder& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConfigurationRecorder& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConfigurationRecorder& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +109,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/config/latest/developerguide/using-service-linked-roles.html">AWSServiceRoleForConfig</a>.</p>
      * 
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline ConfigurationRecorder& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline ConfigurationRecorder& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline ConfigurationRecorder& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    ConfigurationRecorder& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +136,12 @@ namespace Model
      * separate account with Config turned off to avoid increased configuration
      * recording and rule evaluations.</p> 
      */
-    inline const RecordingGroup& GetRecordingGroup() const{ return m_recordingGroup; }
+    inline const RecordingGroup& GetRecordingGroup() const { return m_recordingGroup; }
     inline bool RecordingGroupHasBeenSet() const { return m_recordingGroupHasBeenSet; }
-    inline void SetRecordingGroup(const RecordingGroup& value) { m_recordingGroupHasBeenSet = true; m_recordingGroup = value; }
-    inline void SetRecordingGroup(RecordingGroup&& value) { m_recordingGroupHasBeenSet = true; m_recordingGroup = std::move(value); }
-    inline ConfigurationRecorder& WithRecordingGroup(const RecordingGroup& value) { SetRecordingGroup(value); return *this;}
-    inline ConfigurationRecorder& WithRecordingGroup(RecordingGroup&& value) { SetRecordingGroup(std::move(value)); return *this;}
+    template<typename RecordingGroupT = RecordingGroup>
+    void SetRecordingGroup(RecordingGroupT&& value) { m_recordingGroupHasBeenSet = true; m_recordingGroup = std::forward<RecordingGroupT>(value); }
+    template<typename RecordingGroupT = RecordingGroup>
+    ConfigurationRecorder& WithRecordingGroup(RecordingGroupT&& value) { SetRecordingGroup(std::forward<RecordingGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +159,12 @@ namespace Model
      * <p>You can also override the recording frequency for specific resource
      * types.</p>
      */
-    inline const RecordingMode& GetRecordingMode() const{ return m_recordingMode; }
+    inline const RecordingMode& GetRecordingMode() const { return m_recordingMode; }
     inline bool RecordingModeHasBeenSet() const { return m_recordingModeHasBeenSet; }
-    inline void SetRecordingMode(const RecordingMode& value) { m_recordingModeHasBeenSet = true; m_recordingMode = value; }
-    inline void SetRecordingMode(RecordingMode&& value) { m_recordingModeHasBeenSet = true; m_recordingMode = std::move(value); }
-    inline ConfigurationRecorder& WithRecordingMode(const RecordingMode& value) { SetRecordingMode(value); return *this;}
-    inline ConfigurationRecorder& WithRecordingMode(RecordingMode&& value) { SetRecordingMode(std::move(value)); return *this;}
+    template<typename RecordingModeT = RecordingMode>
+    void SetRecordingMode(RecordingModeT&& value) { m_recordingModeHasBeenSet = true; m_recordingMode = std::forward<RecordingModeT>(value); }
+    template<typename RecordingModeT = RecordingMode>
+    ConfigurationRecorder& WithRecordingMode(RecordingModeT&& value) { SetRecordingMode(std::forward<RecordingModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,12 +175,10 @@ namespace Model
      * (<code>INTERNAL</code>) or if it impacts the costs to your bill
      * (<code>PAID</code>).</p>
      */
-    inline const RecordingScope& GetRecordingScope() const{ return m_recordingScope; }
+    inline RecordingScope GetRecordingScope() const { return m_recordingScope; }
     inline bool RecordingScopeHasBeenSet() const { return m_recordingScopeHasBeenSet; }
-    inline void SetRecordingScope(const RecordingScope& value) { m_recordingScopeHasBeenSet = true; m_recordingScope = value; }
-    inline void SetRecordingScope(RecordingScope&& value) { m_recordingScopeHasBeenSet = true; m_recordingScope = std::move(value); }
-    inline ConfigurationRecorder& WithRecordingScope(const RecordingScope& value) { SetRecordingScope(value); return *this;}
-    inline ConfigurationRecorder& WithRecordingScope(RecordingScope&& value) { SetRecordingScope(std::move(value)); return *this;}
+    inline void SetRecordingScope(RecordingScope value) { m_recordingScopeHasBeenSet = true; m_recordingScope = value; }
+    inline ConfigurationRecorder& WithRecordingScope(RecordingScope value) { SetRecordingScope(value); return *this;}
     ///@}
 
     ///@{
@@ -194,14 +186,12 @@ namespace Model
      * <p>For service-linked configuration recorders, specifies the linked Amazon Web
      * Services service for the configuration recorder.</p>
      */
-    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-    inline ConfigurationRecorder& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-    inline ConfigurationRecorder& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-    inline ConfigurationRecorder& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    template<typename ServicePrincipalT = Aws::String>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = Aws::String>
+    ConfigurationRecorder& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
   private:
 
@@ -220,7 +210,7 @@ namespace Model
     RecordingMode m_recordingMode;
     bool m_recordingModeHasBeenSet = false;
 
-    RecordingScope m_recordingScope;
+    RecordingScope m_recordingScope{RecordingScope::NOT_SET};
     bool m_recordingScopeHasBeenSet = false;
 
     Aws::String m_servicePrincipal;

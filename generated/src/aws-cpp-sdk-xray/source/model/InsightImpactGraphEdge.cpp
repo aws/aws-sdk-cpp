@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-InsightImpactGraphEdge::InsightImpactGraphEdge() : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false)
-{
-}
-
 InsightImpactGraphEdge::InsightImpactGraphEdge(JsonView jsonValue)
-  : InsightImpactGraphEdge()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InsightImpactGraphEdge& InsightImpactGraphEdge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetInteger("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

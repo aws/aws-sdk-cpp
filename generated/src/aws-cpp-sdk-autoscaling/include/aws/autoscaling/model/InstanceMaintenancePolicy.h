@@ -32,7 +32,7 @@ namespace Model
   class InstanceMaintenancePolicy
   {
   public:
-    AWS_AUTOSCALING_API InstanceMaintenancePolicy();
+    AWS_AUTOSCALING_API InstanceMaintenancePolicy() = default;
     AWS_AUTOSCALING_API InstanceMaintenancePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API InstanceMaintenancePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * instances. Value range is 0 to 100. To clear a previously set value, specify a
      * value of <code>-1</code>.</p>
      */
-    inline int GetMinHealthyPercentage() const{ return m_minHealthyPercentage; }
+    inline int GetMinHealthyPercentage() const { return m_minHealthyPercentage; }
     inline bool MinHealthyPercentageHasBeenSet() const { return m_minHealthyPercentageHasBeenSet; }
     inline void SetMinHealthyPercentage(int value) { m_minHealthyPercentageHasBeenSet = true; m_minHealthyPercentage = value; }
     inline InstanceMaintenancePolicy& WithMinHealthyPercentage(int value) { SetMinHealthyPercentage(value); return *this;}
@@ -65,17 +65,17 @@ namespace Model
      * them cannot be greater than 100. A large range increases the number of instances
      * that can be replaced at the same time.</p>
      */
-    inline int GetMaxHealthyPercentage() const{ return m_maxHealthyPercentage; }
+    inline int GetMaxHealthyPercentage() const { return m_maxHealthyPercentage; }
     inline bool MaxHealthyPercentageHasBeenSet() const { return m_maxHealthyPercentageHasBeenSet; }
     inline void SetMaxHealthyPercentage(int value) { m_maxHealthyPercentageHasBeenSet = true; m_maxHealthyPercentage = value; }
     inline InstanceMaintenancePolicy& WithMaxHealthyPercentage(int value) { SetMaxHealthyPercentage(value); return *this;}
     ///@}
   private:
 
-    int m_minHealthyPercentage;
+    int m_minHealthyPercentage{0};
     bool m_minHealthyPercentageHasBeenSet = false;
 
-    int m_maxHealthyPercentage;
+    int m_maxHealthyPercentage{0};
     bool m_maxHealthyPercentageHasBeenSet = false;
   };
 

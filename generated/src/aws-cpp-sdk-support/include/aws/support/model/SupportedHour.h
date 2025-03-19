@@ -32,7 +32,7 @@ namespace Model
   class SupportedHour
   {
   public:
-    AWS_SUPPORT_API SupportedHour();
+    AWS_SUPPORT_API SupportedHour() = default;
     AWS_SUPPORT_API SupportedHour(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API SupportedHour& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline SupportedHour& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline SupportedHour& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline SupportedHour& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    SupportedHour& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
      */
-    inline const Aws::String& GetEndTime() const{ return m_endTime; }
+    inline const Aws::String& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
-    inline SupportedHour& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-    inline SupportedHour& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-    inline SupportedHour& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+    template<typename EndTimeT = Aws::String>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::String>
+    SupportedHour& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 

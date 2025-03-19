@@ -18,19 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-RecommendationReportDetails::RecommendationReportDetails() : 
-    m_completionTimeHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(RecommendationReportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 RecommendationReportDetails::RecommendationReportDetails(JsonView jsonValue)
-  : RecommendationReportDetails()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ RecommendationReportDetails& RecommendationReportDetails::operator =(JsonView js
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetDouble("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Keys"))
   {
     Aws::Utils::Array<JsonView> s3KeysJsonList = jsonValue.GetArray("s3Keys");
@@ -60,28 +44,21 @@ RecommendationReportDetails& RecommendationReportDetails::operator =(JsonView js
     }
     m_s3KeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RecommendationReportStatusMapper::GetRecommendationReportStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

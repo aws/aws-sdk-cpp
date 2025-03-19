@@ -30,7 +30,7 @@ namespace Model
   class LoRaWANMulticastMetadata
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANMulticastMetadata();
+    AWS_IOTWIRELESS_API LoRaWANMulticastMetadata() = default;
     AWS_IOTWIRELESS_API LoRaWANMulticastMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANMulticastMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -38,14 +38,14 @@ namespace Model
 
     ///@{
     
-    inline int GetFPort() const{ return m_fPort; }
+    inline int GetFPort() const { return m_fPort; }
     inline bool FPortHasBeenSet() const { return m_fPortHasBeenSet; }
     inline void SetFPort(int value) { m_fPortHasBeenSet = true; m_fPort = value; }
     inline LoRaWANMulticastMetadata& WithFPort(int value) { SetFPort(value); return *this;}
     ///@}
   private:
 
-    int m_fPort;
+    int m_fPort{0};
     bool m_fPortHasBeenSet = false;
   };
 

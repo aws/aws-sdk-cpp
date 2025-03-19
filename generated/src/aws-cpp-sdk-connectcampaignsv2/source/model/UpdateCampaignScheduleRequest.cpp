@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignScheduleRequest::UpdateCampaignScheduleRequest() : 
-    m_idHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

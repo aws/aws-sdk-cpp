@@ -22,7 +22,7 @@ namespace Model
   class CreateSegmentEstimateRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API CreateSegmentEstimateRequest();
+    AWS_CUSTOMERPROFILES_API CreateSegmentEstimateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateSegmentEstimateRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateSegmentEstimateRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateSegmentEstimateRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateSegmentEstimateRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The segment query for calculating a segment estimate.</p>
      */
-    inline const SegmentGroupStructure& GetSegmentQuery() const{ return m_segmentQuery; }
+    inline const SegmentGroupStructure& GetSegmentQuery() const { return m_segmentQuery; }
     inline bool SegmentQueryHasBeenSet() const { return m_segmentQueryHasBeenSet; }
-    inline void SetSegmentQuery(const SegmentGroupStructure& value) { m_segmentQueryHasBeenSet = true; m_segmentQuery = value; }
-    inline void SetSegmentQuery(SegmentGroupStructure&& value) { m_segmentQueryHasBeenSet = true; m_segmentQuery = std::move(value); }
-    inline CreateSegmentEstimateRequest& WithSegmentQuery(const SegmentGroupStructure& value) { SetSegmentQuery(value); return *this;}
-    inline CreateSegmentEstimateRequest& WithSegmentQuery(SegmentGroupStructure&& value) { SetSegmentQuery(std::move(value)); return *this;}
+    template<typename SegmentQueryT = SegmentGroupStructure>
+    void SetSegmentQuery(SegmentQueryT&& value) { m_segmentQueryHasBeenSet = true; m_segmentQuery = std::forward<SegmentQueryT>(value); }
+    template<typename SegmentQueryT = SegmentGroupStructure>
+    CreateSegmentEstimateRequest& WithSegmentQuery(SegmentQueryT&& value) { SetSegmentQuery(std::forward<SegmentQueryT>(value)); return *this;}
     ///@}
   private:
 

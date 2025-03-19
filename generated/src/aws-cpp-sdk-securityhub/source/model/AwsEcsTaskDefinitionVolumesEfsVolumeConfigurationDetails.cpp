@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails() : 
-    m_authorizationConfigHasBeenSet(false),
-    m_filesystemIdHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_transitEncryptionHasBeenSet(false),
-    m_transitEncryptionPort(0),
-    m_transitEncryptionPortHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails& AwsEcsTaskDefinitionVo
   if(jsonValue.ValueExists("AuthorizationConfig"))
   {
     m_authorizationConfig = jsonValue.GetObject("AuthorizationConfig");
-
     m_authorizationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilesystemId"))
   {
     m_filesystemId = jsonValue.GetString("FilesystemId");
-
     m_filesystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootDirectory"))
   {
     m_rootDirectory = jsonValue.GetString("RootDirectory");
-
     m_rootDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitEncryption"))
   {
     m_transitEncryption = jsonValue.GetString("TransitEncryption");
-
     m_transitEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitEncryptionPort"))
   {
     m_transitEncryptionPort = jsonValue.GetInteger("TransitEncryptionPort");
-
     m_transitEncryptionPortHasBeenSet = true;
   }
-
   return *this;
 }
 

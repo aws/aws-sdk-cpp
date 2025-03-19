@@ -21,7 +21,7 @@ namespace Model
   class GetMultiRegionAccessPointRoutesRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API GetMultiRegionAccessPointRoutesRequest();
+    AWS_S3CONTROL_API GetMultiRegionAccessPointRoutesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
      * Point.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetMultiRegionAccessPointRoutesRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetMultiRegionAccessPointRoutesRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetMultiRegionAccessPointRoutesRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetMultiRegionAccessPointRoutesRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Multi-Region Access Point ARN.</p>
      */
-    inline const Aws::String& GetMrap() const{ return m_mrap; }
+    inline const Aws::String& GetMrap() const { return m_mrap; }
     inline bool MrapHasBeenSet() const { return m_mrapHasBeenSet; }
-    inline void SetMrap(const Aws::String& value) { m_mrapHasBeenSet = true; m_mrap = value; }
-    inline void SetMrap(Aws::String&& value) { m_mrapHasBeenSet = true; m_mrap = std::move(value); }
-    inline void SetMrap(const char* value) { m_mrapHasBeenSet = true; m_mrap.assign(value); }
-    inline GetMultiRegionAccessPointRoutesRequest& WithMrap(const Aws::String& value) { SetMrap(value); return *this;}
-    inline GetMultiRegionAccessPointRoutesRequest& WithMrap(Aws::String&& value) { SetMrap(std::move(value)); return *this;}
-    inline GetMultiRegionAccessPointRoutesRequest& WithMrap(const char* value) { SetMrap(value); return *this;}
+    template<typename MrapT = Aws::String>
+    void SetMrap(MrapT&& value) { m_mrapHasBeenSet = true; m_mrap = std::forward<MrapT>(value); }
+    template<typename MrapT = Aws::String>
+    GetMultiRegionAccessPointRoutesRequest& WithMrap(MrapT&& value) { SetMrap(std::forward<MrapT>(value)); return *this;}
     ///@}
   private:
 

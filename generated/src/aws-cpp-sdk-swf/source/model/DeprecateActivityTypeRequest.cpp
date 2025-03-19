@@ -12,12 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeprecateActivityTypeRequest::DeprecateActivityTypeRequest() : 
-    m_domainHasBeenSet(false),
-    m_activityTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeprecateActivityTypeRequest::SerializePayload() const
 {
   JsonValue payload;

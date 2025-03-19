@@ -29,7 +29,7 @@ namespace Model
   class GetVariablesResult
   {
   public:
-    AWS_FRAUDDETECTOR_API GetVariablesResult();
+    AWS_FRAUDDETECTOR_API GetVariablesResult() = default;
     AWS_FRAUDDETECTOR_API GetVariablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API GetVariablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The names of the variables returned. </p>
      */
-    inline const Aws::Vector<Variable>& GetVariables() const{ return m_variables; }
-    inline void SetVariables(const Aws::Vector<Variable>& value) { m_variables = value; }
-    inline void SetVariables(Aws::Vector<Variable>&& value) { m_variables = std::move(value); }
-    inline GetVariablesResult& WithVariables(const Aws::Vector<Variable>& value) { SetVariables(value); return *this;}
-    inline GetVariablesResult& WithVariables(Aws::Vector<Variable>&& value) { SetVariables(std::move(value)); return *this;}
-    inline GetVariablesResult& AddVariables(const Variable& value) { m_variables.push_back(value); return *this; }
-    inline GetVariablesResult& AddVariables(Variable&& value) { m_variables.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Variable>& GetVariables() const { return m_variables; }
+    template<typename VariablesT = Aws::Vector<Variable>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Vector<Variable>>
+    GetVariablesResult& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesT = Variable>
+    GetVariablesResult& AddVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables.emplace_back(std::forward<VariablesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next page token to be used in subsequent requests. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetVariablesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetVariablesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetVariablesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetVariablesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVariablesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVariablesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVariablesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVariablesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Variable> m_variables;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

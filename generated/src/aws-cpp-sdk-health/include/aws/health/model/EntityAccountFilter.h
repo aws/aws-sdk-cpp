@@ -35,7 +35,7 @@ namespace Model
   class EntityAccountFilter
   {
   public:
-    AWS_HEALTH_API EntityAccountFilter();
+    AWS_HEALTH_API EntityAccountFilter() = default;
     AWS_HEALTH_API EntityAccountFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTH_API EntityAccountFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
-    inline const Aws::String& GetEventArn() const{ return m_eventArn; }
+    inline const Aws::String& GetEventArn() const { return m_eventArn; }
     inline bool EventArnHasBeenSet() const { return m_eventArnHasBeenSet; }
-    inline void SetEventArn(const Aws::String& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
-    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
-    inline void SetEventArn(const char* value) { m_eventArnHasBeenSet = true; m_eventArn.assign(value); }
-    inline EntityAccountFilter& WithEventArn(const Aws::String& value) { SetEventArn(value); return *this;}
-    inline EntityAccountFilter& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
-    inline EntityAccountFilter& WithEventArn(const char* value) { SetEventArn(value); return *this;}
+    template<typename EventArnT = Aws::String>
+    void SetEventArn(EventArnT&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::forward<EventArnT>(value); }
+    template<typename EventArnT = Aws::String>
+    EntityAccountFilter& WithEventArn(EventArnT&& value) { SetEventArn(std::forward<EventArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,28 +63,25 @@ namespace Model
      * <p>The 12-digit Amazon Web Services account numbers that contains the affected
      * entities.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline EntityAccountFilter& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline EntityAccountFilter& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline EntityAccountFilter& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    EntityAccountFilter& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of entity status codes.</p>
      */
-    inline const Aws::Vector<EntityStatusCode>& GetStatusCodes() const{ return m_statusCodes; }
+    inline const Aws::Vector<EntityStatusCode>& GetStatusCodes() const { return m_statusCodes; }
     inline bool StatusCodesHasBeenSet() const { return m_statusCodesHasBeenSet; }
-    inline void SetStatusCodes(const Aws::Vector<EntityStatusCode>& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
-    inline void SetStatusCodes(Aws::Vector<EntityStatusCode>&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::move(value); }
-    inline EntityAccountFilter& WithStatusCodes(const Aws::Vector<EntityStatusCode>& value) { SetStatusCodes(value); return *this;}
-    inline EntityAccountFilter& WithStatusCodes(Aws::Vector<EntityStatusCode>&& value) { SetStatusCodes(std::move(value)); return *this;}
-    inline EntityAccountFilter& AddStatusCodes(const EntityStatusCode& value) { m_statusCodesHasBeenSet = true; m_statusCodes.push_back(value); return *this; }
-    inline EntityAccountFilter& AddStatusCodes(EntityStatusCode&& value) { m_statusCodesHasBeenSet = true; m_statusCodes.push_back(std::move(value)); return *this; }
+    template<typename StatusCodesT = Aws::Vector<EntityStatusCode>>
+    void SetStatusCodes(StatusCodesT&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::forward<StatusCodesT>(value); }
+    template<typename StatusCodesT = Aws::Vector<EntityStatusCode>>
+    EntityAccountFilter& WithStatusCodes(StatusCodesT&& value) { SetStatusCodes(std::forward<StatusCodesT>(value)); return *this;}
+    inline EntityAccountFilter& AddStatusCodes(EntityStatusCode value) { m_statusCodesHasBeenSet = true; m_statusCodes.push_back(value); return *this; }
     ///@}
   private:
 

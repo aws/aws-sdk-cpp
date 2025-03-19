@@ -12,16 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePublishingDestinationRequest::CreatePublishingDestinationRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_destinationType(DestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_destinationPropertiesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreatePublishingDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

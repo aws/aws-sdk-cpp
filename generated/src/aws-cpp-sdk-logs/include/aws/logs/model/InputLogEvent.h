@@ -32,7 +32,7 @@ namespace Model
   class InputLogEvent
   {
   public:
-    AWS_CLOUDWATCHLOGS_API InputLogEvent();
+    AWS_CLOUDWATCHLOGS_API InputLogEvent() = default;
     AWS_CLOUDWATCHLOGS_API InputLogEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API InputLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The time the event occurred, expressed as the number of milliseconds after
      * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
-    inline long long GetTimestamp() const{ return m_timestamp; }
+    inline long long GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
     inline InputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The raw event message. Each log event can be no larger than 256 KB.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InputLogEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InputLogEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InputLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InputLogEvent& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_timestamp;
+    long long m_timestamp{0};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_message;

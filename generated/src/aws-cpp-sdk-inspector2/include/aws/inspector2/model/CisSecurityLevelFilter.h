@@ -33,7 +33,7 @@ namespace Model
   class CisSecurityLevelFilter
   {
   public:
-    AWS_INSPECTOR2_API CisSecurityLevelFilter();
+    AWS_INSPECTOR2_API CisSecurityLevelFilter() = default;
     AWS_INSPECTOR2_API CisSecurityLevelFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisSecurityLevelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The CIS security filter comparison value.</p>
      */
-    inline const CisSecurityLevelComparison& GetComparison() const{ return m_comparison; }
+    inline CisSecurityLevelComparison GetComparison() const { return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-    inline void SetComparison(const CisSecurityLevelComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-    inline void SetComparison(CisSecurityLevelComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-    inline CisSecurityLevelFilter& WithComparison(const CisSecurityLevelComparison& value) { SetComparison(value); return *this;}
-    inline CisSecurityLevelFilter& WithComparison(CisSecurityLevelComparison&& value) { SetComparison(std::move(value)); return *this;}
+    inline void SetComparison(CisSecurityLevelComparison value) { m_comparisonHasBeenSet = true; m_comparison = value; }
+    inline CisSecurityLevelFilter& WithComparison(CisSecurityLevelComparison value) { SetComparison(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIS security filter value.</p>
      */
-    inline const CisSecurityLevel& GetValue() const{ return m_value; }
+    inline CisSecurityLevel GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const CisSecurityLevel& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(CisSecurityLevel&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline CisSecurityLevelFilter& WithValue(const CisSecurityLevel& value) { SetValue(value); return *this;}
-    inline CisSecurityLevelFilter& WithValue(CisSecurityLevel&& value) { SetValue(std::move(value)); return *this;}
+    inline void SetValue(CisSecurityLevel value) { m_valueHasBeenSet = true; m_value = value; }
+    inline CisSecurityLevelFilter& WithValue(CisSecurityLevel value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    CisSecurityLevelComparison m_comparison;
+    CisSecurityLevelComparison m_comparison{CisSecurityLevelComparison::NOT_SET};
     bool m_comparisonHasBeenSet = false;
 
-    CisSecurityLevel m_value;
+    CisSecurityLevel m_value{CisSecurityLevel::NOT_SET};
     bool m_valueHasBeenSet = false;
   };
 

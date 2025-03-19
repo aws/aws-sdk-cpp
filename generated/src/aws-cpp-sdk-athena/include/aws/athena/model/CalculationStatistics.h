@@ -31,7 +31,7 @@ namespace Model
   class CalculationStatistics
   {
   public:
-    AWS_ATHENA_API CalculationStatistics();
+    AWS_ATHENA_API CalculationStatistics() = default;
     AWS_ATHENA_API CalculationStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API CalculationStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The data processing unit execution time in milliseconds for the
      * calculation.</p>
      */
-    inline long long GetDpuExecutionInMillis() const{ return m_dpuExecutionInMillis; }
+    inline long long GetDpuExecutionInMillis() const { return m_dpuExecutionInMillis; }
     inline bool DpuExecutionInMillisHasBeenSet() const { return m_dpuExecutionInMillisHasBeenSet; }
     inline void SetDpuExecutionInMillis(long long value) { m_dpuExecutionInMillisHasBeenSet = true; m_dpuExecutionInMillis = value; }
     inline CalculationStatistics& WithDpuExecutionInMillis(long long value) { SetDpuExecutionInMillis(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The progress of the calculation.</p>
      */
-    inline const Aws::String& GetProgress() const{ return m_progress; }
+    inline const Aws::String& GetProgress() const { return m_progress; }
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
-    inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
-    inline void SetProgress(Aws::String&& value) { m_progressHasBeenSet = true; m_progress = std::move(value); }
-    inline void SetProgress(const char* value) { m_progressHasBeenSet = true; m_progress.assign(value); }
-    inline CalculationStatistics& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
-    inline CalculationStatistics& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
-    inline CalculationStatistics& WithProgress(const char* value) { SetProgress(value); return *this;}
+    template<typename ProgressT = Aws::String>
+    void SetProgress(ProgressT&& value) { m_progressHasBeenSet = true; m_progress = std::forward<ProgressT>(value); }
+    template<typename ProgressT = Aws::String>
+    CalculationStatistics& WithProgress(ProgressT&& value) { SetProgress(std::forward<ProgressT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_dpuExecutionInMillis;
+    long long m_dpuExecutionInMillis{0};
     bool m_dpuExecutionInMillisHasBeenSet = false;
 
     Aws::String m_progress;

@@ -33,7 +33,7 @@ namespace Model
   class AssociationSetDetails
   {
   public:
-    AWS_SECURITYHUB_API AssociationSetDetails();
+    AWS_SECURITYHUB_API AssociationSetDetails() = default;
     AWS_SECURITYHUB_API AssociationSetDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AssociationSetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,31 @@ namespace Model
      * <p> The state of the association between a route table and a subnet or gateway.
      * </p>
      */
-    inline const AssociationStateDetails& GetAssociationState() const{ return m_associationState; }
+    inline const AssociationStateDetails& GetAssociationState() const { return m_associationState; }
     inline bool AssociationStateHasBeenSet() const { return m_associationStateHasBeenSet; }
-    inline void SetAssociationState(const AssociationStateDetails& value) { m_associationStateHasBeenSet = true; m_associationState = value; }
-    inline void SetAssociationState(AssociationStateDetails&& value) { m_associationStateHasBeenSet = true; m_associationState = std::move(value); }
-    inline AssociationSetDetails& WithAssociationState(const AssociationStateDetails& value) { SetAssociationState(value); return *this;}
-    inline AssociationSetDetails& WithAssociationState(AssociationStateDetails&& value) { SetAssociationState(std::move(value)); return *this;}
+    template<typename AssociationStateT = AssociationStateDetails>
+    void SetAssociationState(AssociationStateT&& value) { m_associationStateHasBeenSet = true; m_associationState = std::forward<AssociationStateT>(value); }
+    template<typename AssociationStateT = AssociationStateDetails>
+    AssociationSetDetails& WithAssociationState(AssociationStateT&& value) { SetAssociationState(std::forward<AssociationStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the internet gateway or virtual private gateway. </p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline AssociationSetDetails& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline AssociationSetDetails& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline AssociationSetDetails& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    AssociationSetDetails& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether this is the main route table. </p>
      */
-    inline bool GetMain() const{ return m_main; }
+    inline bool GetMain() const { return m_main; }
     inline bool MainHasBeenSet() const { return m_mainHasBeenSet; }
     inline void SetMain(bool value) { m_mainHasBeenSet = true; m_main = value; }
     inline AssociationSetDetails& WithMain(bool value) { SetMain(value); return *this;}
@@ -80,28 +78,24 @@ namespace Model
     /**
      * <p> The ID of the association. </p>
      */
-    inline const Aws::String& GetRouteTableAssociationId() const{ return m_routeTableAssociationId; }
+    inline const Aws::String& GetRouteTableAssociationId() const { return m_routeTableAssociationId; }
     inline bool RouteTableAssociationIdHasBeenSet() const { return m_routeTableAssociationIdHasBeenSet; }
-    inline void SetRouteTableAssociationId(const Aws::String& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = value; }
-    inline void SetRouteTableAssociationId(Aws::String&& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = std::move(value); }
-    inline void SetRouteTableAssociationId(const char* value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId.assign(value); }
-    inline AssociationSetDetails& WithRouteTableAssociationId(const Aws::String& value) { SetRouteTableAssociationId(value); return *this;}
-    inline AssociationSetDetails& WithRouteTableAssociationId(Aws::String&& value) { SetRouteTableAssociationId(std::move(value)); return *this;}
-    inline AssociationSetDetails& WithRouteTableAssociationId(const char* value) { SetRouteTableAssociationId(value); return *this;}
+    template<typename RouteTableAssociationIdT = Aws::String>
+    void SetRouteTableAssociationId(RouteTableAssociationIdT&& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = std::forward<RouteTableAssociationIdT>(value); }
+    template<typename RouteTableAssociationIdT = Aws::String>
+    AssociationSetDetails& WithRouteTableAssociationId(RouteTableAssociationIdT&& value) { SetRouteTableAssociationId(std::forward<RouteTableAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the route table. </p>
      */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+    inline const Aws::String& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-    inline AssociationSetDetails& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-    inline AssociationSetDetails& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-    inline AssociationSetDetails& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+    template<typename RouteTableIdT = Aws::String>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = Aws::String>
+    AssociationSetDetails& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +103,12 @@ namespace Model
      * <p> The ID of the subnet. A subnet ID is not returned for an implicit
      * association. </p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline AssociationSetDetails& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline AssociationSetDetails& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline AssociationSetDetails& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    AssociationSetDetails& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,7 +118,7 @@ namespace Model
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet = false;
 
-    bool m_main;
+    bool m_main{false};
     bool m_mainHasBeenSet = false;
 
     Aws::String m_routeTableAssociationId;

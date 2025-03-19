@@ -18,18 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-SizeConstraintStatement::SizeConstraintStatement() : 
-    m_fieldToMatchHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false)
-{
-}
-
 SizeConstraintStatement::SizeConstraintStatement(JsonView jsonValue)
-  : SizeConstraintStatement()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SizeConstraintStatement& SizeConstraintStatement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInt64("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformations"))
   {
     Aws::Utils::Array<JsonView> textTransformationsJsonList = jsonValue.GetArray("TextTransformations");
@@ -66,7 +49,6 @@ SizeConstraintStatement& SizeConstraintStatement::operator =(JsonView jsonValue)
     }
     m_textTransformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

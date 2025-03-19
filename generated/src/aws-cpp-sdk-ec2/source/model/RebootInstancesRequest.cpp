@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RebootInstancesRequest::RebootInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RebootInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

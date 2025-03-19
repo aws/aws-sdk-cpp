@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig() : 
-    m_maxCountRuleHasBeenSet(false),
-    m_maxAgeRuleHasBeenSet(false)
-{
-}
-
 ApplicationVersionLifecycleConfig::ApplicationVersionLifecycleConfig(const XmlNode& xmlNode)
-  : ApplicationVersionLifecycleConfig()
 {
   *this = xmlNode;
 }

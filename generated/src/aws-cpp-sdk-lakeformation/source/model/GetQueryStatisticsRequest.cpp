@@ -12,11 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryStatisticsRequest::GetQueryStatisticsRequest() : 
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

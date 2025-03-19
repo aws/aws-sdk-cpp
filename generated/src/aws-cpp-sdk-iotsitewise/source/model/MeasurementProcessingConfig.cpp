@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-MeasurementProcessingConfig::MeasurementProcessingConfig() : 
-    m_forwardingConfigHasBeenSet(false)
-{
-}
-
 MeasurementProcessingConfig::MeasurementProcessingConfig(JsonView jsonValue)
-  : MeasurementProcessingConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MeasurementProcessingConfig& MeasurementProcessingConfig::operator =(JsonView js
   if(jsonValue.ValueExists("forwardingConfig"))
   {
     m_forwardingConfig = jsonValue.GetObject("forwardingConfig");
-
     m_forwardingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

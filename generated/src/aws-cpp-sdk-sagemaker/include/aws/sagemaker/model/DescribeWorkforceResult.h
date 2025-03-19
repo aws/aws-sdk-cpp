@@ -28,7 +28,7 @@ namespace Model
   class DescribeWorkforceResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeWorkforceResult();
+    AWS_SAGEMAKER_API DescribeWorkforceResult() = default;
     AWS_SAGEMAKER_API DescribeWorkforceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeWorkforceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create
      * a Private Workforce</a>.</p>
      */
-    inline const Workforce& GetWorkforce() const{ return m_workforce; }
-    inline void SetWorkforce(const Workforce& value) { m_workforce = value; }
-    inline void SetWorkforce(Workforce&& value) { m_workforce = std::move(value); }
-    inline DescribeWorkforceResult& WithWorkforce(const Workforce& value) { SetWorkforce(value); return *this;}
-    inline DescribeWorkforceResult& WithWorkforce(Workforce&& value) { SetWorkforce(std::move(value)); return *this;}
+    inline const Workforce& GetWorkforce() const { return m_workforce; }
+    template<typename WorkforceT = Workforce>
+    void SetWorkforce(WorkforceT&& value) { m_workforceHasBeenSet = true; m_workforce = std::forward<WorkforceT>(value); }
+    template<typename WorkforceT = Workforce>
+    DescribeWorkforceResult& WithWorkforce(WorkforceT&& value) { SetWorkforce(std::forward<WorkforceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWorkforceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWorkforceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWorkforceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWorkforceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Workforce m_workforce;
+    bool m_workforceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

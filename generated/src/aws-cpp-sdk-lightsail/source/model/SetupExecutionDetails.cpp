@@ -18,20 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-SetupExecutionDetails::SetupExecutionDetails() : 
-    m_commandHasBeenSet(false),
-    m_dateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SetupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_standardErrorHasBeenSet(false),
-    m_standardOutputHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 SetupExecutionDetails::SetupExecutionDetails(JsonView jsonValue)
-  : SetupExecutionDetails()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SetupExecutionDetails& SetupExecutionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("command"))
   {
     m_command = jsonValue.GetString("command");
-
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateTime"))
   {
     m_dateTime = jsonValue.GetDouble("dateTime");
-
     m_dateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SetupStatusMapper::GetSetupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("standardError"))
   {
     m_standardError = jsonValue.GetString("standardError");
-
     m_standardErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("standardOutput"))
   {
     m_standardOutput = jsonValue.GetString("standardOutput");
-
     m_standardOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

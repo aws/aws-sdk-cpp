@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDeliverabilityDashboardOptionRequest::PutDeliverabilityDashboardOptionRequest() : 
-    m_dashboardEnabled(false),
-    m_dashboardEnabledHasBeenSet(false),
-    m_subscribedDomainsHasBeenSet(false)
-{
-}
-
 Aws::String PutDeliverabilityDashboardOptionRequest::SerializePayload() const
 {
   JsonValue payload;

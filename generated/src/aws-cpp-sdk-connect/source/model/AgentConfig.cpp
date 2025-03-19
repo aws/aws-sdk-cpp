@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentConfig::AgentConfig() : 
-    m_distributionsHasBeenSet(false)
-{
-}
-
 AgentConfig::AgentConfig(JsonView jsonValue)
-  : AgentConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AgentConfig& AgentConfig::operator =(JsonView jsonValue)
     }
     m_distributionsHasBeenSet = true;
   }
-
   return *this;
 }
 

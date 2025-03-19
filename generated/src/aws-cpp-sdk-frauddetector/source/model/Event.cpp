@@ -18,19 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-Event::Event() : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_eventTimestampHasBeenSet(false),
-    m_eventVariablesHasBeenSet(false),
-    m_currentLabelHasBeenSet(false),
-    m_labelTimestampHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
     m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTimestamp"))
   {
     m_eventTimestamp = jsonValue.GetString("eventTimestamp");
-
     m_eventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventVariables"))
   {
     Aws::Map<Aws::String, JsonView> eventVariablesJsonMap = jsonValue.GetObject("eventVariables").GetAllObjects();
@@ -67,21 +49,16 @@ Event& Event::operator =(JsonView jsonValue)
     }
     m_eventVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentLabel"))
   {
     m_currentLabel = jsonValue.GetString("currentLabel");
-
     m_currentLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labelTimestamp"))
   {
     m_labelTimestamp = jsonValue.GetString("labelTimestamp");
-
     m_labelTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entities"))
   {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("entities");
@@ -91,7 +68,6 @@ Event& Event::operator =(JsonView jsonValue)
     }
     m_entitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

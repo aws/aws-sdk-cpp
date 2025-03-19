@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CodeLine::CodeLine() : 
-    m_contentHasBeenSet(false),
-    m_lineNumber(0),
-    m_lineNumberHasBeenSet(false)
-{
-}
-
 CodeLine::CodeLine(JsonView jsonValue)
-  : CodeLine()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CodeLine& CodeLine::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineNumber"))
   {
     m_lineNumber = jsonValue.GetInteger("lineNumber");
-
     m_lineNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

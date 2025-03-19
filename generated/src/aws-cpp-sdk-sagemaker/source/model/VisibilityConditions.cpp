@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-VisibilityConditions::VisibilityConditions() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 VisibilityConditions::VisibilityConditions(JsonView jsonValue)
-  : VisibilityConditions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VisibilityConditions& VisibilityConditions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

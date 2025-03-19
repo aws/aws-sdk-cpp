@@ -35,7 +35,7 @@ namespace Model
   class JobScopeTerm
   {
   public:
-    AWS_MACIE2_API JobScopeTerm();
+    AWS_MACIE2_API JobScopeTerm() = default;
     AWS_MACIE2_API JobScopeTerm(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API JobScopeTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>A property-based condition that defines a property, operator, and one or more
      * values for including or excluding objects from the job.</p>
      */
-    inline const SimpleScopeTerm& GetSimpleScopeTerm() const{ return m_simpleScopeTerm; }
+    inline const SimpleScopeTerm& GetSimpleScopeTerm() const { return m_simpleScopeTerm; }
     inline bool SimpleScopeTermHasBeenSet() const { return m_simpleScopeTermHasBeenSet; }
-    inline void SetSimpleScopeTerm(const SimpleScopeTerm& value) { m_simpleScopeTermHasBeenSet = true; m_simpleScopeTerm = value; }
-    inline void SetSimpleScopeTerm(SimpleScopeTerm&& value) { m_simpleScopeTermHasBeenSet = true; m_simpleScopeTerm = std::move(value); }
-    inline JobScopeTerm& WithSimpleScopeTerm(const SimpleScopeTerm& value) { SetSimpleScopeTerm(value); return *this;}
-    inline JobScopeTerm& WithSimpleScopeTerm(SimpleScopeTerm&& value) { SetSimpleScopeTerm(std::move(value)); return *this;}
+    template<typename SimpleScopeTermT = SimpleScopeTerm>
+    void SetSimpleScopeTerm(SimpleScopeTermT&& value) { m_simpleScopeTermHasBeenSet = true; m_simpleScopeTerm = std::forward<SimpleScopeTermT>(value); }
+    template<typename SimpleScopeTermT = SimpleScopeTerm>
+    JobScopeTerm& WithSimpleScopeTerm(SimpleScopeTermT&& value) { SetSimpleScopeTerm(std::forward<SimpleScopeTermT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>A tag-based condition that defines the operator and tag keys or tag key and
      * value pairs for including or excluding objects from the job.</p>
      */
-    inline const TagScopeTerm& GetTagScopeTerm() const{ return m_tagScopeTerm; }
+    inline const TagScopeTerm& GetTagScopeTerm() const { return m_tagScopeTerm; }
     inline bool TagScopeTermHasBeenSet() const { return m_tagScopeTermHasBeenSet; }
-    inline void SetTagScopeTerm(const TagScopeTerm& value) { m_tagScopeTermHasBeenSet = true; m_tagScopeTerm = value; }
-    inline void SetTagScopeTerm(TagScopeTerm&& value) { m_tagScopeTermHasBeenSet = true; m_tagScopeTerm = std::move(value); }
-    inline JobScopeTerm& WithTagScopeTerm(const TagScopeTerm& value) { SetTagScopeTerm(value); return *this;}
-    inline JobScopeTerm& WithTagScopeTerm(TagScopeTerm&& value) { SetTagScopeTerm(std::move(value)); return *this;}
+    template<typename TagScopeTermT = TagScopeTerm>
+    void SetTagScopeTerm(TagScopeTermT&& value) { m_tagScopeTermHasBeenSet = true; m_tagScopeTerm = std::forward<TagScopeTermT>(value); }
+    template<typename TagScopeTermT = TagScopeTerm>
+    JobScopeTerm& WithTagScopeTerm(TagScopeTermT&& value) { SetTagScopeTerm(std::forward<TagScopeTermT>(value)); return *this;}
     ///@}
   private:
 

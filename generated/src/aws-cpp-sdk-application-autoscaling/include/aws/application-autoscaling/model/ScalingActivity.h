@@ -37,7 +37,7 @@ namespace Model
   class ScalingActivity
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API ScalingActivity();
+    AWS_APPLICATIONAUTOSCALING_API ScalingActivity() = default;
     AWS_APPLICATIONAUTOSCALING_API ScalingActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API ScalingActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The unique identifier of the scaling activity.</p>
      */
-    inline const Aws::String& GetActivityId() const{ return m_activityId; }
+    inline const Aws::String& GetActivityId() const { return m_activityId; }
     inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
-    inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
-    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
-    inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
-    inline ScalingActivity& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
-    inline ScalingActivity& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
-    inline ScalingActivity& WithActivityId(const char* value) { SetActivityId(value); return *this;}
+    template<typename ActivityIdT = Aws::String>
+    void SetActivityId(ActivityIdT&& value) { m_activityIdHasBeenSet = true; m_activityId = std::forward<ActivityIdT>(value); }
+    template<typename ActivityIdT = Aws::String>
+    ScalingActivity& WithActivityId(ActivityIdT&& value) { SetActivityId(std::forward<ActivityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * <p>The namespace of the Amazon Web Services service that provides the resource,
      * or a <code>custom-resource</code>.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline ScalingActivity& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline ScalingActivity& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline ScalingActivity& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +128,12 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ScalingActivity& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ScalingActivity& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ScalingActivity& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ScalingActivity& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,12 +187,10 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline ScalingActivity& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline ScalingActivity& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline ScalingActivity& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
@@ -206,92 +198,82 @@ namespace Model
      * <p>A simple description of what action the scaling activity intends to
      * accomplish.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ScalingActivity& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ScalingActivity& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ScalingActivity& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ScalingActivity& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A simple description of what caused the scaling activity to happen.</p>
      */
-    inline const Aws::String& GetCause() const{ return m_cause; }
+    inline const Aws::String& GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
-    inline ScalingActivity& WithCause(const Aws::String& value) { SetCause(value); return *this;}
-    inline ScalingActivity& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
-    inline ScalingActivity& WithCause(const char* value) { SetCause(value); return *this;}
+    template<typename CauseT = Aws::String>
+    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
+    template<typename CauseT = Aws::String>
+    ScalingActivity& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp for when the scaling activity began.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ScalingActivity& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ScalingActivity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ScalingActivity& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp for when the scaling activity ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ScalingActivity& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ScalingActivity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ScalingActivity& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the status of the scaling activity.</p>
      */
-    inline const ScalingActivityStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline ScalingActivityStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const ScalingActivityStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(ScalingActivityStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline ScalingActivity& WithStatusCode(const ScalingActivityStatusCode& value) { SetStatusCode(value); return *this;}
-    inline ScalingActivity& WithStatusCode(ScalingActivityStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(ScalingActivityStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline ScalingActivity& WithStatusCode(ScalingActivityStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ScalingActivity& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ScalingActivity& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ScalingActivity& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ScalingActivity& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details about the scaling activity.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline ScalingActivity& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline ScalingActivity& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline ScalingActivity& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    ScalingActivity& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -301,27 +283,27 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
      * includes not scaled activities.</p>
      */
-    inline const Aws::Vector<NotScaledReason>& GetNotScaledReasons() const{ return m_notScaledReasons; }
+    inline const Aws::Vector<NotScaledReason>& GetNotScaledReasons() const { return m_notScaledReasons; }
     inline bool NotScaledReasonsHasBeenSet() const { return m_notScaledReasonsHasBeenSet; }
-    inline void SetNotScaledReasons(const Aws::Vector<NotScaledReason>& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons = value; }
-    inline void SetNotScaledReasons(Aws::Vector<NotScaledReason>&& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons = std::move(value); }
-    inline ScalingActivity& WithNotScaledReasons(const Aws::Vector<NotScaledReason>& value) { SetNotScaledReasons(value); return *this;}
-    inline ScalingActivity& WithNotScaledReasons(Aws::Vector<NotScaledReason>&& value) { SetNotScaledReasons(std::move(value)); return *this;}
-    inline ScalingActivity& AddNotScaledReasons(const NotScaledReason& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons.push_back(value); return *this; }
-    inline ScalingActivity& AddNotScaledReasons(NotScaledReason&& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons.push_back(std::move(value)); return *this; }
+    template<typename NotScaledReasonsT = Aws::Vector<NotScaledReason>>
+    void SetNotScaledReasons(NotScaledReasonsT&& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons = std::forward<NotScaledReasonsT>(value); }
+    template<typename NotScaledReasonsT = Aws::Vector<NotScaledReason>>
+    ScalingActivity& WithNotScaledReasons(NotScaledReasonsT&& value) { SetNotScaledReasons(std::forward<NotScaledReasonsT>(value)); return *this;}
+    template<typename NotScaledReasonsT = NotScaledReason>
+    ScalingActivity& AddNotScaledReasons(NotScaledReasonsT&& value) { m_notScaledReasonsHasBeenSet = true; m_notScaledReasons.emplace_back(std::forward<NotScaledReasonsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet = false;
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
     Aws::String m_description;
@@ -330,13 +312,13 @@ namespace Model
     Aws::String m_cause;
     bool m_causeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    ScalingActivityStatusCode m_statusCode;
+    ScalingActivityStatusCode m_statusCode{ScalingActivityStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;

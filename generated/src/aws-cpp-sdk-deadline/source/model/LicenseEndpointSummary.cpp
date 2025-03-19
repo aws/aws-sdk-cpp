@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-LicenseEndpointSummary::LicenseEndpointSummary() : 
-    m_licenseEndpointIdHasBeenSet(false),
-    m_status(LicenseEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 LicenseEndpointSummary::LicenseEndpointSummary(JsonView jsonValue)
-  : LicenseEndpointSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LicenseEndpointSummary& LicenseEndpointSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("licenseEndpointId"))
   {
     m_licenseEndpointId = jsonValue.GetString("licenseEndpointId");
-
     m_licenseEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = LicenseEndpointStatusMapper::GetLicenseEndpointStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

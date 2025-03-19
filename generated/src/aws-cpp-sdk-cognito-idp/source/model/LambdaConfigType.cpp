@@ -18,26 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-LambdaConfigType::LambdaConfigType() : 
-    m_preSignUpHasBeenSet(false),
-    m_customMessageHasBeenSet(false),
-    m_postConfirmationHasBeenSet(false),
-    m_preAuthenticationHasBeenSet(false),
-    m_postAuthenticationHasBeenSet(false),
-    m_defineAuthChallengeHasBeenSet(false),
-    m_createAuthChallengeHasBeenSet(false),
-    m_verifyAuthChallengeResponseHasBeenSet(false),
-    m_preTokenGenerationHasBeenSet(false),
-    m_userMigrationHasBeenSet(false),
-    m_preTokenGenerationConfigHasBeenSet(false),
-    m_customSMSSenderHasBeenSet(false),
-    m_customEmailSenderHasBeenSet(false),
-    m_kMSKeyIDHasBeenSet(false)
-{
-}
-
 LambdaConfigType::LambdaConfigType(JsonView jsonValue)
-  : LambdaConfigType()
 {
   *this = jsonValue;
 }
@@ -47,101 +28,73 @@ LambdaConfigType& LambdaConfigType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PreSignUp"))
   {
     m_preSignUp = jsonValue.GetString("PreSignUp");
-
     m_preSignUpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomMessage"))
   {
     m_customMessage = jsonValue.GetString("CustomMessage");
-
     m_customMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostConfirmation"))
   {
     m_postConfirmation = jsonValue.GetString("PostConfirmation");
-
     m_postConfirmationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreAuthentication"))
   {
     m_preAuthentication = jsonValue.GetString("PreAuthentication");
-
     m_preAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostAuthentication"))
   {
     m_postAuthentication = jsonValue.GetString("PostAuthentication");
-
     m_postAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefineAuthChallenge"))
   {
     m_defineAuthChallenge = jsonValue.GetString("DefineAuthChallenge");
-
     m_defineAuthChallengeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateAuthChallenge"))
   {
     m_createAuthChallenge = jsonValue.GetString("CreateAuthChallenge");
-
     m_createAuthChallengeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerifyAuthChallengeResponse"))
   {
     m_verifyAuthChallengeResponse = jsonValue.GetString("VerifyAuthChallengeResponse");
-
     m_verifyAuthChallengeResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreTokenGeneration"))
   {
     m_preTokenGeneration = jsonValue.GetString("PreTokenGeneration");
-
     m_preTokenGenerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserMigration"))
   {
     m_userMigration = jsonValue.GetString("UserMigration");
-
     m_userMigrationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreTokenGenerationConfig"))
   {
     m_preTokenGenerationConfig = jsonValue.GetObject("PreTokenGenerationConfig");
-
     m_preTokenGenerationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomSMSSender"))
   {
     m_customSMSSender = jsonValue.GetObject("CustomSMSSender");
-
     m_customSMSSenderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEmailSender"))
   {
     m_customEmailSender = jsonValue.GetObject("CustomEmailSender");
-
     m_customEmailSenderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSKeyID"))
   {
     m_kMSKeyID = jsonValue.GetString("KMSKeyID");
-
     m_kMSKeyIDHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableFederationResult::EnableFederationResult() : 
-    m_federationStatus(FederationStatus::NOT_SET)
-{
-}
-
 EnableFederationResult::EnableFederationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : EnableFederationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ EnableFederationResult& EnableFederationResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("EventDataStoreArn"))
   {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
-
+    m_eventDataStoreArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederationStatus"))
   {
     m_federationStatus = FederationStatusMapper::GetFederationStatusForName(jsonValue.GetString("FederationStatus"));
-
+    m_federationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederationRoleArn"))
   {
     m_federationRoleArn = jsonValue.GetString("FederationRoleArn");
-
+    m_federationRoleArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

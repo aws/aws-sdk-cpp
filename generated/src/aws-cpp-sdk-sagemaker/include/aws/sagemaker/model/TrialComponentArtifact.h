@@ -37,7 +37,7 @@ namespace Model
   class TrialComponentArtifact
   {
   public:
-    AWS_SAGEMAKER_API TrialComponentArtifact();
+    AWS_SAGEMAKER_API TrialComponentArtifact() = default;
     AWS_SAGEMAKER_API TrialComponentArtifact(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrialComponentArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,28 +51,24 @@ namespace Model
      * s3/uri. The type specifies the category of the media. The subtype specifies the
      * kind of data.</p>
      */
-    inline const Aws::String& GetMediaType() const{ return m_mediaType; }
+    inline const Aws::String& GetMediaType() const { return m_mediaType; }
     inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
-    inline void SetMediaType(const Aws::String& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
-    inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::move(value); }
-    inline void SetMediaType(const char* value) { m_mediaTypeHasBeenSet = true; m_mediaType.assign(value); }
-    inline TrialComponentArtifact& WithMediaType(const Aws::String& value) { SetMediaType(value); return *this;}
-    inline TrialComponentArtifact& WithMediaType(Aws::String&& value) { SetMediaType(std::move(value)); return *this;}
-    inline TrialComponentArtifact& WithMediaType(const char* value) { SetMediaType(value); return *this;}
+    template<typename MediaTypeT = Aws::String>
+    void SetMediaType(MediaTypeT&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::forward<MediaTypeT>(value); }
+    template<typename MediaTypeT = Aws::String>
+    TrialComponentArtifact& WithMediaType(MediaTypeT&& value) { SetMediaType(std::forward<MediaTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the artifact.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline TrialComponentArtifact& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline TrialComponentArtifact& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline TrialComponentArtifact& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    TrialComponentArtifact& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

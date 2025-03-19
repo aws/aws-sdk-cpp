@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ResolvedArtifact::ResolvedArtifact() : 
-    m_type(ArtifactsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 ResolvedArtifact::ResolvedArtifact(JsonView jsonValue)
-  : ResolvedArtifact()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResolvedArtifact& ResolvedArtifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = ArtifactsTypeMapper::GetArtifactsTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

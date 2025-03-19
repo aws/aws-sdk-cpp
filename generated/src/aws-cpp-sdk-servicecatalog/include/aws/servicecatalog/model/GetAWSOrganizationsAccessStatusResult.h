@@ -28,7 +28,7 @@ namespace Model
   class GetAWSOrganizationsAccessStatusResult
   {
   public:
-    AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult();
+    AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult() = default;
     AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The status of the portfolio share feature.</p>
      */
-    inline const AccessStatus& GetAccessStatus() const{ return m_accessStatus; }
-    inline void SetAccessStatus(const AccessStatus& value) { m_accessStatus = value; }
-    inline void SetAccessStatus(AccessStatus&& value) { m_accessStatus = std::move(value); }
-    inline GetAWSOrganizationsAccessStatusResult& WithAccessStatus(const AccessStatus& value) { SetAccessStatus(value); return *this;}
-    inline GetAWSOrganizationsAccessStatusResult& WithAccessStatus(AccessStatus&& value) { SetAccessStatus(std::move(value)); return *this;}
+    inline AccessStatus GetAccessStatus() const { return m_accessStatus; }
+    inline void SetAccessStatus(AccessStatus value) { m_accessStatusHasBeenSet = true; m_accessStatus = value; }
+    inline GetAWSOrganizationsAccessStatusResult& WithAccessStatus(AccessStatus value) { SetAccessStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAWSOrganizationsAccessStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAWSOrganizationsAccessStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAWSOrganizationsAccessStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAWSOrganizationsAccessStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AccessStatus m_accessStatus;
+    AccessStatus m_accessStatus{AccessStatus::NOT_SET};
+    bool m_accessStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,13 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteMultiRegionAccessPointRequest::DeleteMultiRegionAccessPointRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_detailsHasBeenSet(false)
-{
-}
 
 Aws::String DeleteMultiRegionAccessPointRequest::SerializePayload() const
 {

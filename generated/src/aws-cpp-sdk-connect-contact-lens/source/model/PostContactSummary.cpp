@@ -18,17 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-PostContactSummary::PostContactSummary() : 
-    m_contentHasBeenSet(false),
-    m_status(PostContactSummaryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureCode(PostContactSummaryFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 PostContactSummary::PostContactSummary(JsonView jsonValue)
-  : PostContactSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PostContactSummary& PostContactSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PostContactSummaryStatusMapper::GetPostContactSummaryStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCode"))
   {
     m_failureCode = PostContactSummaryFailureCodeMapper::GetPostContactSummaryFailureCodeForName(jsonValue.GetString("FailureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

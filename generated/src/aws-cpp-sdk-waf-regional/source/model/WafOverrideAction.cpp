@@ -18,14 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-WafOverrideAction::WafOverrideAction() : 
-    m_type(WafOverrideActionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 WafOverrideAction::WafOverrideAction(JsonView jsonValue)
-  : WafOverrideAction()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WafOverrideAction& WafOverrideAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = WafOverrideActionTypeMapper::GetWafOverrideActionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

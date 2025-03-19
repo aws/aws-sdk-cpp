@@ -12,13 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStorageSystemsRequest::ListStorageSystemsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListStorageSystemsRequest::SerializePayload() const
 {
   JsonValue payload;

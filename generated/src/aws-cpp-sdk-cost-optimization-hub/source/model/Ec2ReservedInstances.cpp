@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-Ec2ReservedInstances::Ec2ReservedInstances() : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
-{
-}
-
 Ec2ReservedInstances::Ec2ReservedInstances(JsonView jsonValue)
-  : Ec2ReservedInstances()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Ec2ReservedInstances& Ec2ReservedInstances::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCalculation"))
   {
     m_costCalculation = jsonValue.GetObject("costCalculation");
-
     m_costCalculationHasBeenSet = true;
   }
-
   return *this;
 }
 

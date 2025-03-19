@@ -30,7 +30,7 @@ namespace Model
   class DialogCodeHookSettings
   {
   public:
-    AWS_LEXMODELSV2_API DialogCodeHookSettings();
+    AWS_LEXMODELSV2_API DialogCodeHookSettings() = default;
     AWS_LEXMODELSV2_API DialogCodeHookSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API DialogCodeHookSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Enables the dialog code hook so that it processes user requests.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline DialogCodeHookSettings& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

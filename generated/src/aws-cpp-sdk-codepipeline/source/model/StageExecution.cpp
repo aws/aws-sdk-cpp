@@ -18,17 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-StageExecution::StageExecution() : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_status(StageExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(ExecutionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 StageExecution::StageExecution(JsonView jsonValue)
-  : StageExecution()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ StageExecution& StageExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
     m_pipelineExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StageExecutionStatusMapper::GetStageExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class DescribeMetricSetResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API DescribeMetricSetResult();
+    AWS_LOOKOUTMETRICS_API DescribeMetricSetResult() = default;
     AWS_LOOKOUTMETRICS_API DescribeMetricSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API DescribeMetricSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,74 +43,66 @@ namespace Model
     /**
      * <p>The ARN of the dataset.</p>
      */
-    inline const Aws::String& GetMetricSetArn() const{ return m_metricSetArn; }
-    inline void SetMetricSetArn(const Aws::String& value) { m_metricSetArn = value; }
-    inline void SetMetricSetArn(Aws::String&& value) { m_metricSetArn = std::move(value); }
-    inline void SetMetricSetArn(const char* value) { m_metricSetArn.assign(value); }
-    inline DescribeMetricSetResult& WithMetricSetArn(const Aws::String& value) { SetMetricSetArn(value); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetArn(Aws::String&& value) { SetMetricSetArn(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetArn(const char* value) { SetMetricSetArn(value); return *this;}
+    inline const Aws::String& GetMetricSetArn() const { return m_metricSetArn; }
+    template<typename MetricSetArnT = Aws::String>
+    void SetMetricSetArn(MetricSetArnT&& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = std::forward<MetricSetArnT>(value); }
+    template<typename MetricSetArnT = Aws::String>
+    DescribeMetricSetResult& WithMetricSetArn(MetricSetArnT&& value) { SetMetricSetArn(std::forward<MetricSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the detector that contains the dataset.</p>
      */
-    inline const Aws::String& GetAnomalyDetectorArn() const{ return m_anomalyDetectorArn; }
-    inline void SetAnomalyDetectorArn(const Aws::String& value) { m_anomalyDetectorArn = value; }
-    inline void SetAnomalyDetectorArn(Aws::String&& value) { m_anomalyDetectorArn = std::move(value); }
-    inline void SetAnomalyDetectorArn(const char* value) { m_anomalyDetectorArn.assign(value); }
-    inline DescribeMetricSetResult& WithAnomalyDetectorArn(const Aws::String& value) { SetAnomalyDetectorArn(value); return *this;}
-    inline DescribeMetricSetResult& WithAnomalyDetectorArn(Aws::String&& value) { SetAnomalyDetectorArn(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& WithAnomalyDetectorArn(const char* value) { SetAnomalyDetectorArn(value); return *this;}
+    inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
+    template<typename AnomalyDetectorArnT = Aws::String>
+    void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value); }
+    template<typename AnomalyDetectorArnT = Aws::String>
+    DescribeMetricSetResult& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) { SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dataset.</p>
      */
-    inline const Aws::String& GetMetricSetName() const{ return m_metricSetName; }
-    inline void SetMetricSetName(const Aws::String& value) { m_metricSetName = value; }
-    inline void SetMetricSetName(Aws::String&& value) { m_metricSetName = std::move(value); }
-    inline void SetMetricSetName(const char* value) { m_metricSetName.assign(value); }
-    inline DescribeMetricSetResult& WithMetricSetName(const Aws::String& value) { SetMetricSetName(value); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetName(Aws::String&& value) { SetMetricSetName(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetName(const char* value) { SetMetricSetName(value); return *this;}
+    inline const Aws::String& GetMetricSetName() const { return m_metricSetName; }
+    template<typename MetricSetNameT = Aws::String>
+    void SetMetricSetName(MetricSetNameT&& value) { m_metricSetNameHasBeenSet = true; m_metricSetName = std::forward<MetricSetNameT>(value); }
+    template<typename MetricSetNameT = Aws::String>
+    DescribeMetricSetResult& WithMetricSetName(MetricSetNameT&& value) { SetMetricSetName(std::forward<MetricSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset's description.</p>
      */
-    inline const Aws::String& GetMetricSetDescription() const{ return m_metricSetDescription; }
-    inline void SetMetricSetDescription(const Aws::String& value) { m_metricSetDescription = value; }
-    inline void SetMetricSetDescription(Aws::String&& value) { m_metricSetDescription = std::move(value); }
-    inline void SetMetricSetDescription(const char* value) { m_metricSetDescription.assign(value); }
-    inline DescribeMetricSetResult& WithMetricSetDescription(const Aws::String& value) { SetMetricSetDescription(value); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetDescription(Aws::String&& value) { SetMetricSetDescription(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetDescription(const char* value) { SetMetricSetDescription(value); return *this;}
+    inline const Aws::String& GetMetricSetDescription() const { return m_metricSetDescription; }
+    template<typename MetricSetDescriptionT = Aws::String>
+    void SetMetricSetDescription(MetricSetDescriptionT&& value) { m_metricSetDescriptionHasBeenSet = true; m_metricSetDescription = std::forward<MetricSetDescriptionT>(value); }
+    template<typename MetricSetDescriptionT = Aws::String>
+    DescribeMetricSetResult& WithMetricSetDescription(MetricSetDescriptionT&& value) { SetMetricSetDescription(std::forward<MetricSetDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the dataset was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeMetricSetResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeMetricSetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeMetricSetResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the dataset was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeMetricSetResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeMetricSetResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeMetricSetResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,8 +111,8 @@ namespace Model
      * importing data. Offset is only supported for S3, Redshift, Athena and
      * datasources.</p>
      */
-    inline int GetOffset() const{ return m_offset; }
-    inline void SetOffset(int value) { m_offset = value; }
+    inline int GetOffset() const { return m_offset; }
+    inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
     inline DescribeMetricSetResult& WithOffset(int value) { SetOffset(value); return *this;}
     ///@}
 
@@ -128,13 +120,13 @@ namespace Model
     /**
      * <p>A list of the metrics defined by the dataset.</p>
      */
-    inline const Aws::Vector<Metric>& GetMetricList() const{ return m_metricList; }
-    inline void SetMetricList(const Aws::Vector<Metric>& value) { m_metricList = value; }
-    inline void SetMetricList(Aws::Vector<Metric>&& value) { m_metricList = std::move(value); }
-    inline DescribeMetricSetResult& WithMetricList(const Aws::Vector<Metric>& value) { SetMetricList(value); return *this;}
-    inline DescribeMetricSetResult& WithMetricList(Aws::Vector<Metric>&& value) { SetMetricList(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& AddMetricList(const Metric& value) { m_metricList.push_back(value); return *this; }
-    inline DescribeMetricSetResult& AddMetricList(Metric&& value) { m_metricList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Metric>& GetMetricList() const { return m_metricList; }
+    template<typename MetricListT = Aws::Vector<Metric>>
+    void SetMetricList(MetricListT&& value) { m_metricListHasBeenSet = true; m_metricList = std::forward<MetricListT>(value); }
+    template<typename MetricListT = Aws::Vector<Metric>>
+    DescribeMetricSetResult& WithMetricList(MetricListT&& value) { SetMetricList(std::forward<MetricListT>(value)); return *this;}
+    template<typename MetricListT = Metric>
+    DescribeMetricSetResult& AddMetricList(MetricListT&& value) { m_metricListHasBeenSet = true; m_metricList.emplace_back(std::forward<MetricListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -142,116 +134,124 @@ namespace Model
      * <p>Contains information about the column used for tracking time in your source
      * data.</p>
      */
-    inline const TimestampColumn& GetTimestampColumn() const{ return m_timestampColumn; }
-    inline void SetTimestampColumn(const TimestampColumn& value) { m_timestampColumn = value; }
-    inline void SetTimestampColumn(TimestampColumn&& value) { m_timestampColumn = std::move(value); }
-    inline DescribeMetricSetResult& WithTimestampColumn(const TimestampColumn& value) { SetTimestampColumn(value); return *this;}
-    inline DescribeMetricSetResult& WithTimestampColumn(TimestampColumn&& value) { SetTimestampColumn(std::move(value)); return *this;}
+    inline const TimestampColumn& GetTimestampColumn() const { return m_timestampColumn; }
+    template<typename TimestampColumnT = TimestampColumn>
+    void SetTimestampColumn(TimestampColumnT&& value) { m_timestampColumnHasBeenSet = true; m_timestampColumn = std::forward<TimestampColumnT>(value); }
+    template<typename TimestampColumnT = TimestampColumn>
+    DescribeMetricSetResult& WithTimestampColumn(TimestampColumnT&& value) { SetTimestampColumn(std::forward<TimestampColumnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the dimensions chosen for analysis.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDimensionList() const{ return m_dimensionList; }
-    inline void SetDimensionList(const Aws::Vector<Aws::String>& value) { m_dimensionList = value; }
-    inline void SetDimensionList(Aws::Vector<Aws::String>&& value) { m_dimensionList = std::move(value); }
-    inline DescribeMetricSetResult& WithDimensionList(const Aws::Vector<Aws::String>& value) { SetDimensionList(value); return *this;}
-    inline DescribeMetricSetResult& WithDimensionList(Aws::Vector<Aws::String>&& value) { SetDimensionList(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& AddDimensionList(const Aws::String& value) { m_dimensionList.push_back(value); return *this; }
-    inline DescribeMetricSetResult& AddDimensionList(Aws::String&& value) { m_dimensionList.push_back(std::move(value)); return *this; }
-    inline DescribeMetricSetResult& AddDimensionList(const char* value) { m_dimensionList.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDimensionList() const { return m_dimensionList; }
+    template<typename DimensionListT = Aws::Vector<Aws::String>>
+    void SetDimensionList(DimensionListT&& value) { m_dimensionListHasBeenSet = true; m_dimensionList = std::forward<DimensionListT>(value); }
+    template<typename DimensionListT = Aws::Vector<Aws::String>>
+    DescribeMetricSetResult& WithDimensionList(DimensionListT&& value) { SetDimensionList(std::forward<DimensionListT>(value)); return *this;}
+    template<typename DimensionListT = Aws::String>
+    DescribeMetricSetResult& AddDimensionList(DimensionListT&& value) { m_dimensionListHasBeenSet = true; m_dimensionList.emplace_back(std::forward<DimensionListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The interval at which the data will be analyzed for anomalies.</p>
      */
-    inline const Frequency& GetMetricSetFrequency() const{ return m_metricSetFrequency; }
-    inline void SetMetricSetFrequency(const Frequency& value) { m_metricSetFrequency = value; }
-    inline void SetMetricSetFrequency(Frequency&& value) { m_metricSetFrequency = std::move(value); }
-    inline DescribeMetricSetResult& WithMetricSetFrequency(const Frequency& value) { SetMetricSetFrequency(value); return *this;}
-    inline DescribeMetricSetResult& WithMetricSetFrequency(Frequency&& value) { SetMetricSetFrequency(std::move(value)); return *this;}
+    inline Frequency GetMetricSetFrequency() const { return m_metricSetFrequency; }
+    inline void SetMetricSetFrequency(Frequency value) { m_metricSetFrequencyHasBeenSet = true; m_metricSetFrequency = value; }
+    inline DescribeMetricSetResult& WithMetricSetFrequency(Frequency value) { SetMetricSetFrequency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time zone in which the dataset's data was recorded.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
-    inline void SetTimezone(const Aws::String& value) { m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezone.assign(value); }
-    inline DescribeMetricSetResult& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline DescribeMetricSetResult& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    DescribeMetricSetResult& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the dataset's source data.</p>
      */
-    inline const MetricSource& GetMetricSource() const{ return m_metricSource; }
-    inline void SetMetricSource(const MetricSource& value) { m_metricSource = value; }
-    inline void SetMetricSource(MetricSource&& value) { m_metricSource = std::move(value); }
-    inline DescribeMetricSetResult& WithMetricSource(const MetricSource& value) { SetMetricSource(value); return *this;}
-    inline DescribeMetricSetResult& WithMetricSource(MetricSource&& value) { SetMetricSource(std::move(value)); return *this;}
+    inline const MetricSource& GetMetricSource() const { return m_metricSource; }
+    template<typename MetricSourceT = MetricSource>
+    void SetMetricSource(MetricSourceT&& value) { m_metricSourceHasBeenSet = true; m_metricSource = std::forward<MetricSourceT>(value); }
+    template<typename MetricSourceT = MetricSource>
+    DescribeMetricSetResult& WithMetricSource(MetricSourceT&& value) { SetMetricSource(std::forward<MetricSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimensions and their values that were used to filter the dataset.</p>
      */
-    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const{ return m_dimensionFilterList; }
-    inline void SetDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { m_dimensionFilterList = value; }
-    inline void SetDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { m_dimensionFilterList = std::move(value); }
-    inline DescribeMetricSetResult& WithDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { SetDimensionFilterList(value); return *this;}
-    inline DescribeMetricSetResult& WithDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { SetDimensionFilterList(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& AddDimensionFilterList(const MetricSetDimensionFilter& value) { m_dimensionFilterList.push_back(value); return *this; }
-    inline DescribeMetricSetResult& AddDimensionFilterList(MetricSetDimensionFilter&& value) { m_dimensionFilterList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const { return m_dimensionFilterList; }
+    template<typename DimensionFilterListT = Aws::Vector<MetricSetDimensionFilter>>
+    void SetDimensionFilterList(DimensionFilterListT&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = std::forward<DimensionFilterListT>(value); }
+    template<typename DimensionFilterListT = Aws::Vector<MetricSetDimensionFilter>>
+    DescribeMetricSetResult& WithDimensionFilterList(DimensionFilterListT&& value) { SetDimensionFilterList(std::forward<DimensionFilterListT>(value)); return *this;}
+    template<typename DimensionFilterListT = MetricSetDimensionFilter>
+    DescribeMetricSetResult& AddDimensionFilterList(DimensionFilterListT&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.emplace_back(std::forward<DimensionFilterListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMetricSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMetricSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMetricSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMetricSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_metricSetArn;
+    bool m_metricSetArnHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_metricSetName;
+    bool m_metricSetNameHasBeenSet = false;
 
     Aws::String m_metricSetDescription;
+    bool m_metricSetDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
-    int m_offset;
+    int m_offset{0};
+    bool m_offsetHasBeenSet = false;
 
     Aws::Vector<Metric> m_metricList;
+    bool m_metricListHasBeenSet = false;
 
     TimestampColumn m_timestampColumn;
+    bool m_timestampColumnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dimensionList;
+    bool m_dimensionListHasBeenSet = false;
 
-    Frequency m_metricSetFrequency;
+    Frequency m_metricSetFrequency{Frequency::NOT_SET};
+    bool m_metricSetFrequencyHasBeenSet = false;
 
     Aws::String m_timezone;
+    bool m_timezoneHasBeenSet = false;
 
     MetricSource m_metricSource;
+    bool m_metricSourceHasBeenSet = false;
 
     Aws::Vector<MetricSetDimensionFilter> m_dimensionFilterList;
+    bool m_dimensionFilterListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

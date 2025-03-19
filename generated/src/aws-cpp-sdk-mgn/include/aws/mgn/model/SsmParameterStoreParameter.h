@@ -32,7 +32,7 @@ namespace Model
   class SsmParameterStoreParameter
   {
   public:
-    AWS_MGN_API SsmParameterStoreParameter();
+    AWS_MGN_API SsmParameterStoreParameter() = default;
     AWS_MGN_API SsmParameterStoreParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API SsmParameterStoreParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>AWS Systems Manager Parameter Store parameter name.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline SsmParameterStoreParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline SsmParameterStoreParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline SsmParameterStoreParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    SsmParameterStoreParameter& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>AWS Systems Manager Parameter Store parameter type.</p>
      */
-    inline const SsmParameterStoreParameterType& GetParameterType() const{ return m_parameterType; }
+    inline SsmParameterStoreParameterType GetParameterType() const { return m_parameterType; }
     inline bool ParameterTypeHasBeenSet() const { return m_parameterTypeHasBeenSet; }
-    inline void SetParameterType(const SsmParameterStoreParameterType& value) { m_parameterTypeHasBeenSet = true; m_parameterType = value; }
-    inline void SetParameterType(SsmParameterStoreParameterType&& value) { m_parameterTypeHasBeenSet = true; m_parameterType = std::move(value); }
-    inline SsmParameterStoreParameter& WithParameterType(const SsmParameterStoreParameterType& value) { SetParameterType(value); return *this;}
-    inline SsmParameterStoreParameter& WithParameterType(SsmParameterStoreParameterType&& value) { SetParameterType(std::move(value)); return *this;}
+    inline void SetParameterType(SsmParameterStoreParameterType value) { m_parameterTypeHasBeenSet = true; m_parameterType = value; }
+    inline SsmParameterStoreParameter& WithParameterType(SsmParameterStoreParameterType value) { SetParameterType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet = false;
 
-    SsmParameterStoreParameterType m_parameterType;
+    SsmParameterStoreParameterType m_parameterType{SsmParameterStoreParameterType::NOT_SET};
     bool m_parameterTypeHasBeenSet = false;
   };
 

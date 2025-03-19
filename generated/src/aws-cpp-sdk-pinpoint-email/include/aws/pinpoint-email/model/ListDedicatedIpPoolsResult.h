@@ -33,7 +33,7 @@ namespace Model
   class ListDedicatedIpPoolsResult
   {
   public:
-    AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult();
+    AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult() = default;
     AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,14 +43,13 @@ namespace Model
      * <p>A list of all of the dedicated IP pools that are associated with your Amazon
      * Pinpoint account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDedicatedIpPools() const{ return m_dedicatedIpPools; }
-    inline void SetDedicatedIpPools(const Aws::Vector<Aws::String>& value) { m_dedicatedIpPools = value; }
-    inline void SetDedicatedIpPools(Aws::Vector<Aws::String>&& value) { m_dedicatedIpPools = std::move(value); }
-    inline ListDedicatedIpPoolsResult& WithDedicatedIpPools(const Aws::Vector<Aws::String>& value) { SetDedicatedIpPools(value); return *this;}
-    inline ListDedicatedIpPoolsResult& WithDedicatedIpPools(Aws::Vector<Aws::String>&& value) { SetDedicatedIpPools(std::move(value)); return *this;}
-    inline ListDedicatedIpPoolsResult& AddDedicatedIpPools(const Aws::String& value) { m_dedicatedIpPools.push_back(value); return *this; }
-    inline ListDedicatedIpPoolsResult& AddDedicatedIpPools(Aws::String&& value) { m_dedicatedIpPools.push_back(std::move(value)); return *this; }
-    inline ListDedicatedIpPoolsResult& AddDedicatedIpPools(const char* value) { m_dedicatedIpPools.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDedicatedIpPools() const { return m_dedicatedIpPools; }
+    template<typename DedicatedIpPoolsT = Aws::Vector<Aws::String>>
+    void SetDedicatedIpPools(DedicatedIpPoolsT&& value) { m_dedicatedIpPoolsHasBeenSet = true; m_dedicatedIpPools = std::forward<DedicatedIpPoolsT>(value); }
+    template<typename DedicatedIpPoolsT = Aws::Vector<Aws::String>>
+    ListDedicatedIpPoolsResult& WithDedicatedIpPools(DedicatedIpPoolsT&& value) { SetDedicatedIpPools(std::forward<DedicatedIpPoolsT>(value)); return *this;}
+    template<typename DedicatedIpPoolsT = Aws::String>
+    ListDedicatedIpPoolsResult& AddDedicatedIpPools(DedicatedIpPoolsT&& value) { m_dedicatedIpPoolsHasBeenSet = true; m_dedicatedIpPools.emplace_back(std::forward<DedicatedIpPoolsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +58,31 @@ namespace Model
      * additional IP pools, issue another request to <code>ListDedicatedIpPools</code>,
      * passing this token in the <code>NextToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDedicatedIpPoolsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDedicatedIpPoolsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDedicatedIpPoolsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDedicatedIpPoolsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDedicatedIpPoolsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDedicatedIpPoolsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDedicatedIpPoolsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDedicatedIpPoolsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_dedicatedIpPools;
+    bool m_dedicatedIpPoolsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

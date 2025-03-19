@@ -12,13 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReportTaskRunnerHeartbeatRequest::ReportTaskRunnerHeartbeatRequest() : 
-    m_taskrunnerIdHasBeenSet(false),
-    m_workerGroupHasBeenSet(false),
-    m_hostnameHasBeenSet(false)
-{
-}
-
 Aws::String ReportTaskRunnerHeartbeatRequest::SerializePayload() const
 {
   JsonValue payload;

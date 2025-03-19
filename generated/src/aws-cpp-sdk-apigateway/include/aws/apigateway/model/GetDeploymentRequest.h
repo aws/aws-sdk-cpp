@@ -30,7 +30,7 @@ namespace Model
   class GetDeploymentRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetDeploymentRequest();
+    AWS_APIGATEWAY_API GetDeploymentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetDeploymentRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetDeploymentRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetDeploymentRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Deployment resource to get information about.</p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline GetDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    GetDeploymentRequest& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,15 +80,14 @@ namespace Model
      * containing only the <code>"apisummary"</code> string. For example, <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
+    inline const Aws::Vector<Aws::String>& GetEmbed() const { return m_embed; }
     inline bool EmbedHasBeenSet() const { return m_embedHasBeenSet; }
-    inline void SetEmbed(const Aws::Vector<Aws::String>& value) { m_embedHasBeenSet = true; m_embed = value; }
-    inline void SetEmbed(Aws::Vector<Aws::String>&& value) { m_embedHasBeenSet = true; m_embed = std::move(value); }
-    inline GetDeploymentRequest& WithEmbed(const Aws::Vector<Aws::String>& value) { SetEmbed(value); return *this;}
-    inline GetDeploymentRequest& WithEmbed(Aws::Vector<Aws::String>&& value) { SetEmbed(std::move(value)); return *this;}
-    inline GetDeploymentRequest& AddEmbed(const Aws::String& value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
-    inline GetDeploymentRequest& AddEmbed(Aws::String&& value) { m_embedHasBeenSet = true; m_embed.push_back(std::move(value)); return *this; }
-    inline GetDeploymentRequest& AddEmbed(const char* value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
+    template<typename EmbedT = Aws::Vector<Aws::String>>
+    void SetEmbed(EmbedT&& value) { m_embedHasBeenSet = true; m_embed = std::forward<EmbedT>(value); }
+    template<typename EmbedT = Aws::Vector<Aws::String>>
+    GetDeploymentRequest& WithEmbed(EmbedT&& value) { SetEmbed(std::forward<EmbedT>(value)); return *this;}
+    template<typename EmbedT = Aws::String>
+    GetDeploymentRequest& AddEmbed(EmbedT&& value) { m_embedHasBeenSet = true; m_embed.emplace_back(std::forward<EmbedT>(value)); return *this; }
     ///@}
   private:
 

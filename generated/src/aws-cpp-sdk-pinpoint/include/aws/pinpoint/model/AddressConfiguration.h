@@ -35,7 +35,7 @@ namespace Model
   class AddressConfiguration
   {
   public:
-    AWS_PINPOINT_API AddressConfiguration();
+    AWS_PINPOINT_API AddressConfiguration() = default;
     AWS_PINPOINT_API AddressConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API AddressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,22 @@ namespace Model
      * <p>The message body to use instead of the default message body. This value
      * overrides the default message body.</p>
      */
-    inline const Aws::String& GetBodyOverride() const{ return m_bodyOverride; }
+    inline const Aws::String& GetBodyOverride() const { return m_bodyOverride; }
     inline bool BodyOverrideHasBeenSet() const { return m_bodyOverrideHasBeenSet; }
-    inline void SetBodyOverride(const Aws::String& value) { m_bodyOverrideHasBeenSet = true; m_bodyOverride = value; }
-    inline void SetBodyOverride(Aws::String&& value) { m_bodyOverrideHasBeenSet = true; m_bodyOverride = std::move(value); }
-    inline void SetBodyOverride(const char* value) { m_bodyOverrideHasBeenSet = true; m_bodyOverride.assign(value); }
-    inline AddressConfiguration& WithBodyOverride(const Aws::String& value) { SetBodyOverride(value); return *this;}
-    inline AddressConfiguration& WithBodyOverride(Aws::String&& value) { SetBodyOverride(std::move(value)); return *this;}
-    inline AddressConfiguration& WithBodyOverride(const char* value) { SetBodyOverride(value); return *this;}
+    template<typename BodyOverrideT = Aws::String>
+    void SetBodyOverride(BodyOverrideT&& value) { m_bodyOverrideHasBeenSet = true; m_bodyOverride = std::forward<BodyOverrideT>(value); }
+    template<typename BodyOverrideT = Aws::String>
+    AddressConfiguration& WithBodyOverride(BodyOverrideT&& value) { SetBodyOverride(std::forward<BodyOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The channel to use when sending the message.</p>
      */
-    inline const ChannelType& GetChannelType() const{ return m_channelType; }
+    inline ChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
-    inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
-    inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
-    inline AddressConfiguration& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
-    inline AddressConfiguration& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+    inline void SetChannelType(ChannelType value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+    inline AddressConfiguration& WithChannelType(ChannelType value) { SetChannelType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,19 +72,16 @@ namespace Model
      * text message, this payload is added to email/SMS delivery receipt event
      * attributes.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline AddressConfiguration& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
-    inline AddressConfiguration& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
-    inline AddressConfiguration& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
-    inline AddressConfiguration& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline AddressConfiguration& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline AddressConfiguration& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
-    inline AddressConfiguration& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline AddressConfiguration& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline AddressConfiguration& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    AddressConfiguration& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
+    template<typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+    AddressConfiguration& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+      m_contextHasBeenSet = true; m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -96,14 +89,12 @@ namespace Model
      * <p>The raw, JSON-formatted string to use as the payload for the message. If
      * specified, this value overrides all other values for the message.</p>
      */
-    inline const Aws::String& GetRawContent() const{ return m_rawContent; }
+    inline const Aws::String& GetRawContent() const { return m_rawContent; }
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
-    inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
-    inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
-    inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
-    inline AddressConfiguration& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
-    inline AddressConfiguration& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
-    inline AddressConfiguration& WithRawContent(const char* value) { SetRawContent(value); return *this;}
+    template<typename RawContentT = Aws::String>
+    void SetRawContent(RawContentT&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::forward<RawContentT>(value); }
+    template<typename RawContentT = Aws::String>
+    AddressConfiguration& WithRawContent(RawContentT&& value) { SetRawContent(std::forward<RawContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,18 +103,16 @@ namespace Model
      * properties of the DefaultMessage object. The variables specified in this map
      * take precedence over all other variables.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const { return m_substitutions; }
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
-    inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
-    inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
-    inline AddressConfiguration& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
-    inline AddressConfiguration& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
-    inline AddressConfiguration& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
-    inline AddressConfiguration& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
-    inline AddressConfiguration& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline AddressConfiguration& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
-    inline AddressConfiguration& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline AddressConfiguration& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetSubstitutions(SubstitutionsT&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::forward<SubstitutionsT>(value); }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    AddressConfiguration& WithSubstitutions(SubstitutionsT&& value) { SetSubstitutions(std::forward<SubstitutionsT>(value)); return *this;}
+    template<typename SubstitutionsKeyT = Aws::String, typename SubstitutionsValueT = Aws::Vector<Aws::String>>
+    AddressConfiguration& AddSubstitutions(SubstitutionsKeyT&& key, SubstitutionsValueT&& value) {
+      m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::forward<SubstitutionsKeyT>(key), std::forward<SubstitutionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -131,21 +120,19 @@ namespace Model
      * <p>The message title to use instead of the default message title. This value
      * overrides the default message title.</p>
      */
-    inline const Aws::String& GetTitleOverride() const{ return m_titleOverride; }
+    inline const Aws::String& GetTitleOverride() const { return m_titleOverride; }
     inline bool TitleOverrideHasBeenSet() const { return m_titleOverrideHasBeenSet; }
-    inline void SetTitleOverride(const Aws::String& value) { m_titleOverrideHasBeenSet = true; m_titleOverride = value; }
-    inline void SetTitleOverride(Aws::String&& value) { m_titleOverrideHasBeenSet = true; m_titleOverride = std::move(value); }
-    inline void SetTitleOverride(const char* value) { m_titleOverrideHasBeenSet = true; m_titleOverride.assign(value); }
-    inline AddressConfiguration& WithTitleOverride(const Aws::String& value) { SetTitleOverride(value); return *this;}
-    inline AddressConfiguration& WithTitleOverride(Aws::String&& value) { SetTitleOverride(std::move(value)); return *this;}
-    inline AddressConfiguration& WithTitleOverride(const char* value) { SetTitleOverride(value); return *this;}
+    template<typename TitleOverrideT = Aws::String>
+    void SetTitleOverride(TitleOverrideT&& value) { m_titleOverrideHasBeenSet = true; m_titleOverride = std::forward<TitleOverrideT>(value); }
+    template<typename TitleOverrideT = Aws::String>
+    AddressConfiguration& WithTitleOverride(TitleOverrideT&& value) { SetTitleOverride(std::forward<TitleOverrideT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bodyOverride;
     bool m_bodyOverrideHasBeenSet = false;
 
-    ChannelType m_channelType;
+    ChannelType m_channelType{ChannelType::NOT_SET};
     bool m_channelTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;

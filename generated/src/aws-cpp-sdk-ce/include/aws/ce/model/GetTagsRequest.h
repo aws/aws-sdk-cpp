@@ -25,7 +25,7 @@ namespace Model
   class GetTagsRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetTagsRequest();
+    AWS_COSTEXPLORER_API GetTagsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The value that you want to search for.</p>
      */
-    inline const Aws::String& GetSearchString() const{ return m_searchString; }
+    inline const Aws::String& GetSearchString() const { return m_searchString; }
     inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
-    inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
-    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
-    inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
-    inline GetTagsRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
-    inline GetTagsRequest& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
-    inline GetTagsRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
+    template<typename SearchStringT = Aws::String>
+    void SetSearchString(SearchStringT&& value) { m_searchStringHasBeenSet = true; m_searchString = std::forward<SearchStringT>(value); }
+    template<typename SearchStringT = Aws::String>
+    GetTagsRequest& WithSearchString(SearchStringT&& value) { SetSearchString(std::forward<SearchStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,36 +58,34 @@ namespace Model
      * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetTagsRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetTagsRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetTagsRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key of the tag that you want to return values for.</p>
      */
-    inline const Aws::String& GetTagKey() const{ return m_tagKey; }
+    inline const Aws::String& GetTagKey() const { return m_tagKey; }
     inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
-    inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
-    inline void SetTagKey(Aws::String&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::move(value); }
-    inline void SetTagKey(const char* value) { m_tagKeyHasBeenSet = true; m_tagKey.assign(value); }
-    inline GetTagsRequest& WithTagKey(const Aws::String& value) { SetTagKey(value); return *this;}
-    inline GetTagsRequest& WithTagKey(Aws::String&& value) { SetTagKey(std::move(value)); return *this;}
-    inline GetTagsRequest& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+    template<typename TagKeyT = Aws::String>
+    void SetTagKey(TagKeyT&& value) { m_tagKeyHasBeenSet = true; m_tagKey = std::forward<TagKeyT>(value); }
+    template<typename TagKeyT = Aws::String>
+    GetTagsRequest& WithTagKey(TagKeyT&& value) { SetTagKey(std::forward<TagKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetTagsRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetTagsRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetTagsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +101,14 @@ namespace Model
      * <code>DESCENDING</code>.</p> <p>When you use <code>SortBy</code>,
      * <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
      */
-    inline const Aws::Vector<SortDefinition>& GetSortBy() const{ return m_sortBy; }
+    inline const Aws::Vector<SortDefinition>& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const Aws::Vector<SortDefinition>& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(Aws::Vector<SortDefinition>&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetTagsRequest& WithSortBy(const Aws::Vector<SortDefinition>& value) { SetSortBy(value); return *this;}
-    inline GetTagsRequest& WithSortBy(Aws::Vector<SortDefinition>&& value) { SetSortBy(std::move(value)); return *this;}
-    inline GetTagsRequest& AddSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(value); return *this; }
-    inline GetTagsRequest& AddSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy.push_back(std::move(value)); return *this; }
+    template<typename SortByT = Aws::Vector<SortDefinition>>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = Aws::Vector<SortDefinition>>
+    GetTagsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    GetTagsRequest& AddSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy.emplace_back(std::forward<SortByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,14 +119,12 @@ namespace Model
      * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
      * be retrieved by calling the ListBillingViews API.</p>
      */
-    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline const Aws::String& GetBillingViewArn() const { return m_billingViewArn; }
     inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
-    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
-    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
-    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
-    inline GetTagsRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
-    inline GetTagsRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
-    inline GetTagsRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    template<typename BillingViewArnT = Aws::String>
+    void SetBillingViewArn(BillingViewArnT&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::forward<BillingViewArnT>(value); }
+    template<typename BillingViewArnT = Aws::String>
+    GetTagsRequest& WithBillingViewArn(BillingViewArnT&& value) { SetBillingViewArn(std::forward<BillingViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +135,7 @@ namespace Model
      * this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper quota
      * of 1000.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -153,14 +147,12 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetTagsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetTagsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetTagsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetTagsRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,7 +174,7 @@ namespace Model
     Aws::String m_billingViewArn;
     bool m_billingViewArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextPageToken;

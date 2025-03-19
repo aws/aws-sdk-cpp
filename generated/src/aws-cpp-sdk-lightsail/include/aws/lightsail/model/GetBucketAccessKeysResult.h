@@ -29,7 +29,7 @@ namespace Model
   class GetBucketAccessKeysResult
   {
   public:
-    AWS_LIGHTSAIL_API GetBucketAccessKeysResult();
+    AWS_LIGHTSAIL_API GetBucketAccessKeysResult() = default;
     AWS_LIGHTSAIL_API GetBucketAccessKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetBucketAccessKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An object that describes the access keys for the specified bucket.</p>
      */
-    inline const Aws::Vector<AccessKey>& GetAccessKeys() const{ return m_accessKeys; }
-    inline void SetAccessKeys(const Aws::Vector<AccessKey>& value) { m_accessKeys = value; }
-    inline void SetAccessKeys(Aws::Vector<AccessKey>&& value) { m_accessKeys = std::move(value); }
-    inline GetBucketAccessKeysResult& WithAccessKeys(const Aws::Vector<AccessKey>& value) { SetAccessKeys(value); return *this;}
-    inline GetBucketAccessKeysResult& WithAccessKeys(Aws::Vector<AccessKey>&& value) { SetAccessKeys(std::move(value)); return *this;}
-    inline GetBucketAccessKeysResult& AddAccessKeys(const AccessKey& value) { m_accessKeys.push_back(value); return *this; }
-    inline GetBucketAccessKeysResult& AddAccessKeys(AccessKey&& value) { m_accessKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessKey>& GetAccessKeys() const { return m_accessKeys; }
+    template<typename AccessKeysT = Aws::Vector<AccessKey>>
+    void SetAccessKeys(AccessKeysT&& value) { m_accessKeysHasBeenSet = true; m_accessKeys = std::forward<AccessKeysT>(value); }
+    template<typename AccessKeysT = Aws::Vector<AccessKey>>
+    GetBucketAccessKeysResult& WithAccessKeys(AccessKeysT&& value) { SetAccessKeys(std::forward<AccessKeysT>(value)); return *this;}
+    template<typename AccessKeysT = AccessKey>
+    GetBucketAccessKeysResult& AddAccessKeys(AccessKeysT&& value) { m_accessKeysHasBeenSet = true; m_accessKeys.emplace_back(std::forward<AccessKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketAccessKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketAccessKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketAccessKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketAccessKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccessKey> m_accessKeys;
+    bool m_accessKeysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

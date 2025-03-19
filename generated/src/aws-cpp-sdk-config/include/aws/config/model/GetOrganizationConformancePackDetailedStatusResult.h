@@ -29,7 +29,7 @@ namespace Model
   class GetOrganizationConformancePackDetailedStatusResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetOrganizationConformancePackDetailedStatusResult();
+    AWS_CONFIGSERVICE_API GetOrganizationConformancePackDetailedStatusResult() = default;
     AWS_CONFIGSERVICE_API GetOrganizationConformancePackDetailedStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetOrganizationConformancePackDetailedStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects.
      * </p>
      */
-    inline const Aws::Vector<OrganizationConformancePackDetailedStatus>& GetOrganizationConformancePackDetailedStatuses() const{ return m_organizationConformancePackDetailedStatuses; }
-    inline void SetOrganizationConformancePackDetailedStatuses(const Aws::Vector<OrganizationConformancePackDetailedStatus>& value) { m_organizationConformancePackDetailedStatuses = value; }
-    inline void SetOrganizationConformancePackDetailedStatuses(Aws::Vector<OrganizationConformancePackDetailedStatus>&& value) { m_organizationConformancePackDetailedStatuses = std::move(value); }
-    inline GetOrganizationConformancePackDetailedStatusResult& WithOrganizationConformancePackDetailedStatuses(const Aws::Vector<OrganizationConformancePackDetailedStatus>& value) { SetOrganizationConformancePackDetailedStatuses(value); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusResult& WithOrganizationConformancePackDetailedStatuses(Aws::Vector<OrganizationConformancePackDetailedStatus>&& value) { SetOrganizationConformancePackDetailedStatuses(std::move(value)); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusResult& AddOrganizationConformancePackDetailedStatuses(const OrganizationConformancePackDetailedStatus& value) { m_organizationConformancePackDetailedStatuses.push_back(value); return *this; }
-    inline GetOrganizationConformancePackDetailedStatusResult& AddOrganizationConformancePackDetailedStatuses(OrganizationConformancePackDetailedStatus&& value) { m_organizationConformancePackDetailedStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationConformancePackDetailedStatus>& GetOrganizationConformancePackDetailedStatuses() const { return m_organizationConformancePackDetailedStatuses; }
+    template<typename OrganizationConformancePackDetailedStatusesT = Aws::Vector<OrganizationConformancePackDetailedStatus>>
+    void SetOrganizationConformancePackDetailedStatuses(OrganizationConformancePackDetailedStatusesT&& value) { m_organizationConformancePackDetailedStatusesHasBeenSet = true; m_organizationConformancePackDetailedStatuses = std::forward<OrganizationConformancePackDetailedStatusesT>(value); }
+    template<typename OrganizationConformancePackDetailedStatusesT = Aws::Vector<OrganizationConformancePackDetailedStatus>>
+    GetOrganizationConformancePackDetailedStatusResult& WithOrganizationConformancePackDetailedStatuses(OrganizationConformancePackDetailedStatusesT&& value) { SetOrganizationConformancePackDetailedStatuses(std::forward<OrganizationConformancePackDetailedStatusesT>(value)); return *this;}
+    template<typename OrganizationConformancePackDetailedStatusesT = OrganizationConformancePackDetailedStatus>
+    GetOrganizationConformancePackDetailedStatusResult& AddOrganizationConformancePackDetailedStatuses(OrganizationConformancePackDetailedStatusesT&& value) { m_organizationConformancePackDetailedStatusesHasBeenSet = true; m_organizationConformancePackDetailedStatuses.emplace_back(std::forward<OrganizationConformancePackDetailedStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The nextToken string returned on a previous page that you use to get the next
      * page of results in a paginated response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetOrganizationConformancePackDetailedStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetOrganizationConformancePackDetailedStatusResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOrganizationConformancePackDetailedStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOrganizationConformancePackDetailedStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOrganizationConformancePackDetailedStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OrganizationConformancePackDetailedStatus> m_organizationConformancePackDetailedStatuses;
+    bool m_organizationConformancePackDetailedStatusesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-UserGroupPendingChanges::UserGroupPendingChanges() : 
-    m_userIdsToRemoveHasBeenSet(false),
-    m_userIdsToAddHasBeenSet(false)
-{
-}
-
 UserGroupPendingChanges::UserGroupPendingChanges(const XmlNode& xmlNode)
-  : UserGroupPendingChanges()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ UserGroupPendingChanges& UserGroupPendingChanges::operator =(const XmlNode& xmlN
     if(!userIdsToRemoveNode.IsNull())
     {
       XmlNode userIdsToRemoveMember = userIdsToRemoveNode.FirstChild("member");
+      m_userIdsToRemoveHasBeenSet = !userIdsToRemoveMember.IsNull();
       while(!userIdsToRemoveMember.IsNull())
       {
         m_userIdsToRemove.push_back(userIdsToRemoveMember.GetText());
@@ -54,6 +48,7 @@ UserGroupPendingChanges& UserGroupPendingChanges::operator =(const XmlNode& xmlN
     if(!userIdsToAddNode.IsNull())
     {
       XmlNode userIdsToAddMember = userIdsToAddNode.FirstChild("member");
+      m_userIdsToAddHasBeenSet = !userIdsToAddMember.IsNull();
       while(!userIdsToAddMember.IsNull())
       {
         m_userIdsToAdd.push_back(userIdsToAddMember.GetText());

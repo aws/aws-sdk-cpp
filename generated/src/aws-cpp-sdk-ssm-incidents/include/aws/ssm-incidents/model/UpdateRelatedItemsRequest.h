@@ -23,7 +23,7 @@ namespace Model
   class UpdateRelatedItemsRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API UpdateRelatedItemsRequest();
+    AWS_SSMINCIDENTS_API UpdateRelatedItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A token that ensures that a client calls the operation only once with the
      * specified details.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateRelatedItemsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateRelatedItemsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateRelatedItemsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateRelatedItemsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the incident record that contains the
      * related items that you update.</p>
      */
-    inline const Aws::String& GetIncidentRecordArn() const{ return m_incidentRecordArn; }
+    inline const Aws::String& GetIncidentRecordArn() const { return m_incidentRecordArn; }
     inline bool IncidentRecordArnHasBeenSet() const { return m_incidentRecordArnHasBeenSet; }
-    inline void SetIncidentRecordArn(const Aws::String& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = value; }
-    inline void SetIncidentRecordArn(Aws::String&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::move(value); }
-    inline void SetIncidentRecordArn(const char* value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn.assign(value); }
-    inline UpdateRelatedItemsRequest& WithIncidentRecordArn(const Aws::String& value) { SetIncidentRecordArn(value); return *this;}
-    inline UpdateRelatedItemsRequest& WithIncidentRecordArn(Aws::String&& value) { SetIncidentRecordArn(std::move(value)); return *this;}
-    inline UpdateRelatedItemsRequest& WithIncidentRecordArn(const char* value) { SetIncidentRecordArn(value); return *this;}
+    template<typename IncidentRecordArnT = Aws::String>
+    void SetIncidentRecordArn(IncidentRecordArnT&& value) { m_incidentRecordArnHasBeenSet = true; m_incidentRecordArn = std::forward<IncidentRecordArnT>(value); }
+    template<typename IncidentRecordArnT = Aws::String>
+    UpdateRelatedItemsRequest& WithIncidentRecordArn(IncidentRecordArnT&& value) { SetIncidentRecordArn(std::forward<IncidentRecordArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the item that you are add to, or delete from, an incident.</p>
      */
-    inline const RelatedItemsUpdate& GetRelatedItemsUpdate() const{ return m_relatedItemsUpdate; }
+    inline const RelatedItemsUpdate& GetRelatedItemsUpdate() const { return m_relatedItemsUpdate; }
     inline bool RelatedItemsUpdateHasBeenSet() const { return m_relatedItemsUpdateHasBeenSet; }
-    inline void SetRelatedItemsUpdate(const RelatedItemsUpdate& value) { m_relatedItemsUpdateHasBeenSet = true; m_relatedItemsUpdate = value; }
-    inline void SetRelatedItemsUpdate(RelatedItemsUpdate&& value) { m_relatedItemsUpdateHasBeenSet = true; m_relatedItemsUpdate = std::move(value); }
-    inline UpdateRelatedItemsRequest& WithRelatedItemsUpdate(const RelatedItemsUpdate& value) { SetRelatedItemsUpdate(value); return *this;}
-    inline UpdateRelatedItemsRequest& WithRelatedItemsUpdate(RelatedItemsUpdate&& value) { SetRelatedItemsUpdate(std::move(value)); return *this;}
+    template<typename RelatedItemsUpdateT = RelatedItemsUpdate>
+    void SetRelatedItemsUpdate(RelatedItemsUpdateT&& value) { m_relatedItemsUpdateHasBeenSet = true; m_relatedItemsUpdate = std::forward<RelatedItemsUpdateT>(value); }
+    template<typename RelatedItemsUpdateT = RelatedItemsUpdate>
+    UpdateRelatedItemsRequest& WithRelatedItemsUpdate(RelatedItemsUpdateT&& value) { SetRelatedItemsUpdate(std::forward<RelatedItemsUpdateT>(value)); return *this;}
     ///@}
   private:
 

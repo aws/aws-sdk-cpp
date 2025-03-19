@@ -33,7 +33,7 @@ namespace Model
   class FromEmailAddressNotVerifiedException
   {
   public:
-    AWS_SES_API FromEmailAddressNotVerifiedException();
+    AWS_SES_API FromEmailAddressNotVerifiedException() = default;
     AWS_SES_API FromEmailAddressNotVerifiedException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API FromEmailAddressNotVerifiedException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * <p>Indicates that the from email address associated with the custom verification
      * email template is not verified.</p>
      */
-    inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
+    inline const Aws::String& GetFromEmailAddress() const { return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
-    inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
-    inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
-    inline void SetFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.assign(value); }
-    inline FromEmailAddressNotVerifiedException& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
-    inline FromEmailAddressNotVerifiedException& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-    inline FromEmailAddressNotVerifiedException& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
+    template<typename FromEmailAddressT = Aws::String>
+    void SetFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::forward<FromEmailAddressT>(value); }
+    template<typename FromEmailAddressT = Aws::String>
+    FromEmailAddressNotVerifiedException& WithFromEmailAddress(FromEmailAddressT&& value) { SetFromEmailAddress(std::forward<FromEmailAddressT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyTenantDatabaseRequest::ModifyTenantDatabaseRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_newTenantDBNameHasBeenSet(false)
-{
-}
-
 Aws::String ModifyTenantDatabaseRequest::SerializePayload() const
 {
   Aws::StringStream ss;

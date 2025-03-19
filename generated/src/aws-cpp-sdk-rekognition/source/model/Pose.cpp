@@ -18,18 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Pose::Pose() : 
-    m_roll(0.0),
-    m_rollHasBeenSet(false),
-    m_yaw(0.0),
-    m_yawHasBeenSet(false),
-    m_pitch(0.0),
-    m_pitchHasBeenSet(false)
-{
-}
-
 Pose::Pose(JsonView jsonValue)
-  : Pose()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Pose& Pose::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Roll"))
   {
     m_roll = jsonValue.GetDouble("Roll");
-
     m_rollHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Yaw"))
   {
     m_yaw = jsonValue.GetDouble("Yaw");
-
     m_yawHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pitch"))
   {
     m_pitch = jsonValue.GetDouble("Pitch");
-
     m_pitchHasBeenSet = true;
   }
-
   return *this;
 }
 

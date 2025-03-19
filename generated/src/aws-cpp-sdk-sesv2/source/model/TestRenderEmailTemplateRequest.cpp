@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestRenderEmailTemplateRequest::TestRenderEmailTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateDataHasBeenSet(false)
-{
-}
-
 Aws::String TestRenderEmailTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

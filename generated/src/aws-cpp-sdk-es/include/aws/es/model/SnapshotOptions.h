@@ -31,7 +31,7 @@ namespace Model
   class SnapshotOptions
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API SnapshotOptions();
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptions() = default;
     AWS_ELASTICSEARCHSERVICE_API SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
      * hours.</p>
      */
-    inline int GetAutomatedSnapshotStartHour() const{ return m_automatedSnapshotStartHour; }
+    inline int GetAutomatedSnapshotStartHour() const { return m_automatedSnapshotStartHour; }
     inline bool AutomatedSnapshotStartHourHasBeenSet() const { return m_automatedSnapshotStartHourHasBeenSet; }
     inline void SetAutomatedSnapshotStartHour(int value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
     inline SnapshotOptions& WithAutomatedSnapshotStartHour(int value) { SetAutomatedSnapshotStartHour(value); return *this;}
     ///@}
   private:
 
-    int m_automatedSnapshotStartHour;
+    int m_automatedSnapshotStartHour{0};
     bool m_automatedSnapshotStartHourHasBeenSet = false;
   };
 

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RemoveIpamOperatingRegion::RemoveIpamOperatingRegion() : 
-    m_regionNameHasBeenSet(false)
-{
-}
-
 RemoveIpamOperatingRegion::RemoveIpamOperatingRegion(const XmlNode& xmlNode)
-  : RemoveIpamOperatingRegion()
 {
   *this = xmlNode;
 }

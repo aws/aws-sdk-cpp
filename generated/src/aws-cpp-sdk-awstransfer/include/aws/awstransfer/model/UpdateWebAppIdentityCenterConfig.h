@@ -32,7 +32,7 @@ namespace Model
   class UpdateWebAppIdentityCenterConfig
   {
   public:
-    AWS_TRANSFER_API UpdateWebAppIdentityCenterConfig();
+    AWS_TRANSFER_API UpdateWebAppIdentityCenterConfig() = default;
     AWS_TRANSFER_API UpdateWebAppIdentityCenterConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API UpdateWebAppIdentityCenterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The IAM role used to access IAM Identity Center.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline UpdateWebAppIdentityCenterConfig& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline UpdateWebAppIdentityCenterConfig& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline UpdateWebAppIdentityCenterConfig& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    UpdateWebAppIdentityCenterConfig& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
   private:
 

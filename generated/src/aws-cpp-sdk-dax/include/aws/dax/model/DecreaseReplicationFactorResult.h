@@ -28,7 +28,7 @@ namespace Model
   class DecreaseReplicationFactorResult
   {
   public:
-    AWS_DAX_API DecreaseReplicationFactorResult();
+    AWS_DAX_API DecreaseReplicationFactorResult() = default;
     AWS_DAX_API DecreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DAX_API DecreaseReplicationFactorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A description of the DAX cluster, after you have decreased its replication
      * factor.</p>
      */
-    inline const Cluster& GetCluster() const{ return m_cluster; }
-    inline void SetCluster(const Cluster& value) { m_cluster = value; }
-    inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-    inline DecreaseReplicationFactorResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-    inline DecreaseReplicationFactorResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    inline const Cluster& GetCluster() const { return m_cluster; }
+    template<typename ClusterT = Cluster>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Cluster>
+    DecreaseReplicationFactorResult& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DecreaseReplicationFactorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DecreaseReplicationFactorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DecreaseReplicationFactorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DecreaseReplicationFactorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Cluster m_cluster;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

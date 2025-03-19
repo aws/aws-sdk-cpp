@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteCustomDomainAssociationRequest::DeleteCustomDomainAssociationRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomDomainAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

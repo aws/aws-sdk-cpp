@@ -28,7 +28,7 @@ namespace Model
   class UpdateWorkgroupResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API UpdateWorkgroupResult();
+    AWS_REDSHIFTSERVERLESS_API UpdateWorkgroupResult() = default;
     AWS_REDSHIFTSERVERLESS_API UpdateWorkgroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API UpdateWorkgroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated workgroup object.</p>
      */
-    inline const Workgroup& GetWorkgroup() const{ return m_workgroup; }
-    inline void SetWorkgroup(const Workgroup& value) { m_workgroup = value; }
-    inline void SetWorkgroup(Workgroup&& value) { m_workgroup = std::move(value); }
-    inline UpdateWorkgroupResult& WithWorkgroup(const Workgroup& value) { SetWorkgroup(value); return *this;}
-    inline UpdateWorkgroupResult& WithWorkgroup(Workgroup&& value) { SetWorkgroup(std::move(value)); return *this;}
+    inline const Workgroup& GetWorkgroup() const { return m_workgroup; }
+    template<typename WorkgroupT = Workgroup>
+    void SetWorkgroup(WorkgroupT&& value) { m_workgroupHasBeenSet = true; m_workgroup = std::forward<WorkgroupT>(value); }
+    template<typename WorkgroupT = Workgroup>
+    UpdateWorkgroupResult& WithWorkgroup(WorkgroupT&& value) { SetWorkgroup(std::forward<WorkgroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkgroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkgroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkgroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkgroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Workgroup m_workgroup;
+    bool m_workgroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

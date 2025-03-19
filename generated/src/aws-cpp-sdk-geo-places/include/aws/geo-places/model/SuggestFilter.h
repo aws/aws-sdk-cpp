@@ -35,7 +35,7 @@ namespace Model
   class SuggestFilter
   {
   public:
-    AWS_GEOPLACES_API SuggestFilter();
+    AWS_GEOPLACES_API SuggestFilter() = default;
     AWS_GEOPLACES_API SuggestFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API SuggestFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,23 +48,23 @@ namespace Model
      * coordinates: <code>[{westward lng}, {southern lat}, {eastward lng}, {northern
      * lat}]</code> </p>
      */
-    inline const Aws::Vector<double>& GetBoundingBox() const{ return m_boundingBox; }
+    inline const Aws::Vector<double>& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const Aws::Vector<double>& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(Aws::Vector<double>&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline SuggestFilter& WithBoundingBox(const Aws::Vector<double>& value) { SetBoundingBox(value); return *this;}
-    inline SuggestFilter& WithBoundingBox(Aws::Vector<double>&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    SuggestFilter& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     inline SuggestFilter& AddBoundingBox(double value) { m_boundingBoxHasBeenSet = true; m_boundingBox.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const FilterCircle& GetCircle() const{ return m_circle; }
+    inline const FilterCircle& GetCircle() const { return m_circle; }
     inline bool CircleHasBeenSet() const { return m_circleHasBeenSet; }
-    inline void SetCircle(const FilterCircle& value) { m_circleHasBeenSet = true; m_circle = value; }
-    inline void SetCircle(FilterCircle&& value) { m_circleHasBeenSet = true; m_circle = std::move(value); }
-    inline SuggestFilter& WithCircle(const FilterCircle& value) { SetCircle(value); return *this;}
-    inline SuggestFilter& WithCircle(FilterCircle&& value) { SetCircle(std::move(value)); return *this;}
+    template<typename CircleT = FilterCircle>
+    void SetCircle(CircleT&& value) { m_circleHasBeenSet = true; m_circle = std::forward<CircleT>(value); }
+    template<typename CircleT = FilterCircle>
+    SuggestFilter& WithCircle(CircleT&& value) { SetCircle(std::forward<CircleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,15 +72,14 @@ namespace Model
      * <p> A list of countries that all results must be in. Countries are represented
      * by either their alpha-2 or alpha-3 character codes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeCountries() const{ return m_includeCountries; }
+    inline const Aws::Vector<Aws::String>& GetIncludeCountries() const { return m_includeCountries; }
     inline bool IncludeCountriesHasBeenSet() const { return m_includeCountriesHasBeenSet; }
-    inline void SetIncludeCountries(const Aws::Vector<Aws::String>& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = value; }
-    inline void SetIncludeCountries(Aws::Vector<Aws::String>&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = std::move(value); }
-    inline SuggestFilter& WithIncludeCountries(const Aws::Vector<Aws::String>& value) { SetIncludeCountries(value); return *this;}
-    inline SuggestFilter& WithIncludeCountries(Aws::Vector<Aws::String>&& value) { SetIncludeCountries(std::move(value)); return *this;}
-    inline SuggestFilter& AddIncludeCountries(const Aws::String& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(value); return *this; }
-    inline SuggestFilter& AddIncludeCountries(Aws::String&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(std::move(value)); return *this; }
-    inline SuggestFilter& AddIncludeCountries(const char* value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(value); return *this; }
+    template<typename IncludeCountriesT = Aws::Vector<Aws::String>>
+    void SetIncludeCountries(IncludeCountriesT&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = std::forward<IncludeCountriesT>(value); }
+    template<typename IncludeCountriesT = Aws::Vector<Aws::String>>
+    SuggestFilter& WithIncludeCountries(IncludeCountriesT&& value) { SetIncludeCountries(std::forward<IncludeCountriesT>(value)); return *this;}
+    template<typename IncludeCountriesT = Aws::String>
+    SuggestFilter& AddIncludeCountries(IncludeCountriesT&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.emplace_back(std::forward<IncludeCountriesT>(value)); return *this; }
     ///@}
   private:
 

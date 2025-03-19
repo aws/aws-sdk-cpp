@@ -37,7 +37,7 @@ namespace Model
   class BouncedRecipientInfo
   {
   public:
-    AWS_SES_API BouncedRecipientInfo();
+    AWS_SES_API BouncedRecipientInfo() = default;
     AWS_SES_API BouncedRecipientInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API BouncedRecipientInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The email address of the recipient of the bounced email.</p>
      */
-    inline const Aws::String& GetRecipient() const{ return m_recipient; }
+    inline const Aws::String& GetRecipient() const { return m_recipient; }
     inline bool RecipientHasBeenSet() const { return m_recipientHasBeenSet; }
-    inline void SetRecipient(const Aws::String& value) { m_recipientHasBeenSet = true; m_recipient = value; }
-    inline void SetRecipient(Aws::String&& value) { m_recipientHasBeenSet = true; m_recipient = std::move(value); }
-    inline void SetRecipient(const char* value) { m_recipientHasBeenSet = true; m_recipient.assign(value); }
-    inline BouncedRecipientInfo& WithRecipient(const Aws::String& value) { SetRecipient(value); return *this;}
-    inline BouncedRecipientInfo& WithRecipient(Aws::String&& value) { SetRecipient(std::move(value)); return *this;}
-    inline BouncedRecipientInfo& WithRecipient(const char* value) { SetRecipient(value); return *this;}
+    template<typename RecipientT = Aws::String>
+    void SetRecipient(RecipientT&& value) { m_recipientHasBeenSet = true; m_recipient = std::forward<RecipientT>(value); }
+    template<typename RecipientT = Aws::String>
+    BouncedRecipientInfo& WithRecipient(RecipientT&& value) { SetRecipient(std::forward<RecipientT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetRecipientArn() const{ return m_recipientArn; }
+    inline const Aws::String& GetRecipientArn() const { return m_recipientArn; }
     inline bool RecipientArnHasBeenSet() const { return m_recipientArnHasBeenSet; }
-    inline void SetRecipientArn(const Aws::String& value) { m_recipientArnHasBeenSet = true; m_recipientArn = value; }
-    inline void SetRecipientArn(Aws::String&& value) { m_recipientArnHasBeenSet = true; m_recipientArn = std::move(value); }
-    inline void SetRecipientArn(const char* value) { m_recipientArnHasBeenSet = true; m_recipientArn.assign(value); }
-    inline BouncedRecipientInfo& WithRecipientArn(const Aws::String& value) { SetRecipientArn(value); return *this;}
-    inline BouncedRecipientInfo& WithRecipientArn(Aws::String&& value) { SetRecipientArn(std::move(value)); return *this;}
-    inline BouncedRecipientInfo& WithRecipientArn(const char* value) { SetRecipientArn(value); return *this;}
+    template<typename RecipientArnT = Aws::String>
+    void SetRecipientArn(RecipientArnT&& value) { m_recipientArnHasBeenSet = true; m_recipientArn = std::forward<RecipientArnT>(value); }
+    template<typename RecipientArnT = Aws::String>
+    BouncedRecipientInfo& WithRecipientArn(RecipientArnT&& value) { SetRecipientArn(std::forward<RecipientArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * <p>The reason for the bounce. You must provide either this parameter or
      * <code>RecipientDsnFields</code>.</p>
      */
-    inline const BounceType& GetBounceType() const{ return m_bounceType; }
+    inline BounceType GetBounceType() const { return m_bounceType; }
     inline bool BounceTypeHasBeenSet() const { return m_bounceTypeHasBeenSet; }
-    inline void SetBounceType(const BounceType& value) { m_bounceTypeHasBeenSet = true; m_bounceType = value; }
-    inline void SetBounceType(BounceType&& value) { m_bounceTypeHasBeenSet = true; m_bounceType = std::move(value); }
-    inline BouncedRecipientInfo& WithBounceType(const BounceType& value) { SetBounceType(value); return *this;}
-    inline BouncedRecipientInfo& WithBounceType(BounceType&& value) { SetBounceType(std::move(value)); return *this;}
+    inline void SetBounceType(BounceType value) { m_bounceTypeHasBeenSet = true; m_bounceType = value; }
+    inline BouncedRecipientInfo& WithBounceType(BounceType value) { SetBounceType(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,12 @@ namespace Model
      * automatically when provided with a <code>BounceType</code>. You must provide
      * either this parameter or <code>BounceType</code>.</p>
      */
-    inline const RecipientDsnFields& GetRecipientDsnFields() const{ return m_recipientDsnFields; }
+    inline const RecipientDsnFields& GetRecipientDsnFields() const { return m_recipientDsnFields; }
     inline bool RecipientDsnFieldsHasBeenSet() const { return m_recipientDsnFieldsHasBeenSet; }
-    inline void SetRecipientDsnFields(const RecipientDsnFields& value) { m_recipientDsnFieldsHasBeenSet = true; m_recipientDsnFields = value; }
-    inline void SetRecipientDsnFields(RecipientDsnFields&& value) { m_recipientDsnFieldsHasBeenSet = true; m_recipientDsnFields = std::move(value); }
-    inline BouncedRecipientInfo& WithRecipientDsnFields(const RecipientDsnFields& value) { SetRecipientDsnFields(value); return *this;}
-    inline BouncedRecipientInfo& WithRecipientDsnFields(RecipientDsnFields&& value) { SetRecipientDsnFields(std::move(value)); return *this;}
+    template<typename RecipientDsnFieldsT = RecipientDsnFields>
+    void SetRecipientDsnFields(RecipientDsnFieldsT&& value) { m_recipientDsnFieldsHasBeenSet = true; m_recipientDsnFields = std::forward<RecipientDsnFieldsT>(value); }
+    template<typename RecipientDsnFieldsT = RecipientDsnFields>
+    BouncedRecipientInfo& WithRecipientDsnFields(RecipientDsnFieldsT&& value) { SetRecipientDsnFields(std::forward<RecipientDsnFieldsT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +106,7 @@ namespace Model
     Aws::String m_recipientArn;
     bool m_recipientArnHasBeenSet = false;
 
-    BounceType m_bounceType;
+    BounceType m_bounceType{BounceType::NOT_SET};
     bool m_bounceTypeHasBeenSet = false;
 
     RecipientDsnFields m_recipientDsnFields;

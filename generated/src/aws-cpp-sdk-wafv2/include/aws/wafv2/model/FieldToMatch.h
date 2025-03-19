@@ -68,7 +68,7 @@ namespace Model
   class FieldToMatch
   {
   public:
-    AWS_WAFV2_API FieldToMatch();
+    AWS_WAFV2_API FieldToMatch() = default;
     AWS_WAFV2_API FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -82,12 +82,12 @@ namespace Model
      * }</code> </p> <p>Alternately, you can filter and inspect all headers with the
      * <code>Headers</code> <code>FieldToMatch</code> setting. </p>
      */
-    inline const SingleHeader& GetSingleHeader() const{ return m_singleHeader; }
+    inline const SingleHeader& GetSingleHeader() const { return m_singleHeader; }
     inline bool SingleHeaderHasBeenSet() const { return m_singleHeaderHasBeenSet; }
-    inline void SetSingleHeader(const SingleHeader& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = value; }
-    inline void SetSingleHeader(SingleHeader&& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = std::move(value); }
-    inline FieldToMatch& WithSingleHeader(const SingleHeader& value) { SetSingleHeader(value); return *this;}
-    inline FieldToMatch& WithSingleHeader(SingleHeader&& value) { SetSingleHeader(std::move(value)); return *this;}
+    template<typename SingleHeaderT = SingleHeader>
+    void SetSingleHeader(SingleHeaderT&& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = std::forward<SingleHeaderT>(value); }
+    template<typename SingleHeaderT = SingleHeader>
+    FieldToMatch& WithSingleHeader(SingleHeaderT&& value) { SetSingleHeader(std::forward<SingleHeaderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,24 +97,24 @@ namespace Model
      * characters long and isn't case sensitive. </p> <p>Example JSON:
      * <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p>
      */
-    inline const SingleQueryArgument& GetSingleQueryArgument() const{ return m_singleQueryArgument; }
+    inline const SingleQueryArgument& GetSingleQueryArgument() const { return m_singleQueryArgument; }
     inline bool SingleQueryArgumentHasBeenSet() const { return m_singleQueryArgumentHasBeenSet; }
-    inline void SetSingleQueryArgument(const SingleQueryArgument& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = value; }
-    inline void SetSingleQueryArgument(SingleQueryArgument&& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = std::move(value); }
-    inline FieldToMatch& WithSingleQueryArgument(const SingleQueryArgument& value) { SetSingleQueryArgument(value); return *this;}
-    inline FieldToMatch& WithSingleQueryArgument(SingleQueryArgument&& value) { SetSingleQueryArgument(std::move(value)); return *this;}
+    template<typename SingleQueryArgumentT = SingleQueryArgument>
+    void SetSingleQueryArgument(SingleQueryArgumentT&& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = std::forward<SingleQueryArgumentT>(value); }
+    template<typename SingleQueryArgumentT = SingleQueryArgument>
+    FieldToMatch& WithSingleQueryArgument(SingleQueryArgumentT&& value) { SetSingleQueryArgument(std::forward<SingleQueryArgumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Inspect all query arguments. </p>
      */
-    inline const AllQueryArguments& GetAllQueryArguments() const{ return m_allQueryArguments; }
+    inline const AllQueryArguments& GetAllQueryArguments() const { return m_allQueryArguments; }
     inline bool AllQueryArgumentsHasBeenSet() const { return m_allQueryArgumentsHasBeenSet; }
-    inline void SetAllQueryArguments(const AllQueryArguments& value) { m_allQueryArgumentsHasBeenSet = true; m_allQueryArguments = value; }
-    inline void SetAllQueryArguments(AllQueryArguments&& value) { m_allQueryArgumentsHasBeenSet = true; m_allQueryArguments = std::move(value); }
-    inline FieldToMatch& WithAllQueryArguments(const AllQueryArguments& value) { SetAllQueryArguments(value); return *this;}
-    inline FieldToMatch& WithAllQueryArguments(AllQueryArguments&& value) { SetAllQueryArguments(std::move(value)); return *this;}
+    template<typename AllQueryArgumentsT = AllQueryArguments>
+    void SetAllQueryArguments(AllQueryArgumentsT&& value) { m_allQueryArgumentsHasBeenSet = true; m_allQueryArguments = std::forward<AllQueryArgumentsT>(value); }
+    template<typename AllQueryArgumentsT = AllQueryArguments>
+    FieldToMatch& WithAllQueryArguments(AllQueryArgumentsT&& value) { SetAllQueryArguments(std::forward<AllQueryArgumentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +122,12 @@ namespace Model
      * <p>Inspect the request URI path. This is the part of the web request that
      * identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p>
      */
-    inline const UriPath& GetUriPath() const{ return m_uriPath; }
+    inline const UriPath& GetUriPath() const { return m_uriPath; }
     inline bool UriPathHasBeenSet() const { return m_uriPathHasBeenSet; }
-    inline void SetUriPath(const UriPath& value) { m_uriPathHasBeenSet = true; m_uriPath = value; }
-    inline void SetUriPath(UriPath&& value) { m_uriPathHasBeenSet = true; m_uriPath = std::move(value); }
-    inline FieldToMatch& WithUriPath(const UriPath& value) { SetUriPath(value); return *this;}
-    inline FieldToMatch& WithUriPath(UriPath&& value) { SetUriPath(std::move(value)); return *this;}
+    template<typename UriPathT = UriPath>
+    void SetUriPath(UriPathT&& value) { m_uriPathHasBeenSet = true; m_uriPath = std::forward<UriPathT>(value); }
+    template<typename UriPathT = UriPath>
+    FieldToMatch& WithUriPath(UriPathT&& value) { SetUriPath(std::forward<UriPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +135,12 @@ namespace Model
      * <p>Inspect the query string. This is the part of a URL that appears after a
      * <code>?</code> character, if any.</p>
      */
-    inline const QueryString& GetQueryString() const{ return m_queryString; }
+    inline const QueryString& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const QueryString& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(QueryString&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline FieldToMatch& WithQueryString(const QueryString& value) { SetQueryString(value); return *this;}
-    inline FieldToMatch& WithQueryString(QueryString&& value) { SetQueryString(std::move(value)); return *this;}
+    template<typename QueryStringT = QueryString>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = QueryString>
+    FieldToMatch& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,12 +160,12 @@ namespace Model
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
-    inline const Body& GetBody() const{ return m_body; }
+    inline const Body& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline FieldToMatch& WithBody(const Body& value) { SetBody(value); return *this;}
-    inline FieldToMatch& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
+    template<typename BodyT = Body>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Body>
+    FieldToMatch& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,12 +173,12 @@ namespace Model
      * <p>Inspect the HTTP method. The method indicates the type of operation that the
      * request is asking the origin to perform. </p>
      */
-    inline const Method& GetMethod() const{ return m_method; }
+    inline const Method& GetMethod() const { return m_method; }
     inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
-    inline void SetMethod(const Method& value) { m_methodHasBeenSet = true; m_method = value; }
-    inline void SetMethod(Method&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
-    inline FieldToMatch& WithMethod(const Method& value) { SetMethod(value); return *this;}
-    inline FieldToMatch& WithMethod(Method&& value) { SetMethod(std::move(value)); return *this;}
+    template<typename MethodT = Method>
+    void SetMethod(MethodT&& value) { m_methodHasBeenSet = true; m_method = std::forward<MethodT>(value); }
+    template<typename MethodT = Method>
+    FieldToMatch& WithMethod(MethodT&& value) { SetMethod(std::forward<MethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,12 +198,12 @@ namespace Model
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
-    inline const JsonBody& GetJsonBody() const{ return m_jsonBody; }
+    inline const JsonBody& GetJsonBody() const { return m_jsonBody; }
     inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
-    inline void SetJsonBody(const JsonBody& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = value; }
-    inline void SetJsonBody(JsonBody&& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = std::move(value); }
-    inline FieldToMatch& WithJsonBody(const JsonBody& value) { SetJsonBody(value); return *this;}
-    inline FieldToMatch& WithJsonBody(JsonBody&& value) { SetJsonBody(std::move(value)); return *this;}
+    template<typename JsonBodyT = JsonBody>
+    void SetJsonBody(JsonBodyT&& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = std::forward<JsonBodyT>(value); }
+    template<typename JsonBodyT = JsonBody>
+    FieldToMatch& WithJsonBody(JsonBodyT&& value) { SetJsonBody(std::forward<JsonBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,12 +217,12 @@ namespace Model
      * applies the pattern matching filters to the headers that it receives from the
      * underlying host service. </p>
      */
-    inline const Headers& GetHeaders() const{ return m_headers; }
+    inline const Headers& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Headers& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline FieldToMatch& WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
-    inline FieldToMatch& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
+    template<typename HeadersT = Headers>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Headers>
+    FieldToMatch& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -236,12 +236,12 @@ namespace Model
      * pattern matching filters to the cookies that it receives from the underlying
      * host service. </p>
      */
-    inline const Cookies& GetCookies() const{ return m_cookies; }
+    inline const Cookies& GetCookies() const { return m_cookies; }
     inline bool CookiesHasBeenSet() const { return m_cookiesHasBeenSet; }
-    inline void SetCookies(const Cookies& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
-    inline void SetCookies(Cookies&& value) { m_cookiesHasBeenSet = true; m_cookies = std::move(value); }
-    inline FieldToMatch& WithCookies(const Cookies& value) { SetCookies(value); return *this;}
-    inline FieldToMatch& WithCookies(Cookies&& value) { SetCookies(std::move(value)); return *this;}
+    template<typename CookiesT = Cookies>
+    void SetCookies(CookiesT&& value) { m_cookiesHasBeenSet = true; m_cookies = std::forward<CookiesT>(value); }
+    template<typename CookiesT = Cookies>
+    FieldToMatch& WithCookies(CookiesT&& value) { SetCookies(std::forward<CookiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,12 +253,12 @@ namespace Model
      * added spaces, for example
      * <code>host:user-agent:accept:authorization:referer</code>.</p>
      */
-    inline const HeaderOrder& GetHeaderOrder() const{ return m_headerOrder; }
+    inline const HeaderOrder& GetHeaderOrder() const { return m_headerOrder; }
     inline bool HeaderOrderHasBeenSet() const { return m_headerOrderHasBeenSet; }
-    inline void SetHeaderOrder(const HeaderOrder& value) { m_headerOrderHasBeenSet = true; m_headerOrder = value; }
-    inline void SetHeaderOrder(HeaderOrder&& value) { m_headerOrderHasBeenSet = true; m_headerOrder = std::move(value); }
-    inline FieldToMatch& WithHeaderOrder(const HeaderOrder& value) { SetHeaderOrder(value); return *this;}
-    inline FieldToMatch& WithHeaderOrder(HeaderOrder&& value) { SetHeaderOrder(std::move(value)); return *this;}
+    template<typename HeaderOrderT = HeaderOrder>
+    void SetHeaderOrder(HeaderOrderT&& value) { m_headerOrderHasBeenSet = true; m_headerOrder = std::forward<HeaderOrderT>(value); }
+    template<typename HeaderOrderT = HeaderOrder>
+    FieldToMatch& WithHeaderOrder(HeaderOrderT&& value) { SetHeaderOrder(std::forward<HeaderOrderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -280,12 +280,12 @@ namespace Model
      * fingerprint string from the logs in your string match statement specification,
      * to match with any future requests that have the same TLS configuration.</p>
      */
-    inline const JA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
+    inline const JA3Fingerprint& GetJA3Fingerprint() const { return m_jA3Fingerprint; }
     inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
-    inline void SetJA3Fingerprint(const JA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
-    inline void SetJA3Fingerprint(JA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
-    inline FieldToMatch& WithJA3Fingerprint(const JA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
-    inline FieldToMatch& WithJA3Fingerprint(JA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
+    template<typename JA3FingerprintT = JA3Fingerprint>
+    void SetJA3Fingerprint(JA3FingerprintT&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::forward<JA3FingerprintT>(value); }
+    template<typename JA3FingerprintT = JA3Fingerprint>
+    FieldToMatch& WithJA3Fingerprint(JA3FingerprintT&& value) { SetJA3Fingerprint(std::forward<JA3FingerprintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -307,12 +307,12 @@ namespace Model
      * fingerprint string from the logs in your string match statement specification,
      * to match with any future requests that have the same TLS configuration.</p>
      */
-    inline const JA4Fingerprint& GetJA4Fingerprint() const{ return m_jA4Fingerprint; }
+    inline const JA4Fingerprint& GetJA4Fingerprint() const { return m_jA4Fingerprint; }
     inline bool JA4FingerprintHasBeenSet() const { return m_jA4FingerprintHasBeenSet; }
-    inline void SetJA4Fingerprint(const JA4Fingerprint& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = value; }
-    inline void SetJA4Fingerprint(JA4Fingerprint&& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = std::move(value); }
-    inline FieldToMatch& WithJA4Fingerprint(const JA4Fingerprint& value) { SetJA4Fingerprint(value); return *this;}
-    inline FieldToMatch& WithJA4Fingerprint(JA4Fingerprint&& value) { SetJA4Fingerprint(std::move(value)); return *this;}
+    template<typename JA4FingerprintT = JA4Fingerprint>
+    void SetJA4Fingerprint(JA4FingerprintT&& value) { m_jA4FingerprintHasBeenSet = true; m_jA4Fingerprint = std::forward<JA4FingerprintT>(value); }
+    template<typename JA4FingerprintT = JA4Fingerprint>
+    FieldToMatch& WithJA4Fingerprint(JA4FingerprintT&& value) { SetJA4Fingerprint(std::forward<JA4FingerprintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -326,12 +326,12 @@ namespace Model
      * WAF applies the pattern matching filters to the cookies that it receives from
      * the underlying host service. </p>
      */
-    inline const UriFragment& GetUriFragment() const{ return m_uriFragment; }
+    inline const UriFragment& GetUriFragment() const { return m_uriFragment; }
     inline bool UriFragmentHasBeenSet() const { return m_uriFragmentHasBeenSet; }
-    inline void SetUriFragment(const UriFragment& value) { m_uriFragmentHasBeenSet = true; m_uriFragment = value; }
-    inline void SetUriFragment(UriFragment&& value) { m_uriFragmentHasBeenSet = true; m_uriFragment = std::move(value); }
-    inline FieldToMatch& WithUriFragment(const UriFragment& value) { SetUriFragment(value); return *this;}
-    inline FieldToMatch& WithUriFragment(UriFragment&& value) { SetUriFragment(std::move(value)); return *this;}
+    template<typename UriFragmentT = UriFragment>
+    void SetUriFragment(UriFragmentT&& value) { m_uriFragmentHasBeenSet = true; m_uriFragment = std::forward<UriFragmentT>(value); }
+    template<typename UriFragmentT = UriFragment>
+    FieldToMatch& WithUriFragment(UriFragmentT&& value) { SetUriFragment(std::forward<UriFragmentT>(value)); return *this;}
     ///@}
   private:
 

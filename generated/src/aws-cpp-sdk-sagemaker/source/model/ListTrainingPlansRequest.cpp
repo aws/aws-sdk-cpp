@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTrainingPlansRequest::ListTrainingPlansRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_startTimeAfterHasBeenSet(false),
-    m_startTimeBeforeHasBeenSet(false),
-    m_sortBy(TrainingPlanSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(TrainingPlanSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListTrainingPlansRequest::SerializePayload() const
 {
   JsonValue payload;

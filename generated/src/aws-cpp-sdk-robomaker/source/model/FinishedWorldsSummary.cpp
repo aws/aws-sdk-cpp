@@ -18,16 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-FinishedWorldsSummary::FinishedWorldsSummary() : 
-    m_finishedCount(0),
-    m_finishedCountHasBeenSet(false),
-    m_succeededWorldsHasBeenSet(false),
-    m_failureSummaryHasBeenSet(false)
-{
-}
-
 FinishedWorldsSummary::FinishedWorldsSummary(JsonView jsonValue)
-  : FinishedWorldsSummary()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ FinishedWorldsSummary& FinishedWorldsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("finishedCount"))
   {
     m_finishedCount = jsonValue.GetInteger("finishedCount");
-
     m_finishedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("succeededWorlds"))
   {
     Aws::Utils::Array<JsonView> succeededWorldsJsonList = jsonValue.GetArray("succeededWorlds");
@@ -50,14 +39,11 @@ FinishedWorldsSummary& FinishedWorldsSummary::operator =(JsonView jsonValue)
     }
     m_succeededWorldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureSummary"))
   {
     m_failureSummary = jsonValue.GetObject("failureSummary");
-
     m_failureSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

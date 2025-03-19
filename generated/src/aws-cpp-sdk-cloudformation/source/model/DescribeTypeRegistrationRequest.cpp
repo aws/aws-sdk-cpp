@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeTypeRegistrationRequest::DescribeTypeRegistrationRequest() : 
-    m_registrationTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTypeRegistrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

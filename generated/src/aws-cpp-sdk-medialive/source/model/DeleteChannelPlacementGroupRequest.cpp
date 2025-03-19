@@ -12,12 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelPlacementGroupRequest::DeleteChannelPlacementGroupRequest() : 
-    m_channelPlacementGroupIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelPlacementGroupRequest::SerializePayload() const
 {
   return {};

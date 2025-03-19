@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-StorageMinimumTimeToLive::StorageMinimumTimeToLive() : 
-    m_unit(StorageMinimumTimeToLiveUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 StorageMinimumTimeToLive::StorageMinimumTimeToLive(JsonView jsonValue)
-  : StorageMinimumTimeToLive()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StorageMinimumTimeToLive& StorageMinimumTimeToLive::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = StorageMinimumTimeToLiveUnitMapper::GetStorageMinimumTimeToLiveUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

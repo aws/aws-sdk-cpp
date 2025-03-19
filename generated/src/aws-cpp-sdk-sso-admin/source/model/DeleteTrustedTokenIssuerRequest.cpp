@@ -12,11 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrustedTokenIssuerRequest::DeleteTrustedTokenIssuerRequest() : 
-    m_trustedTokenIssuerArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrustedTokenIssuerRequest::SerializePayload() const
 {
   JsonValue payload;

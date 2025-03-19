@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration() : 
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 RetrieveAndGenerateSessionConfiguration::RetrieveAndGenerateSessionConfiguration(JsonView jsonValue)
-  : RetrieveAndGenerateSessionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrieveAndGenerateSessionConfiguration& RetrieveAndGenerateSessionConfiguration
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

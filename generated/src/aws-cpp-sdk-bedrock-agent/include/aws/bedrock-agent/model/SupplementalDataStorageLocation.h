@@ -33,7 +33,7 @@ namespace Model
   class SupplementalDataStorageLocation
   {
   public:
-    AWS_BEDROCKAGENT_API SupplementalDataStorageLocation();
+    AWS_BEDROCKAGENT_API SupplementalDataStorageLocation() = default;
     AWS_BEDROCKAGENT_API SupplementalDataStorageLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SupplementalDataStorageLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,29 @@ namespace Model
      * <p>Contains information about the Amazon S3 location for the extracted
      * images.</p>
      */
-    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline SupplementalDataStorageLocation& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-    inline SupplementalDataStorageLocation& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3Location>
+    SupplementalDataStorageLocation& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the storage service used for this location.</p>
      */
-    inline const SupplementalDataStorageLocationType& GetType() const{ return m_type; }
+    inline SupplementalDataStorageLocationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SupplementalDataStorageLocationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SupplementalDataStorageLocationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SupplementalDataStorageLocation& WithType(const SupplementalDataStorageLocationType& value) { SetType(value); return *this;}
-    inline SupplementalDataStorageLocation& WithType(SupplementalDataStorageLocationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SupplementalDataStorageLocationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SupplementalDataStorageLocation& WithType(SupplementalDataStorageLocationType value) { SetType(value); return *this;}
     ///@}
   private:
 
     S3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
-    SupplementalDataStorageLocationType m_type;
+    SupplementalDataStorageLocationType m_type{SupplementalDataStorageLocationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

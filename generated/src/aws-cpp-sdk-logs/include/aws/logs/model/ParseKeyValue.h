@@ -36,7 +36,7 @@ namespace Model
   class ParseKeyValue
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ParseKeyValue();
+    AWS_CLOUDWATCHLOGS_API ParseKeyValue() = default;
     AWS_CLOUDWATCHLOGS_API ParseKeyValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ParseKeyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <p>Path to the field in the log event that will be parsed. Use dot notation to
      * access child fields. For example, <code>store.book</code> </p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline ParseKeyValue& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline ParseKeyValue& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline ParseKeyValue& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    ParseKeyValue& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination field to put the extracted key-value pairs into</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline ParseKeyValue& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline ParseKeyValue& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline ParseKeyValue& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    ParseKeyValue& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * original log events. If you omit this, the ampersand <code>&amp;</code>
      * character is used.</p>
      */
-    inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
+    inline const Aws::String& GetFieldDelimiter() const { return m_fieldDelimiter; }
     inline bool FieldDelimiterHasBeenSet() const { return m_fieldDelimiterHasBeenSet; }
-    inline void SetFieldDelimiter(const Aws::String& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = value; }
-    inline void SetFieldDelimiter(Aws::String&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::move(value); }
-    inline void SetFieldDelimiter(const char* value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter.assign(value); }
-    inline ParseKeyValue& WithFieldDelimiter(const Aws::String& value) { SetFieldDelimiter(value); return *this;}
-    inline ParseKeyValue& WithFieldDelimiter(Aws::String&& value) { SetFieldDelimiter(std::move(value)); return *this;}
-    inline ParseKeyValue& WithFieldDelimiter(const char* value) { SetFieldDelimiter(value); return *this;}
+    template<typename FieldDelimiterT = Aws::String>
+    void SetFieldDelimiter(FieldDelimiterT&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::forward<FieldDelimiterT>(value); }
+    template<typename FieldDelimiterT = Aws::String>
+    ParseKeyValue& WithFieldDelimiter(FieldDelimiterT&& value) { SetFieldDelimiter(std::forward<FieldDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,28 +87,24 @@ namespace Model
      * transformed log event.</p> <p> If you omit this, the equal <code>=</code>
      * character is used.</p>
      */
-    inline const Aws::String& GetKeyValueDelimiter() const{ return m_keyValueDelimiter; }
+    inline const Aws::String& GetKeyValueDelimiter() const { return m_keyValueDelimiter; }
     inline bool KeyValueDelimiterHasBeenSet() const { return m_keyValueDelimiterHasBeenSet; }
-    inline void SetKeyValueDelimiter(const Aws::String& value) { m_keyValueDelimiterHasBeenSet = true; m_keyValueDelimiter = value; }
-    inline void SetKeyValueDelimiter(Aws::String&& value) { m_keyValueDelimiterHasBeenSet = true; m_keyValueDelimiter = std::move(value); }
-    inline void SetKeyValueDelimiter(const char* value) { m_keyValueDelimiterHasBeenSet = true; m_keyValueDelimiter.assign(value); }
-    inline ParseKeyValue& WithKeyValueDelimiter(const Aws::String& value) { SetKeyValueDelimiter(value); return *this;}
-    inline ParseKeyValue& WithKeyValueDelimiter(Aws::String&& value) { SetKeyValueDelimiter(std::move(value)); return *this;}
-    inline ParseKeyValue& WithKeyValueDelimiter(const char* value) { SetKeyValueDelimiter(value); return *this;}
+    template<typename KeyValueDelimiterT = Aws::String>
+    void SetKeyValueDelimiter(KeyValueDelimiterT&& value) { m_keyValueDelimiterHasBeenSet = true; m_keyValueDelimiter = std::forward<KeyValueDelimiterT>(value); }
+    template<typename KeyValueDelimiterT = Aws::String>
+    ParseKeyValue& WithKeyValueDelimiter(KeyValueDelimiterT&& value) { SetKeyValueDelimiter(std::forward<KeyValueDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If you want to add a prefix to all transformed keys, specify it here.</p>
      */
-    inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
+    inline const Aws::String& GetKeyPrefix() const { return m_keyPrefix; }
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
-    inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
-    inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
-    inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
-    inline ParseKeyValue& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
-    inline ParseKeyValue& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
-    inline ParseKeyValue& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
+    template<typename KeyPrefixT = Aws::String>
+    void SetKeyPrefix(KeyPrefixT&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::forward<KeyPrefixT>(value); }
+    template<typename KeyPrefixT = Aws::String>
+    ParseKeyValue& WithKeyPrefix(KeyPrefixT&& value) { SetKeyPrefix(std::forward<KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +112,12 @@ namespace Model
      * <p>A value to insert into the value field in the result, when a key-value pair
      * is not successfully split.</p>
      */
-    inline const Aws::String& GetNonMatchValue() const{ return m_nonMatchValue; }
+    inline const Aws::String& GetNonMatchValue() const { return m_nonMatchValue; }
     inline bool NonMatchValueHasBeenSet() const { return m_nonMatchValueHasBeenSet; }
-    inline void SetNonMatchValue(const Aws::String& value) { m_nonMatchValueHasBeenSet = true; m_nonMatchValue = value; }
-    inline void SetNonMatchValue(Aws::String&& value) { m_nonMatchValueHasBeenSet = true; m_nonMatchValue = std::move(value); }
-    inline void SetNonMatchValue(const char* value) { m_nonMatchValueHasBeenSet = true; m_nonMatchValue.assign(value); }
-    inline ParseKeyValue& WithNonMatchValue(const Aws::String& value) { SetNonMatchValue(value); return *this;}
-    inline ParseKeyValue& WithNonMatchValue(Aws::String&& value) { SetNonMatchValue(std::move(value)); return *this;}
-    inline ParseKeyValue& WithNonMatchValue(const char* value) { SetNonMatchValue(value); return *this;}
+    template<typename NonMatchValueT = Aws::String>
+    void SetNonMatchValue(NonMatchValueT&& value) { m_nonMatchValueHasBeenSet = true; m_nonMatchValue = std::forward<NonMatchValueT>(value); }
+    template<typename NonMatchValueT = Aws::String>
+    ParseKeyValue& WithNonMatchValue(NonMatchValueT&& value) { SetNonMatchValue(std::forward<NonMatchValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +125,7 @@ namespace Model
      * <p>Specifies whether to overwrite the value if the destination key already
      * exists. If you omit this, the default is <code>false</code>.</p>
      */
-    inline bool GetOverwriteIfExists() const{ return m_overwriteIfExists; }
+    inline bool GetOverwriteIfExists() const { return m_overwriteIfExists; }
     inline bool OverwriteIfExistsHasBeenSet() const { return m_overwriteIfExistsHasBeenSet; }
     inline void SetOverwriteIfExists(bool value) { m_overwriteIfExistsHasBeenSet = true; m_overwriteIfExists = value; }
     inline ParseKeyValue& WithOverwriteIfExists(bool value) { SetOverwriteIfExists(value); return *this;}
@@ -162,7 +150,7 @@ namespace Model
     Aws::String m_nonMatchValue;
     bool m_nonMatchValueHasBeenSet = false;
 
-    bool m_overwriteIfExists;
+    bool m_overwriteIfExists{false};
     bool m_overwriteIfExistsHasBeenSet = false;
   };
 

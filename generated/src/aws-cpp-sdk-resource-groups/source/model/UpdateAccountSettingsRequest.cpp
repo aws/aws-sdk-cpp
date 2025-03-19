@@ -12,12 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
-    m_groupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus::NOT_SET),
-    m_groupLifecycleEventsDesiredStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

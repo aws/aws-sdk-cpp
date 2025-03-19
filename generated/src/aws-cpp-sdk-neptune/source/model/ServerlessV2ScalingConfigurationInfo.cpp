@@ -20,16 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-ServerlessV2ScalingConfigurationInfo::ServerlessV2ScalingConfigurationInfo() : 
-    m_minCapacity(0.0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false)
-{
-}
-
 ServerlessV2ScalingConfigurationInfo::ServerlessV2ScalingConfigurationInfo(const XmlNode& xmlNode)
-  : ServerlessV2ScalingConfigurationInfo()
 {
   *this = xmlNode;
 }

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrivateDnsNameOptionsRequest::PrivateDnsNameOptionsRequest() : 
-    m_hostnameType(HostnameType::NOT_SET),
-    m_hostnameTypeHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false)
-{
-}
-
 PrivateDnsNameOptionsRequest::PrivateDnsNameOptionsRequest(const XmlNode& xmlNode)
-  : PrivateDnsNameOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -45,7 +34,7 @@ PrivateDnsNameOptionsRequest& PrivateDnsNameOptionsRequest::operator =(const Xml
     XmlNode hostnameTypeNode = resultNode.FirstChild("HostnameType");
     if(!hostnameTypeNode.IsNull())
     {
-      m_hostnameType = HostnameTypeMapper::GetHostnameTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostnameTypeNode.GetText()).c_str()).c_str());
+      m_hostnameType = HostnameTypeMapper::GetHostnameTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostnameTypeNode.GetText()).c_str()));
       m_hostnameTypeHasBeenSet = true;
     }
     XmlNode enableResourceNameDnsARecordNode = resultNode.FirstChild("EnableResourceNameDnsARecord");

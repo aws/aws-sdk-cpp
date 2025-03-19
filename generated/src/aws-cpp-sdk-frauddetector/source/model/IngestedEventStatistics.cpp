@@ -18,19 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-IngestedEventStatistics::IngestedEventStatistics() : 
-    m_numberOfEvents(0),
-    m_numberOfEventsHasBeenSet(false),
-    m_eventDataSizeInBytes(0),
-    m_eventDataSizeInBytesHasBeenSet(false),
-    m_leastRecentEventHasBeenSet(false),
-    m_mostRecentEventHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 IngestedEventStatistics::IngestedEventStatistics(JsonView jsonValue)
-  : IngestedEventStatistics()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ IngestedEventStatistics& IngestedEventStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("numberOfEvents"))
   {
     m_numberOfEvents = jsonValue.GetInt64("numberOfEvents");
-
     m_numberOfEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventDataSizeInBytes"))
   {
     m_eventDataSizeInBytes = jsonValue.GetInt64("eventDataSizeInBytes");
-
     m_eventDataSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("leastRecentEvent"))
   {
     m_leastRecentEvent = jsonValue.GetString("leastRecentEvent");
-
     m_leastRecentEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mostRecentEvent"))
   {
     m_mostRecentEvent = jsonValue.GetString("mostRecentEvent");
-
     m_mostRecentEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

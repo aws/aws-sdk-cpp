@@ -24,7 +24,7 @@ namespace Model
   class UpdateSecurityConfigRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityConfigRequest();
+    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example,
      * <code>saml/123456789123/OKTADev</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateSecurityConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateSecurityConfigRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateSecurityConfigRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,66 +57,60 @@ namespace Model
      * most recent version of a security configuration using the
      * <code>GetSecurityPolicy</code> command.</p>
      */
-    inline const Aws::String& GetConfigVersion() const{ return m_configVersion; }
+    inline const Aws::String& GetConfigVersion() const { return m_configVersion; }
     inline bool ConfigVersionHasBeenSet() const { return m_configVersionHasBeenSet; }
-    inline void SetConfigVersion(const Aws::String& value) { m_configVersionHasBeenSet = true; m_configVersion = value; }
-    inline void SetConfigVersion(Aws::String&& value) { m_configVersionHasBeenSet = true; m_configVersion = std::move(value); }
-    inline void SetConfigVersion(const char* value) { m_configVersionHasBeenSet = true; m_configVersion.assign(value); }
-    inline UpdateSecurityConfigRequest& WithConfigVersion(const Aws::String& value) { SetConfigVersion(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithConfigVersion(Aws::String&& value) { SetConfigVersion(std::move(value)); return *this;}
-    inline UpdateSecurityConfigRequest& WithConfigVersion(const char* value) { SetConfigVersion(value); return *this;}
+    template<typename ConfigVersionT = Aws::String>
+    void SetConfigVersion(ConfigVersionT&& value) { m_configVersionHasBeenSet = true; m_configVersion = std::forward<ConfigVersionT>(value); }
+    template<typename ConfigVersionT = Aws::String>
+    UpdateSecurityConfigRequest& WithConfigVersion(ConfigVersionT&& value) { SetConfigVersion(std::forward<ConfigVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the security configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateSecurityConfigRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateSecurityConfigRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSecurityConfigRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>SAML options in in the form of a key-value map.</p>
      */
-    inline const SamlConfigOptions& GetSamlOptions() const{ return m_samlOptions; }
+    inline const SamlConfigOptions& GetSamlOptions() const { return m_samlOptions; }
     inline bool SamlOptionsHasBeenSet() const { return m_samlOptionsHasBeenSet; }
-    inline void SetSamlOptions(const SamlConfigOptions& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = value; }
-    inline void SetSamlOptions(SamlConfigOptions&& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = std::move(value); }
-    inline UpdateSecurityConfigRequest& WithSamlOptions(const SamlConfigOptions& value) { SetSamlOptions(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithSamlOptions(SamlConfigOptions&& value) { SetSamlOptions(std::move(value)); return *this;}
+    template<typename SamlOptionsT = SamlConfigOptions>
+    void SetSamlOptions(SamlOptionsT&& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = std::forward<SamlOptionsT>(value); }
+    template<typename SamlOptionsT = SamlConfigOptions>
+    UpdateSecurityConfigRequest& WithSamlOptions(SamlOptionsT&& value) { SetSamlOptions(std::forward<SamlOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes IAM Identity Center options in the form of a key-value map.</p>
      */
-    inline const UpdateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptionsUpdates() const{ return m_iamIdentityCenterOptionsUpdates; }
+    inline const UpdateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptionsUpdates() const { return m_iamIdentityCenterOptionsUpdates; }
     inline bool IamIdentityCenterOptionsUpdatesHasBeenSet() const { return m_iamIdentityCenterOptionsUpdatesHasBeenSet; }
-    inline void SetIamIdentityCenterOptionsUpdates(const UpdateIamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsUpdatesHasBeenSet = true; m_iamIdentityCenterOptionsUpdates = value; }
-    inline void SetIamIdentityCenterOptionsUpdates(UpdateIamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsUpdatesHasBeenSet = true; m_iamIdentityCenterOptionsUpdates = std::move(value); }
-    inline UpdateSecurityConfigRequest& WithIamIdentityCenterOptionsUpdates(const UpdateIamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptionsUpdates(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithIamIdentityCenterOptionsUpdates(UpdateIamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptionsUpdates(std::move(value)); return *this;}
+    template<typename IamIdentityCenterOptionsUpdatesT = UpdateIamIdentityCenterConfigOptions>
+    void SetIamIdentityCenterOptionsUpdates(IamIdentityCenterOptionsUpdatesT&& value) { m_iamIdentityCenterOptionsUpdatesHasBeenSet = true; m_iamIdentityCenterOptionsUpdates = std::forward<IamIdentityCenterOptionsUpdatesT>(value); }
+    template<typename IamIdentityCenterOptionsUpdatesT = UpdateIamIdentityCenterConfigOptions>
+    UpdateSecurityConfigRequest& WithIamIdentityCenterOptionsUpdates(IamIdentityCenterOptionsUpdatesT&& value) { SetIamIdentityCenterOptionsUpdates(std::forward<IamIdentityCenterOptionsUpdatesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateSecurityConfigRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateSecurityConfigRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateSecurityConfigRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateSecurityConfigRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

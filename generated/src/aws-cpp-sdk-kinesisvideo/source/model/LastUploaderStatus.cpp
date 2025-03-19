@@ -18,17 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-LastUploaderStatus::LastUploaderStatus() : 
-    m_jobStatusDetailsHasBeenSet(false),
-    m_lastCollectedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_uploaderStatus(UploaderStatus::NOT_SET),
-    m_uploaderStatusHasBeenSet(false)
-{
-}
-
 LastUploaderStatus::LastUploaderStatus(JsonView jsonValue)
-  : LastUploaderStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LastUploaderStatus& LastUploaderStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobStatusDetails"))
   {
     m_jobStatusDetails = jsonValue.GetString("JobStatusDetails");
-
     m_jobStatusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastCollectedTime"))
   {
     m_lastCollectedTime = jsonValue.GetDouble("LastCollectedTime");
-
     m_lastCollectedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploaderStatus"))
   {
     m_uploaderStatus = UploaderStatusMapper::GetUploaderStatusForName(jsonValue.GetString("UploaderStatus"));
-
     m_uploaderStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-CanadaAdditionalInfo::CanadaAdditionalInfo() : 
-    m_canadaQuebecSalesTaxNumberHasBeenSet(false),
-    m_canadaRetailSalesTaxNumberHasBeenSet(false),
-    m_isResellerAccount(false),
-    m_isResellerAccountHasBeenSet(false),
-    m_provincialSalesTaxIdHasBeenSet(false)
-{
-}
-
 CanadaAdditionalInfo::CanadaAdditionalInfo(JsonView jsonValue)
-  : CanadaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CanadaAdditionalInfo& CanadaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("canadaQuebecSalesTaxNumber"))
   {
     m_canadaQuebecSalesTaxNumber = jsonValue.GetString("canadaQuebecSalesTaxNumber");
-
     m_canadaQuebecSalesTaxNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canadaRetailSalesTaxNumber"))
   {
     m_canadaRetailSalesTaxNumber = jsonValue.GetString("canadaRetailSalesTaxNumber");
-
     m_canadaRetailSalesTaxNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isResellerAccount"))
   {
     m_isResellerAccount = jsonValue.GetBool("isResellerAccount");
-
     m_isResellerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provincialSalesTaxId"))
   {
     m_provincialSalesTaxId = jsonValue.GetString("provincialSalesTaxId");
-
     m_provincialSalesTaxIdHasBeenSet = true;
   }
-
   return *this;
 }
 

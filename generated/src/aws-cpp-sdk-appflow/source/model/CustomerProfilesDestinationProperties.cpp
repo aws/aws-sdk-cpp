@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomerProfilesDestinationProperties::CustomerProfilesDestinationProperties() : 
-    m_domainNameHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false)
-{
-}
-
 CustomerProfilesDestinationProperties::CustomerProfilesDestinationProperties(JsonView jsonValue)
-  : CustomerProfilesDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomerProfilesDestinationProperties& CustomerProfilesDestinationProperties::op
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectTypeName"))
   {
     m_objectTypeName = jsonValue.GetString("objectTypeName");
-
     m_objectTypeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

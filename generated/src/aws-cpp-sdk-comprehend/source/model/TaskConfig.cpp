@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-TaskConfig::TaskConfig() : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_documentClassificationConfigHasBeenSet(false),
-    m_entityRecognitionConfigHasBeenSet(false)
-{
-}
-
 TaskConfig::TaskConfig(JsonView jsonValue)
-  : TaskConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TaskConfig& TaskConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentClassificationConfig"))
   {
     m_documentClassificationConfig = jsonValue.GetObject("DocumentClassificationConfig");
-
     m_documentClassificationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityRecognitionConfig"))
   {
     m_entityRecognitionConfig = jsonValue.GetObject("EntityRecognitionConfig");
-
     m_entityRecognitionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

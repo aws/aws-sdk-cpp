@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteNetworkInsightsPathRequest::DeleteNetworkInsightsPathRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInsightsPathIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkInsightsPathRequest::SerializePayload() const
 {
   Aws::StringStream ss;

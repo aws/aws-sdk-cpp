@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateResolverQueryLogConfigResult::DisassociateResolverQueryLogConfigResult()
-{
-}
-
 DisassociateResolverQueryLogConfigResult::DisassociateResolverQueryLogConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DisassociateResolverQueryLogConfigResult& DisassociateResolverQueryLogConfigResu
   if(jsonValue.ValueExists("ResolverQueryLogConfigAssociation"))
   {
     m_resolverQueryLogConfigAssociation = jsonValue.GetObject("ResolverQueryLogConfigAssociation");
-
+    m_resolverQueryLogConfigAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

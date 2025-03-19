@@ -28,35 +28,35 @@ namespace Model
   class CreateEmailTemplateResult
   {
   public:
-    AWS_PINPOINT_API CreateEmailTemplateResult();
+    AWS_PINPOINT_API CreateEmailTemplateResult() = default;
     AWS_PINPOINT_API CreateEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API CreateEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const CreateTemplateMessageBody& GetCreateTemplateMessageBody() const{ return m_createTemplateMessageBody; }
-    inline void SetCreateTemplateMessageBody(const CreateTemplateMessageBody& value) { m_createTemplateMessageBody = value; }
-    inline void SetCreateTemplateMessageBody(CreateTemplateMessageBody&& value) { m_createTemplateMessageBody = std::move(value); }
-    inline CreateEmailTemplateResult& WithCreateTemplateMessageBody(const CreateTemplateMessageBody& value) { SetCreateTemplateMessageBody(value); return *this;}
-    inline CreateEmailTemplateResult& WithCreateTemplateMessageBody(CreateTemplateMessageBody&& value) { SetCreateTemplateMessageBody(std::move(value)); return *this;}
+    inline const CreateTemplateMessageBody& GetCreateTemplateMessageBody() const { return m_createTemplateMessageBody; }
+    template<typename CreateTemplateMessageBodyT = CreateTemplateMessageBody>
+    void SetCreateTemplateMessageBody(CreateTemplateMessageBodyT&& value) { m_createTemplateMessageBodyHasBeenSet = true; m_createTemplateMessageBody = std::forward<CreateTemplateMessageBodyT>(value); }
+    template<typename CreateTemplateMessageBodyT = CreateTemplateMessageBody>
+    CreateEmailTemplateResult& WithCreateTemplateMessageBody(CreateTemplateMessageBodyT&& value) { SetCreateTemplateMessageBody(std::forward<CreateTemplateMessageBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEmailTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEmailTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEmailTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEmailTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CreateTemplateMessageBody m_createTemplateMessageBody;
+    bool m_createTemplateMessageBodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

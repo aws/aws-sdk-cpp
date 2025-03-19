@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-PipelineInfo::PipelineInfo() : 
-    m_pipelineConfigurationTimeStampHasBeenSet(false),
-    m_pipelineType(PipelineType::NOT_SET),
-    m_pipelineTypeHasBeenSet(false)
-{
-}
-
 PipelineInfo::PipelineInfo(JsonView jsonValue)
-  : PipelineInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PipelineInfo& PipelineInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineConfigurationTimeStamp"))
   {
     m_pipelineConfigurationTimeStamp = jsonValue.GetString("pipelineConfigurationTimeStamp");
-
     m_pipelineConfigurationTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineType"))
   {
     m_pipelineType = PipelineTypeMapper::GetPipelineTypeForName(jsonValue.GetString("pipelineType"));
-
     m_pipelineTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

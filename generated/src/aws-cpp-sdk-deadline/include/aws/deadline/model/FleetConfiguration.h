@@ -32,7 +32,7 @@ namespace Model
   class FleetConfiguration
   {
   public:
-    AWS_DEADLINE_API FleetConfiguration();
+    AWS_DEADLINE_API FleetConfiguration() = default;
     AWS_DEADLINE_API FleetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API FleetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The customer managed fleets within a fleet configuration.</p>
      */
-    inline const CustomerManagedFleetConfiguration& GetCustomerManaged() const{ return m_customerManaged; }
+    inline const CustomerManagedFleetConfiguration& GetCustomerManaged() const { return m_customerManaged; }
     inline bool CustomerManagedHasBeenSet() const { return m_customerManagedHasBeenSet; }
-    inline void SetCustomerManaged(const CustomerManagedFleetConfiguration& value) { m_customerManagedHasBeenSet = true; m_customerManaged = value; }
-    inline void SetCustomerManaged(CustomerManagedFleetConfiguration&& value) { m_customerManagedHasBeenSet = true; m_customerManaged = std::move(value); }
-    inline FleetConfiguration& WithCustomerManaged(const CustomerManagedFleetConfiguration& value) { SetCustomerManaged(value); return *this;}
-    inline FleetConfiguration& WithCustomerManaged(CustomerManagedFleetConfiguration&& value) { SetCustomerManaged(std::move(value)); return *this;}
+    template<typename CustomerManagedT = CustomerManagedFleetConfiguration>
+    void SetCustomerManaged(CustomerManagedT&& value) { m_customerManagedHasBeenSet = true; m_customerManaged = std::forward<CustomerManagedT>(value); }
+    template<typename CustomerManagedT = CustomerManagedFleetConfiguration>
+    FleetConfiguration& WithCustomerManaged(CustomerManagedT&& value) { SetCustomerManaged(std::forward<CustomerManagedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service managed Amazon EC2 instances for a fleet configuration.</p>
      */
-    inline const ServiceManagedEc2FleetConfiguration& GetServiceManagedEc2() const{ return m_serviceManagedEc2; }
+    inline const ServiceManagedEc2FleetConfiguration& GetServiceManagedEc2() const { return m_serviceManagedEc2; }
     inline bool ServiceManagedEc2HasBeenSet() const { return m_serviceManagedEc2HasBeenSet; }
-    inline void SetServiceManagedEc2(const ServiceManagedEc2FleetConfiguration& value) { m_serviceManagedEc2HasBeenSet = true; m_serviceManagedEc2 = value; }
-    inline void SetServiceManagedEc2(ServiceManagedEc2FleetConfiguration&& value) { m_serviceManagedEc2HasBeenSet = true; m_serviceManagedEc2 = std::move(value); }
-    inline FleetConfiguration& WithServiceManagedEc2(const ServiceManagedEc2FleetConfiguration& value) { SetServiceManagedEc2(value); return *this;}
-    inline FleetConfiguration& WithServiceManagedEc2(ServiceManagedEc2FleetConfiguration&& value) { SetServiceManagedEc2(std::move(value)); return *this;}
+    template<typename ServiceManagedEc2T = ServiceManagedEc2FleetConfiguration>
+    void SetServiceManagedEc2(ServiceManagedEc2T&& value) { m_serviceManagedEc2HasBeenSet = true; m_serviceManagedEc2 = std::forward<ServiceManagedEc2T>(value); }
+    template<typename ServiceManagedEc2T = ServiceManagedEc2FleetConfiguration>
+    FleetConfiguration& WithServiceManagedEc2(ServiceManagedEc2T&& value) { SetServiceManagedEc2(std::forward<ServiceManagedEc2T>(value)); return *this;}
     ///@}
   private:
 

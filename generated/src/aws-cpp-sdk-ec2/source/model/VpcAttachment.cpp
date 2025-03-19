@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcAttachment::VpcAttachment() : 
-    m_vpcIdHasBeenSet(false),
-    m_state(AttachmentStatus::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 VpcAttachment::VpcAttachment(const XmlNode& xmlNode)
-  : VpcAttachment()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ VpcAttachment& VpcAttachment::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

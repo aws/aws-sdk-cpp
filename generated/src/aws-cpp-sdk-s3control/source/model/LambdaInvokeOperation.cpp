@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-LambdaInvokeOperation::LambdaInvokeOperation() : 
-    m_functionArnHasBeenSet(false),
-    m_invocationSchemaVersionHasBeenSet(false),
-    m_userArgumentsHasBeenSet(false)
-{
-}
-
 LambdaInvokeOperation::LambdaInvokeOperation(const XmlNode& xmlNode)
-  : LambdaInvokeOperation()
 {
   *this = xmlNode;
 }
@@ -56,6 +48,7 @@ LambdaInvokeOperation& LambdaInvokeOperation::operator =(const XmlNode& xmlNode)
     if(!userArgumentsNode.IsNull())
     {
       XmlNode userArgumentsEntry = userArgumentsNode.FirstChild("entry");
+      m_userArgumentsHasBeenSet = !userArgumentsEntry.IsNull();
       while(!userArgumentsEntry.IsNull())
       {
         XmlNode keyNode = userArgumentsEntry.FirstChild("key");

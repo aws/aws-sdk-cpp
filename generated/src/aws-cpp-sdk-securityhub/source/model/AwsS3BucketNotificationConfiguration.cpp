@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketNotificationConfiguration::AwsS3BucketNotificationConfiguration() : 
-    m_configurationsHasBeenSet(false)
-{
-}
-
 AwsS3BucketNotificationConfiguration::AwsS3BucketNotificationConfiguration(JsonView jsonValue)
-  : AwsS3BucketNotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsS3BucketNotificationConfiguration& AwsS3BucketNotificationConfiguration::oper
     }
     m_configurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

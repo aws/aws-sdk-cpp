@@ -12,18 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImpersonationRoleRequest::CreateImpersonationRoleRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_organizationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ImpersonationRoleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Aws::String CreateImpersonationRoleRequest::SerializePayload() const
 {
   JsonValue payload;

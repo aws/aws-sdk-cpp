@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCapabilityRequest::GetCapabilityRequest() : 
-    m_capabilityIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCapabilityRequest::SerializePayload() const
 {
   JsonValue payload;

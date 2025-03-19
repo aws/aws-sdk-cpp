@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdatePortfolioShareResult::UpdatePortfolioShareResult() : 
-    m_status(ShareStatus::NOT_SET)
-{
-}
-
 UpdatePortfolioShareResult::UpdatePortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdatePortfolioShareResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdatePortfolioShareResult& UpdatePortfolioShareResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("PortfolioShareToken"))
   {
     m_portfolioShareToken = jsonValue.GetString("PortfolioShareToken");
-
+    m_portfolioShareTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

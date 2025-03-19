@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateKxEnvironmentResult::CreateKxEnvironmentResult() : 
-    m_status(EnvironmentStatus::NOT_SET)
-{
-}
-
 CreateKxEnvironmentResult::CreateKxEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateKxEnvironmentResult()
 {
   *this = result;
 }
@@ -34,51 +28,45 @@ CreateKxEnvironmentResult& CreateKxEnvironmentResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EnvironmentStatusMapper::GetEnvironmentStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentArn"))
   {
     m_environmentArn = jsonValue.GetString("environmentArn");
-
+    m_environmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("creationTimestamp");
-
+    m_creationTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

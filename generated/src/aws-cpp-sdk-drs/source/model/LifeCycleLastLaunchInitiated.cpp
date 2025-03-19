@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-LifeCycleLastLaunchInitiated::LifeCycleLastLaunchInitiated() : 
-    m_apiCallDateTimeHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_type(LastLaunchType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 LifeCycleLastLaunchInitiated::LifeCycleLastLaunchInitiated(JsonView jsonValue)
-  : LifeCycleLastLaunchInitiated()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LifeCycleLastLaunchInitiated& LifeCycleLastLaunchInitiated::operator =(JsonView 
   if(jsonValue.ValueExists("apiCallDateTime"))
   {
     m_apiCallDateTime = jsonValue.GetString("apiCallDateTime");
-
     m_apiCallDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobID"))
   {
     m_jobID = jsonValue.GetString("jobID");
-
     m_jobIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = LastLaunchTypeMapper::GetLastLaunchTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

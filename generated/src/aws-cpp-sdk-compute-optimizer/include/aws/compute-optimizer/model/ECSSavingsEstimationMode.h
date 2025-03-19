@@ -32,7 +32,7 @@ namespace Model
   class ECSSavingsEstimationMode
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSSavingsEstimationMode();
+    AWS_COMPUTEOPTIMIZER_API ECSSavingsEstimationMode() = default;
     AWS_COMPUTEOPTIMIZER_API ECSSavingsEstimationMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSSavingsEstimationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> Describes the source for calculating the savings opportunity for Amazon ECS
      * services. </p>
      */
-    inline const ECSSavingsEstimationModeSource& GetSource() const{ return m_source; }
+    inline ECSSavingsEstimationModeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ECSSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ECSSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ECSSavingsEstimationMode& WithSource(const ECSSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-    inline ECSSavingsEstimationMode& WithSource(ECSSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(ECSSavingsEstimationModeSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline ECSSavingsEstimationMode& WithSource(ECSSavingsEstimationModeSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
-    ECSSavingsEstimationModeSource m_source;
+    ECSSavingsEstimationModeSource m_source{ECSSavingsEstimationModeSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

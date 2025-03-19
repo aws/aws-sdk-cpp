@@ -18,21 +18,7 @@ namespace EKS
 namespace Model
 {
 
-VpcConfigResponse::VpcConfigResponse() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_clusterSecurityGroupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_endpointPublicAccess(false),
-    m_endpointPublicAccessHasBeenSet(false),
-    m_endpointPrivateAccess(false),
-    m_endpointPrivateAccessHasBeenSet(false),
-    m_publicAccessCidrsHasBeenSet(false)
-{
-}
-
 VpcConfigResponse::VpcConfigResponse(JsonView jsonValue)
-  : VpcConfigResponse()
 {
   *this = jsonValue;
 }
@@ -48,7 +34,6 @@ VpcConfigResponse& VpcConfigResponse::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -58,35 +43,26 @@ VpcConfigResponse& VpcConfigResponse::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterSecurityGroupId"))
   {
     m_clusterSecurityGroupId = jsonValue.GetString("clusterSecurityGroupId");
-
     m_clusterSecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointPublicAccess"))
   {
     m_endpointPublicAccess = jsonValue.GetBool("endpointPublicAccess");
-
     m_endpointPublicAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointPrivateAccess"))
   {
     m_endpointPrivateAccess = jsonValue.GetBool("endpointPrivateAccess");
-
     m_endpointPrivateAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicAccessCidrs"))
   {
     Aws::Utils::Array<JsonView> publicAccessCidrsJsonList = jsonValue.GetArray("publicAccessCidrs");
@@ -96,7 +72,6 @@ VpcConfigResponse& VpcConfigResponse::operator =(JsonView jsonValue)
     }
     m_publicAccessCidrsHasBeenSet = true;
   }
-
   return *this;
 }
 

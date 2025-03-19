@@ -18,13 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-PointsOfInterest::PointsOfInterest() : 
-    m_timestampRangesHasBeenSet(false)
-{
-}
-
 PointsOfInterest::PointsOfInterest(JsonView jsonValue)
-  : PointsOfInterest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PointsOfInterest& PointsOfInterest::operator =(JsonView jsonValue)
     }
     m_timestampRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

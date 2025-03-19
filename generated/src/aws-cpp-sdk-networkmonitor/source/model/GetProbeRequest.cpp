@@ -12,12 +12,6 @@ using namespace Aws::NetworkMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProbeRequest::GetProbeRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_probeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetProbeRequest::SerializePayload() const
 {
   return {};

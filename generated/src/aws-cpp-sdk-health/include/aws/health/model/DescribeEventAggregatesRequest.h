@@ -23,7 +23,7 @@ namespace Model
   class DescribeEventAggregatesRequest : public HealthRequest
   {
   public:
-    AWS_HEALTH_API DescribeEventAggregatesRequest();
+    AWS_HEALTH_API DescribeEventAggregatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,24 +40,22 @@ namespace Model
     /**
      * <p>Values to narrow the results returned.</p>
      */
-    inline const EventFilter& GetFilter() const{ return m_filter; }
+    inline const EventFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const EventFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(EventFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline DescribeEventAggregatesRequest& WithFilter(const EventFilter& value) { SetFilter(value); return *this;}
-    inline DescribeEventAggregatesRequest& WithFilter(EventFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = EventFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = EventFilter>
+    DescribeEventAggregatesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
      */
-    inline const EventAggregateField& GetAggregateField() const{ return m_aggregateField; }
+    inline EventAggregateField GetAggregateField() const { return m_aggregateField; }
     inline bool AggregateFieldHasBeenSet() const { return m_aggregateFieldHasBeenSet; }
-    inline void SetAggregateField(const EventAggregateField& value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = value; }
-    inline void SetAggregateField(EventAggregateField&& value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = std::move(value); }
-    inline DescribeEventAggregatesRequest& WithAggregateField(const EventAggregateField& value) { SetAggregateField(value); return *this;}
-    inline DescribeEventAggregatesRequest& WithAggregateField(EventAggregateField&& value) { SetAggregateField(std::move(value)); return *this;}
+    inline void SetAggregateField(EventAggregateField value) { m_aggregateFieldHasBeenSet = true; m_aggregateField = value; }
+    inline DescribeEventAggregatesRequest& WithAggregateField(EventAggregateField value) { SetAggregateField(value); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * <p>The maximum number of items to return in one batch, between 10 and 100,
      * inclusive.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeEventAggregatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -79,24 +77,22 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeEventAggregatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEventAggregatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEventAggregatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEventAggregatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     EventFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    EventAggregateField m_aggregateField;
+    EventAggregateField m_aggregateField{EventAggregateField::NOT_SET};
     bool m_aggregateFieldHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

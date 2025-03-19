@@ -39,7 +39,7 @@ namespace Model
   class TaskReportConfig
   {
   public:
-    AWS_DATASYNC_API TaskReportConfig();
+    AWS_DATASYNC_API TaskReportConfig() = default;
     AWS_DATASYNC_API TaskReportConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskReportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html#task-report-access">Task
      * reports</a>.</p>
      */
-    inline const ReportDestination& GetDestination() const{ return m_destination; }
+    inline const ReportDestination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const ReportDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(ReportDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline TaskReportConfig& WithDestination(const ReportDestination& value) { SetDestination(value); return *this;}
-    inline TaskReportConfig& WithDestination(ReportDestination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = ReportDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = ReportDestination>
+    TaskReportConfig& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,10 @@ namespace Model
      * about your task, including a full list of files, objects, and directories that
      * were transferred, skipped, verified, and more.</p> </li> </ul>
      */
-    inline const ReportOutputType& GetOutputType() const{ return m_outputType; }
+    inline ReportOutputType GetOutputType() const { return m_outputType; }
     inline bool OutputTypeHasBeenSet() const { return m_outputTypeHasBeenSet; }
-    inline void SetOutputType(const ReportOutputType& value) { m_outputTypeHasBeenSet = true; m_outputType = value; }
-    inline void SetOutputType(ReportOutputType&& value) { m_outputTypeHasBeenSet = true; m_outputType = std::move(value); }
-    inline TaskReportConfig& WithOutputType(const ReportOutputType& value) { SetOutputType(value); return *this;}
-    inline TaskReportConfig& WithOutputType(ReportOutputType&& value) { SetOutputType(std::move(value)); return *this;}
+    inline void SetOutputType(ReportOutputType value) { m_outputTypeHasBeenSet = true; m_outputType = value; }
+    inline TaskReportConfig& WithOutputType(ReportOutputType value) { SetOutputType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,10 @@ namespace Model
      * A report shows what DataSync was able and unable to transfer, skip, verify, and
      * delete.</p> </li> </ul>
      */
-    inline const ReportLevel& GetReportLevel() const{ return m_reportLevel; }
+    inline ReportLevel GetReportLevel() const { return m_reportLevel; }
     inline bool ReportLevelHasBeenSet() const { return m_reportLevelHasBeenSet; }
-    inline void SetReportLevel(const ReportLevel& value) { m_reportLevelHasBeenSet = true; m_reportLevel = value; }
-    inline void SetReportLevel(ReportLevel&& value) { m_reportLevelHasBeenSet = true; m_reportLevel = std::move(value); }
-    inline TaskReportConfig& WithReportLevel(const ReportLevel& value) { SetReportLevel(value); return *this;}
-    inline TaskReportConfig& WithReportLevel(ReportLevel&& value) { SetReportLevel(std::move(value)); return *this;}
+    inline void SetReportLevel(ReportLevel value) { m_reportLevelHasBeenSet = true; m_reportLevel = value; }
+    inline TaskReportConfig& WithReportLevel(ReportLevel value) { SetReportLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,10 @@ namespace Model
      * versioning on your bucket</a>. Keep in mind that setting this to
      * <code>INCLUDE</code> can increase the duration of your task execution.</p>
      */
-    inline const ObjectVersionIds& GetObjectVersionIds() const{ return m_objectVersionIds; }
+    inline ObjectVersionIds GetObjectVersionIds() const { return m_objectVersionIds; }
     inline bool ObjectVersionIdsHasBeenSet() const { return m_objectVersionIdsHasBeenSet; }
-    inline void SetObjectVersionIds(const ObjectVersionIds& value) { m_objectVersionIdsHasBeenSet = true; m_objectVersionIds = value; }
-    inline void SetObjectVersionIds(ObjectVersionIds&& value) { m_objectVersionIdsHasBeenSet = true; m_objectVersionIds = std::move(value); }
-    inline TaskReportConfig& WithObjectVersionIds(const ObjectVersionIds& value) { SetObjectVersionIds(value); return *this;}
-    inline TaskReportConfig& WithObjectVersionIds(ObjectVersionIds&& value) { SetObjectVersionIds(std::move(value)); return *this;}
+    inline void SetObjectVersionIds(ObjectVersionIds value) { m_objectVersionIdsHasBeenSet = true; m_objectVersionIds = value; }
+    inline TaskReportConfig& WithObjectVersionIds(ObjectVersionIds value) { SetObjectVersionIds(value); return *this;}
     ///@}
 
     ///@{
@@ -117,25 +111,25 @@ namespace Model
      * want a list of successes and errors just for the files that DataSync attempted
      * to delete in your destination location.</p>
      */
-    inline const ReportOverrides& GetOverrides() const{ return m_overrides; }
+    inline const ReportOverrides& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const ReportOverrides& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(ReportOverrides&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline TaskReportConfig& WithOverrides(const ReportOverrides& value) { SetOverrides(value); return *this;}
-    inline TaskReportConfig& WithOverrides(ReportOverrides&& value) { SetOverrides(std::move(value)); return *this;}
+    template<typename OverridesT = ReportOverrides>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = ReportOverrides>
+    TaskReportConfig& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
     ///@}
   private:
 
     ReportDestination m_destination;
     bool m_destinationHasBeenSet = false;
 
-    ReportOutputType m_outputType;
+    ReportOutputType m_outputType{ReportOutputType::NOT_SET};
     bool m_outputTypeHasBeenSet = false;
 
-    ReportLevel m_reportLevel;
+    ReportLevel m_reportLevel{ReportLevel::NOT_SET};
     bool m_reportLevelHasBeenSet = false;
 
-    ObjectVersionIds m_objectVersionIds;
+    ObjectVersionIds m_objectVersionIds{ObjectVersionIds::NOT_SET};
     bool m_objectVersionIdsHasBeenSet = false;
 
     ReportOverrides m_overrides;

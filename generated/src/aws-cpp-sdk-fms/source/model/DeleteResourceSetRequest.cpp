@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceSetRequest::DeleteResourceSetRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceSetRequest::SerializePayload() const
 {
   JsonValue payload;

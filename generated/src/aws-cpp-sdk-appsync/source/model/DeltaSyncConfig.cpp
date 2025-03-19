@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DeltaSyncConfig::DeltaSyncConfig() : 
-    m_baseTableTTL(0),
-    m_baseTableTTLHasBeenSet(false),
-    m_deltaSyncTableNameHasBeenSet(false),
-    m_deltaSyncTableTTL(0),
-    m_deltaSyncTableTTLHasBeenSet(false)
-{
-}
-
 DeltaSyncConfig::DeltaSyncConfig(JsonView jsonValue)
-  : DeltaSyncConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DeltaSyncConfig& DeltaSyncConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("baseTableTTL"))
   {
     m_baseTableTTL = jsonValue.GetInt64("baseTableTTL");
-
     m_baseTableTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deltaSyncTableName"))
   {
     m_deltaSyncTableName = jsonValue.GetString("deltaSyncTableName");
-
     m_deltaSyncTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deltaSyncTableTTL"))
   {
     m_deltaSyncTableTTL = jsonValue.GetInt64("deltaSyncTableTTL");
-
     m_deltaSyncTableTTLHasBeenSet = true;
   }
-
   return *this;
 }
 

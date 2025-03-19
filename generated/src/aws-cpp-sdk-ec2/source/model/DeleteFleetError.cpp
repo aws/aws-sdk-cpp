@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeleteFleetError::DeleteFleetError() : 
-    m_code(DeleteFleetErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DeleteFleetError::DeleteFleetError(const XmlNode& xmlNode)
-  : DeleteFleetError()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ DeleteFleetError& DeleteFleetError::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = DeleteFleetErrorCodeMapper::GetDeleteFleetErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = DeleteFleetErrorCodeMapper::GetDeleteFleetErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

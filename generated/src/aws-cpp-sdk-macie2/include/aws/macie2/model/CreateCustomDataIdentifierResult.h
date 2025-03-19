@@ -27,7 +27,7 @@ namespace Model
   class CreateCustomDataIdentifierResult
   {
   public:
-    AWS_MACIE2_API CreateCustomDataIdentifierResult();
+    AWS_MACIE2_API CreateCustomDataIdentifierResult() = default;
     AWS_MACIE2_API CreateCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API CreateCustomDataIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier for the custom data identifier that was created.</p>
      */
-    inline const Aws::String& GetCustomDataIdentifierId() const{ return m_customDataIdentifierId; }
-    inline void SetCustomDataIdentifierId(const Aws::String& value) { m_customDataIdentifierId = value; }
-    inline void SetCustomDataIdentifierId(Aws::String&& value) { m_customDataIdentifierId = std::move(value); }
-    inline void SetCustomDataIdentifierId(const char* value) { m_customDataIdentifierId.assign(value); }
-    inline CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(const Aws::String& value) { SetCustomDataIdentifierId(value); return *this;}
-    inline CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(Aws::String&& value) { SetCustomDataIdentifierId(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(const char* value) { SetCustomDataIdentifierId(value); return *this;}
+    inline const Aws::String& GetCustomDataIdentifierId() const { return m_customDataIdentifierId; }
+    template<typename CustomDataIdentifierIdT = Aws::String>
+    void SetCustomDataIdentifierId(CustomDataIdentifierIdT&& value) { m_customDataIdentifierIdHasBeenSet = true; m_customDataIdentifierId = std::forward<CustomDataIdentifierIdT>(value); }
+    template<typename CustomDataIdentifierIdT = Aws::String>
+    CreateCustomDataIdentifierResult& WithCustomDataIdentifierId(CustomDataIdentifierIdT&& value) { SetCustomDataIdentifierId(std::forward<CustomDataIdentifierIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCustomDataIdentifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCustomDataIdentifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCustomDataIdentifierResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customDataIdentifierId;
+    bool m_customDataIdentifierIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

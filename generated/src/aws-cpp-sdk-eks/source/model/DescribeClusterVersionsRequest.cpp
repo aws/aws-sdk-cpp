@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeClusterVersionsRequest::DescribeClusterVersionsRequest() : 
-    m_clusterTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_defaultOnly(false),
-    m_defaultOnlyHasBeenSet(false),
-    m_includeAll(false),
-    m_includeAllHasBeenSet(false),
-    m_clusterVersionsHasBeenSet(false),
-    m_versionStatus(VersionStatus::NOT_SET),
-    m_versionStatusHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterVersionsRequest::SerializePayload() const
 {
   return {};

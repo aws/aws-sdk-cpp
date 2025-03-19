@@ -29,7 +29,7 @@ namespace Model
   class ProvisionalConfiguration
   {
   public:
-    AWS_LICENSEMANAGER_API ProvisionalConfiguration();
+    AWS_LICENSEMANAGER_API ProvisionalConfiguration() = default;
     AWS_LICENSEMANAGER_API ProvisionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API ProvisionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Maximum time for the provisional configuration, in minutes.</p>
      */
-    inline int GetMaxTimeToLiveInMinutes() const{ return m_maxTimeToLiveInMinutes; }
+    inline int GetMaxTimeToLiveInMinutes() const { return m_maxTimeToLiveInMinutes; }
     inline bool MaxTimeToLiveInMinutesHasBeenSet() const { return m_maxTimeToLiveInMinutesHasBeenSet; }
     inline void SetMaxTimeToLiveInMinutes(int value) { m_maxTimeToLiveInMinutesHasBeenSet = true; m_maxTimeToLiveInMinutes = value; }
     inline ProvisionalConfiguration& WithMaxTimeToLiveInMinutes(int value) { SetMaxTimeToLiveInMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_maxTimeToLiveInMinutes;
+    int m_maxTimeToLiveInMinutes{0};
     bool m_maxTimeToLiveInMinutesHasBeenSet = false;
   };
 

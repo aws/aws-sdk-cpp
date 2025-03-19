@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRunGroupRequest::DeleteRunGroupRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRunGroupRequest::SerializePayload() const
 {
   return {};

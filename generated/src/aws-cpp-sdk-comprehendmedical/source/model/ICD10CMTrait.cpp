@@ -18,16 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-ICD10CMTrait::ICD10CMTrait() : 
-    m_name(ICD10CMTraitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 ICD10CMTrait::ICD10CMTrait(JsonView jsonValue)
-  : ICD10CMTrait()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ICD10CMTrait& ICD10CMTrait::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ICD10CMTraitNameMapper::GetICD10CMTraitNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

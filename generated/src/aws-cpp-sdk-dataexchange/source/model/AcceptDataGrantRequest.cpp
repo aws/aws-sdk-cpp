@@ -12,11 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptDataGrantRequest::AcceptDataGrantRequest() : 
-    m_dataGrantArnHasBeenSet(false)
-{
-}
-
 Aws::String AcceptDataGrantRequest::SerializePayload() const
 {
   return {};

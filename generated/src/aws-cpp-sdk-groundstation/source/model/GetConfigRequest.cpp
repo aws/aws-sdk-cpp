@@ -12,13 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfigRequest::GetConfigRequest() : 
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetConfigRequest::SerializePayload() const
 {
   return {};

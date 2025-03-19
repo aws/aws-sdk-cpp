@@ -13,14 +13,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ClassifyDocumentRequest::ClassifyDocumentRequest() : 
-    m_textHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_bytesHasBeenSet(false),
-    m_documentReaderConfigHasBeenSet(false)
-{
-}
-
 Aws::String ClassifyDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

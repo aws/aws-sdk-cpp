@@ -18,21 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskExecutionSummary::OtaTaskExecutionSummary() : 
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_queuedAtHasBeenSet(false),
-    m_retryAttempt(0),
-    m_retryAttemptHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(OtaTaskExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OtaTaskExecutionSummary::OtaTaskExecutionSummary(JsonView jsonValue)
-  : OtaTaskExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ OtaTaskExecutionSummary& OtaTaskExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionNumber"))
   {
     m_executionNumber = jsonValue.GetInt64("ExecutionNumber");
-
     m_executionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueuedAt"))
   {
     m_queuedAt = jsonValue.GetDouble("QueuedAt");
-
     m_queuedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryAttempt"))
   {
     m_retryAttempt = jsonValue.GetInteger("RetryAttempt");
-
     m_retryAttemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OtaTaskExecutionStatusMapper::GetOtaTaskExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

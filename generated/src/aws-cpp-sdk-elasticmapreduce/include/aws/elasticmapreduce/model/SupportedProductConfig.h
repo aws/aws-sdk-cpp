@@ -35,7 +35,7 @@ namespace Model
   class SupportedProductConfig
   {
   public:
-    AWS_EMR_API SupportedProductConfig();
+    AWS_EMR_API SupportedProductConfig() = default;
     AWS_EMR_API SupportedProductConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API SupportedProductConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
     /**
      * <p>The name of the product configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SupportedProductConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SupportedProductConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SupportedProductConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SupportedProductConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of user-supplied arguments.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+    inline const Aws::Vector<Aws::String>& GetArgs() const { return m_args; }
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-    inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-    inline SupportedProductConfig& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
-    inline SupportedProductConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
-    inline SupportedProductConfig& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
-    inline SupportedProductConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
-    inline SupportedProductConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    void SetArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args = std::forward<ArgsT>(value); }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    SupportedProductConfig& WithArgs(ArgsT&& value) { SetArgs(std::forward<ArgsT>(value)); return *this;}
+    template<typename ArgsT = Aws::String>
+    SupportedProductConfig& AddArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args.emplace_back(std::forward<ArgsT>(value)); return *this; }
     ///@}
   private:
 

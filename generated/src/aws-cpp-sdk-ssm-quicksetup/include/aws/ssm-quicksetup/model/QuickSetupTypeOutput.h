@@ -31,7 +31,7 @@ namespace Model
   class QuickSetupTypeOutput
   {
   public:
-    AWS_SSMQUICKSETUP_API QuickSetupTypeOutput();
+    AWS_SSMQUICKSETUP_API QuickSetupTypeOutput() = default;
     AWS_SSMQUICKSETUP_API QuickSetupTypeOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMQUICKSETUP_API QuickSetupTypeOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMQUICKSETUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The latest version number of the configuration.</p>
      */
-    inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
+    inline const Aws::String& GetLatestVersion() const { return m_latestVersion; }
     inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
-    inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
-    inline void SetLatestVersion(Aws::String&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::move(value); }
-    inline void SetLatestVersion(const char* value) { m_latestVersionHasBeenSet = true; m_latestVersion.assign(value); }
-    inline QuickSetupTypeOutput& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
-    inline QuickSetupTypeOutput& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
-    inline QuickSetupTypeOutput& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
+    template<typename LatestVersionT = Aws::String>
+    void SetLatestVersion(LatestVersionT&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::forward<LatestVersionT>(value); }
+    template<typename LatestVersionT = Aws::String>
+    QuickSetupTypeOutput& WithLatestVersion(LatestVersionT&& value) { SetLatestVersion(std::forward<LatestVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the Quick Setup configuration.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline QuickSetupTypeOutput& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline QuickSetupTypeOutput& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline QuickSetupTypeOutput& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    QuickSetupTypeOutput& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

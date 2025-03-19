@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeJobExecutionRequest::DescribeJobExecutionRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_includeJobDocument(false),
-    m_includeJobDocumentHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobExecutionRequest::SerializePayload() const
 {
   return {};

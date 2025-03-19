@@ -18,16 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-HandOffTime::HandOffTime() : 
-    m_hourOfDay(0),
-    m_hourOfDayHasBeenSet(false),
-    m_minuteOfHour(0),
-    m_minuteOfHourHasBeenSet(false)
-{
-}
-
 HandOffTime::HandOffTime(JsonView jsonValue)
-  : HandOffTime()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ HandOffTime& HandOffTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HourOfDay"))
   {
     m_hourOfDay = jsonValue.GetInteger("HourOfDay");
-
     m_hourOfDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinuteOfHour"))
   {
     m_minuteOfHour = jsonValue.GetInteger("MinuteOfHour");
-
     m_minuteOfHourHasBeenSet = true;
   }
-
   return *this;
 }
 

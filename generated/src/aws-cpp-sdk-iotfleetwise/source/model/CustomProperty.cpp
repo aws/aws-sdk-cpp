@@ -18,21 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CustomProperty::CustomProperty() : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_dataType(NodeDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataEncoding(NodeDataEncoding::NOT_SET),
-    m_dataEncodingHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_structFullyQualifiedNameHasBeenSet(false)
-{
-}
-
 CustomProperty::CustomProperty(JsonView jsonValue)
-  : CustomProperty()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ CustomProperty& CustomProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fullyQualifiedName"))
   {
     m_fullyQualifiedName = jsonValue.GetString("fullyQualifiedName");
-
     m_fullyQualifiedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = NodeDataTypeMapper::GetNodeDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataEncoding"))
   {
     m_dataEncoding = NodeDataEncodingMapper::GetNodeDataEncodingForName(jsonValue.GetString("dataEncoding"));
-
     m_dataEncodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deprecationMessage"))
   {
     m_deprecationMessage = jsonValue.GetString("deprecationMessage");
-
     m_deprecationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("structFullyQualifiedName"))
   {
     m_structFullyQualifiedName = jsonValue.GetString("structFullyQualifiedName");
-
     m_structFullyQualifiedNameHasBeenSet = true;
   }
-
   return *this;
 }
 

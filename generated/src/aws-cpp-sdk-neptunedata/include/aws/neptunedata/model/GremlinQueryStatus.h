@@ -34,7 +34,7 @@ namespace Model
   class GremlinQueryStatus
   {
   public:
-    AWS_NEPTUNEDATA_API GremlinQueryStatus();
+    AWS_NEPTUNEDATA_API GremlinQueryStatus() = default;
     AWS_NEPTUNEDATA_API GremlinQueryStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API GremlinQueryStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The ID of the Gremlin query.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-    inline GremlinQueryStatus& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline GremlinQueryStatus& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline GremlinQueryStatus& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    GremlinQueryStatus& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The query string of the Gremlin query.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline GremlinQueryStatus& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline GremlinQueryStatus& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline GremlinQueryStatus& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    GremlinQueryStatus& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The query statistics of the Gremlin query.</p>
      */
-    inline const QueryEvalStats& GetQueryEvalStats() const{ return m_queryEvalStats; }
+    inline const QueryEvalStats& GetQueryEvalStats() const { return m_queryEvalStats; }
     inline bool QueryEvalStatsHasBeenSet() const { return m_queryEvalStatsHasBeenSet; }
-    inline void SetQueryEvalStats(const QueryEvalStats& value) { m_queryEvalStatsHasBeenSet = true; m_queryEvalStats = value; }
-    inline void SetQueryEvalStats(QueryEvalStats&& value) { m_queryEvalStatsHasBeenSet = true; m_queryEvalStats = std::move(value); }
-    inline GremlinQueryStatus& WithQueryEvalStats(const QueryEvalStats& value) { SetQueryEvalStats(value); return *this;}
-    inline GremlinQueryStatus& WithQueryEvalStats(QueryEvalStats&& value) { SetQueryEvalStats(std::move(value)); return *this;}
+    template<typename QueryEvalStatsT = QueryEvalStats>
+    void SetQueryEvalStats(QueryEvalStatsT&& value) { m_queryEvalStatsHasBeenSet = true; m_queryEvalStats = std::forward<QueryEvalStatsT>(value); }
+    template<typename QueryEvalStatsT = QueryEvalStats>
+    GremlinQueryStatus& WithQueryEvalStats(QueryEvalStatsT&& value) { SetQueryEvalStats(std::forward<QueryEvalStatsT>(value)); return *this;}
     ///@}
   private:
 

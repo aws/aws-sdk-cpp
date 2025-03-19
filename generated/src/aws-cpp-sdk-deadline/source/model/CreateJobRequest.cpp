@@ -13,31 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateJobRequest::CreateJobRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_templateHasBeenSet(false),
-    m_templateType(JobTemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false),
-    m_targetTaskRunStatus(CreateJobTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_maxFailedTasksCount(0),
-    m_maxFailedTasksCountHasBeenSet(false),
-    m_maxRetriesPerTask(0),
-    m_maxRetriesPerTaskHasBeenSet(false),
-    m_maxWorkerCount(0),
-    m_maxWorkerCountHasBeenSet(false),
-    m_sourceJobIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;

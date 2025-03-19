@@ -12,16 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportHypervisorConfigurationRequest::ImportHypervisorConfigurationRequest() : 
-    m_hostHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String ImportHypervisorConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

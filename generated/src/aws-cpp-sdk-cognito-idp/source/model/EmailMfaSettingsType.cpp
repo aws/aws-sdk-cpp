@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-EmailMfaSettingsType::EmailMfaSettingsType() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_preferredMfa(false),
-    m_preferredMfaHasBeenSet(false)
-{
-}
-
 EmailMfaSettingsType::EmailMfaSettingsType(JsonView jsonValue)
-  : EmailMfaSettingsType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EmailMfaSettingsType& EmailMfaSettingsType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMfa"))
   {
     m_preferredMfa = jsonValue.GetBool("PreferredMfa");
-
     m_preferredMfaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class MultiModelConfig
   {
   public:
-    AWS_SAGEMAKER_API MultiModelConfig();
+    AWS_SAGEMAKER_API MultiModelConfig() = default;
     AWS_SAGEMAKER_API MultiModelConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MultiModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * disable model caching, set the value of this parameter to
      * <code>Disabled</code>.</p>
      */
-    inline const ModelCacheSetting& GetModelCacheSetting() const{ return m_modelCacheSetting; }
+    inline ModelCacheSetting GetModelCacheSetting() const { return m_modelCacheSetting; }
     inline bool ModelCacheSettingHasBeenSet() const { return m_modelCacheSettingHasBeenSet; }
-    inline void SetModelCacheSetting(const ModelCacheSetting& value) { m_modelCacheSettingHasBeenSet = true; m_modelCacheSetting = value; }
-    inline void SetModelCacheSetting(ModelCacheSetting&& value) { m_modelCacheSettingHasBeenSet = true; m_modelCacheSetting = std::move(value); }
-    inline MultiModelConfig& WithModelCacheSetting(const ModelCacheSetting& value) { SetModelCacheSetting(value); return *this;}
-    inline MultiModelConfig& WithModelCacheSetting(ModelCacheSetting&& value) { SetModelCacheSetting(std::move(value)); return *this;}
+    inline void SetModelCacheSetting(ModelCacheSetting value) { m_modelCacheSettingHasBeenSet = true; m_modelCacheSetting = value; }
+    inline MultiModelConfig& WithModelCacheSetting(ModelCacheSetting value) { SetModelCacheSetting(value); return *this;}
     ///@}
   private:
 
-    ModelCacheSetting m_modelCacheSetting;
+    ModelCacheSetting m_modelCacheSetting{ModelCacheSetting::NOT_SET};
     bool m_modelCacheSettingHasBeenSet = false;
   };
 

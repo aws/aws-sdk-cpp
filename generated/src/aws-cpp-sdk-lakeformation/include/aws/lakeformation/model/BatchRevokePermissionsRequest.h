@@ -23,7 +23,7 @@ namespace Model
   class BatchRevokePermissionsRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API BatchRevokePermissionsRequest();
+    AWS_LAKEFORMATION_API BatchRevokePermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * table definitions, and other control information to manage your Lake Formation
      * environment. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline BatchRevokePermissionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline BatchRevokePermissionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline BatchRevokePermissionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    BatchRevokePermissionsRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,14 @@ namespace Model
      * <p>A list of up to 20 entries for resource permissions to be revoked by batch
      * operation to the principal.</p>
      */
-    inline const Aws::Vector<BatchPermissionsRequestEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<BatchPermissionsRequestEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<BatchPermissionsRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<BatchPermissionsRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline BatchRevokePermissionsRequest& WithEntries(const Aws::Vector<BatchPermissionsRequestEntry>& value) { SetEntries(value); return *this;}
-    inline BatchRevokePermissionsRequest& WithEntries(Aws::Vector<BatchPermissionsRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline BatchRevokePermissionsRequest& AddEntries(const BatchPermissionsRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline BatchRevokePermissionsRequest& AddEntries(BatchPermissionsRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<BatchPermissionsRequestEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<BatchPermissionsRequestEntry>>
+    BatchRevokePermissionsRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = BatchPermissionsRequestEntry>
+    BatchRevokePermissionsRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

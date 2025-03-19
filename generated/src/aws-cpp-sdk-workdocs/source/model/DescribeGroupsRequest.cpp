@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeGroupsRequest::DescribeGroupsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_searchQueryHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGroupsRequest::SerializePayload() const
 {
   return {};

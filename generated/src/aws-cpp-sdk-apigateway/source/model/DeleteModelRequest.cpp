@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteModelRequest::DeleteModelRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_modelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteModelRequest::SerializePayload() const
 {
   return {};

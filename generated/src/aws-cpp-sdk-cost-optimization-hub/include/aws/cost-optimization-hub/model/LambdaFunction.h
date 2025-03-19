@@ -32,7 +32,7 @@ namespace Model
   class LambdaFunction
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API LambdaFunction();
+    AWS_COSTOPTIMIZATIONHUB_API LambdaFunction() = default;
     AWS_COSTOPTIMIZATIONHUB_API LambdaFunction(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API LambdaFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The Lambda function configuration used for recommendations.</p>
      */
-    inline const LambdaFunctionConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const LambdaFunctionConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const LambdaFunctionConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(LambdaFunctionConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline LambdaFunction& WithConfiguration(const LambdaFunctionConfiguration& value) { SetConfiguration(value); return *this;}
-    inline LambdaFunction& WithConfiguration(LambdaFunctionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = LambdaFunctionConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = LambdaFunctionConfiguration>
+    LambdaFunction& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the recommendation.</p>
      */
-    inline const ResourceCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const ResourceCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const ResourceCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(ResourceCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline LambdaFunction& WithCostCalculation(const ResourceCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline LambdaFunction& WithCostCalculation(ResourceCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = ResourceCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = ResourceCostCalculation>
+    LambdaFunction& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

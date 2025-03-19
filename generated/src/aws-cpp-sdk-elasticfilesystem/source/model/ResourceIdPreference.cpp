@@ -18,15 +18,7 @@ namespace EFS
 namespace Model
 {
 
-ResourceIdPreference::ResourceIdPreference() : 
-    m_resourceIdType(ResourceIdType::NOT_SET),
-    m_resourceIdTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 ResourceIdPreference::ResourceIdPreference(JsonView jsonValue)
-  : ResourceIdPreference()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ResourceIdPreference& ResourceIdPreference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceIdType"))
   {
     m_resourceIdType = ResourceIdTypeMapper::GetResourceIdTypeForName(jsonValue.GetString("ResourceIdType"));
-
     m_resourceIdTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -49,7 +39,6 @@ ResourceIdPreference& ResourceIdPreference::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

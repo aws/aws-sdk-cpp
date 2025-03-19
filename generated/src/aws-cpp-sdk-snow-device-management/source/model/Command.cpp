@@ -18,14 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-Command::Command() : 
-    m_rebootHasBeenSet(false),
-    m_unlockHasBeenSet(false)
-{
-}
-
 Command::Command(JsonView jsonValue)
-  : Command()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Command& Command::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reboot"))
   {
     m_reboot = jsonValue.GetObject("reboot");
-
     m_rebootHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unlock"))
   {
     m_unlock = jsonValue.GetObject("unlock");
-
     m_unlockHasBeenSet = true;
   }
-
   return *this;
 }
 

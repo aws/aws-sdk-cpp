@@ -12,18 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNodeRequest::CreateNodeRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nodeInterfaceMappingsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_role(NodeRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNodeRequest::SerializePayload() const
 {
   JsonValue payload;

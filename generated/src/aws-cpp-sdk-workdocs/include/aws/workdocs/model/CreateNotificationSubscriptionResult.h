@@ -28,7 +28,7 @@ namespace Model
   class CreateNotificationSubscriptionResult
   {
   public:
-    AWS_WORKDOCS_API CreateNotificationSubscriptionResult();
+    AWS_WORKDOCS_API CreateNotificationSubscriptionResult() = default;
     AWS_WORKDOCS_API CreateNotificationSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKDOCS_API CreateNotificationSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The subscription.</p>
      */
-    inline const Subscription& GetSubscription() const{ return m_subscription; }
-    inline void SetSubscription(const Subscription& value) { m_subscription = value; }
-    inline void SetSubscription(Subscription&& value) { m_subscription = std::move(value); }
-    inline CreateNotificationSubscriptionResult& WithSubscription(const Subscription& value) { SetSubscription(value); return *this;}
-    inline CreateNotificationSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(std::move(value)); return *this;}
+    inline const Subscription& GetSubscription() const { return m_subscription; }
+    template<typename SubscriptionT = Subscription>
+    void SetSubscription(SubscriptionT&& value) { m_subscriptionHasBeenSet = true; m_subscription = std::forward<SubscriptionT>(value); }
+    template<typename SubscriptionT = Subscription>
+    CreateNotificationSubscriptionResult& WithSubscription(SubscriptionT&& value) { SetSubscription(std::forward<SubscriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNotificationSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNotificationSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNotificationSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNotificationSubscriptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Subscription m_subscription;
+    bool m_subscriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

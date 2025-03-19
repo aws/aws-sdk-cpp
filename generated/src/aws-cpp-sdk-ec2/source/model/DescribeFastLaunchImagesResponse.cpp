@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFastLaunchImagesResponse::DescribeFastLaunchImagesResponse()
-{
-}
-
 DescribeFastLaunchImagesResponse::DescribeFastLaunchImagesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeFastLaunchImagesResponse& DescribeFastLaunchImagesResponse::operator =(c
     if(!fastLaunchImagesNode.IsNull())
     {
       XmlNode fastLaunchImagesMember = fastLaunchImagesNode.FirstChild("item");
+      m_fastLaunchImagesHasBeenSet = !fastLaunchImagesMember.IsNull();
       while(!fastLaunchImagesMember.IsNull())
       {
         m_fastLaunchImages.push_back(fastLaunchImagesMember);
         fastLaunchImagesMember = fastLaunchImagesMember.NextNode("item");
       }
 
+      m_fastLaunchImagesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeFastLaunchImagesResponse& DescribeFastLaunchImagesResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeFastLaunchImagesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

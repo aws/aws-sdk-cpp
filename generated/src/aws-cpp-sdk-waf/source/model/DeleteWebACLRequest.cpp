@@ -12,12 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWebACLRequest::DeleteWebACLRequest() : 
-    m_webACLIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

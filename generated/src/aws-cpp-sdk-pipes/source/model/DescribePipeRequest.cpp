@@ -12,11 +12,6 @@ using namespace Aws::Pipes::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePipeRequest::DescribePipeRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DescribePipeRequest::SerializePayload() const
 {
   return {};

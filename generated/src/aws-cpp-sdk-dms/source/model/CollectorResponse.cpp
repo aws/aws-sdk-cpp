@@ -18,26 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-CollectorResponse::CollectorResponse() : 
-    m_collectorReferencedIdHasBeenSet(false),
-    m_collectorNameHasBeenSet(false),
-    m_collectorVersionHasBeenSet(false),
-    m_versionStatus(VersionStatus::NOT_SET),
-    m_versionStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_collectorHealthCheckHasBeenSet(false),
-    m_lastDataReceivedHasBeenSet(false),
-    m_registeredDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_modifiedDateHasBeenSet(false),
-    m_inventoryDataHasBeenSet(false)
-{
-}
-
 CollectorResponse::CollectorResponse(JsonView jsonValue)
-  : CollectorResponse()
 {
   *this = jsonValue;
 }
@@ -47,94 +28,68 @@ CollectorResponse& CollectorResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CollectorReferencedId"))
   {
     m_collectorReferencedId = jsonValue.GetString("CollectorReferencedId");
-
     m_collectorReferencedIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectorName"))
   {
     m_collectorName = jsonValue.GetString("CollectorName");
-
     m_collectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectorVersion"))
   {
     m_collectorVersion = jsonValue.GetString("CollectorVersion");
-
     m_collectorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionStatus"))
   {
     m_versionStatus = VersionStatusMapper::GetVersionStatusForName(jsonValue.GetString("VersionStatus"));
-
     m_versionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
-
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectorHealthCheck"))
   {
     m_collectorHealthCheck = jsonValue.GetObject("CollectorHealthCheck");
-
     m_collectorHealthCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDataReceived"))
   {
     m_lastDataReceived = jsonValue.GetString("LastDataReceived");
-
     m_lastDataReceivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredDate"))
   {
     m_registeredDate = jsonValue.GetString("RegisteredDate");
-
     m_registeredDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedDate"))
   {
     m_modifiedDate = jsonValue.GetString("ModifiedDate");
-
     m_modifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InventoryData"))
   {
     m_inventoryData = jsonValue.GetObject("InventoryData");
-
     m_inventoryDataHasBeenSet = true;
   }
-
   return *this;
 }
 

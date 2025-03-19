@@ -49,7 +49,7 @@ namespace Model
   class MedicalTranscriptionJob
   {
   public:
-    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob();
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob() = default;
     AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,14 +60,12 @@ namespace Model
      * <p>The name of the medical transcription job. Job names are case sensitive and
      * must be unique within an Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
+    inline const Aws::String& GetMedicalTranscriptionJobName() const { return m_medicalTranscriptionJobName; }
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
-    inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
-    inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
-    inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
-    inline MedicalTranscriptionJob& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
-    inline MedicalTranscriptionJob& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
-    inline MedicalTranscriptionJob& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
+    template<typename MedicalTranscriptionJobNameT = Aws::String>
+    void SetMedicalTranscriptionJobName(MedicalTranscriptionJobNameT&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::forward<MedicalTranscriptionJobNameT>(value); }
+    template<typename MedicalTranscriptionJobNameT = Aws::String>
+    MedicalTranscriptionJob& WithMedicalTranscriptionJobName(MedicalTranscriptionJobNameT&& value) { SetMedicalTranscriptionJobName(std::forward<MedicalTranscriptionJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,10 @@ namespace Model
      * status is <code>FAILED</code>, <code>FailureReason</code> provides details on
      * why your transcription job failed.</p>
      */
-    inline const TranscriptionJobStatus& GetTranscriptionJobStatus() const{ return m_transcriptionJobStatus; }
+    inline TranscriptionJobStatus GetTranscriptionJobStatus() const { return m_transcriptionJobStatus; }
     inline bool TranscriptionJobStatusHasBeenSet() const { return m_transcriptionJobStatusHasBeenSet; }
-    inline void SetTranscriptionJobStatus(const TranscriptionJobStatus& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
-    inline void SetTranscriptionJobStatus(TranscriptionJobStatus&& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = std::move(value); }
-    inline MedicalTranscriptionJob& WithTranscriptionJobStatus(const TranscriptionJobStatus& value) { SetTranscriptionJobStatus(value); return *this;}
-    inline MedicalTranscriptionJob& WithTranscriptionJobStatus(TranscriptionJobStatus&& value) { SetTranscriptionJobStatus(std::move(value)); return *this;}
+    inline void SetTranscriptionJobStatus(TranscriptionJobStatus value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
+    inline MedicalTranscriptionJob& WithTranscriptionJobStatus(TranscriptionJobStatus value) { SetTranscriptionJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -92,19 +88,17 @@ namespace Model
      * (<code>en-US</code>) is the only supported language for medical
      * transcriptions.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline MedicalTranscriptionJob& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline MedicalTranscriptionJob& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline MedicalTranscriptionJob& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline MedicalTranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -114,22 +108,20 @@ namespace Model
     /**
      * <p>The format of the input media file.</p>
      */
-    inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+    inline MediaFormat GetMediaFormat() const { return m_mediaFormat; }
     inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
-    inline void SetMediaFormat(const MediaFormat& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
-    inline void SetMediaFormat(MediaFormat&& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = std::move(value); }
-    inline MedicalTranscriptionJob& WithMediaFormat(const MediaFormat& value) { SetMediaFormat(value); return *this;}
-    inline MedicalTranscriptionJob& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
+    inline void SetMediaFormat(MediaFormat value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
+    inline MedicalTranscriptionJob& WithMediaFormat(MediaFormat value) { SetMediaFormat(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Media& GetMedia() const{ return m_media; }
+    inline const Media& GetMedia() const { return m_media; }
     inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
-    inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
-    inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
-    inline MedicalTranscriptionJob& WithMedia(const Media& value) { SetMedia(value); return *this;}
-    inline MedicalTranscriptionJob& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
+    template<typename MediaT = Media>
+    void SetMedia(MediaT&& value) { m_mediaHasBeenSet = true; m_media = std::forward<MediaT>(value); }
+    template<typename MediaT = Media>
+    MedicalTranscriptionJob& WithMedia(MediaT&& value) { SetMedia(std::forward<MediaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +129,12 @@ namespace Model
      * <p>Provides you with the Amazon S3 URI you can use to access your
      * transcript.</p>
      */
-    inline const MedicalTranscript& GetTranscript() const{ return m_transcript; }
+    inline const MedicalTranscript& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const MedicalTranscript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(MedicalTranscript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline MedicalTranscriptionJob& WithTranscript(const MedicalTranscript& value) { SetTranscript(value); return *this;}
-    inline MedicalTranscriptionJob& WithTranscript(MedicalTranscript&& value) { SetTranscript(std::move(value)); return *this;}
+    template<typename TranscriptT = MedicalTranscript>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = MedicalTranscript>
+    MedicalTranscriptionJob& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +145,12 @@ namespace Model
      * <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job
      * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline MedicalTranscriptionJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline MedicalTranscriptionJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    MedicalTranscriptionJob& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,12 +161,12 @@ namespace Model
      * <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job
      * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline MedicalTranscriptionJob& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline MedicalTranscriptionJob& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    MedicalTranscriptionJob& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,12 +177,12 @@ namespace Model
      * <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job
      * that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
-    inline MedicalTranscriptionJob& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline MedicalTranscriptionJob& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    MedicalTranscriptionJob& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,14 +213,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      * quotas</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline MedicalTranscriptionJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline MedicalTranscriptionJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline MedicalTranscriptionJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    MedicalTranscriptionJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,12 +228,12 @@ namespace Model
      * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
      * filters.</p>
      */
-    inline const MedicalTranscriptionSetting& GetSettings() const{ return m_settings; }
+    inline const MedicalTranscriptionSetting& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const MedicalTranscriptionSetting& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(MedicalTranscriptionSetting&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline MedicalTranscriptionJob& WithSettings(const MedicalTranscriptionSetting& value) { SetSettings(value); return *this;}
-    inline MedicalTranscriptionJob& WithSettings(MedicalTranscriptionSetting&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = MedicalTranscriptionSetting>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = MedicalTranscriptionSetting>
+    MedicalTranscriptionJob& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,24 +241,20 @@ namespace Model
      * <p>Indicates whether content identification was enabled for your transcription
      * request.</p>
      */
-    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline MedicalContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline MedicalTranscriptionJob& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline MedicalTranscriptionJob& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(MedicalContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline MedicalTranscriptionJob& WithContentIdentificationType(MedicalContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the medical specialty represented in your media.</p>
      */
-    inline const Specialty& GetSpecialty() const{ return m_specialty; }
+    inline Specialty GetSpecialty() const { return m_specialty; }
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
-    inline void SetSpecialty(const Specialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
-    inline void SetSpecialty(Specialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
-    inline MedicalTranscriptionJob& WithSpecialty(const Specialty& value) { SetSpecialty(value); return *this;}
-    inline MedicalTranscriptionJob& WithSpecialty(Specialty&& value) { SetSpecialty(std::move(value)); return *this;}
+    inline void SetSpecialty(Specialty value) { m_specialtyHasBeenSet = true; m_specialty = value; }
+    inline MedicalTranscriptionJob& WithSpecialty(Specialty value) { SetSpecialty(value); return *this;}
     ///@}
 
     ///@{
@@ -276,12 +262,10 @@ namespace Model
      * <p>Indicates whether the input media is a dictation or a conversation, as
      * specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MedicalTranscriptionJob& WithType(const Type& value) { SetType(value); return *this;}
-    inline MedicalTranscriptionJob& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MedicalTranscriptionJob& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -289,30 +273,30 @@ namespace Model
      * <p>The tags, each in the form of a key:value pair, assigned to the specified
      * medical transcription job.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline MedicalTranscriptionJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline MedicalTranscriptionJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline MedicalTranscriptionJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline MedicalTranscriptionJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    MedicalTranscriptionJob& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    MedicalTranscriptionJob& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_medicalTranscriptionJobName;
     bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
-    TranscriptionJobStatus m_transcriptionJobStatus;
+    TranscriptionJobStatus m_transcriptionJobStatus{TranscriptionJobStatus::NOT_SET};
     bool m_transcriptionJobStatusHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaFormat m_mediaFormat;
+    MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
     bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
@@ -321,13 +305,13 @@ namespace Model
     MedicalTranscript m_transcript;
     bool m_transcriptHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
     bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
@@ -336,13 +320,13 @@ namespace Model
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet = false;
 
-    MedicalContentIdentificationType m_contentIdentificationType;
+    MedicalContentIdentificationType m_contentIdentificationType{MedicalContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    Specialty m_specialty;
+    Specialty m_specialty{Specialty::NOT_SET};
     bool m_specialtyHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

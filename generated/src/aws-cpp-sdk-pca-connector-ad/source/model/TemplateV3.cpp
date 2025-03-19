@@ -18,22 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-TemplateV3::TemplateV3() : 
-    m_certificateValidityHasBeenSet(false),
-    m_enrollmentFlagsHasBeenSet(false),
-    m_extensionsHasBeenSet(false),
-    m_generalFlagsHasBeenSet(false),
-    m_hashAlgorithm(HashAlgorithm::NOT_SET),
-    m_hashAlgorithmHasBeenSet(false),
-    m_privateKeyAttributesHasBeenSet(false),
-    m_privateKeyFlagsHasBeenSet(false),
-    m_subjectNameFlagsHasBeenSet(false),
-    m_supersededTemplatesHasBeenSet(false)
-{
-}
-
 TemplateV3::TemplateV3(JsonView jsonValue)
-  : TemplateV3()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ TemplateV3& TemplateV3::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateValidity"))
   {
     m_certificateValidity = jsonValue.GetObject("CertificateValidity");
-
     m_certificateValidityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnrollmentFlags"))
   {
     m_enrollmentFlags = jsonValue.GetObject("EnrollmentFlags");
-
     m_enrollmentFlagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Extensions"))
   {
     m_extensions = jsonValue.GetObject("Extensions");
-
     m_extensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneralFlags"))
   {
     m_generalFlags = jsonValue.GetObject("GeneralFlags");
-
     m_generalFlagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HashAlgorithm"))
   {
     m_hashAlgorithm = HashAlgorithmMapper::GetHashAlgorithmForName(jsonValue.GetString("HashAlgorithm"));
-
     m_hashAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateKeyAttributes"))
   {
     m_privateKeyAttributes = jsonValue.GetObject("PrivateKeyAttributes");
-
     m_privateKeyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateKeyFlags"))
   {
     m_privateKeyFlags = jsonValue.GetObject("PrivateKeyFlags");
-
     m_privateKeyFlagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectNameFlags"))
   {
     m_subjectNameFlags = jsonValue.GetObject("SubjectNameFlags");
-
     m_subjectNameFlagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupersededTemplates"))
   {
     Aws::Utils::Array<JsonView> supersededTemplatesJsonList = jsonValue.GetArray("SupersededTemplates");
@@ -105,7 +74,6 @@ TemplateV3& TemplateV3::operator =(JsonView jsonValue)
     }
     m_supersededTemplatesHasBeenSet = true;
   }
-
   return *this;
 }
 

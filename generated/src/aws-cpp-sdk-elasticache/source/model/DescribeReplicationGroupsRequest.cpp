@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeReplicationGroupsRequest::DescribeReplicationGroupsRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReplicationGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

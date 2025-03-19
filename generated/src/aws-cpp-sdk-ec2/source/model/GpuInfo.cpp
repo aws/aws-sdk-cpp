@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-GpuInfo::GpuInfo() : 
-    m_gpusHasBeenSet(false),
-    m_totalGpuMemoryInMiB(0),
-    m_totalGpuMemoryInMiBHasBeenSet(false)
-{
-}
-
 GpuInfo::GpuInfo(const XmlNode& xmlNode)
-  : GpuInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ GpuInfo& GpuInfo::operator =(const XmlNode& xmlNode)
     if(!gpusNode.IsNull())
     {
       XmlNode gpusMember = gpusNode.FirstChild("item");
+      m_gpusHasBeenSet = !gpusMember.IsNull();
       while(!gpusMember.IsNull())
       {
         m_gpus.push_back(gpusMember);

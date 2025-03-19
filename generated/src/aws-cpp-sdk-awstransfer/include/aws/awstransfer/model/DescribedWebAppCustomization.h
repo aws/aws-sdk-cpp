@@ -34,7 +34,7 @@ namespace Model
   class DescribedWebAppCustomization
   {
   public:
-    AWS_TRANSFER_API DescribedWebAppCustomization();
+    AWS_TRANSFER_API DescribedWebAppCustomization() = default;
     AWS_TRANSFER_API DescribedWebAppCustomization(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedWebAppCustomization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,66 +44,60 @@ namespace Model
     /**
      * <p>Returns the Amazon Resource Name (ARN) for the web app.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribedWebAppCustomization& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribedWebAppCustomization& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribedWebAppCustomization& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribedWebAppCustomization& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the unique identifier for your web app.</p>
      */
-    inline const Aws::String& GetWebAppId() const{ return m_webAppId; }
+    inline const Aws::String& GetWebAppId() const { return m_webAppId; }
     inline bool WebAppIdHasBeenSet() const { return m_webAppIdHasBeenSet; }
-    inline void SetWebAppId(const Aws::String& value) { m_webAppIdHasBeenSet = true; m_webAppId = value; }
-    inline void SetWebAppId(Aws::String&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::move(value); }
-    inline void SetWebAppId(const char* value) { m_webAppIdHasBeenSet = true; m_webAppId.assign(value); }
-    inline DescribedWebAppCustomization& WithWebAppId(const Aws::String& value) { SetWebAppId(value); return *this;}
-    inline DescribedWebAppCustomization& WithWebAppId(Aws::String&& value) { SetWebAppId(std::move(value)); return *this;}
-    inline DescribedWebAppCustomization& WithWebAppId(const char* value) { SetWebAppId(value); return *this;}
+    template<typename WebAppIdT = Aws::String>
+    void SetWebAppId(WebAppIdT&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::forward<WebAppIdT>(value); }
+    template<typename WebAppIdT = Aws::String>
+    DescribedWebAppCustomization& WithWebAppId(WebAppIdT&& value) { SetWebAppId(std::forward<WebAppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the page title that you defined for your web app.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline DescribedWebAppCustomization& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline DescribedWebAppCustomization& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline DescribedWebAppCustomization& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    DescribedWebAppCustomization& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a logo file data string (in base64 encoding).</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetLogoFile() const{ return m_logoFile; }
+    inline const Aws::Utils::CryptoBuffer& GetLogoFile() const { return m_logoFile; }
     inline bool LogoFileHasBeenSet() const { return m_logoFileHasBeenSet; }
-    inline void SetLogoFile(const Aws::Utils::CryptoBuffer& value) { m_logoFileHasBeenSet = true; m_logoFile = value; }
-    inline void SetLogoFile(Aws::Utils::CryptoBuffer&& value) { m_logoFileHasBeenSet = true; m_logoFile = std::move(value); }
-    inline DescribedWebAppCustomization& WithLogoFile(const Aws::Utils::CryptoBuffer& value) { SetLogoFile(value); return *this;}
-    inline DescribedWebAppCustomization& WithLogoFile(Aws::Utils::CryptoBuffer&& value) { SetLogoFile(std::move(value)); return *this;}
+    template<typename LogoFileT = Aws::Utils::CryptoBuffer>
+    void SetLogoFile(LogoFileT&& value) { m_logoFileHasBeenSet = true; m_logoFile = std::forward<LogoFileT>(value); }
+    template<typename LogoFileT = Aws::Utils::CryptoBuffer>
+    DescribedWebAppCustomization& WithLogoFile(LogoFileT&& value) { SetLogoFile(std::forward<LogoFileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a icon file data string (in base64 encoding).</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetFaviconFile() const{ return m_faviconFile; }
+    inline const Aws::Utils::CryptoBuffer& GetFaviconFile() const { return m_faviconFile; }
     inline bool FaviconFileHasBeenSet() const { return m_faviconFileHasBeenSet; }
-    inline void SetFaviconFile(const Aws::Utils::CryptoBuffer& value) { m_faviconFileHasBeenSet = true; m_faviconFile = value; }
-    inline void SetFaviconFile(Aws::Utils::CryptoBuffer&& value) { m_faviconFileHasBeenSet = true; m_faviconFile = std::move(value); }
-    inline DescribedWebAppCustomization& WithFaviconFile(const Aws::Utils::CryptoBuffer& value) { SetFaviconFile(value); return *this;}
-    inline DescribedWebAppCustomization& WithFaviconFile(Aws::Utils::CryptoBuffer&& value) { SetFaviconFile(std::move(value)); return *this;}
+    template<typename FaviconFileT = Aws::Utils::CryptoBuffer>
+    void SetFaviconFile(FaviconFileT&& value) { m_faviconFileHasBeenSet = true; m_faviconFile = std::forward<FaviconFileT>(value); }
+    template<typename FaviconFileT = Aws::Utils::CryptoBuffer>
+    DescribedWebAppCustomization& WithFaviconFile(FaviconFileT&& value) { SetFaviconFile(std::forward<FaviconFileT>(value)); return *this;}
     ///@}
   private:
 
@@ -116,10 +110,10 @@ namespace Model
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_logoFile;
+    Aws::Utils::CryptoBuffer m_logoFile{};
     bool m_logoFileHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_faviconFile;
+    Aws::Utils::CryptoBuffer m_faviconFile{};
     bool m_faviconFileHasBeenSet = false;
   };
 

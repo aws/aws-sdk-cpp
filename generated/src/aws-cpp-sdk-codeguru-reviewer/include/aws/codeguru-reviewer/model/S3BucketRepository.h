@@ -34,7 +34,7 @@ namespace Model
   class S3BucketRepository
   {
   public:
-    AWS_CODEGURUREVIEWER_API S3BucketRepository();
+    AWS_CODEGURUREVIEWER_API S3BucketRepository() = default;
     AWS_CODEGURUREVIEWER_API S3BucketRepository(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API S3BucketRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the repository when the <code>ProviderType</code> is
      * <code>S3Bucket</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3BucketRepository& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3BucketRepository& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3BucketRepository& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3BucketRepository& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * object includes the S3 object keys for a source code .zip file and for a build
      * artifacts .zip file.</p>
      */
-    inline const S3RepositoryDetails& GetDetails() const{ return m_details; }
+    inline const S3RepositoryDetails& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const S3RepositoryDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(S3RepositoryDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline S3BucketRepository& WithDetails(const S3RepositoryDetails& value) { SetDetails(value); return *this;}
-    inline S3BucketRepository& WithDetails(S3RepositoryDetails&& value) { SetDetails(std::move(value)); return *this;}
+    template<typename DetailsT = S3RepositoryDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = S3RepositoryDetails>
+    S3BucketRepository& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

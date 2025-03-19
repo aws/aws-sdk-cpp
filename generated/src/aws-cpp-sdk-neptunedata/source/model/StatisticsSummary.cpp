@@ -18,18 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-StatisticsSummary::StatisticsSummary() : 
-    m_signatureCount(0),
-    m_signatureCountHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_predicateCount(0),
-    m_predicateCountHasBeenSet(false)
-{
-}
-
 StatisticsSummary::StatisticsSummary(JsonView jsonValue)
-  : StatisticsSummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ StatisticsSummary& StatisticsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("signatureCount"))
   {
     m_signatureCount = jsonValue.GetInteger("signatureCount");
-
     m_signatureCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predicateCount"))
   {
     m_predicateCount = jsonValue.GetInteger("predicateCount");
-
     m_predicateCountHasBeenSet = true;
   }
-
   return *this;
 }
 

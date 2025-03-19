@@ -18,19 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InferenceEventSummary::InferenceEventSummary() : 
-    m_inferenceSchedulerArnHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_eventStartTimeHasBeenSet(false),
-    m_eventEndTimeHasBeenSet(false),
-    m_diagnosticsHasBeenSet(false),
-    m_eventDurationInSeconds(0),
-    m_eventDurationInSecondsHasBeenSet(false)
-{
-}
-
 InferenceEventSummary::InferenceEventSummary(JsonView jsonValue)
-  : InferenceEventSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ InferenceEventSummary& InferenceEventSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InferenceSchedulerArn"))
   {
     m_inferenceSchedulerArn = jsonValue.GetString("InferenceSchedulerArn");
-
     m_inferenceSchedulerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerName"))
   {
     m_inferenceSchedulerName = jsonValue.GetString("InferenceSchedulerName");
-
     m_inferenceSchedulerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventStartTime"))
   {
     m_eventStartTime = jsonValue.GetDouble("EventStartTime");
-
     m_eventStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventEndTime"))
   {
     m_eventEndTime = jsonValue.GetDouble("EventEndTime");
-
     m_eventEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Diagnostics"))
   {
     m_diagnostics = jsonValue.GetString("Diagnostics");
-
     m_diagnosticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDurationInSeconds"))
   {
     m_eventDurationInSeconds = jsonValue.GetInt64("EventDurationInSeconds");
-
     m_eventDurationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

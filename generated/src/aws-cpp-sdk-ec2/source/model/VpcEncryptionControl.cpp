@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEncryptionControl::VpcEncryptionControl() : 
-    m_vpcIdHasBeenSet(false),
-    m_vpcEncryptionControlIdHasBeenSet(false),
-    m_mode(VpcEncryptionControlMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_state(VpcEncryptionControlState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_resourceExclusionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VpcEncryptionControl::VpcEncryptionControl(const XmlNode& xmlNode)
-  : VpcEncryptionControl()
 {
   *this = xmlNode;
 }
@@ -60,13 +46,13 @@ VpcEncryptionControl& VpcEncryptionControl::operator =(const XmlNode& xmlNode)
     XmlNode modeNode = resultNode.FirstChild("mode");
     if(!modeNode.IsNull())
     {
-      m_mode = VpcEncryptionControlModeMapper::GetVpcEncryptionControlModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = VpcEncryptionControlModeMapper::GetVpcEncryptionControlModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcEncryptionControlStateMapper::GetVpcEncryptionControlStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcEncryptionControlStateMapper::GetVpcEncryptionControlStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
@@ -85,6 +71,7 @@ VpcEncryptionControl& VpcEncryptionControl::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

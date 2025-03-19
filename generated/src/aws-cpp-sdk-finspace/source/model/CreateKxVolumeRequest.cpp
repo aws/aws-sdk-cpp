@@ -12,22 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKxVolumeRequest::CreateKxVolumeRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_environmentIdHasBeenSet(false),
-    m_volumeType(KxVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_volumeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nas1ConfigurationHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateKxVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListReceiptFiltersResult::ListReceiptFiltersResult()
-{
-}
-
 ListReceiptFiltersResult::ListReceiptFiltersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ ListReceiptFiltersResult& ListReceiptFiltersResult::operator =(const Aws::Amazon
     if(!filtersNode.IsNull())
     {
       XmlNode filtersMember = filtersNode.FirstChild("member");
+      m_filtersHasBeenSet = !filtersMember.IsNull();
       while(!filtersMember.IsNull())
       {
         m_filters.push_back(filtersMember);
         filtersMember = filtersMember.NextNode("member");
       }
 
+      m_filtersHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::ListReceiptFiltersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

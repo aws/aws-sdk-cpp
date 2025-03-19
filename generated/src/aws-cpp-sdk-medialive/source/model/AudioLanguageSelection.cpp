@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioLanguageSelection::AudioLanguageSelection() : 
-    m_languageCodeHasBeenSet(false),
-    m_languageSelectionPolicy(AudioLanguageSelectionPolicy::NOT_SET),
-    m_languageSelectionPolicyHasBeenSet(false)
-{
-}
-
 AudioLanguageSelection::AudioLanguageSelection(JsonView jsonValue)
-  : AudioLanguageSelection()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AudioLanguageSelection& AudioLanguageSelection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageSelectionPolicy"))
   {
     m_languageSelectionPolicy = AudioLanguageSelectionPolicyMapper::GetAudioLanguageSelectionPolicyForName(jsonValue.GetString("languageSelectionPolicy"));
-
     m_languageSelectionPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

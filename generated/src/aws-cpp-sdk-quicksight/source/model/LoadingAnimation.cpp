@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LoadingAnimation::LoadingAnimation() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 LoadingAnimation::LoadingAnimation(JsonView jsonValue)
-  : LoadingAnimation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LoadingAnimation& LoadingAnimation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

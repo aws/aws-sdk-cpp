@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociatePermissionRequest::DisassociatePermissionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociatePermissionRequest::SerializePayload() const
 {
   return {};

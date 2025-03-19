@@ -28,7 +28,7 @@ namespace Model
   class CreateAwsLogSourceResult
   {
   public:
-    AWS_SECURITYLAKE_API CreateAwsLogSourceResult();
+    AWS_SECURITYLAKE_API CreateAwsLogSourceResult() = default;
     AWS_SECURITYLAKE_API CreateAwsLogSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYLAKE_API CreateAwsLogSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,31 +39,30 @@ namespace Model
      * service as a Security Lake source failed. The failure occurred as these accounts
      * are not part of an organization.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailed() const{ return m_failed; }
-    inline void SetFailed(const Aws::Vector<Aws::String>& value) { m_failed = value; }
-    inline void SetFailed(Aws::Vector<Aws::String>&& value) { m_failed = std::move(value); }
-    inline CreateAwsLogSourceResult& WithFailed(const Aws::Vector<Aws::String>& value) { SetFailed(value); return *this;}
-    inline CreateAwsLogSourceResult& WithFailed(Aws::Vector<Aws::String>&& value) { SetFailed(std::move(value)); return *this;}
-    inline CreateAwsLogSourceResult& AddFailed(const Aws::String& value) { m_failed.push_back(value); return *this; }
-    inline CreateAwsLogSourceResult& AddFailed(Aws::String&& value) { m_failed.push_back(std::move(value)); return *this; }
-    inline CreateAwsLogSourceResult& AddFailed(const char* value) { m_failed.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFailed() const { return m_failed; }
+    template<typename FailedT = Aws::Vector<Aws::String>>
+    void SetFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed = std::forward<FailedT>(value); }
+    template<typename FailedT = Aws::Vector<Aws::String>>
+    CreateAwsLogSourceResult& WithFailed(FailedT&& value) { SetFailed(std::forward<FailedT>(value)); return *this;}
+    template<typename FailedT = Aws::String>
+    CreateAwsLogSourceResult& AddFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed.emplace_back(std::forward<FailedT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAwsLogSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAwsLogSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAwsLogSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAwsLogSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_failed;
+    bool m_failedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

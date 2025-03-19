@@ -21,7 +21,7 @@ namespace Model
   class DescribeConnectionTypeRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API DescribeConnectionTypeRequest();
+    AWS_GLUE_API DescribeConnectionTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the connection type to be described.</p>
      */
-    inline const Aws::String& GetConnectionType() const{ return m_connectionType; }
+    inline const Aws::String& GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const Aws::String& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(Aws::String&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline void SetConnectionType(const char* value) { m_connectionTypeHasBeenSet = true; m_connectionType.assign(value); }
-    inline DescribeConnectionTypeRequest& WithConnectionType(const Aws::String& value) { SetConnectionType(value); return *this;}
-    inline DescribeConnectionTypeRequest& WithConnectionType(Aws::String&& value) { SetConnectionType(std::move(value)); return *this;}
-    inline DescribeConnectionTypeRequest& WithConnectionType(const char* value) { SetConnectionType(value); return *this;}
+    template<typename ConnectionTypeT = Aws::String>
+    void SetConnectionType(ConnectionTypeT&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::forward<ConnectionTypeT>(value); }
+    template<typename ConnectionTypeT = Aws::String>
+    DescribeConnectionTypeRequest& WithConnectionType(ConnectionTypeT&& value) { SetConnectionType(std::forward<ConnectionTypeT>(value)); return *this;}
     ///@}
   private:
 

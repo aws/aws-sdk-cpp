@@ -18,15 +18,7 @@ namespace PI
 namespace Model
 {
 
-ResponseResourceMetric::ResponseResourceMetric() : 
-    m_metricHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 ResponseResourceMetric::ResponseResourceMetric(JsonView jsonValue)
-  : ResponseResourceMetric()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResponseResourceMetric& ResponseResourceMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Metric"))
   {
     m_metric = jsonValue.GetString("Metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

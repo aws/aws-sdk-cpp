@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ResourceAlreadyExistsFault::ResourceAlreadyExistsFault() : 
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ResourceAlreadyExistsFault::ResourceAlreadyExistsFault(JsonView jsonValue)
-  : ResourceAlreadyExistsFault()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceAlreadyExistsFault& ResourceAlreadyExistsFault::operator =(JsonView json
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

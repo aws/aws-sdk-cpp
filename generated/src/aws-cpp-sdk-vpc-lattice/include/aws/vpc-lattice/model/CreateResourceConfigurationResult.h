@@ -33,7 +33,7 @@ namespace Model
   class CreateResourceConfigurationResult
   {
   public:
-    AWS_VPCLATTICE_API CreateResourceConfigurationResult();
+    AWS_VPCLATTICE_API CreateResourceConfigurationResult() = default;
     AWS_VPCLATTICE_API CreateResourceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API CreateResourceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,8 +43,8 @@ namespace Model
      * <p>Specifies whether the resource configuration can be associated with a
      * sharable service network.</p>
      */
-    inline bool GetAllowAssociationToShareableServiceNetwork() const{ return m_allowAssociationToShareableServiceNetwork; }
-    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetwork = value; }
+    inline bool GetAllowAssociationToShareableServiceNetwork() const { return m_allowAssociationToShareableServiceNetwork; }
+    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetworkHasBeenSet = true; m_allowAssociationToShareableServiceNetwork = value; }
     inline CreateResourceConfigurationResult& WithAllowAssociationToShareableServiceNetwork(bool value) { SetAllowAssociationToShareableServiceNetwork(value); return *this;}
     ///@}
 
@@ -52,13 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateResourceConfigurationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateResourceConfigurationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateResourceConfigurationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,99 +64,88 @@ namespace Model
      * <p>The date and time that the resource configuration was created, in ISO-8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateResourceConfigurationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateResourceConfigurationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateResourceConfigurationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason that the request failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline CreateResourceConfigurationResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline CreateResourceConfigurationResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    CreateResourceConfigurationResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateResourceConfigurationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateResourceConfigurationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateResourceConfigurationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateResourceConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateResourceConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateResourceConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port range.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPortRanges() const{ return m_portRanges; }
-    inline void SetPortRanges(const Aws::Vector<Aws::String>& value) { m_portRanges = value; }
-    inline void SetPortRanges(Aws::Vector<Aws::String>&& value) { m_portRanges = std::move(value); }
-    inline CreateResourceConfigurationResult& WithPortRanges(const Aws::Vector<Aws::String>& value) { SetPortRanges(value); return *this;}
-    inline CreateResourceConfigurationResult& WithPortRanges(Aws::Vector<Aws::String>&& value) { SetPortRanges(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& AddPortRanges(const Aws::String& value) { m_portRanges.push_back(value); return *this; }
-    inline CreateResourceConfigurationResult& AddPortRanges(Aws::String&& value) { m_portRanges.push_back(std::move(value)); return *this; }
-    inline CreateResourceConfigurationResult& AddPortRanges(const char* value) { m_portRanges.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPortRanges() const { return m_portRanges; }
+    template<typename PortRangesT = Aws::Vector<Aws::String>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<Aws::String>>
+    CreateResourceConfigurationResult& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = Aws::String>
+    CreateResourceConfigurationResult& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The protocol.</p>
      */
-    inline const ProtocolType& GetProtocol() const{ return m_protocol; }
-    inline void SetProtocol(const ProtocolType& value) { m_protocol = value; }
-    inline void SetProtocol(ProtocolType&& value) { m_protocol = std::move(value); }
-    inline CreateResourceConfigurationResult& WithProtocol(const ProtocolType& value) { SetProtocol(value); return *this;}
-    inline CreateResourceConfigurationResult& WithProtocol(ProtocolType&& value) { SetProtocol(std::move(value)); return *this;}
+    inline ProtocolType GetProtocol() const { return m_protocol; }
+    inline void SetProtocol(ProtocolType value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline CreateResourceConfigurationResult& WithProtocol(ProtocolType value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource configuration.</p>
      */
-    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const{ return m_resourceConfigurationDefinition; }
-    inline void SetResourceConfigurationDefinition(const ResourceConfigurationDefinition& value) { m_resourceConfigurationDefinition = value; }
-    inline void SetResourceConfigurationDefinition(ResourceConfigurationDefinition&& value) { m_resourceConfigurationDefinition = std::move(value); }
-    inline CreateResourceConfigurationResult& WithResourceConfigurationDefinition(const ResourceConfigurationDefinition& value) { SetResourceConfigurationDefinition(value); return *this;}
-    inline CreateResourceConfigurationResult& WithResourceConfigurationDefinition(ResourceConfigurationDefinition&& value) { SetResourceConfigurationDefinition(std::move(value)); return *this;}
+    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    CreateResourceConfigurationResult& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the parent resource configuration (type is GROUP).</p>
      */
-    inline const Aws::String& GetResourceConfigurationGroupId() const{ return m_resourceConfigurationGroupId; }
-    inline void SetResourceConfigurationGroupId(const Aws::String& value) { m_resourceConfigurationGroupId = value; }
-    inline void SetResourceConfigurationGroupId(Aws::String&& value) { m_resourceConfigurationGroupId = std::move(value); }
-    inline void SetResourceConfigurationGroupId(const char* value) { m_resourceConfigurationGroupId.assign(value); }
-    inline CreateResourceConfigurationResult& WithResourceConfigurationGroupId(const Aws::String& value) { SetResourceConfigurationGroupId(value); return *this;}
-    inline CreateResourceConfigurationResult& WithResourceConfigurationGroupId(Aws::String&& value) { SetResourceConfigurationGroupId(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithResourceConfigurationGroupId(const char* value) { SetResourceConfigurationGroupId(value); return *this;}
+    inline const Aws::String& GetResourceConfigurationGroupId() const { return m_resourceConfigurationGroupId; }
+    template<typename ResourceConfigurationGroupIdT = Aws::String>
+    void SetResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { m_resourceConfigurationGroupIdHasBeenSet = true; m_resourceConfigurationGroupId = std::forward<ResourceConfigurationGroupIdT>(value); }
+    template<typename ResourceConfigurationGroupIdT = Aws::String>
+    CreateResourceConfigurationResult& WithResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { SetResourceConfigurationGroupId(std::forward<ResourceConfigurationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,76 +153,82 @@ namespace Model
      * <p>The ID of the resource gateway associated with the resource
      * configuration.</p>
      */
-    inline const Aws::String& GetResourceGatewayId() const{ return m_resourceGatewayId; }
-    inline void SetResourceGatewayId(const Aws::String& value) { m_resourceGatewayId = value; }
-    inline void SetResourceGatewayId(Aws::String&& value) { m_resourceGatewayId = std::move(value); }
-    inline void SetResourceGatewayId(const char* value) { m_resourceGatewayId.assign(value); }
-    inline CreateResourceConfigurationResult& WithResourceGatewayId(const Aws::String& value) { SetResourceGatewayId(value); return *this;}
-    inline CreateResourceConfigurationResult& WithResourceGatewayId(Aws::String&& value) { SetResourceGatewayId(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithResourceGatewayId(const char* value) { SetResourceGatewayId(value); return *this;}
+    inline const Aws::String& GetResourceGatewayId() const { return m_resourceGatewayId; }
+    template<typename ResourceGatewayIdT = Aws::String>
+    void SetResourceGatewayId(ResourceGatewayIdT&& value) { m_resourceGatewayIdHasBeenSet = true; m_resourceGatewayId = std::forward<ResourceGatewayIdT>(value); }
+    template<typename ResourceGatewayIdT = Aws::String>
+    CreateResourceConfigurationResult& WithResourceGatewayId(ResourceGatewayIdT&& value) { SetResourceGatewayId(std::forward<ResourceGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the resource configuration.</p>
      */
-    inline const ResourceConfigurationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ResourceConfigurationStatus& value) { m_status = value; }
-    inline void SetStatus(ResourceConfigurationStatus&& value) { m_status = std::move(value); }
-    inline CreateResourceConfigurationResult& WithStatus(const ResourceConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline CreateResourceConfigurationResult& WithStatus(ResourceConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ResourceConfigurationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ResourceConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateResourceConfigurationResult& WithStatus(ResourceConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource configuration.</p>
      */
-    inline const ResourceConfigurationType& GetType() const{ return m_type; }
-    inline void SetType(const ResourceConfigurationType& value) { m_type = value; }
-    inline void SetType(ResourceConfigurationType&& value) { m_type = std::move(value); }
-    inline CreateResourceConfigurationResult& WithType(const ResourceConfigurationType& value) { SetType(value); return *this;}
-    inline CreateResourceConfigurationResult& WithType(ResourceConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline ResourceConfigurationType GetType() const { return m_type; }
+    inline void SetType(ResourceConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateResourceConfigurationResult& WithType(ResourceConfigurationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allowAssociationToShareableServiceNetwork;
+    bool m_allowAssociationToShareableServiceNetwork{false};
+    bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_portRanges;
+    bool m_portRangesHasBeenSet = false;
 
-    ProtocolType m_protocol;
+    ProtocolType m_protocol{ProtocolType::NOT_SET};
+    bool m_protocolHasBeenSet = false;
 
     ResourceConfigurationDefinition m_resourceConfigurationDefinition;
+    bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
     Aws::String m_resourceConfigurationGroupId;
+    bool m_resourceConfigurationGroupIdHasBeenSet = false;
 
     Aws::String m_resourceGatewayId;
+    bool m_resourceGatewayIdHasBeenSet = false;
 
-    ResourceConfigurationStatus m_status;
+    ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    ResourceConfigurationType m_type;
+    ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

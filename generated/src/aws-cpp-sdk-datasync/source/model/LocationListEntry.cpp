@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-LocationListEntry::LocationListEntry() : 
-    m_locationArnHasBeenSet(false),
-    m_locationUriHasBeenSet(false)
-{
-}
-
 LocationListEntry::LocationListEntry(JsonView jsonValue)
-  : LocationListEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LocationListEntry& LocationListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
     m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
     m_locationUriHasBeenSet = true;
   }
-
   return *this;
 }
 

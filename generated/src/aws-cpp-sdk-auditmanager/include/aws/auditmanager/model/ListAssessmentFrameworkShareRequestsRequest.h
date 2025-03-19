@@ -26,7 +26,7 @@ namespace Model
   class ListAssessmentFrameworkShareRequestsRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API ListAssessmentFrameworkShareRequestsRequest();
+    AWS_AUDITMANAGER_API ListAssessmentFrameworkShareRequestsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,22 @@ namespace Model
      * <p> Specifies whether the share request is a sent request or a received
      * request.</p>
      */
-    inline const ShareRequestType& GetRequestType() const{ return m_requestType; }
+    inline ShareRequestType GetRequestType() const { return m_requestType; }
     inline bool RequestTypeHasBeenSet() const { return m_requestTypeHasBeenSet; }
-    inline void SetRequestType(const ShareRequestType& value) { m_requestTypeHasBeenSet = true; m_requestType = value; }
-    inline void SetRequestType(ShareRequestType&& value) { m_requestTypeHasBeenSet = true; m_requestType = std::move(value); }
-    inline ListAssessmentFrameworkShareRequestsRequest& WithRequestType(const ShareRequestType& value) { SetRequestType(value); return *this;}
-    inline ListAssessmentFrameworkShareRequestsRequest& WithRequestType(ShareRequestType&& value) { SetRequestType(std::move(value)); return *this;}
+    inline void SetRequestType(ShareRequestType value) { m_requestTypeHasBeenSet = true; m_requestType = value; }
+    inline ListAssessmentFrameworkShareRequestsRequest& WithRequestType(ShareRequestType value) { SetRequestType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssessmentFrameworkShareRequestsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssessmentFrameworkShareRequestsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssessmentFrameworkShareRequestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssessmentFrameworkShareRequestsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,20 +67,20 @@ namespace Model
      * <p> Represents the maximum number of results on a page or for an API request
      * call. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssessmentFrameworkShareRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    ShareRequestType m_requestType;
+    ShareRequestType m_requestType{ShareRequestType::NOT_SET};
     bool m_requestTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

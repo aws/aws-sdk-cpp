@@ -28,7 +28,7 @@ namespace Model
   class UpdateRealtimeLogConfig2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API UpdateRealtimeLogConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API UpdateRealtimeLogConfig2020_05_31Result() = default;
     AWS_CLOUDFRONT_API UpdateRealtimeLogConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API UpdateRealtimeLogConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A real-time log configuration.</p>
      */
-    inline const RealtimeLogConfig& GetRealtimeLogConfig() const{ return m_realtimeLogConfig; }
-    inline void SetRealtimeLogConfig(const RealtimeLogConfig& value) { m_realtimeLogConfig = value; }
-    inline void SetRealtimeLogConfig(RealtimeLogConfig&& value) { m_realtimeLogConfig = std::move(value); }
-    inline UpdateRealtimeLogConfig2020_05_31Result& WithRealtimeLogConfig(const RealtimeLogConfig& value) { SetRealtimeLogConfig(value); return *this;}
-    inline UpdateRealtimeLogConfig2020_05_31Result& WithRealtimeLogConfig(RealtimeLogConfig&& value) { SetRealtimeLogConfig(std::move(value)); return *this;}
+    inline const RealtimeLogConfig& GetRealtimeLogConfig() const { return m_realtimeLogConfig; }
+    template<typename RealtimeLogConfigT = RealtimeLogConfig>
+    void SetRealtimeLogConfig(RealtimeLogConfigT&& value) { m_realtimeLogConfigHasBeenSet = true; m_realtimeLogConfig = std::forward<RealtimeLogConfigT>(value); }
+    template<typename RealtimeLogConfigT = RealtimeLogConfig>
+    UpdateRealtimeLogConfig2020_05_31Result& WithRealtimeLogConfig(RealtimeLogConfigT&& value) { SetRealtimeLogConfig(std::forward<RealtimeLogConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRealtimeLogConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRealtimeLogConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRealtimeLogConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRealtimeLogConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RealtimeLogConfig m_realtimeLogConfig;
+    bool m_realtimeLogConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

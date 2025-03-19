@@ -31,7 +31,7 @@ namespace Model
   class SetTimerAction
   {
   public:
-    AWS_IOTEVENTS_API SetTimerAction();
+    AWS_IOTEVENTS_API SetTimerAction() = default;
     AWS_IOTEVENTS_API SetTimerAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API SetTimerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the timer.</p>
      */
-    inline const Aws::String& GetTimerName() const{ return m_timerName; }
+    inline const Aws::String& GetTimerName() const { return m_timerName; }
     inline bool TimerNameHasBeenSet() const { return m_timerNameHasBeenSet; }
-    inline void SetTimerName(const Aws::String& value) { m_timerNameHasBeenSet = true; m_timerName = value; }
-    inline void SetTimerName(Aws::String&& value) { m_timerNameHasBeenSet = true; m_timerName = std::move(value); }
-    inline void SetTimerName(const char* value) { m_timerNameHasBeenSet = true; m_timerName.assign(value); }
-    inline SetTimerAction& WithTimerName(const Aws::String& value) { SetTimerName(value); return *this;}
-    inline SetTimerAction& WithTimerName(Aws::String&& value) { SetTimerName(std::move(value)); return *this;}
-    inline SetTimerAction& WithTimerName(const char* value) { SetTimerName(value); return *this;}
+    template<typename TimerNameT = Aws::String>
+    void SetTimerName(TimerNameT&& value) { m_timerNameHasBeenSet = true; m_timerName = std::forward<TimerNameT>(value); }
+    template<typename TimerNameT = Aws::String>
+    SetTimerAction& WithTimerName(TimerNameT&& value) { SetTimerName(std::forward<TimerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * accuracy, the minimum duration is 60 seconds. The evaluated result of the
      * duration is rounded down to the nearest whole number. </p>
      */
-    inline const Aws::String& GetDurationExpression() const{ return m_durationExpression; }
+    inline const Aws::String& GetDurationExpression() const { return m_durationExpression; }
     inline bool DurationExpressionHasBeenSet() const { return m_durationExpressionHasBeenSet; }
-    inline void SetDurationExpression(const Aws::String& value) { m_durationExpressionHasBeenSet = true; m_durationExpression = value; }
-    inline void SetDurationExpression(Aws::String&& value) { m_durationExpressionHasBeenSet = true; m_durationExpression = std::move(value); }
-    inline void SetDurationExpression(const char* value) { m_durationExpressionHasBeenSet = true; m_durationExpression.assign(value); }
-    inline SetTimerAction& WithDurationExpression(const Aws::String& value) { SetDurationExpression(value); return *this;}
-    inline SetTimerAction& WithDurationExpression(Aws::String&& value) { SetDurationExpression(std::move(value)); return *this;}
-    inline SetTimerAction& WithDurationExpression(const char* value) { SetDurationExpression(value); return *this;}
+    template<typename DurationExpressionT = Aws::String>
+    void SetDurationExpression(DurationExpressionT&& value) { m_durationExpressionHasBeenSet = true; m_durationExpression = std::forward<DurationExpressionT>(value); }
+    template<typename DurationExpressionT = Aws::String>
+    SetTimerAction& WithDurationExpression(DurationExpressionT&& value) { SetDurationExpression(std::forward<DurationExpressionT>(value)); return *this;}
     ///@}
   private:
 

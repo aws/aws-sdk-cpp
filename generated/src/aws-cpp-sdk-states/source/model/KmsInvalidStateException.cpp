@@ -18,15 +18,7 @@ namespace SFN
 namespace Model
 {
 
-KmsInvalidStateException::KmsInvalidStateException() : 
-    m_kmsKeyState(KmsKeyState::NOT_SET),
-    m_kmsKeyStateHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 KmsInvalidStateException::KmsInvalidStateException(JsonView jsonValue)
-  : KmsInvalidStateException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KmsInvalidStateException& KmsInvalidStateException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("kmsKeyState"))
   {
     m_kmsKeyState = KmsKeyStateMapper::GetKmsKeyStateForName(jsonValue.GetString("kmsKeyState"));
-
     m_kmsKeyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

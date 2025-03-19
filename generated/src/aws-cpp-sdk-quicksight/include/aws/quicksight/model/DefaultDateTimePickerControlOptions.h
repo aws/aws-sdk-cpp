@@ -34,7 +34,7 @@ namespace Model
   class DefaultDateTimePickerControlOptions
   {
   public:
-    AWS_QUICKSIGHT_API DefaultDateTimePickerControlOptions();
+    AWS_QUICKSIGHT_API DefaultDateTimePickerControlOptions() = default;
     AWS_QUICKSIGHT_API DefaultDateTimePickerControlOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultDateTimePickerControlOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,24 +48,22 @@ namespace Model
      * fixed date.</p> </li> <li> <p> <code>DATE_RANGE</code>: The filter condition is
      * a date time range.</p> </li> </ul>
      */
-    inline const SheetControlDateTimePickerType& GetType() const{ return m_type; }
+    inline SheetControlDateTimePickerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SheetControlDateTimePickerType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SheetControlDateTimePickerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DefaultDateTimePickerControlOptions& WithType(const SheetControlDateTimePickerType& value) { SetType(value); return *this;}
-    inline DefaultDateTimePickerControlOptions& WithType(SheetControlDateTimePickerType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SheetControlDateTimePickerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DefaultDateTimePickerControlOptions& WithType(SheetControlDateTimePickerType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display options of a control.</p>
      */
-    inline const DateTimePickerControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const DateTimePickerControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const DateTimePickerControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(DateTimePickerControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline DefaultDateTimePickerControlOptions& WithDisplayOptions(const DateTimePickerControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline DefaultDateTimePickerControlOptions& WithDisplayOptions(DateTimePickerControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = DateTimePickerControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = DateTimePickerControlDisplayOptions>
+    DefaultDateTimePickerControlOptions& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +71,20 @@ namespace Model
      * <p>The visibility configuration of the Apply button on a
      * <code>DateTimePickerControl</code>.</p>
      */
-    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline CommitMode GetCommitMode() const { return m_commitMode; }
     inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
-    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
-    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
-    inline DefaultDateTimePickerControlOptions& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
-    inline DefaultDateTimePickerControlOptions& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    inline void SetCommitMode(CommitMode value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline DefaultDateTimePickerControlOptions& WithCommitMode(CommitMode value) { SetCommitMode(value); return *this;}
     ///@}
   private:
 
-    SheetControlDateTimePickerType m_type;
+    SheetControlDateTimePickerType m_type{SheetControlDateTimePickerType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     DateTimePickerControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    CommitMode m_commitMode;
+    CommitMode m_commitMode{CommitMode::NOT_SET};
     bool m_commitModeHasBeenSet = false;
   };
 

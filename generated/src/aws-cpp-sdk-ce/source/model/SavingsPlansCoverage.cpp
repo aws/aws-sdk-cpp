@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansCoverage::SavingsPlansCoverage() : 
-    m_attributesHasBeenSet(false),
-    m_coverageHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
-{
-}
-
 SavingsPlansCoverage::SavingsPlansCoverage(JsonView jsonValue)
-  : SavingsPlansCoverage()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ SavingsPlansCoverage& SavingsPlansCoverage::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Coverage"))
   {
     m_coverage = jsonValue.GetObject("Coverage");
-
     m_coverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStudioLifecycleConfigRequest::DeleteStudioLifecycleConfigRequest() : 
-    m_studioLifecycleConfigNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStudioLifecycleConfigRequest::SerializePayload() const
 {
   JsonValue payload;

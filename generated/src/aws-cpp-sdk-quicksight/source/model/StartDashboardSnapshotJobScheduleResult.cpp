@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartDashboardSnapshotJobScheduleResult::StartDashboardSnapshotJobScheduleResult() : 
-    m_status(0)
-{
-}
-
 StartDashboardSnapshotJobScheduleResult::StartDashboardSnapshotJobScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartDashboardSnapshotJobScheduleResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ StartDashboardSnapshotJobScheduleResult& StartDashboardSnapshotJobScheduleResult
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

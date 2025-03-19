@@ -34,7 +34,7 @@ namespace Model
   class Parameter
   {
   public:
-    AWS_SSM_API Parameter();
+    AWS_SSM_API Parameter() = default;
     AWS_SSM_API Parameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Parameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Parameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Parameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Parameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * comma-separated string with no spaces between commas in the <code>Value</code>
      * field.</p> 
      */
-    inline const ParameterType& GetType() const{ return m_type; }
+    inline ParameterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Parameter& WithType(const ParameterType& value) { SetType(value); return *this;}
-    inline Parameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Parameter& WithType(ParameterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,21 +72,19 @@ namespace Model
      * system returns a comma-separated string with no spaces between commas in the
      * <code>Value</code> field.</p> 
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Parameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Parameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Parameter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Parameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter version.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline Parameter& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -102,14 +96,12 @@ namespace Model
      * Specify selectors by using one of the following formats:</p>
      * <p>parameter_name:version</p> <p>parameter_name:label</p>
      */
-    inline const Aws::String& GetSelector() const{ return m_selector; }
+    inline const Aws::String& GetSelector() const { return m_selector; }
     inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
-    inline void SetSelector(const Aws::String& value) { m_selectorHasBeenSet = true; m_selector = value; }
-    inline void SetSelector(Aws::String&& value) { m_selectorHasBeenSet = true; m_selector = std::move(value); }
-    inline void SetSelector(const char* value) { m_selectorHasBeenSet = true; m_selector.assign(value); }
-    inline Parameter& WithSelector(const Aws::String& value) { SetSelector(value); return *this;}
-    inline Parameter& WithSelector(Aws::String&& value) { SetSelector(std::move(value)); return *this;}
-    inline Parameter& WithSelector(const char* value) { SetSelector(value); return *this;}
+    template<typename SelectorT = Aws::String>
+    void SetSelector(SelectorT&& value) { m_selectorHasBeenSet = true; m_selector = std::forward<SelectorT>(value); }
+    template<typename SelectorT = Aws::String>
+    Parameter& WithSelector(SelectorT&& value) { SetSelector(std::forward<SelectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * services. <code>SourceResult</code> is the raw result or response from the
      * source.</p>
      */
-    inline const Aws::String& GetSourceResult() const{ return m_sourceResult; }
+    inline const Aws::String& GetSourceResult() const { return m_sourceResult; }
     inline bool SourceResultHasBeenSet() const { return m_sourceResultHasBeenSet; }
-    inline void SetSourceResult(const Aws::String& value) { m_sourceResultHasBeenSet = true; m_sourceResult = value; }
-    inline void SetSourceResult(Aws::String&& value) { m_sourceResultHasBeenSet = true; m_sourceResult = std::move(value); }
-    inline void SetSourceResult(const char* value) { m_sourceResultHasBeenSet = true; m_sourceResult.assign(value); }
-    inline Parameter& WithSourceResult(const Aws::String& value) { SetSourceResult(value); return *this;}
-    inline Parameter& WithSourceResult(Aws::String&& value) { SetSourceResult(std::move(value)); return *this;}
-    inline Parameter& WithSourceResult(const char* value) { SetSourceResult(value); return *this;}
+    template<typename SourceResultT = Aws::String>
+    void SetSourceResult(SourceResultT&& value) { m_sourceResultHasBeenSet = true; m_sourceResult = std::forward<SourceResultT>(value); }
+    template<typename SourceResultT = Aws::String>
+    Parameter& WithSourceResult(SourceResultT&& value) { SetSourceResult(std::forward<SourceResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,26 +123,24 @@ namespace Model
      * <p>Date the parameter was last changed or updated and the parameter version was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline Parameter& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline Parameter& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    Parameter& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the parameter.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline Parameter& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline Parameter& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline Parameter& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    Parameter& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,27 +148,25 @@ namespace Model
      * <p>The data type of the parameter, such as <code>text</code> or
      * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
      */
-    inline const Aws::String& GetDataType() const{ return m_dataType; }
+    inline const Aws::String& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-    inline Parameter& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-    inline Parameter& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-    inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
+    template<typename DataTypeT = Aws::String>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::String>
+    Parameter& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ParameterType m_type;
+    ParameterType m_type{ParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
 
     Aws::String m_selector;
@@ -189,7 +175,7 @@ namespace Model
     Aws::String m_sourceResult;
     bool m_sourceResultHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_aRN;

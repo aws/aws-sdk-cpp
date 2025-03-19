@@ -30,7 +30,7 @@ namespace Model
   class DescribeGlobalClustersResult
   {
   public:
-    AWS_RDS_API DescribeGlobalClustersResult();
+    AWS_RDS_API DescribeGlobalClustersResult() = default;
     AWS_RDS_API DescribeGlobalClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeGlobalClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,43 +42,44 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeGlobalClustersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeGlobalClustersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeGlobalClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeGlobalClustersResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of global clusters returned by this request.</p>
      */
-    inline const Aws::Vector<GlobalCluster>& GetGlobalClusters() const{ return m_globalClusters; }
-    inline void SetGlobalClusters(const Aws::Vector<GlobalCluster>& value) { m_globalClusters = value; }
-    inline void SetGlobalClusters(Aws::Vector<GlobalCluster>&& value) { m_globalClusters = std::move(value); }
-    inline DescribeGlobalClustersResult& WithGlobalClusters(const Aws::Vector<GlobalCluster>& value) { SetGlobalClusters(value); return *this;}
-    inline DescribeGlobalClustersResult& WithGlobalClusters(Aws::Vector<GlobalCluster>&& value) { SetGlobalClusters(std::move(value)); return *this;}
-    inline DescribeGlobalClustersResult& AddGlobalClusters(const GlobalCluster& value) { m_globalClusters.push_back(value); return *this; }
-    inline DescribeGlobalClustersResult& AddGlobalClusters(GlobalCluster&& value) { m_globalClusters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GlobalCluster>& GetGlobalClusters() const { return m_globalClusters; }
+    template<typename GlobalClustersT = Aws::Vector<GlobalCluster>>
+    void SetGlobalClusters(GlobalClustersT&& value) { m_globalClustersHasBeenSet = true; m_globalClusters = std::forward<GlobalClustersT>(value); }
+    template<typename GlobalClustersT = Aws::Vector<GlobalCluster>>
+    DescribeGlobalClustersResult& WithGlobalClusters(GlobalClustersT&& value) { SetGlobalClusters(std::forward<GlobalClustersT>(value)); return *this;}
+    template<typename GlobalClustersT = GlobalCluster>
+    DescribeGlobalClustersResult& AddGlobalClusters(GlobalClustersT&& value) { m_globalClustersHasBeenSet = true; m_globalClusters.emplace_back(std::forward<GlobalClustersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeGlobalClustersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeGlobalClustersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeGlobalClustersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<GlobalCluster> m_globalClusters;
+    bool m_globalClustersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

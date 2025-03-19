@@ -34,7 +34,7 @@ namespace Model
   class AnomalyUnusual
   {
   public:
-    AWS_GUARDDUTY_API AnomalyUnusual();
+    AWS_GUARDDUTY_API AnomalyUnusual() = default;
     AWS_GUARDDUTY_API AnomalyUnusual(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AnomalyUnusual& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,18 +45,16 @@ namespace Model
      * <p>The behavior of the anomalous activity that caused GuardDuty to generate the
      * finding.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>& GetBehavior() const{ return m_behavior; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>& GetBehavior() const { return m_behavior; }
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
-    inline void SetBehavior(const Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
-    inline void SetBehavior(Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
-    inline AnomalyUnusual& WithBehavior(const Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>& value) { SetBehavior(value); return *this;}
-    inline AnomalyUnusual& WithBehavior(Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>&& value) { SetBehavior(std::move(value)); return *this;}
-    inline AnomalyUnusual& AddBehavior(const Aws::String& key, const Aws::Map<Aws::String, AnomalyObject>& value) { m_behaviorHasBeenSet = true; m_behavior.emplace(key, value); return *this; }
-    inline AnomalyUnusual& AddBehavior(Aws::String&& key, const Aws::Map<Aws::String, AnomalyObject>& value) { m_behaviorHasBeenSet = true; m_behavior.emplace(std::move(key), value); return *this; }
-    inline AnomalyUnusual& AddBehavior(const Aws::String& key, Aws::Map<Aws::String, AnomalyObject>&& value) { m_behaviorHasBeenSet = true; m_behavior.emplace(key, std::move(value)); return *this; }
-    inline AnomalyUnusual& AddBehavior(Aws::String&& key, Aws::Map<Aws::String, AnomalyObject>&& value) { m_behaviorHasBeenSet = true; m_behavior.emplace(std::move(key), std::move(value)); return *this; }
-    inline AnomalyUnusual& AddBehavior(const char* key, Aws::Map<Aws::String, AnomalyObject>&& value) { m_behaviorHasBeenSet = true; m_behavior.emplace(key, std::move(value)); return *this; }
-    inline AnomalyUnusual& AddBehavior(const char* key, const Aws::Map<Aws::String, AnomalyObject>& value) { m_behaviorHasBeenSet = true; m_behavior.emplace(key, value); return *this; }
+    template<typename BehaviorT = Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>>
+    void SetBehavior(BehaviorT&& value) { m_behaviorHasBeenSet = true; m_behavior = std::forward<BehaviorT>(value); }
+    template<typename BehaviorT = Aws::Map<Aws::String, Aws::Map<Aws::String, AnomalyObject>>>
+    AnomalyUnusual& WithBehavior(BehaviorT&& value) { SetBehavior(std::forward<BehaviorT>(value)); return *this;}
+    template<typename BehaviorKeyT = Aws::String, typename BehaviorValueT = Aws::Map<Aws::String, AnomalyObject>>
+    AnomalyUnusual& AddBehavior(BehaviorKeyT&& key, BehaviorValueT&& value) {
+      m_behaviorHasBeenSet = true; m_behavior.emplace(std::forward<BehaviorKeyT>(key), std::forward<BehaviorValueT>(value)); return *this;
+    }
     ///@}
   private:
 

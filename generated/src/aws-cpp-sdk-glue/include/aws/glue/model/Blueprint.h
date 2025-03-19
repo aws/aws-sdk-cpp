@@ -34,7 +34,7 @@ namespace Model
   class Blueprint
   {
   public:
-    AWS_GLUE_API Blueprint();
+    AWS_GLUE_API Blueprint() = default;
     AWS_GLUE_API Blueprint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,52 +44,48 @@ namespace Model
     /**
      * <p>The name of the blueprint.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Blueprint& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Blueprint& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Blueprint& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Blueprint& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the blueprint.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Blueprint& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Blueprint& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Blueprint& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Blueprint& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the blueprint was registered.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
+    inline const Aws::Utils::DateTime& GetCreatedOn() const { return m_createdOn; }
     inline bool CreatedOnHasBeenSet() const { return m_createdOnHasBeenSet; }
-    inline void SetCreatedOn(const Aws::Utils::DateTime& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
-    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::move(value); }
-    inline Blueprint& WithCreatedOn(const Aws::Utils::DateTime& value) { SetCreatedOn(value); return *this;}
-    inline Blueprint& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    void SetCreatedOn(CreatedOnT&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::forward<CreatedOnT>(value); }
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    Blueprint& WithCreatedOn(CreatedOnT&& value) { SetCreatedOn(std::forward<CreatedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the blueprint was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
-    inline Blueprint& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline Blueprint& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    Blueprint& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,28 +93,24 @@ namespace Model
      * <p>A JSON string that indicates the list of parameter specifications for the
      * blueprint.</p>
      */
-    inline const Aws::String& GetParameterSpec() const{ return m_parameterSpec; }
+    inline const Aws::String& GetParameterSpec() const { return m_parameterSpec; }
     inline bool ParameterSpecHasBeenSet() const { return m_parameterSpecHasBeenSet; }
-    inline void SetParameterSpec(const Aws::String& value) { m_parameterSpecHasBeenSet = true; m_parameterSpec = value; }
-    inline void SetParameterSpec(Aws::String&& value) { m_parameterSpecHasBeenSet = true; m_parameterSpec = std::move(value); }
-    inline void SetParameterSpec(const char* value) { m_parameterSpecHasBeenSet = true; m_parameterSpec.assign(value); }
-    inline Blueprint& WithParameterSpec(const Aws::String& value) { SetParameterSpec(value); return *this;}
-    inline Blueprint& WithParameterSpec(Aws::String&& value) { SetParameterSpec(std::move(value)); return *this;}
-    inline Blueprint& WithParameterSpec(const char* value) { SetParameterSpec(value); return *this;}
+    template<typename ParameterSpecT = Aws::String>
+    void SetParameterSpec(ParameterSpecT&& value) { m_parameterSpecHasBeenSet = true; m_parameterSpec = std::forward<ParameterSpecT>(value); }
+    template<typename ParameterSpecT = Aws::String>
+    Blueprint& WithParameterSpec(ParameterSpecT&& value) { SetParameterSpec(std::forward<ParameterSpecT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the path in Amazon S3 where the blueprint is published.</p>
      */
-    inline const Aws::String& GetBlueprintLocation() const{ return m_blueprintLocation; }
+    inline const Aws::String& GetBlueprintLocation() const { return m_blueprintLocation; }
     inline bool BlueprintLocationHasBeenSet() const { return m_blueprintLocationHasBeenSet; }
-    inline void SetBlueprintLocation(const Aws::String& value) { m_blueprintLocationHasBeenSet = true; m_blueprintLocation = value; }
-    inline void SetBlueprintLocation(Aws::String&& value) { m_blueprintLocationHasBeenSet = true; m_blueprintLocation = std::move(value); }
-    inline void SetBlueprintLocation(const char* value) { m_blueprintLocationHasBeenSet = true; m_blueprintLocation.assign(value); }
-    inline Blueprint& WithBlueprintLocation(const Aws::String& value) { SetBlueprintLocation(value); return *this;}
-    inline Blueprint& WithBlueprintLocation(Aws::String&& value) { SetBlueprintLocation(std::move(value)); return *this;}
-    inline Blueprint& WithBlueprintLocation(const char* value) { SetBlueprintLocation(value); return *this;}
+    template<typename BlueprintLocationT = Aws::String>
+    void SetBlueprintLocation(BlueprintLocationT&& value) { m_blueprintLocationHasBeenSet = true; m_blueprintLocation = std::forward<BlueprintLocationT>(value); }
+    template<typename BlueprintLocationT = Aws::String>
+    Blueprint& WithBlueprintLocation(BlueprintLocationT&& value) { SetBlueprintLocation(std::forward<BlueprintLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +119,12 @@ namespace Model
      * <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in
      * Glue.</p>
      */
-    inline const Aws::String& GetBlueprintServiceLocation() const{ return m_blueprintServiceLocation; }
+    inline const Aws::String& GetBlueprintServiceLocation() const { return m_blueprintServiceLocation; }
     inline bool BlueprintServiceLocationHasBeenSet() const { return m_blueprintServiceLocationHasBeenSet; }
-    inline void SetBlueprintServiceLocation(const Aws::String& value) { m_blueprintServiceLocationHasBeenSet = true; m_blueprintServiceLocation = value; }
-    inline void SetBlueprintServiceLocation(Aws::String&& value) { m_blueprintServiceLocationHasBeenSet = true; m_blueprintServiceLocation = std::move(value); }
-    inline void SetBlueprintServiceLocation(const char* value) { m_blueprintServiceLocationHasBeenSet = true; m_blueprintServiceLocation.assign(value); }
-    inline Blueprint& WithBlueprintServiceLocation(const Aws::String& value) { SetBlueprintServiceLocation(value); return *this;}
-    inline Blueprint& WithBlueprintServiceLocation(Aws::String&& value) { SetBlueprintServiceLocation(std::move(value)); return *this;}
-    inline Blueprint& WithBlueprintServiceLocation(const char* value) { SetBlueprintServiceLocation(value); return *this;}
+    template<typename BlueprintServiceLocationT = Aws::String>
+    void SetBlueprintServiceLocation(BlueprintServiceLocationT&& value) { m_blueprintServiceLocationHasBeenSet = true; m_blueprintServiceLocation = std::forward<BlueprintServiceLocationT>(value); }
+    template<typename BlueprintServiceLocationT = Aws::String>
+    Blueprint& WithBlueprintServiceLocation(BlueprintServiceLocationT&& value) { SetBlueprintServiceLocation(std::forward<BlueprintServiceLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,26 +135,22 @@ namespace Model
      * blueprint registration is in progress.</p> </li> <li> <p>Failed — The blueprint
      * registration failed.</p> </li> </ul>
      */
-    inline const BlueprintStatus& GetStatus() const{ return m_status; }
+    inline BlueprintStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BlueprintStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BlueprintStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Blueprint& WithStatus(const BlueprintStatus& value) { SetStatus(value); return *this;}
-    inline Blueprint& WithStatus(BlueprintStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BlueprintStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Blueprint& WithStatus(BlueprintStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline Blueprint& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline Blueprint& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline Blueprint& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    Blueprint& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,12 +159,12 @@ namespace Model
      * some errors, this attribute indicates the last successful blueprint definition
      * that is available with the service.</p>
      */
-    inline const LastActiveDefinition& GetLastActiveDefinition() const{ return m_lastActiveDefinition; }
+    inline const LastActiveDefinition& GetLastActiveDefinition() const { return m_lastActiveDefinition; }
     inline bool LastActiveDefinitionHasBeenSet() const { return m_lastActiveDefinitionHasBeenSet; }
-    inline void SetLastActiveDefinition(const LastActiveDefinition& value) { m_lastActiveDefinitionHasBeenSet = true; m_lastActiveDefinition = value; }
-    inline void SetLastActiveDefinition(LastActiveDefinition&& value) { m_lastActiveDefinitionHasBeenSet = true; m_lastActiveDefinition = std::move(value); }
-    inline Blueprint& WithLastActiveDefinition(const LastActiveDefinition& value) { SetLastActiveDefinition(value); return *this;}
-    inline Blueprint& WithLastActiveDefinition(LastActiveDefinition&& value) { SetLastActiveDefinition(std::move(value)); return *this;}
+    template<typename LastActiveDefinitionT = LastActiveDefinition>
+    void SetLastActiveDefinition(LastActiveDefinitionT&& value) { m_lastActiveDefinitionHasBeenSet = true; m_lastActiveDefinition = std::forward<LastActiveDefinitionT>(value); }
+    template<typename LastActiveDefinitionT = LastActiveDefinition>
+    Blueprint& WithLastActiveDefinition(LastActiveDefinitionT&& value) { SetLastActiveDefinition(std::forward<LastActiveDefinitionT>(value)); return *this;}
     ///@}
   private:
 
@@ -188,10 +174,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdOn;
+    Aws::Utils::DateTime m_createdOn{};
     bool m_createdOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
     bool m_lastModifiedOnHasBeenSet = false;
 
     Aws::String m_parameterSpec;
@@ -203,7 +189,7 @@ namespace Model
     Aws::String m_blueprintServiceLocation;
     bool m_blueprintServiceLocationHasBeenSet = false;
 
-    BlueprintStatus m_status;
+    BlueprintStatus m_status{BlueprintStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;

@@ -34,7 +34,7 @@ namespace Model
   class DescribeEventTopicsResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult();
+    AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult() = default;
     AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
      * <p>A list of Amazon SNS topic names that receive status messages from the
      * specified Directory ID.</p>
      */
-    inline const Aws::Vector<EventTopic>& GetEventTopics() const{ return m_eventTopics; }
-    inline void SetEventTopics(const Aws::Vector<EventTopic>& value) { m_eventTopics = value; }
-    inline void SetEventTopics(Aws::Vector<EventTopic>&& value) { m_eventTopics = std::move(value); }
-    inline DescribeEventTopicsResult& WithEventTopics(const Aws::Vector<EventTopic>& value) { SetEventTopics(value); return *this;}
-    inline DescribeEventTopicsResult& WithEventTopics(Aws::Vector<EventTopic>&& value) { SetEventTopics(std::move(value)); return *this;}
-    inline DescribeEventTopicsResult& AddEventTopics(const EventTopic& value) { m_eventTopics.push_back(value); return *this; }
-    inline DescribeEventTopicsResult& AddEventTopics(EventTopic&& value) { m_eventTopics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventTopic>& GetEventTopics() const { return m_eventTopics; }
+    template<typename EventTopicsT = Aws::Vector<EventTopic>>
+    void SetEventTopics(EventTopicsT&& value) { m_eventTopicsHasBeenSet = true; m_eventTopics = std::forward<EventTopicsT>(value); }
+    template<typename EventTopicsT = Aws::Vector<EventTopic>>
+    DescribeEventTopicsResult& WithEventTopics(EventTopicsT&& value) { SetEventTopics(std::forward<EventTopicsT>(value)); return *this;}
+    template<typename EventTopicsT = EventTopic>
+    DescribeEventTopicsResult& AddEventTopics(EventTopicsT&& value) { m_eventTopicsHasBeenSet = true; m_eventTopics.emplace_back(std::forward<EventTopicsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEventTopicsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEventTopicsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEventTopicsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEventTopicsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventTopic> m_eventTopics;
+    bool m_eventTopicsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

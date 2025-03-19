@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-BootstrapActionConfig::BootstrapActionConfig() : 
-    m_nameHasBeenSet(false),
-    m_scriptBootstrapActionHasBeenSet(false)
-{
-}
-
 BootstrapActionConfig::BootstrapActionConfig(JsonView jsonValue)
-  : BootstrapActionConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BootstrapActionConfig& BootstrapActionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScriptBootstrapAction"))
   {
     m_scriptBootstrapAction = jsonValue.GetObject("ScriptBootstrapAction");
-
     m_scriptBootstrapActionHasBeenSet = true;
   }
-
   return *this;
 }
 

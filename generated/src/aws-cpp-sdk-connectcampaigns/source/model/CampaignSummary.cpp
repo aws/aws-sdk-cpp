@@ -18,16 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-CampaignSummary::CampaignSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false)
-{
-}
-
 CampaignSummary::CampaignSummary(JsonView jsonValue)
-  : CampaignSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CampaignSummary& CampaignSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectInstanceId"))
   {
     m_connectInstanceId = jsonValue.GetString("connectInstanceId");
-
     m_connectInstanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

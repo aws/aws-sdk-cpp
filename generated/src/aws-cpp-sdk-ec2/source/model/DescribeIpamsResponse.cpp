@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIpamsResponse::DescribeIpamsResponse()
-{
-}
-
 DescribeIpamsResponse::DescribeIpamsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeIpamsResponse& DescribeIpamsResponse::operator =(const Aws::AmazonWebSer
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode ipamsNode = resultNode.FirstChild("ipamSet");
     if(!ipamsNode.IsNull())
     {
       XmlNode ipamsMember = ipamsNode.FirstChild("item");
+      m_ipamsHasBeenSet = !ipamsMember.IsNull();
       while(!ipamsMember.IsNull())
       {
         m_ipams.push_back(ipamsMember);
         ipamsMember = ipamsMember.NextNode("item");
       }
 
+      m_ipamsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeIpamsResponse& DescribeIpamsResponse::operator =(const Aws::AmazonWebSer
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeIpamsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

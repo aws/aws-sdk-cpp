@@ -18,14 +18,7 @@ namespace PI
 namespace Model
 {
 
-MetricKeyDataPoints::MetricKeyDataPoints() : 
-    m_keyHasBeenSet(false),
-    m_dataPointsHasBeenSet(false)
-{
-}
-
 MetricKeyDataPoints::MetricKeyDataPoints(JsonView jsonValue)
-  : MetricKeyDataPoints()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MetricKeyDataPoints& MetricKeyDataPoints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetObject("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPoints"))
   {
     Aws::Utils::Array<JsonView> dataPointsJsonList = jsonValue.GetArray("DataPoints");
@@ -48,7 +39,6 @@ MetricKeyDataPoints& MetricKeyDataPoints::operator =(JsonView jsonValue)
     }
     m_dataPointsHasBeenSet = true;
   }
-
   return *this;
 }
 

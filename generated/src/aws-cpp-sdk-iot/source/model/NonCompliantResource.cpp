@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-NonCompliantResource::NonCompliantResource() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
-{
-}
-
 NonCompliantResource::NonCompliantResource(JsonView jsonValue)
-  : NonCompliantResource()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NonCompliantResource& NonCompliantResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetObject("resourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalInfo"))
   {
     Aws::Map<Aws::String, JsonView> additionalInfoJsonMap = jsonValue.GetObject("additionalInfo").GetAllObjects();
@@ -57,7 +44,6 @@ NonCompliantResource& NonCompliantResource::operator =(JsonView jsonValue)
     }
     m_additionalInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

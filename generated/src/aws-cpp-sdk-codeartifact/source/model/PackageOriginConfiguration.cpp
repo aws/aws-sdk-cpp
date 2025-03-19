@@ -18,13 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageOriginConfiguration::PackageOriginConfiguration() : 
-    m_restrictionsHasBeenSet(false)
-{
-}
-
 PackageOriginConfiguration::PackageOriginConfiguration(JsonView jsonValue)
-  : PackageOriginConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PackageOriginConfiguration& PackageOriginConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("restrictions"))
   {
     m_restrictions = jsonValue.GetObject("restrictions");
-
     m_restrictionsHasBeenSet = true;
   }
-
   return *this;
 }
 

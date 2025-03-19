@@ -25,7 +25,7 @@ namespace Model
   class DisassociateLensesRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API DisassociateLensesRequest();
+    AWS_WELLARCHITECTED_API DisassociateLensesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,27 +38,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline DisassociateLensesRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline DisassociateLensesRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline DisassociateLensesRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    DisassociateLensesRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetLensAliases() const{ return m_lensAliases; }
+    inline const Aws::Vector<Aws::String>& GetLensAliases() const { return m_lensAliases; }
     inline bool LensAliasesHasBeenSet() const { return m_lensAliasesHasBeenSet; }
-    inline void SetLensAliases(const Aws::Vector<Aws::String>& value) { m_lensAliasesHasBeenSet = true; m_lensAliases = value; }
-    inline void SetLensAliases(Aws::Vector<Aws::String>&& value) { m_lensAliasesHasBeenSet = true; m_lensAliases = std::move(value); }
-    inline DisassociateLensesRequest& WithLensAliases(const Aws::Vector<Aws::String>& value) { SetLensAliases(value); return *this;}
-    inline DisassociateLensesRequest& WithLensAliases(Aws::Vector<Aws::String>&& value) { SetLensAliases(std::move(value)); return *this;}
-    inline DisassociateLensesRequest& AddLensAliases(const Aws::String& value) { m_lensAliasesHasBeenSet = true; m_lensAliases.push_back(value); return *this; }
-    inline DisassociateLensesRequest& AddLensAliases(Aws::String&& value) { m_lensAliasesHasBeenSet = true; m_lensAliases.push_back(std::move(value)); return *this; }
-    inline DisassociateLensesRequest& AddLensAliases(const char* value) { m_lensAliasesHasBeenSet = true; m_lensAliases.push_back(value); return *this; }
+    template<typename LensAliasesT = Aws::Vector<Aws::String>>
+    void SetLensAliases(LensAliasesT&& value) { m_lensAliasesHasBeenSet = true; m_lensAliases = std::forward<LensAliasesT>(value); }
+    template<typename LensAliasesT = Aws::Vector<Aws::String>>
+    DisassociateLensesRequest& WithLensAliases(LensAliasesT&& value) { SetLensAliases(std::forward<LensAliasesT>(value)); return *this;}
+    template<typename LensAliasesT = Aws::String>
+    DisassociateLensesRequest& AddLensAliases(LensAliasesT&& value) { m_lensAliasesHasBeenSet = true; m_lensAliases.emplace_back(std::forward<LensAliasesT>(value)); return *this; }
     ///@}
   private:
 

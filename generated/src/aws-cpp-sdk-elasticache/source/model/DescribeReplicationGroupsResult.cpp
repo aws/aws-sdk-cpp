@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReplicationGroupsResult::DescribeReplicationGroupsResult()
-{
-}
-
 DescribeReplicationGroupsResult::DescribeReplicationGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeReplicationGroupsResult& DescribeReplicationGroupsResult::operator =(con
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode replicationGroupsNode = resultNode.FirstChild("ReplicationGroups");
     if(!replicationGroupsNode.IsNull())
     {
       XmlNode replicationGroupsMember = replicationGroupsNode.FirstChild("ReplicationGroup");
+      m_replicationGroupsHasBeenSet = !replicationGroupsMember.IsNull();
       while(!replicationGroupsMember.IsNull())
       {
         m_replicationGroups.push_back(replicationGroupsMember);
         replicationGroupsMember = replicationGroupsMember.NextNode("ReplicationGroup");
       }
 
+      m_replicationGroupsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeReplicationGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitContactEvaluationRequest::SubmitContactEvaluationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_evaluationIdHasBeenSet(false),
-    m_answersHasBeenSet(false),
-    m_notesHasBeenSet(false)
-{
-}
-
 Aws::String SubmitContactEvaluationRequest::SerializePayload() const
 {
   JsonValue payload;

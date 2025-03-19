@@ -28,7 +28,7 @@ namespace Model
   class UpdateServicePipelineResult
   {
   public:
-    AWS_PROTON_API UpdateServicePipelineResult();
+    AWS_PROTON_API UpdateServicePipelineResult() = default;
     AWS_PROTON_API UpdateServicePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API UpdateServicePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The pipeline details that are returned by Proton.</p>
      */
-    inline const ServicePipeline& GetPipeline() const{ return m_pipeline; }
-    inline void SetPipeline(const ServicePipeline& value) { m_pipeline = value; }
-    inline void SetPipeline(ServicePipeline&& value) { m_pipeline = std::move(value); }
-    inline UpdateServicePipelineResult& WithPipeline(const ServicePipeline& value) { SetPipeline(value); return *this;}
-    inline UpdateServicePipelineResult& WithPipeline(ServicePipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    inline const ServicePipeline& GetPipeline() const { return m_pipeline; }
+    template<typename PipelineT = ServicePipeline>
+    void SetPipeline(PipelineT&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::forward<PipelineT>(value); }
+    template<typename PipelineT = ServicePipeline>
+    UpdateServicePipelineResult& WithPipeline(PipelineT&& value) { SetPipeline(std::forward<PipelineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServicePipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServicePipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServicePipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServicePipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServicePipeline m_pipeline;
+    bool m_pipelineHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

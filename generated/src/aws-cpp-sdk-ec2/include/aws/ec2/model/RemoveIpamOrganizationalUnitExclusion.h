@@ -38,7 +38,7 @@ namespace Model
   class RemoveIpamOrganizationalUnitExclusion
   {
   public:
-    AWS_EC2_API RemoveIpamOrganizationalUnitExclusion();
+    AWS_EC2_API RemoveIpamOrganizationalUnitExclusion() = default;
     AWS_EC2_API RemoveIpamOrganizationalUnitExclusion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RemoveIpamOrganizationalUnitExclusion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -68,14 +68,12 @@ namespace Model
      * the Amazon Web Services Organizations entity path</a> in the <i>Amazon Web
      * Services Identity and Access Management User Guide</i>.</p>
      */
-    inline const Aws::String& GetOrganizationsEntityPath() const{ return m_organizationsEntityPath; }
+    inline const Aws::String& GetOrganizationsEntityPath() const { return m_organizationsEntityPath; }
     inline bool OrganizationsEntityPathHasBeenSet() const { return m_organizationsEntityPathHasBeenSet; }
-    inline void SetOrganizationsEntityPath(const Aws::String& value) { m_organizationsEntityPathHasBeenSet = true; m_organizationsEntityPath = value; }
-    inline void SetOrganizationsEntityPath(Aws::String&& value) { m_organizationsEntityPathHasBeenSet = true; m_organizationsEntityPath = std::move(value); }
-    inline void SetOrganizationsEntityPath(const char* value) { m_organizationsEntityPathHasBeenSet = true; m_organizationsEntityPath.assign(value); }
-    inline RemoveIpamOrganizationalUnitExclusion& WithOrganizationsEntityPath(const Aws::String& value) { SetOrganizationsEntityPath(value); return *this;}
-    inline RemoveIpamOrganizationalUnitExclusion& WithOrganizationsEntityPath(Aws::String&& value) { SetOrganizationsEntityPath(std::move(value)); return *this;}
-    inline RemoveIpamOrganizationalUnitExclusion& WithOrganizationsEntityPath(const char* value) { SetOrganizationsEntityPath(value); return *this;}
+    template<typename OrganizationsEntityPathT = Aws::String>
+    void SetOrganizationsEntityPath(OrganizationsEntityPathT&& value) { m_organizationsEntityPathHasBeenSet = true; m_organizationsEntityPath = std::forward<OrganizationsEntityPathT>(value); }
+    template<typename OrganizationsEntityPathT = Aws::String>
+    RemoveIpamOrganizationalUnitExclusion& WithOrganizationsEntityPath(OrganizationsEntityPathT&& value) { SetOrganizationsEntityPath(std::forward<OrganizationsEntityPathT>(value)); return *this;}
     ///@}
   private:
 

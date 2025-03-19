@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVolumeAttributeRequest::ModifyVolumeAttributeRequest() : 
-    m_autoEnableIOHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVolumeAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

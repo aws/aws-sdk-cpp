@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SMSTemplateRequest::SMSTemplateRequest() : 
-    m_bodyHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_recommenderIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false)
-{
-}
-
 SMSTemplateRequest::SMSTemplateRequest(JsonView jsonValue)
-  : SMSTemplateRequest()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SMSTemplateRequest& SMSTemplateRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSubstitutions"))
   {
     m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
-
     m_defaultSubstitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommenderId"))
   {
     m_recommenderId = jsonValue.GetString("RecommenderId");
-
     m_recommenderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -65,14 +49,11 @@ SMSTemplateRequest& SMSTemplateRequest::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateDescription"))
   {
     m_templateDescription = jsonValue.GetString("TemplateDescription");
-
     m_templateDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

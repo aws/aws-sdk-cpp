@@ -18,13 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-ColumnWildcard::ColumnWildcard() : 
-    m_excludedColumnNamesHasBeenSet(false)
-{
-}
-
 ColumnWildcard::ColumnWildcard(JsonView jsonValue)
-  : ColumnWildcard()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ColumnWildcard& ColumnWildcard::operator =(JsonView jsonValue)
     }
     m_excludedColumnNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

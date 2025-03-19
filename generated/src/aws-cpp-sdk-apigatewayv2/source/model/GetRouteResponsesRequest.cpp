@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRouteResponsesRequest::GetRouteResponsesRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_routeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRouteResponsesRequest::SerializePayload() const
 {
   return {};

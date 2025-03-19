@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddInstanceGroupsResult::AddInstanceGroupsResult()
-{
-}
-
 AddInstanceGroupsResult::AddInstanceGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AddInstanceGroupsResult& AddInstanceGroupsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("JobFlowId"))
   {
     m_jobFlowId = jsonValue.GetString("JobFlowId");
-
+    m_jobFlowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupIds"))
   {
     Aws::Utils::Array<JsonView> instanceGroupIdsJsonList = jsonValue.GetArray("InstanceGroupIds");
@@ -42,20 +37,20 @@ AddInstanceGroupsResult& AddInstanceGroupsResult::operator =(const Aws::AmazonWe
     {
       m_instanceGroupIds.push_back(instanceGroupIdsJsonList[instanceGroupIdsIndex].AsString());
     }
+    m_instanceGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

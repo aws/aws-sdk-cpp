@@ -35,7 +35,7 @@ namespace Model
   class Record
   {
   public:
-    AWS_RDSDATASERVICE_API Record();
+    AWS_RDSDATASERVICE_API Record() = default;
     AWS_RDSDATASERVICE_API Record(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>The values returned in the record.</p>
      */
-    inline const Aws::Vector<Value>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Value>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Value>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Value>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline Record& WithValues(const Aws::Vector<Value>& value) { SetValues(value); return *this;}
-    inline Record& WithValues(Aws::Vector<Value>&& value) { SetValues(std::move(value)); return *this;}
-    inline Record& AddValues(const Value& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline Record& AddValues(Value&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<Value>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Value>>
+    Record& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Value>
+    Record& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

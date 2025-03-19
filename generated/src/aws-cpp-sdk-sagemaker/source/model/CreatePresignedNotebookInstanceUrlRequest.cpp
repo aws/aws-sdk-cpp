@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePresignedNotebookInstanceUrlRequest::CreatePresignedNotebookInstanceUrlRequest() : 
-    m_notebookInstanceNameHasBeenSet(false),
-    m_sessionExpirationDurationInSeconds(0),
-    m_sessionExpirationDurationInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePresignedNotebookInstanceUrlRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class RemoteAccountDetails
   {
   public:
-    AWS_GUARDDUTY_API RemoteAccountDetails();
+    AWS_GUARDDUTY_API RemoteAccountDetails() = default;
     AWS_GUARDDUTY_API RemoteAccountDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API RemoteAccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the remote API caller.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline RemoteAccountDetails& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline RemoteAccountDetails& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline RemoteAccountDetails& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    RemoteAccountDetails& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * API caller is affiliated to your account in some way. If it is
      * <code>False</code> the API caller is from outside your environment.</p>
      */
-    inline bool GetAffiliated() const{ return m_affiliated; }
+    inline bool GetAffiliated() const { return m_affiliated; }
     inline bool AffiliatedHasBeenSet() const { return m_affiliatedHasBeenSet; }
     inline void SetAffiliated(bool value) { m_affiliatedHasBeenSet = true; m_affiliated = value; }
     inline RemoteAccountDetails& WithAffiliated(bool value) { SetAffiliated(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    bool m_affiliated;
+    bool m_affiliated{false};
     bool m_affiliatedHasBeenSet = false;
   };
 

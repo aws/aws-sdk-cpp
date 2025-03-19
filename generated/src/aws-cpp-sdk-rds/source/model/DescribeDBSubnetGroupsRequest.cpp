@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBSubnetGroupsRequest::DescribeDBSubnetGroupsRequest() : 
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBSubnetGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

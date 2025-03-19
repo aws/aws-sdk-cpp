@@ -12,14 +12,6 @@ using namespace Aws::LexRuntimeV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSessionRequest::GetSessionRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botAliasIdHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionRequest::SerializePayload() const
 {
   return {};

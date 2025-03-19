@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ObjectiveStatusCounters::ObjectiveStatusCounters() : 
-    m_succeeded(0),
-    m_succeededHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false)
-{
-}
-
 ObjectiveStatusCounters::ObjectiveStatusCounters(JsonView jsonValue)
-  : ObjectiveStatusCounters()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ObjectiveStatusCounters& ObjectiveStatusCounters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Succeeded"))
   {
     m_succeeded = jsonValue.GetInteger("Succeeded");
-
     m_succeededHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pending"))
   {
     m_pending = jsonValue.GetInteger("Pending");
-
     m_pendingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failed"))
   {
     m_failed = jsonValue.GetInteger("Failed");
-
     m_failedHasBeenSet = true;
   }
-
   return *this;
 }
 

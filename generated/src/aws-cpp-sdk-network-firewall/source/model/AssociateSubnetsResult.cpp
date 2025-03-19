@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateSubnetsResult::AssociateSubnetsResult()
-{
-}
-
 AssociateSubnetsResult::AssociateSubnetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ AssociateSubnetsResult& AssociateSubnetsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("FirewallArn"))
   {
     m_firewallArn = jsonValue.GetString("FirewallArn");
-
+    m_firewallArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallName"))
   {
     m_firewallName = jsonValue.GetString("FirewallName");
-
+    m_firewallNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetMappings"))
   {
     Aws::Utils::Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
@@ -48,20 +42,20 @@ AssociateSubnetsResult& AssociateSubnetsResult::operator =(const Aws::AmazonWebS
     {
       m_subnetMappings.push_back(subnetMappingsJsonList[subnetMappingsIndex].AsObject());
     }
+    m_subnetMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateToken"))
   {
     m_updateToken = jsonValue.GetString("UpdateToken");
-
+    m_updateTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

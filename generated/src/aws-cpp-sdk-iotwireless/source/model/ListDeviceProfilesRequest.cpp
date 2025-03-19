@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDeviceProfilesRequest::ListDeviceProfilesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_deviceProfileType(DeviceProfileType::NOT_SET),
-    m_deviceProfileTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListDeviceProfilesRequest::SerializePayload() const
 {
   return {};

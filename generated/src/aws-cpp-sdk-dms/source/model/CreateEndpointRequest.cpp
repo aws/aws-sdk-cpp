@@ -12,48 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEndpointRequest::CreateEndpointRequest() : 
-    m_endpointIdentifierHasBeenSet(false),
-    m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_extraConnectionAttributesHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_sslMode(DmsSslModeValue::NOT_SET),
-    m_sslModeHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_externalTableDefinitionHasBeenSet(false),
-    m_dynamoDbSettingsHasBeenSet(false),
-    m_s3SettingsHasBeenSet(false),
-    m_dmsTransferSettingsHasBeenSet(false),
-    m_mongoDbSettingsHasBeenSet(false),
-    m_kinesisSettingsHasBeenSet(false),
-    m_kafkaSettingsHasBeenSet(false),
-    m_elasticsearchSettingsHasBeenSet(false),
-    m_neptuneSettingsHasBeenSet(false),
-    m_redshiftSettingsHasBeenSet(false),
-    m_postgreSQLSettingsHasBeenSet(false),
-    m_mySQLSettingsHasBeenSet(false),
-    m_oracleSettingsHasBeenSet(false),
-    m_sybaseSettingsHasBeenSet(false),
-    m_microsoftSQLServerSettingsHasBeenSet(false),
-    m_iBMDb2SettingsHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false),
-    m_redisSettingsHasBeenSet(false),
-    m_gcpMySQLSettingsHasBeenSet(false),
-    m_timestreamSettingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

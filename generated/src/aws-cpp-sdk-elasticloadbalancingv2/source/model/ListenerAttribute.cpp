@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-ListenerAttribute::ListenerAttribute() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ListenerAttribute::ListenerAttribute(const XmlNode& xmlNode)
-  : ListenerAttribute()
 {
   *this = xmlNode;
 }

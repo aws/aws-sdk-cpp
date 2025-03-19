@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackupVaultNotificationsResult::GetBackupVaultNotificationsResult()
-{
-}
-
 GetBackupVaultNotificationsResult::GetBackupVaultNotificationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetBackupVaultNotificationsResult& GetBackupVaultNotificationsResult::operator =
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
+    m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
+    m_backupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNSTopicArn"))
   {
     m_sNSTopicArn = jsonValue.GetString("SNSTopicArn");
-
+    m_sNSTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultEvents"))
   {
     Aws::Utils::Array<JsonView> backupVaultEventsJsonList = jsonValue.GetArray("BackupVaultEvents");
@@ -54,14 +47,15 @@ GetBackupVaultNotificationsResult& GetBackupVaultNotificationsResult::operator =
     {
       m_backupVaultEvents.push_back(BackupVaultEventMapper::GetBackupVaultEventForName(backupVaultEventsJsonList[backupVaultEventsIndex].AsString()));
     }
+    m_backupVaultEventsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-OutputArtifact::OutputArtifact() : 
-    m_nameHasBeenSet(false),
-    m_filesHasBeenSet(false)
-{
-}
-
 OutputArtifact::OutputArtifact(JsonView jsonValue)
-  : OutputArtifact()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OutputArtifact& OutputArtifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("files"))
   {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -48,7 +39,6 @@ OutputArtifact& OutputArtifact::operator =(JsonView jsonValue)
     }
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

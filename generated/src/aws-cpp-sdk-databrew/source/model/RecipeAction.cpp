@@ -18,14 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-RecipeAction::RecipeAction() : 
-    m_operationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 RecipeAction::RecipeAction(JsonView jsonValue)
-  : RecipeAction()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RecipeAction& RecipeAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = jsonValue.GetString("Operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -48,7 +39,6 @@ RecipeAction& RecipeAction::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

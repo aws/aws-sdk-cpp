@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetStreamKeyRequest::BatchGetStreamKeyRequest() : 
-    m_arnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetStreamKeyRequest::SerializePayload() const
 {
   JsonValue payload;

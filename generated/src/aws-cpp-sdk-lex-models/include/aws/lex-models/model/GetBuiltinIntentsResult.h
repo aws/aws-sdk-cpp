@@ -29,7 +29,7 @@ namespace Model
   class GetBuiltinIntentsResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent
      * in the response.</p>
      */
-    inline const Aws::Vector<BuiltinIntentMetadata>& GetIntents() const{ return m_intents; }
-    inline void SetIntents(const Aws::Vector<BuiltinIntentMetadata>& value) { m_intents = value; }
-    inline void SetIntents(Aws::Vector<BuiltinIntentMetadata>&& value) { m_intents = std::move(value); }
-    inline GetBuiltinIntentsResult& WithIntents(const Aws::Vector<BuiltinIntentMetadata>& value) { SetIntents(value); return *this;}
-    inline GetBuiltinIntentsResult& WithIntents(Aws::Vector<BuiltinIntentMetadata>&& value) { SetIntents(std::move(value)); return *this;}
-    inline GetBuiltinIntentsResult& AddIntents(const BuiltinIntentMetadata& value) { m_intents.push_back(value); return *this; }
-    inline GetBuiltinIntentsResult& AddIntents(BuiltinIntentMetadata&& value) { m_intents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BuiltinIntentMetadata>& GetIntents() const { return m_intents; }
+    template<typename IntentsT = Aws::Vector<BuiltinIntentMetadata>>
+    void SetIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents = std::forward<IntentsT>(value); }
+    template<typename IntentsT = Aws::Vector<BuiltinIntentMetadata>>
+    GetBuiltinIntentsResult& WithIntents(IntentsT&& value) { SetIntents(std::forward<IntentsT>(value)); return *this;}
+    template<typename IntentsT = BuiltinIntentMetadata>
+    GetBuiltinIntentsResult& AddIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents.emplace_back(std::forward<IntentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * response. To fetch the next page of intents, specify the pagination token in the
      * next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetBuiltinIntentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetBuiltinIntentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetBuiltinIntentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetBuiltinIntentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBuiltinIntentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBuiltinIntentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBuiltinIntentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBuiltinIntentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BuiltinIntentMetadata> m_intents;
+    bool m_intentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

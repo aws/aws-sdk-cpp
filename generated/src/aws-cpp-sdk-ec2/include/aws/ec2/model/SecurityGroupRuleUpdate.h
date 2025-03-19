@@ -32,7 +32,7 @@ namespace Model
   class SecurityGroupRuleUpdate
   {
   public:
-    AWS_EC2_API SecurityGroupRuleUpdate();
+    AWS_EC2_API SecurityGroupRuleUpdate() = default;
     AWS_EC2_API SecurityGroupRuleUpdate(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SecurityGroupRuleUpdate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The ID of the security group rule.</p>
      */
-    inline const Aws::String& GetSecurityGroupRuleId() const{ return m_securityGroupRuleId; }
+    inline const Aws::String& GetSecurityGroupRuleId() const { return m_securityGroupRuleId; }
     inline bool SecurityGroupRuleIdHasBeenSet() const { return m_securityGroupRuleIdHasBeenSet; }
-    inline void SetSecurityGroupRuleId(const Aws::String& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = value; }
-    inline void SetSecurityGroupRuleId(Aws::String&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::move(value); }
-    inline void SetSecurityGroupRuleId(const char* value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId.assign(value); }
-    inline SecurityGroupRuleUpdate& WithSecurityGroupRuleId(const Aws::String& value) { SetSecurityGroupRuleId(value); return *this;}
-    inline SecurityGroupRuleUpdate& WithSecurityGroupRuleId(Aws::String&& value) { SetSecurityGroupRuleId(std::move(value)); return *this;}
-    inline SecurityGroupRuleUpdate& WithSecurityGroupRuleId(const char* value) { SetSecurityGroupRuleId(value); return *this;}
+    template<typename SecurityGroupRuleIdT = Aws::String>
+    void SetSecurityGroupRuleId(SecurityGroupRuleIdT&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::forward<SecurityGroupRuleIdT>(value); }
+    template<typename SecurityGroupRuleIdT = Aws::String>
+    SecurityGroupRuleUpdate& WithSecurityGroupRuleId(SecurityGroupRuleIdT&& value) { SetSecurityGroupRuleId(std::forward<SecurityGroupRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the security group rule.</p>
      */
-    inline const SecurityGroupRuleRequest& GetSecurityGroupRule() const{ return m_securityGroupRule; }
+    inline const SecurityGroupRuleRequest& GetSecurityGroupRule() const { return m_securityGroupRule; }
     inline bool SecurityGroupRuleHasBeenSet() const { return m_securityGroupRuleHasBeenSet; }
-    inline void SetSecurityGroupRule(const SecurityGroupRuleRequest& value) { m_securityGroupRuleHasBeenSet = true; m_securityGroupRule = value; }
-    inline void SetSecurityGroupRule(SecurityGroupRuleRequest&& value) { m_securityGroupRuleHasBeenSet = true; m_securityGroupRule = std::move(value); }
-    inline SecurityGroupRuleUpdate& WithSecurityGroupRule(const SecurityGroupRuleRequest& value) { SetSecurityGroupRule(value); return *this;}
-    inline SecurityGroupRuleUpdate& WithSecurityGroupRule(SecurityGroupRuleRequest&& value) { SetSecurityGroupRule(std::move(value)); return *this;}
+    template<typename SecurityGroupRuleT = SecurityGroupRuleRequest>
+    void SetSecurityGroupRule(SecurityGroupRuleT&& value) { m_securityGroupRuleHasBeenSet = true; m_securityGroupRule = std::forward<SecurityGroupRuleT>(value); }
+    template<typename SecurityGroupRuleT = SecurityGroupRuleRequest>
+    SecurityGroupRuleUpdate& WithSecurityGroupRule(SecurityGroupRuleT&& value) { SetSecurityGroupRule(std::forward<SecurityGroupRuleT>(value)); return *this;}
     ///@}
   private:
 

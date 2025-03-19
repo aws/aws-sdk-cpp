@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpRoute::HttpRoute() : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 HttpRoute::HttpRoute(JsonView jsonValue)
-  : HttpRoute()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ HttpRoute& HttpRoute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryPolicy"))
   {
     m_retryPolicy = jsonValue.GetObject("retryPolicy");
-
     m_retryPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeout"))
   {
     m_timeout = jsonValue.GetObject("timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

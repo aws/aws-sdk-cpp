@@ -33,7 +33,7 @@ namespace Model
   class BatchListObjectChildrenResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse();
+    AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,28 @@ namespace Model
      * <p>The children structure, which is a map with the key as the
      * <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetChildren() const{ return m_children; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetChildren() const { return m_children; }
     inline bool ChildrenHasBeenSet() const { return m_childrenHasBeenSet; }
-    inline void SetChildren(const Aws::Map<Aws::String, Aws::String>& value) { m_childrenHasBeenSet = true; m_children = value; }
-    inline void SetChildren(Aws::Map<Aws::String, Aws::String>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
-    inline BatchListObjectChildrenResponse& WithChildren(const Aws::Map<Aws::String, Aws::String>& value) { SetChildren(value); return *this;}
-    inline BatchListObjectChildrenResponse& WithChildren(Aws::Map<Aws::String, Aws::String>&& value) { SetChildren(std::move(value)); return *this;}
-    inline BatchListObjectChildrenResponse& AddChildren(const Aws::String& key, const Aws::String& value) { m_childrenHasBeenSet = true; m_children.emplace(key, value); return *this; }
-    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, const Aws::String& value) { m_childrenHasBeenSet = true; m_children.emplace(std::move(key), value); return *this; }
-    inline BatchListObjectChildrenResponse& AddChildren(const Aws::String& key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children.emplace(key, std::move(value)); return *this; }
-    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchListObjectChildrenResponse& AddChildren(const char* key, Aws::String&& value) { m_childrenHasBeenSet = true; m_children.emplace(key, std::move(value)); return *this; }
-    inline BatchListObjectChildrenResponse& AddChildren(Aws::String&& key, const char* value) { m_childrenHasBeenSet = true; m_children.emplace(std::move(key), value); return *this; }
-    inline BatchListObjectChildrenResponse& AddChildren(const char* key, const char* value) { m_childrenHasBeenSet = true; m_children.emplace(key, value); return *this; }
+    template<typename ChildrenT = Aws::Map<Aws::String, Aws::String>>
+    void SetChildren(ChildrenT&& value) { m_childrenHasBeenSet = true; m_children = std::forward<ChildrenT>(value); }
+    template<typename ChildrenT = Aws::Map<Aws::String, Aws::String>>
+    BatchListObjectChildrenResponse& WithChildren(ChildrenT&& value) { SetChildren(std::forward<ChildrenT>(value)); return *this;}
+    template<typename ChildrenKeyT = Aws::String, typename ChildrenValueT = Aws::String>
+    BatchListObjectChildrenResponse& AddChildren(ChildrenKeyT&& key, ChildrenValueT&& value) {
+      m_childrenHasBeenSet = true; m_children.emplace(std::forward<ChildrenKeyT>(key), std::forward<ChildrenValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchListObjectChildrenResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchListObjectChildrenResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchListObjectChildrenResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchListObjectChildrenResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

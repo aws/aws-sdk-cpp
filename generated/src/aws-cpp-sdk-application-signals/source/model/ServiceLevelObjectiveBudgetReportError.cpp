@@ -18,16 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceLevelObjectiveBudgetReportError::ServiceLevelObjectiveBudgetReportError() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ServiceLevelObjectiveBudgetReportError::ServiceLevelObjectiveBudgetReportError(JsonView jsonValue)
-  : ServiceLevelObjectiveBudgetReportError()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ServiceLevelObjectiveBudgetReportError& ServiceLevelObjectiveBudgetReportError::
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

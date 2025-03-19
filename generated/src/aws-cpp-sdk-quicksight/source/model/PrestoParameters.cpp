@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PrestoParameters::PrestoParameters() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_catalogHasBeenSet(false)
-{
-}
-
 PrestoParameters::PrestoParameters(JsonView jsonValue)
-  : PrestoParameters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PrestoParameters& PrestoParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   return *this;
 }
 

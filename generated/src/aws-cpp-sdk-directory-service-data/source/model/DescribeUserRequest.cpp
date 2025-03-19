@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeUserRequest::DescribeUserRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_otherAttributesHasBeenSet(false),
-    m_realmHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserRequest::SerializePayload() const
 {
   JsonValue payload;

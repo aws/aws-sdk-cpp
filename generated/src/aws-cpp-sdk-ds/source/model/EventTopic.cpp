@@ -18,18 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-EventTopic::EventTopic() : 
-    m_directoryIdHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_createdDateTimeHasBeenSet(false),
-    m_status(TopicStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EventTopic::EventTopic(JsonView jsonValue)
-  : EventTopic()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EventTopic& EventTopic::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicArn"))
   {
     m_topicArn = jsonValue.GetString("TopicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDateTime"))
   {
     m_createdDateTime = jsonValue.GetDouble("CreatedDateTime");
-
     m_createdDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TopicStatusMapper::GetTopicStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

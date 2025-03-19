@@ -18,26 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentConfirmationSetting::IntentConfirmationSetting() : 
-    m_promptSpecificationHasBeenSet(false),
-    m_declinationResponseHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_confirmationResponseHasBeenSet(false),
-    m_confirmationNextStepHasBeenSet(false),
-    m_confirmationConditionalHasBeenSet(false),
-    m_declinationNextStepHasBeenSet(false),
-    m_declinationConditionalHasBeenSet(false),
-    m_failureResponseHasBeenSet(false),
-    m_failureNextStepHasBeenSet(false),
-    m_failureConditionalHasBeenSet(false),
-    m_codeHookHasBeenSet(false),
-    m_elicitationCodeHookHasBeenSet(false)
-{
-}
-
 IntentConfirmationSetting::IntentConfirmationSetting(JsonView jsonValue)
-  : IntentConfirmationSetting()
 {
   *this = jsonValue;
 }
@@ -47,94 +28,68 @@ IntentConfirmationSetting& IntentConfirmationSetting::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("promptSpecification"))
   {
     m_promptSpecification = jsonValue.GetObject("promptSpecification");
-
     m_promptSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("declinationResponse"))
   {
     m_declinationResponse = jsonValue.GetObject("declinationResponse");
-
     m_declinationResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationResponse"))
   {
     m_confirmationResponse = jsonValue.GetObject("confirmationResponse");
-
     m_confirmationResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationNextStep"))
   {
     m_confirmationNextStep = jsonValue.GetObject("confirmationNextStep");
-
     m_confirmationNextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationConditional"))
   {
     m_confirmationConditional = jsonValue.GetObject("confirmationConditional");
-
     m_confirmationConditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("declinationNextStep"))
   {
     m_declinationNextStep = jsonValue.GetObject("declinationNextStep");
-
     m_declinationNextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("declinationConditional"))
   {
     m_declinationConditional = jsonValue.GetObject("declinationConditional");
-
     m_declinationConditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureResponse"))
   {
     m_failureResponse = jsonValue.GetObject("failureResponse");
-
     m_failureResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureNextStep"))
   {
     m_failureNextStep = jsonValue.GetObject("failureNextStep");
-
     m_failureNextStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureConditional"))
   {
     m_failureConditional = jsonValue.GetObject("failureConditional");
-
     m_failureConditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeHook"))
   {
     m_codeHook = jsonValue.GetObject("codeHook");
-
     m_codeHookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elicitationCodeHook"))
   {
     m_elicitationCodeHook = jsonValue.GetObject("elicitationCodeHook");
-
     m_elicitationCodeHookHasBeenSet = true;
   }
-
   return *this;
 }
 

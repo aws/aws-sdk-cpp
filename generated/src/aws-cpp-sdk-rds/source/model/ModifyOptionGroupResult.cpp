@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyOptionGroupResult::ModifyOptionGroupResult()
-{
-}
-
 ModifyOptionGroupResult::ModifyOptionGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyOptionGroupResult& ModifyOptionGroupResult::operator =(const Aws::AmazonWe
     if(!optionGroupNode.IsNull())
     {
       m_optionGroup = optionGroupNode;
+      m_optionGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyOptionGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

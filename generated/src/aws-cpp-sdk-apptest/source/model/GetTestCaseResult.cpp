@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTestCaseResult::GetTestCaseResult() : 
-    m_testCaseVersion(0),
-    m_status(TestCaseLifecycle::NOT_SET)
-{
-}
-
 GetTestCaseResult::GetTestCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTestCaseResult()
 {
   *this = result;
 }
@@ -35,63 +28,53 @@ GetTestCaseResult& GetTestCaseResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("testCaseId"))
   {
     m_testCaseId = jsonValue.GetString("testCaseId");
-
+    m_testCaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseArn"))
   {
     m_testCaseArn = jsonValue.GetString("testCaseArn");
-
+    m_testCaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestVersion"))
   {
     m_latestVersion = jsonValue.GetObject("latestVersion");
-
+    m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseVersion"))
   {
     m_testCaseVersion = jsonValue.GetInteger("testCaseVersion");
-
+    m_testCaseVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TestCaseLifecycleMapper::GetTestCaseLifecycleForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
+    m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
@@ -99,8 +82,8 @@ GetTestCaseResult& GetTestCaseResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
     }
+    m_stepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -108,14 +91,15 @@ GetTestCaseResult& GetTestCaseResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

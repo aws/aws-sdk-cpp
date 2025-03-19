@@ -12,15 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFileSystemRequest::UpdateFileSystemRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_provisionedThroughputInMibps(0.0),
-    m_provisionedThroughputInMibpsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFileSystemRequest::SerializePayload() const
 {
   JsonValue payload;

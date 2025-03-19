@@ -18,43 +18,7 @@ namespace ECS
 namespace Model
 {
 
-TaskDefinition::TaskDefinition() : 
-    m_taskDefinitionArnHasBeenSet(false),
-    m_containerDefinitionsHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_networkMode(NetworkMode::NOT_SET),
-    m_networkModeHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_status(TaskDefinitionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_requiresAttributesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_requiresCompatibilitiesHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false),
-    m_pidMode(PidMode::NOT_SET),
-    m_pidModeHasBeenSet(false),
-    m_ipcMode(IpcMode::NOT_SET),
-    m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_deregisteredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_enableFaultInjection(false),
-    m_enableFaultInjectionHasBeenSet(false)
-{
-}
-
 TaskDefinition::TaskDefinition(JsonView jsonValue)
-  : TaskDefinition()
 {
   *this = jsonValue;
 }
@@ -64,10 +28,8 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskDefinitionArn"))
   {
     m_taskDefinitionArn = jsonValue.GetString("taskDefinitionArn");
-
     m_taskDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerDefinitions"))
   {
     Aws::Utils::Array<JsonView> containerDefinitionsJsonList = jsonValue.GetArray("containerDefinitions");
@@ -77,42 +39,31 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_containerDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("family"))
   {
     m_family = jsonValue.GetString("family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRoleArn"))
   {
     m_taskRoleArn = jsonValue.GetString("taskRoleArn");
-
     m_taskRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkMode"))
   {
     m_networkMode = NetworkModeMapper::GetNetworkModeForName(jsonValue.GetString("networkMode"));
-
     m_networkModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInteger("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -122,14 +73,11 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaskDefinitionStatusMapper::GetTaskDefinitionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requiresAttributes"))
   {
     Aws::Utils::Array<JsonView> requiresAttributesJsonList = jsonValue.GetArray("requiresAttributes");
@@ -139,7 +87,6 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_requiresAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementConstraints"))
   {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
@@ -149,7 +96,6 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_placementConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compatibilities"))
   {
     Aws::Utils::Array<JsonView> compatibilitiesJsonList = jsonValue.GetArray("compatibilities");
@@ -159,14 +105,11 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_compatibilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimePlatform"))
   {
     m_runtimePlatform = jsonValue.GetObject("runtimePlatform");
-
     m_runtimePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requiresCompatibilities"))
   {
     Aws::Utils::Array<JsonView> requiresCompatibilitiesJsonList = jsonValue.GetArray("requiresCompatibilities");
@@ -176,21 +119,16 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_requiresCompatibilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetString("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetString("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceAccelerators"))
   {
     Aws::Utils::Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
@@ -200,63 +138,46 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     }
     m_inferenceAcceleratorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pidMode"))
   {
     m_pidMode = PidModeMapper::GetPidModeForName(jsonValue.GetString("pidMode"));
-
     m_pidModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipcMode"))
   {
     m_ipcMode = IpcModeMapper::GetIpcModeForName(jsonValue.GetString("ipcMode"));
-
     m_ipcModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proxyConfiguration"))
   {
     m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
-
     m_proxyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredAt"))
   {
     m_registeredAt = jsonValue.GetDouble("registeredAt");
-
     m_registeredAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deregisteredAt"))
   {
     m_deregisteredAt = jsonValue.GetDouble("deregisteredAt");
-
     m_deregisteredAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredBy"))
   {
     m_registeredBy = jsonValue.GetString("registeredBy");
-
     m_registeredByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ephemeralStorage"))
   {
     m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
-
     m_ephemeralStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableFaultInjection"))
   {
     m_enableFaultInjection = jsonValue.GetBool("enableFaultInjection");
-
     m_enableFaultInjectionHasBeenSet = true;
   }
-
   return *this;
 }
 

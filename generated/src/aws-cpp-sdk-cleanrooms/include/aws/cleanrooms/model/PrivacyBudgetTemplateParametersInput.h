@@ -32,7 +32,7 @@ namespace Model
   class PrivacyBudgetTemplateParametersInput
   {
   public:
-    AWS_CLEANROOMS_API PrivacyBudgetTemplateParametersInput();
+    AWS_CLEANROOMS_API PrivacyBudgetTemplateParametersInput() = default;
     AWS_CLEANROOMS_API PrivacyBudgetTemplateParametersInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API PrivacyBudgetTemplateParametersInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An object that specifies the epsilon and noise parameters.</p>
      */
-    inline const DifferentialPrivacyTemplateParametersInput& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
+    inline const DifferentialPrivacyTemplateParametersInput& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
     inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-    inline void SetDifferentialPrivacy(const DifferentialPrivacyTemplateParametersInput& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
-    inline void SetDifferentialPrivacy(DifferentialPrivacyTemplateParametersInput&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
-    inline PrivacyBudgetTemplateParametersInput& WithDifferentialPrivacy(const DifferentialPrivacyTemplateParametersInput& value) { SetDifferentialPrivacy(value); return *this;}
-    inline PrivacyBudgetTemplateParametersInput& WithDifferentialPrivacy(DifferentialPrivacyTemplateParametersInput&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
+    template<typename DifferentialPrivacyT = DifferentialPrivacyTemplateParametersInput>
+    void SetDifferentialPrivacy(DifferentialPrivacyT&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value); }
+    template<typename DifferentialPrivacyT = DifferentialPrivacyTemplateParametersInput>
+    PrivacyBudgetTemplateParametersInput& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
     ///@}
   private:
 

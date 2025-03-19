@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutNotificationChannelRequest::PutNotificationChannelRequest() : 
-    m_snsTopicArnHasBeenSet(false),
-    m_snsRoleNameHasBeenSet(false)
-{
-}
-
 Aws::String PutNotificationChannelRequest::SerializePayload() const
 {
   JsonValue payload;

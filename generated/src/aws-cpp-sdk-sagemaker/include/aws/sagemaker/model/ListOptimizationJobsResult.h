@@ -29,7 +29,7 @@ namespace Model
   class ListOptimizationJobsResult
   {
   public:
-    AWS_SAGEMAKER_API ListOptimizationJobsResult();
+    AWS_SAGEMAKER_API ListOptimizationJobsResult() = default;
     AWS_SAGEMAKER_API ListOptimizationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListOptimizationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of optimization jobs and their properties that matches any of the
      * filters you specified in the request.</p>
      */
-    inline const Aws::Vector<OptimizationJobSummary>& GetOptimizationJobSummaries() const{ return m_optimizationJobSummaries; }
-    inline void SetOptimizationJobSummaries(const Aws::Vector<OptimizationJobSummary>& value) { m_optimizationJobSummaries = value; }
-    inline void SetOptimizationJobSummaries(Aws::Vector<OptimizationJobSummary>&& value) { m_optimizationJobSummaries = std::move(value); }
-    inline ListOptimizationJobsResult& WithOptimizationJobSummaries(const Aws::Vector<OptimizationJobSummary>& value) { SetOptimizationJobSummaries(value); return *this;}
-    inline ListOptimizationJobsResult& WithOptimizationJobSummaries(Aws::Vector<OptimizationJobSummary>&& value) { SetOptimizationJobSummaries(std::move(value)); return *this;}
-    inline ListOptimizationJobsResult& AddOptimizationJobSummaries(const OptimizationJobSummary& value) { m_optimizationJobSummaries.push_back(value); return *this; }
-    inline ListOptimizationJobsResult& AddOptimizationJobSummaries(OptimizationJobSummary&& value) { m_optimizationJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OptimizationJobSummary>& GetOptimizationJobSummaries() const { return m_optimizationJobSummaries; }
+    template<typename OptimizationJobSummariesT = Aws::Vector<OptimizationJobSummary>>
+    void SetOptimizationJobSummaries(OptimizationJobSummariesT&& value) { m_optimizationJobSummariesHasBeenSet = true; m_optimizationJobSummaries = std::forward<OptimizationJobSummariesT>(value); }
+    template<typename OptimizationJobSummariesT = Aws::Vector<OptimizationJobSummary>>
+    ListOptimizationJobsResult& WithOptimizationJobSummaries(OptimizationJobSummariesT&& value) { SetOptimizationJobSummaries(std::forward<OptimizationJobSummariesT>(value)); return *this;}
+    template<typename OptimizationJobSummariesT = OptimizationJobSummary>
+    ListOptimizationJobsResult& AddOptimizationJobSummaries(OptimizationJobSummariesT&& value) { m_optimizationJobSummariesHasBeenSet = true; m_optimizationJobSummaries.emplace_back(std::forward<OptimizationJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to use in a subsequent request to get the next set of results
      * following a truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOptimizationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOptimizationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOptimizationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOptimizationJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOptimizationJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOptimizationJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOptimizationJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOptimizationJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OptimizationJobSummary> m_optimizationJobSummaries;
+    bool m_optimizationJobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

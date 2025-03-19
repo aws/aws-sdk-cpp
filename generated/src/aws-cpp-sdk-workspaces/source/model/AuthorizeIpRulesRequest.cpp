@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AuthorizeIpRulesRequest::AuthorizeIpRulesRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_userRulesHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeIpRulesRequest::SerializePayload() const
 {
   JsonValue payload;

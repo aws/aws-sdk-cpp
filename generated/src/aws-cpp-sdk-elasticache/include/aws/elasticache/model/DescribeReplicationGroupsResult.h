@@ -36,7 +36,7 @@ namespace Model
   class DescribeReplicationGroupsResult
   {
   public:
-    AWS_ELASTICACHE_API DescribeReplicationGroupsResult();
+    AWS_ELASTICACHE_API DescribeReplicationGroupsResult() = default;
     AWS_ELASTICACHE_API DescribeReplicationGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API DescribeReplicationGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeReplicationGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReplicationGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReplicationGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReplicationGroupsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,30 +57,33 @@ namespace Model
      * <p>A list of replication groups. Each item in the list contains detailed
      * information about one replication group.</p>
      */
-    inline const Aws::Vector<ReplicationGroup>& GetReplicationGroups() const{ return m_replicationGroups; }
-    inline void SetReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { m_replicationGroups = value; }
-    inline void SetReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { m_replicationGroups = std::move(value); }
-    inline DescribeReplicationGroupsResult& WithReplicationGroups(const Aws::Vector<ReplicationGroup>& value) { SetReplicationGroups(value); return *this;}
-    inline DescribeReplicationGroupsResult& WithReplicationGroups(Aws::Vector<ReplicationGroup>&& value) { SetReplicationGroups(std::move(value)); return *this;}
-    inline DescribeReplicationGroupsResult& AddReplicationGroups(const ReplicationGroup& value) { m_replicationGroups.push_back(value); return *this; }
-    inline DescribeReplicationGroupsResult& AddReplicationGroups(ReplicationGroup&& value) { m_replicationGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicationGroup>& GetReplicationGroups() const { return m_replicationGroups; }
+    template<typename ReplicationGroupsT = Aws::Vector<ReplicationGroup>>
+    void SetReplicationGroups(ReplicationGroupsT&& value) { m_replicationGroupsHasBeenSet = true; m_replicationGroups = std::forward<ReplicationGroupsT>(value); }
+    template<typename ReplicationGroupsT = Aws::Vector<ReplicationGroup>>
+    DescribeReplicationGroupsResult& WithReplicationGroups(ReplicationGroupsT&& value) { SetReplicationGroups(std::forward<ReplicationGroupsT>(value)); return *this;}
+    template<typename ReplicationGroupsT = ReplicationGroup>
+    DescribeReplicationGroupsResult& AddReplicationGroups(ReplicationGroupsT&& value) { m_replicationGroupsHasBeenSet = true; m_replicationGroups.emplace_back(std::forward<ReplicationGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeReplicationGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeReplicationGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeReplicationGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<ReplicationGroup> m_replicationGroups;
+    bool m_replicationGroupsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

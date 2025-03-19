@@ -32,7 +32,7 @@ namespace Model
   class NodeConfig
   {
   public:
-    AWS_OPENSEARCHSERVICE_API NodeConfig();
+    AWS_OPENSEARCHSERVICE_API NodeConfig() = default;
     AWS_OPENSEARCHSERVICE_API NodeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API NodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>A boolean that indicates whether a particular node type is enabled or
      * not.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline NodeConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,32 +53,30 @@ namespace Model
     /**
      * <p>The instance type of a particular node type in the cluster.</p>
      */
-    inline const OpenSearchPartitionInstanceType& GetType() const{ return m_type; }
+    inline OpenSearchPartitionInstanceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const OpenSearchPartitionInstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(OpenSearchPartitionInstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline NodeConfig& WithType(const OpenSearchPartitionInstanceType& value) { SetType(value); return *this;}
-    inline NodeConfig& WithType(OpenSearchPartitionInstanceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(OpenSearchPartitionInstanceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline NodeConfig& WithType(OpenSearchPartitionInstanceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of nodes of a particular node type in the cluster.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline NodeConfig& WithCount(int value) { SetCount(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    OpenSearchPartitionInstanceType m_type;
+    OpenSearchPartitionInstanceType m_type{OpenSearchPartitionInstanceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

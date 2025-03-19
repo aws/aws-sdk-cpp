@@ -32,7 +32,7 @@ namespace Model
   class DisassociatedFace
   {
   public:
-    AWS_REKOGNITION_API DisassociatedFace();
+    AWS_REKOGNITION_API DisassociatedFace() = default;
     AWS_REKOGNITION_API DisassociatedFace(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DisassociatedFace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Unique identifier assigned to the face.</p>
      */
-    inline const Aws::String& GetFaceId() const{ return m_faceId; }
+    inline const Aws::String& GetFaceId() const { return m_faceId; }
     inline bool FaceIdHasBeenSet() const { return m_faceIdHasBeenSet; }
-    inline void SetFaceId(const Aws::String& value) { m_faceIdHasBeenSet = true; m_faceId = value; }
-    inline void SetFaceId(Aws::String&& value) { m_faceIdHasBeenSet = true; m_faceId = std::move(value); }
-    inline void SetFaceId(const char* value) { m_faceIdHasBeenSet = true; m_faceId.assign(value); }
-    inline DisassociatedFace& WithFaceId(const Aws::String& value) { SetFaceId(value); return *this;}
-    inline DisassociatedFace& WithFaceId(Aws::String&& value) { SetFaceId(std::move(value)); return *this;}
-    inline DisassociatedFace& WithFaceId(const char* value) { SetFaceId(value); return *this;}
+    template<typename FaceIdT = Aws::String>
+    void SetFaceId(FaceIdT&& value) { m_faceIdHasBeenSet = true; m_faceId = std::forward<FaceIdT>(value); }
+    template<typename FaceIdT = Aws::String>
+    DisassociatedFace& WithFaceId(FaceIdT&& value) { SetFaceId(std::forward<FaceIdT>(value)); return *this;}
     ///@}
   private:
 

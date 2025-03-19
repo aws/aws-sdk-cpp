@@ -33,7 +33,7 @@ namespace Model
   class JWTConfiguration
   {
   public:
-    AWS_APIGATEWAYV2_API JWTConfiguration();
+    AWS_APIGATEWAYV2_API JWTConfiguration() = default;
     AWS_APIGATEWAYV2_API JWTConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API JWTConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported
      * only for HTTP APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAudience() const{ return m_audience; }
+    inline const Aws::Vector<Aws::String>& GetAudience() const { return m_audience; }
     inline bool AudienceHasBeenSet() const { return m_audienceHasBeenSet; }
-    inline void SetAudience(const Aws::Vector<Aws::String>& value) { m_audienceHasBeenSet = true; m_audience = value; }
-    inline void SetAudience(Aws::Vector<Aws::String>&& value) { m_audienceHasBeenSet = true; m_audience = std::move(value); }
-    inline JWTConfiguration& WithAudience(const Aws::Vector<Aws::String>& value) { SetAudience(value); return *this;}
-    inline JWTConfiguration& WithAudience(Aws::Vector<Aws::String>&& value) { SetAudience(std::move(value)); return *this;}
-    inline JWTConfiguration& AddAudience(const Aws::String& value) { m_audienceHasBeenSet = true; m_audience.push_back(value); return *this; }
-    inline JWTConfiguration& AddAudience(Aws::String&& value) { m_audienceHasBeenSet = true; m_audience.push_back(std::move(value)); return *this; }
-    inline JWTConfiguration& AddAudience(const char* value) { m_audienceHasBeenSet = true; m_audience.push_back(value); return *this; }
+    template<typename AudienceT = Aws::Vector<Aws::String>>
+    void SetAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience = std::forward<AudienceT>(value); }
+    template<typename AudienceT = Aws::Vector<Aws::String>>
+    JWTConfiguration& WithAudience(AudienceT&& value) { SetAudience(std::forward<AudienceT>(value)); return *this;}
+    template<typename AudienceT = Aws::String>
+    JWTConfiguration& AddAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience.emplace_back(std::forward<AudienceT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +64,12 @@ namespace Model
 
      *        . Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline JWTConfiguration& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline JWTConfiguration& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline JWTConfiguration& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    JWTConfiguration& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
   private:
 

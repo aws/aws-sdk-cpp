@@ -18,21 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseParameter::RelationalDatabaseParameter() : 
-    m_allowedValuesHasBeenSet(false),
-    m_applyMethodHasBeenSet(false),
-    m_applyTypeHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 RelationalDatabaseParameter::RelationalDatabaseParameter(JsonView jsonValue)
-  : RelationalDatabaseParameter()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ RelationalDatabaseParameter& RelationalDatabaseParameter::operator =(JsonView js
   if(jsonValue.ValueExists("allowedValues"))
   {
     m_allowedValues = jsonValue.GetString("allowedValues");
-
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applyMethod"))
   {
     m_applyMethod = jsonValue.GetString("applyMethod");
-
     m_applyMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applyType"))
   {
     m_applyType = jsonValue.GetString("applyType");
-
     m_applyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = jsonValue.GetString("dataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isModifiable"))
   {
     m_isModifiable = jsonValue.GetBool("isModifiable");
-
     m_isModifiableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterName"))
   {
     m_parameterName = jsonValue.GetString("parameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterValue"))
   {
     m_parameterValue = jsonValue.GetString("parameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

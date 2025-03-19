@@ -12,14 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAgentVersionsRequest::ListAgentVersionsRequest() : 
-    m_agentIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAgentVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

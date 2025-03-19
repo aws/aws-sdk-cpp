@@ -30,7 +30,7 @@ namespace Model
   class DescribeVpcEndpointServicesResponse
   {
   public:
-    AWS_EC2_API DescribeVpcEndpointServicesResponse();
+    AWS_EC2_API DescribeVpcEndpointServicesResponse() = default;
     AWS_EC2_API DescribeVpcEndpointServicesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVpcEndpointServicesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,27 +39,26 @@ namespace Model
     /**
      * <p>The supported services.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
-    inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNames = value; }
-    inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNames = std::move(value); }
-    inline DescribeVpcEndpointServicesResponse& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
-    inline DescribeVpcEndpointServicesResponse& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
-    inline DescribeVpcEndpointServicesResponse& AddServiceNames(const Aws::String& value) { m_serviceNames.push_back(value); return *this; }
-    inline DescribeVpcEndpointServicesResponse& AddServiceNames(Aws::String&& value) { m_serviceNames.push_back(std::move(value)); return *this; }
-    inline DescribeVpcEndpointServicesResponse& AddServiceNames(const char* value) { m_serviceNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetServiceNames() const { return m_serviceNames; }
+    template<typename ServiceNamesT = Aws::Vector<Aws::String>>
+    void SetServiceNames(ServiceNamesT&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::forward<ServiceNamesT>(value); }
+    template<typename ServiceNamesT = Aws::Vector<Aws::String>>
+    DescribeVpcEndpointServicesResponse& WithServiceNames(ServiceNamesT&& value) { SetServiceNames(std::forward<ServiceNamesT>(value)); return *this;}
+    template<typename ServiceNamesT = Aws::String>
+    DescribeVpcEndpointServicesResponse& AddServiceNames(ServiceNamesT&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.emplace_back(std::forward<ServiceNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the service.</p>
      */
-    inline const Aws::Vector<ServiceDetail>& GetServiceDetails() const{ return m_serviceDetails; }
-    inline void SetServiceDetails(const Aws::Vector<ServiceDetail>& value) { m_serviceDetails = value; }
-    inline void SetServiceDetails(Aws::Vector<ServiceDetail>&& value) { m_serviceDetails = std::move(value); }
-    inline DescribeVpcEndpointServicesResponse& WithServiceDetails(const Aws::Vector<ServiceDetail>& value) { SetServiceDetails(value); return *this;}
-    inline DescribeVpcEndpointServicesResponse& WithServiceDetails(Aws::Vector<ServiceDetail>&& value) { SetServiceDetails(std::move(value)); return *this;}
-    inline DescribeVpcEndpointServicesResponse& AddServiceDetails(const ServiceDetail& value) { m_serviceDetails.push_back(value); return *this; }
-    inline DescribeVpcEndpointServicesResponse& AddServiceDetails(ServiceDetail&& value) { m_serviceDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceDetail>& GetServiceDetails() const { return m_serviceDetails; }
+    template<typename ServiceDetailsT = Aws::Vector<ServiceDetail>>
+    void SetServiceDetails(ServiceDetailsT&& value) { m_serviceDetailsHasBeenSet = true; m_serviceDetails = std::forward<ServiceDetailsT>(value); }
+    template<typename ServiceDetailsT = Aws::Vector<ServiceDetail>>
+    DescribeVpcEndpointServicesResponse& WithServiceDetails(ServiceDetailsT&& value) { SetServiceDetails(std::forward<ServiceDetailsT>(value)); return *this;}
+    template<typename ServiceDetailsT = ServiceDetail>
+    DescribeVpcEndpointServicesResponse& AddServiceDetails(ServiceDetailsT&& value) { m_serviceDetailsHasBeenSet = true; m_serviceDetails.emplace_back(std::forward<ServiceDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,32 +66,34 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVpcEndpointServicesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVpcEndpointServicesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVpcEndpointServicesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVpcEndpointServicesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVpcEndpointServicesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVpcEndpointServicesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVpcEndpointServicesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_serviceNames;
+    bool m_serviceNamesHasBeenSet = false;
 
     Aws::Vector<ServiceDetail> m_serviceDetails;
+    bool m_serviceDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

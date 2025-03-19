@@ -18,16 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-ChangeProgressStage::ChangeProgressStage() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
-{
-}
-
 ChangeProgressStage::ChangeProgressStage(JsonView jsonValue)
-  : ChangeProgressStage()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ChangeProgressStage& ChangeProgressStage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   return *this;
 }
 

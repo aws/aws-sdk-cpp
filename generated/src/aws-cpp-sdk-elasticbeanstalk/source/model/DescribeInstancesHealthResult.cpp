@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstancesHealthResult::DescribeInstancesHealthResult()
-{
-}
-
 DescribeInstancesHealthResult::DescribeInstancesHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,28 +38,33 @@ DescribeInstancesHealthResult& DescribeInstancesHealthResult::operator =(const A
     if(!instanceHealthListNode.IsNull())
     {
       XmlNode instanceHealthListMember = instanceHealthListNode.FirstChild("member");
+      m_instanceHealthListHasBeenSet = !instanceHealthListMember.IsNull();
       while(!instanceHealthListMember.IsNull())
       {
         m_instanceHealthList.push_back(instanceHealthListMember);
         instanceHealthListMember = instanceHealthListMember.NextNode("member");
       }
 
+      m_instanceHealthListHasBeenSet = true;
     }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
     if(!refreshedAtNode.IsNull())
     {
       m_refreshedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(refreshedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_refreshedAtHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeInstancesHealthResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

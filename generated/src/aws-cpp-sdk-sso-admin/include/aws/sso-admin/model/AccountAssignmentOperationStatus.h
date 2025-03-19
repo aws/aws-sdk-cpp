@@ -36,7 +36,7 @@ namespace Model
   class AccountAssignmentOperationStatus
   {
   public:
-    AWS_SSOADMIN_API AccountAssignmentOperationStatus();
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus() = default;
     AWS_SSOADMIN_API AccountAssignmentOperationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AccountAssignmentOperationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>The date that the permission set was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline AccountAssignmentOperationStatus& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    AccountAssignmentOperationStatus& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The message that contains an error or exception in case of an operation
      * failure.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline AccountAssignmentOperationStatus& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline AccountAssignmentOperationStatus& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    AccountAssignmentOperationStatus& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-    inline AccountAssignmentOperationStatus& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-    inline AccountAssignmentOperationStatus& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    AccountAssignmentOperationStatus& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,26 +90,22 @@ namespace Model
      * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
      * Center Identity Store API Reference</a>.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline AccountAssignmentOperationStatus& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline AccountAssignmentOperationStatus& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    AccountAssignmentOperationStatus& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity type for which the assignment will be created.</p>
      */
-    inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
-    inline AccountAssignmentOperationStatus& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline AccountAssignmentOperationStatus& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
     ///@}
 
     ///@{
@@ -121,26 +113,22 @@ namespace Model
      * <p>The identifier for tracking the request operation that is generated by the
      * universally unique identifier (UUID) workflow.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline AccountAssignmentOperationStatus& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AccountAssignmentOperationStatus& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AccountAssignmentOperationStatus& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the permission set provisioning process.</p>
      */
-    inline const StatusValues& GetStatus() const{ return m_status; }
+    inline StatusValues GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusValues& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusValues&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccountAssignmentOperationStatus& WithStatus(const StatusValues& value) { SetStatus(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithStatus(StatusValues&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusValues value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccountAssignmentOperationStatus& WithStatus(StatusValues value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -148,30 +136,26 @@ namespace Model
      * <p>TargetID is an Amazon Web Services account identifier, (For example,
      * 123456789012).</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline AccountAssignmentOperationStatus& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline AccountAssignmentOperationStatus& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    AccountAssignmentOperationStatus& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity type for which the assignment will be created.</p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
+    inline TargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline AccountAssignmentOperationStatus& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline AccountAssignmentOperationStatus& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline AccountAssignmentOperationStatus& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
     Aws::String m_failureReason;
@@ -183,19 +167,19 @@ namespace Model
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet = false;
 
-    PrincipalType m_principalType;
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
     bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    StatusValues m_status;
+    StatusValues m_status{StatusValues::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
   };
 

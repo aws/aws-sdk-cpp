@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRoleAliasResult::CreateRoleAliasResult()
-{
-}
-
 CreateRoleAliasResult::CreateRoleAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateRoleAliasResult& CreateRoleAliasResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("roleAlias"))
   {
     m_roleAlias = jsonValue.GetString("roleAlias");
-
+    m_roleAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleAliasArn"))
   {
     m_roleAliasArn = jsonValue.GetString("roleAliasArn");
-
+    m_roleAliasArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

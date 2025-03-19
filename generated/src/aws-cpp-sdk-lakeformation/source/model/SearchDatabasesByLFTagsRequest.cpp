@@ -12,15 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchDatabasesByLFTagsRequest::SearchDatabasesByLFTagsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 Aws::String SearchDatabasesByLFTagsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,19 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartQueryMonitorTopContributorsRequest::StartQueryMonitorTopContributorsRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_metricName(MonitorMetric::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_destinationCategory(DestinationCategory::NOT_SET),
-    m_destinationCategoryHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String StartQueryMonitorTopContributorsRequest::SerializePayload() const
 {
   JsonValue payload;

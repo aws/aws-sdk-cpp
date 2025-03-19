@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SingularSourceProperties::SingularSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 SingularSourceProperties::SingularSourceProperties(JsonView jsonValue)
-  : SingularSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SingularSourceProperties& SingularSourceProperties::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

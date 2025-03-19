@@ -12,25 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationRequest::CreateApplicationRequest() : 
-    m_authorHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_homePageUrlHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_licenseBodyHasBeenSet(false),
-    m_licenseUrlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_readmeBodyHasBeenSet(false),
-    m_readmeUrlHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_sourceCodeArchiveUrlHasBeenSet(false),
-    m_sourceCodeUrlHasBeenSet(false),
-    m_spdxLicenseIdHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateUrlHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -23,7 +23,7 @@ namespace Model
   class StartSpeakerSearchTaskRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API StartSpeakerSearchTaskRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API StartSpeakerSearchTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The unique identifier of the resource to be updated. Valid values include the
      * ID and ARN of the media insights pipeline.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline StartSpeakerSearchTaskRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    StartSpeakerSearchTaskRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the voice profile domain that will store the voice profile.</p>
      */
-    inline const Aws::String& GetVoiceProfileDomainArn() const{ return m_voiceProfileDomainArn; }
+    inline const Aws::String& GetVoiceProfileDomainArn() const { return m_voiceProfileDomainArn; }
     inline bool VoiceProfileDomainArnHasBeenSet() const { return m_voiceProfileDomainArnHasBeenSet; }
-    inline void SetVoiceProfileDomainArn(const Aws::String& value) { m_voiceProfileDomainArnHasBeenSet = true; m_voiceProfileDomainArn = value; }
-    inline void SetVoiceProfileDomainArn(Aws::String&& value) { m_voiceProfileDomainArnHasBeenSet = true; m_voiceProfileDomainArn = std::move(value); }
-    inline void SetVoiceProfileDomainArn(const char* value) { m_voiceProfileDomainArnHasBeenSet = true; m_voiceProfileDomainArn.assign(value); }
-    inline StartSpeakerSearchTaskRequest& WithVoiceProfileDomainArn(const Aws::String& value) { SetVoiceProfileDomainArn(value); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithVoiceProfileDomainArn(Aws::String&& value) { SetVoiceProfileDomainArn(std::move(value)); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithVoiceProfileDomainArn(const char* value) { SetVoiceProfileDomainArn(value); return *this;}
+    template<typename VoiceProfileDomainArnT = Aws::String>
+    void SetVoiceProfileDomainArn(VoiceProfileDomainArnT&& value) { m_voiceProfileDomainArnHasBeenSet = true; m_voiceProfileDomainArn = std::forward<VoiceProfileDomainArnT>(value); }
+    template<typename VoiceProfileDomainArnT = Aws::String>
+    StartSpeakerSearchTaskRequest& WithVoiceProfileDomainArn(VoiceProfileDomainArnT&& value) { SetVoiceProfileDomainArn(std::forward<VoiceProfileDomainArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,12 @@ namespace Model
      * <p>The task configuration for the Kinesis video stream source of the media
      * insights pipeline.</p>
      */
-    inline const KinesisVideoStreamSourceTaskConfiguration& GetKinesisVideoStreamSourceTaskConfiguration() const{ return m_kinesisVideoStreamSourceTaskConfiguration; }
+    inline const KinesisVideoStreamSourceTaskConfiguration& GetKinesisVideoStreamSourceTaskConfiguration() const { return m_kinesisVideoStreamSourceTaskConfiguration; }
     inline bool KinesisVideoStreamSourceTaskConfigurationHasBeenSet() const { return m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet; }
-    inline void SetKinesisVideoStreamSourceTaskConfiguration(const KinesisVideoStreamSourceTaskConfiguration& value) { m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = true; m_kinesisVideoStreamSourceTaskConfiguration = value; }
-    inline void SetKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfiguration&& value) { m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = true; m_kinesisVideoStreamSourceTaskConfiguration = std::move(value); }
-    inline StartSpeakerSearchTaskRequest& WithKinesisVideoStreamSourceTaskConfiguration(const KinesisVideoStreamSourceTaskConfiguration& value) { SetKinesisVideoStreamSourceTaskConfiguration(value); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfiguration&& value) { SetKinesisVideoStreamSourceTaskConfiguration(std::move(value)); return *this;}
+    template<typename KinesisVideoStreamSourceTaskConfigurationT = KinesisVideoStreamSourceTaskConfiguration>
+    void SetKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfigurationT&& value) { m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet = true; m_kinesisVideoStreamSourceTaskConfiguration = std::forward<KinesisVideoStreamSourceTaskConfigurationT>(value); }
+    template<typename KinesisVideoStreamSourceTaskConfigurationT = KinesisVideoStreamSourceTaskConfiguration>
+    StartSpeakerSearchTaskRequest& WithKinesisVideoStreamSourceTaskConfiguration(KinesisVideoStreamSourceTaskConfigurationT&& value) { SetKinesisVideoStreamSourceTaskConfiguration(std::forward<KinesisVideoStreamSourceTaskConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <p>The unique identifier for the client request. Use a different token for
      * different speaker search tasks.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartSpeakerSearchTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartSpeakerSearchTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartSpeakerSearchTaskRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

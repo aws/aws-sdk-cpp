@@ -29,7 +29,7 @@ namespace Model
   class UpdateConstraintResult
   {
   public:
-    AWS_SERVICECATALOG_API UpdateConstraintResult();
+    AWS_SERVICECATALOG_API UpdateConstraintResult() = default;
     AWS_SERVICECATALOG_API UpdateConstraintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API UpdateConstraintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,56 +38,54 @@ namespace Model
     /**
      * <p>Information about the constraint.</p>
      */
-    inline const ConstraintDetail& GetConstraintDetail() const{ return m_constraintDetail; }
-    inline void SetConstraintDetail(const ConstraintDetail& value) { m_constraintDetail = value; }
-    inline void SetConstraintDetail(ConstraintDetail&& value) { m_constraintDetail = std::move(value); }
-    inline UpdateConstraintResult& WithConstraintDetail(const ConstraintDetail& value) { SetConstraintDetail(value); return *this;}
-    inline UpdateConstraintResult& WithConstraintDetail(ConstraintDetail&& value) { SetConstraintDetail(std::move(value)); return *this;}
+    inline const ConstraintDetail& GetConstraintDetail() const { return m_constraintDetail; }
+    template<typename ConstraintDetailT = ConstraintDetail>
+    void SetConstraintDetail(ConstraintDetailT&& value) { m_constraintDetailHasBeenSet = true; m_constraintDetail = std::forward<ConstraintDetailT>(value); }
+    template<typename ConstraintDetailT = ConstraintDetail>
+    UpdateConstraintResult& WithConstraintDetail(ConstraintDetailT&& value) { SetConstraintDetail(std::forward<ConstraintDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The constraint parameters.</p>
      */
-    inline const Aws::String& GetConstraintParameters() const{ return m_constraintParameters; }
-    inline void SetConstraintParameters(const Aws::String& value) { m_constraintParameters = value; }
-    inline void SetConstraintParameters(Aws::String&& value) { m_constraintParameters = std::move(value); }
-    inline void SetConstraintParameters(const char* value) { m_constraintParameters.assign(value); }
-    inline UpdateConstraintResult& WithConstraintParameters(const Aws::String& value) { SetConstraintParameters(value); return *this;}
-    inline UpdateConstraintResult& WithConstraintParameters(Aws::String&& value) { SetConstraintParameters(std::move(value)); return *this;}
-    inline UpdateConstraintResult& WithConstraintParameters(const char* value) { SetConstraintParameters(value); return *this;}
+    inline const Aws::String& GetConstraintParameters() const { return m_constraintParameters; }
+    template<typename ConstraintParametersT = Aws::String>
+    void SetConstraintParameters(ConstraintParametersT&& value) { m_constraintParametersHasBeenSet = true; m_constraintParameters = std::forward<ConstraintParametersT>(value); }
+    template<typename ConstraintParametersT = Aws::String>
+    UpdateConstraintResult& WithConstraintParameters(ConstraintParametersT&& value) { SetConstraintParameters(std::forward<ConstraintParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the current request.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline UpdateConstraintResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline UpdateConstraintResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateConstraintResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateConstraintResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateConstraintResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateConstraintResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateConstraintResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConstraintDetail m_constraintDetail;
+    bool m_constraintDetailHasBeenSet = false;
 
     Aws::String m_constraintParameters;
+    bool m_constraintParametersHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

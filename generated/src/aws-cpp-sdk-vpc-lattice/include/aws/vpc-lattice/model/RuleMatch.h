@@ -31,7 +31,7 @@ namespace Model
   class RuleMatch
   {
   public:
-    AWS_VPCLATTICE_API RuleMatch();
+    AWS_VPCLATTICE_API RuleMatch() = default;
     AWS_VPCLATTICE_API RuleMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API RuleMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The HTTP criteria that a rule must match.</p>
      */
-    inline const HttpMatch& GetHttpMatch() const{ return m_httpMatch; }
+    inline const HttpMatch& GetHttpMatch() const { return m_httpMatch; }
     inline bool HttpMatchHasBeenSet() const { return m_httpMatchHasBeenSet; }
-    inline void SetHttpMatch(const HttpMatch& value) { m_httpMatchHasBeenSet = true; m_httpMatch = value; }
-    inline void SetHttpMatch(HttpMatch&& value) { m_httpMatchHasBeenSet = true; m_httpMatch = std::move(value); }
-    inline RuleMatch& WithHttpMatch(const HttpMatch& value) { SetHttpMatch(value); return *this;}
-    inline RuleMatch& WithHttpMatch(HttpMatch&& value) { SetHttpMatch(std::move(value)); return *this;}
+    template<typename HttpMatchT = HttpMatch>
+    void SetHttpMatch(HttpMatchT&& value) { m_httpMatchHasBeenSet = true; m_httpMatch = std::forward<HttpMatchT>(value); }
+    template<typename HttpMatchT = HttpMatch>
+    RuleMatch& WithHttpMatch(HttpMatchT&& value) { SetHttpMatch(std::forward<HttpMatchT>(value)); return *this;}
     ///@}
   private:
 

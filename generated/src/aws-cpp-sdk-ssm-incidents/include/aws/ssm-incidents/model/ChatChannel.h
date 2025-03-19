@@ -34,7 +34,7 @@ namespace Model
   class ChatChannel
   {
   public:
-    AWS_SSMINCIDENTS_API ChatChannel();
+    AWS_SSMINCIDENTS_API ChatChannel() = default;
     AWS_SSMINCIDENTS_API ChatChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API ChatChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,27 +46,26 @@ namespace Model
      * updates to an incident. You can also make updates to the incident through the
      * chat channel by using the Amazon SNS topics. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetChatbotSns() const{ return m_chatbotSns; }
+    inline const Aws::Vector<Aws::String>& GetChatbotSns() const { return m_chatbotSns; }
     inline bool ChatbotSnsHasBeenSet() const { return m_chatbotSnsHasBeenSet; }
-    inline void SetChatbotSns(const Aws::Vector<Aws::String>& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = value; }
-    inline void SetChatbotSns(Aws::Vector<Aws::String>&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = std::move(value); }
-    inline ChatChannel& WithChatbotSns(const Aws::Vector<Aws::String>& value) { SetChatbotSns(value); return *this;}
-    inline ChatChannel& WithChatbotSns(Aws::Vector<Aws::String>&& value) { SetChatbotSns(std::move(value)); return *this;}
-    inline ChatChannel& AddChatbotSns(const Aws::String& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(value); return *this; }
-    inline ChatChannel& AddChatbotSns(Aws::String&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(std::move(value)); return *this; }
-    inline ChatChannel& AddChatbotSns(const char* value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.push_back(value); return *this; }
+    template<typename ChatbotSnsT = Aws::Vector<Aws::String>>
+    void SetChatbotSns(ChatbotSnsT&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns = std::forward<ChatbotSnsT>(value); }
+    template<typename ChatbotSnsT = Aws::Vector<Aws::String>>
+    ChatChannel& WithChatbotSns(ChatbotSnsT&& value) { SetChatbotSns(std::forward<ChatbotSnsT>(value)); return *this;}
+    template<typename ChatbotSnsT = Aws::String>
+    ChatChannel& AddChatbotSns(ChatbotSnsT&& value) { m_chatbotSnsHasBeenSet = true; m_chatbotSns.emplace_back(std::forward<ChatbotSnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Used to remove the chat channel from an incident record or response plan.</p>
      */
-    inline const EmptyChatChannel& GetEmpty() const{ return m_empty; }
+    inline const EmptyChatChannel& GetEmpty() const { return m_empty; }
     inline bool EmptyHasBeenSet() const { return m_emptyHasBeenSet; }
-    inline void SetEmpty(const EmptyChatChannel& value) { m_emptyHasBeenSet = true; m_empty = value; }
-    inline void SetEmpty(EmptyChatChannel&& value) { m_emptyHasBeenSet = true; m_empty = std::move(value); }
-    inline ChatChannel& WithEmpty(const EmptyChatChannel& value) { SetEmpty(value); return *this;}
-    inline ChatChannel& WithEmpty(EmptyChatChannel&& value) { SetEmpty(std::move(value)); return *this;}
+    template<typename EmptyT = EmptyChatChannel>
+    void SetEmpty(EmptyT&& value) { m_emptyHasBeenSet = true; m_empty = std::forward<EmptyT>(value); }
+    template<typename EmptyT = EmptyChatChannel>
+    ChatChannel& WithEmpty(EmptyT&& value) { SetEmpty(std::forward<EmptyT>(value)); return *this;}
     ///@}
   private:
 

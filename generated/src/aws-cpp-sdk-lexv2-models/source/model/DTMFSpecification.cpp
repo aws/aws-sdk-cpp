@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DTMFSpecification::DTMFSpecification() : 
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_endTimeoutMs(0),
-    m_endTimeoutMsHasBeenSet(false),
-    m_deletionCharacterHasBeenSet(false),
-    m_endCharacterHasBeenSet(false)
-{
-}
-
 DTMFSpecification::DTMFSpecification(JsonView jsonValue)
-  : DTMFSpecification()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DTMFSpecification& DTMFSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxLength"))
   {
     m_maxLength = jsonValue.GetInteger("maxLength");
-
     m_maxLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimeoutMs"))
   {
     m_endTimeoutMs = jsonValue.GetInteger("endTimeoutMs");
-
     m_endTimeoutMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletionCharacter"))
   {
     m_deletionCharacter = jsonValue.GetString("deletionCharacter");
-
     m_deletionCharacterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endCharacter"))
   {
     m_endCharacter = jsonValue.GetString("endCharacter");
-
     m_endCharacterHasBeenSet = true;
   }
-
   return *this;
 }
 

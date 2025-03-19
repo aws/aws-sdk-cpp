@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AvailBlanking::AvailBlanking() : 
-    m_availBlankingImageHasBeenSet(false)
-{
-}
-
 AvailBlanking::AvailBlanking(JsonView jsonValue)
-  : AvailBlanking()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AvailBlanking& AvailBlanking::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availBlankingImage"))
   {
     m_availBlankingImage = jsonValue.GetString("availBlankingImage");
-
     m_availBlankingImageHasBeenSet = true;
   }
-
   return *this;
 }
 

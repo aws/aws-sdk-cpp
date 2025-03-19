@@ -12,30 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartLoaderJobRequest::StartLoaderJobRequest() : 
-    m_sourceHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_s3BucketRegion(S3BucketRegion::NOT_SET),
-    m_s3BucketRegionHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_failOnError(false),
-    m_failOnErrorHasBeenSet(false),
-    m_parallelism(Parallelism::NOT_SET),
-    m_parallelismHasBeenSet(false),
-    m_parserConfigurationHasBeenSet(false),
-    m_updateSingleCardinalityProperties(false),
-    m_updateSingleCardinalityPropertiesHasBeenSet(false),
-    m_queueRequest(false),
-    m_queueRequestHasBeenSet(false),
-    m_dependenciesHasBeenSet(false),
-    m_userProvidedEdgeIds(false),
-    m_userProvidedEdgeIdsHasBeenSet(false)
-{
-}
-
 Aws::String StartLoaderJobRequest::SerializePayload() const
 {
   JsonValue payload;

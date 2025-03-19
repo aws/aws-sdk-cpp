@@ -18,14 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ProtectionGroupArbitraryPatternLimits::ProtectionGroupArbitraryPatternLimits() : 
-    m_maxMembers(0),
-    m_maxMembersHasBeenSet(false)
-{
-}
-
 ProtectionGroupArbitraryPatternLimits::ProtectionGroupArbitraryPatternLimits(JsonView jsonValue)
-  : ProtectionGroupArbitraryPatternLimits()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProtectionGroupArbitraryPatternLimits& ProtectionGroupArbitraryPatternLimits::op
   if(jsonValue.ValueExists("MaxMembers"))
   {
     m_maxMembers = jsonValue.GetInt64("MaxMembers");
-
     m_maxMembersHasBeenSet = true;
   }
-
   return *this;
 }
 

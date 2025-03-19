@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserByPrincipalIdRequest::DeleteUserByPrincipalIdRequest() : 
-    m_principalIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserByPrincipalIdRequest::SerializePayload() const
 {
   return {};

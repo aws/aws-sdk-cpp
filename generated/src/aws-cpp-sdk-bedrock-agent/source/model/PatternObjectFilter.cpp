@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PatternObjectFilter::PatternObjectFilter() : 
-    m_exclusionFiltersHasBeenSet(false),
-    m_inclusionFiltersHasBeenSet(false),
-    m_objectTypeHasBeenSet(false)
-{
-}
-
 PatternObjectFilter::PatternObjectFilter(JsonView jsonValue)
-  : PatternObjectFilter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ PatternObjectFilter& PatternObjectFilter::operator =(JsonView jsonValue)
     }
     m_exclusionFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inclusionFilters"))
   {
     Aws::Utils::Array<JsonView> inclusionFiltersJsonList = jsonValue.GetArray("inclusionFilters");
@@ -52,14 +43,11 @@ PatternObjectFilter& PatternObjectFilter::operator =(JsonView jsonValue)
     }
     m_inclusionFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectType"))
   {
     m_objectType = jsonValue.GetString("objectType");
-
     m_objectTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class EvaluationDataset
   {
   public:
-    AWS_BEDROCK_API EvaluationDataset();
+    AWS_BEDROCK_API EvaluationDataset() = default;
     AWS_BEDROCK_API EvaluationDataset(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluationDataset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>Builtin.T-Rex</code>, <code>Builtin.WomensEcommerceClothingReviews</code>
      * and <code>Builtin.Wikitext2</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EvaluationDataset& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EvaluationDataset& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EvaluationDataset& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EvaluationDataset& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * <p>For custom prompt datasets, you must specify the location in Amazon S3 where
      * the prompt dataset is saved.</p>
      */
-    inline const EvaluationDatasetLocation& GetDatasetLocation() const{ return m_datasetLocation; }
+    inline const EvaluationDatasetLocation& GetDatasetLocation() const { return m_datasetLocation; }
     inline bool DatasetLocationHasBeenSet() const { return m_datasetLocationHasBeenSet; }
-    inline void SetDatasetLocation(const EvaluationDatasetLocation& value) { m_datasetLocationHasBeenSet = true; m_datasetLocation = value; }
-    inline void SetDatasetLocation(EvaluationDatasetLocation&& value) { m_datasetLocationHasBeenSet = true; m_datasetLocation = std::move(value); }
-    inline EvaluationDataset& WithDatasetLocation(const EvaluationDatasetLocation& value) { SetDatasetLocation(value); return *this;}
-    inline EvaluationDataset& WithDatasetLocation(EvaluationDatasetLocation&& value) { SetDatasetLocation(std::move(value)); return *this;}
+    template<typename DatasetLocationT = EvaluationDatasetLocation>
+    void SetDatasetLocation(DatasetLocationT&& value) { m_datasetLocationHasBeenSet = true; m_datasetLocation = std::forward<DatasetLocationT>(value); }
+    template<typename DatasetLocationT = EvaluationDatasetLocation>
+    EvaluationDataset& WithDatasetLocation(DatasetLocationT&& value) { SetDatasetLocation(std::forward<DatasetLocationT>(value)); return *this;}
     ///@}
   private:
 

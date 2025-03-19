@@ -18,14 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-Anomaly::Anomaly() : 
-    m_nameHasBeenSet(false),
-    m_pixelAnomalyHasBeenSet(false)
-{
-}
-
 Anomaly::Anomaly(JsonView jsonValue)
-  : Anomaly()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PixelAnomaly"))
   {
     m_pixelAnomaly = jsonValue.GetObject("PixelAnomaly");
-
     m_pixelAnomalyHasBeenSet = true;
   }
-
   return *this;
 }
 

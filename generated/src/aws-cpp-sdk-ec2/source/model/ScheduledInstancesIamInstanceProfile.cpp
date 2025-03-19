@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesIamInstanceProfile::ScheduledInstancesIamInstanceProfile() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ScheduledInstancesIamInstanceProfile::ScheduledInstancesIamInstanceProfile(const XmlNode& xmlNode)
-  : ScheduledInstancesIamInstanceProfile()
 {
   *this = xmlNode;
 }

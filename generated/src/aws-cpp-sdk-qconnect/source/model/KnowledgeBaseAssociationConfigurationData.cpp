@@ -18,17 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-KnowledgeBaseAssociationConfigurationData::KnowledgeBaseAssociationConfigurationData() : 
-    m_contentTagFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_overrideKnowledgeBaseSearchType(KnowledgeBaseSearchType::NOT_SET),
-    m_overrideKnowledgeBaseSearchTypeHasBeenSet(false)
-{
-}
-
 KnowledgeBaseAssociationConfigurationData::KnowledgeBaseAssociationConfigurationData(JsonView jsonValue)
-  : KnowledgeBaseAssociationConfigurationData()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KnowledgeBaseAssociationConfigurationData& KnowledgeBaseAssociationConfiguration
   if(jsonValue.ValueExists("contentTagFilter"))
   {
     m_contentTagFilter = jsonValue.GetObject("contentTagFilter");
-
     m_contentTagFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxResults"))
   {
     m_maxResults = jsonValue.GetInteger("maxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideKnowledgeBaseSearchType"))
   {
     m_overrideKnowledgeBaseSearchType = KnowledgeBaseSearchTypeMapper::GetKnowledgeBaseSearchTypeForName(jsonValue.GetString("overrideKnowledgeBaseSearchType"));
-
     m_overrideKnowledgeBaseSearchTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

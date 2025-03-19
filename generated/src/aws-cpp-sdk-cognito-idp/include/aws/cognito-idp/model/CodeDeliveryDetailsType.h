@@ -33,7 +33,7 @@ namespace Model
   class CodeDeliveryDetailsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType();
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,47 +44,41 @@ namespace Model
      * <p>The email address or phone number destination where Amazon Cognito sent the
      * code.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline CodeDeliveryDetailsType& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline CodeDeliveryDetailsType& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline CodeDeliveryDetailsType& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    CodeDeliveryDetailsType& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The method that Amazon Cognito used to send the code.</p>
      */
-    inline const DeliveryMediumType& GetDeliveryMedium() const{ return m_deliveryMedium; }
+    inline DeliveryMediumType GetDeliveryMedium() const { return m_deliveryMedium; }
     inline bool DeliveryMediumHasBeenSet() const { return m_deliveryMediumHasBeenSet; }
-    inline void SetDeliveryMedium(const DeliveryMediumType& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
-    inline void SetDeliveryMedium(DeliveryMediumType&& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = std::move(value); }
-    inline CodeDeliveryDetailsType& WithDeliveryMedium(const DeliveryMediumType& value) { SetDeliveryMedium(value); return *this;}
-    inline CodeDeliveryDetailsType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(std::move(value)); return *this;}
+    inline void SetDeliveryMedium(DeliveryMediumType value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
+    inline CodeDeliveryDetailsType& WithDeliveryMedium(DeliveryMediumType value) { SetDeliveryMedium(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline CodeDeliveryDetailsType& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline CodeDeliveryDetailsType& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline CodeDeliveryDetailsType& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    CodeDeliveryDetailsType& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
 
-    DeliveryMediumType m_deliveryMedium;
+    DeliveryMediumType m_deliveryMedium{DeliveryMediumType::NOT_SET};
     bool m_deliveryMediumHasBeenSet = false;
 
     Aws::String m_attributeName;

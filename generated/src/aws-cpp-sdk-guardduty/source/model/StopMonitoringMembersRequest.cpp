@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopMonitoringMembersRequest::StopMonitoringMembersRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String StopMonitoringMembersRequest::SerializePayload() const
 {
   JsonValue payload;

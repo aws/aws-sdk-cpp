@@ -18,20 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Configuration::Configuration() : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kafkaVersionsHasBeenSet(false),
-    m_latestRevisionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(ConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Configuration::Configuration(JsonView jsonValue)
-  : Configuration()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ Configuration& Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaVersions"))
   {
     Aws::Utils::Array<JsonView> kafkaVersionsJsonList = jsonValue.GetArray("kafkaVersions");
@@ -68,28 +49,21 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     }
     m_kafkaVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestRevision"))
   {
     m_latestRevision = jsonValue.GetObject("latestRevision");
-
     m_latestRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ConfigurationStateMapper::GetConfigurationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

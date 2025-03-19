@@ -20,10 +20,6 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-StartConversationInitialResponse::StartConversationInitialResponse()
-{
-}
-
 StartConversationInitialResponse::StartConversationInitialResponse(JsonView jsonValue)
 {
   *this = jsonValue;

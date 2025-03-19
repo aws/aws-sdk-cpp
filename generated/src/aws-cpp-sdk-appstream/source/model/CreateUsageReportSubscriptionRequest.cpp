@@ -12,10 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUsageReportSubscriptionRequest::CreateUsageReportSubscriptionRequest()
-{
-}
-
 Aws::String CreateUsageReportSubscriptionRequest::SerializePayload() const
 {
   return "{}";

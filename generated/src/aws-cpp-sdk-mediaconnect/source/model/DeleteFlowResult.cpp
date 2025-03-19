@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteFlowResult::DeleteFlowResult() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 DeleteFlowResult::DeleteFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteFlowResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteFlowResult& DeleteFlowResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

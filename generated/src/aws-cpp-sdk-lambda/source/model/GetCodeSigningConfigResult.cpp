@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCodeSigningConfigResult::GetCodeSigningConfigResult()
-{
-}
-
 GetCodeSigningConfigResult::GetCodeSigningConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetCodeSigningConfigResult& GetCodeSigningConfigResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("CodeSigningConfig"))
   {
     m_codeSigningConfig = jsonValue.GetObject("CodeSigningConfig");
-
+    m_codeSigningConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

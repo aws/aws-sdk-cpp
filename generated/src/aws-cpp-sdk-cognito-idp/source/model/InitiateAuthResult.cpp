@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitiateAuthResult::InitiateAuthResult() : 
-    m_challengeName(ChallengeNameType::NOT_SET)
-{
-}
-
 InitiateAuthResult::InitiateAuthResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : InitiateAuthResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ InitiateAuthResult& InitiateAuthResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("ChallengeName"))
   {
     m_challengeName = ChallengeNameTypeMapper::GetChallengeNameTypeForName(jsonValue.GetString("ChallengeName"));
-
+    m_challengeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetString("Session");
-
+    m_sessionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeParameters"))
   {
     Aws::Map<Aws::String, JsonView> challengeParametersJsonMap = jsonValue.GetObject("ChallengeParameters").GetAllObjects();
@@ -50,14 +42,13 @@ InitiateAuthResult& InitiateAuthResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_challengeParameters[challengeParametersItem.first] = challengeParametersItem.second.AsString();
     }
+    m_challengeParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationResult"))
   {
     m_authenticationResult = jsonValue.GetObject("AuthenticationResult");
-
+    m_authenticationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableChallenges"))
   {
     Aws::Utils::Array<JsonView> availableChallengesJsonList = jsonValue.GetArray("AvailableChallenges");
@@ -65,14 +56,15 @@ InitiateAuthResult& InitiateAuthResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_availableChallenges.push_back(ChallengeNameTypeMapper::GetChallengeNameTypeForName(availableChallengesJsonList[availableChallengesIndex].AsString()));
     }
+    m_availableChallengesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

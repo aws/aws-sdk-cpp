@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMonitorResult::UpdateMonitorResult() : 
-    m_status(MonitorConfigState::NOT_SET)
-{
-}
-
 UpdateMonitorResult::UpdateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateMonitorResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateMonitorResult& UpdateMonitorResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("MonitorArn"))
   {
     m_monitorArn = jsonValue.GetString("MonitorArn");
-
+    m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MonitorConfigStateMapper::GetMonitorConfigStateForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-Payload::Payload() : 
-    m_opportunityInvitationHasBeenSet(false)
-{
-}
-
 Payload::Payload(JsonView jsonValue)
-  : Payload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Payload& Payload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpportunityInvitation"))
   {
     m_opportunityInvitation = jsonValue.GetObject("OpportunityInvitation");
-
     m_opportunityInvitationHasBeenSet = true;
   }
-
   return *this;
 }
 

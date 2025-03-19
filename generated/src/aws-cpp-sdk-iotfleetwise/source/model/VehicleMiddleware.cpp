@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-VehicleMiddleware::VehicleMiddleware() : 
-    m_nameHasBeenSet(false),
-    m_protocolName(VehicleMiddlewareProtocol::NOT_SET),
-    m_protocolNameHasBeenSet(false)
-{
-}
-
 VehicleMiddleware::VehicleMiddleware(JsonView jsonValue)
-  : VehicleMiddleware()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VehicleMiddleware& VehicleMiddleware::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocolName"))
   {
     m_protocolName = VehicleMiddlewareProtocolMapper::GetVehicleMiddlewareProtocolForName(jsonValue.GetString("protocolName"));
-
     m_protocolNameHasBeenSet = true;
   }
-
   return *this;
 }
 

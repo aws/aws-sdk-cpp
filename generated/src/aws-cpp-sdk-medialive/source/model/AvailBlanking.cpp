@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AvailBlanking::AvailBlanking() : 
-    m_availBlankingImageHasBeenSet(false),
-    m_state(AvailBlankingState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AvailBlanking::AvailBlanking(JsonView jsonValue)
-  : AvailBlanking()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AvailBlanking& AvailBlanking::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availBlankingImage"))
   {
     m_availBlankingImage = jsonValue.GetObject("availBlankingImage");
-
     m_availBlankingImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = AvailBlankingStateMapper::GetAvailBlankingStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

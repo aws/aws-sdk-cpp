@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-EffectivePolicy::EffectivePolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 EffectivePolicy::EffectivePolicy(JsonView jsonValue)
-  : EffectivePolicy()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EffectivePolicy& EffectivePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyArn"))
   {
     m_policyArn = jsonValue.GetString("policyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyDocument"))
   {
     m_policyDocument = jsonValue.GetString("policyDocument");
-
     m_policyDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ActionDefinition::ActionDefinition() : 
-    m_actionDefinitionIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
-{
-}
-
 ActionDefinition::ActionDefinition(JsonView jsonValue)
-  : ActionDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ActionDefinition& ActionDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionDefinitionId"))
   {
     m_actionDefinitionId = jsonValue.GetString("actionDefinitionId");
-
     m_actionDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = jsonValue.GetString("actionType");
-
     m_actionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

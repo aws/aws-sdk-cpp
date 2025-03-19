@@ -18,18 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailContentFilter::GuardrailContentFilter() : 
-    m_action(GuardrailContentPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_confidence(GuardrailContentFilterConfidence::NOT_SET),
-    m_confidenceHasBeenSet(false),
-    m_type(GuardrailContentFilterType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GuardrailContentFilter::GuardrailContentFilter(JsonView jsonValue)
-  : GuardrailContentFilter()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ GuardrailContentFilter& GuardrailContentFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailContentPolicyActionMapper::GetGuardrailContentPolicyActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confidence"))
   {
     m_confidence = GuardrailContentFilterConfidenceMapper::GetGuardrailContentFilterConfidenceForName(jsonValue.GetString("confidence"));
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-ServiceSettings::ServiceSettings() : 
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ServiceSettings::ServiceSettings(JsonView jsonValue)
-  : ServiceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceSettings& ServiceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

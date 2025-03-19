@@ -33,7 +33,7 @@ namespace Model
   class StepAction
   {
   public:
-    AWS_APPTEST_API StepAction();
+    AWS_APPTEST_API StepAction() = default;
     AWS_APPTEST_API StepAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API StepAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>The resource action of the step action.</p>
      */
-    inline const ResourceAction& GetResourceAction() const{ return m_resourceAction; }
+    inline const ResourceAction& GetResourceAction() const { return m_resourceAction; }
     inline bool ResourceActionHasBeenSet() const { return m_resourceActionHasBeenSet; }
-    inline void SetResourceAction(const ResourceAction& value) { m_resourceActionHasBeenSet = true; m_resourceAction = value; }
-    inline void SetResourceAction(ResourceAction&& value) { m_resourceActionHasBeenSet = true; m_resourceAction = std::move(value); }
-    inline StepAction& WithResourceAction(const ResourceAction& value) { SetResourceAction(value); return *this;}
-    inline StepAction& WithResourceAction(ResourceAction&& value) { SetResourceAction(std::move(value)); return *this;}
+    template<typename ResourceActionT = ResourceAction>
+    void SetResourceAction(ResourceActionT&& value) { m_resourceActionHasBeenSet = true; m_resourceAction = std::forward<ResourceActionT>(value); }
+    template<typename ResourceActionT = ResourceAction>
+    StepAction& WithResourceAction(ResourceActionT&& value) { SetResourceAction(std::forward<ResourceActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mainframe action of the step action.</p>
      */
-    inline const MainframeAction& GetMainframeAction() const{ return m_mainframeAction; }
+    inline const MainframeAction& GetMainframeAction() const { return m_mainframeAction; }
     inline bool MainframeActionHasBeenSet() const { return m_mainframeActionHasBeenSet; }
-    inline void SetMainframeAction(const MainframeAction& value) { m_mainframeActionHasBeenSet = true; m_mainframeAction = value; }
-    inline void SetMainframeAction(MainframeAction&& value) { m_mainframeActionHasBeenSet = true; m_mainframeAction = std::move(value); }
-    inline StepAction& WithMainframeAction(const MainframeAction& value) { SetMainframeAction(value); return *this;}
-    inline StepAction& WithMainframeAction(MainframeAction&& value) { SetMainframeAction(std::move(value)); return *this;}
+    template<typename MainframeActionT = MainframeAction>
+    void SetMainframeAction(MainframeActionT&& value) { m_mainframeActionHasBeenSet = true; m_mainframeAction = std::forward<MainframeActionT>(value); }
+    template<typename MainframeActionT = MainframeAction>
+    StepAction& WithMainframeAction(MainframeActionT&& value) { SetMainframeAction(std::forward<MainframeActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The compare action of the step action.</p>
      */
-    inline const CompareAction& GetCompareAction() const{ return m_compareAction; }
+    inline const CompareAction& GetCompareAction() const { return m_compareAction; }
     inline bool CompareActionHasBeenSet() const { return m_compareActionHasBeenSet; }
-    inline void SetCompareAction(const CompareAction& value) { m_compareActionHasBeenSet = true; m_compareAction = value; }
-    inline void SetCompareAction(CompareAction&& value) { m_compareActionHasBeenSet = true; m_compareAction = std::move(value); }
-    inline StepAction& WithCompareAction(const CompareAction& value) { SetCompareAction(value); return *this;}
-    inline StepAction& WithCompareAction(CompareAction&& value) { SetCompareAction(std::move(value)); return *this;}
+    template<typename CompareActionT = CompareAction>
+    void SetCompareAction(CompareActionT&& value) { m_compareActionHasBeenSet = true; m_compareAction = std::forward<CompareActionT>(value); }
+    template<typename CompareActionT = CompareAction>
+    StepAction& WithCompareAction(CompareActionT&& value) { SetCompareAction(std::forward<CompareActionT>(value)); return *this;}
     ///@}
   private:
 

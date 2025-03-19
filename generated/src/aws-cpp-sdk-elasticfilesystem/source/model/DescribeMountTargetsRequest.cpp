@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeMountTargetsRequest::DescribeMountTargetsRequest() : 
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_mountTargetIdHasBeenSet(false),
-    m_accessPointIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMountTargetsRequest::SerializePayload() const
 {
   return {};

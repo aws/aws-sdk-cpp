@@ -18,14 +18,7 @@ namespace IVS
 namespace Model
 {
 
-StreamFilters::StreamFilters() : 
-    m_health(StreamHealth::NOT_SET),
-    m_healthHasBeenSet(false)
-{
-}
-
 StreamFilters::StreamFilters(JsonView jsonValue)
-  : StreamFilters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StreamFilters& StreamFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("health"))
   {
     m_health = StreamHealthMapper::GetStreamHealthForName(jsonValue.GetString("health"));
-
     m_healthHasBeenSet = true;
   }
-
   return *this;
 }
 

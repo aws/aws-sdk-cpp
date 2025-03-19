@@ -33,7 +33,7 @@ namespace Model
   class GetJobRunResult
   {
   public:
-    AWS_DATAZONE_API GetJobRunResult();
+    AWS_DATAZONE_API GetJobRunResult() = default;
     AWS_DATAZONE_API GetJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API GetJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,179 +42,176 @@ namespace Model
     /**
      * <p>The timestamp of when the job run was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetJobRunResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetJobRunResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetJobRunResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who created the job run.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetJobRunResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetJobRunResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetJobRunResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetJobRunResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the job run.</p>
      */
-    inline const JobRunDetails& GetDetails() const{ return m_details; }
-    inline void SetDetails(const JobRunDetails& value) { m_details = value; }
-    inline void SetDetails(JobRunDetails&& value) { m_details = std::move(value); }
-    inline GetJobRunResult& WithDetails(const JobRunDetails& value) { SetDetails(value); return *this;}
-    inline GetJobRunResult& WithDetails(JobRunDetails&& value) { SetDetails(std::move(value)); return *this;}
+    inline const JobRunDetails& GetDetails() const { return m_details; }
+    template<typename DetailsT = JobRunDetails>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = JobRunDetails>
+    GetJobRunResult& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline GetJobRunResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline GetJobRunResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline GetJobRunResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    GetJobRunResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the job run ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetJobRunResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetJobRunResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetJobRunResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error generated if the action is not completed successfully.</p>
      */
-    inline const JobRunError& GetError() const{ return m_error; }
-    inline void SetError(const JobRunError& value) { m_error = value; }
-    inline void SetError(JobRunError&& value) { m_error = std::move(value); }
-    inline GetJobRunResult& WithError(const JobRunError& value) { SetError(value); return *this;}
-    inline GetJobRunResult& WithError(JobRunError&& value) { SetError(std::move(value)); return *this;}
+    inline const JobRunError& GetError() const { return m_error; }
+    template<typename ErrorT = JobRunError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = JobRunError>
+    GetJobRunResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the job run.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetJobRunResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetJobRunResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetJobRunResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetJobRunResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the job run.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline GetJobRunResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetJobRunResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetJobRunResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetJobRunResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the job run.</p>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
-    inline void SetJobType(const JobType& value) { m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobType = std::move(value); }
-    inline GetJobRunResult& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline GetJobRunResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline JobType GetJobType() const { return m_jobType; }
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline GetJobRunResult& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mode of the job run.</p>
      */
-    inline const JobRunMode& GetRunMode() const{ return m_runMode; }
-    inline void SetRunMode(const JobRunMode& value) { m_runMode = value; }
-    inline void SetRunMode(JobRunMode&& value) { m_runMode = std::move(value); }
-    inline GetJobRunResult& WithRunMode(const JobRunMode& value) { SetRunMode(value); return *this;}
-    inline GetJobRunResult& WithRunMode(JobRunMode&& value) { SetRunMode(std::move(value)); return *this;}
+    inline JobRunMode GetRunMode() const { return m_runMode; }
+    inline void SetRunMode(JobRunMode value) { m_runModeHasBeenSet = true; m_runMode = value; }
+    inline GetJobRunResult& WithRunMode(JobRunMode value) { SetRunMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the job run started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetJobRunResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetJobRunResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetJobRunResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the job run.</p>
      */
-    inline const JobRunStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const JobRunStatus& value) { m_status = value; }
-    inline void SetStatus(JobRunStatus&& value) { m_status = std::move(value); }
-    inline GetJobRunResult& WithStatus(const JobRunStatus& value) { SetStatus(value); return *this;}
-    inline GetJobRunResult& WithStatus(JobRunStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline JobRunStatus GetStatus() const { return m_status; }
+    inline void SetStatus(JobRunStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetJobRunResult& WithStatus(JobRunStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJobRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJobRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJobRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJobRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     JobRunDetails m_details;
+    bool m_detailsHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     JobRunError m_error;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
+    bool m_jobTypeHasBeenSet = false;
 
-    JobRunMode m_runMode;
+    JobRunMode m_runMode{JobRunMode::NOT_SET};
+    bool m_runModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    JobRunStatus m_status;
+    JobRunStatus m_status{JobRunStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

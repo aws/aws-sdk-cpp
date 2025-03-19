@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventTrackerRequest::DeleteEventTrackerRequest() : 
-    m_eventTrackerArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventTrackerRequest::SerializePayload() const
 {
   JsonValue payload;

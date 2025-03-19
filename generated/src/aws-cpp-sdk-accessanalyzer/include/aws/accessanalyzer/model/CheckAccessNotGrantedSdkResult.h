@@ -30,7 +30,7 @@ namespace Model
   class CheckAccessNotGrantedSdkResult
   {
   public:
-    AWS_ACCESSANALYZER_API CheckAccessNotGrantedSdkResult();
+    AWS_ACCESSANALYZER_API CheckAccessNotGrantedSdkResult() = default;
     AWS_ACCESSANALYZER_API CheckAccessNotGrantedSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API CheckAccessNotGrantedSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,58 +43,56 @@ namespace Model
      * specified policy might allow some or all of the permissions in the access
      * object.</p>
      */
-    inline const CheckAccessNotGrantedResult& GetResult() const{ return m_result; }
-    inline void SetResult(const CheckAccessNotGrantedResult& value) { m_result = value; }
-    inline void SetResult(CheckAccessNotGrantedResult&& value) { m_result = std::move(value); }
-    inline CheckAccessNotGrantedSdkResult& WithResult(const CheckAccessNotGrantedResult& value) { SetResult(value); return *this;}
-    inline CheckAccessNotGrantedSdkResult& WithResult(CheckAccessNotGrantedResult&& value) { SetResult(std::move(value)); return *this;}
+    inline CheckAccessNotGrantedResult GetResult() const { return m_result; }
+    inline void SetResult(CheckAccessNotGrantedResult value) { m_resultHasBeenSet = true; m_result = value; }
+    inline CheckAccessNotGrantedSdkResult& WithResult(CheckAccessNotGrantedResult value) { SetResult(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message indicating whether the specified access is allowed.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline CheckAccessNotGrantedSdkResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CheckAccessNotGrantedSdkResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CheckAccessNotGrantedSdkResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CheckAccessNotGrantedSdkResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the reasoning of the result.</p>
      */
-    inline const Aws::Vector<ReasonSummary>& GetReasons() const{ return m_reasons; }
-    inline void SetReasons(const Aws::Vector<ReasonSummary>& value) { m_reasons = value; }
-    inline void SetReasons(Aws::Vector<ReasonSummary>&& value) { m_reasons = std::move(value); }
-    inline CheckAccessNotGrantedSdkResult& WithReasons(const Aws::Vector<ReasonSummary>& value) { SetReasons(value); return *this;}
-    inline CheckAccessNotGrantedSdkResult& WithReasons(Aws::Vector<ReasonSummary>&& value) { SetReasons(std::move(value)); return *this;}
-    inline CheckAccessNotGrantedSdkResult& AddReasons(const ReasonSummary& value) { m_reasons.push_back(value); return *this; }
-    inline CheckAccessNotGrantedSdkResult& AddReasons(ReasonSummary&& value) { m_reasons.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReasonSummary>& GetReasons() const { return m_reasons; }
+    template<typename ReasonsT = Aws::Vector<ReasonSummary>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<ReasonSummary>>
+    CheckAccessNotGrantedSdkResult& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    template<typename ReasonsT = ReasonSummary>
+    CheckAccessNotGrantedSdkResult& AddReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons.emplace_back(std::forward<ReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CheckAccessNotGrantedSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CheckAccessNotGrantedSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CheckAccessNotGrantedSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CheckAccessNotGrantedSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CheckAccessNotGrantedResult m_result;
+    CheckAccessNotGrantedResult m_result{CheckAccessNotGrantedResult::NOT_SET};
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<ReasonSummary> m_reasons;
+    bool m_reasonsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

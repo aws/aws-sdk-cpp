@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrafficPoliciesResult::ListTrafficPoliciesResult()
-{
-}
-
 ListTrafficPoliciesResult::ListTrafficPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicies"))
   {
     Aws::Utils::Array<JsonView> trafficPoliciesJsonList = jsonValue.GetArray("TrafficPolicies");
@@ -42,14 +37,15 @@ ListTrafficPoliciesResult& ListTrafficPoliciesResult::operator =(const Aws::Amaz
     {
       m_trafficPolicies.push_back(trafficPoliciesJsonList[trafficPoliciesIndex].AsObject());
     }
+    m_trafficPoliciesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

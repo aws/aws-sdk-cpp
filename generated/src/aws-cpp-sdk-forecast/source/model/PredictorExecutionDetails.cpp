@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-PredictorExecutionDetails::PredictorExecutionDetails() : 
-    m_predictorExecutionsHasBeenSet(false)
-{
-}
-
 PredictorExecutionDetails::PredictorExecutionDetails(JsonView jsonValue)
-  : PredictorExecutionDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PredictorExecutionDetails& PredictorExecutionDetails::operator =(JsonView jsonVa
     }
     m_predictorExecutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

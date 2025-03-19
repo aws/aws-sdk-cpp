@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-XmlEmptyBlobsRequest::XmlEmptyBlobsRequest()
-{
-}
-
 Aws::String XmlEmptyBlobsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

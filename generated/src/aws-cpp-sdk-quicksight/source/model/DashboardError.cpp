@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardError::DashboardError() : 
-    m_type(DashboardErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_violatedEntitiesHasBeenSet(false)
-{
-}
-
 DashboardError::DashboardError(JsonView jsonValue)
-  : DashboardError()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DashboardError& DashboardError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DashboardErrorTypeMapper::GetDashboardErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatedEntities"))
   {
     Aws::Utils::Array<JsonView> violatedEntitiesJsonList = jsonValue.GetArray("ViolatedEntities");
@@ -57,7 +44,6 @@ DashboardError& DashboardError::operator =(JsonView jsonValue)
     }
     m_violatedEntitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

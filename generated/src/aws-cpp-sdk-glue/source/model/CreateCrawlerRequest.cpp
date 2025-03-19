@@ -12,25 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCrawlerRequest::CreateCrawlerRequest() : 
-    m_nameHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_classifiersHasBeenSet(false),
-    m_tablePrefixHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false),
-    m_recrawlPolicyHasBeenSet(false),
-    m_lineageConfigurationHasBeenSet(false),
-    m_lakeFormationConfigurationHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_crawlerSecurityConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCrawlerRequest::SerializePayload() const
 {
   JsonValue payload;

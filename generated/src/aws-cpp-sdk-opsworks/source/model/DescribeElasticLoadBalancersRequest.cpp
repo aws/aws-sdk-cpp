@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeElasticLoadBalancersRequest::DescribeElasticLoadBalancersRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_layerIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeElasticLoadBalancersRequest::SerializePayload() const
 {
   JsonValue payload;

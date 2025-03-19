@@ -32,7 +32,7 @@ namespace Model
   class InstanceCapacity
   {
   public:
-    AWS_EC2_API InstanceCapacity();
+    AWS_EC2_API InstanceCapacity() = default;
     AWS_EC2_API InstanceCapacity(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceCapacity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
      * <p>The number of instances that can be launched onto the Dedicated Host based on
      * the host's available capacity.</p>
      */
-    inline int GetAvailableCapacity() const{ return m_availableCapacity; }
+    inline int GetAvailableCapacity() const { return m_availableCapacity; }
     inline bool AvailableCapacityHasBeenSet() const { return m_availableCapacityHasBeenSet; }
     inline void SetAvailableCapacity(int value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
     inline InstanceCapacity& WithAvailableCapacity(int value) { SetAvailableCapacity(value); return *this;}
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>The instance type supported by the Dedicated Host.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline InstanceCapacity& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline InstanceCapacity& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline InstanceCapacity& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    InstanceCapacity& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,20 +68,20 @@ namespace Model
      * <p>The total number of instances that can be launched onto the Dedicated Host if
      * there are no instances running on it.</p>
      */
-    inline int GetTotalCapacity() const{ return m_totalCapacity; }
+    inline int GetTotalCapacity() const { return m_totalCapacity; }
     inline bool TotalCapacityHasBeenSet() const { return m_totalCapacityHasBeenSet; }
     inline void SetTotalCapacity(int value) { m_totalCapacityHasBeenSet = true; m_totalCapacity = value; }
     inline InstanceCapacity& WithTotalCapacity(int value) { SetTotalCapacity(value); return *this;}
     ///@}
   private:
 
-    int m_availableCapacity;
+    int m_availableCapacity{0};
     bool m_availableCapacityHasBeenSet = false;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_totalCapacity;
+    int m_totalCapacity{0};
     bool m_totalCapacityHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveBridgeOutputResult::RemoveBridgeOutputResult()
-{
-}
-
 RemoveBridgeOutputResult::RemoveBridgeOutputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ RemoveBridgeOutputResult& RemoveBridgeOutputResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("bridgeArn"))
   {
     m_bridgeArn = jsonValue.GetString("bridgeArn");
-
+    m_bridgeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputName"))
   {
     m_outputName = jsonValue.GetString("outputName");
-
+    m_outputNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

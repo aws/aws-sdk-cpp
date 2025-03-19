@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeCustomDomainAssociationsRequest::DescribeCustomDomainAssociationsRequest() : 
-    m_customDomainNameHasBeenSet(false),
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCustomDomainAssociationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

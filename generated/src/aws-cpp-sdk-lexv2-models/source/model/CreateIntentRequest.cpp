@@ -12,26 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntentRequest::CreateIntentRequest() : 
-    m_intentNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parentIntentSignatureHasBeenSet(false),
-    m_sampleUtterancesHasBeenSet(false),
-    m_dialogCodeHookHasBeenSet(false),
-    m_fulfillmentCodeHookHasBeenSet(false),
-    m_intentConfirmationSettingHasBeenSet(false),
-    m_intentClosingSettingHasBeenSet(false),
-    m_inputContextsHasBeenSet(false),
-    m_outputContextsHasBeenSet(false),
-    m_kendraConfigurationHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_initialResponseSettingHasBeenSet(false),
-    m_qnAIntentConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntentRequest::SerializePayload() const
 {
   JsonValue payload;

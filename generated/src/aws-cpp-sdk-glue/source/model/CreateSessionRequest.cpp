@@ -12,30 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSessionRequest::CreateSessionRequest() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false),
-    m_defaultArgumentsHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestOriginHasBeenSet(false)
-{
-}
-
 Aws::String CreateSessionRequest::SerializePayload() const
 {
   JsonValue payload;

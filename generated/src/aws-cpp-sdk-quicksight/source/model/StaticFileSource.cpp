@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-StaticFileSource::StaticFileSource() : 
-    m_urlOptionsHasBeenSet(false),
-    m_s3OptionsHasBeenSet(false)
-{
-}
-
 StaticFileSource::StaticFileSource(JsonView jsonValue)
-  : StaticFileSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StaticFileSource& StaticFileSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UrlOptions"))
   {
     m_urlOptions = jsonValue.GetObject("UrlOptions");
-
     m_urlOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Options"))
   {
     m_s3Options = jsonValue.GetObject("S3Options");
-
     m_s3OptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

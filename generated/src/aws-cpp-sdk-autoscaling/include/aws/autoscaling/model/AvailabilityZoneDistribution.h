@@ -31,7 +31,7 @@ namespace Model
   class AvailabilityZoneDistribution
   {
   public:
-    AWS_AUTOSCALING_API AvailabilityZoneDistribution();
+    AWS_AUTOSCALING_API AvailabilityZoneDistribution() = default;
     AWS_AUTOSCALING_API AvailabilityZoneDistribution(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API AvailabilityZoneDistribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,16 +49,14 @@ namespace Model
      * launches fail in an Availability Zone, Auto Scaling will attempt to launch in
      * another healthy Availability Zone instead.</p> </li> </ul>
      */
-    inline const CapacityDistributionStrategy& GetCapacityDistributionStrategy() const{ return m_capacityDistributionStrategy; }
+    inline CapacityDistributionStrategy GetCapacityDistributionStrategy() const { return m_capacityDistributionStrategy; }
     inline bool CapacityDistributionStrategyHasBeenSet() const { return m_capacityDistributionStrategyHasBeenSet; }
-    inline void SetCapacityDistributionStrategy(const CapacityDistributionStrategy& value) { m_capacityDistributionStrategyHasBeenSet = true; m_capacityDistributionStrategy = value; }
-    inline void SetCapacityDistributionStrategy(CapacityDistributionStrategy&& value) { m_capacityDistributionStrategyHasBeenSet = true; m_capacityDistributionStrategy = std::move(value); }
-    inline AvailabilityZoneDistribution& WithCapacityDistributionStrategy(const CapacityDistributionStrategy& value) { SetCapacityDistributionStrategy(value); return *this;}
-    inline AvailabilityZoneDistribution& WithCapacityDistributionStrategy(CapacityDistributionStrategy&& value) { SetCapacityDistributionStrategy(std::move(value)); return *this;}
+    inline void SetCapacityDistributionStrategy(CapacityDistributionStrategy value) { m_capacityDistributionStrategyHasBeenSet = true; m_capacityDistributionStrategy = value; }
+    inline AvailabilityZoneDistribution& WithCapacityDistributionStrategy(CapacityDistributionStrategy value) { SetCapacityDistributionStrategy(value); return *this;}
     ///@}
   private:
 
-    CapacityDistributionStrategy m_capacityDistributionStrategy;
+    CapacityDistributionStrategy m_capacityDistributionStrategy{CapacityDistributionStrategy::NOT_SET};
     bool m_capacityDistributionStrategyHasBeenSet = false;
   };
 

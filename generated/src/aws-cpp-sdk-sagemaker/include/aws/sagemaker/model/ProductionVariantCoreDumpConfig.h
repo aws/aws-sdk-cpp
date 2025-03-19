@@ -32,7 +32,7 @@ namespace Model
   class ProductionVariantCoreDumpConfig
   {
   public:
-    AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig();
+    AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig() = default;
     AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket to send the core dump to.</p>
      */
-    inline const Aws::String& GetDestinationS3Uri() const{ return m_destinationS3Uri; }
+    inline const Aws::String& GetDestinationS3Uri() const { return m_destinationS3Uri; }
     inline bool DestinationS3UriHasBeenSet() const { return m_destinationS3UriHasBeenSet; }
-    inline void SetDestinationS3Uri(const Aws::String& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = value; }
-    inline void SetDestinationS3Uri(Aws::String&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::move(value); }
-    inline void SetDestinationS3Uri(const char* value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri.assign(value); }
-    inline ProductionVariantCoreDumpConfig& WithDestinationS3Uri(const Aws::String& value) { SetDestinationS3Uri(value); return *this;}
-    inline ProductionVariantCoreDumpConfig& WithDestinationS3Uri(Aws::String&& value) { SetDestinationS3Uri(std::move(value)); return *this;}
-    inline ProductionVariantCoreDumpConfig& WithDestinationS3Uri(const char* value) { SetDestinationS3Uri(value); return *this;}
+    template<typename DestinationS3UriT = Aws::String>
+    void SetDestinationS3Uri(DestinationS3UriT&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::forward<DestinationS3UriT>(value); }
+    template<typename DestinationS3UriT = Aws::String>
+    ProductionVariantCoreDumpConfig& WithDestinationS3Uri(DestinationS3UriT&& value) { SetDestinationS3Uri(std::forward<DestinationS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,12 @@ namespace Model
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ProductionVariantCoreDumpConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ProductionVariantCoreDumpConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ProductionVariantCoreDumpConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ProductionVariantCoreDumpConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

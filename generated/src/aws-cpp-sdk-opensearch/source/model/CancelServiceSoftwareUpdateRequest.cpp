@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelServiceSoftwareUpdateRequest::CancelServiceSoftwareUpdateRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelServiceSoftwareUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

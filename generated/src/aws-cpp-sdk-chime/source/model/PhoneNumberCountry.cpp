@@ -18,14 +18,7 @@ namespace Chime
 namespace Model
 {
 
-PhoneNumberCountry::PhoneNumberCountry() : 
-    m_countryCodeHasBeenSet(false),
-    m_supportedPhoneNumberTypesHasBeenSet(false)
-{
-}
-
 PhoneNumberCountry::PhoneNumberCountry(JsonView jsonValue)
-  : PhoneNumberCountry()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PhoneNumberCountry& PhoneNumberCountry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = jsonValue.GetString("CountryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedPhoneNumberTypes"))
   {
     Aws::Utils::Array<JsonView> supportedPhoneNumberTypesJsonList = jsonValue.GetArray("SupportedPhoneNumberTypes");
@@ -48,7 +39,6 @@ PhoneNumberCountry& PhoneNumberCountry::operator =(JsonView jsonValue)
     }
     m_supportedPhoneNumberTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ValidateConfigurationRequest::ValidateConfigurationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_configurationVersionHasBeenSet(false)
-{
-}
-
 Aws::String ValidateConfigurationRequest::SerializePayload() const
 {
   return {};

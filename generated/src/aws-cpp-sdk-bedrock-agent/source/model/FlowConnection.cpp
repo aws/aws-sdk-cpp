@@ -18,18 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowConnection::FlowConnection() : 
-    m_configurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_type(FlowConnectionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FlowConnection::FlowConnection(JsonView jsonValue)
-  : FlowConnection()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ FlowConnection& FlowConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FlowConnectionTypeMapper::GetFlowConnectionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

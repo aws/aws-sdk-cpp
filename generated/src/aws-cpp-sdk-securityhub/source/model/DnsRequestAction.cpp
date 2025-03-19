@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-DnsRequestAction::DnsRequestAction() : 
-    m_domainHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_blocked(false),
-    m_blockedHasBeenSet(false)
-{
-}
-
 DnsRequestAction::DnsRequestAction(JsonView jsonValue)
-  : DnsRequestAction()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DnsRequestAction& DnsRequestAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocked"))
   {
     m_blocked = jsonValue.GetBool("Blocked");
-
     m_blockedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateDatasetResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API CreateDatasetResult();
+    AWS_LOOKOUTFORVISION_API CreateDatasetResult() = default;
     AWS_LOOKOUTFORVISION_API CreateDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API CreateDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the dataset.</p>
      */
-    inline const DatasetMetadata& GetDatasetMetadata() const{ return m_datasetMetadata; }
-    inline void SetDatasetMetadata(const DatasetMetadata& value) { m_datasetMetadata = value; }
-    inline void SetDatasetMetadata(DatasetMetadata&& value) { m_datasetMetadata = std::move(value); }
-    inline CreateDatasetResult& WithDatasetMetadata(const DatasetMetadata& value) { SetDatasetMetadata(value); return *this;}
-    inline CreateDatasetResult& WithDatasetMetadata(DatasetMetadata&& value) { SetDatasetMetadata(std::move(value)); return *this;}
+    inline const DatasetMetadata& GetDatasetMetadata() const { return m_datasetMetadata; }
+    template<typename DatasetMetadataT = DatasetMetadata>
+    void SetDatasetMetadata(DatasetMetadataT&& value) { m_datasetMetadataHasBeenSet = true; m_datasetMetadata = std::forward<DatasetMetadataT>(value); }
+    template<typename DatasetMetadataT = DatasetMetadata>
+    CreateDatasetResult& WithDatasetMetadata(DatasetMetadataT&& value) { SetDatasetMetadata(std::forward<DatasetMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DatasetMetadata m_datasetMetadata;
+    bool m_datasetMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

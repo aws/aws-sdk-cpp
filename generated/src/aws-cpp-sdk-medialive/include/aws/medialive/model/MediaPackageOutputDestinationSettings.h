@@ -31,7 +31,7 @@ namespace Model
   class MediaPackageOutputDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings();
+    AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings() = default;
     AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * inputs. The MediaPackage channel and MediaLive channel must be in the same
      * region.
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-    inline MediaPackageOutputDestinationSettings& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline MediaPackageOutputDestinationSettings& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline MediaPackageOutputDestinationSettings& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    MediaPackageOutputDestinationSettings& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses
      * MediaPackage v2.
      */
-    inline const Aws::String& GetChannelGroup() const{ return m_channelGroup; }
+    inline const Aws::String& GetChannelGroup() const { return m_channelGroup; }
     inline bool ChannelGroupHasBeenSet() const { return m_channelGroupHasBeenSet; }
-    inline void SetChannelGroup(const Aws::String& value) { m_channelGroupHasBeenSet = true; m_channelGroup = value; }
-    inline void SetChannelGroup(Aws::String&& value) { m_channelGroupHasBeenSet = true; m_channelGroup = std::move(value); }
-    inline void SetChannelGroup(const char* value) { m_channelGroupHasBeenSet = true; m_channelGroup.assign(value); }
-    inline MediaPackageOutputDestinationSettings& WithChannelGroup(const Aws::String& value) { SetChannelGroup(value); return *this;}
-    inline MediaPackageOutputDestinationSettings& WithChannelGroup(Aws::String&& value) { SetChannelGroup(std::move(value)); return *this;}
-    inline MediaPackageOutputDestinationSettings& WithChannelGroup(const char* value) { SetChannelGroup(value); return *this;}
+    template<typename ChannelGroupT = Aws::String>
+    void SetChannelGroup(ChannelGroupT&& value) { m_channelGroupHasBeenSet = true; m_channelGroup = std::forward<ChannelGroupT>(value); }
+    template<typename ChannelGroupT = Aws::String>
+    MediaPackageOutputDestinationSettings& WithChannelGroup(ChannelGroupT&& value) { SetChannelGroup(std::forward<ChannelGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * output to a CMAF ingest endpoint on a MediaPackage channel that uses
      * MediaPackage v2.
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline MediaPackageOutputDestinationSettings& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline MediaPackageOutputDestinationSettings& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline MediaPackageOutputDestinationSettings& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    MediaPackageOutputDestinationSettings& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
   private:
 

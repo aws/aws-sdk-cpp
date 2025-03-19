@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OutputParameter::OutputParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 OutputParameter::OutputParameter(JsonView jsonValue)
-  : OutputParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OutputParameter& OutputParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

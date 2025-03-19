@@ -10,11 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-IndexDocumentsRequest::IndexDocumentsRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String IndexDocumentsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

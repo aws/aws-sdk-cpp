@@ -12,21 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableRequest::UpdateTableRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableInputHasBeenSet(false),
-    m_skipArchive(false),
-    m_skipArchiveHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_viewUpdateAction(ViewUpdateAction::NOT_SET),
-    m_viewUpdateActionHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableRequest::SerializePayload() const
 {
   JsonValue payload;

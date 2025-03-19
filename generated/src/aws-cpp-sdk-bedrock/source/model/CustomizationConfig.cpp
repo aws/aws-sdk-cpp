@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-CustomizationConfig::CustomizationConfig() : 
-    m_distillationConfigHasBeenSet(false)
-{
-}
-
 CustomizationConfig::CustomizationConfig(JsonView jsonValue)
-  : CustomizationConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomizationConfig& CustomizationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("distillationConfig"))
   {
     m_distillationConfig = jsonValue.GetObject("distillationConfig");
-
     m_distillationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

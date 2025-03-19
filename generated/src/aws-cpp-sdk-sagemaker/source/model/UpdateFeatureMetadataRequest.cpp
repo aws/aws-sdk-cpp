@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFeatureMetadataRequest::UpdateFeatureMetadataRequest() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parameterAdditionsHasBeenSet(false),
-    m_parameterRemovalsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFeatureMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

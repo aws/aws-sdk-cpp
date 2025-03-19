@@ -34,7 +34,7 @@ namespace Model
   class TestSetDiscrepancyErrors
   {
   public:
-    AWS_LEXMODELSV2_API TestSetDiscrepancyErrors();
+    AWS_LEXMODELSV2_API TestSetDiscrepancyErrors() = default;
     AWS_LEXMODELSV2_API TestSetDiscrepancyErrors(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetDiscrepancyErrors& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>Contains information about discrepancies found for intents between the test
      * set and the bot.</p>
      */
-    inline const Aws::Vector<TestSetIntentDiscrepancyItem>& GetIntentDiscrepancies() const{ return m_intentDiscrepancies; }
+    inline const Aws::Vector<TestSetIntentDiscrepancyItem>& GetIntentDiscrepancies() const { return m_intentDiscrepancies; }
     inline bool IntentDiscrepanciesHasBeenSet() const { return m_intentDiscrepanciesHasBeenSet; }
-    inline void SetIntentDiscrepancies(const Aws::Vector<TestSetIntentDiscrepancyItem>& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies = value; }
-    inline void SetIntentDiscrepancies(Aws::Vector<TestSetIntentDiscrepancyItem>&& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies = std::move(value); }
-    inline TestSetDiscrepancyErrors& WithIntentDiscrepancies(const Aws::Vector<TestSetIntentDiscrepancyItem>& value) { SetIntentDiscrepancies(value); return *this;}
-    inline TestSetDiscrepancyErrors& WithIntentDiscrepancies(Aws::Vector<TestSetIntentDiscrepancyItem>&& value) { SetIntentDiscrepancies(std::move(value)); return *this;}
-    inline TestSetDiscrepancyErrors& AddIntentDiscrepancies(const TestSetIntentDiscrepancyItem& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies.push_back(value); return *this; }
-    inline TestSetDiscrepancyErrors& AddIntentDiscrepancies(TestSetIntentDiscrepancyItem&& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies.push_back(std::move(value)); return *this; }
+    template<typename IntentDiscrepanciesT = Aws::Vector<TestSetIntentDiscrepancyItem>>
+    void SetIntentDiscrepancies(IntentDiscrepanciesT&& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies = std::forward<IntentDiscrepanciesT>(value); }
+    template<typename IntentDiscrepanciesT = Aws::Vector<TestSetIntentDiscrepancyItem>>
+    TestSetDiscrepancyErrors& WithIntentDiscrepancies(IntentDiscrepanciesT&& value) { SetIntentDiscrepancies(std::forward<IntentDiscrepanciesT>(value)); return *this;}
+    template<typename IntentDiscrepanciesT = TestSetIntentDiscrepancyItem>
+    TestSetDiscrepancyErrors& AddIntentDiscrepancies(IntentDiscrepanciesT&& value) { m_intentDiscrepanciesHasBeenSet = true; m_intentDiscrepancies.emplace_back(std::forward<IntentDiscrepanciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>Contains information about discrepancies found for slots between the test set
      * and the bot.</p>
      */
-    inline const Aws::Vector<TestSetSlotDiscrepancyItem>& GetSlotDiscrepancies() const{ return m_slotDiscrepancies; }
+    inline const Aws::Vector<TestSetSlotDiscrepancyItem>& GetSlotDiscrepancies() const { return m_slotDiscrepancies; }
     inline bool SlotDiscrepanciesHasBeenSet() const { return m_slotDiscrepanciesHasBeenSet; }
-    inline void SetSlotDiscrepancies(const Aws::Vector<TestSetSlotDiscrepancyItem>& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies = value; }
-    inline void SetSlotDiscrepancies(Aws::Vector<TestSetSlotDiscrepancyItem>&& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies = std::move(value); }
-    inline TestSetDiscrepancyErrors& WithSlotDiscrepancies(const Aws::Vector<TestSetSlotDiscrepancyItem>& value) { SetSlotDiscrepancies(value); return *this;}
-    inline TestSetDiscrepancyErrors& WithSlotDiscrepancies(Aws::Vector<TestSetSlotDiscrepancyItem>&& value) { SetSlotDiscrepancies(std::move(value)); return *this;}
-    inline TestSetDiscrepancyErrors& AddSlotDiscrepancies(const TestSetSlotDiscrepancyItem& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies.push_back(value); return *this; }
-    inline TestSetDiscrepancyErrors& AddSlotDiscrepancies(TestSetSlotDiscrepancyItem&& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies.push_back(std::move(value)); return *this; }
+    template<typename SlotDiscrepanciesT = Aws::Vector<TestSetSlotDiscrepancyItem>>
+    void SetSlotDiscrepancies(SlotDiscrepanciesT&& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies = std::forward<SlotDiscrepanciesT>(value); }
+    template<typename SlotDiscrepanciesT = Aws::Vector<TestSetSlotDiscrepancyItem>>
+    TestSetDiscrepancyErrors& WithSlotDiscrepancies(SlotDiscrepanciesT&& value) { SetSlotDiscrepancies(std::forward<SlotDiscrepanciesT>(value)); return *this;}
+    template<typename SlotDiscrepanciesT = TestSetSlotDiscrepancyItem>
+    TestSetDiscrepancyErrors& AddSlotDiscrepancies(SlotDiscrepanciesT&& value) { m_slotDiscrepanciesHasBeenSet = true; m_slotDiscrepancies.emplace_back(std::forward<SlotDiscrepanciesT>(value)); return *this; }
     ///@}
   private:
 

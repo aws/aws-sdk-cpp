@@ -32,7 +32,7 @@ namespace Model
   class AssistantIntegrationConfiguration
   {
   public:
-    AWS_QCONNECT_API AssistantIntegrationConfiguration();
+    AWS_QCONNECT_API AssistantIntegrationConfiguration() = default;
     AWS_QCONNECT_API AssistantIntegrationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AssistantIntegrationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for
      * streaming chat messages.</p>
      */
-    inline const Aws::String& GetTopicIntegrationArn() const{ return m_topicIntegrationArn; }
+    inline const Aws::String& GetTopicIntegrationArn() const { return m_topicIntegrationArn; }
     inline bool TopicIntegrationArnHasBeenSet() const { return m_topicIntegrationArnHasBeenSet; }
-    inline void SetTopicIntegrationArn(const Aws::String& value) { m_topicIntegrationArnHasBeenSet = true; m_topicIntegrationArn = value; }
-    inline void SetTopicIntegrationArn(Aws::String&& value) { m_topicIntegrationArnHasBeenSet = true; m_topicIntegrationArn = std::move(value); }
-    inline void SetTopicIntegrationArn(const char* value) { m_topicIntegrationArnHasBeenSet = true; m_topicIntegrationArn.assign(value); }
-    inline AssistantIntegrationConfiguration& WithTopicIntegrationArn(const Aws::String& value) { SetTopicIntegrationArn(value); return *this;}
-    inline AssistantIntegrationConfiguration& WithTopicIntegrationArn(Aws::String&& value) { SetTopicIntegrationArn(std::move(value)); return *this;}
-    inline AssistantIntegrationConfiguration& WithTopicIntegrationArn(const char* value) { SetTopicIntegrationArn(value); return *this;}
+    template<typename TopicIntegrationArnT = Aws::String>
+    void SetTopicIntegrationArn(TopicIntegrationArnT&& value) { m_topicIntegrationArnHasBeenSet = true; m_topicIntegrationArn = std::forward<TopicIntegrationArnT>(value); }
+    template<typename TopicIntegrationArnT = Aws::String>
+    AssistantIntegrationConfiguration& WithTopicIntegrationArn(TopicIntegrationArnT&& value) { SetTopicIntegrationArn(std::forward<TopicIntegrationArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisTemplateArtifactMetadata::AnalysisTemplateArtifactMetadata() : 
-    m_entryPointHashHasBeenSet(false),
-    m_additionalArtifactHashesHasBeenSet(false)
-{
-}
-
 AnalysisTemplateArtifactMetadata::AnalysisTemplateArtifactMetadata(JsonView jsonValue)
-  : AnalysisTemplateArtifactMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AnalysisTemplateArtifactMetadata& AnalysisTemplateArtifactMetadata::operator =(J
   if(jsonValue.ValueExists("entryPointHash"))
   {
     m_entryPointHash = jsonValue.GetObject("entryPointHash");
-
     m_entryPointHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalArtifactHashes"))
   {
     Aws::Utils::Array<JsonView> additionalArtifactHashesJsonList = jsonValue.GetArray("additionalArtifactHashes");
@@ -48,7 +39,6 @@ AnalysisTemplateArtifactMetadata& AnalysisTemplateArtifactMetadata::operator =(J
     }
     m_additionalArtifactHashesHasBeenSet = true;
   }
-
   return *this;
 }
 

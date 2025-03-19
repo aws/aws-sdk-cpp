@@ -29,7 +29,7 @@ namespace Model
   class DescribeLogStreamsResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeLogStreamsResult();
+    AWS_CLOUDWATCHLOGS_API DescribeLogStreamsResult() = default;
     AWS_CLOUDWATCHLOGS_API DescribeLogStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API DescribeLogStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
     /**
      * <p>The log streams.</p>
      */
-    inline const Aws::Vector<LogStream>& GetLogStreams() const{ return m_logStreams; }
-    inline void SetLogStreams(const Aws::Vector<LogStream>& value) { m_logStreams = value; }
-    inline void SetLogStreams(Aws::Vector<LogStream>&& value) { m_logStreams = std::move(value); }
-    inline DescribeLogStreamsResult& WithLogStreams(const Aws::Vector<LogStream>& value) { SetLogStreams(value); return *this;}
-    inline DescribeLogStreamsResult& WithLogStreams(Aws::Vector<LogStream>&& value) { SetLogStreams(std::move(value)); return *this;}
-    inline DescribeLogStreamsResult& AddLogStreams(const LogStream& value) { m_logStreams.push_back(value); return *this; }
-    inline DescribeLogStreamsResult& AddLogStreams(LogStream&& value) { m_logStreams.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LogStream>& GetLogStreams() const { return m_logStreams; }
+    template<typename LogStreamsT = Aws::Vector<LogStream>>
+    void SetLogStreams(LogStreamsT&& value) { m_logStreamsHasBeenSet = true; m_logStreams = std::forward<LogStreamsT>(value); }
+    template<typename LogStreamsT = Aws::Vector<LogStream>>
+    DescribeLogStreamsResult& WithLogStreams(LogStreamsT&& value) { SetLogStreams(std::forward<LogStreamsT>(value)); return *this;}
+    template<typename LogStreamsT = LogStream>
+    DescribeLogStreamsResult& AddLogStreams(LogStreamsT&& value) { m_logStreamsHasBeenSet = true; m_logStreams.emplace_back(std::forward<LogStreamsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeLogStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeLogStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeLogStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeLogStreamsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLogStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLogStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLogStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLogStreamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LogStream> m_logStreams;
+    bool m_logStreamsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

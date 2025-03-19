@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OAuth2Credentials::OAuth2Credentials() : 
-    m_userManagedClientApplicationClientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_jwtTokenHasBeenSet(false)
-{
-}
-
 OAuth2Credentials::OAuth2Credentials(JsonView jsonValue)
-  : OAuth2Credentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OAuth2Credentials& OAuth2Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserManagedClientApplicationClientSecret"))
   {
     m_userManagedClientApplicationClientSecret = jsonValue.GetString("UserManagedClientApplicationClientSecret");
-
     m_userManagedClientApplicationClientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessToken"))
   {
     m_accessToken = jsonValue.GetString("AccessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshToken"))
   {
     m_refreshToken = jsonValue.GetString("RefreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JwtToken"))
   {
     m_jwtToken = jsonValue.GetString("JwtToken");
-
     m_jwtTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

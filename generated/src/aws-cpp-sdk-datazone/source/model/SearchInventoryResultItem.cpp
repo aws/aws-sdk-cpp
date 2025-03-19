@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SearchInventoryResultItem::SearchInventoryResultItem() : 
-    m_assetItemHasBeenSet(false),
-    m_dataProductItemHasBeenSet(false),
-    m_glossaryItemHasBeenSet(false),
-    m_glossaryTermItemHasBeenSet(false)
-{
-}
-
 SearchInventoryResultItem::SearchInventoryResultItem(JsonView jsonValue)
-  : SearchInventoryResultItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SearchInventoryResultItem& SearchInventoryResultItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("assetItem"))
   {
     m_assetItem = jsonValue.GetObject("assetItem");
-
     m_assetItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProductItem"))
   {
     m_dataProductItem = jsonValue.GetObject("dataProductItem");
-
     m_dataProductItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryItem"))
   {
     m_glossaryItem = jsonValue.GetObject("glossaryItem");
-
     m_glossaryItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTermItem"))
   {
     m_glossaryTermItem = jsonValue.GetObject("glossaryTermItem");
-
     m_glossaryTermItemHasBeenSet = true;
   }
-
   return *this;
 }
 

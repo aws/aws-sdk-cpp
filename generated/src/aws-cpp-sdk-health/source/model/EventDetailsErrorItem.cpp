@@ -18,15 +18,7 @@ namespace Health
 namespace Model
 {
 
-EventDetailsErrorItem::EventDetailsErrorItem() : 
-    m_eventArnHasBeenSet(false),
-    m_errorNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 EventDetailsErrorItem::EventDetailsErrorItem(JsonView jsonValue)
-  : EventDetailsErrorItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EventDetailsErrorItem& EventDetailsErrorItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventArn"))
   {
     m_eventArn = jsonValue.GetString("eventArn");
-
     m_eventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorName"))
   {
     m_errorName = jsonValue.GetString("errorName");
-
     m_errorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

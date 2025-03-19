@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RuleDetail::RuleDetail() : 
-    m_metadataFormEnforcementDetailHasBeenSet(false)
-{
-}
-
 RuleDetail::RuleDetail(JsonView jsonValue)
-  : RuleDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuleDetail& RuleDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metadataFormEnforcementDetail"))
   {
     m_metadataFormEnforcementDetail = jsonValue.GetObject("metadataFormEnforcementDetail");
-
     m_metadataFormEnforcementDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

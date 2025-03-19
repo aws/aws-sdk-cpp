@@ -29,7 +29,7 @@ namespace Model
   class ListTableBucketsResult
   {
   public:
-    AWS_S3TABLES_API ListTableBucketsResult();
+    AWS_S3TABLES_API ListTableBucketsResult() = default;
     AWS_S3TABLES_API ListTableBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API ListTableBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of table buckets.</p>
      */
-    inline const Aws::Vector<TableBucketSummary>& GetTableBuckets() const{ return m_tableBuckets; }
-    inline void SetTableBuckets(const Aws::Vector<TableBucketSummary>& value) { m_tableBuckets = value; }
-    inline void SetTableBuckets(Aws::Vector<TableBucketSummary>&& value) { m_tableBuckets = std::move(value); }
-    inline ListTableBucketsResult& WithTableBuckets(const Aws::Vector<TableBucketSummary>& value) { SetTableBuckets(value); return *this;}
-    inline ListTableBucketsResult& WithTableBuckets(Aws::Vector<TableBucketSummary>&& value) { SetTableBuckets(std::move(value)); return *this;}
-    inline ListTableBucketsResult& AddTableBuckets(const TableBucketSummary& value) { m_tableBuckets.push_back(value); return *this; }
-    inline ListTableBucketsResult& AddTableBuckets(TableBucketSummary&& value) { m_tableBuckets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TableBucketSummary>& GetTableBuckets() const { return m_tableBuckets; }
+    template<typename TableBucketsT = Aws::Vector<TableBucketSummary>>
+    void SetTableBuckets(TableBucketsT&& value) { m_tableBucketsHasBeenSet = true; m_tableBuckets = std::forward<TableBucketsT>(value); }
+    template<typename TableBucketsT = Aws::Vector<TableBucketSummary>>
+    ListTableBucketsResult& WithTableBuckets(TableBucketsT&& value) { SetTableBuckets(std::forward<TableBucketsT>(value)); return *this;}
+    template<typename TableBucketsT = TableBucketSummary>
+    ListTableBucketsResult& AddTableBuckets(TableBucketsT&& value) { m_tableBucketsHasBeenSet = true; m_tableBuckets.emplace_back(std::forward<TableBucketsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>You can use this <code>ContinuationToken</code> for pagination of the list
      * results.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
-    inline ListTableBucketsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListTableBucketsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListTableBucketsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListTableBucketsResult& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTableBucketsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTableBucketsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTableBucketsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTableBucketsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TableBucketSummary> m_tableBuckets;
+    bool m_tableBucketsHasBeenSet = false;
 
     Aws::String m_continuationToken;
+    bool m_continuationTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,42 +12,6 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentRequest::CreateEnvironmentRequest() : 
-    m_nameHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_sourceBucketArnHasBeenSet(false),
-    m_dagS3PathHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_pluginsS3PathHasBeenSet(false),
-    m_pluginsS3ObjectVersionHasBeenSet(false),
-    m_requirementsS3PathHasBeenSet(false),
-    m_requirementsS3ObjectVersionHasBeenSet(false),
-    m_startupScriptS3PathHasBeenSet(false),
-    m_startupScriptS3ObjectVersionHasBeenSet(false),
-    m_airflowConfigurationOptionsHasBeenSet(false),
-    m_environmentClassHasBeenSet(false),
-    m_maxWorkers(0),
-    m_maxWorkersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_airflowVersionHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_weeklyMaintenanceWindowStartHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_webserverAccessMode(WebserverAccessMode::NOT_SET),
-    m_webserverAccessModeHasBeenSet(false),
-    m_minWorkers(0),
-    m_minWorkersHasBeenSet(false),
-    m_schedulers(0),
-    m_schedulersHasBeenSet(false),
-    m_endpointManagement(EndpointManagement::NOT_SET),
-    m_endpointManagementHasBeenSet(false),
-    m_minWebservers(0),
-    m_minWebserversHasBeenSet(false),
-    m_maxWebservers(0),
-    m_maxWebserversHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

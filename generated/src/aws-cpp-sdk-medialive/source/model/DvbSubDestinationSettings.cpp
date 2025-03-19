@@ -18,44 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DvbSubDestinationSettings::DvbSubDestinationSettings() : 
-    m_alignment(DvbSubDestinationAlignment::NOT_SET),
-    m_alignmentHasBeenSet(false),
-    m_backgroundColor(DvbSubDestinationBackgroundColor::NOT_SET),
-    m_backgroundColorHasBeenSet(false),
-    m_backgroundOpacity(0),
-    m_backgroundOpacityHasBeenSet(false),
-    m_fontHasBeenSet(false),
-    m_fontColor(DvbSubDestinationFontColor::NOT_SET),
-    m_fontColorHasBeenSet(false),
-    m_fontOpacity(0),
-    m_fontOpacityHasBeenSet(false),
-    m_fontResolution(0),
-    m_fontResolutionHasBeenSet(false),
-    m_fontSizeHasBeenSet(false),
-    m_outlineColor(DvbSubDestinationOutlineColor::NOT_SET),
-    m_outlineColorHasBeenSet(false),
-    m_outlineSize(0),
-    m_outlineSizeHasBeenSet(false),
-    m_shadowColor(DvbSubDestinationShadowColor::NOT_SET),
-    m_shadowColorHasBeenSet(false),
-    m_shadowOpacity(0),
-    m_shadowOpacityHasBeenSet(false),
-    m_shadowXOffset(0),
-    m_shadowXOffsetHasBeenSet(false),
-    m_shadowYOffset(0),
-    m_shadowYOffsetHasBeenSet(false),
-    m_teletextGridControl(DvbSubDestinationTeletextGridControl::NOT_SET),
-    m_teletextGridControlHasBeenSet(false),
-    m_xPosition(0),
-    m_xPositionHasBeenSet(false),
-    m_yPosition(0),
-    m_yPositionHasBeenSet(false)
-{
-}
-
 DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue)
-  : DvbSubDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -65,122 +28,88 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("alignment"))
   {
     m_alignment = DvbSubDestinationAlignmentMapper::GetDvbSubDestinationAlignmentForName(jsonValue.GetString("alignment"));
-
     m_alignmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backgroundColor"))
   {
     m_backgroundColor = DvbSubDestinationBackgroundColorMapper::GetDvbSubDestinationBackgroundColorForName(jsonValue.GetString("backgroundColor"));
-
     m_backgroundColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backgroundOpacity"))
   {
     m_backgroundOpacity = jsonValue.GetInteger("backgroundOpacity");
-
     m_backgroundOpacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("font"))
   {
     m_font = jsonValue.GetObject("font");
-
     m_fontHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fontColor"))
   {
     m_fontColor = DvbSubDestinationFontColorMapper::GetDvbSubDestinationFontColorForName(jsonValue.GetString("fontColor"));
-
     m_fontColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fontOpacity"))
   {
     m_fontOpacity = jsonValue.GetInteger("fontOpacity");
-
     m_fontOpacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fontResolution"))
   {
     m_fontResolution = jsonValue.GetInteger("fontResolution");
-
     m_fontResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fontSize"))
   {
     m_fontSize = jsonValue.GetString("fontSize");
-
     m_fontSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outlineColor"))
   {
     m_outlineColor = DvbSubDestinationOutlineColorMapper::GetDvbSubDestinationOutlineColorForName(jsonValue.GetString("outlineColor"));
-
     m_outlineColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outlineSize"))
   {
     m_outlineSize = jsonValue.GetInteger("outlineSize");
-
     m_outlineSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shadowColor"))
   {
     m_shadowColor = DvbSubDestinationShadowColorMapper::GetDvbSubDestinationShadowColorForName(jsonValue.GetString("shadowColor"));
-
     m_shadowColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shadowOpacity"))
   {
     m_shadowOpacity = jsonValue.GetInteger("shadowOpacity");
-
     m_shadowOpacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shadowXOffset"))
   {
     m_shadowXOffset = jsonValue.GetInteger("shadowXOffset");
-
     m_shadowXOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shadowYOffset"))
   {
     m_shadowYOffset = jsonValue.GetInteger("shadowYOffset");
-
     m_shadowYOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("teletextGridControl"))
   {
     m_teletextGridControl = DvbSubDestinationTeletextGridControlMapper::GetDvbSubDestinationTeletextGridControlForName(jsonValue.GetString("teletextGridControl"));
-
     m_teletextGridControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("xPosition"))
   {
     m_xPosition = jsonValue.GetInteger("xPosition");
-
     m_xPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("yPosition"))
   {
     m_yPosition = jsonValue.GetInteger("yPosition");
-
     m_yPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

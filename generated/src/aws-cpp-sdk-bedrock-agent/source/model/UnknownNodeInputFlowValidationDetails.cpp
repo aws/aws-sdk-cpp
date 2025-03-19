@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-UnknownNodeInputFlowValidationDetails::UnknownNodeInputFlowValidationDetails() : 
-    m_inputHasBeenSet(false),
-    m_nodeHasBeenSet(false)
-{
-}
-
 UnknownNodeInputFlowValidationDetails::UnknownNodeInputFlowValidationDetails(JsonView jsonValue)
-  : UnknownNodeInputFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnknownNodeInputFlowValidationDetails& UnknownNodeInputFlowValidationDetails::op
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
-
     m_nodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationRequest::UpdateConfigurationRequest() : 
-    m_ec2ConfigurationHasBeenSet(false),
-    m_ecrConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

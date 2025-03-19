@@ -34,7 +34,7 @@ namespace Model
   class TranscriptEvent
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * transcriptions, channel identification, partial result stabilization, language
      * identification, and other transcription-related data.</p>
      */
-    inline const Transcript& GetTranscript() const{ return m_transcript; }
+    inline const Transcript& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline TranscriptEvent& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
-    inline TranscriptEvent& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
+    template<typename TranscriptT = Transcript>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = Transcript>
+    TranscriptEvent& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
   private:
 

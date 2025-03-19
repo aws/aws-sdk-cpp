@@ -33,7 +33,7 @@ namespace Model
   class AddressAttribute
   {
   public:
-    AWS_EC2_API AddressAttribute();
+    AWS_EC2_API AddressAttribute() = default;
     AWS_EC2_API AddressAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AddressAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,54 +45,48 @@ namespace Model
     /**
      * <p>The public IP address.</p>
      */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+    inline const Aws::String& GetPublicIp() const { return m_publicIp; }
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-    inline AddressAttribute& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-    inline AddressAttribute& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-    inline AddressAttribute& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    template<typename PublicIpT = Aws::String>
+    void SetPublicIp(PublicIpT&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::forward<PublicIpT>(value); }
+    template<typename PublicIpT = Aws::String>
+    AddressAttribute& WithPublicIp(PublicIpT&& value) { SetPublicIp(std::forward<PublicIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>[EC2-VPC] The allocation ID.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-    inline AddressAttribute& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline AddressAttribute& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline AddressAttribute& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    AddressAttribute& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pointer (PTR) record for the IP address.</p>
      */
-    inline const Aws::String& GetPtrRecord() const{ return m_ptrRecord; }
+    inline const Aws::String& GetPtrRecord() const { return m_ptrRecord; }
     inline bool PtrRecordHasBeenSet() const { return m_ptrRecordHasBeenSet; }
-    inline void SetPtrRecord(const Aws::String& value) { m_ptrRecordHasBeenSet = true; m_ptrRecord = value; }
-    inline void SetPtrRecord(Aws::String&& value) { m_ptrRecordHasBeenSet = true; m_ptrRecord = std::move(value); }
-    inline void SetPtrRecord(const char* value) { m_ptrRecordHasBeenSet = true; m_ptrRecord.assign(value); }
-    inline AddressAttribute& WithPtrRecord(const Aws::String& value) { SetPtrRecord(value); return *this;}
-    inline AddressAttribute& WithPtrRecord(Aws::String&& value) { SetPtrRecord(std::move(value)); return *this;}
-    inline AddressAttribute& WithPtrRecord(const char* value) { SetPtrRecord(value); return *this;}
+    template<typename PtrRecordT = Aws::String>
+    void SetPtrRecord(PtrRecordT&& value) { m_ptrRecordHasBeenSet = true; m_ptrRecord = std::forward<PtrRecordT>(value); }
+    template<typename PtrRecordT = Aws::String>
+    AddressAttribute& WithPtrRecord(PtrRecordT&& value) { SetPtrRecord(std::forward<PtrRecordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated PTR record for the IP address.</p>
      */
-    inline const PtrUpdateStatus& GetPtrRecordUpdate() const{ return m_ptrRecordUpdate; }
+    inline const PtrUpdateStatus& GetPtrRecordUpdate() const { return m_ptrRecordUpdate; }
     inline bool PtrRecordUpdateHasBeenSet() const { return m_ptrRecordUpdateHasBeenSet; }
-    inline void SetPtrRecordUpdate(const PtrUpdateStatus& value) { m_ptrRecordUpdateHasBeenSet = true; m_ptrRecordUpdate = value; }
-    inline void SetPtrRecordUpdate(PtrUpdateStatus&& value) { m_ptrRecordUpdateHasBeenSet = true; m_ptrRecordUpdate = std::move(value); }
-    inline AddressAttribute& WithPtrRecordUpdate(const PtrUpdateStatus& value) { SetPtrRecordUpdate(value); return *this;}
-    inline AddressAttribute& WithPtrRecordUpdate(PtrUpdateStatus&& value) { SetPtrRecordUpdate(std::move(value)); return *this;}
+    template<typename PtrRecordUpdateT = PtrUpdateStatus>
+    void SetPtrRecordUpdate(PtrRecordUpdateT&& value) { m_ptrRecordUpdateHasBeenSet = true; m_ptrRecordUpdate = std::forward<PtrRecordUpdateT>(value); }
+    template<typename PtrRecordUpdateT = PtrUpdateStatus>
+    AddressAttribute& WithPtrRecordUpdate(PtrRecordUpdateT&& value) { SetPtrRecordUpdate(std::forward<PtrRecordUpdateT>(value)); return *this;}
     ///@}
   private:
 

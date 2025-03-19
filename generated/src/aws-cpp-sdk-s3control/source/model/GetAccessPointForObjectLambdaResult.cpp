@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessPointForObjectLambdaResult::GetAccessPointForObjectLambdaResult()
-{
-}
-
 GetAccessPointForObjectLambdaResult::GetAccessPointForObjectLambdaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,21 +32,25 @@ GetAccessPointForObjectLambdaResult& GetAccessPointForObjectLambdaResult::operat
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
+      m_nameHasBeenSet = true;
     }
     XmlNode publicAccessBlockConfigurationNode = resultNode.FirstChild("PublicAccessBlockConfiguration");
     if(!publicAccessBlockConfigurationNode.IsNull())
     {
       m_publicAccessBlockConfiguration = publicAccessBlockConfigurationNode;
+      m_publicAccessBlockConfigurationHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_creationDateHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = aliasNode;
+      m_aliasHasBeenSet = true;
     }
   }
 
@@ -59,12 +59,14 @@ GetAccessPointForObjectLambdaResult& GetAccessPointForObjectLambdaResult::operat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

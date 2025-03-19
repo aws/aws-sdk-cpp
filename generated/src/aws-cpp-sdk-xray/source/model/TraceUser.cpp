@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-TraceUser::TraceUser() : 
-    m_userNameHasBeenSet(false),
-    m_serviceIdsHasBeenSet(false)
-{
-}
-
 TraceUser::TraceUser(JsonView jsonValue)
-  : TraceUser()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TraceUser& TraceUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceIds"))
   {
     Aws::Utils::Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
@@ -48,7 +39,6 @@ TraceUser& TraceUser::operator =(JsonView jsonValue)
     }
     m_serviceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

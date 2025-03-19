@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAccessControlAttributeConfigurationResult() : 
-    m_status(InstanceAccessControlAttributeConfigurationStatus::NOT_SET)
-{
-}
-
 DescribeInstanceAccessControlAttributeConfigurationResult::DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeInstanceAccessControlAttributeConfigurationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DescribeInstanceAccessControlAttributeConfigurationResult& DescribeInstanceAcces
   if(jsonValue.ValueExists("InstanceAccessControlAttributeConfiguration"))
   {
     m_instanceAccessControlAttributeConfiguration = jsonValue.GetObject("InstanceAccessControlAttributeConfiguration");
-
+    m_instanceAccessControlAttributeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InstanceAccessControlAttributeConfigurationStatusMapper::GetInstanceAccessControlAttributeConfigurationStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

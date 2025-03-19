@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false),
-    m_supportedPlatformsHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-  : AvailabilityZone()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     if(!supportedPlatformsNode.IsNull())
     {
       XmlNode supportedPlatformsMember = supportedPlatformsNode.FirstChild("SupportedPlatform");
+      m_supportedPlatformsHasBeenSet = !supportedPlatformsMember.IsNull();
       while(!supportedPlatformsMember.IsNull())
       {
         m_supportedPlatforms.push_back(supportedPlatformsMember);

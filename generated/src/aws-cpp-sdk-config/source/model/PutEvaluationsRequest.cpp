@@ -12,14 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEvaluationsRequest::PutEvaluationsRequest() : 
-    m_evaluationsHasBeenSet(false),
-    m_resultTokenHasBeenSet(false),
-    m_testMode(false),
-    m_testModeHasBeenSet(false)
-{
-}
-
 Aws::String PutEvaluationsRequest::SerializePayload() const
 {
   JsonValue payload;

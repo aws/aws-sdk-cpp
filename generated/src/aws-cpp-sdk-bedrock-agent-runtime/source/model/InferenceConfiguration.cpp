@@ -18,21 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InferenceConfiguration::InferenceConfiguration() : 
-    m_maximumLength(0),
-    m_maximumLengthHasBeenSet(false),
-    m_stopSequencesHasBeenSet(false),
-    m_temperature(0.0),
-    m_temperatureHasBeenSet(false),
-    m_topK(0),
-    m_topKHasBeenSet(false),
-    m_topP(0.0),
-    m_topPHasBeenSet(false)
-{
-}
-
 InferenceConfiguration::InferenceConfiguration(JsonView jsonValue)
-  : InferenceConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ InferenceConfiguration& InferenceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maximumLength"))
   {
     m_maximumLength = jsonValue.GetInteger("maximumLength");
-
     m_maximumLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopSequences"))
   {
     Aws::Utils::Array<JsonView> stopSequencesJsonList = jsonValue.GetArray("stopSequences");
@@ -55,28 +39,21 @@ InferenceConfiguration& InferenceConfiguration::operator =(JsonView jsonValue)
     }
     m_stopSequencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("temperature"))
   {
     m_temperature = jsonValue.GetDouble("temperature");
-
     m_temperatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topK"))
   {
     m_topK = jsonValue.GetInteger("topK");
-
     m_topKHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topP"))
   {
     m_topP = jsonValue.GetDouble("topP");
-
     m_topPHasBeenSet = true;
   }
-
   return *this;
 }
 

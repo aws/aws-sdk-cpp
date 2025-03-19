@@ -21,7 +21,7 @@ namespace Model
   class GetGlyphsRequest : public GeoMapsRequest
   {
   public:
-    AWS_GEOMAPS_API GetGlyphsRequest();
+    AWS_GEOMAPS_API GetGlyphsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -86,14 +86,12 @@ namespace Model
      * <p>NotoSans-Regular</p> </li> <li> <p>Open Sans Regular,Arial Unicode MS
      * Regular</p> </li> </ul>
      */
-    inline const Aws::String& GetFontStack() const{ return m_fontStack; }
+    inline const Aws::String& GetFontStack() const { return m_fontStack; }
     inline bool FontStackHasBeenSet() const { return m_fontStackHasBeenSet; }
-    inline void SetFontStack(const Aws::String& value) { m_fontStackHasBeenSet = true; m_fontStack = value; }
-    inline void SetFontStack(Aws::String&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::move(value); }
-    inline void SetFontStack(const char* value) { m_fontStackHasBeenSet = true; m_fontStack.assign(value); }
-    inline GetGlyphsRequest& WithFontStack(const Aws::String& value) { SetFontStack(value); return *this;}
-    inline GetGlyphsRequest& WithFontStack(Aws::String&& value) { SetFontStack(std::move(value)); return *this;}
-    inline GetGlyphsRequest& WithFontStack(const char* value) { SetFontStack(value); return *this;}
+    template<typename FontStackT = Aws::String>
+    void SetFontStack(FontStackT&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::forward<FontStackT>(value); }
+    template<typename FontStackT = Aws::String>
+    GetGlyphsRequest& WithFontStack(FontStackT&& value) { SetFontStack(std::forward<FontStackT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +99,12 @@ namespace Model
      * <p>A Unicode range of characters to download glyphs for. This must be aligned to
      * multiples of 256. </p> <p>Example: <code>0-255.pdf</code> </p>
      */
-    inline const Aws::String& GetFontUnicodeRange() const{ return m_fontUnicodeRange; }
+    inline const Aws::String& GetFontUnicodeRange() const { return m_fontUnicodeRange; }
     inline bool FontUnicodeRangeHasBeenSet() const { return m_fontUnicodeRangeHasBeenSet; }
-    inline void SetFontUnicodeRange(const Aws::String& value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange = value; }
-    inline void SetFontUnicodeRange(Aws::String&& value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange = std::move(value); }
-    inline void SetFontUnicodeRange(const char* value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange.assign(value); }
-    inline GetGlyphsRequest& WithFontUnicodeRange(const Aws::String& value) { SetFontUnicodeRange(value); return *this;}
-    inline GetGlyphsRequest& WithFontUnicodeRange(Aws::String&& value) { SetFontUnicodeRange(std::move(value)); return *this;}
-    inline GetGlyphsRequest& WithFontUnicodeRange(const char* value) { SetFontUnicodeRange(value); return *this;}
+    template<typename FontUnicodeRangeT = Aws::String>
+    void SetFontUnicodeRange(FontUnicodeRangeT&& value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange = std::forward<FontUnicodeRangeT>(value); }
+    template<typename FontUnicodeRangeT = Aws::String>
+    GetGlyphsRequest& WithFontUnicodeRange(FontUnicodeRangeT&& value) { SetFontUnicodeRange(std::forward<FontUnicodeRangeT>(value)); return *this;}
     ///@}
   private:
 

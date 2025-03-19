@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-EngineVersion::EngineVersion() : 
-    m_selectedEngineVersionHasBeenSet(false),
-    m_effectiveEngineVersionHasBeenSet(false)
-{
-}
-
 EngineVersion::EngineVersion(JsonView jsonValue)
-  : EngineVersion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EngineVersion& EngineVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SelectedEngineVersion"))
   {
     m_selectedEngineVersion = jsonValue.GetString("SelectedEngineVersion");
-
     m_selectedEngineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveEngineVersion"))
   {
     m_effectiveEngineVersion = jsonValue.GetString("EffectiveEngineVersion");
-
     m_effectiveEngineVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

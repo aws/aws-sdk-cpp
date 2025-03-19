@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-MonthlyTransfer::MonthlyTransfer() : 
-    m_gbPerMonthAllocated(0),
-    m_gbPerMonthAllocatedHasBeenSet(false)
-{
-}
-
 MonthlyTransfer::MonthlyTransfer(JsonView jsonValue)
-  : MonthlyTransfer()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MonthlyTransfer& MonthlyTransfer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("gbPerMonthAllocated"))
   {
     m_gbPerMonthAllocated = jsonValue.GetInteger("gbPerMonthAllocated");
-
     m_gbPerMonthAllocatedHasBeenSet = true;
   }
-
   return *this;
 }
 

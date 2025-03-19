@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcAttributeResponse::DescribeVpcAttributeResponse()
-{
-}
-
 DescribeVpcAttributeResponse::DescribeVpcAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,21 +38,25 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Aws
     if(!enableDnsHostnamesNode.IsNull())
     {
       m_enableDnsHostnames = enableDnsHostnamesNode;
+      m_enableDnsHostnamesHasBeenSet = true;
     }
     XmlNode enableDnsSupportNode = resultNode.FirstChild("enableDnsSupport");
     if(!enableDnsSupportNode.IsNull())
     {
       m_enableDnsSupport = enableDnsSupportNode;
+      m_enableDnsSupportHasBeenSet = true;
     }
     XmlNode enableNetworkAddressUsageMetricsNode = resultNode.FirstChild("enableNetworkAddressUsageMetrics");
     if(!enableNetworkAddressUsageMetricsNode.IsNull())
     {
       m_enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetricsNode;
+      m_enableNetworkAddressUsageMetricsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
+      m_vpcIdHasBeenSet = true;
     }
   }
 
@@ -65,6 +65,7 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

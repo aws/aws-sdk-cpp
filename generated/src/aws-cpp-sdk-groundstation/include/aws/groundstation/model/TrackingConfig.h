@@ -33,7 +33,7 @@ namespace Model
   class TrackingConfig
   {
   public:
-    AWS_GROUNDSTATION_API TrackingConfig();
+    AWS_GROUNDSTATION_API TrackingConfig() = default;
     AWS_GROUNDSTATION_API TrackingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API TrackingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>Current setting for autotrack.</p>
      */
-    inline const Criticality& GetAutotrack() const{ return m_autotrack; }
+    inline Criticality GetAutotrack() const { return m_autotrack; }
     inline bool AutotrackHasBeenSet() const { return m_autotrackHasBeenSet; }
-    inline void SetAutotrack(const Criticality& value) { m_autotrackHasBeenSet = true; m_autotrack = value; }
-    inline void SetAutotrack(Criticality&& value) { m_autotrackHasBeenSet = true; m_autotrack = std::move(value); }
-    inline TrackingConfig& WithAutotrack(const Criticality& value) { SetAutotrack(value); return *this;}
-    inline TrackingConfig& WithAutotrack(Criticality&& value) { SetAutotrack(std::move(value)); return *this;}
+    inline void SetAutotrack(Criticality value) { m_autotrackHasBeenSet = true; m_autotrack = value; }
+    inline TrackingConfig& WithAutotrack(Criticality value) { SetAutotrack(value); return *this;}
     ///@}
   private:
 
-    Criticality m_autotrack;
+    Criticality m_autotrack{Criticality::NOT_SET};
     bool m_autotrackHasBeenSet = false;
   };
 

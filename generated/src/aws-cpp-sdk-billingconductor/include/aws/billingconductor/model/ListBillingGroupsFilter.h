@@ -34,7 +34,7 @@ namespace Model
   class ListBillingGroupsFilter
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter();
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter() = default;
     AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListBillingGroupsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
      * <p>The list of billing group Amazon Resource Names (ARNs) to retrieve
      * information.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
+    inline const Aws::Vector<Aws::String>& GetArns() const { return m_arns; }
     inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
-    inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
-    inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
-    inline ListBillingGroupsFilter& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
-    inline ListBillingGroupsFilter& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
-    inline ListBillingGroupsFilter& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-    inline ListBillingGroupsFilter& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
-    inline ListBillingGroupsFilter& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
+    template<typename ArnsT = Aws::Vector<Aws::String>>
+    void SetArns(ArnsT&& value) { m_arnsHasBeenSet = true; m_arns = std::forward<ArnsT>(value); }
+    template<typename ArnsT = Aws::Vector<Aws::String>>
+    ListBillingGroupsFilter& WithArns(ArnsT&& value) { SetArns(std::forward<ArnsT>(value)); return *this;}
+    template<typename ArnsT = Aws::String>
+    ListBillingGroupsFilter& AddArns(ArnsT&& value) { m_arnsHasBeenSet = true; m_arns.emplace_back(std::forward<ArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
      */
-    inline const Aws::String& GetPricingPlan() const{ return m_pricingPlan; }
+    inline const Aws::String& GetPricingPlan() const { return m_pricingPlan; }
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
-    inline void SetPricingPlan(const Aws::String& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
-    inline void SetPricingPlan(Aws::String&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
-    inline void SetPricingPlan(const char* value) { m_pricingPlanHasBeenSet = true; m_pricingPlan.assign(value); }
-    inline ListBillingGroupsFilter& WithPricingPlan(const Aws::String& value) { SetPricingPlan(value); return *this;}
-    inline ListBillingGroupsFilter& WithPricingPlan(Aws::String&& value) { SetPricingPlan(std::move(value)); return *this;}
-    inline ListBillingGroupsFilter& WithPricingPlan(const char* value) { SetPricingPlan(value); return *this;}
+    template<typename PricingPlanT = Aws::String>
+    void SetPricingPlan(PricingPlanT&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::forward<PricingPlanT>(value); }
+    template<typename PricingPlanT = Aws::String>
+    ListBillingGroupsFilter& WithPricingPlan(PricingPlanT&& value) { SetPricingPlan(std::forward<PricingPlanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +72,13 @@ namespace Model
      * <p> A list of billing groups to retrieve their current status for a specific
      * time range </p>
      */
-    inline const Aws::Vector<BillingGroupStatus>& GetStatuses() const{ return m_statuses; }
+    inline const Aws::Vector<BillingGroupStatus>& GetStatuses() const { return m_statuses; }
     inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-    inline void SetStatuses(const Aws::Vector<BillingGroupStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
-    inline void SetStatuses(Aws::Vector<BillingGroupStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
-    inline ListBillingGroupsFilter& WithStatuses(const Aws::Vector<BillingGroupStatus>& value) { SetStatuses(value); return *this;}
-    inline ListBillingGroupsFilter& WithStatuses(Aws::Vector<BillingGroupStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-    inline ListBillingGroupsFilter& AddStatuses(const BillingGroupStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
-    inline ListBillingGroupsFilter& AddStatuses(BillingGroupStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
+    template<typename StatusesT = Aws::Vector<BillingGroupStatus>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<BillingGroupStatus>>
+    ListBillingGroupsFilter& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    inline ListBillingGroupsFilter& AddStatuses(BillingGroupStatus value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * <p>Specifies if this billing group will automatically associate newly added
      * Amazon Web Services accounts that join your consolidated billing family.</p>
      */
-    inline bool GetAutoAssociate() const{ return m_autoAssociate; }
+    inline bool GetAutoAssociate() const { return m_autoAssociate; }
     inline bool AutoAssociateHasBeenSet() const { return m_autoAssociateHasBeenSet; }
     inline void SetAutoAssociate(bool value) { m_autoAssociateHasBeenSet = true; m_autoAssociate = value; }
     inline ListBillingGroupsFilter& WithAutoAssociate(bool value) { SetAutoAssociate(value); return *this;}
@@ -106,7 +102,7 @@ namespace Model
     Aws::Vector<BillingGroupStatus> m_statuses;
     bool m_statusesHasBeenSet = false;
 
-    bool m_autoAssociate;
+    bool m_autoAssociate{false};
     bool m_autoAssociateHasBeenSet = false;
   };
 

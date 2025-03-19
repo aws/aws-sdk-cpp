@@ -18,20 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal() : 
-    m_proposalIdHasBeenSet(false),
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_directConnectGatewayOwnerAccountHasBeenSet(false),
-    m_proposalState(DirectConnectGatewayAssociationProposalState::NOT_SET),
-    m_proposalStateHasBeenSet(false),
-    m_associatedGatewayHasBeenSet(false),
-    m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet(false),
-    m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet(false)
-{
-}
-
 DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal(JsonView jsonValue)
-  : DirectConnectGatewayAssociationProposal()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal
   if(jsonValue.ValueExists("proposalId"))
   {
     m_proposalId = jsonValue.GetString("proposalId");
-
     m_proposalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-
     m_directConnectGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayOwnerAccount"))
   {
     m_directConnectGatewayOwnerAccount = jsonValue.GetString("directConnectGatewayOwnerAccount");
-
     m_directConnectGatewayOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proposalState"))
   {
     m_proposalState = DirectConnectGatewayAssociationProposalStateMapper::GetDirectConnectGatewayAssociationProposalStateForName(jsonValue.GetString("proposalState"));
-
     m_proposalStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedGateway"))
   {
     m_associatedGateway = jsonValue.GetObject("associatedGateway");
-
     m_associatedGatewayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("existingAllowedPrefixesToDirectConnectGateway"))
   {
     Aws::Utils::Array<JsonView> existingAllowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("existingAllowedPrefixesToDirectConnectGateway");
@@ -82,7 +59,6 @@ DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal
     }
     m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedAllowedPrefixesToDirectConnectGateway"))
   {
     Aws::Utils::Array<JsonView> requestedAllowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("requestedAllowedPrefixesToDirectConnectGateway");
@@ -92,7 +68,6 @@ DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal
     }
     m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
   }
-
   return *this;
 }
 

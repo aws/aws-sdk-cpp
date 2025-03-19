@@ -30,7 +30,7 @@ namespace Model
   class DescribeBackupVaultResult
   {
   public:
-    AWS_BACKUP_API DescribeBackupVaultResult();
+    AWS_BACKUP_API DescribeBackupVaultResult() = default;
     AWS_BACKUP_API DescribeBackupVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API DescribeBackupVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * identified by names that are unique to the account used to create them and the
      * Region where they are created.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultName.assign(value); }
-    inline DescribeBackupVaultResult& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline DescribeBackupVaultResult& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline DescribeBackupVaultResult& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    DescribeBackupVaultResult& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,35 +54,29 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
-    inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
-    inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
-    inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArn = std::move(value); }
-    inline void SetBackupVaultArn(const char* value) { m_backupVaultArn.assign(value); }
-    inline DescribeBackupVaultResult& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-    inline DescribeBackupVaultResult& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-    inline DescribeBackupVaultResult& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    DescribeBackupVaultResult& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of vault described.</p>
      */
-    inline const VaultType& GetVaultType() const{ return m_vaultType; }
-    inline void SetVaultType(const VaultType& value) { m_vaultType = value; }
-    inline void SetVaultType(VaultType&& value) { m_vaultType = std::move(value); }
-    inline DescribeBackupVaultResult& WithVaultType(const VaultType& value) { SetVaultType(value); return *this;}
-    inline DescribeBackupVaultResult& WithVaultType(VaultType&& value) { SetVaultType(std::move(value)); return *this;}
+    inline VaultType GetVaultType() const { return m_vaultType; }
+    inline void SetVaultType(VaultType value) { m_vaultTypeHasBeenSet = true; m_vaultType = value; }
+    inline DescribeBackupVaultResult& WithVaultType(VaultType value) { SetVaultType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the vault.-&gt;</p>
      */
-    inline const VaultState& GetVaultState() const{ return m_vaultState; }
-    inline void SetVaultState(const VaultState& value) { m_vaultState = value; }
-    inline void SetVaultState(VaultState&& value) { m_vaultState = std::move(value); }
-    inline DescribeBackupVaultResult& WithVaultState(const VaultState& value) { SetVaultState(value); return *this;}
-    inline DescribeBackupVaultResult& WithVaultState(VaultState&& value) { SetVaultState(std::move(value)); return *this;}
+    inline VaultState GetVaultState() const { return m_vaultState; }
+    inline void SetVaultState(VaultState value) { m_vaultStateHasBeenSet = true; m_vaultState = value; }
+    inline DescribeBackupVaultResult& WithVaultState(VaultState value) { SetVaultState(value); return *this;}
     ///@}
 
     ///@{
@@ -93,13 +85,11 @@ namespace Model
      * example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArn.assign(value); }
-    inline DescribeBackupVaultResult& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline DescribeBackupVaultResult& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline DescribeBackupVaultResult& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    DescribeBackupVaultResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,11 +99,11 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline DescribeBackupVaultResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline DescribeBackupVaultResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    DescribeBackupVaultResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,21 +113,19 @@ namespace Model
      * optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.'
      * characters.</p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestId.assign(value); }
-    inline DescribeBackupVaultResult& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline DescribeBackupVaultResult& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline DescribeBackupVaultResult& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    DescribeBackupVaultResult& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of recovery points that are stored in a backup vault.</p>
      */
-    inline long long GetNumberOfRecoveryPoints() const{ return m_numberOfRecoveryPoints; }
-    inline void SetNumberOfRecoveryPoints(long long value) { m_numberOfRecoveryPoints = value; }
+    inline long long GetNumberOfRecoveryPoints() const { return m_numberOfRecoveryPoints; }
+    inline void SetNumberOfRecoveryPoints(long long value) { m_numberOfRecoveryPointsHasBeenSet = true; m_numberOfRecoveryPoints = value; }
     inline DescribeBackupVaultResult& WithNumberOfRecoveryPoints(long long value) { SetNumberOfRecoveryPoints(value); return *this;}
     ///@}
 
@@ -147,8 +135,8 @@ namespace Model
      * the backup vault. <code>True</code> means that Vault Lock causes delete or
      * update operations on the recovery points stored in the vault to fail.</p>
      */
-    inline bool GetLocked() const{ return m_locked; }
-    inline void SetLocked(bool value) { m_locked = value; }
+    inline bool GetLocked() const { return m_locked; }
+    inline void SetLocked(bool value) { m_lockedHasBeenSet = true; m_locked = value; }
     inline DescribeBackupVaultResult& WithLocked(bool value) { SetLocked(value); return *this;}
     ///@}
 
@@ -164,8 +152,8 @@ namespace Model
      * settings or use a different vault. Recovery points already stored in the vault
      * prior to Vault Lock are not affected.</p>
      */
-    inline long long GetMinRetentionDays() const{ return m_minRetentionDays; }
-    inline void SetMinRetentionDays(long long value) { m_minRetentionDays = value; }
+    inline long long GetMinRetentionDays() const { return m_minRetentionDays; }
+    inline void SetMinRetentionDays(long long value) { m_minRetentionDaysHasBeenSet = true; m_minRetentionDays = value; }
     inline DescribeBackupVaultResult& WithMinRetentionDays(long long value) { SetMinRetentionDays(value); return *this;}
     ///@}
 
@@ -182,8 +170,8 @@ namespace Model
      * different vault. Recovery points already stored in the vault prior to Vault Lock
      * are not affected.</p>
      */
-    inline long long GetMaxRetentionDays() const{ return m_maxRetentionDays; }
-    inline void SetMaxRetentionDays(long long value) { m_maxRetentionDays = value; }
+    inline long long GetMaxRetentionDays() const { return m_maxRetentionDays; }
+    inline void SetMaxRetentionDays(long long value) { m_maxRetentionDaysHasBeenSet = true; m_maxRetentionDays = value; }
     inline DescribeBackupVaultResult& WithMaxRetentionDays(long long value) { SetMaxRetentionDays(value); return *this;}
     ///@}
 
@@ -196,50 +184,61 @@ namespace Model
      * Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetLockDate() const{ return m_lockDate; }
-    inline void SetLockDate(const Aws::Utils::DateTime& value) { m_lockDate = value; }
-    inline void SetLockDate(Aws::Utils::DateTime&& value) { m_lockDate = std::move(value); }
-    inline DescribeBackupVaultResult& WithLockDate(const Aws::Utils::DateTime& value) { SetLockDate(value); return *this;}
-    inline DescribeBackupVaultResult& WithLockDate(Aws::Utils::DateTime&& value) { SetLockDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLockDate() const { return m_lockDate; }
+    template<typename LockDateT = Aws::Utils::DateTime>
+    void SetLockDate(LockDateT&& value) { m_lockDateHasBeenSet = true; m_lockDate = std::forward<LockDateT>(value); }
+    template<typename LockDateT = Aws::Utils::DateTime>
+    DescribeBackupVaultResult& WithLockDate(LockDateT&& value) { SetLockDate(std::forward<LockDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBackupVaultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBackupVaultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBackupVaultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBackupVaultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backupVaultName;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
+    bool m_backupVaultArnHasBeenSet = false;
 
-    VaultType m_vaultType;
+    VaultType m_vaultType{VaultType::NOT_SET};
+    bool m_vaultTypeHasBeenSet = false;
 
-    VaultState m_vaultState;
+    VaultState m_vaultState{VaultState::NOT_SET};
+    bool m_vaultStateHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
+    bool m_creatorRequestIdHasBeenSet = false;
 
-    long long m_numberOfRecoveryPoints;
+    long long m_numberOfRecoveryPoints{0};
+    bool m_numberOfRecoveryPointsHasBeenSet = false;
 
-    bool m_locked;
+    bool m_locked{false};
+    bool m_lockedHasBeenSet = false;
 
-    long long m_minRetentionDays;
+    long long m_minRetentionDays{0};
+    bool m_minRetentionDaysHasBeenSet = false;
 
-    long long m_maxRetentionDays;
+    long long m_maxRetentionDays{0};
+    bool m_maxRetentionDaysHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lockDate;
+    Aws::Utils::DateTime m_lockDate{};
+    bool m_lockDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

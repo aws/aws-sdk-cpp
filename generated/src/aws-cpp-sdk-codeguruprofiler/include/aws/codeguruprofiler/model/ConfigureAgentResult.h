@@ -34,7 +34,7 @@ namespace Model
   class ConfigureAgentResult
   {
   public:
-    AWS_CODEGURUPROFILER_API ConfigureAgentResult();
+    AWS_CODEGURUPROFILER_API ConfigureAgentResult() = default;
     AWS_CODEGURUPROFILER_API ConfigureAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUPROFILER_API ConfigureAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles
      * or not and for how long to return profiling data. </p>
      */
-    inline const AgentConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const AgentConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(AgentConfiguration&& value) { m_configuration = std::move(value); }
-    inline ConfigureAgentResult& WithConfiguration(const AgentConfiguration& value) { SetConfiguration(value); return *this;}
-    inline ConfigureAgentResult& WithConfiguration(AgentConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const AgentConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = AgentConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AgentConfiguration>
+    ConfigureAgentResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConfigureAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConfigureAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConfigureAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConfigureAgentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AgentConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

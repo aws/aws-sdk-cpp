@@ -33,7 +33,7 @@ namespace Model
   class ValidationMessage
   {
   public:
-    AWS_ELASTICBEANSTALK_API ValidationMessage();
+    AWS_ELASTICBEANSTALK_API ValidationMessage() = default;
     AWS_ELASTICBEANSTALK_API ValidationMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API ValidationMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>A message describing the error or warning.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationMessage& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationMessage& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationMessage& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,47 +60,41 @@ namespace Model
      * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
      * information you should take into account.</p> </li> </ul>
      */
-    inline const ValidationSeverity& GetSeverity() const{ return m_severity; }
+    inline ValidationSeverity GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const ValidationSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(ValidationSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline ValidationMessage& WithSeverity(const ValidationSeverity& value) { SetSeverity(value); return *this;}
-    inline ValidationMessage& WithSeverity(ValidationSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(ValidationSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline ValidationMessage& WithSeverity(ValidationSeverity value) { SetSeverity(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace to which the option belongs.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline ValidationMessage& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ValidationMessage& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ValidationMessage& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ValidationMessage& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the option.</p>
      */
-    inline const Aws::String& GetOptionName() const{ return m_optionName; }
+    inline const Aws::String& GetOptionName() const { return m_optionName; }
     inline bool OptionNameHasBeenSet() const { return m_optionNameHasBeenSet; }
-    inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
-    inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = std::move(value); }
-    inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
-    inline ValidationMessage& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
-    inline ValidationMessage& WithOptionName(Aws::String&& value) { SetOptionName(std::move(value)); return *this;}
-    inline ValidationMessage& WithOptionName(const char* value) { SetOptionName(value); return *this;}
+    template<typename OptionNameT = Aws::String>
+    void SetOptionName(OptionNameT&& value) { m_optionNameHasBeenSet = true; m_optionName = std::forward<OptionNameT>(value); }
+    template<typename OptionNameT = Aws::String>
+    ValidationMessage& WithOptionName(OptionNameT&& value) { SetOptionName(std::forward<OptionNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ValidationSeverity m_severity;
+    ValidationSeverity m_severity{ValidationSeverity::NOT_SET};
     bool m_severityHasBeenSet = false;
 
     Aws::String m_namespace;

@@ -18,13 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-QueryInfo::QueryInfo() : 
-    m_selectFieldsHasBeenSet(false)
-{
-}
-
 QueryInfo::QueryInfo(JsonView jsonValue)
-  : QueryInfo()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ QueryInfo& QueryInfo::operator =(JsonView jsonValue)
     }
     m_selectFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

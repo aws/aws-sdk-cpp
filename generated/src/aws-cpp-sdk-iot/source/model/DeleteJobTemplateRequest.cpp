@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteJobTemplateRequest::DeleteJobTemplateRequest() : 
-    m_jobTemplateIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteJobTemplateRequest::SerializePayload() const
 {
   return {};

@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PlacementGroup::PlacementGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_state(PlacementGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_partitionCount(0),
-    m_partitionCountHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_groupArnHasBeenSet(false),
-    m_spreadLevel(SpreadLevel::NOT_SET),
-    m_spreadLevelHasBeenSet(false)
-{
-}
-
 PlacementGroup::PlacementGroup(const XmlNode& xmlNode)
-  : PlacementGroup()
 {
   *this = xmlNode;
 }
@@ -57,13 +40,13 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = PlacementGroupStateMapper::GetPlacementGroupStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = PlacementGroupStateMapper::GetPlacementGroupStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode strategyNode = resultNode.FirstChild("strategy");
     if(!strategyNode.IsNull())
     {
-      m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(strategyNode.GetText()).c_str()).c_str());
+      m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(strategyNode.GetText()).c_str()));
       m_strategyHasBeenSet = true;
     }
     XmlNode partitionCountNode = resultNode.FirstChild("partitionCount");
@@ -82,6 +65,7 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -99,7 +83,7 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
     XmlNode spreadLevelNode = resultNode.FirstChild("spreadLevel");
     if(!spreadLevelNode.IsNull())
     {
-      m_spreadLevel = SpreadLevelMapper::GetSpreadLevelForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spreadLevelNode.GetText()).c_str()).c_str());
+      m_spreadLevel = SpreadLevelMapper::GetSpreadLevelForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spreadLevelNode.GetText()).c_str()));
       m_spreadLevelHasBeenSet = true;
     }
   }

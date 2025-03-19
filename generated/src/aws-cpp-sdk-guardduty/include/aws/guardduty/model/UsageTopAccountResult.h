@@ -33,7 +33,7 @@ namespace Model
   class UsageTopAccountResult
   {
   public:
-    AWS_GUARDDUTY_API UsageTopAccountResult();
+    AWS_GUARDDUTY_API UsageTopAccountResult() = default;
     AWS_GUARDDUTY_API UsageTopAccountResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API UsageTopAccountResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
     /**
      * <p>The unique account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline UsageTopAccountResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline UsageTopAccountResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline UsageTopAccountResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    UsageTopAccountResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Total& GetTotal() const{ return m_total; }
+    inline const Total& GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-    inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-    inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-    inline UsageTopAccountResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-    inline UsageTopAccountResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
+    template<typename TotalT = Total>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = Total>
+    UsageTopAccountResult& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
   private:
 

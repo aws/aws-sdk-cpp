@@ -12,11 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopEarthObservationJobRequest::StopEarthObservationJobRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String StopEarthObservationJobRequest::SerializePayload() const
 {
   JsonValue payload;

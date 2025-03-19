@@ -32,7 +32,7 @@ namespace Model
   class IssueDetected
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API IssueDetected();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API IssueDetected() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API IssueDetected(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API IssueDetected& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Provides the timestamps that identify when in an audio segment the specified
      * issue occurs.</p>
      */
-    inline const CharacterOffsets& GetCharacterOffsets() const{ return m_characterOffsets; }
+    inline const CharacterOffsets& GetCharacterOffsets() const { return m_characterOffsets; }
     inline bool CharacterOffsetsHasBeenSet() const { return m_characterOffsetsHasBeenSet; }
-    inline void SetCharacterOffsets(const CharacterOffsets& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = value; }
-    inline void SetCharacterOffsets(CharacterOffsets&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::move(value); }
-    inline IssueDetected& WithCharacterOffsets(const CharacterOffsets& value) { SetCharacterOffsets(value); return *this;}
-    inline IssueDetected& WithCharacterOffsets(CharacterOffsets&& value) { SetCharacterOffsets(std::move(value)); return *this;}
+    template<typename CharacterOffsetsT = CharacterOffsets>
+    void SetCharacterOffsets(CharacterOffsetsT&& value) { m_characterOffsetsHasBeenSet = true; m_characterOffsets = std::forward<CharacterOffsetsT>(value); }
+    template<typename CharacterOffsetsT = CharacterOffsets>
+    IssueDetected& WithCharacterOffsets(CharacterOffsetsT&& value) { SetCharacterOffsets(std::forward<CharacterOffsetsT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class FinishedWorldsSummary
   {
   public:
-    AWS_ROBOMAKER_API FinishedWorldsSummary();
+    AWS_ROBOMAKER_API FinishedWorldsSummary() = default;
     AWS_ROBOMAKER_API FinishedWorldsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API FinishedWorldsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The total number of finished worlds.</p>
      */
-    inline int GetFinishedCount() const{ return m_finishedCount; }
+    inline int GetFinishedCount() const { return m_finishedCount; }
     inline bool FinishedCountHasBeenSet() const { return m_finishedCountHasBeenSet; }
     inline void SetFinishedCount(int value) { m_finishedCountHasBeenSet = true; m_finishedCount = value; }
     inline FinishedWorldsSummary& WithFinishedCount(int value) { SetFinishedCount(value); return *this;}
@@ -53,31 +53,30 @@ namespace Model
     /**
      * <p>A list of worlds that succeeded.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSucceededWorlds() const{ return m_succeededWorlds; }
+    inline const Aws::Vector<Aws::String>& GetSucceededWorlds() const { return m_succeededWorlds; }
     inline bool SucceededWorldsHasBeenSet() const { return m_succeededWorldsHasBeenSet; }
-    inline void SetSucceededWorlds(const Aws::Vector<Aws::String>& value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds = value; }
-    inline void SetSucceededWorlds(Aws::Vector<Aws::String>&& value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds = std::move(value); }
-    inline FinishedWorldsSummary& WithSucceededWorlds(const Aws::Vector<Aws::String>& value) { SetSucceededWorlds(value); return *this;}
-    inline FinishedWorldsSummary& WithSucceededWorlds(Aws::Vector<Aws::String>&& value) { SetSucceededWorlds(std::move(value)); return *this;}
-    inline FinishedWorldsSummary& AddSucceededWorlds(const Aws::String& value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds.push_back(value); return *this; }
-    inline FinishedWorldsSummary& AddSucceededWorlds(Aws::String&& value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds.push_back(std::move(value)); return *this; }
-    inline FinishedWorldsSummary& AddSucceededWorlds(const char* value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds.push_back(value); return *this; }
+    template<typename SucceededWorldsT = Aws::Vector<Aws::String>>
+    void SetSucceededWorlds(SucceededWorldsT&& value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds = std::forward<SucceededWorldsT>(value); }
+    template<typename SucceededWorldsT = Aws::Vector<Aws::String>>
+    FinishedWorldsSummary& WithSucceededWorlds(SucceededWorldsT&& value) { SetSucceededWorlds(std::forward<SucceededWorldsT>(value)); return *this;}
+    template<typename SucceededWorldsT = Aws::String>
+    FinishedWorldsSummary& AddSucceededWorlds(SucceededWorldsT&& value) { m_succeededWorldsHasBeenSet = true; m_succeededWorlds.emplace_back(std::forward<SucceededWorldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about worlds that failed.</p>
      */
-    inline const FailureSummary& GetFailureSummary() const{ return m_failureSummary; }
+    inline const FailureSummary& GetFailureSummary() const { return m_failureSummary; }
     inline bool FailureSummaryHasBeenSet() const { return m_failureSummaryHasBeenSet; }
-    inline void SetFailureSummary(const FailureSummary& value) { m_failureSummaryHasBeenSet = true; m_failureSummary = value; }
-    inline void SetFailureSummary(FailureSummary&& value) { m_failureSummaryHasBeenSet = true; m_failureSummary = std::move(value); }
-    inline FinishedWorldsSummary& WithFailureSummary(const FailureSummary& value) { SetFailureSummary(value); return *this;}
-    inline FinishedWorldsSummary& WithFailureSummary(FailureSummary&& value) { SetFailureSummary(std::move(value)); return *this;}
+    template<typename FailureSummaryT = FailureSummary>
+    void SetFailureSummary(FailureSummaryT&& value) { m_failureSummaryHasBeenSet = true; m_failureSummary = std::forward<FailureSummaryT>(value); }
+    template<typename FailureSummaryT = FailureSummary>
+    FinishedWorldsSummary& WithFailureSummary(FailureSummaryT&& value) { SetFailureSummary(std::forward<FailureSummaryT>(value)); return *this;}
     ///@}
   private:
 
-    int m_finishedCount;
+    int m_finishedCount{0};
     bool m_finishedCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_succeededWorlds;

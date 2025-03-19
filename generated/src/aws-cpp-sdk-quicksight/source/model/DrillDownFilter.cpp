@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DrillDownFilter::DrillDownFilter() : 
-    m_numericEqualityFilterHasBeenSet(false),
-    m_categoryFilterHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false)
-{
-}
-
 DrillDownFilter::DrillDownFilter(JsonView jsonValue)
-  : DrillDownFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DrillDownFilter& DrillDownFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumericEqualityFilter"))
   {
     m_numericEqualityFilter = jsonValue.GetObject("NumericEqualityFilter");
-
     m_numericEqualityFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryFilter"))
   {
     m_categoryFilter = jsonValue.GetObject("CategoryFilter");
-
     m_categoryFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeRangeFilter"))
   {
     m_timeRangeFilter = jsonValue.GetObject("TimeRangeFilter");
-
     m_timeRangeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

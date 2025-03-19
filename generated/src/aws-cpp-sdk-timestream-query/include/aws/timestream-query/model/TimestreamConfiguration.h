@@ -37,7 +37,7 @@ namespace Model
   class TimestreamConfiguration
   {
   public:
-    AWS_TIMESTREAMQUERY_API TimestreamConfiguration();
+    AWS_TIMESTREAMQUERY_API TimestreamConfiguration() = default;
     AWS_TIMESTREAMQUERY_API TimestreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API TimestreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>Name of Timestream database to which the query result will be written.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline TimestreamConfiguration& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline TimestreamConfiguration& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline TimestreamConfiguration& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    TimestreamConfiguration& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * should be within the same database that is provided in Timestream
      * configuration.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline TimestreamConfiguration& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline TimestreamConfiguration& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline TimestreamConfiguration& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    TimestreamConfiguration& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <p>Column from query result that should be used as the time column in
      * destination table. Column type for this should be TIMESTAMP.</p>
      */
-    inline const Aws::String& GetTimeColumn() const{ return m_timeColumn; }
+    inline const Aws::String& GetTimeColumn() const { return m_timeColumn; }
     inline bool TimeColumnHasBeenSet() const { return m_timeColumnHasBeenSet; }
-    inline void SetTimeColumn(const Aws::String& value) { m_timeColumnHasBeenSet = true; m_timeColumn = value; }
-    inline void SetTimeColumn(Aws::String&& value) { m_timeColumnHasBeenSet = true; m_timeColumn = std::move(value); }
-    inline void SetTimeColumn(const char* value) { m_timeColumnHasBeenSet = true; m_timeColumn.assign(value); }
-    inline TimestreamConfiguration& WithTimeColumn(const Aws::String& value) { SetTimeColumn(value); return *this;}
-    inline TimestreamConfiguration& WithTimeColumn(Aws::String&& value) { SetTimeColumn(std::move(value)); return *this;}
-    inline TimestreamConfiguration& WithTimeColumn(const char* value) { SetTimeColumn(value); return *this;}
+    template<typename TimeColumnT = Aws::String>
+    void SetTimeColumn(TimeColumnT&& value) { m_timeColumnHasBeenSet = true; m_timeColumn = std::forward<TimeColumnT>(value); }
+    template<typename TimeColumnT = Aws::String>
+    TimestreamConfiguration& WithTimeColumn(TimeColumnT&& value) { SetTimeColumn(std::forward<TimeColumnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,54 +87,52 @@ namespace Model
      * <p> This is to allow mapping column(s) from the query result to the dimension in
      * the destination table. </p>
      */
-    inline const Aws::Vector<DimensionMapping>& GetDimensionMappings() const{ return m_dimensionMappings; }
+    inline const Aws::Vector<DimensionMapping>& GetDimensionMappings() const { return m_dimensionMappings; }
     inline bool DimensionMappingsHasBeenSet() const { return m_dimensionMappingsHasBeenSet; }
-    inline void SetDimensionMappings(const Aws::Vector<DimensionMapping>& value) { m_dimensionMappingsHasBeenSet = true; m_dimensionMappings = value; }
-    inline void SetDimensionMappings(Aws::Vector<DimensionMapping>&& value) { m_dimensionMappingsHasBeenSet = true; m_dimensionMappings = std::move(value); }
-    inline TimestreamConfiguration& WithDimensionMappings(const Aws::Vector<DimensionMapping>& value) { SetDimensionMappings(value); return *this;}
-    inline TimestreamConfiguration& WithDimensionMappings(Aws::Vector<DimensionMapping>&& value) { SetDimensionMappings(std::move(value)); return *this;}
-    inline TimestreamConfiguration& AddDimensionMappings(const DimensionMapping& value) { m_dimensionMappingsHasBeenSet = true; m_dimensionMappings.push_back(value); return *this; }
-    inline TimestreamConfiguration& AddDimensionMappings(DimensionMapping&& value) { m_dimensionMappingsHasBeenSet = true; m_dimensionMappings.push_back(std::move(value)); return *this; }
+    template<typename DimensionMappingsT = Aws::Vector<DimensionMapping>>
+    void SetDimensionMappings(DimensionMappingsT&& value) { m_dimensionMappingsHasBeenSet = true; m_dimensionMappings = std::forward<DimensionMappingsT>(value); }
+    template<typename DimensionMappingsT = Aws::Vector<DimensionMapping>>
+    TimestreamConfiguration& WithDimensionMappings(DimensionMappingsT&& value) { SetDimensionMappings(std::forward<DimensionMappingsT>(value)); return *this;}
+    template<typename DimensionMappingsT = DimensionMapping>
+    TimestreamConfiguration& AddDimensionMappings(DimensionMappingsT&& value) { m_dimensionMappingsHasBeenSet = true; m_dimensionMappings.emplace_back(std::forward<DimensionMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Multi-measure mappings.</p>
      */
-    inline const MultiMeasureMappings& GetMultiMeasureMappings() const{ return m_multiMeasureMappings; }
+    inline const MultiMeasureMappings& GetMultiMeasureMappings() const { return m_multiMeasureMappings; }
     inline bool MultiMeasureMappingsHasBeenSet() const { return m_multiMeasureMappingsHasBeenSet; }
-    inline void SetMultiMeasureMappings(const MultiMeasureMappings& value) { m_multiMeasureMappingsHasBeenSet = true; m_multiMeasureMappings = value; }
-    inline void SetMultiMeasureMappings(MultiMeasureMappings&& value) { m_multiMeasureMappingsHasBeenSet = true; m_multiMeasureMappings = std::move(value); }
-    inline TimestreamConfiguration& WithMultiMeasureMappings(const MultiMeasureMappings& value) { SetMultiMeasureMappings(value); return *this;}
-    inline TimestreamConfiguration& WithMultiMeasureMappings(MultiMeasureMappings&& value) { SetMultiMeasureMappings(std::move(value)); return *this;}
+    template<typename MultiMeasureMappingsT = MultiMeasureMappings>
+    void SetMultiMeasureMappings(MultiMeasureMappingsT&& value) { m_multiMeasureMappingsHasBeenSet = true; m_multiMeasureMappings = std::forward<MultiMeasureMappingsT>(value); }
+    template<typename MultiMeasureMappingsT = MultiMeasureMappings>
+    TimestreamConfiguration& WithMultiMeasureMappings(MultiMeasureMappingsT&& value) { SetMultiMeasureMappings(std::forward<MultiMeasureMappingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies how to map measures to multi-measure records.</p>
      */
-    inline const Aws::Vector<MixedMeasureMapping>& GetMixedMeasureMappings() const{ return m_mixedMeasureMappings; }
+    inline const Aws::Vector<MixedMeasureMapping>& GetMixedMeasureMappings() const { return m_mixedMeasureMappings; }
     inline bool MixedMeasureMappingsHasBeenSet() const { return m_mixedMeasureMappingsHasBeenSet; }
-    inline void SetMixedMeasureMappings(const Aws::Vector<MixedMeasureMapping>& value) { m_mixedMeasureMappingsHasBeenSet = true; m_mixedMeasureMappings = value; }
-    inline void SetMixedMeasureMappings(Aws::Vector<MixedMeasureMapping>&& value) { m_mixedMeasureMappingsHasBeenSet = true; m_mixedMeasureMappings = std::move(value); }
-    inline TimestreamConfiguration& WithMixedMeasureMappings(const Aws::Vector<MixedMeasureMapping>& value) { SetMixedMeasureMappings(value); return *this;}
-    inline TimestreamConfiguration& WithMixedMeasureMappings(Aws::Vector<MixedMeasureMapping>&& value) { SetMixedMeasureMappings(std::move(value)); return *this;}
-    inline TimestreamConfiguration& AddMixedMeasureMappings(const MixedMeasureMapping& value) { m_mixedMeasureMappingsHasBeenSet = true; m_mixedMeasureMappings.push_back(value); return *this; }
-    inline TimestreamConfiguration& AddMixedMeasureMappings(MixedMeasureMapping&& value) { m_mixedMeasureMappingsHasBeenSet = true; m_mixedMeasureMappings.push_back(std::move(value)); return *this; }
+    template<typename MixedMeasureMappingsT = Aws::Vector<MixedMeasureMapping>>
+    void SetMixedMeasureMappings(MixedMeasureMappingsT&& value) { m_mixedMeasureMappingsHasBeenSet = true; m_mixedMeasureMappings = std::forward<MixedMeasureMappingsT>(value); }
+    template<typename MixedMeasureMappingsT = Aws::Vector<MixedMeasureMapping>>
+    TimestreamConfiguration& WithMixedMeasureMappings(MixedMeasureMappingsT&& value) { SetMixedMeasureMappings(std::forward<MixedMeasureMappingsT>(value)); return *this;}
+    template<typename MixedMeasureMappingsT = MixedMeasureMapping>
+    TimestreamConfiguration& AddMixedMeasureMappings(MixedMeasureMappingsT&& value) { m_mixedMeasureMappingsHasBeenSet = true; m_mixedMeasureMappings.emplace_back(std::forward<MixedMeasureMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Name of the measure column.</p>
      */
-    inline const Aws::String& GetMeasureNameColumn() const{ return m_measureNameColumn; }
+    inline const Aws::String& GetMeasureNameColumn() const { return m_measureNameColumn; }
     inline bool MeasureNameColumnHasBeenSet() const { return m_measureNameColumnHasBeenSet; }
-    inline void SetMeasureNameColumn(const Aws::String& value) { m_measureNameColumnHasBeenSet = true; m_measureNameColumn = value; }
-    inline void SetMeasureNameColumn(Aws::String&& value) { m_measureNameColumnHasBeenSet = true; m_measureNameColumn = std::move(value); }
-    inline void SetMeasureNameColumn(const char* value) { m_measureNameColumnHasBeenSet = true; m_measureNameColumn.assign(value); }
-    inline TimestreamConfiguration& WithMeasureNameColumn(const Aws::String& value) { SetMeasureNameColumn(value); return *this;}
-    inline TimestreamConfiguration& WithMeasureNameColumn(Aws::String&& value) { SetMeasureNameColumn(std::move(value)); return *this;}
-    inline TimestreamConfiguration& WithMeasureNameColumn(const char* value) { SetMeasureNameColumn(value); return *this;}
+    template<typename MeasureNameColumnT = Aws::String>
+    void SetMeasureNameColumn(MeasureNameColumnT&& value) { m_measureNameColumnHasBeenSet = true; m_measureNameColumn = std::forward<MeasureNameColumnT>(value); }
+    template<typename MeasureNameColumnT = Aws::String>
+    TimestreamConfiguration& WithMeasureNameColumn(MeasureNameColumnT&& value) { SetMeasureNameColumn(std::forward<MeasureNameColumnT>(value)); return *this;}
     ///@}
   private:
 

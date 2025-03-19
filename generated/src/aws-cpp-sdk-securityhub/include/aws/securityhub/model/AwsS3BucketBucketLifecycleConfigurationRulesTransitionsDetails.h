@@ -32,7 +32,7 @@ namespace Model
   class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails() = default;
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetDate() const{ return m_date; }
+    inline const Aws::String& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::String& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::String&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline void SetDate(const char* value) { m_dateHasBeenSet = true; m_date.assign(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithDate(const Aws::String& value) { SetDate(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithDate(Aws::String&& value) { SetDate(std::move(value)); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithDate(const char* value) { SetDate(value); return *this;}
+    template<typename DateT = Aws::String>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::String>
+    AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * storage class. If you provide <code>Days</code>, you cannot provide
      * <code>Date</code>.</p>
      */
-    inline int GetDays() const{ return m_days; }
+    inline int GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
     inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithDays(int value) { SetDays(value); return *this;}
@@ -76,21 +74,19 @@ namespace Model
      * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
      * <code>STANDARD_IA</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStorageClass() const{ return m_storageClass; }
+    inline const Aws::String& GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const Aws::String& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(Aws::String&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline void SetStorageClass(const char* value) { m_storageClassHasBeenSet = true; m_storageClass.assign(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(const Aws::String& value) { SetStorageClass(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(Aws::String&& value) { SetStorageClass(std::move(value)); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(const char* value) { SetStorageClass(value); return *this;}
+    template<typename StorageClassT = Aws::String>
+    void SetStorageClass(StorageClassT&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::forward<StorageClassT>(value); }
+    template<typename StorageClassT = Aws::String>
+    AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(StorageClassT&& value) { SetStorageClass(std::forward<StorageClassT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_date;
     bool m_dateHasBeenSet = false;
 
-    int m_days;
+    int m_days{0};
     bool m_daysHasBeenSet = false;
 
     Aws::String m_storageClass;

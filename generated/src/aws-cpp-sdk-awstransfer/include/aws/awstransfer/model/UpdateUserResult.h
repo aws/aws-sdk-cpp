@@ -33,7 +33,7 @@ namespace Model
   class UpdateUserResult
   {
   public:
-    AWS_TRANSFER_API UpdateUserResult();
+    AWS_TRANSFER_API UpdateUserResult() = default;
     AWS_TRANSFER_API UpdateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API UpdateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * <p>A system-assigned unique identifier for a Transfer Family server instance
      * that the account is assigned to.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
-    inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverId.assign(value); }
-    inline UpdateUserResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline UpdateUserResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline UpdateUserResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    inline const Aws::String& GetServerId() const { return m_serverId; }
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    UpdateUserResult& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,32 +55,31 @@ namespace Model
      * <p>The unique identifier for a user that is assigned to a server instance that
      * was specified in the request.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
-    inline UpdateUserResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UpdateUserResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UpdateUserResult& WithUserName(const char* value) { SetUserName(value); return *this;}
+    inline const Aws::String& GetUserName() const { return m_userName; }
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UpdateUserResult& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverId;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_userName;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

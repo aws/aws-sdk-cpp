@@ -10,20 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_environmentIdsHasBeenSet(false),
-    m_environmentNamesHasBeenSet(false),
-    m_includeDeleted(false),
-    m_includeDeletedHasBeenSet(false),
-    m_includedDeletedBackToHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEnvironmentsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

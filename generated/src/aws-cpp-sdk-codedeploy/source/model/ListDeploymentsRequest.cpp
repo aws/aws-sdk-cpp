@@ -12,16 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeploymentsRequest::ListDeploymentsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_deploymentGroupNameHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_includeOnlyStatusesHasBeenSet(false),
-    m_createTimeRangeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDeploymentsRequest::SerializePayload() const
 {
   JsonValue payload;

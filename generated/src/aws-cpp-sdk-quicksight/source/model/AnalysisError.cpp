@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnalysisError::AnalysisError() : 
-    m_type(AnalysisErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_violatedEntitiesHasBeenSet(false)
-{
-}
-
 AnalysisError::AnalysisError(JsonView jsonValue)
-  : AnalysisError()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AnalysisError& AnalysisError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AnalysisErrorTypeMapper::GetAnalysisErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatedEntities"))
   {
     Aws::Utils::Array<JsonView> violatedEntitiesJsonList = jsonValue.GetArray("ViolatedEntities");
@@ -57,7 +44,6 @@ AnalysisError& AnalysisError::operator =(JsonView jsonValue)
     }
     m_violatedEntitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

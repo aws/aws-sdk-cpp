@@ -20,17 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-LoadBalancerAttributes::LoadBalancerAttributes() : 
-    m_crossZoneLoadBalancingHasBeenSet(false),
-    m_accessLogHasBeenSet(false),
-    m_connectionDrainingHasBeenSet(false),
-    m_connectionSettingsHasBeenSet(false),
-    m_additionalAttributesHasBeenSet(false)
-{
-}
-
 LoadBalancerAttributes::LoadBalancerAttributes(const XmlNode& xmlNode)
-  : LoadBalancerAttributes()
 {
   *this = xmlNode;
 }
@@ -69,6 +59,7 @@ LoadBalancerAttributes& LoadBalancerAttributes::operator =(const XmlNode& xmlNod
     if(!additionalAttributesNode.IsNull())
     {
       XmlNode additionalAttributesMember = additionalAttributesNode.FirstChild("member");
+      m_additionalAttributesHasBeenSet = !additionalAttributesMember.IsNull();
       while(!additionalAttributesMember.IsNull())
       {
         m_additionalAttributes.push_back(additionalAttributesMember);

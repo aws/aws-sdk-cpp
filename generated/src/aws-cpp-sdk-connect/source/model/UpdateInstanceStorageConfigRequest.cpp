@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateInstanceStorageConfigRequest::UpdateInstanceStorageConfigRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_resourceType(InstanceStorageResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_storageConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateInstanceStorageConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class ContentBlockStart
   {
   public:
-    AWS_BEDROCKRUNTIME_API ContentBlockStart();
+    AWS_BEDROCKRUNTIME_API ContentBlockStart() = default;
     AWS_BEDROCKRUNTIME_API ContentBlockStart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ContentBlockStart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Information about a tool that the model is requesting to use.</p>
      */
-    inline const ToolUseBlockStart& GetToolUse() const{ return m_toolUse; }
+    inline const ToolUseBlockStart& GetToolUse() const { return m_toolUse; }
     inline bool ToolUseHasBeenSet() const { return m_toolUseHasBeenSet; }
-    inline void SetToolUse(const ToolUseBlockStart& value) { m_toolUseHasBeenSet = true; m_toolUse = value; }
-    inline void SetToolUse(ToolUseBlockStart&& value) { m_toolUseHasBeenSet = true; m_toolUse = std::move(value); }
-    inline ContentBlockStart& WithToolUse(const ToolUseBlockStart& value) { SetToolUse(value); return *this;}
-    inline ContentBlockStart& WithToolUse(ToolUseBlockStart&& value) { SetToolUse(std::move(value)); return *this;}
+    template<typename ToolUseT = ToolUseBlockStart>
+    void SetToolUse(ToolUseT&& value) { m_toolUseHasBeenSet = true; m_toolUse = std::forward<ToolUseT>(value); }
+    template<typename ToolUseT = ToolUseBlockStart>
+    ContentBlockStart& WithToolUse(ToolUseT&& value) { SetToolUse(std::forward<ToolUseT>(value)); return *this;}
     ///@}
   private:
 

@@ -39,7 +39,7 @@ namespace Model
   class UpdatePipeSourceParameters
   {
   public:
-    AWS_PIPES_API UpdatePipeSourceParameters();
+    AWS_PIPES_API UpdatePipeSourceParameters() = default;
     AWS_PIPES_API UpdatePipeSourceParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API UpdatePipeSourceParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,84 +53,84 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
      * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
-    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+    inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-    inline UpdatePipeSourceParameters& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline UpdatePipeSourceParameters& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    template<typename FilterCriteriaT = FilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = FilterCriteria>
+    UpdatePipeSourceParameters& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Kinesis stream as a source.</p>
      */
-    inline const UpdatePipeSourceKinesisStreamParameters& GetKinesisStreamParameters() const{ return m_kinesisStreamParameters; }
+    inline const UpdatePipeSourceKinesisStreamParameters& GetKinesisStreamParameters() const { return m_kinesisStreamParameters; }
     inline bool KinesisStreamParametersHasBeenSet() const { return m_kinesisStreamParametersHasBeenSet; }
-    inline void SetKinesisStreamParameters(const UpdatePipeSourceKinesisStreamParameters& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = value; }
-    inline void SetKinesisStreamParameters(UpdatePipeSourceKinesisStreamParameters&& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithKinesisStreamParameters(const UpdatePipeSourceKinesisStreamParameters& value) { SetKinesisStreamParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithKinesisStreamParameters(UpdatePipeSourceKinesisStreamParameters&& value) { SetKinesisStreamParameters(std::move(value)); return *this;}
+    template<typename KinesisStreamParametersT = UpdatePipeSourceKinesisStreamParameters>
+    void SetKinesisStreamParameters(KinesisStreamParametersT&& value) { m_kinesisStreamParametersHasBeenSet = true; m_kinesisStreamParameters = std::forward<KinesisStreamParametersT>(value); }
+    template<typename KinesisStreamParametersT = UpdatePipeSourceKinesisStreamParameters>
+    UpdatePipeSourceParameters& WithKinesisStreamParameters(KinesisStreamParametersT&& value) { SetKinesisStreamParameters(std::forward<KinesisStreamParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a DynamoDB stream as a source.</p>
      */
-    inline const UpdatePipeSourceDynamoDBStreamParameters& GetDynamoDBStreamParameters() const{ return m_dynamoDBStreamParameters; }
+    inline const UpdatePipeSourceDynamoDBStreamParameters& GetDynamoDBStreamParameters() const { return m_dynamoDBStreamParameters; }
     inline bool DynamoDBStreamParametersHasBeenSet() const { return m_dynamoDBStreamParametersHasBeenSet; }
-    inline void SetDynamoDBStreamParameters(const UpdatePipeSourceDynamoDBStreamParameters& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = value; }
-    inline void SetDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParameters&& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithDynamoDBStreamParameters(const UpdatePipeSourceDynamoDBStreamParameters& value) { SetDynamoDBStreamParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithDynamoDBStreamParameters(UpdatePipeSourceDynamoDBStreamParameters&& value) { SetDynamoDBStreamParameters(std::move(value)); return *this;}
+    template<typename DynamoDBStreamParametersT = UpdatePipeSourceDynamoDBStreamParameters>
+    void SetDynamoDBStreamParameters(DynamoDBStreamParametersT&& value) { m_dynamoDBStreamParametersHasBeenSet = true; m_dynamoDBStreamParameters = std::forward<DynamoDBStreamParametersT>(value); }
+    template<typename DynamoDBStreamParametersT = UpdatePipeSourceDynamoDBStreamParameters>
+    UpdatePipeSourceParameters& WithDynamoDBStreamParameters(DynamoDBStreamParametersT&& value) { SetDynamoDBStreamParameters(std::forward<DynamoDBStreamParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Amazon SQS stream as a source.</p>
      */
-    inline const UpdatePipeSourceSqsQueueParameters& GetSqsQueueParameters() const{ return m_sqsQueueParameters; }
+    inline const UpdatePipeSourceSqsQueueParameters& GetSqsQueueParameters() const { return m_sqsQueueParameters; }
     inline bool SqsQueueParametersHasBeenSet() const { return m_sqsQueueParametersHasBeenSet; }
-    inline void SetSqsQueueParameters(const UpdatePipeSourceSqsQueueParameters& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = value; }
-    inline void SetSqsQueueParameters(UpdatePipeSourceSqsQueueParameters&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithSqsQueueParameters(const UpdatePipeSourceSqsQueueParameters& value) { SetSqsQueueParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithSqsQueueParameters(UpdatePipeSourceSqsQueueParameters&& value) { SetSqsQueueParameters(std::move(value)); return *this;}
+    template<typename SqsQueueParametersT = UpdatePipeSourceSqsQueueParameters>
+    void SetSqsQueueParameters(SqsQueueParametersT&& value) { m_sqsQueueParametersHasBeenSet = true; m_sqsQueueParameters = std::forward<SqsQueueParametersT>(value); }
+    template<typename SqsQueueParametersT = UpdatePipeSourceSqsQueueParameters>
+    UpdatePipeSourceParameters& WithSqsQueueParameters(SqsQueueParametersT&& value) { SetSqsQueueParameters(std::forward<SqsQueueParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using an Active MQ broker as a source.</p>
      */
-    inline const UpdatePipeSourceActiveMQBrokerParameters& GetActiveMQBrokerParameters() const{ return m_activeMQBrokerParameters; }
+    inline const UpdatePipeSourceActiveMQBrokerParameters& GetActiveMQBrokerParameters() const { return m_activeMQBrokerParameters; }
     inline bool ActiveMQBrokerParametersHasBeenSet() const { return m_activeMQBrokerParametersHasBeenSet; }
-    inline void SetActiveMQBrokerParameters(const UpdatePipeSourceActiveMQBrokerParameters& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = value; }
-    inline void SetActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParameters&& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithActiveMQBrokerParameters(const UpdatePipeSourceActiveMQBrokerParameters& value) { SetActiveMQBrokerParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithActiveMQBrokerParameters(UpdatePipeSourceActiveMQBrokerParameters&& value) { SetActiveMQBrokerParameters(std::move(value)); return *this;}
+    template<typename ActiveMQBrokerParametersT = UpdatePipeSourceActiveMQBrokerParameters>
+    void SetActiveMQBrokerParameters(ActiveMQBrokerParametersT&& value) { m_activeMQBrokerParametersHasBeenSet = true; m_activeMQBrokerParameters = std::forward<ActiveMQBrokerParametersT>(value); }
+    template<typename ActiveMQBrokerParametersT = UpdatePipeSourceActiveMQBrokerParameters>
+    UpdatePipeSourceParameters& WithActiveMQBrokerParameters(ActiveMQBrokerParametersT&& value) { SetActiveMQBrokerParameters(std::forward<ActiveMQBrokerParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using a Rabbit MQ broker as a source.</p>
      */
-    inline const UpdatePipeSourceRabbitMQBrokerParameters& GetRabbitMQBrokerParameters() const{ return m_rabbitMQBrokerParameters; }
+    inline const UpdatePipeSourceRabbitMQBrokerParameters& GetRabbitMQBrokerParameters() const { return m_rabbitMQBrokerParameters; }
     inline bool RabbitMQBrokerParametersHasBeenSet() const { return m_rabbitMQBrokerParametersHasBeenSet; }
-    inline void SetRabbitMQBrokerParameters(const UpdatePipeSourceRabbitMQBrokerParameters& value) { m_rabbitMQBrokerParametersHasBeenSet = true; m_rabbitMQBrokerParameters = value; }
-    inline void SetRabbitMQBrokerParameters(UpdatePipeSourceRabbitMQBrokerParameters&& value) { m_rabbitMQBrokerParametersHasBeenSet = true; m_rabbitMQBrokerParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithRabbitMQBrokerParameters(const UpdatePipeSourceRabbitMQBrokerParameters& value) { SetRabbitMQBrokerParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithRabbitMQBrokerParameters(UpdatePipeSourceRabbitMQBrokerParameters&& value) { SetRabbitMQBrokerParameters(std::move(value)); return *this;}
+    template<typename RabbitMQBrokerParametersT = UpdatePipeSourceRabbitMQBrokerParameters>
+    void SetRabbitMQBrokerParameters(RabbitMQBrokerParametersT&& value) { m_rabbitMQBrokerParametersHasBeenSet = true; m_rabbitMQBrokerParameters = std::forward<RabbitMQBrokerParametersT>(value); }
+    template<typename RabbitMQBrokerParametersT = UpdatePipeSourceRabbitMQBrokerParameters>
+    UpdatePipeSourceParameters& WithRabbitMQBrokerParameters(RabbitMQBrokerParametersT&& value) { SetRabbitMQBrokerParameters(std::forward<RabbitMQBrokerParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for using an MSK stream as a source.</p>
      */
-    inline const UpdatePipeSourceManagedStreamingKafkaParameters& GetManagedStreamingKafkaParameters() const{ return m_managedStreamingKafkaParameters; }
+    inline const UpdatePipeSourceManagedStreamingKafkaParameters& GetManagedStreamingKafkaParameters() const { return m_managedStreamingKafkaParameters; }
     inline bool ManagedStreamingKafkaParametersHasBeenSet() const { return m_managedStreamingKafkaParametersHasBeenSet; }
-    inline void SetManagedStreamingKafkaParameters(const UpdatePipeSourceManagedStreamingKafkaParameters& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = value; }
-    inline void SetManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParameters&& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(const UpdatePipeSourceManagedStreamingKafkaParameters& value) { SetManagedStreamingKafkaParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(UpdatePipeSourceManagedStreamingKafkaParameters&& value) { SetManagedStreamingKafkaParameters(std::move(value)); return *this;}
+    template<typename ManagedStreamingKafkaParametersT = UpdatePipeSourceManagedStreamingKafkaParameters>
+    void SetManagedStreamingKafkaParameters(ManagedStreamingKafkaParametersT&& value) { m_managedStreamingKafkaParametersHasBeenSet = true; m_managedStreamingKafkaParameters = std::forward<ManagedStreamingKafkaParametersT>(value); }
+    template<typename ManagedStreamingKafkaParametersT = UpdatePipeSourceManagedStreamingKafkaParameters>
+    UpdatePipeSourceParameters& WithManagedStreamingKafkaParameters(ManagedStreamingKafkaParametersT&& value) { SetManagedStreamingKafkaParameters(std::forward<ManagedStreamingKafkaParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +145,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-kafka.html">Apache
      * Kafka streams as a source</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
-    inline const UpdatePipeSourceSelfManagedKafkaParameters& GetSelfManagedKafkaParameters() const{ return m_selfManagedKafkaParameters; }
+    inline const UpdatePipeSourceSelfManagedKafkaParameters& GetSelfManagedKafkaParameters() const { return m_selfManagedKafkaParameters; }
     inline bool SelfManagedKafkaParametersHasBeenSet() const { return m_selfManagedKafkaParametersHasBeenSet; }
-    inline void SetSelfManagedKafkaParameters(const UpdatePipeSourceSelfManagedKafkaParameters& value) { m_selfManagedKafkaParametersHasBeenSet = true; m_selfManagedKafkaParameters = value; }
-    inline void SetSelfManagedKafkaParameters(UpdatePipeSourceSelfManagedKafkaParameters&& value) { m_selfManagedKafkaParametersHasBeenSet = true; m_selfManagedKafkaParameters = std::move(value); }
-    inline UpdatePipeSourceParameters& WithSelfManagedKafkaParameters(const UpdatePipeSourceSelfManagedKafkaParameters& value) { SetSelfManagedKafkaParameters(value); return *this;}
-    inline UpdatePipeSourceParameters& WithSelfManagedKafkaParameters(UpdatePipeSourceSelfManagedKafkaParameters&& value) { SetSelfManagedKafkaParameters(std::move(value)); return *this;}
+    template<typename SelfManagedKafkaParametersT = UpdatePipeSourceSelfManagedKafkaParameters>
+    void SetSelfManagedKafkaParameters(SelfManagedKafkaParametersT&& value) { m_selfManagedKafkaParametersHasBeenSet = true; m_selfManagedKafkaParameters = std::forward<SelfManagedKafkaParametersT>(value); }
+    template<typename SelfManagedKafkaParametersT = UpdatePipeSourceSelfManagedKafkaParameters>
+    UpdatePipeSourceParameters& WithSelfManagedKafkaParameters(SelfManagedKafkaParametersT&& value) { SetSelfManagedKafkaParameters(std::forward<SelfManagedKafkaParametersT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMobileDeviceAccessRulesRequest::ListMobileDeviceAccessRulesRequest() : 
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String ListMobileDeviceAccessRulesRequest::SerializePayload() const
 {
   JsonValue payload;

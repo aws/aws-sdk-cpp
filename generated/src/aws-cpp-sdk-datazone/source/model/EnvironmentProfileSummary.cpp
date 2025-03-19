@@ -18,23 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentProfileSummary::EnvironmentProfileSummary() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsAccountRegionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_environmentBlueprintIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 EnvironmentProfileSummary::EnvironmentProfileSummary(JsonView jsonValue)
-  : EnvironmentProfileSummary()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ EnvironmentProfileSummary& EnvironmentProfileSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountRegion"))
   {
     m_awsAccountRegion = jsonValue.GetString("awsAccountRegion");
-
     m_awsAccountRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentBlueprintId"))
   {
     m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
-
     m_environmentBlueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class EbsInstanceBlockDevice
   {
   public:
-    AWS_EC2_API EbsInstanceBlockDevice();
+    AWS_EC2_API EbsInstanceBlockDevice() = default;
     AWS_EC2_API EbsInstanceBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EbsInstanceBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,19 +47,19 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
+    inline const Aws::Utils::DateTime& GetAttachTime() const { return m_attachTime; }
     inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
-    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
-    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::move(value); }
-    inline EbsInstanceBlockDevice& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
-    inline EbsInstanceBlockDevice& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
+    template<typename AttachTimeT = Aws::Utils::DateTime>
+    void SetAttachTime(AttachTimeT&& value) { m_attachTimeHasBeenSet = true; m_attachTime = std::forward<AttachTimeT>(value); }
+    template<typename AttachTimeT = Aws::Utils::DateTime>
+    EbsInstanceBlockDevice& WithAttachTime(AttachTimeT&& value) { SetAttachTime(std::forward<AttachTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
     inline EbsInstanceBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
@@ -69,26 +69,22 @@ namespace Model
     /**
      * <p>The attachment state.</p>
      */
-    inline const AttachmentStatus& GetStatus() const{ return m_status; }
+    inline AttachmentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AttachmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AttachmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EbsInstanceBlockDevice& WithStatus(const AttachmentStatus& value) { SetStatus(value); return *this;}
-    inline EbsInstanceBlockDevice& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AttachmentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EbsInstanceBlockDevice& WithStatus(AttachmentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EBS volume.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline EbsInstanceBlockDevice& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline EbsInstanceBlockDevice& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline EbsInstanceBlockDevice& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    EbsInstanceBlockDevice& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
      * attached.</p>
      */
-    inline const Aws::String& GetAssociatedResource() const{ return m_associatedResource; }
+    inline const Aws::String& GetAssociatedResource() const { return m_associatedResource; }
     inline bool AssociatedResourceHasBeenSet() const { return m_associatedResourceHasBeenSet; }
-    inline void SetAssociatedResource(const Aws::String& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = value; }
-    inline void SetAssociatedResource(Aws::String&& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = std::move(value); }
-    inline void SetAssociatedResource(const char* value) { m_associatedResourceHasBeenSet = true; m_associatedResource.assign(value); }
-    inline EbsInstanceBlockDevice& WithAssociatedResource(const Aws::String& value) { SetAssociatedResource(value); return *this;}
-    inline EbsInstanceBlockDevice& WithAssociatedResource(Aws::String&& value) { SetAssociatedResource(std::move(value)); return *this;}
-    inline EbsInstanceBlockDevice& WithAssociatedResource(const char* value) { SetAssociatedResource(value); return *this;}
+    template<typename AssociatedResourceT = Aws::String>
+    void SetAssociatedResource(AssociatedResourceT&& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = std::forward<AssociatedResourceT>(value); }
+    template<typename AssociatedResourceT = Aws::String>
+    EbsInstanceBlockDevice& WithAssociatedResource(AssociatedResourceT&& value) { SetAssociatedResource(std::forward<AssociatedResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,36 +105,34 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
      * parameter is returned only for volumes that are attached to Fargate tasks.</p>
      */
-    inline const Aws::String& GetVolumeOwnerId() const{ return m_volumeOwnerId; }
+    inline const Aws::String& GetVolumeOwnerId() const { return m_volumeOwnerId; }
     inline bool VolumeOwnerIdHasBeenSet() const { return m_volumeOwnerIdHasBeenSet; }
-    inline void SetVolumeOwnerId(const Aws::String& value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId = value; }
-    inline void SetVolumeOwnerId(Aws::String&& value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId = std::move(value); }
-    inline void SetVolumeOwnerId(const char* value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId.assign(value); }
-    inline EbsInstanceBlockDevice& WithVolumeOwnerId(const Aws::String& value) { SetVolumeOwnerId(value); return *this;}
-    inline EbsInstanceBlockDevice& WithVolumeOwnerId(Aws::String&& value) { SetVolumeOwnerId(std::move(value)); return *this;}
-    inline EbsInstanceBlockDevice& WithVolumeOwnerId(const char* value) { SetVolumeOwnerId(value); return *this;}
+    template<typename VolumeOwnerIdT = Aws::String>
+    void SetVolumeOwnerId(VolumeOwnerIdT&& value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId = std::forward<VolumeOwnerIdT>(value); }
+    template<typename VolumeOwnerIdT = Aws::String>
+    EbsInstanceBlockDevice& WithVolumeOwnerId(VolumeOwnerIdT&& value) { SetVolumeOwnerId(std::forward<VolumeOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service provider that manages the EBS volume.</p>
      */
-    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline const OperatorResponse& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline EbsInstanceBlockDevice& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
-    inline EbsInstanceBlockDevice& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    template<typename OperatorT = OperatorResponse>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = OperatorResponse>
+    EbsInstanceBlockDevice& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_attachTime;
+    Aws::Utils::DateTime m_attachTime{};
     bool m_attachTimeHasBeenSet = false;
 
-    bool m_deleteOnTermination;
+    bool m_deleteOnTermination{false};
     bool m_deleteOnTerminationHasBeenSet = false;
 
-    AttachmentStatus m_status;
+    AttachmentStatus m_status{AttachmentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_volumeId;

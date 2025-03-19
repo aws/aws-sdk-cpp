@@ -32,7 +32,7 @@ namespace Model
   class Threshold
   {
   public:
-    AWS_CONNECT_API Threshold();
+    AWS_CONNECT_API Threshold() = default;
     AWS_CONNECT_API Threshold(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Threshold& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
      */
-    inline const Comparison& GetComparison() const{ return m_comparison; }
+    inline Comparison GetComparison() const { return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-    inline void SetComparison(const Comparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-    inline void SetComparison(Comparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-    inline Threshold& WithComparison(const Comparison& value) { SetComparison(value); return *this;}
-    inline Threshold& WithComparison(Comparison&& value) { SetComparison(std::move(value)); return *this;}
+    inline void SetComparison(Comparison value) { m_comparisonHasBeenSet = true; m_comparison = value; }
+    inline Threshold& WithComparison(Comparison value) { SetComparison(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The threshold value to compare.</p>
      */
-    inline double GetThresholdValue() const{ return m_thresholdValue; }
+    inline double GetThresholdValue() const { return m_thresholdValue; }
     inline bool ThresholdValueHasBeenSet() const { return m_thresholdValueHasBeenSet; }
     inline void SetThresholdValue(double value) { m_thresholdValueHasBeenSet = true; m_thresholdValue = value; }
     inline Threshold& WithThresholdValue(double value) { SetThresholdValue(value); return *this;}
     ///@}
   private:
 
-    Comparison m_comparison;
+    Comparison m_comparison{Comparison::NOT_SET};
     bool m_comparisonHasBeenSet = false;
 
-    double m_thresholdValue;
+    double m_thresholdValue{0.0};
     bool m_thresholdValueHasBeenSet = false;
   };
 

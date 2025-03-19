@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-SchemaChangeRequestDetails::SchemaChangeRequestDetails() : 
-    m_changesHasBeenSet(false),
-    m_schemaChangeAtHasBeenSet(false)
-{
-}
-
 SchemaChangeRequestDetails::SchemaChangeRequestDetails(JsonView jsonValue)
-  : SchemaChangeRequestDetails()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ SchemaChangeRequestDetails& SchemaChangeRequestDetails::operator =(JsonView json
     }
     m_changesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaChangeAt"))
   {
     m_schemaChangeAt = jsonValue.GetString("SchemaChangeAt");
-
     m_schemaChangeAtHasBeenSet = true;
   }
-
   return *this;
 }
 

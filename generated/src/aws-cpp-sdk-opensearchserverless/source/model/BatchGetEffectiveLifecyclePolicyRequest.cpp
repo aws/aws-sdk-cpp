@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetEffectiveLifecyclePolicyRequest::BatchGetEffectiveLifecyclePolicyRequest() : 
-    m_resourceIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetEffectiveLifecyclePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,16 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResourceConfigRequest::PutResourceConfigRequest() : 
-    m_resourceTypeHasBeenSet(false),
-    m_schemaVersionIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutResourceConfigRequest::SerializePayload() const
 {
   JsonValue payload;

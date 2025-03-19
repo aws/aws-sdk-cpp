@@ -32,7 +32,7 @@ namespace Model
   class AnonymousUserDashboardFeatureConfigurations
   {
   public:
-    AWS_QUICKSIGHT_API AnonymousUserDashboardFeatureConfigurations();
+    AWS_QUICKSIGHT_API AnonymousUserDashboardFeatureConfigurations() = default;
     AWS_QUICKSIGHT_API AnonymousUserDashboardFeatureConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AnonymousUserDashboardFeatureConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The shared view settings of an embedded dashboard.</p>
      */
-    inline const SharedViewConfigurations& GetSharedView() const{ return m_sharedView; }
+    inline const SharedViewConfigurations& GetSharedView() const { return m_sharedView; }
     inline bool SharedViewHasBeenSet() const { return m_sharedViewHasBeenSet; }
-    inline void SetSharedView(const SharedViewConfigurations& value) { m_sharedViewHasBeenSet = true; m_sharedView = value; }
-    inline void SetSharedView(SharedViewConfigurations&& value) { m_sharedViewHasBeenSet = true; m_sharedView = std::move(value); }
-    inline AnonymousUserDashboardFeatureConfigurations& WithSharedView(const SharedViewConfigurations& value) { SetSharedView(value); return *this;}
-    inline AnonymousUserDashboardFeatureConfigurations& WithSharedView(SharedViewConfigurations&& value) { SetSharedView(std::move(value)); return *this;}
+    template<typename SharedViewT = SharedViewConfigurations>
+    void SetSharedView(SharedViewT&& value) { m_sharedViewHasBeenSet = true; m_sharedView = std::forward<SharedViewT>(value); }
+    template<typename SharedViewT = SharedViewConfigurations>
+    AnonymousUserDashboardFeatureConfigurations& WithSharedView(SharedViewT&& value) { SetSharedView(std::forward<SharedViewT>(value)); return *this;}
     ///@}
   private:
 

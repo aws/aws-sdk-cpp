@@ -33,7 +33,7 @@ namespace Model
   class AnomalyDetection
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API AnomalyDetection();
+    AWS_ELASTICLOADBALANCINGV2_API AnomalyDetection() = default;
     AWS_ELASTICLOADBALANCINGV2_API AnomalyDetection(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API AnomalyDetection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,31 +45,27 @@ namespace Model
     /**
      * <p>The latest anomaly detection result.</p>
      */
-    inline const AnomalyResultEnum& GetResult() const{ return m_result; }
+    inline AnomalyResultEnum GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const AnomalyResultEnum& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(AnomalyResultEnum&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline AnomalyDetection& WithResult(const AnomalyResultEnum& value) { SetResult(value); return *this;}
-    inline AnomalyDetection& WithResult(AnomalyResultEnum&& value) { SetResult(std::move(value)); return *this;}
+    inline void SetResult(AnomalyResultEnum value) { m_resultHasBeenSet = true; m_result = value; }
+    inline AnomalyDetection& WithResult(AnomalyResultEnum value) { SetResult(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether anomaly mitigation is in progress.</p>
      */
-    inline const MitigationInEffectEnum& GetMitigationInEffect() const{ return m_mitigationInEffect; }
+    inline MitigationInEffectEnum GetMitigationInEffect() const { return m_mitigationInEffect; }
     inline bool MitigationInEffectHasBeenSet() const { return m_mitigationInEffectHasBeenSet; }
-    inline void SetMitigationInEffect(const MitigationInEffectEnum& value) { m_mitigationInEffectHasBeenSet = true; m_mitigationInEffect = value; }
-    inline void SetMitigationInEffect(MitigationInEffectEnum&& value) { m_mitigationInEffectHasBeenSet = true; m_mitigationInEffect = std::move(value); }
-    inline AnomalyDetection& WithMitigationInEffect(const MitigationInEffectEnum& value) { SetMitigationInEffect(value); return *this;}
-    inline AnomalyDetection& WithMitigationInEffect(MitigationInEffectEnum&& value) { SetMitigationInEffect(std::move(value)); return *this;}
+    inline void SetMitigationInEffect(MitigationInEffectEnum value) { m_mitigationInEffectHasBeenSet = true; m_mitigationInEffect = value; }
+    inline AnomalyDetection& WithMitigationInEffect(MitigationInEffectEnum value) { SetMitigationInEffect(value); return *this;}
     ///@}
   private:
 
-    AnomalyResultEnum m_result;
+    AnomalyResultEnum m_result{AnomalyResultEnum::NOT_SET};
     bool m_resultHasBeenSet = false;
 
-    MitigationInEffectEnum m_mitigationInEffect;
+    MitigationInEffectEnum m_mitigationInEffect{MitigationInEffectEnum::NOT_SET};
     bool m_mitigationInEffectHasBeenSet = false;
   };
 

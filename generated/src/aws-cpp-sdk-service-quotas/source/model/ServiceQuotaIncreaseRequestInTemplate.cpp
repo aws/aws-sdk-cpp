@@ -18,22 +18,7 @@ namespace ServiceQuotas
 namespace Model
 {
 
-ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate() : 
-    m_serviceCodeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_quotaNameHasBeenSet(false),
-    m_desiredValue(0.0),
-    m_desiredValueHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_globalQuota(false),
-    m_globalQuotaHasBeenSet(false)
-{
-}
-
 ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate(JsonView jsonValue)
-  : ServiceQuotaIncreaseRequestInTemplate()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ServiceQuotaIncreaseRequestInTemplate& ServiceQuotaIncreaseRequestInTemplate::op
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaCode"))
   {
     m_quotaCode = jsonValue.GetString("QuotaCode");
-
     m_quotaCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuotaName"))
   {
     m_quotaName = jsonValue.GetString("QuotaName");
-
     m_quotaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredValue"))
   {
     m_desiredValue = jsonValue.GetDouble("DesiredValue");
-
     m_desiredValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalQuota"))
   {
     m_globalQuota = jsonValue.GetBool("GlobalQuota");
-
     m_globalQuotaHasBeenSet = true;
   }
-
   return *this;
 }
 

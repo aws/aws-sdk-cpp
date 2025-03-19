@@ -33,7 +33,7 @@ namespace Model
   class DeviceRegistrationStateEventConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration();
+    AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration() = default;
     AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Device registration state event configuration object for enabling or
      * disabling Sidewalk related event topics.</p>
      */
-    inline const SidewalkEventNotificationConfigurations& GetSidewalk() const{ return m_sidewalk; }
+    inline const SidewalkEventNotificationConfigurations& GetSidewalk() const { return m_sidewalk; }
     inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
-    inline void SetSidewalk(const SidewalkEventNotificationConfigurations& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
-    inline void SetSidewalk(SidewalkEventNotificationConfigurations&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
-    inline DeviceRegistrationStateEventConfiguration& WithSidewalk(const SidewalkEventNotificationConfigurations& value) { SetSidewalk(value); return *this;}
-    inline DeviceRegistrationStateEventConfiguration& WithSidewalk(SidewalkEventNotificationConfigurations&& value) { SetSidewalk(std::move(value)); return *this;}
+    template<typename SidewalkT = SidewalkEventNotificationConfigurations>
+    void SetSidewalk(SidewalkT&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::forward<SidewalkT>(value); }
+    template<typename SidewalkT = SidewalkEventNotificationConfigurations>
+    DeviceRegistrationStateEventConfiguration& WithSidewalk(SidewalkT&& value) { SetSidewalk(std::forward<SidewalkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +57,17 @@ namespace Model
      * <p>Denotes whether the wireless device ID device registration state event topic
      * is enabled or disabled.</p>
      */
-    inline const EventNotificationTopicStatus& GetWirelessDeviceIdEventTopic() const{ return m_wirelessDeviceIdEventTopic; }
+    inline EventNotificationTopicStatus GetWirelessDeviceIdEventTopic() const { return m_wirelessDeviceIdEventTopic; }
     inline bool WirelessDeviceIdEventTopicHasBeenSet() const { return m_wirelessDeviceIdEventTopicHasBeenSet; }
-    inline void SetWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = value; }
-    inline void SetWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = std::move(value); }
-    inline DeviceRegistrationStateEventConfiguration& WithWirelessDeviceIdEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceIdEventTopic(value); return *this;}
-    inline DeviceRegistrationStateEventConfiguration& WithWirelessDeviceIdEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceIdEventTopic(std::move(value)); return *this;}
+    inline void SetWirelessDeviceIdEventTopic(EventNotificationTopicStatus value) { m_wirelessDeviceIdEventTopicHasBeenSet = true; m_wirelessDeviceIdEventTopic = value; }
+    inline DeviceRegistrationStateEventConfiguration& WithWirelessDeviceIdEventTopic(EventNotificationTopicStatus value) { SetWirelessDeviceIdEventTopic(value); return *this;}
     ///@}
   private:
 
     SidewalkEventNotificationConfigurations m_sidewalk;
     bool m_sidewalkHasBeenSet = false;
 
-    EventNotificationTopicStatus m_wirelessDeviceIdEventTopic;
+    EventNotificationTopicStatus m_wirelessDeviceIdEventTopic{EventNotificationTopicStatus::NOT_SET};
     bool m_wirelessDeviceIdEventTopicHasBeenSet = false;
   };
 

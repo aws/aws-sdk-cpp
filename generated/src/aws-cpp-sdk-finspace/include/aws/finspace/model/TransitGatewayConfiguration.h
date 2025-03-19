@@ -35,7 +35,7 @@ namespace Model
   class TransitGatewayConfiguration
   {
   public:
-    AWS_FINSPACE_API TransitGatewayConfiguration();
+    AWS_FINSPACE_API TransitGatewayConfiguration() = default;
     AWS_FINSPACE_API TransitGatewayConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API TransitGatewayConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The identifier of the transit gateway created by the customer to connect
      * outbound traffics from kdb network to your internal network.</p>
      */
-    inline const Aws::String& GetTransitGatewayID() const{ return m_transitGatewayID; }
+    inline const Aws::String& GetTransitGatewayID() const { return m_transitGatewayID; }
     inline bool TransitGatewayIDHasBeenSet() const { return m_transitGatewayIDHasBeenSet; }
-    inline void SetTransitGatewayID(const Aws::String& value) { m_transitGatewayIDHasBeenSet = true; m_transitGatewayID = value; }
-    inline void SetTransitGatewayID(Aws::String&& value) { m_transitGatewayIDHasBeenSet = true; m_transitGatewayID = std::move(value); }
-    inline void SetTransitGatewayID(const char* value) { m_transitGatewayIDHasBeenSet = true; m_transitGatewayID.assign(value); }
-    inline TransitGatewayConfiguration& WithTransitGatewayID(const Aws::String& value) { SetTransitGatewayID(value); return *this;}
-    inline TransitGatewayConfiguration& WithTransitGatewayID(Aws::String&& value) { SetTransitGatewayID(std::move(value)); return *this;}
-    inline TransitGatewayConfiguration& WithTransitGatewayID(const char* value) { SetTransitGatewayID(value); return *this;}
+    template<typename TransitGatewayIDT = Aws::String>
+    void SetTransitGatewayID(TransitGatewayIDT&& value) { m_transitGatewayIDHasBeenSet = true; m_transitGatewayID = std::forward<TransitGatewayIDT>(value); }
+    template<typename TransitGatewayIDT = Aws::String>
+    TransitGatewayConfiguration& WithTransitGatewayID(TransitGatewayIDT&& value) { SetTransitGatewayID(std::forward<TransitGatewayIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * transit gateway routing table so that the traffics could be routed to kdb
      * network.</p>
      */
-    inline const Aws::String& GetRoutableCIDRSpace() const{ return m_routableCIDRSpace; }
+    inline const Aws::String& GetRoutableCIDRSpace() const { return m_routableCIDRSpace; }
     inline bool RoutableCIDRSpaceHasBeenSet() const { return m_routableCIDRSpaceHasBeenSet; }
-    inline void SetRoutableCIDRSpace(const Aws::String& value) { m_routableCIDRSpaceHasBeenSet = true; m_routableCIDRSpace = value; }
-    inline void SetRoutableCIDRSpace(Aws::String&& value) { m_routableCIDRSpaceHasBeenSet = true; m_routableCIDRSpace = std::move(value); }
-    inline void SetRoutableCIDRSpace(const char* value) { m_routableCIDRSpaceHasBeenSet = true; m_routableCIDRSpace.assign(value); }
-    inline TransitGatewayConfiguration& WithRoutableCIDRSpace(const Aws::String& value) { SetRoutableCIDRSpace(value); return *this;}
-    inline TransitGatewayConfiguration& WithRoutableCIDRSpace(Aws::String&& value) { SetRoutableCIDRSpace(std::move(value)); return *this;}
-    inline TransitGatewayConfiguration& WithRoutableCIDRSpace(const char* value) { SetRoutableCIDRSpace(value); return *this;}
+    template<typename RoutableCIDRSpaceT = Aws::String>
+    void SetRoutableCIDRSpace(RoutableCIDRSpaceT&& value) { m_routableCIDRSpaceHasBeenSet = true; m_routableCIDRSpace = std::forward<RoutableCIDRSpaceT>(value); }
+    template<typename RoutableCIDRSpaceT = Aws::String>
+    TransitGatewayConfiguration& WithRoutableCIDRSpace(RoutableCIDRSpaceT&& value) { SetRoutableCIDRSpace(std::forward<RoutableCIDRSpaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,14 @@ namespace Model
      * <p> The rules that define how you manage the outbound traffic from kdb network
      * to your internal network. </p>
      */
-    inline const Aws::Vector<NetworkACLEntry>& GetAttachmentNetworkAclConfiguration() const{ return m_attachmentNetworkAclConfiguration; }
+    inline const Aws::Vector<NetworkACLEntry>& GetAttachmentNetworkAclConfiguration() const { return m_attachmentNetworkAclConfiguration; }
     inline bool AttachmentNetworkAclConfigurationHasBeenSet() const { return m_attachmentNetworkAclConfigurationHasBeenSet; }
-    inline void SetAttachmentNetworkAclConfiguration(const Aws::Vector<NetworkACLEntry>& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration = value; }
-    inline void SetAttachmentNetworkAclConfiguration(Aws::Vector<NetworkACLEntry>&& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration = std::move(value); }
-    inline TransitGatewayConfiguration& WithAttachmentNetworkAclConfiguration(const Aws::Vector<NetworkACLEntry>& value) { SetAttachmentNetworkAclConfiguration(value); return *this;}
-    inline TransitGatewayConfiguration& WithAttachmentNetworkAclConfiguration(Aws::Vector<NetworkACLEntry>&& value) { SetAttachmentNetworkAclConfiguration(std::move(value)); return *this;}
-    inline TransitGatewayConfiguration& AddAttachmentNetworkAclConfiguration(const NetworkACLEntry& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration.push_back(value); return *this; }
-    inline TransitGatewayConfiguration& AddAttachmentNetworkAclConfiguration(NetworkACLEntry&& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration.push_back(std::move(value)); return *this; }
+    template<typename AttachmentNetworkAclConfigurationT = Aws::Vector<NetworkACLEntry>>
+    void SetAttachmentNetworkAclConfiguration(AttachmentNetworkAclConfigurationT&& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration = std::forward<AttachmentNetworkAclConfigurationT>(value); }
+    template<typename AttachmentNetworkAclConfigurationT = Aws::Vector<NetworkACLEntry>>
+    TransitGatewayConfiguration& WithAttachmentNetworkAclConfiguration(AttachmentNetworkAclConfigurationT&& value) { SetAttachmentNetworkAclConfiguration(std::forward<AttachmentNetworkAclConfigurationT>(value)); return *this;}
+    template<typename AttachmentNetworkAclConfigurationT = NetworkACLEntry>
+    TransitGatewayConfiguration& AddAttachmentNetworkAclConfiguration(AttachmentNetworkAclConfigurationT&& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration.emplace_back(std::forward<AttachmentNetworkAclConfigurationT>(value)); return *this; }
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class CampaignHook
   {
   public:
-    AWS_PINPOINT_API CampaignHook();
+    AWS_PINPOINT_API CampaignHook() = default;
     AWS_PINPOINT_API CampaignHook(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API CampaignHook& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon
      * Pinpoint invokes to customize a segment for a campaign.</p>
      */
-    inline const Aws::String& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
+    inline const Aws::String& GetLambdaFunctionName() const { return m_lambdaFunctionName; }
     inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
-    inline void SetLambdaFunctionName(const Aws::String& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
-    inline void SetLambdaFunctionName(Aws::String&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
-    inline void SetLambdaFunctionName(const char* value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.assign(value); }
-    inline CampaignHook& WithLambdaFunctionName(const Aws::String& value) { SetLambdaFunctionName(value); return *this;}
-    inline CampaignHook& WithLambdaFunctionName(Aws::String&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
-    inline CampaignHook& WithLambdaFunctionName(const char* value) { SetLambdaFunctionName(value); return *this;}
+    template<typename LambdaFunctionNameT = Aws::String>
+    void SetLambdaFunctionName(LambdaFunctionNameT&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::forward<LambdaFunctionNameT>(value); }
+    template<typename LambdaFunctionNameT = Aws::String>
+    CampaignHook& WithLambdaFunctionName(LambdaFunctionNameT&& value) { SetLambdaFunctionName(std::forward<LambdaFunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects
      * of the campaign.</p></li></ul>
      */
-    inline const Mode& GetMode() const{ return m_mode; }
+    inline Mode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline CampaignHook& WithMode(const Mode& value) { SetMode(value); return *this;}
-    inline CampaignHook& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(Mode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline CampaignHook& WithMode(Mode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -77,21 +73,19 @@ namespace Model
      * <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over
      * HTTPS.</p>
      */
-    inline const Aws::String& GetWebUrl() const{ return m_webUrl; }
+    inline const Aws::String& GetWebUrl() const { return m_webUrl; }
     inline bool WebUrlHasBeenSet() const { return m_webUrlHasBeenSet; }
-    inline void SetWebUrl(const Aws::String& value) { m_webUrlHasBeenSet = true; m_webUrl = value; }
-    inline void SetWebUrl(Aws::String&& value) { m_webUrlHasBeenSet = true; m_webUrl = std::move(value); }
-    inline void SetWebUrl(const char* value) { m_webUrlHasBeenSet = true; m_webUrl.assign(value); }
-    inline CampaignHook& WithWebUrl(const Aws::String& value) { SetWebUrl(value); return *this;}
-    inline CampaignHook& WithWebUrl(Aws::String&& value) { SetWebUrl(std::move(value)); return *this;}
-    inline CampaignHook& WithWebUrl(const char* value) { SetWebUrl(value); return *this;}
+    template<typename WebUrlT = Aws::String>
+    void SetWebUrl(WebUrlT&& value) { m_webUrlHasBeenSet = true; m_webUrl = std::forward<WebUrlT>(value); }
+    template<typename WebUrlT = Aws::String>
+    CampaignHook& WithWebUrl(WebUrlT&& value) { SetWebUrl(std::forward<WebUrlT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_lambdaFunctionName;
     bool m_lambdaFunctionNameHasBeenSet = false;
 
-    Mode m_mode;
+    Mode m_mode{Mode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     Aws::String m_webUrl;

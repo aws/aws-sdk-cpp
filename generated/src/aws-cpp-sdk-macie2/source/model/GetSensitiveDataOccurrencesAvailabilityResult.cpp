@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSensitiveDataOccurrencesAvailabilityResult::GetSensitiveDataOccurrencesAvailabilityResult() : 
-    m_code(AvailabilityCode::NOT_SET)
-{
-}
-
 GetSensitiveDataOccurrencesAvailabilityResult::GetSensitiveDataOccurrencesAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSensitiveDataOccurrencesAvailabilityResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetSensitiveDataOccurrencesAvailabilityResult& GetSensitiveDataOccurrencesAvaila
   if(jsonValue.ValueExists("code"))
   {
     m_code = AvailabilityCodeMapper::GetAvailabilityCodeForName(jsonValue.GetString("code"));
-
+    m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
@@ -44,14 +37,15 @@ GetSensitiveDataOccurrencesAvailabilityResult& GetSensitiveDataOccurrencesAvaila
     {
       m_reasons.push_back(UnavailabilityReasonCodeMapper::GetUnavailabilityReasonCodeForName(reasonsJsonList[reasonsIndex].AsString()));
     }
+    m_reasonsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

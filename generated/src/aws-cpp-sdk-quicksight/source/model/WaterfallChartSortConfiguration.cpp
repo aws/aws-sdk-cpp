@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WaterfallChartSortConfiguration::WaterfallChartSortConfiguration() : 
-    m_categorySortHasBeenSet(false),
-    m_breakdownItemsLimitHasBeenSet(false)
-{
-}
-
 WaterfallChartSortConfiguration::WaterfallChartSortConfiguration(JsonView jsonValue)
-  : WaterfallChartSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ WaterfallChartSortConfiguration& WaterfallChartSortConfiguration::operator =(Jso
     }
     m_categorySortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BreakdownItemsLimit"))
   {
     m_breakdownItemsLimit = jsonValue.GetObject("BreakdownItemsLimit");
-
     m_breakdownItemsLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

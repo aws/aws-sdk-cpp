@@ -18,15 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-HPOObjective::HPOObjective() : 
-    m_typeHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_metricRegexHasBeenSet(false)
-{
-}
-
 HPOObjective::HPOObjective(JsonView jsonValue)
-  : HPOObjective()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HPOObjective& HPOObjective::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = jsonValue.GetString("metricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricRegex"))
   {
     m_metricRegex = jsonValue.GetString("metricRegex");
-
     m_metricRegexHasBeenSet = true;
   }
-
   return *this;
 }
 

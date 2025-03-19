@@ -49,7 +49,7 @@ namespace Model
   class DashIsoGroupSettings
   {
   public:
-    AWS_MEDIACONVERT_API DashIsoGroupSettings();
+    AWS_MEDIACONVERT_API DashIsoGroupSettings() = default;
     AWS_MEDIACONVERT_API DashIsoGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DashIsoGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,14 +62,14 @@ namespace Model
      * group. To create additional DASH manifests that reference a subset of the
      * outputs in the output group, specify a list of them here.
      */
-    inline const Aws::Vector<DashAdditionalManifest>& GetAdditionalManifests() const{ return m_additionalManifests; }
+    inline const Aws::Vector<DashAdditionalManifest>& GetAdditionalManifests() const { return m_additionalManifests; }
     inline bool AdditionalManifestsHasBeenSet() const { return m_additionalManifestsHasBeenSet; }
-    inline void SetAdditionalManifests(const Aws::Vector<DashAdditionalManifest>& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = value; }
-    inline void SetAdditionalManifests(Aws::Vector<DashAdditionalManifest>&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = std::move(value); }
-    inline DashIsoGroupSettings& WithAdditionalManifests(const Aws::Vector<DashAdditionalManifest>& value) { SetAdditionalManifests(value); return *this;}
-    inline DashIsoGroupSettings& WithAdditionalManifests(Aws::Vector<DashAdditionalManifest>&& value) { SetAdditionalManifests(std::move(value)); return *this;}
-    inline DashIsoGroupSettings& AddAdditionalManifests(const DashAdditionalManifest& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(value); return *this; }
-    inline DashIsoGroupSettings& AddAdditionalManifests(DashAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
+    template<typename AdditionalManifestsT = Aws::Vector<DashAdditionalManifest>>
+    void SetAdditionalManifests(AdditionalManifestsT&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = std::forward<AdditionalManifestsT>(value); }
+    template<typename AdditionalManifestsT = Aws::Vector<DashAdditionalManifest>>
+    DashIsoGroupSettings& WithAdditionalManifests(AdditionalManifestsT&& value) { SetAdditionalManifests(std::forward<AdditionalManifestsT>(value)); return *this;}
+    template<typename AdditionalManifestsT = DashAdditionalManifest>
+    DashIsoGroupSettings& AddAdditionalManifests(AdditionalManifestsT&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.emplace_back(std::forward<AdditionalManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,12 +84,10 @@ namespace Model
      * have MediaConvert write this instead:
      * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
      */
-    inline const DashIsoGroupAudioChannelConfigSchemeIdUri& GetAudioChannelConfigSchemeIdUri() const{ return m_audioChannelConfigSchemeIdUri; }
+    inline DashIsoGroupAudioChannelConfigSchemeIdUri GetAudioChannelConfigSchemeIdUri() const { return m_audioChannelConfigSchemeIdUri; }
     inline bool AudioChannelConfigSchemeIdUriHasBeenSet() const { return m_audioChannelConfigSchemeIdUriHasBeenSet; }
-    inline void SetAudioChannelConfigSchemeIdUri(const DashIsoGroupAudioChannelConfigSchemeIdUri& value) { m_audioChannelConfigSchemeIdUriHasBeenSet = true; m_audioChannelConfigSchemeIdUri = value; }
-    inline void SetAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri&& value) { m_audioChannelConfigSchemeIdUriHasBeenSet = true; m_audioChannelConfigSchemeIdUri = std::move(value); }
-    inline DashIsoGroupSettings& WithAudioChannelConfigSchemeIdUri(const DashIsoGroupAudioChannelConfigSchemeIdUri& value) { SetAudioChannelConfigSchemeIdUri(value); return *this;}
-    inline DashIsoGroupSettings& WithAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri&& value) { SetAudioChannelConfigSchemeIdUri(std::move(value)); return *this;}
+    inline void SetAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri value) { m_audioChannelConfigSchemeIdUriHasBeenSet = true; m_audioChannelConfigSchemeIdUri = value; }
+    inline DashIsoGroupSettings& WithAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri value) { SetAudioChannelConfigSchemeIdUri(value); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +96,12 @@ namespace Model
      * level BaseURL element. Can be used if streams are delivered from a different URL
      * than the manifest file.
      */
-    inline const Aws::String& GetBaseUrl() const{ return m_baseUrl; }
+    inline const Aws::String& GetBaseUrl() const { return m_baseUrl; }
     inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
-    inline void SetBaseUrl(const Aws::String& value) { m_baseUrlHasBeenSet = true; m_baseUrl = value; }
-    inline void SetBaseUrl(Aws::String&& value) { m_baseUrlHasBeenSet = true; m_baseUrl = std::move(value); }
-    inline void SetBaseUrl(const char* value) { m_baseUrlHasBeenSet = true; m_baseUrl.assign(value); }
-    inline DashIsoGroupSettings& WithBaseUrl(const Aws::String& value) { SetBaseUrl(value); return *this;}
-    inline DashIsoGroupSettings& WithBaseUrl(Aws::String&& value) { SetBaseUrl(std::move(value)); return *this;}
-    inline DashIsoGroupSettings& WithBaseUrl(const char* value) { SetBaseUrl(value); return *this;}
+    template<typename BaseUrlT = Aws::String>
+    void SetBaseUrl(BaseUrlT&& value) { m_baseUrlHasBeenSet = true; m_baseUrl = std::forward<BaseUrlT>(value); }
+    template<typename BaseUrlT = Aws::String>
+    DashIsoGroupSettings& WithBaseUrl(BaseUrlT&& value) { SetBaseUrl(std::forward<BaseUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +117,12 @@ namespace Model
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html#using-settings-variables-with-streaming-outputs
      * To not generate I-frame only video segments: Leave blank.
      */
-    inline const Aws::String& GetDashIFrameTrickPlayNameModifier() const{ return m_dashIFrameTrickPlayNameModifier; }
+    inline const Aws::String& GetDashIFrameTrickPlayNameModifier() const { return m_dashIFrameTrickPlayNameModifier; }
     inline bool DashIFrameTrickPlayNameModifierHasBeenSet() const { return m_dashIFrameTrickPlayNameModifierHasBeenSet; }
-    inline void SetDashIFrameTrickPlayNameModifier(const Aws::String& value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier = value; }
-    inline void SetDashIFrameTrickPlayNameModifier(Aws::String&& value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier = std::move(value); }
-    inline void SetDashIFrameTrickPlayNameModifier(const char* value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier.assign(value); }
-    inline DashIsoGroupSettings& WithDashIFrameTrickPlayNameModifier(const Aws::String& value) { SetDashIFrameTrickPlayNameModifier(value); return *this;}
-    inline DashIsoGroupSettings& WithDashIFrameTrickPlayNameModifier(Aws::String&& value) { SetDashIFrameTrickPlayNameModifier(std::move(value)); return *this;}
-    inline DashIsoGroupSettings& WithDashIFrameTrickPlayNameModifier(const char* value) { SetDashIFrameTrickPlayNameModifier(value); return *this;}
+    template<typename DashIFrameTrickPlayNameModifierT = Aws::String>
+    void SetDashIFrameTrickPlayNameModifier(DashIFrameTrickPlayNameModifierT&& value) { m_dashIFrameTrickPlayNameModifierHasBeenSet = true; m_dashIFrameTrickPlayNameModifier = std::forward<DashIFrameTrickPlayNameModifierT>(value); }
+    template<typename DashIFrameTrickPlayNameModifierT = Aws::String>
+    DashIsoGroupSettings& WithDashIFrameTrickPlayNameModifier(DashIFrameTrickPlayNameModifierT&& value) { SetDashIFrameTrickPlayNameModifier(std::forward<DashIFrameTrickPlayNameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +135,10 @@ namespace Model
      * AdaptationSet for each different output framerate, and a common SegmentTimeline
      * in each AdaptationSet: Choose Distinct.
      */
-    inline const DashManifestStyle& GetDashManifestStyle() const{ return m_dashManifestStyle; }
+    inline DashManifestStyle GetDashManifestStyle() const { return m_dashManifestStyle; }
     inline bool DashManifestStyleHasBeenSet() const { return m_dashManifestStyleHasBeenSet; }
-    inline void SetDashManifestStyle(const DashManifestStyle& value) { m_dashManifestStyleHasBeenSet = true; m_dashManifestStyle = value; }
-    inline void SetDashManifestStyle(DashManifestStyle&& value) { m_dashManifestStyleHasBeenSet = true; m_dashManifestStyle = std::move(value); }
-    inline DashIsoGroupSettings& WithDashManifestStyle(const DashManifestStyle& value) { SetDashManifestStyle(value); return *this;}
-    inline DashIsoGroupSettings& WithDashManifestStyle(DashManifestStyle&& value) { SetDashManifestStyle(std::move(value)); return *this;}
+    inline void SetDashManifestStyle(DashManifestStyle value) { m_dashManifestStyleHasBeenSet = true; m_dashManifestStyle = value; }
+    inline DashIsoGroupSettings& WithDashManifestStyle(DashManifestStyle value) { SetDashManifestStyle(value); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +148,12 @@ namespace Model
      * in the URI, the service will use the filename of the input file. If your job has
      * multiple inputs, the service uses the filename of the first input file.
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline DashIsoGroupSettings& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline DashIsoGroupSettings& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline DashIsoGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    DashIsoGroupSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,24 +161,24 @@ namespace Model
      * Settings associated with the destination. Will vary based on the type of
      * destination
      */
-    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+    inline const DestinationSettings& GetDestinationSettings() const { return m_destinationSettings; }
     inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
-    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
-    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
-    inline DashIsoGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
-    inline DashIsoGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+    template<typename DestinationSettingsT = DestinationSettings>
+    void SetDestinationSettings(DestinationSettingsT&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::forward<DestinationSettingsT>(value); }
+    template<typename DestinationSettingsT = DestinationSettings>
+    DashIsoGroupSettings& WithDestinationSettings(DestinationSettingsT&& value) { SetDestinationSettings(std::forward<DestinationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * DRM settings.
      */
-    inline const DashIsoEncryptionSettings& GetEncryption() const{ return m_encryption; }
+    inline const DashIsoEncryptionSettings& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const DashIsoEncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(DashIsoEncryptionSettings&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline DashIsoGroupSettings& WithEncryption(const DashIsoEncryptionSettings& value) { SetEncryption(value); return *this;}
-    inline DashIsoGroupSettings& WithEncryption(DashIsoEncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = DashIsoEncryptionSettings>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = DashIsoEncryptionSettings>
+    DashIsoGroupSettings& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,7 +190,7 @@ namespace Model
      * and it does not cause the creation of many output files as in other output
      * types.
      */
-    inline int GetFragmentLength() const{ return m_fragmentLength; }
+    inline int GetFragmentLength() const { return m_fragmentLength; }
     inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
     inline DashIsoGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
@@ -210,12 +200,10 @@ namespace Model
     /**
      * Supports HbbTV specification as indicated
      */
-    inline const DashIsoHbbtvCompliance& GetHbbtvCompliance() const{ return m_hbbtvCompliance; }
+    inline DashIsoHbbtvCompliance GetHbbtvCompliance() const { return m_hbbtvCompliance; }
     inline bool HbbtvComplianceHasBeenSet() const { return m_hbbtvComplianceHasBeenSet; }
-    inline void SetHbbtvCompliance(const DashIsoHbbtvCompliance& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = value; }
-    inline void SetHbbtvCompliance(DashIsoHbbtvCompliance&& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = std::move(value); }
-    inline DashIsoGroupSettings& WithHbbtvCompliance(const DashIsoHbbtvCompliance& value) { SetHbbtvCompliance(value); return *this;}
-    inline DashIsoGroupSettings& WithHbbtvCompliance(DashIsoHbbtvCompliance&& value) { SetHbbtvCompliance(std::move(value)); return *this;}
+    inline void SetHbbtvCompliance(DashIsoHbbtvCompliance value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = value; }
+    inline DashIsoGroupSettings& WithHbbtvCompliance(DashIsoHbbtvCompliance value) { SetHbbtvCompliance(value); return *this;}
     ///@}
 
     ///@{
@@ -230,24 +218,22 @@ namespace Model
      * specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
-    inline const DashIsoImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
+    inline DashIsoImageBasedTrickPlay GetImageBasedTrickPlay() const { return m_imageBasedTrickPlay; }
     inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
-    inline void SetImageBasedTrickPlay(const DashIsoImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
-    inline void SetImageBasedTrickPlay(DashIsoImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
-    inline DashIsoGroupSettings& WithImageBasedTrickPlay(const DashIsoImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
-    inline DashIsoGroupSettings& WithImageBasedTrickPlay(DashIsoImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+    inline void SetImageBasedTrickPlay(DashIsoImageBasedTrickPlay value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
+    inline DashIsoGroupSettings& WithImageBasedTrickPlay(DashIsoImageBasedTrickPlay value) { SetImageBasedTrickPlay(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
      */
-    inline const DashIsoImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const{ return m_imageBasedTrickPlaySettings; }
+    inline const DashIsoImageBasedTrickPlaySettings& GetImageBasedTrickPlaySettings() const { return m_imageBasedTrickPlaySettings; }
     inline bool ImageBasedTrickPlaySettingsHasBeenSet() const { return m_imageBasedTrickPlaySettingsHasBeenSet; }
-    inline void SetImageBasedTrickPlaySettings(const DashIsoImageBasedTrickPlaySettings& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = value; }
-    inline void SetImageBasedTrickPlaySettings(DashIsoImageBasedTrickPlaySettings&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::move(value); }
-    inline DashIsoGroupSettings& WithImageBasedTrickPlaySettings(const DashIsoImageBasedTrickPlaySettings& value) { SetImageBasedTrickPlaySettings(value); return *this;}
-    inline DashIsoGroupSettings& WithImageBasedTrickPlaySettings(DashIsoImageBasedTrickPlaySettings&& value) { SetImageBasedTrickPlaySettings(std::move(value)); return *this;}
+    template<typename ImageBasedTrickPlaySettingsT = DashIsoImageBasedTrickPlaySettings>
+    void SetImageBasedTrickPlaySettings(ImageBasedTrickPlaySettingsT&& value) { m_imageBasedTrickPlaySettingsHasBeenSet = true; m_imageBasedTrickPlaySettings = std::forward<ImageBasedTrickPlaySettingsT>(value); }
+    template<typename ImageBasedTrickPlaySettingsT = DashIsoImageBasedTrickPlaySettings>
+    DashIsoGroupSettings& WithImageBasedTrickPlaySettings(ImageBasedTrickPlaySettingsT&& value) { SetImageBasedTrickPlaySettings(std::forward<ImageBasedTrickPlaySettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,7 +241,7 @@ namespace Model
      * Minimum time of initially buffered media that is needed to ensure smooth
      * playout.
      */
-    inline int GetMinBufferTime() const{ return m_minBufferTime; }
+    inline int GetMinBufferTime() const { return m_minBufferTime; }
     inline bool MinBufferTimeHasBeenSet() const { return m_minBufferTimeHasBeenSet; }
     inline void SetMinBufferTime(int value) { m_minBufferTimeHasBeenSet = true; m_minBufferTime = value; }
     inline DashIsoGroupSettings& WithMinBufferTime(int value) { SetMinBufferTime(value); return *this;}
@@ -275,7 +261,7 @@ namespace Model
      * length; when you set the minimum final segment length to 1, your final segment
      * is 3.5 seconds.
      */
-    inline double GetMinFinalSegmentLength() const{ return m_minFinalSegmentLength; }
+    inline double GetMinFinalSegmentLength() const { return m_minFinalSegmentLength; }
     inline bool MinFinalSegmentLengthHasBeenSet() const { return m_minFinalSegmentLengthHasBeenSet; }
     inline void SetMinFinalSegmentLength(double value) { m_minFinalSegmentLengthHasBeenSet = true; m_minFinalSegmentLength = value; }
     inline DashIsoGroupSettings& WithMinFinalSegmentLength(double value) { SetMinFinalSegmentLength(value); return *this;}
@@ -290,12 +276,10 @@ namespace Model
      * bits per second. Average: Use the calculated average bitrate of the encoded
      * video output, in bits per second.
      */
-    inline const DashIsoMpdManifestBandwidthType& GetMpdManifestBandwidthType() const{ return m_mpdManifestBandwidthType; }
+    inline DashIsoMpdManifestBandwidthType GetMpdManifestBandwidthType() const { return m_mpdManifestBandwidthType; }
     inline bool MpdManifestBandwidthTypeHasBeenSet() const { return m_mpdManifestBandwidthTypeHasBeenSet; }
-    inline void SetMpdManifestBandwidthType(const DashIsoMpdManifestBandwidthType& value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = value; }
-    inline void SetMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType&& value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = std::move(value); }
-    inline DashIsoGroupSettings& WithMpdManifestBandwidthType(const DashIsoMpdManifestBandwidthType& value) { SetMpdManifestBandwidthType(value); return *this;}
-    inline DashIsoGroupSettings& WithMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType&& value) { SetMpdManifestBandwidthType(std::move(value)); return *this;}
+    inline void SetMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = value; }
+    inline DashIsoGroupSettings& WithMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType value) { SetMpdManifestBandwidthType(value); return *this;}
     ///@}
 
     ///@{
@@ -307,12 +291,10 @@ namespace Model
      * On-demand, you must also set the output group setting Segment control to Single
      * file.
      */
-    inline const DashIsoMpdProfile& GetMpdProfile() const{ return m_mpdProfile; }
+    inline DashIsoMpdProfile GetMpdProfile() const { return m_mpdProfile; }
     inline bool MpdProfileHasBeenSet() const { return m_mpdProfileHasBeenSet; }
-    inline void SetMpdProfile(const DashIsoMpdProfile& value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = value; }
-    inline void SetMpdProfile(DashIsoMpdProfile&& value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = std::move(value); }
-    inline DashIsoGroupSettings& WithMpdProfile(const DashIsoMpdProfile& value) { SetMpdProfile(value); return *this;}
-    inline DashIsoGroupSettings& WithMpdProfile(DashIsoMpdProfile&& value) { SetMpdProfile(std::move(value)); return *this;}
+    inline void SetMpdProfile(DashIsoMpdProfile value) { m_mpdProfileHasBeenSet = true; m_mpdProfile = value; }
+    inline DashIsoGroupSettings& WithMpdProfile(DashIsoMpdProfile value) { SetMpdProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -327,12 +309,10 @@ namespace Model
      * have B-frames, the time stamps in your DASH manifests start at zero regardless
      * of your choice here.
      */
-    inline const DashIsoPtsOffsetHandlingForBFrames& GetPtsOffsetHandlingForBFrames() const{ return m_ptsOffsetHandlingForBFrames; }
+    inline DashIsoPtsOffsetHandlingForBFrames GetPtsOffsetHandlingForBFrames() const { return m_ptsOffsetHandlingForBFrames; }
     inline bool PtsOffsetHandlingForBFramesHasBeenSet() const { return m_ptsOffsetHandlingForBFramesHasBeenSet; }
-    inline void SetPtsOffsetHandlingForBFrames(const DashIsoPtsOffsetHandlingForBFrames& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = value; }
-    inline void SetPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames&& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = std::move(value); }
-    inline DashIsoGroupSettings& WithPtsOffsetHandlingForBFrames(const DashIsoPtsOffsetHandlingForBFrames& value) { SetPtsOffsetHandlingForBFrames(value); return *this;}
-    inline DashIsoGroupSettings& WithPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames&& value) { SetPtsOffsetHandlingForBFrames(std::move(value)); return *this;}
+    inline void SetPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = value; }
+    inline DashIsoGroupSettings& WithPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames value) { SetPtsOffsetHandlingForBFrames(value); return *this;}
     ///@}
 
     ///@{
@@ -341,12 +321,10 @@ namespace Model
      * segmented using the Fragment Length and Segment Length. When set to
      * SEGMENTED_FILES, separate segment files will be created.
      */
-    inline const DashIsoSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
+    inline DashIsoSegmentControl GetSegmentControl() const { return m_segmentControl; }
     inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
-    inline void SetSegmentControl(const DashIsoSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
-    inline void SetSegmentControl(DashIsoSegmentControl&& value) { m_segmentControlHasBeenSet = true; m_segmentControl = std::move(value); }
-    inline DashIsoGroupSettings& WithSegmentControl(const DashIsoSegmentControl& value) { SetSegmentControl(value); return *this;}
-    inline DashIsoGroupSettings& WithSegmentControl(DashIsoSegmentControl&& value) { SetSegmentControl(std::move(value)); return *this;}
+    inline void SetSegmentControl(DashIsoSegmentControl value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
+    inline DashIsoGroupSettings& WithSegmentControl(DashIsoSegmentControl value) { SetSegmentControl(value); return *this;}
     ///@}
 
     ///@{
@@ -357,7 +335,7 @@ namespace Model
      * to specify whether MediaConvert creates separate segment files or one content
      * file that has metadata to mark the segment boundaries.
      */
-    inline int GetSegmentLength() const{ return m_segmentLength; }
+    inline int GetSegmentLength() const { return m_segmentLength; }
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
     inline DashIsoGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
@@ -382,12 +360,10 @@ namespace Model
      * must share an integer multiple.) - Output audio codec: Specify Advanced Audio
      * Coding (AAC). - Output sample rate: Choose 48kHz.
      */
-    inline const DashIsoSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
+    inline DashIsoSegmentLengthControl GetSegmentLengthControl() const { return m_segmentLengthControl; }
     inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
-    inline void SetSegmentLengthControl(const DashIsoSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
-    inline void SetSegmentLengthControl(DashIsoSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
-    inline DashIsoGroupSettings& WithSegmentLengthControl(const DashIsoSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
-    inline DashIsoGroupSettings& WithSegmentLengthControl(DashIsoSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
+    inline void SetSegmentLengthControl(DashIsoSegmentLengthControl value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
+    inline DashIsoGroupSettings& WithSegmentLengthControl(DashIsoSegmentLengthControl value) { SetSegmentLengthControl(value); return *this;}
     ///@}
 
     ///@{
@@ -400,12 +376,10 @@ namespace Model
      * earliest presentation time will be equal to zero, and sample composition time
      * offsets will increment using signed integers.
      */
-    inline const DashIsoVideoCompositionOffsets& GetVideoCompositionOffsets() const{ return m_videoCompositionOffsets; }
+    inline DashIsoVideoCompositionOffsets GetVideoCompositionOffsets() const { return m_videoCompositionOffsets; }
     inline bool VideoCompositionOffsetsHasBeenSet() const { return m_videoCompositionOffsetsHasBeenSet; }
-    inline void SetVideoCompositionOffsets(const DashIsoVideoCompositionOffsets& value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = value; }
-    inline void SetVideoCompositionOffsets(DashIsoVideoCompositionOffsets&& value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = std::move(value); }
-    inline DashIsoGroupSettings& WithVideoCompositionOffsets(const DashIsoVideoCompositionOffsets& value) { SetVideoCompositionOffsets(value); return *this;}
-    inline DashIsoGroupSettings& WithVideoCompositionOffsets(DashIsoVideoCompositionOffsets&& value) { SetVideoCompositionOffsets(std::move(value)); return *this;}
+    inline void SetVideoCompositionOffsets(DashIsoVideoCompositionOffsets value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = value; }
+    inline DashIsoGroupSettings& WithVideoCompositionOffsets(DashIsoVideoCompositionOffsets value) { SetVideoCompositionOffsets(value); return *this;}
     ///@}
 
     ///@{
@@ -417,19 +391,17 @@ namespace Model
      * SegmentTemplate at the Representation level. When you don't enable this setting,
      * the service writes approximate segment durations in your DASH manifest.
      */
-    inline const DashIsoWriteSegmentTimelineInRepresentation& GetWriteSegmentTimelineInRepresentation() const{ return m_writeSegmentTimelineInRepresentation; }
+    inline DashIsoWriteSegmentTimelineInRepresentation GetWriteSegmentTimelineInRepresentation() const { return m_writeSegmentTimelineInRepresentation; }
     inline bool WriteSegmentTimelineInRepresentationHasBeenSet() const { return m_writeSegmentTimelineInRepresentationHasBeenSet; }
-    inline void SetWriteSegmentTimelineInRepresentation(const DashIsoWriteSegmentTimelineInRepresentation& value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = value; }
-    inline void SetWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = std::move(value); }
-    inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(const DashIsoWriteSegmentTimelineInRepresentation& value) { SetWriteSegmentTimelineInRepresentation(value); return *this;}
-    inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { SetWriteSegmentTimelineInRepresentation(std::move(value)); return *this;}
+    inline void SetWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = value; }
+    inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation value) { SetWriteSegmentTimelineInRepresentation(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<DashAdditionalManifest> m_additionalManifests;
     bool m_additionalManifestsHasBeenSet = false;
 
-    DashIsoGroupAudioChannelConfigSchemeIdUri m_audioChannelConfigSchemeIdUri;
+    DashIsoGroupAudioChannelConfigSchemeIdUri m_audioChannelConfigSchemeIdUri{DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET};
     bool m_audioChannelConfigSchemeIdUriHasBeenSet = false;
 
     Aws::String m_baseUrl;
@@ -438,7 +410,7 @@ namespace Model
     Aws::String m_dashIFrameTrickPlayNameModifier;
     bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
 
-    DashManifestStyle m_dashManifestStyle;
+    DashManifestStyle m_dashManifestStyle{DashManifestStyle::NOT_SET};
     bool m_dashManifestStyleHasBeenSet = false;
 
     Aws::String m_destination;
@@ -450,46 +422,46 @@ namespace Model
     DashIsoEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet = false;
 
-    int m_fragmentLength;
+    int m_fragmentLength{0};
     bool m_fragmentLengthHasBeenSet = false;
 
-    DashIsoHbbtvCompliance m_hbbtvCompliance;
+    DashIsoHbbtvCompliance m_hbbtvCompliance{DashIsoHbbtvCompliance::NOT_SET};
     bool m_hbbtvComplianceHasBeenSet = false;
 
-    DashIsoImageBasedTrickPlay m_imageBasedTrickPlay;
+    DashIsoImageBasedTrickPlay m_imageBasedTrickPlay{DashIsoImageBasedTrickPlay::NOT_SET};
     bool m_imageBasedTrickPlayHasBeenSet = false;
 
     DashIsoImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
     bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
-    int m_minBufferTime;
+    int m_minBufferTime{0};
     bool m_minBufferTimeHasBeenSet = false;
 
-    double m_minFinalSegmentLength;
+    double m_minFinalSegmentLength{0.0};
     bool m_minFinalSegmentLengthHasBeenSet = false;
 
-    DashIsoMpdManifestBandwidthType m_mpdManifestBandwidthType;
+    DashIsoMpdManifestBandwidthType m_mpdManifestBandwidthType{DashIsoMpdManifestBandwidthType::NOT_SET};
     bool m_mpdManifestBandwidthTypeHasBeenSet = false;
 
-    DashIsoMpdProfile m_mpdProfile;
+    DashIsoMpdProfile m_mpdProfile{DashIsoMpdProfile::NOT_SET};
     bool m_mpdProfileHasBeenSet = false;
 
-    DashIsoPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
+    DashIsoPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames{DashIsoPtsOffsetHandlingForBFrames::NOT_SET};
     bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
-    DashIsoSegmentControl m_segmentControl;
+    DashIsoSegmentControl m_segmentControl{DashIsoSegmentControl::NOT_SET};
     bool m_segmentControlHasBeenSet = false;
 
-    int m_segmentLength;
+    int m_segmentLength{0};
     bool m_segmentLengthHasBeenSet = false;
 
-    DashIsoSegmentLengthControl m_segmentLengthControl;
+    DashIsoSegmentLengthControl m_segmentLengthControl{DashIsoSegmentLengthControl::NOT_SET};
     bool m_segmentLengthControlHasBeenSet = false;
 
-    DashIsoVideoCompositionOffsets m_videoCompositionOffsets;
+    DashIsoVideoCompositionOffsets m_videoCompositionOffsets{DashIsoVideoCompositionOffsets::NOT_SET};
     bool m_videoCompositionOffsetsHasBeenSet = false;
 
-    DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
+    DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation{DashIsoWriteSegmentTimelineInRepresentation::NOT_SET};
     bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
   };
 

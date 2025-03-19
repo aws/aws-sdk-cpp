@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIngestionRequest::CreateIngestionRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_ingestionIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_ingestionType(IngestionType::NOT_SET),
-    m_ingestionTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateIngestionRequest::SerializePayload() const
 {
   JsonValue payload;

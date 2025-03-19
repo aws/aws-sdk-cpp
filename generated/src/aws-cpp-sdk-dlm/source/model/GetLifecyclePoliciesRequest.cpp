@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLifecyclePoliciesRequest::GetLifecyclePoliciesRequest() : 
-    m_policyIdsHasBeenSet(false),
-    m_state(GettablePolicyStateValues::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_targetTagsHasBeenSet(false),
-    m_tagsToAddHasBeenSet(false),
-    m_defaultPolicyType(DefaultPoliciesTypeValues::NOT_SET),
-    m_defaultPolicyTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetLifecyclePoliciesRequest::SerializePayload() const
 {
   return {};

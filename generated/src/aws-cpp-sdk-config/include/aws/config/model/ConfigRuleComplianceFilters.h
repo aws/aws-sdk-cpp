@@ -33,7 +33,7 @@ namespace Model
   class ConfigRuleComplianceFilters
   {
   public:
-    AWS_CONFIGSERVICE_API ConfigRuleComplianceFilters();
+    AWS_CONFIGSERVICE_API ConfigRuleComplianceFilters() = default;
     AWS_CONFIGSERVICE_API ConfigRuleComplianceFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConfigRuleComplianceFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the Config rule.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline ConfigRuleComplianceFilters& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline ConfigRuleComplianceFilters& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline ConfigRuleComplianceFilters& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    ConfigRuleComplianceFilters& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,47 +59,41 @@ namespace Model
      * the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
      * values.</p>
      */
-    inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+    inline ComplianceType GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline ConfigRuleComplianceFilters& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
-    inline ConfigRuleComplianceFilters& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
+    inline void SetComplianceType(ComplianceType value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
+    inline ConfigRuleComplianceFilters& WithComplianceType(ComplianceType value) { SetComplianceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 12-digit account ID of the source account. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ConfigRuleComplianceFilters& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ConfigRuleComplianceFilters& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ConfigRuleComplianceFilters& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ConfigRuleComplianceFilters& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source region where the data is aggregated. </p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline ConfigRuleComplianceFilters& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline ConfigRuleComplianceFilters& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline ConfigRuleComplianceFilters& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    ConfigRuleComplianceFilters& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet = false;
 
-    ComplianceType m_complianceType;
+    ComplianceType m_complianceType{ComplianceType::NOT_SET};
     bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_accountId;

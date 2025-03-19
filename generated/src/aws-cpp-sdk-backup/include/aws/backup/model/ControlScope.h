@@ -40,7 +40,7 @@ namespace Model
   class ControlScope
   {
   public:
-    AWS_BACKUP_API ControlScope();
+    AWS_BACKUP_API ControlScope() = default;
     AWS_BACKUP_API ControlScope(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API ControlScope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,15 +51,14 @@ namespace Model
      * <p>The ID of the only Amazon Web Services resource that you want your control
      * scope to contain.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetComplianceResourceIds() const{ return m_complianceResourceIds; }
+    inline const Aws::Vector<Aws::String>& GetComplianceResourceIds() const { return m_complianceResourceIds; }
     inline bool ComplianceResourceIdsHasBeenSet() const { return m_complianceResourceIdsHasBeenSet; }
-    inline void SetComplianceResourceIds(const Aws::Vector<Aws::String>& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = value; }
-    inline void SetComplianceResourceIds(Aws::Vector<Aws::String>&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = std::move(value); }
-    inline ControlScope& WithComplianceResourceIds(const Aws::Vector<Aws::String>& value) { SetComplianceResourceIds(value); return *this;}
-    inline ControlScope& WithComplianceResourceIds(Aws::Vector<Aws::String>&& value) { SetComplianceResourceIds(std::move(value)); return *this;}
-    inline ControlScope& AddComplianceResourceIds(const Aws::String& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(value); return *this; }
-    inline ControlScope& AddComplianceResourceIds(Aws::String&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(std::move(value)); return *this; }
-    inline ControlScope& AddComplianceResourceIds(const char* value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.push_back(value); return *this; }
+    template<typename ComplianceResourceIdsT = Aws::Vector<Aws::String>>
+    void SetComplianceResourceIds(ComplianceResourceIdsT&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds = std::forward<ComplianceResourceIdsT>(value); }
+    template<typename ComplianceResourceIdsT = Aws::Vector<Aws::String>>
+    ControlScope& WithComplianceResourceIds(ComplianceResourceIdsT&& value) { SetComplianceResourceIds(std::forward<ComplianceResourceIdsT>(value)); return *this;}
+    template<typename ComplianceResourceIdsT = Aws::String>
+    ControlScope& AddComplianceResourceIds(ComplianceResourceIdsT&& value) { m_complianceResourceIdsHasBeenSet = true; m_complianceResourceIds.emplace_back(std::forward<ComplianceResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,15 +66,14 @@ namespace Model
      * <p>Describes whether the control scope includes one or more types of resources,
      * such as <code>EFS</code> or <code>RDS</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetComplianceResourceTypes() const{ return m_complianceResourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetComplianceResourceTypes() const { return m_complianceResourceTypes; }
     inline bool ComplianceResourceTypesHasBeenSet() const { return m_complianceResourceTypesHasBeenSet; }
-    inline void SetComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = value; }
-    inline void SetComplianceResourceTypes(Aws::Vector<Aws::String>&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = std::move(value); }
-    inline ControlScope& WithComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { SetComplianceResourceTypes(value); return *this;}
-    inline ControlScope& WithComplianceResourceTypes(Aws::Vector<Aws::String>&& value) { SetComplianceResourceTypes(std::move(value)); return *this;}
-    inline ControlScope& AddComplianceResourceTypes(const Aws::String& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
-    inline ControlScope& AddComplianceResourceTypes(Aws::String&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(std::move(value)); return *this; }
-    inline ControlScope& AddComplianceResourceTypes(const char* value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
+    template<typename ComplianceResourceTypesT = Aws::Vector<Aws::String>>
+    void SetComplianceResourceTypes(ComplianceResourceTypesT&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = std::forward<ComplianceResourceTypesT>(value); }
+    template<typename ComplianceResourceTypesT = Aws::Vector<Aws::String>>
+    ControlScope& WithComplianceResourceTypes(ComplianceResourceTypesT&& value) { SetComplianceResourceTypes(std::forward<ComplianceResourceTypesT>(value)); return *this;}
+    template<typename ComplianceResourceTypesT = Aws::String>
+    ControlScope& AddComplianceResourceTypes(ComplianceResourceTypesT&& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.emplace_back(std::forward<ComplianceResourceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,19 +86,16 @@ namespace Model
      * structure to assign a tag is:
      * <code>[{"Key":"string","Value":"string"}]</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ControlScope& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ControlScope& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ControlScope& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ControlScope& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ControlScope& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ControlScope& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ControlScope& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ControlScope& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ControlScope& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ControlScope& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ControlScope& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

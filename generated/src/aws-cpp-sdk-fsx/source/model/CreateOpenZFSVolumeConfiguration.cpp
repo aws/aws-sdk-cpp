@@ -18,28 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration() : 
-    m_parentVolumeIdHasBeenSet(false),
-    m_storageCapacityReservationGiB(0),
-    m_storageCapacityReservationGiBHasBeenSet(false),
-    m_storageCapacityQuotaGiB(0),
-    m_storageCapacityQuotaGiBHasBeenSet(false),
-    m_recordSizeKiB(0),
-    m_recordSizeKiBHasBeenSet(false),
-    m_dataCompressionType(OpenZFSDataCompressionType::NOT_SET),
-    m_dataCompressionTypeHasBeenSet(false),
-    m_copyTagsToSnapshots(false),
-    m_copyTagsToSnapshotsHasBeenSet(false),
-    m_originSnapshotHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false)
-{
-}
-
 CreateOpenZFSVolumeConfiguration::CreateOpenZFSVolumeConfiguration(JsonView jsonValue)
-  : CreateOpenZFSVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ CreateOpenZFSVolumeConfiguration& CreateOpenZFSVolumeConfiguration::operator =(J
   if(jsonValue.ValueExists("ParentVolumeId"))
   {
     m_parentVolumeId = jsonValue.GetString("ParentVolumeId");
-
     m_parentVolumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageCapacityReservationGiB"))
   {
     m_storageCapacityReservationGiB = jsonValue.GetInteger("StorageCapacityReservationGiB");
-
     m_storageCapacityReservationGiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageCapacityQuotaGiB"))
   {
     m_storageCapacityQuotaGiB = jsonValue.GetInteger("StorageCapacityQuotaGiB");
-
     m_storageCapacityQuotaGiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordSizeKiB"))
   {
     m_recordSizeKiB = jsonValue.GetInteger("RecordSizeKiB");
-
     m_recordSizeKiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCompressionType"))
   {
     m_dataCompressionType = OpenZFSDataCompressionTypeMapper::GetOpenZFSDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
-
     m_dataCompressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToSnapshots"))
   {
     m_copyTagsToSnapshots = jsonValue.GetBool("CopyTagsToSnapshots");
-
     m_copyTagsToSnapshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginSnapshot"))
   {
     m_originSnapshot = jsonValue.GetObject("OriginSnapshot");
-
     m_originSnapshotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnly"))
   {
     m_readOnly = jsonValue.GetBool("ReadOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NfsExports"))
   {
     Aws::Utils::Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
@@ -111,7 +74,6 @@ CreateOpenZFSVolumeConfiguration& CreateOpenZFSVolumeConfiguration::operator =(J
     }
     m_nfsExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAndGroupQuotas"))
   {
     Aws::Utils::Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
@@ -121,7 +83,6 @@ CreateOpenZFSVolumeConfiguration& CreateOpenZFSVolumeConfiguration::operator =(J
     }
     m_userAndGroupQuotasHasBeenSet = true;
   }
-
   return *this;
 }
 

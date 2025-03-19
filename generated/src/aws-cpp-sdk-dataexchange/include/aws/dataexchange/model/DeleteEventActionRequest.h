@@ -21,7 +21,7 @@ namespace Model
   class DeleteEventActionRequest : public DataExchangeRequest
   {
   public:
-    AWS_DATAEXCHANGE_API DeleteEventActionRequest();
+    AWS_DATAEXCHANGE_API DeleteEventActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier for the event action.</p>
      */
-    inline const Aws::String& GetEventActionId() const{ return m_eventActionId; }
+    inline const Aws::String& GetEventActionId() const { return m_eventActionId; }
     inline bool EventActionIdHasBeenSet() const { return m_eventActionIdHasBeenSet; }
-    inline void SetEventActionId(const Aws::String& value) { m_eventActionIdHasBeenSet = true; m_eventActionId = value; }
-    inline void SetEventActionId(Aws::String&& value) { m_eventActionIdHasBeenSet = true; m_eventActionId = std::move(value); }
-    inline void SetEventActionId(const char* value) { m_eventActionIdHasBeenSet = true; m_eventActionId.assign(value); }
-    inline DeleteEventActionRequest& WithEventActionId(const Aws::String& value) { SetEventActionId(value); return *this;}
-    inline DeleteEventActionRequest& WithEventActionId(Aws::String&& value) { SetEventActionId(std::move(value)); return *this;}
-    inline DeleteEventActionRequest& WithEventActionId(const char* value) { SetEventActionId(value); return *this;}
+    template<typename EventActionIdT = Aws::String>
+    void SetEventActionId(EventActionIdT&& value) { m_eventActionIdHasBeenSet = true; m_eventActionId = std::forward<EventActionIdT>(value); }
+    template<typename EventActionIdT = Aws::String>
+    DeleteEventActionRequest& WithEventActionId(EventActionIdT&& value) { SetEventActionId(std::forward<EventActionIdT>(value)); return *this;}
     ///@}
   private:
 

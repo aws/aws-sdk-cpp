@@ -18,14 +18,7 @@ namespace Billing
 namespace Model
 {
 
-TagValues::TagValues() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 TagValues::TagValues(JsonView jsonValue)
-  : TagValues()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TagValues& TagValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ TagValues& TagValues::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

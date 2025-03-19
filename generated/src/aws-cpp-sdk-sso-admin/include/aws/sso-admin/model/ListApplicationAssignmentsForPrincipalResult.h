@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationAssignmentsForPrincipalResult
   {
   public:
-    AWS_SSOADMIN_API ListApplicationAssignmentsForPrincipalResult();
+    AWS_SSOADMIN_API ListApplicationAssignmentsForPrincipalResult() = default;
     AWS_SSOADMIN_API ListApplicationAssignmentsForPrincipalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API ListApplicationAssignmentsForPrincipalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array list of the application assignments for the specified principal.</p>
      */
-    inline const Aws::Vector<ApplicationAssignmentForPrincipal>& GetApplicationAssignments() const{ return m_applicationAssignments; }
-    inline void SetApplicationAssignments(const Aws::Vector<ApplicationAssignmentForPrincipal>& value) { m_applicationAssignments = value; }
-    inline void SetApplicationAssignments(Aws::Vector<ApplicationAssignmentForPrincipal>&& value) { m_applicationAssignments = std::move(value); }
-    inline ListApplicationAssignmentsForPrincipalResult& WithApplicationAssignments(const Aws::Vector<ApplicationAssignmentForPrincipal>& value) { SetApplicationAssignments(value); return *this;}
-    inline ListApplicationAssignmentsForPrincipalResult& WithApplicationAssignments(Aws::Vector<ApplicationAssignmentForPrincipal>&& value) { SetApplicationAssignments(std::move(value)); return *this;}
-    inline ListApplicationAssignmentsForPrincipalResult& AddApplicationAssignments(const ApplicationAssignmentForPrincipal& value) { m_applicationAssignments.push_back(value); return *this; }
-    inline ListApplicationAssignmentsForPrincipalResult& AddApplicationAssignments(ApplicationAssignmentForPrincipal&& value) { m_applicationAssignments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationAssignmentForPrincipal>& GetApplicationAssignments() const { return m_applicationAssignments; }
+    template<typename ApplicationAssignmentsT = Aws::Vector<ApplicationAssignmentForPrincipal>>
+    void SetApplicationAssignments(ApplicationAssignmentsT&& value) { m_applicationAssignmentsHasBeenSet = true; m_applicationAssignments = std::forward<ApplicationAssignmentsT>(value); }
+    template<typename ApplicationAssignmentsT = Aws::Vector<ApplicationAssignmentForPrincipal>>
+    ListApplicationAssignmentsForPrincipalResult& WithApplicationAssignments(ApplicationAssignmentsT&& value) { SetApplicationAssignments(std::forward<ApplicationAssignmentsT>(value)); return *this;}
+    template<typename ApplicationAssignmentsT = ApplicationAssignmentForPrincipal>
+    ListApplicationAssignmentsForPrincipalResult& AddApplicationAssignments(ApplicationAssignmentsT&& value) { m_applicationAssignmentsHasBeenSet = true; m_applicationAssignments.emplace_back(std::forward<ApplicationAssignmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * element comes back as <code>null</code>. This indicates that this is the last
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationAssignmentsForPrincipalResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationAssignmentsForPrincipalResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationAssignmentsForPrincipalResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationAssignmentsForPrincipalResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationAssignmentsForPrincipalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationAssignmentsForPrincipalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationAssignmentsForPrincipalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationAssignmentsForPrincipalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationAssignmentForPrincipal> m_applicationAssignments;
+    bool m_applicationAssignmentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

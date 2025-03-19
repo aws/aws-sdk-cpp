@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Dashboard::Dashboard() : 
-    m_dashboardIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastPublishedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_linkEntitiesHasBeenSet(false)
-{
-}
-
 Dashboard::Dashboard(JsonView jsonValue)
-  : Dashboard()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Dashboard& Dashboard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
     m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetObject("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastPublishedTime"))
   {
     m_lastPublishedTime = jsonValue.GetDouble("LastPublishedTime");
-
     m_lastPublishedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkEntities"))
   {
     Aws::Utils::Array<JsonView> linkEntitiesJsonList = jsonValue.GetArray("LinkEntities");
@@ -96,7 +69,6 @@ Dashboard& Dashboard::operator =(JsonView jsonValue)
     }
     m_linkEntitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

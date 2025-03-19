@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SupportedProductConfig::SupportedProductConfig() : 
-    m_nameHasBeenSet(false),
-    m_argsHasBeenSet(false)
-{
-}
-
 SupportedProductConfig::SupportedProductConfig(JsonView jsonValue)
-  : SupportedProductConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SupportedProductConfig& SupportedProductConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Args"))
   {
     Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
@@ -48,7 +39,6 @@ SupportedProductConfig& SupportedProductConfig::operator =(JsonView jsonValue)
     }
     m_argsHasBeenSet = true;
   }
-
   return *this;
 }
 

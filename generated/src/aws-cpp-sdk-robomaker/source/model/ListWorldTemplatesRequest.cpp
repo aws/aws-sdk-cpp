@@ -12,13 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWorldTemplatesRequest::ListWorldTemplatesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListWorldTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

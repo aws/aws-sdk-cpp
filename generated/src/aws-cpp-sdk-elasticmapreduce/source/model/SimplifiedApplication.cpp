@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SimplifiedApplication::SimplifiedApplication() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 SimplifiedApplication::SimplifiedApplication(JsonView jsonValue)
-  : SimplifiedApplication()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SimplifiedApplication& SimplifiedApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

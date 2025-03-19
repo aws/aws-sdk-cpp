@@ -74,7 +74,7 @@ namespace Model
   class EnhancedMetricsConfig
   {
   public:
-    AWS_APPSYNC_API EnhancedMetricsConfig();
+    AWS_APPSYNC_API EnhancedMetricsConfig() = default;
     AWS_APPSYNC_API EnhancedMetricsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API EnhancedMetricsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -98,12 +98,10 @@ namespace Model
      * that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p>
      * </li> </ul>
      */
-    inline const ResolverLevelMetricsBehavior& GetResolverLevelMetricsBehavior() const{ return m_resolverLevelMetricsBehavior; }
+    inline ResolverLevelMetricsBehavior GetResolverLevelMetricsBehavior() const { return m_resolverLevelMetricsBehavior; }
     inline bool ResolverLevelMetricsBehaviorHasBeenSet() const { return m_resolverLevelMetricsBehaviorHasBeenSet; }
-    inline void SetResolverLevelMetricsBehavior(const ResolverLevelMetricsBehavior& value) { m_resolverLevelMetricsBehaviorHasBeenSet = true; m_resolverLevelMetricsBehavior = value; }
-    inline void SetResolverLevelMetricsBehavior(ResolverLevelMetricsBehavior&& value) { m_resolverLevelMetricsBehaviorHasBeenSet = true; m_resolverLevelMetricsBehavior = std::move(value); }
-    inline EnhancedMetricsConfig& WithResolverLevelMetricsBehavior(const ResolverLevelMetricsBehavior& value) { SetResolverLevelMetricsBehavior(value); return *this;}
-    inline EnhancedMetricsConfig& WithResolverLevelMetricsBehavior(ResolverLevelMetricsBehavior&& value) { SetResolverLevelMetricsBehavior(std::move(value)); return *this;}
+    inline void SetResolverLevelMetricsBehavior(ResolverLevelMetricsBehavior value) { m_resolverLevelMetricsBehaviorHasBeenSet = true; m_resolverLevelMetricsBehavior = value; }
+    inline EnhancedMetricsConfig& WithResolverLevelMetricsBehavior(ResolverLevelMetricsBehavior value) { SetResolverLevelMetricsBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +120,10 @@ namespace Model
      * sources that have the <code>metricsConfig</code> value set to
      * <code>ENABLED</code>.</p> </li> </ul>
      */
-    inline const DataSourceLevelMetricsBehavior& GetDataSourceLevelMetricsBehavior() const{ return m_dataSourceLevelMetricsBehavior; }
+    inline DataSourceLevelMetricsBehavior GetDataSourceLevelMetricsBehavior() const { return m_dataSourceLevelMetricsBehavior; }
     inline bool DataSourceLevelMetricsBehaviorHasBeenSet() const { return m_dataSourceLevelMetricsBehaviorHasBeenSet; }
-    inline void SetDataSourceLevelMetricsBehavior(const DataSourceLevelMetricsBehavior& value) { m_dataSourceLevelMetricsBehaviorHasBeenSet = true; m_dataSourceLevelMetricsBehavior = value; }
-    inline void SetDataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior&& value) { m_dataSourceLevelMetricsBehaviorHasBeenSet = true; m_dataSourceLevelMetricsBehavior = std::move(value); }
-    inline EnhancedMetricsConfig& WithDataSourceLevelMetricsBehavior(const DataSourceLevelMetricsBehavior& value) { SetDataSourceLevelMetricsBehavior(value); return *this;}
-    inline EnhancedMetricsConfig& WithDataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior&& value) { SetDataSourceLevelMetricsBehavior(std::move(value)); return *this;}
+    inline void SetDataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior value) { m_dataSourceLevelMetricsBehaviorHasBeenSet = true; m_dataSourceLevelMetricsBehavior = value; }
+    inline EnhancedMetricsConfig& WithDataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior value) { SetDataSourceLevelMetricsBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -139,22 +135,20 @@ namespace Model
      * </ul> <p>Metrics will be recorded by API ID and operation name. You can set the
      * value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const OperationLevelMetricsConfig& GetOperationLevelMetricsConfig() const{ return m_operationLevelMetricsConfig; }
+    inline OperationLevelMetricsConfig GetOperationLevelMetricsConfig() const { return m_operationLevelMetricsConfig; }
     inline bool OperationLevelMetricsConfigHasBeenSet() const { return m_operationLevelMetricsConfigHasBeenSet; }
-    inline void SetOperationLevelMetricsConfig(const OperationLevelMetricsConfig& value) { m_operationLevelMetricsConfigHasBeenSet = true; m_operationLevelMetricsConfig = value; }
-    inline void SetOperationLevelMetricsConfig(OperationLevelMetricsConfig&& value) { m_operationLevelMetricsConfigHasBeenSet = true; m_operationLevelMetricsConfig = std::move(value); }
-    inline EnhancedMetricsConfig& WithOperationLevelMetricsConfig(const OperationLevelMetricsConfig& value) { SetOperationLevelMetricsConfig(value); return *this;}
-    inline EnhancedMetricsConfig& WithOperationLevelMetricsConfig(OperationLevelMetricsConfig&& value) { SetOperationLevelMetricsConfig(std::move(value)); return *this;}
+    inline void SetOperationLevelMetricsConfig(OperationLevelMetricsConfig value) { m_operationLevelMetricsConfigHasBeenSet = true; m_operationLevelMetricsConfig = value; }
+    inline EnhancedMetricsConfig& WithOperationLevelMetricsConfig(OperationLevelMetricsConfig value) { SetOperationLevelMetricsConfig(value); return *this;}
     ///@}
   private:
 
-    ResolverLevelMetricsBehavior m_resolverLevelMetricsBehavior;
+    ResolverLevelMetricsBehavior m_resolverLevelMetricsBehavior{ResolverLevelMetricsBehavior::NOT_SET};
     bool m_resolverLevelMetricsBehaviorHasBeenSet = false;
 
-    DataSourceLevelMetricsBehavior m_dataSourceLevelMetricsBehavior;
+    DataSourceLevelMetricsBehavior m_dataSourceLevelMetricsBehavior{DataSourceLevelMetricsBehavior::NOT_SET};
     bool m_dataSourceLevelMetricsBehaviorHasBeenSet = false;
 
-    OperationLevelMetricsConfig m_operationLevelMetricsConfig;
+    OperationLevelMetricsConfig m_operationLevelMetricsConfig{OperationLevelMetricsConfig::NOT_SET};
     bool m_operationLevelMetricsConfigHasBeenSet = false;
   };
 

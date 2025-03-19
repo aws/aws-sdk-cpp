@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-WithdrawByoipCidrRequest::WithdrawByoipCidrRequest() : 
-    m_cidrHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String WithdrawByoipCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

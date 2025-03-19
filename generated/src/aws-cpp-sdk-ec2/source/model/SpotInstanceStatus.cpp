@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotInstanceStatus::SpotInstanceStatus() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 SpotInstanceStatus::SpotInstanceStatus(const XmlNode& xmlNode)
-  : SpotInstanceStatus()
 {
   *this = xmlNode;
 }

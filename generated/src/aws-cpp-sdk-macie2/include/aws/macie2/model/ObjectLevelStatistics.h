@@ -35,7 +35,7 @@ namespace Model
   class ObjectLevelStatistics
   {
   public:
-    AWS_MACIE2_API ObjectLevelStatistics();
+    AWS_MACIE2_API ObjectLevelStatistics() = default;
     AWS_MACIE2_API ObjectLevelStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ObjectLevelStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * can't analyze because the objects don't have a file name extension for a
      * supported file or storage format.</p>
      */
-    inline long long GetFileType() const{ return m_fileType; }
+    inline long long GetFileType() const { return m_fileType; }
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
     inline void SetFileType(long long value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
     inline ObjectLevelStatistics& WithFileType(long long value) { SetFileType(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * <p>The total storage size (in bytes) or number of objects that Amazon Macie
      * can't analyze because the objects use an unsupported storage class.</p>
      */
-    inline long long GetStorageClass() const{ return m_storageClass; }
+    inline long long GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
     inline void SetStorageClass(long long value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
     inline ObjectLevelStatistics& WithStorageClass(long long value) { SetStorageClass(value); return *this;}
@@ -70,20 +70,20 @@ namespace Model
      * can't analyze because the objects use an unsupported storage class or don't have
      * a file name extension for a supported file or storage format.</p>
      */
-    inline long long GetTotal() const{ return m_total; }
+    inline long long GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(long long value) { m_totalHasBeenSet = true; m_total = value; }
     inline ObjectLevelStatistics& WithTotal(long long value) { SetTotal(value); return *this;}
     ///@}
   private:
 
-    long long m_fileType;
+    long long m_fileType{0};
     bool m_fileTypeHasBeenSet = false;
 
-    long long m_storageClass;
+    long long m_storageClass{0};
     bool m_storageClassHasBeenSet = false;
 
-    long long m_total;
+    long long m_total{0};
     bool m_totalHasBeenSet = false;
   };
 

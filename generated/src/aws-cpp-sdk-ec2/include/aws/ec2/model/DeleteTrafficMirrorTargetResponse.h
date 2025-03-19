@@ -28,7 +28,7 @@ namespace Model
   class DeleteTrafficMirrorTargetResponse
   {
   public:
-    AWS_EC2_API DeleteTrafficMirrorTargetResponse();
+    AWS_EC2_API DeleteTrafficMirrorTargetResponse() = default;
     AWS_EC2_API DeleteTrafficMirrorTargetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteTrafficMirrorTargetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID of the deleted Traffic Mirror target.</p>
      */
-    inline const Aws::String& GetTrafficMirrorTargetId() const{ return m_trafficMirrorTargetId; }
-    inline void SetTrafficMirrorTargetId(const Aws::String& value) { m_trafficMirrorTargetId = value; }
-    inline void SetTrafficMirrorTargetId(Aws::String&& value) { m_trafficMirrorTargetId = std::move(value); }
-    inline void SetTrafficMirrorTargetId(const char* value) { m_trafficMirrorTargetId.assign(value); }
-    inline DeleteTrafficMirrorTargetResponse& WithTrafficMirrorTargetId(const Aws::String& value) { SetTrafficMirrorTargetId(value); return *this;}
-    inline DeleteTrafficMirrorTargetResponse& WithTrafficMirrorTargetId(Aws::String&& value) { SetTrafficMirrorTargetId(std::move(value)); return *this;}
-    inline DeleteTrafficMirrorTargetResponse& WithTrafficMirrorTargetId(const char* value) { SetTrafficMirrorTargetId(value); return *this;}
+    inline const Aws::String& GetTrafficMirrorTargetId() const { return m_trafficMirrorTargetId; }
+    template<typename TrafficMirrorTargetIdT = Aws::String>
+    void SetTrafficMirrorTargetId(TrafficMirrorTargetIdT&& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = std::forward<TrafficMirrorTargetIdT>(value); }
+    template<typename TrafficMirrorTargetIdT = Aws::String>
+    DeleteTrafficMirrorTargetResponse& WithTrafficMirrorTargetId(TrafficMirrorTargetIdT&& value) { SetTrafficMirrorTargetId(std::forward<TrafficMirrorTargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteTrafficMirrorTargetResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteTrafficMirrorTargetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteTrafficMirrorTargetResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trafficMirrorTargetId;
+    bool m_trafficMirrorTargetIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

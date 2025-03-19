@@ -32,7 +32,7 @@ namespace Model
   class ResourceAccessPolicy
   {
   public:
-    AWS_GREENGRASS_API ResourceAccessPolicy();
+    AWS_GREENGRASS_API ResourceAccessPolicy() = default;
     AWS_GREENGRASS_API ResourceAccessPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API ResourceAccessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * The permissions that the Lambda function has to the resource. Can be one of
      * ''rw'' (read/write) or ''ro'' (read-only).
      */
-    inline const Permission& GetPermission() const{ return m_permission; }
+    inline Permission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline ResourceAccessPolicy& WithPermission(const Permission& value) { SetPermission(value); return *this;}
-    inline ResourceAccessPolicy& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(Permission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline ResourceAccessPolicy& WithPermission(Permission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * The ID of the resource. (This ID is assigned to the resource when you create the
      * resource definiton.)
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ResourceAccessPolicy& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ResourceAccessPolicy& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResourceAccessPolicy& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ResourceAccessPolicy& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
   private:
 
-    Permission m_permission;
+    Permission m_permission{Permission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
     Aws::String m_resourceId;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetComputeNodeGroupResult::GetComputeNodeGroupResult()
-{
-}
-
 GetComputeNodeGroupResult::GetComputeNodeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetComputeNodeGroupResult& GetComputeNodeGroupResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("computeNodeGroup"))
   {
     m_computeNodeGroup = jsonValue.GetObject("computeNodeGroup");
-
+    m_computeNodeGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

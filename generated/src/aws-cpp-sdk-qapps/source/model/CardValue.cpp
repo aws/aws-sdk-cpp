@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-CardValue::CardValue() : 
-    m_cardIdHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_submissionMutationHasBeenSet(false)
-{
-}
-
 CardValue::CardValue(JsonView jsonValue)
-  : CardValue()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CardValue& CardValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cardId"))
   {
     m_cardId = jsonValue.GetString("cardId");
-
     m_cardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submissionMutation"))
   {
     m_submissionMutation = jsonValue.GetObject("submissionMutation");
-
     m_submissionMutationHasBeenSet = true;
   }
-
   return *this;
 }
 

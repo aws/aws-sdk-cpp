@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Predicate::Predicate() : 
-    m_logical(Logical::NOT_SET),
-    m_logicalHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 Predicate::Predicate(JsonView jsonValue)
-  : Predicate()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Predicate& Predicate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Logical"))
   {
     m_logical = LogicalMapper::GetLogicalForName(jsonValue.GetString("Logical"));
-
     m_logicalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
@@ -49,7 +39,6 @@ Predicate& Predicate::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

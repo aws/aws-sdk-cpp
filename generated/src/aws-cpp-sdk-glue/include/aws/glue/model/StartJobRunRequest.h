@@ -25,7 +25,7 @@ namespace Model
   class StartJobRunRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API StartJobRunRequest();
+    AWS_GLUE_API StartJobRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the job definition to use.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline StartJobRunRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline StartJobRunRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    StartJobRunRequest& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * of true means job run queuing is enabled for the job run. If false or not
      * populated, the job run will not be considered for queueing.</p>
      */
-    inline bool GetJobRunQueuingEnabled() const{ return m_jobRunQueuingEnabled; }
+    inline bool GetJobRunQueuingEnabled() const { return m_jobRunQueuingEnabled; }
     inline bool JobRunQueuingEnabledHasBeenSet() const { return m_jobRunQueuingEnabledHasBeenSet; }
     inline void SetJobRunQueuingEnabled(bool value) { m_jobRunQueuingEnabledHasBeenSet = true; m_jobRunQueuingEnabled = value; }
     inline StartJobRunRequest& WithJobRunQueuingEnabled(bool value) { SetJobRunQueuingEnabled(value); return *this;}
@@ -68,14 +66,12 @@ namespace Model
     /**
      * <p>The ID of a previous <code>JobRun</code> to retry.</p>
      */
-    inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
+    inline const Aws::String& GetJobRunId() const { return m_jobRunId; }
     inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
-    inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
-    inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
-    inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
-    inline StartJobRunRequest& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-    inline StartJobRunRequest& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    template<typename JobRunIdT = Aws::String>
+    void SetJobRunId(JobRunIdT&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::forward<JobRunIdT>(value); }
+    template<typename JobRunIdT = Aws::String>
+    StartJobRunRequest& WithJobRunId(JobRunIdT&& value) { SetJobRunId(std::forward<JobRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,19 +95,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
      * job parameters in Ray jobs</a> in the developer guide.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const { return m_arguments; }
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
-    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
-    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
-    inline StartJobRunRequest& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
-    inline StartJobRunRequest& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
-    inline StartJobRunRequest& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
-    inline StartJobRunRequest& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline StartJobRunRequest& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline StartJobRunRequest& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartJobRunRequest& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline StartJobRunRequest& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline StartJobRunRequest& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetArguments(ArgumentsT&& value) { m_argumentsHasBeenSet = true; m_arguments = std::forward<ArgumentsT>(value); }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    StartJobRunRequest& WithArguments(ArgumentsT&& value) { SetArguments(std::forward<ArgumentsT>(value)); return *this;}
+    template<typename ArgumentsKeyT = Aws::String, typename ArgumentsValueT = Aws::String>
+    StartJobRunRequest& AddArguments(ArgumentsKeyT&& key, ArgumentsValueT&& value) {
+      m_argumentsHasBeenSet = true; m_arguments.emplace(std::forward<ArgumentsKeyT>(key), std::forward<ArgumentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -128,7 +121,7 @@ namespace Model
      * maintenance window, it will be restarted during the maintenance window after 7
      * days.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline StartJobRunRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -155,7 +148,7 @@ namespace Model
      * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline StartJobRunRequest& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
@@ -166,26 +159,24 @@ namespace Model
      * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
      * this job run.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
-    inline StartJobRunRequest& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline StartJobRunRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline StartJobRunRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    StartJobRunRequest& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies configuration properties of a job run notification.</p>
      */
-    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+    inline const NotificationProperty& GetNotificationProperty() const { return m_notificationProperty; }
     inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
-    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
-    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
-    inline StartJobRunRequest& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
-    inline StartJobRunRequest& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+    template<typename NotificationPropertyT = NotificationProperty>
+    void SetNotificationProperty(NotificationPropertyT&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::forward<NotificationPropertyT>(value); }
+    template<typename NotificationPropertyT = NotificationProperty>
+    StartJobRunRequest& WithNotificationProperty(NotificationPropertyT&& value) { SetNotificationProperty(std::forward<NotificationPropertyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,12 +213,10 @@ namespace Model
      * type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk,
      * and provides up to 8 Ray workers based on the autoscaler.</p> </li> </ul>
      */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
+    inline WorkerType GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-    inline StartJobRunRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-    inline StartJobRunRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+    inline void SetWorkerType(WorkerType value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline StartJobRunRequest& WithWorkerType(WorkerType value) { SetWorkerType(value); return *this;}
     ///@}
 
     ///@{
@@ -235,7 +224,7 @@ namespace Model
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
      * when a job runs.</p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline StartJobRunRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
@@ -251,19 +240,17 @@ namespace Model
      * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
      * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
      */
-    inline const ExecutionClass& GetExecutionClass() const{ return m_executionClass; }
+    inline ExecutionClass GetExecutionClass() const { return m_executionClass; }
     inline bool ExecutionClassHasBeenSet() const { return m_executionClassHasBeenSet; }
-    inline void SetExecutionClass(const ExecutionClass& value) { m_executionClassHasBeenSet = true; m_executionClass = value; }
-    inline void SetExecutionClass(ExecutionClass&& value) { m_executionClassHasBeenSet = true; m_executionClass = std::move(value); }
-    inline StartJobRunRequest& WithExecutionClass(const ExecutionClass& value) { SetExecutionClass(value); return *this;}
-    inline StartJobRunRequest& WithExecutionClass(ExecutionClass&& value) { SetExecutionClass(std::move(value)); return *this;}
+    inline void SetExecutionClass(ExecutionClass value) { m_executionClassHasBeenSet = true; m_executionClass = value; }
+    inline StartJobRunRequest& WithExecutionClass(ExecutionClass value) { SetExecutionClass(value); return *this;}
     ///@}
   private:
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    bool m_jobRunQueuingEnabled;
+    bool m_jobRunQueuingEnabled{false};
     bool m_jobRunQueuingEnabledHasBeenSet = false;
 
     Aws::String m_jobRunId;
@@ -272,10 +259,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_arguments;
     bool m_argumentsHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
@@ -284,13 +271,13 @@ namespace Model
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet = false;
 
-    WorkerType m_workerType;
+    WorkerType m_workerType{WorkerType::NOT_SET};
     bool m_workerTypeHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
     bool m_numberOfWorkersHasBeenSet = false;
 
-    ExecutionClass m_executionClass;
+    ExecutionClass m_executionClass{ExecutionClass::NOT_SET};
     bool m_executionClassHasBeenSet = false;
   };
 

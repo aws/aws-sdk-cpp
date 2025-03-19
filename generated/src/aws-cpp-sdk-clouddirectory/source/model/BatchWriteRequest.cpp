@@ -13,12 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchWriteRequest::BatchWriteRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_operationsHasBeenSet(false)
-{
-}
-
 Aws::String BatchWriteRequest::SerializePayload() const
 {
   JsonValue payload;

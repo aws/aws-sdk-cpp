@@ -17,17 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-InvokeRequest::InvokeRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false),
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_clientContextHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
-{
-}
-
 
 void InvokeRequest::AddQueryStringParameters(URI& uri) const
 {

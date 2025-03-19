@@ -18,17 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-Category::Category() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_localizedNameHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false)
-{
-}
-
 Category::Category(JsonView jsonValue)
-  : Category()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Category& Category::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalizedName"))
   {
     m_localizedName = jsonValue.GetString("LocalizedName");
-
     m_localizedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetBool("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   return *this;
 }
 

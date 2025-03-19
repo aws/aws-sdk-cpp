@@ -18,14 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PropertyValue::PropertyValue() : 
-    m_valueHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 PropertyValue::PropertyValue(JsonView jsonValue)
-  : PropertyValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PropertyValue& PropertyValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("time"))
   {
     m_time = jsonValue.GetString("time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SFN
 namespace Model
 {
 
-TaskSubmittedEventDetails::TaskSubmittedEventDetails() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
-{
-}
-
 TaskSubmittedEventDetails::TaskSubmittedEventDetails(JsonView jsonValue)
-  : TaskSubmittedEventDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TaskSubmittedEventDetails& TaskSubmittedEventDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetString("output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputDetails"))
   {
     m_outputDetails = jsonValue.GetObject("outputDetails");
-
     m_outputDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

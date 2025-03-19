@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-CustomerManagedChannelS3Storage::CustomerManagedChannelS3Storage() : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 CustomerManagedChannelS3Storage::CustomerManagedChannelS3Storage(JsonView jsonValue)
-  : CustomerManagedChannelS3Storage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CustomerManagedChannelS3Storage& CustomerManagedChannelS3Storage::operator =(Jso
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPrefix"))
   {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
-
     m_keyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

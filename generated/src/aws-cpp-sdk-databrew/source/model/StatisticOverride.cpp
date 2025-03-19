@@ -18,14 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-StatisticOverride::StatisticOverride() : 
-    m_statisticHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 StatisticOverride::StatisticOverride(JsonView jsonValue)
-  : StatisticOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StatisticOverride& StatisticOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = jsonValue.GetString("Statistic");
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -48,7 +39,6 @@ StatisticOverride& StatisticOverride::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-DeviceJob::DeviceJob() : 
-    m_createdTimeHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false)
-{
-}
-
 DeviceJob::DeviceJob(JsonView jsonValue)
-  : DeviceJob()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DeviceJob& DeviceJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobType"))
   {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

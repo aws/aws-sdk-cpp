@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EbsStorageSettings::EbsStorageSettings() : 
-    m_ebsVolumeSizeInGb(0),
-    m_ebsVolumeSizeInGbHasBeenSet(false)
-{
-}
-
 EbsStorageSettings::EbsStorageSettings(JsonView jsonValue)
-  : EbsStorageSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EbsStorageSettings& EbsStorageSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EbsVolumeSizeInGb"))
   {
     m_ebsVolumeSizeInGb = jsonValue.GetInteger("EbsVolumeSizeInGb");
-
     m_ebsVolumeSizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

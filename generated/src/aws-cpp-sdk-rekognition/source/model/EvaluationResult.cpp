@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-EvaluationResult::EvaluationResult() : 
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false),
-    m_summaryHasBeenSet(false)
-{
-}
-
 EvaluationResult::EvaluationResult(JsonView jsonValue)
-  : EvaluationResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EvaluationResult& EvaluationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("F1Score"))
   {
     m_f1Score = jsonValue.GetDouble("F1Score");
-
     m_f1ScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
     m_summaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-FleetCapacity::FleetCapacity() : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_instanceType(EC2InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCountsHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_gameServerContainerGroupCountsHasBeenSet(false)
-{
-}
-
 FleetCapacity::FleetCapacity(JsonView jsonValue)
-  : FleetCapacity()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ FleetCapacity& FleetCapacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = EC2InstanceTypeMapper::GetEC2InstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCounts"))
   {
     m_instanceCounts = jsonValue.GetObject("InstanceCounts");
-
     m_instanceCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameServerContainerGroupCounts"))
   {
     m_gameServerContainerGroupCounts = jsonValue.GetObject("GameServerContainerGroupCounts");
-
     m_gameServerContainerGroupCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultKendraDocumentLocation::RetrievalResultKendraDocumentLocation() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 RetrievalResultKendraDocumentLocation::RetrievalResultKendraDocumentLocation(JsonView jsonValue)
-  : RetrievalResultKendraDocumentLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalResultKendraDocumentLocation& RetrievalResultKendraDocumentLocation::op
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

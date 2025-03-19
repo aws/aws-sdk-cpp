@@ -32,7 +32,7 @@ namespace Model
   class LambdaCodeHook
   {
   public:
-    AWS_LEXMODELSV2_API LambdaCodeHook();
+    AWS_LEXMODELSV2_API LambdaCodeHook() = default;
     AWS_LEXMODELSV2_API LambdaCodeHook(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API LambdaCodeHook& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
-    inline const Aws::String& GetLambdaARN() const{ return m_lambdaARN; }
+    inline const Aws::String& GetLambdaARN() const { return m_lambdaARN; }
     inline bool LambdaARNHasBeenSet() const { return m_lambdaARNHasBeenSet; }
-    inline void SetLambdaARN(const Aws::String& value) { m_lambdaARNHasBeenSet = true; m_lambdaARN = value; }
-    inline void SetLambdaARN(Aws::String&& value) { m_lambdaARNHasBeenSet = true; m_lambdaARN = std::move(value); }
-    inline void SetLambdaARN(const char* value) { m_lambdaARNHasBeenSet = true; m_lambdaARN.assign(value); }
-    inline LambdaCodeHook& WithLambdaARN(const Aws::String& value) { SetLambdaARN(value); return *this;}
-    inline LambdaCodeHook& WithLambdaARN(Aws::String&& value) { SetLambdaARN(std::move(value)); return *this;}
-    inline LambdaCodeHook& WithLambdaARN(const char* value) { SetLambdaARN(value); return *this;}
+    template<typename LambdaARNT = Aws::String>
+    void SetLambdaARN(LambdaARNT&& value) { m_lambdaARNHasBeenSet = true; m_lambdaARN = std::forward<LambdaARNT>(value); }
+    template<typename LambdaARNT = Aws::String>
+    LambdaCodeHook& WithLambdaARN(LambdaARNT&& value) { SetLambdaARN(std::forward<LambdaARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The version of the request-response that you want Amazon Lex to use to invoke
      * your Lambda function.</p>
      */
-    inline const Aws::String& GetCodeHookInterfaceVersion() const{ return m_codeHookInterfaceVersion; }
+    inline const Aws::String& GetCodeHookInterfaceVersion() const { return m_codeHookInterfaceVersion; }
     inline bool CodeHookInterfaceVersionHasBeenSet() const { return m_codeHookInterfaceVersionHasBeenSet; }
-    inline void SetCodeHookInterfaceVersion(const Aws::String& value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion = value; }
-    inline void SetCodeHookInterfaceVersion(Aws::String&& value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion = std::move(value); }
-    inline void SetCodeHookInterfaceVersion(const char* value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion.assign(value); }
-    inline LambdaCodeHook& WithCodeHookInterfaceVersion(const Aws::String& value) { SetCodeHookInterfaceVersion(value); return *this;}
-    inline LambdaCodeHook& WithCodeHookInterfaceVersion(Aws::String&& value) { SetCodeHookInterfaceVersion(std::move(value)); return *this;}
-    inline LambdaCodeHook& WithCodeHookInterfaceVersion(const char* value) { SetCodeHookInterfaceVersion(value); return *this;}
+    template<typename CodeHookInterfaceVersionT = Aws::String>
+    void SetCodeHookInterfaceVersion(CodeHookInterfaceVersionT&& value) { m_codeHookInterfaceVersionHasBeenSet = true; m_codeHookInterfaceVersion = std::forward<CodeHookInterfaceVersionT>(value); }
+    template<typename CodeHookInterfaceVersionT = Aws::String>
+    LambdaCodeHook& WithCodeHookInterfaceVersion(CodeHookInterfaceVersionT&& value) { SetCodeHookInterfaceVersion(std::forward<CodeHookInterfaceVersionT>(value)); return *this;}
     ///@}
   private:
 

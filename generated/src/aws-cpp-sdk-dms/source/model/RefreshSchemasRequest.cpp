@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RefreshSchemasRequest::RefreshSchemasRequest() : 
-    m_endpointArnHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String RefreshSchemasRequest::SerializePayload() const
 {
   JsonValue payload;

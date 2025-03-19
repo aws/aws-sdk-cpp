@@ -18,15 +18,7 @@ namespace Omics
 namespace Model
 {
 
-SseConfig::SseConfig() : 
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keyArnHasBeenSet(false)
-{
-}
-
 SseConfig::SseConfig(JsonView jsonValue)
-  : SseConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SseConfig& SseConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyArn"))
   {
     m_keyArn = jsonValue.GetString("keyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

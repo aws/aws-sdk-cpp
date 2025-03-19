@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkSegment::CoreNetworkSegment() : 
-    m_nameHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_sharedSegmentsHasBeenSet(false)
-{
-}
-
 CoreNetworkSegment::CoreNetworkSegment(JsonView jsonValue)
-  : CoreNetworkSegment()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CoreNetworkSegment& CoreNetworkSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocations"))
   {
     Aws::Utils::Array<JsonView> edgeLocationsJsonList = jsonValue.GetArray("EdgeLocations");
@@ -49,7 +39,6 @@ CoreNetworkSegment& CoreNetworkSegment::operator =(JsonView jsonValue)
     }
     m_edgeLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedSegments"))
   {
     Aws::Utils::Array<JsonView> sharedSegmentsJsonList = jsonValue.GetArray("SharedSegments");
@@ -59,7 +48,6 @@ CoreNetworkSegment& CoreNetworkSegment::operator =(JsonView jsonValue)
     }
     m_sharedSegmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

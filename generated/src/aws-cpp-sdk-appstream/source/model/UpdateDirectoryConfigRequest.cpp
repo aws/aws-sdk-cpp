@@ -12,14 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDirectoryConfigRequest::UpdateDirectoryConfigRequest() : 
-    m_directoryNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNamesHasBeenSet(false),
-    m_serviceAccountCredentialsHasBeenSet(false),
-    m_certificateBasedAuthPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDirectoryConfigRequest::SerializePayload() const
 {
   JsonValue payload;

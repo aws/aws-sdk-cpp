@@ -12,23 +12,6 @@ using namespace Aws::EMRServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartJobRunRequest::StartJobRunRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_executionRoleArnHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_executionTimeoutMinutes(0),
-    m_executionTimeoutMinutesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_mode(JobRunMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
-{
-}
-
 Aws::String StartJobRunRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class CreatePlaceIndexResult
   {
   public:
-    AWS_LOCATIONSERVICE_API CreatePlaceIndexResult();
+    AWS_LOCATIONSERVICE_API CreatePlaceIndexResult() = default;
     AWS_LOCATIONSERVICE_API CreatePlaceIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API CreatePlaceIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The name for the place index resource.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
-    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
-    inline CreatePlaceIndexResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline CreatePlaceIndexResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline CreatePlaceIndexResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    CreatePlaceIndexResult& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
      * </li> </ul>
      */
-    inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
-    inline void SetIndexArn(const Aws::String& value) { m_indexArn = value; }
-    inline void SetIndexArn(Aws::String&& value) { m_indexArn = std::move(value); }
-    inline void SetIndexArn(const char* value) { m_indexArn.assign(value); }
-    inline CreatePlaceIndexResult& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
-    inline CreatePlaceIndexResult& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
-    inline CreatePlaceIndexResult& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
+    inline const Aws::String& GetIndexArn() const { return m_indexArn; }
+    template<typename IndexArnT = Aws::String>
+    void SetIndexArn(IndexArnT&& value) { m_indexArnHasBeenSet = true; m_indexArn = std::forward<IndexArnT>(value); }
+    template<typename IndexArnT = Aws::String>
+    CreatePlaceIndexResult& WithIndexArn(IndexArnT&& value) { SetIndexArn(std::forward<IndexArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,32 +64,34 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline CreatePlaceIndexResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline CreatePlaceIndexResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    CreatePlaceIndexResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePlaceIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePlaceIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePlaceIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePlaceIndexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_indexName;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_indexArn;
+    bool m_indexArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

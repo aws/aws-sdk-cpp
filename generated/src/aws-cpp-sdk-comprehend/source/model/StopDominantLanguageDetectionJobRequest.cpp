@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDominantLanguageDetectionJobRequest::StopDominantLanguageDetectionJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopDominantLanguageDetectionJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -26,7 +26,7 @@ namespace Model
   class CreateStorageVirtualMachineRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API CreateStorageVirtualMachineRequest();
+    AWS_FSX_API CreateStorageVirtualMachineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,50 +46,44 @@ namespace Model
      * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
-    inline const CreateSvmActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const{ return m_activeDirectoryConfiguration; }
+    inline const CreateSvmActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const { return m_activeDirectoryConfiguration; }
     inline bool ActiveDirectoryConfigurationHasBeenSet() const { return m_activeDirectoryConfigurationHasBeenSet; }
-    inline void SetActiveDirectoryConfiguration(const CreateSvmActiveDirectoryConfiguration& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = value; }
-    inline void SetActiveDirectoryConfiguration(CreateSvmActiveDirectoryConfiguration&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::move(value); }
-    inline CreateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(const CreateSvmActiveDirectoryConfiguration& value) { SetActiveDirectoryConfiguration(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(CreateSvmActiveDirectoryConfiguration&& value) { SetActiveDirectoryConfiguration(std::move(value)); return *this;}
+    template<typename ActiveDirectoryConfigurationT = CreateSvmActiveDirectoryConfiguration>
+    void SetActiveDirectoryConfiguration(ActiveDirectoryConfigurationT&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::forward<ActiveDirectoryConfigurationT>(value); }
+    template<typename ActiveDirectoryConfigurationT = CreateSvmActiveDirectoryConfiguration>
+    CreateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(ActiveDirectoryConfigurationT&& value) { SetActiveDirectoryConfiguration(std::forward<ActiveDirectoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateStorageVirtualMachineRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateStorageVirtualMachineRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline CreateStorageVirtualMachineRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    CreateStorageVirtualMachineRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the SVM.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateStorageVirtualMachineRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateStorageVirtualMachineRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,26 +92,24 @@ namespace Model
      * API. If you do not specify a password, you can still use the file system's
      * <code>fsxadmin</code> user to manage the SVM.</p>
      */
-    inline const Aws::String& GetSvmAdminPassword() const{ return m_svmAdminPassword; }
+    inline const Aws::String& GetSvmAdminPassword() const { return m_svmAdminPassword; }
     inline bool SvmAdminPasswordHasBeenSet() const { return m_svmAdminPasswordHasBeenSet; }
-    inline void SetSvmAdminPassword(const Aws::String& value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword = value; }
-    inline void SetSvmAdminPassword(Aws::String&& value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword = std::move(value); }
-    inline void SetSvmAdminPassword(const char* value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword.assign(value); }
-    inline CreateStorageVirtualMachineRequest& WithSvmAdminPassword(const Aws::String& value) { SetSvmAdminPassword(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithSvmAdminPassword(Aws::String&& value) { SetSvmAdminPassword(std::move(value)); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithSvmAdminPassword(const char* value) { SetSvmAdminPassword(value); return *this;}
+    template<typename SvmAdminPasswordT = Aws::String>
+    void SetSvmAdminPassword(SvmAdminPasswordT&& value) { m_svmAdminPasswordHasBeenSet = true; m_svmAdminPassword = std::forward<SvmAdminPasswordT>(value); }
+    template<typename SvmAdminPasswordT = Aws::String>
+    CreateStorageVirtualMachineRequest& WithSvmAdminPassword(SvmAdminPasswordT&& value) { SetSvmAdminPassword(std::forward<SvmAdminPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateStorageVirtualMachineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateStorageVirtualMachineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateStorageVirtualMachineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateStorageVirtualMachineRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateStorageVirtualMachineRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,12 +127,10 @@ namespace Model
      * security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li>
      * </ul> <p/>
      */
-    inline const StorageVirtualMachineRootVolumeSecurityStyle& GetRootVolumeSecurityStyle() const{ return m_rootVolumeSecurityStyle; }
+    inline StorageVirtualMachineRootVolumeSecurityStyle GetRootVolumeSecurityStyle() const { return m_rootVolumeSecurityStyle; }
     inline bool RootVolumeSecurityStyleHasBeenSet() const { return m_rootVolumeSecurityStyleHasBeenSet; }
-    inline void SetRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = value; }
-    inline void SetRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = std::move(value); }
-    inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { SetRootVolumeSecurityStyle(value); return *this;}
-    inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { SetRootVolumeSecurityStyle(std::move(value)); return *this;}
+    inline void SetRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = value; }
+    inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle value) { SetRootVolumeSecurityStyle(value); return *this;}
     ///@}
   private:
 
@@ -162,7 +152,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle;
+    StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle{StorageVirtualMachineRootVolumeSecurityStyle::NOT_SET};
     bool m_rootVolumeSecurityStyleHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class CustomSMSLambdaVersionConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * features.</p> <p>You must use a <code>LambdaVersion</code> of <code>V1_0</code>
      * with a custom sender function.</p>
      */
-    inline const CustomSMSSenderLambdaVersionType& GetLambdaVersion() const{ return m_lambdaVersion; }
+    inline CustomSMSSenderLambdaVersionType GetLambdaVersion() const { return m_lambdaVersion; }
     inline bool LambdaVersionHasBeenSet() const { return m_lambdaVersionHasBeenSet; }
-    inline void SetLambdaVersion(const CustomSMSSenderLambdaVersionType& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
-    inline void SetLambdaVersion(CustomSMSSenderLambdaVersionType&& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = std::move(value); }
-    inline CustomSMSLambdaVersionConfigType& WithLambdaVersion(const CustomSMSSenderLambdaVersionType& value) { SetLambdaVersion(value); return *this;}
-    inline CustomSMSLambdaVersionConfigType& WithLambdaVersion(CustomSMSSenderLambdaVersionType&& value) { SetLambdaVersion(std::move(value)); return *this;}
+    inline void SetLambdaVersion(CustomSMSSenderLambdaVersionType value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
+    inline CustomSMSLambdaVersionConfigType& WithLambdaVersion(CustomSMSSenderLambdaVersionType value) { SetLambdaVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
      * your Lambda trigger.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline CustomSMSLambdaVersionConfigType& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline CustomSMSLambdaVersionConfigType& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline CustomSMSLambdaVersionConfigType& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    CustomSMSLambdaVersionConfigType& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
   private:
 
-    CustomSMSSenderLambdaVersionType m_lambdaVersion;
+    CustomSMSSenderLambdaVersionType m_lambdaVersion{CustomSMSSenderLambdaVersionType::NOT_SET};
     bool m_lambdaVersionHasBeenSet = false;
 
     Aws::String m_lambdaArn;

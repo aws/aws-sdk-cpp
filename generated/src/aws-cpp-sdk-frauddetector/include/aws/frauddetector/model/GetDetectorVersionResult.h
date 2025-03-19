@@ -32,7 +32,7 @@ namespace Model
   class GetDetectorVersionResult
   {
   public:
-    AWS_FRAUDDETECTOR_API GetDetectorVersionResult();
+    AWS_FRAUDDETECTOR_API GetDetectorVersionResult() = default;
     AWS_FRAUDDETECTOR_API GetDetectorVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API GetDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,116 +41,103 @@ namespace Model
     /**
      * <p>The detector ID.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorId.assign(value); }
-    inline GetDetectorVersionResult& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline GetDetectorVersionResult& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    GetDetectorVersionResult& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector version ID.</p>
      */
-    inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
-    inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionId = value; }
-    inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionId = std::move(value); }
-    inline void SetDetectorVersionId(const char* value) { m_detectorVersionId.assign(value); }
-    inline GetDetectorVersionResult& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-    inline GetDetectorVersionResult& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    inline const Aws::String& GetDetectorVersionId() const { return m_detectorVersionId; }
+    template<typename DetectorVersionIdT = Aws::String>
+    void SetDetectorVersionId(DetectorVersionIdT&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::forward<DetectorVersionIdT>(value); }
+    template<typename DetectorVersionIdT = Aws::String>
+    GetDetectorVersionResult& WithDetectorVersionId(DetectorVersionIdT&& value) { SetDetectorVersionId(std::forward<DetectorVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector version description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetDetectorVersionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetDetectorVersionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetDetectorVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon SageMaker model endpoints included in the detector version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExternalModelEndpoints() const{ return m_externalModelEndpoints; }
-    inline void SetExternalModelEndpoints(const Aws::Vector<Aws::String>& value) { m_externalModelEndpoints = value; }
-    inline void SetExternalModelEndpoints(Aws::Vector<Aws::String>&& value) { m_externalModelEndpoints = std::move(value); }
-    inline GetDetectorVersionResult& WithExternalModelEndpoints(const Aws::Vector<Aws::String>& value) { SetExternalModelEndpoints(value); return *this;}
-    inline GetDetectorVersionResult& WithExternalModelEndpoints(Aws::Vector<Aws::String>&& value) { SetExternalModelEndpoints(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& AddExternalModelEndpoints(const Aws::String& value) { m_externalModelEndpoints.push_back(value); return *this; }
-    inline GetDetectorVersionResult& AddExternalModelEndpoints(Aws::String&& value) { m_externalModelEndpoints.push_back(std::move(value)); return *this; }
-    inline GetDetectorVersionResult& AddExternalModelEndpoints(const char* value) { m_externalModelEndpoints.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetExternalModelEndpoints() const { return m_externalModelEndpoints; }
+    template<typename ExternalModelEndpointsT = Aws::Vector<Aws::String>>
+    void SetExternalModelEndpoints(ExternalModelEndpointsT&& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints = std::forward<ExternalModelEndpointsT>(value); }
+    template<typename ExternalModelEndpointsT = Aws::Vector<Aws::String>>
+    GetDetectorVersionResult& WithExternalModelEndpoints(ExternalModelEndpointsT&& value) { SetExternalModelEndpoints(std::forward<ExternalModelEndpointsT>(value)); return *this;}
+    template<typename ExternalModelEndpointsT = Aws::String>
+    GetDetectorVersionResult& AddExternalModelEndpoints(ExternalModelEndpointsT&& value) { m_externalModelEndpointsHasBeenSet = true; m_externalModelEndpoints.emplace_back(std::forward<ExternalModelEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The model versions included in the detector version. </p>
      */
-    inline const Aws::Vector<ModelVersion>& GetModelVersions() const{ return m_modelVersions; }
-    inline void SetModelVersions(const Aws::Vector<ModelVersion>& value) { m_modelVersions = value; }
-    inline void SetModelVersions(Aws::Vector<ModelVersion>&& value) { m_modelVersions = std::move(value); }
-    inline GetDetectorVersionResult& WithModelVersions(const Aws::Vector<ModelVersion>& value) { SetModelVersions(value); return *this;}
-    inline GetDetectorVersionResult& WithModelVersions(Aws::Vector<ModelVersion>&& value) { SetModelVersions(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& AddModelVersions(const ModelVersion& value) { m_modelVersions.push_back(value); return *this; }
-    inline GetDetectorVersionResult& AddModelVersions(ModelVersion&& value) { m_modelVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ModelVersion>& GetModelVersions() const { return m_modelVersions; }
+    template<typename ModelVersionsT = Aws::Vector<ModelVersion>>
+    void SetModelVersions(ModelVersionsT&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions = std::forward<ModelVersionsT>(value); }
+    template<typename ModelVersionsT = Aws::Vector<ModelVersion>>
+    GetDetectorVersionResult& WithModelVersions(ModelVersionsT&& value) { SetModelVersions(std::forward<ModelVersionsT>(value)); return *this;}
+    template<typename ModelVersionsT = ModelVersion>
+    GetDetectorVersionResult& AddModelVersions(ModelVersionsT&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions.emplace_back(std::forward<ModelVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The rules included in the detector version.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = std::move(value); }
-    inline GetDetectorVersionResult& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline GetDetectorVersionResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& AddRules(const Rule& value) { m_rules.push_back(value); return *this; }
-    inline GetDetectorVersionResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    GetDetectorVersionResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    GetDetectorVersionResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the detector version.</p>
      */
-    inline const DetectorVersionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DetectorVersionStatus& value) { m_status = value; }
-    inline void SetStatus(DetectorVersionStatus&& value) { m_status = std::move(value); }
-    inline GetDetectorVersionResult& WithStatus(const DetectorVersionStatus& value) { SetStatus(value); return *this;}
-    inline GetDetectorVersionResult& WithStatus(DetectorVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DetectorVersionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DetectorVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDetectorVersionResult& WithStatus(DetectorVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the detector version was last updated. </p>
      */
-    inline const Aws::String& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-    inline void SetLastUpdatedTime(const Aws::String& value) { m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::String&& value) { m_lastUpdatedTime = std::move(value); }
-    inline void SetLastUpdatedTime(const char* value) { m_lastUpdatedTime.assign(value); }
-    inline GetDetectorVersionResult& WithLastUpdatedTime(const Aws::String& value) { SetLastUpdatedTime(value); return *this;}
-    inline GetDetectorVersionResult& WithLastUpdatedTime(Aws::String&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithLastUpdatedTime(const char* value) { SetLastUpdatedTime(value); return *this;}
+    inline const Aws::String& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
+    template<typename LastUpdatedTimeT = Aws::String>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::String>
+    GetDetectorVersionResult& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the detector version was created. </p>
      */
-    inline const Aws::String& GetCreatedTime() const{ return m_createdTime; }
-    inline void SetCreatedTime(const Aws::String& value) { m_createdTime = value; }
-    inline void SetCreatedTime(Aws::String&& value) { m_createdTime = std::move(value); }
-    inline void SetCreatedTime(const char* value) { m_createdTime.assign(value); }
-    inline GetDetectorVersionResult& WithCreatedTime(const Aws::String& value) { SetCreatedTime(value); return *this;}
-    inline GetDetectorVersionResult& WithCreatedTime(Aws::String&& value) { SetCreatedTime(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
+    inline const Aws::String& GetCreatedTime() const { return m_createdTime; }
+    template<typename CreatedTimeT = Aws::String>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::String>
+    GetDetectorVersionResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,61 +150,67 @@ namespace Model
      * rules and returns the outcomes for all matched rules. You can define and edit
      * the rule mode at the detector version level, when it is in draft status.</p>
      */
-    inline const RuleExecutionMode& GetRuleExecutionMode() const{ return m_ruleExecutionMode; }
-    inline void SetRuleExecutionMode(const RuleExecutionMode& value) { m_ruleExecutionMode = value; }
-    inline void SetRuleExecutionMode(RuleExecutionMode&& value) { m_ruleExecutionMode = std::move(value); }
-    inline GetDetectorVersionResult& WithRuleExecutionMode(const RuleExecutionMode& value) { SetRuleExecutionMode(value); return *this;}
-    inline GetDetectorVersionResult& WithRuleExecutionMode(RuleExecutionMode&& value) { SetRuleExecutionMode(std::move(value)); return *this;}
+    inline RuleExecutionMode GetRuleExecutionMode() const { return m_ruleExecutionMode; }
+    inline void SetRuleExecutionMode(RuleExecutionMode value) { m_ruleExecutionModeHasBeenSet = true; m_ruleExecutionMode = value; }
+    inline GetDetectorVersionResult& WithRuleExecutionMode(RuleExecutionMode value) { SetRuleExecutionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector version ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetDetectorVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetDetectorVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetDetectorVersionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDetectorVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDetectorVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDetectorVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDetectorVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_detectorId;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_externalModelEndpoints;
+    bool m_externalModelEndpointsHasBeenSet = false;
 
     Aws::Vector<ModelVersion> m_modelVersions;
+    bool m_modelVersionsHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
+    bool m_rulesHasBeenSet = false;
 
-    DetectorVersionStatus m_status;
+    DetectorVersionStatus m_status{DetectorVersionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_createdTime;
+    bool m_createdTimeHasBeenSet = false;
 
-    RuleExecutionMode m_ruleExecutionMode;
+    RuleExecutionMode m_ruleExecutionMode{RuleExecutionMode::NOT_SET};
+    bool m_ruleExecutionModeHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

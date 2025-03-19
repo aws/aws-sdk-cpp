@@ -28,35 +28,35 @@ namespace Model
   class GetSegmentImportJobsResult
   {
   public:
-    AWS_PINPOINT_API GetSegmentImportJobsResult();
+    AWS_PINPOINT_API GetSegmentImportJobsResult() = default;
     AWS_PINPOINT_API GetSegmentImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetSegmentImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ImportJobsResponse& GetImportJobsResponse() const{ return m_importJobsResponse; }
-    inline void SetImportJobsResponse(const ImportJobsResponse& value) { m_importJobsResponse = value; }
-    inline void SetImportJobsResponse(ImportJobsResponse&& value) { m_importJobsResponse = std::move(value); }
-    inline GetSegmentImportJobsResult& WithImportJobsResponse(const ImportJobsResponse& value) { SetImportJobsResponse(value); return *this;}
-    inline GetSegmentImportJobsResult& WithImportJobsResponse(ImportJobsResponse&& value) { SetImportJobsResponse(std::move(value)); return *this;}
+    inline const ImportJobsResponse& GetImportJobsResponse() const { return m_importJobsResponse; }
+    template<typename ImportJobsResponseT = ImportJobsResponse>
+    void SetImportJobsResponse(ImportJobsResponseT&& value) { m_importJobsResponseHasBeenSet = true; m_importJobsResponse = std::forward<ImportJobsResponseT>(value); }
+    template<typename ImportJobsResponseT = ImportJobsResponse>
+    GetSegmentImportJobsResult& WithImportJobsResponse(ImportJobsResponseT&& value) { SetImportJobsResponse(std::forward<ImportJobsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSegmentImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSegmentImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSegmentImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSegmentImportJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ImportJobsResponse m_importJobsResponse;
+    bool m_importJobsResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

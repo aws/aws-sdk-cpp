@@ -28,7 +28,7 @@ namespace Model
   class StartNetworkResourceUpdateResult
   {
   public:
-    AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateResult();
+    AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateResult() = default;
     AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The network resource.</p>
      */
-    inline const NetworkResource& GetNetworkResource() const{ return m_networkResource; }
-    inline void SetNetworkResource(const NetworkResource& value) { m_networkResource = value; }
-    inline void SetNetworkResource(NetworkResource&& value) { m_networkResource = std::move(value); }
-    inline StartNetworkResourceUpdateResult& WithNetworkResource(const NetworkResource& value) { SetNetworkResource(value); return *this;}
-    inline StartNetworkResourceUpdateResult& WithNetworkResource(NetworkResource&& value) { SetNetworkResource(std::move(value)); return *this;}
+    inline const NetworkResource& GetNetworkResource() const { return m_networkResource; }
+    template<typename NetworkResourceT = NetworkResource>
+    void SetNetworkResource(NetworkResourceT&& value) { m_networkResourceHasBeenSet = true; m_networkResource = std::forward<NetworkResourceT>(value); }
+    template<typename NetworkResourceT = NetworkResource>
+    StartNetworkResourceUpdateResult& WithNetworkResource(NetworkResourceT&& value) { SetNetworkResource(std::forward<NetworkResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartNetworkResourceUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartNetworkResourceUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartNetworkResourceUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartNetworkResourceUpdateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NetworkResource m_networkResource;
+    bool m_networkResourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

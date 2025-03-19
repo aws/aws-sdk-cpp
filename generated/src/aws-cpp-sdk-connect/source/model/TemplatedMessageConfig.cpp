@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TemplatedMessageConfig::TemplatedMessageConfig() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false),
-    m_templateAttributesHasBeenSet(false)
-{
-}
-
 TemplatedMessageConfig::TemplatedMessageConfig(JsonView jsonValue)
-  : TemplatedMessageConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TemplatedMessageConfig& TemplatedMessageConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KnowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("KnowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageTemplateId"))
   {
     m_messageTemplateId = jsonValue.GetString("MessageTemplateId");
-
     m_messageTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateAttributes"))
   {
     m_templateAttributes = jsonValue.GetObject("TemplateAttributes");
-
     m_templateAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

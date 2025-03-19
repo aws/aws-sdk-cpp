@@ -18,16 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-Frequency::Frequency() : 
-    m_units(FrequencyUnits::NOT_SET),
-    m_unitsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Frequency::Frequency(JsonView jsonValue)
-  : Frequency()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Frequency& Frequency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("units"))
   {
     m_units = FrequencyUnitsMapper::GetFrequencyUnitsForName(jsonValue.GetString("units"));
-
     m_unitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

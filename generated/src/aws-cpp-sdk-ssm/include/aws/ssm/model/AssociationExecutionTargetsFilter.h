@@ -32,7 +32,7 @@ namespace Model
   class AssociationExecutionTargetsFilter
   {
   public:
-    AWS_SSM_API AssociationExecutionTargetsFilter();
+    AWS_SSM_API AssociationExecutionTargetsFilter() = default;
     AWS_SSM_API AssociationExecutionTargetsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API AssociationExecutionTargetsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The key value used in the request.</p>
      */
-    inline const AssociationExecutionTargetsFilterKey& GetKey() const{ return m_key; }
+    inline AssociationExecutionTargetsFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const AssociationExecutionTargetsFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(AssociationExecutionTargetsFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline AssociationExecutionTargetsFilter& WithKey(const AssociationExecutionTargetsFilterKey& value) { SetKey(value); return *this;}
-    inline AssociationExecutionTargetsFilter& WithKey(AssociationExecutionTargetsFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(AssociationExecutionTargetsFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline AssociationExecutionTargetsFilter& WithKey(AssociationExecutionTargetsFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value specified for the key.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AssociationExecutionTargetsFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AssociationExecutionTargetsFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AssociationExecutionTargetsFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AssociationExecutionTargetsFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    AssociationExecutionTargetsFilterKey m_key;
+    AssociationExecutionTargetsFilterKey m_key{AssociationExecutionTargetsFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::String m_value;

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-DisconnectReason::DisconnectReason() : 
-    m_codeHasBeenSet(false)
-{
-}
-
 DisconnectReason::DisconnectReason(JsonView jsonValue)
-  : DisconnectReason()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DisconnectReason& DisconnectReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

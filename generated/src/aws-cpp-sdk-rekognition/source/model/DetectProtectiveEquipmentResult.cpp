@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectProtectiveEquipmentResult::DetectProtectiveEquipmentResult()
-{
-}
-
 DetectProtectiveEquipmentResult::DetectProtectiveEquipmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DetectProtectiveEquipmentResult& DetectProtectiveEquipmentResult::operator =(con
   if(jsonValue.ValueExists("ProtectiveEquipmentModelVersion"))
   {
     m_protectiveEquipmentModelVersion = jsonValue.GetString("ProtectiveEquipmentModelVersion");
-
+    m_protectiveEquipmentModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Persons"))
   {
     Aws::Utils::Array<JsonView> personsJsonList = jsonValue.GetArray("Persons");
@@ -42,20 +37,20 @@ DetectProtectiveEquipmentResult& DetectProtectiveEquipmentResult::operator =(con
     {
       m_persons.push_back(personsJsonList[personsIndex].AsObject());
     }
+    m_personsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
+    m_summaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

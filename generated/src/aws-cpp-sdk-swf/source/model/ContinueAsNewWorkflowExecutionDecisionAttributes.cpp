@@ -18,22 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ContinueAsNewWorkflowExecutionDecisionAttributes::ContinueAsNewWorkflowExecutionDecisionAttributes() : 
-    m_inputHasBeenSet(false),
-    m_executionStartToCloseTimeoutHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_taskStartToCloseTimeoutHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_workflowTypeVersionHasBeenSet(false),
-    m_lambdaRoleHasBeenSet(false)
-{
-}
-
 ContinueAsNewWorkflowExecutionDecisionAttributes::ContinueAsNewWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-  : ContinueAsNewWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ContinueAsNewWorkflowExecutionDecisionAttributes& ContinueAsNewWorkflowExecution
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionStartToCloseTimeout"))
   {
     m_executionStartToCloseTimeout = jsonValue.GetString("executionStartToCloseTimeout");
-
     m_executionStartToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskList"))
   {
     m_taskList = jsonValue.GetObject("taskList");
-
     m_taskListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskPriority"))
   {
     m_taskPriority = jsonValue.GetString("taskPriority");
-
     m_taskPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStartToCloseTimeout"))
   {
     m_taskStartToCloseTimeout = jsonValue.GetString("taskStartToCloseTimeout");
-
     m_taskStartToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("childPolicy"))
   {
     m_childPolicy = ChildPolicyMapper::GetChildPolicyForName(jsonValue.GetString("childPolicy"));
-
     m_childPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
@@ -91,21 +64,16 @@ ContinueAsNewWorkflowExecutionDecisionAttributes& ContinueAsNewWorkflowExecution
     }
     m_tagListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowTypeVersion"))
   {
     m_workflowTypeVersion = jsonValue.GetString("workflowTypeVersion");
-
     m_workflowTypeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaRole"))
   {
     m_lambdaRole = jsonValue.GetString("lambdaRole");
-
     m_lambdaRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

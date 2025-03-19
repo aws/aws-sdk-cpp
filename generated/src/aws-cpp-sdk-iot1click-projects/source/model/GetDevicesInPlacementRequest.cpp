@@ -12,12 +12,6 @@ using namespace Aws::IoT1ClickProjects::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDevicesInPlacementRequest::GetDevicesInPlacementRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_placementNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDevicesInPlacementRequest::SerializePayload() const
 {
   return {};

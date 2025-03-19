@@ -12,19 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportCertificateRequest::ImportCertificateRequest() : 
-    m_usage(CertificateUsageType::NOT_SET),
-    m_usageHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_activeDateHasBeenSet(false),
-    m_inactiveDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

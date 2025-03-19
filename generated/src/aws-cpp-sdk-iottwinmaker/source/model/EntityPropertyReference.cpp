@@ -18,17 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-EntityPropertyReference::EntityPropertyReference() : 
-    m_componentNameHasBeenSet(false),
-    m_componentPathHasBeenSet(false),
-    m_externalIdPropertyHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_propertyNameHasBeenSet(false)
-{
-}
-
 EntityPropertyReference::EntityPropertyReference(JsonView jsonValue)
-  : EntityPropertyReference()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ EntityPropertyReference& EntityPropertyReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentPath"))
   {
     m_componentPath = jsonValue.GetString("componentPath");
-
     m_componentPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalIdProperty"))
   {
     Aws::Map<Aws::String, JsonView> externalIdPropertyJsonMap = jsonValue.GetObject("externalIdProperty").GetAllObjects();
@@ -58,21 +44,16 @@ EntityPropertyReference& EntityPropertyReference::operator =(JsonView jsonValue)
     }
     m_externalIdPropertyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyName"))
   {
     m_propertyName = jsonValue.GetString("propertyName");
-
     m_propertyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

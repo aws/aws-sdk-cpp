@@ -34,7 +34,7 @@ namespace Model
   class SMSConfiguration
   {
   public:
-    AWS_IOTEVENTS_API SMSConfiguration();
+    AWS_IOTEVENTS_API SMSConfiguration() = default;
     AWS_IOTEVENTS_API SMSConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API SMSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The sender ID.</p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-    inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-    inline SMSConfiguration& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline SMSConfiguration& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline SMSConfiguration& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    SMSConfiguration& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The message that you want to send. The message can be up to 200
      * characters.</p>
      */
-    inline const Aws::String& GetAdditionalMessage() const{ return m_additionalMessage; }
+    inline const Aws::String& GetAdditionalMessage() const { return m_additionalMessage; }
     inline bool AdditionalMessageHasBeenSet() const { return m_additionalMessageHasBeenSet; }
-    inline void SetAdditionalMessage(const Aws::String& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = value; }
-    inline void SetAdditionalMessage(Aws::String&& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = std::move(value); }
-    inline void SetAdditionalMessage(const char* value) { m_additionalMessageHasBeenSet = true; m_additionalMessage.assign(value); }
-    inline SMSConfiguration& WithAdditionalMessage(const Aws::String& value) { SetAdditionalMessage(value); return *this;}
-    inline SMSConfiguration& WithAdditionalMessage(Aws::String&& value) { SetAdditionalMessage(std::move(value)); return *this;}
-    inline SMSConfiguration& WithAdditionalMessage(const char* value) { SetAdditionalMessage(value); return *this;}
+    template<typename AdditionalMessageT = Aws::String>
+    void SetAdditionalMessage(AdditionalMessageT&& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = std::forward<AdditionalMessageT>(value); }
+    template<typename AdditionalMessageT = Aws::String>
+    SMSConfiguration& WithAdditionalMessage(AdditionalMessageT&& value) { SetAdditionalMessage(std::forward<AdditionalMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add
      * the users that receive SMS messages to your AWS SSO store</a>.</p> 
      */
-    inline const Aws::Vector<RecipientDetail>& GetRecipients() const{ return m_recipients; }
+    inline const Aws::Vector<RecipientDetail>& GetRecipients() const { return m_recipients; }
     inline bool RecipientsHasBeenSet() const { return m_recipientsHasBeenSet; }
-    inline void SetRecipients(const Aws::Vector<RecipientDetail>& value) { m_recipientsHasBeenSet = true; m_recipients = value; }
-    inline void SetRecipients(Aws::Vector<RecipientDetail>&& value) { m_recipientsHasBeenSet = true; m_recipients = std::move(value); }
-    inline SMSConfiguration& WithRecipients(const Aws::Vector<RecipientDetail>& value) { SetRecipients(value); return *this;}
-    inline SMSConfiguration& WithRecipients(Aws::Vector<RecipientDetail>&& value) { SetRecipients(std::move(value)); return *this;}
-    inline SMSConfiguration& AddRecipients(const RecipientDetail& value) { m_recipientsHasBeenSet = true; m_recipients.push_back(value); return *this; }
-    inline SMSConfiguration& AddRecipients(RecipientDetail&& value) { m_recipientsHasBeenSet = true; m_recipients.push_back(std::move(value)); return *this; }
+    template<typename RecipientsT = Aws::Vector<RecipientDetail>>
+    void SetRecipients(RecipientsT&& value) { m_recipientsHasBeenSet = true; m_recipients = std::forward<RecipientsT>(value); }
+    template<typename RecipientsT = Aws::Vector<RecipientDetail>>
+    SMSConfiguration& WithRecipients(RecipientsT&& value) { SetRecipients(std::forward<RecipientsT>(value)); return *this;}
+    template<typename RecipientsT = RecipientDetail>
+    SMSConfiguration& AddRecipients(RecipientsT&& value) { m_recipientsHasBeenSet = true; m_recipients.emplace_back(std::forward<RecipientsT>(value)); return *this; }
     ///@}
   private:
 

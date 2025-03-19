@@ -30,7 +30,7 @@ namespace Model
   class SharingConfig
   {
   public:
-    AWS_VPCLATTICE_API SharingConfig();
+    AWS_VPCLATTICE_API SharingConfig() = default;
     AWS_VPCLATTICE_API SharingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API SharingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Specifies if the service network is enabled for sharing.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SharingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

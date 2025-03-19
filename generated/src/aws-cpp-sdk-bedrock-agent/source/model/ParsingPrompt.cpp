@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ParsingPrompt::ParsingPrompt() : 
-    m_parsingPromptTextHasBeenSet(false)
-{
-}
-
 ParsingPrompt::ParsingPrompt(JsonView jsonValue)
-  : ParsingPrompt()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParsingPrompt& ParsingPrompt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("parsingPromptText"))
   {
     m_parsingPromptText = jsonValue.GetString("parsingPromptText");
-
     m_parsingPromptTextHasBeenSet = true;
   }
-
   return *this;
 }
 

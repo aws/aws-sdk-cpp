@@ -22,7 +22,7 @@ namespace Model
   class GetParametersForImportRequest : public PaymentCryptographyRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API GetParametersForImportRequest();
+    AWS_PAYMENTCRYPTOGRAPHY_API GetParametersForImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,10 @@ namespace Model
      * (<code>KEY_CRYPTOGRAM</code>).</p> <p>Import token is not required for TR-31,
      * root public key cerificate or trusted public key certificate.</p>
      */
-    inline const KeyMaterialType& GetKeyMaterialType() const{ return m_keyMaterialType; }
+    inline KeyMaterialType GetKeyMaterialType() const { return m_keyMaterialType; }
     inline bool KeyMaterialTypeHasBeenSet() const { return m_keyMaterialTypeHasBeenSet; }
-    inline void SetKeyMaterialType(const KeyMaterialType& value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = value; }
-    inline void SetKeyMaterialType(KeyMaterialType&& value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = std::move(value); }
-    inline GetParametersForImportRequest& WithKeyMaterialType(const KeyMaterialType& value) { SetKeyMaterialType(value); return *this;}
-    inline GetParametersForImportRequest& WithKeyMaterialType(KeyMaterialType&& value) { SetKeyMaterialType(std::move(value)); return *this;}
+    inline void SetKeyMaterialType(KeyMaterialType value) { m_keyMaterialTypeHasBeenSet = true; m_keyMaterialType = value; }
+    inline GetParametersForImportRequest& WithKeyMaterialType(KeyMaterialType value) { SetKeyMaterialType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * <code>RSA_4096</code> are the allowed algorithms for RSA WrappedKeyCryptogram
      * import.</p>
      */
-    inline const KeyAlgorithm& GetWrappingKeyAlgorithm() const{ return m_wrappingKeyAlgorithm; }
+    inline KeyAlgorithm GetWrappingKeyAlgorithm() const { return m_wrappingKeyAlgorithm; }
     inline bool WrappingKeyAlgorithmHasBeenSet() const { return m_wrappingKeyAlgorithmHasBeenSet; }
-    inline void SetWrappingKeyAlgorithm(const KeyAlgorithm& value) { m_wrappingKeyAlgorithmHasBeenSet = true; m_wrappingKeyAlgorithm = value; }
-    inline void SetWrappingKeyAlgorithm(KeyAlgorithm&& value) { m_wrappingKeyAlgorithmHasBeenSet = true; m_wrappingKeyAlgorithm = std::move(value); }
-    inline GetParametersForImportRequest& WithWrappingKeyAlgorithm(const KeyAlgorithm& value) { SetWrappingKeyAlgorithm(value); return *this;}
-    inline GetParametersForImportRequest& WithWrappingKeyAlgorithm(KeyAlgorithm&& value) { SetWrappingKeyAlgorithm(std::move(value)); return *this;}
+    inline void SetWrappingKeyAlgorithm(KeyAlgorithm value) { m_wrappingKeyAlgorithmHasBeenSet = true; m_wrappingKeyAlgorithm = value; }
+    inline GetParametersForImportRequest& WithWrappingKeyAlgorithm(KeyAlgorithm value) { SetWrappingKeyAlgorithm(value); return *this;}
     ///@}
   private:
 
-    KeyMaterialType m_keyMaterialType;
+    KeyMaterialType m_keyMaterialType{KeyMaterialType::NOT_SET};
     bool m_keyMaterialTypeHasBeenSet = false;
 
-    KeyAlgorithm m_wrappingKeyAlgorithm;
+    KeyAlgorithm m_wrappingKeyAlgorithm{KeyAlgorithm::NOT_SET};
     bool m_wrappingKeyAlgorithmHasBeenSet = false;
   };
 

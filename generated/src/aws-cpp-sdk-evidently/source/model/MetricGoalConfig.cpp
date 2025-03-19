@@ -18,15 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-MetricGoalConfig::MetricGoalConfig() : 
-    m_desiredChange(ChangeDirectionEnum::NOT_SET),
-    m_desiredChangeHasBeenSet(false),
-    m_metricDefinitionHasBeenSet(false)
-{
-}
-
 MetricGoalConfig::MetricGoalConfig(JsonView jsonValue)
-  : MetricGoalConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricGoalConfig& MetricGoalConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("desiredChange"))
   {
     m_desiredChange = ChangeDirectionEnumMapper::GetChangeDirectionEnumForName(jsonValue.GetString("desiredChange"));
-
     m_desiredChangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricDefinition"))
   {
     m_metricDefinition = jsonValue.GetObject("metricDefinition");
-
     m_metricDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

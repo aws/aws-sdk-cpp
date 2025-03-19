@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SnowflakeRetryOptions::SnowflakeRetryOptions() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 SnowflakeRetryOptions::SnowflakeRetryOptions(JsonView jsonValue)
-  : SnowflakeRetryOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SnowflakeRetryOptions& SnowflakeRetryOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

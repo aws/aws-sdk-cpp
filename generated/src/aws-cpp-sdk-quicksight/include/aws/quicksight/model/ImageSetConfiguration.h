@@ -31,7 +31,7 @@ namespace Model
   class ImageSetConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ImageSetConfiguration();
+    AWS_QUICKSIGHT_API ImageSetConfiguration() = default;
     AWS_QUICKSIGHT_API ImageSetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ImageSetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The original image.</p>
      */
-    inline const ImageConfiguration& GetOriginal() const{ return m_original; }
+    inline const ImageConfiguration& GetOriginal() const { return m_original; }
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
-    inline void SetOriginal(const ImageConfiguration& value) { m_originalHasBeenSet = true; m_original = value; }
-    inline void SetOriginal(ImageConfiguration&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
-    inline ImageSetConfiguration& WithOriginal(const ImageConfiguration& value) { SetOriginal(value); return *this;}
-    inline ImageSetConfiguration& WithOriginal(ImageConfiguration&& value) { SetOriginal(std::move(value)); return *this;}
+    template<typename OriginalT = ImageConfiguration>
+    void SetOriginal(OriginalT&& value) { m_originalHasBeenSet = true; m_original = std::forward<OriginalT>(value); }
+    template<typename OriginalT = ImageConfiguration>
+    ImageSetConfiguration& WithOriginal(OriginalT&& value) { SetOriginal(std::forward<OriginalT>(value)); return *this;}
     ///@}
   private:
 

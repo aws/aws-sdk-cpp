@@ -23,7 +23,7 @@ namespace Model
   class QueryRequest : public TimestreamQueryRequest
   {
   public:
-    AWS_TIMESTREAMQUERY_API QueryRequest();
+    AWS_TIMESTREAMQUERY_API QueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p> The query to be run by Timestream. </p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline QueryRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline QueryRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline QueryRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    QueryRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * </li> <li> <p> After 4 hours, any request with the same <code>ClientToken</code>
      * is treated as a new request. </p> </li> </ul>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline QueryRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline QueryRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline QueryRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    QueryRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +101,12 @@ namespace Model
      * reader do not have the same query string in the query requests, the query will
      * fail with an <code>Invalid pagination token</code> error. </p> </li> </ul>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline QueryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline QueryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline QueryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    QueryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +125,7 @@ namespace Model
      * provided, Timestream will send the necessary number of rows to meet the 1 MB
      * limit.</p>
      */
-    inline int GetMaxRows() const{ return m_maxRows; }
+    inline int GetMaxRows() const { return m_maxRows; }
     inline bool MaxRowsHasBeenSet() const { return m_maxRowsHasBeenSet; }
     inline void SetMaxRows(int value) { m_maxRowsHasBeenSet = true; m_maxRows = value; }
     inline QueryRequest& WithMaxRows(int value) { SetMaxRows(value); return *this;}
@@ -144,12 +138,12 @@ namespace Model
      * to query results for the query that you executed. You can use
      * <code>QueryInsights</code> to tune your query performance.</p>
      */
-    inline const QueryInsights& GetQueryInsights() const{ return m_queryInsights; }
+    inline const QueryInsights& GetQueryInsights() const { return m_queryInsights; }
     inline bool QueryInsightsHasBeenSet() const { return m_queryInsightsHasBeenSet; }
-    inline void SetQueryInsights(const QueryInsights& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = value; }
-    inline void SetQueryInsights(QueryInsights&& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = std::move(value); }
-    inline QueryRequest& WithQueryInsights(const QueryInsights& value) { SetQueryInsights(value); return *this;}
-    inline QueryRequest& WithQueryInsights(QueryInsights&& value) { SetQueryInsights(std::move(value)); return *this;}
+    template<typename QueryInsightsT = QueryInsights>
+    void SetQueryInsights(QueryInsightsT&& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = std::forward<QueryInsightsT>(value); }
+    template<typename QueryInsightsT = QueryInsights>
+    QueryRequest& WithQueryInsights(QueryInsightsT&& value) { SetQueryInsights(std::forward<QueryInsightsT>(value)); return *this;}
     ///@}
   private:
 
@@ -162,7 +156,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxRows;
+    int m_maxRows{0};
     bool m_maxRowsHasBeenSet = false;
 
     QueryInsights m_queryInsights;

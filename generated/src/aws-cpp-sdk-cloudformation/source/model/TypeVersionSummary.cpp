@@ -20,22 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeVersionSummary::TypeVersionSummary() : 
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_timeCreatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publicVersionNumberHasBeenSet(false)
-{
-}
-
 TypeVersionSummary::TypeVersionSummary(const XmlNode& xmlNode)
-  : TypeVersionSummary()
 {
   *this = xmlNode;
 }
@@ -49,7 +34,7 @@ TypeVersionSummary& TypeVersionSummary::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");

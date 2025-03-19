@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageFilterCriterion::CoverageFilterCriterion() : 
-    m_criterionKey(CoverageFilterCriterionKey::NOT_SET),
-    m_criterionKeyHasBeenSet(false),
-    m_filterConditionHasBeenSet(false)
-{
-}
-
 CoverageFilterCriterion::CoverageFilterCriterion(JsonView jsonValue)
-  : CoverageFilterCriterion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CoverageFilterCriterion& CoverageFilterCriterion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("criterionKey"))
   {
     m_criterionKey = CoverageFilterCriterionKeyMapper::GetCoverageFilterCriterionKeyForName(jsonValue.GetString("criterionKey"));
-
     m_criterionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterCondition"))
   {
     m_filterCondition = jsonValue.GetObject("filterCondition");
-
     m_filterConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

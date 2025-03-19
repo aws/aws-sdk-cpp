@@ -12,16 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableMacieRequest::EnableMacieRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_findingPublishingFrequencyHasBeenSet(false),
-    m_status(MacieStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String EnableMacieRequest::SerializePayload() const
 {
   JsonValue payload;

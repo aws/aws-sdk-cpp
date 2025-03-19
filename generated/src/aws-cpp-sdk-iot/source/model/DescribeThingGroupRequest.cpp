@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeThingGroupRequest::DescribeThingGroupRequest() : 
-    m_thingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeThingGroupRequest::SerializePayload() const
 {
   return {};

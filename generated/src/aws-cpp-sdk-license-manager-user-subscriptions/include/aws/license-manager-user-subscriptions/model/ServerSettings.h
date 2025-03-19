@@ -31,7 +31,7 @@ namespace Model
   class ServerSettings
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ServerSettings();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ServerSettings() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ServerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ServerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>The <code>RdsSalSettings</code> resource contains settings to configure a
      * specific Remote Desktop Services (RDS) license server.</p>
      */
-    inline const RdsSalSettings& GetRdsSalSettings() const{ return m_rdsSalSettings; }
+    inline const RdsSalSettings& GetRdsSalSettings() const { return m_rdsSalSettings; }
     inline bool RdsSalSettingsHasBeenSet() const { return m_rdsSalSettingsHasBeenSet; }
-    inline void SetRdsSalSettings(const RdsSalSettings& value) { m_rdsSalSettingsHasBeenSet = true; m_rdsSalSettings = value; }
-    inline void SetRdsSalSettings(RdsSalSettings&& value) { m_rdsSalSettingsHasBeenSet = true; m_rdsSalSettings = std::move(value); }
-    inline ServerSettings& WithRdsSalSettings(const RdsSalSettings& value) { SetRdsSalSettings(value); return *this;}
-    inline ServerSettings& WithRdsSalSettings(RdsSalSettings&& value) { SetRdsSalSettings(std::move(value)); return *this;}
+    template<typename RdsSalSettingsT = RdsSalSettings>
+    void SetRdsSalSettings(RdsSalSettingsT&& value) { m_rdsSalSettingsHasBeenSet = true; m_rdsSalSettings = std::forward<RdsSalSettingsT>(value); }
+    template<typename RdsSalSettingsT = RdsSalSettings>
+    ServerSettings& WithRdsSalSettings(RdsSalSettingsT&& value) { SetRdsSalSettings(std::forward<RdsSalSettingsT>(value)); return *this;}
     ///@}
   private:
 

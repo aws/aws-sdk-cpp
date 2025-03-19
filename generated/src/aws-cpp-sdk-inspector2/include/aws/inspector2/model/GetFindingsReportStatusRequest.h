@@ -21,7 +21,7 @@ namespace Model
   class GetFindingsReportStatusRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API GetFindingsReportStatusRequest();
+    AWS_INSPECTOR2_API GetFindingsReportStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the report to retrieve the status of.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
+    inline const Aws::String& GetReportId() const { return m_reportId; }
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-    inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-    inline GetFindingsReportStatusRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline GetFindingsReportStatusRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline GetFindingsReportStatusRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    GetFindingsReportStatusRequest& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
   private:
 

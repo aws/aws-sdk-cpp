@@ -40,7 +40,7 @@ namespace Model
   class TransformOperation
   {
   public:
-    AWS_QUICKSIGHT_API TransformOperation();
+    AWS_QUICKSIGHT_API TransformOperation() = default;
     AWS_QUICKSIGHT_API TransformOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TransformOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,24 +51,24 @@ namespace Model
      * <p>An operation that projects columns. Operations that come after a projection
      * can only refer to projected columns.</p>
      */
-    inline const ProjectOperation& GetProjectOperation() const{ return m_projectOperation; }
+    inline const ProjectOperation& GetProjectOperation() const { return m_projectOperation; }
     inline bool ProjectOperationHasBeenSet() const { return m_projectOperationHasBeenSet; }
-    inline void SetProjectOperation(const ProjectOperation& value) { m_projectOperationHasBeenSet = true; m_projectOperation = value; }
-    inline void SetProjectOperation(ProjectOperation&& value) { m_projectOperationHasBeenSet = true; m_projectOperation = std::move(value); }
-    inline TransformOperation& WithProjectOperation(const ProjectOperation& value) { SetProjectOperation(value); return *this;}
-    inline TransformOperation& WithProjectOperation(ProjectOperation&& value) { SetProjectOperation(std::move(value)); return *this;}
+    template<typename ProjectOperationT = ProjectOperation>
+    void SetProjectOperation(ProjectOperationT&& value) { m_projectOperationHasBeenSet = true; m_projectOperation = std::forward<ProjectOperationT>(value); }
+    template<typename ProjectOperationT = ProjectOperation>
+    TransformOperation& WithProjectOperation(ProjectOperationT&& value) { SetProjectOperation(std::forward<ProjectOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An operation that filters rows based on some condition.</p>
      */
-    inline const FilterOperation& GetFilterOperation() const{ return m_filterOperation; }
+    inline const FilterOperation& GetFilterOperation() const { return m_filterOperation; }
     inline bool FilterOperationHasBeenSet() const { return m_filterOperationHasBeenSet; }
-    inline void SetFilterOperation(const FilterOperation& value) { m_filterOperationHasBeenSet = true; m_filterOperation = value; }
-    inline void SetFilterOperation(FilterOperation&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::move(value); }
-    inline TransformOperation& WithFilterOperation(const FilterOperation& value) { SetFilterOperation(value); return *this;}
-    inline TransformOperation& WithFilterOperation(FilterOperation&& value) { SetFilterOperation(std::move(value)); return *this;}
+    template<typename FilterOperationT = FilterOperation>
+    void SetFilterOperation(FilterOperationT&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::forward<FilterOperationT>(value); }
+    template<typename FilterOperationT = FilterOperation>
+    TransformOperation& WithFilterOperation(FilterOperationT&& value) { SetFilterOperation(std::forward<FilterOperationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,68 +76,68 @@ namespace Model
      * <p>An operation that creates calculated columns. Columns created in one such
      * operation form a lexical closure.</p>
      */
-    inline const CreateColumnsOperation& GetCreateColumnsOperation() const{ return m_createColumnsOperation; }
+    inline const CreateColumnsOperation& GetCreateColumnsOperation() const { return m_createColumnsOperation; }
     inline bool CreateColumnsOperationHasBeenSet() const { return m_createColumnsOperationHasBeenSet; }
-    inline void SetCreateColumnsOperation(const CreateColumnsOperation& value) { m_createColumnsOperationHasBeenSet = true; m_createColumnsOperation = value; }
-    inline void SetCreateColumnsOperation(CreateColumnsOperation&& value) { m_createColumnsOperationHasBeenSet = true; m_createColumnsOperation = std::move(value); }
-    inline TransformOperation& WithCreateColumnsOperation(const CreateColumnsOperation& value) { SetCreateColumnsOperation(value); return *this;}
-    inline TransformOperation& WithCreateColumnsOperation(CreateColumnsOperation&& value) { SetCreateColumnsOperation(std::move(value)); return *this;}
+    template<typename CreateColumnsOperationT = CreateColumnsOperation>
+    void SetCreateColumnsOperation(CreateColumnsOperationT&& value) { m_createColumnsOperationHasBeenSet = true; m_createColumnsOperation = std::forward<CreateColumnsOperationT>(value); }
+    template<typename CreateColumnsOperationT = CreateColumnsOperation>
+    TransformOperation& WithCreateColumnsOperation(CreateColumnsOperationT&& value) { SetCreateColumnsOperation(std::forward<CreateColumnsOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An operation that renames a column.</p>
      */
-    inline const RenameColumnOperation& GetRenameColumnOperation() const{ return m_renameColumnOperation; }
+    inline const RenameColumnOperation& GetRenameColumnOperation() const { return m_renameColumnOperation; }
     inline bool RenameColumnOperationHasBeenSet() const { return m_renameColumnOperationHasBeenSet; }
-    inline void SetRenameColumnOperation(const RenameColumnOperation& value) { m_renameColumnOperationHasBeenSet = true; m_renameColumnOperation = value; }
-    inline void SetRenameColumnOperation(RenameColumnOperation&& value) { m_renameColumnOperationHasBeenSet = true; m_renameColumnOperation = std::move(value); }
-    inline TransformOperation& WithRenameColumnOperation(const RenameColumnOperation& value) { SetRenameColumnOperation(value); return *this;}
-    inline TransformOperation& WithRenameColumnOperation(RenameColumnOperation&& value) { SetRenameColumnOperation(std::move(value)); return *this;}
+    template<typename RenameColumnOperationT = RenameColumnOperation>
+    void SetRenameColumnOperation(RenameColumnOperationT&& value) { m_renameColumnOperationHasBeenSet = true; m_renameColumnOperation = std::forward<RenameColumnOperationT>(value); }
+    template<typename RenameColumnOperationT = RenameColumnOperation>
+    TransformOperation& WithRenameColumnOperation(RenameColumnOperationT&& value) { SetRenameColumnOperation(std::forward<RenameColumnOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A transform operation that casts a column to a different type.</p>
      */
-    inline const CastColumnTypeOperation& GetCastColumnTypeOperation() const{ return m_castColumnTypeOperation; }
+    inline const CastColumnTypeOperation& GetCastColumnTypeOperation() const { return m_castColumnTypeOperation; }
     inline bool CastColumnTypeOperationHasBeenSet() const { return m_castColumnTypeOperationHasBeenSet; }
-    inline void SetCastColumnTypeOperation(const CastColumnTypeOperation& value) { m_castColumnTypeOperationHasBeenSet = true; m_castColumnTypeOperation = value; }
-    inline void SetCastColumnTypeOperation(CastColumnTypeOperation&& value) { m_castColumnTypeOperationHasBeenSet = true; m_castColumnTypeOperation = std::move(value); }
-    inline TransformOperation& WithCastColumnTypeOperation(const CastColumnTypeOperation& value) { SetCastColumnTypeOperation(value); return *this;}
-    inline TransformOperation& WithCastColumnTypeOperation(CastColumnTypeOperation&& value) { SetCastColumnTypeOperation(std::move(value)); return *this;}
+    template<typename CastColumnTypeOperationT = CastColumnTypeOperation>
+    void SetCastColumnTypeOperation(CastColumnTypeOperationT&& value) { m_castColumnTypeOperationHasBeenSet = true; m_castColumnTypeOperation = std::forward<CastColumnTypeOperationT>(value); }
+    template<typename CastColumnTypeOperationT = CastColumnTypeOperation>
+    TransformOperation& WithCastColumnTypeOperation(CastColumnTypeOperationT&& value) { SetCastColumnTypeOperation(std::forward<CastColumnTypeOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An operation that tags a column with additional information.</p>
      */
-    inline const TagColumnOperation& GetTagColumnOperation() const{ return m_tagColumnOperation; }
+    inline const TagColumnOperation& GetTagColumnOperation() const { return m_tagColumnOperation; }
     inline bool TagColumnOperationHasBeenSet() const { return m_tagColumnOperationHasBeenSet; }
-    inline void SetTagColumnOperation(const TagColumnOperation& value) { m_tagColumnOperationHasBeenSet = true; m_tagColumnOperation = value; }
-    inline void SetTagColumnOperation(TagColumnOperation&& value) { m_tagColumnOperationHasBeenSet = true; m_tagColumnOperation = std::move(value); }
-    inline TransformOperation& WithTagColumnOperation(const TagColumnOperation& value) { SetTagColumnOperation(value); return *this;}
-    inline TransformOperation& WithTagColumnOperation(TagColumnOperation&& value) { SetTagColumnOperation(std::move(value)); return *this;}
+    template<typename TagColumnOperationT = TagColumnOperation>
+    void SetTagColumnOperation(TagColumnOperationT&& value) { m_tagColumnOperationHasBeenSet = true; m_tagColumnOperation = std::forward<TagColumnOperationT>(value); }
+    template<typename TagColumnOperationT = TagColumnOperation>
+    TransformOperation& WithTagColumnOperation(TagColumnOperationT&& value) { SetTagColumnOperation(std::forward<TagColumnOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UntagColumnOperation& GetUntagColumnOperation() const{ return m_untagColumnOperation; }
+    inline const UntagColumnOperation& GetUntagColumnOperation() const { return m_untagColumnOperation; }
     inline bool UntagColumnOperationHasBeenSet() const { return m_untagColumnOperationHasBeenSet; }
-    inline void SetUntagColumnOperation(const UntagColumnOperation& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = value; }
-    inline void SetUntagColumnOperation(UntagColumnOperation&& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = std::move(value); }
-    inline TransformOperation& WithUntagColumnOperation(const UntagColumnOperation& value) { SetUntagColumnOperation(value); return *this;}
-    inline TransformOperation& WithUntagColumnOperation(UntagColumnOperation&& value) { SetUntagColumnOperation(std::move(value)); return *this;}
+    template<typename UntagColumnOperationT = UntagColumnOperation>
+    void SetUntagColumnOperation(UntagColumnOperationT&& value) { m_untagColumnOperationHasBeenSet = true; m_untagColumnOperation = std::forward<UntagColumnOperationT>(value); }
+    template<typename UntagColumnOperationT = UntagColumnOperation>
+    TransformOperation& WithUntagColumnOperation(UntagColumnOperationT&& value) { SetUntagColumnOperation(std::forward<UntagColumnOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OverrideDatasetParameterOperation& GetOverrideDatasetParameterOperation() const{ return m_overrideDatasetParameterOperation; }
+    inline const OverrideDatasetParameterOperation& GetOverrideDatasetParameterOperation() const { return m_overrideDatasetParameterOperation; }
     inline bool OverrideDatasetParameterOperationHasBeenSet() const { return m_overrideDatasetParameterOperationHasBeenSet; }
-    inline void SetOverrideDatasetParameterOperation(const OverrideDatasetParameterOperation& value) { m_overrideDatasetParameterOperationHasBeenSet = true; m_overrideDatasetParameterOperation = value; }
-    inline void SetOverrideDatasetParameterOperation(OverrideDatasetParameterOperation&& value) { m_overrideDatasetParameterOperationHasBeenSet = true; m_overrideDatasetParameterOperation = std::move(value); }
-    inline TransformOperation& WithOverrideDatasetParameterOperation(const OverrideDatasetParameterOperation& value) { SetOverrideDatasetParameterOperation(value); return *this;}
-    inline TransformOperation& WithOverrideDatasetParameterOperation(OverrideDatasetParameterOperation&& value) { SetOverrideDatasetParameterOperation(std::move(value)); return *this;}
+    template<typename OverrideDatasetParameterOperationT = OverrideDatasetParameterOperation>
+    void SetOverrideDatasetParameterOperation(OverrideDatasetParameterOperationT&& value) { m_overrideDatasetParameterOperationHasBeenSet = true; m_overrideDatasetParameterOperation = std::forward<OverrideDatasetParameterOperationT>(value); }
+    template<typename OverrideDatasetParameterOperationT = OverrideDatasetParameterOperation>
+    TransformOperation& WithOverrideDatasetParameterOperation(OverrideDatasetParameterOperationT&& value) { SetOverrideDatasetParameterOperation(std::forward<OverrideDatasetParameterOperationT>(value)); return *this;}
     ///@}
   private:
 

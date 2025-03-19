@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TermsAggregation::TermsAggregation() : 
-    m_maxBuckets(0),
-    m_maxBucketsHasBeenSet(false)
-{
-}
-
 TermsAggregation::TermsAggregation(JsonView jsonValue)
-  : TermsAggregation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TermsAggregation& TermsAggregation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxBuckets"))
   {
     m_maxBuckets = jsonValue.GetInteger("maxBuckets");
-
     m_maxBucketsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-CredentialSummary::CredentialSummary() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_failed(false),
-    m_failedHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_seenAtHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_x509CertificateDataHasBeenSet(false)
-{
-}
-
 CredentialSummary::CredentialSummary(JsonView jsonValue)
-  : CredentialSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ CredentialSummary& CredentialSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failed"))
   {
     m_failed = jsonValue.GetBool("failed");
-
     m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("seenAt"))
   {
     m_seenAt = jsonValue.GetString("seenAt");
-
     m_seenAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serialNumber"))
   {
     m_serialNumber = jsonValue.GetString("serialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("x509CertificateData"))
   {
     m_x509CertificateData = jsonValue.GetString("x509CertificateData");
-
     m_x509CertificateDataHasBeenSet = true;
   }
-
   return *this;
 }
 

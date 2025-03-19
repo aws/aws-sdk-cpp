@@ -33,7 +33,7 @@ namespace Model
   class ConversationMessage
   {
   public:
-    AWS_QAPPS_API ConversationMessage();
+    AWS_QAPPS_API ConversationMessage() = default;
     AWS_QAPPS_API ConversationMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API ConversationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The text content of the conversation message.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline ConversationMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline ConversationMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline ConversationMessage& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    ConversationMessage& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the conversation message.</p>
      */
-    inline const Sender& GetType() const{ return m_type; }
+    inline Sender GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Sender& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Sender&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ConversationMessage& WithType(const Sender& value) { SetType(value); return *this;}
-    inline ConversationMessage& WithType(Sender&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Sender value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ConversationMessage& WithType(Sender value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_body;
     bool m_bodyHasBeenSet = false;
 
-    Sender m_type;
+    Sender m_type{Sender::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

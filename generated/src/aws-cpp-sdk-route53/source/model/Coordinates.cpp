@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-Coordinates::Coordinates() : 
-    m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 Coordinates::Coordinates(const XmlNode& xmlNode)
-  : Coordinates()
 {
   *this = xmlNode;
 }

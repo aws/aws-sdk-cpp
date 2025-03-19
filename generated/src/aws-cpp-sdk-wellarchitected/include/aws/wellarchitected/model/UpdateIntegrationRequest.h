@@ -23,7 +23,7 @@ namespace Model
   class UpdateIntegrationRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateIntegrationRequest();
+    AWS_WELLARCHITECTED_API UpdateIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,38 +36,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline UpdateIntegrationRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpdateIntegrationRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpdateIntegrationRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpdateIntegrationRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateIntegrationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateIntegrationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateIntegrationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateIntegrationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Which integrated service to update.</p>
      */
-    inline const IntegratingService& GetIntegratingService() const{ return m_integratingService; }
+    inline IntegratingService GetIntegratingService() const { return m_integratingService; }
     inline bool IntegratingServiceHasBeenSet() const { return m_integratingServiceHasBeenSet; }
-    inline void SetIntegratingService(const IntegratingService& value) { m_integratingServiceHasBeenSet = true; m_integratingService = value; }
-    inline void SetIntegratingService(IntegratingService&& value) { m_integratingServiceHasBeenSet = true; m_integratingService = std::move(value); }
-    inline UpdateIntegrationRequest& WithIntegratingService(const IntegratingService& value) { SetIntegratingService(value); return *this;}
-    inline UpdateIntegrationRequest& WithIntegratingService(IntegratingService&& value) { SetIntegratingService(std::move(value)); return *this;}
+    inline void SetIntegratingService(IntegratingService value) { m_integratingServiceHasBeenSet = true; m_integratingService = value; }
+    inline UpdateIntegrationRequest& WithIntegratingService(IntegratingService value) { SetIntegratingService(value); return *this;}
     ///@}
   private:
 
@@ -77,7 +71,7 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    IntegratingService m_integratingService;
+    IntegratingService m_integratingService{IntegratingService::NOT_SET};
     bool m_integratingServiceHasBeenSet = false;
   };
 

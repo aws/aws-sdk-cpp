@@ -32,7 +32,7 @@ namespace Model
   class NonCompliantSummary
   {
   public:
-    AWS_SSM_API NonCompliantSummary();
+    AWS_SSM_API NonCompliantSummary() = default;
     AWS_SSM_API NonCompliantSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API NonCompliantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The total number of compliance items that aren't compliant.</p>
      */
-    inline int GetNonCompliantCount() const{ return m_nonCompliantCount; }
+    inline int GetNonCompliantCount() const { return m_nonCompliantCount; }
     inline bool NonCompliantCountHasBeenSet() const { return m_nonCompliantCountHasBeenSet; }
     inline void SetNonCompliantCount(int value) { m_nonCompliantCountHasBeenSet = true; m_nonCompliantCount = value; }
     inline NonCompliantSummary& WithNonCompliantCount(int value) { SetNonCompliantCount(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
     /**
      * <p>A summary of the non-compliance severity by compliance type</p>
      */
-    inline const SeveritySummary& GetSeveritySummary() const{ return m_severitySummary; }
+    inline const SeveritySummary& GetSeveritySummary() const { return m_severitySummary; }
     inline bool SeveritySummaryHasBeenSet() const { return m_severitySummaryHasBeenSet; }
-    inline void SetSeveritySummary(const SeveritySummary& value) { m_severitySummaryHasBeenSet = true; m_severitySummary = value; }
-    inline void SetSeveritySummary(SeveritySummary&& value) { m_severitySummaryHasBeenSet = true; m_severitySummary = std::move(value); }
-    inline NonCompliantSummary& WithSeveritySummary(const SeveritySummary& value) { SetSeveritySummary(value); return *this;}
-    inline NonCompliantSummary& WithSeveritySummary(SeveritySummary&& value) { SetSeveritySummary(std::move(value)); return *this;}
+    template<typename SeveritySummaryT = SeveritySummary>
+    void SetSeveritySummary(SeveritySummaryT&& value) { m_severitySummaryHasBeenSet = true; m_severitySummary = std::forward<SeveritySummaryT>(value); }
+    template<typename SeveritySummaryT = SeveritySummary>
+    NonCompliantSummary& WithSeveritySummary(SeveritySummaryT&& value) { SetSeveritySummary(std::forward<SeveritySummaryT>(value)); return *this;}
     ///@}
   private:
 
-    int m_nonCompliantCount;
+    int m_nonCompliantCount{0};
     bool m_nonCompliantCountHasBeenSet = false;
 
     SeveritySummary m_severitySummary;

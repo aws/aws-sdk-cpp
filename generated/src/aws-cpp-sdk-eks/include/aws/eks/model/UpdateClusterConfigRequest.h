@@ -30,7 +30,7 @@ namespace Model
   class UpdateClusterConfigRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API UpdateClusterConfigRequest();
+    AWS_EKS_API UpdateClusterConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,24 +45,22 @@ namespace Model
     /**
      * <p>The name of the Amazon EKS cluster to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateClusterConfigRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateClusterConfigRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateClusterConfigRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateClusterConfigRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcConfigRequest& GetResourcesVpcConfig() const{ return m_resourcesVpcConfig; }
+    inline const VpcConfigRequest& GetResourcesVpcConfig() const { return m_resourcesVpcConfig; }
     inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
-    inline void SetResourcesVpcConfig(const VpcConfigRequest& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
-    inline void SetResourcesVpcConfig(VpcConfigRequest&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::move(value); }
-    inline UpdateClusterConfigRequest& WithResourcesVpcConfig(const VpcConfigRequest& value) { SetResourcesVpcConfig(value); return *this;}
-    inline UpdateClusterConfigRequest& WithResourcesVpcConfig(VpcConfigRequest&& value) { SetResourcesVpcConfig(std::move(value)); return *this;}
+    template<typename ResourcesVpcConfigT = VpcConfigRequest>
+    void SetResourcesVpcConfig(ResourcesVpcConfigT&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::forward<ResourcesVpcConfigT>(value); }
+    template<typename ResourcesVpcConfigT = VpcConfigRequest>
+    UpdateClusterConfigRequest& WithResourcesVpcConfig(ResourcesVpcConfigT&& value) { SetResourcesVpcConfig(std::forward<ResourcesVpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
      * 
      */
-    inline const Logging& GetLogging() const{ return m_logging; }
+    inline const Logging& GetLogging() const { return m_logging; }
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
-    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
-    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
-    inline UpdateClusterConfigRequest& WithLogging(const Logging& value) { SetLogging(value); return *this;}
-    inline UpdateClusterConfigRequest& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+    template<typename LoggingT = Logging>
+    void SetLogging(LoggingT&& value) { m_loggingHasBeenSet = true; m_logging = std::forward<LoggingT>(value); }
+    template<typename LoggingT = Logging>
+    UpdateClusterConfigRequest& WithLogging(LoggingT&& value) { SetLogging(std::forward<LoggingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,26 +88,24 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateClusterConfigRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateClusterConfigRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateClusterConfigRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateClusterConfigRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The access configuration for the cluster.</p>
      */
-    inline const UpdateAccessConfigRequest& GetAccessConfig() const{ return m_accessConfig; }
+    inline const UpdateAccessConfigRequest& GetAccessConfig() const { return m_accessConfig; }
     inline bool AccessConfigHasBeenSet() const { return m_accessConfigHasBeenSet; }
-    inline void SetAccessConfig(const UpdateAccessConfigRequest& value) { m_accessConfigHasBeenSet = true; m_accessConfig = value; }
-    inline void SetAccessConfig(UpdateAccessConfigRequest&& value) { m_accessConfigHasBeenSet = true; m_accessConfig = std::move(value); }
-    inline UpdateClusterConfigRequest& WithAccessConfig(const UpdateAccessConfigRequest& value) { SetAccessConfig(value); return *this;}
-    inline UpdateClusterConfigRequest& WithAccessConfig(UpdateAccessConfigRequest&& value) { SetAccessConfig(std::move(value)); return *this;}
+    template<typename AccessConfigT = UpdateAccessConfigRequest>
+    void SetAccessConfig(AccessConfigT&& value) { m_accessConfigHasBeenSet = true; m_accessConfig = std::forward<AccessConfigT>(value); }
+    template<typename AccessConfigT = UpdateAccessConfigRequest>
+    UpdateClusterConfigRequest& WithAccessConfig(AccessConfigT&& value) { SetAccessConfig(std::forward<AccessConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +114,12 @@ namespace Model
      * support. You cannot disable extended support once it starts. You must enable
      * extended support before your cluster exits standard support.</p>
      */
-    inline const UpgradePolicyRequest& GetUpgradePolicy() const{ return m_upgradePolicy; }
+    inline const UpgradePolicyRequest& GetUpgradePolicy() const { return m_upgradePolicy; }
     inline bool UpgradePolicyHasBeenSet() const { return m_upgradePolicyHasBeenSet; }
-    inline void SetUpgradePolicy(const UpgradePolicyRequest& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = value; }
-    inline void SetUpgradePolicy(UpgradePolicyRequest&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::move(value); }
-    inline UpdateClusterConfigRequest& WithUpgradePolicy(const UpgradePolicyRequest& value) { SetUpgradePolicy(value); return *this;}
-    inline UpdateClusterConfigRequest& WithUpgradePolicy(UpgradePolicyRequest&& value) { SetUpgradePolicy(std::move(value)); return *this;}
+    template<typename UpgradePolicyT = UpgradePolicyRequest>
+    void SetUpgradePolicy(UpgradePolicyT&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::forward<UpgradePolicyT>(value); }
+    template<typename UpgradePolicyT = UpgradePolicyRequest>
+    UpdateClusterConfigRequest& WithUpgradePolicy(UpgradePolicyT&& value) { SetUpgradePolicy(std::forward<UpgradePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,12 +141,12 @@ namespace Model
      * about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a>
      * in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
-    inline const ZonalShiftConfigRequest& GetZonalShiftConfig() const{ return m_zonalShiftConfig; }
+    inline const ZonalShiftConfigRequest& GetZonalShiftConfig() const { return m_zonalShiftConfig; }
     inline bool ZonalShiftConfigHasBeenSet() const { return m_zonalShiftConfigHasBeenSet; }
-    inline void SetZonalShiftConfig(const ZonalShiftConfigRequest& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = value; }
-    inline void SetZonalShiftConfig(ZonalShiftConfigRequest&& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = std::move(value); }
-    inline UpdateClusterConfigRequest& WithZonalShiftConfig(const ZonalShiftConfigRequest& value) { SetZonalShiftConfig(value); return *this;}
-    inline UpdateClusterConfigRequest& WithZonalShiftConfig(ZonalShiftConfigRequest&& value) { SetZonalShiftConfig(std::move(value)); return *this;}
+    template<typename ZonalShiftConfigT = ZonalShiftConfigRequest>
+    void SetZonalShiftConfig(ZonalShiftConfigT&& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = std::forward<ZonalShiftConfigT>(value); }
+    template<typename ZonalShiftConfigT = ZonalShiftConfigRequest>
+    UpdateClusterConfigRequest& WithZonalShiftConfig(ZonalShiftConfigT&& value) { SetZonalShiftConfig(std::forward<ZonalShiftConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,22 +154,22 @@ namespace Model
      * <p>Update the configuration of the compute capability of your EKS Auto Mode
      * cluster. For example, enable the capability.</p>
      */
-    inline const ComputeConfigRequest& GetComputeConfig() const{ return m_computeConfig; }
+    inline const ComputeConfigRequest& GetComputeConfig() const { return m_computeConfig; }
     inline bool ComputeConfigHasBeenSet() const { return m_computeConfigHasBeenSet; }
-    inline void SetComputeConfig(const ComputeConfigRequest& value) { m_computeConfigHasBeenSet = true; m_computeConfig = value; }
-    inline void SetComputeConfig(ComputeConfigRequest&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::move(value); }
-    inline UpdateClusterConfigRequest& WithComputeConfig(const ComputeConfigRequest& value) { SetComputeConfig(value); return *this;}
-    inline UpdateClusterConfigRequest& WithComputeConfig(ComputeConfigRequest&& value) { SetComputeConfig(std::move(value)); return *this;}
+    template<typename ComputeConfigT = ComputeConfigRequest>
+    void SetComputeConfig(ComputeConfigT&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::forward<ComputeConfigT>(value); }
+    template<typename ComputeConfigT = ComputeConfigRequest>
+    UpdateClusterConfigRequest& WithComputeConfig(ComputeConfigT&& value) { SetComputeConfig(std::forward<ComputeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
+    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const { return m_kubernetesNetworkConfig; }
     inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
-    inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
-    inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
-    inline UpdateClusterConfigRequest& WithKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { SetKubernetesNetworkConfig(value); return *this;}
-    inline UpdateClusterConfigRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
+    template<typename KubernetesNetworkConfigT = KubernetesNetworkConfigRequest>
+    void SetKubernetesNetworkConfig(KubernetesNetworkConfigT&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::forward<KubernetesNetworkConfigT>(value); }
+    template<typename KubernetesNetworkConfigT = KubernetesNetworkConfigRequest>
+    UpdateClusterConfigRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigT&& value) { SetKubernetesNetworkConfig(std::forward<KubernetesNetworkConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,12 +177,12 @@ namespace Model
      * <p>Update the configuration of the block storage capability of your EKS Auto
      * Mode cluster. For example, enable the capability.</p>
      */
-    inline const StorageConfigRequest& GetStorageConfig() const{ return m_storageConfig; }
+    inline const StorageConfigRequest& GetStorageConfig() const { return m_storageConfig; }
     inline bool StorageConfigHasBeenSet() const { return m_storageConfigHasBeenSet; }
-    inline void SetStorageConfig(const StorageConfigRequest& value) { m_storageConfigHasBeenSet = true; m_storageConfig = value; }
-    inline void SetStorageConfig(StorageConfigRequest&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::move(value); }
-    inline UpdateClusterConfigRequest& WithStorageConfig(const StorageConfigRequest& value) { SetStorageConfig(value); return *this;}
-    inline UpdateClusterConfigRequest& WithStorageConfig(StorageConfigRequest&& value) { SetStorageConfig(std::move(value)); return *this;}
+    template<typename StorageConfigT = StorageConfigRequest>
+    void SetStorageConfig(StorageConfigT&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::forward<StorageConfigT>(value); }
+    template<typename StorageConfigT = StorageConfigRequest>
+    UpdateClusterConfigRequest& WithStorageConfig(StorageConfigT&& value) { SetStorageConfig(std::forward<StorageConfigT>(value)); return *this;}
     ///@}
   private:
 

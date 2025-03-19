@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlMapsResult::XmlMapsResult()
-{
-}
-
 XmlMapsResult::XmlMapsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -37,6 +33,7 @@ XmlMapsResult& XmlMapsResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
     if(!myMapNode.IsNull())
     {
       XmlNode myMapEntry = myMapNode.FirstChild("entry");
+      m_myMapHasBeenSet = !myMapEntry.IsNull();
       while(!myMapEntry.IsNull())
       {
         XmlNode keyNode = myMapEntry.FirstChild("key");
@@ -46,6 +43,7 @@ XmlMapsResult& XmlMapsResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
         myMapEntry = myMapEntry.NextNode("entry");
       }
 
+      m_myMapHasBeenSet = true;
     }
   }
 
@@ -54,6 +52,7 @@ XmlMapsResult& XmlMapsResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

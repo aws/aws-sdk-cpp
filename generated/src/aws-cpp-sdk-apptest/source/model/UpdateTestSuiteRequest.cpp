@@ -12,15 +12,6 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTestSuiteRequest::UpdateTestSuiteRequest() : 
-    m_testSuiteIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_beforeStepsHasBeenSet(false),
-    m_afterStepsHasBeenSet(false),
-    m_testCasesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTestSuiteRequest::SerializePayload() const
 {
   JsonValue payload;

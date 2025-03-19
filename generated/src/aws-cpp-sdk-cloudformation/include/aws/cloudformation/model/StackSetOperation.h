@@ -39,7 +39,7 @@ namespace Model
   class StackSetOperation
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetOperation();
+    AWS_CLOUDFORMATION_API StackSetOperation() = default;
     AWS_CLOUDFORMATION_API StackSetOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,28 +51,24 @@ namespace Model
     /**
      * <p>The unique ID of a stack set operation.</p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
-    inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
-    inline StackSetOperation& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline StackSetOperation& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline StackSetOperation& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    StackSetOperation& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the stack set.</p>
      */
-    inline const Aws::String& GetStackSetId() const{ return m_stackSetId; }
+    inline const Aws::String& GetStackSetId() const { return m_stackSetId; }
     inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
-    inline void SetStackSetId(const Aws::String& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = value; }
-    inline void SetStackSetId(Aws::String&& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = std::move(value); }
-    inline void SetStackSetId(const char* value) { m_stackSetIdHasBeenSet = true; m_stackSetId.assign(value); }
-    inline StackSetOperation& WithStackSetId(const Aws::String& value) { SetStackSetId(value); return *this;}
-    inline StackSetOperation& WithStackSetId(Aws::String&& value) { SetStackSetId(std::move(value)); return *this;}
-    inline StackSetOperation& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
+    template<typename StackSetIdT = Aws::String>
+    void SetStackSetId(StackSetIdT&& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = std::forward<StackSetIdT>(value); }
+    template<typename StackSetIdT = Aws::String>
+    StackSetOperation& WithStackSetId(StackSetIdT&& value) { SetStackSetId(std::forward<StackSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * operations affect both the stack set itself, in addition to <i>all</i>
      * associated stack set instances.</p>
      */
-    inline const StackSetOperationAction& GetAction() const{ return m_action; }
+    inline StackSetOperationAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const StackSetOperationAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(StackSetOperationAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline StackSetOperation& WithAction(const StackSetOperationAction& value) { SetAction(value); return *this;}
-    inline StackSetOperation& WithAction(StackSetOperationAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(StackSetOperationAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline StackSetOperation& WithAction(StackSetOperationAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -112,24 +106,22 @@ namespace Model
      * creating or updating all the specified stacks without exceeding the failure
      * tolerance for the operation.</p> </li> </ul>
      */
-    inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
+    inline StackSetOperationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StackSetOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StackSetOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StackSetOperation& WithStatus(const StackSetOperationStatus& value) { SetStatus(value); return *this;}
-    inline StackSetOperation& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StackSetOperationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StackSetOperation& WithStatus(StackSetOperationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The preferences for how CloudFormation performs this stack set operation.</p>
      */
-    inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
+    inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
-    inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
-    inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
-    inline StackSetOperation& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
-    inline StackSetOperation& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
+    template<typename OperationPreferencesT = StackSetOperationPreferences>
+    void SetOperationPreferences(OperationPreferencesT&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::forward<OperationPreferencesT>(value); }
+    template<typename OperationPreferencesT = StackSetOperationPreferences>
+    StackSetOperation& WithOperationPreferences(OperationPreferencesT&& value) { SetOperationPreferences(std::forward<OperationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +131,7 @@ namespace Model
      * delete the stacks. You can't re-associate a retained stack, or add an existing,
      * saved stack to a new stack set.</p>
      */
-    inline bool GetRetainStacks() const{ return m_retainStacks; }
+    inline bool GetRetainStacks() const { return m_retainStacks; }
     inline bool RetainStacksHasBeenSet() const { return m_retainStacksHasBeenSet; }
     inline void SetRetainStacks(bool value) { m_retainStacksHasBeenSet = true; m_retainStacks = value; }
     inline StackSetOperation& WithRetainStacks(bool value) { SetRetainStacks(value); return *this;}
@@ -154,14 +146,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
      * self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
+    inline const Aws::String& GetAdministrationRoleARN() const { return m_administrationRoleARN; }
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
-    inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
-    inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
-    inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
-    inline StackSetOperation& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
-    inline StackSetOperation& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
-    inline StackSetOperation& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
+    template<typename AdministrationRoleARNT = Aws::String>
+    void SetAdministrationRoleARN(AdministrationRoleARNT&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::forward<AdministrationRoleARNT>(value); }
+    template<typename AdministrationRoleARNT = Aws::String>
+    StackSetOperation& WithAdministrationRoleARN(AdministrationRoleARNT&& value) { SetAdministrationRoleARN(std::forward<AdministrationRoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,14 +160,12 @@ namespace Model
      * set.</p> <p>Use customized execution roles to control which stack resources
      * users and groups can include in their stack sets.</p>
      */
-    inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+    inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
-    inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
-    inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
-    inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
-    inline StackSetOperation& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
-    inline StackSetOperation& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
-    inline StackSetOperation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
+    template<typename ExecutionRoleNameT = Aws::String>
+    void SetExecutionRoleName(ExecutionRoleNameT&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::forward<ExecutionRoleNameT>(value); }
+    template<typename ExecutionRoleNameT = Aws::String>
+    StackSetOperation& WithExecutionRoleName(ExecutionRoleNameT&& value) { SetExecutionRoleName(std::forward<ExecutionRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,12 +176,12 @@ namespace Model
      * preparatory work for the operation, such as dispatching the work to the
      * requested Regions, before actually creating the first stacks.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-    inline StackSetOperation& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline StackSetOperation& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    StackSetOperation& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,12 +190,12 @@ namespace Model
      * Regions specified. Note that this doesn't necessarily mean that the stack set
      * operation was successful, or even attempted, in each account or Region.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
+    inline const Aws::Utils::DateTime& GetEndTimestamp() const { return m_endTimestamp; }
     inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
-    inline void SetEndTimestamp(const Aws::Utils::DateTime& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = value; }
-    inline void SetEndTimestamp(Aws::Utils::DateTime&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::move(value); }
-    inline StackSetOperation& WithEndTimestamp(const Aws::Utils::DateTime& value) { SetEndTimestamp(value); return *this;}
-    inline StackSetOperation& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    void SetEndTimestamp(EndTimestampT&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::forward<EndTimestampT>(value); }
+    template<typename EndTimestampT = Aws::Utils::DateTime>
+    StackSetOperation& WithEndTimestamp(EndTimestampT&& value) { SetEndTimestamp(std::forward<EndTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,12 +203,12 @@ namespace Model
      * <p>[Service-managed permissions] The Organizations accounts affected by the
      * stack operation.</p>
      */
-    inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
+    inline const DeploymentTargets& GetDeploymentTargets() const { return m_deploymentTargets; }
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
-    inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
-    inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
-    inline StackSetOperation& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
-    inline StackSetOperation& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
+    template<typename DeploymentTargetsT = DeploymentTargets>
+    void SetDeploymentTargets(DeploymentTargetsT&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::forward<DeploymentTargetsT>(value); }
+    template<typename DeploymentTargetsT = DeploymentTargets>
+    StackSetOperation& WithDeploymentTargets(DeploymentTargetsT&& value) { SetDeploymentTargets(std::forward<DeploymentTargetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,38 +222,36 @@ namespace Model
      * drift detection on CloudFormation StackSets</a> in the <i>CloudFormation User
      * Guide</i>.</p>
      */
-    inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
+    inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const { return m_stackSetDriftDetectionDetails; }
     inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }
-    inline void SetStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = value; }
-    inline void SetStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = std::move(value); }
-    inline StackSetOperation& WithStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { SetStackSetDriftDetectionDetails(value); return *this;}
-    inline StackSetOperation& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
+    template<typename StackSetDriftDetectionDetailsT = StackSetDriftDetectionDetails>
+    void SetStackSetDriftDetectionDetails(StackSetDriftDetectionDetailsT&& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = std::forward<StackSetDriftDetectionDetailsT>(value); }
+    template<typename StackSetDriftDetectionDetailsT = StackSetDriftDetectionDetails>
+    StackSetOperation& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetailsT&& value) { SetStackSetDriftDetectionDetails(std::forward<StackSetDriftDetectionDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the operation in details.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline StackSetOperation& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline StackSetOperation& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline StackSetOperation& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    StackSetOperation& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed information about the StackSet operation.</p>
      */
-    inline const StackSetOperationStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+    inline const StackSetOperationStatusDetails& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const StackSetOperationStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(StackSetOperationStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline StackSetOperation& WithStatusDetails(const StackSetOperationStatusDetails& value) { SetStatusDetails(value); return *this;}
-    inline StackSetOperation& WithStatusDetails(StackSetOperationStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+    template<typename StatusDetailsT = StackSetOperationStatusDetails>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = StackSetOperationStatusDetails>
+    StackSetOperation& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
   private:
 
@@ -275,16 +261,16 @@ namespace Model
     Aws::String m_stackSetId;
     bool m_stackSetIdHasBeenSet = false;
 
-    StackSetOperationAction m_action;
+    StackSetOperationAction m_action{StackSetOperationAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    StackSetOperationStatus m_status;
+    StackSetOperationStatus m_status{StackSetOperationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet = false;
 
-    bool m_retainStacks;
+    bool m_retainStacks{false};
     bool m_retainStacksHasBeenSet = false;
 
     Aws::String m_administrationRoleARN;
@@ -293,10 +279,10 @@ namespace Model
     Aws::String m_executionRoleName;
     bool m_executionRoleNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
     bool m_creationTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTimestamp;
+    Aws::Utils::DateTime m_endTimestamp{};
     bool m_endTimestampHasBeenSet = false;
 
     DeploymentTargets m_deploymentTargets;

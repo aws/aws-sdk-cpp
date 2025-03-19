@@ -32,7 +32,7 @@ namespace Model
   class AnalysisStatusUnion
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalysisStatusUnion();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalysisStatusUnion() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalysisStatusUnion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalysisStatusUnion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The status of the analysis.</p>
      */
-    inline const RuntimeAnalysisStatus& GetRuntimeAnalysisStatus() const{ return m_runtimeAnalysisStatus; }
+    inline RuntimeAnalysisStatus GetRuntimeAnalysisStatus() const { return m_runtimeAnalysisStatus; }
     inline bool RuntimeAnalysisStatusHasBeenSet() const { return m_runtimeAnalysisStatusHasBeenSet; }
-    inline void SetRuntimeAnalysisStatus(const RuntimeAnalysisStatus& value) { m_runtimeAnalysisStatusHasBeenSet = true; m_runtimeAnalysisStatus = value; }
-    inline void SetRuntimeAnalysisStatus(RuntimeAnalysisStatus&& value) { m_runtimeAnalysisStatusHasBeenSet = true; m_runtimeAnalysisStatus = std::move(value); }
-    inline AnalysisStatusUnion& WithRuntimeAnalysisStatus(const RuntimeAnalysisStatus& value) { SetRuntimeAnalysisStatus(value); return *this;}
-    inline AnalysisStatusUnion& WithRuntimeAnalysisStatus(RuntimeAnalysisStatus&& value) { SetRuntimeAnalysisStatus(std::move(value)); return *this;}
+    inline void SetRuntimeAnalysisStatus(RuntimeAnalysisStatus value) { m_runtimeAnalysisStatusHasBeenSet = true; m_runtimeAnalysisStatus = value; }
+    inline AnalysisStatusUnion& WithRuntimeAnalysisStatus(RuntimeAnalysisStatus value) { SetRuntimeAnalysisStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the source code or database analysis.</p>
      */
-    inline const SrcCodeOrDbAnalysisStatus& GetSrcCodeOrDbAnalysisStatus() const{ return m_srcCodeOrDbAnalysisStatus; }
+    inline SrcCodeOrDbAnalysisStatus GetSrcCodeOrDbAnalysisStatus() const { return m_srcCodeOrDbAnalysisStatus; }
     inline bool SrcCodeOrDbAnalysisStatusHasBeenSet() const { return m_srcCodeOrDbAnalysisStatusHasBeenSet; }
-    inline void SetSrcCodeOrDbAnalysisStatus(const SrcCodeOrDbAnalysisStatus& value) { m_srcCodeOrDbAnalysisStatusHasBeenSet = true; m_srcCodeOrDbAnalysisStatus = value; }
-    inline void SetSrcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus&& value) { m_srcCodeOrDbAnalysisStatusHasBeenSet = true; m_srcCodeOrDbAnalysisStatus = std::move(value); }
-    inline AnalysisStatusUnion& WithSrcCodeOrDbAnalysisStatus(const SrcCodeOrDbAnalysisStatus& value) { SetSrcCodeOrDbAnalysisStatus(value); return *this;}
-    inline AnalysisStatusUnion& WithSrcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus&& value) { SetSrcCodeOrDbAnalysisStatus(std::move(value)); return *this;}
+    inline void SetSrcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus value) { m_srcCodeOrDbAnalysisStatusHasBeenSet = true; m_srcCodeOrDbAnalysisStatus = value; }
+    inline AnalysisStatusUnion& WithSrcCodeOrDbAnalysisStatus(SrcCodeOrDbAnalysisStatus value) { SetSrcCodeOrDbAnalysisStatus(value); return *this;}
     ///@}
   private:
 
-    RuntimeAnalysisStatus m_runtimeAnalysisStatus;
+    RuntimeAnalysisStatus m_runtimeAnalysisStatus{RuntimeAnalysisStatus::NOT_SET};
     bool m_runtimeAnalysisStatusHasBeenSet = false;
 
-    SrcCodeOrDbAnalysisStatus m_srcCodeOrDbAnalysisStatus;
+    SrcCodeOrDbAnalysisStatus m_srcCodeOrDbAnalysisStatus{SrcCodeOrDbAnalysisStatus::NOT_SET};
     bool m_srcCodeOrDbAnalysisStatusHasBeenSet = false;
   };
 

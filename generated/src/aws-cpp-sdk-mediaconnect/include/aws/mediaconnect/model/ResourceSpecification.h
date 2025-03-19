@@ -32,7 +32,7 @@ namespace Model
   class ResourceSpecification
   {
   public:
-    AWS_MEDIACONNECT_API ResourceSpecification();
+    AWS_MEDIACONNECT_API ResourceSpecification() = default;
     AWS_MEDIACONNECT_API ResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API ResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * The amount of outbound bandwidth that is discounted in the offering.
      */
-    inline int GetReservedBitrate() const{ return m_reservedBitrate; }
+    inline int GetReservedBitrate() const { return m_reservedBitrate; }
     inline bool ReservedBitrateHasBeenSet() const { return m_reservedBitrateHasBeenSet; }
     inline void SetReservedBitrate(int value) { m_reservedBitrateHasBeenSet = true; m_reservedBitrate = value; }
     inline ResourceSpecification& WithReservedBitrate(int value) { SetReservedBitrate(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * The type of resource and the unit that is being billed for.
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ResourceSpecification& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline ResourceSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ResourceSpecification& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
-    int m_reservedBitrate;
+    int m_reservedBitrate{0};
     bool m_reservedBitrateHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class ScheduleLambdaFunctionDecisionAttributes
   {
   public:
-    AWS_SWF_API ScheduleLambdaFunctionDecisionAttributes();
+    AWS_SWF_API ScheduleLambdaFunctionDecisionAttributes() = default;
     AWS_SWF_API ScheduleLambdaFunctionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ScheduleLambdaFunctionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * <p>A string that identifies the Lambda function execution in the event
      * history.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ScheduleLambdaFunctionDecisionAttributes& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ScheduleLambdaFunctionDecisionAttributes& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name, or ARN, of the Lambda function to schedule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ScheduleLambdaFunctionDecisionAttributes& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ScheduleLambdaFunctionDecisionAttributes& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * <p>The data attached to the event that the decider can use in subsequent
      * workflow tasks. This data isn't sent to the Lambda task.</p>
      */
-    inline const Aws::String& GetControl() const{ return m_control; }
+    inline const Aws::String& GetControl() const { return m_control; }
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-    inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-    inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-    inline ScheduleLambdaFunctionDecisionAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+    template<typename ControlT = Aws::String>
+    void SetControl(ControlT&& value) { m_controlHasBeenSet = true; m_control = std::forward<ControlT>(value); }
+    template<typename ControlT = Aws::String>
+    ScheduleLambdaFunctionDecisionAttributes& WithControl(ControlT&& value) { SetControl(std::forward<ControlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The optional input data to be supplied to the Lambda function.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline ScheduleLambdaFunctionDecisionAttributes& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    ScheduleLambdaFunctionDecisionAttributes& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * (1s-15m).</p> <p>If no value is supplied, then a default value of 900s is
      * assumed.</p>
      */
-    inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+    inline const Aws::String& GetStartToCloseTimeout() const { return m_startToCloseTimeout; }
     inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
-    inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
-    inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::move(value); }
-    inline void SetStartToCloseTimeout(const char* value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout.assign(value); }
-    inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(const Aws::String& value) { SetStartToCloseTimeout(value); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(std::move(value)); return *this;}
-    inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
+    template<typename StartToCloseTimeoutT = Aws::String>
+    void SetStartToCloseTimeout(StartToCloseTimeoutT&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::forward<StartToCloseTimeoutT>(value); }
+    template<typename StartToCloseTimeoutT = Aws::String>
+    ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(StartToCloseTimeoutT&& value) { SetStartToCloseTimeout(std::forward<StartToCloseTimeoutT>(value)); return *this;}
     ///@}
   private:
 

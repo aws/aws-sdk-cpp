@@ -33,7 +33,7 @@ namespace Model
   class VectorEnrichmentJobErrorDetails
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobErrorDetails();
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobErrorDetails() = default;
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobErrorDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,29 @@ namespace Model
      * <p>A message that you define and then is processed and rendered by the Vector
      * Enrichment job when the error occurs.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline VectorEnrichmentJobErrorDetails& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline VectorEnrichmentJobErrorDetails& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline VectorEnrichmentJobErrorDetails& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    VectorEnrichmentJobErrorDetails& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of error generated during the Vector Enrichment job.</p>
      */
-    inline const VectorEnrichmentJobErrorType& GetErrorType() const{ return m_errorType; }
+    inline VectorEnrichmentJobErrorType GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const VectorEnrichmentJobErrorType& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(VectorEnrichmentJobErrorType&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline VectorEnrichmentJobErrorDetails& WithErrorType(const VectorEnrichmentJobErrorType& value) { SetErrorType(value); return *this;}
-    inline VectorEnrichmentJobErrorDetails& WithErrorType(VectorEnrichmentJobErrorType&& value) { SetErrorType(std::move(value)); return *this;}
+    inline void SetErrorType(VectorEnrichmentJobErrorType value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline VectorEnrichmentJobErrorDetails& WithErrorType(VectorEnrichmentJobErrorType value) { SetErrorType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    VectorEnrichmentJobErrorType m_errorType;
+    VectorEnrichmentJobErrorType m_errorType{VectorEnrichmentJobErrorType::NOT_SET};
     bool m_errorTypeHasBeenSet = false;
   };
 

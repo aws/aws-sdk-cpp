@@ -22,7 +22,7 @@ namespace Model
   class DenyCustomRoutingTrafficRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API DenyCustomRoutingTrafficRequest();
+    AWS_GLOBALACCELERATOR_API DenyCustomRoutingTrafficRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
      */
-    inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
+    inline const Aws::String& GetEndpointGroupArn() const { return m_endpointGroupArn; }
     inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
-    inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
-    inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::move(value); }
-    inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn.assign(value); }
-    inline DenyCustomRoutingTrafficRequest& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-    inline DenyCustomRoutingTrafficRequest& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-    inline DenyCustomRoutingTrafficRequest& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
+    template<typename EndpointGroupArnT = Aws::String>
+    void SetEndpointGroupArn(EndpointGroupArnT&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::forward<EndpointGroupArnT>(value); }
+    template<typename EndpointGroupArnT = Aws::String>
+    DenyCustomRoutingTrafficRequest& WithEndpointGroupArn(EndpointGroupArnT&& value) { SetEndpointGroupArn(std::forward<EndpointGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>An ID for the endpoint. For custom routing accelerators, this is the virtual
      * private cloud (VPC) subnet ID.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline DenyCustomRoutingTrafficRequest& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline DenyCustomRoutingTrafficRequest& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline DenyCustomRoutingTrafficRequest& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    DenyCustomRoutingTrafficRequest& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +67,14 @@ namespace Model
      * must be a subset of the IP addresses allowed for the VPC subnet associated with
      * the endpoint group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinationAddresses() const{ return m_destinationAddresses; }
+    inline const Aws::Vector<Aws::String>& GetDestinationAddresses() const { return m_destinationAddresses; }
     inline bool DestinationAddressesHasBeenSet() const { return m_destinationAddressesHasBeenSet; }
-    inline void SetDestinationAddresses(const Aws::Vector<Aws::String>& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses = value; }
-    inline void SetDestinationAddresses(Aws::Vector<Aws::String>&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses = std::move(value); }
-    inline DenyCustomRoutingTrafficRequest& WithDestinationAddresses(const Aws::Vector<Aws::String>& value) { SetDestinationAddresses(value); return *this;}
-    inline DenyCustomRoutingTrafficRequest& WithDestinationAddresses(Aws::Vector<Aws::String>&& value) { SetDestinationAddresses(std::move(value)); return *this;}
-    inline DenyCustomRoutingTrafficRequest& AddDestinationAddresses(const Aws::String& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.push_back(value); return *this; }
-    inline DenyCustomRoutingTrafficRequest& AddDestinationAddresses(Aws::String&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.push_back(std::move(value)); return *this; }
-    inline DenyCustomRoutingTrafficRequest& AddDestinationAddresses(const char* value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.push_back(value); return *this; }
+    template<typename DestinationAddressesT = Aws::Vector<Aws::String>>
+    void SetDestinationAddresses(DestinationAddressesT&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses = std::forward<DestinationAddressesT>(value); }
+    template<typename DestinationAddressesT = Aws::Vector<Aws::String>>
+    DenyCustomRoutingTrafficRequest& WithDestinationAddresses(DestinationAddressesT&& value) { SetDestinationAddresses(std::forward<DestinationAddressesT>(value)); return *this;}
+    template<typename DestinationAddressesT = Aws::String>
+    DenyCustomRoutingTrafficRequest& AddDestinationAddresses(DestinationAddressesT&& value) { m_destinationAddressesHasBeenSet = true; m_destinationAddresses.emplace_back(std::forward<DestinationAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,12 +82,12 @@ namespace Model
      * <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet
      * endpoint that you want to prevent from receiving traffic.</p>
      */
-    inline const Aws::Vector<int>& GetDestinationPorts() const{ return m_destinationPorts; }
+    inline const Aws::Vector<int>& GetDestinationPorts() const { return m_destinationPorts; }
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
-    inline void SetDestinationPorts(const Aws::Vector<int>& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = value; }
-    inline void SetDestinationPorts(Aws::Vector<int>&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::move(value); }
-    inline DenyCustomRoutingTrafficRequest& WithDestinationPorts(const Aws::Vector<int>& value) { SetDestinationPorts(value); return *this;}
-    inline DenyCustomRoutingTrafficRequest& WithDestinationPorts(Aws::Vector<int>&& value) { SetDestinationPorts(std::move(value)); return *this;}
+    template<typename DestinationPortsT = Aws::Vector<int>>
+    void SetDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::forward<DestinationPortsT>(value); }
+    template<typename DestinationPortsT = Aws::Vector<int>>
+    DenyCustomRoutingTrafficRequest& WithDestinationPorts(DestinationPortsT&& value) { SetDestinationPorts(std::forward<DestinationPortsT>(value)); return *this;}
     inline DenyCustomRoutingTrafficRequest& AddDestinationPorts(int value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
     ///@}
 
@@ -109,7 +104,7 @@ namespace Model
      * the ports configured for the endpoint group.</p> <p>The default value is
      * FALSE.</p>
      */
-    inline bool GetDenyAllTrafficToEndpoint() const{ return m_denyAllTrafficToEndpoint; }
+    inline bool GetDenyAllTrafficToEndpoint() const { return m_denyAllTrafficToEndpoint; }
     inline bool DenyAllTrafficToEndpointHasBeenSet() const { return m_denyAllTrafficToEndpointHasBeenSet; }
     inline void SetDenyAllTrafficToEndpoint(bool value) { m_denyAllTrafficToEndpointHasBeenSet = true; m_denyAllTrafficToEndpoint = value; }
     inline DenyCustomRoutingTrafficRequest& WithDenyAllTrafficToEndpoint(bool value) { SetDenyAllTrafficToEndpoint(value); return *this;}
@@ -128,7 +123,7 @@ namespace Model
     Aws::Vector<int> m_destinationPorts;
     bool m_destinationPortsHasBeenSet = false;
 
-    bool m_denyAllTrafficToEndpoint;
+    bool m_denyAllTrafficToEndpoint{false};
     bool m_denyAllTrafficToEndpointHasBeenSet = false;
   };
 

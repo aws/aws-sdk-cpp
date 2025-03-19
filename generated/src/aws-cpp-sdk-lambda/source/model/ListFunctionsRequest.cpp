@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFunctionsRequest::ListFunctionsRequest() : 
-    m_masterRegionHasBeenSet(false),
-    m_functionVersion(FunctionVersion::NOT_SET),
-    m_functionVersionHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListFunctionsRequest::SerializePayload() const
 {
   return {};

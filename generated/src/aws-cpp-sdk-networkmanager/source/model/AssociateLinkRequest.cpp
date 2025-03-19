@@ -12,13 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateLinkRequest::AssociateLinkRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateLinkRequest::SerializePayload() const
 {
   JsonValue payload;

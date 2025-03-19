@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HierarchyGroupSummaryReference::HierarchyGroupSummaryReference() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 HierarchyGroupSummaryReference::HierarchyGroupSummaryReference(JsonView jsonValue)
-  : HierarchyGroupSummaryReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HierarchyGroupSummaryReference& HierarchyGroupSummaryReference::operator =(JsonV
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

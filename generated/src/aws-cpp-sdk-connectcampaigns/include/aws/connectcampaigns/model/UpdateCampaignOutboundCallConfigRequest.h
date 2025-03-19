@@ -25,7 +25,7 @@ namespace Model
   class UpdateCampaignOutboundCallConfigRequest : public ConnectCampaignsRequest
   {
   public:
-    AWS_CONNECTCAMPAIGNS_API UpdateCampaignOutboundCallConfigRequest();
+    AWS_CONNECTCAMPAIGNS_API UpdateCampaignOutboundCallConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,48 +38,42 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateCampaignOutboundCallConfigRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateCampaignOutboundCallConfigRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetConnectContactFlowId() const{ return m_connectContactFlowId; }
+    inline const Aws::String& GetConnectContactFlowId() const { return m_connectContactFlowId; }
     inline bool ConnectContactFlowIdHasBeenSet() const { return m_connectContactFlowIdHasBeenSet; }
-    inline void SetConnectContactFlowId(const Aws::String& value) { m_connectContactFlowIdHasBeenSet = true; m_connectContactFlowId = value; }
-    inline void SetConnectContactFlowId(Aws::String&& value) { m_connectContactFlowIdHasBeenSet = true; m_connectContactFlowId = std::move(value); }
-    inline void SetConnectContactFlowId(const char* value) { m_connectContactFlowIdHasBeenSet = true; m_connectContactFlowId.assign(value); }
-    inline UpdateCampaignOutboundCallConfigRequest& WithConnectContactFlowId(const Aws::String& value) { SetConnectContactFlowId(value); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithConnectContactFlowId(Aws::String&& value) { SetConnectContactFlowId(std::move(value)); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithConnectContactFlowId(const char* value) { SetConnectContactFlowId(value); return *this;}
+    template<typename ConnectContactFlowIdT = Aws::String>
+    void SetConnectContactFlowId(ConnectContactFlowIdT&& value) { m_connectContactFlowIdHasBeenSet = true; m_connectContactFlowId = std::forward<ConnectContactFlowIdT>(value); }
+    template<typename ConnectContactFlowIdT = Aws::String>
+    UpdateCampaignOutboundCallConfigRequest& WithConnectContactFlowId(ConnectContactFlowIdT&& value) { SetConnectContactFlowId(std::forward<ConnectContactFlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetConnectSourcePhoneNumber() const{ return m_connectSourcePhoneNumber; }
+    inline const Aws::String& GetConnectSourcePhoneNumber() const { return m_connectSourcePhoneNumber; }
     inline bool ConnectSourcePhoneNumberHasBeenSet() const { return m_connectSourcePhoneNumberHasBeenSet; }
-    inline void SetConnectSourcePhoneNumber(const Aws::String& value) { m_connectSourcePhoneNumberHasBeenSet = true; m_connectSourcePhoneNumber = value; }
-    inline void SetConnectSourcePhoneNumber(Aws::String&& value) { m_connectSourcePhoneNumberHasBeenSet = true; m_connectSourcePhoneNumber = std::move(value); }
-    inline void SetConnectSourcePhoneNumber(const char* value) { m_connectSourcePhoneNumberHasBeenSet = true; m_connectSourcePhoneNumber.assign(value); }
-    inline UpdateCampaignOutboundCallConfigRequest& WithConnectSourcePhoneNumber(const Aws::String& value) { SetConnectSourcePhoneNumber(value); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithConnectSourcePhoneNumber(Aws::String&& value) { SetConnectSourcePhoneNumber(std::move(value)); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithConnectSourcePhoneNumber(const char* value) { SetConnectSourcePhoneNumber(value); return *this;}
+    template<typename ConnectSourcePhoneNumberT = Aws::String>
+    void SetConnectSourcePhoneNumber(ConnectSourcePhoneNumberT&& value) { m_connectSourcePhoneNumberHasBeenSet = true; m_connectSourcePhoneNumber = std::forward<ConnectSourcePhoneNumberT>(value); }
+    template<typename ConnectSourcePhoneNumberT = Aws::String>
+    UpdateCampaignOutboundCallConfigRequest& WithConnectSourcePhoneNumber(ConnectSourcePhoneNumberT&& value) { SetConnectSourcePhoneNumber(std::forward<ConnectSourcePhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AnswerMachineDetectionConfig& GetAnswerMachineDetectionConfig() const{ return m_answerMachineDetectionConfig; }
+    inline const AnswerMachineDetectionConfig& GetAnswerMachineDetectionConfig() const { return m_answerMachineDetectionConfig; }
     inline bool AnswerMachineDetectionConfigHasBeenSet() const { return m_answerMachineDetectionConfigHasBeenSet; }
-    inline void SetAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = value; }
-    inline void SetAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = std::move(value); }
-    inline UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { SetAnswerMachineDetectionConfig(value); return *this;}
-    inline UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { SetAnswerMachineDetectionConfig(std::move(value)); return *this;}
+    template<typename AnswerMachineDetectionConfigT = AnswerMachineDetectionConfig>
+    void SetAnswerMachineDetectionConfig(AnswerMachineDetectionConfigT&& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = std::forward<AnswerMachineDetectionConfigT>(value); }
+    template<typename AnswerMachineDetectionConfigT = AnswerMachineDetectionConfig>
+    UpdateCampaignOutboundCallConfigRequest& WithAnswerMachineDetectionConfig(AnswerMachineDetectionConfigT&& value) { SetAnswerMachineDetectionConfig(std::forward<AnswerMachineDetectionConfigT>(value)); return *this;}
     ///@}
   private:
 

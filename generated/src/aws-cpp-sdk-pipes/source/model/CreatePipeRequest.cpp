@@ -12,24 +12,6 @@ using namespace Aws::Pipes::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePipeRequest::CreatePipeRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_desiredState(RequestedPipeState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourceParametersHasBeenSet(false),
-    m_enrichmentHasBeenSet(false),
-    m_enrichmentParametersHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetParametersHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreatePipeRequest::SerializePayload() const
 {
   JsonValue payload;

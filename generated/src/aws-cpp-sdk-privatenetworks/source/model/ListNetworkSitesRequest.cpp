@@ -12,15 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListNetworkSitesRequest::ListNetworkSitesRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_startTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListNetworkSitesRequest::SerializePayload() const
 {
   JsonValue payload;

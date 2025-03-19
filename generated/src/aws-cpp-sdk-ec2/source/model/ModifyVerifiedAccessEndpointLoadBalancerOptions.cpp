@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessEndpointLoadBalancerOptions::ModifyVerifiedAccessEndpointLoadBalancerOptions() : 
-    m_subnetIdsHasBeenSet(false),
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessEndpointLoadBalancerOptions::ModifyVerifiedAccessEndpointLoadBalancerOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessEndpointLoadBalancerOptions()
 {
   *this = xmlNode;
 }
@@ -46,6 +35,7 @@ ModifyVerifiedAccessEndpointLoadBalancerOptions& ModifyVerifiedAccessEndpointLoa
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
@@ -57,7 +47,7 @@ ModifyVerifiedAccessEndpointLoadBalancerOptions& ModifyVerifiedAccessEndpointLoa
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
@@ -70,6 +60,7 @@ ModifyVerifiedAccessEndpointLoadBalancerOptions& ModifyVerifiedAccessEndpointLoa
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);

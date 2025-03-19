@@ -18,24 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-TargetGroupConfig::TargetGroupConfig() : 
-    m_healthCheckHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_lambdaEventStructureVersion(LambdaEventStructureVersion::NOT_SET),
-    m_lambdaEventStructureVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(TargetGroupProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_protocolVersion(TargetGroupProtocolVersion::NOT_SET),
-    m_protocolVersionHasBeenSet(false),
-    m_vpcIdentifierHasBeenSet(false)
-{
-}
-
 TargetGroupConfig::TargetGroupConfig(JsonView jsonValue)
-  : TargetGroupConfig()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ TargetGroupConfig& TargetGroupConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("healthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("healthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaEventStructureVersion"))
   {
     m_lambdaEventStructureVersion = LambdaEventStructureVersionMapper::GetLambdaEventStructureVersionForName(jsonValue.GetString("lambdaEventStructureVersion"));
-
     m_lambdaEventStructureVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = TargetGroupProtocolMapper::GetTargetGroupProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocolVersion"))
   {
     m_protocolVersion = TargetGroupProtocolVersionMapper::GetTargetGroupProtocolVersionForName(jsonValue.GetString("protocolVersion"));
-
     m_protocolVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcIdentifier"))
   {
     m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
-
     m_vpcIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

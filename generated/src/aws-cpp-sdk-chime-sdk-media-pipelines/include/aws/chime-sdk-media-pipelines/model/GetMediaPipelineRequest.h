@@ -21,7 +21,7 @@ namespace Model
   class GetMediaPipelineRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API GetMediaPipelineRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API GetMediaPipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the pipeline that you want to get.</p>
      */
-    inline const Aws::String& GetMediaPipelineId() const{ return m_mediaPipelineId; }
+    inline const Aws::String& GetMediaPipelineId() const { return m_mediaPipelineId; }
     inline bool MediaPipelineIdHasBeenSet() const { return m_mediaPipelineIdHasBeenSet; }
-    inline void SetMediaPipelineId(const Aws::String& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = value; }
-    inline void SetMediaPipelineId(Aws::String&& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = std::move(value); }
-    inline void SetMediaPipelineId(const char* value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId.assign(value); }
-    inline GetMediaPipelineRequest& WithMediaPipelineId(const Aws::String& value) { SetMediaPipelineId(value); return *this;}
-    inline GetMediaPipelineRequest& WithMediaPipelineId(Aws::String&& value) { SetMediaPipelineId(std::move(value)); return *this;}
-    inline GetMediaPipelineRequest& WithMediaPipelineId(const char* value) { SetMediaPipelineId(value); return *this;}
+    template<typename MediaPipelineIdT = Aws::String>
+    void SetMediaPipelineId(MediaPipelineIdT&& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = std::forward<MediaPipelineIdT>(value); }
+    template<typename MediaPipelineIdT = Aws::String>
+    GetMediaPipelineRequest& WithMediaPipelineId(MediaPipelineIdT&& value) { SetMediaPipelineId(std::forward<MediaPipelineIdT>(value)); return *this;}
     ///@}
   private:
 

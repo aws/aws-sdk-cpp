@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProtectedResourcesByBackupVaultRequest::ListProtectedResourcesByBackupVaultRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultAccountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListProtectedResourcesByBackupVaultRequest::SerializePayload() const
 {
   return {};

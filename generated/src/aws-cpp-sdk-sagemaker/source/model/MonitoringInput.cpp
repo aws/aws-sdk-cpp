@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringInput::MonitoringInput() : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
-{
-}
-
 MonitoringInput::MonitoringInput(JsonView jsonValue)
-  : MonitoringInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MonitoringInput& MonitoringInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointInput"))
   {
     m_endpointInput = jsonValue.GetObject("EndpointInput");
-
     m_endpointInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchTransformInput"))
   {
     m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
-
     m_batchTransformInputHasBeenSet = true;
   }
-
   return *this;
 }
 

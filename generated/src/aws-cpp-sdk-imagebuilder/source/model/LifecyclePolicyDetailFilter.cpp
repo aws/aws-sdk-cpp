@@ -18,20 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecyclePolicyDetailFilter::LifecyclePolicyDetailFilter() : 
-    m_type(LifecyclePolicyDetailFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_unit(LifecyclePolicyTimeUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_retainAtLeast(0),
-    m_retainAtLeastHasBeenSet(false)
-{
-}
-
 LifecyclePolicyDetailFilter::LifecyclePolicyDetailFilter(JsonView jsonValue)
-  : LifecyclePolicyDetailFilter()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ LifecyclePolicyDetailFilter& LifecyclePolicyDetailFilter::operator =(JsonView js
   if(jsonValue.ValueExists("type"))
   {
     m_type = LifecyclePolicyDetailFilterTypeMapper::GetLifecyclePolicyDetailFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = LifecyclePolicyTimeUnitMapper::GetLifecyclePolicyTimeUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retainAtLeast"))
   {
     m_retainAtLeast = jsonValue.GetInteger("retainAtLeast");
-
     m_retainAtLeastHasBeenSet = true;
   }
-
   return *this;
 }
 

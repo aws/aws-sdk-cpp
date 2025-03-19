@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AccountAttribute::AccountAttribute() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValuesHasBeenSet(false)
-{
-}
-
 AccountAttribute::AccountAttribute(const XmlNode& xmlNode)
-  : AccountAttribute()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ AccountAttribute& AccountAttribute::operator =(const XmlNode& xmlNode)
     if(!attributeValuesNode.IsNull())
     {
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("item");
+      m_attributeValuesHasBeenSet = !attributeValuesMember.IsNull();
       while(!attributeValuesMember.IsNull())
       {
         m_attributeValues.push_back(attributeValuesMember);

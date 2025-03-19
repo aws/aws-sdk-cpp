@@ -18,26 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-ListCasesItem::ListCasesItem() : 
-    m_caseIdHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_caseArnHasBeenSet(false),
-    m_engagementType(EngagementType::NOT_SET),
-    m_engagementTypeHasBeenSet(false),
-    m_caseStatus(CaseStatus::NOT_SET),
-    m_caseStatusHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_closedDateHasBeenSet(false),
-    m_resolverType(ResolverType::NOT_SET),
-    m_resolverTypeHasBeenSet(false),
-    m_pendingAction(PendingAction::NOT_SET),
-    m_pendingActionHasBeenSet(false)
-{
-}
-
 ListCasesItem::ListCasesItem(JsonView jsonValue)
-  : ListCasesItem()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ ListCasesItem& ListCasesItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseId"))
   {
     m_caseId = jsonValue.GetString("caseId");
-
     m_caseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("caseArn"))
   {
     m_caseArn = jsonValue.GetString("caseArn");
-
     m_caseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engagementType"))
   {
     m_engagementType = EngagementTypeMapper::GetEngagementTypeForName(jsonValue.GetString("engagementType"));
-
     m_engagementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("caseStatus"))
   {
     m_caseStatus = CaseStatusMapper::GetCaseStatusForName(jsonValue.GetString("caseStatus"));
-
     m_caseStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("closedDate"))
   {
     m_closedDate = jsonValue.GetDouble("closedDate");
-
     m_closedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolverType"))
   {
     m_resolverType = ResolverTypeMapper::GetResolverTypeForName(jsonValue.GetString("resolverType"));
-
     m_resolverTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingAction"))
   {
     m_pendingAction = PendingActionMapper::GetPendingActionForName(jsonValue.GetString("pendingAction"));
-
     m_pendingActionHasBeenSet = true;
   }
-
   return *this;
 }
 

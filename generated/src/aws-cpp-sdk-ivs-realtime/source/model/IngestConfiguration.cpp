@@ -18,24 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-IngestConfiguration::IngestConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_ingestProtocol(IngestProtocol::NOT_SET),
-    m_ingestProtocolHasBeenSet(false),
-    m_streamKeyHasBeenSet(false),
-    m_stageArnHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_state(IngestConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IngestConfiguration::IngestConfiguration(JsonView jsonValue)
-  : IngestConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ IngestConfiguration& IngestConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestProtocol"))
   {
     m_ingestProtocol = IngestProtocolMapper::GetIngestProtocolForName(jsonValue.GetString("ingestProtocol"));
-
     m_ingestProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamKey"))
   {
     m_streamKey = jsonValue.GetString("streamKey");
-
     m_streamKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageArn"))
   {
     m_stageArn = jsonValue.GetString("stageArn");
-
     m_stageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("participantId"))
   {
     m_participantId = jsonValue.GetString("participantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = IngestConfigurationStateMapper::GetIngestConfigurationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -107,7 +74,6 @@ IngestConfiguration& IngestConfiguration::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -117,7 +83,6 @@ IngestConfiguration& IngestConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class Output
   {
   public:
-    AWS_APPTEST_API Output();
+    AWS_APPTEST_API Output() = default;
     AWS_APPTEST_API Output(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The file of the output.</p>
      */
-    inline const OutputFile& GetFile() const{ return m_file; }
+    inline const OutputFile& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const OutputFile& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(OutputFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline Output& WithFile(const OutputFile& value) { SetFile(value); return *this;}
-    inline Output& WithFile(OutputFile&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = OutputFile>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = OutputFile>
+    Output& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
   private:
 

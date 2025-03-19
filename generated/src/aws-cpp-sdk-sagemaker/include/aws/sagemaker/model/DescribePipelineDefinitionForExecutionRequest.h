@@ -21,7 +21,7 @@ namespace Model
   class DescribePipelineDefinitionForExecutionRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribePipelineDefinitionForExecutionRequest();
+    AWS_SAGEMAKER_API DescribePipelineDefinitionForExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
      */
-    inline const Aws::String& GetPipelineExecutionArn() const{ return m_pipelineExecutionArn; }
+    inline const Aws::String& GetPipelineExecutionArn() const { return m_pipelineExecutionArn; }
     inline bool PipelineExecutionArnHasBeenSet() const { return m_pipelineExecutionArnHasBeenSet; }
-    inline void SetPipelineExecutionArn(const Aws::String& value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn = value; }
-    inline void SetPipelineExecutionArn(Aws::String&& value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn = std::move(value); }
-    inline void SetPipelineExecutionArn(const char* value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn.assign(value); }
-    inline DescribePipelineDefinitionForExecutionRequest& WithPipelineExecutionArn(const Aws::String& value) { SetPipelineExecutionArn(value); return *this;}
-    inline DescribePipelineDefinitionForExecutionRequest& WithPipelineExecutionArn(Aws::String&& value) { SetPipelineExecutionArn(std::move(value)); return *this;}
-    inline DescribePipelineDefinitionForExecutionRequest& WithPipelineExecutionArn(const char* value) { SetPipelineExecutionArn(value); return *this;}
+    template<typename PipelineExecutionArnT = Aws::String>
+    void SetPipelineExecutionArn(PipelineExecutionArnT&& value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn = std::forward<PipelineExecutionArnT>(value); }
+    template<typename PipelineExecutionArnT = Aws::String>
+    DescribePipelineDefinitionForExecutionRequest& WithPipelineExecutionArn(PipelineExecutionArnT&& value) { SetPipelineExecutionArn(std::forward<PipelineExecutionArnT>(value)); return *this;}
     ///@}
   private:
 

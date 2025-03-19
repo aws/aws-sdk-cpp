@@ -31,7 +31,7 @@ namespace Model
   class NavbarStyle
   {
   public:
-    AWS_QUICKSIGHT_API NavbarStyle();
+    AWS_QUICKSIGHT_API NavbarStyle() = default;
     AWS_QUICKSIGHT_API NavbarStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NavbarStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>The global navigation bar style.</p>
      */
-    inline const Palette& GetGlobalNavbar() const{ return m_globalNavbar; }
+    inline const Palette& GetGlobalNavbar() const { return m_globalNavbar; }
     inline bool GlobalNavbarHasBeenSet() const { return m_globalNavbarHasBeenSet; }
-    inline void SetGlobalNavbar(const Palette& value) { m_globalNavbarHasBeenSet = true; m_globalNavbar = value; }
-    inline void SetGlobalNavbar(Palette&& value) { m_globalNavbarHasBeenSet = true; m_globalNavbar = std::move(value); }
-    inline NavbarStyle& WithGlobalNavbar(const Palette& value) { SetGlobalNavbar(value); return *this;}
-    inline NavbarStyle& WithGlobalNavbar(Palette&& value) { SetGlobalNavbar(std::move(value)); return *this;}
+    template<typename GlobalNavbarT = Palette>
+    void SetGlobalNavbar(GlobalNavbarT&& value) { m_globalNavbarHasBeenSet = true; m_globalNavbar = std::forward<GlobalNavbarT>(value); }
+    template<typename GlobalNavbarT = Palette>
+    NavbarStyle& WithGlobalNavbar(GlobalNavbarT&& value) { SetGlobalNavbar(std::forward<GlobalNavbarT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contextual navigation bar style.</p>
      */
-    inline const Palette& GetContextualNavbar() const{ return m_contextualNavbar; }
+    inline const Palette& GetContextualNavbar() const { return m_contextualNavbar; }
     inline bool ContextualNavbarHasBeenSet() const { return m_contextualNavbarHasBeenSet; }
-    inline void SetContextualNavbar(const Palette& value) { m_contextualNavbarHasBeenSet = true; m_contextualNavbar = value; }
-    inline void SetContextualNavbar(Palette&& value) { m_contextualNavbarHasBeenSet = true; m_contextualNavbar = std::move(value); }
-    inline NavbarStyle& WithContextualNavbar(const Palette& value) { SetContextualNavbar(value); return *this;}
-    inline NavbarStyle& WithContextualNavbar(Palette&& value) { SetContextualNavbar(std::move(value)); return *this;}
+    template<typename ContextualNavbarT = Palette>
+    void SetContextualNavbar(ContextualNavbarT&& value) { m_contextualNavbarHasBeenSet = true; m_contextualNavbar = std::forward<ContextualNavbarT>(value); }
+    template<typename ContextualNavbarT = Palette>
+    NavbarStyle& WithContextualNavbar(ContextualNavbarT&& value) { SetContextualNavbar(std::forward<ContextualNavbarT>(value)); return *this;}
     ///@}
   private:
 

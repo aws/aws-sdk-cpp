@@ -12,14 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecommendationPreferencesRequest::DeleteRecommendationPreferencesRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_recommendationPreferenceNamesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecommendationPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

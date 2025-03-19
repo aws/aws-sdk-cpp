@@ -12,13 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyClusterRequest::ModifyClusterRequest() : 
-    m_hsmTypeHasBeenSet(false),
-    m_backupRetentionPolicyHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterRequest::SerializePayload() const
 {
   JsonValue payload;

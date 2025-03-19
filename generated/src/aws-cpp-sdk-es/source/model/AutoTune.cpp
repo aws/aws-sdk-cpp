@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-AutoTune::AutoTune() : 
-    m_autoTuneType(AutoTuneType::NOT_SET),
-    m_autoTuneTypeHasBeenSet(false),
-    m_autoTuneDetailsHasBeenSet(false)
-{
-}
-
 AutoTune::AutoTune(JsonView jsonValue)
-  : AutoTune()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AutoTune& AutoTune::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutoTuneType"))
   {
     m_autoTuneType = AutoTuneTypeMapper::GetAutoTuneTypeForName(jsonValue.GetString("AutoTuneType"));
-
     m_autoTuneTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoTuneDetails"))
   {
     m_autoTuneDetails = jsonValue.GetObject("AutoTuneDetails");
-
     m_autoTuneDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

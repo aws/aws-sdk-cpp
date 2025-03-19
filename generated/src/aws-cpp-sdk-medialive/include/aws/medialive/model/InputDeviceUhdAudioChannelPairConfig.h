@@ -32,7 +32,7 @@ namespace Model
   class InputDeviceUhdAudioChannelPairConfig
   {
   public:
-    AWS_MEDIALIVE_API InputDeviceUhdAudioChannelPairConfig();
+    AWS_MEDIALIVE_API InputDeviceUhdAudioChannelPairConfig() = default;
     AWS_MEDIALIVE_API InputDeviceUhdAudioChannelPairConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputDeviceUhdAudioChannelPairConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * The ID for one audio pair configuration, a value from 1 to 8.
      */
-    inline int GetId() const{ return m_id; }
+    inline int GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline InputDeviceUhdAudioChannelPairConfig& WithId(int value) { SetId(value); return *this;}
@@ -55,19 +55,17 @@ namespace Model
      * in bytes). For example, CBR-AAC_HQ-192000. Or DISABLED, in which case the device
      * won't produce audio for this pair.
      */
-    inline const InputDeviceUhdAudioChannelPairProfile& GetProfile() const{ return m_profile; }
+    inline InputDeviceUhdAudioChannelPairProfile GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const InputDeviceUhdAudioChannelPairProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(InputDeviceUhdAudioChannelPairProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline InputDeviceUhdAudioChannelPairConfig& WithProfile(const InputDeviceUhdAudioChannelPairProfile& value) { SetProfile(value); return *this;}
-    inline InputDeviceUhdAudioChannelPairConfig& WithProfile(InputDeviceUhdAudioChannelPairProfile&& value) { SetProfile(std::move(value)); return *this;}
+    inline void SetProfile(InputDeviceUhdAudioChannelPairProfile value) { m_profileHasBeenSet = true; m_profile = value; }
+    inline InputDeviceUhdAudioChannelPairConfig& WithProfile(InputDeviceUhdAudioChannelPairProfile value) { SetProfile(value); return *this;}
     ///@}
   private:
 
-    int m_id;
+    int m_id{0};
     bool m_idHasBeenSet = false;
 
-    InputDeviceUhdAudioChannelPairProfile m_profile;
+    InputDeviceUhdAudioChannelPairProfile m_profile{InputDeviceUhdAudioChannelPairProfile::NOT_SET};
     bool m_profileHasBeenSet = false;
   };
 

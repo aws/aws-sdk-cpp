@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportJobThemeOverrideTags
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideTags();
+    AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideTags() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideTags(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideTags& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,28 @@ namespace Model
      * <p>A list of theme IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all themes in this asset bundle.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetThemeIds() const{ return m_themeIds; }
+    inline const Aws::Vector<Aws::String>& GetThemeIds() const { return m_themeIds; }
     inline bool ThemeIdsHasBeenSet() const { return m_themeIdsHasBeenSet; }
-    inline void SetThemeIds(const Aws::Vector<Aws::String>& value) { m_themeIdsHasBeenSet = true; m_themeIds = value; }
-    inline void SetThemeIds(Aws::Vector<Aws::String>&& value) { m_themeIdsHasBeenSet = true; m_themeIds = std::move(value); }
-    inline AssetBundleImportJobThemeOverrideTags& WithThemeIds(const Aws::Vector<Aws::String>& value) { SetThemeIds(value); return *this;}
-    inline AssetBundleImportJobThemeOverrideTags& WithThemeIds(Aws::Vector<Aws::String>&& value) { SetThemeIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobThemeOverrideTags& AddThemeIds(const Aws::String& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
-    inline AssetBundleImportJobThemeOverrideTags& AddThemeIds(Aws::String&& value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobThemeOverrideTags& AddThemeIds(const char* value) { m_themeIdsHasBeenSet = true; m_themeIds.push_back(value); return *this; }
+    template<typename ThemeIdsT = Aws::Vector<Aws::String>>
+    void SetThemeIds(ThemeIdsT&& value) { m_themeIdsHasBeenSet = true; m_themeIds = std::forward<ThemeIdsT>(value); }
+    template<typename ThemeIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobThemeOverrideTags& WithThemeIds(ThemeIdsT&& value) { SetThemeIds(std::forward<ThemeIdsT>(value)); return *this;}
+    template<typename ThemeIdsT = Aws::String>
+    AssetBundleImportJobThemeOverrideTags& AddThemeIds(ThemeIdsT&& value) { m_themeIdsHasBeenSet = true; m_themeIds.emplace_back(std::forward<ThemeIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of tags for the themes that you want to apply overrides to.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssetBundleImportJobThemeOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AssetBundleImportJobThemeOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssetBundleImportJobThemeOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AssetBundleImportJobThemeOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AssetBundleImportJobThemeOverrideTags& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AssetBundleImportJobThemeOverrideTags& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

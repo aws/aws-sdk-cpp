@@ -25,7 +25,7 @@ namespace Model
   class GetNextMessageRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API GetNextMessageRequest();
+    AWS_QCONNECT_API GetNextMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline GetNextMessageRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline GetNextMessageRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline GetNextMessageRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    GetNextMessageRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The token for the next message. Use the value returned in the SendMessage or
      * previous response in the next request to retrieve the next message.</p>
      */
-    inline const Aws::String& GetNextMessageToken() const{ return m_nextMessageToken; }
+    inline const Aws::String& GetNextMessageToken() const { return m_nextMessageToken; }
     inline bool NextMessageTokenHasBeenSet() const { return m_nextMessageTokenHasBeenSet; }
-    inline void SetNextMessageToken(const Aws::String& value) { m_nextMessageTokenHasBeenSet = true; m_nextMessageToken = value; }
-    inline void SetNextMessageToken(Aws::String&& value) { m_nextMessageTokenHasBeenSet = true; m_nextMessageToken = std::move(value); }
-    inline void SetNextMessageToken(const char* value) { m_nextMessageTokenHasBeenSet = true; m_nextMessageToken.assign(value); }
-    inline GetNextMessageRequest& WithNextMessageToken(const Aws::String& value) { SetNextMessageToken(value); return *this;}
-    inline GetNextMessageRequest& WithNextMessageToken(Aws::String&& value) { SetNextMessageToken(std::move(value)); return *this;}
-    inline GetNextMessageRequest& WithNextMessageToken(const char* value) { SetNextMessageToken(value); return *this;}
+    template<typename NextMessageTokenT = Aws::String>
+    void SetNextMessageToken(NextMessageTokenT&& value) { m_nextMessageTokenHasBeenSet = true; m_nextMessageToken = std::forward<NextMessageTokenT>(value); }
+    template<typename NextMessageTokenT = Aws::String>
+    GetNextMessageRequest& WithNextMessageToken(NextMessageTokenT&& value) { SetNextMessageToken(std::forward<NextMessageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Q in Connect session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline GetNextMessageRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline GetNextMessageRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline GetNextMessageRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    GetNextMessageRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCacheParametersResult::DescribeCacheParametersResult()
-{
-}
-
 DescribeCacheParametersResult::DescribeCacheParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,34 +38,40 @@ DescribeCacheParametersResult& DescribeCacheParametersResult::operator =(const A
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("Parameter");
       }
 
+      m_parametersHasBeenSet = true;
     }
     XmlNode cacheNodeTypeSpecificParametersNode = resultNode.FirstChild("CacheNodeTypeSpecificParameters");
     if(!cacheNodeTypeSpecificParametersNode.IsNull())
     {
       XmlNode cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersNode.FirstChild("CacheNodeTypeSpecificParameter");
+      m_cacheNodeTypeSpecificParametersHasBeenSet = !cacheNodeTypeSpecificParametersMember.IsNull();
       while(!cacheNodeTypeSpecificParametersMember.IsNull())
       {
         m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParametersMember);
         cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersMember.NextNode("CacheNodeTypeSpecificParameter");
       }
 
+      m_cacheNodeTypeSpecificParametersHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeCacheParametersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

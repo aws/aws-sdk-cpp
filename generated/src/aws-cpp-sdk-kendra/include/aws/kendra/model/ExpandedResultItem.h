@@ -38,7 +38,7 @@ namespace Model
   class ExpandedResultItem
   {
   public:
-    AWS_KENDRA_API ExpandedResultItem();
+    AWS_KENDRA_API ExpandedResultItem() = default;
     AWS_KENDRA_API ExpandedResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ExpandedResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,62 +48,56 @@ namespace Model
     /**
      * <p>The identifier for the expanded result.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ExpandedResultItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ExpandedResultItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ExpandedResultItem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ExpandedResultItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The idenitifier of the document.</p>
      */
-    inline const Aws::String& GetDocumentId() const{ return m_documentId; }
+    inline const Aws::String& GetDocumentId() const { return m_documentId; }
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
-    inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
-    inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
-    inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
-    inline ExpandedResultItem& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
-    inline ExpandedResultItem& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
-    inline ExpandedResultItem& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+    template<typename DocumentIdT = Aws::String>
+    void SetDocumentId(DocumentIdT&& value) { m_documentIdHasBeenSet = true; m_documentId = std::forward<DocumentIdT>(value); }
+    template<typename DocumentIdT = Aws::String>
+    ExpandedResultItem& WithDocumentId(DocumentIdT&& value) { SetDocumentId(std::forward<DocumentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TextWithHighlights& GetDocumentTitle() const{ return m_documentTitle; }
+    inline const TextWithHighlights& GetDocumentTitle() const { return m_documentTitle; }
     inline bool DocumentTitleHasBeenSet() const { return m_documentTitleHasBeenSet; }
-    inline void SetDocumentTitle(const TextWithHighlights& value) { m_documentTitleHasBeenSet = true; m_documentTitle = value; }
-    inline void SetDocumentTitle(TextWithHighlights&& value) { m_documentTitleHasBeenSet = true; m_documentTitle = std::move(value); }
-    inline ExpandedResultItem& WithDocumentTitle(const TextWithHighlights& value) { SetDocumentTitle(value); return *this;}
-    inline ExpandedResultItem& WithDocumentTitle(TextWithHighlights&& value) { SetDocumentTitle(std::move(value)); return *this;}
+    template<typename DocumentTitleT = TextWithHighlights>
+    void SetDocumentTitle(DocumentTitleT&& value) { m_documentTitleHasBeenSet = true; m_documentTitle = std::forward<DocumentTitleT>(value); }
+    template<typename DocumentTitleT = TextWithHighlights>
+    ExpandedResultItem& WithDocumentTitle(DocumentTitleT&& value) { SetDocumentTitle(std::forward<DocumentTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TextWithHighlights& GetDocumentExcerpt() const{ return m_documentExcerpt; }
+    inline const TextWithHighlights& GetDocumentExcerpt() const { return m_documentExcerpt; }
     inline bool DocumentExcerptHasBeenSet() const { return m_documentExcerptHasBeenSet; }
-    inline void SetDocumentExcerpt(const TextWithHighlights& value) { m_documentExcerptHasBeenSet = true; m_documentExcerpt = value; }
-    inline void SetDocumentExcerpt(TextWithHighlights&& value) { m_documentExcerptHasBeenSet = true; m_documentExcerpt = std::move(value); }
-    inline ExpandedResultItem& WithDocumentExcerpt(const TextWithHighlights& value) { SetDocumentExcerpt(value); return *this;}
-    inline ExpandedResultItem& WithDocumentExcerpt(TextWithHighlights&& value) { SetDocumentExcerpt(std::move(value)); return *this;}
+    template<typename DocumentExcerptT = TextWithHighlights>
+    void SetDocumentExcerpt(DocumentExcerptT&& value) { m_documentExcerptHasBeenSet = true; m_documentExcerpt = std::forward<DocumentExcerptT>(value); }
+    template<typename DocumentExcerptT = TextWithHighlights>
+    ExpandedResultItem& WithDocumentExcerpt(DocumentExcerptT&& value) { SetDocumentExcerpt(std::forward<DocumentExcerptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI of the original location of the document.</p>
      */
-    inline const Aws::String& GetDocumentURI() const{ return m_documentURI; }
+    inline const Aws::String& GetDocumentURI() const { return m_documentURI; }
     inline bool DocumentURIHasBeenSet() const { return m_documentURIHasBeenSet; }
-    inline void SetDocumentURI(const Aws::String& value) { m_documentURIHasBeenSet = true; m_documentURI = value; }
-    inline void SetDocumentURI(Aws::String&& value) { m_documentURIHasBeenSet = true; m_documentURI = std::move(value); }
-    inline void SetDocumentURI(const char* value) { m_documentURIHasBeenSet = true; m_documentURI.assign(value); }
-    inline ExpandedResultItem& WithDocumentURI(const Aws::String& value) { SetDocumentURI(value); return *this;}
-    inline ExpandedResultItem& WithDocumentURI(Aws::String&& value) { SetDocumentURI(std::move(value)); return *this;}
-    inline ExpandedResultItem& WithDocumentURI(const char* value) { SetDocumentURI(value); return *this;}
+    template<typename DocumentURIT = Aws::String>
+    void SetDocumentURI(DocumentURIT&& value) { m_documentURIHasBeenSet = true; m_documentURI = std::forward<DocumentURIT>(value); }
+    template<typename DocumentURIT = Aws::String>
+    ExpandedResultItem& WithDocumentURI(DocumentURIT&& value) { SetDocumentURI(std::forward<DocumentURIT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +106,14 @@ namespace Model
      * For example, the document author ("_author") or the source URI ("_source_uri")
      * of the document.</p>
      */
-    inline const Aws::Vector<DocumentAttribute>& GetDocumentAttributes() const{ return m_documentAttributes; }
+    inline const Aws::Vector<DocumentAttribute>& GetDocumentAttributes() const { return m_documentAttributes; }
     inline bool DocumentAttributesHasBeenSet() const { return m_documentAttributesHasBeenSet; }
-    inline void SetDocumentAttributes(const Aws::Vector<DocumentAttribute>& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = value; }
-    inline void SetDocumentAttributes(Aws::Vector<DocumentAttribute>&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = std::move(value); }
-    inline ExpandedResultItem& WithDocumentAttributes(const Aws::Vector<DocumentAttribute>& value) { SetDocumentAttributes(value); return *this;}
-    inline ExpandedResultItem& WithDocumentAttributes(Aws::Vector<DocumentAttribute>&& value) { SetDocumentAttributes(std::move(value)); return *this;}
-    inline ExpandedResultItem& AddDocumentAttributes(const DocumentAttribute& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(value); return *this; }
-    inline ExpandedResultItem& AddDocumentAttributes(DocumentAttribute&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(std::move(value)); return *this; }
+    template<typename DocumentAttributesT = Aws::Vector<DocumentAttribute>>
+    void SetDocumentAttributes(DocumentAttributesT&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = std::forward<DocumentAttributesT>(value); }
+    template<typename DocumentAttributesT = Aws::Vector<DocumentAttribute>>
+    ExpandedResultItem& WithDocumentAttributes(DocumentAttributesT&& value) { SetDocumentAttributes(std::forward<DocumentAttributesT>(value)); return *this;}
+    template<typename DocumentAttributesT = DocumentAttribute>
+    ExpandedResultItem& AddDocumentAttributes(DocumentAttributesT&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.emplace_back(std::forward<DocumentAttributesT>(value)); return *this; }
     ///@}
   private:
 

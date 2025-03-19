@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaVersionErrorItem::SchemaVersionErrorItem() : 
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
-{
-}
-
 SchemaVersionErrorItem::SchemaVersionErrorItem(JsonView jsonValue)
-  : SchemaVersionErrorItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SchemaVersionErrorItem& SchemaVersionErrorItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("ErrorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

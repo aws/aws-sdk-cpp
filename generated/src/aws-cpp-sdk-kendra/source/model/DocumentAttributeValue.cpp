@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DocumentAttributeValue::DocumentAttributeValue() : 
-    m_stringValueHasBeenSet(false),
-    m_stringListValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_dateValueHasBeenSet(false)
-{
-}
-
 DocumentAttributeValue::DocumentAttributeValue(JsonView jsonValue)
-  : DocumentAttributeValue()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringValue"))
   {
     m_stringValue = jsonValue.GetString("StringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringListValue"))
   {
     Aws::Utils::Array<JsonView> stringListValueJsonList = jsonValue.GetArray("StringListValue");
@@ -51,21 +39,16 @@ DocumentAttributeValue& DocumentAttributeValue::operator =(JsonView jsonValue)
     }
     m_stringListValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongValue"))
   {
     m_longValue = jsonValue.GetInt64("LongValue");
-
     m_longValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateValue"))
   {
     m_dateValue = jsonValue.GetDouble("DateValue");
-
     m_dateValueHasBeenSet = true;
   }
-
   return *this;
 }
 

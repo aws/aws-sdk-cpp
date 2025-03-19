@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-OutputResolutionResamplingInput::OutputResolutionResamplingInput() : 
-    m_userDefinedHasBeenSet(false)
-{
-}
-
 OutputResolutionResamplingInput::OutputResolutionResamplingInput(JsonView jsonValue)
-  : OutputResolutionResamplingInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputResolutionResamplingInput& OutputResolutionResamplingInput::operator =(Jso
   if(jsonValue.ValueExists("UserDefined"))
   {
     m_userDefined = jsonValue.GetObject("UserDefined");
-
     m_userDefinedHasBeenSet = true;
   }
-
   return *this;
 }
 

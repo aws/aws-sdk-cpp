@@ -33,7 +33,7 @@ namespace Model
   class GetMLInputChannelResult
   {
   public:
-    AWS_CLEANROOMSML_API GetMLInputChannelResult();
+    AWS_CLEANROOMSML_API GetMLInputChannelResult() = default;
     AWS_CLEANROOMSML_API GetMLInputChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API GetMLInputChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,35 +42,33 @@ namespace Model
     /**
      * <p>The time at which the ML input channel was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline GetMLInputChannelResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline GetMLInputChannelResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    GetMLInputChannelResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The most recent time at which the ML input channel was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline GetMLInputChannelResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline GetMLInputChannelResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetMLInputChannelResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The membership ID of the membership that contains the ML input channel.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifier.assign(value); }
-    inline GetMLInputChannelResult& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline GetMLInputChannelResult& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    GetMLInputChannelResult& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,24 +76,22 @@ namespace Model
      * <p>The collaboration ID of the collaboration that contains the ML input
      * channel.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifier.assign(value); }
-    inline GetMLInputChannelResult& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline GetMLInputChannelResult& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    GetMLInputChannelResult& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input channel that was used to create the ML input channel.</p>
      */
-    inline const InputChannel& GetInputChannel() const{ return m_inputChannel; }
-    inline void SetInputChannel(const InputChannel& value) { m_inputChannel = value; }
-    inline void SetInputChannel(InputChannel&& value) { m_inputChannel = std::move(value); }
-    inline GetMLInputChannelResult& WithInputChannel(const InputChannel& value) { SetInputChannel(value); return *this;}
-    inline GetMLInputChannelResult& WithInputChannel(InputChannel&& value) { SetInputChannel(std::move(value)); return *this;}
+    inline const InputChannel& GetInputChannel() const { return m_inputChannel; }
+    template<typename InputChannelT = InputChannel>
+    void SetInputChannel(InputChannelT&& value) { m_inputChannelHasBeenSet = true; m_inputChannel = std::forward<InputChannelT>(value); }
+    template<typename InputChannelT = InputChannel>
+    GetMLInputChannelResult& WithInputChannel(InputChannelT&& value) { SetInputChannel(std::forward<InputChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,39 +99,33 @@ namespace Model
      * <p>The ID of the protected query that was used to create the ML input
      * channel.</p>
      */
-    inline const Aws::String& GetProtectedQueryIdentifier() const{ return m_protectedQueryIdentifier; }
-    inline void SetProtectedQueryIdentifier(const Aws::String& value) { m_protectedQueryIdentifier = value; }
-    inline void SetProtectedQueryIdentifier(Aws::String&& value) { m_protectedQueryIdentifier = std::move(value); }
-    inline void SetProtectedQueryIdentifier(const char* value) { m_protectedQueryIdentifier.assign(value); }
-    inline GetMLInputChannelResult& WithProtectedQueryIdentifier(const Aws::String& value) { SetProtectedQueryIdentifier(value); return *this;}
-    inline GetMLInputChannelResult& WithProtectedQueryIdentifier(Aws::String&& value) { SetProtectedQueryIdentifier(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithProtectedQueryIdentifier(const char* value) { SetProtectedQueryIdentifier(value); return *this;}
+    inline const Aws::String& GetProtectedQueryIdentifier() const { return m_protectedQueryIdentifier; }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    void SetProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { m_protectedQueryIdentifierHasBeenSet = true; m_protectedQueryIdentifier = std::forward<ProtectedQueryIdentifierT>(value); }
+    template<typename ProtectedQueryIdentifierT = Aws::String>
+    GetMLInputChannelResult& WithProtectedQueryIdentifier(ProtectedQueryIdentifierT&& value) { SetProtectedQueryIdentifier(std::forward<ProtectedQueryIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the ML input channel.</p>
      */
-    inline const Aws::String& GetMlInputChannelArn() const{ return m_mlInputChannelArn; }
-    inline void SetMlInputChannelArn(const Aws::String& value) { m_mlInputChannelArn = value; }
-    inline void SetMlInputChannelArn(Aws::String&& value) { m_mlInputChannelArn = std::move(value); }
-    inline void SetMlInputChannelArn(const char* value) { m_mlInputChannelArn.assign(value); }
-    inline GetMLInputChannelResult& WithMlInputChannelArn(const Aws::String& value) { SetMlInputChannelArn(value); return *this;}
-    inline GetMLInputChannelResult& WithMlInputChannelArn(Aws::String&& value) { SetMlInputChannelArn(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithMlInputChannelArn(const char* value) { SetMlInputChannelArn(value); return *this;}
+    inline const Aws::String& GetMlInputChannelArn() const { return m_mlInputChannelArn; }
+    template<typename MlInputChannelArnT = Aws::String>
+    void SetMlInputChannelArn(MlInputChannelArnT&& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = std::forward<MlInputChannelArnT>(value); }
+    template<typename MlInputChannelArnT = Aws::String>
+    GetMLInputChannelResult& WithMlInputChannelArn(MlInputChannelArnT&& value) { SetMlInputChannelArn(std::forward<MlInputChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the ML input channel.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetMLInputChannelResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetMLInputChannelResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetMLInputChannelResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,42 +133,39 @@ namespace Model
      * <p>The configured model algorithm associations that were used to create the ML
      * input channel.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfiguredModelAlgorithmAssociations() const{ return m_configuredModelAlgorithmAssociations; }
-    inline void SetConfiguredModelAlgorithmAssociations(const Aws::Vector<Aws::String>& value) { m_configuredModelAlgorithmAssociations = value; }
-    inline void SetConfiguredModelAlgorithmAssociations(Aws::Vector<Aws::String>&& value) { m_configuredModelAlgorithmAssociations = std::move(value); }
-    inline GetMLInputChannelResult& WithConfiguredModelAlgorithmAssociations(const Aws::Vector<Aws::String>& value) { SetConfiguredModelAlgorithmAssociations(value); return *this;}
-    inline GetMLInputChannelResult& WithConfiguredModelAlgorithmAssociations(Aws::Vector<Aws::String>&& value) { SetConfiguredModelAlgorithmAssociations(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& AddConfiguredModelAlgorithmAssociations(const Aws::String& value) { m_configuredModelAlgorithmAssociations.push_back(value); return *this; }
-    inline GetMLInputChannelResult& AddConfiguredModelAlgorithmAssociations(Aws::String&& value) { m_configuredModelAlgorithmAssociations.push_back(std::move(value)); return *this; }
-    inline GetMLInputChannelResult& AddConfiguredModelAlgorithmAssociations(const char* value) { m_configuredModelAlgorithmAssociations.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetConfiguredModelAlgorithmAssociations() const { return m_configuredModelAlgorithmAssociations; }
+    template<typename ConfiguredModelAlgorithmAssociationsT = Aws::Vector<Aws::String>>
+    void SetConfiguredModelAlgorithmAssociations(ConfiguredModelAlgorithmAssociationsT&& value) { m_configuredModelAlgorithmAssociationsHasBeenSet = true; m_configuredModelAlgorithmAssociations = std::forward<ConfiguredModelAlgorithmAssociationsT>(value); }
+    template<typename ConfiguredModelAlgorithmAssociationsT = Aws::Vector<Aws::String>>
+    GetMLInputChannelResult& WithConfiguredModelAlgorithmAssociations(ConfiguredModelAlgorithmAssociationsT&& value) { SetConfiguredModelAlgorithmAssociations(std::forward<ConfiguredModelAlgorithmAssociationsT>(value)); return *this;}
+    template<typename ConfiguredModelAlgorithmAssociationsT = Aws::String>
+    GetMLInputChannelResult& AddConfiguredModelAlgorithmAssociations(ConfiguredModelAlgorithmAssociationsT&& value) { m_configuredModelAlgorithmAssociationsHasBeenSet = true; m_configuredModelAlgorithmAssociations.emplace_back(std::forward<ConfiguredModelAlgorithmAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the ML input channel.</p>
      */
-    inline const MLInputChannelStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const MLInputChannelStatus& value) { m_status = value; }
-    inline void SetStatus(MLInputChannelStatus&& value) { m_status = std::move(value); }
-    inline GetMLInputChannelResult& WithStatus(const MLInputChannelStatus& value) { SetStatus(value); return *this;}
-    inline GetMLInputChannelResult& WithStatus(MLInputChannelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline MLInputChannelStatus GetStatus() const { return m_status; }
+    inline void SetStatus(MLInputChannelStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetMLInputChannelResult& WithStatus(MLInputChannelStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const StatusDetails& GetStatusDetails() const{ return m_statusDetails; }
-    inline void SetStatusDetails(const StatusDetails& value) { m_statusDetails = value; }
-    inline void SetStatusDetails(StatusDetails&& value) { m_statusDetails = std::move(value); }
-    inline GetMLInputChannelResult& WithStatusDetails(const StatusDetails& value) { SetStatusDetails(value); return *this;}
-    inline GetMLInputChannelResult& WithStatusDetails(StatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+    inline const StatusDetails& GetStatusDetails() const { return m_statusDetails; }
+    template<typename StatusDetailsT = StatusDetails>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = StatusDetails>
+    GetMLInputChannelResult& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days to keep the data in the ML input channel.</p>
      */
-    inline int GetRetentionInDays() const{ return m_retentionInDays; }
-    inline void SetRetentionInDays(int value) { m_retentionInDays = value; }
+    inline int GetRetentionInDays() const { return m_retentionInDays; }
+    inline void SetRetentionInDays(int value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
     inline GetMLInputChannelResult& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
     ///@}
 
@@ -186,8 +173,8 @@ namespace Model
     /**
      * <p>The number of records in the ML input channel.</p>
      */
-    inline long long GetNumberOfRecords() const{ return m_numberOfRecords; }
-    inline void SetNumberOfRecords(long long value) { m_numberOfRecords = value; }
+    inline long long GetNumberOfRecords() const { return m_numberOfRecords; }
+    inline void SetNumberOfRecords(long long value) { m_numberOfRecordsHasBeenSet = true; m_numberOfRecords = value; }
     inline GetMLInputChannelResult& WithNumberOfRecords(long long value) { SetNumberOfRecords(value); return *this;}
     ///@}
 
@@ -195,8 +182,8 @@ namespace Model
     /**
      * <p>The number of files in the ML input channel.</p>
      */
-    inline double GetNumberOfFiles() const{ return m_numberOfFiles; }
-    inline void SetNumberOfFiles(double value) { m_numberOfFiles = value; }
+    inline double GetNumberOfFiles() const { return m_numberOfFiles; }
+    inline void SetNumberOfFiles(double value) { m_numberOfFilesHasBeenSet = true; m_numberOfFiles = value; }
     inline GetMLInputChannelResult& WithNumberOfFiles(double value) { SetNumberOfFiles(value); return *this;}
     ///@}
 
@@ -204,8 +191,8 @@ namespace Model
     /**
      * <p>The size, in GB, of the ML input channel.</p>
      */
-    inline double GetSizeInGb() const{ return m_sizeInGb; }
-    inline void SetSizeInGb(double value) { m_sizeInGb = value; }
+    inline double GetSizeInGb() const { return m_sizeInGb; }
+    inline void SetSizeInGb(double value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline GetMLInputChannelResult& WithSizeInGb(double value) { SetSizeInGb(value); return *this;}
     ///@}
 
@@ -213,13 +200,11 @@ namespace Model
     /**
      * <p>The description of the ML input channel.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetMLInputChannelResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetMLInputChannelResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetMLInputChannelResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,13 +212,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key that was used to create the ML
      * input channel.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-    inline GetMLInputChannelResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline GetMLInputChannelResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    GetMLInputChannelResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -257,69 +240,83 @@ namespace Model
      * count against the limit of 50 tags. Tags with only the key prefix of aws do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetMLInputChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetMLInputChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetMLInputChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetMLInputChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetMLInputChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetMLInputChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetMLInputChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetMLInputChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetMLInputChannelResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetMLInputChannelResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMLInputChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMLInputChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMLInputChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMLInputChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_membershipIdentifier;
+    bool m_membershipIdentifierHasBeenSet = false;
 
     Aws::String m_collaborationIdentifier;
+    bool m_collaborationIdentifierHasBeenSet = false;
 
     InputChannel m_inputChannel;
+    bool m_inputChannelHasBeenSet = false;
 
     Aws::String m_protectedQueryIdentifier;
+    bool m_protectedQueryIdentifierHasBeenSet = false;
 
     Aws::String m_mlInputChannelArn;
+    bool m_mlInputChannelArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_configuredModelAlgorithmAssociations;
+    bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
 
-    MLInputChannelStatus m_status;
+    MLInputChannelStatus m_status{MLInputChannelStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     StatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
 
-    int m_retentionInDays;
+    int m_retentionInDays{0};
+    bool m_retentionInDaysHasBeenSet = false;
 
-    long long m_numberOfRecords;
+    long long m_numberOfRecords{0};
+    bool m_numberOfRecordsHasBeenSet = false;
 
-    double m_numberOfFiles;
+    double m_numberOfFiles{0.0};
+    bool m_numberOfFilesHasBeenSet = false;
 
-    double m_sizeInGb;
+    double m_sizeInGb{0.0};
+    bool m_sizeInGbHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

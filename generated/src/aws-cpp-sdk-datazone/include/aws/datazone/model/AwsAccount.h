@@ -31,7 +31,7 @@ namespace Model
   class AwsAccount
   {
   public:
-    AWS_DATAZONE_API AwsAccount();
+    AWS_DATAZONE_API AwsAccount() = default;
     AWS_DATAZONE_API AwsAccount(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AwsAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The account ID of a project.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline AwsAccount& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline AwsAccount& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline AwsAccount& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    AwsAccount& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID path of a project.</p>
      */
-    inline const Aws::String& GetAwsAccountIdPath() const{ return m_awsAccountIdPath; }
+    inline const Aws::String& GetAwsAccountIdPath() const { return m_awsAccountIdPath; }
     inline bool AwsAccountIdPathHasBeenSet() const { return m_awsAccountIdPathHasBeenSet; }
-    inline void SetAwsAccountIdPath(const Aws::String& value) { m_awsAccountIdPathHasBeenSet = true; m_awsAccountIdPath = value; }
-    inline void SetAwsAccountIdPath(Aws::String&& value) { m_awsAccountIdPathHasBeenSet = true; m_awsAccountIdPath = std::move(value); }
-    inline void SetAwsAccountIdPath(const char* value) { m_awsAccountIdPathHasBeenSet = true; m_awsAccountIdPath.assign(value); }
-    inline AwsAccount& WithAwsAccountIdPath(const Aws::String& value) { SetAwsAccountIdPath(value); return *this;}
-    inline AwsAccount& WithAwsAccountIdPath(Aws::String&& value) { SetAwsAccountIdPath(std::move(value)); return *this;}
-    inline AwsAccount& WithAwsAccountIdPath(const char* value) { SetAwsAccountIdPath(value); return *this;}
+    template<typename AwsAccountIdPathT = Aws::String>
+    void SetAwsAccountIdPath(AwsAccountIdPathT&& value) { m_awsAccountIdPathHasBeenSet = true; m_awsAccountIdPath = std::forward<AwsAccountIdPathT>(value); }
+    template<typename AwsAccountIdPathT = Aws::String>
+    AwsAccount& WithAwsAccountIdPath(AwsAccountIdPathT&& value) { SetAwsAccountIdPath(std::forward<AwsAccountIdPathT>(value)); return *this;}
     ///@}
   private:
 

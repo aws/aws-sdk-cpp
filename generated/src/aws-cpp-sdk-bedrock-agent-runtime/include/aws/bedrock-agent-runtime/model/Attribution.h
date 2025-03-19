@@ -33,7 +33,7 @@ namespace Model
   class Attribution
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Attribution();
+    AWS_BEDROCKAGENTRUNTIME_API Attribution() = default;
     AWS_BEDROCKAGENTRUNTIME_API Attribution(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Attribution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of citations and related information for a part of an agent
      * response.</p>
      */
-    inline const Aws::Vector<Citation>& GetCitations() const{ return m_citations; }
+    inline const Aws::Vector<Citation>& GetCitations() const { return m_citations; }
     inline bool CitationsHasBeenSet() const { return m_citationsHasBeenSet; }
-    inline void SetCitations(const Aws::Vector<Citation>& value) { m_citationsHasBeenSet = true; m_citations = value; }
-    inline void SetCitations(Aws::Vector<Citation>&& value) { m_citationsHasBeenSet = true; m_citations = std::move(value); }
-    inline Attribution& WithCitations(const Aws::Vector<Citation>& value) { SetCitations(value); return *this;}
-    inline Attribution& WithCitations(Aws::Vector<Citation>&& value) { SetCitations(std::move(value)); return *this;}
-    inline Attribution& AddCitations(const Citation& value) { m_citationsHasBeenSet = true; m_citations.push_back(value); return *this; }
-    inline Attribution& AddCitations(Citation&& value) { m_citationsHasBeenSet = true; m_citations.push_back(std::move(value)); return *this; }
+    template<typename CitationsT = Aws::Vector<Citation>>
+    void SetCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations = std::forward<CitationsT>(value); }
+    template<typename CitationsT = Aws::Vector<Citation>>
+    Attribution& WithCitations(CitationsT&& value) { SetCitations(std::forward<CitationsT>(value)); return *this;}
+    template<typename CitationsT = Citation>
+    Attribution& AddCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations.emplace_back(std::forward<CitationsT>(value)); return *this; }
     ///@}
   private:
 

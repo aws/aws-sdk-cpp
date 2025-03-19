@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomActionFilterOperation::CustomActionFilterOperation() : 
-    m_selectedFieldsConfigurationHasBeenSet(false),
-    m_targetVisualsConfigurationHasBeenSet(false)
-{
-}
-
 CustomActionFilterOperation::CustomActionFilterOperation(JsonView jsonValue)
-  : CustomActionFilterOperation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomActionFilterOperation& CustomActionFilterOperation::operator =(JsonView js
   if(jsonValue.ValueExists("SelectedFieldsConfiguration"))
   {
     m_selectedFieldsConfiguration = jsonValue.GetObject("SelectedFieldsConfiguration");
-
     m_selectedFieldsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetVisualsConfiguration"))
   {
     m_targetVisualsConfiguration = jsonValue.GetObject("TargetVisualsConfiguration");
-
     m_targetVisualsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

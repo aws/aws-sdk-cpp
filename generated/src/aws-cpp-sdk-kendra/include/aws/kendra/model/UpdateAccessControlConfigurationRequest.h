@@ -24,7 +24,7 @@ namespace Model
   class UpdateAccessControlConfigurationRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API UpdateAccessControlConfigurationRequest();
+    AWS_KENDRA_API UpdateAccessControlConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,56 +41,48 @@ namespace Model
     /**
      * <p>The identifier of the index for an access control configuration.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline UpdateAccessControlConfigurationRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    UpdateAccessControlConfigurationRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the access control configuration you want to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateAccessControlConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateAccessControlConfigurationRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new name for the access control configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAccessControlConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAccessControlConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description for the access control configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAccessControlConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAccessControlConfigurationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,14 @@ namespace Model
      * where search results are filtered based on the user or their group access to
      * documents.</p>
      */
-    inline const Aws::Vector<Principal>& GetAccessControlList() const{ return m_accessControlList; }
+    inline const Aws::Vector<Principal>& GetAccessControlList() const { return m_accessControlList; }
     inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
-    inline void SetAccessControlList(const Aws::Vector<Principal>& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
-    inline void SetAccessControlList(Aws::Vector<Principal>&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
-    inline UpdateAccessControlConfigurationRequest& WithAccessControlList(const Aws::Vector<Principal>& value) { SetAccessControlList(value); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithAccessControlList(Aws::Vector<Principal>&& value) { SetAccessControlList(std::move(value)); return *this;}
-    inline UpdateAccessControlConfigurationRequest& AddAccessControlList(const Principal& value) { m_accessControlListHasBeenSet = true; m_accessControlList.push_back(value); return *this; }
-    inline UpdateAccessControlConfigurationRequest& AddAccessControlList(Principal&& value) { m_accessControlListHasBeenSet = true; m_accessControlList.push_back(std::move(value)); return *this; }
+    template<typename AccessControlListT = Aws::Vector<Principal>>
+    void SetAccessControlList(AccessControlListT&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::forward<AccessControlListT>(value); }
+    template<typename AccessControlListT = Aws::Vector<Principal>>
+    UpdateAccessControlConfigurationRequest& WithAccessControlList(AccessControlListT&& value) { SetAccessControlList(std::forward<AccessControlListT>(value)); return *this;}
+    template<typename AccessControlListT = Principal>
+    UpdateAccessControlConfigurationRequest& AddAccessControlList(AccessControlListT&& value) { m_accessControlListHasBeenSet = true; m_accessControlList.emplace_back(std::forward<AccessControlListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,14 +109,14 @@ namespace Model
      * lists that define the hierarchy for which documents users should have access
      * to.</p>
      */
-    inline const Aws::Vector<HierarchicalPrincipal>& GetHierarchicalAccessControlList() const{ return m_hierarchicalAccessControlList; }
+    inline const Aws::Vector<HierarchicalPrincipal>& GetHierarchicalAccessControlList() const { return m_hierarchicalAccessControlList; }
     inline bool HierarchicalAccessControlListHasBeenSet() const { return m_hierarchicalAccessControlListHasBeenSet; }
-    inline void SetHierarchicalAccessControlList(const Aws::Vector<HierarchicalPrincipal>& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList = value; }
-    inline void SetHierarchicalAccessControlList(Aws::Vector<HierarchicalPrincipal>&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList = std::move(value); }
-    inline UpdateAccessControlConfigurationRequest& WithHierarchicalAccessControlList(const Aws::Vector<HierarchicalPrincipal>& value) { SetHierarchicalAccessControlList(value); return *this;}
-    inline UpdateAccessControlConfigurationRequest& WithHierarchicalAccessControlList(Aws::Vector<HierarchicalPrincipal>&& value) { SetHierarchicalAccessControlList(std::move(value)); return *this;}
-    inline UpdateAccessControlConfigurationRequest& AddHierarchicalAccessControlList(const HierarchicalPrincipal& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList.push_back(value); return *this; }
-    inline UpdateAccessControlConfigurationRequest& AddHierarchicalAccessControlList(HierarchicalPrincipal&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList.push_back(std::move(value)); return *this; }
+    template<typename HierarchicalAccessControlListT = Aws::Vector<HierarchicalPrincipal>>
+    void SetHierarchicalAccessControlList(HierarchicalAccessControlListT&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList = std::forward<HierarchicalAccessControlListT>(value); }
+    template<typename HierarchicalAccessControlListT = Aws::Vector<HierarchicalPrincipal>>
+    UpdateAccessControlConfigurationRequest& WithHierarchicalAccessControlList(HierarchicalAccessControlListT&& value) { SetHierarchicalAccessControlList(std::forward<HierarchicalAccessControlListT>(value)); return *this;}
+    template<typename HierarchicalAccessControlListT = HierarchicalPrincipal>
+    UpdateAccessControlConfigurationRequest& AddHierarchicalAccessControlList(HierarchicalAccessControlListT&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList.emplace_back(std::forward<HierarchicalAccessControlListT>(value)); return *this; }
     ///@}
   private:
 

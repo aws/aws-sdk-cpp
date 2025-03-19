@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSecurityProfileRequest::DeleteSecurityProfileRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_securityProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSecurityProfileRequest::SerializePayload() const
 {
   return {};

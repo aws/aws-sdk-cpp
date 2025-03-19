@@ -32,7 +32,7 @@ namespace Model
   class DeliverToMailboxAction
   {
   public:
-    AWS_MAILMANAGER_API DeliverToMailboxAction();
+    AWS_MAILMANAGER_API DeliverToMailboxAction() = default;
     AWS_MAILMANAGER_API DeliverToMailboxAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API DeliverToMailboxAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * if there are configuration errors. For example, the mailbox ARN is no longer
      * valid.</p>
      */
-    inline const ActionFailurePolicy& GetActionFailurePolicy() const{ return m_actionFailurePolicy; }
+    inline ActionFailurePolicy GetActionFailurePolicy() const { return m_actionFailurePolicy; }
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
-    inline void SetActionFailurePolicy(const ActionFailurePolicy& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
-    inline void SetActionFailurePolicy(ActionFailurePolicy&& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = std::move(value); }
-    inline DeliverToMailboxAction& WithActionFailurePolicy(const ActionFailurePolicy& value) { SetActionFailurePolicy(value); return *this;}
-    inline DeliverToMailboxAction& WithActionFailurePolicy(ActionFailurePolicy&& value) { SetActionFailurePolicy(std::move(value)); return *this;}
+    inline void SetActionFailurePolicy(ActionFailurePolicy value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
+    inline DeliverToMailboxAction& WithActionFailurePolicy(ActionFailurePolicy value) { SetActionFailurePolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a WorkMail organization to deliver the
      * email to.</p>
      */
-    inline const Aws::String& GetMailboxArn() const{ return m_mailboxArn; }
+    inline const Aws::String& GetMailboxArn() const { return m_mailboxArn; }
     inline bool MailboxArnHasBeenSet() const { return m_mailboxArnHasBeenSet; }
-    inline void SetMailboxArn(const Aws::String& value) { m_mailboxArnHasBeenSet = true; m_mailboxArn = value; }
-    inline void SetMailboxArn(Aws::String&& value) { m_mailboxArnHasBeenSet = true; m_mailboxArn = std::move(value); }
-    inline void SetMailboxArn(const char* value) { m_mailboxArnHasBeenSet = true; m_mailboxArn.assign(value); }
-    inline DeliverToMailboxAction& WithMailboxArn(const Aws::String& value) { SetMailboxArn(value); return *this;}
-    inline DeliverToMailboxAction& WithMailboxArn(Aws::String&& value) { SetMailboxArn(std::move(value)); return *this;}
-    inline DeliverToMailboxAction& WithMailboxArn(const char* value) { SetMailboxArn(value); return *this;}
+    template<typename MailboxArnT = Aws::String>
+    void SetMailboxArn(MailboxArnT&& value) { m_mailboxArnHasBeenSet = true; m_mailboxArn = std::forward<MailboxArnT>(value); }
+    template<typename MailboxArnT = Aws::String>
+    DeliverToMailboxAction& WithMailboxArn(MailboxArnT&& value) { SetMailboxArn(std::forward<MailboxArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +68,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an IAM role to use to execute this action.
      * The role must have access to the workmail:DeliverToMailbox API.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline DeliverToMailboxAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DeliverToMailboxAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DeliverToMailboxAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DeliverToMailboxAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    ActionFailurePolicy m_actionFailurePolicy;
+    ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
     bool m_actionFailurePolicyHasBeenSet = false;
 
     Aws::String m_mailboxArn;

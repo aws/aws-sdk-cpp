@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDBClusterAutomatedBackupResult::DeleteDBClusterAutomatedBackupResult()
-{
-}
-
 DeleteDBClusterAutomatedBackupResult::DeleteDBClusterAutomatedBackupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DeleteDBClusterAutomatedBackupResult& DeleteDBClusterAutomatedBackupResult::oper
     if(!dBClusterAutomatedBackupNode.IsNull())
     {
       m_dBClusterAutomatedBackup = dBClusterAutomatedBackupNode;
+      m_dBClusterAutomatedBackupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteDBClusterAutomatedBackupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

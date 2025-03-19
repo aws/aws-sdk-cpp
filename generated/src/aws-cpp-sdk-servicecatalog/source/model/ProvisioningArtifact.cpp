@@ -18,18 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifact::ProvisioningArtifact() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false)
-{
-}
-
 ProvisioningArtifact::ProvisioningArtifact(JsonView jsonValue)
-  : ProvisioningArtifact()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ProvisioningArtifact& ProvisioningArtifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Guidance"))
   {
     m_guidance = ProvisioningArtifactGuidanceMapper::GetProvisioningArtifactGuidanceForName(jsonValue.GetString("Guidance"));
-
     m_guidanceHasBeenSet = true;
   }
-
   return *this;
 }
 

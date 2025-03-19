@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-RootCauseException::RootCauseException() : 
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RootCauseException::RootCauseException(JsonView jsonValue)
-  : RootCauseException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RootCauseException& RootCauseException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

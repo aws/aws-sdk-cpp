@@ -38,7 +38,7 @@ namespace Model
   class ASN1Subject
   {
   public:
-    AWS_ACMPCA_API ASN1Subject();
+    AWS_ACMPCA_API ASN1Subject() = default;
     AWS_ACMPCA_API ASN1Subject(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API ASN1Subject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>Two-digit code that specifies the country in which the certificate subject
      * located.</p>
      */
-    inline const Aws::String& GetCountry() const{ return m_country; }
+    inline const Aws::String& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
-    inline ASN1Subject& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
-    inline ASN1Subject& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
-    inline ASN1Subject& WithCountry(const char* value) { SetCountry(value); return *this;}
+    template<typename CountryT = Aws::String>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::String>
+    ASN1Subject& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>Legal name of the organization with which the certificate subject is
      * affiliated. </p>
      */
-    inline const Aws::String& GetOrganization() const{ return m_organization; }
+    inline const Aws::String& GetOrganization() const { return m_organization; }
     inline bool OrganizationHasBeenSet() const { return m_organizationHasBeenSet; }
-    inline void SetOrganization(const Aws::String& value) { m_organizationHasBeenSet = true; m_organization = value; }
-    inline void SetOrganization(Aws::String&& value) { m_organizationHasBeenSet = true; m_organization = std::move(value); }
-    inline void SetOrganization(const char* value) { m_organizationHasBeenSet = true; m_organization.assign(value); }
-    inline ASN1Subject& WithOrganization(const Aws::String& value) { SetOrganization(value); return *this;}
-    inline ASN1Subject& WithOrganization(Aws::String&& value) { SetOrganization(std::move(value)); return *this;}
-    inline ASN1Subject& WithOrganization(const char* value) { SetOrganization(value); return *this;}
+    template<typename OrganizationT = Aws::String>
+    void SetOrganization(OrganizationT&& value) { m_organizationHasBeenSet = true; m_organization = std::forward<OrganizationT>(value); }
+    template<typename OrganizationT = Aws::String>
+    ASN1Subject& WithOrganization(OrganizationT&& value) { SetOrganization(std::forward<OrganizationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,42 +75,36 @@ namespace Model
      * <p>A subdivision or unit of the organization (such as sales or finance) with
      * which the certificate subject is affiliated.</p>
      */
-    inline const Aws::String& GetOrganizationalUnit() const{ return m_organizationalUnit; }
+    inline const Aws::String& GetOrganizationalUnit() const { return m_organizationalUnit; }
     inline bool OrganizationalUnitHasBeenSet() const { return m_organizationalUnitHasBeenSet; }
-    inline void SetOrganizationalUnit(const Aws::String& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = value; }
-    inline void SetOrganizationalUnit(Aws::String&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::move(value); }
-    inline void SetOrganizationalUnit(const char* value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit.assign(value); }
-    inline ASN1Subject& WithOrganizationalUnit(const Aws::String& value) { SetOrganizationalUnit(value); return *this;}
-    inline ASN1Subject& WithOrganizationalUnit(Aws::String&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
-    inline ASN1Subject& WithOrganizationalUnit(const char* value) { SetOrganizationalUnit(value); return *this;}
+    template<typename OrganizationalUnitT = Aws::String>
+    void SetOrganizationalUnit(OrganizationalUnitT&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::forward<OrganizationalUnitT>(value); }
+    template<typename OrganizationalUnitT = Aws::String>
+    ASN1Subject& WithOrganizationalUnit(OrganizationalUnitT&& value) { SetOrganizationalUnit(std::forward<OrganizationalUnitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Disambiguating information for the certificate subject.</p>
      */
-    inline const Aws::String& GetDistinguishedNameQualifier() const{ return m_distinguishedNameQualifier; }
+    inline const Aws::String& GetDistinguishedNameQualifier() const { return m_distinguishedNameQualifier; }
     inline bool DistinguishedNameQualifierHasBeenSet() const { return m_distinguishedNameQualifierHasBeenSet; }
-    inline void SetDistinguishedNameQualifier(const Aws::String& value) { m_distinguishedNameQualifierHasBeenSet = true; m_distinguishedNameQualifier = value; }
-    inline void SetDistinguishedNameQualifier(Aws::String&& value) { m_distinguishedNameQualifierHasBeenSet = true; m_distinguishedNameQualifier = std::move(value); }
-    inline void SetDistinguishedNameQualifier(const char* value) { m_distinguishedNameQualifierHasBeenSet = true; m_distinguishedNameQualifier.assign(value); }
-    inline ASN1Subject& WithDistinguishedNameQualifier(const Aws::String& value) { SetDistinguishedNameQualifier(value); return *this;}
-    inline ASN1Subject& WithDistinguishedNameQualifier(Aws::String&& value) { SetDistinguishedNameQualifier(std::move(value)); return *this;}
-    inline ASN1Subject& WithDistinguishedNameQualifier(const char* value) { SetDistinguishedNameQualifier(value); return *this;}
+    template<typename DistinguishedNameQualifierT = Aws::String>
+    void SetDistinguishedNameQualifier(DistinguishedNameQualifierT&& value) { m_distinguishedNameQualifierHasBeenSet = true; m_distinguishedNameQualifier = std::forward<DistinguishedNameQualifierT>(value); }
+    template<typename DistinguishedNameQualifierT = Aws::String>
+    ASN1Subject& WithDistinguishedNameQualifier(DistinguishedNameQualifierT&& value) { SetDistinguishedNameQualifier(std::forward<DistinguishedNameQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>State in which the subject of the certificate is located.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline ASN1Subject& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline ASN1Subject& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline ASN1Subject& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    ASN1Subject& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,28 +114,24 @@ namespace Model
      * certificates, the common name must be a fully qualified domain name (FQDN)
      * associated with the certificate subject.</p>
      */
-    inline const Aws::String& GetCommonName() const{ return m_commonName; }
+    inline const Aws::String& GetCommonName() const { return m_commonName; }
     inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
-    inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
-    inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
-    inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
-    inline ASN1Subject& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
-    inline ASN1Subject& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
-    inline ASN1Subject& WithCommonName(const char* value) { SetCommonName(value); return *this;}
+    template<typename CommonNameT = Aws::String>
+    void SetCommonName(CommonNameT&& value) { m_commonNameHasBeenSet = true; m_commonName = std::forward<CommonNameT>(value); }
+    template<typename CommonNameT = Aws::String>
+    ASN1Subject& WithCommonName(CommonNameT&& value) { SetCommonName(std::forward<CommonNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The certificate serial number.</p>
      */
-    inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
-    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
-    inline ASN1Subject& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-    inline ASN1Subject& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-    inline ASN1Subject& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    template<typename SerialNumberT = Aws::String>
+    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
+    template<typename SerialNumberT = Aws::String>
+    ASN1Subject& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,14 +139,12 @@ namespace Model
      * <p>The locality (such as a city or town) in which the certificate subject is
      * located.</p>
      */
-    inline const Aws::String& GetLocality() const{ return m_locality; }
+    inline const Aws::String& GetLocality() const { return m_locality; }
     inline bool LocalityHasBeenSet() const { return m_localityHasBeenSet; }
-    inline void SetLocality(const Aws::String& value) { m_localityHasBeenSet = true; m_locality = value; }
-    inline void SetLocality(Aws::String&& value) { m_localityHasBeenSet = true; m_locality = std::move(value); }
-    inline void SetLocality(const char* value) { m_localityHasBeenSet = true; m_locality.assign(value); }
-    inline ASN1Subject& WithLocality(const Aws::String& value) { SetLocality(value); return *this;}
-    inline ASN1Subject& WithLocality(Aws::String&& value) { SetLocality(std::move(value)); return *this;}
-    inline ASN1Subject& WithLocality(const char* value) { SetLocality(value); return *this;}
+    template<typename LocalityT = Aws::String>
+    void SetLocality(LocalityT&& value) { m_localityHasBeenSet = true; m_locality = std::forward<LocalityT>(value); }
+    template<typename LocalityT = Aws::String>
+    ASN1Subject& WithLocality(LocalityT&& value) { SetLocality(std::forward<LocalityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +152,12 @@ namespace Model
      * <p>A title such as Mr. or Ms., which is pre-pended to the name to refer formally
      * to the certificate subject.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ASN1Subject& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ASN1Subject& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ASN1Subject& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ASN1Subject& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,28 +165,24 @@ namespace Model
      * <p>Family name. In the US and the UK, for example, the surname of an individual
      * is ordered last. In Asian cultures the surname is typically ordered first.</p>
      */
-    inline const Aws::String& GetSurname() const{ return m_surname; }
+    inline const Aws::String& GetSurname() const { return m_surname; }
     inline bool SurnameHasBeenSet() const { return m_surnameHasBeenSet; }
-    inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
-    inline void SetSurname(Aws::String&& value) { m_surnameHasBeenSet = true; m_surname = std::move(value); }
-    inline void SetSurname(const char* value) { m_surnameHasBeenSet = true; m_surname.assign(value); }
-    inline ASN1Subject& WithSurname(const Aws::String& value) { SetSurname(value); return *this;}
-    inline ASN1Subject& WithSurname(Aws::String&& value) { SetSurname(std::move(value)); return *this;}
-    inline ASN1Subject& WithSurname(const char* value) { SetSurname(value); return *this;}
+    template<typename SurnameT = Aws::String>
+    void SetSurname(SurnameT&& value) { m_surnameHasBeenSet = true; m_surname = std::forward<SurnameT>(value); }
+    template<typename SurnameT = Aws::String>
+    ASN1Subject& WithSurname(SurnameT&& value) { SetSurname(std::forward<SurnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>First name.</p>
      */
-    inline const Aws::String& GetGivenName() const{ return m_givenName; }
+    inline const Aws::String& GetGivenName() const { return m_givenName; }
     inline bool GivenNameHasBeenSet() const { return m_givenNameHasBeenSet; }
-    inline void SetGivenName(const Aws::String& value) { m_givenNameHasBeenSet = true; m_givenName = value; }
-    inline void SetGivenName(Aws::String&& value) { m_givenNameHasBeenSet = true; m_givenName = std::move(value); }
-    inline void SetGivenName(const char* value) { m_givenNameHasBeenSet = true; m_givenName.assign(value); }
-    inline ASN1Subject& WithGivenName(const Aws::String& value) { SetGivenName(value); return *this;}
-    inline ASN1Subject& WithGivenName(Aws::String&& value) { SetGivenName(std::move(value)); return *this;}
-    inline ASN1Subject& WithGivenName(const char* value) { SetGivenName(value); return *this;}
+    template<typename GivenNameT = Aws::String>
+    void SetGivenName(GivenNameT&& value) { m_givenNameHasBeenSet = true; m_givenName = std::forward<GivenNameT>(value); }
+    template<typename GivenNameT = Aws::String>
+    ASN1Subject& WithGivenName(GivenNameT&& value) { SetGivenName(std::forward<GivenNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +191,12 @@ namespace Model
      * <b>GivenName</b>, the first letter of the middle name if one exists, and the
      * first letter of the <b>Surname</b>.</p>
      */
-    inline const Aws::String& GetInitials() const{ return m_initials; }
+    inline const Aws::String& GetInitials() const { return m_initials; }
     inline bool InitialsHasBeenSet() const { return m_initialsHasBeenSet; }
-    inline void SetInitials(const Aws::String& value) { m_initialsHasBeenSet = true; m_initials = value; }
-    inline void SetInitials(Aws::String&& value) { m_initialsHasBeenSet = true; m_initials = std::move(value); }
-    inline void SetInitials(const char* value) { m_initialsHasBeenSet = true; m_initials.assign(value); }
-    inline ASN1Subject& WithInitials(const Aws::String& value) { SetInitials(value); return *this;}
-    inline ASN1Subject& WithInitials(Aws::String&& value) { SetInitials(std::move(value)); return *this;}
-    inline ASN1Subject& WithInitials(const char* value) { SetInitials(value); return *this;}
+    template<typename InitialsT = Aws::String>
+    void SetInitials(InitialsT&& value) { m_initialsHasBeenSet = true; m_initials = std::forward<InitialsT>(value); }
+    template<typename InitialsT = Aws::String>
+    ASN1Subject& WithInitials(InitialsT&& value) { SetInitials(std::forward<InitialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -229,14 +205,12 @@ namespace Model
      * Jonathan is often shortened to John. Elizabeth is often shortened to Beth, Liz,
      * or Eliza.</p>
      */
-    inline const Aws::String& GetPseudonym() const{ return m_pseudonym; }
+    inline const Aws::String& GetPseudonym() const { return m_pseudonym; }
     inline bool PseudonymHasBeenSet() const { return m_pseudonymHasBeenSet; }
-    inline void SetPseudonym(const Aws::String& value) { m_pseudonymHasBeenSet = true; m_pseudonym = value; }
-    inline void SetPseudonym(Aws::String&& value) { m_pseudonymHasBeenSet = true; m_pseudonym = std::move(value); }
-    inline void SetPseudonym(const char* value) { m_pseudonymHasBeenSet = true; m_pseudonym.assign(value); }
-    inline ASN1Subject& WithPseudonym(const Aws::String& value) { SetPseudonym(value); return *this;}
-    inline ASN1Subject& WithPseudonym(Aws::String&& value) { SetPseudonym(std::move(value)); return *this;}
-    inline ASN1Subject& WithPseudonym(const char* value) { SetPseudonym(value); return *this;}
+    template<typename PseudonymT = Aws::String>
+    void SetPseudonym(PseudonymT&& value) { m_pseudonymHasBeenSet = true; m_pseudonym = std::forward<PseudonymT>(value); }
+    template<typename PseudonymT = Aws::String>
+    ASN1Subject& WithPseudonym(PseudonymT&& value) { SetPseudonym(std::forward<PseudonymT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -244,14 +218,12 @@ namespace Model
      * <p>Typically a qualifier appended to the name of an individual. Examples include
      * Jr. for junior, Sr. for senior, and III for third.</p>
      */
-    inline const Aws::String& GetGenerationQualifier() const{ return m_generationQualifier; }
+    inline const Aws::String& GetGenerationQualifier() const { return m_generationQualifier; }
     inline bool GenerationQualifierHasBeenSet() const { return m_generationQualifierHasBeenSet; }
-    inline void SetGenerationQualifier(const Aws::String& value) { m_generationQualifierHasBeenSet = true; m_generationQualifier = value; }
-    inline void SetGenerationQualifier(Aws::String&& value) { m_generationQualifierHasBeenSet = true; m_generationQualifier = std::move(value); }
-    inline void SetGenerationQualifier(const char* value) { m_generationQualifierHasBeenSet = true; m_generationQualifier.assign(value); }
-    inline ASN1Subject& WithGenerationQualifier(const Aws::String& value) { SetGenerationQualifier(value); return *this;}
-    inline ASN1Subject& WithGenerationQualifier(Aws::String&& value) { SetGenerationQualifier(std::move(value)); return *this;}
-    inline ASN1Subject& WithGenerationQualifier(const char* value) { SetGenerationQualifier(value); return *this;}
+    template<typename GenerationQualifierT = Aws::String>
+    void SetGenerationQualifier(GenerationQualifierT&& value) { m_generationQualifierHasBeenSet = true; m_generationQualifier = std::forward<GenerationQualifierT>(value); }
+    template<typename GenerationQualifierT = Aws::String>
+    ASN1Subject& WithGenerationQualifier(GenerationQualifierT&& value) { SetGenerationQualifier(std::forward<GenerationQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,14 +235,14 @@ namespace Model
      * (OID)</a>.</p>  <p>Custom attributes cannot be used in combination with
      * standard attributes.</p> 
      */
-    inline const Aws::Vector<CustomAttribute>& GetCustomAttributes() const{ return m_customAttributes; }
+    inline const Aws::Vector<CustomAttribute>& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
-    inline void SetCustomAttributes(const Aws::Vector<CustomAttribute>& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
-    inline void SetCustomAttributes(Aws::Vector<CustomAttribute>&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
-    inline ASN1Subject& WithCustomAttributes(const Aws::Vector<CustomAttribute>& value) { SetCustomAttributes(value); return *this;}
-    inline ASN1Subject& WithCustomAttributes(Aws::Vector<CustomAttribute>&& value) { SetCustomAttributes(std::move(value)); return *this;}
-    inline ASN1Subject& AddCustomAttributes(const CustomAttribute& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(value); return *this; }
-    inline ASN1Subject& AddCustomAttributes(CustomAttribute&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(std::move(value)); return *this; }
+    template<typename CustomAttributesT = Aws::Vector<CustomAttribute>>
+    void SetCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::forward<CustomAttributesT>(value); }
+    template<typename CustomAttributesT = Aws::Vector<CustomAttribute>>
+    ASN1Subject& WithCustomAttributes(CustomAttributesT&& value) { SetCustomAttributes(std::forward<CustomAttributesT>(value)); return *this;}
+    template<typename CustomAttributesT = CustomAttribute>
+    ASN1Subject& AddCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace_back(std::forward<CustomAttributesT>(value)); return *this; }
     ///@}
   private:
 

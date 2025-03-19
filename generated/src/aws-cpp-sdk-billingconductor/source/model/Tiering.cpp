@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-Tiering::Tiering() : 
-    m_freeTierHasBeenSet(false)
-{
-}
-
 Tiering::Tiering(JsonView jsonValue)
-  : Tiering()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Tiering& Tiering::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FreeTier"))
   {
     m_freeTier = jsonValue.GetObject("FreeTier");
-
     m_freeTierHasBeenSet = true;
   }
-
   return *this;
 }
 

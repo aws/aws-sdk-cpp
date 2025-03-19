@@ -19,15 +19,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ReasoningContentBlockDelta::ReasoningContentBlockDelta() : 
-    m_textHasBeenSet(false),
-    m_redactedContentHasBeenSet(false),
-    m_signatureHasBeenSet(false)
-{
-}
-
 ReasoningContentBlockDelta::ReasoningContentBlockDelta(JsonView jsonValue)
-  : ReasoningContentBlockDelta()
 {
   *this = jsonValue;
 }
@@ -37,23 +29,18 @@ ReasoningContentBlockDelta& ReasoningContentBlockDelta::operator =(JsonView json
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redactedContent"))
   {
     m_redactedContent = HashingUtils::Base64Decode(jsonValue.GetString("redactedContent"));
     m_redactedContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = jsonValue.GetString("signature");
-
     m_signatureHasBeenSet = true;
   }
-
   return *this;
 }
 

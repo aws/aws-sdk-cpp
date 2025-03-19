@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExpireSessionRequest::ExpireSessionRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String ExpireSessionRequest::SerializePayload() const
 {
   JsonValue payload;

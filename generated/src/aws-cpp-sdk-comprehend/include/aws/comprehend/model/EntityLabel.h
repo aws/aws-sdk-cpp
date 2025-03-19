@@ -33,7 +33,7 @@ namespace Model
   class EntityLabel
   {
   public:
-    AWS_COMPREHEND_API EntityLabel();
+    AWS_COMPREHEND_API EntityLabel() = default;
     AWS_COMPREHEND_API EntityLabel(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The name of the label.</p>
      */
-    inline const PiiEntityType& GetName() const{ return m_name; }
+    inline PiiEntityType GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const PiiEntityType& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(PiiEntityType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline EntityLabel& WithName(const PiiEntityType& value) { SetName(value); return *this;}
-    inline EntityLabel& WithName(PiiEntityType&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(PiiEntityType value) { m_nameHasBeenSet = true; m_name = value; }
+    inline EntityLabel& WithName(PiiEntityType value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,17 +54,17 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
      * detection.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline EntityLabel& WithScore(double value) { SetScore(value); return *this;}
     ///@}
   private:
 
-    PiiEntityType m_name;
+    PiiEntityType m_name{PiiEntityType::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

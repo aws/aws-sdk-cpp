@@ -18,23 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ImportJobRequest::ImportJobRequest() : 
-    m_defineSegment(false),
-    m_defineSegmentHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_registerEndpoints(false),
-    m_registerEndpointsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false)
-{
-}
-
 ImportJobRequest::ImportJobRequest(JsonView jsonValue)
-  : ImportJobRequest()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ ImportJobRequest& ImportJobRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefineSegment"))
   {
     m_defineSegment = jsonValue.GetBool("DefineSegment");
-
     m_defineSegmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("Format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisterEndpoints"))
   {
     m_registerEndpoints = jsonValue.GetBool("RegisterEndpoints");
-
     m_registerEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
     m_s3UrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentId"))
   {
     m_segmentId = jsonValue.GetString("SegmentId");
-
     m_segmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

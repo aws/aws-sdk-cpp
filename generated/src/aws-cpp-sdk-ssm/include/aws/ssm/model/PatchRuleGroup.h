@@ -33,7 +33,7 @@ namespace Model
   class PatchRuleGroup
   {
   public:
-    AWS_SSM_API PatchRuleGroup();
+    AWS_SSM_API PatchRuleGroup() = default;
     AWS_SSM_API PatchRuleGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The rules that make up the rule group.</p>
      */
-    inline const Aws::Vector<PatchRule>& GetPatchRules() const{ return m_patchRules; }
+    inline const Aws::Vector<PatchRule>& GetPatchRules() const { return m_patchRules; }
     inline bool PatchRulesHasBeenSet() const { return m_patchRulesHasBeenSet; }
-    inline void SetPatchRules(const Aws::Vector<PatchRule>& value) { m_patchRulesHasBeenSet = true; m_patchRules = value; }
-    inline void SetPatchRules(Aws::Vector<PatchRule>&& value) { m_patchRulesHasBeenSet = true; m_patchRules = std::move(value); }
-    inline PatchRuleGroup& WithPatchRules(const Aws::Vector<PatchRule>& value) { SetPatchRules(value); return *this;}
-    inline PatchRuleGroup& WithPatchRules(Aws::Vector<PatchRule>&& value) { SetPatchRules(std::move(value)); return *this;}
-    inline PatchRuleGroup& AddPatchRules(const PatchRule& value) { m_patchRulesHasBeenSet = true; m_patchRules.push_back(value); return *this; }
-    inline PatchRuleGroup& AddPatchRules(PatchRule&& value) { m_patchRulesHasBeenSet = true; m_patchRules.push_back(std::move(value)); return *this; }
+    template<typename PatchRulesT = Aws::Vector<PatchRule>>
+    void SetPatchRules(PatchRulesT&& value) { m_patchRulesHasBeenSet = true; m_patchRules = std::forward<PatchRulesT>(value); }
+    template<typename PatchRulesT = Aws::Vector<PatchRule>>
+    PatchRuleGroup& WithPatchRules(PatchRulesT&& value) { SetPatchRules(std::forward<PatchRulesT>(value)); return *this;}
+    template<typename PatchRulesT = PatchRule>
+    PatchRuleGroup& AddPatchRules(PatchRulesT&& value) { m_patchRulesHasBeenSet = true; m_patchRules.emplace_back(std::forward<PatchRulesT>(value)); return *this; }
     ///@}
   private:
 

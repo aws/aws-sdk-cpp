@@ -39,7 +39,7 @@ namespace Model
   class WorkspaceSummary
   {
   public:
-    AWS_MANAGEDGRAFANA_API WorkspaceSummary();
+    AWS_MANAGEDGRAFANA_API WorkspaceSummary() = default;
     AWS_MANAGEDGRAFANA_API WorkspaceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API WorkspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,52 +50,48 @@ namespace Model
      * <p>A structure containing information about the authentication methods used in
      * the workspace.</p>
      */
-    inline const AuthenticationSummary& GetAuthentication() const{ return m_authentication; }
+    inline const AuthenticationSummary& GetAuthentication() const { return m_authentication; }
     inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
-    inline void SetAuthentication(const AuthenticationSummary& value) { m_authenticationHasBeenSet = true; m_authentication = value; }
-    inline void SetAuthentication(AuthenticationSummary&& value) { m_authenticationHasBeenSet = true; m_authentication = std::move(value); }
-    inline WorkspaceSummary& WithAuthentication(const AuthenticationSummary& value) { SetAuthentication(value); return *this;}
-    inline WorkspaceSummary& WithAuthentication(AuthenticationSummary&& value) { SetAuthentication(std::move(value)); return *this;}
+    template<typename AuthenticationT = AuthenticationSummary>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = AuthenticationSummary>
+    WorkspaceSummary& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date that the workspace was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline WorkspaceSummary& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline WorkspaceSummary& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    WorkspaceSummary& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The customer-entered description of the workspace.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WorkspaceSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WorkspaceSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WorkspaceSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WorkspaceSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline WorkspaceSummary& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline WorkspaceSummary& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline WorkspaceSummary& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    WorkspaceSummary& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,42 +101,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link
      * your account with Grafana Labs</a>.</p>
      */
-    inline const Aws::String& GetGrafanaToken() const{ return m_grafanaToken; }
+    inline const Aws::String& GetGrafanaToken() const { return m_grafanaToken; }
     inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
-    inline void SetGrafanaToken(const Aws::String& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = value; }
-    inline void SetGrafanaToken(Aws::String&& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = std::move(value); }
-    inline void SetGrafanaToken(const char* value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken.assign(value); }
-    inline WorkspaceSummary& WithGrafanaToken(const Aws::String& value) { SetGrafanaToken(value); return *this;}
-    inline WorkspaceSummary& WithGrafanaToken(Aws::String&& value) { SetGrafanaToken(std::move(value)); return *this;}
-    inline WorkspaceSummary& WithGrafanaToken(const char* value) { SetGrafanaToken(value); return *this;}
+    template<typename GrafanaTokenT = Aws::String>
+    void SetGrafanaToken(GrafanaTokenT&& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = std::forward<GrafanaTokenT>(value); }
+    template<typename GrafanaTokenT = Aws::String>
+    WorkspaceSummary& WithGrafanaToken(GrafanaTokenT&& value) { SetGrafanaToken(std::forward<GrafanaTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Grafana version that the workspace is running.</p>
      */
-    inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
+    inline const Aws::String& GetGrafanaVersion() const { return m_grafanaVersion; }
     inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
-    inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
-    inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
-    inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
-    inline WorkspaceSummary& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
-    inline WorkspaceSummary& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
-    inline WorkspaceSummary& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
+    template<typename GrafanaVersionT = Aws::String>
+    void SetGrafanaVersion(GrafanaVersionT&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::forward<GrafanaVersionT>(value); }
+    template<typename GrafanaVersionT = Aws::String>
+    WorkspaceSummary& WithGrafanaVersion(GrafanaVersionT&& value) { SetGrafanaVersion(std::forward<GrafanaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the workspace.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline WorkspaceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline WorkspaceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline WorkspaceSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    WorkspaceSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,38 +139,34 @@ namespace Model
      *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
      * free trials.</p> 
      */
-    inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
+    inline LicenseType GetLicenseType() const { return m_licenseType; }
     inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-    inline void SetLicenseType(const LicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
-    inline void SetLicenseType(LicenseType&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
-    inline WorkspaceSummary& WithLicenseType(const LicenseType& value) { SetLicenseType(value); return *this;}
-    inline WorkspaceSummary& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+    inline void SetLicenseType(LicenseType value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
+    inline WorkspaceSummary& WithLicenseType(LicenseType value) { SetLicenseType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The most recent date that the workspace was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModified() const{ return m_modified; }
+    inline const Aws::Utils::DateTime& GetModified() const { return m_modified; }
     inline bool ModifiedHasBeenSet() const { return m_modifiedHasBeenSet; }
-    inline void SetModified(const Aws::Utils::DateTime& value) { m_modifiedHasBeenSet = true; m_modified = value; }
-    inline void SetModified(Aws::Utils::DateTime&& value) { m_modifiedHasBeenSet = true; m_modified = std::move(value); }
-    inline WorkspaceSummary& WithModified(const Aws::Utils::DateTime& value) { SetModified(value); return *this;}
-    inline WorkspaceSummary& WithModified(Aws::Utils::DateTime&& value) { SetModified(std::move(value)); return *this;}
+    template<typename ModifiedT = Aws::Utils::DateTime>
+    void SetModified(ModifiedT&& value) { m_modifiedHasBeenSet = true; m_modified = std::forward<ModifiedT>(value); }
+    template<typename ModifiedT = Aws::Utils::DateTime>
+    WorkspaceSummary& WithModified(ModifiedT&& value) { SetModified(std::forward<ModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workspace.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WorkspaceSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WorkspaceSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WorkspaceSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WorkspaceSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,52 +175,46 @@ namespace Model
      * automatically create IAM roles and permissions for, which allows Amazon Managed
      * Grafana to use these channels.</p>
      */
-    inline const Aws::Vector<NotificationDestinationType>& GetNotificationDestinations() const{ return m_notificationDestinations; }
+    inline const Aws::Vector<NotificationDestinationType>& GetNotificationDestinations() const { return m_notificationDestinations; }
     inline bool NotificationDestinationsHasBeenSet() const { return m_notificationDestinationsHasBeenSet; }
-    inline void SetNotificationDestinations(const Aws::Vector<NotificationDestinationType>& value) { m_notificationDestinationsHasBeenSet = true; m_notificationDestinations = value; }
-    inline void SetNotificationDestinations(Aws::Vector<NotificationDestinationType>&& value) { m_notificationDestinationsHasBeenSet = true; m_notificationDestinations = std::move(value); }
-    inline WorkspaceSummary& WithNotificationDestinations(const Aws::Vector<NotificationDestinationType>& value) { SetNotificationDestinations(value); return *this;}
-    inline WorkspaceSummary& WithNotificationDestinations(Aws::Vector<NotificationDestinationType>&& value) { SetNotificationDestinations(std::move(value)); return *this;}
-    inline WorkspaceSummary& AddNotificationDestinations(const NotificationDestinationType& value) { m_notificationDestinationsHasBeenSet = true; m_notificationDestinations.push_back(value); return *this; }
-    inline WorkspaceSummary& AddNotificationDestinations(NotificationDestinationType&& value) { m_notificationDestinationsHasBeenSet = true; m_notificationDestinations.push_back(std::move(value)); return *this; }
+    template<typename NotificationDestinationsT = Aws::Vector<NotificationDestinationType>>
+    void SetNotificationDestinations(NotificationDestinationsT&& value) { m_notificationDestinationsHasBeenSet = true; m_notificationDestinations = std::forward<NotificationDestinationsT>(value); }
+    template<typename NotificationDestinationsT = Aws::Vector<NotificationDestinationType>>
+    WorkspaceSummary& WithNotificationDestinations(NotificationDestinationsT&& value) { SetNotificationDestinations(std::forward<NotificationDestinationsT>(value)); return *this;}
+    inline WorkspaceSummary& AddNotificationDestinations(NotificationDestinationType value) { m_notificationDestinationsHasBeenSet = true; m_notificationDestinations.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current status of the workspace.</p>
      */
-    inline const WorkspaceStatus& GetStatus() const{ return m_status; }
+    inline WorkspaceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WorkspaceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WorkspaceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WorkspaceSummary& WithStatus(const WorkspaceStatus& value) { SetStatus(value); return *this;}
-    inline WorkspaceSummary& WithStatus(WorkspaceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WorkspaceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline WorkspaceSummary& WithStatus(WorkspaceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags associated with the workspace.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline WorkspaceSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline WorkspaceSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline WorkspaceSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline WorkspaceSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline WorkspaceSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline WorkspaceSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline WorkspaceSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline WorkspaceSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline WorkspaceSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    WorkspaceSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    WorkspaceSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     AuthenticationSummary m_authentication;
     bool m_authenticationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
     Aws::String m_description;
@@ -252,10 +232,10 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    LicenseType m_licenseType;
+    LicenseType m_licenseType{LicenseType::NOT_SET};
     bool m_licenseTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modified;
+    Aws::Utils::DateTime m_modified{};
     bool m_modifiedHasBeenSet = false;
 
     Aws::String m_name;
@@ -264,7 +244,7 @@ namespace Model
     Aws::Vector<NotificationDestinationType> m_notificationDestinations;
     bool m_notificationDestinationsHasBeenSet = false;
 
-    WorkspaceStatus m_status;
+    WorkspaceStatus m_status{WorkspaceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

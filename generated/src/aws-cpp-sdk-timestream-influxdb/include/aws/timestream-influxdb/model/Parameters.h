@@ -32,7 +32,7 @@ namespace Model
   class Parameters
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API Parameters();
+    AWS_TIMESTREAMINFLUXDB_API Parameters() = default;
     AWS_TIMESTREAMINFLUXDB_API Parameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMINFLUXDB_API Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMINFLUXDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>All the customer-modifiable InfluxDB v2 parameters in Timestream for
      * InfluxDB.</p>
      */
-    inline const InfluxDBv2Parameters& GetInfluxDBv2() const{ return m_influxDBv2; }
+    inline const InfluxDBv2Parameters& GetInfluxDBv2() const { return m_influxDBv2; }
     inline bool InfluxDBv2HasBeenSet() const { return m_influxDBv2HasBeenSet; }
-    inline void SetInfluxDBv2(const InfluxDBv2Parameters& value) { m_influxDBv2HasBeenSet = true; m_influxDBv2 = value; }
-    inline void SetInfluxDBv2(InfluxDBv2Parameters&& value) { m_influxDBv2HasBeenSet = true; m_influxDBv2 = std::move(value); }
-    inline Parameters& WithInfluxDBv2(const InfluxDBv2Parameters& value) { SetInfluxDBv2(value); return *this;}
-    inline Parameters& WithInfluxDBv2(InfluxDBv2Parameters&& value) { SetInfluxDBv2(std::move(value)); return *this;}
+    template<typename InfluxDBv2T = InfluxDBv2Parameters>
+    void SetInfluxDBv2(InfluxDBv2T&& value) { m_influxDBv2HasBeenSet = true; m_influxDBv2 = std::forward<InfluxDBv2T>(value); }
+    template<typename InfluxDBv2T = InfluxDBv2Parameters>
+    Parameters& WithInfluxDBv2(InfluxDBv2T&& value) { SetInfluxDBv2(std::forward<InfluxDBv2T>(value)); return *this;}
     ///@}
   private:
 

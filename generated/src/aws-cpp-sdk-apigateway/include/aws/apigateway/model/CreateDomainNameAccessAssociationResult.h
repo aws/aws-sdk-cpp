@@ -37,7 +37,7 @@ namespace Model
   class CreateDomainNameAccessAssociationResult
   {
   public:
-    AWS_APIGATEWAY_API CreateDomainNameAccessAssociationResult();
+    AWS_APIGATEWAY_API CreateDomainNameAccessAssociationResult() = default;
     AWS_APIGATEWAY_API CreateDomainNameAccessAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API CreateDomainNameAccessAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,37 +46,31 @@ namespace Model
     /**
      * <p>The ARN of the domain name access association resource. </p>
      */
-    inline const Aws::String& GetDomainNameAccessAssociationArn() const{ return m_domainNameAccessAssociationArn; }
-    inline void SetDomainNameAccessAssociationArn(const Aws::String& value) { m_domainNameAccessAssociationArn = value; }
-    inline void SetDomainNameAccessAssociationArn(Aws::String&& value) { m_domainNameAccessAssociationArn = std::move(value); }
-    inline void SetDomainNameAccessAssociationArn(const char* value) { m_domainNameAccessAssociationArn.assign(value); }
-    inline CreateDomainNameAccessAssociationResult& WithDomainNameAccessAssociationArn(const Aws::String& value) { SetDomainNameAccessAssociationArn(value); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithDomainNameAccessAssociationArn(Aws::String&& value) { SetDomainNameAccessAssociationArn(std::move(value)); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithDomainNameAccessAssociationArn(const char* value) { SetDomainNameAccessAssociationArn(value); return *this;}
+    inline const Aws::String& GetDomainNameAccessAssociationArn() const { return m_domainNameAccessAssociationArn; }
+    template<typename DomainNameAccessAssociationArnT = Aws::String>
+    void SetDomainNameAccessAssociationArn(DomainNameAccessAssociationArnT&& value) { m_domainNameAccessAssociationArnHasBeenSet = true; m_domainNameAccessAssociationArn = std::forward<DomainNameAccessAssociationArnT>(value); }
+    template<typename DomainNameAccessAssociationArnT = Aws::String>
+    CreateDomainNameAccessAssociationResult& WithDomainNameAccessAssociationArn(DomainNameAccessAssociationArnT&& value) { SetDomainNameAccessAssociationArn(std::forward<DomainNameAccessAssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the domain name. </p>
      */
-    inline const Aws::String& GetDomainNameArn() const{ return m_domainNameArn; }
-    inline void SetDomainNameArn(const Aws::String& value) { m_domainNameArn = value; }
-    inline void SetDomainNameArn(Aws::String&& value) { m_domainNameArn = std::move(value); }
-    inline void SetDomainNameArn(const char* value) { m_domainNameArn.assign(value); }
-    inline CreateDomainNameAccessAssociationResult& WithDomainNameArn(const Aws::String& value) { SetDomainNameArn(value); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithDomainNameArn(Aws::String&& value) { SetDomainNameArn(std::move(value)); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithDomainNameArn(const char* value) { SetDomainNameArn(value); return *this;}
+    inline const Aws::String& GetDomainNameArn() const { return m_domainNameArn; }
+    template<typename DomainNameArnT = Aws::String>
+    void SetDomainNameArn(DomainNameArnT&& value) { m_domainNameArnHasBeenSet = true; m_domainNameArn = std::forward<DomainNameArnT>(value); }
+    template<typename DomainNameArnT = Aws::String>
+    CreateDomainNameAccessAssociationResult& WithDomainNameArn(DomainNameArnT&& value) { SetDomainNameArn(std::forward<DomainNameArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of the domain name access association source. </p>
      */
-    inline const AccessAssociationSourceType& GetAccessAssociationSourceType() const{ return m_accessAssociationSourceType; }
-    inline void SetAccessAssociationSourceType(const AccessAssociationSourceType& value) { m_accessAssociationSourceType = value; }
-    inline void SetAccessAssociationSourceType(AccessAssociationSourceType&& value) { m_accessAssociationSourceType = std::move(value); }
-    inline CreateDomainNameAccessAssociationResult& WithAccessAssociationSourceType(const AccessAssociationSourceType& value) { SetAccessAssociationSourceType(value); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithAccessAssociationSourceType(AccessAssociationSourceType&& value) { SetAccessAssociationSourceType(std::move(value)); return *this;}
+    inline AccessAssociationSourceType GetAccessAssociationSourceType() const { return m_accessAssociationSourceType; }
+    inline void SetAccessAssociationSourceType(AccessAssociationSourceType value) { m_accessAssociationSourceTypeHasBeenSet = true; m_accessAssociationSourceType = value; }
+    inline CreateDomainNameAccessAssociationResult& WithAccessAssociationSourceType(AccessAssociationSourceType value) { SetAccessAssociationSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -84,13 +78,11 @@ namespace Model
      * <p> The ARN of the domain name access association source. For a VPCE, the ARN
      * must be a VPC endpoint. </p>
      */
-    inline const Aws::String& GetAccessAssociationSource() const{ return m_accessAssociationSource; }
-    inline void SetAccessAssociationSource(const Aws::String& value) { m_accessAssociationSource = value; }
-    inline void SetAccessAssociationSource(Aws::String&& value) { m_accessAssociationSource = std::move(value); }
-    inline void SetAccessAssociationSource(const char* value) { m_accessAssociationSource.assign(value); }
-    inline CreateDomainNameAccessAssociationResult& WithAccessAssociationSource(const Aws::String& value) { SetAccessAssociationSource(value); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithAccessAssociationSource(Aws::String&& value) { SetAccessAssociationSource(std::move(value)); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithAccessAssociationSource(const char* value) { SetAccessAssociationSource(value); return *this;}
+    inline const Aws::String& GetAccessAssociationSource() const { return m_accessAssociationSource; }
+    template<typename AccessAssociationSourceT = Aws::String>
+    void SetAccessAssociationSource(AccessAssociationSourceT&& value) { m_accessAssociationSourceHasBeenSet = true; m_accessAssociationSource = std::forward<AccessAssociationSourceT>(value); }
+    template<typename AccessAssociationSourceT = Aws::String>
+    CreateDomainNameAccessAssociationResult& WithAccessAssociationSource(AccessAssociationSourceT&& value) { SetAccessAssociationSource(std::forward<AccessAssociationSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,43 +90,44 @@ namespace Model
      * <p> The collection of tags. Each tag element is associated with a given
      * resource. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateDomainNameAccessAssociationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDomainNameAccessAssociationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateDomainNameAccessAssociationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDomainNameAccessAssociationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDomainNameAccessAssociationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDomainNameAccessAssociationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDomainNameAccessAssociationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDomainNameAccessAssociationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDomainNameAccessAssociationResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateDomainNameAccessAssociationResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDomainNameAccessAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDomainNameAccessAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDomainNameAccessAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainNameAccessAssociationArn;
+    bool m_domainNameAccessAssociationArnHasBeenSet = false;
 
     Aws::String m_domainNameArn;
+    bool m_domainNameArnHasBeenSet = false;
 
-    AccessAssociationSourceType m_accessAssociationSourceType;
+    AccessAssociationSourceType m_accessAssociationSourceType{AccessAssociationSourceType::NOT_SET};
+    bool m_accessAssociationSourceTypeHasBeenSet = false;
 
     Aws::String m_accessAssociationSource;
+    bool m_accessAssociationSourceHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

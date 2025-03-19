@@ -12,12 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSlotTypeRequest::GetSlotTypeRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String GetSlotTypeRequest::SerializePayload() const
 {
   return {};

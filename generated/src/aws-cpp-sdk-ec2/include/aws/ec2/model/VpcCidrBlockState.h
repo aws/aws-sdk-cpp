@@ -32,7 +32,7 @@ namespace Model
   class VpcCidrBlockState
   {
   public:
-    AWS_EC2_API VpcCidrBlockState();
+    AWS_EC2_API VpcCidrBlockState() = default;
     AWS_EC2_API VpcCidrBlockState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpcCidrBlockState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,30 +44,26 @@ namespace Model
     /**
      * <p>The state of the CIDR block.</p>
      */
-    inline const VpcCidrBlockStateCode& GetState() const{ return m_state; }
+    inline VpcCidrBlockStateCode GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VpcCidrBlockStateCode& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VpcCidrBlockStateCode&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpcCidrBlockState& WithState(const VpcCidrBlockStateCode& value) { SetState(value); return *this;}
-    inline VpcCidrBlockState& WithState(VpcCidrBlockStateCode&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VpcCidrBlockStateCode value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VpcCidrBlockState& WithState(VpcCidrBlockStateCode value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline VpcCidrBlockState& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline VpcCidrBlockState& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline VpcCidrBlockState& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    VpcCidrBlockState& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    VpcCidrBlockStateCode m_state;
+    VpcCidrBlockStateCode m_state{VpcCidrBlockStateCode::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;

@@ -40,7 +40,7 @@ namespace Model
   class SizeConstraintSetSummary
   {
   public:
-    AWS_WAF_API SizeConstraintSetSummary();
+    AWS_WAF_API SizeConstraintSetSummary() = default;
     AWS_WAF_API SizeConstraintSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API SizeConstraintSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,28 +59,24 @@ namespace Model
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
-    inline const Aws::String& GetSizeConstraintSetId() const{ return m_sizeConstraintSetId; }
+    inline const Aws::String& GetSizeConstraintSetId() const { return m_sizeConstraintSetId; }
     inline bool SizeConstraintSetIdHasBeenSet() const { return m_sizeConstraintSetIdHasBeenSet; }
-    inline void SetSizeConstraintSetId(const Aws::String& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
-    inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = std::move(value); }
-    inline void SetSizeConstraintSetId(const char* value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId.assign(value); }
-    inline SizeConstraintSetSummary& WithSizeConstraintSetId(const Aws::String& value) { SetSizeConstraintSetId(value); return *this;}
-    inline SizeConstraintSetSummary& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(std::move(value)); return *this;}
-    inline SizeConstraintSetSummary& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
+    template<typename SizeConstraintSetIdT = Aws::String>
+    void SetSizeConstraintSetId(SizeConstraintSetIdT&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = std::forward<SizeConstraintSetIdT>(value); }
+    template<typename SizeConstraintSetIdT = Aws::String>
+    SizeConstraintSetSummary& WithSizeConstraintSetId(SizeConstraintSetIdT&& value) { SetSizeConstraintSetId(std::forward<SizeConstraintSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SizeConstraintSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SizeConstraintSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SizeConstraintSetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SizeConstraintSetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

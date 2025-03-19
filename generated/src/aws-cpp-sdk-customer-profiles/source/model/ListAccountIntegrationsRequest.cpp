@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccountIntegrationsRequest::ListAccountIntegrationsRequest() : 
-    m_uriHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_includeHidden(false),
-    m_includeHiddenHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountIntegrationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-DescribeConfigRulesFilters::DescribeConfigRulesFilters() : 
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false)
-{
-}
-
 DescribeConfigRulesFilters::DescribeConfigRulesFilters(JsonView jsonValue)
-  : DescribeConfigRulesFilters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DescribeConfigRulesFilters& DescribeConfigRulesFilters::operator =(JsonView json
   if(jsonValue.ValueExists("EvaluationMode"))
   {
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
-
     m_evaluationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

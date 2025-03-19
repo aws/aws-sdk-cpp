@@ -12,16 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomVerificationEmailTemplateRequest::CreateCustomVerificationEmailTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_templateSubjectHasBeenSet(false),
-    m_templateContentHasBeenSet(false),
-    m_successRedirectionURLHasBeenSet(false),
-    m_failureRedirectionURLHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomVerificationEmailTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

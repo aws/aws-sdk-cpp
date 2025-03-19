@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CidrAuthorizationContext::CidrAuthorizationContext() : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
-{
-}
-
 CidrAuthorizationContext::CidrAuthorizationContext(const XmlNode& xmlNode)
-  : CidrAuthorizationContext()
 {
   *this = xmlNode;
 }

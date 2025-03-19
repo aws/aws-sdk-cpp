@@ -12,11 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelQueryRequest::CancelQueryRequest() : 
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelQueryRequest::SerializePayload() const
 {
   JsonValue payload;

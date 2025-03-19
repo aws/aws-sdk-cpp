@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateDBParameterGroupRequest::CreateDBParameterGroupRequest() : 
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

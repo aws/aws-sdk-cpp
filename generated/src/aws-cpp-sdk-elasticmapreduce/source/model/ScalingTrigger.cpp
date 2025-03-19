@@ -18,13 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ScalingTrigger::ScalingTrigger() : 
-    m_cloudWatchAlarmDefinitionHasBeenSet(false)
-{
-}
-
 ScalingTrigger::ScalingTrigger(JsonView jsonValue)
-  : ScalingTrigger()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ScalingTrigger& ScalingTrigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CloudWatchAlarmDefinition"))
   {
     m_cloudWatchAlarmDefinition = jsonValue.GetObject("CloudWatchAlarmDefinition");
-
     m_cloudWatchAlarmDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

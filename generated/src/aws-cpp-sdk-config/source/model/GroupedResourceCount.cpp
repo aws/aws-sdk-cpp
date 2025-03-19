@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-GroupedResourceCount::GroupedResourceCount() : 
-    m_groupNameHasBeenSet(false),
-    m_resourceCount(0),
-    m_resourceCountHasBeenSet(false)
-{
-}
-
 GroupedResourceCount::GroupedResourceCount(JsonView jsonValue)
-  : GroupedResourceCount()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GroupedResourceCount& GroupedResourceCount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCount"))
   {
     m_resourceCount = jsonValue.GetInt64("ResourceCount");
-
     m_resourceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

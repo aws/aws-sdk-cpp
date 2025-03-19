@@ -18,23 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-FleetUtilization::FleetUtilization() : 
-    m_fleetIdHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_activeServerProcessCount(0),
-    m_activeServerProcessCountHasBeenSet(false),
-    m_activeGameSessionCount(0),
-    m_activeGameSessionCountHasBeenSet(false),
-    m_currentPlayerSessionCount(0),
-    m_currentPlayerSessionCountHasBeenSet(false),
-    m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 FleetUtilization::FleetUtilization(JsonView jsonValue)
-  : FleetUtilization()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ FleetUtilization& FleetUtilization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveServerProcessCount"))
   {
     m_activeServerProcessCount = jsonValue.GetInteger("ActiveServerProcessCount");
-
     m_activeServerProcessCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveGameSessionCount"))
   {
     m_activeGameSessionCount = jsonValue.GetInteger("ActiveGameSessionCount");
-
     m_activeGameSessionCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentPlayerSessionCount"))
   {
     m_currentPlayerSessionCount = jsonValue.GetInteger("CurrentPlayerSessionCount");
-
     m_currentPlayerSessionCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumPlayerSessionCount"))
   {
     m_maximumPlayerSessionCount = jsonValue.GetInteger("MaximumPlayerSessionCount");
-
     m_maximumPlayerSessionCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

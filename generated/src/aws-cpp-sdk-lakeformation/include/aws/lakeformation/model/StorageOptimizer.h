@@ -34,7 +34,7 @@ namespace Model
   class StorageOptimizer
   {
   public:
-    AWS_LAKEFORMATION_API StorageOptimizer();
+    AWS_LAKEFORMATION_API StorageOptimizer() = default;
     AWS_LAKEFORMATION_API StorageOptimizer(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API StorageOptimizer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The specific type of storage optimizer. The supported value is
      * <code>compaction</code>.</p>
      */
-    inline const OptimizerType& GetStorageOptimizerType() const{ return m_storageOptimizerType; }
+    inline OptimizerType GetStorageOptimizerType() const { return m_storageOptimizerType; }
     inline bool StorageOptimizerTypeHasBeenSet() const { return m_storageOptimizerTypeHasBeenSet; }
-    inline void SetStorageOptimizerType(const OptimizerType& value) { m_storageOptimizerTypeHasBeenSet = true; m_storageOptimizerType = value; }
-    inline void SetStorageOptimizerType(OptimizerType&& value) { m_storageOptimizerTypeHasBeenSet = true; m_storageOptimizerType = std::move(value); }
-    inline StorageOptimizer& WithStorageOptimizerType(const OptimizerType& value) { SetStorageOptimizerType(value); return *this;}
-    inline StorageOptimizer& WithStorageOptimizerType(OptimizerType&& value) { SetStorageOptimizerType(std::move(value)); return *this;}
+    inline void SetStorageOptimizerType(OptimizerType value) { m_storageOptimizerTypeHasBeenSet = true; m_storageOptimizerType = value; }
+    inline StorageOptimizer& WithStorageOptimizerType(OptimizerType value) { SetStorageOptimizerType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,16 @@ namespace Model
      * key-value pair: <code>is_enabled</code> indicates true or false for
      * acceleration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetConfig() const{ return m_config; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const Aws::Map<Aws::String, Aws::String>& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(Aws::Map<Aws::String, Aws::String>&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline StorageOptimizer& WithConfig(const Aws::Map<Aws::String, Aws::String>& value) { SetConfig(value); return *this;}
-    inline StorageOptimizer& WithConfig(Aws::Map<Aws::String, Aws::String>&& value) { SetConfig(std::move(value)); return *this;}
-    inline StorageOptimizer& AddConfig(const Aws::String& key, const Aws::String& value) { m_configHasBeenSet = true; m_config.emplace(key, value); return *this; }
-    inline StorageOptimizer& AddConfig(Aws::String&& key, const Aws::String& value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), value); return *this; }
-    inline StorageOptimizer& AddConfig(const Aws::String& key, Aws::String&& value) { m_configHasBeenSet = true; m_config.emplace(key, std::move(value)); return *this; }
-    inline StorageOptimizer& AddConfig(Aws::String&& key, Aws::String&& value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), std::move(value)); return *this; }
-    inline StorageOptimizer& AddConfig(const char* key, Aws::String&& value) { m_configHasBeenSet = true; m_config.emplace(key, std::move(value)); return *this; }
-    inline StorageOptimizer& AddConfig(Aws::String&& key, const char* value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), value); return *this; }
-    inline StorageOptimizer& AddConfig(const char* key, const char* value) { m_configHasBeenSet = true; m_config.emplace(key, value); return *this; }
+    template<typename ConfigT = Aws::Map<Aws::String, Aws::String>>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = Aws::Map<Aws::String, Aws::String>>
+    StorageOptimizer& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
+    template<typename ConfigKeyT = Aws::String, typename ConfigValueT = Aws::String>
+    StorageOptimizer& AddConfig(ConfigKeyT&& key, ConfigValueT&& value) {
+      m_configHasBeenSet = true; m_config.emplace(std::forward<ConfigKeyT>(key), std::forward<ConfigValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -81,28 +76,24 @@ namespace Model
      * <p>When an acceleration result has a disabled status, the message describes an
      * error or simply indicates "disabled by the user".</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline StorageOptimizer& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline StorageOptimizer& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline StorageOptimizer& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    StorageOptimizer& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that contains information about any warnings (if present).</p>
      */
-    inline const Aws::String& GetWarnings() const{ return m_warnings; }
+    inline const Aws::String& GetWarnings() const { return m_warnings; }
     inline bool WarningsHasBeenSet() const { return m_warningsHasBeenSet; }
-    inline void SetWarnings(const Aws::String& value) { m_warningsHasBeenSet = true; m_warnings = value; }
-    inline void SetWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings = std::move(value); }
-    inline void SetWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.assign(value); }
-    inline StorageOptimizer& WithWarnings(const Aws::String& value) { SetWarnings(value); return *this;}
-    inline StorageOptimizer& WithWarnings(Aws::String&& value) { SetWarnings(std::move(value)); return *this;}
-    inline StorageOptimizer& WithWarnings(const char* value) { SetWarnings(value); return *this;}
+    template<typename WarningsT = Aws::String>
+    void SetWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings = std::forward<WarningsT>(value); }
+    template<typename WarningsT = Aws::String>
+    StorageOptimizer& WithWarnings(WarningsT&& value) { SetWarnings(std::forward<WarningsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,18 +101,16 @@ namespace Model
      * <p>When an acceleration result has an enabled status, contains the details of
      * the last job run.</p>
      */
-    inline const Aws::String& GetLastRunDetails() const{ return m_lastRunDetails; }
+    inline const Aws::String& GetLastRunDetails() const { return m_lastRunDetails; }
     inline bool LastRunDetailsHasBeenSet() const { return m_lastRunDetailsHasBeenSet; }
-    inline void SetLastRunDetails(const Aws::String& value) { m_lastRunDetailsHasBeenSet = true; m_lastRunDetails = value; }
-    inline void SetLastRunDetails(Aws::String&& value) { m_lastRunDetailsHasBeenSet = true; m_lastRunDetails = std::move(value); }
-    inline void SetLastRunDetails(const char* value) { m_lastRunDetailsHasBeenSet = true; m_lastRunDetails.assign(value); }
-    inline StorageOptimizer& WithLastRunDetails(const Aws::String& value) { SetLastRunDetails(value); return *this;}
-    inline StorageOptimizer& WithLastRunDetails(Aws::String&& value) { SetLastRunDetails(std::move(value)); return *this;}
-    inline StorageOptimizer& WithLastRunDetails(const char* value) { SetLastRunDetails(value); return *this;}
+    template<typename LastRunDetailsT = Aws::String>
+    void SetLastRunDetails(LastRunDetailsT&& value) { m_lastRunDetailsHasBeenSet = true; m_lastRunDetails = std::forward<LastRunDetailsT>(value); }
+    template<typename LastRunDetailsT = Aws::String>
+    StorageOptimizer& WithLastRunDetails(LastRunDetailsT&& value) { SetLastRunDetails(std::forward<LastRunDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    OptimizerType m_storageOptimizerType;
+    OptimizerType m_storageOptimizerType{OptimizerType::NOT_SET};
     bool m_storageOptimizerTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_config;

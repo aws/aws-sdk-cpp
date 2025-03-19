@@ -12,14 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDocumentAnalysisRequest::GetDocumentAnalysisRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetDocumentAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DatadogConnectorProfileProperties::DatadogConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 DatadogConnectorProfileProperties::DatadogConnectorProfileProperties(JsonView jsonValue)
-  : DatadogConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatadogConnectorProfileProperties& DatadogConnectorProfileProperties::operator =
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

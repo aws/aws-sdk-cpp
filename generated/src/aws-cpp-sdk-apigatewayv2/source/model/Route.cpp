@@ -18,28 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-Route::Route() : 
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false),
-    m_apiKeyRequired(false),
-    m_apiKeyRequiredHasBeenSet(false),
-    m_authorizationScopesHasBeenSet(false),
-    m_authorizationType(AuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false),
-    m_modelSelectionExpressionHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_requestModelsHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_routeIdHasBeenSet(false),
-    m_routeKeyHasBeenSet(false),
-    m_routeResponseSelectionExpressionHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Route::Route(JsonView jsonValue)
-  : Route()
 {
   *this = jsonValue;
 }
@@ -49,17 +28,13 @@ Route& Route::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiGatewayManaged"))
   {
     m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
-
     m_apiGatewayManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKeyRequired"))
   {
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");
-
     m_apiKeyRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationScopes"))
   {
     Aws::Utils::Array<JsonView> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
@@ -69,35 +44,26 @@ Route& Route::operator =(JsonView jsonValue)
     }
     m_authorizationScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationType"))
   {
     m_authorizationType = AuthorizationTypeMapper::GetAuthorizationTypeForName(jsonValue.GetString("authorizationType"));
-
     m_authorizationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizerId"))
   {
     m_authorizerId = jsonValue.GetString("authorizerId");
-
     m_authorizerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelSelectionExpression"))
   {
     m_modelSelectionExpression = jsonValue.GetString("modelSelectionExpression");
-
     m_modelSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationName"))
   {
     m_operationName = jsonValue.GetString("operationName");
-
     m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestModels"))
   {
     Aws::Map<Aws::String, JsonView> requestModelsJsonMap = jsonValue.GetObject("requestModels").GetAllObjects();
@@ -107,7 +73,6 @@ Route& Route::operator =(JsonView jsonValue)
     }
     m_requestModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestParameters"))
   {
     Aws::Map<Aws::String, JsonView> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();
@@ -117,35 +82,26 @@ Route& Route::operator =(JsonView jsonValue)
     }
     m_requestParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeId"))
   {
     m_routeId = jsonValue.GetString("routeId");
-
     m_routeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeKey"))
   {
     m_routeKey = jsonValue.GetString("routeKey");
-
     m_routeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeResponseSelectionExpression"))
   {
     m_routeResponseSelectionExpression = jsonValue.GetString("routeResponseSelectionExpression");
-
     m_routeResponseSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

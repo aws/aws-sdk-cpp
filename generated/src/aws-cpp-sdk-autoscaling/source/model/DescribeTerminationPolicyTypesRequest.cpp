@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeTerminationPolicyTypesRequest::DescribeTerminationPolicyTypesRequest()
-{
-}
-
 Aws::String DescribeTerminationPolicyTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

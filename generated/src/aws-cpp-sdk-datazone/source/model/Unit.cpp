@@ -18,10 +18,6 @@ namespace DataZone
 namespace Model
 {
 
-Unit::Unit()
-{
-}
-
 Unit::Unit(JsonView jsonValue)
 {
   *this = jsonValue;

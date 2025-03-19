@@ -18,17 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RenewalSummary::RenewalSummary() : 
-    m_domainValidationRecordsHasBeenSet(false),
-    m_renewalStatus(RenewalStatus::NOT_SET),
-    m_renewalStatusHasBeenSet(false),
-    m_renewalStatusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 RenewalSummary::RenewalSummary(JsonView jsonValue)
-  : RenewalSummary()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ RenewalSummary& RenewalSummary::operator =(JsonView jsonValue)
     }
     m_domainValidationRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renewalStatus"))
   {
     m_renewalStatus = RenewalStatusMapper::GetRenewalStatusForName(jsonValue.GetString("renewalStatus"));
-
     m_renewalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renewalStatusReason"))
   {
     m_renewalStatusReason = jsonValue.GetString("renewalStatusReason");
-
     m_renewalStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

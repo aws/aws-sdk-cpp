@@ -18,17 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ResourceTargetDefinition::ResourceTargetDefinition() : 
-    m_attribute(ResourceAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiresRecreation(RequiresRecreation::NOT_SET),
-    m_requiresRecreationHasBeenSet(false)
-{
-}
-
 ResourceTargetDefinition::ResourceTargetDefinition(JsonView jsonValue)
-  : ResourceTargetDefinition()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ResourceTargetDefinition& ResourceTargetDefinition::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = ResourceAttributeMapper::GetResourceAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiresRecreation"))
   {
     m_requiresRecreation = RequiresRecreationMapper::GetRequiresRecreationForName(jsonValue.GetString("RequiresRecreation"));
-
     m_requiresRecreationHasBeenSet = true;
   }
-
   return *this;
 }
 

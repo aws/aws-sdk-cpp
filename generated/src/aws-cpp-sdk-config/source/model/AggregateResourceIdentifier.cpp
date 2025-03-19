@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregateResourceIdentifier::AggregateResourceIdentifier() : 
-    m_sourceAccountIdHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 AggregateResourceIdentifier::AggregateResourceIdentifier(JsonView jsonValue)
-  : AggregateResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AggregateResourceIdentifier& AggregateResourceIdentifier::operator =(JsonView js
   if(jsonValue.ValueExists("SourceAccountId"))
   {
     m_sourceAccountId = jsonValue.GetString("SourceAccountId");
-
     m_sourceAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRegion"))
   {
     m_sourceRegion = jsonValue.GetString("SourceRegion");
-
     m_sourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

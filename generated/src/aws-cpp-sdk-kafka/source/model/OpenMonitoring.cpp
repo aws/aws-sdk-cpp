@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-OpenMonitoring::OpenMonitoring() : 
-    m_prometheusHasBeenSet(false)
-{
-}
-
 OpenMonitoring::OpenMonitoring(JsonView jsonValue)
-  : OpenMonitoring()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OpenMonitoring& OpenMonitoring::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("prometheus"))
   {
     m_prometheus = jsonValue.GetObject("prometheus");
-
     m_prometheusHasBeenSet = true;
   }
-
   return *this;
 }
 

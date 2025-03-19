@@ -18,15 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-TrustedCertificatePublicKey::TrustedCertificatePublicKey() : 
-    m_keyAttributesHasBeenSet(false),
-    m_publicKeyCertificateHasBeenSet(false),
-    m_certificateAuthorityPublicKeyIdentifierHasBeenSet(false)
-{
-}
-
 TrustedCertificatePublicKey::TrustedCertificatePublicKey(JsonView jsonValue)
-  : TrustedCertificatePublicKey()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TrustedCertificatePublicKey& TrustedCertificatePublicKey::operator =(JsonView js
   if(jsonValue.ValueExists("KeyAttributes"))
   {
     m_keyAttributes = jsonValue.GetObject("KeyAttributes");
-
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKeyCertificate"))
   {
     m_publicKeyCertificate = jsonValue.GetString("PublicKeyCertificate");
-
     m_publicKeyCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateAuthorityPublicKeyIdentifier"))
   {
     m_certificateAuthorityPublicKeyIdentifier = jsonValue.GetString("CertificateAuthorityPublicKeyIdentifier");
-
     m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

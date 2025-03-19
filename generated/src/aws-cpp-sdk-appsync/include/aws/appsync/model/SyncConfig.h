@@ -35,7 +35,7 @@ namespace Model
   class SyncConfig
   {
   public:
-    AWS_APPSYNC_API SyncConfig();
+    AWS_APPSYNC_API SyncConfig() = default;
     AWS_APPSYNC_API SyncConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API SyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p>
      * </li> </ul>
      */
-    inline const ConflictHandlerType& GetConflictHandler() const{ return m_conflictHandler; }
+    inline ConflictHandlerType GetConflictHandler() const { return m_conflictHandler; }
     inline bool ConflictHandlerHasBeenSet() const { return m_conflictHandlerHasBeenSet; }
-    inline void SetConflictHandler(const ConflictHandlerType& value) { m_conflictHandlerHasBeenSet = true; m_conflictHandler = value; }
-    inline void SetConflictHandler(ConflictHandlerType&& value) { m_conflictHandlerHasBeenSet = true; m_conflictHandler = std::move(value); }
-    inline SyncConfig& WithConflictHandler(const ConflictHandlerType& value) { SetConflictHandler(value); return *this;}
-    inline SyncConfig& WithConflictHandler(ConflictHandlerType&& value) { SetConflictHandler(std::move(value)); return *this;}
+    inline void SetConflictHandler(ConflictHandlerType value) { m_conflictHandlerHasBeenSet = true; m_conflictHandler = value; }
+    inline SyncConfig& WithConflictHandler(ConflictHandlerType value) { SetConflictHandler(value); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
      * </ul>
      */
-    inline const ConflictDetectionType& GetConflictDetection() const{ return m_conflictDetection; }
+    inline ConflictDetectionType GetConflictDetection() const { return m_conflictDetection; }
     inline bool ConflictDetectionHasBeenSet() const { return m_conflictDetectionHasBeenSet; }
-    inline void SetConflictDetection(const ConflictDetectionType& value) { m_conflictDetectionHasBeenSet = true; m_conflictDetection = value; }
-    inline void SetConflictDetection(ConflictDetectionType&& value) { m_conflictDetectionHasBeenSet = true; m_conflictDetection = std::move(value); }
-    inline SyncConfig& WithConflictDetection(const ConflictDetectionType& value) { SetConflictDetection(value); return *this;}
-    inline SyncConfig& WithConflictDetection(ConflictDetectionType&& value) { SetConflictDetection(std::move(value)); return *this;}
+    inline void SetConflictDetection(ConflictDetectionType value) { m_conflictDetectionHasBeenSet = true; m_conflictDetection = value; }
+    inline SyncConfig& WithConflictDetection(ConflictDetectionType value) { SetConflictDetection(value); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +75,19 @@ namespace Model
      * <p>The <code>LambdaConflictHandlerConfig</code> when configuring
      * <code>LAMBDA</code> as the Conflict Handler.</p>
      */
-    inline const LambdaConflictHandlerConfig& GetLambdaConflictHandlerConfig() const{ return m_lambdaConflictHandlerConfig; }
+    inline const LambdaConflictHandlerConfig& GetLambdaConflictHandlerConfig() const { return m_lambdaConflictHandlerConfig; }
     inline bool LambdaConflictHandlerConfigHasBeenSet() const { return m_lambdaConflictHandlerConfigHasBeenSet; }
-    inline void SetLambdaConflictHandlerConfig(const LambdaConflictHandlerConfig& value) { m_lambdaConflictHandlerConfigHasBeenSet = true; m_lambdaConflictHandlerConfig = value; }
-    inline void SetLambdaConflictHandlerConfig(LambdaConflictHandlerConfig&& value) { m_lambdaConflictHandlerConfigHasBeenSet = true; m_lambdaConflictHandlerConfig = std::move(value); }
-    inline SyncConfig& WithLambdaConflictHandlerConfig(const LambdaConflictHandlerConfig& value) { SetLambdaConflictHandlerConfig(value); return *this;}
-    inline SyncConfig& WithLambdaConflictHandlerConfig(LambdaConflictHandlerConfig&& value) { SetLambdaConflictHandlerConfig(std::move(value)); return *this;}
+    template<typename LambdaConflictHandlerConfigT = LambdaConflictHandlerConfig>
+    void SetLambdaConflictHandlerConfig(LambdaConflictHandlerConfigT&& value) { m_lambdaConflictHandlerConfigHasBeenSet = true; m_lambdaConflictHandlerConfig = std::forward<LambdaConflictHandlerConfigT>(value); }
+    template<typename LambdaConflictHandlerConfigT = LambdaConflictHandlerConfig>
+    SyncConfig& WithLambdaConflictHandlerConfig(LambdaConflictHandlerConfigT&& value) { SetLambdaConflictHandlerConfig(std::forward<LambdaConflictHandlerConfigT>(value)); return *this;}
     ///@}
   private:
 
-    ConflictHandlerType m_conflictHandler;
+    ConflictHandlerType m_conflictHandler{ConflictHandlerType::NOT_SET};
     bool m_conflictHandlerHasBeenSet = false;
 
-    ConflictDetectionType m_conflictDetection;
+    ConflictDetectionType m_conflictDetection{ConflictDetectionType::NOT_SET};
     bool m_conflictDetectionHasBeenSet = false;
 
     LambdaConflictHandlerConfig m_lambdaConflictHandlerConfig;

@@ -12,15 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIntegrationRequest::UpdateIntegrationRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_integratingService(IntegratingService::NOT_SET),
-    m_integratingServiceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

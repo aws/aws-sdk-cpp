@@ -31,7 +31,7 @@ namespace Model
   class Region
   {
   public:
-    AWS_EC2_API Region();
+    AWS_EC2_API Region() = default;
     AWS_EC2_API Region(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Region& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,42 +45,36 @@ namespace Model
      * <code>opt-in-not-required</code>, <code>opted-in</code>, and
      * <code>not-opted-in</code>.</p>
      */
-    inline const Aws::String& GetOptInStatus() const{ return m_optInStatus; }
+    inline const Aws::String& GetOptInStatus() const { return m_optInStatus; }
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
-    inline void SetOptInStatus(const Aws::String& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
-    inline void SetOptInStatus(Aws::String&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
-    inline void SetOptInStatus(const char* value) { m_optInStatusHasBeenSet = true; m_optInStatus.assign(value); }
-    inline Region& WithOptInStatus(const Aws::String& value) { SetOptInStatus(value); return *this;}
-    inline Region& WithOptInStatus(Aws::String&& value) { SetOptInStatus(std::move(value)); return *this;}
-    inline Region& WithOptInStatus(const char* value) { SetOptInStatus(value); return *this;}
+    template<typename OptInStatusT = Aws::String>
+    void SetOptInStatus(OptInStatusT&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::forward<OptInStatusT>(value); }
+    template<typename OptInStatusT = Aws::String>
+    Region& WithOptInStatus(OptInStatusT&& value) { SetOptInStatus(std::forward<OptInStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Region.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline Region& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline Region& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline Region& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    Region& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region service endpoint.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline Region& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline Region& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline Region& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    Region& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
   private:
 

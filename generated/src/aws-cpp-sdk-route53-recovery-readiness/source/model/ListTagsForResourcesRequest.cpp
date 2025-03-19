@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForResourcesRequest::ListTagsForResourcesRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForResourcesRequest::SerializePayload() const
 {
   return {};

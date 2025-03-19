@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails& AwsEc2LaunchTemplateDat
   if(jsonValue.ValueExists("DeleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("DeleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
     m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Throughput"))
   {
     m_throughput = jsonValue.GetInteger("Throughput");
-
     m_throughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSize"))
   {
     m_volumeSize = jsonValue.GetInteger("VolumeSize");
-
     m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = jsonValue.GetString("VolumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

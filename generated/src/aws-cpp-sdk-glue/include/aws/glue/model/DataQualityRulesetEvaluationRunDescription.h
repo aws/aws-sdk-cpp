@@ -35,7 +35,7 @@ namespace Model
   class DataQualityRulesetEvaluationRunDescription
   {
   public:
-    AWS_GLUE_API DataQualityRulesetEvaluationRunDescription();
+    AWS_GLUE_API DataQualityRulesetEvaluationRunDescription() = default;
     AWS_GLUE_API DataQualityRulesetEvaluationRunDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataQualityRulesetEvaluationRunDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,60 +45,56 @@ namespace Model
     /**
      * <p>The unique run identifier associated with this run.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline DataQualityRulesetEvaluationRunDescription& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline DataQualityRulesetEvaluationRunDescription& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline DataQualityRulesetEvaluationRunDescription& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    DataQualityRulesetEvaluationRunDescription& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status for this run.</p>
      */
-    inline const TaskStatusType& GetStatus() const{ return m_status; }
+    inline TaskStatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TaskStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TaskStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataQualityRulesetEvaluationRunDescription& WithStatus(const TaskStatusType& value) { SetStatus(value); return *this;}
-    inline DataQualityRulesetEvaluationRunDescription& WithStatus(TaskStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TaskStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataQualityRulesetEvaluationRunDescription& WithStatus(TaskStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the run started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
+    inline const Aws::Utils::DateTime& GetStartedOn() const { return m_startedOn; }
     inline bool StartedOnHasBeenSet() const { return m_startedOnHasBeenSet; }
-    inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOnHasBeenSet = true; m_startedOn = value; }
-    inline void SetStartedOn(Aws::Utils::DateTime&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::move(value); }
-    inline DataQualityRulesetEvaluationRunDescription& WithStartedOn(const Aws::Utils::DateTime& value) { SetStartedOn(value); return *this;}
-    inline DataQualityRulesetEvaluationRunDescription& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    void SetStartedOn(StartedOnT&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::forward<StartedOnT>(value); }
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    DataQualityRulesetEvaluationRunDescription& WithStartedOn(StartedOnT&& value) { SetStartedOn(std::forward<StartedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data source (an Glue table) associated with the run.</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline DataQualityRulesetEvaluationRunDescription& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline DataQualityRulesetEvaluationRunDescription& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    DataQualityRulesetEvaluationRunDescription& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_runId;
     bool m_runIdHasBeenSet = false;
 
-    TaskStatusType m_status;
+    TaskStatusType m_status{TaskStatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedOn;
+    Aws::Utils::DateTime m_startedOn{};
     bool m_startedOnHasBeenSet = false;
 
     DataSource m_dataSource;

@@ -28,7 +28,7 @@ namespace Model
   class PutBotRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API PutBotRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutBotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutBotRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutBotRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutBotRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutBotRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the bot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PutBotRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PutBotRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PutBotRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PutBotRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,14 @@ namespace Model
      * that a user can express. For example, a pizza ordering bot might support an
      * OrderPizza intent. For more information, see <a>how-it-works</a>.</p>
      */
-    inline const Aws::Vector<Intent>& GetIntents() const{ return m_intents; }
+    inline const Aws::Vector<Intent>& GetIntents() const { return m_intents; }
     inline bool IntentsHasBeenSet() const { return m_intentsHasBeenSet; }
-    inline void SetIntents(const Aws::Vector<Intent>& value) { m_intentsHasBeenSet = true; m_intents = value; }
-    inline void SetIntents(Aws::Vector<Intent>&& value) { m_intentsHasBeenSet = true; m_intents = std::move(value); }
-    inline PutBotRequest& WithIntents(const Aws::Vector<Intent>& value) { SetIntents(value); return *this;}
-    inline PutBotRequest& WithIntents(Aws::Vector<Intent>&& value) { SetIntents(std::move(value)); return *this;}
-    inline PutBotRequest& AddIntents(const Intent& value) { m_intentsHasBeenSet = true; m_intents.push_back(value); return *this; }
-    inline PutBotRequest& AddIntents(Intent&& value) { m_intentsHasBeenSet = true; m_intents.push_back(std::move(value)); return *this; }
+    template<typename IntentsT = Aws::Vector<Intent>>
+    void SetIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents = std::forward<IntentsT>(value); }
+    template<typename IntentsT = Aws::Vector<Intent>>
+    PutBotRequest& WithIntents(IntentsT&& value) { SetIntents(std::forward<IntentsT>(value)); return *this;}
+    template<typename IntentsT = Intent>
+    PutBotRequest& AddIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents.emplace_back(std::forward<IntentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -102,7 +98,7 @@ namespace Model
      * to <code>true</code> by default. In these Regions setting the parameter to
      * <code>false</code> throws a <code>ValidationException</code> exception.</p>
      */
-    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
+    inline bool GetEnableModelImprovements() const { return m_enableModelImprovements; }
     inline bool EnableModelImprovementsHasBeenSet() const { return m_enableModelImprovementsHasBeenSet; }
     inline void SetEnableModelImprovements(bool value) { m_enableModelImprovementsHasBeenSet = true; m_enableModelImprovements = value; }
     inline PutBotRequest& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
@@ -132,7 +128,7 @@ namespace Model
      * <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li>
      * <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>
      */
-    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
+    inline double GetNluIntentConfidenceThreshold() const { return m_nluIntentConfidenceThreshold; }
     inline bool NluIntentConfidenceThresholdHasBeenSet() const { return m_nluIntentConfidenceThresholdHasBeenSet; }
     inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
     inline PutBotRequest& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
@@ -167,12 +163,12 @@ namespace Model
      * clarification prompt to get an intent from the user, it returns a 400 Bad
      * Request exception.</p> </li> </ul>
      */
-    inline const Prompt& GetClarificationPrompt() const{ return m_clarificationPrompt; }
+    inline const Prompt& GetClarificationPrompt() const { return m_clarificationPrompt; }
     inline bool ClarificationPromptHasBeenSet() const { return m_clarificationPromptHasBeenSet; }
-    inline void SetClarificationPrompt(const Prompt& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = value; }
-    inline void SetClarificationPrompt(Prompt&& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = std::move(value); }
-    inline PutBotRequest& WithClarificationPrompt(const Prompt& value) { SetClarificationPrompt(value); return *this;}
-    inline PutBotRequest& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
+    template<typename ClarificationPromptT = Prompt>
+    void SetClarificationPrompt(ClarificationPromptT&& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = std::forward<ClarificationPromptT>(value); }
+    template<typename ClarificationPromptT = Prompt>
+    PutBotRequest& WithClarificationPrompt(ClarificationPromptT&& value) { SetClarificationPrompt(std::forward<ClarificationPromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +191,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      * AMAZON.FallbackIntent</a>.</p>
      */
-    inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
+    inline const Statement& GetAbortStatement() const { return m_abortStatement; }
     inline bool AbortStatementHasBeenSet() const { return m_abortStatementHasBeenSet; }
-    inline void SetAbortStatement(const Statement& value) { m_abortStatementHasBeenSet = true; m_abortStatement = value; }
-    inline void SetAbortStatement(Statement&& value) { m_abortStatementHasBeenSet = true; m_abortStatement = std::move(value); }
-    inline PutBotRequest& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
-    inline PutBotRequest& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
+    template<typename AbortStatementT = Statement>
+    void SetAbortStatement(AbortStatementT&& value) { m_abortStatementHasBeenSet = true; m_abortStatement = std::forward<AbortStatementT>(value); }
+    template<typename AbortStatementT = Statement>
+    PutBotRequest& WithAbortStatement(AbortStatementT&& value) { SetAbortStatement(std::forward<AbortStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,7 +213,7 @@ namespace Model
      * request, Amazon Lex uses the default value. This is also true if the request
      * replaces an existing bot.</p> <p>The default is 300 seconds (5 minutes).</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
     inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline PutBotRequest& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
@@ -231,14 +227,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in
      * Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
     inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceIdHasBeenSet = true; m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceIdHasBeenSet = true; m_voiceId.assign(value); }
-    inline PutBotRequest& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline PutBotRequest& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline PutBotRequest& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    PutBotRequest& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,14 +246,12 @@ namespace Model
      * match the <code>$LATEST</code> version, you get a
      * <code>PreconditionFailedException</code> exception.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline PutBotRequest& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline PutBotRequest& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline PutBotRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    PutBotRequest& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -269,12 +261,10 @@ namespace Model
      * <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you
      * don't specify this value, the default value is <code>BUILD</code>.</p>
      */
-    inline const ProcessBehavior& GetProcessBehavior() const{ return m_processBehavior; }
+    inline ProcessBehavior GetProcessBehavior() const { return m_processBehavior; }
     inline bool ProcessBehaviorHasBeenSet() const { return m_processBehaviorHasBeenSet; }
-    inline void SetProcessBehavior(const ProcessBehavior& value) { m_processBehaviorHasBeenSet = true; m_processBehavior = value; }
-    inline void SetProcessBehavior(ProcessBehavior&& value) { m_processBehaviorHasBeenSet = true; m_processBehavior = std::move(value); }
-    inline PutBotRequest& WithProcessBehavior(const ProcessBehavior& value) { SetProcessBehavior(value); return *this;}
-    inline PutBotRequest& WithProcessBehavior(ProcessBehavior&& value) { SetProcessBehavior(std::move(value)); return *this;}
+    inline void SetProcessBehavior(ProcessBehavior value) { m_processBehaviorHasBeenSet = true; m_processBehavior = value; }
+    inline PutBotRequest& WithProcessBehavior(ProcessBehavior value) { SetProcessBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -283,12 +273,10 @@ namespace Model
      * compatible with the locale of the bot. </p> <p>The default is
      * <code>en-US</code>.</p>
      */
-    inline const Locale& GetLocale() const{ return m_locale; }
+    inline Locale GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline PutBotRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-    inline PutBotRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+    inline void SetLocale(Locale value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline PutBotRequest& WithLocale(Locale value) { SetLocale(value); return *this;}
     ///@}
 
     ///@{
@@ -317,7 +305,7 @@ namespace Model
      * whole or in part, to children under age 13, see the <a
      * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
      */
-    inline bool GetChildDirected() const{ return m_childDirected; }
+    inline bool GetChildDirected() const { return m_childDirected; }
     inline bool ChildDirectedHasBeenSet() const { return m_childDirectedHasBeenSet; }
     inline void SetChildDirected(bool value) { m_childDirectedHasBeenSet = true; m_childDirected = value; }
     inline PutBotRequest& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
@@ -329,7 +317,7 @@ namespace Model
      * for sentiment analysis. If you don't specify <code>detectSentiment</code>, the
      * default is <code>false</code>.</p>
      */
-    inline bool GetDetectSentiment() const{ return m_detectSentiment; }
+    inline bool GetDetectSentiment() const { return m_detectSentiment; }
     inline bool DetectSentimentHasBeenSet() const { return m_detectSentimentHasBeenSet; }
     inline void SetDetectSentiment(bool value) { m_detectSentimentHasBeenSet = true; m_detectSentiment = value; }
     inline PutBotRequest& WithDetectSentiment(bool value) { SetDetectSentiment(value); return *this;}
@@ -341,7 +329,7 @@ namespace Model
      * This is the same as calling the <code>CreateBotVersion</code> operation. If you
      * don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
      */
-    inline bool GetCreateVersion() const{ return m_createVersion; }
+    inline bool GetCreateVersion() const { return m_createVersion; }
     inline bool CreateVersionHasBeenSet() const { return m_createVersionHasBeenSet; }
     inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }
     inline PutBotRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
@@ -353,14 +341,14 @@ namespace Model
      * bot, you can't use the <code>PutBot</code> operation to update the tags on a
      * bot. To update tags, use the <code>TagResource</code> operation.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutBotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutBotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutBotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutBotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutBotRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutBotRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -373,10 +361,10 @@ namespace Model
     Aws::Vector<Intent> m_intents;
     bool m_intentsHasBeenSet = false;
 
-    bool m_enableModelImprovements;
+    bool m_enableModelImprovements{false};
     bool m_enableModelImprovementsHasBeenSet = false;
 
-    double m_nluIntentConfidenceThreshold;
+    double m_nluIntentConfidenceThreshold{0.0};
     bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     Prompt m_clarificationPrompt;
@@ -385,7 +373,7 @@ namespace Model
     Statement m_abortStatement;
     bool m_abortStatementHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
     bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_voiceId;
@@ -394,19 +382,19 @@ namespace Model
     Aws::String m_checksum;
     bool m_checksumHasBeenSet = false;
 
-    ProcessBehavior m_processBehavior;
+    ProcessBehavior m_processBehavior{ProcessBehavior::NOT_SET};
     bool m_processBehaviorHasBeenSet = false;
 
-    Locale m_locale;
+    Locale m_locale{Locale::NOT_SET};
     bool m_localeHasBeenSet = false;
 
-    bool m_childDirected;
+    bool m_childDirected{false};
     bool m_childDirectedHasBeenSet = false;
 
-    bool m_detectSentiment;
+    bool m_detectSentiment{false};
     bool m_detectSentimentHasBeenSet = false;
 
-    bool m_createVersion;
+    bool m_createVersion{false};
     bool m_createVersionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

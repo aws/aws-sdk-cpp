@@ -30,7 +30,7 @@ namespace Model
   class DetectionFilter
   {
   public:
-    AWS_REKOGNITION_API DetectionFilter();
+    AWS_REKOGNITION_API DetectionFilter() = default;
     AWS_REKOGNITION_API DetectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * this will be excluded from the result. Values should be between 0 and 100. The
      * default MinConfidence is 80.</p>
      */
-    inline double GetMinConfidence() const{ return m_minConfidence; }
+    inline double GetMinConfidence() const { return m_minConfidence; }
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
     inline DetectionFilter& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * heights lesser than this value will be excluded from the result. Value is
      * relative to the video frame height.</p>
      */
-    inline double GetMinBoundingBoxHeight() const{ return m_minBoundingBoxHeight; }
+    inline double GetMinBoundingBoxHeight() const { return m_minBoundingBoxHeight; }
     inline bool MinBoundingBoxHeightHasBeenSet() const { return m_minBoundingBoxHeightHasBeenSet; }
     inline void SetMinBoundingBoxHeight(double value) { m_minBoundingBoxHeightHasBeenSet = true; m_minBoundingBoxHeight = value; }
     inline DetectionFilter& WithMinBoundingBoxHeight(double value) { SetMinBoundingBoxHeight(value); return *this;}
@@ -66,20 +66,20 @@ namespace Model
      * widths lesser than this value will be excluded from the result. Value is
      * relative to the video frame width.</p>
      */
-    inline double GetMinBoundingBoxWidth() const{ return m_minBoundingBoxWidth; }
+    inline double GetMinBoundingBoxWidth() const { return m_minBoundingBoxWidth; }
     inline bool MinBoundingBoxWidthHasBeenSet() const { return m_minBoundingBoxWidthHasBeenSet; }
     inline void SetMinBoundingBoxWidth(double value) { m_minBoundingBoxWidthHasBeenSet = true; m_minBoundingBoxWidth = value; }
     inline DetectionFilter& WithMinBoundingBoxWidth(double value) { SetMinBoundingBoxWidth(value); return *this;}
     ///@}
   private:
 
-    double m_minConfidence;
+    double m_minConfidence{0.0};
     bool m_minConfidenceHasBeenSet = false;
 
-    double m_minBoundingBoxHeight;
+    double m_minBoundingBoxHeight{0.0};
     bool m_minBoundingBoxHeightHasBeenSet = false;
 
-    double m_minBoundingBoxWidth;
+    double m_minBoundingBoxWidth{0.0};
     bool m_minBoundingBoxWidthHasBeenSet = false;
   };
 

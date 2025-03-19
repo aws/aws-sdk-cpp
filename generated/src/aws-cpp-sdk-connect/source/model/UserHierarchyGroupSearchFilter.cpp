@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UserHierarchyGroupSearchFilter::UserHierarchyGroupSearchFilter() : 
-    m_attributeFilterHasBeenSet(false)
-{
-}
-
 UserHierarchyGroupSearchFilter::UserHierarchyGroupSearchFilter(JsonView jsonValue)
-  : UserHierarchyGroupSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserHierarchyGroupSearchFilter& UserHierarchyGroupSearchFilter::operator =(JsonV
   if(jsonValue.ValueExists("AttributeFilter"))
   {
     m_attributeFilter = jsonValue.GetObject("AttributeFilter");
-
     m_attributeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

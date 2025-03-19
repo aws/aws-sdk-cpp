@@ -31,7 +31,7 @@ namespace Model
   class HlsWebdavSettings
   {
   public:
-    AWS_MEDIALIVE_API HlsWebdavSettings();
+    AWS_MEDIALIVE_API HlsWebdavSettings() = default;
     AWS_MEDIALIVE_API HlsWebdavSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API HlsWebdavSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * Number of seconds to wait before retrying connection to the CDN if the
      * connection is lost.
      */
-    inline int GetConnectionRetryInterval() const{ return m_connectionRetryInterval; }
+    inline int GetConnectionRetryInterval() const { return m_connectionRetryInterval; }
     inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
     inline HlsWebdavSettings& WithConnectionRetryInterval(int value) { SetConnectionRetryInterval(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * Size in seconds of file cache for streaming outputs.
      */
-    inline int GetFilecacheDuration() const{ return m_filecacheDuration; }
+    inline int GetFilecacheDuration() const { return m_filecacheDuration; }
     inline bool FilecacheDurationHasBeenSet() const { return m_filecacheDurationHasBeenSet; }
     inline void SetFilecacheDuration(int value) { m_filecacheDurationHasBeenSet = true; m_filecacheDuration = value; }
     inline HlsWebdavSettings& WithFilecacheDuration(int value) { SetFilecacheDuration(value); return *this;}
@@ -62,12 +62,10 @@ namespace Model
     /**
      * Specify whether or not to use chunked transfer encoding to WebDAV.
      */
-    inline const HlsWebdavHttpTransferMode& GetHttpTransferMode() const{ return m_httpTransferMode; }
+    inline HlsWebdavHttpTransferMode GetHttpTransferMode() const { return m_httpTransferMode; }
     inline bool HttpTransferModeHasBeenSet() const { return m_httpTransferModeHasBeenSet; }
-    inline void SetHttpTransferMode(const HlsWebdavHttpTransferMode& value) { m_httpTransferModeHasBeenSet = true; m_httpTransferMode = value; }
-    inline void SetHttpTransferMode(HlsWebdavHttpTransferMode&& value) { m_httpTransferModeHasBeenSet = true; m_httpTransferMode = std::move(value); }
-    inline HlsWebdavSettings& WithHttpTransferMode(const HlsWebdavHttpTransferMode& value) { SetHttpTransferMode(value); return *this;}
-    inline HlsWebdavSettings& WithHttpTransferMode(HlsWebdavHttpTransferMode&& value) { SetHttpTransferMode(std::move(value)); return *this;}
+    inline void SetHttpTransferMode(HlsWebdavHttpTransferMode value) { m_httpTransferModeHasBeenSet = true; m_httpTransferMode = value; }
+    inline HlsWebdavSettings& WithHttpTransferMode(HlsWebdavHttpTransferMode value) { SetHttpTransferMode(value); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +74,7 @@ namespace Model
      * error state. Applies only if the CDN destination URI begins with "s3" or
      * "mediastore". For other URIs, the value is always 3.
      */
-    inline int GetNumRetries() const{ return m_numRetries; }
+    inline int GetNumRetries() const { return m_numRetries; }
     inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
     inline HlsWebdavSettings& WithNumRetries(int value) { SetNumRetries(value); return *this;}
@@ -87,26 +85,26 @@ namespace Model
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
-    inline int GetRestartDelay() const{ return m_restartDelay; }
+    inline int GetRestartDelay() const { return m_restartDelay; }
     inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
     inline void SetRestartDelay(int value) { m_restartDelayHasBeenSet = true; m_restartDelay = value; }
     inline HlsWebdavSettings& WithRestartDelay(int value) { SetRestartDelay(value); return *this;}
     ///@}
   private:
 
-    int m_connectionRetryInterval;
+    int m_connectionRetryInterval{0};
     bool m_connectionRetryIntervalHasBeenSet = false;
 
-    int m_filecacheDuration;
+    int m_filecacheDuration{0};
     bool m_filecacheDurationHasBeenSet = false;
 
-    HlsWebdavHttpTransferMode m_httpTransferMode;
+    HlsWebdavHttpTransferMode m_httpTransferMode{HlsWebdavHttpTransferMode::NOT_SET};
     bool m_httpTransferModeHasBeenSet = false;
 
-    int m_numRetries;
+    int m_numRetries{0};
     bool m_numRetriesHasBeenSet = false;
 
-    int m_restartDelay;
+    int m_restartDelay{0};
     bool m_restartDelayHasBeenSet = false;
   };
 

@@ -13,12 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelParticipantAuthenticationRequest::CancelParticipantAuthenticationRequest() : 
-    m_sessionIdHasBeenSet(false),
-    m_connectionTokenHasBeenSet(false)
-{
-}
-
 Aws::String CancelParticipantAuthenticationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CoverageDateFilter::CoverageDateFilter() : 
-    m_endInclusiveHasBeenSet(false),
-    m_startInclusiveHasBeenSet(false)
-{
-}
-
 CoverageDateFilter::CoverageDateFilter(JsonView jsonValue)
-  : CoverageDateFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CoverageDateFilter& CoverageDateFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endInclusive"))
   {
     m_endInclusive = jsonValue.GetDouble("endInclusive");
-
     m_endInclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startInclusive"))
   {
     m_startInclusive = jsonValue.GetDouble("startInclusive");
-
     m_startInclusiveHasBeenSet = true;
   }
-
   return *this;
 }
 

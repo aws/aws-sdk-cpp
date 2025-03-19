@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainVPCOptions::AwsElasticsearchDomainVPCOptions() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vPCIdHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainVPCOptions::AwsElasticsearchDomainVPCOptions(JsonView jsonValue)
-  : AwsElasticsearchDomainVPCOptions()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ AwsElasticsearchDomainVPCOptions& AwsElasticsearchDomainVPCOptions::operator =(J
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -53,7 +43,6 @@ AwsElasticsearchDomainVPCOptions& AwsElasticsearchDomainVPCOptions::operator =(J
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -63,14 +52,11 @@ AwsElasticsearchDomainVPCOptions& AwsElasticsearchDomainVPCOptions::operator =(J
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPCId"))
   {
     m_vPCId = jsonValue.GetString("VPCId");
-
     m_vPCIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-S3OutputUrl::S3OutputUrl() : 
-    m_outputUrlHasBeenSet(false)
-{
-}
-
 S3OutputUrl::S3OutputUrl(JsonView jsonValue)
-  : S3OutputUrl()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3OutputUrl& S3OutputUrl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputUrl"))
   {
     m_outputUrl = jsonValue.GetString("OutputUrl");
-
     m_outputUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

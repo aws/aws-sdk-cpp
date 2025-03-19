@@ -12,13 +12,6 @@ using namespace Aws::NetworkMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMonitorRequest::UpdateMonitorRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_aggregationPeriod(0),
-    m_aggregationPeriodHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

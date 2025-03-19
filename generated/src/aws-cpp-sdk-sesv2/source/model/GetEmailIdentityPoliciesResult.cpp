@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEmailIdentityPoliciesResult::GetEmailIdentityPoliciesResult()
-{
-}
-
 GetEmailIdentityPoliciesResult::GetEmailIdentityPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetEmailIdentityPoliciesResult& GetEmailIdentityPoliciesResult::operator =(const
     {
       m_policies[policiesItem.first] = policiesItem.second.AsString();
     }
+    m_policiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

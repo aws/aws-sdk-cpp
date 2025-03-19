@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-AdditionalInstanceConfiguration::AdditionalInstanceConfiguration() : 
-    m_systemsManagerAgentHasBeenSet(false),
-    m_userDataOverrideHasBeenSet(false)
-{
-}
-
 AdditionalInstanceConfiguration::AdditionalInstanceConfiguration(JsonView jsonValue)
-  : AdditionalInstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AdditionalInstanceConfiguration& AdditionalInstanceConfiguration::operator =(Jso
   if(jsonValue.ValueExists("systemsManagerAgent"))
   {
     m_systemsManagerAgent = jsonValue.GetObject("systemsManagerAgent");
-
     m_systemsManagerAgentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userDataOverride"))
   {
     m_userDataOverride = jsonValue.GetString("userDataOverride");
-
     m_userDataOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

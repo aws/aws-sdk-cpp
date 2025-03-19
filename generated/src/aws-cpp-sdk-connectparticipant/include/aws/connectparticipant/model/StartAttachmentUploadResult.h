@@ -28,7 +28,7 @@ namespace Model
   class StartAttachmentUploadResult
   {
   public:
-    AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult();
+    AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult() = default;
     AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>A unique identifier for the attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentId.assign(value); }
-    inline StartAttachmentUploadResult& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline StartAttachmentUploadResult& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline StartAttachmentUploadResult& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    StartAttachmentUploadResult& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The headers to be provided while uploading the file to the URL.</p>
      */
-    inline const UploadMetadata& GetUploadMetadata() const{ return m_uploadMetadata; }
-    inline void SetUploadMetadata(const UploadMetadata& value) { m_uploadMetadata = value; }
-    inline void SetUploadMetadata(UploadMetadata&& value) { m_uploadMetadata = std::move(value); }
-    inline StartAttachmentUploadResult& WithUploadMetadata(const UploadMetadata& value) { SetUploadMetadata(value); return *this;}
-    inline StartAttachmentUploadResult& WithUploadMetadata(UploadMetadata&& value) { SetUploadMetadata(std::move(value)); return *this;}
+    inline const UploadMetadata& GetUploadMetadata() const { return m_uploadMetadata; }
+    template<typename UploadMetadataT = UploadMetadata>
+    void SetUploadMetadata(UploadMetadataT&& value) { m_uploadMetadataHasBeenSet = true; m_uploadMetadata = std::forward<UploadMetadataT>(value); }
+    template<typename UploadMetadataT = UploadMetadata>
+    StartAttachmentUploadResult& WithUploadMetadata(UploadMetadataT&& value) { SetUploadMetadata(std::forward<UploadMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartAttachmentUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartAttachmentUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartAttachmentUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartAttachmentUploadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attachmentId;
+    bool m_attachmentIdHasBeenSet = false;
 
     UploadMetadata m_uploadMetadata;
+    bool m_uploadMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

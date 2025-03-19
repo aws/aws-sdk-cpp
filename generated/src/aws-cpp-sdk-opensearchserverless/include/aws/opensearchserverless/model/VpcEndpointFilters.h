@@ -32,7 +32,7 @@ namespace Model
   class VpcEndpointFilters
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters();
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters() = default;
     AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The current status of the endpoint.</p>
      */
-    inline const VpcEndpointStatus& GetStatus() const{ return m_status; }
+    inline VpcEndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VpcEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VpcEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VpcEndpointFilters& WithStatus(const VpcEndpointStatus& value) { SetStatus(value); return *this;}
-    inline VpcEndpointFilters& WithStatus(VpcEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VpcEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VpcEndpointFilters& WithStatus(VpcEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    VpcEndpointStatus m_status;
+    VpcEndpointStatus m_status{VpcEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

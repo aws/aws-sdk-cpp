@@ -32,7 +32,7 @@ namespace Model
   class CopyImageSetInformation
   {
   public:
-    AWS_MEDICALIMAGING_API CopyImageSetInformation();
+    AWS_MEDICALIMAGING_API CopyImageSetInformation() = default;
     AWS_MEDICALIMAGING_API CopyImageSetInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API CopyImageSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The source image set.</p>
      */
-    inline const CopySourceImageSetInformation& GetSourceImageSet() const{ return m_sourceImageSet; }
+    inline const CopySourceImageSetInformation& GetSourceImageSet() const { return m_sourceImageSet; }
     inline bool SourceImageSetHasBeenSet() const { return m_sourceImageSetHasBeenSet; }
-    inline void SetSourceImageSet(const CopySourceImageSetInformation& value) { m_sourceImageSetHasBeenSet = true; m_sourceImageSet = value; }
-    inline void SetSourceImageSet(CopySourceImageSetInformation&& value) { m_sourceImageSetHasBeenSet = true; m_sourceImageSet = std::move(value); }
-    inline CopyImageSetInformation& WithSourceImageSet(const CopySourceImageSetInformation& value) { SetSourceImageSet(value); return *this;}
-    inline CopyImageSetInformation& WithSourceImageSet(CopySourceImageSetInformation&& value) { SetSourceImageSet(std::move(value)); return *this;}
+    template<typename SourceImageSetT = CopySourceImageSetInformation>
+    void SetSourceImageSet(SourceImageSetT&& value) { m_sourceImageSetHasBeenSet = true; m_sourceImageSet = std::forward<SourceImageSetT>(value); }
+    template<typename SourceImageSetT = CopySourceImageSetInformation>
+    CopyImageSetInformation& WithSourceImageSet(SourceImageSetT&& value) { SetSourceImageSet(std::forward<SourceImageSetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination image set.</p>
      */
-    inline const CopyDestinationImageSet& GetDestinationImageSet() const{ return m_destinationImageSet; }
+    inline const CopyDestinationImageSet& GetDestinationImageSet() const { return m_destinationImageSet; }
     inline bool DestinationImageSetHasBeenSet() const { return m_destinationImageSetHasBeenSet; }
-    inline void SetDestinationImageSet(const CopyDestinationImageSet& value) { m_destinationImageSetHasBeenSet = true; m_destinationImageSet = value; }
-    inline void SetDestinationImageSet(CopyDestinationImageSet&& value) { m_destinationImageSetHasBeenSet = true; m_destinationImageSet = std::move(value); }
-    inline CopyImageSetInformation& WithDestinationImageSet(const CopyDestinationImageSet& value) { SetDestinationImageSet(value); return *this;}
-    inline CopyImageSetInformation& WithDestinationImageSet(CopyDestinationImageSet&& value) { SetDestinationImageSet(std::move(value)); return *this;}
+    template<typename DestinationImageSetT = CopyDestinationImageSet>
+    void SetDestinationImageSet(DestinationImageSetT&& value) { m_destinationImageSetHasBeenSet = true; m_destinationImageSet = std::forward<DestinationImageSetT>(value); }
+    template<typename DestinationImageSetT = CopyDestinationImageSet>
+    CopyImageSetInformation& WithDestinationImageSet(DestinationImageSetT&& value) { SetDestinationImageSet(std::forward<DestinationImageSetT>(value)); return *this;}
     ///@}
   private:
 

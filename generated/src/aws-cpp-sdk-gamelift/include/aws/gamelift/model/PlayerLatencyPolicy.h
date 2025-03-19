@@ -34,7 +34,7 @@ namespace Model
   class PlayerLatencyPolicy
   {
   public:
-    AWS_GAMELIFT_API PlayerLatencyPolicy();
+    AWS_GAMELIFT_API PlayerLatencyPolicy() = default;
     AWS_GAMELIFT_API PlayerLatencyPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API PlayerLatencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The maximum latency value that is allowed for any player, in milliseconds.
      * All policies must have a value set for this property.</p>
      */
-    inline int GetMaximumIndividualPlayerLatencyMilliseconds() const{ return m_maximumIndividualPlayerLatencyMilliseconds; }
+    inline int GetMaximumIndividualPlayerLatencyMilliseconds() const { return m_maximumIndividualPlayerLatencyMilliseconds; }
     inline bool MaximumIndividualPlayerLatencyMillisecondsHasBeenSet() const { return m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet; }
     inline void SetMaximumIndividualPlayerLatencyMilliseconds(int value) { m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true; m_maximumIndividualPlayerLatencyMilliseconds = value; }
     inline PlayerLatencyPolicy& WithMaximumIndividualPlayerLatencyMilliseconds(int value) { SetMaximumIndividualPlayerLatencyMilliseconds(value); return *this;}
@@ -57,17 +57,17 @@ namespace Model
      * new game session. A null value for this property means that the policy is
      * enforced until the queue times out.</p>
      */
-    inline int GetPolicyDurationSeconds() const{ return m_policyDurationSeconds; }
+    inline int GetPolicyDurationSeconds() const { return m_policyDurationSeconds; }
     inline bool PolicyDurationSecondsHasBeenSet() const { return m_policyDurationSecondsHasBeenSet; }
     inline void SetPolicyDurationSeconds(int value) { m_policyDurationSecondsHasBeenSet = true; m_policyDurationSeconds = value; }
     inline PlayerLatencyPolicy& WithPolicyDurationSeconds(int value) { SetPolicyDurationSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maximumIndividualPlayerLatencyMilliseconds;
+    int m_maximumIndividualPlayerLatencyMilliseconds{0};
     bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = false;
 
-    int m_policyDurationSeconds;
+    int m_policyDurationSeconds{0};
     bool m_policyDurationSecondsHasBeenSet = false;
   };
 

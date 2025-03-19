@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-GeorgiaAdditionalInfo::GeorgiaAdditionalInfo() : 
-    m_personType(PersonType::NOT_SET),
-    m_personTypeHasBeenSet(false)
-{
-}
-
 GeorgiaAdditionalInfo::GeorgiaAdditionalInfo(JsonView jsonValue)
-  : GeorgiaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GeorgiaAdditionalInfo& GeorgiaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("personType"))
   {
     m_personType = PersonTypeMapper::GetPersonTypeForName(jsonValue.GetString("personType"));
-
     m_personTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

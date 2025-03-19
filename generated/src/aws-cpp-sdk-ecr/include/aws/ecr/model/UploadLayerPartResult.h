@@ -27,7 +27,7 @@ namespace Model
   class UploadLayerPartResult
   {
   public:
-    AWS_ECR_API UploadLayerPartResult();
+    AWS_ECR_API UploadLayerPartResult() = default;
     AWS_ECR_API UploadLayerPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API UploadLayerPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,71 +36,68 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-    inline UploadLayerPartResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline UploadLayerPartResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline UploadLayerPartResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    UploadLayerPartResult& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name associated with the request.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryName.assign(value); }
-    inline UploadLayerPartResult& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline UploadLayerPartResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline UploadLayerPartResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    UploadLayerPartResult& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The upload ID associated with the request.</p>
      */
-    inline const Aws::String& GetUploadId() const{ return m_uploadId; }
-    inline void SetUploadId(const Aws::String& value) { m_uploadId = value; }
-    inline void SetUploadId(Aws::String&& value) { m_uploadId = std::move(value); }
-    inline void SetUploadId(const char* value) { m_uploadId.assign(value); }
-    inline UploadLayerPartResult& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
-    inline UploadLayerPartResult& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
-    inline UploadLayerPartResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    UploadLayerPartResult& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The integer value of the last byte received in the request.</p>
      */
-    inline long long GetLastByteReceived() const{ return m_lastByteReceived; }
-    inline void SetLastByteReceived(long long value) { m_lastByteReceived = value; }
+    inline long long GetLastByteReceived() const { return m_lastByteReceived; }
+    inline void SetLastByteReceived(long long value) { m_lastByteReceivedHasBeenSet = true; m_lastByteReceived = value; }
     inline UploadLayerPartResult& WithLastByteReceived(long long value) { SetLastByteReceived(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UploadLayerPartResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UploadLayerPartResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UploadLayerPartResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UploadLayerPartResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryId;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_uploadId;
+    bool m_uploadIdHasBeenSet = false;
 
-    long long m_lastByteReceived;
+    long long m_lastByteReceived{0};
+    bool m_lastByteReceivedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

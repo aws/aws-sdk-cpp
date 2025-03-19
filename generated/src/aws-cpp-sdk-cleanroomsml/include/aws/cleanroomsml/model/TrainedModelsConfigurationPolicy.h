@@ -34,7 +34,7 @@ namespace Model
   class TrainedModelsConfigurationPolicy
   {
   public:
-    AWS_CLEANROOMSML_API TrainedModelsConfigurationPolicy();
+    AWS_CLEANROOMSML_API TrainedModelsConfigurationPolicy() = default;
     AWS_CLEANROOMSML_API TrainedModelsConfigurationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API TrainedModelsConfigurationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>The container for the logs of the trained model.</p>
      */
-    inline const Aws::Vector<LogsConfigurationPolicy>& GetContainerLogs() const{ return m_containerLogs; }
+    inline const Aws::Vector<LogsConfigurationPolicy>& GetContainerLogs() const { return m_containerLogs; }
     inline bool ContainerLogsHasBeenSet() const { return m_containerLogsHasBeenSet; }
-    inline void SetContainerLogs(const Aws::Vector<LogsConfigurationPolicy>& value) { m_containerLogsHasBeenSet = true; m_containerLogs = value; }
-    inline void SetContainerLogs(Aws::Vector<LogsConfigurationPolicy>&& value) { m_containerLogsHasBeenSet = true; m_containerLogs = std::move(value); }
-    inline TrainedModelsConfigurationPolicy& WithContainerLogs(const Aws::Vector<LogsConfigurationPolicy>& value) { SetContainerLogs(value); return *this;}
-    inline TrainedModelsConfigurationPolicy& WithContainerLogs(Aws::Vector<LogsConfigurationPolicy>&& value) { SetContainerLogs(std::move(value)); return *this;}
-    inline TrainedModelsConfigurationPolicy& AddContainerLogs(const LogsConfigurationPolicy& value) { m_containerLogsHasBeenSet = true; m_containerLogs.push_back(value); return *this; }
-    inline TrainedModelsConfigurationPolicy& AddContainerLogs(LogsConfigurationPolicy&& value) { m_containerLogsHasBeenSet = true; m_containerLogs.push_back(std::move(value)); return *this; }
+    template<typename ContainerLogsT = Aws::Vector<LogsConfigurationPolicy>>
+    void SetContainerLogs(ContainerLogsT&& value) { m_containerLogsHasBeenSet = true; m_containerLogs = std::forward<ContainerLogsT>(value); }
+    template<typename ContainerLogsT = Aws::Vector<LogsConfigurationPolicy>>
+    TrainedModelsConfigurationPolicy& WithContainerLogs(ContainerLogsT&& value) { SetContainerLogs(std::forward<ContainerLogsT>(value)); return *this;}
+    template<typename ContainerLogsT = LogsConfigurationPolicy>
+    TrainedModelsConfigurationPolicy& AddContainerLogs(ContainerLogsT&& value) { m_containerLogsHasBeenSet = true; m_containerLogs.emplace_back(std::forward<ContainerLogsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The container for the metrics of the trained model.</p>
      */
-    inline const MetricsConfigurationPolicy& GetContainerMetrics() const{ return m_containerMetrics; }
+    inline const MetricsConfigurationPolicy& GetContainerMetrics() const { return m_containerMetrics; }
     inline bool ContainerMetricsHasBeenSet() const { return m_containerMetricsHasBeenSet; }
-    inline void SetContainerMetrics(const MetricsConfigurationPolicy& value) { m_containerMetricsHasBeenSet = true; m_containerMetrics = value; }
-    inline void SetContainerMetrics(MetricsConfigurationPolicy&& value) { m_containerMetricsHasBeenSet = true; m_containerMetrics = std::move(value); }
-    inline TrainedModelsConfigurationPolicy& WithContainerMetrics(const MetricsConfigurationPolicy& value) { SetContainerMetrics(value); return *this;}
-    inline TrainedModelsConfigurationPolicy& WithContainerMetrics(MetricsConfigurationPolicy&& value) { SetContainerMetrics(std::move(value)); return *this;}
+    template<typename ContainerMetricsT = MetricsConfigurationPolicy>
+    void SetContainerMetrics(ContainerMetricsT&& value) { m_containerMetricsHasBeenSet = true; m_containerMetrics = std::forward<ContainerMetricsT>(value); }
+    template<typename ContainerMetricsT = MetricsConfigurationPolicy>
+    TrainedModelsConfigurationPolicy& WithContainerMetrics(ContainerMetricsT&& value) { SetContainerMetrics(std::forward<ContainerMetricsT>(value)); return *this;}
     ///@}
   private:
 

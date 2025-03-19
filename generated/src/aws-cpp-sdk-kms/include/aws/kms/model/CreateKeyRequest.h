@@ -26,7 +26,7 @@ namespace Model
   class CreateKeyRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API CreateKeyRequest();
+    AWS_KMS_API CreateKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -67,14 +67,12 @@ namespace Model
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
      * Guide</i> </i>.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline CreateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    CreateKeyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,12 @@ namespace Model
      * CloudTrail logs and other output.</p>  <p>To set or change the
      * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateKeyRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +112,10 @@ namespace Model
      * pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>,
      * <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p> </li> </ul>
      */
-    inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
+    inline KeyUsageType GetKeyUsage() const { return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
-    inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
-    inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
-    inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
-    inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
+    inline void SetKeyUsage(KeyUsageType value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
+    inline CreateKeyRequest& WithKeyUsage(KeyUsageType value) { SetKeyUsage(value); return *this;}
     ///@}
 
     ///@{
@@ -168,12 +162,10 @@ namespace Model
      * decryption -or- signing and verification -or- deriving shared secrets)</p> <ul>
      * <li> <p> <code>SM2</code> (China Regions only)</p> </li> </ul> </li> </ul>
      */
-    inline const KeySpec& GetKeySpec() const{ return m_keySpec; }
+    inline KeySpec GetKeySpec() const { return m_keySpec; }
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }
-    inline void SetKeySpec(const KeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
-    inline void SetKeySpec(KeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = std::move(value); }
-    inline CreateKeyRequest& WithKeySpec(const KeySpec& value) { SetKeySpec(value); return *this;}
-    inline CreateKeyRequest& WithKeySpec(KeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
+    inline void SetKeySpec(KeySpec value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
+    inline CreateKeyRequest& WithKeySpec(KeySpec value) { SetKeySpec(value); return *this;}
     ///@}
 
     ///@{
@@ -202,12 +194,10 @@ namespace Model
      * the <code>XksKeyId</code> parameter to identify the associated external key. The
      * <code>KeySpec</code> value must be <code>SYMMETRIC_DEFAULT</code>.</p>
      */
-    inline const OriginType& GetOrigin() const{ return m_origin; }
+    inline OriginType GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const OriginType& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline CreateKeyRequest& WithOrigin(const OriginType& value) { SetOrigin(value); return *this;}
-    inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
+    inline void SetOrigin(OriginType value) { m_originHasBeenSet = true; m_origin = value; }
+    inline CreateKeyRequest& WithOrigin(OriginType value) { SetOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -225,14 +215,12 @@ namespace Model
      * <code>XksKeyId</code> parameter to specify an external key that serves as key
      * material for the KMS key.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
-    inline CreateKeyRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline CreateKeyRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline CreateKeyRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    CreateKeyRequest& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,7 +236,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
      * request on the KMS key.</p>
      */
-    inline bool GetBypassPolicyLockoutSafetyCheck() const{ return m_bypassPolicyLockoutSafetyCheck; }
+    inline bool GetBypassPolicyLockoutSafetyCheck() const { return m_bypassPolicyLockoutSafetyCheck; }
     inline bool BypassPolicyLockoutSafetyCheckHasBeenSet() const { return m_bypassPolicyLockoutSafetyCheckHasBeenSet; }
     inline void SetBypassPolicyLockoutSafetyCheck(bool value) { m_bypassPolicyLockoutSafetyCheckHasBeenSet = true; m_bypassPolicyLockoutSafetyCheck = value; }
     inline CreateKeyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
@@ -278,14 +266,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
      * Keys</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateKeyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateKeyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateKeyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateKeyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -310,7 +298,7 @@ namespace Model
      * multi-Region key with imported key material. However, you cannot create a
      * multi-Region key in a custom key store.</p>
      */
-    inline bool GetMultiRegion() const{ return m_multiRegion; }
+    inline bool GetMultiRegion() const { return m_multiRegion; }
     inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
     inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
     inline CreateKeyRequest& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
@@ -346,14 +334,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-double-encryption">Double
      * encryption</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetXksKeyId() const{ return m_xksKeyId; }
+    inline const Aws::String& GetXksKeyId() const { return m_xksKeyId; }
     inline bool XksKeyIdHasBeenSet() const { return m_xksKeyIdHasBeenSet; }
-    inline void SetXksKeyId(const Aws::String& value) { m_xksKeyIdHasBeenSet = true; m_xksKeyId = value; }
-    inline void SetXksKeyId(Aws::String&& value) { m_xksKeyIdHasBeenSet = true; m_xksKeyId = std::move(value); }
-    inline void SetXksKeyId(const char* value) { m_xksKeyIdHasBeenSet = true; m_xksKeyId.assign(value); }
-    inline CreateKeyRequest& WithXksKeyId(const Aws::String& value) { SetXksKeyId(value); return *this;}
-    inline CreateKeyRequest& WithXksKeyId(Aws::String&& value) { SetXksKeyId(std::move(value)); return *this;}
-    inline CreateKeyRequest& WithXksKeyId(const char* value) { SetXksKeyId(value); return *this;}
+    template<typename XksKeyIdT = Aws::String>
+    void SetXksKeyId(XksKeyIdT&& value) { m_xksKeyIdHasBeenSet = true; m_xksKeyId = std::forward<XksKeyIdT>(value); }
+    template<typename XksKeyIdT = Aws::String>
+    CreateKeyRequest& WithXksKeyId(XksKeyIdT&& value) { SetXksKeyId(std::forward<XksKeyIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -363,25 +349,25 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    KeyUsageType m_keyUsage;
+    KeyUsageType m_keyUsage{KeyUsageType::NOT_SET};
     bool m_keyUsageHasBeenSet = false;
 
-    KeySpec m_keySpec;
+    KeySpec m_keySpec{KeySpec::NOT_SET};
     bool m_keySpecHasBeenSet = false;
 
-    OriginType m_origin;
+    OriginType m_origin{OriginType::NOT_SET};
     bool m_originHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
     bool m_customKeyStoreIdHasBeenSet = false;
 
-    bool m_bypassPolicyLockoutSafetyCheck;
+    bool m_bypassPolicyLockoutSafetyCheck{false};
     bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_multiRegion;
+    bool m_multiRegion{false};
     bool m_multiRegionHasBeenSet = false;
 
     Aws::String m_xksKeyId;

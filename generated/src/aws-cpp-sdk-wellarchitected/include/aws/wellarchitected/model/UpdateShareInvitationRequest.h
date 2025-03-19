@@ -25,7 +25,7 @@ namespace Model
   class UpdateShareInvitationRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateShareInvitationRequest();
+    AWS_WELLARCHITECTED_API UpdateShareInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,31 +40,27 @@ namespace Model
     /**
      * <p>The ID assigned to the share invitation.</p>
      */
-    inline const Aws::String& GetShareInvitationId() const{ return m_shareInvitationId; }
+    inline const Aws::String& GetShareInvitationId() const { return m_shareInvitationId; }
     inline bool ShareInvitationIdHasBeenSet() const { return m_shareInvitationIdHasBeenSet; }
-    inline void SetShareInvitationId(const Aws::String& value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId = value; }
-    inline void SetShareInvitationId(Aws::String&& value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId = std::move(value); }
-    inline void SetShareInvitationId(const char* value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId.assign(value); }
-    inline UpdateShareInvitationRequest& WithShareInvitationId(const Aws::String& value) { SetShareInvitationId(value); return *this;}
-    inline UpdateShareInvitationRequest& WithShareInvitationId(Aws::String&& value) { SetShareInvitationId(std::move(value)); return *this;}
-    inline UpdateShareInvitationRequest& WithShareInvitationId(const char* value) { SetShareInvitationId(value); return *this;}
+    template<typename ShareInvitationIdT = Aws::String>
+    void SetShareInvitationId(ShareInvitationIdT&& value) { m_shareInvitationIdHasBeenSet = true; m_shareInvitationId = std::forward<ShareInvitationIdT>(value); }
+    template<typename ShareInvitationIdT = Aws::String>
+    UpdateShareInvitationRequest& WithShareInvitationId(ShareInvitationIdT&& value) { SetShareInvitationId(std::forward<ShareInvitationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ShareInvitationAction& GetShareInvitationAction() const{ return m_shareInvitationAction; }
+    inline ShareInvitationAction GetShareInvitationAction() const { return m_shareInvitationAction; }
     inline bool ShareInvitationActionHasBeenSet() const { return m_shareInvitationActionHasBeenSet; }
-    inline void SetShareInvitationAction(const ShareInvitationAction& value) { m_shareInvitationActionHasBeenSet = true; m_shareInvitationAction = value; }
-    inline void SetShareInvitationAction(ShareInvitationAction&& value) { m_shareInvitationActionHasBeenSet = true; m_shareInvitationAction = std::move(value); }
-    inline UpdateShareInvitationRequest& WithShareInvitationAction(const ShareInvitationAction& value) { SetShareInvitationAction(value); return *this;}
-    inline UpdateShareInvitationRequest& WithShareInvitationAction(ShareInvitationAction&& value) { SetShareInvitationAction(std::move(value)); return *this;}
+    inline void SetShareInvitationAction(ShareInvitationAction value) { m_shareInvitationActionHasBeenSet = true; m_shareInvitationAction = value; }
+    inline UpdateShareInvitationRequest& WithShareInvitationAction(ShareInvitationAction value) { SetShareInvitationAction(value); return *this;}
     ///@}
   private:
 
     Aws::String m_shareInvitationId;
     bool m_shareInvitationIdHasBeenSet = false;
 
-    ShareInvitationAction m_shareInvitationAction;
+    ShareInvitationAction m_shareInvitationAction{ShareInvitationAction::NOT_SET};
     bool m_shareInvitationActionHasBeenSet = false;
   };
 

@@ -36,7 +36,7 @@ namespace Model
   class SessionKeyDerivation
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyDerivation();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyDerivation() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyDerivation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyDerivation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Parameters to derive session key for an Emv common payment card for ARQC
      * verification.</p>
      */
-    inline const SessionKeyEmvCommon& GetEmvCommon() const{ return m_emvCommon; }
+    inline const SessionKeyEmvCommon& GetEmvCommon() const { return m_emvCommon; }
     inline bool EmvCommonHasBeenSet() const { return m_emvCommonHasBeenSet; }
-    inline void SetEmvCommon(const SessionKeyEmvCommon& value) { m_emvCommonHasBeenSet = true; m_emvCommon = value; }
-    inline void SetEmvCommon(SessionKeyEmvCommon&& value) { m_emvCommonHasBeenSet = true; m_emvCommon = std::move(value); }
-    inline SessionKeyDerivation& WithEmvCommon(const SessionKeyEmvCommon& value) { SetEmvCommon(value); return *this;}
-    inline SessionKeyDerivation& WithEmvCommon(SessionKeyEmvCommon&& value) { SetEmvCommon(std::move(value)); return *this;}
+    template<typename EmvCommonT = SessionKeyEmvCommon>
+    void SetEmvCommon(EmvCommonT&& value) { m_emvCommonHasBeenSet = true; m_emvCommon = std::forward<EmvCommonT>(value); }
+    template<typename EmvCommonT = SessionKeyEmvCommon>
+    SessionKeyDerivation& WithEmvCommon(EmvCommonT&& value) { SetEmvCommon(std::forward<EmvCommonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>Parameters to derive session key for a Mastercard payment card for ARQC
      * verification.</p>
      */
-    inline const SessionKeyMastercard& GetMastercard() const{ return m_mastercard; }
+    inline const SessionKeyMastercard& GetMastercard() const { return m_mastercard; }
     inline bool MastercardHasBeenSet() const { return m_mastercardHasBeenSet; }
-    inline void SetMastercard(const SessionKeyMastercard& value) { m_mastercardHasBeenSet = true; m_mastercard = value; }
-    inline void SetMastercard(SessionKeyMastercard&& value) { m_mastercardHasBeenSet = true; m_mastercard = std::move(value); }
-    inline SessionKeyDerivation& WithMastercard(const SessionKeyMastercard& value) { SetMastercard(value); return *this;}
-    inline SessionKeyDerivation& WithMastercard(SessionKeyMastercard&& value) { SetMastercard(std::move(value)); return *this;}
+    template<typename MastercardT = SessionKeyMastercard>
+    void SetMastercard(MastercardT&& value) { m_mastercardHasBeenSet = true; m_mastercard = std::forward<MastercardT>(value); }
+    template<typename MastercardT = SessionKeyMastercard>
+    SessionKeyDerivation& WithMastercard(MastercardT&& value) { SetMastercard(std::forward<MastercardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>Parameters to derive session key for an Emv2000 payment card for ARQC
      * verification.</p>
      */
-    inline const SessionKeyEmv2000& GetEmv2000() const{ return m_emv2000; }
+    inline const SessionKeyEmv2000& GetEmv2000() const { return m_emv2000; }
     inline bool Emv2000HasBeenSet() const { return m_emv2000HasBeenSet; }
-    inline void SetEmv2000(const SessionKeyEmv2000& value) { m_emv2000HasBeenSet = true; m_emv2000 = value; }
-    inline void SetEmv2000(SessionKeyEmv2000&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::move(value); }
-    inline SessionKeyDerivation& WithEmv2000(const SessionKeyEmv2000& value) { SetEmv2000(value); return *this;}
-    inline SessionKeyDerivation& WithEmv2000(SessionKeyEmv2000&& value) { SetEmv2000(std::move(value)); return *this;}
+    template<typename Emv2000T = SessionKeyEmv2000>
+    void SetEmv2000(Emv2000T&& value) { m_emv2000HasBeenSet = true; m_emv2000 = std::forward<Emv2000T>(value); }
+    template<typename Emv2000T = SessionKeyEmv2000>
+    SessionKeyDerivation& WithEmv2000(Emv2000T&& value) { SetEmv2000(std::forward<Emv2000T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * <p>Parameters to derive session key for an Amex payment card for ARQC
      * verification.</p>
      */
-    inline const SessionKeyAmex& GetAmex() const{ return m_amex; }
+    inline const SessionKeyAmex& GetAmex() const { return m_amex; }
     inline bool AmexHasBeenSet() const { return m_amexHasBeenSet; }
-    inline void SetAmex(const SessionKeyAmex& value) { m_amexHasBeenSet = true; m_amex = value; }
-    inline void SetAmex(SessionKeyAmex&& value) { m_amexHasBeenSet = true; m_amex = std::move(value); }
-    inline SessionKeyDerivation& WithAmex(const SessionKeyAmex& value) { SetAmex(value); return *this;}
-    inline SessionKeyDerivation& WithAmex(SessionKeyAmex&& value) { SetAmex(std::move(value)); return *this;}
+    template<typename AmexT = SessionKeyAmex>
+    void SetAmex(AmexT&& value) { m_amexHasBeenSet = true; m_amex = std::forward<AmexT>(value); }
+    template<typename AmexT = SessionKeyAmex>
+    SessionKeyDerivation& WithAmex(AmexT&& value) { SetAmex(std::forward<AmexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +99,12 @@ namespace Model
      * <p>Parameters to derive session key for a Visa payment cardfor ARQC
      * verification.</p>
      */
-    inline const SessionKeyVisa& GetVisa() const{ return m_visa; }
+    inline const SessionKeyVisa& GetVisa() const { return m_visa; }
     inline bool VisaHasBeenSet() const { return m_visaHasBeenSet; }
-    inline void SetVisa(const SessionKeyVisa& value) { m_visaHasBeenSet = true; m_visa = value; }
-    inline void SetVisa(SessionKeyVisa&& value) { m_visaHasBeenSet = true; m_visa = std::move(value); }
-    inline SessionKeyDerivation& WithVisa(const SessionKeyVisa& value) { SetVisa(value); return *this;}
-    inline SessionKeyDerivation& WithVisa(SessionKeyVisa&& value) { SetVisa(std::move(value)); return *this;}
+    template<typename VisaT = SessionKeyVisa>
+    void SetVisa(VisaT&& value) { m_visaHasBeenSet = true; m_visa = std::forward<VisaT>(value); }
+    template<typename VisaT = SessionKeyVisa>
+    SessionKeyDerivation& WithVisa(VisaT&& value) { SetVisa(std::forward<VisaT>(value)); return *this;}
     ///@}
   private:
 

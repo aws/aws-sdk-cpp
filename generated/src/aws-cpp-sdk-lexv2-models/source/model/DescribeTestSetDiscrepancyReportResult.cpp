@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTestSetDiscrepancyReportResult::DescribeTestSetDiscrepancyReportResult() : 
-    m_testSetDiscrepancyReportStatus(TestSetDiscrepancyReportStatus::NOT_SET)
-{
-}
-
 DescribeTestSetDiscrepancyReportResult::DescribeTestSetDiscrepancyReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeTestSetDiscrepancyReportResult()
 {
   *this = result;
 }
@@ -34,51 +28,43 @@ DescribeTestSetDiscrepancyReportResult& DescribeTestSetDiscrepancyReportResult::
   if(jsonValue.ValueExists("testSetDiscrepancyReportId"))
   {
     m_testSetDiscrepancyReportId = jsonValue.GetString("testSetDiscrepancyReportId");
-
+    m_testSetDiscrepancyReportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetId"))
   {
     m_testSetId = jsonValue.GetString("testSetId");
-
+    m_testSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
+    m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetDiscrepancyReportStatus"))
   {
     m_testSetDiscrepancyReportStatus = TestSetDiscrepancyReportStatusMapper::GetTestSetDiscrepancyReportStatusForName(jsonValue.GetString("testSetDiscrepancyReportStatus"));
-
+    m_testSetDiscrepancyReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDataTime"))
   {
     m_lastUpdatedDataTime = jsonValue.GetDouble("lastUpdatedDataTime");
-
+    m_lastUpdatedDataTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetDiscrepancyTopErrors"))
   {
     m_testSetDiscrepancyTopErrors = jsonValue.GetObject("testSetDiscrepancyTopErrors");
-
+    m_testSetDiscrepancyTopErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetDiscrepancyRawOutputUrl"))
   {
     m_testSetDiscrepancyRawOutputUrl = jsonValue.GetString("testSetDiscrepancyRawOutputUrl");
-
+    m_testSetDiscrepancyRawOutputUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
@@ -86,14 +72,15 @@ DescribeTestSetDiscrepancyReportResult& DescribeTestSetDiscrepancyReportResult::
     {
       m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
     }
+    m_failureReasonsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

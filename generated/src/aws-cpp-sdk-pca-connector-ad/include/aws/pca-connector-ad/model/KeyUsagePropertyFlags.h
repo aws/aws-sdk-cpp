@@ -29,7 +29,7 @@ namespace Model
   class KeyUsagePropertyFlags
   {
   public:
-    AWS_PCACONNECTORAD_API KeyUsagePropertyFlags();
+    AWS_PCACONNECTORAD_API KeyUsagePropertyFlags() = default;
     AWS_PCACONNECTORAD_API KeyUsagePropertyFlags(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API KeyUsagePropertyFlags& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Allows key for encryption and decryption.</p>
      */
-    inline bool GetDecrypt() const{ return m_decrypt; }
+    inline bool GetDecrypt() const { return m_decrypt; }
     inline bool DecryptHasBeenSet() const { return m_decryptHasBeenSet; }
     inline void SetDecrypt(bool value) { m_decryptHasBeenSet = true; m_decrypt = value; }
     inline KeyUsagePropertyFlags& WithDecrypt(bool value) { SetDecrypt(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Allows key exchange without encryption.</p>
      */
-    inline bool GetKeyAgreement() const{ return m_keyAgreement; }
+    inline bool GetKeyAgreement() const { return m_keyAgreement; }
     inline bool KeyAgreementHasBeenSet() const { return m_keyAgreementHasBeenSet; }
     inline void SetKeyAgreement(bool value) { m_keyAgreementHasBeenSet = true; m_keyAgreement = value; }
     inline KeyUsagePropertyFlags& WithKeyAgreement(bool value) { SetKeyAgreement(value); return *this;}
@@ -59,20 +59,20 @@ namespace Model
     /**
      * <p>Allow key use for digital signature.</p>
      */
-    inline bool GetSign() const{ return m_sign; }
+    inline bool GetSign() const { return m_sign; }
     inline bool SignHasBeenSet() const { return m_signHasBeenSet; }
     inline void SetSign(bool value) { m_signHasBeenSet = true; m_sign = value; }
     inline KeyUsagePropertyFlags& WithSign(bool value) { SetSign(value); return *this;}
     ///@}
   private:
 
-    bool m_decrypt;
+    bool m_decrypt{false};
     bool m_decryptHasBeenSet = false;
 
-    bool m_keyAgreement;
+    bool m_keyAgreement{false};
     bool m_keyAgreementHasBeenSet = false;
 
-    bool m_sign;
+    bool m_sign{false};
     bool m_signHasBeenSet = false;
   };
 

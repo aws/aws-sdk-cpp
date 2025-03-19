@@ -38,7 +38,7 @@ namespace Model
   class GetCampaignResult
   {
   public:
-    AWS_IOTFLEETWISE_API GetCampaignResult();
+    AWS_IOTFLEETWISE_API GetCampaignResult() = default;
     AWS_IOTFLEETWISE_API GetCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API GetCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,65 +47,55 @@ namespace Model
     /**
      * <p>The name of the campaign.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetCampaignResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetCampaignResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetCampaignResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetCampaignResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the campaign. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetCampaignResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetCampaignResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetCampaignResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetCampaignResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the campaign.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetCampaignResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetCampaignResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetCampaignResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetCampaignResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of a signal catalog. </p>
      */
-    inline const Aws::String& GetSignalCatalogArn() const{ return m_signalCatalogArn; }
-    inline void SetSignalCatalogArn(const Aws::String& value) { m_signalCatalogArn = value; }
-    inline void SetSignalCatalogArn(Aws::String&& value) { m_signalCatalogArn = std::move(value); }
-    inline void SetSignalCatalogArn(const char* value) { m_signalCatalogArn.assign(value); }
-    inline GetCampaignResult& WithSignalCatalogArn(const Aws::String& value) { SetSignalCatalogArn(value); return *this;}
-    inline GetCampaignResult& WithSignalCatalogArn(Aws::String&& value) { SetSignalCatalogArn(std::move(value)); return *this;}
-    inline GetCampaignResult& WithSignalCatalogArn(const char* value) { SetSignalCatalogArn(value); return *this;}
+    inline const Aws::String& GetSignalCatalogArn() const { return m_signalCatalogArn; }
+    template<typename SignalCatalogArnT = Aws::String>
+    void SetSignalCatalogArn(SignalCatalogArnT&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::forward<SignalCatalogArnT>(value); }
+    template<typename SignalCatalogArnT = Aws::String>
+    GetCampaignResult& WithSignalCatalogArn(SignalCatalogArnT&& value) { SetSignalCatalogArn(std::forward<SignalCatalogArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the vehicle or the fleet targeted by the campaign. </p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArn.assign(value); }
-    inline GetCampaignResult& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline GetCampaignResult& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline GetCampaignResult& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    GetCampaignResult& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,22 +104,20 @@ namespace Model
      * <code>WAITING_FOR_APPROVAL</code>, <code>RUNNING</code>, and
      * <code>SUSPENDED</code>. </p>
      */
-    inline const CampaignStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const CampaignStatus& value) { m_status = value; }
-    inline void SetStatus(CampaignStatus&& value) { m_status = std::move(value); }
-    inline GetCampaignResult& WithStatus(const CampaignStatus& value) { SetStatus(value); return *this;}
-    inline GetCampaignResult& WithStatus(CampaignStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline CampaignStatus GetStatus() const { return m_status; }
+    inline void SetStatus(CampaignStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetCampaignResult& WithStatus(CampaignStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time, in milliseconds, to deliver a campaign after it was approved.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetCampaignResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetCampaignResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetCampaignResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,11 +126,11 @@ namespace Model
      * midnight UTC time). Vehicle data won't be collected after the campaign
      * expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
-    inline void SetExpiryTime(const Aws::Utils::DateTime& value) { m_expiryTime = value; }
-    inline void SetExpiryTime(Aws::Utils::DateTime&& value) { m_expiryTime = std::move(value); }
-    inline GetCampaignResult& WithExpiryTime(const Aws::Utils::DateTime& value) { SetExpiryTime(value); return *this;}
-    inline GetCampaignResult& WithExpiryTime(Aws::Utils::DateTime&& value) { SetExpiryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiryTime() const { return m_expiryTime; }
+    template<typename ExpiryTimeT = Aws::Utils::DateTime>
+    void SetExpiryTime(ExpiryTimeT&& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = std::forward<ExpiryTimeT>(value); }
+    template<typename ExpiryTimeT = Aws::Utils::DateTime>
+    GetCampaignResult& WithExpiryTime(ExpiryTimeT&& value) { SetExpiryTime(std::forward<ExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,8 +138,8 @@ namespace Model
      * <p> How long (in seconds) to collect raw data after a triggering event initiates
      * the collection. </p>
      */
-    inline long long GetPostTriggerCollectionDuration() const{ return m_postTriggerCollectionDuration; }
-    inline void SetPostTriggerCollectionDuration(long long value) { m_postTriggerCollectionDuration = value; }
+    inline long long GetPostTriggerCollectionDuration() const { return m_postTriggerCollectionDuration; }
+    inline void SetPostTriggerCollectionDuration(long long value) { m_postTriggerCollectionDurationHasBeenSet = true; m_postTriggerCollectionDuration = value; }
     inline GetCampaignResult& WithPostTriggerCollectionDuration(long long value) { SetPostTriggerCollectionDuration(value); return *this;}
     ///@}
 
@@ -160,11 +148,9 @@ namespace Model
      * <p> Option for a vehicle to send diagnostic trouble codes to Amazon Web Services
      * IoT FleetWise. </p>
      */
-    inline const DiagnosticsMode& GetDiagnosticsMode() const{ return m_diagnosticsMode; }
-    inline void SetDiagnosticsMode(const DiagnosticsMode& value) { m_diagnosticsMode = value; }
-    inline void SetDiagnosticsMode(DiagnosticsMode&& value) { m_diagnosticsMode = std::move(value); }
-    inline GetCampaignResult& WithDiagnosticsMode(const DiagnosticsMode& value) { SetDiagnosticsMode(value); return *this;}
-    inline GetCampaignResult& WithDiagnosticsMode(DiagnosticsMode&& value) { SetDiagnosticsMode(std::move(value)); return *this;}
+    inline DiagnosticsMode GetDiagnosticsMode() const { return m_diagnosticsMode; }
+    inline void SetDiagnosticsMode(DiagnosticsMode value) { m_diagnosticsModeHasBeenSet = true; m_diagnosticsMode = value; }
+    inline GetCampaignResult& WithDiagnosticsMode(DiagnosticsMode value) { SetDiagnosticsMode(value); return *this;}
     ///@}
 
     ///@{
@@ -173,11 +159,9 @@ namespace Model
      * cloud. After a connection is re-established, the data is automatically forwarded
      * to Amazon Web Services IoT FleetWise. </p>
      */
-    inline const SpoolingMode& GetSpoolingMode() const{ return m_spoolingMode; }
-    inline void SetSpoolingMode(const SpoolingMode& value) { m_spoolingMode = value; }
-    inline void SetSpoolingMode(SpoolingMode&& value) { m_spoolingMode = std::move(value); }
-    inline GetCampaignResult& WithSpoolingMode(const SpoolingMode& value) { SetSpoolingMode(value); return *this;}
-    inline GetCampaignResult& WithSpoolingMode(SpoolingMode&& value) { SetSpoolingMode(std::move(value)); return *this;}
+    inline SpoolingMode GetSpoolingMode() const { return m_spoolingMode; }
+    inline void SetSpoolingMode(SpoolingMode value) { m_spoolingModeHasBeenSet = true; m_spoolingMode = value; }
+    inline GetCampaignResult& WithSpoolingMode(SpoolingMode value) { SetSpoolingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -186,11 +170,9 @@ namespace Model
      * IoT FleetWise. If <code>OFF</code> is specified, the signals aren't compressed.
      * If it's not specified, <code>SNAPPY</code> is used. </p>
      */
-    inline const Compression& GetCompression() const{ return m_compression; }
-    inline void SetCompression(const Compression& value) { m_compression = value; }
-    inline void SetCompression(Compression&& value) { m_compression = std::move(value); }
-    inline GetCampaignResult& WithCompression(const Compression& value) { SetCompression(value); return *this;}
-    inline GetCampaignResult& WithCompression(Compression&& value) { SetCompression(std::move(value)); return *this;}
+    inline Compression GetCompression() const { return m_compression; }
+    inline void SetCompression(Compression value) { m_compressionHasBeenSet = true; m_compression = value; }
+    inline GetCampaignResult& WithCompression(Compression value) { SetCompression(value); return *this;}
     ///@}
 
     ///@{
@@ -199,8 +181,8 @@ namespace Model
      * certain vehicle or fleet. A campaign with the lowest value is deployed to
      * vehicles before any other campaigns.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
-    inline void SetPriority(int value) { m_priority = value; }
+    inline int GetPriority() const { return m_priority; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline GetCampaignResult& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
 
@@ -208,13 +190,13 @@ namespace Model
     /**
      * <p> Information about a list of signals to collect data on. </p>
      */
-    inline const Aws::Vector<SignalInformation>& GetSignalsToCollect() const{ return m_signalsToCollect; }
-    inline void SetSignalsToCollect(const Aws::Vector<SignalInformation>& value) { m_signalsToCollect = value; }
-    inline void SetSignalsToCollect(Aws::Vector<SignalInformation>&& value) { m_signalsToCollect = std::move(value); }
-    inline GetCampaignResult& WithSignalsToCollect(const Aws::Vector<SignalInformation>& value) { SetSignalsToCollect(value); return *this;}
-    inline GetCampaignResult& WithSignalsToCollect(Aws::Vector<SignalInformation>&& value) { SetSignalsToCollect(std::move(value)); return *this;}
-    inline GetCampaignResult& AddSignalsToCollect(const SignalInformation& value) { m_signalsToCollect.push_back(value); return *this; }
-    inline GetCampaignResult& AddSignalsToCollect(SignalInformation&& value) { m_signalsToCollect.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SignalInformation>& GetSignalsToCollect() const { return m_signalsToCollect; }
+    template<typename SignalsToCollectT = Aws::Vector<SignalInformation>>
+    void SetSignalsToCollect(SignalsToCollectT&& value) { m_signalsToCollectHasBeenSet = true; m_signalsToCollect = std::forward<SignalsToCollectT>(value); }
+    template<typename SignalsToCollectT = Aws::Vector<SignalInformation>>
+    GetCampaignResult& WithSignalsToCollect(SignalsToCollectT&& value) { SetSignalsToCollect(std::forward<SignalsToCollectT>(value)); return *this;}
+    template<typename SignalsToCollectT = SignalInformation>
+    GetCampaignResult& AddSignalsToCollect(SignalsToCollectT&& value) { m_signalsToCollectHasBeenSet = true; m_signalsToCollect.emplace_back(std::forward<SignalsToCollectT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -222,25 +204,24 @@ namespace Model
      * <p> Information about the data collection scheme associated with the campaign.
      * </p>
      */
-    inline const CollectionScheme& GetCollectionScheme() const{ return m_collectionScheme; }
-    inline void SetCollectionScheme(const CollectionScheme& value) { m_collectionScheme = value; }
-    inline void SetCollectionScheme(CollectionScheme&& value) { m_collectionScheme = std::move(value); }
-    inline GetCampaignResult& WithCollectionScheme(const CollectionScheme& value) { SetCollectionScheme(value); return *this;}
-    inline GetCampaignResult& WithCollectionScheme(CollectionScheme&& value) { SetCollectionScheme(std::move(value)); return *this;}
+    inline const CollectionScheme& GetCollectionScheme() const { return m_collectionScheme; }
+    template<typename CollectionSchemeT = CollectionScheme>
+    void SetCollectionScheme(CollectionSchemeT&& value) { m_collectionSchemeHasBeenSet = true; m_collectionScheme = std::forward<CollectionSchemeT>(value); }
+    template<typename CollectionSchemeT = CollectionScheme>
+    GetCampaignResult& WithCollectionScheme(CollectionSchemeT&& value) { SetCollectionScheme(std::forward<CollectionSchemeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of vehicle attributes associated with the campaign. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const{ return m_dataExtraDimensions; }
-    inline void SetDataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_dataExtraDimensions = value; }
-    inline void SetDataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_dataExtraDimensions = std::move(value); }
-    inline GetCampaignResult& WithDataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetDataExtraDimensions(value); return *this;}
-    inline GetCampaignResult& WithDataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetDataExtraDimensions(std::move(value)); return *this;}
-    inline GetCampaignResult& AddDataExtraDimensions(const Aws::String& value) { m_dataExtraDimensions.push_back(value); return *this; }
-    inline GetCampaignResult& AddDataExtraDimensions(Aws::String&& value) { m_dataExtraDimensions.push_back(std::move(value)); return *this; }
-    inline GetCampaignResult& AddDataExtraDimensions(const char* value) { m_dataExtraDimensions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const { return m_dataExtraDimensions; }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    void SetDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::forward<DataExtraDimensionsT>(value); }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    GetCampaignResult& WithDataExtraDimensions(DataExtraDimensionsT&& value) { SetDataExtraDimensions(std::forward<DataExtraDimensionsT>(value)); return *this;}
+    template<typename DataExtraDimensionsT = Aws::String>
+    GetCampaignResult& AddDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.emplace_back(std::forward<DataExtraDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -248,22 +229,22 @@ namespace Model
      * <p> The time the campaign was created in seconds since epoch (January 1, 1970 at
      * midnight UTC time). </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetCampaignResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetCampaignResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetCampaignResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the campaign was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline GetCampaignResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline GetCampaignResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    GetCampaignResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -278,13 +259,13 @@ namespace Model
      * Timestream to query vehicle data so that you can identify trends and
      * patterns.</p>
      */
-    inline const Aws::Vector<DataDestinationConfig>& GetDataDestinationConfigs() const{ return m_dataDestinationConfigs; }
-    inline void SetDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { m_dataDestinationConfigs = value; }
-    inline void SetDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { m_dataDestinationConfigs = std::move(value); }
-    inline GetCampaignResult& WithDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { SetDataDestinationConfigs(value); return *this;}
-    inline GetCampaignResult& WithDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { SetDataDestinationConfigs(std::move(value)); return *this;}
-    inline GetCampaignResult& AddDataDestinationConfigs(const DataDestinationConfig& value) { m_dataDestinationConfigs.push_back(value); return *this; }
-    inline GetCampaignResult& AddDataDestinationConfigs(DataDestinationConfig&& value) { m_dataDestinationConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataDestinationConfig>& GetDataDestinationConfigs() const { return m_dataDestinationConfigs; }
+    template<typename DataDestinationConfigsT = Aws::Vector<DataDestinationConfig>>
+    void SetDataDestinationConfigs(DataDestinationConfigsT&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs = std::forward<DataDestinationConfigsT>(value); }
+    template<typename DataDestinationConfigsT = Aws::Vector<DataDestinationConfig>>
+    GetCampaignResult& WithDataDestinationConfigs(DataDestinationConfigsT&& value) { SetDataDestinationConfigs(std::forward<DataDestinationConfigsT>(value)); return *this;}
+    template<typename DataDestinationConfigsT = DataDestinationConfig>
+    GetCampaignResult& AddDataDestinationConfigs(DataDestinationConfigsT&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.emplace_back(std::forward<DataDestinationConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -292,83 +273,103 @@ namespace Model
      * <p>The data partitions associated with the signals collected from the
      * vehicle.</p>
      */
-    inline const Aws::Vector<DataPartition>& GetDataPartitions() const{ return m_dataPartitions; }
-    inline void SetDataPartitions(const Aws::Vector<DataPartition>& value) { m_dataPartitions = value; }
-    inline void SetDataPartitions(Aws::Vector<DataPartition>&& value) { m_dataPartitions = std::move(value); }
-    inline GetCampaignResult& WithDataPartitions(const Aws::Vector<DataPartition>& value) { SetDataPartitions(value); return *this;}
-    inline GetCampaignResult& WithDataPartitions(Aws::Vector<DataPartition>&& value) { SetDataPartitions(std::move(value)); return *this;}
-    inline GetCampaignResult& AddDataPartitions(const DataPartition& value) { m_dataPartitions.push_back(value); return *this; }
-    inline GetCampaignResult& AddDataPartitions(DataPartition&& value) { m_dataPartitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataPartition>& GetDataPartitions() const { return m_dataPartitions; }
+    template<typename DataPartitionsT = Aws::Vector<DataPartition>>
+    void SetDataPartitions(DataPartitionsT&& value) { m_dataPartitionsHasBeenSet = true; m_dataPartitions = std::forward<DataPartitionsT>(value); }
+    template<typename DataPartitionsT = Aws::Vector<DataPartition>>
+    GetCampaignResult& WithDataPartitions(DataPartitionsT&& value) { SetDataPartitions(std::forward<DataPartitionsT>(value)); return *this;}
+    template<typename DataPartitionsT = DataPartition>
+    GetCampaignResult& AddDataPartitions(DataPartitionsT&& value) { m_dataPartitionsHasBeenSet = true; m_dataPartitions.emplace_back(std::forward<DataPartitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about a list of signals to fetch data from.</p>
      */
-    inline const Aws::Vector<SignalFetchInformation>& GetSignalsToFetch() const{ return m_signalsToFetch; }
-    inline void SetSignalsToFetch(const Aws::Vector<SignalFetchInformation>& value) { m_signalsToFetch = value; }
-    inline void SetSignalsToFetch(Aws::Vector<SignalFetchInformation>&& value) { m_signalsToFetch = std::move(value); }
-    inline GetCampaignResult& WithSignalsToFetch(const Aws::Vector<SignalFetchInformation>& value) { SetSignalsToFetch(value); return *this;}
-    inline GetCampaignResult& WithSignalsToFetch(Aws::Vector<SignalFetchInformation>&& value) { SetSignalsToFetch(std::move(value)); return *this;}
-    inline GetCampaignResult& AddSignalsToFetch(const SignalFetchInformation& value) { m_signalsToFetch.push_back(value); return *this; }
-    inline GetCampaignResult& AddSignalsToFetch(SignalFetchInformation&& value) { m_signalsToFetch.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SignalFetchInformation>& GetSignalsToFetch() const { return m_signalsToFetch; }
+    template<typename SignalsToFetchT = Aws::Vector<SignalFetchInformation>>
+    void SetSignalsToFetch(SignalsToFetchT&& value) { m_signalsToFetchHasBeenSet = true; m_signalsToFetch = std::forward<SignalsToFetchT>(value); }
+    template<typename SignalsToFetchT = Aws::Vector<SignalFetchInformation>>
+    GetCampaignResult& WithSignalsToFetch(SignalsToFetchT&& value) { SetSignalsToFetch(std::forward<SignalsToFetchT>(value)); return *this;}
+    template<typename SignalsToFetchT = SignalFetchInformation>
+    GetCampaignResult& AddSignalsToFetch(SignalsToFetchT&& value) { m_signalsToFetchHasBeenSet = true; m_signalsToFetch.emplace_back(std::forward<SignalsToFetchT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCampaignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCampaignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCampaignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCampaignResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_signalCatalogArn;
+    bool m_signalCatalogArnHasBeenSet = false;
 
     Aws::String m_targetArn;
+    bool m_targetArnHasBeenSet = false;
 
-    CampaignStatus m_status;
+    CampaignStatus m_status{CampaignStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiryTime;
+    Aws::Utils::DateTime m_expiryTime{};
+    bool m_expiryTimeHasBeenSet = false;
 
-    long long m_postTriggerCollectionDuration;
+    long long m_postTriggerCollectionDuration{0};
+    bool m_postTriggerCollectionDurationHasBeenSet = false;
 
-    DiagnosticsMode m_diagnosticsMode;
+    DiagnosticsMode m_diagnosticsMode{DiagnosticsMode::NOT_SET};
+    bool m_diagnosticsModeHasBeenSet = false;
 
-    SpoolingMode m_spoolingMode;
+    SpoolingMode m_spoolingMode{SpoolingMode::NOT_SET};
+    bool m_spoolingModeHasBeenSet = false;
 
-    Compression m_compression;
+    Compression m_compression{Compression::NOT_SET};
+    bool m_compressionHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<SignalInformation> m_signalsToCollect;
+    bool m_signalsToCollectHasBeenSet = false;
 
     CollectionScheme m_collectionScheme;
+    bool m_collectionSchemeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dataExtraDimensions;
+    bool m_dataExtraDimensionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::Vector<DataDestinationConfig> m_dataDestinationConfigs;
+    bool m_dataDestinationConfigsHasBeenSet = false;
 
     Aws::Vector<DataPartition> m_dataPartitions;
+    bool m_dataPartitionsHasBeenSet = false;
 
     Aws::Vector<SignalFetchInformation> m_signalsToFetch;
+    bool m_signalsToFetchHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

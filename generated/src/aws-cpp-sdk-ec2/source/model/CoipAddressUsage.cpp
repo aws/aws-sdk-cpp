@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CoipAddressUsage::CoipAddressUsage() : 
-    m_allocationIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_coIpHasBeenSet(false)
-{
-}
-
 CoipAddressUsage::CoipAddressUsage(const XmlNode& xmlNode)
-  : CoipAddressUsage()
 {
   *this = xmlNode;
 }

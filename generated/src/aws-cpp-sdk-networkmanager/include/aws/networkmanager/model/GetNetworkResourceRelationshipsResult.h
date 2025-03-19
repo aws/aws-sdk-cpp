@@ -29,7 +29,7 @@ namespace Model
   class GetNetworkResourceRelationshipsResult
   {
   public:
-    AWS_NETWORKMANAGER_API GetNetworkResourceRelationshipsResult();
+    AWS_NETWORKMANAGER_API GetNetworkResourceRelationshipsResult() = default;
     AWS_NETWORKMANAGER_API GetNetworkResourceRelationshipsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API GetNetworkResourceRelationshipsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The resource relationships.</p>
      */
-    inline const Aws::Vector<Relationship>& GetRelationships() const{ return m_relationships; }
-    inline void SetRelationships(const Aws::Vector<Relationship>& value) { m_relationships = value; }
-    inline void SetRelationships(Aws::Vector<Relationship>&& value) { m_relationships = std::move(value); }
-    inline GetNetworkResourceRelationshipsResult& WithRelationships(const Aws::Vector<Relationship>& value) { SetRelationships(value); return *this;}
-    inline GetNetworkResourceRelationshipsResult& WithRelationships(Aws::Vector<Relationship>&& value) { SetRelationships(std::move(value)); return *this;}
-    inline GetNetworkResourceRelationshipsResult& AddRelationships(const Relationship& value) { m_relationships.push_back(value); return *this; }
-    inline GetNetworkResourceRelationshipsResult& AddRelationships(Relationship&& value) { m_relationships.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Relationship>& GetRelationships() const { return m_relationships; }
+    template<typename RelationshipsT = Aws::Vector<Relationship>>
+    void SetRelationships(RelationshipsT&& value) { m_relationshipsHasBeenSet = true; m_relationships = std::forward<RelationshipsT>(value); }
+    template<typename RelationshipsT = Aws::Vector<Relationship>>
+    GetNetworkResourceRelationshipsResult& WithRelationships(RelationshipsT&& value) { SetRelationships(std::forward<RelationshipsT>(value)); return *this;}
+    template<typename RelationshipsT = Relationship>
+    GetNetworkResourceRelationshipsResult& AddRelationships(RelationshipsT&& value) { m_relationshipsHasBeenSet = true; m_relationships.emplace_back(std::forward<RelationshipsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetNetworkResourceRelationshipsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetNetworkResourceRelationshipsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetNetworkResourceRelationshipsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetNetworkResourceRelationshipsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNetworkResourceRelationshipsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNetworkResourceRelationshipsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNetworkResourceRelationshipsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNetworkResourceRelationshipsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Relationship> m_relationships;
+    bool m_relationshipsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

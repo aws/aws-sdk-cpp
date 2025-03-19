@@ -18,27 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-WorkloadEstimateUsageItem::WorkloadEstimateUsageItem() : 
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_quantityHasBeenSet(false),
-    m_cost(0.0),
-    m_costHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_status(WorkloadEstimateCostStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_historicalUsageHasBeenSet(false)
-{
-}
-
 WorkloadEstimateUsageItem::WorkloadEstimateUsageItem(JsonView jsonValue)
-  : WorkloadEstimateUsageItem()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ WorkloadEstimateUsageItem& WorkloadEstimateUsageItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantity"))
   {
     m_quantity = jsonValue.GetObject("quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cost"))
   {
     m_cost = jsonValue.GetDouble("cost");
-
     m_costHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkloadEstimateCostStatusMapper::GetWorkloadEstimateCostStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("historicalUsage"))
   {
     m_historicalUsage = jsonValue.GetObject("historicalUsage");
-
     m_historicalUsageHasBeenSet = true;
   }
-
   return *this;
 }
 

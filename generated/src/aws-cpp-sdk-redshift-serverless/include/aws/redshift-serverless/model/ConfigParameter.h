@@ -32,7 +32,7 @@ namespace Model
   class ConfigParameter
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ConfigParameter();
+    AWS_REDSHIFTSERVERLESS_API ConfigParameter() = default;
     AWS_REDSHIFTSERVERLESS_API ConfigParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API ConfigParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
      * monitoring metrics for Amazon Redshift Serverless</a>.</p>
      */
-    inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
+    inline const Aws::String& GetParameterKey() const { return m_parameterKey; }
     inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
-    inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
-    inline void SetParameterKey(Aws::String&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::move(value); }
-    inline void SetParameterKey(const char* value) { m_parameterKeyHasBeenSet = true; m_parameterKey.assign(value); }
-    inline ConfigParameter& WithParameterKey(const Aws::String& value) { SetParameterKey(value); return *this;}
-    inline ConfigParameter& WithParameterKey(Aws::String&& value) { SetParameterKey(std::move(value)); return *this;}
-    inline ConfigParameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
+    template<typename ParameterKeyT = Aws::String>
+    void SetParameterKey(ParameterKeyT&& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = std::forward<ParameterKeyT>(value); }
+    template<typename ParameterKeyT = Aws::String>
+    ConfigParameter& WithParameterKey(ParameterKeyT&& value) { SetParameterKey(std::forward<ParameterKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the parameter to set.</p>
      */
-    inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+    inline const Aws::String& GetParameterValue() const { return m_parameterValue; }
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
-    inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
-    inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
-    inline ConfigParameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
-    inline ConfigParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
-    inline ConfigParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
+    template<typename ParameterValueT = Aws::String>
+    void SetParameterValue(ParameterValueT&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::forward<ParameterValueT>(value); }
+    template<typename ParameterValueT = Aws::String>
+    ConfigParameter& WithParameterValue(ParameterValueT&& value) { SetParameterValue(std::forward<ParameterValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-IamRoleConfiguration::IamRoleConfiguration() : 
-    m_trustPolicyHasBeenSet(false)
-{
-}
-
 IamRoleConfiguration::IamRoleConfiguration(JsonView jsonValue)
-  : IamRoleConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IamRoleConfiguration& IamRoleConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("trustPolicy"))
   {
     m_trustPolicy = jsonValue.GetString("trustPolicy");
-
     m_trustPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

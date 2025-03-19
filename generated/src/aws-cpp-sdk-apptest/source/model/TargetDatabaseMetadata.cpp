@@ -18,16 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TargetDatabaseMetadata::TargetDatabaseMetadata() : 
-    m_type(TargetDatabase::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_captureTool(CaptureTool::NOT_SET),
-    m_captureToolHasBeenSet(false)
-{
-}
-
 TargetDatabaseMetadata::TargetDatabaseMetadata(JsonView jsonValue)
-  : TargetDatabaseMetadata()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TargetDatabaseMetadata& TargetDatabaseMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = TargetDatabaseMapper::GetTargetDatabaseForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captureTool"))
   {
     m_captureTool = CaptureToolMapper::GetCaptureToolForName(jsonValue.GetString("captureTool"));
-
     m_captureToolHasBeenSet = true;
   }
-
   return *this;
 }
 

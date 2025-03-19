@@ -38,7 +38,7 @@ namespace Model
   class MixedInstancesPolicy
   {
   public:
-    AWS_AUTOSCALING_API MixedInstancesPolicy();
+    AWS_AUTOSCALING_API MixedInstancesPolicy() = default;
     AWS_AUTOSCALING_API MixedInstancesPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API MixedInstancesPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,24 +51,24 @@ namespace Model
      * <p>One or more launch templates and the instance types (overrides) that are used
      * to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
      */
-    inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplate& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline MixedInstancesPolicy& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
-    inline MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplate>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplate>
+    MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instances distribution.</p>
      */
-    inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
+    inline const InstancesDistribution& GetInstancesDistribution() const { return m_instancesDistribution; }
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
-    inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
-    inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
-    inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
-    inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
+    template<typename InstancesDistributionT = InstancesDistribution>
+    void SetInstancesDistribution(InstancesDistributionT&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::forward<InstancesDistributionT>(value); }
+    template<typename InstancesDistributionT = InstancesDistribution>
+    MixedInstancesPolicy& WithInstancesDistribution(InstancesDistributionT&& value) { SetInstancesDistribution(std::forward<InstancesDistributionT>(value)); return *this;}
     ///@}
   private:
 

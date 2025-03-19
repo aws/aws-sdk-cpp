@@ -12,19 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFeatureRequest::CreateFeatureRequest() : 
-    m_defaultVariationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entityOverridesHasBeenSet(false),
-    m_evaluationStrategy(FeatureEvaluationStrategy::NOT_SET),
-    m_evaluationStrategyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_variationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFeatureRequest::SerializePayload() const
 {
   JsonValue payload;

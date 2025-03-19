@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceMaintenanceOptionsResponse::ModifyInstanceMaintenanceOptionsResponse() : 
-    m_autoRecovery(InstanceAutoRecoveryState::NOT_SET)
-{
-}
-
 ModifyInstanceMaintenanceOptionsResponse::ModifyInstanceMaintenanceOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyInstanceMaintenanceOptionsResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ ModifyInstanceMaintenanceOptionsResponse& ModifyInstanceMaintenanceOptionsRespon
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode autoRecoveryNode = resultNode.FirstChild("autoRecovery");
     if(!autoRecoveryNode.IsNull())
     {
-      m_autoRecovery = InstanceAutoRecoveryStateMapper::GetInstanceAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()).c_str());
+      m_autoRecovery = InstanceAutoRecoveryStateMapper::GetInstanceAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
+      m_autoRecoveryHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ ModifyInstanceMaintenanceOptionsResponse& ModifyInstanceMaintenanceOptionsRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceMaintenanceOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

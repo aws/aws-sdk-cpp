@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-CPU::CPU() : 
-    m_cores(0),
-    m_coresHasBeenSet(false),
-    m_modelNameHasBeenSet(false)
-{
-}
-
 CPU::CPU(JsonView jsonValue)
-  : CPU()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CPU& CPU::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cores"))
   {
     m_cores = jsonValue.GetInt64("cores");
-
     m_coresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelName"))
   {
     m_modelName = jsonValue.GetString("modelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

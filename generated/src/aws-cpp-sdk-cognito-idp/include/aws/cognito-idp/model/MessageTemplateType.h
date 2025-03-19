@@ -31,7 +31,7 @@ namespace Model
   class MessageTemplateType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API MessageTemplateType();
+    AWS_COGNITOIDENTITYPROVIDER_API MessageTemplateType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API MessageTemplateType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API MessageTemplateType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The message template for SMS messages.</p>
      */
-    inline const Aws::String& GetSMSMessage() const{ return m_sMSMessage; }
+    inline const Aws::String& GetSMSMessage() const { return m_sMSMessage; }
     inline bool SMSMessageHasBeenSet() const { return m_sMSMessageHasBeenSet; }
-    inline void SetSMSMessage(const Aws::String& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = value; }
-    inline void SetSMSMessage(Aws::String&& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = std::move(value); }
-    inline void SetSMSMessage(const char* value) { m_sMSMessageHasBeenSet = true; m_sMSMessage.assign(value); }
-    inline MessageTemplateType& WithSMSMessage(const Aws::String& value) { SetSMSMessage(value); return *this;}
-    inline MessageTemplateType& WithSMSMessage(Aws::String&& value) { SetSMSMessage(std::move(value)); return *this;}
-    inline MessageTemplateType& WithSMSMessage(const char* value) { SetSMSMessage(value); return *this;}
+    template<typename SMSMessageT = Aws::String>
+    void SetSMSMessage(SMSMessageT&& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = std::forward<SMSMessageT>(value); }
+    template<typename SMSMessageT = Aws::String>
+    MessageTemplateType& WithSMSMessage(SMSMessageT&& value) { SetSMSMessage(std::forward<SMSMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
-    inline const Aws::String& GetEmailMessage() const{ return m_emailMessage; }
+    inline const Aws::String& GetEmailMessage() const { return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
-    inline void SetEmailMessage(const Aws::String& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
-    inline void SetEmailMessage(Aws::String&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
-    inline void SetEmailMessage(const char* value) { m_emailMessageHasBeenSet = true; m_emailMessage.assign(value); }
-    inline MessageTemplateType& WithEmailMessage(const Aws::String& value) { SetEmailMessage(value); return *this;}
-    inline MessageTemplateType& WithEmailMessage(Aws::String&& value) { SetEmailMessage(std::move(value)); return *this;}
-    inline MessageTemplateType& WithEmailMessage(const char* value) { SetEmailMessage(value); return *this;}
+    template<typename EmailMessageT = Aws::String>
+    void SetEmailMessage(EmailMessageT&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::forward<EmailMessageT>(value); }
+    template<typename EmailMessageT = Aws::String>
+    MessageTemplateType& WithEmailMessage(EmailMessageT&& value) { SetEmailMessage(std::forward<EmailMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
      * is DEVELOPER. </p>
      */
-    inline const Aws::String& GetEmailSubject() const{ return m_emailSubject; }
+    inline const Aws::String& GetEmailSubject() const { return m_emailSubject; }
     inline bool EmailSubjectHasBeenSet() const { return m_emailSubjectHasBeenSet; }
-    inline void SetEmailSubject(const Aws::String& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = value; }
-    inline void SetEmailSubject(Aws::String&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::move(value); }
-    inline void SetEmailSubject(const char* value) { m_emailSubjectHasBeenSet = true; m_emailSubject.assign(value); }
-    inline MessageTemplateType& WithEmailSubject(const Aws::String& value) { SetEmailSubject(value); return *this;}
-    inline MessageTemplateType& WithEmailSubject(Aws::String&& value) { SetEmailSubject(std::move(value)); return *this;}
-    inline MessageTemplateType& WithEmailSubject(const char* value) { SetEmailSubject(value); return *this;}
+    template<typename EmailSubjectT = Aws::String>
+    void SetEmailSubject(EmailSubjectT&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::forward<EmailSubjectT>(value); }
+    template<typename EmailSubjectT = Aws::String>
+    MessageTemplateType& WithEmailSubject(EmailSubjectT&& value) { SetEmailSubject(std::forward<EmailSubjectT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class AuditCheckDetails
   {
   public:
-    AWS_IOT_API AuditCheckDetails();
+    AWS_IOT_API AuditCheckDetails() = default;
     AWS_IOT_API AuditCheckDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuditCheckDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,17 @@ namespace Model
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
-    inline const AuditCheckRunStatus& GetCheckRunStatus() const{ return m_checkRunStatus; }
+    inline AuditCheckRunStatus GetCheckRunStatus() const { return m_checkRunStatus; }
     inline bool CheckRunStatusHasBeenSet() const { return m_checkRunStatusHasBeenSet; }
-    inline void SetCheckRunStatus(const AuditCheckRunStatus& value) { m_checkRunStatusHasBeenSet = true; m_checkRunStatus = value; }
-    inline void SetCheckRunStatus(AuditCheckRunStatus&& value) { m_checkRunStatusHasBeenSet = true; m_checkRunStatus = std::move(value); }
-    inline AuditCheckDetails& WithCheckRunStatus(const AuditCheckRunStatus& value) { SetCheckRunStatus(value); return *this;}
-    inline AuditCheckDetails& WithCheckRunStatus(AuditCheckRunStatus&& value) { SetCheckRunStatus(std::move(value)); return *this;}
+    inline void SetCheckRunStatus(AuditCheckRunStatus value) { m_checkRunStatusHasBeenSet = true; m_checkRunStatus = value; }
+    inline AuditCheckDetails& WithCheckRunStatus(AuditCheckRunStatus value) { SetCheckRunStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>True if the check is complete and found all resources compliant.</p>
      */
-    inline bool GetCheckCompliant() const{ return m_checkCompliant; }
+    inline bool GetCheckCompliant() const { return m_checkCompliant; }
     inline bool CheckCompliantHasBeenSet() const { return m_checkCompliantHasBeenSet; }
     inline void SetCheckCompliant(bool value) { m_checkCompliantHasBeenSet = true; m_checkCompliant = value; }
     inline AuditCheckDetails& WithCheckCompliant(bool value) { SetCheckCompliant(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>The number of resources on which the check was performed.</p>
      */
-    inline long long GetTotalResourcesCount() const{ return m_totalResourcesCount; }
+    inline long long GetTotalResourcesCount() const { return m_totalResourcesCount; }
     inline bool TotalResourcesCountHasBeenSet() const { return m_totalResourcesCountHasBeenSet; }
     inline void SetTotalResourcesCount(long long value) { m_totalResourcesCountHasBeenSet = true; m_totalResourcesCount = value; }
     inline AuditCheckDetails& WithTotalResourcesCount(long long value) { SetTotalResourcesCount(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
     /**
      * <p>The number of resources that were found noncompliant during the check.</p>
      */
-    inline long long GetNonCompliantResourcesCount() const{ return m_nonCompliantResourcesCount; }
+    inline long long GetNonCompliantResourcesCount() const { return m_nonCompliantResourcesCount; }
     inline bool NonCompliantResourcesCountHasBeenSet() const { return m_nonCompliantResourcesCountHasBeenSet; }
     inline void SetNonCompliantResourcesCount(long long value) { m_nonCompliantResourcesCountHasBeenSet = true; m_nonCompliantResourcesCount = value; }
     inline AuditCheckDetails& WithNonCompliantResourcesCount(long long value) { SetNonCompliantResourcesCount(value); return *this;}
@@ -87,7 +85,7 @@ namespace Model
      * <p> Describes how many of the non-compliant resources created during the
      * evaluation of an audit check were marked as suppressed. </p>
      */
-    inline long long GetSuppressedNonCompliantResourcesCount() const{ return m_suppressedNonCompliantResourcesCount; }
+    inline long long GetSuppressedNonCompliantResourcesCount() const { return m_suppressedNonCompliantResourcesCount; }
     inline bool SuppressedNonCompliantResourcesCountHasBeenSet() const { return m_suppressedNonCompliantResourcesCountHasBeenSet; }
     inline void SetSuppressedNonCompliantResourcesCount(long long value) { m_suppressedNonCompliantResourcesCountHasBeenSet = true; m_suppressedNonCompliantResourcesCount = value; }
     inline AuditCheckDetails& WithSuppressedNonCompliantResourcesCount(long long value) { SetSuppressedNonCompliantResourcesCount(value); return *this;}
@@ -98,14 +96,12 @@ namespace Model
      * <p>The code of any error encountered when this check is performed during this
      * audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline AuditCheckDetails& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline AuditCheckDetails& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline AuditCheckDetails& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    AuditCheckDetails& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,30 +109,28 @@ namespace Model
      * <p>The message associated with any error encountered when this check is
      * performed during this audit.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AuditCheckDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AuditCheckDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AuditCheckDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AuditCheckDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    AuditCheckRunStatus m_checkRunStatus;
+    AuditCheckRunStatus m_checkRunStatus{AuditCheckRunStatus::NOT_SET};
     bool m_checkRunStatusHasBeenSet = false;
 
-    bool m_checkCompliant;
+    bool m_checkCompliant{false};
     bool m_checkCompliantHasBeenSet = false;
 
-    long long m_totalResourcesCount;
+    long long m_totalResourcesCount{0};
     bool m_totalResourcesCountHasBeenSet = false;
 
-    long long m_nonCompliantResourcesCount;
+    long long m_nonCompliantResourcesCount{0};
     bool m_nonCompliantResourcesCountHasBeenSet = false;
 
-    long long m_suppressedNonCompliantResourcesCount;
+    long long m_suppressedNonCompliantResourcesCount{0};
     bool m_suppressedNonCompliantResourcesCountHasBeenSet = false;
 
     Aws::String m_errorCode;

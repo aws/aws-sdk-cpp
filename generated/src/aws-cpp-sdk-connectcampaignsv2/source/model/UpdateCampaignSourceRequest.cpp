@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignSourceRequest::UpdateCampaignSourceRequest() : 
-    m_idHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignSourceRequest::SerializePayload() const
 {
   JsonValue payload;

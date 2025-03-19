@@ -28,7 +28,7 @@ namespace Model
   class DescribeFleetLocationUtilizationResult
   {
   public:
-    AWS_GAMELIFT_API DescribeFleetLocationUtilizationResult();
+    AWS_GAMELIFT_API DescribeFleetLocationUtilizationResult() = default;
     AWS_GAMELIFT_API DescribeFleetLocationUtilizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeFleetLocationUtilizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Utilization information for the requested fleet location. Utilization objects
      * are returned only for fleets and locations that currently exist.</p>
      */
-    inline const FleetUtilization& GetFleetUtilization() const{ return m_fleetUtilization; }
-    inline void SetFleetUtilization(const FleetUtilization& value) { m_fleetUtilization = value; }
-    inline void SetFleetUtilization(FleetUtilization&& value) { m_fleetUtilization = std::move(value); }
-    inline DescribeFleetLocationUtilizationResult& WithFleetUtilization(const FleetUtilization& value) { SetFleetUtilization(value); return *this;}
-    inline DescribeFleetLocationUtilizationResult& WithFleetUtilization(FleetUtilization&& value) { SetFleetUtilization(std::move(value)); return *this;}
+    inline const FleetUtilization& GetFleetUtilization() const { return m_fleetUtilization; }
+    template<typename FleetUtilizationT = FleetUtilization>
+    void SetFleetUtilization(FleetUtilizationT&& value) { m_fleetUtilizationHasBeenSet = true; m_fleetUtilization = std::forward<FleetUtilizationT>(value); }
+    template<typename FleetUtilizationT = FleetUtilization>
+    DescribeFleetLocationUtilizationResult& WithFleetUtilization(FleetUtilizationT&& value) { SetFleetUtilization(std::forward<FleetUtilizationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFleetLocationUtilizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFleetLocationUtilizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFleetLocationUtilizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFleetLocationUtilizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FleetUtilization m_fleetUtilization;
+    bool m_fleetUtilizationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

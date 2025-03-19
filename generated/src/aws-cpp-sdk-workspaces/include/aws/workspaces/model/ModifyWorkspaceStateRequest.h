@@ -22,7 +22,7 @@ namespace Model
   class ModifyWorkspaceStateRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ModifyWorkspaceStateRequest();
+    AWS_WORKSPACES_API ModifyWorkspaceStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,33 +39,29 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-    inline ModifyWorkspaceStateRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline ModifyWorkspaceStateRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline ModifyWorkspaceStateRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    ModifyWorkspaceStateRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The WorkSpace state.</p>
      */
-    inline const TargetWorkspaceState& GetWorkspaceState() const{ return m_workspaceState; }
+    inline TargetWorkspaceState GetWorkspaceState() const { return m_workspaceState; }
     inline bool WorkspaceStateHasBeenSet() const { return m_workspaceStateHasBeenSet; }
-    inline void SetWorkspaceState(const TargetWorkspaceState& value) { m_workspaceStateHasBeenSet = true; m_workspaceState = value; }
-    inline void SetWorkspaceState(TargetWorkspaceState&& value) { m_workspaceStateHasBeenSet = true; m_workspaceState = std::move(value); }
-    inline ModifyWorkspaceStateRequest& WithWorkspaceState(const TargetWorkspaceState& value) { SetWorkspaceState(value); return *this;}
-    inline ModifyWorkspaceStateRequest& WithWorkspaceState(TargetWorkspaceState&& value) { SetWorkspaceState(std::move(value)); return *this;}
+    inline void SetWorkspaceState(TargetWorkspaceState value) { m_workspaceStateHasBeenSet = true; m_workspaceState = value; }
+    inline ModifyWorkspaceStateRequest& WithWorkspaceState(TargetWorkspaceState value) { SetWorkspaceState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet = false;
 
-    TargetWorkspaceState m_workspaceState;
+    TargetWorkspaceState m_workspaceState{TargetWorkspaceState::NOT_SET};
     bool m_workspaceStateHasBeenSet = false;
   };
 

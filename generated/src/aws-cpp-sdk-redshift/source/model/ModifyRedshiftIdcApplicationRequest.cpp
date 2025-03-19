@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyRedshiftIdcApplicationRequest::ModifyRedshiftIdcApplicationRequest() : 
-    m_redshiftIdcApplicationArnHasBeenSet(false),
-    m_identityNamespaceHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_idcDisplayNameHasBeenSet(false),
-    m_authorizedTokenIssuerListHasBeenSet(false),
-    m_serviceIntegrationsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyRedshiftIdcApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

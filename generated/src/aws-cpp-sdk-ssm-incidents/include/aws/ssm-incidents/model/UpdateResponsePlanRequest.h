@@ -28,7 +28,7 @@ namespace Model
   class UpdateResponsePlanRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API UpdateResponsePlanRequest();
+    AWS_SSMINCIDENTS_API UpdateResponsePlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,26 @@ namespace Model
      * <p>The actions that this response plan takes at the beginning of an
      * incident.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline UpdateResponsePlanRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline UpdateResponsePlanRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline UpdateResponsePlanRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    UpdateResponsePlanRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    UpdateResponsePlanRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the response plan.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateResponsePlanRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateResponsePlanRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateResponsePlanRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * <p>Use the empty structure to remove the chat channel from the response
      * plan.</p>
      */
-    inline const ChatChannel& GetChatChannel() const{ return m_chatChannel; }
+    inline const ChatChannel& GetChatChannel() const { return m_chatChannel; }
     inline bool ChatChannelHasBeenSet() const { return m_chatChannelHasBeenSet; }
-    inline void SetChatChannel(const ChatChannel& value) { m_chatChannelHasBeenSet = true; m_chatChannel = value; }
-    inline void SetChatChannel(ChatChannel&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::move(value); }
-    inline UpdateResponsePlanRequest& WithChatChannel(const ChatChannel& value) { SetChatChannel(value); return *this;}
-    inline UpdateResponsePlanRequest& WithChatChannel(ChatChannel&& value) { SetChatChannel(std::move(value)); return *this;}
+    template<typename ChatChannelT = ChatChannel>
+    void SetChatChannel(ChatChannelT&& value) { m_chatChannelHasBeenSet = true; m_chatChannel = std::forward<ChatChannelT>(value); }
+    template<typename ChatChannelT = ChatChannel>
+    UpdateResponsePlanRequest& WithChatChannel(ChatChannelT&& value) { SetChatChannel(std::forward<ChatChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * <p>A token ensuring that the operation is called only once with the specified
      * details.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateResponsePlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateResponsePlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateResponsePlanRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +98,12 @@ namespace Model
      * <p>The long format name of the response plan. The display name can't contain
      * spaces.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateResponsePlanRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateResponsePlanRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateResponsePlanRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,15 +111,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
      * response plan engages during an incident.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
+    inline const Aws::Vector<Aws::String>& GetEngagements() const { return m_engagements; }
     inline bool EngagementsHasBeenSet() const { return m_engagementsHasBeenSet; }
-    inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagementsHasBeenSet = true; m_engagements = value; }
-    inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagementsHasBeenSet = true; m_engagements = std::move(value); }
-    inline UpdateResponsePlanRequest& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
-    inline UpdateResponsePlanRequest& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& AddEngagements(const Aws::String& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
-    inline UpdateResponsePlanRequest& AddEngagements(Aws::String&& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(std::move(value)); return *this; }
-    inline UpdateResponsePlanRequest& AddEngagements(const char* value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
+    template<typename EngagementsT = Aws::Vector<Aws::String>>
+    void SetEngagements(EngagementsT&& value) { m_engagementsHasBeenSet = true; m_engagements = std::forward<EngagementsT>(value); }
+    template<typename EngagementsT = Aws::Vector<Aws::String>>
+    UpdateResponsePlanRequest& WithEngagements(EngagementsT&& value) { SetEngagements(std::forward<EngagementsT>(value)); return *this;}
+    template<typename EngagementsT = Aws::String>
+    UpdateResponsePlanRequest& AddEngagements(EngagementsT&& value) { m_engagementsHasBeenSet = true; m_engagements.emplace_back(std::forward<EngagementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,14 +126,12 @@ namespace Model
      * <p>The string Incident Manager uses to prevent duplicate incidents from being
      * created by the same incident in the same account.</p>
      */
-    inline const Aws::String& GetIncidentTemplateDedupeString() const{ return m_incidentTemplateDedupeString; }
+    inline const Aws::String& GetIncidentTemplateDedupeString() const { return m_incidentTemplateDedupeString; }
     inline bool IncidentTemplateDedupeStringHasBeenSet() const { return m_incidentTemplateDedupeStringHasBeenSet; }
-    inline void SetIncidentTemplateDedupeString(const Aws::String& value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString = value; }
-    inline void SetIncidentTemplateDedupeString(Aws::String&& value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString = std::move(value); }
-    inline void SetIncidentTemplateDedupeString(const char* value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString.assign(value); }
-    inline UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(const Aws::String& value) { SetIncidentTemplateDedupeString(value); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(Aws::String&& value) { SetIncidentTemplateDedupeString(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(const char* value) { SetIncidentTemplateDedupeString(value); return *this;}
+    template<typename IncidentTemplateDedupeStringT = Aws::String>
+    void SetIncidentTemplateDedupeString(IncidentTemplateDedupeStringT&& value) { m_incidentTemplateDedupeStringHasBeenSet = true; m_incidentTemplateDedupeString = std::forward<IncidentTemplateDedupeStringT>(value); }
+    template<typename IncidentTemplateDedupeStringT = Aws::String>
+    UpdateResponsePlanRequest& WithIncidentTemplateDedupeString(IncidentTemplateDedupeStringT&& value) { SetIncidentTemplateDedupeString(std::forward<IncidentTemplateDedupeStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,7 +143,7 @@ namespace Model
      * <p> <code>4</code> - Low</p> </li> <li> <p> <code>5</code> - No Impact</p> </li>
      * </ul>
      */
-    inline int GetIncidentTemplateImpact() const{ return m_incidentTemplateImpact; }
+    inline int GetIncidentTemplateImpact() const { return m_incidentTemplateImpact; }
     inline bool IncidentTemplateImpactHasBeenSet() const { return m_incidentTemplateImpactHasBeenSet; }
     inline void SetIncidentTemplateImpact(int value) { m_incidentTemplateImpactHasBeenSet = true; m_incidentTemplateImpact = value; }
     inline UpdateResponsePlanRequest& WithIncidentTemplateImpact(int value) { SetIncidentTemplateImpact(value); return *this;}
@@ -163,14 +154,14 @@ namespace Model
      * <p>The Amazon SNS targets that are notified when updates are made to an
      * incident.</p>
      */
-    inline const Aws::Vector<NotificationTargetItem>& GetIncidentTemplateNotificationTargets() const{ return m_incidentTemplateNotificationTargets; }
+    inline const Aws::Vector<NotificationTargetItem>& GetIncidentTemplateNotificationTargets() const { return m_incidentTemplateNotificationTargets; }
     inline bool IncidentTemplateNotificationTargetsHasBeenSet() const { return m_incidentTemplateNotificationTargetsHasBeenSet; }
-    inline void SetIncidentTemplateNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = value; }
-    inline void SetIncidentTemplateNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = std::move(value); }
-    inline UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(const Aws::Vector<NotificationTargetItem>& value) { SetIncidentTemplateNotificationTargets(value); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(Aws::Vector<NotificationTargetItem>&& value) { SetIncidentTemplateNotificationTargets(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(const NotificationTargetItem& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.push_back(value); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(NotificationTargetItem&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.push_back(std::move(value)); return *this; }
+    template<typename IncidentTemplateNotificationTargetsT = Aws::Vector<NotificationTargetItem>>
+    void SetIncidentTemplateNotificationTargets(IncidentTemplateNotificationTargetsT&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets = std::forward<IncidentTemplateNotificationTargetsT>(value); }
+    template<typename IncidentTemplateNotificationTargetsT = Aws::Vector<NotificationTargetItem>>
+    UpdateResponsePlanRequest& WithIncidentTemplateNotificationTargets(IncidentTemplateNotificationTargetsT&& value) { SetIncidentTemplateNotificationTargets(std::forward<IncidentTemplateNotificationTargetsT>(value)); return *this;}
+    template<typename IncidentTemplateNotificationTargetsT = NotificationTargetItem>
+    UpdateResponsePlanRequest& AddIncidentTemplateNotificationTargets(IncidentTemplateNotificationTargetsT&& value) { m_incidentTemplateNotificationTargetsHasBeenSet = true; m_incidentTemplateNotificationTargets.emplace_back(std::forward<IncidentTemplateNotificationTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -178,14 +169,12 @@ namespace Model
      * <p>A brief summary of the incident. This typically contains what has happened,
      * what's currently happening, and next steps.</p>
      */
-    inline const Aws::String& GetIncidentTemplateSummary() const{ return m_incidentTemplateSummary; }
+    inline const Aws::String& GetIncidentTemplateSummary() const { return m_incidentTemplateSummary; }
     inline bool IncidentTemplateSummaryHasBeenSet() const { return m_incidentTemplateSummaryHasBeenSet; }
-    inline void SetIncidentTemplateSummary(const Aws::String& value) { m_incidentTemplateSummaryHasBeenSet = true; m_incidentTemplateSummary = value; }
-    inline void SetIncidentTemplateSummary(Aws::String&& value) { m_incidentTemplateSummaryHasBeenSet = true; m_incidentTemplateSummary = std::move(value); }
-    inline void SetIncidentTemplateSummary(const char* value) { m_incidentTemplateSummaryHasBeenSet = true; m_incidentTemplateSummary.assign(value); }
-    inline UpdateResponsePlanRequest& WithIncidentTemplateSummary(const Aws::String& value) { SetIncidentTemplateSummary(value); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateSummary(Aws::String&& value) { SetIncidentTemplateSummary(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateSummary(const char* value) { SetIncidentTemplateSummary(value); return *this;}
+    template<typename IncidentTemplateSummaryT = Aws::String>
+    void SetIncidentTemplateSummary(IncidentTemplateSummaryT&& value) { m_incidentTemplateSummaryHasBeenSet = true; m_incidentTemplateSummary = std::forward<IncidentTemplateSummaryT>(value); }
+    template<typename IncidentTemplateSummaryT = Aws::String>
+    UpdateResponsePlanRequest& WithIncidentTemplateSummary(IncidentTemplateSummaryT&& value) { SetIncidentTemplateSummary(std::forward<IncidentTemplateSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,47 +184,42 @@ namespace Model
      * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetIncidentTemplateTags() const{ return m_incidentTemplateTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetIncidentTemplateTags() const { return m_incidentTemplateTags; }
     inline bool IncidentTemplateTagsHasBeenSet() const { return m_incidentTemplateTagsHasBeenSet; }
-    inline void SetIncidentTemplateTags(const Aws::Map<Aws::String, Aws::String>& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = value; }
-    inline void SetIncidentTemplateTags(Aws::Map<Aws::String, Aws::String>&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = std::move(value); }
-    inline UpdateResponsePlanRequest& WithIncidentTemplateTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIncidentTemplateTags(value); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIncidentTemplateTags(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const Aws::String& key, const Aws::String& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, value); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, const Aws::String& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), value); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const Aws::String& key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, std::move(value)); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const char* key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, std::move(value)); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, const char* value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), value); return *this; }
-    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const char* key, const char* value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, value); return *this; }
+    template<typename IncidentTemplateTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetIncidentTemplateTags(IncidentTemplateTagsT&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = std::forward<IncidentTemplateTagsT>(value); }
+    template<typename IncidentTemplateTagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateResponsePlanRequest& WithIncidentTemplateTags(IncidentTemplateTagsT&& value) { SetIncidentTemplateTags(std::forward<IncidentTemplateTagsT>(value)); return *this;}
+    template<typename IncidentTemplateTagsKeyT = Aws::String, typename IncidentTemplateTagsValueT = Aws::String>
+    UpdateResponsePlanRequest& AddIncidentTemplateTags(IncidentTemplateTagsKeyT&& key, IncidentTemplateTagsValueT&& value) {
+      m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::forward<IncidentTemplateTagsKeyT>(key), std::forward<IncidentTemplateTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
-    inline const Aws::String& GetIncidentTemplateTitle() const{ return m_incidentTemplateTitle; }
+    inline const Aws::String& GetIncidentTemplateTitle() const { return m_incidentTemplateTitle; }
     inline bool IncidentTemplateTitleHasBeenSet() const { return m_incidentTemplateTitleHasBeenSet; }
-    inline void SetIncidentTemplateTitle(const Aws::String& value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle = value; }
-    inline void SetIncidentTemplateTitle(Aws::String&& value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle = std::move(value); }
-    inline void SetIncidentTemplateTitle(const char* value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle.assign(value); }
-    inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(const Aws::String& value) { SetIncidentTemplateTitle(value); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(Aws::String&& value) { SetIncidentTemplateTitle(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& WithIncidentTemplateTitle(const char* value) { SetIncidentTemplateTitle(value); return *this;}
+    template<typename IncidentTemplateTitleT = Aws::String>
+    void SetIncidentTemplateTitle(IncidentTemplateTitleT&& value) { m_incidentTemplateTitleHasBeenSet = true; m_incidentTemplateTitle = std::forward<IncidentTemplateTitleT>(value); }
+    template<typename IncidentTemplateTitleT = Aws::String>
+    UpdateResponsePlanRequest& WithIncidentTemplateTitle(IncidentTemplateTitleT&& value) { SetIncidentTemplateTitle(std::forward<IncidentTemplateTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about third-party services integrated into the response plan.</p>
      */
-    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+    inline const Aws::Vector<Integration>& GetIntegrations() const { return m_integrations; }
     inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
-    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrationsHasBeenSet = true; m_integrations = value; }
-    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrationsHasBeenSet = true; m_integrations = std::move(value); }
-    inline UpdateResponsePlanRequest& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
-    inline UpdateResponsePlanRequest& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
-    inline UpdateResponsePlanRequest& AddIntegrations(const Integration& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(value); return *this; }
-    inline UpdateResponsePlanRequest& AddIntegrations(Integration&& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(std::move(value)); return *this; }
+    template<typename IntegrationsT = Aws::Vector<Integration>>
+    void SetIntegrations(IntegrationsT&& value) { m_integrationsHasBeenSet = true; m_integrations = std::forward<IntegrationsT>(value); }
+    template<typename IntegrationsT = Aws::Vector<Integration>>
+    UpdateResponsePlanRequest& WithIntegrations(IntegrationsT&& value) { SetIntegrations(std::forward<IntegrationsT>(value)); return *this;}
+    template<typename IntegrationsT = Integration>
+    UpdateResponsePlanRequest& AddIntegrations(IntegrationsT&& value) { m_integrationsHasBeenSet = true; m_integrations.emplace_back(std::forward<IntegrationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -260,7 +244,7 @@ namespace Model
     Aws::String m_incidentTemplateDedupeString;
     bool m_incidentTemplateDedupeStringHasBeenSet = false;
 
-    int m_incidentTemplateImpact;
+    int m_incidentTemplateImpact{0};
     bool m_incidentTemplateImpactHasBeenSet = false;
 
     Aws::Vector<NotificationTargetItem> m_incidentTemplateNotificationTargets;

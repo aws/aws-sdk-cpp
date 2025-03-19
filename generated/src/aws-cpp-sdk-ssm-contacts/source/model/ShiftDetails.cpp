@@ -18,13 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-ShiftDetails::ShiftDetails() : 
-    m_overriddenContactIdsHasBeenSet(false)
-{
-}
-
 ShiftDetails::ShiftDetails(JsonView jsonValue)
-  : ShiftDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ShiftDetails& ShiftDetails::operator =(JsonView jsonValue)
     }
     m_overriddenContactIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class UserPolicyGrantPrincipal
   {
   public:
-    AWS_DATAZONE_API UserPolicyGrantPrincipal();
+    AWS_DATAZONE_API UserPolicyGrantPrincipal() = default;
     AWS_DATAZONE_API UserPolicyGrantPrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API UserPolicyGrantPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The all users grant filter of the user policy grant principal.</p>
      */
-    inline const AllUsersGrantFilter& GetAllUsersGrantFilter() const{ return m_allUsersGrantFilter; }
+    inline const AllUsersGrantFilter& GetAllUsersGrantFilter() const { return m_allUsersGrantFilter; }
     inline bool AllUsersGrantFilterHasBeenSet() const { return m_allUsersGrantFilterHasBeenSet; }
-    inline void SetAllUsersGrantFilter(const AllUsersGrantFilter& value) { m_allUsersGrantFilterHasBeenSet = true; m_allUsersGrantFilter = value; }
-    inline void SetAllUsersGrantFilter(AllUsersGrantFilter&& value) { m_allUsersGrantFilterHasBeenSet = true; m_allUsersGrantFilter = std::move(value); }
-    inline UserPolicyGrantPrincipal& WithAllUsersGrantFilter(const AllUsersGrantFilter& value) { SetAllUsersGrantFilter(value); return *this;}
-    inline UserPolicyGrantPrincipal& WithAllUsersGrantFilter(AllUsersGrantFilter&& value) { SetAllUsersGrantFilter(std::move(value)); return *this;}
+    template<typename AllUsersGrantFilterT = AllUsersGrantFilter>
+    void SetAllUsersGrantFilter(AllUsersGrantFilterT&& value) { m_allUsersGrantFilterHasBeenSet = true; m_allUsersGrantFilter = std::forward<AllUsersGrantFilterT>(value); }
+    template<typename AllUsersGrantFilterT = AllUsersGrantFilter>
+    UserPolicyGrantPrincipal& WithAllUsersGrantFilter(AllUsersGrantFilterT&& value) { SetAllUsersGrantFilter(std::forward<AllUsersGrantFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user ID of the user policy grant principal.</p>
      */
-    inline const Aws::String& GetUserIdentifier() const{ return m_userIdentifier; }
+    inline const Aws::String& GetUserIdentifier() const { return m_userIdentifier; }
     inline bool UserIdentifierHasBeenSet() const { return m_userIdentifierHasBeenSet; }
-    inline void SetUserIdentifier(const Aws::String& value) { m_userIdentifierHasBeenSet = true; m_userIdentifier = value; }
-    inline void SetUserIdentifier(Aws::String&& value) { m_userIdentifierHasBeenSet = true; m_userIdentifier = std::move(value); }
-    inline void SetUserIdentifier(const char* value) { m_userIdentifierHasBeenSet = true; m_userIdentifier.assign(value); }
-    inline UserPolicyGrantPrincipal& WithUserIdentifier(const Aws::String& value) { SetUserIdentifier(value); return *this;}
-    inline UserPolicyGrantPrincipal& WithUserIdentifier(Aws::String&& value) { SetUserIdentifier(std::move(value)); return *this;}
-    inline UserPolicyGrantPrincipal& WithUserIdentifier(const char* value) { SetUserIdentifier(value); return *this;}
+    template<typename UserIdentifierT = Aws::String>
+    void SetUserIdentifier(UserIdentifierT&& value) { m_userIdentifierHasBeenSet = true; m_userIdentifier = std::forward<UserIdentifierT>(value); }
+    template<typename UserIdentifierT = Aws::String>
+    UserPolicyGrantPrincipal& WithUserIdentifier(UserIdentifierT&& value) { SetUserIdentifier(std::forward<UserIdentifierT>(value)); return *this;}
     ///@}
   private:
 

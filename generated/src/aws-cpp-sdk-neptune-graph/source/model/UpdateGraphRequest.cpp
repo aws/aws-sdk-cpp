@@ -12,17 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGraphRequest::UpdateGraphRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_publicConnectivity(false),
-    m_publicConnectivityHasBeenSet(false),
-    m_provisionedMemory(0),
-    m_provisionedMemoryHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGraphRequest::SerializePayload() const
 {
   JsonValue payload;

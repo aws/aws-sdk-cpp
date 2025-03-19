@@ -18,27 +18,7 @@ namespace kendra
 namespace Model
 {
 
-QuipConfiguration::QuipConfiguration() : 
-    m_domainHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_crawlFileComments(false),
-    m_crawlFileCommentsHasBeenSet(false),
-    m_crawlChatRooms(false),
-    m_crawlChatRoomsHasBeenSet(false),
-    m_crawlAttachments(false),
-    m_crawlAttachmentsHasBeenSet(false),
-    m_folderIdsHasBeenSet(false),
-    m_threadFieldMappingsHasBeenSet(false),
-    m_messageFieldMappingsHasBeenSet(false),
-    m_attachmentFieldMappingsHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
-{
-}
-
 QuipConfiguration::QuipConfiguration(JsonView jsonValue)
-  : QuipConfiguration()
 {
   *this = jsonValue;
 }
@@ -48,38 +28,28 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlFileComments"))
   {
     m_crawlFileComments = jsonValue.GetBool("CrawlFileComments");
-
     m_crawlFileCommentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlChatRooms"))
   {
     m_crawlChatRooms = jsonValue.GetBool("CrawlChatRooms");
-
     m_crawlChatRoomsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlAttachments"))
   {
     m_crawlAttachments = jsonValue.GetBool("CrawlAttachments");
-
     m_crawlAttachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FolderIds"))
   {
     Aws::Utils::Array<JsonView> folderIdsJsonList = jsonValue.GetArray("FolderIds");
@@ -89,7 +59,6 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
     }
     m_folderIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadFieldMappings"))
   {
     Aws::Utils::Array<JsonView> threadFieldMappingsJsonList = jsonValue.GetArray("ThreadFieldMappings");
@@ -99,7 +68,6 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
     }
     m_threadFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageFieldMappings"))
   {
     Aws::Utils::Array<JsonView> messageFieldMappingsJsonList = jsonValue.GetArray("MessageFieldMappings");
@@ -109,7 +77,6 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
     }
     m_messageFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentFieldMappings"))
   {
     Aws::Utils::Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
@@ -119,7 +86,6 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
     }
     m_attachmentFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -129,7 +95,6 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -139,14 +104,11 @@ QuipConfiguration& QuipConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

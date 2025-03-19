@@ -38,7 +38,7 @@ namespace Model
   class ContextEntry
   {
   public:
-    AWS_IAM_API ContextEntry();
+    AWS_IAM_API ContextEntry() = default;
     AWS_IAM_API ContextEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API ContextEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,12 @@ namespace Model
      * <p>The full name of a condition context key, including the service prefix. For
      * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
      */
-    inline const Aws::String& GetContextKeyName() const{ return m_contextKeyName; }
+    inline const Aws::String& GetContextKeyName() const { return m_contextKeyName; }
     inline bool ContextKeyNameHasBeenSet() const { return m_contextKeyNameHasBeenSet; }
-    inline void SetContextKeyName(const Aws::String& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
-    inline void SetContextKeyName(Aws::String&& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = std::move(value); }
-    inline void SetContextKeyName(const char* value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName.assign(value); }
-    inline ContextEntry& WithContextKeyName(const Aws::String& value) { SetContextKeyName(value); return *this;}
-    inline ContextEntry& WithContextKeyName(Aws::String&& value) { SetContextKeyName(std::move(value)); return *this;}
-    inline ContextEntry& WithContextKeyName(const char* value) { SetContextKeyName(value); return *this;}
+    template<typename ContextKeyNameT = Aws::String>
+    void SetContextKeyName(ContextKeyNameT&& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = std::forward<ContextKeyNameT>(value); }
+    template<typename ContextKeyNameT = Aws::String>
+    ContextEntry& WithContextKeyName(ContextKeyNameT&& value) { SetContextKeyName(std::forward<ContextKeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * to provide to the simulation when the key is referenced by a
      * <code>Condition</code> element in an input policy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContextKeyValues() const{ return m_contextKeyValues; }
+    inline const Aws::Vector<Aws::String>& GetContextKeyValues() const { return m_contextKeyValues; }
     inline bool ContextKeyValuesHasBeenSet() const { return m_contextKeyValuesHasBeenSet; }
-    inline void SetContextKeyValues(const Aws::Vector<Aws::String>& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = value; }
-    inline void SetContextKeyValues(Aws::Vector<Aws::String>&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = std::move(value); }
-    inline ContextEntry& WithContextKeyValues(const Aws::Vector<Aws::String>& value) { SetContextKeyValues(value); return *this;}
-    inline ContextEntry& WithContextKeyValues(Aws::Vector<Aws::String>&& value) { SetContextKeyValues(std::move(value)); return *this;}
-    inline ContextEntry& AddContextKeyValues(const Aws::String& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
-    inline ContextEntry& AddContextKeyValues(Aws::String&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(std::move(value)); return *this; }
-    inline ContextEntry& AddContextKeyValues(const char* value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
+    template<typename ContextKeyValuesT = Aws::Vector<Aws::String>>
+    void SetContextKeyValues(ContextKeyValuesT&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues = std::forward<ContextKeyValuesT>(value); }
+    template<typename ContextKeyValuesT = Aws::Vector<Aws::String>>
+    ContextEntry& WithContextKeyValues(ContextKeyValuesT&& value) { SetContextKeyValues(std::forward<ContextKeyValuesT>(value)); return *this;}
+    template<typename ContextKeyValuesT = Aws::String>
+    ContextEntry& AddContextKeyValues(ContextKeyValuesT&& value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.emplace_back(std::forward<ContextKeyValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,12 +80,10 @@ namespace Model
      * <p>The data type of the value (or values) specified in the
      * <code>ContextKeyValues</code> parameter.</p>
      */
-    inline const ContextKeyTypeEnum& GetContextKeyType() const{ return m_contextKeyType; }
+    inline ContextKeyTypeEnum GetContextKeyType() const { return m_contextKeyType; }
     inline bool ContextKeyTypeHasBeenSet() const { return m_contextKeyTypeHasBeenSet; }
-    inline void SetContextKeyType(const ContextKeyTypeEnum& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = value; }
-    inline void SetContextKeyType(ContextKeyTypeEnum&& value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = std::move(value); }
-    inline ContextEntry& WithContextKeyType(const ContextKeyTypeEnum& value) { SetContextKeyType(value); return *this;}
-    inline ContextEntry& WithContextKeyType(ContextKeyTypeEnum&& value) { SetContextKeyType(std::move(value)); return *this;}
+    inline void SetContextKeyType(ContextKeyTypeEnum value) { m_contextKeyTypeHasBeenSet = true; m_contextKeyType = value; }
+    inline ContextEntry& WithContextKeyType(ContextKeyTypeEnum value) { SetContextKeyType(value); return *this;}
     ///@}
   private:
 
@@ -98,7 +93,7 @@ namespace Model
     Aws::Vector<Aws::String> m_contextKeyValues;
     bool m_contextKeyValuesHasBeenSet = false;
 
-    ContextKeyTypeEnum m_contextKeyType;
+    ContextKeyTypeEnum m_contextKeyType{ContextKeyTypeEnum::NOT_SET};
     bool m_contextKeyTypeHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SMSMessageTemplateContentBody::SMSMessageTemplateContentBody() : 
-    m_plainTextHasBeenSet(false)
-{
-}
-
 SMSMessageTemplateContentBody::SMSMessageTemplateContentBody(JsonView jsonValue)
-  : SMSMessageTemplateContentBody()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SMSMessageTemplateContentBody& SMSMessageTemplateContentBody::operator =(JsonVie
   if(jsonValue.ValueExists("plainText"))
   {
     m_plainText = jsonValue.GetObject("plainText");
-
     m_plainTextHasBeenSet = true;
   }
-
   return *this;
 }
 

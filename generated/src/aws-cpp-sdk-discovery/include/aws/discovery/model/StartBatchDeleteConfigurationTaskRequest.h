@@ -23,7 +23,7 @@ namespace Model
   class StartBatchDeleteConfigurationTaskRequest : public ApplicationDiscoveryServiceRequest
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API StartBatchDeleteConfigurationTaskRequest();
+    AWS_APPLICATIONDISCOVERYSERVICE_API StartBatchDeleteConfigurationTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,31 +40,28 @@ namespace Model
     /**
      * <p> The type of configuration item to delete. Supported types are: SERVER. </p>
      */
-    inline const DeletionConfigurationItemType& GetConfigurationType() const{ return m_configurationType; }
+    inline DeletionConfigurationItemType GetConfigurationType() const { return m_configurationType; }
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
-    inline void SetConfigurationType(const DeletionConfigurationItemType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
-    inline void SetConfigurationType(DeletionConfigurationItemType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
-    inline StartBatchDeleteConfigurationTaskRequest& WithConfigurationType(const DeletionConfigurationItemType& value) { SetConfigurationType(value); return *this;}
-    inline StartBatchDeleteConfigurationTaskRequest& WithConfigurationType(DeletionConfigurationItemType&& value) { SetConfigurationType(std::move(value)); return *this;}
+    inline void SetConfigurationType(DeletionConfigurationItemType value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
+    inline StartBatchDeleteConfigurationTaskRequest& WithConfigurationType(DeletionConfigurationItemType value) { SetConfigurationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of configuration IDs that will be deleted by the task. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigurationIds() const{ return m_configurationIds; }
+    inline const Aws::Vector<Aws::String>& GetConfigurationIds() const { return m_configurationIds; }
     inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
-    inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
-    inline void SetConfigurationIds(Aws::Vector<Aws::String>&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = std::move(value); }
-    inline StartBatchDeleteConfigurationTaskRequest& WithConfigurationIds(const Aws::Vector<Aws::String>& value) { SetConfigurationIds(value); return *this;}
-    inline StartBatchDeleteConfigurationTaskRequest& WithConfigurationIds(Aws::Vector<Aws::String>&& value) { SetConfigurationIds(std::move(value)); return *this;}
-    inline StartBatchDeleteConfigurationTaskRequest& AddConfigurationIds(const Aws::String& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
-    inline StartBatchDeleteConfigurationTaskRequest& AddConfigurationIds(Aws::String&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(std::move(value)); return *this; }
-    inline StartBatchDeleteConfigurationTaskRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
+    template<typename ConfigurationIdsT = Aws::Vector<Aws::String>>
+    void SetConfigurationIds(ConfigurationIdsT&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = std::forward<ConfigurationIdsT>(value); }
+    template<typename ConfigurationIdsT = Aws::Vector<Aws::String>>
+    StartBatchDeleteConfigurationTaskRequest& WithConfigurationIds(ConfigurationIdsT&& value) { SetConfigurationIds(std::forward<ConfigurationIdsT>(value)); return *this;}
+    template<typename ConfigurationIdsT = Aws::String>
+    StartBatchDeleteConfigurationTaskRequest& AddConfigurationIds(ConfigurationIdsT&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.emplace_back(std::forward<ConfigurationIdsT>(value)); return *this; }
     ///@}
   private:
 
-    DeletionConfigurationItemType m_configurationType;
+    DeletionConfigurationItemType m_configurationType{DeletionConfigurationItemType::NOT_SET};
     bool m_configurationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_configurationIds;

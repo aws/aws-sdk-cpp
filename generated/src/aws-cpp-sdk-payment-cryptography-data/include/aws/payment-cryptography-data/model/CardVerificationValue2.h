@@ -32,7 +32,7 @@ namespace Model
   class CardVerificationValue2
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationValue2();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationValue2() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationValue2(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CardVerificationValue2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The expiry date of a payment card.</p>
      */
-    inline const Aws::String& GetCardExpiryDate() const{ return m_cardExpiryDate; }
+    inline const Aws::String& GetCardExpiryDate() const { return m_cardExpiryDate; }
     inline bool CardExpiryDateHasBeenSet() const { return m_cardExpiryDateHasBeenSet; }
-    inline void SetCardExpiryDate(const Aws::String& value) { m_cardExpiryDateHasBeenSet = true; m_cardExpiryDate = value; }
-    inline void SetCardExpiryDate(Aws::String&& value) { m_cardExpiryDateHasBeenSet = true; m_cardExpiryDate = std::move(value); }
-    inline void SetCardExpiryDate(const char* value) { m_cardExpiryDateHasBeenSet = true; m_cardExpiryDate.assign(value); }
-    inline CardVerificationValue2& WithCardExpiryDate(const Aws::String& value) { SetCardExpiryDate(value); return *this;}
-    inline CardVerificationValue2& WithCardExpiryDate(Aws::String&& value) { SetCardExpiryDate(std::move(value)); return *this;}
-    inline CardVerificationValue2& WithCardExpiryDate(const char* value) { SetCardExpiryDate(value); return *this;}
+    template<typename CardExpiryDateT = Aws::String>
+    void SetCardExpiryDate(CardExpiryDateT&& value) { m_cardExpiryDateHasBeenSet = true; m_cardExpiryDate = std::forward<CardExpiryDateT>(value); }
+    template<typename CardExpiryDateT = Aws::String>
+    CardVerificationValue2& WithCardExpiryDate(CardExpiryDateT&& value) { SetCardExpiryDate(std::forward<CardExpiryDateT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSupplementalTaxRegistrationsResult::ListSupplementalTaxRegistrationsResult()
-{
-}
-
 ListSupplementalTaxRegistrationsResult::ListSupplementalTaxRegistrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSupplementalTaxRegistrationsResult& ListSupplementalTaxRegistrationsResult::
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxRegistrations"))
   {
     Aws::Utils::Array<JsonView> taxRegistrationsJsonList = jsonValue.GetArray("taxRegistrations");
@@ -42,14 +37,15 @@ ListSupplementalTaxRegistrationsResult& ListSupplementalTaxRegistrationsResult::
     {
       m_taxRegistrations.push_back(taxRegistrationsJsonList[taxRegistrationsIndex].AsObject());
     }
+    m_taxRegistrationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

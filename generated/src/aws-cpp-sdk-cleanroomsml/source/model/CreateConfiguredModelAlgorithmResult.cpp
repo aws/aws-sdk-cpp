@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConfiguredModelAlgorithmResult::CreateConfiguredModelAlgorithmResult()
-{
-}
-
 CreateConfiguredModelAlgorithmResult::CreateConfiguredModelAlgorithmResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateConfiguredModelAlgorithmResult& CreateConfiguredModelAlgorithmResult::oper
   if(jsonValue.ValueExists("configuredModelAlgorithmArn"))
   {
     m_configuredModelAlgorithmArn = jsonValue.GetString("configuredModelAlgorithmArn");
-
+    m_configuredModelAlgorithmArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

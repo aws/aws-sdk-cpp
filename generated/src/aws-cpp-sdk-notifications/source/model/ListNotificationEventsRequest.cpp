@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNotificationEventsRequest::ListNotificationEventsRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_locale(LocaleCode::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_includeChildEvents(false),
-    m_includeChildEventsHasBeenSet(false),
-    m_aggregateNotificationEventArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListNotificationEventsRequest::SerializePayload() const
 {
   return {};

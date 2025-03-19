@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicaGlobalSecondaryIndexDescription::ReplicaGlobalSecondaryIndexDescription() : 
-    m_indexNameHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false)
-{
-}
-
 ReplicaGlobalSecondaryIndexDescription::ReplicaGlobalSecondaryIndexDescription(JsonView jsonValue)
-  : ReplicaGlobalSecondaryIndexDescription()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ReplicaGlobalSecondaryIndexDescription& ReplicaGlobalSecondaryIndexDescription::
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughputOverride"))
   {
     m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
-
     m_provisionedThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughputOverride"))
   {
     m_onDemandThroughputOverride = jsonValue.GetObject("OnDemandThroughputOverride");
-
     m_onDemandThroughputOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmThroughput"))
   {
     m_warmThroughput = jsonValue.GetObject("WarmThroughput");
-
     m_warmThroughputHasBeenSet = true;
   }
-
   return *this;
 }
 

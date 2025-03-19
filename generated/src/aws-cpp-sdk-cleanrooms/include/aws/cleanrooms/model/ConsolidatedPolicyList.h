@@ -35,7 +35,7 @@ namespace Model
   class ConsolidatedPolicyList
   {
   public:
-    AWS_CLEANROOMS_API ConsolidatedPolicyList();
+    AWS_CLEANROOMS_API ConsolidatedPolicyList() = default;
     AWS_CLEANROOMS_API ConsolidatedPolicyList(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConsolidatedPolicyList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,86 +45,79 @@ namespace Model
     /**
      * <p> The columns to join on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJoinColumns() const{ return m_joinColumns; }
+    inline const Aws::Vector<Aws::String>& GetJoinColumns() const { return m_joinColumns; }
     inline bool JoinColumnsHasBeenSet() const { return m_joinColumnsHasBeenSet; }
-    inline void SetJoinColumns(const Aws::Vector<Aws::String>& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = value; }
-    inline void SetJoinColumns(Aws::Vector<Aws::String>&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = std::move(value); }
-    inline ConsolidatedPolicyList& WithJoinColumns(const Aws::Vector<Aws::String>& value) { SetJoinColumns(value); return *this;}
-    inline ConsolidatedPolicyList& WithJoinColumns(Aws::Vector<Aws::String>&& value) { SetJoinColumns(std::move(value)); return *this;}
-    inline ConsolidatedPolicyList& AddJoinColumns(const Aws::String& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(value); return *this; }
-    inline ConsolidatedPolicyList& AddJoinColumns(Aws::String&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(std::move(value)); return *this; }
-    inline ConsolidatedPolicyList& AddJoinColumns(const char* value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(value); return *this; }
+    template<typename JoinColumnsT = Aws::Vector<Aws::String>>
+    void SetJoinColumns(JoinColumnsT&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = std::forward<JoinColumnsT>(value); }
+    template<typename JoinColumnsT = Aws::Vector<Aws::String>>
+    ConsolidatedPolicyList& WithJoinColumns(JoinColumnsT&& value) { SetJoinColumns(std::forward<JoinColumnsT>(value)); return *this;}
+    template<typename JoinColumnsT = Aws::String>
+    ConsolidatedPolicyList& AddJoinColumns(JoinColumnsT&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.emplace_back(std::forward<JoinColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The allowed join operators in the consolidated policy list.</p>
      */
-    inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const{ return m_allowedJoinOperators; }
+    inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const { return m_allowedJoinOperators; }
     inline bool AllowedJoinOperatorsHasBeenSet() const { return m_allowedJoinOperatorsHasBeenSet; }
-    inline void SetAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = value; }
-    inline void SetAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::move(value); }
-    inline ConsolidatedPolicyList& WithAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { SetAllowedJoinOperators(value); return *this;}
-    inline ConsolidatedPolicyList& WithAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { SetAllowedJoinOperators(std::move(value)); return *this;}
-    inline ConsolidatedPolicyList& AddAllowedJoinOperators(const JoinOperator& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
-    inline ConsolidatedPolicyList& AddAllowedJoinOperators(JoinOperator&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(std::move(value)); return *this; }
+    template<typename AllowedJoinOperatorsT = Aws::Vector<JoinOperator>>
+    void SetAllowedJoinOperators(AllowedJoinOperatorsT&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::forward<AllowedJoinOperatorsT>(value); }
+    template<typename AllowedJoinOperatorsT = Aws::Vector<JoinOperator>>
+    ConsolidatedPolicyList& WithAllowedJoinOperators(AllowedJoinOperatorsT&& value) { SetAllowedJoinOperators(std::forward<AllowedJoinOperatorsT>(value)); return *this;}
+    inline ConsolidatedPolicyList& AddAllowedJoinOperators(JoinOperator value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The columns in the consolidated policy list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetListColumns() const{ return m_listColumns; }
+    inline const Aws::Vector<Aws::String>& GetListColumns() const { return m_listColumns; }
     inline bool ListColumnsHasBeenSet() const { return m_listColumnsHasBeenSet; }
-    inline void SetListColumns(const Aws::Vector<Aws::String>& value) { m_listColumnsHasBeenSet = true; m_listColumns = value; }
-    inline void SetListColumns(Aws::Vector<Aws::String>&& value) { m_listColumnsHasBeenSet = true; m_listColumns = std::move(value); }
-    inline ConsolidatedPolicyList& WithListColumns(const Aws::Vector<Aws::String>& value) { SetListColumns(value); return *this;}
-    inline ConsolidatedPolicyList& WithListColumns(Aws::Vector<Aws::String>&& value) { SetListColumns(std::move(value)); return *this;}
-    inline ConsolidatedPolicyList& AddListColumns(const Aws::String& value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(value); return *this; }
-    inline ConsolidatedPolicyList& AddListColumns(Aws::String&& value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(std::move(value)); return *this; }
-    inline ConsolidatedPolicyList& AddListColumns(const char* value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(value); return *this; }
+    template<typename ListColumnsT = Aws::Vector<Aws::String>>
+    void SetListColumns(ListColumnsT&& value) { m_listColumnsHasBeenSet = true; m_listColumns = std::forward<ListColumnsT>(value); }
+    template<typename ListColumnsT = Aws::Vector<Aws::String>>
+    ConsolidatedPolicyList& WithListColumns(ListColumnsT&& value) { SetListColumns(std::forward<ListColumnsT>(value)); return *this;}
+    template<typename ListColumnsT = Aws::String>
+    ConsolidatedPolicyList& AddListColumns(ListColumnsT&& value) { m_listColumnsHasBeenSet = true; m_listColumns.emplace_back(std::forward<ListColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Additional analyses for the consolidated policy list.</p>
      */
-    inline const AdditionalAnalyses& GetAdditionalAnalyses() const{ return m_additionalAnalyses; }
+    inline AdditionalAnalyses GetAdditionalAnalyses() const { return m_additionalAnalyses; }
     inline bool AdditionalAnalysesHasBeenSet() const { return m_additionalAnalysesHasBeenSet; }
-    inline void SetAdditionalAnalyses(const AdditionalAnalyses& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
-    inline void SetAdditionalAnalyses(AdditionalAnalyses&& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = std::move(value); }
-    inline ConsolidatedPolicyList& WithAdditionalAnalyses(const AdditionalAnalyses& value) { SetAdditionalAnalyses(value); return *this;}
-    inline ConsolidatedPolicyList& WithAdditionalAnalyses(AdditionalAnalyses&& value) { SetAdditionalAnalyses(std::move(value)); return *this;}
+    inline void SetAdditionalAnalyses(AdditionalAnalyses value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
+    inline ConsolidatedPolicyList& WithAdditionalAnalyses(AdditionalAnalyses value) { SetAdditionalAnalyses(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The allowed result receivers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedResultReceivers() const{ return m_allowedResultReceivers; }
+    inline const Aws::Vector<Aws::String>& GetAllowedResultReceivers() const { return m_allowedResultReceivers; }
     inline bool AllowedResultReceiversHasBeenSet() const { return m_allowedResultReceiversHasBeenSet; }
-    inline void SetAllowedResultReceivers(const Aws::Vector<Aws::String>& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers = value; }
-    inline void SetAllowedResultReceivers(Aws::Vector<Aws::String>&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers = std::move(value); }
-    inline ConsolidatedPolicyList& WithAllowedResultReceivers(const Aws::Vector<Aws::String>& value) { SetAllowedResultReceivers(value); return *this;}
-    inline ConsolidatedPolicyList& WithAllowedResultReceivers(Aws::Vector<Aws::String>&& value) { SetAllowedResultReceivers(std::move(value)); return *this;}
-    inline ConsolidatedPolicyList& AddAllowedResultReceivers(const Aws::String& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.push_back(value); return *this; }
-    inline ConsolidatedPolicyList& AddAllowedResultReceivers(Aws::String&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.push_back(std::move(value)); return *this; }
-    inline ConsolidatedPolicyList& AddAllowedResultReceivers(const char* value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.push_back(value); return *this; }
+    template<typename AllowedResultReceiversT = Aws::Vector<Aws::String>>
+    void SetAllowedResultReceivers(AllowedResultReceiversT&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers = std::forward<AllowedResultReceiversT>(value); }
+    template<typename AllowedResultReceiversT = Aws::Vector<Aws::String>>
+    ConsolidatedPolicyList& WithAllowedResultReceivers(AllowedResultReceiversT&& value) { SetAllowedResultReceivers(std::forward<AllowedResultReceiversT>(value)); return *this;}
+    template<typename AllowedResultReceiversT = Aws::String>
+    ConsolidatedPolicyList& AddAllowedResultReceivers(AllowedResultReceiversT&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.emplace_back(std::forward<AllowedResultReceiversT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The additional analyses allowed by the consolidated policy list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedAdditionalAnalyses() const{ return m_allowedAdditionalAnalyses; }
+    inline const Aws::Vector<Aws::String>& GetAllowedAdditionalAnalyses() const { return m_allowedAdditionalAnalyses; }
     inline bool AllowedAdditionalAnalysesHasBeenSet() const { return m_allowedAdditionalAnalysesHasBeenSet; }
-    inline void SetAllowedAdditionalAnalyses(const Aws::Vector<Aws::String>& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses = value; }
-    inline void SetAllowedAdditionalAnalyses(Aws::Vector<Aws::String>&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses = std::move(value); }
-    inline ConsolidatedPolicyList& WithAllowedAdditionalAnalyses(const Aws::Vector<Aws::String>& value) { SetAllowedAdditionalAnalyses(value); return *this;}
-    inline ConsolidatedPolicyList& WithAllowedAdditionalAnalyses(Aws::Vector<Aws::String>&& value) { SetAllowedAdditionalAnalyses(std::move(value)); return *this;}
-    inline ConsolidatedPolicyList& AddAllowedAdditionalAnalyses(const Aws::String& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.push_back(value); return *this; }
-    inline ConsolidatedPolicyList& AddAllowedAdditionalAnalyses(Aws::String&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.push_back(std::move(value)); return *this; }
-    inline ConsolidatedPolicyList& AddAllowedAdditionalAnalyses(const char* value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.push_back(value); return *this; }
+    template<typename AllowedAdditionalAnalysesT = Aws::Vector<Aws::String>>
+    void SetAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses = std::forward<AllowedAdditionalAnalysesT>(value); }
+    template<typename AllowedAdditionalAnalysesT = Aws::Vector<Aws::String>>
+    ConsolidatedPolicyList& WithAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) { SetAllowedAdditionalAnalyses(std::forward<AllowedAdditionalAnalysesT>(value)); return *this;}
+    template<typename AllowedAdditionalAnalysesT = Aws::String>
+    ConsolidatedPolicyList& AddAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.emplace_back(std::forward<AllowedAdditionalAnalysesT>(value)); return *this; }
     ///@}
   private:
 
@@ -137,7 +130,7 @@ namespace Model
     Aws::Vector<Aws::String> m_listColumns;
     bool m_listColumnsHasBeenSet = false;
 
-    AdditionalAnalyses m_additionalAnalyses;
+    AdditionalAnalyses m_additionalAnalyses{AdditionalAnalyses::NOT_SET};
     bool m_additionalAnalysesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedResultReceivers;

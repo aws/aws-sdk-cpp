@@ -18,22 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ComputeLimits::ComputeLimits() : 
-    m_unitType(ComputeLimitsUnitType::NOT_SET),
-    m_unitTypeHasBeenSet(false),
-    m_minimumCapacityUnits(0),
-    m_minimumCapacityUnitsHasBeenSet(false),
-    m_maximumCapacityUnits(0),
-    m_maximumCapacityUnitsHasBeenSet(false),
-    m_maximumOnDemandCapacityUnits(0),
-    m_maximumOnDemandCapacityUnitsHasBeenSet(false),
-    m_maximumCoreCapacityUnits(0),
-    m_maximumCoreCapacityUnitsHasBeenSet(false)
-{
-}
-
 ComputeLimits::ComputeLimits(JsonView jsonValue)
-  : ComputeLimits()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ComputeLimits& ComputeLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UnitType"))
   {
     m_unitType = ComputeLimitsUnitTypeMapper::GetComputeLimitsUnitTypeForName(jsonValue.GetString("UnitType"));
-
     m_unitTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumCapacityUnits"))
   {
     m_minimumCapacityUnits = jsonValue.GetInteger("MinimumCapacityUnits");
-
     m_minimumCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumCapacityUnits"))
   {
     m_maximumCapacityUnits = jsonValue.GetInteger("MaximumCapacityUnits");
-
     m_maximumCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumOnDemandCapacityUnits"))
   {
     m_maximumOnDemandCapacityUnits = jsonValue.GetInteger("MaximumOnDemandCapacityUnits");
-
     m_maximumOnDemandCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumCoreCapacityUnits"))
   {
     m_maximumCoreCapacityUnits = jsonValue.GetInteger("MaximumCoreCapacityUnits");
-
     m_maximumCoreCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

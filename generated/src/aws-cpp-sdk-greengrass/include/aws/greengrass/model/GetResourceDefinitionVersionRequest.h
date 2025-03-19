@@ -21,7 +21,7 @@ namespace Model
   class GetResourceDefinitionVersionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API GetResourceDefinitionVersionRequest();
+    AWS_GREENGRASS_API GetResourceDefinitionVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the resource definition.
      */
-    inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
+    inline const Aws::String& GetResourceDefinitionId() const { return m_resourceDefinitionId; }
     inline bool ResourceDefinitionIdHasBeenSet() const { return m_resourceDefinitionIdHasBeenSet; }
-    inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
-    inline void SetResourceDefinitionId(Aws::String&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::move(value); }
-    inline void SetResourceDefinitionId(const char* value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId.assign(value); }
-    inline GetResourceDefinitionVersionRequest& WithResourceDefinitionId(const Aws::String& value) { SetResourceDefinitionId(value); return *this;}
-    inline GetResourceDefinitionVersionRequest& WithResourceDefinitionId(Aws::String&& value) { SetResourceDefinitionId(std::move(value)); return *this;}
-    inline GetResourceDefinitionVersionRequest& WithResourceDefinitionId(const char* value) { SetResourceDefinitionId(value); return *this;}
+    template<typename ResourceDefinitionIdT = Aws::String>
+    void SetResourceDefinitionId(ResourceDefinitionIdT&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::forward<ResourceDefinitionIdT>(value); }
+    template<typename ResourceDefinitionIdT = Aws::String>
+    GetResourceDefinitionVersionRequest& WithResourceDefinitionId(ResourceDefinitionIdT&& value) { SetResourceDefinitionId(std::forward<ResourceDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * ''LatestVersion'' property of the corresponding ''DefinitionInformation''
      * object.
      */
-    inline const Aws::String& GetResourceDefinitionVersionId() const{ return m_resourceDefinitionVersionId; }
+    inline const Aws::String& GetResourceDefinitionVersionId() const { return m_resourceDefinitionVersionId; }
     inline bool ResourceDefinitionVersionIdHasBeenSet() const { return m_resourceDefinitionVersionIdHasBeenSet; }
-    inline void SetResourceDefinitionVersionId(const Aws::String& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = value; }
-    inline void SetResourceDefinitionVersionId(Aws::String&& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = std::move(value); }
-    inline void SetResourceDefinitionVersionId(const char* value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId.assign(value); }
-    inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(const Aws::String& value) { SetResourceDefinitionVersionId(value); return *this;}
-    inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(Aws::String&& value) { SetResourceDefinitionVersionId(std::move(value)); return *this;}
-    inline GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(const char* value) { SetResourceDefinitionVersionId(value); return *this;}
+    template<typename ResourceDefinitionVersionIdT = Aws::String>
+    void SetResourceDefinitionVersionId(ResourceDefinitionVersionIdT&& value) { m_resourceDefinitionVersionIdHasBeenSet = true; m_resourceDefinitionVersionId = std::forward<ResourceDefinitionVersionIdT>(value); }
+    template<typename ResourceDefinitionVersionIdT = Aws::String>
+    GetResourceDefinitionVersionRequest& WithResourceDefinitionVersionId(ResourceDefinitionVersionIdT&& value) { SetResourceDefinitionVersionId(std::forward<ResourceDefinitionVersionIdT>(value)); return *this;}
     ///@}
   private:
 

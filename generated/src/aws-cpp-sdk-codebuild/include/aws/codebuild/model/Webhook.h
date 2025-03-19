@@ -38,7 +38,7 @@ namespace Model
   class Webhook
   {
   public:
-    AWS_CODEBUILD_API Webhook();
+    AWS_CODEBUILD_API Webhook() = default;
     AWS_CODEBUILD_API Webhook(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The URL to the webhook.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline Webhook& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline Webhook& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline Webhook& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Webhook& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CodeBuild endpoint where webhook events are sent.</p>
      */
-    inline const Aws::String& GetPayloadUrl() const{ return m_payloadUrl; }
+    inline const Aws::String& GetPayloadUrl() const { return m_payloadUrl; }
     inline bool PayloadUrlHasBeenSet() const { return m_payloadUrlHasBeenSet; }
-    inline void SetPayloadUrl(const Aws::String& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = value; }
-    inline void SetPayloadUrl(Aws::String&& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = std::move(value); }
-    inline void SetPayloadUrl(const char* value) { m_payloadUrlHasBeenSet = true; m_payloadUrl.assign(value); }
-    inline Webhook& WithPayloadUrl(const Aws::String& value) { SetPayloadUrl(value); return *this;}
-    inline Webhook& WithPayloadUrl(Aws::String&& value) { SetPayloadUrl(std::move(value)); return *this;}
-    inline Webhook& WithPayloadUrl(const char* value) { SetPayloadUrl(value); return *this;}
+    template<typename PayloadUrlT = Aws::String>
+    void SetPayloadUrl(PayloadUrlT&& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = std::forward<PayloadUrlT>(value); }
+    template<typename PayloadUrlT = Aws::String>
+    Webhook& WithPayloadUrl(PayloadUrlT&& value) { SetPayloadUrl(std::forward<PayloadUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <p>The secret token of the associated repository. </p>  <p>A Bitbucket
      * webhook does not support <code>secret</code>. </p> 
      */
-    inline const Aws::String& GetSecret() const{ return m_secret; }
+    inline const Aws::String& GetSecret() const { return m_secret; }
     inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
-    inline void SetSecret(const Aws::String& value) { m_secretHasBeenSet = true; m_secret = value; }
-    inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = std::move(value); }
-    inline void SetSecret(const char* value) { m_secretHasBeenSet = true; m_secret.assign(value); }
-    inline Webhook& WithSecret(const Aws::String& value) { SetSecret(value); return *this;}
-    inline Webhook& WithSecret(Aws::String&& value) { SetSecret(std::move(value)); return *this;}
-    inline Webhook& WithSecret(const char* value) { SetSecret(value); return *this;}
+    template<typename SecretT = Aws::String>
+    void SetSecret(SecretT&& value) { m_secretHasBeenSet = true; m_secret = std::forward<SecretT>(value); }
+    template<typename SecretT = Aws::String>
+    Webhook& WithSecret(SecretT&& value) { SetSecret(std::forward<SecretT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * branches are built.</p>  <p>It is recommended that you use
      * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
-    inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
+    inline const Aws::String& GetBranchFilter() const { return m_branchFilter; }
     inline bool BranchFilterHasBeenSet() const { return m_branchFilterHasBeenSet; }
-    inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
-    inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
-    inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
-    inline Webhook& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
-    inline Webhook& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
-    inline Webhook& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
+    template<typename BranchFilterT = Aws::String>
+    void SetBranchFilter(BranchFilterT&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::forward<BranchFilterT>(value); }
+    template<typename BranchFilterT = Aws::String>
+    Webhook& WithBranchFilter(BranchFilterT&& value) { SetBranchFilter(std::forward<BranchFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +106,14 @@ namespace Model
      * <code>filterGroups</code> array must pass. For a filter group to pass, each of
      * its filters must pass. </p>
      */
-    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const{ return m_filterGroups; }
+    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const { return m_filterGroups; }
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
-    inline void SetFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
-    inline void SetFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
-    inline Webhook& WithFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { SetFilterGroups(value); return *this;}
-    inline Webhook& WithFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { SetFilterGroups(std::move(value)); return *this;}
-    inline Webhook& AddFilterGroups(const Aws::Vector<WebhookFilter>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
-    inline Webhook& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
+    template<typename FilterGroupsT = Aws::Vector<Aws::Vector<WebhookFilter>>>
+    void SetFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::forward<FilterGroupsT>(value); }
+    template<typename FilterGroupsT = Aws::Vector<Aws::Vector<WebhookFilter>>>
+    Webhook& WithFilterGroups(FilterGroupsT&& value) { SetFilterGroups(std::forward<FilterGroupsT>(value)); return *this;}
+    template<typename FilterGroupsT = Aws::Vector<WebhookFilter>>
+    Webhook& AddFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.emplace_back(std::forward<FilterGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,12 +126,10 @@ namespace Model
      * Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user
      * guide</i>.</p> 
      */
-    inline const WebhookBuildType& GetBuildType() const{ return m_buildType; }
+    inline WebhookBuildType GetBuildType() const { return m_buildType; }
     inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
-    inline void SetBuildType(const WebhookBuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
-    inline void SetBuildType(WebhookBuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
-    inline Webhook& WithBuildType(const WebhookBuildType& value) { SetBuildType(value); return *this;}
-    inline Webhook& WithBuildType(WebhookBuildType&& value) { SetBuildType(std::move(value)); return *this;}
+    inline void SetBuildType(WebhookBuildType value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+    inline Webhook& WithBuildType(WebhookBuildType value) { SetBuildType(value); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +140,7 @@ namespace Model
      * output can be used to manually create a webhook within GitHub.</p> 
      * <p>manualCreation is only available for GitHub webhooks.</p> 
      */
-    inline bool GetManualCreation() const{ return m_manualCreation; }
+    inline bool GetManualCreation() const { return m_manualCreation; }
     inline bool ManualCreationHasBeenSet() const { return m_manualCreationHasBeenSet; }
     inline void SetManualCreation(bool value) { m_manualCreationHasBeenSet = true; m_manualCreation = value; }
     inline Webhook& WithManualCreation(bool value) { SetManualCreation(value); return *this;}
@@ -161,12 +151,12 @@ namespace Model
      * <p>A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedSecret() const{ return m_lastModifiedSecret; }
+    inline const Aws::Utils::DateTime& GetLastModifiedSecret() const { return m_lastModifiedSecret; }
     inline bool LastModifiedSecretHasBeenSet() const { return m_lastModifiedSecretHasBeenSet; }
-    inline void SetLastModifiedSecret(const Aws::Utils::DateTime& value) { m_lastModifiedSecretHasBeenSet = true; m_lastModifiedSecret = value; }
-    inline void SetLastModifiedSecret(Aws::Utils::DateTime&& value) { m_lastModifiedSecretHasBeenSet = true; m_lastModifiedSecret = std::move(value); }
-    inline Webhook& WithLastModifiedSecret(const Aws::Utils::DateTime& value) { SetLastModifiedSecret(value); return *this;}
-    inline Webhook& WithLastModifiedSecret(Aws::Utils::DateTime&& value) { SetLastModifiedSecret(std::move(value)); return *this;}
+    template<typename LastModifiedSecretT = Aws::Utils::DateTime>
+    void SetLastModifiedSecret(LastModifiedSecretT&& value) { m_lastModifiedSecretHasBeenSet = true; m_lastModifiedSecret = std::forward<LastModifiedSecretT>(value); }
+    template<typename LastModifiedSecretT = Aws::Utils::DateTime>
+    Webhook& WithLastModifiedSecret(LastModifiedSecretT&& value) { SetLastModifiedSecret(std::forward<LastModifiedSecretT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,12 +165,12 @@ namespace Model
      * <p>Global or organization webhooks are only available for GitHub and Github
      * Enterprise webhooks.</p> 
      */
-    inline const ScopeConfiguration& GetScopeConfiguration() const{ return m_scopeConfiguration; }
+    inline const ScopeConfiguration& GetScopeConfiguration() const { return m_scopeConfiguration; }
     inline bool ScopeConfigurationHasBeenSet() const { return m_scopeConfigurationHasBeenSet; }
-    inline void SetScopeConfiguration(const ScopeConfiguration& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = value; }
-    inline void SetScopeConfiguration(ScopeConfiguration&& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = std::move(value); }
-    inline Webhook& WithScopeConfiguration(const ScopeConfiguration& value) { SetScopeConfiguration(value); return *this;}
-    inline Webhook& WithScopeConfiguration(ScopeConfiguration&& value) { SetScopeConfiguration(std::move(value)); return *this;}
+    template<typename ScopeConfigurationT = ScopeConfiguration>
+    void SetScopeConfiguration(ScopeConfigurationT&& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = std::forward<ScopeConfigurationT>(value); }
+    template<typename ScopeConfigurationT = ScopeConfiguration>
+    Webhook& WithScopeConfiguration(ScopeConfigurationT&& value) { SetScopeConfiguration(std::forward<ScopeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,26 +181,22 @@ namespace Model
      * <code>ACTIVE</code>: The webhook has succeeded and is active.</p> </li> <li> <p>
      * <code>DELETING</code>: The webhook is being deleted.</p> </li> </ul>
      */
-    inline const WebhookStatus& GetStatus() const{ return m_status; }
+    inline WebhookStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WebhookStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WebhookStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Webhook& WithStatus(const WebhookStatus& value) { SetStatus(value); return *this;}
-    inline Webhook& WithStatus(WebhookStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WebhookStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Webhook& WithStatus(WebhookStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message associated with the status of a webhook.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline Webhook& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline Webhook& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline Webhook& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    Webhook& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -229,19 +215,19 @@ namespace Model
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
     bool m_filterGroupsHasBeenSet = false;
 
-    WebhookBuildType m_buildType;
+    WebhookBuildType m_buildType{WebhookBuildType::NOT_SET};
     bool m_buildTypeHasBeenSet = false;
 
-    bool m_manualCreation;
+    bool m_manualCreation{false};
     bool m_manualCreationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedSecret;
+    Aws::Utils::DateTime m_lastModifiedSecret{};
     bool m_lastModifiedSecretHasBeenSet = false;
 
     ScopeConfiguration m_scopeConfiguration;
     bool m_scopeConfigurationHasBeenSet = false;
 
-    WebhookStatus m_status;
+    WebhookStatus m_status{WebhookStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

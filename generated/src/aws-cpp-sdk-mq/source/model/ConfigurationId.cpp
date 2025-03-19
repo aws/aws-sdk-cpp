@@ -18,15 +18,7 @@ namespace MQ
 namespace Model
 {
 
-ConfigurationId::ConfigurationId() : 
-    m_idHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
-{
-}
-
 ConfigurationId::ConfigurationId(JsonView jsonValue)
-  : ConfigurationId()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConfigurationId& ConfigurationId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInteger("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

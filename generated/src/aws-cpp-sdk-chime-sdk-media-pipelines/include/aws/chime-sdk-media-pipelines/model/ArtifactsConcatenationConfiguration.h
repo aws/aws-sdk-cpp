@@ -38,7 +38,7 @@ namespace Model
   class ArtifactsConcatenationConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConcatenationConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API ArtifactsConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,84 +48,84 @@ namespace Model
     /**
      * <p>The configuration for the audio artifacts concatenation.</p>
      */
-    inline const AudioConcatenationConfiguration& GetAudio() const{ return m_audio; }
+    inline const AudioConcatenationConfiguration& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioConcatenationConfiguration& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioConcatenationConfiguration&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithAudio(const AudioConcatenationConfiguration& value) { SetAudio(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithAudio(AudioConcatenationConfiguration&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioConcatenationConfiguration>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the video artifacts concatenation.</p>
      */
-    inline const VideoConcatenationConfiguration& GetVideo() const{ return m_video; }
+    inline const VideoConcatenationConfiguration& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoConcatenationConfiguration& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoConcatenationConfiguration&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithVideo(const VideoConcatenationConfiguration& value) { SetVideo(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithVideo(VideoConcatenationConfiguration&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = VideoConcatenationConfiguration>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = VideoConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the content artifacts concatenation.</p>
      */
-    inline const ContentConcatenationConfiguration& GetContent() const{ return m_content; }
+    inline const ContentConcatenationConfiguration& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const ContentConcatenationConfiguration& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(ContentConcatenationConfiguration&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithContent(const ContentConcatenationConfiguration& value) { SetContent(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithContent(ContentConcatenationConfiguration&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = ContentConcatenationConfiguration>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = ContentConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the data channel artifacts concatenation.</p>
      */
-    inline const DataChannelConcatenationConfiguration& GetDataChannel() const{ return m_dataChannel; }
+    inline const DataChannelConcatenationConfiguration& GetDataChannel() const { return m_dataChannel; }
     inline bool DataChannelHasBeenSet() const { return m_dataChannelHasBeenSet; }
-    inline void SetDataChannel(const DataChannelConcatenationConfiguration& value) { m_dataChannelHasBeenSet = true; m_dataChannel = value; }
-    inline void SetDataChannel(DataChannelConcatenationConfiguration&& value) { m_dataChannelHasBeenSet = true; m_dataChannel = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithDataChannel(const DataChannelConcatenationConfiguration& value) { SetDataChannel(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithDataChannel(DataChannelConcatenationConfiguration&& value) { SetDataChannel(std::move(value)); return *this;}
+    template<typename DataChannelT = DataChannelConcatenationConfiguration>
+    void SetDataChannel(DataChannelT&& value) { m_dataChannelHasBeenSet = true; m_dataChannel = std::forward<DataChannelT>(value); }
+    template<typename DataChannelT = DataChannelConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithDataChannel(DataChannelT&& value) { SetDataChannel(std::forward<DataChannelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the transcription messages artifacts concatenation.</p>
      */
-    inline const TranscriptionMessagesConcatenationConfiguration& GetTranscriptionMessages() const{ return m_transcriptionMessages; }
+    inline const TranscriptionMessagesConcatenationConfiguration& GetTranscriptionMessages() const { return m_transcriptionMessages; }
     inline bool TranscriptionMessagesHasBeenSet() const { return m_transcriptionMessagesHasBeenSet; }
-    inline void SetTranscriptionMessages(const TranscriptionMessagesConcatenationConfiguration& value) { m_transcriptionMessagesHasBeenSet = true; m_transcriptionMessages = value; }
-    inline void SetTranscriptionMessages(TranscriptionMessagesConcatenationConfiguration&& value) { m_transcriptionMessagesHasBeenSet = true; m_transcriptionMessages = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithTranscriptionMessages(const TranscriptionMessagesConcatenationConfiguration& value) { SetTranscriptionMessages(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithTranscriptionMessages(TranscriptionMessagesConcatenationConfiguration&& value) { SetTranscriptionMessages(std::move(value)); return *this;}
+    template<typename TranscriptionMessagesT = TranscriptionMessagesConcatenationConfiguration>
+    void SetTranscriptionMessages(TranscriptionMessagesT&& value) { m_transcriptionMessagesHasBeenSet = true; m_transcriptionMessages = std::forward<TranscriptionMessagesT>(value); }
+    template<typename TranscriptionMessagesT = TranscriptionMessagesConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithTranscriptionMessages(TranscriptionMessagesT&& value) { SetTranscriptionMessages(std::forward<TranscriptionMessagesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the meeting events artifacts concatenation.</p>
      */
-    inline const MeetingEventsConcatenationConfiguration& GetMeetingEvents() const{ return m_meetingEvents; }
+    inline const MeetingEventsConcatenationConfiguration& GetMeetingEvents() const { return m_meetingEvents; }
     inline bool MeetingEventsHasBeenSet() const { return m_meetingEventsHasBeenSet; }
-    inline void SetMeetingEvents(const MeetingEventsConcatenationConfiguration& value) { m_meetingEventsHasBeenSet = true; m_meetingEvents = value; }
-    inline void SetMeetingEvents(MeetingEventsConcatenationConfiguration&& value) { m_meetingEventsHasBeenSet = true; m_meetingEvents = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithMeetingEvents(const MeetingEventsConcatenationConfiguration& value) { SetMeetingEvents(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithMeetingEvents(MeetingEventsConcatenationConfiguration&& value) { SetMeetingEvents(std::move(value)); return *this;}
+    template<typename MeetingEventsT = MeetingEventsConcatenationConfiguration>
+    void SetMeetingEvents(MeetingEventsT&& value) { m_meetingEventsHasBeenSet = true; m_meetingEvents = std::forward<MeetingEventsT>(value); }
+    template<typename MeetingEventsT = MeetingEventsConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithMeetingEvents(MeetingEventsT&& value) { SetMeetingEvents(std::forward<MeetingEventsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the composited video artifacts concatenation.</p>
      */
-    inline const CompositedVideoConcatenationConfiguration& GetCompositedVideo() const{ return m_compositedVideo; }
+    inline const CompositedVideoConcatenationConfiguration& GetCompositedVideo() const { return m_compositedVideo; }
     inline bool CompositedVideoHasBeenSet() const { return m_compositedVideoHasBeenSet; }
-    inline void SetCompositedVideo(const CompositedVideoConcatenationConfiguration& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = value; }
-    inline void SetCompositedVideo(CompositedVideoConcatenationConfiguration&& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = std::move(value); }
-    inline ArtifactsConcatenationConfiguration& WithCompositedVideo(const CompositedVideoConcatenationConfiguration& value) { SetCompositedVideo(value); return *this;}
-    inline ArtifactsConcatenationConfiguration& WithCompositedVideo(CompositedVideoConcatenationConfiguration&& value) { SetCompositedVideo(std::move(value)); return *this;}
+    template<typename CompositedVideoT = CompositedVideoConcatenationConfiguration>
+    void SetCompositedVideo(CompositedVideoT&& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = std::forward<CompositedVideoT>(value); }
+    template<typename CompositedVideoT = CompositedVideoConcatenationConfiguration>
+    ArtifactsConcatenationConfiguration& WithCompositedVideo(CompositedVideoT&& value) { SetCompositedVideo(std::forward<CompositedVideoT>(value)); return *this;}
     ///@}
   private:
 

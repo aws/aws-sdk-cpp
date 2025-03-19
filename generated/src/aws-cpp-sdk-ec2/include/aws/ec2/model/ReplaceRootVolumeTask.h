@@ -35,7 +35,7 @@ namespace Model
   class ReplaceRootVolumeTask
   {
   public:
-    AWS_EC2_API ReplaceRootVolumeTask();
+    AWS_EC2_API ReplaceRootVolumeTask() = default;
     AWS_EC2_API ReplaceRootVolumeTask(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ReplaceRootVolumeTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The ID of the root volume replacement task.</p>
      */
-    inline const Aws::String& GetReplaceRootVolumeTaskId() const{ return m_replaceRootVolumeTaskId; }
+    inline const Aws::String& GetReplaceRootVolumeTaskId() const { return m_replaceRootVolumeTaskId; }
     inline bool ReplaceRootVolumeTaskIdHasBeenSet() const { return m_replaceRootVolumeTaskIdHasBeenSet; }
-    inline void SetReplaceRootVolumeTaskId(const Aws::String& value) { m_replaceRootVolumeTaskIdHasBeenSet = true; m_replaceRootVolumeTaskId = value; }
-    inline void SetReplaceRootVolumeTaskId(Aws::String&& value) { m_replaceRootVolumeTaskIdHasBeenSet = true; m_replaceRootVolumeTaskId = std::move(value); }
-    inline void SetReplaceRootVolumeTaskId(const char* value) { m_replaceRootVolumeTaskIdHasBeenSet = true; m_replaceRootVolumeTaskId.assign(value); }
-    inline ReplaceRootVolumeTask& WithReplaceRootVolumeTaskId(const Aws::String& value) { SetReplaceRootVolumeTaskId(value); return *this;}
-    inline ReplaceRootVolumeTask& WithReplaceRootVolumeTaskId(Aws::String&& value) { SetReplaceRootVolumeTaskId(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& WithReplaceRootVolumeTaskId(const char* value) { SetReplaceRootVolumeTaskId(value); return *this;}
+    template<typename ReplaceRootVolumeTaskIdT = Aws::String>
+    void SetReplaceRootVolumeTaskId(ReplaceRootVolumeTaskIdT&& value) { m_replaceRootVolumeTaskIdHasBeenSet = true; m_replaceRootVolumeTaskId = std::forward<ReplaceRootVolumeTaskIdT>(value); }
+    template<typename ReplaceRootVolumeTaskIdT = Aws::String>
+    ReplaceRootVolumeTask& WithReplaceRootVolumeTaskId(ReplaceRootVolumeTaskIdT&& value) { SetReplaceRootVolumeTaskId(std::forward<ReplaceRootVolumeTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The ID of the instance for which the root volume replacement task was
      * created.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ReplaceRootVolumeTask& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ReplaceRootVolumeTask& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ReplaceRootVolumeTask& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,82 +84,72 @@ namespace Model
      * <code>failed-detached</code> - the replacement task has failed and the instance
      * has no root volume attached.</p> </li> </ul>
      */
-    inline const ReplaceRootVolumeTaskState& GetTaskState() const{ return m_taskState; }
+    inline ReplaceRootVolumeTaskState GetTaskState() const { return m_taskState; }
     inline bool TaskStateHasBeenSet() const { return m_taskStateHasBeenSet; }
-    inline void SetTaskState(const ReplaceRootVolumeTaskState& value) { m_taskStateHasBeenSet = true; m_taskState = value; }
-    inline void SetTaskState(ReplaceRootVolumeTaskState&& value) { m_taskStateHasBeenSet = true; m_taskState = std::move(value); }
-    inline ReplaceRootVolumeTask& WithTaskState(const ReplaceRootVolumeTaskState& value) { SetTaskState(value); return *this;}
-    inline ReplaceRootVolumeTask& WithTaskState(ReplaceRootVolumeTaskState&& value) { SetTaskState(std::move(value)); return *this;}
+    inline void SetTaskState(ReplaceRootVolumeTaskState value) { m_taskStateHasBeenSet = true; m_taskState = value; }
+    inline ReplaceRootVolumeTask& WithTaskState(ReplaceRootVolumeTaskState value) { SetTaskState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the task was started.</p>
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline ReplaceRootVolumeTask& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline ReplaceRootVolumeTask& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    ReplaceRootVolumeTask& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the task completed.</p>
      */
-    inline const Aws::String& GetCompleteTime() const{ return m_completeTime; }
+    inline const Aws::String& GetCompleteTime() const { return m_completeTime; }
     inline bool CompleteTimeHasBeenSet() const { return m_completeTimeHasBeenSet; }
-    inline void SetCompleteTime(const Aws::String& value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
-    inline void SetCompleteTime(Aws::String&& value) { m_completeTimeHasBeenSet = true; m_completeTime = std::move(value); }
-    inline void SetCompleteTime(const char* value) { m_completeTimeHasBeenSet = true; m_completeTime.assign(value); }
-    inline ReplaceRootVolumeTask& WithCompleteTime(const Aws::String& value) { SetCompleteTime(value); return *this;}
-    inline ReplaceRootVolumeTask& WithCompleteTime(Aws::String&& value) { SetCompleteTime(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& WithCompleteTime(const char* value) { SetCompleteTime(value); return *this;}
+    template<typename CompleteTimeT = Aws::String>
+    void SetCompleteTime(CompleteTimeT&& value) { m_completeTimeHasBeenSet = true; m_completeTime = std::forward<CompleteTimeT>(value); }
+    template<typename CompleteTimeT = Aws::String>
+    ReplaceRootVolumeTask& WithCompleteTime(CompleteTimeT&& value) { SetCompleteTime(std::forward<CompleteTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the task.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ReplaceRootVolumeTask& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ReplaceRootVolumeTask& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ReplaceRootVolumeTask& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ReplaceRootVolumeTask& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ReplaceRootVolumeTask& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the AMI used to create the replacement root volume.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline ReplaceRootVolumeTask& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline ReplaceRootVolumeTask& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    ReplaceRootVolumeTask& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the snapshot used to create the replacement root volume.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline ReplaceRootVolumeTask& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline ReplaceRootVolumeTask& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline ReplaceRootVolumeTask& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    ReplaceRootVolumeTask& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,7 +157,7 @@ namespace Model
      * <p>Indicates whether the original root volume is to be deleted after the root
      * volume replacement task completes.</p>
      */
-    inline bool GetDeleteReplacedRootVolume() const{ return m_deleteReplacedRootVolume; }
+    inline bool GetDeleteReplacedRootVolume() const { return m_deleteReplacedRootVolume; }
     inline bool DeleteReplacedRootVolumeHasBeenSet() const { return m_deleteReplacedRootVolumeHasBeenSet; }
     inline void SetDeleteReplacedRootVolume(bool value) { m_deleteReplacedRootVolumeHasBeenSet = true; m_deleteReplacedRootVolume = value; }
     inline ReplaceRootVolumeTask& WithDeleteReplacedRootVolume(bool value) { SetDeleteReplacedRootVolume(value); return *this;}
@@ -184,7 +170,7 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    ReplaceRootVolumeTaskState m_taskState;
+    ReplaceRootVolumeTaskState m_taskState{ReplaceRootVolumeTaskState::NOT_SET};
     bool m_taskStateHasBeenSet = false;
 
     Aws::String m_startTime;
@@ -202,7 +188,7 @@ namespace Model
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    bool m_deleteReplacedRootVolume;
+    bool m_deleteReplacedRootVolume{false};
     bool m_deleteReplacedRootVolumeHasBeenSet = false;
   };
 

@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSizeConstraintSetRequest::UpdateSizeConstraintSetRequest() : 
-    m_sizeConstraintSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSizeConstraintSetRequest::SerializePayload() const
 {
   JsonValue payload;

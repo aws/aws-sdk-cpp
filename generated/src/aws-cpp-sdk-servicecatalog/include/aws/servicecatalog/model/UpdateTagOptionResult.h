@@ -28,7 +28,7 @@ namespace Model
   class UpdateTagOptionResult
   {
   public:
-    AWS_SERVICECATALOG_API UpdateTagOptionResult();
+    AWS_SERVICECATALOG_API UpdateTagOptionResult() = default;
     AWS_SERVICECATALOG_API UpdateTagOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API UpdateTagOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the TagOption.</p>
      */
-    inline const TagOptionDetail& GetTagOptionDetail() const{ return m_tagOptionDetail; }
-    inline void SetTagOptionDetail(const TagOptionDetail& value) { m_tagOptionDetail = value; }
-    inline void SetTagOptionDetail(TagOptionDetail&& value) { m_tagOptionDetail = std::move(value); }
-    inline UpdateTagOptionResult& WithTagOptionDetail(const TagOptionDetail& value) { SetTagOptionDetail(value); return *this;}
-    inline UpdateTagOptionResult& WithTagOptionDetail(TagOptionDetail&& value) { SetTagOptionDetail(std::move(value)); return *this;}
+    inline const TagOptionDetail& GetTagOptionDetail() const { return m_tagOptionDetail; }
+    template<typename TagOptionDetailT = TagOptionDetail>
+    void SetTagOptionDetail(TagOptionDetailT&& value) { m_tagOptionDetailHasBeenSet = true; m_tagOptionDetail = std::forward<TagOptionDetailT>(value); }
+    template<typename TagOptionDetailT = TagOptionDetail>
+    UpdateTagOptionResult& WithTagOptionDetail(TagOptionDetailT&& value) { SetTagOptionDetail(std::forward<TagOptionDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTagOptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTagOptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTagOptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTagOptionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TagOptionDetail m_tagOptionDetail;
+    bool m_tagOptionDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

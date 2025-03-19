@@ -32,7 +32,7 @@ namespace Model
   class JobOutputDataConfig
   {
   public:
-    AWS_BRAKET_API JobOutputDataConfig();
+    AWS_BRAKET_API JobOutputDataConfig() = default;
     AWS_BRAKET_API JobOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API JobOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * encrypt the job training artifacts at rest using Amazon S3 server-side
      * encryption.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline JobOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline JobOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline JobOutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    JobOutputDataConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Identifies the S3 path where you want Amazon Braket to store the job training
      * artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
-    inline const Aws::String& GetS3Path() const{ return m_s3Path; }
+    inline const Aws::String& GetS3Path() const { return m_s3Path; }
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
-    inline void SetS3Path(const Aws::String& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
-    inline void SetS3Path(Aws::String&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
-    inline void SetS3Path(const char* value) { m_s3PathHasBeenSet = true; m_s3Path.assign(value); }
-    inline JobOutputDataConfig& WithS3Path(const Aws::String& value) { SetS3Path(value); return *this;}
-    inline JobOutputDataConfig& WithS3Path(Aws::String&& value) { SetS3Path(std::move(value)); return *this;}
-    inline JobOutputDataConfig& WithS3Path(const char* value) { SetS3Path(value); return *this;}
+    template<typename S3PathT = Aws::String>
+    void SetS3Path(S3PathT&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::forward<S3PathT>(value); }
+    template<typename S3PathT = Aws::String>
+    JobOutputDataConfig& WithS3Path(S3PathT&& value) { SetS3Path(std::forward<S3PathT>(value)); return *this;}
     ///@}
   private:
 

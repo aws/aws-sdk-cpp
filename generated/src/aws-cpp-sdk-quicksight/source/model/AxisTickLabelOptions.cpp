@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AxisTickLabelOptions::AxisTickLabelOptions() : 
-    m_labelOptionsHasBeenSet(false),
-    m_rotationAngle(0.0),
-    m_rotationAngleHasBeenSet(false)
-{
-}
-
 AxisTickLabelOptions::AxisTickLabelOptions(JsonView jsonValue)
-  : AxisTickLabelOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AxisTickLabelOptions& AxisTickLabelOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LabelOptions"))
   {
     m_labelOptions = jsonValue.GetObject("LabelOptions");
-
     m_labelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationAngle"))
   {
     m_rotationAngle = jsonValue.GetDouble("RotationAngle");
-
     m_rotationAngleHasBeenSet = true;
   }
-
   return *this;
 }
 

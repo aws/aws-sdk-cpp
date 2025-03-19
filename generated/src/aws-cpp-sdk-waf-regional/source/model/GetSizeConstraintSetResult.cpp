@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSizeConstraintSetResult::GetSizeConstraintSetResult()
-{
-}
-
 GetSizeConstraintSetResult::GetSizeConstraintSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSizeConstraintSetResult& GetSizeConstraintSetResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("SizeConstraintSet"))
   {
     m_sizeConstraintSet = jsonValue.GetObject("SizeConstraintSet");
-
+    m_sizeConstraintSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

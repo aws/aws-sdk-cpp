@@ -20,18 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3JobManifestGenerator::S3JobManifestGenerator() : 
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_sourceBucketHasBeenSet(false),
-    m_manifestOutputLocationHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_enableManifestOutput(false),
-    m_enableManifestOutputHasBeenSet(false)
-{
-}
-
 S3JobManifestGenerator::S3JobManifestGenerator(const XmlNode& xmlNode)
-  : S3JobManifestGenerator()
 {
   *this = xmlNode;
 }

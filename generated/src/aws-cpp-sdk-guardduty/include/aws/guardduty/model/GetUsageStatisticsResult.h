@@ -28,7 +28,7 @@ namespace Model
   class GetUsageStatisticsResult
   {
   public:
-    AWS_GUARDDUTY_API GetUsageStatisticsResult();
+    AWS_GUARDDUTY_API GetUsageStatisticsResult() = default;
     AWS_GUARDDUTY_API GetUsageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API GetUsageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
      * <p>The usage statistics object. If a UsageStatisticType was provided, the
      * objects representing other types will be null.</p>
      */
-    inline const UsageStatistics& GetUsageStatistics() const{ return m_usageStatistics; }
-    inline void SetUsageStatistics(const UsageStatistics& value) { m_usageStatistics = value; }
-    inline void SetUsageStatistics(UsageStatistics&& value) { m_usageStatistics = std::move(value); }
-    inline GetUsageStatisticsResult& WithUsageStatistics(const UsageStatistics& value) { SetUsageStatistics(value); return *this;}
-    inline GetUsageStatisticsResult& WithUsageStatistics(UsageStatistics&& value) { SetUsageStatistics(std::move(value)); return *this;}
+    inline const UsageStatistics& GetUsageStatistics() const { return m_usageStatistics; }
+    template<typename UsageStatisticsT = UsageStatistics>
+    void SetUsageStatistics(UsageStatisticsT&& value) { m_usageStatisticsHasBeenSet = true; m_usageStatistics = std::forward<UsageStatisticsT>(value); }
+    template<typename UsageStatisticsT = UsageStatistics>
+    GetUsageStatisticsResult& WithUsageStatistics(UsageStatisticsT&& value) { SetUsageStatistics(std::forward<UsageStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +50,31 @@ namespace Model
      * <p>The pagination parameter to be used on the next list operation to retrieve
      * more items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetUsageStatisticsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetUsageStatisticsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetUsageStatisticsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetUsageStatisticsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUsageStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUsageStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUsageStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUsageStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UsageStatistics m_usageStatistics;
+    bool m_usageStatisticsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

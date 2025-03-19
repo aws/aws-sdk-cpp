@@ -34,7 +34,7 @@ namespace Model
   class PhoneNumberFilter
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter();
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter() = default;
     AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>The name of the attribute to filter on.</p>
      */
-    inline const PhoneNumberFilterName& GetName() const{ return m_name; }
+    inline PhoneNumberFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const PhoneNumberFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(PhoneNumberFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline PhoneNumberFilter& WithName(const PhoneNumberFilterName& value) { SetName(value); return *this;}
-    inline PhoneNumberFilter& WithName(PhoneNumberFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(PhoneNumberFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline PhoneNumberFilter& WithName(PhoneNumberFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array values to filter for.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline PhoneNumberFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline PhoneNumberFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline PhoneNumberFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline PhoneNumberFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline PhoneNumberFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    PhoneNumberFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    PhoneNumberFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    PhoneNumberFilterName m_name;
+    PhoneNumberFilterName m_name{PhoneNumberFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

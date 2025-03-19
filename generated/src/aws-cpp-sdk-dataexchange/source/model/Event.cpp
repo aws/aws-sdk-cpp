@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-Event::Event() : 
-    m_revisionPublishedHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RevisionPublished"))
   {
     m_revisionPublished = jsonValue.GetObject("RevisionPublished");
-
     m_revisionPublishedHasBeenSet = true;
   }
-
   return *this;
 }
 

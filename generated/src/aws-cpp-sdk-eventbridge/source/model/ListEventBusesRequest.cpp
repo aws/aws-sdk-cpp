@@ -12,14 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEventBusesRequest::ListEventBusesRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListEventBusesRequest::SerializePayload() const
 {
   JsonValue payload;

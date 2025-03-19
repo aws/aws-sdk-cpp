@@ -18,22 +18,7 @@ namespace ARCZonalShift
 namespace Model
 {
 
-ZonalShiftSummary::ZonalShiftSummary() : 
-    m_awayFromHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_expiryTimeHasBeenSet(false),
-    m_practiceRunOutcome(PracticeRunOutcome::NOT_SET),
-    m_practiceRunOutcomeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(ZonalShiftStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_zonalShiftIdHasBeenSet(false)
-{
-}
-
 ZonalShiftSummary::ZonalShiftSummary(JsonView jsonValue)
-  : ZonalShiftSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ZonalShiftSummary& ZonalShiftSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awayFrom"))
   {
     m_awayFrom = jsonValue.GetString("awayFrom");
-
     m_awayFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiryTime"))
   {
     m_expiryTime = jsonValue.GetDouble("expiryTime");
-
     m_expiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("practiceRunOutcome"))
   {
     m_practiceRunOutcome = PracticeRunOutcomeMapper::GetPracticeRunOutcomeForName(jsonValue.GetString("practiceRunOutcome"));
-
     m_practiceRunOutcomeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ZonalShiftStatusMapper::GetZonalShiftStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalShiftId"))
   {
     m_zonalShiftId = jsonValue.GetString("zonalShiftId");
-
     m_zonalShiftIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdentityResolutionJobRequest::GetIdentityResolutionJobRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentityResolutionJobRequest::SerializePayload() const
 {
   return {};

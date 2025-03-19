@@ -21,7 +21,7 @@ namespace Model
   class UpdateVPCEConfigurationRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API UpdateVPCEConfigurationRequest();
+    AWS_DEVICEFARM_API UpdateVPCEConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
      * update.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateVPCEConfigurationRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateVPCEConfigurationRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
-    inline const Aws::String& GetVpceConfigurationName() const{ return m_vpceConfigurationName; }
+    inline const Aws::String& GetVpceConfigurationName() const { return m_vpceConfigurationName; }
     inline bool VpceConfigurationNameHasBeenSet() const { return m_vpceConfigurationNameHasBeenSet; }
-    inline void SetVpceConfigurationName(const Aws::String& value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName = value; }
-    inline void SetVpceConfigurationName(Aws::String&& value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName = std::move(value); }
-    inline void SetVpceConfigurationName(const char* value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName.assign(value); }
-    inline UpdateVPCEConfigurationRequest& WithVpceConfigurationName(const Aws::String& value) { SetVpceConfigurationName(value); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithVpceConfigurationName(Aws::String&& value) { SetVpceConfigurationName(std::move(value)); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithVpceConfigurationName(const char* value) { SetVpceConfigurationName(value); return *this;}
+    template<typename VpceConfigurationNameT = Aws::String>
+    void SetVpceConfigurationName(VpceConfigurationNameT&& value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName = std::forward<VpceConfigurationNameT>(value); }
+    template<typename VpceConfigurationNameT = Aws::String>
+    UpdateVPCEConfigurationRequest& WithVpceConfigurationName(VpceConfigurationNameT&& value) { SetVpceConfigurationName(std::forward<VpceConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
-    inline const Aws::String& GetVpceServiceName() const{ return m_vpceServiceName; }
+    inline const Aws::String& GetVpceServiceName() const { return m_vpceServiceName; }
     inline bool VpceServiceNameHasBeenSet() const { return m_vpceServiceNameHasBeenSet; }
-    inline void SetVpceServiceName(const Aws::String& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = value; }
-    inline void SetVpceServiceName(Aws::String&& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = std::move(value); }
-    inline void SetVpceServiceName(const char* value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName.assign(value); }
-    inline UpdateVPCEConfigurationRequest& WithVpceServiceName(const Aws::String& value) { SetVpceServiceName(value); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithVpceServiceName(Aws::String&& value) { SetVpceServiceName(std::move(value)); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithVpceServiceName(const char* value) { SetVpceServiceName(value); return *this;}
+    template<typename VpceServiceNameT = Aws::String>
+    void SetVpceServiceName(VpceServiceNameT&& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = std::forward<VpceServiceNameT>(value); }
+    template<typename VpceServiceNameT = Aws::String>
+    UpdateVPCEConfigurationRequest& WithVpceServiceName(VpceServiceNameT&& value) { SetVpceServiceName(std::forward<VpceServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,12 @@ namespace Model
      * <p>The DNS (domain) name used to connect to your private service in your VPC.
      * The DNS name must not already be in use on the internet.</p>
      */
-    inline const Aws::String& GetServiceDnsName() const{ return m_serviceDnsName; }
+    inline const Aws::String& GetServiceDnsName() const { return m_serviceDnsName; }
     inline bool ServiceDnsNameHasBeenSet() const { return m_serviceDnsNameHasBeenSet; }
-    inline void SetServiceDnsName(const Aws::String& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = value; }
-    inline void SetServiceDnsName(Aws::String&& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = std::move(value); }
-    inline void SetServiceDnsName(const char* value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName.assign(value); }
-    inline UpdateVPCEConfigurationRequest& WithServiceDnsName(const Aws::String& value) { SetServiceDnsName(value); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithServiceDnsName(Aws::String&& value) { SetServiceDnsName(std::move(value)); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithServiceDnsName(const char* value) { SetServiceDnsName(value); return *this;}
+    template<typename ServiceDnsNameT = Aws::String>
+    void SetServiceDnsName(ServiceDnsNameT&& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = std::forward<ServiceDnsNameT>(value); }
+    template<typename ServiceDnsNameT = Aws::String>
+    UpdateVPCEConfigurationRequest& WithServiceDnsName(ServiceDnsNameT&& value) { SetServiceDnsName(std::forward<ServiceDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +91,12 @@ namespace Model
      * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
-    inline const Aws::String& GetVpceConfigurationDescription() const{ return m_vpceConfigurationDescription; }
+    inline const Aws::String& GetVpceConfigurationDescription() const { return m_vpceConfigurationDescription; }
     inline bool VpceConfigurationDescriptionHasBeenSet() const { return m_vpceConfigurationDescriptionHasBeenSet; }
-    inline void SetVpceConfigurationDescription(const Aws::String& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = value; }
-    inline void SetVpceConfigurationDescription(Aws::String&& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = std::move(value); }
-    inline void SetVpceConfigurationDescription(const char* value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription.assign(value); }
-    inline UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(const Aws::String& value) { SetVpceConfigurationDescription(value); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(Aws::String&& value) { SetVpceConfigurationDescription(std::move(value)); return *this;}
-    inline UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(const char* value) { SetVpceConfigurationDescription(value); return *this;}
+    template<typename VpceConfigurationDescriptionT = Aws::String>
+    void SetVpceConfigurationDescription(VpceConfigurationDescriptionT&& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = std::forward<VpceConfigurationDescriptionT>(value); }
+    template<typename VpceConfigurationDescriptionT = Aws::String>
+    UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(VpceConfigurationDescriptionT&& value) { SetVpceConfigurationDescription(std::forward<VpceConfigurationDescriptionT>(value)); return *this;}
     ///@}
   private:
 

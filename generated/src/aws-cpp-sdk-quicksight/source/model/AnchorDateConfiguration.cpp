@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnchorDateConfiguration::AnchorDateConfiguration() : 
-    m_anchorOption(AnchorOption::NOT_SET),
-    m_anchorOptionHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
-{
-}
-
 AnchorDateConfiguration::AnchorDateConfiguration(JsonView jsonValue)
-  : AnchorDateConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AnchorDateConfiguration& AnchorDateConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnchorOption"))
   {
     m_anchorOption = AnchorOptionMapper::GetAnchorOptionForName(jsonValue.GetString("AnchorOption"));
-
     m_anchorOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

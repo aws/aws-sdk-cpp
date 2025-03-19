@@ -18,22 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-DeviceIdentifier::DeviceIdentifier() : 
-    m_createdAtHasBeenSet(false),
-    m_deviceIdentifierArnHasBeenSet(false),
-    m_iccidHasBeenSet(false),
-    m_imsiHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_orderArnHasBeenSet(false),
-    m_status(DeviceIdentifierStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_trafficGroupArnHasBeenSet(false),
-    m_vendorHasBeenSet(false)
-{
-}
-
 DeviceIdentifier::DeviceIdentifier(JsonView jsonValue)
-  : DeviceIdentifier()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ DeviceIdentifier& DeviceIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceIdentifierArn"))
   {
     m_deviceIdentifierArn = jsonValue.GetString("deviceIdentifierArn");
-
     m_deviceIdentifierArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iccid"))
   {
     m_iccid = jsonValue.GetString("iccid");
-
     m_iccidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imsi"))
   {
     m_imsi = jsonValue.GetString("imsi");
-
     m_imsiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkArn"))
   {
     m_networkArn = jsonValue.GetString("networkArn");
-
     m_networkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderArn"))
   {
     m_orderArn = jsonValue.GetString("orderArn");
-
     m_orderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeviceIdentifierStatusMapper::GetDeviceIdentifierStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trafficGroupArn"))
   {
     m_trafficGroupArn = jsonValue.GetString("trafficGroupArn");
-
     m_trafficGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendor"))
   {
     m_vendor = jsonValue.GetString("vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   return *this;
 }
 

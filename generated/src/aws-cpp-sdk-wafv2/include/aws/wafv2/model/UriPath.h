@@ -33,7 +33,7 @@ namespace Model
   class UriPath
   {
   public:
-    AWS_WAFV2_API UriPath();
+    AWS_WAFV2_API UriPath() = default;
     AWS_WAFV2_API UriPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API UriPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

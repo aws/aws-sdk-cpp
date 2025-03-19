@@ -18,20 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncSourceWithState::ResourceDataSyncSourceWithState() : 
-    m_sourceTypeHasBeenSet(false),
-    m_awsOrganizationsSourceHasBeenSet(false),
-    m_sourceRegionsHasBeenSet(false),
-    m_includeFutureRegions(false),
-    m_includeFutureRegionsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_enableAllOpsDataSources(false),
-    m_enableAllOpsDataSourcesHasBeenSet(false)
-{
-}
-
 ResourceDataSyncSourceWithState::ResourceDataSyncSourceWithState(JsonView jsonValue)
-  : ResourceDataSyncSourceWithState()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ ResourceDataSyncSourceWithState& ResourceDataSyncSourceWithState::operator =(Jso
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsOrganizationsSource"))
   {
     m_awsOrganizationsSource = jsonValue.GetObject("AwsOrganizationsSource");
-
     m_awsOrganizationsSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRegions"))
   {
     Aws::Utils::Array<JsonView> sourceRegionsJsonList = jsonValue.GetArray("SourceRegions");
@@ -61,28 +44,21 @@ ResourceDataSyncSourceWithState& ResourceDataSyncSourceWithState::operator =(Jso
     }
     m_sourceRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeFutureRegions"))
   {
     m_includeFutureRegions = jsonValue.GetBool("IncludeFutureRegions");
-
     m_includeFutureRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableAllOpsDataSources"))
   {
     m_enableAllOpsDataSources = jsonValue.GetBool("EnableAllOpsDataSources");
-
     m_enableAllOpsDataSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

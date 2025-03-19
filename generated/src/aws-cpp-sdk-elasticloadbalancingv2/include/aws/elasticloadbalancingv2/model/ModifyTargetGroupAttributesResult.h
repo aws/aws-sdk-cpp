@@ -29,7 +29,7 @@ namespace Model
   class ModifyTargetGroupAttributesResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesResult();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API ModifyTargetGroupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the target group attributes.</p>
      */
-    inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const{ return m_attributes; }
-    inline void SetAttributes(const Aws::Vector<TargetGroupAttribute>& value) { m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<TargetGroupAttribute>&& value) { m_attributes = std::move(value); }
-    inline ModifyTargetGroupAttributesResult& WithAttributes(const Aws::Vector<TargetGroupAttribute>& value) { SetAttributes(value); return *this;}
-    inline ModifyTargetGroupAttributesResult& WithAttributes(Aws::Vector<TargetGroupAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ModifyTargetGroupAttributesResult& AddAttributes(const TargetGroupAttribute& value) { m_attributes.push_back(value); return *this; }
-    inline ModifyTargetGroupAttributesResult& AddAttributes(TargetGroupAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const { return m_attributes; }
+    template<typename AttributesT = Aws::Vector<TargetGroupAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<TargetGroupAttribute>>
+    ModifyTargetGroupAttributesResult& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = TargetGroupAttribute>
+    ModifyTargetGroupAttributesResult& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyTargetGroupAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyTargetGroupAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyTargetGroupAttributesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TargetGroupAttribute> m_attributes;
+    bool m_attributesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

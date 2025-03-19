@@ -12,12 +12,6 @@ using namespace Aws::SagemakerEdgeManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeploymentsRequest::GetDeploymentsRequest() : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDeploymentsRequest::SerializePayload() const
 {
   JsonValue payload;

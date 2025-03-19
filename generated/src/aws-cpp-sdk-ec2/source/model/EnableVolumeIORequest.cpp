@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableVolumeIORequest::EnableVolumeIORequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
-{
-}
-
 Aws::String EnableVolumeIORequest::SerializePayload() const
 {
   Aws::StringStream ss;

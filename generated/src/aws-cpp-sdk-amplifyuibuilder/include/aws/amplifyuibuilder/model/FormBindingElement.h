@@ -32,7 +32,7 @@ namespace Model
   class FormBindingElement
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormBindingElement();
+    AWS_AMPLIFYUIBUILDER_API FormBindingElement() = default;
     AWS_AMPLIFYUIBUILDER_API FormBindingElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormBindingElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the component to retrieve a value from.</p>
      */
-    inline const Aws::String& GetElement() const{ return m_element; }
+    inline const Aws::String& GetElement() const { return m_element; }
     inline bool ElementHasBeenSet() const { return m_elementHasBeenSet; }
-    inline void SetElement(const Aws::String& value) { m_elementHasBeenSet = true; m_element = value; }
-    inline void SetElement(Aws::String&& value) { m_elementHasBeenSet = true; m_element = std::move(value); }
-    inline void SetElement(const char* value) { m_elementHasBeenSet = true; m_element.assign(value); }
-    inline FormBindingElement& WithElement(const Aws::String& value) { SetElement(value); return *this;}
-    inline FormBindingElement& WithElement(Aws::String&& value) { SetElement(std::move(value)); return *this;}
-    inline FormBindingElement& WithElement(const char* value) { SetElement(value); return *this;}
+    template<typename ElementT = Aws::String>
+    void SetElement(ElementT&& value) { m_elementHasBeenSet = true; m_element = std::forward<ElementT>(value); }
+    template<typename ElementT = Aws::String>
+    FormBindingElement& WithElement(ElementT&& value) { SetElement(std::forward<ElementT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property to retrieve a value from.</p>
      */
-    inline const Aws::String& GetProperty() const{ return m_property; }
+    inline const Aws::String& GetProperty() const { return m_property; }
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-    inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
-    inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-    inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
-    inline FormBindingElement& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
-    inline FormBindingElement& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
-    inline FormBindingElement& WithProperty(const char* value) { SetProperty(value); return *this;}
+    template<typename PropertyT = Aws::String>
+    void SetProperty(PropertyT&& value) { m_propertyHasBeenSet = true; m_property = std::forward<PropertyT>(value); }
+    template<typename PropertyT = Aws::String>
+    FormBindingElement& WithProperty(PropertyT&& value) { SetProperty(std::forward<PropertyT>(value)); return *this;}
     ///@}
   private:
 

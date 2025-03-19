@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NatGateway::NatGateway() : 
-    m_createTimeHasBeenSet(false),
-    m_deleteTimeHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_natGatewayAddressesHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_provisionedBandwidthHasBeenSet(false),
-    m_state(NatGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_connectivityType(ConnectivityType::NOT_SET),
-    m_connectivityTypeHasBeenSet(false)
-{
-}
-
 NatGateway::NatGateway(const XmlNode& xmlNode)
-  : NatGateway()
 {
   *this = xmlNode;
 }
@@ -78,6 +59,7 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     if(!natGatewayAddressesNode.IsNull())
     {
       XmlNode natGatewayAddressesMember = natGatewayAddressesNode.FirstChild("item");
+      m_natGatewayAddressesHasBeenSet = !natGatewayAddressesMember.IsNull();
       while(!natGatewayAddressesMember.IsNull())
       {
         m_natGatewayAddresses.push_back(natGatewayAddressesMember);
@@ -101,7 +83,7 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
@@ -120,6 +102,7 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -131,7 +114,7 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     XmlNode connectivityTypeNode = resultNode.FirstChild("connectivityType");
     if(!connectivityTypeNode.IsNull())
     {
-      m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectivityTypeNode.GetText()).c_str()).c_str());
+      m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectivityTypeNode.GetText()).c_str()));
       m_connectivityTypeHasBeenSet = true;
     }
   }

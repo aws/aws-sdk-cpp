@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatefulRulesHeaderDetails::RuleGroupSourceStatefulRulesHeaderDetails() : 
-    m_destinationHasBeenSet(false),
-    m_destinationPortHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sourcePortHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatefulRulesHeaderDetails::RuleGroupSourceStatefulRulesHeaderDetails(JsonView jsonValue)
-  : RuleGroupSourceStatefulRulesHeaderDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RuleGroupSourceStatefulRulesHeaderDetails& RuleGroupSourceStatefulRulesHeaderDet
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPort"))
   {
     m_destinationPort = jsonValue.GetString("DestinationPort");
-
     m_destinationPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = jsonValue.GetString("Direction");
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePort"))
   {
     m_sourcePort = jsonValue.GetString("SourcePort");
-
     m_sourcePortHasBeenSet = true;
   }
-
   return *this;
 }
 

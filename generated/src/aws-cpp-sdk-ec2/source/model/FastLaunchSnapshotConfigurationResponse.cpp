@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FastLaunchSnapshotConfigurationResponse::FastLaunchSnapshotConfigurationResponse() : 
-    m_targetResourceCount(0),
-    m_targetResourceCountHasBeenSet(false)
-{
-}
-
 FastLaunchSnapshotConfigurationResponse::FastLaunchSnapshotConfigurationResponse(const XmlNode& xmlNode)
-  : FastLaunchSnapshotConfigurationResponse()
 {
   *this = xmlNode;
 }

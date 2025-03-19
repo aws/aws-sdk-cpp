@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration() : 
-    m_targetResourceCount(0),
-    m_targetResourceCountHasBeenSet(false)
-{
-}
-
 FastLaunchSnapshotConfiguration::FastLaunchSnapshotConfiguration(JsonView jsonValue)
-  : FastLaunchSnapshotConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FastLaunchSnapshotConfiguration& FastLaunchSnapshotConfiguration::operator =(Jso
   if(jsonValue.ValueExists("targetResourceCount"))
   {
     m_targetResourceCount = jsonValue.GetInteger("targetResourceCount");
-
     m_targetResourceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeSubscribedWorkteamResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult();
+    AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult() = default;
     AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeSubscribedWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A <code>Workteam</code> instance that contains information about the work
      * team.</p>
      */
-    inline const SubscribedWorkteam& GetSubscribedWorkteam() const{ return m_subscribedWorkteam; }
-    inline void SetSubscribedWorkteam(const SubscribedWorkteam& value) { m_subscribedWorkteam = value; }
-    inline void SetSubscribedWorkteam(SubscribedWorkteam&& value) { m_subscribedWorkteam = std::move(value); }
-    inline DescribeSubscribedWorkteamResult& WithSubscribedWorkteam(const SubscribedWorkteam& value) { SetSubscribedWorkteam(value); return *this;}
-    inline DescribeSubscribedWorkteamResult& WithSubscribedWorkteam(SubscribedWorkteam&& value) { SetSubscribedWorkteam(std::move(value)); return *this;}
+    inline const SubscribedWorkteam& GetSubscribedWorkteam() const { return m_subscribedWorkteam; }
+    template<typename SubscribedWorkteamT = SubscribedWorkteam>
+    void SetSubscribedWorkteam(SubscribedWorkteamT&& value) { m_subscribedWorkteamHasBeenSet = true; m_subscribedWorkteam = std::forward<SubscribedWorkteamT>(value); }
+    template<typename SubscribedWorkteamT = SubscribedWorkteam>
+    DescribeSubscribedWorkteamResult& WithSubscribedWorkteam(SubscribedWorkteamT&& value) { SetSubscribedWorkteam(std::forward<SubscribedWorkteamT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSubscribedWorkteamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSubscribedWorkteamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSubscribedWorkteamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSubscribedWorkteamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SubscribedWorkteam m_subscribedWorkteam;
+    bool m_subscribedWorkteamHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

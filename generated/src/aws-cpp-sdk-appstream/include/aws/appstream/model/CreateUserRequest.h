@@ -23,7 +23,7 @@ namespace Model
   class CreateUserRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateUserRequest();
+    AWS_APPSTREAM_API CreateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * the same capitalization as the email address specified when their user pool
      * account was created, a "user does not exist" error message displays.</p> 
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline CreateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline CreateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    CreateUserRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,59 +60,51 @@ namespace Model
      * the welcome email is valid for only 7 days. If users don’t set their passwords
      * within 7 days, you must send them a new welcome email.</p> 
      */
-    inline const MessageAction& GetMessageAction() const{ return m_messageAction; }
+    inline MessageAction GetMessageAction() const { return m_messageAction; }
     inline bool MessageActionHasBeenSet() const { return m_messageActionHasBeenSet; }
-    inline void SetMessageAction(const MessageAction& value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
-    inline void SetMessageAction(MessageAction&& value) { m_messageActionHasBeenSet = true; m_messageAction = std::move(value); }
-    inline CreateUserRequest& WithMessageAction(const MessageAction& value) { SetMessageAction(value); return *this;}
-    inline CreateUserRequest& WithMessageAction(MessageAction&& value) { SetMessageAction(std::move(value)); return *this;}
+    inline void SetMessageAction(MessageAction value) { m_messageActionHasBeenSet = true; m_messageAction = value; }
+    inline CreateUserRequest& WithMessageAction(MessageAction value) { SetMessageAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The first name, or given name, of the user.</p>
      */
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetFirstName() const { return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-    inline CreateUserRequest& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-    inline CreateUserRequest& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
-    inline CreateUserRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    template<typename FirstNameT = Aws::String>
+    void SetFirstName(FirstNameT&& value) { m_firstNameHasBeenSet = true; m_firstName = std::forward<FirstNameT>(value); }
+    template<typename FirstNameT = Aws::String>
+    CreateUserRequest& WithFirstName(FirstNameT&& value) { SetFirstName(std::forward<FirstNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last name, or surname, of the user.</p>
      */
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
+    inline const Aws::String& GetLastName() const { return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-    inline CreateUserRequest& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-    inline CreateUserRequest& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
-    inline CreateUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
+    template<typename LastNameT = Aws::String>
+    void SetLastName(LastNameT&& value) { m_lastNameHasBeenSet = true; m_lastName = std::forward<LastNameT>(value); }
+    template<typename LastNameT = Aws::String>
+    CreateUserRequest& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication type for the user. You must specify USERPOOL. </p>
      */
-    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline CreateUserRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline CreateUserRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline CreateUserRequest& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet = false;
 
-    MessageAction m_messageAction;
+    MessageAction m_messageAction{MessageAction::NOT_SET};
     bool m_messageActionHasBeenSet = false;
 
     Aws::String m_firstName;
@@ -123,7 +113,7 @@ namespace Model
     Aws::String m_lastName;
     bool m_lastNameHasBeenSet = false;
 
-    AuthenticationType m_authenticationType;
+    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
   };
 

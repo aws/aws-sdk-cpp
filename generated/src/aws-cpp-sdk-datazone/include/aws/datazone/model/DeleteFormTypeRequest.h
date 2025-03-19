@@ -21,7 +21,7 @@ namespace Model
   class DeleteFormTypeRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API DeleteFormTypeRequest();
+    AWS_DATAZONE_API DeleteFormTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain in which the metadata form type is
      * deleted.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline DeleteFormTypeRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline DeleteFormTypeRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline DeleteFormTypeRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    DeleteFormTypeRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the metadata form type that is deleted.</p>
      */
-    inline const Aws::String& GetFormTypeIdentifier() const{ return m_formTypeIdentifier; }
+    inline const Aws::String& GetFormTypeIdentifier() const { return m_formTypeIdentifier; }
     inline bool FormTypeIdentifierHasBeenSet() const { return m_formTypeIdentifierHasBeenSet; }
-    inline void SetFormTypeIdentifier(const Aws::String& value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier = value; }
-    inline void SetFormTypeIdentifier(Aws::String&& value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier = std::move(value); }
-    inline void SetFormTypeIdentifier(const char* value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier.assign(value); }
-    inline DeleteFormTypeRequest& WithFormTypeIdentifier(const Aws::String& value) { SetFormTypeIdentifier(value); return *this;}
-    inline DeleteFormTypeRequest& WithFormTypeIdentifier(Aws::String&& value) { SetFormTypeIdentifier(std::move(value)); return *this;}
-    inline DeleteFormTypeRequest& WithFormTypeIdentifier(const char* value) { SetFormTypeIdentifier(value); return *this;}
+    template<typename FormTypeIdentifierT = Aws::String>
+    void SetFormTypeIdentifier(FormTypeIdentifierT&& value) { m_formTypeIdentifierHasBeenSet = true; m_formTypeIdentifier = std::forward<FormTypeIdentifierT>(value); }
+    template<typename FormTypeIdentifierT = Aws::String>
+    DeleteFormTypeRequest& WithFormTypeIdentifier(FormTypeIdentifierT&& value) { SetFormTypeIdentifier(std::forward<FormTypeIdentifierT>(value)); return *this;}
     ///@}
   private:
 

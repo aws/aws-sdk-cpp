@@ -32,7 +32,7 @@ namespace Model
   class FailureInfo
   {
   public:
-    AWS_SESV2_API FailureInfo();
+    AWS_SESV2_API FailureInfo() = default;
     AWS_SESV2_API FailureInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API FailureInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>An Amazon S3 pre-signed URL that contains all the failed records and related
      * information.</p>
      */
-    inline const Aws::String& GetFailedRecordsS3Url() const{ return m_failedRecordsS3Url; }
+    inline const Aws::String& GetFailedRecordsS3Url() const { return m_failedRecordsS3Url; }
     inline bool FailedRecordsS3UrlHasBeenSet() const { return m_failedRecordsS3UrlHasBeenSet; }
-    inline void SetFailedRecordsS3Url(const Aws::String& value) { m_failedRecordsS3UrlHasBeenSet = true; m_failedRecordsS3Url = value; }
-    inline void SetFailedRecordsS3Url(Aws::String&& value) { m_failedRecordsS3UrlHasBeenSet = true; m_failedRecordsS3Url = std::move(value); }
-    inline void SetFailedRecordsS3Url(const char* value) { m_failedRecordsS3UrlHasBeenSet = true; m_failedRecordsS3Url.assign(value); }
-    inline FailureInfo& WithFailedRecordsS3Url(const Aws::String& value) { SetFailedRecordsS3Url(value); return *this;}
-    inline FailureInfo& WithFailedRecordsS3Url(Aws::String&& value) { SetFailedRecordsS3Url(std::move(value)); return *this;}
-    inline FailureInfo& WithFailedRecordsS3Url(const char* value) { SetFailedRecordsS3Url(value); return *this;}
+    template<typename FailedRecordsS3UrlT = Aws::String>
+    void SetFailedRecordsS3Url(FailedRecordsS3UrlT&& value) { m_failedRecordsS3UrlHasBeenSet = true; m_failedRecordsS3Url = std::forward<FailedRecordsS3UrlT>(value); }
+    template<typename FailedRecordsS3UrlT = Aws::String>
+    FailureInfo& WithFailedRecordsS3Url(FailedRecordsS3UrlT&& value) { SetFailedRecordsS3Url(std::forward<FailedRecordsS3UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message about why the job failed.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline FailureInfo& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline FailureInfo& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline FailureInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    FailureInfo& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

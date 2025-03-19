@@ -33,7 +33,7 @@ namespace Model
   class BlockDeviceMapping
   {
   public:
-    AWS_EC2_API BlockDeviceMapping();
+    AWS_EC2_API BlockDeviceMapping() = default;
     AWS_EC2_API BlockDeviceMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API BlockDeviceMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,12 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
-    inline const EbsBlockDevice& GetEbs() const{ return m_ebs; }
+    inline const EbsBlockDevice& GetEbs() const { return m_ebs; }
     inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
-    inline void SetEbs(const EbsBlockDevice& value) { m_ebsHasBeenSet = true; m_ebs = value; }
-    inline void SetEbs(EbsBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
-    inline BlockDeviceMapping& WithEbs(const EbsBlockDevice& value) { SetEbs(value); return *this;}
-    inline BlockDeviceMapping& WithEbs(EbsBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
+    template<typename EbsT = EbsBlockDevice>
+    void SetEbs(EbsT&& value) { m_ebsHasBeenSet = true; m_ebs = std::forward<EbsT>(value); }
+    template<typename EbsT = EbsBlockDevice>
+    BlockDeviceMapping& WithEbs(EbsT&& value) { SetEbs(std::forward<EbsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * When this property is specified, the device is removed from the block device
      * mapping regardless of the assigned value.</p>
      */
-    inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
+    inline const Aws::String& GetNoDevice() const { return m_noDevice; }
     inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
-    inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
-    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
-    inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
-    inline BlockDeviceMapping& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
-    inline BlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
-    inline BlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
+    template<typename NoDeviceT = Aws::String>
+    void SetNoDevice(NoDeviceT&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::forward<NoDeviceT>(value); }
+    template<typename NoDeviceT = Aws::String>
+    BlockDeviceMapping& WithNoDevice(NoDeviceT&& value) { SetNoDevice(std::forward<NoDeviceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p>The device name (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+    inline const Aws::String& GetDeviceName() const { return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-    inline BlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-    inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-    inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    template<typename DeviceNameT = Aws::String>
+    void SetDeviceName(DeviceNameT&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::forward<DeviceNameT>(value); }
+    template<typename DeviceNameT = Aws::String>
+    BlockDeviceMapping& WithDeviceName(DeviceNameT&& value) { SetDeviceName(std::forward<DeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * instance, we ignore any instance store volumes specified in the block device
      * mapping for the AMI.</p>
      */
-    inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
+    inline const Aws::String& GetVirtualName() const { return m_virtualName; }
     inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
-    inline void SetVirtualName(const Aws::String& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
-    inline void SetVirtualName(Aws::String&& value) { m_virtualNameHasBeenSet = true; m_virtualName = std::move(value); }
-    inline void SetVirtualName(const char* value) { m_virtualNameHasBeenSet = true; m_virtualName.assign(value); }
-    inline BlockDeviceMapping& WithVirtualName(const Aws::String& value) { SetVirtualName(value); return *this;}
-    inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
-    inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
+    template<typename VirtualNameT = Aws::String>
+    void SetVirtualName(VirtualNameT&& value) { m_virtualNameHasBeenSet = true; m_virtualName = std::forward<VirtualNameT>(value); }
+    template<typename VirtualNameT = Aws::String>
+    BlockDeviceMapping& WithVirtualName(VirtualNameT&& value) { SetVirtualName(std::forward<VirtualNameT>(value)); return *this;}
     ///@}
   private:
 

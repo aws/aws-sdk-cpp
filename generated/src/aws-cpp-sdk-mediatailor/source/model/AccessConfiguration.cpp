@@ -18,15 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AccessConfiguration::AccessConfiguration() : 
-    m_accessType(AccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false),
-    m_secretsManagerAccessTokenConfigurationHasBeenSet(false)
-{
-}
-
 AccessConfiguration::AccessConfiguration(JsonView jsonValue)
-  : AccessConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AccessConfiguration& AccessConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessType"))
   {
     m_accessType = AccessTypeMapper::GetAccessTypeForName(jsonValue.GetString("AccessType"));
-
     m_accessTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessTokenConfiguration"))
   {
     m_secretsManagerAccessTokenConfiguration = jsonValue.GetObject("SecretsManagerAccessTokenConfiguration");
-
     m_secretsManagerAccessTokenConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

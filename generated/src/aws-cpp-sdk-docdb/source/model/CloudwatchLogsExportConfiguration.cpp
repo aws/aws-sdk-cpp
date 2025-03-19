@@ -20,14 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-CloudwatchLogsExportConfiguration::CloudwatchLogsExportConfiguration() : 
-    m_enableLogTypesHasBeenSet(false),
-    m_disableLogTypesHasBeenSet(false)
-{
-}
-
 CloudwatchLogsExportConfiguration::CloudwatchLogsExportConfiguration(const XmlNode& xmlNode)
-  : CloudwatchLogsExportConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ CloudwatchLogsExportConfiguration& CloudwatchLogsExportConfiguration::operator =
     if(!enableLogTypesNode.IsNull())
     {
       XmlNode enableLogTypesMember = enableLogTypesNode.FirstChild("member");
+      m_enableLogTypesHasBeenSet = !enableLogTypesMember.IsNull();
       while(!enableLogTypesMember.IsNull())
       {
         m_enableLogTypes.push_back(enableLogTypesMember.GetText());
@@ -54,6 +48,7 @@ CloudwatchLogsExportConfiguration& CloudwatchLogsExportConfiguration::operator =
     if(!disableLogTypesNode.IsNull())
     {
       XmlNode disableLogTypesMember = disableLogTypesNode.FirstChild("member");
+      m_disableLogTypesHasBeenSet = !disableLogTypesMember.IsNull();
       while(!disableLogTypesMember.IsNull())
       {
         m_disableLogTypes.push_back(disableLogTypesMember.GetText());

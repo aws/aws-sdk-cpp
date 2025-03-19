@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MaximumLabelType::MaximumLabelType() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 MaximumLabelType::MaximumLabelType(JsonView jsonValue)
-  : MaximumLabelType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MaximumLabelType& MaximumLabelType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-AnalysisSchemeStatus::AnalysisSchemeStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AnalysisSchemeStatus::AnalysisSchemeStatus(const XmlNode& xmlNode)
-  : AnalysisSchemeStatus()
 {
   *this = xmlNode;
 }

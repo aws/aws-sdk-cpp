@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelSubscriptionResult::CancelSubscriptionResult()
-{
-}
-
 CancelSubscriptionResult::CancelSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CancelSubscriptionResult& CancelSubscriptionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("subscriptionArn"))
   {
     m_subscriptionArn = jsonValue.GetString("subscriptionArn");
-
+    m_subscriptionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentSubscription"))
   {
     m_currentSubscription = jsonValue.GetObject("currentSubscription");
-
+    m_currentSubscriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextSubscription"))
   {
     m_nextSubscription = jsonValue.GetObject("nextSubscription");
-
+    m_nextSubscriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -45,7 +45,7 @@ namespace Model
   class TaskSet
   {
   public:
-    AWS_ECS_API TaskSet();
+    AWS_ECS_API TaskSet() = default;
     AWS_ECS_API TaskSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API TaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,42 +55,36 @@ namespace Model
     /**
      * <p>The ID of the task set.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TaskSet& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TaskSet& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TaskSet& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TaskSet& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task set.</p>
      */
-    inline const Aws::String& GetTaskSetArn() const{ return m_taskSetArn; }
+    inline const Aws::String& GetTaskSetArn() const { return m_taskSetArn; }
     inline bool TaskSetArnHasBeenSet() const { return m_taskSetArnHasBeenSet; }
-    inline void SetTaskSetArn(const Aws::String& value) { m_taskSetArnHasBeenSet = true; m_taskSetArn = value; }
-    inline void SetTaskSetArn(Aws::String&& value) { m_taskSetArnHasBeenSet = true; m_taskSetArn = std::move(value); }
-    inline void SetTaskSetArn(const char* value) { m_taskSetArnHasBeenSet = true; m_taskSetArn.assign(value); }
-    inline TaskSet& WithTaskSetArn(const Aws::String& value) { SetTaskSetArn(value); return *this;}
-    inline TaskSet& WithTaskSetArn(Aws::String&& value) { SetTaskSetArn(std::move(value)); return *this;}
-    inline TaskSet& WithTaskSetArn(const char* value) { SetTaskSetArn(value); return *this;}
+    template<typename TaskSetArnT = Aws::String>
+    void SetTaskSetArn(TaskSetArnT&& value) { m_taskSetArnHasBeenSet = true; m_taskSetArn = std::forward<TaskSetArnT>(value); }
+    template<typename TaskSetArnT = Aws::String>
+    TaskSet& WithTaskSetArn(TaskSetArnT&& value) { SetTaskSetArn(std::forward<TaskSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the service the task set exists in.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline TaskSet& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline TaskSet& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline TaskSet& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    TaskSet& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the cluster that the service that hosts the
      * task set exists in.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline TaskSet& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline TaskSet& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline TaskSet& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    TaskSet& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
      * <code>startedBy</code> field isn't used.</p>
      */
-    inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+    inline const Aws::String& GetStartedBy() const { return m_startedBy; }
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
-    inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
-    inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
-    inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
-    inline TaskSet& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
-    inline TaskSet& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
-    inline TaskSet& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
+    template<typename StartedByT = Aws::String>
+    void SetStartedBy(StartedByT&& value) { m_startedByHasBeenSet = true; m_startedBy = std::forward<StartedByT>(value); }
+    template<typename StartedByT = Aws::String>
+    TaskSet& WithStartedBy(StartedByT&& value) { SetStartedBy(std::forward<StartedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +124,12 @@ namespace Model
      * <code>externalId</code> parameter contains the
      * <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline TaskSet& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline TaskSet& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline TaskSet& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    TaskSet& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,28 +141,24 @@ namespace Model
      * corresponding targets are being deregistered from their target group.</p> </dd>
      * </dl>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TaskSet& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TaskSet& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TaskSet& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TaskSet& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task definition that the task set is using.</p>
      */
-    inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+    inline const Aws::String& GetTaskDefinition() const { return m_taskDefinition; }
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
-    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
-    inline TaskSet& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
-    inline TaskSet& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
-    inline TaskSet& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+    template<typename TaskDefinitionT = Aws::String>
+    void SetTaskDefinition(TaskDefinitionT&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::forward<TaskDefinitionT>(value); }
+    template<typename TaskDefinitionT = Aws::String>
+    TaskSet& WithTaskDefinition(TaskDefinitionT&& value) { SetTaskDefinition(std::forward<TaskDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,7 +168,7 @@ namespace Model
      * <code>scale</code> percentage. The result is always rounded up. For example, if
      * the computed desired count is 1.2, it rounds up to 2 tasks.</p>
      */
-    inline int GetComputedDesiredCount() const{ return m_computedDesiredCount; }
+    inline int GetComputedDesiredCount() const { return m_computedDesiredCount; }
     inline bool ComputedDesiredCountHasBeenSet() const { return m_computedDesiredCountHasBeenSet; }
     inline void SetComputedDesiredCount(int value) { m_computedDesiredCountHasBeenSet = true; m_computedDesiredCount = value; }
     inline TaskSet& WithComputedDesiredCount(int value) { SetComputedDesiredCount(value); return *this;}
@@ -198,7 +182,7 @@ namespace Model
      * <code>PENDING</code> status when it launches for the first time or when it's
      * restarted after being in the <code>STOPPED</code> state.</p>
      */
-    inline int GetPendingCount() const{ return m_pendingCount; }
+    inline int GetPendingCount() const { return m_pendingCount; }
     inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
     inline void SetPendingCount(int value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
     inline TaskSet& WithPendingCount(int value) { SetPendingCount(value); return *this;}
@@ -210,7 +194,7 @@ namespace Model
      * status during a deployment. A task in the <code>RUNNING</code> state is running
      * and ready for use.</p>
      */
-    inline int GetRunningCount() const{ return m_runningCount; }
+    inline int GetRunningCount() const { return m_runningCount; }
     inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
     inline void SetRunningCount(int value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
     inline TaskSet& WithRunningCount(int value) { SetRunningCount(value); return *this;}
@@ -220,24 +204,24 @@ namespace Model
     /**
      * <p>The Unix timestamp for the time when the task set was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline TaskSet& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline TaskSet& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    TaskSet& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp for the time when the task set was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline TaskSet& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline TaskSet& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    TaskSet& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,26 +232,24 @@ namespace Model
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+    inline LaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline TaskSet& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
-    inline TaskSet& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(LaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline TaskSet& WithLaunchType(LaunchType value) { SetLaunchType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capacity provider strategy that are associated with the task set.</p>
      */
-    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const { return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
-    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
-    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
-    inline TaskSet& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
-    inline TaskSet& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
-    inline TaskSet& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
-    inline TaskSet& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    void SetCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::forward<CapacityProviderStrategyT>(value); }
+    template<typename CapacityProviderStrategyT = Aws::Vector<CapacityProviderStrategyItem>>
+    TaskSet& WithCapacityProviderStrategy(CapacityProviderStrategyT&& value) { SetCapacityProviderStrategy(std::forward<CapacityProviderStrategyT>(value)); return *this;}
+    template<typename CapacityProviderStrategyT = CapacityProviderStrategyItem>
+    TaskSet& AddCapacityProviderStrategy(CapacityProviderStrategyT&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.emplace_back(std::forward<CapacityProviderStrategyT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -279,14 +261,12 @@ namespace Model
      * platform versions</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline TaskSet& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline TaskSet& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline TaskSet& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    TaskSet& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -295,40 +275,38 @@ namespace Model
      * family is specified only for tasks that use the Fargate launch type. </p> <p>
      * All tasks in the set must have the same value.</p>
      */
-    inline const Aws::String& GetPlatformFamily() const{ return m_platformFamily; }
+    inline const Aws::String& GetPlatformFamily() const { return m_platformFamily; }
     inline bool PlatformFamilyHasBeenSet() const { return m_platformFamilyHasBeenSet; }
-    inline void SetPlatformFamily(const Aws::String& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = value; }
-    inline void SetPlatformFamily(Aws::String&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::move(value); }
-    inline void SetPlatformFamily(const char* value) { m_platformFamilyHasBeenSet = true; m_platformFamily.assign(value); }
-    inline TaskSet& WithPlatformFamily(const Aws::String& value) { SetPlatformFamily(value); return *this;}
-    inline TaskSet& WithPlatformFamily(Aws::String&& value) { SetPlatformFamily(std::move(value)); return *this;}
-    inline TaskSet& WithPlatformFamily(const char* value) { SetPlatformFamily(value); return *this;}
+    template<typename PlatformFamilyT = Aws::String>
+    void SetPlatformFamily(PlatformFamilyT&& value) { m_platformFamilyHasBeenSet = true; m_platformFamily = std::forward<PlatformFamilyT>(value); }
+    template<typename PlatformFamilyT = Aws::String>
+    TaskSet& WithPlatformFamily(PlatformFamilyT&& value) { SetPlatformFamily(std::forward<PlatformFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network configuration for the task set.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline TaskSet& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline TaskSet& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    TaskSet& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details on a load balancer that are used with a task set.</p>
      */
-    inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
+    inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const { return m_loadBalancers; }
     inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
-    inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
-    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
-    inline TaskSet& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
-    inline TaskSet& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
-    inline TaskSet& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
-    inline TaskSet& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+    template<typename LoadBalancersT = Aws::Vector<LoadBalancer>>
+    void SetLoadBalancers(LoadBalancersT&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::forward<LoadBalancersT>(value); }
+    template<typename LoadBalancersT = Aws::Vector<LoadBalancer>>
+    TaskSet& WithLoadBalancers(LoadBalancersT&& value) { SetLoadBalancers(std::forward<LoadBalancersT>(value)); return *this;}
+    template<typename LoadBalancersT = LoadBalancer>
+    TaskSet& AddLoadBalancers(LoadBalancersT&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.emplace_back(std::forward<LoadBalancersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -338,14 +316,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      * discovery</a>.</p>
      */
-    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
+    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const { return m_serviceRegistries; }
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
-    inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
-    inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
-    inline TaskSet& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
-    inline TaskSet& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
-    inline TaskSet& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
-    inline TaskSet& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
+    template<typename ServiceRegistriesT = Aws::Vector<ServiceRegistry>>
+    void SetServiceRegistries(ServiceRegistriesT&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::forward<ServiceRegistriesT>(value); }
+    template<typename ServiceRegistriesT = Aws::Vector<ServiceRegistry>>
+    TaskSet& WithServiceRegistries(ServiceRegistriesT&& value) { SetServiceRegistries(std::forward<ServiceRegistriesT>(value)); return *this;}
+    template<typename ServiceRegistriesT = ServiceRegistry>
+    TaskSet& AddServiceRegistries(ServiceRegistriesT&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.emplace_back(std::forward<ServiceRegistriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -353,12 +331,12 @@ namespace Model
      * <p>A floating-point percentage of your desired number of tasks to place and keep
      * running in the task set.</p>
      */
-    inline const Scale& GetScale() const{ return m_scale; }
+    inline const Scale& GetScale() const { return m_scale; }
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
-    inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
-    inline void SetScale(Scale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
-    inline TaskSet& WithScale(const Scale& value) { SetScale(value); return *this;}
-    inline TaskSet& WithScale(Scale&& value) { SetScale(std::move(value)); return *this;}
+    template<typename ScaleT = Scale>
+    void SetScale(ScaleT&& value) { m_scaleHasBeenSet = true; m_scale = std::forward<ScaleT>(value); }
+    template<typename ScaleT = Scale>
+    TaskSet& WithScale(ScaleT&& value) { SetScale(std::forward<ScaleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -374,12 +352,10 @@ namespace Model
      * any of those conditions aren't met, the stability status returns
      * <code>STABILIZING</code>.</p>
      */
-    inline const StabilityStatus& GetStabilityStatus() const{ return m_stabilityStatus; }
+    inline StabilityStatus GetStabilityStatus() const { return m_stabilityStatus; }
     inline bool StabilityStatusHasBeenSet() const { return m_stabilityStatusHasBeenSet; }
-    inline void SetStabilityStatus(const StabilityStatus& value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = value; }
-    inline void SetStabilityStatus(StabilityStatus&& value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = std::move(value); }
-    inline TaskSet& WithStabilityStatus(const StabilityStatus& value) { SetStabilityStatus(value); return *this;}
-    inline TaskSet& WithStabilityStatus(StabilityStatus&& value) { SetStabilityStatus(std::move(value)); return *this;}
+    inline void SetStabilityStatus(StabilityStatus value) { m_stabilityStatusHasBeenSet = true; m_stabilityStatus = value; }
+    inline TaskSet& WithStabilityStatus(StabilityStatus value) { SetStabilityStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -387,12 +363,12 @@ namespace Model
      * <p>The Unix timestamp for the time when the task set stability status was
      * retrieved.</p>
      */
-    inline const Aws::Utils::DateTime& GetStabilityStatusAt() const{ return m_stabilityStatusAt; }
+    inline const Aws::Utils::DateTime& GetStabilityStatusAt() const { return m_stabilityStatusAt; }
     inline bool StabilityStatusAtHasBeenSet() const { return m_stabilityStatusAtHasBeenSet; }
-    inline void SetStabilityStatusAt(const Aws::Utils::DateTime& value) { m_stabilityStatusAtHasBeenSet = true; m_stabilityStatusAt = value; }
-    inline void SetStabilityStatusAt(Aws::Utils::DateTime&& value) { m_stabilityStatusAtHasBeenSet = true; m_stabilityStatusAt = std::move(value); }
-    inline TaskSet& WithStabilityStatusAt(const Aws::Utils::DateTime& value) { SetStabilityStatusAt(value); return *this;}
-    inline TaskSet& WithStabilityStatusAt(Aws::Utils::DateTime&& value) { SetStabilityStatusAt(std::move(value)); return *this;}
+    template<typename StabilityStatusAtT = Aws::Utils::DateTime>
+    void SetStabilityStatusAt(StabilityStatusAtT&& value) { m_stabilityStatusAtHasBeenSet = true; m_stabilityStatusAt = std::forward<StabilityStatusAtT>(value); }
+    template<typename StabilityStatusAtT = Aws::Utils::DateTime>
+    TaskSet& WithStabilityStatusAt(StabilityStatusAtT&& value) { SetStabilityStatusAt(std::forward<StabilityStatusAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -414,26 +390,26 @@ namespace Model
      * edit or delete tag keys or values with this prefix. Tags with this prefix do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TaskSet& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TaskSet& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TaskSet& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TaskSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TaskSet& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TaskSet& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Fargate ephemeral storage settings for the task set.</p>
      */
-    inline const DeploymentEphemeralStorage& GetFargateEphemeralStorage() const{ return m_fargateEphemeralStorage; }
+    inline const DeploymentEphemeralStorage& GetFargateEphemeralStorage() const { return m_fargateEphemeralStorage; }
     inline bool FargateEphemeralStorageHasBeenSet() const { return m_fargateEphemeralStorageHasBeenSet; }
-    inline void SetFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = value; }
-    inline void SetFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::move(value); }
-    inline TaskSet& WithFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { SetFargateEphemeralStorage(value); return *this;}
-    inline TaskSet& WithFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { SetFargateEphemeralStorage(std::move(value)); return *this;}
+    template<typename FargateEphemeralStorageT = DeploymentEphemeralStorage>
+    void SetFargateEphemeralStorage(FargateEphemeralStorageT&& value) { m_fargateEphemeralStorageHasBeenSet = true; m_fargateEphemeralStorage = std::forward<FargateEphemeralStorageT>(value); }
+    template<typename FargateEphemeralStorageT = DeploymentEphemeralStorage>
+    TaskSet& WithFargateEphemeralStorage(FargateEphemeralStorageT&& value) { SetFargateEphemeralStorage(std::forward<FargateEphemeralStorageT>(value)); return *this;}
     ///@}
   private:
 
@@ -461,22 +437,22 @@ namespace Model
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet = false;
 
-    int m_computedDesiredCount;
+    int m_computedDesiredCount{0};
     bool m_computedDesiredCountHasBeenSet = false;
 
-    int m_pendingCount;
+    int m_pendingCount{0};
     bool m_pendingCountHasBeenSet = false;
 
-    int m_runningCount;
+    int m_runningCount{0};
     bool m_runningCountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
-    LaunchType m_launchType;
+    LaunchType m_launchType{LaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
@@ -500,10 +476,10 @@ namespace Model
     Scale m_scale;
     bool m_scaleHasBeenSet = false;
 
-    StabilityStatus m_stabilityStatus;
+    StabilityStatus m_stabilityStatus{StabilityStatus::NOT_SET};
     bool m_stabilityStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stabilityStatusAt;
+    Aws::Utils::DateTime m_stabilityStatusAt{};
     bool m_stabilityStatusAtHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

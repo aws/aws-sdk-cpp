@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CommunicationLimitsConfig::CommunicationLimitsConfig() : 
-    m_allChannelSubtypesHasBeenSet(false)
-{
-}
-
 CommunicationLimitsConfig::CommunicationLimitsConfig(JsonView jsonValue)
-  : CommunicationLimitsConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CommunicationLimitsConfig& CommunicationLimitsConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("allChannelSubtypes"))
   {
     m_allChannelSubtypes = jsonValue.GetObject("allChannelSubtypes");
-
     m_allChannelSubtypesHasBeenSet = true;
   }
-
   return *this;
 }
 

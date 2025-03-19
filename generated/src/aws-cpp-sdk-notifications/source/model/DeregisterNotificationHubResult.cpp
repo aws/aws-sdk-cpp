@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterNotificationHubResult::DeregisterNotificationHubResult()
-{
-}
-
 DeregisterNotificationHubResult::DeregisterNotificationHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DeregisterNotificationHubResult& DeregisterNotificationHubResult::operator =(con
   if(jsonValue.ValueExists("notificationHubRegion"))
   {
     m_notificationHubRegion = jsonValue.GetString("notificationHubRegion");
-
+    m_notificationHubRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusSummary"))
   {
     m_statusSummary = jsonValue.GetObject("statusSummary");
-
+    m_statusSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

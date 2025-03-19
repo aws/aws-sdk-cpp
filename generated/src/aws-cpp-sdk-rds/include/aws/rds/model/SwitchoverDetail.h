@@ -38,7 +38,7 @@ namespace Model
   class SwitchoverDetail
   {
   public:
-    AWS_RDS_API SwitchoverDetail();
+    AWS_RDS_API SwitchoverDetail() = default;
     AWS_RDS_API SwitchoverDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API SwitchoverDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,28 +50,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
      */
-    inline const Aws::String& GetSourceMember() const{ return m_sourceMember; }
+    inline const Aws::String& GetSourceMember() const { return m_sourceMember; }
     inline bool SourceMemberHasBeenSet() const { return m_sourceMemberHasBeenSet; }
-    inline void SetSourceMember(const Aws::String& value) { m_sourceMemberHasBeenSet = true; m_sourceMember = value; }
-    inline void SetSourceMember(Aws::String&& value) { m_sourceMemberHasBeenSet = true; m_sourceMember = std::move(value); }
-    inline void SetSourceMember(const char* value) { m_sourceMemberHasBeenSet = true; m_sourceMember.assign(value); }
-    inline SwitchoverDetail& WithSourceMember(const Aws::String& value) { SetSourceMember(value); return *this;}
-    inline SwitchoverDetail& WithSourceMember(Aws::String&& value) { SetSourceMember(std::move(value)); return *this;}
-    inline SwitchoverDetail& WithSourceMember(const char* value) { SetSourceMember(value); return *this;}
+    template<typename SourceMemberT = Aws::String>
+    void SetSourceMember(SourceMemberT&& value) { m_sourceMemberHasBeenSet = true; m_sourceMember = std::forward<SourceMemberT>(value); }
+    template<typename SourceMemberT = Aws::String>
+    SwitchoverDetail& WithSourceMember(SourceMemberT&& value) { SetSourceMember(std::forward<SourceMemberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
      */
-    inline const Aws::String& GetTargetMember() const{ return m_targetMember; }
+    inline const Aws::String& GetTargetMember() const { return m_targetMember; }
     inline bool TargetMemberHasBeenSet() const { return m_targetMemberHasBeenSet; }
-    inline void SetTargetMember(const Aws::String& value) { m_targetMemberHasBeenSet = true; m_targetMember = value; }
-    inline void SetTargetMember(Aws::String&& value) { m_targetMemberHasBeenSet = true; m_targetMember = std::move(value); }
-    inline void SetTargetMember(const char* value) { m_targetMemberHasBeenSet = true; m_targetMember.assign(value); }
-    inline SwitchoverDetail& WithTargetMember(const Aws::String& value) { SetTargetMember(value); return *this;}
-    inline SwitchoverDetail& WithTargetMember(Aws::String&& value) { SetTargetMember(std::move(value)); return *this;}
-    inline SwitchoverDetail& WithTargetMember(const char* value) { SetTargetMember(value); return *this;}
+    template<typename TargetMemberT = Aws::String>
+    void SetTargetMember(TargetMemberT&& value) { m_targetMemberHasBeenSet = true; m_targetMember = std::forward<TargetMemberT>(value); }
+    template<typename TargetMemberT = Aws::String>
+    SwitchoverDetail& WithTargetMember(TargetMemberT&& value) { SetTargetMember(std::forward<TargetMemberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline SwitchoverDetail& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline SwitchoverDetail& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline SwitchoverDetail& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    SwitchoverDetail& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

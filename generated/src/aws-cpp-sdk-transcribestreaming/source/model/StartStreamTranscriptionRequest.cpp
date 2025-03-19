@@ -14,47 +14,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaEncoding(MediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_showSpeakerLabel(false),
-    m_showSpeakerLabelHasBeenSet(false),
-    m_enableChannelIdentification(false),
-    m_enableChannelIdentificationHasBeenSet(false),
-    m_numberOfChannels(0),
-    m_numberOfChannelsHasBeenSet(false),
-    m_enablePartialResultsStabilization(false),
-    m_enablePartialResultsStabilizationHasBeenSet(false),
-    m_partialResultsStability(PartialResultsStability::NOT_SET),
-    m_partialResultsStabilityHasBeenSet(false),
-    m_contentIdentificationType(ContentIdentificationType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_contentRedactionType(ContentRedactionType::NOT_SET),
-    m_contentRedactionTypeHasBeenSet(false),
-    m_piiEntityTypesHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false),
-    m_identifyLanguage(false),
-    m_identifyLanguageHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false),
-    m_preferredLanguage(LanguageCode::NOT_SET),
-    m_preferredLanguageHasBeenSet(false),
-    m_identifyMultipleLanguages(false),
-    m_identifyMultipleLanguagesHasBeenSet(false),
-    m_vocabularyNamesHasBeenSet(false),
-    m_vocabularyFilterNamesHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 std::shared_ptr<Aws::IOStream> StartStreamTranscriptionRequest::GetBody() const
 {
     return m_audioStream;

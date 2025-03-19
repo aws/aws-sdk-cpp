@@ -12,18 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePricingRuleRequest::UpdatePricingRuleRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(PricingRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_modifierPercentage(0.0),
-    m_modifierPercentageHasBeenSet(false),
-    m_tieringHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePricingRuleRequest::SerializePayload() const
 {
   JsonValue payload;

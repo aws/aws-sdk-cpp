@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableIpamOrganizationAdminAccountRequest::DisableIpamOrganizationAdminAccountRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_delegatedAdminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableIpamOrganizationAdminAccountRequest::SerializePayload() const
 {
   Aws::StringStream ss;

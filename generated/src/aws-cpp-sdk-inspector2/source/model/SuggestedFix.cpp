@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-SuggestedFix::SuggestedFix() : 
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 SuggestedFix::SuggestedFix(JsonView jsonValue)
-  : SuggestedFix()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SuggestedFix& SuggestedFix::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

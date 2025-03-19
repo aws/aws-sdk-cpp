@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourceResult::ListTagsForResourceResult()
-{
-}
-
 ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
     if(!resourceTagSetNode.IsNull())
     {
       m_resourceTagSet = resourceTagSetNode;
+      m_resourceTagSetHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

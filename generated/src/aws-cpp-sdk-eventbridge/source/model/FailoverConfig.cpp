@@ -18,14 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-FailoverConfig::FailoverConfig() : 
-    m_primaryHasBeenSet(false),
-    m_secondaryHasBeenSet(false)
-{
-}
-
 FailoverConfig::FailoverConfig(JsonView jsonValue)
-  : FailoverConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailoverConfig& FailoverConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetObject("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Secondary"))
   {
     m_secondary = jsonValue.GetObject("Secondary");
-
     m_secondaryHasBeenSet = true;
   }
-
   return *this;
 }
 

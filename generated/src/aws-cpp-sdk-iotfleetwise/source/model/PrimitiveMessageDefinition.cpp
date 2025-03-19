@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-PrimitiveMessageDefinition::PrimitiveMessageDefinition() : 
-    m_ros2PrimitiveMessageDefinitionHasBeenSet(false)
-{
-}
-
 PrimitiveMessageDefinition::PrimitiveMessageDefinition(JsonView jsonValue)
-  : PrimitiveMessageDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrimitiveMessageDefinition& PrimitiveMessageDefinition::operator =(JsonView json
   if(jsonValue.ValueExists("ros2PrimitiveMessageDefinition"))
   {
     m_ros2PrimitiveMessageDefinition = jsonValue.GetObject("ros2PrimitiveMessageDefinition");
-
     m_ros2PrimitiveMessageDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

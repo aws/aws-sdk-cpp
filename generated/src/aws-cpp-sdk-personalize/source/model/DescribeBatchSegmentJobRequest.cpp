@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBatchSegmentJobRequest::DescribeBatchSegmentJobRequest() : 
-    m_batchSegmentJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBatchSegmentJobRequest::SerializePayload() const
 {
   JsonValue payload;

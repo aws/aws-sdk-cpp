@@ -21,7 +21,7 @@ namespace Model
   class AssociateConnectionWithLagRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API AssociateConnectionWithLagRequest();
+    AWS_DIRECTCONNECT_API AssociateConnectionWithLagRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID of the connection.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline AssociateConnectionWithLagRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline AssociateConnectionWithLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline AssociateConnectionWithLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    AssociateConnectionWithLagRequest& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the LAG with which to associate the connection.</p>
      */
-    inline const Aws::String& GetLagId() const{ return m_lagId; }
+    inline const Aws::String& GetLagId() const { return m_lagId; }
     inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
-    inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
-    inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
-    inline AssociateConnectionWithLagRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
-    inline AssociateConnectionWithLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
-    inline AssociateConnectionWithLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
+    template<typename LagIdT = Aws::String>
+    void SetLagId(LagIdT&& value) { m_lagIdHasBeenSet = true; m_lagId = std::forward<LagIdT>(value); }
+    template<typename LagIdT = Aws::String>
+    AssociateConnectionWithLagRequest& WithLagId(LagIdT&& value) { SetLagId(std::forward<LagIdT>(value)); return *this;}
     ///@}
   private:
 

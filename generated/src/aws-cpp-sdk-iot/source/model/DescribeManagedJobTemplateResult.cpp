@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeManagedJobTemplateResult::DescribeManagedJobTemplateResult()
-{
-}
-
 DescribeManagedJobTemplateResult::DescribeManagedJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ DescribeManagedJobTemplateResult& DescribeManagedJobTemplateResult::operator =(c
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
+    m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
+    m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateVersion"))
   {
     m_templateVersion = jsonValue.GetString("templateVersion");
-
+    m_templateVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environments"))
   {
     Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
@@ -60,8 +52,8 @@ DescribeManagedJobTemplateResult& DescribeManagedJobTemplateResult::operator =(c
     {
       m_environments.push_back(environmentsJsonList[environmentsIndex].AsString());
     }
+    m_environmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentParameters"))
   {
     Aws::Utils::Array<JsonView> documentParametersJsonList = jsonValue.GetArray("documentParameters");
@@ -69,20 +61,20 @@ DescribeManagedJobTemplateResult& DescribeManagedJobTemplateResult::operator =(c
     {
       m_documentParameters.push_back(documentParametersJsonList[documentParametersIndex].AsObject());
     }
+    m_documentParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetString("document");
-
+    m_documentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

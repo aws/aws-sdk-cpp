@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayRouteAttachment::TransitGatewayRouteAttachment() : 
-    m_resourceIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_resourceType(TransitGatewayAttachmentResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 TransitGatewayRouteAttachment::TransitGatewayRouteAttachment(const XmlNode& xmlNode)
-  : TransitGatewayRouteAttachment()
 {
   *this = xmlNode;
 }
@@ -55,7 +46,7 @@ TransitGatewayRouteAttachment& TransitGatewayRouteAttachment::operator =(const X
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = TransitGatewayAttachmentResourceTypeMapper::GetTransitGatewayAttachmentResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
   }

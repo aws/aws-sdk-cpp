@@ -40,7 +40,7 @@ namespace Model
   class Attendee
   {
   public:
-    AWS_CHIMESDKMEETINGS_API Attendee();
+    AWS_CHIMESDKMEETINGS_API Attendee() = default;
     AWS_CHIMESDKMEETINGS_API Attendee(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Attendee& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,42 +54,36 @@ namespace Model
      * begin with <code>aws:</code> are reserved. You can't configure a value that uses
      * this prefix. Case insensitive.</p>
      */
-    inline const Aws::String& GetExternalUserId() const{ return m_externalUserId; }
+    inline const Aws::String& GetExternalUserId() const { return m_externalUserId; }
     inline bool ExternalUserIdHasBeenSet() const { return m_externalUserIdHasBeenSet; }
-    inline void SetExternalUserId(const Aws::String& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = value; }
-    inline void SetExternalUserId(Aws::String&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::move(value); }
-    inline void SetExternalUserId(const char* value) { m_externalUserIdHasBeenSet = true; m_externalUserId.assign(value); }
-    inline Attendee& WithExternalUserId(const Aws::String& value) { SetExternalUserId(value); return *this;}
-    inline Attendee& WithExternalUserId(Aws::String&& value) { SetExternalUserId(std::move(value)); return *this;}
-    inline Attendee& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
+    template<typename ExternalUserIdT = Aws::String>
+    void SetExternalUserId(ExternalUserIdT&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::forward<ExternalUserIdT>(value); }
+    template<typename ExternalUserIdT = Aws::String>
+    Attendee& WithExternalUserId(ExternalUserIdT&& value) { SetExternalUserId(std::forward<ExternalUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Chime SDK attendee ID.</p>
      */
-    inline const Aws::String& GetAttendeeId() const{ return m_attendeeId; }
+    inline const Aws::String& GetAttendeeId() const { return m_attendeeId; }
     inline bool AttendeeIdHasBeenSet() const { return m_attendeeIdHasBeenSet; }
-    inline void SetAttendeeId(const Aws::String& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = value; }
-    inline void SetAttendeeId(Aws::String&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::move(value); }
-    inline void SetAttendeeId(const char* value) { m_attendeeIdHasBeenSet = true; m_attendeeId.assign(value); }
-    inline Attendee& WithAttendeeId(const Aws::String& value) { SetAttendeeId(value); return *this;}
-    inline Attendee& WithAttendeeId(Aws::String&& value) { SetAttendeeId(std::move(value)); return *this;}
-    inline Attendee& WithAttendeeId(const char* value) { SetAttendeeId(value); return *this;}
+    template<typename AttendeeIdT = Aws::String>
+    void SetAttendeeId(AttendeeIdT&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::forward<AttendeeIdT>(value); }
+    template<typename AttendeeIdT = Aws::String>
+    Attendee& WithAttendeeId(AttendeeIdT&& value) { SetAttendeeId(std::forward<AttendeeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The join token used by the Amazon Chime SDK attendee.</p>
      */
-    inline const Aws::String& GetJoinToken() const{ return m_joinToken; }
+    inline const Aws::String& GetJoinToken() const { return m_joinToken; }
     inline bool JoinTokenHasBeenSet() const { return m_joinTokenHasBeenSet; }
-    inline void SetJoinToken(const Aws::String& value) { m_joinTokenHasBeenSet = true; m_joinToken = value; }
-    inline void SetJoinToken(Aws::String&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::move(value); }
-    inline void SetJoinToken(const char* value) { m_joinTokenHasBeenSet = true; m_joinToken.assign(value); }
-    inline Attendee& WithJoinToken(const Aws::String& value) { SetJoinToken(value); return *this;}
-    inline Attendee& WithJoinToken(Aws::String&& value) { SetJoinToken(std::move(value)); return *this;}
-    inline Attendee& WithJoinToken(const char* value) { SetJoinToken(value); return *this;}
+    template<typename JoinTokenT = Aws::String>
+    void SetJoinToken(JoinTokenT&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::forward<JoinTokenT>(value); }
+    template<typename JoinTokenT = Aws::String>
+    Attendee& WithJoinToken(JoinTokenT&& value) { SetJoinToken(std::forward<JoinTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +119,12 @@ namespace Model
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
-    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const AttendeeCapabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline Attendee& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
-    inline Attendee& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    Attendee& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
   private:
 

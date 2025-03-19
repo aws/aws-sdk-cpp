@@ -10,21 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVerifiedAccessEndpointRequest::ModifyVerifiedAccessEndpointRequest() : 
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_loadBalancerOptionsHasBeenSet(false),
-    m_networkInterfaceOptionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_rdsOptionsHasBeenSet(false),
-    m_cidrOptionsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVerifiedAccessEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -34,7 +34,7 @@ namespace Model
   class GetChangeResult
   {
   public:
-    AWS_ROUTE53_API GetChangeResult();
+    AWS_ROUTE53_API GetChangeResult() = default;
     AWS_ROUTE53_API GetChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A complex type that contains information about the specified change
      * batch.</p>
      */
-    inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
-    inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
-    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
-    inline GetChangeResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
-    inline GetChangeResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
+    inline const ChangeInfo& GetChangeInfo() const { return m_changeInfo; }
+    template<typename ChangeInfoT = ChangeInfo>
+    void SetChangeInfo(ChangeInfoT&& value) { m_changeInfoHasBeenSet = true; m_changeInfo = std::forward<ChangeInfoT>(value); }
+    template<typename ChangeInfoT = ChangeInfo>
+    GetChangeResult& WithChangeInfo(ChangeInfoT&& value) { SetChangeInfo(std::forward<ChangeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetChangeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetChangeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetChangeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetChangeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChangeInfo m_changeInfo;
+    bool m_changeInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

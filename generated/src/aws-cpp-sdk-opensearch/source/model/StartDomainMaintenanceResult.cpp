@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartDomainMaintenanceResult::StartDomainMaintenanceResult()
-{
-}
-
 StartDomainMaintenanceResult::StartDomainMaintenanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartDomainMaintenanceResult& StartDomainMaintenanceResult::operator =(const Aws
   if(jsonValue.ValueExists("MaintenanceId"))
   {
     m_maintenanceId = jsonValue.GetString("MaintenanceId");
-
+    m_maintenanceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

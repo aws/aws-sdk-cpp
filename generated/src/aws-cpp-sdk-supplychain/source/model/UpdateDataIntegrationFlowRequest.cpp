@@ -12,15 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataIntegrationFlowRequest::UpdateDataIntegrationFlowRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_transformationHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataIntegrationFlowRequest::SerializePayload() const
 {
   JsonValue payload;

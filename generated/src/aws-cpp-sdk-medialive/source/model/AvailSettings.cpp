@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AvailSettings::AvailSettings() : 
-    m_esamHasBeenSet(false),
-    m_scte35SpliceInsertHasBeenSet(false),
-    m_scte35TimeSignalAposHasBeenSet(false)
-{
-}
-
 AvailSettings::AvailSettings(JsonView jsonValue)
-  : AvailSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AvailSettings& AvailSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("esam"))
   {
     m_esam = jsonValue.GetObject("esam");
-
     m_esamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35SpliceInsert"))
   {
     m_scte35SpliceInsert = jsonValue.GetObject("scte35SpliceInsert");
-
     m_scte35SpliceInsertHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35TimeSignalApos"))
   {
     m_scte35TimeSignalApos = jsonValue.GetObject("scte35TimeSignalApos");
-
     m_scte35TimeSignalAposHasBeenSet = true;
   }
-
   return *this;
 }
 

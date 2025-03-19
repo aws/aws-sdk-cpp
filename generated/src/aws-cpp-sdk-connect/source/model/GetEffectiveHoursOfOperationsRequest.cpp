@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetEffectiveHoursOfOperationsRequest::GetEffectiveHoursOfOperationsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_hoursOfOperationIdHasBeenSet(false),
-    m_fromDateHasBeenSet(false),
-    m_toDateHasBeenSet(false)
-{
-}
-
 Aws::String GetEffectiveHoursOfOperationsRequest::SerializePayload() const
 {
   return {};

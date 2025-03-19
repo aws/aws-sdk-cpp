@@ -32,7 +32,7 @@ namespace Model
   class RouteZone
   {
   public:
-    AWS_GEOROUTES_API RouteZone();
+    AWS_GEOROUTES_API RouteZone() = default;
     AWS_GEOROUTES_API RouteZone(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteZone& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The zone category.</p>
      */
-    inline const RouteZoneCategory& GetCategory() const{ return m_category; }
+    inline RouteZoneCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const RouteZoneCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(RouteZoneCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline RouteZone& WithCategory(const RouteZoneCategory& value) { SetCategory(value); return *this;}
-    inline RouteZone& WithCategory(RouteZoneCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(RouteZoneCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline RouteZone& WithCategory(RouteZoneCategory value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the zone.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RouteZone& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RouteZone& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RouteZone& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RouteZone& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    RouteZoneCategory m_category;
+    RouteZoneCategory m_category{RouteZoneCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
     Aws::String m_name;

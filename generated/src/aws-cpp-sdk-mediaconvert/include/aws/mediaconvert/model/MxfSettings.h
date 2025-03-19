@@ -33,7 +33,7 @@ namespace Model
   class MxfSettings
   {
   public:
-    AWS_MEDIACONVERT_API MxfSettings();
+    AWS_MEDIACONVERT_API MxfSettings() = default;
     AWS_MEDIACONVERT_API MxfSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MxfSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * values, see AfdSignaling, under VideoDescription. On the console, find AFD
      * signaling under the output's video encoding settings.
      */
-    inline const MxfAfdSignaling& GetAfdSignaling() const{ return m_afdSignaling; }
+    inline MxfAfdSignaling GetAfdSignaling() const { return m_afdSignaling; }
     inline bool AfdSignalingHasBeenSet() const { return m_afdSignalingHasBeenSet; }
-    inline void SetAfdSignaling(const MxfAfdSignaling& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
-    inline void SetAfdSignaling(MxfAfdSignaling&& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = std::move(value); }
-    inline MxfSettings& WithAfdSignaling(const MxfAfdSignaling& value) { SetAfdSignaling(value); return *this;}
-    inline MxfSettings& WithAfdSignaling(MxfAfdSignaling&& value) { SetAfdSignaling(std::move(value)); return *this;}
+    inline void SetAfdSignaling(MxfAfdSignaling value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
+    inline MxfSettings& WithAfdSignaling(MxfAfdSignaling value) { SetAfdSignaling(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      */
-    inline const MxfProfile& GetProfile() const{ return m_profile; }
+    inline MxfProfile GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const MxfProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(MxfProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline MxfSettings& WithProfile(const MxfProfile& value) { SetProfile(value); return *this;}
-    inline MxfSettings& WithProfile(MxfProfile&& value) { SetProfile(std::move(value)); return *this;}
+    inline void SetProfile(MxfProfile value) { m_profileHasBeenSet = true; m_profile = value; }
+    inline MxfSettings& WithProfile(MxfProfile value) { SetProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -80,19 +76,19 @@ namespace Model
      * Specify the XAVC profile settings for MXF outputs when you set your MXF profile
      * to XAVC.
      */
-    inline const MxfXavcProfileSettings& GetXavcProfileSettings() const{ return m_xavcProfileSettings; }
+    inline const MxfXavcProfileSettings& GetXavcProfileSettings() const { return m_xavcProfileSettings; }
     inline bool XavcProfileSettingsHasBeenSet() const { return m_xavcProfileSettingsHasBeenSet; }
-    inline void SetXavcProfileSettings(const MxfXavcProfileSettings& value) { m_xavcProfileSettingsHasBeenSet = true; m_xavcProfileSettings = value; }
-    inline void SetXavcProfileSettings(MxfXavcProfileSettings&& value) { m_xavcProfileSettingsHasBeenSet = true; m_xavcProfileSettings = std::move(value); }
-    inline MxfSettings& WithXavcProfileSettings(const MxfXavcProfileSettings& value) { SetXavcProfileSettings(value); return *this;}
-    inline MxfSettings& WithXavcProfileSettings(MxfXavcProfileSettings&& value) { SetXavcProfileSettings(std::move(value)); return *this;}
+    template<typename XavcProfileSettingsT = MxfXavcProfileSettings>
+    void SetXavcProfileSettings(XavcProfileSettingsT&& value) { m_xavcProfileSettingsHasBeenSet = true; m_xavcProfileSettings = std::forward<XavcProfileSettingsT>(value); }
+    template<typename XavcProfileSettingsT = MxfXavcProfileSettings>
+    MxfSettings& WithXavcProfileSettings(XavcProfileSettingsT&& value) { SetXavcProfileSettings(std::forward<XavcProfileSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    MxfAfdSignaling m_afdSignaling;
+    MxfAfdSignaling m_afdSignaling{MxfAfdSignaling::NOT_SET};
     bool m_afdSignalingHasBeenSet = false;
 
-    MxfProfile m_profile;
+    MxfProfile m_profile{MxfProfile::NOT_SET};
     bool m_profileHasBeenSet = false;
 
     MxfXavcProfileSettings m_xavcProfileSettings;

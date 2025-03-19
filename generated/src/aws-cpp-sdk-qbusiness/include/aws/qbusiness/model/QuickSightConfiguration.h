@@ -34,7 +34,7 @@ namespace Model
   class QuickSightConfiguration
   {
   public:
-    AWS_QBUSINESS_API QuickSightConfiguration();
+    AWS_QBUSINESS_API QuickSightConfiguration() = default;
     AWS_QBUSINESS_API QuickSightConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API QuickSightConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/developerguide/namespace-operations.html">Namespace
      * operations</a>. </p>
      */
-    inline const Aws::String& GetClientNamespace() const{ return m_clientNamespace; }
+    inline const Aws::String& GetClientNamespace() const { return m_clientNamespace; }
     inline bool ClientNamespaceHasBeenSet() const { return m_clientNamespaceHasBeenSet; }
-    inline void SetClientNamespace(const Aws::String& value) { m_clientNamespaceHasBeenSet = true; m_clientNamespace = value; }
-    inline void SetClientNamespace(Aws::String&& value) { m_clientNamespaceHasBeenSet = true; m_clientNamespace = std::move(value); }
-    inline void SetClientNamespace(const char* value) { m_clientNamespaceHasBeenSet = true; m_clientNamespace.assign(value); }
-    inline QuickSightConfiguration& WithClientNamespace(const Aws::String& value) { SetClientNamespace(value); return *this;}
-    inline QuickSightConfiguration& WithClientNamespace(Aws::String&& value) { SetClientNamespace(std::move(value)); return *this;}
-    inline QuickSightConfiguration& WithClientNamespace(const char* value) { SetClientNamespace(value); return *this;}
+    template<typename ClientNamespaceT = Aws::String>
+    void SetClientNamespace(ClientNamespaceT&& value) { m_clientNamespaceHasBeenSet = true; m_clientNamespace = std::forward<ClientNamespaceT>(value); }
+    template<typename ClientNamespaceT = Aws::String>
+    QuickSightConfiguration& WithClientNamespace(ClientNamespaceT&& value) { SetClientNamespace(std::forward<ClientNamespaceT>(value)); return *this;}
     ///@}
   private:
 

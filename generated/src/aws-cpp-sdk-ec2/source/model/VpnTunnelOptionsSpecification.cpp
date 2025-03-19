@@ -20,39 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification() : 
-    m_tunnelInsideCidrHasBeenSet(false),
-    m_tunnelInsideIpv6CidrHasBeenSet(false),
-    m_preSharedKeyHasBeenSet(false),
-    m_phase1LifetimeSeconds(0),
-    m_phase1LifetimeSecondsHasBeenSet(false),
-    m_phase2LifetimeSeconds(0),
-    m_phase2LifetimeSecondsHasBeenSet(false),
-    m_rekeyMarginTimeSeconds(0),
-    m_rekeyMarginTimeSecondsHasBeenSet(false),
-    m_rekeyFuzzPercentage(0),
-    m_rekeyFuzzPercentageHasBeenSet(false),
-    m_replayWindowSize(0),
-    m_replayWindowSizeHasBeenSet(false),
-    m_dPDTimeoutSeconds(0),
-    m_dPDTimeoutSecondsHasBeenSet(false),
-    m_dPDTimeoutActionHasBeenSet(false),
-    m_phase1EncryptionAlgorithmsHasBeenSet(false),
-    m_phase2EncryptionAlgorithmsHasBeenSet(false),
-    m_phase1IntegrityAlgorithmsHasBeenSet(false),
-    m_phase2IntegrityAlgorithmsHasBeenSet(false),
-    m_phase1DHGroupNumbersHasBeenSet(false),
-    m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false),
-    m_logOptionsHasBeenSet(false),
-    m_enableTunnelLifecycleControl(false),
-    m_enableTunnelLifecycleControlHasBeenSet(false)
-{
-}
-
 VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification(const XmlNode& xmlNode)
-  : VpnTunnelOptionsSpecification()
 {
   *this = xmlNode;
 }
@@ -127,6 +95,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!phase1EncryptionAlgorithmsNode.IsNull())
     {
       XmlNode phase1EncryptionAlgorithmsMember = phase1EncryptionAlgorithmsNode.FirstChild("item");
+      m_phase1EncryptionAlgorithmsHasBeenSet = !phase1EncryptionAlgorithmsMember.IsNull();
       while(!phase1EncryptionAlgorithmsMember.IsNull())
       {
         m_phase1EncryptionAlgorithms.push_back(phase1EncryptionAlgorithmsMember);
@@ -139,6 +108,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!phase2EncryptionAlgorithmsNode.IsNull())
     {
       XmlNode phase2EncryptionAlgorithmsMember = phase2EncryptionAlgorithmsNode.FirstChild("item");
+      m_phase2EncryptionAlgorithmsHasBeenSet = !phase2EncryptionAlgorithmsMember.IsNull();
       while(!phase2EncryptionAlgorithmsMember.IsNull())
       {
         m_phase2EncryptionAlgorithms.push_back(phase2EncryptionAlgorithmsMember);
@@ -151,6 +121,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!phase1IntegrityAlgorithmsNode.IsNull())
     {
       XmlNode phase1IntegrityAlgorithmsMember = phase1IntegrityAlgorithmsNode.FirstChild("item");
+      m_phase1IntegrityAlgorithmsHasBeenSet = !phase1IntegrityAlgorithmsMember.IsNull();
       while(!phase1IntegrityAlgorithmsMember.IsNull())
       {
         m_phase1IntegrityAlgorithms.push_back(phase1IntegrityAlgorithmsMember);
@@ -163,6 +134,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!phase2IntegrityAlgorithmsNode.IsNull())
     {
       XmlNode phase2IntegrityAlgorithmsMember = phase2IntegrityAlgorithmsNode.FirstChild("item");
+      m_phase2IntegrityAlgorithmsHasBeenSet = !phase2IntegrityAlgorithmsMember.IsNull();
       while(!phase2IntegrityAlgorithmsMember.IsNull())
       {
         m_phase2IntegrityAlgorithms.push_back(phase2IntegrityAlgorithmsMember);
@@ -175,6 +147,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!phase1DHGroupNumbersNode.IsNull())
     {
       XmlNode phase1DHGroupNumbersMember = phase1DHGroupNumbersNode.FirstChild("item");
+      m_phase1DHGroupNumbersHasBeenSet = !phase1DHGroupNumbersMember.IsNull();
       while(!phase1DHGroupNumbersMember.IsNull())
       {
         m_phase1DHGroupNumbers.push_back(phase1DHGroupNumbersMember);
@@ -187,6 +160,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!phase2DHGroupNumbersNode.IsNull())
     {
       XmlNode phase2DHGroupNumbersMember = phase2DHGroupNumbersNode.FirstChild("item");
+      m_phase2DHGroupNumbersHasBeenSet = !phase2DHGroupNumbersMember.IsNull();
       while(!phase2DHGroupNumbersMember.IsNull())
       {
         m_phase2DHGroupNumbers.push_back(phase2DHGroupNumbersMember);
@@ -199,6 +173,7 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     if(!iKEVersionsNode.IsNull())
     {
       XmlNode iKEVersionsMember = iKEVersionsNode.FirstChild("item");
+      m_iKEVersionsHasBeenSet = !iKEVersionsMember.IsNull();
       while(!iKEVersionsMember.IsNull())
       {
         m_iKEVersions.push_back(iKEVersionsMember);

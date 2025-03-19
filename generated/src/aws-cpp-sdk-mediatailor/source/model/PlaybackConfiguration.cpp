@@ -18,35 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-PlaybackConfiguration::PlaybackConfiguration() : 
-    m_adDecisionServerUrlHasBeenSet(false),
-    m_availSuppressionHasBeenSet(false),
-    m_bumperHasBeenSet(false),
-    m_cdnConfigurationHasBeenSet(false),
-    m_configurationAliasesHasBeenSet(false),
-    m_dashConfigurationHasBeenSet(false),
-    m_hlsConfigurationHasBeenSet(false),
-    m_insertionMode(InsertionMode::NOT_SET),
-    m_insertionModeHasBeenSet(false),
-    m_livePreRollConfigurationHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_manifestProcessingRulesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_personalizationThresholdSeconds(0),
-    m_personalizationThresholdSecondsHasBeenSet(false),
-    m_playbackConfigurationArnHasBeenSet(false),
-    m_playbackEndpointPrefixHasBeenSet(false),
-    m_sessionInitializationEndpointPrefixHasBeenSet(false),
-    m_slateAdUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_transcodeProfileNameHasBeenSet(false),
-    m_videoContentSourceUrlHasBeenSet(false),
-    m_adConditioningConfigurationHasBeenSet(false)
-{
-}
-
 PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue)
-  : PlaybackConfiguration()
 {
   *this = jsonValue;
 }
@@ -56,31 +28,23 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdDecisionServerUrl"))
   {
     m_adDecisionServerUrl = jsonValue.GetString("AdDecisionServerUrl");
-
     m_adDecisionServerUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailSuppression"))
   {
     m_availSuppression = jsonValue.GetObject("AvailSuppression");
-
     m_availSuppressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bumper"))
   {
     m_bumper = jsonValue.GetObject("Bumper");
-
     m_bumperHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdnConfiguration"))
   {
     m_cdnConfiguration = jsonValue.GetObject("CdnConfiguration");
-
     m_cdnConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationAliases"))
   {
     Aws::Map<Aws::String, JsonView> configurationAliasesJsonMap = jsonValue.GetObject("ConfigurationAliases").GetAllObjects();
@@ -96,91 +60,66 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     }
     m_configurationAliasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashConfiguration"))
   {
     m_dashConfiguration = jsonValue.GetObject("DashConfiguration");
-
     m_dashConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HlsConfiguration"))
   {
     m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
-
     m_hlsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsertionMode"))
   {
     m_insertionMode = InsertionModeMapper::GetInsertionModeForName(jsonValue.GetString("InsertionMode"));
-
     m_insertionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LivePreRollConfiguration"))
   {
     m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
-
     m_livePreRollConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestProcessingRules"))
   {
     m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
-
     m_manifestProcessingRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
   {
     m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
-
     m_personalizationThresholdSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaybackConfigurationArn"))
   {
     m_playbackConfigurationArn = jsonValue.GetString("PlaybackConfigurationArn");
-
     m_playbackConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaybackEndpointPrefix"))
   {
     m_playbackEndpointPrefix = jsonValue.GetString("PlaybackEndpointPrefix");
-
     m_playbackEndpointPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionInitializationEndpointPrefix"))
   {
     m_sessionInitializationEndpointPrefix = jsonValue.GetString("SessionInitializationEndpointPrefix");
-
     m_sessionInitializationEndpointPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlateAdUrl"))
   {
     m_slateAdUrl = jsonValue.GetString("SlateAdUrl");
-
     m_slateAdUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -190,28 +129,21 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TranscodeProfileName"))
   {
     m_transcodeProfileName = jsonValue.GetString("TranscodeProfileName");
-
     m_transcodeProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VideoContentSourceUrl"))
   {
     m_videoContentSourceUrl = jsonValue.GetString("VideoContentSourceUrl");
-
     m_videoContentSourceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdConditioningConfiguration"))
   {
     m_adConditioningConfiguration = jsonValue.GetObject("AdConditioningConfiguration");
-
     m_adConditioningConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

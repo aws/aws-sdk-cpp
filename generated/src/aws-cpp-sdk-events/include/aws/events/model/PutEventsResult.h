@@ -29,7 +29,7 @@ namespace Model
   class PutEventsResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API PutEventsResult();
+    AWS_CLOUDWATCHEVENTS_API PutEventsResult() = default;
     AWS_CLOUDWATCHEVENTS_API PutEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API PutEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>The number of failed entries.</p>
      */
-    inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
-    inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
+    inline int GetFailedEntryCount() const { return m_failedEntryCount; }
+    inline void SetFailedEntryCount(int value) { m_failedEntryCountHasBeenSet = true; m_failedEntryCount = value; }
     inline PutEventsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
     ///@}
 
@@ -49,32 +49,33 @@ namespace Model
      * was successful, the entry has the event ID in it. Otherwise, you can use the
      * error code and error message to identify the problem with the entry.</p>
      */
-    inline const Aws::Vector<PutEventsResultEntry>& GetEntries() const{ return m_entries; }
-    inline void SetEntries(const Aws::Vector<PutEventsResultEntry>& value) { m_entries = value; }
-    inline void SetEntries(Aws::Vector<PutEventsResultEntry>&& value) { m_entries = std::move(value); }
-    inline PutEventsResult& WithEntries(const Aws::Vector<PutEventsResultEntry>& value) { SetEntries(value); return *this;}
-    inline PutEventsResult& WithEntries(Aws::Vector<PutEventsResultEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline PutEventsResult& AddEntries(const PutEventsResultEntry& value) { m_entries.push_back(value); return *this; }
-    inline PutEventsResult& AddEntries(PutEventsResultEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PutEventsResultEntry>& GetEntries() const { return m_entries; }
+    template<typename EntriesT = Aws::Vector<PutEventsResultEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<PutEventsResultEntry>>
+    PutEventsResult& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = PutEventsResultEntry>
+    PutEventsResult& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_failedEntryCount;
+    int m_failedEntryCount{0};
+    bool m_failedEntryCountHasBeenSet = false;
 
     Aws::Vector<PutEventsResultEntry> m_entries;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

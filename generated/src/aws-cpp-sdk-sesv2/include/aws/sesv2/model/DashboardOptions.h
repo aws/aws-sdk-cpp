@@ -32,7 +32,7 @@ namespace Model
   class DashboardOptions
   {
   public:
-    AWS_SESV2_API DashboardOptions();
+    AWS_SESV2_API DashboardOptions() = default;
     AWS_SESV2_API DashboardOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API DashboardOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * <code>DISABLED</code> – Amazon SES disables engagement metrics for the
      * configuration set.</p> </li> </ul>
      */
-    inline const FeatureStatus& GetEngagementMetrics() const{ return m_engagementMetrics; }
+    inline FeatureStatus GetEngagementMetrics() const { return m_engagementMetrics; }
     inline bool EngagementMetricsHasBeenSet() const { return m_engagementMetricsHasBeenSet; }
-    inline void SetEngagementMetrics(const FeatureStatus& value) { m_engagementMetricsHasBeenSet = true; m_engagementMetrics = value; }
-    inline void SetEngagementMetrics(FeatureStatus&& value) { m_engagementMetricsHasBeenSet = true; m_engagementMetrics = std::move(value); }
-    inline DashboardOptions& WithEngagementMetrics(const FeatureStatus& value) { SetEngagementMetrics(value); return *this;}
-    inline DashboardOptions& WithEngagementMetrics(FeatureStatus&& value) { SetEngagementMetrics(std::move(value)); return *this;}
+    inline void SetEngagementMetrics(FeatureStatus value) { m_engagementMetricsHasBeenSet = true; m_engagementMetrics = value; }
+    inline DashboardOptions& WithEngagementMetrics(FeatureStatus value) { SetEngagementMetrics(value); return *this;}
     ///@}
   private:
 
-    FeatureStatus m_engagementMetrics;
+    FeatureStatus m_engagementMetrics{FeatureStatus::NOT_SET};
     bool m_engagementMetricsHasBeenSet = false;
   };
 

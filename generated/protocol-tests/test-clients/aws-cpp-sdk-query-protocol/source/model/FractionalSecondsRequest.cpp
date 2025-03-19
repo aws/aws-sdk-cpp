@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-FractionalSecondsRequest::FractionalSecondsRequest()
-{
-}
-
 Aws::String FractionalSecondsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

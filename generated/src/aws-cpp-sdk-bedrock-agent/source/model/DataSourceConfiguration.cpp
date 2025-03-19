@@ -18,19 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-DataSourceConfiguration::DataSourceConfiguration() : 
-    m_confluenceConfigurationHasBeenSet(false),
-    m_s3ConfigurationHasBeenSet(false),
-    m_salesforceConfigurationHasBeenSet(false),
-    m_sharePointConfigurationHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_webConfigurationHasBeenSet(false)
-{
-}
-
 DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
-  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("confluenceConfiguration"))
   {
     m_confluenceConfiguration = jsonValue.GetObject("confluenceConfiguration");
-
     m_confluenceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("salesforceConfiguration"))
   {
     m_salesforceConfiguration = jsonValue.GetObject("salesforceConfiguration");
-
     m_salesforceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharePointConfiguration"))
   {
     m_sharePointConfiguration = jsonValue.GetObject("sharePointConfiguration");
-
     m_sharePointConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webConfiguration"))
   {
     m_webConfiguration = jsonValue.GetObject("webConfiguration");
-
     m_webConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

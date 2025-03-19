@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-MediaAnalysisModelVersions::MediaAnalysisModelVersions() : 
-    m_moderationHasBeenSet(false)
-{
-}
-
 MediaAnalysisModelVersions::MediaAnalysisModelVersions(JsonView jsonValue)
-  : MediaAnalysisModelVersions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MediaAnalysisModelVersions& MediaAnalysisModelVersions::operator =(JsonView json
   if(jsonValue.ValueExists("Moderation"))
   {
     m_moderation = jsonValue.GetString("Moderation");
-
     m_moderationHasBeenSet = true;
   }
-
   return *this;
 }
 

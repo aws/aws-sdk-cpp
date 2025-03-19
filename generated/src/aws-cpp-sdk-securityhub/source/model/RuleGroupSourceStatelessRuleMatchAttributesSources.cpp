@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRuleMatchAttributesSources() : 
-    m_addressDefinitionHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatelessRuleMatchAttributesSources::RuleGroupSourceStatelessRuleMatchAttributesSources(JsonView jsonValue)
-  : RuleGroupSourceStatelessRuleMatchAttributesSources()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuleGroupSourceStatelessRuleMatchAttributesSources& RuleGroupSourceStatelessRule
   if(jsonValue.ValueExists("AddressDefinition"))
   {
     m_addressDefinition = jsonValue.GetString("AddressDefinition");
-
     m_addressDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

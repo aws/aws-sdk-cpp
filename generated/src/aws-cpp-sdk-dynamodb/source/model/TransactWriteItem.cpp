@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TransactWriteItem::TransactWriteItem() : 
-    m_conditionCheckHasBeenSet(false),
-    m_putHasBeenSet(false),
-    m_deleteHasBeenSet(false),
-    m_updateHasBeenSet(false)
-{
-}
-
 TransactWriteItem::TransactWriteItem(JsonView jsonValue)
-  : TransactWriteItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TransactWriteItem& TransactWriteItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConditionCheck"))
   {
     m_conditionCheck = jsonValue.GetObject("ConditionCheck");
-
     m_conditionCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Put"))
   {
     m_put = jsonValue.GetObject("Put");
-
     m_putHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delete"))
   {
     m_delete = jsonValue.GetObject("Delete");
-
     m_deleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Update"))
   {
     m_update = jsonValue.GetObject("Update");
-
     m_updateHasBeenSet = true;
   }
-
   return *this;
 }
 

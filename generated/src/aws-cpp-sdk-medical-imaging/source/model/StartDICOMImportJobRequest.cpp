@@ -12,18 +12,6 @@ using namespace Aws::MedicalImaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDICOMImportJobRequest::StartDICOMImportJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_datastoreIdHasBeenSet(false),
-    m_inputS3UriHasBeenSet(false),
-    m_outputS3UriHasBeenSet(false),
-    m_inputOwnerAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String StartDICOMImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

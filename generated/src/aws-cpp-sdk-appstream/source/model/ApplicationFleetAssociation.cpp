@@ -18,14 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-ApplicationFleetAssociation::ApplicationFleetAssociation() : 
-    m_fleetNameHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 ApplicationFleetAssociation::ApplicationFleetAssociation(JsonView jsonValue)
-  : ApplicationFleetAssociation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ApplicationFleetAssociation& ApplicationFleetAssociation::operator =(JsonView js
   if(jsonValue.ValueExists("FleetName"))
   {
     m_fleetName = jsonValue.GetString("FleetName");
-
     m_fleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

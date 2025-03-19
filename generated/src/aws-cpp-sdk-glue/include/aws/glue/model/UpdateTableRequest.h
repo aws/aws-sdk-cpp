@@ -23,7 +23,7 @@ namespace Model
   class UpdateTableRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateTableRequest();
+    AWS_GLUE_API UpdateTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
      * Amazon Web Services account ID is used by default.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline UpdateTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline UpdateTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    UpdateTableRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The name of the catalog database in which the table resides. For Hive
      * compatibility, this name is entirely lowercase.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline UpdateTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline UpdateTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    UpdateTableRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,12 @@ namespace Model
      * <p>An updated <code>TableInput</code> object to define the metadata table in the
      * catalog.</p>
      */
-    inline const TableInput& GetTableInput() const{ return m_tableInput; }
+    inline const TableInput& GetTableInput() const { return m_tableInput; }
     inline bool TableInputHasBeenSet() const { return m_tableInputHasBeenSet; }
-    inline void SetTableInput(const TableInput& value) { m_tableInputHasBeenSet = true; m_tableInput = value; }
-    inline void SetTableInput(TableInput&& value) { m_tableInputHasBeenSet = true; m_tableInput = std::move(value); }
-    inline UpdateTableRequest& WithTableInput(const TableInput& value) { SetTableInput(value); return *this;}
-    inline UpdateTableRequest& WithTableInput(TableInput&& value) { SetTableInput(std::move(value)); return *this;}
+    template<typename TableInputT = TableInput>
+    void SetTableInput(TableInputT&& value) { m_tableInputHasBeenSet = true; m_tableInput = std::forward<TableInputT>(value); }
+    template<typename TableInputT = TableInput>
+    UpdateTableRequest& WithTableInput(TableInputT&& value) { SetTableInput(std::forward<TableInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +81,7 @@ namespace Model
      * the table before updating it. However, if <code>skipArchive</code> is set to
      * true, <code>UpdateTable</code> does not create the archived version.</p>
      */
-    inline bool GetSkipArchive() const{ return m_skipArchive; }
+    inline bool GetSkipArchive() const { return m_skipArchive; }
     inline bool SkipArchiveHasBeenSet() const { return m_skipArchiveHasBeenSet; }
     inline void SetSkipArchive(bool value) { m_skipArchiveHasBeenSet = true; m_skipArchive = value; }
     inline UpdateTableRequest& WithSkipArchive(bool value) { SetSkipArchive(value); return *this;}
@@ -95,40 +91,34 @@ namespace Model
     /**
      * <p>The transaction ID at which to update the table contents. </p>
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-    inline UpdateTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline UpdateTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    UpdateTableRequest& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version ID at which to update the table contents. </p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline UpdateTableRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline UpdateTableRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    UpdateTableRequest& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operation to be performed when updating the view.</p>
      */
-    inline const ViewUpdateAction& GetViewUpdateAction() const{ return m_viewUpdateAction; }
+    inline ViewUpdateAction GetViewUpdateAction() const { return m_viewUpdateAction; }
     inline bool ViewUpdateActionHasBeenSet() const { return m_viewUpdateActionHasBeenSet; }
-    inline void SetViewUpdateAction(const ViewUpdateAction& value) { m_viewUpdateActionHasBeenSet = true; m_viewUpdateAction = value; }
-    inline void SetViewUpdateAction(ViewUpdateAction&& value) { m_viewUpdateActionHasBeenSet = true; m_viewUpdateAction = std::move(value); }
-    inline UpdateTableRequest& WithViewUpdateAction(const ViewUpdateAction& value) { SetViewUpdateAction(value); return *this;}
-    inline UpdateTableRequest& WithViewUpdateAction(ViewUpdateAction&& value) { SetViewUpdateAction(std::move(value)); return *this;}
+    inline void SetViewUpdateAction(ViewUpdateAction value) { m_viewUpdateActionHasBeenSet = true; m_viewUpdateAction = value; }
+    inline UpdateTableRequest& WithViewUpdateAction(ViewUpdateAction value) { SetViewUpdateAction(value); return *this;}
     ///@}
 
     ///@{
@@ -136,7 +126,7 @@ namespace Model
      * <p>A flag that can be set to true to ignore matching storage descriptor and
      * subobject matching requirements.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline UpdateTableRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -152,7 +142,7 @@ namespace Model
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet = false;
 
-    bool m_skipArchive;
+    bool m_skipArchive{false};
     bool m_skipArchiveHasBeenSet = false;
 
     Aws::String m_transactionId;
@@ -161,10 +151,10 @@ namespace Model
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    ViewUpdateAction m_viewUpdateAction;
+    ViewUpdateAction m_viewUpdateAction{ViewUpdateAction::NOT_SET};
     bool m_viewUpdateActionHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

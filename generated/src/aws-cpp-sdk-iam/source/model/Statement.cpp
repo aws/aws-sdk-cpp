@@ -20,17 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Statement::Statement() : 
-    m_sourcePolicyIdHasBeenSet(false),
-    m_sourcePolicyType(PolicySourceType::NOT_SET),
-    m_sourcePolicyTypeHasBeenSet(false),
-    m_startPositionHasBeenSet(false),
-    m_endPositionHasBeenSet(false)
-{
-}
-
 Statement::Statement(const XmlNode& xmlNode)
-  : Statement()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ Statement& Statement::operator =(const XmlNode& xmlNode)
     XmlNode sourcePolicyTypeNode = resultNode.FirstChild("SourcePolicyType");
     if(!sourcePolicyTypeNode.IsNull())
     {
-      m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyTypeNode.GetText()).c_str()).c_str());
+      m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyTypeNode.GetText()).c_str()));
       m_sourcePolicyTypeHasBeenSet = true;
     }
     XmlNode startPositionNode = resultNode.FirstChild("StartPosition");

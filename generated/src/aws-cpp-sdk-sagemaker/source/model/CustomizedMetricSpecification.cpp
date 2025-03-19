@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CustomizedMetricSpecification::CustomizedMetricSpecification() : 
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false)
-{
-}
-
 CustomizedMetricSpecification::CustomizedMetricSpecification(JsonView jsonValue)
-  : CustomizedMetricSpecification()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(JsonVie
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = StatisticMapper::GetStatisticForName(jsonValue.GetString("Statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   return *this;
 }
 

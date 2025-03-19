@@ -32,7 +32,7 @@ namespace Model
   class AttendeeIdItem
   {
   public:
-    AWS_CHIMESDKMEETINGS_API AttendeeIdItem();
+    AWS_CHIMESDKMEETINGS_API AttendeeIdItem() = default;
     AWS_CHIMESDKMEETINGS_API AttendeeIdItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API AttendeeIdItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A list of one or more attendee IDs.</p>
      */
-    inline const Aws::String& GetAttendeeId() const{ return m_attendeeId; }
+    inline const Aws::String& GetAttendeeId() const { return m_attendeeId; }
     inline bool AttendeeIdHasBeenSet() const { return m_attendeeIdHasBeenSet; }
-    inline void SetAttendeeId(const Aws::String& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = value; }
-    inline void SetAttendeeId(Aws::String&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::move(value); }
-    inline void SetAttendeeId(const char* value) { m_attendeeIdHasBeenSet = true; m_attendeeId.assign(value); }
-    inline AttendeeIdItem& WithAttendeeId(const Aws::String& value) { SetAttendeeId(value); return *this;}
-    inline AttendeeIdItem& WithAttendeeId(Aws::String&& value) { SetAttendeeId(std::move(value)); return *this;}
-    inline AttendeeIdItem& WithAttendeeId(const char* value) { SetAttendeeId(value); return *this;}
+    template<typename AttendeeIdT = Aws::String>
+    void SetAttendeeId(AttendeeIdT&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::forward<AttendeeIdT>(value); }
+    template<typename AttendeeIdT = Aws::String>
+    AttendeeIdItem& WithAttendeeId(AttendeeIdT&& value) { SetAttendeeId(std::forward<AttendeeIdT>(value)); return *this;}
     ///@}
   private:
 

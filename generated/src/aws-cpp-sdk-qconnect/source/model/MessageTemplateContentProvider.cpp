@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageTemplateContentProvider::MessageTemplateContentProvider() : 
-    m_emailHasBeenSet(false),
-    m_smsHasBeenSet(false)
-{
-}
-
 MessageTemplateContentProvider::MessageTemplateContentProvider(JsonView jsonValue)
-  : MessageTemplateContentProvider()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MessageTemplateContentProvider& MessageTemplateContentProvider::operator =(JsonV
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetObject("email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sms"))
   {
     m_sms = jsonValue.GetObject("sms");
-
     m_smsHasBeenSet = true;
   }
-
   return *this;
 }
 

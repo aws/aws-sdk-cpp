@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-EpochLockingSettings::EpochLockingSettings() : 
-    m_customEpochHasBeenSet(false),
-    m_jamSyncTimeHasBeenSet(false)
-{
-}
-
 EpochLockingSettings::EpochLockingSettings(JsonView jsonValue)
-  : EpochLockingSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EpochLockingSettings& EpochLockingSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customEpoch"))
   {
     m_customEpoch = jsonValue.GetString("customEpoch");
-
     m_customEpochHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jamSyncTime"))
   {
     m_jamSyncTime = jsonValue.GetString("jamSyncTime");
-
     m_jamSyncTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,22 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartChangeRequestExecutionRequest::StartChangeRequestExecutionRequest() : 
-    m_scheduledTimeHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_changeRequestNameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_autoApprove(false),
-    m_autoApproveHasBeenSet(false),
-    m_runbooksHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_scheduledEndTimeHasBeenSet(false),
-    m_changeDetailsHasBeenSet(false)
-{
-}
-
 Aws::String StartChangeRequestExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

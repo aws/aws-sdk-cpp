@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SnowflakeDestinationProperties::SnowflakeDestinationProperties() : 
-    m_objectHasBeenSet(false),
-    m_intermediateBucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
-{
-}
-
 SnowflakeDestinationProperties::SnowflakeDestinationProperties(JsonView jsonValue)
-  : SnowflakeDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SnowflakeDestinationProperties& SnowflakeDestinationProperties::operator =(JsonV
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intermediateBucketName"))
   {
     m_intermediateBucketName = jsonValue.GetString("intermediateBucketName");
-
     m_intermediateBucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPrefix"))
   {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
-
     m_bucketPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

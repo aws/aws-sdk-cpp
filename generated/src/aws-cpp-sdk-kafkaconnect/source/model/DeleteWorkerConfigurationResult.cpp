@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteWorkerConfigurationResult::DeleteWorkerConfigurationResult() : 
-    m_workerConfigurationState(WorkerConfigurationState::NOT_SET)
-{
-}
-
 DeleteWorkerConfigurationResult::DeleteWorkerConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteWorkerConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteWorkerConfigurationResult& DeleteWorkerConfigurationResult::operator =(con
   if(jsonValue.ValueExists("workerConfigurationArn"))
   {
     m_workerConfigurationArn = jsonValue.GetString("workerConfigurationArn");
-
+    m_workerConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerConfigurationState"))
   {
     m_workerConfigurationState = WorkerConfigurationStateMapper::GetWorkerConfigurationStateForName(jsonValue.GetString("workerConfigurationState"));
-
+    m_workerConfigurationStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

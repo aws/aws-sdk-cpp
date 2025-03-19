@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListInstanceTypeDetailsRequest::ListInstanceTypeDetailsRequest() : 
-    m_engineVersionHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_retrieveAZs(false),
-    m_retrieveAZsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListInstanceTypeDetailsRequest::SerializePayload() const
 {
   return {};

@@ -12,12 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccessTokenRequest::CreateAccessTokenRequest() : 
-    m_nameHasBeenSet(false),
-    m_expiresTimeHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccessTokenRequest::SerializePayload() const
 {
   JsonValue payload;

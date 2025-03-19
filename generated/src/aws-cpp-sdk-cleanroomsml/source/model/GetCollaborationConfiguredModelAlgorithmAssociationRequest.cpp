@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCollaborationConfiguredModelAlgorithmAssociationRequest::GetCollaborationConfiguredModelAlgorithmAssociationRequest() : 
-    m_configuredModelAlgorithmAssociationArnHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCollaborationConfiguredModelAlgorithmAssociationRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DomainConfigurationSummary::DomainConfigurationSummary() : 
-    m_domainConfigurationNameHasBeenSet(false),
-    m_domainConfigurationArnHasBeenSet(false),
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 DomainConfigurationSummary::DomainConfigurationSummary(JsonView jsonValue)
-  : DomainConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DomainConfigurationSummary& DomainConfigurationSummary::operator =(JsonView json
   if(jsonValue.ValueExists("domainConfigurationName"))
   {
     m_domainConfigurationName = jsonValue.GetString("domainConfigurationName");
-
     m_domainConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainConfigurationArn"))
   {
     m_domainConfigurationArn = jsonValue.GetString("domainConfigurationArn");
-
     m_domainConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceType"))
   {
     m_serviceType = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("serviceType"));
-
     m_serviceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

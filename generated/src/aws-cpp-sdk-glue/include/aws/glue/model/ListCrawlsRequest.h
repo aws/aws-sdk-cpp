@@ -23,7 +23,7 @@ namespace Model
   class ListCrawlsRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API ListCrawlsRequest();
+    AWS_GLUE_API ListCrawlsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the crawler whose runs you want to retrieve.</p>
      */
-    inline const Aws::String& GetCrawlerName() const{ return m_crawlerName; }
+    inline const Aws::String& GetCrawlerName() const { return m_crawlerName; }
     inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
-    inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
-    inline void SetCrawlerName(Aws::String&& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = std::move(value); }
-    inline void SetCrawlerName(const char* value) { m_crawlerNameHasBeenSet = true; m_crawlerName.assign(value); }
-    inline ListCrawlsRequest& WithCrawlerName(const Aws::String& value) { SetCrawlerName(value); return *this;}
-    inline ListCrawlsRequest& WithCrawlerName(Aws::String&& value) { SetCrawlerName(std::move(value)); return *this;}
-    inline ListCrawlsRequest& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
+    template<typename CrawlerNameT = Aws::String>
+    void SetCrawlerName(CrawlerNameT&& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = std::forward<CrawlerNameT>(value); }
+    template<typename CrawlerNameT = Aws::String>
+    ListCrawlsRequest& WithCrawlerName(CrawlerNameT&& value) { SetCrawlerName(std::forward<CrawlerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * <p>The maximum number of results to return. The default is 20, and maximum is
      * 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCrawlsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -66,35 +64,33 @@ namespace Model
      * <p>Filters the crawls by the criteria you specify in a list of
      * <code>CrawlsFilter</code> objects.</p>
      */
-    inline const Aws::Vector<CrawlsFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<CrawlsFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<CrawlsFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<CrawlsFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListCrawlsRequest& WithFilters(const Aws::Vector<CrawlsFilter>& value) { SetFilters(value); return *this;}
-    inline ListCrawlsRequest& WithFilters(Aws::Vector<CrawlsFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListCrawlsRequest& AddFilters(const CrawlsFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListCrawlsRequest& AddFilters(CrawlsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<CrawlsFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<CrawlsFilter>>
+    ListCrawlsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = CrawlsFilter>
+    ListCrawlsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCrawlsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCrawlsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCrawlsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCrawlsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_crawlerName;
     bool m_crawlerNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<CrawlsFilter> m_filters;

@@ -28,7 +28,7 @@ namespace Model
   class PutOptedOutNumberResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API PutOptedOutNumberResult();
+    AWS_PINPOINTSMSVOICEV2_API PutOptedOutNumberResult() = default;
     AWS_PINPOINTSMSVOICEV2_API PutOptedOutNumberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API PutOptedOutNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,33 @@ namespace Model
     /**
      * <p>The OptOutListArn that the phone number was removed from.</p>
      */
-    inline const Aws::String& GetOptOutListArn() const{ return m_optOutListArn; }
-    inline void SetOptOutListArn(const Aws::String& value) { m_optOutListArn = value; }
-    inline void SetOptOutListArn(Aws::String&& value) { m_optOutListArn = std::move(value); }
-    inline void SetOptOutListArn(const char* value) { m_optOutListArn.assign(value); }
-    inline PutOptedOutNumberResult& WithOptOutListArn(const Aws::String& value) { SetOptOutListArn(value); return *this;}
-    inline PutOptedOutNumberResult& WithOptOutListArn(Aws::String&& value) { SetOptOutListArn(std::move(value)); return *this;}
-    inline PutOptedOutNumberResult& WithOptOutListArn(const char* value) { SetOptOutListArn(value); return *this;}
+    inline const Aws::String& GetOptOutListArn() const { return m_optOutListArn; }
+    template<typename OptOutListArnT = Aws::String>
+    void SetOptOutListArn(OptOutListArnT&& value) { m_optOutListArnHasBeenSet = true; m_optOutListArn = std::forward<OptOutListArnT>(value); }
+    template<typename OptOutListArnT = Aws::String>
+    PutOptedOutNumberResult& WithOptOutListArn(OptOutListArnT&& value) { SetOptOutListArn(std::forward<OptOutListArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OptOutListName that the phone number was removed from.</p>
      */
-    inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
-    inline void SetOptOutListName(const Aws::String& value) { m_optOutListName = value; }
-    inline void SetOptOutListName(Aws::String&& value) { m_optOutListName = std::move(value); }
-    inline void SetOptOutListName(const char* value) { m_optOutListName.assign(value); }
-    inline PutOptedOutNumberResult& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
-    inline PutOptedOutNumberResult& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
-    inline PutOptedOutNumberResult& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
+    inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
+    template<typename OptOutListNameT = Aws::String>
+    void SetOptOutListName(OptOutListNameT&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::forward<OptOutListNameT>(value); }
+    template<typename OptOutListNameT = Aws::String>
+    PutOptedOutNumberResult& WithOptOutListName(OptOutListNameT&& value) { SetOptOutListName(std::forward<OptOutListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phone number that was added to the OptOutList.</p>
      */
-    inline const Aws::String& GetOptedOutNumber() const{ return m_optedOutNumber; }
-    inline void SetOptedOutNumber(const Aws::String& value) { m_optedOutNumber = value; }
-    inline void SetOptedOutNumber(Aws::String&& value) { m_optedOutNumber = std::move(value); }
-    inline void SetOptedOutNumber(const char* value) { m_optedOutNumber.assign(value); }
-    inline PutOptedOutNumberResult& WithOptedOutNumber(const Aws::String& value) { SetOptedOutNumber(value); return *this;}
-    inline PutOptedOutNumberResult& WithOptedOutNumber(Aws::String&& value) { SetOptedOutNumber(std::move(value)); return *this;}
-    inline PutOptedOutNumberResult& WithOptedOutNumber(const char* value) { SetOptedOutNumber(value); return *this;}
+    inline const Aws::String& GetOptedOutNumber() const { return m_optedOutNumber; }
+    template<typename OptedOutNumberT = Aws::String>
+    void SetOptedOutNumber(OptedOutNumberT&& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = std::forward<OptedOutNumberT>(value); }
+    template<typename OptedOutNumberT = Aws::String>
+    PutOptedOutNumberResult& WithOptedOutNumber(OptedOutNumberT&& value) { SetOptedOutNumber(std::forward<OptedOutNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,11 +71,11 @@ namespace Model
      * <p>The time that the phone number was added to the OptOutList, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetOptedOutTimestamp() const{ return m_optedOutTimestamp; }
-    inline void SetOptedOutTimestamp(const Aws::Utils::DateTime& value) { m_optedOutTimestamp = value; }
-    inline void SetOptedOutTimestamp(Aws::Utils::DateTime&& value) { m_optedOutTimestamp = std::move(value); }
-    inline PutOptedOutNumberResult& WithOptedOutTimestamp(const Aws::Utils::DateTime& value) { SetOptedOutTimestamp(value); return *this;}
-    inline PutOptedOutNumberResult& WithOptedOutTimestamp(Aws::Utils::DateTime&& value) { SetOptedOutTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetOptedOutTimestamp() const { return m_optedOutTimestamp; }
+    template<typename OptedOutTimestampT = Aws::Utils::DateTime>
+    void SetOptedOutTimestamp(OptedOutTimestampT&& value) { m_optedOutTimestampHasBeenSet = true; m_optedOutTimestamp = std::forward<OptedOutTimestampT>(value); }
+    template<typename OptedOutTimestampT = Aws::Utils::DateTime>
+    PutOptedOutNumberResult& WithOptedOutTimestamp(OptedOutTimestampT&& value) { SetOptedOutTimestamp(std::forward<OptedOutTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,34 +83,38 @@ namespace Model
      * <p>This is true if it was the end user who requested their phone number be
      * removed. </p>
      */
-    inline bool GetEndUserOptedOut() const{ return m_endUserOptedOut; }
-    inline void SetEndUserOptedOut(bool value) { m_endUserOptedOut = value; }
+    inline bool GetEndUserOptedOut() const { return m_endUserOptedOut; }
+    inline void SetEndUserOptedOut(bool value) { m_endUserOptedOutHasBeenSet = true; m_endUserOptedOut = value; }
     inline PutOptedOutNumberResult& WithEndUserOptedOut(bool value) { SetEndUserOptedOut(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutOptedOutNumberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutOptedOutNumberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutOptedOutNumberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutOptedOutNumberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_optOutListArn;
+    bool m_optOutListArnHasBeenSet = false;
 
     Aws::String m_optOutListName;
+    bool m_optOutListNameHasBeenSet = false;
 
     Aws::String m_optedOutNumber;
+    bool m_optedOutNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_optedOutTimestamp;
+    Aws::Utils::DateTime m_optedOutTimestamp{};
+    bool m_optedOutTimestampHasBeenSet = false;
 
-    bool m_endUserOptedOut;
+    bool m_endUserOptedOut{false};
+    bool m_endUserOptedOutHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

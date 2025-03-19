@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateSigninDelegateGroupsFromAccountRequest::DisassociateSigninDelegateGroupsFromAccountRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_groupNamesHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateSigninDelegateGroupsFromAccountRequest::SerializePayload() const
 {
   JsonValue payload;

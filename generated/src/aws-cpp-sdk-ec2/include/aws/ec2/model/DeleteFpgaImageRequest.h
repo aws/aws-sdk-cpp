@@ -21,7 +21,7 @@ namespace Model
   class DeleteFpgaImageRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteFpgaImageRequest();
+    AWS_EC2_API DeleteFpgaImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteFpgaImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The ID of the AFI.</p>
      */
-    inline const Aws::String& GetFpgaImageId() const{ return m_fpgaImageId; }
+    inline const Aws::String& GetFpgaImageId() const { return m_fpgaImageId; }
     inline bool FpgaImageIdHasBeenSet() const { return m_fpgaImageIdHasBeenSet; }
-    inline void SetFpgaImageId(const Aws::String& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = value; }
-    inline void SetFpgaImageId(Aws::String&& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = std::move(value); }
-    inline void SetFpgaImageId(const char* value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId.assign(value); }
-    inline DeleteFpgaImageRequest& WithFpgaImageId(const Aws::String& value) { SetFpgaImageId(value); return *this;}
-    inline DeleteFpgaImageRequest& WithFpgaImageId(Aws::String&& value) { SetFpgaImageId(std::move(value)); return *this;}
-    inline DeleteFpgaImageRequest& WithFpgaImageId(const char* value) { SetFpgaImageId(value); return *this;}
+    template<typename FpgaImageIdT = Aws::String>
+    void SetFpgaImageId(FpgaImageIdT&& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = std::forward<FpgaImageIdT>(value); }
+    template<typename FpgaImageIdT = Aws::String>
+    DeleteFpgaImageRequest& WithFpgaImageId(FpgaImageIdT&& value) { SetFpgaImageId(std::forward<FpgaImageIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_fpgaImageId;

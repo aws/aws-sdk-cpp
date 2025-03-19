@@ -32,7 +32,7 @@ namespace Model
   class RestoreJobCreator
   {
   public:
-    AWS_BACKUP_API RestoreJobCreator();
+    AWS_BACKUP_API RestoreJobCreator() = default;
     AWS_BACKUP_API RestoreJobCreator(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API RestoreJobCreator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a restore testing
      * plan.</p>
      */
-    inline const Aws::String& GetRestoreTestingPlanArn() const{ return m_restoreTestingPlanArn; }
+    inline const Aws::String& GetRestoreTestingPlanArn() const { return m_restoreTestingPlanArn; }
     inline bool RestoreTestingPlanArnHasBeenSet() const { return m_restoreTestingPlanArnHasBeenSet; }
-    inline void SetRestoreTestingPlanArn(const Aws::String& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = value; }
-    inline void SetRestoreTestingPlanArn(Aws::String&& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = std::move(value); }
-    inline void SetRestoreTestingPlanArn(const char* value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn.assign(value); }
-    inline RestoreJobCreator& WithRestoreTestingPlanArn(const Aws::String& value) { SetRestoreTestingPlanArn(value); return *this;}
-    inline RestoreJobCreator& WithRestoreTestingPlanArn(Aws::String&& value) { SetRestoreTestingPlanArn(std::move(value)); return *this;}
-    inline RestoreJobCreator& WithRestoreTestingPlanArn(const char* value) { SetRestoreTestingPlanArn(value); return *this;}
+    template<typename RestoreTestingPlanArnT = Aws::String>
+    void SetRestoreTestingPlanArn(RestoreTestingPlanArnT&& value) { m_restoreTestingPlanArnHasBeenSet = true; m_restoreTestingPlanArn = std::forward<RestoreTestingPlanArnT>(value); }
+    template<typename RestoreTestingPlanArnT = Aws::String>
+    RestoreJobCreator& WithRestoreTestingPlanArn(RestoreTestingPlanArnT&& value) { SetRestoreTestingPlanArn(std::forward<RestoreTestingPlanArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class CheckInLicenseRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API CheckInLicenseRequest();
+    AWS_LICENSEMANAGER_API CheckInLicenseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>License consumption token.</p>
      */
-    inline const Aws::String& GetLicenseConsumptionToken() const{ return m_licenseConsumptionToken; }
+    inline const Aws::String& GetLicenseConsumptionToken() const { return m_licenseConsumptionToken; }
     inline bool LicenseConsumptionTokenHasBeenSet() const { return m_licenseConsumptionTokenHasBeenSet; }
-    inline void SetLicenseConsumptionToken(const Aws::String& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = value; }
-    inline void SetLicenseConsumptionToken(Aws::String&& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = std::move(value); }
-    inline void SetLicenseConsumptionToken(const char* value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken.assign(value); }
-    inline CheckInLicenseRequest& WithLicenseConsumptionToken(const Aws::String& value) { SetLicenseConsumptionToken(value); return *this;}
-    inline CheckInLicenseRequest& WithLicenseConsumptionToken(Aws::String&& value) { SetLicenseConsumptionToken(std::move(value)); return *this;}
-    inline CheckInLicenseRequest& WithLicenseConsumptionToken(const char* value) { SetLicenseConsumptionToken(value); return *this;}
+    template<typename LicenseConsumptionTokenT = Aws::String>
+    void SetLicenseConsumptionToken(LicenseConsumptionTokenT&& value) { m_licenseConsumptionTokenHasBeenSet = true; m_licenseConsumptionToken = std::forward<LicenseConsumptionTokenT>(value); }
+    template<typename LicenseConsumptionTokenT = Aws::String>
+    CheckInLicenseRequest& WithLicenseConsumptionToken(LicenseConsumptionTokenT&& value) { SetLicenseConsumptionToken(std::forward<LicenseConsumptionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>License beneficiary.</p>
      */
-    inline const Aws::String& GetBeneficiary() const{ return m_beneficiary; }
+    inline const Aws::String& GetBeneficiary() const { return m_beneficiary; }
     inline bool BeneficiaryHasBeenSet() const { return m_beneficiaryHasBeenSet; }
-    inline void SetBeneficiary(const Aws::String& value) { m_beneficiaryHasBeenSet = true; m_beneficiary = value; }
-    inline void SetBeneficiary(Aws::String&& value) { m_beneficiaryHasBeenSet = true; m_beneficiary = std::move(value); }
-    inline void SetBeneficiary(const char* value) { m_beneficiaryHasBeenSet = true; m_beneficiary.assign(value); }
-    inline CheckInLicenseRequest& WithBeneficiary(const Aws::String& value) { SetBeneficiary(value); return *this;}
-    inline CheckInLicenseRequest& WithBeneficiary(Aws::String&& value) { SetBeneficiary(std::move(value)); return *this;}
-    inline CheckInLicenseRequest& WithBeneficiary(const char* value) { SetBeneficiary(value); return *this;}
+    template<typename BeneficiaryT = Aws::String>
+    void SetBeneficiary(BeneficiaryT&& value) { m_beneficiaryHasBeenSet = true; m_beneficiary = std::forward<BeneficiaryT>(value); }
+    template<typename BeneficiaryT = Aws::String>
+    CheckInLicenseRequest& WithBeneficiary(BeneficiaryT&& value) { SetBeneficiary(std::forward<BeneficiaryT>(value)); return *this;}
     ///@}
   private:
 

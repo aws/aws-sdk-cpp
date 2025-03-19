@@ -32,7 +32,7 @@ namespace Model
   class OpsItemIdentity
   {
   public:
-    AWS_SSM_API OpsItemIdentity();
+    AWS_SSM_API OpsItemIdentity() = default;
     AWS_SSM_API OpsItemIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API OpsItemIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem
      * event.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline OpsItemIdentity& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline OpsItemIdentity& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline OpsItemIdentity& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    OpsItemIdentity& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

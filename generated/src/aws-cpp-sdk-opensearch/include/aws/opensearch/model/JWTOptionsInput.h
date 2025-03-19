@@ -32,7 +32,7 @@ namespace Model
   class JWTOptionsInput
   {
   public:
-    AWS_OPENSEARCHSERVICE_API JWTOptionsInput();
+    AWS_OPENSEARCHSERVICE_API JWTOptionsInput() = default;
     AWS_OPENSEARCHSERVICE_API JWTOptionsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API JWTOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>True to enable JWT authentication and authorization for a domain.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline JWTOptionsInput& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -52,28 +52,24 @@ namespace Model
     /**
      * <p>Element of the JWT assertion to use for the user name.</p>
      */
-    inline const Aws::String& GetSubjectKey() const{ return m_subjectKey; }
+    inline const Aws::String& GetSubjectKey() const { return m_subjectKey; }
     inline bool SubjectKeyHasBeenSet() const { return m_subjectKeyHasBeenSet; }
-    inline void SetSubjectKey(const Aws::String& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = value; }
-    inline void SetSubjectKey(Aws::String&& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = std::move(value); }
-    inline void SetSubjectKey(const char* value) { m_subjectKeyHasBeenSet = true; m_subjectKey.assign(value); }
-    inline JWTOptionsInput& WithSubjectKey(const Aws::String& value) { SetSubjectKey(value); return *this;}
-    inline JWTOptionsInput& WithSubjectKey(Aws::String&& value) { SetSubjectKey(std::move(value)); return *this;}
-    inline JWTOptionsInput& WithSubjectKey(const char* value) { SetSubjectKey(value); return *this;}
+    template<typename SubjectKeyT = Aws::String>
+    void SetSubjectKey(SubjectKeyT&& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = std::forward<SubjectKeyT>(value); }
+    template<typename SubjectKeyT = Aws::String>
+    JWTOptionsInput& WithSubjectKey(SubjectKeyT&& value) { SetSubjectKey(std::forward<SubjectKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Element of the JWT assertion to use for roles.</p>
      */
-    inline const Aws::String& GetRolesKey() const{ return m_rolesKey; }
+    inline const Aws::String& GetRolesKey() const { return m_rolesKey; }
     inline bool RolesKeyHasBeenSet() const { return m_rolesKeyHasBeenSet; }
-    inline void SetRolesKey(const Aws::String& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = value; }
-    inline void SetRolesKey(Aws::String&& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = std::move(value); }
-    inline void SetRolesKey(const char* value) { m_rolesKeyHasBeenSet = true; m_rolesKey.assign(value); }
-    inline JWTOptionsInput& WithRolesKey(const Aws::String& value) { SetRolesKey(value); return *this;}
-    inline JWTOptionsInput& WithRolesKey(Aws::String&& value) { SetRolesKey(std::move(value)); return *this;}
-    inline JWTOptionsInput& WithRolesKey(const char* value) { SetRolesKey(value); return *this;}
+    template<typename RolesKeyT = Aws::String>
+    void SetRolesKey(RolesKeyT&& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = std::forward<RolesKeyT>(value); }
+    template<typename RolesKeyT = Aws::String>
+    JWTOptionsInput& WithRolesKey(RolesKeyT&& value) { SetRolesKey(std::forward<RolesKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,18 +77,16 @@ namespace Model
      * <p>Element of the JWT assertion used by the cluster to verify JWT
      * signatures.</p>
      */
-    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::String& GetPublicKey() const { return m_publicKey; }
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
-    inline JWTOptionsInput& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
-    inline JWTOptionsInput& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
-    inline JWTOptionsInput& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+    template<typename PublicKeyT = Aws::String>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::String>
+    JWTOptionsInput& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_subjectKey;

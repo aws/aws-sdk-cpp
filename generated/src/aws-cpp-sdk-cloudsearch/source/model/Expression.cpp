@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-Expression::Expression() : 
-    m_expressionNameHasBeenSet(false),
-    m_expressionValueHasBeenSet(false)
-{
-}
-
 Expression::Expression(const XmlNode& xmlNode)
-  : Expression()
 {
   *this = xmlNode;
 }

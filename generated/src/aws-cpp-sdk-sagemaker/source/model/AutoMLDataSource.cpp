@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLDataSource::AutoMLDataSource() : 
-    m_s3DataSourceHasBeenSet(false)
-{
-}
-
 AutoMLDataSource::AutoMLDataSource(JsonView jsonValue)
-  : AutoMLDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoMLDataSource& AutoMLDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3DataSource"))
   {
     m_s3DataSource = jsonValue.GetObject("S3DataSource");
-
     m_s3DataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

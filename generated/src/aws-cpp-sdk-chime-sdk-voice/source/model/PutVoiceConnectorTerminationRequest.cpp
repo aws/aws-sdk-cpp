@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutVoiceConnectorTerminationRequest::PutVoiceConnectorTerminationRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_terminationHasBeenSet(false)
-{
-}
-
 Aws::String PutVoiceConnectorTerminationRequest::SerializePayload() const
 {
   JsonValue payload;

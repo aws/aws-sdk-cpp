@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AttachClassicLinkVpcRequest::AttachClassicLinkVpcRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_groupsHasBeenSet(false)
-{
-}
-
 Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
 {
   Aws::StringStream ss;

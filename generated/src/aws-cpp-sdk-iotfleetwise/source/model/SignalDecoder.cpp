@@ -18,20 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-SignalDecoder::SignalDecoder() : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_type(SignalDecoderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_interfaceIdHasBeenSet(false),
-    m_canSignalHasBeenSet(false),
-    m_obdSignalHasBeenSet(false),
-    m_messageSignalHasBeenSet(false),
-    m_customDecodingSignalHasBeenSet(false)
-{
-}
-
 SignalDecoder::SignalDecoder(JsonView jsonValue)
-  : SignalDecoder()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SignalDecoder& SignalDecoder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fullyQualifiedName"))
   {
     m_fullyQualifiedName = jsonValue.GetString("fullyQualifiedName");
-
     m_fullyQualifiedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SignalDecoderTypeMapper::GetSignalDecoderTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interfaceId"))
   {
     m_interfaceId = jsonValue.GetString("interfaceId");
-
     m_interfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canSignal"))
   {
     m_canSignal = jsonValue.GetObject("canSignal");
-
     m_canSignalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("obdSignal"))
   {
     m_obdSignal = jsonValue.GetObject("obdSignal");
-
     m_obdSignalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageSignal"))
   {
     m_messageSignal = jsonValue.GetObject("messageSignal");
-
     m_messageSignalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDecodingSignal"))
   {
     m_customDecodingSignal = jsonValue.GetObject("customDecodingSignal");
-
     m_customDecodingSignalHasBeenSet = true;
   }
-
   return *this;
 }
 

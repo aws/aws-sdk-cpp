@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-LocalIpDetails::LocalIpDetails() : 
-    m_ipAddressV4HasBeenSet(false),
-    m_ipAddressV6HasBeenSet(false)
-{
-}
-
 LocalIpDetails::LocalIpDetails(JsonView jsonValue)
-  : LocalIpDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LocalIpDetails& LocalIpDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ipAddressV4"))
   {
     m_ipAddressV4 = jsonValue.GetString("ipAddressV4");
-
     m_ipAddressV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressV6"))
   {
     m_ipAddressV6 = jsonValue.GetString("ipAddressV6");
-
     m_ipAddressV6HasBeenSet = true;
   }
-
   return *this;
 }
 

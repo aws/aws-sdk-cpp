@@ -12,13 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceSyncStatusRequest::GetResourceSyncStatusRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceSyncStatusRequest::SerializePayload() const
 {
   JsonValue payload;

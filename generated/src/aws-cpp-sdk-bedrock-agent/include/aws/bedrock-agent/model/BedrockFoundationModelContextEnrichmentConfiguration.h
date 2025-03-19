@@ -34,7 +34,7 @@ namespace Model
   class BedrockFoundationModelContextEnrichmentConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API BedrockFoundationModelContextEnrichmentConfiguration();
+    AWS_BEDROCKAGENT_API BedrockFoundationModelContextEnrichmentConfiguration() = default;
     AWS_BEDROCKAGENT_API BedrockFoundationModelContextEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API BedrockFoundationModelContextEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * Neptune GraphRAG uses Amazon Bedrock foundation models to perform chunk entity
      * extraction.</p>
      */
-    inline const EnrichmentStrategyConfiguration& GetEnrichmentStrategyConfiguration() const{ return m_enrichmentStrategyConfiguration; }
+    inline const EnrichmentStrategyConfiguration& GetEnrichmentStrategyConfiguration() const { return m_enrichmentStrategyConfiguration; }
     inline bool EnrichmentStrategyConfigurationHasBeenSet() const { return m_enrichmentStrategyConfigurationHasBeenSet; }
-    inline void SetEnrichmentStrategyConfiguration(const EnrichmentStrategyConfiguration& value) { m_enrichmentStrategyConfigurationHasBeenSet = true; m_enrichmentStrategyConfiguration = value; }
-    inline void SetEnrichmentStrategyConfiguration(EnrichmentStrategyConfiguration&& value) { m_enrichmentStrategyConfigurationHasBeenSet = true; m_enrichmentStrategyConfiguration = std::move(value); }
-    inline BedrockFoundationModelContextEnrichmentConfiguration& WithEnrichmentStrategyConfiguration(const EnrichmentStrategyConfiguration& value) { SetEnrichmentStrategyConfiguration(value); return *this;}
-    inline BedrockFoundationModelContextEnrichmentConfiguration& WithEnrichmentStrategyConfiguration(EnrichmentStrategyConfiguration&& value) { SetEnrichmentStrategyConfiguration(std::move(value)); return *this;}
+    template<typename EnrichmentStrategyConfigurationT = EnrichmentStrategyConfiguration>
+    void SetEnrichmentStrategyConfiguration(EnrichmentStrategyConfigurationT&& value) { m_enrichmentStrategyConfigurationHasBeenSet = true; m_enrichmentStrategyConfiguration = std::forward<EnrichmentStrategyConfigurationT>(value); }
+    template<typename EnrichmentStrategyConfigurationT = EnrichmentStrategyConfiguration>
+    BedrockFoundationModelContextEnrichmentConfiguration& WithEnrichmentStrategyConfiguration(EnrichmentStrategyConfigurationT&& value) { SetEnrichmentStrategyConfiguration(std::forward<EnrichmentStrategyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the foundation model used for context
      * enrichment.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline BedrockFoundationModelContextEnrichmentConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline BedrockFoundationModelContextEnrichmentConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline BedrockFoundationModelContextEnrichmentConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    BedrockFoundationModelContextEnrichmentConfiguration& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,16 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateBucketMetadataTableConfigurationRequest::CreateBucketMetadataTableConfigurationRequest() : 
-    m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_metadataTableConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 Aws::String CreateBucketMetadataTableConfigurationRequest::SerializePayload() const
 {

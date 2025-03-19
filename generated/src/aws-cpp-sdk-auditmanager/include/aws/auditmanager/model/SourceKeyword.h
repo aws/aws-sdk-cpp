@@ -47,7 +47,7 @@ namespace Model
   class SourceKeyword
   {
   public:
-    AWS_AUDITMANAGER_API SourceKeyword();
+    AWS_AUDITMANAGER_API SourceKeyword() = default;
     AWS_AUDITMANAGER_API SourceKeyword(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API SourceKeyword& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,12 +68,10 @@ namespace Model
      * <li> <p>When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must
      * be entered as manual evidence.</p> </li> </ul> </li> </ul>
      */
-    inline const KeywordInputType& GetKeywordInputType() const{ return m_keywordInputType; }
+    inline KeywordInputType GetKeywordInputType() const { return m_keywordInputType; }
     inline bool KeywordInputTypeHasBeenSet() const { return m_keywordInputTypeHasBeenSet; }
-    inline void SetKeywordInputType(const KeywordInputType& value) { m_keywordInputTypeHasBeenSet = true; m_keywordInputType = value; }
-    inline void SetKeywordInputType(KeywordInputType&& value) { m_keywordInputTypeHasBeenSet = true; m_keywordInputType = std::move(value); }
-    inline SourceKeyword& WithKeywordInputType(const KeywordInputType& value) { SetKeywordInputType(value); return *this;}
-    inline SourceKeyword& WithKeywordInputType(KeywordInputType&& value) { SetKeywordInputType(std::move(value)); return *this;}
+    inline void SetKeywordInputType(KeywordInputType value) { m_keywordInputTypeHasBeenSet = true; m_keywordInputType = value; }
+    inline SourceKeyword& WithKeywordInputType(KeywordInputType value) { SetKeywordInputType(value); return *this;}
     ///@}
 
     ///@{
@@ -145,18 +143,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service
      * Authorization Reference</a>.</p> </li> </ol> 
      */
-    inline const Aws::String& GetKeywordValue() const{ return m_keywordValue; }
+    inline const Aws::String& GetKeywordValue() const { return m_keywordValue; }
     inline bool KeywordValueHasBeenSet() const { return m_keywordValueHasBeenSet; }
-    inline void SetKeywordValue(const Aws::String& value) { m_keywordValueHasBeenSet = true; m_keywordValue = value; }
-    inline void SetKeywordValue(Aws::String&& value) { m_keywordValueHasBeenSet = true; m_keywordValue = std::move(value); }
-    inline void SetKeywordValue(const char* value) { m_keywordValueHasBeenSet = true; m_keywordValue.assign(value); }
-    inline SourceKeyword& WithKeywordValue(const Aws::String& value) { SetKeywordValue(value); return *this;}
-    inline SourceKeyword& WithKeywordValue(Aws::String&& value) { SetKeywordValue(std::move(value)); return *this;}
-    inline SourceKeyword& WithKeywordValue(const char* value) { SetKeywordValue(value); return *this;}
+    template<typename KeywordValueT = Aws::String>
+    void SetKeywordValue(KeywordValueT&& value) { m_keywordValueHasBeenSet = true; m_keywordValue = std::forward<KeywordValueT>(value); }
+    template<typename KeywordValueT = Aws::String>
+    SourceKeyword& WithKeywordValue(KeywordValueT&& value) { SetKeywordValue(std::forward<KeywordValueT>(value)); return *this;}
     ///@}
   private:
 
-    KeywordInputType m_keywordInputType;
+    KeywordInputType m_keywordInputType{KeywordInputType::NOT_SET};
     bool m_keywordInputTypeHasBeenSet = false;
 
     Aws::String m_keywordValue;

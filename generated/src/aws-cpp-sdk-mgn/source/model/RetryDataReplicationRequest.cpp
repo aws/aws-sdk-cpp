@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetryDataReplicationRequest::RetryDataReplicationRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String RetryDataReplicationRequest::SerializePayload() const
 {
   JsonValue payload;

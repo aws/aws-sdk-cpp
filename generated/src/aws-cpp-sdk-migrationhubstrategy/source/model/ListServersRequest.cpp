@@ -12,19 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServersRequest::ListServersRequest() : 
-    m_filterValueHasBeenSet(false),
-    m_groupIdFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_serverCriteria(ServerCriteria::NOT_SET),
-    m_serverCriteriaHasBeenSet(false),
-    m_sort(SortOrder::NOT_SET),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String ListServersRequest::SerializePayload() const
 {
   JsonValue payload;

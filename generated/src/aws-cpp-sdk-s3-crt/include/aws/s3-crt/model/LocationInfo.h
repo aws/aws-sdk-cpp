@@ -37,7 +37,7 @@ namespace Model
   class LocationInfo
   {
   public:
-    AWS_S3CRT_API LocationInfo();
+    AWS_S3CRT_API LocationInfo() = default;
     AWS_S3CRT_API LocationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API LocationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,12 +48,10 @@ namespace Model
     /**
      * <p>The type of location where the bucket will be created.</p>
      */
-    inline const LocationType& GetType() const{ return m_type; }
+    inline LocationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LocationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LocationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LocationInfo& WithType(const LocationType& value) { SetType(value); return *this;}
-    inline LocationInfo& WithType(LocationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LocationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline LocationInfo& WithType(LocationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,18 +61,16 @@ namespace Model
      * Zone (AZ) or Local Zone (LZ) where the bucket will be created. An example AZ ID
      * value is <code>usw2-az1</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LocationInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LocationInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LocationInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LocationInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    LocationType m_type;
+    LocationType m_type{LocationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;

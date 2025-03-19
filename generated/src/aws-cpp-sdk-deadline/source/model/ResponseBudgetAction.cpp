@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ResponseBudgetAction::ResponseBudgetAction() : 
-    m_type(BudgetActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_thresholdPercentage(0.0),
-    m_thresholdPercentageHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ResponseBudgetAction::ResponseBudgetAction(JsonView jsonValue)
-  : ResponseBudgetAction()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ResponseBudgetAction& ResponseBudgetAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = BudgetActionTypeMapper::GetBudgetActionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thresholdPercentage"))
   {
     m_thresholdPercentage = jsonValue.GetDouble("thresholdPercentage");
-
     m_thresholdPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

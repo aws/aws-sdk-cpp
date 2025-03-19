@@ -33,7 +33,7 @@ namespace Model
   class PropertyNameSuggestion
   {
   public:
-    AWS_SAGEMAKER_API PropertyNameSuggestion();
+    AWS_SAGEMAKER_API PropertyNameSuggestion() = default;
     AWS_SAGEMAKER_API PropertyNameSuggestion(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API PropertyNameSuggestion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A suggested property name based on what you entered in the search textbox in
      * the SageMaker console.</p>
      */
-    inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
+    inline const Aws::String& GetPropertyName() const { return m_propertyName; }
     inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
-    inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
-    inline void SetPropertyName(Aws::String&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::move(value); }
-    inline void SetPropertyName(const char* value) { m_propertyNameHasBeenSet = true; m_propertyName.assign(value); }
-    inline PropertyNameSuggestion& WithPropertyName(const Aws::String& value) { SetPropertyName(value); return *this;}
-    inline PropertyNameSuggestion& WithPropertyName(Aws::String&& value) { SetPropertyName(std::move(value)); return *this;}
-    inline PropertyNameSuggestion& WithPropertyName(const char* value) { SetPropertyName(value); return *this;}
+    template<typename PropertyNameT = Aws::String>
+    void SetPropertyName(PropertyNameT&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::forward<PropertyNameT>(value); }
+    template<typename PropertyNameT = Aws::String>
+    PropertyNameSuggestion& WithPropertyName(PropertyNameT&& value) { SetPropertyName(std::forward<PropertyNameT>(value)); return *this;}
     ///@}
   private:
 

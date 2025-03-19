@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget() : 
-    m_botAliasTargetHasBeenSet(false)
-{
-}
-
 TestSetDiscrepancyReportResourceTarget::TestSetDiscrepancyReportResourceTarget(JsonView jsonValue)
-  : TestSetDiscrepancyReportResourceTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TestSetDiscrepancyReportResourceTarget& TestSetDiscrepancyReportResourceTarget::
   if(jsonValue.ValueExists("botAliasTarget"))
   {
     m_botAliasTarget = jsonValue.GetObject("botAliasTarget");
-
     m_botAliasTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

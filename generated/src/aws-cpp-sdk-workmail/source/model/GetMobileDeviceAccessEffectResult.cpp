@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult() : 
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET)
-{
-}
-
 GetMobileDeviceAccessEffectResult::GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMobileDeviceAccessEffectResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetMobileDeviceAccessEffectResult& GetMobileDeviceAccessEffectResult::operator =
   if(jsonValue.ValueExists("Effect"))
   {
     m_effect = MobileDeviceAccessRuleEffectMapper::GetMobileDeviceAccessRuleEffectForName(jsonValue.GetString("Effect"));
-
+    m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchedRules"))
   {
     Aws::Utils::Array<JsonView> matchedRulesJsonList = jsonValue.GetArray("MatchedRules");
@@ -44,14 +37,15 @@ GetMobileDeviceAccessEffectResult& GetMobileDeviceAccessEffectResult::operator =
     {
       m_matchedRules.push_back(matchedRulesJsonList[matchedRulesIndex].AsObject());
     }
+    m_matchedRulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

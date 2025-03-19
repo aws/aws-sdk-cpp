@@ -30,7 +30,7 @@ namespace Model
   class UpdateTableRequest : public KeyspacesRequest
   {
   public:
-    AWS_KEYSPACES_API UpdateTableRequest();
+    AWS_KEYSPACES_API UpdateTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the keyspace the specified table is stored in.</p>
      */
-    inline const Aws::String& GetKeyspaceName() const{ return m_keyspaceName; }
+    inline const Aws::String& GetKeyspaceName() const { return m_keyspaceName; }
     inline bool KeyspaceNameHasBeenSet() const { return m_keyspaceNameHasBeenSet; }
-    inline void SetKeyspaceName(const Aws::String& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = value; }
-    inline void SetKeyspaceName(Aws::String&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::move(value); }
-    inline void SetKeyspaceName(const char* value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName.assign(value); }
-    inline UpdateTableRequest& WithKeyspaceName(const Aws::String& value) { SetKeyspaceName(value); return *this;}
-    inline UpdateTableRequest& WithKeyspaceName(Aws::String&& value) { SetKeyspaceName(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithKeyspaceName(const char* value) { SetKeyspaceName(value); return *this;}
+    template<typename KeyspaceNameT = Aws::String>
+    void SetKeyspaceName(KeyspaceNameT&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::forward<KeyspaceNameT>(value); }
+    template<typename KeyspaceNameT = Aws::String>
+    UpdateTableRequest& WithKeyspaceName(KeyspaceNameT&& value) { SetKeyspaceName(std::forward<KeyspaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline UpdateTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateTableRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
      * types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> </li> </ul>
      */
-    inline const Aws::Vector<ColumnDefinition>& GetAddColumns() const{ return m_addColumns; }
+    inline const Aws::Vector<ColumnDefinition>& GetAddColumns() const { return m_addColumns; }
     inline bool AddColumnsHasBeenSet() const { return m_addColumnsHasBeenSet; }
-    inline void SetAddColumns(const Aws::Vector<ColumnDefinition>& value) { m_addColumnsHasBeenSet = true; m_addColumns = value; }
-    inline void SetAddColumns(Aws::Vector<ColumnDefinition>&& value) { m_addColumnsHasBeenSet = true; m_addColumns = std::move(value); }
-    inline UpdateTableRequest& WithAddColumns(const Aws::Vector<ColumnDefinition>& value) { SetAddColumns(value); return *this;}
-    inline UpdateTableRequest& WithAddColumns(Aws::Vector<ColumnDefinition>&& value) { SetAddColumns(std::move(value)); return *this;}
-    inline UpdateTableRequest& AddAddColumns(const ColumnDefinition& value) { m_addColumnsHasBeenSet = true; m_addColumns.push_back(value); return *this; }
-    inline UpdateTableRequest& AddAddColumns(ColumnDefinition&& value) { m_addColumnsHasBeenSet = true; m_addColumns.push_back(std::move(value)); return *this; }
+    template<typename AddColumnsT = Aws::Vector<ColumnDefinition>>
+    void SetAddColumns(AddColumnsT&& value) { m_addColumnsHasBeenSet = true; m_addColumns = std::forward<AddColumnsT>(value); }
+    template<typename AddColumnsT = Aws::Vector<ColumnDefinition>>
+    UpdateTableRequest& WithAddColumns(AddColumnsT&& value) { SetAddColumns(std::forward<AddColumnsT>(value)); return *this;}
+    template<typename AddColumnsT = ColumnDefinition>
+    UpdateTableRequest& AddAddColumns(AddColumnsT&& value) { m_addColumnsHasBeenSet = true; m_addColumns.emplace_back(std::forward<AddColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,12 +97,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const CapacitySpecification& GetCapacitySpecification() const{ return m_capacitySpecification; }
+    inline const CapacitySpecification& GetCapacitySpecification() const { return m_capacitySpecification; }
     inline bool CapacitySpecificationHasBeenSet() const { return m_capacitySpecificationHasBeenSet; }
-    inline void SetCapacitySpecification(const CapacitySpecification& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = value; }
-    inline void SetCapacitySpecification(CapacitySpecification&& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = std::move(value); }
-    inline UpdateTableRequest& WithCapacitySpecification(const CapacitySpecification& value) { SetCapacitySpecification(value); return *this;}
-    inline UpdateTableRequest& WithCapacitySpecification(CapacitySpecification&& value) { SetCapacitySpecification(std::move(value)); return *this;}
+    template<typename CapacitySpecificationT = CapacitySpecification>
+    void SetCapacitySpecification(CapacitySpecificationT&& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = std::forward<CapacitySpecificationT>(value); }
+    template<typename CapacitySpecificationT = CapacitySpecification>
+    UpdateTableRequest& WithCapacitySpecification(CapacitySpecificationT&& value) { SetCapacitySpecification(std::forward<CapacitySpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +118,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
      * at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const EncryptionSpecification& GetEncryptionSpecification() const{ return m_encryptionSpecification; }
+    inline const EncryptionSpecification& GetEncryptionSpecification() const { return m_encryptionSpecification; }
     inline bool EncryptionSpecificationHasBeenSet() const { return m_encryptionSpecificationHasBeenSet; }
-    inline void SetEncryptionSpecification(const EncryptionSpecification& value) { m_encryptionSpecificationHasBeenSet = true; m_encryptionSpecification = value; }
-    inline void SetEncryptionSpecification(EncryptionSpecification&& value) { m_encryptionSpecificationHasBeenSet = true; m_encryptionSpecification = std::move(value); }
-    inline UpdateTableRequest& WithEncryptionSpecification(const EncryptionSpecification& value) { SetEncryptionSpecification(value); return *this;}
-    inline UpdateTableRequest& WithEncryptionSpecification(EncryptionSpecification&& value) { SetEncryptionSpecification(std::move(value)); return *this;}
+    template<typename EncryptionSpecificationT = EncryptionSpecification>
+    void SetEncryptionSpecification(EncryptionSpecificationT&& value) { m_encryptionSpecificationHasBeenSet = true; m_encryptionSpecification = std::forward<EncryptionSpecificationT>(value); }
+    template<typename EncryptionSpecificationT = EncryptionSpecification>
+    UpdateTableRequest& WithEncryptionSpecification(EncryptionSpecificationT&& value) { SetEncryptionSpecification(std::forward<EncryptionSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +135,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time
      * recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const PointInTimeRecovery& GetPointInTimeRecovery() const{ return m_pointInTimeRecovery; }
+    inline const PointInTimeRecovery& GetPointInTimeRecovery() const { return m_pointInTimeRecovery; }
     inline bool PointInTimeRecoveryHasBeenSet() const { return m_pointInTimeRecoveryHasBeenSet; }
-    inline void SetPointInTimeRecovery(const PointInTimeRecovery& value) { m_pointInTimeRecoveryHasBeenSet = true; m_pointInTimeRecovery = value; }
-    inline void SetPointInTimeRecovery(PointInTimeRecovery&& value) { m_pointInTimeRecoveryHasBeenSet = true; m_pointInTimeRecovery = std::move(value); }
-    inline UpdateTableRequest& WithPointInTimeRecovery(const PointInTimeRecovery& value) { SetPointInTimeRecovery(value); return *this;}
-    inline UpdateTableRequest& WithPointInTimeRecovery(PointInTimeRecovery&& value) { SetPointInTimeRecovery(std::move(value)); return *this;}
+    template<typename PointInTimeRecoveryT = PointInTimeRecovery>
+    void SetPointInTimeRecovery(PointInTimeRecoveryT&& value) { m_pointInTimeRecoveryHasBeenSet = true; m_pointInTimeRecovery = std::forward<PointInTimeRecoveryT>(value); }
+    template<typename PointInTimeRecoveryT = PointInTimeRecovery>
+    UpdateTableRequest& WithPointInTimeRecovery(PointInTimeRecoveryT&& value) { SetPointInTimeRecovery(std::forward<PointInTimeRecoveryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +154,12 @@ namespace Model
      * data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
      */
-    inline const TimeToLive& GetTtl() const{ return m_ttl; }
+    inline const TimeToLive& GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
-    inline void SetTtl(const TimeToLive& value) { m_ttlHasBeenSet = true; m_ttl = value; }
-    inline void SetTtl(TimeToLive&& value) { m_ttlHasBeenSet = true; m_ttl = std::move(value); }
-    inline UpdateTableRequest& WithTtl(const TimeToLive& value) { SetTtl(value); return *this;}
-    inline UpdateTableRequest& WithTtl(TimeToLive&& value) { SetTtl(std::move(value)); return *this;}
+    template<typename TtlT = TimeToLive>
+    void SetTtl(TtlT&& value) { m_ttlHasBeenSet = true; m_ttl = std::forward<TtlT>(value); }
+    template<typename TtlT = TimeToLive>
+    UpdateTableRequest& WithTtl(TtlT&& value) { SetTtl(std::forward<TtlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,7 +170,7 @@ namespace Model
      * the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer
      * Guide</i>.</p>
      */
-    inline int GetDefaultTimeToLive() const{ return m_defaultTimeToLive; }
+    inline int GetDefaultTimeToLive() const { return m_defaultTimeToLive; }
     inline bool DefaultTimeToLiveHasBeenSet() const { return m_defaultTimeToLiveHasBeenSet; }
     inline void SetDefaultTimeToLive(int value) { m_defaultTimeToLiveHasBeenSet = true; m_defaultTimeToLive = value; }
     inline UpdateTableRequest& WithDefaultTimeToLive(int value) { SetDefaultTimeToLive(value); return *this;}
@@ -188,12 +184,12 @@ namespace Model
      * client-side timestamps are enabled for a table, this setting cannot be
      * disabled.</p>
      */
-    inline const ClientSideTimestamps& GetClientSideTimestamps() const{ return m_clientSideTimestamps; }
+    inline const ClientSideTimestamps& GetClientSideTimestamps() const { return m_clientSideTimestamps; }
     inline bool ClientSideTimestampsHasBeenSet() const { return m_clientSideTimestampsHasBeenSet; }
-    inline void SetClientSideTimestamps(const ClientSideTimestamps& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = value; }
-    inline void SetClientSideTimestamps(ClientSideTimestamps&& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = std::move(value); }
-    inline UpdateTableRequest& WithClientSideTimestamps(const ClientSideTimestamps& value) { SetClientSideTimestamps(value); return *this;}
-    inline UpdateTableRequest& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
+    template<typename ClientSideTimestampsT = ClientSideTimestamps>
+    void SetClientSideTimestamps(ClientSideTimestampsT&& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = std::forward<ClientSideTimestampsT>(value); }
+    template<typename ClientSideTimestampsT = ClientSideTimestamps>
+    UpdateTableRequest& WithClientSideTimestamps(ClientSideTimestampsT&& value) { SetClientSideTimestamps(std::forward<ClientSideTimestampsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,26 +207,26 @@ namespace Model
      * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
      * <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const AutoScalingSpecification& GetAutoScalingSpecification() const{ return m_autoScalingSpecification; }
+    inline const AutoScalingSpecification& GetAutoScalingSpecification() const { return m_autoScalingSpecification; }
     inline bool AutoScalingSpecificationHasBeenSet() const { return m_autoScalingSpecificationHasBeenSet; }
-    inline void SetAutoScalingSpecification(const AutoScalingSpecification& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = value; }
-    inline void SetAutoScalingSpecification(AutoScalingSpecification&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::move(value); }
-    inline UpdateTableRequest& WithAutoScalingSpecification(const AutoScalingSpecification& value) { SetAutoScalingSpecification(value); return *this;}
-    inline UpdateTableRequest& WithAutoScalingSpecification(AutoScalingSpecification&& value) { SetAutoScalingSpecification(std::move(value)); return *this;}
+    template<typename AutoScalingSpecificationT = AutoScalingSpecification>
+    void SetAutoScalingSpecification(AutoScalingSpecificationT&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::forward<AutoScalingSpecificationT>(value); }
+    template<typename AutoScalingSpecificationT = AutoScalingSpecification>
+    UpdateTableRequest& WithAutoScalingSpecification(AutoScalingSpecificationT&& value) { SetAutoScalingSpecification(std::forward<AutoScalingSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region specific settings of a multi-Regional table.</p>
      */
-    inline const Aws::Vector<ReplicaSpecification>& GetReplicaSpecifications() const{ return m_replicaSpecifications; }
+    inline const Aws::Vector<ReplicaSpecification>& GetReplicaSpecifications() const { return m_replicaSpecifications; }
     inline bool ReplicaSpecificationsHasBeenSet() const { return m_replicaSpecificationsHasBeenSet; }
-    inline void SetReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = value; }
-    inline void SetReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = std::move(value); }
-    inline UpdateTableRequest& WithReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { SetReplicaSpecifications(value); return *this;}
-    inline UpdateTableRequest& WithReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { SetReplicaSpecifications(std::move(value)); return *this;}
-    inline UpdateTableRequest& AddReplicaSpecifications(const ReplicaSpecification& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(value); return *this; }
-    inline UpdateTableRequest& AddReplicaSpecifications(ReplicaSpecification&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(std::move(value)); return *this; }
+    template<typename ReplicaSpecificationsT = Aws::Vector<ReplicaSpecification>>
+    void SetReplicaSpecifications(ReplicaSpecificationsT&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = std::forward<ReplicaSpecificationsT>(value); }
+    template<typename ReplicaSpecificationsT = Aws::Vector<ReplicaSpecification>>
+    UpdateTableRequest& WithReplicaSpecifications(ReplicaSpecificationsT&& value) { SetReplicaSpecifications(std::forward<ReplicaSpecificationsT>(value)); return *this;}
+    template<typename ReplicaSpecificationsT = ReplicaSpecification>
+    UpdateTableRequest& AddReplicaSpecifications(ReplicaSpecificationsT&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.emplace_back(std::forward<ReplicaSpecificationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -255,7 +251,7 @@ namespace Model
     TimeToLive m_ttl;
     bool m_ttlHasBeenSet = false;
 
-    int m_defaultTimeToLive;
+    int m_defaultTimeToLive{0};
     bool m_defaultTimeToLiveHasBeenSet = false;
 
     ClientSideTimestamps m_clientSideTimestamps;

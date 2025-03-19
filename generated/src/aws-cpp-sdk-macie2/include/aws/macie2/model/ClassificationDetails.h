@@ -34,7 +34,7 @@ namespace Model
   class ClassificationDetails
   {
   public:
-    AWS_MACIE2_API ClassificationDetails();
+    AWS_MACIE2_API ClassificationDetails() = default;
     AWS_MACIE2_API ClassificationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ClassificationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * archive or compressed file, this value is the path to a folder. Otherwise, this
      * value is the path to a file.</p>
      */
-    inline const Aws::String& GetDetailedResultsLocation() const{ return m_detailedResultsLocation; }
+    inline const Aws::String& GetDetailedResultsLocation() const { return m_detailedResultsLocation; }
     inline bool DetailedResultsLocationHasBeenSet() const { return m_detailedResultsLocationHasBeenSet; }
-    inline void SetDetailedResultsLocation(const Aws::String& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = value; }
-    inline void SetDetailedResultsLocation(Aws::String&& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = std::move(value); }
-    inline void SetDetailedResultsLocation(const char* value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation.assign(value); }
-    inline ClassificationDetails& WithDetailedResultsLocation(const Aws::String& value) { SetDetailedResultsLocation(value); return *this;}
-    inline ClassificationDetails& WithDetailedResultsLocation(Aws::String&& value) { SetDetailedResultsLocation(std::move(value)); return *this;}
-    inline ClassificationDetails& WithDetailedResultsLocation(const char* value) { SetDetailedResultsLocation(value); return *this;}
+    template<typename DetailedResultsLocationT = Aws::String>
+    void SetDetailedResultsLocation(DetailedResultsLocationT&& value) { m_detailedResultsLocationHasBeenSet = true; m_detailedResultsLocation = std::forward<DetailedResultsLocationT>(value); }
+    template<typename DetailedResultsLocationT = Aws::String>
+    ClassificationDetails& WithDetailedResultsLocation(DetailedResultsLocationT&& value) { SetDetailedResultsLocation(std::forward<DetailedResultsLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * finding. This value is null if the origin of the finding (originType) is
      * AUTOMATED_SENSITIVE_DATA_DISCOVERY.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-    inline ClassificationDetails& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline ClassificationDetails& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline ClassificationDetails& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    ClassificationDetails& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * This value is null if the origin of the finding (originType) is
      * AUTOMATED_SENSITIVE_DATA_DISCOVERY.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline ClassificationDetails& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline ClassificationDetails& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline ClassificationDetails& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    ClassificationDetails& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,24 +90,22 @@ namespace Model
      * job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated sensitive data
      * discovery.</p>
      */
-    inline const OriginType& GetOriginType() const{ return m_originType; }
+    inline OriginType GetOriginType() const { return m_originType; }
     inline bool OriginTypeHasBeenSet() const { return m_originTypeHasBeenSet; }
-    inline void SetOriginType(const OriginType& value) { m_originTypeHasBeenSet = true; m_originType = value; }
-    inline void SetOriginType(OriginType&& value) { m_originTypeHasBeenSet = true; m_originType = std::move(value); }
-    inline ClassificationDetails& WithOriginType(const OriginType& value) { SetOriginType(value); return *this;}
-    inline ClassificationDetails& WithOriginType(OriginType&& value) { SetOriginType(std::move(value)); return *this;}
+    inline void SetOriginType(OriginType value) { m_originTypeHasBeenSet = true; m_originType = value; }
+    inline ClassificationDetails& WithOriginType(OriginType value) { SetOriginType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status and other details of the finding.</p>
      */
-    inline const ClassificationResult& GetResult() const{ return m_result; }
+    inline const ClassificationResult& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const ClassificationResult& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(ClassificationResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline ClassificationDetails& WithResult(const ClassificationResult& value) { SetResult(value); return *this;}
-    inline ClassificationDetails& WithResult(ClassificationResult&& value) { SetResult(std::move(value)); return *this;}
+    template<typename ResultT = ClassificationResult>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = ClassificationResult>
+    ClassificationDetails& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,7 +118,7 @@ namespace Model
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    OriginType m_originType;
+    OriginType m_originType{OriginType::NOT_SET};
     bool m_originTypeHasBeenSet = false;
 
     ClassificationResult m_result;

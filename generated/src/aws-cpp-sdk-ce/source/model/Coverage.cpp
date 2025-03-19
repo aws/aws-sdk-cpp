@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-Coverage::Coverage() : 
-    m_coverageHoursHasBeenSet(false),
-    m_coverageNormalizedUnitsHasBeenSet(false),
-    m_coverageCostHasBeenSet(false)
-{
-}
-
 Coverage::Coverage(JsonView jsonValue)
-  : Coverage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Coverage& Coverage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CoverageHours"))
   {
     m_coverageHours = jsonValue.GetObject("CoverageHours");
-
     m_coverageHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoverageNormalizedUnits"))
   {
     m_coverageNormalizedUnits = jsonValue.GetObject("CoverageNormalizedUnits");
-
     m_coverageNormalizedUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoverageCost"))
   {
     m_coverageCost = jsonValue.GetObject("CoverageCost");
-
     m_coverageCostHasBeenSet = true;
   }
-
   return *this;
 }
 

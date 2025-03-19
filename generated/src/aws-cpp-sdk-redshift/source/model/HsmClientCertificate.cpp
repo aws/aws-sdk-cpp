@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-HsmClientCertificate::HsmClientCertificate() : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmClientCertificatePublicKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 HsmClientCertificate::HsmClientCertificate(const XmlNode& xmlNode)
-  : HsmClientCertificate()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -18,16 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-LFTagExpression::LFTagExpression() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 LFTagExpression::LFTagExpression(JsonView jsonValue)
-  : LFTagExpression()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LFTagExpression& LFTagExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     Aws::Utils::Array<JsonView> expressionJsonList = jsonValue.GetArray("Expression");
@@ -64,7 +49,6 @@ LFTagExpression& LFTagExpression::operator =(JsonView jsonValue)
     }
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

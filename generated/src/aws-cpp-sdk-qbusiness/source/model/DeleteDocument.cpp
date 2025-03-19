@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DeleteDocument::DeleteDocument() : 
-    m_documentIdHasBeenSet(false)
-{
-}
-
 DeleteDocument::DeleteDocument(JsonView jsonValue)
-  : DeleteDocument()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteDocument& DeleteDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("documentId"))
   {
     m_documentId = jsonValue.GetString("documentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

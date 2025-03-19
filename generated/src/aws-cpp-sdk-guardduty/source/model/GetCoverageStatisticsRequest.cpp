@@ -12,13 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCoverageStatisticsRequest::GetCoverageStatisticsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_filterCriteriaHasBeenSet(false),
-    m_statisticsTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetCoverageStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

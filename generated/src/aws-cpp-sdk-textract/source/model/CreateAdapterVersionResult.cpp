@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAdapterVersionResult::CreateAdapterVersionResult()
-{
-}
-
 CreateAdapterVersionResult::CreateAdapterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateAdapterVersionResult& CreateAdapterVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("AdapterId"))
   {
     m_adapterId = jsonValue.GetString("AdapterId");
-
+    m_adapterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdapterVersion"))
   {
     m_adapterVersion = jsonValue.GetString("AdapterVersion");
-
+    m_adapterVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

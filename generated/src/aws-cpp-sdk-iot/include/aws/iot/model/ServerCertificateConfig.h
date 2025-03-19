@@ -31,7 +31,7 @@ namespace Model
   class ServerCertificateConfig
   {
   public:
-    AWS_IOT_API ServerCertificateConfig();
+    AWS_IOT_API ServerCertificateConfig() = default;
     AWS_IOT_API ServerCertificateConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ServerCertificateConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * Server certificate configuration for OCSP stapling</a> from Amazon Web Services
      * IoT Core Developer Guide.</p>
      */
-    inline bool GetEnableOCSPCheck() const{ return m_enableOCSPCheck; }
+    inline bool GetEnableOCSPCheck() const { return m_enableOCSPCheck; }
     inline bool EnableOCSPCheckHasBeenSet() const { return m_enableOCSPCheckHasBeenSet; }
     inline void SetEnableOCSPCheck(bool value) { m_enableOCSPCheckHasBeenSet = true; m_enableOCSPCheck = value; }
     inline ServerCertificateConfig& WithEnableOCSPCheck(bool value) { SetEnableOCSPCheck(value); return *this;}
@@ -66,14 +66,12 @@ namespace Model
      * server certificate OCSP for private endpoints in Amazon Web Services IoT
      * Core</a> from the Amazon Web Services IoT Core developer guide.</p>
      */
-    inline const Aws::String& GetOcspLambdaArn() const{ return m_ocspLambdaArn; }
+    inline const Aws::String& GetOcspLambdaArn() const { return m_ocspLambdaArn; }
     inline bool OcspLambdaArnHasBeenSet() const { return m_ocspLambdaArnHasBeenSet; }
-    inline void SetOcspLambdaArn(const Aws::String& value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn = value; }
-    inline void SetOcspLambdaArn(Aws::String&& value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn = std::move(value); }
-    inline void SetOcspLambdaArn(const char* value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn.assign(value); }
-    inline ServerCertificateConfig& WithOcspLambdaArn(const Aws::String& value) { SetOcspLambdaArn(value); return *this;}
-    inline ServerCertificateConfig& WithOcspLambdaArn(Aws::String&& value) { SetOcspLambdaArn(std::move(value)); return *this;}
-    inline ServerCertificateConfig& WithOcspLambdaArn(const char* value) { SetOcspLambdaArn(value); return *this;}
+    template<typename OcspLambdaArnT = Aws::String>
+    void SetOcspLambdaArn(OcspLambdaArnT&& value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn = std::forward<OcspLambdaArnT>(value); }
+    template<typename OcspLambdaArnT = Aws::String>
+    ServerCertificateConfig& WithOcspLambdaArn(OcspLambdaArnT&& value) { SetOcspLambdaArn(std::forward<OcspLambdaArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,18 +84,16 @@ namespace Model
      * is provided or not. The certificate must be in the same Amazon Web Services
      * account and region as the domain configuration.</p>
      */
-    inline const Aws::String& GetOcspAuthorizedResponderArn() const{ return m_ocspAuthorizedResponderArn; }
+    inline const Aws::String& GetOcspAuthorizedResponderArn() const { return m_ocspAuthorizedResponderArn; }
     inline bool OcspAuthorizedResponderArnHasBeenSet() const { return m_ocspAuthorizedResponderArnHasBeenSet; }
-    inline void SetOcspAuthorizedResponderArn(const Aws::String& value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn = value; }
-    inline void SetOcspAuthorizedResponderArn(Aws::String&& value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn = std::move(value); }
-    inline void SetOcspAuthorizedResponderArn(const char* value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn.assign(value); }
-    inline ServerCertificateConfig& WithOcspAuthorizedResponderArn(const Aws::String& value) { SetOcspAuthorizedResponderArn(value); return *this;}
-    inline ServerCertificateConfig& WithOcspAuthorizedResponderArn(Aws::String&& value) { SetOcspAuthorizedResponderArn(std::move(value)); return *this;}
-    inline ServerCertificateConfig& WithOcspAuthorizedResponderArn(const char* value) { SetOcspAuthorizedResponderArn(value); return *this;}
+    template<typename OcspAuthorizedResponderArnT = Aws::String>
+    void SetOcspAuthorizedResponderArn(OcspAuthorizedResponderArnT&& value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn = std::forward<OcspAuthorizedResponderArnT>(value); }
+    template<typename OcspAuthorizedResponderArnT = Aws::String>
+    ServerCertificateConfig& WithOcspAuthorizedResponderArn(OcspAuthorizedResponderArnT&& value) { SetOcspAuthorizedResponderArn(std::forward<OcspAuthorizedResponderArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableOCSPCheck;
+    bool m_enableOCSPCheck{false};
     bool m_enableOCSPCheckHasBeenSet = false;
 
     Aws::String m_ocspLambdaArn;

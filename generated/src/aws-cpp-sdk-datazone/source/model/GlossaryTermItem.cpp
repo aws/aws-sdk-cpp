@@ -18,25 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GlossaryTermItem::GlossaryTermItem() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_glossaryIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_status(GlossaryTermStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_termRelationsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
-{
-}
-
 GlossaryTermItem::GlossaryTermItem(JsonView jsonValue)
-  : GlossaryTermItem()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ GlossaryTermItem& GlossaryTermItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryId"))
   {
     m_glossaryId = jsonValue.GetString("glossaryId");
-
     m_glossaryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longDescription"))
   {
     m_longDescription = jsonValue.GetString("longDescription");
-
     m_longDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shortDescription"))
   {
     m_shortDescription = jsonValue.GetString("shortDescription");
-
     m_shortDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = GlossaryTermStatusMapper::GetGlossaryTermStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("termRelations"))
   {
     m_termRelations = jsonValue.GetObject("termRelations");
-
     m_termRelationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

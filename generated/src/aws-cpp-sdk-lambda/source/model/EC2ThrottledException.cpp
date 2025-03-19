@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EC2ThrottledException::EC2ThrottledException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 EC2ThrottledException::EC2ThrottledException(JsonView jsonValue)
-  : EC2ThrottledException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EC2ThrottledException& EC2ThrottledException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

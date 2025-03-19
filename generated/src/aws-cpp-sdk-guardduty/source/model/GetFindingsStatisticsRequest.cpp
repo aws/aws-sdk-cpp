@@ -12,18 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFindingsStatisticsRequest::GetFindingsStatisticsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_findingCriteriaHasBeenSet(false),
-    m_groupBy(GroupByType::NOT_SET),
-    m_groupByHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingsStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

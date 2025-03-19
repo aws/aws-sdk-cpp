@@ -34,7 +34,7 @@ namespace Model
   class ServiceSpecificCredential
   {
   public:
-    AWS_IAM_API ServiceSpecificCredential();
+    AWS_IAM_API ServiceSpecificCredential() = default;
     AWS_IAM_API ServiceSpecificCredential(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API ServiceSpecificCredential& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,24 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the service-specific credential were created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline ServiceSpecificCredential& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline ServiceSpecificCredential& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    ServiceSpecificCredential& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline ServiceSpecificCredential& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline ServiceSpecificCredential& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline ServiceSpecificCredential& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    ServiceSpecificCredential& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,56 +74,48 @@ namespace Model
      * Amazon Web Services account, as in <code>jane-at-123456789012</code>, for
      * example. This value cannot be configured by the user.</p>
      */
-    inline const Aws::String& GetServiceUserName() const{ return m_serviceUserName; }
+    inline const Aws::String& GetServiceUserName() const { return m_serviceUserName; }
     inline bool ServiceUserNameHasBeenSet() const { return m_serviceUserNameHasBeenSet; }
-    inline void SetServiceUserName(const Aws::String& value) { m_serviceUserNameHasBeenSet = true; m_serviceUserName = value; }
-    inline void SetServiceUserName(Aws::String&& value) { m_serviceUserNameHasBeenSet = true; m_serviceUserName = std::move(value); }
-    inline void SetServiceUserName(const char* value) { m_serviceUserNameHasBeenSet = true; m_serviceUserName.assign(value); }
-    inline ServiceSpecificCredential& WithServiceUserName(const Aws::String& value) { SetServiceUserName(value); return *this;}
-    inline ServiceSpecificCredential& WithServiceUserName(Aws::String&& value) { SetServiceUserName(std::move(value)); return *this;}
-    inline ServiceSpecificCredential& WithServiceUserName(const char* value) { SetServiceUserName(value); return *this;}
+    template<typename ServiceUserNameT = Aws::String>
+    void SetServiceUserName(ServiceUserNameT&& value) { m_serviceUserNameHasBeenSet = true; m_serviceUserName = std::forward<ServiceUserNameT>(value); }
+    template<typename ServiceUserNameT = Aws::String>
+    ServiceSpecificCredential& WithServiceUserName(ServiceUserNameT&& value) { SetServiceUserName(std::forward<ServiceUserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The generated password for the service-specific credential.</p>
      */
-    inline const Aws::String& GetServicePassword() const{ return m_servicePassword; }
+    inline const Aws::String& GetServicePassword() const { return m_servicePassword; }
     inline bool ServicePasswordHasBeenSet() const { return m_servicePasswordHasBeenSet; }
-    inline void SetServicePassword(const Aws::String& value) { m_servicePasswordHasBeenSet = true; m_servicePassword = value; }
-    inline void SetServicePassword(Aws::String&& value) { m_servicePasswordHasBeenSet = true; m_servicePassword = std::move(value); }
-    inline void SetServicePassword(const char* value) { m_servicePasswordHasBeenSet = true; m_servicePassword.assign(value); }
-    inline ServiceSpecificCredential& WithServicePassword(const Aws::String& value) { SetServicePassword(value); return *this;}
-    inline ServiceSpecificCredential& WithServicePassword(Aws::String&& value) { SetServicePassword(std::move(value)); return *this;}
-    inline ServiceSpecificCredential& WithServicePassword(const char* value) { SetServicePassword(value); return *this;}
+    template<typename ServicePasswordT = Aws::String>
+    void SetServicePassword(ServicePasswordT&& value) { m_servicePasswordHasBeenSet = true; m_servicePassword = std::forward<ServicePasswordT>(value); }
+    template<typename ServicePasswordT = Aws::String>
+    ServiceSpecificCredential& WithServicePassword(ServicePasswordT&& value) { SetServicePassword(std::forward<ServicePasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the service-specific credential.</p>
      */
-    inline const Aws::String& GetServiceSpecificCredentialId() const{ return m_serviceSpecificCredentialId; }
+    inline const Aws::String& GetServiceSpecificCredentialId() const { return m_serviceSpecificCredentialId; }
     inline bool ServiceSpecificCredentialIdHasBeenSet() const { return m_serviceSpecificCredentialIdHasBeenSet; }
-    inline void SetServiceSpecificCredentialId(const Aws::String& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = value; }
-    inline void SetServiceSpecificCredentialId(Aws::String&& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = std::move(value); }
-    inline void SetServiceSpecificCredentialId(const char* value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId.assign(value); }
-    inline ServiceSpecificCredential& WithServiceSpecificCredentialId(const Aws::String& value) { SetServiceSpecificCredentialId(value); return *this;}
-    inline ServiceSpecificCredential& WithServiceSpecificCredentialId(Aws::String&& value) { SetServiceSpecificCredentialId(std::move(value)); return *this;}
-    inline ServiceSpecificCredential& WithServiceSpecificCredentialId(const char* value) { SetServiceSpecificCredentialId(value); return *this;}
+    template<typename ServiceSpecificCredentialIdT = Aws::String>
+    void SetServiceSpecificCredentialId(ServiceSpecificCredentialIdT&& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = std::forward<ServiceSpecificCredentialIdT>(value); }
+    template<typename ServiceSpecificCredentialIdT = Aws::String>
+    ServiceSpecificCredential& WithServiceSpecificCredentialId(ServiceSpecificCredentialIdT&& value) { SetServiceSpecificCredentialId(std::forward<ServiceSpecificCredentialIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the IAM user associated with the service-specific credential.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline ServiceSpecificCredential& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline ServiceSpecificCredential& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline ServiceSpecificCredential& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    ServiceSpecificCredential& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,16 +123,14 @@ namespace Model
      * <p>The status of the service-specific credential. <code>Active</code> means that
      * the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
-    inline const StatusType& GetStatus() const{ return m_status; }
+    inline StatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ServiceSpecificCredential& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-    inline ServiceSpecificCredential& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ServiceSpecificCredential& WithStatus(StatusType value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
     Aws::String m_serviceName;
@@ -160,7 +148,7 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet = false;
 
-    StatusType m_status;
+    StatusType m_status{StatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

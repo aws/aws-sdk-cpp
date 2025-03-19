@@ -35,7 +35,7 @@ namespace Model
   class Paths
   {
   public:
-    AWS_CLOUDFRONT_API Paths();
+    AWS_CLOUDFRONT_API Paths() = default;
     AWS_CLOUDFRONT_API Paths(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API Paths& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>The number of invalidation paths specified for the objects that you want to
      * invalidate.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline Paths& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -58,19 +58,18 @@ namespace Model
      * <p>A complex type that contains a list of the paths that you want to
      * invalidate.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Aws::String>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline Paths& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
-    inline Paths& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
-    inline Paths& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline Paths& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-    inline Paths& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    template<typename ItemsT = Aws::Vector<Aws::String>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Aws::String>>
+    Paths& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Aws::String>
+    Paths& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;

@@ -12,17 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNamedQueryRequest::CreateNamedQueryRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String CreateNamedQueryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -39,7 +39,7 @@ namespace Model
   class ImpactedLocation
   {
   public:
-    AWS_INTERNETMONITOR_API ImpactedLocation();
+    AWS_INTERNETMONITOR_API ImpactedLocation() = default;
     AWS_INTERNETMONITOR_API ImpactedLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API ImpactedLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
-    inline const Aws::String& GetASName() const{ return m_aSName; }
+    inline const Aws::String& GetASName() const { return m_aSName; }
     inline bool ASNameHasBeenSet() const { return m_aSNameHasBeenSet; }
-    inline void SetASName(const Aws::String& value) { m_aSNameHasBeenSet = true; m_aSName = value; }
-    inline void SetASName(Aws::String&& value) { m_aSNameHasBeenSet = true; m_aSName = std::move(value); }
-    inline void SetASName(const char* value) { m_aSNameHasBeenSet = true; m_aSName.assign(value); }
-    inline ImpactedLocation& WithASName(const Aws::String& value) { SetASName(value); return *this;}
-    inline ImpactedLocation& WithASName(Aws::String&& value) { SetASName(std::move(value)); return *this;}
-    inline ImpactedLocation& WithASName(const char* value) { SetASName(value); return *this;}
+    template<typename ASNameT = Aws::String>
+    void SetASName(ASNameT&& value) { m_aSNameHasBeenSet = true; m_aSName = std::forward<ASNameT>(value); }
+    template<typename ASNameT = Aws::String>
+    ImpactedLocation& WithASName(ASNameT&& value) { SetASName(std::forward<ASNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * <p>The Autonomous System Number (ASN) of the network at an impacted
      * location.</p>
      */
-    inline long long GetASNumber() const{ return m_aSNumber; }
+    inline long long GetASNumber() const { return m_aSNumber; }
     inline bool ASNumberHasBeenSet() const { return m_aSNumberHasBeenSet; }
     inline void SetASNumber(long long value) { m_aSNumberHasBeenSet = true; m_aSNumber = value; }
     inline ImpactedLocation& WithASNumber(long long value) { SetASNumber(value); return *this;}
@@ -74,14 +72,12 @@ namespace Model
     /**
      * <p>The name of the country where the health event is located.</p>
      */
-    inline const Aws::String& GetCountry() const{ return m_country; }
+    inline const Aws::String& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
-    inline ImpactedLocation& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
-    inline ImpactedLocation& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
-    inline ImpactedLocation& WithCountry(const char* value) { SetCountry(value); return *this;}
+    template<typename CountryT = Aws::String>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::String>
+    ImpactedLocation& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * United Kingdom, it maps to a country (England, Scotland, Wales) or province
      * (Northern Ireland).</p>
      */
-    inline const Aws::String& GetSubdivision() const{ return m_subdivision; }
+    inline const Aws::String& GetSubdivision() const { return m_subdivision; }
     inline bool SubdivisionHasBeenSet() const { return m_subdivisionHasBeenSet; }
-    inline void SetSubdivision(const Aws::String& value) { m_subdivisionHasBeenSet = true; m_subdivision = value; }
-    inline void SetSubdivision(Aws::String&& value) { m_subdivisionHasBeenSet = true; m_subdivision = std::move(value); }
-    inline void SetSubdivision(const char* value) { m_subdivisionHasBeenSet = true; m_subdivision.assign(value); }
-    inline ImpactedLocation& WithSubdivision(const Aws::String& value) { SetSubdivision(value); return *this;}
-    inline ImpactedLocation& WithSubdivision(Aws::String&& value) { SetSubdivision(std::move(value)); return *this;}
-    inline ImpactedLocation& WithSubdivision(const char* value) { SetSubdivision(value); return *this;}
+    template<typename SubdivisionT = Aws::String>
+    void SetSubdivision(SubdivisionT&& value) { m_subdivisionHasBeenSet = true; m_subdivision = std::forward<SubdivisionT>(value); }
+    template<typename SubdivisionT = Aws::String>
+    ImpactedLocation& WithSubdivision(SubdivisionT&& value) { SetSubdivision(std::forward<SubdivisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,35 +103,31 @@ namespace Model
      * the United Kingdom, it could be a county, a London borough, a unitary authority,
      * council area, and so on.</p>
      */
-    inline const Aws::String& GetMetro() const{ return m_metro; }
+    inline const Aws::String& GetMetro() const { return m_metro; }
     inline bool MetroHasBeenSet() const { return m_metroHasBeenSet; }
-    inline void SetMetro(const Aws::String& value) { m_metroHasBeenSet = true; m_metro = value; }
-    inline void SetMetro(Aws::String&& value) { m_metroHasBeenSet = true; m_metro = std::move(value); }
-    inline void SetMetro(const char* value) { m_metroHasBeenSet = true; m_metro.assign(value); }
-    inline ImpactedLocation& WithMetro(const Aws::String& value) { SetMetro(value); return *this;}
-    inline ImpactedLocation& WithMetro(Aws::String&& value) { SetMetro(std::move(value)); return *this;}
-    inline ImpactedLocation& WithMetro(const char* value) { SetMetro(value); return *this;}
+    template<typename MetroT = Aws::String>
+    void SetMetro(MetroT&& value) { m_metroHasBeenSet = true; m_metro = std::forward<MetroT>(value); }
+    template<typename MetroT = Aws::String>
+    ImpactedLocation& WithMetro(MetroT&& value) { SetMetro(std::forward<MetroT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the city where the health event is located.</p>
      */
-    inline const Aws::String& GetCity() const{ return m_city; }
+    inline const Aws::String& GetCity() const { return m_city; }
     inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
-    inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
-    inline void SetCity(Aws::String&& value) { m_cityHasBeenSet = true; m_city = std::move(value); }
-    inline void SetCity(const char* value) { m_cityHasBeenSet = true; m_city.assign(value); }
-    inline ImpactedLocation& WithCity(const Aws::String& value) { SetCity(value); return *this;}
-    inline ImpactedLocation& WithCity(Aws::String&& value) { SetCity(std::move(value)); return *this;}
-    inline ImpactedLocation& WithCity(const char* value) { SetCity(value); return *this;}
+    template<typename CityT = Aws::String>
+    void SetCity(CityT&& value) { m_cityHasBeenSet = true; m_city = std::forward<CityT>(value); }
+    template<typename CityT = Aws::String>
+    ImpactedLocation& WithCity(CityT&& value) { SetCity(std::forward<CityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latitude where the health event is located.</p>
      */
-    inline double GetLatitude() const{ return m_latitude; }
+    inline double GetLatitude() const { return m_latitude; }
     inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
     inline ImpactedLocation& WithLatitude(double value) { SetLatitude(value); return *this;}
@@ -147,7 +137,7 @@ namespace Model
     /**
      * <p>The longitude where the health event is located.</p>
      */
-    inline double GetLongitude() const{ return m_longitude; }
+    inline double GetLongitude() const { return m_longitude; }
     inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
     inline ImpactedLocation& WithLongitude(double value) { SetLongitude(value); return *this;}
@@ -158,14 +148,12 @@ namespace Model
      * <p>The country code where the health event is located. The ISO 3166-2 codes for
      * the country is provided, when available. </p>
      */
-    inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
+    inline const Aws::String& GetCountryCode() const { return m_countryCode; }
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-    inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
-    inline ImpactedLocation& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
-    inline ImpactedLocation& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
-    inline ImpactedLocation& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
+    template<typename CountryCodeT = Aws::String>
+    void SetCountryCode(CountryCodeT&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::forward<CountryCodeT>(value); }
+    template<typename CountryCodeT = Aws::String>
+    ImpactedLocation& WithCountryCode(CountryCodeT&& value) { SetCountryCode(std::forward<CountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,40 +161,34 @@ namespace Model
      * <p>The subdivision code where the health event is located. The ISO 3166-2 codes
      * for country subdivisions is provided, when available. </p>
      */
-    inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
+    inline const Aws::String& GetSubdivisionCode() const { return m_subdivisionCode; }
     inline bool SubdivisionCodeHasBeenSet() const { return m_subdivisionCodeHasBeenSet; }
-    inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
-    inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
-    inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
-    inline ImpactedLocation& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
-    inline ImpactedLocation& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
-    inline ImpactedLocation& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
+    template<typename SubdivisionCodeT = Aws::String>
+    void SetSubdivisionCode(SubdivisionCodeT&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::forward<SubdivisionCodeT>(value); }
+    template<typename SubdivisionCodeT = Aws::String>
+    ImpactedLocation& WithSubdivisionCode(SubdivisionCodeT&& value) { SetSubdivisionCode(std::forward<SubdivisionCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service location where the health event is located.</p>
      */
-    inline const Aws::String& GetServiceLocation() const{ return m_serviceLocation; }
+    inline const Aws::String& GetServiceLocation() const { return m_serviceLocation; }
     inline bool ServiceLocationHasBeenSet() const { return m_serviceLocationHasBeenSet; }
-    inline void SetServiceLocation(const Aws::String& value) { m_serviceLocationHasBeenSet = true; m_serviceLocation = value; }
-    inline void SetServiceLocation(Aws::String&& value) { m_serviceLocationHasBeenSet = true; m_serviceLocation = std::move(value); }
-    inline void SetServiceLocation(const char* value) { m_serviceLocationHasBeenSet = true; m_serviceLocation.assign(value); }
-    inline ImpactedLocation& WithServiceLocation(const Aws::String& value) { SetServiceLocation(value); return *this;}
-    inline ImpactedLocation& WithServiceLocation(Aws::String&& value) { SetServiceLocation(std::move(value)); return *this;}
-    inline ImpactedLocation& WithServiceLocation(const char* value) { SetServiceLocation(value); return *this;}
+    template<typename ServiceLocationT = Aws::String>
+    void SetServiceLocation(ServiceLocationT&& value) { m_serviceLocationHasBeenSet = true; m_serviceLocation = std::forward<ServiceLocationT>(value); }
+    template<typename ServiceLocationT = Aws::String>
+    ImpactedLocation& WithServiceLocation(ServiceLocationT&& value) { SetServiceLocation(std::forward<ServiceLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the health event at an impacted location.</p>
      */
-    inline const HealthEventStatus& GetStatus() const{ return m_status; }
+    inline HealthEventStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const HealthEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(HealthEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImpactedLocation& WithStatus(const HealthEventStatus& value) { SetStatus(value); return *this;}
-    inline ImpactedLocation& WithStatus(HealthEventStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(HealthEventStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImpactedLocation& WithStatus(HealthEventStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -216,24 +198,24 @@ namespace Model
      * typically a problem with a network provider, like an internet service provider
      * (ISP).</p>
      */
-    inline const NetworkImpairment& GetCausedBy() const{ return m_causedBy; }
+    inline const NetworkImpairment& GetCausedBy() const { return m_causedBy; }
     inline bool CausedByHasBeenSet() const { return m_causedByHasBeenSet; }
-    inline void SetCausedBy(const NetworkImpairment& value) { m_causedByHasBeenSet = true; m_causedBy = value; }
-    inline void SetCausedBy(NetworkImpairment&& value) { m_causedByHasBeenSet = true; m_causedBy = std::move(value); }
-    inline ImpactedLocation& WithCausedBy(const NetworkImpairment& value) { SetCausedBy(value); return *this;}
-    inline ImpactedLocation& WithCausedBy(NetworkImpairment&& value) { SetCausedBy(std::move(value)); return *this;}
+    template<typename CausedByT = NetworkImpairment>
+    void SetCausedBy(CausedByT&& value) { m_causedByHasBeenSet = true; m_causedBy = std::forward<CausedByT>(value); }
+    template<typename CausedByT = NetworkImpairment>
+    ImpactedLocation& WithCausedBy(CausedByT&& value) { SetCausedBy(std::forward<CausedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The calculated health at a specific location.</p>
      */
-    inline const InternetHealth& GetInternetHealth() const{ return m_internetHealth; }
+    inline const InternetHealth& GetInternetHealth() const { return m_internetHealth; }
     inline bool InternetHealthHasBeenSet() const { return m_internetHealthHasBeenSet; }
-    inline void SetInternetHealth(const InternetHealth& value) { m_internetHealthHasBeenSet = true; m_internetHealth = value; }
-    inline void SetInternetHealth(InternetHealth&& value) { m_internetHealthHasBeenSet = true; m_internetHealth = std::move(value); }
-    inline ImpactedLocation& WithInternetHealth(const InternetHealth& value) { SetInternetHealth(value); return *this;}
-    inline ImpactedLocation& WithInternetHealth(InternetHealth&& value) { SetInternetHealth(std::move(value)); return *this;}
+    template<typename InternetHealthT = InternetHealth>
+    void SetInternetHealth(InternetHealthT&& value) { m_internetHealthHasBeenSet = true; m_internetHealth = std::forward<InternetHealthT>(value); }
+    template<typename InternetHealthT = InternetHealth>
+    ImpactedLocation& WithInternetHealth(InternetHealthT&& value) { SetInternetHealth(std::forward<InternetHealthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,22 +223,21 @@ namespace Model
      * <p>The IPv4 prefixes at the client location that was impacted by the health
      * event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+    inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const { return m_ipv4Prefixes; }
     inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
-    inline void SetIpv4Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
-    inline void SetIpv4Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
-    inline ImpactedLocation& WithIpv4Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv4Prefixes(value); return *this;}
-    inline ImpactedLocation& WithIpv4Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
-    inline ImpactedLocation& AddIpv4Prefixes(const Aws::String& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
-    inline ImpactedLocation& AddIpv4Prefixes(Aws::String&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
-    inline ImpactedLocation& AddIpv4Prefixes(const char* value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+    template<typename Ipv4PrefixesT = Aws::Vector<Aws::String>>
+    void SetIpv4Prefixes(Ipv4PrefixesT&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::forward<Ipv4PrefixesT>(value); }
+    template<typename Ipv4PrefixesT = Aws::Vector<Aws::String>>
+    ImpactedLocation& WithIpv4Prefixes(Ipv4PrefixesT&& value) { SetIpv4Prefixes(std::forward<Ipv4PrefixesT>(value)); return *this;}
+    template<typename Ipv4PrefixesT = Aws::String>
+    ImpactedLocation& AddIpv4Prefixes(Ipv4PrefixesT&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.emplace_back(std::forward<Ipv4PrefixesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_aSName;
     bool m_aSNameHasBeenSet = false;
 
-    long long m_aSNumber;
+    long long m_aSNumber{0};
     bool m_aSNumberHasBeenSet = false;
 
     Aws::String m_country;
@@ -271,10 +252,10 @@ namespace Model
     Aws::String m_city;
     bool m_cityHasBeenSet = false;
 
-    double m_latitude;
+    double m_latitude{0.0};
     bool m_latitudeHasBeenSet = false;
 
-    double m_longitude;
+    double m_longitude{0.0};
     bool m_longitudeHasBeenSet = false;
 
     Aws::String m_countryCode;
@@ -286,7 +267,7 @@ namespace Model
     Aws::String m_serviceLocation;
     bool m_serviceLocationHasBeenSet = false;
 
-    HealthEventStatus m_status;
+    HealthEventStatus m_status{HealthEventStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     NetworkImpairment m_causedBy;

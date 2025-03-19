@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceRecommendation::InferenceRecommendation() : 
-    m_recommendationIdHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_endpointConfigurationHasBeenSet(false),
-    m_modelConfigurationHasBeenSet(false),
-    m_invocationEndTimeHasBeenSet(false),
-    m_invocationStartTimeHasBeenSet(false)
-{
-}
-
 InferenceRecommendation::InferenceRecommendation(JsonView jsonValue)
-  : InferenceRecommendation()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfiguration"))
   {
     m_endpointConfiguration = jsonValue.GetObject("EndpointConfiguration");
-
     m_endpointConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelConfiguration"))
   {
     m_modelConfiguration = jsonValue.GetObject("ModelConfiguration");
-
     m_modelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationEndTime"))
   {
     m_invocationEndTime = jsonValue.GetDouble("InvocationEndTime");
-
     m_invocationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationStartTime"))
   {
     m_invocationStartTime = jsonValue.GetDouble("InvocationStartTime");
-
     m_invocationStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePackagingGroupRequest::DeletePackagingGroupRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeletePackagingGroupRequest::SerializePayload() const
 {
   return {};

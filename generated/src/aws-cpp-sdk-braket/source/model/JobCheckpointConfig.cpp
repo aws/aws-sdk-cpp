@@ -18,14 +18,7 @@ namespace Braket
 namespace Model
 {
 
-JobCheckpointConfig::JobCheckpointConfig() : 
-    m_localPathHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 JobCheckpointConfig::JobCheckpointConfig(JsonView jsonValue)
-  : JobCheckpointConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobCheckpointConfig& JobCheckpointConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("localPath"))
   {
     m_localPath = jsonValue.GetString("localPath");
-
     m_localPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

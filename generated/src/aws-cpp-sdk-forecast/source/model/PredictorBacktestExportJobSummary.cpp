@@ -18,19 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-PredictorBacktestExportJobSummary::PredictorBacktestExportJobSummary() : 
-    m_predictorBacktestExportJobArnHasBeenSet(false),
-    m_predictorBacktestExportJobNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 PredictorBacktestExportJobSummary::PredictorBacktestExportJobSummary(JsonView jsonValue)
-  : PredictorBacktestExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ PredictorBacktestExportJobSummary& PredictorBacktestExportJobSummary::operator =
   if(jsonValue.ValueExists("PredictorBacktestExportJobArn"))
   {
     m_predictorBacktestExportJobArn = jsonValue.GetString("PredictorBacktestExportJobArn");
-
     m_predictorBacktestExportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictorBacktestExportJobName"))
   {
     m_predictorBacktestExportJobName = jsonValue.GetString("PredictorBacktestExportJobName");
-
     m_predictorBacktestExportJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetObject("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

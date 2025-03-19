@@ -15,11 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestPayloadBlobRequest::TestPayloadBlobRequest() : 
-    m_requestIdHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection TestPayloadBlobRequest::GetRequestSpecificHeaders() const

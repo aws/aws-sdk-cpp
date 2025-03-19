@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetConsoleOutputRequest::GetConsoleOutputRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_latest(false),
-    m_latestHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetConsoleOutputRequest::SerializePayload() const
 {
   Aws::StringStream ss;

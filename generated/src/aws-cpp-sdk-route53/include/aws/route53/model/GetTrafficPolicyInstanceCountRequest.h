@@ -23,7 +23,7 @@ namespace Model
   class GetTrafficPolicyInstanceCountRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API GetTrafficPolicyInstanceCountRequest();
+    AWS_ROUTE53_API GetTrafficPolicyInstanceCountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

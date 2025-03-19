@@ -31,7 +31,7 @@ namespace Model
   class RawMessage
   {
   public:
-    AWS_PINPOINTEMAIL_API RawMessage();
+    AWS_PINPOINTEMAIL_API RawMessage() = default;
     AWS_PINPOINTEMAIL_API RawMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API RawMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,16 +52,16 @@ namespace Model
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
      */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline RawMessage& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    RawMessage& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
   };
 

@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetInstanceTpmEkPubRequest::GetInstanceTpmEkPubRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_keyType(EkPubKeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_keyFormat(EkPubKeyFormat::NOT_SET),
-    m_keyFormatHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceTpmEkPubRequest::SerializePayload() const
 {
   Aws::StringStream ss;

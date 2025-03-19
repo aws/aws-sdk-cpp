@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGeofenceCollectionResult::CreateGeofenceCollectionResult()
-{
-}
-
 CreateGeofenceCollectionResult::CreateGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateGeofenceCollectionResult& CreateGeofenceCollectionResult::operator =(const
   if(jsonValue.ValueExists("CollectionName"))
   {
     m_collectionName = jsonValue.GetString("CollectionName");
-
+    m_collectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionArn"))
   {
     m_collectionArn = jsonValue.GetString("CollectionArn");
-
+    m_collectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
+    m_createTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

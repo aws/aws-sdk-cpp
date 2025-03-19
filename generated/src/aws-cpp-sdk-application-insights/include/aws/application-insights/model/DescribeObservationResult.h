@@ -28,7 +28,7 @@ namespace Model
   class DescribeObservationResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API DescribeObservationResult();
+    AWS_APPLICATIONINSIGHTS_API DescribeObservationResult() = default;
     AWS_APPLICATIONINSIGHTS_API DescribeObservationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API DescribeObservationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the observation.</p>
      */
-    inline const Observation& GetObservation() const{ return m_observation; }
-    inline void SetObservation(const Observation& value) { m_observation = value; }
-    inline void SetObservation(Observation&& value) { m_observation = std::move(value); }
-    inline DescribeObservationResult& WithObservation(const Observation& value) { SetObservation(value); return *this;}
-    inline DescribeObservationResult& WithObservation(Observation&& value) { SetObservation(std::move(value)); return *this;}
+    inline const Observation& GetObservation() const { return m_observation; }
+    template<typename ObservationT = Observation>
+    void SetObservation(ObservationT&& value) { m_observationHasBeenSet = true; m_observation = std::forward<ObservationT>(value); }
+    template<typename ObservationT = Observation>
+    DescribeObservationResult& WithObservation(ObservationT&& value) { SetObservation(std::forward<ObservationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeObservationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeObservationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeObservationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeObservationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Observation m_observation;
+    bool m_observationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class GetMapGlyphsRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API GetMapGlyphsRequest();
+    AWS_LOCATIONSERVICE_API GetMapGlyphsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The map resource associated with the glyph ﬁle.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
+    inline const Aws::String& GetMapName() const { return m_mapName; }
     inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-    inline GetMapGlyphsRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-    inline GetMapGlyphsRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-    inline GetMapGlyphsRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+    template<typename MapNameT = Aws::String>
+    void SetMapName(MapNameT&& value) { m_mapNameHasBeenSet = true; m_mapName = std::forward<MapNameT>(value); }
+    template<typename MapNameT = Aws::String>
+    GetMapGlyphsRequest& WithMapName(MapNameT&& value) { SetMapName(std::forward<MapNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +98,12 @@ namespace Model
      * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
      * unsupported by <code>Amazon Ember</code>.</p> 
      */
-    inline const Aws::String& GetFontStack() const{ return m_fontStack; }
+    inline const Aws::String& GetFontStack() const { return m_fontStack; }
     inline bool FontStackHasBeenSet() const { return m_fontStackHasBeenSet; }
-    inline void SetFontStack(const Aws::String& value) { m_fontStackHasBeenSet = true; m_fontStack = value; }
-    inline void SetFontStack(Aws::String&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::move(value); }
-    inline void SetFontStack(const char* value) { m_fontStackHasBeenSet = true; m_fontStack.assign(value); }
-    inline GetMapGlyphsRequest& WithFontStack(const Aws::String& value) { SetFontStack(value); return *this;}
-    inline GetMapGlyphsRequest& WithFontStack(Aws::String&& value) { SetFontStack(std::move(value)); return *this;}
-    inline GetMapGlyphsRequest& WithFontStack(const char* value) { SetFontStack(value); return *this;}
+    template<typename FontStackT = Aws::String>
+    void SetFontStack(FontStackT&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::forward<FontStackT>(value); }
+    template<typename FontStackT = Aws::String>
+    GetMapGlyphsRequest& WithFontStack(FontStackT&& value) { SetFontStack(std::forward<FontStackT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +113,12 @@ namespace Model
      * <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of
      * 256.</p>
      */
-    inline const Aws::String& GetFontUnicodeRange() const{ return m_fontUnicodeRange; }
+    inline const Aws::String& GetFontUnicodeRange() const { return m_fontUnicodeRange; }
     inline bool FontUnicodeRangeHasBeenSet() const { return m_fontUnicodeRangeHasBeenSet; }
-    inline void SetFontUnicodeRange(const Aws::String& value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange = value; }
-    inline void SetFontUnicodeRange(Aws::String&& value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange = std::move(value); }
-    inline void SetFontUnicodeRange(const char* value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange.assign(value); }
-    inline GetMapGlyphsRequest& WithFontUnicodeRange(const Aws::String& value) { SetFontUnicodeRange(value); return *this;}
-    inline GetMapGlyphsRequest& WithFontUnicodeRange(Aws::String&& value) { SetFontUnicodeRange(std::move(value)); return *this;}
-    inline GetMapGlyphsRequest& WithFontUnicodeRange(const char* value) { SetFontUnicodeRange(value); return *this;}
+    template<typename FontUnicodeRangeT = Aws::String>
+    void SetFontUnicodeRange(FontUnicodeRangeT&& value) { m_fontUnicodeRangeHasBeenSet = true; m_fontUnicodeRange = std::forward<FontUnicodeRangeT>(value); }
+    template<typename FontUnicodeRangeT = Aws::String>
+    GetMapGlyphsRequest& WithFontUnicodeRange(FontUnicodeRangeT&& value) { SetFontUnicodeRange(std::forward<FontUnicodeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +127,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetMapGlyphsRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetMapGlyphsRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetMapGlyphsRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetMapGlyphsRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

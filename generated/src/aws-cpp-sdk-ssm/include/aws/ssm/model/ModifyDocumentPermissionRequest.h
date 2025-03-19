@@ -23,7 +23,7 @@ namespace Model
   class ModifyDocumentPermissionRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API ModifyDocumentPermissionRequest();
+    AWS_SSM_API ModifyDocumentPermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the document that you want to share.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ModifyDocumentPermissionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ModifyDocumentPermissionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ModifyDocumentPermissionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ModifyDocumentPermissionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,10 @@ namespace Model
      * <p>The permission type for the document. The permission type can be
      * <i>Share</i>.</p>
      */
-    inline const DocumentPermissionType& GetPermissionType() const{ return m_permissionType; }
+    inline DocumentPermissionType GetPermissionType() const { return m_permissionType; }
     inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
-    inline void SetPermissionType(const DocumentPermissionType& value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
-    inline void SetPermissionType(DocumentPermissionType&& value) { m_permissionTypeHasBeenSet = true; m_permissionType = std::move(value); }
-    inline ModifyDocumentPermissionRequest& WithPermissionType(const DocumentPermissionType& value) { SetPermissionType(value); return *this;}
-    inline ModifyDocumentPermissionRequest& WithPermissionType(DocumentPermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
+    inline void SetPermissionType(DocumentPermissionType value) { m_permissionTypeHasBeenSet = true; m_permissionType = value; }
+    inline ModifyDocumentPermissionRequest& WithPermissionType(DocumentPermissionType value) { SetPermissionType(value); return *this;}
     ///@}
 
     ///@{
@@ -68,15 +64,14 @@ namespace Model
      * <p>The Amazon Web Services users that should have access to the document. The
      * account IDs can either be a group of account IDs or <i>All</i>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIdsToAdd() const{ return m_accountIdsToAdd; }
+    inline const Aws::Vector<Aws::String>& GetAccountIdsToAdd() const { return m_accountIdsToAdd; }
     inline bool AccountIdsToAddHasBeenSet() const { return m_accountIdsToAddHasBeenSet; }
-    inline void SetAccountIdsToAdd(const Aws::Vector<Aws::String>& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd = value; }
-    inline void SetAccountIdsToAdd(Aws::Vector<Aws::String>&& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd = std::move(value); }
-    inline ModifyDocumentPermissionRequest& WithAccountIdsToAdd(const Aws::Vector<Aws::String>& value) { SetAccountIdsToAdd(value); return *this;}
-    inline ModifyDocumentPermissionRequest& WithAccountIdsToAdd(Aws::Vector<Aws::String>&& value) { SetAccountIdsToAdd(std::move(value)); return *this;}
-    inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(const Aws::String& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(value); return *this; }
-    inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(Aws::String&& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(std::move(value)); return *this; }
-    inline ModifyDocumentPermissionRequest& AddAccountIdsToAdd(const char* value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.push_back(value); return *this; }
+    template<typename AccountIdsToAddT = Aws::Vector<Aws::String>>
+    void SetAccountIdsToAdd(AccountIdsToAddT&& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd = std::forward<AccountIdsToAddT>(value); }
+    template<typename AccountIdsToAddT = Aws::Vector<Aws::String>>
+    ModifyDocumentPermissionRequest& WithAccountIdsToAdd(AccountIdsToAddT&& value) { SetAccountIdsToAdd(std::forward<AccountIdsToAddT>(value)); return *this;}
+    template<typename AccountIdsToAddT = Aws::String>
+    ModifyDocumentPermissionRequest& AddAccountIdsToAdd(AccountIdsToAddT&& value) { m_accountIdsToAddHasBeenSet = true; m_accountIdsToAdd.emplace_back(std::forward<AccountIdsToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,15 +82,14 @@ namespace Model
      * If you specify an ID to add and the same ID to remove, the system removes access
      * to the document. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIdsToRemove() const{ return m_accountIdsToRemove; }
+    inline const Aws::Vector<Aws::String>& GetAccountIdsToRemove() const { return m_accountIdsToRemove; }
     inline bool AccountIdsToRemoveHasBeenSet() const { return m_accountIdsToRemoveHasBeenSet; }
-    inline void SetAccountIdsToRemove(const Aws::Vector<Aws::String>& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove = value; }
-    inline void SetAccountIdsToRemove(Aws::Vector<Aws::String>&& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove = std::move(value); }
-    inline ModifyDocumentPermissionRequest& WithAccountIdsToRemove(const Aws::Vector<Aws::String>& value) { SetAccountIdsToRemove(value); return *this;}
-    inline ModifyDocumentPermissionRequest& WithAccountIdsToRemove(Aws::Vector<Aws::String>&& value) { SetAccountIdsToRemove(std::move(value)); return *this;}
-    inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(const Aws::String& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(value); return *this; }
-    inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(Aws::String&& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(std::move(value)); return *this; }
-    inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(const char* value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(value); return *this; }
+    template<typename AccountIdsToRemoveT = Aws::Vector<Aws::String>>
+    void SetAccountIdsToRemove(AccountIdsToRemoveT&& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove = std::forward<AccountIdsToRemoveT>(value); }
+    template<typename AccountIdsToRemoveT = Aws::Vector<Aws::String>>
+    ModifyDocumentPermissionRequest& WithAccountIdsToRemove(AccountIdsToRemoveT&& value) { SetAccountIdsToRemove(std::forward<AccountIdsToRemoveT>(value)); return *this;}
+    template<typename AccountIdsToRemoveT = Aws::String>
+    ModifyDocumentPermissionRequest& AddAccountIdsToRemove(AccountIdsToRemoveT&& value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.emplace_back(std::forward<AccountIdsToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,21 +97,19 @@ namespace Model
      * <p>(Optional) The version of the document to share. If it isn't specified, the
      * system choose the <code>Default</code> version to share.</p>
      */
-    inline const Aws::String& GetSharedDocumentVersion() const{ return m_sharedDocumentVersion; }
+    inline const Aws::String& GetSharedDocumentVersion() const { return m_sharedDocumentVersion; }
     inline bool SharedDocumentVersionHasBeenSet() const { return m_sharedDocumentVersionHasBeenSet; }
-    inline void SetSharedDocumentVersion(const Aws::String& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = value; }
-    inline void SetSharedDocumentVersion(Aws::String&& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = std::move(value); }
-    inline void SetSharedDocumentVersion(const char* value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion.assign(value); }
-    inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(const Aws::String& value) { SetSharedDocumentVersion(value); return *this;}
-    inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(Aws::String&& value) { SetSharedDocumentVersion(std::move(value)); return *this;}
-    inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(const char* value) { SetSharedDocumentVersion(value); return *this;}
+    template<typename SharedDocumentVersionT = Aws::String>
+    void SetSharedDocumentVersion(SharedDocumentVersionT&& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = std::forward<SharedDocumentVersionT>(value); }
+    template<typename SharedDocumentVersionT = Aws::String>
+    ModifyDocumentPermissionRequest& WithSharedDocumentVersion(SharedDocumentVersionT&& value) { SetSharedDocumentVersion(std::forward<SharedDocumentVersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    DocumentPermissionType m_permissionType;
+    DocumentPermissionType m_permissionType{DocumentPermissionType::NOT_SET};
     bool m_permissionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIdsToAdd;

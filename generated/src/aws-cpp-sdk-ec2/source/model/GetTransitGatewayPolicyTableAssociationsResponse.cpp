@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTransitGatewayPolicyTableAssociationsResponse::GetTransitGatewayPolicyTableAssociationsResponse()
-{
-}
-
 GetTransitGatewayPolicyTableAssociationsResponse::GetTransitGatewayPolicyTableAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetTransitGatewayPolicyTableAssociationsResponse& GetTransitGatewayPolicyTableAs
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
+      m_associationsHasBeenSet = !associationsMember.IsNull();
       while(!associationsMember.IsNull())
       {
         m_associations.push_back(associationsMember);
         associationsMember = associationsMember.NextNode("item");
       }
 
+      m_associationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetTransitGatewayPolicyTableAssociationsResponse& GetTransitGatewayPolicyTableAs
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayPolicyTableAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

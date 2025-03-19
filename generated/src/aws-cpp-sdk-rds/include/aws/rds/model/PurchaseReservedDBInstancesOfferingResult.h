@@ -28,33 +28,35 @@ namespace Model
   class PurchaseReservedDBInstancesOfferingResult
   {
   public:
-    AWS_RDS_API PurchaseReservedDBInstancesOfferingResult();
+    AWS_RDS_API PurchaseReservedDBInstancesOfferingResult() = default;
     AWS_RDS_API PurchaseReservedDBInstancesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API PurchaseReservedDBInstancesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ReservedDBInstance& GetReservedDBInstance() const{ return m_reservedDBInstance; }
-    inline void SetReservedDBInstance(const ReservedDBInstance& value) { m_reservedDBInstance = value; }
-    inline void SetReservedDBInstance(ReservedDBInstance&& value) { m_reservedDBInstance = std::move(value); }
-    inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(const ReservedDBInstance& value) { SetReservedDBInstance(value); return *this;}
-    inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstance&& value) { SetReservedDBInstance(std::move(value)); return *this;}
+    inline const ReservedDBInstance& GetReservedDBInstance() const { return m_reservedDBInstance; }
+    template<typename ReservedDBInstanceT = ReservedDBInstance>
+    void SetReservedDBInstance(ReservedDBInstanceT&& value) { m_reservedDBInstanceHasBeenSet = true; m_reservedDBInstance = std::forward<ReservedDBInstanceT>(value); }
+    template<typename ReservedDBInstanceT = ReservedDBInstance>
+    PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstanceT&& value) { SetReservedDBInstance(std::forward<ReservedDBInstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ReservedDBInstance m_reservedDBInstance;
+    bool m_reservedDBInstanceHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-DeliveryOptions::DeliveryOptions() : 
-    m_tlsPolicy(TlsPolicy::NOT_SET),
-    m_tlsPolicyHasBeenSet(false)
-{
-}
-
 DeliveryOptions::DeliveryOptions(const XmlNode& xmlNode)
-  : DeliveryOptions()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ DeliveryOptions& DeliveryOptions::operator =(const XmlNode& xmlNode)
     XmlNode tlsPolicyNode = resultNode.FirstChild("TlsPolicy");
     if(!tlsPolicyNode.IsNull())
     {
-      m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tlsPolicyNode.GetText()).c_str()).c_str());
+      m_tlsPolicy = TlsPolicyMapper::GetTlsPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tlsPolicyNode.GetText()).c_str()));
       m_tlsPolicyHasBeenSet = true;
     }
   }

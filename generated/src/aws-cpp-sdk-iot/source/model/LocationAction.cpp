@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-LocationAction::LocationAction() : 
-    m_roleArnHasBeenSet(false),
-    m_trackerNameHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 LocationAction::LocationAction(JsonView jsonValue)
-  : LocationAction()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ LocationAction& LocationAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackerName"))
   {
     m_trackerName = jsonValue.GetString("trackerName");
-
     m_trackerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceId"))
   {
     m_deviceId = jsonValue.GetString("deviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetObject("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latitude"))
   {
     m_latitude = jsonValue.GetString("latitude");
-
     m_latitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longitude"))
   {
     m_longitude = jsonValue.GetString("longitude");
-
     m_longitudeHasBeenSet = true;
   }
-
   return *this;
 }
 

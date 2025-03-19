@@ -34,7 +34,7 @@ namespace Model
   class IdNamespaceAssociationInputReferenceProperties
   {
   public:
-    AWS_CLEANROOMS_API IdNamespaceAssociationInputReferenceProperties();
+    AWS_CLEANROOMS_API IdNamespaceAssociationInputReferenceProperties() = default;
     AWS_CLEANROOMS_API IdNamespaceAssociationInputReferenceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API IdNamespaceAssociationInputReferenceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The ID namespace type for this ID namespace association.</p>
      */
-    inline const IdNamespaceType& GetIdNamespaceType() const{ return m_idNamespaceType; }
+    inline IdNamespaceType GetIdNamespaceType() const { return m_idNamespaceType; }
     inline bool IdNamespaceTypeHasBeenSet() const { return m_idNamespaceTypeHasBeenSet; }
-    inline void SetIdNamespaceType(const IdNamespaceType& value) { m_idNamespaceTypeHasBeenSet = true; m_idNamespaceType = value; }
-    inline void SetIdNamespaceType(IdNamespaceType&& value) { m_idNamespaceTypeHasBeenSet = true; m_idNamespaceType = std::move(value); }
-    inline IdNamespaceAssociationInputReferenceProperties& WithIdNamespaceType(const IdNamespaceType& value) { SetIdNamespaceType(value); return *this;}
-    inline IdNamespaceAssociationInputReferenceProperties& WithIdNamespaceType(IdNamespaceType&& value) { SetIdNamespaceType(std::move(value)); return *this;}
+    inline void SetIdNamespaceType(IdNamespaceType value) { m_idNamespaceTypeHasBeenSet = true; m_idNamespaceType = value; }
+    inline IdNamespaceAssociationInputReferenceProperties& WithIdNamespaceType(IdNamespaceType value) { SetIdNamespaceType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,18 @@ namespace Model
      * <p>Defines how ID mapping workflows are supported for this ID namespace
      * association.</p>
      */
-    inline const Aws::Vector<Aws::Utils::Document>& GetIdMappingWorkflowsSupported() const{ return m_idMappingWorkflowsSupported; }
+    inline const Aws::Vector<Aws::Utils::Document>& GetIdMappingWorkflowsSupported() const { return m_idMappingWorkflowsSupported; }
     inline bool IdMappingWorkflowsSupportedHasBeenSet() const { return m_idMappingWorkflowsSupportedHasBeenSet; }
-    inline void SetIdMappingWorkflowsSupported(const Aws::Vector<Aws::Utils::Document>& value) { m_idMappingWorkflowsSupportedHasBeenSet = true; m_idMappingWorkflowsSupported = value; }
-    inline void SetIdMappingWorkflowsSupported(Aws::Vector<Aws::Utils::Document>&& value) { m_idMappingWorkflowsSupportedHasBeenSet = true; m_idMappingWorkflowsSupported = std::move(value); }
-    inline IdNamespaceAssociationInputReferenceProperties& WithIdMappingWorkflowsSupported(const Aws::Vector<Aws::Utils::Document>& value) { SetIdMappingWorkflowsSupported(value); return *this;}
-    inline IdNamespaceAssociationInputReferenceProperties& WithIdMappingWorkflowsSupported(Aws::Vector<Aws::Utils::Document>&& value) { SetIdMappingWorkflowsSupported(std::move(value)); return *this;}
-    inline IdNamespaceAssociationInputReferenceProperties& AddIdMappingWorkflowsSupported(const Aws::Utils::Document& value) { m_idMappingWorkflowsSupportedHasBeenSet = true; m_idMappingWorkflowsSupported.push_back(value); return *this; }
-    inline IdNamespaceAssociationInputReferenceProperties& AddIdMappingWorkflowsSupported(Aws::Utils::Document&& value) { m_idMappingWorkflowsSupportedHasBeenSet = true; m_idMappingWorkflowsSupported.push_back(std::move(value)); return *this; }
+    template<typename IdMappingWorkflowsSupportedT = Aws::Vector<Aws::Utils::Document>>
+    void SetIdMappingWorkflowsSupported(IdMappingWorkflowsSupportedT&& value) { m_idMappingWorkflowsSupportedHasBeenSet = true; m_idMappingWorkflowsSupported = std::forward<IdMappingWorkflowsSupportedT>(value); }
+    template<typename IdMappingWorkflowsSupportedT = Aws::Vector<Aws::Utils::Document>>
+    IdNamespaceAssociationInputReferenceProperties& WithIdMappingWorkflowsSupported(IdMappingWorkflowsSupportedT&& value) { SetIdMappingWorkflowsSupported(std::forward<IdMappingWorkflowsSupportedT>(value)); return *this;}
+    template<typename IdMappingWorkflowsSupportedT = Aws::Utils::Document>
+    IdNamespaceAssociationInputReferenceProperties& AddIdMappingWorkflowsSupported(IdMappingWorkflowsSupportedT&& value) { m_idMappingWorkflowsSupportedHasBeenSet = true; m_idMappingWorkflowsSupported.emplace_back(std::forward<IdMappingWorkflowsSupportedT>(value)); return *this; }
     ///@}
   private:
 
-    IdNamespaceType m_idNamespaceType;
+    IdNamespaceType m_idNamespaceType{IdNamespaceType::NOT_SET};
     bool m_idNamespaceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::Document> m_idMappingWorkflowsSupported;

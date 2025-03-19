@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-BackupRestoring::BackupRestoring() : 
-    m_messageHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 BackupRestoring::BackupRestoring(JsonView jsonValue)
-  : BackupRestoring()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BackupRestoring& BackupRestoring::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

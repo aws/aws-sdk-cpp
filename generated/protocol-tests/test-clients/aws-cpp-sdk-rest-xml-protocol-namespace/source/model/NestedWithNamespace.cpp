@@ -20,13 +20,7 @@ namespace RestXmlProtocolNamespace
 namespace Model
 {
 
-NestedWithNamespace::NestedWithNamespace() : 
-    m_attrFieldHasBeenSet(false)
-{
-}
-
 NestedWithNamespace::NestedWithNamespace(const XmlNode& xmlNode)
-  : NestedWithNamespace()
 {
   *this = xmlNode;
 }

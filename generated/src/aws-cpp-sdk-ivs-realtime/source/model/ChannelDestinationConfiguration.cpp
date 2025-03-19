@@ -18,14 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ChannelDestinationConfiguration::ChannelDestinationConfiguration() : 
-    m_channelArnHasBeenSet(false),
-    m_encoderConfigurationArnHasBeenSet(false)
-{
-}
-
 ChannelDestinationConfiguration::ChannelDestinationConfiguration(JsonView jsonValue)
-  : ChannelDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ChannelDestinationConfiguration& ChannelDestinationConfiguration::operator =(Jso
   if(jsonValue.ValueExists("channelArn"))
   {
     m_channelArn = jsonValue.GetString("channelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encoderConfigurationArn"))
   {
     m_encoderConfigurationArn = jsonValue.GetString("encoderConfigurationArn");
-
     m_encoderConfigurationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

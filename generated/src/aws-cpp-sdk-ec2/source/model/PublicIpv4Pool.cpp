@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PublicIpv4Pool::PublicIpv4Pool() : 
-    m_poolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolAddressRangesHasBeenSet(false),
-    m_totalAddressCount(0),
-    m_totalAddressCountHasBeenSet(false),
-    m_totalAvailableAddressCount(0),
-    m_totalAvailableAddressCountHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PublicIpv4Pool::PublicIpv4Pool(const XmlNode& xmlNode)
-  : PublicIpv4Pool()
 {
   *this = xmlNode;
 }
@@ -61,6 +47,7 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     if(!poolAddressRangesNode.IsNull())
     {
       XmlNode poolAddressRangesMember = poolAddressRangesNode.FirstChild("item");
+      m_poolAddressRangesHasBeenSet = !poolAddressRangesMember.IsNull();
       while(!poolAddressRangesMember.IsNull())
       {
         m_poolAddressRanges.push_back(poolAddressRangesMember);
@@ -91,6 +78,7 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCliTokenResult::CreateCliTokenResult()
-{
-}
-
 CreateCliTokenResult::CreateCliTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateCliTokenResult& CreateCliTokenResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("CliToken"))
   {
     m_cliToken = jsonValue.GetString("CliToken");
-
+    m_cliTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebServerHostname"))
   {
     m_webServerHostname = jsonValue.GetString("WebServerHostname");
-
+    m_webServerHostnameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

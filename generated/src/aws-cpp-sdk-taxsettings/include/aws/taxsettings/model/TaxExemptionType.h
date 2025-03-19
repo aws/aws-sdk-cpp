@@ -33,7 +33,7 @@ namespace Model
   class TaxExemptionType
   {
   public:
-    AWS_TAXSETTINGS_API TaxExemptionType();
+    AWS_TAXSETTINGS_API TaxExemptionType() = default;
     AWS_TAXSETTINGS_API TaxExemptionType(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API TaxExemptionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,38 @@ namespace Model
     /**
      * <p>The tax exemption's applicable jurisdictions. </p>
      */
-    inline const Aws::Vector<Authority>& GetApplicableJurisdictions() const{ return m_applicableJurisdictions; }
+    inline const Aws::Vector<Authority>& GetApplicableJurisdictions() const { return m_applicableJurisdictions; }
     inline bool ApplicableJurisdictionsHasBeenSet() const { return m_applicableJurisdictionsHasBeenSet; }
-    inline void SetApplicableJurisdictions(const Aws::Vector<Authority>& value) { m_applicableJurisdictionsHasBeenSet = true; m_applicableJurisdictions = value; }
-    inline void SetApplicableJurisdictions(Aws::Vector<Authority>&& value) { m_applicableJurisdictionsHasBeenSet = true; m_applicableJurisdictions = std::move(value); }
-    inline TaxExemptionType& WithApplicableJurisdictions(const Aws::Vector<Authority>& value) { SetApplicableJurisdictions(value); return *this;}
-    inline TaxExemptionType& WithApplicableJurisdictions(Aws::Vector<Authority>&& value) { SetApplicableJurisdictions(std::move(value)); return *this;}
-    inline TaxExemptionType& AddApplicableJurisdictions(const Authority& value) { m_applicableJurisdictionsHasBeenSet = true; m_applicableJurisdictions.push_back(value); return *this; }
-    inline TaxExemptionType& AddApplicableJurisdictions(Authority&& value) { m_applicableJurisdictionsHasBeenSet = true; m_applicableJurisdictions.push_back(std::move(value)); return *this; }
+    template<typename ApplicableJurisdictionsT = Aws::Vector<Authority>>
+    void SetApplicableJurisdictions(ApplicableJurisdictionsT&& value) { m_applicableJurisdictionsHasBeenSet = true; m_applicableJurisdictions = std::forward<ApplicableJurisdictionsT>(value); }
+    template<typename ApplicableJurisdictionsT = Aws::Vector<Authority>>
+    TaxExemptionType& WithApplicableJurisdictions(ApplicableJurisdictionsT&& value) { SetApplicableJurisdictions(std::forward<ApplicableJurisdictionsT>(value)); return *this;}
+    template<typename ApplicableJurisdictionsT = Authority>
+    TaxExemptionType& AddApplicableJurisdictions(ApplicableJurisdictionsT&& value) { m_applicableJurisdictionsHasBeenSet = true; m_applicableJurisdictions.emplace_back(std::forward<ApplicableJurisdictionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tax exemption's type description. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TaxExemptionType& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TaxExemptionType& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TaxExemptionType& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TaxExemptionType& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tax exemption's type display name. </p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline TaxExemptionType& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline TaxExemptionType& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline TaxExemptionType& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    TaxExemptionType& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 

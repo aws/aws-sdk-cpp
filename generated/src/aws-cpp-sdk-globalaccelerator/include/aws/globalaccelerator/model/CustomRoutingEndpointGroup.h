@@ -36,7 +36,7 @@ namespace Model
   class CustomRoutingEndpointGroup
   {
   public:
-    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup();
+    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup() = default;
     AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
      */
-    inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
+    inline const Aws::String& GetEndpointGroupArn() const { return m_endpointGroupArn; }
     inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
-    inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
-    inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::move(value); }
-    inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn.assign(value); }
-    inline CustomRoutingEndpointGroup& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-    inline CustomRoutingEndpointGroup& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-    inline CustomRoutingEndpointGroup& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
+    template<typename EndpointGroupArnT = Aws::String>
+    void SetEndpointGroupArn(EndpointGroupArnT&& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = std::forward<EndpointGroupArnT>(value); }
+    template<typename EndpointGroupArnT = Aws::String>
+    CustomRoutingEndpointGroup& WithEndpointGroupArn(EndpointGroupArnT&& value) { SetEndpointGroupArn(std::forward<EndpointGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where the endpoint group is located.</p>
      */
-    inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
+    inline const Aws::String& GetEndpointGroupRegion() const { return m_endpointGroupRegion; }
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
-    inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
-    inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
-    inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
-    inline CustomRoutingEndpointGroup& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
-    inline CustomRoutingEndpointGroup& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
-    inline CustomRoutingEndpointGroup& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
+    template<typename EndpointGroupRegionT = Aws::String>
+    void SetEndpointGroupRegion(EndpointGroupRegionT&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::forward<EndpointGroupRegionT>(value); }
+    template<typename EndpointGroupRegionT = Aws::String>
+    CustomRoutingEndpointGroup& WithEndpointGroupRegion(EndpointGroupRegionT&& value) { SetEndpointGroupRegion(std::forward<EndpointGroupRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,14 @@ namespace Model
      * all endpoints (virtual private cloud subnets) in an endpoint group to accept
      * client traffic on.</p>
      */
-    inline const Aws::Vector<CustomRoutingDestinationDescription>& GetDestinationDescriptions() const{ return m_destinationDescriptions; }
+    inline const Aws::Vector<CustomRoutingDestinationDescription>& GetDestinationDescriptions() const { return m_destinationDescriptions; }
     inline bool DestinationDescriptionsHasBeenSet() const { return m_destinationDescriptionsHasBeenSet; }
-    inline void SetDestinationDescriptions(const Aws::Vector<CustomRoutingDestinationDescription>& value) { m_destinationDescriptionsHasBeenSet = true; m_destinationDescriptions = value; }
-    inline void SetDestinationDescriptions(Aws::Vector<CustomRoutingDestinationDescription>&& value) { m_destinationDescriptionsHasBeenSet = true; m_destinationDescriptions = std::move(value); }
-    inline CustomRoutingEndpointGroup& WithDestinationDescriptions(const Aws::Vector<CustomRoutingDestinationDescription>& value) { SetDestinationDescriptions(value); return *this;}
-    inline CustomRoutingEndpointGroup& WithDestinationDescriptions(Aws::Vector<CustomRoutingDestinationDescription>&& value) { SetDestinationDescriptions(std::move(value)); return *this;}
-    inline CustomRoutingEndpointGroup& AddDestinationDescriptions(const CustomRoutingDestinationDescription& value) { m_destinationDescriptionsHasBeenSet = true; m_destinationDescriptions.push_back(value); return *this; }
-    inline CustomRoutingEndpointGroup& AddDestinationDescriptions(CustomRoutingDestinationDescription&& value) { m_destinationDescriptionsHasBeenSet = true; m_destinationDescriptions.push_back(std::move(value)); return *this; }
+    template<typename DestinationDescriptionsT = Aws::Vector<CustomRoutingDestinationDescription>>
+    void SetDestinationDescriptions(DestinationDescriptionsT&& value) { m_destinationDescriptionsHasBeenSet = true; m_destinationDescriptions = std::forward<DestinationDescriptionsT>(value); }
+    template<typename DestinationDescriptionsT = Aws::Vector<CustomRoutingDestinationDescription>>
+    CustomRoutingEndpointGroup& WithDestinationDescriptions(DestinationDescriptionsT&& value) { SetDestinationDescriptions(std::forward<DestinationDescriptionsT>(value)); return *this;}
+    template<typename DestinationDescriptionsT = CustomRoutingDestinationDescription>
+    CustomRoutingEndpointGroup& AddDestinationDescriptions(DestinationDescriptionsT&& value) { m_destinationDescriptionsHasBeenSet = true; m_destinationDescriptions.emplace_back(std::forward<DestinationDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +87,14 @@ namespace Model
      * <p>For a custom routing accelerator, describes the endpoints (virtual private
      * cloud subnets) in an endpoint group to accept client traffic on.</p>
      */
-    inline const Aws::Vector<CustomRoutingEndpointDescription>& GetEndpointDescriptions() const{ return m_endpointDescriptions; }
+    inline const Aws::Vector<CustomRoutingEndpointDescription>& GetEndpointDescriptions() const { return m_endpointDescriptions; }
     inline bool EndpointDescriptionsHasBeenSet() const { return m_endpointDescriptionsHasBeenSet; }
-    inline void SetEndpointDescriptions(const Aws::Vector<CustomRoutingEndpointDescription>& value) { m_endpointDescriptionsHasBeenSet = true; m_endpointDescriptions = value; }
-    inline void SetEndpointDescriptions(Aws::Vector<CustomRoutingEndpointDescription>&& value) { m_endpointDescriptionsHasBeenSet = true; m_endpointDescriptions = std::move(value); }
-    inline CustomRoutingEndpointGroup& WithEndpointDescriptions(const Aws::Vector<CustomRoutingEndpointDescription>& value) { SetEndpointDescriptions(value); return *this;}
-    inline CustomRoutingEndpointGroup& WithEndpointDescriptions(Aws::Vector<CustomRoutingEndpointDescription>&& value) { SetEndpointDescriptions(std::move(value)); return *this;}
-    inline CustomRoutingEndpointGroup& AddEndpointDescriptions(const CustomRoutingEndpointDescription& value) { m_endpointDescriptionsHasBeenSet = true; m_endpointDescriptions.push_back(value); return *this; }
-    inline CustomRoutingEndpointGroup& AddEndpointDescriptions(CustomRoutingEndpointDescription&& value) { m_endpointDescriptionsHasBeenSet = true; m_endpointDescriptions.push_back(std::move(value)); return *this; }
+    template<typename EndpointDescriptionsT = Aws::Vector<CustomRoutingEndpointDescription>>
+    void SetEndpointDescriptions(EndpointDescriptionsT&& value) { m_endpointDescriptionsHasBeenSet = true; m_endpointDescriptions = std::forward<EndpointDescriptionsT>(value); }
+    template<typename EndpointDescriptionsT = Aws::Vector<CustomRoutingEndpointDescription>>
+    CustomRoutingEndpointGroup& WithEndpointDescriptions(EndpointDescriptionsT&& value) { SetEndpointDescriptions(std::forward<EndpointDescriptionsT>(value)); return *this;}
+    template<typename EndpointDescriptionsT = CustomRoutingEndpointDescription>
+    CustomRoutingEndpointGroup& AddEndpointDescriptions(EndpointDescriptionsT&& value) { m_endpointDescriptionsHasBeenSet = true; m_endpointDescriptions.emplace_back(std::forward<EndpointDescriptionsT>(value)); return *this; }
     ///@}
   private:
 

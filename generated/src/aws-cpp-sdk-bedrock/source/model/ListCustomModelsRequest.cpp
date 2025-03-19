@@ -15,24 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCustomModelsRequest::ListCustomModelsRequest() : 
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_baseModelArnEqualsHasBeenSet(false),
-    m_foundationModelArnEqualsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(SortModelsBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_isOwned(false),
-    m_isOwnedHasBeenSet(false)
-{
-}
-
 Aws::String ListCustomModelsRequest::SerializePayload() const
 {
   return {};

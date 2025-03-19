@@ -18,18 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-DomainPrice::DomainPrice() : 
-    m_nameHasBeenSet(false),
-    m_registrationPriceHasBeenSet(false),
-    m_transferPriceHasBeenSet(false),
-    m_renewalPriceHasBeenSet(false),
-    m_changeOwnershipPriceHasBeenSet(false),
-    m_restorationPriceHasBeenSet(false)
-{
-}
-
 DomainPrice::DomainPrice(JsonView jsonValue)
-  : DomainPrice()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ DomainPrice& DomainPrice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationPrice"))
   {
     m_registrationPrice = jsonValue.GetObject("RegistrationPrice");
-
     m_registrationPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransferPrice"))
   {
     m_transferPrice = jsonValue.GetObject("TransferPrice");
-
     m_transferPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenewalPrice"))
   {
     m_renewalPrice = jsonValue.GetObject("RenewalPrice");
-
     m_renewalPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeOwnershipPrice"))
   {
     m_changeOwnershipPrice = jsonValue.GetObject("ChangeOwnershipPrice");
-
     m_changeOwnershipPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestorationPrice"))
   {
     m_restorationPrice = jsonValue.GetObject("RestorationPrice");
-
     m_restorationPriceHasBeenSet = true;
   }
-
   return *this;
 }
 

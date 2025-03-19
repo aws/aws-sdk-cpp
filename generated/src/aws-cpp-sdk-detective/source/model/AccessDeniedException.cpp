@@ -18,19 +18,7 @@ namespace Detective
 namespace Model
 {
 
-AccessDeniedException::AccessDeniedException() : 
-    m_messageHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorCodeReasonHasBeenSet(false),
-    m_subErrorCode(ErrorCode::NOT_SET),
-    m_subErrorCodeHasBeenSet(false),
-    m_subErrorCodeReasonHasBeenSet(false)
-{
-}
-
 AccessDeniedException::AccessDeniedException(JsonView jsonValue)
-  : AccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AccessDeniedException& AccessDeniedException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCodeReason"))
   {
     m_errorCodeReason = jsonValue.GetString("ErrorCodeReason");
-
     m_errorCodeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubErrorCode"))
   {
     m_subErrorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("SubErrorCode"));
-
     m_subErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubErrorCodeReason"))
   {
     m_subErrorCodeReason = jsonValue.GetString("SubErrorCodeReason");
-
     m_subErrorCodeReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

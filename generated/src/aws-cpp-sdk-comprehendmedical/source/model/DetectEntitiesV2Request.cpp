@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectEntitiesV2Request::DetectEntitiesV2Request() : 
-    m_textHasBeenSet(false)
-{
-}
-
 Aws::String DetectEntitiesV2Request::SerializePayload() const
 {
   JsonValue payload;

@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceMaintenanceOptionsRequest::ModifyInstanceMaintenanceOptionsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_autoRecovery(InstanceAutoRecoveryState::NOT_SET),
-    m_autoRecoveryHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceMaintenanceOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

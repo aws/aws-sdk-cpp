@@ -36,7 +36,7 @@ namespace Model
   class ResourceTargetDefinition
   {
   public:
-    AWS_CLOUDFORMATION_API ResourceTargetDefinition();
+    AWS_CLOUDFORMATION_API ResourceTargetDefinition() = default;
     AWS_CLOUDFORMATION_API ResourceTargetDefinition(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ResourceTargetDefinition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,12 +50,10 @@ namespace Model
      * change in the resource attribute's <code>Metadata</code>,
      * <code>Properties</code>, or <code>Tags</code>.</p>
      */
-    inline const ResourceAttribute& GetAttribute() const{ return m_attribute; }
+    inline ResourceAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const ResourceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(ResourceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline ResourceTargetDefinition& WithAttribute(const ResourceAttribute& value) { SetAttribute(value); return *this;}
-    inline ResourceTargetDefinition& WithAttribute(ResourceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(ResourceAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline ResourceTargetDefinition& WithAttribute(ResourceAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
      * the property. For all other attributes, the value is null.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResourceTargetDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResourceTargetDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResourceTargetDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResourceTargetDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,26 +80,22 @@ namespace Model
      * Web Services resource and property types reference</a> in the <i>CloudFormation
      * User Guide</i>.</p>
      */
-    inline const RequiresRecreation& GetRequiresRecreation() const{ return m_requiresRecreation; }
+    inline RequiresRecreation GetRequiresRecreation() const { return m_requiresRecreation; }
     inline bool RequiresRecreationHasBeenSet() const { return m_requiresRecreationHasBeenSet; }
-    inline void SetRequiresRecreation(const RequiresRecreation& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = value; }
-    inline void SetRequiresRecreation(RequiresRecreation&& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = std::move(value); }
-    inline ResourceTargetDefinition& WithRequiresRecreation(const RequiresRecreation& value) { SetRequiresRecreation(value); return *this;}
-    inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation&& value) { SetRequiresRecreation(std::move(value)); return *this;}
+    inline void SetRequiresRecreation(RequiresRecreation value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = value; }
+    inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation value) { SetRequiresRecreation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property path of the property.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline ResourceTargetDefinition& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline ResourceTargetDefinition& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline ResourceTargetDefinition& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    ResourceTargetDefinition& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +103,12 @@ namespace Model
      * <p>The value of the property before the change is executed. Large values can be
      * truncated.</p>
      */
-    inline const Aws::String& GetBeforeValue() const{ return m_beforeValue; }
+    inline const Aws::String& GetBeforeValue() const { return m_beforeValue; }
     inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
-    inline void SetBeforeValue(const Aws::String& value) { m_beforeValueHasBeenSet = true; m_beforeValue = value; }
-    inline void SetBeforeValue(Aws::String&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::move(value); }
-    inline void SetBeforeValue(const char* value) { m_beforeValueHasBeenSet = true; m_beforeValue.assign(value); }
-    inline ResourceTargetDefinition& WithBeforeValue(const Aws::String& value) { SetBeforeValue(value); return *this;}
-    inline ResourceTargetDefinition& WithBeforeValue(Aws::String&& value) { SetBeforeValue(std::move(value)); return *this;}
-    inline ResourceTargetDefinition& WithBeforeValue(const char* value) { SetBeforeValue(value); return *this;}
+    template<typename BeforeValueT = Aws::String>
+    void SetBeforeValue(BeforeValueT&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::forward<BeforeValueT>(value); }
+    template<typename BeforeValueT = Aws::String>
+    ResourceTargetDefinition& WithBeforeValue(BeforeValueT&& value) { SetBeforeValue(std::forward<BeforeValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +116,12 @@ namespace Model
      * <p>The value of the property after the change is executed. Large values can be
      * truncated.</p>
      */
-    inline const Aws::String& GetAfterValue() const{ return m_afterValue; }
+    inline const Aws::String& GetAfterValue() const { return m_afterValue; }
     inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
-    inline void SetAfterValue(const Aws::String& value) { m_afterValueHasBeenSet = true; m_afterValue = value; }
-    inline void SetAfterValue(Aws::String&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::move(value); }
-    inline void SetAfterValue(const char* value) { m_afterValueHasBeenSet = true; m_afterValue.assign(value); }
-    inline ResourceTargetDefinition& WithAfterValue(const Aws::String& value) { SetAfterValue(value); return *this;}
-    inline ResourceTargetDefinition& WithAfterValue(Aws::String&& value) { SetAfterValue(std::move(value)); return *this;}
-    inline ResourceTargetDefinition& WithAfterValue(const char* value) { SetAfterValue(value); return *this;}
+    template<typename AfterValueT = Aws::String>
+    void SetAfterValue(AfterValueT&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::forward<AfterValueT>(value); }
+    template<typename AfterValueT = Aws::String>
+    ResourceTargetDefinition& WithAfterValue(AfterValueT&& value) { SetAfterValue(std::forward<AfterValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,22 +131,20 @@ namespace Model
      * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
      * <code>Modify</code> The item will be modified.</p> </li> </ul>
      */
-    inline const AttributeChangeType& GetAttributeChangeType() const{ return m_attributeChangeType; }
+    inline AttributeChangeType GetAttributeChangeType() const { return m_attributeChangeType; }
     inline bool AttributeChangeTypeHasBeenSet() const { return m_attributeChangeTypeHasBeenSet; }
-    inline void SetAttributeChangeType(const AttributeChangeType& value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = value; }
-    inline void SetAttributeChangeType(AttributeChangeType&& value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = std::move(value); }
-    inline ResourceTargetDefinition& WithAttributeChangeType(const AttributeChangeType& value) { SetAttributeChangeType(value); return *this;}
-    inline ResourceTargetDefinition& WithAttributeChangeType(AttributeChangeType&& value) { SetAttributeChangeType(std::move(value)); return *this;}
+    inline void SetAttributeChangeType(AttributeChangeType value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = value; }
+    inline ResourceTargetDefinition& WithAttributeChangeType(AttributeChangeType value) { SetAttributeChangeType(value); return *this;}
     ///@}
   private:
 
-    ResourceAttribute m_attribute;
+    ResourceAttribute m_attribute{ResourceAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RequiresRecreation m_requiresRecreation;
+    RequiresRecreation m_requiresRecreation{RequiresRecreation::NOT_SET};
     bool m_requiresRecreationHasBeenSet = false;
 
     Aws::String m_path;
@@ -170,7 +156,7 @@ namespace Model
     Aws::String m_afterValue;
     bool m_afterValueHasBeenSet = false;
 
-    AttributeChangeType m_attributeChangeType;
+    AttributeChangeType m_attributeChangeType{AttributeChangeType::NOT_SET};
     bool m_attributeChangeTypeHasBeenSet = false;
   };
 

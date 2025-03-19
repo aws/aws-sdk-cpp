@@ -18,14 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QueryInsights::QueryInsights() : 
-    m_mode(QueryInsightsMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 QueryInsights::QueryInsights(JsonView jsonValue)
-  : QueryInsights()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ QueryInsights& QueryInsights::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = QueryInsightsModeMapper::GetQueryInsightsModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

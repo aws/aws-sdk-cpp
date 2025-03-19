@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSegmentDetectionResult::GetSegmentDetectionResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
-{
-}
-
 GetSegmentDetectionResult::GetSegmentDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSegmentDetectionResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VideoMetadata"))
   {
     Aws::Utils::Array<JsonView> videoMetadataJsonList = jsonValue.GetArray("VideoMetadata");
@@ -50,8 +42,8 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
     {
       m_videoMetadata.push_back(videoMetadataJsonList[videoMetadataIndex].AsObject());
     }
+    m_videoMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AudioMetadata"))
   {
     Aws::Utils::Array<JsonView> audioMetadataJsonList = jsonValue.GetArray("AudioMetadata");
@@ -59,14 +51,13 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
     {
       m_audioMetadata.push_back(audioMetadataJsonList[audioMetadataIndex].AsObject());
     }
+    m_audioMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Segments"))
   {
     Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
@@ -74,8 +65,8 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());
     }
+    m_segmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedSegmentTypes"))
   {
     Aws::Utils::Array<JsonView> selectedSegmentTypesJsonList = jsonValue.GetArray("SelectedSegmentTypes");
@@ -83,32 +74,30 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
     {
       m_selectedSegmentTypes.push_back(selectedSegmentTypesJsonList[selectedSegmentTypesIndex].AsObject());
     }
+    m_selectedSegmentTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
+    m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobTag"))
   {
     m_jobTag = jsonValue.GetString("JobTag");
-
+    m_jobTagHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

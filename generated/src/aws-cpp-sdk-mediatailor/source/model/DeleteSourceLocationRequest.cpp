@@ -12,11 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSourceLocationRequest::DeleteSourceLocationRequest() : 
-    m_sourceLocationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSourceLocationRequest::SerializePayload() const
 {
   return {};

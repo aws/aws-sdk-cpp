@@ -32,7 +32,7 @@ namespace Model
   class CustomActionDefinition
   {
   public:
-    AWS_CHATBOT_API CustomActionDefinition();
+    AWS_CHATBOT_API CustomActionDefinition() = default;
     AWS_CHATBOT_API CustomActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API CustomActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The command string to run which may include variables by prefixing with a
      * dollar sign ($).</p>
      */
-    inline const Aws::String& GetCommandText() const{ return m_commandText; }
+    inline const Aws::String& GetCommandText() const { return m_commandText; }
     inline bool CommandTextHasBeenSet() const { return m_commandTextHasBeenSet; }
-    inline void SetCommandText(const Aws::String& value) { m_commandTextHasBeenSet = true; m_commandText = value; }
-    inline void SetCommandText(Aws::String&& value) { m_commandTextHasBeenSet = true; m_commandText = std::move(value); }
-    inline void SetCommandText(const char* value) { m_commandTextHasBeenSet = true; m_commandText.assign(value); }
-    inline CustomActionDefinition& WithCommandText(const Aws::String& value) { SetCommandText(value); return *this;}
-    inline CustomActionDefinition& WithCommandText(Aws::String&& value) { SetCommandText(std::move(value)); return *this;}
-    inline CustomActionDefinition& WithCommandText(const char* value) { SetCommandText(value); return *this;}
+    template<typename CommandTextT = Aws::String>
+    void SetCommandText(CommandTextT&& value) { m_commandTextHasBeenSet = true; m_commandText = std::forward<CommandTextT>(value); }
+    template<typename CommandTextT = Aws::String>
+    CustomActionDefinition& WithCommandText(CommandTextT&& value) { SetCommandText(std::forward<CommandTextT>(value)); return *this;}
     ///@}
   private:
 

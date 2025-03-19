@@ -33,7 +33,7 @@ namespace Model
   class UtteranceInputSpecification
   {
   public:
-    AWS_LEXMODELSV2_API UtteranceInputSpecification();
+    AWS_LEXMODELSV2_API UtteranceInputSpecification() = default;
     AWS_LEXMODELSV2_API UtteranceInputSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API UtteranceInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>A text input transcription of the utterance. It is only applicable for
      * test-sets containing text data.</p>
      */
-    inline const Aws::String& GetTextInput() const{ return m_textInput; }
+    inline const Aws::String& GetTextInput() const { return m_textInput; }
     inline bool TextInputHasBeenSet() const { return m_textInputHasBeenSet; }
-    inline void SetTextInput(const Aws::String& value) { m_textInputHasBeenSet = true; m_textInput = value; }
-    inline void SetTextInput(Aws::String&& value) { m_textInputHasBeenSet = true; m_textInput = std::move(value); }
-    inline void SetTextInput(const char* value) { m_textInputHasBeenSet = true; m_textInput.assign(value); }
-    inline UtteranceInputSpecification& WithTextInput(const Aws::String& value) { SetTextInput(value); return *this;}
-    inline UtteranceInputSpecification& WithTextInput(Aws::String&& value) { SetTextInput(std::move(value)); return *this;}
-    inline UtteranceInputSpecification& WithTextInput(const char* value) { SetTextInput(value); return *this;}
+    template<typename TextInputT = Aws::String>
+    void SetTextInput(TextInputT&& value) { m_textInputHasBeenSet = true; m_textInput = std::forward<TextInputT>(value); }
+    template<typename TextInputT = Aws::String>
+    UtteranceInputSpecification& WithTextInput(TextInputT&& value) { SetTextInput(std::forward<TextInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the audio input for an utterance.</p>
      */
-    inline const UtteranceAudioInputSpecification& GetAudioInput() const{ return m_audioInput; }
+    inline const UtteranceAudioInputSpecification& GetAudioInput() const { return m_audioInput; }
     inline bool AudioInputHasBeenSet() const { return m_audioInputHasBeenSet; }
-    inline void SetAudioInput(const UtteranceAudioInputSpecification& value) { m_audioInputHasBeenSet = true; m_audioInput = value; }
-    inline void SetAudioInput(UtteranceAudioInputSpecification&& value) { m_audioInputHasBeenSet = true; m_audioInput = std::move(value); }
-    inline UtteranceInputSpecification& WithAudioInput(const UtteranceAudioInputSpecification& value) { SetAudioInput(value); return *this;}
-    inline UtteranceInputSpecification& WithAudioInput(UtteranceAudioInputSpecification&& value) { SetAudioInput(std::move(value)); return *this;}
+    template<typename AudioInputT = UtteranceAudioInputSpecification>
+    void SetAudioInput(AudioInputT&& value) { m_audioInputHasBeenSet = true; m_audioInput = std::forward<AudioInputT>(value); }
+    template<typename AudioInputT = UtteranceAudioInputSpecification>
+    UtteranceInputSpecification& WithAudioInput(AudioInputT&& value) { SetAudioInput(std::forward<AudioInputT>(value)); return *this;}
     ///@}
   private:
 

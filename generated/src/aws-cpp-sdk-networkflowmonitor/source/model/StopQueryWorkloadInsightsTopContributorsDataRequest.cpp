@@ -12,12 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopQueryWorkloadInsightsTopContributorsDataRequest::StopQueryWorkloadInsightsTopContributorsDataRequest() : 
-    m_scopeIdHasBeenSet(false),
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String StopQueryWorkloadInsightsTopContributorsDataRequest::SerializePayload() const
 {
   return {};

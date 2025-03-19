@@ -12,13 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisconnectParticipantRequest::DisconnectParticipantRequest() : 
-    m_stageArnHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String DisconnectParticipantRequest::SerializePayload() const
 {
   JsonValue payload;

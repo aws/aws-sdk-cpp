@@ -34,7 +34,7 @@ namespace Model
   class LineChartMarkerStyleSettings
   {
   public:
-    AWS_QUICKSIGHT_API LineChartMarkerStyleSettings();
+    AWS_QUICKSIGHT_API LineChartMarkerStyleSettings() = default;
     AWS_QUICKSIGHT_API LineChartMarkerStyleSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LineChartMarkerStyleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>Configuration option that determines whether to show the markers in the
      * series.</p>
      */
-    inline const Visibility& GetMarkerVisibility() const{ return m_markerVisibility; }
+    inline Visibility GetMarkerVisibility() const { return m_markerVisibility; }
     inline bool MarkerVisibilityHasBeenSet() const { return m_markerVisibilityHasBeenSet; }
-    inline void SetMarkerVisibility(const Visibility& value) { m_markerVisibilityHasBeenSet = true; m_markerVisibility = value; }
-    inline void SetMarkerVisibility(Visibility&& value) { m_markerVisibilityHasBeenSet = true; m_markerVisibility = std::move(value); }
-    inline LineChartMarkerStyleSettings& WithMarkerVisibility(const Visibility& value) { SetMarkerVisibility(value); return *this;}
-    inline LineChartMarkerStyleSettings& WithMarkerVisibility(Visibility&& value) { SetMarkerVisibility(std::move(value)); return *this;}
+    inline void SetMarkerVisibility(Visibility value) { m_markerVisibilityHasBeenSet = true; m_markerVisibility = value; }
+    inline LineChartMarkerStyleSettings& WithMarkerVisibility(Visibility value) { SetMarkerVisibility(value); return *this;}
     ///@}
 
     ///@{
@@ -62,47 +60,41 @@ namespace Model
      * <code>DIAMOND</code>: Show marker as a diamond.</p> </li> <li> <p>
      * <code>ROUNDED_SQUARE</code>: Show marker as a rounded square.</p> </li> </ul>
      */
-    inline const LineChartMarkerShape& GetMarkerShape() const{ return m_markerShape; }
+    inline LineChartMarkerShape GetMarkerShape() const { return m_markerShape; }
     inline bool MarkerShapeHasBeenSet() const { return m_markerShapeHasBeenSet; }
-    inline void SetMarkerShape(const LineChartMarkerShape& value) { m_markerShapeHasBeenSet = true; m_markerShape = value; }
-    inline void SetMarkerShape(LineChartMarkerShape&& value) { m_markerShapeHasBeenSet = true; m_markerShape = std::move(value); }
-    inline LineChartMarkerStyleSettings& WithMarkerShape(const LineChartMarkerShape& value) { SetMarkerShape(value); return *this;}
-    inline LineChartMarkerStyleSettings& WithMarkerShape(LineChartMarkerShape&& value) { SetMarkerShape(std::move(value)); return *this;}
+    inline void SetMarkerShape(LineChartMarkerShape value) { m_markerShapeHasBeenSet = true; m_markerShape = value; }
+    inline LineChartMarkerStyleSettings& WithMarkerShape(LineChartMarkerShape value) { SetMarkerShape(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Size of marker in the series.</p>
      */
-    inline const Aws::String& GetMarkerSize() const{ return m_markerSize; }
+    inline const Aws::String& GetMarkerSize() const { return m_markerSize; }
     inline bool MarkerSizeHasBeenSet() const { return m_markerSizeHasBeenSet; }
-    inline void SetMarkerSize(const Aws::String& value) { m_markerSizeHasBeenSet = true; m_markerSize = value; }
-    inline void SetMarkerSize(Aws::String&& value) { m_markerSizeHasBeenSet = true; m_markerSize = std::move(value); }
-    inline void SetMarkerSize(const char* value) { m_markerSizeHasBeenSet = true; m_markerSize.assign(value); }
-    inline LineChartMarkerStyleSettings& WithMarkerSize(const Aws::String& value) { SetMarkerSize(value); return *this;}
-    inline LineChartMarkerStyleSettings& WithMarkerSize(Aws::String&& value) { SetMarkerSize(std::move(value)); return *this;}
-    inline LineChartMarkerStyleSettings& WithMarkerSize(const char* value) { SetMarkerSize(value); return *this;}
+    template<typename MarkerSizeT = Aws::String>
+    void SetMarkerSize(MarkerSizeT&& value) { m_markerSizeHasBeenSet = true; m_markerSize = std::forward<MarkerSizeT>(value); }
+    template<typename MarkerSizeT = Aws::String>
+    LineChartMarkerStyleSettings& WithMarkerSize(MarkerSizeT&& value) { SetMarkerSize(std::forward<MarkerSizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Color of marker in the series.</p>
      */
-    inline const Aws::String& GetMarkerColor() const{ return m_markerColor; }
+    inline const Aws::String& GetMarkerColor() const { return m_markerColor; }
     inline bool MarkerColorHasBeenSet() const { return m_markerColorHasBeenSet; }
-    inline void SetMarkerColor(const Aws::String& value) { m_markerColorHasBeenSet = true; m_markerColor = value; }
-    inline void SetMarkerColor(Aws::String&& value) { m_markerColorHasBeenSet = true; m_markerColor = std::move(value); }
-    inline void SetMarkerColor(const char* value) { m_markerColorHasBeenSet = true; m_markerColor.assign(value); }
-    inline LineChartMarkerStyleSettings& WithMarkerColor(const Aws::String& value) { SetMarkerColor(value); return *this;}
-    inline LineChartMarkerStyleSettings& WithMarkerColor(Aws::String&& value) { SetMarkerColor(std::move(value)); return *this;}
-    inline LineChartMarkerStyleSettings& WithMarkerColor(const char* value) { SetMarkerColor(value); return *this;}
+    template<typename MarkerColorT = Aws::String>
+    void SetMarkerColor(MarkerColorT&& value) { m_markerColorHasBeenSet = true; m_markerColor = std::forward<MarkerColorT>(value); }
+    template<typename MarkerColorT = Aws::String>
+    LineChartMarkerStyleSettings& WithMarkerColor(MarkerColorT&& value) { SetMarkerColor(std::forward<MarkerColorT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_markerVisibility;
+    Visibility m_markerVisibility{Visibility::NOT_SET};
     bool m_markerVisibilityHasBeenSet = false;
 
-    LineChartMarkerShape m_markerShape;
+    LineChartMarkerShape m_markerShape{LineChartMarkerShape::NOT_SET};
     bool m_markerShapeHasBeenSet = false;
 
     Aws::String m_markerSize;

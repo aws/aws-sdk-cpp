@@ -18,13 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-FieldInfo::FieldInfo() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 FieldInfo::FieldInfo(JsonView jsonValue)
-  : FieldInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FieldInfo& FieldInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

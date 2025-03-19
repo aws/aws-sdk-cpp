@@ -18,20 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-WorkflowStepGroupSummary::WorkflowStepGroupSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_status(StepGroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 WorkflowStepGroupSummary::WorkflowStepGroupSummary(JsonView jsonValue)
-  : WorkflowStepGroupSummary()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ WorkflowStepGroupSummary& WorkflowStepGroupSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = OwnerMapper::GetOwnerForName(jsonValue.GetString("owner"));
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StepGroupStatusMapper::GetStepGroupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previous"))
   {
     Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
@@ -75,7 +54,6 @@ WorkflowStepGroupSummary& WorkflowStepGroupSummary::operator =(JsonView jsonValu
     }
     m_previousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
@@ -85,7 +63,6 @@ WorkflowStepGroupSummary& WorkflowStepGroupSummary::operator =(JsonView jsonValu
     }
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

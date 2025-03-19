@@ -20,21 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-TextOptions::TextOptions() : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false),
-    m_highlightEnabled(false),
-    m_highlightEnabledHasBeenSet(false),
-    m_analysisSchemeHasBeenSet(false)
-{
-}
-
 TextOptions::TextOptions(const XmlNode& xmlNode)
-  : TextOptions()
 {
   *this = xmlNode;
 }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLFTagResult::GetLFTagResult()
-{
-}
-
 GetLFTagResult::GetLFTagResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetLFTagResult& GetLFTagResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
+    m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
+    m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValues"))
   {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
@@ -48,14 +42,15 @@ GetLFTagResult& GetLFTagResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());
     }
+    m_tagValuesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

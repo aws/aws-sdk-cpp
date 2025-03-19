@@ -12,11 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPendingMaintenanceActionRequest::GetPendingMaintenanceActionRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetPendingMaintenanceActionRequest::SerializePayload() const
 {
   return {};

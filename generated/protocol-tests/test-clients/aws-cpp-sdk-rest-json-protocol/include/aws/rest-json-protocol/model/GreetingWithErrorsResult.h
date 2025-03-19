@@ -27,37 +27,35 @@ namespace Model
   class GreetingWithErrorsResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API GreetingWithErrorsResult();
+    AWS_RESTJSONPROTOCOL_API GreetingWithErrorsResult() = default;
     AWS_RESTJSONPROTOCOL_API GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API GreetingWithErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGreeting() const{ return m_greeting; }
-    inline void SetGreeting(const Aws::String& value) { m_greeting = value; }
-    inline void SetGreeting(Aws::String&& value) { m_greeting = std::move(value); }
-    inline void SetGreeting(const char* value) { m_greeting.assign(value); }
-    inline GreetingWithErrorsResult& WithGreeting(const Aws::String& value) { SetGreeting(value); return *this;}
-    inline GreetingWithErrorsResult& WithGreeting(Aws::String&& value) { SetGreeting(std::move(value)); return *this;}
-    inline GreetingWithErrorsResult& WithGreeting(const char* value) { SetGreeting(value); return *this;}
+    inline const Aws::String& GetGreeting() const { return m_greeting; }
+    template<typename GreetingT = Aws::String>
+    void SetGreeting(GreetingT&& value) { m_greetingHasBeenSet = true; m_greeting = std::forward<GreetingT>(value); }
+    template<typename GreetingT = Aws::String>
+    GreetingWithErrorsResult& WithGreeting(GreetingT&& value) { SetGreeting(std::forward<GreetingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GreetingWithErrorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GreetingWithErrorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GreetingWithErrorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GreetingWithErrorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_greeting;
+    bool m_greetingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

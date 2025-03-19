@@ -26,7 +26,7 @@ namespace Model
   class SearchMessageTemplatesRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API SearchMessageTemplatesRequest();
+    AWS_QCONNECT_API SearchMessageTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,21 +44,19 @@ namespace Model
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline SearchMessageTemplatesRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline SearchMessageTemplatesRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline SearchMessageTemplatesRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    SearchMessageTemplatesRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchMessageTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,33 +67,31 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchMessageTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchMessageTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchMessageTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchMessageTemplatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The search expression for querying the message template.</p>
      */
-    inline const MessageTemplateSearchExpression& GetSearchExpression() const{ return m_searchExpression; }
+    inline const MessageTemplateSearchExpression& GetSearchExpression() const { return m_searchExpression; }
     inline bool SearchExpressionHasBeenSet() const { return m_searchExpressionHasBeenSet; }
-    inline void SetSearchExpression(const MessageTemplateSearchExpression& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = value; }
-    inline void SetSearchExpression(MessageTemplateSearchExpression&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::move(value); }
-    inline SearchMessageTemplatesRequest& WithSearchExpression(const MessageTemplateSearchExpression& value) { SetSearchExpression(value); return *this;}
-    inline SearchMessageTemplatesRequest& WithSearchExpression(MessageTemplateSearchExpression&& value) { SetSearchExpression(std::move(value)); return *this;}
+    template<typename SearchExpressionT = MessageTemplateSearchExpression>
+    void SetSearchExpression(SearchExpressionT&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::forward<SearchExpressionT>(value); }
+    template<typename SearchExpressionT = MessageTemplateSearchExpression>
+    SearchMessageTemplatesRequest& WithSearchExpression(SearchExpressionT&& value) { SetSearchExpression(std::forward<SearchExpressionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

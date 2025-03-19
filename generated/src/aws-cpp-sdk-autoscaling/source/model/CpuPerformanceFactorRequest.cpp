@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-CpuPerformanceFactorRequest::CpuPerformanceFactorRequest() : 
-    m_referencesHasBeenSet(false)
-{
-}
-
 CpuPerformanceFactorRequest::CpuPerformanceFactorRequest(const XmlNode& xmlNode)
-  : CpuPerformanceFactorRequest()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ CpuPerformanceFactorRequest& CpuPerformanceFactorRequest::operator =(const XmlNo
     if(!referencesNode.IsNull())
     {
       XmlNode referencesMember = referencesNode.FirstChild("item");
+      m_referencesHasBeenSet = !referencesMember.IsNull();
       while(!referencesMember.IsNull())
       {
         m_references.push_back(referencesMember);

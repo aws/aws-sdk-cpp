@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMetricsResult::ListMetricsResult()
-{
-}
-
 ListMetricsResult::ListMetricsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,34 +38,40 @@ ListMetricsResult& ListMetricsResult::operator =(const Aws::AmazonWebServiceResu
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);
         metricsMember = metricsMember.NextNode("member");
       }
 
+      m_metricsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode owningAccountsNode = resultNode.FirstChild("OwningAccounts");
     if(!owningAccountsNode.IsNull())
     {
       XmlNode owningAccountsMember = owningAccountsNode.FirstChild("member");
+      m_owningAccountsHasBeenSet = !owningAccountsMember.IsNull();
       while(!owningAccountsMember.IsNull())
       {
         m_owningAccounts.push_back(owningAccountsMember.GetText());
         owningAccountsMember = owningAccountsMember.NextNode("member");
       }
 
+      m_owningAccountsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::ListMetricsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

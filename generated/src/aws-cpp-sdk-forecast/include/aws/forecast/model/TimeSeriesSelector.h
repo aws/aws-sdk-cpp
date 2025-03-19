@@ -36,7 +36,7 @@ namespace Model
   class TimeSeriesSelector
   {
   public:
-    AWS_FORECASTSERVICE_API TimeSeriesSelector();
+    AWS_FORECASTSERVICE_API TimeSeriesSelector() = default;
     AWS_FORECASTSERVICE_API TimeSeriesSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API TimeSeriesSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Details about the import file that contains the time series for which you
      * want to create forecasts.</p>
      */
-    inline const TimeSeriesIdentifiers& GetTimeSeriesIdentifiers() const{ return m_timeSeriesIdentifiers; }
+    inline const TimeSeriesIdentifiers& GetTimeSeriesIdentifiers() const { return m_timeSeriesIdentifiers; }
     inline bool TimeSeriesIdentifiersHasBeenSet() const { return m_timeSeriesIdentifiersHasBeenSet; }
-    inline void SetTimeSeriesIdentifiers(const TimeSeriesIdentifiers& value) { m_timeSeriesIdentifiersHasBeenSet = true; m_timeSeriesIdentifiers = value; }
-    inline void SetTimeSeriesIdentifiers(TimeSeriesIdentifiers&& value) { m_timeSeriesIdentifiersHasBeenSet = true; m_timeSeriesIdentifiers = std::move(value); }
-    inline TimeSeriesSelector& WithTimeSeriesIdentifiers(const TimeSeriesIdentifiers& value) { SetTimeSeriesIdentifiers(value); return *this;}
-    inline TimeSeriesSelector& WithTimeSeriesIdentifiers(TimeSeriesIdentifiers&& value) { SetTimeSeriesIdentifiers(std::move(value)); return *this;}
+    template<typename TimeSeriesIdentifiersT = TimeSeriesIdentifiers>
+    void SetTimeSeriesIdentifiers(TimeSeriesIdentifiersT&& value) { m_timeSeriesIdentifiersHasBeenSet = true; m_timeSeriesIdentifiers = std::forward<TimeSeriesIdentifiersT>(value); }
+    template<typename TimeSeriesIdentifiersT = TimeSeriesIdentifiers>
+    TimeSeriesSelector& WithTimeSeriesIdentifiers(TimeSeriesIdentifiersT&& value) { SetTimeSeriesIdentifiers(std::forward<TimeSeriesIdentifiersT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class DeleteClientBrandingRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API DeleteClientBrandingRequest();
+    AWS_WORKSPACES_API DeleteClientBrandingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,25 @@ namespace Model
      * <p>The directory identifier of the WorkSpace for which you want to delete client
      * branding.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline DeleteClientBrandingRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline DeleteClientBrandingRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline DeleteClientBrandingRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    DeleteClientBrandingRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device type for which you want to delete client branding.</p>
      */
-    inline const Aws::Vector<ClientDeviceType>& GetPlatforms() const{ return m_platforms; }
+    inline const Aws::Vector<ClientDeviceType>& GetPlatforms() const { return m_platforms; }
     inline bool PlatformsHasBeenSet() const { return m_platformsHasBeenSet; }
-    inline void SetPlatforms(const Aws::Vector<ClientDeviceType>& value) { m_platformsHasBeenSet = true; m_platforms = value; }
-    inline void SetPlatforms(Aws::Vector<ClientDeviceType>&& value) { m_platformsHasBeenSet = true; m_platforms = std::move(value); }
-    inline DeleteClientBrandingRequest& WithPlatforms(const Aws::Vector<ClientDeviceType>& value) { SetPlatforms(value); return *this;}
-    inline DeleteClientBrandingRequest& WithPlatforms(Aws::Vector<ClientDeviceType>&& value) { SetPlatforms(std::move(value)); return *this;}
-    inline DeleteClientBrandingRequest& AddPlatforms(const ClientDeviceType& value) { m_platformsHasBeenSet = true; m_platforms.push_back(value); return *this; }
-    inline DeleteClientBrandingRequest& AddPlatforms(ClientDeviceType&& value) { m_platformsHasBeenSet = true; m_platforms.push_back(std::move(value)); return *this; }
+    template<typename PlatformsT = Aws::Vector<ClientDeviceType>>
+    void SetPlatforms(PlatformsT&& value) { m_platformsHasBeenSet = true; m_platforms = std::forward<PlatformsT>(value); }
+    template<typename PlatformsT = Aws::Vector<ClientDeviceType>>
+    DeleteClientBrandingRequest& WithPlatforms(PlatformsT&& value) { SetPlatforms(std::forward<PlatformsT>(value)); return *this;}
+    inline DeleteClientBrandingRequest& AddPlatforms(ClientDeviceType value) { m_platformsHasBeenSet = true; m_platforms.push_back(value); return *this; }
     ///@}
   private:
 

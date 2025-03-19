@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-MetadataFormEnforcementDetail::MetadataFormEnforcementDetail() : 
-    m_requiredMetadataFormsHasBeenSet(false)
-{
-}
-
 MetadataFormEnforcementDetail::MetadataFormEnforcementDetail(JsonView jsonValue)
-  : MetadataFormEnforcementDetail()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ MetadataFormEnforcementDetail& MetadataFormEnforcementDetail::operator =(JsonVie
     }
     m_requiredMetadataFormsHasBeenSet = true;
   }
-
   return *this;
 }
 

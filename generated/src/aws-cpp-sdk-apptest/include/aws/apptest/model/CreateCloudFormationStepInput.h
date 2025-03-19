@@ -32,7 +32,7 @@ namespace Model
   class CreateCloudFormationStepInput
   {
   public:
-    AWS_APPTEST_API CreateCloudFormationStepInput();
+    AWS_APPTEST_API CreateCloudFormationStepInput() = default;
     AWS_APPTEST_API CreateCloudFormationStepInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CreateCloudFormationStepInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,28 @@ namespace Model
     /**
      * <p>The template location of the CloudFormation step input.</p>
      */
-    inline const Aws::String& GetTemplateLocation() const{ return m_templateLocation; }
+    inline const Aws::String& GetTemplateLocation() const { return m_templateLocation; }
     inline bool TemplateLocationHasBeenSet() const { return m_templateLocationHasBeenSet; }
-    inline void SetTemplateLocation(const Aws::String& value) { m_templateLocationHasBeenSet = true; m_templateLocation = value; }
-    inline void SetTemplateLocation(Aws::String&& value) { m_templateLocationHasBeenSet = true; m_templateLocation = std::move(value); }
-    inline void SetTemplateLocation(const char* value) { m_templateLocationHasBeenSet = true; m_templateLocation.assign(value); }
-    inline CreateCloudFormationStepInput& WithTemplateLocation(const Aws::String& value) { SetTemplateLocation(value); return *this;}
-    inline CreateCloudFormationStepInput& WithTemplateLocation(Aws::String&& value) { SetTemplateLocation(std::move(value)); return *this;}
-    inline CreateCloudFormationStepInput& WithTemplateLocation(const char* value) { SetTemplateLocation(value); return *this;}
+    template<typename TemplateLocationT = Aws::String>
+    void SetTemplateLocation(TemplateLocationT&& value) { m_templateLocationHasBeenSet = true; m_templateLocation = std::forward<TemplateLocationT>(value); }
+    template<typename TemplateLocationT = Aws::String>
+    CreateCloudFormationStepInput& WithTemplateLocation(TemplateLocationT&& value) { SetTemplateLocation(std::forward<TemplateLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudFormation properties of the CloudFormation step input.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreateCloudFormationStepInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline CreateCloudFormationStepInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CreateCloudFormationStepInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline CreateCloudFormationStepInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CreateCloudFormationStepInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CreateCloudFormationStepInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateCloudFormationStepInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CreateCloudFormationStepInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CreateCloudFormationStepInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    CreateCloudFormationStepInput& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    CreateCloudFormationStepInput& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

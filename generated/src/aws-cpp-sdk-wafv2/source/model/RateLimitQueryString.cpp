@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RateLimitQueryString::RateLimitQueryString() : 
-    m_textTransformationsHasBeenSet(false)
-{
-}
-
 RateLimitQueryString::RateLimitQueryString(JsonView jsonValue)
-  : RateLimitQueryString()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RateLimitQueryString& RateLimitQueryString::operator =(JsonView jsonValue)
     }
     m_textTransformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class EvaluationNote
   {
   public:
-    AWS_CONNECT_API EvaluationNote();
+    AWS_CONNECT_API EvaluationNote() = default;
     AWS_CONNECT_API EvaluationNote(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EvaluationNote& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * combined. Assuming there are N questions in the evaluation being submitted, then
      * the max char limit for all notes combined is N x 1024.</p> 
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline EvaluationNote& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline EvaluationNote& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline EvaluationNote& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    EvaluationNote& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

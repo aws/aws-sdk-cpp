@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-DocumentMetadata::DocumentMetadata() : 
-    m_inlineAttributesHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_type(MetadataSourceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 DocumentMetadata::DocumentMetadata(JsonView jsonValue)
-  : DocumentMetadata()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
     }
     m_inlineAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MetadataSourceTypeMapper::GetMetadataSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptSharedDirectoryResult::AcceptSharedDirectoryResult()
-{
-}
-
 AcceptSharedDirectoryResult::AcceptSharedDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AcceptSharedDirectoryResult& AcceptSharedDirectoryResult::operator =(const Aws::
   if(jsonValue.ValueExists("SharedDirectory"))
   {
     m_sharedDirectory = jsonValue.GetObject("SharedDirectory");
-
+    m_sharedDirectoryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

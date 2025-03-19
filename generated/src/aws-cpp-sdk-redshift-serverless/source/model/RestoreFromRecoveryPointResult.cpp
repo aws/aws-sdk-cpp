@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreFromRecoveryPointResult::RestoreFromRecoveryPointResult()
-{
-}
-
 RestoreFromRecoveryPointResult::RestoreFromRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ RestoreFromRecoveryPointResult& RestoreFromRecoveryPointResult::operator =(const
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetObject("namespace");
-
+    m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryPointId"))
   {
     m_recoveryPointId = jsonValue.GetString("recoveryPointId");
-
+    m_recoveryPointIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

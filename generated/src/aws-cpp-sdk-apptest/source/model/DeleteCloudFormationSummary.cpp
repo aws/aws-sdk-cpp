@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-DeleteCloudFormationSummary::DeleteCloudFormationSummary() : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
-{
-}
-
 DeleteCloudFormationSummary::DeleteCloudFormationSummary(JsonView jsonValue)
-  : DeleteCloudFormationSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DeleteCloudFormationSummary& DeleteCloudFormationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("stepInput"))
   {
     m_stepInput = jsonValue.GetObject("stepInput");
-
     m_stepInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepOutput"))
   {
     m_stepOutput = jsonValue.GetObject("stepOutput");
-
     m_stepOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

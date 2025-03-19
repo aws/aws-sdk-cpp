@@ -18,20 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-AgentSummary::AgentSummary() : 
-    m_agentIdHasBeenSet(false),
-    m_agentNameHasBeenSet(false),
-    m_agentStatus(AgentStatus::NOT_SET),
-    m_agentStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_latestAgentVersionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AgentSummary::AgentSummary(JsonView jsonValue)
-  : AgentSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ AgentSummary& AgentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentName"))
   {
     m_agentName = jsonValue.GetString("agentName");
-
     m_agentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentStatus"))
   {
     m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
-
     m_agentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-
     m_guardrailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestAgentVersion"))
   {
     m_latestAgentVersion = jsonValue.GetString("latestAgentVersion");
-
     m_latestAgentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

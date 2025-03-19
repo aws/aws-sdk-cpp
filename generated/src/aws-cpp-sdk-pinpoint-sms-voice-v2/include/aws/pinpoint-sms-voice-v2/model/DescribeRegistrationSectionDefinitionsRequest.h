@@ -22,7 +22,7 @@ namespace Model
   class DescribeRegistrationSectionDefinitionsRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationSectionDefinitionsRequest();
+    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationSectionDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * <p>The type of registration form. The list of <b>RegistrationTypes</b> can be
      * found using the <a>DescribeRegistrationTypeDefinitions</a> action.</p>
      */
-    inline const Aws::String& GetRegistrationType() const{ return m_registrationType; }
+    inline const Aws::String& GetRegistrationType() const { return m_registrationType; }
     inline bool RegistrationTypeHasBeenSet() const { return m_registrationTypeHasBeenSet; }
-    inline void SetRegistrationType(const Aws::String& value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
-    inline void SetRegistrationType(Aws::String&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::move(value); }
-    inline void SetRegistrationType(const char* value) { m_registrationTypeHasBeenSet = true; m_registrationType.assign(value); }
-    inline DescribeRegistrationSectionDefinitionsRequest& WithRegistrationType(const Aws::String& value) { SetRegistrationType(value); return *this;}
-    inline DescribeRegistrationSectionDefinitionsRequest& WithRegistrationType(Aws::String&& value) { SetRegistrationType(std::move(value)); return *this;}
-    inline DescribeRegistrationSectionDefinitionsRequest& WithRegistrationType(const char* value) { SetRegistrationType(value); return *this;}
+    template<typename RegistrationTypeT = Aws::String>
+    void SetRegistrationType(RegistrationTypeT&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::forward<RegistrationTypeT>(value); }
+    template<typename RegistrationTypeT = Aws::String>
+    DescribeRegistrationSectionDefinitionsRequest& WithRegistrationType(RegistrationTypeT&& value) { SetRegistrationType(std::forward<RegistrationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of paths for the registration form section.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSectionPaths() const{ return m_sectionPaths; }
+    inline const Aws::Vector<Aws::String>& GetSectionPaths() const { return m_sectionPaths; }
     inline bool SectionPathsHasBeenSet() const { return m_sectionPathsHasBeenSet; }
-    inline void SetSectionPaths(const Aws::Vector<Aws::String>& value) { m_sectionPathsHasBeenSet = true; m_sectionPaths = value; }
-    inline void SetSectionPaths(Aws::Vector<Aws::String>&& value) { m_sectionPathsHasBeenSet = true; m_sectionPaths = std::move(value); }
-    inline DescribeRegistrationSectionDefinitionsRequest& WithSectionPaths(const Aws::Vector<Aws::String>& value) { SetSectionPaths(value); return *this;}
-    inline DescribeRegistrationSectionDefinitionsRequest& WithSectionPaths(Aws::Vector<Aws::String>&& value) { SetSectionPaths(std::move(value)); return *this;}
-    inline DescribeRegistrationSectionDefinitionsRequest& AddSectionPaths(const Aws::String& value) { m_sectionPathsHasBeenSet = true; m_sectionPaths.push_back(value); return *this; }
-    inline DescribeRegistrationSectionDefinitionsRequest& AddSectionPaths(Aws::String&& value) { m_sectionPathsHasBeenSet = true; m_sectionPaths.push_back(std::move(value)); return *this; }
-    inline DescribeRegistrationSectionDefinitionsRequest& AddSectionPaths(const char* value) { m_sectionPathsHasBeenSet = true; m_sectionPaths.push_back(value); return *this; }
+    template<typename SectionPathsT = Aws::Vector<Aws::String>>
+    void SetSectionPaths(SectionPathsT&& value) { m_sectionPathsHasBeenSet = true; m_sectionPaths = std::forward<SectionPathsT>(value); }
+    template<typename SectionPathsT = Aws::Vector<Aws::String>>
+    DescribeRegistrationSectionDefinitionsRequest& WithSectionPaths(SectionPathsT&& value) { SetSectionPaths(std::forward<SectionPathsT>(value)); return *this;}
+    template<typename SectionPathsT = Aws::String>
+    DescribeRegistrationSectionDefinitionsRequest& AddSectionPaths(SectionPathsT&& value) { m_sectionPathsHasBeenSet = true; m_sectionPaths.emplace_back(std::forward<SectionPathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,21 +67,19 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeRegistrationSectionDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRegistrationSectionDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRegistrationSectionDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRegistrationSectionDefinitionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per each request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeRegistrationSectionDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,7 +95,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

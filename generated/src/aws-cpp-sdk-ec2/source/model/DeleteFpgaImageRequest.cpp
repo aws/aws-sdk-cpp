@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteFpgaImageRequest::DeleteFpgaImageRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_fpgaImageIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFpgaImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

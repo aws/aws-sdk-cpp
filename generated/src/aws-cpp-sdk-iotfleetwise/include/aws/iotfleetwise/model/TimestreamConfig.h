@@ -36,7 +36,7 @@ namespace Model
   class TimestreamConfig
   {
   public:
-    AWS_IOTFLEETWISE_API TimestreamConfig();
+    AWS_IOTFLEETWISE_API TimestreamConfig() = default;
     AWS_IOTFLEETWISE_API TimestreamConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API TimestreamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Timestream table.</p>
      */
-    inline const Aws::String& GetTimestreamTableArn() const{ return m_timestreamTableArn; }
+    inline const Aws::String& GetTimestreamTableArn() const { return m_timestreamTableArn; }
     inline bool TimestreamTableArnHasBeenSet() const { return m_timestreamTableArnHasBeenSet; }
-    inline void SetTimestreamTableArn(const Aws::String& value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn = value; }
-    inline void SetTimestreamTableArn(Aws::String&& value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn = std::move(value); }
-    inline void SetTimestreamTableArn(const char* value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn.assign(value); }
-    inline TimestreamConfig& WithTimestreamTableArn(const Aws::String& value) { SetTimestreamTableArn(value); return *this;}
-    inline TimestreamConfig& WithTimestreamTableArn(Aws::String&& value) { SetTimestreamTableArn(std::move(value)); return *this;}
-    inline TimestreamConfig& WithTimestreamTableArn(const char* value) { SetTimestreamTableArn(value); return *this;}
+    template<typename TimestreamTableArnT = Aws::String>
+    void SetTimestreamTableArn(TimestreamTableArnT&& value) { m_timestreamTableArnHasBeenSet = true; m_timestreamTableArn = std::forward<TimestreamTableArnT>(value); }
+    template<typename TimestreamTableArnT = Aws::String>
+    TimestreamConfig& WithTimestreamTableArn(TimestreamTableArnT&& value) { SetTimestreamTableArn(std::forward<TimestreamTableArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * Web Services IoT FleetWise permission to deliver data to the Amazon Timestream
      * table.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline TimestreamConfig& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline TimestreamConfig& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline TimestreamConfig& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    TimestreamConfig& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
   private:
 

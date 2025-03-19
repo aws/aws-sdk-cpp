@@ -33,7 +33,7 @@ namespace Model
   class GroupResult
   {
   public:
-    AWS_IOTDEVICEADVISOR_API GroupResult();
+    AWS_IOTDEVICEADVISOR_API GroupResult() = default;
     AWS_IOTDEVICEADVISOR_API GroupResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTDEVICEADVISOR_API GroupResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,38 @@ namespace Model
     /**
      * <p>Group result ID.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline GroupResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline GroupResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline GroupResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    GroupResult& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Group Result Name.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline GroupResult& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GroupResult& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GroupResult& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    GroupResult& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tests under Group Result.</p>
      */
-    inline const Aws::Vector<TestCaseRun>& GetTests() const{ return m_tests; }
+    inline const Aws::Vector<TestCaseRun>& GetTests() const { return m_tests; }
     inline bool TestsHasBeenSet() const { return m_testsHasBeenSet; }
-    inline void SetTests(const Aws::Vector<TestCaseRun>& value) { m_testsHasBeenSet = true; m_tests = value; }
-    inline void SetTests(Aws::Vector<TestCaseRun>&& value) { m_testsHasBeenSet = true; m_tests = std::move(value); }
-    inline GroupResult& WithTests(const Aws::Vector<TestCaseRun>& value) { SetTests(value); return *this;}
-    inline GroupResult& WithTests(Aws::Vector<TestCaseRun>&& value) { SetTests(std::move(value)); return *this;}
-    inline GroupResult& AddTests(const TestCaseRun& value) { m_testsHasBeenSet = true; m_tests.push_back(value); return *this; }
-    inline GroupResult& AddTests(TestCaseRun&& value) { m_testsHasBeenSet = true; m_tests.push_back(std::move(value)); return *this; }
+    template<typename TestsT = Aws::Vector<TestCaseRun>>
+    void SetTests(TestsT&& value) { m_testsHasBeenSet = true; m_tests = std::forward<TestsT>(value); }
+    template<typename TestsT = Aws::Vector<TestCaseRun>>
+    GroupResult& WithTests(TestsT&& value) { SetTests(std::forward<TestsT>(value)); return *this;}
+    template<typename TestsT = TestCaseRun>
+    GroupResult& AddTests(TestsT&& value) { m_testsHasBeenSet = true; m_tests.emplace_back(std::forward<TestsT>(value)); return *this; }
     ///@}
   private:
 

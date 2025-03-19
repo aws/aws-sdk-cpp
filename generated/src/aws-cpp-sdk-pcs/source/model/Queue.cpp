@@ -18,22 +18,7 @@ namespace PCS
 namespace Model
 {
 
-Queue::Queue() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_status(QueueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_computeNodeGroupConfigurationsHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
-{
-}
-
 Queue::Queue(JsonView jsonValue)
-  : Queue()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ Queue& Queue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterId"))
   {
     m_clusterId = jsonValue.GetString("clusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeNodeGroupConfigurations"))
   {
     Aws::Utils::Array<JsonView> computeNodeGroupConfigurationsJsonList = jsonValue.GetArray("computeNodeGroupConfigurations");
@@ -98,7 +69,6 @@ Queue& Queue::operator =(JsonView jsonValue)
     }
     m_computeNodeGroupConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("errorInfo");
@@ -108,7 +78,6 @@ Queue& Queue::operator =(JsonView jsonValue)
     }
     m_errorInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

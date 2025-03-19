@@ -28,7 +28,7 @@ namespace Model
   class DeleteSyncJobResult
   {
   public:
-    AWS_IOTTWINMAKER_API DeleteSyncJobResult();
+    AWS_IOTTWINMAKER_API DeleteSyncJobResult() = default;
     AWS_IOTTWINMAKER_API DeleteSyncJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API DeleteSyncJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The SyncJob response state.</p>
      */
-    inline const SyncJobState& GetState() const{ return m_state; }
-    inline void SetState(const SyncJobState& value) { m_state = value; }
-    inline void SetState(SyncJobState&& value) { m_state = std::move(value); }
-    inline DeleteSyncJobResult& WithState(const SyncJobState& value) { SetState(value); return *this;}
-    inline DeleteSyncJobResult& WithState(SyncJobState&& value) { SetState(std::move(value)); return *this;}
+    inline SyncJobState GetState() const { return m_state; }
+    inline void SetState(SyncJobState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DeleteSyncJobResult& WithState(SyncJobState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteSyncJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteSyncJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteSyncJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteSyncJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SyncJobState m_state;
+    SyncJobState m_state{SyncJobState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class AddReservedInstanceAction
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API AddReservedInstanceAction();
+    AWS_BCMPRICINGCALCULATOR_API AddReservedInstanceAction() = default;
     AWS_BCMPRICINGCALCULATOR_API AddReservedInstanceAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API AddReservedInstanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesOfferings.html">
      * DescribeReservedInstancesOfferings</a>. </p>
      */
-    inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
+    inline const Aws::String& GetReservedInstancesOfferingId() const { return m_reservedInstancesOfferingId; }
     inline bool ReservedInstancesOfferingIdHasBeenSet() const { return m_reservedInstancesOfferingIdHasBeenSet; }
-    inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
-    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
-    inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
-    inline AddReservedInstanceAction& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
-    inline AddReservedInstanceAction& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
-    inline AddReservedInstanceAction& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
+    template<typename ReservedInstancesOfferingIdT = Aws::String>
+    void SetReservedInstancesOfferingId(ReservedInstancesOfferingIdT&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::forward<ReservedInstancesOfferingIdT>(value); }
+    template<typename ReservedInstancesOfferingIdT = Aws::String>
+    AddReservedInstanceAction& WithReservedInstancesOfferingId(ReservedInstancesOfferingIdT&& value) { SetReservedInstancesOfferingId(std::forward<ReservedInstancesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of instances to add for this Reserved Instance offering. </p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline AddReservedInstanceAction& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_reservedInstancesOfferingId;
     bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
   };
 

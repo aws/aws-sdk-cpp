@@ -30,7 +30,7 @@ namespace Model
   class AllRowsWildcard
   {
   public:
-    AWS_LAKEFORMATION_API AllRowsWildcard();
+    AWS_LAKEFORMATION_API AllRowsWildcard() = default;
     AWS_LAKEFORMATION_API AllRowsWildcard(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API AllRowsWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;

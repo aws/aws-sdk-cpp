@@ -12,19 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCertificatesRequest::ListCertificatesRequest() : 
-    m_certificateStatusesHasBeenSet(false),
-    m_includesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_sortBy(SortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListCertificatesRequest::SerializePayload() const
 {
   JsonValue payload;

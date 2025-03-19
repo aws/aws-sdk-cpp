@@ -20,27 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRuleMetricDatapoint::InsightRuleMetricDatapoint() : 
-    m_timestampHasBeenSet(false),
-    m_uniqueContributors(0.0),
-    m_uniqueContributorsHasBeenSet(false),
-    m_maxContributorValue(0.0),
-    m_maxContributorValueHasBeenSet(false),
-    m_sampleCount(0.0),
-    m_sampleCountHasBeenSet(false),
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false)
-{
-}
-
 InsightRuleMetricDatapoint::InsightRuleMetricDatapoint(const XmlNode& xmlNode)
-  : InsightRuleMetricDatapoint()
 {
   *this = xmlNode;
 }

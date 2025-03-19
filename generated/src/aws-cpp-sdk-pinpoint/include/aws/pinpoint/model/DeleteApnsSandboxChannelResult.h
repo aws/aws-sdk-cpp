@@ -28,35 +28,35 @@ namespace Model
   class DeleteApnsSandboxChannelResult
   {
   public:
-    AWS_PINPOINT_API DeleteApnsSandboxChannelResult();
+    AWS_PINPOINT_API DeleteApnsSandboxChannelResult() = default;
     AWS_PINPOINT_API DeleteApnsSandboxChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API DeleteApnsSandboxChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const APNSSandboxChannelResponse& GetAPNSSandboxChannelResponse() const{ return m_aPNSSandboxChannelResponse; }
-    inline void SetAPNSSandboxChannelResponse(const APNSSandboxChannelResponse& value) { m_aPNSSandboxChannelResponse = value; }
-    inline void SetAPNSSandboxChannelResponse(APNSSandboxChannelResponse&& value) { m_aPNSSandboxChannelResponse = std::move(value); }
-    inline DeleteApnsSandboxChannelResult& WithAPNSSandboxChannelResponse(const APNSSandboxChannelResponse& value) { SetAPNSSandboxChannelResponse(value); return *this;}
-    inline DeleteApnsSandboxChannelResult& WithAPNSSandboxChannelResponse(APNSSandboxChannelResponse&& value) { SetAPNSSandboxChannelResponse(std::move(value)); return *this;}
+    inline const APNSSandboxChannelResponse& GetAPNSSandboxChannelResponse() const { return m_aPNSSandboxChannelResponse; }
+    template<typename APNSSandboxChannelResponseT = APNSSandboxChannelResponse>
+    void SetAPNSSandboxChannelResponse(APNSSandboxChannelResponseT&& value) { m_aPNSSandboxChannelResponseHasBeenSet = true; m_aPNSSandboxChannelResponse = std::forward<APNSSandboxChannelResponseT>(value); }
+    template<typename APNSSandboxChannelResponseT = APNSSandboxChannelResponse>
+    DeleteApnsSandboxChannelResult& WithAPNSSandboxChannelResponse(APNSSandboxChannelResponseT&& value) { SetAPNSSandboxChannelResponse(std::forward<APNSSandboxChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteApnsSandboxChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteApnsSandboxChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteApnsSandboxChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteApnsSandboxChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     APNSSandboxChannelResponse m_aPNSSandboxChannelResponse;
+    bool m_aPNSSandboxChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

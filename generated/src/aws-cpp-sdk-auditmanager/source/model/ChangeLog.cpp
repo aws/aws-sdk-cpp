@@ -18,19 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-ChangeLog::ChangeLog() : 
-    m_objectType(ObjectTypeEnum::NOT_SET),
-    m_objectTypeHasBeenSet(false),
-    m_objectNameHasBeenSet(false),
-    m_action(ActionEnum::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 ChangeLog::ChangeLog(JsonView jsonValue)
-  : ChangeLog()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ChangeLog& ChangeLog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("objectType"))
   {
     m_objectType = ObjectTypeEnumMapper::GetObjectTypeEnumForName(jsonValue.GetString("objectType"));
-
     m_objectTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectName"))
   {
     m_objectName = jsonValue.GetString("objectName");
-
     m_objectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = ActionEnumMapper::GetActionEnumForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

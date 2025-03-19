@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-SslPolicy::SslPolicy() : 
-    m_sslProtocolsHasBeenSet(false),
-    m_ciphersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportedLoadBalancerTypesHasBeenSet(false)
-{
-}
-
 SslPolicy::SslPolicy(const XmlNode& xmlNode)
-  : SslPolicy()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
     if(!sslProtocolsNode.IsNull())
     {
       XmlNode sslProtocolsMember = sslProtocolsNode.FirstChild("member");
+      m_sslProtocolsHasBeenSet = !sslProtocolsMember.IsNull();
       while(!sslProtocolsMember.IsNull())
       {
         m_sslProtocols.push_back(sslProtocolsMember.GetText());
@@ -56,6 +48,7 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
     if(!ciphersNode.IsNull())
     {
       XmlNode ciphersMember = ciphersNode.FirstChild("member");
+      m_ciphersHasBeenSet = !ciphersMember.IsNull();
       while(!ciphersMember.IsNull())
       {
         m_ciphers.push_back(ciphersMember);
@@ -74,6 +67,7 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
     if(!supportedLoadBalancerTypesNode.IsNull())
     {
       XmlNode supportedLoadBalancerTypesMember = supportedLoadBalancerTypesNode.FirstChild("member");
+      m_supportedLoadBalancerTypesHasBeenSet = !supportedLoadBalancerTypesMember.IsNull();
       while(!supportedLoadBalancerTypesMember.IsNull())
       {
         m_supportedLoadBalancerTypes.push_back(supportedLoadBalancerTypesMember.GetText());

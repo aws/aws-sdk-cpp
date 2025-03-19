@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelCardExportOutputConfig::ModelCardExportOutputConfig() : 
-    m_s3OutputPathHasBeenSet(false)
-{
-}
-
 ModelCardExportOutputConfig::ModelCardExportOutputConfig(JsonView jsonValue)
-  : ModelCardExportOutputConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelCardExportOutputConfig& ModelCardExportOutputConfig::operator =(JsonView js
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-DimensionValuesWithAttributes::DimensionValuesWithAttributes() : 
-    m_valueHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 DimensionValuesWithAttributes::DimensionValuesWithAttributes(JsonView jsonValue)
-  : DimensionValuesWithAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DimensionValuesWithAttributes& DimensionValuesWithAttributes::operator =(JsonVie
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -48,7 +39,6 @@ DimensionValuesWithAttributes& DimensionValuesWithAttributes::operator =(JsonVie
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

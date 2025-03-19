@@ -37,7 +37,7 @@ namespace Model
   class DescribeTypeResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeTypeResult();
+    AWS_CLOUDFORMATION_API DescribeTypeResult() = default;
     AWS_CLOUDFORMATION_API DescribeTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribeTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,24 +46,20 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the extension.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeTypeResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeTypeResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeTypeResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The kind of extension.</p>
      */
-    inline const RegistryType& GetType() const{ return m_type; }
-    inline void SetType(const RegistryType& value) { m_type = value; }
-    inline void SetType(RegistryType&& value) { m_type = std::move(value); }
-    inline DescribeTypeResult& WithType(const RegistryType& value) { SetType(value); return *this;}
-    inline DescribeTypeResult& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
+    inline RegistryType GetType() const { return m_type; }
+    inline void SetType(RegistryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DescribeTypeResult& WithType(RegistryType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,13 +69,11 @@ namespace Model
      * name alias. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
-    inline void SetTypeName(const Aws::String& value) { m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeName.assign(value); }
-    inline DescribeTypeResult& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline DescribeTypeResult& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    DescribeTypeResult& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,13 +87,11 @@ namespace Model
      * <p>To set the default version of an extension, use
      * <a>SetTypeDefaultVersion</a>.</p>
      */
-    inline const Aws::String& GetDefaultVersionId() const{ return m_defaultVersionId; }
-    inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionId = value; }
-    inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionId = std::move(value); }
-    inline void SetDefaultVersionId(const char* value) { m_defaultVersionId.assign(value); }
-    inline DescribeTypeResult& WithDefaultVersionId(const Aws::String& value) { SetDefaultVersionId(value); return *this;}
-    inline DescribeTypeResult& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
+    inline const Aws::String& GetDefaultVersionId() const { return m_defaultVersionId; }
+    template<typename DefaultVersionIdT = Aws::String>
+    void SetDefaultVersionId(DefaultVersionIdT&& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = std::forward<DefaultVersionIdT>(value); }
+    template<typename DefaultVersionIdT = Aws::String>
+    DescribeTypeResult& WithDefaultVersionId(DefaultVersionIdT&& value) { SetDefaultVersionId(std::forward<DefaultVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,8 +102,8 @@ namespace Model
      * extensions, whether they are activated in your account, CloudFormation returns
      * <code>null</code>.</p>
      */
-    inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
-    inline void SetIsDefaultVersion(bool value) { m_isDefaultVersion = value; }
+    inline bool GetIsDefaultVersion() const { return m_isDefaultVersion; }
+    inline void SetIsDefaultVersion(bool value) { m_isDefaultVersionHasBeenSet = true; m_isDefaultVersion = value; }
     inline DescribeTypeResult& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
     ///@}
 
@@ -133,11 +125,9 @@ namespace Model
      * performed on the extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract
      * tests haven't been performed on the extension.</p> </li> </ul>
      */
-    inline const TypeTestsStatus& GetTypeTestsStatus() const{ return m_typeTestsStatus; }
-    inline void SetTypeTestsStatus(const TypeTestsStatus& value) { m_typeTestsStatus = value; }
-    inline void SetTypeTestsStatus(TypeTestsStatus&& value) { m_typeTestsStatus = std::move(value); }
-    inline DescribeTypeResult& WithTypeTestsStatus(const TypeTestsStatus& value) { SetTypeTestsStatus(value); return *this;}
-    inline DescribeTypeResult& WithTypeTestsStatus(TypeTestsStatus&& value) { SetTypeTestsStatus(std::move(value)); return *this;}
+    inline TypeTestsStatus GetTypeTestsStatus() const { return m_typeTestsStatus; }
+    inline void SetTypeTestsStatus(TypeTestsStatus value) { m_typeTestsStatusHasBeenSet = true; m_typeTestsStatus = value; }
+    inline DescribeTypeResult& WithTypeTestsStatus(TypeTestsStatus value) { SetTypeTestsStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -148,26 +138,22 @@ namespace Model
      * return this information for public extensions, whether they are activated in
      * your account.</p>
      */
-    inline const Aws::String& GetTypeTestsStatusDescription() const{ return m_typeTestsStatusDescription; }
-    inline void SetTypeTestsStatusDescription(const Aws::String& value) { m_typeTestsStatusDescription = value; }
-    inline void SetTypeTestsStatusDescription(Aws::String&& value) { m_typeTestsStatusDescription = std::move(value); }
-    inline void SetTypeTestsStatusDescription(const char* value) { m_typeTestsStatusDescription.assign(value); }
-    inline DescribeTypeResult& WithTypeTestsStatusDescription(const Aws::String& value) { SetTypeTestsStatusDescription(value); return *this;}
-    inline DescribeTypeResult& WithTypeTestsStatusDescription(Aws::String&& value) { SetTypeTestsStatusDescription(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithTypeTestsStatusDescription(const char* value) { SetTypeTestsStatusDescription(value); return *this;}
+    inline const Aws::String& GetTypeTestsStatusDescription() const { return m_typeTestsStatusDescription; }
+    template<typename TypeTestsStatusDescriptionT = Aws::String>
+    void SetTypeTestsStatusDescription(TypeTestsStatusDescriptionT&& value) { m_typeTestsStatusDescriptionHasBeenSet = true; m_typeTestsStatusDescription = std::forward<TypeTestsStatusDescriptionT>(value); }
+    template<typename TypeTestsStatusDescriptionT = Aws::String>
+    DescribeTypeResult& WithTypeTestsStatusDescription(TypeTestsStatusDescriptionT&& value) { SetTypeTestsStatusDescription(std::forward<TypeTestsStatusDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the extension.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeTypeResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeTypeResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeTypeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,13 +164,11 @@ namespace Model
      * type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
-    inline void SetSchema(const Aws::String& value) { m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schema.assign(value); }
-    inline DescribeTypeResult& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline DescribeTypeResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithSchema(const char* value) { SetSchema(value); return *this;}
+    inline const Aws::String& GetSchema() const { return m_schema; }
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    DescribeTypeResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,11 +186,9 @@ namespace Model
      * <p>create</p> </li> <li> <p>read</p> </li> <li> <p>delete</p> </li> </ul> </li>
      * </ul>
      */
-    inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
-    inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningType = value; }
-    inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningType = std::move(value); }
-    inline DescribeTypeResult& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
-    inline DescribeTypeResult& WithProvisioningType(ProvisioningType&& value) { SetProvisioningType(std::move(value)); return *this;}
+    inline ProvisioningType GetProvisioningType() const { return m_provisioningType; }
+    inline void SetProvisioningType(ProvisioningType value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
+    inline DescribeTypeResult& WithProvisioningType(ProvisioningType value) { SetProvisioningType(value); return *this;}
     ///@}
 
     ///@{
@@ -219,11 +201,9 @@ namespace Model
      * can no longer be used in CloudFormation operations.</p> </li> </ul> <p>For
      * public third-party extensions, CloudFormation returns <code>null</code>.</p>
      */
-    inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
-    inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatus = value; }
-    inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatus = std::move(value); }
-    inline DescribeTypeResult& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
-    inline DescribeTypeResult& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
+    inline DeprecatedStatus GetDeprecatedStatus() const { return m_deprecatedStatus; }
+    inline void SetDeprecatedStatus(DeprecatedStatus value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
+    inline DescribeTypeResult& WithDeprecatedStatus(DeprecatedStatus value) { SetDeprecatedStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -235,11 +215,11 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
      */
-    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
-    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfig = value; }
-    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfig = std::move(value); }
-    inline DescribeTypeResult& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
-    inline DescribeTypeResult& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+    inline const LoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
+    template<typename LoggingConfigT = LoggingConfig>
+    void SetLoggingConfig(LoggingConfigT&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::forward<LoggingConfigT>(value); }
+    template<typename LoggingConfigT = LoggingConfig>
+    DescribeTypeResult& WithLoggingConfig(LoggingConfigT&& value) { SetLoggingConfig(std::forward<LoggingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -247,13 +227,13 @@ namespace Model
      * <p>For extensions that are modules, the public third-party extensions that must
      * be activated in your account in order for the module itself to be activated.</p>
      */
-    inline const Aws::Vector<RequiredActivatedType>& GetRequiredActivatedTypes() const{ return m_requiredActivatedTypes; }
-    inline void SetRequiredActivatedTypes(const Aws::Vector<RequiredActivatedType>& value) { m_requiredActivatedTypes = value; }
-    inline void SetRequiredActivatedTypes(Aws::Vector<RequiredActivatedType>&& value) { m_requiredActivatedTypes = std::move(value); }
-    inline DescribeTypeResult& WithRequiredActivatedTypes(const Aws::Vector<RequiredActivatedType>& value) { SetRequiredActivatedTypes(value); return *this;}
-    inline DescribeTypeResult& WithRequiredActivatedTypes(Aws::Vector<RequiredActivatedType>&& value) { SetRequiredActivatedTypes(std::move(value)); return *this;}
-    inline DescribeTypeResult& AddRequiredActivatedTypes(const RequiredActivatedType& value) { m_requiredActivatedTypes.push_back(value); return *this; }
-    inline DescribeTypeResult& AddRequiredActivatedTypes(RequiredActivatedType&& value) { m_requiredActivatedTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RequiredActivatedType>& GetRequiredActivatedTypes() const { return m_requiredActivatedTypes; }
+    template<typename RequiredActivatedTypesT = Aws::Vector<RequiredActivatedType>>
+    void SetRequiredActivatedTypes(RequiredActivatedTypesT&& value) { m_requiredActivatedTypesHasBeenSet = true; m_requiredActivatedTypes = std::forward<RequiredActivatedTypesT>(value); }
+    template<typename RequiredActivatedTypesT = Aws::Vector<RequiredActivatedType>>
+    DescribeTypeResult& WithRequiredActivatedTypes(RequiredActivatedTypesT&& value) { SetRequiredActivatedTypes(std::forward<RequiredActivatedTypesT>(value)); return *this;}
+    template<typename RequiredActivatedTypesT = RequiredActivatedType>
+    DescribeTypeResult& AddRequiredActivatedTypes(RequiredActivatedTypesT&& value) { m_requiredActivatedTypesHasBeenSet = true; m_requiredActivatedTypes.emplace_back(std::forward<RequiredActivatedTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -270,13 +250,11 @@ namespace Model
      * CloudFormation then assumes that execution role to provide your extension with
      * the appropriate credentials.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArn.assign(value); }
-    inline DescribeTypeResult& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline DescribeTypeResult& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    DescribeTypeResult& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -289,37 +267,31 @@ namespace Model
      * publicly visible and usable within any Amazon Web Services account.</p> </li>
      * </ul>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
-    inline void SetVisibility(const Visibility& value) { m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibility = std::move(value); }
-    inline DescribeTypeResult& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline DescribeTypeResult& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline Visibility GetVisibility() const { return m_visibility; }
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline DescribeTypeResult& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL of the source code for the extension.</p>
      */
-    inline const Aws::String& GetSourceUrl() const{ return m_sourceUrl; }
-    inline void SetSourceUrl(const Aws::String& value) { m_sourceUrl = value; }
-    inline void SetSourceUrl(Aws::String&& value) { m_sourceUrl = std::move(value); }
-    inline void SetSourceUrl(const char* value) { m_sourceUrl.assign(value); }
-    inline DescribeTypeResult& WithSourceUrl(const Aws::String& value) { SetSourceUrl(value); return *this;}
-    inline DescribeTypeResult& WithSourceUrl(Aws::String&& value) { SetSourceUrl(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithSourceUrl(const char* value) { SetSourceUrl(value); return *this;}
+    inline const Aws::String& GetSourceUrl() const { return m_sourceUrl; }
+    template<typename SourceUrlT = Aws::String>
+    void SetSourceUrl(SourceUrlT&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::forward<SourceUrlT>(value); }
+    template<typename SourceUrlT = Aws::String>
+    DescribeTypeResult& WithSourceUrl(SourceUrlT&& value) { SetSourceUrl(std::forward<SourceUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL of a page providing detailed documentation for this extension.</p>
      */
-    inline const Aws::String& GetDocumentationUrl() const{ return m_documentationUrl; }
-    inline void SetDocumentationUrl(const Aws::String& value) { m_documentationUrl = value; }
-    inline void SetDocumentationUrl(Aws::String&& value) { m_documentationUrl = std::move(value); }
-    inline void SetDocumentationUrl(const char* value) { m_documentationUrl.assign(value); }
-    inline DescribeTypeResult& WithDocumentationUrl(const Aws::String& value) { SetDocumentationUrl(value); return *this;}
-    inline DescribeTypeResult& WithDocumentationUrl(Aws::String&& value) { SetDocumentationUrl(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithDocumentationUrl(const char* value) { SetDocumentationUrl(value); return *this;}
+    inline const Aws::String& GetDocumentationUrl() const { return m_documentationUrl; }
+    template<typename DocumentationUrlT = Aws::String>
+    void SetDocumentationUrl(DocumentationUrlT&& value) { m_documentationUrlHasBeenSet = true; m_documentationUrl = std::forward<DocumentationUrlT>(value); }
+    template<typename DocumentationUrlT = Aws::String>
+    DescribeTypeResult& WithDocumentationUrl(DocumentationUrlT&& value) { SetDocumentationUrl(std::forward<DocumentationUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -333,11 +305,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
      * </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdated = std::move(value); }
-    inline DescribeTypeResult& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline DescribeTypeResult& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    DescribeTypeResult& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -345,11 +317,11 @@ namespace Model
      * <p>When the specified private extension version was registered or activated in
      * your account.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimeCreated() const{ return m_timeCreated; }
-    inline void SetTimeCreated(const Aws::Utils::DateTime& value) { m_timeCreated = value; }
-    inline void SetTimeCreated(Aws::Utils::DateTime&& value) { m_timeCreated = std::move(value); }
-    inline DescribeTypeResult& WithTimeCreated(const Aws::Utils::DateTime& value) { SetTimeCreated(value); return *this;}
-    inline DescribeTypeResult& WithTimeCreated(Aws::Utils::DateTime&& value) { SetTimeCreated(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTimeCreated() const { return m_timeCreated; }
+    template<typename TimeCreatedT = Aws::Utils::DateTime>
+    void SetTimeCreated(TimeCreatedT&& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = std::forward<TimeCreatedT>(value); }
+    template<typename TimeCreatedT = Aws::Utils::DateTime>
+    DescribeTypeResult& WithTimeCreated(TimeCreatedT&& value) { SetTimeCreated(std::forward<TimeCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -363,13 +335,11 @@ namespace Model
      * configuration data for extensions in your account</a> in the <i>CloudFormation
      * User Guide</i>.</p>
      */
-    inline const Aws::String& GetConfigurationSchema() const{ return m_configurationSchema; }
-    inline void SetConfigurationSchema(const Aws::String& value) { m_configurationSchema = value; }
-    inline void SetConfigurationSchema(Aws::String&& value) { m_configurationSchema = std::move(value); }
-    inline void SetConfigurationSchema(const char* value) { m_configurationSchema.assign(value); }
-    inline DescribeTypeResult& WithConfigurationSchema(const Aws::String& value) { SetConfigurationSchema(value); return *this;}
-    inline DescribeTypeResult& WithConfigurationSchema(Aws::String&& value) { SetConfigurationSchema(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithConfigurationSchema(const char* value) { SetConfigurationSchema(value); return *this;}
+    inline const Aws::String& GetConfigurationSchema() const { return m_configurationSchema; }
+    template<typename ConfigurationSchemaT = Aws::String>
+    void SetConfigurationSchema(ConfigurationSchemaT&& value) { m_configurationSchemaHasBeenSet = true; m_configurationSchema = std::forward<ConfigurationSchemaT>(value); }
+    template<typename ConfigurationSchemaT = Aws::String>
+    DescribeTypeResult& WithConfigurationSchema(ConfigurationSchemaT&& value) { SetConfigurationSchema(std::forward<ConfigurationSchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -378,13 +348,11 @@ namespace Model
      * public third-party extensions. For private registered extensions, and extensions
      * provided by Amazon Web Services, CloudFormation returns <code>null</code>.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherId.assign(value); }
-    inline DescribeTypeResult& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline DescribeTypeResult& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    DescribeTypeResult& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -398,13 +366,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginalTypeName() const{ return m_originalTypeName; }
-    inline void SetOriginalTypeName(const Aws::String& value) { m_originalTypeName = value; }
-    inline void SetOriginalTypeName(Aws::String&& value) { m_originalTypeName = std::move(value); }
-    inline void SetOriginalTypeName(const char* value) { m_originalTypeName.assign(value); }
-    inline DescribeTypeResult& WithOriginalTypeName(const Aws::String& value) { SetOriginalTypeName(value); return *this;}
-    inline DescribeTypeResult& WithOriginalTypeName(Aws::String&& value) { SetOriginalTypeName(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithOriginalTypeName(const char* value) { SetOriginalTypeName(value); return *this;}
+    inline const Aws::String& GetOriginalTypeName() const { return m_originalTypeName; }
+    template<typename OriginalTypeNameT = Aws::String>
+    void SetOriginalTypeName(OriginalTypeNameT&& value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName = std::forward<OriginalTypeNameT>(value); }
+    template<typename OriginalTypeNameT = Aws::String>
+    DescribeTypeResult& WithOriginalTypeName(OriginalTypeNameT&& value) { SetOriginalTypeName(std::forward<OriginalTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -412,13 +378,11 @@ namespace Model
      * <p>For public extensions that have been activated for this account and Region,
      * the Amazon Resource Name (ARN) of the public extension.</p>
      */
-    inline const Aws::String& GetOriginalTypeArn() const{ return m_originalTypeArn; }
-    inline void SetOriginalTypeArn(const Aws::String& value) { m_originalTypeArn = value; }
-    inline void SetOriginalTypeArn(Aws::String&& value) { m_originalTypeArn = std::move(value); }
-    inline void SetOriginalTypeArn(const char* value) { m_originalTypeArn.assign(value); }
-    inline DescribeTypeResult& WithOriginalTypeArn(const Aws::String& value) { SetOriginalTypeArn(value); return *this;}
-    inline DescribeTypeResult& WithOriginalTypeArn(Aws::String&& value) { SetOriginalTypeArn(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithOriginalTypeArn(const char* value) { SetOriginalTypeArn(value); return *this;}
+    inline const Aws::String& GetOriginalTypeArn() const { return m_originalTypeArn; }
+    template<typename OriginalTypeArnT = Aws::String>
+    void SetOriginalTypeArn(OriginalTypeArnT&& value) { m_originalTypeArnHasBeenSet = true; m_originalTypeArn = std::forward<OriginalTypeArnT>(value); }
+    template<typename OriginalTypeArnT = Aws::String>
+    DescribeTypeResult& WithOriginalTypeArn(OriginalTypeArnT&& value) { SetOriginalTypeArn(std::forward<OriginalTypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -428,13 +392,11 @@ namespace Model
      * specify a public extension without specifying a version. For all other
      * extensions, CloudFormation returns <code>null</code>.</p>
      */
-    inline const Aws::String& GetPublicVersionNumber() const{ return m_publicVersionNumber; }
-    inline void SetPublicVersionNumber(const Aws::String& value) { m_publicVersionNumber = value; }
-    inline void SetPublicVersionNumber(Aws::String&& value) { m_publicVersionNumber = std::move(value); }
-    inline void SetPublicVersionNumber(const char* value) { m_publicVersionNumber.assign(value); }
-    inline DescribeTypeResult& WithPublicVersionNumber(const Aws::String& value) { SetPublicVersionNumber(value); return *this;}
-    inline DescribeTypeResult& WithPublicVersionNumber(Aws::String&& value) { SetPublicVersionNumber(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithPublicVersionNumber(const char* value) { SetPublicVersionNumber(value); return *this;}
+    inline const Aws::String& GetPublicVersionNumber() const { return m_publicVersionNumber; }
+    template<typename PublicVersionNumberT = Aws::String>
+    void SetPublicVersionNumber(PublicVersionNumberT&& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = std::forward<PublicVersionNumberT>(value); }
+    template<typename PublicVersionNumberT = Aws::String>
+    DescribeTypeResult& WithPublicVersionNumber(PublicVersionNumberT&& value) { SetPublicVersionNumber(std::forward<PublicVersionNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -444,13 +406,11 @@ namespace Model
      * specify a version. For all other requests, CloudFormation returns
      * <code>null</code>.</p>
      */
-    inline const Aws::String& GetLatestPublicVersion() const{ return m_latestPublicVersion; }
-    inline void SetLatestPublicVersion(const Aws::String& value) { m_latestPublicVersion = value; }
-    inline void SetLatestPublicVersion(Aws::String&& value) { m_latestPublicVersion = std::move(value); }
-    inline void SetLatestPublicVersion(const char* value) { m_latestPublicVersion.assign(value); }
-    inline DescribeTypeResult& WithLatestPublicVersion(const Aws::String& value) { SetLatestPublicVersion(value); return *this;}
-    inline DescribeTypeResult& WithLatestPublicVersion(Aws::String&& value) { SetLatestPublicVersion(std::move(value)); return *this;}
-    inline DescribeTypeResult& WithLatestPublicVersion(const char* value) { SetLatestPublicVersion(value); return *this;}
+    inline const Aws::String& GetLatestPublicVersion() const { return m_latestPublicVersion; }
+    template<typename LatestPublicVersionT = Aws::String>
+    void SetLatestPublicVersion(LatestPublicVersionT&& value) { m_latestPublicVersionHasBeenSet = true; m_latestPublicVersion = std::forward<LatestPublicVersionT>(value); }
+    template<typename LatestPublicVersionT = Aws::String>
+    DescribeTypeResult& WithLatestPublicVersion(LatestPublicVersionT&& value) { SetLatestPublicVersion(std::forward<LatestPublicVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -459,8 +419,8 @@ namespace Model
      * only applies to public third-party extensions. For all other extensions,
      * CloudFormation returns <code>null</code>.</p>
      */
-    inline bool GetIsActivated() const{ return m_isActivated; }
-    inline void SetIsActivated(bool value) { m_isActivated = value; }
+    inline bool GetIsActivated() const { return m_isActivated; }
+    inline void SetIsActivated(bool value) { m_isActivatedHasBeenSet = true; m_isActivated = value; }
     inline DescribeTypeResult& WithIsActivated(bool value) { SetIsActivated(value); return *this;}
     ///@}
 
@@ -473,76 +433,104 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
      * use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline bool GetAutoUpdate() const{ return m_autoUpdate; }
-    inline void SetAutoUpdate(bool value) { m_autoUpdate = value; }
+    inline bool GetAutoUpdate() const { return m_autoUpdate; }
+    inline void SetAutoUpdate(bool value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
     inline DescribeTypeResult& WithAutoUpdate(bool value) { SetAutoUpdate(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTypeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    RegistryType m_type;
+    RegistryType m_type{RegistryType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_defaultVersionId;
+    bool m_defaultVersionIdHasBeenSet = false;
 
-    bool m_isDefaultVersion;
+    bool m_isDefaultVersion{false};
+    bool m_isDefaultVersionHasBeenSet = false;
 
-    TypeTestsStatus m_typeTestsStatus;
+    TypeTestsStatus m_typeTestsStatus{TypeTestsStatus::NOT_SET};
+    bool m_typeTestsStatusHasBeenSet = false;
 
     Aws::String m_typeTestsStatusDescription;
+    bool m_typeTestsStatusDescriptionHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_schema;
+    bool m_schemaHasBeenSet = false;
 
-    ProvisioningType m_provisioningType;
+    ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
+    bool m_provisioningTypeHasBeenSet = false;
 
-    DeprecatedStatus m_deprecatedStatus;
+    DeprecatedStatus m_deprecatedStatus{DeprecatedStatus::NOT_SET};
+    bool m_deprecatedStatusHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
+    bool m_loggingConfigHasBeenSet = false;
 
     Aws::Vector<RequiredActivatedType> m_requiredActivatedTypes;
+    bool m_requiredActivatedTypesHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
+    bool m_executionRoleArnHasBeenSet = false;
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
+    bool m_visibilityHasBeenSet = false;
 
     Aws::String m_sourceUrl;
+    bool m_sourceUrlHasBeenSet = false;
 
     Aws::String m_documentationUrl;
+    bool m_documentationUrlHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
+    bool m_lastUpdatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timeCreated;
+    Aws::Utils::DateTime m_timeCreated{};
+    bool m_timeCreatedHasBeenSet = false;
 
     Aws::String m_configurationSchema;
+    bool m_configurationSchemaHasBeenSet = false;
 
     Aws::String m_publisherId;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::String m_originalTypeName;
+    bool m_originalTypeNameHasBeenSet = false;
 
     Aws::String m_originalTypeArn;
+    bool m_originalTypeArnHasBeenSet = false;
 
     Aws::String m_publicVersionNumber;
+    bool m_publicVersionNumberHasBeenSet = false;
 
     Aws::String m_latestPublicVersion;
+    bool m_latestPublicVersionHasBeenSet = false;
 
-    bool m_isActivated;
+    bool m_isActivated{false};
+    bool m_isActivatedHasBeenSet = false;
 
-    bool m_autoUpdate;
+    bool m_autoUpdate{false};
+    bool m_autoUpdateHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

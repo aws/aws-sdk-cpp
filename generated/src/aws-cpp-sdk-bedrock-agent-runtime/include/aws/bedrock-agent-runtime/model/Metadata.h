@@ -31,7 +31,7 @@ namespace Model
   class Metadata
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Metadata();
+    AWS_BEDROCKAGENTRUNTIME_API Metadata() = default;
     AWS_BEDROCKAGENTRUNTIME_API Metadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Contains details of the foundation model usage.</p>
      */
-    inline const Usage& GetUsage() const{ return m_usage; }
+    inline const Usage& GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const Usage& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(Usage&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline Metadata& WithUsage(const Usage& value) { SetUsage(value); return *this;}
-    inline Metadata& WithUsage(Usage&& value) { SetUsage(std::move(value)); return *this;}
+    template<typename UsageT = Usage>
+    void SetUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage = std::forward<UsageT>(value); }
+    template<typename UsageT = Usage>
+    Metadata& WithUsage(UsageT&& value) { SetUsage(std::forward<UsageT>(value)); return *this;}
     ///@}
   private:
 

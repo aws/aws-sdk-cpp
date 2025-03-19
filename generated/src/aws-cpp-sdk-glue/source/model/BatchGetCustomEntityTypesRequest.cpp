@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCustomEntityTypesRequest::BatchGetCustomEntityTypesRequest() : 
-    m_namesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCustomEntityTypesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ApplicationSettingsRequest::ApplicationSettingsRequest() : 
-    m_status(ApplicationSettingsStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_settingsGroupHasBeenSet(false)
-{
-}
-
 ApplicationSettingsRequest::ApplicationSettingsRequest(JsonView jsonValue)
-  : ApplicationSettingsRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ApplicationSettingsRequest& ApplicationSettingsRequest::operator =(JsonView json
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ApplicationSettingsStatusEnumMapper::GetApplicationSettingsStatusEnumForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SettingsGroup"))
   {
     m_settingsGroup = jsonValue.GetString("SettingsGroup");
-
     m_settingsGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace XRay
 namespace Model
 {
 
-AnnotationValue::AnnotationValue() : 
-    m_numberValue(0.0),
-    m_numberValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
-{
-}
-
 AnnotationValue::AnnotationValue(JsonView jsonValue)
-  : AnnotationValue()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AnnotationValue& AnnotationValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberValue"))
   {
     m_numberValue = jsonValue.GetDouble("NumberValue");
-
     m_numberValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BooleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("BooleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringValue"))
   {
     m_stringValue = jsonValue.GetString("StringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

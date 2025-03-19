@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpEnumPayloadResult::HttpEnumPayloadResult() : 
-    m_payload(StringEnum::NOT_SET)
-{
-}
-
 HttpEnumPayloadResult::HttpEnumPayloadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : HttpEnumPayloadResult()
 {
   *this = result;
 }
@@ -37,7 +31,8 @@ HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(const Aws::AmazonWebSer
     XmlNode payloadNode = resultNode.FirstChild("payload");
     if(!payloadNode.IsNull())
     {
-      m_payload = StringEnumMapper::GetStringEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payloadNode.GetText()).c_str()).c_str());
+      m_payload = StringEnumMapper::GetStringEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payloadNode.GetText()).c_str()));
+      m_payloadHasBeenSet = true;
     }
   }
 
@@ -46,6 +41,7 @@ HttpEnumPayloadResult& HttpEnumPayloadResult::operator =(const Aws::AmazonWebSer
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

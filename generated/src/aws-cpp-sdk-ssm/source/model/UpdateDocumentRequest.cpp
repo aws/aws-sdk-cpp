@@ -12,19 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDocumentRequest::UpdateDocumentRequest() : 
-    m_contentHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroup::NodeGroup() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_primaryEndpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_nodeGroupMembersHasBeenSet(false)
-{
-}
-
 NodeGroup::NodeGroup(const XmlNode& xmlNode)
-  : NodeGroup()
 {
   *this = xmlNode;
 }
@@ -76,6 +65,7 @@ NodeGroup& NodeGroup::operator =(const XmlNode& xmlNode)
     if(!nodeGroupMembersNode.IsNull())
     {
       XmlNode nodeGroupMembersMember = nodeGroupMembersNode.FirstChild("NodeGroupMember");
+      m_nodeGroupMembersHasBeenSet = !nodeGroupMembersMember.IsNull();
       while(!nodeGroupMembersMember.IsNull())
       {
         m_nodeGroupMembers.push_back(nodeGroupMembersMember);

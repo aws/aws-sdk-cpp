@@ -18,16 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-SimpleRule::SimpleRule() : 
-    m_inputPropertyHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 SimpleRule::SimpleRule(JsonView jsonValue)
-  : SimpleRule()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SimpleRule& SimpleRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputProperty"))
   {
     m_inputProperty = jsonValue.GetString("inputProperty");
-
     m_inputPropertyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("comparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetString("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

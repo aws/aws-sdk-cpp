@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-KeyValuePair::KeyValuePair() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 KeyValuePair::KeyValuePair(JsonView jsonValue)
-  : KeyValuePair()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KeyValuePair& KeyValuePair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

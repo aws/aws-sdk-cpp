@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSubscriptionDefinitionVersionsResult::ListSubscriptionDefinitionVersionsResult()
-{
-}
-
 ListSubscriptionDefinitionVersionsResult::ListSubscriptionDefinitionVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSubscriptionDefinitionVersionsResult& ListSubscriptionDefinitionVersionsResu
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Versions"))
   {
     Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("Versions");
@@ -42,14 +37,15 @@ ListSubscriptionDefinitionVersionsResult& ListSubscriptionDefinitionVersionsResu
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());
     }
+    m_versionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

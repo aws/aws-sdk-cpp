@@ -18,18 +18,7 @@ namespace Invoicing
 namespace Model
 {
 
-InvoiceProfile::InvoiceProfile() : 
-    m_accountIdHasBeenSet(false),
-    m_receiverNameHasBeenSet(false),
-    m_receiverAddressHasBeenSet(false),
-    m_receiverEmailHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_taxRegistrationNumberHasBeenSet(false)
-{
-}
-
 InvoiceProfile::InvoiceProfile(JsonView jsonValue)
-  : InvoiceProfile()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ InvoiceProfile& InvoiceProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiverName"))
   {
     m_receiverName = jsonValue.GetString("ReceiverName");
-
     m_receiverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiverAddress"))
   {
     m_receiverAddress = jsonValue.GetObject("ReceiverAddress");
-
     m_receiverAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiverEmail"))
   {
     m_receiverEmail = jsonValue.GetString("ReceiverEmail");
-
     m_receiverEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Issuer"))
   {
     m_issuer = jsonValue.GetString("Issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaxRegistrationNumber"))
   {
     m_taxRegistrationNumber = jsonValue.GetString("TaxRegistrationNumber");
-
     m_taxRegistrationNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

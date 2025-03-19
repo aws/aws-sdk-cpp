@@ -12,14 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPartnerEventSourceAccountsRequest::ListPartnerEventSourceAccountsRequest() : 
-    m_eventSourceNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListPartnerEventSourceAccountsRequest::SerializePayload() const
 {
   JsonValue payload;

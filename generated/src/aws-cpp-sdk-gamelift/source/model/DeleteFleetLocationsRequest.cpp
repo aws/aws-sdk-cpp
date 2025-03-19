@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFleetLocationsRequest::DeleteFleetLocationsRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_locationsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetLocationsRequest::SerializePayload() const
 {
   JsonValue payload;

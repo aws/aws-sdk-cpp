@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ProjectedMetric::ProjectedMetric() : 
-    m_name(MetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ProjectedMetric::ProjectedMetric(JsonView jsonValue)
-  : ProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = MetricNameMapper::GetMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
@@ -50,7 +39,6 @@ ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -60,7 +48,6 @@ ProjectedMetric& ProjectedMetric::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

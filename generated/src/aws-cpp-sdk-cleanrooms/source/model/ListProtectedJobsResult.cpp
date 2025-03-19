@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProtectedJobsResult::ListProtectedJobsResult()
-{
-}
-
 ListProtectedJobsResult::ListProtectedJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListProtectedJobsResult& ListProtectedJobsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protectedJobs"))
   {
     Aws::Utils::Array<JsonView> protectedJobsJsonList = jsonValue.GetArray("protectedJobs");
@@ -42,14 +37,15 @@ ListProtectedJobsResult& ListProtectedJobsResult::operator =(const Aws::AmazonWe
     {
       m_protectedJobs.push_back(protectedJobsJsonList[protectedJobsIndex].AsObject());
     }
+    m_protectedJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -29,7 +29,7 @@ namespace Model
   class DescribeEntityAggregatesForOrganizationResult
   {
   public:
-    AWS_HEALTH_API DescribeEntityAggregatesForOrganizationResult();
+    AWS_HEALTH_API DescribeEntityAggregatesForOrganizationResult() = default;
     AWS_HEALTH_API DescribeEntityAggregatesForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_HEALTH_API DescribeEntityAggregatesForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>The list of entity aggregates for each of the specified accounts that are
      * affected by each of the specified events.</p>
      */
-    inline const Aws::Vector<OrganizationEntityAggregate>& GetOrganizationEntityAggregates() const{ return m_organizationEntityAggregates; }
-    inline void SetOrganizationEntityAggregates(const Aws::Vector<OrganizationEntityAggregate>& value) { m_organizationEntityAggregates = value; }
-    inline void SetOrganizationEntityAggregates(Aws::Vector<OrganizationEntityAggregate>&& value) { m_organizationEntityAggregates = std::move(value); }
-    inline DescribeEntityAggregatesForOrganizationResult& WithOrganizationEntityAggregates(const Aws::Vector<OrganizationEntityAggregate>& value) { SetOrganizationEntityAggregates(value); return *this;}
-    inline DescribeEntityAggregatesForOrganizationResult& WithOrganizationEntityAggregates(Aws::Vector<OrganizationEntityAggregate>&& value) { SetOrganizationEntityAggregates(std::move(value)); return *this;}
-    inline DescribeEntityAggregatesForOrganizationResult& AddOrganizationEntityAggregates(const OrganizationEntityAggregate& value) { m_organizationEntityAggregates.push_back(value); return *this; }
-    inline DescribeEntityAggregatesForOrganizationResult& AddOrganizationEntityAggregates(OrganizationEntityAggregate&& value) { m_organizationEntityAggregates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationEntityAggregate>& GetOrganizationEntityAggregates() const { return m_organizationEntityAggregates; }
+    template<typename OrganizationEntityAggregatesT = Aws::Vector<OrganizationEntityAggregate>>
+    void SetOrganizationEntityAggregates(OrganizationEntityAggregatesT&& value) { m_organizationEntityAggregatesHasBeenSet = true; m_organizationEntityAggregates = std::forward<OrganizationEntityAggregatesT>(value); }
+    template<typename OrganizationEntityAggregatesT = Aws::Vector<OrganizationEntityAggregate>>
+    DescribeEntityAggregatesForOrganizationResult& WithOrganizationEntityAggregates(OrganizationEntityAggregatesT&& value) { SetOrganizationEntityAggregates(std::forward<OrganizationEntityAggregatesT>(value)); return *this;}
+    template<typename OrganizationEntityAggregatesT = OrganizationEntityAggregate>
+    DescribeEntityAggregatesForOrganizationResult& AddOrganizationEntityAggregates(OrganizationEntityAggregatesT&& value) { m_organizationEntityAggregatesHasBeenSet = true; m_organizationEntityAggregates.emplace_back(std::forward<OrganizationEntityAggregatesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEntityAggregatesForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEntityAggregatesForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEntityAggregatesForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEntityAggregatesForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OrganizationEntityAggregate> m_organizationEntityAggregates;
+    bool m_organizationEntityAggregatesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveAttributesRequest::RemoveAttributesRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_attributeTypeHasBeenSet(false),
-    m_updateAttributesRequestHasBeenSet(false)
-{
-}
-
 Aws::String RemoveAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

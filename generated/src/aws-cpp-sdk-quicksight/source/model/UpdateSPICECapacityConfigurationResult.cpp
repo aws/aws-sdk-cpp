@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSPICECapacityConfigurationResult::UpdateSPICECapacityConfigurationResult() : 
-    m_status(0)
-{
-}
-
 UpdateSPICECapacityConfigurationResult::UpdateSPICECapacityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateSPICECapacityConfigurationResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ UpdateSPICECapacityConfigurationResult& UpdateSPICECapacityConfigurationResult::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

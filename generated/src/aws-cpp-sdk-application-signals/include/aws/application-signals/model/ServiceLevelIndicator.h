@@ -33,7 +33,7 @@ namespace Model
   class ServiceLevelIndicator
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ServiceLevelIndicator();
+    AWS_APPLICATIONSIGNALS_API ServiceLevelIndicator() = default;
     AWS_APPLICATIONSIGNALS_API ServiceLevelIndicator(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ServiceLevelIndicator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,19 @@ namespace Model
      * <p>A structure that contains information about the metric that the SLO monitors.
      * </p>
      */
-    inline const ServiceLevelIndicatorMetric& GetSliMetric() const{ return m_sliMetric; }
+    inline const ServiceLevelIndicatorMetric& GetSliMetric() const { return m_sliMetric; }
     inline bool SliMetricHasBeenSet() const { return m_sliMetricHasBeenSet; }
-    inline void SetSliMetric(const ServiceLevelIndicatorMetric& value) { m_sliMetricHasBeenSet = true; m_sliMetric = value; }
-    inline void SetSliMetric(ServiceLevelIndicatorMetric&& value) { m_sliMetricHasBeenSet = true; m_sliMetric = std::move(value); }
-    inline ServiceLevelIndicator& WithSliMetric(const ServiceLevelIndicatorMetric& value) { SetSliMetric(value); return *this;}
-    inline ServiceLevelIndicator& WithSliMetric(ServiceLevelIndicatorMetric&& value) { SetSliMetric(std::move(value)); return *this;}
+    template<typename SliMetricT = ServiceLevelIndicatorMetric>
+    void SetSliMetric(SliMetricT&& value) { m_sliMetricHasBeenSet = true; m_sliMetric = std::forward<SliMetricT>(value); }
+    template<typename SliMetricT = ServiceLevelIndicatorMetric>
+    ServiceLevelIndicator& WithSliMetric(SliMetricT&& value) { SetSliMetric(std::forward<SliMetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that the SLI metric is compared to.</p>
      */
-    inline double GetMetricThreshold() const{ return m_metricThreshold; }
+    inline double GetMetricThreshold() const { return m_metricThreshold; }
     inline bool MetricThresholdHasBeenSet() const { return m_metricThresholdHasBeenSet; }
     inline void SetMetricThreshold(double value) { m_metricThresholdHasBeenSet = true; m_metricThreshold = value; }
     inline ServiceLevelIndicator& WithMetricThreshold(double value) { SetMetricThreshold(value); return *this;}
@@ -67,22 +67,20 @@ namespace Model
      * <p>The arithmetic operation used when comparing the specified metric to the
      * threshold.</p>
      */
-    inline const ServiceLevelIndicatorComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ServiceLevelIndicatorComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ServiceLevelIndicatorComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ServiceLevelIndicatorComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline ServiceLevelIndicator& WithComparisonOperator(const ServiceLevelIndicatorComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline ServiceLevelIndicator& WithComparisonOperator(ServiceLevelIndicatorComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ServiceLevelIndicatorComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline ServiceLevelIndicator& WithComparisonOperator(ServiceLevelIndicatorComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
   private:
 
     ServiceLevelIndicatorMetric m_sliMetric;
     bool m_sliMetricHasBeenSet = false;
 
-    double m_metricThreshold;
+    double m_metricThreshold{0.0};
     bool m_metricThresholdHasBeenSet = false;
 
-    ServiceLevelIndicatorComparisonOperator m_comparisonOperator;
+    ServiceLevelIndicatorComparisonOperator m_comparisonOperator{ServiceLevelIndicatorComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
   };
 

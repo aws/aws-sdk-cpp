@@ -36,7 +36,7 @@ namespace Model
   class ListSigningCertificatesResult
   {
   public:
-    AWS_IAM_API ListSigningCertificatesResult();
+    AWS_IAM_API ListSigningCertificatesResult() = default;
     AWS_IAM_API ListSigningCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API ListSigningCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,13 @@ namespace Model
     /**
      * <p>A list of the user's signing certificate information.</p>
      */
-    inline const Aws::Vector<SigningCertificate>& GetCertificates() const{ return m_certificates; }
-    inline void SetCertificates(const Aws::Vector<SigningCertificate>& value) { m_certificates = value; }
-    inline void SetCertificates(Aws::Vector<SigningCertificate>&& value) { m_certificates = std::move(value); }
-    inline ListSigningCertificatesResult& WithCertificates(const Aws::Vector<SigningCertificate>& value) { SetCertificates(value); return *this;}
-    inline ListSigningCertificatesResult& WithCertificates(Aws::Vector<SigningCertificate>&& value) { SetCertificates(std::move(value)); return *this;}
-    inline ListSigningCertificatesResult& AddCertificates(const SigningCertificate& value) { m_certificates.push_back(value); return *this; }
-    inline ListSigningCertificatesResult& AddCertificates(SigningCertificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SigningCertificate>& GetCertificates() const { return m_certificates; }
+    template<typename CertificatesT = Aws::Vector<SigningCertificate>>
+    void SetCertificates(CertificatesT&& value) { m_certificatesHasBeenSet = true; m_certificates = std::forward<CertificatesT>(value); }
+    template<typename CertificatesT = Aws::Vector<SigningCertificate>>
+    ListSigningCertificatesResult& WithCertificates(CertificatesT&& value) { SetCertificates(std::forward<CertificatesT>(value)); return *this;}
+    template<typename CertificatesT = SigningCertificate>
+    ListSigningCertificatesResult& AddCertificates(CertificatesT&& value) { m_certificatesHasBeenSet = true; m_certificates.emplace_back(std::forward<CertificatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,8 +64,8 @@ namespace Model
      * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListSigningCertificatesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -75,32 +75,34 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListSigningCertificatesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListSigningCertificatesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListSigningCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListSigningCertificatesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListSigningCertificatesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListSigningCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListSigningCertificatesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SigningCertificate> m_certificates;
+    bool m_certificatesHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

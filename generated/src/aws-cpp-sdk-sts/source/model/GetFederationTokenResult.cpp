@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFederationTokenResult::GetFederationTokenResult() : 
-    m_packedPolicySize(0)
-{
-}
-
 GetFederationTokenResult::GetFederationTokenResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetFederationTokenResult()
 {
   *this = result;
 }
@@ -44,22 +38,26 @@ GetFederationTokenResult& GetFederationTokenResult::operator =(const Aws::Amazon
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
+      m_credentialsHasBeenSet = true;
     }
     XmlNode federatedUserNode = resultNode.FirstChild("FederatedUser");
     if(!federatedUserNode.IsNull())
     {
       m_federatedUser = federatedUserNode;
+      m_federatedUserHasBeenSet = true;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packedPolicySizeNode.GetText()).c_str()).c_str());
+      m_packedPolicySizeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::STS::Model::GetFederationTokenResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

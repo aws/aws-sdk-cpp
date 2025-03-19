@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListHookResultsRequest::ListHookResultsRequest() : 
-    m_targetType(ListHookResultsTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListHookResultsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

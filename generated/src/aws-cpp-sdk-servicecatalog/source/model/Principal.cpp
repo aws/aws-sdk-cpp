@@ -18,15 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-Principal::Principal() : 
-    m_principalARNHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 Principal::Principal(JsonView jsonValue)
-  : Principal()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Principal& Principal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrincipalARN"))
   {
     m_principalARN = jsonValue.GetString("PrincipalARN");
-
     m_principalARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalType"))
   {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
-
     m_principalTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class CdmaLocalId
   {
   public:
-    AWS_IOTWIRELESS_API CdmaLocalId();
+    AWS_IOTWIRELESS_API CdmaLocalId() = default;
     AWS_IOTWIRELESS_API CdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API CdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a
      * radio tower.</p>
      */
-    inline int GetPnOffset() const{ return m_pnOffset; }
+    inline int GetPnOffset() const { return m_pnOffset; }
     inline bool PnOffsetHasBeenSet() const { return m_pnOffsetHasBeenSet; }
     inline void SetPnOffset(int value) { m_pnOffsetHasBeenSet = true; m_pnOffset = value; }
     inline CdmaLocalId& WithPnOffset(int value) { SetPnOffset(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>CDMA channel information.</p>
      */
-    inline int GetCdmaChannel() const{ return m_cdmaChannel; }
+    inline int GetCdmaChannel() const { return m_cdmaChannel; }
     inline bool CdmaChannelHasBeenSet() const { return m_cdmaChannelHasBeenSet; }
     inline void SetCdmaChannel(int value) { m_cdmaChannelHasBeenSet = true; m_cdmaChannel = value; }
     inline CdmaLocalId& WithCdmaChannel(int value) { SetCdmaChannel(value); return *this;}
     ///@}
   private:
 
-    int m_pnOffset;
+    int m_pnOffset{0};
     bool m_pnOffsetHasBeenSet = false;
 
-    int m_cdmaChannel;
+    int m_cdmaChannel{0};
     bool m_cdmaChannelHasBeenSet = false;
   };
 

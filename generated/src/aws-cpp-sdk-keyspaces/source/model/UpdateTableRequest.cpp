@@ -12,22 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableRequest::UpdateTableRequest() : 
-    m_keyspaceNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_addColumnsHasBeenSet(false),
-    m_capacitySpecificationHasBeenSet(false),
-    m_encryptionSpecificationHasBeenSet(false),
-    m_pointInTimeRecoveryHasBeenSet(false),
-    m_ttlHasBeenSet(false),
-    m_defaultTimeToLive(0),
-    m_defaultTimeToLiveHasBeenSet(false),
-    m_clientSideTimestampsHasBeenSet(false),
-    m_autoScalingSpecificationHasBeenSet(false),
-    m_replicaSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableRequest::SerializePayload() const
 {
   JsonValue payload;

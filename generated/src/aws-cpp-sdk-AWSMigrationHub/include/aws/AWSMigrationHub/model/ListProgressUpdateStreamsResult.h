@@ -29,7 +29,7 @@ namespace Model
   class ListProgressUpdateStreamsResult
   {
   public:
-    AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult();
+    AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult() = default;
     AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>List of progress update streams up to the max number of results passed in the
      * input.</p>
      */
-    inline const Aws::Vector<ProgressUpdateStreamSummary>& GetProgressUpdateStreamSummaryList() const{ return m_progressUpdateStreamSummaryList; }
-    inline void SetProgressUpdateStreamSummaryList(const Aws::Vector<ProgressUpdateStreamSummary>& value) { m_progressUpdateStreamSummaryList = value; }
-    inline void SetProgressUpdateStreamSummaryList(Aws::Vector<ProgressUpdateStreamSummary>&& value) { m_progressUpdateStreamSummaryList = std::move(value); }
-    inline ListProgressUpdateStreamsResult& WithProgressUpdateStreamSummaryList(const Aws::Vector<ProgressUpdateStreamSummary>& value) { SetProgressUpdateStreamSummaryList(value); return *this;}
-    inline ListProgressUpdateStreamsResult& WithProgressUpdateStreamSummaryList(Aws::Vector<ProgressUpdateStreamSummary>&& value) { SetProgressUpdateStreamSummaryList(std::move(value)); return *this;}
-    inline ListProgressUpdateStreamsResult& AddProgressUpdateStreamSummaryList(const ProgressUpdateStreamSummary& value) { m_progressUpdateStreamSummaryList.push_back(value); return *this; }
-    inline ListProgressUpdateStreamsResult& AddProgressUpdateStreamSummaryList(ProgressUpdateStreamSummary&& value) { m_progressUpdateStreamSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProgressUpdateStreamSummary>& GetProgressUpdateStreamSummaryList() const { return m_progressUpdateStreamSummaryList; }
+    template<typename ProgressUpdateStreamSummaryListT = Aws::Vector<ProgressUpdateStreamSummary>>
+    void SetProgressUpdateStreamSummaryList(ProgressUpdateStreamSummaryListT&& value) { m_progressUpdateStreamSummaryListHasBeenSet = true; m_progressUpdateStreamSummaryList = std::forward<ProgressUpdateStreamSummaryListT>(value); }
+    template<typename ProgressUpdateStreamSummaryListT = Aws::Vector<ProgressUpdateStreamSummary>>
+    ListProgressUpdateStreamsResult& WithProgressUpdateStreamSummaryList(ProgressUpdateStreamSummaryListT&& value) { SetProgressUpdateStreamSummaryList(std::forward<ProgressUpdateStreamSummaryListT>(value)); return *this;}
+    template<typename ProgressUpdateStreamSummaryListT = ProgressUpdateStreamSummary>
+    ListProgressUpdateStreamsResult& AddProgressUpdateStreamSummaryList(ProgressUpdateStreamSummaryListT&& value) { m_progressUpdateStreamSummaryListHasBeenSet = true; m_progressUpdateStreamSummaryList.emplace_back(std::forward<ProgressUpdateStreamSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If there are more streams created than the max result, return the next token
      * to be passed to the next call as a bookmark of where to start from.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProgressUpdateStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProgressUpdateStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProgressUpdateStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProgressUpdateStreamsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProgressUpdateStreamsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProgressUpdateStreamsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProgressUpdateStreamsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProgressUpdateStreamsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProgressUpdateStreamSummary> m_progressUpdateStreamSummaryList;
+    bool m_progressUpdateStreamSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelDeployConfig::ModelDeployConfig() : 
-    m_autoGenerateEndpointName(false),
-    m_autoGenerateEndpointNameHasBeenSet(false),
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 ModelDeployConfig::ModelDeployConfig(JsonView jsonValue)
-  : ModelDeployConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelDeployConfig& ModelDeployConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutoGenerateEndpointName"))
   {
     m_autoGenerateEndpointName = jsonValue.GetBool("AutoGenerateEndpointName");
-
     m_autoGenerateEndpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   return *this;
 }
 

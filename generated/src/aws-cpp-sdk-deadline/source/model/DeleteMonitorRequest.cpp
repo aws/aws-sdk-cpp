@@ -12,11 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMonitorRequest::DeleteMonitorRequest() : 
-    m_monitorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMonitorRequest::SerializePayload() const
 {
   return {};

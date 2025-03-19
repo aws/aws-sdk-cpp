@@ -12,13 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataLakeDatasetRequest::DeleteDataLakeDatasetRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataLakeDatasetRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class AllowedCapabilities
   {
   public:
-    AWS_CONNECT_API AllowedCapabilities();
+    AWS_CONNECT_API AllowedCapabilities() = default;
     AWS_CONNECT_API AllowedCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AllowedCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Information about the customer's video sharing capabilities.</p>
      */
-    inline const ParticipantCapabilities& GetCustomer() const{ return m_customer; }
+    inline const ParticipantCapabilities& GetCustomer() const { return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    inline void SetCustomer(const ParticipantCapabilities& value) { m_customerHasBeenSet = true; m_customer = value; }
-    inline void SetCustomer(ParticipantCapabilities&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
-    inline AllowedCapabilities& WithCustomer(const ParticipantCapabilities& value) { SetCustomer(value); return *this;}
-    inline AllowedCapabilities& WithCustomer(ParticipantCapabilities&& value) { SetCustomer(std::move(value)); return *this;}
+    template<typename CustomerT = ParticipantCapabilities>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = ParticipantCapabilities>
+    AllowedCapabilities& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the agent's video sharing capabilities.</p>
      */
-    inline const ParticipantCapabilities& GetAgent() const{ return m_agent; }
+    inline const ParticipantCapabilities& GetAgent() const { return m_agent; }
     inline bool AgentHasBeenSet() const { return m_agentHasBeenSet; }
-    inline void SetAgent(const ParticipantCapabilities& value) { m_agentHasBeenSet = true; m_agent = value; }
-    inline void SetAgent(ParticipantCapabilities&& value) { m_agentHasBeenSet = true; m_agent = std::move(value); }
-    inline AllowedCapabilities& WithAgent(const ParticipantCapabilities& value) { SetAgent(value); return *this;}
-    inline AllowedCapabilities& WithAgent(ParticipantCapabilities&& value) { SetAgent(std::move(value)); return *this;}
+    template<typename AgentT = ParticipantCapabilities>
+    void SetAgent(AgentT&& value) { m_agentHasBeenSet = true; m_agent = std::forward<AgentT>(value); }
+    template<typename AgentT = ParticipantCapabilities>
+    AllowedCapabilities& WithAgent(AgentT&& value) { SetAgent(std::forward<AgentT>(value)); return *this;}
     ///@}
   private:
 

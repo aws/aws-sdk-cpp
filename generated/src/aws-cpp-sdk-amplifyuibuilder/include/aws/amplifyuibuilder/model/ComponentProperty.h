@@ -10,8 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifyuibuilder/model/FormBindingElement.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -39,7 +39,7 @@ namespace Model
   class ComponentProperty
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentProperty();
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,26 +49,24 @@ namespace Model
     /**
      * <p>The value to assign to the component property.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ComponentProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ComponentProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ComponentProperty& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ComponentProperty& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information to bind the component property to data at runtime.</p>
      */
-    inline const ComponentPropertyBindingProperties& GetBindingProperties() const{ return m_bindingProperties; }
+    inline const ComponentPropertyBindingProperties& GetBindingProperties() const { return m_bindingProperties; }
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
-    inline void SetBindingProperties(const ComponentPropertyBindingProperties& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
-    inline void SetBindingProperties(ComponentPropertyBindingProperties&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
-    inline ComponentProperty& WithBindingProperties(const ComponentPropertyBindingProperties& value) { SetBindingProperties(value); return *this;}
-    inline ComponentProperty& WithBindingProperties(ComponentPropertyBindingProperties&& value) { SetBindingProperties(std::move(value)); return *this;}
+    template<typename BindingPropertiesT = ComponentPropertyBindingProperties>
+    void SetBindingProperties(BindingPropertiesT&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::forward<BindingPropertiesT>(value); }
+    template<typename BindingPropertiesT = ComponentPropertyBindingProperties>
+    ComponentProperty& WithBindingProperties(BindingPropertiesT&& value) { SetBindingProperties(std::forward<BindingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,72 +74,64 @@ namespace Model
      * <p>The information to bind the component property to data at runtime. Use this
      * for collection components.</p>
      */
-    inline const ComponentPropertyBindingProperties& GetCollectionBindingProperties() const{ return m_collectionBindingProperties; }
+    inline const ComponentPropertyBindingProperties& GetCollectionBindingProperties() const { return m_collectionBindingProperties; }
     inline bool CollectionBindingPropertiesHasBeenSet() const { return m_collectionBindingPropertiesHasBeenSet; }
-    inline void SetCollectionBindingProperties(const ComponentPropertyBindingProperties& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = value; }
-    inline void SetCollectionBindingProperties(ComponentPropertyBindingProperties&& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = std::move(value); }
-    inline ComponentProperty& WithCollectionBindingProperties(const ComponentPropertyBindingProperties& value) { SetCollectionBindingProperties(value); return *this;}
-    inline ComponentProperty& WithCollectionBindingProperties(ComponentPropertyBindingProperties&& value) { SetCollectionBindingProperties(std::move(value)); return *this;}
+    template<typename CollectionBindingPropertiesT = ComponentPropertyBindingProperties>
+    void SetCollectionBindingProperties(CollectionBindingPropertiesT&& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = std::forward<CollectionBindingPropertiesT>(value); }
+    template<typename CollectionBindingPropertiesT = ComponentPropertyBindingProperties>
+    ComponentProperty& WithCollectionBindingProperties(CollectionBindingPropertiesT&& value) { SetCollectionBindingProperties(std::forward<CollectionBindingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value to assign to the component property.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline ComponentProperty& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline ComponentProperty& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline ComponentProperty& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    ComponentProperty& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data model to use to assign a value to the component property.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
+    inline const Aws::String& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
-    inline ComponentProperty& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-    inline ComponentProperty& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-    inline ComponentProperty& WithModel(const char* value) { SetModel(value); return *this;}
+    template<typename ModelT = Aws::String>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Aws::String>
+    ComponentProperty& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information to bind the component property to form data.</p>
      */
-    inline const Aws::Map<Aws::String, FormBindingElement>& GetBindings() const{ return m_bindings; }
+    inline const Aws::Map<Aws::String, FormBindingElement>& GetBindings() const { return m_bindings; }
     inline bool BindingsHasBeenSet() const { return m_bindingsHasBeenSet; }
-    inline void SetBindings(const Aws::Map<Aws::String, FormBindingElement>& value) { m_bindingsHasBeenSet = true; m_bindings = value; }
-    inline void SetBindings(Aws::Map<Aws::String, FormBindingElement>&& value) { m_bindingsHasBeenSet = true; m_bindings = std::move(value); }
-    inline ComponentProperty& WithBindings(const Aws::Map<Aws::String, FormBindingElement>& value) { SetBindings(value); return *this;}
-    inline ComponentProperty& WithBindings(Aws::Map<Aws::String, FormBindingElement>&& value) { SetBindings(std::move(value)); return *this;}
-    inline ComponentProperty& AddBindings(const Aws::String& key, const FormBindingElement& value) { m_bindingsHasBeenSet = true; m_bindings.emplace(key, value); return *this; }
-    inline ComponentProperty& AddBindings(Aws::String&& key, const FormBindingElement& value) { m_bindingsHasBeenSet = true; m_bindings.emplace(std::move(key), value); return *this; }
-    inline ComponentProperty& AddBindings(const Aws::String& key, FormBindingElement&& value) { m_bindingsHasBeenSet = true; m_bindings.emplace(key, std::move(value)); return *this; }
-    inline ComponentProperty& AddBindings(Aws::String&& key, FormBindingElement&& value) { m_bindingsHasBeenSet = true; m_bindings.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentProperty& AddBindings(const char* key, FormBindingElement&& value) { m_bindingsHasBeenSet = true; m_bindings.emplace(key, std::move(value)); return *this; }
-    inline ComponentProperty& AddBindings(const char* key, const FormBindingElement& value) { m_bindingsHasBeenSet = true; m_bindings.emplace(key, value); return *this; }
+    template<typename BindingsT = Aws::Map<Aws::String, FormBindingElement>>
+    void SetBindings(BindingsT&& value) { m_bindingsHasBeenSet = true; m_bindings = std::forward<BindingsT>(value); }
+    template<typename BindingsT = Aws::Map<Aws::String, FormBindingElement>>
+    ComponentProperty& WithBindings(BindingsT&& value) { SetBindings(std::forward<BindingsT>(value)); return *this;}
+    template<typename BindingsKeyT = Aws::String, typename BindingsValueT = FormBindingElement>
+    ComponentProperty& AddBindings(BindingsKeyT&& key, BindingsValueT&& value) {
+      m_bindingsHasBeenSet = true; m_bindings.emplace(std::forward<BindingsKeyT>(key), std::forward<BindingsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline const Aws::String& GetEvent() const{ return m_event; }
+    inline const Aws::String& GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
-    inline ComponentProperty& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
-    inline ComponentProperty& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
-    inline ComponentProperty& WithEvent(const char* value) { SetEvent(value); return *this;}
+    template<typename EventT = Aws::String>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = Aws::String>
+    ComponentProperty& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +139,12 @@ namespace Model
      * <p>An authenticated user attribute to use to assign a value to the component
      * property.</p>
      */
-    inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
+    inline const Aws::String& GetUserAttribute() const { return m_userAttribute; }
     inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
-    inline void SetUserAttribute(const Aws::String& value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
-    inline void SetUserAttribute(Aws::String&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::move(value); }
-    inline void SetUserAttribute(const char* value) { m_userAttributeHasBeenSet = true; m_userAttribute.assign(value); }
-    inline ComponentProperty& WithUserAttribute(const Aws::String& value) { SetUserAttribute(value); return *this;}
-    inline ComponentProperty& WithUserAttribute(Aws::String&& value) { SetUserAttribute(std::move(value)); return *this;}
-    inline ComponentProperty& WithUserAttribute(const char* value) { SetUserAttribute(value); return *this;}
+    template<typename UserAttributeT = Aws::String>
+    void SetUserAttribute(UserAttributeT&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::forward<UserAttributeT>(value); }
+    template<typename UserAttributeT = Aws::String>
+    ComponentProperty& WithUserAttribute(UserAttributeT&& value) { SetUserAttribute(std::forward<UserAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +152,14 @@ namespace Model
      * <p>A list of component properties to concatenate to create the value to assign
      * to this component property.</p>
      */
-    inline const Aws::Vector<ComponentProperty>& GetConcat() const{ return m_concat; }
+    inline const Aws::Vector<ComponentProperty>& GetConcat() const { return m_concat; }
     inline bool ConcatHasBeenSet() const { return m_concatHasBeenSet; }
-    inline void SetConcat(const Aws::Vector<ComponentProperty>& value) { m_concatHasBeenSet = true; m_concat = value; }
-    inline void SetConcat(Aws::Vector<ComponentProperty>&& value) { m_concatHasBeenSet = true; m_concat = std::move(value); }
-    inline ComponentProperty& WithConcat(const Aws::Vector<ComponentProperty>& value) { SetConcat(value); return *this;}
-    inline ComponentProperty& WithConcat(Aws::Vector<ComponentProperty>&& value) { SetConcat(std::move(value)); return *this;}
-    inline ComponentProperty& AddConcat(const ComponentProperty& value) { m_concatHasBeenSet = true; m_concat.push_back(value); return *this; }
-    inline ComponentProperty& AddConcat(ComponentProperty&& value) { m_concatHasBeenSet = true; m_concat.push_back(std::move(value)); return *this; }
+    template<typename ConcatT = Aws::Vector<ComponentProperty>>
+    void SetConcat(ConcatT&& value) { m_concatHasBeenSet = true; m_concat = std::forward<ConcatT>(value); }
+    template<typename ConcatT = Aws::Vector<ComponentProperty>>
+    ComponentProperty& WithConcat(ConcatT&& value) { SetConcat(std::forward<ConcatT>(value)); return *this;}
+    template<typename ConcatT = ComponentProperty>
+    ComponentProperty& AddConcat(ConcatT&& value) { m_concatHasBeenSet = true; m_concat.emplace_back(std::forward<ConcatT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,12 +167,17 @@ namespace Model
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API const ComponentConditionProperty& GetCondition() const;
-    AWS_AMPLIFYUIBUILDER_API bool ConditionHasBeenSet() const;
-    AWS_AMPLIFYUIBUILDER_API void SetCondition(const ComponentConditionProperty& value);
-    AWS_AMPLIFYUIBUILDER_API void SetCondition(ComponentConditionProperty&& value);
-    AWS_AMPLIFYUIBUILDER_API ComponentProperty& WithCondition(const ComponentConditionProperty& value);
-    AWS_AMPLIFYUIBUILDER_API ComponentProperty& WithCondition(ComponentConditionProperty&& value);
+    inline const ComponentConditionProperty& GetCondition() const{
+      return *m_condition;
+    }
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
+    template<typename ConditionT = ComponentConditionProperty>
+    void SetCondition(ConditionT&& value) {
+      m_conditionHasBeenSet = true; 
+      m_condition = Aws::MakeShared<ComponentConditionProperty>("ComponentProperty", std::forward<ConditionT>(value));
+    }
+    template<typename ConditionT = ComponentConditionProperty>
+    ComponentProperty& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,7 +185,7 @@ namespace Model
      * <p>Specifies whether the user configured the property in Amplify Studio after
      * importing it.</p>
      */
-    inline bool GetConfigured() const{ return m_configured; }
+    inline bool GetConfigured() const { return m_configured; }
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
     inline ComponentProperty& WithConfigured(bool value) { SetConfigured(value); return *this;}
@@ -202,14 +195,12 @@ namespace Model
     /**
      * <p>The component type.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ComponentProperty& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ComponentProperty& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ComponentProperty& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ComponentProperty& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,42 +208,36 @@ namespace Model
      * <p>The default value assigned to the property when the component is imported
      * into an app.</p>
      */
-    inline const Aws::String& GetImportedValue() const{ return m_importedValue; }
+    inline const Aws::String& GetImportedValue() const { return m_importedValue; }
     inline bool ImportedValueHasBeenSet() const { return m_importedValueHasBeenSet; }
-    inline void SetImportedValue(const Aws::String& value) { m_importedValueHasBeenSet = true; m_importedValue = value; }
-    inline void SetImportedValue(Aws::String&& value) { m_importedValueHasBeenSet = true; m_importedValue = std::move(value); }
-    inline void SetImportedValue(const char* value) { m_importedValueHasBeenSet = true; m_importedValue.assign(value); }
-    inline ComponentProperty& WithImportedValue(const Aws::String& value) { SetImportedValue(value); return *this;}
-    inline ComponentProperty& WithImportedValue(Aws::String&& value) { SetImportedValue(std::move(value)); return *this;}
-    inline ComponentProperty& WithImportedValue(const char* value) { SetImportedValue(value); return *this;}
+    template<typename ImportedValueT = Aws::String>
+    void SetImportedValue(ImportedValueT&& value) { m_importedValueHasBeenSet = true; m_importedValue = std::forward<ImportedValueT>(value); }
+    template<typename ImportedValueT = Aws::String>
+    ComponentProperty& WithImportedValue(ImportedValueT&& value) { SetImportedValue(std::forward<ImportedValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component that is affected by an event.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline ComponentProperty& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline ComponentProperty& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline ComponentProperty& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    ComponentProperty& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component's property that is affected by an event.</p>
      */
-    inline const Aws::String& GetProperty() const{ return m_property; }
+    inline const Aws::String& GetProperty() const { return m_property; }
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-    inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
-    inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-    inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
-    inline ComponentProperty& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
-    inline ComponentProperty& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
-    inline ComponentProperty& WithProperty(const char* value) { SetProperty(value); return *this;}
+    template<typename PropertyT = Aws::String>
+    void SetProperty(PropertyT&& value) { m_propertyHasBeenSet = true; m_property = std::forward<PropertyT>(value); }
+    template<typename PropertyT = Aws::String>
+    ComponentProperty& WithProperty(PropertyT&& value) { SetProperty(std::forward<PropertyT>(value)); return *this;}
     ///@}
   private:
 
@@ -286,7 +271,7 @@ namespace Model
     std::shared_ptr<ComponentConditionProperty> m_condition;
     bool m_conditionHasBeenSet = false;
 
-    bool m_configured;
+    bool m_configured{false};
     bool m_configuredHasBeenSet = false;
 
     Aws::String m_type;

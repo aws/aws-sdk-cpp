@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PostUnionWithJsonNameResult::PostUnionWithJsonNameResult()
-{
-}
-
 PostUnionWithJsonNameResult::PostUnionWithJsonNameResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PostUnionWithJsonNameResult& PostUnionWithJsonNameResult::operator =(const Aws::
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
+    m_valueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

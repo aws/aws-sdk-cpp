@@ -22,7 +22,7 @@ namespace Model
   class DeactivateTypeRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DeactivateTypeRequest();
+    AWS_CLOUDFORMATION_API DeactivateTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>Conditional: You must specify either <code>Arn</code>, or
      * <code>TypeName</code> and <code>Type</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline DeactivateTypeRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline DeactivateTypeRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline DeactivateTypeRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    DeactivateTypeRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>The extension type.</p> <p>Conditional: You must specify either
      * <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
      */
-    inline const ThirdPartyType& GetType() const{ return m_type; }
+    inline ThirdPartyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ThirdPartyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ThirdPartyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DeactivateTypeRequest& WithType(const ThirdPartyType& value) { SetType(value); return *this;}
-    inline DeactivateTypeRequest& WithType(ThirdPartyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ThirdPartyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DeactivateTypeRequest& WithType(ThirdPartyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +69,19 @@ namespace Model
      * Region.</p> <p>Conditional: You must specify either <code>Arn</code>, or
      * <code>TypeName</code> and <code>Type</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DeactivateTypeRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeactivateTypeRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeactivateTypeRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeactivateTypeRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet = false;
 
-    ThirdPartyType m_type;
+    ThirdPartyType m_type{ThirdPartyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_arn;

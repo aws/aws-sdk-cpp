@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoClientAuthenticationDetails() : 
-    m_saslHasBeenSet(false),
-    m_unauthenticatedHasBeenSet(false),
-    m_tlsHasBeenSet(false)
-{
-}
-
 AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoClientAuthenticationDetails(JsonView jsonValue)
-  : AwsMskClusterClusterInfoClientAuthenticationDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsMskClusterClusterInfoClientAuthenticationDetails& AwsMskClusterClusterInfoCli
   if(jsonValue.ValueExists("Sasl"))
   {
     m_sasl = jsonValue.GetObject("Sasl");
-
     m_saslHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unauthenticated"))
   {
     m_unauthenticated = jsonValue.GetObject("Unauthenticated");
-
     m_unauthenticatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tls"))
   {
     m_tls = jsonValue.GetObject("Tls");
-
     m_tlsHasBeenSet = true;
   }
-
   return *this;
 }
 

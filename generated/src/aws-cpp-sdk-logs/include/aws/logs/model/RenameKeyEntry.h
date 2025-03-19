@@ -33,7 +33,7 @@ namespace Model
   class RenameKeyEntry
   {
   public:
-    AWS_CLOUDWATCHLOGS_API RenameKeyEntry();
+    AWS_CLOUDWATCHLOGS_API RenameKeyEntry() = default;
     AWS_CLOUDWATCHLOGS_API RenameKeyEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API RenameKeyEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The key to rename</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline RenameKeyEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline RenameKeyEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline RenameKeyEntry& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    RenameKeyEntry& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The string to use for the new key name</p>
      */
-    inline const Aws::String& GetRenameTo() const{ return m_renameTo; }
+    inline const Aws::String& GetRenameTo() const { return m_renameTo; }
     inline bool RenameToHasBeenSet() const { return m_renameToHasBeenSet; }
-    inline void SetRenameTo(const Aws::String& value) { m_renameToHasBeenSet = true; m_renameTo = value; }
-    inline void SetRenameTo(Aws::String&& value) { m_renameToHasBeenSet = true; m_renameTo = std::move(value); }
-    inline void SetRenameTo(const char* value) { m_renameToHasBeenSet = true; m_renameTo.assign(value); }
-    inline RenameKeyEntry& WithRenameTo(const Aws::String& value) { SetRenameTo(value); return *this;}
-    inline RenameKeyEntry& WithRenameTo(Aws::String&& value) { SetRenameTo(std::move(value)); return *this;}
-    inline RenameKeyEntry& WithRenameTo(const char* value) { SetRenameTo(value); return *this;}
+    template<typename RenameToT = Aws::String>
+    void SetRenameTo(RenameToT&& value) { m_renameToHasBeenSet = true; m_renameTo = std::forward<RenameToT>(value); }
+    template<typename RenameToT = Aws::String>
+    RenameKeyEntry& WithRenameTo(RenameToT&& value) { SetRenameTo(std::forward<RenameToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>Specifies whether to overwrite the existing value if the destination key
      * already exists. The default is <code>false</code> </p>
      */
-    inline bool GetOverwriteIfExists() const{ return m_overwriteIfExists; }
+    inline bool GetOverwriteIfExists() const { return m_overwriteIfExists; }
     inline bool OverwriteIfExistsHasBeenSet() const { return m_overwriteIfExistsHasBeenSet; }
     inline void SetOverwriteIfExists(bool value) { m_overwriteIfExistsHasBeenSet = true; m_overwriteIfExists = value; }
     inline RenameKeyEntry& WithOverwriteIfExists(bool value) { SetOverwriteIfExists(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_renameTo;
     bool m_renameToHasBeenSet = false;
 
-    bool m_overwriteIfExists;
+    bool m_overwriteIfExists{false};
     bool m_overwriteIfExistsHasBeenSet = false;
   };
 

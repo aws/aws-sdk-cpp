@@ -28,7 +28,7 @@ namespace Model
   class VerifyMacResult
   {
   public:
-    AWS_KMS_API VerifyMacResult();
+    AWS_KMS_API VerifyMacResult() = default;
     AWS_KMS_API VerifyMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API VerifyMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The HMAC KMS key used in the verification.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline VerifyMacResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline VerifyMacResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline VerifyMacResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    VerifyMacResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,8 +54,8 @@ namespace Model
      * <code>KMSInvalidMacException</code> exception. This exception indicates that one
      * or more of the inputs changed since the HMAC was computed.</p>
      */
-    inline bool GetMacValid() const{ return m_macValid; }
-    inline void SetMacValid(bool value) { m_macValid = value; }
+    inline bool GetMacValid() const { return m_macValid; }
+    inline void SetMacValid(bool value) { m_macValidHasBeenSet = true; m_macValid = value; }
     inline VerifyMacResult& WithMacValid(bool value) { SetMacValid(value); return *this;}
     ///@}
 
@@ -65,32 +63,32 @@ namespace Model
     /**
      * <p>The MAC algorithm used in the verification.</p>
      */
-    inline const MacAlgorithmSpec& GetMacAlgorithm() const{ return m_macAlgorithm; }
-    inline void SetMacAlgorithm(const MacAlgorithmSpec& value) { m_macAlgorithm = value; }
-    inline void SetMacAlgorithm(MacAlgorithmSpec&& value) { m_macAlgorithm = std::move(value); }
-    inline VerifyMacResult& WithMacAlgorithm(const MacAlgorithmSpec& value) { SetMacAlgorithm(value); return *this;}
-    inline VerifyMacResult& WithMacAlgorithm(MacAlgorithmSpec&& value) { SetMacAlgorithm(std::move(value)); return *this;}
+    inline MacAlgorithmSpec GetMacAlgorithm() const { return m_macAlgorithm; }
+    inline void SetMacAlgorithm(MacAlgorithmSpec value) { m_macAlgorithmHasBeenSet = true; m_macAlgorithm = value; }
+    inline VerifyMacResult& WithMacAlgorithm(MacAlgorithmSpec value) { SetMacAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline VerifyMacResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline VerifyMacResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline VerifyMacResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    VerifyMacResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    bool m_macValid;
+    bool m_macValid{false};
+    bool m_macValidHasBeenSet = false;
 
-    MacAlgorithmSpec m_macAlgorithm;
+    MacAlgorithmSpec m_macAlgorithm{MacAlgorithmSpec::NOT_SET};
+    bool m_macAlgorithmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

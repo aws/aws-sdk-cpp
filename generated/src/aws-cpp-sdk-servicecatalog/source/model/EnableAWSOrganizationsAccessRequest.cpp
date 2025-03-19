@@ -12,10 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableAWSOrganizationsAccessRequest::EnableAWSOrganizationsAccessRequest()
-{
-}
-
 Aws::String EnableAWSOrganizationsAccessRequest::SerializePayload() const
 {
   return "{}";

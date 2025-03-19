@@ -12,20 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterApplicationRequest::RegisterApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationType(ApplicationType::NOT_SET),
-    m_applicationTypeHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_sapInstanceNumberHasBeenSet(false),
-    m_sidHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_databaseArnHasBeenSet(false),
-    m_componentsInfoHasBeenSet(false)
-{
-}
-
 Aws::String RegisterApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

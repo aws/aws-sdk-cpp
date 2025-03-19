@@ -18,26 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-ApiCache::ApiCache() : 
-    m_ttl(0),
-    m_ttlHasBeenSet(false),
-    m_apiCachingBehavior(ApiCachingBehavior::NOT_SET),
-    m_apiCachingBehaviorHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false),
-    m_type(ApiCacheType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ApiCacheStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_healthMetricsConfig(CacheHealthMetricsConfig::NOT_SET),
-    m_healthMetricsConfigHasBeenSet(false)
-{
-}
-
 ApiCache::ApiCache(JsonView jsonValue)
-  : ApiCache()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ ApiCache& ApiCache::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ttl"))
   {
     m_ttl = jsonValue.GetInt64("ttl");
-
     m_ttlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiCachingBehavior"))
   {
     m_apiCachingBehavior = ApiCachingBehaviorMapper::GetApiCachingBehaviorForName(jsonValue.GetString("apiCachingBehavior"));
-
     m_apiCachingBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transitEncryptionEnabled"))
   {
     m_transitEncryptionEnabled = jsonValue.GetBool("transitEncryptionEnabled");
-
     m_transitEncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("atRestEncryptionEnabled"))
   {
     m_atRestEncryptionEnabled = jsonValue.GetBool("atRestEncryptionEnabled");
-
     m_atRestEncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ApiCacheTypeMapper::GetApiCacheTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ApiCacheStatusMapper::GetApiCacheStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthMetricsConfig"))
   {
     m_healthMetricsConfig = CacheHealthMetricsConfigMapper::GetCacheHealthMetricsConfigForName(jsonValue.GetString("healthMetricsConfig"));
-
     m_healthMetricsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

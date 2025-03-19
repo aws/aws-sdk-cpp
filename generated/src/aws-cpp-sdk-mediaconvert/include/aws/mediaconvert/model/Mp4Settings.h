@@ -38,7 +38,7 @@ namespace Model
   class Mp4Settings
   {
   public:
-    AWS_MEDIACONVERT_API Mp4Settings();
+    AWS_MEDIACONVERT_API Mp4Settings() = default;
     AWS_MEDIACONVERT_API Mp4Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Mp4Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * to the end of the file. When you keep the default value, any minor discrepancies
      * between audio and video duration will depend on your output audio codec.
      */
-    inline const CmfcAudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+    inline CmfcAudioDuration GetAudioDuration() const { return m_audioDuration; }
     inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
-    inline void SetAudioDuration(const CmfcAudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
-    inline void SetAudioDuration(CmfcAudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
-    inline Mp4Settings& WithAudioDuration(const CmfcAudioDuration& value) { SetAudioDuration(value); return *this;}
-    inline Mp4Settings& WithAudioDuration(CmfcAudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
+    inline void SetAudioDuration(CmfcAudioDuration value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+    inline Mp4Settings& WithAudioDuration(CmfcAudioDuration value) { SetAudioDuration(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,10 @@ namespace Model
      * 'cslg' (composition shift least greatest) box will be included per 14496-1
      * amendment 1. This improves compatibility with Apple players and tools.
      */
-    inline const Mp4CslgAtom& GetCslgAtom() const{ return m_cslgAtom; }
+    inline Mp4CslgAtom GetCslgAtom() const { return m_cslgAtom; }
     inline bool CslgAtomHasBeenSet() const { return m_cslgAtomHasBeenSet; }
-    inline void SetCslgAtom(const Mp4CslgAtom& value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = value; }
-    inline void SetCslgAtom(Mp4CslgAtom&& value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = std::move(value); }
-    inline Mp4Settings& WithCslgAtom(const Mp4CslgAtom& value) { SetCslgAtom(value); return *this;}
-    inline Mp4Settings& WithCslgAtom(Mp4CslgAtom&& value) { SetCslgAtom(std::move(value)); return *this;}
+    inline void SetCslgAtom(Mp4CslgAtom value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = value; }
+    inline Mp4Settings& WithCslgAtom(Mp4CslgAtom value) { SetCslgAtom(value); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * to set your CTTS box version to 0. This can provide backward compatibility for
      * some players and packagers.
      */
-    inline int GetCttsVersion() const{ return m_cttsVersion; }
+    inline int GetCttsVersion() const { return m_cttsVersion; }
     inline bool CttsVersionHasBeenSet() const { return m_cttsVersionHasBeenSet; }
     inline void SetCttsVersion(int value) { m_cttsVersionHasBeenSet = true; m_cttsVersion = value; }
     inline Mp4Settings& WithCttsVersion(int value) { SetCttsVersion(value); return *this;}
@@ -101,12 +97,10 @@ namespace Model
     /**
      * Inserts a free-space box immediately after the moov box.
      */
-    inline const Mp4FreeSpaceBox& GetFreeSpaceBox() const{ return m_freeSpaceBox; }
+    inline Mp4FreeSpaceBox GetFreeSpaceBox() const { return m_freeSpaceBox; }
     inline bool FreeSpaceBoxHasBeenSet() const { return m_freeSpaceBoxHasBeenSet; }
-    inline void SetFreeSpaceBox(const Mp4FreeSpaceBox& value) { m_freeSpaceBoxHasBeenSet = true; m_freeSpaceBox = value; }
-    inline void SetFreeSpaceBox(Mp4FreeSpaceBox&& value) { m_freeSpaceBoxHasBeenSet = true; m_freeSpaceBox = std::move(value); }
-    inline Mp4Settings& WithFreeSpaceBox(const Mp4FreeSpaceBox& value) { SetFreeSpaceBox(value); return *this;}
-    inline Mp4Settings& WithFreeSpaceBox(Mp4FreeSpaceBox&& value) { SetFreeSpaceBox(std::move(value)); return *this;}
+    inline void SetFreeSpaceBox(Mp4FreeSpaceBox value) { m_freeSpaceBoxHasBeenSet = true; m_freeSpaceBox = value; }
+    inline Mp4Settings& WithFreeSpaceBox(Mp4FreeSpaceBox value) { SetFreeSpaceBox(value); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +109,10 @@ namespace Model
      * progressive downloading: Leave blank or choose Progressive download. To place
      * the MOOV at the end of your output: Choose Normal.
      */
-    inline const Mp4MoovPlacement& GetMoovPlacement() const{ return m_moovPlacement; }
+    inline Mp4MoovPlacement GetMoovPlacement() const { return m_moovPlacement; }
     inline bool MoovPlacementHasBeenSet() const { return m_moovPlacementHasBeenSet; }
-    inline void SetMoovPlacement(const Mp4MoovPlacement& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = value; }
-    inline void SetMoovPlacement(Mp4MoovPlacement&& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = std::move(value); }
-    inline Mp4Settings& WithMoovPlacement(const Mp4MoovPlacement& value) { SetMoovPlacement(value); return *this;}
-    inline Mp4Settings& WithMoovPlacement(Mp4MoovPlacement&& value) { SetMoovPlacement(std::move(value)); return *this;}
+    inline void SetMoovPlacement(Mp4MoovPlacement value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = value; }
+    inline Mp4Settings& WithMoovPlacement(Mp4MoovPlacement value) { SetMoovPlacement(value); return *this;}
     ///@}
 
     ///@{
@@ -128,30 +120,28 @@ namespace Model
      * Overrides the "Major Brand" field in the output file. Usually not necessary to
      * specify.
      */
-    inline const Aws::String& GetMp4MajorBrand() const{ return m_mp4MajorBrand; }
+    inline const Aws::String& GetMp4MajorBrand() const { return m_mp4MajorBrand; }
     inline bool Mp4MajorBrandHasBeenSet() const { return m_mp4MajorBrandHasBeenSet; }
-    inline void SetMp4MajorBrand(const Aws::String& value) { m_mp4MajorBrandHasBeenSet = true; m_mp4MajorBrand = value; }
-    inline void SetMp4MajorBrand(Aws::String&& value) { m_mp4MajorBrandHasBeenSet = true; m_mp4MajorBrand = std::move(value); }
-    inline void SetMp4MajorBrand(const char* value) { m_mp4MajorBrandHasBeenSet = true; m_mp4MajorBrand.assign(value); }
-    inline Mp4Settings& WithMp4MajorBrand(const Aws::String& value) { SetMp4MajorBrand(value); return *this;}
-    inline Mp4Settings& WithMp4MajorBrand(Aws::String&& value) { SetMp4MajorBrand(std::move(value)); return *this;}
-    inline Mp4Settings& WithMp4MajorBrand(const char* value) { SetMp4MajorBrand(value); return *this;}
+    template<typename Mp4MajorBrandT = Aws::String>
+    void SetMp4MajorBrand(Mp4MajorBrandT&& value) { m_mp4MajorBrandHasBeenSet = true; m_mp4MajorBrand = std::forward<Mp4MajorBrandT>(value); }
+    template<typename Mp4MajorBrandT = Aws::String>
+    Mp4Settings& WithMp4MajorBrand(Mp4MajorBrandT&& value) { SetMp4MajorBrand(std::forward<Mp4MajorBrandT>(value)); return *this;}
     ///@}
   private:
 
-    CmfcAudioDuration m_audioDuration;
+    CmfcAudioDuration m_audioDuration{CmfcAudioDuration::NOT_SET};
     bool m_audioDurationHasBeenSet = false;
 
-    Mp4CslgAtom m_cslgAtom;
+    Mp4CslgAtom m_cslgAtom{Mp4CslgAtom::NOT_SET};
     bool m_cslgAtomHasBeenSet = false;
 
-    int m_cttsVersion;
+    int m_cttsVersion{0};
     bool m_cttsVersionHasBeenSet = false;
 
-    Mp4FreeSpaceBox m_freeSpaceBox;
+    Mp4FreeSpaceBox m_freeSpaceBox{Mp4FreeSpaceBox::NOT_SET};
     bool m_freeSpaceBoxHasBeenSet = false;
 
-    Mp4MoovPlacement m_moovPlacement;
+    Mp4MoovPlacement m_moovPlacement{Mp4MoovPlacement::NOT_SET};
     bool m_moovPlacementHasBeenSet = false;
 
     Aws::String m_mp4MajorBrand;

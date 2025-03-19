@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-DataProtectionConfig::DataProtectionConfig() : 
-    m_dataProtectionsHasBeenSet(false)
-{
-}
-
 DataProtectionConfig::DataProtectionConfig(JsonView jsonValue)
-  : DataProtectionConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DataProtectionConfig& DataProtectionConfig::operator =(JsonView jsonValue)
     }
     m_dataProtectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

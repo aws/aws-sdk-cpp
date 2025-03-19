@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAddonConfigurationRequest::DescribeAddonConfigurationRequest() : 
-    m_addonNameHasBeenSet(false),
-    m_addonVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddonConfigurationRequest::SerializePayload() const
 {
   return {};

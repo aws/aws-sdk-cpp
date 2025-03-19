@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetBucketVersioningRequest::GetBucketVersioningRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false)
-{
-}
 
 Aws::String GetBucketVersioningRequest::SerializePayload() const
 {

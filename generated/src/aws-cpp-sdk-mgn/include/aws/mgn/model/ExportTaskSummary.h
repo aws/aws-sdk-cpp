@@ -29,7 +29,7 @@ namespace Model
   class ExportTaskSummary
   {
   public:
-    AWS_MGN_API ExportTaskSummary();
+    AWS_MGN_API ExportTaskSummary() = default;
     AWS_MGN_API ExportTaskSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ExportTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Export task summary applications count.</p>
      */
-    inline long long GetApplicationsCount() const{ return m_applicationsCount; }
+    inline long long GetApplicationsCount() const { return m_applicationsCount; }
     inline bool ApplicationsCountHasBeenSet() const { return m_applicationsCountHasBeenSet; }
     inline void SetApplicationsCount(long long value) { m_applicationsCountHasBeenSet = true; m_applicationsCount = value; }
     inline ExportTaskSummary& WithApplicationsCount(long long value) { SetApplicationsCount(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Export task summary servers count.</p>
      */
-    inline long long GetServersCount() const{ return m_serversCount; }
+    inline long long GetServersCount() const { return m_serversCount; }
     inline bool ServersCountHasBeenSet() const { return m_serversCountHasBeenSet; }
     inline void SetServersCount(long long value) { m_serversCountHasBeenSet = true; m_serversCount = value; }
     inline ExportTaskSummary& WithServersCount(long long value) { SetServersCount(value); return *this;}
@@ -59,20 +59,20 @@ namespace Model
     /**
      * <p>Export task summary waves count.</p>
      */
-    inline long long GetWavesCount() const{ return m_wavesCount; }
+    inline long long GetWavesCount() const { return m_wavesCount; }
     inline bool WavesCountHasBeenSet() const { return m_wavesCountHasBeenSet; }
     inline void SetWavesCount(long long value) { m_wavesCountHasBeenSet = true; m_wavesCount = value; }
     inline ExportTaskSummary& WithWavesCount(long long value) { SetWavesCount(value); return *this;}
     ///@}
   private:
 
-    long long m_applicationsCount;
+    long long m_applicationsCount{0};
     bool m_applicationsCountHasBeenSet = false;
 
-    long long m_serversCount;
+    long long m_serversCount{0};
     bool m_serversCountHasBeenSet = false;
 
-    long long m_wavesCount;
+    long long m_wavesCount{0};
     bool m_wavesCountHasBeenSet = false;
   };
 

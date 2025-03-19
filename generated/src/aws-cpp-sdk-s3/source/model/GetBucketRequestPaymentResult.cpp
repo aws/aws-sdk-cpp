@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketRequestPaymentResult::GetBucketRequestPaymentResult() : 
-    m_payer(Payer::NOT_SET)
-{
-}
-
 GetBucketRequestPaymentResult::GetBucketRequestPaymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetBucketRequestPaymentResult()
 {
   *this = result;
 }
@@ -37,7 +31,8 @@ GetBucketRequestPaymentResult& GetBucketRequestPaymentResult::operator =(const A
     XmlNode payerNode = resultNode.FirstChild("Payer");
     if(!payerNode.IsNull())
     {
-      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerNode.GetText()).c_str()).c_str());
+      m_payer = PayerMapper::GetPayerForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerNode.GetText()).c_str()));
+      m_payerHasBeenSet = true;
     }
   }
 
@@ -46,6 +41,7 @@ GetBucketRequestPaymentResult& GetBucketRequestPaymentResult::operator =(const A
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

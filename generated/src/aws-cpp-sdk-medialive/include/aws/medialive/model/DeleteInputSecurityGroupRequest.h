@@ -25,7 +25,7 @@ namespace Model
   class DeleteInputSecurityGroupRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API DeleteInputSecurityGroupRequest();
+    AWS_MEDIALIVE_API DeleteInputSecurityGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * The Input Security Group to delete
      */
-    inline const Aws::String& GetInputSecurityGroupId() const{ return m_inputSecurityGroupId; }
+    inline const Aws::String& GetInputSecurityGroupId() const { return m_inputSecurityGroupId; }
     inline bool InputSecurityGroupIdHasBeenSet() const { return m_inputSecurityGroupIdHasBeenSet; }
-    inline void SetInputSecurityGroupId(const Aws::String& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = value; }
-    inline void SetInputSecurityGroupId(Aws::String&& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = std::move(value); }
-    inline void SetInputSecurityGroupId(const char* value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId.assign(value); }
-    inline DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(const Aws::String& value) { SetInputSecurityGroupId(value); return *this;}
-    inline DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(Aws::String&& value) { SetInputSecurityGroupId(std::move(value)); return *this;}
-    inline DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(const char* value) { SetInputSecurityGroupId(value); return *this;}
+    template<typename InputSecurityGroupIdT = Aws::String>
+    void SetInputSecurityGroupId(InputSecurityGroupIdT&& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = std::forward<InputSecurityGroupIdT>(value); }
+    template<typename InputSecurityGroupIdT = Aws::String>
+    DeleteInputSecurityGroupRequest& WithInputSecurityGroupId(InputSecurityGroupIdT&& value) { SetInputSecurityGroupId(std::forward<InputSecurityGroupIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-AssessmentReportEvidenceError::AssessmentReportEvidenceError() : 
-    m_evidenceIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 AssessmentReportEvidenceError::AssessmentReportEvidenceError(JsonView jsonValue)
-  : AssessmentReportEvidenceError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssessmentReportEvidenceError& AssessmentReportEvidenceError::operator =(JsonVie
   if(jsonValue.ValueExists("evidenceId"))
   {
     m_evidenceId = jsonValue.GetString("evidenceId");
-
     m_evidenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

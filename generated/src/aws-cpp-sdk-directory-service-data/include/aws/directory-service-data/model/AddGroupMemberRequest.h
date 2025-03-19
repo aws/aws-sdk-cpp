@@ -26,7 +26,7 @@ namespace Model
   class AddGroupMemberRequest : public DirectoryServiceDataRequest
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API AddGroupMemberRequest();
+    AWS_DIRECTORYSERVICEDATA_API AddGroupMemberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,42 +52,36 @@ namespace Model
      * <code>ConflictException</code>. </p>  <p> This parameter is optional when
      * using the CLI or SDK. </p> 
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline AddGroupMemberRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline AddGroupMemberRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline AddGroupMemberRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    AddGroupMemberRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier (ID) of the directory that's associated with the group. </p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline AddGroupMemberRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline AddGroupMemberRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline AddGroupMemberRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    AddGroupMemberRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the group. </p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AddGroupMemberRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AddGroupMemberRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AddGroupMemberRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AddGroupMemberRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p> The <code>SAMAccountName</code> of the user, group, or computer to add as a
      * group member. </p>
      */
-    inline const Aws::String& GetMemberName() const{ return m_memberName; }
+    inline const Aws::String& GetMemberName() const { return m_memberName; }
     inline bool MemberNameHasBeenSet() const { return m_memberNameHasBeenSet; }
-    inline void SetMemberName(const Aws::String& value) { m_memberNameHasBeenSet = true; m_memberName = value; }
-    inline void SetMemberName(Aws::String&& value) { m_memberNameHasBeenSet = true; m_memberName = std::move(value); }
-    inline void SetMemberName(const char* value) { m_memberNameHasBeenSet = true; m_memberName.assign(value); }
-    inline AddGroupMemberRequest& WithMemberName(const Aws::String& value) { SetMemberName(value); return *this;}
-    inline AddGroupMemberRequest& WithMemberName(Aws::String&& value) { SetMemberName(std::move(value)); return *this;}
-    inline AddGroupMemberRequest& WithMemberName(const char* value) { SetMemberName(value); return *this;}
+    template<typename MemberNameT = Aws::String>
+    void SetMemberName(MemberNameT&& value) { m_memberNameHasBeenSet = true; m_memberName = std::forward<MemberNameT>(value); }
+    template<typename MemberNameT = Aws::String>
+    AddGroupMemberRequest& WithMemberName(MemberNameT&& value) { SetMemberName(std::forward<MemberNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,12 @@ namespace Model
      * to the Managed Microsoft AD domain. </p>  <p> This parameter is case
      * insensitive. </p> 
      */
-    inline const Aws::String& GetMemberRealm() const{ return m_memberRealm; }
+    inline const Aws::String& GetMemberRealm() const { return m_memberRealm; }
     inline bool MemberRealmHasBeenSet() const { return m_memberRealmHasBeenSet; }
-    inline void SetMemberRealm(const Aws::String& value) { m_memberRealmHasBeenSet = true; m_memberRealm = value; }
-    inline void SetMemberRealm(Aws::String&& value) { m_memberRealmHasBeenSet = true; m_memberRealm = std::move(value); }
-    inline void SetMemberRealm(const char* value) { m_memberRealmHasBeenSet = true; m_memberRealm.assign(value); }
-    inline AddGroupMemberRequest& WithMemberRealm(const Aws::String& value) { SetMemberRealm(value); return *this;}
-    inline AddGroupMemberRequest& WithMemberRealm(Aws::String&& value) { SetMemberRealm(std::move(value)); return *this;}
-    inline AddGroupMemberRequest& WithMemberRealm(const char* value) { SetMemberRealm(value); return *this;}
+    template<typename MemberRealmT = Aws::String>
+    void SetMemberRealm(MemberRealmT&& value) { m_memberRealmHasBeenSet = true; m_memberRealm = std::forward<MemberRealmT>(value); }
+    template<typename MemberRealmT = Aws::String>
+    AddGroupMemberRequest& WithMemberRealm(MemberRealmT&& value) { SetMemberRealm(std::forward<MemberRealmT>(value)); return *this;}
     ///@}
   private:
 

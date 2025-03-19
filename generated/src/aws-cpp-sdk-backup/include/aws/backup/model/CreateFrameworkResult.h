@@ -27,7 +27,7 @@ namespace Model
   class CreateFrameworkResult
   {
   public:
-    AWS_BACKUP_API CreateFrameworkResult();
+    AWS_BACKUP_API CreateFrameworkResult() = default;
     AWS_BACKUP_API CreateFrameworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API CreateFrameworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * characters, starting with a letter, and consisting of letters (a-z, A-Z),
      * numbers (0-9), and underscores (_).</p>
      */
-    inline const Aws::String& GetFrameworkName() const{ return m_frameworkName; }
-    inline void SetFrameworkName(const Aws::String& value) { m_frameworkName = value; }
-    inline void SetFrameworkName(Aws::String&& value) { m_frameworkName = std::move(value); }
-    inline void SetFrameworkName(const char* value) { m_frameworkName.assign(value); }
-    inline CreateFrameworkResult& WithFrameworkName(const Aws::String& value) { SetFrameworkName(value); return *this;}
-    inline CreateFrameworkResult& WithFrameworkName(Aws::String&& value) { SetFrameworkName(std::move(value)); return *this;}
-    inline CreateFrameworkResult& WithFrameworkName(const char* value) { SetFrameworkName(value); return *this;}
+    inline const Aws::String& GetFrameworkName() const { return m_frameworkName; }
+    template<typename FrameworkNameT = Aws::String>
+    void SetFrameworkName(FrameworkNameT&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::forward<FrameworkNameT>(value); }
+    template<typename FrameworkNameT = Aws::String>
+    CreateFrameworkResult& WithFrameworkName(FrameworkNameT&& value) { SetFrameworkName(std::forward<FrameworkNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
      * of the ARN depends on the resource type.</p>
      */
-    inline const Aws::String& GetFrameworkArn() const{ return m_frameworkArn; }
-    inline void SetFrameworkArn(const Aws::String& value) { m_frameworkArn = value; }
-    inline void SetFrameworkArn(Aws::String&& value) { m_frameworkArn = std::move(value); }
-    inline void SetFrameworkArn(const char* value) { m_frameworkArn.assign(value); }
-    inline CreateFrameworkResult& WithFrameworkArn(const Aws::String& value) { SetFrameworkArn(value); return *this;}
-    inline CreateFrameworkResult& WithFrameworkArn(Aws::String&& value) { SetFrameworkArn(std::move(value)); return *this;}
-    inline CreateFrameworkResult& WithFrameworkArn(const char* value) { SetFrameworkArn(value); return *this;}
+    inline const Aws::String& GetFrameworkArn() const { return m_frameworkArn; }
+    template<typename FrameworkArnT = Aws::String>
+    void SetFrameworkArn(FrameworkArnT&& value) { m_frameworkArnHasBeenSet = true; m_frameworkArn = std::forward<FrameworkArnT>(value); }
+    template<typename FrameworkArnT = Aws::String>
+    CreateFrameworkResult& WithFrameworkArn(FrameworkArnT&& value) { SetFrameworkArn(std::forward<FrameworkArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFrameworkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFrameworkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFrameworkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFrameworkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_frameworkName;
+    bool m_frameworkNameHasBeenSet = false;
 
     Aws::String m_frameworkArn;
+    bool m_frameworkArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

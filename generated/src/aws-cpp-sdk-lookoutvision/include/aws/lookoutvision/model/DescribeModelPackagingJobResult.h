@@ -28,7 +28,7 @@ namespace Model
   class DescribeModelPackagingJobResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult();
+    AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult() = default;
     AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of the model packaging job. </p>
      */
-    inline const ModelPackagingDescription& GetModelPackagingDescription() const{ return m_modelPackagingDescription; }
-    inline void SetModelPackagingDescription(const ModelPackagingDescription& value) { m_modelPackagingDescription = value; }
-    inline void SetModelPackagingDescription(ModelPackagingDescription&& value) { m_modelPackagingDescription = std::move(value); }
-    inline DescribeModelPackagingJobResult& WithModelPackagingDescription(const ModelPackagingDescription& value) { SetModelPackagingDescription(value); return *this;}
-    inline DescribeModelPackagingJobResult& WithModelPackagingDescription(ModelPackagingDescription&& value) { SetModelPackagingDescription(std::move(value)); return *this;}
+    inline const ModelPackagingDescription& GetModelPackagingDescription() const { return m_modelPackagingDescription; }
+    template<typename ModelPackagingDescriptionT = ModelPackagingDescription>
+    void SetModelPackagingDescription(ModelPackagingDescriptionT&& value) { m_modelPackagingDescriptionHasBeenSet = true; m_modelPackagingDescription = std::forward<ModelPackagingDescriptionT>(value); }
+    template<typename ModelPackagingDescriptionT = ModelPackagingDescription>
+    DescribeModelPackagingJobResult& WithModelPackagingDescription(ModelPackagingDescriptionT&& value) { SetModelPackagingDescription(std::forward<ModelPackagingDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeModelPackagingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeModelPackagingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeModelPackagingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeModelPackagingJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ModelPackagingDescription m_modelPackagingDescription;
+    bool m_modelPackagingDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

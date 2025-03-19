@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateUserProficienciesRequest::AssociateUserProficienciesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userProficienciesHasBeenSet(false)
-{
-}
-
 Aws::String AssociateUserProficienciesRequest::SerializePayload() const
 {
   JsonValue payload;

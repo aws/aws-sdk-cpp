@@ -18,14 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateDataHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateData"))
   {
     m_certificateData = jsonValue.GetString("certificateData");
-
     m_certificateDataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -42,7 +42,7 @@ namespace Model
   class BlueGreenDeployment
   {
   public:
-    AWS_RDS_API BlueGreenDeployment();
+    AWS_RDS_API BlueGreenDeployment() = default;
     AWS_RDS_API BlueGreenDeployment(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API BlueGreenDeployment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,28 +54,24 @@ namespace Model
     /**
      * <p>The unique identifier of the blue/green deployment.</p>
      */
-    inline const Aws::String& GetBlueGreenDeploymentIdentifier() const{ return m_blueGreenDeploymentIdentifier; }
+    inline const Aws::String& GetBlueGreenDeploymentIdentifier() const { return m_blueGreenDeploymentIdentifier; }
     inline bool BlueGreenDeploymentIdentifierHasBeenSet() const { return m_blueGreenDeploymentIdentifierHasBeenSet; }
-    inline void SetBlueGreenDeploymentIdentifier(const Aws::String& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = value; }
-    inline void SetBlueGreenDeploymentIdentifier(Aws::String&& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = std::move(value); }
-    inline void SetBlueGreenDeploymentIdentifier(const char* value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier.assign(value); }
-    inline BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(const Aws::String& value) { SetBlueGreenDeploymentIdentifier(value); return *this;}
-    inline BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(Aws::String&& value) { SetBlueGreenDeploymentIdentifier(std::move(value)); return *this;}
-    inline BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(const char* value) { SetBlueGreenDeploymentIdentifier(value); return *this;}
+    template<typename BlueGreenDeploymentIdentifierT = Aws::String>
+    void SetBlueGreenDeploymentIdentifier(BlueGreenDeploymentIdentifierT&& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = std::forward<BlueGreenDeploymentIdentifierT>(value); }
+    template<typename BlueGreenDeploymentIdentifierT = Aws::String>
+    BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(BlueGreenDeploymentIdentifierT&& value) { SetBlueGreenDeploymentIdentifier(std::forward<BlueGreenDeploymentIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user-supplied name of the blue/green deployment.</p>
      */
-    inline const Aws::String& GetBlueGreenDeploymentName() const{ return m_blueGreenDeploymentName; }
+    inline const Aws::String& GetBlueGreenDeploymentName() const { return m_blueGreenDeploymentName; }
     inline bool BlueGreenDeploymentNameHasBeenSet() const { return m_blueGreenDeploymentNameHasBeenSet; }
-    inline void SetBlueGreenDeploymentName(const Aws::String& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = value; }
-    inline void SetBlueGreenDeploymentName(Aws::String&& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = std::move(value); }
-    inline void SetBlueGreenDeploymentName(const char* value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName.assign(value); }
-    inline BlueGreenDeployment& WithBlueGreenDeploymentName(const Aws::String& value) { SetBlueGreenDeploymentName(value); return *this;}
-    inline BlueGreenDeployment& WithBlueGreenDeploymentName(Aws::String&& value) { SetBlueGreenDeploymentName(std::move(value)); return *this;}
-    inline BlueGreenDeployment& WithBlueGreenDeploymentName(const char* value) { SetBlueGreenDeploymentName(value); return *this;}
+    template<typename BlueGreenDeploymentNameT = Aws::String>
+    void SetBlueGreenDeploymentName(BlueGreenDeploymentNameT&& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = std::forward<BlueGreenDeploymentNameT>(value); }
+    template<typename BlueGreenDeploymentNameT = Aws::String>
+    BlueGreenDeployment& WithBlueGreenDeploymentName(BlueGreenDeploymentNameT&& value) { SetBlueGreenDeploymentName(std::forward<BlueGreenDeploymentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <p>The source database for the blue/green deployment.</p> <p>Before switchover,
      * the source database is the production database in the blue environment.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline BlueGreenDeployment& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline BlueGreenDeployment& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline BlueGreenDeployment& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    BlueGreenDeployment& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * <p>The target database for the blue/green deployment.</p> <p>Before switchover,
      * the target database is the clone database in the green environment.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline BlueGreenDeployment& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline BlueGreenDeployment& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline BlueGreenDeployment& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    BlueGreenDeployment& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,14 @@ namespace Model
      * <p>The details about each source and target resource in the blue/green
      * deployment.</p>
      */
-    inline const Aws::Vector<SwitchoverDetail>& GetSwitchoverDetails() const{ return m_switchoverDetails; }
+    inline const Aws::Vector<SwitchoverDetail>& GetSwitchoverDetails() const { return m_switchoverDetails; }
     inline bool SwitchoverDetailsHasBeenSet() const { return m_switchoverDetailsHasBeenSet; }
-    inline void SetSwitchoverDetails(const Aws::Vector<SwitchoverDetail>& value) { m_switchoverDetailsHasBeenSet = true; m_switchoverDetails = value; }
-    inline void SetSwitchoverDetails(Aws::Vector<SwitchoverDetail>&& value) { m_switchoverDetailsHasBeenSet = true; m_switchoverDetails = std::move(value); }
-    inline BlueGreenDeployment& WithSwitchoverDetails(const Aws::Vector<SwitchoverDetail>& value) { SetSwitchoverDetails(value); return *this;}
-    inline BlueGreenDeployment& WithSwitchoverDetails(Aws::Vector<SwitchoverDetail>&& value) { SetSwitchoverDetails(std::move(value)); return *this;}
-    inline BlueGreenDeployment& AddSwitchoverDetails(const SwitchoverDetail& value) { m_switchoverDetailsHasBeenSet = true; m_switchoverDetails.push_back(value); return *this; }
-    inline BlueGreenDeployment& AddSwitchoverDetails(SwitchoverDetail&& value) { m_switchoverDetailsHasBeenSet = true; m_switchoverDetails.push_back(std::move(value)); return *this; }
+    template<typename SwitchoverDetailsT = Aws::Vector<SwitchoverDetail>>
+    void SetSwitchoverDetails(SwitchoverDetailsT&& value) { m_switchoverDetailsHasBeenSet = true; m_switchoverDetails = std::forward<SwitchoverDetailsT>(value); }
+    template<typename SwitchoverDetailsT = Aws::Vector<SwitchoverDetail>>
+    BlueGreenDeployment& WithSwitchoverDetails(SwitchoverDetailsT&& value) { SetSwitchoverDetails(std::forward<SwitchoverDetailsT>(value)); return *this;}
+    template<typename SwitchoverDetailsT = SwitchoverDetail>
+    BlueGreenDeployment& AddSwitchoverDetails(SwitchoverDetailsT&& value) { m_switchoverDetailsHasBeenSet = true; m_switchoverDetails.emplace_back(std::forward<SwitchoverDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -128,14 +120,14 @@ namespace Model
      * <p>Either tasks to be performed or tasks that have been completed on the target
      * database before switchover.</p>
      */
-    inline const Aws::Vector<BlueGreenDeploymentTask>& GetTasks() const{ return m_tasks; }
+    inline const Aws::Vector<BlueGreenDeploymentTask>& GetTasks() const { return m_tasks; }
     inline bool TasksHasBeenSet() const { return m_tasksHasBeenSet; }
-    inline void SetTasks(const Aws::Vector<BlueGreenDeploymentTask>& value) { m_tasksHasBeenSet = true; m_tasks = value; }
-    inline void SetTasks(Aws::Vector<BlueGreenDeploymentTask>&& value) { m_tasksHasBeenSet = true; m_tasks = std::move(value); }
-    inline BlueGreenDeployment& WithTasks(const Aws::Vector<BlueGreenDeploymentTask>& value) { SetTasks(value); return *this;}
-    inline BlueGreenDeployment& WithTasks(Aws::Vector<BlueGreenDeploymentTask>&& value) { SetTasks(std::move(value)); return *this;}
-    inline BlueGreenDeployment& AddTasks(const BlueGreenDeploymentTask& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
-    inline BlueGreenDeployment& AddTasks(BlueGreenDeploymentTask&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(std::move(value)); return *this; }
+    template<typename TasksT = Aws::Vector<BlueGreenDeploymentTask>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<BlueGreenDeploymentTask>>
+    BlueGreenDeployment& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = BlueGreenDeploymentTask>
+    BlueGreenDeployment& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -153,28 +145,24 @@ namespace Model
      * <li> <p> <code>DELETING</code> - The blue/green deployment is being deleted.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline BlueGreenDeployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline BlueGreenDeployment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline BlueGreenDeployment& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    BlueGreenDeployment& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the status of the blue/green deployment.</p>
      */
-    inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
+    inline const Aws::String& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
-    inline BlueGreenDeployment& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
-    inline BlueGreenDeployment& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline BlueGreenDeployment& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
+    template<typename StatusDetailsT = Aws::String>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::String>
+    BlueGreenDeployment& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +170,12 @@ namespace Model
      * <p>The time when the blue/green deployment was created, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline BlueGreenDeployment& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline BlueGreenDeployment& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    BlueGreenDeployment& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,24 +183,24 @@ namespace Model
      * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
      * Time (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetDeleteTime() const{ return m_deleteTime; }
+    inline const Aws::Utils::DateTime& GetDeleteTime() const { return m_deleteTime; }
     inline bool DeleteTimeHasBeenSet() const { return m_deleteTimeHasBeenSet; }
-    inline void SetDeleteTime(const Aws::Utils::DateTime& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
-    inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = std::move(value); }
-    inline BlueGreenDeployment& WithDeleteTime(const Aws::Utils::DateTime& value) { SetDeleteTime(value); return *this;}
-    inline BlueGreenDeployment& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(std::move(value)); return *this;}
+    template<typename DeleteTimeT = Aws::Utils::DateTime>
+    void SetDeleteTime(DeleteTimeT&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = std::forward<DeleteTimeT>(value); }
+    template<typename DeleteTimeT = Aws::Utils::DateTime>
+    BlueGreenDeployment& WithDeleteTime(DeleteTimeT&& value) { SetDeleteTime(std::forward<DeleteTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline BlueGreenDeployment& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline BlueGreenDeployment& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline BlueGreenDeployment& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline BlueGreenDeployment& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    BlueGreenDeployment& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    BlueGreenDeployment& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
   private:
 
@@ -240,10 +228,10 @@ namespace Model
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deleteTime;
+    Aws::Utils::DateTime m_deleteTime{};
     bool m_deleteTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;

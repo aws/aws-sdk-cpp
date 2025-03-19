@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ParameterRanges::ParameterRanges() : 
-    m_integerParameterRangesHasBeenSet(false),
-    m_continuousParameterRangesHasBeenSet(false),
-    m_categoricalParameterRangesHasBeenSet(false),
-    m_autoParametersHasBeenSet(false)
-{
-}
-
 ParameterRanges::ParameterRanges(JsonView jsonValue)
-  : ParameterRanges()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_integerParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContinuousParameterRanges"))
   {
     Aws::Utils::Array<JsonView> continuousParameterRangesJsonList = jsonValue.GetArray("ContinuousParameterRanges");
@@ -53,7 +43,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_continuousParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoricalParameterRanges"))
   {
     Aws::Utils::Array<JsonView> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
@@ -63,7 +52,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_categoricalParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoParameters"))
   {
     Aws::Utils::Array<JsonView> autoParametersJsonList = jsonValue.GetArray("AutoParameters");
@@ -73,7 +61,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_autoParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

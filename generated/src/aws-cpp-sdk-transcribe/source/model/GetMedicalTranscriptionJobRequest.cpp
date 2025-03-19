@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMedicalTranscriptionJobRequest::GetMedicalTranscriptionJobRequest() : 
-    m_medicalTranscriptionJobNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMedicalTranscriptionJobRequest::SerializePayload() const
 {
   JsonValue payload;

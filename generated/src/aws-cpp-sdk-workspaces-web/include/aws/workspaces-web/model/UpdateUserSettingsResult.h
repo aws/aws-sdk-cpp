@@ -28,7 +28,7 @@ namespace Model
   class UpdateUserSettingsResult
   {
   public:
-    AWS_WORKSPACESWEB_API UpdateUserSettingsResult();
+    AWS_WORKSPACESWEB_API UpdateUserSettingsResult() = default;
     AWS_WORKSPACESWEB_API UpdateUserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API UpdateUserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The user settings.</p>
      */
-    inline const UserSettings& GetUserSettings() const{ return m_userSettings; }
-    inline void SetUserSettings(const UserSettings& value) { m_userSettings = value; }
-    inline void SetUserSettings(UserSettings&& value) { m_userSettings = std::move(value); }
-    inline UpdateUserSettingsResult& WithUserSettings(const UserSettings& value) { SetUserSettings(value); return *this;}
-    inline UpdateUserSettingsResult& WithUserSettings(UserSettings&& value) { SetUserSettings(std::move(value)); return *this;}
+    inline const UserSettings& GetUserSettings() const { return m_userSettings; }
+    template<typename UserSettingsT = UserSettings>
+    void SetUserSettings(UserSettingsT&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::forward<UserSettingsT>(value); }
+    template<typename UserSettingsT = UserSettings>
+    UpdateUserSettingsResult& WithUserSettings(UserSettingsT&& value) { SetUserSettings(std::forward<UserSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateUserSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateUserSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateUserSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateUserSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UserSettings m_userSettings;
+    bool m_userSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

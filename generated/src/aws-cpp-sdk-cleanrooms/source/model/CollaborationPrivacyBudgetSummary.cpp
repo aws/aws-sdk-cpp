@@ -18,23 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-CollaborationPrivacyBudgetSummary::CollaborationPrivacyBudgetSummary() : 
-    m_idHasBeenSet(false),
-    m_privacyBudgetTemplateIdHasBeenSet(false),
-    m_privacyBudgetTemplateArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_type(PrivacyBudgetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_budgetHasBeenSet(false)
-{
-}
-
 CollaborationPrivacyBudgetSummary::CollaborationPrivacyBudgetSummary(JsonView jsonValue)
-  : CollaborationPrivacyBudgetSummary()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ CollaborationPrivacyBudgetSummary& CollaborationPrivacyBudgetSummary::operator =
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privacyBudgetTemplateId"))
   {
     m_privacyBudgetTemplateId = jsonValue.GetString("privacyBudgetTemplateId");
-
     m_privacyBudgetTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privacyBudgetTemplateArn"))
   {
     m_privacyBudgetTemplateArn = jsonValue.GetString("privacyBudgetTemplateArn");
-
     m_privacyBudgetTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationId"))
   {
     m_collaborationId = jsonValue.GetString("collaborationId");
-
     m_collaborationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationArn"))
   {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
-
     m_collaborationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PrivacyBudgetTypeMapper::GetPrivacyBudgetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("budget"))
   {
     m_budget = jsonValue.GetObject("budget");
-
     m_budgetHasBeenSet = true;
   }
-
   return *this;
 }
 

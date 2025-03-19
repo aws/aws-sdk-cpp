@@ -12,36 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRunRequest::StartRunRequest() : 
-    m_workflowIdHasBeenSet(false),
-    m_workflowType(WorkflowType::NOT_SET),
-    m_workflowTypeHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_cacheIdHasBeenSet(false),
-    m_cacheBehavior(CacheBehavior::NOT_SET),
-    m_cacheBehaviorHasBeenSet(false),
-    m_runGroupIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_outputUriHasBeenSet(false),
-    m_logLevel(RunLogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_retentionMode(RunRetentionMode::NOT_SET),
-    m_retentionModeHasBeenSet(false),
-    m_storageType(StorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_workflowOwnerIdHasBeenSet(false)
-{
-}
-
 Aws::String StartRunRequest::SerializePayload() const
 {
   JsonValue payload;

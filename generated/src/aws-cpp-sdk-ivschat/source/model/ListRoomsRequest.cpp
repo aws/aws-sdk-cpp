@@ -12,16 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRoomsRequest::ListRoomsRequest() : 
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_messageReviewHandlerUriHasBeenSet(false),
-    m_loggingConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListRoomsRequest::SerializePayload() const
 {
   JsonValue payload;

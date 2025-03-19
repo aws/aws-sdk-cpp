@@ -37,7 +37,7 @@ namespace Model
   class UpdateTableRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API UpdateTableRequest();
+    AWS_DYNAMODB_API UpdateTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -61,14 +61,14 @@ namespace Model
      * <code>AttributeDefinitions</code> must include the key element(s) of the new
      * index.</p>
      */
-    inline const Aws::Vector<AttributeDefinition>& GetAttributeDefinitions() const{ return m_attributeDefinitions; }
+    inline const Aws::Vector<AttributeDefinition>& GetAttributeDefinitions() const { return m_attributeDefinitions; }
     inline bool AttributeDefinitionsHasBeenSet() const { return m_attributeDefinitionsHasBeenSet; }
-    inline void SetAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
-    inline void SetAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = std::move(value); }
-    inline UpdateTableRequest& WithAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { SetAttributeDefinitions(value); return *this;}
-    inline UpdateTableRequest& WithAttributeDefinitions(Aws::Vector<AttributeDefinition>&& value) { SetAttributeDefinitions(std::move(value)); return *this;}
-    inline UpdateTableRequest& AddAttributeDefinitions(const AttributeDefinition& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(value); return *this; }
-    inline UpdateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(std::move(value)); return *this; }
+    template<typename AttributeDefinitionsT = Aws::Vector<AttributeDefinition>>
+    void SetAttributeDefinitions(AttributeDefinitionsT&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = std::forward<AttributeDefinitionsT>(value); }
+    template<typename AttributeDefinitionsT = Aws::Vector<AttributeDefinition>>
+    UpdateTableRequest& WithAttributeDefinitions(AttributeDefinitionsT&& value) { SetAttributeDefinitions(std::forward<AttributeDefinitionsT>(value)); return *this;}
+    template<typename AttributeDefinitionsT = AttributeDefinition>
+    UpdateTableRequest& AddAttributeDefinitions(AttributeDefinitionsT&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.emplace_back(std::forward<AttributeDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +76,12 @@ namespace Model
      * <p>The name of the table to be updated. You can also provide the Amazon Resource
      * Name (ARN) of the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline UpdateTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateTableRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,24 +100,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
      * capacity mode</a>. </p> </li> </ul>
      */
-    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+    inline BillingMode GetBillingMode() const { return m_billingMode; }
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
-    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
-    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
-    inline UpdateTableRequest& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
-    inline UpdateTableRequest& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+    inline void SetBillingMode(BillingMode value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+    inline UpdateTableRequest& WithBillingMode(BillingMode value) { SetBillingMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new provisioned throughput settings for the specified table or index.</p>
      */
-    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline UpdateTableRequest& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-    inline UpdateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    UpdateTableRequest& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +131,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
-    inline const Aws::Vector<GlobalSecondaryIndexUpdate>& GetGlobalSecondaryIndexUpdates() const{ return m_globalSecondaryIndexUpdates; }
+    inline const Aws::Vector<GlobalSecondaryIndexUpdate>& GetGlobalSecondaryIndexUpdates() const { return m_globalSecondaryIndexUpdates; }
     inline bool GlobalSecondaryIndexUpdatesHasBeenSet() const { return m_globalSecondaryIndexUpdatesHasBeenSet; }
-    inline void SetGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexUpdate>& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = value; }
-    inline void SetGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = std::move(value); }
-    inline UpdateTableRequest& WithGlobalSecondaryIndexUpdates(const Aws::Vector<GlobalSecondaryIndexUpdate>& value) { SetGlobalSecondaryIndexUpdates(value); return *this;}
-    inline UpdateTableRequest& WithGlobalSecondaryIndexUpdates(Aws::Vector<GlobalSecondaryIndexUpdate>&& value) { SetGlobalSecondaryIndexUpdates(std::move(value)); return *this;}
-    inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(const GlobalSecondaryIndexUpdate& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(value); return *this; }
-    inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(std::move(value)); return *this; }
+    template<typename GlobalSecondaryIndexUpdatesT = Aws::Vector<GlobalSecondaryIndexUpdate>>
+    void SetGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdatesT&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates = std::forward<GlobalSecondaryIndexUpdatesT>(value); }
+    template<typename GlobalSecondaryIndexUpdatesT = Aws::Vector<GlobalSecondaryIndexUpdate>>
+    UpdateTableRequest& WithGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdatesT&& value) { SetGlobalSecondaryIndexUpdates(std::forward<GlobalSecondaryIndexUpdatesT>(value)); return *this;}
+    template<typename GlobalSecondaryIndexUpdatesT = GlobalSecondaryIndexUpdate>
+    UpdateTableRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdatesT&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.emplace_back(std::forward<GlobalSecondaryIndexUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -152,24 +148,24 @@ namespace Model
      * on a table that already has a stream, or if you try to disable a stream on a
      * table that doesn't have a stream.</p> 
      */
-    inline const StreamSpecification& GetStreamSpecification() const{ return m_streamSpecification; }
+    inline const StreamSpecification& GetStreamSpecification() const { return m_streamSpecification; }
     inline bool StreamSpecificationHasBeenSet() const { return m_streamSpecificationHasBeenSet; }
-    inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
-    inline void SetStreamSpecification(StreamSpecification&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = std::move(value); }
-    inline UpdateTableRequest& WithStreamSpecification(const StreamSpecification& value) { SetStreamSpecification(value); return *this;}
-    inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
+    template<typename StreamSpecificationT = StreamSpecification>
+    void SetStreamSpecification(StreamSpecificationT&& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = std::forward<StreamSpecificationT>(value); }
+    template<typename StreamSpecificationT = StreamSpecification>
+    UpdateTableRequest& WithStreamSpecification(StreamSpecificationT&& value) { SetStreamSpecification(std::forward<StreamSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new server-side encryption settings for the specified table.</p>
      */
-    inline const SSESpecification& GetSSESpecification() const{ return m_sSESpecification; }
+    inline const SSESpecification& GetSSESpecification() const { return m_sSESpecification; }
     inline bool SSESpecificationHasBeenSet() const { return m_sSESpecificationHasBeenSet; }
-    inline void SetSSESpecification(const SSESpecification& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = value; }
-    inline void SetSSESpecification(SSESpecification&& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = std::move(value); }
-    inline UpdateTableRequest& WithSSESpecification(const SSESpecification& value) { SetSSESpecification(value); return *this;}
-    inline UpdateTableRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
+    template<typename SSESpecificationT = SSESpecification>
+    void SetSSESpecification(SSESpecificationT&& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = std::forward<SSESpecificationT>(value); }
+    template<typename SSESpecificationT = SSESpecification>
+    UpdateTableRequest& WithSSESpecification(SSESpecificationT&& value) { SetSSESpecification(std::forward<SSESpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +174,14 @@ namespace Model
      * table.</p>  <p>For global tables, this property only applies to global
      * tables using Version 2019.11.21 (Current version). </p> 
      */
-    inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
+    inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const { return m_replicaUpdates; }
     inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
-    inline void SetReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = value; }
-    inline void SetReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::move(value); }
-    inline UpdateTableRequest& WithReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { SetReplicaUpdates(value); return *this;}
-    inline UpdateTableRequest& WithReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { SetReplicaUpdates(std::move(value)); return *this;}
-    inline UpdateTableRequest& AddReplicaUpdates(const ReplicationGroupUpdate& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(value); return *this; }
-    inline UpdateTableRequest& AddReplicaUpdates(ReplicationGroupUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
+    template<typename ReplicaUpdatesT = Aws::Vector<ReplicationGroupUpdate>>
+    void SetReplicaUpdates(ReplicaUpdatesT&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::forward<ReplicaUpdatesT>(value); }
+    template<typename ReplicaUpdatesT = Aws::Vector<ReplicationGroupUpdate>>
+    UpdateTableRequest& WithReplicaUpdates(ReplicaUpdatesT&& value) { SetReplicaUpdates(std::forward<ReplicaUpdatesT>(value)); return *this;}
+    template<typename ReplicaUpdatesT = ReplicationGroupUpdate>
+    UpdateTableRequest& AddReplicaUpdates(ReplicaUpdatesT&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.emplace_back(std::forward<ReplicaUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -193,12 +189,10 @@ namespace Model
      * <p>The table class of the table to be updated. Valid values are
      * <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
      */
-    inline const TableClass& GetTableClass() const{ return m_tableClass; }
+    inline TableClass GetTableClass() const { return m_tableClass; }
     inline bool TableClassHasBeenSet() const { return m_tableClassHasBeenSet; }
-    inline void SetTableClass(const TableClass& value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
-    inline void SetTableClass(TableClass&& value) { m_tableClassHasBeenSet = true; m_tableClass = std::move(value); }
-    inline UpdateTableRequest& WithTableClass(const TableClass& value) { SetTableClass(value); return *this;}
-    inline UpdateTableRequest& WithTableClass(TableClass&& value) { SetTableClass(std::move(value)); return *this;}
+    inline void SetTableClass(TableClass value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
+    inline UpdateTableRequest& WithTableClass(TableClass value) { SetTableClass(value); return *this;}
     ///@}
 
     ///@{
@@ -206,7 +200,7 @@ namespace Model
      * <p>Indicates whether deletion protection is to be enabled (true) or disabled
      * (false) on the table.</p>
      */
-    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
+    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline UpdateTableRequest& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
@@ -231,12 +225,10 @@ namespace Model
      * don't specify this parameter, the global table consistency mode defaults to
      * <code>EVENTUAL</code>.</p>
      */
-    inline const MultiRegionConsistency& GetMultiRegionConsistency() const{ return m_multiRegionConsistency; }
+    inline MultiRegionConsistency GetMultiRegionConsistency() const { return m_multiRegionConsistency; }
     inline bool MultiRegionConsistencyHasBeenSet() const { return m_multiRegionConsistencyHasBeenSet; }
-    inline void SetMultiRegionConsistency(const MultiRegionConsistency& value) { m_multiRegionConsistencyHasBeenSet = true; m_multiRegionConsistency = value; }
-    inline void SetMultiRegionConsistency(MultiRegionConsistency&& value) { m_multiRegionConsistencyHasBeenSet = true; m_multiRegionConsistency = std::move(value); }
-    inline UpdateTableRequest& WithMultiRegionConsistency(const MultiRegionConsistency& value) { SetMultiRegionConsistency(value); return *this;}
-    inline UpdateTableRequest& WithMultiRegionConsistency(MultiRegionConsistency&& value) { SetMultiRegionConsistency(std::move(value)); return *this;}
+    inline void SetMultiRegionConsistency(MultiRegionConsistency value) { m_multiRegionConsistencyHasBeenSet = true; m_multiRegionConsistency = value; }
+    inline UpdateTableRequest& WithMultiRegionConsistency(MultiRegionConsistency value) { SetMultiRegionConsistency(value); return *this;}
     ///@}
 
     ///@{
@@ -246,12 +238,12 @@ namespace Model
      * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
      * both.</p>
      */
-    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+    inline const OnDemandThroughput& GetOnDemandThroughput() const { return m_onDemandThroughput; }
     inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
-    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
-    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
-    inline UpdateTableRequest& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
-    inline UpdateTableRequest& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
+    template<typename OnDemandThroughputT = OnDemandThroughput>
+    void SetOnDemandThroughput(OnDemandThroughputT&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::forward<OnDemandThroughputT>(value); }
+    template<typename OnDemandThroughputT = OnDemandThroughput>
+    UpdateTableRequest& WithOnDemandThroughput(OnDemandThroughputT&& value) { SetOnDemandThroughput(std::forward<OnDemandThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,12 +251,12 @@ namespace Model
      * <p>Represents the warm throughput (in read units per second and write units per
      * second) for updating a table.</p>
      */
-    inline const WarmThroughput& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline const WarmThroughput& GetWarmThroughput() const { return m_warmThroughput; }
     inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
-    inline void SetWarmThroughput(const WarmThroughput& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
-    inline void SetWarmThroughput(WarmThroughput&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
-    inline UpdateTableRequest& WithWarmThroughput(const WarmThroughput& value) { SetWarmThroughput(value); return *this;}
-    inline UpdateTableRequest& WithWarmThroughput(WarmThroughput&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    template<typename WarmThroughputT = WarmThroughput>
+    void SetWarmThroughput(WarmThroughputT&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::forward<WarmThroughputT>(value); }
+    template<typename WarmThroughputT = WarmThroughput>
+    UpdateTableRequest& WithWarmThroughput(WarmThroughputT&& value) { SetWarmThroughput(std::forward<WarmThroughputT>(value)); return *this;}
     ///@}
   private:
 
@@ -274,7 +266,7 @@ namespace Model
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;
 
-    BillingMode m_billingMode;
+    BillingMode m_billingMode{BillingMode::NOT_SET};
     bool m_billingModeHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
@@ -292,13 +284,13 @@ namespace Model
     Aws::Vector<ReplicationGroupUpdate> m_replicaUpdates;
     bool m_replicaUpdatesHasBeenSet = false;
 
-    TableClass m_tableClass;
+    TableClass m_tableClass{TableClass::NOT_SET};
     bool m_tableClassHasBeenSet = false;
 
-    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
 
-    MultiRegionConsistency m_multiRegionConsistency;
+    MultiRegionConsistency m_multiRegionConsistency{MultiRegionConsistency::NOT_SET};
     bool m_multiRegionConsistencyHasBeenSet = false;
 
     OnDemandThroughput m_onDemandThroughput;

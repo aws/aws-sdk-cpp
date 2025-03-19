@@ -12,10 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableNotificationsAccessForOrganizationRequest::DisableNotificationsAccessForOrganizationRequest()
-{
-}
-
 Aws::String DisableNotificationsAccessForOrganizationRequest::SerializePayload() const
 {
   return {};

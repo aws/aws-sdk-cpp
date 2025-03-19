@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetJobsRequest::BatchGetJobsRequest() : 
-    m_jobNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetJobsRequest::SerializePayload() const
 {
   JsonValue payload;

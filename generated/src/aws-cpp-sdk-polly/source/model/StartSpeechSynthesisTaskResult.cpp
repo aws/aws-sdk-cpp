@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSpeechSynthesisTaskResult::StartSpeechSynthesisTaskResult()
-{
-}
-
 StartSpeechSynthesisTaskResult::StartSpeechSynthesisTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartSpeechSynthesisTaskResult& StartSpeechSynthesisTaskResult::operator =(const
   if(jsonValue.ValueExists("SynthesisTask"))
   {
     m_synthesisTask = jsonValue.GetObject("SynthesisTask");
-
+    m_synthesisTaskHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

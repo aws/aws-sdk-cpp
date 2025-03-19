@@ -27,7 +27,7 @@ namespace Model
   class DeviceEvent
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent();
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>An object representing the device associated with the event.</p>
      */
-    inline const Device& GetDevice() const{ return m_device; }
+    inline const Device& GetDevice() const { return m_device; }
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-    inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
-    inline void SetDevice(Device&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-    inline DeviceEvent& WithDevice(const Device& value) { SetDevice(value); return *this;}
-    inline DeviceEvent& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
+    template<typename DeviceT = Device>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Device>
+    DeviceEvent& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A serialized JSON object representing the device-type specific event.</p>
      */
-    inline const Aws::String& GetStdEvent() const{ return m_stdEvent; }
+    inline const Aws::String& GetStdEvent() const { return m_stdEvent; }
     inline bool StdEventHasBeenSet() const { return m_stdEventHasBeenSet; }
-    inline void SetStdEvent(const Aws::String& value) { m_stdEventHasBeenSet = true; m_stdEvent = value; }
-    inline void SetStdEvent(Aws::String&& value) { m_stdEventHasBeenSet = true; m_stdEvent = std::move(value); }
-    inline void SetStdEvent(const char* value) { m_stdEventHasBeenSet = true; m_stdEvent.assign(value); }
-    inline DeviceEvent& WithStdEvent(const Aws::String& value) { SetStdEvent(value); return *this;}
-    inline DeviceEvent& WithStdEvent(Aws::String&& value) { SetStdEvent(std::move(value)); return *this;}
-    inline DeviceEvent& WithStdEvent(const char* value) { SetStdEvent(value); return *this;}
+    template<typename StdEventT = Aws::String>
+    void SetStdEvent(StdEventT&& value) { m_stdEventHasBeenSet = true; m_stdEvent = std::forward<StdEventT>(value); }
+    template<typename StdEventT = Aws::String>
+    DeviceEvent& WithStdEvent(StdEventT&& value) { SetStdEvent(std::forward<StdEventT>(value)); return *this;}
     ///@}
   private:
 

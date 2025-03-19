@@ -32,7 +32,7 @@ namespace Model
   class MessageAttributeValue
   {
   public:
-    AWS_CHIMESDKMESSAGING_API MessageAttributeValue();
+    AWS_CHIMESDKMESSAGING_API MessageAttributeValue() = default;
     AWS_CHIMESDKMESSAGING_API MessageAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API MessageAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The strings in a message attribute value.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringValues() const{ return m_stringValues; }
+    inline const Aws::Vector<Aws::String>& GetStringValues() const { return m_stringValues; }
     inline bool StringValuesHasBeenSet() const { return m_stringValuesHasBeenSet; }
-    inline void SetStringValues(const Aws::Vector<Aws::String>& value) { m_stringValuesHasBeenSet = true; m_stringValues = value; }
-    inline void SetStringValues(Aws::Vector<Aws::String>&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::move(value); }
-    inline MessageAttributeValue& WithStringValues(const Aws::Vector<Aws::String>& value) { SetStringValues(value); return *this;}
-    inline MessageAttributeValue& WithStringValues(Aws::Vector<Aws::String>&& value) { SetStringValues(std::move(value)); return *this;}
-    inline MessageAttributeValue& AddStringValues(const Aws::String& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-    inline MessageAttributeValue& AddStringValues(Aws::String&& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(std::move(value)); return *this; }
-    inline MessageAttributeValue& AddStringValues(const char* value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    void SetStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::forward<StringValuesT>(value); }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    MessageAttributeValue& WithStringValues(StringValuesT&& value) { SetStringValues(std::forward<StringValuesT>(value)); return *this;}
+    template<typename StringValuesT = Aws::String>
+    MessageAttributeValue& AddStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues.emplace_back(std::forward<StringValuesT>(value)); return *this; }
     ///@}
   private:
 

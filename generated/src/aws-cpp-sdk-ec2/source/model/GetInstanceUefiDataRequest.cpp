@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetInstanceUefiDataRequest::GetInstanceUefiDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceUefiDataRequest::SerializePayload() const
 {
   Aws::StringStream ss;

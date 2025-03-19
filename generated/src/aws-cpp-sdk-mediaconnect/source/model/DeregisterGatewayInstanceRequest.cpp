@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeregisterGatewayInstanceRequest::DeregisterGatewayInstanceRequest() : 
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_gatewayInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterGatewayInstanceRequest::SerializePayload() const
 {
   return {};

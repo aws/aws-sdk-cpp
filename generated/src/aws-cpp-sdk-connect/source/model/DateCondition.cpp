@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-DateCondition::DateCondition() : 
-    m_fieldNameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_comparisonType(DateComparisonType::NOT_SET),
-    m_comparisonTypeHasBeenSet(false)
-{
-}
-
 DateCondition::DateCondition(JsonView jsonValue)
-  : DateCondition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DateCondition& DateCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonType"))
   {
     m_comparisonType = DateComparisonTypeMapper::GetDateComparisonTypeForName(jsonValue.GetString("ComparisonType"));
-
     m_comparisonTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

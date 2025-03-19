@@ -18,19 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteRoundaboutExitStepDetails::RouteRoundaboutExitStepDetails() : 
-    m_intersectionHasBeenSet(false),
-    m_relativeExit(0),
-    m_relativeExitHasBeenSet(false),
-    m_roundaboutAngle(0.0),
-    m_roundaboutAngleHasBeenSet(false),
-    m_steeringDirection(RouteSteeringDirection::NOT_SET),
-    m_steeringDirectionHasBeenSet(false)
-{
-}
-
 RouteRoundaboutExitStepDetails::RouteRoundaboutExitStepDetails(JsonView jsonValue)
-  : RouteRoundaboutExitStepDetails()
 {
   *this = jsonValue;
 }
@@ -46,28 +34,21 @@ RouteRoundaboutExitStepDetails& RouteRoundaboutExitStepDetails::operator =(JsonV
     }
     m_intersectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeExit"))
   {
     m_relativeExit = jsonValue.GetInteger("RelativeExit");
-
     m_relativeExitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoundaboutAngle"))
   {
     m_roundaboutAngle = jsonValue.GetDouble("RoundaboutAngle");
-
     m_roundaboutAngleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SteeringDirection"))
   {
     m_steeringDirection = RouteSteeringDirectionMapper::GetRouteSteeringDirectionForName(jsonValue.GetString("SteeringDirection"));
-
     m_steeringDirectionHasBeenSet = true;
   }
-
   return *this;
 }
 

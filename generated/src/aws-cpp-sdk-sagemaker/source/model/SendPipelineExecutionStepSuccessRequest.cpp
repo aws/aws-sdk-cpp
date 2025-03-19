@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendPipelineExecutionStepSuccessRequest::SendPipelineExecutionStepSuccessRequest() : 
-    m_callbackTokenHasBeenSet(false),
-    m_outputParametersHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String SendPipelineExecutionStepSuccessRequest::SerializePayload() const
 {
   JsonValue payload;

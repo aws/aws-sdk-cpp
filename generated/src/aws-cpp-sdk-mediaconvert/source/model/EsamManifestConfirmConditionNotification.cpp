@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-EsamManifestConfirmConditionNotification::EsamManifestConfirmConditionNotification() : 
-    m_mccXmlHasBeenSet(false)
-{
-}
-
 EsamManifestConfirmConditionNotification::EsamManifestConfirmConditionNotification(JsonView jsonValue)
-  : EsamManifestConfirmConditionNotification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EsamManifestConfirmConditionNotification& EsamManifestConfirmConditionNotificati
   if(jsonValue.ValueExists("mccXml"))
   {
     m_mccXml = jsonValue.GetString("mccXml");
-
     m_mccXmlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class CoverageFilterCondition
   {
   public:
-    AWS_GUARDDUTY_API CoverageFilterCondition();
+    AWS_GUARDDUTY_API CoverageFilterCondition() = default;
     AWS_GUARDDUTY_API CoverageFilterCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CoverageFilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>Represents an equal condition that is applied to a single field while
      * retrieving the coverage details.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEquals() const{ return m_equals; }
+    inline const Aws::Vector<Aws::String>& GetEquals() const { return m_equals; }
     inline bool EqualsHasBeenSet() const { return m_equalsHasBeenSet; }
-    inline void SetEquals(const Aws::Vector<Aws::String>& value) { m_equalsHasBeenSet = true; m_equals = value; }
-    inline void SetEquals(Aws::Vector<Aws::String>&& value) { m_equalsHasBeenSet = true; m_equals = std::move(value); }
-    inline CoverageFilterCondition& WithEquals(const Aws::Vector<Aws::String>& value) { SetEquals(value); return *this;}
-    inline CoverageFilterCondition& WithEquals(Aws::Vector<Aws::String>&& value) { SetEquals(std::move(value)); return *this;}
-    inline CoverageFilterCondition& AddEquals(const Aws::String& value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
-    inline CoverageFilterCondition& AddEquals(Aws::String&& value) { m_equalsHasBeenSet = true; m_equals.push_back(std::move(value)); return *this; }
-    inline CoverageFilterCondition& AddEquals(const char* value) { m_equalsHasBeenSet = true; m_equals.push_back(value); return *this; }
+    template<typename EqualsT = Aws::Vector<Aws::String>>
+    void SetEquals(EqualsT&& value) { m_equalsHasBeenSet = true; m_equals = std::forward<EqualsT>(value); }
+    template<typename EqualsT = Aws::Vector<Aws::String>>
+    CoverageFilterCondition& WithEquals(EqualsT&& value) { SetEquals(std::forward<EqualsT>(value)); return *this;}
+    template<typename EqualsT = Aws::String>
+    CoverageFilterCondition& AddEquals(EqualsT&& value) { m_equalsHasBeenSet = true; m_equals.emplace_back(std::forward<EqualsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>Represents a not equal condition that is applied to a single field while
      * retrieving the coverage details.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotEquals() const{ return m_notEquals; }
+    inline const Aws::Vector<Aws::String>& GetNotEquals() const { return m_notEquals; }
     inline bool NotEqualsHasBeenSet() const { return m_notEqualsHasBeenSet; }
-    inline void SetNotEquals(const Aws::Vector<Aws::String>& value) { m_notEqualsHasBeenSet = true; m_notEquals = value; }
-    inline void SetNotEquals(Aws::Vector<Aws::String>&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::move(value); }
-    inline CoverageFilterCondition& WithNotEquals(const Aws::Vector<Aws::String>& value) { SetNotEquals(value); return *this;}
-    inline CoverageFilterCondition& WithNotEquals(Aws::Vector<Aws::String>&& value) { SetNotEquals(std::move(value)); return *this;}
-    inline CoverageFilterCondition& AddNotEquals(const Aws::String& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
-    inline CoverageFilterCondition& AddNotEquals(Aws::String&& value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(std::move(value)); return *this; }
-    inline CoverageFilterCondition& AddNotEquals(const char* value) { m_notEqualsHasBeenSet = true; m_notEquals.push_back(value); return *this; }
+    template<typename NotEqualsT = Aws::Vector<Aws::String>>
+    void SetNotEquals(NotEqualsT&& value) { m_notEqualsHasBeenSet = true; m_notEquals = std::forward<NotEqualsT>(value); }
+    template<typename NotEqualsT = Aws::Vector<Aws::String>>
+    CoverageFilterCondition& WithNotEquals(NotEqualsT&& value) { SetNotEquals(std::forward<NotEqualsT>(value)); return *this;}
+    template<typename NotEqualsT = Aws::String>
+    CoverageFilterCondition& AddNotEquals(NotEqualsT&& value) { m_notEqualsHasBeenSet = true; m_notEquals.emplace_back(std::forward<NotEqualsT>(value)); return *this; }
     ///@}
   private:
 

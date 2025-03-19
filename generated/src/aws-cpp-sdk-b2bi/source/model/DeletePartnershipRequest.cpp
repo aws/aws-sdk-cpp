@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePartnershipRequest::DeletePartnershipRequest() : 
-    m_partnershipIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePartnershipRequest::SerializePayload() const
 {
   JsonValue payload;

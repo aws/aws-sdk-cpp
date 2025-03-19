@@ -21,7 +21,7 @@ namespace Model
   class GetServiceNetworkVpcAssociationRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API GetServiceNetworkVpcAssociationRequest();
+    AWS_VPCLATTICE_API GetServiceNetworkVpcAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID or ARN of the association.</p>
      */
-    inline const Aws::String& GetServiceNetworkVpcAssociationIdentifier() const{ return m_serviceNetworkVpcAssociationIdentifier; }
+    inline const Aws::String& GetServiceNetworkVpcAssociationIdentifier() const { return m_serviceNetworkVpcAssociationIdentifier; }
     inline bool ServiceNetworkVpcAssociationIdentifierHasBeenSet() const { return m_serviceNetworkVpcAssociationIdentifierHasBeenSet; }
-    inline void SetServiceNetworkVpcAssociationIdentifier(const Aws::String& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = value; }
-    inline void SetServiceNetworkVpcAssociationIdentifier(Aws::String&& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = std::move(value); }
-    inline void SetServiceNetworkVpcAssociationIdentifier(const char* value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier.assign(value); }
-    inline GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(const Aws::String& value) { SetServiceNetworkVpcAssociationIdentifier(value); return *this;}
-    inline GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(Aws::String&& value) { SetServiceNetworkVpcAssociationIdentifier(std::move(value)); return *this;}
-    inline GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(const char* value) { SetServiceNetworkVpcAssociationIdentifier(value); return *this;}
+    template<typename ServiceNetworkVpcAssociationIdentifierT = Aws::String>
+    void SetServiceNetworkVpcAssociationIdentifier(ServiceNetworkVpcAssociationIdentifierT&& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = std::forward<ServiceNetworkVpcAssociationIdentifierT>(value); }
+    template<typename ServiceNetworkVpcAssociationIdentifierT = Aws::String>
+    GetServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(ServiceNetworkVpcAssociationIdentifierT&& value) { SetServiceNetworkVpcAssociationIdentifier(std::forward<ServiceNetworkVpcAssociationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

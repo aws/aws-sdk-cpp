@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-RangedConnectionDetails::RangedConnectionDetails() : 
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_socketAddressHasBeenSet(false)
-{
-}
-
 RangedConnectionDetails::RangedConnectionDetails(JsonView jsonValue)
-  : RangedConnectionDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RangedConnectionDetails& RangedConnectionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mtu"))
   {
     m_mtu = jsonValue.GetInteger("mtu");
-
     m_mtuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("socketAddress"))
   {
     m_socketAddress = jsonValue.GetObject("socketAddress");
-
     m_socketAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

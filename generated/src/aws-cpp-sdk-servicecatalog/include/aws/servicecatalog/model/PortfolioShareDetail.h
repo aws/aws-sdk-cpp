@@ -32,7 +32,7 @@ namespace Model
   class PortfolioShareDetail
   {
   public:
-    AWS_SERVICECATALOG_API PortfolioShareDetail();
+    AWS_SERVICECATALOG_API PortfolioShareDetail() = default;
     AWS_SERVICECATALOG_API PortfolioShareDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API PortfolioShareDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,22 @@ namespace Model
      * <p>4. The organization itself. (This shares with every account in the
      * organization).</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline PortfolioShareDetail& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline PortfolioShareDetail& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline PortfolioShareDetail& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    PortfolioShareDetail& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the portfolio share.</p>
      */
-    inline const DescribePortfolioShareType& GetType() const{ return m_type; }
+    inline DescribePortfolioShareType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DescribePortfolioShareType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DescribePortfolioShareType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PortfolioShareDetail& WithType(const DescribePortfolioShareType& value) { SetType(value); return *this;}
-    inline PortfolioShareDetail& WithType(DescribePortfolioShareType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DescribePortfolioShareType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PortfolioShareDetail& WithType(DescribePortfolioShareType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * If the recipient is in an organization node, the share is automatically
      * imported, and the field is always set to true.</p>
      */
-    inline bool GetAccepted() const{ return m_accepted; }
+    inline bool GetAccepted() const { return m_accepted; }
     inline bool AcceptedHasBeenSet() const { return m_acceptedHasBeenSet; }
     inline void SetAccepted(bool value) { m_acceptedHasBeenSet = true; m_accepted = value; }
     inline PortfolioShareDetail& WithAccepted(bool value) { SetAccepted(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
      * <p>Indicates whether TagOptions sharing is enabled or disabled for the portfolio
      * share.</p>
      */
-    inline bool GetShareTagOptions() const{ return m_shareTagOptions; }
+    inline bool GetShareTagOptions() const { return m_shareTagOptions; }
     inline bool ShareTagOptionsHasBeenSet() const { return m_shareTagOptionsHasBeenSet; }
     inline void SetShareTagOptions(bool value) { m_shareTagOptionsHasBeenSet = true; m_shareTagOptions = value; }
     inline PortfolioShareDetail& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
@@ -96,7 +92,7 @@ namespace Model
      * <p>Indicates if <code>Principal</code> sharing is enabled or disabled for the
      * portfolio share. </p>
      */
-    inline bool GetSharePrincipals() const{ return m_sharePrincipals; }
+    inline bool GetSharePrincipals() const { return m_sharePrincipals; }
     inline bool SharePrincipalsHasBeenSet() const { return m_sharePrincipalsHasBeenSet; }
     inline void SetSharePrincipals(bool value) { m_sharePrincipalsHasBeenSet = true; m_sharePrincipals = value; }
     inline PortfolioShareDetail& WithSharePrincipals(bool value) { SetSharePrincipals(value); return *this;}
@@ -106,16 +102,16 @@ namespace Model
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet = false;
 
-    DescribePortfolioShareType m_type;
+    DescribePortfolioShareType m_type{DescribePortfolioShareType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    bool m_accepted;
+    bool m_accepted{false};
     bool m_acceptedHasBeenSet = false;
 
-    bool m_shareTagOptions;
+    bool m_shareTagOptions{false};
     bool m_shareTagOptionsHasBeenSet = false;
 
-    bool m_sharePrincipals;
+    bool m_sharePrincipals{false};
     bool m_sharePrincipalsHasBeenSet = false;
   };
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeQAppPermissionsRequest::DescribeQAppPermissionsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeQAppPermissionsRequest::SerializePayload() const
 {
   return {};

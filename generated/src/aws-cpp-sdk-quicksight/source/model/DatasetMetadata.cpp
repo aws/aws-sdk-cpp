@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DatasetMetadata::DatasetMetadata() : 
-    m_datasetArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetDescriptionHasBeenSet(false),
-    m_dataAggregationHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_calculatedFieldsHasBeenSet(false),
-    m_namedEntitiesHasBeenSet(false)
-{
-}
-
 DatasetMetadata::DatasetMetadata(JsonView jsonValue)
-  : DatasetMetadata()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetName"))
   {
     m_datasetName = jsonValue.GetString("DatasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetDescription"))
   {
     m_datasetDescription = jsonValue.GetString("DatasetDescription");
-
     m_datasetDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAggregation"))
   {
     m_dataAggregation = jsonValue.GetObject("DataAggregation");
-
     m_dataAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
@@ -75,7 +54,6 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -85,7 +63,6 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedFields"))
   {
     Aws::Utils::Array<JsonView> calculatedFieldsJsonList = jsonValue.GetArray("CalculatedFields");
@@ -95,7 +72,6 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
     }
     m_calculatedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamedEntities"))
   {
     Aws::Utils::Array<JsonView> namedEntitiesJsonList = jsonValue.GetArray("NamedEntities");
@@ -105,7 +81,6 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
     }
     m_namedEntitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

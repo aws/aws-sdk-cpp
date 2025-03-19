@@ -18,20 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-WriteTreatmentResource::WriteTreatmentResource() : 
-    m_customDeliveryConfigurationHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_sizePercent(0),
-    m_sizePercentHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false)
-{
-}
-
 WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue)
-  : WriteTreatmentResource()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ WriteTreatmentResource& WriteTreatmentResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
   {
     m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
-
     m_customDeliveryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageConfiguration"))
   {
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
-
     m_messageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizePercent"))
   {
     m_sizePercent = jsonValue.GetInteger("SizePercent");
-
     m_sizePercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateConfiguration"))
   {
     m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
-
     m_templateConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentDescription"))
   {
     m_treatmentDescription = jsonValue.GetString("TreatmentDescription");
-
     m_treatmentDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentName"))
   {
     m_treatmentName = jsonValue.GetString("TreatmentName");
-
     m_treatmentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

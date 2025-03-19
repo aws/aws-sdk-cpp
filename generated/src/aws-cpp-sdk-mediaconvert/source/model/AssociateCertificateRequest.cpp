@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateCertificateRequest::AssociateCertificateRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

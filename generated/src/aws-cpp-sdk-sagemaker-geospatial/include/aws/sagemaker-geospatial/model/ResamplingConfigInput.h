@@ -35,7 +35,7 @@ namespace Model
   class ResamplingConfigInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API ResamplingConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API ResamplingConfigInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API ResamplingConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API ResamplingConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The name of the algorithm used for resampling.</p>
      */
-    inline const AlgorithmNameResampling& GetAlgorithmName() const{ return m_algorithmName; }
+    inline AlgorithmNameResampling GetAlgorithmName() const { return m_algorithmName; }
     inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
-    inline void SetAlgorithmName(const AlgorithmNameResampling& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
-    inline void SetAlgorithmName(AlgorithmNameResampling&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
-    inline ResamplingConfigInput& WithAlgorithmName(const AlgorithmNameResampling& value) { SetAlgorithmName(value); return *this;}
-    inline ResamplingConfigInput& WithAlgorithmName(AlgorithmNameResampling&& value) { SetAlgorithmName(std::move(value)); return *this;}
+    inline void SetAlgorithmName(AlgorithmNameResampling value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
+    inline ResamplingConfigInput& WithAlgorithmName(AlgorithmNameResampling value) { SetAlgorithmName(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>The structure representing output resolution (in target georeferenced units)
      * of the result of resampling operation.</p>
      */
-    inline const OutputResolutionResamplingInput& GetOutputResolution() const{ return m_outputResolution; }
+    inline const OutputResolutionResamplingInput& GetOutputResolution() const { return m_outputResolution; }
     inline bool OutputResolutionHasBeenSet() const { return m_outputResolutionHasBeenSet; }
-    inline void SetOutputResolution(const OutputResolutionResamplingInput& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = value; }
-    inline void SetOutputResolution(OutputResolutionResamplingInput&& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = std::move(value); }
-    inline ResamplingConfigInput& WithOutputResolution(const OutputResolutionResamplingInput& value) { SetOutputResolution(value); return *this;}
-    inline ResamplingConfigInput& WithOutputResolution(OutputResolutionResamplingInput&& value) { SetOutputResolution(std::move(value)); return *this;}
+    template<typename OutputResolutionT = OutputResolutionResamplingInput>
+    void SetOutputResolution(OutputResolutionT&& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = std::forward<OutputResolutionT>(value); }
+    template<typename OutputResolutionT = OutputResolutionResamplingInput>
+    ResamplingConfigInput& WithOutputResolution(OutputResolutionT&& value) { SetOutputResolution(std::forward<OutputResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,18 @@ namespace Model
      * <p>Bands used in the operation. If no target bands are specified, it uses all
      * bands available in the input.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
+    inline const Aws::Vector<Aws::String>& GetTargetBands() const { return m_targetBands; }
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
-    inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
-    inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
-    inline ResamplingConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
-    inline ResamplingConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
-    inline ResamplingConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
-    inline ResamplingConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
-    inline ResamplingConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
+    template<typename TargetBandsT = Aws::Vector<Aws::String>>
+    void SetTargetBands(TargetBandsT&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::forward<TargetBandsT>(value); }
+    template<typename TargetBandsT = Aws::Vector<Aws::String>>
+    ResamplingConfigInput& WithTargetBands(TargetBandsT&& value) { SetTargetBands(std::forward<TargetBandsT>(value)); return *this;}
+    template<typename TargetBandsT = Aws::String>
+    ResamplingConfigInput& AddTargetBands(TargetBandsT&& value) { m_targetBandsHasBeenSet = true; m_targetBands.emplace_back(std::forward<TargetBandsT>(value)); return *this; }
     ///@}
   private:
 
-    AlgorithmNameResampling m_algorithmName;
+    AlgorithmNameResampling m_algorithmName{AlgorithmNameResampling::NOT_SET};
     bool m_algorithmNameHasBeenSet = false;
 
     OutputResolutionResamplingInput m_outputResolution;

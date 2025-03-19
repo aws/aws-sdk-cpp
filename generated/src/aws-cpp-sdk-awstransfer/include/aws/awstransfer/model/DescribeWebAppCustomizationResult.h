@@ -28,7 +28,7 @@ namespace Model
   class DescribeWebAppCustomizationResult
   {
   public:
-    AWS_TRANSFER_API DescribeWebAppCustomizationResult();
+    AWS_TRANSFER_API DescribeWebAppCustomizationResult() = default;
     AWS_TRANSFER_API DescribeWebAppCustomizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API DescribeWebAppCustomizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returns a structure that contains the details of the web app
      * customizations.</p>
      */
-    inline const DescribedWebAppCustomization& GetWebAppCustomization() const{ return m_webAppCustomization; }
-    inline void SetWebAppCustomization(const DescribedWebAppCustomization& value) { m_webAppCustomization = value; }
-    inline void SetWebAppCustomization(DescribedWebAppCustomization&& value) { m_webAppCustomization = std::move(value); }
-    inline DescribeWebAppCustomizationResult& WithWebAppCustomization(const DescribedWebAppCustomization& value) { SetWebAppCustomization(value); return *this;}
-    inline DescribeWebAppCustomizationResult& WithWebAppCustomization(DescribedWebAppCustomization&& value) { SetWebAppCustomization(std::move(value)); return *this;}
+    inline const DescribedWebAppCustomization& GetWebAppCustomization() const { return m_webAppCustomization; }
+    template<typename WebAppCustomizationT = DescribedWebAppCustomization>
+    void SetWebAppCustomization(WebAppCustomizationT&& value) { m_webAppCustomizationHasBeenSet = true; m_webAppCustomization = std::forward<WebAppCustomizationT>(value); }
+    template<typename WebAppCustomizationT = DescribedWebAppCustomization>
+    DescribeWebAppCustomizationResult& WithWebAppCustomization(WebAppCustomizationT&& value) { SetWebAppCustomization(std::forward<WebAppCustomizationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWebAppCustomizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWebAppCustomizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWebAppCustomizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWebAppCustomizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DescribedWebAppCustomization m_webAppCustomization;
+    bool m_webAppCustomizationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSnapshotCopyConfigurationRequest::UpdateSnapshotCopyConfigurationRequest() : 
-    m_snapshotCopyConfigurationIdHasBeenSet(false),
-    m_snapshotRetentionPeriod(0),
-    m_snapshotRetentionPeriodHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSnapshotCopyConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

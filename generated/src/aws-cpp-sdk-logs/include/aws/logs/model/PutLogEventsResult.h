@@ -29,7 +29,7 @@ namespace Model
   class PutLogEventsResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutLogEventsResult();
+    AWS_CLOUDWATCHLOGS_API PutLogEventsResult() = default;
     AWS_CLOUDWATCHLOGS_API PutLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API PutLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,24 +44,22 @@ namespace Model
      * wait for the response of a previous <code>PutLogEvents</code> action to obtain
      * the <code>nextSequenceToken</code> value.</p> 
      */
-    inline const Aws::String& GetNextSequenceToken() const{ return m_nextSequenceToken; }
-    inline void SetNextSequenceToken(const Aws::String& value) { m_nextSequenceToken = value; }
-    inline void SetNextSequenceToken(Aws::String&& value) { m_nextSequenceToken = std::move(value); }
-    inline void SetNextSequenceToken(const char* value) { m_nextSequenceToken.assign(value); }
-    inline PutLogEventsResult& WithNextSequenceToken(const Aws::String& value) { SetNextSequenceToken(value); return *this;}
-    inline PutLogEventsResult& WithNextSequenceToken(Aws::String&& value) { SetNextSequenceToken(std::move(value)); return *this;}
-    inline PutLogEventsResult& WithNextSequenceToken(const char* value) { SetNextSequenceToken(value); return *this;}
+    inline const Aws::String& GetNextSequenceToken() const { return m_nextSequenceToken; }
+    template<typename NextSequenceTokenT = Aws::String>
+    void SetNextSequenceToken(NextSequenceTokenT&& value) { m_nextSequenceTokenHasBeenSet = true; m_nextSequenceToken = std::forward<NextSequenceTokenT>(value); }
+    template<typename NextSequenceTokenT = Aws::String>
+    PutLogEventsResult& WithNextSequenceToken(NextSequenceTokenT&& value) { SetNextSequenceToken(std::forward<NextSequenceTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rejected events.</p>
      */
-    inline const RejectedLogEventsInfo& GetRejectedLogEventsInfo() const{ return m_rejectedLogEventsInfo; }
-    inline void SetRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { m_rejectedLogEventsInfo = value; }
-    inline void SetRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { m_rejectedLogEventsInfo = std::move(value); }
-    inline PutLogEventsResult& WithRejectedLogEventsInfo(const RejectedLogEventsInfo& value) { SetRejectedLogEventsInfo(value); return *this;}
-    inline PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { SetRejectedLogEventsInfo(std::move(value)); return *this;}
+    inline const RejectedLogEventsInfo& GetRejectedLogEventsInfo() const { return m_rejectedLogEventsInfo; }
+    template<typename RejectedLogEventsInfoT = RejectedLogEventsInfo>
+    void SetRejectedLogEventsInfo(RejectedLogEventsInfoT&& value) { m_rejectedLogEventsInfoHasBeenSet = true; m_rejectedLogEventsInfo = std::forward<RejectedLogEventsInfoT>(value); }
+    template<typename RejectedLogEventsInfoT = RejectedLogEventsInfo>
+    PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfoT&& value) { SetRejectedLogEventsInfo(std::forward<RejectedLogEventsInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,32 +68,34 @@ namespace Model
      * <code>PutLogEvents</code>. Only returned when the entity is rejected.</p> 
      * <p>When the entity is rejected, the events may still be accepted.</p> 
      */
-    inline const RejectedEntityInfo& GetRejectedEntityInfo() const{ return m_rejectedEntityInfo; }
-    inline void SetRejectedEntityInfo(const RejectedEntityInfo& value) { m_rejectedEntityInfo = value; }
-    inline void SetRejectedEntityInfo(RejectedEntityInfo&& value) { m_rejectedEntityInfo = std::move(value); }
-    inline PutLogEventsResult& WithRejectedEntityInfo(const RejectedEntityInfo& value) { SetRejectedEntityInfo(value); return *this;}
-    inline PutLogEventsResult& WithRejectedEntityInfo(RejectedEntityInfo&& value) { SetRejectedEntityInfo(std::move(value)); return *this;}
+    inline const RejectedEntityInfo& GetRejectedEntityInfo() const { return m_rejectedEntityInfo; }
+    template<typename RejectedEntityInfoT = RejectedEntityInfo>
+    void SetRejectedEntityInfo(RejectedEntityInfoT&& value) { m_rejectedEntityInfoHasBeenSet = true; m_rejectedEntityInfo = std::forward<RejectedEntityInfoT>(value); }
+    template<typename RejectedEntityInfoT = RejectedEntityInfo>
+    PutLogEventsResult& WithRejectedEntityInfo(RejectedEntityInfoT&& value) { SetRejectedEntityInfo(std::forward<RejectedEntityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutLogEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutLogEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutLogEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutLogEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextSequenceToken;
+    bool m_nextSequenceTokenHasBeenSet = false;
 
     RejectedLogEventsInfo m_rejectedLogEventsInfo;
+    bool m_rejectedLogEventsInfoHasBeenSet = false;
 
     RejectedEntityInfo m_rejectedEntityInfo;
+    bool m_rejectedEntityInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ReplicationRunStageDetails::ReplicationRunStageDetails() : 
-    m_stageHasBeenSet(false),
-    m_stageProgressHasBeenSet(false)
-{
-}
-
 ReplicationRunStageDetails::ReplicationRunStageDetails(JsonView jsonValue)
-  : ReplicationRunStageDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReplicationRunStageDetails& ReplicationRunStageDetails::operator =(JsonView json
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageProgress"))
   {
     m_stageProgress = jsonValue.GetString("stageProgress");
-
     m_stageProgressHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class AvailConfiguration
   {
   public:
-    AWS_MEDIALIVE_API AvailConfiguration();
+    AWS_MEDIALIVE_API AvailConfiguration() = default;
     AWS_MEDIALIVE_API AvailConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AvailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * Placement Opportunity and Break messages create segment breaks. With ESAM mode,
      * signals are forwarded to an ESAM server for possible update.
      */
-    inline const AvailSettings& GetAvailSettings() const{ return m_availSettings; }
+    inline const AvailSettings& GetAvailSettings() const { return m_availSettings; }
     inline bool AvailSettingsHasBeenSet() const { return m_availSettingsHasBeenSet; }
-    inline void SetAvailSettings(const AvailSettings& value) { m_availSettingsHasBeenSet = true; m_availSettings = value; }
-    inline void SetAvailSettings(AvailSettings&& value) { m_availSettingsHasBeenSet = true; m_availSettings = std::move(value); }
-    inline AvailConfiguration& WithAvailSettings(const AvailSettings& value) { SetAvailSettings(value); return *this;}
-    inline AvailConfiguration& WithAvailSettings(AvailSettings&& value) { SetAvailSettings(std::move(value)); return *this;}
+    template<typename AvailSettingsT = AvailSettings>
+    void SetAvailSettings(AvailSettingsT&& value) { m_availSettingsHasBeenSet = true; m_availSettings = std::forward<AvailSettingsT>(value); }
+    template<typename AvailSettingsT = AvailSettings>
+    AvailConfiguration& WithAvailSettings(AvailSettingsT&& value) { SetAvailSettings(std::forward<AvailSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,19 +68,17 @@ SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output
      * groups that have SCTE 35 passthrough enabled. This is the recommended value,
      * because it reduces unnecessary segment breaks.
      */
-    inline const Scte35SegmentationScope& GetScte35SegmentationScope() const{ return m_scte35SegmentationScope; }
+    inline Scte35SegmentationScope GetScte35SegmentationScope() const { return m_scte35SegmentationScope; }
     inline bool Scte35SegmentationScopeHasBeenSet() const { return m_scte35SegmentationScopeHasBeenSet; }
-    inline void SetScte35SegmentationScope(const Scte35SegmentationScope& value) { m_scte35SegmentationScopeHasBeenSet = true; m_scte35SegmentationScope = value; }
-    inline void SetScte35SegmentationScope(Scte35SegmentationScope&& value) { m_scte35SegmentationScopeHasBeenSet = true; m_scte35SegmentationScope = std::move(value); }
-    inline AvailConfiguration& WithScte35SegmentationScope(const Scte35SegmentationScope& value) { SetScte35SegmentationScope(value); return *this;}
-    inline AvailConfiguration& WithScte35SegmentationScope(Scte35SegmentationScope&& value) { SetScte35SegmentationScope(std::move(value)); return *this;}
+    inline void SetScte35SegmentationScope(Scte35SegmentationScope value) { m_scte35SegmentationScopeHasBeenSet = true; m_scte35SegmentationScope = value; }
+    inline AvailConfiguration& WithScte35SegmentationScope(Scte35SegmentationScope value) { SetScte35SegmentationScope(value); return *this;}
     ///@}
   private:
 
     AvailSettings m_availSettings;
     bool m_availSettingsHasBeenSet = false;
 
-    Scte35SegmentationScope m_scte35SegmentationScope;
+    Scte35SegmentationScope m_scte35SegmentationScope{Scte35SegmentationScope::NOT_SET};
     bool m_scte35SegmentationScopeHasBeenSet = false;
   };
 

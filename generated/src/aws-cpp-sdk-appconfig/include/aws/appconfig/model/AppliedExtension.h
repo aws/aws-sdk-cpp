@@ -33,7 +33,7 @@ namespace Model
   class AppliedExtension
   {
   public:
-    AWS_APPCONFIG_API AppliedExtension();
+    AWS_APPCONFIG_API AppliedExtension() = default;
     AWS_APPCONFIG_API AppliedExtension(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API AppliedExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>The system-generated ID of the extension.</p>
      */
-    inline const Aws::String& GetExtensionId() const{ return m_extensionId; }
+    inline const Aws::String& GetExtensionId() const { return m_extensionId; }
     inline bool ExtensionIdHasBeenSet() const { return m_extensionIdHasBeenSet; }
-    inline void SetExtensionId(const Aws::String& value) { m_extensionIdHasBeenSet = true; m_extensionId = value; }
-    inline void SetExtensionId(Aws::String&& value) { m_extensionIdHasBeenSet = true; m_extensionId = std::move(value); }
-    inline void SetExtensionId(const char* value) { m_extensionIdHasBeenSet = true; m_extensionId.assign(value); }
-    inline AppliedExtension& WithExtensionId(const Aws::String& value) { SetExtensionId(value); return *this;}
-    inline AppliedExtension& WithExtensionId(Aws::String&& value) { SetExtensionId(std::move(value)); return *this;}
-    inline AppliedExtension& WithExtensionId(const char* value) { SetExtensionId(value); return *this;}
+    template<typename ExtensionIdT = Aws::String>
+    void SetExtensionId(ExtensionIdT&& value) { m_extensionIdHasBeenSet = true; m_extensionId = std::forward<ExtensionIdT>(value); }
+    template<typename ExtensionIdT = Aws::String>
+    AppliedExtension& WithExtensionId(ExtensionIdT&& value) { SetExtensionId(std::forward<ExtensionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated ID for the association.</p>
      */
-    inline const Aws::String& GetExtensionAssociationId() const{ return m_extensionAssociationId; }
+    inline const Aws::String& GetExtensionAssociationId() const { return m_extensionAssociationId; }
     inline bool ExtensionAssociationIdHasBeenSet() const { return m_extensionAssociationIdHasBeenSet; }
-    inline void SetExtensionAssociationId(const Aws::String& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = value; }
-    inline void SetExtensionAssociationId(Aws::String&& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = std::move(value); }
-    inline void SetExtensionAssociationId(const char* value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId.assign(value); }
-    inline AppliedExtension& WithExtensionAssociationId(const Aws::String& value) { SetExtensionAssociationId(value); return *this;}
-    inline AppliedExtension& WithExtensionAssociationId(Aws::String&& value) { SetExtensionAssociationId(std::move(value)); return *this;}
-    inline AppliedExtension& WithExtensionAssociationId(const char* value) { SetExtensionAssociationId(value); return *this;}
+    template<typename ExtensionAssociationIdT = Aws::String>
+    void SetExtensionAssociationId(ExtensionAssociationIdT&& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = std::forward<ExtensionAssociationIdT>(value); }
+    template<typename ExtensionAssociationIdT = Aws::String>
+    AppliedExtension& WithExtensionAssociationId(ExtensionAssociationIdT&& value) { SetExtensionAssociationId(std::forward<ExtensionAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The extension version number.</p>
      */
-    inline int GetVersionNumber() const{ return m_versionNumber; }
+    inline int GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline AppliedExtension& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
@@ -81,19 +77,16 @@ namespace Model
     /**
      * <p>One or more parameters for the actions called by the extension.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline AppliedExtension& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline AppliedExtension& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline AppliedExtension& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline AppliedExtension& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline AppliedExtension& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline AppliedExtension& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline AppliedExtension& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline AppliedExtension& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline AppliedExtension& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    AppliedExtension& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    AppliedExtension& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -103,7 +96,7 @@ namespace Model
     Aws::String m_extensionAssociationId;
     bool m_extensionAssociationIdHasBeenSet = false;
 
-    int m_versionNumber;
+    int m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;

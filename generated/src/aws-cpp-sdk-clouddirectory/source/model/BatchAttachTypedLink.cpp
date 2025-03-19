@@ -18,16 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAttachTypedLink::BatchAttachTypedLink() : 
-    m_sourceObjectReferenceHasBeenSet(false),
-    m_targetObjectReferenceHasBeenSet(false),
-    m_typedLinkFacetHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 BatchAttachTypedLink::BatchAttachTypedLink(JsonView jsonValue)
-  : BatchAttachTypedLink()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchAttachTypedLink& BatchAttachTypedLink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceObjectReference"))
   {
     m_sourceObjectReference = jsonValue.GetObject("SourceObjectReference");
-
     m_sourceObjectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetObjectReference"))
   {
     m_targetObjectReference = jsonValue.GetObject("TargetObjectReference");
-
     m_targetObjectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypedLinkFacet"))
   {
     m_typedLinkFacet = jsonValue.GetObject("TypedLinkFacet");
-
     m_typedLinkFacetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -64,7 +49,6 @@ BatchAttachTypedLink& BatchAttachTypedLink::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

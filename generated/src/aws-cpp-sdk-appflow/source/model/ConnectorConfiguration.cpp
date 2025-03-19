@@ -18,46 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ConnectorConfiguration::ConnectorConfiguration() : 
-    m_canUseAsSource(false),
-    m_canUseAsSourceHasBeenSet(false),
-    m_canUseAsDestination(false),
-    m_canUseAsDestinationHasBeenSet(false),
-    m_supportedDestinationConnectorsHasBeenSet(false),
-    m_supportedSchedulingFrequenciesHasBeenSet(false),
-    m_isPrivateLinkEnabled(false),
-    m_isPrivateLinkEnabledHasBeenSet(false),
-    m_isPrivateLinkEndpointUrlRequired(false),
-    m_isPrivateLinkEndpointUrlRequiredHasBeenSet(false),
-    m_supportedTriggerTypesHasBeenSet(false),
-    m_connectorMetadataHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_connectorLabelHasBeenSet(false),
-    m_connectorDescriptionHasBeenSet(false),
-    m_connectorOwnerHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectorVersionHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_connectorModesHasBeenSet(false),
-    m_authenticationConfigHasBeenSet(false),
-    m_connectorRuntimeSettingsHasBeenSet(false),
-    m_supportedApiVersionsHasBeenSet(false),
-    m_supportedOperatorsHasBeenSet(false),
-    m_supportedWriteOperationsHasBeenSet(false),
-    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
-    m_connectorProvisioningTypeHasBeenSet(false),
-    m_connectorProvisioningConfigHasBeenSet(false),
-    m_logoURLHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_supportedDataTransferTypesHasBeenSet(false),
-    m_supportedDataTransferApisHasBeenSet(false)
-{
-}
-
 ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue)
-  : ConnectorConfiguration()
 {
   *this = jsonValue;
 }
@@ -67,17 +28,13 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("canUseAsSource"))
   {
     m_canUseAsSource = jsonValue.GetBool("canUseAsSource");
-
     m_canUseAsSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canUseAsDestination"))
   {
     m_canUseAsDestination = jsonValue.GetBool("canUseAsDestination");
-
     m_canUseAsDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedDestinationConnectors"))
   {
     Aws::Utils::Array<JsonView> supportedDestinationConnectorsJsonList = jsonValue.GetArray("supportedDestinationConnectors");
@@ -87,7 +44,6 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedDestinationConnectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedSchedulingFrequencies"))
   {
     Aws::Utils::Array<JsonView> supportedSchedulingFrequenciesJsonList = jsonValue.GetArray("supportedSchedulingFrequencies");
@@ -97,21 +53,16 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedSchedulingFrequenciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPrivateLinkEnabled"))
   {
     m_isPrivateLinkEnabled = jsonValue.GetBool("isPrivateLinkEnabled");
-
     m_isPrivateLinkEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPrivateLinkEndpointUrlRequired"))
   {
     m_isPrivateLinkEndpointUrlRequired = jsonValue.GetBool("isPrivateLinkEndpointUrlRequired");
-
     m_isPrivateLinkEndpointUrlRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedTriggerTypes"))
   {
     Aws::Utils::Array<JsonView> supportedTriggerTypesJsonList = jsonValue.GetArray("supportedTriggerTypes");
@@ -121,63 +72,46 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedTriggerTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorMetadata"))
   {
     m_connectorMetadata = jsonValue.GetObject("connectorMetadata");
-
     m_connectorMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorType"))
   {
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorLabel"))
   {
     m_connectorLabel = jsonValue.GetString("connectorLabel");
-
     m_connectorLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorDescription"))
   {
     m_connectorDescription = jsonValue.GetString("connectorDescription");
-
     m_connectorDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOwner"))
   {
     m_connectorOwner = jsonValue.GetString("connectorOwner");
-
     m_connectorOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorName"))
   {
     m_connectorName = jsonValue.GetString("connectorName");
-
     m_connectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorVersion"))
   {
     m_connectorVersion = jsonValue.GetString("connectorVersion");
-
     m_connectorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorArn"))
   {
     m_connectorArn = jsonValue.GetString("connectorArn");
-
     m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorModes"))
   {
     Aws::Utils::Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
@@ -187,14 +121,11 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_connectorModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authenticationConfig"))
   {
     m_authenticationConfig = jsonValue.GetObject("authenticationConfig");
-
     m_authenticationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorRuntimeSettings"))
   {
     Aws::Utils::Array<JsonView> connectorRuntimeSettingsJsonList = jsonValue.GetArray("connectorRuntimeSettings");
@@ -204,7 +135,6 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_connectorRuntimeSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedApiVersions"))
   {
     Aws::Utils::Array<JsonView> supportedApiVersionsJsonList = jsonValue.GetArray("supportedApiVersions");
@@ -214,7 +144,6 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedApiVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedOperators"))
   {
     Aws::Utils::Array<JsonView> supportedOperatorsJsonList = jsonValue.GetArray("supportedOperators");
@@ -224,7 +153,6 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedWriteOperations"))
   {
     Aws::Utils::Array<JsonView> supportedWriteOperationsJsonList = jsonValue.GetArray("supportedWriteOperations");
@@ -234,42 +162,31 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedWriteOperationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorProvisioningType"))
   {
     m_connectorProvisioningType = ConnectorProvisioningTypeMapper::GetConnectorProvisioningTypeForName(jsonValue.GetString("connectorProvisioningType"));
-
     m_connectorProvisioningTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorProvisioningConfig"))
   {
     m_connectorProvisioningConfig = jsonValue.GetObject("connectorProvisioningConfig");
-
     m_connectorProvisioningConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logoURL"))
   {
     m_logoURL = jsonValue.GetString("logoURL");
-
     m_logoURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredAt"))
   {
     m_registeredAt = jsonValue.GetDouble("registeredAt");
-
     m_registeredAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredBy"))
   {
     m_registeredBy = jsonValue.GetString("registeredBy");
-
     m_registeredByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedDataTransferTypes"))
   {
     Aws::Utils::Array<JsonView> supportedDataTransferTypesJsonList = jsonValue.GetArray("supportedDataTransferTypes");
@@ -279,7 +196,6 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedDataTransferTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedDataTransferApis"))
   {
     Aws::Utils::Array<JsonView> supportedDataTransferApisJsonList = jsonValue.GetArray("supportedDataTransferApis");
@@ -289,7 +205,6 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     }
     m_supportedDataTransferApisHasBeenSet = true;
   }
-
   return *this;
 }
 

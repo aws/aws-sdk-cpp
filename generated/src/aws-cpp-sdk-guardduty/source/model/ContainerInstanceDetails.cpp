@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ContainerInstanceDetails::ContainerInstanceDetails() : 
-    m_coveredContainerInstances(0),
-    m_coveredContainerInstancesHasBeenSet(false),
-    m_compatibleContainerInstances(0),
-    m_compatibleContainerInstancesHasBeenSet(false)
-{
-}
-
 ContainerInstanceDetails::ContainerInstanceDetails(JsonView jsonValue)
-  : ContainerInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ContainerInstanceDetails& ContainerInstanceDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("coveredContainerInstances"))
   {
     m_coveredContainerInstances = jsonValue.GetInt64("coveredContainerInstances");
-
     m_coveredContainerInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compatibleContainerInstances"))
   {
     m_compatibleContainerInstances = jsonValue.GetInt64("compatibleContainerInstances");
-
     m_compatibleContainerInstancesHasBeenSet = true;
   }
-
   return *this;
 }
 

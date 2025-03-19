@@ -34,7 +34,7 @@ namespace Model
   class LendingDocument
   {
   public:
-    AWS_TEXTRACT_API LendingDocument();
+    AWS_TEXTRACT_API LendingDocument() = default;
     AWS_TEXTRACT_API LendingDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API LendingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>An array of LendingField objects.</p>
      */
-    inline const Aws::Vector<LendingField>& GetLendingFields() const{ return m_lendingFields; }
+    inline const Aws::Vector<LendingField>& GetLendingFields() const { return m_lendingFields; }
     inline bool LendingFieldsHasBeenSet() const { return m_lendingFieldsHasBeenSet; }
-    inline void SetLendingFields(const Aws::Vector<LendingField>& value) { m_lendingFieldsHasBeenSet = true; m_lendingFields = value; }
-    inline void SetLendingFields(Aws::Vector<LendingField>&& value) { m_lendingFieldsHasBeenSet = true; m_lendingFields = std::move(value); }
-    inline LendingDocument& WithLendingFields(const Aws::Vector<LendingField>& value) { SetLendingFields(value); return *this;}
-    inline LendingDocument& WithLendingFields(Aws::Vector<LendingField>&& value) { SetLendingFields(std::move(value)); return *this;}
-    inline LendingDocument& AddLendingFields(const LendingField& value) { m_lendingFieldsHasBeenSet = true; m_lendingFields.push_back(value); return *this; }
-    inline LendingDocument& AddLendingFields(LendingField&& value) { m_lendingFieldsHasBeenSet = true; m_lendingFields.push_back(std::move(value)); return *this; }
+    template<typename LendingFieldsT = Aws::Vector<LendingField>>
+    void SetLendingFields(LendingFieldsT&& value) { m_lendingFieldsHasBeenSet = true; m_lendingFields = std::forward<LendingFieldsT>(value); }
+    template<typename LendingFieldsT = Aws::Vector<LendingField>>
+    LendingDocument& WithLendingFields(LendingFieldsT&& value) { SetLendingFields(std::forward<LendingFieldsT>(value)); return *this;}
+    template<typename LendingFieldsT = LendingField>
+    LendingDocument& AddLendingFields(LendingFieldsT&& value) { m_lendingFieldsHasBeenSet = true; m_lendingFields.emplace_back(std::forward<LendingFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of signatures detected in a lending document.</p>
      */
-    inline const Aws::Vector<SignatureDetection>& GetSignatureDetections() const{ return m_signatureDetections; }
+    inline const Aws::Vector<SignatureDetection>& GetSignatureDetections() const { return m_signatureDetections; }
     inline bool SignatureDetectionsHasBeenSet() const { return m_signatureDetectionsHasBeenSet; }
-    inline void SetSignatureDetections(const Aws::Vector<SignatureDetection>& value) { m_signatureDetectionsHasBeenSet = true; m_signatureDetections = value; }
-    inline void SetSignatureDetections(Aws::Vector<SignatureDetection>&& value) { m_signatureDetectionsHasBeenSet = true; m_signatureDetections = std::move(value); }
-    inline LendingDocument& WithSignatureDetections(const Aws::Vector<SignatureDetection>& value) { SetSignatureDetections(value); return *this;}
-    inline LendingDocument& WithSignatureDetections(Aws::Vector<SignatureDetection>&& value) { SetSignatureDetections(std::move(value)); return *this;}
-    inline LendingDocument& AddSignatureDetections(const SignatureDetection& value) { m_signatureDetectionsHasBeenSet = true; m_signatureDetections.push_back(value); return *this; }
-    inline LendingDocument& AddSignatureDetections(SignatureDetection&& value) { m_signatureDetectionsHasBeenSet = true; m_signatureDetections.push_back(std::move(value)); return *this; }
+    template<typename SignatureDetectionsT = Aws::Vector<SignatureDetection>>
+    void SetSignatureDetections(SignatureDetectionsT&& value) { m_signatureDetectionsHasBeenSet = true; m_signatureDetections = std::forward<SignatureDetectionsT>(value); }
+    template<typename SignatureDetectionsT = Aws::Vector<SignatureDetection>>
+    LendingDocument& WithSignatureDetections(SignatureDetectionsT&& value) { SetSignatureDetections(std::forward<SignatureDetectionsT>(value)); return *this;}
+    template<typename SignatureDetectionsT = SignatureDetection>
+    LendingDocument& AddSignatureDetections(SignatureDetectionsT&& value) { m_signatureDetectionsHasBeenSet = true; m_signatureDetections.emplace_back(std::forward<SignatureDetectionsT>(value)); return *this; }
     ///@}
   private:
 

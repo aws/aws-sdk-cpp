@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccessControlConfigurationResult::DescribeAccessControlConfigurationResult()
-{
-}
-
 DescribeAccessControlConfigurationResult::DescribeAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ DescribeAccessControlConfigurationResult& DescribeAccessControlConfigurationResu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessControlList"))
   {
     Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
@@ -54,8 +47,8 @@ DescribeAccessControlConfigurationResult& DescribeAccessControlConfigurationResu
     {
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
     }
+    m_accessControlListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchicalAccessControlList"))
   {
     Aws::Utils::Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
@@ -63,14 +56,15 @@ DescribeAccessControlConfigurationResult& DescribeAccessControlConfigurationResu
     {
       m_hierarchicalAccessControlList.push_back(hierarchicalAccessControlListJsonList[hierarchicalAccessControlListIndex].AsObject());
     }
+    m_hierarchicalAccessControlListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

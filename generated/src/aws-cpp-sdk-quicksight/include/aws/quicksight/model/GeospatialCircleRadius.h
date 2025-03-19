@@ -29,7 +29,7 @@ namespace Model
   class GeospatialCircleRadius
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialCircleRadius();
+    AWS_QUICKSIGHT_API GeospatialCircleRadius() = default;
     AWS_QUICKSIGHT_API GeospatialCircleRadius(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialCircleRadius& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The positive value for the radius of a circle.</p>
      */
-    inline double GetRadius() const{ return m_radius; }
+    inline double GetRadius() const { return m_radius; }
     inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
     inline void SetRadius(double value) { m_radiusHasBeenSet = true; m_radius = value; }
     inline GeospatialCircleRadius& WithRadius(double value) { SetRadius(value); return *this;}
     ///@}
   private:
 
-    double m_radius;
+    double m_radius{0.0};
     bool m_radiusHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-FsxProtocolSmb::FsxProtocolSmb() : 
-    m_domainHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 FsxProtocolSmb::FsxProtocolSmb(JsonView jsonValue)
-  : FsxProtocolSmb()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ FsxProtocolSmb& FsxProtocolSmb::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountOptions"))
   {
     m_mountOptions = jsonValue.GetObject("MountOptions");
-
     m_mountOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetString("User");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

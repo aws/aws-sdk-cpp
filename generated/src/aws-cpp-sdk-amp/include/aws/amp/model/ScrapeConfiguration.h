@@ -35,7 +35,7 @@ namespace Model
   class ScrapeConfiguration
   {
   public:
-    AWS_PROMETHEUSSERVICE_API ScrapeConfiguration();
+    AWS_PROMETHEUSSERVICE_API ScrapeConfiguration() = default;
     AWS_PROMETHEUSSERVICE_API ScrapeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API ScrapeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,16 @@ namespace Model
     /**
      * <p>The base 64 encoded scrape configuration file.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetConfigurationBlob() const{ return m_configurationBlob; }
+    inline const Aws::Utils::ByteBuffer& GetConfigurationBlob() const { return m_configurationBlob; }
     inline bool ConfigurationBlobHasBeenSet() const { return m_configurationBlobHasBeenSet; }
-    inline void SetConfigurationBlob(const Aws::Utils::ByteBuffer& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = value; }
-    inline void SetConfigurationBlob(Aws::Utils::ByteBuffer&& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = std::move(value); }
-    inline ScrapeConfiguration& WithConfigurationBlob(const Aws::Utils::ByteBuffer& value) { SetConfigurationBlob(value); return *this;}
-    inline ScrapeConfiguration& WithConfigurationBlob(Aws::Utils::ByteBuffer&& value) { SetConfigurationBlob(std::move(value)); return *this;}
+    template<typename ConfigurationBlobT = Aws::Utils::ByteBuffer>
+    void SetConfigurationBlob(ConfigurationBlobT&& value) { m_configurationBlobHasBeenSet = true; m_configurationBlob = std::forward<ConfigurationBlobT>(value); }
+    template<typename ConfigurationBlobT = Aws::Utils::ByteBuffer>
+    ScrapeConfiguration& WithConfigurationBlob(ConfigurationBlobT&& value) { SetConfigurationBlob(std::forward<ConfigurationBlobT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_configurationBlob;
+    Aws::Utils::ByteBuffer m_configurationBlob{};
     bool m_configurationBlobHasBeenSet = false;
   };
 

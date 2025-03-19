@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-BeforeEntryConditions::BeforeEntryConditions() : 
-    m_conditionsHasBeenSet(false)
-{
-}
-
 BeforeEntryConditions::BeforeEntryConditions(JsonView jsonValue)
-  : BeforeEntryConditions()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BeforeEntryConditions& BeforeEntryConditions::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

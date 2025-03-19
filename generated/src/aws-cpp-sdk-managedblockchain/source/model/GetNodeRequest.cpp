@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetNodeRequest::GetNodeRequest() : 
-    m_networkIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetNodeRequest::SerializePayload() const
 {
   return {};

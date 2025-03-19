@@ -32,7 +32,7 @@ namespace Model
   class IdMappingJobMetrics
   {
   public:
-    AWS_ENTITYRESOLUTION_API IdMappingJobMetrics();
+    AWS_ENTITYRESOLUTION_API IdMappingJobMetrics() = default;
     AWS_ENTITYRESOLUTION_API IdMappingJobMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API IdMappingJobMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The total number of records that were input for processing.</p>
      */
-    inline int GetInputRecords() const{ return m_inputRecords; }
+    inline int GetInputRecords() const { return m_inputRecords; }
     inline bool InputRecordsHasBeenSet() const { return m_inputRecordsHasBeenSet; }
     inline void SetInputRecords(int value) { m_inputRecordsHasBeenSet = true; m_inputRecords = value; }
     inline IdMappingJobMetrics& WithInputRecords(int value) { SetInputRecords(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The total number of records that did not get processed.</p>
      */
-    inline int GetRecordsNotProcessed() const{ return m_recordsNotProcessed; }
+    inline int GetRecordsNotProcessed() const { return m_recordsNotProcessed; }
     inline bool RecordsNotProcessedHasBeenSet() const { return m_recordsNotProcessedHasBeenSet; }
     inline void SetRecordsNotProcessed(int value) { m_recordsNotProcessedHasBeenSet = true; m_recordsNotProcessed = value; }
     inline IdMappingJobMetrics& WithRecordsNotProcessed(int value) { SetRecordsNotProcessed(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p> The total number of records that were mapped.</p>
      */
-    inline int GetTotalMappedRecords() const{ return m_totalMappedRecords; }
+    inline int GetTotalMappedRecords() const { return m_totalMappedRecords; }
     inline bool TotalMappedRecordsHasBeenSet() const { return m_totalMappedRecordsHasBeenSet; }
     inline void SetTotalMappedRecords(int value) { m_totalMappedRecordsHasBeenSet = true; m_totalMappedRecords = value; }
     inline IdMappingJobMetrics& WithTotalMappedRecords(int value) { SetTotalMappedRecords(value); return *this;}
@@ -72,7 +72,7 @@ namespace Model
     /**
      * <p> The total number of mapped source records.</p>
      */
-    inline int GetTotalMappedSourceRecords() const{ return m_totalMappedSourceRecords; }
+    inline int GetTotalMappedSourceRecords() const { return m_totalMappedSourceRecords; }
     inline bool TotalMappedSourceRecordsHasBeenSet() const { return m_totalMappedSourceRecordsHasBeenSet; }
     inline void SetTotalMappedSourceRecords(int value) { m_totalMappedSourceRecordsHasBeenSet = true; m_totalMappedSourceRecords = value; }
     inline IdMappingJobMetrics& WithTotalMappedSourceRecords(int value) { SetTotalMappedSourceRecords(value); return *this;}
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p> The total number of distinct mapped target records.</p>
      */
-    inline int GetTotalMappedTargetRecords() const{ return m_totalMappedTargetRecords; }
+    inline int GetTotalMappedTargetRecords() const { return m_totalMappedTargetRecords; }
     inline bool TotalMappedTargetRecordsHasBeenSet() const { return m_totalMappedTargetRecordsHasBeenSet; }
     inline void SetTotalMappedTargetRecords(int value) { m_totalMappedTargetRecordsHasBeenSet = true; m_totalMappedTargetRecords = value; }
     inline IdMappingJobMetrics& WithTotalMappedTargetRecords(int value) { SetTotalMappedTargetRecords(value); return *this;}
@@ -92,29 +92,29 @@ namespace Model
     /**
      * <p>The total number of records that were processed.</p>
      */
-    inline int GetTotalRecordsProcessed() const{ return m_totalRecordsProcessed; }
+    inline int GetTotalRecordsProcessed() const { return m_totalRecordsProcessed; }
     inline bool TotalRecordsProcessedHasBeenSet() const { return m_totalRecordsProcessedHasBeenSet; }
     inline void SetTotalRecordsProcessed(int value) { m_totalRecordsProcessedHasBeenSet = true; m_totalRecordsProcessed = value; }
     inline IdMappingJobMetrics& WithTotalRecordsProcessed(int value) { SetTotalRecordsProcessed(value); return *this;}
     ///@}
   private:
 
-    int m_inputRecords;
+    int m_inputRecords{0};
     bool m_inputRecordsHasBeenSet = false;
 
-    int m_recordsNotProcessed;
+    int m_recordsNotProcessed{0};
     bool m_recordsNotProcessedHasBeenSet = false;
 
-    int m_totalMappedRecords;
+    int m_totalMappedRecords{0};
     bool m_totalMappedRecordsHasBeenSet = false;
 
-    int m_totalMappedSourceRecords;
+    int m_totalMappedSourceRecords{0};
     bool m_totalMappedSourceRecordsHasBeenSet = false;
 
-    int m_totalMappedTargetRecords;
+    int m_totalMappedTargetRecords{0};
     bool m_totalMappedTargetRecordsHasBeenSet = false;
 
-    int m_totalRecordsProcessed;
+    int m_totalRecordsProcessed{0};
     bool m_totalRecordsProcessedHasBeenSet = false;
   };
 

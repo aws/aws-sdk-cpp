@@ -12,32 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFirewallRuleRequest::UpdateFirewallRuleRequest() : 
-    m_firewallRuleGroupIdHasBeenSet(false),
-    m_firewallDomainListIdHasBeenSet(false),
-    m_firewallThreatProtectionIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_blockResponse(BlockResponse::NOT_SET),
-    m_blockResponseHasBeenSet(false),
-    m_blockOverrideDomainHasBeenSet(false),
-    m_blockOverrideDnsType(BlockOverrideDnsType::NOT_SET),
-    m_blockOverrideDnsTypeHasBeenSet(false),
-    m_blockOverrideTtl(0),
-    m_blockOverrideTtlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_firewallDomainRedirectionAction(FirewallDomainRedirectionAction::NOT_SET),
-    m_firewallDomainRedirectionActionHasBeenSet(false),
-    m_qtypeHasBeenSet(false),
-    m_dnsThreatProtection(DnsThreatProtection::NOT_SET),
-    m_dnsThreatProtectionHasBeenSet(false),
-    m_confidenceThreshold(ConfidenceThreshold::NOT_SET),
-    m_confidenceThresholdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFirewallRuleRequest::SerializePayload() const
 {
   JsonValue payload;

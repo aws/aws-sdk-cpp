@@ -22,7 +22,7 @@ namespace Model
   class UpdateHostRequest : public CodeStarconnectionsRequest
   {
   public:
-    AWS_CODESTARCONNECTIONS_API UpdateHostRequest();
+    AWS_CODESTARCONNECTIONS_API UpdateHostRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
      */
-    inline const Aws::String& GetHostArn() const{ return m_hostArn; }
+    inline const Aws::String& GetHostArn() const { return m_hostArn; }
     inline bool HostArnHasBeenSet() const { return m_hostArnHasBeenSet; }
-    inline void SetHostArn(const Aws::String& value) { m_hostArnHasBeenSet = true; m_hostArn = value; }
-    inline void SetHostArn(Aws::String&& value) { m_hostArnHasBeenSet = true; m_hostArn = std::move(value); }
-    inline void SetHostArn(const char* value) { m_hostArnHasBeenSet = true; m_hostArn.assign(value); }
-    inline UpdateHostRequest& WithHostArn(const Aws::String& value) { SetHostArn(value); return *this;}
-    inline UpdateHostRequest& WithHostArn(Aws::String&& value) { SetHostArn(std::move(value)); return *this;}
-    inline UpdateHostRequest& WithHostArn(const char* value) { SetHostArn(value); return *this;}
+    template<typename HostArnT = Aws::String>
+    void SetHostArn(HostArnT&& value) { m_hostArnHasBeenSet = true; m_hostArn = std::forward<HostArnT>(value); }
+    template<typename HostArnT = Aws::String>
+    UpdateHostRequest& WithHostArn(HostArnT&& value) { SetHostArn(std::forward<HostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL or endpoint of the host to be updated.</p>
      */
-    inline const Aws::String& GetProviderEndpoint() const{ return m_providerEndpoint; }
+    inline const Aws::String& GetProviderEndpoint() const { return m_providerEndpoint; }
     inline bool ProviderEndpointHasBeenSet() const { return m_providerEndpointHasBeenSet; }
-    inline void SetProviderEndpoint(const Aws::String& value) { m_providerEndpointHasBeenSet = true; m_providerEndpoint = value; }
-    inline void SetProviderEndpoint(Aws::String&& value) { m_providerEndpointHasBeenSet = true; m_providerEndpoint = std::move(value); }
-    inline void SetProviderEndpoint(const char* value) { m_providerEndpointHasBeenSet = true; m_providerEndpoint.assign(value); }
-    inline UpdateHostRequest& WithProviderEndpoint(const Aws::String& value) { SetProviderEndpoint(value); return *this;}
-    inline UpdateHostRequest& WithProviderEndpoint(Aws::String&& value) { SetProviderEndpoint(std::move(value)); return *this;}
-    inline UpdateHostRequest& WithProviderEndpoint(const char* value) { SetProviderEndpoint(value); return *this;}
+    template<typename ProviderEndpointT = Aws::String>
+    void SetProviderEndpoint(ProviderEndpointT&& value) { m_providerEndpointHasBeenSet = true; m_providerEndpoint = std::forward<ProviderEndpointT>(value); }
+    template<typename ProviderEndpointT = Aws::String>
+    UpdateHostRequest& WithProviderEndpoint(ProviderEndpointT&& value) { SetProviderEndpoint(std::forward<ProviderEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * the infrastructure to be represented by the host must already be connected to
      * the VPC.</p>
      */
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline UpdateHostRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline UpdateHostRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    UpdateHostRequest& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
   private:
 

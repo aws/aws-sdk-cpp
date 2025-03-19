@@ -18,33 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EmailChannelResponse::EmailChannelResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationSetHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_hasCredential(false),
-    m_hasCredentialHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_orchestrationSendingRoleArnHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 EmailChannelResponse::EmailChannelResponse(JsonView jsonValue)
-  : EmailChannelResponse()
 {
   *this = jsonValue;
 }
@@ -54,115 +28,83 @@ EmailChannelResponse& EmailChannelResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSet"))
   {
     m_configurationSet = jsonValue.GetString("ConfigurationSet");
-
     m_configurationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromAddress"))
   {
     m_fromAddress = jsonValue.GetString("FromAddress");
-
     m_fromAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasCredential"))
   {
     m_hasCredential = jsonValue.GetBool("HasCredential");
-
     m_hasCredentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identity"))
   {
     m_identity = jsonValue.GetString("Identity");
-
     m_identityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsArchived"))
   {
     m_isArchived = jsonValue.GetBool("IsArchived");
-
     m_isArchivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessagesPerSecond"))
   {
     m_messagesPerSecond = jsonValue.GetInteger("MessagesPerSecond");
-
     m_messagesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrchestrationSendingRoleArn"))
   {
     m_orchestrationSendingRoleArn = jsonValue.GetString("OrchestrationSendingRoleArn");
-
     m_orchestrationSendingRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

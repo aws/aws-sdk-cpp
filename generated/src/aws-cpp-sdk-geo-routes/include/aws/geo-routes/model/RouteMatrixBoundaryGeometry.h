@@ -33,7 +33,7 @@ namespace Model
   class RouteMatrixBoundaryGeometry
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixBoundaryGeometry();
+    AWS_GEOROUTES_API RouteMatrixBoundaryGeometry() = default;
     AWS_GEOROUTES_API RouteMatrixBoundaryGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixBoundaryGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Provides the circle that was used while calculating the route.</p>
      */
-    inline const RouteMatrixAutoCircle& GetAutoCircle() const{ return m_autoCircle; }
+    inline const RouteMatrixAutoCircle& GetAutoCircle() const { return m_autoCircle; }
     inline bool AutoCircleHasBeenSet() const { return m_autoCircleHasBeenSet; }
-    inline void SetAutoCircle(const RouteMatrixAutoCircle& value) { m_autoCircleHasBeenSet = true; m_autoCircle = value; }
-    inline void SetAutoCircle(RouteMatrixAutoCircle&& value) { m_autoCircleHasBeenSet = true; m_autoCircle = std::move(value); }
-    inline RouteMatrixBoundaryGeometry& WithAutoCircle(const RouteMatrixAutoCircle& value) { SetAutoCircle(value); return *this;}
-    inline RouteMatrixBoundaryGeometry& WithAutoCircle(RouteMatrixAutoCircle&& value) { SetAutoCircle(std::move(value)); return *this;}
+    template<typename AutoCircleT = RouteMatrixAutoCircle>
+    void SetAutoCircle(AutoCircleT&& value) { m_autoCircleHasBeenSet = true; m_autoCircle = std::forward<AutoCircleT>(value); }
+    template<typename AutoCircleT = RouteMatrixAutoCircle>
+    RouteMatrixBoundaryGeometry& WithAutoCircle(AutoCircleT&& value) { SetAutoCircle(std::forward<AutoCircleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <code>AutoCircle</code>, the response routing boundary will return
      * <code>Circle</code> derived from the <code>AutoCircle</code> settings.</p>
      */
-    inline const Circle& GetCircle() const{ return m_circle; }
+    inline const Circle& GetCircle() const { return m_circle; }
     inline bool CircleHasBeenSet() const { return m_circleHasBeenSet; }
-    inline void SetCircle(const Circle& value) { m_circleHasBeenSet = true; m_circle = value; }
-    inline void SetCircle(Circle&& value) { m_circleHasBeenSet = true; m_circle = std::move(value); }
-    inline RouteMatrixBoundaryGeometry& WithCircle(const Circle& value) { SetCircle(value); return *this;}
-    inline RouteMatrixBoundaryGeometry& WithCircle(Circle&& value) { SetCircle(std::move(value)); return *this;}
+    template<typename CircleT = Circle>
+    void SetCircle(CircleT&& value) { m_circleHasBeenSet = true; m_circle = std::forward<CircleT>(value); }
+    template<typename CircleT = Circle>
+    RouteMatrixBoundaryGeometry& WithCircle(CircleT&& value) { SetCircle(std::forward<CircleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * box; the second pair represents the X and Y coordinates (longitude and latitude)
      * of the northeast corner.</p>
      */
-    inline const Aws::Vector<double>& GetBoundingBox() const{ return m_boundingBox; }
+    inline const Aws::Vector<double>& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const Aws::Vector<double>& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(Aws::Vector<double>&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline RouteMatrixBoundaryGeometry& WithBoundingBox(const Aws::Vector<double>& value) { SetBoundingBox(value); return *this;}
-    inline RouteMatrixBoundaryGeometry& WithBoundingBox(Aws::Vector<double>&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = Aws::Vector<double>>
+    RouteMatrixBoundaryGeometry& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     inline RouteMatrixBoundaryGeometry& AddBoundingBox(double value) { m_boundingBoxHasBeenSet = true; m_boundingBox.push_back(value); return *this; }
     ///@}
 
@@ -85,14 +85,14 @@ namespace Model
     /**
      * <p>Geometry defined as a polygon with only one linear ring.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const{ return m_polygon; }
+    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const { return m_polygon; }
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-    inline void SetPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-    inline void SetPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-    inline RouteMatrixBoundaryGeometry& WithPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { SetPolygon(value); return *this;}
-    inline RouteMatrixBoundaryGeometry& WithPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { SetPolygon(std::move(value)); return *this;}
-    inline RouteMatrixBoundaryGeometry& AddPolygon(const Aws::Vector<Aws::Vector<double>>& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-    inline RouteMatrixBoundaryGeometry& AddPolygon(Aws::Vector<Aws::Vector<double>>&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    void SetPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon = std::forward<PolygonT>(value); }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    RouteMatrixBoundaryGeometry& WithPolygon(PolygonT&& value) { SetPolygon(std::forward<PolygonT>(value)); return *this;}
+    template<typename PolygonT = Aws::Vector<Aws::Vector<double>>>
+    RouteMatrixBoundaryGeometry& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
   private:
 

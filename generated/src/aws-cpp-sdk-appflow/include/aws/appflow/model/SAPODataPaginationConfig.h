@@ -33,7 +33,7 @@ namespace Model
   class SAPODataPaginationConfig
   {
   public:
-    AWS_APPFLOW_API SAPODataPaginationConfig();
+    AWS_APPFLOW_API SAPODataPaginationConfig() = default;
     AWS_APPFLOW_API SAPODataPaginationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SAPODataPaginationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * maximum page size is 3,000. For transfers of data that comes from an ODP
      * provider, the maximum page size is 10,000.</p>
      */
-    inline int GetMaxPageSize() const{ return m_maxPageSize; }
+    inline int GetMaxPageSize() const { return m_maxPageSize; }
     inline bool MaxPageSizeHasBeenSet() const { return m_maxPageSizeHasBeenSet; }
     inline void SetMaxPageSize(int value) { m_maxPageSizeHasBeenSet = true; m_maxPageSize = value; }
     inline SAPODataPaginationConfig& WithMaxPageSize(int value) { SetMaxPageSize(value); return *this;}
     ///@}
   private:
 
-    int m_maxPageSize;
+    int m_maxPageSize{0};
     bool m_maxPageSizeHasBeenSet = false;
   };
 

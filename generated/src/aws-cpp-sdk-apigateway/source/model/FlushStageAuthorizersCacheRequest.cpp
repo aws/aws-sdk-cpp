@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-FlushStageAuthorizersCacheRequest::FlushStageAuthorizersCacheRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 Aws::String FlushStageAuthorizersCacheRequest::SerializePayload() const
 {
   return {};

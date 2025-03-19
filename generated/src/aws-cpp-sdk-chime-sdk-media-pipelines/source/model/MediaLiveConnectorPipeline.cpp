@@ -18,20 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaLiveConnectorPipeline::MediaLiveConnectorPipeline() : 
-    m_sourcesHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 MediaLiveConnectorPipeline::MediaLiveConnectorPipeline(JsonView jsonValue)
-  : MediaLiveConnectorPipeline()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ MediaLiveConnectorPipeline& MediaLiveConnectorPipeline::operator =(JsonView json
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sinks"))
   {
     Aws::Utils::Array<JsonView> sinksJsonList = jsonValue.GetArray("Sinks");
@@ -57,42 +43,31 @@ MediaLiveConnectorPipeline& MediaLiveConnectorPipeline::operator =(JsonView json
     }
     m_sinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineId"))
   {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
-
     m_mediaPipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaPipelineStatusMapper::GetMediaPipelineStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

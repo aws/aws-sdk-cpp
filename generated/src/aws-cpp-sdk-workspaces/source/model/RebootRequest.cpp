@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-RebootRequest::RebootRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 RebootRequest::RebootRequest(JsonView jsonValue)
-  : RebootRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RebootRequest& RebootRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

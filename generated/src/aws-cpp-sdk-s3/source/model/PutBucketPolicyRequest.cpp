@@ -16,18 +16,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-PutBucketPolicyRequest::PutBucketPolicyRequest() : 
-    m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_confirmRemoveSelfBucketAccess(false),
-    m_confirmRemoveSelfBucketAccessHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
-
 
 void PutBucketPolicyRequest::AddQueryStringParameters(URI& uri) const
 {

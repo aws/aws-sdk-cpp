@@ -18,19 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-NeighborConnectionDetail::NeighborConnectionDetail() : 
-    m_sourceServerIdHasBeenSet(false),
-    m_destinationServerIdHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_transportProtocolHasBeenSet(false),
-    m_connectionsCount(0),
-    m_connectionsCountHasBeenSet(false)
-{
-}
-
 NeighborConnectionDetail::NeighborConnectionDetail(JsonView jsonValue)
-  : NeighborConnectionDetail()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ NeighborConnectionDetail& NeighborConnectionDetail::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("sourceServerId"))
   {
     m_sourceServerId = jsonValue.GetString("sourceServerId");
-
     m_sourceServerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationServerId"))
   {
     m_destinationServerId = jsonValue.GetString("destinationServerId");
-
     m_destinationServerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationPort"))
   {
     m_destinationPort = jsonValue.GetInteger("destinationPort");
-
     m_destinationPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transportProtocol"))
   {
     m_transportProtocol = jsonValue.GetString("transportProtocol");
-
     m_transportProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionsCount"))
   {
     m_connectionsCount = jsonValue.GetInt64("connectionsCount");
-
     m_connectionsCountHasBeenSet = true;
   }
-
   return *this;
 }
 

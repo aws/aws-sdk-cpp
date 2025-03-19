@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-BundleInformation::BundleInformation() : 
-    m_bundleNamesHasBeenSet(false),
-    m_pricingTier(PricingTier::NOT_SET),
-    m_pricingTierHasBeenSet(false)
-{
-}
-
 BundleInformation::BundleInformation(JsonView jsonValue)
-  : BundleInformation()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ BundleInformation& BundleInformation::operator =(JsonView jsonValue)
     }
     m_bundleNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pricingTier"))
   {
     m_pricingTier = PricingTierMapper::GetPricingTierForName(jsonValue.GetString("pricingTier"));
-
     m_pricingTierHasBeenSet = true;
   }
-
   return *this;
 }
 

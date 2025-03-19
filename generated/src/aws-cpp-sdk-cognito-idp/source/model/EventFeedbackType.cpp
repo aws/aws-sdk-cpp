@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-EventFeedbackType::EventFeedbackType() : 
-    m_feedbackValue(FeedbackValueType::NOT_SET),
-    m_feedbackValueHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_feedbackDateHasBeenSet(false)
-{
-}
-
 EventFeedbackType::EventFeedbackType(JsonView jsonValue)
-  : EventFeedbackType()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EventFeedbackType& EventFeedbackType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeedbackValue"))
   {
     m_feedbackValue = FeedbackValueTypeMapper::GetFeedbackValueTypeForName(jsonValue.GetString("FeedbackValue"));
-
     m_feedbackValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Provider"))
   {
     m_provider = jsonValue.GetString("Provider");
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeedbackDate"))
   {
     m_feedbackDate = jsonValue.GetDouble("FeedbackDate");
-
     m_feedbackDateHasBeenSet = true;
   }
-
   return *this;
 }
 

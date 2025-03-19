@@ -18,29 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-Address::Address() : 
-    m_addressIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_companyHasBeenSet(false),
-    m_street1HasBeenSet(false),
-    m_street2HasBeenSet(false),
-    m_street3HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateOrProvinceHasBeenSet(false),
-    m_prefectureOrDistrictHasBeenSet(false),
-    m_landmarkHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_isRestricted(false),
-    m_isRestrictedHasBeenSet(false),
-    m_type(AddressType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -50,108 +28,78 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddressId"))
   {
     m_addressId = jsonValue.GetString("AddressId");
-
     m_addressIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Company"))
   {
     m_company = jsonValue.GetString("Company");
-
     m_companyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street1"))
   {
     m_street1 = jsonValue.GetString("Street1");
-
     m_street1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street2"))
   {
     m_street2 = jsonValue.GetString("Street2");
-
     m_street2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street3"))
   {
     m_street3 = jsonValue.GetString("Street3");
-
     m_street3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateOrProvince"))
   {
     m_stateOrProvince = jsonValue.GetString("StateOrProvince");
-
     m_stateOrProvinceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrefectureOrDistrict"))
   {
     m_prefectureOrDistrict = jsonValue.GetString("PrefectureOrDistrict");
-
     m_prefectureOrDistrictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Landmark"))
   {
     m_landmark = jsonValue.GetString("Landmark");
-
     m_landmarkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRestricted"))
   {
     m_isRestricted = jsonValue.GetBool("IsRestricted");
-
     m_isRestrictedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AddressTypeMapper::GetAddressTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

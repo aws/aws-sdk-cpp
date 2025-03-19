@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDeliveryDestinationPolicyRequest::PutDeliveryDestinationPolicyRequest() : 
-    m_deliveryDestinationNameHasBeenSet(false),
-    m_deliveryDestinationPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutDeliveryDestinationPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class QueryResult
   {
   public:
-    AWS_KENDRA_API QueryResult();
+    AWS_KENDRA_API QueryResult() = default;
     AWS_KENDRA_API QueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API QueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,26 +45,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
      * API.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
-    inline void SetQueryId(const Aws::String& value) { m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryId.assign(value); }
-    inline QueryResult& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline QueryResult& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline QueryResult& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    QueryResult& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The results of the search.</p>
      */
-    inline const Aws::Vector<QueryResultItem>& GetResultItems() const{ return m_resultItems; }
-    inline void SetResultItems(const Aws::Vector<QueryResultItem>& value) { m_resultItems = value; }
-    inline void SetResultItems(Aws::Vector<QueryResultItem>&& value) { m_resultItems = std::move(value); }
-    inline QueryResult& WithResultItems(const Aws::Vector<QueryResultItem>& value) { SetResultItems(value); return *this;}
-    inline QueryResult& WithResultItems(Aws::Vector<QueryResultItem>&& value) { SetResultItems(std::move(value)); return *this;}
-    inline QueryResult& AddResultItems(const QueryResultItem& value) { m_resultItems.push_back(value); return *this; }
-    inline QueryResult& AddResultItems(QueryResultItem&& value) { m_resultItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueryResultItem>& GetResultItems() const { return m_resultItems; }
+    template<typename ResultItemsT = Aws::Vector<QueryResultItem>>
+    void SetResultItems(ResultItemsT&& value) { m_resultItemsHasBeenSet = true; m_resultItems = std::forward<ResultItemsT>(value); }
+    template<typename ResultItemsT = Aws::Vector<QueryResultItem>>
+    QueryResult& WithResultItems(ResultItemsT&& value) { SetResultItems(std::forward<ResultItemsT>(value)); return *this;}
+    template<typename ResultItemsT = QueryResultItem>
+    QueryResult& AddResultItems(ResultItemsT&& value) { m_resultItemsHasBeenSet = true; m_resultItems.emplace_back(std::forward<ResultItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,13 +71,13 @@ namespace Model
      * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
-    inline const Aws::Vector<FacetResult>& GetFacetResults() const{ return m_facetResults; }
-    inline void SetFacetResults(const Aws::Vector<FacetResult>& value) { m_facetResults = value; }
-    inline void SetFacetResults(Aws::Vector<FacetResult>&& value) { m_facetResults = std::move(value); }
-    inline QueryResult& WithFacetResults(const Aws::Vector<FacetResult>& value) { SetFacetResults(value); return *this;}
-    inline QueryResult& WithFacetResults(Aws::Vector<FacetResult>&& value) { SetFacetResults(std::move(value)); return *this;}
-    inline QueryResult& AddFacetResults(const FacetResult& value) { m_facetResults.push_back(value); return *this; }
-    inline QueryResult& AddFacetResults(FacetResult&& value) { m_facetResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FacetResult>& GetFacetResults() const { return m_facetResults; }
+    template<typename FacetResultsT = Aws::Vector<FacetResult>>
+    void SetFacetResults(FacetResultsT&& value) { m_facetResultsHasBeenSet = true; m_facetResults = std::forward<FacetResultsT>(value); }
+    template<typename FacetResultsT = Aws::Vector<FacetResult>>
+    QueryResult& WithFacetResults(FacetResultsT&& value) { SetFacetResults(std::forward<FacetResultsT>(value)); return *this;}
+    template<typename FacetResultsT = FacetResult>
+    QueryResult& AddFacetResults(FacetResultsT&& value) { m_facetResultsHasBeenSet = true; m_facetResults.emplace_back(std::forward<FacetResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,8 +86,8 @@ namespace Model
      * up to 100 items. For example, if the search found 192 items, you can only
      * retrieve the first 100 of the items.</p>
      */
-    inline int GetTotalNumberOfResults() const{ return m_totalNumberOfResults; }
-    inline void SetTotalNumberOfResults(int value) { m_totalNumberOfResults = value; }
+    inline int GetTotalNumberOfResults() const { return m_totalNumberOfResults; }
+    inline void SetTotalNumberOfResults(int value) { m_totalNumberOfResultsHasBeenSet = true; m_totalNumberOfResults = value; }
     inline QueryResult& WithTotalNumberOfResults(int value) { SetTotalNumberOfResults(value); return *this;}
     ///@}
 
@@ -102,26 +100,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
      * with advanced query syntax</a>.</p>
      */
-    inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
-    inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
-    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
-    inline QueryResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
-    inline QueryResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
-    inline QueryResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
-    inline QueryResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Warning>& GetWarnings() const { return m_warnings; }
+    template<typename WarningsT = Aws::Vector<Warning>>
+    void SetWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings = std::forward<WarningsT>(value); }
+    template<typename WarningsT = Aws::Vector<Warning>>
+    QueryResult& WithWarnings(WarningsT&& value) { SetWarnings(std::forward<WarningsT>(value)); return *this;}
+    template<typename WarningsT = Warning>
+    QueryResult& AddWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings.emplace_back(std::forward<WarningsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of information related to suggested spell corrections for a query.</p>
      */
-    inline const Aws::Vector<SpellCorrectedQuery>& GetSpellCorrectedQueries() const{ return m_spellCorrectedQueries; }
-    inline void SetSpellCorrectedQueries(const Aws::Vector<SpellCorrectedQuery>& value) { m_spellCorrectedQueries = value; }
-    inline void SetSpellCorrectedQueries(Aws::Vector<SpellCorrectedQuery>&& value) { m_spellCorrectedQueries = std::move(value); }
-    inline QueryResult& WithSpellCorrectedQueries(const Aws::Vector<SpellCorrectedQuery>& value) { SetSpellCorrectedQueries(value); return *this;}
-    inline QueryResult& WithSpellCorrectedQueries(Aws::Vector<SpellCorrectedQuery>&& value) { SetSpellCorrectedQueries(std::move(value)); return *this;}
-    inline QueryResult& AddSpellCorrectedQueries(const SpellCorrectedQuery& value) { m_spellCorrectedQueries.push_back(value); return *this; }
-    inline QueryResult& AddSpellCorrectedQueries(SpellCorrectedQuery&& value) { m_spellCorrectedQueries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SpellCorrectedQuery>& GetSpellCorrectedQueries() const { return m_spellCorrectedQueries; }
+    template<typename SpellCorrectedQueriesT = Aws::Vector<SpellCorrectedQuery>>
+    void SetSpellCorrectedQueries(SpellCorrectedQueriesT&& value) { m_spellCorrectedQueriesHasBeenSet = true; m_spellCorrectedQueries = std::forward<SpellCorrectedQueriesT>(value); }
+    template<typename SpellCorrectedQueriesT = Aws::Vector<SpellCorrectedQuery>>
+    QueryResult& WithSpellCorrectedQueries(SpellCorrectedQueriesT&& value) { SetSpellCorrectedQueries(std::forward<SpellCorrectedQueriesT>(value)); return *this;}
+    template<typename SpellCorrectedQueriesT = SpellCorrectedQuery>
+    QueryResult& AddSpellCorrectedQueries(SpellCorrectedQueriesT&& value) { m_spellCorrectedQueriesHasBeenSet = true; m_spellCorrectedQueries.emplace_back(std::forward<SpellCorrectedQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,42 +129,48 @@ namespace Model
      * If there's an exact match of a query, then certain documents are featured in the
      * search results.</p>
      */
-    inline const Aws::Vector<FeaturedResultsItem>& GetFeaturedResultsItems() const{ return m_featuredResultsItems; }
-    inline void SetFeaturedResultsItems(const Aws::Vector<FeaturedResultsItem>& value) { m_featuredResultsItems = value; }
-    inline void SetFeaturedResultsItems(Aws::Vector<FeaturedResultsItem>&& value) { m_featuredResultsItems = std::move(value); }
-    inline QueryResult& WithFeaturedResultsItems(const Aws::Vector<FeaturedResultsItem>& value) { SetFeaturedResultsItems(value); return *this;}
-    inline QueryResult& WithFeaturedResultsItems(Aws::Vector<FeaturedResultsItem>&& value) { SetFeaturedResultsItems(std::move(value)); return *this;}
-    inline QueryResult& AddFeaturedResultsItems(const FeaturedResultsItem& value) { m_featuredResultsItems.push_back(value); return *this; }
-    inline QueryResult& AddFeaturedResultsItems(FeaturedResultsItem&& value) { m_featuredResultsItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeaturedResultsItem>& GetFeaturedResultsItems() const { return m_featuredResultsItems; }
+    template<typename FeaturedResultsItemsT = Aws::Vector<FeaturedResultsItem>>
+    void SetFeaturedResultsItems(FeaturedResultsItemsT&& value) { m_featuredResultsItemsHasBeenSet = true; m_featuredResultsItems = std::forward<FeaturedResultsItemsT>(value); }
+    template<typename FeaturedResultsItemsT = Aws::Vector<FeaturedResultsItem>>
+    QueryResult& WithFeaturedResultsItems(FeaturedResultsItemsT&& value) { SetFeaturedResultsItems(std::forward<FeaturedResultsItemsT>(value)); return *this;}
+    template<typename FeaturedResultsItemsT = FeaturedResultsItem>
+    QueryResult& AddFeaturedResultsItems(FeaturedResultsItemsT&& value) { m_featuredResultsItemsHasBeenSet = true; m_featuredResultsItems.emplace_back(std::forward<FeaturedResultsItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline QueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline QueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline QueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    QueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryId;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::Vector<QueryResultItem> m_resultItems;
+    bool m_resultItemsHasBeenSet = false;
 
     Aws::Vector<FacetResult> m_facetResults;
+    bool m_facetResultsHasBeenSet = false;
 
-    int m_totalNumberOfResults;
+    int m_totalNumberOfResults{0};
+    bool m_totalNumberOfResultsHasBeenSet = false;
 
     Aws::Vector<Warning> m_warnings;
+    bool m_warningsHasBeenSet = false;
 
     Aws::Vector<SpellCorrectedQuery> m_spellCorrectedQueries;
+    bool m_spellCorrectedQueriesHasBeenSet = false;
 
     Aws::Vector<FeaturedResultsItem> m_featuredResultsItems;
+    bool m_featuredResultsItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

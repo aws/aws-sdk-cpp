@@ -32,7 +32,7 @@ namespace Model
   class UserAccessTaskItem
   {
   public:
-    AWS_APPFABRIC_API UserAccessTaskItem();
+    AWS_APPFABRIC_API UserAccessTaskItem() = default;
     AWS_APPFABRIC_API UserAccessTaskItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API UserAccessTaskItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,54 +42,48 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
-    inline const Aws::String& GetApp() const{ return m_app; }
+    inline const Aws::String& GetApp() const { return m_app; }
     inline bool AppHasBeenSet() const { return m_appHasBeenSet; }
-    inline void SetApp(const Aws::String& value) { m_appHasBeenSet = true; m_app = value; }
-    inline void SetApp(Aws::String&& value) { m_appHasBeenSet = true; m_app = std::move(value); }
-    inline void SetApp(const char* value) { m_appHasBeenSet = true; m_app.assign(value); }
-    inline UserAccessTaskItem& WithApp(const Aws::String& value) { SetApp(value); return *this;}
-    inline UserAccessTaskItem& WithApp(Aws::String&& value) { SetApp(std::move(value)); return *this;}
-    inline UserAccessTaskItem& WithApp(const char* value) { SetApp(value); return *this;}
+    template<typename AppT = Aws::String>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = Aws::String>
+    UserAccessTaskItem& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the application tenant.</p>
      */
-    inline const Aws::String& GetTenantId() const{ return m_tenantId; }
+    inline const Aws::String& GetTenantId() const { return m_tenantId; }
     inline bool TenantIdHasBeenSet() const { return m_tenantIdHasBeenSet; }
-    inline void SetTenantId(const Aws::String& value) { m_tenantIdHasBeenSet = true; m_tenantId = value; }
-    inline void SetTenantId(Aws::String&& value) { m_tenantIdHasBeenSet = true; m_tenantId = std::move(value); }
-    inline void SetTenantId(const char* value) { m_tenantIdHasBeenSet = true; m_tenantId.assign(value); }
-    inline UserAccessTaskItem& WithTenantId(const Aws::String& value) { SetTenantId(value); return *this;}
-    inline UserAccessTaskItem& WithTenantId(Aws::String&& value) { SetTenantId(std::move(value)); return *this;}
-    inline UserAccessTaskItem& WithTenantId(const char* value) { SetTenantId(value); return *this;}
+    template<typename TenantIdT = Aws::String>
+    void SetTenantId(TenantIdT&& value) { m_tenantIdHasBeenSet = true; m_tenantId = std::forward<TenantIdT>(value); }
+    template<typename TenantIdT = Aws::String>
+    UserAccessTaskItem& WithTenantId(TenantIdT&& value) { SetTenantId(std::forward<TenantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the task.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline UserAccessTaskItem& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline UserAccessTaskItem& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline UserAccessTaskItem& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    UserAccessTaskItem& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error from the task, if any.</p>
      */
-    inline const TaskError& GetError() const{ return m_error; }
+    inline const TaskError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const TaskError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(TaskError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline UserAccessTaskItem& WithError(const TaskError& value) { SetError(value); return *this;}
-    inline UserAccessTaskItem& WithError(TaskError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = TaskError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = TaskError>
+    UserAccessTaskItem& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

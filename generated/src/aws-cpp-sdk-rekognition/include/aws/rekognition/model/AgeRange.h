@@ -33,7 +33,7 @@ namespace Model
   class AgeRange
   {
   public:
-    AWS_REKOGNITION_API AgeRange();
+    AWS_REKOGNITION_API AgeRange() = default;
     AWS_REKOGNITION_API AgeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API AgeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The lowest estimated age.</p>
      */
-    inline int GetLow() const{ return m_low; }
+    inline int GetLow() const { return m_low; }
     inline bool LowHasBeenSet() const { return m_lowHasBeenSet; }
     inline void SetLow(int value) { m_lowHasBeenSet = true; m_low = value; }
     inline AgeRange& WithLow(int value) { SetLow(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
     /**
      * <p>The highest estimated age.</p>
      */
-    inline int GetHigh() const{ return m_high; }
+    inline int GetHigh() const { return m_high; }
     inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
     inline void SetHigh(int value) { m_highHasBeenSet = true; m_high = value; }
     inline AgeRange& WithHigh(int value) { SetHigh(value); return *this;}
     ///@}
   private:
 
-    int m_low;
+    int m_low{0};
     bool m_lowHasBeenSet = false;
 
-    int m_high;
+    int m_high{0};
     bool m_highHasBeenSet = false;
   };
 

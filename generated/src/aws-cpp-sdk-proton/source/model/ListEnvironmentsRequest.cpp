@@ -12,14 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEnvironmentsRequest::ListEnvironmentsRequest() : 
-    m_environmentTemplatesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListEnvironmentsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,17 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMergeOptionsRequest::GetMergeOptionsRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceCommitSpecifierHasBeenSet(false),
-    m_destinationCommitSpecifierHasBeenSet(false),
-    m_conflictDetailLevel(ConflictDetailLevelTypeEnum::NOT_SET),
-    m_conflictDetailLevelHasBeenSet(false),
-    m_conflictResolutionStrategy(ConflictResolutionStrategyTypeEnum::NOT_SET),
-    m_conflictResolutionStrategyHasBeenSet(false)
-{
-}
-
 Aws::String GetMergeOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

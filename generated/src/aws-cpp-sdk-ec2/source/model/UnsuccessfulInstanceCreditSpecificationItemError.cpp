@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UnsuccessfulInstanceCreditSpecificationItemError::UnsuccessfulInstanceCreditSpecificationItemError() : 
-    m_code(UnsuccessfulInstanceCreditSpecificationErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnsuccessfulInstanceCreditSpecificationItemError::UnsuccessfulInstanceCreditSpecificationItemError(const XmlNode& xmlNode)
-  : UnsuccessfulInstanceCreditSpecificationItemError()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ UnsuccessfulInstanceCreditSpecificationItemError& UnsuccessfulInstanceCreditSpec
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = UnsuccessfulInstanceCreditSpecificationErrorCodeMapper::GetUnsuccessfulInstanceCreditSpecificationErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

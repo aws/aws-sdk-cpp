@@ -21,7 +21,7 @@ namespace Model
   class GetRuleRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API GetRuleRequest();
+    AWS_WAFREGIONAL_API GetRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>RuleId</code> is returned by <a>CreateRule</a> and by
      * <a>ListRules</a>.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline GetRuleRequest& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline GetRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline GetRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    GetRuleRequest& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
   private:
 

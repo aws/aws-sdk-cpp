@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketStatisticsBySensitivity::BucketStatisticsBySensitivity() : 
-    m_classificationErrorHasBeenSet(false),
-    m_notClassifiedHasBeenSet(false),
-    m_notSensitiveHasBeenSet(false),
-    m_sensitiveHasBeenSet(false)
-{
-}
-
 BucketStatisticsBySensitivity::BucketStatisticsBySensitivity(JsonView jsonValue)
-  : BucketStatisticsBySensitivity()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BucketStatisticsBySensitivity& BucketStatisticsBySensitivity::operator =(JsonVie
   if(jsonValue.ValueExists("classificationError"))
   {
     m_classificationError = jsonValue.GetObject("classificationError");
-
     m_classificationErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notClassified"))
   {
     m_notClassified = jsonValue.GetObject("notClassified");
-
     m_notClassifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notSensitive"))
   {
     m_notSensitive = jsonValue.GetObject("notSensitive");
-
     m_notSensitiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitive"))
   {
     m_sensitive = jsonValue.GetObject("sensitive");
-
     m_sensitiveHasBeenSet = true;
   }
-
   return *this;
 }
 

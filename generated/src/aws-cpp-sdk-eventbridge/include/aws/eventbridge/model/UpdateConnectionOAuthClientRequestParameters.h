@@ -32,7 +32,7 @@ namespace Model
   class UpdateConnectionOAuthClientRequestParameters
   {
   public:
-    AWS_EVENTBRIDGE_API UpdateConnectionOAuthClientRequestParameters();
+    AWS_EVENTBRIDGE_API UpdateConnectionOAuthClientRequestParameters() = default;
     AWS_EVENTBRIDGE_API UpdateConnectionOAuthClientRequestParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API UpdateConnectionOAuthClientRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The client ID to use for OAuth authorization.</p>
      */
-    inline const Aws::String& GetClientID() const{ return m_clientID; }
+    inline const Aws::String& GetClientID() const { return m_clientID; }
     inline bool ClientIDHasBeenSet() const { return m_clientIDHasBeenSet; }
-    inline void SetClientID(const Aws::String& value) { m_clientIDHasBeenSet = true; m_clientID = value; }
-    inline void SetClientID(Aws::String&& value) { m_clientIDHasBeenSet = true; m_clientID = std::move(value); }
-    inline void SetClientID(const char* value) { m_clientIDHasBeenSet = true; m_clientID.assign(value); }
-    inline UpdateConnectionOAuthClientRequestParameters& WithClientID(const Aws::String& value) { SetClientID(value); return *this;}
-    inline UpdateConnectionOAuthClientRequestParameters& WithClientID(Aws::String&& value) { SetClientID(std::move(value)); return *this;}
-    inline UpdateConnectionOAuthClientRequestParameters& WithClientID(const char* value) { SetClientID(value); return *this;}
+    template<typename ClientIDT = Aws::String>
+    void SetClientID(ClientIDT&& value) { m_clientIDHasBeenSet = true; m_clientID = std::forward<ClientIDT>(value); }
+    template<typename ClientIDT = Aws::String>
+    UpdateConnectionOAuthClientRequestParameters& WithClientID(ClientIDT&& value) { SetClientID(std::forward<ClientIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The client secret assciated with the client ID to use for OAuth
      * authorization.</p>
      */
-    inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
+    inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-    inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
-    inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
-    inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
-    inline UpdateConnectionOAuthClientRequestParameters& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
-    inline UpdateConnectionOAuthClientRequestParameters& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
-    inline UpdateConnectionOAuthClientRequestParameters& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
+    template<typename ClientSecretT = Aws::String>
+    void SetClientSecret(ClientSecretT&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::forward<ClientSecretT>(value); }
+    template<typename ClientSecretT = Aws::String>
+    UpdateConnectionOAuthClientRequestParameters& WithClientSecret(ClientSecretT&& value) { SetClientSecret(std::forward<ClientSecretT>(value)); return *this;}
     ///@}
   private:
 

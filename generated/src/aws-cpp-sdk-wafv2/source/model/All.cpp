@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-All::All()
-{
-}
-
 All::All(JsonView jsonValue)
 {
   *this = jsonValue;

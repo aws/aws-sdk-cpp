@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse() : 
-    m_objectIdentifierHasBeenSet(false)
-{
-}
-
 BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse(JsonView jsonValue)
-  : BatchUpdateObjectAttributesResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchUpdateObjectAttributesResponse& BatchUpdateObjectAttributesResponse::operat
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

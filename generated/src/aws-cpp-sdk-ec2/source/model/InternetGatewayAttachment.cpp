@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InternetGatewayAttachment::InternetGatewayAttachment() : 
-    m_state(AttachmentStatus::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 InternetGatewayAttachment::InternetGatewayAttachment(const XmlNode& xmlNode)
-  : InternetGatewayAttachment()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ InternetGatewayAttachment& InternetGatewayAttachment::operator =(const XmlNode& 
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");

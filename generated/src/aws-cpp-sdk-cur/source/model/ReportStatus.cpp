@@ -18,15 +18,7 @@ namespace CostandUsageReportService
 namespace Model
 {
 
-ReportStatus::ReportStatus() : 
-    m_lastDeliveryHasBeenSet(false),
-    m_lastStatus(LastStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false)
-{
-}
-
 ReportStatus::ReportStatus(JsonView jsonValue)
-  : ReportStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReportStatus& ReportStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lastDelivery"))
   {
     m_lastDelivery = jsonValue.GetString("lastDelivery");
-
     m_lastDeliveryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatus"))
   {
     m_lastStatus = LastStatusMapper::GetLastStatusForName(jsonValue.GetString("lastStatus"));
-
     m_lastStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

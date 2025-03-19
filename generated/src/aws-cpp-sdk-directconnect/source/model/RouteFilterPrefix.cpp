@@ -18,13 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-RouteFilterPrefix::RouteFilterPrefix() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 RouteFilterPrefix::RouteFilterPrefix(JsonView jsonValue)
-  : RouteFilterPrefix()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RouteFilterPrefix& RouteFilterPrefix::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cidr"))
   {
     m_cidr = jsonValue.GetString("cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   return *this;
 }
 

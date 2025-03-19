@@ -21,7 +21,7 @@ namespace Model
   class GetKeyPairRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetKeyPairRequest();
+    AWS_LIGHTSAIL_API GetKeyPairRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the key pair for which you are requesting information.</p>
      */
-    inline const Aws::String& GetKeyPairName() const{ return m_keyPairName; }
+    inline const Aws::String& GetKeyPairName() const { return m_keyPairName; }
     inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
-    inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
-    inline void SetKeyPairName(Aws::String&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::move(value); }
-    inline void SetKeyPairName(const char* value) { m_keyPairNameHasBeenSet = true; m_keyPairName.assign(value); }
-    inline GetKeyPairRequest& WithKeyPairName(const Aws::String& value) { SetKeyPairName(value); return *this;}
-    inline GetKeyPairRequest& WithKeyPairName(Aws::String&& value) { SetKeyPairName(std::move(value)); return *this;}
-    inline GetKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
+    template<typename KeyPairNameT = Aws::String>
+    void SetKeyPairName(KeyPairNameT&& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = std::forward<KeyPairNameT>(value); }
+    template<typename KeyPairNameT = Aws::String>
+    GetKeyPairRequest& WithKeyPairName(KeyPairNameT&& value) { SetKeyPairName(std::forward<KeyPairNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcEndpointServicePermissionsRequest::ModifyVpcEndpointServicePermissionsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_addAllowedPrincipalsHasBeenSet(false),
-    m_removeAllowedPrincipalsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcEndpointServicePermissionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

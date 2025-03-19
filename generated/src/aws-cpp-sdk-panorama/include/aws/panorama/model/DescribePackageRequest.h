@@ -21,7 +21,7 @@ namespace Model
   class DescribePackageRequest : public PanoramaRequest
   {
   public:
-    AWS_PANORAMA_API DescribePackageRequest();
+    AWS_PANORAMA_API DescribePackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The package's ID.</p>
      */
-    inline const Aws::String& GetPackageId() const{ return m_packageId; }
+    inline const Aws::String& GetPackageId() const { return m_packageId; }
     inline bool PackageIdHasBeenSet() const { return m_packageIdHasBeenSet; }
-    inline void SetPackageId(const Aws::String& value) { m_packageIdHasBeenSet = true; m_packageId = value; }
-    inline void SetPackageId(Aws::String&& value) { m_packageIdHasBeenSet = true; m_packageId = std::move(value); }
-    inline void SetPackageId(const char* value) { m_packageIdHasBeenSet = true; m_packageId.assign(value); }
-    inline DescribePackageRequest& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-    inline DescribePackageRequest& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-    inline DescribePackageRequest& WithPackageId(const char* value) { SetPackageId(value); return *this;}
+    template<typename PackageIdT = Aws::String>
+    void SetPackageId(PackageIdT&& value) { m_packageIdHasBeenSet = true; m_packageId = std::forward<PackageIdT>(value); }
+    template<typename PackageIdT = Aws::String>
+    DescribePackageRequest& WithPackageId(PackageIdT&& value) { SetPackageId(std::forward<PackageIdT>(value)); return *this;}
     ///@}
   private:
 

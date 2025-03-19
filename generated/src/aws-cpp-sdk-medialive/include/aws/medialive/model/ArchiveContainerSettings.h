@@ -32,7 +32,7 @@ namespace Model
   class ArchiveContainerSettings
   {
   public:
-    AWS_MEDIALIVE_API ArchiveContainerSettings();
+    AWS_MEDIALIVE_API ArchiveContainerSettings() = default;
     AWS_MEDIALIVE_API ArchiveContainerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ArchiveContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const M2tsSettings& GetM2tsSettings() const{ return m_m2tsSettings; }
+    inline const M2tsSettings& GetM2tsSettings() const { return m_m2tsSettings; }
     inline bool M2tsSettingsHasBeenSet() const { return m_m2tsSettingsHasBeenSet; }
-    inline void SetM2tsSettings(const M2tsSettings& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = value; }
-    inline void SetM2tsSettings(M2tsSettings&& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = std::move(value); }
-    inline ArchiveContainerSettings& WithM2tsSettings(const M2tsSettings& value) { SetM2tsSettings(value); return *this;}
-    inline ArchiveContainerSettings& WithM2tsSettings(M2tsSettings&& value) { SetM2tsSettings(std::move(value)); return *this;}
+    template<typename M2tsSettingsT = M2tsSettings>
+    void SetM2tsSettings(M2tsSettingsT&& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = std::forward<M2tsSettingsT>(value); }
+    template<typename M2tsSettingsT = M2tsSettings>
+    ArchiveContainerSettings& WithM2tsSettings(M2tsSettingsT&& value) { SetM2tsSettings(std::forward<M2tsSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RawSettings& GetRawSettings() const{ return m_rawSettings; }
+    inline const RawSettings& GetRawSettings() const { return m_rawSettings; }
     inline bool RawSettingsHasBeenSet() const { return m_rawSettingsHasBeenSet; }
-    inline void SetRawSettings(const RawSettings& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = value; }
-    inline void SetRawSettings(RawSettings&& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = std::move(value); }
-    inline ArchiveContainerSettings& WithRawSettings(const RawSettings& value) { SetRawSettings(value); return *this;}
-    inline ArchiveContainerSettings& WithRawSettings(RawSettings&& value) { SetRawSettings(std::move(value)); return *this;}
+    template<typename RawSettingsT = RawSettings>
+    void SetRawSettings(RawSettingsT&& value) { m_rawSettingsHasBeenSet = true; m_rawSettings = std::forward<RawSettingsT>(value); }
+    template<typename RawSettingsT = RawSettings>
+    ArchiveContainerSettings& WithRawSettings(RawSettingsT&& value) { SetRawSettings(std::forward<RawSettingsT>(value)); return *this;}
     ///@}
   private:
 

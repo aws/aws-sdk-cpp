@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetNetworkInsightsAccessScopeAnalysisFindingsRequest::GetNetworkInsightsAccessScopeAnalysisFindingsRequest() : 
-    m_networkInsightsAccessScopeAnalysisIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetNetworkInsightsAccessScopeAnalysisFindingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

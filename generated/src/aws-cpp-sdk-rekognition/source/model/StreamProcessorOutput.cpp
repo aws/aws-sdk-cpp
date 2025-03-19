@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessorOutput::StreamProcessorOutput() : 
-    m_kinesisDataStreamHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 StreamProcessorOutput::StreamProcessorOutput(JsonView jsonValue)
-  : StreamProcessorOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StreamProcessorOutput& StreamProcessorOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KinesisDataStream"))
   {
     m_kinesisDataStream = jsonValue.GetObject("KinesisDataStream");
-
     m_kinesisDataStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("S3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

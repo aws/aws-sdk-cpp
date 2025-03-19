@@ -38,7 +38,7 @@ namespace Model
   class JobQueueDetail
   {
   public:
-    AWS_BATCH_API JobQueueDetail();
+    AWS_BATCH_API JobQueueDetail() = default;
     AWS_BATCH_API JobQueueDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API JobQueueDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The job queue name.</p>
      */
-    inline const Aws::String& GetJobQueueName() const{ return m_jobQueueName; }
+    inline const Aws::String& GetJobQueueName() const { return m_jobQueueName; }
     inline bool JobQueueNameHasBeenSet() const { return m_jobQueueNameHasBeenSet; }
-    inline void SetJobQueueName(const Aws::String& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
-    inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::move(value); }
-    inline void SetJobQueueName(const char* value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName.assign(value); }
-    inline JobQueueDetail& WithJobQueueName(const Aws::String& value) { SetJobQueueName(value); return *this;}
-    inline JobQueueDetail& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
-    inline JobQueueDetail& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
+    template<typename JobQueueNameT = Aws::String>
+    void SetJobQueueName(JobQueueNameT&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::forward<JobQueueNameT>(value); }
+    template<typename JobQueueNameT = Aws::String>
+    JobQueueDetail& WithJobQueueName(JobQueueNameT&& value) { SetJobQueueName(std::forward<JobQueueNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
-    inline const Aws::String& GetJobQueueArn() const{ return m_jobQueueArn; }
+    inline const Aws::String& GetJobQueueArn() const { return m_jobQueueArn; }
     inline bool JobQueueArnHasBeenSet() const { return m_jobQueueArnHasBeenSet; }
-    inline void SetJobQueueArn(const Aws::String& value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn = value; }
-    inline void SetJobQueueArn(Aws::String&& value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn = std::move(value); }
-    inline void SetJobQueueArn(const char* value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn.assign(value); }
-    inline JobQueueDetail& WithJobQueueArn(const Aws::String& value) { SetJobQueueArn(value); return *this;}
-    inline JobQueueDetail& WithJobQueueArn(Aws::String&& value) { SetJobQueueArn(std::move(value)); return *this;}
-    inline JobQueueDetail& WithJobQueueArn(const char* value) { SetJobQueueArn(value); return *this;}
+    template<typename JobQueueArnT = Aws::String>
+    void SetJobQueueArn(JobQueueArnT&& value) { m_jobQueueArnHasBeenSet = true; m_jobQueueArn = std::forward<JobQueueArnT>(value); }
+    template<typename JobQueueArnT = Aws::String>
+    JobQueueDetail& WithJobQueueArn(JobQueueArnT&& value) { SetJobQueueArn(std::forward<JobQueueArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,10 @@ namespace Model
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
-    inline const JQState& GetState() const{ return m_state; }
+    inline JQState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(JQState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline JobQueueDetail& WithState(const JQState& value) { SetState(value); return *this;}
-    inline JobQueueDetail& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(JQState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline JobQueueDetail& WithState(JQState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,12 @@ namespace Model
      * </code>. For example,
      * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
-    inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
+    inline const Aws::String& GetSchedulingPolicyArn() const { return m_schedulingPolicyArn; }
     inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
-    inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
-    inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
-    inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
-    inline JobQueueDetail& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
-    inline JobQueueDetail& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
-    inline JobQueueDetail& WithSchedulingPolicyArn(const char* value) { SetSchedulingPolicyArn(value); return *this;}
+    template<typename SchedulingPolicyArnT = Aws::String>
+    void SetSchedulingPolicyArn(SchedulingPolicyArnT&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::forward<SchedulingPolicyArnT>(value); }
+    template<typename SchedulingPolicyArnT = Aws::String>
+    JobQueueDetail& WithSchedulingPolicyArn(SchedulingPolicyArnT&& value) { SetSchedulingPolicyArn(std::forward<SchedulingPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +101,10 @@ namespace Model
      * <p>The status of the job queue (for example, <code>CREATING</code> or
      * <code>VALID</code>).</p>
      */
-    inline const JQStatus& GetStatus() const{ return m_status; }
+    inline JQStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JQStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JQStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JobQueueDetail& WithStatus(const JQStatus& value) { SetStatus(value); return *this;}
-    inline JobQueueDetail& WithStatus(JQStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JQStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobQueueDetail& WithStatus(JQStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +112,12 @@ namespace Model
      * <p>A short, human-readable string to provide additional details for the current
      * status of the job queue.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline JobQueueDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline JobQueueDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline JobQueueDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    JobQueueDetail& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,7 +143,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/job_dependencies.html">Job
      * Dependencies</a> in the <i>Batch User Guide</i>.</p> 
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}
@@ -167,14 +155,14 @@ namespace Model
      * that job placement is preferred. Compute environments are selected for job
      * placement in ascending order.</p>
      */
-    inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
+    inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const { return m_computeEnvironmentOrder; }
     inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
-    inline void SetComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = value; }
-    inline void SetComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::move(value); }
-    inline JobQueueDetail& WithComputeEnvironmentOrder(const Aws::Vector<ComputeEnvironmentOrder>& value) { SetComputeEnvironmentOrder(value); return *this;}
-    inline JobQueueDetail& WithComputeEnvironmentOrder(Aws::Vector<ComputeEnvironmentOrder>&& value) { SetComputeEnvironmentOrder(std::move(value)); return *this;}
-    inline JobQueueDetail& AddComputeEnvironmentOrder(const ComputeEnvironmentOrder& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(value); return *this; }
-    inline JobQueueDetail& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
+    template<typename ComputeEnvironmentOrderT = Aws::Vector<ComputeEnvironmentOrder>>
+    void SetComputeEnvironmentOrder(ComputeEnvironmentOrderT&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder = std::forward<ComputeEnvironmentOrderT>(value); }
+    template<typename ComputeEnvironmentOrderT = Aws::Vector<ComputeEnvironmentOrder>>
+    JobQueueDetail& WithComputeEnvironmentOrder(ComputeEnvironmentOrderT&& value) { SetComputeEnvironmentOrder(std::forward<ComputeEnvironmentOrderT>(value)); return *this;}
+    template<typename ComputeEnvironmentOrderT = ComputeEnvironmentOrder>
+    JobQueueDetail& AddComputeEnvironmentOrder(ComputeEnvironmentOrderT&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.emplace_back(std::forward<ComputeEnvironmentOrderT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -183,19 +171,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline JobQueueDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline JobQueueDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline JobQueueDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline JobQueueDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline JobQueueDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline JobQueueDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline JobQueueDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline JobQueueDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline JobQueueDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    JobQueueDetail& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    JobQueueDetail& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -204,14 +189,14 @@ namespace Model
      * job queue in the specified state longer than specified times. Batch will perform
      * each action after <code>maxTimeSeconds</code> has passed.</p>
      */
-    inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const{ return m_jobStateTimeLimitActions; }
+    inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const { return m_jobStateTimeLimitActions; }
     inline bool JobStateTimeLimitActionsHasBeenSet() const { return m_jobStateTimeLimitActionsHasBeenSet; }
-    inline void SetJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = value; }
-    inline void SetJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = std::move(value); }
-    inline JobQueueDetail& WithJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { SetJobStateTimeLimitActions(value); return *this;}
-    inline JobQueueDetail& WithJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { SetJobStateTimeLimitActions(std::move(value)); return *this;}
-    inline JobQueueDetail& AddJobStateTimeLimitActions(const JobStateTimeLimitAction& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(value); return *this; }
-    inline JobQueueDetail& AddJobStateTimeLimitActions(JobStateTimeLimitAction&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(std::move(value)); return *this; }
+    template<typename JobStateTimeLimitActionsT = Aws::Vector<JobStateTimeLimitAction>>
+    void SetJobStateTimeLimitActions(JobStateTimeLimitActionsT&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = std::forward<JobStateTimeLimitActionsT>(value); }
+    template<typename JobStateTimeLimitActionsT = Aws::Vector<JobStateTimeLimitAction>>
+    JobQueueDetail& WithJobStateTimeLimitActions(JobStateTimeLimitActionsT&& value) { SetJobStateTimeLimitActions(std::forward<JobStateTimeLimitActionsT>(value)); return *this;}
+    template<typename JobStateTimeLimitActionsT = JobStateTimeLimitAction>
+    JobQueueDetail& AddJobStateTimeLimitActions(JobStateTimeLimitActionsT&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.emplace_back(std::forward<JobStateTimeLimitActionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -221,19 +206,19 @@ namespace Model
     Aws::String m_jobQueueArn;
     bool m_jobQueueArnHasBeenSet = false;
 
-    JQState m_state;
+    JQState m_state{JQState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_schedulingPolicyArn;
     bool m_schedulingPolicyArnHasBeenSet = false;
 
-    JQStatus m_status;
+    JQStatus m_status{JQStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;

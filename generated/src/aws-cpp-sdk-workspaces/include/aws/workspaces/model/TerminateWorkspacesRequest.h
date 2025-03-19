@@ -22,7 +22,7 @@ namespace Model
   class TerminateWorkspacesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API TerminateWorkspacesRequest();
+    AWS_WORKSPACES_API TerminateWorkspacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
-    inline const Aws::Vector<TerminateRequest>& GetTerminateWorkspaceRequests() const{ return m_terminateWorkspaceRequests; }
+    inline const Aws::Vector<TerminateRequest>& GetTerminateWorkspaceRequests() const { return m_terminateWorkspaceRequests; }
     inline bool TerminateWorkspaceRequestsHasBeenSet() const { return m_terminateWorkspaceRequestsHasBeenSet; }
-    inline void SetTerminateWorkspaceRequests(const Aws::Vector<TerminateRequest>& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = value; }
-    inline void SetTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = std::move(value); }
-    inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(const Aws::Vector<TerminateRequest>& value) { SetTerminateWorkspaceRequests(value); return *this;}
-    inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { SetTerminateWorkspaceRequests(std::move(value)); return *this;}
-    inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(const TerminateRequest& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(value); return *this; }
-    inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateRequest&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(std::move(value)); return *this; }
+    template<typename TerminateWorkspaceRequestsT = Aws::Vector<TerminateRequest>>
+    void SetTerminateWorkspaceRequests(TerminateWorkspaceRequestsT&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = std::forward<TerminateWorkspaceRequestsT>(value); }
+    template<typename TerminateWorkspaceRequestsT = Aws::Vector<TerminateRequest>>
+    TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(TerminateWorkspaceRequestsT&& value) { SetTerminateWorkspaceRequests(std::forward<TerminateWorkspaceRequestsT>(value)); return *this;}
+    template<typename TerminateWorkspaceRequestsT = TerminateRequest>
+    TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateWorkspaceRequestsT&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.emplace_back(std::forward<TerminateWorkspaceRequestsT>(value)); return *this; }
     ///@}
   private:
 

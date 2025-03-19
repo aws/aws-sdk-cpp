@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityAnalyzerResult::DataQualityAnalyzerResult() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationMessageHasBeenSet(false),
-    m_evaluatedMetricsHasBeenSet(false)
-{
-}
-
 DataQualityAnalyzerResult::DataQualityAnalyzerResult(JsonView jsonValue)
-  : DataQualityAnalyzerResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataQualityAnalyzerResult& DataQualityAnalyzerResult::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMessage"))
   {
     m_evaluationMessage = jsonValue.GetString("EvaluationMessage");
-
     m_evaluationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluatedMetrics"))
   {
     Aws::Map<Aws::String, JsonView> evaluatedMetricsJsonMap = jsonValue.GetObject("EvaluatedMetrics").GetAllObjects();
@@ -64,7 +49,6 @@ DataQualityAnalyzerResult& DataQualityAnalyzerResult::operator =(JsonView jsonVa
     }
     m_evaluatedMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

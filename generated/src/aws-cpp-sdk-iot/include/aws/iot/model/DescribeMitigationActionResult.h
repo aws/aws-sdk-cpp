@@ -30,7 +30,7 @@ namespace Model
   class DescribeMitigationActionResult
   {
   public:
-    AWS_IOT_API DescribeMitigationActionResult();
+    AWS_IOT_API DescribeMitigationActionResult() = default;
     AWS_IOT_API DescribeMitigationActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeMitigationActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,63 +39,53 @@ namespace Model
     /**
      * <p>The friendly name that uniquely identifies the mitigation action.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
-    inline void SetActionName(const Aws::String& value) { m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionName.assign(value); }
-    inline DescribeMitigationActionResult& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline DescribeMitigationActionResult& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline DescribeMitigationActionResult& WithActionName(const char* value) { SetActionName(value); return *this;}
+    inline const Aws::String& GetActionName() const { return m_actionName; }
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    DescribeMitigationActionResult& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of mitigation action.</p>
      */
-    inline const MitigationActionType& GetActionType() const{ return m_actionType; }
-    inline void SetActionType(const MitigationActionType& value) { m_actionType = value; }
-    inline void SetActionType(MitigationActionType&& value) { m_actionType = std::move(value); }
-    inline DescribeMitigationActionResult& WithActionType(const MitigationActionType& value) { SetActionType(value); return *this;}
-    inline DescribeMitigationActionResult& WithActionType(MitigationActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline MitigationActionType GetActionType() const { return m_actionType; }
+    inline void SetActionType(MitigationActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline DescribeMitigationActionResult& WithActionType(MitigationActionType value) { SetActionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN that identifies this migration action.</p>
      */
-    inline const Aws::String& GetActionArn() const{ return m_actionArn; }
-    inline void SetActionArn(const Aws::String& value) { m_actionArn = value; }
-    inline void SetActionArn(Aws::String&& value) { m_actionArn = std::move(value); }
-    inline void SetActionArn(const char* value) { m_actionArn.assign(value); }
-    inline DescribeMitigationActionResult& WithActionArn(const Aws::String& value) { SetActionArn(value); return *this;}
-    inline DescribeMitigationActionResult& WithActionArn(Aws::String&& value) { SetActionArn(std::move(value)); return *this;}
-    inline DescribeMitigationActionResult& WithActionArn(const char* value) { SetActionArn(value); return *this;}
+    inline const Aws::String& GetActionArn() const { return m_actionArn; }
+    template<typename ActionArnT = Aws::String>
+    void SetActionArn(ActionArnT&& value) { m_actionArnHasBeenSet = true; m_actionArn = std::forward<ActionArnT>(value); }
+    template<typename ActionArnT = Aws::String>
+    DescribeMitigationActionResult& WithActionArn(ActionArnT&& value) { SetActionArn(std::forward<ActionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for this action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
-    inline void SetActionId(const Aws::String& value) { m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionId.assign(value); }
-    inline DescribeMitigationActionResult& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline DescribeMitigationActionResult& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline DescribeMitigationActionResult& WithActionId(const char* value) { SetActionId(value); return *this;}
+    inline const Aws::String& GetActionId() const { return m_actionId; }
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    DescribeMitigationActionResult& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM role used to apply this action.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeMitigationActionResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeMitigationActionResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeMitigationActionResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeMitigationActionResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,11 +93,11 @@ namespace Model
      * <p>Parameters that control how the mitigation action is applied, specific to the
      * type of mitigation action.</p>
      */
-    inline const MitigationActionParams& GetActionParams() const{ return m_actionParams; }
-    inline void SetActionParams(const MitigationActionParams& value) { m_actionParams = value; }
-    inline void SetActionParams(MitigationActionParams&& value) { m_actionParams = std::move(value); }
-    inline DescribeMitigationActionResult& WithActionParams(const MitigationActionParams& value) { SetActionParams(value); return *this;}
-    inline DescribeMitigationActionResult& WithActionParams(MitigationActionParams&& value) { SetActionParams(std::move(value)); return *this;}
+    inline const MitigationActionParams& GetActionParams() const { return m_actionParams; }
+    template<typename ActionParamsT = MitigationActionParams>
+    void SetActionParams(ActionParamsT&& value) { m_actionParamsHasBeenSet = true; m_actionParams = std::forward<ActionParamsT>(value); }
+    template<typename ActionParamsT = MitigationActionParams>
+    DescribeMitigationActionResult& WithActionParams(ActionParamsT&& value) { SetActionParams(std::forward<ActionParamsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,53 +105,60 @@ namespace Model
      * <p>The date and time when the mitigation action was added to your Amazon Web
      * Services accounts.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline DescribeMitigationActionResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline DescribeMitigationActionResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    DescribeMitigationActionResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the mitigation action was last changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-    inline DescribeMitigationActionResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline DescribeMitigationActionResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    DescribeMitigationActionResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMitigationActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMitigationActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMitigationActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMitigationActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionName;
+    bool m_actionNameHasBeenSet = false;
 
-    MitigationActionType m_actionType;
+    MitigationActionType m_actionType{MitigationActionType::NOT_SET};
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_actionArn;
+    bool m_actionArnHasBeenSet = false;
 
     Aws::String m_actionId;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     MitigationActionParams m_actionParams;
+    bool m_actionParamsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

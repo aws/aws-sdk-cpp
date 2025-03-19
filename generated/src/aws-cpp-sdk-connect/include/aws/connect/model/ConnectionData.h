@@ -32,7 +32,7 @@ namespace Model
   class ConnectionData
   {
   public:
-    AWS_CONNECT_API ConnectionData();
+    AWS_CONNECT_API ConnectionData() = default;
     AWS_CONNECT_API ConnectionData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ConnectionData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The attendee information, including attendee ID and join token.</p>
      */
-    inline const Attendee& GetAttendee() const{ return m_attendee; }
+    inline const Attendee& GetAttendee() const { return m_attendee; }
     inline bool AttendeeHasBeenSet() const { return m_attendeeHasBeenSet; }
-    inline void SetAttendee(const Attendee& value) { m_attendeeHasBeenSet = true; m_attendee = value; }
-    inline void SetAttendee(Attendee&& value) { m_attendeeHasBeenSet = true; m_attendee = std::move(value); }
-    inline ConnectionData& WithAttendee(const Attendee& value) { SetAttendee(value); return *this;}
-    inline ConnectionData& WithAttendee(Attendee&& value) { SetAttendee(std::move(value)); return *this;}
+    template<typename AttendeeT = Attendee>
+    void SetAttendee(AttendeeT&& value) { m_attendeeHasBeenSet = true; m_attendee = std::forward<AttendeeT>(value); }
+    template<typename AttendeeT = Attendee>
+    ConnectionData& WithAttendee(AttendeeT&& value) { SetAttendee(std::forward<AttendeeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A meeting created using the Amazon Chime SDK.</p>
      */
-    inline const Meeting& GetMeeting() const{ return m_meeting; }
+    inline const Meeting& GetMeeting() const { return m_meeting; }
     inline bool MeetingHasBeenSet() const { return m_meetingHasBeenSet; }
-    inline void SetMeeting(const Meeting& value) { m_meetingHasBeenSet = true; m_meeting = value; }
-    inline void SetMeeting(Meeting&& value) { m_meetingHasBeenSet = true; m_meeting = std::move(value); }
-    inline ConnectionData& WithMeeting(const Meeting& value) { SetMeeting(value); return *this;}
-    inline ConnectionData& WithMeeting(Meeting&& value) { SetMeeting(std::move(value)); return *this;}
+    template<typename MeetingT = Meeting>
+    void SetMeeting(MeetingT&& value) { m_meetingHasBeenSet = true; m_meeting = std::forward<MeetingT>(value); }
+    template<typename MeetingT = Meeting>
+    ConnectionData& WithMeeting(MeetingT&& value) { SetMeeting(std::forward<MeetingT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class GetIntegrationTablePropertiesResult
   {
   public:
-    AWS_GLUE_API GetIntegrationTablePropertiesResult();
+    AWS_GLUE_API GetIntegrationTablePropertiesResult() = default;
     AWS_GLUE_API GetIntegrationTablePropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetIntegrationTablePropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,70 @@ namespace Model
     /**
      * <p>The connection ARN of the source, or the database ARN of the target.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline GetIntegrationTablePropertiesResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GetIntegrationTablePropertiesResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table to be replicated.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
-    inline GetIntegrationTablePropertiesResult& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithTableName(const char* value) { SetTableName(value); return *this;}
+    inline const Aws::String& GetTableName() const { return m_tableName; }
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    GetIntegrationTablePropertiesResult& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure for the source table configuration.</p>
      */
-    inline const SourceTableConfig& GetSourceTableConfig() const{ return m_sourceTableConfig; }
-    inline void SetSourceTableConfig(const SourceTableConfig& value) { m_sourceTableConfig = value; }
-    inline void SetSourceTableConfig(SourceTableConfig&& value) { m_sourceTableConfig = std::move(value); }
-    inline GetIntegrationTablePropertiesResult& WithSourceTableConfig(const SourceTableConfig& value) { SetSourceTableConfig(value); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithSourceTableConfig(SourceTableConfig&& value) { SetSourceTableConfig(std::move(value)); return *this;}
+    inline const SourceTableConfig& GetSourceTableConfig() const { return m_sourceTableConfig; }
+    template<typename SourceTableConfigT = SourceTableConfig>
+    void SetSourceTableConfig(SourceTableConfigT&& value) { m_sourceTableConfigHasBeenSet = true; m_sourceTableConfig = std::forward<SourceTableConfigT>(value); }
+    template<typename SourceTableConfigT = SourceTableConfig>
+    GetIntegrationTablePropertiesResult& WithSourceTableConfig(SourceTableConfigT&& value) { SetSourceTableConfig(std::forward<SourceTableConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure for the target table configuration.</p>
      */
-    inline const TargetTableConfig& GetTargetTableConfig() const{ return m_targetTableConfig; }
-    inline void SetTargetTableConfig(const TargetTableConfig& value) { m_targetTableConfig = value; }
-    inline void SetTargetTableConfig(TargetTableConfig&& value) { m_targetTableConfig = std::move(value); }
-    inline GetIntegrationTablePropertiesResult& WithTargetTableConfig(const TargetTableConfig& value) { SetTargetTableConfig(value); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithTargetTableConfig(TargetTableConfig&& value) { SetTargetTableConfig(std::move(value)); return *this;}
+    inline const TargetTableConfig& GetTargetTableConfig() const { return m_targetTableConfig; }
+    template<typename TargetTableConfigT = TargetTableConfig>
+    void SetTargetTableConfig(TargetTableConfigT&& value) { m_targetTableConfigHasBeenSet = true; m_targetTableConfig = std::forward<TargetTableConfigT>(value); }
+    template<typename TargetTableConfigT = TargetTableConfig>
+    GetIntegrationTablePropertiesResult& WithTargetTableConfig(TargetTableConfigT&& value) { SetTargetTableConfig(std::forward<TargetTableConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIntegrationTablePropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIntegrationTablePropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIntegrationTablePropertiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet = false;
 
     SourceTableConfig m_sourceTableConfig;
+    bool m_sourceTableConfigHasBeenSet = false;
 
     TargetTableConfig m_targetTableConfig;
+    bool m_targetTableConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

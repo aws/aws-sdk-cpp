@@ -12,13 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFileRequest::GetFileRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_commitSpecifierHasBeenSet(false),
-    m_filePathHasBeenSet(false)
-{
-}
-
 Aws::String GetFileRequest::SerializePayload() const
 {
   JsonValue payload;

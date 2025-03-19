@@ -12,16 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIdMappingWorkflowRequest::UpdateIdMappingWorkflowRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_idMappingTechniquesHasBeenSet(false),
-    m_inputSourceConfigHasBeenSet(false),
-    m_outputSourceConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIdMappingWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

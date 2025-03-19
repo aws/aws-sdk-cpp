@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteParametersResult::DeleteParametersResult()
-{
-}
-
 DeleteParametersResult::DeleteParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebS
     {
       m_deletedParameters.push_back(deletedParametersJsonList[deletedParametersIndex].AsString());
     }
+    m_deletedParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidParameters"))
   {
     Aws::Utils::Array<JsonView> invalidParametersJsonList = jsonValue.GetArray("InvalidParameters");
@@ -45,14 +41,15 @@ DeleteParametersResult& DeleteParametersResult::operator =(const Aws::AmazonWebS
     {
       m_invalidParameters.push_back(invalidParametersJsonList[invalidParametersIndex].AsString());
     }
+    m_invalidParametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

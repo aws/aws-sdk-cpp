@@ -20,30 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServerlessCache::ServerlessCache() : 
-    m_serverlessCacheNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_fullEngineVersionHasBeenSet(false),
-    m_cacheUsageLimitsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_userGroupIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_dailySnapshotTimeHasBeenSet(false)
-{
-}
-
 ServerlessCache::ServerlessCache(const XmlNode& xmlNode)
-  : ServerlessCache()
 {
   *this = xmlNode;
 }
@@ -112,6 +89,7 @@ ServerlessCache& ServerlessCache::operator =(const XmlNode& xmlNode)
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("SecurityGroupId");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
@@ -148,6 +126,7 @@ ServerlessCache& ServerlessCache::operator =(const XmlNode& xmlNode)
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("SubnetId");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());

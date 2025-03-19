@@ -27,7 +27,7 @@ namespace Model
   class CreateAddressResult
   {
   public:
-    AWS_SNOWBALL_API CreateAddressResult();
+    AWS_SNOWBALL_API CreateAddressResult() = default;
     AWS_SNOWBALL_API CreateAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWBALL_API CreateAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * when you create a job to specify which address you want the Snow device for that
      * job shipped to.</p>
      */
-    inline const Aws::String& GetAddressId() const{ return m_addressId; }
-    inline void SetAddressId(const Aws::String& value) { m_addressId = value; }
-    inline void SetAddressId(Aws::String&& value) { m_addressId = std::move(value); }
-    inline void SetAddressId(const char* value) { m_addressId.assign(value); }
-    inline CreateAddressResult& WithAddressId(const Aws::String& value) { SetAddressId(value); return *this;}
-    inline CreateAddressResult& WithAddressId(Aws::String&& value) { SetAddressId(std::move(value)); return *this;}
-    inline CreateAddressResult& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+    inline const Aws::String& GetAddressId() const { return m_addressId; }
+    template<typename AddressIdT = Aws::String>
+    void SetAddressId(AddressIdT&& value) { m_addressIdHasBeenSet = true; m_addressId = std::forward<AddressIdT>(value); }
+    template<typename AddressIdT = Aws::String>
+    CreateAddressResult& WithAddressId(AddressIdT&& value) { SetAddressId(std::forward<AddressIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAddressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAddressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAddressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAddressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_addressId;
+    bool m_addressIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,7 +42,7 @@ namespace Model
   class ByteMatchSetUpdate
   {
   public:
-    AWS_WAF_API ByteMatchSetUpdate();
+    AWS_WAF_API ByteMatchSetUpdate() = default;
     AWS_WAF_API ByteMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API ByteMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
     /**
      * <p>Specifies whether to insert or delete a <a>ByteMatchTuple</a>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ByteMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline ByteMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ByteMatchSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -69,16 +67,16 @@ namespace Model
      * <code>ByteMatchTuple</code> that you want to delete from the
      * <code>ByteMatchSet</code>.</p>
      */
-    inline const ByteMatchTuple& GetByteMatchTuple() const{ return m_byteMatchTuple; }
+    inline const ByteMatchTuple& GetByteMatchTuple() const { return m_byteMatchTuple; }
     inline bool ByteMatchTupleHasBeenSet() const { return m_byteMatchTupleHasBeenSet; }
-    inline void SetByteMatchTuple(const ByteMatchTuple& value) { m_byteMatchTupleHasBeenSet = true; m_byteMatchTuple = value; }
-    inline void SetByteMatchTuple(ByteMatchTuple&& value) { m_byteMatchTupleHasBeenSet = true; m_byteMatchTuple = std::move(value); }
-    inline ByteMatchSetUpdate& WithByteMatchTuple(const ByteMatchTuple& value) { SetByteMatchTuple(value); return *this;}
-    inline ByteMatchSetUpdate& WithByteMatchTuple(ByteMatchTuple&& value) { SetByteMatchTuple(std::move(value)); return *this;}
+    template<typename ByteMatchTupleT = ByteMatchTuple>
+    void SetByteMatchTuple(ByteMatchTupleT&& value) { m_byteMatchTupleHasBeenSet = true; m_byteMatchTuple = std::forward<ByteMatchTupleT>(value); }
+    template<typename ByteMatchTupleT = ByteMatchTuple>
+    ByteMatchSetUpdate& WithByteMatchTuple(ByteMatchTupleT&& value) { SetByteMatchTuple(std::forward<ByteMatchTupleT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     ByteMatchTuple m_byteMatchTuple;

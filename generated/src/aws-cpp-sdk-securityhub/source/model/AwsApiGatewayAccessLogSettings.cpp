@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiGatewayAccessLogSettings::AwsApiGatewayAccessLogSettings() : 
-    m_formatHasBeenSet(false),
-    m_destinationArnHasBeenSet(false)
-{
-}
-
 AwsApiGatewayAccessLogSettings::AwsApiGatewayAccessLogSettings(JsonView jsonValue)
-  : AwsApiGatewayAccessLogSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsApiGatewayAccessLogSettings& AwsApiGatewayAccessLogSettings::operator =(JsonV
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationArn"))
   {
     m_destinationArn = jsonValue.GetString("DestinationArn");
-
     m_destinationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

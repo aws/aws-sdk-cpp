@@ -18,13 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribePostStreamAnalyticsResult::MedicalScribePostStreamAnalyticsResult() : 
-    m_clinicalNoteGenerationResultHasBeenSet(false)
-{
-}
-
 MedicalScribePostStreamAnalyticsResult::MedicalScribePostStreamAnalyticsResult(JsonView jsonValue)
-  : MedicalScribePostStreamAnalyticsResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MedicalScribePostStreamAnalyticsResult& MedicalScribePostStreamAnalyticsResult::
   if(jsonValue.ValueExists("ClinicalNoteGenerationResult"))
   {
     m_clinicalNoteGenerationResult = jsonValue.GetObject("ClinicalNoteGenerationResult");
-
     m_clinicalNoteGenerationResultHasBeenSet = true;
   }
-
   return *this;
 }
 

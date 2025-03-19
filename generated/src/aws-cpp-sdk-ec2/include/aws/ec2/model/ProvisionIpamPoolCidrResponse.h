@@ -28,7 +28,7 @@ namespace Model
   class ProvisionIpamPoolCidrResponse
   {
   public:
-    AWS_EC2_API ProvisionIpamPoolCidrResponse();
+    AWS_EC2_API ProvisionIpamPoolCidrResponse() = default;
     AWS_EC2_API ProvisionIpamPoolCidrResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ProvisionIpamPoolCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the provisioned CIDR.</p>
      */
-    inline const IpamPoolCidr& GetIpamPoolCidr() const{ return m_ipamPoolCidr; }
-    inline void SetIpamPoolCidr(const IpamPoolCidr& value) { m_ipamPoolCidr = value; }
-    inline void SetIpamPoolCidr(IpamPoolCidr&& value) { m_ipamPoolCidr = std::move(value); }
-    inline ProvisionIpamPoolCidrResponse& WithIpamPoolCidr(const IpamPoolCidr& value) { SetIpamPoolCidr(value); return *this;}
-    inline ProvisionIpamPoolCidrResponse& WithIpamPoolCidr(IpamPoolCidr&& value) { SetIpamPoolCidr(std::move(value)); return *this;}
+    inline const IpamPoolCidr& GetIpamPoolCidr() const { return m_ipamPoolCidr; }
+    template<typename IpamPoolCidrT = IpamPoolCidr>
+    void SetIpamPoolCidr(IpamPoolCidrT&& value) { m_ipamPoolCidrHasBeenSet = true; m_ipamPoolCidr = std::forward<IpamPoolCidrT>(value); }
+    template<typename IpamPoolCidrT = IpamPoolCidr>
+    ProvisionIpamPoolCidrResponse& WithIpamPoolCidr(IpamPoolCidrT&& value) { SetIpamPoolCidr(std::forward<IpamPoolCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ProvisionIpamPoolCidrResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ProvisionIpamPoolCidrResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ProvisionIpamPoolCidrResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IpamPoolCidr m_ipamPoolCidr;
+    bool m_ipamPoolCidrHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class DeploymentCommand
   {
   public:
-    AWS_OPSWORKS_API DeploymentCommand();
+    AWS_OPSWORKS_API DeploymentCommand() = default;
     AWS_OPSWORKS_API DeploymentCommand(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API DeploymentCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,12 +68,10 @@ namespace Model
      * <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
      * <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li> </ul>
      */
-    inline const DeploymentCommandName& GetName() const{ return m_name; }
+    inline DeploymentCommandName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DeploymentCommandName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DeploymentCommandName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DeploymentCommand& WithName(const DeploymentCommandName& value) { SetName(value); return *this;}
-    inline DeploymentCommand& WithName(DeploymentCommandName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DeploymentCommandName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DeploymentCommand& WithName(DeploymentCommandName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -92,22 +90,20 @@ namespace Model
      * Amazon Linux 2018.03, set <code>Args</code> to the following.</p> <p> <code> {
      * "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetArgs() const{ return m_args; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetArgs() const { return m_args; }
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-    inline void SetArgs(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_argsHasBeenSet = true; m_args = value; }
-    inline void SetArgs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-    inline DeploymentCommand& WithArgs(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetArgs(value); return *this;}
-    inline DeploymentCommand& WithArgs(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetArgs(std::move(value)); return *this;}
-    inline DeploymentCommand& AddArgs(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args.emplace(key, value); return *this; }
-    inline DeploymentCommand& AddArgs(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args.emplace(std::move(key), value); return *this; }
-    inline DeploymentCommand& AddArgs(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args.emplace(key, std::move(value)); return *this; }
-    inline DeploymentCommand& AddArgs(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeploymentCommand& AddArgs(const char* key, Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args.emplace(key, std::move(value)); return *this; }
-    inline DeploymentCommand& AddArgs(const char* key, const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args.emplace(key, value); return *this; }
+    template<typename ArgsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args = std::forward<ArgsT>(value); }
+    template<typename ArgsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    DeploymentCommand& WithArgs(ArgsT&& value) { SetArgs(std::forward<ArgsT>(value)); return *this;}
+    template<typename ArgsKeyT = Aws::String, typename ArgsValueT = Aws::Vector<Aws::String>>
+    DeploymentCommand& AddArgs(ArgsKeyT&& key, ArgsValueT&& value) {
+      m_argsHasBeenSet = true; m_args.emplace(std::forward<ArgsKeyT>(key), std::forward<ArgsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    DeploymentCommandName m_name;
+    DeploymentCommandName m_name{DeploymentCommandName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_args;

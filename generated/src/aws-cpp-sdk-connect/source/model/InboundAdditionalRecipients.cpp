@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InboundAdditionalRecipients::InboundAdditionalRecipients() : 
-    m_toAddressesHasBeenSet(false),
-    m_ccAddressesHasBeenSet(false)
-{
-}
-
 InboundAdditionalRecipients::InboundAdditionalRecipients(JsonView jsonValue)
-  : InboundAdditionalRecipients()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ InboundAdditionalRecipients& InboundAdditionalRecipients::operator =(JsonView js
     }
     m_toAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CcAddresses"))
   {
     Aws::Utils::Array<JsonView> ccAddressesJsonList = jsonValue.GetArray("CcAddresses");
@@ -51,7 +43,6 @@ InboundAdditionalRecipients& InboundAdditionalRecipients::operator =(JsonView js
     }
     m_ccAddressesHasBeenSet = true;
   }
-
   return *this;
 }
 

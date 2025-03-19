@@ -23,7 +23,7 @@ namespace Model
   class TestParsingRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API TestParsingRequest();
+    AWS_B2BI_API TestParsingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,12 @@ namespace Model
      * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
      * bucket and prefix for the location of the input file.</p>
      */
-    inline const S3Location& GetInputFile() const{ return m_inputFile; }
+    inline const S3Location& GetInputFile() const { return m_inputFile; }
     inline bool InputFileHasBeenSet() const { return m_inputFileHasBeenSet; }
-    inline void SetInputFile(const S3Location& value) { m_inputFileHasBeenSet = true; m_inputFile = value; }
-    inline void SetInputFile(S3Location&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::move(value); }
-    inline TestParsingRequest& WithInputFile(const S3Location& value) { SetInputFile(value); return *this;}
-    inline TestParsingRequest& WithInputFile(S3Location&& value) { SetInputFile(std::move(value)); return *this;}
+    template<typename InputFileT = S3Location>
+    void SetInputFile(InputFileT&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::forward<InputFileT>(value); }
+    template<typename InputFileT = S3Location>
+    TestParsingRequest& WithInputFile(InputFileT&& value) { SetInputFile(std::forward<InputFileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +54,10 @@ namespace Model
      * <p>Specifies that the currently supported file formats for EDI transformations
      * are <code>JSON</code> and <code>XML</code>.</p>
      */
-    inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline FileFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline TestParsingRequest& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-    inline TestParsingRequest& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(FileFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline TestParsingRequest& WithFileFormat(FileFormat value) { SetFileFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -68,19 +66,19 @@ namespace Model
      * transformer. Currently, only X12 is supported. X12 is a set of standards and
      * corresponding messages that define specific business documents.</p>
      */
-    inline const EdiType& GetEdiType() const{ return m_ediType; }
+    inline const EdiType& GetEdiType() const { return m_ediType; }
     inline bool EdiTypeHasBeenSet() const { return m_ediTypeHasBeenSet; }
-    inline void SetEdiType(const EdiType& value) { m_ediTypeHasBeenSet = true; m_ediType = value; }
-    inline void SetEdiType(EdiType&& value) { m_ediTypeHasBeenSet = true; m_ediType = std::move(value); }
-    inline TestParsingRequest& WithEdiType(const EdiType& value) { SetEdiType(value); return *this;}
-    inline TestParsingRequest& WithEdiType(EdiType&& value) { SetEdiType(std::move(value)); return *this;}
+    template<typename EdiTypeT = EdiType>
+    void SetEdiType(EdiTypeT&& value) { m_ediTypeHasBeenSet = true; m_ediType = std::forward<EdiTypeT>(value); }
+    template<typename EdiTypeT = EdiType>
+    TestParsingRequest& WithEdiType(EdiTypeT&& value) { SetEdiType(std::forward<EdiTypeT>(value)); return *this;}
     ///@}
   private:
 
     S3Location m_inputFile;
     bool m_inputFileHasBeenSet = false;
 
-    FileFormat m_fileFormat;
+    FileFormat m_fileFormat{FileFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
     EdiType m_ediType;

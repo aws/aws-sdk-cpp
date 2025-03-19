@@ -23,7 +23,7 @@ namespace Model
   class PutAccessControlRuleRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API PutAccessControlRuleRequest();
+    AWS_WORKMAIL_API PutAccessControlRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,70 +40,62 @@ namespace Model
     /**
      * <p>The rule name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutAccessControlRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutAccessControlRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutAccessControlRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule effect.</p>
      */
-    inline const AccessControlRuleEffect& GetEffect() const{ return m_effect; }
+    inline AccessControlRuleEffect GetEffect() const { return m_effect; }
     inline bool EffectHasBeenSet() const { return m_effectHasBeenSet; }
-    inline void SetEffect(const AccessControlRuleEffect& value) { m_effectHasBeenSet = true; m_effect = value; }
-    inline void SetEffect(AccessControlRuleEffect&& value) { m_effectHasBeenSet = true; m_effect = std::move(value); }
-    inline PutAccessControlRuleRequest& WithEffect(const AccessControlRuleEffect& value) { SetEffect(value); return *this;}
-    inline PutAccessControlRuleRequest& WithEffect(AccessControlRuleEffect&& value) { SetEffect(std::move(value)); return *this;}
+    inline void SetEffect(AccessControlRuleEffect value) { m_effectHasBeenSet = true; m_effect = value; }
+    inline PutAccessControlRuleRequest& WithEffect(AccessControlRuleEffect value) { SetEffect(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PutAccessControlRuleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PutAccessControlRuleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PutAccessControlRuleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>IPv4 CIDR ranges to include in the rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpRanges() const{ return m_ipRanges; }
+    inline const Aws::Vector<Aws::String>& GetIpRanges() const { return m_ipRanges; }
     inline bool IpRangesHasBeenSet() const { return m_ipRangesHasBeenSet; }
-    inline void SetIpRanges(const Aws::Vector<Aws::String>& value) { m_ipRangesHasBeenSet = true; m_ipRanges = value; }
-    inline void SetIpRanges(Aws::Vector<Aws::String>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = std::move(value); }
-    inline PutAccessControlRuleRequest& WithIpRanges(const Aws::Vector<Aws::String>& value) { SetIpRanges(value); return *this;}
-    inline PutAccessControlRuleRequest& WithIpRanges(Aws::Vector<Aws::String>&& value) { SetIpRanges(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddIpRanges(const Aws::String& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddIpRanges(Aws::String&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddIpRanges(const char* value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
+    template<typename IpRangesT = Aws::Vector<Aws::String>>
+    void SetIpRanges(IpRangesT&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = std::forward<IpRangesT>(value); }
+    template<typename IpRangesT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithIpRanges(IpRangesT&& value) { SetIpRanges(std::forward<IpRangesT>(value)); return *this;}
+    template<typename IpRangesT = Aws::String>
+    PutAccessControlRuleRequest& AddIpRanges(IpRangesT&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.emplace_back(std::forward<IpRangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>IPv4 CIDR ranges to exclude from the rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotIpRanges() const{ return m_notIpRanges; }
+    inline const Aws::Vector<Aws::String>& GetNotIpRanges() const { return m_notIpRanges; }
     inline bool NotIpRangesHasBeenSet() const { return m_notIpRangesHasBeenSet; }
-    inline void SetNotIpRanges(const Aws::Vector<Aws::String>& value) { m_notIpRangesHasBeenSet = true; m_notIpRanges = value; }
-    inline void SetNotIpRanges(Aws::Vector<Aws::String>&& value) { m_notIpRangesHasBeenSet = true; m_notIpRanges = std::move(value); }
-    inline PutAccessControlRuleRequest& WithNotIpRanges(const Aws::Vector<Aws::String>& value) { SetNotIpRanges(value); return *this;}
-    inline PutAccessControlRuleRequest& WithNotIpRanges(Aws::Vector<Aws::String>&& value) { SetNotIpRanges(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddNotIpRanges(const Aws::String& value) { m_notIpRangesHasBeenSet = true; m_notIpRanges.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddNotIpRanges(Aws::String&& value) { m_notIpRangesHasBeenSet = true; m_notIpRanges.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddNotIpRanges(const char* value) { m_notIpRangesHasBeenSet = true; m_notIpRanges.push_back(value); return *this; }
+    template<typename NotIpRangesT = Aws::Vector<Aws::String>>
+    void SetNotIpRanges(NotIpRangesT&& value) { m_notIpRangesHasBeenSet = true; m_notIpRanges = std::forward<NotIpRangesT>(value); }
+    template<typename NotIpRangesT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithNotIpRanges(NotIpRangesT&& value) { SetNotIpRanges(std::forward<NotIpRangesT>(value)); return *this;}
+    template<typename NotIpRangesT = Aws::String>
+    PutAccessControlRuleRequest& AddNotIpRanges(NotIpRangesT&& value) { m_notIpRangesHasBeenSet = true; m_notIpRanges.emplace_back(std::forward<NotIpRangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,15 +105,14 @@ namespace Model
      * <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and
      * <code>WebMail</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Aws::String>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline PutAccessControlRuleRequest& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-    inline PutAccessControlRuleRequest& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Aws::String>
+    PutAccessControlRuleRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,96 +122,89 @@ namespace Model
      * <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and
      * <code>WebMail</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotActions() const{ return m_notActions; }
+    inline const Aws::Vector<Aws::String>& GetNotActions() const { return m_notActions; }
     inline bool NotActionsHasBeenSet() const { return m_notActionsHasBeenSet; }
-    inline void SetNotActions(const Aws::Vector<Aws::String>& value) { m_notActionsHasBeenSet = true; m_notActions = value; }
-    inline void SetNotActions(Aws::Vector<Aws::String>&& value) { m_notActionsHasBeenSet = true; m_notActions = std::move(value); }
-    inline PutAccessControlRuleRequest& WithNotActions(const Aws::Vector<Aws::String>& value) { SetNotActions(value); return *this;}
-    inline PutAccessControlRuleRequest& WithNotActions(Aws::Vector<Aws::String>&& value) { SetNotActions(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddNotActions(const Aws::String& value) { m_notActionsHasBeenSet = true; m_notActions.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddNotActions(Aws::String&& value) { m_notActionsHasBeenSet = true; m_notActions.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddNotActions(const char* value) { m_notActionsHasBeenSet = true; m_notActions.push_back(value); return *this; }
+    template<typename NotActionsT = Aws::Vector<Aws::String>>
+    void SetNotActions(NotActionsT&& value) { m_notActionsHasBeenSet = true; m_notActions = std::forward<NotActionsT>(value); }
+    template<typename NotActionsT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithNotActions(NotActionsT&& value) { SetNotActions(std::forward<NotActionsT>(value)); return *this;}
+    template<typename NotActionsT = Aws::String>
+    PutAccessControlRuleRequest& AddNotActions(NotActionsT&& value) { m_notActionsHasBeenSet = true; m_notActions.emplace_back(std::forward<NotActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>User IDs to include in the rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
+    inline const Aws::Vector<Aws::String>& GetUserIds() const { return m_userIds; }
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
-    inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
-    inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
-    inline PutAccessControlRuleRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
-    inline PutAccessControlRuleRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
+    template<typename UserIdsT = Aws::Vector<Aws::String>>
+    void SetUserIds(UserIdsT&& value) { m_userIdsHasBeenSet = true; m_userIds = std::forward<UserIdsT>(value); }
+    template<typename UserIdsT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithUserIds(UserIdsT&& value) { SetUserIds(std::forward<UserIdsT>(value)); return *this;}
+    template<typename UserIdsT = Aws::String>
+    PutAccessControlRuleRequest& AddUserIds(UserIdsT&& value) { m_userIdsHasBeenSet = true; m_userIds.emplace_back(std::forward<UserIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>User IDs to exclude from the rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotUserIds() const{ return m_notUserIds; }
+    inline const Aws::Vector<Aws::String>& GetNotUserIds() const { return m_notUserIds; }
     inline bool NotUserIdsHasBeenSet() const { return m_notUserIdsHasBeenSet; }
-    inline void SetNotUserIds(const Aws::Vector<Aws::String>& value) { m_notUserIdsHasBeenSet = true; m_notUserIds = value; }
-    inline void SetNotUserIds(Aws::Vector<Aws::String>&& value) { m_notUserIdsHasBeenSet = true; m_notUserIds = std::move(value); }
-    inline PutAccessControlRuleRequest& WithNotUserIds(const Aws::Vector<Aws::String>& value) { SetNotUserIds(value); return *this;}
-    inline PutAccessControlRuleRequest& WithNotUserIds(Aws::Vector<Aws::String>&& value) { SetNotUserIds(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddNotUserIds(const Aws::String& value) { m_notUserIdsHasBeenSet = true; m_notUserIds.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddNotUserIds(Aws::String&& value) { m_notUserIdsHasBeenSet = true; m_notUserIds.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddNotUserIds(const char* value) { m_notUserIdsHasBeenSet = true; m_notUserIds.push_back(value); return *this; }
+    template<typename NotUserIdsT = Aws::Vector<Aws::String>>
+    void SetNotUserIds(NotUserIdsT&& value) { m_notUserIdsHasBeenSet = true; m_notUserIds = std::forward<NotUserIdsT>(value); }
+    template<typename NotUserIdsT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithNotUserIds(NotUserIdsT&& value) { SetNotUserIds(std::forward<NotUserIdsT>(value)); return *this;}
+    template<typename NotUserIdsT = Aws::String>
+    PutAccessControlRuleRequest& AddNotUserIds(NotUserIdsT&& value) { m_notUserIdsHasBeenSet = true; m_notUserIds.emplace_back(std::forward<NotUserIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the organization.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline PutAccessControlRuleRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline PutAccessControlRuleRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    PutAccessControlRuleRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Impersonation role IDs to include in the rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImpersonationRoleIds() const{ return m_impersonationRoleIds; }
+    inline const Aws::Vector<Aws::String>& GetImpersonationRoleIds() const { return m_impersonationRoleIds; }
     inline bool ImpersonationRoleIdsHasBeenSet() const { return m_impersonationRoleIdsHasBeenSet; }
-    inline void SetImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds = value; }
-    inline void SetImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds = std::move(value); }
-    inline PutAccessControlRuleRequest& WithImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { SetImpersonationRoleIds(value); return *this;}
-    inline PutAccessControlRuleRequest& WithImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { SetImpersonationRoleIds(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddImpersonationRoleIds(const Aws::String& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddImpersonationRoleIds(Aws::String&& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddImpersonationRoleIds(const char* value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.push_back(value); return *this; }
+    template<typename ImpersonationRoleIdsT = Aws::Vector<Aws::String>>
+    void SetImpersonationRoleIds(ImpersonationRoleIdsT&& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds = std::forward<ImpersonationRoleIdsT>(value); }
+    template<typename ImpersonationRoleIdsT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithImpersonationRoleIds(ImpersonationRoleIdsT&& value) { SetImpersonationRoleIds(std::forward<ImpersonationRoleIdsT>(value)); return *this;}
+    template<typename ImpersonationRoleIdsT = Aws::String>
+    PutAccessControlRuleRequest& AddImpersonationRoleIds(ImpersonationRoleIdsT&& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.emplace_back(std::forward<ImpersonationRoleIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Impersonation role IDs to exclude from the rule.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotImpersonationRoleIds() const{ return m_notImpersonationRoleIds; }
+    inline const Aws::Vector<Aws::String>& GetNotImpersonationRoleIds() const { return m_notImpersonationRoleIds; }
     inline bool NotImpersonationRoleIdsHasBeenSet() const { return m_notImpersonationRoleIdsHasBeenSet; }
-    inline void SetNotImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds = value; }
-    inline void SetNotImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds = std::move(value); }
-    inline PutAccessControlRuleRequest& WithNotImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { SetNotImpersonationRoleIds(value); return *this;}
-    inline PutAccessControlRuleRequest& WithNotImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { SetNotImpersonationRoleIds(std::move(value)); return *this;}
-    inline PutAccessControlRuleRequest& AddNotImpersonationRoleIds(const Aws::String& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.push_back(value); return *this; }
-    inline PutAccessControlRuleRequest& AddNotImpersonationRoleIds(Aws::String&& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.push_back(std::move(value)); return *this; }
-    inline PutAccessControlRuleRequest& AddNotImpersonationRoleIds(const char* value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.push_back(value); return *this; }
+    template<typename NotImpersonationRoleIdsT = Aws::Vector<Aws::String>>
+    void SetNotImpersonationRoleIds(NotImpersonationRoleIdsT&& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds = std::forward<NotImpersonationRoleIdsT>(value); }
+    template<typename NotImpersonationRoleIdsT = Aws::Vector<Aws::String>>
+    PutAccessControlRuleRequest& WithNotImpersonationRoleIds(NotImpersonationRoleIdsT&& value) { SetNotImpersonationRoleIds(std::forward<NotImpersonationRoleIdsT>(value)); return *this;}
+    template<typename NotImpersonationRoleIdsT = Aws::String>
+    PutAccessControlRuleRequest& AddNotImpersonationRoleIds(NotImpersonationRoleIdsT&& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.emplace_back(std::forward<NotImpersonationRoleIdsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AccessControlRuleEffect m_effect;
+    AccessControlRuleEffect m_effect{AccessControlRuleEffect::NOT_SET};
     bool m_effectHasBeenSet = false;
 
     Aws::String m_description;

@@ -18,18 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RuleExecutionInput::RuleExecutionInput() : 
-    m_ruleTypeIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_resolvedConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false)
-{
-}
-
 RuleExecutionInput::RuleExecutionInput(JsonView jsonValue)
-  : RuleExecutionInput()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ RuleExecutionInput& RuleExecutionInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleTypeId"))
   {
     m_ruleTypeId = jsonValue.GetObject("ruleTypeId");
-
     m_ruleTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
@@ -52,7 +39,6 @@ RuleExecutionInput& RuleExecutionInput::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> resolvedConfigurationJsonMap = jsonValue.GetObject("resolvedConfiguration").GetAllObjects();
@@ -62,21 +48,16 @@ RuleExecutionInput& RuleExecutionInput::operator =(JsonView jsonValue)
     }
     m_resolvedConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifacts"))
   {
     Aws::Utils::Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
@@ -86,7 +67,6 @@ RuleExecutionInput& RuleExecutionInput::operator =(JsonView jsonValue)
     }
     m_inputArtifactsHasBeenSet = true;
   }
-
   return *this;
 }
 

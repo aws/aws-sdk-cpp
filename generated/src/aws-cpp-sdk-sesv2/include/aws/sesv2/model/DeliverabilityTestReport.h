@@ -34,7 +34,7 @@ namespace Model
   class DeliverabilityTestReport
   {
   public:
-    AWS_SESV2_API DeliverabilityTestReport();
+    AWS_SESV2_API DeliverabilityTestReport() = default;
     AWS_SESV2_API DeliverabilityTestReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API DeliverabilityTestReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>A unique string that identifies the predictive inbox placement test.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
+    inline const Aws::String& GetReportId() const { return m_reportId; }
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-    inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-    inline DeliverabilityTestReport& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline DeliverabilityTestReport& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline DeliverabilityTestReport& WithReportId(const char* value) { SetReportId(value); return *this;}
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    DeliverabilityTestReport& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name that helps you identify a predictive inbox placement test report.</p>
      */
-    inline const Aws::String& GetReportName() const{ return m_reportName; }
+    inline const Aws::String& GetReportName() const { return m_reportName; }
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-    inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-    inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-    inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
-    inline DeliverabilityTestReport& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
-    inline DeliverabilityTestReport& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
-    inline DeliverabilityTestReport& WithReportName(const char* value) { SetReportName(value); return *this;}
+    template<typename ReportNameT = Aws::String>
+    void SetReportName(ReportNameT&& value) { m_reportNameHasBeenSet = true; m_reportName = std::forward<ReportNameT>(value); }
+    template<typename ReportNameT = Aws::String>
+    DeliverabilityTestReport& WithReportName(ReportNameT&& value) { SetReportName(std::forward<ReportNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The subject line for an email that you submitted in a predictive inbox
      * placement test.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
+    inline const Aws::String& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-    inline DeliverabilityTestReport& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline DeliverabilityTestReport& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline DeliverabilityTestReport& WithSubject(const char* value) { SetSubject(value); return *this;}
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    DeliverabilityTestReport& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,26 +82,24 @@ namespace Model
      * <p>The sender address that you specified for the predictive inbox placement
      * test.</p>
      */
-    inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
+    inline const Aws::String& GetFromEmailAddress() const { return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
-    inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
-    inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
-    inline void SetFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.assign(value); }
-    inline DeliverabilityTestReport& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
-    inline DeliverabilityTestReport& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-    inline DeliverabilityTestReport& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
+    template<typename FromEmailAddressT = Aws::String>
+    void SetFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::forward<FromEmailAddressT>(value); }
+    template<typename FromEmailAddressT = Aws::String>
+    DeliverabilityTestReport& WithFromEmailAddress(FromEmailAddressT&& value) { SetFromEmailAddress(std::forward<FromEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the predictive inbox placement test was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline DeliverabilityTestReport& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline DeliverabilityTestReport& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    DeliverabilityTestReport& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +111,10 @@ namespace Model
      * finished, and you can use the <code>GetDeliverabilityTestReport</code> to view
      * the results of the test.</p>
      */
-    inline const DeliverabilityTestStatus& GetDeliverabilityTestStatus() const{ return m_deliverabilityTestStatus; }
+    inline DeliverabilityTestStatus GetDeliverabilityTestStatus() const { return m_deliverabilityTestStatus; }
     inline bool DeliverabilityTestStatusHasBeenSet() const { return m_deliverabilityTestStatusHasBeenSet; }
-    inline void SetDeliverabilityTestStatus(const DeliverabilityTestStatus& value) { m_deliverabilityTestStatusHasBeenSet = true; m_deliverabilityTestStatus = value; }
-    inline void SetDeliverabilityTestStatus(DeliverabilityTestStatus&& value) { m_deliverabilityTestStatusHasBeenSet = true; m_deliverabilityTestStatus = std::move(value); }
-    inline DeliverabilityTestReport& WithDeliverabilityTestStatus(const DeliverabilityTestStatus& value) { SetDeliverabilityTestStatus(value); return *this;}
-    inline DeliverabilityTestReport& WithDeliverabilityTestStatus(DeliverabilityTestStatus&& value) { SetDeliverabilityTestStatus(std::move(value)); return *this;}
+    inline void SetDeliverabilityTestStatus(DeliverabilityTestStatus value) { m_deliverabilityTestStatusHasBeenSet = true; m_deliverabilityTestStatus = value; }
+    inline DeliverabilityTestReport& WithDeliverabilityTestStatus(DeliverabilityTestStatus value) { SetDeliverabilityTestStatus(value); return *this;}
     ///@}
   private:
 
@@ -140,10 +130,10 @@ namespace Model
     Aws::String m_fromEmailAddress;
     bool m_fromEmailAddressHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
     bool m_createDateHasBeenSet = false;
 
-    DeliverabilityTestStatus m_deliverabilityTestStatus;
+    DeliverabilityTestStatus m_deliverabilityTestStatus{DeliverabilityTestStatus::NOT_SET};
     bool m_deliverabilityTestStatusHasBeenSet = false;
   };
 

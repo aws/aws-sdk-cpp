@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataLabelType::DataLabelType() : 
-    m_fieldLabelTypeHasBeenSet(false),
-    m_dataPathLabelTypeHasBeenSet(false),
-    m_rangeEndsLabelTypeHasBeenSet(false),
-    m_minimumLabelTypeHasBeenSet(false),
-    m_maximumLabelTypeHasBeenSet(false)
-{
-}
-
 DataLabelType::DataLabelType(JsonView jsonValue)
-  : DataLabelType()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataLabelType& DataLabelType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldLabelType"))
   {
     m_fieldLabelType = jsonValue.GetObject("FieldLabelType");
-
     m_fieldLabelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPathLabelType"))
   {
     m_dataPathLabelType = jsonValue.GetObject("DataPathLabelType");
-
     m_dataPathLabelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeEndsLabelType"))
   {
     m_rangeEndsLabelType = jsonValue.GetObject("RangeEndsLabelType");
-
     m_rangeEndsLabelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumLabelType"))
   {
     m_minimumLabelType = jsonValue.GetObject("MinimumLabelType");
-
     m_minimumLabelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumLabelType"))
   {
     m_maximumLabelType = jsonValue.GetObject("MaximumLabelType");
-
     m_maximumLabelTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class GetHypervisorResult
   {
   public:
-    AWS_BACKUPGATEWAY_API GetHypervisorResult();
+    AWS_BACKUPGATEWAY_API GetHypervisorResult() = default;
     AWS_BACKUPGATEWAY_API GetHypervisorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPGATEWAY_API GetHypervisorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the requested hypervisor.</p>
      */
-    inline const HypervisorDetails& GetHypervisor() const{ return m_hypervisor; }
-    inline void SetHypervisor(const HypervisorDetails& value) { m_hypervisor = value; }
-    inline void SetHypervisor(HypervisorDetails&& value) { m_hypervisor = std::move(value); }
-    inline GetHypervisorResult& WithHypervisor(const HypervisorDetails& value) { SetHypervisor(value); return *this;}
-    inline GetHypervisorResult& WithHypervisor(HypervisorDetails&& value) { SetHypervisor(std::move(value)); return *this;}
+    inline const HypervisorDetails& GetHypervisor() const { return m_hypervisor; }
+    template<typename HypervisorT = HypervisorDetails>
+    void SetHypervisor(HypervisorT&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::forward<HypervisorT>(value); }
+    template<typename HypervisorT = HypervisorDetails>
+    GetHypervisorResult& WithHypervisor(HypervisorT&& value) { SetHypervisor(std::forward<HypervisorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHypervisorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHypervisorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHypervisorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHypervisorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HypervisorDetails m_hypervisor;
+    bool m_hypervisorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

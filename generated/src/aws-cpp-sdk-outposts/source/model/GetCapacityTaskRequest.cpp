@@ -12,12 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCapacityTaskRequest::GetCapacityTaskRequest() : 
-    m_capacityTaskIdHasBeenSet(false),
-    m_outpostIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCapacityTaskRequest::SerializePayload() const
 {
   return {};

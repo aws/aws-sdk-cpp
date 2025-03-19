@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SubSlotSetting::SubSlotSetting() : 
-    m_expressionHasBeenSet(false),
-    m_slotSpecificationsHasBeenSet(false)
-{
-}
-
 SubSlotSetting::SubSlotSetting(JsonView jsonValue)
-  : SubSlotSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SubSlotSetting& SubSlotSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotSpecifications"))
   {
     Aws::Map<Aws::String, JsonView> slotSpecificationsJsonMap = jsonValue.GetObject("slotSpecifications").GetAllObjects();
@@ -48,7 +39,6 @@ SubSlotSetting& SubSlotSetting::operator =(JsonView jsonValue)
     }
     m_slotSpecificationsHasBeenSet = true;
   }
-
   return *this;
 }
 

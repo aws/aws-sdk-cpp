@@ -32,7 +32,7 @@ namespace Model
   class DatasetSource
   {
   public:
-    AWS_LOOKOUTFORVISION_API DatasetSource();
+    AWS_LOOKOUTFORVISION_API DatasetSource() = default;
     AWS_LOOKOUTFORVISION_API DatasetSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API DatasetSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Location information for the manifest file.</p>
      */
-    inline const DatasetGroundTruthManifest& GetGroundTruthManifest() const{ return m_groundTruthManifest; }
+    inline const DatasetGroundTruthManifest& GetGroundTruthManifest() const { return m_groundTruthManifest; }
     inline bool GroundTruthManifestHasBeenSet() const { return m_groundTruthManifestHasBeenSet; }
-    inline void SetGroundTruthManifest(const DatasetGroundTruthManifest& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = value; }
-    inline void SetGroundTruthManifest(DatasetGroundTruthManifest&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::move(value); }
-    inline DatasetSource& WithGroundTruthManifest(const DatasetGroundTruthManifest& value) { SetGroundTruthManifest(value); return *this;}
-    inline DatasetSource& WithGroundTruthManifest(DatasetGroundTruthManifest&& value) { SetGroundTruthManifest(std::move(value)); return *this;}
+    template<typename GroundTruthManifestT = DatasetGroundTruthManifest>
+    void SetGroundTruthManifest(GroundTruthManifestT&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::forward<GroundTruthManifestT>(value); }
+    template<typename GroundTruthManifestT = DatasetGroundTruthManifest>
+    DatasetSource& WithGroundTruthManifest(GroundTruthManifestT&& value) { SetGroundTruthManifest(std::forward<GroundTruthManifestT>(value)); return *this;}
     ///@}
   private:
 

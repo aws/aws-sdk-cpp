@@ -36,7 +36,7 @@ namespace Model
   class Parameter
   {
   public:
-    AWS_APPCONFIG_API Parameter();
+    AWS_APPCONFIG_API Parameter() = default;
     AWS_APPCONFIG_API Parameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p>Information about the parameter.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Parameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Parameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Parameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Parameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A parameter value must be specified in the extension association.</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline Parameter& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
      * action point instead of during extension association. Dynamic parameters can't
      * be marked <code>Required</code>.</p>
      */
-    inline bool GetDynamic() const{ return m_dynamic; }
+    inline bool GetDynamic() const { return m_dynamic; }
     inline bool DynamicHasBeenSet() const { return m_dynamicHasBeenSet; }
     inline void SetDynamic(bool value) { m_dynamicHasBeenSet = true; m_dynamic = value; }
     inline Parameter& WithDynamic(bool value) { SetDynamic(value); return *this;}
@@ -82,10 +80,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
 
-    bool m_dynamic;
+    bool m_dynamic{false};
     bool m_dynamicHasBeenSet = false;
   };
 

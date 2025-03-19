@@ -18,21 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-DistributionConfiguration::DistributionConfiguration() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_distributionsHasBeenSet(false),
-    m_timeoutMinutes(0),
-    m_timeoutMinutesHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DistributionConfiguration::DistributionConfiguration(JsonView jsonValue)
-  : DistributionConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ DistributionConfiguration& DistributionConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("distributions"))
   {
     Aws::Utils::Array<JsonView> distributionsJsonList = jsonValue.GetArray("distributions");
@@ -69,28 +49,21 @@ DistributionConfiguration& DistributionConfiguration::operator =(JsonView jsonVa
     }
     m_distributionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutMinutes"))
   {
     m_timeoutMinutes = jsonValue.GetInteger("timeoutMinutes");
-
     m_timeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateUpdated"))
   {
     m_dateUpdated = jsonValue.GetString("dateUpdated");
-
     m_dateUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -100,7 +73,6 @@ DistributionConfiguration& DistributionConfiguration::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMetricPolicyRequest::DeleteMetricPolicyRequest() : 
-    m_containerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMetricPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

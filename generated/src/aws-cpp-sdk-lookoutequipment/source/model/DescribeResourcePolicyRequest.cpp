@@ -12,11 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResourcePolicyRequest::DescribeResourcePolicyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

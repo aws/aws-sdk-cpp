@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails() : 
-    m_containerPathHasBeenSet(false),
-    m_hostPathHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AwsEcsTas
   if(jsonValue.ValueExists("ContainerPath"))
   {
     m_containerPath = jsonValue.GetString("ContainerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostPath"))
   {
     m_hostPath = jsonValue.GetString("HostPath");
-
     m_hostPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -56,7 +44,6 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AwsEcsTas
     }
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

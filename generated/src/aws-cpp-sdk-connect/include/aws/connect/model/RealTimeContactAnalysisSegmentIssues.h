@@ -33,7 +33,7 @@ namespace Model
   class RealTimeContactAnalysisSegmentIssues
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisSegmentIssues();
+    AWS_CONNECT_API RealTimeContactAnalysisSegmentIssues() = default;
     AWS_CONNECT_API RealTimeContactAnalysisSegmentIssues(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisSegmentIssues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>List of the issues detected.</p>
      */
-    inline const Aws::Vector<RealTimeContactAnalysisIssueDetected>& GetIssuesDetected() const{ return m_issuesDetected; }
+    inline const Aws::Vector<RealTimeContactAnalysisIssueDetected>& GetIssuesDetected() const { return m_issuesDetected; }
     inline bool IssuesDetectedHasBeenSet() const { return m_issuesDetectedHasBeenSet; }
-    inline void SetIssuesDetected(const Aws::Vector<RealTimeContactAnalysisIssueDetected>& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected = value; }
-    inline void SetIssuesDetected(Aws::Vector<RealTimeContactAnalysisIssueDetected>&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected = std::move(value); }
-    inline RealTimeContactAnalysisSegmentIssues& WithIssuesDetected(const Aws::Vector<RealTimeContactAnalysisIssueDetected>& value) { SetIssuesDetected(value); return *this;}
-    inline RealTimeContactAnalysisSegmentIssues& WithIssuesDetected(Aws::Vector<RealTimeContactAnalysisIssueDetected>&& value) { SetIssuesDetected(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentIssues& AddIssuesDetected(const RealTimeContactAnalysisIssueDetected& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected.push_back(value); return *this; }
-    inline RealTimeContactAnalysisSegmentIssues& AddIssuesDetected(RealTimeContactAnalysisIssueDetected&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected.push_back(std::move(value)); return *this; }
+    template<typename IssuesDetectedT = Aws::Vector<RealTimeContactAnalysisIssueDetected>>
+    void SetIssuesDetected(IssuesDetectedT&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected = std::forward<IssuesDetectedT>(value); }
+    template<typename IssuesDetectedT = Aws::Vector<RealTimeContactAnalysisIssueDetected>>
+    RealTimeContactAnalysisSegmentIssues& WithIssuesDetected(IssuesDetectedT&& value) { SetIssuesDetected(std::forward<IssuesDetectedT>(value)); return *this;}
+    template<typename IssuesDetectedT = RealTimeContactAnalysisIssueDetected>
+    RealTimeContactAnalysisSegmentIssues& AddIssuesDetected(IssuesDetectedT&& value) { m_issuesDetectedHasBeenSet = true; m_issuesDetected.emplace_back(std::forward<IssuesDetectedT>(value)); return *this; }
     ///@}
   private:
 

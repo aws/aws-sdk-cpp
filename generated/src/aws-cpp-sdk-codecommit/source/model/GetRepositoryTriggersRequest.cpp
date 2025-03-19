@@ -12,11 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRepositoryTriggersRequest::GetRepositoryTriggersRequest() : 
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositoryTriggersRequest::SerializePayload() const
 {
   JsonValue payload;

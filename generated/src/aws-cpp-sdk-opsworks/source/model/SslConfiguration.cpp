@@ -18,15 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-SslConfiguration::SslConfiguration() : 
-    m_certificateHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_chainHasBeenSet(false)
-{
-}
-
 SslConfiguration::SslConfiguration(JsonView jsonValue)
-  : SslConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SslConfiguration& SslConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetString("Certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateKey"))
   {
     m_privateKey = jsonValue.GetString("PrivateKey");
-
     m_privateKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Chain"))
   {
     m_chain = jsonValue.GetString("Chain");
-
     m_chainHasBeenSet = true;
   }
-
   return *this;
 }
 

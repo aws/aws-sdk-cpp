@@ -32,7 +32,7 @@ namespace Model
   class KMSEncryptionConfig
   {
   public:
-    AWS_FIREHOSE_API KMSEncryptionConfig();
+    AWS_FIREHOSE_API KMSEncryptionConfig() = default;
     AWS_FIREHOSE_API KMSEncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API KMSEncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetAWSKMSKeyARN() const{ return m_aWSKMSKeyARN; }
+    inline const Aws::String& GetAWSKMSKeyARN() const { return m_aWSKMSKeyARN; }
     inline bool AWSKMSKeyARNHasBeenSet() const { return m_aWSKMSKeyARNHasBeenSet; }
-    inline void SetAWSKMSKeyARN(const Aws::String& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = value; }
-    inline void SetAWSKMSKeyARN(Aws::String&& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = std::move(value); }
-    inline void SetAWSKMSKeyARN(const char* value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN.assign(value); }
-    inline KMSEncryptionConfig& WithAWSKMSKeyARN(const Aws::String& value) { SetAWSKMSKeyARN(value); return *this;}
-    inline KMSEncryptionConfig& WithAWSKMSKeyARN(Aws::String&& value) { SetAWSKMSKeyARN(std::move(value)); return *this;}
-    inline KMSEncryptionConfig& WithAWSKMSKeyARN(const char* value) { SetAWSKMSKeyARN(value); return *this;}
+    template<typename AWSKMSKeyARNT = Aws::String>
+    void SetAWSKMSKeyARN(AWSKMSKeyARNT&& value) { m_aWSKMSKeyARNHasBeenSet = true; m_aWSKMSKeyARN = std::forward<AWSKMSKeyARNT>(value); }
+    template<typename AWSKMSKeyARNT = Aws::String>
+    KMSEncryptionConfig& WithAWSKMSKeyARN(AWSKMSKeyARNT&& value) { SetAWSKMSKeyARN(std::forward<AWSKMSKeyARNT>(value)); return *this;}
     ///@}
   private:
 

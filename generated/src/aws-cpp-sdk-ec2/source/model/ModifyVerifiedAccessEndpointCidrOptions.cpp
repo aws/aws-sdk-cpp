@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessEndpointCidrOptions::ModifyVerifiedAccessEndpointCidrOptions() : 
-    m_portRangesHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessEndpointCidrOptions::ModifyVerifiedAccessEndpointCidrOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessEndpointCidrOptions()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ ModifyVerifiedAccessEndpointCidrOptions& ModifyVerifiedAccessEndpointCidrOptions
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);

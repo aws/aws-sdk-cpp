@@ -12,12 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTemplateStepGroupRequest::GetTemplateStepGroupRequest() : 
-    m_templateIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetTemplateStepGroupRequest::SerializePayload() const
 {
   return {};

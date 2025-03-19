@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Volume::Volume() : 
-    m_nameHasBeenSet(false),
-    m_hostPathHasBeenSet(false)
-{
-}
-
 Volume::Volume(JsonView jsonValue)
-  : Volume()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Volume& Volume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostPath"))
   {
     m_hostPath = jsonValue.GetObject("hostPath");
-
     m_hostPathHasBeenSet = true;
   }
-
   return *this;
 }
 

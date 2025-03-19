@@ -18,24 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PromptConfiguration::PromptConfiguration() : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_basePromptTemplateHasBeenSet(false),
-    m_foundationModelHasBeenSet(false),
-    m_inferenceConfigurationHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false),
-    m_promptCreationMode(CreationMode::NOT_SET),
-    m_promptCreationModeHasBeenSet(false),
-    m_promptState(PromptState::NOT_SET),
-    m_promptStateHasBeenSet(false),
-    m_promptType(PromptType::NOT_SET),
-    m_promptTypeHasBeenSet(false)
-{
-}
-
 PromptConfiguration::PromptConfiguration(JsonView jsonValue)
-  : PromptConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalModelRequestFields"))
   {
     m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
-
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("basePromptTemplate"))
   {
     m_basePromptTemplate = jsonValue.GetString("basePromptTemplate");
-
     m_basePromptTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("foundationModel"))
   {
     m_foundationModel = jsonValue.GetString("foundationModel");
-
     m_foundationModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceConfiguration"))
   {
     m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
-
     m_inferenceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parserMode"))
   {
     m_parserMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("parserMode"));
-
     m_parserModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptCreationMode"))
   {
     m_promptCreationMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("promptCreationMode"));
-
     m_promptCreationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptState"))
   {
     m_promptState = PromptStateMapper::GetPromptStateForName(jsonValue.GetString("promptState"));
-
     m_promptStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptType"))
   {
     m_promptType = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("promptType"));
-
     m_promptTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

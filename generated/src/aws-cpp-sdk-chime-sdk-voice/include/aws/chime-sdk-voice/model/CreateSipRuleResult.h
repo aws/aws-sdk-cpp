@@ -28,7 +28,7 @@ namespace Model
   class CreateSipRuleResult
   {
   public:
-    AWS_CHIMESDKVOICE_API CreateSipRuleResult();
+    AWS_CHIMESDKVOICE_API CreateSipRuleResult() = default;
     AWS_CHIMESDKVOICE_API CreateSipRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API CreateSipRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The SIP rule information, including the rule ID, triggers, and target
      * applications.</p>
      */
-    inline const SipRule& GetSipRule() const{ return m_sipRule; }
-    inline void SetSipRule(const SipRule& value) { m_sipRule = value; }
-    inline void SetSipRule(SipRule&& value) { m_sipRule = std::move(value); }
-    inline CreateSipRuleResult& WithSipRule(const SipRule& value) { SetSipRule(value); return *this;}
-    inline CreateSipRuleResult& WithSipRule(SipRule&& value) { SetSipRule(std::move(value)); return *this;}
+    inline const SipRule& GetSipRule() const { return m_sipRule; }
+    template<typename SipRuleT = SipRule>
+    void SetSipRule(SipRuleT&& value) { m_sipRuleHasBeenSet = true; m_sipRule = std::forward<SipRuleT>(value); }
+    template<typename SipRuleT = SipRule>
+    CreateSipRuleResult& WithSipRule(SipRuleT&& value) { SetSipRule(std::forward<SipRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSipRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSipRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSipRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSipRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SipRule m_sipRule;
+    bool m_sipRuleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

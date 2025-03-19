@@ -18,16 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-NamespaceSummary::NamespaceSummary() : 
-    m_namespaceHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false)
-{
-}
-
 NamespaceSummary::NamespaceSummary(JsonView jsonValue)
-  : NamespaceSummary()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ NamespaceSummary& NamespaceSummary::operator =(JsonView jsonValue)
     }
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

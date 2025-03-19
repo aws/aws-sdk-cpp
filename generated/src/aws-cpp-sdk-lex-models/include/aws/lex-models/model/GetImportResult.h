@@ -32,7 +32,7 @@ namespace Model
   class GetImportResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetImportResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetImportResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,24 +41,20 @@ namespace Model
     /**
      * <p>The name given to the import job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetImportResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetImportResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetImportResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetImportResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource imported.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceType = std::move(value); }
-    inline GetImportResult& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline GetImportResult& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline ResourceType GetResourceType() const { return m_resourceType; }
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetImportResult& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -66,24 +62,20 @@ namespace Model
      * <p>The action taken when there was a conflict between an existing resource and a
      * resource in the import file.</p>
      */
-    inline const MergeStrategy& GetMergeStrategy() const{ return m_mergeStrategy; }
-    inline void SetMergeStrategy(const MergeStrategy& value) { m_mergeStrategy = value; }
-    inline void SetMergeStrategy(MergeStrategy&& value) { m_mergeStrategy = std::move(value); }
-    inline GetImportResult& WithMergeStrategy(const MergeStrategy& value) { SetMergeStrategy(value); return *this;}
-    inline GetImportResult& WithMergeStrategy(MergeStrategy&& value) { SetMergeStrategy(std::move(value)); return *this;}
+    inline MergeStrategy GetMergeStrategy() const { return m_mergeStrategy; }
+    inline void SetMergeStrategy(MergeStrategy value) { m_mergeStrategyHasBeenSet = true; m_mergeStrategy = value; }
+    inline GetImportResult& WithMergeStrategy(MergeStrategy value) { SetMergeStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the specific import job.</p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
-    inline void SetImportId(const Aws::String& value) { m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importId.assign(value); }
-    inline GetImportResult& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline GetImportResult& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline GetImportResult& WithImportId(const char* value) { SetImportId(value); return *this;}
+    inline const Aws::String& GetImportId() const { return m_importId; }
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    GetImportResult& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,65 +83,68 @@ namespace Model
      * <p>The status of the import job. If the status is <code>FAILED</code>, you can
      * get the reason for the failure from the <code>failureReason</code> field.</p>
      */
-    inline const ImportStatus& GetImportStatus() const{ return m_importStatus; }
-    inline void SetImportStatus(const ImportStatus& value) { m_importStatus = value; }
-    inline void SetImportStatus(ImportStatus&& value) { m_importStatus = std::move(value); }
-    inline GetImportResult& WithImportStatus(const ImportStatus& value) { SetImportStatus(value); return *this;}
-    inline GetImportResult& WithImportStatus(ImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
+    inline ImportStatus GetImportStatus() const { return m_importStatus; }
+    inline void SetImportStatus(ImportStatus value) { m_importStatusHasBeenSet = true; m_importStatus = value; }
+    inline GetImportResult& WithImportStatus(ImportStatus value) { SetImportStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that describes why an import job failed to complete.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::Vector<Aws::String>& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::Vector<Aws::String>&& value) { m_failureReason = std::move(value); }
-    inline GetImportResult& WithFailureReason(const Aws::Vector<Aws::String>& value) { SetFailureReason(value); return *this;}
-    inline GetImportResult& WithFailureReason(Aws::Vector<Aws::String>&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline GetImportResult& AddFailureReason(const Aws::String& value) { m_failureReason.push_back(value); return *this; }
-    inline GetImportResult& AddFailureReason(Aws::String&& value) { m_failureReason.push_back(std::move(value)); return *this; }
-    inline GetImportResult& AddFailureReason(const char* value) { m_failureReason.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::Vector<Aws::String>>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::Vector<Aws::String>>
+    GetImportResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    GetImportResult& AddFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason.emplace_back(std::forward<FailureReasonT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A timestamp for the date and time that the import job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetImportResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetImportResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetImportResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetImportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetImportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetImportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetImportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
-    MergeStrategy m_mergeStrategy;
+    MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
+    bool m_mergeStrategyHasBeenSet = false;
 
     Aws::String m_importId;
+    bool m_importIdHasBeenSet = false;
 
-    ImportStatus m_importStatus;
+    ImportStatus m_importStatus{ImportStatus::NOT_SET};
+    bool m_importStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

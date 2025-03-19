@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTopicRuleRequest::DeleteTopicRuleRequest() : 
-    m_ruleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTopicRuleRequest::SerializePayload() const
 {
   return {};

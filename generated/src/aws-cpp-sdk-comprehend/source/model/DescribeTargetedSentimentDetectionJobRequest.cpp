@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTargetedSentimentDetectionJobRequest::DescribeTargetedSentimentDetectionJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTargetedSentimentDetectionJobRequest::SerializePayload() const
 {
   JsonValue payload;

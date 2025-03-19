@@ -18,13 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-CloudWatchLogsDestinationConfiguration::CloudWatchLogsDestinationConfiguration() : 
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 CloudWatchLogsDestinationConfiguration::CloudWatchLogsDestinationConfiguration(JsonView jsonValue)
-  : CloudWatchLogsDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchLogsDestinationConfiguration& CloudWatchLogsDestinationConfiguration::
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

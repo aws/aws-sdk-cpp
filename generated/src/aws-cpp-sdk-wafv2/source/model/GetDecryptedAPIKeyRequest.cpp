@@ -12,13 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDecryptedAPIKeyRequest::GetDecryptedAPIKeyRequest() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_aPIKeyHasBeenSet(false)
-{
-}
-
 Aws::String GetDecryptedAPIKeyRequest::SerializePayload() const
 {
   JsonValue payload;

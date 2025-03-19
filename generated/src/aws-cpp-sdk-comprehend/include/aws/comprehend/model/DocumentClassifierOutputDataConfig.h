@@ -33,7 +33,7 @@ namespace Model
   class DocumentClassifierOutputDataConfig
   {
   public:
-    AWS_COMPREHEND_API DocumentClassifierOutputDataConfig();
+    AWS_COMPREHEND_API DocumentClassifierOutputDataConfig() = default;
     AWS_COMPREHEND_API DocumentClassifierOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DocumentClassifierOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * called <code>output.tar.gz</code>. It is a compressed archive that contains the
      * confusion matrix.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline DocumentClassifierOutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline DocumentClassifierOutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline DocumentClassifierOutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    DocumentClassifierOutputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline DocumentClassifierOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline DocumentClassifierOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline DocumentClassifierOutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    DocumentClassifierOutputDataConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>The Amazon S3 prefix for the data lake location of the flywheel
      * statistics.</p>
      */
-    inline const Aws::String& GetFlywheelStatsS3Prefix() const{ return m_flywheelStatsS3Prefix; }
+    inline const Aws::String& GetFlywheelStatsS3Prefix() const { return m_flywheelStatsS3Prefix; }
     inline bool FlywheelStatsS3PrefixHasBeenSet() const { return m_flywheelStatsS3PrefixHasBeenSet; }
-    inline void SetFlywheelStatsS3Prefix(const Aws::String& value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix = value; }
-    inline void SetFlywheelStatsS3Prefix(Aws::String&& value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix = std::move(value); }
-    inline void SetFlywheelStatsS3Prefix(const char* value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix.assign(value); }
-    inline DocumentClassifierOutputDataConfig& WithFlywheelStatsS3Prefix(const Aws::String& value) { SetFlywheelStatsS3Prefix(value); return *this;}
-    inline DocumentClassifierOutputDataConfig& WithFlywheelStatsS3Prefix(Aws::String&& value) { SetFlywheelStatsS3Prefix(std::move(value)); return *this;}
-    inline DocumentClassifierOutputDataConfig& WithFlywheelStatsS3Prefix(const char* value) { SetFlywheelStatsS3Prefix(value); return *this;}
+    template<typename FlywheelStatsS3PrefixT = Aws::String>
+    void SetFlywheelStatsS3Prefix(FlywheelStatsS3PrefixT&& value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix = std::forward<FlywheelStatsS3PrefixT>(value); }
+    template<typename FlywheelStatsS3PrefixT = Aws::String>
+    DocumentClassifierOutputDataConfig& WithFlywheelStatsS3Prefix(FlywheelStatsS3PrefixT&& value) { SetFlywheelStatsS3Prefix(std::forward<FlywheelStatsS3PrefixT>(value)); return *this;}
     ///@}
   private:
 

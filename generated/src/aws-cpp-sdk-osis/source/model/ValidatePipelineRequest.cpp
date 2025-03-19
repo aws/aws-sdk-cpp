@@ -12,11 +12,6 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ValidatePipelineRequest::ValidatePipelineRequest() : 
-    m_pipelineConfigurationBodyHasBeenSet(false)
-{
-}
-
 Aws::String ValidatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

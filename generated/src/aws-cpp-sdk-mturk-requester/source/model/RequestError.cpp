@@ -18,14 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-RequestError::RequestError() : 
-    m_messageHasBeenSet(false),
-    m_turkErrorCodeHasBeenSet(false)
-{
-}
-
 RequestError::RequestError(JsonView jsonValue)
-  : RequestError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RequestError& RequestError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurkErrorCode"))
   {
     m_turkErrorCode = jsonValue.GetString("TurkErrorCode");
-
     m_turkErrorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

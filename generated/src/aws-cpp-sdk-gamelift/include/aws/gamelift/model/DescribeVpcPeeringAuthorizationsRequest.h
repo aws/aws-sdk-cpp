@@ -19,7 +19,7 @@ namespace Model
   class DescribeVpcPeeringAuthorizationsRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribeVpcPeeringAuthorizationsRequest();
+    AWS_GAMELIFT_API DescribeVpcPeeringAuthorizationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

@@ -12,19 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCommandRequest::CreateCommandRequest() : 
-    m_commandIdHasBeenSet(false),
-    m_namespace(CommandNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_mandatoryParametersHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCommandRequest::SerializePayload() const
 {
   JsonValue payload;

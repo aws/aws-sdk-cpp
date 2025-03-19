@@ -31,7 +31,7 @@ namespace Model
   class GuardrailWord
   {
   public:
-    AWS_BEDROCK_API GuardrailWord();
+    AWS_BEDROCK_API GuardrailWord() = default;
     AWS_BEDROCK_API GuardrailWord(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailWord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Text of the word configured for the guardrail to block.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline GuardrailWord& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline GuardrailWord& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline GuardrailWord& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    GuardrailWord& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowSQLTransformationConfiguration::DataIntegrationFlowSQLTransformationConfiguration() : 
-    m_queryHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowSQLTransformationConfiguration::DataIntegrationFlowSQLTransformationConfiguration(JsonView jsonValue)
-  : DataIntegrationFlowSQLTransformationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataIntegrationFlowSQLTransformationConfiguration& DataIntegrationFlowSQLTransfo
   if(jsonValue.ValueExists("query"))
   {
     m_query = jsonValue.GetString("query");
-
     m_queryHasBeenSet = true;
   }
-
   return *this;
 }
 

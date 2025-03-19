@@ -12,16 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchEmailAddressesRequest::SearchEmailAddressesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_searchCriteriaHasBeenSet(false),
-    m_searchFilterHasBeenSet(false)
-{
-}
-
 Aws::String SearchEmailAddressesRequest::SerializePayload() const
 {
   JsonValue payload;

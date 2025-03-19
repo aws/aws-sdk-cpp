@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Via::Via() : 
-    m_networkFunctionGroupsHasBeenSet(false),
-    m_withEdgeOverridesHasBeenSet(false)
-{
-}
-
 Via::Via(JsonView jsonValue)
-  : Via()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ Via& Via::operator =(JsonView jsonValue)
     }
     m_networkFunctionGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WithEdgeOverrides"))
   {
     Aws::Utils::Array<JsonView> withEdgeOverridesJsonList = jsonValue.GetArray("WithEdgeOverrides");
@@ -51,7 +43,6 @@ Via& Via::operator =(JsonView jsonValue)
     }
     m_withEdgeOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

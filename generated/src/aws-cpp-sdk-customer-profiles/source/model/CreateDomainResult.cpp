@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDomainResult::CreateDomainResult() : 
-    m_defaultExpirationDays(0)
-{
-}
-
 CreateDomainResult::CreateDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDomainResult()
 {
   *this = result;
 }
@@ -34,51 +28,43 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultExpirationDays"))
   {
     m_defaultExpirationDays = jsonValue.GetInteger("DefaultExpirationDays");
-
+    m_defaultExpirationDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultEncryptionKey"))
   {
     m_defaultEncryptionKey = jsonValue.GetString("DefaultEncryptionKey");
-
+    m_defaultEncryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeadLetterQueueUrl"))
   {
     m_deadLetterQueueUrl = jsonValue.GetString("DeadLetterQueueUrl");
-
+    m_deadLetterQueueUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Matching"))
   {
     m_matching = jsonValue.GetObject("Matching");
-
+    m_matchingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleBasedMatching"))
   {
     m_ruleBasedMatching = jsonValue.GetObject("RuleBasedMatching");
-
+    m_ruleBasedMatchingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -86,14 +72,15 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

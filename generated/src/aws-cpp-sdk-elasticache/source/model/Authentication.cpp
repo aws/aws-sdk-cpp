@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Authentication::Authentication() : 
-    m_type(AuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordCount(0),
-    m_passwordCountHasBeenSet(false)
-{
-}
-
 Authentication::Authentication(const XmlNode& xmlNode)
-  : Authentication()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ Authentication& Authentication::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = AuthenticationTypeMapper::GetAuthenticationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = AuthenticationTypeMapper::GetAuthenticationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode passwordCountNode = resultNode.FirstChild("PasswordCount");

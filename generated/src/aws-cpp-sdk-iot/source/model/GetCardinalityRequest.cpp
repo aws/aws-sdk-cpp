@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCardinalityRequest::GetCardinalityRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_aggregationFieldHasBeenSet(false),
-    m_queryVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetCardinalityRequest::SerializePayload() const
 {
   JsonValue payload;

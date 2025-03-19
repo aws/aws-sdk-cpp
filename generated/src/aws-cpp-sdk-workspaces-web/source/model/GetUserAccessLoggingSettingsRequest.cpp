@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUserAccessLoggingSettingsRequest::GetUserAccessLoggingSettingsRequest() : 
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String GetUserAccessLoggingSettingsRequest::SerializePayload() const
 {
   return {};

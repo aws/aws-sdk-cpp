@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Facet::Facet() : 
-    m_documentAttributeKeyHasBeenSet(false),
-    m_facetsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Facet::Facet(JsonView jsonValue)
-  : Facet()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Facet& Facet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentAttributeKey"))
   {
     m_documentAttributeKey = jsonValue.GetString("DocumentAttributeKey");
-
     m_documentAttributeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Facets"))
   {
     Aws::Utils::Array<JsonView> facetsJsonList = jsonValue.GetArray("Facets");
@@ -50,14 +39,11 @@ Facet& Facet::operator =(JsonView jsonValue)
     }
     m_facetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateQuickSightQSearchConfigurationResult::UpdateQuickSightQSearchConfigurationResult() : 
-    m_qSearchStatus(QSearchStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 UpdateQuickSightQSearchConfigurationResult::UpdateQuickSightQSearchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateQuickSightQSearchConfigurationResult()
 {
   *this = result;
 }
@@ -35,19 +28,19 @@ UpdateQuickSightQSearchConfigurationResult& UpdateQuickSightQSearchConfiguration
   if(jsonValue.ValueExists("QSearchStatus"))
   {
     m_qSearchStatus = QSearchStatusMapper::GetQSearchStatusForName(jsonValue.GetString("QSearchStatus"));
-
+    m_qSearchStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

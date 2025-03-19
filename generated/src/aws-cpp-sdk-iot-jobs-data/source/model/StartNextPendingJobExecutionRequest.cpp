@@ -12,14 +12,6 @@ using namespace Aws::IoTJobsDataPlane::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartNextPendingJobExecutionRequest::StartNextPendingJobExecutionRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_stepTimeoutInMinutes(0),
-    m_stepTimeoutInMinutesHasBeenSet(false)
-{
-}
-
 Aws::String StartNextPendingJobExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

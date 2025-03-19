@@ -18,19 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DefaultContinuousHyperParameterRange::DefaultContinuousHyperParameterRange() : 
-    m_nameHasBeenSet(false),
-    m_minValue(0.0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0.0),
-    m_maxValueHasBeenSet(false),
-    m_isTunable(false),
-    m_isTunableHasBeenSet(false)
-{
-}
-
 DefaultContinuousHyperParameterRange::DefaultContinuousHyperParameterRange(JsonView jsonValue)
-  : DefaultContinuousHyperParameterRange()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DefaultContinuousHyperParameterRange& DefaultContinuousHyperParameterRange::oper
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minValue"))
   {
     m_minValue = jsonValue.GetDouble("minValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxValue"))
   {
     m_maxValue = jsonValue.GetDouble("maxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isTunable"))
   {
     m_isTunable = jsonValue.GetBool("isTunable");
-
     m_isTunableHasBeenSet = true;
   }
-
   return *this;
 }
 

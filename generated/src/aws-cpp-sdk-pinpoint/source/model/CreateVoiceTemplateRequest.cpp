@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVoiceTemplateRequest::CreateVoiceTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_voiceTemplateRequestHasBeenSet(false)
-{
-}
-
 Aws::String CreateVoiceTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

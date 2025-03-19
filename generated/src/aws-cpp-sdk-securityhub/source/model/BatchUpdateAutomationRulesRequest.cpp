@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateAutomationRulesRequest::BatchUpdateAutomationRulesRequest() : 
-    m_updateAutomationRulesRequestItemsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateAutomationRulesRequest::SerializePayload() const
 {
   JsonValue payload;

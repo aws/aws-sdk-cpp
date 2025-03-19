@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteNetworkInsightsPathResponse::DeleteNetworkInsightsPathResponse()
-{
-}
-
 DeleteNetworkInsightsPathResponse::DeleteNetworkInsightsPathResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteNetworkInsightsPathResponse& DeleteNetworkInsightsPathResponse::operator =
     if(!networkInsightsPathIdNode.IsNull())
     {
       m_networkInsightsPathId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsPathIdNode.GetText());
+      m_networkInsightsPathIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteNetworkInsightsPathResponse& DeleteNetworkInsightsPathResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteNetworkInsightsPathResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

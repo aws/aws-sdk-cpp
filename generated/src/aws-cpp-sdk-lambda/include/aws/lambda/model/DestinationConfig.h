@@ -33,7 +33,7 @@ namespace Model
   class DestinationConfig
   {
   public:
-    AWS_LAMBDA_API DestinationConfig();
+    AWS_LAMBDA_API DestinationConfig() = default;
     AWS_LAMBDA_API DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The destination configuration for successful invocations.</p>
      */
-    inline const OnSuccess& GetOnSuccess() const{ return m_onSuccess; }
+    inline const OnSuccess& GetOnSuccess() const { return m_onSuccess; }
     inline bool OnSuccessHasBeenSet() const { return m_onSuccessHasBeenSet; }
-    inline void SetOnSuccess(const OnSuccess& value) { m_onSuccessHasBeenSet = true; m_onSuccess = value; }
-    inline void SetOnSuccess(OnSuccess&& value) { m_onSuccessHasBeenSet = true; m_onSuccess = std::move(value); }
-    inline DestinationConfig& WithOnSuccess(const OnSuccess& value) { SetOnSuccess(value); return *this;}
-    inline DestinationConfig& WithOnSuccess(OnSuccess&& value) { SetOnSuccess(std::move(value)); return *this;}
+    template<typename OnSuccessT = OnSuccess>
+    void SetOnSuccess(OnSuccessT&& value) { m_onSuccessHasBeenSet = true; m_onSuccess = std::forward<OnSuccessT>(value); }
+    template<typename OnSuccessT = OnSuccess>
+    DestinationConfig& WithOnSuccess(OnSuccessT&& value) { SetOnSuccess(std::forward<OnSuccessT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination configuration for failed invocations.</p>
      */
-    inline const OnFailure& GetOnFailure() const{ return m_onFailure; }
+    inline const OnFailure& GetOnFailure() const { return m_onFailure; }
     inline bool OnFailureHasBeenSet() const { return m_onFailureHasBeenSet; }
-    inline void SetOnFailure(const OnFailure& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
-    inline void SetOnFailure(OnFailure&& value) { m_onFailureHasBeenSet = true; m_onFailure = std::move(value); }
-    inline DestinationConfig& WithOnFailure(const OnFailure& value) { SetOnFailure(value); return *this;}
-    inline DestinationConfig& WithOnFailure(OnFailure&& value) { SetOnFailure(std::move(value)); return *this;}
+    template<typename OnFailureT = OnFailure>
+    void SetOnFailure(OnFailureT&& value) { m_onFailureHasBeenSet = true; m_onFailure = std::forward<OnFailureT>(value); }
+    template<typename OnFailureT = OnFailure>
+    DestinationConfig& WithOnFailure(OnFailureT&& value) { SetOnFailure(std::forward<OnFailureT>(value)); return *this;}
     ///@}
   private:
 

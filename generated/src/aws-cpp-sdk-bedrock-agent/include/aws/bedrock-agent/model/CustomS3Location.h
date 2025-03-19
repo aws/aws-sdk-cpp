@@ -33,7 +33,7 @@ namespace Model
   class CustomS3Location
   {
   public:
-    AWS_BEDROCKAGENT_API CustomS3Location();
+    AWS_BEDROCKAGENT_API CustomS3Location() = default;
     AWS_BEDROCKAGENT_API CustomS3Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CustomS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The identifier of the Amazon Web Services account that owns the S3 bucket
      * containing the content to ingest.</p>
      */
-    inline const Aws::String& GetBucketOwnerAccountId() const{ return m_bucketOwnerAccountId; }
+    inline const Aws::String& GetBucketOwnerAccountId() const { return m_bucketOwnerAccountId; }
     inline bool BucketOwnerAccountIdHasBeenSet() const { return m_bucketOwnerAccountIdHasBeenSet; }
-    inline void SetBucketOwnerAccountId(const Aws::String& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = value; }
-    inline void SetBucketOwnerAccountId(Aws::String&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::move(value); }
-    inline void SetBucketOwnerAccountId(const char* value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId.assign(value); }
-    inline CustomS3Location& WithBucketOwnerAccountId(const Aws::String& value) { SetBucketOwnerAccountId(value); return *this;}
-    inline CustomS3Location& WithBucketOwnerAccountId(Aws::String&& value) { SetBucketOwnerAccountId(std::move(value)); return *this;}
-    inline CustomS3Location& WithBucketOwnerAccountId(const char* value) { SetBucketOwnerAccountId(value); return *this;}
+    template<typename BucketOwnerAccountIdT = Aws::String>
+    void SetBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { m_bucketOwnerAccountIdHasBeenSet = true; m_bucketOwnerAccountId = std::forward<BucketOwnerAccountIdT>(value); }
+    template<typename BucketOwnerAccountIdT = Aws::String>
+    CustomS3Location& WithBucketOwnerAccountId(BucketOwnerAccountIdT&& value) { SetBucketOwnerAccountId(std::forward<BucketOwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 URI of the file containing the content to ingest.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline CustomS3Location& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline CustomS3Location& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline CustomS3Location& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    CustomS3Location& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 

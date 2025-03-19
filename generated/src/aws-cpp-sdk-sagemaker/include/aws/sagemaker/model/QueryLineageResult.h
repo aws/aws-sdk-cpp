@@ -30,7 +30,7 @@ namespace Model
   class QueryLineageResult
   {
   public:
-    AWS_SAGEMAKER_API QueryLineageResult();
+    AWS_SAGEMAKER_API QueryLineageResult() = default;
     AWS_SAGEMAKER_API QueryLineageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API QueryLineageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,26 @@ namespace Model
      * <p>A list of vertices connected to the start entity(ies) in the lineage
      * graph.</p>
      */
-    inline const Aws::Vector<Vertex>& GetVertices() const{ return m_vertices; }
-    inline void SetVertices(const Aws::Vector<Vertex>& value) { m_vertices = value; }
-    inline void SetVertices(Aws::Vector<Vertex>&& value) { m_vertices = std::move(value); }
-    inline QueryLineageResult& WithVertices(const Aws::Vector<Vertex>& value) { SetVertices(value); return *this;}
-    inline QueryLineageResult& WithVertices(Aws::Vector<Vertex>&& value) { SetVertices(std::move(value)); return *this;}
-    inline QueryLineageResult& AddVertices(const Vertex& value) { m_vertices.push_back(value); return *this; }
-    inline QueryLineageResult& AddVertices(Vertex&& value) { m_vertices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Vertex>& GetVertices() const { return m_vertices; }
+    template<typename VerticesT = Aws::Vector<Vertex>>
+    void SetVertices(VerticesT&& value) { m_verticesHasBeenSet = true; m_vertices = std::forward<VerticesT>(value); }
+    template<typename VerticesT = Aws::Vector<Vertex>>
+    QueryLineageResult& WithVertices(VerticesT&& value) { SetVertices(std::forward<VerticesT>(value)); return *this;}
+    template<typename VerticesT = Vertex>
+    QueryLineageResult& AddVertices(VerticesT&& value) { m_verticesHasBeenSet = true; m_vertices.emplace_back(std::forward<VerticesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of edges that connect vertices in the response.</p>
      */
-    inline const Aws::Vector<Edge>& GetEdges() const{ return m_edges; }
-    inline void SetEdges(const Aws::Vector<Edge>& value) { m_edges = value; }
-    inline void SetEdges(Aws::Vector<Edge>&& value) { m_edges = std::move(value); }
-    inline QueryLineageResult& WithEdges(const Aws::Vector<Edge>& value) { SetEdges(value); return *this;}
-    inline QueryLineageResult& WithEdges(Aws::Vector<Edge>&& value) { SetEdges(std::move(value)); return *this;}
-    inline QueryLineageResult& AddEdges(const Edge& value) { m_edges.push_back(value); return *this; }
-    inline QueryLineageResult& AddEdges(Edge&& value) { m_edges.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Edge>& GetEdges() const { return m_edges; }
+    template<typename EdgesT = Aws::Vector<Edge>>
+    void SetEdges(EdgesT&& value) { m_edgesHasBeenSet = true; m_edges = std::forward<EdgesT>(value); }
+    template<typename EdgesT = Aws::Vector<Edge>>
+    QueryLineageResult& WithEdges(EdgesT&& value) { SetEdges(std::forward<EdgesT>(value)); return *this;}
+    template<typename EdgesT = Edge>
+    QueryLineageResult& AddEdges(EdgesT&& value) { m_edgesHasBeenSet = true; m_edges.emplace_back(std::forward<EdgesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,34 +67,34 @@ namespace Model
      * <p>Limits the number of vertices in the response. Use the <code>NextToken</code>
      * in a response to to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline QueryLineageResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline QueryLineageResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline QueryLineageResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    QueryLineageResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline QueryLineageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline QueryLineageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline QueryLineageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    QueryLineageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Vertex> m_vertices;
+    bool m_verticesHasBeenSet = false;
 
     Aws::Vector<Edge> m_edges;
+    bool m_edgesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

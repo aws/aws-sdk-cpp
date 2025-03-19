@@ -37,7 +37,7 @@ namespace Model
   class AutomatedAbrRule
   {
   public:
-    AWS_MEDIACONVERT_API AutomatedAbrRule();
+    AWS_MEDIACONVERT_API AutomatedAbrRule() = default;
     AWS_MEDIACONVERT_API AutomatedAbrRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AutomatedAbrRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * When customer adds the allowed renditions rule for auto ABR ladder, they are
      * required to add at leat one rendition to allowedRenditions list
      */
-    inline const Aws::Vector<AllowedRenditionSize>& GetAllowedRenditions() const{ return m_allowedRenditions; }
+    inline const Aws::Vector<AllowedRenditionSize>& GetAllowedRenditions() const { return m_allowedRenditions; }
     inline bool AllowedRenditionsHasBeenSet() const { return m_allowedRenditionsHasBeenSet; }
-    inline void SetAllowedRenditions(const Aws::Vector<AllowedRenditionSize>& value) { m_allowedRenditionsHasBeenSet = true; m_allowedRenditions = value; }
-    inline void SetAllowedRenditions(Aws::Vector<AllowedRenditionSize>&& value) { m_allowedRenditionsHasBeenSet = true; m_allowedRenditions = std::move(value); }
-    inline AutomatedAbrRule& WithAllowedRenditions(const Aws::Vector<AllowedRenditionSize>& value) { SetAllowedRenditions(value); return *this;}
-    inline AutomatedAbrRule& WithAllowedRenditions(Aws::Vector<AllowedRenditionSize>&& value) { SetAllowedRenditions(std::move(value)); return *this;}
-    inline AutomatedAbrRule& AddAllowedRenditions(const AllowedRenditionSize& value) { m_allowedRenditionsHasBeenSet = true; m_allowedRenditions.push_back(value); return *this; }
-    inline AutomatedAbrRule& AddAllowedRenditions(AllowedRenditionSize&& value) { m_allowedRenditionsHasBeenSet = true; m_allowedRenditions.push_back(std::move(value)); return *this; }
+    template<typename AllowedRenditionsT = Aws::Vector<AllowedRenditionSize>>
+    void SetAllowedRenditions(AllowedRenditionsT&& value) { m_allowedRenditionsHasBeenSet = true; m_allowedRenditions = std::forward<AllowedRenditionsT>(value); }
+    template<typename AllowedRenditionsT = Aws::Vector<AllowedRenditionSize>>
+    AutomatedAbrRule& WithAllowedRenditions(AllowedRenditionsT&& value) { SetAllowedRenditions(std::forward<AllowedRenditionsT>(value)); return *this;}
+    template<typename AllowedRenditionsT = AllowedRenditionSize>
+    AutomatedAbrRule& AddAllowedRenditions(AllowedRenditionsT&& value) { m_allowedRenditionsHasBeenSet = true; m_allowedRenditions.emplace_back(std::forward<AllowedRenditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * When customer adds the force include renditions rule for auto ABR ladder, they
      * are required to add at leat one rendition to forceIncludeRenditions list
      */
-    inline const Aws::Vector<ForceIncludeRenditionSize>& GetForceIncludeRenditions() const{ return m_forceIncludeRenditions; }
+    inline const Aws::Vector<ForceIncludeRenditionSize>& GetForceIncludeRenditions() const { return m_forceIncludeRenditions; }
     inline bool ForceIncludeRenditionsHasBeenSet() const { return m_forceIncludeRenditionsHasBeenSet; }
-    inline void SetForceIncludeRenditions(const Aws::Vector<ForceIncludeRenditionSize>& value) { m_forceIncludeRenditionsHasBeenSet = true; m_forceIncludeRenditions = value; }
-    inline void SetForceIncludeRenditions(Aws::Vector<ForceIncludeRenditionSize>&& value) { m_forceIncludeRenditionsHasBeenSet = true; m_forceIncludeRenditions = std::move(value); }
-    inline AutomatedAbrRule& WithForceIncludeRenditions(const Aws::Vector<ForceIncludeRenditionSize>& value) { SetForceIncludeRenditions(value); return *this;}
-    inline AutomatedAbrRule& WithForceIncludeRenditions(Aws::Vector<ForceIncludeRenditionSize>&& value) { SetForceIncludeRenditions(std::move(value)); return *this;}
-    inline AutomatedAbrRule& AddForceIncludeRenditions(const ForceIncludeRenditionSize& value) { m_forceIncludeRenditionsHasBeenSet = true; m_forceIncludeRenditions.push_back(value); return *this; }
-    inline AutomatedAbrRule& AddForceIncludeRenditions(ForceIncludeRenditionSize&& value) { m_forceIncludeRenditionsHasBeenSet = true; m_forceIncludeRenditions.push_back(std::move(value)); return *this; }
+    template<typename ForceIncludeRenditionsT = Aws::Vector<ForceIncludeRenditionSize>>
+    void SetForceIncludeRenditions(ForceIncludeRenditionsT&& value) { m_forceIncludeRenditionsHasBeenSet = true; m_forceIncludeRenditions = std::forward<ForceIncludeRenditionsT>(value); }
+    template<typename ForceIncludeRenditionsT = Aws::Vector<ForceIncludeRenditionSize>>
+    AutomatedAbrRule& WithForceIncludeRenditions(ForceIncludeRenditionsT&& value) { SetForceIncludeRenditions(std::forward<ForceIncludeRenditionsT>(value)); return *this;}
+    template<typename ForceIncludeRenditionsT = ForceIncludeRenditionSize>
+    AutomatedAbrRule& AddForceIncludeRenditions(ForceIncludeRenditionsT&& value) { m_forceIncludeRenditionsHasBeenSet = true; m_forceIncludeRenditions.emplace_back(std::forward<ForceIncludeRenditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,12 +83,12 @@ namespace Model
      * specify for Min bottom rendition size must be less than, or equal to, Min top
      * rendition size.
      */
-    inline const MinBottomRenditionSize& GetMinBottomRenditionSize() const{ return m_minBottomRenditionSize; }
+    inline const MinBottomRenditionSize& GetMinBottomRenditionSize() const { return m_minBottomRenditionSize; }
     inline bool MinBottomRenditionSizeHasBeenSet() const { return m_minBottomRenditionSizeHasBeenSet; }
-    inline void SetMinBottomRenditionSize(const MinBottomRenditionSize& value) { m_minBottomRenditionSizeHasBeenSet = true; m_minBottomRenditionSize = value; }
-    inline void SetMinBottomRenditionSize(MinBottomRenditionSize&& value) { m_minBottomRenditionSizeHasBeenSet = true; m_minBottomRenditionSize = std::move(value); }
-    inline AutomatedAbrRule& WithMinBottomRenditionSize(const MinBottomRenditionSize& value) { SetMinBottomRenditionSize(value); return *this;}
-    inline AutomatedAbrRule& WithMinBottomRenditionSize(MinBottomRenditionSize&& value) { SetMinBottomRenditionSize(std::move(value)); return *this;}
+    template<typename MinBottomRenditionSizeT = MinBottomRenditionSize>
+    void SetMinBottomRenditionSize(MinBottomRenditionSizeT&& value) { m_minBottomRenditionSizeHasBeenSet = true; m_minBottomRenditionSize = std::forward<MinBottomRenditionSizeT>(value); }
+    template<typename MinBottomRenditionSizeT = MinBottomRenditionSize>
+    AutomatedAbrRule& WithMinBottomRenditionSize(MinBottomRenditionSizeT&& value) { SetMinBottomRenditionSize(std::forward<MinBottomRenditionSizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +101,12 @@ namespace Model
      * specify for Min top rendition size must be less than, or equal to, Max
      * resolution.
      */
-    inline const MinTopRenditionSize& GetMinTopRenditionSize() const{ return m_minTopRenditionSize; }
+    inline const MinTopRenditionSize& GetMinTopRenditionSize() const { return m_minTopRenditionSize; }
     inline bool MinTopRenditionSizeHasBeenSet() const { return m_minTopRenditionSizeHasBeenSet; }
-    inline void SetMinTopRenditionSize(const MinTopRenditionSize& value) { m_minTopRenditionSizeHasBeenSet = true; m_minTopRenditionSize = value; }
-    inline void SetMinTopRenditionSize(MinTopRenditionSize&& value) { m_minTopRenditionSizeHasBeenSet = true; m_minTopRenditionSize = std::move(value); }
-    inline AutomatedAbrRule& WithMinTopRenditionSize(const MinTopRenditionSize& value) { SetMinTopRenditionSize(value); return *this;}
-    inline AutomatedAbrRule& WithMinTopRenditionSize(MinTopRenditionSize&& value) { SetMinTopRenditionSize(std::move(value)); return *this;}
+    template<typename MinTopRenditionSizeT = MinTopRenditionSize>
+    void SetMinTopRenditionSize(MinTopRenditionSizeT&& value) { m_minTopRenditionSizeHasBeenSet = true; m_minTopRenditionSize = std::forward<MinTopRenditionSizeT>(value); }
+    template<typename MinTopRenditionSizeT = MinTopRenditionSize>
+    AutomatedAbrRule& WithMinTopRenditionSize(MinTopRenditionSizeT&& value) { SetMinTopRenditionSize(std::forward<MinTopRenditionSizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +144,10 @@ namespace Model
      * Min top rendition size or Min bottom rendition size. * If you specify Allowed
      * renditions, you must not specify a separate rule for Force include renditions.
      */
-    inline const RuleType& GetType() const{ return m_type; }
+    inline RuleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AutomatedAbrRule& WithType(const RuleType& value) { SetType(value); return *this;}
-    inline AutomatedAbrRule& WithType(RuleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RuleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AutomatedAbrRule& WithType(RuleType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -165,7 +163,7 @@ namespace Model
     MinTopRenditionSize m_minTopRenditionSize;
     bool m_minTopRenditionSizeHasBeenSet = false;
 
-    RuleType m_type;
+    RuleType m_type{RuleType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopAutomationExecutionRequest::StopAutomationExecutionRequest() : 
-    m_automationExecutionIdHasBeenSet(false),
-    m_type(StopType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String StopAutomationExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

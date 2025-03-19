@@ -18,18 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisRuleCustom::AnalysisRuleCustom() : 
-    m_allowedAnalysesHasBeenSet(false),
-    m_allowedAnalysisProvidersHasBeenSet(false),
-    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
-    m_additionalAnalysesHasBeenSet(false),
-    m_disallowedOutputColumnsHasBeenSet(false),
-    m_differentialPrivacyHasBeenSet(false)
-{
-}
-
 AnalysisRuleCustom::AnalysisRuleCustom(JsonView jsonValue)
-  : AnalysisRuleCustom()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ AnalysisRuleCustom& AnalysisRuleCustom::operator =(JsonView jsonValue)
     }
     m_allowedAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedAnalysisProviders"))
   {
     Aws::Utils::Array<JsonView> allowedAnalysisProvidersJsonList = jsonValue.GetArray("allowedAnalysisProviders");
@@ -55,14 +43,11 @@ AnalysisRuleCustom& AnalysisRuleCustom::operator =(JsonView jsonValue)
     }
     m_allowedAnalysisProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalAnalyses"))
   {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
-
     m_additionalAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disallowedOutputColumns"))
   {
     Aws::Utils::Array<JsonView> disallowedOutputColumnsJsonList = jsonValue.GetArray("disallowedOutputColumns");
@@ -72,14 +57,11 @@ AnalysisRuleCustom& AnalysisRuleCustom::operator =(JsonView jsonValue)
     }
     m_disallowedOutputColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("differentialPrivacy"))
   {
     m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
-
     m_differentialPrivacyHasBeenSet = true;
   }
-
   return *this;
 }
 

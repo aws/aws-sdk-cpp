@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnLevelPermissionRule::ColumnLevelPermissionRule() : 
-    m_principalsHasBeenSet(false),
-    m_columnNamesHasBeenSet(false)
-{
-}
-
 ColumnLevelPermissionRule::ColumnLevelPermissionRule(JsonView jsonValue)
-  : ColumnLevelPermissionRule()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ColumnLevelPermissionRule& ColumnLevelPermissionRule::operator =(JsonView jsonVa
     }
     m_principalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnNames"))
   {
     Aws::Utils::Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
@@ -51,7 +43,6 @@ ColumnLevelPermissionRule& ColumnLevelPermissionRule::operator =(JsonView jsonVa
     }
     m_columnNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

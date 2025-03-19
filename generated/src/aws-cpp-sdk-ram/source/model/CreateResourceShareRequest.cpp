@@ -12,19 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourceShareRequest::CreateResourceShareRequest() : 
-    m_nameHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_allowExternalPrincipals(false),
-    m_allowExternalPrincipalsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_permissionArnsHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourceShareRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class HyperbandStrategyConfig
   {
   public:
-    AWS_SAGEMAKER_API HyperbandStrategyConfig();
+    AWS_SAGEMAKER_API HyperbandStrategyConfig() = default;
     AWS_SAGEMAKER_API HyperbandStrategyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperbandStrategyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * <code>MinResource</code> has not been reached, the training job is not stopped
      * by <code>Hyperband</code>.</p>
      */
-    inline int GetMinResource() const{ return m_minResource; }
+    inline int GetMinResource() const { return m_minResource; }
     inline bool MinResourceHasBeenSet() const { return m_minResourceHasBeenSet; }
     inline void SetMinResource(int value) { m_minResourceHasBeenSet = true; m_minResource = value; }
     inline HyperbandStrategyConfig& WithMinResource(int value) { SetMinResource(value); return *this;}
@@ -78,17 +78,17 @@ namespace Model
      * duplicate or incorrect metrics, training jobs may make an incorrect stopping
      * decision and stop the job prematurely. </p>
      */
-    inline int GetMaxResource() const{ return m_maxResource; }
+    inline int GetMaxResource() const { return m_maxResource; }
     inline bool MaxResourceHasBeenSet() const { return m_maxResourceHasBeenSet; }
     inline void SetMaxResource(int value) { m_maxResourceHasBeenSet = true; m_maxResource = value; }
     inline HyperbandStrategyConfig& WithMaxResource(int value) { SetMaxResource(value); return *this;}
     ///@}
   private:
 
-    int m_minResource;
+    int m_minResource{0};
     bool m_minResourceHasBeenSet = false;
 
-    int m_maxResource;
+    int m_maxResource{0};
     bool m_maxResourceHasBeenSet = false;
   };
 

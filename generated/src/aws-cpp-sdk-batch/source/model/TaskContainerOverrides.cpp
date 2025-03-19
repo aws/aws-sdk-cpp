@@ -18,16 +18,7 @@ namespace Batch
 namespace Model
 {
 
-TaskContainerOverrides::TaskContainerOverrides() : 
-    m_commandHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false)
-{
-}
-
 TaskContainerOverrides::TaskContainerOverrides(JsonView jsonValue)
-  : TaskContainerOverrides()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ TaskContainerOverrides& TaskContainerOverrides::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
@@ -53,14 +43,11 @@ TaskContainerOverrides& TaskContainerOverrides::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRequirements"))
   {
     Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
@@ -70,7 +57,6 @@ TaskContainerOverrides& TaskContainerOverrides::operator =(JsonView jsonValue)
     }
     m_resourceRequirementsHasBeenSet = true;
   }
-
   return *this;
 }
 

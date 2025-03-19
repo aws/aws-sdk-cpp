@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ContentBody::ContentBody() : 
-    m_bodyHasBeenSet(false),
-    m_imagesHasBeenSet(false)
-{
-}
-
 ContentBody::ContentBody(JsonView jsonValue)
-  : ContentBody()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ContentBody& ContentBody::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("images"))
   {
     Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("images");
@@ -48,7 +39,6 @@ ContentBody& ContentBody::operator =(JsonView jsonValue)
     }
     m_imagesHasBeenSet = true;
   }
-
   return *this;
 }
 

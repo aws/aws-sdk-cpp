@@ -12,16 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAppAssessmentRequest::StartAppAssessmentRequest() : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartAppAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;

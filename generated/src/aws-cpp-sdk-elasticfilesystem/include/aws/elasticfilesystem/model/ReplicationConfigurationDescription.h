@@ -35,7 +35,7 @@ namespace Model
   class ReplicationConfigurationDescription
   {
   public:
-    AWS_EFS_API ReplicationConfigurationDescription();
+    AWS_EFS_API ReplicationConfigurationDescription() = default;
     AWS_EFS_API ReplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API ReplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID of the source Amazon EFS file system that is being replicated.</p>
      */
-    inline const Aws::String& GetSourceFileSystemId() const{ return m_sourceFileSystemId; }
+    inline const Aws::String& GetSourceFileSystemId() const { return m_sourceFileSystemId; }
     inline bool SourceFileSystemIdHasBeenSet() const { return m_sourceFileSystemIdHasBeenSet; }
-    inline void SetSourceFileSystemId(const Aws::String& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = value; }
-    inline void SetSourceFileSystemId(Aws::String&& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = std::move(value); }
-    inline void SetSourceFileSystemId(const char* value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId.assign(value); }
-    inline ReplicationConfigurationDescription& WithSourceFileSystemId(const Aws::String& value) { SetSourceFileSystemId(value); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemId(Aws::String&& value) { SetSourceFileSystemId(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemId(const char* value) { SetSourceFileSystemId(value); return *this;}
+    template<typename SourceFileSystemIdT = Aws::String>
+    void SetSourceFileSystemId(SourceFileSystemIdT&& value) { m_sourceFileSystemIdHasBeenSet = true; m_sourceFileSystemId = std::forward<SourceFileSystemIdT>(value); }
+    template<typename SourceFileSystemIdT = Aws::String>
+    ReplicationConfigurationDescription& WithSourceFileSystemId(SourceFileSystemIdT&& value) { SetSourceFileSystemId(std::forward<SourceFileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The Amazon Web Services Region in which the source EFS file system is
      * located.</p>
      */
-    inline const Aws::String& GetSourceFileSystemRegion() const{ return m_sourceFileSystemRegion; }
+    inline const Aws::String& GetSourceFileSystemRegion() const { return m_sourceFileSystemRegion; }
     inline bool SourceFileSystemRegionHasBeenSet() const { return m_sourceFileSystemRegionHasBeenSet; }
-    inline void SetSourceFileSystemRegion(const Aws::String& value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion = value; }
-    inline void SetSourceFileSystemRegion(Aws::String&& value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion = std::move(value); }
-    inline void SetSourceFileSystemRegion(const char* value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion.assign(value); }
-    inline ReplicationConfigurationDescription& WithSourceFileSystemRegion(const Aws::String& value) { SetSourceFileSystemRegion(value); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemRegion(Aws::String&& value) { SetSourceFileSystemRegion(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemRegion(const char* value) { SetSourceFileSystemRegion(value); return *this;}
+    template<typename SourceFileSystemRegionT = Aws::String>
+    void SetSourceFileSystemRegion(SourceFileSystemRegionT&& value) { m_sourceFileSystemRegionHasBeenSet = true; m_sourceFileSystemRegion = std::forward<SourceFileSystemRegionT>(value); }
+    template<typename SourceFileSystemRegionT = Aws::String>
+    ReplicationConfigurationDescription& WithSourceFileSystemRegion(SourceFileSystemRegionT&& value) { SetSourceFileSystemRegion(std::forward<SourceFileSystemRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the current source file system in the
      * replication configuration.</p>
      */
-    inline const Aws::String& GetSourceFileSystemArn() const{ return m_sourceFileSystemArn; }
+    inline const Aws::String& GetSourceFileSystemArn() const { return m_sourceFileSystemArn; }
     inline bool SourceFileSystemArnHasBeenSet() const { return m_sourceFileSystemArnHasBeenSet; }
-    inline void SetSourceFileSystemArn(const Aws::String& value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn = value; }
-    inline void SetSourceFileSystemArn(Aws::String&& value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn = std::move(value); }
-    inline void SetSourceFileSystemArn(const char* value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn.assign(value); }
-    inline ReplicationConfigurationDescription& WithSourceFileSystemArn(const Aws::String& value) { SetSourceFileSystemArn(value); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemArn(Aws::String&& value) { SetSourceFileSystemArn(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemArn(const char* value) { SetSourceFileSystemArn(value); return *this;}
+    template<typename SourceFileSystemArnT = Aws::String>
+    void SetSourceFileSystemArn(SourceFileSystemArnT&& value) { m_sourceFileSystemArnHasBeenSet = true; m_sourceFileSystemArn = std::forward<SourceFileSystemArnT>(value); }
+    template<typename SourceFileSystemArnT = Aws::String>
+    ReplicationConfigurationDescription& WithSourceFileSystemArn(SourceFileSystemArnT&& value) { SetSourceFileSystemArn(std::forward<SourceFileSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,26 +84,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the original source EFS file system in the
      * replication configuration.</p>
      */
-    inline const Aws::String& GetOriginalSourceFileSystemArn() const{ return m_originalSourceFileSystemArn; }
+    inline const Aws::String& GetOriginalSourceFileSystemArn() const { return m_originalSourceFileSystemArn; }
     inline bool OriginalSourceFileSystemArnHasBeenSet() const { return m_originalSourceFileSystemArnHasBeenSet; }
-    inline void SetOriginalSourceFileSystemArn(const Aws::String& value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn = value; }
-    inline void SetOriginalSourceFileSystemArn(Aws::String&& value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn = std::move(value); }
-    inline void SetOriginalSourceFileSystemArn(const char* value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn.assign(value); }
-    inline ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(const Aws::String& value) { SetOriginalSourceFileSystemArn(value); return *this;}
-    inline ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(Aws::String&& value) { SetOriginalSourceFileSystemArn(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(const char* value) { SetOriginalSourceFileSystemArn(value); return *this;}
+    template<typename OriginalSourceFileSystemArnT = Aws::String>
+    void SetOriginalSourceFileSystemArn(OriginalSourceFileSystemArnT&& value) { m_originalSourceFileSystemArnHasBeenSet = true; m_originalSourceFileSystemArn = std::forward<OriginalSourceFileSystemArnT>(value); }
+    template<typename OriginalSourceFileSystemArnT = Aws::String>
+    ReplicationConfigurationDescription& WithOriginalSourceFileSystemArn(OriginalSourceFileSystemArnT&& value) { SetOriginalSourceFileSystemArn(std::forward<OriginalSourceFileSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes when the replication configuration was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ReplicationConfigurationDescription& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ReplicationConfigurationDescription& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ReplicationConfigurationDescription& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +109,14 @@ namespace Model
      * <p>An array of destination objects. Only one destination object is
      * supported.</p>
      */
-    inline const Aws::Vector<Destination>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<Destination>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<Destination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<Destination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline ReplicationConfigurationDescription& WithDestinations(const Aws::Vector<Destination>& value) { SetDestinations(value); return *this;}
-    inline ReplicationConfigurationDescription& WithDestinations(Aws::Vector<Destination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& AddDestinations(const Destination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline ReplicationConfigurationDescription& AddDestinations(Destination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<Destination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<Destination>>
+    ReplicationConfigurationDescription& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = Destination>
+    ReplicationConfigurationDescription& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -132,26 +124,22 @@ namespace Model
      * <p>ID of the Amazon Web Services account in which the source file system
      * resides.</p>
      */
-    inline const Aws::String& GetSourceFileSystemOwnerId() const{ return m_sourceFileSystemOwnerId; }
+    inline const Aws::String& GetSourceFileSystemOwnerId() const { return m_sourceFileSystemOwnerId; }
     inline bool SourceFileSystemOwnerIdHasBeenSet() const { return m_sourceFileSystemOwnerIdHasBeenSet; }
-    inline void SetSourceFileSystemOwnerId(const Aws::String& value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId = value; }
-    inline void SetSourceFileSystemOwnerId(Aws::String&& value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId = std::move(value); }
-    inline void SetSourceFileSystemOwnerId(const char* value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId.assign(value); }
-    inline ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(const Aws::String& value) { SetSourceFileSystemOwnerId(value); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(Aws::String&& value) { SetSourceFileSystemOwnerId(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(const char* value) { SetSourceFileSystemOwnerId(value); return *this;}
+    template<typename SourceFileSystemOwnerIdT = Aws::String>
+    void SetSourceFileSystemOwnerId(SourceFileSystemOwnerIdT&& value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId = std::forward<SourceFileSystemOwnerIdT>(value); }
+    template<typename SourceFileSystemOwnerIdT = Aws::String>
+    ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(SourceFileSystemOwnerIdT&& value) { SetSourceFileSystemOwnerId(std::forward<SourceFileSystemOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline ReplicationConfigurationDescription& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ReplicationConfigurationDescription& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ReplicationConfigurationDescription& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ReplicationConfigurationDescription& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -167,7 +155,7 @@ namespace Model
     Aws::String m_originalSourceFileSystemArn;
     bool m_originalSourceFileSystemArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Destination> m_destinations;

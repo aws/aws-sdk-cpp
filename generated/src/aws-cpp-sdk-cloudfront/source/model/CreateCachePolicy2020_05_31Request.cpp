@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateCachePolicy2020_05_31Request::CreateCachePolicy2020_05_31Request() : 
-    m_cachePolicyConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateCachePolicy2020_05_31Request::SerializePayload() const
 {

@@ -32,7 +32,7 @@ namespace Model
   class DataModelConfiguration
   {
   public:
-    AWS_TIMESTREAMWRITE_API DataModelConfiguration();
+    AWS_TIMESTREAMWRITE_API DataModelConfiguration() = default;
     AWS_TIMESTREAMWRITE_API DataModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API DataModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p/>
      */
-    inline const DataModel& GetDataModel() const{ return m_dataModel; }
+    inline const DataModel& GetDataModel() const { return m_dataModel; }
     inline bool DataModelHasBeenSet() const { return m_dataModelHasBeenSet; }
-    inline void SetDataModel(const DataModel& value) { m_dataModelHasBeenSet = true; m_dataModel = value; }
-    inline void SetDataModel(DataModel&& value) { m_dataModelHasBeenSet = true; m_dataModel = std::move(value); }
-    inline DataModelConfiguration& WithDataModel(const DataModel& value) { SetDataModel(value); return *this;}
-    inline DataModelConfiguration& WithDataModel(DataModel&& value) { SetDataModel(std::move(value)); return *this;}
+    template<typename DataModelT = DataModel>
+    void SetDataModel(DataModelT&& value) { m_dataModelHasBeenSet = true; m_dataModel = std::forward<DataModelT>(value); }
+    template<typename DataModelT = DataModel>
+    DataModelConfiguration& WithDataModel(DataModelT&& value) { SetDataModel(std::forward<DataModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const DataModelS3Configuration& GetDataModelS3Configuration() const{ return m_dataModelS3Configuration; }
+    inline const DataModelS3Configuration& GetDataModelS3Configuration() const { return m_dataModelS3Configuration; }
     inline bool DataModelS3ConfigurationHasBeenSet() const { return m_dataModelS3ConfigurationHasBeenSet; }
-    inline void SetDataModelS3Configuration(const DataModelS3Configuration& value) { m_dataModelS3ConfigurationHasBeenSet = true; m_dataModelS3Configuration = value; }
-    inline void SetDataModelS3Configuration(DataModelS3Configuration&& value) { m_dataModelS3ConfigurationHasBeenSet = true; m_dataModelS3Configuration = std::move(value); }
-    inline DataModelConfiguration& WithDataModelS3Configuration(const DataModelS3Configuration& value) { SetDataModelS3Configuration(value); return *this;}
-    inline DataModelConfiguration& WithDataModelS3Configuration(DataModelS3Configuration&& value) { SetDataModelS3Configuration(std::move(value)); return *this;}
+    template<typename DataModelS3ConfigurationT = DataModelS3Configuration>
+    void SetDataModelS3Configuration(DataModelS3ConfigurationT&& value) { m_dataModelS3ConfigurationHasBeenSet = true; m_dataModelS3Configuration = std::forward<DataModelS3ConfigurationT>(value); }
+    template<typename DataModelS3ConfigurationT = DataModelS3Configuration>
+    DataModelConfiguration& WithDataModelS3Configuration(DataModelS3ConfigurationT&& value) { SetDataModelS3Configuration(std::forward<DataModelS3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

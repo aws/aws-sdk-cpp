@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetEvidenceFileUploadUrlRequest::GetEvidenceFileUploadUrlRequest() : 
-    m_fileNameHasBeenSet(false)
-{
-}
-
 Aws::String GetEvidenceFileUploadUrlRequest::SerializePayload() const
 {
   return {};

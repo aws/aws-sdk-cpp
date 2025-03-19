@@ -32,7 +32,7 @@ namespace Model
   class ServiceSpecification
   {
   public:
-    AWS_COSTEXPLORER_API ServiceSpecification();
+    AWS_COSTEXPLORER_API ServiceSpecification() = default;
     AWS_COSTEXPLORER_API ServiceSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API ServiceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to
      * provide recommendations for.</p>
      */
-    inline const EC2Specification& GetEC2Specification() const{ return m_eC2Specification; }
+    inline const EC2Specification& GetEC2Specification() const { return m_eC2Specification; }
     inline bool EC2SpecificationHasBeenSet() const { return m_eC2SpecificationHasBeenSet; }
-    inline void SetEC2Specification(const EC2Specification& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = value; }
-    inline void SetEC2Specification(EC2Specification&& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = std::move(value); }
-    inline ServiceSpecification& WithEC2Specification(const EC2Specification& value) { SetEC2Specification(value); return *this;}
-    inline ServiceSpecification& WithEC2Specification(EC2Specification&& value) { SetEC2Specification(std::move(value)); return *this;}
+    template<typename EC2SpecificationT = EC2Specification>
+    void SetEC2Specification(EC2SpecificationT&& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = std::forward<EC2SpecificationT>(value); }
+    template<typename EC2SpecificationT = EC2Specification>
+    ServiceSpecification& WithEC2Specification(EC2SpecificationT&& value) { SetEC2Specification(std::forward<EC2SpecificationT>(value)); return *this;}
     ///@}
   private:
 

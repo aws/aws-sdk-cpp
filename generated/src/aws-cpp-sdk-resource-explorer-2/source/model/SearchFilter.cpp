@@ -18,13 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-SearchFilter::SearchFilter() : 
-    m_filterStringHasBeenSet(false)
-{
-}
-
 SearchFilter::SearchFilter(JsonView jsonValue)
-  : SearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SearchFilter& SearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterString"))
   {
     m_filterString = jsonValue.GetString("FilterString");
-
     m_filterStringHasBeenSet = true;
   }
-
   return *this;
 }
 

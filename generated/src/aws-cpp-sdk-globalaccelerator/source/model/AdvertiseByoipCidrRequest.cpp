@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdvertiseByoipCidrRequest::AdvertiseByoipCidrRequest() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 Aws::String AdvertiseByoipCidrRequest::SerializePayload() const
 {
   JsonValue payload;

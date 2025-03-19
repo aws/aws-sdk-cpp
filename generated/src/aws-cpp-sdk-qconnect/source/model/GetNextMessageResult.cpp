@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNextMessageResult::GetNextMessageResult() : 
-    m_type(MessageType::NOT_SET)
-{
-}
-
 GetNextMessageResult::GetNextMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetNextMessageResult()
 {
   *this = result;
 }
@@ -38,44 +32,40 @@ GetNextMessageResult& GetNextMessageResult::operator =(const Aws::AmazonWebServi
     {
       m_conversationSessionData.push_back(conversationSessionDataJsonList[conversationSessionDataIndex].AsObject());
     }
+    m_conversationSessionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationState"))
   {
     m_conversationState = jsonValue.GetObject("conversationState");
-
+    m_conversationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextMessageToken"))
   {
     m_nextMessageToken = jsonValue.GetString("nextMessageToken");
-
+    m_nextMessageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestMessageId"))
   {
     m_requestMessageId = jsonValue.GetString("requestMessageId");
-
+    m_requestMessageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("response"))
   {
     m_response = jsonValue.GetObject("response");
-
+    m_responseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

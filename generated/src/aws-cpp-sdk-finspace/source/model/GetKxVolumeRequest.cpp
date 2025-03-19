@@ -12,12 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxVolumeRequest::GetKxVolumeRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_volumeNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKxVolumeRequest::SerializePayload() const
 {
   return {};

@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DeleteGeneratedTemplateRequest::DeleteGeneratedTemplateRequest() : 
-    m_generatedTemplateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGeneratedTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

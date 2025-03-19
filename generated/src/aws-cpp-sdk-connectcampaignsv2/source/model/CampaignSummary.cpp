@@ -18,19 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CampaignSummary::CampaignSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false),
-    m_channelSubtypesHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_connectCampaignFlowArnHasBeenSet(false)
-{
-}
-
 CampaignSummary::CampaignSummary(JsonView jsonValue)
-  : CampaignSummary()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ CampaignSummary& CampaignSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectInstanceId"))
   {
     m_connectInstanceId = jsonValue.GetString("connectInstanceId");
-
     m_connectInstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelSubtypes"))
   {
     Aws::Utils::Array<JsonView> channelSubtypesJsonList = jsonValue.GetArray("channelSubtypes");
@@ -74,21 +54,16 @@ CampaignSummary& CampaignSummary::operator =(JsonView jsonValue)
     }
     m_channelSubtypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectCampaignFlowArn"))
   {
     m_connectCampaignFlowArn = jsonValue.GetString("connectCampaignFlowArn");
-
     m_connectCampaignFlowArnHasBeenSet = true;
   }
-
   return *this;
 }
 

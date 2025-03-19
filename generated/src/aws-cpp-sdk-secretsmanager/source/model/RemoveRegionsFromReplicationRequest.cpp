@@ -12,12 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveRegionsFromReplicationRequest::RemoveRegionsFromReplicationRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_removeReplicaRegionsHasBeenSet(false)
-{
-}
-
 Aws::String RemoveRegionsFromReplicationRequest::SerializePayload() const
 {
   JsonValue payload;

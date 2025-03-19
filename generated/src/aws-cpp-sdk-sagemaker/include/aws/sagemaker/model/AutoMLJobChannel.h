@@ -37,7 +37,7 @@ namespace Model
   class AutoMLJobChannel
   {
   public:
-    AWS_SAGEMAKER_API AutoMLJobChannel();
+    AWS_SAGEMAKER_API AutoMLJobChannel() = default;
     AWS_SAGEMAKER_API AutoMLJobChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLJobChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * <code>ContentType</code> </p>  <p>The type of channel defaults to
      * <code>training</code> for the time-series forecasting problem type.</p> 
      */
-    inline const AutoMLChannelType& GetChannelType() const{ return m_channelType; }
+    inline AutoMLChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
-    inline void SetChannelType(const AutoMLChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
-    inline void SetChannelType(AutoMLChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
-    inline AutoMLJobChannel& WithChannelType(const AutoMLChannelType& value) { SetChannelType(value); return *this;}
-    inline AutoMLJobChannel& WithChannelType(AutoMLChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+    inline void SetChannelType(AutoMLChannelType value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+    inline AutoMLJobChannel& WithChannelType(AutoMLChannelType value) { SetChannelType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline AutoMLJobChannel& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline AutoMLJobChannel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline AutoMLJobChannel& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    AutoMLJobChannel& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,34 +92,32 @@ namespace Model
      * <code>None</code>. If no compression type is provided, we default to
      * <code>None</code>.</p>
      */
-    inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline AutoMLJobChannel& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
-    inline AutoMLJobChannel& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline AutoMLJobChannel& WithCompressionType(CompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data source for an AutoML channel (Required).</p>
      */
-    inline const AutoMLDataSource& GetDataSource() const{ return m_dataSource; }
+    inline const AutoMLDataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const AutoMLDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(AutoMLDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline AutoMLJobChannel& WithDataSource(const AutoMLDataSource& value) { SetDataSource(value); return *this;}
-    inline AutoMLJobChannel& WithDataSource(AutoMLDataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = AutoMLDataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = AutoMLDataSource>
+    AutoMLJobChannel& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
   private:
 
-    AutoMLChannelType m_channelType;
+    AutoMLChannelType m_channelType{AutoMLChannelType::NOT_SET};
     bool m_channelTypeHasBeenSet = false;
 
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    CompressionType m_compressionType;
+    CompressionType m_compressionType{CompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
     AutoMLDataSource m_dataSource;

@@ -33,7 +33,7 @@ namespace Model
   class LogConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API LogConfiguration();
+    AWS_MEDIATAILOR_API LogConfiguration() = default;
     AWS_MEDIATAILOR_API LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug
      * log mode</a>.</p> <p>Valid values: <code>0</code> - <code>100</code> </p>
      */
-    inline int GetPercentEnabled() const{ return m_percentEnabled; }
+    inline int GetPercentEnabled() const { return m_percentEnabled; }
     inline bool PercentEnabledHasBeenSet() const { return m_percentEnabledHasBeenSet; }
     inline void SetPercentEnabled(int value) { m_percentEnabledHasBeenSet = true; m_percentEnabled = value; }
     inline LogConfiguration& WithPercentEnabled(int value) { SetPercentEnabled(value); return *this;}
@@ -65,18 +65,17 @@ namespace Model
      * destination of choice. Supported destinations are CloudWatch Logs log group,
      * Amazon S3 bucket, and Amazon Data Firehose stream. </p>
      */
-    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const{ return m_enabledLoggingStrategies; }
+    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const { return m_enabledLoggingStrategies; }
     inline bool EnabledLoggingStrategiesHasBeenSet() const { return m_enabledLoggingStrategiesHasBeenSet; }
-    inline void SetEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = value; }
-    inline void SetEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = std::move(value); }
-    inline LogConfiguration& WithEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { SetEnabledLoggingStrategies(value); return *this;}
-    inline LogConfiguration& WithEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { SetEnabledLoggingStrategies(std::move(value)); return *this;}
-    inline LogConfiguration& AddEnabledLoggingStrategies(const LoggingStrategy& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
-    inline LogConfiguration& AddEnabledLoggingStrategies(LoggingStrategy&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(std::move(value)); return *this; }
+    template<typename EnabledLoggingStrategiesT = Aws::Vector<LoggingStrategy>>
+    void SetEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = std::forward<EnabledLoggingStrategiesT>(value); }
+    template<typename EnabledLoggingStrategiesT = Aws::Vector<LoggingStrategy>>
+    LogConfiguration& WithEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { SetEnabledLoggingStrategies(std::forward<EnabledLoggingStrategiesT>(value)); return *this;}
+    inline LogConfiguration& AddEnabledLoggingStrategies(LoggingStrategy value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
     ///@}
   private:
 
-    int m_percentEnabled;
+    int m_percentEnabled{0};
     bool m_percentEnabledHasBeenSet = false;
 
     Aws::Vector<LoggingStrategy> m_enabledLoggingStrategies;

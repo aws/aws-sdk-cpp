@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCelebrityInfoRequest::GetCelebrityInfoRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetCelebrityInfoRequest::SerializePayload() const
 {
   JsonValue payload;

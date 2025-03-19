@@ -12,15 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportRequest::StartImportRequest() : 
-    m_importIdHasBeenSet(false),
-    m_resourceSpecificationHasBeenSet(false),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_mergeStrategyHasBeenSet(false),
-    m_filePasswordHasBeenSet(false)
-{
-}
-
 Aws::String StartImportRequest::SerializePayload() const
 {
   JsonValue payload;

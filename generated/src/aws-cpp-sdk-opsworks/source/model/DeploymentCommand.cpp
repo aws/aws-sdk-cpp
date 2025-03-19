@@ -18,15 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-DeploymentCommand::DeploymentCommand() : 
-    m_name(DeploymentCommandName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_argsHasBeenSet(false)
-{
-}
-
 DeploymentCommand::DeploymentCommand(JsonView jsonValue)
-  : DeploymentCommand()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DeploymentCommand& DeploymentCommand::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = DeploymentCommandNameMapper::GetDeploymentCommandNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Args"))
   {
     Aws::Map<Aws::String, JsonView> argsJsonMap = jsonValue.GetObject("Args").GetAllObjects();
@@ -56,7 +46,6 @@ DeploymentCommand& DeploymentCommand::operator =(JsonView jsonValue)
     }
     m_argsHasBeenSet = true;
   }
-
   return *this;
 }
 

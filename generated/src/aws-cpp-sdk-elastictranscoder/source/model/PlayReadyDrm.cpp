@@ -18,18 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-PlayReadyDrm::PlayReadyDrm() : 
-    m_formatHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_keyMd5HasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_licenseAcquisitionUrlHasBeenSet(false)
-{
-}
-
 PlayReadyDrm::PlayReadyDrm(JsonView jsonValue)
-  : PlayReadyDrm()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PlayReadyDrm& PlayReadyDrm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyMd5"))
   {
     m_keyMd5 = jsonValue.GetString("KeyMd5");
-
     m_keyMd5HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitializationVector"))
   {
     m_initializationVector = jsonValue.GetString("InitializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseAcquisitionUrl"))
   {
     m_licenseAcquisitionUrl = jsonValue.GetString("LicenseAcquisitionUrl");
-
     m_licenseAcquisitionUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

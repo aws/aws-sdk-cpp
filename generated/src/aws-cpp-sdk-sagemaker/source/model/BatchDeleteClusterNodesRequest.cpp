@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteClusterNodesRequest::BatchDeleteClusterNodesRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodeIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteClusterNodesRequest::SerializePayload() const
 {
   JsonValue payload;

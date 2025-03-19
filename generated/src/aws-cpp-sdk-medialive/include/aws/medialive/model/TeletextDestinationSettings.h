@@ -29,7 +29,7 @@ namespace Model
   class TeletextDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API TeletextDestinationSettings();
+    AWS_MEDIALIVE_API TeletextDestinationSettings() = default;
     AWS_MEDIALIVE_API TeletextDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API TeletextDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

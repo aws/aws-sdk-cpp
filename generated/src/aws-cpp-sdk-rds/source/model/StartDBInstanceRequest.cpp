@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StartDBInstanceRequest::StartDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

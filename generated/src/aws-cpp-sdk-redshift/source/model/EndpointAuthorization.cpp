@@ -20,24 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EndpointAuthorization::EndpointAuthorization() : 
-    m_grantorHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_authorizeTimeHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false),
-    m_status(AuthorizationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_allowedAllVPCs(false),
-    m_allowedAllVPCsHasBeenSet(false),
-    m_allowedVPCsHasBeenSet(false),
-    m_endpointCount(0),
-    m_endpointCountHasBeenSet(false)
-{
-}
-
 EndpointAuthorization::EndpointAuthorization(const XmlNode& xmlNode)
-  : EndpointAuthorization()
 {
   *this = xmlNode;
 }
@@ -81,7 +64,7 @@ EndpointAuthorization& EndpointAuthorization::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = AuthorizationStatusMapper::GetAuthorizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AuthorizationStatusMapper::GetAuthorizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode allowedAllVPCsNode = resultNode.FirstChild("AllowedAllVPCs");
@@ -94,6 +77,7 @@ EndpointAuthorization& EndpointAuthorization::operator =(const XmlNode& xmlNode)
     if(!allowedVPCsNode.IsNull())
     {
       XmlNode allowedVPCsMember = allowedVPCsNode.FirstChild("VpcIdentifier");
+      m_allowedVPCsHasBeenSet = !allowedVPCsMember.IsNull();
       while(!allowedVPCsMember.IsNull())
       {
         m_allowedVPCs.push_back(allowedVPCsMember.GetText());

@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-InputFileSource::InputFileSource() : 
-    m_fileContentHasBeenSet(false)
-{
-}
-
 InputFileSource::InputFileSource(JsonView jsonValue)
-  : InputFileSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputFileSource& InputFileSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileContent"))
   {
     m_fileContent = jsonValue.GetString("fileContent");
-
     m_fileContentHasBeenSet = true;
   }
-
   return *this;
 }
 

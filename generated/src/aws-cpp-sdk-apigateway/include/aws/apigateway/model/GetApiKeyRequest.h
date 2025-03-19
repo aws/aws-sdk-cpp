@@ -29,7 +29,7 @@ namespace Model
   class GetApiKeyRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetApiKeyRequest();
+    AWS_APIGATEWAY_API GetApiKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The identifier of the ApiKey resource.</p>
      */
-    inline const Aws::String& GetApiKey() const{ return m_apiKey; }
+    inline const Aws::String& GetApiKey() const { return m_apiKey; }
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-    inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-    inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-    inline GetApiKeyRequest& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-    inline GetApiKeyRequest& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-    inline GetApiKeyRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    template<typename ApiKeyT = Aws::String>
+    void SetApiKey(ApiKeyT&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::forward<ApiKeyT>(value); }
+    template<typename ApiKeyT = Aws::String>
+    GetApiKeyRequest& WithApiKey(ApiKeyT&& value) { SetApiKey(std::forward<ApiKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>A boolean flag to specify whether (<code>true</code>) or not
      * (<code>false</code>) the result contains the key value.</p>
      */
-    inline bool GetIncludeValue() const{ return m_includeValue; }
+    inline bool GetIncludeValue() const { return m_includeValue; }
     inline bool IncludeValueHasBeenSet() const { return m_includeValueHasBeenSet; }
     inline void SetIncludeValue(bool value) { m_includeValueHasBeenSet = true; m_includeValue = value; }
     inline GetApiKeyRequest& WithIncludeValue(bool value) { SetIncludeValue(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_apiKey;
     bool m_apiKeyHasBeenSet = false;
 
-    bool m_includeValue;
+    bool m_includeValue{false};
     bool m_includeValueHasBeenSet = false;
   };
 

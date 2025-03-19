@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWirelessGatewayFirmwareInformationRequest::GetWirelessGatewayFirmwareInformationRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetWirelessGatewayFirmwareInformationRequest::SerializePayload() const
 {
   return {};

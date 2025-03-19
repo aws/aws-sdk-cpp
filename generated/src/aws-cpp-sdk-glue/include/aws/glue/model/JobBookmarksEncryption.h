@@ -33,7 +33,7 @@ namespace Model
   class JobBookmarksEncryption
   {
   public:
-    AWS_GLUE_API JobBookmarksEncryption();
+    AWS_GLUE_API JobBookmarksEncryption() = default;
     AWS_GLUE_API JobBookmarksEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API JobBookmarksEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The encryption mode to use for job bookmarks data.</p>
      */
-    inline const JobBookmarksEncryptionMode& GetJobBookmarksEncryptionMode() const{ return m_jobBookmarksEncryptionMode; }
+    inline JobBookmarksEncryptionMode GetJobBookmarksEncryptionMode() const { return m_jobBookmarksEncryptionMode; }
     inline bool JobBookmarksEncryptionModeHasBeenSet() const { return m_jobBookmarksEncryptionModeHasBeenSet; }
-    inline void SetJobBookmarksEncryptionMode(const JobBookmarksEncryptionMode& value) { m_jobBookmarksEncryptionModeHasBeenSet = true; m_jobBookmarksEncryptionMode = value; }
-    inline void SetJobBookmarksEncryptionMode(JobBookmarksEncryptionMode&& value) { m_jobBookmarksEncryptionModeHasBeenSet = true; m_jobBookmarksEncryptionMode = std::move(value); }
-    inline JobBookmarksEncryption& WithJobBookmarksEncryptionMode(const JobBookmarksEncryptionMode& value) { SetJobBookmarksEncryptionMode(value); return *this;}
-    inline JobBookmarksEncryption& WithJobBookmarksEncryptionMode(JobBookmarksEncryptionMode&& value) { SetJobBookmarksEncryptionMode(std::move(value)); return *this;}
+    inline void SetJobBookmarksEncryptionMode(JobBookmarksEncryptionMode value) { m_jobBookmarksEncryptionModeHasBeenSet = true; m_jobBookmarksEncryptionMode = value; }
+    inline JobBookmarksEncryption& WithJobBookmarksEncryptionMode(JobBookmarksEncryptionMode value) { SetJobBookmarksEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the
      * data.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline JobBookmarksEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline JobBookmarksEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline JobBookmarksEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    JobBookmarksEncryption& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    JobBookmarksEncryptionMode m_jobBookmarksEncryptionMode;
+    JobBookmarksEncryptionMode m_jobBookmarksEncryptionMode{JobBookmarksEncryptionMode::NOT_SET};
     bool m_jobBookmarksEncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;

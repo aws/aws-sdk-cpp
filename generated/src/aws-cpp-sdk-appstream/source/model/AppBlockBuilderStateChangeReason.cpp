@@ -18,15 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-AppBlockBuilderStateChangeReason::AppBlockBuilderStateChangeReason() : 
-    m_code(AppBlockBuilderStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AppBlockBuilderStateChangeReason::AppBlockBuilderStateChangeReason(JsonView jsonValue)
-  : AppBlockBuilderStateChangeReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AppBlockBuilderStateChangeReason& AppBlockBuilderStateChangeReason::operator =(J
   if(jsonValue.ValueExists("Code"))
   {
     m_code = AppBlockBuilderStateChangeReasonCodeMapper::GetAppBlockBuilderStateChangeReasonCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

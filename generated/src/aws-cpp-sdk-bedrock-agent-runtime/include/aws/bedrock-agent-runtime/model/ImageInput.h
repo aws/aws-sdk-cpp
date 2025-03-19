@@ -37,7 +37,7 @@ namespace Model
   class ImageInput
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ImageInput();
+    AWS_BEDROCKAGENTRUNTIME_API ImageInput() = default;
     AWS_BEDROCKAGENTRUNTIME_API ImageInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ImageInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,26 @@ namespace Model
     /**
      * <p>The type of image in the result.</p>
      */
-    inline const ImageInputFormat& GetFormat() const{ return m_format; }
+    inline ImageInputFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const ImageInputFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(ImageInputFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline ImageInput& WithFormat(const ImageInputFormat& value) { SetFormat(value); return *this;}
-    inline ImageInput& WithFormat(ImageInputFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(ImageInputFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ImageInput& WithFormat(ImageInputFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the image in the result.</p>
      */
-    inline const ImageInputSource& GetSource() const{ return m_source; }
+    inline const ImageInputSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ImageInputSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ImageInputSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ImageInput& WithSource(const ImageInputSource& value) { SetSource(value); return *this;}
-    inline ImageInput& WithSource(ImageInputSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ImageInputSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ImageInputSource>
+    ImageInput& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    ImageInputFormat m_format;
+    ImageInputFormat m_format{ImageInputFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     ImageInputSource m_source;

@@ -18,19 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-ToolbarConfiguration::ToolbarConfiguration() : 
-    m_hiddenToolbarItemsHasBeenSet(false),
-    m_maxDisplayResolution(MaxDisplayResolution::NOT_SET),
-    m_maxDisplayResolutionHasBeenSet(false),
-    m_toolbarType(ToolbarType::NOT_SET),
-    m_toolbarTypeHasBeenSet(false),
-    m_visualMode(VisualMode::NOT_SET),
-    m_visualModeHasBeenSet(false)
-{
-}
-
 ToolbarConfiguration::ToolbarConfiguration(JsonView jsonValue)
-  : ToolbarConfiguration()
 {
   *this = jsonValue;
 }
@@ -46,28 +34,21 @@ ToolbarConfiguration& ToolbarConfiguration::operator =(JsonView jsonValue)
     }
     m_hiddenToolbarItemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxDisplayResolution"))
   {
     m_maxDisplayResolution = MaxDisplayResolutionMapper::GetMaxDisplayResolutionForName(jsonValue.GetString("maxDisplayResolution"));
-
     m_maxDisplayResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolbarType"))
   {
     m_toolbarType = ToolbarTypeMapper::GetToolbarTypeForName(jsonValue.GetString("toolbarType"));
-
     m_toolbarTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("visualMode"))
   {
     m_visualMode = VisualModeMapper::GetVisualModeForName(jsonValue.GetString("visualMode"));
-
     m_visualModeHasBeenSet = true;
   }
-
   return *this;
 }
 

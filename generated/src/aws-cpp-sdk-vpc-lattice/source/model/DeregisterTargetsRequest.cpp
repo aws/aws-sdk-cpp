@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterTargetsRequest::DeregisterTargetsRequest() : 
-    m_targetGroupIdentifierHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterTargetsRequest::SerializePayload() const
 {
   JsonValue payload;

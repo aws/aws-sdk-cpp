@@ -29,7 +29,7 @@ namespace Model
   class GetDomainSuggestionsResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API GetDomainSuggestionsResult();
+    AWS_ROUTE53DOMAINS_API GetDomainSuggestionsResult() = default;
     AWS_ROUTE53DOMAINS_API GetDomainSuggestionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API GetDomainSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * <code>OnlyAvailable</code> in the request, the list contains only domains that
      * are available for registration.</p>
      */
-    inline const Aws::Vector<DomainSuggestion>& GetSuggestionsList() const{ return m_suggestionsList; }
-    inline void SetSuggestionsList(const Aws::Vector<DomainSuggestion>& value) { m_suggestionsList = value; }
-    inline void SetSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { m_suggestionsList = std::move(value); }
-    inline GetDomainSuggestionsResult& WithSuggestionsList(const Aws::Vector<DomainSuggestion>& value) { SetSuggestionsList(value); return *this;}
-    inline GetDomainSuggestionsResult& WithSuggestionsList(Aws::Vector<DomainSuggestion>&& value) { SetSuggestionsList(std::move(value)); return *this;}
-    inline GetDomainSuggestionsResult& AddSuggestionsList(const DomainSuggestion& value) { m_suggestionsList.push_back(value); return *this; }
-    inline GetDomainSuggestionsResult& AddSuggestionsList(DomainSuggestion&& value) { m_suggestionsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainSuggestion>& GetSuggestionsList() const { return m_suggestionsList; }
+    template<typename SuggestionsListT = Aws::Vector<DomainSuggestion>>
+    void SetSuggestionsList(SuggestionsListT&& value) { m_suggestionsListHasBeenSet = true; m_suggestionsList = std::forward<SuggestionsListT>(value); }
+    template<typename SuggestionsListT = Aws::Vector<DomainSuggestion>>
+    GetDomainSuggestionsResult& WithSuggestionsList(SuggestionsListT&& value) { SetSuggestionsList(std::forward<SuggestionsListT>(value)); return *this;}
+    template<typename SuggestionsListT = DomainSuggestion>
+    GetDomainSuggestionsResult& AddSuggestionsList(SuggestionsListT&& value) { m_suggestionsListHasBeenSet = true; m_suggestionsList.emplace_back(std::forward<SuggestionsListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDomainSuggestionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDomainSuggestionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDomainSuggestionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDomainSuggestionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainSuggestion> m_suggestionsList;
+    bool m_suggestionsListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

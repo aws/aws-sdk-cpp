@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-CommentContent::CommentContent() : 
-    m_bodyHasBeenSet(false),
-    m_contentType(CommentBodyTextType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 CommentContent::CommentContent(JsonView jsonValue)
-  : CommentContent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CommentContent& CommentContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = CommentBodyTextTypeMapper::GetCommentBodyTextTypeForName(jsonValue.GetString("contentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class ListClusterNodesRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListClusterNodesRequest();
+    AWS_SAGEMAKER_API ListClusterNodesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod
      * cluster in which you want to retrieve the list of nodes.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline ListClusterNodesRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline ListClusterNodesRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline ListClusterNodesRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    ListClusterNodesRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>
      * in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListClusterNodesRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListClusterNodesRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListClusterNodesRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">Timestamp</a>
      * in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListClusterNodesRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListClusterNodesRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListClusterNodesRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,21 +97,19 @@ namespace Model
      * <p>A filter that returns the instance groups whose name contain a specified
      * string.</p>
      */
-    inline const Aws::String& GetInstanceGroupNameContains() const{ return m_instanceGroupNameContains; }
+    inline const Aws::String& GetInstanceGroupNameContains() const { return m_instanceGroupNameContains; }
     inline bool InstanceGroupNameContainsHasBeenSet() const { return m_instanceGroupNameContainsHasBeenSet; }
-    inline void SetInstanceGroupNameContains(const Aws::String& value) { m_instanceGroupNameContainsHasBeenSet = true; m_instanceGroupNameContains = value; }
-    inline void SetInstanceGroupNameContains(Aws::String&& value) { m_instanceGroupNameContainsHasBeenSet = true; m_instanceGroupNameContains = std::move(value); }
-    inline void SetInstanceGroupNameContains(const char* value) { m_instanceGroupNameContainsHasBeenSet = true; m_instanceGroupNameContains.assign(value); }
-    inline ListClusterNodesRequest& WithInstanceGroupNameContains(const Aws::String& value) { SetInstanceGroupNameContains(value); return *this;}
-    inline ListClusterNodesRequest& WithInstanceGroupNameContains(Aws::String&& value) { SetInstanceGroupNameContains(std::move(value)); return *this;}
-    inline ListClusterNodesRequest& WithInstanceGroupNameContains(const char* value) { SetInstanceGroupNameContains(value); return *this;}
+    template<typename InstanceGroupNameContainsT = Aws::String>
+    void SetInstanceGroupNameContains(InstanceGroupNameContainsT&& value) { m_instanceGroupNameContainsHasBeenSet = true; m_instanceGroupNameContains = std::forward<InstanceGroupNameContainsT>(value); }
+    template<typename InstanceGroupNameContainsT = Aws::String>
+    ListClusterNodesRequest& WithInstanceGroupNameContains(InstanceGroupNameContainsT&& value) { SetInstanceGroupNameContains(std::forward<InstanceGroupNameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of nodes to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListClusterNodesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -125,14 +121,12 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of cluster nodes, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListClusterNodesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClusterNodesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClusterNodesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClusterNodesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,49 +134,45 @@ namespace Model
      * <p>The field by which to sort results. The default value is
      * <code>CREATION_TIME</code>.</p>
      */
-    inline const ClusterSortBy& GetSortBy() const{ return m_sortBy; }
+    inline ClusterSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ClusterSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ClusterSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListClusterNodesRequest& WithSortBy(const ClusterSortBy& value) { SetSortBy(value); return *this;}
-    inline ListClusterNodesRequest& WithSortBy(ClusterSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ClusterSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListClusterNodesRequest& WithSortBy(ClusterSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort order for results. The default value is <code>Ascending</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListClusterNodesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListClusterNodesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListClusterNodesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::String m_instanceGroupNameContains;
     bool m_instanceGroupNameContainsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    ClusterSortBy m_sortBy;
+    ClusterSortBy m_sortBy{ClusterSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

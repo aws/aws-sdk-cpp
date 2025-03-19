@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIntegrationResult::PutIntegrationResult() : 
-    m_isUnstructured(false)
-{
-}
-
 PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutIntegrationResult()
 {
   *this = result;
 }
@@ -34,33 +28,28 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
+    m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectTypeName"))
   {
     m_objectTypeName = jsonValue.GetString("ObjectTypeName");
-
+    m_objectTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -68,8 +57,8 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectTypeNames"))
   {
     Aws::Map<Aws::String, JsonView> objectTypeNamesJsonMap = jsonValue.GetObject("ObjectTypeNames").GetAllObjects();
@@ -77,26 +66,23 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
     {
       m_objectTypeNames[objectTypeNamesItem.first] = objectTypeNamesItem.second.AsString();
     }
+    m_objectTypeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
+    m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsUnstructured"))
   {
     m_isUnstructured = jsonValue.GetBool("IsUnstructured");
-
+    m_isUnstructuredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTriggerNames"))
   {
     Aws::Utils::Array<JsonView> eventTriggerNamesJsonList = jsonValue.GetArray("EventTriggerNames");
@@ -104,14 +90,15 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
     {
       m_eventTriggerNames.push_back(eventTriggerNamesJsonList[eventTriggerNamesIndex].AsString());
     }
+    m_eventTriggerNamesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

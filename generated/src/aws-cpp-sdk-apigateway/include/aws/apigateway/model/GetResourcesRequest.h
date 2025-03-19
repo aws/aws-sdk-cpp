@@ -30,7 +30,7 @@ namespace Model
   class GetResourcesRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetResourcesRequest();
+    AWS_APIGATEWAY_API GetResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetResourcesRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetResourcesRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetResourcesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetResourcesRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline GetResourcesRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetResourcesRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetResourcesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetResourcesRequest& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -91,15 +87,14 @@ namespace Model
      * must be a single-valued list and contain the <code>"methods"</code> string. For
      * example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
+    inline const Aws::Vector<Aws::String>& GetEmbed() const { return m_embed; }
     inline bool EmbedHasBeenSet() const { return m_embedHasBeenSet; }
-    inline void SetEmbed(const Aws::Vector<Aws::String>& value) { m_embedHasBeenSet = true; m_embed = value; }
-    inline void SetEmbed(Aws::Vector<Aws::String>&& value) { m_embedHasBeenSet = true; m_embed = std::move(value); }
-    inline GetResourcesRequest& WithEmbed(const Aws::Vector<Aws::String>& value) { SetEmbed(value); return *this;}
-    inline GetResourcesRequest& WithEmbed(Aws::Vector<Aws::String>&& value) { SetEmbed(std::move(value)); return *this;}
-    inline GetResourcesRequest& AddEmbed(const Aws::String& value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
-    inline GetResourcesRequest& AddEmbed(Aws::String&& value) { m_embedHasBeenSet = true; m_embed.push_back(std::move(value)); return *this; }
-    inline GetResourcesRequest& AddEmbed(const char* value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
+    template<typename EmbedT = Aws::Vector<Aws::String>>
+    void SetEmbed(EmbedT&& value) { m_embedHasBeenSet = true; m_embed = std::forward<EmbedT>(value); }
+    template<typename EmbedT = Aws::Vector<Aws::String>>
+    GetResourcesRequest& WithEmbed(EmbedT&& value) { SetEmbed(std::forward<EmbedT>(value)); return *this;}
+    template<typename EmbedT = Aws::String>
+    GetResourcesRequest& AddEmbed(EmbedT&& value) { m_embedHasBeenSet = true; m_embed.emplace_back(std::forward<EmbedT>(value)); return *this; }
     ///@}
   private:
 
@@ -109,7 +104,7 @@ namespace Model
     Aws::String m_position;
     bool m_positionHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_embed;

@@ -27,7 +27,7 @@ namespace Model
   class GenerateMacResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API GenerateMacResult();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API GenerateMacResult() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API GenerateMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API GenerateMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p>The <code>keyARN</code> of the encryption key that Amazon Web Services
      * Payment Cryptography uses for MAC generation.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArn.assign(value); }
-    inline GenerateMacResult& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline GenerateMacResult& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline GenerateMacResult& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    GenerateMacResult& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
-    inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValue = value; }
-    inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValue = std::move(value); }
-    inline void SetKeyCheckValue(const char* value) { m_keyCheckValue.assign(value); }
-    inline GenerateMacResult& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
-    inline GenerateMacResult& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
-    inline GenerateMacResult& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetKeyCheckValue() const { return m_keyCheckValue; }
+    template<typename KeyCheckValueT = Aws::String>
+    void SetKeyCheckValue(KeyCheckValueT&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::forward<KeyCheckValueT>(value); }
+    template<typename KeyCheckValueT = Aws::String>
+    GenerateMacResult& WithKeyCheckValue(KeyCheckValueT&& value) { SetKeyCheckValue(std::forward<KeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,34 +63,34 @@ namespace Model
      * <p>The MAC cryptogram generated within Amazon Web Services Payment
      * Cryptography.</p>
      */
-    inline const Aws::String& GetMac() const{ return m_mac; }
-    inline void SetMac(const Aws::String& value) { m_mac = value; }
-    inline void SetMac(Aws::String&& value) { m_mac = std::move(value); }
-    inline void SetMac(const char* value) { m_mac.assign(value); }
-    inline GenerateMacResult& WithMac(const Aws::String& value) { SetMac(value); return *this;}
-    inline GenerateMacResult& WithMac(Aws::String&& value) { SetMac(std::move(value)); return *this;}
-    inline GenerateMacResult& WithMac(const char* value) { SetMac(value); return *this;}
+    inline const Aws::String& GetMac() const { return m_mac; }
+    template<typename MacT = Aws::String>
+    void SetMac(MacT&& value) { m_macHasBeenSet = true; m_mac = std::forward<MacT>(value); }
+    template<typename MacT = Aws::String>
+    GenerateMacResult& WithMac(MacT&& value) { SetMac(std::forward<MacT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateMacResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateMacResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateMacResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateMacResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyArn;
+    bool m_keyArnHasBeenSet = false;
 
     Aws::String m_keyCheckValue;
+    bool m_keyCheckValueHasBeenSet = false;
 
     Aws::String m_mac;
+    bool m_macHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

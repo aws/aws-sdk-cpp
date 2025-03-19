@@ -18,17 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-ListWorkloadEstimatesFilter::ListWorkloadEstimatesFilter() : 
-    m_name(ListWorkloadEstimatesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_matchOption(MatchOption::NOT_SET),
-    m_matchOptionHasBeenSet(false)
-{
-}
-
 ListWorkloadEstimatesFilter::ListWorkloadEstimatesFilter(JsonView jsonValue)
-  : ListWorkloadEstimatesFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ListWorkloadEstimatesFilter& ListWorkloadEstimatesFilter::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = ListWorkloadEstimatesFilterNameMapper::GetListWorkloadEstimatesFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -51,14 +39,11 @@ ListWorkloadEstimatesFilter& ListWorkloadEstimatesFilter::operator =(JsonView js
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchOption"))
   {
     m_matchOption = MatchOptionMapper::GetMatchOptionForName(jsonValue.GetString("matchOption"));
-
     m_matchOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

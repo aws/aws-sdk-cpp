@@ -18,14 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-Spend::Spend() : 
-    m_amountHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 Spend::Spend(JsonView jsonValue)
-  : Spend()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Spend& Spend::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Amount"))
   {
     m_amount = jsonValue.GetString("Amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetControlsOption::SheetControlsOption() : 
-    m_visibilityState(DashboardUIState::NOT_SET),
-    m_visibilityStateHasBeenSet(false)
-{
-}
-
 SheetControlsOption::SheetControlsOption(JsonView jsonValue)
-  : SheetControlsOption()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SheetControlsOption& SheetControlsOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VisibilityState"))
   {
     m_visibilityState = DashboardUIStateMapper::GetDashboardUIStateForName(jsonValue.GetString("VisibilityState"));
-
     m_visibilityStateHasBeenSet = true;
   }
-
   return *this;
 }
 

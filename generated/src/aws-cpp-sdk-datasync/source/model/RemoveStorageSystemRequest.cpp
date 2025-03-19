@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveStorageSystemRequest::RemoveStorageSystemRequest() : 
-    m_storageSystemArnHasBeenSet(false)
-{
-}
-
 Aws::String RemoveStorageSystemRequest::SerializePayload() const
 {
   JsonValue payload;

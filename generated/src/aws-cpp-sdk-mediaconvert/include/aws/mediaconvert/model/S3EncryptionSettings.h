@@ -33,7 +33,7 @@ namespace Model
   class S3EncryptionSettings
   {
   public:
-    AWS_MEDIACONVERT_API S3EncryptionSettings();
+    AWS_MEDIACONVERT_API S3EncryptionSettings() = default;
     AWS_MEDIACONVERT_API S3EncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API S3EncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the
      * key for the setting KMS ARN.
      */
-    inline const S3ServerSideEncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+    inline S3ServerSideEncryptionType GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const S3ServerSideEncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(S3ServerSideEncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline S3EncryptionSettings& WithEncryptionType(const S3ServerSideEncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline S3EncryptionSettings& WithEncryptionType(S3ServerSideEncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline void SetEncryptionType(S3ServerSideEncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline S3EncryptionSettings& WithEncryptionType(S3ServerSideEncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * information about encryption context, see:
      * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
      */
-    inline const Aws::String& GetKmsEncryptionContext() const{ return m_kmsEncryptionContext; }
+    inline const Aws::String& GetKmsEncryptionContext() const { return m_kmsEncryptionContext; }
     inline bool KmsEncryptionContextHasBeenSet() const { return m_kmsEncryptionContextHasBeenSet; }
-    inline void SetKmsEncryptionContext(const Aws::String& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = value; }
-    inline void SetKmsEncryptionContext(Aws::String&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = std::move(value); }
-    inline void SetKmsEncryptionContext(const char* value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.assign(value); }
-    inline S3EncryptionSettings& WithKmsEncryptionContext(const Aws::String& value) { SetKmsEncryptionContext(value); return *this;}
-    inline S3EncryptionSettings& WithKmsEncryptionContext(Aws::String&& value) { SetKmsEncryptionContext(std::move(value)); return *this;}
-    inline S3EncryptionSettings& WithKmsEncryptionContext(const char* value) { SetKmsEncryptionContext(value); return *this;}
+    template<typename KmsEncryptionContextT = Aws::String>
+    void SetKmsEncryptionContext(KmsEncryptionContextT&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = std::forward<KmsEncryptionContextT>(value); }
+    template<typename KmsEncryptionContextT = Aws::String>
+    S3EncryptionSettings& WithKmsEncryptionContext(KmsEncryptionContextT&& value) { SetKmsEncryptionContext(std::forward<KmsEncryptionContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,18 +85,16 @@ namespace Model
      * but don't specify a CMK here, AWS uses the AWS managed CMK associated with
      * Amazon S3.
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline S3EncryptionSettings& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline S3EncryptionSettings& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline S3EncryptionSettings& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    S3EncryptionSettings& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    S3ServerSideEncryptionType m_encryptionType;
+    S3ServerSideEncryptionType m_encryptionType{S3ServerSideEncryptionType::NOT_SET};
     bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsEncryptionContext;

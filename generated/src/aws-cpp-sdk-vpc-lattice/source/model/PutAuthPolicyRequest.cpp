@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAuthPolicyRequest::PutAuthPolicyRequest() : 
-    m_policyHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String PutAuthPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,34 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKxClusterRequest::CreateKxClusterRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_environmentIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_tickerplantLogConfigurationHasBeenSet(false),
-    m_databasesHasBeenSet(false),
-    m_cacheStorageConfigurationsHasBeenSet(false),
-    m_autoScalingConfigurationHasBeenSet(false),
-    m_clusterDescriptionHasBeenSet(false),
-    m_capacityConfigurationHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_initializationScriptHasBeenSet(false),
-    m_commandLineArgumentsHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_savedownStorageConfigurationHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_scalingGroupConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateKxClusterRequest::SerializePayload() const
 {
   JsonValue payload;

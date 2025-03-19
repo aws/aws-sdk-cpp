@@ -29,7 +29,7 @@ namespace Model
   class ScheduleRunRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API ScheduleRunRequest();
+    AWS_DEVICEFARM_API ScheduleRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ARN of the project for the run to be scheduled.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline ScheduleRunRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline ScheduleRunRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline ScheduleRunRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    ScheduleRunRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,24 @@ namespace Model
      * <p>The ARN of an application package to run tests against, created with
      * <a>CreateUpload</a>. See <a>ListUploads</a>.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline ScheduleRunRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ScheduleRunRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ScheduleRunRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ScheduleRunRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
-    inline const Aws::String& GetDevicePoolArn() const{ return m_devicePoolArn; }
+    inline const Aws::String& GetDevicePoolArn() const { return m_devicePoolArn; }
     inline bool DevicePoolArnHasBeenSet() const { return m_devicePoolArnHasBeenSet; }
-    inline void SetDevicePoolArn(const Aws::String& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = value; }
-    inline void SetDevicePoolArn(Aws::String&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::move(value); }
-    inline void SetDevicePoolArn(const char* value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn.assign(value); }
-    inline ScheduleRunRequest& WithDevicePoolArn(const Aws::String& value) { SetDevicePoolArn(value); return *this;}
-    inline ScheduleRunRequest& WithDevicePoolArn(Aws::String&& value) { SetDevicePoolArn(std::move(value)); return *this;}
-    inline ScheduleRunRequest& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
+    template<typename DevicePoolArnT = Aws::String>
+    void SetDevicePoolArn(DevicePoolArnT&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::forward<DevicePoolArnT>(value); }
+    template<typename DevicePoolArnT = Aws::String>
+    ScheduleRunRequest& WithDevicePoolArn(DevicePoolArnT&& value) { SetDevicePoolArn(std::forward<DevicePoolArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,50 +86,48 @@ namespace Model
      * <b> <code>devicePoolArn</code> </b> or <b>
      * <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
      */
-    inline const DeviceSelectionConfiguration& GetDeviceSelectionConfiguration() const{ return m_deviceSelectionConfiguration; }
+    inline const DeviceSelectionConfiguration& GetDeviceSelectionConfiguration() const { return m_deviceSelectionConfiguration; }
     inline bool DeviceSelectionConfigurationHasBeenSet() const { return m_deviceSelectionConfigurationHasBeenSet; }
-    inline void SetDeviceSelectionConfiguration(const DeviceSelectionConfiguration& value) { m_deviceSelectionConfigurationHasBeenSet = true; m_deviceSelectionConfiguration = value; }
-    inline void SetDeviceSelectionConfiguration(DeviceSelectionConfiguration&& value) { m_deviceSelectionConfigurationHasBeenSet = true; m_deviceSelectionConfiguration = std::move(value); }
-    inline ScheduleRunRequest& WithDeviceSelectionConfiguration(const DeviceSelectionConfiguration& value) { SetDeviceSelectionConfiguration(value); return *this;}
-    inline ScheduleRunRequest& WithDeviceSelectionConfiguration(DeviceSelectionConfiguration&& value) { SetDeviceSelectionConfiguration(std::move(value)); return *this;}
+    template<typename DeviceSelectionConfigurationT = DeviceSelectionConfiguration>
+    void SetDeviceSelectionConfiguration(DeviceSelectionConfigurationT&& value) { m_deviceSelectionConfigurationHasBeenSet = true; m_deviceSelectionConfiguration = std::forward<DeviceSelectionConfigurationT>(value); }
+    template<typename DeviceSelectionConfigurationT = DeviceSelectionConfiguration>
+    ScheduleRunRequest& WithDeviceSelectionConfiguration(DeviceSelectionConfigurationT&& value) { SetDeviceSelectionConfiguration(std::forward<DeviceSelectionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the run to be scheduled.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ScheduleRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ScheduleRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ScheduleRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ScheduleRunRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the test for the run to be scheduled.</p>
      */
-    inline const ScheduleRunTest& GetTest() const{ return m_test; }
+    inline const ScheduleRunTest& GetTest() const { return m_test; }
     inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
-    inline void SetTest(const ScheduleRunTest& value) { m_testHasBeenSet = true; m_test = value; }
-    inline void SetTest(ScheduleRunTest&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
-    inline ScheduleRunRequest& WithTest(const ScheduleRunTest& value) { SetTest(value); return *this;}
-    inline ScheduleRunRequest& WithTest(ScheduleRunTest&& value) { SetTest(std::move(value)); return *this;}
+    template<typename TestT = ScheduleRunTest>
+    void SetTest(TestT&& value) { m_testHasBeenSet = true; m_test = std::forward<TestT>(value); }
+    template<typename TestT = ScheduleRunTest>
+    ScheduleRunRequest& WithTest(TestT&& value) { SetTest(std::forward<TestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the settings for the run to be scheduled.</p>
      */
-    inline const ScheduleRunConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ScheduleRunConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ScheduleRunConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ScheduleRunConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline ScheduleRunRequest& WithConfiguration(const ScheduleRunConfiguration& value) { SetConfiguration(value); return *this;}
-    inline ScheduleRunRequest& WithConfiguration(ScheduleRunConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ScheduleRunConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ScheduleRunConfiguration>
+    ScheduleRunRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +135,12 @@ namespace Model
      * <p>Specifies configuration information about a test run, such as the execution
      * timeout (in minutes).</p>
      */
-    inline const ExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
+    inline const ExecutionConfiguration& GetExecutionConfiguration() const { return m_executionConfiguration; }
     inline bool ExecutionConfigurationHasBeenSet() const { return m_executionConfigurationHasBeenSet; }
-    inline void SetExecutionConfiguration(const ExecutionConfiguration& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = value; }
-    inline void SetExecutionConfiguration(ExecutionConfiguration&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::move(value); }
-    inline ScheduleRunRequest& WithExecutionConfiguration(const ExecutionConfiguration& value) { SetExecutionConfiguration(value); return *this;}
-    inline ScheduleRunRequest& WithExecutionConfiguration(ExecutionConfiguration&& value) { SetExecutionConfiguration(std::move(value)); return *this;}
+    template<typename ExecutionConfigurationT = ExecutionConfiguration>
+    void SetExecutionConfiguration(ExecutionConfigurationT&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::forward<ExecutionConfigurationT>(value); }
+    template<typename ExecutionConfigurationT = ExecutionConfiguration>
+    ScheduleRunRequest& WithExecutionConfiguration(ExecutionConfigurationT&& value) { SetExecutionConfiguration(std::forward<ExecutionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

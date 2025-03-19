@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardSourceEntity::DashboardSourceEntity() : 
-    m_sourceTemplateHasBeenSet(false)
-{
-}
-
 DashboardSourceEntity::DashboardSourceEntity(JsonView jsonValue)
-  : DashboardSourceEntity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DashboardSourceEntity& DashboardSourceEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceTemplate"))
   {
     m_sourceTemplate = jsonValue.GetObject("SourceTemplate");
-
     m_sourceTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

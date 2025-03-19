@@ -34,7 +34,7 @@ namespace Model
   class KernelGatewayImageConfig
   {
   public:
-    AWS_SAGEMAKER_API KernelGatewayImageConfig();
+    AWS_SAGEMAKER_API KernelGatewayImageConfig() = default;
     AWS_SAGEMAKER_API KernelGatewayImageConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API KernelGatewayImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The specification of the Jupyter kernels in the image.</p>
      */
-    inline const Aws::Vector<KernelSpec>& GetKernelSpecs() const{ return m_kernelSpecs; }
+    inline const Aws::Vector<KernelSpec>& GetKernelSpecs() const { return m_kernelSpecs; }
     inline bool KernelSpecsHasBeenSet() const { return m_kernelSpecsHasBeenSet; }
-    inline void SetKernelSpecs(const Aws::Vector<KernelSpec>& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs = value; }
-    inline void SetKernelSpecs(Aws::Vector<KernelSpec>&& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs = std::move(value); }
-    inline KernelGatewayImageConfig& WithKernelSpecs(const Aws::Vector<KernelSpec>& value) { SetKernelSpecs(value); return *this;}
-    inline KernelGatewayImageConfig& WithKernelSpecs(Aws::Vector<KernelSpec>&& value) { SetKernelSpecs(std::move(value)); return *this;}
-    inline KernelGatewayImageConfig& AddKernelSpecs(const KernelSpec& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs.push_back(value); return *this; }
-    inline KernelGatewayImageConfig& AddKernelSpecs(KernelSpec&& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs.push_back(std::move(value)); return *this; }
+    template<typename KernelSpecsT = Aws::Vector<KernelSpec>>
+    void SetKernelSpecs(KernelSpecsT&& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs = std::forward<KernelSpecsT>(value); }
+    template<typename KernelSpecsT = Aws::Vector<KernelSpec>>
+    KernelGatewayImageConfig& WithKernelSpecs(KernelSpecsT&& value) { SetKernelSpecs(std::forward<KernelSpecsT>(value)); return *this;}
+    template<typename KernelSpecsT = KernelSpec>
+    KernelGatewayImageConfig& AddKernelSpecs(KernelSpecsT&& value) { m_kernelSpecsHasBeenSet = true; m_kernelSpecs.emplace_back(std::forward<KernelSpecsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>The Amazon Elastic File System storage configuration for a SageMaker AI
      * image.</p>
      */
-    inline const FileSystemConfig& GetFileSystemConfig() const{ return m_fileSystemConfig; }
+    inline const FileSystemConfig& GetFileSystemConfig() const { return m_fileSystemConfig; }
     inline bool FileSystemConfigHasBeenSet() const { return m_fileSystemConfigHasBeenSet; }
-    inline void SetFileSystemConfig(const FileSystemConfig& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = value; }
-    inline void SetFileSystemConfig(FileSystemConfig&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::move(value); }
-    inline KernelGatewayImageConfig& WithFileSystemConfig(const FileSystemConfig& value) { SetFileSystemConfig(value); return *this;}
-    inline KernelGatewayImageConfig& WithFileSystemConfig(FileSystemConfig&& value) { SetFileSystemConfig(std::move(value)); return *this;}
+    template<typename FileSystemConfigT = FileSystemConfig>
+    void SetFileSystemConfig(FileSystemConfigT&& value) { m_fileSystemConfigHasBeenSet = true; m_fileSystemConfig = std::forward<FileSystemConfigT>(value); }
+    template<typename FileSystemConfigT = FileSystemConfig>
+    KernelGatewayImageConfig& WithFileSystemConfig(FileSystemConfigT&& value) { SetFileSystemConfig(std::forward<FileSystemConfigT>(value)); return *this;}
     ///@}
   private:
 

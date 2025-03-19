@@ -18,18 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-RuleGroupsNamespaceSummary::RuleGroupsNamespaceSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RuleGroupsNamespaceSummary::RuleGroupsNamespaceSummary(JsonView jsonValue)
-  : RuleGroupsNamespaceSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RuleGroupsNamespaceSummary& RuleGroupsNamespaceSummary::operator =(JsonView json
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -80,7 +59,6 @@ RuleGroupsNamespaceSummary& RuleGroupsNamespaceSummary::operator =(JsonView json
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

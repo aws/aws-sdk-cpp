@@ -18,17 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-NotificationSpecification::NotificationSpecification() : 
-    m_destinationHasBeenSet(false),
-    m_transport(NotificationTransport::NOT_SET),
-    m_transportHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_eventTypesHasBeenSet(false)
-{
-}
-
 NotificationSpecification::NotificationSpecification(JsonView jsonValue)
-  : NotificationSpecification()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ NotificationSpecification& NotificationSpecification::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transport"))
   {
     m_transport = NotificationTransportMapper::GetNotificationTransportForName(jsonValue.GetString("Transport"));
-
     m_transportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTypes"))
   {
     Aws::Utils::Array<JsonView> eventTypesJsonList = jsonValue.GetArray("EventTypes");
@@ -65,7 +49,6 @@ NotificationSpecification& NotificationSpecification::operator =(JsonView jsonVa
     }
     m_eventTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

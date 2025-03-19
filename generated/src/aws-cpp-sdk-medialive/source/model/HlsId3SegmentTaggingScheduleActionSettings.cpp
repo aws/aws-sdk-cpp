@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings() : 
-    m_tagHasBeenSet(false),
-    m_id3HasBeenSet(false)
-{
-}
-
 HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings(JsonView jsonValue)
-  : HlsId3SegmentTaggingScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HlsId3SegmentTaggingScheduleActionSettings& HlsId3SegmentTaggingScheduleActionSe
   if(jsonValue.ValueExists("tag"))
   {
     m_tag = jsonValue.GetString("tag");
-
     m_tagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id3"))
   {
     m_id3 = jsonValue.GetString("id3");
-
     m_id3HasBeenSet = true;
   }
-
   return *this;
 }
 

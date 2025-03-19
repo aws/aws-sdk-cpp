@@ -18,13 +18,7 @@ namespace RedshiftDataAPIService
 namespace Model
 {
 
-QueryRecords::QueryRecords() : 
-    m_cSVRecordsHasBeenSet(false)
-{
-}
-
 QueryRecords::QueryRecords(JsonView jsonValue)
-  : QueryRecords()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryRecords& QueryRecords::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CSVRecords"))
   {
     m_cSVRecords = jsonValue.GetString("CSVRecords");
-
     m_cSVRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-FulfillmentUpdateResponseSpecification::FulfillmentUpdateResponseSpecification() : 
-    m_frequencyInSeconds(0),
-    m_frequencyInSecondsHasBeenSet(false),
-    m_messageGroupsHasBeenSet(false),
-    m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
-{
-}
-
 FulfillmentUpdateResponseSpecification::FulfillmentUpdateResponseSpecification(JsonView jsonValue)
-  : FulfillmentUpdateResponseSpecification()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ FulfillmentUpdateResponseSpecification& FulfillmentUpdateResponseSpecification::
   if(jsonValue.ValueExists("frequencyInSeconds"))
   {
     m_frequencyInSeconds = jsonValue.GetInteger("frequencyInSeconds");
-
     m_frequencyInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageGroups"))
   {
     Aws::Utils::Array<JsonView> messageGroupsJsonList = jsonValue.GetArray("messageGroups");
@@ -51,14 +39,11 @@ FulfillmentUpdateResponseSpecification& FulfillmentUpdateResponseSpecification::
     }
     m_messageGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowInterrupt"))
   {
     m_allowInterrupt = jsonValue.GetBool("allowInterrupt");
-
     m_allowInterruptHasBeenSet = true;
   }
-
   return *this;
 }
 

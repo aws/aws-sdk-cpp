@@ -18,15 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-UnionWithJsonName::UnionWithJsonName() : 
-    m_fooHasBeenSet(false),
-    m_barHasBeenSet(false),
-    m_bazHasBeenSet(false)
-{
-}
-
 UnionWithJsonName::UnionWithJsonName(JsonView jsonValue)
-  : UnionWithJsonName()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnionWithJsonName& UnionWithJsonName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FOO"))
   {
     m_foo = jsonValue.GetString("FOO");
-
     m_fooHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bar"))
   {
     m_bar = jsonValue.GetString("bar");
-
     m_barHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("_baz"))
   {
     m_baz = jsonValue.GetString("_baz");
-
     m_bazHasBeenSet = true;
   }
-
   return *this;
 }
 

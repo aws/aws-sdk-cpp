@@ -18,17 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-EventLogConfigurationSummary::EventLogConfigurationSummary() : 
-    m_idHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_eventLogLevel(LogLevel::NOT_SET),
-    m_eventLogLevelHasBeenSet(false)
-{
-}
-
 EventLogConfigurationSummary::EventLogConfigurationSummary(JsonView jsonValue)
-  : EventLogConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EventLogConfigurationSummary& EventLogConfigurationSummary::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventLogLevel"))
   {
     m_eventLogLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("EventLogLevel"));
-
     m_eventLogLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

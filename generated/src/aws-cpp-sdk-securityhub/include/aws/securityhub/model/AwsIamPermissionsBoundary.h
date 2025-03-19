@@ -32,7 +32,7 @@ namespace Model
   class AwsIamPermissionsBoundary
   {
   public:
-    AWS_SECURITYHUB_API AwsIamPermissionsBoundary();
+    AWS_SECURITYHUB_API AwsIamPermissionsBoundary() = default;
     AWS_SECURITYHUB_API AwsIamPermissionsBoundary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsIamPermissionsBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ARN of the policy used to set the permissions boundary.</p>
      */
-    inline const Aws::String& GetPermissionsBoundaryArn() const{ return m_permissionsBoundaryArn; }
+    inline const Aws::String& GetPermissionsBoundaryArn() const { return m_permissionsBoundaryArn; }
     inline bool PermissionsBoundaryArnHasBeenSet() const { return m_permissionsBoundaryArnHasBeenSet; }
-    inline void SetPermissionsBoundaryArn(const Aws::String& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = value; }
-    inline void SetPermissionsBoundaryArn(Aws::String&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::move(value); }
-    inline void SetPermissionsBoundaryArn(const char* value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn.assign(value); }
-    inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(const Aws::String& value) { SetPermissionsBoundaryArn(value); return *this;}
-    inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(Aws::String&& value) { SetPermissionsBoundaryArn(std::move(value)); return *this;}
-    inline AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(const char* value) { SetPermissionsBoundaryArn(value); return *this;}
+    template<typename PermissionsBoundaryArnT = Aws::String>
+    void SetPermissionsBoundaryArn(PermissionsBoundaryArnT&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::forward<PermissionsBoundaryArnT>(value); }
+    template<typename PermissionsBoundaryArnT = Aws::String>
+    AwsIamPermissionsBoundary& WithPermissionsBoundaryArn(PermissionsBoundaryArnT&& value) { SetPermissionsBoundaryArn(std::forward<PermissionsBoundaryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The usage type for the permissions boundary.</p>
      */
-    inline const Aws::String& GetPermissionsBoundaryType() const{ return m_permissionsBoundaryType; }
+    inline const Aws::String& GetPermissionsBoundaryType() const { return m_permissionsBoundaryType; }
     inline bool PermissionsBoundaryTypeHasBeenSet() const { return m_permissionsBoundaryTypeHasBeenSet; }
-    inline void SetPermissionsBoundaryType(const Aws::String& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = value; }
-    inline void SetPermissionsBoundaryType(Aws::String&& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = std::move(value); }
-    inline void SetPermissionsBoundaryType(const char* value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType.assign(value); }
-    inline AwsIamPermissionsBoundary& WithPermissionsBoundaryType(const Aws::String& value) { SetPermissionsBoundaryType(value); return *this;}
-    inline AwsIamPermissionsBoundary& WithPermissionsBoundaryType(Aws::String&& value) { SetPermissionsBoundaryType(std::move(value)); return *this;}
-    inline AwsIamPermissionsBoundary& WithPermissionsBoundaryType(const char* value) { SetPermissionsBoundaryType(value); return *this;}
+    template<typename PermissionsBoundaryTypeT = Aws::String>
+    void SetPermissionsBoundaryType(PermissionsBoundaryTypeT&& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = std::forward<PermissionsBoundaryTypeT>(value); }
+    template<typename PermissionsBoundaryTypeT = Aws::String>
+    AwsIamPermissionsBoundary& WithPermissionsBoundaryType(PermissionsBoundaryTypeT&& value) { SetPermissionsBoundaryType(std::forward<PermissionsBoundaryTypeT>(value)); return *this;}
     ///@}
   private:
 

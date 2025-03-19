@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VCpuCountRangeRequest::VCpuCountRangeRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 VCpuCountRangeRequest::VCpuCountRangeRequest(const XmlNode& xmlNode)
-  : VCpuCountRangeRequest()
 {
   *this = xmlNode;
 }

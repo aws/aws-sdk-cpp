@@ -18,17 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-FixedUpfrontPricingTerm::FixedUpfrontPricingTerm() : 
-    m_currencyCodeHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_grantsHasBeenSet(false),
-    m_priceHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 FixedUpfrontPricingTerm::FixedUpfrontPricingTerm(JsonView jsonValue)
-  : FixedUpfrontPricingTerm()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FixedUpfrontPricingTerm& FixedUpfrontPricingTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("currencyCode"))
   {
     m_currencyCode = jsonValue.GetString("currencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetString("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grants"))
   {
     Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
@@ -58,21 +44,16 @@ FixedUpfrontPricingTerm& FixedUpfrontPricingTerm::operator =(JsonView jsonValue)
     }
     m_grantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("price"))
   {
     m_price = jsonValue.GetString("price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

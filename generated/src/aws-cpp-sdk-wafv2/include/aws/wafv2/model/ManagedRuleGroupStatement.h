@@ -10,8 +10,8 @@
 #include <aws/wafv2/model/ExcludedRule.h>
 #include <aws/wafv2/model/ManagedRuleGroupConfig.h>
 #include <aws/wafv2/model/RuleActionOverride.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -52,7 +52,7 @@ namespace Model
   class ManagedRuleGroupStatement
   {
   public:
-    AWS_WAFV2_API ManagedRuleGroupStatement();
+    AWS_WAFV2_API ManagedRuleGroupStatement() = default;
     AWS_WAFV2_API ManagedRuleGroupStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ManagedRuleGroupStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * <p>The name of the managed rule group vendor. You use this, along with the rule
      * group name, to identify a rule group.</p>
      */
-    inline const Aws::String& GetVendorName() const{ return m_vendorName; }
+    inline const Aws::String& GetVendorName() const { return m_vendorName; }
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
-    inline void SetVendorName(const Aws::String& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
-    inline void SetVendorName(Aws::String&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
-    inline void SetVendorName(const char* value) { m_vendorNameHasBeenSet = true; m_vendorName.assign(value); }
-    inline ManagedRuleGroupStatement& WithVendorName(const Aws::String& value) { SetVendorName(value); return *this;}
-    inline ManagedRuleGroupStatement& WithVendorName(Aws::String&& value) { SetVendorName(std::move(value)); return *this;}
-    inline ManagedRuleGroupStatement& WithVendorName(const char* value) { SetVendorName(value); return *this;}
+    template<typename VendorNameT = Aws::String>
+    void SetVendorName(VendorNameT&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::forward<VendorNameT>(value); }
+    template<typename VendorNameT = Aws::String>
+    ManagedRuleGroupStatement& WithVendorName(VendorNameT&& value) { SetVendorName(std::forward<VendorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * <p>The name of the managed rule group. You use this, along with the vendor name,
      * to identify the rule group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ManagedRuleGroupStatement& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ManagedRuleGroupStatement& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ManagedRuleGroupStatement& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ManagedRuleGroupStatement& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * uses the vendor's default version, and then keeps the version at the vendor's
      * default when the vendor updates the managed rule group settings. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ManagedRuleGroupStatement& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ManagedRuleGroupStatement& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ManagedRuleGroupStatement& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ManagedRuleGroupStatement& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +106,14 @@ namespace Model
      * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
      * <code>Count</code>.</p> 
      */
-    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
+    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const { return m_excludedRules; }
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
-    inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
-    inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
-    inline ManagedRuleGroupStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
-    inline ManagedRuleGroupStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
-    inline ManagedRuleGroupStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
-    inline ManagedRuleGroupStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+    template<typename ExcludedRulesT = Aws::Vector<ExcludedRule>>
+    void SetExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::forward<ExcludedRulesT>(value); }
+    template<typename ExcludedRulesT = Aws::Vector<ExcludedRule>>
+    ManagedRuleGroupStatement& WithExcludedRules(ExcludedRulesT&& value) { SetExcludedRules(std::forward<ExcludedRulesT>(value)); return *this;}
+    template<typename ExcludedRulesT = ExcludedRule>
+    ManagedRuleGroupStatement& AddExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.emplace_back(std::forward<ExcludedRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,12 +124,17 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    AWS_WAFV2_API const Statement& GetScopeDownStatement() const;
-    AWS_WAFV2_API bool ScopeDownStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetScopeDownStatement(const Statement& value);
-    AWS_WAFV2_API void SetScopeDownStatement(Statement&& value);
-    AWS_WAFV2_API ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
-    AWS_WAFV2_API ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
+    inline const Statement& GetScopeDownStatement() const{
+      return *m_scopeDownStatement;
+    }
+    inline bool ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
+    template<typename ScopeDownStatementT = Statement>
+    void SetScopeDownStatement(ScopeDownStatementT&& value) {
+      m_scopeDownStatementHasBeenSet = true; 
+      m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", std::forward<ScopeDownStatementT>(value));
+    }
+    template<typename ScopeDownStatementT = Statement>
+    ManagedRuleGroupStatement& WithScopeDownStatement(ScopeDownStatementT&& value) { SetScopeDownStatement(std::forward<ScopeDownStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +155,14 @@ namespace Model
      * the protection level that you want the Bot Control rule group to use. </p> </li>
      * </ul>
      */
-    inline const Aws::Vector<ManagedRuleGroupConfig>& GetManagedRuleGroupConfigs() const{ return m_managedRuleGroupConfigs; }
+    inline const Aws::Vector<ManagedRuleGroupConfig>& GetManagedRuleGroupConfigs() const { return m_managedRuleGroupConfigs; }
     inline bool ManagedRuleGroupConfigsHasBeenSet() const { return m_managedRuleGroupConfigsHasBeenSet; }
-    inline void SetManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = value; }
-    inline void SetManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = std::move(value); }
-    inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { SetManagedRuleGroupConfigs(value); return *this;}
-    inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { SetManagedRuleGroupConfigs(std::move(value)); return *this;}
-    inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(const ManagedRuleGroupConfig& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(value); return *this; }
-    inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(ManagedRuleGroupConfig&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(std::move(value)); return *this; }
+    template<typename ManagedRuleGroupConfigsT = Aws::Vector<ManagedRuleGroupConfig>>
+    void SetManagedRuleGroupConfigs(ManagedRuleGroupConfigsT&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = std::forward<ManagedRuleGroupConfigsT>(value); }
+    template<typename ManagedRuleGroupConfigsT = Aws::Vector<ManagedRuleGroupConfig>>
+    ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(ManagedRuleGroupConfigsT&& value) { SetManagedRuleGroupConfigs(std::forward<ManagedRuleGroupConfigsT>(value)); return *this;}
+    template<typename ManagedRuleGroupConfigsT = ManagedRuleGroupConfig>
+    ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(ManagedRuleGroupConfigsT&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.emplace_back(std::forward<ManagedRuleGroupConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,14 +178,14 @@ namespace Model
      * traffic. You can also permanently override some or all actions, to modify how
      * the rule group manages your web traffic.</p>
      */
-    inline const Aws::Vector<RuleActionOverride>& GetRuleActionOverrides() const{ return m_ruleActionOverrides; }
+    inline const Aws::Vector<RuleActionOverride>& GetRuleActionOverrides() const { return m_ruleActionOverrides; }
     inline bool RuleActionOverridesHasBeenSet() const { return m_ruleActionOverridesHasBeenSet; }
-    inline void SetRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = value; }
-    inline void SetRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = std::move(value); }
-    inline ManagedRuleGroupStatement& WithRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { SetRuleActionOverrides(value); return *this;}
-    inline ManagedRuleGroupStatement& WithRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { SetRuleActionOverrides(std::move(value)); return *this;}
-    inline ManagedRuleGroupStatement& AddRuleActionOverrides(const RuleActionOverride& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(value); return *this; }
-    inline ManagedRuleGroupStatement& AddRuleActionOverrides(RuleActionOverride&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(std::move(value)); return *this; }
+    template<typename RuleActionOverridesT = Aws::Vector<RuleActionOverride>>
+    void SetRuleActionOverrides(RuleActionOverridesT&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = std::forward<RuleActionOverridesT>(value); }
+    template<typename RuleActionOverridesT = Aws::Vector<RuleActionOverride>>
+    ManagedRuleGroupStatement& WithRuleActionOverrides(RuleActionOverridesT&& value) { SetRuleActionOverrides(std::forward<RuleActionOverridesT>(value)); return *this;}
+    template<typename RuleActionOverridesT = RuleActionOverride>
+    ManagedRuleGroupStatement& AddRuleActionOverrides(RuleActionOverridesT&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.emplace_back(std::forward<RuleActionOverridesT>(value)); return *this; }
     ///@}
   private:
 

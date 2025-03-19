@@ -12,11 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePhoneNumberSettingsRequest::UpdatePhoneNumberSettingsRequest() : 
-    m_callingNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePhoneNumberSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

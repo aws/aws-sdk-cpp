@@ -18,14 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-ApacheKafkaCluster::ApacheKafkaCluster() : 
-    m_bootstrapServersHasBeenSet(false),
-    m_vpcHasBeenSet(false)
-{
-}
-
 ApacheKafkaCluster::ApacheKafkaCluster(JsonView jsonValue)
-  : ApacheKafkaCluster()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ApacheKafkaCluster& ApacheKafkaCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bootstrapServers"))
   {
     m_bootstrapServers = jsonValue.GetString("bootstrapServers");
-
     m_bootstrapServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpc"))
   {
     m_vpc = jsonValue.GetObject("vpc");
-
     m_vpcHasBeenSet = true;
   }
-
   return *this;
 }
 

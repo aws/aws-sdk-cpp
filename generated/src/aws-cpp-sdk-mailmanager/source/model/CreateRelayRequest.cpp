@@ -12,18 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRelayRequest::CreateRelayRequest() : 
-    m_authenticationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_relayNameHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serverPort(0),
-    m_serverPortHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRelayRequest::SerializePayload() const
 {
   JsonValue payload;

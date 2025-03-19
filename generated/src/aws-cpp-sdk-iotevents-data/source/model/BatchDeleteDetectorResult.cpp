@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteDetectorResult::BatchDeleteDetectorResult()
-{
-}
-
 BatchDeleteDetectorResult::BatchDeleteDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchDeleteDetectorResult& BatchDeleteDetectorResult::operator =(const Aws::Amaz
     {
       m_batchDeleteDetectorErrorEntries.push_back(batchDeleteDetectorErrorEntriesJsonList[batchDeleteDetectorErrorEntriesIndex].AsObject());
     }
+    m_batchDeleteDetectorErrorEntriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -36,7 +36,7 @@ namespace Model
   class AwsWafRegionalRulePredicateListDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafRegionalRulePredicateListDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRulePredicateListDetails() = default;
     AWS_SECURITYHUB_API AwsWafRegionalRulePredicateListDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafRegionalRulePredicateListDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>A unique identifier for a predicate in a rule, such as
      * <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
      */
-    inline const Aws::String& GetDataId() const{ return m_dataId; }
+    inline const Aws::String& GetDataId() const { return m_dataId; }
     inline bool DataIdHasBeenSet() const { return m_dataIdHasBeenSet; }
-    inline void SetDataId(const Aws::String& value) { m_dataIdHasBeenSet = true; m_dataId = value; }
-    inline void SetDataId(Aws::String&& value) { m_dataIdHasBeenSet = true; m_dataId = std::move(value); }
-    inline void SetDataId(const char* value) { m_dataIdHasBeenSet = true; m_dataId.assign(value); }
-    inline AwsWafRegionalRulePredicateListDetails& WithDataId(const Aws::String& value) { SetDataId(value); return *this;}
-    inline AwsWafRegionalRulePredicateListDetails& WithDataId(Aws::String&& value) { SetDataId(std::move(value)); return *this;}
-    inline AwsWafRegionalRulePredicateListDetails& WithDataId(const char* value) { SetDataId(value); return *this;}
+    template<typename DataIdT = Aws::String>
+    void SetDataId(DataIdT&& value) { m_dataIdHasBeenSet = true; m_dataId = std::forward<DataIdT>(value); }
+    template<typename DataIdT = Aws::String>
+    AwsWafRegionalRulePredicateListDetails& WithDataId(DataIdT&& value) { SetDataId(std::forward<DataIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or
      * <code>SizeConstraintSet</code>. </p>
      */
-    inline bool GetNegated() const{ return m_negated; }
+    inline bool GetNegated() const { return m_negated; }
     inline bool NegatedHasBeenSet() const { return m_negatedHasBeenSet; }
     inline void SetNegated(bool value) { m_negatedHasBeenSet = true; m_negated = value; }
     inline AwsWafRegionalRulePredicateListDetails& WithNegated(bool value) { SetNegated(value); return *this;}
@@ -76,21 +74,19 @@ namespace Model
      * <p>The type of predicate in a rule, such as <code>ByteMatch</code> or
      * <code>IPSet</code>. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsWafRegionalRulePredicateListDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsWafRegionalRulePredicateListDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsWafRegionalRulePredicateListDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsWafRegionalRulePredicateListDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataId;
     bool m_dataIdHasBeenSet = false;
 
-    bool m_negated;
+    bool m_negated{false};
     bool m_negatedHasBeenSet = false;
 
     Aws::String m_type;

@@ -32,7 +32,7 @@ namespace Model
   class NodegroupScalingConfig
   {
   public:
-    AWS_EKS_API NodegroupScalingConfig();
+    AWS_EKS_API NodegroupScalingConfig() = default;
     AWS_EKS_API NodegroupScalingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API NodegroupScalingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The minimum number of nodes that the managed node group can scale in to.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline NodegroupScalingConfig& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon
      * EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline NodegroupScalingConfig& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -83,20 +83,20 @@ namespace Model
      * a managed node group lower than <code>minSize</code> or higher than
      * <code>maxSize</code>.</p>
      */
-    inline int GetDesiredSize() const{ return m_desiredSize; }
+    inline int GetDesiredSize() const { return m_desiredSize; }
     inline bool DesiredSizeHasBeenSet() const { return m_desiredSizeHasBeenSet; }
     inline void SetDesiredSize(int value) { m_desiredSizeHasBeenSet = true; m_desiredSize = value; }
     inline NodegroupScalingConfig& WithDesiredSize(int value) { SetDesiredSize(value); return *this;}
     ///@}
   private:
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
-    int m_desiredSize;
+    int m_desiredSize{0};
     bool m_desiredSizeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class AssociatedPermission
   {
   public:
-    AWS_RAM_API AssociatedPermission();
+    AWS_RAM_API AssociatedPermission() = default;
     AWS_RAM_API AssociatedPermission(Aws::Utils::Json::JsonView jsonValue);
     AWS_RAM_API AssociatedPermission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the associated managed permission.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssociatedPermission& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssociatedPermission& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssociatedPermission& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssociatedPermission& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The version of the permission currently associated with the resource
      * share.</p>
      */
-    inline const Aws::String& GetPermissionVersion() const{ return m_permissionVersion; }
+    inline const Aws::String& GetPermissionVersion() const { return m_permissionVersion; }
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
-    inline void SetPermissionVersion(const Aws::String& value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
-    inline void SetPermissionVersion(Aws::String&& value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = std::move(value); }
-    inline void SetPermissionVersion(const char* value) { m_permissionVersionHasBeenSet = true; m_permissionVersion.assign(value); }
-    inline AssociatedPermission& WithPermissionVersion(const Aws::String& value) { SetPermissionVersion(value); return *this;}
-    inline AssociatedPermission& WithPermissionVersion(Aws::String&& value) { SetPermissionVersion(std::move(value)); return *this;}
-    inline AssociatedPermission& WithPermissionVersion(const char* value) { SetPermissionVersion(value); return *this;}
+    template<typename PermissionVersionT = Aws::String>
+    void SetPermissionVersion(PermissionVersionT&& value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = std::forward<PermissionVersionT>(value); }
+    template<typename PermissionVersionT = Aws::String>
+    AssociatedPermission& WithPermissionVersion(PermissionVersionT&& value) { SetPermissionVersion(std::forward<PermissionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>Indicates whether the associated resource share is using the default version
      * of the permission.</p>
      */
-    inline bool GetDefaultVersion() const{ return m_defaultVersion; }
+    inline bool GetDefaultVersion() const { return m_defaultVersion; }
     inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
     inline void SetDefaultVersion(bool value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
     inline AssociatedPermission& WithDefaultVersion(bool value) { SetDefaultVersion(value); return *this;}
@@ -86,14 +82,12 @@ namespace Model
     /**
      * <p>The resource type to which this permission applies.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline AssociatedPermission& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline AssociatedPermission& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline AssociatedPermission& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    AssociatedPermission& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,12 @@ namespace Model
      * being deleted.</p> </li> <li> <p> <code>DELETED</code> – This permission or
      * version is deleted.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AssociatedPermission& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AssociatedPermission& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AssociatedPermission& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AssociatedPermission& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +130,10 @@ namespace Model
      * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
      * </ul>
      */
-    inline const PermissionFeatureSet& GetFeatureSet() const{ return m_featureSet; }
+    inline PermissionFeatureSet GetFeatureSet() const { return m_featureSet; }
     inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
-    inline void SetFeatureSet(const PermissionFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
-    inline void SetFeatureSet(PermissionFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
-    inline AssociatedPermission& WithFeatureSet(const PermissionFeatureSet& value) { SetFeatureSet(value); return *this;}
-    inline AssociatedPermission& WithFeatureSet(PermissionFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
+    inline void SetFeatureSet(PermissionFeatureSet value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
+    inline AssociatedPermission& WithFeatureSet(PermissionFeatureSet value) { SetFeatureSet(value); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +141,12 @@ namespace Model
      * <p>The date and time when the association between the permission and the
      * resource share was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline AssociatedPermission& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline AssociatedPermission& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    AssociatedPermission& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,14 +155,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of a resource share associated with this permission.</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline AssociatedPermission& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline AssociatedPermission& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline AssociatedPermission& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    AssociatedPermission& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,7 +170,7 @@ namespace Model
     Aws::String m_permissionVersion;
     bool m_permissionVersionHasBeenSet = false;
 
-    bool m_defaultVersion;
+    bool m_defaultVersion{false};
     bool m_defaultVersionHasBeenSet = false;
 
     Aws::String m_resourceType;
@@ -191,10 +179,10 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    PermissionFeatureSet m_featureSet;
+    PermissionFeatureSet m_featureSet{PermissionFeatureSet::NOT_SET};
     bool m_featureSetHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_resourceShareArn;

@@ -29,7 +29,7 @@ namespace Model
   class ListLogSourcesResult
   {
   public:
-    AWS_SECURITYLAKE_API ListLogSourcesResult();
+    AWS_SECURITYLAKE_API ListLogSourcesResult() = default;
     AWS_SECURITYLAKE_API ListLogSourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYLAKE_API ListLogSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>If nextToken is returned, there are more results available. You can repeat
      * the call using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLogSourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLogSourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLogSourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLogSourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>The list of log sources in your organization that send data to the data
      * lake.</p>
      */
-    inline const Aws::Vector<LogSource>& GetSources() const{ return m_sources; }
-    inline void SetSources(const Aws::Vector<LogSource>& value) { m_sources = value; }
-    inline void SetSources(Aws::Vector<LogSource>&& value) { m_sources = std::move(value); }
-    inline ListLogSourcesResult& WithSources(const Aws::Vector<LogSource>& value) { SetSources(value); return *this;}
-    inline ListLogSourcesResult& WithSources(Aws::Vector<LogSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline ListLogSourcesResult& AddSources(const LogSource& value) { m_sources.push_back(value); return *this; }
-    inline ListLogSourcesResult& AddSources(LogSource&& value) { m_sources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LogSource>& GetSources() const { return m_sources; }
+    template<typename SourcesT = Aws::Vector<LogSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<LogSource>>
+    ListLogSourcesResult& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = LogSource>
+    ListLogSourcesResult& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLogSourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLogSourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLogSourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLogSourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<LogSource> m_sources;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

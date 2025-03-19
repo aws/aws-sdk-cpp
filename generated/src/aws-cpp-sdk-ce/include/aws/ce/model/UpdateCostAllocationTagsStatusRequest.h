@@ -22,7 +22,7 @@ namespace Model
   class UpdateCostAllocationTagsStatusRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusRequest();
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,14 @@ namespace Model
      * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
      * to update cost allocation tags status for this request. </p>
      */
-    inline const Aws::Vector<CostAllocationTagStatusEntry>& GetCostAllocationTagsStatus() const{ return m_costAllocationTagsStatus; }
+    inline const Aws::Vector<CostAllocationTagStatusEntry>& GetCostAllocationTagsStatus() const { return m_costAllocationTagsStatus; }
     inline bool CostAllocationTagsStatusHasBeenSet() const { return m_costAllocationTagsStatusHasBeenSet; }
-    inline void SetCostAllocationTagsStatus(const Aws::Vector<CostAllocationTagStatusEntry>& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus = value; }
-    inline void SetCostAllocationTagsStatus(Aws::Vector<CostAllocationTagStatusEntry>&& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus = std::move(value); }
-    inline UpdateCostAllocationTagsStatusRequest& WithCostAllocationTagsStatus(const Aws::Vector<CostAllocationTagStatusEntry>& value) { SetCostAllocationTagsStatus(value); return *this;}
-    inline UpdateCostAllocationTagsStatusRequest& WithCostAllocationTagsStatus(Aws::Vector<CostAllocationTagStatusEntry>&& value) { SetCostAllocationTagsStatus(std::move(value)); return *this;}
-    inline UpdateCostAllocationTagsStatusRequest& AddCostAllocationTagsStatus(const CostAllocationTagStatusEntry& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus.push_back(value); return *this; }
-    inline UpdateCostAllocationTagsStatusRequest& AddCostAllocationTagsStatus(CostAllocationTagStatusEntry&& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus.push_back(std::move(value)); return *this; }
+    template<typename CostAllocationTagsStatusT = Aws::Vector<CostAllocationTagStatusEntry>>
+    void SetCostAllocationTagsStatus(CostAllocationTagsStatusT&& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus = std::forward<CostAllocationTagsStatusT>(value); }
+    template<typename CostAllocationTagsStatusT = Aws::Vector<CostAllocationTagStatusEntry>>
+    UpdateCostAllocationTagsStatusRequest& WithCostAllocationTagsStatus(CostAllocationTagsStatusT&& value) { SetCostAllocationTagsStatus(std::forward<CostAllocationTagsStatusT>(value)); return *this;}
+    template<typename CostAllocationTagsStatusT = CostAllocationTagStatusEntry>
+    UpdateCostAllocationTagsStatusRequest& AddCostAllocationTagsStatus(CostAllocationTagsStatusT&& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus.emplace_back(std::forward<CostAllocationTagsStatusT>(value)); return *this; }
     ///@}
   private:
 

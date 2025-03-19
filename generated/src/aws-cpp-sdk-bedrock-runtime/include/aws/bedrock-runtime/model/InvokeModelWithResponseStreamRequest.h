@@ -26,7 +26,7 @@ namespace Model
   class InvokeModelWithResponseStreamRequest : public StreamingBedrockRuntimeRequest
   {
   public:
-    AWS_BEDROCKRUNTIME_API InvokeModelWithResponseStreamRequest();
+    AWS_BEDROCKRUNTIME_API InvokeModelWithResponseStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -63,14 +63,12 @@ namespace Model
      * <p>The desired MIME type of the inference body in the response. The default
      * value is <code>application/json</code>.</p>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline InvokeModelWithResponseStreamRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    InvokeModelWithResponseStreamRequest& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +99,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>
      * or from the Imported models page in the Amazon Bedrock console.</p> </li> </ul>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline InvokeModelWithResponseStreamRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    InvokeModelWithResponseStreamRequest& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +112,10 @@ namespace Model
      * <p>Specifies whether to enable or disable the Bedrock trace. If enabled, you can
      * see the full Bedrock trace.</p>
      */
-    inline const Trace& GetTrace() const{ return m_trace; }
+    inline Trace GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const Trace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(Trace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline InvokeModelWithResponseStreamRequest& WithTrace(const Trace& value) { SetTrace(value); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithTrace(Trace&& value) { SetTrace(std::move(value)); return *this;}
+    inline void SetTrace(Trace value) { m_traceHasBeenSet = true; m_trace = value; }
+    inline InvokeModelWithResponseStreamRequest& WithTrace(Trace value) { SetTrace(value); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +129,12 @@ namespace Model
      * <code>application/json</code>.</p> </li> <li> <p>You provide a guardrail
      * identifier, but <code>guardrailVersion</code> isn't specified.</p> </li> </ul>
      */
-    inline const Aws::String& GetGuardrailIdentifier() const{ return m_guardrailIdentifier; }
+    inline const Aws::String& GetGuardrailIdentifier() const { return m_guardrailIdentifier; }
     inline bool GuardrailIdentifierHasBeenSet() const { return m_guardrailIdentifierHasBeenSet; }
-    inline void SetGuardrailIdentifier(const Aws::String& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = value; }
-    inline void SetGuardrailIdentifier(Aws::String&& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = std::move(value); }
-    inline void SetGuardrailIdentifier(const char* value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier.assign(value); }
-    inline InvokeModelWithResponseStreamRequest& WithGuardrailIdentifier(const Aws::String& value) { SetGuardrailIdentifier(value); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithGuardrailIdentifier(Aws::String&& value) { SetGuardrailIdentifier(std::move(value)); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithGuardrailIdentifier(const char* value) { SetGuardrailIdentifier(value); return *this;}
+    template<typename GuardrailIdentifierT = Aws::String>
+    void SetGuardrailIdentifier(GuardrailIdentifierT&& value) { m_guardrailIdentifierHasBeenSet = true; m_guardrailIdentifier = std::forward<GuardrailIdentifierT>(value); }
+    template<typename GuardrailIdentifierT = Aws::String>
+    InvokeModelWithResponseStreamRequest& WithGuardrailIdentifier(GuardrailIdentifierT&& value) { SetGuardrailIdentifier(std::forward<GuardrailIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,26 +142,22 @@ namespace Model
      * <p>The version number for the guardrail. The value can also be
      * <code>DRAFT</code>.</p>
      */
-    inline const Aws::String& GetGuardrailVersion() const{ return m_guardrailVersion; }
+    inline const Aws::String& GetGuardrailVersion() const { return m_guardrailVersion; }
     inline bool GuardrailVersionHasBeenSet() const { return m_guardrailVersionHasBeenSet; }
-    inline void SetGuardrailVersion(const Aws::String& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = value; }
-    inline void SetGuardrailVersion(Aws::String&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::move(value); }
-    inline void SetGuardrailVersion(const char* value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion.assign(value); }
-    inline InvokeModelWithResponseStreamRequest& WithGuardrailVersion(const Aws::String& value) { SetGuardrailVersion(value); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithGuardrailVersion(Aws::String&& value) { SetGuardrailVersion(std::move(value)); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithGuardrailVersion(const char* value) { SetGuardrailVersion(value); return *this;}
+    template<typename GuardrailVersionT = Aws::String>
+    void SetGuardrailVersion(GuardrailVersionT&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::forward<GuardrailVersionT>(value); }
+    template<typename GuardrailVersionT = Aws::String>
+    InvokeModelWithResponseStreamRequest& WithGuardrailVersion(GuardrailVersionT&& value) { SetGuardrailVersion(std::forward<GuardrailVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Model performance settings for the request.</p>
      */
-    inline const PerformanceConfigLatency& GetPerformanceConfigLatency() const{ return m_performanceConfigLatency; }
+    inline PerformanceConfigLatency GetPerformanceConfigLatency() const { return m_performanceConfigLatency; }
     inline bool PerformanceConfigLatencyHasBeenSet() const { return m_performanceConfigLatencyHasBeenSet; }
-    inline void SetPerformanceConfigLatency(const PerformanceConfigLatency& value) { m_performanceConfigLatencyHasBeenSet = true; m_performanceConfigLatency = value; }
-    inline void SetPerformanceConfigLatency(PerformanceConfigLatency&& value) { m_performanceConfigLatencyHasBeenSet = true; m_performanceConfigLatency = std::move(value); }
-    inline InvokeModelWithResponseStreamRequest& WithPerformanceConfigLatency(const PerformanceConfigLatency& value) { SetPerformanceConfigLatency(value); return *this;}
-    inline InvokeModelWithResponseStreamRequest& WithPerformanceConfigLatency(PerformanceConfigLatency&& value) { SetPerformanceConfigLatency(std::move(value)); return *this;}
+    inline void SetPerformanceConfigLatency(PerformanceConfigLatency value) { m_performanceConfigLatencyHasBeenSet = true; m_performanceConfigLatency = value; }
+    inline InvokeModelWithResponseStreamRequest& WithPerformanceConfigLatency(PerformanceConfigLatency value) { SetPerformanceConfigLatency(value); return *this;}
     ///@}
   private:
 
@@ -180,7 +168,7 @@ namespace Model
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
 
-    Trace m_trace;
+    Trace m_trace{Trace::NOT_SET};
     bool m_traceHasBeenSet = false;
 
     Aws::String m_guardrailIdentifier;
@@ -189,10 +177,10 @@ namespace Model
     Aws::String m_guardrailVersion;
     bool m_guardrailVersionHasBeenSet = false;
 
-    PerformanceConfigLatency m_performanceConfigLatency;
+    PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
     bool m_performanceConfigLatencyHasBeenSet = false;
     InvokeModelWithResponseStreamHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

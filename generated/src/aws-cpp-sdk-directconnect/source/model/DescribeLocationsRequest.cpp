@@ -12,10 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLocationsRequest::DescribeLocationsRequest()
-{
-}
-
 Aws::String DescribeLocationsRequest::SerializePayload() const
 {
   return "{}";

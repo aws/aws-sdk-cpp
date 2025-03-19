@@ -27,7 +27,7 @@ namespace Model
   class TestParsingResult
   {
   public:
-    AWS_B2BI_API TestParsingResult();
+    AWS_B2BI_API TestParsingResult() = default;
     AWS_B2BI_API TestParsingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_B2BI_API TestParsingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>Returns the contents of the input file being tested, parsed according to the
      * specified EDI (electronic data interchange) type.</p>
      */
-    inline const Aws::String& GetParsedFileContent() const{ return m_parsedFileContent; }
-    inline void SetParsedFileContent(const Aws::String& value) { m_parsedFileContent = value; }
-    inline void SetParsedFileContent(Aws::String&& value) { m_parsedFileContent = std::move(value); }
-    inline void SetParsedFileContent(const char* value) { m_parsedFileContent.assign(value); }
-    inline TestParsingResult& WithParsedFileContent(const Aws::String& value) { SetParsedFileContent(value); return *this;}
-    inline TestParsingResult& WithParsedFileContent(Aws::String&& value) { SetParsedFileContent(std::move(value)); return *this;}
-    inline TestParsingResult& WithParsedFileContent(const char* value) { SetParsedFileContent(value); return *this;}
+    inline const Aws::String& GetParsedFileContent() const { return m_parsedFileContent; }
+    template<typename ParsedFileContentT = Aws::String>
+    void SetParsedFileContent(ParsedFileContentT&& value) { m_parsedFileContentHasBeenSet = true; m_parsedFileContent = std::forward<ParsedFileContentT>(value); }
+    template<typename ParsedFileContentT = Aws::String>
+    TestParsingResult& WithParsedFileContent(ParsedFileContentT&& value) { SetParsedFileContent(std::forward<ParsedFileContentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestParsingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestParsingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestParsingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestParsingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_parsedFileContent;
+    bool m_parsedFileContentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

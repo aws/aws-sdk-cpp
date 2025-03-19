@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectLegalHoldResult::GetObjectLegalHoldResult()
-{
-}
-
 GetObjectLegalHoldResult::GetObjectLegalHoldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetObjectLegalHoldResult& GetObjectLegalHoldResult::operator =(const Aws::Amazon
   if(!resultNode.IsNull())
   {
     m_legalHold = resultNode;
+    m_legalHoldHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetObjectLegalHoldResult& GetObjectLegalHoldResult::operator =(const Aws::Amazon
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TwitterParameters::TwitterParameters() : 
-    m_queryHasBeenSet(false),
-    m_maxRows(0),
-    m_maxRowsHasBeenSet(false)
-{
-}
-
 TwitterParameters::TwitterParameters(JsonView jsonValue)
-  : TwitterParameters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TwitterParameters& TwitterParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Query"))
   {
     m_query = jsonValue.GetString("Query");
-
     m_queryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRows"))
   {
     m_maxRows = jsonValue.GetInteger("MaxRows");
-
     m_maxRowsHasBeenSet = true;
   }
-
   return *this;
 }
 

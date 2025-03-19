@@ -18,13 +18,7 @@ namespace ECS
 namespace Model
 {
 
-HostVolumeProperties::HostVolumeProperties() : 
-    m_sourcePathHasBeenSet(false)
-{
-}
-
 HostVolumeProperties::HostVolumeProperties(JsonView jsonValue)
-  : HostVolumeProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HostVolumeProperties& HostVolumeProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourcePath"))
   {
     m_sourcePath = jsonValue.GetString("sourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   return *this;
 }
 

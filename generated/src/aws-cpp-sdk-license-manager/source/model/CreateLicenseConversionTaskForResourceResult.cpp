@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLicenseConversionTaskForResourceResult::CreateLicenseConversionTaskForResourceResult()
-{
-}
-
 CreateLicenseConversionTaskForResourceResult::CreateLicenseConversionTaskForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLicenseConversionTaskForResourceResult& CreateLicenseConversionTaskForReso
   if(jsonValue.ValueExists("LicenseConversionTaskId"))
   {
     m_licenseConversionTaskId = jsonValue.GetString("LicenseConversionTaskId");
-
+    m_licenseConversionTaskIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

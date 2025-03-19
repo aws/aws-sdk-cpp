@@ -32,7 +32,7 @@ namespace Model
   class CreateSchemaResult
   {
   public:
-    AWS_GLUE_API CreateSchemaResult();
+    AWS_GLUE_API CreateSchemaResult() = default;
     AWS_GLUE_API CreateSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API CreateSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,65 +41,55 @@ namespace Model
     /**
      * <p>The name of the registry.</p>
      */
-    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
-    inline void SetRegistryName(const Aws::String& value) { m_registryName = value; }
-    inline void SetRegistryName(Aws::String&& value) { m_registryName = std::move(value); }
-    inline void SetRegistryName(const char* value) { m_registryName.assign(value); }
-    inline CreateSchemaResult& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-    inline CreateSchemaResult& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    inline const Aws::String& GetRegistryName() const { return m_registryName; }
+    template<typename RegistryNameT = Aws::String>
+    void SetRegistryName(RegistryNameT&& value) { m_registryNameHasBeenSet = true; m_registryName = std::forward<RegistryNameT>(value); }
+    template<typename RegistryNameT = Aws::String>
+    CreateSchemaResult& WithRegistryName(RegistryNameT&& value) { SetRegistryName(std::forward<RegistryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the registry.</p>
      */
-    inline const Aws::String& GetRegistryArn() const{ return m_registryArn; }
-    inline void SetRegistryArn(const Aws::String& value) { m_registryArn = value; }
-    inline void SetRegistryArn(Aws::String&& value) { m_registryArn = std::move(value); }
-    inline void SetRegistryArn(const char* value) { m_registryArn.assign(value); }
-    inline CreateSchemaResult& WithRegistryArn(const Aws::String& value) { SetRegistryArn(value); return *this;}
-    inline CreateSchemaResult& WithRegistryArn(Aws::String&& value) { SetRegistryArn(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithRegistryArn(const char* value) { SetRegistryArn(value); return *this;}
+    inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
+    template<typename RegistryArnT = Aws::String>
+    void SetRegistryArn(RegistryArnT&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::forward<RegistryArnT>(value); }
+    template<typename RegistryArnT = Aws::String>
+    CreateSchemaResult& WithRegistryArn(RegistryArnT&& value) { SetRegistryArn(std::forward<RegistryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaName.assign(value); }
-    inline CreateSchemaResult& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline CreateSchemaResult& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    CreateSchemaResult& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the schema.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
-    inline CreateSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline CreateSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    CreateSchemaResult& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the schema if specified when created.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateSchemaResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSchemaResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateSchemaResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,22 +97,18 @@ namespace Model
      * <p>The data format of the schema definition. Currently <code>AVRO</code>,
      * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
-    inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
-    inline void SetDataFormat(const DataFormat& value) { m_dataFormat = value; }
-    inline void SetDataFormat(DataFormat&& value) { m_dataFormat = std::move(value); }
-    inline CreateSchemaResult& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
-    inline CreateSchemaResult& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline DataFormat GetDataFormat() const { return m_dataFormat; }
+    inline void SetDataFormat(DataFormat value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline CreateSchemaResult& WithDataFormat(DataFormat value) { SetDataFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema compatibility mode.</p>
      */
-    inline const Compatibility& GetCompatibility() const{ return m_compatibility; }
-    inline void SetCompatibility(const Compatibility& value) { m_compatibility = value; }
-    inline void SetCompatibility(Compatibility&& value) { m_compatibility = std::move(value); }
-    inline CreateSchemaResult& WithCompatibility(const Compatibility& value) { SetCompatibility(value); return *this;}
-    inline CreateSchemaResult& WithCompatibility(Compatibility&& value) { SetCompatibility(std::move(value)); return *this;}
+    inline Compatibility GetCompatibility() const { return m_compatibility; }
+    inline void SetCompatibility(Compatibility value) { m_compatibilityHasBeenSet = true; m_compatibility = value; }
+    inline CreateSchemaResult& WithCompatibility(Compatibility value) { SetCompatibility(value); return *this;}
     ///@}
 
     ///@{
@@ -130,8 +116,8 @@ namespace Model
      * <p>The version number of the checkpoint (the last time the compatibility mode
      * was changed).</p>
      */
-    inline long long GetSchemaCheckpoint() const{ return m_schemaCheckpoint; }
-    inline void SetSchemaCheckpoint(long long value) { m_schemaCheckpoint = value; }
+    inline long long GetSchemaCheckpoint() const { return m_schemaCheckpoint; }
+    inline void SetSchemaCheckpoint(long long value) { m_schemaCheckpointHasBeenSet = true; m_schemaCheckpoint = value; }
     inline CreateSchemaResult& WithSchemaCheckpoint(long long value) { SetSchemaCheckpoint(value); return *this;}
     ///@}
 
@@ -140,8 +126,8 @@ namespace Model
      * <p>The latest version of the schema associated with the returned schema
      * definition.</p>
      */
-    inline long long GetLatestSchemaVersion() const{ return m_latestSchemaVersion; }
-    inline void SetLatestSchemaVersion(long long value) { m_latestSchemaVersion = value; }
+    inline long long GetLatestSchemaVersion() const { return m_latestSchemaVersion; }
+    inline void SetLatestSchemaVersion(long long value) { m_latestSchemaVersionHasBeenSet = true; m_latestSchemaVersion = value; }
     inline CreateSchemaResult& WithLatestSchemaVersion(long long value) { SetLatestSchemaVersion(value); return *this;}
     ///@}
 
@@ -150,8 +136,8 @@ namespace Model
      * <p>The next version of the schema associated with the returned schema
      * definition.</p>
      */
-    inline long long GetNextSchemaVersion() const{ return m_nextSchemaVersion; }
-    inline void SetNextSchemaVersion(long long value) { m_nextSchemaVersion = value; }
+    inline long long GetNextSchemaVersion() const { return m_nextSchemaVersion; }
+    inline void SetNextSchemaVersion(long long value) { m_nextSchemaVersionHasBeenSet = true; m_nextSchemaVersion = value; }
     inline CreateSchemaResult& WithNextSchemaVersion(long long value) { SetNextSchemaVersion(value); return *this;}
     ///@}
 
@@ -159,96 +145,100 @@ namespace Model
     /**
      * <p>The status of the schema. </p>
      */
-    inline const SchemaStatus& GetSchemaStatus() const{ return m_schemaStatus; }
-    inline void SetSchemaStatus(const SchemaStatus& value) { m_schemaStatus = value; }
-    inline void SetSchemaStatus(SchemaStatus&& value) { m_schemaStatus = std::move(value); }
-    inline CreateSchemaResult& WithSchemaStatus(const SchemaStatus& value) { SetSchemaStatus(value); return *this;}
-    inline CreateSchemaResult& WithSchemaStatus(SchemaStatus&& value) { SetSchemaStatus(std::move(value)); return *this;}
+    inline SchemaStatus GetSchemaStatus() const { return m_schemaStatus; }
+    inline void SetSchemaStatus(SchemaStatus value) { m_schemaStatusHasBeenSet = true; m_schemaStatus = value; }
+    inline CreateSchemaResult& WithSchemaStatus(SchemaStatus value) { SetSchemaStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the schema.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateSchemaResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSchemaResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSchemaResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateSchemaResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSchemaResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSchemaResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSchemaResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSchemaResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSchemaResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSchemaResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSchemaResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the first schema version.</p>
      */
-    inline const Aws::String& GetSchemaVersionId() const{ return m_schemaVersionId; }
-    inline void SetSchemaVersionId(const Aws::String& value) { m_schemaVersionId = value; }
-    inline void SetSchemaVersionId(Aws::String&& value) { m_schemaVersionId = std::move(value); }
-    inline void SetSchemaVersionId(const char* value) { m_schemaVersionId.assign(value); }
-    inline CreateSchemaResult& WithSchemaVersionId(const Aws::String& value) { SetSchemaVersionId(value); return *this;}
-    inline CreateSchemaResult& WithSchemaVersionId(Aws::String&& value) { SetSchemaVersionId(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithSchemaVersionId(const char* value) { SetSchemaVersionId(value); return *this;}
+    inline const Aws::String& GetSchemaVersionId() const { return m_schemaVersionId; }
+    template<typename SchemaVersionIdT = Aws::String>
+    void SetSchemaVersionId(SchemaVersionIdT&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::forward<SchemaVersionIdT>(value); }
+    template<typename SchemaVersionIdT = Aws::String>
+    CreateSchemaResult& WithSchemaVersionId(SchemaVersionIdT&& value) { SetSchemaVersionId(std::forward<SchemaVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the first schema version created.</p>
      */
-    inline const SchemaVersionStatus& GetSchemaVersionStatus() const{ return m_schemaVersionStatus; }
-    inline void SetSchemaVersionStatus(const SchemaVersionStatus& value) { m_schemaVersionStatus = value; }
-    inline void SetSchemaVersionStatus(SchemaVersionStatus&& value) { m_schemaVersionStatus = std::move(value); }
-    inline CreateSchemaResult& WithSchemaVersionStatus(const SchemaVersionStatus& value) { SetSchemaVersionStatus(value); return *this;}
-    inline CreateSchemaResult& WithSchemaVersionStatus(SchemaVersionStatus&& value) { SetSchemaVersionStatus(std::move(value)); return *this;}
+    inline SchemaVersionStatus GetSchemaVersionStatus() const { return m_schemaVersionStatus; }
+    inline void SetSchemaVersionStatus(SchemaVersionStatus value) { m_schemaVersionStatusHasBeenSet = true; m_schemaVersionStatus = value; }
+    inline CreateSchemaResult& WithSchemaVersionStatus(SchemaVersionStatus value) { SetSchemaVersionStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryName;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_registryArn;
+    bool m_registryArnHasBeenSet = false;
 
     Aws::String m_schemaName;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_schemaArn;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    DataFormat m_dataFormat;
+    DataFormat m_dataFormat{DataFormat::NOT_SET};
+    bool m_dataFormatHasBeenSet = false;
 
-    Compatibility m_compatibility;
+    Compatibility m_compatibility{Compatibility::NOT_SET};
+    bool m_compatibilityHasBeenSet = false;
 
-    long long m_schemaCheckpoint;
+    long long m_schemaCheckpoint{0};
+    bool m_schemaCheckpointHasBeenSet = false;
 
-    long long m_latestSchemaVersion;
+    long long m_latestSchemaVersion{0};
+    bool m_latestSchemaVersionHasBeenSet = false;
 
-    long long m_nextSchemaVersion;
+    long long m_nextSchemaVersion{0};
+    bool m_nextSchemaVersionHasBeenSet = false;
 
-    SchemaStatus m_schemaStatus;
+    SchemaStatus m_schemaStatus{SchemaStatus::NOT_SET};
+    bool m_schemaStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_schemaVersionId;
+    bool m_schemaVersionIdHasBeenSet = false;
 
-    SchemaVersionStatus m_schemaVersionStatus;
+    SchemaVersionStatus m_schemaVersionStatus{SchemaVersionStatus::NOT_SET};
+    bool m_schemaVersionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

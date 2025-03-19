@@ -35,7 +35,7 @@ namespace Model
   class ContactFlowModuleSearchCriteria
   {
   public:
-    AWS_CONNECT_API ContactFlowModuleSearchCriteria();
+    AWS_CONNECT_API ContactFlowModuleSearchCriteria() = default;
     AWS_CONNECT_API ContactFlowModuleSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactFlowModuleSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
-    inline const Aws::Vector<ContactFlowModuleSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<ContactFlowModuleSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline ContactFlowModuleSearchCriteria& WithOrConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline ContactFlowModuleSearchCriteria& WithOrConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline ContactFlowModuleSearchCriteria& AddOrConditions(const ContactFlowModuleSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline ContactFlowModuleSearchCriteria& AddOrConditions(ContactFlowModuleSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<ContactFlowModuleSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<ContactFlowModuleSearchCriteria>>
+    ContactFlowModuleSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = ContactFlowModuleSearchCriteria>
+    ContactFlowModuleSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,48 +61,44 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
-    inline const Aws::Vector<ContactFlowModuleSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<ContactFlowModuleSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline ContactFlowModuleSearchCriteria& WithAndConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline ContactFlowModuleSearchCriteria& WithAndConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline ContactFlowModuleSearchCriteria& AddAndConditions(const ContactFlowModuleSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline ContactFlowModuleSearchCriteria& AddAndConditions(ContactFlowModuleSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<ContactFlowModuleSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<ContactFlowModuleSearchCriteria>>
+    ContactFlowModuleSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = ContactFlowModuleSearchCriteria>
+    ContactFlowModuleSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline ContactFlowModuleSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline ContactFlowModuleSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    ContactFlowModuleSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the flow.</p>
      */
-    inline const ContactFlowModuleState& GetStateCondition() const{ return m_stateCondition; }
+    inline ContactFlowModuleState GetStateCondition() const { return m_stateCondition; }
     inline bool StateConditionHasBeenSet() const { return m_stateConditionHasBeenSet; }
-    inline void SetStateCondition(const ContactFlowModuleState& value) { m_stateConditionHasBeenSet = true; m_stateCondition = value; }
-    inline void SetStateCondition(ContactFlowModuleState&& value) { m_stateConditionHasBeenSet = true; m_stateCondition = std::move(value); }
-    inline ContactFlowModuleSearchCriteria& WithStateCondition(const ContactFlowModuleState& value) { SetStateCondition(value); return *this;}
-    inline ContactFlowModuleSearchCriteria& WithStateCondition(ContactFlowModuleState&& value) { SetStateCondition(std::move(value)); return *this;}
+    inline void SetStateCondition(ContactFlowModuleState value) { m_stateConditionHasBeenSet = true; m_stateCondition = value; }
+    inline ContactFlowModuleSearchCriteria& WithStateCondition(ContactFlowModuleState value) { SetStateCondition(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the flow.</p>
      */
-    inline const ContactFlowModuleStatus& GetStatusCondition() const{ return m_statusCondition; }
+    inline ContactFlowModuleStatus GetStatusCondition() const { return m_statusCondition; }
     inline bool StatusConditionHasBeenSet() const { return m_statusConditionHasBeenSet; }
-    inline void SetStatusCondition(const ContactFlowModuleStatus& value) { m_statusConditionHasBeenSet = true; m_statusCondition = value; }
-    inline void SetStatusCondition(ContactFlowModuleStatus&& value) { m_statusConditionHasBeenSet = true; m_statusCondition = std::move(value); }
-    inline ContactFlowModuleSearchCriteria& WithStatusCondition(const ContactFlowModuleStatus& value) { SetStatusCondition(value); return *this;}
-    inline ContactFlowModuleSearchCriteria& WithStatusCondition(ContactFlowModuleStatus&& value) { SetStatusCondition(std::move(value)); return *this;}
+    inline void SetStatusCondition(ContactFlowModuleStatus value) { m_statusConditionHasBeenSet = true; m_statusCondition = value; }
+    inline ContactFlowModuleSearchCriteria& WithStatusCondition(ContactFlowModuleStatus value) { SetStatusCondition(value); return *this;}
     ///@}
   private:
 
@@ -115,10 +111,10 @@ namespace Model
     StringCondition m_stringCondition;
     bool m_stringConditionHasBeenSet = false;
 
-    ContactFlowModuleState m_stateCondition;
+    ContactFlowModuleState m_stateCondition{ContactFlowModuleState::NOT_SET};
     bool m_stateConditionHasBeenSet = false;
 
-    ContactFlowModuleStatus m_statusCondition;
+    ContactFlowModuleStatus m_statusCondition{ContactFlowModuleStatus::NOT_SET};
     bool m_statusConditionHasBeenSet = false;
   };
 

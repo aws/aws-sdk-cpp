@@ -32,7 +32,7 @@ namespace Model
   class QueryRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API QueryRequest();
+    AWS_DYNAMODB_API QueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * <p>The name of the table containing the requested items. You can also provide
      * the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline QueryRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline QueryRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline QueryRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    QueryRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <code>IndexName</code> parameter, you must also provide <code>TableName.</code>
      * </p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline QueryRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline QueryRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline QueryRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    QueryRequest& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +118,10 @@ namespace Model
      * <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
      * value for <code>Select</code> will return an error.</p> 
      */
-    inline const Select& GetSelect() const{ return m_select; }
+    inline Select GetSelect() const { return m_select; }
     inline bool SelectHasBeenSet() const { return m_selectHasBeenSet; }
-    inline void SetSelect(const Select& value) { m_selectHasBeenSet = true; m_select = value; }
-    inline void SetSelect(Select&& value) { m_selectHasBeenSet = true; m_select = std::move(value); }
-    inline QueryRequest& WithSelect(const Select& value) { SetSelect(value); return *this;}
-    inline QueryRequest& WithSelect(Select&& value) { SetSelect(std::move(value)); return *this;}
+    inline void SetSelect(Select value) { m_selectHasBeenSet = true; m_select = value; }
+    inline QueryRequest& WithSelect(Select value) { SetSelect(value); return *this;}
     ///@}
 
     ///@{
@@ -137,15 +131,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
+    inline const Aws::Vector<Aws::String>& GetAttributesToGet() const { return m_attributesToGet; }
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
-    inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
-    inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
-    inline QueryRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
-    inline QueryRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
-    inline QueryRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
-    inline QueryRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
-    inline QueryRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
+    template<typename AttributesToGetT = Aws::Vector<Aws::String>>
+    void SetAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::forward<AttributesToGetT>(value); }
+    template<typename AttributesToGetT = Aws::Vector<Aws::String>>
+    QueryRequest& WithAttributesToGet(AttributesToGetT&& value) { SetAttributesToGet(std::forward<AttributesToGetT>(value)); return *this;}
+    template<typename AttributesToGetT = Aws::String>
+    QueryRequest& AddAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.emplace_back(std::forward<AttributesToGetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,7 +155,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline QueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -177,7 +170,7 @@ namespace Model
      * <code>ConsistentRead</code> set to <code>true</code>, you will receive a
      * <code>ValidationException</code>.</p>
      */
-    inline bool GetConsistentRead() const{ return m_consistentRead; }
+    inline bool GetConsistentRead() const { return m_consistentRead; }
     inline bool ConsistentReadHasBeenSet() const { return m_consistentReadHasBeenSet; }
     inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
     inline QueryRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
@@ -190,18 +183,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html">KeyConditions</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Condition>& GetKeyConditions() const{ return m_keyConditions; }
+    inline const Aws::Map<Aws::String, Condition>& GetKeyConditions() const { return m_keyConditions; }
     inline bool KeyConditionsHasBeenSet() const { return m_keyConditionsHasBeenSet; }
-    inline void SetKeyConditions(const Aws::Map<Aws::String, Condition>& value) { m_keyConditionsHasBeenSet = true; m_keyConditions = value; }
-    inline void SetKeyConditions(Aws::Map<Aws::String, Condition>&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions = std::move(value); }
-    inline QueryRequest& WithKeyConditions(const Aws::Map<Aws::String, Condition>& value) { SetKeyConditions(value); return *this;}
-    inline QueryRequest& WithKeyConditions(Aws::Map<Aws::String, Condition>&& value) { SetKeyConditions(std::move(value)); return *this;}
-    inline QueryRequest& AddKeyConditions(const Aws::String& key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, value); return *this; }
-    inline QueryRequest& AddKeyConditions(Aws::String&& key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(std::move(key), value); return *this; }
-    inline QueryRequest& AddKeyConditions(const Aws::String& key, Condition&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddKeyConditions(Aws::String&& key, Condition&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryRequest& AddKeyConditions(const char* key, Condition&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddKeyConditions(const char* key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, value); return *this; }
+    template<typename KeyConditionsT = Aws::Map<Aws::String, Condition>>
+    void SetKeyConditions(KeyConditionsT&& value) { m_keyConditionsHasBeenSet = true; m_keyConditions = std::forward<KeyConditionsT>(value); }
+    template<typename KeyConditionsT = Aws::Map<Aws::String, Condition>>
+    QueryRequest& WithKeyConditions(KeyConditionsT&& value) { SetKeyConditions(std::forward<KeyConditionsT>(value)); return *this;}
+    template<typename KeyConditionsKeyT = Aws::String, typename KeyConditionsValueT = Condition>
+    QueryRequest& AddKeyConditions(KeyConditionsKeyT&& key, KeyConditionsValueT&& value) {
+      m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(std::forward<KeyConditionsKeyT>(key), std::forward<KeyConditionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -211,18 +202,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html">QueryFilter</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Condition>& GetQueryFilter() const{ return m_queryFilter; }
+    inline const Aws::Map<Aws::String, Condition>& GetQueryFilter() const { return m_queryFilter; }
     inline bool QueryFilterHasBeenSet() const { return m_queryFilterHasBeenSet; }
-    inline void SetQueryFilter(const Aws::Map<Aws::String, Condition>& value) { m_queryFilterHasBeenSet = true; m_queryFilter = value; }
-    inline void SetQueryFilter(Aws::Map<Aws::String, Condition>&& value) { m_queryFilterHasBeenSet = true; m_queryFilter = std::move(value); }
-    inline QueryRequest& WithQueryFilter(const Aws::Map<Aws::String, Condition>& value) { SetQueryFilter(value); return *this;}
-    inline QueryRequest& WithQueryFilter(Aws::Map<Aws::String, Condition>&& value) { SetQueryFilter(std::move(value)); return *this;}
-    inline QueryRequest& AddQueryFilter(const Aws::String& key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, value); return *this; }
-    inline QueryRequest& AddQueryFilter(Aws::String&& key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(std::move(key), value); return *this; }
-    inline QueryRequest& AddQueryFilter(const Aws::String& key, Condition&& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddQueryFilter(Aws::String&& key, Condition&& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryRequest& AddQueryFilter(const char* key, Condition&& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddQueryFilter(const char* key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, value); return *this; }
+    template<typename QueryFilterT = Aws::Map<Aws::String, Condition>>
+    void SetQueryFilter(QueryFilterT&& value) { m_queryFilterHasBeenSet = true; m_queryFilter = std::forward<QueryFilterT>(value); }
+    template<typename QueryFilterT = Aws::Map<Aws::String, Condition>>
+    QueryRequest& WithQueryFilter(QueryFilterT&& value) { SetQueryFilter(std::forward<QueryFilterT>(value)); return *this;}
+    template<typename QueryFilterKeyT = Aws::String, typename QueryFilterValueT = Condition>
+    QueryRequest& AddQueryFilter(QueryFilterKeyT&& key, QueryFilterValueT&& value) {
+      m_queryFilterHasBeenSet = true; m_queryFilter.emplace(std::forward<QueryFilterKeyT>(key), std::forward<QueryFilterValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -232,12 +221,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const ConditionalOperator& GetConditionalOperator() const{ return m_conditionalOperator; }
+    inline ConditionalOperator GetConditionalOperator() const { return m_conditionalOperator; }
     inline bool ConditionalOperatorHasBeenSet() const { return m_conditionalOperatorHasBeenSet; }
-    inline void SetConditionalOperator(const ConditionalOperator& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
-    inline void SetConditionalOperator(ConditionalOperator&& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = std::move(value); }
-    inline QueryRequest& WithConditionalOperator(const ConditionalOperator& value) { SetConditionalOperator(value); return *this;}
-    inline QueryRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
+    inline void SetConditionalOperator(ConditionalOperator value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
+    inline QueryRequest& WithConditionalOperator(ConditionalOperator value) { SetConditionalOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -255,7 +242,7 @@ namespace Model
      * in reverse order by sort key value, and then returns the results to the
      * client.</p>
      */
-    inline bool GetScanIndexForward() const{ return m_scanIndexForward; }
+    inline bool GetScanIndexForward() const { return m_scanIndexForward; }
     inline bool ScanIndexForwardHasBeenSet() const { return m_scanIndexForwardHasBeenSet; }
     inline void SetScanIndexForward(bool value) { m_scanIndexForwardHasBeenSet = true; m_scanIndexForward = value; }
     inline QueryRequest& WithScanIndexForward(bool value) { SetScanIndexForward(value); return *this;}
@@ -268,28 +255,24 @@ namespace Model
      * operation.</p> <p>The data type for <code>ExclusiveStartKey</code> must be
      * String, Number, or Binary. No set data types are allowed.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetExclusiveStartKey() const{ return m_exclusiveStartKey; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetExclusiveStartKey() const { return m_exclusiveStartKey; }
     inline bool ExclusiveStartKeyHasBeenSet() const { return m_exclusiveStartKeyHasBeenSet; }
-    inline void SetExclusiveStartKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey = value; }
-    inline void SetExclusiveStartKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey = std::move(value); }
-    inline QueryRequest& WithExclusiveStartKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetExclusiveStartKey(value); return *this;}
-    inline QueryRequest& WithExclusiveStartKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetExclusiveStartKey(std::move(value)); return *this;}
-    inline QueryRequest& AddExclusiveStartKey(const Aws::String& key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, value); return *this; }
-    inline QueryRequest& AddExclusiveStartKey(Aws::String&& key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(std::move(key), value); return *this; }
-    inline QueryRequest& AddExclusiveStartKey(const Aws::String& key, AttributeValue&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddExclusiveStartKey(Aws::String&& key, AttributeValue&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryRequest& AddExclusiveStartKey(const char* key, AttributeValue&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddExclusiveStartKey(const char* key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, value); return *this; }
+    template<typename ExclusiveStartKeyT = Aws::Map<Aws::String, AttributeValue>>
+    void SetExclusiveStartKey(ExclusiveStartKeyT&& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey = std::forward<ExclusiveStartKeyT>(value); }
+    template<typename ExclusiveStartKeyT = Aws::Map<Aws::String, AttributeValue>>
+    QueryRequest& WithExclusiveStartKey(ExclusiveStartKeyT&& value) { SetExclusiveStartKey(std::forward<ExclusiveStartKeyT>(value)); return *this;}
+    template<typename ExclusiveStartKeyKeyT = Aws::String, typename ExclusiveStartKeyValueT = AttributeValue>
+    QueryRequest& AddExclusiveStartKey(ExclusiveStartKeyKeyT&& key, ExclusiveStartKeyValueT&& value) {
+      m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(std::forward<ExclusiveStartKeyKeyT>(key), std::forward<ExclusiveStartKeyValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+    inline ReturnConsumedCapacity GetReturnConsumedCapacity() const { return m_returnConsumedCapacity; }
     inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
-    inline void SetReturnConsumedCapacity(const ReturnConsumedCapacity& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
-    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity&& value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = std::move(value); }
-    inline QueryRequest& WithReturnConsumedCapacity(const ReturnConsumedCapacity& value) { SetReturnConsumedCapacity(value); return *this;}
-    inline QueryRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+    inline void SetReturnConsumedCapacity(ReturnConsumedCapacity value) { m_returnConsumedCapacityHasBeenSet = true; m_returnConsumedCapacity = value; }
+    inline QueryRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity value) { SetReturnConsumedCapacity(value); return *this;}
     ///@}
 
     ///@{
@@ -303,14 +286,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
+    inline const Aws::String& GetProjectionExpression() const { return m_projectionExpression; }
     inline bool ProjectionExpressionHasBeenSet() const { return m_projectionExpressionHasBeenSet; }
-    inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
-    inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::move(value); }
-    inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
-    inline QueryRequest& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
-    inline QueryRequest& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(std::move(value)); return *this;}
-    inline QueryRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
+    template<typename ProjectionExpressionT = Aws::String>
+    void SetProjectionExpression(ProjectionExpressionT&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = std::forward<ProjectionExpressionT>(value); }
+    template<typename ProjectionExpressionT = Aws::String>
+    QueryRequest& WithProjectionExpression(ProjectionExpressionT&& value) { SetProjectionExpression(std::forward<ProjectionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -326,14 +307,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
+    inline const Aws::String& GetFilterExpression() const { return m_filterExpression; }
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
-    inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
-    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
-    inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
-    inline QueryRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
-    inline QueryRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
-    inline QueryRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+    template<typename FilterExpressionT = Aws::String>
+    void SetFilterExpression(FilterExpressionT&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::forward<FilterExpressionT>(value); }
+    template<typename FilterExpressionT = Aws::String>
+    QueryRequest& WithFilterExpression(FilterExpressionT&& value) { SetFilterExpression(std::forward<FilterExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -393,14 +372,12 @@ namespace Model
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetKeyConditionExpression() const{ return m_keyConditionExpression; }
+    inline const Aws::String& GetKeyConditionExpression() const { return m_keyConditionExpression; }
     inline bool KeyConditionExpressionHasBeenSet() const { return m_keyConditionExpressionHasBeenSet; }
-    inline void SetKeyConditionExpression(const Aws::String& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = value; }
-    inline void SetKeyConditionExpression(Aws::String&& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = std::move(value); }
-    inline void SetKeyConditionExpression(const char* value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression.assign(value); }
-    inline QueryRequest& WithKeyConditionExpression(const Aws::String& value) { SetKeyConditionExpression(value); return *this;}
-    inline QueryRequest& WithKeyConditionExpression(Aws::String&& value) { SetKeyConditionExpression(std::move(value)); return *this;}
-    inline QueryRequest& WithKeyConditionExpression(const char* value) { SetKeyConditionExpression(value); return *this;}
+    template<typename KeyConditionExpressionT = Aws::String>
+    void SetKeyConditionExpression(KeyConditionExpressionT&& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = std::forward<KeyConditionExpressionT>(value); }
+    template<typename KeyConditionExpressionT = Aws::String>
+    QueryRequest& WithKeyConditionExpression(KeyConditionExpressionT&& value) { SetKeyConditionExpression(std::forward<KeyConditionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -429,19 +406,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const { return m_expressionAttributeNames; }
     inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
-    inline void SetExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = value; }
-    inline void SetExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::move(value); }
-    inline QueryRequest& WithExpressionAttributeNames(const Aws::Map<Aws::String, Aws::String>& value) { SetExpressionAttributeNames(value); return *this;}
-    inline QueryRequest& WithExpressionAttributeNames(Aws::Map<Aws::String, Aws::String>&& value) { SetExpressionAttributeNames(std::move(value)); return *this;}
-    inline QueryRequest& AddExpressionAttributeNames(const Aws::String& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
-    inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, const Aws::String& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
-    inline QueryRequest& AddExpressionAttributeNames(const Aws::String& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryRequest& AddExpressionAttributeNames(const char* key, Aws::String&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddExpressionAttributeNames(Aws::String&& key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::move(key), value); return *this; }
-    inline QueryRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
+    template<typename ExpressionAttributeNamesT = Aws::Map<Aws::String, Aws::String>>
+    void SetExpressionAttributeNames(ExpressionAttributeNamesT&& value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames = std::forward<ExpressionAttributeNamesT>(value); }
+    template<typename ExpressionAttributeNamesT = Aws::Map<Aws::String, Aws::String>>
+    QueryRequest& WithExpressionAttributeNames(ExpressionAttributeNamesT&& value) { SetExpressionAttributeNames(std::forward<ExpressionAttributeNamesT>(value)); return *this;}
+    template<typename ExpressionAttributeNamesKeyT = Aws::String, typename ExpressionAttributeNamesValueT = Aws::String>
+    QueryRequest& AddExpressionAttributeNames(ExpressionAttributeNamesKeyT&& key, ExpressionAttributeNamesValueT&& value) {
+      m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(std::forward<ExpressionAttributeNamesKeyT>(key), std::forward<ExpressionAttributeNamesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -460,18 +434,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const{ return m_expressionAttributeValues; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetExpressionAttributeValues() const { return m_expressionAttributeValues; }
     inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
-    inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
-    inline void SetExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::move(value); }
-    inline QueryRequest& WithExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { SetExpressionAttributeValues(value); return *this;}
-    inline QueryRequest& WithExpressionAttributeValues(Aws::Map<Aws::String, AttributeValue>&& value) { SetExpressionAttributeValues(std::move(value)); return *this;}
-    inline QueryRequest& AddExpressionAttributeValues(const Aws::String& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
-    inline QueryRequest& AddExpressionAttributeValues(Aws::String&& key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), value); return *this; }
-    inline QueryRequest& AddExpressionAttributeValues(const Aws::String& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddExpressionAttributeValues(Aws::String&& key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryRequest& AddExpressionAttributeValues(const char* key, AttributeValue&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, std::move(value)); return *this; }
-    inline QueryRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
+    template<typename ExpressionAttributeValuesT = Aws::Map<Aws::String, AttributeValue>>
+    void SetExpressionAttributeValues(ExpressionAttributeValuesT&& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = std::forward<ExpressionAttributeValuesT>(value); }
+    template<typename ExpressionAttributeValuesT = Aws::Map<Aws::String, AttributeValue>>
+    QueryRequest& WithExpressionAttributeValues(ExpressionAttributeValuesT&& value) { SetExpressionAttributeValues(std::forward<ExpressionAttributeValuesT>(value)); return *this;}
+    template<typename ExpressionAttributeValuesKeyT = Aws::String, typename ExpressionAttributeValuesValueT = AttributeValue>
+    QueryRequest& AddExpressionAttributeValues(ExpressionAttributeValuesKeyT&& key, ExpressionAttributeValuesValueT&& value) {
+      m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(std::forward<ExpressionAttributeValuesKeyT>(key), std::forward<ExpressionAttributeValuesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -481,16 +453,16 @@ namespace Model
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet = false;
 
-    Select m_select;
+    Select m_select{Select::NOT_SET};
     bool m_selectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    bool m_consistentRead;
+    bool m_consistentRead{false};
     bool m_consistentReadHasBeenSet = false;
 
     Aws::Map<Aws::String, Condition> m_keyConditions;
@@ -499,16 +471,16 @@ namespace Model
     Aws::Map<Aws::String, Condition> m_queryFilter;
     bool m_queryFilterHasBeenSet = false;
 
-    ConditionalOperator m_conditionalOperator;
+    ConditionalOperator m_conditionalOperator{ConditionalOperator::NOT_SET};
     bool m_conditionalOperatorHasBeenSet = false;
 
-    bool m_scanIndexForward;
+    bool m_scanIndexForward{false};
     bool m_scanIndexForwardHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
     bool m_exclusiveStartKeyHasBeenSet = false;
 
-    ReturnConsumedCapacity m_returnConsumedCapacity;
+    ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
     bool m_returnConsumedCapacityHasBeenSet = false;
 
     Aws::String m_projectionExpression;

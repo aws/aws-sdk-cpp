@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateImageSetMetadataResult::UpdateImageSetMetadataResult() : 
-    m_imageSetState(ImageSetState::NOT_SET),
-    m_imageSetWorkflowStatus(ImageSetWorkflowStatus::NOT_SET)
-{
-}
-
 UpdateImageSetMetadataResult::UpdateImageSetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateImageSetMetadataResult()
 {
   *this = result;
 }
@@ -35,57 +28,50 @@ UpdateImageSetMetadataResult& UpdateImageSetMetadataResult::operator =(const Aws
   if(jsonValue.ValueExists("datastoreId"))
   {
     m_datastoreId = jsonValue.GetString("datastoreId");
-
+    m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetId"))
   {
     m_imageSetId = jsonValue.GetString("imageSetId");
-
+    m_imageSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestVersionId"))
   {
     m_latestVersionId = jsonValue.GetString("latestVersionId");
-
+    m_latestVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetState"))
   {
     m_imageSetState = ImageSetStateMapper::GetImageSetStateForName(jsonValue.GetString("imageSetState"));
-
+    m_imageSetStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSetWorkflowStatus"))
   {
     m_imageSetWorkflowStatus = ImageSetWorkflowStatusMapper::GetImageSetWorkflowStatusForName(jsonValue.GetString("imageSetWorkflowStatus"));
-
+    m_imageSetWorkflowStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
+    m_messageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

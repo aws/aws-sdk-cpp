@@ -35,7 +35,7 @@ namespace Model
   class PersistentChat
   {
   public:
-    AWS_CONNECT_API PersistentChat();
+    AWS_CONNECT_API PersistentChat() = default;
     AWS_CONNECT_API PersistentChat(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API PersistentChat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,30 +56,26 @@ namespace Model
      * actual contactId used for rehydration is provided in the response of this API.
      * </p>
      */
-    inline const RehydrationType& GetRehydrationType() const{ return m_rehydrationType; }
+    inline RehydrationType GetRehydrationType() const { return m_rehydrationType; }
     inline bool RehydrationTypeHasBeenSet() const { return m_rehydrationTypeHasBeenSet; }
-    inline void SetRehydrationType(const RehydrationType& value) { m_rehydrationTypeHasBeenSet = true; m_rehydrationType = value; }
-    inline void SetRehydrationType(RehydrationType&& value) { m_rehydrationTypeHasBeenSet = true; m_rehydrationType = std::move(value); }
-    inline PersistentChat& WithRehydrationType(const RehydrationType& value) { SetRehydrationType(value); return *this;}
-    inline PersistentChat& WithRehydrationType(RehydrationType&& value) { SetRehydrationType(std::move(value)); return *this;}
+    inline void SetRehydrationType(RehydrationType value) { m_rehydrationTypeHasBeenSet = true; m_rehydrationType = value; }
+    inline PersistentChat& WithRehydrationType(RehydrationType value) { SetRehydrationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contactId from which a persistent chat session must be started.</p>
      */
-    inline const Aws::String& GetSourceContactId() const{ return m_sourceContactId; }
+    inline const Aws::String& GetSourceContactId() const { return m_sourceContactId; }
     inline bool SourceContactIdHasBeenSet() const { return m_sourceContactIdHasBeenSet; }
-    inline void SetSourceContactId(const Aws::String& value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId = value; }
-    inline void SetSourceContactId(Aws::String&& value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId = std::move(value); }
-    inline void SetSourceContactId(const char* value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId.assign(value); }
-    inline PersistentChat& WithSourceContactId(const Aws::String& value) { SetSourceContactId(value); return *this;}
-    inline PersistentChat& WithSourceContactId(Aws::String&& value) { SetSourceContactId(std::move(value)); return *this;}
-    inline PersistentChat& WithSourceContactId(const char* value) { SetSourceContactId(value); return *this;}
+    template<typename SourceContactIdT = Aws::String>
+    void SetSourceContactId(SourceContactIdT&& value) { m_sourceContactIdHasBeenSet = true; m_sourceContactId = std::forward<SourceContactIdT>(value); }
+    template<typename SourceContactIdT = Aws::String>
+    PersistentChat& WithSourceContactId(SourceContactIdT&& value) { SetSourceContactId(std::forward<SourceContactIdT>(value)); return *this;}
     ///@}
   private:
 
-    RehydrationType m_rehydrationType;
+    RehydrationType m_rehydrationType{RehydrationType::NOT_SET};
     bool m_rehydrationTypeHasBeenSet = false;
 
     Aws::String m_sourceContactId;

@@ -33,7 +33,7 @@ namespace Model
   class PhoneNumberCountry
   {
   public:
-    AWS_CHIMESDKVOICE_API PhoneNumberCountry();
+    AWS_CHIMESDKVOICE_API PhoneNumberCountry() = default;
     AWS_CHIMESDKVOICE_API PhoneNumberCountry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API PhoneNumberCountry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,25 @@ namespace Model
     /**
      * <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
      */
-    inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
+    inline const Aws::String& GetCountryCode() const { return m_countryCode; }
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-    inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
-    inline PhoneNumberCountry& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
-    inline PhoneNumberCountry& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
-    inline PhoneNumberCountry& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
+    template<typename CountryCodeT = Aws::String>
+    void SetCountryCode(CountryCodeT&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::forward<CountryCodeT>(value); }
+    template<typename CountryCodeT = Aws::String>
+    PhoneNumberCountry& WithCountryCode(CountryCodeT&& value) { SetCountryCode(std::forward<CountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The supported phone number types.</p>
      */
-    inline const Aws::Vector<PhoneNumberType>& GetSupportedPhoneNumberTypes() const{ return m_supportedPhoneNumberTypes; }
+    inline const Aws::Vector<PhoneNumberType>& GetSupportedPhoneNumberTypes() const { return m_supportedPhoneNumberTypes; }
     inline bool SupportedPhoneNumberTypesHasBeenSet() const { return m_supportedPhoneNumberTypesHasBeenSet; }
-    inline void SetSupportedPhoneNumberTypes(const Aws::Vector<PhoneNumberType>& value) { m_supportedPhoneNumberTypesHasBeenSet = true; m_supportedPhoneNumberTypes = value; }
-    inline void SetSupportedPhoneNumberTypes(Aws::Vector<PhoneNumberType>&& value) { m_supportedPhoneNumberTypesHasBeenSet = true; m_supportedPhoneNumberTypes = std::move(value); }
-    inline PhoneNumberCountry& WithSupportedPhoneNumberTypes(const Aws::Vector<PhoneNumberType>& value) { SetSupportedPhoneNumberTypes(value); return *this;}
-    inline PhoneNumberCountry& WithSupportedPhoneNumberTypes(Aws::Vector<PhoneNumberType>&& value) { SetSupportedPhoneNumberTypes(std::move(value)); return *this;}
-    inline PhoneNumberCountry& AddSupportedPhoneNumberTypes(const PhoneNumberType& value) { m_supportedPhoneNumberTypesHasBeenSet = true; m_supportedPhoneNumberTypes.push_back(value); return *this; }
-    inline PhoneNumberCountry& AddSupportedPhoneNumberTypes(PhoneNumberType&& value) { m_supportedPhoneNumberTypesHasBeenSet = true; m_supportedPhoneNumberTypes.push_back(std::move(value)); return *this; }
+    template<typename SupportedPhoneNumberTypesT = Aws::Vector<PhoneNumberType>>
+    void SetSupportedPhoneNumberTypes(SupportedPhoneNumberTypesT&& value) { m_supportedPhoneNumberTypesHasBeenSet = true; m_supportedPhoneNumberTypes = std::forward<SupportedPhoneNumberTypesT>(value); }
+    template<typename SupportedPhoneNumberTypesT = Aws::Vector<PhoneNumberType>>
+    PhoneNumberCountry& WithSupportedPhoneNumberTypes(SupportedPhoneNumberTypesT&& value) { SetSupportedPhoneNumberTypes(std::forward<SupportedPhoneNumberTypesT>(value)); return *this;}
+    inline PhoneNumberCountry& AddSupportedPhoneNumberTypes(PhoneNumberType value) { m_supportedPhoneNumberTypesHasBeenSet = true; m_supportedPhoneNumberTypes.push_back(value); return *this; }
     ///@}
   private:
 

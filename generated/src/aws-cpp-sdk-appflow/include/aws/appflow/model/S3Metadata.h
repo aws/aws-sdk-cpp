@@ -29,7 +29,7 @@ namespace Model
   class S3Metadata
   {
   public:
-    AWS_APPFLOW_API S3Metadata();
+    AWS_APPFLOW_API S3Metadata() = default;
     AWS_APPFLOW_API S3Metadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API S3Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

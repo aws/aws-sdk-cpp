@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteReplicatorRequest::DeleteReplicatorRequest() : 
-    m_currentVersionHasBeenSet(false),
-    m_replicatorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicatorRequest::SerializePayload() const
 {
   return {};

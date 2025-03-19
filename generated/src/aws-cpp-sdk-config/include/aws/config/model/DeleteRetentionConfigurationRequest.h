@@ -21,7 +21,7 @@ namespace Model
   class DeleteRetentionConfigurationRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DeleteRetentionConfigurationRequest();
+    AWS_CONFIGSERVICE_API DeleteRetentionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the retention configuration to delete.</p>
      */
-    inline const Aws::String& GetRetentionConfigurationName() const{ return m_retentionConfigurationName; }
+    inline const Aws::String& GetRetentionConfigurationName() const { return m_retentionConfigurationName; }
     inline bool RetentionConfigurationNameHasBeenSet() const { return m_retentionConfigurationNameHasBeenSet; }
-    inline void SetRetentionConfigurationName(const Aws::String& value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName = value; }
-    inline void SetRetentionConfigurationName(Aws::String&& value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName = std::move(value); }
-    inline void SetRetentionConfigurationName(const char* value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName.assign(value); }
-    inline DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(const Aws::String& value) { SetRetentionConfigurationName(value); return *this;}
-    inline DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(Aws::String&& value) { SetRetentionConfigurationName(std::move(value)); return *this;}
-    inline DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(const char* value) { SetRetentionConfigurationName(value); return *this;}
+    template<typename RetentionConfigurationNameT = Aws::String>
+    void SetRetentionConfigurationName(RetentionConfigurationNameT&& value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName = std::forward<RetentionConfigurationNameT>(value); }
+    template<typename RetentionConfigurationNameT = Aws::String>
+    DeleteRetentionConfigurationRequest& WithRetentionConfigurationName(RetentionConfigurationNameT&& value) { SetRetentionConfigurationName(std::forward<RetentionConfigurationNameT>(value)); return *this;}
     ///@}
   private:
 

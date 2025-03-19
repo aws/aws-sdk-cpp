@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSqlInjectionMatchSetsResult::ListSqlInjectionMatchSetsResult()
-{
-}
-
 ListSqlInjectionMatchSetsResult::ListSqlInjectionMatchSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(con
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqlInjectionMatchSets"))
   {
     Aws::Utils::Array<JsonView> sqlInjectionMatchSetsJsonList = jsonValue.GetArray("SqlInjectionMatchSets");
@@ -42,14 +37,15 @@ ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(con
     {
       m_sqlInjectionMatchSets.push_back(sqlInjectionMatchSetsJsonList[sqlInjectionMatchSetsIndex].AsObject());
     }
+    m_sqlInjectionMatchSetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

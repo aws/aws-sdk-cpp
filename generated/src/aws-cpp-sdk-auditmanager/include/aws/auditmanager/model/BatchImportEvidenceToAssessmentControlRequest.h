@@ -23,7 +23,7 @@ namespace Model
   class BatchImportEvidenceToAssessmentControlRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlRequest();
+    AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,56 +38,50 @@ namespace Model
     /**
      * <p> The identifier for the assessment. </p>
      */
-    inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
+    inline const Aws::String& GetAssessmentId() const { return m_assessmentId; }
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
-    inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
-    inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
-    inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
-    inline BatchImportEvidenceToAssessmentControlRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
+    template<typename AssessmentIdT = Aws::String>
+    void SetAssessmentId(AssessmentIdT&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::forward<AssessmentIdT>(value); }
+    template<typename AssessmentIdT = Aws::String>
+    BatchImportEvidenceToAssessmentControlRequest& WithAssessmentId(AssessmentIdT&& value) { SetAssessmentId(std::forward<AssessmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the control set. </p>
      */
-    inline const Aws::String& GetControlSetId() const{ return m_controlSetId; }
+    inline const Aws::String& GetControlSetId() const { return m_controlSetId; }
     inline bool ControlSetIdHasBeenSet() const { return m_controlSetIdHasBeenSet; }
-    inline void SetControlSetId(const Aws::String& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = value; }
-    inline void SetControlSetId(Aws::String&& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = std::move(value); }
-    inline void SetControlSetId(const char* value) { m_controlSetIdHasBeenSet = true; m_controlSetId.assign(value); }
-    inline BatchImportEvidenceToAssessmentControlRequest& WithControlSetId(const Aws::String& value) { SetControlSetId(value); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithControlSetId(Aws::String&& value) { SetControlSetId(std::move(value)); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithControlSetId(const char* value) { SetControlSetId(value); return *this;}
+    template<typename ControlSetIdT = Aws::String>
+    void SetControlSetId(ControlSetIdT&& value) { m_controlSetIdHasBeenSet = true; m_controlSetId = std::forward<ControlSetIdT>(value); }
+    template<typename ControlSetIdT = Aws::String>
+    BatchImportEvidenceToAssessmentControlRequest& WithControlSetId(ControlSetIdT&& value) { SetControlSetId(std::forward<ControlSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the control. </p>
      */
-    inline const Aws::String& GetControlId() const{ return m_controlId; }
+    inline const Aws::String& GetControlId() const { return m_controlId; }
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
-    inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
-    inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
-    inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
-    inline BatchImportEvidenceToAssessmentControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
+    template<typename ControlIdT = Aws::String>
+    void SetControlId(ControlIdT&& value) { m_controlIdHasBeenSet = true; m_controlId = std::forward<ControlIdT>(value); }
+    template<typename ControlIdT = Aws::String>
+    BatchImportEvidenceToAssessmentControlRequest& WithControlId(ControlIdT&& value) { SetControlId(std::forward<ControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of manual evidence objects. </p>
      */
-    inline const Aws::Vector<ManualEvidence>& GetManualEvidence() const{ return m_manualEvidence; }
+    inline const Aws::Vector<ManualEvidence>& GetManualEvidence() const { return m_manualEvidence; }
     inline bool ManualEvidenceHasBeenSet() const { return m_manualEvidenceHasBeenSet; }
-    inline void SetManualEvidence(const Aws::Vector<ManualEvidence>& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence = value; }
-    inline void SetManualEvidence(Aws::Vector<ManualEvidence>&& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence = std::move(value); }
-    inline BatchImportEvidenceToAssessmentControlRequest& WithManualEvidence(const Aws::Vector<ManualEvidence>& value) { SetManualEvidence(value); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& WithManualEvidence(Aws::Vector<ManualEvidence>&& value) { SetManualEvidence(std::move(value)); return *this;}
-    inline BatchImportEvidenceToAssessmentControlRequest& AddManualEvidence(const ManualEvidence& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence.push_back(value); return *this; }
-    inline BatchImportEvidenceToAssessmentControlRequest& AddManualEvidence(ManualEvidence&& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence.push_back(std::move(value)); return *this; }
+    template<typename ManualEvidenceT = Aws::Vector<ManualEvidence>>
+    void SetManualEvidence(ManualEvidenceT&& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence = std::forward<ManualEvidenceT>(value); }
+    template<typename ManualEvidenceT = Aws::Vector<ManualEvidence>>
+    BatchImportEvidenceToAssessmentControlRequest& WithManualEvidence(ManualEvidenceT&& value) { SetManualEvidence(std::forward<ManualEvidenceT>(value)); return *this;}
+    template<typename ManualEvidenceT = ManualEvidence>
+    BatchImportEvidenceToAssessmentControlRequest& AddManualEvidence(ManualEvidenceT&& value) { m_manualEvidenceHasBeenSet = true; m_manualEvidence.emplace_back(std::forward<ManualEvidenceT>(value)); return *this; }
     ///@}
   private:
 

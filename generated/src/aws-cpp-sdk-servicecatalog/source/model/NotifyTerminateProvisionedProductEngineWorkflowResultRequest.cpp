@@ -12,17 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NotifyTerminateProvisionedProductEngineWorkflowResultRequest::NotifyTerminateProvisionedProductEngineWorkflowResultRequest() : 
-    m_workflowTokenHasBeenSet(false),
-    m_recordIdHasBeenSet(false),
-    m_status(EngineWorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String NotifyTerminateProvisionedProductEngineWorkflowResultRequest::SerializePayload() const
 {
   JsonValue payload;

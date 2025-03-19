@@ -32,7 +32,7 @@ namespace Model
   class AwsRedshiftClusterLoggingStatus
   {
   public:
-    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus() = default;
     AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the S3 bucket where the log files are stored.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline AwsRedshiftClusterLoggingStatus& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    AwsRedshiftClusterLoggingStatus& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message indicating that the logs failed to be delivered.</p>
      */
-    inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
+    inline const Aws::String& GetLastFailureMessage() const { return m_lastFailureMessage; }
     inline bool LastFailureMessageHasBeenSet() const { return m_lastFailureMessageHasBeenSet; }
-    inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = value; }
-    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::move(value); }
-    inline void SetLastFailureMessage(const char* value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage.assign(value); }
-    inline AwsRedshiftClusterLoggingStatus& WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(std::move(value)); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+    template<typename LastFailureMessageT = Aws::String>
+    void SetLastFailureMessage(LastFailureMessageT&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::forward<LastFailureMessageT>(value); }
+    template<typename LastFailureMessageT = Aws::String>
+    AwsRedshiftClusterLoggingStatus& WithLastFailureMessage(LastFailureMessageT&& value) { SetLastFailureMessage(std::forward<LastFailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * about the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetLastFailureTime() const{ return m_lastFailureTime; }
+    inline const Aws::String& GetLastFailureTime() const { return m_lastFailureTime; }
     inline bool LastFailureTimeHasBeenSet() const { return m_lastFailureTimeHasBeenSet; }
-    inline void SetLastFailureTime(const Aws::String& value) { m_lastFailureTimeHasBeenSet = true; m_lastFailureTime = value; }
-    inline void SetLastFailureTime(Aws::String&& value) { m_lastFailureTimeHasBeenSet = true; m_lastFailureTime = std::move(value); }
-    inline void SetLastFailureTime(const char* value) { m_lastFailureTimeHasBeenSet = true; m_lastFailureTime.assign(value); }
-    inline AwsRedshiftClusterLoggingStatus& WithLastFailureTime(const Aws::String& value) { SetLastFailureTime(value); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithLastFailureTime(Aws::String&& value) { SetLastFailureTime(std::move(value)); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithLastFailureTime(const char* value) { SetLastFailureTime(value); return *this;}
+    template<typename LastFailureTimeT = Aws::String>
+    void SetLastFailureTime(LastFailureTimeT&& value) { m_lastFailureTimeHasBeenSet = true; m_lastFailureTime = std::forward<LastFailureTimeT>(value); }
+    template<typename LastFailureTimeT = Aws::String>
+    AwsRedshiftClusterLoggingStatus& WithLastFailureTime(LastFailureTimeT&& value) { SetLastFailureTime(std::forward<LastFailureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,21 +83,19 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetLastSuccessfulDeliveryTime() const{ return m_lastSuccessfulDeliveryTime; }
+    inline const Aws::String& GetLastSuccessfulDeliveryTime() const { return m_lastSuccessfulDeliveryTime; }
     inline bool LastSuccessfulDeliveryTimeHasBeenSet() const { return m_lastSuccessfulDeliveryTimeHasBeenSet; }
-    inline void SetLastSuccessfulDeliveryTime(const Aws::String& value) { m_lastSuccessfulDeliveryTimeHasBeenSet = true; m_lastSuccessfulDeliveryTime = value; }
-    inline void SetLastSuccessfulDeliveryTime(Aws::String&& value) { m_lastSuccessfulDeliveryTimeHasBeenSet = true; m_lastSuccessfulDeliveryTime = std::move(value); }
-    inline void SetLastSuccessfulDeliveryTime(const char* value) { m_lastSuccessfulDeliveryTimeHasBeenSet = true; m_lastSuccessfulDeliveryTime.assign(value); }
-    inline AwsRedshiftClusterLoggingStatus& WithLastSuccessfulDeliveryTime(const Aws::String& value) { SetLastSuccessfulDeliveryTime(value); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithLastSuccessfulDeliveryTime(Aws::String&& value) { SetLastSuccessfulDeliveryTime(std::move(value)); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithLastSuccessfulDeliveryTime(const char* value) { SetLastSuccessfulDeliveryTime(value); return *this;}
+    template<typename LastSuccessfulDeliveryTimeT = Aws::String>
+    void SetLastSuccessfulDeliveryTime(LastSuccessfulDeliveryTimeT&& value) { m_lastSuccessfulDeliveryTimeHasBeenSet = true; m_lastSuccessfulDeliveryTime = std::forward<LastSuccessfulDeliveryTimeT>(value); }
+    template<typename LastSuccessfulDeliveryTimeT = Aws::String>
+    AwsRedshiftClusterLoggingStatus& WithLastSuccessfulDeliveryTime(LastSuccessfulDeliveryTimeT&& value) { SetLastSuccessfulDeliveryTime(std::forward<LastSuccessfulDeliveryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether logging is enabled.</p>
      */
-    inline bool GetLoggingEnabled() const{ return m_loggingEnabled; }
+    inline bool GetLoggingEnabled() const { return m_loggingEnabled; }
     inline bool LoggingEnabledHasBeenSet() const { return m_loggingEnabledHasBeenSet; }
     inline void SetLoggingEnabled(bool value) { m_loggingEnabledHasBeenSet = true; m_loggingEnabled = value; }
     inline AwsRedshiftClusterLoggingStatus& WithLoggingEnabled(bool value) { SetLoggingEnabled(value); return *this;}
@@ -113,14 +105,12 @@ namespace Model
     /**
      * <p>Provides the prefix applied to the log file names.</p>
      */
-    inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
-    inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
-    inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
-    inline AwsRedshiftClusterLoggingStatus& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
-    inline AwsRedshiftClusterLoggingStatus& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+    template<typename S3KeyPrefixT = Aws::String>
+    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
+    template<typename S3KeyPrefixT = Aws::String>
+    AwsRedshiftClusterLoggingStatus& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
     ///@}
   private:
 
@@ -136,7 +126,7 @@ namespace Model
     Aws::String m_lastSuccessfulDeliveryTime;
     bool m_lastSuccessfulDeliveryTimeHasBeenSet = false;
 
-    bool m_loggingEnabled;
+    bool m_loggingEnabled{false};
     bool m_loggingEnabledHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;

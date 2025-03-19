@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-Capacity::Capacity() : 
-    m_desiredUserSessions(0),
-    m_desiredUserSessionsHasBeenSet(false)
-{
-}
-
 Capacity::Capacity(JsonView jsonValue)
-  : Capacity()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Capacity& Capacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DesiredUserSessions"))
   {
     m_desiredUserSessions = jsonValue.GetInteger("DesiredUserSessions");
-
     m_desiredUserSessionsHasBeenSet = true;
   }
-
   return *this;
 }
 

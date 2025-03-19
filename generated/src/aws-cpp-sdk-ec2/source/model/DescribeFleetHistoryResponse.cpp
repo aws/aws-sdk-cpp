@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFleetHistoryResponse::DescribeFleetHistoryResponse()
-{
-}
-
 DescribeFleetHistoryResponse::DescribeFleetHistoryResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,32 +38,38 @@ DescribeFleetHistoryResponse& DescribeFleetHistoryResponse::operator =(const Aws
     if(!historyRecordsNode.IsNull())
     {
       XmlNode historyRecordsMember = historyRecordsNode.FirstChild("item");
+      m_historyRecordsHasBeenSet = !historyRecordsMember.IsNull();
       while(!historyRecordsMember.IsNull())
       {
         m_historyRecords.push_back(historyRecordsMember);
         historyRecordsMember = historyRecordsMember.NextNode("item");
       }
 
+      m_historyRecordsHasBeenSet = true;
     }
     XmlNode lastEvaluatedTimeNode = resultNode.FirstChild("lastEvaluatedTime");
     if(!lastEvaluatedTimeNode.IsNull())
     {
       m_lastEvaluatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastEvaluatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_lastEvaluatedTimeHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
       m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
+      m_fleetIdHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("startTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_startTimeHasBeenSet = true;
     }
   }
 
@@ -76,6 +78,7 @@ DescribeFleetHistoryResponse& DescribeFleetHistoryResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeFleetHistoryResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -21,7 +21,7 @@ namespace Model
   class DescribeTunnelRequest : public IoTSecureTunnelingRequest
   {
   public:
-    AWS_IOTSECURETUNNELING_API DescribeTunnelRequest();
+    AWS_IOTSECURETUNNELING_API DescribeTunnelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The tunnel to describe.</p>
      */
-    inline const Aws::String& GetTunnelId() const{ return m_tunnelId; }
+    inline const Aws::String& GetTunnelId() const { return m_tunnelId; }
     inline bool TunnelIdHasBeenSet() const { return m_tunnelIdHasBeenSet; }
-    inline void SetTunnelId(const Aws::String& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = value; }
-    inline void SetTunnelId(Aws::String&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::move(value); }
-    inline void SetTunnelId(const char* value) { m_tunnelIdHasBeenSet = true; m_tunnelId.assign(value); }
-    inline DescribeTunnelRequest& WithTunnelId(const Aws::String& value) { SetTunnelId(value); return *this;}
-    inline DescribeTunnelRequest& WithTunnelId(Aws::String&& value) { SetTunnelId(std::move(value)); return *this;}
-    inline DescribeTunnelRequest& WithTunnelId(const char* value) { SetTunnelId(value); return *this;}
+    template<typename TunnelIdT = Aws::String>
+    void SetTunnelId(TunnelIdT&& value) { m_tunnelIdHasBeenSet = true; m_tunnelId = std::forward<TunnelIdT>(value); }
+    template<typename TunnelIdT = Aws::String>
+    DescribeTunnelRequest& WithTunnelId(TunnelIdT&& value) { SetTunnelId(std::forward<TunnelIdT>(value)); return *this;}
     ///@}
   private:
 

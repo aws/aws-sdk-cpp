@@ -32,7 +32,7 @@ namespace Model
   class AudioFeatures
   {
   public:
-    AWS_CONNECT_API AudioFeatures();
+    AWS_CONNECT_API AudioFeatures() = default;
     AWS_CONNECT_API AudioFeatures(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AudioFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Makes echo reduction available to clients who connect to the meeting.</p>
      */
-    inline const MeetingFeatureStatus& GetEchoReduction() const{ return m_echoReduction; }
+    inline MeetingFeatureStatus GetEchoReduction() const { return m_echoReduction; }
     inline bool EchoReductionHasBeenSet() const { return m_echoReductionHasBeenSet; }
-    inline void SetEchoReduction(const MeetingFeatureStatus& value) { m_echoReductionHasBeenSet = true; m_echoReduction = value; }
-    inline void SetEchoReduction(MeetingFeatureStatus&& value) { m_echoReductionHasBeenSet = true; m_echoReduction = std::move(value); }
-    inline AudioFeatures& WithEchoReduction(const MeetingFeatureStatus& value) { SetEchoReduction(value); return *this;}
-    inline AudioFeatures& WithEchoReduction(MeetingFeatureStatus&& value) { SetEchoReduction(std::move(value)); return *this;}
+    inline void SetEchoReduction(MeetingFeatureStatus value) { m_echoReductionHasBeenSet = true; m_echoReduction = value; }
+    inline AudioFeatures& WithEchoReduction(MeetingFeatureStatus value) { SetEchoReduction(value); return *this;}
     ///@}
   private:
 
-    MeetingFeatureStatus m_echoReduction;
+    MeetingFeatureStatus m_echoReduction{MeetingFeatureStatus::NOT_SET};
     bool m_echoReductionHasBeenSet = false;
   };
 

@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AdvertiseByoipCidrRequest::AdvertiseByoipCidrRequest() : 
-    m_cidrHasBeenSet(false),
-    m_asnHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
-{
-}
-
 Aws::String AdvertiseByoipCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

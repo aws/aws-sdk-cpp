@@ -12,13 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSecretValueRequest::GetSecretValueRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_versionStageHasBeenSet(false)
-{
-}
-
 Aws::String GetSecretValueRequest::SerializePayload() const
 {
   JsonValue payload;

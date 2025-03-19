@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBShardGroupsRequest::DescribeDBShardGroupsRequest() : 
-    m_dBShardGroupIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBShardGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

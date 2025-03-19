@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ViewBillingResult::ViewBillingResult()
-{
-}
-
 ViewBillingResult::ViewBillingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("NextPageMarker"))
   {
     m_nextPageMarker = jsonValue.GetString("NextPageMarker");
-
+    m_nextPageMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingRecords"))
   {
     Aws::Utils::Array<JsonView> billingRecordsJsonList = jsonValue.GetArray("BillingRecords");
@@ -42,14 +37,15 @@ ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_billingRecords.push_back(billingRecordsJsonList[billingRecordsIndex].AsObject());
     }
+    m_billingRecordsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

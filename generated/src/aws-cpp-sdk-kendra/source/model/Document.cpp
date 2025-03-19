@@ -19,22 +19,7 @@ namespace kendra
 namespace Model
 {
 
-Document::Document() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_blobHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_hierarchicalAccessControlListHasBeenSet(false),
-    m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_accessControlConfigurationIdHasBeenSet(false)
-{
-}
-
 Document::Document(JsonView jsonValue)
-  : Document()
 {
   *this = jsonValue;
 }
@@ -44,30 +29,23 @@ Document& Document::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blob"))
   {
     m_blob = HashingUtils::Base64Decode(jsonValue.GetString("Blob"));
     m_blobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Path"))
   {
     m_s3Path = jsonValue.GetObject("S3Path");
-
     m_s3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -77,7 +55,6 @@ Document& Document::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessControlList"))
   {
     Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
@@ -87,7 +64,6 @@ Document& Document::operator =(JsonView jsonValue)
     }
     m_accessControlListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchicalAccessControlList"))
   {
     Aws::Utils::Array<JsonView> hierarchicalAccessControlListJsonList = jsonValue.GetArray("HierarchicalAccessControlList");
@@ -97,21 +73,16 @@ Document& Document::operator =(JsonView jsonValue)
     }
     m_hierarchicalAccessControlListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("ContentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessControlConfigurationId"))
   {
     m_accessControlConfigurationId = jsonValue.GetString("AccessControlConfigurationId");
-
     m_accessControlConfigurationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

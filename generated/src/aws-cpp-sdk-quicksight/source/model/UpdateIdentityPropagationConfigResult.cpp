@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateIdentityPropagationConfigResult::UpdateIdentityPropagationConfigResult() : 
-    m_status(0)
-{
-}
-
 UpdateIdentityPropagationConfigResult::UpdateIdentityPropagationConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateIdentityPropagationConfigResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ UpdateIdentityPropagationConfigResult& UpdateIdentityPropagationConfigResult::op
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

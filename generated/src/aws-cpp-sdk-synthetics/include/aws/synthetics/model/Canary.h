@@ -42,7 +42,7 @@ namespace Model
   class Canary
   {
   public:
-    AWS_SYNTHETICS_API Canary();
+    AWS_SYNTHETICS_API Canary() = default;
     AWS_SYNTHETICS_API Canary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Canary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,38 +52,34 @@ namespace Model
     /**
      * <p>The unique ID of this canary.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Canary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Canary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Canary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Canary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the canary.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Canary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Canary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Canary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Canary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CanaryCodeOutput& GetCode() const{ return m_code; }
+    inline const CanaryCodeOutput& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const CanaryCodeOutput& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(CanaryCodeOutput&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline Canary& WithCode(const CanaryCodeOutput& value) { SetCode(value); return *this;}
-    inline Canary& WithCode(CanaryCodeOutput&& value) { SetCode(std::move(value)); return *this;}
+    template<typename CodeT = CanaryCodeOutput>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = CanaryCodeOutput>
+    Canary& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * <p>The ARN of the IAM role used to run the canary. This role must include
      * <code>lambda.amazonaws.com</code> as a principal in the trust policy.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline Canary& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline Canary& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline Canary& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    Canary& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,29 +100,29 @@ namespace Model
      * <p>A structure that contains information about how often the canary is to run,
      * and when these runs are to stop.</p>
      */
-    inline const CanaryScheduleOutput& GetSchedule() const{ return m_schedule; }
+    inline const CanaryScheduleOutput& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const CanaryScheduleOutput& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(CanaryScheduleOutput&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline Canary& WithSchedule(const CanaryScheduleOutput& value) { SetSchedule(value); return *this;}
-    inline Canary& WithSchedule(CanaryScheduleOutput&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = CanaryScheduleOutput>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = CanaryScheduleOutput>
+    Canary& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CanaryRunConfigOutput& GetRunConfig() const{ return m_runConfig; }
+    inline const CanaryRunConfigOutput& GetRunConfig() const { return m_runConfig; }
     inline bool RunConfigHasBeenSet() const { return m_runConfigHasBeenSet; }
-    inline void SetRunConfig(const CanaryRunConfigOutput& value) { m_runConfigHasBeenSet = true; m_runConfig = value; }
-    inline void SetRunConfig(CanaryRunConfigOutput&& value) { m_runConfigHasBeenSet = true; m_runConfig = std::move(value); }
-    inline Canary& WithRunConfig(const CanaryRunConfigOutput& value) { SetRunConfig(value); return *this;}
-    inline Canary& WithRunConfig(CanaryRunConfigOutput&& value) { SetRunConfig(std::move(value)); return *this;}
+    template<typename RunConfigT = CanaryRunConfigOutput>
+    void SetRunConfig(RunConfigT&& value) { m_runConfigHasBeenSet = true; m_runConfig = std::forward<RunConfigT>(value); }
+    template<typename RunConfigT = CanaryRunConfigOutput>
+    Canary& WithRunConfig(RunConfigT&& value) { SetRunConfig(std::forward<RunConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days to retain data about successful runs of this canary.</p>
      */
-    inline int GetSuccessRetentionPeriodInDays() const{ return m_successRetentionPeriodInDays; }
+    inline int GetSuccessRetentionPeriodInDays() const { return m_successRetentionPeriodInDays; }
     inline bool SuccessRetentionPeriodInDaysHasBeenSet() const { return m_successRetentionPeriodInDaysHasBeenSet; }
     inline void SetSuccessRetentionPeriodInDays(int value) { m_successRetentionPeriodInDaysHasBeenSet = true; m_successRetentionPeriodInDays = value; }
     inline Canary& WithSuccessRetentionPeriodInDays(int value) { SetSuccessRetentionPeriodInDays(value); return *this;}
@@ -138,7 +132,7 @@ namespace Model
     /**
      * <p>The number of days to retain data about failed runs of this canary.</p>
      */
-    inline int GetFailureRetentionPeriodInDays() const{ return m_failureRetentionPeriodInDays; }
+    inline int GetFailureRetentionPeriodInDays() const { return m_failureRetentionPeriodInDays; }
     inline bool FailureRetentionPeriodInDaysHasBeenSet() const { return m_failureRetentionPeriodInDaysHasBeenSet; }
     inline void SetFailureRetentionPeriodInDays(int value) { m_failureRetentionPeriodInDaysHasBeenSet = true; m_failureRetentionPeriodInDays = value; }
     inline Canary& WithFailureRetentionPeriodInDays(int value) { SetFailureRetentionPeriodInDays(value); return *this;}
@@ -148,12 +142,12 @@ namespace Model
     /**
      * <p>A structure that contains information about the canary's status.</p>
      */
-    inline const CanaryStatus& GetStatus() const{ return m_status; }
+    inline const CanaryStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CanaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CanaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Canary& WithStatus(const CanaryStatus& value) { SetStatus(value); return *this;}
-    inline Canary& WithStatus(CanaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = CanaryStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = CanaryStatus>
+    Canary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,12 +155,12 @@ namespace Model
      * <p>A structure that contains information about when the canary was created,
      * modified, and most recently run.</p>
      */
-    inline const CanaryTimeline& GetTimeline() const{ return m_timeline; }
+    inline const CanaryTimeline& GetTimeline() const { return m_timeline; }
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-    inline void SetTimeline(const CanaryTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-    inline void SetTimeline(CanaryTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-    inline Canary& WithTimeline(const CanaryTimeline& value) { SetTimeline(value); return *this;}
-    inline Canary& WithTimeline(CanaryTimeline&& value) { SetTimeline(std::move(value)); return *this;}
+    template<typename TimelineT = CanaryTimeline>
+    void SetTimeline(TimelineT&& value) { m_timelineHasBeenSet = true; m_timeline = std::forward<TimelineT>(value); }
+    template<typename TimelineT = CanaryTimeline>
+    Canary& WithTimeline(TimelineT&& value) { SetTimeline(std::forward<TimelineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,14 +168,12 @@ namespace Model
      * <p>The location in Amazon S3 where Synthetics stores artifacts from the runs of
      * this canary. Artifacts include the log file, screenshots, and HAR files.</p>
      */
-    inline const Aws::String& GetArtifactS3Location() const{ return m_artifactS3Location; }
+    inline const Aws::String& GetArtifactS3Location() const { return m_artifactS3Location; }
     inline bool ArtifactS3LocationHasBeenSet() const { return m_artifactS3LocationHasBeenSet; }
-    inline void SetArtifactS3Location(const Aws::String& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = value; }
-    inline void SetArtifactS3Location(Aws::String&& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = std::move(value); }
-    inline void SetArtifactS3Location(const char* value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location.assign(value); }
-    inline Canary& WithArtifactS3Location(const Aws::String& value) { SetArtifactS3Location(value); return *this;}
-    inline Canary& WithArtifactS3Location(Aws::String&& value) { SetArtifactS3Location(std::move(value)); return *this;}
-    inline Canary& WithArtifactS3Location(const char* value) { SetArtifactS3Location(value); return *this;}
+    template<typename ArtifactS3LocationT = Aws::String>
+    void SetArtifactS3Location(ArtifactS3LocationT&& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = std::forward<ArtifactS3LocationT>(value); }
+    template<typename ArtifactS3LocationT = Aws::String>
+    Canary& WithArtifactS3Location(ArtifactS3LocationT&& value) { SetArtifactS3Location(std::forward<ArtifactS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,14 +183,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html">Resources
      * and Conditions for Lambda Actions</a>.</p>
      */
-    inline const Aws::String& GetEngineArn() const{ return m_engineArn; }
+    inline const Aws::String& GetEngineArn() const { return m_engineArn; }
     inline bool EngineArnHasBeenSet() const { return m_engineArnHasBeenSet; }
-    inline void SetEngineArn(const Aws::String& value) { m_engineArnHasBeenSet = true; m_engineArn = value; }
-    inline void SetEngineArn(Aws::String&& value) { m_engineArnHasBeenSet = true; m_engineArn = std::move(value); }
-    inline void SetEngineArn(const char* value) { m_engineArnHasBeenSet = true; m_engineArn.assign(value); }
-    inline Canary& WithEngineArn(const Aws::String& value) { SetEngineArn(value); return *this;}
-    inline Canary& WithEngineArn(Aws::String&& value) { SetEngineArn(std::move(value)); return *this;}
-    inline Canary& WithEngineArn(const char* value) { SetEngineArn(value); return *this;}
+    template<typename EngineArnT = Aws::String>
+    void SetEngineArn(EngineArnT&& value) { m_engineArnHasBeenSet = true; m_engineArn = std::forward<EngineArnT>(value); }
+    template<typename EngineArnT = Aws::String>
+    Canary& WithEngineArn(EngineArnT&& value) { SetEngineArn(std::forward<EngineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,24 +198,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
-    inline const Aws::String& GetRuntimeVersion() const{ return m_runtimeVersion; }
+    inline const Aws::String& GetRuntimeVersion() const { return m_runtimeVersion; }
     inline bool RuntimeVersionHasBeenSet() const { return m_runtimeVersionHasBeenSet; }
-    inline void SetRuntimeVersion(const Aws::String& value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion = value; }
-    inline void SetRuntimeVersion(Aws::String&& value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion = std::move(value); }
-    inline void SetRuntimeVersion(const char* value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion.assign(value); }
-    inline Canary& WithRuntimeVersion(const Aws::String& value) { SetRuntimeVersion(value); return *this;}
-    inline Canary& WithRuntimeVersion(Aws::String&& value) { SetRuntimeVersion(std::move(value)); return *this;}
-    inline Canary& WithRuntimeVersion(const char* value) { SetRuntimeVersion(value); return *this;}
+    template<typename RuntimeVersionT = Aws::String>
+    void SetRuntimeVersion(RuntimeVersionT&& value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion = std::forward<RuntimeVersionT>(value); }
+    template<typename RuntimeVersionT = Aws::String>
+    Canary& WithRuntimeVersion(RuntimeVersionT&& value) { SetRuntimeVersion(std::forward<RuntimeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcConfigOutput& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfigOutput& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfigOutput& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfigOutput&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline Canary& WithVpcConfig(const VpcConfigOutput& value) { SetVpcConfig(value); return *this;}
-    inline Canary& WithVpcConfig(VpcConfigOutput&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfigOutput>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfigOutput>
+    Canary& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,12 +223,12 @@ namespace Model
      * screenshots, and the coordinates of any parts of the screen to ignore during the
      * visual monitoring comparison.</p>
      */
-    inline const VisualReferenceOutput& GetVisualReference() const{ return m_visualReference; }
+    inline const VisualReferenceOutput& GetVisualReference() const { return m_visualReference; }
     inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
-    inline void SetVisualReference(const VisualReferenceOutput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
-    inline void SetVisualReference(VisualReferenceOutput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
-    inline Canary& WithVisualReference(const VisualReferenceOutput& value) { SetVisualReference(value); return *this;}
-    inline Canary& WithVisualReference(VisualReferenceOutput&& value) { SetVisualReference(std::move(value)); return *this;}
+    template<typename VisualReferenceT = VisualReferenceOutput>
+    void SetVisualReference(VisualReferenceT&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::forward<VisualReferenceT>(value); }
+    template<typename VisualReferenceT = VisualReferenceOutput>
+    Canary& WithVisualReference(VisualReferenceT&& value) { SetVisualReference(std::forward<VisualReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,31 +242,26 @@ namespace Model
      * operation determines whether the Lambda functions and layers will be
      * deleted.</p>
      */
-    inline const ProvisionedResourceCleanupSetting& GetProvisionedResourceCleanup() const{ return m_provisionedResourceCleanup; }
+    inline ProvisionedResourceCleanupSetting GetProvisionedResourceCleanup() const { return m_provisionedResourceCleanup; }
     inline bool ProvisionedResourceCleanupHasBeenSet() const { return m_provisionedResourceCleanupHasBeenSet; }
-    inline void SetProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
-    inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = std::move(value); }
-    inline Canary& WithProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { SetProvisionedResourceCleanup(value); return *this;}
-    inline Canary& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { SetProvisionedResourceCleanup(std::move(value)); return *this;}
+    inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
+    inline Canary& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { SetProvisionedResourceCleanup(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of key-value pairs that are associated with the canary.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Canary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Canary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Canary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Canary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Canary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Canary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Canary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Canary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Canary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Canary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Canary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -287,12 +270,12 @@ namespace Model
      * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
      * S3.</p>
      */
-    inline const ArtifactConfigOutput& GetArtifactConfig() const{ return m_artifactConfig; }
+    inline const ArtifactConfigOutput& GetArtifactConfig() const { return m_artifactConfig; }
     inline bool ArtifactConfigHasBeenSet() const { return m_artifactConfigHasBeenSet; }
-    inline void SetArtifactConfig(const ArtifactConfigOutput& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = value; }
-    inline void SetArtifactConfig(ArtifactConfigOutput&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::move(value); }
-    inline Canary& WithArtifactConfig(const ArtifactConfigOutput& value) { SetArtifactConfig(value); return *this;}
-    inline Canary& WithArtifactConfig(ArtifactConfigOutput&& value) { SetArtifactConfig(std::move(value)); return *this;}
+    template<typename ArtifactConfigT = ArtifactConfigOutput>
+    void SetArtifactConfig(ArtifactConfigT&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::forward<ArtifactConfigT>(value); }
+    template<typename ArtifactConfigT = ArtifactConfigOutput>
+    Canary& WithArtifactConfig(ArtifactConfigT&& value) { SetArtifactConfig(std::forward<ArtifactConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -314,10 +297,10 @@ namespace Model
     CanaryRunConfigOutput m_runConfig;
     bool m_runConfigHasBeenSet = false;
 
-    int m_successRetentionPeriodInDays;
+    int m_successRetentionPeriodInDays{0};
     bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
-    int m_failureRetentionPeriodInDays;
+    int m_failureRetentionPeriodInDays{0};
     bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
     CanaryStatus m_status;
@@ -341,7 +324,7 @@ namespace Model
     VisualReferenceOutput m_visualReference;
     bool m_visualReferenceHasBeenSet = false;
 
-    ProvisionedResourceCleanupSetting m_provisionedResourceCleanup;
+    ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
     bool m_provisionedResourceCleanupHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

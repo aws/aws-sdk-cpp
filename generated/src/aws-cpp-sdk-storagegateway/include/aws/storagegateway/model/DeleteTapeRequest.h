@@ -24,7 +24,7 @@ namespace Model
   class DeleteTapeRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DeleteTapeRequest();
+    AWS_STORAGEGATEWAY_API DeleteTapeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
      * list of gateways for your account and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline DeleteTapeRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DeleteTapeRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DeleteTapeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DeleteTapeRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
      */
-    inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
+    inline const Aws::String& GetTapeARN() const { return m_tapeARN; }
     inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
-    inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::move(value); }
-    inline void SetTapeARN(const char* value) { m_tapeARNHasBeenSet = true; m_tapeARN.assign(value); }
-    inline DeleteTapeRequest& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-    inline DeleteTapeRequest& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-    inline DeleteTapeRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    template<typename TapeARNT = Aws::String>
+    void SetTapeARN(TapeARNT&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::forward<TapeARNT>(value); }
+    template<typename TapeARNT = Aws::String>
+    DeleteTapeRequest& WithTapeARN(TapeARNT&& value) { SetTapeARN(std::forward<TapeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * to <code>governance</code> can be deleted. Archived tapes with tape retention
      * lock set to <code>compliance</code> can't be deleted.</p>
      */
-    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+    inline bool GetBypassGovernanceRetention() const { return m_bypassGovernanceRetention; }
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
     inline DeleteTapeRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
@@ -87,7 +83,7 @@ namespace Model
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet = false;
 
-    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetention{false};
     bool m_bypassGovernanceRetentionHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class X12Delimiters
   {
   public:
-    AWS_B2BI_API X12Delimiters();
+    AWS_B2BI_API X12Delimiters() = default;
     AWS_B2BI_API X12Delimiters(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API X12Delimiters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The component, or sub-element, separator. The default value is <code>:</code>
      * (colon).</p>
      */
-    inline const Aws::String& GetComponentSeparator() const{ return m_componentSeparator; }
+    inline const Aws::String& GetComponentSeparator() const { return m_componentSeparator; }
     inline bool ComponentSeparatorHasBeenSet() const { return m_componentSeparatorHasBeenSet; }
-    inline void SetComponentSeparator(const Aws::String& value) { m_componentSeparatorHasBeenSet = true; m_componentSeparator = value; }
-    inline void SetComponentSeparator(Aws::String&& value) { m_componentSeparatorHasBeenSet = true; m_componentSeparator = std::move(value); }
-    inline void SetComponentSeparator(const char* value) { m_componentSeparatorHasBeenSet = true; m_componentSeparator.assign(value); }
-    inline X12Delimiters& WithComponentSeparator(const Aws::String& value) { SetComponentSeparator(value); return *this;}
-    inline X12Delimiters& WithComponentSeparator(Aws::String&& value) { SetComponentSeparator(std::move(value)); return *this;}
-    inline X12Delimiters& WithComponentSeparator(const char* value) { SetComponentSeparator(value); return *this;}
+    template<typename ComponentSeparatorT = Aws::String>
+    void SetComponentSeparator(ComponentSeparatorT&& value) { m_componentSeparatorHasBeenSet = true; m_componentSeparator = std::forward<ComponentSeparatorT>(value); }
+    template<typename ComponentSeparatorT = Aws::String>
+    X12Delimiters& WithComponentSeparator(ComponentSeparatorT&& value) { SetComponentSeparator(std::forward<ComponentSeparatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * <p>The data element separator. The default value is <code>*</code>
      * (asterisk).</p>
      */
-    inline const Aws::String& GetDataElementSeparator() const{ return m_dataElementSeparator; }
+    inline const Aws::String& GetDataElementSeparator() const { return m_dataElementSeparator; }
     inline bool DataElementSeparatorHasBeenSet() const { return m_dataElementSeparatorHasBeenSet; }
-    inline void SetDataElementSeparator(const Aws::String& value) { m_dataElementSeparatorHasBeenSet = true; m_dataElementSeparator = value; }
-    inline void SetDataElementSeparator(Aws::String&& value) { m_dataElementSeparatorHasBeenSet = true; m_dataElementSeparator = std::move(value); }
-    inline void SetDataElementSeparator(const char* value) { m_dataElementSeparatorHasBeenSet = true; m_dataElementSeparator.assign(value); }
-    inline X12Delimiters& WithDataElementSeparator(const Aws::String& value) { SetDataElementSeparator(value); return *this;}
-    inline X12Delimiters& WithDataElementSeparator(Aws::String&& value) { SetDataElementSeparator(std::move(value)); return *this;}
-    inline X12Delimiters& WithDataElementSeparator(const char* value) { SetDataElementSeparator(value); return *this;}
+    template<typename DataElementSeparatorT = Aws::String>
+    void SetDataElementSeparator(DataElementSeparatorT&& value) { m_dataElementSeparatorHasBeenSet = true; m_dataElementSeparator = std::forward<DataElementSeparatorT>(value); }
+    template<typename DataElementSeparatorT = Aws::String>
+    X12Delimiters& WithDataElementSeparator(DataElementSeparatorT&& value) { SetDataElementSeparator(std::forward<DataElementSeparatorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The segment terminator. The default value is <code>~</code> (tilde).</p>
      */
-    inline const Aws::String& GetSegmentTerminator() const{ return m_segmentTerminator; }
+    inline const Aws::String& GetSegmentTerminator() const { return m_segmentTerminator; }
     inline bool SegmentTerminatorHasBeenSet() const { return m_segmentTerminatorHasBeenSet; }
-    inline void SetSegmentTerminator(const Aws::String& value) { m_segmentTerminatorHasBeenSet = true; m_segmentTerminator = value; }
-    inline void SetSegmentTerminator(Aws::String&& value) { m_segmentTerminatorHasBeenSet = true; m_segmentTerminator = std::move(value); }
-    inline void SetSegmentTerminator(const char* value) { m_segmentTerminatorHasBeenSet = true; m_segmentTerminator.assign(value); }
-    inline X12Delimiters& WithSegmentTerminator(const Aws::String& value) { SetSegmentTerminator(value); return *this;}
-    inline X12Delimiters& WithSegmentTerminator(Aws::String&& value) { SetSegmentTerminator(std::move(value)); return *this;}
-    inline X12Delimiters& WithSegmentTerminator(const char* value) { SetSegmentTerminator(value); return *this;}
+    template<typename SegmentTerminatorT = Aws::String>
+    void SetSegmentTerminator(SegmentTerminatorT&& value) { m_segmentTerminatorHasBeenSet = true; m_segmentTerminator = std::forward<SegmentTerminatorT>(value); }
+    template<typename SegmentTerminatorT = Aws::String>
+    X12Delimiters& WithSegmentTerminator(SegmentTerminatorT&& value) { SetSegmentTerminator(std::forward<SegmentTerminatorT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-VietnamAdditionalInfo::VietnamAdditionalInfo() : 
-    m_electronicTransactionCodeNumberHasBeenSet(false),
-    m_enterpriseIdentificationNumberHasBeenSet(false),
-    m_paymentVoucherNumberHasBeenSet(false),
-    m_paymentVoucherNumberDateHasBeenSet(false)
-{
-}
-
 VietnamAdditionalInfo::VietnamAdditionalInfo(JsonView jsonValue)
-  : VietnamAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VietnamAdditionalInfo& VietnamAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("electronicTransactionCodeNumber"))
   {
     m_electronicTransactionCodeNumber = jsonValue.GetString("electronicTransactionCodeNumber");
-
     m_electronicTransactionCodeNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enterpriseIdentificationNumber"))
   {
     m_enterpriseIdentificationNumber = jsonValue.GetString("enterpriseIdentificationNumber");
-
     m_enterpriseIdentificationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentVoucherNumber"))
   {
     m_paymentVoucherNumber = jsonValue.GetString("paymentVoucherNumber");
-
     m_paymentVoucherNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentVoucherNumberDate"))
   {
     m_paymentVoucherNumberDate = jsonValue.GetString("paymentVoucherNumberDate");
-
     m_paymentVoucherNumberDateHasBeenSet = true;
   }
-
   return *this;
 }
 

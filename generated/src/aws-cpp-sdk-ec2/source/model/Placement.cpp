@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Placement::Placement() : 
-    m_affinityHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
-{
-}
-
 Placement::Placement(const XmlNode& xmlNode)
-  : Placement()
 {
   *this = xmlNode;
 }
@@ -74,7 +58,7 @@ Placement& Placement::operator =(const XmlNode& xmlNode)
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
     XmlNode spreadDomainNode = resultNode.FirstChild("spreadDomain");

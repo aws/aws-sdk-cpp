@@ -12,16 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGatewayInformationRequest::UpdateGatewayInformationRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false),
-    m_gatewayTimezoneHasBeenSet(false),
-    m_cloudWatchLogGroupARNHasBeenSet(false),
-    m_gatewayCapacity(GatewayCapacity::NOT_SET),
-    m_gatewayCapacityHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGatewayInformationRequest::SerializePayload() const
 {
   JsonValue payload;

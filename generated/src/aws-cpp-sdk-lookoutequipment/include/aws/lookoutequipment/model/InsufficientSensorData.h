@@ -33,7 +33,7 @@ namespace Model
   class InsufficientSensorData
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData();
+    AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData() = default;
     AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> Parameter that describes the total number of sensors that have data
      * completely missing for it. </p>
      */
-    inline const MissingCompleteSensorData& GetMissingCompleteSensorData() const{ return m_missingCompleteSensorData; }
+    inline const MissingCompleteSensorData& GetMissingCompleteSensorData() const { return m_missingCompleteSensorData; }
     inline bool MissingCompleteSensorDataHasBeenSet() const { return m_missingCompleteSensorDataHasBeenSet; }
-    inline void SetMissingCompleteSensorData(const MissingCompleteSensorData& value) { m_missingCompleteSensorDataHasBeenSet = true; m_missingCompleteSensorData = value; }
-    inline void SetMissingCompleteSensorData(MissingCompleteSensorData&& value) { m_missingCompleteSensorDataHasBeenSet = true; m_missingCompleteSensorData = std::move(value); }
-    inline InsufficientSensorData& WithMissingCompleteSensorData(const MissingCompleteSensorData& value) { SetMissingCompleteSensorData(value); return *this;}
-    inline InsufficientSensorData& WithMissingCompleteSensorData(MissingCompleteSensorData&& value) { SetMissingCompleteSensorData(std::move(value)); return *this;}
+    template<typename MissingCompleteSensorDataT = MissingCompleteSensorData>
+    void SetMissingCompleteSensorData(MissingCompleteSensorDataT&& value) { m_missingCompleteSensorDataHasBeenSet = true; m_missingCompleteSensorData = std::forward<MissingCompleteSensorDataT>(value); }
+    template<typename MissingCompleteSensorDataT = MissingCompleteSensorData>
+    InsufficientSensorData& WithMissingCompleteSensorData(MissingCompleteSensorDataT&& value) { SetMissingCompleteSensorData(std::forward<MissingCompleteSensorDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p> Parameter that describes the total number of sensors that have a short date
      * range of less than 14 days of data overall. </p>
      */
-    inline const SensorsWithShortDateRange& GetSensorsWithShortDateRange() const{ return m_sensorsWithShortDateRange; }
+    inline const SensorsWithShortDateRange& GetSensorsWithShortDateRange() const { return m_sensorsWithShortDateRange; }
     inline bool SensorsWithShortDateRangeHasBeenSet() const { return m_sensorsWithShortDateRangeHasBeenSet; }
-    inline void SetSensorsWithShortDateRange(const SensorsWithShortDateRange& value) { m_sensorsWithShortDateRangeHasBeenSet = true; m_sensorsWithShortDateRange = value; }
-    inline void SetSensorsWithShortDateRange(SensorsWithShortDateRange&& value) { m_sensorsWithShortDateRangeHasBeenSet = true; m_sensorsWithShortDateRange = std::move(value); }
-    inline InsufficientSensorData& WithSensorsWithShortDateRange(const SensorsWithShortDateRange& value) { SetSensorsWithShortDateRange(value); return *this;}
-    inline InsufficientSensorData& WithSensorsWithShortDateRange(SensorsWithShortDateRange&& value) { SetSensorsWithShortDateRange(std::move(value)); return *this;}
+    template<typename SensorsWithShortDateRangeT = SensorsWithShortDateRange>
+    void SetSensorsWithShortDateRange(SensorsWithShortDateRangeT&& value) { m_sensorsWithShortDateRangeHasBeenSet = true; m_sensorsWithShortDateRange = std::forward<SensorsWithShortDateRangeT>(value); }
+    template<typename SensorsWithShortDateRangeT = SensorsWithShortDateRange>
+    InsufficientSensorData& WithSensorsWithShortDateRange(SensorsWithShortDateRangeT&& value) { SetSensorsWithShortDateRange(std::forward<SensorsWithShortDateRangeT>(value)); return *this;}
     ///@}
   private:
 

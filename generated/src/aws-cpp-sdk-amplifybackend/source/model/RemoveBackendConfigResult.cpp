@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveBackendConfigResult::RemoveBackendConfigResult()
-{
-}
-
 RemoveBackendConfigResult::RemoveBackendConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RemoveBackendConfigResult& RemoveBackendConfigResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
+    m_errorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,14 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEnrollmentStatusesForOrganizationRequest::GetEnrollmentStatusesForOrganizationRequest() : 
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetEnrollmentStatusesForOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

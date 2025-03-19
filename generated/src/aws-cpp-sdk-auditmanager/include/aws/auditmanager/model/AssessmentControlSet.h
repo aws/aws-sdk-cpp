@@ -37,7 +37,7 @@ namespace Model
   class AssessmentControlSet
   {
   public:
-    AWS_AUDITMANAGER_API AssessmentControlSet();
+    AWS_AUDITMANAGER_API AssessmentControlSet() = default;
     AWS_AUDITMANAGER_API AssessmentControlSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API AssessmentControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,82 +48,76 @@ namespace Model
      * <p> The identifier of the control set in the assessment. This is the control set
      * name in a plain string format. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssessmentControlSet& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssessmentControlSet& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssessmentControlSet& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssessmentControlSet& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The description for the control set. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AssessmentControlSet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AssessmentControlSet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AssessmentControlSet& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AssessmentControlSet& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the control set. </p>
      */
-    inline const ControlSetStatus& GetStatus() const{ return m_status; }
+    inline ControlSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ControlSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ControlSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AssessmentControlSet& WithStatus(const ControlSetStatus& value) { SetStatus(value); return *this;}
-    inline AssessmentControlSet& WithStatus(ControlSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ControlSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AssessmentControlSet& WithStatus(ControlSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The roles that are associated with the control set. </p>
      */
-    inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
+    inline const Aws::Vector<Role>& GetRoles() const { return m_roles; }
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
-    inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
-    inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
-    inline AssessmentControlSet& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
-    inline AssessmentControlSet& WithRoles(Aws::Vector<Role>&& value) { SetRoles(std::move(value)); return *this;}
-    inline AssessmentControlSet& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
-    inline AssessmentControlSet& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
+    template<typename RolesT = Aws::Vector<Role>>
+    void SetRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles = std::forward<RolesT>(value); }
+    template<typename RolesT = Aws::Vector<Role>>
+    AssessmentControlSet& WithRoles(RolesT&& value) { SetRoles(std::forward<RolesT>(value)); return *this;}
+    template<typename RolesT = Role>
+    AssessmentControlSet& AddRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles.emplace_back(std::forward<RolesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The list of controls that's contained with the control set. </p>
      */
-    inline const Aws::Vector<AssessmentControl>& GetControls() const{ return m_controls; }
+    inline const Aws::Vector<AssessmentControl>& GetControls() const { return m_controls; }
     inline bool ControlsHasBeenSet() const { return m_controlsHasBeenSet; }
-    inline void SetControls(const Aws::Vector<AssessmentControl>& value) { m_controlsHasBeenSet = true; m_controls = value; }
-    inline void SetControls(Aws::Vector<AssessmentControl>&& value) { m_controlsHasBeenSet = true; m_controls = std::move(value); }
-    inline AssessmentControlSet& WithControls(const Aws::Vector<AssessmentControl>& value) { SetControls(value); return *this;}
-    inline AssessmentControlSet& WithControls(Aws::Vector<AssessmentControl>&& value) { SetControls(std::move(value)); return *this;}
-    inline AssessmentControlSet& AddControls(const AssessmentControl& value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
-    inline AssessmentControlSet& AddControls(AssessmentControl&& value) { m_controlsHasBeenSet = true; m_controls.push_back(std::move(value)); return *this; }
+    template<typename ControlsT = Aws::Vector<AssessmentControl>>
+    void SetControls(ControlsT&& value) { m_controlsHasBeenSet = true; m_controls = std::forward<ControlsT>(value); }
+    template<typename ControlsT = Aws::Vector<AssessmentControl>>
+    AssessmentControlSet& WithControls(ControlsT&& value) { SetControls(std::forward<ControlsT>(value)); return *this;}
+    template<typename ControlsT = AssessmentControl>
+    AssessmentControlSet& AddControls(ControlsT&& value) { m_controlsHasBeenSet = true; m_controls.emplace_back(std::forward<ControlsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The delegations that are associated with the control set. </p>
      */
-    inline const Aws::Vector<Delegation>& GetDelegations() const{ return m_delegations; }
+    inline const Aws::Vector<Delegation>& GetDelegations() const { return m_delegations; }
     inline bool DelegationsHasBeenSet() const { return m_delegationsHasBeenSet; }
-    inline void SetDelegations(const Aws::Vector<Delegation>& value) { m_delegationsHasBeenSet = true; m_delegations = value; }
-    inline void SetDelegations(Aws::Vector<Delegation>&& value) { m_delegationsHasBeenSet = true; m_delegations = std::move(value); }
-    inline AssessmentControlSet& WithDelegations(const Aws::Vector<Delegation>& value) { SetDelegations(value); return *this;}
-    inline AssessmentControlSet& WithDelegations(Aws::Vector<Delegation>&& value) { SetDelegations(std::move(value)); return *this;}
-    inline AssessmentControlSet& AddDelegations(const Delegation& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(value); return *this; }
-    inline AssessmentControlSet& AddDelegations(Delegation&& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(std::move(value)); return *this; }
+    template<typename DelegationsT = Aws::Vector<Delegation>>
+    void SetDelegations(DelegationsT&& value) { m_delegationsHasBeenSet = true; m_delegations = std::forward<DelegationsT>(value); }
+    template<typename DelegationsT = Aws::Vector<Delegation>>
+    AssessmentControlSet& WithDelegations(DelegationsT&& value) { SetDelegations(std::forward<DelegationsT>(value)); return *this;}
+    template<typename DelegationsT = Delegation>
+    AssessmentControlSet& AddDelegations(DelegationsT&& value) { m_delegationsHasBeenSet = true; m_delegations.emplace_back(std::forward<DelegationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,7 +125,7 @@ namespace Model
      * <p> The total number of evidence objects that are retrieved automatically for
      * the control set. </p>
      */
-    inline int GetSystemEvidenceCount() const{ return m_systemEvidenceCount; }
+    inline int GetSystemEvidenceCount() const { return m_systemEvidenceCount; }
     inline bool SystemEvidenceCountHasBeenSet() const { return m_systemEvidenceCountHasBeenSet; }
     inline void SetSystemEvidenceCount(int value) { m_systemEvidenceCountHasBeenSet = true; m_systemEvidenceCount = value; }
     inline AssessmentControlSet& WithSystemEvidenceCount(int value) { SetSystemEvidenceCount(value); return *this;}
@@ -142,7 +136,7 @@ namespace Model
      * <p> The total number of evidence objects that are uploaded manually to the
      * control set. </p>
      */
-    inline int GetManualEvidenceCount() const{ return m_manualEvidenceCount; }
+    inline int GetManualEvidenceCount() const { return m_manualEvidenceCount; }
     inline bool ManualEvidenceCountHasBeenSet() const { return m_manualEvidenceCountHasBeenSet; }
     inline void SetManualEvidenceCount(int value) { m_manualEvidenceCountHasBeenSet = true; m_manualEvidenceCount = value; }
     inline AssessmentControlSet& WithManualEvidenceCount(int value) { SetManualEvidenceCount(value); return *this;}
@@ -155,7 +149,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ControlSetStatus m_status;
+    ControlSetStatus m_status{ControlSetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
@@ -167,10 +161,10 @@ namespace Model
     Aws::Vector<Delegation> m_delegations;
     bool m_delegationsHasBeenSet = false;
 
-    int m_systemEvidenceCount;
+    int m_systemEvidenceCount{0};
     bool m_systemEvidenceCountHasBeenSet = false;
 
-    int m_manualEvidenceCount;
+    int m_manualEvidenceCount{0};
     bool m_manualEvidenceCountHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class DescribeLoadBalancerPoliciesResult
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesResult();
+    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesResult() = default;
     AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>Information about the policies.</p>
      */
-    inline const Aws::Vector<PolicyDescription>& GetPolicyDescriptions() const{ return m_policyDescriptions; }
-    inline void SetPolicyDescriptions(const Aws::Vector<PolicyDescription>& value) { m_policyDescriptions = value; }
-    inline void SetPolicyDescriptions(Aws::Vector<PolicyDescription>&& value) { m_policyDescriptions = std::move(value); }
-    inline DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(const Aws::Vector<PolicyDescription>& value) { SetPolicyDescriptions(value); return *this;}
-    inline DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(Aws::Vector<PolicyDescription>&& value) { SetPolicyDescriptions(std::move(value)); return *this;}
-    inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(const PolicyDescription& value) { m_policyDescriptions.push_back(value); return *this; }
-    inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(PolicyDescription&& value) { m_policyDescriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PolicyDescription>& GetPolicyDescriptions() const { return m_policyDescriptions; }
+    template<typename PolicyDescriptionsT = Aws::Vector<PolicyDescription>>
+    void SetPolicyDescriptions(PolicyDescriptionsT&& value) { m_policyDescriptionsHasBeenSet = true; m_policyDescriptions = std::forward<PolicyDescriptionsT>(value); }
+    template<typename PolicyDescriptionsT = Aws::Vector<PolicyDescription>>
+    DescribeLoadBalancerPoliciesResult& WithPolicyDescriptions(PolicyDescriptionsT&& value) { SetPolicyDescriptions(std::forward<PolicyDescriptionsT>(value)); return *this;}
+    template<typename PolicyDescriptionsT = PolicyDescription>
+    DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(PolicyDescriptionsT&& value) { m_policyDescriptionsHasBeenSet = true; m_policyDescriptions.emplace_back(std::forward<PolicyDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeLoadBalancerPoliciesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeLoadBalancerPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeLoadBalancerPoliciesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PolicyDescription> m_policyDescriptions;
+    bool m_policyDescriptionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

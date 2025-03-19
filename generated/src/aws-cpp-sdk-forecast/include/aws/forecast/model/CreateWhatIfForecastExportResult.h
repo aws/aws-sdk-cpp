@@ -27,7 +27,7 @@ namespace Model
   class CreateWhatIfForecastExportResult
   {
   public:
-    AWS_FORECASTSERVICE_API CreateWhatIfForecastExportResult();
+    AWS_FORECASTSERVICE_API CreateWhatIfForecastExportResult() = default;
     AWS_FORECASTSERVICE_API CreateWhatIfForecastExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API CreateWhatIfForecastExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
      */
-    inline const Aws::String& GetWhatIfForecastExportArn() const{ return m_whatIfForecastExportArn; }
-    inline void SetWhatIfForecastExportArn(const Aws::String& value) { m_whatIfForecastExportArn = value; }
-    inline void SetWhatIfForecastExportArn(Aws::String&& value) { m_whatIfForecastExportArn = std::move(value); }
-    inline void SetWhatIfForecastExportArn(const char* value) { m_whatIfForecastExportArn.assign(value); }
-    inline CreateWhatIfForecastExportResult& WithWhatIfForecastExportArn(const Aws::String& value) { SetWhatIfForecastExportArn(value); return *this;}
-    inline CreateWhatIfForecastExportResult& WithWhatIfForecastExportArn(Aws::String&& value) { SetWhatIfForecastExportArn(std::move(value)); return *this;}
-    inline CreateWhatIfForecastExportResult& WithWhatIfForecastExportArn(const char* value) { SetWhatIfForecastExportArn(value); return *this;}
+    inline const Aws::String& GetWhatIfForecastExportArn() const { return m_whatIfForecastExportArn; }
+    template<typename WhatIfForecastExportArnT = Aws::String>
+    void SetWhatIfForecastExportArn(WhatIfForecastExportArnT&& value) { m_whatIfForecastExportArnHasBeenSet = true; m_whatIfForecastExportArn = std::forward<WhatIfForecastExportArnT>(value); }
+    template<typename WhatIfForecastExportArnT = Aws::String>
+    CreateWhatIfForecastExportResult& WithWhatIfForecastExportArn(WhatIfForecastExportArnT&& value) { SetWhatIfForecastExportArn(std::forward<WhatIfForecastExportArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWhatIfForecastExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWhatIfForecastExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWhatIfForecastExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWhatIfForecastExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_whatIfForecastExportArn;
+    bool m_whatIfForecastExportArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

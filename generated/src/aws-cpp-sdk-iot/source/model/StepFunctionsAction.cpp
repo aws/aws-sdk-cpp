@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StepFunctionsAction::StepFunctionsAction() : 
-    m_executionNamePrefixHasBeenSet(false),
-    m_stateMachineNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 StepFunctionsAction::StepFunctionsAction(JsonView jsonValue)
-  : StepFunctionsAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StepFunctionsAction& StepFunctionsAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionNamePrefix"))
   {
     m_executionNamePrefix = jsonValue.GetString("executionNamePrefix");
-
     m_executionNamePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineName"))
   {
     m_stateMachineName = jsonValue.GetString("stateMachineName");
-
     m_stateMachineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-S3TablesDestinationResult::S3TablesDestinationResult() : 
-    m_tableBucketArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableNamespaceHasBeenSet(false)
-{
-}
-
 S3TablesDestinationResult::S3TablesDestinationResult(const XmlNode& xmlNode)
-  : S3TablesDestinationResult()
 {
   *this = xmlNode;
 }

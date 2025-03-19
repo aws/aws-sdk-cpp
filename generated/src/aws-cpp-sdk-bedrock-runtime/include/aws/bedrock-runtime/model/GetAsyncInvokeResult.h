@@ -30,7 +30,7 @@ namespace Model
   class GetAsyncInvokeResult
   {
   public:
-    AWS_BEDROCKRUNTIME_API GetAsyncInvokeResult();
+    AWS_BEDROCKRUNTIME_API GetAsyncInvokeResult() = default;
     AWS_BEDROCKRUNTIME_API GetAsyncInvokeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKRUNTIME_API GetAsyncInvokeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,140 +39,138 @@ namespace Model
     /**
      * <p>The invocation's ARN.</p>
      */
-    inline const Aws::String& GetInvocationArn() const{ return m_invocationArn; }
-    inline void SetInvocationArn(const Aws::String& value) { m_invocationArn = value; }
-    inline void SetInvocationArn(Aws::String&& value) { m_invocationArn = std::move(value); }
-    inline void SetInvocationArn(const char* value) { m_invocationArn.assign(value); }
-    inline GetAsyncInvokeResult& WithInvocationArn(const Aws::String& value) { SetInvocationArn(value); return *this;}
-    inline GetAsyncInvokeResult& WithInvocationArn(Aws::String&& value) { SetInvocationArn(std::move(value)); return *this;}
-    inline GetAsyncInvokeResult& WithInvocationArn(const char* value) { SetInvocationArn(value); return *this;}
+    inline const Aws::String& GetInvocationArn() const { return m_invocationArn; }
+    template<typename InvocationArnT = Aws::String>
+    void SetInvocationArn(InvocationArnT&& value) { m_invocationArnHasBeenSet = true; m_invocationArn = std::forward<InvocationArnT>(value); }
+    template<typename InvocationArnT = Aws::String>
+    GetAsyncInvokeResult& WithInvocationArn(InvocationArnT&& value) { SetInvocationArn(std::forward<InvocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invocation's model ARN.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
-    inline GetAsyncInvokeResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline GetAsyncInvokeResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline GetAsyncInvokeResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    GetAsyncInvokeResult& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invocation's idempotency token.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
-    inline GetAsyncInvokeResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline GetAsyncInvokeResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline GetAsyncInvokeResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    GetAsyncInvokeResult& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invocation's status.</p>
      */
-    inline const AsyncInvokeStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AsyncInvokeStatus& value) { m_status = value; }
-    inline void SetStatus(AsyncInvokeStatus&& value) { m_status = std::move(value); }
-    inline GetAsyncInvokeResult& WithStatus(const AsyncInvokeStatus& value) { SetStatus(value); return *this;}
-    inline GetAsyncInvokeResult& WithStatus(AsyncInvokeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AsyncInvokeStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AsyncInvokeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAsyncInvokeResult& WithStatus(AsyncInvokeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error message.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline GetAsyncInvokeResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline GetAsyncInvokeResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline GetAsyncInvokeResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    GetAsyncInvokeResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the invocation request was submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
-    inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTime = value; }
-    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTime = std::move(value); }
-    inline GetAsyncInvokeResult& WithSubmitTime(const Aws::Utils::DateTime& value) { SetSubmitTime(value); return *this;}
-    inline GetAsyncInvokeResult& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetSubmitTime() const { return m_submitTime; }
+    template<typename SubmitTimeT = Aws::Utils::DateTime>
+    void SetSubmitTime(SubmitTimeT&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::forward<SubmitTimeT>(value); }
+    template<typename SubmitTimeT = Aws::Utils::DateTime>
+    GetAsyncInvokeResult& WithSubmitTime(SubmitTimeT&& value) { SetSubmitTime(std::forward<SubmitTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The invocation's last modified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline GetAsyncInvokeResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline GetAsyncInvokeResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    GetAsyncInvokeResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the invocation ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetAsyncInvokeResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetAsyncInvokeResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetAsyncInvokeResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Output data settings.</p>
      */
-    inline const AsyncInvokeOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
-    inline void SetOutputDataConfig(const AsyncInvokeOutputDataConfig& value) { m_outputDataConfig = value; }
-    inline void SetOutputDataConfig(AsyncInvokeOutputDataConfig&& value) { m_outputDataConfig = std::move(value); }
-    inline GetAsyncInvokeResult& WithOutputDataConfig(const AsyncInvokeOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-    inline GetAsyncInvokeResult& WithOutputDataConfig(AsyncInvokeOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    inline const AsyncInvokeOutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
+    template<typename OutputDataConfigT = AsyncInvokeOutputDataConfig>
+    void SetOutputDataConfig(OutputDataConfigT&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::forward<OutputDataConfigT>(value); }
+    template<typename OutputDataConfigT = AsyncInvokeOutputDataConfig>
+    GetAsyncInvokeResult& WithOutputDataConfig(OutputDataConfigT&& value) { SetOutputDataConfig(std::forward<OutputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAsyncInvokeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAsyncInvokeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAsyncInvokeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAsyncInvokeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_invocationArn;
+    bool m_invocationArnHasBeenSet = false;
 
     Aws::String m_modelArn;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet = false;
 
-    AsyncInvokeStatus m_status;
+    AsyncInvokeStatus m_status{AsyncInvokeStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submitTime;
+    Aws::Utils::DateTime m_submitTime{};
+    bool m_submitTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     AsyncInvokeOutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

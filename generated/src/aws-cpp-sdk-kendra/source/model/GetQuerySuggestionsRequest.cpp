@@ -12,16 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQuerySuggestionsRequest::GetQuerySuggestionsRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_queryTextHasBeenSet(false),
-    m_maxSuggestionsCount(0),
-    m_maxSuggestionsCountHasBeenSet(false),
-    m_suggestionTypesHasBeenSet(false),
-    m_attributeSuggestionsConfigHasBeenSet(false)
-{
-}
-
 Aws::String GetQuerySuggestionsRequest::SerializePayload() const
 {
   JsonValue payload;

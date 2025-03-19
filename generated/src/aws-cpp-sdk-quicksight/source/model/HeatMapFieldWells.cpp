@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HeatMapFieldWells::HeatMapFieldWells() : 
-    m_heatMapAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 HeatMapFieldWells::HeatMapFieldWells(JsonView jsonValue)
-  : HeatMapFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HeatMapFieldWells& HeatMapFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HeatMapAggregatedFieldWells"))
   {
     m_heatMapAggregatedFieldWells = jsonValue.GetObject("HeatMapAggregatedFieldWells");
-
     m_heatMapAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

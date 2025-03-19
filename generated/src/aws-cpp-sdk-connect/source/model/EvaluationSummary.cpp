@@ -18,22 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationSummary::EvaluationSummary() : 
-    m_evaluationIdHasBeenSet(false),
-    m_evaluationArnHasBeenSet(false),
-    m_evaluationFormTitleHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_status(EvaluationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_evaluatorArnHasBeenSet(false),
-    m_scoreHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 EvaluationSummary::EvaluationSummary(JsonView jsonValue)
-  : EvaluationSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ EvaluationSummary& EvaluationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EvaluationId"))
   {
     m_evaluationId = jsonValue.GetString("EvaluationId");
-
     m_evaluationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationArn"))
   {
     m_evaluationArn = jsonValue.GetString("EvaluationArn");
-
     m_evaluationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationFormTitle"))
   {
     m_evaluationFormTitle = jsonValue.GetString("EvaluationFormTitle");
-
     m_evaluationFormTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationFormId"))
   {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");
-
     m_evaluationFormIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EvaluationStatusMapper::GetEvaluationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluatorArn"))
   {
     m_evaluatorArn = jsonValue.GetString("EvaluatorArn");
-
     m_evaluatorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetObject("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-PutRecordsResultEntry::PutRecordsResultEntry() : 
-    m_sequenceNumberHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 PutRecordsResultEntry::PutRecordsResultEntry(JsonView jsonValue)
-  : PutRecordsResultEntry()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PutRecordsResultEntry& PutRecordsResultEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
-
     m_sequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShardId"))
   {
     m_shardId = jsonValue.GetString("ShardId");
-
     m_shardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

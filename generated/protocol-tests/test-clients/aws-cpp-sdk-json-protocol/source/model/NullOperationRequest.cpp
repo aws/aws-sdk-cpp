@@ -13,12 +13,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NullOperationRequest::NullOperationRequest() : 
-    m_stringHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String NullOperationRequest::SerializePayload() const
 {
   JsonValue payload;

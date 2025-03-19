@@ -28,7 +28,7 @@ namespace Model
   class DescribeUserHierarchyGroupResult
   {
   public:
-    AWS_CONNECT_API DescribeUserHierarchyGroupResult();
+    AWS_CONNECT_API DescribeUserHierarchyGroupResult() = default;
     AWS_CONNECT_API DescribeUserHierarchyGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeUserHierarchyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the hierarchy group.</p>
      */
-    inline const HierarchyGroup& GetHierarchyGroup() const{ return m_hierarchyGroup; }
-    inline void SetHierarchyGroup(const HierarchyGroup& value) { m_hierarchyGroup = value; }
-    inline void SetHierarchyGroup(HierarchyGroup&& value) { m_hierarchyGroup = std::move(value); }
-    inline DescribeUserHierarchyGroupResult& WithHierarchyGroup(const HierarchyGroup& value) { SetHierarchyGroup(value); return *this;}
-    inline DescribeUserHierarchyGroupResult& WithHierarchyGroup(HierarchyGroup&& value) { SetHierarchyGroup(std::move(value)); return *this;}
+    inline const HierarchyGroup& GetHierarchyGroup() const { return m_hierarchyGroup; }
+    template<typename HierarchyGroupT = HierarchyGroup>
+    void SetHierarchyGroup(HierarchyGroupT&& value) { m_hierarchyGroupHasBeenSet = true; m_hierarchyGroup = std::forward<HierarchyGroupT>(value); }
+    template<typename HierarchyGroupT = HierarchyGroup>
+    DescribeUserHierarchyGroupResult& WithHierarchyGroup(HierarchyGroupT&& value) { SetHierarchyGroup(std::forward<HierarchyGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeUserHierarchyGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeUserHierarchyGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeUserHierarchyGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeUserHierarchyGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     HierarchyGroup m_hierarchyGroup;
+    bool m_hierarchyGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

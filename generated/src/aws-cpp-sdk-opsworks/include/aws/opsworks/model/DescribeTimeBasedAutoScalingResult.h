@@ -35,7 +35,7 @@ namespace Model
   class DescribeTimeBasedAutoScalingResult
   {
   public:
-    AWS_OPSWORKS_API DescribeTimeBasedAutoScalingResult();
+    AWS_OPSWORKS_API DescribeTimeBasedAutoScalingResult() = default;
     AWS_OPSWORKS_API DescribeTimeBasedAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeTimeBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
      * describe the configuration for the specified instances.</p>
      */
-    inline const Aws::Vector<TimeBasedAutoScalingConfiguration>& GetTimeBasedAutoScalingConfigurations() const{ return m_timeBasedAutoScalingConfigurations; }
-    inline void SetTimeBasedAutoScalingConfigurations(const Aws::Vector<TimeBasedAutoScalingConfiguration>& value) { m_timeBasedAutoScalingConfigurations = value; }
-    inline void SetTimeBasedAutoScalingConfigurations(Aws::Vector<TimeBasedAutoScalingConfiguration>&& value) { m_timeBasedAutoScalingConfigurations = std::move(value); }
-    inline DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(const Aws::Vector<TimeBasedAutoScalingConfiguration>& value) { SetTimeBasedAutoScalingConfigurations(value); return *this;}
-    inline DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(Aws::Vector<TimeBasedAutoScalingConfiguration>&& value) { SetTimeBasedAutoScalingConfigurations(std::move(value)); return *this;}
-    inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(const TimeBasedAutoScalingConfiguration& value) { m_timeBasedAutoScalingConfigurations.push_back(value); return *this; }
-    inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfiguration&& value) { m_timeBasedAutoScalingConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TimeBasedAutoScalingConfiguration>& GetTimeBasedAutoScalingConfigurations() const { return m_timeBasedAutoScalingConfigurations; }
+    template<typename TimeBasedAutoScalingConfigurationsT = Aws::Vector<TimeBasedAutoScalingConfiguration>>
+    void SetTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfigurationsT&& value) { m_timeBasedAutoScalingConfigurationsHasBeenSet = true; m_timeBasedAutoScalingConfigurations = std::forward<TimeBasedAutoScalingConfigurationsT>(value); }
+    template<typename TimeBasedAutoScalingConfigurationsT = Aws::Vector<TimeBasedAutoScalingConfiguration>>
+    DescribeTimeBasedAutoScalingResult& WithTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfigurationsT&& value) { SetTimeBasedAutoScalingConfigurations(std::forward<TimeBasedAutoScalingConfigurationsT>(value)); return *this;}
+    template<typename TimeBasedAutoScalingConfigurationsT = TimeBasedAutoScalingConfiguration>
+    DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfigurationsT&& value) { m_timeBasedAutoScalingConfigurationsHasBeenSet = true; m_timeBasedAutoScalingConfigurations.emplace_back(std::forward<TimeBasedAutoScalingConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTimeBasedAutoScalingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTimeBasedAutoScalingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTimeBasedAutoScalingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTimeBasedAutoScalingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TimeBasedAutoScalingConfiguration> m_timeBasedAutoScalingConfigurations;
+    bool m_timeBasedAutoScalingConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

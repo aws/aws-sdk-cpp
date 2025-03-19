@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings() : 
-    m_postFilterSharpenStrength(0),
-    m_postFilterSharpenStrengthHasBeenSet(false),
-    m_speed(0),
-    m_speedHasBeenSet(false),
-    m_strength(0),
-    m_strengthHasBeenSet(false)
-{
-}
-
 NoiseReducerSpatialFilterSettings::NoiseReducerSpatialFilterSettings(JsonView jsonValue)
-  : NoiseReducerSpatialFilterSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ NoiseReducerSpatialFilterSettings& NoiseReducerSpatialFilterSettings::operator =
   if(jsonValue.ValueExists("postFilterSharpenStrength"))
   {
     m_postFilterSharpenStrength = jsonValue.GetInteger("postFilterSharpenStrength");
-
     m_postFilterSharpenStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speed"))
   {
     m_speed = jsonValue.GetInteger("speed");
-
     m_speedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strength"))
   {
     m_strength = jsonValue.GetInteger("strength");
-
     m_strengthHasBeenSet = true;
   }
-
   return *this;
 }
 

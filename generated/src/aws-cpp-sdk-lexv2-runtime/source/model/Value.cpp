@@ -18,15 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-Value::Value() : 
-    m_originalValueHasBeenSet(false),
-    m_interpretedValueHasBeenSet(false),
-    m_resolvedValuesHasBeenSet(false)
-{
-}
-
 Value::Value(JsonView jsonValue)
-  : Value()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Value& Value::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("originalValue"))
   {
     m_originalValue = jsonValue.GetString("originalValue");
-
     m_originalValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interpretedValue"))
   {
     m_interpretedValue = jsonValue.GetString("interpretedValue");
-
     m_interpretedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedValues"))
   {
     Aws::Utils::Array<JsonView> resolvedValuesJsonList = jsonValue.GetArray("resolvedValues");
@@ -56,7 +44,6 @@ Value& Value::operator =(JsonView jsonValue)
     }
     m_resolvedValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

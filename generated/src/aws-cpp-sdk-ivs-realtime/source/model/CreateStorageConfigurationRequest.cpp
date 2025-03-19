@@ -12,13 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStorageConfigurationRequest::CreateStorageConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStorageConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

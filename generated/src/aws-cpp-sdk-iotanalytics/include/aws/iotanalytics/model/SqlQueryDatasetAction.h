@@ -33,7 +33,7 @@ namespace Model
   class SqlQueryDatasetAction
   {
   public:
-    AWS_IOTANALYTICS_API SqlQueryDatasetAction();
+    AWS_IOTANALYTICS_API SqlQueryDatasetAction() = default;
     AWS_IOTANALYTICS_API SqlQueryDatasetAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API SqlQueryDatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>A SQL query string.</p>
      */
-    inline const Aws::String& GetSqlQuery() const{ return m_sqlQuery; }
+    inline const Aws::String& GetSqlQuery() const { return m_sqlQuery; }
     inline bool SqlQueryHasBeenSet() const { return m_sqlQueryHasBeenSet; }
-    inline void SetSqlQuery(const Aws::String& value) { m_sqlQueryHasBeenSet = true; m_sqlQuery = value; }
-    inline void SetSqlQuery(Aws::String&& value) { m_sqlQueryHasBeenSet = true; m_sqlQuery = std::move(value); }
-    inline void SetSqlQuery(const char* value) { m_sqlQueryHasBeenSet = true; m_sqlQuery.assign(value); }
-    inline SqlQueryDatasetAction& WithSqlQuery(const Aws::String& value) { SetSqlQuery(value); return *this;}
-    inline SqlQueryDatasetAction& WithSqlQuery(Aws::String&& value) { SetSqlQuery(std::move(value)); return *this;}
-    inline SqlQueryDatasetAction& WithSqlQuery(const char* value) { SetSqlQuery(value); return *this;}
+    template<typename SqlQueryT = Aws::String>
+    void SetSqlQuery(SqlQueryT&& value) { m_sqlQueryHasBeenSet = true; m_sqlQuery = std::forward<SqlQueryT>(value); }
+    template<typename SqlQueryT = Aws::String>
+    SqlQueryDatasetAction& WithSqlQuery(SqlQueryT&& value) { SetSqlQuery(std::forward<SqlQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Prefilters applied to message data.</p>
      */
-    inline const Aws::Vector<QueryFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<QueryFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<QueryFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<QueryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SqlQueryDatasetAction& WithFilters(const Aws::Vector<QueryFilter>& value) { SetFilters(value); return *this;}
-    inline SqlQueryDatasetAction& WithFilters(Aws::Vector<QueryFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline SqlQueryDatasetAction& AddFilters(const QueryFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline SqlQueryDatasetAction& AddFilters(QueryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<QueryFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<QueryFilter>>
+    SqlQueryDatasetAction& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = QueryFilter>
+    SqlQueryDatasetAction& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

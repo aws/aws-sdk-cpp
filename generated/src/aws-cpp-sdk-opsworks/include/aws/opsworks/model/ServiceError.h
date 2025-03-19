@@ -31,7 +31,7 @@ namespace Model
   class ServiceError
   {
   public:
-    AWS_OPSWORKS_API ServiceError();
+    AWS_OPSWORKS_API ServiceError() = default;
     AWS_OPSWORKS_API ServiceError(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API ServiceError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,84 +41,72 @@ namespace Model
     /**
      * <p>The error ID.</p>
      */
-    inline const Aws::String& GetServiceErrorId() const{ return m_serviceErrorId; }
+    inline const Aws::String& GetServiceErrorId() const { return m_serviceErrorId; }
     inline bool ServiceErrorIdHasBeenSet() const { return m_serviceErrorIdHasBeenSet; }
-    inline void SetServiceErrorId(const Aws::String& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = value; }
-    inline void SetServiceErrorId(Aws::String&& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = std::move(value); }
-    inline void SetServiceErrorId(const char* value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId.assign(value); }
-    inline ServiceError& WithServiceErrorId(const Aws::String& value) { SetServiceErrorId(value); return *this;}
-    inline ServiceError& WithServiceErrorId(Aws::String&& value) { SetServiceErrorId(std::move(value)); return *this;}
-    inline ServiceError& WithServiceErrorId(const char* value) { SetServiceErrorId(value); return *this;}
+    template<typename ServiceErrorIdT = Aws::String>
+    void SetServiceErrorId(ServiceErrorIdT&& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = std::forward<ServiceErrorIdT>(value); }
+    template<typename ServiceErrorIdT = Aws::String>
+    ServiceError& WithServiceErrorId(ServiceErrorIdT&& value) { SetServiceErrorId(std::forward<ServiceErrorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline ServiceError& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline ServiceError& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline ServiceError& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    ServiceError& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ServiceError& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ServiceError& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ServiceError& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ServiceError& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error type.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ServiceError& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ServiceError& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ServiceError& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ServiceError& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that describes the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServiceError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServiceError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServiceError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServiceError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the error occurred.</p>
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
-    inline ServiceError& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline ServiceError& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline ServiceError& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    ServiceError& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
   private:
 

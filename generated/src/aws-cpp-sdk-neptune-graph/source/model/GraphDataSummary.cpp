@@ -18,34 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-GraphDataSummary::GraphDataSummary() : 
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_numEdges(0),
-    m_numEdgesHasBeenSet(false),
-    m_numNodeLabels(0),
-    m_numNodeLabelsHasBeenSet(false),
-    m_numEdgeLabels(0),
-    m_numEdgeLabelsHasBeenSet(false),
-    m_nodeLabelsHasBeenSet(false),
-    m_edgeLabelsHasBeenSet(false),
-    m_numNodeProperties(0),
-    m_numNodePropertiesHasBeenSet(false),
-    m_numEdgeProperties(0),
-    m_numEdgePropertiesHasBeenSet(false),
-    m_nodePropertiesHasBeenSet(false),
-    m_edgePropertiesHasBeenSet(false),
-    m_totalNodePropertyValues(0),
-    m_totalNodePropertyValuesHasBeenSet(false),
-    m_totalEdgePropertyValues(0),
-    m_totalEdgePropertyValuesHasBeenSet(false),
-    m_nodeStructuresHasBeenSet(false),
-    m_edgeStructuresHasBeenSet(false)
-{
-}
-
 GraphDataSummary::GraphDataSummary(JsonView jsonValue)
-  : GraphDataSummary()
 {
   *this = jsonValue;
 }
@@ -55,31 +28,23 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("numNodes"))
   {
     m_numNodes = jsonValue.GetInt64("numNodes");
-
     m_numNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numEdges"))
   {
     m_numEdges = jsonValue.GetInt64("numEdges");
-
     m_numEdgesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numNodeLabels"))
   {
     m_numNodeLabels = jsonValue.GetInt64("numNodeLabels");
-
     m_numNodeLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numEdgeLabels"))
   {
     m_numEdgeLabels = jsonValue.GetInt64("numEdgeLabels");
-
     m_numEdgeLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeLabels"))
   {
     Aws::Utils::Array<JsonView> nodeLabelsJsonList = jsonValue.GetArray("nodeLabels");
@@ -89,7 +54,6 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
     }
     m_nodeLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("edgeLabels"))
   {
     Aws::Utils::Array<JsonView> edgeLabelsJsonList = jsonValue.GetArray("edgeLabels");
@@ -99,21 +63,16 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
     }
     m_edgeLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numNodeProperties"))
   {
     m_numNodeProperties = jsonValue.GetInt64("numNodeProperties");
-
     m_numNodePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numEdgeProperties"))
   {
     m_numEdgeProperties = jsonValue.GetInt64("numEdgeProperties");
-
     m_numEdgePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeProperties"))
   {
     Aws::Utils::Array<JsonView> nodePropertiesJsonList = jsonValue.GetArray("nodeProperties");
@@ -129,7 +88,6 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
     }
     m_nodePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("edgeProperties"))
   {
     Aws::Utils::Array<JsonView> edgePropertiesJsonList = jsonValue.GetArray("edgeProperties");
@@ -145,21 +103,16 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
     }
     m_edgePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalNodePropertyValues"))
   {
     m_totalNodePropertyValues = jsonValue.GetInt64("totalNodePropertyValues");
-
     m_totalNodePropertyValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalEdgePropertyValues"))
   {
     m_totalEdgePropertyValues = jsonValue.GetInt64("totalEdgePropertyValues");
-
     m_totalEdgePropertyValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeStructures"))
   {
     Aws::Utils::Array<JsonView> nodeStructuresJsonList = jsonValue.GetArray("nodeStructures");
@@ -169,7 +122,6 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
     }
     m_nodeStructuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("edgeStructures"))
   {
     Aws::Utils::Array<JsonView> edgeStructuresJsonList = jsonValue.GetArray("edgeStructures");
@@ -179,7 +131,6 @@ GraphDataSummary& GraphDataSummary::operator =(JsonView jsonValue)
     }
     m_edgeStructuresHasBeenSet = true;
   }
-
   return *this;
 }
 

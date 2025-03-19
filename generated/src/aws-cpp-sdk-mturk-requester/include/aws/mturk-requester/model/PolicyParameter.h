@@ -33,7 +33,7 @@ namespace Model
   class PolicyParameter
   {
   public:
-    AWS_MTURK_API PolicyParameter();
+    AWS_MTURK_API PolicyParameter() = default;
     AWS_MTURK_API PolicyParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API PolicyParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,43 +43,40 @@ namespace Model
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline PolicyParameter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline PolicyParameter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline PolicyParameter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    PolicyParameter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of values of the Parameter</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline PolicyParameter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline PolicyParameter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline PolicyParameter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline PolicyParameter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline PolicyParameter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    PolicyParameter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    PolicyParameter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of ParameterMapEntry objects. </p>
      */
-    inline const Aws::Vector<ParameterMapEntry>& GetMapEntries() const{ return m_mapEntries; }
+    inline const Aws::Vector<ParameterMapEntry>& GetMapEntries() const { return m_mapEntries; }
     inline bool MapEntriesHasBeenSet() const { return m_mapEntriesHasBeenSet; }
-    inline void SetMapEntries(const Aws::Vector<ParameterMapEntry>& value) { m_mapEntriesHasBeenSet = true; m_mapEntries = value; }
-    inline void SetMapEntries(Aws::Vector<ParameterMapEntry>&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries = std::move(value); }
-    inline PolicyParameter& WithMapEntries(const Aws::Vector<ParameterMapEntry>& value) { SetMapEntries(value); return *this;}
-    inline PolicyParameter& WithMapEntries(Aws::Vector<ParameterMapEntry>&& value) { SetMapEntries(std::move(value)); return *this;}
-    inline PolicyParameter& AddMapEntries(const ParameterMapEntry& value) { m_mapEntriesHasBeenSet = true; m_mapEntries.push_back(value); return *this; }
-    inline PolicyParameter& AddMapEntries(ParameterMapEntry&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries.push_back(std::move(value)); return *this; }
+    template<typename MapEntriesT = Aws::Vector<ParameterMapEntry>>
+    void SetMapEntries(MapEntriesT&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries = std::forward<MapEntriesT>(value); }
+    template<typename MapEntriesT = Aws::Vector<ParameterMapEntry>>
+    PolicyParameter& WithMapEntries(MapEntriesT&& value) { SetMapEntries(std::forward<MapEntriesT>(value)); return *this;}
+    template<typename MapEntriesT = ParameterMapEntry>
+    PolicyParameter& AddMapEntries(MapEntriesT&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries.emplace_back(std::forward<MapEntriesT>(value)); return *this; }
     ///@}
   private:
 

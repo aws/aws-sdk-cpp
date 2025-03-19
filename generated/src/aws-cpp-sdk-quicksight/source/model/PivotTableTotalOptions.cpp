@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableTotalOptions::PivotTableTotalOptions() : 
-    m_rowSubtotalOptionsHasBeenSet(false),
-    m_columnSubtotalOptionsHasBeenSet(false),
-    m_rowTotalOptionsHasBeenSet(false),
-    m_columnTotalOptionsHasBeenSet(false)
-{
-}
-
 PivotTableTotalOptions::PivotTableTotalOptions(JsonView jsonValue)
-  : PivotTableTotalOptions()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PivotTableTotalOptions& PivotTableTotalOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RowSubtotalOptions"))
   {
     m_rowSubtotalOptions = jsonValue.GetObject("RowSubtotalOptions");
-
     m_rowSubtotalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnSubtotalOptions"))
   {
     m_columnSubtotalOptions = jsonValue.GetObject("ColumnSubtotalOptions");
-
     m_columnSubtotalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowTotalOptions"))
   {
     m_rowTotalOptions = jsonValue.GetObject("RowTotalOptions");
-
     m_rowTotalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnTotalOptions"))
   {
     m_columnTotalOptions = jsonValue.GetObject("ColumnTotalOptions");
-
     m_columnTotalOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

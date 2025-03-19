@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GroupPolicyGrantPrincipal::GroupPolicyGrantPrincipal() : 
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 GroupPolicyGrantPrincipal::GroupPolicyGrantPrincipal(JsonView jsonValue)
-  : GroupPolicyGrantPrincipal()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GroupPolicyGrantPrincipal& GroupPolicyGrantPrincipal::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("groupIdentifier"))
   {
     m_groupIdentifier = jsonValue.GetString("groupIdentifier");
-
     m_groupIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

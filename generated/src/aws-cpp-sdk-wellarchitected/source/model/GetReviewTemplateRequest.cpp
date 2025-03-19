@@ -12,11 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReviewTemplateRequest::GetReviewTemplateRequest() : 
-    m_templateArnHasBeenSet(false)
-{
-}
-
 Aws::String GetReviewTemplateRequest::SerializePayload() const
 {
   return {};

@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePipelineRequest::CreatePipelineRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineDisplayNameHasBeenSet(false),
-    m_pipelineDefinitionHasBeenSet(false),
-    m_pipelineDefinitionS3LocationHasBeenSet(false),
-    m_pipelineDescriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_parallelismConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

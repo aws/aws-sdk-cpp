@@ -29,7 +29,7 @@ namespace Model
   class GetAssociatedEnclaveCertificateIamRolesResponse
   {
   public:
-    AWS_EC2_API GetAssociatedEnclaveCertificateIamRolesResponse();
+    AWS_EC2_API GetAssociatedEnclaveCertificateIamRolesResponse() = default;
     AWS_EC2_API GetAssociatedEnclaveCertificateIamRolesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetAssociatedEnclaveCertificateIamRolesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the associated IAM roles.</p>
      */
-    inline const Aws::Vector<AssociatedRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
-    inline void SetAssociatedRoles(const Aws::Vector<AssociatedRole>& value) { m_associatedRoles = value; }
-    inline void SetAssociatedRoles(Aws::Vector<AssociatedRole>&& value) { m_associatedRoles = std::move(value); }
-    inline GetAssociatedEnclaveCertificateIamRolesResponse& WithAssociatedRoles(const Aws::Vector<AssociatedRole>& value) { SetAssociatedRoles(value); return *this;}
-    inline GetAssociatedEnclaveCertificateIamRolesResponse& WithAssociatedRoles(Aws::Vector<AssociatedRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
-    inline GetAssociatedEnclaveCertificateIamRolesResponse& AddAssociatedRoles(const AssociatedRole& value) { m_associatedRoles.push_back(value); return *this; }
-    inline GetAssociatedEnclaveCertificateIamRolesResponse& AddAssociatedRoles(AssociatedRole&& value) { m_associatedRoles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociatedRole>& GetAssociatedRoles() const { return m_associatedRoles; }
+    template<typename AssociatedRolesT = Aws::Vector<AssociatedRole>>
+    void SetAssociatedRoles(AssociatedRolesT&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::forward<AssociatedRolesT>(value); }
+    template<typename AssociatedRolesT = Aws::Vector<AssociatedRole>>
+    GetAssociatedEnclaveCertificateIamRolesResponse& WithAssociatedRoles(AssociatedRolesT&& value) { SetAssociatedRoles(std::forward<AssociatedRolesT>(value)); return *this;}
+    template<typename AssociatedRolesT = AssociatedRole>
+    GetAssociatedEnclaveCertificateIamRolesResponse& AddAssociatedRoles(AssociatedRolesT&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.emplace_back(std::forward<AssociatedRolesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetAssociatedEnclaveCertificateIamRolesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetAssociatedEnclaveCertificateIamRolesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetAssociatedEnclaveCertificateIamRolesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssociatedRole> m_associatedRoles;
+    bool m_associatedRolesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotJobS3Result::SnapshotJobS3Result() : 
-    m_s3DestinationConfigurationHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
-{
-}
-
 SnapshotJobS3Result::SnapshotJobS3Result(JsonView jsonValue)
-  : SnapshotJobS3Result()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SnapshotJobS3Result& SnapshotJobS3Result::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3DestinationConfiguration"))
   {
     m_s3DestinationConfiguration = jsonValue.GetObject("S3DestinationConfiguration");
-
     m_s3DestinationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorInfo"))
   {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("ErrorInfo");
@@ -56,7 +44,6 @@ SnapshotJobS3Result& SnapshotJobS3Result::operator =(JsonView jsonValue)
     }
     m_errorInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

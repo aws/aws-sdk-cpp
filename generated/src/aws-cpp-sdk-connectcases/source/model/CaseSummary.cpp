@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-CaseSummary::CaseSummary() : 
-    m_caseIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 CaseSummary::CaseSummary(JsonView jsonValue)
-  : CaseSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CaseSummary& CaseSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseId"))
   {
     m_caseId = jsonValue.GetString("caseId");
-
     m_caseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateId"))
   {
     m_templateId = jsonValue.GetString("templateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   return *this;
 }
 

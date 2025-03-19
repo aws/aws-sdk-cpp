@@ -18,18 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-OutputUpdate::OutputUpdate() : 
-    m_outputIdHasBeenSet(false),
-    m_nameUpdateHasBeenSet(false),
-    m_kinesisStreamsOutputUpdateHasBeenSet(false),
-    m_kinesisFirehoseOutputUpdateHasBeenSet(false),
-    m_lambdaOutputUpdateHasBeenSet(false),
-    m_destinationSchemaUpdateHasBeenSet(false)
-{
-}
-
 OutputUpdate::OutputUpdate(JsonView jsonValue)
-  : OutputUpdate()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ OutputUpdate& OutputUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputId"))
   {
     m_outputId = jsonValue.GetString("OutputId");
-
     m_outputIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NameUpdate"))
   {
     m_nameUpdate = jsonValue.GetString("NameUpdate");
-
     m_nameUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisStreamsOutputUpdate"))
   {
     m_kinesisStreamsOutputUpdate = jsonValue.GetObject("KinesisStreamsOutputUpdate");
-
     m_kinesisStreamsOutputUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisFirehoseOutputUpdate"))
   {
     m_kinesisFirehoseOutputUpdate = jsonValue.GetObject("KinesisFirehoseOutputUpdate");
-
     m_kinesisFirehoseOutputUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaOutputUpdate"))
   {
     m_lambdaOutputUpdate = jsonValue.GetObject("LambdaOutputUpdate");
-
     m_lambdaOutputUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationSchemaUpdate"))
   {
     m_destinationSchemaUpdate = jsonValue.GetObject("DestinationSchemaUpdate");
-
     m_destinationSchemaUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,30 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PropertyDefinitionResponse::PropertyDefinitionResponse() : 
-    m_dataTypeHasBeenSet(false),
-    m_isTimeSeries(false),
-    m_isTimeSeriesHasBeenSet(false),
-    m_isRequiredInEntity(false),
-    m_isRequiredInEntityHasBeenSet(false),
-    m_isExternalId(false),
-    m_isExternalIdHasBeenSet(false),
-    m_isStoredExternally(false),
-    m_isStoredExternallyHasBeenSet(false),
-    m_isImported(false),
-    m_isImportedHasBeenSet(false),
-    m_isFinal(false),
-    m_isFinalHasBeenSet(false),
-    m_isInherited(false),
-    m_isInheritedHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 PropertyDefinitionResponse::PropertyDefinitionResponse(JsonView jsonValue)
-  : PropertyDefinitionResponse()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ PropertyDefinitionResponse& PropertyDefinitionResponse::operator =(JsonView json
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = jsonValue.GetObject("dataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isTimeSeries"))
   {
     m_isTimeSeries = jsonValue.GetBool("isTimeSeries");
-
     m_isTimeSeriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isRequiredInEntity"))
   {
     m_isRequiredInEntity = jsonValue.GetBool("isRequiredInEntity");
-
     m_isRequiredInEntityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isExternalId"))
   {
     m_isExternalId = jsonValue.GetBool("isExternalId");
-
     m_isExternalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isStoredExternally"))
   {
     m_isStoredExternally = jsonValue.GetBool("isStoredExternally");
-
     m_isStoredExternallyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isImported"))
   {
     m_isImported = jsonValue.GetBool("isImported");
-
     m_isImportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isFinal"))
   {
     m_isFinal = jsonValue.GetBool("isFinal");
-
     m_isFinalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isInherited"))
   {
     m_isInherited = jsonValue.GetBool("isInherited");
-
     m_isInheritedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetObject("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
@@ -120,14 +79,11 @@ PropertyDefinitionResponse& PropertyDefinitionResponse::operator =(JsonView json
     }
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

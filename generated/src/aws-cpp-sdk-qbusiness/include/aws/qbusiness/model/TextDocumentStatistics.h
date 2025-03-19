@@ -30,7 +30,7 @@ namespace Model
   class TextDocumentStatistics
   {
   public:
-    AWS_QBUSINESS_API TextDocumentStatistics();
+    AWS_QBUSINESS_API TextDocumentStatistics() = default;
     AWS_QBUSINESS_API TextDocumentStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API TextDocumentStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The total size, in bytes, of the indexed documents.</p>
      */
-    inline long long GetIndexedTextBytes() const{ return m_indexedTextBytes; }
+    inline long long GetIndexedTextBytes() const { return m_indexedTextBytes; }
     inline bool IndexedTextBytesHasBeenSet() const { return m_indexedTextBytesHasBeenSet; }
     inline void SetIndexedTextBytes(long long value) { m_indexedTextBytesHasBeenSet = true; m_indexedTextBytes = value; }
     inline TextDocumentStatistics& WithIndexedTextBytes(long long value) { SetIndexedTextBytes(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The number of text documents indexed.</p>
      */
-    inline int GetIndexedTextDocumentCount() const{ return m_indexedTextDocumentCount; }
+    inline int GetIndexedTextDocumentCount() const { return m_indexedTextDocumentCount; }
     inline bool IndexedTextDocumentCountHasBeenSet() const { return m_indexedTextDocumentCountHasBeenSet; }
     inline void SetIndexedTextDocumentCount(int value) { m_indexedTextDocumentCountHasBeenSet = true; m_indexedTextDocumentCount = value; }
     inline TextDocumentStatistics& WithIndexedTextDocumentCount(int value) { SetIndexedTextDocumentCount(value); return *this;}
     ///@}
   private:
 
-    long long m_indexedTextBytes;
+    long long m_indexedTextBytes{0};
     bool m_indexedTextBytesHasBeenSet = false;
 
-    int m_indexedTextDocumentCount;
+    int m_indexedTextDocumentCount{0};
     bool m_indexedTextDocumentCountHasBeenSet = false;
   };
 

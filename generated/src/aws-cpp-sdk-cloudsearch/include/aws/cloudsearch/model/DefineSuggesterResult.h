@@ -34,33 +34,35 @@ namespace Model
   class DefineSuggesterResult
   {
   public:
-    AWS_CLOUDSEARCH_API DefineSuggesterResult();
+    AWS_CLOUDSEARCH_API DefineSuggesterResult() = default;
     AWS_CLOUDSEARCH_API DefineSuggesterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DefineSuggesterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const SuggesterStatus& GetSuggester() const{ return m_suggester; }
-    inline void SetSuggester(const SuggesterStatus& value) { m_suggester = value; }
-    inline void SetSuggester(SuggesterStatus&& value) { m_suggester = std::move(value); }
-    inline DefineSuggesterResult& WithSuggester(const SuggesterStatus& value) { SetSuggester(value); return *this;}
-    inline DefineSuggesterResult& WithSuggester(SuggesterStatus&& value) { SetSuggester(std::move(value)); return *this;}
+    inline const SuggesterStatus& GetSuggester() const { return m_suggester; }
+    template<typename SuggesterT = SuggesterStatus>
+    void SetSuggester(SuggesterT&& value) { m_suggesterHasBeenSet = true; m_suggester = std::forward<SuggesterT>(value); }
+    template<typename SuggesterT = SuggesterStatus>
+    DefineSuggesterResult& WithSuggester(SuggesterT&& value) { SetSuggester(std::forward<SuggesterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DefineSuggesterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DefineSuggesterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DefineSuggesterResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     SuggesterStatus m_suggester;
+    bool m_suggesterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

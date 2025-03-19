@@ -12,20 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChatControlsConfigurationRequest::UpdateChatControlsConfigurationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_responseScope(ResponseScope::NOT_SET),
-    m_responseScopeHasBeenSet(false),
-    m_orchestrationConfigurationHasBeenSet(false),
-    m_blockedPhrasesConfigurationUpdateHasBeenSet(false),
-    m_topicConfigurationsToCreateOrUpdateHasBeenSet(false),
-    m_topicConfigurationsToDeleteHasBeenSet(false),
-    m_creatorModeConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChatControlsConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

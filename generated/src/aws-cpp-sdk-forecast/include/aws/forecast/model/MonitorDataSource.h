@@ -32,7 +32,7 @@ namespace Model
   class MonitorDataSource
   {
   public:
-    AWS_FORECASTSERVICE_API MonitorDataSource();
+    AWS_FORECASTSERVICE_API MonitorDataSource() = default;
     AWS_FORECASTSERVICE_API MonitorDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API MonitorDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dataset import job used to import the
      * data that initiated the monitor evaluation.</p>
      */
-    inline const Aws::String& GetDatasetImportJobArn() const{ return m_datasetImportJobArn; }
+    inline const Aws::String& GetDatasetImportJobArn() const { return m_datasetImportJobArn; }
     inline bool DatasetImportJobArnHasBeenSet() const { return m_datasetImportJobArnHasBeenSet; }
-    inline void SetDatasetImportJobArn(const Aws::String& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = value; }
-    inline void SetDatasetImportJobArn(Aws::String&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::move(value); }
-    inline void SetDatasetImportJobArn(const char* value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn.assign(value); }
-    inline MonitorDataSource& WithDatasetImportJobArn(const Aws::String& value) { SetDatasetImportJobArn(value); return *this;}
-    inline MonitorDataSource& WithDatasetImportJobArn(Aws::String&& value) { SetDatasetImportJobArn(std::move(value)); return *this;}
-    inline MonitorDataSource& WithDatasetImportJobArn(const char* value) { SetDatasetImportJobArn(value); return *this;}
+    template<typename DatasetImportJobArnT = Aws::String>
+    void SetDatasetImportJobArn(DatasetImportJobArnT&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::forward<DatasetImportJobArnT>(value); }
+    template<typename DatasetImportJobArnT = Aws::String>
+    MonitorDataSource& WithDatasetImportJobArn(DatasetImportJobArnT&& value) { SetDatasetImportJobArn(std::forward<DatasetImportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the
      * evaluation.</p>
      */
-    inline const Aws::String& GetForecastArn() const{ return m_forecastArn; }
+    inline const Aws::String& GetForecastArn() const { return m_forecastArn; }
     inline bool ForecastArnHasBeenSet() const { return m_forecastArnHasBeenSet; }
-    inline void SetForecastArn(const Aws::String& value) { m_forecastArnHasBeenSet = true; m_forecastArn = value; }
-    inline void SetForecastArn(Aws::String&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::move(value); }
-    inline void SetForecastArn(const char* value) { m_forecastArnHasBeenSet = true; m_forecastArn.assign(value); }
-    inline MonitorDataSource& WithForecastArn(const Aws::String& value) { SetForecastArn(value); return *this;}
-    inline MonitorDataSource& WithForecastArn(Aws::String&& value) { SetForecastArn(std::move(value)); return *this;}
-    inline MonitorDataSource& WithForecastArn(const char* value) { SetForecastArn(value); return *this;}
+    template<typename ForecastArnT = Aws::String>
+    void SetForecastArn(ForecastArnT&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::forward<ForecastArnT>(value); }
+    template<typename ForecastArnT = Aws::String>
+    MonitorDataSource& WithForecastArn(ForecastArnT&& value) { SetForecastArn(std::forward<ForecastArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the predictor resource you are
      * monitoring.</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
     inline bool PredictorArnHasBeenSet() const { return m_predictorArnHasBeenSet; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArnHasBeenSet = true; m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArnHasBeenSet = true; m_predictorArn.assign(value); }
-    inline MonitorDataSource& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline MonitorDataSource& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline MonitorDataSource& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    MonitorDataSource& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
   private:
 

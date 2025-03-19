@@ -12,15 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPricingPlansRequest::ListPricingPlansRequest() : 
-    m_billingPeriodHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPricingPlansRequest::SerializePayload() const
 {
   JsonValue payload;

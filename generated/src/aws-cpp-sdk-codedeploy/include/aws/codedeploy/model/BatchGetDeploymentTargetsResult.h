@@ -29,7 +29,7 @@ namespace Model
   class BatchGetDeploymentTargetsResult
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetDeploymentTargetsResult();
+    AWS_CODEDEPLOY_API BatchGetDeploymentTargetsResult() = default;
     AWS_CODEDEPLOY_API BatchGetDeploymentTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API BatchGetDeploymentTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * object is an Amazon ECS service. </p> </li> <li> <p> <b>CloudFormation</b>: The
      * target object is an CloudFormation blue/green deployment. </p> </li> </ul>
      */
-    inline const Aws::Vector<DeploymentTarget>& GetDeploymentTargets() const{ return m_deploymentTargets; }
-    inline void SetDeploymentTargets(const Aws::Vector<DeploymentTarget>& value) { m_deploymentTargets = value; }
-    inline void SetDeploymentTargets(Aws::Vector<DeploymentTarget>&& value) { m_deploymentTargets = std::move(value); }
-    inline BatchGetDeploymentTargetsResult& WithDeploymentTargets(const Aws::Vector<DeploymentTarget>& value) { SetDeploymentTargets(value); return *this;}
-    inline BatchGetDeploymentTargetsResult& WithDeploymentTargets(Aws::Vector<DeploymentTarget>&& value) { SetDeploymentTargets(std::move(value)); return *this;}
-    inline BatchGetDeploymentTargetsResult& AddDeploymentTargets(const DeploymentTarget& value) { m_deploymentTargets.push_back(value); return *this; }
-    inline BatchGetDeploymentTargetsResult& AddDeploymentTargets(DeploymentTarget&& value) { m_deploymentTargets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeploymentTarget>& GetDeploymentTargets() const { return m_deploymentTargets; }
+    template<typename DeploymentTargetsT = Aws::Vector<DeploymentTarget>>
+    void SetDeploymentTargets(DeploymentTargetsT&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::forward<DeploymentTargetsT>(value); }
+    template<typename DeploymentTargetsT = Aws::Vector<DeploymentTarget>>
+    BatchGetDeploymentTargetsResult& WithDeploymentTargets(DeploymentTargetsT&& value) { SetDeploymentTargets(std::forward<DeploymentTargetsT>(value)); return *this;}
+    template<typename DeploymentTargetsT = DeploymentTarget>
+    BatchGetDeploymentTargetsResult& AddDeploymentTargets(DeploymentTargetsT&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets.emplace_back(std::forward<DeploymentTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetDeploymentTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetDeploymentTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetDeploymentTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetDeploymentTargetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeploymentTarget> m_deploymentTargets;
+    bool m_deploymentTargetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

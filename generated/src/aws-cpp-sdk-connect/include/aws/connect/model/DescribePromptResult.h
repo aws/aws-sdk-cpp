@@ -28,7 +28,7 @@ namespace Model
   class DescribePromptResult
   {
   public:
-    AWS_CONNECT_API DescribePromptResult();
+    AWS_CONNECT_API DescribePromptResult() = default;
     AWS_CONNECT_API DescribePromptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribePromptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the prompt.</p>
      */
-    inline const Prompt& GetPrompt() const{ return m_prompt; }
-    inline void SetPrompt(const Prompt& value) { m_prompt = value; }
-    inline void SetPrompt(Prompt&& value) { m_prompt = std::move(value); }
-    inline DescribePromptResult& WithPrompt(const Prompt& value) { SetPrompt(value); return *this;}
-    inline DescribePromptResult& WithPrompt(Prompt&& value) { SetPrompt(std::move(value)); return *this;}
+    inline const Prompt& GetPrompt() const { return m_prompt; }
+    template<typename PromptT = Prompt>
+    void SetPrompt(PromptT&& value) { m_promptHasBeenSet = true; m_prompt = std::forward<PromptT>(value); }
+    template<typename PromptT = Prompt>
+    DescribePromptResult& WithPrompt(PromptT&& value) { SetPrompt(std::forward<PromptT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePromptResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePromptResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePromptResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePromptResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Prompt m_prompt;
+    bool m_promptHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

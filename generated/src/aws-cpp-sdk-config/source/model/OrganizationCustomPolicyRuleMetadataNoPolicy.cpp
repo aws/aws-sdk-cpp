@@ -18,23 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationCustomPolicyRuleMetadataNoPolicy::OrganizationCustomPolicyRuleMetadataNoPolicy() : 
-    m_descriptionHasBeenSet(false),
-    m_organizationConfigRuleTriggerTypesHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_resourceTypesScopeHasBeenSet(false),
-    m_resourceIdScopeHasBeenSet(false),
-    m_tagKeyScopeHasBeenSet(false),
-    m_tagValueScopeHasBeenSet(false),
-    m_policyRuntimeHasBeenSet(false),
-    m_debugLogDeliveryAccountsHasBeenSet(false)
-{
-}
-
 OrganizationCustomPolicyRuleMetadataNoPolicy::OrganizationCustomPolicyRuleMetadataNoPolicy(JsonView jsonValue)
-  : OrganizationCustomPolicyRuleMetadataNoPolicy()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationConfigRuleTriggerTypes"))
   {
     Aws::Utils::Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
@@ -57,21 +39,16 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
     }
     m_organizationConfigRuleTriggerTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputParameters"))
   {
     m_inputParameters = jsonValue.GetString("InputParameters");
-
     m_inputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionFrequency"))
   {
     m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
-
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypesScope"))
   {
     Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
@@ -81,35 +58,26 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
     }
     m_resourceTypesScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdScope"))
   {
     m_resourceIdScope = jsonValue.GetString("ResourceIdScope");
-
     m_resourceIdScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagKeyScope"))
   {
     m_tagKeyScope = jsonValue.GetString("TagKeyScope");
-
     m_tagKeyScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValueScope"))
   {
     m_tagValueScope = jsonValue.GetString("TagValueScope");
-
     m_tagValueScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyRuntime"))
   {
     m_policyRuntime = jsonValue.GetString("PolicyRuntime");
-
     m_policyRuntimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DebugLogDeliveryAccounts"))
   {
     Aws::Utils::Array<JsonView> debugLogDeliveryAccountsJsonList = jsonValue.GetArray("DebugLogDeliveryAccounts");
@@ -119,7 +87,6 @@ OrganizationCustomPolicyRuleMetadataNoPolicy& OrganizationCustomPolicyRuleMetada
     }
     m_debugLogDeliveryAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

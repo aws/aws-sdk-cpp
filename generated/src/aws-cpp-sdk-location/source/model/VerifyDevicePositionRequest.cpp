@@ -12,14 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifyDevicePositionRequest::VerifyDevicePositionRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_deviceStateHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false)
-{
-}
-
 Aws::String VerifyDevicePositionRequest::SerializePayload() const
 {
   JsonValue payload;

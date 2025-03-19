@@ -31,7 +31,7 @@ namespace Model
   class ReplicationTimeValue
   {
   public:
-    AWS_S3CONTROL_API ReplicationTimeValue();
+    AWS_S3CONTROL_API ReplicationTimeValue() = default;
     AWS_S3CONTROL_API ReplicationTimeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ReplicationTimeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
      * <p>Contains an integer that specifies the time period in minutes. </p> <p>Valid
      * value: 15</p>
      */
-    inline int GetMinutes() const{ return m_minutes; }
+    inline int GetMinutes() const { return m_minutes; }
     inline bool MinutesHasBeenSet() const { return m_minutesHasBeenSet; }
     inline void SetMinutes(int value) { m_minutesHasBeenSet = true; m_minutes = value; }
     inline ReplicationTimeValue& WithMinutes(int value) { SetMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_minutes;
+    int m_minutes{0};
     bool m_minutesHasBeenSet = false;
   };
 

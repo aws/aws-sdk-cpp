@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AnomalyObject::AnomalyObject() : 
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false),
-    m_profileSubtype(ProfileSubtype::NOT_SET),
-    m_profileSubtypeHasBeenSet(false),
-    m_observationsHasBeenSet(false)
-{
-}
-
 AnomalyObject::AnomalyObject(JsonView jsonValue)
-  : AnomalyObject()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AnomalyObject& AnomalyObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("profileType"))
   {
     m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("profileType"));
-
     m_profileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileSubtype"))
   {
     m_profileSubtype = ProfileSubtypeMapper::GetProfileSubtypeForName(jsonValue.GetString("profileSubtype"));
-
     m_profileSubtypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("observations"))
   {
     m_observations = jsonValue.GetObject("observations");
-
     m_observationsHasBeenSet = true;
   }
-
   return *this;
 }
 

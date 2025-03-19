@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionInferenceAcceleratorsDetails::AwsEcsTaskDefinitionInferenceAcceleratorsDetails() : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionInferenceAcceleratorsDetails::AwsEcsTaskDefinitionInferenceAcceleratorsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionInferenceAcceleratorsDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsTaskDefinitionInferenceAcceleratorsDetails& AwsEcsTaskDefinitionInferenceA
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceType"))
   {
     m_deviceType = jsonValue.GetString("DeviceType");
-
     m_deviceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

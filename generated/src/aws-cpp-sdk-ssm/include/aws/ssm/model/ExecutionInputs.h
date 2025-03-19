@@ -32,7 +32,7 @@ namespace Model
   class ExecutionInputs
   {
   public:
-    AWS_SSM_API ExecutionInputs();
+    AWS_SSM_API ExecutionInputs() = default;
     AWS_SSM_API ExecutionInputs(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ExecutionInputs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Information about the optional inputs that can be specified for an automation
      * execution preview.</p>
      */
-    inline const AutomationExecutionInputs& GetAutomation() const{ return m_automation; }
+    inline const AutomationExecutionInputs& GetAutomation() const { return m_automation; }
     inline bool AutomationHasBeenSet() const { return m_automationHasBeenSet; }
-    inline void SetAutomation(const AutomationExecutionInputs& value) { m_automationHasBeenSet = true; m_automation = value; }
-    inline void SetAutomation(AutomationExecutionInputs&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
-    inline ExecutionInputs& WithAutomation(const AutomationExecutionInputs& value) { SetAutomation(value); return *this;}
-    inline ExecutionInputs& WithAutomation(AutomationExecutionInputs&& value) { SetAutomation(std::move(value)); return *this;}
+    template<typename AutomationT = AutomationExecutionInputs>
+    void SetAutomation(AutomationT&& value) { m_automationHasBeenSet = true; m_automation = std::forward<AutomationT>(value); }
+    template<typename AutomationT = AutomationExecutionInputs>
+    ExecutionInputs& WithAutomation(AutomationT&& value) { SetAutomation(std::forward<AutomationT>(value)); return *this;}
     ///@}
   private:
 

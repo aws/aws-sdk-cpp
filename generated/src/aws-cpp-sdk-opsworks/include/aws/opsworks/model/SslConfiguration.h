@@ -31,7 +31,7 @@ namespace Model
   class SslConfiguration
   {
   public:
-    AWS_OPSWORKS_API SslConfiguration();
+    AWS_OPSWORKS_API SslConfiguration() = default;
     AWS_OPSWORKS_API SslConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API SslConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The contents of the certificate's domain.crt file.</p>
      */
-    inline const Aws::String& GetCertificate() const{ return m_certificate; }
+    inline const Aws::String& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
-    inline SslConfiguration& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-    inline SslConfiguration& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-    inline SslConfiguration& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    template<typename CertificateT = Aws::String>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Aws::String>
+    SslConfiguration& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private key; the contents of the certificate's domain.kex file.</p>
      */
-    inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+    inline const Aws::String& GetPrivateKey() const { return m_privateKey; }
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
-    inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
-    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
-    inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
-    inline SslConfiguration& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
-    inline SslConfiguration& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
-    inline SslConfiguration& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+    template<typename PrivateKeyT = Aws::String>
+    void SetPrivateKey(PrivateKeyT&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::forward<PrivateKeyT>(value); }
+    template<typename PrivateKeyT = Aws::String>
+    SslConfiguration& WithPrivateKey(PrivateKeyT&& value) { SetPrivateKey(std::forward<PrivateKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>Optional. Can be used to specify an intermediate certificate authority key or
      * client authentication.</p>
      */
-    inline const Aws::String& GetChain() const{ return m_chain; }
+    inline const Aws::String& GetChain() const { return m_chain; }
     inline bool ChainHasBeenSet() const { return m_chainHasBeenSet; }
-    inline void SetChain(const Aws::String& value) { m_chainHasBeenSet = true; m_chain = value; }
-    inline void SetChain(Aws::String&& value) { m_chainHasBeenSet = true; m_chain = std::move(value); }
-    inline void SetChain(const char* value) { m_chainHasBeenSet = true; m_chain.assign(value); }
-    inline SslConfiguration& WithChain(const Aws::String& value) { SetChain(value); return *this;}
-    inline SslConfiguration& WithChain(Aws::String&& value) { SetChain(std::move(value)); return *this;}
-    inline SslConfiguration& WithChain(const char* value) { SetChain(value); return *this;}
+    template<typename ChainT = Aws::String>
+    void SetChain(ChainT&& value) { m_chainHasBeenSet = true; m_chain = std::forward<ChainT>(value); }
+    template<typename ChainT = Aws::String>
+    SslConfiguration& WithChain(ChainT&& value) { SetChain(std::forward<ChainT>(value)); return *this;}
     ///@}
   private:
 

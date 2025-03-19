@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-LambdaAction::LambdaAction() : 
-    m_functionArnHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 LambdaAction::LambdaAction(JsonView jsonValue)
-  : LambdaAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LambdaAction& LambdaAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("functionArn"))
   {
     m_functionArn = jsonValue.GetString("functionArn");
-
     m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
     m_payloadHasBeenSet = true;
   }
-
   return *this;
 }
 

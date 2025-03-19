@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceConnectEndpointsResponse::DescribeInstanceConnectEndpointsResponse()
-{
-}
-
 DescribeInstanceConnectEndpointsResponse::DescribeInstanceConnectEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeInstanceConnectEndpointsResponse& DescribeInstanceConnectEndpointsRespon
     if(!instanceConnectEndpointsNode.IsNull())
     {
       XmlNode instanceConnectEndpointsMember = instanceConnectEndpointsNode.FirstChild("item");
+      m_instanceConnectEndpointsHasBeenSet = !instanceConnectEndpointsMember.IsNull();
       while(!instanceConnectEndpointsMember.IsNull())
       {
         m_instanceConnectEndpoints.push_back(instanceConnectEndpointsMember);
         instanceConnectEndpointsMember = instanceConnectEndpointsMember.NextNode("item");
       }
 
+      m_instanceConnectEndpointsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeInstanceConnectEndpointsResponse& DescribeInstanceConnectEndpointsRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceConnectEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -34,7 +34,7 @@ namespace Model
   class BlackoutSlate
   {
   public:
-    AWS_MEDIALIVE_API BlackoutSlate();
+    AWS_MEDIALIVE_API BlackoutSlate() = default;
     AWS_MEDIALIVE_API BlackoutSlate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API BlackoutSlate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * Blackout slate image to be used. Leave empty for solid black. Only bmp and png
      * images are supported.
      */
-    inline const InputLocation& GetBlackoutSlateImage() const{ return m_blackoutSlateImage; }
+    inline const InputLocation& GetBlackoutSlateImage() const { return m_blackoutSlateImage; }
     inline bool BlackoutSlateImageHasBeenSet() const { return m_blackoutSlateImageHasBeenSet; }
-    inline void SetBlackoutSlateImage(const InputLocation& value) { m_blackoutSlateImageHasBeenSet = true; m_blackoutSlateImage = value; }
-    inline void SetBlackoutSlateImage(InputLocation&& value) { m_blackoutSlateImageHasBeenSet = true; m_blackoutSlateImage = std::move(value); }
-    inline BlackoutSlate& WithBlackoutSlateImage(const InputLocation& value) { SetBlackoutSlateImage(value); return *this;}
-    inline BlackoutSlate& WithBlackoutSlateImage(InputLocation&& value) { SetBlackoutSlateImage(std::move(value)); return *this;}
+    template<typename BlackoutSlateImageT = InputLocation>
+    void SetBlackoutSlateImage(BlackoutSlateImageT&& value) { m_blackoutSlateImageHasBeenSet = true; m_blackoutSlateImage = std::forward<BlackoutSlateImageT>(value); }
+    template<typename BlackoutSlateImageT = InputLocation>
+    BlackoutSlate& WithBlackoutSlateImage(BlackoutSlateImageT&& value) { SetBlackoutSlateImage(std::forward<BlackoutSlateImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,10 @@ namespace Model
      * and Network Start descriptors must contain a network ID that matches the value
      * entered in "Network ID".
      */
-    inline const BlackoutSlateNetworkEndBlackout& GetNetworkEndBlackout() const{ return m_networkEndBlackout; }
+    inline BlackoutSlateNetworkEndBlackout GetNetworkEndBlackout() const { return m_networkEndBlackout; }
     inline bool NetworkEndBlackoutHasBeenSet() const { return m_networkEndBlackoutHasBeenSet; }
-    inline void SetNetworkEndBlackout(const BlackoutSlateNetworkEndBlackout& value) { m_networkEndBlackoutHasBeenSet = true; m_networkEndBlackout = value; }
-    inline void SetNetworkEndBlackout(BlackoutSlateNetworkEndBlackout&& value) { m_networkEndBlackoutHasBeenSet = true; m_networkEndBlackout = std::move(value); }
-    inline BlackoutSlate& WithNetworkEndBlackout(const BlackoutSlateNetworkEndBlackout& value) { SetNetworkEndBlackout(value); return *this;}
-    inline BlackoutSlate& WithNetworkEndBlackout(BlackoutSlateNetworkEndBlackout&& value) { SetNetworkEndBlackout(std::move(value)); return *this;}
+    inline void SetNetworkEndBlackout(BlackoutSlateNetworkEndBlackout value) { m_networkEndBlackoutHasBeenSet = true; m_networkEndBlackout = value; }
+    inline BlackoutSlate& WithNetworkEndBlackout(BlackoutSlateNetworkEndBlackout value) { SetNetworkEndBlackout(value); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,12 @@ namespace Model
      * Path to local file to use as Network End Blackout image. Image will be scaled to
      * fill the entire output raster.
      */
-    inline const InputLocation& GetNetworkEndBlackoutImage() const{ return m_networkEndBlackoutImage; }
+    inline const InputLocation& GetNetworkEndBlackoutImage() const { return m_networkEndBlackoutImage; }
     inline bool NetworkEndBlackoutImageHasBeenSet() const { return m_networkEndBlackoutImageHasBeenSet; }
-    inline void SetNetworkEndBlackoutImage(const InputLocation& value) { m_networkEndBlackoutImageHasBeenSet = true; m_networkEndBlackoutImage = value; }
-    inline void SetNetworkEndBlackoutImage(InputLocation&& value) { m_networkEndBlackoutImageHasBeenSet = true; m_networkEndBlackoutImage = std::move(value); }
-    inline BlackoutSlate& WithNetworkEndBlackoutImage(const InputLocation& value) { SetNetworkEndBlackoutImage(value); return *this;}
-    inline BlackoutSlate& WithNetworkEndBlackoutImage(InputLocation&& value) { SetNetworkEndBlackoutImage(std::move(value)); return *this;}
+    template<typename NetworkEndBlackoutImageT = InputLocation>
+    void SetNetworkEndBlackoutImage(NetworkEndBlackoutImageT&& value) { m_networkEndBlackoutImageHasBeenSet = true; m_networkEndBlackoutImage = std::forward<NetworkEndBlackoutImageT>(value); }
+    template<typename NetworkEndBlackoutImageT = InputLocation>
+    BlackoutSlate& WithNetworkEndBlackoutImage(NetworkEndBlackoutImageT&& value) { SetNetworkEndBlackoutImage(std::forward<NetworkEndBlackoutImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +86,12 @@ namespace Model
      * Provides Network ID that matches EIDR ID format (e.g.,
      * "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
      */
-    inline const Aws::String& GetNetworkId() const{ return m_networkId; }
+    inline const Aws::String& GetNetworkId() const { return m_networkId; }
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
-    inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
-    inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
-    inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
-    inline BlackoutSlate& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-    inline BlackoutSlate& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-    inline BlackoutSlate& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    template<typename NetworkIdT = Aws::String>
+    void SetNetworkId(NetworkIdT&& value) { m_networkIdHasBeenSet = true; m_networkId = std::forward<NetworkIdT>(value); }
+    template<typename NetworkIdT = Aws::String>
+    BlackoutSlate& WithNetworkId(NetworkIdT&& value) { SetNetworkId(std::forward<NetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,19 +99,17 @@ namespace Model
      * When set to enabled, causes video, audio and captions to be blanked when
      * indicated by program metadata.
      */
-    inline const BlackoutSlateState& GetState() const{ return m_state; }
+    inline BlackoutSlateState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const BlackoutSlateState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(BlackoutSlateState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline BlackoutSlate& WithState(const BlackoutSlateState& value) { SetState(value); return *this;}
-    inline BlackoutSlate& WithState(BlackoutSlateState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(BlackoutSlateState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline BlackoutSlate& WithState(BlackoutSlateState value) { SetState(value); return *this;}
     ///@}
   private:
 
     InputLocation m_blackoutSlateImage;
     bool m_blackoutSlateImageHasBeenSet = false;
 
-    BlackoutSlateNetworkEndBlackout m_networkEndBlackout;
+    BlackoutSlateNetworkEndBlackout m_networkEndBlackout{BlackoutSlateNetworkEndBlackout::NOT_SET};
     bool m_networkEndBlackoutHasBeenSet = false;
 
     InputLocation m_networkEndBlackoutImage;
@@ -124,7 +118,7 @@ namespace Model
     Aws::String m_networkId;
     bool m_networkIdHasBeenSet = false;
 
-    BlackoutSlateState m_state;
+    BlackoutSlateState m_state{BlackoutSlateState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

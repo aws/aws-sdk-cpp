@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-UsageStatisticsSortBy::UsageStatisticsSortBy() : 
-    m_key(UsageStatisticsSortKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false)
-{
-}
-
 UsageStatisticsSortBy::UsageStatisticsSortBy(JsonView jsonValue)
-  : UsageStatisticsSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UsageStatisticsSortBy& UsageStatisticsSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = UsageStatisticsSortKeyMapper::GetUsageStatisticsSortKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderBy"))
   {
     m_orderBy = OrderByMapper::GetOrderByForName(jsonValue.GetString("orderBy"));
-
     m_orderByHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class Outpost
   {
   public:
-    AWS_S3OUTPOSTS_API Outpost();
+    AWS_S3OUTPOSTS_API Outpost() = default;
     AWS_S3OUTPOSTS_API Outpost(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3OUTPOSTS_API Outpost& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
-    inline Outpost& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline Outpost& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline Outpost& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    Outpost& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
      * (RAM).</p>
      */
-    inline const Aws::String& GetS3OutpostArn() const{ return m_s3OutpostArn; }
+    inline const Aws::String& GetS3OutpostArn() const { return m_s3OutpostArn; }
     inline bool S3OutpostArnHasBeenSet() const { return m_s3OutpostArnHasBeenSet; }
-    inline void SetS3OutpostArn(const Aws::String& value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn = value; }
-    inline void SetS3OutpostArn(Aws::String&& value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn = std::move(value); }
-    inline void SetS3OutpostArn(const char* value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn.assign(value); }
-    inline Outpost& WithS3OutpostArn(const Aws::String& value) { SetS3OutpostArn(value); return *this;}
-    inline Outpost& WithS3OutpostArn(Aws::String&& value) { SetS3OutpostArn(std::move(value)); return *this;}
-    inline Outpost& WithS3OutpostArn(const char* value) { SetS3OutpostArn(value); return *this;}
+    template<typename S3OutpostArnT = Aws::String>
+    void SetS3OutpostArn(S3OutpostArnT&& value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn = std::forward<S3OutpostArnT>(value); }
+    template<typename S3OutpostArnT = Aws::String>
+    Outpost& WithS3OutpostArn(S3OutpostArnT&& value) { SetS3OutpostArn(std::forward<S3OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the unique identifier for the outpost.</p>
      */
-    inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
+    inline const Aws::String& GetOutpostId() const { return m_outpostId; }
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
-    inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
-    inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
-    inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
-    inline Outpost& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-    inline Outpost& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-    inline Outpost& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+    template<typename OutpostIdT = Aws::String>
+    void SetOutpostId(OutpostIdT&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::forward<OutpostIdT>(value); }
+    template<typename OutpostIdT = Aws::String>
+    Outpost& WithOutpostId(OutpostIdT&& value) { SetOutpostId(std::forward<OutpostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,21 +79,19 @@ namespace Model
      * <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for
      * comparing owned versus shared outposts.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline Outpost& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline Outpost& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline Outpost& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    Outpost& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 capacity of the outpost in bytes.</p>
      */
-    inline long long GetCapacityInBytes() const{ return m_capacityInBytes; }
+    inline long long GetCapacityInBytes() const { return m_capacityInBytes; }
     inline bool CapacityInBytesHasBeenSet() const { return m_capacityInBytesHasBeenSet; }
     inline void SetCapacityInBytes(long long value) { m_capacityInBytesHasBeenSet = true; m_capacityInBytes = value; }
     inline Outpost& WithCapacityInBytes(long long value) { SetCapacityInBytes(value); return *this;}
@@ -118,7 +110,7 @@ namespace Model
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
-    long long m_capacityInBytes;
+    long long m_capacityInBytes{0};
     bool m_capacityInBytesHasBeenSet = false;
   };
 

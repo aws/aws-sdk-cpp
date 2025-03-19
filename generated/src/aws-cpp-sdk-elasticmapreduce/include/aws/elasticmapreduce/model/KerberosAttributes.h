@@ -35,7 +35,7 @@ namespace Model
   class KerberosAttributes
   {
   public:
-    AWS_EMR_API KerberosAttributes();
+    AWS_EMR_API KerberosAttributes() = default;
     AWS_EMR_API KerberosAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API KerberosAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the Kerberos realm to which all nodes in a cluster belong. For
      * example, <code>EC2.INTERNAL</code>. </p>
      */
-    inline const Aws::String& GetRealm() const{ return m_realm; }
+    inline const Aws::String& GetRealm() const { return m_realm; }
     inline bool RealmHasBeenSet() const { return m_realmHasBeenSet; }
-    inline void SetRealm(const Aws::String& value) { m_realmHasBeenSet = true; m_realm = value; }
-    inline void SetRealm(Aws::String&& value) { m_realmHasBeenSet = true; m_realm = std::move(value); }
-    inline void SetRealm(const char* value) { m_realmHasBeenSet = true; m_realm.assign(value); }
-    inline KerberosAttributes& WithRealm(const Aws::String& value) { SetRealm(value); return *this;}
-    inline KerberosAttributes& WithRealm(Aws::String&& value) { SetRealm(std::move(value)); return *this;}
-    inline KerberosAttributes& WithRealm(const char* value) { SetRealm(value); return *this;}
+    template<typename RealmT = Aws::String>
+    void SetRealm(RealmT&& value) { m_realmHasBeenSet = true; m_realm = std::forward<RealmT>(value); }
+    template<typename RealmT = Aws::String>
+    KerberosAttributes& WithRealm(RealmT&& value) { SetRealm(std::forward<RealmT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * cluster-dedicated KDC, which maintains Kerberos principals, password policies,
      * and keytabs for the cluster.</p>
      */
-    inline const Aws::String& GetKdcAdminPassword() const{ return m_kdcAdminPassword; }
+    inline const Aws::String& GetKdcAdminPassword() const { return m_kdcAdminPassword; }
     inline bool KdcAdminPasswordHasBeenSet() const { return m_kdcAdminPasswordHasBeenSet; }
-    inline void SetKdcAdminPassword(const Aws::String& value) { m_kdcAdminPasswordHasBeenSet = true; m_kdcAdminPassword = value; }
-    inline void SetKdcAdminPassword(Aws::String&& value) { m_kdcAdminPasswordHasBeenSet = true; m_kdcAdminPassword = std::move(value); }
-    inline void SetKdcAdminPassword(const char* value) { m_kdcAdminPasswordHasBeenSet = true; m_kdcAdminPassword.assign(value); }
-    inline KerberosAttributes& WithKdcAdminPassword(const Aws::String& value) { SetKdcAdminPassword(value); return *this;}
-    inline KerberosAttributes& WithKdcAdminPassword(Aws::String&& value) { SetKdcAdminPassword(std::move(value)); return *this;}
-    inline KerberosAttributes& WithKdcAdminPassword(const char* value) { SetKdcAdminPassword(value); return *this;}
+    template<typename KdcAdminPasswordT = Aws::String>
+    void SetKdcAdminPassword(KdcAdminPasswordT&& value) { m_kdcAdminPasswordHasBeenSet = true; m_kdcAdminPassword = std::forward<KdcAdminPasswordT>(value); }
+    template<typename KdcAdminPasswordT = Aws::String>
+    KerberosAttributes& WithKdcAdminPassword(KdcAdminPasswordT&& value) { SetKdcAdminPassword(std::forward<KdcAdminPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * realm. The cross-realm principal password, which must be identical across
      * realms.</p>
      */
-    inline const Aws::String& GetCrossRealmTrustPrincipalPassword() const{ return m_crossRealmTrustPrincipalPassword; }
+    inline const Aws::String& GetCrossRealmTrustPrincipalPassword() const { return m_crossRealmTrustPrincipalPassword; }
     inline bool CrossRealmTrustPrincipalPasswordHasBeenSet() const { return m_crossRealmTrustPrincipalPasswordHasBeenSet; }
-    inline void SetCrossRealmTrustPrincipalPassword(const Aws::String& value) { m_crossRealmTrustPrincipalPasswordHasBeenSet = true; m_crossRealmTrustPrincipalPassword = value; }
-    inline void SetCrossRealmTrustPrincipalPassword(Aws::String&& value) { m_crossRealmTrustPrincipalPasswordHasBeenSet = true; m_crossRealmTrustPrincipalPassword = std::move(value); }
-    inline void SetCrossRealmTrustPrincipalPassword(const char* value) { m_crossRealmTrustPrincipalPasswordHasBeenSet = true; m_crossRealmTrustPrincipalPassword.assign(value); }
-    inline KerberosAttributes& WithCrossRealmTrustPrincipalPassword(const Aws::String& value) { SetCrossRealmTrustPrincipalPassword(value); return *this;}
-    inline KerberosAttributes& WithCrossRealmTrustPrincipalPassword(Aws::String&& value) { SetCrossRealmTrustPrincipalPassword(std::move(value)); return *this;}
-    inline KerberosAttributes& WithCrossRealmTrustPrincipalPassword(const char* value) { SetCrossRealmTrustPrincipalPassword(value); return *this;}
+    template<typename CrossRealmTrustPrincipalPasswordT = Aws::String>
+    void SetCrossRealmTrustPrincipalPassword(CrossRealmTrustPrincipalPasswordT&& value) { m_crossRealmTrustPrincipalPasswordHasBeenSet = true; m_crossRealmTrustPrincipalPassword = std::forward<CrossRealmTrustPrincipalPasswordT>(value); }
+    template<typename CrossRealmTrustPrincipalPasswordT = Aws::String>
+    KerberosAttributes& WithCrossRealmTrustPrincipalPassword(CrossRealmTrustPrincipalPasswordT&& value) { SetCrossRealmTrustPrincipalPassword(std::forward<CrossRealmTrustPrincipalPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,28 +87,24 @@ namespace Model
      * <p>Required only when establishing a cross-realm trust with an Active Directory
      * domain. A user with sufficient privileges to join resources to the domain.</p>
      */
-    inline const Aws::String& GetADDomainJoinUser() const{ return m_aDDomainJoinUser; }
+    inline const Aws::String& GetADDomainJoinUser() const { return m_aDDomainJoinUser; }
     inline bool ADDomainJoinUserHasBeenSet() const { return m_aDDomainJoinUserHasBeenSet; }
-    inline void SetADDomainJoinUser(const Aws::String& value) { m_aDDomainJoinUserHasBeenSet = true; m_aDDomainJoinUser = value; }
-    inline void SetADDomainJoinUser(Aws::String&& value) { m_aDDomainJoinUserHasBeenSet = true; m_aDDomainJoinUser = std::move(value); }
-    inline void SetADDomainJoinUser(const char* value) { m_aDDomainJoinUserHasBeenSet = true; m_aDDomainJoinUser.assign(value); }
-    inline KerberosAttributes& WithADDomainJoinUser(const Aws::String& value) { SetADDomainJoinUser(value); return *this;}
-    inline KerberosAttributes& WithADDomainJoinUser(Aws::String&& value) { SetADDomainJoinUser(std::move(value)); return *this;}
-    inline KerberosAttributes& WithADDomainJoinUser(const char* value) { SetADDomainJoinUser(value); return *this;}
+    template<typename ADDomainJoinUserT = Aws::String>
+    void SetADDomainJoinUser(ADDomainJoinUserT&& value) { m_aDDomainJoinUserHasBeenSet = true; m_aDDomainJoinUser = std::forward<ADDomainJoinUserT>(value); }
+    template<typename ADDomainJoinUserT = Aws::String>
+    KerberosAttributes& WithADDomainJoinUser(ADDomainJoinUserT&& value) { SetADDomainJoinUser(std::forward<ADDomainJoinUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
      */
-    inline const Aws::String& GetADDomainJoinPassword() const{ return m_aDDomainJoinPassword; }
+    inline const Aws::String& GetADDomainJoinPassword() const { return m_aDDomainJoinPassword; }
     inline bool ADDomainJoinPasswordHasBeenSet() const { return m_aDDomainJoinPasswordHasBeenSet; }
-    inline void SetADDomainJoinPassword(const Aws::String& value) { m_aDDomainJoinPasswordHasBeenSet = true; m_aDDomainJoinPassword = value; }
-    inline void SetADDomainJoinPassword(Aws::String&& value) { m_aDDomainJoinPasswordHasBeenSet = true; m_aDDomainJoinPassword = std::move(value); }
-    inline void SetADDomainJoinPassword(const char* value) { m_aDDomainJoinPasswordHasBeenSet = true; m_aDDomainJoinPassword.assign(value); }
-    inline KerberosAttributes& WithADDomainJoinPassword(const Aws::String& value) { SetADDomainJoinPassword(value); return *this;}
-    inline KerberosAttributes& WithADDomainJoinPassword(Aws::String&& value) { SetADDomainJoinPassword(std::move(value)); return *this;}
-    inline KerberosAttributes& WithADDomainJoinPassword(const char* value) { SetADDomainJoinPassword(value); return *this;}
+    template<typename ADDomainJoinPasswordT = Aws::String>
+    void SetADDomainJoinPassword(ADDomainJoinPasswordT&& value) { m_aDDomainJoinPasswordHasBeenSet = true; m_aDDomainJoinPassword = std::forward<ADDomainJoinPasswordT>(value); }
+    template<typename ADDomainJoinPasswordT = Aws::String>
+    KerberosAttributes& WithADDomainJoinPassword(ADDomainJoinPasswordT&& value) { SetADDomainJoinPassword(std::forward<ADDomainJoinPasswordT>(value)); return *this;}
     ///@}
   private:
 

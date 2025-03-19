@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReplicationTaskAssessmentResultsResult::DescribeReplicationTaskAssessmentResultsResult()
-{
-}
-
 DescribeReplicationTaskAssessmentResultsResult::DescribeReplicationTaskAssessmentResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeReplicationTaskAssessmentResultsResult& DescribeReplicationTaskAssessmen
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
+    m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskAssessmentResults"))
   {
     Aws::Utils::Array<JsonView> replicationTaskAssessmentResultsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentResults");
@@ -48,14 +42,15 @@ DescribeReplicationTaskAssessmentResultsResult& DescribeReplicationTaskAssessmen
     {
       m_replicationTaskAssessmentResults.push_back(replicationTaskAssessmentResultsJsonList[replicationTaskAssessmentResultsIndex].AsObject());
     }
+    m_replicationTaskAssessmentResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

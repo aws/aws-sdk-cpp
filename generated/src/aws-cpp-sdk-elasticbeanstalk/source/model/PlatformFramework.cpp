@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-PlatformFramework::PlatformFramework() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 PlatformFramework::PlatformFramework(const XmlNode& xmlNode)
-  : PlatformFramework()
 {
   *this = xmlNode;
 }

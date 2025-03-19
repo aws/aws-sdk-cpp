@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePullRequestApprovalRuleRequest::DeletePullRequestApprovalRuleRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_approvalRuleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePullRequestApprovalRuleRequest::SerializePayload() const
 {
   JsonValue payload;

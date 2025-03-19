@@ -28,7 +28,7 @@ namespace Model
   class CreateNodeRegistrationScriptRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API CreateNodeRegistrationScriptRequest();
+    AWS_MEDIALIVE_API CreateNodeRegistrationScriptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * The ID of the cluster
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline CreateNodeRegistrationScriptRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    CreateNodeRegistrationScriptRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * If you're generating a re-registration script for an already existing node, this
      * is where you provide the id.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CreateNodeRegistrationScriptRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateNodeRegistrationScriptRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,28 +71,26 @@ namespace Model
      * hardware) and $ts for the date and time that the Node is created, in UTC (for
      * example, 2024-08-20T23:35:12Z).
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateNodeRegistrationScriptRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateNodeRegistrationScriptRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Documentation update needed
      */
-    inline const Aws::Vector<NodeInterfaceMapping>& GetNodeInterfaceMappings() const{ return m_nodeInterfaceMappings; }
+    inline const Aws::Vector<NodeInterfaceMapping>& GetNodeInterfaceMappings() const { return m_nodeInterfaceMappings; }
     inline bool NodeInterfaceMappingsHasBeenSet() const { return m_nodeInterfaceMappingsHasBeenSet; }
-    inline void SetNodeInterfaceMappings(const Aws::Vector<NodeInterfaceMapping>& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = value; }
-    inline void SetNodeInterfaceMappings(Aws::Vector<NodeInterfaceMapping>&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = std::move(value); }
-    inline CreateNodeRegistrationScriptRequest& WithNodeInterfaceMappings(const Aws::Vector<NodeInterfaceMapping>& value) { SetNodeInterfaceMappings(value); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithNodeInterfaceMappings(Aws::Vector<NodeInterfaceMapping>&& value) { SetNodeInterfaceMappings(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptRequest& AddNodeInterfaceMappings(const NodeInterfaceMapping& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.push_back(value); return *this; }
-    inline CreateNodeRegistrationScriptRequest& AddNodeInterfaceMappings(NodeInterfaceMapping&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.push_back(std::move(value)); return *this; }
+    template<typename NodeInterfaceMappingsT = Aws::Vector<NodeInterfaceMapping>>
+    void SetNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings = std::forward<NodeInterfaceMappingsT>(value); }
+    template<typename NodeInterfaceMappingsT = Aws::Vector<NodeInterfaceMapping>>
+    CreateNodeRegistrationScriptRequest& WithNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { SetNodeInterfaceMappings(std::forward<NodeInterfaceMappingsT>(value)); return *this;}
+    template<typename NodeInterfaceMappingsT = NodeInterfaceMapping>
+    CreateNodeRegistrationScriptRequest& AddNodeInterfaceMappings(NodeInterfaceMappingsT&& value) { m_nodeInterfaceMappingsHasBeenSet = true; m_nodeInterfaceMappings.emplace_back(std::forward<NodeInterfaceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * An ID that you assign to a create request. This ID ensures idempotency when
      * creating resources.
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline CreateNodeRegistrationScriptRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNodeRegistrationScriptRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +112,10 @@ namespace Model
      * for encoding. BACKUP means the Node is a redundant Node and might get used if an
      * ACTIVE Node fails.
      */
-    inline const NodeRole& GetRole() const{ return m_role; }
+    inline NodeRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const NodeRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(NodeRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline CreateNodeRegistrationScriptRequest& WithRole(const NodeRole& value) { SetRole(value); return *this;}
-    inline CreateNodeRegistrationScriptRequest& WithRole(NodeRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(NodeRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline CreateNodeRegistrationScriptRequest& WithRole(NodeRole value) { SetRole(value); return *this;}
     ///@}
   private:
 
@@ -144,7 +134,7 @@ namespace Model
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    NodeRole m_role;
+    NodeRole m_role{NodeRole::NOT_SET};
     bool m_roleHasBeenSet = false;
   };
 

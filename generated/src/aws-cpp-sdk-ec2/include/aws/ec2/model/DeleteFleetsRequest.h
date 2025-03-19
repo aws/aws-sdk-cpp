@@ -22,7 +22,7 @@ namespace Model
   class DeleteFleetsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteFleetsRequest();
+    AWS_EC2_API DeleteFleetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteFleetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -56,15 +56,14 @@ namespace Model
      * specify up to 25 <code>instant</code> fleet IDs and up to 100
      * <code>maintain</code> or <code>request</code> fleet IDs. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
+    inline const Aws::Vector<Aws::String>& GetFleetIds() const { return m_fleetIds; }
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
-    inline DeleteFleetsRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
-    inline DeleteFleetsRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
-    inline DeleteFleetsRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-    inline DeleteFleetsRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
-    inline DeleteFleetsRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    template<typename FleetIdsT = Aws::Vector<Aws::String>>
+    void SetFleetIds(FleetIdsT&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::forward<FleetIdsT>(value); }
+    template<typename FleetIdsT = Aws::Vector<Aws::String>>
+    DeleteFleetsRequest& WithFleetIds(FleetIdsT&& value) { SetFleetIds(std::forward<FleetIdsT>(value)); return *this;}
+    template<typename FleetIdsT = Aws::String>
+    DeleteFleetsRequest& AddFleetIds(FleetIdsT&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.emplace_back(std::forward<FleetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,20 +76,20 @@ namespace Model
      * fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted
      * <code>instant</code> fleet with running instances is not supported.</p>
      */
-    inline bool GetTerminateInstances() const{ return m_terminateInstances; }
+    inline bool GetTerminateInstances() const { return m_terminateInstances; }
     inline bool TerminateInstancesHasBeenSet() const { return m_terminateInstancesHasBeenSet; }
     inline void SetTerminateInstances(bool value) { m_terminateInstancesHasBeenSet = true; m_terminateInstances = value; }
     inline DeleteFleetsRequest& WithTerminateInstances(bool value) { SetTerminateInstances(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fleetIds;
     bool m_fleetIdsHasBeenSet = false;
 
-    bool m_terminateInstances;
+    bool m_terminateInstances{false};
     bool m_terminateInstancesHasBeenSet = false;
   };
 

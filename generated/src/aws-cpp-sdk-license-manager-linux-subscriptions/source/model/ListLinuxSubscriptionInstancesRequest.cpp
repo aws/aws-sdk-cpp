@@ -12,14 +12,6 @@ using namespace Aws::LicenseManagerLinuxSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLinuxSubscriptionInstancesRequest::ListLinuxSubscriptionInstancesRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListLinuxSubscriptionInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

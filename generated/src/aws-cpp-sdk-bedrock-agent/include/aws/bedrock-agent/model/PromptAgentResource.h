@@ -37,7 +37,7 @@ namespace Model
   class PromptAgentResource
   {
   public:
-    AWS_BEDROCKAGENT_API PromptAgentResource();
+    AWS_BEDROCKAGENT_API PromptAgentResource() = default;
     AWS_BEDROCKAGENT_API PromptAgentResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptAgentResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The ARN of the agent with which to use the prompt.</p>
      */
-    inline const Aws::String& GetAgentIdentifier() const{ return m_agentIdentifier; }
+    inline const Aws::String& GetAgentIdentifier() const { return m_agentIdentifier; }
     inline bool AgentIdentifierHasBeenSet() const { return m_agentIdentifierHasBeenSet; }
-    inline void SetAgentIdentifier(const Aws::String& value) { m_agentIdentifierHasBeenSet = true; m_agentIdentifier = value; }
-    inline void SetAgentIdentifier(Aws::String&& value) { m_agentIdentifierHasBeenSet = true; m_agentIdentifier = std::move(value); }
-    inline void SetAgentIdentifier(const char* value) { m_agentIdentifierHasBeenSet = true; m_agentIdentifier.assign(value); }
-    inline PromptAgentResource& WithAgentIdentifier(const Aws::String& value) { SetAgentIdentifier(value); return *this;}
-    inline PromptAgentResource& WithAgentIdentifier(Aws::String&& value) { SetAgentIdentifier(std::move(value)); return *this;}
-    inline PromptAgentResource& WithAgentIdentifier(const char* value) { SetAgentIdentifier(value); return *this;}
+    template<typename AgentIdentifierT = Aws::String>
+    void SetAgentIdentifier(AgentIdentifierT&& value) { m_agentIdentifierHasBeenSet = true; m_agentIdentifier = std::forward<AgentIdentifierT>(value); }
+    template<typename AgentIdentifierT = Aws::String>
+    PromptAgentResource& WithAgentIdentifier(AgentIdentifierT&& value) { SetAgentIdentifier(std::forward<AgentIdentifierT>(value)); return *this;}
     ///@}
   private:
 

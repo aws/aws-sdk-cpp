@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ExportVectorEnrichmentJobOutputConfig::ExportVectorEnrichmentJobOutputConfig() : 
-    m_s3DataHasBeenSet(false)
-{
-}
-
 ExportVectorEnrichmentJobOutputConfig::ExportVectorEnrichmentJobOutputConfig(JsonView jsonValue)
-  : ExportVectorEnrichmentJobOutputConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportVectorEnrichmentJobOutputConfig& ExportVectorEnrichmentJobOutputConfig::op
   if(jsonValue.ValueExists("S3Data"))
   {
     m_s3Data = jsonValue.GetObject("S3Data");
-
     m_s3DataHasBeenSet = true;
   }
-
   return *this;
 }
 

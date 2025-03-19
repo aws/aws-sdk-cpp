@@ -12,12 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterInstanceRequest::DeregisterInstanceRequest() : 
-    m_serviceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

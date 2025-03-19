@@ -12,14 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataSourcesRequest::ListDataSourcesRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDataSourcesRequest::SerializePayload() const
 {
   JsonValue payload;

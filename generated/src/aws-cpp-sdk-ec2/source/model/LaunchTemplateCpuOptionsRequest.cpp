@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateCpuOptionsRequest::LaunchTemplateCpuOptionsRequest() : 
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_amdSevSnp(AmdSevSnpSpecification::NOT_SET),
-    m_amdSevSnpHasBeenSet(false)
-{
-}
-
 LaunchTemplateCpuOptionsRequest::LaunchTemplateCpuOptionsRequest(const XmlNode& xmlNode)
-  : LaunchTemplateCpuOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -57,7 +46,7 @@ LaunchTemplateCpuOptionsRequest& LaunchTemplateCpuOptionsRequest::operator =(con
     XmlNode amdSevSnpNode = resultNode.FirstChild("AmdSevSnp");
     if(!amdSevSnpNode.IsNull())
     {
-      m_amdSevSnp = AmdSevSnpSpecificationMapper::GetAmdSevSnpSpecificationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amdSevSnpNode.GetText()).c_str()).c_str());
+      m_amdSevSnp = AmdSevSnpSpecificationMapper::GetAmdSevSnpSpecificationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amdSevSnpNode.GetText()).c_str()));
       m_amdSevSnpHasBeenSet = true;
     }
   }

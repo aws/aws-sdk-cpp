@@ -28,7 +28,7 @@ namespace Model
   class GetGroupProfileResult
   {
   public:
-    AWS_DATAZONE_API GetGroupProfileResult();
+    AWS_DATAZONE_API GetGroupProfileResult() = default;
     AWS_DATAZONE_API GetGroupProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API GetGroupProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,73 +38,68 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which the group profile
      * exists.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline GetGroupProfileResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline GetGroupProfileResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline GetGroupProfileResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    GetGroupProfileResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the group for which the specified group profile exists.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
-    inline void SetGroupName(const Aws::String& value) { m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupName.assign(value); }
-    inline GetGroupProfileResult& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GetGroupProfileResult& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GetGroupProfileResult& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    GetGroupProfileResult& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the group profile.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetGroupProfileResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetGroupProfileResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetGroupProfileResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetGroupProfileResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the group profile.</p>
      */
-    inline const GroupProfileStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const GroupProfileStatus& value) { m_status = value; }
-    inline void SetStatus(GroupProfileStatus&& value) { m_status = std::move(value); }
-    inline GetGroupProfileResult& WithStatus(const GroupProfileStatus& value) { SetStatus(value); return *this;}
-    inline GetGroupProfileResult& WithStatus(GroupProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline GroupProfileStatus GetStatus() const { return m_status; }
+    inline void SetStatus(GroupProfileStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetGroupProfileResult& WithStatus(GroupProfileStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGroupProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGroupProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGroupProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGroupProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_groupName;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    GroupProfileStatus m_status;
+    GroupProfileStatus m_status{GroupProfileStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

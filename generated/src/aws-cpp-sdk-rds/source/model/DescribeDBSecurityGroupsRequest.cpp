@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBSecurityGroupsRequest::DescribeDBSecurityGroupsRequest() : 
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBSecurityGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

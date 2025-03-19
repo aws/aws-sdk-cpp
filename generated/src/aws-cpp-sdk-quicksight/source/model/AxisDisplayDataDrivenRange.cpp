@@ -18,10 +18,6 @@ namespace QuickSight
 namespace Model
 {
 
-AxisDisplayDataDrivenRange::AxisDisplayDataDrivenRange()
-{
-}
-
 AxisDisplayDataDrivenRange::AxisDisplayDataDrivenRange(JsonView jsonValue)
 {
   *this = jsonValue;

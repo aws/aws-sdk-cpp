@@ -33,7 +33,7 @@ namespace Model
   class InstanceStatusEvent
   {
   public:
-    AWS_EC2_API InstanceStatusEvent();
+    AWS_EC2_API InstanceStatusEvent() = default;
     AWS_EC2_API InstanceStatusEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceStatusEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p>The ID of the event.</p>
      */
-    inline const Aws::String& GetInstanceEventId() const{ return m_instanceEventId; }
+    inline const Aws::String& GetInstanceEventId() const { return m_instanceEventId; }
     inline bool InstanceEventIdHasBeenSet() const { return m_instanceEventIdHasBeenSet; }
-    inline void SetInstanceEventId(const Aws::String& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = value; }
-    inline void SetInstanceEventId(Aws::String&& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = std::move(value); }
-    inline void SetInstanceEventId(const char* value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId.assign(value); }
-    inline InstanceStatusEvent& WithInstanceEventId(const Aws::String& value) { SetInstanceEventId(value); return *this;}
-    inline InstanceStatusEvent& WithInstanceEventId(Aws::String&& value) { SetInstanceEventId(std::move(value)); return *this;}
-    inline InstanceStatusEvent& WithInstanceEventId(const char* value) { SetInstanceEventId(value); return *this;}
+    template<typename InstanceEventIdT = Aws::String>
+    void SetInstanceEventId(InstanceEventIdT&& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = std::forward<InstanceEventIdT>(value); }
+    template<typename InstanceEventIdT = Aws::String>
+    InstanceStatusEvent& WithInstanceEventId(InstanceEventIdT&& value) { SetInstanceEventId(std::forward<InstanceEventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event code.</p>
      */
-    inline const EventCode& GetCode() const{ return m_code; }
+    inline EventCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const EventCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(EventCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline InstanceStatusEvent& WithCode(const EventCode& value) { SetCode(value); return *this;}
-    inline InstanceStatusEvent& WithCode(EventCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(EventCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline InstanceStatusEvent& WithCode(EventCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
@@ -73,69 +69,67 @@ namespace Model
      * can still be described for up to a week. If the event has been completed, this
      * description starts with the following text: [Completed].</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline InstanceStatusEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline InstanceStatusEvent& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline InstanceStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    InstanceStatusEvent& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest scheduled end time for the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const { return m_notAfter; }
     inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
-    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
-    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
-    inline InstanceStatusEvent& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
-    inline InstanceStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    void SetNotAfter(NotAfterT&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::forward<NotAfterT>(value); }
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    InstanceStatusEvent& WithNotAfter(NotAfterT&& value) { SetNotAfter(std::forward<NotAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The earliest scheduled start time for the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::Utils::DateTime& GetNotBefore() const { return m_notBefore; }
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
-    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
-    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
-    inline InstanceStatusEvent& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
-    inline InstanceStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
+    template<typename NotBeforeT = Aws::Utils::DateTime>
+    void SetNotBefore(NotBeforeT&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::forward<NotBeforeT>(value); }
+    template<typename NotBeforeT = Aws::Utils::DateTime>
+    InstanceStatusEvent& WithNotBefore(NotBeforeT&& value) { SetNotBefore(std::forward<NotBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The deadline for starting the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotBeforeDeadline() const{ return m_notBeforeDeadline; }
+    inline const Aws::Utils::DateTime& GetNotBeforeDeadline() const { return m_notBeforeDeadline; }
     inline bool NotBeforeDeadlineHasBeenSet() const { return m_notBeforeDeadlineHasBeenSet; }
-    inline void SetNotBeforeDeadline(const Aws::Utils::DateTime& value) { m_notBeforeDeadlineHasBeenSet = true; m_notBeforeDeadline = value; }
-    inline void SetNotBeforeDeadline(Aws::Utils::DateTime&& value) { m_notBeforeDeadlineHasBeenSet = true; m_notBeforeDeadline = std::move(value); }
-    inline InstanceStatusEvent& WithNotBeforeDeadline(const Aws::Utils::DateTime& value) { SetNotBeforeDeadline(value); return *this;}
-    inline InstanceStatusEvent& WithNotBeforeDeadline(Aws::Utils::DateTime&& value) { SetNotBeforeDeadline(std::move(value)); return *this;}
+    template<typename NotBeforeDeadlineT = Aws::Utils::DateTime>
+    void SetNotBeforeDeadline(NotBeforeDeadlineT&& value) { m_notBeforeDeadlineHasBeenSet = true; m_notBeforeDeadline = std::forward<NotBeforeDeadlineT>(value); }
+    template<typename NotBeforeDeadlineT = Aws::Utils::DateTime>
+    InstanceStatusEvent& WithNotBeforeDeadline(NotBeforeDeadlineT&& value) { SetNotBeforeDeadline(std::forward<NotBeforeDeadlineT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceEventId;
     bool m_instanceEventIdHasBeenSet = false;
 
-    EventCode m_code;
+    EventCode m_code{EventCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notAfter;
+    Aws::Utils::DateTime m_notAfter{};
     bool m_notAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notBefore;
+    Aws::Utils::DateTime m_notBefore{};
     bool m_notBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notBeforeDeadline;
+    Aws::Utils::DateTime m_notBeforeDeadline{};
     bool m_notBeforeDeadlineHasBeenSet = false;
   };
 

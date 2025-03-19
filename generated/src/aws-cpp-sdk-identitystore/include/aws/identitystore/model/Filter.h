@@ -33,7 +33,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_IDENTITYSTORE_API Filter();
+    AWS_IDENTITYSTORE_API Filter() = default;
     AWS_IDENTITYSTORE_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code>
      * is a valid attribute path for the <code>ListGroups</code> API.</p>
      */
-    inline const Aws::String& GetAttributePath() const{ return m_attributePath; }
+    inline const Aws::String& GetAttributePath() const { return m_attributePath; }
     inline bool AttributePathHasBeenSet() const { return m_attributePathHasBeenSet; }
-    inline void SetAttributePath(const Aws::String& value) { m_attributePathHasBeenSet = true; m_attributePath = value; }
-    inline void SetAttributePath(Aws::String&& value) { m_attributePathHasBeenSet = true; m_attributePath = std::move(value); }
-    inline void SetAttributePath(const char* value) { m_attributePathHasBeenSet = true; m_attributePath.assign(value); }
-    inline Filter& WithAttributePath(const Aws::String& value) { SetAttributePath(value); return *this;}
-    inline Filter& WithAttributePath(Aws::String&& value) { SetAttributePath(std::move(value)); return *this;}
-    inline Filter& WithAttributePath(const char* value) { SetAttributePath(value); return *this;}
+    template<typename AttributePathT = Aws::String>
+    void SetAttributePath(AttributePathT&& value) { m_attributePathHasBeenSet = true; m_attributePath = std::forward<AttributePathT>(value); }
+    template<typename AttributePathT = Aws::String>
+    Filter& WithAttributePath(AttributePathT&& value) { SetAttributePath(std::forward<AttributePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>Represents the data for an attribute. Each attribute value is described as a
      * name-value pair. </p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline Filter& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline Filter& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline Filter& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    Filter& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
   private:
 

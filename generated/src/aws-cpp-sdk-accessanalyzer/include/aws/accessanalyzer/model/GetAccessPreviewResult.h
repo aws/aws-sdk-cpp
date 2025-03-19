@@ -28,7 +28,7 @@ namespace Model
   class GetAccessPreviewResult
   {
   public:
-    AWS_ACCESSANALYZER_API GetAccessPreviewResult();
+    AWS_ACCESSANALYZER_API GetAccessPreviewResult() = default;
     AWS_ACCESSANALYZER_API GetAccessPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API GetAccessPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object that contains information about the access preview.</p>
      */
-    inline const AccessPreview& GetAccessPreview() const{ return m_accessPreview; }
-    inline void SetAccessPreview(const AccessPreview& value) { m_accessPreview = value; }
-    inline void SetAccessPreview(AccessPreview&& value) { m_accessPreview = std::move(value); }
-    inline GetAccessPreviewResult& WithAccessPreview(const AccessPreview& value) { SetAccessPreview(value); return *this;}
-    inline GetAccessPreviewResult& WithAccessPreview(AccessPreview&& value) { SetAccessPreview(std::move(value)); return *this;}
+    inline const AccessPreview& GetAccessPreview() const { return m_accessPreview; }
+    template<typename AccessPreviewT = AccessPreview>
+    void SetAccessPreview(AccessPreviewT&& value) { m_accessPreviewHasBeenSet = true; m_accessPreview = std::forward<AccessPreviewT>(value); }
+    template<typename AccessPreviewT = AccessPreview>
+    GetAccessPreviewResult& WithAccessPreview(AccessPreviewT&& value) { SetAccessPreview(std::forward<AccessPreviewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccessPreviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccessPreviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccessPreviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccessPreviewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccessPreview m_accessPreview;
+    bool m_accessPreviewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

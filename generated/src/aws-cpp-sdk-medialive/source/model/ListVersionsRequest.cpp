@@ -12,10 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVersionsRequest::ListVersionsRequest()
-{
-}
-
 Aws::String ListVersionsRequest::SerializePayload() const
 {
   return {};

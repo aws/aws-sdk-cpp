@@ -34,7 +34,7 @@ namespace Model
   class SubSlotSetting
   {
   public:
-    AWS_LEXMODELSV2_API SubSlotSetting();
+    AWS_LEXMODELSV2_API SubSlotSetting() = default;
     AWS_LEXMODELSV2_API SubSlotSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SubSlotSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,32 +45,28 @@ namespace Model
      * <p>The expression text for defining the constituent sub slots in the composite
      * slot using logical AND and OR operators.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline SubSlotSetting& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline SubSlotSetting& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline SubSlotSetting& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    SubSlotSetting& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifications for the constituent sub slots of a composite slot.</p>
      */
-    inline const Aws::Map<Aws::String, Specifications>& GetSlotSpecifications() const{ return m_slotSpecifications; }
+    inline const Aws::Map<Aws::String, Specifications>& GetSlotSpecifications() const { return m_slotSpecifications; }
     inline bool SlotSpecificationsHasBeenSet() const { return m_slotSpecificationsHasBeenSet; }
-    inline void SetSlotSpecifications(const Aws::Map<Aws::String, Specifications>& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications = value; }
-    inline void SetSlotSpecifications(Aws::Map<Aws::String, Specifications>&& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications = std::move(value); }
-    inline SubSlotSetting& WithSlotSpecifications(const Aws::Map<Aws::String, Specifications>& value) { SetSlotSpecifications(value); return *this;}
-    inline SubSlotSetting& WithSlotSpecifications(Aws::Map<Aws::String, Specifications>&& value) { SetSlotSpecifications(std::move(value)); return *this;}
-    inline SubSlotSetting& AddSlotSpecifications(const Aws::String& key, const Specifications& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(key, value); return *this; }
-    inline SubSlotSetting& AddSlotSpecifications(Aws::String&& key, const Specifications& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(std::move(key), value); return *this; }
-    inline SubSlotSetting& AddSlotSpecifications(const Aws::String& key, Specifications&& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(key, std::move(value)); return *this; }
-    inline SubSlotSetting& AddSlotSpecifications(Aws::String&& key, Specifications&& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(std::move(key), std::move(value)); return *this; }
-    inline SubSlotSetting& AddSlotSpecifications(const char* key, Specifications&& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(key, std::move(value)); return *this; }
-    inline SubSlotSetting& AddSlotSpecifications(const char* key, const Specifications& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(key, value); return *this; }
+    template<typename SlotSpecificationsT = Aws::Map<Aws::String, Specifications>>
+    void SetSlotSpecifications(SlotSpecificationsT&& value) { m_slotSpecificationsHasBeenSet = true; m_slotSpecifications = std::forward<SlotSpecificationsT>(value); }
+    template<typename SlotSpecificationsT = Aws::Map<Aws::String, Specifications>>
+    SubSlotSetting& WithSlotSpecifications(SlotSpecificationsT&& value) { SetSlotSpecifications(std::forward<SlotSpecificationsT>(value)); return *this;}
+    template<typename SlotSpecificationsKeyT = Aws::String, typename SlotSpecificationsValueT = Specifications>
+    SubSlotSetting& AddSlotSpecifications(SlotSpecificationsKeyT&& key, SlotSpecificationsValueT&& value) {
+      m_slotSpecificationsHasBeenSet = true; m_slotSpecifications.emplace(std::forward<SlotSpecificationsKeyT>(key), std::forward<SlotSpecificationsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

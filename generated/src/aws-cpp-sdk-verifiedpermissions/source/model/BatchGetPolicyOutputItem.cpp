@@ -18,19 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-BatchGetPolicyOutputItem::BatchGetPolicyOutputItem() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
-{
-}
-
 BatchGetPolicyOutputItem::BatchGetPolicyOutputItem(JsonView jsonValue)
-  : BatchGetPolicyOutputItem()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BatchGetPolicyOutputItem& BatchGetPolicyOutputItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("policyStoreId"))
   {
     m_policyStoreId = jsonValue.GetString("policyStoreId");
-
     m_policyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyId"))
   {
     m_policyId = jsonValue.GetString("policyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("policyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

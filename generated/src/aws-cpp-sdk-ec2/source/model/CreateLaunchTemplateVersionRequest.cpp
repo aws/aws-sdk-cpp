@@ -10,21 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateLaunchTemplateVersionRequest::CreateLaunchTemplateVersionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_launchTemplateDataHasBeenSet(false),
-    m_resolveAlias(false),
-    m_resolveAliasHasBeenSet(false)
-{
-}
-
 Aws::String CreateLaunchTemplateVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

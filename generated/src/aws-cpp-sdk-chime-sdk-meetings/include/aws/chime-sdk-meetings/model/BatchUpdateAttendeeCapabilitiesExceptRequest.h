@@ -24,7 +24,7 @@ namespace Model
   class BatchUpdateAttendeeCapabilitiesExceptRequest : public ChimeSDKMeetingsRequest
   {
   public:
-    AWS_CHIMESDKMEETINGS_API BatchUpdateAttendeeCapabilitiesExceptRequest();
+    AWS_CHIMESDKMEETINGS_API BatchUpdateAttendeeCapabilitiesExceptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the meeting associated with the update request.</p>
      */
-    inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
+    inline const Aws::String& GetMeetingId() const { return m_meetingId; }
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-    inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-    inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-    inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    template<typename MeetingIdT = Aws::String>
+    void SetMeetingId(MeetingIdT&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::forward<MeetingIdT>(value); }
+    template<typename MeetingIdT = Aws::String>
+    BatchUpdateAttendeeCapabilitiesExceptRequest& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,14 @@ namespace Model
      * <p>The <code>AttendeeIDs</code> that you want to exclude from one or more
      * capabilities.</p>
      */
-    inline const Aws::Vector<AttendeeIdItem>& GetExcludedAttendeeIds() const{ return m_excludedAttendeeIds; }
+    inline const Aws::Vector<AttendeeIdItem>& GetExcludedAttendeeIds() const { return m_excludedAttendeeIds; }
     inline bool ExcludedAttendeeIdsHasBeenSet() const { return m_excludedAttendeeIdsHasBeenSet; }
-    inline void SetExcludedAttendeeIds(const Aws::Vector<AttendeeIdItem>& value) { m_excludedAttendeeIdsHasBeenSet = true; m_excludedAttendeeIds = value; }
-    inline void SetExcludedAttendeeIds(Aws::Vector<AttendeeIdItem>&& value) { m_excludedAttendeeIdsHasBeenSet = true; m_excludedAttendeeIds = std::move(value); }
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithExcludedAttendeeIds(const Aws::Vector<AttendeeIdItem>& value) { SetExcludedAttendeeIds(value); return *this;}
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithExcludedAttendeeIds(Aws::Vector<AttendeeIdItem>&& value) { SetExcludedAttendeeIds(std::move(value)); return *this;}
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& AddExcludedAttendeeIds(const AttendeeIdItem& value) { m_excludedAttendeeIdsHasBeenSet = true; m_excludedAttendeeIds.push_back(value); return *this; }
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& AddExcludedAttendeeIds(AttendeeIdItem&& value) { m_excludedAttendeeIdsHasBeenSet = true; m_excludedAttendeeIds.push_back(std::move(value)); return *this; }
+    template<typename ExcludedAttendeeIdsT = Aws::Vector<AttendeeIdItem>>
+    void SetExcludedAttendeeIds(ExcludedAttendeeIdsT&& value) { m_excludedAttendeeIdsHasBeenSet = true; m_excludedAttendeeIds = std::forward<ExcludedAttendeeIdsT>(value); }
+    template<typename ExcludedAttendeeIdsT = Aws::Vector<AttendeeIdItem>>
+    BatchUpdateAttendeeCapabilitiesExceptRequest& WithExcludedAttendeeIds(ExcludedAttendeeIdsT&& value) { SetExcludedAttendeeIds(std::forward<ExcludedAttendeeIdsT>(value)); return *this;}
+    template<typename ExcludedAttendeeIdsT = AttendeeIdItem>
+    BatchUpdateAttendeeCapabilitiesExceptRequest& AddExcludedAttendeeIds(ExcludedAttendeeIdsT&& value) { m_excludedAttendeeIdsHasBeenSet = true; m_excludedAttendeeIds.emplace_back(std::forward<ExcludedAttendeeIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,12 +67,12 @@ namespace Model
      * <p>The capabilities (<code>audio</code>, <code>video</code>, or
      * <code>content</code>) that you want to update.</p>
      */
-    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const AttendeeCapabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
-    inline BatchUpdateAttendeeCapabilitiesExceptRequest& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    BatchUpdateAttendeeCapabilitiesExceptRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ListMultipartUploadsResult
   {
   public:
-    AWS_S3_API ListMultipartUploadsResult();
+    AWS_S3_API ListMultipartUploadsResult() = default;
     AWS_S3_API ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API ListMultipartUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,26 +42,22 @@ namespace Model
      * <p>The name of the bucket to which the multipart upload was initiated. Does not
      * return the access point ARN or access point alias if used.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
-    inline ListMultipartUploadsResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline ListMultipartUploadsResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
+    inline const Aws::String& GetBucket() const { return m_bucket; }
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    ListMultipartUploadsResult& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key at or after which the listing began.</p>
      */
-    inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
-    inline void SetKeyMarker(const Aws::String& value) { m_keyMarker = value; }
-    inline void SetKeyMarker(Aws::String&& value) { m_keyMarker = std::move(value); }
-    inline void SetKeyMarker(const char* value) { m_keyMarker.assign(value); }
-    inline ListMultipartUploadsResult& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
-    inline ListMultipartUploadsResult& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
+    inline const Aws::String& GetKeyMarker() const { return m_keyMarker; }
+    template<typename KeyMarkerT = Aws::String>
+    void SetKeyMarker(KeyMarkerT&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = std::forward<KeyMarkerT>(value); }
+    template<typename KeyMarkerT = Aws::String>
+    ListMultipartUploadsResult& WithKeyMarker(KeyMarkerT&& value) { SetKeyMarker(std::forward<KeyMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,13 +69,11 @@ namespace Model
      * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
      * functionality is not supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetUploadIdMarker() const{ return m_uploadIdMarker; }
-    inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarker = value; }
-    inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarker = std::move(value); }
-    inline void SetUploadIdMarker(const char* value) { m_uploadIdMarker.assign(value); }
-    inline ListMultipartUploadsResult& WithUploadIdMarker(const Aws::String& value) { SetUploadIdMarker(value); return *this;}
-    inline ListMultipartUploadsResult& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
+    inline const Aws::String& GetUploadIdMarker() const { return m_uploadIdMarker; }
+    template<typename UploadIdMarkerT = Aws::String>
+    void SetUploadIdMarker(UploadIdMarkerT&& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = std::forward<UploadIdMarkerT>(value); }
+    template<typename UploadIdMarkerT = Aws::String>
+    ListMultipartUploadsResult& WithUploadIdMarker(UploadIdMarkerT&& value) { SetUploadIdMarker(std::forward<UploadIdMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,13 +81,11 @@ namespace Model
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the key-marker request parameter in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextKeyMarker() const{ return m_nextKeyMarker; }
-    inline void SetNextKeyMarker(const Aws::String& value) { m_nextKeyMarker = value; }
-    inline void SetNextKeyMarker(Aws::String&& value) { m_nextKeyMarker = std::move(value); }
-    inline void SetNextKeyMarker(const char* value) { m_nextKeyMarker.assign(value); }
-    inline ListMultipartUploadsResult& WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
-    inline ListMultipartUploadsResult& WithNextKeyMarker(Aws::String&& value) { SetNextKeyMarker(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
+    inline const Aws::String& GetNextKeyMarker() const { return m_nextKeyMarker; }
+    template<typename NextKeyMarkerT = Aws::String>
+    void SetNextKeyMarker(NextKeyMarkerT&& value) { m_nextKeyMarkerHasBeenSet = true; m_nextKeyMarker = std::forward<NextKeyMarkerT>(value); }
+    template<typename NextKeyMarkerT = Aws::String>
+    ListMultipartUploadsResult& WithNextKeyMarker(NextKeyMarkerT&& value) { SetNextKeyMarker(std::forward<NextKeyMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,13 +95,11 @@ namespace Model
      *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
      * end in a delimiter (<code>/</code>) are supported.</p> 
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
-    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
-    inline ListMultipartUploadsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ListMultipartUploadsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ListMultipartUploadsResult& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,13 +109,11 @@ namespace Model
      * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
      * supported delimiter.</p> 
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
-    inline ListMultipartUploadsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline ListMultipartUploadsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    ListMultipartUploadsResult& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,13 +123,11 @@ namespace Model
      * request.</p>  <p>This functionality is not supported for directory
      * buckets.</p> 
      */
-    inline const Aws::String& GetNextUploadIdMarker() const{ return m_nextUploadIdMarker; }
-    inline void SetNextUploadIdMarker(const Aws::String& value) { m_nextUploadIdMarker = value; }
-    inline void SetNextUploadIdMarker(Aws::String&& value) { m_nextUploadIdMarker = std::move(value); }
-    inline void SetNextUploadIdMarker(const char* value) { m_nextUploadIdMarker.assign(value); }
-    inline ListMultipartUploadsResult& WithNextUploadIdMarker(const Aws::String& value) { SetNextUploadIdMarker(value); return *this;}
-    inline ListMultipartUploadsResult& WithNextUploadIdMarker(Aws::String&& value) { SetNextUploadIdMarker(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithNextUploadIdMarker(const char* value) { SetNextUploadIdMarker(value); return *this;}
+    inline const Aws::String& GetNextUploadIdMarker() const { return m_nextUploadIdMarker; }
+    template<typename NextUploadIdMarkerT = Aws::String>
+    void SetNextUploadIdMarker(NextUploadIdMarkerT&& value) { m_nextUploadIdMarkerHasBeenSet = true; m_nextUploadIdMarker = std::forward<NextUploadIdMarkerT>(value); }
+    template<typename NextUploadIdMarkerT = Aws::String>
+    ListMultipartUploadsResult& WithNextUploadIdMarker(NextUploadIdMarkerT&& value) { SetNextUploadIdMarker(std::forward<NextUploadIdMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,8 +135,8 @@ namespace Model
      * <p>Maximum number of multipart uploads that could have been included in the
      * response.</p>
      */
-    inline int GetMaxUploads() const{ return m_maxUploads; }
-    inline void SetMaxUploads(int value) { m_maxUploads = value; }
+    inline int GetMaxUploads() const { return m_maxUploads; }
+    inline void SetMaxUploads(int value) { m_maxUploadsHasBeenSet = true; m_maxUploads = value; }
     inline ListMultipartUploadsResult& WithMaxUploads(int value) { SetMaxUploads(value); return *this;}
     ///@}
 
@@ -161,8 +147,8 @@ namespace Model
      * if the number of multipart uploads exceeds the limit allowed or specified by max
      * uploads.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListMultipartUploadsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -171,13 +157,13 @@ namespace Model
      * <p>Container for elements related to a particular multipart upload. A response
      * can contain zero or more <code>Upload</code> elements.</p>
      */
-    inline const Aws::Vector<MultipartUpload>& GetUploads() const{ return m_uploads; }
-    inline void SetUploads(const Aws::Vector<MultipartUpload>& value) { m_uploads = value; }
-    inline void SetUploads(Aws::Vector<MultipartUpload>&& value) { m_uploads = std::move(value); }
-    inline ListMultipartUploadsResult& WithUploads(const Aws::Vector<MultipartUpload>& value) { SetUploads(value); return *this;}
-    inline ListMultipartUploadsResult& WithUploads(Aws::Vector<MultipartUpload>&& value) { SetUploads(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& AddUploads(const MultipartUpload& value) { m_uploads.push_back(value); return *this; }
-    inline ListMultipartUploadsResult& AddUploads(MultipartUpload&& value) { m_uploads.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MultipartUpload>& GetUploads() const { return m_uploads; }
+    template<typename UploadsT = Aws::Vector<MultipartUpload>>
+    void SetUploads(UploadsT&& value) { m_uploadsHasBeenSet = true; m_uploads = std::forward<UploadsT>(value); }
+    template<typename UploadsT = Aws::Vector<MultipartUpload>>
+    ListMultipartUploadsResult& WithUploads(UploadsT&& value) { SetUploads(std::forward<UploadsT>(value)); return *this;}
+    template<typename UploadsT = MultipartUpload>
+    ListMultipartUploadsResult& AddUploads(UploadsT&& value) { m_uploadsHasBeenSet = true; m_uploads.emplace_back(std::forward<UploadsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,13 +174,13 @@ namespace Model
      * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
      * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
-    inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
-    inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
-    inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
-    inline ListMultipartUploadsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
-    inline ListMultipartUploadsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
-    inline ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const { return m_commonPrefixes; }
+    template<typename CommonPrefixesT = Aws::Vector<CommonPrefix>>
+    void SetCommonPrefixes(CommonPrefixesT&& value) { m_commonPrefixesHasBeenSet = true; m_commonPrefixes = std::forward<CommonPrefixesT>(value); }
+    template<typename CommonPrefixesT = Aws::Vector<CommonPrefix>>
+    ListMultipartUploadsResult& WithCommonPrefixes(CommonPrefixesT&& value) { SetCommonPrefixes(std::forward<CommonPrefixesT>(value)); return *this;}
+    template<typename CommonPrefixesT = CommonPrefix>
+    ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefixesT&& value) { m_commonPrefixesHasBeenSet = true; m_commonPrefixes.emplace_back(std::forward<CommonPrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -206,61 +192,69 @@ namespace Model
      * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
      * <code>Key</code>.</p>
      */
-    inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
-    inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
-    inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
-    inline ListMultipartUploadsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
-    inline ListMultipartUploadsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+    inline EncodingType GetEncodingType() const { return m_encodingType; }
+    inline void SetEncodingType(EncodingType value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline ListMultipartUploadsResult& WithEncodingType(EncodingType value) { SetEncodingType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-    inline ListMultipartUploadsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-    inline ListMultipartUploadsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    inline RequestCharged GetRequestCharged() const { return m_requestCharged; }
+    inline void SetRequestCharged(RequestCharged value) { m_requestChargedHasBeenSet = true; m_requestCharged = value; }
+    inline ListMultipartUploadsResult& WithRequestCharged(RequestCharged value) { SetRequestCharged(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMultipartUploadsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMultipartUploadsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMultipartUploadsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMultipartUploadsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_keyMarker;
+    bool m_keyMarkerHasBeenSet = false;
 
     Aws::String m_uploadIdMarker;
+    bool m_uploadIdMarkerHasBeenSet = false;
 
     Aws::String m_nextKeyMarker;
+    bool m_nextKeyMarkerHasBeenSet = false;
 
     Aws::String m_prefix;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_delimiter;
+    bool m_delimiterHasBeenSet = false;
 
     Aws::String m_nextUploadIdMarker;
+    bool m_nextUploadIdMarkerHasBeenSet = false;
 
-    int m_maxUploads;
+    int m_maxUploads{0};
+    bool m_maxUploadsHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::Vector<MultipartUpload> m_uploads;
+    bool m_uploadsHasBeenSet = false;
 
     Aws::Vector<CommonPrefix> m_commonPrefixes;
+    bool m_commonPrefixesHasBeenSet = false;
 
-    EncodingType m_encodingType;
+    EncodingType m_encodingType{EncodingType::NOT_SET};
+    bool m_encodingTypeHasBeenSet = false;
 
-    RequestCharged m_requestCharged;
+    RequestCharged m_requestCharged{RequestCharged::NOT_SET};
+    bool m_requestChargedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

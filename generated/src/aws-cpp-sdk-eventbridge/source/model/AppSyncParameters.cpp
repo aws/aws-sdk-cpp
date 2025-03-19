@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-AppSyncParameters::AppSyncParameters() : 
-    m_graphQLOperationHasBeenSet(false)
-{
-}
-
 AppSyncParameters::AppSyncParameters(JsonView jsonValue)
-  : AppSyncParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AppSyncParameters& AppSyncParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GraphQLOperation"))
   {
     m_graphQLOperation = jsonValue.GetString("GraphQLOperation");
-
     m_graphQLOperationHasBeenSet = true;
   }
-
   return *this;
 }
 

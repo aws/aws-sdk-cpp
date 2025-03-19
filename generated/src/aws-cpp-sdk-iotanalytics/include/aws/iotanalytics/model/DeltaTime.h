@@ -32,7 +32,7 @@ namespace Model
   class DeltaTime
   {
   public:
-    AWS_IOTANALYTICS_API DeltaTime();
+    AWS_IOTANALYTICS_API DeltaTime() = default;
     AWS_IOTANALYTICS_API DeltaTime(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DeltaTime& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * would be excluded from processing during the next timeframe too, because its
      * timestamp places it within the previous timeframe.</p>
      */
-    inline int GetOffsetSeconds() const{ return m_offsetSeconds; }
+    inline int GetOffsetSeconds() const { return m_offsetSeconds; }
     inline bool OffsetSecondsHasBeenSet() const { return m_offsetSecondsHasBeenSet; }
     inline void SetOffsetSeconds(int value) { m_offsetSecondsHasBeenSet = true; m_offsetSeconds = value; }
     inline DeltaTime& WithOffsetSeconds(int value) { SetOffsetSeconds(value); return *this;}
@@ -61,18 +61,16 @@ namespace Model
      * can be the name of a timestamp field or a SQL expression that is used to derive
      * the time the message data was generated.</p>
      */
-    inline const Aws::String& GetTimeExpression() const{ return m_timeExpression; }
+    inline const Aws::String& GetTimeExpression() const { return m_timeExpression; }
     inline bool TimeExpressionHasBeenSet() const { return m_timeExpressionHasBeenSet; }
-    inline void SetTimeExpression(const Aws::String& value) { m_timeExpressionHasBeenSet = true; m_timeExpression = value; }
-    inline void SetTimeExpression(Aws::String&& value) { m_timeExpressionHasBeenSet = true; m_timeExpression = std::move(value); }
-    inline void SetTimeExpression(const char* value) { m_timeExpressionHasBeenSet = true; m_timeExpression.assign(value); }
-    inline DeltaTime& WithTimeExpression(const Aws::String& value) { SetTimeExpression(value); return *this;}
-    inline DeltaTime& WithTimeExpression(Aws::String&& value) { SetTimeExpression(std::move(value)); return *this;}
-    inline DeltaTime& WithTimeExpression(const char* value) { SetTimeExpression(value); return *this;}
+    template<typename TimeExpressionT = Aws::String>
+    void SetTimeExpression(TimeExpressionT&& value) { m_timeExpressionHasBeenSet = true; m_timeExpression = std::forward<TimeExpressionT>(value); }
+    template<typename TimeExpressionT = Aws::String>
+    DeltaTime& WithTimeExpression(TimeExpressionT&& value) { SetTimeExpression(std::forward<TimeExpressionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_offsetSeconds;
+    int m_offsetSeconds{0};
     bool m_offsetSecondsHasBeenSet = false;
 
     Aws::String m_timeExpression;

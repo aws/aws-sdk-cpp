@@ -17,22 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-PublishPackageVersionRequest::PublishPackageVersionRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_assetNameHasBeenSet(false),
-    m_assetSHA256HasBeenSet(false),
-    m_unfinished(false),
-    m_unfinishedHasBeenSet(false)
-{
-}
-
 
 void PublishPackageVersionRequest::AddQueryStringParameters(URI& uri) const
 {

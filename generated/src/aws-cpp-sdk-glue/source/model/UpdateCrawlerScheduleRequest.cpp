@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCrawlerScheduleRequest::UpdateCrawlerScheduleRequest() : 
-    m_crawlerNameHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCrawlerScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

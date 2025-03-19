@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsMetadata::OpsMetadata() : 
-    m_resourceIdHasBeenSet(false),
-    m_opsMetadataArnHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 OpsMetadata::OpsMetadata(JsonView jsonValue)
-  : OpsMetadata()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OpsMetadata& OpsMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpsMetadataArn"))
   {
     m_opsMetadataArn = jsonValue.GetString("OpsMetadataArn");
-
     m_opsMetadataArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedUser"))
   {
     m_lastModifiedUser = jsonValue.GetString("LastModifiedUser");
-
     m_lastModifiedUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

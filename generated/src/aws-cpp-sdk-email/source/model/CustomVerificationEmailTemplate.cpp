@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-CustomVerificationEmailTemplate::CustomVerificationEmailTemplate() : 
-    m_templateNameHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_templateSubjectHasBeenSet(false),
-    m_successRedirectionURLHasBeenSet(false),
-    m_failureRedirectionURLHasBeenSet(false)
-{
-}
-
 CustomVerificationEmailTemplate::CustomVerificationEmailTemplate(const XmlNode& xmlNode)
-  : CustomVerificationEmailTemplate()
 {
   *this = xmlNode;
 }

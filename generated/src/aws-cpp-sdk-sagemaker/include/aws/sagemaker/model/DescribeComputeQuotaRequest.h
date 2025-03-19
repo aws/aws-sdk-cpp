@@ -21,7 +21,7 @@ namespace Model
   class DescribeComputeQuotaRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeComputeQuotaRequest();
+    AWS_SAGEMAKER_API DescribeComputeQuotaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>ID of the compute allocation definition.</p>
      */
-    inline const Aws::String& GetComputeQuotaId() const{ return m_computeQuotaId; }
+    inline const Aws::String& GetComputeQuotaId() const { return m_computeQuotaId; }
     inline bool ComputeQuotaIdHasBeenSet() const { return m_computeQuotaIdHasBeenSet; }
-    inline void SetComputeQuotaId(const Aws::String& value) { m_computeQuotaIdHasBeenSet = true; m_computeQuotaId = value; }
-    inline void SetComputeQuotaId(Aws::String&& value) { m_computeQuotaIdHasBeenSet = true; m_computeQuotaId = std::move(value); }
-    inline void SetComputeQuotaId(const char* value) { m_computeQuotaIdHasBeenSet = true; m_computeQuotaId.assign(value); }
-    inline DescribeComputeQuotaRequest& WithComputeQuotaId(const Aws::String& value) { SetComputeQuotaId(value); return *this;}
-    inline DescribeComputeQuotaRequest& WithComputeQuotaId(Aws::String&& value) { SetComputeQuotaId(std::move(value)); return *this;}
-    inline DescribeComputeQuotaRequest& WithComputeQuotaId(const char* value) { SetComputeQuotaId(value); return *this;}
+    template<typename ComputeQuotaIdT = Aws::String>
+    void SetComputeQuotaId(ComputeQuotaIdT&& value) { m_computeQuotaIdHasBeenSet = true; m_computeQuotaId = std::forward<ComputeQuotaIdT>(value); }
+    template<typename ComputeQuotaIdT = Aws::String>
+    DescribeComputeQuotaRequest& WithComputeQuotaId(ComputeQuotaIdT&& value) { SetComputeQuotaId(std::forward<ComputeQuotaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version of the compute allocation definition.</p>
      */
-    inline int GetComputeQuotaVersion() const{ return m_computeQuotaVersion; }
+    inline int GetComputeQuotaVersion() const { return m_computeQuotaVersion; }
     inline bool ComputeQuotaVersionHasBeenSet() const { return m_computeQuotaVersionHasBeenSet; }
     inline void SetComputeQuotaVersion(int value) { m_computeQuotaVersionHasBeenSet = true; m_computeQuotaVersion = value; }
     inline DescribeComputeQuotaRequest& WithComputeQuotaVersion(int value) { SetComputeQuotaVersion(value); return *this;}
@@ -62,7 +60,7 @@ namespace Model
     Aws::String m_computeQuotaId;
     bool m_computeQuotaIdHasBeenSet = false;
 
-    int m_computeQuotaVersion;
+    int m_computeQuotaVersion{0};
     bool m_computeQuotaVersionHasBeenSet = false;
   };
 

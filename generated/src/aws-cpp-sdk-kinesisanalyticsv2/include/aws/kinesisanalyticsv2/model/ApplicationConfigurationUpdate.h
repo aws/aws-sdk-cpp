@@ -40,7 +40,7 @@ namespace Model
   class ApplicationConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,24 +51,24 @@ namespace Model
      * <p>Describes updates to a SQL-based Kinesis Data Analytics application's
      * configuration.</p>
      */
-    inline const SqlApplicationConfigurationUpdate& GetSqlApplicationConfigurationUpdate() const{ return m_sqlApplicationConfigurationUpdate; }
+    inline const SqlApplicationConfigurationUpdate& GetSqlApplicationConfigurationUpdate() const { return m_sqlApplicationConfigurationUpdate; }
     inline bool SqlApplicationConfigurationUpdateHasBeenSet() const { return m_sqlApplicationConfigurationUpdateHasBeenSet; }
-    inline void SetSqlApplicationConfigurationUpdate(const SqlApplicationConfigurationUpdate& value) { m_sqlApplicationConfigurationUpdateHasBeenSet = true; m_sqlApplicationConfigurationUpdate = value; }
-    inline void SetSqlApplicationConfigurationUpdate(SqlApplicationConfigurationUpdate&& value) { m_sqlApplicationConfigurationUpdateHasBeenSet = true; m_sqlApplicationConfigurationUpdate = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithSqlApplicationConfigurationUpdate(const SqlApplicationConfigurationUpdate& value) { SetSqlApplicationConfigurationUpdate(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithSqlApplicationConfigurationUpdate(SqlApplicationConfigurationUpdate&& value) { SetSqlApplicationConfigurationUpdate(std::move(value)); return *this;}
+    template<typename SqlApplicationConfigurationUpdateT = SqlApplicationConfigurationUpdate>
+    void SetSqlApplicationConfigurationUpdate(SqlApplicationConfigurationUpdateT&& value) { m_sqlApplicationConfigurationUpdateHasBeenSet = true; m_sqlApplicationConfigurationUpdate = std::forward<SqlApplicationConfigurationUpdateT>(value); }
+    template<typename SqlApplicationConfigurationUpdateT = SqlApplicationConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithSqlApplicationConfigurationUpdate(SqlApplicationConfigurationUpdateT&& value) { SetSqlApplicationConfigurationUpdate(std::forward<SqlApplicationConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes updates to an application's code configuration.</p>
      */
-    inline const ApplicationCodeConfigurationUpdate& GetApplicationCodeConfigurationUpdate() const{ return m_applicationCodeConfigurationUpdate; }
+    inline const ApplicationCodeConfigurationUpdate& GetApplicationCodeConfigurationUpdate() const { return m_applicationCodeConfigurationUpdate; }
     inline bool ApplicationCodeConfigurationUpdateHasBeenSet() const { return m_applicationCodeConfigurationUpdateHasBeenSet; }
-    inline void SetApplicationCodeConfigurationUpdate(const ApplicationCodeConfigurationUpdate& value) { m_applicationCodeConfigurationUpdateHasBeenSet = true; m_applicationCodeConfigurationUpdate = value; }
-    inline void SetApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdate&& value) { m_applicationCodeConfigurationUpdateHasBeenSet = true; m_applicationCodeConfigurationUpdate = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithApplicationCodeConfigurationUpdate(const ApplicationCodeConfigurationUpdate& value) { SetApplicationCodeConfigurationUpdate(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdate&& value) { SetApplicationCodeConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ApplicationCodeConfigurationUpdateT = ApplicationCodeConfigurationUpdate>
+    void SetApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdateT&& value) { m_applicationCodeConfigurationUpdateHasBeenSet = true; m_applicationCodeConfigurationUpdate = std::forward<ApplicationCodeConfigurationUpdateT>(value); }
+    template<typename ApplicationCodeConfigurationUpdateT = ApplicationCodeConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdateT&& value) { SetApplicationCodeConfigurationUpdate(std::forward<ApplicationCodeConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
-    inline const FlinkApplicationConfigurationUpdate& GetFlinkApplicationConfigurationUpdate() const{ return m_flinkApplicationConfigurationUpdate; }
+    inline const FlinkApplicationConfigurationUpdate& GetFlinkApplicationConfigurationUpdate() const { return m_flinkApplicationConfigurationUpdate; }
     inline bool FlinkApplicationConfigurationUpdateHasBeenSet() const { return m_flinkApplicationConfigurationUpdateHasBeenSet; }
-    inline void SetFlinkApplicationConfigurationUpdate(const FlinkApplicationConfigurationUpdate& value) { m_flinkApplicationConfigurationUpdateHasBeenSet = true; m_flinkApplicationConfigurationUpdate = value; }
-    inline void SetFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdate&& value) { m_flinkApplicationConfigurationUpdateHasBeenSet = true; m_flinkApplicationConfigurationUpdate = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithFlinkApplicationConfigurationUpdate(const FlinkApplicationConfigurationUpdate& value) { SetFlinkApplicationConfigurationUpdate(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdate&& value) { SetFlinkApplicationConfigurationUpdate(std::move(value)); return *this;}
+    template<typename FlinkApplicationConfigurationUpdateT = FlinkApplicationConfigurationUpdate>
+    void SetFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdateT&& value) { m_flinkApplicationConfigurationUpdateHasBeenSet = true; m_flinkApplicationConfigurationUpdate = std::forward<FlinkApplicationConfigurationUpdateT>(value); }
+    template<typename FlinkApplicationConfigurationUpdateT = FlinkApplicationConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdateT&& value) { SetFlinkApplicationConfigurationUpdate(std::forward<FlinkApplicationConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,12 @@ namespace Model
      * <p>Describes updates to the environment properties for a Managed Service for
      * Apache Flink application.</p>
      */
-    inline const EnvironmentPropertyUpdates& GetEnvironmentPropertyUpdates() const{ return m_environmentPropertyUpdates; }
+    inline const EnvironmentPropertyUpdates& GetEnvironmentPropertyUpdates() const { return m_environmentPropertyUpdates; }
     inline bool EnvironmentPropertyUpdatesHasBeenSet() const { return m_environmentPropertyUpdatesHasBeenSet; }
-    inline void SetEnvironmentPropertyUpdates(const EnvironmentPropertyUpdates& value) { m_environmentPropertyUpdatesHasBeenSet = true; m_environmentPropertyUpdates = value; }
-    inline void SetEnvironmentPropertyUpdates(EnvironmentPropertyUpdates&& value) { m_environmentPropertyUpdatesHasBeenSet = true; m_environmentPropertyUpdates = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithEnvironmentPropertyUpdates(const EnvironmentPropertyUpdates& value) { SetEnvironmentPropertyUpdates(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithEnvironmentPropertyUpdates(EnvironmentPropertyUpdates&& value) { SetEnvironmentPropertyUpdates(std::move(value)); return *this;}
+    template<typename EnvironmentPropertyUpdatesT = EnvironmentPropertyUpdates>
+    void SetEnvironmentPropertyUpdates(EnvironmentPropertyUpdatesT&& value) { m_environmentPropertyUpdatesHasBeenSet = true; m_environmentPropertyUpdates = std::forward<EnvironmentPropertyUpdatesT>(value); }
+    template<typename EnvironmentPropertyUpdatesT = EnvironmentPropertyUpdates>
+    ApplicationConfigurationUpdate& WithEnvironmentPropertyUpdates(EnvironmentPropertyUpdatesT&& value) { SetEnvironmentPropertyUpdates(std::forward<EnvironmentPropertyUpdatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,22 +102,22 @@ namespace Model
      * <p>Describes whether snapshots are enabled for a Managed Service for Apache
      * Flink application.</p>
      */
-    inline const ApplicationSnapshotConfigurationUpdate& GetApplicationSnapshotConfigurationUpdate() const{ return m_applicationSnapshotConfigurationUpdate; }
+    inline const ApplicationSnapshotConfigurationUpdate& GetApplicationSnapshotConfigurationUpdate() const { return m_applicationSnapshotConfigurationUpdate; }
     inline bool ApplicationSnapshotConfigurationUpdateHasBeenSet() const { return m_applicationSnapshotConfigurationUpdateHasBeenSet; }
-    inline void SetApplicationSnapshotConfigurationUpdate(const ApplicationSnapshotConfigurationUpdate& value) { m_applicationSnapshotConfigurationUpdateHasBeenSet = true; m_applicationSnapshotConfigurationUpdate = value; }
-    inline void SetApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate&& value) { m_applicationSnapshotConfigurationUpdateHasBeenSet = true; m_applicationSnapshotConfigurationUpdate = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithApplicationSnapshotConfigurationUpdate(const ApplicationSnapshotConfigurationUpdate& value) { SetApplicationSnapshotConfigurationUpdate(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate&& value) { SetApplicationSnapshotConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ApplicationSnapshotConfigurationUpdateT = ApplicationSnapshotConfigurationUpdate>
+    void SetApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdateT&& value) { m_applicationSnapshotConfigurationUpdateHasBeenSet = true; m_applicationSnapshotConfigurationUpdate = std::forward<ApplicationSnapshotConfigurationUpdateT>(value); }
+    template<typename ApplicationSnapshotConfigurationUpdateT = ApplicationSnapshotConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdateT&& value) { SetApplicationSnapshotConfigurationUpdate(std::forward<ApplicationSnapshotConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ApplicationSystemRollbackConfigurationUpdate& GetApplicationSystemRollbackConfigurationUpdate() const{ return m_applicationSystemRollbackConfigurationUpdate; }
+    inline const ApplicationSystemRollbackConfigurationUpdate& GetApplicationSystemRollbackConfigurationUpdate() const { return m_applicationSystemRollbackConfigurationUpdate; }
     inline bool ApplicationSystemRollbackConfigurationUpdateHasBeenSet() const { return m_applicationSystemRollbackConfigurationUpdateHasBeenSet; }
-    inline void SetApplicationSystemRollbackConfigurationUpdate(const ApplicationSystemRollbackConfigurationUpdate& value) { m_applicationSystemRollbackConfigurationUpdateHasBeenSet = true; m_applicationSystemRollbackConfigurationUpdate = value; }
-    inline void SetApplicationSystemRollbackConfigurationUpdate(ApplicationSystemRollbackConfigurationUpdate&& value) { m_applicationSystemRollbackConfigurationUpdateHasBeenSet = true; m_applicationSystemRollbackConfigurationUpdate = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithApplicationSystemRollbackConfigurationUpdate(const ApplicationSystemRollbackConfigurationUpdate& value) { SetApplicationSystemRollbackConfigurationUpdate(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithApplicationSystemRollbackConfigurationUpdate(ApplicationSystemRollbackConfigurationUpdate&& value) { SetApplicationSystemRollbackConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ApplicationSystemRollbackConfigurationUpdateT = ApplicationSystemRollbackConfigurationUpdate>
+    void SetApplicationSystemRollbackConfigurationUpdate(ApplicationSystemRollbackConfigurationUpdateT&& value) { m_applicationSystemRollbackConfigurationUpdateHasBeenSet = true; m_applicationSystemRollbackConfigurationUpdate = std::forward<ApplicationSystemRollbackConfigurationUpdateT>(value); }
+    template<typename ApplicationSystemRollbackConfigurationUpdateT = ApplicationSystemRollbackConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithApplicationSystemRollbackConfigurationUpdate(ApplicationSystemRollbackConfigurationUpdateT&& value) { SetApplicationSystemRollbackConfigurationUpdate(std::forward<ApplicationSystemRollbackConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +125,14 @@ namespace Model
      * <p>Updates to the array of descriptions of VPC configurations available to the
      * application.</p>
      */
-    inline const Aws::Vector<VpcConfigurationUpdate>& GetVpcConfigurationUpdates() const{ return m_vpcConfigurationUpdates; }
+    inline const Aws::Vector<VpcConfigurationUpdate>& GetVpcConfigurationUpdates() const { return m_vpcConfigurationUpdates; }
     inline bool VpcConfigurationUpdatesHasBeenSet() const { return m_vpcConfigurationUpdatesHasBeenSet; }
-    inline void SetVpcConfigurationUpdates(const Aws::Vector<VpcConfigurationUpdate>& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates = value; }
-    inline void SetVpcConfigurationUpdates(Aws::Vector<VpcConfigurationUpdate>&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithVpcConfigurationUpdates(const Aws::Vector<VpcConfigurationUpdate>& value) { SetVpcConfigurationUpdates(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithVpcConfigurationUpdates(Aws::Vector<VpcConfigurationUpdate>&& value) { SetVpcConfigurationUpdates(std::move(value)); return *this;}
-    inline ApplicationConfigurationUpdate& AddVpcConfigurationUpdates(const VpcConfigurationUpdate& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates.push_back(value); return *this; }
-    inline ApplicationConfigurationUpdate& AddVpcConfigurationUpdates(VpcConfigurationUpdate&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates.push_back(std::move(value)); return *this; }
+    template<typename VpcConfigurationUpdatesT = Aws::Vector<VpcConfigurationUpdate>>
+    void SetVpcConfigurationUpdates(VpcConfigurationUpdatesT&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates = std::forward<VpcConfigurationUpdatesT>(value); }
+    template<typename VpcConfigurationUpdatesT = Aws::Vector<VpcConfigurationUpdate>>
+    ApplicationConfigurationUpdate& WithVpcConfigurationUpdates(VpcConfigurationUpdatesT&& value) { SetVpcConfigurationUpdates(std::forward<VpcConfigurationUpdatesT>(value)); return *this;}
+    template<typename VpcConfigurationUpdatesT = VpcConfigurationUpdate>
+    ApplicationConfigurationUpdate& AddVpcConfigurationUpdates(VpcConfigurationUpdatesT&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates.emplace_back(std::forward<VpcConfigurationUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -140,12 +140,12 @@ namespace Model
      * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
-    inline const ZeppelinApplicationConfigurationUpdate& GetZeppelinApplicationConfigurationUpdate() const{ return m_zeppelinApplicationConfigurationUpdate; }
+    inline const ZeppelinApplicationConfigurationUpdate& GetZeppelinApplicationConfigurationUpdate() const { return m_zeppelinApplicationConfigurationUpdate; }
     inline bool ZeppelinApplicationConfigurationUpdateHasBeenSet() const { return m_zeppelinApplicationConfigurationUpdateHasBeenSet; }
-    inline void SetZeppelinApplicationConfigurationUpdate(const ZeppelinApplicationConfigurationUpdate& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = value; }
-    inline void SetZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate&& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = std::move(value); }
-    inline ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(const ZeppelinApplicationConfigurationUpdate& value) { SetZeppelinApplicationConfigurationUpdate(value); return *this;}
-    inline ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate&& value) { SetZeppelinApplicationConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ZeppelinApplicationConfigurationUpdateT = ZeppelinApplicationConfigurationUpdate>
+    void SetZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdateT&& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = std::forward<ZeppelinApplicationConfigurationUpdateT>(value); }
+    template<typename ZeppelinApplicationConfigurationUpdateT = ZeppelinApplicationConfigurationUpdate>
+    ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdateT&& value) { SetZeppelinApplicationConfigurationUpdate(std::forward<ZeppelinApplicationConfigurationUpdateT>(value)); return *this;}
     ///@}
   private:
 

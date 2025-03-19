@@ -26,7 +26,7 @@ namespace Model
   class DescribeGroupRequest : public DirectoryServiceDataRequest
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API DescribeGroupRequest();
+    AWS_DIRECTORYSERVICEDATA_API DescribeGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Identifier (ID) of the directory associated with the group.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DescribeGroupRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeGroupRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeGroupRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeGroupRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory
      * Service Data Attributes</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOtherAttributes() const{ return m_otherAttributes; }
+    inline const Aws::Vector<Aws::String>& GetOtherAttributes() const { return m_otherAttributes; }
     inline bool OtherAttributesHasBeenSet() const { return m_otherAttributesHasBeenSet; }
-    inline void SetOtherAttributes(const Aws::Vector<Aws::String>& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes = value; }
-    inline void SetOtherAttributes(Aws::Vector<Aws::String>&& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes = std::move(value); }
-    inline DescribeGroupRequest& WithOtherAttributes(const Aws::Vector<Aws::String>& value) { SetOtherAttributes(value); return *this;}
-    inline DescribeGroupRequest& WithOtherAttributes(Aws::Vector<Aws::String>&& value) { SetOtherAttributes(std::move(value)); return *this;}
-    inline DescribeGroupRequest& AddOtherAttributes(const Aws::String& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes.push_back(value); return *this; }
-    inline DescribeGroupRequest& AddOtherAttributes(Aws::String&& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes.push_back(std::move(value)); return *this; }
-    inline DescribeGroupRequest& AddOtherAttributes(const char* value) { m_otherAttributesHasBeenSet = true; m_otherAttributes.push_back(value); return *this; }
+    template<typename OtherAttributesT = Aws::Vector<Aws::String>>
+    void SetOtherAttributes(OtherAttributesT&& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes = std::forward<OtherAttributesT>(value); }
+    template<typename OtherAttributesT = Aws::Vector<Aws::String>>
+    DescribeGroupRequest& WithOtherAttributes(OtherAttributesT&& value) { SetOtherAttributes(std::forward<OtherAttributesT>(value)); return *this;}
+    template<typename OtherAttributesT = Aws::String>
+    DescribeGroupRequest& AddOtherAttributes(OtherAttributesT&& value) { m_otherAttributesHasBeenSet = true; m_otherAttributes.emplace_back(std::forward<OtherAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,28 +75,24 @@ namespace Model
      * Microsoft AD domain. When no value is defined, only your Managed Microsoft AD
      * groups are returned. </p> <p> This value is case insensitive. </p> 
      */
-    inline const Aws::String& GetRealm() const{ return m_realm; }
+    inline const Aws::String& GetRealm() const { return m_realm; }
     inline bool RealmHasBeenSet() const { return m_realmHasBeenSet; }
-    inline void SetRealm(const Aws::String& value) { m_realmHasBeenSet = true; m_realm = value; }
-    inline void SetRealm(Aws::String&& value) { m_realmHasBeenSet = true; m_realm = std::move(value); }
-    inline void SetRealm(const char* value) { m_realmHasBeenSet = true; m_realm.assign(value); }
-    inline DescribeGroupRequest& WithRealm(const Aws::String& value) { SetRealm(value); return *this;}
-    inline DescribeGroupRequest& WithRealm(Aws::String&& value) { SetRealm(std::move(value)); return *this;}
-    inline DescribeGroupRequest& WithRealm(const char* value) { SetRealm(value); return *this;}
+    template<typename RealmT = Aws::String>
+    void SetRealm(RealmT&& value) { m_realmHasBeenSet = true; m_realm = std::forward<RealmT>(value); }
+    template<typename RealmT = Aws::String>
+    DescribeGroupRequest& WithRealm(RealmT&& value) { SetRealm(std::forward<RealmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the group. </p>
      */
-    inline const Aws::String& GetSAMAccountName() const{ return m_sAMAccountName; }
+    inline const Aws::String& GetSAMAccountName() const { return m_sAMAccountName; }
     inline bool SAMAccountNameHasBeenSet() const { return m_sAMAccountNameHasBeenSet; }
-    inline void SetSAMAccountName(const Aws::String& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = value; }
-    inline void SetSAMAccountName(Aws::String&& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = std::move(value); }
-    inline void SetSAMAccountName(const char* value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName.assign(value); }
-    inline DescribeGroupRequest& WithSAMAccountName(const Aws::String& value) { SetSAMAccountName(value); return *this;}
-    inline DescribeGroupRequest& WithSAMAccountName(Aws::String&& value) { SetSAMAccountName(std::move(value)); return *this;}
-    inline DescribeGroupRequest& WithSAMAccountName(const char* value) { SetSAMAccountName(value); return *this;}
+    template<typename SAMAccountNameT = Aws::String>
+    void SetSAMAccountName(SAMAccountNameT&& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = std::forward<SAMAccountNameT>(value); }
+    template<typename SAMAccountNameT = Aws::String>
+    DescribeGroupRequest& WithSAMAccountName(SAMAccountNameT&& value) { SetSAMAccountName(std::forward<SAMAccountNameT>(value)); return *this;}
     ///@}
   private:
 

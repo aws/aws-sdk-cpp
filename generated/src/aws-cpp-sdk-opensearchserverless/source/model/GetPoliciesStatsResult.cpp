@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPoliciesStatsResult::GetPoliciesStatsResult() : 
-    m_totalPolicyCount(0)
-{
-}
-
 GetPoliciesStatsResult::GetPoliciesStatsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPoliciesStatsResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ GetPoliciesStatsResult& GetPoliciesStatsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("AccessPolicyStats"))
   {
     m_accessPolicyStats = jsonValue.GetObject("AccessPolicyStats");
-
+    m_accessPolicyStatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityPolicyStats"))
   {
     m_securityPolicyStats = jsonValue.GetObject("SecurityPolicyStats");
-
+    m_securityPolicyStatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfigStats"))
   {
     m_securityConfigStats = jsonValue.GetObject("SecurityConfigStats");
-
+    m_securityConfigStatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecyclePolicyStats"))
   {
     m_lifecyclePolicyStats = jsonValue.GetObject("LifecyclePolicyStats");
-
+    m_lifecyclePolicyStatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalPolicyCount"))
   {
     m_totalPolicyCount = jsonValue.GetInt64("TotalPolicyCount");
-
+    m_totalPolicyCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

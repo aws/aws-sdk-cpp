@@ -23,7 +23,7 @@ namespace Model
   class UpdateFirewallDomainsRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateFirewallDomainsRequest();
+    AWS_ROUTE53RESOLVER_API UpdateFirewallDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the domain list whose domains you want to update. </p>
      */
-    inline const Aws::String& GetFirewallDomainListId() const{ return m_firewallDomainListId; }
+    inline const Aws::String& GetFirewallDomainListId() const { return m_firewallDomainListId; }
     inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
-    inline void SetFirewallDomainListId(const Aws::String& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = value; }
-    inline void SetFirewallDomainListId(Aws::String&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::move(value); }
-    inline void SetFirewallDomainListId(const char* value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId.assign(value); }
-    inline UpdateFirewallDomainsRequest& WithFirewallDomainListId(const Aws::String& value) { SetFirewallDomainListId(value); return *this;}
-    inline UpdateFirewallDomainsRequest& WithFirewallDomainListId(Aws::String&& value) { SetFirewallDomainListId(std::move(value)); return *this;}
-    inline UpdateFirewallDomainsRequest& WithFirewallDomainListId(const char* value) { SetFirewallDomainListId(value); return *this;}
+    template<typename FirewallDomainListIdT = Aws::String>
+    void SetFirewallDomainListId(FirewallDomainListIdT&& value) { m_firewallDomainListIdHasBeenSet = true; m_firewallDomainListId = std::forward<FirewallDomainListIdT>(value); }
+    template<typename FirewallDomainListIdT = Aws::String>
+    UpdateFirewallDomainsRequest& WithFirewallDomainListId(FirewallDomainListIdT&& value) { SetFirewallDomainListId(std::forward<FirewallDomainListIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <code>REPLACE</code> - Update the domain list to exactly match the list that you
      * are providing. </p> </li> </ul>
      */
-    inline const FirewallDomainUpdateOperation& GetOperation() const{ return m_operation; }
+    inline FirewallDomainUpdateOperation GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const FirewallDomainUpdateOperation& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(FirewallDomainUpdateOperation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline UpdateFirewallDomainsRequest& WithOperation(const FirewallDomainUpdateOperation& value) { SetOperation(value); return *this;}
-    inline UpdateFirewallDomainsRequest& WithOperation(FirewallDomainUpdateOperation&& value) { SetOperation(std::move(value)); return *this;}
+    inline void SetOperation(FirewallDomainUpdateOperation value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline UpdateFirewallDomainsRequest& WithOperation(FirewallDomainUpdateOperation value) { SetOperation(value); return *this;}
     ///@}
 
     ///@{
@@ -78,22 +74,21 @@ namespace Model
      * <code>0-9</code>, <code>-</code> (hyphen).</p> </li> <li> <p>It must be from
      * 1-255 characters in length. </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
+    inline const Aws::Vector<Aws::String>& GetDomains() const { return m_domains; }
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
-    inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domainsHasBeenSet = true; m_domains = value; }
-    inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
-    inline UpdateFirewallDomainsRequest& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
-    inline UpdateFirewallDomainsRequest& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(std::move(value)); return *this;}
-    inline UpdateFirewallDomainsRequest& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
-    inline UpdateFirewallDomainsRequest& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
-    inline UpdateFirewallDomainsRequest& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
+    template<typename DomainsT = Aws::Vector<Aws::String>>
+    void SetDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains = std::forward<DomainsT>(value); }
+    template<typename DomainsT = Aws::Vector<Aws::String>>
+    UpdateFirewallDomainsRequest& WithDomains(DomainsT&& value) { SetDomains(std::forward<DomainsT>(value)); return *this;}
+    template<typename DomainsT = Aws::String>
+    UpdateFirewallDomainsRequest& AddDomains(DomainsT&& value) { m_domainsHasBeenSet = true; m_domains.emplace_back(std::forward<DomainsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_firewallDomainListId;
     bool m_firewallDomainListIdHasBeenSet = false;
 
-    FirewallDomainUpdateOperation m_operation;
+    FirewallDomainUpdateOperation m_operation{FirewallDomainUpdateOperation::NOT_SET};
     bool m_operationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domains;

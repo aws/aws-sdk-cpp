@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventCategoriesResult::DescribeEventCategoriesResult()
-{
-}
-
 DescribeEventCategoriesResult::DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const A
     if(!eventCategoriesMapListNode.IsNull())
     {
       XmlNode eventCategoriesMapListMember = eventCategoriesMapListNode.FirstChild("EventCategoriesMap");
+      m_eventCategoriesMapListHasBeenSet = !eventCategoriesMapListMember.IsNull();
       while(!eventCategoriesMapListMember.IsNull())
       {
         m_eventCategoriesMapList.push_back(eventCategoriesMapListMember);
         eventCategoriesMapListMember = eventCategoriesMapListMember.NextNode("EventCategoriesMap");
       }
 
+      m_eventCategoriesMapListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::DocDB::Model::DescribeEventCategoriesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

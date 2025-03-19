@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-FileGroupSettings::FileGroupSettings() : 
-    m_destinationHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false)
-{
-}
-
 FileGroupSettings::FileGroupSettings(JsonView jsonValue)
-  : FileGroupSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FileGroupSettings& FileGroupSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

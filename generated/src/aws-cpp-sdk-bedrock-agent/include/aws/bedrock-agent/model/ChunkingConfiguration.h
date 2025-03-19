@@ -36,7 +36,7 @@ namespace Model
   class ChunkingConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ChunkingConfiguration();
+    AWS_BEDROCKAGENT_API ChunkingConfiguration() = default;
     AWS_BEDROCKAGENT_API ChunkingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ChunkingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,10 @@ namespace Model
      * pre-process your documents by splitting them into separate files.</p> </li>
      * </ul>
      */
-    inline const ChunkingStrategy& GetChunkingStrategy() const{ return m_chunkingStrategy; }
+    inline ChunkingStrategy GetChunkingStrategy() const { return m_chunkingStrategy; }
     inline bool ChunkingStrategyHasBeenSet() const { return m_chunkingStrategyHasBeenSet; }
-    inline void SetChunkingStrategy(const ChunkingStrategy& value) { m_chunkingStrategyHasBeenSet = true; m_chunkingStrategy = value; }
-    inline void SetChunkingStrategy(ChunkingStrategy&& value) { m_chunkingStrategyHasBeenSet = true; m_chunkingStrategy = std::move(value); }
-    inline ChunkingConfiguration& WithChunkingStrategy(const ChunkingStrategy& value) { SetChunkingStrategy(value); return *this;}
-    inline ChunkingConfiguration& WithChunkingStrategy(ChunkingStrategy&& value) { SetChunkingStrategy(std::move(value)); return *this;}
+    inline void SetChunkingStrategy(ChunkingStrategy value) { m_chunkingStrategyHasBeenSet = true; m_chunkingStrategy = value; }
+    inline ChunkingConfiguration& WithChunkingStrategy(ChunkingStrategy value) { SetChunkingStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * <p>Configurations for when you choose fixed-size chunking. If you set the
      * <code>chunkingStrategy</code> as <code>NONE</code>, exclude this field.</p>
      */
-    inline const FixedSizeChunkingConfiguration& GetFixedSizeChunkingConfiguration() const{ return m_fixedSizeChunkingConfiguration; }
+    inline const FixedSizeChunkingConfiguration& GetFixedSizeChunkingConfiguration() const { return m_fixedSizeChunkingConfiguration; }
     inline bool FixedSizeChunkingConfigurationHasBeenSet() const { return m_fixedSizeChunkingConfigurationHasBeenSet; }
-    inline void SetFixedSizeChunkingConfiguration(const FixedSizeChunkingConfiguration& value) { m_fixedSizeChunkingConfigurationHasBeenSet = true; m_fixedSizeChunkingConfiguration = value; }
-    inline void SetFixedSizeChunkingConfiguration(FixedSizeChunkingConfiguration&& value) { m_fixedSizeChunkingConfigurationHasBeenSet = true; m_fixedSizeChunkingConfiguration = std::move(value); }
-    inline ChunkingConfiguration& WithFixedSizeChunkingConfiguration(const FixedSizeChunkingConfiguration& value) { SetFixedSizeChunkingConfiguration(value); return *this;}
-    inline ChunkingConfiguration& WithFixedSizeChunkingConfiguration(FixedSizeChunkingConfiguration&& value) { SetFixedSizeChunkingConfiguration(std::move(value)); return *this;}
+    template<typename FixedSizeChunkingConfigurationT = FixedSizeChunkingConfiguration>
+    void SetFixedSizeChunkingConfiguration(FixedSizeChunkingConfigurationT&& value) { m_fixedSizeChunkingConfigurationHasBeenSet = true; m_fixedSizeChunkingConfiguration = std::forward<FixedSizeChunkingConfigurationT>(value); }
+    template<typename FixedSizeChunkingConfigurationT = FixedSizeChunkingConfiguration>
+    ChunkingConfiguration& WithFixedSizeChunkingConfiguration(FixedSizeChunkingConfigurationT&& value) { SetFixedSizeChunkingConfiguration(std::forward<FixedSizeChunkingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +87,12 @@ namespace Model
      * large chunks, and the second layer contains smaller chunks derived from the
      * first layer.</p>
      */
-    inline const HierarchicalChunkingConfiguration& GetHierarchicalChunkingConfiguration() const{ return m_hierarchicalChunkingConfiguration; }
+    inline const HierarchicalChunkingConfiguration& GetHierarchicalChunkingConfiguration() const { return m_hierarchicalChunkingConfiguration; }
     inline bool HierarchicalChunkingConfigurationHasBeenSet() const { return m_hierarchicalChunkingConfigurationHasBeenSet; }
-    inline void SetHierarchicalChunkingConfiguration(const HierarchicalChunkingConfiguration& value) { m_hierarchicalChunkingConfigurationHasBeenSet = true; m_hierarchicalChunkingConfiguration = value; }
-    inline void SetHierarchicalChunkingConfiguration(HierarchicalChunkingConfiguration&& value) { m_hierarchicalChunkingConfigurationHasBeenSet = true; m_hierarchicalChunkingConfiguration = std::move(value); }
-    inline ChunkingConfiguration& WithHierarchicalChunkingConfiguration(const HierarchicalChunkingConfiguration& value) { SetHierarchicalChunkingConfiguration(value); return *this;}
-    inline ChunkingConfiguration& WithHierarchicalChunkingConfiguration(HierarchicalChunkingConfiguration&& value) { SetHierarchicalChunkingConfiguration(std::move(value)); return *this;}
+    template<typename HierarchicalChunkingConfigurationT = HierarchicalChunkingConfiguration>
+    void SetHierarchicalChunkingConfiguration(HierarchicalChunkingConfigurationT&& value) { m_hierarchicalChunkingConfigurationHasBeenSet = true; m_hierarchicalChunkingConfiguration = std::forward<HierarchicalChunkingConfigurationT>(value); }
+    template<typename HierarchicalChunkingConfigurationT = HierarchicalChunkingConfiguration>
+    ChunkingConfiguration& WithHierarchicalChunkingConfiguration(HierarchicalChunkingConfigurationT&& value) { SetHierarchicalChunkingConfiguration(std::forward<HierarchicalChunkingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,16 +101,16 @@ namespace Model
      * splits a document into into smaller documents based on groups of similar content
      * derived from the text with natural language processing.</p>
      */
-    inline const SemanticChunkingConfiguration& GetSemanticChunkingConfiguration() const{ return m_semanticChunkingConfiguration; }
+    inline const SemanticChunkingConfiguration& GetSemanticChunkingConfiguration() const { return m_semanticChunkingConfiguration; }
     inline bool SemanticChunkingConfigurationHasBeenSet() const { return m_semanticChunkingConfigurationHasBeenSet; }
-    inline void SetSemanticChunkingConfiguration(const SemanticChunkingConfiguration& value) { m_semanticChunkingConfigurationHasBeenSet = true; m_semanticChunkingConfiguration = value; }
-    inline void SetSemanticChunkingConfiguration(SemanticChunkingConfiguration&& value) { m_semanticChunkingConfigurationHasBeenSet = true; m_semanticChunkingConfiguration = std::move(value); }
-    inline ChunkingConfiguration& WithSemanticChunkingConfiguration(const SemanticChunkingConfiguration& value) { SetSemanticChunkingConfiguration(value); return *this;}
-    inline ChunkingConfiguration& WithSemanticChunkingConfiguration(SemanticChunkingConfiguration&& value) { SetSemanticChunkingConfiguration(std::move(value)); return *this;}
+    template<typename SemanticChunkingConfigurationT = SemanticChunkingConfiguration>
+    void SetSemanticChunkingConfiguration(SemanticChunkingConfigurationT&& value) { m_semanticChunkingConfigurationHasBeenSet = true; m_semanticChunkingConfiguration = std::forward<SemanticChunkingConfigurationT>(value); }
+    template<typename SemanticChunkingConfigurationT = SemanticChunkingConfiguration>
+    ChunkingConfiguration& WithSemanticChunkingConfiguration(SemanticChunkingConfigurationT&& value) { SetSemanticChunkingConfiguration(std::forward<SemanticChunkingConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    ChunkingStrategy m_chunkingStrategy;
+    ChunkingStrategy m_chunkingStrategy{ChunkingStrategy::NOT_SET};
     bool m_chunkingStrategyHasBeenSet = false;
 
     FixedSizeChunkingConfiguration m_fixedSizeChunkingConfiguration;

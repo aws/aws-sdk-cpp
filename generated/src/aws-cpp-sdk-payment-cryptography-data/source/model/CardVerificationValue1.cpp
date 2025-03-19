@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CardVerificationValue1::CardVerificationValue1() : 
-    m_cardExpiryDateHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 CardVerificationValue1::CardVerificationValue1(JsonView jsonValue)
-  : CardVerificationValue1()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CardVerificationValue1& CardVerificationValue1::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CardExpiryDate"))
   {
     m_cardExpiryDate = jsonValue.GetString("CardExpiryDate");
-
     m_cardExpiryDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptDomainTransferFromAnotherAwsAccountRequest::AcceptDomainTransferFromAnotherAwsAccountRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Aws::String AcceptDomainTransferFromAnotherAwsAccountRequest::SerializePayload() const
 {
   JsonValue payload;

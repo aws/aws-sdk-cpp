@@ -33,7 +33,7 @@ namespace Model
   class DirectKinesisSource
   {
   public:
-    AWS_GLUE_API DirectKinesisSource();
+    AWS_GLUE_API DirectKinesisSource() = default;
     AWS_GLUE_API DirectKinesisSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DirectKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The name of the data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DirectKinesisSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DirectKinesisSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DirectKinesisSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DirectKinesisSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of time to spend processing each micro batch.</p>
      */
-    inline int GetWindowSize() const{ return m_windowSize; }
+    inline int GetWindowSize() const { return m_windowSize; }
     inline bool WindowSizeHasBeenSet() const { return m_windowSizeHasBeenSet; }
     inline void SetWindowSize(int value) { m_windowSizeHasBeenSet = true; m_windowSize = value; }
     inline DirectKinesisSource& WithWindowSize(int value) { SetWindowSize(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     /**
      * <p>Whether to automatically determine the schema from the incoming data.</p>
      */
-    inline bool GetDetectSchema() const{ return m_detectSchema; }
+    inline bool GetDetectSchema() const { return m_detectSchema; }
     inline bool DetectSchemaHasBeenSet() const { return m_detectSchemaHasBeenSet; }
     inline void SetDetectSchema(bool value) { m_detectSchemaHasBeenSet = true; m_detectSchema = value; }
     inline DirectKinesisSource& WithDetectSchema(bool value) { SetDetectSchema(value); return *this;}
@@ -77,34 +75,34 @@ namespace Model
     /**
      * <p>Additional options for the Kinesis streaming data source.</p>
      */
-    inline const KinesisStreamingSourceOptions& GetStreamingOptions() const{ return m_streamingOptions; }
+    inline const KinesisStreamingSourceOptions& GetStreamingOptions() const { return m_streamingOptions; }
     inline bool StreamingOptionsHasBeenSet() const { return m_streamingOptionsHasBeenSet; }
-    inline void SetStreamingOptions(const KinesisStreamingSourceOptions& value) { m_streamingOptionsHasBeenSet = true; m_streamingOptions = value; }
-    inline void SetStreamingOptions(KinesisStreamingSourceOptions&& value) { m_streamingOptionsHasBeenSet = true; m_streamingOptions = std::move(value); }
-    inline DirectKinesisSource& WithStreamingOptions(const KinesisStreamingSourceOptions& value) { SetStreamingOptions(value); return *this;}
-    inline DirectKinesisSource& WithStreamingOptions(KinesisStreamingSourceOptions&& value) { SetStreamingOptions(std::move(value)); return *this;}
+    template<typename StreamingOptionsT = KinesisStreamingSourceOptions>
+    void SetStreamingOptions(StreamingOptionsT&& value) { m_streamingOptionsHasBeenSet = true; m_streamingOptions = std::forward<StreamingOptionsT>(value); }
+    template<typename StreamingOptionsT = KinesisStreamingSourceOptions>
+    DirectKinesisSource& WithStreamingOptions(StreamingOptionsT&& value) { SetStreamingOptions(std::forward<StreamingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional options for data preview.</p>
      */
-    inline const StreamingDataPreviewOptions& GetDataPreviewOptions() const{ return m_dataPreviewOptions; }
+    inline const StreamingDataPreviewOptions& GetDataPreviewOptions() const { return m_dataPreviewOptions; }
     inline bool DataPreviewOptionsHasBeenSet() const { return m_dataPreviewOptionsHasBeenSet; }
-    inline void SetDataPreviewOptions(const StreamingDataPreviewOptions& value) { m_dataPreviewOptionsHasBeenSet = true; m_dataPreviewOptions = value; }
-    inline void SetDataPreviewOptions(StreamingDataPreviewOptions&& value) { m_dataPreviewOptionsHasBeenSet = true; m_dataPreviewOptions = std::move(value); }
-    inline DirectKinesisSource& WithDataPreviewOptions(const StreamingDataPreviewOptions& value) { SetDataPreviewOptions(value); return *this;}
-    inline DirectKinesisSource& WithDataPreviewOptions(StreamingDataPreviewOptions&& value) { SetDataPreviewOptions(std::move(value)); return *this;}
+    template<typename DataPreviewOptionsT = StreamingDataPreviewOptions>
+    void SetDataPreviewOptions(DataPreviewOptionsT&& value) { m_dataPreviewOptionsHasBeenSet = true; m_dataPreviewOptions = std::forward<DataPreviewOptionsT>(value); }
+    template<typename DataPreviewOptionsT = StreamingDataPreviewOptions>
+    DirectKinesisSource& WithDataPreviewOptions(DataPreviewOptionsT&& value) { SetDataPreviewOptions(std::forward<DataPreviewOptionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_windowSize;
+    int m_windowSize{0};
     bool m_windowSizeHasBeenSet = false;
 
-    bool m_detectSchema;
+    bool m_detectSchema{false};
     bool m_detectSchemaHasBeenSet = false;
 
     KinesisStreamingSourceOptions m_streamingOptions;

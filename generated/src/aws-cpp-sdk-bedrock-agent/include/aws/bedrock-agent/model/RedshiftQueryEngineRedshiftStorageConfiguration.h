@@ -32,7 +32,7 @@ namespace Model
   class RedshiftQueryEngineRedshiftStorageConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RedshiftQueryEngineRedshiftStorageConfiguration();
+    AWS_BEDROCKAGENT_API RedshiftQueryEngineRedshiftStorageConfiguration() = default;
     AWS_BEDROCKAGENT_API RedshiftQueryEngineRedshiftStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RedshiftQueryEngineRedshiftStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift database.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline RedshiftQueryEngineRedshiftStorageConfiguration& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline RedshiftQueryEngineRedshiftStorageConfiguration& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline RedshiftQueryEngineRedshiftStorageConfiguration& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    RedshiftQueryEngineRedshiftStorageConfiguration& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
   private:
 

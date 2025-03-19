@@ -35,7 +35,7 @@ namespace Model
   class WordCloudChartConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API WordCloudChartConfiguration();
+    AWS_QUICKSIGHT_API WordCloudChartConfiguration() = default;
     AWS_QUICKSIGHT_API WordCloudChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WordCloudChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The field wells of the visual.</p>
      */
-    inline const WordCloudFieldWells& GetFieldWells() const{ return m_fieldWells; }
+    inline const WordCloudFieldWells& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const WordCloudFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(WordCloudFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline WordCloudChartConfiguration& WithFieldWells(const WordCloudFieldWells& value) { SetFieldWells(value); return *this;}
-    inline WordCloudChartConfiguration& WithFieldWells(WordCloudFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    template<typename FieldWellsT = WordCloudFieldWells>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = WordCloudFieldWells>
+    WordCloudChartConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of a word cloud visual.</p>
      */
-    inline const WordCloudSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const WordCloudSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const WordCloudSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(WordCloudSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline WordCloudChartConfiguration& WithSortConfiguration(const WordCloudSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline WordCloudChartConfiguration& WithSortConfiguration(WordCloudSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = WordCloudSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = WordCloudSortConfiguration>
+    WordCloudChartConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,36 +70,36 @@ namespace Model
      * <p>The label options (label text, label visibility, and sort icon visibility)
      * for the word cloud category.</p>
      */
-    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const{ return m_categoryLabelOptions; }
+    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const { return m_categoryLabelOptions; }
     inline bool CategoryLabelOptionsHasBeenSet() const { return m_categoryLabelOptionsHasBeenSet; }
-    inline void SetCategoryLabelOptions(const ChartAxisLabelOptions& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = value; }
-    inline void SetCategoryLabelOptions(ChartAxisLabelOptions&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::move(value); }
-    inline WordCloudChartConfiguration& WithCategoryLabelOptions(const ChartAxisLabelOptions& value) { SetCategoryLabelOptions(value); return *this;}
-    inline WordCloudChartConfiguration& WithCategoryLabelOptions(ChartAxisLabelOptions&& value) { SetCategoryLabelOptions(std::move(value)); return *this;}
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    void SetCategoryLabelOptions(CategoryLabelOptionsT&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::forward<CategoryLabelOptionsT>(value); }
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    WordCloudChartConfiguration& WithCategoryLabelOptions(CategoryLabelOptionsT&& value) { SetCategoryLabelOptions(std::forward<CategoryLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options for a word cloud visual.</p>
      */
-    inline const WordCloudOptions& GetWordCloudOptions() const{ return m_wordCloudOptions; }
+    inline const WordCloudOptions& GetWordCloudOptions() const { return m_wordCloudOptions; }
     inline bool WordCloudOptionsHasBeenSet() const { return m_wordCloudOptionsHasBeenSet; }
-    inline void SetWordCloudOptions(const WordCloudOptions& value) { m_wordCloudOptionsHasBeenSet = true; m_wordCloudOptions = value; }
-    inline void SetWordCloudOptions(WordCloudOptions&& value) { m_wordCloudOptionsHasBeenSet = true; m_wordCloudOptions = std::move(value); }
-    inline WordCloudChartConfiguration& WithWordCloudOptions(const WordCloudOptions& value) { SetWordCloudOptions(value); return *this;}
-    inline WordCloudChartConfiguration& WithWordCloudOptions(WordCloudOptions&& value) { SetWordCloudOptions(std::move(value)); return *this;}
+    template<typename WordCloudOptionsT = WordCloudOptions>
+    void SetWordCloudOptions(WordCloudOptionsT&& value) { m_wordCloudOptionsHasBeenSet = true; m_wordCloudOptions = std::forward<WordCloudOptionsT>(value); }
+    template<typename WordCloudOptionsT = WordCloudOptions>
+    WordCloudChartConfiguration& WithWordCloudOptions(WordCloudOptionsT&& value) { SetWordCloudOptions(std::forward<WordCloudOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline WordCloudChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline WordCloudChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    WordCloudChartConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 

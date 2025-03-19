@@ -33,7 +33,7 @@ namespace Model
   class AssessmentReportsDestination
   {
   public:
-    AWS_AUDITMANAGER_API AssessmentReportsDestination();
+    AWS_AUDITMANAGER_API AssessmentReportsDestination() = default;
     AWS_AUDITMANAGER_API AssessmentReportsDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API AssessmentReportsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p> The destination type, such as Amazon S3. </p>
      */
-    inline const AssessmentReportDestinationType& GetDestinationType() const{ return m_destinationType; }
+    inline AssessmentReportDestinationType GetDestinationType() const { return m_destinationType; }
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
-    inline void SetDestinationType(const AssessmentReportDestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
-    inline void SetDestinationType(AssessmentReportDestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
-    inline AssessmentReportsDestination& WithDestinationType(const AssessmentReportDestinationType& value) { SetDestinationType(value); return *this;}
-    inline AssessmentReportsDestination& WithDestinationType(AssessmentReportDestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    inline void SetDestinationType(AssessmentReportDestinationType value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
+    inline AssessmentReportsDestination& WithDestinationType(AssessmentReportDestinationType value) { SetDestinationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline AssessmentReportsDestination& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline AssessmentReportsDestination& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline AssessmentReportsDestination& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    AssessmentReportsDestination& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 
-    AssessmentReportDestinationType m_destinationType;
+    AssessmentReportDestinationType m_destinationType{AssessmentReportDestinationType::NOT_SET};
     bool m_destinationTypeHasBeenSet = false;
 
     Aws::String m_destination;

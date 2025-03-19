@@ -18,27 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-SlackChannelConfiguration::SlackChannelConfiguration() : 
-    m_slackTeamNameHasBeenSet(false),
-    m_slackTeamIdHasBeenSet(false),
-    m_slackChannelIdHasBeenSet(false),
-    m_slackChannelNameHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_guardrailPolicyArnsHasBeenSet(false),
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 SlackChannelConfiguration::SlackChannelConfiguration(JsonView jsonValue)
-  : SlackChannelConfiguration()
 {
   *this = jsonValue;
 }
@@ -48,45 +28,33 @@ SlackChannelConfiguration& SlackChannelConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SlackTeamName"))
   {
     m_slackTeamName = jsonValue.GetString("SlackTeamName");
-
     m_slackTeamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackTeamId"))
   {
     m_slackTeamId = jsonValue.GetString("SlackTeamId");
-
     m_slackTeamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackChannelId"))
   {
     m_slackChannelId = jsonValue.GetString("SlackChannelId");
-
     m_slackChannelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackChannelName"))
   {
     m_slackChannelName = jsonValue.GetString("SlackChannelName");
-
     m_slackChannelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChatConfigurationArn"))
   {
     m_chatConfigurationArn = jsonValue.GetString("ChatConfigurationArn");
-
     m_chatConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArns"))
   {
     Aws::Utils::Array<JsonView> snsTopicArnsJsonList = jsonValue.GetArray("SnsTopicArns");
@@ -96,21 +64,16 @@ SlackChannelConfiguration& SlackChannelConfiguration::operator =(JsonView jsonVa
     }
     m_snsTopicArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationName"))
   {
     m_configurationName = jsonValue.GetString("ConfigurationName");
-
     m_configurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingLevel"))
   {
     m_loggingLevel = jsonValue.GetString("LoggingLevel");
-
     m_loggingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GuardrailPolicyArns"))
   {
     Aws::Utils::Array<JsonView> guardrailPolicyArnsJsonList = jsonValue.GetArray("GuardrailPolicyArns");
@@ -120,14 +83,11 @@ SlackChannelConfiguration& SlackChannelConfiguration::operator =(JsonView jsonVa
     }
     m_guardrailPolicyArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAuthorizationRequired"))
   {
     m_userAuthorizationRequired = jsonValue.GetBool("UserAuthorizationRequired");
-
     m_userAuthorizationRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -137,21 +97,16 @@ SlackChannelConfiguration& SlackChannelConfiguration::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

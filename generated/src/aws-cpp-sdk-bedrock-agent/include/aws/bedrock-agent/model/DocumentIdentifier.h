@@ -34,7 +34,7 @@ namespace Model
   class DocumentIdentifier
   {
   public:
-    AWS_BEDROCKAGENT_API DocumentIdentifier();
+    AWS_BEDROCKAGENT_API DocumentIdentifier() = default;
     AWS_BEDROCKAGENT_API DocumentIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API DocumentIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Contains information that identifies the document in a custom data
      * source.</p>
      */
-    inline const CustomDocumentIdentifier& GetCustom() const{ return m_custom; }
+    inline const CustomDocumentIdentifier& GetCustom() const { return m_custom; }
     inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
-    inline void SetCustom(const CustomDocumentIdentifier& value) { m_customHasBeenSet = true; m_custom = value; }
-    inline void SetCustom(CustomDocumentIdentifier&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
-    inline DocumentIdentifier& WithCustom(const CustomDocumentIdentifier& value) { SetCustom(value); return *this;}
-    inline DocumentIdentifier& WithCustom(CustomDocumentIdentifier&& value) { SetCustom(std::move(value)); return *this;}
+    template<typename CustomT = CustomDocumentIdentifier>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = CustomDocumentIdentifier>
+    DocumentIdentifier& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,31 +58,29 @@ namespace Model
      * <p>The type of data source connected to the knowledge base that contains the
      * document.</p>
      */
-    inline const ContentDataSourceType& GetDataSourceType() const{ return m_dataSourceType; }
+    inline ContentDataSourceType GetDataSourceType() const { return m_dataSourceType; }
     inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
-    inline void SetDataSourceType(const ContentDataSourceType& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
-    inline void SetDataSourceType(ContentDataSourceType&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::move(value); }
-    inline DocumentIdentifier& WithDataSourceType(const ContentDataSourceType& value) { SetDataSourceType(value); return *this;}
-    inline DocumentIdentifier& WithDataSourceType(ContentDataSourceType&& value) { SetDataSourceType(std::move(value)); return *this;}
+    inline void SetDataSourceType(ContentDataSourceType value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
+    inline DocumentIdentifier& WithDataSourceType(ContentDataSourceType value) { SetDataSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information that identifies the document in an S3 data source.</p>
      */
-    inline const S3Location& GetS3() const{ return m_s3; }
+    inline const S3Location& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3Location&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline DocumentIdentifier& WithS3(const S3Location& value) { SetS3(value); return *this;}
-    inline DocumentIdentifier& WithS3(S3Location&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3Location>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3Location>
+    DocumentIdentifier& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 
     CustomDocumentIdentifier m_custom;
     bool m_customHasBeenSet = false;
 
-    ContentDataSourceType m_dataSourceType;
+    ContentDataSourceType m_dataSourceType{ContentDataSourceType::NOT_SET};
     bool m_dataSourceTypeHasBeenSet = false;
 
     S3Location m_s3;

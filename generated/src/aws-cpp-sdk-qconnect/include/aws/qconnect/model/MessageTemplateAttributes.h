@@ -36,7 +36,7 @@ namespace Model
   class MessageTemplateAttributes
   {
   public:
-    AWS_QCONNECT_API MessageTemplateAttributes();
+    AWS_QCONNECT_API MessageTemplateAttributes() = default;
     AWS_QCONNECT_API MessageTemplateAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API MessageTemplateAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,55 +46,52 @@ namespace Model
     /**
      * <p>The agent attributes that are used with the message template.</p>
      */
-    inline const AgentAttributes& GetAgentAttributes() const{ return m_agentAttributes; }
+    inline const AgentAttributes& GetAgentAttributes() const { return m_agentAttributes; }
     inline bool AgentAttributesHasBeenSet() const { return m_agentAttributesHasBeenSet; }
-    inline void SetAgentAttributes(const AgentAttributes& value) { m_agentAttributesHasBeenSet = true; m_agentAttributes = value; }
-    inline void SetAgentAttributes(AgentAttributes&& value) { m_agentAttributesHasBeenSet = true; m_agentAttributes = std::move(value); }
-    inline MessageTemplateAttributes& WithAgentAttributes(const AgentAttributes& value) { SetAgentAttributes(value); return *this;}
-    inline MessageTemplateAttributes& WithAgentAttributes(AgentAttributes&& value) { SetAgentAttributes(std::move(value)); return *this;}
+    template<typename AgentAttributesT = AgentAttributes>
+    void SetAgentAttributes(AgentAttributesT&& value) { m_agentAttributesHasBeenSet = true; m_agentAttributes = std::forward<AgentAttributesT>(value); }
+    template<typename AgentAttributesT = AgentAttributes>
+    MessageTemplateAttributes& WithAgentAttributes(AgentAttributesT&& value) { SetAgentAttributes(std::forward<AgentAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom attributes that are used with the message template.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomAttributes() const{ return m_customAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
-    inline void SetCustomAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
-    inline void SetCustomAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
-    inline MessageTemplateAttributes& WithCustomAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomAttributes(value); return *this;}
-    inline MessageTemplateAttributes& WithCustomAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomAttributes(std::move(value)); return *this;}
-    inline MessageTemplateAttributes& AddCustomAttributes(const Aws::String& key, const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, value); return *this; }
-    inline MessageTemplateAttributes& AddCustomAttributes(Aws::String&& key, const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::move(key), value); return *this; }
-    inline MessageTemplateAttributes& AddCustomAttributes(const Aws::String& key, Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, std::move(value)); return *this; }
-    inline MessageTemplateAttributes& AddCustomAttributes(Aws::String&& key, Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline MessageTemplateAttributes& AddCustomAttributes(const char* key, Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, std::move(value)); return *this; }
-    inline MessageTemplateAttributes& AddCustomAttributes(Aws::String&& key, const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::move(key), value); return *this; }
-    inline MessageTemplateAttributes& AddCustomAttributes(const char* key, const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, value); return *this; }
+    template<typename CustomAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::forward<CustomAttributesT>(value); }
+    template<typename CustomAttributesT = Aws::Map<Aws::String, Aws::String>>
+    MessageTemplateAttributes& WithCustomAttributes(CustomAttributesT&& value) { SetCustomAttributes(std::forward<CustomAttributesT>(value)); return *this;}
+    template<typename CustomAttributesKeyT = Aws::String, typename CustomAttributesValueT = Aws::String>
+    MessageTemplateAttributes& AddCustomAttributes(CustomAttributesKeyT&& key, CustomAttributesValueT&& value) {
+      m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::forward<CustomAttributesKeyT>(key), std::forward<CustomAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The customer profile attributes that are used with the message template.</p>
      */
-    inline const CustomerProfileAttributes& GetCustomerProfileAttributes() const{ return m_customerProfileAttributes; }
+    inline const CustomerProfileAttributes& GetCustomerProfileAttributes() const { return m_customerProfileAttributes; }
     inline bool CustomerProfileAttributesHasBeenSet() const { return m_customerProfileAttributesHasBeenSet; }
-    inline void SetCustomerProfileAttributes(const CustomerProfileAttributes& value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes = value; }
-    inline void SetCustomerProfileAttributes(CustomerProfileAttributes&& value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes = std::move(value); }
-    inline MessageTemplateAttributes& WithCustomerProfileAttributes(const CustomerProfileAttributes& value) { SetCustomerProfileAttributes(value); return *this;}
-    inline MessageTemplateAttributes& WithCustomerProfileAttributes(CustomerProfileAttributes&& value) { SetCustomerProfileAttributes(std::move(value)); return *this;}
+    template<typename CustomerProfileAttributesT = CustomerProfileAttributes>
+    void SetCustomerProfileAttributes(CustomerProfileAttributesT&& value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes = std::forward<CustomerProfileAttributesT>(value); }
+    template<typename CustomerProfileAttributesT = CustomerProfileAttributes>
+    MessageTemplateAttributes& WithCustomerProfileAttributes(CustomerProfileAttributesT&& value) { SetCustomerProfileAttributes(std::forward<CustomerProfileAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system attributes that are used with the message template.</p>
      */
-    inline const SystemAttributes& GetSystemAttributes() const{ return m_systemAttributes; }
+    inline const SystemAttributes& GetSystemAttributes() const { return m_systemAttributes; }
     inline bool SystemAttributesHasBeenSet() const { return m_systemAttributesHasBeenSet; }
-    inline void SetSystemAttributes(const SystemAttributes& value) { m_systemAttributesHasBeenSet = true; m_systemAttributes = value; }
-    inline void SetSystemAttributes(SystemAttributes&& value) { m_systemAttributesHasBeenSet = true; m_systemAttributes = std::move(value); }
-    inline MessageTemplateAttributes& WithSystemAttributes(const SystemAttributes& value) { SetSystemAttributes(value); return *this;}
-    inline MessageTemplateAttributes& WithSystemAttributes(SystemAttributes&& value) { SetSystemAttributes(std::move(value)); return *this;}
+    template<typename SystemAttributesT = SystemAttributes>
+    void SetSystemAttributes(SystemAttributesT&& value) { m_systemAttributesHasBeenSet = true; m_systemAttributes = std::forward<SystemAttributesT>(value); }
+    template<typename SystemAttributesT = SystemAttributes>
+    MessageTemplateAttributes& WithSystemAttributes(SystemAttributesT&& value) { SetSystemAttributes(std::forward<SystemAttributesT>(value)); return *this;}
     ///@}
   private:
 

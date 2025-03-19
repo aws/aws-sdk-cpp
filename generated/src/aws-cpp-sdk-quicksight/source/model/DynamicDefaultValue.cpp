@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DynamicDefaultValue::DynamicDefaultValue() : 
-    m_userNameColumnHasBeenSet(false),
-    m_groupNameColumnHasBeenSet(false),
-    m_defaultValueColumnHasBeenSet(false)
-{
-}
-
 DynamicDefaultValue::DynamicDefaultValue(JsonView jsonValue)
-  : DynamicDefaultValue()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DynamicDefaultValue& DynamicDefaultValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserNameColumn"))
   {
     m_userNameColumn = jsonValue.GetObject("UserNameColumn");
-
     m_userNameColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupNameColumn"))
   {
     m_groupNameColumn = jsonValue.GetObject("GroupNameColumn");
-
     m_groupNameColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValueColumn"))
   {
     m_defaultValueColumn = jsonValue.GetObject("DefaultValueColumn");
-
     m_defaultValueColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

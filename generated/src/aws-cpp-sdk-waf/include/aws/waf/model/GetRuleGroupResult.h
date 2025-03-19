@@ -28,7 +28,7 @@ namespace Model
   class GetRuleGroupResult
   {
   public:
-    AWS_WAF_API GetRuleGroupResult();
+    AWS_WAF_API GetRuleGroupResult() = default;
     AWS_WAF_API GetRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAF_API GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about the <a>RuleGroup</a> that you specified in the
      * <code>GetRuleGroup</code> request. </p>
      */
-    inline const RuleGroup& GetRuleGroup() const{ return m_ruleGroup; }
-    inline void SetRuleGroup(const RuleGroup& value) { m_ruleGroup = value; }
-    inline void SetRuleGroup(RuleGroup&& value) { m_ruleGroup = std::move(value); }
-    inline GetRuleGroupResult& WithRuleGroup(const RuleGroup& value) { SetRuleGroup(value); return *this;}
-    inline GetRuleGroupResult& WithRuleGroup(RuleGroup&& value) { SetRuleGroup(std::move(value)); return *this;}
+    inline const RuleGroup& GetRuleGroup() const { return m_ruleGroup; }
+    template<typename RuleGroupT = RuleGroup>
+    void SetRuleGroup(RuleGroupT&& value) { m_ruleGroupHasBeenSet = true; m_ruleGroup = std::forward<RuleGroupT>(value); }
+    template<typename RuleGroupT = RuleGroup>
+    GetRuleGroupResult& WithRuleGroup(RuleGroupT&& value) { SetRuleGroup(std::forward<RuleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRuleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RuleGroup m_ruleGroup;
+    bool m_ruleGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

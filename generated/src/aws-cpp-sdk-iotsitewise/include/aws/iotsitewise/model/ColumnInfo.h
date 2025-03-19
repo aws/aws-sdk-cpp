@@ -33,7 +33,7 @@ namespace Model
   class ColumnInfo
   {
   public:
-    AWS_IOTSITEWISE_API ColumnInfo();
+    AWS_IOTSITEWISE_API ColumnInfo() = default;
     AWS_IOTSITEWISE_API ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The name of the column description.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ColumnInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ColumnInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ColumnInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ColumnInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the column description.</p>
      */
-    inline const ColumnType& GetType() const{ return m_type; }
+    inline const ColumnType& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ColumnType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ColumnType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ColumnInfo& WithType(const ColumnType& value) { SetType(value); return *this;}
-    inline ColumnInfo& WithType(ColumnType&& value) { SetType(std::move(value)); return *this;}
+    template<typename TypeT = ColumnType>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = ColumnType>
+    ColumnInfo& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

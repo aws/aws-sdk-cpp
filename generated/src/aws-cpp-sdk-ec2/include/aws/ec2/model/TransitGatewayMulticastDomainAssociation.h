@@ -34,7 +34,7 @@ namespace Model
   class TransitGatewayMulticastDomainAssociation
   {
   public:
-    AWS_EC2_API TransitGatewayMulticastDomainAssociation();
+    AWS_EC2_API TransitGatewayMulticastDomainAssociation() = default;
     AWS_EC2_API TransitGatewayMulticastDomainAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayMulticastDomainAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,40 +46,34 @@ namespace Model
     /**
      * <p>The ID of the transit gateway attachment.</p>
      */
-    inline const Aws::String& GetTransitGatewayAttachmentId() const{ return m_transitGatewayAttachmentId; }
+    inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
     inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
-    inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
-    inline void SetTransitGatewayAttachmentId(Aws::String&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::move(value); }
-    inline void SetTransitGatewayAttachmentId(const char* value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId.assign(value); }
-    inline TransitGatewayMulticastDomainAssociation& WithTransitGatewayAttachmentId(const Aws::String& value) { SetTransitGatewayAttachmentId(value); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithTransitGatewayAttachmentId(Aws::String&& value) { SetTransitGatewayAttachmentId(std::move(value)); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithTransitGatewayAttachmentId(const char* value) { SetTransitGatewayAttachmentId(value); return *this;}
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value); }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    TransitGatewayMulticastDomainAssociation& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline TransitGatewayMulticastDomainAssociation& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    TransitGatewayMulticastDomainAssociation& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource, for example a VPC attachment.</p>
      */
-    inline const TransitGatewayAttachmentResourceType& GetResourceType() const{ return m_resourceType; }
+    inline TransitGatewayAttachmentResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const TransitGatewayAttachmentResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(TransitGatewayAttachmentResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline TransitGatewayMulticastDomainAssociation& WithResourceType(const TransitGatewayAttachmentResourceType& value) { SetResourceType(value); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithResourceType(TransitGatewayAttachmentResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(TransitGatewayAttachmentResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline TransitGatewayMulticastDomainAssociation& WithResourceType(TransitGatewayAttachmentResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -87,26 +81,24 @@ namespace Model
      * <p> The ID of the Amazon Web Services account that owns the transit gateway
      * multicast domain association resource.</p>
      */
-    inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+    inline const Aws::String& GetResourceOwnerId() const { return m_resourceOwnerId; }
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
-    inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
-    inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
-    inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
-    inline TransitGatewayMulticastDomainAssociation& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
+    template<typename ResourceOwnerIdT = Aws::String>
+    void SetResourceOwnerId(ResourceOwnerIdT&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::forward<ResourceOwnerIdT>(value); }
+    template<typename ResourceOwnerIdT = Aws::String>
+    TransitGatewayMulticastDomainAssociation& WithResourceOwnerId(ResourceOwnerIdT&& value) { SetResourceOwnerId(std::forward<ResourceOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subnet associated with the transit gateway multicast domain.</p>
      */
-    inline const SubnetAssociation& GetSubnet() const{ return m_subnet; }
+    inline const SubnetAssociation& GetSubnet() const { return m_subnet; }
     inline bool SubnetHasBeenSet() const { return m_subnetHasBeenSet; }
-    inline void SetSubnet(const SubnetAssociation& value) { m_subnetHasBeenSet = true; m_subnet = value; }
-    inline void SetSubnet(SubnetAssociation&& value) { m_subnetHasBeenSet = true; m_subnet = std::move(value); }
-    inline TransitGatewayMulticastDomainAssociation& WithSubnet(const SubnetAssociation& value) { SetSubnet(value); return *this;}
-    inline TransitGatewayMulticastDomainAssociation& WithSubnet(SubnetAssociation&& value) { SetSubnet(std::move(value)); return *this;}
+    template<typename SubnetT = SubnetAssociation>
+    void SetSubnet(SubnetT&& value) { m_subnetHasBeenSet = true; m_subnet = std::forward<SubnetT>(value); }
+    template<typename SubnetT = SubnetAssociation>
+    TransitGatewayMulticastDomainAssociation& WithSubnet(SubnetT&& value) { SetSubnet(std::forward<SubnetT>(value)); return *this;}
     ///@}
   private:
 
@@ -116,7 +108,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    TransitGatewayAttachmentResourceType m_resourceType;
+    TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;

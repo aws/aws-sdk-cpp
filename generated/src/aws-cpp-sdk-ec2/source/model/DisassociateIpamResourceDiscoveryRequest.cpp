@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisassociateIpamResourceDiscoveryRequest::DisassociateIpamResourceDiscoveryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamResourceDiscoveryAssociationIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateIpamResourceDiscoveryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

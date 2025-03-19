@@ -12,17 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImagesRequest::DescribeImagesRequest() : 
-    m_namesHasBeenSet(false),
-    m_arnsHasBeenSet(false),
-    m_type(VisibilityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImagesRequest::SerializePayload() const
 {
   JsonValue payload;

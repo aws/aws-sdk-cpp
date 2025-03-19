@@ -18,17 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-FacetAttribute::FacetAttribute() : 
-    m_nameHasBeenSet(false),
-    m_attributeDefinitionHasBeenSet(false),
-    m_attributeReferenceHasBeenSet(false),
-    m_requiredBehavior(RequiredAttributeBehavior::NOT_SET),
-    m_requiredBehaviorHasBeenSet(false)
-{
-}
-
 FacetAttribute::FacetAttribute(JsonView jsonValue)
-  : FacetAttribute()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ FacetAttribute& FacetAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeDefinition"))
   {
     m_attributeDefinition = jsonValue.GetObject("AttributeDefinition");
-
     m_attributeDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeReference"))
   {
     m_attributeReference = jsonValue.GetObject("AttributeReference");
-
     m_attributeReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiredBehavior"))
   {
     m_requiredBehavior = RequiredAttributeBehaviorMapper::GetRequiredAttributeBehaviorForName(jsonValue.GetString("RequiredBehavior"));
-
     m_requiredBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

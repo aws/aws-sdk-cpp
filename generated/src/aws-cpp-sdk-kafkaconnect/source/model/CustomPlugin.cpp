@@ -18,15 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-CustomPlugin::CustomPlugin() : 
-    m_customPluginArnHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
-{
-}
-
 CustomPlugin::CustomPlugin(JsonView jsonValue)
-  : CustomPlugin()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CustomPlugin& CustomPlugin::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customPluginArn"))
   {
     m_customPluginArn = jsonValue.GetString("customPluginArn");
-
     m_customPluginArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInt64("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

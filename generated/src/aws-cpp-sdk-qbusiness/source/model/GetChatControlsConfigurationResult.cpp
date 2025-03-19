@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetChatControlsConfigurationResult::GetChatControlsConfigurationResult() : 
-    m_responseScope(ResponseScope::NOT_SET)
-{
-}
-
 GetChatControlsConfigurationResult::GetChatControlsConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetChatControlsConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
   if(jsonValue.ValueExists("responseScope"))
   {
     m_responseScope = ResponseScopeMapper::GetResponseScopeForName(jsonValue.GetString("responseScope"));
-
+    m_responseScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orchestrationConfiguration"))
   {
     m_orchestrationConfiguration = jsonValue.GetObject("orchestrationConfiguration");
-
+    m_orchestrationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockedPhrases"))
   {
     m_blockedPhrases = jsonValue.GetObject("blockedPhrases");
-
+    m_blockedPhrasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topicConfigurations"))
   {
     Aws::Utils::Array<JsonView> topicConfigurationsJsonList = jsonValue.GetArray("topicConfigurations");
@@ -56,26 +47,25 @@ GetChatControlsConfigurationResult& GetChatControlsConfigurationResult::operator
     {
       m_topicConfigurations.push_back(topicConfigurationsJsonList[topicConfigurationsIndex].AsObject());
     }
+    m_topicConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorModeConfiguration"))
   {
     m_creatorModeConfiguration = jsonValue.GetObject("creatorModeConfiguration");
-
+    m_creatorModeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

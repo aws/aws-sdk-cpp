@@ -37,7 +37,7 @@ namespace Model
   class RequiredActivatedType
   {
   public:
-    AWS_CLOUDFORMATION_API RequiredActivatedType();
+    AWS_CLOUDFORMATION_API RequiredActivatedType() = default;
     AWS_CLOUDFORMATION_API RequiredActivatedType(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API RequiredActivatedType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,14 +53,12 @@ namespace Model
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p>
      */
-    inline const Aws::String& GetTypeNameAlias() const{ return m_typeNameAlias; }
+    inline const Aws::String& GetTypeNameAlias() const { return m_typeNameAlias; }
     inline bool TypeNameAliasHasBeenSet() const { return m_typeNameAliasHasBeenSet; }
-    inline void SetTypeNameAlias(const Aws::String& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = value; }
-    inline void SetTypeNameAlias(Aws::String&& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = std::move(value); }
-    inline void SetTypeNameAlias(const char* value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias.assign(value); }
-    inline RequiredActivatedType& WithTypeNameAlias(const Aws::String& value) { SetTypeNameAlias(value); return *this;}
-    inline RequiredActivatedType& WithTypeNameAlias(Aws::String&& value) { SetTypeNameAlias(std::move(value)); return *this;}
-    inline RequiredActivatedType& WithTypeNameAlias(const char* value) { SetTypeNameAlias(value); return *this;}
+    template<typename TypeNameAliasT = Aws::String>
+    void SetTypeNameAlias(TypeNameAliasT&& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = std::forward<TypeNameAliasT>(value); }
+    template<typename TypeNameAliasT = Aws::String>
+    RequiredActivatedType& WithTypeNameAlias(TypeNameAliasT&& value) { SetTypeNameAlias(std::forward<TypeNameAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,28 +71,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginalTypeName() const{ return m_originalTypeName; }
+    inline const Aws::String& GetOriginalTypeName() const { return m_originalTypeName; }
     inline bool OriginalTypeNameHasBeenSet() const { return m_originalTypeNameHasBeenSet; }
-    inline void SetOriginalTypeName(const Aws::String& value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName = value; }
-    inline void SetOriginalTypeName(Aws::String&& value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName = std::move(value); }
-    inline void SetOriginalTypeName(const char* value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName.assign(value); }
-    inline RequiredActivatedType& WithOriginalTypeName(const Aws::String& value) { SetOriginalTypeName(value); return *this;}
-    inline RequiredActivatedType& WithOriginalTypeName(Aws::String&& value) { SetOriginalTypeName(std::move(value)); return *this;}
-    inline RequiredActivatedType& WithOriginalTypeName(const char* value) { SetOriginalTypeName(value); return *this;}
+    template<typename OriginalTypeNameT = Aws::String>
+    void SetOriginalTypeName(OriginalTypeNameT&& value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName = std::forward<OriginalTypeNameT>(value); }
+    template<typename OriginalTypeNameT = Aws::String>
+    RequiredActivatedType& WithOriginalTypeName(OriginalTypeNameT&& value) { SetOriginalTypeName(std::forward<OriginalTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The publisher ID of the extension publisher.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
-    inline RequiredActivatedType& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline RequiredActivatedType& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline RequiredActivatedType& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    RequiredActivatedType& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +96,12 @@ namespace Model
      * <p>A list of the major versions of the extension type that the macro
      * supports.</p>
      */
-    inline const Aws::Vector<int>& GetSupportedMajorVersions() const{ return m_supportedMajorVersions; }
+    inline const Aws::Vector<int>& GetSupportedMajorVersions() const { return m_supportedMajorVersions; }
     inline bool SupportedMajorVersionsHasBeenSet() const { return m_supportedMajorVersionsHasBeenSet; }
-    inline void SetSupportedMajorVersions(const Aws::Vector<int>& value) { m_supportedMajorVersionsHasBeenSet = true; m_supportedMajorVersions = value; }
-    inline void SetSupportedMajorVersions(Aws::Vector<int>&& value) { m_supportedMajorVersionsHasBeenSet = true; m_supportedMajorVersions = std::move(value); }
-    inline RequiredActivatedType& WithSupportedMajorVersions(const Aws::Vector<int>& value) { SetSupportedMajorVersions(value); return *this;}
-    inline RequiredActivatedType& WithSupportedMajorVersions(Aws::Vector<int>&& value) { SetSupportedMajorVersions(std::move(value)); return *this;}
+    template<typename SupportedMajorVersionsT = Aws::Vector<int>>
+    void SetSupportedMajorVersions(SupportedMajorVersionsT&& value) { m_supportedMajorVersionsHasBeenSet = true; m_supportedMajorVersions = std::forward<SupportedMajorVersionsT>(value); }
+    template<typename SupportedMajorVersionsT = Aws::Vector<int>>
+    RequiredActivatedType& WithSupportedMajorVersions(SupportedMajorVersionsT&& value) { SetSupportedMajorVersions(std::forward<SupportedMajorVersionsT>(value)); return *this;}
     inline RequiredActivatedType& AddSupportedMajorVersions(int value) { m_supportedMajorVersionsHasBeenSet = true; m_supportedMajorVersions.push_back(value); return *this; }
     ///@}
   private:

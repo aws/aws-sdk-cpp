@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ApplicationsResponse::ApplicationsResponse() : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 ApplicationsResponse::ApplicationsResponse(JsonView jsonValue)
-  : ApplicationsResponse()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ApplicationsResponse& ApplicationsResponse::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TrainingMetricsV2::TrainingMetricsV2() : 
-    m_ofiHasBeenSet(false),
-    m_tfiHasBeenSet(false),
-    m_atiHasBeenSet(false)
-{
-}
-
 TrainingMetricsV2::TrainingMetricsV2(JsonView jsonValue)
-  : TrainingMetricsV2()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TrainingMetricsV2& TrainingMetricsV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ofi"))
   {
     m_ofi = jsonValue.GetObject("ofi");
-
     m_ofiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tfi"))
   {
     m_tfi = jsonValue.GetObject("tfi");
-
     m_tfiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ati"))
   {
     m_ati = jsonValue.GetObject("ati");
-
     m_atiHasBeenSet = true;
   }
-
   return *this;
 }
 

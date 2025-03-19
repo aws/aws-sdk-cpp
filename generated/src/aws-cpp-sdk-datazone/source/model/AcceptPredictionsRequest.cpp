@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AcceptPredictionsRequest::AcceptPredictionsRequest() : 
-    m_acceptChoicesHasBeenSet(false),
-    m_acceptRuleHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Aws::String AcceptPredictionsRequest::SerializePayload() const
 {
   JsonValue payload;

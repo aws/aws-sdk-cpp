@@ -18,15 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust() : 
-    m_acmHasBeenSet(false),
-    m_fileHasBeenSet(false),
-    m_sdsHasBeenSet(false)
-{
-}
-
 VirtualGatewayTlsValidationContextTrust::VirtualGatewayTlsValidationContextTrust(JsonView jsonValue)
-  : VirtualGatewayTlsValidationContextTrust()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VirtualGatewayTlsValidationContextTrust& VirtualGatewayTlsValidationContextTrust
   if(jsonValue.ValueExists("acm"))
   {
     m_acm = jsonValue.GetObject("acm");
-
     m_acmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sds"))
   {
     m_sds = jsonValue.GetObject("sds");
-
     m_sdsHasBeenSet = true;
   }
-
   return *this;
 }
 

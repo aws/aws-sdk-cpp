@@ -12,14 +12,6 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubscribeToDatasetRequest::SubscribeToDatasetRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
-{
-}
-
 Aws::String SubscribeToDatasetRequest::SerializePayload() const
 {
   return {};

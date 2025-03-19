@@ -12,28 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDevEndpointRequest::CreateDevEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_publicKeysHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDevEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

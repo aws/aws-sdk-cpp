@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-IncrementalPullConfig::IncrementalPullConfig() : 
-    m_datetimeTypeFieldNameHasBeenSet(false)
-{
-}
-
 IncrementalPullConfig::IncrementalPullConfig(JsonView jsonValue)
-  : IncrementalPullConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IncrementalPullConfig& IncrementalPullConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datetimeTypeFieldName"))
   {
     m_datetimeTypeFieldName = jsonValue.GetString("datetimeTypeFieldName");
-
     m_datetimeTypeFieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

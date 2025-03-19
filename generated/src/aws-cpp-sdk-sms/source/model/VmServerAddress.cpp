@@ -18,14 +18,7 @@ namespace SMS
 namespace Model
 {
 
-VmServerAddress::VmServerAddress() : 
-    m_vmManagerIdHasBeenSet(false),
-    m_vmIdHasBeenSet(false)
-{
-}
-
 VmServerAddress::VmServerAddress(JsonView jsonValue)
-  : VmServerAddress()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VmServerAddress& VmServerAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vmManagerId"))
   {
     m_vmManagerId = jsonValue.GetString("vmManagerId");
-
     m_vmManagerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmId"))
   {
     m_vmId = jsonValue.GetString("vmId");
-
     m_vmIdHasBeenSet = true;
   }
-
   return *this;
 }
 

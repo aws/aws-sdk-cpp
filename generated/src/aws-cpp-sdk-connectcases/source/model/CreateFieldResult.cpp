@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFieldResult::CreateFieldResult()
-{
-}
-
 CreateFieldResult::CreateFieldResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateFieldResult& CreateFieldResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("fieldArn"))
   {
     m_fieldArn = jsonValue.GetString("fieldArn");
-
+    m_fieldArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldId"))
   {
     m_fieldId = jsonValue.GetString("fieldId");
-
+    m_fieldIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

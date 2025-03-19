@@ -33,7 +33,7 @@ namespace Model
   class AttributeValueList
   {
   public:
-    AWS_SSMINCIDENTS_API AttributeValueList();
+    AWS_SSMINCIDENTS_API AttributeValueList() = default;
     AWS_SSMINCIDENTS_API AttributeValueList(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API AttributeValueList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The list of integer values that the filter matches.</p>
      */
-    inline const Aws::Vector<int>& GetIntegerValues() const{ return m_integerValues; }
+    inline const Aws::Vector<int>& GetIntegerValues() const { return m_integerValues; }
     inline bool IntegerValuesHasBeenSet() const { return m_integerValuesHasBeenSet; }
-    inline void SetIntegerValues(const Aws::Vector<int>& value) { m_integerValuesHasBeenSet = true; m_integerValues = value; }
-    inline void SetIntegerValues(Aws::Vector<int>&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::move(value); }
-    inline AttributeValueList& WithIntegerValues(const Aws::Vector<int>& value) { SetIntegerValues(value); return *this;}
-    inline AttributeValueList& WithIntegerValues(Aws::Vector<int>&& value) { SetIntegerValues(std::move(value)); return *this;}
+    template<typename IntegerValuesT = Aws::Vector<int>>
+    void SetIntegerValues(IntegerValuesT&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::forward<IntegerValuesT>(value); }
+    template<typename IntegerValuesT = Aws::Vector<int>>
+    AttributeValueList& WithIntegerValues(IntegerValuesT&& value) { SetIntegerValues(std::forward<IntegerValuesT>(value)); return *this;}
     inline AttributeValueList& AddIntegerValues(int value) { m_integerValuesHasBeenSet = true; m_integerValues.push_back(value); return *this; }
     ///@}
 
@@ -56,15 +56,14 @@ namespace Model
     /**
      * <p>The list of string values that the filter matches.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringValues() const{ return m_stringValues; }
+    inline const Aws::Vector<Aws::String>& GetStringValues() const { return m_stringValues; }
     inline bool StringValuesHasBeenSet() const { return m_stringValuesHasBeenSet; }
-    inline void SetStringValues(const Aws::Vector<Aws::String>& value) { m_stringValuesHasBeenSet = true; m_stringValues = value; }
-    inline void SetStringValues(Aws::Vector<Aws::String>&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::move(value); }
-    inline AttributeValueList& WithStringValues(const Aws::Vector<Aws::String>& value) { SetStringValues(value); return *this;}
-    inline AttributeValueList& WithStringValues(Aws::Vector<Aws::String>&& value) { SetStringValues(std::move(value)); return *this;}
-    inline AttributeValueList& AddStringValues(const Aws::String& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-    inline AttributeValueList& AddStringValues(Aws::String&& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(std::move(value)); return *this; }
-    inline AttributeValueList& AddStringValues(const char* value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    void SetStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::forward<StringValuesT>(value); }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    AttributeValueList& WithStringValues(StringValuesT&& value) { SetStringValues(std::forward<StringValuesT>(value)); return *this;}
+    template<typename StringValuesT = Aws::String>
+    AttributeValueList& AddStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues.emplace_back(std::forward<StringValuesT>(value)); return *this; }
     ///@}
   private:
 

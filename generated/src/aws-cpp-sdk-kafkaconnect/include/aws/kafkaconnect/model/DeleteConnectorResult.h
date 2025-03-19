@@ -28,7 +28,7 @@ namespace Model
   class DeleteConnectorResult
   {
   public:
-    AWS_KAFKACONNECT_API DeleteConnectorResult();
+    AWS_KAFKACONNECT_API DeleteConnectorResult() = default;
     AWS_KAFKACONNECT_API DeleteConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API DeleteConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,40 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the connector that you requested to
      * delete.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArn.assign(value); }
-    inline DeleteConnectorResult& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline DeleteConnectorResult& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline DeleteConnectorResult& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    DeleteConnectorResult& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the connector that you requested to delete.</p>
      */
-    inline const ConnectorState& GetConnectorState() const{ return m_connectorState; }
-    inline void SetConnectorState(const ConnectorState& value) { m_connectorState = value; }
-    inline void SetConnectorState(ConnectorState&& value) { m_connectorState = std::move(value); }
-    inline DeleteConnectorResult& WithConnectorState(const ConnectorState& value) { SetConnectorState(value); return *this;}
-    inline DeleteConnectorResult& WithConnectorState(ConnectorState&& value) { SetConnectorState(std::move(value)); return *this;}
+    inline ConnectorState GetConnectorState() const { return m_connectorState; }
+    inline void SetConnectorState(ConnectorState value) { m_connectorStateHasBeenSet = true; m_connectorState = value; }
+    inline DeleteConnectorResult& WithConnectorState(ConnectorState value) { SetConnectorState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteConnectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectorArn;
+    bool m_connectorArnHasBeenSet = false;
 
-    ConnectorState m_connectorState;
+    ConnectorState m_connectorState{ConnectorState::NOT_SET};
+    bool m_connectorStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

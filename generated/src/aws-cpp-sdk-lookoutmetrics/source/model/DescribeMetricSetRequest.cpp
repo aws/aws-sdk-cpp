@@ -12,11 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMetricSetRequest::DescribeMetricSetRequest() : 
-    m_metricSetArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMetricSetRequest::SerializePayload() const
 {
   JsonValue payload;

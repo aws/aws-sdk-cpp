@@ -24,7 +24,7 @@ namespace Model
   class CreateKeyspaceRequest : public KeyspacesRequest
   {
   public:
-    AWS_KEYSPACES_API CreateKeyspaceRequest();
+    AWS_KEYSPACES_API CreateKeyspaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the keyspace to be created.</p>
      */
-    inline const Aws::String& GetKeyspaceName() const{ return m_keyspaceName; }
+    inline const Aws::String& GetKeyspaceName() const { return m_keyspaceName; }
     inline bool KeyspaceNameHasBeenSet() const { return m_keyspaceNameHasBeenSet; }
-    inline void SetKeyspaceName(const Aws::String& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = value; }
-    inline void SetKeyspaceName(Aws::String&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::move(value); }
-    inline void SetKeyspaceName(const char* value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName.assign(value); }
-    inline CreateKeyspaceRequest& WithKeyspaceName(const Aws::String& value) { SetKeyspaceName(value); return *this;}
-    inline CreateKeyspaceRequest& WithKeyspaceName(Aws::String&& value) { SetKeyspaceName(std::move(value)); return *this;}
-    inline CreateKeyspaceRequest& WithKeyspaceName(const char* value) { SetKeyspaceName(value); return *this;}
+    template<typename KeyspaceNameT = Aws::String>
+    void SetKeyspaceName(KeyspaceNameT&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::forward<KeyspaceNameT>(value); }
+    template<typename KeyspaceNameT = Aws::String>
+    CreateKeyspaceRequest& WithKeyspaceName(KeyspaceNameT&& value) { SetKeyspaceName(std::forward<KeyspaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces
      * Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateKeyspaceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateKeyspaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateKeyspaceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateKeyspaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateKeyspaceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateKeyspaceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,12 +78,12 @@ namespace Model
      * is going to be replicated in. The maximum number of supported replication
      * Regions including the current Region is six.</p> </li> </ul>
      */
-    inline const ReplicationSpecification& GetReplicationSpecification() const{ return m_replicationSpecification; }
+    inline const ReplicationSpecification& GetReplicationSpecification() const { return m_replicationSpecification; }
     inline bool ReplicationSpecificationHasBeenSet() const { return m_replicationSpecificationHasBeenSet; }
-    inline void SetReplicationSpecification(const ReplicationSpecification& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = value; }
-    inline void SetReplicationSpecification(ReplicationSpecification&& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = std::move(value); }
-    inline CreateKeyspaceRequest& WithReplicationSpecification(const ReplicationSpecification& value) { SetReplicationSpecification(value); return *this;}
-    inline CreateKeyspaceRequest& WithReplicationSpecification(ReplicationSpecification&& value) { SetReplicationSpecification(std::move(value)); return *this;}
+    template<typename ReplicationSpecificationT = ReplicationSpecification>
+    void SetReplicationSpecification(ReplicationSpecificationT&& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = std::forward<ReplicationSpecificationT>(value); }
+    template<typename ReplicationSpecificationT = ReplicationSpecification>
+    CreateKeyspaceRequest& WithReplicationSpecification(ReplicationSpecificationT&& value) { SetReplicationSpecification(std::forward<ReplicationSpecificationT>(value)); return *this;}
     ///@}
   private:
 

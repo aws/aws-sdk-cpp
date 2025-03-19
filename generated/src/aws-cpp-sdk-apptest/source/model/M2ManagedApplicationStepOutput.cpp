@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput() : 
-    m_importDataSetSummaryHasBeenSet(false)
-{
-}
-
 M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput(JsonView jsonValue)
-  : M2ManagedApplicationStepOutput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ M2ManagedApplicationStepOutput& M2ManagedApplicationStepOutput::operator =(JsonV
     }
     m_importDataSetSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

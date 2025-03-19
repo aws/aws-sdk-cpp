@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAmazonMqBrokerEncryptionOptionsDetails::AwsAmazonMqBrokerEncryptionOptionsDetails() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_useAwsOwnedKey(false),
-    m_useAwsOwnedKeyHasBeenSet(false)
-{
-}
-
 AwsAmazonMqBrokerEncryptionOptionsDetails::AwsAmazonMqBrokerEncryptionOptionsDetails(JsonView jsonValue)
-  : AwsAmazonMqBrokerEncryptionOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsAmazonMqBrokerEncryptionOptionsDetails& AwsAmazonMqBrokerEncryptionOptionsDet
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseAwsOwnedKey"))
   {
     m_useAwsOwnedKey = jsonValue.GetBool("UseAwsOwnedKey");
-
     m_useAwsOwnedKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

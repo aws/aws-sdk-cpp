@@ -39,7 +39,7 @@ namespace Model
   class SqsParameters
   {
   public:
-    AWS_SCHEDULER_API SqsParameters();
+    AWS_SCHEDULER_API SqsParameters() = default;
     AWS_SCHEDULER_API SqsParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API SqsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The FIFO message group ID to use as the target.</p>
      */
-    inline const Aws::String& GetMessageGroupId() const{ return m_messageGroupId; }
+    inline const Aws::String& GetMessageGroupId() const { return m_messageGroupId; }
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }
-    inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
-    inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
-    inline void SetMessageGroupId(const char* value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId.assign(value); }
-    inline SqsParameters& WithMessageGroupId(const Aws::String& value) { SetMessageGroupId(value); return *this;}
-    inline SqsParameters& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
-    inline SqsParameters& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
+    template<typename MessageGroupIdT = Aws::String>
+    void SetMessageGroupId(MessageGroupIdT&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::forward<MessageGroupIdT>(value); }
+    template<typename MessageGroupIdT = Aws::String>
+    SqsParameters& WithMessageGroupId(MessageGroupIdT&& value) { SetMessageGroupId(std::forward<MessageGroupIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class UpdateConfiguredTableRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API UpdateConfiguredTableRequest();
+    AWS_CLEANROOMS_API UpdateConfiguredTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
      * <p>The identifier for the configured table to update. Currently accepts the
      * configured table ID.</p>
      */
-    inline const Aws::String& GetConfiguredTableIdentifier() const{ return m_configuredTableIdentifier; }
+    inline const Aws::String& GetConfiguredTableIdentifier() const { return m_configuredTableIdentifier; }
     inline bool ConfiguredTableIdentifierHasBeenSet() const { return m_configuredTableIdentifierHasBeenSet; }
-    inline void SetConfiguredTableIdentifier(const Aws::String& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = value; }
-    inline void SetConfiguredTableIdentifier(Aws::String&& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = std::move(value); }
-    inline void SetConfiguredTableIdentifier(const char* value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier.assign(value); }
-    inline UpdateConfiguredTableRequest& WithConfiguredTableIdentifier(const Aws::String& value) { SetConfiguredTableIdentifier(value); return *this;}
-    inline UpdateConfiguredTableRequest& WithConfiguredTableIdentifier(Aws::String&& value) { SetConfiguredTableIdentifier(std::move(value)); return *this;}
-    inline UpdateConfiguredTableRequest& WithConfiguredTableIdentifier(const char* value) { SetConfiguredTableIdentifier(value); return *this;}
+    template<typename ConfiguredTableIdentifierT = Aws::String>
+    void SetConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = std::forward<ConfiguredTableIdentifierT>(value); }
+    template<typename ConfiguredTableIdentifierT = Aws::String>
+    UpdateConfiguredTableRequest& WithConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) { SetConfiguredTableIdentifier(std::forward<ConfiguredTableIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new name for the configured table.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateConfiguredTableRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateConfiguredTableRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateConfiguredTableRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateConfiguredTableRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description for the configured table.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateConfiguredTableRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateConfiguredTableRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateConfiguredTableRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateConfiguredTableRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +80,23 @@ namespace Model
      * this table.</p> <p> <code>MULTIPLE</code> allows both SQL queries and PySpark
      * jobs to be run directly on this table.</p>
      */
-    inline const AnalysisMethod& GetAnalysisMethod() const{ return m_analysisMethod; }
+    inline AnalysisMethod GetAnalysisMethod() const { return m_analysisMethod; }
     inline bool AnalysisMethodHasBeenSet() const { return m_analysisMethodHasBeenSet; }
-    inline void SetAnalysisMethod(const AnalysisMethod& value) { m_analysisMethodHasBeenSet = true; m_analysisMethod = value; }
-    inline void SetAnalysisMethod(AnalysisMethod&& value) { m_analysisMethodHasBeenSet = true; m_analysisMethod = std::move(value); }
-    inline UpdateConfiguredTableRequest& WithAnalysisMethod(const AnalysisMethod& value) { SetAnalysisMethod(value); return *this;}
-    inline UpdateConfiguredTableRequest& WithAnalysisMethod(AnalysisMethod&& value) { SetAnalysisMethod(std::move(value)); return *this;}
+    inline void SetAnalysisMethod(AnalysisMethod value) { m_analysisMethodHasBeenSet = true; m_analysisMethod = value; }
+    inline UpdateConfiguredTableRequest& WithAnalysisMethod(AnalysisMethod value) { SetAnalysisMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The selected analysis methods for the table configuration update.</p>
      */
-    inline const Aws::Vector<SelectedAnalysisMethod>& GetSelectedAnalysisMethods() const{ return m_selectedAnalysisMethods; }
+    inline const Aws::Vector<SelectedAnalysisMethod>& GetSelectedAnalysisMethods() const { return m_selectedAnalysisMethods; }
     inline bool SelectedAnalysisMethodsHasBeenSet() const { return m_selectedAnalysisMethodsHasBeenSet; }
-    inline void SetSelectedAnalysisMethods(const Aws::Vector<SelectedAnalysisMethod>& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = value; }
-    inline void SetSelectedAnalysisMethods(Aws::Vector<SelectedAnalysisMethod>&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = std::move(value); }
-    inline UpdateConfiguredTableRequest& WithSelectedAnalysisMethods(const Aws::Vector<SelectedAnalysisMethod>& value) { SetSelectedAnalysisMethods(value); return *this;}
-    inline UpdateConfiguredTableRequest& WithSelectedAnalysisMethods(Aws::Vector<SelectedAnalysisMethod>&& value) { SetSelectedAnalysisMethods(std::move(value)); return *this;}
-    inline UpdateConfiguredTableRequest& AddSelectedAnalysisMethods(const SelectedAnalysisMethod& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(value); return *this; }
-    inline UpdateConfiguredTableRequest& AddSelectedAnalysisMethods(SelectedAnalysisMethod&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(std::move(value)); return *this; }
+    template<typename SelectedAnalysisMethodsT = Aws::Vector<SelectedAnalysisMethod>>
+    void SetSelectedAnalysisMethods(SelectedAnalysisMethodsT&& value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods = std::forward<SelectedAnalysisMethodsT>(value); }
+    template<typename SelectedAnalysisMethodsT = Aws::Vector<SelectedAnalysisMethod>>
+    UpdateConfiguredTableRequest& WithSelectedAnalysisMethods(SelectedAnalysisMethodsT&& value) { SetSelectedAnalysisMethods(std::forward<SelectedAnalysisMethodsT>(value)); return *this;}
+    inline UpdateConfiguredTableRequest& AddSelectedAnalysisMethods(SelectedAnalysisMethod value) { m_selectedAnalysisMethodsHasBeenSet = true; m_selectedAnalysisMethods.push_back(value); return *this; }
     ///@}
   private:
 
@@ -118,7 +109,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    AnalysisMethod m_analysisMethod;
+    AnalysisMethod m_analysisMethod{AnalysisMethod::NOT_SET};
     bool m_analysisMethodHasBeenSet = false;
 
     Aws::Vector<SelectedAnalysisMethod> m_selectedAnalysisMethods;

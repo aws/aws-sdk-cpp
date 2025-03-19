@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Id3Insertion::Id3Insertion() : 
-    m_id3HasBeenSet(false),
-    m_timecodeHasBeenSet(false)
-{
-}
-
 Id3Insertion::Id3Insertion(JsonView jsonValue)
-  : Id3Insertion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Id3Insertion& Id3Insertion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id3"))
   {
     m_id3 = jsonValue.GetString("id3");
-
     m_id3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecode"))
   {
     m_timecode = jsonValue.GetString("timecode");
-
     m_timecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,17 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceTemplateRequest::CreateServiceTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelineProvisioning(Provisioning::NOT_SET),
-    m_pipelineProvisioningHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TaskTemplateConstraints::TaskTemplateConstraints() : 
-    m_requiredFieldsHasBeenSet(false),
-    m_readOnlyFieldsHasBeenSet(false),
-    m_invisibleFieldsHasBeenSet(false)
-{
-}
-
 TaskTemplateConstraints::TaskTemplateConstraints(JsonView jsonValue)
-  : TaskTemplateConstraints()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ TaskTemplateConstraints& TaskTemplateConstraints::operator =(JsonView jsonValue)
     }
     m_requiredFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadOnlyFields"))
   {
     Aws::Utils::Array<JsonView> readOnlyFieldsJsonList = jsonValue.GetArray("ReadOnlyFields");
@@ -52,7 +43,6 @@ TaskTemplateConstraints& TaskTemplateConstraints::operator =(JsonView jsonValue)
     }
     m_readOnlyFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvisibleFields"))
   {
     Aws::Utils::Array<JsonView> invisibleFieldsJsonList = jsonValue.GetArray("InvisibleFields");
@@ -62,7 +52,6 @@ TaskTemplateConstraints& TaskTemplateConstraints::operator =(JsonView jsonValue)
     }
     m_invisibleFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

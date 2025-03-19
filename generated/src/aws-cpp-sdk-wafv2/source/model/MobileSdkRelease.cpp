@@ -18,16 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-MobileSdkRelease::MobileSdkRelease() : 
-    m_releaseVersionHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_releaseNotesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 MobileSdkRelease::MobileSdkRelease(JsonView jsonValue)
-  : MobileSdkRelease()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MobileSdkRelease& MobileSdkRelease::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReleaseVersion"))
   {
     m_releaseVersion = jsonValue.GetString("ReleaseVersion");
-
     m_releaseVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseNotes"))
   {
     m_releaseNotes = jsonValue.GetString("ReleaseNotes");
-
     m_releaseNotesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -64,7 +49,6 @@ MobileSdkRelease& MobileSdkRelease::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class Slot
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API Slot();
+    AWS_LEXMODELBUILDINGSERVICE_API Slot() = default;
     AWS_LEXMODELBUILDINGSERVICE_API Slot(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,34 @@ namespace Model
     /**
      * <p>The name of the slot.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Slot& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Slot& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Slot& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Slot& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the slot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Slot& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Slot& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Slot& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Slot& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the slot is required or optional. </p>
      */
-    inline const SlotConstraint& GetSlotConstraint() const{ return m_slotConstraint; }
+    inline SlotConstraint GetSlotConstraint() const { return m_slotConstraint; }
     inline bool SlotConstraintHasBeenSet() const { return m_slotConstraintHasBeenSet; }
-    inline void SetSlotConstraint(const SlotConstraint& value) { m_slotConstraintHasBeenSet = true; m_slotConstraint = value; }
-    inline void SetSlotConstraint(SlotConstraint&& value) { m_slotConstraintHasBeenSet = true; m_slotConstraint = std::move(value); }
-    inline Slot& WithSlotConstraint(const SlotConstraint& value) { SetSlotConstraint(value); return *this;}
-    inline Slot& WithSlotConstraint(SlotConstraint&& value) { SetSlotConstraint(std::move(value)); return *this;}
+    inline void SetSlotConstraint(SlotConstraint value) { m_slotConstraintHasBeenSet = true; m_slotConstraint = value; }
+    inline Slot& WithSlotConstraint(SlotConstraint value) { SetSlotConstraint(value); return *this;}
     ///@}
 
     ///@{
@@ -87,40 +81,36 @@ namespace Model
      * <p>The type of the slot, either a custom slot type that you defined or one of
      * the built-in slot types.</p>
      */
-    inline const Aws::String& GetSlotType() const{ return m_slotType; }
+    inline const Aws::String& GetSlotType() const { return m_slotType; }
     inline bool SlotTypeHasBeenSet() const { return m_slotTypeHasBeenSet; }
-    inline void SetSlotType(const Aws::String& value) { m_slotTypeHasBeenSet = true; m_slotType = value; }
-    inline void SetSlotType(Aws::String&& value) { m_slotTypeHasBeenSet = true; m_slotType = std::move(value); }
-    inline void SetSlotType(const char* value) { m_slotTypeHasBeenSet = true; m_slotType.assign(value); }
-    inline Slot& WithSlotType(const Aws::String& value) { SetSlotType(value); return *this;}
-    inline Slot& WithSlotType(Aws::String&& value) { SetSlotType(std::move(value)); return *this;}
-    inline Slot& WithSlotType(const char* value) { SetSlotType(value); return *this;}
+    template<typename SlotTypeT = Aws::String>
+    void SetSlotType(SlotTypeT&& value) { m_slotTypeHasBeenSet = true; m_slotType = std::forward<SlotTypeT>(value); }
+    template<typename SlotTypeT = Aws::String>
+    Slot& WithSlotType(SlotTypeT&& value) { SetSlotType(std::forward<SlotTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the slot type.</p>
      */
-    inline const Aws::String& GetSlotTypeVersion() const{ return m_slotTypeVersion; }
+    inline const Aws::String& GetSlotTypeVersion() const { return m_slotTypeVersion; }
     inline bool SlotTypeVersionHasBeenSet() const { return m_slotTypeVersionHasBeenSet; }
-    inline void SetSlotTypeVersion(const Aws::String& value) { m_slotTypeVersionHasBeenSet = true; m_slotTypeVersion = value; }
-    inline void SetSlotTypeVersion(Aws::String&& value) { m_slotTypeVersionHasBeenSet = true; m_slotTypeVersion = std::move(value); }
-    inline void SetSlotTypeVersion(const char* value) { m_slotTypeVersionHasBeenSet = true; m_slotTypeVersion.assign(value); }
-    inline Slot& WithSlotTypeVersion(const Aws::String& value) { SetSlotTypeVersion(value); return *this;}
-    inline Slot& WithSlotTypeVersion(Aws::String&& value) { SetSlotTypeVersion(std::move(value)); return *this;}
-    inline Slot& WithSlotTypeVersion(const char* value) { SetSlotTypeVersion(value); return *this;}
+    template<typename SlotTypeVersionT = Aws::String>
+    void SetSlotTypeVersion(SlotTypeVersionT&& value) { m_slotTypeVersionHasBeenSet = true; m_slotTypeVersion = std::forward<SlotTypeVersionT>(value); }
+    template<typename SlotTypeVersionT = Aws::String>
+    Slot& WithSlotTypeVersion(SlotTypeVersionT&& value) { SetSlotTypeVersion(std::forward<SlotTypeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
      */
-    inline const Prompt& GetValueElicitationPrompt() const{ return m_valueElicitationPrompt; }
+    inline const Prompt& GetValueElicitationPrompt() const { return m_valueElicitationPrompt; }
     inline bool ValueElicitationPromptHasBeenSet() const { return m_valueElicitationPromptHasBeenSet; }
-    inline void SetValueElicitationPrompt(const Prompt& value) { m_valueElicitationPromptHasBeenSet = true; m_valueElicitationPrompt = value; }
-    inline void SetValueElicitationPrompt(Prompt&& value) { m_valueElicitationPromptHasBeenSet = true; m_valueElicitationPrompt = std::move(value); }
-    inline Slot& WithValueElicitationPrompt(const Prompt& value) { SetValueElicitationPrompt(value); return *this;}
-    inline Slot& WithValueElicitationPrompt(Prompt&& value) { SetValueElicitationPrompt(std::move(value)); return *this;}
+    template<typename ValueElicitationPromptT = Prompt>
+    void SetValueElicitationPrompt(ValueElicitationPromptT&& value) { m_valueElicitationPromptHasBeenSet = true; m_valueElicitationPrompt = std::forward<ValueElicitationPromptT>(value); }
+    template<typename ValueElicitationPromptT = Prompt>
+    Slot& WithValueElicitationPrompt(ValueElicitationPromptT&& value) { SetValueElicitationPrompt(std::forward<ValueElicitationPromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,7 +121,7 @@ namespace Model
      * multiple slots share the same priority, the order in which Amazon Lex elicits
      * values is arbitrary.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline Slot& WithPriority(int value) { SetPriority(value); return *this;}
@@ -144,15 +134,14 @@ namespace Model
      * accuracy. This is optional. In most cases, Amazon Lex is capable of
      * understanding user utterances. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSampleUtterances() const{ return m_sampleUtterances; }
+    inline const Aws::Vector<Aws::String>& GetSampleUtterances() const { return m_sampleUtterances; }
     inline bool SampleUtterancesHasBeenSet() const { return m_sampleUtterancesHasBeenSet; }
-    inline void SetSampleUtterances(const Aws::Vector<Aws::String>& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = value; }
-    inline void SetSampleUtterances(Aws::Vector<Aws::String>&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = std::move(value); }
-    inline Slot& WithSampleUtterances(const Aws::Vector<Aws::String>& value) { SetSampleUtterances(value); return *this;}
-    inline Slot& WithSampleUtterances(Aws::Vector<Aws::String>&& value) { SetSampleUtterances(std::move(value)); return *this;}
-    inline Slot& AddSampleUtterances(const Aws::String& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
-    inline Slot& AddSampleUtterances(Aws::String&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(std::move(value)); return *this; }
-    inline Slot& AddSampleUtterances(const char* value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
+    template<typename SampleUtterancesT = Aws::Vector<Aws::String>>
+    void SetSampleUtterances(SampleUtterancesT&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances = std::forward<SampleUtterancesT>(value); }
+    template<typename SampleUtterancesT = Aws::Vector<Aws::String>>
+    Slot& WithSampleUtterances(SampleUtterancesT&& value) { SetSampleUtterances(std::forward<SampleUtterancesT>(value)); return *this;}
+    template<typename SampleUtterancesT = Aws::String>
+    Slot& AddSampleUtterances(SampleUtterancesT&& value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.emplace_back(std::forward<SampleUtterancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -161,14 +150,12 @@ namespace Model
      * user chooses an option from the response card, instead of using text to reply.
      * </p>
      */
-    inline const Aws::String& GetResponseCard() const{ return m_responseCard; }
+    inline const Aws::String& GetResponseCard() const { return m_responseCard; }
     inline bool ResponseCardHasBeenSet() const { return m_responseCardHasBeenSet; }
-    inline void SetResponseCard(const Aws::String& value) { m_responseCardHasBeenSet = true; m_responseCard = value; }
-    inline void SetResponseCard(Aws::String&& value) { m_responseCardHasBeenSet = true; m_responseCard = std::move(value); }
-    inline void SetResponseCard(const char* value) { m_responseCardHasBeenSet = true; m_responseCard.assign(value); }
-    inline Slot& WithResponseCard(const Aws::String& value) { SetResponseCard(value); return *this;}
-    inline Slot& WithResponseCard(Aws::String&& value) { SetResponseCard(std::move(value)); return *this;}
-    inline Slot& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
+    template<typename ResponseCardT = Aws::String>
+    void SetResponseCard(ResponseCardT&& value) { m_responseCardHasBeenSet = true; m_responseCard = std::forward<ResponseCardT>(value); }
+    template<typename ResponseCardT = Aws::String>
+    Slot& WithResponseCard(ResponseCardT&& value) { SetResponseCard(std::forward<ResponseCardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +167,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
      * Obfuscation </a>. </p>
      */
-    inline const ObfuscationSetting& GetObfuscationSetting() const{ return m_obfuscationSetting; }
+    inline ObfuscationSetting GetObfuscationSetting() const { return m_obfuscationSetting; }
     inline bool ObfuscationSettingHasBeenSet() const { return m_obfuscationSettingHasBeenSet; }
-    inline void SetObfuscationSetting(const ObfuscationSetting& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = value; }
-    inline void SetObfuscationSetting(ObfuscationSetting&& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = std::move(value); }
-    inline Slot& WithObfuscationSetting(const ObfuscationSetting& value) { SetObfuscationSetting(value); return *this;}
-    inline Slot& WithObfuscationSetting(ObfuscationSetting&& value) { SetObfuscationSetting(std::move(value)); return *this;}
+    inline void SetObfuscationSetting(ObfuscationSetting value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = value; }
+    inline Slot& WithObfuscationSetting(ObfuscationSetting value) { SetObfuscationSetting(value); return *this;}
     ///@}
 
     ///@{
@@ -194,12 +179,12 @@ namespace Model
      * Lex hasn't determined a value for a slot. You can specify default values from
      * context variables, session attributes, and defined values.</p>
      */
-    inline const SlotDefaultValueSpec& GetDefaultValueSpec() const{ return m_defaultValueSpec; }
+    inline const SlotDefaultValueSpec& GetDefaultValueSpec() const { return m_defaultValueSpec; }
     inline bool DefaultValueSpecHasBeenSet() const { return m_defaultValueSpecHasBeenSet; }
-    inline void SetDefaultValueSpec(const SlotDefaultValueSpec& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = value; }
-    inline void SetDefaultValueSpec(SlotDefaultValueSpec&& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = std::move(value); }
-    inline Slot& WithDefaultValueSpec(const SlotDefaultValueSpec& value) { SetDefaultValueSpec(value); return *this;}
-    inline Slot& WithDefaultValueSpec(SlotDefaultValueSpec&& value) { SetDefaultValueSpec(std::move(value)); return *this;}
+    template<typename DefaultValueSpecT = SlotDefaultValueSpec>
+    void SetDefaultValueSpec(DefaultValueSpecT&& value) { m_defaultValueSpecHasBeenSet = true; m_defaultValueSpec = std::forward<DefaultValueSpecT>(value); }
+    template<typename DefaultValueSpecT = SlotDefaultValueSpec>
+    Slot& WithDefaultValueSpec(DefaultValueSpecT&& value) { SetDefaultValueSpec(std::forward<DefaultValueSpecT>(value)); return *this;}
     ///@}
   private:
 
@@ -209,7 +194,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    SlotConstraint m_slotConstraint;
+    SlotConstraint m_slotConstraint{SlotConstraint::NOT_SET};
     bool m_slotConstraintHasBeenSet = false;
 
     Aws::String m_slotType;
@@ -221,7 +206,7 @@ namespace Model
     Prompt m_valueElicitationPrompt;
     bool m_valueElicitationPromptHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sampleUtterances;
@@ -230,7 +215,7 @@ namespace Model
     Aws::String m_responseCard;
     bool m_responseCardHasBeenSet = false;
 
-    ObfuscationSetting m_obfuscationSetting;
+    ObfuscationSetting m_obfuscationSetting{ObfuscationSetting::NOT_SET};
     bool m_obfuscationSettingHasBeenSet = false;
 
     SlotDefaultValueSpec m_defaultValueSpec;

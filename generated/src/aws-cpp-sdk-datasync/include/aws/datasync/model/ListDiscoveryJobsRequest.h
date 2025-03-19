@@ -21,7 +21,7 @@ namespace Model
   class ListDiscoveryJobsRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API ListDiscoveryJobsRequest();
+    AWS_DATASYNC_API ListDiscoveryJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
      * Use this parameter if you only want to list the discovery jobs that are
      * associated with a specific storage system.</p>
      */
-    inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
+    inline const Aws::String& GetStorageSystemArn() const { return m_storageSystemArn; }
     inline bool StorageSystemArnHasBeenSet() const { return m_storageSystemArnHasBeenSet; }
-    inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = value; }
-    inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::move(value); }
-    inline void SetStorageSystemArn(const char* value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn.assign(value); }
-    inline ListDiscoveryJobsRequest& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-    inline ListDiscoveryJobsRequest& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-    inline ListDiscoveryJobsRequest& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    template<typename StorageSystemArnT = Aws::String>
+    void SetStorageSystemArn(StorageSystemArnT&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::forward<StorageSystemArnT>(value); }
+    template<typename StorageSystemArnT = Aws::String>
+    ListDiscoveryJobsRequest& WithStorageSystemArn(StorageSystemArnT&& value) { SetStorageSystemArn(std::forward<StorageSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies how many results you want in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDiscoveryJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
      * <p>Specifies an opaque string that indicates the position to begin the next list
      * of results in the response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDiscoveryJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDiscoveryJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDiscoveryJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDiscoveryJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_storageSystemArn;
     bool m_storageSystemArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

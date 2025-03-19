@@ -32,7 +32,7 @@ namespace Model
   class SubscribedProjectInput
   {
   public:
-    AWS_DATAZONE_API SubscribedProjectInput();
+    AWS_DATAZONE_API SubscribedProjectInput() = default;
     AWS_DATAZONE_API SubscribedProjectInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SubscribedProjectInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the project that is to be given a subscription grant.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline SubscribedProjectInput& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline SubscribedProjectInput& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline SubscribedProjectInput& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    SubscribedProjectInput& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

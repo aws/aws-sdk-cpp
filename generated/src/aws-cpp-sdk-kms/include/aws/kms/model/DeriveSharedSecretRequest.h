@@ -25,7 +25,7 @@ namespace Model
   class DeriveSharedSecretRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API DeriveSharedSecretRequest();
+    AWS_KMS_API DeriveSharedSecretRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -56,14 +56,12 @@ namespace Model
      * <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use
      * <a>ListAliases</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline DeriveSharedSecretRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline DeriveSharedSecretRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline DeriveSharedSecretRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    DeriveSharedSecretRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * <p>Specifies the key agreement algorithm used to derive the shared secret. The
      * only valid value is <code>ECDH</code>.</p>
      */
-    inline const KeyAgreementAlgorithmSpec& GetKeyAgreementAlgorithm() const{ return m_keyAgreementAlgorithm; }
+    inline KeyAgreementAlgorithmSpec GetKeyAgreementAlgorithm() const { return m_keyAgreementAlgorithm; }
     inline bool KeyAgreementAlgorithmHasBeenSet() const { return m_keyAgreementAlgorithmHasBeenSet; }
-    inline void SetKeyAgreementAlgorithm(const KeyAgreementAlgorithmSpec& value) { m_keyAgreementAlgorithmHasBeenSet = true; m_keyAgreementAlgorithm = value; }
-    inline void SetKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec&& value) { m_keyAgreementAlgorithmHasBeenSet = true; m_keyAgreementAlgorithm = std::move(value); }
-    inline DeriveSharedSecretRequest& WithKeyAgreementAlgorithm(const KeyAgreementAlgorithmSpec& value) { SetKeyAgreementAlgorithm(value); return *this;}
-    inline DeriveSharedSecretRequest& WithKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec&& value) { SetKeyAgreementAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec value) { m_keyAgreementAlgorithmHasBeenSet = true; m_keyAgreementAlgorithm = value; }
+    inline DeriveSharedSecretRequest& WithKeyAgreementAlgorithm(KeyAgreementAlgorithmSpec value) { SetKeyAgreementAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,12 @@ namespace Model
      * (<code>fileb://&lt;path-to-file&gt;</code>) or in-line using a Base64 encoded
      * string.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::Utils::ByteBuffer& GetPublicKey() const { return m_publicKey; }
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-    inline void SetPublicKey(const Aws::Utils::ByteBuffer& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-    inline void SetPublicKey(Aws::Utils::ByteBuffer&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-    inline DeriveSharedSecretRequest& WithPublicKey(const Aws::Utils::ByteBuffer& value) { SetPublicKey(value); return *this;}
-    inline DeriveSharedSecretRequest& WithPublicKey(Aws::Utils::ByteBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
+    template<typename PublicKeyT = Aws::Utils::ByteBuffer>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::Utils::ByteBuffer>
+    DeriveSharedSecretRequest& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,15 +109,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+    inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
-    inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
-    inline DeriveSharedSecretRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
-    inline DeriveSharedSecretRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
-    inline DeriveSharedSecretRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
-    inline DeriveSharedSecretRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
-    inline DeriveSharedSecretRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    void SetGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::forward<GrantTokensT>(value); }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    DeriveSharedSecretRequest& WithGrantTokens(GrantTokensT&& value) { SetGrantTokens(std::forward<GrantTokensT>(value)); return *this;}
+    template<typename GrantTokensT = Aws::String>
+    DeriveSharedSecretRequest& AddGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.emplace_back(std::forward<GrantTokensT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,7 +126,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
      * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeriveSharedSecretRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -164,28 +159,28 @@ namespace Model
      * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
-    inline const RecipientInfo& GetRecipient() const{ return m_recipient; }
+    inline const RecipientInfo& GetRecipient() const { return m_recipient; }
     inline bool RecipientHasBeenSet() const { return m_recipientHasBeenSet; }
-    inline void SetRecipient(const RecipientInfo& value) { m_recipientHasBeenSet = true; m_recipient = value; }
-    inline void SetRecipient(RecipientInfo&& value) { m_recipientHasBeenSet = true; m_recipient = std::move(value); }
-    inline DeriveSharedSecretRequest& WithRecipient(const RecipientInfo& value) { SetRecipient(value); return *this;}
-    inline DeriveSharedSecretRequest& WithRecipient(RecipientInfo&& value) { SetRecipient(std::move(value)); return *this;}
+    template<typename RecipientT = RecipientInfo>
+    void SetRecipient(RecipientT&& value) { m_recipientHasBeenSet = true; m_recipient = std::forward<RecipientT>(value); }
+    template<typename RecipientT = RecipientInfo>
+    DeriveSharedSecretRequest& WithRecipient(RecipientT&& value) { SetRecipient(std::forward<RecipientT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    KeyAgreementAlgorithmSpec m_keyAgreementAlgorithm;
+    KeyAgreementAlgorithmSpec m_keyAgreementAlgorithm{KeyAgreementAlgorithmSpec::NOT_SET};
     bool m_keyAgreementAlgorithmHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_publicKey;
+    Aws::Utils::ByteBuffer m_publicKey{};
     bool m_publicKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     RecipientInfo m_recipient;

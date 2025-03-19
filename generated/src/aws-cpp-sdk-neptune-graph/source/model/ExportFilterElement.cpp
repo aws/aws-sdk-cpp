@@ -18,13 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ExportFilterElement::ExportFilterElement() : 
-    m_propertiesHasBeenSet(false)
-{
-}
-
 ExportFilterElement::ExportFilterElement(JsonView jsonValue)
-  : ExportFilterElement()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ExportFilterElement& ExportFilterElement::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

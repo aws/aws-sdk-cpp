@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcBlockPublicAccessExclusion::VpcBlockPublicAccessExclusion() : 
-    m_exclusionIdHasBeenSet(false),
-    m_internetGatewayExclusionMode(InternetGatewayExclusionMode::NOT_SET),
-    m_internetGatewayExclusionModeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_state(VpcBlockPublicAccessExclusionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_deletionTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VpcBlockPublicAccessExclusion::VpcBlockPublicAccessExclusion(const XmlNode& xmlNode)
-  : VpcBlockPublicAccessExclusion()
 {
   *this = xmlNode;
 }
@@ -56,7 +40,7 @@ VpcBlockPublicAccessExclusion& VpcBlockPublicAccessExclusion::operator =(const X
     XmlNode internetGatewayExclusionModeNode = resultNode.FirstChild("internetGatewayExclusionMode");
     if(!internetGatewayExclusionModeNode.IsNull())
     {
-      m_internetGatewayExclusionMode = InternetGatewayExclusionModeMapper::GetInternetGatewayExclusionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayExclusionModeNode.GetText()).c_str()).c_str());
+      m_internetGatewayExclusionMode = InternetGatewayExclusionModeMapper::GetInternetGatewayExclusionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayExclusionModeNode.GetText()).c_str()));
       m_internetGatewayExclusionModeHasBeenSet = true;
     }
     XmlNode resourceArnNode = resultNode.FirstChild("resourceArn");
@@ -68,7 +52,7 @@ VpcBlockPublicAccessExclusion& VpcBlockPublicAccessExclusion::operator =(const X
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcBlockPublicAccessExclusionStateMapper::GetVpcBlockPublicAccessExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcBlockPublicAccessExclusionStateMapper::GetVpcBlockPublicAccessExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("reason");
@@ -99,6 +83,7 @@ VpcBlockPublicAccessExclusion& VpcBlockPublicAccessExclusion::operator =(const X
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

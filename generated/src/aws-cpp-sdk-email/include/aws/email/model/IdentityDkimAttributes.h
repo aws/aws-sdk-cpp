@@ -34,7 +34,7 @@ namespace Model
   class IdentityDkimAttributes
   {
   public:
-    AWS_SES_API IdentityDkimAttributes();
+    AWS_SES_API IdentityDkimAttributes() = default;
     AWS_SES_API IdentityDkimAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API IdentityDkimAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>Is true if DKIM signing is enabled for email sent from the identity. It's
      * false otherwise. The default value is true.</p>
      */
-    inline bool GetDkimEnabled() const{ return m_dkimEnabled; }
+    inline bool GetDkimEnabled() const { return m_dkimEnabled; }
     inline bool DkimEnabledHasBeenSet() const { return m_dkimEnabledHasBeenSet; }
     inline void SetDkimEnabled(bool value) { m_dkimEnabledHasBeenSet = true; m_dkimEnabled = value; }
     inline IdentityDkimAttributes& WithDkimEnabled(bool value) { SetDkimEnabled(value); return *this;}
@@ -59,12 +59,10 @@ namespace Model
      * (tokens) published in the domain name's DNS. (This only applies to domain
      * identities, not email address identities.)</p>
      */
-    inline const VerificationStatus& GetDkimVerificationStatus() const{ return m_dkimVerificationStatus; }
+    inline VerificationStatus GetDkimVerificationStatus() const { return m_dkimVerificationStatus; }
     inline bool DkimVerificationStatusHasBeenSet() const { return m_dkimVerificationStatusHasBeenSet; }
-    inline void SetDkimVerificationStatus(const VerificationStatus& value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = value; }
-    inline void SetDkimVerificationStatus(VerificationStatus&& value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = std::move(value); }
-    inline IdentityDkimAttributes& WithDkimVerificationStatus(const VerificationStatus& value) { SetDkimVerificationStatus(value); return *this;}
-    inline IdentityDkimAttributes& WithDkimVerificationStatus(VerificationStatus&& value) { SetDkimVerificationStatus(std::move(value)); return *this;}
+    inline void SetDkimVerificationStatus(VerificationStatus value) { m_dkimVerificationStatusHasBeenSet = true; m_dkimVerificationStatus = value; }
+    inline IdentityDkimAttributes& WithDkimVerificationStatus(VerificationStatus value) { SetDkimVerificationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,22 +78,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDkimTokens() const{ return m_dkimTokens; }
+    inline const Aws::Vector<Aws::String>& GetDkimTokens() const { return m_dkimTokens; }
     inline bool DkimTokensHasBeenSet() const { return m_dkimTokensHasBeenSet; }
-    inline void SetDkimTokens(const Aws::Vector<Aws::String>& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = value; }
-    inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = std::move(value); }
-    inline IdentityDkimAttributes& WithDkimTokens(const Aws::Vector<Aws::String>& value) { SetDkimTokens(value); return *this;}
-    inline IdentityDkimAttributes& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(std::move(value)); return *this;}
-    inline IdentityDkimAttributes& AddDkimTokens(const Aws::String& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.push_back(value); return *this; }
-    inline IdentityDkimAttributes& AddDkimTokens(Aws::String&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.push_back(std::move(value)); return *this; }
-    inline IdentityDkimAttributes& AddDkimTokens(const char* value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.push_back(value); return *this; }
+    template<typename DkimTokensT = Aws::Vector<Aws::String>>
+    void SetDkimTokens(DkimTokensT&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens = std::forward<DkimTokensT>(value); }
+    template<typename DkimTokensT = Aws::Vector<Aws::String>>
+    IdentityDkimAttributes& WithDkimTokens(DkimTokensT&& value) { SetDkimTokens(std::forward<DkimTokensT>(value)); return *this;}
+    template<typename DkimTokensT = Aws::String>
+    IdentityDkimAttributes& AddDkimTokens(DkimTokensT&& value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.emplace_back(std::forward<DkimTokensT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dkimEnabled;
+    bool m_dkimEnabled{false};
     bool m_dkimEnabledHasBeenSet = false;
 
-    VerificationStatus m_dkimVerificationStatus;
+    VerificationStatus m_dkimVerificationStatus{VerificationStatus::NOT_SET};
     bool m_dkimVerificationStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dkimTokens;

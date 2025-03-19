@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartCommitmentPurchaseAnalysisResult::StartCommitmentPurchaseAnalysisResult()
-{
-}
-
 StartCommitmentPurchaseAnalysisResult::StartCommitmentPurchaseAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ StartCommitmentPurchaseAnalysisResult& StartCommitmentPurchaseAnalysisResult::op
   if(jsonValue.ValueExists("AnalysisId"))
   {
     m_analysisId = jsonValue.GetString("AnalysisId");
-
+    m_analysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisStartedTime"))
   {
     m_analysisStartedTime = jsonValue.GetString("AnalysisStartedTime");
-
+    m_analysisStartedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedCompletionTime"))
   {
     m_estimatedCompletionTime = jsonValue.GetString("EstimatedCompletionTime");
-
+    m_estimatedCompletionTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

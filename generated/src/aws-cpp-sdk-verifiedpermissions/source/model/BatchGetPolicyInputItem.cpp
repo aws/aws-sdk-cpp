@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-BatchGetPolicyInputItem::BatchGetPolicyInputItem() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false)
-{
-}
-
 BatchGetPolicyInputItem::BatchGetPolicyInputItem(JsonView jsonValue)
-  : BatchGetPolicyInputItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchGetPolicyInputItem& BatchGetPolicyInputItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyStoreId"))
   {
     m_policyStoreId = jsonValue.GetString("policyStoreId");
-
     m_policyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyId"))
   {
     m_policyId = jsonValue.GetString("policyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

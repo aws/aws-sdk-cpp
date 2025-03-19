@@ -29,7 +29,7 @@ namespace Model
   class ListEntitlementsResult
   {
   public:
-    AWS_MEDIACONNECT_API ListEntitlementsResult();
+    AWS_MEDIACONNECT_API ListEntitlementsResult() = default;
     AWS_MEDIACONNECT_API ListEntitlementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API ListEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * A list of entitlements that have been granted to you from other AWS accounts.
      */
-    inline const Aws::Vector<ListedEntitlement>& GetEntitlements() const{ return m_entitlements; }
-    inline void SetEntitlements(const Aws::Vector<ListedEntitlement>& value) { m_entitlements = value; }
-    inline void SetEntitlements(Aws::Vector<ListedEntitlement>&& value) { m_entitlements = std::move(value); }
-    inline ListEntitlementsResult& WithEntitlements(const Aws::Vector<ListedEntitlement>& value) { SetEntitlements(value); return *this;}
-    inline ListEntitlementsResult& WithEntitlements(Aws::Vector<ListedEntitlement>&& value) { SetEntitlements(std::move(value)); return *this;}
-    inline ListEntitlementsResult& AddEntitlements(const ListedEntitlement& value) { m_entitlements.push_back(value); return *this; }
-    inline ListEntitlementsResult& AddEntitlements(ListedEntitlement&& value) { m_entitlements.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListedEntitlement>& GetEntitlements() const { return m_entitlements; }
+    template<typename EntitlementsT = Aws::Vector<ListedEntitlement>>
+    void SetEntitlements(EntitlementsT&& value) { m_entitlementsHasBeenSet = true; m_entitlements = std::forward<EntitlementsT>(value); }
+    template<typename EntitlementsT = Aws::Vector<ListedEntitlement>>
+    ListEntitlementsResult& WithEntitlements(EntitlementsT&& value) { SetEntitlements(std::forward<EntitlementsT>(value)); return *this;}
+    template<typename EntitlementsT = ListedEntitlement>
+    ListEntitlementsResult& AddEntitlements(EntitlementsT&& value) { m_entitlementsHasBeenSet = true; m_entitlements.emplace_back(std::forward<EntitlementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * see the next batch of results, you can submit the ListEntitlements request a
      * second time and specify the NextToken value.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEntitlementsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEntitlementsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEntitlementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEntitlementsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEntitlementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEntitlementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEntitlementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEntitlementsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListedEntitlement> m_entitlements;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

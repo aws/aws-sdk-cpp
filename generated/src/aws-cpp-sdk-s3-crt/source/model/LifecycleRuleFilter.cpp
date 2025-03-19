@@ -20,19 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-LifecycleRuleFilter::LifecycleRuleFilter() : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_objectSizeGreaterThan(0),
-    m_objectSizeGreaterThanHasBeenSet(false),
-    m_objectSizeLessThan(0),
-    m_objectSizeLessThanHasBeenSet(false),
-    m_andHasBeenSet(false)
-{
-}
-
 LifecycleRuleFilter::LifecycleRuleFilter(const XmlNode& xmlNode)
-  : LifecycleRuleFilter()
 {
   *this = xmlNode;
 }

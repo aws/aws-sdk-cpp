@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableAWSOrganizationsAccessResult::EnableAWSOrganizationsAccessResult()
-{
-}
-
 EnableAWSOrganizationsAccessResult::EnableAWSOrganizationsAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,6 +31,7 @@ EnableAWSOrganizationsAccessResult& EnableAWSOrganizationsAccessResult::operator
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

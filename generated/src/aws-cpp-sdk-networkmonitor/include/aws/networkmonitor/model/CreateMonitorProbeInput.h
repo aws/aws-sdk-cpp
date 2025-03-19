@@ -33,7 +33,7 @@ namespace Model
   class CreateMonitorProbeInput
   {
   public:
-    AWS_NETWORKMONITOR_API CreateMonitorProbeInput();
+    AWS_NETWORKMONITOR_API CreateMonitorProbeInput() = default;
     AWS_NETWORKMONITOR_API CreateMonitorProbeInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMONITOR_API CreateMonitorProbeInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the subnet.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline CreateMonitorProbeInput& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline CreateMonitorProbeInput& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline CreateMonitorProbeInput& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    CreateMonitorProbeInput& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The destination IP address. This must be either <code>IPV4</code> or
      * <code>IPV6</code>.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline CreateMonitorProbeInput& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline CreateMonitorProbeInput& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline CreateMonitorProbeInput& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    CreateMonitorProbeInput& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * if the <code>protocol</code> is <code>TCP</code> and must be a number between
      * <code>1</code> and <code>65536</code>.</p>
      */
-    inline int GetDestinationPort() const{ return m_destinationPort; }
+    inline int GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
     inline void SetDestinationPort(int value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
     inline CreateMonitorProbeInput& WithDestinationPort(int value) { SetDestinationPort(value); return *this;}
@@ -86,12 +82,10 @@ namespace Model
      * <code>destination</code>. This must be either <code>TCP</code> or
      * <code>ICMP</code>.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline CreateMonitorProbeInput& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline CreateMonitorProbeInput& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline CreateMonitorProbeInput& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +93,7 @@ namespace Model
      * <p>The size of the packets sent between the source and destination. This must be
      * a number between <code>56</code> and <code>8500</code>.</p>
      */
-    inline int GetPacketSize() const{ return m_packetSize; }
+    inline int GetPacketSize() const { return m_packetSize; }
     inline bool PacketSizeHasBeenSet() const { return m_packetSizeHasBeenSet; }
     inline void SetPacketSize(int value) { m_packetSizeHasBeenSet = true; m_packetSize = value; }
     inline CreateMonitorProbeInput& WithPacketSize(int value) { SetPacketSize(value); return *this;}
@@ -109,19 +103,16 @@ namespace Model
     /**
      * <p>The list of key-value pairs created and assigned to the monitor.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProbeTags() const{ return m_probeTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetProbeTags() const { return m_probeTags; }
     inline bool ProbeTagsHasBeenSet() const { return m_probeTagsHasBeenSet; }
-    inline void SetProbeTags(const Aws::Map<Aws::String, Aws::String>& value) { m_probeTagsHasBeenSet = true; m_probeTags = value; }
-    inline void SetProbeTags(Aws::Map<Aws::String, Aws::String>&& value) { m_probeTagsHasBeenSet = true; m_probeTags = std::move(value); }
-    inline CreateMonitorProbeInput& WithProbeTags(const Aws::Map<Aws::String, Aws::String>& value) { SetProbeTags(value); return *this;}
-    inline CreateMonitorProbeInput& WithProbeTags(Aws::Map<Aws::String, Aws::String>&& value) { SetProbeTags(std::move(value)); return *this;}
-    inline CreateMonitorProbeInput& AddProbeTags(const Aws::String& key, const Aws::String& value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(key, value); return *this; }
-    inline CreateMonitorProbeInput& AddProbeTags(Aws::String&& key, const Aws::String& value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(std::move(key), value); return *this; }
-    inline CreateMonitorProbeInput& AddProbeTags(const Aws::String& key, Aws::String&& value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(key, std::move(value)); return *this; }
-    inline CreateMonitorProbeInput& AddProbeTags(Aws::String&& key, Aws::String&& value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMonitorProbeInput& AddProbeTags(const char* key, Aws::String&& value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(key, std::move(value)); return *this; }
-    inline CreateMonitorProbeInput& AddProbeTags(Aws::String&& key, const char* value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(std::move(key), value); return *this; }
-    inline CreateMonitorProbeInput& AddProbeTags(const char* key, const char* value) { m_probeTagsHasBeenSet = true; m_probeTags.emplace(key, value); return *this; }
+    template<typename ProbeTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetProbeTags(ProbeTagsT&& value) { m_probeTagsHasBeenSet = true; m_probeTags = std::forward<ProbeTagsT>(value); }
+    template<typename ProbeTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateMonitorProbeInput& WithProbeTags(ProbeTagsT&& value) { SetProbeTags(std::forward<ProbeTagsT>(value)); return *this;}
+    template<typename ProbeTagsKeyT = Aws::String, typename ProbeTagsValueT = Aws::String>
+    CreateMonitorProbeInput& AddProbeTags(ProbeTagsKeyT&& key, ProbeTagsValueT&& value) {
+      m_probeTagsHasBeenSet = true; m_probeTags.emplace(std::forward<ProbeTagsKeyT>(key), std::forward<ProbeTagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -131,13 +122,13 @@ namespace Model
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
 
-    int m_destinationPort;
+    int m_destinationPort{0};
     bool m_destinationPortHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    int m_packetSize;
+    int m_packetSize{0};
     bool m_packetSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_probeTags;

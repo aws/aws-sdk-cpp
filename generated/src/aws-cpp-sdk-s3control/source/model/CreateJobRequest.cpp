@@ -15,23 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateJobRequest::CreateJobRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_confirmationRequired(false),
-    m_confirmationRequiredHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_reportHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_manifestHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_manifestGeneratorHasBeenSet(false)
-{
-}
 
 Aws::String CreateJobRequest::SerializePayload() const
 {

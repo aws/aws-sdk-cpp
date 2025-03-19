@@ -18,18 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_nameHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Keys"))
   {
     Aws::Utils::Array<JsonView> s3KeysJsonList = jsonValue.GetArray("s3Keys");
@@ -59,21 +44,16 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     }
     m_s3KeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

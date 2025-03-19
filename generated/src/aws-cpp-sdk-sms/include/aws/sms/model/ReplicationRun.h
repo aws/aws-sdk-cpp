@@ -35,7 +35,7 @@ namespace Model
   class ReplicationRun
   {
   public:
-    AWS_SMS_API ReplicationRun();
+    AWS_SMS_API ReplicationRun() = default;
     AWS_SMS_API ReplicationRun(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API ReplicationRun& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,123 +45,111 @@ namespace Model
     /**
      * <p>The ID of the replication run.</p>
      */
-    inline const Aws::String& GetReplicationRunId() const{ return m_replicationRunId; }
+    inline const Aws::String& GetReplicationRunId() const { return m_replicationRunId; }
     inline bool ReplicationRunIdHasBeenSet() const { return m_replicationRunIdHasBeenSet; }
-    inline void SetReplicationRunId(const Aws::String& value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId = value; }
-    inline void SetReplicationRunId(Aws::String&& value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId = std::move(value); }
-    inline void SetReplicationRunId(const char* value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId.assign(value); }
-    inline ReplicationRun& WithReplicationRunId(const Aws::String& value) { SetReplicationRunId(value); return *this;}
-    inline ReplicationRun& WithReplicationRunId(Aws::String&& value) { SetReplicationRunId(std::move(value)); return *this;}
-    inline ReplicationRun& WithReplicationRunId(const char* value) { SetReplicationRunId(value); return *this;}
+    template<typename ReplicationRunIdT = Aws::String>
+    void SetReplicationRunId(ReplicationRunIdT&& value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId = std::forward<ReplicationRunIdT>(value); }
+    template<typename ReplicationRunIdT = Aws::String>
+    ReplicationRun& WithReplicationRunId(ReplicationRunIdT&& value) { SetReplicationRunId(std::forward<ReplicationRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the replication run.</p>
      */
-    inline const ReplicationRunState& GetState() const{ return m_state; }
+    inline ReplicationRunState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ReplicationRunState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ReplicationRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ReplicationRun& WithState(const ReplicationRunState& value) { SetState(value); return *this;}
-    inline ReplicationRun& WithState(ReplicationRunState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ReplicationRunState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ReplicationRun& WithState(ReplicationRunState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of replication run.</p>
      */
-    inline const ReplicationRunType& GetType() const{ return m_type; }
+    inline ReplicationRunType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ReplicationRunType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ReplicationRunType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ReplicationRun& WithType(const ReplicationRunType& value) { SetType(value); return *this;}
-    inline ReplicationRun& WithType(ReplicationRunType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ReplicationRunType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ReplicationRun& WithType(ReplicationRunType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the current stage of the replication run.</p>
      */
-    inline const ReplicationRunStageDetails& GetStageDetails() const{ return m_stageDetails; }
+    inline const ReplicationRunStageDetails& GetStageDetails() const { return m_stageDetails; }
     inline bool StageDetailsHasBeenSet() const { return m_stageDetailsHasBeenSet; }
-    inline void SetStageDetails(const ReplicationRunStageDetails& value) { m_stageDetailsHasBeenSet = true; m_stageDetails = value; }
-    inline void SetStageDetails(ReplicationRunStageDetails&& value) { m_stageDetailsHasBeenSet = true; m_stageDetails = std::move(value); }
-    inline ReplicationRun& WithStageDetails(const ReplicationRunStageDetails& value) { SetStageDetails(value); return *this;}
-    inline ReplicationRun& WithStageDetails(ReplicationRunStageDetails&& value) { SetStageDetails(std::move(value)); return *this;}
+    template<typename StageDetailsT = ReplicationRunStageDetails>
+    void SetStageDetails(StageDetailsT&& value) { m_stageDetailsHasBeenSet = true; m_stageDetails = std::forward<StageDetailsT>(value); }
+    template<typename StageDetailsT = ReplicationRunStageDetails>
+    ReplicationRun& WithStageDetails(StageDetailsT&& value) { SetStageDetails(std::forward<StageDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the current status of the replication job.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ReplicationRun& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ReplicationRun& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ReplicationRun& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ReplicationRun& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline ReplicationRun& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline ReplicationRun& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline ReplicationRun& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    ReplicationRun& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the next replication run.</p>
      */
-    inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
+    inline const Aws::Utils::DateTime& GetScheduledStartTime() const { return m_scheduledStartTime; }
     inline bool ScheduledStartTimeHasBeenSet() const { return m_scheduledStartTimeHasBeenSet; }
-    inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = value; }
-    inline void SetScheduledStartTime(Aws::Utils::DateTime&& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = std::move(value); }
-    inline ReplicationRun& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
-    inline ReplicationRun& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
+    template<typename ScheduledStartTimeT = Aws::Utils::DateTime>
+    void SetScheduledStartTime(ScheduledStartTimeT&& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = std::forward<ScheduledStartTimeT>(value); }
+    template<typename ScheduledStartTimeT = Aws::Utils::DateTime>
+    ReplicationRun& WithScheduledStartTime(ScheduledStartTimeT&& value) { SetScheduledStartTime(std::forward<ScheduledStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The completion time of the last replication run.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedTime() const{ return m_completedTime; }
+    inline const Aws::Utils::DateTime& GetCompletedTime() const { return m_completedTime; }
     inline bool CompletedTimeHasBeenSet() const { return m_completedTimeHasBeenSet; }
-    inline void SetCompletedTime(const Aws::Utils::DateTime& value) { m_completedTimeHasBeenSet = true; m_completedTime = value; }
-    inline void SetCompletedTime(Aws::Utils::DateTime&& value) { m_completedTimeHasBeenSet = true; m_completedTime = std::move(value); }
-    inline ReplicationRun& WithCompletedTime(const Aws::Utils::DateTime& value) { SetCompletedTime(value); return *this;}
-    inline ReplicationRun& WithCompletedTime(Aws::Utils::DateTime&& value) { SetCompletedTime(std::move(value)); return *this;}
+    template<typename CompletedTimeT = Aws::Utils::DateTime>
+    void SetCompletedTime(CompletedTimeT&& value) { m_completedTimeHasBeenSet = true; m_completedTime = std::forward<CompletedTimeT>(value); }
+    template<typename CompletedTimeT = Aws::Utils::DateTime>
+    ReplicationRun& WithCompletedTime(CompletedTimeT&& value) { SetCompletedTime(std::forward<CompletedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the replication run.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ReplicationRun& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ReplicationRun& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ReplicationRun& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ReplicationRun& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the replication run should produce an encrypted AMI.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline ReplicationRun& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -176,24 +164,22 @@ namespace Model
      * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
      * for Amazon EBS is used. </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ReplicationRun& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ReplicationRun& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ReplicationRun& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ReplicationRun& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_replicationRunId;
     bool m_replicationRunIdHasBeenSet = false;
 
-    ReplicationRunState m_state;
+    ReplicationRunState m_state{ReplicationRunState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    ReplicationRunType m_type;
+    ReplicationRunType m_type{ReplicationRunType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ReplicationRunStageDetails m_stageDetails;
@@ -205,16 +191,16 @@ namespace Model
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_scheduledStartTime;
+    Aws::Utils::DateTime m_scheduledStartTime{};
     bool m_scheduledStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedTime;
+    Aws::Utils::DateTime m_completedTime{};
     bool m_completedTimeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

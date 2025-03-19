@@ -34,7 +34,7 @@ namespace Model
   class CaptureContentTypeHeader
   {
   public:
-    AWS_SAGEMAKER_API CaptureContentTypeHeader();
+    AWS_SAGEMAKER_API CaptureContentTypeHeader() = default;
     AWS_SAGEMAKER_API CaptureContentTypeHeader(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CaptureContentTypeHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>The list of all content type headers that Amazon SageMaker AI will treat as
      * CSV and capture accordingly.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCsvContentTypes() const{ return m_csvContentTypes; }
+    inline const Aws::Vector<Aws::String>& GetCsvContentTypes() const { return m_csvContentTypes; }
     inline bool CsvContentTypesHasBeenSet() const { return m_csvContentTypesHasBeenSet; }
-    inline void SetCsvContentTypes(const Aws::Vector<Aws::String>& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes = value; }
-    inline void SetCsvContentTypes(Aws::Vector<Aws::String>&& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes = std::move(value); }
-    inline CaptureContentTypeHeader& WithCsvContentTypes(const Aws::Vector<Aws::String>& value) { SetCsvContentTypes(value); return *this;}
-    inline CaptureContentTypeHeader& WithCsvContentTypes(Aws::Vector<Aws::String>&& value) { SetCsvContentTypes(std::move(value)); return *this;}
-    inline CaptureContentTypeHeader& AddCsvContentTypes(const Aws::String& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.push_back(value); return *this; }
-    inline CaptureContentTypeHeader& AddCsvContentTypes(Aws::String&& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.push_back(std::move(value)); return *this; }
-    inline CaptureContentTypeHeader& AddCsvContentTypes(const char* value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.push_back(value); return *this; }
+    template<typename CsvContentTypesT = Aws::Vector<Aws::String>>
+    void SetCsvContentTypes(CsvContentTypesT&& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes = std::forward<CsvContentTypesT>(value); }
+    template<typename CsvContentTypesT = Aws::Vector<Aws::String>>
+    CaptureContentTypeHeader& WithCsvContentTypes(CsvContentTypesT&& value) { SetCsvContentTypes(std::forward<CsvContentTypesT>(value)); return *this;}
+    template<typename CsvContentTypesT = Aws::String>
+    CaptureContentTypeHeader& AddCsvContentTypes(CsvContentTypesT&& value) { m_csvContentTypesHasBeenSet = true; m_csvContentTypes.emplace_back(std::forward<CsvContentTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,15 +60,14 @@ namespace Model
      * <p>The list of all content type headers that SageMaker AI will treat as JSON and
      * capture accordingly.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJsonContentTypes() const{ return m_jsonContentTypes; }
+    inline const Aws::Vector<Aws::String>& GetJsonContentTypes() const { return m_jsonContentTypes; }
     inline bool JsonContentTypesHasBeenSet() const { return m_jsonContentTypesHasBeenSet; }
-    inline void SetJsonContentTypes(const Aws::Vector<Aws::String>& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes = value; }
-    inline void SetJsonContentTypes(Aws::Vector<Aws::String>&& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes = std::move(value); }
-    inline CaptureContentTypeHeader& WithJsonContentTypes(const Aws::Vector<Aws::String>& value) { SetJsonContentTypes(value); return *this;}
-    inline CaptureContentTypeHeader& WithJsonContentTypes(Aws::Vector<Aws::String>&& value) { SetJsonContentTypes(std::move(value)); return *this;}
-    inline CaptureContentTypeHeader& AddJsonContentTypes(const Aws::String& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.push_back(value); return *this; }
-    inline CaptureContentTypeHeader& AddJsonContentTypes(Aws::String&& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.push_back(std::move(value)); return *this; }
-    inline CaptureContentTypeHeader& AddJsonContentTypes(const char* value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.push_back(value); return *this; }
+    template<typename JsonContentTypesT = Aws::Vector<Aws::String>>
+    void SetJsonContentTypes(JsonContentTypesT&& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes = std::forward<JsonContentTypesT>(value); }
+    template<typename JsonContentTypesT = Aws::Vector<Aws::String>>
+    CaptureContentTypeHeader& WithJsonContentTypes(JsonContentTypesT&& value) { SetJsonContentTypes(std::forward<JsonContentTypesT>(value)); return *this;}
+    template<typename JsonContentTypesT = Aws::String>
+    CaptureContentTypeHeader& AddJsonContentTypes(JsonContentTypesT&& value) { m_jsonContentTypesHasBeenSet = true; m_jsonContentTypes.emplace_back(std::forward<JsonContentTypesT>(value)); return *this; }
     ///@}
   private:
 

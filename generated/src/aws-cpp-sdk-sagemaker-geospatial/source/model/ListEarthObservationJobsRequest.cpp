@@ -12,18 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEarthObservationJobsRequest::ListEarthObservationJobsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_statusEquals(EarthObservationJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListEarthObservationJobsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Logging::Logging() : 
-    m_s3LogsHasBeenSet(false)
-{
-}
-
 Logging::Logging(JsonView jsonValue)
-  : Logging()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Logging& Logging::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Logs"))
   {
     m_s3Logs = jsonValue.GetObject("s3Logs");
-
     m_s3LogsHasBeenSet = true;
   }
-
   return *this;
 }
 

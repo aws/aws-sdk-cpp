@@ -36,7 +36,7 @@ namespace Model
   class PerformanceFactorReferenceRequest
   {
   public:
-    AWS_EC2_API PerformanceFactorReferenceRequest();
+    AWS_EC2_API PerformanceFactorReferenceRequest() = default;
     AWS_EC2_API PerformanceFactorReferenceRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PerformanceFactorReferenceRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -70,14 +70,12 @@ namespace Model
      * baseline performance, the API returns an empty response for and an exception for
      * , , , and .</p>
      */
-    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+    inline const Aws::String& GetInstanceFamily() const { return m_instanceFamily; }
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
-    inline PerformanceFactorReferenceRequest& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
-    inline PerformanceFactorReferenceRequest& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
-    inline PerformanceFactorReferenceRequest& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
+    template<typename InstanceFamilyT = Aws::String>
+    void SetInstanceFamily(InstanceFamilyT&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::forward<InstanceFamilyT>(value); }
+    template<typename InstanceFamilyT = Aws::String>
+    PerformanceFactorReferenceRequest& WithInstanceFamily(InstanceFamilyT&& value) { SetInstanceFamily(std::forward<InstanceFamilyT>(value)); return *this;}
     ///@}
   private:
 

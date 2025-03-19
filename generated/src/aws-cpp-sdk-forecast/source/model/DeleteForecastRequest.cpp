@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteForecastRequest::DeleteForecastRequest() : 
-    m_forecastArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteForecastRequest::SerializePayload() const
 {
   JsonValue payload;

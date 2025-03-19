@@ -12,11 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSpaceRequest::DeleteSpaceRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSpaceRequest::SerializePayload() const
 {
   return {};

@@ -18,21 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-IdentityCenterOptions::IdentityCenterOptions() : 
-    m_enabledAPIAccess(false),
-    m_enabledAPIAccessHasBeenSet(false),
-    m_identityCenterInstanceARNHasBeenSet(false),
-    m_subjectKey(SubjectKeyIdCOption::NOT_SET),
-    m_subjectKeyHasBeenSet(false),
-    m_rolesKey(RolesKeyIdCOption::NOT_SET),
-    m_rolesKeyHasBeenSet(false),
-    m_identityCenterApplicationARNHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false)
-{
-}
-
 IdentityCenterOptions::IdentityCenterOptions(JsonView jsonValue)
-  : IdentityCenterOptions()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ IdentityCenterOptions& IdentityCenterOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnabledAPIAccess"))
   {
     m_enabledAPIAccess = jsonValue.GetBool("EnabledAPIAccess");
-
     m_enabledAPIAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityCenterInstanceARN"))
   {
     m_identityCenterInstanceARN = jsonValue.GetString("IdentityCenterInstanceARN");
-
     m_identityCenterInstanceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectKey"))
   {
     m_subjectKey = SubjectKeyIdCOptionMapper::GetSubjectKeyIdCOptionForName(jsonValue.GetString("SubjectKey"));
-
     m_subjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RolesKey"))
   {
     m_rolesKey = RolesKeyIdCOptionMapper::GetRolesKeyIdCOptionForName(jsonValue.GetString("RolesKey"));
-
     m_rolesKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityCenterApplicationARN"))
   {
     m_identityCenterApplicationARN = jsonValue.GetString("IdentityCenterApplicationARN");
-
     m_identityCenterApplicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-
     m_identityStoreIdHasBeenSet = true;
   }
-
   return *this;
 }
 

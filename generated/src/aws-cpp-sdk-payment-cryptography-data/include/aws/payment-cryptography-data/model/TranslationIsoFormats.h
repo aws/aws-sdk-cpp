@@ -33,7 +33,7 @@ namespace Model
   class TranslationIsoFormats
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationIsoFormats();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationIsoFormats() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationIsoFormats(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API TranslationIsoFormats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,48 @@ namespace Model
     /**
      * <p>Parameters that are required for ISO9564 PIN format 0 tranlation.</p>
      */
-    inline const TranslationPinDataIsoFormat034& GetIsoFormat0() const{ return m_isoFormat0; }
+    inline const TranslationPinDataIsoFormat034& GetIsoFormat0() const { return m_isoFormat0; }
     inline bool IsoFormat0HasBeenSet() const { return m_isoFormat0HasBeenSet; }
-    inline void SetIsoFormat0(const TranslationPinDataIsoFormat034& value) { m_isoFormat0HasBeenSet = true; m_isoFormat0 = value; }
-    inline void SetIsoFormat0(TranslationPinDataIsoFormat034&& value) { m_isoFormat0HasBeenSet = true; m_isoFormat0 = std::move(value); }
-    inline TranslationIsoFormats& WithIsoFormat0(const TranslationPinDataIsoFormat034& value) { SetIsoFormat0(value); return *this;}
-    inline TranslationIsoFormats& WithIsoFormat0(TranslationPinDataIsoFormat034&& value) { SetIsoFormat0(std::move(value)); return *this;}
+    template<typename IsoFormat0T = TranslationPinDataIsoFormat034>
+    void SetIsoFormat0(IsoFormat0T&& value) { m_isoFormat0HasBeenSet = true; m_isoFormat0 = std::forward<IsoFormat0T>(value); }
+    template<typename IsoFormat0T = TranslationPinDataIsoFormat034>
+    TranslationIsoFormats& WithIsoFormat0(IsoFormat0T&& value) { SetIsoFormat0(std::forward<IsoFormat0T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters that are required for ISO9564 PIN format 1 tranlation.</p>
      */
-    inline const TranslationPinDataIsoFormat1& GetIsoFormat1() const{ return m_isoFormat1; }
+    inline const TranslationPinDataIsoFormat1& GetIsoFormat1() const { return m_isoFormat1; }
     inline bool IsoFormat1HasBeenSet() const { return m_isoFormat1HasBeenSet; }
-    inline void SetIsoFormat1(const TranslationPinDataIsoFormat1& value) { m_isoFormat1HasBeenSet = true; m_isoFormat1 = value; }
-    inline void SetIsoFormat1(TranslationPinDataIsoFormat1&& value) { m_isoFormat1HasBeenSet = true; m_isoFormat1 = std::move(value); }
-    inline TranslationIsoFormats& WithIsoFormat1(const TranslationPinDataIsoFormat1& value) { SetIsoFormat1(value); return *this;}
-    inline TranslationIsoFormats& WithIsoFormat1(TranslationPinDataIsoFormat1&& value) { SetIsoFormat1(std::move(value)); return *this;}
+    template<typename IsoFormat1T = TranslationPinDataIsoFormat1>
+    void SetIsoFormat1(IsoFormat1T&& value) { m_isoFormat1HasBeenSet = true; m_isoFormat1 = std::forward<IsoFormat1T>(value); }
+    template<typename IsoFormat1T = TranslationPinDataIsoFormat1>
+    TranslationIsoFormats& WithIsoFormat1(IsoFormat1T&& value) { SetIsoFormat1(std::forward<IsoFormat1T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters that are required for ISO9564 PIN format 3 tranlation.</p>
      */
-    inline const TranslationPinDataIsoFormat034& GetIsoFormat3() const{ return m_isoFormat3; }
+    inline const TranslationPinDataIsoFormat034& GetIsoFormat3() const { return m_isoFormat3; }
     inline bool IsoFormat3HasBeenSet() const { return m_isoFormat3HasBeenSet; }
-    inline void SetIsoFormat3(const TranslationPinDataIsoFormat034& value) { m_isoFormat3HasBeenSet = true; m_isoFormat3 = value; }
-    inline void SetIsoFormat3(TranslationPinDataIsoFormat034&& value) { m_isoFormat3HasBeenSet = true; m_isoFormat3 = std::move(value); }
-    inline TranslationIsoFormats& WithIsoFormat3(const TranslationPinDataIsoFormat034& value) { SetIsoFormat3(value); return *this;}
-    inline TranslationIsoFormats& WithIsoFormat3(TranslationPinDataIsoFormat034&& value) { SetIsoFormat3(std::move(value)); return *this;}
+    template<typename IsoFormat3T = TranslationPinDataIsoFormat034>
+    void SetIsoFormat3(IsoFormat3T&& value) { m_isoFormat3HasBeenSet = true; m_isoFormat3 = std::forward<IsoFormat3T>(value); }
+    template<typename IsoFormat3T = TranslationPinDataIsoFormat034>
+    TranslationIsoFormats& WithIsoFormat3(IsoFormat3T&& value) { SetIsoFormat3(std::forward<IsoFormat3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters that are required for ISO9564 PIN format 4 tranlation.</p>
      */
-    inline const TranslationPinDataIsoFormat034& GetIsoFormat4() const{ return m_isoFormat4; }
+    inline const TranslationPinDataIsoFormat034& GetIsoFormat4() const { return m_isoFormat4; }
     inline bool IsoFormat4HasBeenSet() const { return m_isoFormat4HasBeenSet; }
-    inline void SetIsoFormat4(const TranslationPinDataIsoFormat034& value) { m_isoFormat4HasBeenSet = true; m_isoFormat4 = value; }
-    inline void SetIsoFormat4(TranslationPinDataIsoFormat034&& value) { m_isoFormat4HasBeenSet = true; m_isoFormat4 = std::move(value); }
-    inline TranslationIsoFormats& WithIsoFormat4(const TranslationPinDataIsoFormat034& value) { SetIsoFormat4(value); return *this;}
-    inline TranslationIsoFormats& WithIsoFormat4(TranslationPinDataIsoFormat034&& value) { SetIsoFormat4(std::move(value)); return *this;}
+    template<typename IsoFormat4T = TranslationPinDataIsoFormat034>
+    void SetIsoFormat4(IsoFormat4T&& value) { m_isoFormat4HasBeenSet = true; m_isoFormat4 = std::forward<IsoFormat4T>(value); }
+    template<typename IsoFormat4T = TranslationPinDataIsoFormat034>
+    TranslationIsoFormats& WithIsoFormat4(IsoFormat4T&& value) { SetIsoFormat4(std::forward<IsoFormat4T>(value)); return *this;}
     ///@}
   private:
 

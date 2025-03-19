@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-RemoteNetworkConfigResponse::RemoteNetworkConfigResponse() : 
-    m_remoteNodeNetworksHasBeenSet(false),
-    m_remotePodNetworksHasBeenSet(false)
-{
-}
-
 RemoteNetworkConfigResponse::RemoteNetworkConfigResponse(JsonView jsonValue)
-  : RemoteNetworkConfigResponse()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RemoteNetworkConfigResponse& RemoteNetworkConfigResponse::operator =(JsonView js
     }
     m_remoteNodeNetworksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remotePodNetworks"))
   {
     Aws::Utils::Array<JsonView> remotePodNetworksJsonList = jsonValue.GetArray("remotePodNetworks");
@@ -51,7 +43,6 @@ RemoteNetworkConfigResponse& RemoteNetworkConfigResponse::operator =(JsonView js
     }
     m_remotePodNetworksHasBeenSet = true;
   }
-
   return *this;
 }
 

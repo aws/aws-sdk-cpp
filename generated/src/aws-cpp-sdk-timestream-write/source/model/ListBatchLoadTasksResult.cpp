@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBatchLoadTasksResult::ListBatchLoadTasksResult()
-{
-}
-
 ListBatchLoadTasksResult::ListBatchLoadTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListBatchLoadTasksResult& ListBatchLoadTasksResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchLoadTasks"))
   {
     Aws::Utils::Array<JsonView> batchLoadTasksJsonList = jsonValue.GetArray("BatchLoadTasks");
@@ -42,14 +37,15 @@ ListBatchLoadTasksResult& ListBatchLoadTasksResult::operator =(const Aws::Amazon
     {
       m_batchLoadTasks.push_back(batchLoadTasksJsonList[batchLoadTasksIndex].AsObject());
     }
+    m_batchLoadTasksHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

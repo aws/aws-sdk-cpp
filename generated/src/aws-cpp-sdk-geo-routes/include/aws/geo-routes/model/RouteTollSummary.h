@@ -31,7 +31,7 @@ namespace Model
   class RouteTollSummary
   {
   public:
-    AWS_GEOROUTES_API RouteTollSummary();
+    AWS_GEOROUTES_API RouteTollSummary() = default;
     AWS_GEOROUTES_API RouteTollSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteTollSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>Total toll summary for the complete route. Total is the only summary
      * available today.</p>
      */
-    inline const RouteTollPriceSummary& GetTotal() const{ return m_total; }
+    inline const RouteTollPriceSummary& GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-    inline void SetTotal(const RouteTollPriceSummary& value) { m_totalHasBeenSet = true; m_total = value; }
-    inline void SetTotal(RouteTollPriceSummary&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-    inline RouteTollSummary& WithTotal(const RouteTollPriceSummary& value) { SetTotal(value); return *this;}
-    inline RouteTollSummary& WithTotal(RouteTollPriceSummary&& value) { SetTotal(std::move(value)); return *this;}
+    template<typename TotalT = RouteTollPriceSummary>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = RouteTollPriceSummary>
+    RouteTollSummary& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class CreateMultiRegionClustersRequest : public DSQLRequest
   {
   public:
-    AWS_DSQL_API CreateMultiRegionClustersRequest();
+    AWS_DSQL_API CreateMultiRegionClustersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,47 +40,42 @@ namespace Model
     /**
      * <p>An array of the Regions in which you want to create additional clusters.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLinkedRegionList() const{ return m_linkedRegionList; }
+    inline const Aws::Vector<Aws::String>& GetLinkedRegionList() const { return m_linkedRegionList; }
     inline bool LinkedRegionListHasBeenSet() const { return m_linkedRegionListHasBeenSet; }
-    inline void SetLinkedRegionList(const Aws::Vector<Aws::String>& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList = value; }
-    inline void SetLinkedRegionList(Aws::Vector<Aws::String>&& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList = std::move(value); }
-    inline CreateMultiRegionClustersRequest& WithLinkedRegionList(const Aws::Vector<Aws::String>& value) { SetLinkedRegionList(value); return *this;}
-    inline CreateMultiRegionClustersRequest& WithLinkedRegionList(Aws::Vector<Aws::String>&& value) { SetLinkedRegionList(std::move(value)); return *this;}
-    inline CreateMultiRegionClustersRequest& AddLinkedRegionList(const Aws::String& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList.push_back(value); return *this; }
-    inline CreateMultiRegionClustersRequest& AddLinkedRegionList(Aws::String&& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList.push_back(std::move(value)); return *this; }
-    inline CreateMultiRegionClustersRequest& AddLinkedRegionList(const char* value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList.push_back(value); return *this; }
+    template<typename LinkedRegionListT = Aws::Vector<Aws::String>>
+    void SetLinkedRegionList(LinkedRegionListT&& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList = std::forward<LinkedRegionListT>(value); }
+    template<typename LinkedRegionListT = Aws::Vector<Aws::String>>
+    CreateMultiRegionClustersRequest& WithLinkedRegionList(LinkedRegionListT&& value) { SetLinkedRegionList(std::forward<LinkedRegionListT>(value)); return *this;}
+    template<typename LinkedRegionListT = Aws::String>
+    CreateMultiRegionClustersRequest& AddLinkedRegionList(LinkedRegionListT&& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList.emplace_back(std::forward<LinkedRegionListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A mapping of properties to use when creating linked clusters.</p>
      */
-    inline const Aws::Map<Aws::String, LinkedClusterProperties>& GetClusterProperties() const{ return m_clusterProperties; }
+    inline const Aws::Map<Aws::String, LinkedClusterProperties>& GetClusterProperties() const { return m_clusterProperties; }
     inline bool ClusterPropertiesHasBeenSet() const { return m_clusterPropertiesHasBeenSet; }
-    inline void SetClusterProperties(const Aws::Map<Aws::String, LinkedClusterProperties>& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties = value; }
-    inline void SetClusterProperties(Aws::Map<Aws::String, LinkedClusterProperties>&& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties = std::move(value); }
-    inline CreateMultiRegionClustersRequest& WithClusterProperties(const Aws::Map<Aws::String, LinkedClusterProperties>& value) { SetClusterProperties(value); return *this;}
-    inline CreateMultiRegionClustersRequest& WithClusterProperties(Aws::Map<Aws::String, LinkedClusterProperties>&& value) { SetClusterProperties(std::move(value)); return *this;}
-    inline CreateMultiRegionClustersRequest& AddClusterProperties(const Aws::String& key, const LinkedClusterProperties& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(key, value); return *this; }
-    inline CreateMultiRegionClustersRequest& AddClusterProperties(Aws::String&& key, const LinkedClusterProperties& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(std::move(key), value); return *this; }
-    inline CreateMultiRegionClustersRequest& AddClusterProperties(const Aws::String& key, LinkedClusterProperties&& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(key, std::move(value)); return *this; }
-    inline CreateMultiRegionClustersRequest& AddClusterProperties(Aws::String&& key, LinkedClusterProperties&& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMultiRegionClustersRequest& AddClusterProperties(const char* key, LinkedClusterProperties&& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(key, std::move(value)); return *this; }
-    inline CreateMultiRegionClustersRequest& AddClusterProperties(const char* key, const LinkedClusterProperties& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(key, value); return *this; }
+    template<typename ClusterPropertiesT = Aws::Map<Aws::String, LinkedClusterProperties>>
+    void SetClusterProperties(ClusterPropertiesT&& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties = std::forward<ClusterPropertiesT>(value); }
+    template<typename ClusterPropertiesT = Aws::Map<Aws::String, LinkedClusterProperties>>
+    CreateMultiRegionClustersRequest& WithClusterProperties(ClusterPropertiesT&& value) { SetClusterProperties(std::forward<ClusterPropertiesT>(value)); return *this;}
+    template<typename ClusterPropertiesKeyT = Aws::String, typename ClusterPropertiesValueT = LinkedClusterProperties>
+    CreateMultiRegionClustersRequest& AddClusterProperties(ClusterPropertiesKeyT&& key, ClusterPropertiesValueT&& value) {
+      m_clusterPropertiesHasBeenSet = true; m_clusterProperties.emplace(std::forward<ClusterPropertiesKeyT>(key), std::forward<ClusterPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The witness Region of multi-Region clusters.</p>
      */
-    inline const Aws::String& GetWitnessRegion() const{ return m_witnessRegion; }
+    inline const Aws::String& GetWitnessRegion() const { return m_witnessRegion; }
     inline bool WitnessRegionHasBeenSet() const { return m_witnessRegionHasBeenSet; }
-    inline void SetWitnessRegion(const Aws::String& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = value; }
-    inline void SetWitnessRegion(Aws::String&& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = std::move(value); }
-    inline void SetWitnessRegion(const char* value) { m_witnessRegionHasBeenSet = true; m_witnessRegion.assign(value); }
-    inline CreateMultiRegionClustersRequest& WithWitnessRegion(const Aws::String& value) { SetWitnessRegion(value); return *this;}
-    inline CreateMultiRegionClustersRequest& WithWitnessRegion(Aws::String&& value) { SetWitnessRegion(std::move(value)); return *this;}
-    inline CreateMultiRegionClustersRequest& WithWitnessRegion(const char* value) { SetWitnessRegion(value); return *this;}
+    template<typename WitnessRegionT = Aws::String>
+    void SetWitnessRegion(WitnessRegionT&& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = std::forward<WitnessRegionT>(value); }
+    template<typename WitnessRegionT = Aws::String>
+    CreateMultiRegionClustersRequest& WithWitnessRegion(WitnessRegionT&& value) { SetWitnessRegion(std::forward<WitnessRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +88,12 @@ namespace Model
      * effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK
      * automatically generates one.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateMultiRegionClustersRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateMultiRegionClustersRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateMultiRegionClustersRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateMultiRegionClustersRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateTapePoolResult
   {
   public:
-    AWS_STORAGEGATEWAY_API CreateTapePoolResult();
+    AWS_STORAGEGATEWAY_API CreateTapePoolResult() = default;
     AWS_STORAGEGATEWAY_API CreateTapePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API CreateTapePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
      * account and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetPoolARN() const{ return m_poolARN; }
-    inline void SetPoolARN(const Aws::String& value) { m_poolARN = value; }
-    inline void SetPoolARN(Aws::String&& value) { m_poolARN = std::move(value); }
-    inline void SetPoolARN(const char* value) { m_poolARN.assign(value); }
-    inline CreateTapePoolResult& WithPoolARN(const Aws::String& value) { SetPoolARN(value); return *this;}
-    inline CreateTapePoolResult& WithPoolARN(Aws::String&& value) { SetPoolARN(std::move(value)); return *this;}
-    inline CreateTapePoolResult& WithPoolARN(const char* value) { SetPoolARN(value); return *this;}
+    inline const Aws::String& GetPoolARN() const { return m_poolARN; }
+    template<typename PoolARNT = Aws::String>
+    void SetPoolARN(PoolARNT&& value) { m_poolARNHasBeenSet = true; m_poolARN = std::forward<PoolARNT>(value); }
+    template<typename PoolARNT = Aws::String>
+    CreateTapePoolResult& WithPoolARN(PoolARNT&& value) { SetPoolARN(std::forward<PoolARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTapePoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTapePoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTapePoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTapePoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_poolARN;
+    bool m_poolARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

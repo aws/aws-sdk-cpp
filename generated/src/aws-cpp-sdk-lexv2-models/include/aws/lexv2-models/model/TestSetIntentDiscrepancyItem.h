@@ -32,7 +32,7 @@ namespace Model
   class TestSetIntentDiscrepancyItem
   {
   public:
-    AWS_LEXMODELSV2_API TestSetIntentDiscrepancyItem();
+    AWS_LEXMODELSV2_API TestSetIntentDiscrepancyItem() = default;
     AWS_LEXMODELSV2_API TestSetIntentDiscrepancyItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetIntentDiscrepancyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the intent in the discrepancy report.</p>
      */
-    inline const Aws::String& GetIntentName() const{ return m_intentName; }
+    inline const Aws::String& GetIntentName() const { return m_intentName; }
     inline bool IntentNameHasBeenSet() const { return m_intentNameHasBeenSet; }
-    inline void SetIntentName(const Aws::String& value) { m_intentNameHasBeenSet = true; m_intentName = value; }
-    inline void SetIntentName(Aws::String&& value) { m_intentNameHasBeenSet = true; m_intentName = std::move(value); }
-    inline void SetIntentName(const char* value) { m_intentNameHasBeenSet = true; m_intentName.assign(value); }
-    inline TestSetIntentDiscrepancyItem& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-    inline TestSetIntentDiscrepancyItem& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-    inline TestSetIntentDiscrepancyItem& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+    template<typename IntentNameT = Aws::String>
+    void SetIntentName(IntentNameT&& value) { m_intentNameHasBeenSet = true; m_intentName = std::forward<IntentNameT>(value); }
+    template<typename IntentNameT = Aws::String>
+    TestSetIntentDiscrepancyItem& WithIntentName(IntentNameT&& value) { SetIntentName(std::forward<IntentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The error message for a discrepancy for an intent between the test set and
      * the bot.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline TestSetIntentDiscrepancyItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline TestSetIntentDiscrepancyItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline TestSetIntentDiscrepancyItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    TestSetIntentDiscrepancyItem& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

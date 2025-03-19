@@ -31,7 +31,7 @@ namespace Model
   class SubDomainSetting
   {
   public:
-    AWS_AMPLIFY_API SubDomainSetting();
+    AWS_AMPLIFY_API SubDomainSetting() = default;
     AWS_AMPLIFY_API SubDomainSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API SubDomainSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p> The prefix setting for the subdomain. </p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline SubDomainSetting& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline SubDomainSetting& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline SubDomainSetting& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    SubDomainSetting& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The branch name setting for the subdomain. </p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline SubDomainSetting& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline SubDomainSetting& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline SubDomainSetting& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    SubDomainSetting& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateAdminAccountRequest::AssociateAdminAccountRequest() : 
-    m_adminAccountHasBeenSet(false)
-{
-}
-
 Aws::String AssociateAdminAccountRequest::SerializePayload() const
 {
   JsonValue payload;

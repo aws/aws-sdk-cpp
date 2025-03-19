@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnEndpointAttributeStatus::ClientVpnEndpointAttributeStatus() : 
-    m_code(ClientVpnEndpointAttributeStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ClientVpnEndpointAttributeStatus::ClientVpnEndpointAttributeStatus(const XmlNode& xmlNode)
-  : ClientVpnEndpointAttributeStatus()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ ClientVpnEndpointAttributeStatus& ClientVpnEndpointAttributeStatus::operator =(c
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = ClientVpnEndpointAttributeStatusCodeMapper::GetClientVpnEndpointAttributeStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = ClientVpnEndpointAttributeStatusCodeMapper::GetClientVpnEndpointAttributeStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

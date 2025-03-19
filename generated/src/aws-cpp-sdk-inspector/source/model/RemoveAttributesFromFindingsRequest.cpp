@@ -12,12 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveAttributesFromFindingsRequest::RemoveAttributesFromFindingsRequest() : 
-    m_findingArnsHasBeenSet(false),
-    m_attributeKeysHasBeenSet(false)
-{
-}
-
 Aws::String RemoveAttributesFromFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

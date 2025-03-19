@@ -18,15 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DataProviderDescriptorDefinition::DataProviderDescriptorDefinition() : 
-    m_dataProviderIdentifierHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false)
-{
-}
-
 DataProviderDescriptorDefinition::DataProviderDescriptorDefinition(JsonView jsonValue)
-  : DataProviderDescriptorDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataProviderDescriptorDefinition& DataProviderDescriptorDefinition::operator =(J
   if(jsonValue.ValueExists("DataProviderIdentifier"))
   {
     m_dataProviderIdentifier = jsonValue.GetString("DataProviderIdentifier");
-
     m_dataProviderIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

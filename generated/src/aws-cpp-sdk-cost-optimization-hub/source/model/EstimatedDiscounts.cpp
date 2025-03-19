@@ -18,18 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-EstimatedDiscounts::EstimatedDiscounts() : 
-    m_savingsPlansDiscount(0.0),
-    m_savingsPlansDiscountHasBeenSet(false),
-    m_reservedInstancesDiscount(0.0),
-    m_reservedInstancesDiscountHasBeenSet(false),
-    m_otherDiscount(0.0),
-    m_otherDiscountHasBeenSet(false)
-{
-}
-
 EstimatedDiscounts::EstimatedDiscounts(JsonView jsonValue)
-  : EstimatedDiscounts()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EstimatedDiscounts& EstimatedDiscounts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("savingsPlansDiscount"))
   {
     m_savingsPlansDiscount = jsonValue.GetDouble("savingsPlansDiscount");
-
     m_savingsPlansDiscountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reservedInstancesDiscount"))
   {
     m_reservedInstancesDiscount = jsonValue.GetDouble("reservedInstancesDiscount");
-
     m_reservedInstancesDiscountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("otherDiscount"))
   {
     m_otherDiscount = jsonValue.GetDouble("otherDiscount");
-
     m_otherDiscountHasBeenSet = true;
   }
-
   return *this;
 }
 

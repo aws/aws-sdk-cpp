@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreTableResult::RestoreTableResult()
-{
-}
-
 RestoreTableResult::RestoreTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RestoreTableResult& RestoreTableResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("restoredTableARN"))
   {
     m_restoredTableARN = jsonValue.GetString("restoredTableARN");
-
+    m_restoredTableARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

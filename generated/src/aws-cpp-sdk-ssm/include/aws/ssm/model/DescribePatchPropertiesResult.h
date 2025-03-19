@@ -29,7 +29,7 @@ namespace Model
   class DescribePatchPropertiesResult
   {
   public:
-    AWS_SSM_API DescribePatchPropertiesResult();
+    AWS_SSM_API DescribePatchPropertiesResult() = default;
     AWS_SSM_API DescribePatchPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DescribePatchPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of the properties for patches matching the filter request
      * parameters.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetProperties() const{ return m_properties; }
-    inline void SetProperties(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_properties = value; }
-    inline void SetProperties(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_properties = std::move(value); }
-    inline DescribePatchPropertiesResult& WithProperties(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetProperties(value); return *this;}
-    inline DescribePatchPropertiesResult& WithProperties(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetProperties(std::move(value)); return *this;}
-    inline DescribePatchPropertiesResult& AddProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_properties.push_back(value); return *this; }
-    inline DescribePatchPropertiesResult& AddProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_properties.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetProperties() const { return m_properties; }
+    template<typename PropertiesT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    DescribePatchPropertiesResult& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    DescribePatchPropertiesResult& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token for the next set of items to return. (You use this token in the
      * next call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribePatchPropertiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePatchPropertiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePatchPropertiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePatchPropertiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePatchPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePatchPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePatchPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePatchPropertiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_properties;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

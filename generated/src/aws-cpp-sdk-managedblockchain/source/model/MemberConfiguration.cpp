@@ -18,18 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-MemberConfiguration::MemberConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_frameworkConfigurationHasBeenSet(false),
-    m_logPublishingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 MemberConfiguration::MemberConfiguration(JsonView jsonValue)
-  : MemberConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MemberConfiguration& MemberConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkConfiguration"))
   {
     m_frameworkConfiguration = jsonValue.GetObject("FrameworkConfiguration");
-
     m_frameworkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogPublishingConfiguration"))
   {
     m_logPublishingConfiguration = jsonValue.GetObject("LogPublishingConfiguration");
-
     m_logPublishingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -73,14 +54,11 @@ MemberConfiguration& MemberConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-UiTemplate::UiTemplate() : 
-    m_contentHasBeenSet(false)
-{
-}
-
 UiTemplate::UiTemplate(JsonView jsonValue)
-  : UiTemplate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UiTemplate& UiTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class LifecyclePolicyDetailFilter
   {
   public:
-    AWS_IMAGEBUILDER_API LifecyclePolicyDetailFilter();
+    AWS_IMAGEBUILDER_API LifecyclePolicyDetailFilter() = default;
     AWS_IMAGEBUILDER_API LifecyclePolicyDetailFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API LifecyclePolicyDetailFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
      */
-    inline const LifecyclePolicyDetailFilterType& GetType() const{ return m_type; }
+    inline LifecyclePolicyDetailFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LifecyclePolicyDetailFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LifecyclePolicyDetailFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline LifecyclePolicyDetailFilter& WithType(const LifecyclePolicyDetailFilterType& value) { SetType(value); return *this;}
-    inline LifecyclePolicyDetailFilter& WithType(LifecyclePolicyDetailFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LifecyclePolicyDetailFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline LifecyclePolicyDetailFilter& WithType(LifecyclePolicyDetailFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * keep on hand. If you have fewer resources than this number, the resource is
      * excluded from lifecycle actions.</p> 
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline LifecyclePolicyDetailFilter& WithValue(int value) { SetValue(value); return *this;}
@@ -70,12 +68,10 @@ namespace Model
      * <p>Defines the unit of time that the lifecycle policy uses to determine impacted
      * resources. This is required for age-based rules.</p>
      */
-    inline const LifecyclePolicyTimeUnit& GetUnit() const{ return m_unit; }
+    inline LifecyclePolicyTimeUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const LifecyclePolicyTimeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(LifecyclePolicyTimeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline LifecyclePolicyDetailFilter& WithUnit(const LifecyclePolicyTimeUnit& value) { SetUnit(value); return *this;}
-    inline LifecyclePolicyDetailFilter& WithUnit(LifecyclePolicyTimeUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(LifecyclePolicyTimeUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline LifecyclePolicyDetailFilter& WithUnit(LifecyclePolicyTimeUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -85,23 +81,23 @@ namespace Model
      * deleted if you have more than this number of resources. If you have fewer
      * resources than this number, the impacted resource is not deleted.</p>
      */
-    inline int GetRetainAtLeast() const{ return m_retainAtLeast; }
+    inline int GetRetainAtLeast() const { return m_retainAtLeast; }
     inline bool RetainAtLeastHasBeenSet() const { return m_retainAtLeastHasBeenSet; }
     inline void SetRetainAtLeast(int value) { m_retainAtLeastHasBeenSet = true; m_retainAtLeast = value; }
     inline LifecyclePolicyDetailFilter& WithRetainAtLeast(int value) { SetRetainAtLeast(value); return *this;}
     ///@}
   private:
 
-    LifecyclePolicyDetailFilterType m_type;
+    LifecyclePolicyDetailFilterType m_type{LifecyclePolicyDetailFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
 
-    LifecyclePolicyTimeUnit m_unit;
+    LifecyclePolicyTimeUnit m_unit{LifecyclePolicyTimeUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_retainAtLeast;
+    int m_retainAtLeast{0};
     bool m_retainAtLeastHasBeenSet = false;
   };
 

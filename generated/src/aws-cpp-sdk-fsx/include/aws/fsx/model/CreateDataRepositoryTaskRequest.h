@@ -27,7 +27,7 @@ namespace Model
   class CreateDataRepositoryTaskRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API CreateDataRepositoryTaskRequest();
+    AWS_FSX_API CreateDataRepositoryTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,12 +53,10 @@ namespace Model
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
      * File Cache resource.</p> </li> </ul>
      */
-    inline const DataRepositoryTaskType& GetType() const{ return m_type; }
+    inline DataRepositoryTaskType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataRepositoryTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataRepositoryTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateDataRepositoryTaskRequest& WithType(const DataRepositoryTaskType& value) { SetType(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithType(DataRepositoryTaskType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataRepositoryTaskType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateDataRepositoryTaskRequest& WithType(DataRepositoryTaskType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,27 +84,24 @@ namespace Model
      * <p>A file must also meet the last accessed time criteria specified in for the
      * file to be released.</p>  </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetPaths() const{ return m_paths; }
+    inline const Aws::Vector<Aws::String>& GetPaths() const { return m_paths; }
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
-    inline void SetPaths(const Aws::Vector<Aws::String>& value) { m_pathsHasBeenSet = true; m_paths = value; }
-    inline void SetPaths(Aws::Vector<Aws::String>&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
-    inline CreateDataRepositoryTaskRequest& WithPaths(const Aws::Vector<Aws::String>& value) { SetPaths(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithPaths(Aws::Vector<Aws::String>&& value) { SetPaths(std::move(value)); return *this;}
-    inline CreateDataRepositoryTaskRequest& AddPaths(const Aws::String& value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
-    inline CreateDataRepositoryTaskRequest& AddPaths(Aws::String&& value) { m_pathsHasBeenSet = true; m_paths.push_back(std::move(value)); return *this; }
-    inline CreateDataRepositoryTaskRequest& AddPaths(const char* value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    void SetPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths = std::forward<PathsT>(value); }
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    CreateDataRepositoryTaskRequest& WithPaths(PathsT&& value) { SetPaths(std::forward<PathsT>(value)); return *this;}
+    template<typename PathsT = Aws::String>
+    CreateDataRepositoryTaskRequest& AddPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths.emplace_back(std::forward<PathsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline CreateDataRepositoryTaskRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    CreateDataRepositoryTaskRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,36 +113,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
      * with Task Completion Reports</a>.</p>
      */
-    inline const CompletionReport& GetReport() const{ return m_report; }
+    inline const CompletionReport& GetReport() const { return m_report; }
     inline bool ReportHasBeenSet() const { return m_reportHasBeenSet; }
-    inline void SetReport(const CompletionReport& value) { m_reportHasBeenSet = true; m_report = value; }
-    inline void SetReport(CompletionReport&& value) { m_reportHasBeenSet = true; m_report = std::move(value); }
-    inline CreateDataRepositoryTaskRequest& WithReport(const CompletionReport& value) { SetReport(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithReport(CompletionReport&& value) { SetReport(std::move(value)); return *this;}
+    template<typename ReportT = CompletionReport>
+    void SetReport(ReportT&& value) { m_reportHasBeenSet = true; m_report = std::forward<ReportT>(value); }
+    template<typename ReportT = CompletionReport>
+    CreateDataRepositoryTaskRequest& WithReport(ReportT&& value) { SetReport(std::forward<ReportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateDataRepositoryTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateDataRepositoryTaskRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDataRepositoryTaskRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDataRepositoryTaskRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDataRepositoryTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDataRepositoryTaskRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDataRepositoryTaskRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -156,7 +149,7 @@ namespace Model
      * <code>AUTO_RELEASE_DATA</code> task that automatically releases files from the
      * cache.</p>
      */
-    inline long long GetCapacityToRelease() const{ return m_capacityToRelease; }
+    inline long long GetCapacityToRelease() const { return m_capacityToRelease; }
     inline bool CapacityToReleaseHasBeenSet() const { return m_capacityToReleaseHasBeenSet; }
     inline void SetCapacityToRelease(long long value) { m_capacityToReleaseHasBeenSet = true; m_capacityToRelease = value; }
     inline CreateDataRepositoryTaskRequest& WithCapacityToRelease(long long value) { SetCapacityToRelease(value); return *this;}
@@ -167,16 +160,16 @@ namespace Model
      * <p>The configuration that specifies the last accessed time criteria for files
      * that will be released from an Amazon FSx for Lustre file system.</p>
      */
-    inline const ReleaseConfiguration& GetReleaseConfiguration() const{ return m_releaseConfiguration; }
+    inline const ReleaseConfiguration& GetReleaseConfiguration() const { return m_releaseConfiguration; }
     inline bool ReleaseConfigurationHasBeenSet() const { return m_releaseConfigurationHasBeenSet; }
-    inline void SetReleaseConfiguration(const ReleaseConfiguration& value) { m_releaseConfigurationHasBeenSet = true; m_releaseConfiguration = value; }
-    inline void SetReleaseConfiguration(ReleaseConfiguration&& value) { m_releaseConfigurationHasBeenSet = true; m_releaseConfiguration = std::move(value); }
-    inline CreateDataRepositoryTaskRequest& WithReleaseConfiguration(const ReleaseConfiguration& value) { SetReleaseConfiguration(value); return *this;}
-    inline CreateDataRepositoryTaskRequest& WithReleaseConfiguration(ReleaseConfiguration&& value) { SetReleaseConfiguration(std::move(value)); return *this;}
+    template<typename ReleaseConfigurationT = ReleaseConfiguration>
+    void SetReleaseConfiguration(ReleaseConfigurationT&& value) { m_releaseConfigurationHasBeenSet = true; m_releaseConfiguration = std::forward<ReleaseConfigurationT>(value); }
+    template<typename ReleaseConfigurationT = ReleaseConfiguration>
+    CreateDataRepositoryTaskRequest& WithReleaseConfiguration(ReleaseConfigurationT&& value) { SetReleaseConfiguration(std::forward<ReleaseConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    DataRepositoryTaskType m_type;
+    DataRepositoryTaskType m_type{DataRepositoryTaskType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
@@ -194,7 +187,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    long long m_capacityToRelease;
+    long long m_capacityToRelease{0};
     bool m_capacityToReleaseHasBeenSet = false;
 
     ReleaseConfiguration m_releaseConfiguration;

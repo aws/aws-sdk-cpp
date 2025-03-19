@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProfilingGroupsResult::ListProfilingGroupsResult()
-{
-}
-
 ListProfilingGroupsResult::ListProfilingGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListProfilingGroupsResult& ListProfilingGroupsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profilingGroupNames"))
   {
     Aws::Utils::Array<JsonView> profilingGroupNamesJsonList = jsonValue.GetArray("profilingGroupNames");
@@ -42,8 +37,8 @@ ListProfilingGroupsResult& ListProfilingGroupsResult::operator =(const Aws::Amaz
     {
       m_profilingGroupNames.push_back(profilingGroupNamesJsonList[profilingGroupNamesIndex].AsString());
     }
+    m_profilingGroupNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profilingGroups"))
   {
     Aws::Utils::Array<JsonView> profilingGroupsJsonList = jsonValue.GetArray("profilingGroups");
@@ -51,14 +46,15 @@ ListProfilingGroupsResult& ListProfilingGroupsResult::operator =(const Aws::Amaz
     {
       m_profilingGroups.push_back(profilingGroupsJsonList[profilingGroupsIndex].AsObject());
     }
+    m_profilingGroupsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

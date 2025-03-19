@@ -12,12 +12,6 @@ using namespace Aws::SocialMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutWhatsAppBusinessAccountEventDestinationsRequest::PutWhatsAppBusinessAccountEventDestinationsRequest() : 
-    m_idHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false)
-{
-}
-
 Aws::String PutWhatsAppBusinessAccountEventDestinationsRequest::SerializePayload() const
 {
   JsonValue payload;

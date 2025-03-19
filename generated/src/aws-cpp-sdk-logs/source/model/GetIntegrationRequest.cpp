@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIntegrationRequest::GetIntegrationRequest() : 
-    m_integrationNameHasBeenSet(false)
-{
-}
-
 Aws::String GetIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

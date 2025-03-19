@@ -18,26 +18,7 @@ namespace XRay
 namespace Model
 {
 
-InsightSummary::InsightSummary() : 
-    m_insightIdHasBeenSet(false),
-    m_groupARNHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_rootCauseServiceIdHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_state(InsightState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_clientRequestImpactStatisticsHasBeenSet(false),
-    m_rootCauseServiceRequestImpactStatisticsHasBeenSet(false),
-    m_topAnomalousServicesHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 InsightSummary::InsightSummary(JsonView jsonValue)
-  : InsightSummary()
 {
   *this = jsonValue;
 }
@@ -47,31 +28,23 @@ InsightSummary& InsightSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsightId"))
   {
     m_insightId = jsonValue.GetString("InsightId");
-
     m_insightIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupARN"))
   {
     m_groupARN = jsonValue.GetString("GroupARN");
-
     m_groupARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootCauseServiceId"))
   {
     m_rootCauseServiceId = jsonValue.GetObject("RootCauseServiceId");
-
     m_rootCauseServiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -81,49 +54,36 @@ InsightSummary& InsightSummary::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = InsightStateMapper::GetInsightStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetString("Summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientRequestImpactStatistics"))
   {
     m_clientRequestImpactStatistics = jsonValue.GetObject("ClientRequestImpactStatistics");
-
     m_clientRequestImpactStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootCauseServiceRequestImpactStatistics"))
   {
     m_rootCauseServiceRequestImpactStatistics = jsonValue.GetObject("RootCauseServiceRequestImpactStatistics");
-
     m_rootCauseServiceRequestImpactStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopAnomalousServices"))
   {
     Aws::Utils::Array<JsonView> topAnomalousServicesJsonList = jsonValue.GetArray("TopAnomalousServices");
@@ -133,14 +93,11 @@ InsightSummary& InsightSummary::operator =(JsonView jsonValue)
     }
     m_topAnomalousServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-UpdateConfigurationSetSendingEnabledRequest::UpdateConfigurationSetSendingEnabledRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationSetSendingEnabledRequest::SerializePayload() const
 {
   Aws::StringStream ss;

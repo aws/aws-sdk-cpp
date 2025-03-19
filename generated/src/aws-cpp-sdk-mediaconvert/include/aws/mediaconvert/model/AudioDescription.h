@@ -43,7 +43,7 @@ namespace Model
   class AudioDescription
   {
   public:
-    AWS_MEDIACONVERT_API AudioDescription();
+    AWS_MEDIACONVERT_API AudioDescription() = default;
     AWS_MEDIACONVERT_API AudioDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AudioDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
      * Center (C) by default. To use Audio layout tagging, your output must be in a
      * QuickTime (MOV) container and your audio codec must be AAC, WAV, or AIFF.
      */
-    inline const AudioChannelTaggingSettings& GetAudioChannelTaggingSettings() const{ return m_audioChannelTaggingSettings; }
+    inline const AudioChannelTaggingSettings& GetAudioChannelTaggingSettings() const { return m_audioChannelTaggingSettings; }
     inline bool AudioChannelTaggingSettingsHasBeenSet() const { return m_audioChannelTaggingSettingsHasBeenSet; }
-    inline void SetAudioChannelTaggingSettings(const AudioChannelTaggingSettings& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = value; }
-    inline void SetAudioChannelTaggingSettings(AudioChannelTaggingSettings&& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = std::move(value); }
-    inline AudioDescription& WithAudioChannelTaggingSettings(const AudioChannelTaggingSettings& value) { SetAudioChannelTaggingSettings(value); return *this;}
-    inline AudioDescription& WithAudioChannelTaggingSettings(AudioChannelTaggingSettings&& value) { SetAudioChannelTaggingSettings(std::move(value)); return *this;}
+    template<typename AudioChannelTaggingSettingsT = AudioChannelTaggingSettings>
+    void SetAudioChannelTaggingSettings(AudioChannelTaggingSettingsT&& value) { m_audioChannelTaggingSettingsHasBeenSet = true; m_audioChannelTaggingSettings = std::forward<AudioChannelTaggingSettingsT>(value); }
+    template<typename AudioChannelTaggingSettingsT = AudioChannelTaggingSettings>
+    AudioDescription& WithAudioChannelTaggingSettings(AudioChannelTaggingSettingsT&& value) { SetAudioChannelTaggingSettings(std::forward<AudioChannelTaggingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * Advanced audio normalization settings. Ignore these settings unless you need to
      * comply with a loudness standard.
      */
-    inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
+    inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const { return m_audioNormalizationSettings; }
     inline bool AudioNormalizationSettingsHasBeenSet() const { return m_audioNormalizationSettingsHasBeenSet; }
-    inline void SetAudioNormalizationSettings(const AudioNormalizationSettings& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = value; }
-    inline void SetAudioNormalizationSettings(AudioNormalizationSettings&& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = std::move(value); }
-    inline AudioDescription& WithAudioNormalizationSettings(const AudioNormalizationSettings& value) { SetAudioNormalizationSettings(value); return *this;}
-    inline AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettings&& value) { SetAudioNormalizationSettings(std::move(value)); return *this;}
+    template<typename AudioNormalizationSettingsT = AudioNormalizationSettings>
+    void SetAudioNormalizationSettings(AudioNormalizationSettingsT&& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = std::forward<AudioNormalizationSettingsT>(value); }
+    template<typename AudioNormalizationSettingsT = AudioNormalizationSettings>
+    AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettingsT&& value) { SetAudioNormalizationSettings(std::forward<AudioNormalizationSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +90,12 @@ namespace Model
      * default/silence behavior. If no audio_source_name is specified, then "Audio
      * Selector 1" will be chosen automatically.
      */
-    inline const Aws::String& GetAudioSourceName() const{ return m_audioSourceName; }
+    inline const Aws::String& GetAudioSourceName() const { return m_audioSourceName; }
     inline bool AudioSourceNameHasBeenSet() const { return m_audioSourceNameHasBeenSet; }
-    inline void SetAudioSourceName(const Aws::String& value) { m_audioSourceNameHasBeenSet = true; m_audioSourceName = value; }
-    inline void SetAudioSourceName(Aws::String&& value) { m_audioSourceNameHasBeenSet = true; m_audioSourceName = std::move(value); }
-    inline void SetAudioSourceName(const char* value) { m_audioSourceNameHasBeenSet = true; m_audioSourceName.assign(value); }
-    inline AudioDescription& WithAudioSourceName(const Aws::String& value) { SetAudioSourceName(value); return *this;}
-    inline AudioDescription& WithAudioSourceName(Aws::String&& value) { SetAudioSourceName(std::move(value)); return *this;}
-    inline AudioDescription& WithAudioSourceName(const char* value) { SetAudioSourceName(value); return *this;}
+    template<typename AudioSourceNameT = Aws::String>
+    void SetAudioSourceName(AudioSourceNameT&& value) { m_audioSourceNameHasBeenSet = true; m_audioSourceName = std::forward<AudioSourceNameT>(value); }
+    template<typename AudioSourceNameT = Aws::String>
+    AudioDescription& WithAudioSourceName(AudioSourceNameT&& value) { SetAudioSourceName(std::forward<AudioSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +105,7 @@ namespace Model
      * Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 =
      * Reserved.
      */
-    inline int GetAudioType() const{ return m_audioType; }
+    inline int GetAudioType() const { return m_audioType; }
     inline bool AudioTypeHasBeenSet() const { return m_audioTypeHasBeenSet; }
     inline void SetAudioType(int value) { m_audioTypeHasBeenSet = true; m_audioType = value; }
     inline AudioDescription& WithAudioType(int value) { SetAudioType(value); return *this;}
@@ -122,12 +120,10 @@ namespace Model
      * audioType are both ignored if audioDescriptionBroadcasterMix is set to
      * BROADCASTER_MIXED_AD.
      */
-    inline const AudioTypeControl& GetAudioTypeControl() const{ return m_audioTypeControl; }
+    inline AudioTypeControl GetAudioTypeControl() const { return m_audioTypeControl; }
     inline bool AudioTypeControlHasBeenSet() const { return m_audioTypeControlHasBeenSet; }
-    inline void SetAudioTypeControl(const AudioTypeControl& value) { m_audioTypeControlHasBeenSet = true; m_audioTypeControl = value; }
-    inline void SetAudioTypeControl(AudioTypeControl&& value) { m_audioTypeControlHasBeenSet = true; m_audioTypeControl = std::move(value); }
-    inline AudioDescription& WithAudioTypeControl(const AudioTypeControl& value) { SetAudioTypeControl(value); return *this;}
-    inline AudioDescription& WithAudioTypeControl(AudioTypeControl&& value) { SetAudioTypeControl(std::move(value)); return *this;}
+    inline void SetAudioTypeControl(AudioTypeControl value) { m_audioTypeControlHasBeenSet = true; m_audioTypeControl = value; }
+    inline AudioDescription& WithAudioTypeControl(AudioTypeControl value) { SetAudioTypeControl(value); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +131,12 @@ namespace Model
      * Settings related to audio encoding. The settings in this group vary depending on
      * the value that you choose for your audio codec.
      */
-    inline const AudioCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
+    inline const AudioCodecSettings& GetCodecSettings() const { return m_codecSettings; }
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
-    inline void SetCodecSettings(const AudioCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
-    inline void SetCodecSettings(AudioCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
-    inline AudioDescription& WithCodecSettings(const AudioCodecSettings& value) { SetCodecSettings(value); return *this;}
-    inline AudioDescription& WithCodecSettings(AudioCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
+    template<typename CodecSettingsT = AudioCodecSettings>
+    void SetCodecSettings(CodecSettingsT&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::forward<CodecSettingsT>(value); }
+    template<typename CodecSettingsT = AudioCodecSettings>
+    AudioDescription& WithCodecSettings(CodecSettingsT&& value) { SetCodecSettings(std::forward<CodecSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +150,12 @@ namespace Model
      * specification. Streaming outputs are those that are in one of the following
      * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
-    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+    inline const Aws::String& GetCustomLanguageCode() const { return m_customLanguageCode; }
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
-    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
-    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
-    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
-    inline AudioDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
-    inline AudioDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
-    inline AudioDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
+    template<typename CustomLanguageCodeT = Aws::String>
+    void SetCustomLanguageCode(CustomLanguageCodeT&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::forward<CustomLanguageCodeT>(value); }
+    template<typename CustomLanguageCodeT = Aws::String>
+    AudioDescription& WithCustomLanguageCode(CustomLanguageCodeT&& value) { SetCustomLanguageCode(std::forward<CustomLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,12 +165,10 @@ namespace Model
      * is not selected or when 'Follow Input Language Code' is selected but there is no
      * ISO 639 language code specified by the input.
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline AudioDescription& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline AudioDescription& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline AudioDescription& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -187,24 +179,22 @@ namespace Model
      * service uses the code that you specify in the setting Language code. When you
      * choose Use configured, the service uses the language code that you specify.
      */
-    inline const AudioLanguageCodeControl& GetLanguageCodeControl() const{ return m_languageCodeControl; }
+    inline AudioLanguageCodeControl GetLanguageCodeControl() const { return m_languageCodeControl; }
     inline bool LanguageCodeControlHasBeenSet() const { return m_languageCodeControlHasBeenSet; }
-    inline void SetLanguageCodeControl(const AudioLanguageCodeControl& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = value; }
-    inline void SetLanguageCodeControl(AudioLanguageCodeControl&& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = std::move(value); }
-    inline AudioDescription& WithLanguageCodeControl(const AudioLanguageCodeControl& value) { SetLanguageCodeControl(value); return *this;}
-    inline AudioDescription& WithLanguageCodeControl(AudioLanguageCodeControl&& value) { SetLanguageCodeControl(std::move(value)); return *this;}
+    inline void SetLanguageCodeControl(AudioLanguageCodeControl value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = value; }
+    inline AudioDescription& WithLanguageCodeControl(AudioLanguageCodeControl value) { SetLanguageCodeControl(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Advanced audio remixing settings.
      */
-    inline const RemixSettings& GetRemixSettings() const{ return m_remixSettings; }
+    inline const RemixSettings& GetRemixSettings() const { return m_remixSettings; }
     inline bool RemixSettingsHasBeenSet() const { return m_remixSettingsHasBeenSet; }
-    inline void SetRemixSettings(const RemixSettings& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = value; }
-    inline void SetRemixSettings(RemixSettings&& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = std::move(value); }
-    inline AudioDescription& WithRemixSettings(const RemixSettings& value) { SetRemixSettings(value); return *this;}
-    inline AudioDescription& WithRemixSettings(RemixSettings&& value) { SetRemixSettings(std::move(value)); return *this;}
+    template<typename RemixSettingsT = RemixSettings>
+    void SetRemixSettings(RemixSettingsT&& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = std::forward<RemixSettingsT>(value); }
+    template<typename RemixSettingsT = RemixSettings>
+    AudioDescription& WithRemixSettings(RemixSettingsT&& value) { SetRemixSettings(std::forward<RemixSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,14 +204,12 @@ namespace Model
      * information into destination manifests for display on the end-viewer's player
      * device. For outputs in other output groups, the service ignores this setting.
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline AudioDescription& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline AudioDescription& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline AudioDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    AudioDescription& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -234,10 +222,10 @@ namespace Model
     Aws::String m_audioSourceName;
     bool m_audioSourceNameHasBeenSet = false;
 
-    int m_audioType;
+    int m_audioType{0};
     bool m_audioTypeHasBeenSet = false;
 
-    AudioTypeControl m_audioTypeControl;
+    AudioTypeControl m_audioTypeControl{AudioTypeControl::NOT_SET};
     bool m_audioTypeControlHasBeenSet = false;
 
     AudioCodecSettings m_codecSettings;
@@ -246,10 +234,10 @@ namespace Model
     Aws::String m_customLanguageCode;
     bool m_customLanguageCodeHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    AudioLanguageCodeControl m_languageCodeControl;
+    AudioLanguageCodeControl m_languageCodeControl{AudioLanguageCodeControl::NOT_SET};
     bool m_languageCodeControlHasBeenSet = false;
 
     RemixSettings m_remixSettings;

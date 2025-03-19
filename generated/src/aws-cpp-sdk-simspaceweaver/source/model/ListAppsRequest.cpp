@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAppsRequest::ListAppsRequest() : 
-    m_domainHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String ListAppsRequest::SerializePayload() const
 {
   return {};

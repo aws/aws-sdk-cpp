@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterOrganizationDelegatedAdminRequest::RegisterOrganizationDelegatedAdminRequest() : 
-    m_memberAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterOrganizationDelegatedAdminRequest::SerializePayload() const
 {
   JsonValue payload;

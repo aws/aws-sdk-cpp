@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-CaptionLanguageMapping::CaptionLanguageMapping() : 
-    m_captionChannel(0),
-    m_captionChannelHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
-{
-}
-
 CaptionLanguageMapping::CaptionLanguageMapping(JsonView jsonValue)
-  : CaptionLanguageMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CaptionLanguageMapping& CaptionLanguageMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("captionChannel"))
   {
     m_captionChannel = jsonValue.GetInteger("captionChannel");
-
     m_captionChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageDescription"))
   {
     m_languageDescription = jsonValue.GetString("languageDescription");
-
     m_languageDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class CustomerProfilesDestinationProperties
   {
   public:
-    AWS_APPFLOW_API CustomerProfilesDestinationProperties();
+    AWS_APPFLOW_API CustomerProfilesDestinationProperties() = default;
     AWS_APPFLOW_API CustomerProfilesDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API CustomerProfilesDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CustomerProfilesDestinationProperties& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CustomerProfilesDestinationProperties& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CustomerProfilesDestinationProperties& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CustomerProfilesDestinationProperties& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p> The object specified in the Amazon Connect Customer Profiles flow
      * destination. </p>
      */
-    inline const Aws::String& GetObjectTypeName() const{ return m_objectTypeName; }
+    inline const Aws::String& GetObjectTypeName() const { return m_objectTypeName; }
     inline bool ObjectTypeNameHasBeenSet() const { return m_objectTypeNameHasBeenSet; }
-    inline void SetObjectTypeName(const Aws::String& value) { m_objectTypeNameHasBeenSet = true; m_objectTypeName = value; }
-    inline void SetObjectTypeName(Aws::String&& value) { m_objectTypeNameHasBeenSet = true; m_objectTypeName = std::move(value); }
-    inline void SetObjectTypeName(const char* value) { m_objectTypeNameHasBeenSet = true; m_objectTypeName.assign(value); }
-    inline CustomerProfilesDestinationProperties& WithObjectTypeName(const Aws::String& value) { SetObjectTypeName(value); return *this;}
-    inline CustomerProfilesDestinationProperties& WithObjectTypeName(Aws::String&& value) { SetObjectTypeName(std::move(value)); return *this;}
-    inline CustomerProfilesDestinationProperties& WithObjectTypeName(const char* value) { SetObjectTypeName(value); return *this;}
+    template<typename ObjectTypeNameT = Aws::String>
+    void SetObjectTypeName(ObjectTypeNameT&& value) { m_objectTypeNameHasBeenSet = true; m_objectTypeName = std::forward<ObjectTypeNameT>(value); }
+    template<typename ObjectTypeNameT = Aws::String>
+    CustomerProfilesDestinationProperties& WithObjectTypeName(ObjectTypeNameT&& value) { SetObjectTypeName(std::forward<ObjectTypeNameT>(value)); return *this;}
     ///@}
   private:
 

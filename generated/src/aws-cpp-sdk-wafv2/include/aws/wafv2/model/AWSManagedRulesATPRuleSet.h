@@ -35,7 +35,7 @@ namespace Model
   class AWSManagedRulesATPRuleSet
   {
   public:
-    AWS_WAFV2_API AWSManagedRulesATPRuleSet();
+    AWS_WAFV2_API AWSManagedRulesATPRuleSet() = default;
     AWS_WAFV2_API AWSManagedRulesATPRuleSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API AWSManagedRulesATPRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <code>/website/login</code>.</p> <p>The rule group inspects only HTTP
      * <code>POST</code> requests to your specified login endpoint.</p>
      */
-    inline const Aws::String& GetLoginPath() const{ return m_loginPath; }
+    inline const Aws::String& GetLoginPath() const { return m_loginPath; }
     inline bool LoginPathHasBeenSet() const { return m_loginPathHasBeenSet; }
-    inline void SetLoginPath(const Aws::String& value) { m_loginPathHasBeenSet = true; m_loginPath = value; }
-    inline void SetLoginPath(Aws::String&& value) { m_loginPathHasBeenSet = true; m_loginPath = std::move(value); }
-    inline void SetLoginPath(const char* value) { m_loginPathHasBeenSet = true; m_loginPath.assign(value); }
-    inline AWSManagedRulesATPRuleSet& WithLoginPath(const Aws::String& value) { SetLoginPath(value); return *this;}
-    inline AWSManagedRulesATPRuleSet& WithLoginPath(Aws::String&& value) { SetLoginPath(std::move(value)); return *this;}
-    inline AWSManagedRulesATPRuleSet& WithLoginPath(const char* value) { SetLoginPath(value); return *this;}
+    template<typename LoginPathT = Aws::String>
+    void SetLoginPath(LoginPathT&& value) { m_loginPathHasBeenSet = true; m_loginPath = std::forward<LoginPathT>(value); }
+    template<typename LoginPathT = Aws::String>
+    AWSManagedRulesATPRuleSet& WithLoginPath(LoginPathT&& value) { SetLoginPath(std::forward<LoginPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * <p>The criteria for inspecting login requests, used by the ATP rule group to
      * validate credentials usage. </p>
      */
-    inline const RequestInspection& GetRequestInspection() const{ return m_requestInspection; }
+    inline const RequestInspection& GetRequestInspection() const { return m_requestInspection; }
     inline bool RequestInspectionHasBeenSet() const { return m_requestInspectionHasBeenSet; }
-    inline void SetRequestInspection(const RequestInspection& value) { m_requestInspectionHasBeenSet = true; m_requestInspection = value; }
-    inline void SetRequestInspection(RequestInspection&& value) { m_requestInspectionHasBeenSet = true; m_requestInspection = std::move(value); }
-    inline AWSManagedRulesATPRuleSet& WithRequestInspection(const RequestInspection& value) { SetRequestInspection(value); return *this;}
-    inline AWSManagedRulesATPRuleSet& WithRequestInspection(RequestInspection&& value) { SetRequestInspection(std::move(value)); return *this;}
+    template<typename RequestInspectionT = RequestInspection>
+    void SetRequestInspection(RequestInspectionT&& value) { m_requestInspectionHasBeenSet = true; m_requestInspection = std::forward<RequestInspectionT>(value); }
+    template<typename RequestInspectionT = RequestInspection>
+    AWSManagedRulesATPRuleSet& WithRequestInspection(RequestInspectionT&& value) { SetRequestInspection(std::forward<RequestInspectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,19 +86,19 @@ namespace Model
      * addresses that have had too many failed login attempts in a short amount of
      * time. </p>
      */
-    inline const ResponseInspection& GetResponseInspection() const{ return m_responseInspection; }
+    inline const ResponseInspection& GetResponseInspection() const { return m_responseInspection; }
     inline bool ResponseInspectionHasBeenSet() const { return m_responseInspectionHasBeenSet; }
-    inline void SetResponseInspection(const ResponseInspection& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = value; }
-    inline void SetResponseInspection(ResponseInspection&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::move(value); }
-    inline AWSManagedRulesATPRuleSet& WithResponseInspection(const ResponseInspection& value) { SetResponseInspection(value); return *this;}
-    inline AWSManagedRulesATPRuleSet& WithResponseInspection(ResponseInspection&& value) { SetResponseInspection(std::move(value)); return *this;}
+    template<typename ResponseInspectionT = ResponseInspection>
+    void SetResponseInspection(ResponseInspectionT&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::forward<ResponseInspectionT>(value); }
+    template<typename ResponseInspectionT = ResponseInspection>
+    AWSManagedRulesATPRuleSet& WithResponseInspection(ResponseInspectionT&& value) { SetResponseInspection(std::forward<ResponseInspectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Allow the use of regular expressions in the login page path. </p>
      */
-    inline bool GetEnableRegexInPath() const{ return m_enableRegexInPath; }
+    inline bool GetEnableRegexInPath() const { return m_enableRegexInPath; }
     inline bool EnableRegexInPathHasBeenSet() const { return m_enableRegexInPathHasBeenSet; }
     inline void SetEnableRegexInPath(bool value) { m_enableRegexInPathHasBeenSet = true; m_enableRegexInPath = value; }
     inline AWSManagedRulesATPRuleSet& WithEnableRegexInPath(bool value) { SetEnableRegexInPath(value); return *this;}
@@ -116,7 +114,7 @@ namespace Model
     ResponseInspection m_responseInspection;
     bool m_responseInspectionHasBeenSet = false;
 
-    bool m_enableRegexInPath;
+    bool m_enableRegexInPath{false};
     bool m_enableRegexInPathHasBeenSet = false;
   };
 

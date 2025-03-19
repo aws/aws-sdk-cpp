@@ -30,7 +30,7 @@ namespace Model
   class ListServiceDependenciesResult
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ListServiceDependenciesResult();
+    AWS_APPLICATIONSIGNALS_API ListServiceDependenciesResult() = default;
     AWS_APPLICATIONSIGNALS_API ListServiceDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONSIGNALS_API ListServiceDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,11 +43,11 @@ namespace Model
      * Signals used for the request. It might not match your request exactly, because
      * it was rounded to the nearest hour.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline ListServiceDependenciesResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ListServiceDependenciesResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ListServiceDependenciesResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,11 +58,11 @@ namespace Model
      * Signals used for the request. It might not match your request exactly, because
      * it was rounded to the nearest hour.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline ListServiceDependenciesResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ListServiceDependenciesResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ListServiceDependenciesResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +70,13 @@ namespace Model
      * <p>An array, where each object in the array contains information about one of
      * the dependencies of this service.</p>
      */
-    inline const Aws::Vector<ServiceDependency>& GetServiceDependencies() const{ return m_serviceDependencies; }
-    inline void SetServiceDependencies(const Aws::Vector<ServiceDependency>& value) { m_serviceDependencies = value; }
-    inline void SetServiceDependencies(Aws::Vector<ServiceDependency>&& value) { m_serviceDependencies = std::move(value); }
-    inline ListServiceDependenciesResult& WithServiceDependencies(const Aws::Vector<ServiceDependency>& value) { SetServiceDependencies(value); return *this;}
-    inline ListServiceDependenciesResult& WithServiceDependencies(Aws::Vector<ServiceDependency>&& value) { SetServiceDependencies(std::move(value)); return *this;}
-    inline ListServiceDependenciesResult& AddServiceDependencies(const ServiceDependency& value) { m_serviceDependencies.push_back(value); return *this; }
-    inline ListServiceDependenciesResult& AddServiceDependencies(ServiceDependency&& value) { m_serviceDependencies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceDependency>& GetServiceDependencies() const { return m_serviceDependencies; }
+    template<typename ServiceDependenciesT = Aws::Vector<ServiceDependency>>
+    void SetServiceDependencies(ServiceDependenciesT&& value) { m_serviceDependenciesHasBeenSet = true; m_serviceDependencies = std::forward<ServiceDependenciesT>(value); }
+    template<typename ServiceDependenciesT = Aws::Vector<ServiceDependency>>
+    ListServiceDependenciesResult& WithServiceDependencies(ServiceDependenciesT&& value) { SetServiceDependencies(std::forward<ServiceDependenciesT>(value)); return *this;}
+    template<typename ServiceDependenciesT = ServiceDependency>
+    ListServiceDependenciesResult& AddServiceDependencies(ServiceDependenciesT&& value) { m_serviceDependenciesHasBeenSet = true; m_serviceDependencies.emplace_back(std::forward<ServiceDependenciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,36 +84,37 @@ namespace Model
      * <p>Include this value in your next use of this API to get next set of service
      * dependencies.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServiceDependenciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceDependenciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceDependenciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceDependenciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceDependenciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceDependenciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceDependenciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceDependenciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<ServiceDependency> m_serviceDependencies;
+    bool m_serviceDependenciesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

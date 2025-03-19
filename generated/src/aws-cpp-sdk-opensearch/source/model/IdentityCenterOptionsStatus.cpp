@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-IdentityCenterOptionsStatus::IdentityCenterOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 IdentityCenterOptionsStatus::IdentityCenterOptionsStatus(JsonView jsonValue)
-  : IdentityCenterOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdentityCenterOptionsStatus& IdentityCenterOptionsStatus::operator =(JsonView js
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

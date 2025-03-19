@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-OrderBy::OrderBy() : 
-    m_dimension(Dimension::NOT_SET),
-    m_dimensionHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 OrderBy::OrderBy(JsonView jsonValue)
-  : OrderBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OrderBy& OrderBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dimension"))
   {
     m_dimension = DimensionMapper::GetDimensionForName(jsonValue.GetString("dimension"));
-
     m_dimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = OrderMapper::GetOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

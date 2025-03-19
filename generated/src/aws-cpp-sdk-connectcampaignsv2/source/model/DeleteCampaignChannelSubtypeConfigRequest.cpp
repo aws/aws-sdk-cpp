@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCampaignChannelSubtypeConfigRequest::DeleteCampaignChannelSubtypeConfigRequest() : 
-    m_idHasBeenSet(false),
-    m_channelSubtype(ChannelSubtype::NOT_SET),
-    m_channelSubtypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCampaignChannelSubtypeConfigRequest::SerializePayload() const
 {
   return {};

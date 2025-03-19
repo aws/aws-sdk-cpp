@@ -18,16 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-SecurityPolicyStats::SecurityPolicyStats() : 
-    m_encryptionPolicyCount(0),
-    m_encryptionPolicyCountHasBeenSet(false),
-    m_networkPolicyCount(0),
-    m_networkPolicyCountHasBeenSet(false)
-{
-}
-
 SecurityPolicyStats::SecurityPolicyStats(JsonView jsonValue)
-  : SecurityPolicyStats()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SecurityPolicyStats& SecurityPolicyStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EncryptionPolicyCount"))
   {
     m_encryptionPolicyCount = jsonValue.GetInt64("EncryptionPolicyCount");
-
     m_encryptionPolicyCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkPolicyCount"))
   {
     m_networkPolicyCount = jsonValue.GetInt64("NetworkPolicyCount");
-
     m_networkPolicyCountHasBeenSet = true;
   }
-
   return *this;
 }
 

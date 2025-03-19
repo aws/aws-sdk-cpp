@@ -34,7 +34,7 @@ namespace Model
   class ProjectFleet
   {
   public:
-    AWS_CODEBUILD_API ProjectFleet();
+    AWS_CODEBUILD_API ProjectFleet() = default;
     AWS_CODEBUILD_API ProjectFleet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectFleet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Specifies the compute fleet ARN for the build project.</p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
-    inline ProjectFleet& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline ProjectFleet& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline ProjectFleet& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    ProjectFleet& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
   private:
 

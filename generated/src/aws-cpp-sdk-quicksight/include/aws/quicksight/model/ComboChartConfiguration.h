@@ -44,7 +44,7 @@ namespace Model
   class ComboChartConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ComboChartConfiguration();
+    AWS_QUICKSIGHT_API ComboChartConfiguration() = default;
     AWS_QUICKSIGHT_API ComboChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ComboChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,24 +54,24 @@ namespace Model
     /**
      * <p>The field wells of the visual.</p>
      */
-    inline const ComboChartFieldWells& GetFieldWells() const{ return m_fieldWells; }
+    inline const ComboChartFieldWells& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const ComboChartFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(ComboChartFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline ComboChartConfiguration& WithFieldWells(const ComboChartFieldWells& value) { SetFieldWells(value); return *this;}
-    inline ComboChartConfiguration& WithFieldWells(ComboChartFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    template<typename FieldWellsT = ComboChartFieldWells>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = ComboChartFieldWells>
+    ComboChartConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of a <code>ComboChartVisual</code>.</p>
      */
-    inline const ComboChartSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const ComboChartSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const ComboChartSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(ComboChartSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline ComboChartConfiguration& WithSortConfiguration(const ComboChartSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline ComboChartConfiguration& WithSortConfiguration(ComboChartSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = ComboChartSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = ComboChartSortConfiguration>
+    ComboChartConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,24 +82,22 @@ namespace Model
      * bar combo charts.</p> </li> <li> <p> <code>STACKED_PERCENT</code>: Do not use.
      * If you use this value, the operation returns a validation error.</p> </li> </ul>
      */
-    inline const BarsArrangement& GetBarsArrangement() const{ return m_barsArrangement; }
+    inline BarsArrangement GetBarsArrangement() const { return m_barsArrangement; }
     inline bool BarsArrangementHasBeenSet() const { return m_barsArrangementHasBeenSet; }
-    inline void SetBarsArrangement(const BarsArrangement& value) { m_barsArrangementHasBeenSet = true; m_barsArrangement = value; }
-    inline void SetBarsArrangement(BarsArrangement&& value) { m_barsArrangementHasBeenSet = true; m_barsArrangement = std::move(value); }
-    inline ComboChartConfiguration& WithBarsArrangement(const BarsArrangement& value) { SetBarsArrangement(value); return *this;}
-    inline ComboChartConfiguration& WithBarsArrangement(BarsArrangement&& value) { SetBarsArrangement(std::move(value)); return *this;}
+    inline void SetBarsArrangement(BarsArrangement value) { m_barsArrangementHasBeenSet = true; m_barsArrangement = value; }
+    inline ComboChartConfiguration& WithBarsArrangement(BarsArrangement value) { SetBarsArrangement(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The category axis of a combo chart.</p>
      */
-    inline const AxisDisplayOptions& GetCategoryAxis() const{ return m_categoryAxis; }
+    inline const AxisDisplayOptions& GetCategoryAxis() const { return m_categoryAxis; }
     inline bool CategoryAxisHasBeenSet() const { return m_categoryAxisHasBeenSet; }
-    inline void SetCategoryAxis(const AxisDisplayOptions& value) { m_categoryAxisHasBeenSet = true; m_categoryAxis = value; }
-    inline void SetCategoryAxis(AxisDisplayOptions&& value) { m_categoryAxisHasBeenSet = true; m_categoryAxis = std::move(value); }
-    inline ComboChartConfiguration& WithCategoryAxis(const AxisDisplayOptions& value) { SetCategoryAxis(value); return *this;}
-    inline ComboChartConfiguration& WithCategoryAxis(AxisDisplayOptions&& value) { SetCategoryAxis(std::move(value)); return *this;}
+    template<typename CategoryAxisT = AxisDisplayOptions>
+    void SetCategoryAxis(CategoryAxisT&& value) { m_categoryAxisHasBeenSet = true; m_categoryAxis = std::forward<CategoryAxisT>(value); }
+    template<typename CategoryAxisT = AxisDisplayOptions>
+    ComboChartConfiguration& WithCategoryAxis(CategoryAxisT&& value) { SetCategoryAxis(std::forward<CategoryAxisT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +105,12 @@ namespace Model
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * a combo chart category (group/color) field well.</p>
      */
-    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const{ return m_categoryLabelOptions; }
+    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const { return m_categoryLabelOptions; }
     inline bool CategoryLabelOptionsHasBeenSet() const { return m_categoryLabelOptionsHasBeenSet; }
-    inline void SetCategoryLabelOptions(const ChartAxisLabelOptions& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = value; }
-    inline void SetCategoryLabelOptions(ChartAxisLabelOptions&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::move(value); }
-    inline ComboChartConfiguration& WithCategoryLabelOptions(const ChartAxisLabelOptions& value) { SetCategoryLabelOptions(value); return *this;}
-    inline ComboChartConfiguration& WithCategoryLabelOptions(ChartAxisLabelOptions&& value) { SetCategoryLabelOptions(std::move(value)); return *this;}
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    void SetCategoryLabelOptions(CategoryLabelOptionsT&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::forward<CategoryLabelOptionsT>(value); }
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    ComboChartConfiguration& WithCategoryLabelOptions(CategoryLabelOptionsT&& value) { SetCategoryLabelOptions(std::forward<CategoryLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +118,12 @@ namespace Model
      * <p>The label display options (grid line, range, scale, and axis step) of a combo
      * chart's primary y-axis (bar) field well.</p>
      */
-    inline const AxisDisplayOptions& GetPrimaryYAxisDisplayOptions() const{ return m_primaryYAxisDisplayOptions; }
+    inline const AxisDisplayOptions& GetPrimaryYAxisDisplayOptions() const { return m_primaryYAxisDisplayOptions; }
     inline bool PrimaryYAxisDisplayOptionsHasBeenSet() const { return m_primaryYAxisDisplayOptionsHasBeenSet; }
-    inline void SetPrimaryYAxisDisplayOptions(const AxisDisplayOptions& value) { m_primaryYAxisDisplayOptionsHasBeenSet = true; m_primaryYAxisDisplayOptions = value; }
-    inline void SetPrimaryYAxisDisplayOptions(AxisDisplayOptions&& value) { m_primaryYAxisDisplayOptionsHasBeenSet = true; m_primaryYAxisDisplayOptions = std::move(value); }
-    inline ComboChartConfiguration& WithPrimaryYAxisDisplayOptions(const AxisDisplayOptions& value) { SetPrimaryYAxisDisplayOptions(value); return *this;}
-    inline ComboChartConfiguration& WithPrimaryYAxisDisplayOptions(AxisDisplayOptions&& value) { SetPrimaryYAxisDisplayOptions(std::move(value)); return *this;}
+    template<typename PrimaryYAxisDisplayOptionsT = AxisDisplayOptions>
+    void SetPrimaryYAxisDisplayOptions(PrimaryYAxisDisplayOptionsT&& value) { m_primaryYAxisDisplayOptionsHasBeenSet = true; m_primaryYAxisDisplayOptions = std::forward<PrimaryYAxisDisplayOptionsT>(value); }
+    template<typename PrimaryYAxisDisplayOptionsT = AxisDisplayOptions>
+    ComboChartConfiguration& WithPrimaryYAxisDisplayOptions(PrimaryYAxisDisplayOptionsT&& value) { SetPrimaryYAxisDisplayOptions(std::forward<PrimaryYAxisDisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +131,12 @@ namespace Model
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * a combo chart's primary y-axis (bar) field well.</p>
      */
-    inline const ChartAxisLabelOptions& GetPrimaryYAxisLabelOptions() const{ return m_primaryYAxisLabelOptions; }
+    inline const ChartAxisLabelOptions& GetPrimaryYAxisLabelOptions() const { return m_primaryYAxisLabelOptions; }
     inline bool PrimaryYAxisLabelOptionsHasBeenSet() const { return m_primaryYAxisLabelOptionsHasBeenSet; }
-    inline void SetPrimaryYAxisLabelOptions(const ChartAxisLabelOptions& value) { m_primaryYAxisLabelOptionsHasBeenSet = true; m_primaryYAxisLabelOptions = value; }
-    inline void SetPrimaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { m_primaryYAxisLabelOptionsHasBeenSet = true; m_primaryYAxisLabelOptions = std::move(value); }
-    inline ComboChartConfiguration& WithPrimaryYAxisLabelOptions(const ChartAxisLabelOptions& value) { SetPrimaryYAxisLabelOptions(value); return *this;}
-    inline ComboChartConfiguration& WithPrimaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetPrimaryYAxisLabelOptions(std::move(value)); return *this;}
+    template<typename PrimaryYAxisLabelOptionsT = ChartAxisLabelOptions>
+    void SetPrimaryYAxisLabelOptions(PrimaryYAxisLabelOptionsT&& value) { m_primaryYAxisLabelOptionsHasBeenSet = true; m_primaryYAxisLabelOptions = std::forward<PrimaryYAxisLabelOptionsT>(value); }
+    template<typename PrimaryYAxisLabelOptionsT = ChartAxisLabelOptions>
+    ComboChartConfiguration& WithPrimaryYAxisLabelOptions(PrimaryYAxisLabelOptionsT&& value) { SetPrimaryYAxisLabelOptions(std::forward<PrimaryYAxisLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +144,12 @@ namespace Model
      * <p>The label display options (grid line, range, scale, axis step) of a combo
      * chart's secondary y-axis (line) field well.</p>
      */
-    inline const AxisDisplayOptions& GetSecondaryYAxisDisplayOptions() const{ return m_secondaryYAxisDisplayOptions; }
+    inline const AxisDisplayOptions& GetSecondaryYAxisDisplayOptions() const { return m_secondaryYAxisDisplayOptions; }
     inline bool SecondaryYAxisDisplayOptionsHasBeenSet() const { return m_secondaryYAxisDisplayOptionsHasBeenSet; }
-    inline void SetSecondaryYAxisDisplayOptions(const AxisDisplayOptions& value) { m_secondaryYAxisDisplayOptionsHasBeenSet = true; m_secondaryYAxisDisplayOptions = value; }
-    inline void SetSecondaryYAxisDisplayOptions(AxisDisplayOptions&& value) { m_secondaryYAxisDisplayOptionsHasBeenSet = true; m_secondaryYAxisDisplayOptions = std::move(value); }
-    inline ComboChartConfiguration& WithSecondaryYAxisDisplayOptions(const AxisDisplayOptions& value) { SetSecondaryYAxisDisplayOptions(value); return *this;}
-    inline ComboChartConfiguration& WithSecondaryYAxisDisplayOptions(AxisDisplayOptions&& value) { SetSecondaryYAxisDisplayOptions(std::move(value)); return *this;}
+    template<typename SecondaryYAxisDisplayOptionsT = AxisDisplayOptions>
+    void SetSecondaryYAxisDisplayOptions(SecondaryYAxisDisplayOptionsT&& value) { m_secondaryYAxisDisplayOptionsHasBeenSet = true; m_secondaryYAxisDisplayOptions = std::forward<SecondaryYAxisDisplayOptionsT>(value); }
+    template<typename SecondaryYAxisDisplayOptionsT = AxisDisplayOptions>
+    ComboChartConfiguration& WithSecondaryYAxisDisplayOptions(SecondaryYAxisDisplayOptionsT&& value) { SetSecondaryYAxisDisplayOptions(std::forward<SecondaryYAxisDisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,22 +157,22 @@ namespace Model
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * a combo chart's secondary y-axis(line) field well.</p>
      */
-    inline const ChartAxisLabelOptions& GetSecondaryYAxisLabelOptions() const{ return m_secondaryYAxisLabelOptions; }
+    inline const ChartAxisLabelOptions& GetSecondaryYAxisLabelOptions() const { return m_secondaryYAxisLabelOptions; }
     inline bool SecondaryYAxisLabelOptionsHasBeenSet() const { return m_secondaryYAxisLabelOptionsHasBeenSet; }
-    inline void SetSecondaryYAxisLabelOptions(const ChartAxisLabelOptions& value) { m_secondaryYAxisLabelOptionsHasBeenSet = true; m_secondaryYAxisLabelOptions = value; }
-    inline void SetSecondaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { m_secondaryYAxisLabelOptionsHasBeenSet = true; m_secondaryYAxisLabelOptions = std::move(value); }
-    inline ComboChartConfiguration& WithSecondaryYAxisLabelOptions(const ChartAxisLabelOptions& value) { SetSecondaryYAxisLabelOptions(value); return *this;}
-    inline ComboChartConfiguration& WithSecondaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetSecondaryYAxisLabelOptions(std::move(value)); return *this;}
+    template<typename SecondaryYAxisLabelOptionsT = ChartAxisLabelOptions>
+    void SetSecondaryYAxisLabelOptions(SecondaryYAxisLabelOptionsT&& value) { m_secondaryYAxisLabelOptionsHasBeenSet = true; m_secondaryYAxisLabelOptions = std::forward<SecondaryYAxisLabelOptionsT>(value); }
+    template<typename SecondaryYAxisLabelOptionsT = ChartAxisLabelOptions>
+    ComboChartConfiguration& WithSecondaryYAxisLabelOptions(SecondaryYAxisLabelOptionsT&& value) { SetSecondaryYAxisLabelOptions(std::forward<SecondaryYAxisLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SingleAxisOptions& GetSingleAxisOptions() const{ return m_singleAxisOptions; }
+    inline const SingleAxisOptions& GetSingleAxisOptions() const { return m_singleAxisOptions; }
     inline bool SingleAxisOptionsHasBeenSet() const { return m_singleAxisOptionsHasBeenSet; }
-    inline void SetSingleAxisOptions(const SingleAxisOptions& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = value; }
-    inline void SetSingleAxisOptions(SingleAxisOptions&& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = std::move(value); }
-    inline ComboChartConfiguration& WithSingleAxisOptions(const SingleAxisOptions& value) { SetSingleAxisOptions(value); return *this;}
-    inline ComboChartConfiguration& WithSingleAxisOptions(SingleAxisOptions&& value) { SetSingleAxisOptions(std::move(value)); return *this;}
+    template<typename SingleAxisOptionsT = SingleAxisOptions>
+    void SetSingleAxisOptions(SingleAxisOptionsT&& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = std::forward<SingleAxisOptionsT>(value); }
+    template<typename SingleAxisOptionsT = SingleAxisOptions>
+    ComboChartConfiguration& WithSingleAxisOptions(SingleAxisOptionsT&& value) { SetSingleAxisOptions(std::forward<SingleAxisOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,24 +180,24 @@ namespace Model
      * <p>The label options (label text, label visibility, and sort icon visibility) of
      * a combo chart's color field well.</p>
      */
-    inline const ChartAxisLabelOptions& GetColorLabelOptions() const{ return m_colorLabelOptions; }
+    inline const ChartAxisLabelOptions& GetColorLabelOptions() const { return m_colorLabelOptions; }
     inline bool ColorLabelOptionsHasBeenSet() const { return m_colorLabelOptionsHasBeenSet; }
-    inline void SetColorLabelOptions(const ChartAxisLabelOptions& value) { m_colorLabelOptionsHasBeenSet = true; m_colorLabelOptions = value; }
-    inline void SetColorLabelOptions(ChartAxisLabelOptions&& value) { m_colorLabelOptionsHasBeenSet = true; m_colorLabelOptions = std::move(value); }
-    inline ComboChartConfiguration& WithColorLabelOptions(const ChartAxisLabelOptions& value) { SetColorLabelOptions(value); return *this;}
-    inline ComboChartConfiguration& WithColorLabelOptions(ChartAxisLabelOptions&& value) { SetColorLabelOptions(std::move(value)); return *this;}
+    template<typename ColorLabelOptionsT = ChartAxisLabelOptions>
+    void SetColorLabelOptions(ColorLabelOptionsT&& value) { m_colorLabelOptionsHasBeenSet = true; m_colorLabelOptions = std::forward<ColorLabelOptionsT>(value); }
+    template<typename ColorLabelOptionsT = ChartAxisLabelOptions>
+    ComboChartConfiguration& WithColorLabelOptions(ColorLabelOptionsT&& value) { SetColorLabelOptions(std::forward<ColorLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The legend display setup of the visual.</p>
      */
-    inline const LegendOptions& GetLegend() const{ return m_legend; }
+    inline const LegendOptions& GetLegend() const { return m_legend; }
     inline bool LegendHasBeenSet() const { return m_legendHasBeenSet; }
-    inline void SetLegend(const LegendOptions& value) { m_legendHasBeenSet = true; m_legend = value; }
-    inline void SetLegend(LegendOptions&& value) { m_legendHasBeenSet = true; m_legend = std::move(value); }
-    inline ComboChartConfiguration& WithLegend(const LegendOptions& value) { SetLegend(value); return *this;}
-    inline ComboChartConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
+    template<typename LegendT = LegendOptions>
+    void SetLegend(LegendT&& value) { m_legendHasBeenSet = true; m_legend = std::forward<LegendT>(value); }
+    template<typename LegendT = LegendOptions>
+    ComboChartConfiguration& WithLegend(LegendT&& value) { SetLegend(std::forward<LegendT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,12 +205,12 @@ namespace Model
      * <p>The options that determine if visual data labels are displayed.</p> <p>The
      * data label options for a bar in a combo chart.</p>
      */
-    inline const DataLabelOptions& GetBarDataLabels() const{ return m_barDataLabels; }
+    inline const DataLabelOptions& GetBarDataLabels() const { return m_barDataLabels; }
     inline bool BarDataLabelsHasBeenSet() const { return m_barDataLabelsHasBeenSet; }
-    inline void SetBarDataLabels(const DataLabelOptions& value) { m_barDataLabelsHasBeenSet = true; m_barDataLabels = value; }
-    inline void SetBarDataLabels(DataLabelOptions&& value) { m_barDataLabelsHasBeenSet = true; m_barDataLabels = std::move(value); }
-    inline ComboChartConfiguration& WithBarDataLabels(const DataLabelOptions& value) { SetBarDataLabels(value); return *this;}
-    inline ComboChartConfiguration& WithBarDataLabels(DataLabelOptions&& value) { SetBarDataLabels(std::move(value)); return *this;}
+    template<typename BarDataLabelsT = DataLabelOptions>
+    void SetBarDataLabels(BarDataLabelsT&& value) { m_barDataLabelsHasBeenSet = true; m_barDataLabels = std::forward<BarDataLabelsT>(value); }
+    template<typename BarDataLabelsT = DataLabelOptions>
+    ComboChartConfiguration& WithBarDataLabels(BarDataLabelsT&& value) { SetBarDataLabels(std::forward<BarDataLabelsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,62 +218,62 @@ namespace Model
      * <p>The options that determine if visual data labels are displayed.</p> <p>The
      * data label options for a line in a combo chart.</p>
      */
-    inline const DataLabelOptions& GetLineDataLabels() const{ return m_lineDataLabels; }
+    inline const DataLabelOptions& GetLineDataLabels() const { return m_lineDataLabels; }
     inline bool LineDataLabelsHasBeenSet() const { return m_lineDataLabelsHasBeenSet; }
-    inline void SetLineDataLabels(const DataLabelOptions& value) { m_lineDataLabelsHasBeenSet = true; m_lineDataLabels = value; }
-    inline void SetLineDataLabels(DataLabelOptions&& value) { m_lineDataLabelsHasBeenSet = true; m_lineDataLabels = std::move(value); }
-    inline ComboChartConfiguration& WithLineDataLabels(const DataLabelOptions& value) { SetLineDataLabels(value); return *this;}
-    inline ComboChartConfiguration& WithLineDataLabels(DataLabelOptions&& value) { SetLineDataLabels(std::move(value)); return *this;}
+    template<typename LineDataLabelsT = DataLabelOptions>
+    void SetLineDataLabels(LineDataLabelsT&& value) { m_lineDataLabelsHasBeenSet = true; m_lineDataLabels = std::forward<LineDataLabelsT>(value); }
+    template<typename LineDataLabelsT = DataLabelOptions>
+    ComboChartConfiguration& WithLineDataLabels(LineDataLabelsT&& value) { SetLineDataLabels(std::forward<LineDataLabelsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The legend display setup of the visual.</p>
      */
-    inline const TooltipOptions& GetTooltip() const{ return m_tooltip; }
+    inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-    inline void SetTooltip(const TooltipOptions& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-    inline void SetTooltip(TooltipOptions&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-    inline ComboChartConfiguration& WithTooltip(const TooltipOptions& value) { SetTooltip(value); return *this;}
-    inline ComboChartConfiguration& WithTooltip(TooltipOptions&& value) { SetTooltip(std::move(value)); return *this;}
+    template<typename TooltipT = TooltipOptions>
+    void SetTooltip(TooltipT&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::forward<TooltipT>(value); }
+    template<typename TooltipT = TooltipOptions>
+    ComboChartConfiguration& WithTooltip(TooltipT&& value) { SetTooltip(std::forward<TooltipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reference line setup of the visual.</p>
      */
-    inline const Aws::Vector<ReferenceLine>& GetReferenceLines() const{ return m_referenceLines; }
+    inline const Aws::Vector<ReferenceLine>& GetReferenceLines() const { return m_referenceLines; }
     inline bool ReferenceLinesHasBeenSet() const { return m_referenceLinesHasBeenSet; }
-    inline void SetReferenceLines(const Aws::Vector<ReferenceLine>& value) { m_referenceLinesHasBeenSet = true; m_referenceLines = value; }
-    inline void SetReferenceLines(Aws::Vector<ReferenceLine>&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines = std::move(value); }
-    inline ComboChartConfiguration& WithReferenceLines(const Aws::Vector<ReferenceLine>& value) { SetReferenceLines(value); return *this;}
-    inline ComboChartConfiguration& WithReferenceLines(Aws::Vector<ReferenceLine>&& value) { SetReferenceLines(std::move(value)); return *this;}
-    inline ComboChartConfiguration& AddReferenceLines(const ReferenceLine& value) { m_referenceLinesHasBeenSet = true; m_referenceLines.push_back(value); return *this; }
-    inline ComboChartConfiguration& AddReferenceLines(ReferenceLine&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines.push_back(std::move(value)); return *this; }
+    template<typename ReferenceLinesT = Aws::Vector<ReferenceLine>>
+    void SetReferenceLines(ReferenceLinesT&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines = std::forward<ReferenceLinesT>(value); }
+    template<typename ReferenceLinesT = Aws::Vector<ReferenceLine>>
+    ComboChartConfiguration& WithReferenceLines(ReferenceLinesT&& value) { SetReferenceLines(std::forward<ReferenceLinesT>(value)); return *this;}
+    template<typename ReferenceLinesT = ReferenceLine>
+    ComboChartConfiguration& AddReferenceLines(ReferenceLinesT&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines.emplace_back(std::forward<ReferenceLinesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The palette (chart color) display setup of the visual.</p>
      */
-    inline const VisualPalette& GetVisualPalette() const{ return m_visualPalette; }
+    inline const VisualPalette& GetVisualPalette() const { return m_visualPalette; }
     inline bool VisualPaletteHasBeenSet() const { return m_visualPaletteHasBeenSet; }
-    inline void SetVisualPalette(const VisualPalette& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = value; }
-    inline void SetVisualPalette(VisualPalette&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::move(value); }
-    inline ComboChartConfiguration& WithVisualPalette(const VisualPalette& value) { SetVisualPalette(value); return *this;}
-    inline ComboChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
+    template<typename VisualPaletteT = VisualPalette>
+    void SetVisualPalette(VisualPaletteT&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::forward<VisualPaletteT>(value); }
+    template<typename VisualPaletteT = VisualPalette>
+    ComboChartConfiguration& WithVisualPalette(VisualPaletteT&& value) { SetVisualPalette(std::forward<VisualPaletteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline ComboChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline ComboChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    ComboChartConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -285,7 +283,7 @@ namespace Model
     ComboChartSortConfiguration m_sortConfiguration;
     bool m_sortConfigurationHasBeenSet = false;
 
-    BarsArrangement m_barsArrangement;
+    BarsArrangement m_barsArrangement{BarsArrangement::NOT_SET};
     bool m_barsArrangementHasBeenSet = false;
 
     AxisDisplayOptions m_categoryAxis;

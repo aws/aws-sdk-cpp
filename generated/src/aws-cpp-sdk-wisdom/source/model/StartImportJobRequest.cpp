@@ -12,18 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportJobRequest::StartImportJobRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_externalSourceConfigurationHasBeenSet(false),
-    m_importJobType(ImportJobType::NOT_SET),
-    m_importJobTypeHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_uploadIdHasBeenSet(false)
-{
-}
-
 Aws::String StartImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

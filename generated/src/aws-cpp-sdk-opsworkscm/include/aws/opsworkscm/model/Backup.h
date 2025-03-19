@@ -35,7 +35,7 @@ namespace Model
   class Backup
   {
   public:
-    AWS_OPSWORKSCM_API Backup();
+    AWS_OPSWORKSCM_API Backup() = default;
     AWS_OPSWORKSCM_API Backup(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKSCM_API Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ARN of the backup. </p>
      */
-    inline const Aws::String& GetBackupArn() const{ return m_backupArn; }
+    inline const Aws::String& GetBackupArn() const { return m_backupArn; }
     inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
-    inline void SetBackupArn(const Aws::String& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
-    inline void SetBackupArn(Aws::String&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::move(value); }
-    inline void SetBackupArn(const char* value) { m_backupArnHasBeenSet = true; m_backupArn.assign(value); }
-    inline Backup& WithBackupArn(const Aws::String& value) { SetBackupArn(value); return *this;}
-    inline Backup& WithBackupArn(Aws::String&& value) { SetBackupArn(std::move(value)); return *this;}
-    inline Backup& WithBackupArn(const char* value) { SetBackupArn(value); return *this;}
+    template<typename BackupArnT = Aws::String>
+    void SetBackupArn(BackupArnT&& value) { m_backupArnHasBeenSet = true; m_backupArn = std::forward<BackupArnT>(value); }
+    template<typename BackupArnT = Aws::String>
+    Backup& WithBackupArn(BackupArnT&& value) { SetBackupArn(std::forward<BackupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p> The generated ID of the backup. Example:
      * <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
      */
-    inline const Aws::String& GetBackupId() const{ return m_backupId; }
+    inline const Aws::String& GetBackupId() const { return m_backupId; }
     inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
-    inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
-    inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
-    inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
-    inline Backup& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
-    inline Backup& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
-    inline Backup& WithBackupId(const char* value) { SetBackupId(value); return *this;}
+    template<typename BackupIdT = Aws::String>
+    void SetBackupId(BackupIdT&& value) { m_backupIdHasBeenSet = true; m_backupId = std::forward<BackupIdT>(value); }
+    template<typename BackupIdT = Aws::String>
+    Backup& WithBackupId(BackupIdT&& value) { SetBackupId(std::forward<BackupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * <p> The backup type. Valid values are <code>automated</code> or
      * <code>manual</code>. </p>
      */
-    inline const BackupType& GetBackupType() const{ return m_backupType; }
+    inline BackupType GetBackupType() const { return m_backupType; }
     inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
-    inline void SetBackupType(const BackupType& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
-    inline void SetBackupType(BackupType&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
-    inline Backup& WithBackupType(const BackupType& value) { SetBackupType(value); return *this;}
-    inline Backup& WithBackupType(BackupType&& value) { SetBackupType(std::move(value)); return *this;}
+    inline void SetBackupType(BackupType value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
+    inline Backup& WithBackupType(BackupType value) { SetBackupType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * <p> The time stamp when the backup was created in the database. Example:
      * <code>2016-07-29T13:38:47.520Z</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Backup& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Backup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Backup& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * <p> A user-provided description for a manual backup. This field is empty for
      * automated backups. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Backup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Backup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Backup& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Backup& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +108,12 @@ namespace Model
      * <p> The engine type that is obtained from the server when the backup is created.
      * </p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline Backup& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline Backup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline Backup& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    Backup& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +121,12 @@ namespace Model
      * <p> The engine model that is obtained from the server when the backup is
      * created. </p>
      */
-    inline const Aws::String& GetEngineModel() const{ return m_engineModel; }
+    inline const Aws::String& GetEngineModel() const { return m_engineModel; }
     inline bool EngineModelHasBeenSet() const { return m_engineModelHasBeenSet; }
-    inline void SetEngineModel(const Aws::String& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
-    inline void SetEngineModel(Aws::String&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::move(value); }
-    inline void SetEngineModel(const char* value) { m_engineModelHasBeenSet = true; m_engineModel.assign(value); }
-    inline Backup& WithEngineModel(const Aws::String& value) { SetEngineModel(value); return *this;}
-    inline Backup& WithEngineModel(Aws::String&& value) { SetEngineModel(std::move(value)); return *this;}
-    inline Backup& WithEngineModel(const char* value) { SetEngineModel(value); return *this;}
+    template<typename EngineModelT = Aws::String>
+    void SetEngineModel(EngineModelT&& value) { m_engineModelHasBeenSet = true; m_engineModel = std::forward<EngineModelT>(value); }
+    template<typename EngineModelT = Aws::String>
+    Backup& WithEngineModel(EngineModelT&& value) { SetEngineModel(std::forward<EngineModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +134,12 @@ namespace Model
      * <p> The engine version that is obtained from the server when the backup is
      * created. </p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline Backup& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline Backup& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline Backup& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    Backup& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +148,12 @@ namespace Model
      * backup is created. Because this value is stored, you are not required to provide
      * the InstanceProfileArn again if you restore a backup. </p>
      */
-    inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
+    inline const Aws::String& GetInstanceProfileArn() const { return m_instanceProfileArn; }
     inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
-    inline void SetInstanceProfileArn(const Aws::String& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
-    inline void SetInstanceProfileArn(Aws::String&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::move(value); }
-    inline void SetInstanceProfileArn(const char* value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn.assign(value); }
-    inline Backup& WithInstanceProfileArn(const Aws::String& value) { SetInstanceProfileArn(value); return *this;}
-    inline Backup& WithInstanceProfileArn(Aws::String&& value) { SetInstanceProfileArn(std::move(value)); return *this;}
-    inline Backup& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
+    template<typename InstanceProfileArnT = Aws::String>
+    void SetInstanceProfileArn(InstanceProfileArnT&& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = std::forward<InstanceProfileArnT>(value); }
+    template<typename InstanceProfileArnT = Aws::String>
+    Backup& WithInstanceProfileArn(InstanceProfileArnT&& value) { SetInstanceProfileArn(std::forward<InstanceProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,14 +161,12 @@ namespace Model
      * <p> The instance type that is obtained from the server when the backup is
      * created. </p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline Backup& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline Backup& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline Backup& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    Backup& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,14 +174,12 @@ namespace Model
      * <p> The key pair that is obtained from the server when the backup is created.
      * </p>
      */
-    inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
+    inline const Aws::String& GetKeyPair() const { return m_keyPair; }
     inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
-    inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
-    inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
-    inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
-    inline Backup& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
-    inline Backup& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
-    inline Backup& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
+    template<typename KeyPairT = Aws::String>
+    void SetKeyPair(KeyPairT&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::forward<KeyPairT>(value); }
+    template<typename KeyPairT = Aws::String>
+    Backup& WithKeyPair(KeyPairT&& value) { SetKeyPair(std::forward<KeyPairT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +187,12 @@ namespace Model
      * <p> The preferred backup period that is obtained from the server when the backup
      * is created. </p>
      */
-    inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+    inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
-    inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
-    inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
-    inline Backup& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
-    inline Backup& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
-    inline Backup& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+    template<typename PreferredBackupWindowT = Aws::String>
+    void SetPreferredBackupWindow(PreferredBackupWindowT&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value); }
+    template<typename PreferredBackupWindowT = Aws::String>
+    Backup& WithPreferredBackupWindow(PreferredBackupWindowT&& value) { SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,28 +200,24 @@ namespace Model
      * <p> The preferred maintenance period that is obtained from the server when the
      * backup is created. </p>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline Backup& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline Backup& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline Backup& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    Backup& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
-    inline const Aws::String& GetS3LogUrl() const{ return m_s3LogUrl; }
+    inline const Aws::String& GetS3LogUrl() const { return m_s3LogUrl; }
     inline bool S3LogUrlHasBeenSet() const { return m_s3LogUrlHasBeenSet; }
-    inline void SetS3LogUrl(const Aws::String& value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl = value; }
-    inline void SetS3LogUrl(Aws::String&& value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl = std::move(value); }
-    inline void SetS3LogUrl(const char* value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl.assign(value); }
-    inline Backup& WithS3LogUrl(const Aws::String& value) { SetS3LogUrl(value); return *this;}
-    inline Backup& WithS3LogUrl(Aws::String&& value) { SetS3LogUrl(std::move(value)); return *this;}
-    inline Backup& WithS3LogUrl(const char* value) { SetS3LogUrl(value); return *this;}
+    template<typename S3LogUrlT = Aws::String>
+    void SetS3LogUrl(S3LogUrlT&& value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl = std::forward<S3LogUrlT>(value); }
+    template<typename S3LogUrlT = Aws::String>
+    Backup& WithS3LogUrl(S3LogUrlT&& value) { SetS3LogUrl(std::forward<S3LogUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,29 +225,26 @@ namespace Model
      * <p> The security group IDs that are obtained from the server when the backup is
      * created. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline Backup& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline Backup& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline Backup& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline Backup& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline Backup& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    Backup& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    Backup& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The name of the server from which the backup was made. </p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline Backup& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline Backup& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline Backup& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    Backup& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,40 +252,34 @@ namespace Model
      * <p> The service role ARN that is obtained from the server when the backup is
      * created. </p>
      */
-    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+    inline const Aws::String& GetServiceRoleArn() const { return m_serviceRoleArn; }
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
-    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
-    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
-    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
-    inline Backup& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
-    inline Backup& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
-    inline Backup& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+    template<typename ServiceRoleArnT = Aws::String>
+    void SetServiceRoleArn(ServiceRoleArnT&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::forward<ServiceRoleArnT>(value); }
+    template<typename ServiceRoleArnT = Aws::String>
+    Backup& WithServiceRoleArn(ServiceRoleArnT&& value) { SetServiceRoleArn(std::forward<ServiceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of a backup while in progress. </p>
      */
-    inline const BackupStatus& GetStatus() const{ return m_status; }
+    inline BackupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BackupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BackupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Backup& WithStatus(const BackupStatus& value) { SetStatus(value); return *this;}
-    inline Backup& WithStatus(BackupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BackupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Backup& WithStatus(BackupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An informational message about backup status. </p>
      */
-    inline const Aws::String& GetStatusDescription() const{ return m_statusDescription; }
+    inline const Aws::String& GetStatusDescription() const { return m_statusDescription; }
     inline bool StatusDescriptionHasBeenSet() const { return m_statusDescriptionHasBeenSet; }
-    inline void SetStatusDescription(const Aws::String& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = value; }
-    inline void SetStatusDescription(Aws::String&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = std::move(value); }
-    inline void SetStatusDescription(const char* value) { m_statusDescriptionHasBeenSet = true; m_statusDescription.assign(value); }
-    inline Backup& WithStatusDescription(const Aws::String& value) { SetStatusDescription(value); return *this;}
-    inline Backup& WithStatusDescription(Aws::String&& value) { SetStatusDescription(std::move(value)); return *this;}
-    inline Backup& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
+    template<typename StatusDescriptionT = Aws::String>
+    void SetStatusDescription(StatusDescriptionT&& value) { m_statusDescriptionHasBeenSet = true; m_statusDescription = std::forward<StatusDescriptionT>(value); }
+    template<typename StatusDescriptionT = Aws::String>
+    Backup& WithStatusDescription(StatusDescriptionT&& value) { SetStatusDescription(std::forward<StatusDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -322,15 +287,14 @@ namespace Model
      * <p> The subnet IDs that are obtained from the server when the backup is created.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline Backup& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline Backup& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline Backup& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline Backup& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline Backup& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    Backup& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    Backup& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -338,14 +302,12 @@ namespace Model
      * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
      * server when the backup is created. </p>
      */
-    inline const Aws::String& GetToolsVersion() const{ return m_toolsVersion; }
+    inline const Aws::String& GetToolsVersion() const { return m_toolsVersion; }
     inline bool ToolsVersionHasBeenSet() const { return m_toolsVersionHasBeenSet; }
-    inline void SetToolsVersion(const Aws::String& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = value; }
-    inline void SetToolsVersion(Aws::String&& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = std::move(value); }
-    inline void SetToolsVersion(const char* value) { m_toolsVersionHasBeenSet = true; m_toolsVersion.assign(value); }
-    inline Backup& WithToolsVersion(const Aws::String& value) { SetToolsVersion(value); return *this;}
-    inline Backup& WithToolsVersion(Aws::String&& value) { SetToolsVersion(std::move(value)); return *this;}
-    inline Backup& WithToolsVersion(const char* value) { SetToolsVersion(value); return *this;}
+    template<typename ToolsVersionT = Aws::String>
+    void SetToolsVersion(ToolsVersionT&& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = std::forward<ToolsVersionT>(value); }
+    template<typename ToolsVersionT = Aws::String>
+    Backup& WithToolsVersion(ToolsVersionT&& value) { SetToolsVersion(std::forward<ToolsVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -353,14 +315,12 @@ namespace Model
      * <p> The IAM user ARN of the requester for manual backups. This field is empty
      * for automated backups. </p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-    inline Backup& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline Backup& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline Backup& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    Backup& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -370,10 +330,10 @@ namespace Model
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet = false;
 
-    BackupType m_backupType;
+    BackupType m_backupType{BackupType::NOT_SET};
     bool m_backupTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
@@ -415,7 +375,7 @@ namespace Model
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet = false;
 
-    BackupStatus m_status;
+    BackupStatus m_status{BackupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDescription;

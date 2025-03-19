@@ -37,7 +37,7 @@ namespace Model
   class WorkmailAction
   {
   public:
-    AWS_SES_API WorkmailAction();
+    AWS_SES_API WorkmailAction() = default;
     AWS_SES_API WorkmailAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API WorkmailAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline WorkmailAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline WorkmailAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline WorkmailAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    WorkmailAction& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon
      * WorkMail Administrator Guide</a>.</p>
      */
-    inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
+    inline const Aws::String& GetOrganizationArn() const { return m_organizationArn; }
     inline bool OrganizationArnHasBeenSet() const { return m_organizationArnHasBeenSet; }
-    inline void SetOrganizationArn(const Aws::String& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
-    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::move(value); }
-    inline void SetOrganizationArn(const char* value) { m_organizationArnHasBeenSet = true; m_organizationArn.assign(value); }
-    inline WorkmailAction& WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
-    inline WorkmailAction& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(std::move(value)); return *this;}
-    inline WorkmailAction& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}
+    template<typename OrganizationArnT = Aws::String>
+    void SetOrganizationArn(OrganizationArnT&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::forward<OrganizationArnT>(value); }
+    template<typename OrganizationArnT = Aws::String>
+    WorkmailAction& WithOrganizationArn(OrganizationArnT&& value) { SetOrganizationArn(std::forward<OrganizationArnT>(value)); return *this;}
     ///@}
   private:
 

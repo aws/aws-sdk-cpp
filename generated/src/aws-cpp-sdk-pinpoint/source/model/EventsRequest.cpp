@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventsRequest::EventsRequest() : 
-    m_batchItemHasBeenSet(false)
-{
-}
-
 EventsRequest::EventsRequest(JsonView jsonValue)
-  : EventsRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EventsRequest& EventsRequest::operator =(JsonView jsonValue)
     }
     m_batchItemHasBeenSet = true;
   }
-
   return *this;
 }
 

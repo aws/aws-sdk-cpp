@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCustomerMetadataResult::DescribeCustomerMetadataResult() : 
-    m_nniPartnerType(NniPartnerType::NOT_SET)
-{
-}
-
 DescribeCustomerMetadataResult::DescribeCustomerMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeCustomerMetadataResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ DescribeCustomerMetadataResult& DescribeCustomerMetadataResult::operator =(const
     {
       m_agreements.push_back(agreementsJsonList[agreementsIndex].AsObject());
     }
+    m_agreementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nniPartnerType"))
   {
     m_nniPartnerType = NniPartnerTypeMapper::GetNniPartnerTypeForName(jsonValue.GetString("nniPartnerType"));
-
+    m_nniPartnerTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

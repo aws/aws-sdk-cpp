@@ -18,14 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-ClusterEndpoint::ClusterEndpoint() : 
-    m_endpointHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 ClusterEndpoint::ClusterEndpoint(JsonView jsonValue)
-  : ClusterEndpoint()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClusterEndpoint& ClusterEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

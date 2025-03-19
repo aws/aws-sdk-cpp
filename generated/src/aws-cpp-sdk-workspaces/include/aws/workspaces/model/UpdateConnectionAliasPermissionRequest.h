@@ -22,7 +22,7 @@ namespace Model
   class UpdateConnectionAliasPermissionRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API UpdateConnectionAliasPermissionRequest();
+    AWS_WORKSPACES_API UpdateConnectionAliasPermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The identifier of the connection alias that you want to update permissions
      * for.</p>
      */
-    inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+    inline const Aws::String& GetAliasId() const { return m_aliasId; }
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
-    inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
-    inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
-    inline UpdateConnectionAliasPermissionRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-    inline UpdateConnectionAliasPermissionRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-    inline UpdateConnectionAliasPermissionRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+    template<typename AliasIdT = Aws::String>
+    void SetAliasId(AliasIdT&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::forward<AliasIdT>(value); }
+    template<typename AliasIdT = Aws::String>
+    UpdateConnectionAliasPermissionRequest& WithAliasId(AliasIdT&& value) { SetAliasId(std::forward<AliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>Indicates whether to share or unshare the connection alias with the specified
      * Amazon Web Services account.</p>
      */
-    inline const ConnectionAliasPermission& GetConnectionAliasPermission() const{ return m_connectionAliasPermission; }
+    inline const ConnectionAliasPermission& GetConnectionAliasPermission() const { return m_connectionAliasPermission; }
     inline bool ConnectionAliasPermissionHasBeenSet() const { return m_connectionAliasPermissionHasBeenSet; }
-    inline void SetConnectionAliasPermission(const ConnectionAliasPermission& value) { m_connectionAliasPermissionHasBeenSet = true; m_connectionAliasPermission = value; }
-    inline void SetConnectionAliasPermission(ConnectionAliasPermission&& value) { m_connectionAliasPermissionHasBeenSet = true; m_connectionAliasPermission = std::move(value); }
-    inline UpdateConnectionAliasPermissionRequest& WithConnectionAliasPermission(const ConnectionAliasPermission& value) { SetConnectionAliasPermission(value); return *this;}
-    inline UpdateConnectionAliasPermissionRequest& WithConnectionAliasPermission(ConnectionAliasPermission&& value) { SetConnectionAliasPermission(std::move(value)); return *this;}
+    template<typename ConnectionAliasPermissionT = ConnectionAliasPermission>
+    void SetConnectionAliasPermission(ConnectionAliasPermissionT&& value) { m_connectionAliasPermissionHasBeenSet = true; m_connectionAliasPermission = std::forward<ConnectionAliasPermissionT>(value); }
+    template<typename ConnectionAliasPermissionT = ConnectionAliasPermission>
+    UpdateConnectionAliasPermissionRequest& WithConnectionAliasPermission(ConnectionAliasPermissionT&& value) { SetConnectionAliasPermission(std::forward<ConnectionAliasPermissionT>(value)); return *this;}
     ///@}
   private:
 

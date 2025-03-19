@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEvaluationFormVersionsRequest::ListEvaluationFormVersionsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListEvaluationFormVersionsRequest::SerializePayload() const
 {
   return {};

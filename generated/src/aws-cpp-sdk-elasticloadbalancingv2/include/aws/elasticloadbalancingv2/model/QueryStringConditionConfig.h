@@ -36,7 +36,7 @@ namespace Model
   class QueryStringConditionConfig
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API QueryStringConditionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API QueryStringConditionConfig() = default;
     AWS_ELASTICLOADBALANCINGV2_API QueryStringConditionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API QueryStringConditionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,14 +55,14 @@ namespace Model
      * key/value pairs or values, the condition is satisfied if one of them is found in
      * the query string.</p>
      */
-    inline const Aws::Vector<QueryStringKeyValuePair>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<QueryStringKeyValuePair>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<QueryStringKeyValuePair>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<QueryStringKeyValuePair>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline QueryStringConditionConfig& WithValues(const Aws::Vector<QueryStringKeyValuePair>& value) { SetValues(value); return *this;}
-    inline QueryStringConditionConfig& WithValues(Aws::Vector<QueryStringKeyValuePair>&& value) { SetValues(std::move(value)); return *this;}
-    inline QueryStringConditionConfig& AddValues(const QueryStringKeyValuePair& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline QueryStringConditionConfig& AddValues(QueryStringKeyValuePair&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<QueryStringKeyValuePair>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<QueryStringKeyValuePair>>
+    QueryStringConditionConfig& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = QueryStringKeyValuePair>
+    QueryStringConditionConfig& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

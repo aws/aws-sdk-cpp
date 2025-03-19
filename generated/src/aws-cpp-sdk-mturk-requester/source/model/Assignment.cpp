@@ -18,25 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-Assignment::Assignment() : 
-    m_assignmentIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_hITIdHasBeenSet(false),
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_assignmentStatusHasBeenSet(false),
-    m_autoApprovalTimeHasBeenSet(false),
-    m_acceptTimeHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_approvalTimeHasBeenSet(false),
-    m_rejectionTimeHasBeenSet(false),
-    m_deadlineHasBeenSet(false),
-    m_answerHasBeenSet(false),
-    m_requesterFeedbackHasBeenSet(false)
-{
-}
-
 Assignment::Assignment(JsonView jsonValue)
-  : Assignment()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ Assignment& Assignment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssignmentId"))
   {
     m_assignmentId = jsonValue.GetString("AssignmentId");
-
     m_assignmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerId"))
   {
     m_workerId = jsonValue.GetString("WorkerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HITId"))
   {
     m_hITId = jsonValue.GetString("HITId");
-
     m_hITIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentStatus"))
   {
     m_assignmentStatus = AssignmentStatusMapper::GetAssignmentStatusForName(jsonValue.GetString("AssignmentStatus"));
-
     m_assignmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoApprovalTime"))
   {
     m_autoApprovalTime = jsonValue.GetDouble("AutoApprovalTime");
-
     m_autoApprovalTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptTime"))
   {
     m_acceptTime = jsonValue.GetDouble("AcceptTime");
-
     m_acceptTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTime"))
   {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
-
     m_submitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovalTime"))
   {
     m_approvalTime = jsonValue.GetDouble("ApprovalTime");
-
     m_approvalTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RejectionTime"))
   {
     m_rejectionTime = jsonValue.GetDouble("RejectionTime");
-
     m_rejectionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Deadline"))
   {
     m_deadline = jsonValue.GetDouble("Deadline");
-
     m_deadlineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Answer"))
   {
     m_answer = jsonValue.GetString("Answer");
-
     m_answerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequesterFeedback"))
   {
     m_requesterFeedback = jsonValue.GetString("RequesterFeedback");
-
     m_requesterFeedbackHasBeenSet = true;
   }
-
   return *this;
 }
 

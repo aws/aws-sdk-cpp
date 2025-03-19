@@ -21,7 +21,7 @@ namespace Model
   class GetSettingsRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API GetSettingsRequest();
+    AWS_AUDITMANAGER_API GetSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,16 +36,14 @@ namespace Model
     /**
      * <p> The list of setting attribute enum values. </p>
      */
-    inline const SettingAttribute& GetAttribute() const{ return m_attribute; }
+    inline SettingAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const SettingAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(SettingAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline GetSettingsRequest& WithAttribute(const SettingAttribute& value) { SetAttribute(value); return *this;}
-    inline GetSettingsRequest& WithAttribute(SettingAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(SettingAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline GetSettingsRequest& WithAttribute(SettingAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    SettingAttribute m_attribute;
+    SettingAttribute m_attribute{SettingAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

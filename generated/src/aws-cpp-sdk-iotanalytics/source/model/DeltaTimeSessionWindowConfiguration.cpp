@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DeltaTimeSessionWindowConfiguration::DeltaTimeSessionWindowConfiguration() : 
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
-{
-}
-
 DeltaTimeSessionWindowConfiguration::DeltaTimeSessionWindowConfiguration(JsonView jsonValue)
-  : DeltaTimeSessionWindowConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DeltaTimeSessionWindowConfiguration& DeltaTimeSessionWindowConfiguration::operat
   if(jsonValue.ValueExists("timeoutInMinutes"))
   {
     m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
-
     m_timeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

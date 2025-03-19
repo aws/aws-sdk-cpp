@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTransitGatewayRouteTableAnnouncementRequest::CreateTransitGatewayRouteTableAnnouncementRequest() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_peeringAttachmentIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateTransitGatewayRouteTableAnnouncementRequest::SerializePayload() const
 {
   Aws::StringStream ss;

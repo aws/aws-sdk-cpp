@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-OverallTestResults::OverallTestResults() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 OverallTestResults::OverallTestResults(JsonView jsonValue)
-  : OverallTestResults()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OverallTestResults& OverallTestResults::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   return *this;
 }
 

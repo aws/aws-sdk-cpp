@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateIdNamespaceAssociationResult::CreateIdNamespaceAssociationResult()
-{
-}
-
 CreateIdNamespaceAssociationResult::CreateIdNamespaceAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateIdNamespaceAssociationResult& CreateIdNamespaceAssociationResult::operator
   if(jsonValue.ValueExists("idNamespaceAssociation"))
   {
     m_idNamespaceAssociation = jsonValue.GetObject("idNamespaceAssociation");
-
+    m_idNamespaceAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

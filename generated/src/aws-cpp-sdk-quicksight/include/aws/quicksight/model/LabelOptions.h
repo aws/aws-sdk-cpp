@@ -33,7 +33,7 @@ namespace Model
   class LabelOptions
   {
   public:
-    AWS_QUICKSIGHT_API LabelOptions();
+    AWS_QUICKSIGHT_API LabelOptions() = default;
     AWS_QUICKSIGHT_API LabelOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,38 @@ namespace Model
     /**
      * <p>Determines whether or not the label is visible.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline LabelOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline LabelOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline LabelOptions& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The font configuration of the label.</p>
      */
-    inline const FontConfiguration& GetFontConfiguration() const{ return m_fontConfiguration; }
+    inline const FontConfiguration& GetFontConfiguration() const { return m_fontConfiguration; }
     inline bool FontConfigurationHasBeenSet() const { return m_fontConfigurationHasBeenSet; }
-    inline void SetFontConfiguration(const FontConfiguration& value) { m_fontConfigurationHasBeenSet = true; m_fontConfiguration = value; }
-    inline void SetFontConfiguration(FontConfiguration&& value) { m_fontConfigurationHasBeenSet = true; m_fontConfiguration = std::move(value); }
-    inline LabelOptions& WithFontConfiguration(const FontConfiguration& value) { SetFontConfiguration(value); return *this;}
-    inline LabelOptions& WithFontConfiguration(FontConfiguration&& value) { SetFontConfiguration(std::move(value)); return *this;}
+    template<typename FontConfigurationT = FontConfiguration>
+    void SetFontConfiguration(FontConfigurationT&& value) { m_fontConfigurationHasBeenSet = true; m_fontConfiguration = std::forward<FontConfigurationT>(value); }
+    template<typename FontConfigurationT = FontConfiguration>
+    LabelOptions& WithFontConfiguration(FontConfigurationT&& value) { SetFontConfiguration(std::forward<FontConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text for the label.</p>
      */
-    inline const Aws::String& GetCustomLabel() const{ return m_customLabel; }
+    inline const Aws::String& GetCustomLabel() const { return m_customLabel; }
     inline bool CustomLabelHasBeenSet() const { return m_customLabelHasBeenSet; }
-    inline void SetCustomLabel(const Aws::String& value) { m_customLabelHasBeenSet = true; m_customLabel = value; }
-    inline void SetCustomLabel(Aws::String&& value) { m_customLabelHasBeenSet = true; m_customLabel = std::move(value); }
-    inline void SetCustomLabel(const char* value) { m_customLabelHasBeenSet = true; m_customLabel.assign(value); }
-    inline LabelOptions& WithCustomLabel(const Aws::String& value) { SetCustomLabel(value); return *this;}
-    inline LabelOptions& WithCustomLabel(Aws::String&& value) { SetCustomLabel(std::move(value)); return *this;}
-    inline LabelOptions& WithCustomLabel(const char* value) { SetCustomLabel(value); return *this;}
+    template<typename CustomLabelT = Aws::String>
+    void SetCustomLabel(CustomLabelT&& value) { m_customLabelHasBeenSet = true; m_customLabel = std::forward<CustomLabelT>(value); }
+    template<typename CustomLabelT = Aws::String>
+    LabelOptions& WithCustomLabel(CustomLabelT&& value) { SetCustomLabel(std::forward<CustomLabelT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
     FontConfiguration m_fontConfiguration;

@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-BatchDescribeTypeConfigurationsRequest::BatchDescribeTypeConfigurationsRequest() : 
-    m_typeConfigurationIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String BatchDescribeTypeConfigurationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

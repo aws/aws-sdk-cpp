@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-HyperPodPropertiesInput::HyperPodPropertiesInput() : 
-    m_clusterNameHasBeenSet(false)
-{
-}
-
 HyperPodPropertiesInput::HyperPodPropertiesInput(JsonView jsonValue)
-  : HyperPodPropertiesInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HyperPodPropertiesInput& HyperPodPropertiesInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

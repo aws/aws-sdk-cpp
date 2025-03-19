@@ -34,7 +34,7 @@ namespace Model
   class GetWebhookResult
   {
   public:
-    AWS_AMPLIFY_API GetWebhookResult();
+    AWS_AMPLIFY_API GetWebhookResult() = default;
     AWS_AMPLIFY_API GetWebhookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API GetWebhookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Describes the structure of a webhook. </p>
      */
-    inline const Webhook& GetWebhook() const{ return m_webhook; }
-    inline void SetWebhook(const Webhook& value) { m_webhook = value; }
-    inline void SetWebhook(Webhook&& value) { m_webhook = std::move(value); }
-    inline GetWebhookResult& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
-    inline GetWebhookResult& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
+    inline const Webhook& GetWebhook() const { return m_webhook; }
+    template<typename WebhookT = Webhook>
+    void SetWebhook(WebhookT&& value) { m_webhookHasBeenSet = true; m_webhook = std::forward<WebhookT>(value); }
+    template<typename WebhookT = Webhook>
+    GetWebhookResult& WithWebhook(WebhookT&& value) { SetWebhook(std::forward<WebhookT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWebhookResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWebhookResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWebhookResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWebhookResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Webhook m_webhook;
+    bool m_webhookHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

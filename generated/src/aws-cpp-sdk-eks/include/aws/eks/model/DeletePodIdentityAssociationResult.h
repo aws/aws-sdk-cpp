@@ -28,7 +28,7 @@ namespace Model
   class DeletePodIdentityAssociationResult
   {
   public:
-    AWS_EKS_API DeletePodIdentityAssociationResult();
+    AWS_EKS_API DeletePodIdentityAssociationResult() = default;
     AWS_EKS_API DeletePodIdentityAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API DeletePodIdentityAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The full description of the EKS Pod Identity association that was
      * deleted.</p>
      */
-    inline const PodIdentityAssociation& GetAssociation() const{ return m_association; }
-    inline void SetAssociation(const PodIdentityAssociation& value) { m_association = value; }
-    inline void SetAssociation(PodIdentityAssociation&& value) { m_association = std::move(value); }
-    inline DeletePodIdentityAssociationResult& WithAssociation(const PodIdentityAssociation& value) { SetAssociation(value); return *this;}
-    inline DeletePodIdentityAssociationResult& WithAssociation(PodIdentityAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    inline const PodIdentityAssociation& GetAssociation() const { return m_association; }
+    template<typename AssociationT = PodIdentityAssociation>
+    void SetAssociation(AssociationT&& value) { m_associationHasBeenSet = true; m_association = std::forward<AssociationT>(value); }
+    template<typename AssociationT = PodIdentityAssociation>
+    DeletePodIdentityAssociationResult& WithAssociation(AssociationT&& value) { SetAssociation(std::forward<AssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePodIdentityAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePodIdentityAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePodIdentityAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePodIdentityAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PodIdentityAssociation m_association;
+    bool m_associationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

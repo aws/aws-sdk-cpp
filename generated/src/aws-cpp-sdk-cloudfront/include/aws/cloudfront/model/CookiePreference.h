@@ -42,7 +42,7 @@ namespace Model
   class CookiePreference
   {
   public:
-    AWS_CLOUDFRONT_API CookiePreference();
+    AWS_CLOUDFRONT_API CookiePreference() = default;
     AWS_CLOUDFRONT_API CookiePreference(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CookiePreference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -66,12 +66,10 @@ namespace Model
      * is forwarding requests to an Amazon S3 origin, specify none for the
      * <code>Forward</code> element.</p>
      */
-    inline const ItemSelection& GetForward() const{ return m_forward; }
+    inline ItemSelection GetForward() const { return m_forward; }
     inline bool ForwardHasBeenSet() const { return m_forwardHasBeenSet; }
-    inline void SetForward(const ItemSelection& value) { m_forwardHasBeenSet = true; m_forward = value; }
-    inline void SetForward(ItemSelection&& value) { m_forwardHasBeenSet = true; m_forward = std::move(value); }
-    inline CookiePreference& WithForward(const ItemSelection& value) { SetForward(value); return *this;}
-    inline CookiePreference& WithForward(ItemSelection&& value) { SetForward(std::move(value)); return *this;}
+    inline void SetForward(ItemSelection value) { m_forwardHasBeenSet = true; m_forward = value; }
+    inline CookiePreference& WithForward(ItemSelection value) { SetForward(value); return *this;}
     ///@}
 
     ///@{
@@ -99,16 +97,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
      * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline const CookieNames& GetWhitelistedNames() const{ return m_whitelistedNames; }
+    inline const CookieNames& GetWhitelistedNames() const { return m_whitelistedNames; }
     inline bool WhitelistedNamesHasBeenSet() const { return m_whitelistedNamesHasBeenSet; }
-    inline void SetWhitelistedNames(const CookieNames& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = value; }
-    inline void SetWhitelistedNames(CookieNames&& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = std::move(value); }
-    inline CookiePreference& WithWhitelistedNames(const CookieNames& value) { SetWhitelistedNames(value); return *this;}
-    inline CookiePreference& WithWhitelistedNames(CookieNames&& value) { SetWhitelistedNames(std::move(value)); return *this;}
+    template<typename WhitelistedNamesT = CookieNames>
+    void SetWhitelistedNames(WhitelistedNamesT&& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = std::forward<WhitelistedNamesT>(value); }
+    template<typename WhitelistedNamesT = CookieNames>
+    CookiePreference& WithWhitelistedNames(WhitelistedNamesT&& value) { SetWhitelistedNames(std::forward<WhitelistedNamesT>(value)); return *this;}
     ///@}
   private:
 
-    ItemSelection m_forward;
+    ItemSelection m_forward{ItemSelection::NOT_SET};
     bool m_forwardHasBeenSet = false;
 
     CookieNames m_whitelistedNames;

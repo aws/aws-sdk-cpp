@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBotRequest::DescribeBotRequest() : 
-    m_botIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBotRequest::SerializePayload() const
 {
   return {};

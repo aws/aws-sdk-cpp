@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableSerialConsoleAccessResponse::DisableSerialConsoleAccessResponse() : 
-    m_serialConsoleAccessEnabled(false)
-{
-}
-
 DisableSerialConsoleAccessResponse::DisableSerialConsoleAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisableSerialConsoleAccessResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ DisableSerialConsoleAccessResponse& DisableSerialConsoleAccessResponse::operator
     if(!serialConsoleAccessEnabledNode.IsNull())
     {
       m_serialConsoleAccessEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serialConsoleAccessEnabledNode.GetText()).c_str()).c_str());
+      m_serialConsoleAccessEnabledHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ DisableSerialConsoleAccessResponse& DisableSerialConsoleAccessResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisableSerialConsoleAccessResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

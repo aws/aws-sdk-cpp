@@ -12,14 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubnetGroupRequest::CreateSubnetGroupRequest() : 
-    m_subnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubnetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

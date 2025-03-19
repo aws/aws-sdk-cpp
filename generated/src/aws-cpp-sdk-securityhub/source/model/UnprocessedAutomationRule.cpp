@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-UnprocessedAutomationRule::UnprocessedAutomationRule() : 
-    m_ruleArnHasBeenSet(false),
-    m_errorCode(0),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 UnprocessedAutomationRule::UnprocessedAutomationRule(JsonView jsonValue)
-  : UnprocessedAutomationRule()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UnprocessedAutomationRule& UnprocessedAutomationRule::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("RuleArn"))
   {
     m_ruleArn = jsonValue.GetString("RuleArn");
-
     m_ruleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetInteger("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

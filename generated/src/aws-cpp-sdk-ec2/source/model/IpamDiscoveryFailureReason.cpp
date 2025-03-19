@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamDiscoveryFailureReason::IpamDiscoveryFailureReason() : 
-    m_code(IpamDiscoveryFailureCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 IpamDiscoveryFailureReason::IpamDiscoveryFailureReason(const XmlNode& xmlNode)
-  : IpamDiscoveryFailureReason()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ IpamDiscoveryFailureReason& IpamDiscoveryFailureReason::operator =(const XmlNode
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = IpamDiscoveryFailureCodeMapper::GetIpamDiscoveryFailureCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = IpamDiscoveryFailureCodeMapper::GetIpamDiscoveryFailureCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-MessageResponse::MessageResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_endpointResultHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_resultHasBeenSet(false)
-{
-}
-
 MessageResponse::MessageResponse(JsonView jsonValue)
-  : MessageResponse()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ MessageResponse& MessageResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointResult"))
   {
     Aws::Map<Aws::String, JsonView> endpointResultJsonMap = jsonValue.GetObject("EndpointResult").GetAllObjects();
@@ -50,14 +39,11 @@ MessageResponse& MessageResponse::operator =(JsonView jsonValue)
     }
     m_endpointResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Result"))
   {
     Aws::Map<Aws::String, JsonView> resultJsonMap = jsonValue.GetObject("Result").GetAllObjects();
@@ -67,7 +53,6 @@ MessageResponse& MessageResponse::operator =(JsonView jsonValue)
     }
     m_resultHasBeenSet = true;
   }
-
   return *this;
 }
 

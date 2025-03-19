@@ -34,7 +34,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_FRAUDDETECTOR_API Event();
+    AWS_FRAUDDETECTOR_API Event() = default;
     AWS_FRAUDDETECTOR_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The event ID.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline Event& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline Event& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    Event& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event type.</p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline Event& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline Event& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline Event& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    Event& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The timestamp that defines when the event under evaluation occurred. The
      * timestamp must be specified using ISO 8601 standard in UTC.</p>
      */
-    inline const Aws::String& GetEventTimestamp() const{ return m_eventTimestamp; }
+    inline const Aws::String& GetEventTimestamp() const { return m_eventTimestamp; }
     inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
-    inline void SetEventTimestamp(const Aws::String& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
-    inline void SetEventTimestamp(Aws::String&& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = std::move(value); }
-    inline void SetEventTimestamp(const char* value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp.assign(value); }
-    inline Event& WithEventTimestamp(const Aws::String& value) { SetEventTimestamp(value); return *this;}
-    inline Event& WithEventTimestamp(Aws::String&& value) { SetEventTimestamp(std::move(value)); return *this;}
-    inline Event& WithEventTimestamp(const char* value) { SetEventTimestamp(value); return *this;}
+    template<typename EventTimestampT = Aws::String>
+    void SetEventTimestamp(EventTimestampT&& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = std::forward<EventTimestampT>(value); }
+    template<typename EventTimestampT = Aws::String>
+    Event& WithEventTimestamp(EventTimestampT&& value) { SetEventTimestamp(std::forward<EventTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,33 +83,28 @@ namespace Model
      * represent data elements and their corresponding values for the event you are
      * sending for evaluation.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEventVariables() const{ return m_eventVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEventVariables() const { return m_eventVariables; }
     inline bool EventVariablesHasBeenSet() const { return m_eventVariablesHasBeenSet; }
-    inline void SetEventVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_eventVariablesHasBeenSet = true; m_eventVariables = value; }
-    inline void SetEventVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables = std::move(value); }
-    inline Event& WithEventVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEventVariables(value); return *this;}
-    inline Event& WithEventVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEventVariables(std::move(value)); return *this;}
-    inline Event& AddEventVariables(const Aws::String& key, const Aws::String& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, value); return *this; }
-    inline Event& AddEventVariables(Aws::String&& key, const Aws::String& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::move(key), value); return *this; }
-    inline Event& AddEventVariables(const Aws::String& key, Aws::String&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, std::move(value)); return *this; }
-    inline Event& AddEventVariables(Aws::String&& key, Aws::String&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline Event& AddEventVariables(const char* key, Aws::String&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, std::move(value)); return *this; }
-    inline Event& AddEventVariables(Aws::String&& key, const char* value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::move(key), value); return *this; }
-    inline Event& AddEventVariables(const char* key, const char* value) { m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(key, value); return *this; }
+    template<typename EventVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetEventVariables(EventVariablesT&& value) { m_eventVariablesHasBeenSet = true; m_eventVariables = std::forward<EventVariablesT>(value); }
+    template<typename EventVariablesT = Aws::Map<Aws::String, Aws::String>>
+    Event& WithEventVariables(EventVariablesT&& value) { SetEventVariables(std::forward<EventVariablesT>(value)); return *this;}
+    template<typename EventVariablesKeyT = Aws::String, typename EventVariablesValueT = Aws::String>
+    Event& AddEventVariables(EventVariablesKeyT&& key, EventVariablesValueT&& value) {
+      m_eventVariablesHasBeenSet = true; m_eventVariables.emplace(std::forward<EventVariablesKeyT>(key), std::forward<EventVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The label associated with the event.</p>
      */
-    inline const Aws::String& GetCurrentLabel() const{ return m_currentLabel; }
+    inline const Aws::String& GetCurrentLabel() const { return m_currentLabel; }
     inline bool CurrentLabelHasBeenSet() const { return m_currentLabelHasBeenSet; }
-    inline void SetCurrentLabel(const Aws::String& value) { m_currentLabelHasBeenSet = true; m_currentLabel = value; }
-    inline void SetCurrentLabel(Aws::String&& value) { m_currentLabelHasBeenSet = true; m_currentLabel = std::move(value); }
-    inline void SetCurrentLabel(const char* value) { m_currentLabelHasBeenSet = true; m_currentLabel.assign(value); }
-    inline Event& WithCurrentLabel(const Aws::String& value) { SetCurrentLabel(value); return *this;}
-    inline Event& WithCurrentLabel(Aws::String&& value) { SetCurrentLabel(std::move(value)); return *this;}
-    inline Event& WithCurrentLabel(const char* value) { SetCurrentLabel(value); return *this;}
+    template<typename CurrentLabelT = Aws::String>
+    void SetCurrentLabel(CurrentLabelT&& value) { m_currentLabelHasBeenSet = true; m_currentLabel = std::forward<CurrentLabelT>(value); }
+    template<typename CurrentLabelT = Aws::String>
+    Event& WithCurrentLabel(CurrentLabelT&& value) { SetCurrentLabel(std::forward<CurrentLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,28 +112,26 @@ namespace Model
      * <p>The timestamp associated with the label to update. The timestamp must be
      * specified using ISO 8601 standard in UTC.</p>
      */
-    inline const Aws::String& GetLabelTimestamp() const{ return m_labelTimestamp; }
+    inline const Aws::String& GetLabelTimestamp() const { return m_labelTimestamp; }
     inline bool LabelTimestampHasBeenSet() const { return m_labelTimestampHasBeenSet; }
-    inline void SetLabelTimestamp(const Aws::String& value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp = value; }
-    inline void SetLabelTimestamp(Aws::String&& value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp = std::move(value); }
-    inline void SetLabelTimestamp(const char* value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp.assign(value); }
-    inline Event& WithLabelTimestamp(const Aws::String& value) { SetLabelTimestamp(value); return *this;}
-    inline Event& WithLabelTimestamp(Aws::String&& value) { SetLabelTimestamp(std::move(value)); return *this;}
-    inline Event& WithLabelTimestamp(const char* value) { SetLabelTimestamp(value); return *this;}
+    template<typename LabelTimestampT = Aws::String>
+    void SetLabelTimestamp(LabelTimestampT&& value) { m_labelTimestampHasBeenSet = true; m_labelTimestamp = std::forward<LabelTimestampT>(value); }
+    template<typename LabelTimestampT = Aws::String>
+    Event& WithLabelTimestamp(LabelTimestampT&& value) { SetLabelTimestamp(std::forward<LabelTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event entities.</p>
      */
-    inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
+    inline const Aws::Vector<Entity>& GetEntities() const { return m_entities; }
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
-    inline void SetEntities(const Aws::Vector<Entity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
-    inline void SetEntities(Aws::Vector<Entity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
-    inline Event& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
-    inline Event& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline Event& AddEntities(const Entity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
-    inline Event& AddEntities(Entity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    Event& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = Entity>
+    Event& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-AreaOfInterest::AreaOfInterest() : 
-    m_areaOfInterestGeometryHasBeenSet(false)
-{
-}
-
 AreaOfInterest::AreaOfInterest(JsonView jsonValue)
-  : AreaOfInterest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AreaOfInterest& AreaOfInterest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AreaOfInterestGeometry"))
   {
     m_areaOfInterestGeometry = jsonValue.GetObject("AreaOfInterestGeometry");
-
     m_areaOfInterestGeometryHasBeenSet = true;
   }
-
   return *this;
 }
 

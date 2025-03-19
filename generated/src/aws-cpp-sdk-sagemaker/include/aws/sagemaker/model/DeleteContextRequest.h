@@ -21,7 +21,7 @@ namespace Model
   class DeleteContextRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteContextRequest();
+    AWS_SAGEMAKER_API DeleteContextRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the context to delete.</p>
      */
-    inline const Aws::String& GetContextName() const{ return m_contextName; }
+    inline const Aws::String& GetContextName() const { return m_contextName; }
     inline bool ContextNameHasBeenSet() const { return m_contextNameHasBeenSet; }
-    inline void SetContextName(const Aws::String& value) { m_contextNameHasBeenSet = true; m_contextName = value; }
-    inline void SetContextName(Aws::String&& value) { m_contextNameHasBeenSet = true; m_contextName = std::move(value); }
-    inline void SetContextName(const char* value) { m_contextNameHasBeenSet = true; m_contextName.assign(value); }
-    inline DeleteContextRequest& WithContextName(const Aws::String& value) { SetContextName(value); return *this;}
-    inline DeleteContextRequest& WithContextName(Aws::String&& value) { SetContextName(std::move(value)); return *this;}
-    inline DeleteContextRequest& WithContextName(const char* value) { SetContextName(value); return *this;}
+    template<typename ContextNameT = Aws::String>
+    void SetContextName(ContextNameT&& value) { m_contextNameHasBeenSet = true; m_contextName = std::forward<ContextNameT>(value); }
+    template<typename ContextNameT = Aws::String>
+    DeleteContextRequest& WithContextName(ContextNameT&& value) { SetContextName(std::forward<ContextNameT>(value)); return *this;}
     ///@}
   private:
 

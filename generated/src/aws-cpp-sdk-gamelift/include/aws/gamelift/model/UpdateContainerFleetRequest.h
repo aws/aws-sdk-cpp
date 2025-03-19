@@ -29,7 +29,7 @@ namespace Model
   class UpdateContainerFleetRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API UpdateContainerFleetRequest();
+    AWS_GAMELIFT_API UpdateContainerFleetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <p>A unique identifier for the container fleet to update. You can use either the
      * fleet ID or ARN value.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline UpdateContainerFleetRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline UpdateContainerFleetRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    UpdateContainerFleetRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
      * resource with an incremented version. </p>
      */
-    inline const Aws::String& GetGameServerContainerGroupDefinitionName() const{ return m_gameServerContainerGroupDefinitionName; }
+    inline const Aws::String& GetGameServerContainerGroupDefinitionName() const { return m_gameServerContainerGroupDefinitionName; }
     inline bool GameServerContainerGroupDefinitionNameHasBeenSet() const { return m_gameServerContainerGroupDefinitionNameHasBeenSet; }
-    inline void SetGameServerContainerGroupDefinitionName(const Aws::String& value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName = value; }
-    inline void SetGameServerContainerGroupDefinitionName(Aws::String&& value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName = std::move(value); }
-    inline void SetGameServerContainerGroupDefinitionName(const char* value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName.assign(value); }
-    inline UpdateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(const Aws::String& value) { SetGameServerContainerGroupDefinitionName(value); return *this;}
-    inline UpdateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(Aws::String&& value) { SetGameServerContainerGroupDefinitionName(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(const char* value) { SetGameServerContainerGroupDefinitionName(value); return *this;}
+    template<typename GameServerContainerGroupDefinitionNameT = Aws::String>
+    void SetGameServerContainerGroupDefinitionName(GameServerContainerGroupDefinitionNameT&& value) { m_gameServerContainerGroupDefinitionNameHasBeenSet = true; m_gameServerContainerGroupDefinitionName = std::forward<GameServerContainerGroupDefinitionNameT>(value); }
+    template<typename GameServerContainerGroupDefinitionNameT = Aws::String>
+    UpdateContainerFleetRequest& WithGameServerContainerGroupDefinitionName(GameServerContainerGroupDefinitionNameT&& value) { SetGameServerContainerGroupDefinitionName(std::forward<GameServerContainerGroupDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * container group definition, leave this parameter empty and use the parameter
      * <code>RemoveAttributes</code>.</p>
      */
-    inline const Aws::String& GetPerInstanceContainerGroupDefinitionName() const{ return m_perInstanceContainerGroupDefinitionName; }
+    inline const Aws::String& GetPerInstanceContainerGroupDefinitionName() const { return m_perInstanceContainerGroupDefinitionName; }
     inline bool PerInstanceContainerGroupDefinitionNameHasBeenSet() const { return m_perInstanceContainerGroupDefinitionNameHasBeenSet; }
-    inline void SetPerInstanceContainerGroupDefinitionName(const Aws::String& value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName = value; }
-    inline void SetPerInstanceContainerGroupDefinitionName(Aws::String&& value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName = std::move(value); }
-    inline void SetPerInstanceContainerGroupDefinitionName(const char* value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName.assign(value); }
-    inline UpdateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(const Aws::String& value) { SetPerInstanceContainerGroupDefinitionName(value); return *this;}
-    inline UpdateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(Aws::String&& value) { SetPerInstanceContainerGroupDefinitionName(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(const char* value) { SetPerInstanceContainerGroupDefinitionName(value); return *this;}
+    template<typename PerInstanceContainerGroupDefinitionNameT = Aws::String>
+    void SetPerInstanceContainerGroupDefinitionName(PerInstanceContainerGroupDefinitionNameT&& value) { m_perInstanceContainerGroupDefinitionNameHasBeenSet = true; m_perInstanceContainerGroupDefinitionName = std::forward<PerInstanceContainerGroupDefinitionNameT>(value); }
+    template<typename PerInstanceContainerGroupDefinitionNameT = Aws::String>
+    UpdateContainerFleetRequest& WithPerInstanceContainerGroupDefinitionName(PerInstanceContainerGroupDefinitionNameT&& value) { SetPerInstanceContainerGroupDefinitionName(std::forward<PerInstanceContainerGroupDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +109,7 @@ namespace Model
      * number manually, Amazon GameLift uses your value as long as it's less than the
      * calculated maximum.</p>
      */
-    inline int GetGameServerContainerGroupsPerInstance() const{ return m_gameServerContainerGroupsPerInstance; }
+    inline int GetGameServerContainerGroupsPerInstance() const { return m_gameServerContainerGroupsPerInstance; }
     inline bool GameServerContainerGroupsPerInstanceHasBeenSet() const { return m_gameServerContainerGroupsPerInstanceHasBeenSet; }
     inline void SetGameServerContainerGroupsPerInstance(int value) { m_gameServerContainerGroupsPerInstanceHasBeenSet = true; m_gameServerContainerGroupsPerInstance = value; }
     inline UpdateContainerFleetRequest& WithGameServerContainerGroupsPerInstance(int value) { SetGameServerContainerGroupsPerInstance(value); return *this;}
@@ -128,40 +122,40 @@ namespace Model
      * configuration. If you previously set this parameter manually, you can't reset
      * this to use the calculated settings.</p>
      */
-    inline const ConnectionPortRange& GetInstanceConnectionPortRange() const{ return m_instanceConnectionPortRange; }
+    inline const ConnectionPortRange& GetInstanceConnectionPortRange() const { return m_instanceConnectionPortRange; }
     inline bool InstanceConnectionPortRangeHasBeenSet() const { return m_instanceConnectionPortRangeHasBeenSet; }
-    inline void SetInstanceConnectionPortRange(const ConnectionPortRange& value) { m_instanceConnectionPortRangeHasBeenSet = true; m_instanceConnectionPortRange = value; }
-    inline void SetInstanceConnectionPortRange(ConnectionPortRange&& value) { m_instanceConnectionPortRangeHasBeenSet = true; m_instanceConnectionPortRange = std::move(value); }
-    inline UpdateContainerFleetRequest& WithInstanceConnectionPortRange(const ConnectionPortRange& value) { SetInstanceConnectionPortRange(value); return *this;}
-    inline UpdateContainerFleetRequest& WithInstanceConnectionPortRange(ConnectionPortRange&& value) { SetInstanceConnectionPortRange(std::move(value)); return *this;}
+    template<typename InstanceConnectionPortRangeT = ConnectionPortRange>
+    void SetInstanceConnectionPortRange(InstanceConnectionPortRangeT&& value) { m_instanceConnectionPortRangeHasBeenSet = true; m_instanceConnectionPortRange = std::forward<InstanceConnectionPortRangeT>(value); }
+    template<typename InstanceConnectionPortRangeT = ConnectionPortRange>
+    UpdateContainerFleetRequest& WithInstanceConnectionPortRange(InstanceConnectionPortRangeT&& value) { SetInstanceConnectionPortRange(std::forward<InstanceConnectionPortRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A set of ports to add to the container fleet's inbound permissions.</p>
      */
-    inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissionAuthorizations() const{ return m_instanceInboundPermissionAuthorizations; }
+    inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissionAuthorizations() const { return m_instanceInboundPermissionAuthorizations; }
     inline bool InstanceInboundPermissionAuthorizationsHasBeenSet() const { return m_instanceInboundPermissionAuthorizationsHasBeenSet; }
-    inline void SetInstanceInboundPermissionAuthorizations(const Aws::Vector<IpPermission>& value) { m_instanceInboundPermissionAuthorizationsHasBeenSet = true; m_instanceInboundPermissionAuthorizations = value; }
-    inline void SetInstanceInboundPermissionAuthorizations(Aws::Vector<IpPermission>&& value) { m_instanceInboundPermissionAuthorizationsHasBeenSet = true; m_instanceInboundPermissionAuthorizations = std::move(value); }
-    inline UpdateContainerFleetRequest& WithInstanceInboundPermissionAuthorizations(const Aws::Vector<IpPermission>& value) { SetInstanceInboundPermissionAuthorizations(value); return *this;}
-    inline UpdateContainerFleetRequest& WithInstanceInboundPermissionAuthorizations(Aws::Vector<IpPermission>&& value) { SetInstanceInboundPermissionAuthorizations(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& AddInstanceInboundPermissionAuthorizations(const IpPermission& value) { m_instanceInboundPermissionAuthorizationsHasBeenSet = true; m_instanceInboundPermissionAuthorizations.push_back(value); return *this; }
-    inline UpdateContainerFleetRequest& AddInstanceInboundPermissionAuthorizations(IpPermission&& value) { m_instanceInboundPermissionAuthorizationsHasBeenSet = true; m_instanceInboundPermissionAuthorizations.push_back(std::move(value)); return *this; }
+    template<typename InstanceInboundPermissionAuthorizationsT = Aws::Vector<IpPermission>>
+    void SetInstanceInboundPermissionAuthorizations(InstanceInboundPermissionAuthorizationsT&& value) { m_instanceInboundPermissionAuthorizationsHasBeenSet = true; m_instanceInboundPermissionAuthorizations = std::forward<InstanceInboundPermissionAuthorizationsT>(value); }
+    template<typename InstanceInboundPermissionAuthorizationsT = Aws::Vector<IpPermission>>
+    UpdateContainerFleetRequest& WithInstanceInboundPermissionAuthorizations(InstanceInboundPermissionAuthorizationsT&& value) { SetInstanceInboundPermissionAuthorizations(std::forward<InstanceInboundPermissionAuthorizationsT>(value)); return *this;}
+    template<typename InstanceInboundPermissionAuthorizationsT = IpPermission>
+    UpdateContainerFleetRequest& AddInstanceInboundPermissionAuthorizations(InstanceInboundPermissionAuthorizationsT&& value) { m_instanceInboundPermissionAuthorizationsHasBeenSet = true; m_instanceInboundPermissionAuthorizations.emplace_back(std::forward<InstanceInboundPermissionAuthorizationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A set of ports to remove from the container fleet's inbound permissions.</p>
      */
-    inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissionRevocations() const{ return m_instanceInboundPermissionRevocations; }
+    inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissionRevocations() const { return m_instanceInboundPermissionRevocations; }
     inline bool InstanceInboundPermissionRevocationsHasBeenSet() const { return m_instanceInboundPermissionRevocationsHasBeenSet; }
-    inline void SetInstanceInboundPermissionRevocations(const Aws::Vector<IpPermission>& value) { m_instanceInboundPermissionRevocationsHasBeenSet = true; m_instanceInboundPermissionRevocations = value; }
-    inline void SetInstanceInboundPermissionRevocations(Aws::Vector<IpPermission>&& value) { m_instanceInboundPermissionRevocationsHasBeenSet = true; m_instanceInboundPermissionRevocations = std::move(value); }
-    inline UpdateContainerFleetRequest& WithInstanceInboundPermissionRevocations(const Aws::Vector<IpPermission>& value) { SetInstanceInboundPermissionRevocations(value); return *this;}
-    inline UpdateContainerFleetRequest& WithInstanceInboundPermissionRevocations(Aws::Vector<IpPermission>&& value) { SetInstanceInboundPermissionRevocations(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& AddInstanceInboundPermissionRevocations(const IpPermission& value) { m_instanceInboundPermissionRevocationsHasBeenSet = true; m_instanceInboundPermissionRevocations.push_back(value); return *this; }
-    inline UpdateContainerFleetRequest& AddInstanceInboundPermissionRevocations(IpPermission&& value) { m_instanceInboundPermissionRevocationsHasBeenSet = true; m_instanceInboundPermissionRevocations.push_back(std::move(value)); return *this; }
+    template<typename InstanceInboundPermissionRevocationsT = Aws::Vector<IpPermission>>
+    void SetInstanceInboundPermissionRevocations(InstanceInboundPermissionRevocationsT&& value) { m_instanceInboundPermissionRevocationsHasBeenSet = true; m_instanceInboundPermissionRevocations = std::forward<InstanceInboundPermissionRevocationsT>(value); }
+    template<typename InstanceInboundPermissionRevocationsT = Aws::Vector<IpPermission>>
+    UpdateContainerFleetRequest& WithInstanceInboundPermissionRevocations(InstanceInboundPermissionRevocationsT&& value) { SetInstanceInboundPermissionRevocations(std::forward<InstanceInboundPermissionRevocationsT>(value)); return *this;}
+    template<typename InstanceInboundPermissionRevocationsT = IpPermission>
+    UpdateContainerFleetRequest& AddInstanceInboundPermissionRevocations(InstanceInboundPermissionRevocationsT&& value) { m_instanceInboundPermissionRevocationsHasBeenSet = true; m_instanceInboundPermissionRevocations.emplace_back(std::forward<InstanceInboundPermissionRevocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -171,26 +165,24 @@ namespace Model
      * how to replace fleet instances and what actions to take if the deployment
      * fails.</p>
      */
-    inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+    inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
-    inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
-    inline void SetDeploymentConfiguration(DeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
-    inline UpdateContainerFleetRequest& WithDeploymentConfiguration(const DeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
-    inline UpdateContainerFleetRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+    template<typename DeploymentConfigurationT = DeploymentConfiguration>
+    void SetDeploymentConfiguration(DeploymentConfigurationT&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::forward<DeploymentConfigurationT>(value); }
+    template<typename DeploymentConfigurationT = DeploymentConfiguration>
+    UpdateContainerFleetRequest& WithDeploymentConfiguration(DeploymentConfigurationT&& value) { SetDeploymentConfiguration(std::forward<DeploymentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A meaningful description of the container fleet.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateContainerFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateContainerFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateContainerFleetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,15 +190,14 @@ namespace Model
      * <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet
      * to. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+    inline const Aws::Vector<Aws::String>& GetMetricGroups() const { return m_metricGroups; }
     inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
-    inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
-    inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
-    inline UpdateContainerFleetRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
-    inline UpdateContainerFleetRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
-    inline UpdateContainerFleetRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
-    inline UpdateContainerFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
+    template<typename MetricGroupsT = Aws::Vector<Aws::String>>
+    void SetMetricGroups(MetricGroupsT&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::forward<MetricGroupsT>(value); }
+    template<typename MetricGroupsT = Aws::Vector<Aws::String>>
+    UpdateContainerFleetRequest& WithMetricGroups(MetricGroupsT&& value) { SetMetricGroups(std::forward<MetricGroupsT>(value)); return *this;}
+    template<typename MetricGroupsT = Aws::String>
+    UpdateContainerFleetRequest& AddMetricGroups(MetricGroupsT&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.emplace_back(std::forward<MetricGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -214,12 +205,10 @@ namespace Model
      * <p>The game session protection policy to apply to all new game sessions that are
      * started in this fleet. Game sessions that already exist are not affected. </p>
      */
-    inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+    inline ProtectionPolicy GetNewGameSessionProtectionPolicy() const { return m_newGameSessionProtectionPolicy; }
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
-    inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
-    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
-    inline UpdateContainerFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
-    inline UpdateContainerFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+    inline UpdateContainerFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy value) { SetNewGameSessionProtectionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -228,24 +217,24 @@ namespace Model
      * can create on instances in this fleet. The limit applies for a specified span of
      * time.</p>
      */
-    inline const GameSessionCreationLimitPolicy& GetGameSessionCreationLimitPolicy() const{ return m_gameSessionCreationLimitPolicy; }
+    inline const GameSessionCreationLimitPolicy& GetGameSessionCreationLimitPolicy() const { return m_gameSessionCreationLimitPolicy; }
     inline bool GameSessionCreationLimitPolicyHasBeenSet() const { return m_gameSessionCreationLimitPolicyHasBeenSet; }
-    inline void SetGameSessionCreationLimitPolicy(const GameSessionCreationLimitPolicy& value) { m_gameSessionCreationLimitPolicyHasBeenSet = true; m_gameSessionCreationLimitPolicy = value; }
-    inline void SetGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicy&& value) { m_gameSessionCreationLimitPolicyHasBeenSet = true; m_gameSessionCreationLimitPolicy = std::move(value); }
-    inline UpdateContainerFleetRequest& WithGameSessionCreationLimitPolicy(const GameSessionCreationLimitPolicy& value) { SetGameSessionCreationLimitPolicy(value); return *this;}
-    inline UpdateContainerFleetRequest& WithGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicy&& value) { SetGameSessionCreationLimitPolicy(std::move(value)); return *this;}
+    template<typename GameSessionCreationLimitPolicyT = GameSessionCreationLimitPolicy>
+    void SetGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicyT&& value) { m_gameSessionCreationLimitPolicyHasBeenSet = true; m_gameSessionCreationLimitPolicy = std::forward<GameSessionCreationLimitPolicyT>(value); }
+    template<typename GameSessionCreationLimitPolicyT = GameSessionCreationLimitPolicy>
+    UpdateContainerFleetRequest& WithGameSessionCreationLimitPolicy(GameSessionCreationLimitPolicyT&& value) { SetGameSessionCreationLimitPolicy(std::forward<GameSessionCreationLimitPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The method for collecting container logs for the fleet. </p>
      */
-    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline UpdateContainerFleetRequest& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline UpdateContainerFleetRequest& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LogConfiguration>
+    UpdateContainerFleetRequest& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,14 +243,13 @@ namespace Model
      * definition. You can't remove a fleet's game server container group
      * definition.</p>
      */
-    inline const Aws::Vector<ContainerFleetRemoveAttribute>& GetRemoveAttributes() const{ return m_removeAttributes; }
+    inline const Aws::Vector<ContainerFleetRemoveAttribute>& GetRemoveAttributes() const { return m_removeAttributes; }
     inline bool RemoveAttributesHasBeenSet() const { return m_removeAttributesHasBeenSet; }
-    inline void SetRemoveAttributes(const Aws::Vector<ContainerFleetRemoveAttribute>& value) { m_removeAttributesHasBeenSet = true; m_removeAttributes = value; }
-    inline void SetRemoveAttributes(Aws::Vector<ContainerFleetRemoveAttribute>&& value) { m_removeAttributesHasBeenSet = true; m_removeAttributes = std::move(value); }
-    inline UpdateContainerFleetRequest& WithRemoveAttributes(const Aws::Vector<ContainerFleetRemoveAttribute>& value) { SetRemoveAttributes(value); return *this;}
-    inline UpdateContainerFleetRequest& WithRemoveAttributes(Aws::Vector<ContainerFleetRemoveAttribute>&& value) { SetRemoveAttributes(std::move(value)); return *this;}
-    inline UpdateContainerFleetRequest& AddRemoveAttributes(const ContainerFleetRemoveAttribute& value) { m_removeAttributesHasBeenSet = true; m_removeAttributes.push_back(value); return *this; }
-    inline UpdateContainerFleetRequest& AddRemoveAttributes(ContainerFleetRemoveAttribute&& value) { m_removeAttributesHasBeenSet = true; m_removeAttributes.push_back(std::move(value)); return *this; }
+    template<typename RemoveAttributesT = Aws::Vector<ContainerFleetRemoveAttribute>>
+    void SetRemoveAttributes(RemoveAttributesT&& value) { m_removeAttributesHasBeenSet = true; m_removeAttributes = std::forward<RemoveAttributesT>(value); }
+    template<typename RemoveAttributesT = Aws::Vector<ContainerFleetRemoveAttribute>>
+    UpdateContainerFleetRequest& WithRemoveAttributes(RemoveAttributesT&& value) { SetRemoveAttributes(std::forward<RemoveAttributesT>(value)); return *this;}
+    inline UpdateContainerFleetRequest& AddRemoveAttributes(ContainerFleetRemoveAttribute value) { m_removeAttributesHasBeenSet = true; m_removeAttributes.push_back(value); return *this; }
     ///@}
   private:
 
@@ -274,7 +262,7 @@ namespace Model
     Aws::String m_perInstanceContainerGroupDefinitionName;
     bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
 
-    int m_gameServerContainerGroupsPerInstance;
+    int m_gameServerContainerGroupsPerInstance{0};
     bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
 
     ConnectionPortRange m_instanceConnectionPortRange;
@@ -295,7 +283,7 @@ namespace Model
     Aws::Vector<Aws::String> m_metricGroups;
     bool m_metricGroupsHasBeenSet = false;
 
-    ProtectionPolicy m_newGameSessionProtectionPolicy;
+    ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
     bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
     GameSessionCreationLimitPolicy m_gameSessionCreationLimitPolicy;

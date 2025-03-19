@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Entity::Entity() : 
-    m_entityNameHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_isParentEntity(false),
-    m_isParentEntityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
-{
-}
-
 Entity::Entity(JsonView jsonValue)
-  : Entity()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Entity& Entity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntityName"))
   {
     m_entityName = jsonValue.GetString("EntityName");
-
     m_entityNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsParentEntity"))
   {
     m_isParentEntity = jsonValue.GetBool("IsParentEntity");
-
     m_isParentEntityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("CustomProperties").GetAllObjects();
@@ -81,7 +59,6 @@ Entity& Entity::operator =(JsonView jsonValue)
     }
     m_customPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -41,7 +41,7 @@ namespace Model
   class RowLevelPermissionDataSet
   {
   public:
-    AWS_QUICKSIGHT_API RowLevelPermissionDataSet();
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet() = default;
     AWS_QUICKSIGHT_API RowLevelPermissionDataSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RowLevelPermissionDataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <p>The namespace associated with the dataset that contains permissions for
      * RLS.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline RowLevelPermissionDataSet& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline RowLevelPermissionDataSet& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline RowLevelPermissionDataSet& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    RowLevelPermissionDataSet& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for
      * RLS.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RowLevelPermissionDataSet& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RowLevelPermissionDataSet& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RowLevelPermissionDataSet& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RowLevelPermissionDataSet& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * <p>The type of permissions to use when interpreting the permissions for RLS.
      * <code>DENY_ACCESS</code> is included for backward compatibility only.</p>
      */
-    inline const RowLevelPermissionPolicy& GetPermissionPolicy() const{ return m_permissionPolicy; }
+    inline RowLevelPermissionPolicy GetPermissionPolicy() const { return m_permissionPolicy; }
     inline bool PermissionPolicyHasBeenSet() const { return m_permissionPolicyHasBeenSet; }
-    inline void SetPermissionPolicy(const RowLevelPermissionPolicy& value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = value; }
-    inline void SetPermissionPolicy(RowLevelPermissionPolicy&& value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = std::move(value); }
-    inline RowLevelPermissionDataSet& WithPermissionPolicy(const RowLevelPermissionPolicy& value) { SetPermissionPolicy(value); return *this;}
-    inline RowLevelPermissionDataSet& WithPermissionPolicy(RowLevelPermissionPolicy&& value) { SetPermissionPolicy(std::move(value)); return *this;}
+    inline void SetPermissionPolicy(RowLevelPermissionPolicy value) { m_permissionPolicyHasBeenSet = true; m_permissionPolicy = value; }
+    inline RowLevelPermissionDataSet& WithPermissionPolicy(RowLevelPermissionPolicy value) { SetPermissionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +94,10 @@ namespace Model
      * <code>UserARN</code> and <code>GroupARN</code> are required, and
      * <code>Namespace</code> must not exist.</p>
      */
-    inline const RowLevelPermissionFormatVersion& GetFormatVersion() const{ return m_formatVersion; }
+    inline RowLevelPermissionFormatVersion GetFormatVersion() const { return m_formatVersion; }
     inline bool FormatVersionHasBeenSet() const { return m_formatVersionHasBeenSet; }
-    inline void SetFormatVersion(const RowLevelPermissionFormatVersion& value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
-    inline void SetFormatVersion(RowLevelPermissionFormatVersion&& value) { m_formatVersionHasBeenSet = true; m_formatVersion = std::move(value); }
-    inline RowLevelPermissionDataSet& WithFormatVersion(const RowLevelPermissionFormatVersion& value) { SetFormatVersion(value); return *this;}
-    inline RowLevelPermissionDataSet& WithFormatVersion(RowLevelPermissionFormatVersion&& value) { SetFormatVersion(std::move(value)); return *this;}
+    inline void SetFormatVersion(RowLevelPermissionFormatVersion value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
+    inline RowLevelPermissionDataSet& WithFormatVersion(RowLevelPermissionFormatVersion value) { SetFormatVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +106,10 @@ namespace Model
      * status is <code>ENABLED</code>. If disabled, the status is
      * <code>DISABLED</code>.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RowLevelPermissionDataSet& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline RowLevelPermissionDataSet& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RowLevelPermissionDataSet& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -129,13 +119,13 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    RowLevelPermissionPolicy m_permissionPolicy;
+    RowLevelPermissionPolicy m_permissionPolicy{RowLevelPermissionPolicy::NOT_SET};
     bool m_permissionPolicyHasBeenSet = false;
 
-    RowLevelPermissionFormatVersion m_formatVersion;
+    RowLevelPermissionFormatVersion m_formatVersion{RowLevelPermissionFormatVersion::NOT_SET};
     bool m_formatVersionHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

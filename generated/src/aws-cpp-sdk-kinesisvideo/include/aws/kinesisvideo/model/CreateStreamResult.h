@@ -27,7 +27,7 @@ namespace Model
   class CreateStreamResult
   {
   public:
-    AWS_KINESISVIDEO_API CreateStreamResult();
+    AWS_KINESISVIDEO_API CreateStreamResult() = default;
     AWS_KINESISVIDEO_API CreateStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEO_API CreateStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
-    inline CreateStreamResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline CreateStreamResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline CreateStreamResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    CreateStreamResult& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamARN;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

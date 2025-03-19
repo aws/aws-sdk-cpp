@@ -12,21 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdentityPoolRequest::CreateIdentityPoolRequest() : 
-    m_identityPoolNameHasBeenSet(false),
-    m_allowUnauthenticatedIdentities(false),
-    m_allowUnauthenticatedIdentitiesHasBeenSet(false),
-    m_allowClassicFlow(false),
-    m_allowClassicFlowHasBeenSet(false),
-    m_supportedLoginProvidersHasBeenSet(false),
-    m_developerProviderNameHasBeenSet(false),
-    m_openIdConnectProviderARNsHasBeenSet(false),
-    m_cognitoIdentityProvidersHasBeenSet(false),
-    m_samlProviderARNsHasBeenSet(false),
-    m_identityPoolTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdentityPoolRequest::SerializePayload() const
 {
   JsonValue payload;

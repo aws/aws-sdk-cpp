@@ -33,7 +33,7 @@ namespace Model
   class LineItemGroup
   {
   public:
-    AWS_TEXTRACT_API LineItemGroup();
+    AWS_TEXTRACT_API LineItemGroup() = default;
     AWS_TEXTRACT_API LineItemGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API LineItemGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The number used to identify a specific table in a document. The first table
      * encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
      */
-    inline int GetLineItemGroupIndex() const{ return m_lineItemGroupIndex; }
+    inline int GetLineItemGroupIndex() const { return m_lineItemGroupIndex; }
     inline bool LineItemGroupIndexHasBeenSet() const { return m_lineItemGroupIndexHasBeenSet; }
     inline void SetLineItemGroupIndex(int value) { m_lineItemGroupIndexHasBeenSet = true; m_lineItemGroupIndex = value; }
     inline LineItemGroup& WithLineItemGroupIndex(int value) { SetLineItemGroupIndex(value); return *this;}
@@ -54,18 +54,18 @@ namespace Model
     /**
      * <p>The breakdown of information on a particular line of a table. </p>
      */
-    inline const Aws::Vector<LineItemFields>& GetLineItems() const{ return m_lineItems; }
+    inline const Aws::Vector<LineItemFields>& GetLineItems() const { return m_lineItems; }
     inline bool LineItemsHasBeenSet() const { return m_lineItemsHasBeenSet; }
-    inline void SetLineItems(const Aws::Vector<LineItemFields>& value) { m_lineItemsHasBeenSet = true; m_lineItems = value; }
-    inline void SetLineItems(Aws::Vector<LineItemFields>&& value) { m_lineItemsHasBeenSet = true; m_lineItems = std::move(value); }
-    inline LineItemGroup& WithLineItems(const Aws::Vector<LineItemFields>& value) { SetLineItems(value); return *this;}
-    inline LineItemGroup& WithLineItems(Aws::Vector<LineItemFields>&& value) { SetLineItems(std::move(value)); return *this;}
-    inline LineItemGroup& AddLineItems(const LineItemFields& value) { m_lineItemsHasBeenSet = true; m_lineItems.push_back(value); return *this; }
-    inline LineItemGroup& AddLineItems(LineItemFields&& value) { m_lineItemsHasBeenSet = true; m_lineItems.push_back(std::move(value)); return *this; }
+    template<typename LineItemsT = Aws::Vector<LineItemFields>>
+    void SetLineItems(LineItemsT&& value) { m_lineItemsHasBeenSet = true; m_lineItems = std::forward<LineItemsT>(value); }
+    template<typename LineItemsT = Aws::Vector<LineItemFields>>
+    LineItemGroup& WithLineItems(LineItemsT&& value) { SetLineItems(std::forward<LineItemsT>(value)); return *this;}
+    template<typename LineItemsT = LineItemFields>
+    LineItemGroup& AddLineItems(LineItemsT&& value) { m_lineItemsHasBeenSet = true; m_lineItems.emplace_back(std::forward<LineItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_lineItemGroupIndex;
+    int m_lineItemGroupIndex{0};
     bool m_lineItemGroupIndexHasBeenSet = false;
 
     Aws::Vector<LineItemFields> m_lineItems;

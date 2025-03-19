@@ -18,18 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-KubernetesMetadata::KubernetesMetadata() : 
-    m_localServiceNameHasBeenSet(false),
-    m_localPodNameHasBeenSet(false),
-    m_localPodNamespaceHasBeenSet(false),
-    m_remoteServiceNameHasBeenSet(false),
-    m_remotePodNameHasBeenSet(false),
-    m_remotePodNamespaceHasBeenSet(false)
-{
-}
-
 KubernetesMetadata::KubernetesMetadata(JsonView jsonValue)
-  : KubernetesMetadata()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ KubernetesMetadata& KubernetesMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("localServiceName"))
   {
     m_localServiceName = jsonValue.GetString("localServiceName");
-
     m_localServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localPodName"))
   {
     m_localPodName = jsonValue.GetString("localPodName");
-
     m_localPodNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localPodNamespace"))
   {
     m_localPodNamespace = jsonValue.GetString("localPodNamespace");
-
     m_localPodNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteServiceName"))
   {
     m_remoteServiceName = jsonValue.GetString("remoteServiceName");
-
     m_remoteServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remotePodName"))
   {
     m_remotePodName = jsonValue.GetString("remotePodName");
-
     m_remotePodNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remotePodNamespace"))
   {
     m_remotePodNamespace = jsonValue.GetString("remotePodNamespace");
-
     m_remotePodNamespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

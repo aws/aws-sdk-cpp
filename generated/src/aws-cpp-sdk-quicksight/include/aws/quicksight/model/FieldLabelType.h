@@ -32,7 +32,7 @@ namespace Model
   class FieldLabelType
   {
   public:
-    AWS_QUICKSIGHT_API FieldLabelType();
+    AWS_QUICKSIGHT_API FieldLabelType() = default;
     AWS_QUICKSIGHT_API FieldLabelType(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FieldLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>Indicates the field that is targeted by the field label.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline FieldLabelType& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline FieldLabelType& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline FieldLabelType& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    FieldLabelType& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility of the field label.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline FieldLabelType& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline FieldLabelType& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline FieldLabelType& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fieldId;
     bool m_fieldIdHasBeenSet = false;
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

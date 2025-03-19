@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessControlConfigurationRequest::DeleteAccessControlConfigurationRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessControlConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventStartCondition::EventStartCondition() : 
-    m_eventFilterHasBeenSet(false),
-    m_segmentIdHasBeenSet(false)
-{
-}
-
 EventStartCondition::EventStartCondition(JsonView jsonValue)
-  : EventStartCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventStartCondition& EventStartCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventFilter"))
   {
     m_eventFilter = jsonValue.GetObject("EventFilter");
-
     m_eventFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentId"))
   {
     m_segmentId = jsonValue.GetString("SegmentId");
-
     m_segmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

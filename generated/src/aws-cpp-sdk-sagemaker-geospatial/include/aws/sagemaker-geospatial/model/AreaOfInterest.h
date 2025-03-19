@@ -32,7 +32,7 @@ namespace Model
   class AreaOfInterest
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API AreaOfInterest();
+    AWS_SAGEMAKERGEOSPATIAL_API AreaOfInterest() = default;
     AWS_SAGEMAKERGEOSPATIAL_API AreaOfInterest(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API AreaOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A GeoJSON object representing the geographic extent in the coordinate
      * space.</p>
      */
-    inline const AreaOfInterestGeometry& GetAreaOfInterestGeometry() const{ return m_areaOfInterestGeometry; }
+    inline const AreaOfInterestGeometry& GetAreaOfInterestGeometry() const { return m_areaOfInterestGeometry; }
     inline bool AreaOfInterestGeometryHasBeenSet() const { return m_areaOfInterestGeometryHasBeenSet; }
-    inline void SetAreaOfInterestGeometry(const AreaOfInterestGeometry& value) { m_areaOfInterestGeometryHasBeenSet = true; m_areaOfInterestGeometry = value; }
-    inline void SetAreaOfInterestGeometry(AreaOfInterestGeometry&& value) { m_areaOfInterestGeometryHasBeenSet = true; m_areaOfInterestGeometry = std::move(value); }
-    inline AreaOfInterest& WithAreaOfInterestGeometry(const AreaOfInterestGeometry& value) { SetAreaOfInterestGeometry(value); return *this;}
-    inline AreaOfInterest& WithAreaOfInterestGeometry(AreaOfInterestGeometry&& value) { SetAreaOfInterestGeometry(std::move(value)); return *this;}
+    template<typename AreaOfInterestGeometryT = AreaOfInterestGeometry>
+    void SetAreaOfInterestGeometry(AreaOfInterestGeometryT&& value) { m_areaOfInterestGeometryHasBeenSet = true; m_areaOfInterestGeometry = std::forward<AreaOfInterestGeometryT>(value); }
+    template<typename AreaOfInterestGeometryT = AreaOfInterestGeometry>
+    AreaOfInterest& WithAreaOfInterestGeometry(AreaOfInterestGeometryT&& value) { SetAreaOfInterestGeometry(std::forward<AreaOfInterestGeometryT>(value)); return *this;}
     ///@}
   private:
 

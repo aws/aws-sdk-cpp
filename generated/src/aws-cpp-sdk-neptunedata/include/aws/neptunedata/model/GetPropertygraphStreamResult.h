@@ -30,7 +30,7 @@ namespace Model
   class GetPropertygraphStreamResult
   {
   public:
-    AWS_NEPTUNEDATA_API GetPropertygraphStreamResult();
+    AWS_NEPTUNEDATA_API GetPropertygraphStreamResult() = default;
     AWS_NEPTUNEDATA_API GetPropertygraphStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API GetPropertygraphStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,18 +42,15 @@ namespace Model
      * transaction that changed the graph, and an <code>opNum</code>, which identifies
      * a specific operation within that transaction:</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLastEventId() const{ return m_lastEventId; }
-    inline void SetLastEventId(const Aws::Map<Aws::String, Aws::String>& value) { m_lastEventId = value; }
-    inline void SetLastEventId(Aws::Map<Aws::String, Aws::String>&& value) { m_lastEventId = std::move(value); }
-    inline GetPropertygraphStreamResult& WithLastEventId(const Aws::Map<Aws::String, Aws::String>& value) { SetLastEventId(value); return *this;}
-    inline GetPropertygraphStreamResult& WithLastEventId(Aws::Map<Aws::String, Aws::String>&& value) { SetLastEventId(std::move(value)); return *this;}
-    inline GetPropertygraphStreamResult& AddLastEventId(const Aws::String& key, const Aws::String& value) { m_lastEventId.emplace(key, value); return *this; }
-    inline GetPropertygraphStreamResult& AddLastEventId(Aws::String&& key, const Aws::String& value) { m_lastEventId.emplace(std::move(key), value); return *this; }
-    inline GetPropertygraphStreamResult& AddLastEventId(const Aws::String& key, Aws::String&& value) { m_lastEventId.emplace(key, std::move(value)); return *this; }
-    inline GetPropertygraphStreamResult& AddLastEventId(Aws::String&& key, Aws::String&& value) { m_lastEventId.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetPropertygraphStreamResult& AddLastEventId(const char* key, Aws::String&& value) { m_lastEventId.emplace(key, std::move(value)); return *this; }
-    inline GetPropertygraphStreamResult& AddLastEventId(Aws::String&& key, const char* value) { m_lastEventId.emplace(std::move(key), value); return *this; }
-    inline GetPropertygraphStreamResult& AddLastEventId(const char* key, const char* value) { m_lastEventId.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLastEventId() const { return m_lastEventId; }
+    template<typename LastEventIdT = Aws::Map<Aws::String, Aws::String>>
+    void SetLastEventId(LastEventIdT&& value) { m_lastEventIdHasBeenSet = true; m_lastEventId = std::forward<LastEventIdT>(value); }
+    template<typename LastEventIdT = Aws::Map<Aws::String, Aws::String>>
+    GetPropertygraphStreamResult& WithLastEventId(LastEventIdT&& value) { SetLastEventId(std::forward<LastEventIdT>(value)); return *this;}
+    template<typename LastEventIdKeyT = Aws::String, typename LastEventIdValueT = Aws::String>
+    GetPropertygraphStreamResult& AddLastEventId(LastEventIdKeyT&& key, LastEventIdValueT&& value) {
+      m_lastEventIdHasBeenSet = true; m_lastEventId.emplace(std::forward<LastEventIdKeyT>(key), std::forward<LastEventIdValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -61,8 +58,8 @@ namespace Model
      * <p>The time at which the commit for the transaction was requested, in
      * milliseconds from the Unix epoch.</p>
      */
-    inline long long GetLastTrxTimestampInMillis() const{ return m_lastTrxTimestampInMillis; }
-    inline void SetLastTrxTimestampInMillis(long long value) { m_lastTrxTimestampInMillis = value; }
+    inline long long GetLastTrxTimestampInMillis() const { return m_lastTrxTimestampInMillis; }
+    inline void SetLastTrxTimestampInMillis(long long value) { m_lastTrxTimestampInMillisHasBeenSet = true; m_lastTrxTimestampInMillis = value; }
     inline GetPropertygraphStreamResult& WithLastTrxTimestampInMillis(long long value) { SetLastTrxTimestampInMillis(value); return *this;}
     ///@}
 
@@ -71,13 +68,11 @@ namespace Model
      * <p>Serialization format for the change records being returned. Currently, the
      * only supported value is <code>PG_JSON</code>.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
-    inline void SetFormat(const Aws::String& value) { m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_format.assign(value); }
-    inline GetPropertygraphStreamResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline GetPropertygraphStreamResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline GetPropertygraphStreamResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+    inline const Aws::String& GetFormat() const { return m_format; }
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    GetPropertygraphStreamResult& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,47 +80,51 @@ namespace Model
      * <p>An array of serialized change-log stream records included in the
      * response.</p>
      */
-    inline const Aws::Vector<PropertygraphRecord>& GetRecords() const{ return m_records; }
-    inline void SetRecords(const Aws::Vector<PropertygraphRecord>& value) { m_records = value; }
-    inline void SetRecords(Aws::Vector<PropertygraphRecord>&& value) { m_records = std::move(value); }
-    inline GetPropertygraphStreamResult& WithRecords(const Aws::Vector<PropertygraphRecord>& value) { SetRecords(value); return *this;}
-    inline GetPropertygraphStreamResult& WithRecords(Aws::Vector<PropertygraphRecord>&& value) { SetRecords(std::move(value)); return *this;}
-    inline GetPropertygraphStreamResult& AddRecords(const PropertygraphRecord& value) { m_records.push_back(value); return *this; }
-    inline GetPropertygraphStreamResult& AddRecords(PropertygraphRecord&& value) { m_records.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PropertygraphRecord>& GetRecords() const { return m_records; }
+    template<typename RecordsT = Aws::Vector<PropertygraphRecord>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<PropertygraphRecord>>
+    GetPropertygraphStreamResult& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = PropertygraphRecord>
+    GetPropertygraphStreamResult& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total number of records in the response.</p>
      */
-    inline int GetTotalRecords() const{ return m_totalRecords; }
-    inline void SetTotalRecords(int value) { m_totalRecords = value; }
+    inline int GetTotalRecords() const { return m_totalRecords; }
+    inline void SetTotalRecords(int value) { m_totalRecordsHasBeenSet = true; m_totalRecords = value; }
     inline GetPropertygraphStreamResult& WithTotalRecords(int value) { SetTotalRecords(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPropertygraphStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPropertygraphStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPropertygraphStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPropertygraphStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_lastEventId;
+    bool m_lastEventIdHasBeenSet = false;
 
-    long long m_lastTrxTimestampInMillis;
+    long long m_lastTrxTimestampInMillis{0};
+    bool m_lastTrxTimestampInMillisHasBeenSet = false;
 
     Aws::String m_format;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<PropertygraphRecord> m_records;
+    bool m_recordsHasBeenSet = false;
 
-    int m_totalRecords;
+    int m_totalRecords{0};
+    bool m_totalRecordsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

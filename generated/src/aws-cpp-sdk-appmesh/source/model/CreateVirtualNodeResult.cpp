@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVirtualNodeResult::CreateVirtualNodeResult()
-{
-}
-
 CreateVirtualNodeResult::CreateVirtualNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ CreateVirtualNodeResult& CreateVirtualNodeResult::operator =(const Aws::AmazonWe
 {
   JsonView jsonValue = result.GetPayload().View();
   m_virtualNode = jsonValue;
+  m_virtualNodeHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

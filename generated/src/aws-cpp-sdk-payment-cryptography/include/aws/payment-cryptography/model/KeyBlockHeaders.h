@@ -35,7 +35,7 @@ namespace Model
   class KeyBlockHeaders
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API KeyBlockHeaders();
+    AWS_PAYMENTCRYPTOGRAPHY_API KeyBlockHeaders() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API KeyBlockHeaders(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API KeyBlockHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const KeyModesOfUse& GetKeyModesOfUse() const{ return m_keyModesOfUse; }
+    inline const KeyModesOfUse& GetKeyModesOfUse() const { return m_keyModesOfUse; }
     inline bool KeyModesOfUseHasBeenSet() const { return m_keyModesOfUseHasBeenSet; }
-    inline void SetKeyModesOfUse(const KeyModesOfUse& value) { m_keyModesOfUseHasBeenSet = true; m_keyModesOfUse = value; }
-    inline void SetKeyModesOfUse(KeyModesOfUse&& value) { m_keyModesOfUseHasBeenSet = true; m_keyModesOfUse = std::move(value); }
-    inline KeyBlockHeaders& WithKeyModesOfUse(const KeyModesOfUse& value) { SetKeyModesOfUse(value); return *this;}
-    inline KeyBlockHeaders& WithKeyModesOfUse(KeyModesOfUse&& value) { SetKeyModesOfUse(std::move(value)); return *this;}
+    template<typename KeyModesOfUseT = KeyModesOfUse>
+    void SetKeyModesOfUse(KeyModesOfUseT&& value) { m_keyModesOfUseHasBeenSet = true; m_keyModesOfUse = std::forward<KeyModesOfUseT>(value); }
+    template<typename KeyModesOfUseT = KeyModesOfUse>
+    KeyBlockHeaders& WithKeyModesOfUse(KeyModesOfUseT&& value) { SetKeyModesOfUse(std::forward<KeyModesOfUseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +66,10 @@ namespace Model
      * href="https://webstore.ansi.org/standards/ascx9/ansix91432022">ANSI
      * X9.143-2022</a>.</p>
      */
-    inline const KeyExportability& GetKeyExportability() const{ return m_keyExportability; }
+    inline KeyExportability GetKeyExportability() const { return m_keyExportability; }
     inline bool KeyExportabilityHasBeenSet() const { return m_keyExportabilityHasBeenSet; }
-    inline void SetKeyExportability(const KeyExportability& value) { m_keyExportabilityHasBeenSet = true; m_keyExportability = value; }
-    inline void SetKeyExportability(KeyExportability&& value) { m_keyExportabilityHasBeenSet = true; m_keyExportability = std::move(value); }
-    inline KeyBlockHeaders& WithKeyExportability(const KeyExportability& value) { SetKeyExportability(value); return *this;}
-    inline KeyBlockHeaders& WithKeyExportability(KeyExportability&& value) { SetKeyExportability(std::move(value)); return *this;}
+    inline void SetKeyExportability(KeyExportability value) { m_keyExportabilityHasBeenSet = true; m_keyExportability = value; }
+    inline KeyBlockHeaders& WithKeyExportability(KeyExportability value) { SetKeyExportability(value); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * <p>Parameter used to indicate the version of the key carried in the key block or
      * indicate the value carried in the key block is a component of a key.</p>
      */
-    inline const Aws::String& GetKeyVersion() const{ return m_keyVersion; }
+    inline const Aws::String& GetKeyVersion() const { return m_keyVersion; }
     inline bool KeyVersionHasBeenSet() const { return m_keyVersionHasBeenSet; }
-    inline void SetKeyVersion(const Aws::String& value) { m_keyVersionHasBeenSet = true; m_keyVersion = value; }
-    inline void SetKeyVersion(Aws::String&& value) { m_keyVersionHasBeenSet = true; m_keyVersion = std::move(value); }
-    inline void SetKeyVersion(const char* value) { m_keyVersionHasBeenSet = true; m_keyVersion.assign(value); }
-    inline KeyBlockHeaders& WithKeyVersion(const Aws::String& value) { SetKeyVersion(value); return *this;}
-    inline KeyBlockHeaders& WithKeyVersion(Aws::String&& value) { SetKeyVersion(std::move(value)); return *this;}
-    inline KeyBlockHeaders& WithKeyVersion(const char* value) { SetKeyVersion(value); return *this;}
+    template<typename KeyVersionT = Aws::String>
+    void SetKeyVersion(KeyVersionT&& value) { m_keyVersionHasBeenSet = true; m_keyVersion = std::forward<KeyVersionT>(value); }
+    template<typename KeyVersionT = Aws::String>
+    KeyBlockHeaders& WithKeyVersion(KeyVersionT&& value) { SetKeyVersion(std::forward<KeyVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,26 +95,23 @@ namespace Model
      * optional block length. More than one optional blocks can be included as long as
      * the combined length does not increase 112 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOptionalBlocks() const{ return m_optionalBlocks; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOptionalBlocks() const { return m_optionalBlocks; }
     inline bool OptionalBlocksHasBeenSet() const { return m_optionalBlocksHasBeenSet; }
-    inline void SetOptionalBlocks(const Aws::Map<Aws::String, Aws::String>& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks = value; }
-    inline void SetOptionalBlocks(Aws::Map<Aws::String, Aws::String>&& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks = std::move(value); }
-    inline KeyBlockHeaders& WithOptionalBlocks(const Aws::Map<Aws::String, Aws::String>& value) { SetOptionalBlocks(value); return *this;}
-    inline KeyBlockHeaders& WithOptionalBlocks(Aws::Map<Aws::String, Aws::String>&& value) { SetOptionalBlocks(std::move(value)); return *this;}
-    inline KeyBlockHeaders& AddOptionalBlocks(const Aws::String& key, const Aws::String& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(key, value); return *this; }
-    inline KeyBlockHeaders& AddOptionalBlocks(Aws::String&& key, const Aws::String& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(std::move(key), value); return *this; }
-    inline KeyBlockHeaders& AddOptionalBlocks(const Aws::String& key, Aws::String&& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(key, std::move(value)); return *this; }
-    inline KeyBlockHeaders& AddOptionalBlocks(Aws::String&& key, Aws::String&& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(std::move(key), std::move(value)); return *this; }
-    inline KeyBlockHeaders& AddOptionalBlocks(const char* key, Aws::String&& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(key, std::move(value)); return *this; }
-    inline KeyBlockHeaders& AddOptionalBlocks(Aws::String&& key, const char* value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(std::move(key), value); return *this; }
-    inline KeyBlockHeaders& AddOptionalBlocks(const char* key, const char* value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(key, value); return *this; }
+    template<typename OptionalBlocksT = Aws::Map<Aws::String, Aws::String>>
+    void SetOptionalBlocks(OptionalBlocksT&& value) { m_optionalBlocksHasBeenSet = true; m_optionalBlocks = std::forward<OptionalBlocksT>(value); }
+    template<typename OptionalBlocksT = Aws::Map<Aws::String, Aws::String>>
+    KeyBlockHeaders& WithOptionalBlocks(OptionalBlocksT&& value) { SetOptionalBlocks(std::forward<OptionalBlocksT>(value)); return *this;}
+    template<typename OptionalBlocksKeyT = Aws::String, typename OptionalBlocksValueT = Aws::String>
+    KeyBlockHeaders& AddOptionalBlocks(OptionalBlocksKeyT&& key, OptionalBlocksValueT&& value) {
+      m_optionalBlocksHasBeenSet = true; m_optionalBlocks.emplace(std::forward<OptionalBlocksKeyT>(key), std::forward<OptionalBlocksValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     KeyModesOfUse m_keyModesOfUse;
     bool m_keyModesOfUseHasBeenSet = false;
 
-    KeyExportability m_keyExportability;
+    KeyExportability m_keyExportability{KeyExportability::NOT_SET};
     bool m_keyExportabilityHasBeenSet = false;
 
     Aws::String m_keyVersion;

@@ -18,17 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-AccountQuota::AccountQuota() : 
-    m_accountQuotaNameHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AccountQuota::AccountQuota(JsonView jsonValue)
-  : AccountQuota()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AccountQuota& AccountQuota::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountQuotaName"))
   {
     m_accountQuotaName = jsonValue.GetString("AccountQuotaName");
-
     m_accountQuotaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Used"))
   {
     m_used = jsonValue.GetInt64("Used");
-
     m_usedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInt64("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

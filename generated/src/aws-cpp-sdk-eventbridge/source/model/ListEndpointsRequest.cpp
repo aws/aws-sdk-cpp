@@ -12,15 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEndpointsRequest::ListEndpointsRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_homeRegionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

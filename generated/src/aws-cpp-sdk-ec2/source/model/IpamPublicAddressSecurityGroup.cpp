@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 IpamPublicAddressSecurityGroup::IpamPublicAddressSecurityGroup(const XmlNode& xmlNode)
-  : IpamPublicAddressSecurityGroup()
 {
   *this = xmlNode;
 }

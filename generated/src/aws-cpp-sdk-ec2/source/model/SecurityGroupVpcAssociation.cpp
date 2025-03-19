@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupVpcAssociation::SecurityGroupVpcAssociation() : 
-    m_groupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcOwnerIdHasBeenSet(false),
-    m_state(SecurityGroupVpcAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 SecurityGroupVpcAssociation::SecurityGroupVpcAssociation(const XmlNode& xmlNode)
-  : SecurityGroupVpcAssociation()
 {
   *this = xmlNode;
 }
@@ -63,7 +52,7 @@ SecurityGroupVpcAssociation& SecurityGroupVpcAssociation::operator =(const XmlNo
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SecurityGroupVpcAssociationStateMapper::GetSecurityGroupVpcAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SecurityGroupVpcAssociationStateMapper::GetSecurityGroupVpcAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");

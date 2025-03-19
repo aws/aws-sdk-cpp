@@ -32,7 +32,7 @@ namespace Model
   class CustomVocabularyItem
   {
   public:
-    AWS_LEXMODELSV2_API CustomVocabularyItem();
+    AWS_LEXMODELSV2_API CustomVocabularyItem() = default;
     AWS_LEXMODELSV2_API CustomVocabularyItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API CustomVocabularyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique item identifer for the custom vocabulary item from the custom
      * vocabulary list.</p>
      */
-    inline const Aws::String& GetItemId() const{ return m_itemId; }
+    inline const Aws::String& GetItemId() const { return m_itemId; }
     inline bool ItemIdHasBeenSet() const { return m_itemIdHasBeenSet; }
-    inline void SetItemId(const Aws::String& value) { m_itemIdHasBeenSet = true; m_itemId = value; }
-    inline void SetItemId(Aws::String&& value) { m_itemIdHasBeenSet = true; m_itemId = std::move(value); }
-    inline void SetItemId(const char* value) { m_itemIdHasBeenSet = true; m_itemId.assign(value); }
-    inline CustomVocabularyItem& WithItemId(const Aws::String& value) { SetItemId(value); return *this;}
-    inline CustomVocabularyItem& WithItemId(Aws::String&& value) { SetItemId(std::move(value)); return *this;}
-    inline CustomVocabularyItem& WithItemId(const char* value) { SetItemId(value); return *this;}
+    template<typename ItemIdT = Aws::String>
+    void SetItemId(ItemIdT&& value) { m_itemIdHasBeenSet = true; m_itemId = std::forward<ItemIdT>(value); }
+    template<typename ItemIdT = Aws::String>
+    CustomVocabularyItem& WithItemId(ItemIdT&& value) { SetItemId(std::forward<ItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The unique phrase for the custom vocabulary item from the custom vocabulary
      * list.</p>
      */
-    inline const Aws::String& GetPhrase() const{ return m_phrase; }
+    inline const Aws::String& GetPhrase() const { return m_phrase; }
     inline bool PhraseHasBeenSet() const { return m_phraseHasBeenSet; }
-    inline void SetPhrase(const Aws::String& value) { m_phraseHasBeenSet = true; m_phrase = value; }
-    inline void SetPhrase(Aws::String&& value) { m_phraseHasBeenSet = true; m_phrase = std::move(value); }
-    inline void SetPhrase(const char* value) { m_phraseHasBeenSet = true; m_phrase.assign(value); }
-    inline CustomVocabularyItem& WithPhrase(const Aws::String& value) { SetPhrase(value); return *this;}
-    inline CustomVocabularyItem& WithPhrase(Aws::String&& value) { SetPhrase(std::move(value)); return *this;}
-    inline CustomVocabularyItem& WithPhrase(const char* value) { SetPhrase(value); return *this;}
+    template<typename PhraseT = Aws::String>
+    void SetPhrase(PhraseT&& value) { m_phraseHasBeenSet = true; m_phrase = std::forward<PhraseT>(value); }
+    template<typename PhraseT = Aws::String>
+    CustomVocabularyItem& WithPhrase(PhraseT&& value) { SetPhrase(std::forward<PhraseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <p>The weight assigned for the custom vocabulary item from the custom vocabulary
      * list.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline CustomVocabularyItem& WithWeight(int value) { SetWeight(value); return *this;}
@@ -84,14 +80,12 @@ namespace Model
      * <p>The DisplayAs value for the custom vocabulary item from the custom vocabulary
      * list.</p>
      */
-    inline const Aws::String& GetDisplayAs() const{ return m_displayAs; }
+    inline const Aws::String& GetDisplayAs() const { return m_displayAs; }
     inline bool DisplayAsHasBeenSet() const { return m_displayAsHasBeenSet; }
-    inline void SetDisplayAs(const Aws::String& value) { m_displayAsHasBeenSet = true; m_displayAs = value; }
-    inline void SetDisplayAs(Aws::String&& value) { m_displayAsHasBeenSet = true; m_displayAs = std::move(value); }
-    inline void SetDisplayAs(const char* value) { m_displayAsHasBeenSet = true; m_displayAs.assign(value); }
-    inline CustomVocabularyItem& WithDisplayAs(const Aws::String& value) { SetDisplayAs(value); return *this;}
-    inline CustomVocabularyItem& WithDisplayAs(Aws::String&& value) { SetDisplayAs(std::move(value)); return *this;}
-    inline CustomVocabularyItem& WithDisplayAs(const char* value) { SetDisplayAs(value); return *this;}
+    template<typename DisplayAsT = Aws::String>
+    void SetDisplayAs(DisplayAsT&& value) { m_displayAsHasBeenSet = true; m_displayAs = std::forward<DisplayAsT>(value); }
+    template<typename DisplayAsT = Aws::String>
+    CustomVocabularyItem& WithDisplayAs(DisplayAsT&& value) { SetDisplayAs(std::forward<DisplayAsT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +95,7 @@ namespace Model
     Aws::String m_phrase;
     bool m_phraseHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
 
     Aws::String m_displayAs;

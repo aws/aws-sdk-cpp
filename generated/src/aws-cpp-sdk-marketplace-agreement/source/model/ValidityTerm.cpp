@@ -18,16 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-ValidityTerm::ValidityTerm() : 
-    m_agreementDurationHasBeenSet(false),
-    m_agreementEndDateHasBeenSet(false),
-    m_agreementStartDateHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ValidityTerm::ValidityTerm(JsonView jsonValue)
-  : ValidityTerm()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ValidityTerm& ValidityTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agreementDuration"))
   {
     m_agreementDuration = jsonValue.GetString("agreementDuration");
-
     m_agreementDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agreementEndDate"))
   {
     m_agreementEndDate = jsonValue.GetDouble("agreementEndDate");
-
     m_agreementEndDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agreementStartDate"))
   {
     m_agreementStartDate = jsonValue.GetDouble("agreementStartDate");
-
     m_agreementStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class GetDedicatedIpPoolResult
   {
   public:
-    AWS_SESV2_API GetDedicatedIpPoolResult();
+    AWS_SESV2_API GetDedicatedIpPoolResult() = default;
     AWS_SESV2_API GetDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>An object that contains information about a dedicated IP pool.</p>
      */
-    inline const DedicatedIpPool& GetDedicatedIpPool() const{ return m_dedicatedIpPool; }
-    inline void SetDedicatedIpPool(const DedicatedIpPool& value) { m_dedicatedIpPool = value; }
-    inline void SetDedicatedIpPool(DedicatedIpPool&& value) { m_dedicatedIpPool = std::move(value); }
-    inline GetDedicatedIpPoolResult& WithDedicatedIpPool(const DedicatedIpPool& value) { SetDedicatedIpPool(value); return *this;}
-    inline GetDedicatedIpPoolResult& WithDedicatedIpPool(DedicatedIpPool&& value) { SetDedicatedIpPool(std::move(value)); return *this;}
+    inline const DedicatedIpPool& GetDedicatedIpPool() const { return m_dedicatedIpPool; }
+    template<typename DedicatedIpPoolT = DedicatedIpPool>
+    void SetDedicatedIpPool(DedicatedIpPoolT&& value) { m_dedicatedIpPoolHasBeenSet = true; m_dedicatedIpPool = std::forward<DedicatedIpPoolT>(value); }
+    template<typename DedicatedIpPoolT = DedicatedIpPool>
+    GetDedicatedIpPoolResult& WithDedicatedIpPool(DedicatedIpPoolT&& value) { SetDedicatedIpPool(std::forward<DedicatedIpPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDedicatedIpPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDedicatedIpPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDedicatedIpPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDedicatedIpPoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DedicatedIpPool m_dedicatedIpPool;
+    bool m_dedicatedIpPoolHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

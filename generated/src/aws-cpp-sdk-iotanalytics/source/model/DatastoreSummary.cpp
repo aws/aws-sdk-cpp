@@ -18,22 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatastoreSummary::DatastoreSummary() : 
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStorageHasBeenSet(false),
-    m_status(DatastoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false),
-    m_fileFormatType(FileFormatType::NOT_SET),
-    m_fileFormatTypeHasBeenSet(false),
-    m_datastorePartitionsHasBeenSet(false)
-{
-}
-
 DatastoreSummary::DatastoreSummary(JsonView jsonValue)
-  : DatastoreSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datastoreName"))
   {
     m_datastoreName = jsonValue.GetString("datastoreName");
-
     m_datastoreNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datastoreStorage"))
   {
     m_datastoreStorage = jsonValue.GetObject("datastoreStorage");
-
     m_datastoreStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DatastoreStatusMapper::GetDatastoreStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastMessageArrivalTime"))
   {
     m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
-
     m_lastMessageArrivalTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileFormatType"))
   {
     m_fileFormatType = FileFormatTypeMapper::GetFileFormatTypeForName(jsonValue.GetString("fileFormatType"));
-
     m_fileFormatTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datastorePartitions"))
   {
     m_datastorePartitions = jsonValue.GetObject("datastorePartitions");
-
     m_datastorePartitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

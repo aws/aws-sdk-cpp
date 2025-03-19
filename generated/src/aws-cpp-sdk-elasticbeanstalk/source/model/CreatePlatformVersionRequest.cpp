@@ -10,16 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-CreatePlatformVersionRequest::CreatePlatformVersionRequest() : 
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformDefinitionBundleHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlatformVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

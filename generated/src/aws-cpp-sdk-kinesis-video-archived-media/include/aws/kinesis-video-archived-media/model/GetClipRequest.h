@@ -22,7 +22,7 @@ namespace Model
   class GetClipRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetClipRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetClipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The name of the stream for which to retrieve the media clip. </p> <p>You must
      * specify either the StreamName or the StreamARN. </p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline GetClipRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline GetClipRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline GetClipRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    GetClipRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,26 +51,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media
      * clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline GetClipRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline GetClipRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline GetClipRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    GetClipRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time range of the requested clip and the source of the timestamps.</p>
      */
-    inline const ClipFragmentSelector& GetClipFragmentSelector() const{ return m_clipFragmentSelector; }
+    inline const ClipFragmentSelector& GetClipFragmentSelector() const { return m_clipFragmentSelector; }
     inline bool ClipFragmentSelectorHasBeenSet() const { return m_clipFragmentSelectorHasBeenSet; }
-    inline void SetClipFragmentSelector(const ClipFragmentSelector& value) { m_clipFragmentSelectorHasBeenSet = true; m_clipFragmentSelector = value; }
-    inline void SetClipFragmentSelector(ClipFragmentSelector&& value) { m_clipFragmentSelectorHasBeenSet = true; m_clipFragmentSelector = std::move(value); }
-    inline GetClipRequest& WithClipFragmentSelector(const ClipFragmentSelector& value) { SetClipFragmentSelector(value); return *this;}
-    inline GetClipRequest& WithClipFragmentSelector(ClipFragmentSelector&& value) { SetClipFragmentSelector(std::move(value)); return *this;}
+    template<typename ClipFragmentSelectorT = ClipFragmentSelector>
+    void SetClipFragmentSelector(ClipFragmentSelectorT&& value) { m_clipFragmentSelectorHasBeenSet = true; m_clipFragmentSelector = std::forward<ClipFragmentSelectorT>(value); }
+    template<typename ClipFragmentSelectorT = ClipFragmentSelector>
+    GetClipRequest& WithClipFragmentSelector(ClipFragmentSelectorT&& value) { SetClipFragmentSelector(std::forward<ClipFragmentSelectorT>(value)); return *this;}
     ///@}
   private:
 

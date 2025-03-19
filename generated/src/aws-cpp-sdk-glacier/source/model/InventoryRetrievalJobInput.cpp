@@ -18,16 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-InventoryRetrievalJobInput::InventoryRetrievalJobInput() : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 InventoryRetrievalJobInput::InventoryRetrievalJobInput(JsonView jsonValue)
-  : InventoryRetrievalJobInput()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InventoryRetrievalJobInput& InventoryRetrievalJobInput::operator =(JsonView json
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetString("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDate"))
   {
     m_endDate = jsonValue.GetString("EndDate");
-
     m_endDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetString("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
     m_markerHasBeenSet = true;
   }
-
   return *this;
 }
 

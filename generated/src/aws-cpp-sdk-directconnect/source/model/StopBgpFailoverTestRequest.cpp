@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopBgpFailoverTestRequest::StopBgpFailoverTestRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false)
-{
-}
-
 Aws::String StopBgpFailoverTestRequest::SerializePayload() const
 {
   JsonValue payload;

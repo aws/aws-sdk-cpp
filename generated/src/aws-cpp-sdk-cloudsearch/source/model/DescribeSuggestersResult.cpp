@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSuggestersResult::DescribeSuggestersResult()
-{
-}
-
 DescribeSuggestersResult::DescribeSuggestersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeSuggestersResult& DescribeSuggestersResult::operator =(const Aws::Amazon
     if(!suggestersNode.IsNull())
     {
       XmlNode suggestersMember = suggestersNode.FirstChild("member");
+      m_suggestersHasBeenSet = !suggestersMember.IsNull();
       while(!suggestersMember.IsNull())
       {
         m_suggesters.push_back(suggestersMember);
         suggestersMember = suggestersMember.NextNode("member");
       }
 
+      m_suggestersHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeSuggestersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

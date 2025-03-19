@@ -18,68 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-HlsGroupSettings::HlsGroupSettings() : 
-    m_adMarkersHasBeenSet(false),
-    m_additionalManifestsHasBeenSet(false),
-    m_audioOnlyHeader(HlsAudioOnlyHeader::NOT_SET),
-    m_audioOnlyHeaderHasBeenSet(false),
-    m_baseUrlHasBeenSet(false),
-    m_captionLanguageMappingsHasBeenSet(false),
-    m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
-    m_captionLanguageSettingHasBeenSet(false),
-    m_captionSegmentLengthControl(HlsCaptionSegmentLengthControl::NOT_SET),
-    m_captionSegmentLengthControlHasBeenSet(false),
-    m_clientCache(HlsClientCache::NOT_SET),
-    m_clientCacheHasBeenSet(false),
-    m_codecSpecification(HlsCodecSpecification::NOT_SET),
-    m_codecSpecificationHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_directoryStructure(HlsDirectoryStructure::NOT_SET),
-    m_directoryStructureHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
-    m_imageBasedTrickPlayHasBeenSet(false),
-    m_imageBasedTrickPlaySettingsHasBeenSet(false),
-    m_manifestCompression(HlsManifestCompression::NOT_SET),
-    m_manifestCompressionHasBeenSet(false),
-    m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
-    m_manifestDurationFormatHasBeenSet(false),
-    m_minFinalSegmentLength(0.0),
-    m_minFinalSegmentLengthHasBeenSet(false),
-    m_minSegmentLength(0),
-    m_minSegmentLengthHasBeenSet(false),
-    m_outputSelection(HlsOutputSelection::NOT_SET),
-    m_outputSelectionHasBeenSet(false),
-    m_programDateTime(HlsProgramDateTime::NOT_SET),
-    m_programDateTimeHasBeenSet(false),
-    m_programDateTimePeriod(0),
-    m_programDateTimePeriodHasBeenSet(false),
-    m_progressiveWriteHlsManifest(HlsProgressiveWriteHlsManifest::NOT_SET),
-    m_progressiveWriteHlsManifestHasBeenSet(false),
-    m_segmentControl(HlsSegmentControl::NOT_SET),
-    m_segmentControlHasBeenSet(false),
-    m_segmentLength(0),
-    m_segmentLengthHasBeenSet(false),
-    m_segmentLengthControl(HlsSegmentLengthControl::NOT_SET),
-    m_segmentLengthControlHasBeenSet(false),
-    m_segmentsPerSubdirectory(0),
-    m_segmentsPerSubdirectoryHasBeenSet(false),
-    m_streamInfResolution(HlsStreamInfResolution::NOT_SET),
-    m_streamInfResolutionHasBeenSet(false),
-    m_targetDurationCompatibilityMode(HlsTargetDurationCompatibilityMode::NOT_SET),
-    m_targetDurationCompatibilityModeHasBeenSet(false),
-    m_timedMetadataId3Frame(HlsTimedMetadataId3Frame::NOT_SET),
-    m_timedMetadataId3FrameHasBeenSet(false),
-    m_timedMetadataId3Period(0),
-    m_timedMetadataId3PeriodHasBeenSet(false),
-    m_timestampDeltaMilliseconds(0),
-    m_timestampDeltaMillisecondsHasBeenSet(false)
-{
-}
-
 HlsGroupSettings::HlsGroupSettings(JsonView jsonValue)
-  : HlsGroupSettings()
 {
   *this = jsonValue;
 }
@@ -95,7 +34,6 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     }
     m_adMarkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalManifests"))
   {
     Aws::Utils::Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
@@ -105,21 +43,16 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     }
     m_additionalManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioOnlyHeader"))
   {
     m_audioOnlyHeader = HlsAudioOnlyHeaderMapper::GetHlsAudioOnlyHeaderForName(jsonValue.GetString("audioOnlyHeader"));
-
     m_audioOnlyHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseUrl"))
   {
     m_baseUrl = jsonValue.GetString("baseUrl");
-
     m_baseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionLanguageMappings"))
   {
     Aws::Utils::Array<JsonView> captionLanguageMappingsJsonList = jsonValue.GetArray("captionLanguageMappings");
@@ -129,196 +62,141 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     }
     m_captionLanguageMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionLanguageSetting"))
   {
     m_captionLanguageSetting = HlsCaptionLanguageSettingMapper::GetHlsCaptionLanguageSettingForName(jsonValue.GetString("captionLanguageSetting"));
-
     m_captionLanguageSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionSegmentLengthControl"))
   {
     m_captionSegmentLengthControl = HlsCaptionSegmentLengthControlMapper::GetHlsCaptionSegmentLengthControlForName(jsonValue.GetString("captionSegmentLengthControl"));
-
     m_captionSegmentLengthControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientCache"))
   {
     m_clientCache = HlsClientCacheMapper::GetHlsClientCacheForName(jsonValue.GetString("clientCache"));
-
     m_clientCacheHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codecSpecification"))
   {
     m_codecSpecification = HlsCodecSpecificationMapper::GetHlsCodecSpecificationForName(jsonValue.GetString("codecSpecification"));
-
     m_codecSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directoryStructure"))
   {
     m_directoryStructure = HlsDirectoryStructureMapper::GetHlsDirectoryStructureForName(jsonValue.GetString("directoryStructure"));
-
     m_directoryStructureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBasedTrickPlay"))
   {
     m_imageBasedTrickPlay = HlsImageBasedTrickPlayMapper::GetHlsImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
-
     m_imageBasedTrickPlayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
   {
     m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
-
     m_imageBasedTrickPlaySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestCompression"))
   {
     m_manifestCompression = HlsManifestCompressionMapper::GetHlsManifestCompressionForName(jsonValue.GetString("manifestCompression"));
-
     m_manifestCompressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestDurationFormat"))
   {
     m_manifestDurationFormat = HlsManifestDurationFormatMapper::GetHlsManifestDurationFormatForName(jsonValue.GetString("manifestDurationFormat"));
-
     m_manifestDurationFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minFinalSegmentLength"))
   {
     m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
-
     m_minFinalSegmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minSegmentLength"))
   {
     m_minSegmentLength = jsonValue.GetInteger("minSegmentLength");
-
     m_minSegmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputSelection"))
   {
     m_outputSelection = HlsOutputSelectionMapper::GetHlsOutputSelectionForName(jsonValue.GetString("outputSelection"));
-
     m_outputSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programDateTime"))
   {
     m_programDateTime = HlsProgramDateTimeMapper::GetHlsProgramDateTimeForName(jsonValue.GetString("programDateTime"));
-
     m_programDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programDateTimePeriod"))
   {
     m_programDateTimePeriod = jsonValue.GetInteger("programDateTimePeriod");
-
     m_programDateTimePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressiveWriteHlsManifest"))
   {
     m_progressiveWriteHlsManifest = HlsProgressiveWriteHlsManifestMapper::GetHlsProgressiveWriteHlsManifestForName(jsonValue.GetString("progressiveWriteHlsManifest"));
-
     m_progressiveWriteHlsManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentControl"))
   {
     m_segmentControl = HlsSegmentControlMapper::GetHlsSegmentControlForName(jsonValue.GetString("segmentControl"));
-
     m_segmentControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentLength"))
   {
     m_segmentLength = jsonValue.GetInteger("segmentLength");
-
     m_segmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentLengthControl"))
   {
     m_segmentLengthControl = HlsSegmentLengthControlMapper::GetHlsSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
-
     m_segmentLengthControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentsPerSubdirectory"))
   {
     m_segmentsPerSubdirectory = jsonValue.GetInteger("segmentsPerSubdirectory");
-
     m_segmentsPerSubdirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamInfResolution"))
   {
     m_streamInfResolution = HlsStreamInfResolutionMapper::GetHlsStreamInfResolutionForName(jsonValue.GetString("streamInfResolution"));
-
     m_streamInfResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetDurationCompatibilityMode"))
   {
     m_targetDurationCompatibilityMode = HlsTargetDurationCompatibilityModeMapper::GetHlsTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
-
     m_targetDurationCompatibilityModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataId3Frame"))
   {
     m_timedMetadataId3Frame = HlsTimedMetadataId3FrameMapper::GetHlsTimedMetadataId3FrameForName(jsonValue.GetString("timedMetadataId3Frame"));
-
     m_timedMetadataId3FrameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataId3Period"))
   {
     m_timedMetadataId3Period = jsonValue.GetInteger("timedMetadataId3Period");
-
     m_timedMetadataId3PeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestampDeltaMilliseconds"))
   {
     m_timestampDeltaMilliseconds = jsonValue.GetInteger("timestampDeltaMilliseconds");
-
     m_timestampDeltaMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

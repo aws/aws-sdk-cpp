@@ -12,14 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeploymentRequest::GetDeploymentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_deploymentNumber(0),
-    m_deploymentNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetDeploymentRequest::SerializePayload() const
 {
   return {};

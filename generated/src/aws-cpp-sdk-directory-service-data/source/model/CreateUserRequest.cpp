@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateUserRequest::CreateUserRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_otherAttributesHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false),
-    m_surnameHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserRequest::SerializePayload() const
 {
   JsonValue payload;

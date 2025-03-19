@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AdvancedRecognitionSetting::AdvancedRecognitionSetting() : 
-    m_audioRecognitionStrategy(AudioRecognitionStrategy::NOT_SET),
-    m_audioRecognitionStrategyHasBeenSet(false)
-{
-}
-
 AdvancedRecognitionSetting::AdvancedRecognitionSetting(JsonView jsonValue)
-  : AdvancedRecognitionSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdvancedRecognitionSetting& AdvancedRecognitionSetting::operator =(JsonView json
   if(jsonValue.ValueExists("audioRecognitionStrategy"))
   {
     m_audioRecognitionStrategy = AudioRecognitionStrategyMapper::GetAudioRecognitionStrategyForName(jsonValue.GetString("audioRecognitionStrategy"));
-
     m_audioRecognitionStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

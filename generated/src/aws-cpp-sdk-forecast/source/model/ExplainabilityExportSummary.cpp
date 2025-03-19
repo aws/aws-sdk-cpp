@@ -18,19 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ExplainabilityExportSummary::ExplainabilityExportSummary() : 
-    m_explainabilityExportArnHasBeenSet(false),
-    m_explainabilityExportNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 ExplainabilityExportSummary::ExplainabilityExportSummary(JsonView jsonValue)
-  : ExplainabilityExportSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ExplainabilityExportSummary& ExplainabilityExportSummary::operator =(JsonView js
   if(jsonValue.ValueExists("ExplainabilityExportArn"))
   {
     m_explainabilityExportArn = jsonValue.GetString("ExplainabilityExportArn");
-
     m_explainabilityExportArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExplainabilityExportName"))
   {
     m_explainabilityExportName = jsonValue.GetString("ExplainabilityExportName");
-
     m_explainabilityExportNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetObject("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-TransactGetItem::TransactGetItem() : 
-    m_getHasBeenSet(false)
-{
-}
-
 TransactGetItem::TransactGetItem(JsonView jsonValue)
-  : TransactGetItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TransactGetItem& TransactGetItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Get"))
   {
     m_get = jsonValue.GetObject("Get");
-
     m_getHasBeenSet = true;
   }
-
   return *this;
 }
 

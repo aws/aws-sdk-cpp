@@ -18,15 +18,7 @@ namespace CloudTrailData
 namespace Model
 {
 
-ResultErrorEntry::ResultErrorEntry() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 ResultErrorEntry::ResultErrorEntry(JsonView jsonValue)
-  : ResultErrorEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResultErrorEntry& ResultErrorEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

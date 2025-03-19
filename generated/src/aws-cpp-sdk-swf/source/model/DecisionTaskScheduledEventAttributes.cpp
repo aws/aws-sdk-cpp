@@ -18,16 +18,7 @@ namespace SWF
 namespace Model
 {
 
-DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes() : 
-    m_taskListHasBeenSet(false),
-    m_taskPriorityHasBeenSet(false),
-    m_startToCloseTimeoutHasBeenSet(false),
-    m_scheduleToStartTimeoutHasBeenSet(false)
-{
-}
-
 DecisionTaskScheduledEventAttributes::DecisionTaskScheduledEventAttributes(JsonView jsonValue)
-  : DecisionTaskScheduledEventAttributes()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DecisionTaskScheduledEventAttributes& DecisionTaskScheduledEventAttributes::oper
   if(jsonValue.ValueExists("taskList"))
   {
     m_taskList = jsonValue.GetObject("taskList");
-
     m_taskListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskPriority"))
   {
     m_taskPriority = jsonValue.GetString("taskPriority");
-
     m_taskPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startToCloseTimeout"))
   {
     m_startToCloseTimeout = jsonValue.GetString("startToCloseTimeout");
-
     m_startToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleToStartTimeout"))
   {
     m_scheduleToStartTimeout = jsonValue.GetString("scheduleToStartTimeout");
-
     m_scheduleToStartTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

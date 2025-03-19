@@ -18,17 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary() : 
-    m_positionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false)
-{
-}
-
 SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary(JsonView jsonValue)
-  : SearchPlaceIndexForPositionSummary()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ SearchPlaceIndexForPositionSummary& SearchPlaceIndexForPositionSummary::operator
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   return *this;
 }
 

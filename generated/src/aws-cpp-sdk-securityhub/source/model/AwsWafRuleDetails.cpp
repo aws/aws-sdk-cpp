@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafRuleDetails::AwsWafRuleDetails() : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_predicateListHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 AwsWafRuleDetails::AwsWafRuleDetails(JsonView jsonValue)
-  : AwsWafRuleDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AwsWafRuleDetails& AwsWafRuleDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredicateList"))
   {
     Aws::Utils::Array<JsonView> predicateListJsonList = jsonValue.GetArray("PredicateList");
@@ -57,14 +44,11 @@ AwsWafRuleDetails& AwsWafRuleDetails::operator =(JsonView jsonValue)
     }
     m_predicateListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   return *this;
 }
 

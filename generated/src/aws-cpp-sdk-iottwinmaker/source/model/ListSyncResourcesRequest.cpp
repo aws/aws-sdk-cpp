@@ -12,16 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSyncResourcesRequest::ListSyncResourcesRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSyncResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Position::Position() : 
-    m_line(0),
-    m_lineHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false)
-{
-}
-
 Position::Position(const XmlNode& xmlNode)
-  : Position()
 {
   *this = xmlNode;
 }

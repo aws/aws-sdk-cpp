@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateServerCertificateRequest::UpdateServerCertificateRequest() : 
-    m_serverCertificateNameHasBeenSet(false),
-    m_newPathHasBeenSet(false),
-    m_newServerCertificateNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

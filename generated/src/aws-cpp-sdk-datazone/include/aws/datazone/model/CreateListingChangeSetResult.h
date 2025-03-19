@@ -28,7 +28,7 @@ namespace Model
   class CreateListingChangeSetResult
   {
   public:
-    AWS_DATAZONE_API CreateListingChangeSetResult();
+    AWS_DATAZONE_API CreateListingChangeSetResult() = default;
     AWS_DATAZONE_API CreateListingChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API CreateListingChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The ID of the listing (a record of an asset at a given time).</p>
      */
-    inline const Aws::String& GetListingId() const{ return m_listingId; }
-    inline void SetListingId(const Aws::String& value) { m_listingId = value; }
-    inline void SetListingId(Aws::String&& value) { m_listingId = std::move(value); }
-    inline void SetListingId(const char* value) { m_listingId.assign(value); }
-    inline CreateListingChangeSetResult& WithListingId(const Aws::String& value) { SetListingId(value); return *this;}
-    inline CreateListingChangeSetResult& WithListingId(Aws::String&& value) { SetListingId(std::move(value)); return *this;}
-    inline CreateListingChangeSetResult& WithListingId(const char* value) { SetListingId(value); return *this;}
+    inline const Aws::String& GetListingId() const { return m_listingId; }
+    template<typename ListingIdT = Aws::String>
+    void SetListingId(ListingIdT&& value) { m_listingIdHasBeenSet = true; m_listingId = std::forward<ListingIdT>(value); }
+    template<typename ListingIdT = Aws::String>
+    CreateListingChangeSetResult& WithListingId(ListingIdT&& value) { SetListingId(std::forward<ListingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of a listing.</p>
      */
-    inline const Aws::String& GetListingRevision() const{ return m_listingRevision; }
-    inline void SetListingRevision(const Aws::String& value) { m_listingRevision = value; }
-    inline void SetListingRevision(Aws::String&& value) { m_listingRevision = std::move(value); }
-    inline void SetListingRevision(const char* value) { m_listingRevision.assign(value); }
-    inline CreateListingChangeSetResult& WithListingRevision(const Aws::String& value) { SetListingRevision(value); return *this;}
-    inline CreateListingChangeSetResult& WithListingRevision(Aws::String&& value) { SetListingRevision(std::move(value)); return *this;}
-    inline CreateListingChangeSetResult& WithListingRevision(const char* value) { SetListingRevision(value); return *this;}
+    inline const Aws::String& GetListingRevision() const { return m_listingRevision; }
+    template<typename ListingRevisionT = Aws::String>
+    void SetListingRevision(ListingRevisionT&& value) { m_listingRevisionHasBeenSet = true; m_listingRevision = std::forward<ListingRevisionT>(value); }
+    template<typename ListingRevisionT = Aws::String>
+    CreateListingChangeSetResult& WithListingRevision(ListingRevisionT&& value) { SetListingRevision(std::forward<ListingRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the status of the listing.</p>
      */
-    inline const ListingStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ListingStatus& value) { m_status = value; }
-    inline void SetStatus(ListingStatus&& value) { m_status = std::move(value); }
-    inline CreateListingChangeSetResult& WithStatus(const ListingStatus& value) { SetStatus(value); return *this;}
-    inline CreateListingChangeSetResult& WithStatus(ListingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ListingStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ListingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateListingChangeSetResult& WithStatus(ListingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateListingChangeSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateListingChangeSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateListingChangeSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateListingChangeSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_listingId;
+    bool m_listingIdHasBeenSet = false;
 
     Aws::String m_listingRevision;
+    bool m_listingRevisionHasBeenSet = false;
 
-    ListingStatus m_status;
+    ListingStatus m_status{ListingStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

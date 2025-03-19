@@ -36,7 +36,7 @@ namespace Model
   class SpotCapacityRebalance
   {
   public:
-    AWS_EC2_API SpotCapacityRebalance();
+    AWS_EC2_API SpotCapacityRebalance() = default;
     AWS_EC2_API SpotCapacityRebalance(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SpotCapacityRebalance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -58,12 +58,10 @@ namespace Model
      * (in <code>TerminationDelay</code>), terminates the instances that received a
      * rebalance notification.</p>
      */
-    inline const ReplacementStrategy& GetReplacementStrategy() const{ return m_replacementStrategy; }
+    inline ReplacementStrategy GetReplacementStrategy() const { return m_replacementStrategy; }
     inline bool ReplacementStrategyHasBeenSet() const { return m_replacementStrategyHasBeenSet; }
-    inline void SetReplacementStrategy(const ReplacementStrategy& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = value; }
-    inline void SetReplacementStrategy(ReplacementStrategy&& value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = std::move(value); }
-    inline SpotCapacityRebalance& WithReplacementStrategy(const ReplacementStrategy& value) { SetReplacementStrategy(value); return *this;}
-    inline SpotCapacityRebalance& WithReplacementStrategy(ReplacementStrategy&& value) { SetReplacementStrategy(std::move(value)); return *this;}
+    inline void SetReplacementStrategy(ReplacementStrategy value) { m_replacementStrategyHasBeenSet = true; m_replacementStrategy = value; }
+    inline SpotCapacityRebalance& WithReplacementStrategy(ReplacementStrategy value) { SetReplacementStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -76,17 +74,17 @@ namespace Model
      * values: Minimum value of <code>120</code> seconds. Maximum value of
      * <code>7200</code> seconds.</p>
      */
-    inline int GetTerminationDelay() const{ return m_terminationDelay; }
+    inline int GetTerminationDelay() const { return m_terminationDelay; }
     inline bool TerminationDelayHasBeenSet() const { return m_terminationDelayHasBeenSet; }
     inline void SetTerminationDelay(int value) { m_terminationDelayHasBeenSet = true; m_terminationDelay = value; }
     inline SpotCapacityRebalance& WithTerminationDelay(int value) { SetTerminationDelay(value); return *this;}
     ///@}
   private:
 
-    ReplacementStrategy m_replacementStrategy;
+    ReplacementStrategy m_replacementStrategy{ReplacementStrategy::NOT_SET};
     bool m_replacementStrategyHasBeenSet = false;
 
-    int m_terminationDelay;
+    int m_terminationDelay{0};
     bool m_terminationDelayHasBeenSet = false;
   };
 

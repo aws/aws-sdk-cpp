@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContactMethodRequest::DeleteContactMethodRequest() : 
-    m_protocol(ContactProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContactMethodRequest::SerializePayload() const
 {
   JsonValue payload;

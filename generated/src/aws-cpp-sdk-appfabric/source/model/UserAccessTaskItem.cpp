@@ -18,16 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-UserAccessTaskItem::UserAccessTaskItem() : 
-    m_appHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 UserAccessTaskItem::UserAccessTaskItem(JsonView jsonValue)
-  : UserAccessTaskItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ UserAccessTaskItem& UserAccessTaskItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("app"))
   {
     m_app = jsonValue.GetString("app");
-
     m_appHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tenantId"))
   {
     m_tenantId = jsonValue.GetString("tenantId");
-
     m_tenantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

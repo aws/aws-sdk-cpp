@@ -18,18 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-WorkloadJiraConfigurationOutput::WorkloadJiraConfigurationOutput() : 
-    m_issueManagementStatus(WorkloadIssueManagementStatus::NOT_SET),
-    m_issueManagementStatusHasBeenSet(false),
-    m_issueManagementType(IssueManagementType::NOT_SET),
-    m_issueManagementTypeHasBeenSet(false),
-    m_jiraProjectKeyHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 WorkloadJiraConfigurationOutput::WorkloadJiraConfigurationOutput(JsonView jsonValue)
-  : WorkloadJiraConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ WorkloadJiraConfigurationOutput& WorkloadJiraConfigurationOutput::operator =(Jso
   if(jsonValue.ValueExists("IssueManagementStatus"))
   {
     m_issueManagementStatus = WorkloadIssueManagementStatusMapper::GetWorkloadIssueManagementStatusForName(jsonValue.GetString("IssueManagementStatus"));
-
     m_issueManagementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueManagementType"))
   {
     m_issueManagementType = IssueManagementTypeMapper::GetIssueManagementTypeForName(jsonValue.GetString("IssueManagementType"));
-
     m_issueManagementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraProjectKey"))
   {
     m_jiraProjectKey = jsonValue.GetString("JiraProjectKey");
-
     m_jiraProjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-SrtOutputDestinationSettings::SrtOutputDestinationSettings() : 
-    m_encryptionPassphraseSecretArnHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 SrtOutputDestinationSettings::SrtOutputDestinationSettings(JsonView jsonValue)
-  : SrtOutputDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SrtOutputDestinationSettings& SrtOutputDestinationSettings::operator =(JsonView 
   if(jsonValue.ValueExists("encryptionPassphraseSecretArn"))
   {
     m_encryptionPassphraseSecretArn = jsonValue.GetString("encryptionPassphraseSecretArn");
-
     m_encryptionPassphraseSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RetryStrategy::RetryStrategy() : 
-    m_maximumRetryAttempts(0),
-    m_maximumRetryAttemptsHasBeenSet(false)
-{
-}
-
 RetryStrategy::RetryStrategy(JsonView jsonValue)
-  : RetryStrategy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaximumRetryAttempts"))
   {
     m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
-
     m_maximumRetryAttemptsHasBeenSet = true;
   }
-
   return *this;
 }
 

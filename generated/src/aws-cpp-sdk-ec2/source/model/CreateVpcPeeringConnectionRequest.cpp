@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVpcPeeringConnectionRequest::CreateVpcPeeringConnectionRequest() : 
-    m_peerRegionHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false),
-    m_peerOwnerIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

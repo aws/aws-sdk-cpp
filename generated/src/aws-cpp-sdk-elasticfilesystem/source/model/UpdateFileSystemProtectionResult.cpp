@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFileSystemProtectionResult::UpdateFileSystemProtectionResult() : 
-    m_replicationOverwriteProtection(ReplicationOverwriteProtection::NOT_SET)
-{
-}
-
 UpdateFileSystemProtectionResult::UpdateFileSystemProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateFileSystemProtectionResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ UpdateFileSystemProtectionResult& UpdateFileSystemProtectionResult::operator =(c
   if(jsonValue.ValueExists("ReplicationOverwriteProtection"))
   {
     m_replicationOverwriteProtection = ReplicationOverwriteProtectionMapper::GetReplicationOverwriteProtectionForName(jsonValue.GetString("ReplicationOverwriteProtection"));
-
+    m_replicationOverwriteProtectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -25,7 +25,7 @@ namespace Model
   class DeleteGraphRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API DeleteGraphRequest();
+    AWS_NEPTUNEGRAPH_API DeleteGraphRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
-    inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
+    inline const Aws::String& GetGraphIdentifier() const { return m_graphIdentifier; }
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-    inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-    inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-    inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-    inline DeleteGraphRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-    inline DeleteGraphRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-    inline DeleteGraphRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    template<typename GraphIdentifierT = Aws::String>
+    void SetGraphIdentifier(GraphIdentifierT&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::forward<GraphIdentifierT>(value); }
+    template<typename GraphIdentifierT = Aws::String>
+    DeleteGraphRequest& WithGraphIdentifier(GraphIdentifierT&& value) { SetGraphIdentifier(std::forward<GraphIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <code>false</code> is specified, a graph snapshot is created before the graph is
      * deleted.</p>
      */
-    inline bool GetSkipSnapshot() const{ return m_skipSnapshot; }
+    inline bool GetSkipSnapshot() const { return m_skipSnapshot; }
     inline bool SkipSnapshotHasBeenSet() const { return m_skipSnapshotHasBeenSet; }
     inline void SetSkipSnapshot(bool value) { m_skipSnapshotHasBeenSet = true; m_skipSnapshot = value; }
     inline DeleteGraphRequest& WithSkipSnapshot(bool value) { SetSkipSnapshot(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
     Aws::String m_graphIdentifier;
     bool m_graphIdentifierHasBeenSet = false;
 
-    bool m_skipSnapshot;
+    bool m_skipSnapshot{false};
     bool m_skipSnapshotHasBeenSet = false;
   };
 

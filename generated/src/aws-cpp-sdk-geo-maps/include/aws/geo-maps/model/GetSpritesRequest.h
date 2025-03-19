@@ -24,7 +24,7 @@ namespace Model
   class GetSpritesRequest : public GeoMapsRequest
   {
   public:
-    AWS_GEOMAPS_API GetSpritesRequest();
+    AWS_GEOMAPS_API GetSpritesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,22 @@ namespace Model
      * pattern <code>sprites(@2x)?\.(png|json)</code>.</p> <p>Example:
      * <code>sprites.png</code> </p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline GetSpritesRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline GetSpritesRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline GetSpritesRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    GetSpritesRequest& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Style specifies the desired map style for the <code>Sprites</code> APIs.</p>
      */
-    inline const MapStyle& GetStyle() const{ return m_style; }
+    inline MapStyle GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const MapStyle& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(MapStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline GetSpritesRequest& WithStyle(const MapStyle& value) { SetStyle(value); return *this;}
-    inline GetSpritesRequest& WithStyle(MapStyle&& value) { SetStyle(std::move(value)); return *this;}
+    inline void SetStyle(MapStyle value) { m_styleHasBeenSet = true; m_style = value; }
+    inline GetSpritesRequest& WithStyle(MapStyle value) { SetStyle(value); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,10 @@ namespace Model
      * <p>Example: <code>Light</code> </p> <p>Default value: <code>Light</code> </p>
      *  <p>Valid values for ColorScheme are case sensitive.</p> 
      */
-    inline const ColorScheme& GetColorScheme() const{ return m_colorScheme; }
+    inline ColorScheme GetColorScheme() const { return m_colorScheme; }
     inline bool ColorSchemeHasBeenSet() const { return m_colorSchemeHasBeenSet; }
-    inline void SetColorScheme(const ColorScheme& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
-    inline void SetColorScheme(ColorScheme&& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = std::move(value); }
-    inline GetSpritesRequest& WithColorScheme(const ColorScheme& value) { SetColorScheme(value); return *this;}
-    inline GetSpritesRequest& WithColorScheme(ColorScheme&& value) { SetColorScheme(std::move(value)); return *this;}
+    inline void SetColorScheme(ColorScheme value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
+    inline GetSpritesRequest& WithColorScheme(ColorScheme value) { SetColorScheme(value); return *this;}
     ///@}
 
     ///@{
@@ -85,25 +79,23 @@ namespace Model
      * <code>Default</code> </p>  <p>Valid values for Variant are case
      * sensitive.</p> 
      */
-    inline const Variant& GetVariant() const{ return m_variant; }
+    inline Variant GetVariant() const { return m_variant; }
     inline bool VariantHasBeenSet() const { return m_variantHasBeenSet; }
-    inline void SetVariant(const Variant& value) { m_variantHasBeenSet = true; m_variant = value; }
-    inline void SetVariant(Variant&& value) { m_variantHasBeenSet = true; m_variant = std::move(value); }
-    inline GetSpritesRequest& WithVariant(const Variant& value) { SetVariant(value); return *this;}
-    inline GetSpritesRequest& WithVariant(Variant&& value) { SetVariant(std::move(value)); return *this;}
+    inline void SetVariant(Variant value) { m_variantHasBeenSet = true; m_variant = value; }
+    inline GetSpritesRequest& WithVariant(Variant value) { SetVariant(value); return *this;}
     ///@}
   private:
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
-    MapStyle m_style;
+    MapStyle m_style{MapStyle::NOT_SET};
     bool m_styleHasBeenSet = false;
 
-    ColorScheme m_colorScheme;
+    ColorScheme m_colorScheme{ColorScheme::NOT_SET};
     bool m_colorSchemeHasBeenSet = false;
 
-    Variant m_variant;
+    Variant m_variant{Variant::NOT_SET};
     bool m_variantHasBeenSet = false;
   };
 

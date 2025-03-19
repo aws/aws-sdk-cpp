@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AutomatedEncodingSettings::AutomatedEncodingSettings() : 
-    m_abrSettingsHasBeenSet(false)
-{
-}
-
 AutomatedEncodingSettings::AutomatedEncodingSettings(JsonView jsonValue)
-  : AutomatedEncodingSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutomatedEncodingSettings& AutomatedEncodingSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("abrSettings"))
   {
     m_abrSettings = jsonValue.GetObject("abrSettings");
-
     m_abrSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

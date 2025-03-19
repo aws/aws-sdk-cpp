@@ -36,7 +36,7 @@ namespace Model
   class RightsizingRecommendationConfiguration
   {
   public:
-    AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration();
+    AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration() = default;
     AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * recommendations for instances across other families. The default value is
      * <code>SAME_INSTANCE_FAMILY</code>. </p>
      */
-    inline const RecommendationTarget& GetRecommendationTarget() const{ return m_recommendationTarget; }
+    inline RecommendationTarget GetRecommendationTarget() const { return m_recommendationTarget; }
     inline bool RecommendationTargetHasBeenSet() const { return m_recommendationTargetHasBeenSet; }
-    inline void SetRecommendationTarget(const RecommendationTarget& value) { m_recommendationTargetHasBeenSet = true; m_recommendationTarget = value; }
-    inline void SetRecommendationTarget(RecommendationTarget&& value) { m_recommendationTargetHasBeenSet = true; m_recommendationTarget = std::move(value); }
-    inline RightsizingRecommendationConfiguration& WithRecommendationTarget(const RecommendationTarget& value) { SetRecommendationTarget(value); return *this;}
-    inline RightsizingRecommendationConfiguration& WithRecommendationTarget(RecommendationTarget&& value) { SetRecommendationTarget(std::move(value)); return *this;}
+    inline void SetRecommendationTarget(RecommendationTarget value) { m_recommendationTargetHasBeenSet = true; m_recommendationTarget = value; }
+    inline RightsizingRecommendationConfiguration& WithRecommendationTarget(RecommendationTarget value) { SetRecommendationTarget(value); return *this;}
     ///@}
 
     ///@{
@@ -61,17 +59,17 @@ namespace Model
      * <p>The option to consider RI or Savings Plans discount benefits in your savings
      * calculation. The default value is <code>TRUE</code>. </p>
      */
-    inline bool GetBenefitsConsidered() const{ return m_benefitsConsidered; }
+    inline bool GetBenefitsConsidered() const { return m_benefitsConsidered; }
     inline bool BenefitsConsideredHasBeenSet() const { return m_benefitsConsideredHasBeenSet; }
     inline void SetBenefitsConsidered(bool value) { m_benefitsConsideredHasBeenSet = true; m_benefitsConsidered = value; }
     inline RightsizingRecommendationConfiguration& WithBenefitsConsidered(bool value) { SetBenefitsConsidered(value); return *this;}
     ///@}
   private:
 
-    RecommendationTarget m_recommendationTarget;
+    RecommendationTarget m_recommendationTarget{RecommendationTarget::NOT_SET};
     bool m_recommendationTargetHasBeenSet = false;
 
-    bool m_benefitsConsidered;
+    bool m_benefitsConsidered{false};
     bool m_benefitsConsideredHasBeenSet = false;
   };
 

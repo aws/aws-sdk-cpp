@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMaintenanceWindowTaskRequest::GetMaintenanceWindowTaskRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_windowTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMaintenanceWindowTaskRequest::SerializePayload() const
 {
   JsonValue payload;

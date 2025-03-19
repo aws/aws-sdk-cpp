@@ -10,22 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_optionsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,10 +18,6 @@ namespace QLDBSession
 namespace Model
 {
 
-StartTransactionRequest::StartTransactionRequest()
-{
-}
-
 StartTransactionRequest::StartTransactionRequest(JsonView jsonValue)
 {
   *this = jsonValue;

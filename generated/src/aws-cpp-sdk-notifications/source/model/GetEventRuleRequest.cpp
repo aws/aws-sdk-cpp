@@ -12,11 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventRuleRequest::GetEventRuleRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetEventRuleRequest::SerializePayload() const
 {
   return {};

@@ -12,20 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOpportunitiesRequest::ListOpportunitiesRequest() : 
-    m_catalogHasBeenSet(false),
-    m_customerCompanyNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lifeCycleReviewStatusHasBeenSet(false),
-    m_lifeCycleStageHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String ListOpportunitiesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class StopCalculationExecutionResult
   {
   public:
-    AWS_ATHENA_API StopCalculationExecutionResult();
+    AWS_ATHENA_API StopCalculationExecutionResult() = default;
     AWS_ATHENA_API StopCalculationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API StopCalculationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,28 +45,26 @@ namespace Model
      * <code>COMPLETED</code> - The calculation has completed without error.</p> <p>
      * <code>FAILED</code> - The calculation failed and is no longer running.</p>
      */
-    inline const CalculationExecutionState& GetState() const{ return m_state; }
-    inline void SetState(const CalculationExecutionState& value) { m_state = value; }
-    inline void SetState(CalculationExecutionState&& value) { m_state = std::move(value); }
-    inline StopCalculationExecutionResult& WithState(const CalculationExecutionState& value) { SetState(value); return *this;}
-    inline StopCalculationExecutionResult& WithState(CalculationExecutionState&& value) { SetState(std::move(value)); return *this;}
+    inline CalculationExecutionState GetState() const { return m_state; }
+    inline void SetState(CalculationExecutionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline StopCalculationExecutionResult& WithState(CalculationExecutionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopCalculationExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopCalculationExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopCalculationExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopCalculationExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CalculationExecutionState m_state;
+    CalculationExecutionState m_state{CalculationExecutionState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

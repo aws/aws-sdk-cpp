@@ -34,7 +34,7 @@ namespace Model
   class UserTurnSlotOutput
   {
   public:
-    AWS_LEXMODELSV2_API UserTurnSlotOutput();
+    AWS_LEXMODELSV2_API UserTurnSlotOutput() = default;
     AWS_LEXMODELSV2_API UserTurnSlotOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API UserTurnSlotOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The value output by the slot recognition.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline UserTurnSlotOutput& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline UserTurnSlotOutput& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline UserTurnSlotOutput& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    UserTurnSlotOutput& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Values that are output by the slot recognition.</p>
      */
-    inline const Aws::Vector<UserTurnSlotOutput>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<UserTurnSlotOutput>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<UserTurnSlotOutput>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<UserTurnSlotOutput>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline UserTurnSlotOutput& WithValues(const Aws::Vector<UserTurnSlotOutput>& value) { SetValues(value); return *this;}
-    inline UserTurnSlotOutput& WithValues(Aws::Vector<UserTurnSlotOutput>&& value) { SetValues(std::move(value)); return *this;}
-    inline UserTurnSlotOutput& AddValues(const UserTurnSlotOutput& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline UserTurnSlotOutput& AddValues(UserTurnSlotOutput&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<UserTurnSlotOutput>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<UserTurnSlotOutput>>
+    UserTurnSlotOutput& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = UserTurnSlotOutput>
+    UserTurnSlotOutput& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,18 +71,16 @@ namespace Model
      * <p>A list of items mapping the name of the subslots to information about those
      * subslots.</p>
      */
-    inline const Aws::Map<Aws::String, UserTurnSlotOutput>& GetSubSlots() const{ return m_subSlots; }
+    inline const Aws::Map<Aws::String, UserTurnSlotOutput>& GetSubSlots() const { return m_subSlots; }
     inline bool SubSlotsHasBeenSet() const { return m_subSlotsHasBeenSet; }
-    inline void SetSubSlots(const Aws::Map<Aws::String, UserTurnSlotOutput>& value) { m_subSlotsHasBeenSet = true; m_subSlots = value; }
-    inline void SetSubSlots(Aws::Map<Aws::String, UserTurnSlotOutput>&& value) { m_subSlotsHasBeenSet = true; m_subSlots = std::move(value); }
-    inline UserTurnSlotOutput& WithSubSlots(const Aws::Map<Aws::String, UserTurnSlotOutput>& value) { SetSubSlots(value); return *this;}
-    inline UserTurnSlotOutput& WithSubSlots(Aws::Map<Aws::String, UserTurnSlotOutput>&& value) { SetSubSlots(std::move(value)); return *this;}
-    inline UserTurnSlotOutput& AddSubSlots(const Aws::String& key, const UserTurnSlotOutput& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, value); return *this; }
-    inline UserTurnSlotOutput& AddSubSlots(Aws::String&& key, const UserTurnSlotOutput& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::move(key), value); return *this; }
-    inline UserTurnSlotOutput& AddSubSlots(const Aws::String& key, UserTurnSlotOutput&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, std::move(value)); return *this; }
-    inline UserTurnSlotOutput& AddSubSlots(Aws::String&& key, UserTurnSlotOutput&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::move(key), std::move(value)); return *this; }
-    inline UserTurnSlotOutput& AddSubSlots(const char* key, UserTurnSlotOutput&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, std::move(value)); return *this; }
-    inline UserTurnSlotOutput& AddSubSlots(const char* key, const UserTurnSlotOutput& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, value); return *this; }
+    template<typename SubSlotsT = Aws::Map<Aws::String, UserTurnSlotOutput>>
+    void SetSubSlots(SubSlotsT&& value) { m_subSlotsHasBeenSet = true; m_subSlots = std::forward<SubSlotsT>(value); }
+    template<typename SubSlotsT = Aws::Map<Aws::String, UserTurnSlotOutput>>
+    UserTurnSlotOutput& WithSubSlots(SubSlotsT&& value) { SetSubSlots(std::forward<SubSlotsT>(value)); return *this;}
+    template<typename SubSlotsKeyT = Aws::String, typename SubSlotsValueT = UserTurnSlotOutput>
+    UserTurnSlotOutput& AddSubSlots(SubSlotsKeyT&& key, SubSlotsValueT&& value) {
+      m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::forward<SubSlotsKeyT>(key), std::forward<SubSlotsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

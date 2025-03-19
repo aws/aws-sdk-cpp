@@ -28,33 +28,35 @@ namespace Model
   class DeleteDBInstanceAutomatedBackupResult
   {
   public:
-    AWS_RDS_API DeleteDBInstanceAutomatedBackupResult();
+    AWS_RDS_API DeleteDBInstanceAutomatedBackupResult() = default;
     AWS_RDS_API DeleteDBInstanceAutomatedBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DeleteDBInstanceAutomatedBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBInstanceAutomatedBackup& GetDBInstanceAutomatedBackup() const{ return m_dBInstanceAutomatedBackup; }
-    inline void SetDBInstanceAutomatedBackup(const DBInstanceAutomatedBackup& value) { m_dBInstanceAutomatedBackup = value; }
-    inline void SetDBInstanceAutomatedBackup(DBInstanceAutomatedBackup&& value) { m_dBInstanceAutomatedBackup = std::move(value); }
-    inline DeleteDBInstanceAutomatedBackupResult& WithDBInstanceAutomatedBackup(const DBInstanceAutomatedBackup& value) { SetDBInstanceAutomatedBackup(value); return *this;}
-    inline DeleteDBInstanceAutomatedBackupResult& WithDBInstanceAutomatedBackup(DBInstanceAutomatedBackup&& value) { SetDBInstanceAutomatedBackup(std::move(value)); return *this;}
+    inline const DBInstanceAutomatedBackup& GetDBInstanceAutomatedBackup() const { return m_dBInstanceAutomatedBackup; }
+    template<typename DBInstanceAutomatedBackupT = DBInstanceAutomatedBackup>
+    void SetDBInstanceAutomatedBackup(DBInstanceAutomatedBackupT&& value) { m_dBInstanceAutomatedBackupHasBeenSet = true; m_dBInstanceAutomatedBackup = std::forward<DBInstanceAutomatedBackupT>(value); }
+    template<typename DBInstanceAutomatedBackupT = DBInstanceAutomatedBackup>
+    DeleteDBInstanceAutomatedBackupResult& WithDBInstanceAutomatedBackup(DBInstanceAutomatedBackupT&& value) { SetDBInstanceAutomatedBackup(std::forward<DBInstanceAutomatedBackupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteDBInstanceAutomatedBackupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteDBInstanceAutomatedBackupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteDBInstanceAutomatedBackupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBInstanceAutomatedBackup m_dBInstanceAutomatedBackup;
+    bool m_dBInstanceAutomatedBackupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

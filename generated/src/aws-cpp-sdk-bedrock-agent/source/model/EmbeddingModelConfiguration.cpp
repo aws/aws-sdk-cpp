@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-EmbeddingModelConfiguration::EmbeddingModelConfiguration() : 
-    m_bedrockEmbeddingModelConfigurationHasBeenSet(false)
-{
-}
-
 EmbeddingModelConfiguration::EmbeddingModelConfiguration(JsonView jsonValue)
-  : EmbeddingModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EmbeddingModelConfiguration& EmbeddingModelConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("bedrockEmbeddingModelConfiguration"))
   {
     m_bedrockEmbeddingModelConfiguration = jsonValue.GetObject("bedrockEmbeddingModelConfiguration");
-
     m_bedrockEmbeddingModelConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

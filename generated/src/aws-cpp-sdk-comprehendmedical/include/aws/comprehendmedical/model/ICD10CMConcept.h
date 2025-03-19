@@ -32,7 +32,7 @@ namespace Model
   class ICD10CMConcept
   {
   public:
-    AWS_COMPREHENDMEDICAL_API ICD10CMConcept();
+    AWS_COMPREHENDMEDICAL_API ICD10CMConcept() = default;
     AWS_COMPREHENDMEDICAL_API ICD10CMConcept(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API ICD10CMConcept& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The long description of the ICD-10-CM code in the ontology.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ICD10CMConcept& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ICD10CMConcept& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ICD10CMConcept& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ICD10CMConcept& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The ICD-10-CM code that identifies the concept found in the knowledge base
      * from the Centers for Disease Control.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ICD10CMConcept& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ICD10CMConcept& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ICD10CMConcept& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ICD10CMConcept& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend Medical has that the entity is
      * accurately linked to an ICD-10-CM concept.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline ICD10CMConcept& WithScore(double value) { SetScore(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

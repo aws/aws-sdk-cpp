@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-LocalSecondaryIndexInfo::LocalSecondaryIndexInfo() : 
-    m_indexNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false)
-{
-}
-
 LocalSecondaryIndexInfo::LocalSecondaryIndexInfo(JsonView jsonValue)
-  : LocalSecondaryIndexInfo()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -49,14 +39,11 @@ LocalSecondaryIndexInfo& LocalSecondaryIndexInfo::operator =(JsonView jsonValue)
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Projection"))
   {
     m_projection = jsonValue.GetObject("Projection");
-
     m_projectionHasBeenSet = true;
   }
-
   return *this;
 }
 

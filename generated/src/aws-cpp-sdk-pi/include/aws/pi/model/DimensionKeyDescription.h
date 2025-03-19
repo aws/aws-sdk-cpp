@@ -34,7 +34,7 @@ namespace Model
   class DimensionKeyDescription
   {
   public:
-    AWS_PI_API DimensionKeyDescription();
+    AWS_PI_API DimensionKeyDescription() = default;
     AWS_PI_API DimensionKeyDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API DimensionKeyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,16 @@ namespace Model
     /**
      * <p>A map of name-value pairs for the dimensions in the group.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline DimensionKeyDescription& WithDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensions(value); return *this;}
-    inline DimensionKeyDescription& WithDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline DimensionKeyDescription& AddDimensions(const Aws::String& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
-    inline DimensionKeyDescription& AddDimensions(Aws::String&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline DimensionKeyDescription& AddDimensions(const Aws::String& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline DimensionKeyDescription& AddDimensions(Aws::String&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
-    inline DimensionKeyDescription& AddDimensions(const char* key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline DimensionKeyDescription& AddDimensions(Aws::String&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline DimensionKeyDescription& AddDimensions(const char* key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
+    template<typename DimensionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Map<Aws::String, Aws::String>>
+    DimensionKeyDescription& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsKeyT = Aws::String, typename DimensionsValueT = Aws::String>
+    DimensionKeyDescription& AddDimensions(DimensionsKeyT&& key, DimensionsValueT&& value) {
+      m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::forward<DimensionsKeyT>(key), std::forward<DimensionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -64,7 +61,7 @@ namespace Model
      * <p>The aggregated metric value for the dimensions, over the requested time
      * range.</p>
      */
-    inline double GetTotal() const{ return m_total; }
+    inline double GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
     inline DimensionKeyDescription& WithTotal(double value) { SetTotal(value); return *this;}
@@ -74,15 +71,15 @@ namespace Model
     /**
      * <p>A map that contains the value for each additional metric.</p>
      */
-    inline const Aws::Map<Aws::String, double>& GetAdditionalMetrics() const{ return m_additionalMetrics; }
+    inline const Aws::Map<Aws::String, double>& GetAdditionalMetrics() const { return m_additionalMetrics; }
     inline bool AdditionalMetricsHasBeenSet() const { return m_additionalMetricsHasBeenSet; }
-    inline void SetAdditionalMetrics(const Aws::Map<Aws::String, double>& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = value; }
-    inline void SetAdditionalMetrics(Aws::Map<Aws::String, double>&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = std::move(value); }
-    inline DimensionKeyDescription& WithAdditionalMetrics(const Aws::Map<Aws::String, double>& value) { SetAdditionalMetrics(value); return *this;}
-    inline DimensionKeyDescription& WithAdditionalMetrics(Aws::Map<Aws::String, double>&& value) { SetAdditionalMetrics(std::move(value)); return *this;}
-    inline DimensionKeyDescription& AddAdditionalMetrics(const Aws::String& key, double value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(key, value); return *this; }
-    inline DimensionKeyDescription& AddAdditionalMetrics(Aws::String&& key, double value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(std::move(key), value); return *this; }
-    inline DimensionKeyDescription& AddAdditionalMetrics(const char* key, double value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(key, value); return *this; }
+    template<typename AdditionalMetricsT = Aws::Map<Aws::String, double>>
+    void SetAdditionalMetrics(AdditionalMetricsT&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = std::forward<AdditionalMetricsT>(value); }
+    template<typename AdditionalMetricsT = Aws::Map<Aws::String, double>>
+    DimensionKeyDescription& WithAdditionalMetrics(AdditionalMetricsT&& value) { SetAdditionalMetrics(std::forward<AdditionalMetricsT>(value)); return *this;}
+    inline DimensionKeyDescription& AddAdditionalMetrics(Aws::String key, double value) {
+      m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -90,12 +87,12 @@ namespace Model
      * <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code>
      * contains the dimensions that were.</p>
      */
-    inline const Aws::Vector<double>& GetPartitions() const{ return m_partitions; }
+    inline const Aws::Vector<double>& GetPartitions() const { return m_partitions; }
     inline bool PartitionsHasBeenSet() const { return m_partitionsHasBeenSet; }
-    inline void SetPartitions(const Aws::Vector<double>& value) { m_partitionsHasBeenSet = true; m_partitions = value; }
-    inline void SetPartitions(Aws::Vector<double>&& value) { m_partitionsHasBeenSet = true; m_partitions = std::move(value); }
-    inline DimensionKeyDescription& WithPartitions(const Aws::Vector<double>& value) { SetPartitions(value); return *this;}
-    inline DimensionKeyDescription& WithPartitions(Aws::Vector<double>&& value) { SetPartitions(std::move(value)); return *this;}
+    template<typename PartitionsT = Aws::Vector<double>>
+    void SetPartitions(PartitionsT&& value) { m_partitionsHasBeenSet = true; m_partitions = std::forward<PartitionsT>(value); }
+    template<typename PartitionsT = Aws::Vector<double>>
+    DimensionKeyDescription& WithPartitions(PartitionsT&& value) { SetPartitions(std::forward<PartitionsT>(value)); return *this;}
     inline DimensionKeyDescription& AddPartitions(double value) { m_partitionsHasBeenSet = true; m_partitions.push_back(value); return *this; }
     ///@}
   private:
@@ -103,7 +100,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
 
-    double m_total;
+    double m_total{0.0};
     bool m_totalHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_additionalMetrics;

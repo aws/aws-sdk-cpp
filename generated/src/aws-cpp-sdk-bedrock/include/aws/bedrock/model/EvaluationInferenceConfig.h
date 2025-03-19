@@ -36,7 +36,7 @@ namespace Model
   class EvaluationInferenceConfig
   {
   public:
-    AWS_BEDROCK_API EvaluationInferenceConfig();
+    AWS_BEDROCK_API EvaluationInferenceConfig() = default;
     AWS_BEDROCK_API EvaluationInferenceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluationInferenceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>Specifies the inference models.</p>
      */
-    inline const Aws::Vector<EvaluationModelConfig>& GetModels() const{ return m_models; }
+    inline const Aws::Vector<EvaluationModelConfig>& GetModels() const { return m_models; }
     inline bool ModelsHasBeenSet() const { return m_modelsHasBeenSet; }
-    inline void SetModels(const Aws::Vector<EvaluationModelConfig>& value) { m_modelsHasBeenSet = true; m_models = value; }
-    inline void SetModels(Aws::Vector<EvaluationModelConfig>&& value) { m_modelsHasBeenSet = true; m_models = std::move(value); }
-    inline EvaluationInferenceConfig& WithModels(const Aws::Vector<EvaluationModelConfig>& value) { SetModels(value); return *this;}
-    inline EvaluationInferenceConfig& WithModels(Aws::Vector<EvaluationModelConfig>&& value) { SetModels(std::move(value)); return *this;}
-    inline EvaluationInferenceConfig& AddModels(const EvaluationModelConfig& value) { m_modelsHasBeenSet = true; m_models.push_back(value); return *this; }
-    inline EvaluationInferenceConfig& AddModels(EvaluationModelConfig&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
+    template<typename ModelsT = Aws::Vector<EvaluationModelConfig>>
+    void SetModels(ModelsT&& value) { m_modelsHasBeenSet = true; m_models = std::forward<ModelsT>(value); }
+    template<typename ModelsT = Aws::Vector<EvaluationModelConfig>>
+    EvaluationInferenceConfig& WithModels(ModelsT&& value) { SetModels(std::forward<ModelsT>(value)); return *this;}
+    template<typename ModelsT = EvaluationModelConfig>
+    EvaluationInferenceConfig& AddModels(ModelsT&& value) { m_modelsHasBeenSet = true; m_models.emplace_back(std::forward<ModelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,14 @@ namespace Model
      * evaluation job, including either the retrieval only configuration or the
      * retrieval with response generation configuration.</p>
      */
-    inline const Aws::Vector<RAGConfig>& GetRagConfigs() const{ return m_ragConfigs; }
+    inline const Aws::Vector<RAGConfig>& GetRagConfigs() const { return m_ragConfigs; }
     inline bool RagConfigsHasBeenSet() const { return m_ragConfigsHasBeenSet; }
-    inline void SetRagConfigs(const Aws::Vector<RAGConfig>& value) { m_ragConfigsHasBeenSet = true; m_ragConfigs = value; }
-    inline void SetRagConfigs(Aws::Vector<RAGConfig>&& value) { m_ragConfigsHasBeenSet = true; m_ragConfigs = std::move(value); }
-    inline EvaluationInferenceConfig& WithRagConfigs(const Aws::Vector<RAGConfig>& value) { SetRagConfigs(value); return *this;}
-    inline EvaluationInferenceConfig& WithRagConfigs(Aws::Vector<RAGConfig>&& value) { SetRagConfigs(std::move(value)); return *this;}
-    inline EvaluationInferenceConfig& AddRagConfigs(const RAGConfig& value) { m_ragConfigsHasBeenSet = true; m_ragConfigs.push_back(value); return *this; }
-    inline EvaluationInferenceConfig& AddRagConfigs(RAGConfig&& value) { m_ragConfigsHasBeenSet = true; m_ragConfigs.push_back(std::move(value)); return *this; }
+    template<typename RagConfigsT = Aws::Vector<RAGConfig>>
+    void SetRagConfigs(RagConfigsT&& value) { m_ragConfigsHasBeenSet = true; m_ragConfigs = std::forward<RagConfigsT>(value); }
+    template<typename RagConfigsT = Aws::Vector<RAGConfig>>
+    EvaluationInferenceConfig& WithRagConfigs(RagConfigsT&& value) { SetRagConfigs(std::forward<RagConfigsT>(value)); return *this;}
+    template<typename RagConfigsT = RAGConfig>
+    EvaluationInferenceConfig& AddRagConfigs(RagConfigsT&& value) { m_ragConfigsHasBeenSet = true; m_ragConfigs.emplace_back(std::forward<RagConfigsT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,13 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-ServiceEndpoint::ServiceEndpoint() : 
-    m_endpointHasBeenSet(false)
-{
-}
-
 ServiceEndpoint::ServiceEndpoint(const XmlNode& xmlNode)
-  : ServiceEndpoint()
 {
   *this = xmlNode;
 }

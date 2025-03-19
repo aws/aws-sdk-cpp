@@ -36,7 +36,7 @@ namespace Model
   class BucketAccessLogConfig
   {
   public:
-    AWS_LIGHTSAIL_API BucketAccessLogConfig();
+    AWS_LIGHTSAIL_API BucketAccessLogConfig() = default;
     AWS_LIGHTSAIL_API BucketAccessLogConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API BucketAccessLogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <p>A Boolean value that indicates whether bucket access logging is enabled for
      * the bucket.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline BucketAccessLogConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -61,14 +61,12 @@ namespace Model
      * enabling the access log for a bucket, and should be omitted when disabling the
      * access log.</p> 
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline BucketAccessLogConfig& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline BucketAccessLogConfig& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline BucketAccessLogConfig& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    BucketAccessLogConfig& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,18 +80,16 @@ namespace Model
      * log for a bucket, and should be omitted when disabling the access log.</p>
      * 
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline BucketAccessLogConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline BucketAccessLogConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline BucketAccessLogConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    BucketAccessLogConfig& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_destination;

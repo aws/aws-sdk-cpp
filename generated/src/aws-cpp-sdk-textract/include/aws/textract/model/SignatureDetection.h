@@ -32,7 +32,7 @@ namespace Model
   class SignatureDetection
   {
   public:
-    AWS_TEXTRACT_API SignatureDetection();
+    AWS_TEXTRACT_API SignatureDetection() = default;
     AWS_TEXTRACT_API SignatureDetection(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API SignatureDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The confidence, from 0 to 100, in the predicted values for a detected
      * signature.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline SignatureDetection& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -51,16 +51,16 @@ namespace Model
 
     ///@{
     
-    inline const Geometry& GetGeometry() const{ return m_geometry; }
+    inline const Geometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const Geometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(Geometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline SignatureDetection& WithGeometry(const Geometry& value) { SetGeometry(value); return *this;}
-    inline SignatureDetection& WithGeometry(Geometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = Geometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = Geometry>
+    SignatureDetection& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
   private:
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Geometry m_geometry;

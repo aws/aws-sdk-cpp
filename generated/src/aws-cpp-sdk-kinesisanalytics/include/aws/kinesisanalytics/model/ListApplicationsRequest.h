@@ -24,7 +24,7 @@ namespace Model
   class ListApplicationsRequest : public KinesisAnalyticsRequest
   {
   public:
-    AWS_KINESISANALYTICS_API ListApplicationsRequest();
+    AWS_KINESISANALYTICS_API ListApplicationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Maximum number of applications to list.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListApplicationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * request. However, in subsequent requests, you add the last application name from
      * the previous response to get the next page of applications.</p>
      */
-    inline const Aws::String& GetExclusiveStartApplicationName() const{ return m_exclusiveStartApplicationName; }
+    inline const Aws::String& GetExclusiveStartApplicationName() const { return m_exclusiveStartApplicationName; }
     inline bool ExclusiveStartApplicationNameHasBeenSet() const { return m_exclusiveStartApplicationNameHasBeenSet; }
-    inline void SetExclusiveStartApplicationName(const Aws::String& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = value; }
-    inline void SetExclusiveStartApplicationName(Aws::String&& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = std::move(value); }
-    inline void SetExclusiveStartApplicationName(const char* value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName.assign(value); }
-    inline ListApplicationsRequest& WithExclusiveStartApplicationName(const Aws::String& value) { SetExclusiveStartApplicationName(value); return *this;}
-    inline ListApplicationsRequest& WithExclusiveStartApplicationName(Aws::String&& value) { SetExclusiveStartApplicationName(std::move(value)); return *this;}
-    inline ListApplicationsRequest& WithExclusiveStartApplicationName(const char* value) { SetExclusiveStartApplicationName(value); return *this;}
+    template<typename ExclusiveStartApplicationNameT = Aws::String>
+    void SetExclusiveStartApplicationName(ExclusiveStartApplicationNameT&& value) { m_exclusiveStartApplicationNameHasBeenSet = true; m_exclusiveStartApplicationName = std::forward<ExclusiveStartApplicationNameT>(value); }
+    template<typename ExclusiveStartApplicationNameT = Aws::String>
+    ListApplicationsRequest& WithExclusiveStartApplicationName(ExclusiveStartApplicationNameT&& value) { SetExclusiveStartApplicationName(std::forward<ExclusiveStartApplicationNameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_exclusiveStartApplicationName;

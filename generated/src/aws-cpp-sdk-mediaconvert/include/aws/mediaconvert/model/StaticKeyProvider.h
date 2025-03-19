@@ -32,7 +32,7 @@ namespace Model
   class StaticKeyProvider
   {
   public:
-    AWS_MEDIACONVERT_API StaticKeyProvider();
+    AWS_MEDIACONVERT_API StaticKeyProvider() = default;
     AWS_MEDIACONVERT_API StaticKeyProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API StaticKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * be 'identity' or a reverse DNS string. May be omitted to indicate an implicit
      * value of 'identity'.
      */
-    inline const Aws::String& GetKeyFormat() const{ return m_keyFormat; }
+    inline const Aws::String& GetKeyFormat() const { return m_keyFormat; }
     inline bool KeyFormatHasBeenSet() const { return m_keyFormatHasBeenSet; }
-    inline void SetKeyFormat(const Aws::String& value) { m_keyFormatHasBeenSet = true; m_keyFormat = value; }
-    inline void SetKeyFormat(Aws::String&& value) { m_keyFormatHasBeenSet = true; m_keyFormat = std::move(value); }
-    inline void SetKeyFormat(const char* value) { m_keyFormatHasBeenSet = true; m_keyFormat.assign(value); }
-    inline StaticKeyProvider& WithKeyFormat(const Aws::String& value) { SetKeyFormat(value); return *this;}
-    inline StaticKeyProvider& WithKeyFormat(Aws::String&& value) { SetKeyFormat(std::move(value)); return *this;}
-    inline StaticKeyProvider& WithKeyFormat(const char* value) { SetKeyFormat(value); return *this;}
+    template<typename KeyFormatT = Aws::String>
+    void SetKeyFormat(KeyFormatT&& value) { m_keyFormatHasBeenSet = true; m_keyFormat = std::forward<KeyFormatT>(value); }
+    template<typename KeyFormatT = Aws::String>
+    StaticKeyProvider& WithKeyFormat(KeyFormatT&& value) { SetKeyFormat(std::forward<KeyFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * Relates to DRM implementation. Either a single positive integer version value or
      * a slash delimited list of version values (1/2/3).
      */
-    inline const Aws::String& GetKeyFormatVersions() const{ return m_keyFormatVersions; }
+    inline const Aws::String& GetKeyFormatVersions() const { return m_keyFormatVersions; }
     inline bool KeyFormatVersionsHasBeenSet() const { return m_keyFormatVersionsHasBeenSet; }
-    inline void SetKeyFormatVersions(const Aws::String& value) { m_keyFormatVersionsHasBeenSet = true; m_keyFormatVersions = value; }
-    inline void SetKeyFormatVersions(Aws::String&& value) { m_keyFormatVersionsHasBeenSet = true; m_keyFormatVersions = std::move(value); }
-    inline void SetKeyFormatVersions(const char* value) { m_keyFormatVersionsHasBeenSet = true; m_keyFormatVersions.assign(value); }
-    inline StaticKeyProvider& WithKeyFormatVersions(const Aws::String& value) { SetKeyFormatVersions(value); return *this;}
-    inline StaticKeyProvider& WithKeyFormatVersions(Aws::String&& value) { SetKeyFormatVersions(std::move(value)); return *this;}
-    inline StaticKeyProvider& WithKeyFormatVersions(const char* value) { SetKeyFormatVersions(value); return *this;}
+    template<typename KeyFormatVersionsT = Aws::String>
+    void SetKeyFormatVersions(KeyFormatVersionsT&& value) { m_keyFormatVersionsHasBeenSet = true; m_keyFormatVersions = std::forward<KeyFormatVersionsT>(value); }
+    template<typename KeyFormatVersionsT = Aws::String>
+    StaticKeyProvider& WithKeyFormatVersions(KeyFormatVersionsT&& value) { SetKeyFormatVersions(std::forward<KeyFormatVersionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
      * Key Value.
      */
-    inline const Aws::String& GetStaticKeyValue() const{ return m_staticKeyValue; }
+    inline const Aws::String& GetStaticKeyValue() const { return m_staticKeyValue; }
     inline bool StaticKeyValueHasBeenSet() const { return m_staticKeyValueHasBeenSet; }
-    inline void SetStaticKeyValue(const Aws::String& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = value; }
-    inline void SetStaticKeyValue(Aws::String&& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = std::move(value); }
-    inline void SetStaticKeyValue(const char* value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue.assign(value); }
-    inline StaticKeyProvider& WithStaticKeyValue(const Aws::String& value) { SetStaticKeyValue(value); return *this;}
-    inline StaticKeyProvider& WithStaticKeyValue(Aws::String&& value) { SetStaticKeyValue(std::move(value)); return *this;}
-    inline StaticKeyProvider& WithStaticKeyValue(const char* value) { SetStaticKeyValue(value); return *this;}
+    template<typename StaticKeyValueT = Aws::String>
+    void SetStaticKeyValue(StaticKeyValueT&& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = std::forward<StaticKeyValueT>(value); }
+    template<typename StaticKeyValueT = Aws::String>
+    StaticKeyProvider& WithStaticKeyValue(StaticKeyValueT&& value) { SetStaticKeyValue(std::forward<StaticKeyValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * Relates to DRM implementation. The location of the license server used for
      * protecting content.
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline StaticKeyProvider& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline StaticKeyProvider& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline StaticKeyProvider& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    StaticKeyProvider& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DeleteLoadBalancerListenersRequest::DeleteLoadBalancerListenersRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_loadBalancerPortsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -24,7 +24,7 @@ namespace Model
   class DeleteMissionProfileRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API DeleteMissionProfileRequest();
+    AWS_GROUNDSTATION_API DeleteMissionProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>UUID of a mission profile.</p>
      */
-    inline const Aws::String& GetMissionProfileId() const{ return m_missionProfileId; }
+    inline const Aws::String& GetMissionProfileId() const { return m_missionProfileId; }
     inline bool MissionProfileIdHasBeenSet() const { return m_missionProfileIdHasBeenSet; }
-    inline void SetMissionProfileId(const Aws::String& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = value; }
-    inline void SetMissionProfileId(Aws::String&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::move(value); }
-    inline void SetMissionProfileId(const char* value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId.assign(value); }
-    inline DeleteMissionProfileRequest& WithMissionProfileId(const Aws::String& value) { SetMissionProfileId(value); return *this;}
-    inline DeleteMissionProfileRequest& WithMissionProfileId(Aws::String&& value) { SetMissionProfileId(std::move(value)); return *this;}
-    inline DeleteMissionProfileRequest& WithMissionProfileId(const char* value) { SetMissionProfileId(value); return *this;}
+    template<typename MissionProfileIdT = Aws::String>
+    void SetMissionProfileId(MissionProfileIdT&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::forward<MissionProfileIdT>(value); }
+    template<typename MissionProfileIdT = Aws::String>
+    DeleteMissionProfileRequest& WithMissionProfileId(MissionProfileIdT&& value) { SetMissionProfileId(std::forward<MissionProfileIdT>(value)); return *this;}
     ///@}
   private:
 

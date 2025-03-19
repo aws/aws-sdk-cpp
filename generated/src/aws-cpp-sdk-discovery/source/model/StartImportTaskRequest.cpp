@@ -12,14 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportTaskRequest::StartImportTaskRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_importUrlHasBeenSet(false)
-{
-}
-
 Aws::String StartImportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

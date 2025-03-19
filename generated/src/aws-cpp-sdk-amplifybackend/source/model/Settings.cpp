@@ -18,14 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-Settings::Settings() : 
-    m_mfaTypesHasBeenSet(false),
-    m_smsMessageHasBeenSet(false)
-{
-}
-
 Settings::Settings(JsonView jsonValue)
-  : Settings()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ Settings& Settings::operator =(JsonView jsonValue)
     }
     m_mfaTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smsMessage"))
   {
     m_smsMessage = jsonValue.GetString("smsMessage");
-
     m_smsMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

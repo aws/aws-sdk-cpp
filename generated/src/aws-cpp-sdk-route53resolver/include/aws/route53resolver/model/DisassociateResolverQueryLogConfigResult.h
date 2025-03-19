@@ -28,7 +28,7 @@ namespace Model
   class DisassociateResolverQueryLogConfigResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API DisassociateResolverQueryLogConfigResult();
+    AWS_ROUTE53RESOLVER_API DisassociateResolverQueryLogConfigResult() = default;
     AWS_ROUTE53RESOLVER_API DisassociateResolverQueryLogConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API DisassociateResolverQueryLogConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A complex type that contains settings for the association that you deleted
      * between an Amazon VPC and a query logging configuration.</p>
      */
-    inline const ResolverQueryLogConfigAssociation& GetResolverQueryLogConfigAssociation() const{ return m_resolverQueryLogConfigAssociation; }
-    inline void SetResolverQueryLogConfigAssociation(const ResolverQueryLogConfigAssociation& value) { m_resolverQueryLogConfigAssociation = value; }
-    inline void SetResolverQueryLogConfigAssociation(ResolverQueryLogConfigAssociation&& value) { m_resolverQueryLogConfigAssociation = std::move(value); }
-    inline DisassociateResolverQueryLogConfigResult& WithResolverQueryLogConfigAssociation(const ResolverQueryLogConfigAssociation& value) { SetResolverQueryLogConfigAssociation(value); return *this;}
-    inline DisassociateResolverQueryLogConfigResult& WithResolverQueryLogConfigAssociation(ResolverQueryLogConfigAssociation&& value) { SetResolverQueryLogConfigAssociation(std::move(value)); return *this;}
+    inline const ResolverQueryLogConfigAssociation& GetResolverQueryLogConfigAssociation() const { return m_resolverQueryLogConfigAssociation; }
+    template<typename ResolverQueryLogConfigAssociationT = ResolverQueryLogConfigAssociation>
+    void SetResolverQueryLogConfigAssociation(ResolverQueryLogConfigAssociationT&& value) { m_resolverQueryLogConfigAssociationHasBeenSet = true; m_resolverQueryLogConfigAssociation = std::forward<ResolverQueryLogConfigAssociationT>(value); }
+    template<typename ResolverQueryLogConfigAssociationT = ResolverQueryLogConfigAssociation>
+    DisassociateResolverQueryLogConfigResult& WithResolverQueryLogConfigAssociation(ResolverQueryLogConfigAssociationT&& value) { SetResolverQueryLogConfigAssociation(std::forward<ResolverQueryLogConfigAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateResolverQueryLogConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateResolverQueryLogConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateResolverQueryLogConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateResolverQueryLogConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResolverQueryLogConfigAssociation m_resolverQueryLogConfigAssociation;
+    bool m_resolverQueryLogConfigAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

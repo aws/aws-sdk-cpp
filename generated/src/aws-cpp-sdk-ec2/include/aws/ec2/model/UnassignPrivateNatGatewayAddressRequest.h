@@ -22,7 +22,7 @@ namespace Model
   class UnassignPrivateNatGatewayAddressRequest : public EC2Request
   {
   public:
-    AWS_EC2_API UnassignPrivateNatGatewayAddressRequest();
+    AWS_EC2_API UnassignPrivateNatGatewayAddressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,29 +41,26 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+    inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
     inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
-    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
-    inline UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-    inline UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-    inline UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+    template<typename NatGatewayIdT = Aws::String>
+    void SetNatGatewayId(NatGatewayIdT&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::forward<NatGatewayIdT>(value); }
+    template<typename NatGatewayIdT = Aws::String>
+    UnassignPrivateNatGatewayAddressRequest& WithNatGatewayId(NatGatewayIdT&& value) { SetNatGatewayId(std::forward<NatGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private IPv4 addresses you want to unassign.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+    inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const { return m_privateIpAddresses; }
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
-    inline void SetPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
-    inline void SetPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
-    inline UnassignPrivateNatGatewayAddressRequest& WithPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetPrivateIpAddresses(value); return *this;}
-    inline UnassignPrivateNatGatewayAddressRequest& WithPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
-    inline UnassignPrivateNatGatewayAddressRequest& AddPrivateIpAddresses(const Aws::String& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
-    inline UnassignPrivateNatGatewayAddressRequest& AddPrivateIpAddresses(Aws::String&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
-    inline UnassignPrivateNatGatewayAddressRequest& AddPrivateIpAddresses(const char* value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+    template<typename PrivateIpAddressesT = Aws::Vector<Aws::String>>
+    void SetPrivateIpAddresses(PrivateIpAddressesT&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::forward<PrivateIpAddressesT>(value); }
+    template<typename PrivateIpAddressesT = Aws::Vector<Aws::String>>
+    UnassignPrivateNatGatewayAddressRequest& WithPrivateIpAddresses(PrivateIpAddressesT&& value) { SetPrivateIpAddresses(std::forward<PrivateIpAddressesT>(value)); return *this;}
+    template<typename PrivateIpAddressesT = Aws::String>
+    UnassignPrivateNatGatewayAddressRequest& AddPrivateIpAddresses(PrivateIpAddressesT&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.emplace_back(std::forward<PrivateIpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,7 +69,7 @@ namespace Model
      * IP addresses if connections are still in progress. Default value is 350
      * seconds.</p>
      */
-    inline int GetMaxDrainDurationSeconds() const{ return m_maxDrainDurationSeconds; }
+    inline int GetMaxDrainDurationSeconds() const { return m_maxDrainDurationSeconds; }
     inline bool MaxDrainDurationSecondsHasBeenSet() const { return m_maxDrainDurationSecondsHasBeenSet; }
     inline void SetMaxDrainDurationSeconds(int value) { m_maxDrainDurationSecondsHasBeenSet = true; m_maxDrainDurationSeconds = value; }
     inline UnassignPrivateNatGatewayAddressRequest& WithMaxDrainDurationSeconds(int value) { SetMaxDrainDurationSeconds(value); return *this;}
@@ -85,7 +82,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline UnassignPrivateNatGatewayAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -98,10 +95,10 @@ namespace Model
     Aws::Vector<Aws::String> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet = false;
 
-    int m_maxDrainDurationSeconds;
+    int m_maxDrainDurationSeconds{0};
     bool m_maxDrainDurationSecondsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

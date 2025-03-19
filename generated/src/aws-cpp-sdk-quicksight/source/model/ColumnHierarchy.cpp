@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnHierarchy::ColumnHierarchy() : 
-    m_explicitHierarchyHasBeenSet(false),
-    m_dateTimeHierarchyHasBeenSet(false),
-    m_predefinedHierarchyHasBeenSet(false)
-{
-}
-
 ColumnHierarchy::ColumnHierarchy(JsonView jsonValue)
-  : ColumnHierarchy()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ColumnHierarchy& ColumnHierarchy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExplicitHierarchy"))
   {
     m_explicitHierarchy = jsonValue.GetObject("ExplicitHierarchy");
-
     m_explicitHierarchyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeHierarchy"))
   {
     m_dateTimeHierarchy = jsonValue.GetObject("DateTimeHierarchy");
-
     m_dateTimeHierarchyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedHierarchy"))
   {
     m_predefinedHierarchy = jsonValue.GetObject("PredefinedHierarchy");
-
     m_predefinedHierarchyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFindingsRequest::DescribeFindingsRequest() : 
-    m_findingArnsHasBeenSet(false),
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-CaptionRectangle::CaptionRectangle() : 
-    m_height(0.0),
-    m_heightHasBeenSet(false),
-    m_leftOffset(0.0),
-    m_leftOffsetHasBeenSet(false),
-    m_topOffset(0.0),
-    m_topOffsetHasBeenSet(false),
-    m_width(0.0),
-    m_widthHasBeenSet(false)
-{
-}
-
 CaptionRectangle::CaptionRectangle(JsonView jsonValue)
-  : CaptionRectangle()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ CaptionRectangle& CaptionRectangle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("height"))
   {
     m_height = jsonValue.GetDouble("height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("leftOffset"))
   {
     m_leftOffset = jsonValue.GetDouble("leftOffset");
-
     m_leftOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topOffset"))
   {
     m_topOffset = jsonValue.GetDouble("topOffset");
-
     m_topOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("width"))
   {
     m_width = jsonValue.GetDouble("width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

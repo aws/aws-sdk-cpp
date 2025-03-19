@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetAccountStatusRequest::BatchGetAccountStatusRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetAccountStatusRequest::SerializePayload() const
 {
   JsonValue payload;

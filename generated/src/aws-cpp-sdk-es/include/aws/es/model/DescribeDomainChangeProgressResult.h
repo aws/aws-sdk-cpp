@@ -35,7 +35,7 @@ namespace Model
   class DescribeDomainChangeProgressResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressResult();
+    AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressResult() = default;
     AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,28 +45,28 @@ namespace Model
      * <p>Progress information for the configuration change that is requested in the
      * <code>DescribeDomainChangeProgress</code> request. </p>
      */
-    inline const ChangeProgressStatusDetails& GetChangeProgressStatus() const{ return m_changeProgressStatus; }
-    inline void SetChangeProgressStatus(const ChangeProgressStatusDetails& value) { m_changeProgressStatus = value; }
-    inline void SetChangeProgressStatus(ChangeProgressStatusDetails&& value) { m_changeProgressStatus = std::move(value); }
-    inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(const ChangeProgressStatusDetails& value) { SetChangeProgressStatus(value); return *this;}
-    inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(ChangeProgressStatusDetails&& value) { SetChangeProgressStatus(std::move(value)); return *this;}
+    inline const ChangeProgressStatusDetails& GetChangeProgressStatus() const { return m_changeProgressStatus; }
+    template<typename ChangeProgressStatusT = ChangeProgressStatusDetails>
+    void SetChangeProgressStatus(ChangeProgressStatusT&& value) { m_changeProgressStatusHasBeenSet = true; m_changeProgressStatus = std::forward<ChangeProgressStatusT>(value); }
+    template<typename ChangeProgressStatusT = ChangeProgressStatusDetails>
+    DescribeDomainChangeProgressResult& WithChangeProgressStatus(ChangeProgressStatusT&& value) { SetChangeProgressStatus(std::forward<ChangeProgressStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDomainChangeProgressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDomainChangeProgressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDomainChangeProgressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDomainChangeProgressResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChangeProgressStatusDetails m_changeProgressStatus;
+    bool m_changeProgressStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

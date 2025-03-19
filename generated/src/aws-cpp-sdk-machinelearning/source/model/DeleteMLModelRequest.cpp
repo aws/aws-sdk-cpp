@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMLModelRequest::DeleteMLModelRequest() : 
-    m_mLModelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMLModelRequest::SerializePayload() const
 {
   JsonValue payload;

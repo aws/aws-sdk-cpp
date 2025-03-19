@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedElasticsearchInstanceOfferingsResult::DescribeReservedElasticsearchInstanceOfferingsResult()
-{
-}
-
 DescribeReservedElasticsearchInstanceOfferingsResult::DescribeReservedElasticsearchInstanceOfferingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeReservedElasticsearchInstanceOfferingsResult& DescribeReservedElasticsea
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedElasticsearchInstanceOfferings"))
   {
     Aws::Utils::Array<JsonView> reservedElasticsearchInstanceOfferingsJsonList = jsonValue.GetArray("ReservedElasticsearchInstanceOfferings");
@@ -42,14 +37,15 @@ DescribeReservedElasticsearchInstanceOfferingsResult& DescribeReservedElasticsea
     {
       m_reservedElasticsearchInstanceOfferings.push_back(reservedElasticsearchInstanceOfferingsJsonList[reservedElasticsearchInstanceOfferingsIndex].AsObject());
     }
+    m_reservedElasticsearchInstanceOfferingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

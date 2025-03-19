@@ -31,7 +31,7 @@ namespace Model
   class RetainedMessageSummary
   {
   public:
-    AWS_IOTDATAPLANE_API RetainedMessageSummary();
+    AWS_IOTDATAPLANE_API RetainedMessageSummary() = default;
     AWS_IOTDATAPLANE_API RetainedMessageSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTDATAPLANE_API RetainedMessageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTDATAPLANE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The topic name to which the retained message was published.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline RetainedMessageSummary& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline RetainedMessageSummary& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline RetainedMessageSummary& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    RetainedMessageSummary& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the retained message's payload in bytes.</p>
      */
-    inline long long GetPayloadSize() const{ return m_payloadSize; }
+    inline long long GetPayloadSize() const { return m_payloadSize; }
     inline bool PayloadSizeHasBeenSet() const { return m_payloadSizeHasBeenSet; }
     inline void SetPayloadSize(long long value) { m_payloadSizeHasBeenSet = true; m_payloadSize = value; }
     inline RetainedMessageSummary& WithPayloadSize(long long value) { SetPayloadSize(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     /**
      * <p>The quality of service (QoS) level used to publish the retained message.</p>
      */
-    inline int GetQos() const{ return m_qos; }
+    inline int GetQos() const { return m_qos; }
     inline bool QosHasBeenSet() const { return m_qosHasBeenSet; }
     inline void SetQos(int value) { m_qosHasBeenSet = true; m_qos = value; }
     inline RetainedMessageSummary& WithQos(int value) { SetQos(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
      * <p>The Epoch date and time, in milliseconds, when the retained message was
      * stored by IoT.</p>
      */
-    inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline long long GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
     inline RetainedMessageSummary& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
@@ -86,13 +84,13 @@ namespace Model
     Aws::String m_topic;
     bool m_topicHasBeenSet = false;
 
-    long long m_payloadSize;
+    long long m_payloadSize{0};
     bool m_payloadSizeHasBeenSet = false;
 
-    int m_qos;
+    int m_qos{0};
     bool m_qosHasBeenSet = false;
 
-    long long m_lastModifiedTime;
+    long long m_lastModifiedTime{0};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

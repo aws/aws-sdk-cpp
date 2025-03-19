@@ -32,7 +32,7 @@ namespace Model
   class BatchDeleteEvaluationJobError
   {
   public:
-    AWS_BEDROCK_API BatchDeleteEvaluationJobError();
+    AWS_BEDROCK_API BatchDeleteEvaluationJobError() = default;
     AWS_BEDROCK_API BatchDeleteEvaluationJobError(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API BatchDeleteEvaluationJobError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The ARN of the evaluation job being deleted.</p>
      */
-    inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
+    inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
-    inline void SetJobIdentifier(const Aws::String& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = value; }
-    inline void SetJobIdentifier(Aws::String&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::move(value); }
-    inline void SetJobIdentifier(const char* value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier.assign(value); }
-    inline BatchDeleteEvaluationJobError& WithJobIdentifier(const Aws::String& value) { SetJobIdentifier(value); return *this;}
-    inline BatchDeleteEvaluationJobError& WithJobIdentifier(Aws::String&& value) { SetJobIdentifier(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobError& WithJobIdentifier(const char* value) { SetJobIdentifier(value); return *this;}
+    template<typename JobIdentifierT = Aws::String>
+    void SetJobIdentifier(JobIdentifierT&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::forward<JobIdentifierT>(value); }
+    template<typename JobIdentifierT = Aws::String>
+    BatchDeleteEvaluationJobError& WithJobIdentifier(JobIdentifierT&& value) { SetJobIdentifier(std::forward<JobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A HTTP status code of the evaluation job being deleted.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline BatchDeleteEvaluationJobError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline BatchDeleteEvaluationJobError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobError& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    BatchDeleteEvaluationJobError& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A status message about the evaluation job deletion.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchDeleteEvaluationJobError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchDeleteEvaluationJobError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchDeleteEvaluationJobError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchDeleteEvaluationJobError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

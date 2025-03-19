@@ -12,11 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCrlRequest::DeleteCrlRequest() : 
-    m_crlIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCrlRequest::SerializePayload() const
 {
   return {};

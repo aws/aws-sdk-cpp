@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBandwidthRateLimitScheduleResult::DescribeBandwidthRateLimitScheduleResult()
-{
-}
-
 DescribeBandwidthRateLimitScheduleResult::DescribeBandwidthRateLimitScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeBandwidthRateLimitScheduleResult& DescribeBandwidthRateLimitScheduleResu
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BandwidthRateLimitIntervals"))
   {
     Aws::Utils::Array<JsonView> bandwidthRateLimitIntervalsJsonList = jsonValue.GetArray("BandwidthRateLimitIntervals");
@@ -42,14 +37,15 @@ DescribeBandwidthRateLimitScheduleResult& DescribeBandwidthRateLimitScheduleResu
     {
       m_bandwidthRateLimitIntervals.push_back(bandwidthRateLimitIntervalsJsonList[bandwidthRateLimitIntervalsIndex].AsObject());
     }
+    m_bandwidthRateLimitIntervalsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

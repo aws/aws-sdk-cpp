@@ -18,22 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-LteNetworkMeasurements::LteNetworkMeasurements() : 
-    m_earfcn(0),
-    m_earfcnHasBeenSet(false),
-    m_cellId(0),
-    m_cellIdHasBeenSet(false),
-    m_pci(0),
-    m_pciHasBeenSet(false),
-    m_rsrp(0),
-    m_rsrpHasBeenSet(false),
-    m_rsrq(0.0),
-    m_rsrqHasBeenSet(false)
-{
-}
-
 LteNetworkMeasurements::LteNetworkMeasurements(JsonView jsonValue)
-  : LteNetworkMeasurements()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ LteNetworkMeasurements& LteNetworkMeasurements::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Earfcn"))
   {
     m_earfcn = jsonValue.GetInteger("Earfcn");
-
     m_earfcnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CellId"))
   {
     m_cellId = jsonValue.GetInteger("CellId");
-
     m_cellIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pci"))
   {
     m_pci = jsonValue.GetInteger("Pci");
-
     m_pciHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rsrp"))
   {
     m_rsrp = jsonValue.GetInteger("Rsrp");
-
     m_rsrpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rsrq"))
   {
     m_rsrq = jsonValue.GetDouble("Rsrq");
-
     m_rsrqHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBotChannelAssociationRequest::GetBotChannelAssociationRequest() : 
-    m_nameHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_botAliasHasBeenSet(false)
-{
-}
-
 Aws::String GetBotChannelAssociationRequest::SerializePayload() const
 {
   return {};

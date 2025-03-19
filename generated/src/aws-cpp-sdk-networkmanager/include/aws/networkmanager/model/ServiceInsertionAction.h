@@ -35,7 +35,7 @@ namespace Model
   class ServiceInsertionAction
   {
   public:
-    AWS_NETWORKMANAGER_API ServiceInsertionAction();
+    AWS_NETWORKMANAGER_API ServiceInsertionAction() = default;
     AWS_NETWORKMANAGER_API ServiceInsertionAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API ServiceInsertionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * north-south traffic to the security appliance, and then from that to either the
      * Internet or to an on-premesis location. </p>
      */
-    inline const SegmentActionServiceInsertion& GetAction() const{ return m_action; }
+    inline SegmentActionServiceInsertion GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const SegmentActionServiceInsertion& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(SegmentActionServiceInsertion&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ServiceInsertionAction& WithAction(const SegmentActionServiceInsertion& value) { SetAction(value); return *this;}
-    inline ServiceInsertionAction& WithAction(SegmentActionServiceInsertion&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(SegmentActionServiceInsertion value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ServiceInsertionAction& WithAction(SegmentActionServiceInsertion value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * traverse a single intermediate inserted attachment. You can use
      * <code>EdgeOverride</code> to specify a specific edge to use. </p>
      */
-    inline const SendViaMode& GetMode() const{ return m_mode; }
+    inline SendViaMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const SendViaMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(SendViaMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ServiceInsertionAction& WithMode(const SendViaMode& value) { SetMode(value); return *this;}
-    inline ServiceInsertionAction& WithMode(SendViaMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(SendViaMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ServiceInsertionAction& WithMode(SendViaMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * <p>The list of destination segments if the service insertion action is
      * <code>send-via</code>.</p>
      */
-    inline const WhenSentTo& GetWhenSentTo() const{ return m_whenSentTo; }
+    inline const WhenSentTo& GetWhenSentTo() const { return m_whenSentTo; }
     inline bool WhenSentToHasBeenSet() const { return m_whenSentToHasBeenSet; }
-    inline void SetWhenSentTo(const WhenSentTo& value) { m_whenSentToHasBeenSet = true; m_whenSentTo = value; }
-    inline void SetWhenSentTo(WhenSentTo&& value) { m_whenSentToHasBeenSet = true; m_whenSentTo = std::move(value); }
-    inline ServiceInsertionAction& WithWhenSentTo(const WhenSentTo& value) { SetWhenSentTo(value); return *this;}
-    inline ServiceInsertionAction& WithWhenSentTo(WhenSentTo&& value) { SetWhenSentTo(std::move(value)); return *this;}
+    template<typename WhenSentToT = WhenSentTo>
+    void SetWhenSentTo(WhenSentToT&& value) { m_whenSentToHasBeenSet = true; m_whenSentTo = std::forward<WhenSentToT>(value); }
+    template<typename WhenSentToT = WhenSentTo>
+    ServiceInsertionAction& WithWhenSentTo(WhenSentToT&& value) { SetWhenSentTo(std::forward<WhenSentToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,19 +89,19 @@ namespace Model
      * service insertion action. Used for both <code>send-to</code> or
      * <code>send-via</code>.</p>
      */
-    inline const Via& GetVia() const{ return m_via; }
+    inline const Via& GetVia() const { return m_via; }
     inline bool ViaHasBeenSet() const { return m_viaHasBeenSet; }
-    inline void SetVia(const Via& value) { m_viaHasBeenSet = true; m_via = value; }
-    inline void SetVia(Via&& value) { m_viaHasBeenSet = true; m_via = std::move(value); }
-    inline ServiceInsertionAction& WithVia(const Via& value) { SetVia(value); return *this;}
-    inline ServiceInsertionAction& WithVia(Via&& value) { SetVia(std::move(value)); return *this;}
+    template<typename ViaT = Via>
+    void SetVia(ViaT&& value) { m_viaHasBeenSet = true; m_via = std::forward<ViaT>(value); }
+    template<typename ViaT = Via>
+    ServiceInsertionAction& WithVia(ViaT&& value) { SetVia(std::forward<ViaT>(value)); return *this;}
     ///@}
   private:
 
-    SegmentActionServiceInsertion m_action;
+    SegmentActionServiceInsertion m_action{SegmentActionServiceInsertion::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    SendViaMode m_mode;
+    SendViaMode m_mode{SendViaMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     WhenSentTo m_whenSentTo;

@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataQualityRulesetEvaluationRunsRequest::ListDataQualityRulesetEvaluationRunsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDataQualityRulesetEvaluationRunsRequest::SerializePayload() const
 {
   JsonValue payload;

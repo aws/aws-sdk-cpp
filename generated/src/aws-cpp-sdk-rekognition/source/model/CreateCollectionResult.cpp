@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCollectionResult::CreateCollectionResult() : 
-    m_statusCode(0)
-{
-}
-
 CreateCollectionResult::CreateCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateCollectionResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateCollectionResult& CreateCollectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionArn"))
   {
     m_collectionArn = jsonValue.GetString("CollectionArn");
-
+    m_collectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersion"))
   {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
-
+    m_faceModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

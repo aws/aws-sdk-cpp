@@ -29,7 +29,7 @@ namespace Model
   class ListReadSetActivationJobsResult
   {
   public:
-    AWS_OMICS_API ListReadSetActivationJobsResult();
+    AWS_OMICS_API ListReadSetActivationJobsResult() = default;
     AWS_OMICS_API ListReadSetActivationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListReadSetActivationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReadSetActivationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReadSetActivationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReadSetActivationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReadSetActivationJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of jobs.</p>
      */
-    inline const Aws::Vector<ActivateReadSetJobItem>& GetActivationJobs() const{ return m_activationJobs; }
-    inline void SetActivationJobs(const Aws::Vector<ActivateReadSetJobItem>& value) { m_activationJobs = value; }
-    inline void SetActivationJobs(Aws::Vector<ActivateReadSetJobItem>&& value) { m_activationJobs = std::move(value); }
-    inline ListReadSetActivationJobsResult& WithActivationJobs(const Aws::Vector<ActivateReadSetJobItem>& value) { SetActivationJobs(value); return *this;}
-    inline ListReadSetActivationJobsResult& WithActivationJobs(Aws::Vector<ActivateReadSetJobItem>&& value) { SetActivationJobs(std::move(value)); return *this;}
-    inline ListReadSetActivationJobsResult& AddActivationJobs(const ActivateReadSetJobItem& value) { m_activationJobs.push_back(value); return *this; }
-    inline ListReadSetActivationJobsResult& AddActivationJobs(ActivateReadSetJobItem&& value) { m_activationJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActivateReadSetJobItem>& GetActivationJobs() const { return m_activationJobs; }
+    template<typename ActivationJobsT = Aws::Vector<ActivateReadSetJobItem>>
+    void SetActivationJobs(ActivationJobsT&& value) { m_activationJobsHasBeenSet = true; m_activationJobs = std::forward<ActivationJobsT>(value); }
+    template<typename ActivationJobsT = Aws::Vector<ActivateReadSetJobItem>>
+    ListReadSetActivationJobsResult& WithActivationJobs(ActivationJobsT&& value) { SetActivationJobs(std::forward<ActivationJobsT>(value)); return *this;}
+    template<typename ActivationJobsT = ActivateReadSetJobItem>
+    ListReadSetActivationJobsResult& AddActivationJobs(ActivationJobsT&& value) { m_activationJobsHasBeenSet = true; m_activationJobs.emplace_back(std::forward<ActivationJobsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReadSetActivationJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReadSetActivationJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReadSetActivationJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReadSetActivationJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ActivateReadSetJobItem> m_activationJobs;
+    bool m_activationJobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

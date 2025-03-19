@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHubConfigurationResult::GetHubConfigurationResult() : 
-    m_hubTokenTimerExpirySettingInSeconds(0)
-{
-}
-
 GetHubConfigurationResult::GetHubConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetHubConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetHubConfigurationResult& GetHubConfigurationResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("HubTokenTimerExpirySettingInSeconds"))
   {
     m_hubTokenTimerExpirySettingInSeconds = jsonValue.GetInt64("HubTokenTimerExpirySettingInSeconds");
-
+    m_hubTokenTimerExpirySettingInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

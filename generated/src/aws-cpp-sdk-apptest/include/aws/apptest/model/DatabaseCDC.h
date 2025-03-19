@@ -33,7 +33,7 @@ namespace Model
   class DatabaseCDC
   {
   public:
-    AWS_APPTEST_API DatabaseCDC();
+    AWS_APPTEST_API DatabaseCDC() = default;
     AWS_APPTEST_API DatabaseCDC(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API DatabaseCDC& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The source metadata of the database CDC.</p>
      */
-    inline const SourceDatabaseMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+    inline const SourceDatabaseMetadata& GetSourceMetadata() const { return m_sourceMetadata; }
     inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
-    inline void SetSourceMetadata(const SourceDatabaseMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
-    inline void SetSourceMetadata(SourceDatabaseMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
-    inline DatabaseCDC& WithSourceMetadata(const SourceDatabaseMetadata& value) { SetSourceMetadata(value); return *this;}
-    inline DatabaseCDC& WithSourceMetadata(SourceDatabaseMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+    template<typename SourceMetadataT = SourceDatabaseMetadata>
+    void SetSourceMetadata(SourceMetadataT&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::forward<SourceMetadataT>(value); }
+    template<typename SourceMetadataT = SourceDatabaseMetadata>
+    DatabaseCDC& WithSourceMetadata(SourceMetadataT&& value) { SetSourceMetadata(std::forward<SourceMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target metadata of the database CDC.</p>
      */
-    inline const TargetDatabaseMetadata& GetTargetMetadata() const{ return m_targetMetadata; }
+    inline const TargetDatabaseMetadata& GetTargetMetadata() const { return m_targetMetadata; }
     inline bool TargetMetadataHasBeenSet() const { return m_targetMetadataHasBeenSet; }
-    inline void SetTargetMetadata(const TargetDatabaseMetadata& value) { m_targetMetadataHasBeenSet = true; m_targetMetadata = value; }
-    inline void SetTargetMetadata(TargetDatabaseMetadata&& value) { m_targetMetadataHasBeenSet = true; m_targetMetadata = std::move(value); }
-    inline DatabaseCDC& WithTargetMetadata(const TargetDatabaseMetadata& value) { SetTargetMetadata(value); return *this;}
-    inline DatabaseCDC& WithTargetMetadata(TargetDatabaseMetadata&& value) { SetTargetMetadata(std::move(value)); return *this;}
+    template<typename TargetMetadataT = TargetDatabaseMetadata>
+    void SetTargetMetadata(TargetMetadataT&& value) { m_targetMetadataHasBeenSet = true; m_targetMetadata = std::forward<TargetMetadataT>(value); }
+    template<typename TargetMetadataT = TargetDatabaseMetadata>
+    DatabaseCDC& WithTargetMetadata(TargetMetadataT&& value) { SetTargetMetadata(std::forward<TargetMetadataT>(value)); return *this;}
     ///@}
   private:
 

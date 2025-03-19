@@ -18,19 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AnomalyGroup::AnomalyGroup() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_anomalyGroupIdHasBeenSet(false),
-    m_anomalyGroupScore(0.0),
-    m_anomalyGroupScoreHasBeenSet(false),
-    m_primaryMetricNameHasBeenSet(false),
-    m_metricLevelImpactListHasBeenSet(false)
-{
-}
-
 AnomalyGroup::AnomalyGroup(JsonView jsonValue)
-  : AnomalyGroup()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AnomalyGroup& AnomalyGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyGroupId"))
   {
     m_anomalyGroupId = jsonValue.GetString("AnomalyGroupId");
-
     m_anomalyGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyGroupScore"))
   {
     m_anomalyGroupScore = jsonValue.GetDouble("AnomalyGroupScore");
-
     m_anomalyGroupScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryMetricName"))
   {
     m_primaryMetricName = jsonValue.GetString("PrimaryMetricName");
-
     m_primaryMetricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricLevelImpactList"))
   {
     Aws::Utils::Array<JsonView> metricLevelImpactListJsonList = jsonValue.GetArray("MetricLevelImpactList");
@@ -81,7 +59,6 @@ AnomalyGroup& AnomalyGroup::operator =(JsonView jsonValue)
     }
     m_metricLevelImpactListHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataLakeAccessProperties::DataLakeAccessProperties() : 
-    m_dataLakeAccess(false),
-    m_dataLakeAccessHasBeenSet(false),
-    m_dataTransferRoleHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_catalogTypeHasBeenSet(false)
-{
-}
-
 DataLakeAccessProperties::DataLakeAccessProperties(JsonView jsonValue)
-  : DataLakeAccessProperties()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DataLakeAccessProperties& DataLakeAccessProperties::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DataLakeAccess"))
   {
     m_dataLakeAccess = jsonValue.GetBool("DataLakeAccess");
-
     m_dataLakeAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTransferRole"))
   {
     m_dataTransferRole = jsonValue.GetString("DataTransferRole");
-
     m_dataTransferRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKey"))
   {
     m_kmsKey = jsonValue.GetString("KmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogType"))
   {
     m_catalogType = jsonValue.GetString("CatalogType");
-
     m_catalogTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

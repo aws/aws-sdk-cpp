@@ -23,7 +23,7 @@ namespace Model
   class DescribeKeyPairsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeKeyPairsRequest();
+    AWS_EC2_API DescribeKeyPairsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeyNames() const{ return m_keyNames; }
+    inline const Aws::Vector<Aws::String>& GetKeyNames() const { return m_keyNames; }
     inline bool KeyNamesHasBeenSet() const { return m_keyNamesHasBeenSet; }
-    inline void SetKeyNames(const Aws::Vector<Aws::String>& value) { m_keyNamesHasBeenSet = true; m_keyNames = value; }
-    inline void SetKeyNames(Aws::Vector<Aws::String>&& value) { m_keyNamesHasBeenSet = true; m_keyNames = std::move(value); }
-    inline DescribeKeyPairsRequest& WithKeyNames(const Aws::Vector<Aws::String>& value) { SetKeyNames(value); return *this;}
-    inline DescribeKeyPairsRequest& WithKeyNames(Aws::Vector<Aws::String>&& value) { SetKeyNames(std::move(value)); return *this;}
-    inline DescribeKeyPairsRequest& AddKeyNames(const Aws::String& value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
-    inline DescribeKeyPairsRequest& AddKeyNames(Aws::String&& value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(std::move(value)); return *this; }
-    inline DescribeKeyPairsRequest& AddKeyNames(const char* value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
+    template<typename KeyNamesT = Aws::Vector<Aws::String>>
+    void SetKeyNames(KeyNamesT&& value) { m_keyNamesHasBeenSet = true; m_keyNames = std::forward<KeyNamesT>(value); }
+    template<typename KeyNamesT = Aws::Vector<Aws::String>>
+    DescribeKeyPairsRequest& WithKeyNames(KeyNamesT&& value) { SetKeyNames(std::forward<KeyNamesT>(value)); return *this;}
+    template<typename KeyNamesT = Aws::String>
+    DescribeKeyPairsRequest& AddKeyNames(KeyNamesT&& value) { m_keyNamesHasBeenSet = true; m_keyNames.emplace_back(std::forward<KeyNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the key pairs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeyPairIds() const{ return m_keyPairIds; }
+    inline const Aws::Vector<Aws::String>& GetKeyPairIds() const { return m_keyPairIds; }
     inline bool KeyPairIdsHasBeenSet() const { return m_keyPairIdsHasBeenSet; }
-    inline void SetKeyPairIds(const Aws::Vector<Aws::String>& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = value; }
-    inline void SetKeyPairIds(Aws::Vector<Aws::String>&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::move(value); }
-    inline DescribeKeyPairsRequest& WithKeyPairIds(const Aws::Vector<Aws::String>& value) { SetKeyPairIds(value); return *this;}
-    inline DescribeKeyPairsRequest& WithKeyPairIds(Aws::Vector<Aws::String>&& value) { SetKeyPairIds(std::move(value)); return *this;}
-    inline DescribeKeyPairsRequest& AddKeyPairIds(const Aws::String& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.push_back(value); return *this; }
-    inline DescribeKeyPairsRequest& AddKeyPairIds(Aws::String&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.push_back(std::move(value)); return *this; }
-    inline DescribeKeyPairsRequest& AddKeyPairIds(const char* value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.push_back(value); return *this; }
+    template<typename KeyPairIdsT = Aws::Vector<Aws::String>>
+    void SetKeyPairIds(KeyPairIdsT&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::forward<KeyPairIdsT>(value); }
+    template<typename KeyPairIdsT = Aws::Vector<Aws::String>>
+    DescribeKeyPairsRequest& WithKeyPairIds(KeyPairIdsT&& value) { SetKeyPairIds(std::forward<KeyPairIdsT>(value)); return *this;}
+    template<typename KeyPairIdsT = Aws::String>
+    DescribeKeyPairsRequest& AddKeyPairIds(KeyPairIdsT&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.emplace_back(std::forward<KeyPairIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * <p>If <code>true</code>, the public key material is included in the
      * response.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetIncludePublicKey() const{ return m_includePublicKey; }
+    inline bool GetIncludePublicKey() const { return m_includePublicKey; }
     inline bool IncludePublicKeyHasBeenSet() const { return m_includePublicKeyHasBeenSet; }
     inline void SetIncludePublicKey(bool value) { m_includePublicKeyHasBeenSet = true; m_includePublicKey = value; }
     inline DescribeKeyPairsRequest& WithIncludePublicKey(bool value) { SetIncludePublicKey(value); return *this;}
@@ -86,7 +84,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeKeyPairsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -106,14 +104,14 @@ namespace Model
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeKeyPairsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeKeyPairsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeKeyPairsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeKeyPairsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeKeyPairsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeKeyPairsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
@@ -123,10 +121,10 @@ namespace Model
     Aws::Vector<Aws::String> m_keyPairIds;
     bool m_keyPairIdsHasBeenSet = false;
 
-    bool m_includePublicKey;
+    bool m_includePublicKey{false};
     bool m_includePublicKeyHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;

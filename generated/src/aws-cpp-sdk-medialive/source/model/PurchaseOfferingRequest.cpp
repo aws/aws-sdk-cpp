@@ -12,19 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurchaseOfferingRequest::PurchaseOfferingRequest() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_renewalSettingsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_startHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

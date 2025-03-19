@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateUploadResult::UpdateUploadResult()
-{
-}
-
 UpdateUploadResult::UpdateUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateUploadResult& UpdateUploadResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("upload"))
   {
     m_upload = jsonValue.GetObject("upload");
-
+    m_uploadHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

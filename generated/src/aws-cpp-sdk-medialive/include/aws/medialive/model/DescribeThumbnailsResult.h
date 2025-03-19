@@ -35,37 +35,37 @@ namespace Model
   class DescribeThumbnailsResult
   {
   public:
-    AWS_MEDIALIVE_API DescribeThumbnailsResult();
+    AWS_MEDIALIVE_API DescribeThumbnailsResult() = default;
     AWS_MEDIALIVE_API DescribeThumbnailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API DescribeThumbnailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<ThumbnailDetail>& GetThumbnailDetails() const{ return m_thumbnailDetails; }
-    inline void SetThumbnailDetails(const Aws::Vector<ThumbnailDetail>& value) { m_thumbnailDetails = value; }
-    inline void SetThumbnailDetails(Aws::Vector<ThumbnailDetail>&& value) { m_thumbnailDetails = std::move(value); }
-    inline DescribeThumbnailsResult& WithThumbnailDetails(const Aws::Vector<ThumbnailDetail>& value) { SetThumbnailDetails(value); return *this;}
-    inline DescribeThumbnailsResult& WithThumbnailDetails(Aws::Vector<ThumbnailDetail>&& value) { SetThumbnailDetails(std::move(value)); return *this;}
-    inline DescribeThumbnailsResult& AddThumbnailDetails(const ThumbnailDetail& value) { m_thumbnailDetails.push_back(value); return *this; }
-    inline DescribeThumbnailsResult& AddThumbnailDetails(ThumbnailDetail&& value) { m_thumbnailDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ThumbnailDetail>& GetThumbnailDetails() const { return m_thumbnailDetails; }
+    template<typename ThumbnailDetailsT = Aws::Vector<ThumbnailDetail>>
+    void SetThumbnailDetails(ThumbnailDetailsT&& value) { m_thumbnailDetailsHasBeenSet = true; m_thumbnailDetails = std::forward<ThumbnailDetailsT>(value); }
+    template<typename ThumbnailDetailsT = Aws::Vector<ThumbnailDetail>>
+    DescribeThumbnailsResult& WithThumbnailDetails(ThumbnailDetailsT&& value) { SetThumbnailDetails(std::forward<ThumbnailDetailsT>(value)); return *this;}
+    template<typename ThumbnailDetailsT = ThumbnailDetail>
+    DescribeThumbnailsResult& AddThumbnailDetails(ThumbnailDetailsT&& value) { m_thumbnailDetailsHasBeenSet = true; m_thumbnailDetails.emplace_back(std::forward<ThumbnailDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThumbnailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThumbnailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThumbnailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThumbnailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ThumbnailDetail> m_thumbnailDetails;
+    bool m_thumbnailDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSlackChannelConfigurationRequest::DeleteSlackChannelConfigurationRequest() : 
-    m_channelIdHasBeenSet(false),
-    m_teamIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlackChannelConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

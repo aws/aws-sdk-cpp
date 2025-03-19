@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ActiveTrustedKeyGroups::ActiveTrustedKeyGroups() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ActiveTrustedKeyGroups::ActiveTrustedKeyGroups(const XmlNode& xmlNode)
-  : ActiveTrustedKeyGroups()
 {
   *this = xmlNode;
 }
@@ -57,6 +47,7 @@ ActiveTrustedKeyGroups& ActiveTrustedKeyGroups::operator =(const XmlNode& xmlNod
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("KeyGroup");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

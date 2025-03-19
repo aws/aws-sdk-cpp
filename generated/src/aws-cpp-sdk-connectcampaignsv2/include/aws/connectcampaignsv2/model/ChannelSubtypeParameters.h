@@ -34,7 +34,7 @@ namespace Model
   class ChannelSubtypeParameters
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API ChannelSubtypeParameters();
+    AWS_CONNECTCAMPAIGNSV2_API ChannelSubtypeParameters() = default;
     AWS_CONNECTCAMPAIGNSV2_API ChannelSubtypeParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API ChannelSubtypeParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,32 +42,32 @@ namespace Model
 
     ///@{
     
-    inline const TelephonyChannelSubtypeParameters& GetTelephony() const{ return m_telephony; }
+    inline const TelephonyChannelSubtypeParameters& GetTelephony() const { return m_telephony; }
     inline bool TelephonyHasBeenSet() const { return m_telephonyHasBeenSet; }
-    inline void SetTelephony(const TelephonyChannelSubtypeParameters& value) { m_telephonyHasBeenSet = true; m_telephony = value; }
-    inline void SetTelephony(TelephonyChannelSubtypeParameters&& value) { m_telephonyHasBeenSet = true; m_telephony = std::move(value); }
-    inline ChannelSubtypeParameters& WithTelephony(const TelephonyChannelSubtypeParameters& value) { SetTelephony(value); return *this;}
-    inline ChannelSubtypeParameters& WithTelephony(TelephonyChannelSubtypeParameters&& value) { SetTelephony(std::move(value)); return *this;}
+    template<typename TelephonyT = TelephonyChannelSubtypeParameters>
+    void SetTelephony(TelephonyT&& value) { m_telephonyHasBeenSet = true; m_telephony = std::forward<TelephonyT>(value); }
+    template<typename TelephonyT = TelephonyChannelSubtypeParameters>
+    ChannelSubtypeParameters& WithTelephony(TelephonyT&& value) { SetTelephony(std::forward<TelephonyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SmsChannelSubtypeParameters& GetSms() const{ return m_sms; }
+    inline const SmsChannelSubtypeParameters& GetSms() const { return m_sms; }
     inline bool SmsHasBeenSet() const { return m_smsHasBeenSet; }
-    inline void SetSms(const SmsChannelSubtypeParameters& value) { m_smsHasBeenSet = true; m_sms = value; }
-    inline void SetSms(SmsChannelSubtypeParameters&& value) { m_smsHasBeenSet = true; m_sms = std::move(value); }
-    inline ChannelSubtypeParameters& WithSms(const SmsChannelSubtypeParameters& value) { SetSms(value); return *this;}
-    inline ChannelSubtypeParameters& WithSms(SmsChannelSubtypeParameters&& value) { SetSms(std::move(value)); return *this;}
+    template<typename SmsT = SmsChannelSubtypeParameters>
+    void SetSms(SmsT&& value) { m_smsHasBeenSet = true; m_sms = std::forward<SmsT>(value); }
+    template<typename SmsT = SmsChannelSubtypeParameters>
+    ChannelSubtypeParameters& WithSms(SmsT&& value) { SetSms(std::forward<SmsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EmailChannelSubtypeParameters& GetEmail() const{ return m_email; }
+    inline const EmailChannelSubtypeParameters& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const EmailChannelSubtypeParameters& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(EmailChannelSubtypeParameters&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline ChannelSubtypeParameters& WithEmail(const EmailChannelSubtypeParameters& value) { SetEmail(value); return *this;}
-    inline ChannelSubtypeParameters& WithEmail(EmailChannelSubtypeParameters&& value) { SetEmail(std::move(value)); return *this;}
+    template<typename EmailT = EmailChannelSubtypeParameters>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = EmailChannelSubtypeParameters>
+    ChannelSubtypeParameters& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
   private:
 

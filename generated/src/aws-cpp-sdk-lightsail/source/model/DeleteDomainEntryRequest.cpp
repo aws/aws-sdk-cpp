@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDomainEntryRequest::DeleteDomainEntryRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainEntryHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainEntryRequest::SerializePayload() const
 {
   JsonValue payload;

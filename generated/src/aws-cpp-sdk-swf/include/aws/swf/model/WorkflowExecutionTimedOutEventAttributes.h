@@ -33,7 +33,7 @@ namespace Model
   class WorkflowExecutionTimedOutEventAttributes
   {
   public:
-    AWS_SWF_API WorkflowExecutionTimedOutEventAttributes();
+    AWS_SWF_API WorkflowExecutionTimedOutEventAttributes() = default;
     AWS_SWF_API WorkflowExecutionTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecutionTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The type of timeout that caused this event.</p>
      */
-    inline const WorkflowExecutionTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
+    inline WorkflowExecutionTimeoutType GetTimeoutType() const { return m_timeoutType; }
     inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
-    inline void SetTimeoutType(const WorkflowExecutionTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
-    inline void SetTimeoutType(WorkflowExecutionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
-    inline WorkflowExecutionTimedOutEventAttributes& WithTimeoutType(const WorkflowExecutionTimeoutType& value) { SetTimeoutType(value); return *this;}
-    inline WorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
+    inline void SetTimeoutType(WorkflowExecutionTimeoutType value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline WorkflowExecutionTimedOutEventAttributes& WithTimeoutType(WorkflowExecutionTimeoutType value) { SetTimeoutType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * <code>ABANDON</code> – No action is taken. The child executions continue to
      * run.</p> </li> </ul>
      */
-    inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
+    inline ChildPolicy GetChildPolicy() const { return m_childPolicy; }
     inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
-    inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
-    inline WorkflowExecutionTimedOutEventAttributes& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
-    inline WorkflowExecutionTimedOutEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
+    inline void SetChildPolicy(ChildPolicy value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline WorkflowExecutionTimedOutEventAttributes& WithChildPolicy(ChildPolicy value) { SetChildPolicy(value); return *this;}
     ///@}
   private:
 
-    WorkflowExecutionTimeoutType m_timeoutType;
+    WorkflowExecutionTimeoutType m_timeoutType{WorkflowExecutionTimeoutType::NOT_SET};
     bool m_timeoutTypeHasBeenSet = false;
 
-    ChildPolicy m_childPolicy;
+    ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
     bool m_childPolicyHasBeenSet = false;
   };
 

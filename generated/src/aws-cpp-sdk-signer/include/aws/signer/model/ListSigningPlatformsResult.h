@@ -29,7 +29,7 @@ namespace Model
   class ListSigningPlatformsResult
   {
   public:
-    AWS_SIGNER_API ListSigningPlatformsResult();
+    AWS_SIGNER_API ListSigningPlatformsResult() = default;
     AWS_SIGNER_API ListSigningPlatformsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SIGNER_API ListSigningPlatformsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of all platforms that match the request parameters.</p>
      */
-    inline const Aws::Vector<SigningPlatform>& GetPlatforms() const{ return m_platforms; }
-    inline void SetPlatforms(const Aws::Vector<SigningPlatform>& value) { m_platforms = value; }
-    inline void SetPlatforms(Aws::Vector<SigningPlatform>&& value) { m_platforms = std::move(value); }
-    inline ListSigningPlatformsResult& WithPlatforms(const Aws::Vector<SigningPlatform>& value) { SetPlatforms(value); return *this;}
-    inline ListSigningPlatformsResult& WithPlatforms(Aws::Vector<SigningPlatform>&& value) { SetPlatforms(std::move(value)); return *this;}
-    inline ListSigningPlatformsResult& AddPlatforms(const SigningPlatform& value) { m_platforms.push_back(value); return *this; }
-    inline ListSigningPlatformsResult& AddPlatforms(SigningPlatform&& value) { m_platforms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SigningPlatform>& GetPlatforms() const { return m_platforms; }
+    template<typename PlatformsT = Aws::Vector<SigningPlatform>>
+    void SetPlatforms(PlatformsT&& value) { m_platformsHasBeenSet = true; m_platforms = std::forward<PlatformsT>(value); }
+    template<typename PlatformsT = Aws::Vector<SigningPlatform>>
+    ListSigningPlatformsResult& WithPlatforms(PlatformsT&& value) { SetPlatforms(std::forward<PlatformsT>(value)); return *this;}
+    template<typename PlatformsT = SigningPlatform>
+    ListSigningPlatformsResult& AddPlatforms(PlatformsT&& value) { m_platformsHasBeenSet = true; m_platforms.emplace_back(std::forward<PlatformsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Value for specifying the next set of paginated results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSigningPlatformsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSigningPlatformsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSigningPlatformsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSigningPlatformsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSigningPlatformsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSigningPlatformsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSigningPlatformsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSigningPlatformsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SigningPlatform> m_platforms;
+    bool m_platformsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

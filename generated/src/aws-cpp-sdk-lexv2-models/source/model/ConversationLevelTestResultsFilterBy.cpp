@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ConversationLevelTestResultsFilterBy::ConversationLevelTestResultsFilterBy() : 
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false)
-{
-}
-
 ConversationLevelTestResultsFilterBy::ConversationLevelTestResultsFilterBy(JsonView jsonValue)
-  : ConversationLevelTestResultsFilterBy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConversationLevelTestResultsFilterBy& ConversationLevelTestResultsFilterBy::oper
   if(jsonValue.ValueExists("endToEndResult"))
   {
     m_endToEndResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("endToEndResult"));
-
     m_endToEndResultHasBeenSet = true;
   }
-
   return *this;
 }
 

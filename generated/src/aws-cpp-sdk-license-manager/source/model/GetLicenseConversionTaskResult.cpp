@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLicenseConversionTaskResult::GetLicenseConversionTaskResult() : 
-    m_status(LicenseConversionTaskStatus::NOT_SET)
-{
-}
-
 GetLicenseConversionTaskResult::GetLicenseConversionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLicenseConversionTaskResult()
 {
   *this = result;
 }
@@ -34,63 +28,55 @@ GetLicenseConversionTaskResult& GetLicenseConversionTaskResult::operator =(const
   if(jsonValue.ValueExists("LicenseConversionTaskId"))
   {
     m_licenseConversionTaskId = jsonValue.GetString("LicenseConversionTaskId");
-
+    m_licenseConversionTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLicenseContext"))
   {
     m_sourceLicenseContext = jsonValue.GetObject("SourceLicenseContext");
-
+    m_sourceLicenseContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationLicenseContext"))
   {
     m_destinationLicenseContext = jsonValue.GetObject("DestinationLicenseContext");
-
+    m_destinationLicenseContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LicenseConversionTaskStatusMapper::GetLicenseConversionTaskStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseConversionTime"))
   {
     m_licenseConversionTime = jsonValue.GetDouble("LicenseConversionTime");
-
+    m_licenseConversionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCampaignVersionRequest::GetCampaignVersionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String GetCampaignVersionRequest::SerializePayload() const
 {
   return {};

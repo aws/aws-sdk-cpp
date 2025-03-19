@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterInstanceEventNotificationAttributesResponse::RegisterInstanceEventNotificationAttributesResponse()
-{
-}
-
 RegisterInstanceEventNotificationAttributesResponse::RegisterInstanceEventNotificationAttributesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RegisterInstanceEventNotificationAttributesResponse& RegisterInstanceEventNotifi
     if(!instanceTagAttributeNode.IsNull())
     {
       m_instanceTagAttribute = instanceTagAttributeNode;
+      m_instanceTagAttributeHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ RegisterInstanceEventNotificationAttributesResponse& RegisterInstanceEventNotifi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RegisterInstanceEventNotificationAttributesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

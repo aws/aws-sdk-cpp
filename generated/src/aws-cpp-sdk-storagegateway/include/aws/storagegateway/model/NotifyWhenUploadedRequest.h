@@ -21,7 +21,7 @@ namespace Model
   class NotifyWhenUploadedRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API NotifyWhenUploadedRequest();
+    AWS_STORAGEGATEWAY_API NotifyWhenUploadedRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
+    inline const Aws::String& GetFileShareARN() const { return m_fileShareARN; }
     inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
-    inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
-    inline void SetFileShareARN(const char* value) { m_fileShareARNHasBeenSet = true; m_fileShareARN.assign(value); }
-    inline NotifyWhenUploadedRequest& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
-    inline NotifyWhenUploadedRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
-    inline NotifyWhenUploadedRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
+    template<typename FileShareARNT = Aws::String>
+    void SetFileShareARN(FileShareARNT&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::forward<FileShareARNT>(value); }
+    template<typename FileShareARNT = Aws::String>
+    NotifyWhenUploadedRequest& WithFileShareARN(FileShareARNT&& value) { SetFileShareARN(std::forward<FileShareARNT>(value)); return *this;}
     ///@}
   private:
 

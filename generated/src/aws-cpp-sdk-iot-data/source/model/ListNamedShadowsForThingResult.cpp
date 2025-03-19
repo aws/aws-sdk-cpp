@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListNamedShadowsForThingResult::ListNamedShadowsForThingResult() : 
-    m_timestamp(0)
-{
-}
-
 ListNamedShadowsForThingResult::ListNamedShadowsForThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListNamedShadowsForThingResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListNamedShadowsForThingResult& ListNamedShadowsForThingResult::operator =(const
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsString());
     }
+    m_resultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("timestamp");
-
+    m_timestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

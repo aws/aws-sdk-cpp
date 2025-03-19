@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxCacheStorageConfiguration::KxCacheStorageConfiguration() : 
-    m_typeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 KxCacheStorageConfiguration::KxCacheStorageConfiguration(JsonView jsonValue)
-  : KxCacheStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KxCacheStorageConfiguration& KxCacheStorageConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInteger("size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

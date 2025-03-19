@@ -12,11 +12,6 @@ using namespace Aws::JSONRPC10::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GreetingWithErrorsRequest::GreetingWithErrorsRequest() : 
-    m_greetingHasBeenSet(false)
-{
-}
-
 Aws::String GreetingWithErrorsRequest::SerializePayload() const
 {
   JsonValue payload;

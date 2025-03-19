@@ -33,7 +33,7 @@ namespace Model
   class BedrockFoundationModelConfigurationForParsing
   {
   public:
-    AWS_QCONNECT_API BedrockFoundationModelConfigurationForParsing();
+    AWS_QCONNECT_API BedrockFoundationModelConfigurationForParsing() = default;
     AWS_QCONNECT_API BedrockFoundationModelConfigurationForParsing(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API BedrockFoundationModelConfigurationForParsing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The ARN of the foundation model.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline BedrockFoundationModelConfigurationForParsing& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline BedrockFoundationModelConfigurationForParsing& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline BedrockFoundationModelConfigurationForParsing& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    BedrockFoundationModelConfigurationForParsing& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Instructions for interpreting the contents of a document.</p>
      */
-    inline const ParsingPrompt& GetParsingPrompt() const{ return m_parsingPrompt; }
+    inline const ParsingPrompt& GetParsingPrompt() const { return m_parsingPrompt; }
     inline bool ParsingPromptHasBeenSet() const { return m_parsingPromptHasBeenSet; }
-    inline void SetParsingPrompt(const ParsingPrompt& value) { m_parsingPromptHasBeenSet = true; m_parsingPrompt = value; }
-    inline void SetParsingPrompt(ParsingPrompt&& value) { m_parsingPromptHasBeenSet = true; m_parsingPrompt = std::move(value); }
-    inline BedrockFoundationModelConfigurationForParsing& WithParsingPrompt(const ParsingPrompt& value) { SetParsingPrompt(value); return *this;}
-    inline BedrockFoundationModelConfigurationForParsing& WithParsingPrompt(ParsingPrompt&& value) { SetParsingPrompt(std::move(value)); return *this;}
+    template<typename ParsingPromptT = ParsingPrompt>
+    void SetParsingPrompt(ParsingPromptT&& value) { m_parsingPromptHasBeenSet = true; m_parsingPrompt = std::forward<ParsingPromptT>(value); }
+    template<typename ParsingPromptT = ParsingPrompt>
+    BedrockFoundationModelConfigurationForParsing& WithParsingPrompt(ParsingPromptT&& value) { SetParsingPrompt(std::forward<ParsingPromptT>(value)); return *this;}
     ///@}
   private:
 

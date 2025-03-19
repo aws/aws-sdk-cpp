@@ -18,19 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-FirewallRuleGroupMetadata::FirewallRuleGroupMetadata() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
-{
-}
-
 FirewallRuleGroupMetadata::FirewallRuleGroupMetadata(JsonView jsonValue)
-  : FirewallRuleGroupMetadata()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ FirewallRuleGroupMetadata& FirewallRuleGroupMetadata::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareStatus"))
   {
     m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("ShareStatus"));
-
     m_shareStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

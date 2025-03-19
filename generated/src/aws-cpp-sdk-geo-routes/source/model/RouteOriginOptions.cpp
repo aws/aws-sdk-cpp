@@ -18,20 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteOriginOptions::RouteOriginOptions() : 
-    m_avoidActionsForDistance(0),
-    m_avoidActionsForDistanceHasBeenSet(false),
-    m_avoidUTurns(false),
-    m_avoidUTurnsHasBeenSet(false),
-    m_heading(0.0),
-    m_headingHasBeenSet(false),
-    m_matchingHasBeenSet(false),
-    m_sideOfStreetHasBeenSet(false)
-{
-}
-
 RouteOriginOptions::RouteOriginOptions(JsonView jsonValue)
-  : RouteOriginOptions()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ RouteOriginOptions& RouteOriginOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvoidActionsForDistance"))
   {
     m_avoidActionsForDistance = jsonValue.GetInt64("AvoidActionsForDistance");
-
     m_avoidActionsForDistanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvoidUTurns"))
   {
     m_avoidUTurns = jsonValue.GetBool("AvoidUTurns");
-
     m_avoidUTurnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Heading"))
   {
     m_heading = jsonValue.GetDouble("Heading");
-
     m_headingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Matching"))
   {
     m_matching = jsonValue.GetObject("Matching");
-
     m_matchingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SideOfStreet"))
   {
     m_sideOfStreet = jsonValue.GetObject("SideOfStreet");
-
     m_sideOfStreetHasBeenSet = true;
   }
-
   return *this;
 }
 

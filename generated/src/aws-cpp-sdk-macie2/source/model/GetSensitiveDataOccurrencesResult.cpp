@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSensitiveDataOccurrencesResult::GetSensitiveDataOccurrencesResult() : 
-    m_status(RevealRequestStatus::NOT_SET)
-{
-}
-
 GetSensitiveDataOccurrencesResult::GetSensitiveDataOccurrencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSensitiveDataOccurrencesResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetSensitiveDataOccurrencesResult& GetSensitiveDataOccurrencesResult::operator =
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
+    m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitiveDataOccurrences"))
   {
     Aws::Map<Aws::String, JsonView> sensitiveDataOccurrencesJsonMap = jsonValue.GetObject("sensitiveDataOccurrences").GetAllObjects();
@@ -51,20 +44,20 @@ GetSensitiveDataOccurrencesResult& GetSensitiveDataOccurrencesResult::operator =
       }
       m_sensitiveDataOccurrences[sensitiveDataOccurrencesItem.first] = std::move(__listOfDetectedDataDetailsList);
     }
+    m_sensitiveDataOccurrencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RevealRequestStatusMapper::GetRevealRequestStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

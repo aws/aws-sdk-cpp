@@ -27,7 +27,7 @@ namespace Model
   class UpdateMonitoringRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API UpdateMonitoringRequest();
+    AWS_KAFKA_API UpdateMonitoringRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * cluster.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline UpdateMonitoringRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline UpdateMonitoringRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline UpdateMonitoringRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    UpdateMonitoringRequest& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
    
      *      
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline UpdateMonitoringRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline UpdateMonitoringRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline UpdateMonitoringRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    UpdateMonitoringRequest& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +77,10 @@ namespace Model
      * sends to Amazon CloudWatch for this cluster.</p>
          
      */
-    inline const EnhancedMonitoring& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+    inline EnhancedMonitoring GetEnhancedMonitoring() const { return m_enhancedMonitoring; }
     inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
-    inline void SetEnhancedMonitoring(const EnhancedMonitoring& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
-    inline void SetEnhancedMonitoring(EnhancedMonitoring&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
-    inline UpdateMonitoringRequest& WithEnhancedMonitoring(const EnhancedMonitoring& value) { SetEnhancedMonitoring(value); return *this;}
-    inline UpdateMonitoringRequest& WithEnhancedMonitoring(EnhancedMonitoring&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}
+    inline void SetEnhancedMonitoring(EnhancedMonitoring value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
+    inline UpdateMonitoringRequest& WithEnhancedMonitoring(EnhancedMonitoring value) { SetEnhancedMonitoring(value); return *this;}
     ///@}
 
     ///@{
@@ -95,22 +89,22 @@ namespace Model
             <p>The settings for open monitoring.</p>
          
      */
-    inline const OpenMonitoringInfo& GetOpenMonitoring() const{ return m_openMonitoring; }
+    inline const OpenMonitoringInfo& GetOpenMonitoring() const { return m_openMonitoring; }
     inline bool OpenMonitoringHasBeenSet() const { return m_openMonitoringHasBeenSet; }
-    inline void SetOpenMonitoring(const OpenMonitoringInfo& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = value; }
-    inline void SetOpenMonitoring(OpenMonitoringInfo&& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = std::move(value); }
-    inline UpdateMonitoringRequest& WithOpenMonitoring(const OpenMonitoringInfo& value) { SetOpenMonitoring(value); return *this;}
-    inline UpdateMonitoringRequest& WithOpenMonitoring(OpenMonitoringInfo&& value) { SetOpenMonitoring(std::move(value)); return *this;}
+    template<typename OpenMonitoringT = OpenMonitoringInfo>
+    void SetOpenMonitoring(OpenMonitoringT&& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = std::forward<OpenMonitoringT>(value); }
+    template<typename OpenMonitoringT = OpenMonitoringInfo>
+    UpdateMonitoringRequest& WithOpenMonitoring(OpenMonitoringT&& value) { SetOpenMonitoring(std::forward<OpenMonitoringT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
+    inline const LoggingInfo& GetLoggingInfo() const { return m_loggingInfo; }
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
-    inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
-    inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
-    inline UpdateMonitoringRequest& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
-    inline UpdateMonitoringRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+    template<typename LoggingInfoT = LoggingInfo>
+    void SetLoggingInfo(LoggingInfoT&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::forward<LoggingInfoT>(value); }
+    template<typename LoggingInfoT = LoggingInfo>
+    UpdateMonitoringRequest& WithLoggingInfo(LoggingInfoT&& value) { SetLoggingInfo(std::forward<LoggingInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,7 +114,7 @@ namespace Model
     Aws::String m_currentVersion;
     bool m_currentVersionHasBeenSet = false;
 
-    EnhancedMonitoring m_enhancedMonitoring;
+    EnhancedMonitoring m_enhancedMonitoring{EnhancedMonitoring::NOT_SET};
     bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoringInfo m_openMonitoring;

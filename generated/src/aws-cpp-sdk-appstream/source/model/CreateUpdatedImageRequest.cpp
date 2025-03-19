@@ -12,17 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUpdatedImageRequest::CreateUpdatedImageRequest() : 
-    m_existingImageNameHasBeenSet(false),
-    m_newImageNameHasBeenSet(false),
-    m_newImageDescriptionHasBeenSet(false),
-    m_newImageDisplayNameHasBeenSet(false),
-    m_newImageTagsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateUpdatedImageRequest::SerializePayload() const
 {
   JsonValue payload;

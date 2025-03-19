@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTopicRefreshResult::DescribeTopicRefreshResult() : 
-    m_status(0)
-{
-}
-
 DescribeTopicRefreshResult::DescribeTopicRefreshResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeTopicRefreshResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeTopicRefreshResult& DescribeTopicRefreshResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("RefreshDetails"))
   {
     m_refreshDetails = jsonValue.GetObject("RefreshDetails");
-
+    m_refreshDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

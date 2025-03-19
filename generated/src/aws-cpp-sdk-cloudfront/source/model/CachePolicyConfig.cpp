@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicyConfig::CachePolicyConfig() : 
-    m_commentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_maxTTL(0),
-    m_maxTTLHasBeenSet(false),
-    m_minTTL(0),
-    m_minTTLHasBeenSet(false),
-    m_parametersInCacheKeyAndForwardedToOriginHasBeenSet(false)
-{
-}
-
 CachePolicyConfig::CachePolicyConfig(const XmlNode& xmlNode)
-  : CachePolicyConfig()
 {
   *this = xmlNode;
 }

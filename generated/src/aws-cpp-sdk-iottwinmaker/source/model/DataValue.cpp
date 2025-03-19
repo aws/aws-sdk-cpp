@@ -18,25 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-DataValue::DataValue() : 
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_listValueHasBeenSet(false),
-    m_mapValueHasBeenSet(false),
-    m_relationshipValueHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 DataValue::DataValue(JsonView jsonValue)
-  : DataValue()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ DataValue& DataValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("booleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerValue"))
   {
     m_integerValue = jsonValue.GetInteger("integerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longValue"))
   {
     m_longValue = jsonValue.GetInt64("longValue");
-
     m_longValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listValue"))
   {
     Aws::Utils::Array<JsonView> listValueJsonList = jsonValue.GetArray("listValue");
@@ -87,7 +59,6 @@ DataValue& DataValue::operator =(JsonView jsonValue)
     }
     m_listValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapValue"))
   {
     Aws::Map<Aws::String, JsonView> mapValueJsonMap = jsonValue.GetObject("mapValue").GetAllObjects();
@@ -97,21 +68,16 @@ DataValue& DataValue::operator =(JsonView jsonValue)
     }
     m_mapValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipValue"))
   {
     m_relationshipValue = jsonValue.GetObject("relationshipValue");
-
     m_relationshipValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

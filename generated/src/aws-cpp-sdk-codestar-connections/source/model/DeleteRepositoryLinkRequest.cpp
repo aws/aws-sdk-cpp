@@ -12,11 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRepositoryLinkRequest::DeleteRepositoryLinkRequest() : 
-    m_repositoryLinkIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRepositoryLinkRequest::SerializePayload() const
 {
   JsonValue payload;

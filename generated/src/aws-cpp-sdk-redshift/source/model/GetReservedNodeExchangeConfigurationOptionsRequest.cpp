@@ -10,17 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-GetReservedNodeExchangeConfigurationOptionsRequest::GetReservedNodeExchangeConfigurationOptionsRequest() : 
-    m_actionType(ReservedNodeExchangeActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String GetReservedNodeExchangeConfigurationOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

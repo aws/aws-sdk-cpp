@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMessageInsightsRequest::GetMessageInsightsRequest() : 
-    m_messageIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMessageInsightsRequest::SerializePayload() const
 {
   return {};

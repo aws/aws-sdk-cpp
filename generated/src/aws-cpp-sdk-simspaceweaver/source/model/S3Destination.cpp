@@ -18,14 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-S3Destination::S3Destination() : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false)
-{
-}
-
 S3Destination::S3Destination(JsonView jsonValue)
-  : S3Destination()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Destination& S3Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectKeyPrefix"))
   {
     m_objectKeyPrefix = jsonValue.GetString("ObjectKeyPrefix");
-
     m_objectKeyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

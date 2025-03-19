@@ -35,7 +35,7 @@ namespace Model
   class BillScenarioCommitmentModificationAction
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction();
+    AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction() = default;
     AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BillScenarioCommitmentModificationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,48 @@ namespace Model
     /**
      * <p> Action to add a Reserved Instance to the scenario. </p>
      */
-    inline const AddReservedInstanceAction& GetAddReservedInstanceAction() const{ return m_addReservedInstanceAction; }
+    inline const AddReservedInstanceAction& GetAddReservedInstanceAction() const { return m_addReservedInstanceAction; }
     inline bool AddReservedInstanceActionHasBeenSet() const { return m_addReservedInstanceActionHasBeenSet; }
-    inline void SetAddReservedInstanceAction(const AddReservedInstanceAction& value) { m_addReservedInstanceActionHasBeenSet = true; m_addReservedInstanceAction = value; }
-    inline void SetAddReservedInstanceAction(AddReservedInstanceAction&& value) { m_addReservedInstanceActionHasBeenSet = true; m_addReservedInstanceAction = std::move(value); }
-    inline BillScenarioCommitmentModificationAction& WithAddReservedInstanceAction(const AddReservedInstanceAction& value) { SetAddReservedInstanceAction(value); return *this;}
-    inline BillScenarioCommitmentModificationAction& WithAddReservedInstanceAction(AddReservedInstanceAction&& value) { SetAddReservedInstanceAction(std::move(value)); return *this;}
+    template<typename AddReservedInstanceActionT = AddReservedInstanceAction>
+    void SetAddReservedInstanceAction(AddReservedInstanceActionT&& value) { m_addReservedInstanceActionHasBeenSet = true; m_addReservedInstanceAction = std::forward<AddReservedInstanceActionT>(value); }
+    template<typename AddReservedInstanceActionT = AddReservedInstanceAction>
+    BillScenarioCommitmentModificationAction& WithAddReservedInstanceAction(AddReservedInstanceActionT&& value) { SetAddReservedInstanceAction(std::forward<AddReservedInstanceActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Action to add a Savings Plan to the scenario. </p>
      */
-    inline const AddSavingsPlanAction& GetAddSavingsPlanAction() const{ return m_addSavingsPlanAction; }
+    inline const AddSavingsPlanAction& GetAddSavingsPlanAction() const { return m_addSavingsPlanAction; }
     inline bool AddSavingsPlanActionHasBeenSet() const { return m_addSavingsPlanActionHasBeenSet; }
-    inline void SetAddSavingsPlanAction(const AddSavingsPlanAction& value) { m_addSavingsPlanActionHasBeenSet = true; m_addSavingsPlanAction = value; }
-    inline void SetAddSavingsPlanAction(AddSavingsPlanAction&& value) { m_addSavingsPlanActionHasBeenSet = true; m_addSavingsPlanAction = std::move(value); }
-    inline BillScenarioCommitmentModificationAction& WithAddSavingsPlanAction(const AddSavingsPlanAction& value) { SetAddSavingsPlanAction(value); return *this;}
-    inline BillScenarioCommitmentModificationAction& WithAddSavingsPlanAction(AddSavingsPlanAction&& value) { SetAddSavingsPlanAction(std::move(value)); return *this;}
+    template<typename AddSavingsPlanActionT = AddSavingsPlanAction>
+    void SetAddSavingsPlanAction(AddSavingsPlanActionT&& value) { m_addSavingsPlanActionHasBeenSet = true; m_addSavingsPlanAction = std::forward<AddSavingsPlanActionT>(value); }
+    template<typename AddSavingsPlanActionT = AddSavingsPlanAction>
+    BillScenarioCommitmentModificationAction& WithAddSavingsPlanAction(AddSavingsPlanActionT&& value) { SetAddSavingsPlanAction(std::forward<AddSavingsPlanActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Action to remove a Reserved Instance from the scenario. </p>
      */
-    inline const NegateReservedInstanceAction& GetNegateReservedInstanceAction() const{ return m_negateReservedInstanceAction; }
+    inline const NegateReservedInstanceAction& GetNegateReservedInstanceAction() const { return m_negateReservedInstanceAction; }
     inline bool NegateReservedInstanceActionHasBeenSet() const { return m_negateReservedInstanceActionHasBeenSet; }
-    inline void SetNegateReservedInstanceAction(const NegateReservedInstanceAction& value) { m_negateReservedInstanceActionHasBeenSet = true; m_negateReservedInstanceAction = value; }
-    inline void SetNegateReservedInstanceAction(NegateReservedInstanceAction&& value) { m_negateReservedInstanceActionHasBeenSet = true; m_negateReservedInstanceAction = std::move(value); }
-    inline BillScenarioCommitmentModificationAction& WithNegateReservedInstanceAction(const NegateReservedInstanceAction& value) { SetNegateReservedInstanceAction(value); return *this;}
-    inline BillScenarioCommitmentModificationAction& WithNegateReservedInstanceAction(NegateReservedInstanceAction&& value) { SetNegateReservedInstanceAction(std::move(value)); return *this;}
+    template<typename NegateReservedInstanceActionT = NegateReservedInstanceAction>
+    void SetNegateReservedInstanceAction(NegateReservedInstanceActionT&& value) { m_negateReservedInstanceActionHasBeenSet = true; m_negateReservedInstanceAction = std::forward<NegateReservedInstanceActionT>(value); }
+    template<typename NegateReservedInstanceActionT = NegateReservedInstanceAction>
+    BillScenarioCommitmentModificationAction& WithNegateReservedInstanceAction(NegateReservedInstanceActionT&& value) { SetNegateReservedInstanceAction(std::forward<NegateReservedInstanceActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Action to remove a Savings Plan from the scenario. </p>
      */
-    inline const NegateSavingsPlanAction& GetNegateSavingsPlanAction() const{ return m_negateSavingsPlanAction; }
+    inline const NegateSavingsPlanAction& GetNegateSavingsPlanAction() const { return m_negateSavingsPlanAction; }
     inline bool NegateSavingsPlanActionHasBeenSet() const { return m_negateSavingsPlanActionHasBeenSet; }
-    inline void SetNegateSavingsPlanAction(const NegateSavingsPlanAction& value) { m_negateSavingsPlanActionHasBeenSet = true; m_negateSavingsPlanAction = value; }
-    inline void SetNegateSavingsPlanAction(NegateSavingsPlanAction&& value) { m_negateSavingsPlanActionHasBeenSet = true; m_negateSavingsPlanAction = std::move(value); }
-    inline BillScenarioCommitmentModificationAction& WithNegateSavingsPlanAction(const NegateSavingsPlanAction& value) { SetNegateSavingsPlanAction(value); return *this;}
-    inline BillScenarioCommitmentModificationAction& WithNegateSavingsPlanAction(NegateSavingsPlanAction&& value) { SetNegateSavingsPlanAction(std::move(value)); return *this;}
+    template<typename NegateSavingsPlanActionT = NegateSavingsPlanAction>
+    void SetNegateSavingsPlanAction(NegateSavingsPlanActionT&& value) { m_negateSavingsPlanActionHasBeenSet = true; m_negateSavingsPlanAction = std::forward<NegateSavingsPlanActionT>(value); }
+    template<typename NegateSavingsPlanActionT = NegateSavingsPlanAction>
+    BillScenarioCommitmentModificationAction& WithNegateSavingsPlanAction(NegateSavingsPlanActionT&& value) { SetNegateSavingsPlanAction(std::forward<NegateSavingsPlanActionT>(value)); return *this;}
     ///@}
   private:
 

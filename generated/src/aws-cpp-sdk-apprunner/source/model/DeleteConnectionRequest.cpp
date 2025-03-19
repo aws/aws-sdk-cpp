@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectionRequest::DeleteConnectionRequest() : 
-    m_connectionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

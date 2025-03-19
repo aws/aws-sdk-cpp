@@ -12,10 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPropertygraphStatisticsRequest::GetPropertygraphStatisticsRequest()
-{
-}
-
 Aws::String GetPropertygraphStatisticsRequest::SerializePayload() const
 {
   return {};

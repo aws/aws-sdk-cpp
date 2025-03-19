@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNotificationChannelResult::GetNotificationChannelResult()
-{
-}
-
 GetNotificationChannelResult::GetNotificationChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetNotificationChannelResult& GetNotificationChannelResult::operator =(const Aws
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
+    m_snsTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsRoleName"))
   {
     m_snsRoleName = jsonValue.GetString("SnsRoleName");
-
+    m_snsRoleNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

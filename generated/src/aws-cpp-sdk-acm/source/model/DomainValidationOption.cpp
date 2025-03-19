@@ -18,14 +18,7 @@ namespace ACM
 namespace Model
 {
 
-DomainValidationOption::DomainValidationOption() : 
-    m_domainNameHasBeenSet(false),
-    m_validationDomainHasBeenSet(false)
-{
-}
-
 DomainValidationOption::DomainValidationOption(JsonView jsonValue)
-  : DomainValidationOption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DomainValidationOption& DomainValidationOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationDomain"))
   {
     m_validationDomain = jsonValue.GetString("ValidationDomain");
-
     m_validationDomainHasBeenSet = true;
   }
-
   return *this;
 }
 

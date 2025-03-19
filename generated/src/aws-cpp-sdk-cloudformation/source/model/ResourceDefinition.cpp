@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceDefinition::ResourceDefinition() : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 ResourceDefinition::ResourceDefinition(const XmlNode& xmlNode)
-  : ResourceDefinition()
 {
   *this = xmlNode;
 }
@@ -56,6 +48,7 @@ ResourceDefinition& ResourceDefinition::operator =(const XmlNode& xmlNode)
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");

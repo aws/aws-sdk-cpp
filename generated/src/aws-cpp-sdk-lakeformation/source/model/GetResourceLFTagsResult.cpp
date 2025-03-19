@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourceLFTagsResult::GetResourceLFTagsResult()
-{
-}
-
 GetResourceLFTagsResult::GetResourceLFTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetResourceLFTagsResult& GetResourceLFTagsResult::operator =(const Aws::AmazonWe
     {
       m_lFTagOnDatabase.push_back(lFTagOnDatabaseJsonList[lFTagOnDatabaseIndex].AsObject());
     }
+    m_lFTagOnDatabaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LFTagsOnTable"))
   {
     Aws::Utils::Array<JsonView> lFTagsOnTableJsonList = jsonValue.GetArray("LFTagsOnTable");
@@ -45,8 +41,8 @@ GetResourceLFTagsResult& GetResourceLFTagsResult::operator =(const Aws::AmazonWe
     {
       m_lFTagsOnTable.push_back(lFTagsOnTableJsonList[lFTagsOnTableIndex].AsObject());
     }
+    m_lFTagsOnTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LFTagsOnColumns"))
   {
     Aws::Utils::Array<JsonView> lFTagsOnColumnsJsonList = jsonValue.GetArray("LFTagsOnColumns");
@@ -54,14 +50,15 @@ GetResourceLFTagsResult& GetResourceLFTagsResult::operator =(const Aws::AmazonWe
     {
       m_lFTagsOnColumns.push_back(lFTagsOnColumnsJsonList[lFTagsOnColumnsIndex].AsObject());
     }
+    m_lFTagsOnColumnsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

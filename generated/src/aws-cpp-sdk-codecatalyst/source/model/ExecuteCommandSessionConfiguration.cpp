@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-ExecuteCommandSessionConfiguration::ExecuteCommandSessionConfiguration() : 
-    m_commandHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
-{
-}
-
 ExecuteCommandSessionConfiguration::ExecuteCommandSessionConfiguration(JsonView jsonValue)
-  : ExecuteCommandSessionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExecuteCommandSessionConfiguration& ExecuteCommandSessionConfiguration::operator
   if(jsonValue.ValueExists("command"))
   {
     m_command = jsonValue.GetString("command");
-
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arguments"))
   {
     Aws::Utils::Array<JsonView> argumentsJsonList = jsonValue.GetArray("arguments");
@@ -48,7 +39,6 @@ ExecuteCommandSessionConfiguration& ExecuteCommandSessionConfiguration::operator
     }
     m_argumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRouterConfigurationRequest::DescribeRouterConfigurationRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_routerTypeIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRouterConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

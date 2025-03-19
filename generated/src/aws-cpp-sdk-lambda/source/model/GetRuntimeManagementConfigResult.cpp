@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRuntimeManagementConfigResult::GetRuntimeManagementConfigResult() : 
-    m_updateRuntimeOn(UpdateRuntimeOn::NOT_SET)
-{
-}
-
 GetRuntimeManagementConfigResult::GetRuntimeManagementConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRuntimeManagementConfigResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetRuntimeManagementConfigResult& GetRuntimeManagementConfigResult::operator =(c
   if(jsonValue.ValueExists("UpdateRuntimeOn"))
   {
     m_updateRuntimeOn = UpdateRuntimeOnMapper::GetUpdateRuntimeOnForName(jsonValue.GetString("UpdateRuntimeOn"));
-
+    m_updateRuntimeOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeVersionArn"))
   {
     m_runtimeVersionArn = jsonValue.GetString("RuntimeVersionArn");
-
+    m_runtimeVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionArn"))
   {
     m_functionArn = jsonValue.GetString("FunctionArn");
-
+    m_functionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

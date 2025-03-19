@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnalysisSourceEntity::AnalysisSourceEntity() : 
-    m_sourceTemplateHasBeenSet(false)
-{
-}
-
 AnalysisSourceEntity::AnalysisSourceEntity(JsonView jsonValue)
-  : AnalysisSourceEntity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisSourceEntity& AnalysisSourceEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceTemplate"))
   {
     m_sourceTemplate = jsonValue.GetObject("SourceTemplate");
-
     m_sourceTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

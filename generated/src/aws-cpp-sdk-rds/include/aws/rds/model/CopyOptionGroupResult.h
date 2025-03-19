@@ -28,33 +28,35 @@ namespace Model
   class CopyOptionGroupResult
   {
   public:
-    AWS_RDS_API CopyOptionGroupResult();
+    AWS_RDS_API CopyOptionGroupResult() = default;
     AWS_RDS_API CopyOptionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API CopyOptionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const OptionGroup& GetOptionGroup() const{ return m_optionGroup; }
-    inline void SetOptionGroup(const OptionGroup& value) { m_optionGroup = value; }
-    inline void SetOptionGroup(OptionGroup&& value) { m_optionGroup = std::move(value); }
-    inline CopyOptionGroupResult& WithOptionGroup(const OptionGroup& value) { SetOptionGroup(value); return *this;}
-    inline CopyOptionGroupResult& WithOptionGroup(OptionGroup&& value) { SetOptionGroup(std::move(value)); return *this;}
+    inline const OptionGroup& GetOptionGroup() const { return m_optionGroup; }
+    template<typename OptionGroupT = OptionGroup>
+    void SetOptionGroup(OptionGroupT&& value) { m_optionGroupHasBeenSet = true; m_optionGroup = std::forward<OptionGroupT>(value); }
+    template<typename OptionGroupT = OptionGroup>
+    CopyOptionGroupResult& WithOptionGroup(OptionGroupT&& value) { SetOptionGroup(std::forward<OptionGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CopyOptionGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CopyOptionGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CopyOptionGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     OptionGroup m_optionGroup;
+    bool m_optionGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

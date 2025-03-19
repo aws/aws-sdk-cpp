@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCertificateAuthorityAuditReportResult::CreateCertificateAuthorityAuditReportResult()
-{
-}
-
 CreateCertificateAuthorityAuditReportResult::CreateCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateCertificateAuthorityAuditReportResult& CreateCertificateAuthorityAuditRepo
   if(jsonValue.ValueExists("AuditReportId"))
   {
     m_auditReportId = jsonValue.GetString("AuditReportId");
-
+    m_auditReportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
+    m_s3KeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

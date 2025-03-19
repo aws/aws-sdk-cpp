@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiGatewayEndpointConfiguration::AwsApiGatewayEndpointConfiguration() : 
-    m_typesHasBeenSet(false)
-{
-}
-
 AwsApiGatewayEndpointConfiguration::AwsApiGatewayEndpointConfiguration(JsonView jsonValue)
-  : AwsApiGatewayEndpointConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsApiGatewayEndpointConfiguration& AwsApiGatewayEndpointConfiguration::operator
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

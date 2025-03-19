@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentDeploymentDetails::EnvironmentDeploymentDetails() : 
-    m_environmentFailureReasonsHasBeenSet(false),
-    m_overallDeploymentStatus(OverallDeploymentStatus::NOT_SET),
-    m_overallDeploymentStatusHasBeenSet(false)
-{
-}
-
 EnvironmentDeploymentDetails::EnvironmentDeploymentDetails(JsonView jsonValue)
-  : EnvironmentDeploymentDetails()
 {
   *this = jsonValue;
 }
@@ -49,14 +41,11 @@ EnvironmentDeploymentDetails& EnvironmentDeploymentDetails::operator =(JsonView 
     }
     m_environmentFailureReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overallDeploymentStatus"))
   {
     m_overallDeploymentStatus = OverallDeploymentStatusMapper::GetOverallDeploymentStatusForName(jsonValue.GetString("overallDeploymentStatus"));
-
     m_overallDeploymentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

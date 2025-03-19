@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigRuleRequest::DeleteConfigRuleRequest() : 
-    m_configRuleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigRuleRequest::SerializePayload() const
 {
   JsonValue payload;

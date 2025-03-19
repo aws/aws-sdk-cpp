@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWebAppCustomizationResult::DescribeWebAppCustomizationResult()
-{
-}
-
 DescribeWebAppCustomizationResult::DescribeWebAppCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeWebAppCustomizationResult& DescribeWebAppCustomizationResult::operator =
   if(jsonValue.ValueExists("WebAppCustomization"))
   {
     m_webAppCustomization = jsonValue.GetObject("WebAppCustomization");
-
+    m_webAppCustomizationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

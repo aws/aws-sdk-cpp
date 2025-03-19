@@ -30,7 +30,7 @@ namespace Model
   class GetTrafficDistributionResult
   {
   public:
-    AWS_CONNECT_API GetTrafficDistributionResult();
+    AWS_CONNECT_API GetTrafficDistributionResult() = default;
     AWS_CONNECT_API GetTrafficDistributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API GetTrafficDistributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p>The distribution of traffic between the instance and its replicas.</p>
      */
-    inline const TelephonyConfig& GetTelephonyConfig() const{ return m_telephonyConfig; }
-    inline void SetTelephonyConfig(const TelephonyConfig& value) { m_telephonyConfig = value; }
-    inline void SetTelephonyConfig(TelephonyConfig&& value) { m_telephonyConfig = std::move(value); }
-    inline GetTrafficDistributionResult& WithTelephonyConfig(const TelephonyConfig& value) { SetTelephonyConfig(value); return *this;}
-    inline GetTrafficDistributionResult& WithTelephonyConfig(TelephonyConfig&& value) { SetTelephonyConfig(std::move(value)); return *this;}
+    inline const TelephonyConfig& GetTelephonyConfig() const { return m_telephonyConfig; }
+    template<typename TelephonyConfigT = TelephonyConfig>
+    void SetTelephonyConfig(TelephonyConfigT&& value) { m_telephonyConfigHasBeenSet = true; m_telephonyConfig = std::forward<TelephonyConfigT>(value); }
+    template<typename TelephonyConfigT = TelephonyConfig>
+    GetTrafficDistributionResult& WithTelephonyConfig(TelephonyConfigT&& value) { SetTelephonyConfig(std::forward<TelephonyConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,26 +53,22 @@ namespace Model
      * group was created. The ARN must be provided if the call is from the replicated
      * Region.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetTrafficDistributionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetTrafficDistributionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetTrafficDistributionResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetTrafficDistributionResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetTrafficDistributionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetTrafficDistributionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetTrafficDistributionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetTrafficDistributionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,47 +76,51 @@ namespace Model
      * <p>The distribution that determines which Amazon Web Services Regions should be
      * used to sign in agents in to both the instance and its replica(s).</p>
      */
-    inline const SignInConfig& GetSignInConfig() const{ return m_signInConfig; }
-    inline void SetSignInConfig(const SignInConfig& value) { m_signInConfig = value; }
-    inline void SetSignInConfig(SignInConfig&& value) { m_signInConfig = std::move(value); }
-    inline GetTrafficDistributionResult& WithSignInConfig(const SignInConfig& value) { SetSignInConfig(value); return *this;}
-    inline GetTrafficDistributionResult& WithSignInConfig(SignInConfig&& value) { SetSignInConfig(std::move(value)); return *this;}
+    inline const SignInConfig& GetSignInConfig() const { return m_signInConfig; }
+    template<typename SignInConfigT = SignInConfig>
+    void SetSignInConfig(SignInConfigT&& value) { m_signInConfigHasBeenSet = true; m_signInConfig = std::forward<SignInConfigT>(value); }
+    template<typename SignInConfigT = SignInConfig>
+    GetTrafficDistributionResult& WithSignInConfig(SignInConfigT&& value) { SetSignInConfig(std::forward<SignInConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The distribution of agents between the instance and its replica(s).</p>
      */
-    inline const AgentConfig& GetAgentConfig() const{ return m_agentConfig; }
-    inline void SetAgentConfig(const AgentConfig& value) { m_agentConfig = value; }
-    inline void SetAgentConfig(AgentConfig&& value) { m_agentConfig = std::move(value); }
-    inline GetTrafficDistributionResult& WithAgentConfig(const AgentConfig& value) { SetAgentConfig(value); return *this;}
-    inline GetTrafficDistributionResult& WithAgentConfig(AgentConfig&& value) { SetAgentConfig(std::move(value)); return *this;}
+    inline const AgentConfig& GetAgentConfig() const { return m_agentConfig; }
+    template<typename AgentConfigT = AgentConfig>
+    void SetAgentConfig(AgentConfigT&& value) { m_agentConfigHasBeenSet = true; m_agentConfig = std::forward<AgentConfigT>(value); }
+    template<typename AgentConfigT = AgentConfig>
+    GetTrafficDistributionResult& WithAgentConfig(AgentConfigT&& value) { SetAgentConfig(std::forward<AgentConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTrafficDistributionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTrafficDistributionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTrafficDistributionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTrafficDistributionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TelephonyConfig m_telephonyConfig;
+    bool m_telephonyConfigHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     SignInConfig m_signInConfig;
+    bool m_signInConfigHasBeenSet = false;
 
     AgentConfig m_agentConfig;
+    bool m_agentConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

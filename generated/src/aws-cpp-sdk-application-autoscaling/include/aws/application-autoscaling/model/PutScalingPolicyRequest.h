@@ -27,7 +27,7 @@ namespace Model
   class PutScalingPolicyRequest : public ApplicationAutoScalingRequest
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyRequest();
+    AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * scaling policy, but you can delete the original scaling policy and create a new
      * scaling policy with the same settings and a different name.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline PutScalingPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    PutScalingPolicyRequest& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * For a resource provided by your own application or service, use
      * <code>custom-resource</code> instead.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline PutScalingPolicyRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline PutScalingPolicyRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline PutScalingPolicyRequest& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +128,12 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline PutScalingPolicyRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline PutScalingPolicyRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    PutScalingPolicyRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,12 +187,10 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline PutScalingPolicyRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline PutScalingPolicyRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline PutScalingPolicyRequest& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
@@ -214,12 +206,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
      * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
-    inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+    inline PolicyType GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(PolicyType value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline PutScalingPolicyRequest& WithPolicyType(PolicyType value) { SetPolicyType(value); return *this;}
     ///@}
 
     ///@{
@@ -227,12 +217,12 @@ namespace Model
      * <p>A step scaling policy.</p> <p>This parameter is required if you are creating
      * a policy and the policy type is <code>StepScaling</code>.</p>
      */
-    inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const{ return m_stepScalingPolicyConfiguration; }
+    inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const { return m_stepScalingPolicyConfiguration; }
     inline bool StepScalingPolicyConfigurationHasBeenSet() const { return m_stepScalingPolicyConfigurationHasBeenSet; }
-    inline void SetStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
-    inline void SetStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = std::move(value); }
-    inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { SetStepScalingPolicyConfiguration(value); return *this;}
-    inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(std::move(value)); return *this;}
+    template<typename StepScalingPolicyConfigurationT = StepScalingPolicyConfiguration>
+    void SetStepScalingPolicyConfiguration(StepScalingPolicyConfigurationT&& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = std::forward<StepScalingPolicyConfigurationT>(value); }
+    template<typename StepScalingPolicyConfigurationT = StepScalingPolicyConfiguration>
+    PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfigurationT&& value) { SetStepScalingPolicyConfiguration(std::forward<StepScalingPolicyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,40 +231,40 @@ namespace Model
      * customized metrics.</p> <p>This parameter is required if you are creating a
      * policy and the policy type is <code>TargetTrackingScaling</code>.</p>
      */
-    inline const TargetTrackingScalingPolicyConfiguration& GetTargetTrackingScalingPolicyConfiguration() const{ return m_targetTrackingScalingPolicyConfiguration; }
+    inline const TargetTrackingScalingPolicyConfiguration& GetTargetTrackingScalingPolicyConfiguration() const { return m_targetTrackingScalingPolicyConfiguration; }
     inline bool TargetTrackingScalingPolicyConfigurationHasBeenSet() const { return m_targetTrackingScalingPolicyConfigurationHasBeenSet; }
-    inline void SetTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = value; }
-    inline void SetTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = std::move(value); }
-    inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { SetTargetTrackingScalingPolicyConfiguration(value); return *this;}
-    inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
+    template<typename TargetTrackingScalingPolicyConfigurationT = TargetTrackingScalingPolicyConfiguration>
+    void SetTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfigurationT&& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = std::forward<TargetTrackingScalingPolicyConfigurationT>(value); }
+    template<typename TargetTrackingScalingPolicyConfigurationT = TargetTrackingScalingPolicyConfiguration>
+    PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfigurationT&& value) { SetTargetTrackingScalingPolicyConfiguration(std::forward<TargetTrackingScalingPolicyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The configuration of the predictive scaling policy. </p>
      */
-    inline const PredictiveScalingPolicyConfiguration& GetPredictiveScalingPolicyConfiguration() const{ return m_predictiveScalingPolicyConfiguration; }
+    inline const PredictiveScalingPolicyConfiguration& GetPredictiveScalingPolicyConfiguration() const { return m_predictiveScalingPolicyConfiguration; }
     inline bool PredictiveScalingPolicyConfigurationHasBeenSet() const { return m_predictiveScalingPolicyConfigurationHasBeenSet; }
-    inline void SetPredictiveScalingPolicyConfiguration(const PredictiveScalingPolicyConfiguration& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = value; }
-    inline void SetPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfiguration&& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = std::move(value); }
-    inline PutScalingPolicyRequest& WithPredictiveScalingPolicyConfiguration(const PredictiveScalingPolicyConfiguration& value) { SetPredictiveScalingPolicyConfiguration(value); return *this;}
-    inline PutScalingPolicyRequest& WithPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfiguration&& value) { SetPredictiveScalingPolicyConfiguration(std::move(value)); return *this;}
+    template<typename PredictiveScalingPolicyConfigurationT = PredictiveScalingPolicyConfiguration>
+    void SetPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfigurationT&& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = std::forward<PredictiveScalingPolicyConfigurationT>(value); }
+    template<typename PredictiveScalingPolicyConfigurationT = PredictiveScalingPolicyConfiguration>
+    PutScalingPolicyRequest& WithPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfigurationT&& value) { SetPredictiveScalingPolicyConfiguration(std::forward<PredictiveScalingPolicyConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet = false;
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
-    PolicyType m_policyType;
+    PolicyType m_policyType{PolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
 
     StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;

@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-OpenSearchResourceStatus::OpenSearchResourceStatus() : 
-    m_status(OpenSearchResourceStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 OpenSearchResourceStatus::OpenSearchResourceStatus(JsonView jsonValue)
-  : OpenSearchResourceStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OpenSearchResourceStatus& OpenSearchResourceStatus::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("status"))
   {
     m_status = OpenSearchResourceStatusTypeMapper::GetOpenSearchResourceStatusTypeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

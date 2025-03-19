@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RerankDocument::RerankDocument() : 
-    m_jsonDocumentHasBeenSet(false),
-    m_textDocumentHasBeenSet(false),
-    m_type(RerankDocumentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RerankDocument::RerankDocument(JsonView jsonValue)
-  : RerankDocument()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RerankDocument& RerankDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jsonDocument"))
   {
     m_jsonDocument = jsonValue.GetObject("jsonDocument");
-
     m_jsonDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textDocument"))
   {
     m_textDocument = jsonValue.GetObject("textDocument");
-
     m_textDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RerankDocumentTypeMapper::GetRerankDocumentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

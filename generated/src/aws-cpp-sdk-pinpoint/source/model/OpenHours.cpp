@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-OpenHours::OpenHours() : 
-    m_eMAILHasBeenSet(false),
-    m_sMSHasBeenSet(false),
-    m_pUSHHasBeenSet(false),
-    m_vOICEHasBeenSet(false),
-    m_cUSTOMHasBeenSet(false)
-{
-}
-
 OpenHours::OpenHours(JsonView jsonValue)
-  : OpenHours()
 {
   *this = jsonValue;
 }
@@ -51,7 +41,6 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     }
     m_eMAILHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMS"))
   {
     Aws::Map<Aws::String, JsonView> sMSJsonMap = jsonValue.GetObject("SMS").GetAllObjects();
@@ -68,7 +57,6 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     }
     m_sMSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PUSH"))
   {
     Aws::Map<Aws::String, JsonView> pUSHJsonMap = jsonValue.GetObject("PUSH").GetAllObjects();
@@ -85,7 +73,6 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     }
     m_pUSHHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VOICE"))
   {
     Aws::Map<Aws::String, JsonView> vOICEJsonMap = jsonValue.GetObject("VOICE").GetAllObjects();
@@ -102,7 +89,6 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     }
     m_vOICEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CUSTOM"))
   {
     Aws::Map<Aws::String, JsonView> cUSTOMJsonMap = jsonValue.GetObject("CUSTOM").GetAllObjects();
@@ -119,7 +105,6 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     }
     m_cUSTOMHasBeenSet = true;
   }
-
   return *this;
 }
 

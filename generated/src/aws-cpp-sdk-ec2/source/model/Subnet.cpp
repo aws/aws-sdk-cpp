@@ -20,43 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_availabilityZoneIdHasBeenSet(false),
-    m_enableLniAtDeviceIndex(0),
-    m_enableLniAtDeviceIndexHasBeenSet(false),
-    m_mapCustomerOwnedIpOnLaunch(false),
-    m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_assignIpv6AddressOnCreation(false),
-    m_assignIpv6AddressOnCreationHasBeenSet(false),
-    m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_enableDns64(false),
-    m_enableDns64HasBeenSet(false),
-    m_ipv6Native(false),
-    m_ipv6NativeHasBeenSet(false),
-    m_privateDnsNameOptionsOnLaunchHasBeenSet(false),
-    m_blockPublicAccessStatesHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_state(SubnetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_availableIpAddressCount(0),
-    m_availableIpAddressCountHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_defaultForAz(false),
-    m_defaultForAzHasBeenSet(false),
-    m_mapPublicIpOnLaunch(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(const XmlNode& xmlNode)
-  : Subnet()
 {
   *this = xmlNode;
 }
@@ -107,6 +71,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     if(!ipv6CidrBlockAssociationSetNode.IsNull())
     {
       XmlNode ipv6CidrBlockAssociationSetMember = ipv6CidrBlockAssociationSetNode.FirstChild("item");
+      m_ipv6CidrBlockAssociationSetHasBeenSet = !ipv6CidrBlockAssociationSetMember.IsNull();
       while(!ipv6CidrBlockAssociationSetMember.IsNull())
       {
         m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetMember);
@@ -119,6 +84,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -172,7 +138,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SubnetStateMapper::GetSubnetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SubnetStateMapper::GetSubnetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");

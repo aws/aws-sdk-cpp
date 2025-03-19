@@ -33,7 +33,7 @@ namespace Model
   class EncryptionConfig
   {
   public:
-    AWS_EKS_API EncryptionConfig();
+    AWS_EKS_API EncryptionConfig() = default;
     AWS_EKS_API EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>Specifies the resources to be encrypted. The only supported value is
      * <code>secrets</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline EncryptionConfig& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline EncryptionConfig& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline EncryptionConfig& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline EncryptionConfig& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-    inline EncryptionConfig& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    EncryptionConfig& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Aws::String>
+    EncryptionConfig& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,12 +59,12 @@ namespace Model
      * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
      * used.</p>
      */
-    inline const Provider& GetProvider() const{ return m_provider; }
+    inline const Provider& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Provider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Provider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline EncryptionConfig& WithProvider(const Provider& value) { SetProvider(value); return *this;}
-    inline EncryptionConfig& WithProvider(Provider&& value) { SetProvider(std::move(value)); return *this;}
+    template<typename ProviderT = Provider>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Provider>
+    EncryptionConfig& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
   private:
 

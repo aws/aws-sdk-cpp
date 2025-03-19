@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeKeyRequest::DescribeKeyRequest() : 
-    m_keyNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeKeyRequest::SerializePayload() const
 {
   return {};

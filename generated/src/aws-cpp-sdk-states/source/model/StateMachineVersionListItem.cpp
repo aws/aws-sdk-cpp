@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-StateMachineVersionListItem::StateMachineVersionListItem() : 
-    m_stateMachineVersionArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 StateMachineVersionListItem::StateMachineVersionListItem(JsonView jsonValue)
-  : StateMachineVersionListItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StateMachineVersionListItem& StateMachineVersionListItem::operator =(JsonView js
   if(jsonValue.ValueExists("stateMachineVersionArn"))
   {
     m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
-
     m_stateMachineVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

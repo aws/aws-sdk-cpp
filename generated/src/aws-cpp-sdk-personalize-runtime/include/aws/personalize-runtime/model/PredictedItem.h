@@ -34,7 +34,7 @@ namespace Model
   class PredictedItem
   {
   public:
-    AWS_PERSONALIZERUNTIME_API PredictedItem();
+    AWS_PERSONALIZERUNTIME_API PredictedItem() = default;
     AWS_PERSONALIZERUNTIME_API PredictedItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZERUNTIME_API PredictedItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The recommended item ID.</p>
      */
-    inline const Aws::String& GetItemId() const{ return m_itemId; }
+    inline const Aws::String& GetItemId() const { return m_itemId; }
     inline bool ItemIdHasBeenSet() const { return m_itemIdHasBeenSet; }
-    inline void SetItemId(const Aws::String& value) { m_itemIdHasBeenSet = true; m_itemId = value; }
-    inline void SetItemId(Aws::String&& value) { m_itemIdHasBeenSet = true; m_itemId = std::move(value); }
-    inline void SetItemId(const char* value) { m_itemIdHasBeenSet = true; m_itemId.assign(value); }
-    inline PredictedItem& WithItemId(const Aws::String& value) { SetItemId(value); return *this;}
-    inline PredictedItem& WithItemId(Aws::String&& value) { SetItemId(std::move(value)); return *this;}
-    inline PredictedItem& WithItemId(const char* value) { SetItemId(value); return *this;}
+    template<typename ItemIdT = Aws::String>
+    void SetItemId(ItemIdT&& value) { m_itemIdHasBeenSet = true; m_itemId = std::forward<ItemIdT>(value); }
+    template<typename ItemIdT = Aws::String>
+    PredictedItem& WithItemId(ItemIdT&& value) { SetItemId(std::forward<ItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * next user selection. For more information on scoring logic, see
      * <a>how-scores-work</a>.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline PredictedItem& WithScore(double value) { SetScore(value); return *this;}
@@ -70,33 +68,28 @@ namespace Model
     /**
      * <p>The name of the promotion that included the predicted item.</p>
      */
-    inline const Aws::String& GetPromotionName() const{ return m_promotionName; }
+    inline const Aws::String& GetPromotionName() const { return m_promotionName; }
     inline bool PromotionNameHasBeenSet() const { return m_promotionNameHasBeenSet; }
-    inline void SetPromotionName(const Aws::String& value) { m_promotionNameHasBeenSet = true; m_promotionName = value; }
-    inline void SetPromotionName(Aws::String&& value) { m_promotionNameHasBeenSet = true; m_promotionName = std::move(value); }
-    inline void SetPromotionName(const char* value) { m_promotionNameHasBeenSet = true; m_promotionName.assign(value); }
-    inline PredictedItem& WithPromotionName(const Aws::String& value) { SetPromotionName(value); return *this;}
-    inline PredictedItem& WithPromotionName(Aws::String&& value) { SetPromotionName(std::move(value)); return *this;}
-    inline PredictedItem& WithPromotionName(const char* value) { SetPromotionName(value); return *this;}
+    template<typename PromotionNameT = Aws::String>
+    void SetPromotionName(PromotionNameT&& value) { m_promotionNameHasBeenSet = true; m_promotionName = std::forward<PromotionNameT>(value); }
+    template<typename PromotionNameT = Aws::String>
+    PredictedItem& WithPromotionName(PromotionNameT&& value) { SetPromotionName(std::forward<PromotionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata about the item from your Items dataset.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline PredictedItem& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline PredictedItem& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline PredictedItem& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-    inline PredictedItem& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline PredictedItem& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline PredictedItem& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline PredictedItem& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline PredictedItem& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline PredictedItem& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    PredictedItem& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    PredictedItem& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -116,22 +109,21 @@ namespace Model
      * items, based on interactions data, that satisfy your filter criteria. They don't
      * have a relevance score for the user. </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetReason() const{ return m_reason; }
+    inline const Aws::Vector<Aws::String>& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::Vector<Aws::String>& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::Vector<Aws::String>&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline PredictedItem& WithReason(const Aws::Vector<Aws::String>& value) { SetReason(value); return *this;}
-    inline PredictedItem& WithReason(Aws::Vector<Aws::String>&& value) { SetReason(std::move(value)); return *this;}
-    inline PredictedItem& AddReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason.push_back(value); return *this; }
-    inline PredictedItem& AddReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason.push_back(std::move(value)); return *this; }
-    inline PredictedItem& AddReason(const char* value) { m_reasonHasBeenSet = true; m_reason.push_back(value); return *this; }
+    template<typename ReasonT = Aws::Vector<Aws::String>>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::Vector<Aws::String>>
+    PredictedItem& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
+    template<typename ReasonT = Aws::String>
+    PredictedItem& AddReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason.emplace_back(std::forward<ReasonT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_itemId;
     bool m_itemIdHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
 
     Aws::String m_promotionName;

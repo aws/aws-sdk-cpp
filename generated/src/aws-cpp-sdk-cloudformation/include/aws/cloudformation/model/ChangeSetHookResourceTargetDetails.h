@@ -33,7 +33,7 @@ namespace Model
   class ChangeSetHookResourceTargetDetails
   {
   public:
-    AWS_CLOUDFORMATION_API ChangeSetHookResourceTargetDetails();
+    AWS_CLOUDFORMATION_API ChangeSetHookResourceTargetDetails() = default;
     AWS_CLOUDFORMATION_API ChangeSetHookResourceTargetDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ChangeSetHookResourceTargetDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The resource's logical ID, which is defined in the stack's template.</p>
      */
-    inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+    inline const Aws::String& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-    inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-    inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-    inline void SetLogicalResourceId(const char* value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId.assign(value); }
-    inline ChangeSetHookResourceTargetDetails& WithLogicalResourceId(const Aws::String& value) { SetLogicalResourceId(value); return *this;}
-    inline ChangeSetHookResourceTargetDetails& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(std::move(value)); return *this;}
-    inline ChangeSetHookResourceTargetDetails& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+    template<typename LogicalResourceIdT = Aws::String>
+    void SetLogicalResourceId(LogicalResourceIdT&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::forward<LogicalResourceIdT>(value); }
+    template<typename LogicalResourceIdT = Aws::String>
+    ChangeSetHookResourceTargetDetails& WithLogicalResourceId(LogicalResourceIdT&& value) { SetLogicalResourceId(std::forward<LogicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,22 @@ namespace Model
      * <p>The type of CloudFormation resource, such as
      * <code>AWS::S3::Bucket</code>.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ChangeSetHookResourceTargetDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ChangeSetHookResourceTargetDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ChangeSetHookResourceTargetDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ChangeSetHookResourceTargetDetails& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the action of the resource.</p>
      */
-    inline const ChangeAction& GetResourceAction() const{ return m_resourceAction; }
+    inline ChangeAction GetResourceAction() const { return m_resourceAction; }
     inline bool ResourceActionHasBeenSet() const { return m_resourceActionHasBeenSet; }
-    inline void SetResourceAction(const ChangeAction& value) { m_resourceActionHasBeenSet = true; m_resourceAction = value; }
-    inline void SetResourceAction(ChangeAction&& value) { m_resourceActionHasBeenSet = true; m_resourceAction = std::move(value); }
-    inline ChangeSetHookResourceTargetDetails& WithResourceAction(const ChangeAction& value) { SetResourceAction(value); return *this;}
-    inline ChangeSetHookResourceTargetDetails& WithResourceAction(ChangeAction&& value) { SetResourceAction(std::move(value)); return *this;}
+    inline void SetResourceAction(ChangeAction value) { m_resourceActionHasBeenSet = true; m_resourceAction = value; }
+    inline ChangeSetHookResourceTargetDetails& WithResourceAction(ChangeAction value) { SetResourceAction(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +83,7 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    ChangeAction m_resourceAction;
+    ChangeAction m_resourceAction{ChangeAction::NOT_SET};
     bool m_resourceActionHasBeenSet = false;
   };
 

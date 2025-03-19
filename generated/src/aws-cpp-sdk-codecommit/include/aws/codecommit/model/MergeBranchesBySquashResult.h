@@ -27,7 +27,7 @@ namespace Model
   class MergeBranchesBySquashResult
   {
   public:
-    AWS_CODECOMMIT_API MergeBranchesBySquashResult();
+    AWS_CODECOMMIT_API MergeBranchesBySquashResult() = default;
     AWS_CODECOMMIT_API MergeBranchesBySquashResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API MergeBranchesBySquashResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The commit ID of the merge in the destination or target branch.</p>
      */
-    inline const Aws::String& GetCommitId() const{ return m_commitId; }
-    inline void SetCommitId(const Aws::String& value) { m_commitId = value; }
-    inline void SetCommitId(Aws::String&& value) { m_commitId = std::move(value); }
-    inline void SetCommitId(const char* value) { m_commitId.assign(value); }
-    inline MergeBranchesBySquashResult& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
-    inline MergeBranchesBySquashResult& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
-    inline MergeBranchesBySquashResult& WithCommitId(const char* value) { SetCommitId(value); return *this;}
+    inline const Aws::String& GetCommitId() const { return m_commitId; }
+    template<typename CommitIdT = Aws::String>
+    void SetCommitId(CommitIdT&& value) { m_commitIdHasBeenSet = true; m_commitId = std::forward<CommitIdT>(value); }
+    template<typename CommitIdT = Aws::String>
+    MergeBranchesBySquashResult& WithCommitId(CommitIdT&& value) { SetCommitId(std::forward<CommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tree ID of the merge in the destination or target branch.</p>
      */
-    inline const Aws::String& GetTreeId() const{ return m_treeId; }
-    inline void SetTreeId(const Aws::String& value) { m_treeId = value; }
-    inline void SetTreeId(Aws::String&& value) { m_treeId = std::move(value); }
-    inline void SetTreeId(const char* value) { m_treeId.assign(value); }
-    inline MergeBranchesBySquashResult& WithTreeId(const Aws::String& value) { SetTreeId(value); return *this;}
-    inline MergeBranchesBySquashResult& WithTreeId(Aws::String&& value) { SetTreeId(std::move(value)); return *this;}
-    inline MergeBranchesBySquashResult& WithTreeId(const char* value) { SetTreeId(value); return *this;}
+    inline const Aws::String& GetTreeId() const { return m_treeId; }
+    template<typename TreeIdT = Aws::String>
+    void SetTreeId(TreeIdT&& value) { m_treeIdHasBeenSet = true; m_treeId = std::forward<TreeIdT>(value); }
+    template<typename TreeIdT = Aws::String>
+    MergeBranchesBySquashResult& WithTreeId(TreeIdT&& value) { SetTreeId(std::forward<TreeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline MergeBranchesBySquashResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline MergeBranchesBySquashResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline MergeBranchesBySquashResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    MergeBranchesBySquashResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_commitId;
+    bool m_commitIdHasBeenSet = false;
 
     Aws::String m_treeId;
+    bool m_treeIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

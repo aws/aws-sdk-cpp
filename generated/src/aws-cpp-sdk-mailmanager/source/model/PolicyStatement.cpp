@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-PolicyStatement::PolicyStatement() : 
-    m_action(AcceptAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 PolicyStatement::PolicyStatement(JsonView jsonValue)
-  : PolicyStatement()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PolicyStatement& PolicyStatement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
@@ -49,7 +39,6 @@ PolicyStatement& PolicyStatement::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,25 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-SampledHTTPRequest::SampledHTTPRequest() : 
-    m_requestHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_ruleNameWithinRuleGroupHasBeenSet(false),
-    m_requestHeadersInsertedHasBeenSet(false),
-    m_responseCodeSent(0),
-    m_responseCodeSentHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_captchaResponseHasBeenSet(false),
-    m_challengeResponseHasBeenSet(false),
-    m_overriddenActionHasBeenSet(false)
-{
-}
-
 SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue)
-  : SampledHTTPRequest()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Request"))
   {
     m_request = jsonValue.GetObject("Request");
-
     m_requestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetInt64("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleNameWithinRuleGroup"))
   {
     m_ruleNameWithinRuleGroup = jsonValue.GetString("RuleNameWithinRuleGroup");
-
     m_ruleNameWithinRuleGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestHeadersInserted"))
   {
     Aws::Utils::Array<JsonView> requestHeadersInsertedJsonList = jsonValue.GetArray("RequestHeadersInserted");
@@ -87,14 +59,11 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     }
     m_requestHeadersInsertedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseCodeSent"))
   {
     m_responseCodeSent = jsonValue.GetInteger("ResponseCodeSent");
-
     m_responseCodeSentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
@@ -104,28 +73,21 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptchaResponse"))
   {
     m_captchaResponse = jsonValue.GetObject("CaptchaResponse");
-
     m_captchaResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeResponse"))
   {
     m_challengeResponse = jsonValue.GetObject("ChallengeResponse");
-
     m_challengeResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverriddenAction"))
   {
     m_overriddenAction = jsonValue.GetString("OverriddenAction");
-
     m_overriddenActionHasBeenSet = true;
   }
-
   return *this;
 }
 

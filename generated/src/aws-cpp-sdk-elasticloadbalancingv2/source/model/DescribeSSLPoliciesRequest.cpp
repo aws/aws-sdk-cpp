@@ -10,16 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeSSLPoliciesRequest::DescribeSSLPoliciesRequest() : 
-    m_namesHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_loadBalancerType(LoadBalancerTypeEnum::NOT_SET),
-    m_loadBalancerTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSSLPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

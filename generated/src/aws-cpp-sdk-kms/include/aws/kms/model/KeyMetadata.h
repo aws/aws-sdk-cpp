@@ -47,7 +47,7 @@ namespace Model
   class KeyMetadata
   {
   public:
-    AWS_KMS_API KeyMetadata();
+    AWS_KMS_API KeyMetadata() = default;
     AWS_KMS_API KeyMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API KeyMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,28 +58,24 @@ namespace Model
      * <p>The twelve-digit account ID of the Amazon Web Services account that owns the
      * KMS key.</p>
      */
-    inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
+    inline const Aws::String& GetAWSAccountId() const { return m_aWSAccountId; }
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
-    inline void SetAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
-    inline void SetAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
-    inline void SetAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.assign(value); }
-    inline KeyMetadata& WithAWSAccountId(const Aws::String& value) { SetAWSAccountId(value); return *this;}
-    inline KeyMetadata& WithAWSAccountId(Aws::String&& value) { SetAWSAccountId(std::move(value)); return *this;}
-    inline KeyMetadata& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
+    template<typename AWSAccountIdT = Aws::String>
+    void SetAWSAccountId(AWSAccountIdT&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::forward<AWSAccountIdT>(value); }
+    template<typename AWSAccountIdT = Aws::String>
+    KeyMetadata& WithAWSAccountId(AWSAccountIdT&& value) { SetAWSAccountId(std::forward<AWSAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The globally unique identifier for the KMS key.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline KeyMetadata& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline KeyMetadata& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline KeyMetadata& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    KeyMetadata& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +85,24 @@ namespace Model
      * Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline KeyMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline KeyMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline KeyMetadata& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    KeyMetadata& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the KMS key was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline KeyMetadata& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline KeyMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    KeyMetadata& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,7 +110,7 @@ namespace Model
      * <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
      * <code>Enabled</code> this value is true, otherwise it is false.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline KeyMetadata& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -126,14 +120,12 @@ namespace Model
     /**
      * <p>The description of the KMS key.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline KeyMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline KeyMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline KeyMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    KeyMetadata& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +134,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> for which you can use the KMS key.</p>
      */
-    inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
+    inline KeyUsageType GetKeyUsage() const { return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
-    inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
-    inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
-    inline KeyMetadata& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
-    inline KeyMetadata& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
+    inline void SetKeyUsage(KeyUsageType value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
+    inline KeyMetadata& WithKeyUsage(KeyUsageType value) { SetKeyUsage(value); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +147,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
      * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const KeyState& GetKeyState() const{ return m_keyState; }
+    inline KeyState GetKeyState() const { return m_keyState; }
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
-    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
-    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
-    inline KeyMetadata& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
-    inline KeyMetadata& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+    inline void SetKeyState(KeyState value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+    inline KeyMetadata& WithKeyState(KeyState value) { SetKeyState(value); return *this;}
     ///@}
 
     ///@{
@@ -175,12 +163,12 @@ namespace Model
      * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
      * field.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
+    inline const Aws::Utils::DateTime& GetDeletionDate() const { return m_deletionDate; }
     inline bool DeletionDateHasBeenSet() const { return m_deletionDateHasBeenSet; }
-    inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
-    inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::move(value); }
-    inline KeyMetadata& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
-    inline KeyMetadata& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}
+    template<typename DeletionDateT = Aws::Utils::DateTime>
+    void SetDeletionDate(DeletionDateT&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::forward<DeletionDateT>(value); }
+    template<typename DeletionDateT = Aws::Utils::DateTime>
+    KeyMetadata& WithDeletionDate(DeletionDateT&& value) { SetDeletionDate(std::forward<DeletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +179,12 @@ namespace Model
      * <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
      * <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidTo() const{ return m_validTo; }
+    inline const Aws::Utils::DateTime& GetValidTo() const { return m_validTo; }
     inline bool ValidToHasBeenSet() const { return m_validToHasBeenSet; }
-    inline void SetValidTo(const Aws::Utils::DateTime& value) { m_validToHasBeenSet = true; m_validTo = value; }
-    inline void SetValidTo(Aws::Utils::DateTime&& value) { m_validToHasBeenSet = true; m_validTo = std::move(value); }
-    inline KeyMetadata& WithValidTo(const Aws::Utils::DateTime& value) { SetValidTo(value); return *this;}
-    inline KeyMetadata& WithValidTo(Aws::Utils::DateTime&& value) { SetValidTo(std::move(value)); return *this;}
+    template<typename ValidToT = Aws::Utils::DateTime>
+    void SetValidTo(ValidToT&& value) { m_validToHasBeenSet = true; m_validTo = std::forward<ValidToT>(value); }
+    template<typename ValidToT = Aws::Utils::DateTime>
+    KeyMetadata& WithValidTo(ValidToT&& value) { SetValidTo(std::forward<ValidToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,12 +195,10 @@ namespace Model
      * any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material
      * was created in the CloudHSM cluster associated with a custom key store.</p>
      */
-    inline const OriginType& GetOrigin() const{ return m_origin; }
+    inline OriginType GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const OriginType& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline KeyMetadata& WithOrigin(const OriginType& value) { SetOrigin(value); return *this;}
-    inline KeyMetadata& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
+    inline void SetOrigin(OriginType value) { m_originHasBeenSet = true; m_origin = value; }
+    inline KeyMetadata& WithOrigin(OriginType value) { SetOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -222,14 +208,12 @@ namespace Model
      * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
-    inline KeyMetadata& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline KeyMetadata& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline KeyMetadata& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    KeyMetadata& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,14 +225,12 @@ namespace Model
      * CloudHSM cluster. This field is present only when the KMS key is created in an
      * CloudHSM key store.</p>
      */
-    inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
+    inline const Aws::String& GetCloudHsmClusterId() const { return m_cloudHsmClusterId; }
     inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
-    inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
-    inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
-    inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
-    inline KeyMetadata& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
-    inline KeyMetadata& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
-    inline KeyMetadata& WithCloudHsmClusterId(const char* value) { SetCloudHsmClusterId(value); return *this;}
+    template<typename CloudHsmClusterIdT = Aws::String>
+    void SetCloudHsmClusterId(CloudHsmClusterIdT&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::forward<CloudHsmClusterIdT>(value); }
+    template<typename CloudHsmClusterIdT = Aws::String>
+    KeyMetadata& WithCloudHsmClusterId(CloudHsmClusterIdT&& value) { SetCloudHsmClusterId(std::forward<CloudHsmClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -257,12 +239,10 @@ namespace Model
      * only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is
      * omitted.</p>
      */
-    inline const ExpirationModelType& GetExpirationModel() const{ return m_expirationModel; }
+    inline ExpirationModelType GetExpirationModel() const { return m_expirationModel; }
     inline bool ExpirationModelHasBeenSet() const { return m_expirationModelHasBeenSet; }
-    inline void SetExpirationModel(const ExpirationModelType& value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
-    inline void SetExpirationModel(ExpirationModelType&& value) { m_expirationModelHasBeenSet = true; m_expirationModel = std::move(value); }
-    inline KeyMetadata& WithExpirationModel(const ExpirationModelType& value) { SetExpirationModel(value); return *this;}
-    inline KeyMetadata& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(std::move(value)); return *this;}
+    inline void SetExpirationModel(ExpirationModelType value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
+    inline KeyMetadata& WithExpirationModel(ExpirationModelType value) { SetExpirationModel(value); return *this;}
     ///@}
 
     ///@{
@@ -273,24 +253,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
      * keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const KeyManagerType& GetKeyManager() const{ return m_keyManager; }
+    inline KeyManagerType GetKeyManager() const { return m_keyManager; }
     inline bool KeyManagerHasBeenSet() const { return m_keyManagerHasBeenSet; }
-    inline void SetKeyManager(const KeyManagerType& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
-    inline void SetKeyManager(KeyManagerType&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
-    inline KeyMetadata& WithKeyManager(const KeyManagerType& value) { SetKeyManager(value); return *this;}
-    inline KeyMetadata& WithKeyManager(KeyManagerType&& value) { SetKeyManager(std::move(value)); return *this;}
+    inline void SetKeyManager(KeyManagerType value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
+    inline KeyMetadata& WithKeyManager(KeyManagerType value) { SetKeyManager(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the type of key material in the KMS key.</p>
      */
-    inline const KeySpec& GetKeySpec() const{ return m_keySpec; }
+    inline KeySpec GetKeySpec() const { return m_keySpec; }
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }
-    inline void SetKeySpec(const KeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
-    inline void SetKeySpec(KeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = std::move(value); }
-    inline KeyMetadata& WithKeySpec(const KeySpec& value) { SetKeySpec(value); return *this;}
-    inline KeyMetadata& WithKeySpec(KeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
+    inline void SetKeySpec(KeySpec value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
+    inline KeyMetadata& WithKeySpec(KeySpec value) { SetKeySpec(value); return *this;}
     ///@}
 
     ///@{
@@ -300,14 +276,13 @@ namespace Model
      * only when the <code>KeyUsage</code> of the KMS key is
      * <code>ENCRYPT_DECRYPT</code>.</p>
      */
-    inline const Aws::Vector<EncryptionAlgorithmSpec>& GetEncryptionAlgorithms() const{ return m_encryptionAlgorithms; }
+    inline const Aws::Vector<EncryptionAlgorithmSpec>& GetEncryptionAlgorithms() const { return m_encryptionAlgorithms; }
     inline bool EncryptionAlgorithmsHasBeenSet() const { return m_encryptionAlgorithmsHasBeenSet; }
-    inline void SetEncryptionAlgorithms(const Aws::Vector<EncryptionAlgorithmSpec>& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = value; }
-    inline void SetEncryptionAlgorithms(Aws::Vector<EncryptionAlgorithmSpec>&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = std::move(value); }
-    inline KeyMetadata& WithEncryptionAlgorithms(const Aws::Vector<EncryptionAlgorithmSpec>& value) { SetEncryptionAlgorithms(value); return *this;}
-    inline KeyMetadata& WithEncryptionAlgorithms(Aws::Vector<EncryptionAlgorithmSpec>&& value) { SetEncryptionAlgorithms(std::move(value)); return *this;}
-    inline KeyMetadata& AddEncryptionAlgorithms(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(value); return *this; }
-    inline KeyMetadata& AddEncryptionAlgorithms(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(std::move(value)); return *this; }
+    template<typename EncryptionAlgorithmsT = Aws::Vector<EncryptionAlgorithmSpec>>
+    void SetEncryptionAlgorithms(EncryptionAlgorithmsT&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = std::forward<EncryptionAlgorithmsT>(value); }
+    template<typename EncryptionAlgorithmsT = Aws::Vector<EncryptionAlgorithmSpec>>
+    KeyMetadata& WithEncryptionAlgorithms(EncryptionAlgorithmsT&& value) { SetEncryptionAlgorithms(std::forward<EncryptionAlgorithmsT>(value)); return *this;}
+    inline KeyMetadata& AddEncryptionAlgorithms(EncryptionAlgorithmSpec value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -316,28 +291,26 @@ namespace Model
      * with other signing algorithms within KMS.</p> <p>This field appears only when
      * the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
      */
-    inline const Aws::Vector<SigningAlgorithmSpec>& GetSigningAlgorithms() const{ return m_signingAlgorithms; }
+    inline const Aws::Vector<SigningAlgorithmSpec>& GetSigningAlgorithms() const { return m_signingAlgorithms; }
     inline bool SigningAlgorithmsHasBeenSet() const { return m_signingAlgorithmsHasBeenSet; }
-    inline void SetSigningAlgorithms(const Aws::Vector<SigningAlgorithmSpec>& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms = value; }
-    inline void SetSigningAlgorithms(Aws::Vector<SigningAlgorithmSpec>&& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms = std::move(value); }
-    inline KeyMetadata& WithSigningAlgorithms(const Aws::Vector<SigningAlgorithmSpec>& value) { SetSigningAlgorithms(value); return *this;}
-    inline KeyMetadata& WithSigningAlgorithms(Aws::Vector<SigningAlgorithmSpec>&& value) { SetSigningAlgorithms(std::move(value)); return *this;}
-    inline KeyMetadata& AddSigningAlgorithms(const SigningAlgorithmSpec& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms.push_back(value); return *this; }
-    inline KeyMetadata& AddSigningAlgorithms(SigningAlgorithmSpec&& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms.push_back(std::move(value)); return *this; }
+    template<typename SigningAlgorithmsT = Aws::Vector<SigningAlgorithmSpec>>
+    void SetSigningAlgorithms(SigningAlgorithmsT&& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms = std::forward<SigningAlgorithmsT>(value); }
+    template<typename SigningAlgorithmsT = Aws::Vector<SigningAlgorithmSpec>>
+    KeyMetadata& WithSigningAlgorithms(SigningAlgorithmsT&& value) { SetSigningAlgorithms(std::forward<SigningAlgorithmsT>(value)); return *this;}
+    inline KeyMetadata& AddSigningAlgorithms(SigningAlgorithmSpec value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The key agreement algorithm used to derive a shared secret.</p>
      */
-    inline const Aws::Vector<KeyAgreementAlgorithmSpec>& GetKeyAgreementAlgorithms() const{ return m_keyAgreementAlgorithms; }
+    inline const Aws::Vector<KeyAgreementAlgorithmSpec>& GetKeyAgreementAlgorithms() const { return m_keyAgreementAlgorithms; }
     inline bool KeyAgreementAlgorithmsHasBeenSet() const { return m_keyAgreementAlgorithmsHasBeenSet; }
-    inline void SetKeyAgreementAlgorithms(const Aws::Vector<KeyAgreementAlgorithmSpec>& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms = value; }
-    inline void SetKeyAgreementAlgorithms(Aws::Vector<KeyAgreementAlgorithmSpec>&& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms = std::move(value); }
-    inline KeyMetadata& WithKeyAgreementAlgorithms(const Aws::Vector<KeyAgreementAlgorithmSpec>& value) { SetKeyAgreementAlgorithms(value); return *this;}
-    inline KeyMetadata& WithKeyAgreementAlgorithms(Aws::Vector<KeyAgreementAlgorithmSpec>&& value) { SetKeyAgreementAlgorithms(std::move(value)); return *this;}
-    inline KeyMetadata& AddKeyAgreementAlgorithms(const KeyAgreementAlgorithmSpec& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms.push_back(value); return *this; }
-    inline KeyMetadata& AddKeyAgreementAlgorithms(KeyAgreementAlgorithmSpec&& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms.push_back(std::move(value)); return *this; }
+    template<typename KeyAgreementAlgorithmsT = Aws::Vector<KeyAgreementAlgorithmSpec>>
+    void SetKeyAgreementAlgorithms(KeyAgreementAlgorithmsT&& value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms = std::forward<KeyAgreementAlgorithmsT>(value); }
+    template<typename KeyAgreementAlgorithmsT = Aws::Vector<KeyAgreementAlgorithmSpec>>
+    KeyMetadata& WithKeyAgreementAlgorithms(KeyAgreementAlgorithmsT&& value) { SetKeyAgreementAlgorithms(std::forward<KeyAgreementAlgorithmsT>(value)); return *this;}
+    inline KeyMetadata& AddKeyAgreementAlgorithms(KeyAgreementAlgorithmSpec value) { m_keyAgreementAlgorithmsHasBeenSet = true; m_keyAgreementAlgorithms.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -349,7 +322,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region
      * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetMultiRegion() const{ return m_multiRegion; }
+    inline bool GetMultiRegion() const { return m_multiRegion; }
     inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
     inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
     inline KeyMetadata& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
@@ -368,12 +341,12 @@ namespace Model
      * Regions of all replica keys. This field includes the current KMS key if it is a
      * replica key.</p> </li> </ul>
      */
-    inline const MultiRegionConfiguration& GetMultiRegionConfiguration() const{ return m_multiRegionConfiguration; }
+    inline const MultiRegionConfiguration& GetMultiRegionConfiguration() const { return m_multiRegionConfiguration; }
     inline bool MultiRegionConfigurationHasBeenSet() const { return m_multiRegionConfigurationHasBeenSet; }
-    inline void SetMultiRegionConfiguration(const MultiRegionConfiguration& value) { m_multiRegionConfigurationHasBeenSet = true; m_multiRegionConfiguration = value; }
-    inline void SetMultiRegionConfiguration(MultiRegionConfiguration&& value) { m_multiRegionConfigurationHasBeenSet = true; m_multiRegionConfiguration = std::move(value); }
-    inline KeyMetadata& WithMultiRegionConfiguration(const MultiRegionConfiguration& value) { SetMultiRegionConfiguration(value); return *this;}
-    inline KeyMetadata& WithMultiRegionConfiguration(MultiRegionConfiguration&& value) { SetMultiRegionConfiguration(std::move(value)); return *this;}
+    template<typename MultiRegionConfigurationT = MultiRegionConfiguration>
+    void SetMultiRegionConfiguration(MultiRegionConfigurationT&& value) { m_multiRegionConfigurationHasBeenSet = true; m_multiRegionConfiguration = std::forward<MultiRegionConfigurationT>(value); }
+    template<typename MultiRegionConfigurationT = MultiRegionConfiguration>
+    KeyMetadata& WithMultiRegionConfiguration(MultiRegionConfigurationT&& value) { SetMultiRegionConfiguration(std::forward<MultiRegionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -393,7 +366,7 @@ namespace Model
      * <code>PendingDeletion</code> and the deletion date appears in the
      * <code>DeletionDate</code> field.</p>
      */
-    inline int GetPendingDeletionWindowInDays() const{ return m_pendingDeletionWindowInDays; }
+    inline int GetPendingDeletionWindowInDays() const { return m_pendingDeletionWindowInDays; }
     inline bool PendingDeletionWindowInDaysHasBeenSet() const { return m_pendingDeletionWindowInDaysHasBeenSet; }
     inline void SetPendingDeletionWindowInDays(int value) { m_pendingDeletionWindowInDaysHasBeenSet = true; m_pendingDeletionWindowInDays = value; }
     inline KeyMetadata& WithPendingDeletionWindowInDays(int value) { SetPendingDeletionWindowInDays(value); return *this;}
@@ -405,14 +378,13 @@ namespace Model
      * supports.</p> <p>This value is present only when the <code>KeyUsage</code> of
      * the KMS key is <code>GENERATE_VERIFY_MAC</code>.</p>
      */
-    inline const Aws::Vector<MacAlgorithmSpec>& GetMacAlgorithms() const{ return m_macAlgorithms; }
+    inline const Aws::Vector<MacAlgorithmSpec>& GetMacAlgorithms() const { return m_macAlgorithms; }
     inline bool MacAlgorithmsHasBeenSet() const { return m_macAlgorithmsHasBeenSet; }
-    inline void SetMacAlgorithms(const Aws::Vector<MacAlgorithmSpec>& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms = value; }
-    inline void SetMacAlgorithms(Aws::Vector<MacAlgorithmSpec>&& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms = std::move(value); }
-    inline KeyMetadata& WithMacAlgorithms(const Aws::Vector<MacAlgorithmSpec>& value) { SetMacAlgorithms(value); return *this;}
-    inline KeyMetadata& WithMacAlgorithms(Aws::Vector<MacAlgorithmSpec>&& value) { SetMacAlgorithms(std::move(value)); return *this;}
-    inline KeyMetadata& AddMacAlgorithms(const MacAlgorithmSpec& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms.push_back(value); return *this; }
-    inline KeyMetadata& AddMacAlgorithms(MacAlgorithmSpec&& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms.push_back(std::move(value)); return *this; }
+    template<typename MacAlgorithmsT = Aws::Vector<MacAlgorithmSpec>>
+    void SetMacAlgorithms(MacAlgorithmsT&& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms = std::forward<MacAlgorithmsT>(value); }
+    template<typename MacAlgorithmsT = Aws::Vector<MacAlgorithmSpec>>
+    KeyMetadata& WithMacAlgorithms(MacAlgorithmsT&& value) { SetMacAlgorithms(std::forward<MacAlgorithmsT>(value)); return *this;}
+    inline KeyMetadata& AddMacAlgorithms(MacAlgorithmSpec value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -422,12 +394,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
      * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const XksKeyConfigurationType& GetXksKeyConfiguration() const{ return m_xksKeyConfiguration; }
+    inline const XksKeyConfigurationType& GetXksKeyConfiguration() const { return m_xksKeyConfiguration; }
     inline bool XksKeyConfigurationHasBeenSet() const { return m_xksKeyConfigurationHasBeenSet; }
-    inline void SetXksKeyConfiguration(const XksKeyConfigurationType& value) { m_xksKeyConfigurationHasBeenSet = true; m_xksKeyConfiguration = value; }
-    inline void SetXksKeyConfiguration(XksKeyConfigurationType&& value) { m_xksKeyConfigurationHasBeenSet = true; m_xksKeyConfiguration = std::move(value); }
-    inline KeyMetadata& WithXksKeyConfiguration(const XksKeyConfigurationType& value) { SetXksKeyConfiguration(value); return *this;}
-    inline KeyMetadata& WithXksKeyConfiguration(XksKeyConfigurationType&& value) { SetXksKeyConfiguration(std::move(value)); return *this;}
+    template<typename XksKeyConfigurationT = XksKeyConfigurationType>
+    void SetXksKeyConfiguration(XksKeyConfigurationT&& value) { m_xksKeyConfigurationHasBeenSet = true; m_xksKeyConfiguration = std::forward<XksKeyConfigurationT>(value); }
+    template<typename XksKeyConfigurationT = XksKeyConfigurationType>
+    KeyMetadata& WithXksKeyConfiguration(XksKeyConfigurationT&& value) { SetXksKeyConfiguration(std::forward<XksKeyConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -440,28 +412,28 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    KeyUsageType m_keyUsage;
+    KeyUsageType m_keyUsage{KeyUsageType::NOT_SET};
     bool m_keyUsageHasBeenSet = false;
 
-    KeyState m_keyState;
+    KeyState m_keyState{KeyState::NOT_SET};
     bool m_keyStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletionDate;
+    Aws::Utils::DateTime m_deletionDate{};
     bool m_deletionDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validTo;
+    Aws::Utils::DateTime m_validTo{};
     bool m_validToHasBeenSet = false;
 
-    OriginType m_origin;
+    OriginType m_origin{OriginType::NOT_SET};
     bool m_originHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
@@ -470,13 +442,13 @@ namespace Model
     Aws::String m_cloudHsmClusterId;
     bool m_cloudHsmClusterIdHasBeenSet = false;
 
-    ExpirationModelType m_expirationModel;
+    ExpirationModelType m_expirationModel{ExpirationModelType::NOT_SET};
     bool m_expirationModelHasBeenSet = false;
 
-    KeyManagerType m_keyManager;
+    KeyManagerType m_keyManager{KeyManagerType::NOT_SET};
     bool m_keyManagerHasBeenSet = false;
 
-    KeySpec m_keySpec;
+    KeySpec m_keySpec{KeySpec::NOT_SET};
     bool m_keySpecHasBeenSet = false;
 
     Aws::Vector<EncryptionAlgorithmSpec> m_encryptionAlgorithms;
@@ -488,13 +460,13 @@ namespace Model
     Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
     bool m_keyAgreementAlgorithmsHasBeenSet = false;
 
-    bool m_multiRegion;
+    bool m_multiRegion{false};
     bool m_multiRegionHasBeenSet = false;
 
     MultiRegionConfiguration m_multiRegionConfiguration;
     bool m_multiRegionConfigurationHasBeenSet = false;
 
-    int m_pendingDeletionWindowInDays;
+    int m_pendingDeletionWindowInDays{0};
     bool m_pendingDeletionWindowInDaysHasBeenSet = false;
 
     Aws::Vector<MacAlgorithmSpec> m_macAlgorithms;

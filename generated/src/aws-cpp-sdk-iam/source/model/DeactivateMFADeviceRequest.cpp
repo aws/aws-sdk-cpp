@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeactivateMFADeviceRequest::DeactivateMFADeviceRequest() : 
-    m_userNameHasBeenSet(false),
-    m_serialNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeactivateMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

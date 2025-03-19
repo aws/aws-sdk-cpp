@@ -34,7 +34,7 @@ namespace Model
   class PivotTableFieldCollapseStateTarget
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableFieldCollapseStateTarget();
+    AWS_QUICKSIGHT_API PivotTableFieldCollapseStateTarget() = default;
     AWS_QUICKSIGHT_API PivotTableFieldCollapseStateTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableFieldCollapseStateTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The field ID of the pivot table that the collapse state needs to be set
      * to.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline PivotTableFieldCollapseStateTarget& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline PivotTableFieldCollapseStateTarget& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline PivotTableFieldCollapseStateTarget& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    PivotTableFieldCollapseStateTarget& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <p>The data path of the pivot table's header. Used to set the collapse
      * state.</p>
      */
-    inline const Aws::Vector<DataPathValue>& GetFieldDataPathValues() const{ return m_fieldDataPathValues; }
+    inline const Aws::Vector<DataPathValue>& GetFieldDataPathValues() const { return m_fieldDataPathValues; }
     inline bool FieldDataPathValuesHasBeenSet() const { return m_fieldDataPathValuesHasBeenSet; }
-    inline void SetFieldDataPathValues(const Aws::Vector<DataPathValue>& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues = value; }
-    inline void SetFieldDataPathValues(Aws::Vector<DataPathValue>&& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues = std::move(value); }
-    inline PivotTableFieldCollapseStateTarget& WithFieldDataPathValues(const Aws::Vector<DataPathValue>& value) { SetFieldDataPathValues(value); return *this;}
-    inline PivotTableFieldCollapseStateTarget& WithFieldDataPathValues(Aws::Vector<DataPathValue>&& value) { SetFieldDataPathValues(std::move(value)); return *this;}
-    inline PivotTableFieldCollapseStateTarget& AddFieldDataPathValues(const DataPathValue& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues.push_back(value); return *this; }
-    inline PivotTableFieldCollapseStateTarget& AddFieldDataPathValues(DataPathValue&& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues.push_back(std::move(value)); return *this; }
+    template<typename FieldDataPathValuesT = Aws::Vector<DataPathValue>>
+    void SetFieldDataPathValues(FieldDataPathValuesT&& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues = std::forward<FieldDataPathValuesT>(value); }
+    template<typename FieldDataPathValuesT = Aws::Vector<DataPathValue>>
+    PivotTableFieldCollapseStateTarget& WithFieldDataPathValues(FieldDataPathValuesT&& value) { SetFieldDataPathValues(std::forward<FieldDataPathValuesT>(value)); return *this;}
+    template<typename FieldDataPathValuesT = DataPathValue>
+    PivotTableFieldCollapseStateTarget& AddFieldDataPathValues(FieldDataPathValuesT&& value) { m_fieldDataPathValuesHasBeenSet = true; m_fieldDataPathValues.emplace_back(std::forward<FieldDataPathValuesT>(value)); return *this; }
     ///@}
   private:
 

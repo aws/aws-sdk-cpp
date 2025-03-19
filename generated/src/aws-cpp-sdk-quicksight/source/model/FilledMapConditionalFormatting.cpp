@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilledMapConditionalFormatting::FilledMapConditionalFormatting() : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
-{
-}
-
 FilledMapConditionalFormatting::FilledMapConditionalFormatting(JsonView jsonValue)
-  : FilledMapConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilledMapConditionalFormatting& FilledMapConditionalFormatting::operator =(JsonV
     }
     m_conditionalFormattingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RequestInspectionACFP::RequestInspectionACFP() : 
-    m_payloadType(PayloadType::NOT_SET),
-    m_payloadTypeHasBeenSet(false),
-    m_usernameFieldHasBeenSet(false),
-    m_passwordFieldHasBeenSet(false),
-    m_emailFieldHasBeenSet(false),
-    m_phoneNumberFieldsHasBeenSet(false),
-    m_addressFieldsHasBeenSet(false)
-{
-}
-
 RequestInspectionACFP::RequestInspectionACFP(JsonView jsonValue)
-  : RequestInspectionACFP()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ RequestInspectionACFP& RequestInspectionACFP::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PayloadType"))
   {
     m_payloadType = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("PayloadType"));
-
     m_payloadTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsernameField"))
   {
     m_usernameField = jsonValue.GetObject("UsernameField");
-
     m_usernameFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PasswordField"))
   {
     m_passwordField = jsonValue.GetObject("PasswordField");
-
     m_passwordFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailField"))
   {
     m_emailField = jsonValue.GetObject("EmailField");
-
     m_emailFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberFields"))
   {
     Aws::Utils::Array<JsonView> phoneNumberFieldsJsonList = jsonValue.GetArray("PhoneNumberFields");
@@ -74,7 +54,6 @@ RequestInspectionACFP& RequestInspectionACFP::operator =(JsonView jsonValue)
     }
     m_phoneNumberFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressFields"))
   {
     Aws::Utils::Array<JsonView> addressFieldsJsonList = jsonValue.GetArray("AddressFields");
@@ -84,7 +63,6 @@ RequestInspectionACFP& RequestInspectionACFP::operator =(JsonView jsonValue)
     }
     m_addressFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

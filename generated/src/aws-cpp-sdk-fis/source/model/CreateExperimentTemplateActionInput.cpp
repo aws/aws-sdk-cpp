@@ -18,17 +18,7 @@ namespace FIS
 namespace Model
 {
 
-CreateExperimentTemplateActionInput::CreateExperimentTemplateActionInput() : 
-    m_actionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_startAfterHasBeenSet(false)
-{
-}
-
 CreateExperimentTemplateActionInput::CreateExperimentTemplateActionInput(JsonView jsonValue)
-  : CreateExperimentTemplateActionInput()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ CreateExperimentTemplateActionInput& CreateExperimentTemplateActionInput::operat
   if(jsonValue.ValueExists("actionId"))
   {
     m_actionId = jsonValue.GetString("actionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -58,7 +44,6 @@ CreateExperimentTemplateActionInput& CreateExperimentTemplateActionInput::operat
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     Aws::Map<Aws::String, JsonView> targetsJsonMap = jsonValue.GetObject("targets").GetAllObjects();
@@ -68,7 +53,6 @@ CreateExperimentTemplateActionInput& CreateExperimentTemplateActionInput::operat
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startAfter"))
   {
     Aws::Utils::Array<JsonView> startAfterJsonList = jsonValue.GetArray("startAfter");
@@ -78,7 +62,6 @@ CreateExperimentTemplateActionInput& CreateExperimentTemplateActionInput::operat
     }
     m_startAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProjectRequest::GetProjectRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetProjectRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class ConfluencePageConfiguration
   {
   public:
-    AWS_KENDRA_API ConfluencePageConfiguration();
+    AWS_KENDRA_API ConfluencePageConfiguration() = default;
     AWS_KENDRA_API ConfluencePageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ConfluencePageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * <code>PageFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
-    inline const Aws::Vector<ConfluencePageToIndexFieldMapping>& GetPageFieldMappings() const{ return m_pageFieldMappings; }
+    inline const Aws::Vector<ConfluencePageToIndexFieldMapping>& GetPageFieldMappings() const { return m_pageFieldMappings; }
     inline bool PageFieldMappingsHasBeenSet() const { return m_pageFieldMappingsHasBeenSet; }
-    inline void SetPageFieldMappings(const Aws::Vector<ConfluencePageToIndexFieldMapping>& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings = value; }
-    inline void SetPageFieldMappings(Aws::Vector<ConfluencePageToIndexFieldMapping>&& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings = std::move(value); }
-    inline ConfluencePageConfiguration& WithPageFieldMappings(const Aws::Vector<ConfluencePageToIndexFieldMapping>& value) { SetPageFieldMappings(value); return *this;}
-    inline ConfluencePageConfiguration& WithPageFieldMappings(Aws::Vector<ConfluencePageToIndexFieldMapping>&& value) { SetPageFieldMappings(std::move(value)); return *this;}
-    inline ConfluencePageConfiguration& AddPageFieldMappings(const ConfluencePageToIndexFieldMapping& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings.push_back(value); return *this; }
-    inline ConfluencePageConfiguration& AddPageFieldMappings(ConfluencePageToIndexFieldMapping&& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename PageFieldMappingsT = Aws::Vector<ConfluencePageToIndexFieldMapping>>
+    void SetPageFieldMappings(PageFieldMappingsT&& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings = std::forward<PageFieldMappingsT>(value); }
+    template<typename PageFieldMappingsT = Aws::Vector<ConfluencePageToIndexFieldMapping>>
+    ConfluencePageConfiguration& WithPageFieldMappings(PageFieldMappingsT&& value) { SetPageFieldMappings(std::forward<PageFieldMappingsT>(value)); return *this;}
+    template<typename PageFieldMappingsT = ConfluencePageToIndexFieldMapping>
+    ConfluencePageConfiguration& AddPageFieldMappings(PageFieldMappingsT&& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings.emplace_back(std::forward<PageFieldMappingsT>(value)); return *this; }
     ///@}
   private:
 

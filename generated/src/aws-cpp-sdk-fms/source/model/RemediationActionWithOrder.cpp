@@ -18,15 +18,7 @@ namespace FMS
 namespace Model
 {
 
-RemediationActionWithOrder::RemediationActionWithOrder() : 
-    m_remediationActionHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false)
-{
-}
-
 RemediationActionWithOrder::RemediationActionWithOrder(JsonView jsonValue)
-  : RemediationActionWithOrder()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RemediationActionWithOrder& RemediationActionWithOrder::operator =(JsonView json
   if(jsonValue.ValueExists("RemediationAction"))
   {
     m_remediationAction = jsonValue.GetObject("RemediationAction");
-
     m_remediationActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Order"))
   {
     m_order = jsonValue.GetInteger("Order");
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

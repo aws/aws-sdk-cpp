@@ -12,13 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRulesPackagesRequest::DescribeRulesPackagesRequest() : 
-    m_rulesPackageArnsHasBeenSet(false),
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRulesPackagesRequest::SerializePayload() const
 {
   JsonValue payload;

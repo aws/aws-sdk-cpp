@@ -33,7 +33,7 @@ namespace Model
   class TableBucketMaintenanceConfigurationValue
   {
   public:
-    AWS_S3TABLES_API TableBucketMaintenanceConfigurationValue();
+    AWS_S3TABLES_API TableBucketMaintenanceConfigurationValue() = default;
     AWS_S3TABLES_API TableBucketMaintenanceConfigurationValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API TableBucketMaintenanceConfigurationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The status of the maintenance configuration.</p>
      */
-    inline const MaintenanceStatus& GetStatus() const{ return m_status; }
+    inline MaintenanceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MaintenanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MaintenanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TableBucketMaintenanceConfigurationValue& WithStatus(const MaintenanceStatus& value) { SetStatus(value); return *this;}
-    inline TableBucketMaintenanceConfigurationValue& WithStatus(MaintenanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MaintenanceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TableBucketMaintenanceConfigurationValue& WithStatus(MaintenanceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains details about the settings of the maintenance configuration.</p>
      */
-    inline const TableBucketMaintenanceSettings& GetSettings() const{ return m_settings; }
+    inline const TableBucketMaintenanceSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const TableBucketMaintenanceSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(TableBucketMaintenanceSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline TableBucketMaintenanceConfigurationValue& WithSettings(const TableBucketMaintenanceSettings& value) { SetSettings(value); return *this;}
-    inline TableBucketMaintenanceConfigurationValue& WithSettings(TableBucketMaintenanceSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = TableBucketMaintenanceSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = TableBucketMaintenanceSettings>
+    TableBucketMaintenanceConfigurationValue& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 
-    MaintenanceStatus m_status;
+    MaintenanceStatus m_status{MaintenanceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     TableBucketMaintenanceSettings m_settings;

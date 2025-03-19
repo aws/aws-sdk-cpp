@@ -32,7 +32,7 @@ namespace Model
   class SalesforceConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API SalesforceConnectorProfileProperties();
+    AWS_APPFLOW_API SalesforceConnectorProfileProperties() = default;
     AWS_APPFLOW_API SalesforceConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SalesforceConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The location of the Salesforce resource. </p>
      */
-    inline const Aws::String& GetInstanceUrl() const{ return m_instanceUrl; }
+    inline const Aws::String& GetInstanceUrl() const { return m_instanceUrl; }
     inline bool InstanceUrlHasBeenSet() const { return m_instanceUrlHasBeenSet; }
-    inline void SetInstanceUrl(const Aws::String& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = value; }
-    inline void SetInstanceUrl(Aws::String&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::move(value); }
-    inline void SetInstanceUrl(const char* value) { m_instanceUrlHasBeenSet = true; m_instanceUrl.assign(value); }
-    inline SalesforceConnectorProfileProperties& WithInstanceUrl(const Aws::String& value) { SetInstanceUrl(value); return *this;}
-    inline SalesforceConnectorProfileProperties& WithInstanceUrl(Aws::String&& value) { SetInstanceUrl(std::move(value)); return *this;}
-    inline SalesforceConnectorProfileProperties& WithInstanceUrl(const char* value) { SetInstanceUrl(value); return *this;}
+    template<typename InstanceUrlT = Aws::String>
+    void SetInstanceUrl(InstanceUrlT&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::forward<InstanceUrlT>(value); }
+    template<typename InstanceUrlT = Aws::String>
+    SalesforceConnectorProfileProperties& WithInstanceUrl(InstanceUrlT&& value) { SetInstanceUrl(std::forward<InstanceUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p> Indicates whether the connector profile applies to a sandbox or production
      * environment. </p>
      */
-    inline bool GetIsSandboxEnvironment() const{ return m_isSandboxEnvironment; }
+    inline bool GetIsSandboxEnvironment() const { return m_isSandboxEnvironment; }
     inline bool IsSandboxEnvironmentHasBeenSet() const { return m_isSandboxEnvironmentHasBeenSet; }
     inline void SetIsSandboxEnvironment(bool value) { m_isSandboxEnvironmentHasBeenSet = true; m_isSandboxEnvironment = value; }
     inline SalesforceConnectorProfileProperties& WithIsSandboxEnvironment(bool value) { SetIsSandboxEnvironment(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * <ul> <li> <p>Calls to transfer your Salesforce records as part of a flow
      * run.</p> </li> </ul> </dd> </dl>
      */
-    inline bool GetUsePrivateLinkForMetadataAndAuthorization() const{ return m_usePrivateLinkForMetadataAndAuthorization; }
+    inline bool GetUsePrivateLinkForMetadataAndAuthorization() const { return m_usePrivateLinkForMetadataAndAuthorization; }
     inline bool UsePrivateLinkForMetadataAndAuthorizationHasBeenSet() const { return m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet; }
     inline void SetUsePrivateLinkForMetadataAndAuthorization(bool value) { m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet = true; m_usePrivateLinkForMetadataAndAuthorization = value; }
     inline SalesforceConnectorProfileProperties& WithUsePrivateLinkForMetadataAndAuthorization(bool value) { SetUsePrivateLinkForMetadataAndAuthorization(value); return *this;}
@@ -94,10 +92,10 @@ namespace Model
     Aws::String m_instanceUrl;
     bool m_instanceUrlHasBeenSet = false;
 
-    bool m_isSandboxEnvironment;
+    bool m_isSandboxEnvironment{false};
     bool m_isSandboxEnvironmentHasBeenSet = false;
 
-    bool m_usePrivateLinkForMetadataAndAuthorization;
+    bool m_usePrivateLinkForMetadataAndAuthorization{false};
     bool m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet = false;
   };
 

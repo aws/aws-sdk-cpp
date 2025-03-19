@@ -12,11 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrustedTokenIssuerRequest::DescribeTrustedTokenIssuerRequest() : 
-    m_trustedTokenIssuerArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrustedTokenIssuerRequest::SerializePayload() const
 {
   JsonValue payload;

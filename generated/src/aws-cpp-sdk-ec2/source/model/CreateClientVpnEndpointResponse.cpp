@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClientVpnEndpointResponse::CreateClientVpnEndpointResponse()
-{
-}
-
 CreateClientVpnEndpointResponse::CreateClientVpnEndpointResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,16 +38,19 @@ CreateClientVpnEndpointResponse& CreateClientVpnEndpointResponse::operator =(con
     if(!clientVpnEndpointIdNode.IsNull())
     {
       m_clientVpnEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(clientVpnEndpointIdNode.GetText());
+      m_clientVpnEndpointIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
+      m_statusHasBeenSet = true;
     }
     XmlNode dnsNameNode = resultNode.FirstChild("dnsName");
     if(!dnsNameNode.IsNull())
     {
       m_dnsName = Aws::Utils::Xml::DecodeEscapedXmlText(dnsNameNode.GetText());
+      m_dnsNameHasBeenSet = true;
     }
   }
 
@@ -60,6 +59,7 @@ CreateClientVpnEndpointResponse& CreateClientVpnEndpointResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateClientVpnEndpointResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

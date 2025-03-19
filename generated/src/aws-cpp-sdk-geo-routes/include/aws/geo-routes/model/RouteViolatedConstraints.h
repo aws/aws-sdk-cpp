@@ -38,7 +38,7 @@ namespace Model
   class RouteViolatedConstraints
   {
   public:
-    AWS_GEOROUTES_API RouteViolatedConstraints();
+    AWS_GEOROUTES_API RouteViolatedConstraints() = default;
     AWS_GEOROUTES_API RouteViolatedConstraints(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteViolatedConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * <p>This restriction applies to truck cargo, where the resulting route excludes
      * roads on which hazardous materials are prohibited from being transported.</p>
      */
-    inline bool GetAllHazardsRestricted() const{ return m_allHazardsRestricted; }
+    inline bool GetAllHazardsRestricted() const { return m_allHazardsRestricted; }
     inline bool AllHazardsRestrictedHasBeenSet() const { return m_allHazardsRestrictedHasBeenSet; }
     inline void SetAllHazardsRestricted(bool value) { m_allHazardsRestrictedHasBeenSet = true; m_allHazardsRestricted = value; }
     inline RouteViolatedConstraints& WithAllHazardsRestricted(bool value) { SetAllHazardsRestricted(value); return *this;}
@@ -59,33 +59,32 @@ namespace Model
     /**
      * <p>Total number of axles of the vehicle.</p>
      */
-    inline const RouteNoticeDetailRange& GetAxleCount() const{ return m_axleCount; }
+    inline const RouteNoticeDetailRange& GetAxleCount() const { return m_axleCount; }
     inline bool AxleCountHasBeenSet() const { return m_axleCountHasBeenSet; }
-    inline void SetAxleCount(const RouteNoticeDetailRange& value) { m_axleCountHasBeenSet = true; m_axleCount = value; }
-    inline void SetAxleCount(RouteNoticeDetailRange&& value) { m_axleCountHasBeenSet = true; m_axleCount = std::move(value); }
-    inline RouteViolatedConstraints& WithAxleCount(const RouteNoticeDetailRange& value) { SetAxleCount(value); return *this;}
-    inline RouteViolatedConstraints& WithAxleCount(RouteNoticeDetailRange&& value) { SetAxleCount(std::move(value)); return *this;}
+    template<typename AxleCountT = RouteNoticeDetailRange>
+    void SetAxleCount(AxleCountT&& value) { m_axleCountHasBeenSet = true; m_axleCount = std::forward<AxleCountT>(value); }
+    template<typename AxleCountT = RouteNoticeDetailRange>
+    RouteViolatedConstraints& WithAxleCount(AxleCountT&& value) { SetAxleCount(std::forward<AxleCountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of Hazardous cargo contained in the vehicle.</p>
      */
-    inline const Aws::Vector<RouteHazardousCargoType>& GetHazardousCargos() const{ return m_hazardousCargos; }
+    inline const Aws::Vector<RouteHazardousCargoType>& GetHazardousCargos() const { return m_hazardousCargos; }
     inline bool HazardousCargosHasBeenSet() const { return m_hazardousCargosHasBeenSet; }
-    inline void SetHazardousCargos(const Aws::Vector<RouteHazardousCargoType>& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos = value; }
-    inline void SetHazardousCargos(Aws::Vector<RouteHazardousCargoType>&& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos = std::move(value); }
-    inline RouteViolatedConstraints& WithHazardousCargos(const Aws::Vector<RouteHazardousCargoType>& value) { SetHazardousCargos(value); return *this;}
-    inline RouteViolatedConstraints& WithHazardousCargos(Aws::Vector<RouteHazardousCargoType>&& value) { SetHazardousCargos(std::move(value)); return *this;}
-    inline RouteViolatedConstraints& AddHazardousCargos(const RouteHazardousCargoType& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos.push_back(value); return *this; }
-    inline RouteViolatedConstraints& AddHazardousCargos(RouteHazardousCargoType&& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos.push_back(std::move(value)); return *this; }
+    template<typename HazardousCargosT = Aws::Vector<RouteHazardousCargoType>>
+    void SetHazardousCargos(HazardousCargosT&& value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos = std::forward<HazardousCargosT>(value); }
+    template<typename HazardousCargosT = Aws::Vector<RouteHazardousCargoType>>
+    RouteViolatedConstraints& WithHazardousCargos(HazardousCargosT&& value) { SetHazardousCargos(std::forward<HazardousCargosT>(value)); return *this;}
+    inline RouteViolatedConstraints& AddHazardousCargos(RouteHazardousCargoType value) { m_hazardousCargosHasBeenSet = true; m_hazardousCargos.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum height of the vehicle.</p>
      */
-    inline long long GetMaxHeight() const{ return m_maxHeight; }
+    inline long long GetMaxHeight() const { return m_maxHeight; }
     inline bool MaxHeightHasBeenSet() const { return m_maxHeightHasBeenSet; }
     inline void SetMaxHeight(long long value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
     inline RouteViolatedConstraints& WithMaxHeight(long long value) { SetMaxHeight(value); return *this;}
@@ -96,7 +95,7 @@ namespace Model
      * <p>The maximum Kpra length of the vehicle.</p> <p> <b>Unit</b>:
      * <code>centimeters</code> </p>
      */
-    inline long long GetMaxKpraLength() const{ return m_maxKpraLength; }
+    inline long long GetMaxKpraLength() const { return m_maxKpraLength; }
     inline bool MaxKpraLengthHasBeenSet() const { return m_maxKpraLengthHasBeenSet; }
     inline void SetMaxKpraLength(long long value) { m_maxKpraLengthHasBeenSet = true; m_maxKpraLength = value; }
     inline RouteViolatedConstraints& WithMaxKpraLength(long long value) { SetMaxKpraLength(value); return *this;}
@@ -106,7 +105,7 @@ namespace Model
     /**
      * <p>The maximum length of the vehicle.</p>
      */
-    inline long long GetMaxLength() const{ return m_maxLength; }
+    inline long long GetMaxLength() const { return m_maxLength; }
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
     inline void SetMaxLength(long long value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
     inline RouteViolatedConstraints& WithMaxLength(long long value) { SetMaxLength(value); return *this;}
@@ -117,7 +116,7 @@ namespace Model
      * <p>The maximum load capacity of the vehicle.</p> <p> <b>Unit</b>:
      * <code>kilograms</code> </p>
      */
-    inline long long GetMaxPayloadCapacity() const{ return m_maxPayloadCapacity; }
+    inline long long GetMaxPayloadCapacity() const { return m_maxPayloadCapacity; }
     inline bool MaxPayloadCapacityHasBeenSet() const { return m_maxPayloadCapacityHasBeenSet; }
     inline void SetMaxPayloadCapacity(long long value) { m_maxPayloadCapacityHasBeenSet = true; m_maxPayloadCapacity = value; }
     inline RouteViolatedConstraints& WithMaxPayloadCapacity(long long value) { SetMaxPayloadCapacity(value); return *this;}
@@ -128,12 +127,12 @@ namespace Model
      * <p>The maximum weight of the route.</p> <p> <b>Unit</b>: <code>Kilograms</code>
      * </p>
      */
-    inline const RouteWeightConstraint& GetMaxWeight() const{ return m_maxWeight; }
+    inline const RouteWeightConstraint& GetMaxWeight() const { return m_maxWeight; }
     inline bool MaxWeightHasBeenSet() const { return m_maxWeightHasBeenSet; }
-    inline void SetMaxWeight(const RouteWeightConstraint& value) { m_maxWeightHasBeenSet = true; m_maxWeight = value; }
-    inline void SetMaxWeight(RouteWeightConstraint&& value) { m_maxWeightHasBeenSet = true; m_maxWeight = std::move(value); }
-    inline RouteViolatedConstraints& WithMaxWeight(const RouteWeightConstraint& value) { SetMaxWeight(value); return *this;}
-    inline RouteViolatedConstraints& WithMaxWeight(RouteWeightConstraint&& value) { SetMaxWeight(std::move(value)); return *this;}
+    template<typename MaxWeightT = RouteWeightConstraint>
+    void SetMaxWeight(MaxWeightT&& value) { m_maxWeightHasBeenSet = true; m_maxWeight = std::forward<MaxWeightT>(value); }
+    template<typename MaxWeightT = RouteWeightConstraint>
+    RouteViolatedConstraints& WithMaxWeight(MaxWeightT&& value) { SetMaxWeight(std::forward<MaxWeightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +140,7 @@ namespace Model
      * <p>The maximum weight per axle of the vehicle.</p> <p> <b>Unit</b>:
      * <code>Kilograms</code> </p>
      */
-    inline long long GetMaxWeightPerAxle() const{ return m_maxWeightPerAxle; }
+    inline long long GetMaxWeightPerAxle() const { return m_maxWeightPerAxle; }
     inline bool MaxWeightPerAxleHasBeenSet() const { return m_maxWeightPerAxleHasBeenSet; }
     inline void SetMaxWeightPerAxle(long long value) { m_maxWeightPerAxleHasBeenSet = true; m_maxWeightPerAxle = value; }
     inline RouteViolatedConstraints& WithMaxWeightPerAxle(long long value) { SetMaxWeightPerAxle(value); return *this;}
@@ -152,19 +151,19 @@ namespace Model
      * <p>The maximum weight per axle group of the vehicle.</p> <p> <b>Unit</b>:
      * <code>Kilograms</code> </p>
      */
-    inline const WeightPerAxleGroup& GetMaxWeightPerAxleGroup() const{ return m_maxWeightPerAxleGroup; }
+    inline const WeightPerAxleGroup& GetMaxWeightPerAxleGroup() const { return m_maxWeightPerAxleGroup; }
     inline bool MaxWeightPerAxleGroupHasBeenSet() const { return m_maxWeightPerAxleGroupHasBeenSet; }
-    inline void SetMaxWeightPerAxleGroup(const WeightPerAxleGroup& value) { m_maxWeightPerAxleGroupHasBeenSet = true; m_maxWeightPerAxleGroup = value; }
-    inline void SetMaxWeightPerAxleGroup(WeightPerAxleGroup&& value) { m_maxWeightPerAxleGroupHasBeenSet = true; m_maxWeightPerAxleGroup = std::move(value); }
-    inline RouteViolatedConstraints& WithMaxWeightPerAxleGroup(const WeightPerAxleGroup& value) { SetMaxWeightPerAxleGroup(value); return *this;}
-    inline RouteViolatedConstraints& WithMaxWeightPerAxleGroup(WeightPerAxleGroup&& value) { SetMaxWeightPerAxleGroup(std::move(value)); return *this;}
+    template<typename MaxWeightPerAxleGroupT = WeightPerAxleGroup>
+    void SetMaxWeightPerAxleGroup(MaxWeightPerAxleGroupT&& value) { m_maxWeightPerAxleGroupHasBeenSet = true; m_maxWeightPerAxleGroup = std::forward<MaxWeightPerAxleGroupT>(value); }
+    template<typename MaxWeightPerAxleGroupT = WeightPerAxleGroup>
+    RouteViolatedConstraints& WithMaxWeightPerAxleGroup(MaxWeightPerAxleGroupT&& value) { SetMaxWeightPerAxleGroup(std::forward<MaxWeightPerAxleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum width of the vehicle.</p>
      */
-    inline long long GetMaxWidth() const{ return m_maxWidth; }
+    inline long long GetMaxWidth() const { return m_maxWidth; }
     inline bool MaxWidthHasBeenSet() const { return m_maxWidthHasBeenSet; }
     inline void SetMaxWidth(long long value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
     inline RouteViolatedConstraints& WithMaxWidth(long long value) { SetMaxWidth(value); return *this;}
@@ -175,33 +174,31 @@ namespace Model
      * <p>The number of occupants in the vehicle.</p> <p>Default Value: <code>1</code>
      * </p>
      */
-    inline const RouteNoticeDetailRange& GetOccupancy() const{ return m_occupancy; }
+    inline const RouteNoticeDetailRange& GetOccupancy() const { return m_occupancy; }
     inline bool OccupancyHasBeenSet() const { return m_occupancyHasBeenSet; }
-    inline void SetOccupancy(const RouteNoticeDetailRange& value) { m_occupancyHasBeenSet = true; m_occupancy = value; }
-    inline void SetOccupancy(RouteNoticeDetailRange&& value) { m_occupancyHasBeenSet = true; m_occupancy = std::move(value); }
-    inline RouteViolatedConstraints& WithOccupancy(const RouteNoticeDetailRange& value) { SetOccupancy(value); return *this;}
-    inline RouteViolatedConstraints& WithOccupancy(RouteNoticeDetailRange&& value) { SetOccupancy(std::move(value)); return *this;}
+    template<typename OccupancyT = RouteNoticeDetailRange>
+    void SetOccupancy(OccupancyT&& value) { m_occupancyHasBeenSet = true; m_occupancy = std::forward<OccupancyT>(value); }
+    template<typename OccupancyT = RouteNoticeDetailRange>
+    RouteViolatedConstraints& WithOccupancy(OccupancyT&& value) { SetOccupancy(std::forward<OccupancyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Access radius restrictions based on time.</p>
      */
-    inline const Aws::String& GetRestrictedTimes() const{ return m_restrictedTimes; }
+    inline const Aws::String& GetRestrictedTimes() const { return m_restrictedTimes; }
     inline bool RestrictedTimesHasBeenSet() const { return m_restrictedTimesHasBeenSet; }
-    inline void SetRestrictedTimes(const Aws::String& value) { m_restrictedTimesHasBeenSet = true; m_restrictedTimes = value; }
-    inline void SetRestrictedTimes(Aws::String&& value) { m_restrictedTimesHasBeenSet = true; m_restrictedTimes = std::move(value); }
-    inline void SetRestrictedTimes(const char* value) { m_restrictedTimesHasBeenSet = true; m_restrictedTimes.assign(value); }
-    inline RouteViolatedConstraints& WithRestrictedTimes(const Aws::String& value) { SetRestrictedTimes(value); return *this;}
-    inline RouteViolatedConstraints& WithRestrictedTimes(Aws::String&& value) { SetRestrictedTimes(std::move(value)); return *this;}
-    inline RouteViolatedConstraints& WithRestrictedTimes(const char* value) { SetRestrictedTimes(value); return *this;}
+    template<typename RestrictedTimesT = Aws::String>
+    void SetRestrictedTimes(RestrictedTimesT&& value) { m_restrictedTimesHasBeenSet = true; m_restrictedTimes = std::forward<RestrictedTimesT>(value); }
+    template<typename RestrictedTimesT = Aws::String>
+    RouteViolatedConstraints& WithRestrictedTimes(RestrictedTimesT&& value) { SetRestrictedTimes(std::forward<RestrictedTimesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time dependent constraint.</p>
      */
-    inline bool GetTimeDependent() const{ return m_timeDependent; }
+    inline bool GetTimeDependent() const { return m_timeDependent; }
     inline bool TimeDependentHasBeenSet() const { return m_timeDependentHasBeenSet; }
     inline void SetTimeDependent(bool value) { m_timeDependentHasBeenSet = true; m_timeDependent = value; }
     inline RouteViolatedConstraints& WithTimeDependent(bool value) { SetTimeDependent(value); return *this;}
@@ -212,19 +209,19 @@ namespace Model
      * <p>Number of trailers attached to the vehicle.</p> <p>Default Value:
      * <code>0</code> </p>
      */
-    inline const RouteNoticeDetailRange& GetTrailerCount() const{ return m_trailerCount; }
+    inline const RouteNoticeDetailRange& GetTrailerCount() const { return m_trailerCount; }
     inline bool TrailerCountHasBeenSet() const { return m_trailerCountHasBeenSet; }
-    inline void SetTrailerCount(const RouteNoticeDetailRange& value) { m_trailerCountHasBeenSet = true; m_trailerCount = value; }
-    inline void SetTrailerCount(RouteNoticeDetailRange&& value) { m_trailerCountHasBeenSet = true; m_trailerCount = std::move(value); }
-    inline RouteViolatedConstraints& WithTrailerCount(const RouteNoticeDetailRange& value) { SetTrailerCount(value); return *this;}
-    inline RouteViolatedConstraints& WithTrailerCount(RouteNoticeDetailRange&& value) { SetTrailerCount(std::move(value)); return *this;}
+    template<typename TrailerCountT = RouteNoticeDetailRange>
+    void SetTrailerCount(TrailerCountT&& value) { m_trailerCountHasBeenSet = true; m_trailerCount = std::forward<TrailerCountT>(value); }
+    template<typename TrailerCountT = RouteNoticeDetailRange>
+    RouteViolatedConstraints& WithTrailerCount(TrailerCountT&& value) { SetTrailerCount(std::forward<TrailerCountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Travel mode corresponding to the leg.</p>
      */
-    inline bool GetTravelMode() const{ return m_travelMode; }
+    inline bool GetTravelMode() const { return m_travelMode; }
     inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
     inline void SetTravelMode(bool value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
     inline RouteViolatedConstraints& WithTravelMode(bool value) { SetTravelMode(value); return *this;}
@@ -237,26 +234,22 @@ namespace Model
      *  <p>There are currently no other supported values as of 26th April
      * 2024.</p> 
      */
-    inline const Aws::String& GetTruckRoadType() const{ return m_truckRoadType; }
+    inline const Aws::String& GetTruckRoadType() const { return m_truckRoadType; }
     inline bool TruckRoadTypeHasBeenSet() const { return m_truckRoadTypeHasBeenSet; }
-    inline void SetTruckRoadType(const Aws::String& value) { m_truckRoadTypeHasBeenSet = true; m_truckRoadType = value; }
-    inline void SetTruckRoadType(Aws::String&& value) { m_truckRoadTypeHasBeenSet = true; m_truckRoadType = std::move(value); }
-    inline void SetTruckRoadType(const char* value) { m_truckRoadTypeHasBeenSet = true; m_truckRoadType.assign(value); }
-    inline RouteViolatedConstraints& WithTruckRoadType(const Aws::String& value) { SetTruckRoadType(value); return *this;}
-    inline RouteViolatedConstraints& WithTruckRoadType(Aws::String&& value) { SetTruckRoadType(std::move(value)); return *this;}
-    inline RouteViolatedConstraints& WithTruckRoadType(const char* value) { SetTruckRoadType(value); return *this;}
+    template<typename TruckRoadTypeT = Aws::String>
+    void SetTruckRoadType(TruckRoadTypeT&& value) { m_truckRoadTypeHasBeenSet = true; m_truckRoadType = std::forward<TruckRoadTypeT>(value); }
+    template<typename TruckRoadTypeT = Aws::String>
+    RouteViolatedConstraints& WithTruckRoadType(TruckRoadTypeT&& value) { SetTruckRoadType(std::forward<TruckRoadTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the truck.</p>
      */
-    inline const RouteTruckType& GetTruckType() const{ return m_truckType; }
+    inline RouteTruckType GetTruckType() const { return m_truckType; }
     inline bool TruckTypeHasBeenSet() const { return m_truckTypeHasBeenSet; }
-    inline void SetTruckType(const RouteTruckType& value) { m_truckTypeHasBeenSet = true; m_truckType = value; }
-    inline void SetTruckType(RouteTruckType&& value) { m_truckTypeHasBeenSet = true; m_truckType = std::move(value); }
-    inline RouteViolatedConstraints& WithTruckType(const RouteTruckType& value) { SetTruckType(value); return *this;}
-    inline RouteViolatedConstraints& WithTruckType(RouteTruckType&& value) { SetTruckType(std::move(value)); return *this;}
+    inline void SetTruckType(RouteTruckType value) { m_truckTypeHasBeenSet = true; m_truckType = value; }
+    inline RouteViolatedConstraints& WithTruckType(RouteTruckType value) { SetTruckType(value); return *this;}
     ///@}
 
     ///@{
@@ -274,18 +267,16 @@ namespace Model
      * <i>Risk Level</i>: Very high risk</p> </li> <li> <p> <i>Restrictions</i>:
      * Restricted tunnel</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetTunnelRestrictionCode() const{ return m_tunnelRestrictionCode; }
+    inline const Aws::String& GetTunnelRestrictionCode() const { return m_tunnelRestrictionCode; }
     inline bool TunnelRestrictionCodeHasBeenSet() const { return m_tunnelRestrictionCodeHasBeenSet; }
-    inline void SetTunnelRestrictionCode(const Aws::String& value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode = value; }
-    inline void SetTunnelRestrictionCode(Aws::String&& value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode = std::move(value); }
-    inline void SetTunnelRestrictionCode(const char* value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode.assign(value); }
-    inline RouteViolatedConstraints& WithTunnelRestrictionCode(const Aws::String& value) { SetTunnelRestrictionCode(value); return *this;}
-    inline RouteViolatedConstraints& WithTunnelRestrictionCode(Aws::String&& value) { SetTunnelRestrictionCode(std::move(value)); return *this;}
-    inline RouteViolatedConstraints& WithTunnelRestrictionCode(const char* value) { SetTunnelRestrictionCode(value); return *this;}
+    template<typename TunnelRestrictionCodeT = Aws::String>
+    void SetTunnelRestrictionCode(TunnelRestrictionCodeT&& value) { m_tunnelRestrictionCodeHasBeenSet = true; m_tunnelRestrictionCode = std::forward<TunnelRestrictionCodeT>(value); }
+    template<typename TunnelRestrictionCodeT = Aws::String>
+    RouteViolatedConstraints& WithTunnelRestrictionCode(TunnelRestrictionCodeT&& value) { SetTunnelRestrictionCode(std::forward<TunnelRestrictionCodeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allHazardsRestricted;
+    bool m_allHazardsRestricted{false};
     bool m_allHazardsRestrictedHasBeenSet = false;
 
     RouteNoticeDetailRange m_axleCount;
@@ -294,28 +285,28 @@ namespace Model
     Aws::Vector<RouteHazardousCargoType> m_hazardousCargos;
     bool m_hazardousCargosHasBeenSet = false;
 
-    long long m_maxHeight;
+    long long m_maxHeight{0};
     bool m_maxHeightHasBeenSet = false;
 
-    long long m_maxKpraLength;
+    long long m_maxKpraLength{0};
     bool m_maxKpraLengthHasBeenSet = false;
 
-    long long m_maxLength;
+    long long m_maxLength{0};
     bool m_maxLengthHasBeenSet = false;
 
-    long long m_maxPayloadCapacity;
+    long long m_maxPayloadCapacity{0};
     bool m_maxPayloadCapacityHasBeenSet = false;
 
     RouteWeightConstraint m_maxWeight;
     bool m_maxWeightHasBeenSet = false;
 
-    long long m_maxWeightPerAxle;
+    long long m_maxWeightPerAxle{0};
     bool m_maxWeightPerAxleHasBeenSet = false;
 
     WeightPerAxleGroup m_maxWeightPerAxleGroup;
     bool m_maxWeightPerAxleGroupHasBeenSet = false;
 
-    long long m_maxWidth;
+    long long m_maxWidth{0};
     bool m_maxWidthHasBeenSet = false;
 
     RouteNoticeDetailRange m_occupancy;
@@ -324,19 +315,19 @@ namespace Model
     Aws::String m_restrictedTimes;
     bool m_restrictedTimesHasBeenSet = false;
 
-    bool m_timeDependent;
+    bool m_timeDependent{false};
     bool m_timeDependentHasBeenSet = false;
 
     RouteNoticeDetailRange m_trailerCount;
     bool m_trailerCountHasBeenSet = false;
 
-    bool m_travelMode;
+    bool m_travelMode{false};
     bool m_travelModeHasBeenSet = false;
 
     Aws::String m_truckRoadType;
     bool m_truckRoadTypeHasBeenSet = false;
 
-    RouteTruckType m_truckType;
+    RouteTruckType m_truckType{RouteTruckType::NOT_SET};
     bool m_truckTypeHasBeenSet = false;
 
     Aws::String m_tunnelRestrictionCode;

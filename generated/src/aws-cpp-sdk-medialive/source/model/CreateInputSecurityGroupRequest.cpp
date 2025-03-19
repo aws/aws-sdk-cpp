@@ -12,12 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInputSecurityGroupRequest::CreateInputSecurityGroupRequest() : 
-    m_tagsHasBeenSet(false),
-    m_whitelistRulesHasBeenSet(false)
-{
-}
-
 Aws::String CreateInputSecurityGroupRequest::SerializePayload() const
 {
   JsonValue payload;

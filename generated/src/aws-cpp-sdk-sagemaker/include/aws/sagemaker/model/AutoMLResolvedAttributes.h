@@ -34,7 +34,7 @@ namespace Model
   class AutoMLResolvedAttributes
   {
   public:
-    AWS_SAGEMAKER_API AutoMLResolvedAttributes();
+    AWS_SAGEMAKER_API AutoMLResolvedAttributes() = default;
     AWS_SAGEMAKER_API AutoMLResolvedAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLResolvedAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,34 +42,34 @@ namespace Model
 
     ///@{
     
-    inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
+    inline const AutoMLJobObjective& GetAutoMLJobObjective() const { return m_autoMLJobObjective; }
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
-    inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
-    inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
-    inline AutoMLResolvedAttributes& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
-    inline AutoMLResolvedAttributes& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
+    template<typename AutoMLJobObjectiveT = AutoMLJobObjective>
+    void SetAutoMLJobObjective(AutoMLJobObjectiveT&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::forward<AutoMLJobObjectiveT>(value); }
+    template<typename AutoMLJobObjectiveT = AutoMLJobObjective>
+    AutoMLResolvedAttributes& WithAutoMLJobObjective(AutoMLJobObjectiveT&& value) { SetAutoMLJobObjective(std::forward<AutoMLJobObjectiveT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
+    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const { return m_completionCriteria; }
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
-    inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
-    inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
-    inline AutoMLResolvedAttributes& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
-    inline AutoMLResolvedAttributes& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    void SetCompletionCriteria(CompletionCriteriaT&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::forward<CompletionCriteriaT>(value); }
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    AutoMLResolvedAttributes& WithCompletionCriteria(CompletionCriteriaT&& value) { SetCompletionCriteria(std::forward<CompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the resolved attributes specific to a problem type.</p>
      */
-    inline const AutoMLProblemTypeResolvedAttributes& GetAutoMLProblemTypeResolvedAttributes() const{ return m_autoMLProblemTypeResolvedAttributes; }
+    inline const AutoMLProblemTypeResolvedAttributes& GetAutoMLProblemTypeResolvedAttributes() const { return m_autoMLProblemTypeResolvedAttributes; }
     inline bool AutoMLProblemTypeResolvedAttributesHasBeenSet() const { return m_autoMLProblemTypeResolvedAttributesHasBeenSet; }
-    inline void SetAutoMLProblemTypeResolvedAttributes(const AutoMLProblemTypeResolvedAttributes& value) { m_autoMLProblemTypeResolvedAttributesHasBeenSet = true; m_autoMLProblemTypeResolvedAttributes = value; }
-    inline void SetAutoMLProblemTypeResolvedAttributes(AutoMLProblemTypeResolvedAttributes&& value) { m_autoMLProblemTypeResolvedAttributesHasBeenSet = true; m_autoMLProblemTypeResolvedAttributes = std::move(value); }
-    inline AutoMLResolvedAttributes& WithAutoMLProblemTypeResolvedAttributes(const AutoMLProblemTypeResolvedAttributes& value) { SetAutoMLProblemTypeResolvedAttributes(value); return *this;}
-    inline AutoMLResolvedAttributes& WithAutoMLProblemTypeResolvedAttributes(AutoMLProblemTypeResolvedAttributes&& value) { SetAutoMLProblemTypeResolvedAttributes(std::move(value)); return *this;}
+    template<typename AutoMLProblemTypeResolvedAttributesT = AutoMLProblemTypeResolvedAttributes>
+    void SetAutoMLProblemTypeResolvedAttributes(AutoMLProblemTypeResolvedAttributesT&& value) { m_autoMLProblemTypeResolvedAttributesHasBeenSet = true; m_autoMLProblemTypeResolvedAttributes = std::forward<AutoMLProblemTypeResolvedAttributesT>(value); }
+    template<typename AutoMLProblemTypeResolvedAttributesT = AutoMLProblemTypeResolvedAttributes>
+    AutoMLResolvedAttributes& WithAutoMLProblemTypeResolvedAttributes(AutoMLProblemTypeResolvedAttributesT&& value) { SetAutoMLProblemTypeResolvedAttributes(std::forward<AutoMLProblemTypeResolvedAttributesT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class CreateDistributionWithTags2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateDistributionWithTags2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateDistributionWithTags2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
     /**
      * <p>The distribution's configuration information.</p>
      */
-    inline const DistributionConfigWithTags& GetDistributionConfigWithTags() const{ return m_distributionConfigWithTags; }
+    inline const DistributionConfigWithTags& GetDistributionConfigWithTags() const { return m_distributionConfigWithTags; }
     inline bool DistributionConfigWithTagsHasBeenSet() const { return m_distributionConfigWithTagsHasBeenSet; }
-    inline void SetDistributionConfigWithTags(const DistributionConfigWithTags& value) { m_distributionConfigWithTagsHasBeenSet = true; m_distributionConfigWithTags = value; }
-    inline void SetDistributionConfigWithTags(DistributionConfigWithTags&& value) { m_distributionConfigWithTagsHasBeenSet = true; m_distributionConfigWithTags = std::move(value); }
-    inline CreateDistributionWithTags2020_05_31Request& WithDistributionConfigWithTags(const DistributionConfigWithTags& value) { SetDistributionConfigWithTags(value); return *this;}
-    inline CreateDistributionWithTags2020_05_31Request& WithDistributionConfigWithTags(DistributionConfigWithTags&& value) { SetDistributionConfigWithTags(std::move(value)); return *this;}
+    template<typename DistributionConfigWithTagsT = DistributionConfigWithTags>
+    void SetDistributionConfigWithTags(DistributionConfigWithTagsT&& value) { m_distributionConfigWithTagsHasBeenSet = true; m_distributionConfigWithTags = std::forward<DistributionConfigWithTagsT>(value); }
+    template<typename DistributionConfigWithTagsT = DistributionConfigWithTags>
+    CreateDistributionWithTags2020_05_31Request& WithDistributionConfigWithTags(DistributionConfigWithTagsT&& value) { SetDistributionConfigWithTags(std::forward<DistributionConfigWithTagsT>(value)); return *this;}
     ///@}
   private:
 

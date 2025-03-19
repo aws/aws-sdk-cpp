@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-DebugSession::DebugSession() : 
-    m_sessionEnabled(false),
-    m_sessionEnabledHasBeenSet(false),
-    m_sessionTargetHasBeenSet(false)
-{
-}
-
 DebugSession::DebugSession(JsonView jsonValue)
-  : DebugSession()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DebugSession& DebugSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionEnabled"))
   {
     m_sessionEnabled = jsonValue.GetBool("sessionEnabled");
-
     m_sessionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionTarget"))
   {
     m_sessionTarget = jsonValue.GetString("sessionTarget");
-
     m_sessionTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateSolFunctionPackageRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API UpdateSolFunctionPackageRequest();
+    AWS_TNB_API UpdateSolFunctionPackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,30 +37,26 @@ namespace Model
     /**
      * <p>Operational state of the function package.</p>
      */
-    inline const OperationalState& GetOperationalState() const{ return m_operationalState; }
+    inline OperationalState GetOperationalState() const { return m_operationalState; }
     inline bool OperationalStateHasBeenSet() const { return m_operationalStateHasBeenSet; }
-    inline void SetOperationalState(const OperationalState& value) { m_operationalStateHasBeenSet = true; m_operationalState = value; }
-    inline void SetOperationalState(OperationalState&& value) { m_operationalStateHasBeenSet = true; m_operationalState = std::move(value); }
-    inline UpdateSolFunctionPackageRequest& WithOperationalState(const OperationalState& value) { SetOperationalState(value); return *this;}
-    inline UpdateSolFunctionPackageRequest& WithOperationalState(OperationalState&& value) { SetOperationalState(std::move(value)); return *this;}
+    inline void SetOperationalState(OperationalState value) { m_operationalStateHasBeenSet = true; m_operationalState = value; }
+    inline UpdateSolFunctionPackageRequest& WithOperationalState(OperationalState value) { SetOperationalState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the function package.</p>
      */
-    inline const Aws::String& GetVnfPkgId() const{ return m_vnfPkgId; }
+    inline const Aws::String& GetVnfPkgId() const { return m_vnfPkgId; }
     inline bool VnfPkgIdHasBeenSet() const { return m_vnfPkgIdHasBeenSet; }
-    inline void SetVnfPkgId(const Aws::String& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = value; }
-    inline void SetVnfPkgId(Aws::String&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::move(value); }
-    inline void SetVnfPkgId(const char* value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId.assign(value); }
-    inline UpdateSolFunctionPackageRequest& WithVnfPkgId(const Aws::String& value) { SetVnfPkgId(value); return *this;}
-    inline UpdateSolFunctionPackageRequest& WithVnfPkgId(Aws::String&& value) { SetVnfPkgId(std::move(value)); return *this;}
-    inline UpdateSolFunctionPackageRequest& WithVnfPkgId(const char* value) { SetVnfPkgId(value); return *this;}
+    template<typename VnfPkgIdT = Aws::String>
+    void SetVnfPkgId(VnfPkgIdT&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::forward<VnfPkgIdT>(value); }
+    template<typename VnfPkgIdT = Aws::String>
+    UpdateSolFunctionPackageRequest& WithVnfPkgId(VnfPkgIdT&& value) { SetVnfPkgId(std::forward<VnfPkgIdT>(value)); return *this;}
     ///@}
   private:
 
-    OperationalState m_operationalState;
+    OperationalState m_operationalState{OperationalState::NOT_SET};
     bool m_operationalStateHasBeenSet = false;
 
     Aws::String m_vnfPkgId;

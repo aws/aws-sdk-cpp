@@ -30,7 +30,7 @@ namespace Model
   class BatchGetSecretValueResult
   {
   public:
-    AWS_SECRETSMANAGER_API BatchGetSecretValueResult();
+    AWS_SECRETSMANAGER_API BatchGetSecretValueResult() = default;
     AWS_SECRETSMANAGER_API BatchGetSecretValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECRETSMANAGER_API BatchGetSecretValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A list of secret values.</p>
      */
-    inline const Aws::Vector<SecretValueEntry>& GetSecretValues() const{ return m_secretValues; }
-    inline void SetSecretValues(const Aws::Vector<SecretValueEntry>& value) { m_secretValues = value; }
-    inline void SetSecretValues(Aws::Vector<SecretValueEntry>&& value) { m_secretValues = std::move(value); }
-    inline BatchGetSecretValueResult& WithSecretValues(const Aws::Vector<SecretValueEntry>& value) { SetSecretValues(value); return *this;}
-    inline BatchGetSecretValueResult& WithSecretValues(Aws::Vector<SecretValueEntry>&& value) { SetSecretValues(std::move(value)); return *this;}
-    inline BatchGetSecretValueResult& AddSecretValues(const SecretValueEntry& value) { m_secretValues.push_back(value); return *this; }
-    inline BatchGetSecretValueResult& AddSecretValues(SecretValueEntry&& value) { m_secretValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecretValueEntry>& GetSecretValues() const { return m_secretValues; }
+    template<typename SecretValuesT = Aws::Vector<SecretValueEntry>>
+    void SetSecretValues(SecretValuesT&& value) { m_secretValuesHasBeenSet = true; m_secretValues = std::forward<SecretValuesT>(value); }
+    template<typename SecretValuesT = Aws::Vector<SecretValueEntry>>
+    BatchGetSecretValueResult& WithSecretValues(SecretValuesT&& value) { SetSecretValues(std::forward<SecretValuesT>(value)); return *this;}
+    template<typename SecretValuesT = SecretValueEntry>
+    BatchGetSecretValueResult& AddSecretValues(SecretValuesT&& value) { m_secretValuesHasBeenSet = true; m_secretValues.emplace_back(std::forward<SecretValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,13 +56,11 @@ namespace Model
      * list. To get the next results, call <code>BatchGetSecretValue</code> again with
      * this value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline BatchGetSecretValueResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchGetSecretValueResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchGetSecretValueResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchGetSecretValueResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,34 +68,36 @@ namespace Model
      * <p>A list of errors Secrets Manager encountered while attempting to retrieve
      * individual secrets.</p>
      */
-    inline const Aws::Vector<APIErrorType>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<APIErrorType>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<APIErrorType>&& value) { m_errors = std::move(value); }
-    inline BatchGetSecretValueResult& WithErrors(const Aws::Vector<APIErrorType>& value) { SetErrors(value); return *this;}
-    inline BatchGetSecretValueResult& WithErrors(Aws::Vector<APIErrorType>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetSecretValueResult& AddErrors(const APIErrorType& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetSecretValueResult& AddErrors(APIErrorType&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<APIErrorType>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<APIErrorType>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<APIErrorType>>
+    BatchGetSecretValueResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = APIErrorType>
+    BatchGetSecretValueResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetSecretValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetSecretValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetSecretValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetSecretValueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SecretValueEntry> m_secretValues;
+    bool m_secretValuesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<APIErrorType> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,7 @@ namespace Model
   class PutStorageLensConfigurationRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API PutStorageLensConfigurationRequest();
+    AWS_S3CONTROL_API PutStorageLensConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,40 +45,36 @@ namespace Model
     /**
      * <p>The ID of the S3 Storage Lens configuration.</p>
      */
-    inline const Aws::String& GetConfigId() const{ return m_configId; }
+    inline const Aws::String& GetConfigId() const { return m_configId; }
     inline bool ConfigIdHasBeenSet() const { return m_configIdHasBeenSet; }
-    inline void SetConfigId(const Aws::String& value) { m_configIdHasBeenSet = true; m_configId = value; }
-    inline void SetConfigId(Aws::String&& value) { m_configIdHasBeenSet = true; m_configId = std::move(value); }
-    inline void SetConfigId(const char* value) { m_configIdHasBeenSet = true; m_configId.assign(value); }
-    inline PutStorageLensConfigurationRequest& WithConfigId(const Aws::String& value) { SetConfigId(value); return *this;}
-    inline PutStorageLensConfigurationRequest& WithConfigId(Aws::String&& value) { SetConfigId(std::move(value)); return *this;}
-    inline PutStorageLensConfigurationRequest& WithConfigId(const char* value) { SetConfigId(value); return *this;}
+    template<typename ConfigIdT = Aws::String>
+    void SetConfigId(ConfigIdT&& value) { m_configIdHasBeenSet = true; m_configId = std::forward<ConfigIdT>(value); }
+    template<typename ConfigIdT = Aws::String>
+    PutStorageLensConfigurationRequest& WithConfigId(ConfigIdT&& value) { SetConfigId(std::forward<ConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID of the requester.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline PutStorageLensConfigurationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline PutStorageLensConfigurationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline PutStorageLensConfigurationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PutStorageLensConfigurationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 Storage Lens configuration.</p>
      */
-    inline const StorageLensConfiguration& GetStorageLensConfiguration() const{ return m_storageLensConfiguration; }
+    inline const StorageLensConfiguration& GetStorageLensConfiguration() const { return m_storageLensConfiguration; }
     inline bool StorageLensConfigurationHasBeenSet() const { return m_storageLensConfigurationHasBeenSet; }
-    inline void SetStorageLensConfiguration(const StorageLensConfiguration& value) { m_storageLensConfigurationHasBeenSet = true; m_storageLensConfiguration = value; }
-    inline void SetStorageLensConfiguration(StorageLensConfiguration&& value) { m_storageLensConfigurationHasBeenSet = true; m_storageLensConfiguration = std::move(value); }
-    inline PutStorageLensConfigurationRequest& WithStorageLensConfiguration(const StorageLensConfiguration& value) { SetStorageLensConfiguration(value); return *this;}
-    inline PutStorageLensConfigurationRequest& WithStorageLensConfiguration(StorageLensConfiguration&& value) { SetStorageLensConfiguration(std::move(value)); return *this;}
+    template<typename StorageLensConfigurationT = StorageLensConfiguration>
+    void SetStorageLensConfiguration(StorageLensConfigurationT&& value) { m_storageLensConfigurationHasBeenSet = true; m_storageLensConfiguration = std::forward<StorageLensConfigurationT>(value); }
+    template<typename StorageLensConfigurationT = StorageLensConfiguration>
+    PutStorageLensConfigurationRequest& WithStorageLensConfiguration(StorageLensConfigurationT&& value) { SetStorageLensConfiguration(std::forward<StorageLensConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,14 @@ namespace Model
      * <p>The tag set of the S3 Storage Lens configuration.</p>  <p>You can set
      * up to a maximum of 50 tags.</p> 
      */
-    inline const Aws::Vector<StorageLensTag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<StorageLensTag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<StorageLensTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<StorageLensTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutStorageLensConfigurationRequest& WithTags(const Aws::Vector<StorageLensTag>& value) { SetTags(value); return *this;}
-    inline PutStorageLensConfigurationRequest& WithTags(Aws::Vector<StorageLensTag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutStorageLensConfigurationRequest& AddTags(const StorageLensTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutStorageLensConfigurationRequest& AddTags(StorageLensTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<StorageLensTag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<StorageLensTag>>
+    PutStorageLensConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = StorageLensTag>
+    PutStorageLensConfigurationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeClientVpnEndpointsResponse
   {
   public:
-    AWS_EC2_API DescribeClientVpnEndpointsResponse();
+    AWS_EC2_API DescribeClientVpnEndpointsResponse() = default;
     AWS_EC2_API DescribeClientVpnEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeClientVpnEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the Client VPN endpoints.</p>
      */
-    inline const Aws::Vector<ClientVpnEndpoint>& GetClientVpnEndpoints() const{ return m_clientVpnEndpoints; }
-    inline void SetClientVpnEndpoints(const Aws::Vector<ClientVpnEndpoint>& value) { m_clientVpnEndpoints = value; }
-    inline void SetClientVpnEndpoints(Aws::Vector<ClientVpnEndpoint>&& value) { m_clientVpnEndpoints = std::move(value); }
-    inline DescribeClientVpnEndpointsResponse& WithClientVpnEndpoints(const Aws::Vector<ClientVpnEndpoint>& value) { SetClientVpnEndpoints(value); return *this;}
-    inline DescribeClientVpnEndpointsResponse& WithClientVpnEndpoints(Aws::Vector<ClientVpnEndpoint>&& value) { SetClientVpnEndpoints(std::move(value)); return *this;}
-    inline DescribeClientVpnEndpointsResponse& AddClientVpnEndpoints(const ClientVpnEndpoint& value) { m_clientVpnEndpoints.push_back(value); return *this; }
-    inline DescribeClientVpnEndpointsResponse& AddClientVpnEndpoints(ClientVpnEndpoint&& value) { m_clientVpnEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClientVpnEndpoint>& GetClientVpnEndpoints() const { return m_clientVpnEndpoints; }
+    template<typename ClientVpnEndpointsT = Aws::Vector<ClientVpnEndpoint>>
+    void SetClientVpnEndpoints(ClientVpnEndpointsT&& value) { m_clientVpnEndpointsHasBeenSet = true; m_clientVpnEndpoints = std::forward<ClientVpnEndpointsT>(value); }
+    template<typename ClientVpnEndpointsT = Aws::Vector<ClientVpnEndpoint>>
+    DescribeClientVpnEndpointsResponse& WithClientVpnEndpoints(ClientVpnEndpointsT&& value) { SetClientVpnEndpoints(std::forward<ClientVpnEndpointsT>(value)); return *this;}
+    template<typename ClientVpnEndpointsT = ClientVpnEndpoint>
+    DescribeClientVpnEndpointsResponse& AddClientVpnEndpoints(ClientVpnEndpointsT&& value) { m_clientVpnEndpointsHasBeenSet = true; m_clientVpnEndpoints.emplace_back(std::forward<ClientVpnEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeClientVpnEndpointsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeClientVpnEndpointsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeClientVpnEndpointsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeClientVpnEndpointsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeClientVpnEndpointsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeClientVpnEndpointsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeClientVpnEndpointsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ClientVpnEndpoint> m_clientVpnEndpoints;
+    bool m_clientVpnEndpointsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,33 +30,29 @@ namespace Model
   class DescribeSMBSettingsResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeSMBSettingsResult();
+    AWS_STORAGEGATEWAY_API DescribeSMBSettingsResult() = default;
     AWS_STORAGEGATEWAY_API DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeSMBSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeSMBSettingsResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeSMBSettingsResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeSMBSettingsResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeSMBSettingsResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain that the gateway is joined to.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
-    inline DescribeSMBSettingsResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DescribeSMBSettingsResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DescribeSMBSettingsResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DescribeSMBSettingsResult& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +74,9 @@ namespace Model
      * <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code>
      * operation failed due to another type of error.</p> </li> </ul>
      */
-    inline const ActiveDirectoryStatus& GetActiveDirectoryStatus() const{ return m_activeDirectoryStatus; }
-    inline void SetActiveDirectoryStatus(const ActiveDirectoryStatus& value) { m_activeDirectoryStatus = value; }
-    inline void SetActiveDirectoryStatus(ActiveDirectoryStatus&& value) { m_activeDirectoryStatus = std::move(value); }
-    inline DescribeSMBSettingsResult& WithActiveDirectoryStatus(const ActiveDirectoryStatus& value) { SetActiveDirectoryStatus(value); return *this;}
-    inline DescribeSMBSettingsResult& WithActiveDirectoryStatus(ActiveDirectoryStatus&& value) { SetActiveDirectoryStatus(std::move(value)); return *this;}
+    inline ActiveDirectoryStatus GetActiveDirectoryStatus() const { return m_activeDirectoryStatus; }
+    inline void SetActiveDirectoryStatus(ActiveDirectoryStatus value) { m_activeDirectoryStatusHasBeenSet = true; m_activeDirectoryStatus = value; }
+    inline DescribeSMBSettingsResult& WithActiveDirectoryStatus(ActiveDirectoryStatus value) { SetActiveDirectoryStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -92,8 +86,8 @@ namespace Model
      * S3 File Gateways.</p> <p>Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
-    inline bool GetSMBGuestPasswordSet() const{ return m_sMBGuestPasswordSet; }
-    inline void SetSMBGuestPasswordSet(bool value) { m_sMBGuestPasswordSet = value; }
+    inline bool GetSMBGuestPasswordSet() const { return m_sMBGuestPasswordSet; }
+    inline void SetSMBGuestPasswordSet(bool value) { m_sMBGuestPasswordSetHasBeenSet = true; m_sMBGuestPasswordSet = value; }
     inline DescribeSMBSettingsResult& WithSMBGuestPasswordSet(bool value) { SetSMBGuestPasswordSet(value); return *this;}
     ///@}
 
@@ -118,11 +112,9 @@ namespace Model
      * recommended for environments that handle sensitive data. It works with SMB
      * clients on Microsoft Windows 8, Windows Server 2012, or later.</p> </li> </ul>
      */
-    inline const SMBSecurityStrategy& GetSMBSecurityStrategy() const{ return m_sMBSecurityStrategy; }
-    inline void SetSMBSecurityStrategy(const SMBSecurityStrategy& value) { m_sMBSecurityStrategy = value; }
-    inline void SetSMBSecurityStrategy(SMBSecurityStrategy&& value) { m_sMBSecurityStrategy = std::move(value); }
-    inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(const SMBSecurityStrategy& value) { SetSMBSecurityStrategy(value); return *this;}
-    inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(SMBSecurityStrategy&& value) { SetSMBSecurityStrategy(std::move(value)); return *this;}
+    inline SMBSecurityStrategy GetSMBSecurityStrategy() const { return m_sMBSecurityStrategy; }
+    inline void SetSMBSecurityStrategy(SMBSecurityStrategy value) { m_sMBSecurityStrategyHasBeenSet = true; m_sMBSecurityStrategy = value; }
+    inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(SMBSecurityStrategy value) { SetSMBSecurityStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -130,8 +122,8 @@ namespace Model
      * <p>The shares on this gateway appear when listing shares. Only supported for S3
      * File Gateways. </p>
      */
-    inline bool GetFileSharesVisible() const{ return m_fileSharesVisible; }
-    inline void SetFileSharesVisible(bool value) { m_fileSharesVisible = value; }
+    inline bool GetFileSharesVisible() const { return m_fileSharesVisible; }
+    inline void SetFileSharesVisible(bool value) { m_fileSharesVisibleHasBeenSet = true; m_fileSharesVisible = value; }
     inline DescribeSMBSettingsResult& WithFileSharesVisible(bool value) { SetFileSharesVisible(value); return *this;}
     ///@}
 
@@ -140,40 +132,46 @@ namespace Model
      * <p>A list of Active Directory users and groups that have special permissions for
      * SMB file shares on the gateway.</p>
      */
-    inline const SMBLocalGroups& GetSMBLocalGroups() const{ return m_sMBLocalGroups; }
-    inline void SetSMBLocalGroups(const SMBLocalGroups& value) { m_sMBLocalGroups = value; }
-    inline void SetSMBLocalGroups(SMBLocalGroups&& value) { m_sMBLocalGroups = std::move(value); }
-    inline DescribeSMBSettingsResult& WithSMBLocalGroups(const SMBLocalGroups& value) { SetSMBLocalGroups(value); return *this;}
-    inline DescribeSMBSettingsResult& WithSMBLocalGroups(SMBLocalGroups&& value) { SetSMBLocalGroups(std::move(value)); return *this;}
+    inline const SMBLocalGroups& GetSMBLocalGroups() const { return m_sMBLocalGroups; }
+    template<typename SMBLocalGroupsT = SMBLocalGroups>
+    void SetSMBLocalGroups(SMBLocalGroupsT&& value) { m_sMBLocalGroupsHasBeenSet = true; m_sMBLocalGroups = std::forward<SMBLocalGroupsT>(value); }
+    template<typename SMBLocalGroupsT = SMBLocalGroups>
+    DescribeSMBSettingsResult& WithSMBLocalGroups(SMBLocalGroupsT&& value) { SetSMBLocalGroups(std::forward<SMBLocalGroupsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSMBSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSMBSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSMBSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSMBSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet = false;
 
-    ActiveDirectoryStatus m_activeDirectoryStatus;
+    ActiveDirectoryStatus m_activeDirectoryStatus{ActiveDirectoryStatus::NOT_SET};
+    bool m_activeDirectoryStatusHasBeenSet = false;
 
-    bool m_sMBGuestPasswordSet;
+    bool m_sMBGuestPasswordSet{false};
+    bool m_sMBGuestPasswordSetHasBeenSet = false;
 
-    SMBSecurityStrategy m_sMBSecurityStrategy;
+    SMBSecurityStrategy m_sMBSecurityStrategy{SMBSecurityStrategy::NOT_SET};
+    bool m_sMBSecurityStrategyHasBeenSet = false;
 
-    bool m_fileSharesVisible;
+    bool m_fileSharesVisible{false};
+    bool m_fileSharesVisibleHasBeenSet = false;
 
     SMBLocalGroups m_sMBLocalGroups;
+    bool m_sMBLocalGroupsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

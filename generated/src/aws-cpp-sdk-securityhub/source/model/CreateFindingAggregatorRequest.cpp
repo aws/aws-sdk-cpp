@@ -12,12 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFindingAggregatorRequest::CreateFindingAggregatorRequest() : 
-    m_regionLinkingModeHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFindingAggregatorRequest::SerializePayload() const
 {
   JsonValue payload;

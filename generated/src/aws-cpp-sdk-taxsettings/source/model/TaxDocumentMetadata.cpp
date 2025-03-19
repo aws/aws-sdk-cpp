@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxDocumentMetadata::TaxDocumentMetadata() : 
-    m_taxDocumentAccessTokenHasBeenSet(false),
-    m_taxDocumentNameHasBeenSet(false)
-{
-}
-
 TaxDocumentMetadata::TaxDocumentMetadata(JsonView jsonValue)
-  : TaxDocumentMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaxDocumentMetadata& TaxDocumentMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taxDocumentAccessToken"))
   {
     m_taxDocumentAccessToken = jsonValue.GetString("taxDocumentAccessToken");
-
     m_taxDocumentAccessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxDocumentName"))
   {
     m_taxDocumentName = jsonValue.GetString("taxDocumentName");
-
     m_taxDocumentNameHasBeenSet = true;
   }
-
   return *this;
 }
 

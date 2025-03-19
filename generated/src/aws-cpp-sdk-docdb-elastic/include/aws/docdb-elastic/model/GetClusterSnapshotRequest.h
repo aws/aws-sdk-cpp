@@ -21,7 +21,7 @@ namespace Model
   class GetClusterSnapshotRequest : public DocDBElasticRequest
   {
   public:
-    AWS_DOCDBELASTIC_API GetClusterSnapshotRequest();
+    AWS_DOCDBELASTIC_API GetClusterSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN identifier of the elastic cluster snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+    inline const Aws::String& GetSnapshotArn() const { return m_snapshotArn; }
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
-    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
-    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
-    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
-    inline GetClusterSnapshotRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
-    inline GetClusterSnapshotRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
-    inline GetClusterSnapshotRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+    template<typename SnapshotArnT = Aws::String>
+    void SetSnapshotArn(SnapshotArnT&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::forward<SnapshotArnT>(value); }
+    template<typename SnapshotArnT = Aws::String>
+    GetClusterSnapshotRequest& WithSnapshotArn(SnapshotArnT&& value) { SetSnapshotArn(std::forward<SnapshotArnT>(value)); return *this;}
     ///@}
   private:
 

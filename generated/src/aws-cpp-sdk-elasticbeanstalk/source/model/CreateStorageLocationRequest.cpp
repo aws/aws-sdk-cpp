@@ -10,10 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-CreateStorageLocationRequest::CreateStorageLocationRequest()
-{
-}
-
 Aws::String CreateStorageLocationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

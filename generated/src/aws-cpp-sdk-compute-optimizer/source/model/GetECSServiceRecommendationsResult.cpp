@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetECSServiceRecommendationsResult::GetECSServiceRecommendationsResult()
-{
-}
-
 GetECSServiceRecommendationsResult::GetECSServiceRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetECSServiceRecommendationsResult& GetECSServiceRecommendationsResult::operator
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsServiceRecommendations"))
   {
     Aws::Utils::Array<JsonView> ecsServiceRecommendationsJsonList = jsonValue.GetArray("ecsServiceRecommendations");
@@ -42,8 +37,8 @@ GetECSServiceRecommendationsResult& GetECSServiceRecommendationsResult::operator
     {
       m_ecsServiceRecommendations.push_back(ecsServiceRecommendationsJsonList[ecsServiceRecommendationsIndex].AsObject());
     }
+    m_ecsServiceRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,14 +46,15 @@ GetECSServiceRecommendationsResult& GetECSServiceRecommendationsResult::operator
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,19 +18,7 @@ namespace KinesisVideoArchivedMedia
 namespace Model
 {
 
-Fragment::Fragment() : 
-    m_fragmentNumberHasBeenSet(false),
-    m_fragmentSizeInBytes(0),
-    m_fragmentSizeInBytesHasBeenSet(false),
-    m_producerTimestampHasBeenSet(false),
-    m_serverTimestampHasBeenSet(false),
-    m_fragmentLengthInMilliseconds(0),
-    m_fragmentLengthInMillisecondsHasBeenSet(false)
-{
-}
-
 Fragment::Fragment(JsonView jsonValue)
-  : Fragment()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Fragment& Fragment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FragmentNumber"))
   {
     m_fragmentNumber = jsonValue.GetString("FragmentNumber");
-
     m_fragmentNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FragmentSizeInBytes"))
   {
     m_fragmentSizeInBytes = jsonValue.GetInt64("FragmentSizeInBytes");
-
     m_fragmentSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProducerTimestamp"))
   {
     m_producerTimestamp = jsonValue.GetDouble("ProducerTimestamp");
-
     m_producerTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerTimestamp"))
   {
     m_serverTimestamp = jsonValue.GetDouble("ServerTimestamp");
-
     m_serverTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FragmentLengthInMilliseconds"))
   {
     m_fragmentLengthInMilliseconds = jsonValue.GetInt64("FragmentLengthInMilliseconds");
-
     m_fragmentLengthInMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

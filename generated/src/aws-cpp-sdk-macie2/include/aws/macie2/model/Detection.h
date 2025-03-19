@@ -37,7 +37,7 @@ namespace Model
   class Detection
   {
   public:
-    AWS_MACIE2_API Detection();
+    AWS_MACIE2_API Detection() = default;
     AWS_MACIE2_API Detection(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Detection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,21 +49,19 @@ namespace Model
      * Resource Name (ARN) of the custom data identifier that detected the data.
      * Otherwise, this value is null.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Detection& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Detection& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Detection& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Detection& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total number of occurrences of the sensitive data.</p>
      */
-    inline long long GetCount() const{ return m_count; }
+    inline long long GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline Detection& WithCount(long long value) { SetCount(value); return *this;}
@@ -77,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
      * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Detection& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Detection& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Detection& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Detection& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * detected the sensitive data. For a managed data identifier, this value is the
      * same as the unique identifier (id).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Detection& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Detection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Detection& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Detection& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,7 +103,7 @@ namespace Model
      * (true) or included (false) in the bucket's sensitivity score, if the score is
      * calculated by Amazon Macie.</p>
      */
-    inline bool GetSuppressed() const{ return m_suppressed; }
+    inline bool GetSuppressed() const { return m_suppressed; }
     inline bool SuppressedHasBeenSet() const { return m_suppressedHasBeenSet; }
     inline void SetSuppressed(bool value) { m_suppressedHasBeenSet = true; m_suppressed = value; }
     inline Detection& WithSuppressed(bool value) { SetSuppressed(value); return *this;}
@@ -121,19 +115,17 @@ namespace Model
      * are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data
      * identifier.</p>
      */
-    inline const DataIdentifierType& GetType() const{ return m_type; }
+    inline DataIdentifierType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataIdentifierType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataIdentifierType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Detection& WithType(const DataIdentifierType& value) { SetType(value); return *this;}
-    inline Detection& WithType(DataIdentifierType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataIdentifierType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Detection& WithType(DataIdentifierType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    long long m_count;
+    long long m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::String m_id;
@@ -142,10 +134,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_suppressed;
+    bool m_suppressed{false};
     bool m_suppressedHasBeenSet = false;
 
-    DataIdentifierType m_type;
+    DataIdentifierType m_type{DataIdentifierType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

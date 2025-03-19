@@ -18,18 +18,7 @@ namespace DirectoryServiceData
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_bOOL(false),
-    m_bOOLHasBeenSet(false),
-    m_n(0),
-    m_nHasBeenSet(false),
-    m_sHasBeenSet(false),
-    m_sSHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(JsonView jsonValue)
-  : AttributeValue()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BOOL"))
   {
     m_bOOL = jsonValue.GetBool("BOOL");
-
     m_bOOLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("N"))
   {
     m_n = jsonValue.GetInt64("N");
-
     m_nHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S"))
   {
     m_s = jsonValue.GetString("S");
-
     m_sHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SS"))
   {
     Aws::Utils::Array<JsonView> sSJsonList = jsonValue.GetArray("SS");
@@ -66,7 +49,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_sSHasBeenSet = true;
   }
-
   return *this;
 }
 

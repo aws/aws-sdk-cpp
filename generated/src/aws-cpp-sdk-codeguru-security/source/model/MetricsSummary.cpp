@@ -18,17 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-MetricsSummary::MetricsSummary() : 
-    m_categoriesWithMostFindingsHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_openFindingsHasBeenSet(false),
-    m_scansWithMostOpenCriticalFindingsHasBeenSet(false),
-    m_scansWithMostOpenFindingsHasBeenSet(false)
-{
-}
-
 MetricsSummary::MetricsSummary(JsonView jsonValue)
-  : MetricsSummary()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
     }
     m_categoriesWithMostFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetDouble("date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openFindings"))
   {
     m_openFindings = jsonValue.GetObject("openFindings");
-
     m_openFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scansWithMostOpenCriticalFindings"))
   {
     Aws::Utils::Array<JsonView> scansWithMostOpenCriticalFindingsJsonList = jsonValue.GetArray("scansWithMostOpenCriticalFindings");
@@ -68,7 +53,6 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
     }
     m_scansWithMostOpenCriticalFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scansWithMostOpenFindings"))
   {
     Aws::Utils::Array<JsonView> scansWithMostOpenFindingsJsonList = jsonValue.GetArray("scansWithMostOpenFindings");
@@ -78,7 +62,6 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
     }
     m_scansWithMostOpenFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

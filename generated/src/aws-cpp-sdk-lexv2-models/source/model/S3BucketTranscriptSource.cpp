@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-S3BucketTranscriptSource::S3BucketTranscriptSource() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_pathFormatHasBeenSet(false),
-    m_transcriptFormat(TranscriptFormat::NOT_SET),
-    m_transcriptFormatHasBeenSet(false),
-    m_transcriptFilterHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 S3BucketTranscriptSource::S3BucketTranscriptSource(JsonView jsonValue)
-  : S3BucketTranscriptSource()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ S3BucketTranscriptSource& S3BucketTranscriptSource::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pathFormat"))
   {
     m_pathFormat = jsonValue.GetObject("pathFormat");
-
     m_pathFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transcriptFormat"))
   {
     m_transcriptFormat = TranscriptFormatMapper::GetTranscriptFormatForName(jsonValue.GetString("transcriptFormat"));
-
     m_transcriptFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transcriptFilter"))
   {
     m_transcriptFilter = jsonValue.GetObject("transcriptFilter");
-
     m_transcriptFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

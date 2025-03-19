@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelRequest::DeleteChannelRequest() : 
-    m_channelHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelRequest::SerializePayload() const
 {
   JsonValue payload;

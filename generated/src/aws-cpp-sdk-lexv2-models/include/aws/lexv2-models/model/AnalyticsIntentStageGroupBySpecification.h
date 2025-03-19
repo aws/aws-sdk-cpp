@@ -32,7 +32,7 @@ namespace Model
   class AnalyticsIntentStageGroupBySpecification
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsIntentStageGroupBySpecification();
+    AWS_LEXMODELSV2_API AnalyticsIntentStageGroupBySpecification() = default;
     AWS_LEXMODELSV2_API AnalyticsIntentStageGroupBySpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsIntentStageGroupBySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Specifies whether to group the intent stages by their name or the intent to
      * which the session was switched.</p>
      */
-    inline const AnalyticsIntentStageField& GetName() const{ return m_name; }
+    inline AnalyticsIntentStageField GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsIntentStageField& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsIntentStageField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsIntentStageGroupBySpecification& WithName(const AnalyticsIntentStageField& value) { SetName(value); return *this;}
-    inline AnalyticsIntentStageGroupBySpecification& WithName(AnalyticsIntentStageField&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsIntentStageField value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsIntentStageGroupBySpecification& WithName(AnalyticsIntentStageField value) { SetName(value); return *this;}
     ///@}
   private:
 
-    AnalyticsIntentStageField m_name;
+    AnalyticsIntentStageField m_name{AnalyticsIntentStageField::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

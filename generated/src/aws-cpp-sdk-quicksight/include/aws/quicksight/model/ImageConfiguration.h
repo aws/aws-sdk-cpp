@@ -31,7 +31,7 @@ namespace Model
   class ImageConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ImageConfiguration();
+    AWS_QUICKSIGHT_API ImageConfiguration() = default;
     AWS_QUICKSIGHT_API ImageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ImageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The source of the image.</p>
      */
-    inline const ImageSource& GetSource() const{ return m_source; }
+    inline const ImageSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ImageSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ImageSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ImageConfiguration& WithSource(const ImageSource& value) { SetSource(value); return *this;}
-    inline ImageConfiguration& WithSource(ImageSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ImageSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ImageSource>
+    ImageConfiguration& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,10 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOperatingSystemsRequest::DescribeOperatingSystemsRequest()
-{
-}
-
 Aws::String DescribeOperatingSystemsRequest::SerializePayload() const
 {
   return "{}";

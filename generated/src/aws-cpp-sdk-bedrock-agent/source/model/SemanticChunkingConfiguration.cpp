@@ -18,18 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SemanticChunkingConfiguration::SemanticChunkingConfiguration() : 
-    m_breakpointPercentileThreshold(0),
-    m_breakpointPercentileThresholdHasBeenSet(false),
-    m_bufferSize(0),
-    m_bufferSizeHasBeenSet(false),
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false)
-{
-}
-
 SemanticChunkingConfiguration::SemanticChunkingConfiguration(JsonView jsonValue)
-  : SemanticChunkingConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SemanticChunkingConfiguration& SemanticChunkingConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("breakpointPercentileThreshold"))
   {
     m_breakpointPercentileThreshold = jsonValue.GetInteger("breakpointPercentileThreshold");
-
     m_breakpointPercentileThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bufferSize"))
   {
     m_bufferSize = jsonValue.GetInteger("bufferSize");
-
     m_bufferSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxTokens"))
   {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
-
     m_maxTokensHasBeenSet = true;
   }
-
   return *this;
 }
 

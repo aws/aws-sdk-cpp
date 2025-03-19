@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VgwTelemetry::VgwTelemetry() : 
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_status(TelemetryStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 VgwTelemetry::VgwTelemetry(const XmlNode& xmlNode)
-  : VgwTelemetry()
 {
   *this = xmlNode;
 }
@@ -65,7 +52,7 @@ VgwTelemetry& VgwTelemetry::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = TelemetryStatusMapper::GetTelemetryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");

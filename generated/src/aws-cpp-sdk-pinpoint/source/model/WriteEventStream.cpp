@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-WriteEventStream::WriteEventStream() : 
-    m_destinationStreamArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 WriteEventStream::WriteEventStream(JsonView jsonValue)
-  : WriteEventStream()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WriteEventStream& WriteEventStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationStreamArn"))
   {
     m_destinationStreamArn = jsonValue.GetString("DestinationStreamArn");
-
     m_destinationStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

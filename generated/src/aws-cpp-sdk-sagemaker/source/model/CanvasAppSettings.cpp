@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CanvasAppSettings::CanvasAppSettings() : 
-    m_timeSeriesForecastingSettingsHasBeenSet(false),
-    m_modelRegisterSettingsHasBeenSet(false),
-    m_workspaceSettingsHasBeenSet(false),
-    m_identityProviderOAuthSettingsHasBeenSet(false),
-    m_directDeploySettingsHasBeenSet(false),
-    m_kendraSettingsHasBeenSet(false),
-    m_generativeAiSettingsHasBeenSet(false),
-    m_emrServerlessSettingsHasBeenSet(false)
-{
-}
-
 CanvasAppSettings::CanvasAppSettings(JsonView jsonValue)
-  : CanvasAppSettings()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeSeriesForecastingSettings"))
   {
     m_timeSeriesForecastingSettings = jsonValue.GetObject("TimeSeriesForecastingSettings");
-
     m_timeSeriesForecastingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelRegisterSettings"))
   {
     m_modelRegisterSettings = jsonValue.GetObject("ModelRegisterSettings");
-
     m_modelRegisterSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkspaceSettings"))
   {
     m_workspaceSettings = jsonValue.GetObject("WorkspaceSettings");
-
     m_workspaceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderOAuthSettings"))
   {
     Aws::Utils::Array<JsonView> identityProviderOAuthSettingsJsonList = jsonValue.GetArray("IdentityProviderOAuthSettings");
@@ -68,35 +49,26 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     }
     m_identityProviderOAuthSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectDeploySettings"))
   {
     m_directDeploySettings = jsonValue.GetObject("DirectDeploySettings");
-
     m_directDeploySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KendraSettings"))
   {
     m_kendraSettings = jsonValue.GetObject("KendraSettings");
-
     m_kendraSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerativeAiSettings"))
   {
     m_generativeAiSettings = jsonValue.GetObject("GenerativeAiSettings");
-
     m_generativeAiSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmrServerlessSettings"))
   {
     m_emrServerlessSettings = jsonValue.GetObject("EmrServerlessSettings");
-
     m_emrServerlessSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

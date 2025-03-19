@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSessionRequest::GetSessionRequest() : 
-    m_botNameHasBeenSet(false),
-    m_botAliasHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_checkpointLabelFilterHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionRequest::SerializePayload() const
 {
   return {};

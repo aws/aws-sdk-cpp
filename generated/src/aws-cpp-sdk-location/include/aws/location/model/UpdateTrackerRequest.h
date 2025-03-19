@@ -22,7 +22,7 @@ namespace Model
   class UpdateTrackerRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API UpdateTrackerRequest();
+    AWS_LOCATIONSERVICE_API UpdateTrackerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The name of the tracker resource to update.</p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const Aws::String& GetTrackerName() const { return m_trackerName; }
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-    inline UpdateTrackerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-    inline UpdateTrackerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-    inline UpdateTrackerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    template<typename TrackerNameT = Aws::String>
+    void SetTrackerName(TrackerNameT&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::forward<TrackerNameT>(value); }
+    template<typename TrackerNameT = Aws::String>
+    UpdateTrackerRequest& WithTrackerName(TrackerNameT&& value) { SetTrackerName(std::forward<TrackerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Updates the description for the tracker resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateTrackerRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateTrackerRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateTrackerRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateTrackerRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * a map, and can help control costs by reducing the number of geofence
      * evaluations. </p> </li> </ul>
      */
-    inline const PositionFiltering& GetPositionFiltering() const{ return m_positionFiltering; }
+    inline PositionFiltering GetPositionFiltering() const { return m_positionFiltering; }
     inline bool PositionFilteringHasBeenSet() const { return m_positionFilteringHasBeenSet; }
-    inline void SetPositionFiltering(const PositionFiltering& value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = value; }
-    inline void SetPositionFiltering(PositionFiltering&& value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = std::move(value); }
-    inline UpdateTrackerRequest& WithPositionFiltering(const PositionFiltering& value) { SetPositionFiltering(value); return *this;}
-    inline UpdateTrackerRequest& WithPositionFiltering(PositionFiltering&& value) { SetPositionFiltering(std::move(value)); return *this;}
+    inline void SetPositionFiltering(PositionFiltering value) { m_positionFilteringHasBeenSet = true; m_positionFiltering = value; }
+    inline UpdateTrackerRequest& WithPositionFiltering(PositionFiltering value) { SetPositionFiltering(value); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +92,7 @@ namespace Model
      * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
      * Those events are always sent to EventBridge.</p> 
      */
-    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+    inline bool GetEventBridgeEnabled() const { return m_eventBridgeEnabled; }
     inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
     inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
     inline UpdateTrackerRequest& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
@@ -111,7 +105,7 @@ namespace Model
      * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
      * you are using a KMS customer managed key.</p>
      */
-    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
+    inline bool GetKmsKeyEnableGeospatialQueries() const { return m_kmsKeyEnableGeospatialQueries; }
     inline bool KmsKeyEnableGeospatialQueriesHasBeenSet() const { return m_kmsKeyEnableGeospatialQueriesHasBeenSet; }
     inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
     inline UpdateTrackerRequest& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
@@ -124,13 +118,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    PositionFiltering m_positionFiltering;
+    PositionFiltering m_positionFiltering{PositionFiltering::NOT_SET};
     bool m_positionFilteringHasBeenSet = false;
 
-    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabled{false};
     bool m_eventBridgeEnabledHasBeenSet = false;
 
-    bool m_kmsKeyEnableGeospatialQueries;
+    bool m_kmsKeyEnableGeospatialQueries{false};
     bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
   };
 

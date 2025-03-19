@@ -18,16 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-Association::Association() : 
-    m_customDomainCertificateArnHasBeenSet(false),
-    m_customDomainCertificateExpiryTimeHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Association::Association(JsonView jsonValue)
-  : Association()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Association& Association::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customDomainCertificateArn"))
   {
     m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");
-
     m_customDomainCertificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainCertificateExpiryTime"))
   {
     m_customDomainCertificateExpiryTime = jsonValue.GetString("customDomainCertificateExpiryTime");
-
     m_customDomainCertificateExpiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainName"))
   {
     m_customDomainName = jsonValue.GetString("customDomainName");
-
     m_customDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

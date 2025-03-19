@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CompleteAttachedFileUploadRequest::CompleteAttachedFileUploadRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_fileIdHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false)
-{
-}
-
 Aws::String CompleteAttachedFileUploadRequest::SerializePayload() const
 {
   return {};

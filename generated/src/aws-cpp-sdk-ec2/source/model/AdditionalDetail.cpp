@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AdditionalDetail::AdditionalDetail() : 
-    m_additionalDetailTypeHasBeenSet(false),
-    m_componentHasBeenSet(false),
-    m_vpcEndpointServiceHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false),
-    m_ruleGroupTypePairsHasBeenSet(false),
-    m_ruleGroupRuleOptionsPairsHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false)
-{
-}
-
 AdditionalDetail::AdditionalDetail(const XmlNode& xmlNode)
-  : AdditionalDetail()
 {
   *this = xmlNode;
 }
@@ -66,6 +53,7 @@ AdditionalDetail& AdditionalDetail::operator =(const XmlNode& xmlNode)
     if(!ruleOptionsNode.IsNull())
     {
       XmlNode ruleOptionsMember = ruleOptionsNode.FirstChild("item");
+      m_ruleOptionsHasBeenSet = !ruleOptionsMember.IsNull();
       while(!ruleOptionsMember.IsNull())
       {
         m_ruleOptions.push_back(ruleOptionsMember);
@@ -78,6 +66,7 @@ AdditionalDetail& AdditionalDetail::operator =(const XmlNode& xmlNode)
     if(!ruleGroupTypePairsNode.IsNull())
     {
       XmlNode ruleGroupTypePairsMember = ruleGroupTypePairsNode.FirstChild("item");
+      m_ruleGroupTypePairsHasBeenSet = !ruleGroupTypePairsMember.IsNull();
       while(!ruleGroupTypePairsMember.IsNull())
       {
         m_ruleGroupTypePairs.push_back(ruleGroupTypePairsMember);
@@ -90,6 +79,7 @@ AdditionalDetail& AdditionalDetail::operator =(const XmlNode& xmlNode)
     if(!ruleGroupRuleOptionsPairsNode.IsNull())
     {
       XmlNode ruleGroupRuleOptionsPairsMember = ruleGroupRuleOptionsPairsNode.FirstChild("item");
+      m_ruleGroupRuleOptionsPairsHasBeenSet = !ruleGroupRuleOptionsPairsMember.IsNull();
       while(!ruleGroupRuleOptionsPairsMember.IsNull())
       {
         m_ruleGroupRuleOptionsPairs.push_back(ruleGroupRuleOptionsPairsMember);
@@ -108,6 +98,7 @@ AdditionalDetail& AdditionalDetail::operator =(const XmlNode& xmlNode)
     if(!loadBalancersNode.IsNull())
     {
       XmlNode loadBalancersMember = loadBalancersNode.FirstChild("item");
+      m_loadBalancersHasBeenSet = !loadBalancersMember.IsNull();
       while(!loadBalancersMember.IsNull())
       {
         m_loadBalancers.push_back(loadBalancersMember);

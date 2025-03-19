@@ -32,7 +32,7 @@ namespace Model
   class PipeTargetStateMachineParameters
   {
   public:
-    AWS_PIPES_API PipeTargetStateMachineParameters();
+    AWS_PIPES_API PipeTargetStateMachineParameters() = default;
     AWS_PIPES_API PipeTargetStateMachineParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetStateMachineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,16 +54,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
      * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
-    inline const PipeTargetInvocationType& GetInvocationType() const{ return m_invocationType; }
+    inline PipeTargetInvocationType GetInvocationType() const { return m_invocationType; }
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
-    inline void SetInvocationType(const PipeTargetInvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
-    inline void SetInvocationType(PipeTargetInvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
-    inline PipeTargetStateMachineParameters& WithInvocationType(const PipeTargetInvocationType& value) { SetInvocationType(value); return *this;}
-    inline PipeTargetStateMachineParameters& WithInvocationType(PipeTargetInvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
+    inline void SetInvocationType(PipeTargetInvocationType value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
+    inline PipeTargetStateMachineParameters& WithInvocationType(PipeTargetInvocationType value) { SetInvocationType(value); return *this;}
     ///@}
   private:
 
-    PipeTargetInvocationType m_invocationType;
+    PipeTargetInvocationType m_invocationType{PipeTargetInvocationType::NOT_SET};
     bool m_invocationTypeHasBeenSet = false;
   };
 

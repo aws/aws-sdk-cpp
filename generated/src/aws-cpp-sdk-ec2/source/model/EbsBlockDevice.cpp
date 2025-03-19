@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsBlockDevice::EbsBlockDevice() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false)
-{
-}
-
 EbsBlockDevice::EbsBlockDevice(const XmlNode& xmlNode)
-  : EbsBlockDevice()
 {
   *this = xmlNode;
 }
@@ -78,7 +58,7 @@ EbsBlockDevice& EbsBlockDevice::operator =(const XmlNode& xmlNode)
     XmlNode volumeTypeNode = resultNode.FirstChild("volumeType");
     if(!volumeTypeNode.IsNull())
     {
-      m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
+      m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()));
       m_volumeTypeHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");

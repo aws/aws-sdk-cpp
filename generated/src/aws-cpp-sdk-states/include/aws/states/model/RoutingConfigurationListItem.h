@@ -34,7 +34,7 @@ namespace Model
   class RoutingConfigurationListItem
   {
   public:
-    AWS_SFN_API RoutingConfigurationListItem();
+    AWS_SFN_API RoutingConfigurationListItem() = default;
     AWS_SFN_API RoutingConfigurationListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API RoutingConfigurationListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * a second version, it must belong to the same state machine as the first
      * version.</p>
      */
-    inline const Aws::String& GetStateMachineVersionArn() const{ return m_stateMachineVersionArn; }
+    inline const Aws::String& GetStateMachineVersionArn() const { return m_stateMachineVersionArn; }
     inline bool StateMachineVersionArnHasBeenSet() const { return m_stateMachineVersionArnHasBeenSet; }
-    inline void SetStateMachineVersionArn(const Aws::String& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = value; }
-    inline void SetStateMachineVersionArn(Aws::String&& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = std::move(value); }
-    inline void SetStateMachineVersionArn(const char* value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn.assign(value); }
-    inline RoutingConfigurationListItem& WithStateMachineVersionArn(const Aws::String& value) { SetStateMachineVersionArn(value); return *this;}
-    inline RoutingConfigurationListItem& WithStateMachineVersionArn(Aws::String&& value) { SetStateMachineVersionArn(std::move(value)); return *this;}
-    inline RoutingConfigurationListItem& WithStateMachineVersionArn(const char* value) { SetStateMachineVersionArn(value); return *this;}
+    template<typename StateMachineVersionArnT = Aws::String>
+    void SetStateMachineVersionArn(StateMachineVersionArnT&& value) { m_stateMachineVersionArnHasBeenSet = true; m_stateMachineVersionArn = std::forward<StateMachineVersionArnT>(value); }
+    template<typename StateMachineVersionArnT = Aws::String>
+    RoutingConfigurationListItem& WithStateMachineVersionArn(StateMachineVersionArnT&& value) { SetStateMachineVersionArn(std::forward<StateMachineVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <p>The percentage of traffic you want to route to a state machine version. The
      * sum of the weights in the routing configuration must be equal to 100.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline RoutingConfigurationListItem& WithWeight(int value) { SetWeight(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
     Aws::String m_stateMachineVersionArn;
     bool m_stateMachineVersionArnHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
   };
 

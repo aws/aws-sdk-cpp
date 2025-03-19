@@ -29,7 +29,7 @@ namespace Model
   class ListTopicRuleDestinationsResult
   {
   public:
-    AWS_IOT_API ListTopicRuleDestinationsResult();
+    AWS_IOT_API ListTopicRuleDestinationsResult() = default;
     AWS_IOT_API ListTopicRuleDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListTopicRuleDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about a topic rule destination.</p>
      */
-    inline const Aws::Vector<TopicRuleDestinationSummary>& GetDestinationSummaries() const{ return m_destinationSummaries; }
-    inline void SetDestinationSummaries(const Aws::Vector<TopicRuleDestinationSummary>& value) { m_destinationSummaries = value; }
-    inline void SetDestinationSummaries(Aws::Vector<TopicRuleDestinationSummary>&& value) { m_destinationSummaries = std::move(value); }
-    inline ListTopicRuleDestinationsResult& WithDestinationSummaries(const Aws::Vector<TopicRuleDestinationSummary>& value) { SetDestinationSummaries(value); return *this;}
-    inline ListTopicRuleDestinationsResult& WithDestinationSummaries(Aws::Vector<TopicRuleDestinationSummary>&& value) { SetDestinationSummaries(std::move(value)); return *this;}
-    inline ListTopicRuleDestinationsResult& AddDestinationSummaries(const TopicRuleDestinationSummary& value) { m_destinationSummaries.push_back(value); return *this; }
-    inline ListTopicRuleDestinationsResult& AddDestinationSummaries(TopicRuleDestinationSummary&& value) { m_destinationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TopicRuleDestinationSummary>& GetDestinationSummaries() const { return m_destinationSummaries; }
+    template<typename DestinationSummariesT = Aws::Vector<TopicRuleDestinationSummary>>
+    void SetDestinationSummaries(DestinationSummariesT&& value) { m_destinationSummariesHasBeenSet = true; m_destinationSummaries = std::forward<DestinationSummariesT>(value); }
+    template<typename DestinationSummariesT = Aws::Vector<TopicRuleDestinationSummary>>
+    ListTopicRuleDestinationsResult& WithDestinationSummaries(DestinationSummariesT&& value) { SetDestinationSummaries(std::forward<DestinationSummariesT>(value)); return *this;}
+    template<typename DestinationSummariesT = TopicRuleDestinationSummary>
+    ListTopicRuleDestinationsResult& AddDestinationSummaries(DestinationSummariesT&& value) { m_destinationSummariesHasBeenSet = true; m_destinationSummaries.emplace_back(std::forward<DestinationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to get the next set of results, or <b>null</b> if there are
      * no additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTopicRuleDestinationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTopicRuleDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTopicRuleDestinationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTopicRuleDestinationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTopicRuleDestinationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTopicRuleDestinationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTopicRuleDestinationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTopicRuleDestinationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TopicRuleDestinationSummary> m_destinationSummaries;
+    bool m_destinationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

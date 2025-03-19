@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainServiceSoftwareOptions::AwsElasticsearchDomainServiceSoftwareOptions() : 
-    m_automatedUpdateDateHasBeenSet(false),
-    m_cancellable(false),
-    m_cancellableHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_newVersionHasBeenSet(false),
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_updateStatusHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainServiceSoftwareOptions::AwsElasticsearchDomainServiceSoftwareOptions(JsonView jsonValue)
-  : AwsElasticsearchDomainServiceSoftwareOptions()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ AwsElasticsearchDomainServiceSoftwareOptions& AwsElasticsearchDomainServiceSoftw
   if(jsonValue.ValueExists("AutomatedUpdateDate"))
   {
     m_automatedUpdateDate = jsonValue.GetString("AutomatedUpdateDate");
-
     m_automatedUpdateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cancellable"))
   {
     m_cancellable = jsonValue.GetBool("Cancellable");
-
     m_cancellableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentVersion"))
   {
     m_currentVersion = jsonValue.GetString("CurrentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewVersion"))
   {
     m_newVersion = jsonValue.GetString("NewVersion");
-
     m_newVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateAvailable"))
   {
     m_updateAvailable = jsonValue.GetBool("UpdateAvailable");
-
     m_updateAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = jsonValue.GetString("UpdateStatus");
-
     m_updateStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

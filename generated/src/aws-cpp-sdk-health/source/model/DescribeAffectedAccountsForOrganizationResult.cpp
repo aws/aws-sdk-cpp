@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult() : 
-    m_eventScopeCode(EventScopeCode::NOT_SET)
-{
-}
-
 DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAffectedAccountsForOrganizationResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ DescribeAffectedAccountsForOrganizationResult& DescribeAffectedAccountsForOrgani
     {
       m_affectedAccounts.push_back(affectedAccountsJsonList[affectedAccountsIndex].AsString());
     }
+    m_affectedAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventScopeCode"))
   {
     m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
-
+    m_eventScopeCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

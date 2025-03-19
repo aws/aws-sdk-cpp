@@ -28,35 +28,35 @@ namespace Model
   class UpdateSiteRackPhysicalPropertiesResult
   {
   public:
-    AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult();
+    AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult() = default;
     AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Site& GetSite() const{ return m_site; }
-    inline void SetSite(const Site& value) { m_site = value; }
-    inline void SetSite(Site&& value) { m_site = std::move(value); }
-    inline UpdateSiteRackPhysicalPropertiesResult& WithSite(const Site& value) { SetSite(value); return *this;}
-    inline UpdateSiteRackPhysicalPropertiesResult& WithSite(Site&& value) { SetSite(std::move(value)); return *this;}
+    inline const Site& GetSite() const { return m_site; }
+    template<typename SiteT = Site>
+    void SetSite(SiteT&& value) { m_siteHasBeenSet = true; m_site = std::forward<SiteT>(value); }
+    template<typename SiteT = Site>
+    UpdateSiteRackPhysicalPropertiesResult& WithSite(SiteT&& value) { SetSite(std::forward<SiteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSiteRackPhysicalPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSiteRackPhysicalPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSiteRackPhysicalPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSiteRackPhysicalPropertiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Site m_site;
+    bool m_siteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

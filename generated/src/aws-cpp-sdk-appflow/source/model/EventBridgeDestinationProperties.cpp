@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-EventBridgeDestinationProperties::EventBridgeDestinationProperties() : 
-    m_objectHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false)
-{
-}
-
 EventBridgeDestinationProperties::EventBridgeDestinationProperties(JsonView jsonValue)
-  : EventBridgeDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventBridgeDestinationProperties& EventBridgeDestinationProperties::operator =(J
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-Metric::Metric() : 
-    m_frameNameHasBeenSet(false),
-    m_threadStatesHasBeenSet(false),
-    m_type(MetricType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Metric::Metric(JsonView jsonValue)
-  : Metric()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Metric& Metric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("frameName"))
   {
     m_frameName = jsonValue.GetString("frameName");
-
     m_frameNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threadStates"))
   {
     Aws::Utils::Array<JsonView> threadStatesJsonList = jsonValue.GetArray("threadStates");
@@ -50,14 +39,11 @@ Metric& Metric::operator =(JsonView jsonValue)
     }
     m_threadStatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MetricTypeMapper::GetMetricTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

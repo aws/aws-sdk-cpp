@@ -32,7 +32,7 @@ namespace Model
   class AwsElasticsearchDomainLogPublishingOptions
   {
   public:
-    AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptions() = default;
     AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,34 +42,34 @@ namespace Model
     /**
      * <p>Configures the OpenSearch index logs publishing.</p>
      */
-    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetIndexSlowLogs() const{ return m_indexSlowLogs; }
+    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetIndexSlowLogs() const { return m_indexSlowLogs; }
     inline bool IndexSlowLogsHasBeenSet() const { return m_indexSlowLogsHasBeenSet; }
-    inline void SetIndexSlowLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { m_indexSlowLogsHasBeenSet = true; m_indexSlowLogs = value; }
-    inline void SetIndexSlowLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { m_indexSlowLogsHasBeenSet = true; m_indexSlowLogs = std::move(value); }
-    inline AwsElasticsearchDomainLogPublishingOptions& WithIndexSlowLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { SetIndexSlowLogs(value); return *this;}
-    inline AwsElasticsearchDomainLogPublishingOptions& WithIndexSlowLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { SetIndexSlowLogs(std::move(value)); return *this;}
+    template<typename IndexSlowLogsT = AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    void SetIndexSlowLogs(IndexSlowLogsT&& value) { m_indexSlowLogsHasBeenSet = true; m_indexSlowLogs = std::forward<IndexSlowLogsT>(value); }
+    template<typename IndexSlowLogsT = AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    AwsElasticsearchDomainLogPublishingOptions& WithIndexSlowLogs(IndexSlowLogsT&& value) { SetIndexSlowLogs(std::forward<IndexSlowLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configures the OpenSearch search slow log publishing.</p>
      */
-    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetSearchSlowLogs() const{ return m_searchSlowLogs; }
+    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetSearchSlowLogs() const { return m_searchSlowLogs; }
     inline bool SearchSlowLogsHasBeenSet() const { return m_searchSlowLogsHasBeenSet; }
-    inline void SetSearchSlowLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { m_searchSlowLogsHasBeenSet = true; m_searchSlowLogs = value; }
-    inline void SetSearchSlowLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { m_searchSlowLogsHasBeenSet = true; m_searchSlowLogs = std::move(value); }
-    inline AwsElasticsearchDomainLogPublishingOptions& WithSearchSlowLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { SetSearchSlowLogs(value); return *this;}
-    inline AwsElasticsearchDomainLogPublishingOptions& WithSearchSlowLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { SetSearchSlowLogs(std::move(value)); return *this;}
+    template<typename SearchSlowLogsT = AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    void SetSearchSlowLogs(SearchSlowLogsT&& value) { m_searchSlowLogsHasBeenSet = true; m_searchSlowLogs = std::forward<SearchSlowLogsT>(value); }
+    template<typename SearchSlowLogsT = AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    AwsElasticsearchDomainLogPublishingOptions& WithSearchSlowLogs(SearchSlowLogsT&& value) { SetSearchSlowLogs(std::forward<SearchSlowLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetAuditLogs() const{ return m_auditLogs; }
+    inline const AwsElasticsearchDomainLogPublishingOptionsLogConfig& GetAuditLogs() const { return m_auditLogs; }
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-    inline void SetAuditLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-    inline void SetAuditLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-    inline AwsElasticsearchDomainLogPublishingOptions& WithAuditLogs(const AwsElasticsearchDomainLogPublishingOptionsLogConfig& value) { SetAuditLogs(value); return *this;}
-    inline AwsElasticsearchDomainLogPublishingOptions& WithAuditLogs(AwsElasticsearchDomainLogPublishingOptionsLogConfig&& value) { SetAuditLogs(std::move(value)); return *this;}
+    template<typename AuditLogsT = AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    void SetAuditLogs(AuditLogsT&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::forward<AuditLogsT>(value); }
+    template<typename AuditLogsT = AwsElasticsearchDomainLogPublishingOptionsLogConfig>
+    AwsElasticsearchDomainLogPublishingOptions& WithAuditLogs(AuditLogsT&& value) { SetAuditLogs(std::forward<AuditLogsT>(value)); return *this;}
     ///@}
   private:
 

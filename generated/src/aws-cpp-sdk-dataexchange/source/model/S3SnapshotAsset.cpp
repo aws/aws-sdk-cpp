@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-S3SnapshotAsset::S3SnapshotAsset() : 
-    m_size(0.0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 S3SnapshotAsset::S3SnapshotAsset(JsonView jsonValue)
-  : S3SnapshotAsset()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ S3SnapshotAsset& S3SnapshotAsset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetDouble("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

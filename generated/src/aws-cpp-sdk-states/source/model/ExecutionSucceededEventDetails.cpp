@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ExecutionSucceededEventDetails::ExecutionSucceededEventDetails() : 
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false)
-{
-}
-
 ExecutionSucceededEventDetails::ExecutionSucceededEventDetails(JsonView jsonValue)
-  : ExecutionSucceededEventDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExecutionSucceededEventDetails& ExecutionSucceededEventDetails::operator =(JsonV
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetString("output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputDetails"))
   {
     m_outputDetails = jsonValue.GetObject("outputDetails");
-
     m_outputDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

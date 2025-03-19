@@ -12,15 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApiKeyRequest::UpdateApiKeyRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expires(0),
-    m_expiresHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApiKeyRequest::SerializePayload() const
 {
   JsonValue payload;

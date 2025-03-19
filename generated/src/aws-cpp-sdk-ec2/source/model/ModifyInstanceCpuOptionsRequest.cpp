@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceCpuOptionsRequest::ModifyInstanceCpuOptionsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_coreCount(0),
-    m_coreCountHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceCpuOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

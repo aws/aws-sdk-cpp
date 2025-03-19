@@ -32,7 +32,7 @@ namespace Model
   class OrchestrationConfiguration
   {
   public:
-    AWS_BEDROCK_API OrchestrationConfiguration();
+    AWS_BEDROCK_API OrchestrationConfiguration() = default;
     AWS_BEDROCK_API OrchestrationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API OrchestrationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains configuration details for transforming the prompt.</p>
      */
-    inline const QueryTransformationConfiguration& GetQueryTransformationConfiguration() const{ return m_queryTransformationConfiguration; }
+    inline const QueryTransformationConfiguration& GetQueryTransformationConfiguration() const { return m_queryTransformationConfiguration; }
     inline bool QueryTransformationConfigurationHasBeenSet() const { return m_queryTransformationConfigurationHasBeenSet; }
-    inline void SetQueryTransformationConfiguration(const QueryTransformationConfiguration& value) { m_queryTransformationConfigurationHasBeenSet = true; m_queryTransformationConfiguration = value; }
-    inline void SetQueryTransformationConfiguration(QueryTransformationConfiguration&& value) { m_queryTransformationConfigurationHasBeenSet = true; m_queryTransformationConfiguration = std::move(value); }
-    inline OrchestrationConfiguration& WithQueryTransformationConfiguration(const QueryTransformationConfiguration& value) { SetQueryTransformationConfiguration(value); return *this;}
-    inline OrchestrationConfiguration& WithQueryTransformationConfiguration(QueryTransformationConfiguration&& value) { SetQueryTransformationConfiguration(std::move(value)); return *this;}
+    template<typename QueryTransformationConfigurationT = QueryTransformationConfiguration>
+    void SetQueryTransformationConfiguration(QueryTransformationConfigurationT&& value) { m_queryTransformationConfigurationHasBeenSet = true; m_queryTransformationConfiguration = std::forward<QueryTransformationConfigurationT>(value); }
+    template<typename QueryTransformationConfigurationT = QueryTransformationConfiguration>
+    OrchestrationConfiguration& WithQueryTransformationConfiguration(QueryTransformationConfigurationT&& value) { SetQueryTransformationConfiguration(std::forward<QueryTransformationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

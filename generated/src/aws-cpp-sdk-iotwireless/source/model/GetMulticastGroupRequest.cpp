@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMulticastGroupRequest::GetMulticastGroupRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetMulticastGroupRequest::SerializePayload() const
 {
   return {};

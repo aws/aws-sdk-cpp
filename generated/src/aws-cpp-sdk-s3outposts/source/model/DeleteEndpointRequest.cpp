@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteEndpointRequest::DeleteEndpointRequest() : 
-    m_endpointIdHasBeenSet(false),
-    m_outpostIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEndpointRequest::SerializePayload() const
 {
   return {};

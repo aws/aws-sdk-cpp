@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SmallMultiplesAxisProperties::SmallMultiplesAxisProperties() : 
-    m_scale(SmallMultiplesAxisScale::NOT_SET),
-    m_scaleHasBeenSet(false),
-    m_placement(SmallMultiplesAxisPlacement::NOT_SET),
-    m_placementHasBeenSet(false)
-{
-}
-
 SmallMultiplesAxisProperties::SmallMultiplesAxisProperties(JsonView jsonValue)
-  : SmallMultiplesAxisProperties()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SmallMultiplesAxisProperties& SmallMultiplesAxisProperties::operator =(JsonView 
   if(jsonValue.ValueExists("Scale"))
   {
     m_scale = SmallMultiplesAxisScaleMapper::GetSmallMultiplesAxisScaleForName(jsonValue.GetString("Scale"));
-
     m_scaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Placement"))
   {
     m_placement = SmallMultiplesAxisPlacementMapper::GetSmallMultiplesAxisPlacementForName(jsonValue.GetString("Placement"));
-
     m_placementHasBeenSet = true;
   }
-
   return *this;
 }
 

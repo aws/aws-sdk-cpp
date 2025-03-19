@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters() : 
-    m_clientIDHasBeenSet(false)
-{
-}
-
 ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters(JsonView jsonValue)
-  : ConnectionOAuthClientResponseParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConnectionOAuthClientResponseParameters& ConnectionOAuthClientResponseParameters
   if(jsonValue.ValueExists("ClientID"))
   {
     m_clientID = jsonValue.GetString("ClientID");
-
     m_clientIDHasBeenSet = true;
   }
-
   return *this;
 }
 

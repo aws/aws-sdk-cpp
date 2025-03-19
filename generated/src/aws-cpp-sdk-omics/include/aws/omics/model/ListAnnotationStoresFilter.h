@@ -31,7 +31,7 @@ namespace Model
   class ListAnnotationStoresFilter
   {
   public:
-    AWS_OMICS_API ListAnnotationStoresFilter();
+    AWS_OMICS_API ListAnnotationStoresFilter() = default;
     AWS_OMICS_API ListAnnotationStoresFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ListAnnotationStoresFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>A status to filter on.</p>
      */
-    inline const StoreStatus& GetStatus() const{ return m_status; }
+    inline StoreStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StoreStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StoreStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListAnnotationStoresFilter& WithStatus(const StoreStatus& value) { SetStatus(value); return *this;}
-    inline ListAnnotationStoresFilter& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StoreStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListAnnotationStoresFilter& WithStatus(StoreStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    StoreStatus m_status;
+    StoreStatus m_status{StoreStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

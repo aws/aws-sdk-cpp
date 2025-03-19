@@ -32,7 +32,7 @@ namespace Model
   class SouthKoreaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API SouthKoreaAdditionalInfo();
+    AWS_TAXSETTINGS_API SouthKoreaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API SouthKoreaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API SouthKoreaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The business legal name based on the most recently uploaded tax registration
      * certificate.</p>
      */
-    inline const Aws::String& GetBusinessRepresentativeName() const{ return m_businessRepresentativeName; }
+    inline const Aws::String& GetBusinessRepresentativeName() const { return m_businessRepresentativeName; }
     inline bool BusinessRepresentativeNameHasBeenSet() const { return m_businessRepresentativeNameHasBeenSet; }
-    inline void SetBusinessRepresentativeName(const Aws::String& value) { m_businessRepresentativeNameHasBeenSet = true; m_businessRepresentativeName = value; }
-    inline void SetBusinessRepresentativeName(Aws::String&& value) { m_businessRepresentativeNameHasBeenSet = true; m_businessRepresentativeName = std::move(value); }
-    inline void SetBusinessRepresentativeName(const char* value) { m_businessRepresentativeNameHasBeenSet = true; m_businessRepresentativeName.assign(value); }
-    inline SouthKoreaAdditionalInfo& WithBusinessRepresentativeName(const Aws::String& value) { SetBusinessRepresentativeName(value); return *this;}
-    inline SouthKoreaAdditionalInfo& WithBusinessRepresentativeName(Aws::String&& value) { SetBusinessRepresentativeName(std::move(value)); return *this;}
-    inline SouthKoreaAdditionalInfo& WithBusinessRepresentativeName(const char* value) { SetBusinessRepresentativeName(value); return *this;}
+    template<typename BusinessRepresentativeNameT = Aws::String>
+    void SetBusinessRepresentativeName(BusinessRepresentativeNameT&& value) { m_businessRepresentativeNameHasBeenSet = true; m_businessRepresentativeName = std::forward<BusinessRepresentativeNameT>(value); }
+    template<typename BusinessRepresentativeNameT = Aws::String>
+    SouthKoreaAdditionalInfo& WithBusinessRepresentativeName(BusinessRepresentativeNameT&& value) { SetBusinessRepresentativeName(std::forward<BusinessRepresentativeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Item of business based on the most recently uploaded tax registration
      * certificate.</p>
      */
-    inline const Aws::String& GetItemOfBusiness() const{ return m_itemOfBusiness; }
+    inline const Aws::String& GetItemOfBusiness() const { return m_itemOfBusiness; }
     inline bool ItemOfBusinessHasBeenSet() const { return m_itemOfBusinessHasBeenSet; }
-    inline void SetItemOfBusiness(const Aws::String& value) { m_itemOfBusinessHasBeenSet = true; m_itemOfBusiness = value; }
-    inline void SetItemOfBusiness(Aws::String&& value) { m_itemOfBusinessHasBeenSet = true; m_itemOfBusiness = std::move(value); }
-    inline void SetItemOfBusiness(const char* value) { m_itemOfBusinessHasBeenSet = true; m_itemOfBusiness.assign(value); }
-    inline SouthKoreaAdditionalInfo& WithItemOfBusiness(const Aws::String& value) { SetItemOfBusiness(value); return *this;}
-    inline SouthKoreaAdditionalInfo& WithItemOfBusiness(Aws::String&& value) { SetItemOfBusiness(std::move(value)); return *this;}
-    inline SouthKoreaAdditionalInfo& WithItemOfBusiness(const char* value) { SetItemOfBusiness(value); return *this;}
+    template<typename ItemOfBusinessT = Aws::String>
+    void SetItemOfBusiness(ItemOfBusinessT&& value) { m_itemOfBusinessHasBeenSet = true; m_itemOfBusiness = std::forward<ItemOfBusinessT>(value); }
+    template<typename ItemOfBusinessT = Aws::String>
+    SouthKoreaAdditionalInfo& WithItemOfBusiness(ItemOfBusinessT&& value) { SetItemOfBusiness(std::forward<ItemOfBusinessT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>Line of business based on the most recently uploaded tax registration
      * certificate.</p>
      */
-    inline const Aws::String& GetLineOfBusiness() const{ return m_lineOfBusiness; }
+    inline const Aws::String& GetLineOfBusiness() const { return m_lineOfBusiness; }
     inline bool LineOfBusinessHasBeenSet() const { return m_lineOfBusinessHasBeenSet; }
-    inline void SetLineOfBusiness(const Aws::String& value) { m_lineOfBusinessHasBeenSet = true; m_lineOfBusiness = value; }
-    inline void SetLineOfBusiness(Aws::String&& value) { m_lineOfBusinessHasBeenSet = true; m_lineOfBusiness = std::move(value); }
-    inline void SetLineOfBusiness(const char* value) { m_lineOfBusinessHasBeenSet = true; m_lineOfBusiness.assign(value); }
-    inline SouthKoreaAdditionalInfo& WithLineOfBusiness(const Aws::String& value) { SetLineOfBusiness(value); return *this;}
-    inline SouthKoreaAdditionalInfo& WithLineOfBusiness(Aws::String&& value) { SetLineOfBusiness(std::move(value)); return *this;}
-    inline SouthKoreaAdditionalInfo& WithLineOfBusiness(const char* value) { SetLineOfBusiness(value); return *this;}
+    template<typename LineOfBusinessT = Aws::String>
+    void SetLineOfBusiness(LineOfBusinessT&& value) { m_lineOfBusinessHasBeenSet = true; m_lineOfBusiness = std::forward<LineOfBusinessT>(value); }
+    template<typename LineOfBusinessT = Aws::String>
+    SouthKoreaAdditionalInfo& WithLineOfBusiness(LineOfBusinessT&& value) { SetLineOfBusiness(std::forward<LineOfBusinessT>(value)); return *this;}
     ///@}
   private:
 

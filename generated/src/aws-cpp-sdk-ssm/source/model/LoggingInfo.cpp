@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-LoggingInfo::LoggingInfo() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_s3RegionHasBeenSet(false)
-{
-}
-
 LoggingInfo::LoggingInfo(JsonView jsonValue)
-  : LoggingInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LoggingInfo& LoggingInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Region"))
   {
     m_s3Region = jsonValue.GetString("S3Region");
-
     m_s3RegionHasBeenSet = true;
   }
-
   return *this;
 }
 

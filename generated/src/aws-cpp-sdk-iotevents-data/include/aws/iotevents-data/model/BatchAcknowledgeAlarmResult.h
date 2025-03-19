@@ -29,7 +29,7 @@ namespace Model
   class BatchAcknowledgeAlarmResult
   {
   public:
-    AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmResult();
+    AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmResult() = default;
     AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * are no errors. Each error entry contains an entry ID that helps you identify the
      * entry that failed.</p>
      */
-    inline const Aws::Vector<BatchAlarmActionErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
-    inline void SetErrorEntries(const Aws::Vector<BatchAlarmActionErrorEntry>& value) { m_errorEntries = value; }
-    inline void SetErrorEntries(Aws::Vector<BatchAlarmActionErrorEntry>&& value) { m_errorEntries = std::move(value); }
-    inline BatchAcknowledgeAlarmResult& WithErrorEntries(const Aws::Vector<BatchAlarmActionErrorEntry>& value) { SetErrorEntries(value); return *this;}
-    inline BatchAcknowledgeAlarmResult& WithErrorEntries(Aws::Vector<BatchAlarmActionErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
-    inline BatchAcknowledgeAlarmResult& AddErrorEntries(const BatchAlarmActionErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
-    inline BatchAcknowledgeAlarmResult& AddErrorEntries(BatchAlarmActionErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchAlarmActionErrorEntry>& GetErrorEntries() const { return m_errorEntries; }
+    template<typename ErrorEntriesT = Aws::Vector<BatchAlarmActionErrorEntry>>
+    void SetErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries = std::forward<ErrorEntriesT>(value); }
+    template<typename ErrorEntriesT = Aws::Vector<BatchAlarmActionErrorEntry>>
+    BatchAcknowledgeAlarmResult& WithErrorEntries(ErrorEntriesT&& value) { SetErrorEntries(std::forward<ErrorEntriesT>(value)); return *this;}
+    template<typename ErrorEntriesT = BatchAlarmActionErrorEntry>
+    BatchAcknowledgeAlarmResult& AddErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries.emplace_back(std::forward<ErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchAcknowledgeAlarmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchAcknowledgeAlarmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchAcknowledgeAlarmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchAcknowledgeAlarmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchAlarmActionErrorEntry> m_errorEntries;
+    bool m_errorEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

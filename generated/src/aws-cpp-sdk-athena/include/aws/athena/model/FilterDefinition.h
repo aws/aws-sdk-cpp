@@ -31,7 +31,7 @@ namespace Model
   class FilterDefinition
   {
   public:
-    AWS_ATHENA_API FilterDefinition();
+    AWS_ATHENA_API FilterDefinition() = default;
     AWS_ATHENA_API FilterDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API FilterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the notebook to search for.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FilterDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FilterDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FilterDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FilterDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

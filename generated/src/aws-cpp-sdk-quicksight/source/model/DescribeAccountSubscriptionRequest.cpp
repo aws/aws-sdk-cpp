@@ -12,11 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountSubscriptionRequest::DescribeAccountSubscriptionRequest() : 
-    m_awsAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountSubscriptionRequest::SerializePayload() const
 {
   return {};

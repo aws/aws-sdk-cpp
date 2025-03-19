@@ -31,7 +31,7 @@ namespace Model
   class RedshiftSource
   {
   public:
-    AWS_GLUE_API RedshiftSource();
+    AWS_GLUE_API RedshiftSource() = default;
     AWS_GLUE_API RedshiftSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API RedshiftSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift data store.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RedshiftSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RedshiftSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RedshiftSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RedshiftSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database to read from.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline RedshiftSource& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline RedshiftSource& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline RedshiftSource& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    RedshiftSource& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database table to read from.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline RedshiftSource& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline RedshiftSource& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline RedshiftSource& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    RedshiftSource& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,28 +78,24 @@ namespace Model
      * <p>The Amazon S3 path where temporary data can be staged when copying out of the
      * database.</p>
      */
-    inline const Aws::String& GetRedshiftTmpDir() const{ return m_redshiftTmpDir; }
+    inline const Aws::String& GetRedshiftTmpDir() const { return m_redshiftTmpDir; }
     inline bool RedshiftTmpDirHasBeenSet() const { return m_redshiftTmpDirHasBeenSet; }
-    inline void SetRedshiftTmpDir(const Aws::String& value) { m_redshiftTmpDirHasBeenSet = true; m_redshiftTmpDir = value; }
-    inline void SetRedshiftTmpDir(Aws::String&& value) { m_redshiftTmpDirHasBeenSet = true; m_redshiftTmpDir = std::move(value); }
-    inline void SetRedshiftTmpDir(const char* value) { m_redshiftTmpDirHasBeenSet = true; m_redshiftTmpDir.assign(value); }
-    inline RedshiftSource& WithRedshiftTmpDir(const Aws::String& value) { SetRedshiftTmpDir(value); return *this;}
-    inline RedshiftSource& WithRedshiftTmpDir(Aws::String&& value) { SetRedshiftTmpDir(std::move(value)); return *this;}
-    inline RedshiftSource& WithRedshiftTmpDir(const char* value) { SetRedshiftTmpDir(value); return *this;}
+    template<typename RedshiftTmpDirT = Aws::String>
+    void SetRedshiftTmpDir(RedshiftTmpDirT&& value) { m_redshiftTmpDirHasBeenSet = true; m_redshiftTmpDir = std::forward<RedshiftTmpDirT>(value); }
+    template<typename RedshiftTmpDirT = Aws::String>
+    RedshiftSource& WithRedshiftTmpDir(RedshiftTmpDirT&& value) { SetRedshiftTmpDir(std::forward<RedshiftTmpDirT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role with permissions.</p>
      */
-    inline const Aws::String& GetTmpDirIAMRole() const{ return m_tmpDirIAMRole; }
+    inline const Aws::String& GetTmpDirIAMRole() const { return m_tmpDirIAMRole; }
     inline bool TmpDirIAMRoleHasBeenSet() const { return m_tmpDirIAMRoleHasBeenSet; }
-    inline void SetTmpDirIAMRole(const Aws::String& value) { m_tmpDirIAMRoleHasBeenSet = true; m_tmpDirIAMRole = value; }
-    inline void SetTmpDirIAMRole(Aws::String&& value) { m_tmpDirIAMRoleHasBeenSet = true; m_tmpDirIAMRole = std::move(value); }
-    inline void SetTmpDirIAMRole(const char* value) { m_tmpDirIAMRoleHasBeenSet = true; m_tmpDirIAMRole.assign(value); }
-    inline RedshiftSource& WithTmpDirIAMRole(const Aws::String& value) { SetTmpDirIAMRole(value); return *this;}
-    inline RedshiftSource& WithTmpDirIAMRole(Aws::String&& value) { SetTmpDirIAMRole(std::move(value)); return *this;}
-    inline RedshiftSource& WithTmpDirIAMRole(const char* value) { SetTmpDirIAMRole(value); return *this;}
+    template<typename TmpDirIAMRoleT = Aws::String>
+    void SetTmpDirIAMRole(TmpDirIAMRoleT&& value) { m_tmpDirIAMRoleHasBeenSet = true; m_tmpDirIAMRole = std::forward<TmpDirIAMRoleT>(value); }
+    template<typename TmpDirIAMRoleT = Aws::String>
+    RedshiftSource& WithTmpDirIAMRole(TmpDirIAMRoleT&& value) { SetTmpDirIAMRole(std::forward<TmpDirIAMRoleT>(value)); return *this;}
     ///@}
   private:
 

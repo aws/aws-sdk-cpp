@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-Baseline::Baseline() : 
-    m_predictorBaselineHasBeenSet(false)
-{
-}
-
 Baseline::Baseline(JsonView jsonValue)
-  : Baseline()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Baseline& Baseline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PredictorBaseline"))
   {
     m_predictorBaseline = jsonValue.GetObject("PredictorBaseline");
-
     m_predictorBaselineHasBeenSet = true;
   }
-
   return *this;
 }
 

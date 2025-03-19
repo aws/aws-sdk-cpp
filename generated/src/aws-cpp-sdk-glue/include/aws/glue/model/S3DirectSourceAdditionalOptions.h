@@ -32,7 +32,7 @@ namespace Model
   class S3DirectSourceAdditionalOptions
   {
   public:
-    AWS_GLUE_API S3DirectSourceAdditionalOptions();
+    AWS_GLUE_API S3DirectSourceAdditionalOptions() = default;
     AWS_GLUE_API S3DirectSourceAdditionalOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API S3DirectSourceAdditionalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Sets the upper limit for the target size of the dataset in bytes that will be
      * processed.</p>
      */
-    inline long long GetBoundedSize() const{ return m_boundedSize; }
+    inline long long GetBoundedSize() const { return m_boundedSize; }
     inline bool BoundedSizeHasBeenSet() const { return m_boundedSizeHasBeenSet; }
     inline void SetBoundedSize(long long value) { m_boundedSizeHasBeenSet = true; m_boundedSize = value; }
     inline S3DirectSourceAdditionalOptions& WithBoundedSize(long long value) { SetBoundedSize(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>Sets the upper limit for the target number of files that will be
      * processed.</p>
      */
-    inline long long GetBoundedFiles() const{ return m_boundedFiles; }
+    inline long long GetBoundedFiles() const { return m_boundedFiles; }
     inline bool BoundedFilesHasBeenSet() const { return m_boundedFilesHasBeenSet; }
     inline void SetBoundedFiles(long long value) { m_boundedFilesHasBeenSet = true; m_boundedFiles = value; }
     inline S3DirectSourceAdditionalOptions& WithBoundedFiles(long long value) { SetBoundedFiles(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>Sets option to enable a sample path.</p>
      */
-    inline bool GetEnableSamplePath() const{ return m_enableSamplePath; }
+    inline bool GetEnableSamplePath() const { return m_enableSamplePath; }
     inline bool EnableSamplePathHasBeenSet() const { return m_enableSamplePathHasBeenSet; }
     inline void SetEnableSamplePath(bool value) { m_enableSamplePathHasBeenSet = true; m_enableSamplePath = value; }
     inline S3DirectSourceAdditionalOptions& WithEnableSamplePath(bool value) { SetEnableSamplePath(value); return *this;}
@@ -74,24 +74,22 @@ namespace Model
     /**
      * <p>If enabled, specifies the sample path.</p>
      */
-    inline const Aws::String& GetSamplePath() const{ return m_samplePath; }
+    inline const Aws::String& GetSamplePath() const { return m_samplePath; }
     inline bool SamplePathHasBeenSet() const { return m_samplePathHasBeenSet; }
-    inline void SetSamplePath(const Aws::String& value) { m_samplePathHasBeenSet = true; m_samplePath = value; }
-    inline void SetSamplePath(Aws::String&& value) { m_samplePathHasBeenSet = true; m_samplePath = std::move(value); }
-    inline void SetSamplePath(const char* value) { m_samplePathHasBeenSet = true; m_samplePath.assign(value); }
-    inline S3DirectSourceAdditionalOptions& WithSamplePath(const Aws::String& value) { SetSamplePath(value); return *this;}
-    inline S3DirectSourceAdditionalOptions& WithSamplePath(Aws::String&& value) { SetSamplePath(std::move(value)); return *this;}
-    inline S3DirectSourceAdditionalOptions& WithSamplePath(const char* value) { SetSamplePath(value); return *this;}
+    template<typename SamplePathT = Aws::String>
+    void SetSamplePath(SamplePathT&& value) { m_samplePathHasBeenSet = true; m_samplePath = std::forward<SamplePathT>(value); }
+    template<typename SamplePathT = Aws::String>
+    S3DirectSourceAdditionalOptions& WithSamplePath(SamplePathT&& value) { SetSamplePath(std::forward<SamplePathT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_boundedSize;
+    long long m_boundedSize{0};
     bool m_boundedSizeHasBeenSet = false;
 
-    long long m_boundedFiles;
+    long long m_boundedFiles{0};
     bool m_boundedFilesHasBeenSet = false;
 
-    bool m_enableSamplePath;
+    bool m_enableSamplePath{false};
     bool m_enableSamplePathHasBeenSet = false;
 
     Aws::String m_samplePath;

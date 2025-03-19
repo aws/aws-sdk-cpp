@@ -29,7 +29,7 @@ namespace Model
   class RouteMatrixTrailerOptions
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixTrailerOptions();
+    AWS_GEOROUTES_API RouteMatrixTrailerOptions() = default;
     AWS_GEOROUTES_API RouteMatrixTrailerOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixTrailerOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * <p>Number of trailers attached to the vehicle.</p> <p>Default Value:
      * <code>0</code> </p>
      */
-    inline int GetTrailerCount() const{ return m_trailerCount; }
+    inline int GetTrailerCount() const { return m_trailerCount; }
     inline bool TrailerCountHasBeenSet() const { return m_trailerCountHasBeenSet; }
     inline void SetTrailerCount(int value) { m_trailerCountHasBeenSet = true; m_trailerCount = value; }
     inline RouteMatrixTrailerOptions& WithTrailerCount(int value) { SetTrailerCount(value); return *this;}
     ///@}
   private:
 
-    int m_trailerCount;
+    int m_trailerCount{0};
     bool m_trailerCountHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult() : 
-    m_nodeAssociationStatus(NodeAssociationStatus::NOT_SET)
-{
-}
-
 DescribeNodeAssociationStatusResult::DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeNodeAssociationStatusResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operat
   if(jsonValue.ValueExists("NodeAssociationStatus"))
   {
     m_nodeAssociationStatus = NodeAssociationStatusMapper::GetNodeAssociationStatusForName(jsonValue.GetString("NodeAssociationStatus"));
-
+    m_nodeAssociationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineAttributes"))
   {
     Aws::Utils::Array<JsonView> engineAttributesJsonList = jsonValue.GetArray("EngineAttributes");
@@ -44,14 +37,15 @@ DescribeNodeAssociationStatusResult& DescribeNodeAssociationStatusResult::operat
     {
       m_engineAttributes.push_back(engineAttributesJsonList[engineAttributesIndex].AsObject());
     }
+    m_engineAttributesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

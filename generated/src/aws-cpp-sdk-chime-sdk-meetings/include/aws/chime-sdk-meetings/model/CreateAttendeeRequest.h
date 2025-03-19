@@ -22,7 +22,7 @@ namespace Model
   class CreateAttendeeRequest : public ChimeSDKMeetingsRequest
   {
   public:
-    AWS_CHIMESDKMEETINGS_API CreateAttendeeRequest();
+    AWS_CHIMESDKMEETINGS_API CreateAttendeeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The unique ID of the meeting.</p>
      */
-    inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
+    inline const Aws::String& GetMeetingId() const { return m_meetingId; }
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-    inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-    inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-    inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-    inline CreateAttendeeRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-    inline CreateAttendeeRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-    inline CreateAttendeeRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    template<typename MeetingIdT = Aws::String>
+    void SetMeetingId(MeetingIdT&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::forward<MeetingIdT>(value); }
+    template<typename MeetingIdT = Aws::String>
+    CreateAttendeeRequest& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * begin with <code>aws:</code> are reserved. You can't configure a value that uses
      * this prefix.</p>
      */
-    inline const Aws::String& GetExternalUserId() const{ return m_externalUserId; }
+    inline const Aws::String& GetExternalUserId() const { return m_externalUserId; }
     inline bool ExternalUserIdHasBeenSet() const { return m_externalUserIdHasBeenSet; }
-    inline void SetExternalUserId(const Aws::String& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = value; }
-    inline void SetExternalUserId(Aws::String&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::move(value); }
-    inline void SetExternalUserId(const char* value) { m_externalUserIdHasBeenSet = true; m_externalUserId.assign(value); }
-    inline CreateAttendeeRequest& WithExternalUserId(const Aws::String& value) { SetExternalUserId(value); return *this;}
-    inline CreateAttendeeRequest& WithExternalUserId(Aws::String&& value) { SetExternalUserId(std::move(value)); return *this;}
-    inline CreateAttendeeRequest& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
+    template<typename ExternalUserIdT = Aws::String>
+    void SetExternalUserId(ExternalUserIdT&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::forward<ExternalUserIdT>(value); }
+    template<typename ExternalUserIdT = Aws::String>
+    CreateAttendeeRequest& WithExternalUserId(ExternalUserIdT&& value) { SetExternalUserId(std::forward<ExternalUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +96,12 @@ namespace Model
      * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
      * </ul>
      */
-    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const AttendeeCapabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline CreateAttendeeRequest& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
-    inline CreateAttendeeRequest& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    CreateAttendeeRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
   private:
 

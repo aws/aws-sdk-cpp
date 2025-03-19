@@ -33,7 +33,7 @@ namespace Model
   class NextStepsHistory
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API NextStepsHistory();
+    AWS_PARTNERCENTRALSELLING_API NextStepsHistory() = default;
     AWS_PARTNERCENTRALSELLING_API NextStepsHistory(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API NextStepsHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,28 @@ namespace Model
     /**
      * <p>Indicates the step execution time.</p>
      */
-    inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
+    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline NextStepsHistory& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
-    inline NextStepsHistory& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = Aws::Utils::DateTime>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::Utils::DateTime>
+    NextStepsHistory& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the step's execution details.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline NextStepsHistory& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline NextStepsHistory& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline NextStepsHistory& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    NextStepsHistory& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_time;
+    Aws::Utils::DateTime m_time{};
     bool m_timeHasBeenSet = false;
 
     Aws::String m_value;

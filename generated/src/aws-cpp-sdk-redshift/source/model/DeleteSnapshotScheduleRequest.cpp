@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteSnapshotScheduleRequest::DeleteSnapshotScheduleRequest() : 
-    m_scheduleIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotScheduleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

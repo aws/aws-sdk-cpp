@@ -33,7 +33,7 @@ namespace Model
   class UpdateFailoverConfig
   {
   public:
-    AWS_MEDIACONNECT_API UpdateFailoverConfig();
+    AWS_MEDIACONNECT_API UpdateFailoverConfig() = default;
     AWS_MEDIACONNECT_API UpdateFailoverConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API UpdateFailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,19 +45,17 @@ namespace Model
      * into a single stream, allowing graceful recovery from any single-source loss.
      * FAILOVER allows switching between different streams.
      */
-    inline const FailoverMode& GetFailoverMode() const{ return m_failoverMode; }
+    inline FailoverMode GetFailoverMode() const { return m_failoverMode; }
     inline bool FailoverModeHasBeenSet() const { return m_failoverModeHasBeenSet; }
-    inline void SetFailoverMode(const FailoverMode& value) { m_failoverModeHasBeenSet = true; m_failoverMode = value; }
-    inline void SetFailoverMode(FailoverMode&& value) { m_failoverModeHasBeenSet = true; m_failoverMode = std::move(value); }
-    inline UpdateFailoverConfig& WithFailoverMode(const FailoverMode& value) { SetFailoverMode(value); return *this;}
-    inline UpdateFailoverConfig& WithFailoverMode(FailoverMode&& value) { SetFailoverMode(std::move(value)); return *this;}
+    inline void SetFailoverMode(FailoverMode value) { m_failoverModeHasBeenSet = true; m_failoverMode = value; }
+    inline UpdateFailoverConfig& WithFailoverMode(FailoverMode value) { SetFailoverMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Recovery window time to look for dash-7 packets
      */
-    inline int GetRecoveryWindow() const{ return m_recoveryWindow; }
+    inline int GetRecoveryWindow() const { return m_recoveryWindow; }
     inline bool RecoveryWindowHasBeenSet() const { return m_recoveryWindowHasBeenSet; }
     inline void SetRecoveryWindow(int value) { m_recoveryWindowHasBeenSet = true; m_recoveryWindow = value; }
     inline UpdateFailoverConfig& WithRecoveryWindow(int value) { SetRecoveryWindow(value); return *this;}
@@ -68,35 +66,33 @@ namespace Model
      * The priority you want to assign to a source. You can have a primary stream and a
      * backup stream or two equally prioritized streams.
      */
-    inline const SourcePriority& GetSourcePriority() const{ return m_sourcePriority; }
+    inline const SourcePriority& GetSourcePriority() const { return m_sourcePriority; }
     inline bool SourcePriorityHasBeenSet() const { return m_sourcePriorityHasBeenSet; }
-    inline void SetSourcePriority(const SourcePriority& value) { m_sourcePriorityHasBeenSet = true; m_sourcePriority = value; }
-    inline void SetSourcePriority(SourcePriority&& value) { m_sourcePriorityHasBeenSet = true; m_sourcePriority = std::move(value); }
-    inline UpdateFailoverConfig& WithSourcePriority(const SourcePriority& value) { SetSourcePriority(value); return *this;}
-    inline UpdateFailoverConfig& WithSourcePriority(SourcePriority&& value) { SetSourcePriority(std::move(value)); return *this;}
+    template<typename SourcePriorityT = SourcePriority>
+    void SetSourcePriority(SourcePriorityT&& value) { m_sourcePriorityHasBeenSet = true; m_sourcePriority = std::forward<SourcePriorityT>(value); }
+    template<typename SourcePriorityT = SourcePriority>
+    UpdateFailoverConfig& WithSourcePriority(SourcePriorityT&& value) { SetSourcePriority(std::forward<SourcePriorityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline UpdateFailoverConfig& WithState(const State& value) { SetState(value); return *this;}
-    inline UpdateFailoverConfig& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateFailoverConfig& WithState(State value) { SetState(value); return *this;}
     ///@}
   private:
 
-    FailoverMode m_failoverMode;
+    FailoverMode m_failoverMode{FailoverMode::NOT_SET};
     bool m_failoverModeHasBeenSet = false;
 
-    int m_recoveryWindow;
+    int m_recoveryWindow{0};
     bool m_recoveryWindowHasBeenSet = false;
 
     SourcePriority m_sourcePriority;
     bool m_sourcePriorityHasBeenSet = false;
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

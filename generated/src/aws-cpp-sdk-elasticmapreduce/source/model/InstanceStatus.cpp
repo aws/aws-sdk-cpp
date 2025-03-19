@@ -18,16 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceStatus::InstanceStatus() : 
-    m_state(InstanceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false)
-{
-}
-
 InstanceStatus::InstanceStatus(JsonView jsonValue)
-  : InstanceStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InstanceStatus& InstanceStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateChangeReason"))
   {
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
-
     m_stateChangeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeline"))
   {
     m_timeline = jsonValue.GetObject("Timeline");
-
     m_timelineHasBeenSet = true;
   }
-
   return *this;
 }
 

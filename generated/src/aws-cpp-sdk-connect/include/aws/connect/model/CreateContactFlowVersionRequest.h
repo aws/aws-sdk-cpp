@@ -22,7 +22,7 @@ namespace Model
   class CreateContactFlowVersionRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API CreateContactFlowVersionRequest();
+    AWS_CONNECT_API CreateContactFlowVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,63 +37,55 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreateContactFlowVersionRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreateContactFlowVersionRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreateContactFlowVersionRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreateContactFlowVersionRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the flow version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateContactFlowVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateContactFlowVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateContactFlowVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateContactFlowVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the flow.</p>
      */
-    inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
+    inline const Aws::String& GetContactFlowId() const { return m_contactFlowId; }
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
-    inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
-    inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
-    inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
-    inline CreateContactFlowVersionRequest& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
-    inline CreateContactFlowVersionRequest& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
-    inline CreateContactFlowVersionRequest& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
+    template<typename ContactFlowIdT = Aws::String>
+    void SetContactFlowId(ContactFlowIdT&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::forward<ContactFlowIdT>(value); }
+    template<typename ContactFlowIdT = Aws::String>
+    CreateContactFlowVersionRequest& WithContactFlowId(ContactFlowIdT&& value) { SetContactFlowId(std::forward<ContactFlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the checksum value of the flow content.</p>
      */
-    inline const Aws::String& GetFlowContentSha256() const{ return m_flowContentSha256; }
+    inline const Aws::String& GetFlowContentSha256() const { return m_flowContentSha256; }
     inline bool FlowContentSha256HasBeenSet() const { return m_flowContentSha256HasBeenSet; }
-    inline void SetFlowContentSha256(const Aws::String& value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256 = value; }
-    inline void SetFlowContentSha256(Aws::String&& value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256 = std::move(value); }
-    inline void SetFlowContentSha256(const char* value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256.assign(value); }
-    inline CreateContactFlowVersionRequest& WithFlowContentSha256(const Aws::String& value) { SetFlowContentSha256(value); return *this;}
-    inline CreateContactFlowVersionRequest& WithFlowContentSha256(Aws::String&& value) { SetFlowContentSha256(std::move(value)); return *this;}
-    inline CreateContactFlowVersionRequest& WithFlowContentSha256(const char* value) { SetFlowContentSha256(value); return *this;}
+    template<typename FlowContentSha256T = Aws::String>
+    void SetFlowContentSha256(FlowContentSha256T&& value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256 = std::forward<FlowContentSha256T>(value); }
+    template<typename FlowContentSha256T = Aws::String>
+    CreateContactFlowVersionRequest& WithFlowContentSha256(FlowContentSha256T&& value) { SetFlowContentSha256(std::forward<FlowContentSha256T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the flow version.</p>
      */
-    inline long long GetContactFlowVersion() const{ return m_contactFlowVersion; }
+    inline long long GetContactFlowVersion() const { return m_contactFlowVersion; }
     inline bool ContactFlowVersionHasBeenSet() const { return m_contactFlowVersionHasBeenSet; }
     inline void SetContactFlowVersion(long long value) { m_contactFlowVersionHasBeenSet = true; m_contactFlowVersion = value; }
     inline CreateContactFlowVersionRequest& WithContactFlowVersion(long long value) { SetContactFlowVersion(value); return *this;}
@@ -103,26 +95,24 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline CreateContactFlowVersionRequest& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline CreateContactFlowVersionRequest& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    CreateContactFlowVersionRequest& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+    inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
     inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
-    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
-    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
-    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
-    inline CreateContactFlowVersionRequest& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-    inline CreateContactFlowVersionRequest& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-    inline CreateContactFlowVersionRequest& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    template<typename LastModifiedRegionT = Aws::String>
+    void SetLastModifiedRegion(LastModifiedRegionT&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value); }
+    template<typename LastModifiedRegionT = Aws::String>
+    CreateContactFlowVersionRequest& WithLastModifiedRegion(LastModifiedRegionT&& value) { SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value)); return *this;}
     ///@}
   private:
 
@@ -138,10 +128,10 @@ namespace Model
     Aws::String m_flowContentSha256;
     bool m_flowContentSha256HasBeenSet = false;
 
-    long long m_contactFlowVersion;
+    long long m_contactFlowVersion{0};
     bool m_contactFlowVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_lastModifiedRegion;

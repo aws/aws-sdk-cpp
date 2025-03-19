@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMetricAttributionRequest::UpdateMetricAttributionRequest() : 
-    m_addMetricsHasBeenSet(false),
-    m_removeMetricsHasBeenSet(false),
-    m_metricsOutputConfigHasBeenSet(false),
-    m_metricAttributionArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMetricAttributionRequest::SerializePayload() const
 {
   JsonValue payload;

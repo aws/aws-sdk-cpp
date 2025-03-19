@@ -33,7 +33,7 @@ namespace Model
   class ImageScanFindingsSummary
   {
   public:
-    AWS_ECR_API ImageScanFindingsSummary();
+    AWS_ECR_API ImageScanFindingsSummary() = default;
     AWS_ECR_API ImageScanFindingsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ImageScanFindingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,46 @@ namespace Model
     /**
      * <p>The time of the last completed image scan.</p>
      */
-    inline const Aws::Utils::DateTime& GetImageScanCompletedAt() const{ return m_imageScanCompletedAt; }
+    inline const Aws::Utils::DateTime& GetImageScanCompletedAt() const { return m_imageScanCompletedAt; }
     inline bool ImageScanCompletedAtHasBeenSet() const { return m_imageScanCompletedAtHasBeenSet; }
-    inline void SetImageScanCompletedAt(const Aws::Utils::DateTime& value) { m_imageScanCompletedAtHasBeenSet = true; m_imageScanCompletedAt = value; }
-    inline void SetImageScanCompletedAt(Aws::Utils::DateTime&& value) { m_imageScanCompletedAtHasBeenSet = true; m_imageScanCompletedAt = std::move(value); }
-    inline ImageScanFindingsSummary& WithImageScanCompletedAt(const Aws::Utils::DateTime& value) { SetImageScanCompletedAt(value); return *this;}
-    inline ImageScanFindingsSummary& WithImageScanCompletedAt(Aws::Utils::DateTime&& value) { SetImageScanCompletedAt(std::move(value)); return *this;}
+    template<typename ImageScanCompletedAtT = Aws::Utils::DateTime>
+    void SetImageScanCompletedAt(ImageScanCompletedAtT&& value) { m_imageScanCompletedAtHasBeenSet = true; m_imageScanCompletedAt = std::forward<ImageScanCompletedAtT>(value); }
+    template<typename ImageScanCompletedAtT = Aws::Utils::DateTime>
+    ImageScanFindingsSummary& WithImageScanCompletedAt(ImageScanCompletedAtT&& value) { SetImageScanCompletedAt(std::forward<ImageScanCompletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the vulnerability data was last scanned.</p>
      */
-    inline const Aws::Utils::DateTime& GetVulnerabilitySourceUpdatedAt() const{ return m_vulnerabilitySourceUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetVulnerabilitySourceUpdatedAt() const { return m_vulnerabilitySourceUpdatedAt; }
     inline bool VulnerabilitySourceUpdatedAtHasBeenSet() const { return m_vulnerabilitySourceUpdatedAtHasBeenSet; }
-    inline void SetVulnerabilitySourceUpdatedAt(const Aws::Utils::DateTime& value) { m_vulnerabilitySourceUpdatedAtHasBeenSet = true; m_vulnerabilitySourceUpdatedAt = value; }
-    inline void SetVulnerabilitySourceUpdatedAt(Aws::Utils::DateTime&& value) { m_vulnerabilitySourceUpdatedAtHasBeenSet = true; m_vulnerabilitySourceUpdatedAt = std::move(value); }
-    inline ImageScanFindingsSummary& WithVulnerabilitySourceUpdatedAt(const Aws::Utils::DateTime& value) { SetVulnerabilitySourceUpdatedAt(value); return *this;}
-    inline ImageScanFindingsSummary& WithVulnerabilitySourceUpdatedAt(Aws::Utils::DateTime&& value) { SetVulnerabilitySourceUpdatedAt(std::move(value)); return *this;}
+    template<typename VulnerabilitySourceUpdatedAtT = Aws::Utils::DateTime>
+    void SetVulnerabilitySourceUpdatedAt(VulnerabilitySourceUpdatedAtT&& value) { m_vulnerabilitySourceUpdatedAtHasBeenSet = true; m_vulnerabilitySourceUpdatedAt = std::forward<VulnerabilitySourceUpdatedAtT>(value); }
+    template<typename VulnerabilitySourceUpdatedAtT = Aws::Utils::DateTime>
+    ImageScanFindingsSummary& WithVulnerabilitySourceUpdatedAt(VulnerabilitySourceUpdatedAtT&& value) { SetVulnerabilitySourceUpdatedAt(std::forward<VulnerabilitySourceUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image vulnerability counts, sorted by severity.</p>
      */
-    inline const Aws::Map<FindingSeverity, int>& GetFindingSeverityCounts() const{ return m_findingSeverityCounts; }
+    inline const Aws::Map<FindingSeverity, int>& GetFindingSeverityCounts() const { return m_findingSeverityCounts; }
     inline bool FindingSeverityCountsHasBeenSet() const { return m_findingSeverityCountsHasBeenSet; }
-    inline void SetFindingSeverityCounts(const Aws::Map<FindingSeverity, int>& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = value; }
-    inline void SetFindingSeverityCounts(Aws::Map<FindingSeverity, int>&& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = std::move(value); }
-    inline ImageScanFindingsSummary& WithFindingSeverityCounts(const Aws::Map<FindingSeverity, int>& value) { SetFindingSeverityCounts(value); return *this;}
-    inline ImageScanFindingsSummary& WithFindingSeverityCounts(Aws::Map<FindingSeverity, int>&& value) { SetFindingSeverityCounts(std::move(value)); return *this;}
-    inline ImageScanFindingsSummary& AddFindingSeverityCounts(const FindingSeverity& key, int value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(key, value); return *this; }
-    inline ImageScanFindingsSummary& AddFindingSeverityCounts(FindingSeverity&& key, int value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(std::move(key), value); return *this; }
+    template<typename FindingSeverityCountsT = Aws::Map<FindingSeverity, int>>
+    void SetFindingSeverityCounts(FindingSeverityCountsT&& value) { m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts = std::forward<FindingSeverityCountsT>(value); }
+    template<typename FindingSeverityCountsT = Aws::Map<FindingSeverity, int>>
+    ImageScanFindingsSummary& WithFindingSeverityCounts(FindingSeverityCountsT&& value) { SetFindingSeverityCounts(std::forward<FindingSeverityCountsT>(value)); return *this;}
+    inline ImageScanFindingsSummary& AddFindingSeverityCounts(FindingSeverity key, int value) {
+      m_findingSeverityCountsHasBeenSet = true; m_findingSeverityCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_imageScanCompletedAt;
+    Aws::Utils::DateTime m_imageScanCompletedAt{};
     bool m_imageScanCompletedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt;
+    Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt{};
     bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
 
     Aws::Map<FindingSeverity, int> m_findingSeverityCounts;

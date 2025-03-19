@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-S3TablesDestination::S3TablesDestination() : 
-    m_tableBucketArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 S3TablesDestination::S3TablesDestination(const XmlNode& xmlNode)
-  : S3TablesDestination()
 {
   *this = xmlNode;
 }

@@ -18,15 +18,7 @@ namespace MQ
 namespace Model
 {
 
-UserSummary::UserSummary() : 
-    m_pendingChange(ChangeType::NOT_SET),
-    m_pendingChangeHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 UserSummary::UserSummary(JsonView jsonValue)
-  : UserSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UserSummary& UserSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pendingChange"))
   {
     m_pendingChange = ChangeTypeMapper::GetChangeTypeForName(jsonValue.GetString("pendingChange"));
-
     m_pendingChangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class Alarm
   {
   public:
-    AWS_SSM_API Alarm();
+    AWS_SSM_API Alarm() = default;
     AWS_SSM_API Alarm(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of your CloudWatch alarm.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Alarm& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Alarm& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Alarm& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Alarm& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

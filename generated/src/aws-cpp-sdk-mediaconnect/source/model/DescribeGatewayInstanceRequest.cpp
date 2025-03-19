@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGatewayInstanceRequest::DescribeGatewayInstanceRequest() : 
-    m_gatewayInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGatewayInstanceRequest::SerializePayload() const
 {
   return {};

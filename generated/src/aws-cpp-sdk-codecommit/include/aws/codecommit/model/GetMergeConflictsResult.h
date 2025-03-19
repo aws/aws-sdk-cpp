@@ -29,7 +29,7 @@ namespace Model
   class GetMergeConflictsResult
   {
   public:
-    AWS_CODECOMMIT_API GetMergeConflictsResult();
+    AWS_CODECOMMIT_API GetMergeConflictsResult() = default;
     AWS_CODECOMMIT_API GetMergeConflictsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API GetMergeConflictsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,8 +39,8 @@ namespace Model
      * <p>A Boolean value that indicates whether the code is mergeable by the specified
      * merge option.</p>
      */
-    inline bool GetMergeable() const{ return m_mergeable; }
-    inline void SetMergeable(bool value) { m_mergeable = value; }
+    inline bool GetMergeable() const { return m_mergeable; }
+    inline void SetMergeable(bool value) { m_mergeableHasBeenSet = true; m_mergeable = value; }
     inline GetMergeConflictsResult& WithMergeable(bool value) { SetMergeable(value); return *this;}
     ///@}
 
@@ -49,13 +49,11 @@ namespace Model
      * <p>The commit ID of the destination commit specifier that was used in the merge
      * evaluation.</p>
      */
-    inline const Aws::String& GetDestinationCommitId() const{ return m_destinationCommitId; }
-    inline void SetDestinationCommitId(const Aws::String& value) { m_destinationCommitId = value; }
-    inline void SetDestinationCommitId(Aws::String&& value) { m_destinationCommitId = std::move(value); }
-    inline void SetDestinationCommitId(const char* value) { m_destinationCommitId.assign(value); }
-    inline GetMergeConflictsResult& WithDestinationCommitId(const Aws::String& value) { SetDestinationCommitId(value); return *this;}
-    inline GetMergeConflictsResult& WithDestinationCommitId(Aws::String&& value) { SetDestinationCommitId(std::move(value)); return *this;}
-    inline GetMergeConflictsResult& WithDestinationCommitId(const char* value) { SetDestinationCommitId(value); return *this;}
+    inline const Aws::String& GetDestinationCommitId() const { return m_destinationCommitId; }
+    template<typename DestinationCommitIdT = Aws::String>
+    void SetDestinationCommitId(DestinationCommitIdT&& value) { m_destinationCommitIdHasBeenSet = true; m_destinationCommitId = std::forward<DestinationCommitIdT>(value); }
+    template<typename DestinationCommitIdT = Aws::String>
+    GetMergeConflictsResult& WithDestinationCommitId(DestinationCommitIdT&& value) { SetDestinationCommitId(std::forward<DestinationCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,26 +61,22 @@ namespace Model
      * <p>The commit ID of the source commit specifier that was used in the merge
      * evaluation.</p>
      */
-    inline const Aws::String& GetSourceCommitId() const{ return m_sourceCommitId; }
-    inline void SetSourceCommitId(const Aws::String& value) { m_sourceCommitId = value; }
-    inline void SetSourceCommitId(Aws::String&& value) { m_sourceCommitId = std::move(value); }
-    inline void SetSourceCommitId(const char* value) { m_sourceCommitId.assign(value); }
-    inline GetMergeConflictsResult& WithSourceCommitId(const Aws::String& value) { SetSourceCommitId(value); return *this;}
-    inline GetMergeConflictsResult& WithSourceCommitId(Aws::String&& value) { SetSourceCommitId(std::move(value)); return *this;}
-    inline GetMergeConflictsResult& WithSourceCommitId(const char* value) { SetSourceCommitId(value); return *this;}
+    inline const Aws::String& GetSourceCommitId() const { return m_sourceCommitId; }
+    template<typename SourceCommitIdT = Aws::String>
+    void SetSourceCommitId(SourceCommitIdT&& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = std::forward<SourceCommitIdT>(value); }
+    template<typename SourceCommitIdT = Aws::String>
+    GetMergeConflictsResult& WithSourceCommitId(SourceCommitIdT&& value) { SetSourceCommitId(std::forward<SourceCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The commit ID of the merge base.</p>
      */
-    inline const Aws::String& GetBaseCommitId() const{ return m_baseCommitId; }
-    inline void SetBaseCommitId(const Aws::String& value) { m_baseCommitId = value; }
-    inline void SetBaseCommitId(Aws::String&& value) { m_baseCommitId = std::move(value); }
-    inline void SetBaseCommitId(const char* value) { m_baseCommitId.assign(value); }
-    inline GetMergeConflictsResult& WithBaseCommitId(const Aws::String& value) { SetBaseCommitId(value); return *this;}
-    inline GetMergeConflictsResult& WithBaseCommitId(Aws::String&& value) { SetBaseCommitId(std::move(value)); return *this;}
-    inline GetMergeConflictsResult& WithBaseCommitId(const char* value) { SetBaseCommitId(value); return *this;}
+    inline const Aws::String& GetBaseCommitId() const { return m_baseCommitId; }
+    template<typename BaseCommitIdT = Aws::String>
+    void SetBaseCommitId(BaseCommitIdT&& value) { m_baseCommitIdHasBeenSet = true; m_baseCommitId = std::forward<BaseCommitIdT>(value); }
+    template<typename BaseCommitIdT = Aws::String>
+    GetMergeConflictsResult& WithBaseCommitId(BaseCommitIdT&& value) { SetBaseCommitId(std::forward<BaseCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,13 +84,13 @@ namespace Model
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
      * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
-    inline const Aws::Vector<ConflictMetadata>& GetConflictMetadataList() const{ return m_conflictMetadataList; }
-    inline void SetConflictMetadataList(const Aws::Vector<ConflictMetadata>& value) { m_conflictMetadataList = value; }
-    inline void SetConflictMetadataList(Aws::Vector<ConflictMetadata>&& value) { m_conflictMetadataList = std::move(value); }
-    inline GetMergeConflictsResult& WithConflictMetadataList(const Aws::Vector<ConflictMetadata>& value) { SetConflictMetadataList(value); return *this;}
-    inline GetMergeConflictsResult& WithConflictMetadataList(Aws::Vector<ConflictMetadata>&& value) { SetConflictMetadataList(std::move(value)); return *this;}
-    inline GetMergeConflictsResult& AddConflictMetadataList(const ConflictMetadata& value) { m_conflictMetadataList.push_back(value); return *this; }
-    inline GetMergeConflictsResult& AddConflictMetadataList(ConflictMetadata&& value) { m_conflictMetadataList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConflictMetadata>& GetConflictMetadataList() const { return m_conflictMetadataList; }
+    template<typename ConflictMetadataListT = Aws::Vector<ConflictMetadata>>
+    void SetConflictMetadataList(ConflictMetadataListT&& value) { m_conflictMetadataListHasBeenSet = true; m_conflictMetadataList = std::forward<ConflictMetadataListT>(value); }
+    template<typename ConflictMetadataListT = Aws::Vector<ConflictMetadata>>
+    GetMergeConflictsResult& WithConflictMetadataList(ConflictMetadataListT&& value) { SetConflictMetadataList(std::forward<ConflictMetadataListT>(value)); return *this;}
+    template<typename ConflictMetadataListT = ConflictMetadata>
+    GetMergeConflictsResult& AddConflictMetadataList(ConflictMetadataListT&& value) { m_conflictMetadataListHasBeenSet = true; m_conflictMetadataList.emplace_back(std::forward<ConflictMetadataListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,40 +98,43 @@ namespace Model
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetMergeConflictsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetMergeConflictsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetMergeConflictsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetMergeConflictsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMergeConflictsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMergeConflictsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMergeConflictsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMergeConflictsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_mergeable;
+    bool m_mergeable{false};
+    bool m_mergeableHasBeenSet = false;
 
     Aws::String m_destinationCommitId;
+    bool m_destinationCommitIdHasBeenSet = false;
 
     Aws::String m_sourceCommitId;
+    bool m_sourceCommitIdHasBeenSet = false;
 
     Aws::String m_baseCommitId;
+    bool m_baseCommitIdHasBeenSet = false;
 
     Aws::Vector<ConflictMetadata> m_conflictMetadataList;
+    bool m_conflictMetadataListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

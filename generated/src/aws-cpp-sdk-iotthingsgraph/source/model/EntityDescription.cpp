@@ -18,18 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-EntityDescription::EntityDescription() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_type(EntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_definitionHasBeenSet(false)
-{
-}
-
 EntityDescription::EntityDescription(JsonView jsonValue)
-  : EntityDescription()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EntityDescription& EntityDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

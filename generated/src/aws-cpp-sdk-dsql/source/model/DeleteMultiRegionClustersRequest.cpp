@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteMultiRegionClustersRequest::DeleteMultiRegionClustersRequest() : 
-    m_linkedClusterArnsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteMultiRegionClustersRequest::SerializePayload() const
 {
   return {};

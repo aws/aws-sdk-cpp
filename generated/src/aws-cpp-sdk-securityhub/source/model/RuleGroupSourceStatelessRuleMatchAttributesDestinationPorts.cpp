@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts(JsonView jsonValue)
-  : RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts& RuleGroupSourceStat
   if(jsonValue.ValueExists("FromPort"))
   {
     m_fromPort = jsonValue.GetInteger("FromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToPort"))
   {
     m_toPort = jsonValue.GetInteger("ToPort");
-
     m_toPortHasBeenSet = true;
   }
-
   return *this;
 }
 

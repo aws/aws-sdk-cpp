@@ -32,7 +32,7 @@ namespace Model
   class InvalidRequestException
   {
   public:
-    AWS_CONNECT_API InvalidRequestException();
+    AWS_CONNECT_API InvalidRequestException() = default;
     AWS_CONNECT_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,22 @@ namespace Model
     /**
      * <p>The message about the request.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidRequestException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InvalidRequestExceptionReason& GetReason() const{ return m_reason; }
+    inline const InvalidRequestExceptionReason& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const InvalidRequestExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(InvalidRequestExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline InvalidRequestException& WithReason(const InvalidRequestExceptionReason& value) { SetReason(value); return *this;}
-    inline InvalidRequestException& WithReason(InvalidRequestExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    template<typename ReasonT = InvalidRequestExceptionReason>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = InvalidRequestExceptionReason>
+    InvalidRequestException& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

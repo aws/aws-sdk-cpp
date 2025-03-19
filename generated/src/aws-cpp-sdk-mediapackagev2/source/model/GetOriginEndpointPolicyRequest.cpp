@@ -12,13 +12,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOriginEndpointPolicyRequest::GetOriginEndpointPolicyRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false)
-{
-}
-
 Aws::String GetOriginEndpointPolicyRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkAclCommonPolicy::NetworkAclCommonPolicy() : 
-    m_networkAclEntrySetHasBeenSet(false)
-{
-}
-
 NetworkAclCommonPolicy::NetworkAclCommonPolicy(JsonView jsonValue)
-  : NetworkAclCommonPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkAclCommonPolicy& NetworkAclCommonPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NetworkAclEntrySet"))
   {
     m_networkAclEntrySet = jsonValue.GetObject("NetworkAclEntrySet");
-
     m_networkAclEntrySetHasBeenSet = true;
   }
-
   return *this;
 }
 

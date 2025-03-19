@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisTemplateArtifacts::AnalysisTemplateArtifacts() : 
-    m_entryPointHasBeenSet(false),
-    m_additionalArtifactsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AnalysisTemplateArtifacts::AnalysisTemplateArtifacts(JsonView jsonValue)
-  : AnalysisTemplateArtifacts()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AnalysisTemplateArtifacts& AnalysisTemplateArtifacts::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("entryPoint"))
   {
     m_entryPoint = jsonValue.GetObject("entryPoint");
-
     m_entryPointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalArtifacts"))
   {
     Aws::Utils::Array<JsonView> additionalArtifactsJsonList = jsonValue.GetArray("additionalArtifacts");
@@ -49,14 +39,11 @@ AnalysisTemplateArtifacts& AnalysisTemplateArtifacts::operator =(JsonView jsonVa
     }
     m_additionalArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

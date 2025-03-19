@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-HoldoutActivity::HoldoutActivity() : 
-    m_nextActivityHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false)
-{
-}
-
 HoldoutActivity::HoldoutActivity(JsonView jsonValue)
-  : HoldoutActivity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HoldoutActivity& HoldoutActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NextActivity"))
   {
     m_nextActivity = jsonValue.GetString("NextActivity");
-
     m_nextActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Percentage"))
   {
     m_percentage = jsonValue.GetInteger("Percentage");
-
     m_percentageHasBeenSet = true;
   }
-
   return *this;
 }
 

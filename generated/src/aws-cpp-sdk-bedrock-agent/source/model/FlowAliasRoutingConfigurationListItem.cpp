@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowAliasRoutingConfigurationListItem::FlowAliasRoutingConfigurationListItem() : 
-    m_flowVersionHasBeenSet(false)
-{
-}
-
 FlowAliasRoutingConfigurationListItem::FlowAliasRoutingConfigurationListItem(JsonView jsonValue)
-  : FlowAliasRoutingConfigurationListItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FlowAliasRoutingConfigurationListItem& FlowAliasRoutingConfigurationListItem::op
   if(jsonValue.ValueExists("flowVersion"))
   {
     m_flowVersion = jsonValue.GetString("flowVersion");
-
     m_flowVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

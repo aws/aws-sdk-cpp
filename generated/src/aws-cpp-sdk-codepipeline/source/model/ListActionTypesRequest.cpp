@@ -12,14 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListActionTypesRequest::ListActionTypesRequest() : 
-    m_actionOwnerFilter(ActionOwner::NOT_SET),
-    m_actionOwnerFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_regionFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListActionTypesRequest::SerializePayload() const
 {
   JsonValue payload;

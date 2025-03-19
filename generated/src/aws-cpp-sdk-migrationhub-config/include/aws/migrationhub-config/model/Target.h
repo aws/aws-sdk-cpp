@@ -34,7 +34,7 @@ namespace Model
   class Target
   {
   public:
-    AWS_MIGRATIONHUBCONFIG_API Target();
+    AWS_MIGRATIONHUBCONFIG_API Target() = default;
     AWS_MIGRATIONHUBCONFIG_API Target(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBCONFIG_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The target type is always an <code>ACCOUNT</code>.</p>
      */
-    inline const TargetType& GetType() const{ return m_type; }
+    inline TargetType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TargetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TargetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Target& WithType(const TargetType& value) { SetType(value); return *this;}
-    inline Target& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TargetType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Target& WithType(TargetType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <code>ACCOUNT</code> for which the control was created. (This must be the
      * current account.) </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Target& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Target& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 
-    TargetType m_type;
+    TargetType m_type{TargetType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_id;

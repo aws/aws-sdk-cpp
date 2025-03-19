@@ -12,11 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ClearQuerySuggestionsRequest::ClearQuerySuggestionsRequest() : 
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String ClearQuerySuggestionsRequest::SerializePayload() const
 {
   JsonValue payload;

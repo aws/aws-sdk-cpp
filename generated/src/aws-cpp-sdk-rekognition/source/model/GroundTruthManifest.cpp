@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-GroundTruthManifest::GroundTruthManifest() : 
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 GroundTruthManifest::GroundTruthManifest(JsonView jsonValue)
-  : GroundTruthManifest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GroundTruthManifest& GroundTruthManifest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

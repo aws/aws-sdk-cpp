@@ -21,7 +21,7 @@ namespace Model
   class ModifyTenantDatabaseRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API ModifyTenantDatabaseRequest();
+    AWS_RDS_API ModifyTenantDatabaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * are modifying. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must match the identifier of an existing DB instance.</p> </li> </ul>
      */
-    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+    inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-    inline ModifyTenantDatabaseRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-    inline ModifyTenantDatabaseRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-    inline ModifyTenantDatabaseRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+    template<typename DBInstanceIdentifierT = Aws::String>
+    void SetDBInstanceIdentifier(DBInstanceIdentifierT&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::forward<DBInstanceIdentifierT>(value); }
+    template<typename DBInstanceIdentifierT = Aws::String>
+    ModifyTenantDatabaseRequest& WithDBInstanceIdentifier(DBInstanceIdentifierT&& value) { SetDBInstanceIdentifier(std::forward<DBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * parameter isn’t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match
      * the identifier of an existing tenant database.</p> </li> </ul>
      */
-    inline const Aws::String& GetTenantDBName() const{ return m_tenantDBName; }
+    inline const Aws::String& GetTenantDBName() const { return m_tenantDBName; }
     inline bool TenantDBNameHasBeenSet() const { return m_tenantDBNameHasBeenSet; }
-    inline void SetTenantDBName(const Aws::String& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = value; }
-    inline void SetTenantDBName(Aws::String&& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = std::move(value); }
-    inline void SetTenantDBName(const char* value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName.assign(value); }
-    inline ModifyTenantDatabaseRequest& WithTenantDBName(const Aws::String& value) { SetTenantDBName(value); return *this;}
-    inline ModifyTenantDatabaseRequest& WithTenantDBName(Aws::String&& value) { SetTenantDBName(std::move(value)); return *this;}
-    inline ModifyTenantDatabaseRequest& WithTenantDBName(const char* value) { SetTenantDBName(value); return *this;}
+    template<typename TenantDBNameT = Aws::String>
+    void SetTenantDBName(TenantDBNameT&& value) { m_tenantDBNameHasBeenSet = true; m_tenantDBName = std::forward<TenantDBNameT>(value); }
+    template<typename TenantDBNameT = Aws::String>
+    ModifyTenantDatabaseRequest& WithTenantDBName(TenantDBNameT&& value) { SetTenantDBName(std::forward<TenantDBNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * (single quote).</p> </li> </ul> <p>Length constraints:</p> <ul> <li> <p>Must
      * contain between 8 and 30 characters. </p> </li> </ul>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-    inline ModifyTenantDatabaseRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline ModifyTenantDatabaseRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline ModifyTenantDatabaseRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    ModifyTenantDatabaseRequest& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * the string null or any other reserved word.</p> </li> <li> <p>Can't be longer
      * than 8 characters.</p> </li> </ul>
      */
-    inline const Aws::String& GetNewTenantDBName() const{ return m_newTenantDBName; }
+    inline const Aws::String& GetNewTenantDBName() const { return m_newTenantDBName; }
     inline bool NewTenantDBNameHasBeenSet() const { return m_newTenantDBNameHasBeenSet; }
-    inline void SetNewTenantDBName(const Aws::String& value) { m_newTenantDBNameHasBeenSet = true; m_newTenantDBName = value; }
-    inline void SetNewTenantDBName(Aws::String&& value) { m_newTenantDBNameHasBeenSet = true; m_newTenantDBName = std::move(value); }
-    inline void SetNewTenantDBName(const char* value) { m_newTenantDBNameHasBeenSet = true; m_newTenantDBName.assign(value); }
-    inline ModifyTenantDatabaseRequest& WithNewTenantDBName(const Aws::String& value) { SetNewTenantDBName(value); return *this;}
-    inline ModifyTenantDatabaseRequest& WithNewTenantDBName(Aws::String&& value) { SetNewTenantDBName(std::move(value)); return *this;}
-    inline ModifyTenantDatabaseRequest& WithNewTenantDBName(const char* value) { SetNewTenantDBName(value); return *this;}
+    template<typename NewTenantDBNameT = Aws::String>
+    void SetNewTenantDBName(NewTenantDBNameT&& value) { m_newTenantDBNameHasBeenSet = true; m_newTenantDBName = std::forward<NewTenantDBNameT>(value); }
+    template<typename NewTenantDBNameT = Aws::String>
+    ModifyTenantDatabaseRequest& WithNewTenantDBName(NewTenantDBNameT&& value) { SetNewTenantDBName(std::forward<NewTenantDBNameT>(value)); return *this;}
     ///@}
   private:
 

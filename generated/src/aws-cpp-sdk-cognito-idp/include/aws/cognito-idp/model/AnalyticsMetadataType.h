@@ -39,7 +39,7 @@ namespace Model
   class AnalyticsMetadataType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AnalyticsMetadataType();
+    AWS_COGNITOIDENTITYPROVIDER_API AnalyticsMetadataType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AnalyticsMetadataType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AnalyticsMetadataType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <p>The endpoint ID. Information that you want to pass to Amazon Pinpoint about
      * where to send notifications.</p>
      */
-    inline const Aws::String& GetAnalyticsEndpointId() const{ return m_analyticsEndpointId; }
+    inline const Aws::String& GetAnalyticsEndpointId() const { return m_analyticsEndpointId; }
     inline bool AnalyticsEndpointIdHasBeenSet() const { return m_analyticsEndpointIdHasBeenSet; }
-    inline void SetAnalyticsEndpointId(const Aws::String& value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId = value; }
-    inline void SetAnalyticsEndpointId(Aws::String&& value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId = std::move(value); }
-    inline void SetAnalyticsEndpointId(const char* value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId.assign(value); }
-    inline AnalyticsMetadataType& WithAnalyticsEndpointId(const Aws::String& value) { SetAnalyticsEndpointId(value); return *this;}
-    inline AnalyticsMetadataType& WithAnalyticsEndpointId(Aws::String&& value) { SetAnalyticsEndpointId(std::move(value)); return *this;}
-    inline AnalyticsMetadataType& WithAnalyticsEndpointId(const char* value) { SetAnalyticsEndpointId(value); return *this;}
+    template<typename AnalyticsEndpointIdT = Aws::String>
+    void SetAnalyticsEndpointId(AnalyticsEndpointIdT&& value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId = std::forward<AnalyticsEndpointIdT>(value); }
+    template<typename AnalyticsEndpointIdT = Aws::String>
+    AnalyticsMetadataType& WithAnalyticsEndpointId(AnalyticsEndpointIdT&& value) { SetAnalyticsEndpointId(std::forward<AnalyticsEndpointIdT>(value)); return *this;}
     ///@}
   private:
 

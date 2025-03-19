@@ -30,7 +30,7 @@ namespace Model
   class ColorSpacePassthroughSettings
   {
   public:
-    AWS_MEDIALIVE_API ColorSpacePassthroughSettings();
+    AWS_MEDIALIVE_API ColorSpacePassthroughSettings() = default;
     AWS_MEDIALIVE_API ColorSpacePassthroughSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ColorSpacePassthroughSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -12,15 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelRequest::CreateModelRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelRequest::SerializePayload() const
 {
   JsonValue payload;

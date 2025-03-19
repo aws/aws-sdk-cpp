@@ -18,14 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-ReviewPolicy::ReviewPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 ReviewPolicy::ReviewPolicy(JsonView jsonValue)
-  : ReviewPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReviewPolicy& ReviewPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -48,7 +39,6 @@ ReviewPolicy& ReviewPolicy::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

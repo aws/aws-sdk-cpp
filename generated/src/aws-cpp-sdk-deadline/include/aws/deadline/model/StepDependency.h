@@ -32,7 +32,7 @@ namespace Model
   class StepDependency
   {
   public:
-    AWS_DEADLINE_API StepDependency();
+    AWS_DEADLINE_API StepDependency() = default;
     AWS_DEADLINE_API StepDependency(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API StepDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The step ID.</p>
      */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline const Aws::String& GetStepId() const { return m_stepId; }
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline StepDependency& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline StepDependency& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline StepDependency& WithStepId(const char* value) { SetStepId(value); return *this;}
+    template<typename StepIdT = Aws::String>
+    void SetStepId(StepIdT&& value) { m_stepIdHasBeenSet = true; m_stepId = std::forward<StepIdT>(value); }
+    template<typename StepIdT = Aws::String>
+    StepDependency& WithStepId(StepIdT&& value) { SetStepId(std::forward<StepIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step dependency status.</p>
      */
-    inline const DependencyConsumerResolutionStatus& GetStatus() const{ return m_status; }
+    inline DependencyConsumerResolutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DependencyConsumerResolutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DependencyConsumerResolutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StepDependency& WithStatus(const DependencyConsumerResolutionStatus& value) { SetStatus(value); return *this;}
-    inline StepDependency& WithStatus(DependencyConsumerResolutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DependencyConsumerResolutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StepDependency& WithStatus(DependencyConsumerResolutionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet = false;
 
-    DependencyConsumerResolutionStatus m_status;
+    DependencyConsumerResolutionStatus m_status{DependencyConsumerResolutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

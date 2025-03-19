@@ -20,19 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-PartnerIntegrationInfo::PartnerIntegrationInfo() : 
-    m_databaseNameHasBeenSet(false),
-    m_partnerNameHasBeenSet(false),
-    m_status(PartnerIntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 PartnerIntegrationInfo::PartnerIntegrationInfo(const XmlNode& xmlNode)
-  : PartnerIntegrationInfo()
 {
   *this = xmlNode;
 }
@@ -58,7 +46,7 @@ PartnerIntegrationInfo& PartnerIntegrationInfo::operator =(const XmlNode& xmlNod
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = PartnerIntegrationStatusMapper::GetPartnerIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = PartnerIntegrationStatusMapper::GetPartnerIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");

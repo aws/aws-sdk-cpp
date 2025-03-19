@@ -29,7 +29,7 @@ namespace Model
   class ListQueriesResult
   {
   public:
-    AWS_NEPTUNEGRAPH_API ListQueriesResult();
+    AWS_NEPTUNEGRAPH_API ListQueriesResult() = default;
     AWS_NEPTUNEGRAPH_API ListQueriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEGRAPH_API ListQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of current openCypher queries.</p>
      */
-    inline const Aws::Vector<QuerySummary>& GetQueries() const{ return m_queries; }
-    inline void SetQueries(const Aws::Vector<QuerySummary>& value) { m_queries = value; }
-    inline void SetQueries(Aws::Vector<QuerySummary>&& value) { m_queries = std::move(value); }
-    inline ListQueriesResult& WithQueries(const Aws::Vector<QuerySummary>& value) { SetQueries(value); return *this;}
-    inline ListQueriesResult& WithQueries(Aws::Vector<QuerySummary>&& value) { SetQueries(std::move(value)); return *this;}
-    inline ListQueriesResult& AddQueries(const QuerySummary& value) { m_queries.push_back(value); return *this; }
-    inline ListQueriesResult& AddQueries(QuerySummary&& value) { m_queries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QuerySummary>& GetQueries() const { return m_queries; }
+    template<typename QueriesT = Aws::Vector<QuerySummary>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<QuerySummary>>
+    ListQueriesResult& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = QuerySummary>
+    ListQueriesResult& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQueriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQueriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQueriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQueriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QuerySummary> m_queries;
+    bool m_queriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

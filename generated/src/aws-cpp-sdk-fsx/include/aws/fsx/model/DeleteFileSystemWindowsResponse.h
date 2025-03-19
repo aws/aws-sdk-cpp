@@ -34,7 +34,7 @@ namespace Model
   class DeleteFileSystemWindowsResponse
   {
   public:
-    AWS_FSX_API DeleteFileSystemWindowsResponse();
+    AWS_FSX_API DeleteFileSystemWindowsResponse() = default;
     AWS_FSX_API DeleteFileSystemWindowsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DeleteFileSystemWindowsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The ID of the final backup for this file system.</p>
      */
-    inline const Aws::String& GetFinalBackupId() const{ return m_finalBackupId; }
+    inline const Aws::String& GetFinalBackupId() const { return m_finalBackupId; }
     inline bool FinalBackupIdHasBeenSet() const { return m_finalBackupIdHasBeenSet; }
-    inline void SetFinalBackupId(const Aws::String& value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId = value; }
-    inline void SetFinalBackupId(Aws::String&& value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId = std::move(value); }
-    inline void SetFinalBackupId(const char* value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId.assign(value); }
-    inline DeleteFileSystemWindowsResponse& WithFinalBackupId(const Aws::String& value) { SetFinalBackupId(value); return *this;}
-    inline DeleteFileSystemWindowsResponse& WithFinalBackupId(Aws::String&& value) { SetFinalBackupId(std::move(value)); return *this;}
-    inline DeleteFileSystemWindowsResponse& WithFinalBackupId(const char* value) { SetFinalBackupId(value); return *this;}
+    template<typename FinalBackupIdT = Aws::String>
+    void SetFinalBackupId(FinalBackupIdT&& value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId = std::forward<FinalBackupIdT>(value); }
+    template<typename FinalBackupIdT = Aws::String>
+    DeleteFileSystemWindowsResponse& WithFinalBackupId(FinalBackupIdT&& value) { SetFinalBackupId(std::forward<FinalBackupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The set of tags applied to the final backup.</p>
      */
-    inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
+    inline const Aws::Vector<Tag>& GetFinalBackupTags() const { return m_finalBackupTags; }
     inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
-    inline void SetFinalBackupTags(const Aws::Vector<Tag>& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = value; }
-    inline void SetFinalBackupTags(Aws::Vector<Tag>&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::move(value); }
-    inline DeleteFileSystemWindowsResponse& WithFinalBackupTags(const Aws::Vector<Tag>& value) { SetFinalBackupTags(value); return *this;}
-    inline DeleteFileSystemWindowsResponse& WithFinalBackupTags(Aws::Vector<Tag>&& value) { SetFinalBackupTags(std::move(value)); return *this;}
-    inline DeleteFileSystemWindowsResponse& AddFinalBackupTags(const Tag& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(value); return *this; }
-    inline DeleteFileSystemWindowsResponse& AddFinalBackupTags(Tag&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(std::move(value)); return *this; }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    void SetFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::forward<FinalBackupTagsT>(value); }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    DeleteFileSystemWindowsResponse& WithFinalBackupTags(FinalBackupTagsT&& value) { SetFinalBackupTags(std::forward<FinalBackupTagsT>(value)); return *this;}
+    template<typename FinalBackupTagsT = Tag>
+    DeleteFileSystemWindowsResponse& AddFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.emplace_back(std::forward<FinalBackupTagsT>(value)); return *this; }
     ///@}
   private:
 

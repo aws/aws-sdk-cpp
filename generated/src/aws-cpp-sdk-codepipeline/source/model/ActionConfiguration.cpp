@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionConfiguration::ActionConfiguration() : 
-    m_configurationHasBeenSet(false)
-{
-}
-
 ActionConfiguration::ActionConfiguration(JsonView jsonValue)
-  : ActionConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ActionConfiguration& ActionConfiguration::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

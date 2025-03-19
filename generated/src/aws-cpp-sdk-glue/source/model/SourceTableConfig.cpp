@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SourceTableConfig::SourceTableConfig() : 
-    m_fieldsHasBeenSet(false),
-    m_filterPredicateHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false),
-    m_recordUpdateFieldHasBeenSet(false)
-{
-}
-
 SourceTableConfig::SourceTableConfig(JsonView jsonValue)
-  : SourceTableConfig()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ SourceTableConfig& SourceTableConfig::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterPredicate"))
   {
     m_filterPredicate = jsonValue.GetString("FilterPredicate");
-
     m_filterPredicateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryKey"))
   {
     Aws::Utils::Array<JsonView> primaryKeyJsonList = jsonValue.GetArray("PrimaryKey");
@@ -60,14 +48,11 @@ SourceTableConfig& SourceTableConfig::operator =(JsonView jsonValue)
     }
     m_primaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordUpdateField"))
   {
     m_recordUpdateField = jsonValue.GetString("RecordUpdateField");
-
     m_recordUpdateFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

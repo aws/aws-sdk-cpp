@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateOriginAccessControl2020_05_31Request::UpdateOriginAccessControl2020_05_31Request() : 
-    m_originAccessControlConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateOriginAccessControl2020_05_31Request::SerializePayload() const
 {

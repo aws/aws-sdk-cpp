@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIdleRecommendationsResult::GetIdleRecommendationsResult()
-{
-}
-
 GetIdleRecommendationsResult::GetIdleRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetIdleRecommendationsResult& GetIdleRecommendationsResult::operator =(const Aws
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleRecommendations"))
   {
     Aws::Utils::Array<JsonView> idleRecommendationsJsonList = jsonValue.GetArray("idleRecommendations");
@@ -42,8 +37,8 @@ GetIdleRecommendationsResult& GetIdleRecommendationsResult::operator =(const Aws
     {
       m_idleRecommendations.push_back(idleRecommendationsJsonList[idleRecommendationsIndex].AsObject());
     }
+    m_idleRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,14 +46,15 @@ GetIdleRecommendationsResult& GetIdleRecommendationsResult::operator =(const Aws
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AddressField::AddressField() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 AddressField::AddressField(JsonView jsonValue)
-  : AddressField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AddressField& AddressField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

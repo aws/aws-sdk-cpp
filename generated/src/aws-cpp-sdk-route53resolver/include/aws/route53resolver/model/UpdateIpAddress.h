@@ -33,7 +33,7 @@ namespace Model
   class UpdateIpAddress
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateIpAddress();
+    AWS_ROUTE53RESOLVER_API UpdateIpAddress() = default;
     AWS_ROUTE53RESOLVER_API UpdateIpAddress(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API UpdateIpAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>.
      * </p>
      */
-    inline const Aws::String& GetIpId() const{ return m_ipId; }
+    inline const Aws::String& GetIpId() const { return m_ipId; }
     inline bool IpIdHasBeenSet() const { return m_ipIdHasBeenSet; }
-    inline void SetIpId(const Aws::String& value) { m_ipIdHasBeenSet = true; m_ipId = value; }
-    inline void SetIpId(Aws::String&& value) { m_ipIdHasBeenSet = true; m_ipId = std::move(value); }
-    inline void SetIpId(const char* value) { m_ipIdHasBeenSet = true; m_ipId.assign(value); }
-    inline UpdateIpAddress& WithIpId(const Aws::String& value) { SetIpId(value); return *this;}
-    inline UpdateIpAddress& WithIpId(Aws::String&& value) { SetIpId(std::move(value)); return *this;}
-    inline UpdateIpAddress& WithIpId(const char* value) { SetIpId(value); return *this;}
+    template<typename IpIdT = Aws::String>
+    void SetIpId(IpIdT&& value) { m_ipIdHasBeenSet = true; m_ipId = std::forward<IpIdT>(value); }
+    template<typename IpIdT = Aws::String>
+    UpdateIpAddress& WithIpId(IpIdT&& value) { SetIpId(std::forward<IpIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The IPv6 address that you want to use for DNS queries. </p>
      */
-    inline const Aws::String& GetIpv6() const{ return m_ipv6; }
+    inline const Aws::String& GetIpv6() const { return m_ipv6; }
     inline bool Ipv6HasBeenSet() const { return m_ipv6HasBeenSet; }
-    inline void SetIpv6(const Aws::String& value) { m_ipv6HasBeenSet = true; m_ipv6 = value; }
-    inline void SetIpv6(Aws::String&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::move(value); }
-    inline void SetIpv6(const char* value) { m_ipv6HasBeenSet = true; m_ipv6.assign(value); }
-    inline UpdateIpAddress& WithIpv6(const Aws::String& value) { SetIpv6(value); return *this;}
-    inline UpdateIpAddress& WithIpv6(Aws::String&& value) { SetIpv6(std::move(value)); return *this;}
-    inline UpdateIpAddress& WithIpv6(const char* value) { SetIpv6(value); return *this;}
+    template<typename Ipv6T = Aws::String>
+    void SetIpv6(Ipv6T&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::forward<Ipv6T>(value); }
+    template<typename Ipv6T = Aws::String>
+    UpdateIpAddress& WithIpv6(Ipv6T&& value) { SetIpv6(std::forward<Ipv6T>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteHITRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API DeleteHITRequest();
+    AWS_MTURK_API DeleteHITRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the HIT to be deleted.</p>
      */
-    inline const Aws::String& GetHITId() const{ return m_hITId; }
+    inline const Aws::String& GetHITId() const { return m_hITId; }
     inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
-    inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
-    inline void SetHITId(const char* value) { m_hITIdHasBeenSet = true; m_hITId.assign(value); }
-    inline DeleteHITRequest& WithHITId(const Aws::String& value) { SetHITId(value); return *this;}
-    inline DeleteHITRequest& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
-    inline DeleteHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
+    template<typename HITIdT = Aws::String>
+    void SetHITId(HITIdT&& value) { m_hITIdHasBeenSet = true; m_hITId = std::forward<HITIdT>(value); }
+    template<typename HITIdT = Aws::String>
+    DeleteHITRequest& WithHITId(HITIdT&& value) { SetHITId(std::forward<HITIdT>(value)); return *this;}
     ///@}
   private:
 

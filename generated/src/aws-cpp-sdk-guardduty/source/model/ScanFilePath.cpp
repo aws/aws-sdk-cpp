@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ScanFilePath::ScanFilePath() : 
-    m_filePathHasBeenSet(false),
-    m_volumeArnHasBeenSet(false),
-    m_hashHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
-{
-}
-
 ScanFilePath::ScanFilePath(JsonView jsonValue)
-  : ScanFilePath()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ScanFilePath& ScanFilePath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeArn"))
   {
     m_volumeArn = jsonValue.GetString("volumeArn");
-
     m_volumeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hash"))
   {
     m_hash = jsonValue.GetString("hash");
-
     m_hashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   return *this;
 }
 

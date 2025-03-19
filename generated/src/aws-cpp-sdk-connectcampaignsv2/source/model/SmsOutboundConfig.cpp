@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-SmsOutboundConfig::SmsOutboundConfig() : 
-    m_connectSourcePhoneNumberArnHasBeenSet(false),
-    m_wisdomTemplateArnHasBeenSet(false)
-{
-}
-
 SmsOutboundConfig::SmsOutboundConfig(JsonView jsonValue)
-  : SmsOutboundConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SmsOutboundConfig& SmsOutboundConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectSourcePhoneNumberArn"))
   {
     m_connectSourcePhoneNumberArn = jsonValue.GetString("connectSourcePhoneNumberArn");
-
     m_connectSourcePhoneNumberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wisdomTemplateArn"))
   {
     m_wisdomTemplateArn = jsonValue.GetString("wisdomTemplateArn");
-
     m_wisdomTemplateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class TextClassificationJobConfig
   {
   public:
-    AWS_SAGEMAKER_API TextClassificationJobConfig();
+    AWS_SAGEMAKER_API TextClassificationJobConfig() = default;
     AWS_SAGEMAKER_API TextClassificationJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TextClassificationJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>How long a job is allowed to run, or how many candidates a job is allowed to
      * generate.</p>
      */
-    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
+    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const { return m_completionCriteria; }
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
-    inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
-    inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
-    inline TextClassificationJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
-    inline TextClassificationJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    void SetCompletionCriteria(CompletionCriteriaT&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::forward<CompletionCriteriaT>(value); }
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    TextClassificationJobConfig& WithCompletionCriteria(CompletionCriteriaT&& value) { SetCompletionCriteria(std::forward<CompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * <p>The name of the column used to provide the sentences to be classified. It
      * should not be the same as the target column.</p>
      */
-    inline const Aws::String& GetContentColumn() const{ return m_contentColumn; }
+    inline const Aws::String& GetContentColumn() const { return m_contentColumn; }
     inline bool ContentColumnHasBeenSet() const { return m_contentColumnHasBeenSet; }
-    inline void SetContentColumn(const Aws::String& value) { m_contentColumnHasBeenSet = true; m_contentColumn = value; }
-    inline void SetContentColumn(Aws::String&& value) { m_contentColumnHasBeenSet = true; m_contentColumn = std::move(value); }
-    inline void SetContentColumn(const char* value) { m_contentColumnHasBeenSet = true; m_contentColumn.assign(value); }
-    inline TextClassificationJobConfig& WithContentColumn(const Aws::String& value) { SetContentColumn(value); return *this;}
-    inline TextClassificationJobConfig& WithContentColumn(Aws::String&& value) { SetContentColumn(std::move(value)); return *this;}
-    inline TextClassificationJobConfig& WithContentColumn(const char* value) { SetContentColumn(value); return *this;}
+    template<typename ContentColumnT = Aws::String>
+    void SetContentColumn(ContentColumnT&& value) { m_contentColumnHasBeenSet = true; m_contentColumn = std::forward<ContentColumnT>(value); }
+    template<typename ContentColumnT = Aws::String>
+    TextClassificationJobConfig& WithContentColumn(ContentColumnT&& value) { SetContentColumn(std::forward<ContentColumnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <p>The name of the column used to provide the class labels. It should not be
      * same as the content column.</p>
      */
-    inline const Aws::String& GetTargetLabelColumn() const{ return m_targetLabelColumn; }
+    inline const Aws::String& GetTargetLabelColumn() const { return m_targetLabelColumn; }
     inline bool TargetLabelColumnHasBeenSet() const { return m_targetLabelColumnHasBeenSet; }
-    inline void SetTargetLabelColumn(const Aws::String& value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn = value; }
-    inline void SetTargetLabelColumn(Aws::String&& value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn = std::move(value); }
-    inline void SetTargetLabelColumn(const char* value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn.assign(value); }
-    inline TextClassificationJobConfig& WithTargetLabelColumn(const Aws::String& value) { SetTargetLabelColumn(value); return *this;}
-    inline TextClassificationJobConfig& WithTargetLabelColumn(Aws::String&& value) { SetTargetLabelColumn(std::move(value)); return *this;}
-    inline TextClassificationJobConfig& WithTargetLabelColumn(const char* value) { SetTargetLabelColumn(value); return *this;}
+    template<typename TargetLabelColumnT = Aws::String>
+    void SetTargetLabelColumn(TargetLabelColumnT&& value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn = std::forward<TargetLabelColumnT>(value); }
+    template<typename TargetLabelColumnT = Aws::String>
+    TextClassificationJobConfig& WithTargetLabelColumn(TargetLabelColumnT&& value) { SetTargetLabelColumn(std::forward<TargetLabelColumnT>(value)); return *this;}
     ///@}
   private:
 

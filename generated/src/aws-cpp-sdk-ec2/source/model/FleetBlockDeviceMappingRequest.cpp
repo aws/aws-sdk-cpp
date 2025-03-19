@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetBlockDeviceMappingRequest::FleetBlockDeviceMappingRequest() : 
-    m_deviceNameHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
-{
-}
-
 FleetBlockDeviceMappingRequest::FleetBlockDeviceMappingRequest(const XmlNode& xmlNode)
-  : FleetBlockDeviceMappingRequest()
 {
   *this = xmlNode;
 }

@@ -32,7 +32,7 @@ namespace Model
   class TaxRegistrationDocFile
   {
   public:
-    AWS_TAXSETTINGS_API TaxRegistrationDocFile();
+    AWS_TAXSETTINGS_API TaxRegistrationDocFile() = default;
     AWS_TAXSETTINGS_API TaxRegistrationDocFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API TaxRegistrationDocFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The tax registration document content. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetFileContent() const{ return m_fileContent; }
+    inline const Aws::Utils::ByteBuffer& GetFileContent() const { return m_fileContent; }
     inline bool FileContentHasBeenSet() const { return m_fileContentHasBeenSet; }
-    inline void SetFileContent(const Aws::Utils::ByteBuffer& value) { m_fileContentHasBeenSet = true; m_fileContent = value; }
-    inline void SetFileContent(Aws::Utils::ByteBuffer&& value) { m_fileContentHasBeenSet = true; m_fileContent = std::move(value); }
-    inline TaxRegistrationDocFile& WithFileContent(const Aws::Utils::ByteBuffer& value) { SetFileContent(value); return *this;}
-    inline TaxRegistrationDocFile& WithFileContent(Aws::Utils::ByteBuffer&& value) { SetFileContent(std::move(value)); return *this;}
+    template<typename FileContentT = Aws::Utils::ByteBuffer>
+    void SetFileContent(FileContentT&& value) { m_fileContentHasBeenSet = true; m_fileContent = std::forward<FileContentT>(value); }
+    template<typename FileContentT = Aws::Utils::ByteBuffer>
+    TaxRegistrationDocFile& WithFileContent(FileContentT&& value) { SetFileContent(std::forward<FileContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tax registration document name. </p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline TaxRegistrationDocFile& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline TaxRegistrationDocFile& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline TaxRegistrationDocFile& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    TaxRegistrationDocFile& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_fileContent;
+    Aws::Utils::ByteBuffer m_fileContent{};
     bool m_fileContentHasBeenSet = false;
 
     Aws::String m_fileName;

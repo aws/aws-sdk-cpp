@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelBiasJobDefinitionRequest::CreateModelBiasJobDefinitionRequest() : 
-    m_jobDefinitionNameHasBeenSet(false),
-    m_modelBiasBaselineConfigHasBeenSet(false),
-    m_modelBiasAppSpecificationHasBeenSet(false),
-    m_modelBiasJobInputHasBeenSet(false),
-    m_modelBiasJobOutputConfigHasBeenSet(false),
-    m_jobResourcesHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelBiasJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

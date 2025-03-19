@@ -33,7 +33,7 @@ namespace Model
   class DeploymentDataSummary
   {
   public:
-    AWS_LAUNCHWIZARD_API DeploymentDataSummary();
+    AWS_LAUNCHWIZARD_API DeploymentDataSummary() = default;
     AWS_LAUNCHWIZARD_API DeploymentDataSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API DeploymentDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,84 +43,74 @@ namespace Model
     /**
      * <p>The time the deployment was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline DeploymentDataSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DeploymentDataSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DeploymentDataSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the deployment.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeploymentDataSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeploymentDataSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeploymentDataSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeploymentDataSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the deployment</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeploymentDataSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeploymentDataSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeploymentDataSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeploymentDataSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workload deployment pattern.</p>
      */
-    inline const Aws::String& GetPatternName() const{ return m_patternName; }
+    inline const Aws::String& GetPatternName() const { return m_patternName; }
     inline bool PatternNameHasBeenSet() const { return m_patternNameHasBeenSet; }
-    inline void SetPatternName(const Aws::String& value) { m_patternNameHasBeenSet = true; m_patternName = value; }
-    inline void SetPatternName(Aws::String&& value) { m_patternNameHasBeenSet = true; m_patternName = std::move(value); }
-    inline void SetPatternName(const char* value) { m_patternNameHasBeenSet = true; m_patternName.assign(value); }
-    inline DeploymentDataSummary& WithPatternName(const Aws::String& value) { SetPatternName(value); return *this;}
-    inline DeploymentDataSummary& WithPatternName(Aws::String&& value) { SetPatternName(std::move(value)); return *this;}
-    inline DeploymentDataSummary& WithPatternName(const char* value) { SetPatternName(value); return *this;}
+    template<typename PatternNameT = Aws::String>
+    void SetPatternName(PatternNameT&& value) { m_patternNameHasBeenSet = true; m_patternName = std::forward<PatternNameT>(value); }
+    template<typename PatternNameT = Aws::String>
+    DeploymentDataSummary& WithPatternName(PatternNameT&& value) { SetPatternName(std::forward<PatternNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the deployment.</p>
      */
-    inline const DeploymentStatus& GetStatus() const{ return m_status; }
+    inline DeploymentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DeploymentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DeploymentDataSummary& WithStatus(const DeploymentStatus& value) { SetStatus(value); return *this;}
-    inline DeploymentDataSummary& WithStatus(DeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DeploymentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeploymentDataSummary& WithStatus(DeploymentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workload.</p>
      */
-    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+    inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-    inline DeploymentDataSummary& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-    inline DeploymentDataSummary& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-    inline DeploymentDataSummary& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    template<typename WorkloadNameT = Aws::String>
+    void SetWorkloadName(WorkloadNameT&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::forward<WorkloadNameT>(value); }
+    template<typename WorkloadNameT = Aws::String>
+    DeploymentDataSummary& WithWorkloadName(WorkloadNameT&& value) { SetWorkloadName(std::forward<WorkloadNameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_id;
@@ -132,7 +122,7 @@ namespace Model
     Aws::String m_patternName;
     bool m_patternNameHasBeenSet = false;
 
-    DeploymentStatus m_status;
+    DeploymentStatus m_status{DeploymentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_workloadName;

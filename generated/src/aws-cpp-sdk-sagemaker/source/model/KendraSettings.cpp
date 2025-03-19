@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-KendraSettings::KendraSettings() : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 KendraSettings::KendraSettings(JsonView jsonValue)
-  : KendraSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ KendraSettings& KendraSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

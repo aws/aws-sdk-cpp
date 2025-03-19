@@ -10,22 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateCustomDBEngineVersionRequest::CreateCustomDBEngineVersionRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_databaseInstallationFilesS3BucketNameHasBeenSet(false),
-    m_databaseInstallationFilesS3PrefixHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sourceCustomDbEngineVersionIdentifierHasBeenSet(false),
-    m_useAwsProvidedLatestImage(false),
-    m_useAwsProvidedLatestImageHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomDBEngineVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Layout::Layout() : 
-    m_configurationHasBeenSet(false)
-{
-}
-
 Layout::Layout(JsonView jsonValue)
-  : Layout()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Layout& Layout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFirewallConfigsResult::ListFirewallConfigsResult()
-{
-}
-
 ListFirewallConfigsResult::ListFirewallConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListFirewallConfigsResult& ListFirewallConfigsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallConfigs"))
   {
     Aws::Utils::Array<JsonView> firewallConfigsJsonList = jsonValue.GetArray("FirewallConfigs");
@@ -42,14 +37,15 @@ ListFirewallConfigsResult& ListFirewallConfigsResult::operator =(const Aws::Amaz
     {
       m_firewallConfigs.push_back(firewallConfigsJsonList[firewallConfigsIndex].AsObject());
     }
+    m_firewallConfigsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

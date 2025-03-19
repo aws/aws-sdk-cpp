@@ -23,7 +23,7 @@ namespace Model
   class UpdateGameServerRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API UpdateGameServerRequest();
+    AWS_GAMELIFT_API UpdateGameServerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * <p>A unique identifier for the game server group where the game server is
      * running.</p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline UpdateGameServerRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline UpdateGameServerRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline UpdateGameServerRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    UpdateGameServerRequest& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom string that uniquely identifies the game server to update.</p>
      */
-    inline const Aws::String& GetGameServerId() const{ return m_gameServerId; }
+    inline const Aws::String& GetGameServerId() const { return m_gameServerId; }
     inline bool GameServerIdHasBeenSet() const { return m_gameServerIdHasBeenSet; }
-    inline void SetGameServerId(const Aws::String& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = value; }
-    inline void SetGameServerId(Aws::String&& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = std::move(value); }
-    inline void SetGameServerId(const char* value) { m_gameServerIdHasBeenSet = true; m_gameServerId.assign(value); }
-    inline UpdateGameServerRequest& WithGameServerId(const Aws::String& value) { SetGameServerId(value); return *this;}
-    inline UpdateGameServerRequest& WithGameServerId(Aws::String&& value) { SetGameServerId(std::move(value)); return *this;}
-    inline UpdateGameServerRequest& WithGameServerId(const char* value) { SetGameServerId(value); return *this;}
+    template<typename GameServerIdT = Aws::String>
+    void SetGameServerId(GameServerIdT&& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = std::forward<GameServerIdT>(value); }
+    template<typename GameServerIdT = Aws::String>
+    UpdateGameServerRequest& WithGameServerId(GameServerIdT&& value) { SetGameServerId(std::forward<GameServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * This data is passed to a game client or service when it requests information on
      * game servers. </p>
      */
-    inline const Aws::String& GetGameServerData() const{ return m_gameServerData; }
+    inline const Aws::String& GetGameServerData() const { return m_gameServerData; }
     inline bool GameServerDataHasBeenSet() const { return m_gameServerDataHasBeenSet; }
-    inline void SetGameServerData(const Aws::String& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = value; }
-    inline void SetGameServerData(Aws::String&& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = std::move(value); }
-    inline void SetGameServerData(const char* value) { m_gameServerDataHasBeenSet = true; m_gameServerData.assign(value); }
-    inline UpdateGameServerRequest& WithGameServerData(const Aws::String& value) { SetGameServerData(value); return *this;}
-    inline UpdateGameServerRequest& WithGameServerData(Aws::String&& value) { SetGameServerData(std::move(value)); return *this;}
-    inline UpdateGameServerRequest& WithGameServerData(const char* value) { SetGameServerData(value); return *this;}
+    template<typename GameServerDataT = Aws::String>
+    void SetGameServerData(GameServerDataT&& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = std::forward<GameServerDataT>(value); }
+    template<typename GameServerDataT = Aws::String>
+    UpdateGameServerRequest& WithGameServerData(GameServerDataT&& value) { SetGameServerData(std::forward<GameServerDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,10 @@ namespace Model
      * <code>UTILIZED</code>, but you can't change a the status from
      * <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
      */
-    inline const GameServerUtilizationStatus& GetUtilizationStatus() const{ return m_utilizationStatus; }
+    inline GameServerUtilizationStatus GetUtilizationStatus() const { return m_utilizationStatus; }
     inline bool UtilizationStatusHasBeenSet() const { return m_utilizationStatusHasBeenSet; }
-    inline void SetUtilizationStatus(const GameServerUtilizationStatus& value) { m_utilizationStatusHasBeenSet = true; m_utilizationStatus = value; }
-    inline void SetUtilizationStatus(GameServerUtilizationStatus&& value) { m_utilizationStatusHasBeenSet = true; m_utilizationStatus = std::move(value); }
-    inline UpdateGameServerRequest& WithUtilizationStatus(const GameServerUtilizationStatus& value) { SetUtilizationStatus(value); return *this;}
-    inline UpdateGameServerRequest& WithUtilizationStatus(GameServerUtilizationStatus&& value) { SetUtilizationStatus(std::move(value)); return *this;}
+    inline void SetUtilizationStatus(GameServerUtilizationStatus value) { m_utilizationStatusHasBeenSet = true; m_utilizationStatus = value; }
+    inline UpdateGameServerRequest& WithUtilizationStatus(GameServerUtilizationStatus value) { SetUtilizationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +93,10 @@ namespace Model
      * <p>Indicates health status of the game server. A request that includes this
      * parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
      */
-    inline const GameServerHealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+    inline GameServerHealthCheck GetHealthCheck() const { return m_healthCheck; }
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    inline void SetHealthCheck(const GameServerHealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-    inline void SetHealthCheck(GameServerHealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-    inline UpdateGameServerRequest& WithHealthCheck(const GameServerHealthCheck& value) { SetHealthCheck(value); return *this;}
-    inline UpdateGameServerRequest& WithHealthCheck(GameServerHealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    inline void SetHealthCheck(GameServerHealthCheck value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
+    inline UpdateGameServerRequest& WithHealthCheck(GameServerHealthCheck value) { SetHealthCheck(value); return *this;}
     ///@}
   private:
 
@@ -119,10 +109,10 @@ namespace Model
     Aws::String m_gameServerData;
     bool m_gameServerDataHasBeenSet = false;
 
-    GameServerUtilizationStatus m_utilizationStatus;
+    GameServerUtilizationStatus m_utilizationStatus{GameServerUtilizationStatus::NOT_SET};
     bool m_utilizationStatusHasBeenSet = false;
 
-    GameServerHealthCheck m_healthCheck;
+    GameServerHealthCheck m_healthCheck{GameServerHealthCheck::NOT_SET};
     bool m_healthCheckHasBeenSet = false;
   };
 

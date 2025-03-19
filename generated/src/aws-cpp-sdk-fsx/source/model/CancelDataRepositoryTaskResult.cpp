@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelDataRepositoryTaskResult::CancelDataRepositoryTaskResult() : 
-    m_lifecycle(DataRepositoryTaskLifecycle::NOT_SET)
-{
-}
-
 CancelDataRepositoryTaskResult::CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelDataRepositoryTaskResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CancelDataRepositoryTaskResult& CancelDataRepositoryTaskResult::operator =(const
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = DataRepositoryTaskLifecycleMapper::GetDataRepositoryTaskLifecycleForName(jsonValue.GetString("Lifecycle"));
-
+    m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskId"))
   {
     m_taskId = jsonValue.GetString("TaskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

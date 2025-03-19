@@ -30,7 +30,7 @@ namespace Model
   class AbortTransactionRequest
   {
   public:
-    AWS_QLDBSESSION_API AbortTransactionRequest();
+    AWS_QLDBSESSION_API AbortTransactionRequest() = default;
     AWS_QLDBSESSION_API AbortTransactionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API AbortTransactionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;

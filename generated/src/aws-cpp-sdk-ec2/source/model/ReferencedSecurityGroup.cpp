@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReferencedSecurityGroup::ReferencedSecurityGroup() : 
-    m_groupIdHasBeenSet(false),
-    m_peeringStatusHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 ReferencedSecurityGroup::ReferencedSecurityGroup(const XmlNode& xmlNode)
-  : ReferencedSecurityGroup()
 {
   *this = xmlNode;
 }

@@ -34,7 +34,7 @@ namespace Model
   class ProjectSummary
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ProjectSummary();
+    AWS_PARTNERCENTRALSELLING_API ProjectSummary() = default;
     AWS_PARTNERCENTRALSELLING_API ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,13 @@ namespace Model
      * customers.</p> </li> <li> <p>Other: Delivery model not described above.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const{ return m_deliveryModels; }
+    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const { return m_deliveryModels; }
     inline bool DeliveryModelsHasBeenSet() const { return m_deliveryModelsHasBeenSet; }
-    inline void SetDeliveryModels(const Aws::Vector<DeliveryModel>& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = value; }
-    inline void SetDeliveryModels(Aws::Vector<DeliveryModel>&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::move(value); }
-    inline ProjectSummary& WithDeliveryModels(const Aws::Vector<DeliveryModel>& value) { SetDeliveryModels(value); return *this;}
-    inline ProjectSummary& WithDeliveryModels(Aws::Vector<DeliveryModel>&& value) { SetDeliveryModels(std::move(value)); return *this;}
-    inline ProjectSummary& AddDeliveryModels(const DeliveryModel& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
-    inline ProjectSummary& AddDeliveryModels(DeliveryModel&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(std::move(value)); return *this; }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    void SetDeliveryModels(DeliveryModelsT&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::forward<DeliveryModelsT>(value); }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    ProjectSummary& WithDeliveryModels(DeliveryModelsT&& value) { SetDeliveryModels(std::forward<DeliveryModelsT>(value)); return *this;}
+    inline ProjectSummary& AddDeliveryModels(DeliveryModel value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +72,14 @@ namespace Model
      * <p>Provides a summary of the expected customer spend for the project, offering a
      * high-level view of the potential financial impact.</p>
      */
-    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const{ return m_expectedCustomerSpend; }
+    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
     inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
-    inline void SetExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = value; }
-    inline void SetExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::move(value); }
-    inline ProjectSummary& WithExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { SetExpectedCustomerSpend(value); return *this;}
-    inline ProjectSummary& WithExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { SetExpectedCustomerSpend(std::move(value)); return *this;}
-    inline ProjectSummary& AddExpectedCustomerSpend(const ExpectedCustomerSpend& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(value); return *this; }
-    inline ProjectSummary& AddExpectedCustomerSpend(ExpectedCustomerSpend&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(std::move(value)); return *this; }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    ProjectSummary& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
+    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
+    ProjectSummary& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class GuardrailTextBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailTextBlock();
+    AWS_BEDROCKRUNTIME_API GuardrailTextBlock() = default;
     AWS_BEDROCKRUNTIME_API GuardrailTextBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailTextBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,25 @@ namespace Model
     /**
      * <p>The input text details to be evaluated by the guardrail.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline GuardrailTextBlock& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline GuardrailTextBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline GuardrailTextBlock& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    GuardrailTextBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The qualifiers describing the text block.</p>
      */
-    inline const Aws::Vector<GuardrailContentQualifier>& GetQualifiers() const{ return m_qualifiers; }
+    inline const Aws::Vector<GuardrailContentQualifier>& GetQualifiers() const { return m_qualifiers; }
     inline bool QualifiersHasBeenSet() const { return m_qualifiersHasBeenSet; }
-    inline void SetQualifiers(const Aws::Vector<GuardrailContentQualifier>& value) { m_qualifiersHasBeenSet = true; m_qualifiers = value; }
-    inline void SetQualifiers(Aws::Vector<GuardrailContentQualifier>&& value) { m_qualifiersHasBeenSet = true; m_qualifiers = std::move(value); }
-    inline GuardrailTextBlock& WithQualifiers(const Aws::Vector<GuardrailContentQualifier>& value) { SetQualifiers(value); return *this;}
-    inline GuardrailTextBlock& WithQualifiers(Aws::Vector<GuardrailContentQualifier>&& value) { SetQualifiers(std::move(value)); return *this;}
-    inline GuardrailTextBlock& AddQualifiers(const GuardrailContentQualifier& value) { m_qualifiersHasBeenSet = true; m_qualifiers.push_back(value); return *this; }
-    inline GuardrailTextBlock& AddQualifiers(GuardrailContentQualifier&& value) { m_qualifiersHasBeenSet = true; m_qualifiers.push_back(std::move(value)); return *this; }
+    template<typename QualifiersT = Aws::Vector<GuardrailContentQualifier>>
+    void SetQualifiers(QualifiersT&& value) { m_qualifiersHasBeenSet = true; m_qualifiers = std::forward<QualifiersT>(value); }
+    template<typename QualifiersT = Aws::Vector<GuardrailContentQualifier>>
+    GuardrailTextBlock& WithQualifiers(QualifiersT&& value) { SetQualifiers(std::forward<QualifiersT>(value)); return *this;}
+    inline GuardrailTextBlock& AddQualifiers(GuardrailContentQualifier value) { m_qualifiersHasBeenSet = true; m_qualifiers.push_back(value); return *this; }
     ///@}
   private:
 

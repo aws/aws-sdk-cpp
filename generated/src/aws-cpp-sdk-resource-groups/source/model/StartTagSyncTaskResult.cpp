@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartTagSyncTaskResult::StartTagSyncTaskResult()
-{
-}
-
 StartTagSyncTaskResult::StartTagSyncTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,45 +28,40 @@ StartTagSyncTaskResult& StartTagSyncTaskResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("GroupArn"))
   {
     m_groupArn = jsonValue.GetString("GroupArn");
-
+    m_groupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
+    m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
+    m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
+    m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValue"))
   {
     m_tagValue = jsonValue.GetString("TagValue");
-
+    m_tagValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

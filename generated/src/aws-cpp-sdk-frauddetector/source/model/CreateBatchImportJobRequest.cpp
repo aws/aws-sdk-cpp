@@ -12,16 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBatchImportJobRequest::CreateBatchImportJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_inputPathHasBeenSet(false),
-    m_outputPathHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBatchImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

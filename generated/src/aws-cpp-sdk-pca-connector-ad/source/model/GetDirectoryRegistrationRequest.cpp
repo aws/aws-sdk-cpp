@@ -12,11 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDirectoryRegistrationRequest::GetDirectoryRegistrationRequest() : 
-    m_directoryRegistrationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDirectoryRegistrationRequest::SerializePayload() const
 {
   return {};

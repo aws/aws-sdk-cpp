@@ -18,20 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-EventTracker::EventTracker() : 
-    m_nameHasBeenSet(false),
-    m_eventTrackerArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_trackingIdHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 EventTracker::EventTracker(JsonView jsonValue)
-  : EventTracker()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ EventTracker& EventTracker::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTrackerArn"))
   {
     m_eventTrackerArn = jsonValue.GetString("eventTrackerArn");
-
     m_eventTrackerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackingId"))
   {
     m_trackingId = jsonValue.GetString("trackingId");
-
     m_trackingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

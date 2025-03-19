@@ -28,7 +28,7 @@ namespace Model
   class UpdateSafetyLeverStateResult
   {
   public:
-    AWS_FIS_API UpdateSafetyLeverStateResult();
+    AWS_FIS_API UpdateSafetyLeverStateResult() = default;
     AWS_FIS_API UpdateSafetyLeverStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIS_API UpdateSafetyLeverStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> Information about the safety lever. </p>
      */
-    inline const SafetyLever& GetSafetyLever() const{ return m_safetyLever; }
-    inline void SetSafetyLever(const SafetyLever& value) { m_safetyLever = value; }
-    inline void SetSafetyLever(SafetyLever&& value) { m_safetyLever = std::move(value); }
-    inline UpdateSafetyLeverStateResult& WithSafetyLever(const SafetyLever& value) { SetSafetyLever(value); return *this;}
-    inline UpdateSafetyLeverStateResult& WithSafetyLever(SafetyLever&& value) { SetSafetyLever(std::move(value)); return *this;}
+    inline const SafetyLever& GetSafetyLever() const { return m_safetyLever; }
+    template<typename SafetyLeverT = SafetyLever>
+    void SetSafetyLever(SafetyLeverT&& value) { m_safetyLeverHasBeenSet = true; m_safetyLever = std::forward<SafetyLeverT>(value); }
+    template<typename SafetyLeverT = SafetyLever>
+    UpdateSafetyLeverStateResult& WithSafetyLever(SafetyLeverT&& value) { SetSafetyLever(std::forward<SafetyLeverT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSafetyLeverStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSafetyLeverStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSafetyLeverStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSafetyLeverStateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SafetyLever m_safetyLever;
+    bool m_safetyLeverHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

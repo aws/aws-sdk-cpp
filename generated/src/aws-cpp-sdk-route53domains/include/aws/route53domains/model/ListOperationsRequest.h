@@ -31,7 +31,7 @@ namespace Model
   class ListOperationsRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API ListOperationsRequest();
+    AWS_ROUTE53DOMAINS_API ListOperationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,12 +50,12 @@ namespace Model
      * that you submitted after a specified date and time. Specify the date and time in
      * Unix time format and Coordinated Universal time (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmittedSince() const{ return m_submittedSince; }
+    inline const Aws::Utils::DateTime& GetSubmittedSince() const { return m_submittedSince; }
     inline bool SubmittedSinceHasBeenSet() const { return m_submittedSinceHasBeenSet; }
-    inline void SetSubmittedSince(const Aws::Utils::DateTime& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = value; }
-    inline void SetSubmittedSince(Aws::Utils::DateTime&& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = std::move(value); }
-    inline ListOperationsRequest& WithSubmittedSince(const Aws::Utils::DateTime& value) { SetSubmittedSince(value); return *this;}
-    inline ListOperationsRequest& WithSubmittedSince(Aws::Utils::DateTime&& value) { SetSubmittedSince(std::move(value)); return *this;}
+    template<typename SubmittedSinceT = Aws::Utils::DateTime>
+    void SetSubmittedSince(SubmittedSinceT&& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = std::forward<SubmittedSinceT>(value); }
+    template<typename SubmittedSinceT = Aws::Utils::DateTime>
+    ListOperationsRequest& WithSubmittedSince(SubmittedSinceT&& value) { SetSubmittedSince(std::forward<SubmittedSinceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,21 +67,19 @@ namespace Model
      * the previous response, and submit another request that includes the value of
      * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListOperationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListOperationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListOperationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListOperationsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListOperationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -91,62 +89,56 @@ namespace Model
     /**
      * <p> The status of the operations. </p>
      */
-    inline const Aws::Vector<OperationStatus>& GetStatus() const{ return m_status; }
+    inline const Aws::Vector<OperationStatus>& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::Vector<OperationStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::Vector<OperationStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListOperationsRequest& WithStatus(const Aws::Vector<OperationStatus>& value) { SetStatus(value); return *this;}
-    inline ListOperationsRequest& WithStatus(Aws::Vector<OperationStatus>&& value) { SetStatus(std::move(value)); return *this;}
-    inline ListOperationsRequest& AddStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
-    inline ListOperationsRequest& AddStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
+    template<typename StatusT = Aws::Vector<OperationStatus>>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::Vector<OperationStatus>>
+    ListOperationsRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
+    inline ListOperationsRequest& AddStatus(OperationStatus value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> An arrays of the domains operation types. </p>
      */
-    inline const Aws::Vector<OperationType>& GetType() const{ return m_type; }
+    inline const Aws::Vector<OperationType>& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::Vector<OperationType>& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::Vector<OperationType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListOperationsRequest& WithType(const Aws::Vector<OperationType>& value) { SetType(value); return *this;}
-    inline ListOperationsRequest& WithType(Aws::Vector<OperationType>&& value) { SetType(std::move(value)); return *this;}
-    inline ListOperationsRequest& AddType(const OperationType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
-    inline ListOperationsRequest& AddType(OperationType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
+    template<typename TypeT = Aws::Vector<OperationType>>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::Vector<OperationType>>
+    ListOperationsRequest& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
+    inline ListOperationsRequest& AddType(OperationType value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The sort type for returned values. </p>
      */
-    inline const ListOperationsSortAttributeName& GetSortBy() const{ return m_sortBy; }
+    inline ListOperationsSortAttributeName GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ListOperationsSortAttributeName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ListOperationsSortAttributeName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListOperationsRequest& WithSortBy(const ListOperationsSortAttributeName& value) { SetSortBy(value); return *this;}
-    inline ListOperationsRequest& WithSortBy(ListOperationsSortAttributeName&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ListOperationsSortAttributeName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListOperationsRequest& WithSortBy(ListOperationsSortAttributeName value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The sort order for returned values, either ascending or descending. </p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListOperationsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListOperationsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListOperationsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_submittedSince;
+    Aws::Utils::DateTime m_submittedSince{};
     bool m_submittedSinceHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::Vector<OperationStatus> m_status;
@@ -155,10 +147,10 @@ namespace Model
     Aws::Vector<OperationType> m_type;
     bool m_typeHasBeenSet = false;
 
-    ListOperationsSortAttributeName m_sortBy;
+    ListOperationsSortAttributeName m_sortBy{ListOperationsSortAttributeName::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

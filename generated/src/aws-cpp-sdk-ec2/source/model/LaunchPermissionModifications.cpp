@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchPermissionModifications::LaunchPermissionModifications() : 
-    m_addHasBeenSet(false),
-    m_removeHasBeenSet(false)
-{
-}
-
 LaunchPermissionModifications::LaunchPermissionModifications(const XmlNode& xmlNode)
-  : LaunchPermissionModifications()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ LaunchPermissionModifications& LaunchPermissionModifications::operator =(const X
     if(!addNode.IsNull())
     {
       XmlNode addMember = addNode.FirstChild("item");
+      m_addHasBeenSet = !addMember.IsNull();
       while(!addMember.IsNull())
       {
         m_add.push_back(addMember);
@@ -54,6 +48,7 @@ LaunchPermissionModifications& LaunchPermissionModifications::operator =(const X
     if(!removeNode.IsNull())
     {
       XmlNode removeMember = removeNode.FirstChild("item");
+      m_removeHasBeenSet = !removeMember.IsNull();
       while(!removeMember.IsNull())
       {
         m_remove.push_back(removeMember);

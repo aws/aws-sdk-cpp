@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-PromptRouterTargetModel::PromptRouterTargetModel() : 
-    m_modelArnHasBeenSet(false)
-{
-}
-
 PromptRouterTargetModel::PromptRouterTargetModel(JsonView jsonValue)
-  : PromptRouterTargetModel()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptRouterTargetModel& PromptRouterTargetModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

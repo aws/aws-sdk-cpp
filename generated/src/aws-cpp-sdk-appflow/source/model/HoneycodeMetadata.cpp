@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-HoneycodeMetadata::HoneycodeMetadata() : 
-    m_oAuthScopesHasBeenSet(false)
-{
-}
-
 HoneycodeMetadata::HoneycodeMetadata(JsonView jsonValue)
-  : HoneycodeMetadata()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ HoneycodeMetadata& HoneycodeMetadata::operator =(JsonView jsonValue)
     }
     m_oAuthScopesHasBeenSet = true;
   }
-
   return *this;
 }
 

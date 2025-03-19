@@ -18,20 +18,7 @@ namespace Detective
 namespace Model
 {
 
-IndicatorDetail::IndicatorDetail() : 
-    m_tTPsObservedDetailHasBeenSet(false),
-    m_impossibleTravelDetailHasBeenSet(false),
-    m_flaggedIpAddressDetailHasBeenSet(false),
-    m_newGeolocationDetailHasBeenSet(false),
-    m_newAsoDetailHasBeenSet(false),
-    m_newUserAgentDetailHasBeenSet(false),
-    m_relatedFindingDetailHasBeenSet(false),
-    m_relatedFindingGroupDetailHasBeenSet(false)
-{
-}
-
 IndicatorDetail::IndicatorDetail(JsonView jsonValue)
-  : IndicatorDetail()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ IndicatorDetail& IndicatorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TTPsObservedDetail"))
   {
     m_tTPsObservedDetail = jsonValue.GetObject("TTPsObservedDetail");
-
     m_tTPsObservedDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpossibleTravelDetail"))
   {
     m_impossibleTravelDetail = jsonValue.GetObject("ImpossibleTravelDetail");
-
     m_impossibleTravelDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlaggedIpAddressDetail"))
   {
     m_flaggedIpAddressDetail = jsonValue.GetObject("FlaggedIpAddressDetail");
-
     m_flaggedIpAddressDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewGeolocationDetail"))
   {
     m_newGeolocationDetail = jsonValue.GetObject("NewGeolocationDetail");
-
     m_newGeolocationDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewAsoDetail"))
   {
     m_newAsoDetail = jsonValue.GetObject("NewAsoDetail");
-
     m_newAsoDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewUserAgentDetail"))
   {
     m_newUserAgentDetail = jsonValue.GetObject("NewUserAgentDetail");
-
     m_newUserAgentDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindingDetail"))
   {
     m_relatedFindingDetail = jsonValue.GetObject("RelatedFindingDetail");
-
     m_relatedFindingDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindingGroupDetail"))
   {
     m_relatedFindingGroupDetail = jsonValue.GetObject("RelatedFindingGroupDetail");
-
     m_relatedFindingGroupDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

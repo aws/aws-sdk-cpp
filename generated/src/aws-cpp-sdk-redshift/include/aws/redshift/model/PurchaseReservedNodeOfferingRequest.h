@@ -24,7 +24,7 @@ namespace Model
   class PurchaseReservedNodeOfferingRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API PurchaseReservedNodeOfferingRequest();
+    AWS_REDSHIFT_API PurchaseReservedNodeOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */
-    inline const Aws::String& GetReservedNodeOfferingId() const{ return m_reservedNodeOfferingId; }
+    inline const Aws::String& GetReservedNodeOfferingId() const { return m_reservedNodeOfferingId; }
     inline bool ReservedNodeOfferingIdHasBeenSet() const { return m_reservedNodeOfferingIdHasBeenSet; }
-    inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
-    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::move(value); }
-    inline void SetReservedNodeOfferingId(const char* value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId.assign(value); }
-    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
-    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(std::move(value)); return *this;}
-    inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
+    template<typename ReservedNodeOfferingIdT = Aws::String>
+    void SetReservedNodeOfferingId(ReservedNodeOfferingIdT&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::forward<ReservedNodeOfferingIdT>(value); }
+    template<typename ReservedNodeOfferingIdT = Aws::String>
+    PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(ReservedNodeOfferingIdT&& value) { SetReservedNodeOfferingId(std::forward<ReservedNodeOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
      * <code>1</code> </p>
      */
-    inline int GetNodeCount() const{ return m_nodeCount; }
+    inline int GetNodeCount() const { return m_nodeCount; }
     inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
     inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
     inline PurchaseReservedNodeOfferingRequest& WithNodeCount(int value) { SetNodeCount(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_reservedNodeOfferingId;
     bool m_reservedNodeOfferingIdHasBeenSet = false;
 
-    int m_nodeCount;
+    int m_nodeCount{0};
     bool m_nodeCountHasBeenSet = false;
   };
 

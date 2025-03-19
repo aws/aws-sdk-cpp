@@ -34,7 +34,7 @@ namespace Model
   class DataQualityRulesetListDetails
   {
   public:
-    AWS_GLUE_API DataQualityRulesetListDetails();
+    AWS_GLUE_API DataQualityRulesetListDetails() = default;
     AWS_GLUE_API DataQualityRulesetListDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataQualityRulesetListDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,64 +44,60 @@ namespace Model
     /**
      * <p>The name of the data quality ruleset.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DataQualityRulesetListDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DataQualityRulesetListDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DataQualityRulesetListDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DataQualityRulesetListDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the data quality ruleset.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DataQualityRulesetListDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DataQualityRulesetListDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DataQualityRulesetListDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DataQualityRulesetListDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the data quality ruleset was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
+    inline const Aws::Utils::DateTime& GetCreatedOn() const { return m_createdOn; }
     inline bool CreatedOnHasBeenSet() const { return m_createdOnHasBeenSet; }
-    inline void SetCreatedOn(const Aws::Utils::DateTime& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
-    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::move(value); }
-    inline DataQualityRulesetListDetails& WithCreatedOn(const Aws::Utils::DateTime& value) { SetCreatedOn(value); return *this;}
-    inline DataQualityRulesetListDetails& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    void SetCreatedOn(CreatedOnT&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::forward<CreatedOnT>(value); }
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    DataQualityRulesetListDetails& WithCreatedOn(CreatedOnT&& value) { SetCreatedOn(std::forward<CreatedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the data quality ruleset was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
-    inline DataQualityRulesetListDetails& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline DataQualityRulesetListDetails& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    DataQualityRulesetListDetails& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object representing an Glue table.</p>
      */
-    inline const DataQualityTargetTable& GetTargetTable() const{ return m_targetTable; }
+    inline const DataQualityTargetTable& GetTargetTable() const { return m_targetTable; }
     inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
-    inline void SetTargetTable(const DataQualityTargetTable& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
-    inline void SetTargetTable(DataQualityTargetTable&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
-    inline DataQualityRulesetListDetails& WithTargetTable(const DataQualityTargetTable& value) { SetTargetTable(value); return *this;}
-    inline DataQualityRulesetListDetails& WithTargetTable(DataQualityTargetTable&& value) { SetTargetTable(std::move(value)); return *this;}
+    template<typename TargetTableT = DataQualityTargetTable>
+    void SetTargetTable(TargetTableT&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::forward<TargetTableT>(value); }
+    template<typename TargetTableT = DataQualityTargetTable>
+    DataQualityRulesetListDetails& WithTargetTable(TargetTableT&& value) { SetTargetTable(std::forward<TargetTableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,21 +105,19 @@ namespace Model
      * <p>When a ruleset was created from a recommendation run, this run ID is
      * generated to link the two together.</p>
      */
-    inline const Aws::String& GetRecommendationRunId() const{ return m_recommendationRunId; }
+    inline const Aws::String& GetRecommendationRunId() const { return m_recommendationRunId; }
     inline bool RecommendationRunIdHasBeenSet() const { return m_recommendationRunIdHasBeenSet; }
-    inline void SetRecommendationRunId(const Aws::String& value) { m_recommendationRunIdHasBeenSet = true; m_recommendationRunId = value; }
-    inline void SetRecommendationRunId(Aws::String&& value) { m_recommendationRunIdHasBeenSet = true; m_recommendationRunId = std::move(value); }
-    inline void SetRecommendationRunId(const char* value) { m_recommendationRunIdHasBeenSet = true; m_recommendationRunId.assign(value); }
-    inline DataQualityRulesetListDetails& WithRecommendationRunId(const Aws::String& value) { SetRecommendationRunId(value); return *this;}
-    inline DataQualityRulesetListDetails& WithRecommendationRunId(Aws::String&& value) { SetRecommendationRunId(std::move(value)); return *this;}
-    inline DataQualityRulesetListDetails& WithRecommendationRunId(const char* value) { SetRecommendationRunId(value); return *this;}
+    template<typename RecommendationRunIdT = Aws::String>
+    void SetRecommendationRunId(RecommendationRunIdT&& value) { m_recommendationRunIdHasBeenSet = true; m_recommendationRunId = std::forward<RecommendationRunIdT>(value); }
+    template<typename RecommendationRunIdT = Aws::String>
+    DataQualityRulesetListDetails& WithRecommendationRunId(RecommendationRunIdT&& value) { SetRecommendationRunId(std::forward<RecommendationRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of rules in the ruleset.</p>
      */
-    inline int GetRuleCount() const{ return m_ruleCount; }
+    inline int GetRuleCount() const { return m_ruleCount; }
     inline bool RuleCountHasBeenSet() const { return m_ruleCountHasBeenSet; }
     inline void SetRuleCount(int value) { m_ruleCountHasBeenSet = true; m_ruleCount = value; }
     inline DataQualityRulesetListDetails& WithRuleCount(int value) { SetRuleCount(value); return *this;}
@@ -136,10 +130,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdOn;
+    Aws::Utils::DateTime m_createdOn{};
     bool m_createdOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
     bool m_lastModifiedOnHasBeenSet = false;
 
     DataQualityTargetTable m_targetTable;
@@ -148,7 +142,7 @@ namespace Model
     Aws::String m_recommendationRunId;
     bool m_recommendationRunIdHasBeenSet = false;
 
-    int m_ruleCount;
+    int m_ruleCount{0};
     bool m_ruleCountHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFleetsRequest::DescribeFleetsRequest() : 
-    m_namesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFleetsRequest::SerializePayload() const
 {
   JsonValue payload;

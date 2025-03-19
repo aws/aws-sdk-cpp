@@ -28,7 +28,7 @@ namespace Model
   class ExportKeyResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyResult();
+    AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyResult() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31
      * WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
      */
-    inline const WrappedKey& GetWrappedKey() const{ return m_wrappedKey; }
-    inline void SetWrappedKey(const WrappedKey& value) { m_wrappedKey = value; }
-    inline void SetWrappedKey(WrappedKey&& value) { m_wrappedKey = std::move(value); }
-    inline ExportKeyResult& WithWrappedKey(const WrappedKey& value) { SetWrappedKey(value); return *this;}
-    inline ExportKeyResult& WithWrappedKey(WrappedKey&& value) { SetWrappedKey(std::move(value)); return *this;}
+    inline const WrappedKey& GetWrappedKey() const { return m_wrappedKey; }
+    template<typename WrappedKeyT = WrappedKey>
+    void SetWrappedKey(WrappedKeyT&& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = std::forward<WrappedKeyT>(value); }
+    template<typename WrappedKeyT = WrappedKey>
+    ExportKeyResult& WithWrappedKey(WrappedKeyT&& value) { SetWrappedKey(std::forward<WrappedKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WrappedKey m_wrappedKey;
+    bool m_wrappedKeyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

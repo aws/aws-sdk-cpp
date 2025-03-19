@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ReplicationTopicNameConfiguration::ReplicationTopicNameConfiguration() : 
-    m_type(ReplicationTopicNameConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ReplicationTopicNameConfiguration::ReplicationTopicNameConfiguration(JsonView jsonValue)
-  : ReplicationTopicNameConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReplicationTopicNameConfiguration& ReplicationTopicNameConfiguration::operator =
   if(jsonValue.ValueExists("type"))
   {
     m_type = ReplicationTopicNameConfigurationTypeMapper::GetReplicationTopicNameConfigurationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

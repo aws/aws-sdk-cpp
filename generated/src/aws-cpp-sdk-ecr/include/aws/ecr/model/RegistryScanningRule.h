@@ -34,7 +34,7 @@ namespace Model
   class RegistryScanningRule
   {
   public:
-    AWS_ECR_API RegistryScanningRule();
+    AWS_ECR_API RegistryScanningRule() = default;
     AWS_ECR_API RegistryScanningRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API RegistryScanningRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * frequency is supported. If scan on push is not specified, then the
      * <code>MANUAL</code> scan frequency is set by default.</p>
      */
-    inline const ScanFrequency& GetScanFrequency() const{ return m_scanFrequency; }
+    inline ScanFrequency GetScanFrequency() const { return m_scanFrequency; }
     inline bool ScanFrequencyHasBeenSet() const { return m_scanFrequencyHasBeenSet; }
-    inline void SetScanFrequency(const ScanFrequency& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
-    inline void SetScanFrequency(ScanFrequency&& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = std::move(value); }
-    inline RegistryScanningRule& WithScanFrequency(const ScanFrequency& value) { SetScanFrequency(value); return *this;}
-    inline RegistryScanningRule& WithScanFrequency(ScanFrequency&& value) { SetScanFrequency(std::move(value)); return *this;}
+    inline void SetScanFrequency(ScanFrequency value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
+    inline RegistryScanningRule& WithScanFrequency(ScanFrequency value) { SetScanFrequency(value); return *this;}
     ///@}
 
     ///@{
@@ -62,18 +60,18 @@ namespace Model
      * <p>The repository filters associated with the scanning configuration for a
      * private registry.</p>
      */
-    inline const Aws::Vector<ScanningRepositoryFilter>& GetRepositoryFilters() const{ return m_repositoryFilters; }
+    inline const Aws::Vector<ScanningRepositoryFilter>& GetRepositoryFilters() const { return m_repositoryFilters; }
     inline bool RepositoryFiltersHasBeenSet() const { return m_repositoryFiltersHasBeenSet; }
-    inline void SetRepositoryFilters(const Aws::Vector<ScanningRepositoryFilter>& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = value; }
-    inline void SetRepositoryFilters(Aws::Vector<ScanningRepositoryFilter>&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = std::move(value); }
-    inline RegistryScanningRule& WithRepositoryFilters(const Aws::Vector<ScanningRepositoryFilter>& value) { SetRepositoryFilters(value); return *this;}
-    inline RegistryScanningRule& WithRepositoryFilters(Aws::Vector<ScanningRepositoryFilter>&& value) { SetRepositoryFilters(std::move(value)); return *this;}
-    inline RegistryScanningRule& AddRepositoryFilters(const ScanningRepositoryFilter& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.push_back(value); return *this; }
-    inline RegistryScanningRule& AddRepositoryFilters(ScanningRepositoryFilter&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.push_back(std::move(value)); return *this; }
+    template<typename RepositoryFiltersT = Aws::Vector<ScanningRepositoryFilter>>
+    void SetRepositoryFilters(RepositoryFiltersT&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = std::forward<RepositoryFiltersT>(value); }
+    template<typename RepositoryFiltersT = Aws::Vector<ScanningRepositoryFilter>>
+    RegistryScanningRule& WithRepositoryFilters(RepositoryFiltersT&& value) { SetRepositoryFilters(std::forward<RepositoryFiltersT>(value)); return *this;}
+    template<typename RepositoryFiltersT = ScanningRepositoryFilter>
+    RegistryScanningRule& AddRepositoryFilters(RepositoryFiltersT&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.emplace_back(std::forward<RepositoryFiltersT>(value)); return *this; }
     ///@}
   private:
 
-    ScanFrequency m_scanFrequency;
+    ScanFrequency m_scanFrequency{ScanFrequency::NOT_SET};
     bool m_scanFrequencyHasBeenSet = false;
 
     Aws::Vector<ScanningRepositoryFilter> m_repositoryFilters;

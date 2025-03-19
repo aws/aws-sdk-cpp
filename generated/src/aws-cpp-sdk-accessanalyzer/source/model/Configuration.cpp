@@ -18,26 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-Configuration::Configuration() : 
-    m_ebsSnapshotHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_efsFileSystemHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_rdsDbClusterSnapshotHasBeenSet(false),
-    m_rdsDbSnapshotHasBeenSet(false),
-    m_secretsManagerSecretHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_snsTopicHasBeenSet(false),
-    m_sqsQueueHasBeenSet(false),
-    m_s3ExpressDirectoryBucketHasBeenSet(false),
-    m_dynamodbStreamHasBeenSet(false),
-    m_dynamodbTableHasBeenSet(false)
-{
-}
-
 Configuration::Configuration(JsonView jsonValue)
-  : Configuration()
 {
   *this = jsonValue;
 }
@@ -47,101 +28,73 @@ Configuration& Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ebsSnapshot"))
   {
     m_ebsSnapshot = jsonValue.GetObject("ebsSnapshot");
-
     m_ebsSnapshotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrRepository"))
   {
     m_ecrRepository = jsonValue.GetObject("ecrRepository");
-
     m_ecrRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRole"))
   {
     m_iamRole = jsonValue.GetObject("iamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("efsFileSystem"))
   {
     m_efsFileSystem = jsonValue.GetObject("efsFileSystem");
-
     m_efsFileSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKey"))
   {
     m_kmsKey = jsonValue.GetObject("kmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDbClusterSnapshot"))
   {
     m_rdsDbClusterSnapshot = jsonValue.GetObject("rdsDbClusterSnapshot");
-
     m_rdsDbClusterSnapshotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDbSnapshot"))
   {
     m_rdsDbSnapshot = jsonValue.GetObject("rdsDbSnapshot");
-
     m_rdsDbSnapshotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretsManagerSecret"))
   {
     m_secretsManagerSecret = jsonValue.GetObject("secretsManagerSecret");
-
     m_secretsManagerSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snsTopic"))
   {
     m_snsTopic = jsonValue.GetObject("snsTopic");
-
     m_snsTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sqsQueue"))
   {
     m_sqsQueue = jsonValue.GetObject("sqsQueue");
-
     m_sqsQueueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ExpressDirectoryBucket"))
   {
     m_s3ExpressDirectoryBucket = jsonValue.GetObject("s3ExpressDirectoryBucket");
-
     m_s3ExpressDirectoryBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamodbStream"))
   {
     m_dynamodbStream = jsonValue.GetObject("dynamodbStream");
-
     m_dynamodbStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamodbTable"))
   {
     m_dynamodbTable = jsonValue.GetObject("dynamodbTable");
-
     m_dynamodbTableHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ListMeshesResult
   {
   public:
-    AWS_APPMESH_API ListMeshesResult();
+    AWS_APPMESH_API ListMeshesResult() = default;
     AWS_APPMESH_API ListMeshesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API ListMeshesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>The list of existing service meshes.</p>
      */
-    inline const Aws::Vector<MeshRef>& GetMeshes() const{ return m_meshes; }
-    inline void SetMeshes(const Aws::Vector<MeshRef>& value) { m_meshes = value; }
-    inline void SetMeshes(Aws::Vector<MeshRef>&& value) { m_meshes = std::move(value); }
-    inline ListMeshesResult& WithMeshes(const Aws::Vector<MeshRef>& value) { SetMeshes(value); return *this;}
-    inline ListMeshesResult& WithMeshes(Aws::Vector<MeshRef>&& value) { SetMeshes(std::move(value)); return *this;}
-    inline ListMeshesResult& AddMeshes(const MeshRef& value) { m_meshes.push_back(value); return *this; }
-    inline ListMeshesResult& AddMeshes(MeshRef&& value) { m_meshes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MeshRef>& GetMeshes() const { return m_meshes; }
+    template<typename MeshesT = Aws::Vector<MeshRef>>
+    void SetMeshes(MeshesT&& value) { m_meshesHasBeenSet = true; m_meshes = std::forward<MeshesT>(value); }
+    template<typename MeshesT = Aws::Vector<MeshRef>>
+    ListMeshesResult& WithMeshes(MeshesT&& value) { SetMeshes(std::forward<MeshesT>(value)); return *this;}
+    template<typename MeshesT = MeshRef>
+    ListMeshesResult& AddMeshes(MeshesT&& value) { m_meshesHasBeenSet = true; m_meshes.emplace_back(std::forward<MeshesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,32 +60,31 @@ namespace Model
      * page of results. This value is <code>null</code> when there are no more results
      * to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMeshesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMeshesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMeshesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMeshesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMeshesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMeshesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMeshesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMeshesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MeshRef> m_meshes;
+    bool m_meshesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

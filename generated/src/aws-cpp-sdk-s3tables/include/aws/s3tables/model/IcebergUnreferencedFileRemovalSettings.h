@@ -30,7 +30,7 @@ namespace Model
   class IcebergUnreferencedFileRemovalSettings
   {
   public:
-    AWS_S3TABLES_API IcebergUnreferencedFileRemovalSettings();
+    AWS_S3TABLES_API IcebergUnreferencedFileRemovalSettings() = default;
     AWS_S3TABLES_API IcebergUnreferencedFileRemovalSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API IcebergUnreferencedFileRemovalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The number of days an object has to be unreferenced before it is marked as
      * non-current. <pre><code> &lt;/p&gt; </code></pre>
      */
-    inline int GetUnreferencedDays() const{ return m_unreferencedDays; }
+    inline int GetUnreferencedDays() const { return m_unreferencedDays; }
     inline bool UnreferencedDaysHasBeenSet() const { return m_unreferencedDaysHasBeenSet; }
     inline void SetUnreferencedDays(int value) { m_unreferencedDaysHasBeenSet = true; m_unreferencedDays = value; }
     inline IcebergUnreferencedFileRemovalSettings& WithUnreferencedDays(int value) { SetUnreferencedDays(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The number of days an object has to be non-current before it is deleted.
      * <pre><code>&lt;/p&gt; </code></pre>
      */
-    inline int GetNonCurrentDays() const{ return m_nonCurrentDays; }
+    inline int GetNonCurrentDays() const { return m_nonCurrentDays; }
     inline bool NonCurrentDaysHasBeenSet() const { return m_nonCurrentDaysHasBeenSet; }
     inline void SetNonCurrentDays(int value) { m_nonCurrentDaysHasBeenSet = true; m_nonCurrentDays = value; }
     inline IcebergUnreferencedFileRemovalSettings& WithNonCurrentDays(int value) { SetNonCurrentDays(value); return *this;}
     ///@}
   private:
 
-    int m_unreferencedDays;
+    int m_unreferencedDays{0};
     bool m_unreferencedDaysHasBeenSet = false;
 
-    int m_nonCurrentDays;
+    int m_nonCurrentDays{0};
     bool m_nonCurrentDaysHasBeenSet = false;
   };
 

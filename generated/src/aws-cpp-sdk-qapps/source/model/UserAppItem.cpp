@@ -18,22 +18,7 @@ namespace QApps
 namespace Model
 {
 
-UserAppItem::UserAppItem() : 
-    m_appIdHasBeenSet(false),
-    m_appArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_canEdit(false),
-    m_canEditHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_isVerified(false),
-    m_isVerifiedHasBeenSet(false)
-{
-}
-
 UserAppItem::UserAppItem(JsonView jsonValue)
-  : UserAppItem()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ UserAppItem& UserAppItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
     m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canEdit"))
   {
     m_canEdit = jsonValue.GetBool("canEdit");
-
     m_canEditHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isVerified"))
   {
     m_isVerified = jsonValue.GetBool("isVerified");
-
     m_isVerifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

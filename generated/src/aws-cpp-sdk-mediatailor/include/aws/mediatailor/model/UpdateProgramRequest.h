@@ -25,7 +25,7 @@ namespace Model
   class UpdateProgramRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API UpdateProgramRequest();
+    AWS_MEDIATAILOR_API UpdateProgramRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,68 +40,64 @@ namespace Model
     /**
      * <p>The ad break configuration settings.</p>
      */
-    inline const Aws::Vector<AdBreak>& GetAdBreaks() const{ return m_adBreaks; }
+    inline const Aws::Vector<AdBreak>& GetAdBreaks() const { return m_adBreaks; }
     inline bool AdBreaksHasBeenSet() const { return m_adBreaksHasBeenSet; }
-    inline void SetAdBreaks(const Aws::Vector<AdBreak>& value) { m_adBreaksHasBeenSet = true; m_adBreaks = value; }
-    inline void SetAdBreaks(Aws::Vector<AdBreak>&& value) { m_adBreaksHasBeenSet = true; m_adBreaks = std::move(value); }
-    inline UpdateProgramRequest& WithAdBreaks(const Aws::Vector<AdBreak>& value) { SetAdBreaks(value); return *this;}
-    inline UpdateProgramRequest& WithAdBreaks(Aws::Vector<AdBreak>&& value) { SetAdBreaks(std::move(value)); return *this;}
-    inline UpdateProgramRequest& AddAdBreaks(const AdBreak& value) { m_adBreaksHasBeenSet = true; m_adBreaks.push_back(value); return *this; }
-    inline UpdateProgramRequest& AddAdBreaks(AdBreak&& value) { m_adBreaksHasBeenSet = true; m_adBreaks.push_back(std::move(value)); return *this; }
+    template<typename AdBreaksT = Aws::Vector<AdBreak>>
+    void SetAdBreaks(AdBreaksT&& value) { m_adBreaksHasBeenSet = true; m_adBreaks = std::forward<AdBreaksT>(value); }
+    template<typename AdBreaksT = Aws::Vector<AdBreak>>
+    UpdateProgramRequest& WithAdBreaks(AdBreaksT&& value) { SetAdBreaks(std::forward<AdBreaksT>(value)); return *this;}
+    template<typename AdBreaksT = AdBreak>
+    UpdateProgramRequest& AddAdBreaks(AdBreaksT&& value) { m_adBreaksHasBeenSet = true; m_adBreaks.emplace_back(std::forward<AdBreaksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the channel for this Program.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline UpdateProgramRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline UpdateProgramRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline UpdateProgramRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    UpdateProgramRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Program.</p>
      */
-    inline const Aws::String& GetProgramName() const{ return m_programName; }
+    inline const Aws::String& GetProgramName() const { return m_programName; }
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-    inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-    inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-    inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-    inline UpdateProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-    inline UpdateProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-    inline UpdateProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    template<typename ProgramNameT = Aws::String>
+    void SetProgramName(ProgramNameT&& value) { m_programNameHasBeenSet = true; m_programName = std::forward<ProgramNameT>(value); }
+    template<typename ProgramNameT = Aws::String>
+    UpdateProgramRequest& WithProgramName(ProgramNameT&& value) { SetProgramName(std::forward<ProgramNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schedule configuration settings.</p>
      */
-    inline const UpdateProgramScheduleConfiguration& GetScheduleConfiguration() const{ return m_scheduleConfiguration; }
+    inline const UpdateProgramScheduleConfiguration& GetScheduleConfiguration() const { return m_scheduleConfiguration; }
     inline bool ScheduleConfigurationHasBeenSet() const { return m_scheduleConfigurationHasBeenSet; }
-    inline void SetScheduleConfiguration(const UpdateProgramScheduleConfiguration& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = value; }
-    inline void SetScheduleConfiguration(UpdateProgramScheduleConfiguration&& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = std::move(value); }
-    inline UpdateProgramRequest& WithScheduleConfiguration(const UpdateProgramScheduleConfiguration& value) { SetScheduleConfiguration(value); return *this;}
-    inline UpdateProgramRequest& WithScheduleConfiguration(UpdateProgramScheduleConfiguration&& value) { SetScheduleConfiguration(std::move(value)); return *this;}
+    template<typename ScheduleConfigurationT = UpdateProgramScheduleConfiguration>
+    void SetScheduleConfiguration(ScheduleConfigurationT&& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = std::forward<ScheduleConfigurationT>(value); }
+    template<typename ScheduleConfigurationT = UpdateProgramScheduleConfiguration>
+    UpdateProgramRequest& WithScheduleConfiguration(ScheduleConfigurationT&& value) { SetScheduleConfiguration(std::forward<ScheduleConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of AudienceMedia defined in program.</p>
      */
-    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const { return m_audienceMedia; }
     inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
-    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
-    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
-    inline UpdateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
-    inline UpdateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
-    inline UpdateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
-    inline UpdateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
+    template<typename AudienceMediaT = Aws::Vector<AudienceMedia>>
+    void SetAudienceMedia(AudienceMediaT&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::forward<AudienceMediaT>(value); }
+    template<typename AudienceMediaT = Aws::Vector<AudienceMedia>>
+    UpdateProgramRequest& WithAudienceMedia(AudienceMediaT&& value) { SetAudienceMedia(std::forward<AudienceMediaT>(value)); return *this;}
+    template<typename AudienceMediaT = AudienceMedia>
+    UpdateProgramRequest& AddAudienceMedia(AudienceMediaT&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.emplace_back(std::forward<AudienceMediaT>(value)); return *this; }
     ///@}
   private:
 

@@ -37,7 +37,7 @@ namespace Model
   class MatchAttributes
   {
   public:
-    AWS_NETWORKFIREWALL_API MatchAttributes();
+    AWS_NETWORKFIREWALL_API MatchAttributes() = default;
     AWS_NETWORKFIREWALL_API MatchAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API MatchAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <p>The source IP addresses and address ranges to inspect for, in CIDR notation.
      * If not specified, this matches with any source address. </p>
      */
-    inline const Aws::Vector<Address>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<Address>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<Address>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<Address>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline MatchAttributes& WithSources(const Aws::Vector<Address>& value) { SetSources(value); return *this;}
-    inline MatchAttributes& WithSources(Aws::Vector<Address>&& value) { SetSources(std::move(value)); return *this;}
-    inline MatchAttributes& AddSources(const Address& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline MatchAttributes& AddSources(Address&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<Address>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<Address>>
+    MatchAttributes& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = Address>
+    MatchAttributes& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * <p>The destination IP addresses and address ranges to inspect for, in CIDR
      * notation. If not specified, this matches with any destination address. </p>
      */
-    inline const Aws::Vector<Address>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<Address>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<Address>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<Address>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline MatchAttributes& WithDestinations(const Aws::Vector<Address>& value) { SetDestinations(value); return *this;}
-    inline MatchAttributes& WithDestinations(Aws::Vector<Address>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline MatchAttributes& AddDestinations(const Address& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline MatchAttributes& AddDestinations(Address&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<Address>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<Address>>
+    MatchAttributes& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = Address>
+    MatchAttributes& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,14 +80,14 @@ namespace Model
      * <p>You can specify individual ports, for example <code>1994</code> and you can
      * specify port ranges, for example <code>1990:1994</code>. </p>
      */
-    inline const Aws::Vector<PortRange>& GetSourcePorts() const{ return m_sourcePorts; }
+    inline const Aws::Vector<PortRange>& GetSourcePorts() const { return m_sourcePorts; }
     inline bool SourcePortsHasBeenSet() const { return m_sourcePortsHasBeenSet; }
-    inline void SetSourcePorts(const Aws::Vector<PortRange>& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = value; }
-    inline void SetSourcePorts(Aws::Vector<PortRange>&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::move(value); }
-    inline MatchAttributes& WithSourcePorts(const Aws::Vector<PortRange>& value) { SetSourcePorts(value); return *this;}
-    inline MatchAttributes& WithSourcePorts(Aws::Vector<PortRange>&& value) { SetSourcePorts(std::move(value)); return *this;}
-    inline MatchAttributes& AddSourcePorts(const PortRange& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(value); return *this; }
-    inline MatchAttributes& AddSourcePorts(PortRange&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(std::move(value)); return *this; }
+    template<typename SourcePortsT = Aws::Vector<PortRange>>
+    void SetSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::forward<SourcePortsT>(value); }
+    template<typename SourcePortsT = Aws::Vector<PortRange>>
+    MatchAttributes& WithSourcePorts(SourcePortsT&& value) { SetSourcePorts(std::forward<SourcePortsT>(value)); return *this;}
+    template<typename SourcePortsT = PortRange>
+    MatchAttributes& AddSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.emplace_back(std::forward<SourcePortsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,14 +97,14 @@ namespace Model
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
      * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
-    inline const Aws::Vector<PortRange>& GetDestinationPorts() const{ return m_destinationPorts; }
+    inline const Aws::Vector<PortRange>& GetDestinationPorts() const { return m_destinationPorts; }
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
-    inline void SetDestinationPorts(const Aws::Vector<PortRange>& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = value; }
-    inline void SetDestinationPorts(Aws::Vector<PortRange>&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::move(value); }
-    inline MatchAttributes& WithDestinationPorts(const Aws::Vector<PortRange>& value) { SetDestinationPorts(value); return *this;}
-    inline MatchAttributes& WithDestinationPorts(Aws::Vector<PortRange>&& value) { SetDestinationPorts(std::move(value)); return *this;}
-    inline MatchAttributes& AddDestinationPorts(const PortRange& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
-    inline MatchAttributes& AddDestinationPorts(PortRange&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(std::move(value)); return *this; }
+    template<typename DestinationPortsT = Aws::Vector<PortRange>>
+    void SetDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::forward<DestinationPortsT>(value); }
+    template<typename DestinationPortsT = Aws::Vector<PortRange>>
+    MatchAttributes& WithDestinationPorts(DestinationPortsT&& value) { SetDestinationPorts(std::forward<DestinationPortsT>(value)); return *this;}
+    template<typename DestinationPortsT = PortRange>
+    MatchAttributes& AddDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.emplace_back(std::forward<DestinationPortsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,12 +113,12 @@ namespace Model
      * internet protocol number (IANA). If not specified, this matches with any
      * protocol. </p>
      */
-    inline const Aws::Vector<int>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<int>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<int>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<int>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline MatchAttributes& WithProtocols(const Aws::Vector<int>& value) { SetProtocols(value); return *this;}
-    inline MatchAttributes& WithProtocols(Aws::Vector<int>&& value) { SetProtocols(std::move(value)); return *this;}
+    template<typename ProtocolsT = Aws::Vector<int>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<int>>
+    MatchAttributes& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
     inline MatchAttributes& AddProtocols(int value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
@@ -127,14 +127,14 @@ namespace Model
      * <p>The TCP flags and masks to inspect for. If not specified, this matches with
      * any settings. This setting is only used for protocol 6 (TCP).</p>
      */
-    inline const Aws::Vector<TCPFlagField>& GetTCPFlags() const{ return m_tCPFlags; }
+    inline const Aws::Vector<TCPFlagField>& GetTCPFlags() const { return m_tCPFlags; }
     inline bool TCPFlagsHasBeenSet() const { return m_tCPFlagsHasBeenSet; }
-    inline void SetTCPFlags(const Aws::Vector<TCPFlagField>& value) { m_tCPFlagsHasBeenSet = true; m_tCPFlags = value; }
-    inline void SetTCPFlags(Aws::Vector<TCPFlagField>&& value) { m_tCPFlagsHasBeenSet = true; m_tCPFlags = std::move(value); }
-    inline MatchAttributes& WithTCPFlags(const Aws::Vector<TCPFlagField>& value) { SetTCPFlags(value); return *this;}
-    inline MatchAttributes& WithTCPFlags(Aws::Vector<TCPFlagField>&& value) { SetTCPFlags(std::move(value)); return *this;}
-    inline MatchAttributes& AddTCPFlags(const TCPFlagField& value) { m_tCPFlagsHasBeenSet = true; m_tCPFlags.push_back(value); return *this; }
-    inline MatchAttributes& AddTCPFlags(TCPFlagField&& value) { m_tCPFlagsHasBeenSet = true; m_tCPFlags.push_back(std::move(value)); return *this; }
+    template<typename TCPFlagsT = Aws::Vector<TCPFlagField>>
+    void SetTCPFlags(TCPFlagsT&& value) { m_tCPFlagsHasBeenSet = true; m_tCPFlags = std::forward<TCPFlagsT>(value); }
+    template<typename TCPFlagsT = Aws::Vector<TCPFlagField>>
+    MatchAttributes& WithTCPFlags(TCPFlagsT&& value) { SetTCPFlags(std::forward<TCPFlagsT>(value)); return *this;}
+    template<typename TCPFlagsT = TCPFlagField>
+    MatchAttributes& AddTCPFlags(TCPFlagsT&& value) { m_tCPFlagsHasBeenSet = true; m_tCPFlags.emplace_back(std::forward<TCPFlagsT>(value)); return *this; }
     ///@}
   private:
 

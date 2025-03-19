@@ -36,7 +36,7 @@ namespace Model
   class DescribeReservedElasticsearchInstanceOfferingsResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsResult();
+    AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsResult() = default;
     AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,44 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReservedElasticsearchInstanceOfferingsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of reserved Elasticsearch instance offerings</p>
      */
-    inline const Aws::Vector<ReservedElasticsearchInstanceOffering>& GetReservedElasticsearchInstanceOfferings() const{ return m_reservedElasticsearchInstanceOfferings; }
-    inline void SetReservedElasticsearchInstanceOfferings(const Aws::Vector<ReservedElasticsearchInstanceOffering>& value) { m_reservedElasticsearchInstanceOfferings = value; }
-    inline void SetReservedElasticsearchInstanceOfferings(Aws::Vector<ReservedElasticsearchInstanceOffering>&& value) { m_reservedElasticsearchInstanceOfferings = std::move(value); }
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithReservedElasticsearchInstanceOfferings(const Aws::Vector<ReservedElasticsearchInstanceOffering>& value) { SetReservedElasticsearchInstanceOfferings(value); return *this;}
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithReservedElasticsearchInstanceOfferings(Aws::Vector<ReservedElasticsearchInstanceOffering>&& value) { SetReservedElasticsearchInstanceOfferings(std::move(value)); return *this;}
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& AddReservedElasticsearchInstanceOfferings(const ReservedElasticsearchInstanceOffering& value) { m_reservedElasticsearchInstanceOfferings.push_back(value); return *this; }
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& AddReservedElasticsearchInstanceOfferings(ReservedElasticsearchInstanceOffering&& value) { m_reservedElasticsearchInstanceOfferings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedElasticsearchInstanceOffering>& GetReservedElasticsearchInstanceOfferings() const { return m_reservedElasticsearchInstanceOfferings; }
+    template<typename ReservedElasticsearchInstanceOfferingsT = Aws::Vector<ReservedElasticsearchInstanceOffering>>
+    void SetReservedElasticsearchInstanceOfferings(ReservedElasticsearchInstanceOfferingsT&& value) { m_reservedElasticsearchInstanceOfferingsHasBeenSet = true; m_reservedElasticsearchInstanceOfferings = std::forward<ReservedElasticsearchInstanceOfferingsT>(value); }
+    template<typename ReservedElasticsearchInstanceOfferingsT = Aws::Vector<ReservedElasticsearchInstanceOffering>>
+    DescribeReservedElasticsearchInstanceOfferingsResult& WithReservedElasticsearchInstanceOfferings(ReservedElasticsearchInstanceOfferingsT&& value) { SetReservedElasticsearchInstanceOfferings(std::forward<ReservedElasticsearchInstanceOfferingsT>(value)); return *this;}
+    template<typename ReservedElasticsearchInstanceOfferingsT = ReservedElasticsearchInstanceOffering>
+    DescribeReservedElasticsearchInstanceOfferingsResult& AddReservedElasticsearchInstanceOfferings(ReservedElasticsearchInstanceOfferingsT&& value) { m_reservedElasticsearchInstanceOfferingsHasBeenSet = true; m_reservedElasticsearchInstanceOfferings.emplace_back(std::forward<ReservedElasticsearchInstanceOfferingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReservedElasticsearchInstanceOfferingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ReservedElasticsearchInstanceOffering> m_reservedElasticsearchInstanceOfferings;
+    bool m_reservedElasticsearchInstanceOfferingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

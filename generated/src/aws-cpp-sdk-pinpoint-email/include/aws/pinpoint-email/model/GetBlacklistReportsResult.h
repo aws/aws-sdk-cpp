@@ -36,7 +36,7 @@ namespace Model
   class GetBlacklistReportsResult
   {
   public:
-    AWS_PINPOINTEMAIL_API GetBlacklistReportsResult();
+    AWS_PINPOINTEMAIL_API GetBlacklistReportsResult() = default;
     AWS_PINPOINTEMAIL_API GetBlacklistReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API GetBlacklistReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,34 +46,32 @@ namespace Model
      * <p>An object that contains information about a blacklist that one of your
      * dedicated IP addresses appears on.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& GetBlacklistReport() const{ return m_blacklistReport; }
-    inline void SetBlacklistReport(const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& value) { m_blacklistReport = value; }
-    inline void SetBlacklistReport(Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>&& value) { m_blacklistReport = std::move(value); }
-    inline GetBlacklistReportsResult& WithBlacklistReport(const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& value) { SetBlacklistReport(value); return *this;}
-    inline GetBlacklistReportsResult& WithBlacklistReport(Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>&& value) { SetBlacklistReport(std::move(value)); return *this;}
-    inline GetBlacklistReportsResult& AddBlacklistReport(const Aws::String& key, const Aws::Vector<BlacklistEntry>& value) { m_blacklistReport.emplace(key, value); return *this; }
-    inline GetBlacklistReportsResult& AddBlacklistReport(Aws::String&& key, const Aws::Vector<BlacklistEntry>& value) { m_blacklistReport.emplace(std::move(key), value); return *this; }
-    inline GetBlacklistReportsResult& AddBlacklistReport(const Aws::String& key, Aws::Vector<BlacklistEntry>&& value) { m_blacklistReport.emplace(key, std::move(value)); return *this; }
-    inline GetBlacklistReportsResult& AddBlacklistReport(Aws::String&& key, Aws::Vector<BlacklistEntry>&& value) { m_blacklistReport.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetBlacklistReportsResult& AddBlacklistReport(const char* key, Aws::Vector<BlacklistEntry>&& value) { m_blacklistReport.emplace(key, std::move(value)); return *this; }
-    inline GetBlacklistReportsResult& AddBlacklistReport(const char* key, const Aws::Vector<BlacklistEntry>& value) { m_blacklistReport.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>& GetBlacklistReport() const { return m_blacklistReport; }
+    template<typename BlacklistReportT = Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>>
+    void SetBlacklistReport(BlacklistReportT&& value) { m_blacklistReportHasBeenSet = true; m_blacklistReport = std::forward<BlacklistReportT>(value); }
+    template<typename BlacklistReportT = Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>>>
+    GetBlacklistReportsResult& WithBlacklistReport(BlacklistReportT&& value) { SetBlacklistReport(std::forward<BlacklistReportT>(value)); return *this;}
+    template<typename BlacklistReportKeyT = Aws::String, typename BlacklistReportValueT = Aws::Vector<BlacklistEntry>>
+    GetBlacklistReportsResult& AddBlacklistReport(BlacklistReportKeyT&& key, BlacklistReportValueT&& value) {
+      m_blacklistReportHasBeenSet = true; m_blacklistReport.emplace(std::forward<BlacklistReportKeyT>(key), std::forward<BlacklistReportValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBlacklistReportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBlacklistReportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBlacklistReportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBlacklistReportsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<BlacklistEntry>> m_blacklistReport;
+    bool m_blacklistReportHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

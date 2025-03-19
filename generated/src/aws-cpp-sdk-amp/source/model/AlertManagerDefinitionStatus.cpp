@@ -18,15 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-AlertManagerDefinitionStatus::AlertManagerDefinitionStatus() : 
-    m_statusCode(AlertManagerDefinitionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 AlertManagerDefinitionStatus::AlertManagerDefinitionStatus(JsonView jsonValue)
-  : AlertManagerDefinitionStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AlertManagerDefinitionStatus& AlertManagerDefinitionStatus::operator =(JsonView 
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = AlertManagerDefinitionStatusCodeMapper::GetAlertManagerDefinitionStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

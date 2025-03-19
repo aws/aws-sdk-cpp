@@ -12,12 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteDevicePositionHistoryRequest::BatchDeleteDevicePositionHistoryRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_deviceIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteDevicePositionHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

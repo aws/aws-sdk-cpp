@@ -27,7 +27,7 @@ namespace Model
   class DescribeClusterSnapshotsRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeClusterSnapshotsRequest();
+    AWS_REDSHIFT_API DescribeClusterSnapshotsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    DescribeClusterSnapshotsRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The snapshot identifier of the snapshot about which to return
      * information.</p>
      */
-    inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+    inline const Aws::String& GetSnapshotIdentifier() const { return m_snapshotIdentifier; }
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
-    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
-    inline DescribeClusterSnapshotsRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+    template<typename SnapshotIdentifierT = Aws::String>
+    void SetSnapshotIdentifier(SnapshotIdentifierT&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::forward<SnapshotIdentifierT>(value); }
+    template<typename SnapshotIdentifierT = Aws::String>
+    DescribeClusterSnapshotsRequest& WithSnapshotIdentifier(SnapshotIdentifierT&& value) { SetSnapshotIdentifier(std::forward<SnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
      * describe cluster snapshots.</p>
      */
-    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+    inline const Aws::String& GetSnapshotArn() const { return m_snapshotArn; }
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
-    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
-    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
-    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
-    inline DescribeClusterSnapshotsRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
+    template<typename SnapshotArnT = Aws::String>
+    void SetSnapshotArn(SnapshotArnT&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::forward<SnapshotArnT>(value); }
+    template<typename SnapshotArnT = Aws::String>
+    DescribeClusterSnapshotsRequest& WithSnapshotArn(SnapshotArnT&& value) { SetSnapshotArn(std::forward<SnapshotArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code>
      * | <code>manual</code> </p>
      */
-    inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
+    inline const Aws::String& GetSnapshotType() const { return m_snapshotType; }
     inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
-    inline void SetSnapshotType(const Aws::String& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
-    inline void SetSnapshotType(Aws::String&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = std::move(value); }
-    inline void SetSnapshotType(const char* value) { m_snapshotTypeHasBeenSet = true; m_snapshotType.assign(value); }
-    inline DescribeClusterSnapshotsRequest& WithSnapshotType(const Aws::String& value) { SetSnapshotType(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSnapshotType(Aws::String&& value) { SetSnapshotType(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
+    template<typename SnapshotTypeT = Aws::String>
+    void SetSnapshotType(SnapshotTypeT&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = std::forward<SnapshotTypeT>(value); }
+    template<typename SnapshotTypeT = Aws::String>
+    DescribeClusterSnapshotsRequest& WithSnapshotType(SnapshotTypeT&& value) { SetSnapshotType(std::forward<SnapshotTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +101,12 @@ namespace Model
      * 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline DescribeClusterSnapshotsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    DescribeClusterSnapshotsRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +116,12 @@ namespace Model
      * ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
      * Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline DescribeClusterSnapshotsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    DescribeClusterSnapshotsRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +133,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeClusterSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -156,14 +148,12 @@ namespace Model
      * retrieve the next set of response records by providing the returned marker value
      * in the <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeClusterSnapshotsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeClusterSnapshotsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,14 +163,12 @@ namespace Model
      * describe snapshots you own, either specify your Amazon Web Services account, or
      * do not specify the parameter.</p>
      */
-    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
-    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
-    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
-    inline DescribeClusterSnapshotsRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    DescribeClusterSnapshotsRequest& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,15 +180,14 @@ namespace Model
      * Amazon Redshift returns a response with the snapshots that have either or both
      * of these tag keys associated with them.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+    inline const Aws::Vector<Aws::String>& GetTagKeys() const { return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-    inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-    inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-    inline DescribeClusterSnapshotsRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-    inline DescribeClusterSnapshotsRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-    inline DescribeClusterSnapshotsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+    template<typename TagKeysT = Aws::Vector<Aws::String>>
+    void SetTagKeys(TagKeysT&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::forward<TagKeysT>(value); }
+    template<typename TagKeysT = Aws::Vector<Aws::String>>
+    DescribeClusterSnapshotsRequest& WithTagKeys(TagKeysT&& value) { SetTagKeys(std::forward<TagKeysT>(value)); return *this;}
+    template<typename TagKeysT = Aws::String>
+    DescribeClusterSnapshotsRequest& AddTagKeys(TagKeysT&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.emplace_back(std::forward<TagKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -212,15 +199,14 @@ namespace Model
      * values in the request, Amazon Redshift returns a response with the snapshots
      * that have either or both of these tag values associated with them.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
+    inline const Aws::Vector<Aws::String>& GetTagValues() const { return m_tagValues; }
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
-    inline void SetTagValues(const Aws::Vector<Aws::String>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
-    inline DescribeClusterSnapshotsRequest& WithTagValues(const Aws::Vector<Aws::String>& value) { SetTagValues(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& AddTagValues(const Aws::String& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-    inline DescribeClusterSnapshotsRequest& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
-    inline DescribeClusterSnapshotsRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    template<typename TagValuesT = Aws::Vector<Aws::String>>
+    void SetTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::forward<TagValuesT>(value); }
+    template<typename TagValuesT = Aws::Vector<Aws::String>>
+    DescribeClusterSnapshotsRequest& WithTagValues(TagValuesT&& value) { SetTagValues(std::forward<TagValuesT>(value)); return *this;}
+    template<typename TagValuesT = Aws::String>
+    DescribeClusterSnapshotsRequest& AddTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues.emplace_back(std::forward<TagValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -240,7 +226,7 @@ namespace Model
      * <code>ClusterIdentifier</code> is specified for an existing cluster, no
      * snapshots are returned. </p> </li> </ul>
      */
-    inline bool GetClusterExists() const{ return m_clusterExists; }
+    inline bool GetClusterExists() const { return m_clusterExists; }
     inline bool ClusterExistsHasBeenSet() const { return m_clusterExistsHasBeenSet; }
     inline void SetClusterExists(bool value) { m_clusterExistsHasBeenSet = true; m_clusterExists = value; }
     inline DescribeClusterSnapshotsRequest& WithClusterExists(bool value) { SetClusterExists(value); return *this;}
@@ -250,14 +236,14 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<SnapshotSortingEntity>& GetSortingEntities() const{ return m_sortingEntities; }
+    inline const Aws::Vector<SnapshotSortingEntity>& GetSortingEntities() const { return m_sortingEntities; }
     inline bool SortingEntitiesHasBeenSet() const { return m_sortingEntitiesHasBeenSet; }
-    inline void SetSortingEntities(const Aws::Vector<SnapshotSortingEntity>& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = value; }
-    inline void SetSortingEntities(Aws::Vector<SnapshotSortingEntity>&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = std::move(value); }
-    inline DescribeClusterSnapshotsRequest& WithSortingEntities(const Aws::Vector<SnapshotSortingEntity>& value) { SetSortingEntities(value); return *this;}
-    inline DescribeClusterSnapshotsRequest& WithSortingEntities(Aws::Vector<SnapshotSortingEntity>&& value) { SetSortingEntities(std::move(value)); return *this;}
-    inline DescribeClusterSnapshotsRequest& AddSortingEntities(const SnapshotSortingEntity& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.push_back(value); return *this; }
-    inline DescribeClusterSnapshotsRequest& AddSortingEntities(SnapshotSortingEntity&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.push_back(std::move(value)); return *this; }
+    template<typename SortingEntitiesT = Aws::Vector<SnapshotSortingEntity>>
+    void SetSortingEntities(SortingEntitiesT&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = std::forward<SortingEntitiesT>(value); }
+    template<typename SortingEntitiesT = Aws::Vector<SnapshotSortingEntity>>
+    DescribeClusterSnapshotsRequest& WithSortingEntities(SortingEntitiesT&& value) { SetSortingEntities(std::forward<SortingEntitiesT>(value)); return *this;}
+    template<typename SortingEntitiesT = SnapshotSortingEntity>
+    DescribeClusterSnapshotsRequest& AddSortingEntities(SortingEntitiesT&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.emplace_back(std::forward<SortingEntitiesT>(value)); return *this; }
     ///@}
   private:
 
@@ -273,13 +259,13 @@ namespace Model
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
@@ -294,7 +280,7 @@ namespace Model
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet = false;
 
-    bool m_clusterExists;
+    bool m_clusterExists{false};
     bool m_clusterExistsHasBeenSet = false;
 
     Aws::Vector<SnapshotSortingEntity> m_sortingEntities;

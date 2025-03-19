@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelConversionTaskRequest::CancelConversionTaskRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_conversionTaskIdHasBeenSet(false),
-    m_reasonMessageHasBeenSet(false)
-{
-}
-
 Aws::String CancelConversionTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

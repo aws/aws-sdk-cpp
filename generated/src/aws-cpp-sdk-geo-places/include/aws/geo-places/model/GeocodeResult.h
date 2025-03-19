@@ -29,7 +29,7 @@ namespace Model
   class GeocodeResult
   {
   public:
-    AWS_GEOPLACES_API GeocodeResult();
+    AWS_GEOPLACES_API GeocodeResult() = default;
     AWS_GEOPLACES_API GeocodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GEOPLACES_API GeocodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * Pricing</a>.</p>
      */
-    inline const Aws::String& GetPricingBucket() const{ return m_pricingBucket; }
-    inline void SetPricingBucket(const Aws::String& value) { m_pricingBucket = value; }
-    inline void SetPricingBucket(Aws::String&& value) { m_pricingBucket = std::move(value); }
-    inline void SetPricingBucket(const char* value) { m_pricingBucket.assign(value); }
-    inline GeocodeResult& WithPricingBucket(const Aws::String& value) { SetPricingBucket(value); return *this;}
-    inline GeocodeResult& WithPricingBucket(Aws::String&& value) { SetPricingBucket(std::move(value)); return *this;}
-    inline GeocodeResult& WithPricingBucket(const char* value) { SetPricingBucket(value); return *this;}
+    inline const Aws::String& GetPricingBucket() const { return m_pricingBucket; }
+    template<typename PricingBucketT = Aws::String>
+    void SetPricingBucket(PricingBucketT&& value) { m_pricingBucketHasBeenSet = true; m_pricingBucket = std::forward<PricingBucketT>(value); }
+    template<typename PricingBucketT = Aws::String>
+    GeocodeResult& WithPricingBucket(PricingBucketT&& value) { SetPricingBucket(std::forward<PricingBucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of places or results returned for a query. </p>
      */
-    inline const Aws::Vector<GeocodeResultItem>& GetResultItems() const{ return m_resultItems; }
-    inline void SetResultItems(const Aws::Vector<GeocodeResultItem>& value) { m_resultItems = value; }
-    inline void SetResultItems(Aws::Vector<GeocodeResultItem>&& value) { m_resultItems = std::move(value); }
-    inline GeocodeResult& WithResultItems(const Aws::Vector<GeocodeResultItem>& value) { SetResultItems(value); return *this;}
-    inline GeocodeResult& WithResultItems(Aws::Vector<GeocodeResultItem>&& value) { SetResultItems(std::move(value)); return *this;}
-    inline GeocodeResult& AddResultItems(const GeocodeResultItem& value) { m_resultItems.push_back(value); return *this; }
-    inline GeocodeResult& AddResultItems(GeocodeResultItem&& value) { m_resultItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GeocodeResultItem>& GetResultItems() const { return m_resultItems; }
+    template<typename ResultItemsT = Aws::Vector<GeocodeResultItem>>
+    void SetResultItems(ResultItemsT&& value) { m_resultItemsHasBeenSet = true; m_resultItems = std::forward<ResultItemsT>(value); }
+    template<typename ResultItemsT = Aws::Vector<GeocodeResultItem>>
+    GeocodeResult& WithResultItems(ResultItemsT&& value) { SetResultItems(std::forward<ResultItemsT>(value)); return *this;}
+    template<typename ResultItemsT = GeocodeResultItem>
+    GeocodeResult& AddResultItems(ResultItemsT&& value) { m_resultItemsHasBeenSet = true; m_resultItems.emplace_back(std::forward<ResultItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GeocodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GeocodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GeocodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GeocodeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pricingBucket;
+    bool m_pricingBucketHasBeenSet = false;
 
     Aws::Vector<GeocodeResultItem> m_resultItems;
+    bool m_resultItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

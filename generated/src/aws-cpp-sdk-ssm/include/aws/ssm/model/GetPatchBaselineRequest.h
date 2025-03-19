@@ -21,7 +21,7 @@ namespace Model
   class GetPatchBaselineRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetPatchBaselineRequest();
+    AWS_SSM_API GetPatchBaselineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code>
      * instead of <code>pb-0e392de35e7c563b7</code>.</p> 
      */
-    inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
+    inline const Aws::String& GetBaselineId() const { return m_baselineId; }
     inline bool BaselineIdHasBeenSet() const { return m_baselineIdHasBeenSet; }
-    inline void SetBaselineId(const Aws::String& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
-    inline void SetBaselineId(Aws::String&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::move(value); }
-    inline void SetBaselineId(const char* value) { m_baselineIdHasBeenSet = true; m_baselineId.assign(value); }
-    inline GetPatchBaselineRequest& WithBaselineId(const Aws::String& value) { SetBaselineId(value); return *this;}
-    inline GetPatchBaselineRequest& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
-    inline GetPatchBaselineRequest& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+    template<typename BaselineIdT = Aws::String>
+    void SetBaselineId(BaselineIdT&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::forward<BaselineIdT>(value); }
+    template<typename BaselineIdT = Aws::String>
+    GetPatchBaselineRequest& WithBaselineId(BaselineIdT&& value) { SetBaselineId(std::forward<BaselineIdT>(value)); return *this;}
     ///@}
   private:
 

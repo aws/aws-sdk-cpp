@@ -18,14 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-NotFoundException::NotFoundException() : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 NotFoundException::NotFoundException(JsonView jsonValue)
-  : NotFoundException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotFoundException& NotFoundException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

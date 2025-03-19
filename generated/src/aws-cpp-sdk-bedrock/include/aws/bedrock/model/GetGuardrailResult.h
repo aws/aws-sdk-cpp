@@ -35,7 +35,7 @@ namespace Model
   class GetGuardrailResult
   {
   public:
-    AWS_BEDROCK_API GetGuardrailResult();
+    AWS_BEDROCK_API GetGuardrailResult() = default;
     AWS_BEDROCK_API GetGuardrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API GetGuardrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,153 +44,141 @@ namespace Model
     /**
      * <p>The name of the guardrail.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetGuardrailResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetGuardrailResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetGuardrailResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the guardrail.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetGuardrailResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetGuardrailResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetGuardrailResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the guardrail.</p>
      */
-    inline const Aws::String& GetGuardrailId() const{ return m_guardrailId; }
-    inline void SetGuardrailId(const Aws::String& value) { m_guardrailId = value; }
-    inline void SetGuardrailId(Aws::String&& value) { m_guardrailId = std::move(value); }
-    inline void SetGuardrailId(const char* value) { m_guardrailId.assign(value); }
-    inline GetGuardrailResult& WithGuardrailId(const Aws::String& value) { SetGuardrailId(value); return *this;}
-    inline GetGuardrailResult& WithGuardrailId(Aws::String&& value) { SetGuardrailId(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithGuardrailId(const char* value) { SetGuardrailId(value); return *this;}
+    inline const Aws::String& GetGuardrailId() const { return m_guardrailId; }
+    template<typename GuardrailIdT = Aws::String>
+    void SetGuardrailId(GuardrailIdT&& value) { m_guardrailIdHasBeenSet = true; m_guardrailId = std::forward<GuardrailIdT>(value); }
+    template<typename GuardrailIdT = Aws::String>
+    GetGuardrailResult& WithGuardrailId(GuardrailIdT&& value) { SetGuardrailId(std::forward<GuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the guardrail.</p>
      */
-    inline const Aws::String& GetGuardrailArn() const{ return m_guardrailArn; }
-    inline void SetGuardrailArn(const Aws::String& value) { m_guardrailArn = value; }
-    inline void SetGuardrailArn(Aws::String&& value) { m_guardrailArn = std::move(value); }
-    inline void SetGuardrailArn(const char* value) { m_guardrailArn.assign(value); }
-    inline GetGuardrailResult& WithGuardrailArn(const Aws::String& value) { SetGuardrailArn(value); return *this;}
-    inline GetGuardrailResult& WithGuardrailArn(Aws::String&& value) { SetGuardrailArn(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithGuardrailArn(const char* value) { SetGuardrailArn(value); return *this;}
+    inline const Aws::String& GetGuardrailArn() const { return m_guardrailArn; }
+    template<typename GuardrailArnT = Aws::String>
+    void SetGuardrailArn(GuardrailArnT&& value) { m_guardrailArnHasBeenSet = true; m_guardrailArn = std::forward<GuardrailArnT>(value); }
+    template<typename GuardrailArnT = Aws::String>
+    GetGuardrailResult& WithGuardrailArn(GuardrailArnT&& value) { SetGuardrailArn(std::forward<GuardrailArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the guardrail.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline GetGuardrailResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetGuardrailResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetGuardrailResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the guardrail.</p>
      */
-    inline const GuardrailStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const GuardrailStatus& value) { m_status = value; }
-    inline void SetStatus(GuardrailStatus&& value) { m_status = std::move(value); }
-    inline GetGuardrailResult& WithStatus(const GuardrailStatus& value) { SetStatus(value); return *this;}
-    inline GetGuardrailResult& WithStatus(GuardrailStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline GuardrailStatus GetStatus() const { return m_status; }
+    inline void SetStatus(GuardrailStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetGuardrailResult& WithStatus(GuardrailStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The topic policy that was configured for the guardrail.</p>
      */
-    inline const GuardrailTopicPolicy& GetTopicPolicy() const{ return m_topicPolicy; }
-    inline void SetTopicPolicy(const GuardrailTopicPolicy& value) { m_topicPolicy = value; }
-    inline void SetTopicPolicy(GuardrailTopicPolicy&& value) { m_topicPolicy = std::move(value); }
-    inline GetGuardrailResult& WithTopicPolicy(const GuardrailTopicPolicy& value) { SetTopicPolicy(value); return *this;}
-    inline GetGuardrailResult& WithTopicPolicy(GuardrailTopicPolicy&& value) { SetTopicPolicy(std::move(value)); return *this;}
+    inline const GuardrailTopicPolicy& GetTopicPolicy() const { return m_topicPolicy; }
+    template<typename TopicPolicyT = GuardrailTopicPolicy>
+    void SetTopicPolicy(TopicPolicyT&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::forward<TopicPolicyT>(value); }
+    template<typename TopicPolicyT = GuardrailTopicPolicy>
+    GetGuardrailResult& WithTopicPolicy(TopicPolicyT&& value) { SetTopicPolicy(std::forward<TopicPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content policy that was configured for the guardrail.</p>
      */
-    inline const GuardrailContentPolicy& GetContentPolicy() const{ return m_contentPolicy; }
-    inline void SetContentPolicy(const GuardrailContentPolicy& value) { m_contentPolicy = value; }
-    inline void SetContentPolicy(GuardrailContentPolicy&& value) { m_contentPolicy = std::move(value); }
-    inline GetGuardrailResult& WithContentPolicy(const GuardrailContentPolicy& value) { SetContentPolicy(value); return *this;}
-    inline GetGuardrailResult& WithContentPolicy(GuardrailContentPolicy&& value) { SetContentPolicy(std::move(value)); return *this;}
+    inline const GuardrailContentPolicy& GetContentPolicy() const { return m_contentPolicy; }
+    template<typename ContentPolicyT = GuardrailContentPolicy>
+    void SetContentPolicy(ContentPolicyT&& value) { m_contentPolicyHasBeenSet = true; m_contentPolicy = std::forward<ContentPolicyT>(value); }
+    template<typename ContentPolicyT = GuardrailContentPolicy>
+    GetGuardrailResult& WithContentPolicy(ContentPolicyT&& value) { SetContentPolicy(std::forward<ContentPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The word policy that was configured for the guardrail.</p>
      */
-    inline const GuardrailWordPolicy& GetWordPolicy() const{ return m_wordPolicy; }
-    inline void SetWordPolicy(const GuardrailWordPolicy& value) { m_wordPolicy = value; }
-    inline void SetWordPolicy(GuardrailWordPolicy&& value) { m_wordPolicy = std::move(value); }
-    inline GetGuardrailResult& WithWordPolicy(const GuardrailWordPolicy& value) { SetWordPolicy(value); return *this;}
-    inline GetGuardrailResult& WithWordPolicy(GuardrailWordPolicy&& value) { SetWordPolicy(std::move(value)); return *this;}
+    inline const GuardrailWordPolicy& GetWordPolicy() const { return m_wordPolicy; }
+    template<typename WordPolicyT = GuardrailWordPolicy>
+    void SetWordPolicy(WordPolicyT&& value) { m_wordPolicyHasBeenSet = true; m_wordPolicy = std::forward<WordPolicyT>(value); }
+    template<typename WordPolicyT = GuardrailWordPolicy>
+    GetGuardrailResult& WithWordPolicy(WordPolicyT&& value) { SetWordPolicy(std::forward<WordPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sensitive information policy that was configured for the guardrail.</p>
      */
-    inline const GuardrailSensitiveInformationPolicy& GetSensitiveInformationPolicy() const{ return m_sensitiveInformationPolicy; }
-    inline void SetSensitiveInformationPolicy(const GuardrailSensitiveInformationPolicy& value) { m_sensitiveInformationPolicy = value; }
-    inline void SetSensitiveInformationPolicy(GuardrailSensitiveInformationPolicy&& value) { m_sensitiveInformationPolicy = std::move(value); }
-    inline GetGuardrailResult& WithSensitiveInformationPolicy(const GuardrailSensitiveInformationPolicy& value) { SetSensitiveInformationPolicy(value); return *this;}
-    inline GetGuardrailResult& WithSensitiveInformationPolicy(GuardrailSensitiveInformationPolicy&& value) { SetSensitiveInformationPolicy(std::move(value)); return *this;}
+    inline const GuardrailSensitiveInformationPolicy& GetSensitiveInformationPolicy() const { return m_sensitiveInformationPolicy; }
+    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicy>
+    void SetSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { m_sensitiveInformationPolicyHasBeenSet = true; m_sensitiveInformationPolicy = std::forward<SensitiveInformationPolicyT>(value); }
+    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicy>
+    GetGuardrailResult& WithSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { SetSensitiveInformationPolicy(std::forward<SensitiveInformationPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contextual grounding policy used in the guardrail.</p>
      */
-    inline const GuardrailContextualGroundingPolicy& GetContextualGroundingPolicy() const{ return m_contextualGroundingPolicy; }
-    inline void SetContextualGroundingPolicy(const GuardrailContextualGroundingPolicy& value) { m_contextualGroundingPolicy = value; }
-    inline void SetContextualGroundingPolicy(GuardrailContextualGroundingPolicy&& value) { m_contextualGroundingPolicy = std::move(value); }
-    inline GetGuardrailResult& WithContextualGroundingPolicy(const GuardrailContextualGroundingPolicy& value) { SetContextualGroundingPolicy(value); return *this;}
-    inline GetGuardrailResult& WithContextualGroundingPolicy(GuardrailContextualGroundingPolicy&& value) { SetContextualGroundingPolicy(std::move(value)); return *this;}
+    inline const GuardrailContextualGroundingPolicy& GetContextualGroundingPolicy() const { return m_contextualGroundingPolicy; }
+    template<typename ContextualGroundingPolicyT = GuardrailContextualGroundingPolicy>
+    void SetContextualGroundingPolicy(ContextualGroundingPolicyT&& value) { m_contextualGroundingPolicyHasBeenSet = true; m_contextualGroundingPolicy = std::forward<ContextualGroundingPolicyT>(value); }
+    template<typename ContextualGroundingPolicyT = GuardrailContextualGroundingPolicy>
+    GetGuardrailResult& WithContextualGroundingPolicy(ContextualGroundingPolicyT&& value) { SetContextualGroundingPolicy(std::forward<ContextualGroundingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time at which the guardrail was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetGuardrailResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetGuardrailResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetGuardrailResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time at which the guardrail was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline GetGuardrailResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline GetGuardrailResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GetGuardrailResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,14 +186,13 @@ namespace Model
      * <p>Appears if the <code>status</code> is <code>FAILED</code>. A list of reasons
      * for why the guardrail failed to be created, updated, versioned, or deleted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStatusReasons() const{ return m_statusReasons; }
-    inline void SetStatusReasons(const Aws::Vector<Aws::String>& value) { m_statusReasons = value; }
-    inline void SetStatusReasons(Aws::Vector<Aws::String>&& value) { m_statusReasons = std::move(value); }
-    inline GetGuardrailResult& WithStatusReasons(const Aws::Vector<Aws::String>& value) { SetStatusReasons(value); return *this;}
-    inline GetGuardrailResult& WithStatusReasons(Aws::Vector<Aws::String>&& value) { SetStatusReasons(std::move(value)); return *this;}
-    inline GetGuardrailResult& AddStatusReasons(const Aws::String& value) { m_statusReasons.push_back(value); return *this; }
-    inline GetGuardrailResult& AddStatusReasons(Aws::String&& value) { m_statusReasons.push_back(std::move(value)); return *this; }
-    inline GetGuardrailResult& AddStatusReasons(const char* value) { m_statusReasons.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetStatusReasons() const { return m_statusReasons; }
+    template<typename StatusReasonsT = Aws::Vector<Aws::String>>
+    void SetStatusReasons(StatusReasonsT&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons = std::forward<StatusReasonsT>(value); }
+    template<typename StatusReasonsT = Aws::Vector<Aws::String>>
+    GetGuardrailResult& WithStatusReasons(StatusReasonsT&& value) { SetStatusReasons(std::forward<StatusReasonsT>(value)); return *this;}
+    template<typename StatusReasonsT = Aws::String>
+    GetGuardrailResult& AddStatusReasons(StatusReasonsT&& value) { m_statusReasonsHasBeenSet = true; m_statusReasons.emplace_back(std::forward<StatusReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -213,104 +200,114 @@ namespace Model
      * <p>Appears if the <code>status</code> of the guardrail is <code>FAILED</code>. A
      * list of recommendations to carry out before retrying the request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureRecommendations() const{ return m_failureRecommendations; }
-    inline void SetFailureRecommendations(const Aws::Vector<Aws::String>& value) { m_failureRecommendations = value; }
-    inline void SetFailureRecommendations(Aws::Vector<Aws::String>&& value) { m_failureRecommendations = std::move(value); }
-    inline GetGuardrailResult& WithFailureRecommendations(const Aws::Vector<Aws::String>& value) { SetFailureRecommendations(value); return *this;}
-    inline GetGuardrailResult& WithFailureRecommendations(Aws::Vector<Aws::String>&& value) { SetFailureRecommendations(std::move(value)); return *this;}
-    inline GetGuardrailResult& AddFailureRecommendations(const Aws::String& value) { m_failureRecommendations.push_back(value); return *this; }
-    inline GetGuardrailResult& AddFailureRecommendations(Aws::String&& value) { m_failureRecommendations.push_back(std::move(value)); return *this; }
-    inline GetGuardrailResult& AddFailureRecommendations(const char* value) { m_failureRecommendations.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFailureRecommendations() const { return m_failureRecommendations; }
+    template<typename FailureRecommendationsT = Aws::Vector<Aws::String>>
+    void SetFailureRecommendations(FailureRecommendationsT&& value) { m_failureRecommendationsHasBeenSet = true; m_failureRecommendations = std::forward<FailureRecommendationsT>(value); }
+    template<typename FailureRecommendationsT = Aws::Vector<Aws::String>>
+    GetGuardrailResult& WithFailureRecommendations(FailureRecommendationsT&& value) { SetFailureRecommendations(std::forward<FailureRecommendationsT>(value)); return *this;}
+    template<typename FailureRecommendationsT = Aws::String>
+    GetGuardrailResult& AddFailureRecommendations(FailureRecommendationsT&& value) { m_failureRecommendationsHasBeenSet = true; m_failureRecommendations.emplace_back(std::forward<FailureRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The message that the guardrail returns when it blocks a prompt.</p>
      */
-    inline const Aws::String& GetBlockedInputMessaging() const{ return m_blockedInputMessaging; }
-    inline void SetBlockedInputMessaging(const Aws::String& value) { m_blockedInputMessaging = value; }
-    inline void SetBlockedInputMessaging(Aws::String&& value) { m_blockedInputMessaging = std::move(value); }
-    inline void SetBlockedInputMessaging(const char* value) { m_blockedInputMessaging.assign(value); }
-    inline GetGuardrailResult& WithBlockedInputMessaging(const Aws::String& value) { SetBlockedInputMessaging(value); return *this;}
-    inline GetGuardrailResult& WithBlockedInputMessaging(Aws::String&& value) { SetBlockedInputMessaging(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithBlockedInputMessaging(const char* value) { SetBlockedInputMessaging(value); return *this;}
+    inline const Aws::String& GetBlockedInputMessaging() const { return m_blockedInputMessaging; }
+    template<typename BlockedInputMessagingT = Aws::String>
+    void SetBlockedInputMessaging(BlockedInputMessagingT&& value) { m_blockedInputMessagingHasBeenSet = true; m_blockedInputMessaging = std::forward<BlockedInputMessagingT>(value); }
+    template<typename BlockedInputMessagingT = Aws::String>
+    GetGuardrailResult& WithBlockedInputMessaging(BlockedInputMessagingT&& value) { SetBlockedInputMessaging(std::forward<BlockedInputMessagingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message that the guardrail returns when it blocks a model response.</p>
      */
-    inline const Aws::String& GetBlockedOutputsMessaging() const{ return m_blockedOutputsMessaging; }
-    inline void SetBlockedOutputsMessaging(const Aws::String& value) { m_blockedOutputsMessaging = value; }
-    inline void SetBlockedOutputsMessaging(Aws::String&& value) { m_blockedOutputsMessaging = std::move(value); }
-    inline void SetBlockedOutputsMessaging(const char* value) { m_blockedOutputsMessaging.assign(value); }
-    inline GetGuardrailResult& WithBlockedOutputsMessaging(const Aws::String& value) { SetBlockedOutputsMessaging(value); return *this;}
-    inline GetGuardrailResult& WithBlockedOutputsMessaging(Aws::String&& value) { SetBlockedOutputsMessaging(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithBlockedOutputsMessaging(const char* value) { SetBlockedOutputsMessaging(value); return *this;}
+    inline const Aws::String& GetBlockedOutputsMessaging() const { return m_blockedOutputsMessaging; }
+    template<typename BlockedOutputsMessagingT = Aws::String>
+    void SetBlockedOutputsMessaging(BlockedOutputsMessagingT&& value) { m_blockedOutputsMessagingHasBeenSet = true; m_blockedOutputsMessaging = std::forward<BlockedOutputsMessagingT>(value); }
+    template<typename BlockedOutputsMessagingT = Aws::String>
+    GetGuardrailResult& WithBlockedOutputsMessaging(BlockedOutputsMessagingT&& value) { SetBlockedOutputsMessaging(std::forward<BlockedOutputsMessagingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the KMS key that encrypts the guardrail.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-    inline GetGuardrailResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline GetGuardrailResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    GetGuardrailResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGuardrailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGuardrailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGuardrailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGuardrailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_guardrailId;
+    bool m_guardrailIdHasBeenSet = false;
 
     Aws::String m_guardrailArn;
+    bool m_guardrailArnHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
-    GuardrailStatus m_status;
+    GuardrailStatus m_status{GuardrailStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     GuardrailTopicPolicy m_topicPolicy;
+    bool m_topicPolicyHasBeenSet = false;
 
     GuardrailContentPolicy m_contentPolicy;
+    bool m_contentPolicyHasBeenSet = false;
 
     GuardrailWordPolicy m_wordPolicy;
+    bool m_wordPolicyHasBeenSet = false;
 
     GuardrailSensitiveInformationPolicy m_sensitiveInformationPolicy;
+    bool m_sensitiveInformationPolicyHasBeenSet = false;
 
     GuardrailContextualGroundingPolicy m_contextualGroundingPolicy;
+    bool m_contextualGroundingPolicyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statusReasons;
+    bool m_statusReasonsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_failureRecommendations;
+    bool m_failureRecommendationsHasBeenSet = false;
 
     Aws::String m_blockedInputMessaging;
+    bool m_blockedInputMessagingHasBeenSet = false;
 
     Aws::String m_blockedOutputsMessaging;
+    bool m_blockedOutputsMessagingHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

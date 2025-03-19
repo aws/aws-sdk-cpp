@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollPassValidityPeriod::RouteTollPassValidityPeriod() : 
-    m_period(RouteTollPassValidityPeriodType::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_periodCount(0),
-    m_periodCountHasBeenSet(false)
-{
-}
-
 RouteTollPassValidityPeriod::RouteTollPassValidityPeriod(JsonView jsonValue)
-  : RouteTollPassValidityPeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteTollPassValidityPeriod& RouteTollPassValidityPeriod::operator =(JsonView js
   if(jsonValue.ValueExists("Period"))
   {
     m_period = RouteTollPassValidityPeriodTypeMapper::GetRouteTollPassValidityPeriodTypeForName(jsonValue.GetString("Period"));
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodCount"))
   {
     m_periodCount = jsonValue.GetInteger("PeriodCount");
-
     m_periodCountHasBeenSet = true;
   }
-
   return *this;
 }
 

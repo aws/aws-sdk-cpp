@@ -35,7 +35,7 @@ When this property is specified, the
   class VpcOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API VpcOutputSettings();
+    AWS_MEDIALIVE_API VpcOutputSettings() = default;
     AWS_MEDIALIVE_API VpcOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API VpcOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ When this property is specified, the
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
      */
-    inline const Aws::Vector<Aws::String>& GetPublicAddressAllocationIds() const{ return m_publicAddressAllocationIds; }
+    inline const Aws::Vector<Aws::String>& GetPublicAddressAllocationIds() const { return m_publicAddressAllocationIds; }
     inline bool PublicAddressAllocationIdsHasBeenSet() const { return m_publicAddressAllocationIdsHasBeenSet; }
-    inline void SetPublicAddressAllocationIds(const Aws::Vector<Aws::String>& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds = value; }
-    inline void SetPublicAddressAllocationIds(Aws::Vector<Aws::String>&& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds = std::move(value); }
-    inline VpcOutputSettings& WithPublicAddressAllocationIds(const Aws::Vector<Aws::String>& value) { SetPublicAddressAllocationIds(value); return *this;}
-    inline VpcOutputSettings& WithPublicAddressAllocationIds(Aws::Vector<Aws::String>&& value) { SetPublicAddressAllocationIds(std::move(value)); return *this;}
-    inline VpcOutputSettings& AddPublicAddressAllocationIds(const Aws::String& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.push_back(value); return *this; }
-    inline VpcOutputSettings& AddPublicAddressAllocationIds(Aws::String&& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.push_back(std::move(value)); return *this; }
-    inline VpcOutputSettings& AddPublicAddressAllocationIds(const char* value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.push_back(value); return *this; }
+    template<typename PublicAddressAllocationIdsT = Aws::Vector<Aws::String>>
+    void SetPublicAddressAllocationIds(PublicAddressAllocationIdsT&& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds = std::forward<PublicAddressAllocationIdsT>(value); }
+    template<typename PublicAddressAllocationIdsT = Aws::Vector<Aws::String>>
+    VpcOutputSettings& WithPublicAddressAllocationIds(PublicAddressAllocationIdsT&& value) { SetPublicAddressAllocationIds(std::forward<PublicAddressAllocationIdsT>(value)); return *this;}
+    template<typename PublicAddressAllocationIdsT = Aws::String>
+    VpcOutputSettings& AddPublicAddressAllocationIds(PublicAddressAllocationIdsT&& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.emplace_back(std::forward<PublicAddressAllocationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,15 +65,14 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
 If none are specified then the VPC default security group will be
      * used
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline VpcOutputSettings& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline VpcOutputSettings& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline VpcOutputSettings& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline VpcOutputSettings& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline VpcOutputSettings& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    VpcOutputSettings& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    VpcOutputSettings& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,15 +81,14 @@ If none are specified then the VPC default security group will be
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline VpcOutputSettings& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline VpcOutputSettings& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline VpcOutputSettings& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline VpcOutputSettings& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline VpcOutputSettings& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    VpcOutputSettings& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    VpcOutputSettings& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -39,7 +39,7 @@ namespace Model
   class OptimizedPromptStream
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptStream();
+    AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptStream() = default;
     AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OptimizedPromptStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <p>The request is denied because of missing access permissions. Check your
      * permissions and retry your request.</p>
      */
-    inline const AccessDeniedException& GetAccessDeniedException() const{ return m_accessDeniedException; }
+    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    inline void SetAccessDeniedException(const AccessDeniedException& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = value; }
-    inline void SetAccessDeniedException(AccessDeniedException&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::move(value); }
-    inline OptimizedPromptStream& WithAccessDeniedException(const AccessDeniedException& value) { SetAccessDeniedException(value); return *this;}
-    inline OptimizedPromptStream& WithAccessDeniedException(AccessDeniedException&& value) { SetAccessDeniedException(std::move(value)); return *this;}
+    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
+    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    OptimizedPromptStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>An event in which the prompt was analyzed in preparation for
      * optimization.</p>
      */
-    inline const AnalyzePromptEvent& GetAnalyzePromptEvent() const{ return m_analyzePromptEvent; }
+    inline const AnalyzePromptEvent& GetAnalyzePromptEvent() const { return m_analyzePromptEvent; }
     inline bool AnalyzePromptEventHasBeenSet() const { return m_analyzePromptEventHasBeenSet; }
-    inline void SetAnalyzePromptEvent(const AnalyzePromptEvent& value) { m_analyzePromptEventHasBeenSet = true; m_analyzePromptEvent = value; }
-    inline void SetAnalyzePromptEvent(AnalyzePromptEvent&& value) { m_analyzePromptEventHasBeenSet = true; m_analyzePromptEvent = std::move(value); }
-    inline OptimizedPromptStream& WithAnalyzePromptEvent(const AnalyzePromptEvent& value) { SetAnalyzePromptEvent(value); return *this;}
-    inline OptimizedPromptStream& WithAnalyzePromptEvent(AnalyzePromptEvent&& value) { SetAnalyzePromptEvent(std::move(value)); return *this;}
+    template<typename AnalyzePromptEventT = AnalyzePromptEvent>
+    void SetAnalyzePromptEvent(AnalyzePromptEventT&& value) { m_analyzePromptEventHasBeenSet = true; m_analyzePromptEvent = std::forward<AnalyzePromptEventT>(value); }
+    template<typename AnalyzePromptEventT = AnalyzePromptEvent>
+    OptimizedPromptStream& WithAnalyzePromptEvent(AnalyzePromptEventT&& value) { SetAnalyzePromptEvent(std::forward<AnalyzePromptEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>There was an issue with a dependency due to a server issue. Retry your
      * request.</p>
      */
-    inline const BadGatewayException& GetBadGatewayException() const{ return m_badGatewayException; }
+    inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
     inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
-    inline void SetBadGatewayException(const BadGatewayException& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = value; }
-    inline void SetBadGatewayException(BadGatewayException&& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = std::move(value); }
-    inline OptimizedPromptStream& WithBadGatewayException(const BadGatewayException& value) { SetBadGatewayException(value); return *this;}
-    inline OptimizedPromptStream& WithBadGatewayException(BadGatewayException&& value) { SetBadGatewayException(std::move(value)); return *this;}
+    template<typename BadGatewayExceptionT = BadGatewayException>
+    void SetBadGatewayException(BadGatewayExceptionT&& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = std::forward<BadGatewayExceptionT>(value); }
+    template<typename BadGatewayExceptionT = BadGatewayException>
+    OptimizedPromptStream& WithBadGatewayException(BadGatewayExceptionT&& value) { SetBadGatewayException(std::forward<BadGatewayExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,36 +89,36 @@ namespace Model
      * <p>There was an issue with a dependency. Check the resource configurations and
      * retry the request.</p>
      */
-    inline const DependencyFailedException& GetDependencyFailedException() const{ return m_dependencyFailedException; }
+    inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
     inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
-    inline void SetDependencyFailedException(const DependencyFailedException& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = value; }
-    inline void SetDependencyFailedException(DependencyFailedException&& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = std::move(value); }
-    inline OptimizedPromptStream& WithDependencyFailedException(const DependencyFailedException& value) { SetDependencyFailedException(value); return *this;}
-    inline OptimizedPromptStream& WithDependencyFailedException(DependencyFailedException&& value) { SetDependencyFailedException(std::move(value)); return *this;}
+    template<typename DependencyFailedExceptionT = DependencyFailedException>
+    void SetDependencyFailedException(DependencyFailedExceptionT&& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value); }
+    template<typename DependencyFailedExceptionT = DependencyFailedException>
+    OptimizedPromptStream& WithDependencyFailedException(DependencyFailedExceptionT&& value) { SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An internal server error occurred. Retry your request.</p>
      */
-    inline const InternalServerException& GetInternalServerException() const{ return m_internalServerException; }
+    inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
-    inline void SetInternalServerException(const InternalServerException& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = value; }
-    inline void SetInternalServerException(InternalServerException&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::move(value); }
-    inline OptimizedPromptStream& WithInternalServerException(const InternalServerException& value) { SetInternalServerException(value); return *this;}
-    inline OptimizedPromptStream& WithInternalServerException(InternalServerException&& value) { SetInternalServerException(std::move(value)); return *this;}
+    template<typename InternalServerExceptionT = InternalServerException>
+    void SetInternalServerException(InternalServerExceptionT&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::forward<InternalServerExceptionT>(value); }
+    template<typename InternalServerExceptionT = InternalServerException>
+    OptimizedPromptStream& WithInternalServerException(InternalServerExceptionT&& value) { SetInternalServerException(std::forward<InternalServerExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An event in which the prompt was optimized.</p>
      */
-    inline const OptimizedPromptEvent& GetOptimizedPromptEvent() const{ return m_optimizedPromptEvent; }
+    inline const OptimizedPromptEvent& GetOptimizedPromptEvent() const { return m_optimizedPromptEvent; }
     inline bool OptimizedPromptEventHasBeenSet() const { return m_optimizedPromptEventHasBeenSet; }
-    inline void SetOptimizedPromptEvent(const OptimizedPromptEvent& value) { m_optimizedPromptEventHasBeenSet = true; m_optimizedPromptEvent = value; }
-    inline void SetOptimizedPromptEvent(OptimizedPromptEvent&& value) { m_optimizedPromptEventHasBeenSet = true; m_optimizedPromptEvent = std::move(value); }
-    inline OptimizedPromptStream& WithOptimizedPromptEvent(const OptimizedPromptEvent& value) { SetOptimizedPromptEvent(value); return *this;}
-    inline OptimizedPromptStream& WithOptimizedPromptEvent(OptimizedPromptEvent&& value) { SetOptimizedPromptEvent(std::move(value)); return *this;}
+    template<typename OptimizedPromptEventT = OptimizedPromptEvent>
+    void SetOptimizedPromptEvent(OptimizedPromptEventT&& value) { m_optimizedPromptEventHasBeenSet = true; m_optimizedPromptEvent = std::forward<OptimizedPromptEventT>(value); }
+    template<typename OptimizedPromptEventT = OptimizedPromptEvent>
+    OptimizedPromptStream& WithOptimizedPromptEvent(OptimizedPromptEventT&& value) { SetOptimizedPromptEvent(std::forward<OptimizedPromptEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +128,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
      * Throughput</a> to increase the rate or number of tokens you can process.</p>
      */
-    inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
+    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    inline void SetThrottlingException(const ThrottlingException& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = value; }
-    inline void SetThrottlingException(ThrottlingException&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::move(value); }
-    inline OptimizedPromptStream& WithThrottlingException(const ThrottlingException& value) { SetThrottlingException(value); return *this;}
-    inline OptimizedPromptStream& WithThrottlingException(ThrottlingException&& value) { SetThrottlingException(std::move(value)); return *this;}
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    OptimizedPromptStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +141,12 @@ namespace Model
      * <p>Input validation failed. Check your request parameters and retry the
      * request.</p>
      */
-    inline const ValidationException& GetValidationException() const{ return m_validationException; }
+    inline const ValidationException& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    inline void SetValidationException(const ValidationException& value) { m_validationExceptionHasBeenSet = true; m_validationException = value; }
-    inline void SetValidationException(ValidationException&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::move(value); }
-    inline OptimizedPromptStream& WithValidationException(const ValidationException& value) { SetValidationException(value); return *this;}
-    inline OptimizedPromptStream& WithValidationException(ValidationException&& value) { SetValidationException(std::move(value)); return *this;}
+    template<typename ValidationExceptionT = ValidationException>
+    void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
+    template<typename ValidationExceptionT = ValidationException>
+    OptimizedPromptStream& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
   private:
 

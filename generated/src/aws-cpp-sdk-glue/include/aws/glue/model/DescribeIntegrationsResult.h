@@ -29,7 +29,7 @@ namespace Model
   class DescribeIntegrationsResult
   {
   public:
-    AWS_GLUE_API DescribeIntegrationsResult();
+    AWS_GLUE_API DescribeIntegrationsResult() = default;
     AWS_GLUE_API DescribeIntegrationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API DescribeIntegrationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of zero-ETL integrations.</p>
      */
-    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
-    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrations = value; }
-    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrations = std::move(value); }
-    inline DescribeIntegrationsResult& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
-    inline DescribeIntegrationsResult& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
-    inline DescribeIntegrationsResult& AddIntegrations(const Integration& value) { m_integrations.push_back(value); return *this; }
-    inline DescribeIntegrationsResult& AddIntegrations(Integration&& value) { m_integrations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Integration>& GetIntegrations() const { return m_integrations; }
+    template<typename IntegrationsT = Aws::Vector<Integration>>
+    void SetIntegrations(IntegrationsT&& value) { m_integrationsHasBeenSet = true; m_integrations = std::forward<IntegrationsT>(value); }
+    template<typename IntegrationsT = Aws::Vector<Integration>>
+    DescribeIntegrationsResult& WithIntegrations(IntegrationsT&& value) { SetIntegrations(std::forward<IntegrationsT>(value)); return *this;}
+    template<typename IntegrationsT = Integration>
+    DescribeIntegrationsResult& AddIntegrations(IntegrationsT&& value) { m_integrationsHasBeenSet = true; m_integrations.emplace_back(std::forward<IntegrationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeIntegrationsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeIntegrationsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeIntegrationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeIntegrationsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeIntegrationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeIntegrationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeIntegrationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeIntegrationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Integration> m_integrations;
+    bool m_integrationsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListManagedNotificationChildEventsRequest::ListManagedNotificationChildEventsRequest() : 
-    m_aggregateManagedNotificationEventArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_locale(LocaleCode::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_relatedAccountHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListManagedNotificationChildEventsRequest::SerializePayload() const
 {
   return {};

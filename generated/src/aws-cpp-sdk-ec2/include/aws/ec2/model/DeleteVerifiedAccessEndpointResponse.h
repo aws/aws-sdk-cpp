@@ -28,7 +28,7 @@ namespace Model
   class DeleteVerifiedAccessEndpointResponse
   {
   public:
-    AWS_EC2_API DeleteVerifiedAccessEndpointResponse();
+    AWS_EC2_API DeleteVerifiedAccessEndpointResponse() = default;
     AWS_EC2_API DeleteVerifiedAccessEndpointResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteVerifiedAccessEndpointResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Details about the Verified Access endpoint.</p>
      */
-    inline const VerifiedAccessEndpoint& GetVerifiedAccessEndpoint() const{ return m_verifiedAccessEndpoint; }
-    inline void SetVerifiedAccessEndpoint(const VerifiedAccessEndpoint& value) { m_verifiedAccessEndpoint = value; }
-    inline void SetVerifiedAccessEndpoint(VerifiedAccessEndpoint&& value) { m_verifiedAccessEndpoint = std::move(value); }
-    inline DeleteVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(const VerifiedAccessEndpoint& value) { SetVerifiedAccessEndpoint(value); return *this;}
-    inline DeleteVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(VerifiedAccessEndpoint&& value) { SetVerifiedAccessEndpoint(std::move(value)); return *this;}
+    inline const VerifiedAccessEndpoint& GetVerifiedAccessEndpoint() const { return m_verifiedAccessEndpoint; }
+    template<typename VerifiedAccessEndpointT = VerifiedAccessEndpoint>
+    void SetVerifiedAccessEndpoint(VerifiedAccessEndpointT&& value) { m_verifiedAccessEndpointHasBeenSet = true; m_verifiedAccessEndpoint = std::forward<VerifiedAccessEndpointT>(value); }
+    template<typename VerifiedAccessEndpointT = VerifiedAccessEndpoint>
+    DeleteVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(VerifiedAccessEndpointT&& value) { SetVerifiedAccessEndpoint(std::forward<VerifiedAccessEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteVerifiedAccessEndpointResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteVerifiedAccessEndpointResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteVerifiedAccessEndpointResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VerifiedAccessEndpoint m_verifiedAccessEndpoint;
+    bool m_verifiedAccessEndpointHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

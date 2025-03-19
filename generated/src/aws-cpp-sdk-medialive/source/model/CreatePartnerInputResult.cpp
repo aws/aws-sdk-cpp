@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePartnerInputResult::CreatePartnerInputResult()
-{
-}
-
 CreatePartnerInputResult::CreatePartnerInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreatePartnerInputResult& CreatePartnerInputResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");
-
+    m_inputHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

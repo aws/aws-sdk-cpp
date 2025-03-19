@@ -36,7 +36,7 @@ namespace Model
   class LFTagPolicyResource
   {
   public:
-    AWS_LAKEFORMATION_API LFTagPolicyResource();
+    AWS_LAKEFORMATION_API LFTagPolicyResource() = default;
     AWS_LAKEFORMATION_API LFTagPolicyResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API LFTagPolicyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,26 +49,22 @@ namespace Model
      * table definitions, and other control information to manage your Lake Formation
      * environment. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline LFTagPolicyResource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline LFTagPolicyResource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline LFTagPolicyResource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    LFTagPolicyResource& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type for which the LF-tag policy applies.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline LFTagPolicyResource& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline LFTagPolicyResource& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline LFTagPolicyResource& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,14 @@ namespace Model
      * <p>A list of LF-tag conditions or a saved expression that apply to the
      * resource's LF-tag policy.</p>
      */
-    inline const Aws::Vector<LFTag>& GetExpression() const{ return m_expression; }
+    inline const Aws::Vector<LFTag>& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::Vector<LFTag>& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::Vector<LFTag>&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline LFTagPolicyResource& WithExpression(const Aws::Vector<LFTag>& value) { SetExpression(value); return *this;}
-    inline LFTagPolicyResource& WithExpression(Aws::Vector<LFTag>&& value) { SetExpression(std::move(value)); return *this;}
-    inline LFTagPolicyResource& AddExpression(const LFTag& value) { m_expressionHasBeenSet = true; m_expression.push_back(value); return *this; }
-    inline LFTagPolicyResource& AddExpression(LFTag&& value) { m_expressionHasBeenSet = true; m_expression.push_back(std::move(value)); return *this; }
+    template<typename ExpressionT = Aws::Vector<LFTag>>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::Vector<LFTag>>
+    LFTagPolicyResource& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
+    template<typename ExpressionT = LFTag>
+    LFTagPolicyResource& AddExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression.emplace_back(std::forward<ExpressionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,21 +88,19 @@ namespace Model
      * assigned LF-Tags match the expression body of the saved expression under the
      * provided <code>ExpressionName</code>.</p>
      */
-    inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
+    inline const Aws::String& GetExpressionName() const { return m_expressionName; }
     inline bool ExpressionNameHasBeenSet() const { return m_expressionNameHasBeenSet; }
-    inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
-    inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::move(value); }
-    inline void SetExpressionName(const char* value) { m_expressionNameHasBeenSet = true; m_expressionName.assign(value); }
-    inline LFTagPolicyResource& WithExpressionName(const Aws::String& value) { SetExpressionName(value); return *this;}
-    inline LFTagPolicyResource& WithExpressionName(Aws::String&& value) { SetExpressionName(std::move(value)); return *this;}
-    inline LFTagPolicyResource& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
+    template<typename ExpressionNameT = Aws::String>
+    void SetExpressionName(ExpressionNameT&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::forward<ExpressionNameT>(value); }
+    template<typename ExpressionNameT = Aws::String>
+    LFTagPolicyResource& WithExpressionName(ExpressionNameT&& value) { SetExpressionName(std::forward<ExpressionNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<LFTag> m_expression;

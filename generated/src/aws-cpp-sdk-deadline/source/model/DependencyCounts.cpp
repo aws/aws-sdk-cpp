@@ -18,20 +18,7 @@ namespace deadline
 namespace Model
 {
 
-DependencyCounts::DependencyCounts() : 
-    m_dependenciesResolved(0),
-    m_dependenciesResolvedHasBeenSet(false),
-    m_dependenciesUnresolved(0),
-    m_dependenciesUnresolvedHasBeenSet(false),
-    m_consumersResolved(0),
-    m_consumersResolvedHasBeenSet(false),
-    m_consumersUnresolved(0),
-    m_consumersUnresolvedHasBeenSet(false)
-{
-}
-
 DependencyCounts::DependencyCounts(JsonView jsonValue)
-  : DependencyCounts()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DependencyCounts& DependencyCounts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dependenciesResolved"))
   {
     m_dependenciesResolved = jsonValue.GetInteger("dependenciesResolved");
-
     m_dependenciesResolvedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependenciesUnresolved"))
   {
     m_dependenciesUnresolved = jsonValue.GetInteger("dependenciesUnresolved");
-
     m_dependenciesUnresolvedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumersResolved"))
   {
     m_consumersResolved = jsonValue.GetInteger("consumersResolved");
-
     m_consumersResolvedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumersUnresolved"))
   {
     m_consumersUnresolved = jsonValue.GetInteger("consumersUnresolved");
-
     m_consumersUnresolvedHasBeenSet = true;
   }
-
   return *this;
 }
 

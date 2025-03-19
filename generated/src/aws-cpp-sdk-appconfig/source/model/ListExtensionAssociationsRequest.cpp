@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListExtensionAssociationsRequest::ListExtensionAssociationsRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_extensionIdentifierHasBeenSet(false),
-    m_extensionVersionNumber(0),
-    m_extensionVersionNumberHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListExtensionAssociationsRequest::SerializePayload() const
 {
   return {};

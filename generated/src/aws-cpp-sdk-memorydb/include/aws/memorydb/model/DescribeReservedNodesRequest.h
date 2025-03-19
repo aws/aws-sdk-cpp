@@ -21,7 +21,7 @@ namespace Model
   class DescribeReservedNodesRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API DescribeReservedNodesRequest();
+    AWS_MEMORYDB_API DescribeReservedNodesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The reserved node identifier filter value. Use this parameter to show only
      * the reservation that matches the specified reservation ID.</p>
      */
-    inline const Aws::String& GetReservationId() const{ return m_reservationId; }
+    inline const Aws::String& GetReservationId() const { return m_reservationId; }
     inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
-    inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
-    inline void SetReservationId(Aws::String&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::move(value); }
-    inline void SetReservationId(const char* value) { m_reservationIdHasBeenSet = true; m_reservationId.assign(value); }
-    inline DescribeReservedNodesRequest& WithReservationId(const Aws::String& value) { SetReservationId(value); return *this;}
-    inline DescribeReservedNodesRequest& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
-    inline DescribeReservedNodesRequest& WithReservationId(const char* value) { SetReservationId(value); return *this;}
+    template<typename ReservationIdT = Aws::String>
+    void SetReservationId(ReservationIdT&& value) { m_reservationIdHasBeenSet = true; m_reservationId = std::forward<ReservationIdT>(value); }
+    template<typename ReservationIdT = Aws::String>
+    DescribeReservedNodesRequest& WithReservationId(ReservationIdT&& value) { SetReservationId(std::forward<ReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The offering identifier filter value. Use this parameter to show only
      * purchased reservations matching the specified offering identifier.</p>
      */
-    inline const Aws::String& GetReservedNodesOfferingId() const{ return m_reservedNodesOfferingId; }
+    inline const Aws::String& GetReservedNodesOfferingId() const { return m_reservedNodesOfferingId; }
     inline bool ReservedNodesOfferingIdHasBeenSet() const { return m_reservedNodesOfferingIdHasBeenSet; }
-    inline void SetReservedNodesOfferingId(const Aws::String& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = value; }
-    inline void SetReservedNodesOfferingId(Aws::String&& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = std::move(value); }
-    inline void SetReservedNodesOfferingId(const char* value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId.assign(value); }
-    inline DescribeReservedNodesRequest& WithReservedNodesOfferingId(const Aws::String& value) { SetReservedNodesOfferingId(value); return *this;}
-    inline DescribeReservedNodesRequest& WithReservedNodesOfferingId(Aws::String&& value) { SetReservedNodesOfferingId(std::move(value)); return *this;}
-    inline DescribeReservedNodesRequest& WithReservedNodesOfferingId(const char* value) { SetReservedNodesOfferingId(value); return *this;}
+    template<typename ReservedNodesOfferingIdT = Aws::String>
+    void SetReservedNodesOfferingId(ReservedNodesOfferingIdT&& value) { m_reservedNodesOfferingIdHasBeenSet = true; m_reservedNodesOfferingId = std::forward<ReservedNodesOfferingIdT>(value); }
+    template<typename ReservedNodesOfferingIdT = Aws::String>
+    DescribeReservedNodesRequest& WithReservedNodesOfferingId(ReservedNodesOfferingIdT&& value) { SetReservedNodesOfferingId(std::forward<ReservedNodesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported
      * node types</a>.</p>
      */
-    inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+    inline const Aws::String& GetNodeType() const { return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
-    inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
-    inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
-    inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
-    inline DescribeReservedNodesRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
-    inline DescribeReservedNodesRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
-    inline DescribeReservedNodesRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+    template<typename NodeTypeT = Aws::String>
+    void SetNodeType(NodeTypeT&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::forward<NodeTypeT>(value); }
+    template<typename NodeTypeT = Aws::String>
+    DescribeReservedNodesRequest& WithNodeType(NodeTypeT&& value) { SetNodeType(std::forward<NodeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <p>The duration filter value, specified in years or seconds. Use this parameter
      * to show only reservations for this duration.</p>
      */
-    inline const Aws::String& GetDuration() const{ return m_duration; }
+    inline const Aws::String& GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
-    inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
-    inline DescribeReservedNodesRequest& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
-    inline DescribeReservedNodesRequest& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
-    inline DescribeReservedNodesRequest& WithDuration(const char* value) { SetDuration(value); return *this;}
+    template<typename DurationT = Aws::String>
+    void SetDuration(DurationT&& value) { m_durationHasBeenSet = true; m_duration = std::forward<DurationT>(value); }
+    template<typename DurationT = Aws::String>
+    DescribeReservedNodesRequest& WithDuration(DurationT&& value) { SetDuration(std::forward<DurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +94,12 @@ namespace Model
      * offerings matching the specified offering type. Valid values: "All
      * Upfront"|"Partial Upfront"| "No Upfront"</p>
      */
-    inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+    inline const Aws::String& GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(Aws::String&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline void SetOfferingType(const char* value) { m_offeringTypeHasBeenSet = true; m_offeringType.assign(value); }
-    inline DescribeReservedNodesRequest& WithOfferingType(const Aws::String& value) { SetOfferingType(value); return *this;}
-    inline DescribeReservedNodesRequest& WithOfferingType(Aws::String&& value) { SetOfferingType(std::move(value)); return *this;}
-    inline DescribeReservedNodesRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
+    template<typename OfferingTypeT = Aws::String>
+    void SetOfferingType(OfferingTypeT&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::forward<OfferingTypeT>(value); }
+    template<typename OfferingTypeT = Aws::String>
+    DescribeReservedNodesRequest& WithOfferingType(OfferingTypeT&& value) { SetOfferingType(std::forward<OfferingTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,7 +108,7 @@ namespace Model
      * exist than the specified MaxRecords value, a marker is included in the response
      * so that the remaining results can be retrieved.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeReservedNodesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -131,14 +121,12 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * MaxRecords.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeReservedNodesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReservedNodesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReservedNodesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReservedNodesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -157,7 +145,7 @@ namespace Model
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

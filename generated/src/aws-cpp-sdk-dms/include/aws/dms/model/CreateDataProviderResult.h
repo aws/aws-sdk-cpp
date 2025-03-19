@@ -28,7 +28,7 @@ namespace Model
   class CreateDataProviderResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API CreateDataProviderResult();
+    AWS_DATABASEMIGRATIONSERVICE_API CreateDataProviderResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API CreateDataProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API CreateDataProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The data provider that was created.</p>
      */
-    inline const DataProvider& GetDataProvider() const{ return m_dataProvider; }
-    inline void SetDataProvider(const DataProvider& value) { m_dataProvider = value; }
-    inline void SetDataProvider(DataProvider&& value) { m_dataProvider = std::move(value); }
-    inline CreateDataProviderResult& WithDataProvider(const DataProvider& value) { SetDataProvider(value); return *this;}
-    inline CreateDataProviderResult& WithDataProvider(DataProvider&& value) { SetDataProvider(std::move(value)); return *this;}
+    inline const DataProvider& GetDataProvider() const { return m_dataProvider; }
+    template<typename DataProviderT = DataProvider>
+    void SetDataProvider(DataProviderT&& value) { m_dataProviderHasBeenSet = true; m_dataProvider = std::forward<DataProviderT>(value); }
+    template<typename DataProviderT = DataProvider>
+    CreateDataProviderResult& WithDataProvider(DataProviderT&& value) { SetDataProvider(std::forward<DataProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDataProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDataProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDataProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDataProviderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataProvider m_dataProvider;
+    bool m_dataProviderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

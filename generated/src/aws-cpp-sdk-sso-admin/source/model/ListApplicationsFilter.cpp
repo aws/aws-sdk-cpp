@@ -18,14 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ListApplicationsFilter::ListApplicationsFilter() : 
-    m_applicationAccountHasBeenSet(false),
-    m_applicationProviderHasBeenSet(false)
-{
-}
-
 ListApplicationsFilter::ListApplicationsFilter(JsonView jsonValue)
-  : ListApplicationsFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListApplicationsFilter& ListApplicationsFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationAccount"))
   {
     m_applicationAccount = jsonValue.GetString("ApplicationAccount");
-
     m_applicationAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationProvider"))
   {
     m_applicationProvider = jsonValue.GetString("ApplicationProvider");
-
     m_applicationProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

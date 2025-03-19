@@ -27,28 +27,26 @@ namespace Model
   class DescribeDefaultQBusinessApplicationResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeDefaultQBusinessApplicationResult();
+    AWS_QUICKSIGHT_API DescribeDefaultQBusinessApplicationResult() = default;
     AWS_QUICKSIGHT_API DescribeDefaultQBusinessApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeDefaultQBusinessApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDefaultQBusinessApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDefaultQBusinessApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDefaultQBusinessApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDefaultQBusinessApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeDefaultQBusinessApplicationResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
@@ -57,21 +55,22 @@ namespace Model
      * <p>The ID of the Amazon Q Business application that is linked to the Amazon
      * QuickSight account.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
-    inline DescribeDefaultQBusinessApplicationResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline DescribeDefaultQBusinessApplicationResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline DescribeDefaultQBusinessApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    DescribeDefaultQBusinessApplicationResult& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_applicationId;
+    bool m_applicationIdHasBeenSet = false;
   };
 
 } // namespace Model

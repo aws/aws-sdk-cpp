@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteBillScenarioUsageModificationRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioUsageModificationRequest();
+    AWS_BCMPRICINGCALCULATOR_API BatchDeleteBillScenarioUsageModificationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * <p> The ID of the Bill Scenario for which you want to delete the modeled usage.
      * </p>
      */
-    inline const Aws::String& GetBillScenarioId() const{ return m_billScenarioId; }
+    inline const Aws::String& GetBillScenarioId() const { return m_billScenarioId; }
     inline bool BillScenarioIdHasBeenSet() const { return m_billScenarioIdHasBeenSet; }
-    inline void SetBillScenarioId(const Aws::String& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = value; }
-    inline void SetBillScenarioId(Aws::String&& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = std::move(value); }
-    inline void SetBillScenarioId(const char* value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId.assign(value); }
-    inline BatchDeleteBillScenarioUsageModificationRequest& WithBillScenarioId(const Aws::String& value) { SetBillScenarioId(value); return *this;}
-    inline BatchDeleteBillScenarioUsageModificationRequest& WithBillScenarioId(Aws::String&& value) { SetBillScenarioId(std::move(value)); return *this;}
-    inline BatchDeleteBillScenarioUsageModificationRequest& WithBillScenarioId(const char* value) { SetBillScenarioId(value); return *this;}
+    template<typename BillScenarioIdT = Aws::String>
+    void SetBillScenarioId(BillScenarioIdT&& value) { m_billScenarioIdHasBeenSet = true; m_billScenarioId = std::forward<BillScenarioIdT>(value); }
+    template<typename BillScenarioIdT = Aws::String>
+    BatchDeleteBillScenarioUsageModificationRequest& WithBillScenarioId(BillScenarioIdT&& value) { SetBillScenarioId(std::forward<BillScenarioIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> List of usage that you want to delete from the Bill Scenario. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
+    inline const Aws::Vector<Aws::String>& GetIds() const { return m_ids; }
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-    inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-    inline BatchDeleteBillScenarioUsageModificationRequest& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-    inline BatchDeleteBillScenarioUsageModificationRequest& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-    inline BatchDeleteBillScenarioUsageModificationRequest& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-    inline BatchDeleteBillScenarioUsageModificationRequest& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-    inline BatchDeleteBillScenarioUsageModificationRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    void SetIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids = std::forward<IdsT>(value); }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    BatchDeleteBillScenarioUsageModificationRequest& WithIds(IdsT&& value) { SetIds(std::forward<IdsT>(value)); return *this;}
+    template<typename IdsT = Aws::String>
+    BatchDeleteBillScenarioUsageModificationRequest& AddIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids.emplace_back(std::forward<IdsT>(value)); return *this; }
     ///@}
   private:
 

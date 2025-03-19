@@ -12,12 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePreferencesRequest::UpdatePreferencesRequest() : 
-    m_managementAccountRateTypeSelectionsHasBeenSet(false),
-    m_memberAccountRateTypeSelectionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

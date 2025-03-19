@@ -12,14 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGroupProfileRequest::CreateGroupProfileRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupProfileRequest::SerializePayload() const
 {
   JsonValue payload;

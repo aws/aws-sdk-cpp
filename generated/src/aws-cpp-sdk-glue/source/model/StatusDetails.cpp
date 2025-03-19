@@ -19,34 +19,18 @@ namespace Glue
 namespace Model
 {
 
-StatusDetails::StatusDetails() : 
-    m_requestedChangeHasBeenSet(false),
-    m_viewValidationsHasBeenSet(false)
-{
-}
-
 StatusDetails::StatusDetails(JsonView jsonValue)
-  : StatusDetails()
 {
   *this = jsonValue;
 }
-
-const Table& StatusDetails::GetRequestedChange() const{ return *m_requestedChange; }
-bool StatusDetails::RequestedChangeHasBeenSet() const { return m_requestedChangeHasBeenSet; }
-void StatusDetails::SetRequestedChange(const Table& value) { m_requestedChangeHasBeenSet = true; m_requestedChange = Aws::MakeShared<Table>("StatusDetails", value); }
-void StatusDetails::SetRequestedChange(Table&& value) { m_requestedChangeHasBeenSet = true; m_requestedChange = Aws::MakeShared<Table>("StatusDetails", std::move(value)); }
-StatusDetails& StatusDetails::WithRequestedChange(const Table& value) { SetRequestedChange(value); return *this;}
-StatusDetails& StatusDetails::WithRequestedChange(Table&& value) { SetRequestedChange(std::move(value)); return *this;}
 
 StatusDetails& StatusDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RequestedChange"))
   {
     m_requestedChange = Aws::MakeShared<Table>("StatusDetails", jsonValue.GetObject("RequestedChange"));
-
     m_requestedChangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewValidations"))
   {
     Aws::Utils::Array<JsonView> viewValidationsJsonList = jsonValue.GetArray("ViewValidations");
@@ -56,7 +40,6 @@ StatusDetails& StatusDetails::operator =(JsonView jsonValue)
     }
     m_viewValidationsHasBeenSet = true;
   }
-
   return *this;
 }
 

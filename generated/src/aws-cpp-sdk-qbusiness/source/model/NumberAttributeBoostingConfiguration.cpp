@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-NumberAttributeBoostingConfiguration::NumberAttributeBoostingConfiguration() : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false),
-    m_boostingType(NumberAttributeBoostingType::NOT_SET),
-    m_boostingTypeHasBeenSet(false)
-{
-}
-
 NumberAttributeBoostingConfiguration::NumberAttributeBoostingConfiguration(JsonView jsonValue)
-  : NumberAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NumberAttributeBoostingConfiguration& NumberAttributeBoostingConfiguration::oper
   if(jsonValue.ValueExists("boostingLevel"))
   {
     m_boostingLevel = DocumentAttributeBoostingLevelMapper::GetDocumentAttributeBoostingLevelForName(jsonValue.GetString("boostingLevel"));
-
     m_boostingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("boostingType"))
   {
     m_boostingType = NumberAttributeBoostingTypeMapper::GetNumberAttributeBoostingTypeForName(jsonValue.GetString("boostingType"));
-
     m_boostingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

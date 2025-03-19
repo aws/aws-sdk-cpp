@@ -33,7 +33,7 @@ namespace Model
   class LoggingConfiguration
   {
   public:
-    AWS_NETWORKFIREWALL_API LoggingConfiguration();
+    AWS_NETWORKFIREWALL_API LoggingConfiguration() = default;
     AWS_NETWORKFIREWALL_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Defines the logging destinations for the logs for a firewall. Network
      * Firewall generates logs for stateful rule groups. </p>
      */
-    inline const Aws::Vector<LogDestinationConfig>& GetLogDestinationConfigs() const{ return m_logDestinationConfigs; }
+    inline const Aws::Vector<LogDestinationConfig>& GetLogDestinationConfigs() const { return m_logDestinationConfigs; }
     inline bool LogDestinationConfigsHasBeenSet() const { return m_logDestinationConfigsHasBeenSet; }
-    inline void SetLogDestinationConfigs(const Aws::Vector<LogDestinationConfig>& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = value; }
-    inline void SetLogDestinationConfigs(Aws::Vector<LogDestinationConfig>&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::move(value); }
-    inline LoggingConfiguration& WithLogDestinationConfigs(const Aws::Vector<LogDestinationConfig>& value) { SetLogDestinationConfigs(value); return *this;}
-    inline LoggingConfiguration& WithLogDestinationConfigs(Aws::Vector<LogDestinationConfig>&& value) { SetLogDestinationConfigs(std::move(value)); return *this;}
-    inline LoggingConfiguration& AddLogDestinationConfigs(const LogDestinationConfig& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(value); return *this; }
-    inline LoggingConfiguration& AddLogDestinationConfigs(LogDestinationConfig&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.push_back(std::move(value)); return *this; }
+    template<typename LogDestinationConfigsT = Aws::Vector<LogDestinationConfig>>
+    void SetLogDestinationConfigs(LogDestinationConfigsT&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs = std::forward<LogDestinationConfigsT>(value); }
+    template<typename LogDestinationConfigsT = Aws::Vector<LogDestinationConfig>>
+    LoggingConfiguration& WithLogDestinationConfigs(LogDestinationConfigsT&& value) { SetLogDestinationConfigs(std::forward<LogDestinationConfigsT>(value)); return *this;}
+    template<typename LogDestinationConfigsT = LogDestinationConfig>
+    LoggingConfiguration& AddLogDestinationConfigs(LogDestinationConfigsT&& value) { m_logDestinationConfigsHasBeenSet = true; m_logDestinationConfigs.emplace_back(std::forward<LogDestinationConfigsT>(value)); return *this; }
     ///@}
   private:
 

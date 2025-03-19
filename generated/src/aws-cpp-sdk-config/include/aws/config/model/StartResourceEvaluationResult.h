@@ -27,7 +27,7 @@ namespace Model
   class StartResourceEvaluationResult
   {
   public:
-    AWS_CONFIGSERVICE_API StartResourceEvaluationResult();
+    AWS_CONFIGSERVICE_API StartResourceEvaluationResult() = default;
     AWS_CONFIGSERVICE_API StartResourceEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API StartResourceEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
      */
-    inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
-    inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationId = value; }
-    inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationId = std::move(value); }
-    inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationId.assign(value); }
-    inline StartResourceEvaluationResult& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
-    inline StartResourceEvaluationResult& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
-    inline StartResourceEvaluationResult& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+    inline const Aws::String& GetResourceEvaluationId() const { return m_resourceEvaluationId; }
+    template<typename ResourceEvaluationIdT = Aws::String>
+    void SetResourceEvaluationId(ResourceEvaluationIdT&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::forward<ResourceEvaluationIdT>(value); }
+    template<typename ResourceEvaluationIdT = Aws::String>
+    StartResourceEvaluationResult& WithResourceEvaluationId(ResourceEvaluationIdT&& value) { SetResourceEvaluationId(std::forward<ResourceEvaluationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartResourceEvaluationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartResourceEvaluationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartResourceEvaluationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartResourceEvaluationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceEvaluationId;
+    bool m_resourceEvaluationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

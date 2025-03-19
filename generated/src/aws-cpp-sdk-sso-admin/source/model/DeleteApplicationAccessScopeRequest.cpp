@@ -12,12 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationAccessScopeRequest::DeleteApplicationAccessScopeRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationAccessScopeRequest::SerializePayload() const
 {
   JsonValue payload;

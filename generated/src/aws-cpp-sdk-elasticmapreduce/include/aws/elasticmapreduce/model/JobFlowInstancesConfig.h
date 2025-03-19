@@ -40,7 +40,7 @@ namespace Model
   class JobFlowInstancesConfig
   {
   public:
-    AWS_EMR_API JobFlowInstancesConfig();
+    AWS_EMR_API JobFlowInstancesConfig() = default;
     AWS_EMR_API JobFlowInstancesConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API JobFlowInstancesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,35 +50,31 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance type of the master node.</p>
      */
-    inline const Aws::String& GetMasterInstanceType() const{ return m_masterInstanceType; }
+    inline const Aws::String& GetMasterInstanceType() const { return m_masterInstanceType; }
     inline bool MasterInstanceTypeHasBeenSet() const { return m_masterInstanceTypeHasBeenSet; }
-    inline void SetMasterInstanceType(const Aws::String& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
-    inline void SetMasterInstanceType(Aws::String&& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = std::move(value); }
-    inline void SetMasterInstanceType(const char* value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType.assign(value); }
-    inline JobFlowInstancesConfig& WithMasterInstanceType(const Aws::String& value) { SetMasterInstanceType(value); return *this;}
-    inline JobFlowInstancesConfig& WithMasterInstanceType(Aws::String&& value) { SetMasterInstanceType(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithMasterInstanceType(const char* value) { SetMasterInstanceType(value); return *this;}
+    template<typename MasterInstanceTypeT = Aws::String>
+    void SetMasterInstanceType(MasterInstanceTypeT&& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = std::forward<MasterInstanceTypeT>(value); }
+    template<typename MasterInstanceTypeT = Aws::String>
+    JobFlowInstancesConfig& WithMasterInstanceType(MasterInstanceTypeT&& value) { SetMasterInstanceType(std::forward<MasterInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 instance type of the core and task nodes.</p>
      */
-    inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
+    inline const Aws::String& GetSlaveInstanceType() const { return m_slaveInstanceType; }
     inline bool SlaveInstanceTypeHasBeenSet() const { return m_slaveInstanceTypeHasBeenSet; }
-    inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
-    inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = std::move(value); }
-    inline void SetSlaveInstanceType(const char* value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType.assign(value); }
-    inline JobFlowInstancesConfig& WithSlaveInstanceType(const Aws::String& value) { SetSlaveInstanceType(value); return *this;}
-    inline JobFlowInstancesConfig& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
+    template<typename SlaveInstanceTypeT = Aws::String>
+    void SetSlaveInstanceType(SlaveInstanceTypeT&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = std::forward<SlaveInstanceTypeT>(value); }
+    template<typename SlaveInstanceTypeT = Aws::String>
+    JobFlowInstancesConfig& WithSlaveInstanceType(SlaveInstanceTypeT&& value) { SetSlaveInstanceType(std::forward<SlaveInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of Amazon EC2 instances in the cluster.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline JobFlowInstancesConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -88,14 +84,14 @@ namespace Model
     /**
      * <p>Configuration for the instance groups in a cluster.</p>
      */
-    inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+    inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const { return m_instanceGroups; }
     inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
-    inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
-    inline void SetInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::move(value); }
-    inline JobFlowInstancesConfig& WithInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { SetInstanceGroups(value); return *this;}
-    inline JobFlowInstancesConfig& WithInstanceGroups(Aws::Vector<InstanceGroupConfig>&& value) { SetInstanceGroups(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& AddInstanceGroups(const InstanceGroupConfig& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
-    inline JobFlowInstancesConfig& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+    template<typename InstanceGroupsT = Aws::Vector<InstanceGroupConfig>>
+    void SetInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = std::forward<InstanceGroupsT>(value); }
+    template<typename InstanceGroupsT = Aws::Vector<InstanceGroupConfig>>
+    JobFlowInstancesConfig& WithInstanceGroups(InstanceGroupsT&& value) { SetInstanceGroups(std::forward<InstanceGroupsT>(value)); return *this;}
+    template<typename InstanceGroupsT = InstanceGroupConfig>
+    JobFlowInstancesConfig& AddInstanceGroups(InstanceGroupsT&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.emplace_back(std::forward<InstanceGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,14 +101,14 @@ namespace Model
      * Amazon EC2 instances and instance configurations for clusters that use the
      * instance fleet configuration.</p>
      */
-    inline const Aws::Vector<InstanceFleetConfig>& GetInstanceFleets() const{ return m_instanceFleets; }
+    inline const Aws::Vector<InstanceFleetConfig>& GetInstanceFleets() const { return m_instanceFleets; }
     inline bool InstanceFleetsHasBeenSet() const { return m_instanceFleetsHasBeenSet; }
-    inline void SetInstanceFleets(const Aws::Vector<InstanceFleetConfig>& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = value; }
-    inline void SetInstanceFleets(Aws::Vector<InstanceFleetConfig>&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = std::move(value); }
-    inline JobFlowInstancesConfig& WithInstanceFleets(const Aws::Vector<InstanceFleetConfig>& value) { SetInstanceFleets(value); return *this;}
-    inline JobFlowInstancesConfig& WithInstanceFleets(Aws::Vector<InstanceFleetConfig>&& value) { SetInstanceFleets(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& AddInstanceFleets(const InstanceFleetConfig& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.push_back(value); return *this; }
-    inline JobFlowInstancesConfig& AddInstanceFleets(InstanceFleetConfig&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.push_back(std::move(value)); return *this; }
+    template<typename InstanceFleetsT = Aws::Vector<InstanceFleetConfig>>
+    void SetInstanceFleets(InstanceFleetsT&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets = std::forward<InstanceFleetsT>(value); }
+    template<typename InstanceFleetsT = Aws::Vector<InstanceFleetConfig>>
+    JobFlowInstancesConfig& WithInstanceFleets(InstanceFleetsT&& value) { SetInstanceFleets(std::forward<InstanceFleetsT>(value)); return *this;}
+    template<typename InstanceFleetsT = InstanceFleetConfig>
+    JobFlowInstancesConfig& AddInstanceFleets(InstanceFleetsT&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.emplace_back(std::forward<InstanceFleetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,26 +116,24 @@ namespace Model
      * <p>The name of the Amazon EC2 key pair that can be used to connect to the master
      * node using SSH as the user called "hadoop."</p>
      */
-    inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
+    inline const Aws::String& GetEc2KeyName() const { return m_ec2KeyName; }
     inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
-    inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
-    inline void SetEc2KeyName(Aws::String&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::move(value); }
-    inline void SetEc2KeyName(const char* value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName.assign(value); }
-    inline JobFlowInstancesConfig& WithEc2KeyName(const Aws::String& value) { SetEc2KeyName(value); return *this;}
-    inline JobFlowInstancesConfig& WithEc2KeyName(Aws::String&& value) { SetEc2KeyName(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
+    template<typename Ec2KeyNameT = Aws::String>
+    void SetEc2KeyName(Ec2KeyNameT&& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = std::forward<Ec2KeyNameT>(value); }
+    template<typename Ec2KeyNameT = Aws::String>
+    JobFlowInstancesConfig& WithEc2KeyName(Ec2KeyNameT&& value) { SetEc2KeyName(std::forward<Ec2KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone in which the cluster runs.</p>
      */
-    inline const PlacementType& GetPlacement() const{ return m_placement; }
+    inline const PlacementType& GetPlacement() const { return m_placement; }
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-    inline void SetPlacement(const PlacementType& value) { m_placementHasBeenSet = true; m_placement = value; }
-    inline void SetPlacement(PlacementType&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-    inline JobFlowInstancesConfig& WithPlacement(const PlacementType& value) { SetPlacement(value); return *this;}
-    inline JobFlowInstancesConfig& WithPlacement(PlacementType&& value) { SetPlacement(std::move(value)); return *this;}
+    template<typename PlacementT = PlacementType>
+    void SetPlacement(PlacementT&& value) { m_placementHasBeenSet = true; m_placement = std::forward<PlacementT>(value); }
+    template<typename PlacementT = PlacementType>
+    JobFlowInstancesConfig& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +144,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
      * Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
      */
-    inline bool GetKeepJobFlowAliveWhenNoSteps() const{ return m_keepJobFlowAliveWhenNoSteps; }
+    inline bool GetKeepJobFlowAliveWhenNoSteps() const { return m_keepJobFlowAliveWhenNoSteps; }
     inline bool KeepJobFlowAliveWhenNoStepsHasBeenSet() const { return m_keepJobFlowAliveWhenNoStepsHasBeenSet; }
     inline void SetKeepJobFlowAliveWhenNoSteps(bool value) { m_keepJobFlowAliveWhenNoStepsHasBeenSet = true; m_keepJobFlowAliveWhenNoSteps = value; }
     inline JobFlowInstancesConfig& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
@@ -162,7 +156,7 @@ namespace Model
      * from being terminated by API call, user intervention, or in the event of a
      * job-flow error.</p>
      */
-    inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+    inline bool GetTerminationProtected() const { return m_terminationProtected; }
     inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
     inline JobFlowInstancesConfig& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
@@ -173,7 +167,7 @@ namespace Model
      * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
      * degraded within the cluster.</p>
      */
-    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+    inline bool GetUnhealthyNodeReplacement() const { return m_unhealthyNodeReplacement; }
     inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
     inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
     inline JobFlowInstancesConfig& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
@@ -188,14 +182,12 @@ namespace Model
      * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
      * the default version of Hadoop for that AMI version is used.</p>
      */
-    inline const Aws::String& GetHadoopVersion() const{ return m_hadoopVersion; }
+    inline const Aws::String& GetHadoopVersion() const { return m_hadoopVersion; }
     inline bool HadoopVersionHasBeenSet() const { return m_hadoopVersionHasBeenSet; }
-    inline void SetHadoopVersion(const Aws::String& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = value; }
-    inline void SetHadoopVersion(Aws::String&& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = std::move(value); }
-    inline void SetHadoopVersion(const char* value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion.assign(value); }
-    inline JobFlowInstancesConfig& WithHadoopVersion(const Aws::String& value) { SetHadoopVersion(value); return *this;}
-    inline JobFlowInstancesConfig& WithHadoopVersion(Aws::String&& value) { SetHadoopVersion(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithHadoopVersion(const char* value) { SetHadoopVersion(value); return *this;}
+    template<typename HadoopVersionT = Aws::String>
+    void SetHadoopVersion(HadoopVersionT&& value) { m_hadoopVersionHasBeenSet = true; m_hadoopVersion = std::forward<HadoopVersionT>(value); }
+    template<typename HadoopVersionT = Aws::String>
+    JobFlowInstancesConfig& WithHadoopVersion(HadoopVersionT&& value) { SetHadoopVersion(std::forward<HadoopVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,14 +198,12 @@ namespace Model
      * to launch. If you do not specify this value and your account supports
      * EC2-Classic, the cluster launches in EC2-Classic.</p>
      */
-    inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
+    inline const Aws::String& GetEc2SubnetId() const { return m_ec2SubnetId; }
     inline bool Ec2SubnetIdHasBeenSet() const { return m_ec2SubnetIdHasBeenSet; }
-    inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
-    inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = std::move(value); }
-    inline void SetEc2SubnetId(const char* value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId.assign(value); }
-    inline JobFlowInstancesConfig& WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
-    inline JobFlowInstancesConfig& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
+    template<typename Ec2SubnetIdT = Aws::String>
+    void SetEc2SubnetId(Ec2SubnetIdT&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = std::forward<Ec2SubnetIdT>(value); }
+    template<typename Ec2SubnetIdT = Aws::String>
+    JobFlowInstancesConfig& WithEc2SubnetId(Ec2SubnetIdT&& value) { SetEc2SubnetId(std::forward<Ec2SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,15 +214,14 @@ namespace Model
      * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetEc2SubnetIds() const{ return m_ec2SubnetIds; }
+    inline const Aws::Vector<Aws::String>& GetEc2SubnetIds() const { return m_ec2SubnetIds; }
     inline bool Ec2SubnetIdsHasBeenSet() const { return m_ec2SubnetIdsHasBeenSet; }
-    inline void SetEc2SubnetIds(const Aws::Vector<Aws::String>& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = value; }
-    inline void SetEc2SubnetIds(Aws::Vector<Aws::String>&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = std::move(value); }
-    inline JobFlowInstancesConfig& WithEc2SubnetIds(const Aws::Vector<Aws::String>& value) { SetEc2SubnetIds(value); return *this;}
-    inline JobFlowInstancesConfig& WithEc2SubnetIds(Aws::Vector<Aws::String>&& value) { SetEc2SubnetIds(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& AddEc2SubnetIds(const Aws::String& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }
-    inline JobFlowInstancesConfig& AddEc2SubnetIds(Aws::String&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(std::move(value)); return *this; }
-    inline JobFlowInstancesConfig& AddEc2SubnetIds(const char* value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }
+    template<typename Ec2SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetEc2SubnetIds(Ec2SubnetIdsT&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = std::forward<Ec2SubnetIdsT>(value); }
+    template<typename Ec2SubnetIdsT = Aws::Vector<Aws::String>>
+    JobFlowInstancesConfig& WithEc2SubnetIds(Ec2SubnetIdsT&& value) { SetEc2SubnetIds(std::forward<Ec2SubnetIdsT>(value)); return *this;}
+    template<typename Ec2SubnetIdsT = Aws::String>
+    JobFlowInstancesConfig& AddEc2SubnetIds(Ec2SubnetIdsT&& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.emplace_back(std::forward<Ec2SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -241,14 +230,12 @@ namespace Model
      * specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify
      * <code>EmrManagedSlaveSecurityGroup</code>.</p>
      */
-    inline const Aws::String& GetEmrManagedMasterSecurityGroup() const{ return m_emrManagedMasterSecurityGroup; }
+    inline const Aws::String& GetEmrManagedMasterSecurityGroup() const { return m_emrManagedMasterSecurityGroup; }
     inline bool EmrManagedMasterSecurityGroupHasBeenSet() const { return m_emrManagedMasterSecurityGroupHasBeenSet; }
-    inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
-    inline void SetEmrManagedMasterSecurityGroup(Aws::String&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = std::move(value); }
-    inline void SetEmrManagedMasterSecurityGroup(const char* value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup.assign(value); }
-    inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const Aws::String& value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
-    inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(Aws::String&& value) { SetEmrManagedMasterSecurityGroup(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const char* value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
+    template<typename EmrManagedMasterSecurityGroupT = Aws::String>
+    void SetEmrManagedMasterSecurityGroup(EmrManagedMasterSecurityGroupT&& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = std::forward<EmrManagedMasterSecurityGroupT>(value); }
+    template<typename EmrManagedMasterSecurityGroupT = Aws::String>
+    JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(EmrManagedMasterSecurityGroupT&& value) { SetEmrManagedMasterSecurityGroup(std::forward<EmrManagedMasterSecurityGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -257,14 +244,12 @@ namespace Model
      * If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify
      * <code>EmrManagedMasterSecurityGroup</code>.</p>
      */
-    inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
+    inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const { return m_emrManagedSlaveSecurityGroup; }
     inline bool EmrManagedSlaveSecurityGroupHasBeenSet() const { return m_emrManagedSlaveSecurityGroupHasBeenSet; }
-    inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
-    inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::move(value); }
-    inline void SetEmrManagedSlaveSecurityGroup(const char* value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup.assign(value); }
-    inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
-    inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+    template<typename EmrManagedSlaveSecurityGroupT = Aws::String>
+    void SetEmrManagedSlaveSecurityGroup(EmrManagedSlaveSecurityGroupT&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::forward<EmrManagedSlaveSecurityGroupT>(value); }
+    template<typename EmrManagedSlaveSecurityGroupT = Aws::String>
+    JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(EmrManagedSlaveSecurityGroupT&& value) { SetEmrManagedSlaveSecurityGroup(std::forward<EmrManagedSlaveSecurityGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,29 +257,26 @@ namespace Model
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
      * access clusters in VPC private subnets.</p>
      */
-    inline const Aws::String& GetServiceAccessSecurityGroup() const{ return m_serviceAccessSecurityGroup; }
+    inline const Aws::String& GetServiceAccessSecurityGroup() const { return m_serviceAccessSecurityGroup; }
     inline bool ServiceAccessSecurityGroupHasBeenSet() const { return m_serviceAccessSecurityGroupHasBeenSet; }
-    inline void SetServiceAccessSecurityGroup(const Aws::String& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = value; }
-    inline void SetServiceAccessSecurityGroup(Aws::String&& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = std::move(value); }
-    inline void SetServiceAccessSecurityGroup(const char* value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup.assign(value); }
-    inline JobFlowInstancesConfig& WithServiceAccessSecurityGroup(const Aws::String& value) { SetServiceAccessSecurityGroup(value); return *this;}
-    inline JobFlowInstancesConfig& WithServiceAccessSecurityGroup(Aws::String&& value) { SetServiceAccessSecurityGroup(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& WithServiceAccessSecurityGroup(const char* value) { SetServiceAccessSecurityGroup(value); return *this;}
+    template<typename ServiceAccessSecurityGroupT = Aws::String>
+    void SetServiceAccessSecurityGroup(ServiceAccessSecurityGroupT&& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = std::forward<ServiceAccessSecurityGroupT>(value); }
+    template<typename ServiceAccessSecurityGroupT = Aws::String>
+    JobFlowInstancesConfig& WithServiceAccessSecurityGroup(ServiceAccessSecurityGroupT&& value) { SetServiceAccessSecurityGroup(std::forward<ServiceAccessSecurityGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalMasterSecurityGroups() const{ return m_additionalMasterSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalMasterSecurityGroups() const { return m_additionalMasterSecurityGroups; }
     inline bool AdditionalMasterSecurityGroupsHasBeenSet() const { return m_additionalMasterSecurityGroupsHasBeenSet; }
-    inline void SetAdditionalMasterSecurityGroups(const Aws::Vector<Aws::String>& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = value; }
-    inline void SetAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = std::move(value); }
-    inline JobFlowInstancesConfig& WithAdditionalMasterSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalMasterSecurityGroups(value); return *this;}
-    inline JobFlowInstancesConfig& WithAdditionalMasterSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalMasterSecurityGroups(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(const Aws::String& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
-    inline JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(Aws::String&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(std::move(value)); return *this; }
-    inline JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(const char* value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
+    template<typename AdditionalMasterSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetAdditionalMasterSecurityGroups(AdditionalMasterSecurityGroupsT&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups = std::forward<AdditionalMasterSecurityGroupsT>(value); }
+    template<typename AdditionalMasterSecurityGroupsT = Aws::Vector<Aws::String>>
+    JobFlowInstancesConfig& WithAdditionalMasterSecurityGroups(AdditionalMasterSecurityGroupsT&& value) { SetAdditionalMasterSecurityGroups(std::forward<AdditionalMasterSecurityGroupsT>(value)); return *this;}
+    template<typename AdditionalMasterSecurityGroupsT = Aws::String>
+    JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(AdditionalMasterSecurityGroupsT&& value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.emplace_back(std::forward<AdditionalMasterSecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -302,15 +284,14 @@ namespace Model
      * <p>A list of additional Amazon EC2 security group IDs for the core and task
      * nodes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const{ return m_additionalSlaveSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const { return m_additionalSlaveSecurityGroups; }
     inline bool AdditionalSlaveSecurityGroupsHasBeenSet() const { return m_additionalSlaveSecurityGroupsHasBeenSet; }
-    inline void SetAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = value; }
-    inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = std::move(value); }
-    inline JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
-    inline JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(std::move(value)); return *this;}
-    inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(const Aws::String& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
-    inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(std::move(value)); return *this; }
-    inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(const char* value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
+    template<typename AdditionalSlaveSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetAdditionalSlaveSecurityGroups(AdditionalSlaveSecurityGroupsT&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = std::forward<AdditionalSlaveSecurityGroupsT>(value); }
+    template<typename AdditionalSlaveSecurityGroupsT = Aws::Vector<Aws::String>>
+    JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(AdditionalSlaveSecurityGroupsT&& value) { SetAdditionalSlaveSecurityGroups(std::forward<AdditionalSlaveSecurityGroupsT>(value)); return *this;}
+    template<typename AdditionalSlaveSecurityGroupsT = Aws::String>
+    JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(AdditionalSlaveSecurityGroupsT&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.emplace_back(std::forward<AdditionalSlaveSecurityGroupsT>(value)); return *this; }
     ///@}
   private:
 
@@ -320,7 +301,7 @@ namespace Model
     Aws::String m_slaveInstanceType;
     bool m_slaveInstanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
@@ -335,13 +316,13 @@ namespace Model
     PlacementType m_placement;
     bool m_placementHasBeenSet = false;
 
-    bool m_keepJobFlowAliveWhenNoSteps;
+    bool m_keepJobFlowAliveWhenNoSteps{false};
     bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
 
-    bool m_terminationProtected;
+    bool m_terminationProtected{false};
     bool m_terminationProtectedHasBeenSet = false;
 
-    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacement{false};
     bool m_unhealthyNodeReplacementHasBeenSet = false;
 
     Aws::String m_hadoopVersion;

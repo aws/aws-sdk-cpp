@@ -18,18 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DataQualityMetric::DataQualityMetric() : 
-    m_metricType(DataQualityMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_metricDescriptionHasBeenSet(false),
-    m_relatedColumnNameHasBeenSet(false),
-    m_metricValue(0.0),
-    m_metricValueHasBeenSet(false)
-{
-}
-
 DataQualityMetric::DataQualityMetric(JsonView jsonValue)
-  : DataQualityMetric()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DataQualityMetric& DataQualityMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricType"))
   {
     m_metricType = DataQualityMetricTypeMapper::GetDataQualityMetricTypeForName(jsonValue.GetString("MetricType"));
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDescription"))
   {
     m_metricDescription = jsonValue.GetString("MetricDescription");
-
     m_metricDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedColumnName"))
   {
     m_relatedColumnName = jsonValue.GetString("RelatedColumnName");
-
     m_relatedColumnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricValue"))
   {
     m_metricValue = jsonValue.GetDouble("MetricValue");
-
     m_metricValueHasBeenSet = true;
   }
-
   return *this;
 }
 

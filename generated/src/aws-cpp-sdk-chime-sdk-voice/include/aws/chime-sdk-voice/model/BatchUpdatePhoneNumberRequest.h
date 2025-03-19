@@ -22,7 +22,7 @@ namespace Model
   class BatchUpdatePhoneNumberRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API BatchUpdatePhoneNumberRequest();
+    AWS_CHIMESDKVOICE_API BatchUpdatePhoneNumberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>Lists the phone numbers in the update request.</p>
      */
-    inline const Aws::Vector<UpdatePhoneNumberRequestItem>& GetUpdatePhoneNumberRequestItems() const{ return m_updatePhoneNumberRequestItems; }
+    inline const Aws::Vector<UpdatePhoneNumberRequestItem>& GetUpdatePhoneNumberRequestItems() const { return m_updatePhoneNumberRequestItems; }
     inline bool UpdatePhoneNumberRequestItemsHasBeenSet() const { return m_updatePhoneNumberRequestItemsHasBeenSet; }
-    inline void SetUpdatePhoneNumberRequestItems(const Aws::Vector<UpdatePhoneNumberRequestItem>& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems = value; }
-    inline void SetUpdatePhoneNumberRequestItems(Aws::Vector<UpdatePhoneNumberRequestItem>&& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems = std::move(value); }
-    inline BatchUpdatePhoneNumberRequest& WithUpdatePhoneNumberRequestItems(const Aws::Vector<UpdatePhoneNumberRequestItem>& value) { SetUpdatePhoneNumberRequestItems(value); return *this;}
-    inline BatchUpdatePhoneNumberRequest& WithUpdatePhoneNumberRequestItems(Aws::Vector<UpdatePhoneNumberRequestItem>&& value) { SetUpdatePhoneNumberRequestItems(std::move(value)); return *this;}
-    inline BatchUpdatePhoneNumberRequest& AddUpdatePhoneNumberRequestItems(const UpdatePhoneNumberRequestItem& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems.push_back(value); return *this; }
-    inline BatchUpdatePhoneNumberRequest& AddUpdatePhoneNumberRequestItems(UpdatePhoneNumberRequestItem&& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems.push_back(std::move(value)); return *this; }
+    template<typename UpdatePhoneNumberRequestItemsT = Aws::Vector<UpdatePhoneNumberRequestItem>>
+    void SetUpdatePhoneNumberRequestItems(UpdatePhoneNumberRequestItemsT&& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems = std::forward<UpdatePhoneNumberRequestItemsT>(value); }
+    template<typename UpdatePhoneNumberRequestItemsT = Aws::Vector<UpdatePhoneNumberRequestItem>>
+    BatchUpdatePhoneNumberRequest& WithUpdatePhoneNumberRequestItems(UpdatePhoneNumberRequestItemsT&& value) { SetUpdatePhoneNumberRequestItems(std::forward<UpdatePhoneNumberRequestItemsT>(value)); return *this;}
+    template<typename UpdatePhoneNumberRequestItemsT = UpdatePhoneNumberRequestItem>
+    BatchUpdatePhoneNumberRequest& AddUpdatePhoneNumberRequestItems(UpdatePhoneNumberRequestItemsT&& value) { m_updatePhoneNumberRequestItemsHasBeenSet = true; m_updatePhoneNumberRequestItems.emplace_back(std::forward<UpdatePhoneNumberRequestItemsT>(value)); return *this; }
     ///@}
   private:
 

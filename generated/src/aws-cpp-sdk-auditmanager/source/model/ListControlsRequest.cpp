@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListControlsRequest::ListControlsRequest() : 
-    m_controlType(ControlType::NOT_SET),
-    m_controlTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_controlCatalogIdHasBeenSet(false)
-{
-}
-
 Aws::String ListControlsRequest::SerializePayload() const
 {
   return {};

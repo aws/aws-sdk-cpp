@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssociatedRoute53HealthChecksRequest::ListAssociatedRoute53HealthChecksRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_routingControlArnHasBeenSet(false)
-{
-}
-
 Aws::String ListAssociatedRoute53HealthChecksRequest::SerializePayload() const
 {
   return {};

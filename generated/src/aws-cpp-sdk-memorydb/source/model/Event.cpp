@@ -18,17 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Event::Event() : 
-    m_sourceNameHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_dateHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceName"))
   {
     m_sourceName = jsonValue.GetString("SourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetDouble("Date");
-
     m_dateHasBeenSet = true;
   }
-
   return *this;
 }
 

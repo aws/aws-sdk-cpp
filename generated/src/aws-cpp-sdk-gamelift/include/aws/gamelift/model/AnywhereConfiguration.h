@@ -32,7 +32,7 @@ namespace Model
   class AnywhereConfiguration
   {
   public:
-    AWS_GAMELIFT_API AnywhereConfiguration();
+    AWS_GAMELIFT_API AnywhereConfiguration() = default;
     AWS_GAMELIFT_API AnywhereConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API AnywhereConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
      * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetCost() const{ return m_cost; }
+    inline const Aws::String& GetCost() const { return m_cost; }
     inline bool CostHasBeenSet() const { return m_costHasBeenSet; }
-    inline void SetCost(const Aws::String& value) { m_costHasBeenSet = true; m_cost = value; }
-    inline void SetCost(Aws::String&& value) { m_costHasBeenSet = true; m_cost = std::move(value); }
-    inline void SetCost(const char* value) { m_costHasBeenSet = true; m_cost.assign(value); }
-    inline AnywhereConfiguration& WithCost(const Aws::String& value) { SetCost(value); return *this;}
-    inline AnywhereConfiguration& WithCost(Aws::String&& value) { SetCost(std::move(value)); return *this;}
-    inline AnywhereConfiguration& WithCost(const char* value) { SetCost(value); return *this;}
+    template<typename CostT = Aws::String>
+    void SetCost(CostT&& value) { m_costHasBeenSet = true; m_cost = std::forward<CostT>(value); }
+    template<typename CostT = Aws::String>
+    AnywhereConfiguration& WithCost(CostT&& value) { SetCost(std::forward<CostT>(value)); return *this;}
     ///@}
   private:
 

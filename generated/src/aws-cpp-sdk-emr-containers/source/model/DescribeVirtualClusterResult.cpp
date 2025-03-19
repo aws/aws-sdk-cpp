@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVirtualClusterResult::DescribeVirtualClusterResult()
-{
-}
-
 DescribeVirtualClusterResult::DescribeVirtualClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeVirtualClusterResult& DescribeVirtualClusterResult::operator =(const Aws
   if(jsonValue.ValueExists("virtualCluster"))
   {
     m_virtualCluster = jsonValue.GetObject("virtualCluster");
-
+    m_virtualClusterHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

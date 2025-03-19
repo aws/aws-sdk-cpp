@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-SystemContentBlock::SystemContentBlock() : 
-    m_textHasBeenSet(false),
-    m_guardContentHasBeenSet(false)
-{
-}
-
 SystemContentBlock::SystemContentBlock(JsonView jsonValue)
-  : SystemContentBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SystemContentBlock& SystemContentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardContent"))
   {
     m_guardContent = jsonValue.GetObject("guardContent");
-
     m_guardContentHasBeenSet = true;
   }
-
   return *this;
 }
 

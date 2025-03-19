@@ -22,7 +22,7 @@ namespace Model
   class PutTraceSegmentsRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API PutTraceSegmentsRequest();
+    AWS_XRAY_API PutTraceSegmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p>A string containing a JSON document defining one or more segments or
      * subsegments.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTraceSegmentDocuments() const{ return m_traceSegmentDocuments; }
+    inline const Aws::Vector<Aws::String>& GetTraceSegmentDocuments() const { return m_traceSegmentDocuments; }
     inline bool TraceSegmentDocumentsHasBeenSet() const { return m_traceSegmentDocumentsHasBeenSet; }
-    inline void SetTraceSegmentDocuments(const Aws::Vector<Aws::String>& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments = value; }
-    inline void SetTraceSegmentDocuments(Aws::Vector<Aws::String>&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments = std::move(value); }
-    inline PutTraceSegmentsRequest& WithTraceSegmentDocuments(const Aws::Vector<Aws::String>& value) { SetTraceSegmentDocuments(value); return *this;}
-    inline PutTraceSegmentsRequest& WithTraceSegmentDocuments(Aws::Vector<Aws::String>&& value) { SetTraceSegmentDocuments(std::move(value)); return *this;}
-    inline PutTraceSegmentsRequest& AddTraceSegmentDocuments(const Aws::String& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.push_back(value); return *this; }
-    inline PutTraceSegmentsRequest& AddTraceSegmentDocuments(Aws::String&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.push_back(std::move(value)); return *this; }
-    inline PutTraceSegmentsRequest& AddTraceSegmentDocuments(const char* value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.push_back(value); return *this; }
+    template<typename TraceSegmentDocumentsT = Aws::Vector<Aws::String>>
+    void SetTraceSegmentDocuments(TraceSegmentDocumentsT&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments = std::forward<TraceSegmentDocumentsT>(value); }
+    template<typename TraceSegmentDocumentsT = Aws::Vector<Aws::String>>
+    PutTraceSegmentsRequest& WithTraceSegmentDocuments(TraceSegmentDocumentsT&& value) { SetTraceSegmentDocuments(std::forward<TraceSegmentDocumentsT>(value)); return *this;}
+    template<typename TraceSegmentDocumentsT = Aws::String>
+    PutTraceSegmentsRequest& AddTraceSegmentDocuments(TraceSegmentDocumentsT&& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments.emplace_back(std::forward<TraceSegmentDocumentsT>(value)); return *this; }
     ///@}
   private:
 

@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListStackRefactorsRequest::ListStackRefactorsRequest() : 
-    m_executionStatusFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListStackRefactorsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

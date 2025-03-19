@@ -35,7 +35,7 @@ namespace Model
   class HttpMatch
   {
   public:
-    AWS_VPCLATTICE_API HttpMatch();
+    AWS_VPCLATTICE_API HttpMatch() = default;
     AWS_VPCLATTICE_API HttpMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API HttpMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,38 @@ namespace Model
      * <p>The header matches. Matches incoming requests with rule based on request
      * header value before applying rule action.</p>
      */
-    inline const Aws::Vector<HeaderMatch>& GetHeaderMatches() const{ return m_headerMatches; }
+    inline const Aws::Vector<HeaderMatch>& GetHeaderMatches() const { return m_headerMatches; }
     inline bool HeaderMatchesHasBeenSet() const { return m_headerMatchesHasBeenSet; }
-    inline void SetHeaderMatches(const Aws::Vector<HeaderMatch>& value) { m_headerMatchesHasBeenSet = true; m_headerMatches = value; }
-    inline void SetHeaderMatches(Aws::Vector<HeaderMatch>&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches = std::move(value); }
-    inline HttpMatch& WithHeaderMatches(const Aws::Vector<HeaderMatch>& value) { SetHeaderMatches(value); return *this;}
-    inline HttpMatch& WithHeaderMatches(Aws::Vector<HeaderMatch>&& value) { SetHeaderMatches(std::move(value)); return *this;}
-    inline HttpMatch& AddHeaderMatches(const HeaderMatch& value) { m_headerMatchesHasBeenSet = true; m_headerMatches.push_back(value); return *this; }
-    inline HttpMatch& AddHeaderMatches(HeaderMatch&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches.push_back(std::move(value)); return *this; }
+    template<typename HeaderMatchesT = Aws::Vector<HeaderMatch>>
+    void SetHeaderMatches(HeaderMatchesT&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches = std::forward<HeaderMatchesT>(value); }
+    template<typename HeaderMatchesT = Aws::Vector<HeaderMatch>>
+    HttpMatch& WithHeaderMatches(HeaderMatchesT&& value) { SetHeaderMatches(std::forward<HeaderMatchesT>(value)); return *this;}
+    template<typename HeaderMatchesT = HeaderMatch>
+    HttpMatch& AddHeaderMatches(HeaderMatchesT&& value) { m_headerMatchesHasBeenSet = true; m_headerMatches.emplace_back(std::forward<HeaderMatchesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP method type.</p>
      */
-    inline const Aws::String& GetMethod() const{ return m_method; }
+    inline const Aws::String& GetMethod() const { return m_method; }
     inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
-    inline void SetMethod(const Aws::String& value) { m_methodHasBeenSet = true; m_method = value; }
-    inline void SetMethod(Aws::String&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
-    inline void SetMethod(const char* value) { m_methodHasBeenSet = true; m_method.assign(value); }
-    inline HttpMatch& WithMethod(const Aws::String& value) { SetMethod(value); return *this;}
-    inline HttpMatch& WithMethod(Aws::String&& value) { SetMethod(std::move(value)); return *this;}
-    inline HttpMatch& WithMethod(const char* value) { SetMethod(value); return *this;}
+    template<typename MethodT = Aws::String>
+    void SetMethod(MethodT&& value) { m_methodHasBeenSet = true; m_method = std::forward<MethodT>(value); }
+    template<typename MethodT = Aws::String>
+    HttpMatch& WithMethod(MethodT&& value) { SetMethod(std::forward<MethodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path match.</p>
      */
-    inline const PathMatch& GetPathMatch() const{ return m_pathMatch; }
+    inline const PathMatch& GetPathMatch() const { return m_pathMatch; }
     inline bool PathMatchHasBeenSet() const { return m_pathMatchHasBeenSet; }
-    inline void SetPathMatch(const PathMatch& value) { m_pathMatchHasBeenSet = true; m_pathMatch = value; }
-    inline void SetPathMatch(PathMatch&& value) { m_pathMatchHasBeenSet = true; m_pathMatch = std::move(value); }
-    inline HttpMatch& WithPathMatch(const PathMatch& value) { SetPathMatch(value); return *this;}
-    inline HttpMatch& WithPathMatch(PathMatch&& value) { SetPathMatch(std::move(value)); return *this;}
+    template<typename PathMatchT = PathMatch>
+    void SetPathMatch(PathMatchT&& value) { m_pathMatchHasBeenSet = true; m_pathMatch = std::forward<PathMatchT>(value); }
+    template<typename PathMatchT = PathMatch>
+    HttpMatch& WithPathMatch(PathMatchT&& value) { SetPathMatch(std::forward<PathMatchT>(value)); return *this;}
     ///@}
   private:
 

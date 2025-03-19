@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-TlsValidationContextFileTrust::TlsValidationContextFileTrust() : 
-    m_certificateChainHasBeenSet(false)
-{
-}
-
 TlsValidationContextFileTrust::TlsValidationContextFileTrust(JsonView jsonValue)
-  : TlsValidationContextFileTrust()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TlsValidationContextFileTrust& TlsValidationContextFileTrust::operator =(JsonVie
   if(jsonValue.ValueExists("certificateChain"))
   {
     m_certificateChain = jsonValue.GetString("certificateChain");
-
     m_certificateChainHasBeenSet = true;
   }
-
   return *this;
 }
 

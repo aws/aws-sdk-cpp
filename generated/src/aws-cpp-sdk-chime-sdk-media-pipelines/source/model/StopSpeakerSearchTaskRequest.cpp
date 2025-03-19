@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopSpeakerSearchTaskRequest::StopSpeakerSearchTaskRequest() : 
-    m_identifierHasBeenSet(false),
-    m_speakerSearchTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String StopSpeakerSearchTaskRequest::SerializePayload() const
 {
   return {};

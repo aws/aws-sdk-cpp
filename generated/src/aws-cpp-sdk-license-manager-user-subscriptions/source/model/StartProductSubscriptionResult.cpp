@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartProductSubscriptionResult::StartProductSubscriptionResult()
-{
-}
-
 StartProductSubscriptionResult::StartProductSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartProductSubscriptionResult& StartProductSubscriptionResult::operator =(const
   if(jsonValue.ValueExists("ProductUserSummary"))
   {
     m_productUserSummary = jsonValue.GetObject("ProductUserSummary");
-
+    m_productUserSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

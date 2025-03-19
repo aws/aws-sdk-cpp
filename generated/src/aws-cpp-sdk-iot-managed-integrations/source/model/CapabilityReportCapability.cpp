@@ -18,18 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-CapabilityReportCapability::CapabilityReportCapability() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 CapabilityReportCapability::CapabilityReportCapability(JsonView jsonValue)
-  : CapabilityReportCapability()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ CapabilityReportCapability& CapabilityReportCapability::operator =(JsonView json
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
@@ -66,7 +49,6 @@ CapabilityReportCapability& CapabilityReportCapability::operator =(JsonView json
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -76,7 +58,6 @@ CapabilityReportCapability& CapabilityReportCapability::operator =(JsonView json
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
@@ -86,7 +67,6 @@ CapabilityReportCapability& CapabilityReportCapability::operator =(JsonView json
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

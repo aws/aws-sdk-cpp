@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNetworkResult::CreateNetworkResult()
-{
-}
-
 CreateNetworkResult::CreateNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateNetworkResult& CreateNetworkResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("NetworkId"))
   {
     m_networkId = jsonValue.GetString("NetworkId");
-
+    m_networkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberId"))
   {
     m_memberId = jsonValue.GetString("MemberId");
-
+    m_memberIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

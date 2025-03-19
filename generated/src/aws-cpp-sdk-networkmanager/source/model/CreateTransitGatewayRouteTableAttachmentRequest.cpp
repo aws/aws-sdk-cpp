@@ -12,15 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTransitGatewayRouteTableAttachmentRequest::CreateTransitGatewayRouteTableAttachmentRequest() : 
-    m_peeringIdHasBeenSet(false),
-    m_transitGatewayRouteTableArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateTransitGatewayRouteTableAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

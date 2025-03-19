@@ -35,7 +35,7 @@ namespace Model
   class AutomatedEvaluationConfig
   {
   public:
-    AWS_BEDROCK_API AutomatedEvaluationConfig();
+    AWS_BEDROCK_API AutomatedEvaluationConfig() = default;
     AWS_BEDROCK_API AutomatedEvaluationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API AutomatedEvaluationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>Configuration details of the prompt datasets and metrics you want to use for
      * your evaluation job.</p>
      */
-    inline const Aws::Vector<EvaluationDatasetMetricConfig>& GetDatasetMetricConfigs() const{ return m_datasetMetricConfigs; }
+    inline const Aws::Vector<EvaluationDatasetMetricConfig>& GetDatasetMetricConfigs() const { return m_datasetMetricConfigs; }
     inline bool DatasetMetricConfigsHasBeenSet() const { return m_datasetMetricConfigsHasBeenSet; }
-    inline void SetDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = value; }
-    inline void SetDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = std::move(value); }
-    inline AutomatedEvaluationConfig& WithDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { SetDatasetMetricConfigs(value); return *this;}
-    inline AutomatedEvaluationConfig& WithDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { SetDatasetMetricConfigs(std::move(value)); return *this;}
-    inline AutomatedEvaluationConfig& AddDatasetMetricConfigs(const EvaluationDatasetMetricConfig& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(value); return *this; }
-    inline AutomatedEvaluationConfig& AddDatasetMetricConfigs(EvaluationDatasetMetricConfig&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(std::move(value)); return *this; }
+    template<typename DatasetMetricConfigsT = Aws::Vector<EvaluationDatasetMetricConfig>>
+    void SetDatasetMetricConfigs(DatasetMetricConfigsT&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = std::forward<DatasetMetricConfigsT>(value); }
+    template<typename DatasetMetricConfigsT = Aws::Vector<EvaluationDatasetMetricConfig>>
+    AutomatedEvaluationConfig& WithDatasetMetricConfigs(DatasetMetricConfigsT&& value) { SetDatasetMetricConfigs(std::forward<DatasetMetricConfigsT>(value)); return *this;}
+    template<typename DatasetMetricConfigsT = EvaluationDatasetMetricConfig>
+    AutomatedEvaluationConfig& AddDatasetMetricConfigs(DatasetMetricConfigsT&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.emplace_back(std::forward<DatasetMetricConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * knowledge base or in model evaluation job that use a model as judge. This model
      * computes all evaluation related metrics.</p>
      */
-    inline const EvaluatorModelConfig& GetEvaluatorModelConfig() const{ return m_evaluatorModelConfig; }
+    inline const EvaluatorModelConfig& GetEvaluatorModelConfig() const { return m_evaluatorModelConfig; }
     inline bool EvaluatorModelConfigHasBeenSet() const { return m_evaluatorModelConfigHasBeenSet; }
-    inline void SetEvaluatorModelConfig(const EvaluatorModelConfig& value) { m_evaluatorModelConfigHasBeenSet = true; m_evaluatorModelConfig = value; }
-    inline void SetEvaluatorModelConfig(EvaluatorModelConfig&& value) { m_evaluatorModelConfigHasBeenSet = true; m_evaluatorModelConfig = std::move(value); }
-    inline AutomatedEvaluationConfig& WithEvaluatorModelConfig(const EvaluatorModelConfig& value) { SetEvaluatorModelConfig(value); return *this;}
-    inline AutomatedEvaluationConfig& WithEvaluatorModelConfig(EvaluatorModelConfig&& value) { SetEvaluatorModelConfig(std::move(value)); return *this;}
+    template<typename EvaluatorModelConfigT = EvaluatorModelConfig>
+    void SetEvaluatorModelConfig(EvaluatorModelConfigT&& value) { m_evaluatorModelConfigHasBeenSet = true; m_evaluatorModelConfig = std::forward<EvaluatorModelConfigT>(value); }
+    template<typename EvaluatorModelConfigT = EvaluatorModelConfig>
+    AutomatedEvaluationConfig& WithEvaluatorModelConfig(EvaluatorModelConfigT&& value) { SetEvaluatorModelConfig(std::forward<EvaluatorModelConfigT>(value)); return *this;}
     ///@}
   private:
 

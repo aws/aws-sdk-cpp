@@ -31,7 +31,7 @@ namespace Model
   class GetSamplingTargetsResult
   {
   public:
-    AWS_XRAY_API GetSamplingTargetsResult();
+    AWS_XRAY_API GetSamplingTargetsResult() = default;
     AWS_XRAY_API GetSamplingTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API GetSamplingTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
     /**
      * <p>Updated rules that the service should use to sample requests.</p>
      */
-    inline const Aws::Vector<SamplingTargetDocument>& GetSamplingTargetDocuments() const{ return m_samplingTargetDocuments; }
-    inline void SetSamplingTargetDocuments(const Aws::Vector<SamplingTargetDocument>& value) { m_samplingTargetDocuments = value; }
-    inline void SetSamplingTargetDocuments(Aws::Vector<SamplingTargetDocument>&& value) { m_samplingTargetDocuments = std::move(value); }
-    inline GetSamplingTargetsResult& WithSamplingTargetDocuments(const Aws::Vector<SamplingTargetDocument>& value) { SetSamplingTargetDocuments(value); return *this;}
-    inline GetSamplingTargetsResult& WithSamplingTargetDocuments(Aws::Vector<SamplingTargetDocument>&& value) { SetSamplingTargetDocuments(std::move(value)); return *this;}
-    inline GetSamplingTargetsResult& AddSamplingTargetDocuments(const SamplingTargetDocument& value) { m_samplingTargetDocuments.push_back(value); return *this; }
-    inline GetSamplingTargetsResult& AddSamplingTargetDocuments(SamplingTargetDocument&& value) { m_samplingTargetDocuments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SamplingTargetDocument>& GetSamplingTargetDocuments() const { return m_samplingTargetDocuments; }
+    template<typename SamplingTargetDocumentsT = Aws::Vector<SamplingTargetDocument>>
+    void SetSamplingTargetDocuments(SamplingTargetDocumentsT&& value) { m_samplingTargetDocumentsHasBeenSet = true; m_samplingTargetDocuments = std::forward<SamplingTargetDocumentsT>(value); }
+    template<typename SamplingTargetDocumentsT = Aws::Vector<SamplingTargetDocument>>
+    GetSamplingTargetsResult& WithSamplingTargetDocuments(SamplingTargetDocumentsT&& value) { SetSamplingTargetDocuments(std::forward<SamplingTargetDocumentsT>(value)); return *this;}
+    template<typename SamplingTargetDocumentsT = SamplingTargetDocument>
+    GetSamplingTargetsResult& AddSamplingTargetDocuments(SamplingTargetDocumentsT&& value) { m_samplingTargetDocumentsHasBeenSet = true; m_samplingTargetDocuments.emplace_back(std::forward<SamplingTargetDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,11 +57,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>
      * to get the latest version.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRuleModification() const{ return m_lastRuleModification; }
-    inline void SetLastRuleModification(const Aws::Utils::DateTime& value) { m_lastRuleModification = value; }
-    inline void SetLastRuleModification(Aws::Utils::DateTime&& value) { m_lastRuleModification = std::move(value); }
-    inline GetSamplingTargetsResult& WithLastRuleModification(const Aws::Utils::DateTime& value) { SetLastRuleModification(value); return *this;}
-    inline GetSamplingTargetsResult& WithLastRuleModification(Aws::Utils::DateTime&& value) { SetLastRuleModification(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastRuleModification() const { return m_lastRuleModification; }
+    template<typename LastRuleModificationT = Aws::Utils::DateTime>
+    void SetLastRuleModification(LastRuleModificationT&& value) { m_lastRuleModificationHasBeenSet = true; m_lastRuleModification = std::forward<LastRuleModificationT>(value); }
+    template<typename LastRuleModificationT = Aws::Utils::DateTime>
+    GetSamplingTargetsResult& WithLastRuleModification(LastRuleModificationT&& value) { SetLastRuleModification(std::forward<LastRuleModificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,34 +70,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingStatisticsDocument.html">SamplingStatisticsDocument</a>
      * that X-Ray could not process.</p>
      */
-    inline const Aws::Vector<UnprocessedStatistics>& GetUnprocessedStatistics() const{ return m_unprocessedStatistics; }
-    inline void SetUnprocessedStatistics(const Aws::Vector<UnprocessedStatistics>& value) { m_unprocessedStatistics = value; }
-    inline void SetUnprocessedStatistics(Aws::Vector<UnprocessedStatistics>&& value) { m_unprocessedStatistics = std::move(value); }
-    inline GetSamplingTargetsResult& WithUnprocessedStatistics(const Aws::Vector<UnprocessedStatistics>& value) { SetUnprocessedStatistics(value); return *this;}
-    inline GetSamplingTargetsResult& WithUnprocessedStatistics(Aws::Vector<UnprocessedStatistics>&& value) { SetUnprocessedStatistics(std::move(value)); return *this;}
-    inline GetSamplingTargetsResult& AddUnprocessedStatistics(const UnprocessedStatistics& value) { m_unprocessedStatistics.push_back(value); return *this; }
-    inline GetSamplingTargetsResult& AddUnprocessedStatistics(UnprocessedStatistics&& value) { m_unprocessedStatistics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedStatistics>& GetUnprocessedStatistics() const { return m_unprocessedStatistics; }
+    template<typename UnprocessedStatisticsT = Aws::Vector<UnprocessedStatistics>>
+    void SetUnprocessedStatistics(UnprocessedStatisticsT&& value) { m_unprocessedStatisticsHasBeenSet = true; m_unprocessedStatistics = std::forward<UnprocessedStatisticsT>(value); }
+    template<typename UnprocessedStatisticsT = Aws::Vector<UnprocessedStatistics>>
+    GetSamplingTargetsResult& WithUnprocessedStatistics(UnprocessedStatisticsT&& value) { SetUnprocessedStatistics(std::forward<UnprocessedStatisticsT>(value)); return *this;}
+    template<typename UnprocessedStatisticsT = UnprocessedStatistics>
+    GetSamplingTargetsResult& AddUnprocessedStatistics(UnprocessedStatisticsT&& value) { m_unprocessedStatisticsHasBeenSet = true; m_unprocessedStatistics.emplace_back(std::forward<UnprocessedStatisticsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSamplingTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSamplingTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSamplingTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSamplingTargetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SamplingTargetDocument> m_samplingTargetDocuments;
+    bool m_samplingTargetDocumentsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRuleModification;
+    Aws::Utils::DateTime m_lastRuleModification{};
+    bool m_lastRuleModificationHasBeenSet = false;
 
     Aws::Vector<UnprocessedStatistics> m_unprocessedStatistics;
+    bool m_unprocessedStatisticsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

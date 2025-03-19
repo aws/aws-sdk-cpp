@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverridePermissions() : 
-    m_dataSetIdsHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverridePermissions(JsonView jsonValue)
-  : AssetBundleImportJobDataSetOverridePermissions()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AssetBundleImportJobDataSetOverridePermissions& AssetBundleImportJobDataSetOverr
     }
     m_dataSetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     m_permissions = jsonValue.GetObject("Permissions");
-
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

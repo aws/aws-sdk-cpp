@@ -12,12 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptEngagementInvitationRequest::AcceptEngagementInvitationRequest() : 
-    m_catalogHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String AcceptEngagementInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

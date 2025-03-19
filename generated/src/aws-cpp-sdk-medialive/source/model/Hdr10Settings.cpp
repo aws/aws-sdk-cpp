@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Hdr10Settings::Hdr10Settings() : 
-    m_maxCll(0),
-    m_maxCllHasBeenSet(false),
-    m_maxFall(0),
-    m_maxFallHasBeenSet(false)
-{
-}
-
 Hdr10Settings::Hdr10Settings(JsonView jsonValue)
-  : Hdr10Settings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Hdr10Settings& Hdr10Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxCll"))
   {
     m_maxCll = jsonValue.GetInteger("maxCll");
-
     m_maxCllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxFall"))
   {
     m_maxFall = jsonValue.GetInteger("maxFall");
-
     m_maxFallHasBeenSet = true;
   }
-
   return *this;
 }
 

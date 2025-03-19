@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Cvss::Cvss() : 
-    m_versionHasBeenSet(false),
-    m_baseScore(0.0),
-    m_baseScoreHasBeenSet(false),
-    m_baseVectorHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_adjustmentsHasBeenSet(false)
-{
-}
-
 Cvss::Cvss(JsonView jsonValue)
-  : Cvss()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Cvss& Cvss::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseScore"))
   {
     m_baseScore = jsonValue.GetDouble("BaseScore");
-
     m_baseScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseVector"))
   {
     m_baseVector = jsonValue.GetString("BaseVector");
-
     m_baseVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Adjustments"))
   {
     Aws::Utils::Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("Adjustments");
@@ -73,7 +54,6 @@ Cvss& Cvss::operator =(JsonView jsonValue)
     }
     m_adjustmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

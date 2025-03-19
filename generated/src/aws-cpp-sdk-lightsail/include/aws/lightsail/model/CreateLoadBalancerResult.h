@@ -29,7 +29,7 @@ namespace Model
   class CreateLoadBalancerResult
   {
   public:
-    AWS_LIGHTSAIL_API CreateLoadBalancerResult();
+    AWS_LIGHTSAIL_API CreateLoadBalancerResult() = default;
     AWS_LIGHTSAIL_API CreateLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API CreateLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * status of the request, the timestamp of the request, and the resources affected
      * by the request.</p>
      */
-    inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
-    inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
-    inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
-    inline CreateLoadBalancerResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
-    inline CreateLoadBalancerResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
-    inline CreateLoadBalancerResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
-    inline CreateLoadBalancerResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Operation>& GetOperations() const { return m_operations; }
+    template<typename OperationsT = Aws::Vector<Operation>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<Operation>>
+    CreateLoadBalancerResult& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    template<typename OperationsT = Operation>
+    CreateLoadBalancerResult& AddOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations.emplace_back(std::forward<OperationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLoadBalancerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLoadBalancerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLoadBalancerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLoadBalancerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Operation> m_operations;
+    bool m_operationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

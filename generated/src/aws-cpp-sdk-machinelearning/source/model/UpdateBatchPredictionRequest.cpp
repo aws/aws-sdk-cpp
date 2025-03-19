@@ -12,12 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBatchPredictionRequest::UpdateBatchPredictionRequest() : 
-    m_batchPredictionIdHasBeenSet(false),
-    m_batchPredictionNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBatchPredictionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-IsVpcPeeredResult::IsVpcPeeredResult() : 
-    m_isPeered(false)
-{
-}
-
 IsVpcPeeredResult::IsVpcPeeredResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : IsVpcPeeredResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ IsVpcPeeredResult& IsVpcPeeredResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("isPeered"))
   {
     m_isPeered = jsonValue.GetBool("isPeered");
-
+    m_isPeeredHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

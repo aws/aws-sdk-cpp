@@ -38,7 +38,7 @@ namespace Model
   class Artwork
   {
   public:
-    AWS_ELASTICTRANSCODER_API Artwork();
+    AWS_ELASTICTRANSCODER_API Artwork() = default;
     AWS_ELASTICTRANSCODER_API Artwork(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Artwork& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the
      * file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
      */
-    inline const Aws::String& GetInputKey() const{ return m_inputKey; }
+    inline const Aws::String& GetInputKey() const { return m_inputKey; }
     inline bool InputKeyHasBeenSet() const { return m_inputKeyHasBeenSet; }
-    inline void SetInputKey(const Aws::String& value) { m_inputKeyHasBeenSet = true; m_inputKey = value; }
-    inline void SetInputKey(Aws::String&& value) { m_inputKeyHasBeenSet = true; m_inputKey = std::move(value); }
-    inline void SetInputKey(const char* value) { m_inputKeyHasBeenSet = true; m_inputKey.assign(value); }
-    inline Artwork& WithInputKey(const Aws::String& value) { SetInputKey(value); return *this;}
-    inline Artwork& WithInputKey(Aws::String&& value) { SetInputKey(std::move(value)); return *this;}
-    inline Artwork& WithInputKey(const char* value) { SetInputKey(value); return *this;}
+    template<typename InputKeyT = Aws::String>
+    void SetInputKey(InputKeyT&& value) { m_inputKeyHasBeenSet = true; m_inputKey = std::forward<InputKeyT>(value); }
+    template<typename InputKeyT = Aws::String>
+    Artwork& WithInputKey(InputKeyT&& value) { SetInputKey(std::forward<InputKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * specify a numeric value, enter an even integer between 32 and 4096,
      * inclusive.</p>
      */
-    inline const Aws::String& GetMaxWidth() const{ return m_maxWidth; }
+    inline const Aws::String& GetMaxWidth() const { return m_maxWidth; }
     inline bool MaxWidthHasBeenSet() const { return m_maxWidthHasBeenSet; }
-    inline void SetMaxWidth(const Aws::String& value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
-    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::move(value); }
-    inline void SetMaxWidth(const char* value) { m_maxWidthHasBeenSet = true; m_maxWidth.assign(value); }
-    inline Artwork& WithMaxWidth(const Aws::String& value) { SetMaxWidth(value); return *this;}
-    inline Artwork& WithMaxWidth(Aws::String&& value) { SetMaxWidth(std::move(value)); return *this;}
-    inline Artwork& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
+    template<typename MaxWidthT = Aws::String>
+    void SetMaxWidth(MaxWidthT&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::forward<MaxWidthT>(value); }
+    template<typename MaxWidthT = Aws::String>
+    Artwork& WithMaxWidth(MaxWidthT&& value) { SetMaxWidth(std::forward<MaxWidthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * specify a numeric value, enter an even integer between 32 and 3072,
      * inclusive.</p>
      */
-    inline const Aws::String& GetMaxHeight() const{ return m_maxHeight; }
+    inline const Aws::String& GetMaxHeight() const { return m_maxHeight; }
     inline bool MaxHeightHasBeenSet() const { return m_maxHeightHasBeenSet; }
-    inline void SetMaxHeight(const Aws::String& value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
-    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::move(value); }
-    inline void SetMaxHeight(const char* value) { m_maxHeightHasBeenSet = true; m_maxHeight.assign(value); }
-    inline Artwork& WithMaxHeight(const Aws::String& value) { SetMaxHeight(value); return *this;}
-    inline Artwork& WithMaxHeight(Aws::String&& value) { SetMaxHeight(std::move(value)); return *this;}
-    inline Artwork& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+    template<typename MaxHeightT = Aws::String>
+    void SetMaxHeight(MaxHeightT&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::forward<MaxHeightT>(value); }
+    template<typename MaxHeightT = Aws::String>
+    Artwork& WithMaxHeight(MaxHeightT&& value) { SetMaxHeight(std::forward<MaxHeightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +119,12 @@ namespace Model
      * either value. If you specify this option, Elastic Transcoder does not scale the
      * art up.</p> </li> </ul>
      */
-    inline const Aws::String& GetSizingPolicy() const{ return m_sizingPolicy; }
+    inline const Aws::String& GetSizingPolicy() const { return m_sizingPolicy; }
     inline bool SizingPolicyHasBeenSet() const { return m_sizingPolicyHasBeenSet; }
-    inline void SetSizingPolicy(const Aws::String& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
-    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::move(value); }
-    inline void SetSizingPolicy(const char* value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy.assign(value); }
-    inline Artwork& WithSizingPolicy(const Aws::String& value) { SetSizingPolicy(value); return *this;}
-    inline Artwork& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(std::move(value)); return *this;}
-    inline Artwork& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
+    template<typename SizingPolicyT = Aws::String>
+    void SetSizingPolicy(SizingPolicyT&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::forward<SizingPolicyT>(value); }
+    template<typename SizingPolicyT = Aws::String>
+    Artwork& WithSizingPolicy(SizingPolicyT&& value) { SetSizingPolicy(std::forward<SizingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +135,12 @@ namespace Model
      * values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>.</p>
      */
-    inline const Aws::String& GetPaddingPolicy() const{ return m_paddingPolicy; }
+    inline const Aws::String& GetPaddingPolicy() const { return m_paddingPolicy; }
     inline bool PaddingPolicyHasBeenSet() const { return m_paddingPolicyHasBeenSet; }
-    inline void SetPaddingPolicy(const Aws::String& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = value; }
-    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::move(value); }
-    inline void SetPaddingPolicy(const char* value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy.assign(value); }
-    inline Artwork& WithPaddingPolicy(const Aws::String& value) { SetPaddingPolicy(value); return *this;}
-    inline Artwork& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(std::move(value)); return *this;}
-    inline Artwork& WithPaddingPolicy(const char* value) { SetPaddingPolicy(value); return *this;}
+    template<typename PaddingPolicyT = Aws::String>
+    void SetPaddingPolicy(PaddingPolicyT&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::forward<PaddingPolicyT>(value); }
+    template<typename PaddingPolicyT = Aws::String>
+    Artwork& WithPaddingPolicy(PaddingPolicyT&& value) { SetPaddingPolicy(std::forward<PaddingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +148,12 @@ namespace Model
      * <p>The format of album art, if any. Valid formats are <code>.jpg</code> and
      * <code>.png</code>.</p>
      */
-    inline const Aws::String& GetAlbumArtFormat() const{ return m_albumArtFormat; }
+    inline const Aws::String& GetAlbumArtFormat() const { return m_albumArtFormat; }
     inline bool AlbumArtFormatHasBeenSet() const { return m_albumArtFormatHasBeenSet; }
-    inline void SetAlbumArtFormat(const Aws::String& value) { m_albumArtFormatHasBeenSet = true; m_albumArtFormat = value; }
-    inline void SetAlbumArtFormat(Aws::String&& value) { m_albumArtFormatHasBeenSet = true; m_albumArtFormat = std::move(value); }
-    inline void SetAlbumArtFormat(const char* value) { m_albumArtFormatHasBeenSet = true; m_albumArtFormat.assign(value); }
-    inline Artwork& WithAlbumArtFormat(const Aws::String& value) { SetAlbumArtFormat(value); return *this;}
-    inline Artwork& WithAlbumArtFormat(Aws::String&& value) { SetAlbumArtFormat(std::move(value)); return *this;}
-    inline Artwork& WithAlbumArtFormat(const char* value) { SetAlbumArtFormat(value); return *this;}
+    template<typename AlbumArtFormatT = Aws::String>
+    void SetAlbumArtFormat(AlbumArtFormatT&& value) { m_albumArtFormatHasBeenSet = true; m_albumArtFormat = std::forward<AlbumArtFormatT>(value); }
+    template<typename AlbumArtFormatT = Aws::String>
+    Artwork& WithAlbumArtFormat(AlbumArtFormatT&& value) { SetAlbumArtFormat(std::forward<AlbumArtFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,12 +161,12 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your artwork.</p>
      */
-    inline const Encryption& GetEncryption() const{ return m_encryption; }
+    inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline Artwork& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
-    inline Artwork& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = Encryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = Encryption>
+    Artwork& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
   private:
 

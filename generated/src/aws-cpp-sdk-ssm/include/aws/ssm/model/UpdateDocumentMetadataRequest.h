@@ -22,7 +22,7 @@ namespace Model
   class UpdateDocumentMetadataRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API UpdateDocumentMetadataRequest();
+    AWS_SSM_API UpdateDocumentMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,36 @@ namespace Model
      * <p>The name of the change template for which a version's metadata is to be
      * updated.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateDocumentMetadataRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateDocumentMetadataRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateDocumentMetadataRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateDocumentMetadataRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of a change template in which to update approval metadata.</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline UpdateDocumentMetadataRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline UpdateDocumentMetadataRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline UpdateDocumentMetadataRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    UpdateDocumentMetadataRequest& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The change template review details to update.</p>
      */
-    inline const DocumentReviews& GetDocumentReviews() const{ return m_documentReviews; }
+    inline const DocumentReviews& GetDocumentReviews() const { return m_documentReviews; }
     inline bool DocumentReviewsHasBeenSet() const { return m_documentReviewsHasBeenSet; }
-    inline void SetDocumentReviews(const DocumentReviews& value) { m_documentReviewsHasBeenSet = true; m_documentReviews = value; }
-    inline void SetDocumentReviews(DocumentReviews&& value) { m_documentReviewsHasBeenSet = true; m_documentReviews = std::move(value); }
-    inline UpdateDocumentMetadataRequest& WithDocumentReviews(const DocumentReviews& value) { SetDocumentReviews(value); return *this;}
-    inline UpdateDocumentMetadataRequest& WithDocumentReviews(DocumentReviews&& value) { SetDocumentReviews(std::move(value)); return *this;}
+    template<typename DocumentReviewsT = DocumentReviews>
+    void SetDocumentReviews(DocumentReviewsT&& value) { m_documentReviewsHasBeenSet = true; m_documentReviews = std::forward<DocumentReviewsT>(value); }
+    template<typename DocumentReviewsT = DocumentReviews>
+    UpdateDocumentMetadataRequest& WithDocumentReviews(DocumentReviewsT&& value) { SetDocumentReviews(std::forward<DocumentReviewsT>(value)); return *this;}
     ///@}
   private:
 

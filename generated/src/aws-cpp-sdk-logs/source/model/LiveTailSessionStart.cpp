@@ -18,18 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-LiveTailSessionStart::LiveTailSessionStart() : 
-    m_requestIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_logGroupIdentifiersHasBeenSet(false),
-    m_logStreamNamesHasBeenSet(false),
-    m_logStreamNamePrefixesHasBeenSet(false),
-    m_logEventFilterPatternHasBeenSet(false)
-{
-}
-
 LiveTailSessionStart::LiveTailSessionStart(JsonView jsonValue)
-  : LiveTailSessionStart()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ LiveTailSessionStart& LiveTailSessionStart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupIdentifiers"))
   {
     Aws::Utils::Array<JsonView> logGroupIdentifiersJsonList = jsonValue.GetArray("logGroupIdentifiers");
@@ -59,7 +44,6 @@ LiveTailSessionStart& LiveTailSessionStart::operator =(JsonView jsonValue)
     }
     m_logGroupIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStreamNames"))
   {
     Aws::Utils::Array<JsonView> logStreamNamesJsonList = jsonValue.GetArray("logStreamNames");
@@ -69,7 +53,6 @@ LiveTailSessionStart& LiveTailSessionStart::operator =(JsonView jsonValue)
     }
     m_logStreamNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStreamNamePrefixes"))
   {
     Aws::Utils::Array<JsonView> logStreamNamePrefixesJsonList = jsonValue.GetArray("logStreamNamePrefixes");
@@ -79,14 +62,11 @@ LiveTailSessionStart& LiveTailSessionStart::operator =(JsonView jsonValue)
     }
     m_logStreamNamePrefixesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logEventFilterPattern"))
   {
     m_logEventFilterPattern = jsonValue.GetString("logEventFilterPattern");
-
     m_logEventFilterPatternHasBeenSet = true;
   }
-
   return *this;
 }
 

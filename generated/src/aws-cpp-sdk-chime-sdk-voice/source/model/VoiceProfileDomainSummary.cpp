@@ -18,18 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-VoiceProfileDomainSummary::VoiceProfileDomainSummary() : 
-    m_voiceProfileDomainIdHasBeenSet(false),
-    m_voiceProfileDomainArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 VoiceProfileDomainSummary::VoiceProfileDomainSummary(JsonView jsonValue)
-  : VoiceProfileDomainSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ VoiceProfileDomainSummary& VoiceProfileDomainSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("VoiceProfileDomainId"))
   {
     m_voiceProfileDomainId = jsonValue.GetString("VoiceProfileDomainId");
-
     m_voiceProfileDomainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceProfileDomainArn"))
   {
     m_voiceProfileDomainArn = jsonValue.GetString("VoiceProfileDomainArn");
-
     m_voiceProfileDomainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

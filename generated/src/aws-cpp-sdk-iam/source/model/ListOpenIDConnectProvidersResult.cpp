@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOpenIDConnectProvidersResult::ListOpenIDConnectProvidersResult()
-{
-}
-
 ListOpenIDConnectProvidersResult::ListOpenIDConnectProvidersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ ListOpenIDConnectProvidersResult& ListOpenIDConnectProvidersResult::operator =(c
     if(!openIDConnectProviderListNode.IsNull())
     {
       XmlNode openIDConnectProviderListMember = openIDConnectProviderListNode.FirstChild("member");
+      m_openIDConnectProviderListHasBeenSet = !openIDConnectProviderListMember.IsNull();
       while(!openIDConnectProviderListMember.IsNull())
       {
         m_openIDConnectProviderList.push_back(openIDConnectProviderListMember);
         openIDConnectProviderListMember = openIDConnectProviderListMember.NextNode("member");
       }
 
+      m_openIDConnectProviderListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListOpenIDConnectProvidersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

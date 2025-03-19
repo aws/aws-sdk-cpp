@@ -27,7 +27,7 @@ namespace Model
   class ListCommandsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListCommandsRequest();
+    AWS_IOT_API ListCommandsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
      * API returns up to a maximum of 25 results. You can override this default value
      * to return up to a maximum of 100 results for this operation.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCommandsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
      * previous response; otherwise <code>null</code> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCommandsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCommandsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCommandsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCommandsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * if you want to return all commands that have been created only for a specific
      * namespace.</p>
      */
-    inline const CommandNamespace& GetNamespace() const{ return m_namespace; }
+    inline CommandNamespace GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const CommandNamespace& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(CommandNamespace&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline ListCommandsRequest& WithNamespace(const CommandNamespace& value) { SetNamespace(value); return *this;}
-    inline ListCommandsRequest& WithNamespace(CommandNamespace&& value) { SetNamespace(std::move(value)); return *this;}
+    inline void SetNamespace(CommandNamespace value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline ListCommandsRequest& WithNamespace(CommandNamespace value) { SetNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>A filter that can be used to display the list of commands that have a
      * specific command parameter name.</p>
      */
-    inline const Aws::String& GetCommandParameterName() const{ return m_commandParameterName; }
+    inline const Aws::String& GetCommandParameterName() const { return m_commandParameterName; }
     inline bool CommandParameterNameHasBeenSet() const { return m_commandParameterNameHasBeenSet; }
-    inline void SetCommandParameterName(const Aws::String& value) { m_commandParameterNameHasBeenSet = true; m_commandParameterName = value; }
-    inline void SetCommandParameterName(Aws::String&& value) { m_commandParameterNameHasBeenSet = true; m_commandParameterName = std::move(value); }
-    inline void SetCommandParameterName(const char* value) { m_commandParameterNameHasBeenSet = true; m_commandParameterName.assign(value); }
-    inline ListCommandsRequest& WithCommandParameterName(const Aws::String& value) { SetCommandParameterName(value); return *this;}
-    inline ListCommandsRequest& WithCommandParameterName(Aws::String&& value) { SetCommandParameterName(std::move(value)); return *this;}
-    inline ListCommandsRequest& WithCommandParameterName(const char* value) { SetCommandParameterName(value); return *this;}
+    template<typename CommandParameterNameT = Aws::String>
+    void SetCommandParameterName(CommandParameterNameT&& value) { m_commandParameterNameHasBeenSet = true; m_commandParameterName = std::forward<CommandParameterNameT>(value); }
+    template<typename CommandParameterNameT = Aws::String>
+    ListCommandsRequest& WithCommandParameterName(CommandParameterNameT&& value) { SetCommandParameterName(std::forward<CommandParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,28 +99,26 @@ namespace Model
      * or descending order. By default, the API returns all commands in the descending
      * order based on the time that they were created.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListCommandsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListCommandsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListCommandsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    CommandNamespace m_namespace;
+    CommandNamespace m_namespace{CommandNamespace::NOT_SET};
     bool m_namespaceHasBeenSet = false;
 
     Aws::String m_commandParameterName;
     bool m_commandParameterNameHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-ManagedRuleState::ManagedRuleState() : 
-    m_ruleNameHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 ManagedRuleState::ManagedRuleState(const XmlNode& xmlNode)
-  : ManagedRuleState()
 {
   *this = xmlNode;
 }

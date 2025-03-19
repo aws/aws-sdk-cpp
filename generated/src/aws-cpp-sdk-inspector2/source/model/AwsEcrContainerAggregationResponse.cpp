@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AwsEcrContainerAggregationResponse::AwsEcrContainerAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_imageShaHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 AwsEcrContainerAggregationResponse::AwsEcrContainerAggregationResponse(JsonView jsonValue)
-  : AwsEcrContainerAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ AwsEcrContainerAggregationResponse& AwsEcrContainerAggregationResponse::operator
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = jsonValue.GetString("architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSha"))
   {
     m_imageSha = jsonValue.GetString("imageSha");
-
     m_imageShaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTags"))
   {
     Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
@@ -67,28 +49,21 @@ AwsEcrContainerAggregationResponse& AwsEcrContainerAggregationResponse::operator
     }
     m_imageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeregisterNamespaceRequest::DeregisterNamespaceRequest() : 
-    m_namespaceIdentifierHasBeenSet(false),
-    m_consumerIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterNamespaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

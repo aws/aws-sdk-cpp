@@ -12,21 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRelationalDatabaseFromSnapshotRequest::CreateRelationalDatabaseFromSnapshotRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_relationalDatabaseSnapshotNameHasBeenSet(false),
-    m_relationalDatabaseBundleIdHasBeenSet(false),
-    m_sourceRelationalDatabaseNameHasBeenSet(false),
-    m_restoreTimeHasBeenSet(false),
-    m_useLatestRestorableTime(false),
-    m_useLatestRestorableTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRelationalDatabaseFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

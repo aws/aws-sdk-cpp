@@ -26,7 +26,7 @@ namespace Model
   class DescribeJobDefinitionsRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API DescribeJobDefinitionsRequest();
+    AWS_BATCH_API DescribeJobDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
      * This parameter can't be used with other parameters.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobDefinitions() const{ return m_jobDefinitions; }
+    inline const Aws::Vector<Aws::String>& GetJobDefinitions() const { return m_jobDefinitions; }
     inline bool JobDefinitionsHasBeenSet() const { return m_jobDefinitionsHasBeenSet; }
-    inline void SetJobDefinitions(const Aws::Vector<Aws::String>& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = value; }
-    inline void SetJobDefinitions(Aws::Vector<Aws::String>&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = std::move(value); }
-    inline DescribeJobDefinitionsRequest& WithJobDefinitions(const Aws::Vector<Aws::String>& value) { SetJobDefinitions(value); return *this;}
-    inline DescribeJobDefinitionsRequest& WithJobDefinitions(Aws::Vector<Aws::String>&& value) { SetJobDefinitions(std::move(value)); return *this;}
-    inline DescribeJobDefinitionsRequest& AddJobDefinitions(const Aws::String& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
-    inline DescribeJobDefinitionsRequest& AddJobDefinitions(Aws::String&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(std::move(value)); return *this; }
-    inline DescribeJobDefinitionsRequest& AddJobDefinitions(const char* value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
+    template<typename JobDefinitionsT = Aws::Vector<Aws::String>>
+    void SetJobDefinitions(JobDefinitionsT&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions = std::forward<JobDefinitionsT>(value); }
+    template<typename JobDefinitionsT = Aws::Vector<Aws::String>>
+    DescribeJobDefinitionsRequest& WithJobDefinitions(JobDefinitionsT&& value) { SetJobDefinitions(std::forward<JobDefinitionsT>(value)); return *this;}
+    template<typename JobDefinitionsT = Aws::String>
+    DescribeJobDefinitionsRequest& AddJobDefinitions(JobDefinitionsT&& value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.emplace_back(std::forward<JobDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,7 +67,7 @@ namespace Model
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeJobDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -78,28 +77,24 @@ namespace Model
     /**
      * <p>The name of the job definition to describe.</p>
      */
-    inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
+    inline const Aws::String& GetJobDefinitionName() const { return m_jobDefinitionName; }
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
-    inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
-    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
-    inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
-    inline DescribeJobDefinitionsRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
-    inline DescribeJobDefinitionsRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
-    inline DescribeJobDefinitionsRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
+    template<typename JobDefinitionNameT = Aws::String>
+    void SetJobDefinitionName(JobDefinitionNameT&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::forward<JobDefinitionNameT>(value); }
+    template<typename JobDefinitionNameT = Aws::String>
+    DescribeJobDefinitionsRequest& WithJobDefinitionName(JobDefinitionNameT&& value) { SetJobDefinitionName(std::forward<JobDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status used to filter job definitions.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DescribeJobDefinitionsRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeJobDefinitionsRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeJobDefinitionsRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeJobDefinitionsRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,21 +108,19 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeJobDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeJobDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeJobDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeJobDefinitionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_jobDefinitions;
     bool m_jobDefinitionsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_jobDefinitionName;

@@ -31,7 +31,7 @@ namespace Model
   class RunIdentifier
   {
   public:
-    AWS_GLUE_API RunIdentifier();
+    AWS_GLUE_API RunIdentifier() = default;
     AWS_GLUE_API RunIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API RunIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The Run ID.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline RunIdentifier& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline RunIdentifier& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline RunIdentifier& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    RunIdentifier& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Job Run ID.</p>
      */
-    inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
+    inline const Aws::String& GetJobRunId() const { return m_jobRunId; }
     inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
-    inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
-    inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
-    inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
-    inline RunIdentifier& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-    inline RunIdentifier& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-    inline RunIdentifier& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    template<typename JobRunIdT = Aws::String>
+    void SetJobRunId(JobRunIdT&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::forward<JobRunIdT>(value); }
+    template<typename JobRunIdT = Aws::String>
+    RunIdentifier& WithJobRunId(JobRunIdT&& value) { SetJobRunId(std::forward<JobRunIdT>(value)); return *this;}
     ///@}
   private:
 

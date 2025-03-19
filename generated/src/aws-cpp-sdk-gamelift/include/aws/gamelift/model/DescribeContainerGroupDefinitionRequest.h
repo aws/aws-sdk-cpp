@@ -21,7 +21,7 @@ namespace Model
   class DescribeContainerGroupDefinitionRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribeContainerGroupDefinitionRequest();
+    AWS_GAMELIFT_API DescribeContainerGroupDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
      * properties for. You can use either the <code>Name</code> or <code>ARN</code>
      * value.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DescribeContainerGroupDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeContainerGroupDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeContainerGroupDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeContainerGroupDefinitionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specific version to retrieve.</p>
      */
-    inline int GetVersionNumber() const{ return m_versionNumber; }
+    inline int GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline DescribeContainerGroupDefinitionRequest& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
@@ -64,7 +62,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_versionNumber;
+    int m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
   };
 

@@ -18,23 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreTestingPlanForGet::RestoreTestingPlanForGet() : 
-    m_creationTimeHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_lastExecutionTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_recoveryPointSelectionHasBeenSet(false),
-    m_restoreTestingPlanArnHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
-{
-}
-
 RestoreTestingPlanForGet::RestoreTestingPlanForGet(JsonView jsonValue)
-  : RestoreTestingPlanForGet()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ RestoreTestingPlanForGet& RestoreTestingPlanForGet::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionTime"))
   {
     m_lastExecutionTime = jsonValue.GetDouble("LastExecutionTime");
-
     m_lastExecutionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointSelection"))
   {
     m_recoveryPointSelection = jsonValue.GetObject("RecoveryPointSelection");
-
     m_recoveryPointSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanArn"))
   {
     m_restoreTestingPlanArn = jsonValue.GetString("RestoreTestingPlanArn");
-
     m_restoreTestingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanName"))
   {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
-
     m_restoreTestingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpressionTimezone"))
   {
     m_scheduleExpressionTimezone = jsonValue.GetString("ScheduleExpressionTimezone");
-
     m_scheduleExpressionTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartWindowHours"))
   {
     m_startWindowHours = jsonValue.GetInteger("StartWindowHours");
-
     m_startWindowHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

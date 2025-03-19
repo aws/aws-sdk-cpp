@@ -34,7 +34,7 @@ namespace Model
   class DetectorModelDefinition
   {
   public:
-    AWS_IOTEVENTS_API DetectorModelDefinition();
+    AWS_IOTEVENTS_API DetectorModelDefinition() = default;
     AWS_IOTEVENTS_API DetectorModelDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API DetectorModelDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>Information about the states of the detector.</p>
      */
-    inline const Aws::Vector<State>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<State>& GetStates() const { return m_states; }
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
-    inline void SetStates(const Aws::Vector<State>& value) { m_statesHasBeenSet = true; m_states = value; }
-    inline void SetStates(Aws::Vector<State>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
-    inline DetectorModelDefinition& WithStates(const Aws::Vector<State>& value) { SetStates(value); return *this;}
-    inline DetectorModelDefinition& WithStates(Aws::Vector<State>&& value) { SetStates(std::move(value)); return *this;}
-    inline DetectorModelDefinition& AddStates(const State& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
-    inline DetectorModelDefinition& AddStates(State&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    template<typename StatesT = Aws::Vector<State>>
+    void SetStates(StatesT&& value) { m_statesHasBeenSet = true; m_states = std::forward<StatesT>(value); }
+    template<typename StatesT = Aws::Vector<State>>
+    DetectorModelDefinition& WithStates(StatesT&& value) { SetStates(std::forward<StatesT>(value)); return *this;}
+    template<typename StatesT = State>
+    DetectorModelDefinition& AddStates(StatesT&& value) { m_statesHasBeenSet = true; m_states.emplace_back(std::forward<StatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The state that is entered at the creation of each detector (instance).</p>
      */
-    inline const Aws::String& GetInitialStateName() const{ return m_initialStateName; }
+    inline const Aws::String& GetInitialStateName() const { return m_initialStateName; }
     inline bool InitialStateNameHasBeenSet() const { return m_initialStateNameHasBeenSet; }
-    inline void SetInitialStateName(const Aws::String& value) { m_initialStateNameHasBeenSet = true; m_initialStateName = value; }
-    inline void SetInitialStateName(Aws::String&& value) { m_initialStateNameHasBeenSet = true; m_initialStateName = std::move(value); }
-    inline void SetInitialStateName(const char* value) { m_initialStateNameHasBeenSet = true; m_initialStateName.assign(value); }
-    inline DetectorModelDefinition& WithInitialStateName(const Aws::String& value) { SetInitialStateName(value); return *this;}
-    inline DetectorModelDefinition& WithInitialStateName(Aws::String&& value) { SetInitialStateName(std::move(value)); return *this;}
-    inline DetectorModelDefinition& WithInitialStateName(const char* value) { SetInitialStateName(value); return *this;}
+    template<typename InitialStateNameT = Aws::String>
+    void SetInitialStateName(InitialStateNameT&& value) { m_initialStateNameHasBeenSet = true; m_initialStateName = std::forward<InitialStateNameT>(value); }
+    template<typename InitialStateNameT = Aws::String>
+    DetectorModelDefinition& WithInitialStateName(InitialStateNameT&& value) { SetInitialStateName(std::forward<InitialStateNameT>(value)); return *this;}
     ///@}
   private:
 

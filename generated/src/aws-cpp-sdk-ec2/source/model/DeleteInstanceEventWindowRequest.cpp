@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteInstanceEventWindowRequest::DeleteInstanceEventWindowRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false),
-    m_instanceEventWindowIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceEventWindowRequest::SerializePayload() const
 {
   Aws::StringStream ss;

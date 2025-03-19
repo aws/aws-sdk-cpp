@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetEbsEncryptionByDefaultRequest::GetEbsEncryptionByDefaultRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetEbsEncryptionByDefaultRequest::SerializePayload() const
 {
   Aws::StringStream ss;

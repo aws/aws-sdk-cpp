@@ -32,7 +32,7 @@ namespace Model
   class WorkSpaceApplicationDeployment
   {
   public:
-    AWS_WORKSPACES_API WorkSpaceApplicationDeployment();
+    AWS_WORKSPACES_API WorkSpaceApplicationDeployment() = default;
     AWS_WORKSPACES_API WorkSpaceApplicationDeployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkSpaceApplicationDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The associations between the applications and the associated resources.</p>
      */
-    inline const Aws::Vector<WorkspaceResourceAssociation>& GetAssociations() const{ return m_associations; }
+    inline const Aws::Vector<WorkspaceResourceAssociation>& GetAssociations() const { return m_associations; }
     inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
-    inline void SetAssociations(const Aws::Vector<WorkspaceResourceAssociation>& value) { m_associationsHasBeenSet = true; m_associations = value; }
-    inline void SetAssociations(Aws::Vector<WorkspaceResourceAssociation>&& value) { m_associationsHasBeenSet = true; m_associations = std::move(value); }
-    inline WorkSpaceApplicationDeployment& WithAssociations(const Aws::Vector<WorkspaceResourceAssociation>& value) { SetAssociations(value); return *this;}
-    inline WorkSpaceApplicationDeployment& WithAssociations(Aws::Vector<WorkspaceResourceAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
-    inline WorkSpaceApplicationDeployment& AddAssociations(const WorkspaceResourceAssociation& value) { m_associationsHasBeenSet = true; m_associations.push_back(value); return *this; }
-    inline WorkSpaceApplicationDeployment& AddAssociations(WorkspaceResourceAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
+    template<typename AssociationsT = Aws::Vector<WorkspaceResourceAssociation>>
+    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
+    template<typename AssociationsT = Aws::Vector<WorkspaceResourceAssociation>>
+    WorkSpaceApplicationDeployment& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
+    template<typename AssociationsT = WorkspaceResourceAssociation>
+    WorkSpaceApplicationDeployment& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
     ///@}
   private:
 

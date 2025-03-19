@@ -37,7 +37,7 @@ namespace Model
   class AppliedCreatorModeConfiguration
   {
   public:
-    AWS_QBUSINESS_API AppliedCreatorModeConfiguration();
+    AWS_QBUSINESS_API AppliedCreatorModeConfiguration() = default;
     AWS_QBUSINESS_API AppliedCreatorModeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AppliedCreatorModeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * <p> Information about whether creator mode is enabled or disabled for an Amazon
      * Q Business application. </p>
      */
-    inline const CreatorModeControl& GetCreatorModeControl() const{ return m_creatorModeControl; }
+    inline CreatorModeControl GetCreatorModeControl() const { return m_creatorModeControl; }
     inline bool CreatorModeControlHasBeenSet() const { return m_creatorModeControlHasBeenSet; }
-    inline void SetCreatorModeControl(const CreatorModeControl& value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = value; }
-    inline void SetCreatorModeControl(CreatorModeControl&& value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = std::move(value); }
-    inline AppliedCreatorModeConfiguration& WithCreatorModeControl(const CreatorModeControl& value) { SetCreatorModeControl(value); return *this;}
-    inline AppliedCreatorModeConfiguration& WithCreatorModeControl(CreatorModeControl&& value) { SetCreatorModeControl(std::move(value)); return *this;}
+    inline void SetCreatorModeControl(CreatorModeControl value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = value; }
+    inline AppliedCreatorModeConfiguration& WithCreatorModeControl(CreatorModeControl value) { SetCreatorModeControl(value); return *this;}
     ///@}
   private:
 
-    CreatorModeControl m_creatorModeControl;
+    CreatorModeControl m_creatorModeControl{CreatorModeControl::NOT_SET};
     bool m_creatorModeControlHasBeenSet = false;
   };
 

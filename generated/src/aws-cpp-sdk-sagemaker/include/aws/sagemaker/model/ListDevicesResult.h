@@ -29,7 +29,7 @@ namespace Model
   class ListDevicesResult
   {
   public:
-    AWS_SAGEMAKER_API ListDevicesResult();
+    AWS_SAGEMAKER_API ListDevicesResult() = default;
     AWS_SAGEMAKER_API ListDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary of devices.</p>
      */
-    inline const Aws::Vector<DeviceSummary>& GetDeviceSummaries() const{ return m_deviceSummaries; }
-    inline void SetDeviceSummaries(const Aws::Vector<DeviceSummary>& value) { m_deviceSummaries = value; }
-    inline void SetDeviceSummaries(Aws::Vector<DeviceSummary>&& value) { m_deviceSummaries = std::move(value); }
-    inline ListDevicesResult& WithDeviceSummaries(const Aws::Vector<DeviceSummary>& value) { SetDeviceSummaries(value); return *this;}
-    inline ListDevicesResult& WithDeviceSummaries(Aws::Vector<DeviceSummary>&& value) { SetDeviceSummaries(std::move(value)); return *this;}
-    inline ListDevicesResult& AddDeviceSummaries(const DeviceSummary& value) { m_deviceSummaries.push_back(value); return *this; }
-    inline ListDevicesResult& AddDeviceSummaries(DeviceSummary&& value) { m_deviceSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeviceSummary>& GetDeviceSummaries() const { return m_deviceSummaries; }
+    template<typename DeviceSummariesT = Aws::Vector<DeviceSummary>>
+    void SetDeviceSummaries(DeviceSummariesT&& value) { m_deviceSummariesHasBeenSet = true; m_deviceSummaries = std::forward<DeviceSummariesT>(value); }
+    template<typename DeviceSummariesT = Aws::Vector<DeviceSummary>>
+    ListDevicesResult& WithDeviceSummaries(DeviceSummariesT&& value) { SetDeviceSummaries(std::forward<DeviceSummariesT>(value)); return *this;}
+    template<typename DeviceSummariesT = DeviceSummary>
+    ListDevicesResult& AddDeviceSummaries(DeviceSummariesT&& value) { m_deviceSummariesHasBeenSet = true; m_deviceSummaries.emplace_back(std::forward<DeviceSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The response from the last list when returning a list large enough to need
      * tokening.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDevicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDevicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDevicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDevicesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDevicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDevicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDevicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDevicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeviceSummary> m_deviceSummaries;
+    bool m_deviceSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

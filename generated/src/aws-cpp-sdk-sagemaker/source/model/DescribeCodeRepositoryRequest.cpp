@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCodeRepositoryRequest::DescribeCodeRepositoryRequest() : 
-    m_codeRepositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCodeRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

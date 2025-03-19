@@ -18,17 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-PackageListItem::PackageListItem() : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PackageListItem::PackageListItem(JsonView jsonValue)
-  : PackageListItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PackageListItem& PackageListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageId"))
   {
     m_packageId = jsonValue.GetString("PackageId");
-
     m_packageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageName"))
   {
     m_packageName = jsonValue.GetString("PackageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -72,7 +54,6 @@ PackageListItem& PackageListItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

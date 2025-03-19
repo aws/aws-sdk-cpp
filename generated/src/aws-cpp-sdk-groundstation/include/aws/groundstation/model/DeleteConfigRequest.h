@@ -25,7 +25,7 @@ namespace Model
   class DeleteConfigRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API DeleteConfigRequest();
+    AWS_GROUNDSTATION_API DeleteConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,33 +40,29 @@ namespace Model
     /**
      * <p>UUID of a <code>Config</code>.</p>
      */
-    inline const Aws::String& GetConfigId() const{ return m_configId; }
+    inline const Aws::String& GetConfigId() const { return m_configId; }
     inline bool ConfigIdHasBeenSet() const { return m_configIdHasBeenSet; }
-    inline void SetConfigId(const Aws::String& value) { m_configIdHasBeenSet = true; m_configId = value; }
-    inline void SetConfigId(Aws::String&& value) { m_configIdHasBeenSet = true; m_configId = std::move(value); }
-    inline void SetConfigId(const char* value) { m_configIdHasBeenSet = true; m_configId.assign(value); }
-    inline DeleteConfigRequest& WithConfigId(const Aws::String& value) { SetConfigId(value); return *this;}
-    inline DeleteConfigRequest& WithConfigId(Aws::String&& value) { SetConfigId(std::move(value)); return *this;}
-    inline DeleteConfigRequest& WithConfigId(const char* value) { SetConfigId(value); return *this;}
+    template<typename ConfigIdT = Aws::String>
+    void SetConfigId(ConfigIdT&& value) { m_configIdHasBeenSet = true; m_configId = std::forward<ConfigIdT>(value); }
+    template<typename ConfigIdT = Aws::String>
+    DeleteConfigRequest& WithConfigId(ConfigIdT&& value) { SetConfigId(std::forward<ConfigIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of a <code>Config</code>.</p>
      */
-    inline const ConfigCapabilityType& GetConfigType() const{ return m_configType; }
+    inline ConfigCapabilityType GetConfigType() const { return m_configType; }
     inline bool ConfigTypeHasBeenSet() const { return m_configTypeHasBeenSet; }
-    inline void SetConfigType(const ConfigCapabilityType& value) { m_configTypeHasBeenSet = true; m_configType = value; }
-    inline void SetConfigType(ConfigCapabilityType&& value) { m_configTypeHasBeenSet = true; m_configType = std::move(value); }
-    inline DeleteConfigRequest& WithConfigType(const ConfigCapabilityType& value) { SetConfigType(value); return *this;}
-    inline DeleteConfigRequest& WithConfigType(ConfigCapabilityType&& value) { SetConfigType(std::move(value)); return *this;}
+    inline void SetConfigType(ConfigCapabilityType value) { m_configTypeHasBeenSet = true; m_configType = value; }
+    inline DeleteConfigRequest& WithConfigType(ConfigCapabilityType value) { SetConfigType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_configId;
     bool m_configIdHasBeenSet = false;
 
-    ConfigCapabilityType m_configType;
+    ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
     bool m_configTypeHasBeenSet = false;
   };
 

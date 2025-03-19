@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupVariablesPortSetsDetails::RuleGroupVariablesPortSetsDetails() : 
-    m_definitionHasBeenSet(false)
-{
-}
-
 RuleGroupVariablesPortSetsDetails::RuleGroupVariablesPortSetsDetails(JsonView jsonValue)
-  : RuleGroupVariablesPortSetsDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RuleGroupVariablesPortSetsDetails& RuleGroupVariablesPortSetsDetails::operator =
     }
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

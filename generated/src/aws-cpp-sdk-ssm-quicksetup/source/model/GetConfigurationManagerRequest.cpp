@@ -12,11 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfigurationManagerRequest::GetConfigurationManagerRequest() : 
-    m_managerArnHasBeenSet(false)
-{
-}
-
 Aws::String GetConfigurationManagerRequest::SerializePayload() const
 {
   return {};

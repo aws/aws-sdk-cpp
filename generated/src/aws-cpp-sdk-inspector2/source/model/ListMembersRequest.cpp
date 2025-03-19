@@ -12,15 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMembersRequest::ListMembersRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_onlyAssociated(false),
-    m_onlyAssociatedHasBeenSet(false)
-{
-}
-
 Aws::String ListMembersRequest::SerializePayload() const
 {
   JsonValue payload;

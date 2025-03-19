@@ -24,7 +24,7 @@ namespace Model
   class PutObjectRequest : public StreamingMediaStoreDataRequest
   {
   public:
-    AWS_MEDIASTOREDATA_API PutObjectRequest();
+    AWS_MEDIASTOREDATA_API PutObjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -61,14 +61,12 @@ namespace Model
      * Elemental MediaStore, or it can have the same name. The file name can include or
      * omit an extension. </p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline PutObjectRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline PutObjectRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline PutObjectRequest& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    PutObjectRequest& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      * <p>Headers with a custom user-defined value are also accepted.</p>
      */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
+    inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
     inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
-    inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
-    inline PutObjectRequest& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-    inline PutObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-    inline PutObjectRequest& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    template<typename CacheControlT = Aws::String>
+    void SetCacheControl(CacheControlT&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::forward<CacheControlT>(value); }
+    template<typename CacheControlT = Aws::String>
+    PutObjectRequest& WithCacheControl(CacheControlT&& value) { SetCacheControl(std::forward<CacheControlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,10 @@ namespace Model
      * high-performance temporal storage class, and objects are persisted into durable
      * storage shortly after being received.</p>
      */
-    inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline StorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline PutObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
-    inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(StorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline PutObjectRequest& WithStorageClass(StorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,10 @@ namespace Model
      * header is <code>standard</code>.</p> <p>To use this header, you must also set
      * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
      */
-    inline const UploadAvailability& GetUploadAvailability() const{ return m_uploadAvailability; }
+    inline UploadAvailability GetUploadAvailability() const { return m_uploadAvailability; }
     inline bool UploadAvailabilityHasBeenSet() const { return m_uploadAvailabilityHasBeenSet; }
-    inline void SetUploadAvailability(const UploadAvailability& value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = value; }
-    inline void SetUploadAvailability(UploadAvailability&& value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = std::move(value); }
-    inline PutObjectRequest& WithUploadAvailability(const UploadAvailability& value) { SetUploadAvailability(value); return *this;}
-    inline PutObjectRequest& WithUploadAvailability(UploadAvailability&& value) { SetUploadAvailability(std::move(value)); return *this;}
+    inline void SetUploadAvailability(UploadAvailability value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = value; }
+    inline PutObjectRequest& WithUploadAvailability(UploadAvailability value) { SetUploadAvailability(value); return *this;}
     ///@}
   private:
 
@@ -129,10 +121,10 @@ namespace Model
     Aws::String m_cacheControl;
     bool m_cacheControlHasBeenSet = false;
 
-    StorageClass m_storageClass;
+    StorageClass m_storageClass{StorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
-    UploadAvailability m_uploadAvailability;
+    UploadAvailability m_uploadAvailability{UploadAvailability::NOT_SET};
     bool m_uploadAvailabilityHasBeenSet = false;
   };
 

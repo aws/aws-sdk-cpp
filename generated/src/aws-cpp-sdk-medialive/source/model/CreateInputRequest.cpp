@@ -12,27 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInputRequest::CreateInputRequest() : 
-    m_destinationsHasBeenSet(false),
-    m_inputDevicesHasBeenSet(false),
-    m_inputSecurityGroupsHasBeenSet(false),
-    m_mediaConnectFlowsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_roleArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_srtSettingsHasBeenSet(false),
-    m_inputNetworkLocation(InputNetworkLocation::NOT_SET),
-    m_inputNetworkLocationHasBeenSet(false),
-    m_multicastSettingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInputRequest::SerializePayload() const
 {
   JsonValue payload;

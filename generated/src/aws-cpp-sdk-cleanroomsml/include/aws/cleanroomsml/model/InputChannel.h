@@ -33,7 +33,7 @@ namespace Model
   class InputChannel
   {
   public:
-    AWS_CLEANROOMSML_API InputChannel();
+    AWS_CLEANROOMSML_API InputChannel() = default;
     AWS_CLEANROOMSML_API InputChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API InputChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The data source that is used to create the ML input channel.</p>
      */
-    inline const InputChannelDataSource& GetDataSource() const{ return m_dataSource; }
+    inline const InputChannelDataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const InputChannelDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(InputChannelDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline InputChannel& WithDataSource(const InputChannelDataSource& value) { SetDataSource(value); return *this;}
-    inline InputChannel& WithDataSource(InputChannelDataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = InputChannelDataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = InputChannelDataSource>
+    InputChannel& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>Passing a role across AWS accounts is not allowed. If you pass a role that
      * isn't in your account, you get an <code>AccessDeniedException</code> error.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline InputChannel& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline InputChannel& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline InputChannel& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    InputChannel& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

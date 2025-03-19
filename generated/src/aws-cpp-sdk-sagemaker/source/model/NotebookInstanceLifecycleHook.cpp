@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook() : 
-    m_contentHasBeenSet(false)
-{
-}
-
 NotebookInstanceLifecycleHook::NotebookInstanceLifecycleHook(JsonView jsonValue)
-  : NotebookInstanceLifecycleHook()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NotebookInstanceLifecycleHook& NotebookInstanceLifecycleHook::operator =(JsonVie
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

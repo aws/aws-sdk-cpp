@@ -12,14 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListHITsForQualificationTypeRequest::ListHITsForQualificationTypeRequest() : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListHITsForQualificationTypeRequest::SerializePayload() const
 {
   JsonValue payload;

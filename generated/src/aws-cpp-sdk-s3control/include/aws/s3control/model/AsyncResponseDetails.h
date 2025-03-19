@@ -32,7 +32,7 @@ namespace Model
   class AsyncResponseDetails
   {
   public:
-    AWS_S3CONTROL_API AsyncResponseDetails();
+    AWS_S3CONTROL_API AsyncResponseDetails() = default;
     AWS_S3CONTROL_API AsyncResponseDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AsyncResponseDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The details for the Multi-Region Access Point.</p>
      */
-    inline const MultiRegionAccessPointsAsyncResponse& GetMultiRegionAccessPointDetails() const{ return m_multiRegionAccessPointDetails; }
+    inline const MultiRegionAccessPointsAsyncResponse& GetMultiRegionAccessPointDetails() const { return m_multiRegionAccessPointDetails; }
     inline bool MultiRegionAccessPointDetailsHasBeenSet() const { return m_multiRegionAccessPointDetailsHasBeenSet; }
-    inline void SetMultiRegionAccessPointDetails(const MultiRegionAccessPointsAsyncResponse& value) { m_multiRegionAccessPointDetailsHasBeenSet = true; m_multiRegionAccessPointDetails = value; }
-    inline void SetMultiRegionAccessPointDetails(MultiRegionAccessPointsAsyncResponse&& value) { m_multiRegionAccessPointDetailsHasBeenSet = true; m_multiRegionAccessPointDetails = std::move(value); }
-    inline AsyncResponseDetails& WithMultiRegionAccessPointDetails(const MultiRegionAccessPointsAsyncResponse& value) { SetMultiRegionAccessPointDetails(value); return *this;}
-    inline AsyncResponseDetails& WithMultiRegionAccessPointDetails(MultiRegionAccessPointsAsyncResponse&& value) { SetMultiRegionAccessPointDetails(std::move(value)); return *this;}
+    template<typename MultiRegionAccessPointDetailsT = MultiRegionAccessPointsAsyncResponse>
+    void SetMultiRegionAccessPointDetails(MultiRegionAccessPointDetailsT&& value) { m_multiRegionAccessPointDetailsHasBeenSet = true; m_multiRegionAccessPointDetails = std::forward<MultiRegionAccessPointDetailsT>(value); }
+    template<typename MultiRegionAccessPointDetailsT = MultiRegionAccessPointsAsyncResponse>
+    AsyncResponseDetails& WithMultiRegionAccessPointDetails(MultiRegionAccessPointDetailsT&& value) { SetMultiRegionAccessPointDetails(std::forward<MultiRegionAccessPointDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error details for an asynchronous request.</p>
      */
-    inline const AsyncErrorDetails& GetErrorDetails() const{ return m_errorDetails; }
+    inline const AsyncErrorDetails& GetErrorDetails() const { return m_errorDetails; }
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-    inline void SetErrorDetails(const AsyncErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-    inline void SetErrorDetails(AsyncErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-    inline AsyncResponseDetails& WithErrorDetails(const AsyncErrorDetails& value) { SetErrorDetails(value); return *this;}
-    inline AsyncResponseDetails& WithErrorDetails(AsyncErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
+    template<typename ErrorDetailsT = AsyncErrorDetails>
+    void SetErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::forward<ErrorDetailsT>(value); }
+    template<typename ErrorDetailsT = AsyncErrorDetails>
+    AsyncResponseDetails& WithErrorDetails(ErrorDetailsT&& value) { SetErrorDetails(std::forward<ErrorDetailsT>(value)); return *this;}
     ///@}
   private:
 

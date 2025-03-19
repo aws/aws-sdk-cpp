@@ -22,7 +22,7 @@ namespace Model
   class PutAutoTerminationPolicyRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API PutAutoTerminationPolicyRequest();
+    AWS_EMR_API PutAutoTerminationPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination
      * policy will be attached.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline PutAutoTerminationPolicyRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline PutAutoTerminationPolicyRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline PutAutoTerminationPolicyRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    PutAutoTerminationPolicyRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the auto-termination policy to attach to the cluster.</p>
      */
-    inline const AutoTerminationPolicy& GetAutoTerminationPolicy() const{ return m_autoTerminationPolicy; }
+    inline const AutoTerminationPolicy& GetAutoTerminationPolicy() const { return m_autoTerminationPolicy; }
     inline bool AutoTerminationPolicyHasBeenSet() const { return m_autoTerminationPolicyHasBeenSet; }
-    inline void SetAutoTerminationPolicy(const AutoTerminationPolicy& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = value; }
-    inline void SetAutoTerminationPolicy(AutoTerminationPolicy&& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = std::move(value); }
-    inline PutAutoTerminationPolicyRequest& WithAutoTerminationPolicy(const AutoTerminationPolicy& value) { SetAutoTerminationPolicy(value); return *this;}
-    inline PutAutoTerminationPolicyRequest& WithAutoTerminationPolicy(AutoTerminationPolicy&& value) { SetAutoTerminationPolicy(std::move(value)); return *this;}
+    template<typename AutoTerminationPolicyT = AutoTerminationPolicy>
+    void SetAutoTerminationPolicy(AutoTerminationPolicyT&& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = std::forward<AutoTerminationPolicyT>(value); }
+    template<typename AutoTerminationPolicyT = AutoTerminationPolicy>
+    PutAutoTerminationPolicyRequest& WithAutoTerminationPolicy(AutoTerminationPolicyT&& value) { SetAutoTerminationPolicy(std::forward<AutoTerminationPolicyT>(value)); return *this;}
     ///@}
   private:
 

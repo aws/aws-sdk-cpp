@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DetachNetworkInterfaceRequest::DetachNetworkInterfaceRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DetachNetworkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

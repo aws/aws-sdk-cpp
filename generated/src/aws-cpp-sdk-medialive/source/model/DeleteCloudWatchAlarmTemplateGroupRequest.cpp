@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCloudWatchAlarmTemplateGroupRequest::DeleteCloudWatchAlarmTemplateGroupRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCloudWatchAlarmTemplateGroupRequest::SerializePayload() const
 {
   return {};

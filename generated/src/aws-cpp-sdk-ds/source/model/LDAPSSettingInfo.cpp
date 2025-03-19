@@ -18,16 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-LDAPSSettingInfo::LDAPSSettingInfo() : 
-    m_lDAPSStatus(LDAPSStatus::NOT_SET),
-    m_lDAPSStatusHasBeenSet(false),
-    m_lDAPSStatusReasonHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 LDAPSSettingInfo::LDAPSSettingInfo(JsonView jsonValue)
-  : LDAPSSettingInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LDAPSSettingInfo& LDAPSSettingInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LDAPSStatus"))
   {
     m_lDAPSStatus = LDAPSStatusMapper::GetLDAPSStatusForName(jsonValue.GetString("LDAPSStatus"));
-
     m_lDAPSStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LDAPSStatusReason"))
   {
     m_lDAPSStatusReason = jsonValue.GetString("LDAPSStatusReason");
-
     m_lDAPSStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("LastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

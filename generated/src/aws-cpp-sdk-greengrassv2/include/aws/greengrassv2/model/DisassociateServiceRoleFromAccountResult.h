@@ -27,7 +27,7 @@ namespace Model
   class DisassociateServiceRoleFromAccountResult
   {
   public:
-    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult();
+    AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult() = default;
     AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASSV2_API DisassociateServiceRoleFromAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The time when the service role was disassociated from IoT Greengrass for your
      * Amazon Web Services account in this Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetDisassociatedAt() const{ return m_disassociatedAt; }
-    inline void SetDisassociatedAt(const Aws::String& value) { m_disassociatedAt = value; }
-    inline void SetDisassociatedAt(Aws::String&& value) { m_disassociatedAt = std::move(value); }
-    inline void SetDisassociatedAt(const char* value) { m_disassociatedAt.assign(value); }
-    inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(const Aws::String& value) { SetDisassociatedAt(value); return *this;}
-    inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(Aws::String&& value) { SetDisassociatedAt(std::move(value)); return *this;}
-    inline DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(const char* value) { SetDisassociatedAt(value); return *this;}
+    inline const Aws::String& GetDisassociatedAt() const { return m_disassociatedAt; }
+    template<typename DisassociatedAtT = Aws::String>
+    void SetDisassociatedAt(DisassociatedAtT&& value) { m_disassociatedAtHasBeenSet = true; m_disassociatedAt = std::forward<DisassociatedAtT>(value); }
+    template<typename DisassociatedAtT = Aws::String>
+    DisassociateServiceRoleFromAccountResult& WithDisassociatedAt(DisassociatedAtT&& value) { SetDisassociatedAt(std::forward<DisassociatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateServiceRoleFromAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateServiceRoleFromAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateServiceRoleFromAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateServiceRoleFromAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_disassociatedAt;
+    bool m_disassociatedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

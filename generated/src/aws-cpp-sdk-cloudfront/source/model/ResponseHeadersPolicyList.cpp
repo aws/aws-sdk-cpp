@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyList::ResponseHeadersPolicyList() : 
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyList::ResponseHeadersPolicyList(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyList()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ ResponseHeadersPolicyList& ResponseHeadersPolicyList::operator =(const XmlNode& 
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("ResponseHeadersPolicySummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

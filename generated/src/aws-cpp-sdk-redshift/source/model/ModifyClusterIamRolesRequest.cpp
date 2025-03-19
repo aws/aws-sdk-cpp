@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterIamRolesRequest::ModifyClusterIamRolesRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_addIamRolesHasBeenSet(false),
-    m_removeIamRolesHasBeenSet(false),
-    m_defaultIamRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

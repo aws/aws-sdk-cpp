@@ -38,7 +38,7 @@ namespace Model
   class SegmentationDescriptor
   {
   public:
-    AWS_MEDIATAILOR_API SegmentationDescriptor();
+    AWS_MEDIATAILOR_API SegmentationDescriptor() = default;
     AWS_MEDIATAILOR_API SegmentationDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API SegmentationDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,7 +51,7 @@ namespace Model
      * in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is
      * 1.</p>
      */
-    inline int GetSegmentationEventId() const{ return m_segmentationEventId; }
+    inline int GetSegmentationEventId() const { return m_segmentationEventId; }
     inline bool SegmentationEventIdHasBeenSet() const { return m_segmentationEventIdHasBeenSet; }
     inline void SetSegmentationEventId(int value) { m_segmentationEventIdHasBeenSet = true; m_segmentationEventId = value; }
     inline SegmentationDescriptor& WithSegmentationEventId(int value) { SetSegmentationEventId(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0
      * and 256, inclusive. The default value is 14.</p>
      */
-    inline int GetSegmentationUpidType() const{ return m_segmentationUpidType; }
+    inline int GetSegmentationUpidType() const { return m_segmentationUpidType; }
     inline bool SegmentationUpidTypeHasBeenSet() const { return m_segmentationUpidTypeHasBeenSet; }
     inline void SetSegmentationUpidType(int value) { m_segmentationUpidTypeHasBeenSet = true; m_segmentationUpidType = value; }
     inline SegmentationDescriptor& WithSegmentationUpidType(int value) { SetSegmentationUpidType(value); return *this;}
@@ -78,14 +78,12 @@ namespace Model
      * hexadecimal string containing only the characters 0 though 9 and A through F.
      * The default value is "" (an empty string).</p>
      */
-    inline const Aws::String& GetSegmentationUpid() const{ return m_segmentationUpid; }
+    inline const Aws::String& GetSegmentationUpid() const { return m_segmentationUpid; }
     inline bool SegmentationUpidHasBeenSet() const { return m_segmentationUpidHasBeenSet; }
-    inline void SetSegmentationUpid(const Aws::String& value) { m_segmentationUpidHasBeenSet = true; m_segmentationUpid = value; }
-    inline void SetSegmentationUpid(Aws::String&& value) { m_segmentationUpidHasBeenSet = true; m_segmentationUpid = std::move(value); }
-    inline void SetSegmentationUpid(const char* value) { m_segmentationUpidHasBeenSet = true; m_segmentationUpid.assign(value); }
-    inline SegmentationDescriptor& WithSegmentationUpid(const Aws::String& value) { SetSegmentationUpid(value); return *this;}
-    inline SegmentationDescriptor& WithSegmentationUpid(Aws::String&& value) { SetSegmentationUpid(std::move(value)); return *this;}
-    inline SegmentationDescriptor& WithSegmentationUpid(const char* value) { SetSegmentationUpid(value); return *this;}
+    template<typename SegmentationUpidT = Aws::String>
+    void SetSegmentationUpid(SegmentationUpidT&& value) { m_segmentationUpidHasBeenSet = true; m_segmentationUpid = std::forward<SegmentationUpidT>(value); }
+    template<typename SegmentationUpidT = Aws::String>
+    SegmentationDescriptor& WithSegmentationUpid(SegmentationUpidT&& value) { SetSegmentationUpid(std::forward<SegmentationUpidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +93,7 @@ namespace Model
      * section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and
      * 256, inclusive. The default value is 48.</p>
      */
-    inline int GetSegmentationTypeId() const{ return m_segmentationTypeId; }
+    inline int GetSegmentationTypeId() const { return m_segmentationTypeId; }
     inline bool SegmentationTypeIdHasBeenSet() const { return m_segmentationTypeIdHasBeenSet; }
     inline void SetSegmentationTypeId(int value) { m_segmentationTypeIdHasBeenSet = true; m_segmentationTypeId = value; }
     inline SegmentationDescriptor& WithSegmentationTypeId(int value) { SetSegmentationTypeId(value); return *this;}
@@ -108,7 +106,7 @@ namespace Model
      * 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256,
      * inclusive. The default value is 0.</p>
      */
-    inline int GetSegmentNum() const{ return m_segmentNum; }
+    inline int GetSegmentNum() const { return m_segmentNum; }
     inline bool SegmentNumHasBeenSet() const { return m_segmentNumHasBeenSet; }
     inline void SetSegmentNum(int value) { m_segmentNumHasBeenSet = true; m_segmentNum = value; }
     inline SegmentationDescriptor& WithSegmentNum(int value) { SetSegmentNum(value); return *this;}
@@ -121,7 +119,7 @@ namespace Model
      * section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and
      * 256, inclusive. The default value is 0.</p>
      */
-    inline int GetSegmentsExpected() const{ return m_segmentsExpected; }
+    inline int GetSegmentsExpected() const { return m_segmentsExpected; }
     inline bool SegmentsExpectedHasBeenSet() const { return m_segmentsExpectedHasBeenSet; }
     inline void SetSegmentsExpected(int value) { m_segmentsExpectedHasBeenSet = true; m_segmentsExpected = value; }
     inline SegmentationDescriptor& WithSegmentsExpected(int value) { SetSegmentsExpected(value); return *this;}
@@ -134,7 +132,7 @@ namespace Model
      * section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and
      * 256, inclusive. The defualt value is null.</p>
      */
-    inline int GetSubSegmentNum() const{ return m_subSegmentNum; }
+    inline int GetSubSegmentNum() const { return m_subSegmentNum; }
     inline bool SubSegmentNumHasBeenSet() const { return m_subSegmentNumHasBeenSet; }
     inline void SetSubSegmentNum(int value) { m_subSegmentNumHasBeenSet = true; m_subSegmentNum = value; }
     inline SegmentationDescriptor& WithSubSegmentNum(int value) { SetSubSegmentNum(value); return *this;}
@@ -147,35 +145,35 @@ namespace Model
      * in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0
      * and 256, inclusive. The default value is null.</p>
      */
-    inline int GetSubSegmentsExpected() const{ return m_subSegmentsExpected; }
+    inline int GetSubSegmentsExpected() const { return m_subSegmentsExpected; }
     inline bool SubSegmentsExpectedHasBeenSet() const { return m_subSegmentsExpectedHasBeenSet; }
     inline void SetSubSegmentsExpected(int value) { m_subSegmentsExpectedHasBeenSet = true; m_subSegmentsExpected = value; }
     inline SegmentationDescriptor& WithSubSegmentsExpected(int value) { SetSubSegmentsExpected(value); return *this;}
     ///@}
   private:
 
-    int m_segmentationEventId;
+    int m_segmentationEventId{0};
     bool m_segmentationEventIdHasBeenSet = false;
 
-    int m_segmentationUpidType;
+    int m_segmentationUpidType{0};
     bool m_segmentationUpidTypeHasBeenSet = false;
 
     Aws::String m_segmentationUpid;
     bool m_segmentationUpidHasBeenSet = false;
 
-    int m_segmentationTypeId;
+    int m_segmentationTypeId{0};
     bool m_segmentationTypeIdHasBeenSet = false;
 
-    int m_segmentNum;
+    int m_segmentNum{0};
     bool m_segmentNumHasBeenSet = false;
 
-    int m_segmentsExpected;
+    int m_segmentsExpected{0};
     bool m_segmentsExpectedHasBeenSet = false;
 
-    int m_subSegmentNum;
+    int m_subSegmentNum{0};
     bool m_subSegmentNumHasBeenSet = false;
 
-    int m_subSegmentsExpected;
+    int m_subSegmentsExpected{0};
     bool m_subSegmentsExpectedHasBeenSet = false;
   };
 

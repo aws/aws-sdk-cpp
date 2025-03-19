@@ -18,15 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-StackError::StackError() : 
-    m_errorCode(StackErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 StackError::StackError(JsonView jsonValue)
-  : StackError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StackError& StackError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = StackErrorCodeMapper::GetStackErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

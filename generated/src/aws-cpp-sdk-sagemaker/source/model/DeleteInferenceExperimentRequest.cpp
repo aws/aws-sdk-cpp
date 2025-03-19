@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInferenceExperimentRequest::DeleteInferenceExperimentRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInferenceExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

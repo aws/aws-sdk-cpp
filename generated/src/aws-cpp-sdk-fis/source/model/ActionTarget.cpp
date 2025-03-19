@@ -18,13 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ActionTarget::ActionTarget() : 
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ActionTarget::ActionTarget(JsonView jsonValue)
-  : ActionTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionTarget& ActionTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

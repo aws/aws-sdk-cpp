@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptGenAiResource::PromptGenAiResource() : 
-    m_agentHasBeenSet(false)
-{
-}
-
 PromptGenAiResource::PromptGenAiResource(JsonView jsonValue)
-  : PromptGenAiResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptGenAiResource& PromptGenAiResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agent"))
   {
     m_agent = jsonValue.GetObject("agent");
-
     m_agentHasBeenSet = true;
   }
-
   return *this;
 }
 

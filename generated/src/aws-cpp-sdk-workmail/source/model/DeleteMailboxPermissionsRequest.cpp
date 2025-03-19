@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMailboxPermissionsRequest::DeleteMailboxPermissionsRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_granteeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMailboxPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

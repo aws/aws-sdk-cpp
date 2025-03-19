@@ -33,7 +33,7 @@ namespace Model
   class PermissionGroupByUser
   {
   public:
-    AWS_FINSPACEDATA_API PermissionGroupByUser();
+    AWS_FINSPACEDATA_API PermissionGroupByUser() = default;
     AWS_FINSPACEDATA_API PermissionGroupByUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API PermissionGroupByUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier for the permission group.</p>
      */
-    inline const Aws::String& GetPermissionGroupId() const{ return m_permissionGroupId; }
+    inline const Aws::String& GetPermissionGroupId() const { return m_permissionGroupId; }
     inline bool PermissionGroupIdHasBeenSet() const { return m_permissionGroupIdHasBeenSet; }
-    inline void SetPermissionGroupId(const Aws::String& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = value; }
-    inline void SetPermissionGroupId(Aws::String&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::move(value); }
-    inline void SetPermissionGroupId(const char* value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId.assign(value); }
-    inline PermissionGroupByUser& WithPermissionGroupId(const Aws::String& value) { SetPermissionGroupId(value); return *this;}
-    inline PermissionGroupByUser& WithPermissionGroupId(Aws::String&& value) { SetPermissionGroupId(std::move(value)); return *this;}
-    inline PermissionGroupByUser& WithPermissionGroupId(const char* value) { SetPermissionGroupId(value); return *this;}
+    template<typename PermissionGroupIdT = Aws::String>
+    void SetPermissionGroupId(PermissionGroupIdT&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::forward<PermissionGroupIdT>(value); }
+    template<typename PermissionGroupIdT = Aws::String>
+    PermissionGroupByUser& WithPermissionGroupId(PermissionGroupIdT&& value) { SetPermissionGroupId(std::forward<PermissionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the permission group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PermissionGroupByUser& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PermissionGroupByUser& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PermissionGroupByUser& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PermissionGroupByUser& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
      * permission group.</p> </li> </ul>
      */
-    inline const PermissionGroupMembershipStatus& GetMembershipStatus() const{ return m_membershipStatus; }
+    inline PermissionGroupMembershipStatus GetMembershipStatus() const { return m_membershipStatus; }
     inline bool MembershipStatusHasBeenSet() const { return m_membershipStatusHasBeenSet; }
-    inline void SetMembershipStatus(const PermissionGroupMembershipStatus& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
-    inline void SetMembershipStatus(PermissionGroupMembershipStatus&& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = std::move(value); }
-    inline PermissionGroupByUser& WithMembershipStatus(const PermissionGroupMembershipStatus& value) { SetMembershipStatus(value); return *this;}
-    inline PermissionGroupByUser& WithMembershipStatus(PermissionGroupMembershipStatus&& value) { SetMembershipStatus(std::move(value)); return *this;}
+    inline void SetMembershipStatus(PermissionGroupMembershipStatus value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
+    inline PermissionGroupByUser& WithMembershipStatus(PermissionGroupMembershipStatus value) { SetMembershipStatus(value); return *this;}
     ///@}
   private:
 
@@ -91,7 +85,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    PermissionGroupMembershipStatus m_membershipStatus;
+    PermissionGroupMembershipStatus m_membershipStatus{PermissionGroupMembershipStatus::NOT_SET};
     bool m_membershipStatusHasBeenSet = false;
   };
 

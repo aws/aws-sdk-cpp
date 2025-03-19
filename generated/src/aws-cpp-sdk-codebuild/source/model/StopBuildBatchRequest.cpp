@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopBuildBatchRequest::StopBuildBatchRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String StopBuildBatchRequest::SerializePayload() const
 {
   JsonValue payload;

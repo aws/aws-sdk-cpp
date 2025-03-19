@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult() : 
-    m_autoLaunch(false)
-{
-}
-
 GetAppLaunchConfigurationResult::GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAppLaunchConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetAppLaunchConfigurationResult& GetAppLaunchConfigurationResult::operator =(con
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
+    m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleName"))
   {
     m_roleName = jsonValue.GetString("roleName");
-
+    m_roleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoLaunch"))
   {
     m_autoLaunch = jsonValue.GetBool("autoLaunch");
-
+    m_autoLaunchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverGroupLaunchConfigurations"))
   {
     Aws::Utils::Array<JsonView> serverGroupLaunchConfigurationsJsonList = jsonValue.GetArray("serverGroupLaunchConfigurations");
@@ -56,14 +47,15 @@ GetAppLaunchConfigurationResult& GetAppLaunchConfigurationResult::operator =(con
     {
       m_serverGroupLaunchConfigurations.push_back(serverGroupLaunchConfigurationsJsonList[serverGroupLaunchConfigurationsIndex].AsObject());
     }
+    m_serverGroupLaunchConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

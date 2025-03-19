@@ -26,7 +26,7 @@ namespace Model
   class ListDomainsRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListDomainsRequest();
+    AWS_DATAZONE_API ListDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * <code>NextToken</code> value that you can use in a subsequent call to
      * <code>ListDomains</code> to list the next set of domains.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,36 +62,32 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to <code>ListDomains</code> to
      * list the next set of domains.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDomainsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the data source.</p>
      */
-    inline const DomainStatus& GetStatus() const{ return m_status; }
+    inline DomainStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DomainStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DomainStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListDomainsRequest& WithStatus(const DomainStatus& value) { SetStatus(value); return *this;}
-    inline ListDomainsRequest& WithStatus(DomainStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DomainStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListDomainsRequest& WithStatus(DomainStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    DomainStatus m_status;
+    DomainStatus m_status{DomainStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

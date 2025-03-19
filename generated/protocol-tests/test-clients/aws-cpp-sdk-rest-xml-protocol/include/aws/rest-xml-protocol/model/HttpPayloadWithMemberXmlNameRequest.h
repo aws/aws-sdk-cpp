@@ -22,7 +22,7 @@ namespace Model
   class HttpPayloadWithMemberXmlNameRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API HttpPayloadWithMemberXmlNameRequest();
+    AWS_RESTXMLPROTOCOL_API HttpPayloadWithMemberXmlNameRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
 
     ///@{
     
-    inline const PayloadWithXmlName& GetNested() const{ return m_nested; }
+    inline const PayloadWithXmlName& GetNested() const { return m_nested; }
     inline bool NestedHasBeenSet() const { return m_nestedHasBeenSet; }
-    inline void SetNested(const PayloadWithXmlName& value) { m_nestedHasBeenSet = true; m_nested = value; }
-    inline void SetNested(PayloadWithXmlName&& value) { m_nestedHasBeenSet = true; m_nested = std::move(value); }
-    inline HttpPayloadWithMemberXmlNameRequest& WithNested(const PayloadWithXmlName& value) { SetNested(value); return *this;}
-    inline HttpPayloadWithMemberXmlNameRequest& WithNested(PayloadWithXmlName&& value) { SetNested(std::move(value)); return *this;}
+    template<typename NestedT = PayloadWithXmlName>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = PayloadWithXmlName>
+    HttpPayloadWithMemberXmlNameRequest& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline HttpPayloadWithMemberXmlNameRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpPayloadWithMemberXmlNameRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpPayloadWithMemberXmlNameRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpPayloadWithMemberXmlNameRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

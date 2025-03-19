@@ -33,7 +33,7 @@ namespace Model
   class GetChatControlsConfigurationResult
   {
   public:
-    AWS_QBUSINESS_API GetChatControlsConfigurationResult();
+    AWS_QBUSINESS_API GetChatControlsConfigurationResult() = default;
     AWS_QBUSINESS_API GetChatControlsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API GetChatControlsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,11 +46,9 @@ namespace Model
      * the large language models (LLM) knowledge to respons to end user questions in
      * chat.</p>
      */
-    inline const ResponseScope& GetResponseScope() const{ return m_responseScope; }
-    inline void SetResponseScope(const ResponseScope& value) { m_responseScope = value; }
-    inline void SetResponseScope(ResponseScope&& value) { m_responseScope = std::move(value); }
-    inline GetChatControlsConfigurationResult& WithResponseScope(const ResponseScope& value) { SetResponseScope(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithResponseScope(ResponseScope&& value) { SetResponseScope(std::move(value)); return *this;}
+    inline ResponseScope GetResponseScope() const { return m_responseScope; }
+    inline void SetResponseScope(ResponseScope value) { m_responseScopeHasBeenSet = true; m_responseScope = value; }
+    inline GetChatControlsConfigurationResult& WithResponseScope(ResponseScope value) { SetResponseScope(value); return *this;}
     ///@}
 
     ///@{
@@ -61,22 +59,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported
      * languages</a>.</p> 
      */
-    inline const AppliedOrchestrationConfiguration& GetOrchestrationConfiguration() const{ return m_orchestrationConfiguration; }
-    inline void SetOrchestrationConfiguration(const AppliedOrchestrationConfiguration& value) { m_orchestrationConfiguration = value; }
-    inline void SetOrchestrationConfiguration(AppliedOrchestrationConfiguration&& value) { m_orchestrationConfiguration = std::move(value); }
-    inline GetChatControlsConfigurationResult& WithOrchestrationConfiguration(const AppliedOrchestrationConfiguration& value) { SetOrchestrationConfiguration(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithOrchestrationConfiguration(AppliedOrchestrationConfiguration&& value) { SetOrchestrationConfiguration(std::move(value)); return *this;}
+    inline const AppliedOrchestrationConfiguration& GetOrchestrationConfiguration() const { return m_orchestrationConfiguration; }
+    template<typename OrchestrationConfigurationT = AppliedOrchestrationConfiguration>
+    void SetOrchestrationConfiguration(OrchestrationConfigurationT&& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = std::forward<OrchestrationConfigurationT>(value); }
+    template<typename OrchestrationConfigurationT = AppliedOrchestrationConfiguration>
+    GetChatControlsConfigurationResult& WithOrchestrationConfiguration(OrchestrationConfigurationT&& value) { SetOrchestrationConfiguration(std::forward<OrchestrationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phrases blocked from chat by your chat control configuration.</p>
      */
-    inline const BlockedPhrasesConfiguration& GetBlockedPhrases() const{ return m_blockedPhrases; }
-    inline void SetBlockedPhrases(const BlockedPhrasesConfiguration& value) { m_blockedPhrases = value; }
-    inline void SetBlockedPhrases(BlockedPhrasesConfiguration&& value) { m_blockedPhrases = std::move(value); }
-    inline GetChatControlsConfigurationResult& WithBlockedPhrases(const BlockedPhrasesConfiguration& value) { SetBlockedPhrases(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithBlockedPhrases(BlockedPhrasesConfiguration&& value) { SetBlockedPhrases(std::move(value)); return *this;}
+    inline const BlockedPhrasesConfiguration& GetBlockedPhrases() const { return m_blockedPhrases; }
+    template<typename BlockedPhrasesT = BlockedPhrasesConfiguration>
+    void SetBlockedPhrases(BlockedPhrasesT&& value) { m_blockedPhrasesHasBeenSet = true; m_blockedPhrases = std::forward<BlockedPhrasesT>(value); }
+    template<typename BlockedPhrasesT = BlockedPhrasesConfiguration>
+    GetChatControlsConfigurationResult& WithBlockedPhrases(BlockedPhrasesT&& value) { SetBlockedPhrases(std::forward<BlockedPhrasesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,24 +82,24 @@ namespace Model
      * <p>The topic specific controls configured for a Amazon Q Business
      * application.</p>
      */
-    inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const{ return m_topicConfigurations; }
-    inline void SetTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { m_topicConfigurations = value; }
-    inline void SetTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { m_topicConfigurations = std::move(value); }
-    inline GetChatControlsConfigurationResult& WithTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { SetTopicConfigurations(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithTopicConfigurations(Aws::Vector<TopicConfiguration>&& value) { SetTopicConfigurations(std::move(value)); return *this;}
-    inline GetChatControlsConfigurationResult& AddTopicConfigurations(const TopicConfiguration& value) { m_topicConfigurations.push_back(value); return *this; }
-    inline GetChatControlsConfigurationResult& AddTopicConfigurations(TopicConfiguration&& value) { m_topicConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const { return m_topicConfigurations; }
+    template<typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+    void SetTopicConfigurations(TopicConfigurationsT&& value) { m_topicConfigurationsHasBeenSet = true; m_topicConfigurations = std::forward<TopicConfigurationsT>(value); }
+    template<typename TopicConfigurationsT = Aws::Vector<TopicConfiguration>>
+    GetChatControlsConfigurationResult& WithTopicConfigurations(TopicConfigurationsT&& value) { SetTopicConfigurations(std::forward<TopicConfigurationsT>(value)); return *this;}
+    template<typename TopicConfigurationsT = TopicConfiguration>
+    GetChatControlsConfigurationResult& AddTopicConfigurations(TopicConfigurationsT&& value) { m_topicConfigurationsHasBeenSet = true; m_topicConfigurations.emplace_back(std::forward<TopicConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The configuration details for <code>CREATOR_MODE</code>.</p>
      */
-    inline const AppliedCreatorModeConfiguration& GetCreatorModeConfiguration() const{ return m_creatorModeConfiguration; }
-    inline void SetCreatorModeConfiguration(const AppliedCreatorModeConfiguration& value) { m_creatorModeConfiguration = value; }
-    inline void SetCreatorModeConfiguration(AppliedCreatorModeConfiguration&& value) { m_creatorModeConfiguration = std::move(value); }
-    inline GetChatControlsConfigurationResult& WithCreatorModeConfiguration(const AppliedCreatorModeConfiguration& value) { SetCreatorModeConfiguration(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithCreatorModeConfiguration(AppliedCreatorModeConfiguration&& value) { SetCreatorModeConfiguration(std::move(value)); return *this;}
+    inline const AppliedCreatorModeConfiguration& GetCreatorModeConfiguration() const { return m_creatorModeConfiguration; }
+    template<typename CreatorModeConfigurationT = AppliedCreatorModeConfiguration>
+    void SetCreatorModeConfiguration(CreatorModeConfigurationT&& value) { m_creatorModeConfigurationHasBeenSet = true; m_creatorModeConfiguration = std::forward<CreatorModeConfigurationT>(value); }
+    template<typename CreatorModeConfigurationT = AppliedCreatorModeConfiguration>
+    GetChatControlsConfigurationResult& WithCreatorModeConfiguration(CreatorModeConfigurationT&& value) { SetCreatorModeConfiguration(std::forward<CreatorModeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,40 +109,43 @@ namespace Model
      * You can use this pagination token to retrieve the next set of Amazon Q Business
      * chat controls configured.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetChatControlsConfigurationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetChatControlsConfigurationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetChatControlsConfigurationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetChatControlsConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetChatControlsConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetChatControlsConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetChatControlsConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ResponseScope m_responseScope;
+    ResponseScope m_responseScope{ResponseScope::NOT_SET};
+    bool m_responseScopeHasBeenSet = false;
 
     AppliedOrchestrationConfiguration m_orchestrationConfiguration;
+    bool m_orchestrationConfigurationHasBeenSet = false;
 
     BlockedPhrasesConfiguration m_blockedPhrases;
+    bool m_blockedPhrasesHasBeenSet = false;
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
+    bool m_topicConfigurationsHasBeenSet = false;
 
     AppliedCreatorModeConfiguration m_creatorModeConfiguration;
+    bool m_creatorModeConfigurationHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

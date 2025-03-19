@@ -18,15 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-PipelineOutputConfig::PipelineOutputConfig() : 
-    m_bucketHasBeenSet(false),
-    m_storageClassHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 PipelineOutputConfig::PipelineOutputConfig(JsonView jsonValue)
-  : PipelineOutputConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PipelineOutputConfig& PipelineOutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageClass"))
   {
     m_storageClass = jsonValue.GetString("StorageClass");
-
     m_storageClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -56,7 +44,6 @@ PipelineOutputConfig& PipelineOutputConfig::operator =(JsonView jsonValue)
     }
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

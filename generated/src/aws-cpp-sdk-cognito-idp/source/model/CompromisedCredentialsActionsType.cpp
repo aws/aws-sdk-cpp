@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-CompromisedCredentialsActionsType::CompromisedCredentialsActionsType() : 
-    m_eventAction(CompromisedCredentialsEventActionType::NOT_SET),
-    m_eventActionHasBeenSet(false)
-{
-}
-
 CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(JsonView jsonValue)
-  : CompromisedCredentialsActionsType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CompromisedCredentialsActionsType& CompromisedCredentialsActionsType::operator =
   if(jsonValue.ValueExists("EventAction"))
   {
     m_eventAction = CompromisedCredentialsEventActionTypeMapper::GetCompromisedCredentialsEventActionTypeForName(jsonValue.GetString("EventAction"));
-
     m_eventActionHasBeenSet = true;
   }
-
   return *this;
 }
 

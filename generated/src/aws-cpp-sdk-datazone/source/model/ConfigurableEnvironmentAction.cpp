@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ConfigurableEnvironmentAction::ConfigurableEnvironmentAction() : 
-    m_auth(ConfigurableActionTypeAuthorization::NOT_SET),
-    m_authHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ConfigurableEnvironmentAction::ConfigurableEnvironmentAction(JsonView jsonValue)
-  : ConfigurableEnvironmentAction()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ConfigurableEnvironmentAction& ConfigurableEnvironmentAction::operator =(JsonVie
   if(jsonValue.ValueExists("auth"))
   {
     m_auth = ConfigurableActionTypeAuthorizationMapper::GetConfigurableActionTypeAuthorizationForName(jsonValue.GetString("auth"));
-
     m_authHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -50,14 +39,11 @@ ConfigurableEnvironmentAction& ConfigurableEnvironmentAction::operator =(JsonVie
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

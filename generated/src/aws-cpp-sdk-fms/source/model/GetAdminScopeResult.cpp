@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAdminScopeResult::GetAdminScopeResult() : 
-    m_status(OrganizationStatus::NOT_SET)
-{
-}
-
 GetAdminScopeResult::GetAdminScopeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAdminScopeResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetAdminScopeResult& GetAdminScopeResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("AdminScope"))
   {
     m_adminScope = jsonValue.GetObject("AdminScope");
-
+    m_adminScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrganizationStatusMapper::GetOrganizationStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

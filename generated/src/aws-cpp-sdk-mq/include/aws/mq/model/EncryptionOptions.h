@@ -31,7 +31,7 @@ namespace Model
   class EncryptionOptions
   {
   public:
-    AWS_MQ_API EncryptionOptions();
+    AWS_MQ_API EncryptionOptions() = default;
     AWS_MQ_API EncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API EncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
      * encrypt your data.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline EncryptionOptions& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline EncryptionOptions& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline EncryptionOptions& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    EncryptionOptions& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to
      * true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
      */
-    inline bool GetUseAwsOwnedKey() const{ return m_useAwsOwnedKey; }
+    inline bool GetUseAwsOwnedKey() const { return m_useAwsOwnedKey; }
     inline bool UseAwsOwnedKeyHasBeenSet() const { return m_useAwsOwnedKeyHasBeenSet; }
     inline void SetUseAwsOwnedKey(bool value) { m_useAwsOwnedKeyHasBeenSet = true; m_useAwsOwnedKey = value; }
     inline EncryptionOptions& WithUseAwsOwnedKey(bool value) { SetUseAwsOwnedKey(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    bool m_useAwsOwnedKey;
+    bool m_useAwsOwnedKey{false};
     bool m_useAwsOwnedKeyHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroupUpdateStatus::NodeGroupUpdateStatus() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_nodeGroupMemberUpdateStatusHasBeenSet(false)
-{
-}
-
 NodeGroupUpdateStatus::NodeGroupUpdateStatus(const XmlNode& xmlNode)
-  : NodeGroupUpdateStatus()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ NodeGroupUpdateStatus& NodeGroupUpdateStatus::operator =(const XmlNode& xmlNode)
     if(!nodeGroupMemberUpdateStatusNode.IsNull())
     {
       XmlNode nodeGroupMemberUpdateStatusMember = nodeGroupMemberUpdateStatusNode.FirstChild("NodeGroupMemberUpdateStatus");
+      m_nodeGroupMemberUpdateStatusHasBeenSet = !nodeGroupMemberUpdateStatusMember.IsNull();
       while(!nodeGroupMemberUpdateStatusMember.IsNull())
       {
         m_nodeGroupMemberUpdateStatus.push_back(nodeGroupMemberUpdateStatusMember);

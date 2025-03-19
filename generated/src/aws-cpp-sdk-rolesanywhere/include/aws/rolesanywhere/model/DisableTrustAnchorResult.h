@@ -28,7 +28,7 @@ namespace Model
   class DisableTrustAnchorResult
   {
   public:
-    AWS_ROLESANYWHERE_API DisableTrustAnchorResult();
+    AWS_ROLESANYWHERE_API DisableTrustAnchorResult() = default;
     AWS_ROLESANYWHERE_API DisableTrustAnchorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROLESANYWHERE_API DisableTrustAnchorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The state of the trust anchor after a read or write operation. </p>
      */
-    inline const TrustAnchorDetail& GetTrustAnchor() const{ return m_trustAnchor; }
-    inline void SetTrustAnchor(const TrustAnchorDetail& value) { m_trustAnchor = value; }
-    inline void SetTrustAnchor(TrustAnchorDetail&& value) { m_trustAnchor = std::move(value); }
-    inline DisableTrustAnchorResult& WithTrustAnchor(const TrustAnchorDetail& value) { SetTrustAnchor(value); return *this;}
-    inline DisableTrustAnchorResult& WithTrustAnchor(TrustAnchorDetail&& value) { SetTrustAnchor(std::move(value)); return *this;}
+    inline const TrustAnchorDetail& GetTrustAnchor() const { return m_trustAnchor; }
+    template<typename TrustAnchorT = TrustAnchorDetail>
+    void SetTrustAnchor(TrustAnchorT&& value) { m_trustAnchorHasBeenSet = true; m_trustAnchor = std::forward<TrustAnchorT>(value); }
+    template<typename TrustAnchorT = TrustAnchorDetail>
+    DisableTrustAnchorResult& WithTrustAnchor(TrustAnchorT&& value) { SetTrustAnchor(std::forward<TrustAnchorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisableTrustAnchorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisableTrustAnchorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisableTrustAnchorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisableTrustAnchorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TrustAnchorDetail m_trustAnchor;
+    bool m_trustAnchorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

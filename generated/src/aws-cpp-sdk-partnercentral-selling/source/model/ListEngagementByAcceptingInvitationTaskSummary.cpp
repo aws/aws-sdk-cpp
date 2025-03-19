@@ -18,23 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ListEngagementByAcceptingInvitationTaskSummary::ListEngagementByAcceptingInvitationTaskSummary() : 
-    m_engagementInvitationIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_opportunityIdHasBeenSet(false),
-    m_reasonCode(ReasonCode::NOT_SET),
-    m_reasonCodeHasBeenSet(false),
-    m_resourceSnapshotJobIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(TaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false)
-{
-}
-
 ListEngagementByAcceptingInvitationTaskSummary::ListEngagementByAcceptingInvitationTaskSummary(JsonView jsonValue)
-  : ListEngagementByAcceptingInvitationTaskSummary()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ListEngagementByAcceptingInvitationTaskSummary& ListEngagementByAcceptingInvitat
   if(jsonValue.ValueExists("EngagementInvitationId"))
   {
     m_engagementInvitationId = jsonValue.GetString("EngagementInvitationId");
-
     m_engagementInvitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpportunityId"))
   {
     m_opportunityId = jsonValue.GetString("OpportunityId");
-
     m_opportunityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReasonCode"))
   {
     m_reasonCode = ReasonCodeMapper::GetReasonCodeForName(jsonValue.GetString("ReasonCode"));
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceSnapshotJobId"))
   {
     m_resourceSnapshotJobId = jsonValue.GetString("ResourceSnapshotJobId");
-
     m_resourceSnapshotJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskId"))
   {
     m_taskId = jsonValue.GetString("TaskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskStatus"))
   {
     m_taskStatus = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("TaskStatus"));
-
     m_taskStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

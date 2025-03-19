@@ -29,7 +29,7 @@ namespace Model
   class ListWorkflowsResult
   {
   public:
-    AWS_IMAGEBUILDER_API ListWorkflowsResult();
+    AWS_IMAGEBUILDER_API ListWorkflowsResult() = default;
     AWS_IMAGEBUILDER_API ListWorkflowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API ListWorkflowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of workflow build versions that match the request criteria.</p>
      */
-    inline const Aws::Vector<WorkflowVersion>& GetWorkflowVersionList() const{ return m_workflowVersionList; }
-    inline void SetWorkflowVersionList(const Aws::Vector<WorkflowVersion>& value) { m_workflowVersionList = value; }
-    inline void SetWorkflowVersionList(Aws::Vector<WorkflowVersion>&& value) { m_workflowVersionList = std::move(value); }
-    inline ListWorkflowsResult& WithWorkflowVersionList(const Aws::Vector<WorkflowVersion>& value) { SetWorkflowVersionList(value); return *this;}
-    inline ListWorkflowsResult& WithWorkflowVersionList(Aws::Vector<WorkflowVersion>&& value) { SetWorkflowVersionList(std::move(value)); return *this;}
-    inline ListWorkflowsResult& AddWorkflowVersionList(const WorkflowVersion& value) { m_workflowVersionList.push_back(value); return *this; }
-    inline ListWorkflowsResult& AddWorkflowVersionList(WorkflowVersion&& value) { m_workflowVersionList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkflowVersion>& GetWorkflowVersionList() const { return m_workflowVersionList; }
+    template<typename WorkflowVersionListT = Aws::Vector<WorkflowVersion>>
+    void SetWorkflowVersionList(WorkflowVersionListT&& value) { m_workflowVersionListHasBeenSet = true; m_workflowVersionList = std::forward<WorkflowVersionListT>(value); }
+    template<typename WorkflowVersionListT = Aws::Vector<WorkflowVersion>>
+    ListWorkflowsResult& WithWorkflowVersionList(WorkflowVersionListT&& value) { SetWorkflowVersionList(std::forward<WorkflowVersionListT>(value)); return *this;}
+    template<typename WorkflowVersionListT = WorkflowVersion>
+    ListWorkflowsResult& AddWorkflowVersionList(WorkflowVersionListT&& value) { m_workflowVersionListHasBeenSet = true; m_workflowVersionList.emplace_back(std::forward<WorkflowVersionListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * there are additional elements that the service hasn't included in this request.
      * Use this token with the next request to retrieve additional objects.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorkflowsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkflowsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkflowsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkflowsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorkflowsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorkflowsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorkflowsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorkflowsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorkflowVersion> m_workflowVersionList;
+    bool m_workflowVersionListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

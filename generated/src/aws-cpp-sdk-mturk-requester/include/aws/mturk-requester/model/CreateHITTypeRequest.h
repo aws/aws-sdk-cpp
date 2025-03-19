@@ -23,7 +23,7 @@ namespace Model
   class CreateHITTypeRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API CreateHITTypeRequest();
+    AWS_MTURK_API CreateHITTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
      * after which the assignment is considered Approved automatically unless the
      * Requester explicitly rejects it. </p>
      */
-    inline long long GetAutoApprovalDelayInSeconds() const{ return m_autoApprovalDelayInSeconds; }
+    inline long long GetAutoApprovalDelayInSeconds() const { return m_autoApprovalDelayInSeconds; }
     inline bool AutoApprovalDelayInSecondsHasBeenSet() const { return m_autoApprovalDelayInSecondsHasBeenSet; }
     inline void SetAutoApprovalDelayInSeconds(long long value) { m_autoApprovalDelayInSecondsHasBeenSet = true; m_autoApprovalDelayInSeconds = value; }
     inline CreateHITTypeRequest& WithAutoApprovalDelayInSeconds(long long value) { SetAutoApprovalDelayInSeconds(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * (that is, its lifetime has not elapsed), the assignment becomes available for
      * other users to find and accept. </p>
      */
-    inline long long GetAssignmentDurationInSeconds() const{ return m_assignmentDurationInSeconds; }
+    inline long long GetAssignmentDurationInSeconds() const { return m_assignmentDurationInSeconds; }
     inline bool AssignmentDurationInSecondsHasBeenSet() const { return m_assignmentDurationInSecondsHasBeenSet; }
     inline void SetAssignmentDurationInSeconds(long long value) { m_assignmentDurationInSecondsHasBeenSet = true; m_assignmentDurationInSeconds = value; }
     inline CreateHITTypeRequest& WithAssignmentDurationInSeconds(long long value) { SetAssignmentDurationInSeconds(value); return *this;}
@@ -67,14 +67,12 @@ namespace Model
      * <p> The amount of money the Requester will pay a Worker for successfully
      * completing the HIT. </p>
      */
-    inline const Aws::String& GetReward() const{ return m_reward; }
+    inline const Aws::String& GetReward() const { return m_reward; }
     inline bool RewardHasBeenSet() const { return m_rewardHasBeenSet; }
-    inline void SetReward(const Aws::String& value) { m_rewardHasBeenSet = true; m_reward = value; }
-    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = std::move(value); }
-    inline void SetReward(const char* value) { m_rewardHasBeenSet = true; m_reward.assign(value); }
-    inline CreateHITTypeRequest& WithReward(const Aws::String& value) { SetReward(value); return *this;}
-    inline CreateHITTypeRequest& WithReward(Aws::String&& value) { SetReward(std::move(value)); return *this;}
-    inline CreateHITTypeRequest& WithReward(const char* value) { SetReward(value); return *this;}
+    template<typename RewardT = Aws::String>
+    void SetReward(RewardT&& value) { m_rewardHasBeenSet = true; m_reward = std::forward<RewardT>(value); }
+    template<typename RewardT = Aws::String>
+    CreateHITTypeRequest& WithReward(RewardT&& value) { SetReward(std::forward<RewardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title
      * appears in search results, and everywhere the HIT is mentioned. </p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline CreateHITTypeRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline CreateHITTypeRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline CreateHITTypeRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    CreateHITTypeRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
      */
-    inline const Aws::String& GetKeywords() const{ return m_keywords; }
+    inline const Aws::String& GetKeywords() const { return m_keywords; }
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
-    inline void SetKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
-    inline void SetKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.assign(value); }
-    inline CreateHITTypeRequest& WithKeywords(const Aws::String& value) { SetKeywords(value); return *this;}
-    inline CreateHITTypeRequest& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
-    inline CreateHITTypeRequest& WithKeywords(const char* value) { SetKeywords(value); return *this;}
+    template<typename KeywordsT = Aws::String>
+    void SetKeywords(KeywordsT&& value) { m_keywordsHasBeenSet = true; m_keywords = std::forward<KeywordsT>(value); }
+    template<typename KeywordsT = Aws::String>
+    CreateHITTypeRequest& WithKeywords(KeywordsT&& value) { SetKeywords(std::forward<KeywordsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * results, and in the HIT and assignment screens. A good description gives the
      * user enough information to evaluate the HIT before accepting it. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateHITTypeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateHITTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateHITTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateHITTypeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,21 +126,21 @@ namespace Model
      * other actions can be restricted using the <code>ActionsGuarded</code> field on
      * each <code>QualificationRequirement</code> structure. </p>
      */
-    inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const{ return m_qualificationRequirements; }
+    inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const { return m_qualificationRequirements; }
     inline bool QualificationRequirementsHasBeenSet() const { return m_qualificationRequirementsHasBeenSet; }
-    inline void SetQualificationRequirements(const Aws::Vector<QualificationRequirement>& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = value; }
-    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::move(value); }
-    inline CreateHITTypeRequest& WithQualificationRequirements(const Aws::Vector<QualificationRequirement>& value) { SetQualificationRequirements(value); return *this;}
-    inline CreateHITTypeRequest& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(std::move(value)); return *this;}
-    inline CreateHITTypeRequest& AddQualificationRequirements(const QualificationRequirement& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(value); return *this; }
-    inline CreateHITTypeRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
+    template<typename QualificationRequirementsT = Aws::Vector<QualificationRequirement>>
+    void SetQualificationRequirements(QualificationRequirementsT&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::forward<QualificationRequirementsT>(value); }
+    template<typename QualificationRequirementsT = Aws::Vector<QualificationRequirement>>
+    CreateHITTypeRequest& WithQualificationRequirements(QualificationRequirementsT&& value) { SetQualificationRequirements(std::forward<QualificationRequirementsT>(value)); return *this;}
+    template<typename QualificationRequirementsT = QualificationRequirement>
+    CreateHITTypeRequest& AddQualificationRequirements(QualificationRequirementsT&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.emplace_back(std::forward<QualificationRequirementsT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_autoApprovalDelayInSeconds;
+    long long m_autoApprovalDelayInSeconds{0};
     bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
-    long long m_assignmentDurationInSeconds;
+    long long m_assignmentDurationInSeconds{0};
     bool m_assignmentDurationInSecondsHasBeenSet = false;
 
     Aws::String m_reward;

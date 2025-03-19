@@ -28,7 +28,7 @@ namespace Model
   class UpdateServicePrimaryTaskSetResult
   {
   public:
-    AWS_ECS_API UpdateServicePrimaryTaskSetResult();
+    AWS_ECS_API UpdateServicePrimaryTaskSetResult() = default;
     AWS_ECS_API UpdateServicePrimaryTaskSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API UpdateServicePrimaryTaskSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details about the task set.</p>
      */
-    inline const TaskSet& GetTaskSet() const{ return m_taskSet; }
-    inline void SetTaskSet(const TaskSet& value) { m_taskSet = value; }
-    inline void SetTaskSet(TaskSet&& value) { m_taskSet = std::move(value); }
-    inline UpdateServicePrimaryTaskSetResult& WithTaskSet(const TaskSet& value) { SetTaskSet(value); return *this;}
-    inline UpdateServicePrimaryTaskSetResult& WithTaskSet(TaskSet&& value) { SetTaskSet(std::move(value)); return *this;}
+    inline const TaskSet& GetTaskSet() const { return m_taskSet; }
+    template<typename TaskSetT = TaskSet>
+    void SetTaskSet(TaskSetT&& value) { m_taskSetHasBeenSet = true; m_taskSet = std::forward<TaskSetT>(value); }
+    template<typename TaskSetT = TaskSet>
+    UpdateServicePrimaryTaskSetResult& WithTaskSet(TaskSetT&& value) { SetTaskSet(std::forward<TaskSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServicePrimaryTaskSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServicePrimaryTaskSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServicePrimaryTaskSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServicePrimaryTaskSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TaskSet m_taskSet;
+    bool m_taskSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

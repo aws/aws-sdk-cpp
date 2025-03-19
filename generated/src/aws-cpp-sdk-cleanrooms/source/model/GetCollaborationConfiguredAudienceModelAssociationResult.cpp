@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCollaborationConfiguredAudienceModelAssociationResult::GetCollaborationConfiguredAudienceModelAssociationResult()
-{
-}
-
 GetCollaborationConfiguredAudienceModelAssociationResult::GetCollaborationConfiguredAudienceModelAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetCollaborationConfiguredAudienceModelAssociationResult& GetCollaborationConfig
   if(jsonValue.ValueExists("collaborationConfiguredAudienceModelAssociation"))
   {
     m_collaborationConfiguredAudienceModelAssociation = jsonValue.GetObject("collaborationConfiguredAudienceModelAssociation");
-
+    m_collaborationConfiguredAudienceModelAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

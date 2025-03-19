@@ -13,12 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSchemaFromJsonRequest::PutSchemaFromJsonRequest() : 
-    m_schemaArnHasBeenSet(false),
-    m_documentHasBeenSet(false)
-{
-}
-
 Aws::String PutSchemaFromJsonRequest::SerializePayload() const
 {
   JsonValue payload;

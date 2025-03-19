@@ -12,14 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataEndpointRequest::GetDataEndpointRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_aPIName(APIName::NOT_SET),
-    m_aPINameHasBeenSet(false)
-{
-}
-
 Aws::String GetDataEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

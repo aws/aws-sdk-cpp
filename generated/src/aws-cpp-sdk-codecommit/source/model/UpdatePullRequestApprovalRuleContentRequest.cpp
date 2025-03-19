@@ -12,14 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePullRequestApprovalRuleContentRequest::UpdatePullRequestApprovalRuleContentRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_approvalRuleNameHasBeenSet(false),
-    m_existingRuleContentSha256HasBeenSet(false),
-    m_newRuleContentHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePullRequestApprovalRuleContentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteFirewallManagerRuleGroupsResult::DeleteFirewallManagerRuleGroupsResult()
-{
-}
-
 DeleteFirewallManagerRuleGroupsResult::DeleteFirewallManagerRuleGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteFirewallManagerRuleGroupsResult& DeleteFirewallManagerRuleGroupsResult::op
   if(jsonValue.ValueExists("NextWebACLLockToken"))
   {
     m_nextWebACLLockToken = jsonValue.GetString("NextWebACLLockToken");
-
+    m_nextWebACLLockTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

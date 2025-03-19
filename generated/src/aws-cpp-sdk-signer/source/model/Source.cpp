@@ -18,13 +18,7 @@ namespace signer
 namespace Model
 {
 
-Source::Source() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

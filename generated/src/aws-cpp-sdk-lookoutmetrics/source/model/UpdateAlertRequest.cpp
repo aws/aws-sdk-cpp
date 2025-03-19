@@ -12,16 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAlertRequest::UpdateAlertRequest() : 
-    m_alertArnHasBeenSet(false),
-    m_alertDescriptionHasBeenSet(false),
-    m_alertSensitivityThreshold(0),
-    m_alertSensitivityThresholdHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_alertFiltersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAlertRequest::SerializePayload() const
 {
   JsonValue payload;

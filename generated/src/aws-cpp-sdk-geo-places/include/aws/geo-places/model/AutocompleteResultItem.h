@@ -34,7 +34,7 @@ namespace Model
   class AutocompleteResultItem
   {
   public:
-    AWS_GEOPLACES_API AutocompleteResultItem();
+    AWS_GEOPLACES_API AutocompleteResultItem() = default;
     AWS_GEOPLACES_API AutocompleteResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API AutocompleteResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,22 @@ namespace Model
      * <p>The PlaceId of the place associated with this result. This can be used to
      * look up additional details about the result via GetPlace.</p>
      */
-    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
+    inline const Aws::String& GetPlaceId() const { return m_placeId; }
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
-    inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
-    inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
-    inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
-    inline AutocompleteResultItem& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
-    inline AutocompleteResultItem& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
-    inline AutocompleteResultItem& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+    template<typename PlaceIdT = Aws::String>
+    void SetPlaceId(PlaceIdT&& value) { m_placeIdHasBeenSet = true; m_placeId = std::forward<PlaceIdT>(value); }
+    template<typename PlaceIdT = Aws::String>
+    AutocompleteResultItem& WithPlaceId(PlaceIdT&& value) { SetPlaceId(std::forward<PlaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>PlaceType describes the type of result entry returned.</p>
      */
-    inline const PlaceType& GetPlaceType() const{ return m_placeType; }
+    inline PlaceType GetPlaceType() const { return m_placeType; }
     inline bool PlaceTypeHasBeenSet() const { return m_placeTypeHasBeenSet; }
-    inline void SetPlaceType(const PlaceType& value) { m_placeTypeHasBeenSet = true; m_placeType = value; }
-    inline void SetPlaceType(PlaceType&& value) { m_placeTypeHasBeenSet = true; m_placeType = std::move(value); }
-    inline AutocompleteResultItem& WithPlaceType(const PlaceType& value) { SetPlaceType(value); return *this;}
-    inline AutocompleteResultItem& WithPlaceType(PlaceType&& value) { SetPlaceType(std::move(value)); return *this;}
+    inline void SetPlaceType(PlaceType value) { m_placeTypeHasBeenSet = true; m_placeType = value; }
+    inline AutocompleteResultItem& WithPlaceType(PlaceType value) { SetPlaceType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,24 @@ namespace Model
      * <p>A formatted string for display when presenting this result to an end
      * user.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline AutocompleteResultItem& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline AutocompleteResultItem& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline AutocompleteResultItem& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    AutocompleteResultItem& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address associated with this result.</p>
      */
-    inline const Address& GetAddress() const{ return m_address; }
+    inline const Address& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Address& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline AutocompleteResultItem& WithAddress(const Address& value) { SetAddress(value); return *this;}
-    inline AutocompleteResultItem& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    template<typename AddressT = Address>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Address>
+    AutocompleteResultItem& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +94,7 @@ namespace Model
      * Useful to evaluate how far away from the original bias position the result
      * is.</p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline AutocompleteResultItem& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -113,14 +107,12 @@ namespace Model
      * no data for the result in the requested language, data will be returned in the
      * default language for the entry.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline AutocompleteResultItem& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline AutocompleteResultItem& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline AutocompleteResultItem& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    AutocompleteResultItem& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +121,12 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline AutocompleteResultItem& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline AutocompleteResultItem& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline AutocompleteResultItem& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    AutocompleteResultItem& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,19 +134,19 @@ namespace Model
      * <p>Indicates the starting and ending index of the place in the text query that
      * match the found title. </p>
      */
-    inline const AutocompleteHighlights& GetHighlights() const{ return m_highlights; }
+    inline const AutocompleteHighlights& GetHighlights() const { return m_highlights; }
     inline bool HighlightsHasBeenSet() const { return m_highlightsHasBeenSet; }
-    inline void SetHighlights(const AutocompleteHighlights& value) { m_highlightsHasBeenSet = true; m_highlights = value; }
-    inline void SetHighlights(AutocompleteHighlights&& value) { m_highlightsHasBeenSet = true; m_highlights = std::move(value); }
-    inline AutocompleteResultItem& WithHighlights(const AutocompleteHighlights& value) { SetHighlights(value); return *this;}
-    inline AutocompleteResultItem& WithHighlights(AutocompleteHighlights&& value) { SetHighlights(std::move(value)); return *this;}
+    template<typename HighlightsT = AutocompleteHighlights>
+    void SetHighlights(HighlightsT&& value) { m_highlightsHasBeenSet = true; m_highlights = std::forward<HighlightsT>(value); }
+    template<typename HighlightsT = AutocompleteHighlights>
+    AutocompleteResultItem& WithHighlights(HighlightsT&& value) { SetHighlights(std::forward<HighlightsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_placeId;
     bool m_placeIdHasBeenSet = false;
 
-    PlaceType m_placeType;
+    PlaceType m_placeType{PlaceType::NOT_SET};
     bool m_placeTypeHasBeenSet = false;
 
     Aws::String m_title;
@@ -165,7 +155,7 @@ namespace Model
     Address m_address;
     bool m_addressHasBeenSet = false;
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
     Aws::String m_language;

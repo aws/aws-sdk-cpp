@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CoverageByTime::CoverageByTime() : 
-    m_timePeriodHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_totalHasBeenSet(false)
-{
-}
-
 CoverageByTime::CoverageByTime(JsonView jsonValue)
-  : CoverageByTime()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CoverageByTime& CoverageByTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
     m_timePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
@@ -49,14 +39,11 @@ CoverageByTime& CoverageByTime::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

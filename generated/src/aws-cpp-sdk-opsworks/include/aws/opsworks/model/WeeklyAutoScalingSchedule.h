@@ -43,7 +43,7 @@ namespace Model
   class WeeklyAutoScalingSchedule
   {
   public:
-    AWS_OPSWORKS_API WeeklyAutoScalingSchedule();
+    AWS_OPSWORKS_API WeeklyAutoScalingSchedule() = default;
     AWS_OPSWORKS_API WeeklyAutoScalingSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API WeeklyAutoScalingSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,133 +53,112 @@ namespace Model
     /**
      * <p>The schedule for Monday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMonday() const{ return m_monday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMonday() const { return m_monday; }
     inline bool MondayHasBeenSet() const { return m_mondayHasBeenSet; }
-    inline void SetMonday(const Aws::Map<Aws::String, Aws::String>& value) { m_mondayHasBeenSet = true; m_monday = value; }
-    inline void SetMonday(Aws::Map<Aws::String, Aws::String>&& value) { m_mondayHasBeenSet = true; m_monday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithMonday(const Aws::Map<Aws::String, Aws::String>& value) { SetMonday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithMonday(Aws::Map<Aws::String, Aws::String>&& value) { SetMonday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddMonday(const Aws::String& key, const Aws::String& value) { m_mondayHasBeenSet = true; m_monday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddMonday(Aws::String&& key, const Aws::String& value) { m_mondayHasBeenSet = true; m_monday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddMonday(const Aws::String& key, Aws::String&& value) { m_mondayHasBeenSet = true; m_monday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddMonday(Aws::String&& key, Aws::String&& value) { m_mondayHasBeenSet = true; m_monday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddMonday(const char* key, Aws::String&& value) { m_mondayHasBeenSet = true; m_monday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddMonday(Aws::String&& key, const char* value) { m_mondayHasBeenSet = true; m_monday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddMonday(const char* key, const char* value) { m_mondayHasBeenSet = true; m_monday.emplace(key, value); return *this; }
+    template<typename MondayT = Aws::Map<Aws::String, Aws::String>>
+    void SetMonday(MondayT&& value) { m_mondayHasBeenSet = true; m_monday = std::forward<MondayT>(value); }
+    template<typename MondayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithMonday(MondayT&& value) { SetMonday(std::forward<MondayT>(value)); return *this;}
+    template<typename MondayKeyT = Aws::String, typename MondayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddMonday(MondayKeyT&& key, MondayValueT&& value) {
+      m_mondayHasBeenSet = true; m_monday.emplace(std::forward<MondayKeyT>(key), std::forward<MondayValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The schedule for Tuesday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTuesday() const{ return m_tuesday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTuesday() const { return m_tuesday; }
     inline bool TuesdayHasBeenSet() const { return m_tuesdayHasBeenSet; }
-    inline void SetTuesday(const Aws::Map<Aws::String, Aws::String>& value) { m_tuesdayHasBeenSet = true; m_tuesday = value; }
-    inline void SetTuesday(Aws::Map<Aws::String, Aws::String>&& value) { m_tuesdayHasBeenSet = true; m_tuesday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithTuesday(const Aws::Map<Aws::String, Aws::String>& value) { SetTuesday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithTuesday(Aws::Map<Aws::String, Aws::String>&& value) { SetTuesday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddTuesday(const Aws::String& key, const Aws::String& value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddTuesday(Aws::String&& key, const Aws::String& value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddTuesday(const Aws::String& key, Aws::String&& value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddTuesday(Aws::String&& key, Aws::String&& value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddTuesday(const char* key, Aws::String&& value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddTuesday(Aws::String&& key, const char* value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddTuesday(const char* key, const char* value) { m_tuesdayHasBeenSet = true; m_tuesday.emplace(key, value); return *this; }
+    template<typename TuesdayT = Aws::Map<Aws::String, Aws::String>>
+    void SetTuesday(TuesdayT&& value) { m_tuesdayHasBeenSet = true; m_tuesday = std::forward<TuesdayT>(value); }
+    template<typename TuesdayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithTuesday(TuesdayT&& value) { SetTuesday(std::forward<TuesdayT>(value)); return *this;}
+    template<typename TuesdayKeyT = Aws::String, typename TuesdayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddTuesday(TuesdayKeyT&& key, TuesdayValueT&& value) {
+      m_tuesdayHasBeenSet = true; m_tuesday.emplace(std::forward<TuesdayKeyT>(key), std::forward<TuesdayValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The schedule for Wednesday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetWednesday() const{ return m_wednesday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetWednesday() const { return m_wednesday; }
     inline bool WednesdayHasBeenSet() const { return m_wednesdayHasBeenSet; }
-    inline void SetWednesday(const Aws::Map<Aws::String, Aws::String>& value) { m_wednesdayHasBeenSet = true; m_wednesday = value; }
-    inline void SetWednesday(Aws::Map<Aws::String, Aws::String>&& value) { m_wednesdayHasBeenSet = true; m_wednesday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithWednesday(const Aws::Map<Aws::String, Aws::String>& value) { SetWednesday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithWednesday(Aws::Map<Aws::String, Aws::String>&& value) { SetWednesday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddWednesday(const Aws::String& key, const Aws::String& value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddWednesday(Aws::String&& key, const Aws::String& value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddWednesday(const Aws::String& key, Aws::String&& value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddWednesday(Aws::String&& key, Aws::String&& value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddWednesday(const char* key, Aws::String&& value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddWednesday(Aws::String&& key, const char* value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddWednesday(const char* key, const char* value) { m_wednesdayHasBeenSet = true; m_wednesday.emplace(key, value); return *this; }
+    template<typename WednesdayT = Aws::Map<Aws::String, Aws::String>>
+    void SetWednesday(WednesdayT&& value) { m_wednesdayHasBeenSet = true; m_wednesday = std::forward<WednesdayT>(value); }
+    template<typename WednesdayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithWednesday(WednesdayT&& value) { SetWednesday(std::forward<WednesdayT>(value)); return *this;}
+    template<typename WednesdayKeyT = Aws::String, typename WednesdayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddWednesday(WednesdayKeyT&& key, WednesdayValueT&& value) {
+      m_wednesdayHasBeenSet = true; m_wednesday.emplace(std::forward<WednesdayKeyT>(key), std::forward<WednesdayValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The schedule for Thursday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetThursday() const{ return m_thursday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetThursday() const { return m_thursday; }
     inline bool ThursdayHasBeenSet() const { return m_thursdayHasBeenSet; }
-    inline void SetThursday(const Aws::Map<Aws::String, Aws::String>& value) { m_thursdayHasBeenSet = true; m_thursday = value; }
-    inline void SetThursday(Aws::Map<Aws::String, Aws::String>&& value) { m_thursdayHasBeenSet = true; m_thursday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithThursday(const Aws::Map<Aws::String, Aws::String>& value) { SetThursday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithThursday(Aws::Map<Aws::String, Aws::String>&& value) { SetThursday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddThursday(const Aws::String& key, const Aws::String& value) { m_thursdayHasBeenSet = true; m_thursday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddThursday(Aws::String&& key, const Aws::String& value) { m_thursdayHasBeenSet = true; m_thursday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddThursday(const Aws::String& key, Aws::String&& value) { m_thursdayHasBeenSet = true; m_thursday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddThursday(Aws::String&& key, Aws::String&& value) { m_thursdayHasBeenSet = true; m_thursday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddThursday(const char* key, Aws::String&& value) { m_thursdayHasBeenSet = true; m_thursday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddThursday(Aws::String&& key, const char* value) { m_thursdayHasBeenSet = true; m_thursday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddThursday(const char* key, const char* value) { m_thursdayHasBeenSet = true; m_thursday.emplace(key, value); return *this; }
+    template<typename ThursdayT = Aws::Map<Aws::String, Aws::String>>
+    void SetThursday(ThursdayT&& value) { m_thursdayHasBeenSet = true; m_thursday = std::forward<ThursdayT>(value); }
+    template<typename ThursdayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithThursday(ThursdayT&& value) { SetThursday(std::forward<ThursdayT>(value)); return *this;}
+    template<typename ThursdayKeyT = Aws::String, typename ThursdayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddThursday(ThursdayKeyT&& key, ThursdayValueT&& value) {
+      m_thursdayHasBeenSet = true; m_thursday.emplace(std::forward<ThursdayKeyT>(key), std::forward<ThursdayValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The schedule for Friday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFriday() const{ return m_friday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFriday() const { return m_friday; }
     inline bool FridayHasBeenSet() const { return m_fridayHasBeenSet; }
-    inline void SetFriday(const Aws::Map<Aws::String, Aws::String>& value) { m_fridayHasBeenSet = true; m_friday = value; }
-    inline void SetFriday(Aws::Map<Aws::String, Aws::String>&& value) { m_fridayHasBeenSet = true; m_friday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithFriday(const Aws::Map<Aws::String, Aws::String>& value) { SetFriday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithFriday(Aws::Map<Aws::String, Aws::String>&& value) { SetFriday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddFriday(const Aws::String& key, const Aws::String& value) { m_fridayHasBeenSet = true; m_friday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddFriday(Aws::String&& key, const Aws::String& value) { m_fridayHasBeenSet = true; m_friday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddFriday(const Aws::String& key, Aws::String&& value) { m_fridayHasBeenSet = true; m_friday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddFriday(Aws::String&& key, Aws::String&& value) { m_fridayHasBeenSet = true; m_friday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddFriday(const char* key, Aws::String&& value) { m_fridayHasBeenSet = true; m_friday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddFriday(Aws::String&& key, const char* value) { m_fridayHasBeenSet = true; m_friday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddFriday(const char* key, const char* value) { m_fridayHasBeenSet = true; m_friday.emplace(key, value); return *this; }
+    template<typename FridayT = Aws::Map<Aws::String, Aws::String>>
+    void SetFriday(FridayT&& value) { m_fridayHasBeenSet = true; m_friday = std::forward<FridayT>(value); }
+    template<typename FridayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithFriday(FridayT&& value) { SetFriday(std::forward<FridayT>(value)); return *this;}
+    template<typename FridayKeyT = Aws::String, typename FridayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddFriday(FridayKeyT&& key, FridayValueT&& value) {
+      m_fridayHasBeenSet = true; m_friday.emplace(std::forward<FridayKeyT>(key), std::forward<FridayValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The schedule for Saturday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSaturday() const{ return m_saturday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSaturday() const { return m_saturday; }
     inline bool SaturdayHasBeenSet() const { return m_saturdayHasBeenSet; }
-    inline void SetSaturday(const Aws::Map<Aws::String, Aws::String>& value) { m_saturdayHasBeenSet = true; m_saturday = value; }
-    inline void SetSaturday(Aws::Map<Aws::String, Aws::String>&& value) { m_saturdayHasBeenSet = true; m_saturday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithSaturday(const Aws::Map<Aws::String, Aws::String>& value) { SetSaturday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithSaturday(Aws::Map<Aws::String, Aws::String>&& value) { SetSaturday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddSaturday(const Aws::String& key, const Aws::String& value) { m_saturdayHasBeenSet = true; m_saturday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSaturday(Aws::String&& key, const Aws::String& value) { m_saturdayHasBeenSet = true; m_saturday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSaturday(const Aws::String& key, Aws::String&& value) { m_saturdayHasBeenSet = true; m_saturday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSaturday(Aws::String&& key, Aws::String&& value) { m_saturdayHasBeenSet = true; m_saturday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSaturday(const char* key, Aws::String&& value) { m_saturdayHasBeenSet = true; m_saturday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSaturday(Aws::String&& key, const char* value) { m_saturdayHasBeenSet = true; m_saturday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSaturday(const char* key, const char* value) { m_saturdayHasBeenSet = true; m_saturday.emplace(key, value); return *this; }
+    template<typename SaturdayT = Aws::Map<Aws::String, Aws::String>>
+    void SetSaturday(SaturdayT&& value) { m_saturdayHasBeenSet = true; m_saturday = std::forward<SaturdayT>(value); }
+    template<typename SaturdayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithSaturday(SaturdayT&& value) { SetSaturday(std::forward<SaturdayT>(value)); return *this;}
+    template<typename SaturdayKeyT = Aws::String, typename SaturdayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddSaturday(SaturdayKeyT&& key, SaturdayValueT&& value) {
+      m_saturdayHasBeenSet = true; m_saturday.emplace(std::forward<SaturdayKeyT>(key), std::forward<SaturdayValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The schedule for Sunday.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSunday() const{ return m_sunday; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSunday() const { return m_sunday; }
     inline bool SundayHasBeenSet() const { return m_sundayHasBeenSet; }
-    inline void SetSunday(const Aws::Map<Aws::String, Aws::String>& value) { m_sundayHasBeenSet = true; m_sunday = value; }
-    inline void SetSunday(Aws::Map<Aws::String, Aws::String>&& value) { m_sundayHasBeenSet = true; m_sunday = std::move(value); }
-    inline WeeklyAutoScalingSchedule& WithSunday(const Aws::Map<Aws::String, Aws::String>& value) { SetSunday(value); return *this;}
-    inline WeeklyAutoScalingSchedule& WithSunday(Aws::Map<Aws::String, Aws::String>&& value) { SetSunday(std::move(value)); return *this;}
-    inline WeeklyAutoScalingSchedule& AddSunday(const Aws::String& key, const Aws::String& value) { m_sundayHasBeenSet = true; m_sunday.emplace(key, value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSunday(Aws::String&& key, const Aws::String& value) { m_sundayHasBeenSet = true; m_sunday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSunday(const Aws::String& key, Aws::String&& value) { m_sundayHasBeenSet = true; m_sunday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSunday(Aws::String&& key, Aws::String&& value) { m_sundayHasBeenSet = true; m_sunday.emplace(std::move(key), std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSunday(const char* key, Aws::String&& value) { m_sundayHasBeenSet = true; m_sunday.emplace(key, std::move(value)); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSunday(Aws::String&& key, const char* value) { m_sundayHasBeenSet = true; m_sunday.emplace(std::move(key), value); return *this; }
-    inline WeeklyAutoScalingSchedule& AddSunday(const char* key, const char* value) { m_sundayHasBeenSet = true; m_sunday.emplace(key, value); return *this; }
+    template<typename SundayT = Aws::Map<Aws::String, Aws::String>>
+    void SetSunday(SundayT&& value) { m_sundayHasBeenSet = true; m_sunday = std::forward<SundayT>(value); }
+    template<typename SundayT = Aws::Map<Aws::String, Aws::String>>
+    WeeklyAutoScalingSchedule& WithSunday(SundayT&& value) { SetSunday(std::forward<SundayT>(value)); return *this;}
+    template<typename SundayKeyT = Aws::String, typename SundayValueT = Aws::String>
+    WeeklyAutoScalingSchedule& AddSunday(SundayKeyT&& key, SundayValueT&& value) {
+      m_sundayHasBeenSet = true; m_sunday.emplace(std::forward<SundayKeyT>(key), std::forward<SundayValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -13,13 +13,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChannelGroupRequest::UpdateChannelGroupRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChannelGroupRequest::SerializePayload() const
 {
   JsonValue payload;

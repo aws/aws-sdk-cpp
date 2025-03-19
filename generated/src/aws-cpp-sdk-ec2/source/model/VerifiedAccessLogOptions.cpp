@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogOptions::VerifiedAccessLogOptions() : 
-    m_s3HasBeenSet(false),
-    m_cloudWatchLogsHasBeenSet(false),
-    m_kinesisDataFirehoseHasBeenSet(false),
-    m_logVersionHasBeenSet(false),
-    m_includeTrustContext(false),
-    m_includeTrustContextHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogOptions::VerifiedAccessLogOptions(const XmlNode& xmlNode)
-  : VerifiedAccessLogOptions()
 {
   *this = xmlNode;
 }

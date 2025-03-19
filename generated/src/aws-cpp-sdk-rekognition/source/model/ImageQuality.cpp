@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ImageQuality::ImageQuality() : 
-    m_brightness(0.0),
-    m_brightnessHasBeenSet(false),
-    m_sharpness(0.0),
-    m_sharpnessHasBeenSet(false)
-{
-}
-
 ImageQuality::ImageQuality(JsonView jsonValue)
-  : ImageQuality()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ImageQuality& ImageQuality::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Brightness"))
   {
     m_brightness = jsonValue.GetDouble("Brightness");
-
     m_brightnessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sharpness"))
   {
     m_sharpness = jsonValue.GetDouble("Sharpness");
-
     m_sharpnessHasBeenSet = true;
   }
-
   return *this;
 }
 

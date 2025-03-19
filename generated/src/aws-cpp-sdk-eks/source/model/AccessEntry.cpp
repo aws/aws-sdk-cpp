@@ -18,21 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AccessEntry::AccessEntry() : 
-    m_clusterNameHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_kubernetesGroupsHasBeenSet(false),
-    m_accessEntryArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AccessEntry::AccessEntry(JsonView jsonValue)
-  : AccessEntry()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ AccessEntry& AccessEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalArn"))
   {
     m_principalArn = jsonValue.GetString("principalArn");
-
     m_principalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesGroups"))
   {
     Aws::Utils::Array<JsonView> kubernetesGroupsJsonList = jsonValue.GetArray("kubernetesGroups");
@@ -62,28 +44,21 @@ AccessEntry& AccessEntry::operator =(JsonView jsonValue)
     }
     m_kubernetesGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessEntryArn"))
   {
     m_accessEntryArn = jsonValue.GetString("accessEntryArn");
-
     m_accessEntryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -93,21 +68,16 @@ AccessEntry& AccessEntry::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

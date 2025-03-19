@@ -32,7 +32,7 @@ namespace Model
   class FindMatchesParameters
   {
   public:
-    AWS_GLUE_API FindMatchesParameters();
+    AWS_GLUE_API FindMatchesParameters() = default;
     AWS_GLUE_API FindMatchesParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API FindMatchesParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of a column that uniquely identifies rows in the source table. Used
      * to help identify matching records.</p>
      */
-    inline const Aws::String& GetPrimaryKeyColumnName() const{ return m_primaryKeyColumnName; }
+    inline const Aws::String& GetPrimaryKeyColumnName() const { return m_primaryKeyColumnName; }
     inline bool PrimaryKeyColumnNameHasBeenSet() const { return m_primaryKeyColumnNameHasBeenSet; }
-    inline void SetPrimaryKeyColumnName(const Aws::String& value) { m_primaryKeyColumnNameHasBeenSet = true; m_primaryKeyColumnName = value; }
-    inline void SetPrimaryKeyColumnName(Aws::String&& value) { m_primaryKeyColumnNameHasBeenSet = true; m_primaryKeyColumnName = std::move(value); }
-    inline void SetPrimaryKeyColumnName(const char* value) { m_primaryKeyColumnNameHasBeenSet = true; m_primaryKeyColumnName.assign(value); }
-    inline FindMatchesParameters& WithPrimaryKeyColumnName(const Aws::String& value) { SetPrimaryKeyColumnName(value); return *this;}
-    inline FindMatchesParameters& WithPrimaryKeyColumnName(Aws::String&& value) { SetPrimaryKeyColumnName(std::move(value)); return *this;}
-    inline FindMatchesParameters& WithPrimaryKeyColumnName(const char* value) { SetPrimaryKeyColumnName(value); return *this;}
+    template<typename PrimaryKeyColumnNameT = Aws::String>
+    void SetPrimaryKeyColumnName(PrimaryKeyColumnNameT&& value) { m_primaryKeyColumnNameHasBeenSet = true; m_primaryKeyColumnName = std::forward<PrimaryKeyColumnNameT>(value); }
+    template<typename PrimaryKeyColumnNameT = Aws::String>
+    FindMatchesParameters& WithPrimaryKeyColumnName(PrimaryKeyColumnNameT&& value) { SetPrimaryKeyColumnName(std::forward<PrimaryKeyColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * recall metric indicates that for an actual match, how often your model predicts
      * the match.</p>
      */
-    inline double GetPrecisionRecallTradeoff() const{ return m_precisionRecallTradeoff; }
+    inline double GetPrecisionRecallTradeoff() const { return m_precisionRecallTradeoff; }
     inline bool PrecisionRecallTradeoffHasBeenSet() const { return m_precisionRecallTradeoffHasBeenSet; }
     inline void SetPrecisionRecallTradeoff(double value) { m_precisionRecallTradeoffHasBeenSet = true; m_precisionRecallTradeoff = value; }
     inline FindMatchesParameters& WithPrecisionRecallTradeoff(double value) { SetPrecisionRecallTradeoff(value); return *this;}
@@ -83,7 +81,7 @@ namespace Model
      * recall. </p> <p>Cost measures how many compute resources, and thus money, are
      * consumed to run the transform.</p>
      */
-    inline double GetAccuracyCostTradeoff() const{ return m_accuracyCostTradeoff; }
+    inline double GetAccuracyCostTradeoff() const { return m_accuracyCostTradeoff; }
     inline bool AccuracyCostTradeoffHasBeenSet() const { return m_accuracyCostTradeoffHasBeenSet; }
     inline void SetAccuracyCostTradeoff(double value) { m_accuracyCostTradeoffHasBeenSet = true; m_accuracyCostTradeoff = value; }
     inline FindMatchesParameters& WithAccuracyCostTradeoff(double value) { SetAccuracyCostTradeoff(value); return *this;}
@@ -100,7 +98,7 @@ namespace Model
      * model.</p> <p>Note that setting this value to true may increase the conflation
      * execution time.</p>
      */
-    inline bool GetEnforceProvidedLabels() const{ return m_enforceProvidedLabels; }
+    inline bool GetEnforceProvidedLabels() const { return m_enforceProvidedLabels; }
     inline bool EnforceProvidedLabelsHasBeenSet() const { return m_enforceProvidedLabelsHasBeenSet; }
     inline void SetEnforceProvidedLabels(bool value) { m_enforceProvidedLabelsHasBeenSet = true; m_enforceProvidedLabels = value; }
     inline FindMatchesParameters& WithEnforceProvidedLabels(bool value) { SetEnforceProvidedLabels(value); return *this;}
@@ -110,13 +108,13 @@ namespace Model
     Aws::String m_primaryKeyColumnName;
     bool m_primaryKeyColumnNameHasBeenSet = false;
 
-    double m_precisionRecallTradeoff;
+    double m_precisionRecallTradeoff{0.0};
     bool m_precisionRecallTradeoffHasBeenSet = false;
 
-    double m_accuracyCostTradeoff;
+    double m_accuracyCostTradeoff{0.0};
     bool m_accuracyCostTradeoffHasBeenSet = false;
 
-    bool m_enforceProvidedLabels;
+    bool m_enforceProvidedLabels{false};
     bool m_enforceProvidedLabelsHasBeenSet = false;
   };
 

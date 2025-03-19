@@ -12,13 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSegmentRequest::UpdateSegmentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_writeSegmentRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSegmentRequest::SerializePayload() const
 {
   JsonValue payload;

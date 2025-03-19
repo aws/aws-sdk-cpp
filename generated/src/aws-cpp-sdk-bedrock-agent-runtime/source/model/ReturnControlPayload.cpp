@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ReturnControlPayload::ReturnControlPayload() : 
-    m_invocationIdHasBeenSet(false),
-    m_invocationInputsHasBeenSet(false)
-{
-}
-
 ReturnControlPayload::ReturnControlPayload(JsonView jsonValue)
-  : ReturnControlPayload()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReturnControlPayload& ReturnControlPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
-
     m_invocationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationInputs"))
   {
     Aws::Utils::Array<JsonView> invocationInputsJsonList = jsonValue.GetArray("invocationInputs");
@@ -48,7 +39,6 @@ ReturnControlPayload& ReturnControlPayload::operator =(JsonView jsonValue)
     }
     m_invocationInputsHasBeenSet = true;
   }
-
   return *this;
 }
 

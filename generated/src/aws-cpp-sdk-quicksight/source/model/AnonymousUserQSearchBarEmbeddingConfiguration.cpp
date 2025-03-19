@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnonymousUserQSearchBarEmbeddingConfiguration::AnonymousUserQSearchBarEmbeddingConfiguration() : 
-    m_initialTopicIdHasBeenSet(false)
-{
-}
-
 AnonymousUserQSearchBarEmbeddingConfiguration::AnonymousUserQSearchBarEmbeddingConfiguration(JsonView jsonValue)
-  : AnonymousUserQSearchBarEmbeddingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnonymousUserQSearchBarEmbeddingConfiguration& AnonymousUserQSearchBarEmbeddingC
   if(jsonValue.ValueExists("InitialTopicId"))
   {
     m_initialTopicId = jsonValue.GetString("InitialTopicId");
-
     m_initialTopicIdHasBeenSet = true;
   }
-
   return *this;
 }
 

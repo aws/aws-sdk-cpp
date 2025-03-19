@@ -33,7 +33,7 @@ namespace Model
   class EcsPropertiesOverride
   {
   public:
-    AWS_BATCH_API EcsPropertiesOverride();
+    AWS_BATCH_API EcsPropertiesOverride() = default;
     AWS_BATCH_API EcsPropertiesOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EcsPropertiesOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The overrides for the Amazon ECS task definition of a job.</p>  <p>This
      * object is currently limited to one element.</p> 
      */
-    inline const Aws::Vector<TaskPropertiesOverride>& GetTaskProperties() const{ return m_taskProperties; }
+    inline const Aws::Vector<TaskPropertiesOverride>& GetTaskProperties() const { return m_taskProperties; }
     inline bool TaskPropertiesHasBeenSet() const { return m_taskPropertiesHasBeenSet; }
-    inline void SetTaskProperties(const Aws::Vector<TaskPropertiesOverride>& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = value; }
-    inline void SetTaskProperties(Aws::Vector<TaskPropertiesOverride>&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::move(value); }
-    inline EcsPropertiesOverride& WithTaskProperties(const Aws::Vector<TaskPropertiesOverride>& value) { SetTaskProperties(value); return *this;}
-    inline EcsPropertiesOverride& WithTaskProperties(Aws::Vector<TaskPropertiesOverride>&& value) { SetTaskProperties(std::move(value)); return *this;}
-    inline EcsPropertiesOverride& AddTaskProperties(const TaskPropertiesOverride& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(value); return *this; }
-    inline EcsPropertiesOverride& AddTaskProperties(TaskPropertiesOverride&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.push_back(std::move(value)); return *this; }
+    template<typename TaskPropertiesT = Aws::Vector<TaskPropertiesOverride>>
+    void SetTaskProperties(TaskPropertiesT&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties = std::forward<TaskPropertiesT>(value); }
+    template<typename TaskPropertiesT = Aws::Vector<TaskPropertiesOverride>>
+    EcsPropertiesOverride& WithTaskProperties(TaskPropertiesT&& value) { SetTaskProperties(std::forward<TaskPropertiesT>(value)); return *this;}
+    template<typename TaskPropertiesT = TaskPropertiesOverride>
+    EcsPropertiesOverride& AddTaskProperties(TaskPropertiesT&& value) { m_taskPropertiesHasBeenSet = true; m_taskProperties.emplace_back(std::forward<TaskPropertiesT>(value)); return *this; }
     ///@}
   private:
 

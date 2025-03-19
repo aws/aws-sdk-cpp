@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ChannelsResponse::ChannelsResponse() : 
-    m_channelsHasBeenSet(false)
-{
-}
-
 ChannelsResponse::ChannelsResponse(JsonView jsonValue)
-  : ChannelsResponse()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ChannelsResponse& ChannelsResponse::operator =(JsonView jsonValue)
     }
     m_channelsHasBeenSet = true;
   }
-
   return *this;
 }
 

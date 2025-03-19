@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUserProfileResult::GetUserProfileResult() : 
-    m_status(UserProfileStatus::NOT_SET),
-    m_type(UserProfileType::NOT_SET)
-{
-}
-
 GetUserProfileResult::GetUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetUserProfileResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ GetUserProfileResult& GetUserProfileResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetObject("details");
-
+    m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = UserProfileStatusMapper::GetUserProfileStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = UserProfileTypeMapper::GetUserProfileTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

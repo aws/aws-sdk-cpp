@@ -10,10 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeAccountAttributesRequest::DescribeAccountAttributesRequest()
-{
-}
-
 Aws::String DescribeAccountAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

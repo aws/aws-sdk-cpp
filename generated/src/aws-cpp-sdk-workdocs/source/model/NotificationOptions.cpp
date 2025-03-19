@@ -18,15 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-NotificationOptions::NotificationOptions() : 
-    m_sendEmail(false),
-    m_sendEmailHasBeenSet(false),
-    m_emailMessageHasBeenSet(false)
-{
-}
-
 NotificationOptions::NotificationOptions(JsonView jsonValue)
-  : NotificationOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NotificationOptions& NotificationOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SendEmail"))
   {
     m_sendEmail = jsonValue.GetBool("SendEmail");
-
     m_sendEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailMessage"))
   {
     m_emailMessage = jsonValue.GetString("EmailMessage");
-
     m_emailMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportClientVpnClientConfigurationResponse::ExportClientVpnClientConfigurationResponse()
-{
-}
-
 ExportClientVpnClientConfigurationResponse::ExportClientVpnClientConfigurationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ExportClientVpnClientConfigurationResponse& ExportClientVpnClientConfigurationRe
     if(!clientConfigurationNode.IsNull())
     {
       m_clientConfiguration = Aws::Utils::Xml::DecodeEscapedXmlText(clientConfigurationNode.GetText());
+      m_clientConfigurationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ExportClientVpnClientConfigurationResponse& ExportClientVpnClientConfigurationRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ExportClientVpnClientConfigurationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

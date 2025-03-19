@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicCategoryFilterConstant::TopicCategoryFilterConstant() : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_singularConstantHasBeenSet(false),
-    m_collectiveConstantHasBeenSet(false)
-{
-}
-
 TopicCategoryFilterConstant::TopicCategoryFilterConstant(JsonView jsonValue)
-  : TopicCategoryFilterConstant()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TopicCategoryFilterConstant& TopicCategoryFilterConstant::operator =(JsonView js
   if(jsonValue.ValueExists("ConstantType"))
   {
     m_constantType = ConstantTypeMapper::GetConstantTypeForName(jsonValue.GetString("ConstantType"));
-
     m_constantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingularConstant"))
   {
     m_singularConstant = jsonValue.GetString("SingularConstant");
-
     m_singularConstantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectiveConstant"))
   {
     m_collectiveConstant = jsonValue.GetObject("CollectiveConstant");
-
     m_collectiveConstantHasBeenSet = true;
   }
-
   return *this;
 }
 

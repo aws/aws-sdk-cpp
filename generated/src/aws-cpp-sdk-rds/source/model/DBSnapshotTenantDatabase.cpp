@@ -20,25 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSnapshotTenantDatabase::DBSnapshotTenantDatabase() : 
-    m_dBSnapshotIdentifierHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_tenantDatabaseCreateTimeHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_tenantDatabaseResourceIdHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_dBSnapshotTenantDatabaseARNHasBeenSet(false),
-    m_ncharCharacterSetNameHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 DBSnapshotTenantDatabase::DBSnapshotTenantDatabase(const XmlNode& xmlNode)
-  : DBSnapshotTenantDatabase()
 {
   *this = xmlNode;
 }
@@ -125,6 +107,7 @@ DBSnapshotTenantDatabase& DBSnapshotTenantDatabase::operator =(const XmlNode& xm
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);

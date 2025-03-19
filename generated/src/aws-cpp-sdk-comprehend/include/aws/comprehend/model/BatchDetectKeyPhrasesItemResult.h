@@ -34,7 +34,7 @@ namespace Model
   class BatchDetectKeyPhrasesItemResult
   {
   public:
-    AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult();
+    AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult() = default;
     AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline BatchDetectKeyPhrasesItemResult& WithIndex(int value) { SetIndex(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
      * <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in the
      * document.</p>
      */
-    inline const Aws::Vector<KeyPhrase>& GetKeyPhrases() const{ return m_keyPhrases; }
+    inline const Aws::Vector<KeyPhrase>& GetKeyPhrases() const { return m_keyPhrases; }
     inline bool KeyPhrasesHasBeenSet() const { return m_keyPhrasesHasBeenSet; }
-    inline void SetKeyPhrases(const Aws::Vector<KeyPhrase>& value) { m_keyPhrasesHasBeenSet = true; m_keyPhrases = value; }
-    inline void SetKeyPhrases(Aws::Vector<KeyPhrase>&& value) { m_keyPhrasesHasBeenSet = true; m_keyPhrases = std::move(value); }
-    inline BatchDetectKeyPhrasesItemResult& WithKeyPhrases(const Aws::Vector<KeyPhrase>& value) { SetKeyPhrases(value); return *this;}
-    inline BatchDetectKeyPhrasesItemResult& WithKeyPhrases(Aws::Vector<KeyPhrase>&& value) { SetKeyPhrases(std::move(value)); return *this;}
-    inline BatchDetectKeyPhrasesItemResult& AddKeyPhrases(const KeyPhrase& value) { m_keyPhrasesHasBeenSet = true; m_keyPhrases.push_back(value); return *this; }
-    inline BatchDetectKeyPhrasesItemResult& AddKeyPhrases(KeyPhrase&& value) { m_keyPhrasesHasBeenSet = true; m_keyPhrases.push_back(std::move(value)); return *this; }
+    template<typename KeyPhrasesT = Aws::Vector<KeyPhrase>>
+    void SetKeyPhrases(KeyPhrasesT&& value) { m_keyPhrasesHasBeenSet = true; m_keyPhrases = std::forward<KeyPhrasesT>(value); }
+    template<typename KeyPhrasesT = Aws::Vector<KeyPhrase>>
+    BatchDetectKeyPhrasesItemResult& WithKeyPhrases(KeyPhrasesT&& value) { SetKeyPhrases(std::forward<KeyPhrasesT>(value)); return *this;}
+    template<typename KeyPhrasesT = KeyPhrase>
+    BatchDetectKeyPhrasesItemResult& AddKeyPhrases(KeyPhrasesT&& value) { m_keyPhrasesHasBeenSet = true; m_keyPhrases.emplace_back(std::forward<KeyPhrasesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
     Aws::Vector<KeyPhrase> m_keyPhrases;

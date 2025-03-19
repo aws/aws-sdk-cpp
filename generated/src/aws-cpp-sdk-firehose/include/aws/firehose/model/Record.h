@@ -31,7 +31,7 @@ namespace Model
   class Record
   {
   public:
-    AWS_FIREHOSE_API Record();
+    AWS_FIREHOSE_API Record() = default;
     AWS_FIREHOSE_API Record(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,16 @@ namespace Model
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
      * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    Record& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
   };
 

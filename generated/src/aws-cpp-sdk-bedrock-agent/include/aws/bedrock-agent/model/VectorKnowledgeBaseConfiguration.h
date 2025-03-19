@@ -34,7 +34,7 @@ namespace Model
   class VectorKnowledgeBaseConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API VectorKnowledgeBaseConfiguration();
+    AWS_BEDROCKAGENT_API VectorKnowledgeBaseConfiguration() = default;
     AWS_BEDROCKAGENT_API VectorKnowledgeBaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API VectorKnowledgeBaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings
      * for the knowledge base.</p>
      */
-    inline const Aws::String& GetEmbeddingModelArn() const{ return m_embeddingModelArn; }
+    inline const Aws::String& GetEmbeddingModelArn() const { return m_embeddingModelArn; }
     inline bool EmbeddingModelArnHasBeenSet() const { return m_embeddingModelArnHasBeenSet; }
-    inline void SetEmbeddingModelArn(const Aws::String& value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn = value; }
-    inline void SetEmbeddingModelArn(Aws::String&& value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn = std::move(value); }
-    inline void SetEmbeddingModelArn(const char* value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn.assign(value); }
-    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(const Aws::String& value) { SetEmbeddingModelArn(value); return *this;}
-    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(Aws::String&& value) { SetEmbeddingModelArn(std::move(value)); return *this;}
-    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(const char* value) { SetEmbeddingModelArn(value); return *this;}
+    template<typename EmbeddingModelArnT = Aws::String>
+    void SetEmbeddingModelArn(EmbeddingModelArnT&& value) { m_embeddingModelArnHasBeenSet = true; m_embeddingModelArn = std::forward<EmbeddingModelArnT>(value); }
+    template<typename EmbeddingModelArnT = Aws::String>
+    VectorKnowledgeBaseConfiguration& WithEmbeddingModelArn(EmbeddingModelArnT&& value) { SetEmbeddingModelArn(std::forward<EmbeddingModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>The embeddings model configuration details for the vector model used in
      * Knowledge Base.</p>
      */
-    inline const EmbeddingModelConfiguration& GetEmbeddingModelConfiguration() const{ return m_embeddingModelConfiguration; }
+    inline const EmbeddingModelConfiguration& GetEmbeddingModelConfiguration() const { return m_embeddingModelConfiguration; }
     inline bool EmbeddingModelConfigurationHasBeenSet() const { return m_embeddingModelConfigurationHasBeenSet; }
-    inline void SetEmbeddingModelConfiguration(const EmbeddingModelConfiguration& value) { m_embeddingModelConfigurationHasBeenSet = true; m_embeddingModelConfiguration = value; }
-    inline void SetEmbeddingModelConfiguration(EmbeddingModelConfiguration&& value) { m_embeddingModelConfigurationHasBeenSet = true; m_embeddingModelConfiguration = std::move(value); }
-    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(const EmbeddingModelConfiguration& value) { SetEmbeddingModelConfiguration(value); return *this;}
-    inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(EmbeddingModelConfiguration&& value) { SetEmbeddingModelConfiguration(std::move(value)); return *this;}
+    template<typename EmbeddingModelConfigurationT = EmbeddingModelConfiguration>
+    void SetEmbeddingModelConfiguration(EmbeddingModelConfigurationT&& value) { m_embeddingModelConfigurationHasBeenSet = true; m_embeddingModelConfiguration = std::forward<EmbeddingModelConfigurationT>(value); }
+    template<typename EmbeddingModelConfigurationT = EmbeddingModelConfiguration>
+    VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(EmbeddingModelConfigurationT&& value) { SetEmbeddingModelConfiguration(std::forward<EmbeddingModelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,12 @@ namespace Model
      * can also be used in generation when using <a
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
      */
-    inline const SupplementalDataStorageConfiguration& GetSupplementalDataStorageConfiguration() const{ return m_supplementalDataStorageConfiguration; }
+    inline const SupplementalDataStorageConfiguration& GetSupplementalDataStorageConfiguration() const { return m_supplementalDataStorageConfiguration; }
     inline bool SupplementalDataStorageConfigurationHasBeenSet() const { return m_supplementalDataStorageConfigurationHasBeenSet; }
-    inline void SetSupplementalDataStorageConfiguration(const SupplementalDataStorageConfiguration& value) { m_supplementalDataStorageConfigurationHasBeenSet = true; m_supplementalDataStorageConfiguration = value; }
-    inline void SetSupplementalDataStorageConfiguration(SupplementalDataStorageConfiguration&& value) { m_supplementalDataStorageConfigurationHasBeenSet = true; m_supplementalDataStorageConfiguration = std::move(value); }
-    inline VectorKnowledgeBaseConfiguration& WithSupplementalDataStorageConfiguration(const SupplementalDataStorageConfiguration& value) { SetSupplementalDataStorageConfiguration(value); return *this;}
-    inline VectorKnowledgeBaseConfiguration& WithSupplementalDataStorageConfiguration(SupplementalDataStorageConfiguration&& value) { SetSupplementalDataStorageConfiguration(std::move(value)); return *this;}
+    template<typename SupplementalDataStorageConfigurationT = SupplementalDataStorageConfiguration>
+    void SetSupplementalDataStorageConfiguration(SupplementalDataStorageConfigurationT&& value) { m_supplementalDataStorageConfigurationHasBeenSet = true; m_supplementalDataStorageConfiguration = std::forward<SupplementalDataStorageConfigurationT>(value); }
+    template<typename SupplementalDataStorageConfigurationT = SupplementalDataStorageConfiguration>
+    VectorKnowledgeBaseConfiguration& WithSupplementalDataStorageConfiguration(SupplementalDataStorageConfigurationT&& value) { SetSupplementalDataStorageConfiguration(std::forward<SupplementalDataStorageConfigurationT>(value)); return *this;}
     ///@}
   private:
 

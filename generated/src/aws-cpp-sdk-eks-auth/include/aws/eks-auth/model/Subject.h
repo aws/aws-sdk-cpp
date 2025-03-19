@@ -32,7 +32,7 @@ namespace Model
   class Subject
   {
   public:
-    AWS_EKSAUTH_API Subject();
+    AWS_EKSAUTH_API Subject() = default;
     AWS_EKSAUTH_API Subject(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKSAUTH_API Subject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKSAUTH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * association in. The service account and the pods that use the service account
      * must be in this namespace.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline Subject& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline Subject& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline Subject& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    Subject& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The name of the Kubernetes service account inside the cluster to associate
      * the IAM credentials with.</p>
      */
-    inline const Aws::String& GetServiceAccount() const{ return m_serviceAccount; }
+    inline const Aws::String& GetServiceAccount() const { return m_serviceAccount; }
     inline bool ServiceAccountHasBeenSet() const { return m_serviceAccountHasBeenSet; }
-    inline void SetServiceAccount(const Aws::String& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = value; }
-    inline void SetServiceAccount(Aws::String&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::move(value); }
-    inline void SetServiceAccount(const char* value) { m_serviceAccountHasBeenSet = true; m_serviceAccount.assign(value); }
-    inline Subject& WithServiceAccount(const Aws::String& value) { SetServiceAccount(value); return *this;}
-    inline Subject& WithServiceAccount(Aws::String&& value) { SetServiceAccount(std::move(value)); return *this;}
-    inline Subject& WithServiceAccount(const char* value) { SetServiceAccount(value); return *this;}
+    template<typename ServiceAccountT = Aws::String>
+    void SetServiceAccount(ServiceAccountT&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::forward<ServiceAccountT>(value); }
+    template<typename ServiceAccountT = Aws::String>
+    Subject& WithServiceAccount(ServiceAccountT&& value) { SetServiceAccount(std::forward<ServiceAccountT>(value)); return *this;}
     ///@}
   private:
 

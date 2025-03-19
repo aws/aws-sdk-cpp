@@ -33,7 +33,7 @@ namespace Model
   class AudioTrackSelection
   {
   public:
-    AWS_MEDIALIVE_API AudioTrackSelection();
+    AWS_MEDIALIVE_API AudioTrackSelection() = default;
     AWS_MEDIALIVE_API AudioTrackSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioTrackSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * Selects one or more unique audio tracks from within a source.
      */
-    inline const Aws::Vector<AudioTrack>& GetTracks() const{ return m_tracks; }
+    inline const Aws::Vector<AudioTrack>& GetTracks() const { return m_tracks; }
     inline bool TracksHasBeenSet() const { return m_tracksHasBeenSet; }
-    inline void SetTracks(const Aws::Vector<AudioTrack>& value) { m_tracksHasBeenSet = true; m_tracks = value; }
-    inline void SetTracks(Aws::Vector<AudioTrack>&& value) { m_tracksHasBeenSet = true; m_tracks = std::move(value); }
-    inline AudioTrackSelection& WithTracks(const Aws::Vector<AudioTrack>& value) { SetTracks(value); return *this;}
-    inline AudioTrackSelection& WithTracks(Aws::Vector<AudioTrack>&& value) { SetTracks(std::move(value)); return *this;}
-    inline AudioTrackSelection& AddTracks(const AudioTrack& value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
-    inline AudioTrackSelection& AddTracks(AudioTrack&& value) { m_tracksHasBeenSet = true; m_tracks.push_back(std::move(value)); return *this; }
+    template<typename TracksT = Aws::Vector<AudioTrack>>
+    void SetTracks(TracksT&& value) { m_tracksHasBeenSet = true; m_tracks = std::forward<TracksT>(value); }
+    template<typename TracksT = Aws::Vector<AudioTrack>>
+    AudioTrackSelection& WithTracks(TracksT&& value) { SetTracks(std::forward<TracksT>(value)); return *this;}
+    template<typename TracksT = AudioTrack>
+    AudioTrackSelection& AddTracks(TracksT&& value) { m_tracksHasBeenSet = true; m_tracks.emplace_back(std::forward<TracksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * Configure decoding options for Dolby E streams - these should be Dolby E frames
      * carried in PCM streams tagged with SMPTE-337
      */
-    inline const AudioDolbyEDecode& GetDolbyEDecode() const{ return m_dolbyEDecode; }
+    inline const AudioDolbyEDecode& GetDolbyEDecode() const { return m_dolbyEDecode; }
     inline bool DolbyEDecodeHasBeenSet() const { return m_dolbyEDecodeHasBeenSet; }
-    inline void SetDolbyEDecode(const AudioDolbyEDecode& value) { m_dolbyEDecodeHasBeenSet = true; m_dolbyEDecode = value; }
-    inline void SetDolbyEDecode(AudioDolbyEDecode&& value) { m_dolbyEDecodeHasBeenSet = true; m_dolbyEDecode = std::move(value); }
-    inline AudioTrackSelection& WithDolbyEDecode(const AudioDolbyEDecode& value) { SetDolbyEDecode(value); return *this;}
-    inline AudioTrackSelection& WithDolbyEDecode(AudioDolbyEDecode&& value) { SetDolbyEDecode(std::move(value)); return *this;}
+    template<typename DolbyEDecodeT = AudioDolbyEDecode>
+    void SetDolbyEDecode(DolbyEDecodeT&& value) { m_dolbyEDecodeHasBeenSet = true; m_dolbyEDecode = std::forward<DolbyEDecodeT>(value); }
+    template<typename DolbyEDecodeT = AudioDolbyEDecode>
+    AudioTrackSelection& WithDolbyEDecode(DolbyEDecodeT&& value) { SetDolbyEDecode(std::forward<DolbyEDecodeT>(value)); return *this;}
     ///@}
   private:
 

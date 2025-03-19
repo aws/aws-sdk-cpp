@@ -28,7 +28,7 @@ namespace Model
   class CreateContainerServiceDeploymentResult
   {
   public:
-    AWS_LIGHTSAIL_API CreateContainerServiceDeploymentResult();
+    AWS_LIGHTSAIL_API CreateContainerServiceDeploymentResult() = default;
     AWS_LIGHTSAIL_API CreateContainerServiceDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API CreateContainerServiceDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object that describes a container service.</p>
      */
-    inline const ContainerService& GetContainerService() const{ return m_containerService; }
-    inline void SetContainerService(const ContainerService& value) { m_containerService = value; }
-    inline void SetContainerService(ContainerService&& value) { m_containerService = std::move(value); }
-    inline CreateContainerServiceDeploymentResult& WithContainerService(const ContainerService& value) { SetContainerService(value); return *this;}
-    inline CreateContainerServiceDeploymentResult& WithContainerService(ContainerService&& value) { SetContainerService(std::move(value)); return *this;}
+    inline const ContainerService& GetContainerService() const { return m_containerService; }
+    template<typename ContainerServiceT = ContainerService>
+    void SetContainerService(ContainerServiceT&& value) { m_containerServiceHasBeenSet = true; m_containerService = std::forward<ContainerServiceT>(value); }
+    template<typename ContainerServiceT = ContainerService>
+    CreateContainerServiceDeploymentResult& WithContainerService(ContainerServiceT&& value) { SetContainerService(std::forward<ContainerServiceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContainerServiceDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContainerServiceDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContainerServiceDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContainerServiceDeploymentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContainerService m_containerService;
+    bool m_containerServiceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

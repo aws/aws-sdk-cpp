@@ -32,7 +32,7 @@ namespace Model
   class LaunchTemplateAndOverridesResponse
   {
   public:
-    AWS_EC2_API LaunchTemplateAndOverridesResponse();
+    AWS_EC2_API LaunchTemplateAndOverridesResponse() = default;
     AWS_EC2_API LaunchTemplateAndOverridesResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateAndOverridesResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The launch template.</p>
      */
-    inline const FleetLaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
+    inline const FleetLaunchTemplateSpecification& GetLaunchTemplateSpecification() const { return m_launchTemplateSpecification; }
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
-    inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
-    inline void SetLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
-    inline LaunchTemplateAndOverridesResponse& WithLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
-    inline LaunchTemplateAndOverridesResponse& WithLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+    template<typename LaunchTemplateSpecificationT = FleetLaunchTemplateSpecification>
+    void SetLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::forward<LaunchTemplateSpecificationT>(value); }
+    template<typename LaunchTemplateSpecificationT = FleetLaunchTemplateSpecification>
+    LaunchTemplateAndOverridesResponse& WithLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { SetLaunchTemplateSpecification(std::forward<LaunchTemplateSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Any parameters that you specify override the same parameters in the launch
      * template.</p>
      */
-    inline const FleetLaunchTemplateOverrides& GetOverrides() const{ return m_overrides; }
+    inline const FleetLaunchTemplateOverrides& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const FleetLaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(FleetLaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline LaunchTemplateAndOverridesResponse& WithOverrides(const FleetLaunchTemplateOverrides& value) { SetOverrides(value); return *this;}
-    inline LaunchTemplateAndOverridesResponse& WithOverrides(FleetLaunchTemplateOverrides&& value) { SetOverrides(std::move(value)); return *this;}
+    template<typename OverridesT = FleetLaunchTemplateOverrides>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = FleetLaunchTemplateOverrides>
+    LaunchTemplateAndOverridesResponse& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
     ///@}
   private:
 

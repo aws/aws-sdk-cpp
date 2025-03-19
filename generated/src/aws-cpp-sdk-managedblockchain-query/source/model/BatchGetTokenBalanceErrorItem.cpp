@@ -18,19 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-BatchGetTokenBalanceErrorItem::BatchGetTokenBalanceErrorItem() : 
-    m_tokenIdentifierHasBeenSet(false),
-    m_ownerIdentifierHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorType(ErrorType::NOT_SET),
-    m_errorTypeHasBeenSet(false)
-{
-}
-
 BatchGetTokenBalanceErrorItem::BatchGetTokenBalanceErrorItem(JsonView jsonValue)
-  : BatchGetTokenBalanceErrorItem()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BatchGetTokenBalanceErrorItem& BatchGetTokenBalanceErrorItem::operator =(JsonVie
   if(jsonValue.ValueExists("tokenIdentifier"))
   {
     m_tokenIdentifier = jsonValue.GetObject("tokenIdentifier");
-
     m_tokenIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerIdentifier"))
   {
     m_ownerIdentifier = jsonValue.GetObject("ownerIdentifier");
-
     m_ownerIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("atBlockchainInstant"))
   {
     m_atBlockchainInstant = jsonValue.GetObject("atBlockchainInstant");
-
     m_atBlockchainInstantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorType"))
   {
     m_errorType = ErrorTypeMapper::GetErrorTypeForName(jsonValue.GetString("errorType"));
-
     m_errorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

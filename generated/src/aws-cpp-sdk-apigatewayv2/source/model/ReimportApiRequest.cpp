@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ReimportApiRequest::ReimportApiRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_basepathHasBeenSet(false),
-    m_failOnWarnings(false),
-    m_failOnWarningsHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
-{
-}
-
 Aws::String ReimportApiRequest::SerializePayload() const
 {
   JsonValue payload;

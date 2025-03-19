@@ -24,7 +24,7 @@ namespace Model
   class QueryListsRequest : public EC2ProtocolRequest
   {
   public:
-    AWS_EC2PROTOCOL_API QueryListsRequest();
+    AWS_EC2PROTOCOL_API QueryListsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,63 +41,60 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetListArg() const{ return m_listArg; }
+    inline const Aws::Vector<Aws::String>& GetListArg() const { return m_listArg; }
     inline bool ListArgHasBeenSet() const { return m_listArgHasBeenSet; }
-    inline void SetListArg(const Aws::Vector<Aws::String>& value) { m_listArgHasBeenSet = true; m_listArg = value; }
-    inline void SetListArg(Aws::Vector<Aws::String>&& value) { m_listArgHasBeenSet = true; m_listArg = std::move(value); }
-    inline QueryListsRequest& WithListArg(const Aws::Vector<Aws::String>& value) { SetListArg(value); return *this;}
-    inline QueryListsRequest& WithListArg(Aws::Vector<Aws::String>&& value) { SetListArg(std::move(value)); return *this;}
-    inline QueryListsRequest& AddListArg(const Aws::String& value) { m_listArgHasBeenSet = true; m_listArg.push_back(value); return *this; }
-    inline QueryListsRequest& AddListArg(Aws::String&& value) { m_listArgHasBeenSet = true; m_listArg.push_back(std::move(value)); return *this; }
-    inline QueryListsRequest& AddListArg(const char* value) { m_listArgHasBeenSet = true; m_listArg.push_back(value); return *this; }
+    template<typename ListArgT = Aws::Vector<Aws::String>>
+    void SetListArg(ListArgT&& value) { m_listArgHasBeenSet = true; m_listArg = std::forward<ListArgT>(value); }
+    template<typename ListArgT = Aws::Vector<Aws::String>>
+    QueryListsRequest& WithListArg(ListArgT&& value) { SetListArg(std::forward<ListArgT>(value)); return *this;}
+    template<typename ListArgT = Aws::String>
+    QueryListsRequest& AddListArg(ListArgT&& value) { m_listArgHasBeenSet = true; m_listArg.emplace_back(std::forward<ListArgT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<GreetingStruct>& GetComplexListArg() const{ return m_complexListArg; }
+    inline const Aws::Vector<GreetingStruct>& GetComplexListArg() const { return m_complexListArg; }
     inline bool ComplexListArgHasBeenSet() const { return m_complexListArgHasBeenSet; }
-    inline void SetComplexListArg(const Aws::Vector<GreetingStruct>& value) { m_complexListArgHasBeenSet = true; m_complexListArg = value; }
-    inline void SetComplexListArg(Aws::Vector<GreetingStruct>&& value) { m_complexListArgHasBeenSet = true; m_complexListArg = std::move(value); }
-    inline QueryListsRequest& WithComplexListArg(const Aws::Vector<GreetingStruct>& value) { SetComplexListArg(value); return *this;}
-    inline QueryListsRequest& WithComplexListArg(Aws::Vector<GreetingStruct>&& value) { SetComplexListArg(std::move(value)); return *this;}
-    inline QueryListsRequest& AddComplexListArg(const GreetingStruct& value) { m_complexListArgHasBeenSet = true; m_complexListArg.push_back(value); return *this; }
-    inline QueryListsRequest& AddComplexListArg(GreetingStruct&& value) { m_complexListArgHasBeenSet = true; m_complexListArg.push_back(std::move(value)); return *this; }
+    template<typename ComplexListArgT = Aws::Vector<GreetingStruct>>
+    void SetComplexListArg(ComplexListArgT&& value) { m_complexListArgHasBeenSet = true; m_complexListArg = std::forward<ComplexListArgT>(value); }
+    template<typename ComplexListArgT = Aws::Vector<GreetingStruct>>
+    QueryListsRequest& WithComplexListArg(ComplexListArgT&& value) { SetComplexListArg(std::forward<ComplexListArgT>(value)); return *this;}
+    template<typename ComplexListArgT = GreetingStruct>
+    QueryListsRequest& AddComplexListArg(ComplexListArgT&& value) { m_complexListArgHasBeenSet = true; m_complexListArg.emplace_back(std::forward<ComplexListArgT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetListArgWithXmlNameMember() const{ return m_listArgWithXmlNameMember; }
+    inline const Aws::Vector<Aws::String>& GetListArgWithXmlNameMember() const { return m_listArgWithXmlNameMember; }
     inline bool ListArgWithXmlNameMemberHasBeenSet() const { return m_listArgWithXmlNameMemberHasBeenSet; }
-    inline void SetListArgWithXmlNameMember(const Aws::Vector<Aws::String>& value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember = value; }
-    inline void SetListArgWithXmlNameMember(Aws::Vector<Aws::String>&& value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember = std::move(value); }
-    inline QueryListsRequest& WithListArgWithXmlNameMember(const Aws::Vector<Aws::String>& value) { SetListArgWithXmlNameMember(value); return *this;}
-    inline QueryListsRequest& WithListArgWithXmlNameMember(Aws::Vector<Aws::String>&& value) { SetListArgWithXmlNameMember(std::move(value)); return *this;}
-    inline QueryListsRequest& AddListArgWithXmlNameMember(const Aws::String& value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember.push_back(value); return *this; }
-    inline QueryListsRequest& AddListArgWithXmlNameMember(Aws::String&& value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember.push_back(std::move(value)); return *this; }
-    inline QueryListsRequest& AddListArgWithXmlNameMember(const char* value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember.push_back(value); return *this; }
+    template<typename ListArgWithXmlNameMemberT = Aws::Vector<Aws::String>>
+    void SetListArgWithXmlNameMember(ListArgWithXmlNameMemberT&& value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember = std::forward<ListArgWithXmlNameMemberT>(value); }
+    template<typename ListArgWithXmlNameMemberT = Aws::Vector<Aws::String>>
+    QueryListsRequest& WithListArgWithXmlNameMember(ListArgWithXmlNameMemberT&& value) { SetListArgWithXmlNameMember(std::forward<ListArgWithXmlNameMemberT>(value)); return *this;}
+    template<typename ListArgWithXmlNameMemberT = Aws::String>
+    QueryListsRequest& AddListArgWithXmlNameMember(ListArgWithXmlNameMemberT&& value) { m_listArgWithXmlNameMemberHasBeenSet = true; m_listArgWithXmlNameMember.emplace_back(std::forward<ListArgWithXmlNameMemberT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetListArgWithXmlName() const{ return m_listArgWithXmlName; }
+    inline const Aws::Vector<Aws::String>& GetListArgWithXmlName() const { return m_listArgWithXmlName; }
     inline bool ListArgWithXmlNameHasBeenSet() const { return m_listArgWithXmlNameHasBeenSet; }
-    inline void SetListArgWithXmlName(const Aws::Vector<Aws::String>& value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName = value; }
-    inline void SetListArgWithXmlName(Aws::Vector<Aws::String>&& value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName = std::move(value); }
-    inline QueryListsRequest& WithListArgWithXmlName(const Aws::Vector<Aws::String>& value) { SetListArgWithXmlName(value); return *this;}
-    inline QueryListsRequest& WithListArgWithXmlName(Aws::Vector<Aws::String>&& value) { SetListArgWithXmlName(std::move(value)); return *this;}
-    inline QueryListsRequest& AddListArgWithXmlName(const Aws::String& value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName.push_back(value); return *this; }
-    inline QueryListsRequest& AddListArgWithXmlName(Aws::String&& value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName.push_back(std::move(value)); return *this; }
-    inline QueryListsRequest& AddListArgWithXmlName(const char* value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName.push_back(value); return *this; }
+    template<typename ListArgWithXmlNameT = Aws::Vector<Aws::String>>
+    void SetListArgWithXmlName(ListArgWithXmlNameT&& value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName = std::forward<ListArgWithXmlNameT>(value); }
+    template<typename ListArgWithXmlNameT = Aws::Vector<Aws::String>>
+    QueryListsRequest& WithListArgWithXmlName(ListArgWithXmlNameT&& value) { SetListArgWithXmlName(std::forward<ListArgWithXmlNameT>(value)); return *this;}
+    template<typename ListArgWithXmlNameT = Aws::String>
+    QueryListsRequest& AddListArgWithXmlName(ListArgWithXmlNameT&& value) { m_listArgWithXmlNameHasBeenSet = true; m_listArgWithXmlName.emplace_back(std::forward<ListArgWithXmlNameT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const NestedStructWithList& GetNestedWithList() const{ return m_nestedWithList; }
+    inline const NestedStructWithList& GetNestedWithList() const { return m_nestedWithList; }
     inline bool NestedWithListHasBeenSet() const { return m_nestedWithListHasBeenSet; }
-    inline void SetNestedWithList(const NestedStructWithList& value) { m_nestedWithListHasBeenSet = true; m_nestedWithList = value; }
-    inline void SetNestedWithList(NestedStructWithList&& value) { m_nestedWithListHasBeenSet = true; m_nestedWithList = std::move(value); }
-    inline QueryListsRequest& WithNestedWithList(const NestedStructWithList& value) { SetNestedWithList(value); return *this;}
-    inline QueryListsRequest& WithNestedWithList(NestedStructWithList&& value) { SetNestedWithList(std::move(value)); return *this;}
+    template<typename NestedWithListT = NestedStructWithList>
+    void SetNestedWithList(NestedWithListT&& value) { m_nestedWithListHasBeenSet = true; m_nestedWithList = std::forward<NestedWithListT>(value); }
+    template<typename NestedWithListT = NestedStructWithList>
+    QueryListsRequest& WithNestedWithList(NestedWithListT&& value) { SetNestedWithList(std::forward<NestedWithListT>(value)); return *this;}
     ///@}
   private:
 

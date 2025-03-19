@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-LifecycleRuleFilter::LifecycleRuleFilter() : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_andHasBeenSet(false),
-    m_objectSizeGreaterThan(0),
-    m_objectSizeGreaterThanHasBeenSet(false),
-    m_objectSizeLessThan(0),
-    m_objectSizeLessThanHasBeenSet(false)
-{
-}
-
 LifecycleRuleFilter::LifecycleRuleFilter(const XmlNode& xmlNode)
-  : LifecycleRuleFilter()
 {
   *this = xmlNode;
 }

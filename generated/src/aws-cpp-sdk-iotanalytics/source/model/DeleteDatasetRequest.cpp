@@ -12,11 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatasetRequest::DeleteDatasetRequest() : 
-    m_datasetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatasetRequest::SerializePayload() const
 {
   return {};

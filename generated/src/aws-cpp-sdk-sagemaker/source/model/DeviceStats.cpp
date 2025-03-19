@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeviceStats::DeviceStats() : 
-    m_connectedDeviceCount(0),
-    m_connectedDeviceCountHasBeenSet(false),
-    m_registeredDeviceCount(0),
-    m_registeredDeviceCountHasBeenSet(false)
-{
-}
-
 DeviceStats::DeviceStats(JsonView jsonValue)
-  : DeviceStats()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DeviceStats& DeviceStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectedDeviceCount"))
   {
     m_connectedDeviceCount = jsonValue.GetInt64("ConnectedDeviceCount");
-
     m_connectedDeviceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredDeviceCount"))
   {
     m_registeredDeviceCount = jsonValue.GetInt64("RegisteredDeviceCount");
-
     m_registeredDeviceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

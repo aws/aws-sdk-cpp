@@ -18,14 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-TimeFilter::TimeFilter() : 
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 TimeFilter::TimeFilter(JsonView jsonValue)
-  : TimeFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimeFilter& TimeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetObject("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetObject("to");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfacePermission::NetworkInterfacePermission() : 
-    m_networkInterfacePermissionIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_permission(InterfacePermissionType::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_permissionStateHasBeenSet(false)
-{
-}
-
 NetworkInterfacePermission::NetworkInterfacePermission(const XmlNode& xmlNode)
-  : NetworkInterfacePermission()
 {
   *this = xmlNode;
 }
@@ -70,7 +58,7 @@ NetworkInterfacePermission& NetworkInterfacePermission::operator =(const XmlNode
     XmlNode permissionNode = resultNode.FirstChild("permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = InterfacePermissionTypeMapper::GetInterfacePermissionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = InterfacePermissionTypeMapper::GetInterfacePermissionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
     }
     XmlNode permissionStateNode = resultNode.FirstChild("permissionState");

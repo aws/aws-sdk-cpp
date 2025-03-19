@@ -31,7 +31,7 @@ namespace Model
   class UpdateChannelResult
   {
   public:
-    AWS_MEDIAPACKAGE_API UpdateChannelResult();
+    AWS_MEDIAPACKAGE_API UpdateChannelResult() = default;
     AWS_MEDIAPACKAGE_API UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIAPACKAGE_API UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,126 +40,122 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) assigned to the Channel.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateChannelResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The date and time the Channel was created.
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
-    inline UpdateChannelResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline UpdateChannelResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    UpdateChannelResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A short text description of the Channel.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateChannelResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateChannelResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateChannelResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EgressAccessLogs& GetEgressAccessLogs() const{ return m_egressAccessLogs; }
-    inline void SetEgressAccessLogs(const EgressAccessLogs& value) { m_egressAccessLogs = value; }
-    inline void SetEgressAccessLogs(EgressAccessLogs&& value) { m_egressAccessLogs = std::move(value); }
-    inline UpdateChannelResult& WithEgressAccessLogs(const EgressAccessLogs& value) { SetEgressAccessLogs(value); return *this;}
-    inline UpdateChannelResult& WithEgressAccessLogs(EgressAccessLogs&& value) { SetEgressAccessLogs(std::move(value)); return *this;}
+    inline const EgressAccessLogs& GetEgressAccessLogs() const { return m_egressAccessLogs; }
+    template<typename EgressAccessLogsT = EgressAccessLogs>
+    void SetEgressAccessLogs(EgressAccessLogsT&& value) { m_egressAccessLogsHasBeenSet = true; m_egressAccessLogs = std::forward<EgressAccessLogsT>(value); }
+    template<typename EgressAccessLogsT = EgressAccessLogs>
+    UpdateChannelResult& WithEgressAccessLogs(EgressAccessLogsT&& value) { SetEgressAccessLogs(std::forward<EgressAccessLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const HlsIngest& GetHlsIngest() const{ return m_hlsIngest; }
-    inline void SetHlsIngest(const HlsIngest& value) { m_hlsIngest = value; }
-    inline void SetHlsIngest(HlsIngest&& value) { m_hlsIngest = std::move(value); }
-    inline UpdateChannelResult& WithHlsIngest(const HlsIngest& value) { SetHlsIngest(value); return *this;}
-    inline UpdateChannelResult& WithHlsIngest(HlsIngest&& value) { SetHlsIngest(std::move(value)); return *this;}
+    inline const HlsIngest& GetHlsIngest() const { return m_hlsIngest; }
+    template<typename HlsIngestT = HlsIngest>
+    void SetHlsIngest(HlsIngestT&& value) { m_hlsIngestHasBeenSet = true; m_hlsIngest = std::forward<HlsIngestT>(value); }
+    template<typename HlsIngestT = HlsIngest>
+    UpdateChannelResult& WithHlsIngest(HlsIngestT&& value) { SetHlsIngest(std::forward<HlsIngestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the Channel.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateChannelResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateChannelResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateChannelResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IngressAccessLogs& GetIngressAccessLogs() const{ return m_ingressAccessLogs; }
-    inline void SetIngressAccessLogs(const IngressAccessLogs& value) { m_ingressAccessLogs = value; }
-    inline void SetIngressAccessLogs(IngressAccessLogs&& value) { m_ingressAccessLogs = std::move(value); }
-    inline UpdateChannelResult& WithIngressAccessLogs(const IngressAccessLogs& value) { SetIngressAccessLogs(value); return *this;}
-    inline UpdateChannelResult& WithIngressAccessLogs(IngressAccessLogs&& value) { SetIngressAccessLogs(std::move(value)); return *this;}
+    inline const IngressAccessLogs& GetIngressAccessLogs() const { return m_ingressAccessLogs; }
+    template<typename IngressAccessLogsT = IngressAccessLogs>
+    void SetIngressAccessLogs(IngressAccessLogsT&& value) { m_ingressAccessLogsHasBeenSet = true; m_ingressAccessLogs = std::forward<IngressAccessLogsT>(value); }
+    template<typename IngressAccessLogsT = IngressAccessLogs>
+    UpdateChannelResult& WithIngressAccessLogs(IngressAccessLogsT&& value) { SetIngressAccessLogs(std::forward<IngressAccessLogsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline UpdateChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline UpdateChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline UpdateChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateChannelResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    UpdateChannelResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     EgressAccessLogs m_egressAccessLogs;
+    bool m_egressAccessLogsHasBeenSet = false;
 
     HlsIngest m_hlsIngest;
+    bool m_hlsIngestHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     IngressAccessLogs m_ingressAccessLogs;
+    bool m_ingressAccessLogsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

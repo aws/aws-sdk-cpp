@@ -18,22 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-RuleBasedMatchingRequest::RuleBasedMatchingRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_matchingRulesHasBeenSet(false),
-    m_maxAllowedRuleLevelForMerging(0),
-    m_maxAllowedRuleLevelForMergingHasBeenSet(false),
-    m_maxAllowedRuleLevelForMatching(0),
-    m_maxAllowedRuleLevelForMatchingHasBeenSet(false),
-    m_attributeTypesSelectorHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false),
-    m_exportingConfigHasBeenSet(false)
-{
-}
-
 RuleBasedMatchingRequest::RuleBasedMatchingRequest(JsonView jsonValue)
-  : RuleBasedMatchingRequest()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ RuleBasedMatchingRequest& RuleBasedMatchingRequest::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchingRules"))
   {
     Aws::Utils::Array<JsonView> matchingRulesJsonList = jsonValue.GetArray("MatchingRules");
@@ -56,42 +39,31 @@ RuleBasedMatchingRequest& RuleBasedMatchingRequest::operator =(JsonView jsonValu
     }
     m_matchingRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAllowedRuleLevelForMerging"))
   {
     m_maxAllowedRuleLevelForMerging = jsonValue.GetInteger("MaxAllowedRuleLevelForMerging");
-
     m_maxAllowedRuleLevelForMergingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAllowedRuleLevelForMatching"))
   {
     m_maxAllowedRuleLevelForMatching = jsonValue.GetInteger("MaxAllowedRuleLevelForMatching");
-
     m_maxAllowedRuleLevelForMatchingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeTypesSelector"))
   {
     m_attributeTypesSelector = jsonValue.GetObject("AttributeTypesSelector");
-
     m_attributeTypesSelectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConflictResolution"))
   {
     m_conflictResolution = jsonValue.GetObject("ConflictResolution");
-
     m_conflictResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportingConfig"))
   {
     m_exportingConfig = jsonValue.GetObject("ExportingConfig");
-
     m_exportingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

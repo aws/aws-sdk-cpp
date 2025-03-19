@@ -36,7 +36,7 @@ namespace Model
   class AwsElasticBeanstalkEnvironmentDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentDetails();
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentDetails() = default;
     AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,70 +46,60 @@ namespace Model
     /**
      * <p>The name of the application that is associated with the environment.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL to the CNAME for this environment.</p>
      */
-    inline const Aws::String& GetCname() const{ return m_cname; }
+    inline const Aws::String& GetCname() const { return m_cname; }
     inline bool CnameHasBeenSet() const { return m_cnameHasBeenSet; }
-    inline void SetCname(const Aws::String& value) { m_cnameHasBeenSet = true; m_cname = value; }
-    inline void SetCname(Aws::String&& value) { m_cnameHasBeenSet = true; m_cname = std::move(value); }
-    inline void SetCname(const char* value) { m_cnameHasBeenSet = true; m_cname.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithCname(const Aws::String& value) { SetCname(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithCname(Aws::String&& value) { SetCname(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithCname(const char* value) { SetCname(value); return *this;}
+    template<typename CnameT = Aws::String>
+    void SetCname(CnameT&& value) { m_cnameHasBeenSet = true; m_cname = std::forward<CnameT>(value); }
+    template<typename CnameT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithCname(CnameT&& value) { SetCname(std::forward<CnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date for this environment.</p>
      */
-    inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
+    template<typename DateCreatedT = Aws::String>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when this environment was last modified.</p>
      */
-    inline const Aws::String& GetDateUpdated() const{ return m_dateUpdated; }
+    inline const Aws::String& GetDateUpdated() const { return m_dateUpdated; }
     inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
-    inline void SetDateUpdated(const Aws::String& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
-    inline void SetDateUpdated(Aws::String&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::move(value); }
-    inline void SetDateUpdated(const char* value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDateUpdated(const Aws::String& value) { SetDateUpdated(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDateUpdated(Aws::String&& value) { SetDateUpdated(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDateUpdated(const char* value) { SetDateUpdated(value); return *this;}
+    template<typename DateUpdatedT = Aws::String>
+    void SetDateUpdated(DateUpdatedT&& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = std::forward<DateUpdatedT>(value); }
+    template<typename DateUpdatedT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithDateUpdated(DateUpdatedT&& value) { SetDateUpdated(std::forward<DateUpdatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the environment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,112 +107,100 @@ namespace Model
      * <p>For load-balanced, autoscaling environments, the URL to the load balancer.
      * For single-instance environments, the IP address of the instance.</p>
      */
-    inline const Aws::String& GetEndpointUrl() const{ return m_endpointUrl; }
+    inline const Aws::String& GetEndpointUrl() const { return m_endpointUrl; }
     inline bool EndpointUrlHasBeenSet() const { return m_endpointUrlHasBeenSet; }
-    inline void SetEndpointUrl(const Aws::String& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = value; }
-    inline void SetEndpointUrl(Aws::String&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::move(value); }
-    inline void SetEndpointUrl(const char* value) { m_endpointUrlHasBeenSet = true; m_endpointUrl.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEndpointUrl(const Aws::String& value) { SetEndpointUrl(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEndpointUrl(Aws::String&& value) { SetEndpointUrl(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEndpointUrl(const char* value) { SetEndpointUrl(value); return *this;}
+    template<typename EndpointUrlT = Aws::String>
+    void SetEndpointUrl(EndpointUrlT&& value) { m_endpointUrlHasBeenSet = true; m_endpointUrl = std::forward<EndpointUrlT>(value); }
+    template<typename EndpointUrlT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithEndpointUrl(EndpointUrlT&& value) { SetEndpointUrl(std::forward<EndpointUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the environment.</p>
      */
-    inline const Aws::String& GetEnvironmentArn() const{ return m_environmentArn; }
+    inline const Aws::String& GetEnvironmentArn() const { return m_environmentArn; }
     inline bool EnvironmentArnHasBeenSet() const { return m_environmentArnHasBeenSet; }
-    inline void SetEnvironmentArn(const Aws::String& value) { m_environmentArnHasBeenSet = true; m_environmentArn = value; }
-    inline void SetEnvironmentArn(Aws::String&& value) { m_environmentArnHasBeenSet = true; m_environmentArn = std::move(value); }
-    inline void SetEnvironmentArn(const char* value) { m_environmentArnHasBeenSet = true; m_environmentArn.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentArn(const Aws::String& value) { SetEnvironmentArn(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentArn(Aws::String&& value) { SetEnvironmentArn(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
+    template<typename EnvironmentArnT = Aws::String>
+    void SetEnvironmentArn(EnvironmentArnT&& value) { m_environmentArnHasBeenSet = true; m_environmentArn = std::forward<EnvironmentArnT>(value); }
+    template<typename EnvironmentArnT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentArn(EnvironmentArnT&& value) { SetEnvironmentArn(std::forward<EnvironmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the environment.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Links to other environments in the same group.</p>
      */
-    inline const Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>& GetEnvironmentLinks() const{ return m_environmentLinks; }
+    inline const Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>& GetEnvironmentLinks() const { return m_environmentLinks; }
     inline bool EnvironmentLinksHasBeenSet() const { return m_environmentLinksHasBeenSet; }
-    inline void SetEnvironmentLinks(const Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks = value; }
-    inline void SetEnvironmentLinks(Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>&& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks = std::move(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentLinks(const Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>& value) { SetEnvironmentLinks(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentLinks(Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>&& value) { SetEnvironmentLinks(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& AddEnvironmentLinks(const AwsElasticBeanstalkEnvironmentEnvironmentLink& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks.push_back(value); return *this; }
-    inline AwsElasticBeanstalkEnvironmentDetails& AddEnvironmentLinks(AwsElasticBeanstalkEnvironmentEnvironmentLink&& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentLinksT = Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>>
+    void SetEnvironmentLinks(EnvironmentLinksT&& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks = std::forward<EnvironmentLinksT>(value); }
+    template<typename EnvironmentLinksT = Aws::Vector<AwsElasticBeanstalkEnvironmentEnvironmentLink>>
+    AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentLinks(EnvironmentLinksT&& value) { SetEnvironmentLinks(std::forward<EnvironmentLinksT>(value)); return *this;}
+    template<typename EnvironmentLinksT = AwsElasticBeanstalkEnvironmentEnvironmentLink>
+    AwsElasticBeanstalkEnvironmentDetails& AddEnvironmentLinks(EnvironmentLinksT&& value) { m_environmentLinksHasBeenSet = true; m_environmentLinks.emplace_back(std::forward<EnvironmentLinksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the environment.</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration setting for the environment.</p>
      */
-    inline const Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+    inline const Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>& GetOptionSettings() const { return m_optionSettings; }
     inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
-    inline void SetOptionSettings(const Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
-    inline void SetOptionSettings(Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithOptionSettings(const Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>& value) { SetOptionSettings(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithOptionSettings(Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& AddOptionSettings(const AwsElasticBeanstalkEnvironmentOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
-    inline AwsElasticBeanstalkEnvironmentDetails& AddOptionSettings(AwsElasticBeanstalkEnvironmentOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
+    template<typename OptionSettingsT = Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>>
+    void SetOptionSettings(OptionSettingsT&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::forward<OptionSettingsT>(value); }
+    template<typename OptionSettingsT = Aws::Vector<AwsElasticBeanstalkEnvironmentOptionSetting>>
+    AwsElasticBeanstalkEnvironmentDetails& WithOptionSettings(OptionSettingsT&& value) { SetOptionSettings(std::forward<OptionSettingsT>(value)); return *this;}
+    template<typename OptionSettingsT = AwsElasticBeanstalkEnvironmentOptionSetting>
+    AwsElasticBeanstalkEnvironmentDetails& AddOptionSettings(OptionSettingsT&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.emplace_back(std::forward<OptionSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the platform version for the environment.</p>
      */
-    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+    inline const Aws::String& GetPlatformArn() const { return m_platformArn; }
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
-    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
-    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+    template<typename PlatformArnT = Aws::String>
+    void SetPlatformArn(PlatformArnT&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::forward<PlatformArnT>(value); }
+    template<typename PlatformArnT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithPlatformArn(PlatformArnT&& value) { SetPlatformArn(std::forward<PlatformArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the solution stack that is deployed with the environment.</p>
      */
-    inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
+    inline const Aws::String& GetSolutionStackName() const { return m_solutionStackName; }
     inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
-    inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
-    inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+    template<typename SolutionStackNameT = Aws::String>
+    void SetSolutionStackName(SolutionStackNameT&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::forward<SolutionStackNameT>(value); }
+    template<typename SolutionStackNameT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithSolutionStackName(SolutionStackNameT&& value) { SetSolutionStackName(std::forward<SolutionStackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,40 +213,36 @@ namespace Model
      * <code>Terminating</code> </p> </li> <li> <p> <code>Updating</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tier of the environment.</p>
      */
-    inline const AwsElasticBeanstalkEnvironmentTier& GetTier() const{ return m_tier; }
+    inline const AwsElasticBeanstalkEnvironmentTier& GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const AwsElasticBeanstalkEnvironmentTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(AwsElasticBeanstalkEnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithTier(const AwsElasticBeanstalkEnvironmentTier& value) { SetTier(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithTier(AwsElasticBeanstalkEnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
+    template<typename TierT = AwsElasticBeanstalkEnvironmentTier>
+    void SetTier(TierT&& value) { m_tierHasBeenSet = true; m_tier = std::forward<TierT>(value); }
+    template<typename TierT = AwsElasticBeanstalkEnvironmentTier>
+    AwsElasticBeanstalkEnvironmentDetails& WithTier(TierT&& value) { SetTier(std::forward<TierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application version of the environment.</p>
      */
-    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+    inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-    inline AwsElasticBeanstalkEnvironmentDetails& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-    inline AwsElasticBeanstalkEnvironmentDetails& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    template<typename VersionLabelT = Aws::String>
+    void SetVersionLabel(VersionLabelT&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::forward<VersionLabelT>(value); }
+    template<typename VersionLabelT = Aws::String>
+    AwsElasticBeanstalkEnvironmentDetails& WithVersionLabel(VersionLabelT&& value) { SetVersionLabel(std::forward<VersionLabelT>(value)); return *this;}
     ///@}
   private:
 

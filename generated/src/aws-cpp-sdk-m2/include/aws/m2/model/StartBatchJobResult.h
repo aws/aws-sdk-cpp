@@ -27,7 +27,7 @@ namespace Model
   class StartBatchJobResult
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API StartBatchJobResult();
+    AWS_MAINFRAMEMODERNIZATION_API StartBatchJobResult() = default;
     AWS_MAINFRAMEMODERNIZATION_API StartBatchJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAINFRAMEMODERNIZATION_API StartBatchJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of this execution of the batch job.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionId.assign(value); }
-    inline StartBatchJobResult& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline StartBatchJobResult& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline StartBatchJobResult& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    StartBatchJobResult& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartBatchJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartBatchJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartBatchJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartBatchJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_executionId;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

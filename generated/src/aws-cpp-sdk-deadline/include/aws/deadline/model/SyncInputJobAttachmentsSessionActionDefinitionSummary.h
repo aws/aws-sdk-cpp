@@ -31,7 +31,7 @@ namespace Model
   class SyncInputJobAttachmentsSessionActionDefinitionSummary
   {
   public:
-    AWS_DEADLINE_API SyncInputJobAttachmentsSessionActionDefinitionSummary();
+    AWS_DEADLINE_API SyncInputJobAttachmentsSessionActionDefinitionSummary() = default;
     AWS_DEADLINE_API SyncInputJobAttachmentsSessionActionDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API SyncInputJobAttachmentsSessionActionDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The step ID of the step in the job attachment.</p>
      */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline const Aws::String& GetStepId() const { return m_stepId; }
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline SyncInputJobAttachmentsSessionActionDefinitionSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline SyncInputJobAttachmentsSessionActionDefinitionSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline SyncInputJobAttachmentsSessionActionDefinitionSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
+    template<typename StepIdT = Aws::String>
+    void SetStepId(StepIdT&& value) { m_stepIdHasBeenSet = true; m_stepId = std::forward<StepIdT>(value); }
+    template<typename StepIdT = Aws::String>
+    SyncInputJobAttachmentsSessionActionDefinitionSummary& WithStepId(StepIdT&& value) { SetStepId(std::forward<StepIdT>(value)); return *this;}
     ///@}
   private:
 

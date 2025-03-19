@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIGuardrailContentPolicyConfig::AIGuardrailContentPolicyConfig() : 
-    m_filtersConfigHasBeenSet(false)
-{
-}
-
 AIGuardrailContentPolicyConfig::AIGuardrailContentPolicyConfig(JsonView jsonValue)
-  : AIGuardrailContentPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AIGuardrailContentPolicyConfig& AIGuardrailContentPolicyConfig::operator =(JsonV
     }
     m_filtersConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

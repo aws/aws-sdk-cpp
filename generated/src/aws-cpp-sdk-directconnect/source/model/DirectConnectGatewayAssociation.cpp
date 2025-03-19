@@ -18,24 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-DirectConnectGatewayAssociation::DirectConnectGatewayAssociation() : 
-    m_directConnectGatewayIdHasBeenSet(false),
-    m_directConnectGatewayOwnerAccountHasBeenSet(false),
-    m_associationState(DirectConnectGatewayAssociationState::NOT_SET),
-    m_associationStateHasBeenSet(false),
-    m_stateChangeErrorHasBeenSet(false),
-    m_associatedGatewayHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_allowedPrefixesToDirectConnectGatewayHasBeenSet(false),
-    m_associatedCoreNetworkHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false),
-    m_virtualGatewayRegionHasBeenSet(false),
-    m_virtualGatewayOwnerAccountHasBeenSet(false)
-{
-}
-
 DirectConnectGatewayAssociation::DirectConnectGatewayAssociation(JsonView jsonValue)
-  : DirectConnectGatewayAssociation()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ DirectConnectGatewayAssociation& DirectConnectGatewayAssociation::operator =(Jso
   if(jsonValue.ValueExists("directConnectGatewayId"))
   {
     m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-
     m_directConnectGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directConnectGatewayOwnerAccount"))
   {
     m_directConnectGatewayOwnerAccount = jsonValue.GetString("directConnectGatewayOwnerAccount");
-
     m_directConnectGatewayOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationState"))
   {
     m_associationState = DirectConnectGatewayAssociationStateMapper::GetDirectConnectGatewayAssociationStateForName(jsonValue.GetString("associationState"));
-
     m_associationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateChangeError"))
   {
     m_stateChangeError = jsonValue.GetString("stateChangeError");
-
     m_stateChangeErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedGateway"))
   {
     m_associatedGateway = jsonValue.GetObject("associatedGateway");
-
     m_associatedGatewayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationId"))
   {
     m_associationId = jsonValue.GetString("associationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedPrefixesToDirectConnectGateway"))
   {
     Aws::Utils::Array<JsonView> allowedPrefixesToDirectConnectGatewayJsonList = jsonValue.GetArray("allowedPrefixesToDirectConnectGateway");
@@ -93,35 +64,26 @@ DirectConnectGatewayAssociation& DirectConnectGatewayAssociation::operator =(Jso
     }
     m_allowedPrefixesToDirectConnectGatewayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedCoreNetwork"))
   {
     m_associatedCoreNetwork = jsonValue.GetObject("associatedCoreNetwork");
-
     m_associatedCoreNetworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualGatewayId"))
   {
     m_virtualGatewayId = jsonValue.GetString("virtualGatewayId");
-
     m_virtualGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualGatewayRegion"))
   {
     m_virtualGatewayRegion = jsonValue.GetString("virtualGatewayRegion");
-
     m_virtualGatewayRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualGatewayOwnerAccount"))
   {
     m_virtualGatewayOwnerAccount = jsonValue.GetString("virtualGatewayOwnerAccount");
-
     m_virtualGatewayOwnerAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

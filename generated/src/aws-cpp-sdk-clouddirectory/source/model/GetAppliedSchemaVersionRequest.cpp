@@ -12,11 +12,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppliedSchemaVersionRequest::GetAppliedSchemaVersionRequest() : 
-    m_schemaArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAppliedSchemaVersionRequest::SerializePayload() const
 {
   JsonValue payload;

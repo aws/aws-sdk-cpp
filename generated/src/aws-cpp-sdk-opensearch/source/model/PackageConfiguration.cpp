@@ -18,19 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PackageConfiguration::PackageConfiguration() : 
-    m_licenseRequirement(RequirementLevel::NOT_SET),
-    m_licenseRequirementHasBeenSet(false),
-    m_licenseFilepathHasBeenSet(false),
-    m_configurationRequirement(RequirementLevel::NOT_SET),
-    m_configurationRequirementHasBeenSet(false),
-    m_requiresRestartForConfigurationUpdate(false),
-    m_requiresRestartForConfigurationUpdateHasBeenSet(false)
-{
-}
-
 PackageConfiguration::PackageConfiguration(JsonView jsonValue)
-  : PackageConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ PackageConfiguration& PackageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LicenseRequirement"))
   {
     m_licenseRequirement = RequirementLevelMapper::GetRequirementLevelForName(jsonValue.GetString("LicenseRequirement"));
-
     m_licenseRequirementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseFilepath"))
   {
     m_licenseFilepath = jsonValue.GetString("LicenseFilepath");
-
     m_licenseFilepathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationRequirement"))
   {
     m_configurationRequirement = RequirementLevelMapper::GetRequirementLevelForName(jsonValue.GetString("ConfigurationRequirement"));
-
     m_configurationRequirementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiresRestartForConfigurationUpdate"))
   {
     m_requiresRestartForConfigurationUpdate = jsonValue.GetBool("RequiresRestartForConfigurationUpdate");
-
     m_requiresRestartForConfigurationUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

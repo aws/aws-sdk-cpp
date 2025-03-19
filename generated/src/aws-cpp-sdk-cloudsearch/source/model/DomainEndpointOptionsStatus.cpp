@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-DomainEndpointOptionsStatus::DomainEndpointOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DomainEndpointOptionsStatus::DomainEndpointOptionsStatus(const XmlNode& xmlNode)
-  : DomainEndpointOptionsStatus()
 {
   *this = xmlNode;
 }

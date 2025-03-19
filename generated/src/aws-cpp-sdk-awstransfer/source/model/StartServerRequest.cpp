@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartServerRequest::StartServerRequest() : 
-    m_serverIdHasBeenSet(false)
-{
-}
-
 Aws::String StartServerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopEventDataStoreIngestionRequest::StopEventDataStoreIngestionRequest() : 
-    m_eventDataStoreHasBeenSet(false)
-{
-}
-
 Aws::String StopEventDataStoreIngestionRequest::SerializePayload() const
 {
   JsonValue payload;

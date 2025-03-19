@@ -30,7 +30,7 @@ namespace Model
   class GetExecutionPreviewResult
   {
   public:
-    AWS_SSM_API GetExecutionPreviewResult();
+    AWS_SSM_API GetExecutionPreviewResult() = default;
     AWS_SSM_API GetExecutionPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetExecutionPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,35 +39,31 @@ namespace Model
     /**
      * <p>The generated ID for the existing execution preview.</p>
      */
-    inline const Aws::String& GetExecutionPreviewId() const{ return m_executionPreviewId; }
-    inline void SetExecutionPreviewId(const Aws::String& value) { m_executionPreviewId = value; }
-    inline void SetExecutionPreviewId(Aws::String&& value) { m_executionPreviewId = std::move(value); }
-    inline void SetExecutionPreviewId(const char* value) { m_executionPreviewId.assign(value); }
-    inline GetExecutionPreviewResult& WithExecutionPreviewId(const Aws::String& value) { SetExecutionPreviewId(value); return *this;}
-    inline GetExecutionPreviewResult& WithExecutionPreviewId(Aws::String&& value) { SetExecutionPreviewId(std::move(value)); return *this;}
-    inline GetExecutionPreviewResult& WithExecutionPreviewId(const char* value) { SetExecutionPreviewId(value); return *this;}
+    inline const Aws::String& GetExecutionPreviewId() const { return m_executionPreviewId; }
+    template<typename ExecutionPreviewIdT = Aws::String>
+    void SetExecutionPreviewId(ExecutionPreviewIdT&& value) { m_executionPreviewIdHasBeenSet = true; m_executionPreviewId = std::forward<ExecutionPreviewIdT>(value); }
+    template<typename ExecutionPreviewIdT = Aws::String>
+    GetExecutionPreviewResult& WithExecutionPreviewId(ExecutionPreviewIdT&& value) { SetExecutionPreviewId(std::forward<ExecutionPreviewIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A UTC timestamp indicating when the execution preview operation ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
-    inline GetExecutionPreviewResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline GetExecutionPreviewResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    GetExecutionPreviewResult& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the execution preview operation.</p>
      */
-    inline const ExecutionPreviewStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ExecutionPreviewStatus& value) { m_status = value; }
-    inline void SetStatus(ExecutionPreviewStatus&& value) { m_status = std::move(value); }
-    inline GetExecutionPreviewResult& WithStatus(const ExecutionPreviewStatus& value) { SetStatus(value); return *this;}
-    inline GetExecutionPreviewResult& WithStatus(ExecutionPreviewStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ExecutionPreviewStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ExecutionPreviewStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetExecutionPreviewResult& WithStatus(ExecutionPreviewStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -75,47 +71,49 @@ namespace Model
      * <p>Supplemental information about the current status of the execution
      * preview.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetExecutionPreviewResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetExecutionPreviewResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetExecutionPreviewResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetExecutionPreviewResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExecutionPreview& GetExecutionPreview() const{ return m_executionPreview; }
-    inline void SetExecutionPreview(const ExecutionPreview& value) { m_executionPreview = value; }
-    inline void SetExecutionPreview(ExecutionPreview&& value) { m_executionPreview = std::move(value); }
-    inline GetExecutionPreviewResult& WithExecutionPreview(const ExecutionPreview& value) { SetExecutionPreview(value); return *this;}
-    inline GetExecutionPreviewResult& WithExecutionPreview(ExecutionPreview&& value) { SetExecutionPreview(std::move(value)); return *this;}
+    inline const ExecutionPreview& GetExecutionPreview() const { return m_executionPreview; }
+    template<typename ExecutionPreviewT = ExecutionPreview>
+    void SetExecutionPreview(ExecutionPreviewT&& value) { m_executionPreviewHasBeenSet = true; m_executionPreview = std::forward<ExecutionPreviewT>(value); }
+    template<typename ExecutionPreviewT = ExecutionPreview>
+    GetExecutionPreviewResult& WithExecutionPreview(ExecutionPreviewT&& value) { SetExecutionPreview(std::forward<ExecutionPreviewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExecutionPreviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExecutionPreviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExecutionPreviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExecutionPreviewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_executionPreviewId;
+    bool m_executionPreviewIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt;
+    Aws::Utils::DateTime m_endedAt{};
+    bool m_endedAtHasBeenSet = false;
 
-    ExecutionPreviewStatus m_status;
+    ExecutionPreviewStatus m_status{ExecutionPreviewStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     ExecutionPreview m_executionPreview;
+    bool m_executionPreviewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSolutionRequest::UpdateSolutionRequest() : 
-    m_solutionArnHasBeenSet(false),
-    m_performAutoTraining(false),
-    m_performAutoTrainingHasBeenSet(false),
-    m_solutionUpdateConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSolutionRequest::SerializePayload() const
 {
   JsonValue payload;

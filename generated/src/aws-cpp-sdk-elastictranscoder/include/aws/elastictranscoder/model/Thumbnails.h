@@ -31,7 +31,7 @@ namespace Model
   class Thumbnails
   {
   public:
-    AWS_ELASTICTRANSCODER_API Thumbnails();
+    AWS_ELASTICTRANSCODER_API Thumbnails() = default;
     AWS_ELASTICTRANSCODER_API Thumbnails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Thumbnails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <code>png</code>. </p> <p>You specify whether you want Elastic Transcoder to
      * create thumbnails when you create a job.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline Thumbnails& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline Thumbnails& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline Thumbnails& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    Thumbnails& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The approximate number of seconds between thumbnails. Specify an integer
      * value.</p>
      */
-    inline const Aws::String& GetInterval() const{ return m_interval; }
+    inline const Aws::String& GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-    inline void SetInterval(const Aws::String& value) { m_intervalHasBeenSet = true; m_interval = value; }
-    inline void SetInterval(Aws::String&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-    inline void SetInterval(const char* value) { m_intervalHasBeenSet = true; m_interval.assign(value); }
-    inline Thumbnails& WithInterval(const Aws::String& value) { SetInterval(value); return *this;}
-    inline Thumbnails& WithInterval(Aws::String&& value) { SetInterval(std::move(value)); return *this;}
-    inline Thumbnails& WithInterval(const char* value) { SetInterval(value); return *this;}
+    template<typename IntervalT = Aws::String>
+    void SetInterval(IntervalT&& value) { m_intervalHasBeenSet = true; m_interval = std::forward<IntervalT>(value); }
+    template<typename IntervalT = Aws::String>
+    Thumbnails& WithInterval(IntervalT&& value) { SetInterval(std::forward<IntervalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * integers. The values cannot exceed the width and height that you specified in
      * the <code>Video:Resolution</code> object.</p>
      */
-    inline const Aws::String& GetResolution() const{ return m_resolution; }
+    inline const Aws::String& GetResolution() const { return m_resolution; }
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-    inline void SetResolution(const Aws::String& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-    inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-    inline void SetResolution(const char* value) { m_resolutionHasBeenSet = true; m_resolution.assign(value); }
-    inline Thumbnails& WithResolution(const Aws::String& value) { SetResolution(value); return *this;}
-    inline Thumbnails& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
-    inline Thumbnails& WithResolution(const char* value) { SetResolution(value); return *this;}
+    template<typename ResolutionT = Aws::String>
+    void SetResolution(ResolutionT&& value) { m_resolutionHasBeenSet = true; m_resolution = std::forward<ResolutionT>(value); }
+    template<typename ResolutionT = Aws::String>
+    Thumbnails& WithResolution(ResolutionT&& value) { SetResolution(std::forward<ResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,12 @@ namespace Model
      * <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the
      * aspect ratio of the video in the output file.</p>
      */
-    inline const Aws::String& GetAspectRatio() const{ return m_aspectRatio; }
+    inline const Aws::String& GetAspectRatio() const { return m_aspectRatio; }
     inline bool AspectRatioHasBeenSet() const { return m_aspectRatioHasBeenSet; }
-    inline void SetAspectRatio(const Aws::String& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = value; }
-    inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::move(value); }
-    inline void SetAspectRatio(const char* value) { m_aspectRatioHasBeenSet = true; m_aspectRatio.assign(value); }
-    inline Thumbnails& WithAspectRatio(const Aws::String& value) { SetAspectRatio(value); return *this;}
-    inline Thumbnails& WithAspectRatio(Aws::String&& value) { SetAspectRatio(std::move(value)); return *this;}
-    inline Thumbnails& WithAspectRatio(const char* value) { SetAspectRatio(value); return *this;}
+    template<typename AspectRatioT = Aws::String>
+    void SetAspectRatio(AspectRatioT&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::forward<AspectRatioT>(value); }
+    template<typename AspectRatioT = Aws::String>
+    Thumbnails& WithAspectRatio(AspectRatioT&& value) { SetAspectRatio(std::forward<AspectRatioT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric
      * value, enter an even integer between 32 and 4096.</p>
      */
-    inline const Aws::String& GetMaxWidth() const{ return m_maxWidth; }
+    inline const Aws::String& GetMaxWidth() const { return m_maxWidth; }
     inline bool MaxWidthHasBeenSet() const { return m_maxWidthHasBeenSet; }
-    inline void SetMaxWidth(const Aws::String& value) { m_maxWidthHasBeenSet = true; m_maxWidth = value; }
-    inline void SetMaxWidth(Aws::String&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::move(value); }
-    inline void SetMaxWidth(const char* value) { m_maxWidthHasBeenSet = true; m_maxWidth.assign(value); }
-    inline Thumbnails& WithMaxWidth(const Aws::String& value) { SetMaxWidth(value); return *this;}
-    inline Thumbnails& WithMaxWidth(Aws::String&& value) { SetMaxWidth(std::move(value)); return *this;}
-    inline Thumbnails& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
+    template<typename MaxWidthT = Aws::String>
+    void SetMaxWidth(MaxWidthT&& value) { m_maxWidthHasBeenSet = true; m_maxWidth = std::forward<MaxWidthT>(value); }
+    template<typename MaxWidthT = Aws::String>
+    Thumbnails& WithMaxWidth(MaxWidthT&& value) { SetMaxWidth(std::forward<MaxWidthT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +124,12 @@ namespace Model
      * Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric
      * value, enter an even integer between 32 and 3072.</p>
      */
-    inline const Aws::String& GetMaxHeight() const{ return m_maxHeight; }
+    inline const Aws::String& GetMaxHeight() const { return m_maxHeight; }
     inline bool MaxHeightHasBeenSet() const { return m_maxHeightHasBeenSet; }
-    inline void SetMaxHeight(const Aws::String& value) { m_maxHeightHasBeenSet = true; m_maxHeight = value; }
-    inline void SetMaxHeight(Aws::String&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::move(value); }
-    inline void SetMaxHeight(const char* value) { m_maxHeightHasBeenSet = true; m_maxHeight.assign(value); }
-    inline Thumbnails& WithMaxHeight(const Aws::String& value) { SetMaxHeight(value); return *this;}
-    inline Thumbnails& WithMaxHeight(Aws::String&& value) { SetMaxHeight(std::move(value)); return *this;}
-    inline Thumbnails& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+    template<typename MaxHeightT = Aws::String>
+    void SetMaxHeight(MaxHeightT&& value) { m_maxHeightHasBeenSet = true; m_maxHeight = std::forward<MaxHeightT>(value); }
+    template<typename MaxHeightT = Aws::String>
+    Thumbnails& WithMaxHeight(MaxHeightT&& value) { SetMaxHeight(std::forward<MaxHeightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,14 +160,12 @@ namespace Model
      * without dropping below either value. If you specify this option, Elastic
      * Transcoder does not scale thumbnails up.</p> </li> </ul>
      */
-    inline const Aws::String& GetSizingPolicy() const{ return m_sizingPolicy; }
+    inline const Aws::String& GetSizingPolicy() const { return m_sizingPolicy; }
     inline bool SizingPolicyHasBeenSet() const { return m_sizingPolicyHasBeenSet; }
-    inline void SetSizingPolicy(const Aws::String& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
-    inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::move(value); }
-    inline void SetSizingPolicy(const char* value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy.assign(value); }
-    inline Thumbnails& WithSizingPolicy(const Aws::String& value) { SetSizingPolicy(value); return *this;}
-    inline Thumbnails& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(std::move(value)); return *this;}
-    inline Thumbnails& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
+    template<typename SizingPolicyT = Aws::String>
+    void SetSizingPolicy(SizingPolicyT&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = std::forward<SizingPolicyT>(value); }
+    template<typename SizingPolicyT = Aws::String>
+    Thumbnails& WithSizingPolicy(SizingPolicyT&& value) { SetSizingPolicy(std::forward<SizingPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,14 +176,12 @@ namespace Model
      * specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
      * settings.</p>
      */
-    inline const Aws::String& GetPaddingPolicy() const{ return m_paddingPolicy; }
+    inline const Aws::String& GetPaddingPolicy() const { return m_paddingPolicy; }
     inline bool PaddingPolicyHasBeenSet() const { return m_paddingPolicyHasBeenSet; }
-    inline void SetPaddingPolicy(const Aws::String& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = value; }
-    inline void SetPaddingPolicy(Aws::String&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::move(value); }
-    inline void SetPaddingPolicy(const char* value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy.assign(value); }
-    inline Thumbnails& WithPaddingPolicy(const Aws::String& value) { SetPaddingPolicy(value); return *this;}
-    inline Thumbnails& WithPaddingPolicy(Aws::String&& value) { SetPaddingPolicy(std::move(value)); return *this;}
-    inline Thumbnails& WithPaddingPolicy(const char* value) { SetPaddingPolicy(value); return *this;}
+    template<typename PaddingPolicyT = Aws::String>
+    void SetPaddingPolicy(PaddingPolicyT&& value) { m_paddingPolicyHasBeenSet = true; m_paddingPolicy = std::forward<PaddingPolicyT>(value); }
+    template<typename PaddingPolicyT = Aws::String>
+    Thumbnails& WithPaddingPolicy(PaddingPolicyT&& value) { SetPaddingPolicy(std::forward<PaddingPolicyT>(value)); return *this;}
     ///@}
   private:
 

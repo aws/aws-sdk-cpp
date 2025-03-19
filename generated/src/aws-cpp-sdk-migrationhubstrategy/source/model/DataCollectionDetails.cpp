@@ -18,25 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-DataCollectionDetails::DataCollectionDetails() : 
-    m_completionTimeHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_inProgress(0),
-    m_inProgressHasBeenSet(false),
-    m_servers(0),
-    m_serversHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(AssessmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_success(0),
-    m_successHasBeenSet(false)
-{
-}
-
 DataCollectionDetails::DataCollectionDetails(JsonView jsonValue)
-  : DataCollectionDetails()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ DataCollectionDetails& DataCollectionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetDouble("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failed"))
   {
     m_failed = jsonValue.GetInteger("failed");
-
     m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inProgress"))
   {
     m_inProgress = jsonValue.GetInteger("inProgress");
-
     m_inProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("servers"))
   {
     m_servers = jsonValue.GetInteger("servers");
-
     m_serversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AssessmentStatusMapper::GetAssessmentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("success"))
   {
     m_success = jsonValue.GetInteger("success");
-
     m_successHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class BatchDeleteCustomVocabularyItemResult
   {
   public:
-    AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult();
+    AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult() = default;
     AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The identifier of the bot associated with this custom vocabulary.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline BatchDeleteCustomVocabularyItemResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    BatchDeleteCustomVocabularyItemResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * <p>The identifier of the version of the bot associated with this custom
      * vocabulary.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline BatchDeleteCustomVocabularyItemResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    BatchDeleteCustomVocabularyItemResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,13 +65,11 @@ namespace Model
      * see Supported languages
      * (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline BatchDeleteCustomVocabularyItemResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    BatchDeleteCustomVocabularyItemResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,13 +77,13 @@ namespace Model
      * <p>A list of custom vocabulary items that failed to delete during the operation.
      * The reason for the error is contained within each error object.</p>
      */
-    inline const Aws::Vector<FailedCustomVocabularyItem>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<FailedCustomVocabularyItem>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<FailedCustomVocabularyItem>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteCustomVocabularyItemResult& WithErrors(const Aws::Vector<FailedCustomVocabularyItem>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithErrors(Aws::Vector<FailedCustomVocabularyItem>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& AddErrors(const FailedCustomVocabularyItem& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteCustomVocabularyItemResult& AddErrors(FailedCustomVocabularyItem&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedCustomVocabularyItem>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<FailedCustomVocabularyItem>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<FailedCustomVocabularyItem>>
+    BatchDeleteCustomVocabularyItemResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = FailedCustomVocabularyItem>
+    BatchDeleteCustomVocabularyItemResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,38 +91,42 @@ namespace Model
      * <p>A list of custom vocabulary items that were successfully deleted during the
      * operation.</p>
      */
-    inline const Aws::Vector<CustomVocabularyItem>& GetResources() const{ return m_resources; }
-    inline void SetResources(const Aws::Vector<CustomVocabularyItem>& value) { m_resources = value; }
-    inline void SetResources(Aws::Vector<CustomVocabularyItem>&& value) { m_resources = std::move(value); }
-    inline BatchDeleteCustomVocabularyItemResult& WithResources(const Aws::Vector<CustomVocabularyItem>& value) { SetResources(value); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithResources(Aws::Vector<CustomVocabularyItem>&& value) { SetResources(std::move(value)); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& AddResources(const CustomVocabularyItem& value) { m_resources.push_back(value); return *this; }
-    inline BatchDeleteCustomVocabularyItemResult& AddResources(CustomVocabularyItem&& value) { m_resources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomVocabularyItem>& GetResources() const { return m_resources; }
+    template<typename ResourcesT = Aws::Vector<CustomVocabularyItem>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<CustomVocabularyItem>>
+    BatchDeleteCustomVocabularyItemResult& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = CustomVocabularyItem>
+    BatchDeleteCustomVocabularyItemResult& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteCustomVocabularyItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteCustomVocabularyItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteCustomVocabularyItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::Vector<FailedCustomVocabularyItem> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<CustomVocabularyItem> m_resources;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

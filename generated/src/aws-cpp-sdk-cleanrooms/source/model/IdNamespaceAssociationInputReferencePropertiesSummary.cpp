@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-IdNamespaceAssociationInputReferencePropertiesSummary::IdNamespaceAssociationInputReferencePropertiesSummary() : 
-    m_idNamespaceType(IdNamespaceType::NOT_SET),
-    m_idNamespaceTypeHasBeenSet(false)
-{
-}
-
 IdNamespaceAssociationInputReferencePropertiesSummary::IdNamespaceAssociationInputReferencePropertiesSummary(JsonView jsonValue)
-  : IdNamespaceAssociationInputReferencePropertiesSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IdNamespaceAssociationInputReferencePropertiesSummary& IdNamespaceAssociationInp
   if(jsonValue.ValueExists("idNamespaceType"))
   {
     m_idNamespaceType = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("idNamespaceType"));
-
     m_idNamespaceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

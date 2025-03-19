@@ -32,7 +32,7 @@ namespace Model
   class AntipatternSeveritySummary
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternSeveritySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> Contains the count of anti-patterns. </p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline AntipatternSeveritySummary& WithCount(int value) { SetCount(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p> Contains the severity of anti-patterns. </p>
      */
-    inline const Severity& GetSeverity() const{ return m_severity; }
+    inline Severity GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Severity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline AntipatternSeveritySummary& WithSeverity(const Severity& value) { SetSeverity(value); return *this;}
-    inline AntipatternSeveritySummary& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(Severity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline AntipatternSeveritySummary& WithSeverity(Severity value) { SetSeverity(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    Severity m_severity;
+    Severity m_severity{Severity::NOT_SET};
     bool m_severityHasBeenSet = false;
   };
 

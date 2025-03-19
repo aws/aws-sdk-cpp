@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(JsonView jsonValue)
-  : Credentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Credentials& Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   return *this;
 }
 

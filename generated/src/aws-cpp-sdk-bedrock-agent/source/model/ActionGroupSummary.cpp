@@ -18,18 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ActionGroupSummary::ActionGroupSummary() : 
-    m_actionGroupIdHasBeenSet(false),
-    m_actionGroupNameHasBeenSet(false),
-    m_actionGroupState(ActionGroupState::NOT_SET),
-    m_actionGroupStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ActionGroupSummary::ActionGroupSummary(JsonView jsonValue)
-  : ActionGroupSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ActionGroupSummary& ActionGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroupId"))
   {
     m_actionGroupId = jsonValue.GetString("actionGroupId");
-
     m_actionGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionGroupName"))
   {
     m_actionGroupName = jsonValue.GetString("actionGroupName");
-
     m_actionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionGroupState"))
   {
     m_actionGroupState = ActionGroupStateMapper::GetActionGroupStateForName(jsonValue.GetString("actionGroupState"));
-
     m_actionGroupStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

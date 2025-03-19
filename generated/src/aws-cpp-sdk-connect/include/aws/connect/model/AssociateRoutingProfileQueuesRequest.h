@@ -23,7 +23,7 @@ namespace Model
   class AssociateRoutingProfileQueuesRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API AssociateRoutingProfileQueuesRequest();
+    AWS_CONNECT_API AssociateRoutingProfileQueuesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,38 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline AssociateRoutingProfileQueuesRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AssociateRoutingProfileQueuesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AssociateRoutingProfileQueuesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AssociateRoutingProfileQueuesRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the routing profile.</p>
      */
-    inline const Aws::String& GetRoutingProfileId() const{ return m_routingProfileId; }
+    inline const Aws::String& GetRoutingProfileId() const { return m_routingProfileId; }
     inline bool RoutingProfileIdHasBeenSet() const { return m_routingProfileIdHasBeenSet; }
-    inline void SetRoutingProfileId(const Aws::String& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = value; }
-    inline void SetRoutingProfileId(Aws::String&& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = std::move(value); }
-    inline void SetRoutingProfileId(const char* value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId.assign(value); }
-    inline AssociateRoutingProfileQueuesRequest& WithRoutingProfileId(const Aws::String& value) { SetRoutingProfileId(value); return *this;}
-    inline AssociateRoutingProfileQueuesRequest& WithRoutingProfileId(Aws::String&& value) { SetRoutingProfileId(std::move(value)); return *this;}
-    inline AssociateRoutingProfileQueuesRequest& WithRoutingProfileId(const char* value) { SetRoutingProfileId(value); return *this;}
+    template<typename RoutingProfileIdT = Aws::String>
+    void SetRoutingProfileId(RoutingProfileIdT&& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = std::forward<RoutingProfileIdT>(value); }
+    template<typename RoutingProfileIdT = Aws::String>
+    AssociateRoutingProfileQueuesRequest& WithRoutingProfileId(RoutingProfileIdT&& value) { SetRoutingProfileId(std::forward<RoutingProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The queues to associate with this routing profile.</p>
      */
-    inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const{ return m_queueConfigs; }
+    inline const Aws::Vector<RoutingProfileQueueConfig>& GetQueueConfigs() const { return m_queueConfigs; }
     inline bool QueueConfigsHasBeenSet() const { return m_queueConfigsHasBeenSet; }
-    inline void SetQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = value; }
-    inline void SetQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::move(value); }
-    inline AssociateRoutingProfileQueuesRequest& WithQueueConfigs(const Aws::Vector<RoutingProfileQueueConfig>& value) { SetQueueConfigs(value); return *this;}
-    inline AssociateRoutingProfileQueuesRequest& WithQueueConfigs(Aws::Vector<RoutingProfileQueueConfig>&& value) { SetQueueConfigs(std::move(value)); return *this;}
-    inline AssociateRoutingProfileQueuesRequest& AddQueueConfigs(const RoutingProfileQueueConfig& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(value); return *this; }
-    inline AssociateRoutingProfileQueuesRequest& AddQueueConfigs(RoutingProfileQueueConfig&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.push_back(std::move(value)); return *this; }
+    template<typename QueueConfigsT = Aws::Vector<RoutingProfileQueueConfig>>
+    void SetQueueConfigs(QueueConfigsT&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs = std::forward<QueueConfigsT>(value); }
+    template<typename QueueConfigsT = Aws::Vector<RoutingProfileQueueConfig>>
+    AssociateRoutingProfileQueuesRequest& WithQueueConfigs(QueueConfigsT&& value) { SetQueueConfigs(std::forward<QueueConfigsT>(value)); return *this;}
+    template<typename QueueConfigsT = RoutingProfileQueueConfig>
+    AssociateRoutingProfileQueuesRequest& AddQueueConfigs(QueueConfigsT&& value) { m_queueConfigsHasBeenSet = true; m_queueConfigs.emplace_back(std::forward<QueueConfigsT>(value)); return *this; }
     ///@}
   private:
 

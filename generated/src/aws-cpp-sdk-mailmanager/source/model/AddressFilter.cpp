@@ -18,13 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-AddressFilter::AddressFilter() : 
-    m_addressPrefixHasBeenSet(false)
-{
-}
-
 AddressFilter::AddressFilter(JsonView jsonValue)
-  : AddressFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AddressFilter& AddressFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddressPrefix"))
   {
     m_addressPrefix = jsonValue.GetString("AddressPrefix");
-
     m_addressPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

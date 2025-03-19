@@ -31,7 +31,7 @@ namespace Model
   class DNSSECStatus
   {
   public:
-    AWS_ROUTE53_API DNSSECStatus();
+    AWS_ROUTE53_API DNSSECStatus() = default;
     AWS_ROUTE53_API DNSSECStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API DNSSECStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,14 +54,12 @@ namespace Model
      * (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for
      * the hosted zone.</p> </dd> </dl>
      */
-    inline const Aws::String& GetServeSignature() const{ return m_serveSignature; }
+    inline const Aws::String& GetServeSignature() const { return m_serveSignature; }
     inline bool ServeSignatureHasBeenSet() const { return m_serveSignatureHasBeenSet; }
-    inline void SetServeSignature(const Aws::String& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = value; }
-    inline void SetServeSignature(Aws::String&& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = std::move(value); }
-    inline void SetServeSignature(const char* value) { m_serveSignatureHasBeenSet = true; m_serveSignature.assign(value); }
-    inline DNSSECStatus& WithServeSignature(const Aws::String& value) { SetServeSignature(value); return *this;}
-    inline DNSSECStatus& WithServeSignature(Aws::String&& value) { SetServeSignature(std::move(value)); return *this;}
-    inline DNSSECStatus& WithServeSignature(const char* value) { SetServeSignature(value); return *this;}
+    template<typename ServeSignatureT = Aws::String>
+    void SetServeSignature(ServeSignatureT&& value) { m_serveSignatureHasBeenSet = true; m_serveSignature = std::forward<ServeSignatureT>(value); }
+    template<typename ServeSignatureT = Aws::String>
+    DNSSECStatus& WithServeSignature(ServeSignatureT&& value) { SetServeSignature(std::forward<ServeSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <code>INTERNAL_FAILURE</code>. The status message includes information about
      * what the problem might be and steps that you can take to correct the issue.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline DNSSECStatus& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline DNSSECStatus& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline DNSSECStatus& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    DNSSECStatus& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 

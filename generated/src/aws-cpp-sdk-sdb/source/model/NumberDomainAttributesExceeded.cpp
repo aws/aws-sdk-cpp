@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-NumberDomainAttributesExceeded::NumberDomainAttributesExceeded() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 NumberDomainAttributesExceeded::NumberDomainAttributesExceeded(const XmlNode& xmlNode)
-  : NumberDomainAttributesExceeded()
 {
   *this = xmlNode;
 }

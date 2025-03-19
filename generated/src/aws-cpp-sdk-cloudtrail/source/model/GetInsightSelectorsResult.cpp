@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInsightSelectorsResult::GetInsightSelectorsResult()
-{
-}
-
 GetInsightSelectorsResult::GetInsightSelectorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetInsightSelectorsResult& GetInsightSelectorsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("TrailARN"))
   {
     m_trailARN = jsonValue.GetString("TrailARN");
-
+    m_trailARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightSelectors"))
   {
     Aws::Utils::Array<JsonView> insightSelectorsJsonList = jsonValue.GetArray("InsightSelectors");
@@ -42,26 +37,25 @@ GetInsightSelectorsResult& GetInsightSelectorsResult::operator =(const Aws::Amaz
     {
       m_insightSelectors.push_back(insightSelectorsJsonList[insightSelectorsIndex].AsObject());
     }
+    m_insightSelectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDataStoreArn"))
   {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
-
+    m_eventDataStoreArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightsDestination"))
   {
     m_insightsDestination = jsonValue.GetString("InsightsDestination");
-
+    m_insightsDestinationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

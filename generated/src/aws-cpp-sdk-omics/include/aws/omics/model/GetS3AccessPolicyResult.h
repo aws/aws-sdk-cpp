@@ -29,7 +29,7 @@ namespace Model
   class GetS3AccessPolicyResult
   {
   public:
-    AWS_OMICS_API GetS3AccessPolicyResult();
+    AWS_OMICS_API GetS3AccessPolicyResult() = default;
     AWS_OMICS_API GetS3AccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetS3AccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,86 +38,82 @@ namespace Model
     /**
      * <p>The S3 access point ARN that has the access policy.</p>
      */
-    inline const Aws::String& GetS3AccessPointArn() const{ return m_s3AccessPointArn; }
-    inline void SetS3AccessPointArn(const Aws::String& value) { m_s3AccessPointArn = value; }
-    inline void SetS3AccessPointArn(Aws::String&& value) { m_s3AccessPointArn = std::move(value); }
-    inline void SetS3AccessPointArn(const char* value) { m_s3AccessPointArn.assign(value); }
-    inline GetS3AccessPolicyResult& WithS3AccessPointArn(const Aws::String& value) { SetS3AccessPointArn(value); return *this;}
-    inline GetS3AccessPolicyResult& WithS3AccessPointArn(Aws::String&& value) { SetS3AccessPointArn(std::move(value)); return *this;}
-    inline GetS3AccessPolicyResult& WithS3AccessPointArn(const char* value) { SetS3AccessPointArn(value); return *this;}
+    inline const Aws::String& GetS3AccessPointArn() const { return m_s3AccessPointArn; }
+    template<typename S3AccessPointArnT = Aws::String>
+    void SetS3AccessPointArn(S3AccessPointArnT&& value) { m_s3AccessPointArnHasBeenSet = true; m_s3AccessPointArn = std::forward<S3AccessPointArnT>(value); }
+    template<typename S3AccessPointArnT = Aws::String>
+    GetS3AccessPolicyResult& WithS3AccessPointArn(S3AccessPointArnT&& value) { SetS3AccessPointArn(std::forward<S3AccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS-generated Sequence Store or Reference Store ID.</p>
      */
-    inline const Aws::String& GetStoreId() const{ return m_storeId; }
-    inline void SetStoreId(const Aws::String& value) { m_storeId = value; }
-    inline void SetStoreId(Aws::String&& value) { m_storeId = std::move(value); }
-    inline void SetStoreId(const char* value) { m_storeId.assign(value); }
-    inline GetS3AccessPolicyResult& WithStoreId(const Aws::String& value) { SetStoreId(value); return *this;}
-    inline GetS3AccessPolicyResult& WithStoreId(Aws::String&& value) { SetStoreId(std::move(value)); return *this;}
-    inline GetS3AccessPolicyResult& WithStoreId(const char* value) { SetStoreId(value); return *this;}
+    inline const Aws::String& GetStoreId() const { return m_storeId; }
+    template<typename StoreIdT = Aws::String>
+    void SetStoreId(StoreIdT&& value) { m_storeIdHasBeenSet = true; m_storeId = std::forward<StoreIdT>(value); }
+    template<typename StoreIdT = Aws::String>
+    GetS3AccessPolicyResult& WithStoreId(StoreIdT&& value) { SetStoreId(std::forward<StoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of store associated with the access point.</p>
      */
-    inline const StoreType& GetStoreType() const{ return m_storeType; }
-    inline void SetStoreType(const StoreType& value) { m_storeType = value; }
-    inline void SetStoreType(StoreType&& value) { m_storeType = std::move(value); }
-    inline GetS3AccessPolicyResult& WithStoreType(const StoreType& value) { SetStoreType(value); return *this;}
-    inline GetS3AccessPolicyResult& WithStoreType(StoreType&& value) { SetStoreType(std::move(value)); return *this;}
+    inline StoreType GetStoreType() const { return m_storeType; }
+    inline void SetStoreType(StoreType value) { m_storeTypeHasBeenSet = true; m_storeType = value; }
+    inline GetS3AccessPolicyResult& WithStoreType(StoreType value) { SetStoreType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the policy was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline GetS3AccessPolicyResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline GetS3AccessPolicyResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetS3AccessPolicyResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current resource policy that controls S3 access on the store.</p>
      */
-    inline const Aws::String& GetS3AccessPolicy() const{ return m_s3AccessPolicy; }
-    inline void SetS3AccessPolicy(const Aws::String& value) { m_s3AccessPolicy = value; }
-    inline void SetS3AccessPolicy(Aws::String&& value) { m_s3AccessPolicy = std::move(value); }
-    inline void SetS3AccessPolicy(const char* value) { m_s3AccessPolicy.assign(value); }
-    inline GetS3AccessPolicyResult& WithS3AccessPolicy(const Aws::String& value) { SetS3AccessPolicy(value); return *this;}
-    inline GetS3AccessPolicyResult& WithS3AccessPolicy(Aws::String&& value) { SetS3AccessPolicy(std::move(value)); return *this;}
-    inline GetS3AccessPolicyResult& WithS3AccessPolicy(const char* value) { SetS3AccessPolicy(value); return *this;}
+    inline const Aws::String& GetS3AccessPolicy() const { return m_s3AccessPolicy; }
+    template<typename S3AccessPolicyT = Aws::String>
+    void SetS3AccessPolicy(S3AccessPolicyT&& value) { m_s3AccessPolicyHasBeenSet = true; m_s3AccessPolicy = std::forward<S3AccessPolicyT>(value); }
+    template<typename S3AccessPolicyT = Aws::String>
+    GetS3AccessPolicyResult& WithS3AccessPolicy(S3AccessPolicyT&& value) { SetS3AccessPolicy(std::forward<S3AccessPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetS3AccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetS3AccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetS3AccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetS3AccessPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s3AccessPointArn;
+    bool m_s3AccessPointArnHasBeenSet = false;
 
     Aws::String m_storeId;
+    bool m_storeIdHasBeenSet = false;
 
-    StoreType m_storeType;
+    StoreType m_storeType{StoreType::NOT_SET};
+    bool m_storeTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_s3AccessPolicy;
+    bool m_s3AccessPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

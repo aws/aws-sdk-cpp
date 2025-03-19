@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MissingConnectionConfigurationFlowValidationDetails::MissingConnectionConfigurationFlowValidationDetails() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 MissingConnectionConfigurationFlowValidationDetails::MissingConnectionConfigurationFlowValidationDetails(JsonView jsonValue)
-  : MissingConnectionConfigurationFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MissingConnectionConfigurationFlowValidationDetails& MissingConnectionConfigurat
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

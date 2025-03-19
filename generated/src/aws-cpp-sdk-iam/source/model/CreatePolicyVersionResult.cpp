@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePolicyVersionResult::CreatePolicyVersionResult()
-{
-}
-
 CreatePolicyVersionResult::CreatePolicyVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreatePolicyVersionResult& CreatePolicyVersionResult::operator =(const Aws::Amaz
     if(!policyVersionNode.IsNull())
     {
       m_policyVersion = policyVersionNode;
+      m_policyVersionHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::CreatePolicyVersionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperbandStrategyConfig::HyperbandStrategyConfig() : 
-    m_minResource(0),
-    m_minResourceHasBeenSet(false),
-    m_maxResource(0),
-    m_maxResourceHasBeenSet(false)
-{
-}
-
 HyperbandStrategyConfig::HyperbandStrategyConfig(JsonView jsonValue)
-  : HyperbandStrategyConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ HyperbandStrategyConfig& HyperbandStrategyConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinResource"))
   {
     m_minResource = jsonValue.GetInteger("MinResource");
-
     m_minResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResource"))
   {
     m_maxResource = jsonValue.GetInteger("MaxResource");
-
     m_maxResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

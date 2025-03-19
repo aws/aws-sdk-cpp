@@ -32,7 +32,7 @@ namespace Model
   class ContainerSummary
   {
   public:
-    AWS_BATCH_API ContainerSummary();
+    AWS_BATCH_API ContainerSummary() = default;
     AWS_BATCH_API ContainerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ContainerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The exit code to return upon completion.</p>
      */
-    inline int GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const { return m_exitCode; }
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
     inline ContainerSummary& WithExitCode(int value) { SetExitCode(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
      * <p>A short (255 max characters) human-readable string to provide additional
      * details for a running or stopped container.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline ContainerSummary& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline ContainerSummary& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline ContainerSummary& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    ContainerSummary& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    int m_exitCode;
+    int m_exitCode{0};
     bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;

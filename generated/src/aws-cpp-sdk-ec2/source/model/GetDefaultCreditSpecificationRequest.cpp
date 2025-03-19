@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetDefaultCreditSpecificationRequest::GetDefaultCreditSpecificationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceFamily(UnlimitedSupportedInstanceFamily::NOT_SET),
-    m_instanceFamilyHasBeenSet(false)
-{
-}
-
 Aws::String GetDefaultCreditSpecificationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

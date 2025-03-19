@@ -13,13 +13,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportCertificateAuthorityCertificateRequest::ImportCertificateAuthorityCertificateRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_certificateChainHasBeenSet(false)
-{
-}
-
 Aws::String ImportCertificateAuthorityCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

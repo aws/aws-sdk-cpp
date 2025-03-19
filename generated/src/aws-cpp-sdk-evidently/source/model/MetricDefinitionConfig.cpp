@@ -18,17 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-MetricDefinitionConfig::MetricDefinitionConfig() : 
-    m_entityIdKeyHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_unitLabelHasBeenSet(false),
-    m_valueKeyHasBeenSet(false)
-{
-}
-
 MetricDefinitionConfig::MetricDefinitionConfig(JsonView jsonValue)
-  : MetricDefinitionConfig()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ MetricDefinitionConfig& MetricDefinitionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entityIdKey"))
   {
     m_entityIdKey = jsonValue.GetString("entityIdKey");
-
     m_entityIdKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventPattern"))
   {
     m_eventPattern = jsonValue.GetString("eventPattern");
-
     m_eventPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unitLabel"))
   {
     m_unitLabel = jsonValue.GetString("unitLabel");
-
     m_unitLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueKey"))
   {
     m_valueKey = jsonValue.GetString("valueKey");
-
     m_valueKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

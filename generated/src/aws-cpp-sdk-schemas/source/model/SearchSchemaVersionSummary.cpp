@@ -18,16 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-SearchSchemaVersionSummary::SearchSchemaVersionSummary() : 
-    m_createdDateHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SearchSchemaVersionSummary::SearchSchemaVersionSummary(JsonView jsonValue)
-  : SearchSchemaVersionSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SearchSchemaVersionSummary& SearchSchemaVersionSummary::operator =(JsonView json
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

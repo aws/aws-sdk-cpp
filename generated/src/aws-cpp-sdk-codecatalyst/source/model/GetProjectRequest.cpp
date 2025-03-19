@@ -12,12 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProjectRequest::GetProjectRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetProjectRequest::SerializePayload() const
 {
   return {};

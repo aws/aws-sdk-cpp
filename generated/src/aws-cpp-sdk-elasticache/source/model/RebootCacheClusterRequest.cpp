@@ -10,12 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-RebootCacheClusterRequest::RebootCacheClusterRequest() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_cacheNodeIdsToRebootHasBeenSet(false)
-{
-}
-
 Aws::String RebootCacheClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

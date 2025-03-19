@@ -35,7 +35,7 @@ namespace Model
   class DescribeReservedNodeOfferingsResult
   {
   public:
-    AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult();
+    AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult() = default;
     AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeReservedNodeOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -49,43 +49,44 @@ namespace Model
      * <code>Marker</code> field is empty, all response records have been retrieved for
      * the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeReservedNodeOfferingsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReservedNodeOfferingsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReservedNodeOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReservedNodeOfferingsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>ReservedNodeOffering</code> objects.</p>
      */
-    inline const Aws::Vector<ReservedNodeOffering>& GetReservedNodeOfferings() const{ return m_reservedNodeOfferings; }
-    inline void SetReservedNodeOfferings(const Aws::Vector<ReservedNodeOffering>& value) { m_reservedNodeOfferings = value; }
-    inline void SetReservedNodeOfferings(Aws::Vector<ReservedNodeOffering>&& value) { m_reservedNodeOfferings = std::move(value); }
-    inline DescribeReservedNodeOfferingsResult& WithReservedNodeOfferings(const Aws::Vector<ReservedNodeOffering>& value) { SetReservedNodeOfferings(value); return *this;}
-    inline DescribeReservedNodeOfferingsResult& WithReservedNodeOfferings(Aws::Vector<ReservedNodeOffering>&& value) { SetReservedNodeOfferings(std::move(value)); return *this;}
-    inline DescribeReservedNodeOfferingsResult& AddReservedNodeOfferings(const ReservedNodeOffering& value) { m_reservedNodeOfferings.push_back(value); return *this; }
-    inline DescribeReservedNodeOfferingsResult& AddReservedNodeOfferings(ReservedNodeOffering&& value) { m_reservedNodeOfferings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedNodeOffering>& GetReservedNodeOfferings() const { return m_reservedNodeOfferings; }
+    template<typename ReservedNodeOfferingsT = Aws::Vector<ReservedNodeOffering>>
+    void SetReservedNodeOfferings(ReservedNodeOfferingsT&& value) { m_reservedNodeOfferingsHasBeenSet = true; m_reservedNodeOfferings = std::forward<ReservedNodeOfferingsT>(value); }
+    template<typename ReservedNodeOfferingsT = Aws::Vector<ReservedNodeOffering>>
+    DescribeReservedNodeOfferingsResult& WithReservedNodeOfferings(ReservedNodeOfferingsT&& value) { SetReservedNodeOfferings(std::forward<ReservedNodeOfferingsT>(value)); return *this;}
+    template<typename ReservedNodeOfferingsT = ReservedNodeOffering>
+    DescribeReservedNodeOfferingsResult& AddReservedNodeOfferings(ReservedNodeOfferingsT&& value) { m_reservedNodeOfferingsHasBeenSet = true; m_reservedNodeOfferings.emplace_back(std::forward<ReservedNodeOfferingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeReservedNodeOfferingsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeReservedNodeOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeReservedNodeOfferingsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<ReservedNodeOffering> m_reservedNodeOfferings;
+    bool m_reservedNodeOfferingsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

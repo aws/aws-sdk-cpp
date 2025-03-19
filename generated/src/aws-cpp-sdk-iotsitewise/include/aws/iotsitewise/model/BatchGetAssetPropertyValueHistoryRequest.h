@@ -23,7 +23,7 @@ namespace Model
   class BatchGetAssetPropertyValueHistoryRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryRequest();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,26 @@ namespace Model
      * <p>The list of asset property historical value entries for the batch get
      * request. You can specify up to 16 entries per request.</p>
      */
-    inline const Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline BatchGetAssetPropertyValueHistoryRequest& WithEntries(const Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>& value) { SetEntries(value); return *this;}
-    inline BatchGetAssetPropertyValueHistoryRequest& WithEntries(Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyValueHistoryRequest& AddEntries(const BatchGetAssetPropertyValueHistoryEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline BatchGetAssetPropertyValueHistoryRequest& AddEntries(BatchGetAssetPropertyValueHistoryEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<BatchGetAssetPropertyValueHistoryEntry>>
+    BatchGetAssetPropertyValueHistoryRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = BatchGetAssetPropertyValueHistoryEntry>
+    BatchGetAssetPropertyValueHistoryRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to be used for the next set of paginated results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchGetAssetPropertyValueHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchGetAssetPropertyValueHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyValueHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchGetAssetPropertyValueHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +69,7 @@ namespace Model
      * points in the result set is equal to the value of <code>maxResults</code>. The
      * maximum value of <code>maxResults</code> is 20000.</p> </li> </ul>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline BatchGetAssetPropertyValueHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

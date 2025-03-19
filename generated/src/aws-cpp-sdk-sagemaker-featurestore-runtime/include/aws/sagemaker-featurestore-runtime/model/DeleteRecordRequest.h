@@ -28,7 +28,7 @@ namespace Model
   class DeleteRecordRequest : public SageMakerFeatureStoreRuntimeRequest
   {
   public:
-    AWS_SAGEMAKERFEATURESTORERUNTIME_API DeleteRecordRequest();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API DeleteRecordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the feature group to delete the
      * record from. </p>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline DeleteRecordRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline DeleteRecordRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline DeleteRecordRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    DeleteRecordRequest& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the
      * record, in string format. </p>
      */
-    inline const Aws::String& GetRecordIdentifierValueAsString() const{ return m_recordIdentifierValueAsString; }
+    inline const Aws::String& GetRecordIdentifierValueAsString() const { return m_recordIdentifierValueAsString; }
     inline bool RecordIdentifierValueAsStringHasBeenSet() const { return m_recordIdentifierValueAsStringHasBeenSet; }
-    inline void SetRecordIdentifierValueAsString(const Aws::String& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = value; }
-    inline void SetRecordIdentifierValueAsString(Aws::String&& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = std::move(value); }
-    inline void SetRecordIdentifierValueAsString(const char* value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString.assign(value); }
-    inline DeleteRecordRequest& WithRecordIdentifierValueAsString(const Aws::String& value) { SetRecordIdentifierValueAsString(value); return *this;}
-    inline DeleteRecordRequest& WithRecordIdentifierValueAsString(Aws::String&& value) { SetRecordIdentifierValueAsString(std::move(value)); return *this;}
-    inline DeleteRecordRequest& WithRecordIdentifierValueAsString(const char* value) { SetRecordIdentifierValueAsString(value); return *this;}
+    template<typename RecordIdentifierValueAsStringT = Aws::String>
+    void SetRecordIdentifierValueAsString(RecordIdentifierValueAsStringT&& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = std::forward<RecordIdentifierValueAsStringT>(value); }
+    template<typename RecordIdentifierValueAsStringT = Aws::String>
+    DeleteRecordRequest& WithRecordIdentifierValueAsString(RecordIdentifierValueAsStringT&& value) { SetRecordIdentifierValueAsString(std::forward<RecordIdentifierValueAsStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code>
      * can be used to query data at a certain point in time.</p>
      */
-    inline const Aws::String& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::String& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::String& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::String&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline void SetEventTime(const char* value) { m_eventTimeHasBeenSet = true; m_eventTime.assign(value); }
-    inline DeleteRecordRequest& WithEventTime(const Aws::String& value) { SetEventTime(value); return *this;}
-    inline DeleteRecordRequest& WithEventTime(Aws::String&& value) { SetEventTime(std::move(value)); return *this;}
-    inline DeleteRecordRequest& WithEventTime(const char* value) { SetEventTime(value); return *this;}
+    template<typename EventTimeT = Aws::String>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::String>
+    DeleteRecordRequest& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,13 @@ namespace Model
      * Store deletes the record from all of the stores that you're using for the
      * <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::Vector<TargetStore>& GetTargetStores() const{ return m_targetStores; }
+    inline const Aws::Vector<TargetStore>& GetTargetStores() const { return m_targetStores; }
     inline bool TargetStoresHasBeenSet() const { return m_targetStoresHasBeenSet; }
-    inline void SetTargetStores(const Aws::Vector<TargetStore>& value) { m_targetStoresHasBeenSet = true; m_targetStores = value; }
-    inline void SetTargetStores(Aws::Vector<TargetStore>&& value) { m_targetStoresHasBeenSet = true; m_targetStores = std::move(value); }
-    inline DeleteRecordRequest& WithTargetStores(const Aws::Vector<TargetStore>& value) { SetTargetStores(value); return *this;}
-    inline DeleteRecordRequest& WithTargetStores(Aws::Vector<TargetStore>&& value) { SetTargetStores(std::move(value)); return *this;}
-    inline DeleteRecordRequest& AddTargetStores(const TargetStore& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(value); return *this; }
-    inline DeleteRecordRequest& AddTargetStores(TargetStore&& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(std::move(value)); return *this; }
+    template<typename TargetStoresT = Aws::Vector<TargetStore>>
+    void SetTargetStores(TargetStoresT&& value) { m_targetStoresHasBeenSet = true; m_targetStores = std::forward<TargetStoresT>(value); }
+    template<typename TargetStoresT = Aws::Vector<TargetStore>>
+    DeleteRecordRequest& WithTargetStores(TargetStoresT&& value) { SetTargetStores(std::forward<TargetStoresT>(value)); return *this;}
+    inline DeleteRecordRequest& AddTargetStores(TargetStore value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -107,12 +100,10 @@ namespace Model
      * <p>The name of the deletion mode for deleting the record. By default, the
      * deletion mode is set to <code>SoftDelete</code>.</p>
      */
-    inline const DeletionMode& GetDeletionMode() const{ return m_deletionMode; }
+    inline DeletionMode GetDeletionMode() const { return m_deletionMode; }
     inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
-    inline void SetDeletionMode(const DeletionMode& value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
-    inline void SetDeletionMode(DeletionMode&& value) { m_deletionModeHasBeenSet = true; m_deletionMode = std::move(value); }
-    inline DeleteRecordRequest& WithDeletionMode(const DeletionMode& value) { SetDeletionMode(value); return *this;}
-    inline DeleteRecordRequest& WithDeletionMode(DeletionMode&& value) { SetDeletionMode(std::move(value)); return *this;}
+    inline void SetDeletionMode(DeletionMode value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
+    inline DeleteRecordRequest& WithDeletionMode(DeletionMode value) { SetDeletionMode(value); return *this;}
     ///@}
   private:
 
@@ -128,7 +119,7 @@ namespace Model
     Aws::Vector<TargetStore> m_targetStores;
     bool m_targetStoresHasBeenSet = false;
 
-    DeletionMode m_deletionMode;
+    DeletionMode m_deletionMode{DeletionMode::NOT_SET};
     bool m_deletionModeHasBeenSet = false;
   };
 

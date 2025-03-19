@@ -18,19 +18,7 @@ namespace QApps
 namespace Model
 {
 
-QPluginCardInput::QPluginCardInput() : 
-    m_titleHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(CardType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_promptHasBeenSet(false),
-    m_pluginIdHasBeenSet(false),
-    m_actionIdentifierHasBeenSet(false)
-{
-}
-
 QPluginCardInput::QPluginCardInput(JsonView jsonValue)
-  : QPluginCardInput()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ QPluginCardInput& QPluginCardInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CardTypeMapper::GetCardTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prompt"))
   {
     m_prompt = jsonValue.GetString("prompt");
-
     m_promptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pluginId"))
   {
     m_pluginId = jsonValue.GetString("pluginId");
-
     m_pluginIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionIdentifier"))
   {
     m_actionIdentifier = jsonValue.GetString("actionIdentifier");
-
     m_actionIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

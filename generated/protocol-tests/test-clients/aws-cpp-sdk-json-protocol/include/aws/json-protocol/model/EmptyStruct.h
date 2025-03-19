@@ -24,7 +24,7 @@ namespace Model
   class EmptyStruct
   {
   public:
-    AWS_JSONPROTOCOL_API EmptyStruct();
+    AWS_JSONPROTOCOL_API EmptyStruct() = default;
     AWS_JSONPROTOCOL_API EmptyStruct(Aws::Utils::Json::JsonView jsonValue);
     AWS_JSONPROTOCOL_API EmptyStruct& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_JSONPROTOCOL_API Aws::Utils::Json::JsonValue Jsonize() const;

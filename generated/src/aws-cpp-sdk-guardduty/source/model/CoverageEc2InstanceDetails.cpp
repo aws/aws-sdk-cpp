@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageEc2InstanceDetails::CoverageEc2InstanceDetails() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_agentDetailsHasBeenSet(false),
-    m_managementType(ManagementType::NOT_SET),
-    m_managementTypeHasBeenSet(false)
-{
-}
-
 CoverageEc2InstanceDetails::CoverageEc2InstanceDetails(JsonView jsonValue)
-  : CoverageEc2InstanceDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CoverageEc2InstanceDetails& CoverageEc2InstanceDetails::operator =(JsonView json
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentDetails"))
   {
     m_agentDetails = jsonValue.GetObject("agentDetails");
-
     m_agentDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managementType"))
   {
     m_managementType = ManagementTypeMapper::GetManagementTypeForName(jsonValue.GetString("managementType"));
-
     m_managementTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

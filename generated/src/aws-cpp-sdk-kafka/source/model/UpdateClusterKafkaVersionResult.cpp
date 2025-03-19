@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateClusterKafkaVersionResult::UpdateClusterKafkaVersionResult()
-{
-}
-
 UpdateClusterKafkaVersionResult::UpdateClusterKafkaVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateClusterKafkaVersionResult& UpdateClusterKafkaVersionResult::operator =(con
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterOperationArn"))
   {
     m_clusterOperationArn = jsonValue.GetString("clusterOperationArn");
-
+    m_clusterOperationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

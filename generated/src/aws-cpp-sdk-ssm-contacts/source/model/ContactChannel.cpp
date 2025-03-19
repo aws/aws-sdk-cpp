@@ -18,20 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-ContactChannel::ContactChannel() : 
-    m_contactChannelArnHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_deliveryAddressHasBeenSet(false),
-    m_activationStatus(ActivationStatus::NOT_SET),
-    m_activationStatusHasBeenSet(false)
-{
-}
-
 ContactChannel::ContactChannel(JsonView jsonValue)
-  : ContactChannel()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ContactChannel& ContactChannel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactChannelArn"))
   {
     m_contactChannelArn = jsonValue.GetString("ContactChannelArn");
-
     m_contactChannelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryAddress"))
   {
     m_deliveryAddress = jsonValue.GetObject("DeliveryAddress");
-
     m_deliveryAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivationStatus"))
   {
     m_activationStatus = ActivationStatusMapper::GetActivationStatusForName(jsonValue.GetString("ActivationStatus"));
-
     m_activationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

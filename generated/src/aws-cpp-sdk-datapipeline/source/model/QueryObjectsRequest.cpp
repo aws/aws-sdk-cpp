@@ -12,16 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-QueryObjectsRequest::QueryObjectsRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_sphereHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String QueryObjectsRequest::SerializePayload() const
 {
   JsonValue payload;

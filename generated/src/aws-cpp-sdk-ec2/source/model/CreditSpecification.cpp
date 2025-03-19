@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreditSpecification::CreditSpecification() : 
-    m_cpuCreditsHasBeenSet(false)
-{
-}
-
 CreditSpecification::CreditSpecification(const XmlNode& xmlNode)
-  : CreditSpecification()
 {
   *this = xmlNode;
 }

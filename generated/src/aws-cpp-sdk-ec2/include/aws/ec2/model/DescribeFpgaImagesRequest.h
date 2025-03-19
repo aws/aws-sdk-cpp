@@ -23,7 +23,7 @@ namespace Model
   class DescribeFpgaImagesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeFpgaImagesRequest();
+    AWS_EC2_API DescribeFpgaImagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeFpgaImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -55,15 +55,14 @@ namespace Model
     /**
      * <p>The AFI IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFpgaImageIds() const{ return m_fpgaImageIds; }
+    inline const Aws::Vector<Aws::String>& GetFpgaImageIds() const { return m_fpgaImageIds; }
     inline bool FpgaImageIdsHasBeenSet() const { return m_fpgaImageIdsHasBeenSet; }
-    inline void SetFpgaImageIds(const Aws::Vector<Aws::String>& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds = value; }
-    inline void SetFpgaImageIds(Aws::Vector<Aws::String>&& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds = std::move(value); }
-    inline DescribeFpgaImagesRequest& WithFpgaImageIds(const Aws::Vector<Aws::String>& value) { SetFpgaImageIds(value); return *this;}
-    inline DescribeFpgaImagesRequest& WithFpgaImageIds(Aws::Vector<Aws::String>&& value) { SetFpgaImageIds(std::move(value)); return *this;}
-    inline DescribeFpgaImagesRequest& AddFpgaImageIds(const Aws::String& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(value); return *this; }
-    inline DescribeFpgaImagesRequest& AddFpgaImageIds(Aws::String&& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(std::move(value)); return *this; }
-    inline DescribeFpgaImagesRequest& AddFpgaImageIds(const char* value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(value); return *this; }
+    template<typename FpgaImageIdsT = Aws::Vector<Aws::String>>
+    void SetFpgaImageIds(FpgaImageIdsT&& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds = std::forward<FpgaImageIdsT>(value); }
+    template<typename FpgaImageIdsT = Aws::Vector<Aws::String>>
+    DescribeFpgaImagesRequest& WithFpgaImageIds(FpgaImageIdsT&& value) { SetFpgaImageIds(std::forward<FpgaImageIdsT>(value)); return *this;}
+    template<typename FpgaImageIdsT = Aws::String>
+    DescribeFpgaImagesRequest& AddFpgaImageIds(FpgaImageIdsT&& value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.emplace_back(std::forward<FpgaImageIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +72,14 @@ namespace Model
      * Services owner alias (valid values are <code>amazon</code> |
      * <code>aws-marketplace</code>).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
+    inline const Aws::Vector<Aws::String>& GetOwners() const { return m_owners; }
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
-    inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
-    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
-    inline DescribeFpgaImagesRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
-    inline DescribeFpgaImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
-    inline DescribeFpgaImagesRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
-    inline DescribeFpgaImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
-    inline DescribeFpgaImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+    template<typename OwnersT = Aws::Vector<Aws::String>>
+    void SetOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners = std::forward<OwnersT>(value); }
+    template<typename OwnersT = Aws::Vector<Aws::String>>
+    DescribeFpgaImagesRequest& WithOwners(OwnersT&& value) { SetOwners(std::forward<OwnersT>(value)); return *this;}
+    template<typename OwnersT = Aws::String>
+    DescribeFpgaImagesRequest& AddOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners.emplace_back(std::forward<OwnersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,42 +105,40 @@ namespace Model
      * specific key, regardless of the tag value.</p> </li> <li> <p>
      * <code>update-time</code> - The time of the most recent update.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeFpgaImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeFpgaImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeFpgaImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeFpgaImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeFpgaImagesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeFpgaImagesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeFpgaImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFpgaImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFpgaImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFpgaImagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeFpgaImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fpgaImageIds;
@@ -157,7 +153,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

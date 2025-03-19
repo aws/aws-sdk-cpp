@@ -12,11 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelEnvironmentDeploymentRequest::CancelEnvironmentDeploymentRequest() : 
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelEnvironmentDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -26,7 +26,7 @@ namespace Model
   class GetPositionEstimateRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetPositionEstimateRequest();
+    AWS_IOTWIRELESS_API GetPositionEstimateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,14 @@ namespace Model
      * <p>Retrieves an estimated device position by resolving WLAN measurement data.
      * The position is resolved using HERE's Wi-Fi based solver.</p>
      */
-    inline const Aws::Vector<WiFiAccessPoint>& GetWiFiAccessPoints() const{ return m_wiFiAccessPoints; }
+    inline const Aws::Vector<WiFiAccessPoint>& GetWiFiAccessPoints() const { return m_wiFiAccessPoints; }
     inline bool WiFiAccessPointsHasBeenSet() const { return m_wiFiAccessPointsHasBeenSet; }
-    inline void SetWiFiAccessPoints(const Aws::Vector<WiFiAccessPoint>& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = value; }
-    inline void SetWiFiAccessPoints(Aws::Vector<WiFiAccessPoint>&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = std::move(value); }
-    inline GetPositionEstimateRequest& WithWiFiAccessPoints(const Aws::Vector<WiFiAccessPoint>& value) { SetWiFiAccessPoints(value); return *this;}
-    inline GetPositionEstimateRequest& WithWiFiAccessPoints(Aws::Vector<WiFiAccessPoint>&& value) { SetWiFiAccessPoints(std::move(value)); return *this;}
-    inline GetPositionEstimateRequest& AddWiFiAccessPoints(const WiFiAccessPoint& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.push_back(value); return *this; }
-    inline GetPositionEstimateRequest& AddWiFiAccessPoints(WiFiAccessPoint&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.push_back(std::move(value)); return *this; }
+    template<typename WiFiAccessPointsT = Aws::Vector<WiFiAccessPoint>>
+    void SetWiFiAccessPoints(WiFiAccessPointsT&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = std::forward<WiFiAccessPointsT>(value); }
+    template<typename WiFiAccessPointsT = Aws::Vector<WiFiAccessPoint>>
+    GetPositionEstimateRequest& WithWiFiAccessPoints(WiFiAccessPointsT&& value) { SetWiFiAccessPoints(std::forward<WiFiAccessPointsT>(value)); return *this;}
+    template<typename WiFiAccessPointsT = WiFiAccessPoint>
+    GetPositionEstimateRequest& AddWiFiAccessPoints(WiFiAccessPointsT&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.emplace_back(std::forward<WiFiAccessPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * cellular radio towers. The position is resolved using HERE's cellular-based
      * solver.</p>
      */
-    inline const CellTowers& GetCellTowers() const{ return m_cellTowers; }
+    inline const CellTowers& GetCellTowers() const { return m_cellTowers; }
     inline bool CellTowersHasBeenSet() const { return m_cellTowersHasBeenSet; }
-    inline void SetCellTowers(const CellTowers& value) { m_cellTowersHasBeenSet = true; m_cellTowers = value; }
-    inline void SetCellTowers(CellTowers&& value) { m_cellTowersHasBeenSet = true; m_cellTowers = std::move(value); }
-    inline GetPositionEstimateRequest& WithCellTowers(const CellTowers& value) { SetCellTowers(value); return *this;}
-    inline GetPositionEstimateRequest& WithCellTowers(CellTowers&& value) { SetCellTowers(std::move(value)); return *this;}
+    template<typename CellTowersT = CellTowers>
+    void SetCellTowers(CellTowersT&& value) { m_cellTowersHasBeenSet = true; m_cellTowers = std::forward<CellTowersT>(value); }
+    template<typename CellTowersT = CellTowers>
+    GetPositionEstimateRequest& WithCellTowers(CellTowersT&& value) { SetCellTowers(std::forward<CellTowersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * information from the device. The position is resolved using MaxMind's IP-based
      * solver.</p>
      */
-    inline const Ip& GetIp() const{ return m_ip; }
+    inline const Ip& GetIp() const { return m_ip; }
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-    inline void SetIp(const Ip& value) { m_ipHasBeenSet = true; m_ip = value; }
-    inline void SetIp(Ip&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-    inline GetPositionEstimateRequest& WithIp(const Ip& value) { SetIp(value); return *this;}
-    inline GetPositionEstimateRequest& WithIp(Ip&& value) { SetIp(std::move(value)); return *this;}
+    template<typename IpT = Ip>
+    void SetIp(IpT&& value) { m_ipHasBeenSet = true; m_ip = std::forward<IpT>(value); }
+    template<typename IpT = Ip>
+    GetPositionEstimateRequest& WithIp(IpT&& value) { SetIp(std::forward<IpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * satellite system (GNSS) scan data. The position is resolved using the GNSS
      * solver powered by LoRa Cloud.</p>
      */
-    inline const Gnss& GetGnss() const{ return m_gnss; }
+    inline const Gnss& GetGnss() const { return m_gnss; }
     inline bool GnssHasBeenSet() const { return m_gnssHasBeenSet; }
-    inline void SetGnss(const Gnss& value) { m_gnssHasBeenSet = true; m_gnss = value; }
-    inline void SetGnss(Gnss&& value) { m_gnssHasBeenSet = true; m_gnss = std::move(value); }
-    inline GetPositionEstimateRequest& WithGnss(const Gnss& value) { SetGnss(value); return *this;}
-    inline GetPositionEstimateRequest& WithGnss(Gnss&& value) { SetGnss(std::move(value)); return *this;}
+    template<typename GnssT = Gnss>
+    void SetGnss(GnssT&& value) { m_gnssHasBeenSet = true; m_gnss = std::forward<GnssT>(value); }
+    template<typename GnssT = Gnss>
+    GetPositionEstimateRequest& WithGnss(GnssT&& value) { SetGnss(std::forward<GnssT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +100,12 @@ namespace Model
      * will be resolved. It uses the Unix timestamp format. If not specified, the time
      * at which the request was received will be used.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline GetPositionEstimateRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline GetPositionEstimateRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    GetPositionEstimateRequest& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +121,7 @@ namespace Model
     Gnss m_gnss;
     bool m_gnssHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

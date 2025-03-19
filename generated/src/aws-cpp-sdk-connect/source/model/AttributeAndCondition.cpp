@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AttributeAndCondition::AttributeAndCondition() : 
-    m_tagConditionsHasBeenSet(false),
-    m_hierarchyGroupConditionHasBeenSet(false)
-{
-}
-
 AttributeAndCondition::AttributeAndCondition(JsonView jsonValue)
-  : AttributeAndCondition()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AttributeAndCondition& AttributeAndCondition::operator =(JsonView jsonValue)
     }
     m_tagConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyGroupCondition"))
   {
     m_hierarchyGroupCondition = jsonValue.GetObject("HierarchyGroupCondition");
-
     m_hierarchyGroupConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

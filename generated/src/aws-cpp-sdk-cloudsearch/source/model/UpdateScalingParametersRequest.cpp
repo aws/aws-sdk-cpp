@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-UpdateScalingParametersRequest::UpdateScalingParametersRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_scalingParametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScalingParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

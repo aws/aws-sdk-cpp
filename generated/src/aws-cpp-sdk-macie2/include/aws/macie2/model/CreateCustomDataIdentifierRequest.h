@@ -25,7 +25,7 @@ namespace Model
   class CreateCustomDataIdentifierRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API CreateCustomDataIdentifierRequest();
+    AWS_MACIE2_API CreateCustomDataIdentifierRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
      * the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateCustomDataIdentifierRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateCustomDataIdentifierRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * Other users of your account might be able to see this description, depending on
      * the actions that they're allowed to perform in Amazon Macie.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateCustomDataIdentifierRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateCustomDataIdentifierRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +73,14 @@ namespace Model
      * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
      * words are case sensitive.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIgnoreWords() const{ return m_ignoreWords; }
+    inline const Aws::Vector<Aws::String>& GetIgnoreWords() const { return m_ignoreWords; }
     inline bool IgnoreWordsHasBeenSet() const { return m_ignoreWordsHasBeenSet; }
-    inline void SetIgnoreWords(const Aws::Vector<Aws::String>& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = value; }
-    inline void SetIgnoreWords(Aws::Vector<Aws::String>&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = std::move(value); }
-    inline CreateCustomDataIdentifierRequest& WithIgnoreWords(const Aws::Vector<Aws::String>& value) { SetIgnoreWords(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithIgnoreWords(Aws::Vector<Aws::String>&& value) { SetIgnoreWords(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const Aws::String& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddIgnoreWords(Aws::String&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(std::move(value)); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const char* value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
+    template<typename IgnoreWordsT = Aws::Vector<Aws::String>>
+    void SetIgnoreWords(IgnoreWordsT&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = std::forward<IgnoreWordsT>(value); }
+    template<typename IgnoreWordsT = Aws::Vector<Aws::String>>
+    CreateCustomDataIdentifierRequest& WithIgnoreWords(IgnoreWordsT&& value) { SetIgnoreWords(std::forward<IgnoreWordsT>(value)); return *this;}
+    template<typename IgnoreWordsT = Aws::String>
+    CreateCustomDataIdentifierRequest& AddIgnoreWords(IgnoreWordsT&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.emplace_back(std::forward<IgnoreWordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,15 +90,14 @@ namespace Model
      * expression to match. The array can contain as many as 50 keywords. Each keyword
      * can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
+    inline const Aws::Vector<Aws::String>& GetKeywords() const { return m_keywords; }
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
-    inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
-    inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
-    inline CreateCustomDataIdentifierRequest& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& AddKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(std::move(value)); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
+    template<typename KeywordsT = Aws::Vector<Aws::String>>
+    void SetKeywords(KeywordsT&& value) { m_keywordsHasBeenSet = true; m_keywords = std::forward<KeywordsT>(value); }
+    template<typename KeywordsT = Aws::Vector<Aws::String>>
+    CreateCustomDataIdentifierRequest& WithKeywords(KeywordsT&& value) { SetKeywords(std::forward<KeywordsT>(value)); return *this;}
+    template<typename KeywordsT = Aws::String>
+    CreateCustomDataIdentifierRequest& AddKeywords(KeywordsT&& value) { m_keywordsHasBeenSet = true; m_keywords.emplace_back(std::forward<KeywordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,7 +109,7 @@ namespace Model
      * Amazon Macie includes the result. The distance can be 1-300 characters. The
      * default value is 50.</p>
      */
-    inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
+    inline int GetMaximumMatchDistance() const { return m_maximumMatchDistance; }
     inline bool MaximumMatchDistanceHasBeenSet() const { return m_maximumMatchDistanceHasBeenSet; }
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistanceHasBeenSet = true; m_maximumMatchDistance = value; }
     inline CreateCustomDataIdentifierRequest& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
@@ -129,14 +123,12 @@ namespace Model
      * account might be able to see this name, depending on the actions that they're
      * allowed to perform in Amazon Macie.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateCustomDataIdentifierRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCustomDataIdentifierRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +136,12 @@ namespace Model
      * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
      * expression can contain as many as 512 characters.</p>
      */
-    inline const Aws::String& GetRegex() const{ return m_regex; }
+    inline const Aws::String& GetRegex() const { return m_regex; }
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-    inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-    inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-    inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-    inline CreateCustomDataIdentifierRequest& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithRegex(const char* value) { SetRegex(value); return *this;}
+    template<typename RegexT = Aws::String>
+    void SetRegex(RegexT&& value) { m_regexHasBeenSet = true; m_regex = std::forward<RegexT>(value); }
+    template<typename RegexT = Aws::String>
+    CreateCustomDataIdentifierRequest& WithRegex(RegexT&& value) { SetRegex(std::forward<RegexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +158,14 @@ namespace Model
      * contain at least one occurrence of text that matches the detection criteria, and
      * Macie assigns the MEDIUM severity to those findings.</p>
      */
-    inline const Aws::Vector<SeverityLevel>& GetSeverityLevels() const{ return m_severityLevels; }
+    inline const Aws::Vector<SeverityLevel>& GetSeverityLevels() const { return m_severityLevels; }
     inline bool SeverityLevelsHasBeenSet() const { return m_severityLevelsHasBeenSet; }
-    inline void SetSeverityLevels(const Aws::Vector<SeverityLevel>& value) { m_severityLevelsHasBeenSet = true; m_severityLevels = value; }
-    inline void SetSeverityLevels(Aws::Vector<SeverityLevel>&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels = std::move(value); }
-    inline CreateCustomDataIdentifierRequest& WithSeverityLevels(const Aws::Vector<SeverityLevel>& value) { SetSeverityLevels(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithSeverityLevels(Aws::Vector<SeverityLevel>&& value) { SetSeverityLevels(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& AddSeverityLevels(const SeverityLevel& value) { m_severityLevelsHasBeenSet = true; m_severityLevels.push_back(value); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddSeverityLevels(SeverityLevel&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels.push_back(std::move(value)); return *this; }
+    template<typename SeverityLevelsT = Aws::Vector<SeverityLevel>>
+    void SetSeverityLevels(SeverityLevelsT&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels = std::forward<SeverityLevelsT>(value); }
+    template<typename SeverityLevelsT = Aws::Vector<SeverityLevel>>
+    CreateCustomDataIdentifierRequest& WithSeverityLevels(SeverityLevelsT&& value) { SetSeverityLevels(std::forward<SeverityLevelsT>(value)); return *this;}
+    template<typename SeverityLevelsT = SeverityLevel>
+    CreateCustomDataIdentifierRequest& AddSeverityLevels(SeverityLevelsT&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels.emplace_back(std::forward<SeverityLevelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,19 +176,16 @@ namespace Model
      * of a tag key is 128 characters. The maximum length of a tag value is 256
      * characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCustomDataIdentifierRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateCustomDataIdentifierRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCustomDataIdentifierRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateCustomDataIdentifierRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateCustomDataIdentifierRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateCustomDataIdentifierRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -214,7 +201,7 @@ namespace Model
     Aws::Vector<Aws::String> m_keywords;
     bool m_keywordsHasBeenSet = false;
 
-    int m_maximumMatchDistance;
+    int m_maximumMatchDistance{0};
     bool m_maximumMatchDistanceHasBeenSet = false;
 
     Aws::String m_name;

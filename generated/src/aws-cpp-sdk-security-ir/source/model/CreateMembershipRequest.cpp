@@ -12,16 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMembershipRequest::CreateMembershipRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_membershipNameHasBeenSet(false),
-    m_incidentResponseTeamHasBeenSet(false),
-    m_optInFeaturesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

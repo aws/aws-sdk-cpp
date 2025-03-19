@@ -12,12 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetImportJobRequest::GetImportJobRequest() : 
-    m_importJobIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String GetImportJobRequest::SerializePayload() const
 {
   return {};

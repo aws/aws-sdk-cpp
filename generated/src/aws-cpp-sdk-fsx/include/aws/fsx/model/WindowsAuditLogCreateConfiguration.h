@@ -33,7 +33,7 @@ namespace Model
   class WindowsAuditLogCreateConfiguration
   {
   public:
-    AWS_FSX_API WindowsAuditLogCreateConfiguration();
+    AWS_FSX_API WindowsAuditLogCreateConfiguration() = default;
     AWS_FSX_API WindowsAuditLogCreateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API WindowsAuditLogCreateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned
      * off.</p> </li> </ul>
      */
-    inline const WindowsAccessAuditLogLevel& GetFileAccessAuditLogLevel() const{ return m_fileAccessAuditLogLevel; }
+    inline WindowsAccessAuditLogLevel GetFileAccessAuditLogLevel() const { return m_fileAccessAuditLogLevel; }
     inline bool FileAccessAuditLogLevelHasBeenSet() const { return m_fileAccessAuditLogLevelHasBeenSet; }
-    inline void SetFileAccessAuditLogLevel(const WindowsAccessAuditLogLevel& value) { m_fileAccessAuditLogLevelHasBeenSet = true; m_fileAccessAuditLogLevel = value; }
-    inline void SetFileAccessAuditLogLevel(WindowsAccessAuditLogLevel&& value) { m_fileAccessAuditLogLevelHasBeenSet = true; m_fileAccessAuditLogLevel = std::move(value); }
-    inline WindowsAuditLogCreateConfiguration& WithFileAccessAuditLogLevel(const WindowsAccessAuditLogLevel& value) { SetFileAccessAuditLogLevel(value); return *this;}
-    inline WindowsAuditLogCreateConfiguration& WithFileAccessAuditLogLevel(WindowsAccessAuditLogLevel&& value) { SetFileAccessAuditLogLevel(std::move(value)); return *this;}
+    inline void SetFileAccessAuditLogLevel(WindowsAccessAuditLogLevel value) { m_fileAccessAuditLogLevelHasBeenSet = true; m_fileAccessAuditLogLevel = value; }
+    inline WindowsAuditLogCreateConfiguration& WithFileAccessAuditLogLevel(WindowsAccessAuditLogLevel value) { SetFileAccessAuditLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * to access file shares are logged.</p> </li> <li> <p> <code>DISABLED</code> -
      * access auditing of file shares is turned off.</p> </li> </ul>
      */
-    inline const WindowsAccessAuditLogLevel& GetFileShareAccessAuditLogLevel() const{ return m_fileShareAccessAuditLogLevel; }
+    inline WindowsAccessAuditLogLevel GetFileShareAccessAuditLogLevel() const { return m_fileShareAccessAuditLogLevel; }
     inline bool FileShareAccessAuditLogLevelHasBeenSet() const { return m_fileShareAccessAuditLogLevelHasBeenSet; }
-    inline void SetFileShareAccessAuditLogLevel(const WindowsAccessAuditLogLevel& value) { m_fileShareAccessAuditLogLevelHasBeenSet = true; m_fileShareAccessAuditLogLevel = value; }
-    inline void SetFileShareAccessAuditLogLevel(WindowsAccessAuditLogLevel&& value) { m_fileShareAccessAuditLogLevelHasBeenSet = true; m_fileShareAccessAuditLogLevel = std::move(value); }
-    inline WindowsAuditLogCreateConfiguration& WithFileShareAccessAuditLogLevel(const WindowsAccessAuditLogLevel& value) { SetFileShareAccessAuditLogLevel(value); return *this;}
-    inline WindowsAuditLogCreateConfiguration& WithFileShareAccessAuditLogLevel(WindowsAccessAuditLogLevel&& value) { SetFileShareAccessAuditLogLevel(std::move(value)); return *this;}
+    inline void SetFileShareAccessAuditLogLevel(WindowsAccessAuditLogLevel value) { m_fileShareAccessAuditLogLevelHasBeenSet = true; m_fileShareAccessAuditLogLevel = value; }
+    inline WindowsAuditLogCreateConfiguration& WithFileShareAccessAuditLogLevel(WindowsAccessAuditLogLevel value) { SetFileShareAccessAuditLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -98,21 +94,19 @@ namespace Model
      * you cannot specify a destination in <code>AuditLogDestination</code>.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetAuditLogDestination() const{ return m_auditLogDestination; }
+    inline const Aws::String& GetAuditLogDestination() const { return m_auditLogDestination; }
     inline bool AuditLogDestinationHasBeenSet() const { return m_auditLogDestinationHasBeenSet; }
-    inline void SetAuditLogDestination(const Aws::String& value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination = value; }
-    inline void SetAuditLogDestination(Aws::String&& value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination = std::move(value); }
-    inline void SetAuditLogDestination(const char* value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination.assign(value); }
-    inline WindowsAuditLogCreateConfiguration& WithAuditLogDestination(const Aws::String& value) { SetAuditLogDestination(value); return *this;}
-    inline WindowsAuditLogCreateConfiguration& WithAuditLogDestination(Aws::String&& value) { SetAuditLogDestination(std::move(value)); return *this;}
-    inline WindowsAuditLogCreateConfiguration& WithAuditLogDestination(const char* value) { SetAuditLogDestination(value); return *this;}
+    template<typename AuditLogDestinationT = Aws::String>
+    void SetAuditLogDestination(AuditLogDestinationT&& value) { m_auditLogDestinationHasBeenSet = true; m_auditLogDestination = std::forward<AuditLogDestinationT>(value); }
+    template<typename AuditLogDestinationT = Aws::String>
+    WindowsAuditLogCreateConfiguration& WithAuditLogDestination(AuditLogDestinationT&& value) { SetAuditLogDestination(std::forward<AuditLogDestinationT>(value)); return *this;}
     ///@}
   private:
 
-    WindowsAccessAuditLogLevel m_fileAccessAuditLogLevel;
+    WindowsAccessAuditLogLevel m_fileAccessAuditLogLevel{WindowsAccessAuditLogLevel::NOT_SET};
     bool m_fileAccessAuditLogLevelHasBeenSet = false;
 
-    WindowsAccessAuditLogLevel m_fileShareAccessAuditLogLevel;
+    WindowsAccessAuditLogLevel m_fileShareAccessAuditLogLevel{WindowsAccessAuditLogLevel::NOT_SET};
     bool m_fileShareAccessAuditLogLevelHasBeenSet = false;
 
     Aws::String m_auditLogDestination;

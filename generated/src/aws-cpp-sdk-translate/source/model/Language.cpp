@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-Language::Language() : 
-    m_languageNameHasBeenSet(false),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Language::Language(JsonView jsonValue)
-  : Language()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Language& Language::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LanguageName"))
   {
     m_languageName = jsonValue.GetString("LanguageName");
-
     m_languageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = jsonValue.GetString("LanguageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

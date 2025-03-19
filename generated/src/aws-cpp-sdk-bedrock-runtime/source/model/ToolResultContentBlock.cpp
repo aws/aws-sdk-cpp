@@ -18,17 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ToolResultContentBlock::ToolResultContentBlock() : 
-    m_jsonHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_videoHasBeenSet(false)
-{
-}
-
 ToolResultContentBlock::ToolResultContentBlock(JsonView jsonValue)
-  : ToolResultContentBlock()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ToolResultContentBlock& ToolResultContentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("json"))
   {
     m_json = jsonValue.GetObject("json");
-
     m_jsonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("video"))
   {
     m_video = jsonValue.GetObject("video");
-
     m_videoHasBeenSet = true;
   }
-
   return *this;
 }
 

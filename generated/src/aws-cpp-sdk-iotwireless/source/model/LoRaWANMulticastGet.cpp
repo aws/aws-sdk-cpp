@@ -18,21 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANMulticastGet::LoRaWANMulticastGet() : 
-    m_rfRegion(SupportedRfRegion::NOT_SET),
-    m_rfRegionHasBeenSet(false),
-    m_dlClass(DlClass::NOT_SET),
-    m_dlClassHasBeenSet(false),
-    m_numberOfDevicesRequested(0),
-    m_numberOfDevicesRequestedHasBeenSet(false),
-    m_numberOfDevicesInGroup(0),
-    m_numberOfDevicesInGroupHasBeenSet(false),
-    m_participatingGatewaysHasBeenSet(false)
-{
-}
-
 LoRaWANMulticastGet::LoRaWANMulticastGet(JsonView jsonValue)
-  : LoRaWANMulticastGet()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ LoRaWANMulticastGet& LoRaWANMulticastGet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RfRegion"))
   {
     m_rfRegion = SupportedRfRegionMapper::GetSupportedRfRegionForName(jsonValue.GetString("RfRegion"));
-
     m_rfRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DlClass"))
   {
     m_dlClass = DlClassMapper::GetDlClassForName(jsonValue.GetString("DlClass"));
-
     m_dlClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDevicesRequested"))
   {
     m_numberOfDevicesRequested = jsonValue.GetInteger("NumberOfDevicesRequested");
-
     m_numberOfDevicesRequestedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDevicesInGroup"))
   {
     m_numberOfDevicesInGroup = jsonValue.GetInteger("NumberOfDevicesInGroup");
-
     m_numberOfDevicesInGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipatingGateways"))
   {
     m_participatingGateways = jsonValue.GetObject("ParticipatingGateways");
-
     m_participatingGatewaysHasBeenSet = true;
   }
-
   return *this;
 }
 

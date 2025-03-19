@@ -19,19 +19,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-IosImportClientBrandingAttributes::IosImportClientBrandingAttributes() : 
-    m_logoHasBeenSet(false),
-    m_logo2xHasBeenSet(false),
-    m_logo3xHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportLinkHasBeenSet(false),
-    m_forgotPasswordLinkHasBeenSet(false),
-    m_loginMessageHasBeenSet(false)
-{
-}
-
 IosImportClientBrandingAttributes::IosImportClientBrandingAttributes(JsonView jsonValue)
-  : IosImportClientBrandingAttributes()
 {
   *this = jsonValue;
 }
@@ -43,40 +31,31 @@ IosImportClientBrandingAttributes& IosImportClientBrandingAttributes::operator =
     m_logo = HashingUtils::Base64Decode(jsonValue.GetString("Logo"));
     m_logoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Logo2x"))
   {
     m_logo2x = HashingUtils::Base64Decode(jsonValue.GetString("Logo2x"));
     m_logo2xHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Logo3x"))
   {
     m_logo3x = HashingUtils::Base64Decode(jsonValue.GetString("Logo3x"));
     m_logo3xHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportEmail"))
   {
     m_supportEmail = jsonValue.GetString("SupportEmail");
-
     m_supportEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportLink"))
   {
     m_supportLink = jsonValue.GetString("SupportLink");
-
     m_supportLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForgotPasswordLink"))
   {
     m_forgotPasswordLink = jsonValue.GetString("ForgotPasswordLink");
-
     m_forgotPasswordLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoginMessage"))
   {
     Aws::Map<Aws::String, JsonView> loginMessageJsonMap = jsonValue.GetObject("LoginMessage").GetAllObjects();
@@ -86,7 +65,6 @@ IosImportClientBrandingAttributes& IosImportClientBrandingAttributes::operator =
     }
     m_loginMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

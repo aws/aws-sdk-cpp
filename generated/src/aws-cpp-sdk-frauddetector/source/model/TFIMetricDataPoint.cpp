@@ -18,20 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TFIMetricDataPoint::TFIMetricDataPoint() : 
-    m_fpr(0.0),
-    m_fprHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_tpr(0.0),
-    m_tprHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 TFIMetricDataPoint::TFIMetricDataPoint(JsonView jsonValue)
-  : TFIMetricDataPoint()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TFIMetricDataPoint& TFIMetricDataPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fpr"))
   {
     m_fpr = jsonValue.GetDouble("fpr");
-
     m_fprHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("precision"))
   {
     m_precision = jsonValue.GetDouble("precision");
-
     m_precisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tpr"))
   {
     m_tpr = jsonValue.GetDouble("tpr");
-
     m_tprHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetDouble("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

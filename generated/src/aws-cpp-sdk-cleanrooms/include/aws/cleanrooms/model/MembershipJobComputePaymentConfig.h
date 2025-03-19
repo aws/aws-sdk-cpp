@@ -31,7 +31,7 @@ namespace Model
   class MembershipJobComputePaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API MembershipJobComputePaymentConfig();
+    AWS_CLEANROOMS_API MembershipJobComputePaymentConfig() = default;
     AWS_CLEANROOMS_API MembershipJobComputePaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipJobComputePaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * you set the value to <code>TRUE</code> but you are not responsible to pay for
      * query and job compute costs. </p> </li> </ul>
      */
-    inline bool GetIsResponsible() const{ return m_isResponsible; }
+    inline bool GetIsResponsible() const { return m_isResponsible; }
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
     inline MembershipJobComputePaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
     ///@}
   private:
 
-    bool m_isResponsible;
+    bool m_isResponsible{false};
     bool m_isResponsibleHasBeenSet = false;
   };
 

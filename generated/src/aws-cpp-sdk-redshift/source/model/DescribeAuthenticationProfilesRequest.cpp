@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeAuthenticationProfilesRequest::DescribeAuthenticationProfilesRequest() : 
-    m_authenticationProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAuthenticationProfilesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

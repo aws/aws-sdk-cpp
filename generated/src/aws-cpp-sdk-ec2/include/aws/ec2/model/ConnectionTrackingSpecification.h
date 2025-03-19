@@ -34,7 +34,7 @@ namespace Model
   class ConnectionTrackingSpecification
   {
   public:
-    AWS_EC2_API ConnectionTrackingSpecification();
+    AWS_EC2_API ConnectionTrackingSpecification() = default;
     AWS_EC2_API ConnectionTrackingSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ConnectionTrackingSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended:
      * Less than 432000 seconds.</p>
      */
-    inline int GetTcpEstablishedTimeout() const{ return m_tcpEstablishedTimeout; }
+    inline int GetTcpEstablishedTimeout() const { return m_tcpEstablishedTimeout; }
     inline bool TcpEstablishedTimeoutHasBeenSet() const { return m_tcpEstablishedTimeoutHasBeenSet; }
     inline void SetTcpEstablishedTimeout(int value) { m_tcpEstablishedTimeoutHasBeenSet = true; m_tcpEstablishedTimeout = value; }
     inline ConnectionTrackingSpecification& WithTcpEstablishedTimeout(int value) { SetTcpEstablishedTimeout(value); return *this;}
@@ -60,7 +60,7 @@ namespace Model
      * single direction or a single request-response transaction. Min: 30 seconds. Max:
      * 60 seconds. Default: 30 seconds.</p>
      */
-    inline int GetUdpTimeout() const{ return m_udpTimeout; }
+    inline int GetUdpTimeout() const { return m_udpTimeout; }
     inline bool UdpTimeoutHasBeenSet() const { return m_udpTimeoutHasBeenSet; }
     inline void SetUdpTimeout(int value) { m_udpTimeoutHasBeenSet = true; m_udpTimeout = value; }
     inline ConnectionTrackingSpecification& WithUdpTimeout(int value) { SetUdpTimeout(value); return *this;}
@@ -72,20 +72,20 @@ namespace Model
      * more than one request-response transaction. Min: 60 seconds. Max: 180 seconds (3
      * minutes). Default: 180 seconds.</p>
      */
-    inline int GetUdpStreamTimeout() const{ return m_udpStreamTimeout; }
+    inline int GetUdpStreamTimeout() const { return m_udpStreamTimeout; }
     inline bool UdpStreamTimeoutHasBeenSet() const { return m_udpStreamTimeoutHasBeenSet; }
     inline void SetUdpStreamTimeout(int value) { m_udpStreamTimeoutHasBeenSet = true; m_udpStreamTimeout = value; }
     inline ConnectionTrackingSpecification& WithUdpStreamTimeout(int value) { SetUdpStreamTimeout(value); return *this;}
     ///@}
   private:
 
-    int m_tcpEstablishedTimeout;
+    int m_tcpEstablishedTimeout{0};
     bool m_tcpEstablishedTimeoutHasBeenSet = false;
 
-    int m_udpTimeout;
+    int m_udpTimeout{0};
     bool m_udpTimeoutHasBeenSet = false;
 
-    int m_udpStreamTimeout;
+    int m_udpStreamTimeout{0};
     bool m_udpStreamTimeoutHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig() : 
-    m_deliveryMethod(DeliveryMethod::NOT_SET),
-    m_deliveryMethodHasBeenSet(false),
-    m_emailSettingsHasBeenSet(false),
-    m_smsSettingsHasBeenSet(false)
-{
-}
-
 UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig(JsonView jsonValue)
-  : UpdateBackendAuthForgotPasswordConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UpdateBackendAuthForgotPasswordConfig& UpdateBackendAuthForgotPasswordConfig::op
   if(jsonValue.ValueExists("deliveryMethod"))
   {
     m_deliveryMethod = DeliveryMethodMapper::GetDeliveryMethodForName(jsonValue.GetString("deliveryMethod"));
-
     m_deliveryMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailSettings"))
   {
     m_emailSettings = jsonValue.GetObject("emailSettings");
-
     m_emailSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smsSettings"))
   {
     m_smsSettings = jsonValue.GetObject("smsSettings");
-
     m_smsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

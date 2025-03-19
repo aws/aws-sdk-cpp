@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DeleteDashboardsRequest::DeleteDashboardsRequest() : 
-    m_dashboardNamesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDashboardsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,12 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMaintenanceRequest::StartMaintenanceRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_engineAttributesHasBeenSet(false)
-{
-}
-
 Aws::String StartMaintenanceRequest::SerializePayload() const
 {
   JsonValue payload;

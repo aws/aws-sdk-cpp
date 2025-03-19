@@ -34,7 +34,7 @@ namespace Model
   class AnalysisSearchFilter
   {
   public:
-    AWS_QUICKSIGHT_API AnalysisSearchFilter();
+    AWS_QUICKSIGHT_API AnalysisSearchFilter() = default;
     AWS_QUICKSIGHT_API AnalysisSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AnalysisSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * operator only supports the <code>NAME</code> value
      * <code>ANALYSIS_NAME</code>.</p>
      */
-    inline const FilterOperator& GetOperator() const{ return m_operator; }
+    inline FilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const FilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(FilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline AnalysisSearchFilter& WithOperator(const FilterOperator& value) { SetOperator(value); return *this;}
-    inline AnalysisSearchFilter& WithOperator(FilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(FilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline AnalysisSearchFilter& WithOperator(FilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to
      * this value will be returned.</p> </li> </ul>
      */
-    inline const AnalysisFilterAttribute& GetName() const{ return m_name; }
+    inline AnalysisFilterAttribute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalysisFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalysisFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalysisSearchFilter& WithName(const AnalysisFilterAttribute& value) { SetName(value); return *this;}
-    inline AnalysisSearchFilter& WithName(AnalysisFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalysisFilterAttribute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalysisSearchFilter& WithName(AnalysisFilterAttribute value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -102,21 +98,19 @@ namespace Model
      * you want to use as a filter, for example <code>"Value"</code>. An example is
      * <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AnalysisSearchFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AnalysisSearchFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AnalysisSearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AnalysisSearchFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterOperator m_operator;
+    FilterOperator m_operator{FilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    AnalysisFilterAttribute m_name;
+    AnalysisFilterAttribute m_name{AnalysisFilterAttribute::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

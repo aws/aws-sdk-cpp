@@ -31,7 +31,7 @@ namespace Model
   class CreateIdMappingWorkflowResult
   {
   public:
-    AWS_ENTITYRESOLUTION_API CreateIdMappingWorkflowResult();
+    AWS_ENTITYRESOLUTION_API CreateIdMappingWorkflowResult() = default;
     AWS_ENTITYRESOLUTION_API CreateIdMappingWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ENTITYRESOLUTION_API CreateIdMappingWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>A description of the workflow.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateIdMappingWorkflowResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateIdMappingWorkflowResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,11 +52,11 @@ namespace Model
      * <p>An object which defines the ID mapping technique and any additional
      * configurations.</p>
      */
-    inline const IdMappingTechniques& GetIdMappingTechniques() const{ return m_idMappingTechniques; }
-    inline void SetIdMappingTechniques(const IdMappingTechniques& value) { m_idMappingTechniques = value; }
-    inline void SetIdMappingTechniques(IdMappingTechniques&& value) { m_idMappingTechniques = std::move(value); }
-    inline CreateIdMappingWorkflowResult& WithIdMappingTechniques(const IdMappingTechniques& value) { SetIdMappingTechniques(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithIdMappingTechniques(IdMappingTechniques&& value) { SetIdMappingTechniques(std::move(value)); return *this;}
+    inline const IdMappingTechniques& GetIdMappingTechniques() const { return m_idMappingTechniques; }
+    template<typename IdMappingTechniquesT = IdMappingTechniques>
+    void SetIdMappingTechniques(IdMappingTechniquesT&& value) { m_idMappingTechniquesHasBeenSet = true; m_idMappingTechniques = std::forward<IdMappingTechniquesT>(value); }
+    template<typename IdMappingTechniquesT = IdMappingTechniques>
+    CreateIdMappingWorkflowResult& WithIdMappingTechniques(IdMappingTechniquesT&& value) { SetIdMappingTechniques(std::forward<IdMappingTechniquesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +64,13 @@ namespace Model
      * <p>A list of <code>InputSource</code> objects, which have the fields
      * <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
      */
-    inline const Aws::Vector<IdMappingWorkflowInputSource>& GetInputSourceConfig() const{ return m_inputSourceConfig; }
-    inline void SetInputSourceConfig(const Aws::Vector<IdMappingWorkflowInputSource>& value) { m_inputSourceConfig = value; }
-    inline void SetInputSourceConfig(Aws::Vector<IdMappingWorkflowInputSource>&& value) { m_inputSourceConfig = std::move(value); }
-    inline CreateIdMappingWorkflowResult& WithInputSourceConfig(const Aws::Vector<IdMappingWorkflowInputSource>& value) { SetInputSourceConfig(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithInputSourceConfig(Aws::Vector<IdMappingWorkflowInputSource>&& value) { SetInputSourceConfig(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& AddInputSourceConfig(const IdMappingWorkflowInputSource& value) { m_inputSourceConfig.push_back(value); return *this; }
-    inline CreateIdMappingWorkflowResult& AddInputSourceConfig(IdMappingWorkflowInputSource&& value) { m_inputSourceConfig.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdMappingWorkflowInputSource>& GetInputSourceConfig() const { return m_inputSourceConfig; }
+    template<typename InputSourceConfigT = Aws::Vector<IdMappingWorkflowInputSource>>
+    void SetInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig = std::forward<InputSourceConfigT>(value); }
+    template<typename InputSourceConfigT = Aws::Vector<IdMappingWorkflowInputSource>>
+    CreateIdMappingWorkflowResult& WithInputSourceConfig(InputSourceConfigT&& value) { SetInputSourceConfig(std::forward<InputSourceConfigT>(value)); return *this;}
+    template<typename InputSourceConfigT = IdMappingWorkflowInputSource>
+    CreateIdMappingWorkflowResult& AddInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig.emplace_back(std::forward<InputSourceConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,13 +78,13 @@ namespace Model
      * <p>A list of <code>IdMappingWorkflowOutputSource</code> objects, each of which
      * contains fields <code>OutputS3Path</code> and <code>Output</code>.</p>
      */
-    inline const Aws::Vector<IdMappingWorkflowOutputSource>& GetOutputSourceConfig() const{ return m_outputSourceConfig; }
-    inline void SetOutputSourceConfig(const Aws::Vector<IdMappingWorkflowOutputSource>& value) { m_outputSourceConfig = value; }
-    inline void SetOutputSourceConfig(Aws::Vector<IdMappingWorkflowOutputSource>&& value) { m_outputSourceConfig = std::move(value); }
-    inline CreateIdMappingWorkflowResult& WithOutputSourceConfig(const Aws::Vector<IdMappingWorkflowOutputSource>& value) { SetOutputSourceConfig(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithOutputSourceConfig(Aws::Vector<IdMappingWorkflowOutputSource>&& value) { SetOutputSourceConfig(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& AddOutputSourceConfig(const IdMappingWorkflowOutputSource& value) { m_outputSourceConfig.push_back(value); return *this; }
-    inline CreateIdMappingWorkflowResult& AddOutputSourceConfig(IdMappingWorkflowOutputSource&& value) { m_outputSourceConfig.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdMappingWorkflowOutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
+    template<typename OutputSourceConfigT = Aws::Vector<IdMappingWorkflowOutputSource>>
+    void SetOutputSourceConfig(OutputSourceConfigT&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig = std::forward<OutputSourceConfigT>(value); }
+    template<typename OutputSourceConfigT = Aws::Vector<IdMappingWorkflowOutputSource>>
+    CreateIdMappingWorkflowResult& WithOutputSourceConfig(OutputSourceConfigT&& value) { SetOutputSourceConfig(std::forward<OutputSourceConfigT>(value)); return *this;}
+    template<typename OutputSourceConfigT = IdMappingWorkflowOutputSource>
+    CreateIdMappingWorkflowResult& AddOutputSourceConfig(OutputSourceConfigT&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.emplace_back(std::forward<OutputSourceConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,13 +92,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline CreateIdMappingWorkflowResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateIdMappingWorkflowResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,55 +104,57 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
      * <code>IDMappingWorkflow</code>.</p>
      */
-    inline const Aws::String& GetWorkflowArn() const{ return m_workflowArn; }
-    inline void SetWorkflowArn(const Aws::String& value) { m_workflowArn = value; }
-    inline void SetWorkflowArn(Aws::String&& value) { m_workflowArn = std::move(value); }
-    inline void SetWorkflowArn(const char* value) { m_workflowArn.assign(value); }
-    inline CreateIdMappingWorkflowResult& WithWorkflowArn(const Aws::String& value) { SetWorkflowArn(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithWorkflowArn(Aws::String&& value) { SetWorkflowArn(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& WithWorkflowArn(const char* value) { SetWorkflowArn(value); return *this;}
+    inline const Aws::String& GetWorkflowArn() const { return m_workflowArn; }
+    template<typename WorkflowArnT = Aws::String>
+    void SetWorkflowArn(WorkflowArnT&& value) { m_workflowArnHasBeenSet = true; m_workflowArn = std::forward<WorkflowArnT>(value); }
+    template<typename WorkflowArnT = Aws::String>
+    CreateIdMappingWorkflowResult& WithWorkflowArn(WorkflowArnT&& value) { SetWorkflowArn(std::forward<WorkflowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
-    inline void SetWorkflowName(const Aws::String& value) { m_workflowName = value; }
-    inline void SetWorkflowName(Aws::String&& value) { m_workflowName = std::move(value); }
-    inline void SetWorkflowName(const char* value) { m_workflowName.assign(value); }
-    inline CreateIdMappingWorkflowResult& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    CreateIdMappingWorkflowResult& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIdMappingWorkflowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIdMappingWorkflowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIdMappingWorkflowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIdMappingWorkflowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     IdMappingTechniques m_idMappingTechniques;
+    bool m_idMappingTechniquesHasBeenSet = false;
 
     Aws::Vector<IdMappingWorkflowInputSource> m_inputSourceConfig;
+    bool m_inputSourceConfigHasBeenSet = false;
 
     Aws::Vector<IdMappingWorkflowOutputSource> m_outputSourceConfig;
+    bool m_outputSourceConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_workflowArn;
+    bool m_workflowArnHasBeenSet = false;
 
     Aws::String m_workflowName;
+    bool m_workflowNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

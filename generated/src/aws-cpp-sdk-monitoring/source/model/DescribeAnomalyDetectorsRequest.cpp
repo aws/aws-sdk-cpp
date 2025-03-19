@@ -10,17 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DescribeAnomalyDetectorsRequest::DescribeAnomalyDetectorsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_anomalyDetectorTypesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAnomalyDetectorsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

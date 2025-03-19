@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRetrainingSchedulerResult::CreateRetrainingSchedulerResult() : 
-    m_status(RetrainingSchedulerStatus::NOT_SET)
-{
-}
-
 CreateRetrainingSchedulerResult::CreateRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateRetrainingSchedulerResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateRetrainingSchedulerResult& CreateRetrainingSchedulerResult::operator =(con
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
+    m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
+    m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RetrainingSchedulerStatusMapper::GetRetrainingSchedulerStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

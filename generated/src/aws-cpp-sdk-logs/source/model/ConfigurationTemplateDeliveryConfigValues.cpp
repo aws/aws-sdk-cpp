@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ConfigurationTemplateDeliveryConfigValues::ConfigurationTemplateDeliveryConfigValues() : 
-    m_recordFieldsHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_s3DeliveryConfigurationHasBeenSet(false)
-{
-}
-
 ConfigurationTemplateDeliveryConfigValues::ConfigurationTemplateDeliveryConfigValues(JsonView jsonValue)
-  : ConfigurationTemplateDeliveryConfigValues()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ConfigurationTemplateDeliveryConfigValues& ConfigurationTemplateDeliveryConfigVa
     }
     m_recordFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldDelimiter"))
   {
     m_fieldDelimiter = jsonValue.GetString("fieldDelimiter");
-
     m_fieldDelimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3DeliveryConfiguration"))
   {
     m_s3DeliveryConfiguration = jsonValue.GetObject("s3DeliveryConfiguration");
-
     m_s3DeliveryConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

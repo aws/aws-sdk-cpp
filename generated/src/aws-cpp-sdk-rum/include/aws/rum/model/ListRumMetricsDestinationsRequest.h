@@ -25,7 +25,7 @@ namespace Model
   class ListRumMetricsDestinationsRequest : public CloudWatchRUMRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API ListRumMetricsDestinationsRequest();
+    AWS_CLOUDWATCHRUM_API ListRumMetricsDestinationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the app monitor associated with the destinations that you want to
      * retrieve.</p>
      */
-    inline const Aws::String& GetAppMonitorName() const{ return m_appMonitorName; }
+    inline const Aws::String& GetAppMonitorName() const { return m_appMonitorName; }
     inline bool AppMonitorNameHasBeenSet() const { return m_appMonitorNameHasBeenSet; }
-    inline void SetAppMonitorName(const Aws::String& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = value; }
-    inline void SetAppMonitorName(Aws::String&& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = std::move(value); }
-    inline void SetAppMonitorName(const char* value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName.assign(value); }
-    inline ListRumMetricsDestinationsRequest& WithAppMonitorName(const Aws::String& value) { SetAppMonitorName(value); return *this;}
-    inline ListRumMetricsDestinationsRequest& WithAppMonitorName(Aws::String&& value) { SetAppMonitorName(std::move(value)); return *this;}
-    inline ListRumMetricsDestinationsRequest& WithAppMonitorName(const char* value) { SetAppMonitorName(value); return *this;}
+    template<typename AppMonitorNameT = Aws::String>
+    void SetAppMonitorName(AppMonitorNameT&& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = std::forward<AppMonitorNameT>(value); }
+    template<typename AppMonitorNameT = Aws::String>
+    ListRumMetricsDestinationsRequest& WithAppMonitorName(AppMonitorNameT&& value) { SetAppMonitorName(std::forward<AppMonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * The maximum that you can specify is 100.</p> <p>To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRumMetricsDestinationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -70,21 +68,19 @@ namespace Model
      * <p>Use the token returned by the previous operation to request the next page of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRumMetricsDestinationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRumMetricsDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRumMetricsDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRumMetricsDestinationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appMonitorName;
     bool m_appMonitorNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

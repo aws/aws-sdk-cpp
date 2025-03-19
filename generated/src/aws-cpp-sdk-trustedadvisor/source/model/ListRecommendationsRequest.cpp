@@ -15,25 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecommendationsRequest::ListRecommendationsRequest() : 
-    m_afterLastUpdatedAtHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_beforeLastUpdatedAtHasBeenSet(false),
-    m_checkIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pillar(RecommendationPillar::NOT_SET),
-    m_pillarHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_status(RecommendationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(RecommendationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendationsRequest::SerializePayload() const
 {
   return {};

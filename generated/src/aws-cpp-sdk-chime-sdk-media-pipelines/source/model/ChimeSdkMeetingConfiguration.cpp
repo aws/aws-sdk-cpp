@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration() : 
-    m_sourceConfigurationHasBeenSet(false),
-    m_artifactsConfigurationHasBeenSet(false)
-{
-}
-
 ChimeSdkMeetingConfiguration::ChimeSdkMeetingConfiguration(JsonView jsonValue)
-  : ChimeSdkMeetingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ChimeSdkMeetingConfiguration& ChimeSdkMeetingConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("SourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("SourceConfiguration");
-
     m_sourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArtifactsConfiguration"))
   {
     m_artifactsConfiguration = jsonValue.GetObject("ArtifactsConfiguration");
-
     m_artifactsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

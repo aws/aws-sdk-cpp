@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTemplateVersionsRequest::ListTemplateVersionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListTemplateVersionsRequest::SerializePayload() const
 {
   return {};

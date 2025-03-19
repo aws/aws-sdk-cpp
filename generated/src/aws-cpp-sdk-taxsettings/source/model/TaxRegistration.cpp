@@ -18,24 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxRegistration::TaxRegistration() : 
-    m_additionalTaxInformationHasBeenSet(false),
-    m_certifiedEmailIdHasBeenSet(false),
-    m_legalAddressHasBeenSet(false),
-    m_legalNameHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationType(TaxRegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false),
-    m_sector(Sector::NOT_SET),
-    m_sectorHasBeenSet(false),
-    m_status(TaxRegistrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_taxDocumentMetadatasHasBeenSet(false)
-{
-}
-
 TaxRegistration::TaxRegistration(JsonView jsonValue)
-  : TaxRegistration()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ TaxRegistration& TaxRegistration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalTaxInformation"))
   {
     m_additionalTaxInformation = jsonValue.GetObject("additionalTaxInformation");
-
     m_additionalTaxInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certifiedEmailId"))
   {
     m_certifiedEmailId = jsonValue.GetString("certifiedEmailId");
-
     m_certifiedEmailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("legalAddress"))
   {
     m_legalAddress = jsonValue.GetObject("legalAddress");
-
     m_legalAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("legalName"))
   {
     m_legalName = jsonValue.GetString("legalName");
-
     m_legalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationId"))
   {
     m_registrationId = jsonValue.GetString("registrationId");
-
     m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationType"))
   {
     m_registrationType = TaxRegistrationTypeMapper::GetTaxRegistrationTypeForName(jsonValue.GetString("registrationType"));
-
     m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sector"))
   {
     m_sector = SectorMapper::GetSectorForName(jsonValue.GetString("sector"));
-
     m_sectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaxRegistrationStatusMapper::GetTaxRegistrationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxDocumentMetadatas"))
   {
     Aws::Utils::Array<JsonView> taxDocumentMetadatasJsonList = jsonValue.GetArray("taxDocumentMetadatas");
@@ -107,7 +74,6 @@ TaxRegistration& TaxRegistration::operator =(JsonView jsonValue)
     }
     m_taxDocumentMetadatasHasBeenSet = true;
   }
-
   return *this;
 }
 

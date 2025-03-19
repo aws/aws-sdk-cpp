@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> Deprecated. </p>
      */
-    inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
+    inline int GetBlockDurationMinutes() const { return m_blockDurationMinutes; }
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
     inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
@@ -52,42 +52,36 @@ namespace Model
     /**
      * <p> The behavior when a Spot Instance is interrupted. </p>
      */
-    inline const Aws::String& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+    inline const Aws::String& GetInstanceInterruptionBehavior() const { return m_instanceInterruptionBehavior; }
     inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
-    inline void SetInstanceInterruptionBehavior(const Aws::String& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
-    inline void SetInstanceInterruptionBehavior(Aws::String&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
-    inline void SetInstanceInterruptionBehavior(const char* value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior.assign(value); }
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithInstanceInterruptionBehavior(const Aws::String& value) { SetInstanceInterruptionBehavior(value); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithInstanceInterruptionBehavior(Aws::String&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithInstanceInterruptionBehavior(const char* value) { SetInstanceInterruptionBehavior(value); return *this;}
+    template<typename InstanceInterruptionBehaviorT = Aws::String>
+    void SetInstanceInterruptionBehavior(InstanceInterruptionBehaviorT&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::forward<InstanceInterruptionBehaviorT>(value); }
+    template<typename InstanceInterruptionBehaviorT = Aws::String>
+    AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithInstanceInterruptionBehavior(InstanceInterruptionBehaviorT&& value) { SetInstanceInterruptionBehavior(std::forward<InstanceInterruptionBehaviorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
      */
-    inline const Aws::String& GetMaxPrice() const{ return m_maxPrice; }
+    inline const Aws::String& GetMaxPrice() const { return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
-    inline void SetMaxPrice(const Aws::String& value) { m_maxPriceHasBeenSet = true; m_maxPrice = value; }
-    inline void SetMaxPrice(Aws::String&& value) { m_maxPriceHasBeenSet = true; m_maxPrice = std::move(value); }
-    inline void SetMaxPrice(const char* value) { m_maxPriceHasBeenSet = true; m_maxPrice.assign(value); }
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithMaxPrice(const Aws::String& value) { SetMaxPrice(value); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithMaxPrice(Aws::String&& value) { SetMaxPrice(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithMaxPrice(const char* value) { SetMaxPrice(value); return *this;}
+    template<typename MaxPriceT = Aws::String>
+    void SetMaxPrice(MaxPriceT&& value) { m_maxPriceHasBeenSet = true; m_maxPrice = std::forward<MaxPriceT>(value); }
+    template<typename MaxPriceT = Aws::String>
+    AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithMaxPrice(MaxPriceT&& value) { SetMaxPrice(std::forward<MaxPriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Spot Instance request type. </p>
      */
-    inline const Aws::String& GetSpotInstanceType() const{ return m_spotInstanceType; }
+    inline const Aws::String& GetSpotInstanceType() const { return m_spotInstanceType; }
     inline bool SpotInstanceTypeHasBeenSet() const { return m_spotInstanceTypeHasBeenSet; }
-    inline void SetSpotInstanceType(const Aws::String& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = value; }
-    inline void SetSpotInstanceType(Aws::String&& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = std::move(value); }
-    inline void SetSpotInstanceType(const char* value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType.assign(value); }
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithSpotInstanceType(const Aws::String& value) { SetSpotInstanceType(value); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithSpotInstanceType(Aws::String&& value) { SetSpotInstanceType(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithSpotInstanceType(const char* value) { SetSpotInstanceType(value); return *this;}
+    template<typename SpotInstanceTypeT = Aws::String>
+    void SetSpotInstanceType(SpotInstanceTypeT&& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = std::forward<SpotInstanceTypeT>(value); }
+    template<typename SpotInstanceTypeT = Aws::String>
+    AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithSpotInstanceType(SpotInstanceTypeT&& value) { SetSpotInstanceType(std::forward<SpotInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,18 +89,16 @@ namespace Model
      * <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for
      * persistent requests. </p>
      */
-    inline const Aws::String& GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::String& GetValidUntil() const { return m_validUntil; }
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
-    inline void SetValidUntil(const Aws::String& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
-    inline void SetValidUntil(Aws::String&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
-    inline void SetValidUntil(const char* value) { m_validUntilHasBeenSet = true; m_validUntil.assign(value); }
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithValidUntil(const Aws::String& value) { SetValidUntil(value); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithValidUntil(Aws::String&& value) { SetValidUntil(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithValidUntil(const char* value) { SetValidUntil(value); return *this;}
+    template<typename ValidUntilT = Aws::String>
+    void SetValidUntil(ValidUntilT&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::forward<ValidUntilT>(value); }
+    template<typename ValidUntilT = Aws::String>
+    AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& WithValidUntil(ValidUntilT&& value) { SetValidUntil(std::forward<ValidUntilT>(value)); return *this;}
     ///@}
   private:
 
-    int m_blockDurationMinutes;
+    int m_blockDurationMinutes{0};
     bool m_blockDurationMinutesHasBeenSet = false;
 
     Aws::String m_instanceInterruptionBehavior;

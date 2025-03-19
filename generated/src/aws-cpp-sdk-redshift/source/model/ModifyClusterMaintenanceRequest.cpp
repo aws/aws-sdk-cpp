@@ -10,18 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterMaintenanceRequest::ModifyClusterMaintenanceRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_deferMaintenance(false),
-    m_deferMaintenanceHasBeenSet(false),
-    m_deferMaintenanceIdentifierHasBeenSet(false),
-    m_deferMaintenanceStartTimeHasBeenSet(false),
-    m_deferMaintenanceEndTimeHasBeenSet(false),
-    m_deferMaintenanceDuration(0),
-    m_deferMaintenanceDurationHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterMaintenanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

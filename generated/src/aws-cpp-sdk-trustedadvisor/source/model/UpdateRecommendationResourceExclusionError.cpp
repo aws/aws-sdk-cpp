@@ -18,15 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-UpdateRecommendationResourceExclusionError::UpdateRecommendationResourceExclusionError() : 
-    m_arnHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 UpdateRecommendationResourceExclusionError::UpdateRecommendationResourceExclusionError(JsonView jsonValue)
-  : UpdateRecommendationResourceExclusionError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateRecommendationResourceExclusionError& UpdateRecommendationResourceExclusio
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,24 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InferenceSchedulerSummary::InferenceSchedulerSummary() : 
-    m_modelNameHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_inferenceSchedulerNameHasBeenSet(false),
-    m_inferenceSchedulerArnHasBeenSet(false),
-    m_status(InferenceSchedulerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_dataDelayOffsetInMinutes(0),
-    m_dataDelayOffsetInMinutesHasBeenSet(false),
-    m_dataUploadFrequency(DataUploadFrequency::NOT_SET),
-    m_dataUploadFrequencyHasBeenSet(false),
-    m_latestInferenceResult(LatestInferenceResult::NOT_SET),
-    m_latestInferenceResultHasBeenSet(false)
-{
-}
-
 InferenceSchedulerSummary::InferenceSchedulerSummary(JsonView jsonValue)
-  : InferenceSchedulerSummary()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ InferenceSchedulerSummary& InferenceSchedulerSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerName"))
   {
     m_inferenceSchedulerName = jsonValue.GetString("InferenceSchedulerName");
-
     m_inferenceSchedulerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSchedulerArn"))
   {
     m_inferenceSchedulerArn = jsonValue.GetString("InferenceSchedulerArn");
-
     m_inferenceSchedulerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InferenceSchedulerStatusMapper::GetInferenceSchedulerStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataDelayOffsetInMinutes"))
   {
     m_dataDelayOffsetInMinutes = jsonValue.GetInt64("DataDelayOffsetInMinutes");
-
     m_dataDelayOffsetInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataUploadFrequency"))
   {
     m_dataUploadFrequency = DataUploadFrequencyMapper::GetDataUploadFrequencyForName(jsonValue.GetString("DataUploadFrequency"));
-
     m_dataUploadFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestInferenceResult"))
   {
     m_latestInferenceResult = LatestInferenceResultMapper::GetLatestInferenceResultForName(jsonValue.GetString("LatestInferenceResult"));
-
     m_latestInferenceResultHasBeenSet = true;
   }
-
   return *this;
 }
 

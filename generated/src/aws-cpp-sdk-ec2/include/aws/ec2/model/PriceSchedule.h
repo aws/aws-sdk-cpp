@@ -31,7 +31,7 @@ namespace Model
   class PriceSchedule
   {
   public:
-    AWS_EC2_API PriceSchedule();
+    AWS_EC2_API PriceSchedule() = default;
     AWS_EC2_API PriceSchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PriceSchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,7 +50,7 @@ namespace Model
      * active during months 5, 4, and 3. Then schedule 2, covering the last two months
      * of the term, will be active for months 2 and 1.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline PriceSchedule& WithActive(bool value) { SetActive(value); return *this;}
@@ -61,19 +61,17 @@ namespace Model
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
      */
-    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+    inline CurrencyCodeValues GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline PriceSchedule& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
-    inline PriceSchedule& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline void SetCurrencyCode(CurrencyCodeValues value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline PriceSchedule& WithCurrencyCode(CurrencyCodeValues value) { SetCurrencyCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fixed price for the term.</p>
      */
-    inline double GetPrice() const{ return m_price; }
+    inline double GetPrice() const { return m_price; }
     inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
     inline PriceSchedule& WithPrice(double value) { SetPrice(value); return *this;}
@@ -84,23 +82,23 @@ namespace Model
      * <p>The number of months remaining in the reservation. For example, 2 is the
      * second to the last month before the capacity reservation expires.</p>
      */
-    inline long long GetTerm() const{ return m_term; }
+    inline long long GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
     inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
     inline PriceSchedule& WithTerm(long long value) { SetTerm(value); return *this;}
     ///@}
   private:
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
 
-    CurrencyCodeValues m_currencyCode;
+    CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
     bool m_currencyCodeHasBeenSet = false;
 
-    double m_price;
+    double m_price{0.0};
     bool m_priceHasBeenSet = false;
 
-    long long m_term;
+    long long m_term{0};
     bool m_termHasBeenSet = false;
   };
 

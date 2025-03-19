@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MeterUsageResult::MeterUsageResult()
-{
-}
-
 MeterUsageResult::MeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ MeterUsageResult& MeterUsageResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("MeteringRecordId"))
   {
     m_meteringRecordId = jsonValue.GetString("MeteringRecordId");
-
+    m_meteringRecordIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

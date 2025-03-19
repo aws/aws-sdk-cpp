@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableFieldLinkContentConfiguration::TableFieldLinkContentConfiguration() : 
-    m_customTextContentHasBeenSet(false),
-    m_customIconContentHasBeenSet(false)
-{
-}
-
 TableFieldLinkContentConfiguration::TableFieldLinkContentConfiguration(JsonView jsonValue)
-  : TableFieldLinkContentConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableFieldLinkContentConfiguration& TableFieldLinkContentConfiguration::operator
   if(jsonValue.ValueExists("CustomTextContent"))
   {
     m_customTextContent = jsonValue.GetObject("CustomTextContent");
-
     m_customTextContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomIconContent"))
   {
     m_customIconContent = jsonValue.GetObject("CustomIconContent");
-
     m_customIconContentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,17 +19,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedWebAppCustomization::DescribedWebAppCustomization() : 
-    m_arnHasBeenSet(false),
-    m_webAppIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_logoFileHasBeenSet(false),
-    m_faviconFileHasBeenSet(false)
-{
-}
-
 DescribedWebAppCustomization::DescribedWebAppCustomization(JsonView jsonValue)
-  : DescribedWebAppCustomization()
 {
   *this = jsonValue;
 }
@@ -39,36 +29,28 @@ DescribedWebAppCustomization& DescribedWebAppCustomization::operator =(JsonView 
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAppId"))
   {
     m_webAppId = jsonValue.GetString("WebAppId");
-
     m_webAppIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogoFile"))
   {
     m_logoFile = HashingUtils::Base64Decode(jsonValue.GetString("LogoFile"));
     m_logoFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaviconFile"))
   {
     m_faviconFile = HashingUtils::Base64Decode(jsonValue.GetString("FaviconFile"));
     m_faviconFileHasBeenSet = true;
   }
-
   return *this;
 }
 

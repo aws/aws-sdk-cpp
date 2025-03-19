@@ -18,14 +18,7 @@ namespace IoTSecureTunneling
 namespace Model
 {
 
-DestinationConfig::DestinationConfig() : 
-    m_thingNameHasBeenSet(false),
-    m_servicesHasBeenSet(false)
-{
-}
-
 DestinationConfig::DestinationConfig(JsonView jsonValue)
-  : DestinationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DestinationConfig& DestinationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("services"))
   {
     Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
@@ -48,7 +39,6 @@ DestinationConfig& DestinationConfig::operator =(JsonView jsonValue)
     }
     m_servicesHasBeenSet = true;
   }
-
   return *this;
 }
 

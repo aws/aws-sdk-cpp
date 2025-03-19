@@ -35,7 +35,7 @@ namespace Model
   class DatasetDocumentClassifierInputDataConfig
   {
   public:
-    AWS_COMPREHEND_API DatasetDocumentClassifierInputDataConfig();
+    AWS_COMPREHEND_API DatasetDocumentClassifierInputDataConfig() = default;
     AWS_COMPREHEND_API DatasetDocumentClassifierInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DatasetDocumentClassifierInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * input.</p> <p>This parameter is required if you set <code>DataFormat</code> to
      * <code>COMPREHEND_CSV</code>.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline DatasetDocumentClassifierInputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline DatasetDocumentClassifierInputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline DatasetDocumentClassifierInputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    DatasetDocumentClassifierInputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * that line will be combined to make a single unique label, such as
      * LABELLABELLABEL.</p>
      */
-    inline const Aws::String& GetLabelDelimiter() const{ return m_labelDelimiter; }
+    inline const Aws::String& GetLabelDelimiter() const { return m_labelDelimiter; }
     inline bool LabelDelimiterHasBeenSet() const { return m_labelDelimiterHasBeenSet; }
-    inline void SetLabelDelimiter(const Aws::String& value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter = value; }
-    inline void SetLabelDelimiter(Aws::String&& value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter = std::move(value); }
-    inline void SetLabelDelimiter(const char* value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter.assign(value); }
-    inline DatasetDocumentClassifierInputDataConfig& WithLabelDelimiter(const Aws::String& value) { SetLabelDelimiter(value); return *this;}
-    inline DatasetDocumentClassifierInputDataConfig& WithLabelDelimiter(Aws::String&& value) { SetLabelDelimiter(std::move(value)); return *this;}
-    inline DatasetDocumentClassifierInputDataConfig& WithLabelDelimiter(const char* value) { SetLabelDelimiter(value); return *this;}
+    template<typename LabelDelimiterT = Aws::String>
+    void SetLabelDelimiter(LabelDelimiterT&& value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter = std::forward<LabelDelimiterT>(value); }
+    template<typename LabelDelimiterT = Aws::String>
+    DatasetDocumentClassifierInputDataConfig& WithLabelDelimiter(LabelDelimiterT&& value) { SetLabelDelimiter(std::forward<LabelDelimiterT>(value)); return *this;}
     ///@}
   private:
 

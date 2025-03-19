@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStateChange::InstanceStateChange() : 
-    m_instanceIdHasBeenSet(false),
-    m_currentStateHasBeenSet(false),
-    m_previousStateHasBeenSet(false)
-{
-}
-
 InstanceStateChange::InstanceStateChange(const XmlNode& xmlNode)
-  : InstanceStateChange()
 {
   *this = xmlNode;
 }

@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AssociationSummary::AssociationSummary() : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_destinationTypeHasBeenSet(false),
-    m_associationType(AssociationEdgeType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 AssociationSummary::AssociationSummary(JsonView jsonValue)
-  : AssociationSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AssociationSummary& AssociationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationArn"))
   {
     m_destinationArn = jsonValue.GetString("DestinationArn");
-
     m_destinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationType"))
   {
     m_destinationType = jsonValue.GetString("DestinationType");
-
     m_destinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationType"))
   {
     m_associationType = AssociationEdgeTypeMapper::GetAssociationEdgeTypeForName(jsonValue.GetString("AssociationType"));
-
     m_associationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceName"))
   {
     m_sourceName = jsonValue.GetString("SourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationName"))
   {
     m_destinationName = jsonValue.GetString("DestinationName");
-
     m_destinationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class UpdateStorageRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API UpdateStorageRequest();
+    AWS_KAFKA_API UpdateStorageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * updated.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline UpdateStorageRequest& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline UpdateStorageRequest& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline UpdateStorageRequest& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    UpdateStorageRequest& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * will then generate a new version.</p>
          
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline UpdateStorageRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline UpdateStorageRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline UpdateStorageRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    UpdateStorageRequest& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,12 @@ namespace Model
             <p>EBS volume provisioned throughput information.</p>
          
      */
-    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline UpdateStorageRequest& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-    inline UpdateStorageRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    UpdateStorageRequest& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,10 @@ namespace Model
             <p>Controls storage mode for supported storage tiers.</p>
          
      */
-    inline const StorageMode& GetStorageMode() const{ return m_storageMode; }
+    inline StorageMode GetStorageMode() const { return m_storageMode; }
     inline bool StorageModeHasBeenSet() const { return m_storageModeHasBeenSet; }
-    inline void SetStorageMode(const StorageMode& value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
-    inline void SetStorageMode(StorageMode&& value) { m_storageModeHasBeenSet = true; m_storageMode = std::move(value); }
-    inline UpdateStorageRequest& WithStorageMode(const StorageMode& value) { SetStorageMode(value); return *this;}
-    inline UpdateStorageRequest& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
+    inline void SetStorageMode(StorageMode value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
+    inline UpdateStorageRequest& WithStorageMode(StorageMode value) { SetStorageMode(value); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +102,7 @@ namespace Model
             <p>size of the EBS volume to update.</p>
          
      */
-    inline int GetVolumeSizeGB() const{ return m_volumeSizeGB; }
+    inline int GetVolumeSizeGB() const { return m_volumeSizeGB; }
     inline bool VolumeSizeGBHasBeenSet() const { return m_volumeSizeGBHasBeenSet; }
     inline void SetVolumeSizeGB(int value) { m_volumeSizeGBHasBeenSet = true; m_volumeSizeGB = value; }
     inline UpdateStorageRequest& WithVolumeSizeGB(int value) { SetVolumeSizeGB(value); return *this;}
@@ -124,10 +118,10 @@ namespace Model
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet = false;
 
-    StorageMode m_storageMode;
+    StorageMode m_storageMode{StorageMode::NOT_SET};
     bool m_storageModeHasBeenSet = false;
 
-    int m_volumeSizeGB;
+    int m_volumeSizeGB{0};
     bool m_volumeSizeGBHasBeenSet = false;
   };
 

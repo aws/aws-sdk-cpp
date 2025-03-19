@@ -18,19 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-ConditionBasedCollectionScheme::ConditionBasedCollectionScheme() : 
-    m_expressionHasBeenSet(false),
-    m_minimumTriggerIntervalMs(0),
-    m_minimumTriggerIntervalMsHasBeenSet(false),
-    m_triggerMode(TriggerMode::NOT_SET),
-    m_triggerModeHasBeenSet(false),
-    m_conditionLanguageVersion(0),
-    m_conditionLanguageVersionHasBeenSet(false)
-{
-}
-
 ConditionBasedCollectionScheme::ConditionBasedCollectionScheme(JsonView jsonValue)
-  : ConditionBasedCollectionScheme()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ConditionBasedCollectionScheme& ConditionBasedCollectionScheme::operator =(JsonV
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumTriggerIntervalMs"))
   {
     m_minimumTriggerIntervalMs = jsonValue.GetInt64("minimumTriggerIntervalMs");
-
     m_minimumTriggerIntervalMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerMode"))
   {
     m_triggerMode = TriggerModeMapper::GetTriggerModeForName(jsonValue.GetString("triggerMode"));
-
     m_triggerModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionLanguageVersion"))
   {
     m_conditionLanguageVersion = jsonValue.GetInteger("conditionLanguageVersion");
-
     m_conditionLanguageVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

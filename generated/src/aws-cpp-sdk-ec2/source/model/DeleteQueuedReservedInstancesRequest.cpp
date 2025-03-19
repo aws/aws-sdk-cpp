@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteQueuedReservedInstancesRequest::DeleteQueuedReservedInstancesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_reservedInstancesIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQueuedReservedInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

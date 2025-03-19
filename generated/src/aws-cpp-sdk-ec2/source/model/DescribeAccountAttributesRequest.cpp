@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeAccountAttributesRequest::DescribeAccountAttributesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

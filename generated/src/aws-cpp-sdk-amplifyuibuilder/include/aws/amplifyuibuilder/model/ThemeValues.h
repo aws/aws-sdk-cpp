@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -34,7 +34,7 @@ namespace Model
   class ThemeValues
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ThemeValues();
+    AWS_AMPLIFYUIBUILDER_API ThemeValues() = default;
     AWS_AMPLIFYUIBUILDER_API ThemeValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ThemeValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,29 @@ namespace Model
     /**
      * <p>The name of the property.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ThemeValues& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ThemeValues& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ThemeValues& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ThemeValues& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API const ThemeValue& GetValue() const;
-    AWS_AMPLIFYUIBUILDER_API bool ValueHasBeenSet() const;
-    AWS_AMPLIFYUIBUILDER_API void SetValue(const ThemeValue& value);
-    AWS_AMPLIFYUIBUILDER_API void SetValue(ThemeValue&& value);
-    AWS_AMPLIFYUIBUILDER_API ThemeValues& WithValue(const ThemeValue& value);
-    AWS_AMPLIFYUIBUILDER_API ThemeValues& WithValue(ThemeValue&& value);
+    inline const ThemeValue& GetValue() const{
+      return *m_value;
+    }
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+    template<typename ValueT = ThemeValue>
+    void SetValue(ValueT&& value) {
+      m_valueHasBeenSet = true; 
+      m_value = Aws::MakeShared<ThemeValue>("ThemeValues", std::forward<ValueT>(value));
+    }
+    template<typename ValueT = ThemeValue>
+    ThemeValues& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

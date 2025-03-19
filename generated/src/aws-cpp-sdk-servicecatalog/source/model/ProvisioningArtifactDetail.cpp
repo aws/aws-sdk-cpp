@@ -18,23 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifactDetail::ProvisioningArtifactDetail() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ProvisioningArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_guidance(ProvisioningArtifactGuidance::NOT_SET),
-    m_guidanceHasBeenSet(false),
-    m_sourceRevisionHasBeenSet(false)
-{
-}
-
 ProvisioningArtifactDetail::ProvisioningArtifactDetail(JsonView jsonValue)
-  : ProvisioningArtifactDetail()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ ProvisioningArtifactDetail& ProvisioningArtifactDetail::operator =(JsonView json
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ProvisioningArtifactTypeMapper::GetProvisioningArtifactTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Active"))
   {
     m_active = jsonValue.GetBool("Active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Guidance"))
   {
     m_guidance = ProvisioningArtifactGuidanceMapper::GetProvisioningArtifactGuidanceForName(jsonValue.GetString("Guidance"));
-
     m_guidanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRevision"))
   {
     m_sourceRevision = jsonValue.GetString("SourceRevision");
-
     m_sourceRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

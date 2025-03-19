@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCacheRequest::DescribeCacheRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCacheRequest::SerializePayload() const
 {
   JsonValue payload;

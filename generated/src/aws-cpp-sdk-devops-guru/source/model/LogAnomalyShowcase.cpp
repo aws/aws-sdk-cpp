@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-LogAnomalyShowcase::LogAnomalyShowcase() : 
-    m_logAnomalyClassesHasBeenSet(false)
-{
-}
-
 LogAnomalyShowcase::LogAnomalyShowcase(JsonView jsonValue)
-  : LogAnomalyShowcase()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LogAnomalyShowcase& LogAnomalyShowcase::operator =(JsonView jsonValue)
     }
     m_logAnomalyClassesHasBeenSet = true;
   }
-
   return *this;
 }
 

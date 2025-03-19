@@ -55,7 +55,7 @@ namespace Model
   class DescribeTrainingJobResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeTrainingJobResult();
+    AWS_SAGEMAKER_API DescribeTrainingJobResult() = default;
     AWS_SAGEMAKER_API DescribeTrainingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeTrainingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -64,26 +64,22 @@ namespace Model
     /**
      * <p> Name of the model training job. </p>
      */
-    inline const Aws::String& GetTrainingJobName() const{ return m_trainingJobName; }
-    inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobName = value; }
-    inline void SetTrainingJobName(Aws::String&& value) { m_trainingJobName = std::move(value); }
-    inline void SetTrainingJobName(const char* value) { m_trainingJobName.assign(value); }
-    inline DescribeTrainingJobResult& WithTrainingJobName(const Aws::String& value) { SetTrainingJobName(value); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingJobName(Aws::String&& value) { SetTrainingJobName(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingJobName(const char* value) { SetTrainingJobName(value); return *this;}
+    inline const Aws::String& GetTrainingJobName() const { return m_trainingJobName; }
+    template<typename TrainingJobNameT = Aws::String>
+    void SetTrainingJobName(TrainingJobNameT&& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = std::forward<TrainingJobNameT>(value); }
+    template<typename TrainingJobNameT = Aws::String>
+    DescribeTrainingJobResult& WithTrainingJobName(TrainingJobNameT&& value) { SetTrainingJobName(std::forward<TrainingJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the training job.</p>
      */
-    inline const Aws::String& GetTrainingJobArn() const{ return m_trainingJobArn; }
-    inline void SetTrainingJobArn(const Aws::String& value) { m_trainingJobArn = value; }
-    inline void SetTrainingJobArn(Aws::String&& value) { m_trainingJobArn = std::move(value); }
-    inline void SetTrainingJobArn(const char* value) { m_trainingJobArn.assign(value); }
-    inline DescribeTrainingJobResult& WithTrainingJobArn(const Aws::String& value) { SetTrainingJobArn(value); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingJobArn(Aws::String&& value) { SetTrainingJobArn(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingJobArn(const char* value) { SetTrainingJobArn(value); return *this;}
+    inline const Aws::String& GetTrainingJobArn() const { return m_trainingJobArn; }
+    template<typename TrainingJobArnT = Aws::String>
+    void SetTrainingJobArn(TrainingJobArnT&& value) { m_trainingJobArnHasBeenSet = true; m_trainingJobArn = std::forward<TrainingJobArnT>(value); }
+    template<typename TrainingJobArnT = Aws::String>
+    DescribeTrainingJobResult& WithTrainingJobArn(TrainingJobArnT&& value) { SetTrainingJobArn(std::forward<TrainingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,13 +87,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
      * the training job was launched by a hyperparameter tuning job.</p>
      */
-    inline const Aws::String& GetTuningJobArn() const{ return m_tuningJobArn; }
-    inline void SetTuningJobArn(const Aws::String& value) { m_tuningJobArn = value; }
-    inline void SetTuningJobArn(Aws::String&& value) { m_tuningJobArn = std::move(value); }
-    inline void SetTuningJobArn(const char* value) { m_tuningJobArn.assign(value); }
-    inline DescribeTrainingJobResult& WithTuningJobArn(const Aws::String& value) { SetTuningJobArn(value); return *this;}
-    inline DescribeTrainingJobResult& WithTuningJobArn(Aws::String&& value) { SetTuningJobArn(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithTuningJobArn(const char* value) { SetTuningJobArn(value); return *this;}
+    inline const Aws::String& GetTuningJobArn() const { return m_tuningJobArn; }
+    template<typename TuningJobArnT = Aws::String>
+    void SetTuningJobArn(TuningJobArnT&& value) { m_tuningJobArnHasBeenSet = true; m_tuningJobArn = std::forward<TuningJobArnT>(value); }
+    template<typename TuningJobArnT = Aws::String>
+    DescribeTrainingJobResult& WithTuningJobArn(TuningJobArnT&& value) { SetTuningJobArn(std::forward<TuningJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,26 +99,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SageMaker Ground Truth labeling job
      * that created the transform or training job.</p>
      */
-    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
-    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArn = value; }
-    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArn = std::move(value); }
-    inline void SetLabelingJobArn(const char* value) { m_labelingJobArn.assign(value); }
-    inline DescribeTrainingJobResult& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
-    inline DescribeTrainingJobResult& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+    inline const Aws::String& GetLabelingJobArn() const { return m_labelingJobArn; }
+    template<typename LabelingJobArnT = Aws::String>
+    void SetLabelingJobArn(LabelingJobArnT&& value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn = std::forward<LabelingJobArnT>(value); }
+    template<typename LabelingJobArnT = Aws::String>
+    DescribeTrainingJobResult& WithLabelingJobArn(LabelingJobArnT&& value) { SetLabelingJobArn(std::forward<LabelingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
-    inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
-    inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArn = value; }
-    inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArn = std::move(value); }
-    inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArn.assign(value); }
-    inline DescribeTrainingJobResult& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
-    inline DescribeTrainingJobResult& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
+    inline const Aws::String& GetAutoMLJobArn() const { return m_autoMLJobArn; }
+    template<typename AutoMLJobArnT = Aws::String>
+    void SetAutoMLJobArn(AutoMLJobArnT&& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = std::forward<AutoMLJobArnT>(value); }
+    template<typename AutoMLJobArnT = Aws::String>
+    DescribeTrainingJobResult& WithAutoMLJobArn(AutoMLJobArnT&& value) { SetAutoMLJobArn(std::forward<AutoMLJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,11 +122,11 @@ namespace Model
      * <p>Information about the Amazon S3 location that is configured for storing model
      * artifacts. </p>
      */
-    inline const ModelArtifacts& GetModelArtifacts() const{ return m_modelArtifacts; }
-    inline void SetModelArtifacts(const ModelArtifacts& value) { m_modelArtifacts = value; }
-    inline void SetModelArtifacts(ModelArtifacts&& value) { m_modelArtifacts = std::move(value); }
-    inline DescribeTrainingJobResult& WithModelArtifacts(const ModelArtifacts& value) { SetModelArtifacts(value); return *this;}
-    inline DescribeTrainingJobResult& WithModelArtifacts(ModelArtifacts&& value) { SetModelArtifacts(std::move(value)); return *this;}
+    inline const ModelArtifacts& GetModelArtifacts() const { return m_modelArtifacts; }
+    template<typename ModelArtifactsT = ModelArtifacts>
+    void SetModelArtifacts(ModelArtifactsT&& value) { m_modelArtifactsHasBeenSet = true; m_modelArtifacts = std::forward<ModelArtifactsT>(value); }
+    template<typename ModelArtifactsT = ModelArtifacts>
+    DescribeTrainingJobResult& WithModelArtifacts(ModelArtifactsT&& value) { SetModelArtifacts(std::forward<ModelArtifactsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,11 +141,9 @@ namespace Model
      * <code>Stopped</code> - The training job has stopped.</p> </li> </ul> <p>For more
      * detailed information, see <code>SecondaryStatus</code>. </p>
      */
-    inline const TrainingJobStatus& GetTrainingJobStatus() const{ return m_trainingJobStatus; }
-    inline void SetTrainingJobStatus(const TrainingJobStatus& value) { m_trainingJobStatus = value; }
-    inline void SetTrainingJobStatus(TrainingJobStatus&& value) { m_trainingJobStatus = std::move(value); }
-    inline DescribeTrainingJobResult& WithTrainingJobStatus(const TrainingJobStatus& value) { SetTrainingJobStatus(value); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingJobStatus(TrainingJobStatus&& value) { SetTrainingJobStatus(std::move(value)); return *this;}
+    inline TrainingJobStatus GetTrainingJobStatus() const { return m_trainingJobStatus; }
+    inline void SetTrainingJobStatus(TrainingJobStatus value) { m_trainingJobStatusHasBeenSet = true; m_trainingJobStatus = value; }
+    inline DescribeTrainingJobResult& WithTrainingJobStatus(TrainingJobStatus value) { SetTrainingJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -190,42 +178,35 @@ namespace Model
      * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
-    inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
-    inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
-    inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
-    inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
-    inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
+    inline SecondaryStatus GetSecondaryStatus() const { return m_secondaryStatus; }
+    inline void SetSecondaryStatus(SecondaryStatus value) { m_secondaryStatusHasBeenSet = true; m_secondaryStatus = value; }
+    inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus value) { SetSecondaryStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the training job failed, the reason it failed. </p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeTrainingJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeTrainingJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeTrainingJobResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Algorithm-specific parameters. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
-    inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParameters = value; }
-    inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParameters = std::move(value); }
-    inline DescribeTrainingJobResult& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
-    inline DescribeTrainingJobResult& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParameters.emplace(key, value); return *this; }
-    inline DescribeTrainingJobResult& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
-    inline DescribeTrainingJobResult& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
-    inline DescribeTrainingJobResult& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeTrainingJobResult& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
-    inline DescribeTrainingJobResult& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
-    inline DescribeTrainingJobResult& AddHyperParameters(const char* key, const char* value) { m_hyperParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const { return m_hyperParameters; }
+    template<typename HyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetHyperParameters(HyperParametersT&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::forward<HyperParametersT>(value); }
+    template<typename HyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    DescribeTrainingJobResult& WithHyperParameters(HyperParametersT&& value) { SetHyperParameters(std::forward<HyperParametersT>(value)); return *this;}
+    template<typename HyperParametersKeyT = Aws::String, typename HyperParametersValueT = Aws::String>
+    DescribeTrainingJobResult& AddHyperParameters(HyperParametersKeyT&& key, HyperParametersValueT&& value) {
+      m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::forward<HyperParametersKeyT>(key), std::forward<HyperParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -233,11 +214,11 @@ namespace Model
      * <p>Information about the algorithm used for training, and algorithm metadata.
      * </p>
      */
-    inline const AlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
-    inline void SetAlgorithmSpecification(const AlgorithmSpecification& value) { m_algorithmSpecification = value; }
-    inline void SetAlgorithmSpecification(AlgorithmSpecification&& value) { m_algorithmSpecification = std::move(value); }
-    inline DescribeTrainingJobResult& WithAlgorithmSpecification(const AlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
-    inline DescribeTrainingJobResult& WithAlgorithmSpecification(AlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
+    inline const AlgorithmSpecification& GetAlgorithmSpecification() const { return m_algorithmSpecification; }
+    template<typename AlgorithmSpecificationT = AlgorithmSpecification>
+    void SetAlgorithmSpecification(AlgorithmSpecificationT&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::forward<AlgorithmSpecificationT>(value); }
+    template<typename AlgorithmSpecificationT = AlgorithmSpecification>
+    DescribeTrainingJobResult& WithAlgorithmSpecification(AlgorithmSpecificationT&& value) { SetAlgorithmSpecification(std::forward<AlgorithmSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,13 +226,11 @@ namespace Model
      * <p>The Amazon Web Services Identity and Access Management (IAM) role configured
      * for the training job. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeTrainingJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeTrainingJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeTrainingJobResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,13 +238,13 @@ namespace Model
      * <p>An array of <code>Channel</code> objects that describes each data input
      * channel. </p>
      */
-    inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
-    inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfig = value; }
-    inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddInputDataConfig(const Channel& value) { m_inputDataConfig.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddInputDataConfig(Channel&& value) { m_inputDataConfig.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Channel>& GetInputDataConfig() const { return m_inputDataConfig; }
+    template<typename InputDataConfigT = Aws::Vector<Channel>>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = Aws::Vector<Channel>>
+    DescribeTrainingJobResult& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
+    template<typename InputDataConfigT = Channel>
+    DescribeTrainingJobResult& AddInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.emplace_back(std::forward<InputDataConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -273,11 +252,11 @@ namespace Model
      * <p>The S3 path where model artifacts that you configured when creating the job
      * are stored. SageMaker creates subfolders for model artifacts. </p>
      */
-    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
-    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfig = value; }
-    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    inline const OutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
+    template<typename OutputDataConfigT = OutputDataConfig>
+    void SetOutputDataConfig(OutputDataConfigT&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::forward<OutputDataConfigT>(value); }
+    template<typename OutputDataConfigT = OutputDataConfig>
+    DescribeTrainingJobResult& WithOutputDataConfig(OutputDataConfigT&& value) { SetOutputDataConfig(std::forward<OutputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -285,22 +264,22 @@ namespace Model
      * <p>Resources, including ML compute instances and ML storage volumes, that are
      * configured for model training. </p>
      */
-    inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
-    inline void SetResourceConfig(const ResourceConfig& value) { m_resourceConfig = value; }
-    inline void SetResourceConfig(ResourceConfig&& value) { m_resourceConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithResourceConfig(const ResourceConfig& value) { SetResourceConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithResourceConfig(ResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
+    inline const ResourceConfig& GetResourceConfig() const { return m_resourceConfig; }
+    template<typename ResourceConfigT = ResourceConfig>
+    void SetResourceConfig(ResourceConfigT&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::forward<ResourceConfigT>(value); }
+    template<typename ResourceConfigT = ResourceConfig>
+    DescribeTrainingJobResult& WithResourceConfig(ResourceConfigT&& value) { SetResourceConfig(std::forward<ResourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the warm pool associated with the training job.</p>
      */
-    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
-    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
-    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
-    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
-    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+    inline const WarmPoolStatus& GetWarmPoolStatus() const { return m_warmPoolStatus; }
+    template<typename WarmPoolStatusT = WarmPoolStatus>
+    void SetWarmPoolStatus(WarmPoolStatusT&& value) { m_warmPoolStatusHasBeenSet = true; m_warmPoolStatus = std::forward<WarmPoolStatusT>(value); }
+    template<typename WarmPoolStatusT = WarmPoolStatus>
+    DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatusT&& value) { SetWarmPoolStatus(std::forward<WarmPoolStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -312,11 +291,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    DescribeTrainingJobResult& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -329,22 +308,22 @@ namespace Model
      * Algorithms can use this 120-second window to save the model artifacts, so the
      * results of training are not lost. </p>
      */
-    inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
-    inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingCondition = value; }
-    inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingCondition = std::move(value); }
-    inline DescribeTrainingJobResult& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
-    inline DescribeTrainingJobResult& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
+    inline const StoppingCondition& GetStoppingCondition() const { return m_stoppingCondition; }
+    template<typename StoppingConditionT = StoppingCondition>
+    void SetStoppingCondition(StoppingConditionT&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::forward<StoppingConditionT>(value); }
+    template<typename StoppingConditionT = StoppingCondition>
+    DescribeTrainingJobResult& WithStoppingCondition(StoppingConditionT&& value) { SetStoppingCondition(std::forward<StoppingConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that indicates when the training job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeTrainingJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeTrainingJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeTrainingJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -355,11 +334,11 @@ namespace Model
      * than this time. The difference is due to the time it takes to download the
      * training data and to the size of the training container.</p>
      */
-    inline const Aws::Utils::DateTime& GetTrainingStartTime() const{ return m_trainingStartTime; }
-    inline void SetTrainingStartTime(const Aws::Utils::DateTime& value) { m_trainingStartTime = value; }
-    inline void SetTrainingStartTime(Aws::Utils::DateTime&& value) { m_trainingStartTime = std::move(value); }
-    inline DescribeTrainingJobResult& WithTrainingStartTime(const Aws::Utils::DateTime& value) { SetTrainingStartTime(value); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingStartTime(Aws::Utils::DateTime&& value) { SetTrainingStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTrainingStartTime() const { return m_trainingStartTime; }
+    template<typename TrainingStartTimeT = Aws::Utils::DateTime>
+    void SetTrainingStartTime(TrainingStartTimeT&& value) { m_trainingStartTimeHasBeenSet = true; m_trainingStartTime = std::forward<TrainingStartTimeT>(value); }
+    template<typename TrainingStartTimeT = Aws::Utils::DateTime>
+    DescribeTrainingJobResult& WithTrainingStartTime(TrainingStartTimeT&& value) { SetTrainingStartTime(std::forward<TrainingStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -370,11 +349,11 @@ namespace Model
      * model artifacts are uploaded. For failed jobs, this is the time when SageMaker
      * detects a job failure.</p>
      */
-    inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
-    inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTime = value; }
-    inline void SetTrainingEndTime(Aws::Utils::DateTime&& value) { m_trainingEndTime = std::move(value); }
-    inline DescribeTrainingJobResult& WithTrainingEndTime(const Aws::Utils::DateTime& value) { SetTrainingEndTime(value); return *this;}
-    inline DescribeTrainingJobResult& WithTrainingEndTime(Aws::Utils::DateTime&& value) { SetTrainingEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTrainingEndTime() const { return m_trainingEndTime; }
+    template<typename TrainingEndTimeT = Aws::Utils::DateTime>
+    void SetTrainingEndTime(TrainingEndTimeT&& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = std::forward<TrainingEndTimeT>(value); }
+    template<typename TrainingEndTimeT = Aws::Utils::DateTime>
+    DescribeTrainingJobResult& WithTrainingEndTime(TrainingEndTimeT&& value) { SetTrainingEndTime(std::forward<TrainingEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -382,11 +361,11 @@ namespace Model
      * <p>A timestamp that indicates when the status of the training job was last
      * modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeTrainingJobResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeTrainingJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeTrainingJobResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -394,13 +373,13 @@ namespace Model
      * <p>A history of all of the secondary statuses that the training job has
      * transitioned through.</p>
      */
-    inline const Aws::Vector<SecondaryStatusTransition>& GetSecondaryStatusTransitions() const{ return m_secondaryStatusTransitions; }
-    inline void SetSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { m_secondaryStatusTransitions = value; }
-    inline void SetSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { m_secondaryStatusTransitions = std::move(value); }
-    inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { SetSecondaryStatusTransitions(value); return *this;}
-    inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { SetSecondaryStatusTransitions(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(const SecondaryStatusTransition& value) { m_secondaryStatusTransitions.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(SecondaryStatusTransition&& value) { m_secondaryStatusTransitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecondaryStatusTransition>& GetSecondaryStatusTransitions() const { return m_secondaryStatusTransitions; }
+    template<typename SecondaryStatusTransitionsT = Aws::Vector<SecondaryStatusTransition>>
+    void SetSecondaryStatusTransitions(SecondaryStatusTransitionsT&& value) { m_secondaryStatusTransitionsHasBeenSet = true; m_secondaryStatusTransitions = std::forward<SecondaryStatusTransitionsT>(value); }
+    template<typename SecondaryStatusTransitionsT = Aws::Vector<SecondaryStatusTransition>>
+    DescribeTrainingJobResult& WithSecondaryStatusTransitions(SecondaryStatusTransitionsT&& value) { SetSecondaryStatusTransitions(std::forward<SecondaryStatusTransitionsT>(value)); return *this;}
+    template<typename SecondaryStatusTransitionsT = SecondaryStatusTransition>
+    DescribeTrainingJobResult& AddSecondaryStatusTransitions(SecondaryStatusTransitionsT&& value) { m_secondaryStatusTransitionsHasBeenSet = true; m_secondaryStatusTransitions.emplace_back(std::forward<SecondaryStatusTransitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -409,13 +388,13 @@ namespace Model
      * values, and dates and times that the training algorithm emitted to Amazon
      * CloudWatch.</p>
      */
-    inline const Aws::Vector<MetricData>& GetFinalMetricDataList() const{ return m_finalMetricDataList; }
-    inline void SetFinalMetricDataList(const Aws::Vector<MetricData>& value) { m_finalMetricDataList = value; }
-    inline void SetFinalMetricDataList(Aws::Vector<MetricData>&& value) { m_finalMetricDataList = std::move(value); }
-    inline DescribeTrainingJobResult& WithFinalMetricDataList(const Aws::Vector<MetricData>& value) { SetFinalMetricDataList(value); return *this;}
-    inline DescribeTrainingJobResult& WithFinalMetricDataList(Aws::Vector<MetricData>&& value) { SetFinalMetricDataList(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddFinalMetricDataList(const MetricData& value) { m_finalMetricDataList.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddFinalMetricDataList(MetricData&& value) { m_finalMetricDataList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricData>& GetFinalMetricDataList() const { return m_finalMetricDataList; }
+    template<typename FinalMetricDataListT = Aws::Vector<MetricData>>
+    void SetFinalMetricDataList(FinalMetricDataListT&& value) { m_finalMetricDataListHasBeenSet = true; m_finalMetricDataList = std::forward<FinalMetricDataListT>(value); }
+    template<typename FinalMetricDataListT = Aws::Vector<MetricData>>
+    DescribeTrainingJobResult& WithFinalMetricDataList(FinalMetricDataListT&& value) { SetFinalMetricDataList(std::forward<FinalMetricDataListT>(value)); return *this;}
+    template<typename FinalMetricDataListT = MetricData>
+    DescribeTrainingJobResult& AddFinalMetricDataList(FinalMetricDataListT&& value) { m_finalMetricDataListHasBeenSet = true; m_finalMetricDataList.emplace_back(std::forward<FinalMetricDataListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -427,8 +406,8 @@ namespace Model
      * artifacts through the specified VPC, but the training container does not have
      * network access.</p>
      */
-    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
-    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolation = value; }
+    inline bool GetEnableNetworkIsolation() const { return m_enableNetworkIsolation; }
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
     inline DescribeTrainingJobResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
     ///@}
 
@@ -440,8 +419,8 @@ namespace Model
      * on the amount of communication between compute instances, especially if you use
      * a deep learning algorithms in distributed training.</p>
      */
-    inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
-    inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryption = value; }
+    inline bool GetEnableInterContainerTrafficEncryption() const { return m_enableInterContainerTrafficEncryption; }
+    inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
     inline DescribeTrainingJobResult& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
     ///@}
 
@@ -450,26 +429,26 @@ namespace Model
      * <p>A Boolean indicating whether managed spot training is enabled
      * (<code>True</code>) or not (<code>False</code>).</p>
      */
-    inline bool GetEnableManagedSpotTraining() const{ return m_enableManagedSpotTraining; }
-    inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTraining = value; }
+    inline bool GetEnableManagedSpotTraining() const { return m_enableManagedSpotTraining; }
+    inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTrainingHasBeenSet = true; m_enableManagedSpotTraining = value; }
     inline DescribeTrainingJobResult& WithEnableManagedSpotTraining(bool value) { SetEnableManagedSpotTraining(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const CheckpointConfig& GetCheckpointConfig() const{ return m_checkpointConfig; }
-    inline void SetCheckpointConfig(const CheckpointConfig& value) { m_checkpointConfig = value; }
-    inline void SetCheckpointConfig(CheckpointConfig&& value) { m_checkpointConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithCheckpointConfig(const CheckpointConfig& value) { SetCheckpointConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
+    inline const CheckpointConfig& GetCheckpointConfig() const { return m_checkpointConfig; }
+    template<typename CheckpointConfigT = CheckpointConfig>
+    void SetCheckpointConfig(CheckpointConfigT&& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = std::forward<CheckpointConfigT>(value); }
+    template<typename CheckpointConfigT = CheckpointConfig>
+    DescribeTrainingJobResult& WithCheckpointConfig(CheckpointConfigT&& value) { SetCheckpointConfig(std::forward<CheckpointConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The training time in seconds.</p>
      */
-    inline int GetTrainingTimeInSeconds() const{ return m_trainingTimeInSeconds; }
-    inline void SetTrainingTimeInSeconds(int value) { m_trainingTimeInSeconds = value; }
+    inline int GetTrainingTimeInSeconds() const { return m_trainingTimeInSeconds; }
+    inline void SetTrainingTimeInSeconds(int value) { m_trainingTimeInSecondsHasBeenSet = true; m_trainingTimeInSeconds = value; }
     inline DescribeTrainingJobResult& WithTrainingTimeInSeconds(int value) { SetTrainingTimeInSeconds(value); return *this;}
     ///@}
 
@@ -485,27 +464,27 @@ namespace Model
      * example, if <code>BillableTimeInSeconds</code> is 100 and
      * <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
      */
-    inline int GetBillableTimeInSeconds() const{ return m_billableTimeInSeconds; }
-    inline void SetBillableTimeInSeconds(int value) { m_billableTimeInSeconds = value; }
+    inline int GetBillableTimeInSeconds() const { return m_billableTimeInSeconds; }
+    inline void SetBillableTimeInSeconds(int value) { m_billableTimeInSecondsHasBeenSet = true; m_billableTimeInSeconds = value; }
     inline DescribeTrainingJobResult& WithBillableTimeInSeconds(int value) { SetBillableTimeInSeconds(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DebugHookConfig& GetDebugHookConfig() const{ return m_debugHookConfig; }
-    inline void SetDebugHookConfig(const DebugHookConfig& value) { m_debugHookConfig = value; }
-    inline void SetDebugHookConfig(DebugHookConfig&& value) { m_debugHookConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithDebugHookConfig(const DebugHookConfig& value) { SetDebugHookConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithDebugHookConfig(DebugHookConfig&& value) { SetDebugHookConfig(std::move(value)); return *this;}
+    inline const DebugHookConfig& GetDebugHookConfig() const { return m_debugHookConfig; }
+    template<typename DebugHookConfigT = DebugHookConfig>
+    void SetDebugHookConfig(DebugHookConfigT&& value) { m_debugHookConfigHasBeenSet = true; m_debugHookConfig = std::forward<DebugHookConfigT>(value); }
+    template<typename DebugHookConfigT = DebugHookConfig>
+    DescribeTrainingJobResult& WithDebugHookConfig(DebugHookConfigT&& value) { SetDebugHookConfig(std::forward<DebugHookConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExperimentConfig& GetExperimentConfig() const{ return m_experimentConfig; }
-    inline void SetExperimentConfig(const ExperimentConfig& value) { m_experimentConfig = value; }
-    inline void SetExperimentConfig(ExperimentConfig&& value) { m_experimentConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithExperimentConfig(const ExperimentConfig& value) { SetExperimentConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+    inline const ExperimentConfig& GetExperimentConfig() const { return m_experimentConfig; }
+    template<typename ExperimentConfigT = ExperimentConfig>
+    void SetExperimentConfig(ExperimentConfigT&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::forward<ExperimentConfigT>(value); }
+    template<typename ExperimentConfigT = ExperimentConfig>
+    DescribeTrainingJobResult& WithExperimentConfig(ExperimentConfigT&& value) { SetExperimentConfig(std::forward<ExperimentConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -513,22 +492,22 @@ namespace Model
      * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
      * output tensors.</p>
      */
-    inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
-    inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurations = value; }
-    inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurations = std::move(value); }
-    inline DescribeTrainingJobResult& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
-    inline DescribeTrainingJobResult& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurations.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const { return m_debugRuleConfigurations; }
+    template<typename DebugRuleConfigurationsT = Aws::Vector<DebugRuleConfiguration>>
+    void SetDebugRuleConfigurations(DebugRuleConfigurationsT&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = std::forward<DebugRuleConfigurationsT>(value); }
+    template<typename DebugRuleConfigurationsT = Aws::Vector<DebugRuleConfiguration>>
+    DescribeTrainingJobResult& WithDebugRuleConfigurations(DebugRuleConfigurationsT&& value) { SetDebugRuleConfigurations(std::forward<DebugRuleConfigurationsT>(value)); return *this;}
+    template<typename DebugRuleConfigurationsT = DebugRuleConfiguration>
+    DescribeTrainingJobResult& AddDebugRuleConfigurations(DebugRuleConfigurationsT&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.emplace_back(std::forward<DebugRuleConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const TensorBoardOutputConfig& GetTensorBoardOutputConfig() const{ return m_tensorBoardOutputConfig; }
-    inline void SetTensorBoardOutputConfig(const TensorBoardOutputConfig& value) { m_tensorBoardOutputConfig = value; }
-    inline void SetTensorBoardOutputConfig(TensorBoardOutputConfig&& value) { m_tensorBoardOutputConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithTensorBoardOutputConfig(const TensorBoardOutputConfig& value) { SetTensorBoardOutputConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithTensorBoardOutputConfig(TensorBoardOutputConfig&& value) { SetTensorBoardOutputConfig(std::move(value)); return *this;}
+    inline const TensorBoardOutputConfig& GetTensorBoardOutputConfig() const { return m_tensorBoardOutputConfig; }
+    template<typename TensorBoardOutputConfigT = TensorBoardOutputConfig>
+    void SetTensorBoardOutputConfig(TensorBoardOutputConfigT&& value) { m_tensorBoardOutputConfigHasBeenSet = true; m_tensorBoardOutputConfig = std::forward<TensorBoardOutputConfigT>(value); }
+    template<typename TensorBoardOutputConfigT = TensorBoardOutputConfig>
+    DescribeTrainingJobResult& WithTensorBoardOutputConfig(TensorBoardOutputConfigT&& value) { SetTensorBoardOutputConfig(std::forward<TensorBoardOutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -536,22 +515,22 @@ namespace Model
      * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
      * training job.</p>
      */
-    inline const Aws::Vector<DebugRuleEvaluationStatus>& GetDebugRuleEvaluationStatuses() const{ return m_debugRuleEvaluationStatuses; }
-    inline void SetDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { m_debugRuleEvaluationStatuses = value; }
-    inline void SetDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { m_debugRuleEvaluationStatuses = std::move(value); }
-    inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { SetDebugRuleEvaluationStatuses(value); return *this;}
-    inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { SetDebugRuleEvaluationStatuses(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(const DebugRuleEvaluationStatus& value) { m_debugRuleEvaluationStatuses.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus&& value) { m_debugRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DebugRuleEvaluationStatus>& GetDebugRuleEvaluationStatuses() const { return m_debugRuleEvaluationStatuses; }
+    template<typename DebugRuleEvaluationStatusesT = Aws::Vector<DebugRuleEvaluationStatus>>
+    void SetDebugRuleEvaluationStatuses(DebugRuleEvaluationStatusesT&& value) { m_debugRuleEvaluationStatusesHasBeenSet = true; m_debugRuleEvaluationStatuses = std::forward<DebugRuleEvaluationStatusesT>(value); }
+    template<typename DebugRuleEvaluationStatusesT = Aws::Vector<DebugRuleEvaluationStatus>>
+    DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(DebugRuleEvaluationStatusesT&& value) { SetDebugRuleEvaluationStatuses(std::forward<DebugRuleEvaluationStatusesT>(value)); return *this;}
+    template<typename DebugRuleEvaluationStatusesT = DebugRuleEvaluationStatus>
+    DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatusesT&& value) { m_debugRuleEvaluationStatusesHasBeenSet = true; m_debugRuleEvaluationStatuses.emplace_back(std::forward<DebugRuleEvaluationStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ProfilerConfig& GetProfilerConfig() const{ return m_profilerConfig; }
-    inline void SetProfilerConfig(const ProfilerConfig& value) { m_profilerConfig = value; }
-    inline void SetProfilerConfig(ProfilerConfig&& value) { m_profilerConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithProfilerConfig(const ProfilerConfig& value) { SetProfilerConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithProfilerConfig(ProfilerConfig&& value) { SetProfilerConfig(std::move(value)); return *this;}
+    inline const ProfilerConfig& GetProfilerConfig() const { return m_profilerConfig; }
+    template<typename ProfilerConfigT = ProfilerConfig>
+    void SetProfilerConfig(ProfilerConfigT&& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = std::forward<ProfilerConfigT>(value); }
+    template<typename ProfilerConfigT = ProfilerConfig>
+    DescribeTrainingJobResult& WithProfilerConfig(ProfilerConfigT&& value) { SetProfilerConfig(std::forward<ProfilerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -559,13 +538,13 @@ namespace Model
      * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
      * system and framework metrics.</p>
      */
-    inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
-    inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurations = value; }
-    inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurations = std::move(value); }
-    inline DescribeTrainingJobResult& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
-    inline DescribeTrainingJobResult& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurations.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const { return m_profilerRuleConfigurations; }
+    template<typename ProfilerRuleConfigurationsT = Aws::Vector<ProfilerRuleConfiguration>>
+    void SetProfilerRuleConfigurations(ProfilerRuleConfigurationsT&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations = std::forward<ProfilerRuleConfigurationsT>(value); }
+    template<typename ProfilerRuleConfigurationsT = Aws::Vector<ProfilerRuleConfiguration>>
+    DescribeTrainingJobResult& WithProfilerRuleConfigurations(ProfilerRuleConfigurationsT&& value) { SetProfilerRuleConfigurations(std::forward<ProfilerRuleConfigurationsT>(value)); return *this;}
+    template<typename ProfilerRuleConfigurationsT = ProfilerRuleConfiguration>
+    DescribeTrainingJobResult& AddProfilerRuleConfigurations(ProfilerRuleConfigurationsT&& value) { m_profilerRuleConfigurationsHasBeenSet = true; m_profilerRuleConfigurations.emplace_back(std::forward<ProfilerRuleConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -573,42 +552,37 @@ namespace Model
      * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
      * training job.</p>
      */
-    inline const Aws::Vector<ProfilerRuleEvaluationStatus>& GetProfilerRuleEvaluationStatuses() const{ return m_profilerRuleEvaluationStatuses; }
-    inline void SetProfilerRuleEvaluationStatuses(const Aws::Vector<ProfilerRuleEvaluationStatus>& value) { m_profilerRuleEvaluationStatuses = value; }
-    inline void SetProfilerRuleEvaluationStatuses(Aws::Vector<ProfilerRuleEvaluationStatus>&& value) { m_profilerRuleEvaluationStatuses = std::move(value); }
-    inline DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(const Aws::Vector<ProfilerRuleEvaluationStatus>& value) { SetProfilerRuleEvaluationStatuses(value); return *this;}
-    inline DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(Aws::Vector<ProfilerRuleEvaluationStatus>&& value) { SetProfilerRuleEvaluationStatuses(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(const ProfilerRuleEvaluationStatus& value) { m_profilerRuleEvaluationStatuses.push_back(value); return *this; }
-    inline DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatus&& value) { m_profilerRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProfilerRuleEvaluationStatus>& GetProfilerRuleEvaluationStatuses() const { return m_profilerRuleEvaluationStatuses; }
+    template<typename ProfilerRuleEvaluationStatusesT = Aws::Vector<ProfilerRuleEvaluationStatus>>
+    void SetProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatusesT&& value) { m_profilerRuleEvaluationStatusesHasBeenSet = true; m_profilerRuleEvaluationStatuses = std::forward<ProfilerRuleEvaluationStatusesT>(value); }
+    template<typename ProfilerRuleEvaluationStatusesT = Aws::Vector<ProfilerRuleEvaluationStatus>>
+    DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatusesT&& value) { SetProfilerRuleEvaluationStatuses(std::forward<ProfilerRuleEvaluationStatusesT>(value)); return *this;}
+    template<typename ProfilerRuleEvaluationStatusesT = ProfilerRuleEvaluationStatus>
+    DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatusesT&& value) { m_profilerRuleEvaluationStatusesHasBeenSet = true; m_profilerRuleEvaluationStatuses.emplace_back(std::forward<ProfilerRuleEvaluationStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Profiling status of a training job.</p>
      */
-    inline const ProfilingStatus& GetProfilingStatus() const{ return m_profilingStatus; }
-    inline void SetProfilingStatus(const ProfilingStatus& value) { m_profilingStatus = value; }
-    inline void SetProfilingStatus(ProfilingStatus&& value) { m_profilingStatus = std::move(value); }
-    inline DescribeTrainingJobResult& WithProfilingStatus(const ProfilingStatus& value) { SetProfilingStatus(value); return *this;}
-    inline DescribeTrainingJobResult& WithProfilingStatus(ProfilingStatus&& value) { SetProfilingStatus(std::move(value)); return *this;}
+    inline ProfilingStatus GetProfilingStatus() const { return m_profilingStatus; }
+    inline void SetProfilingStatus(ProfilingStatus value) { m_profilingStatusHasBeenSet = true; m_profilingStatus = value; }
+    inline DescribeTrainingJobResult& WithProfilingStatus(ProfilingStatus value) { SetProfilingStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment variables to set in the Docker container.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environment = std::move(value); }
-    inline DescribeTrainingJobResult& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline DescribeTrainingJobResult& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environment.emplace(key, value); return *this; }
-    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environment.emplace(std::move(key), value); return *this; }
-    inline DescribeTrainingJobResult& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
-    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeTrainingJobResult& AddEnvironment(const char* key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
-    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, const char* value) { m_environment.emplace(std::move(key), value); return *this; }
-    inline DescribeTrainingJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    DescribeTrainingJobResult& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    DescribeTrainingJobResult& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -616,11 +590,11 @@ namespace Model
      * <p>The number of times to retry the job when the job fails due to an
      * <code>InternalServerError</code>.</p>
      */
-    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
-    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
-    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
-    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+    inline const RetryStrategy& GetRetryStrategy() const { return m_retryStrategy; }
+    template<typename RetryStrategyT = RetryStrategy>
+    void SetRetryStrategy(RetryStrategyT&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::forward<RetryStrategyT>(value); }
+    template<typename RetryStrategyT = RetryStrategy>
+    DescribeTrainingJobResult& WithRetryStrategy(RetryStrategyT&& value) { SetRetryStrategy(std::forward<RetryStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -631,11 +605,11 @@ namespace Model
      * a training container through Amazon Web Services Systems Manager (SSM) for
      * remote debugging</a>.</p>
      */
-    inline const RemoteDebugConfig& GetRemoteDebugConfig() const{ return m_remoteDebugConfig; }
-    inline void SetRemoteDebugConfig(const RemoteDebugConfig& value) { m_remoteDebugConfig = value; }
-    inline void SetRemoteDebugConfig(RemoteDebugConfig&& value) { m_remoteDebugConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithRemoteDebugConfig(const RemoteDebugConfig& value) { SetRemoteDebugConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithRemoteDebugConfig(RemoteDebugConfig&& value) { SetRemoteDebugConfig(std::move(value)); return *this;}
+    inline const RemoteDebugConfig& GetRemoteDebugConfig() const { return m_remoteDebugConfig; }
+    template<typename RemoteDebugConfigT = RemoteDebugConfig>
+    void SetRemoteDebugConfig(RemoteDebugConfigT&& value) { m_remoteDebugConfigHasBeenSet = true; m_remoteDebugConfig = std::forward<RemoteDebugConfigT>(value); }
+    template<typename RemoteDebugConfigT = RemoteDebugConfig>
+    DescribeTrainingJobResult& WithRemoteDebugConfig(RemoteDebugConfigT&& value) { SetRemoteDebugConfig(std::forward<RemoteDebugConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -643,112 +617,154 @@ namespace Model
      * <p>Contains information about the infrastructure health check configuration for
      * the training job.</p>
      */
-    inline const InfraCheckConfig& GetInfraCheckConfig() const{ return m_infraCheckConfig; }
-    inline void SetInfraCheckConfig(const InfraCheckConfig& value) { m_infraCheckConfig = value; }
-    inline void SetInfraCheckConfig(InfraCheckConfig&& value) { m_infraCheckConfig = std::move(value); }
-    inline DescribeTrainingJobResult& WithInfraCheckConfig(const InfraCheckConfig& value) { SetInfraCheckConfig(value); return *this;}
-    inline DescribeTrainingJobResult& WithInfraCheckConfig(InfraCheckConfig&& value) { SetInfraCheckConfig(std::move(value)); return *this;}
+    inline const InfraCheckConfig& GetInfraCheckConfig() const { return m_infraCheckConfig; }
+    template<typename InfraCheckConfigT = InfraCheckConfig>
+    void SetInfraCheckConfig(InfraCheckConfigT&& value) { m_infraCheckConfigHasBeenSet = true; m_infraCheckConfig = std::forward<InfraCheckConfigT>(value); }
+    template<typename InfraCheckConfigT = InfraCheckConfig>
+    DescribeTrainingJobResult& WithInfraCheckConfig(InfraCheckConfigT&& value) { SetInfraCheckConfig(std::forward<InfraCheckConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrainingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrainingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrainingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrainingJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trainingJobName;
+    bool m_trainingJobNameHasBeenSet = false;
 
     Aws::String m_trainingJobArn;
+    bool m_trainingJobArnHasBeenSet = false;
 
     Aws::String m_tuningJobArn;
+    bool m_tuningJobArnHasBeenSet = false;
 
     Aws::String m_labelingJobArn;
+    bool m_labelingJobArnHasBeenSet = false;
 
     Aws::String m_autoMLJobArn;
+    bool m_autoMLJobArnHasBeenSet = false;
 
     ModelArtifacts m_modelArtifacts;
+    bool m_modelArtifactsHasBeenSet = false;
 
-    TrainingJobStatus m_trainingJobStatus;
+    TrainingJobStatus m_trainingJobStatus{TrainingJobStatus::NOT_SET};
+    bool m_trainingJobStatusHasBeenSet = false;
 
-    SecondaryStatus m_secondaryStatus;
+    SecondaryStatus m_secondaryStatus{SecondaryStatus::NOT_SET};
+    bool m_secondaryStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hyperParameters;
+    bool m_hyperParametersHasBeenSet = false;
 
     AlgorithmSpecification m_algorithmSpecification;
+    bool m_algorithmSpecificationHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Channel> m_inputDataConfig;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ResourceConfig m_resourceConfig;
+    bool m_resourceConfigHasBeenSet = false;
 
     WarmPoolStatus m_warmPoolStatus;
+    bool m_warmPoolStatusHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
+    bool m_stoppingConditionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_trainingStartTime;
+    Aws::Utils::DateTime m_trainingStartTime{};
+    bool m_trainingStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_trainingEndTime;
+    Aws::Utils::DateTime m_trainingEndTime{};
+    bool m_trainingEndTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<SecondaryStatusTransition> m_secondaryStatusTransitions;
+    bool m_secondaryStatusTransitionsHasBeenSet = false;
 
     Aws::Vector<MetricData> m_finalMetricDataList;
+    bool m_finalMetricDataListHasBeenSet = false;
 
-    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolation{false};
+    bool m_enableNetworkIsolationHasBeenSet = false;
 
-    bool m_enableInterContainerTrafficEncryption;
+    bool m_enableInterContainerTrafficEncryption{false};
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
-    bool m_enableManagedSpotTraining;
+    bool m_enableManagedSpotTraining{false};
+    bool m_enableManagedSpotTrainingHasBeenSet = false;
 
     CheckpointConfig m_checkpointConfig;
+    bool m_checkpointConfigHasBeenSet = false;
 
-    int m_trainingTimeInSeconds;
+    int m_trainingTimeInSeconds{0};
+    bool m_trainingTimeInSecondsHasBeenSet = false;
 
-    int m_billableTimeInSeconds;
+    int m_billableTimeInSeconds{0};
+    bool m_billableTimeInSecondsHasBeenSet = false;
 
     DebugHookConfig m_debugHookConfig;
+    bool m_debugHookConfigHasBeenSet = false;
 
     ExperimentConfig m_experimentConfig;
+    bool m_experimentConfigHasBeenSet = false;
 
     Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
+    bool m_debugRuleConfigurationsHasBeenSet = false;
 
     TensorBoardOutputConfig m_tensorBoardOutputConfig;
+    bool m_tensorBoardOutputConfigHasBeenSet = false;
 
     Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
+    bool m_debugRuleEvaluationStatusesHasBeenSet = false;
 
     ProfilerConfig m_profilerConfig;
+    bool m_profilerConfigHasBeenSet = false;
 
     Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
+    bool m_profilerRuleConfigurationsHasBeenSet = false;
 
     Aws::Vector<ProfilerRuleEvaluationStatus> m_profilerRuleEvaluationStatuses;
+    bool m_profilerRuleEvaluationStatusesHasBeenSet = false;
 
-    ProfilingStatus m_profilingStatus;
+    ProfilingStatus m_profilingStatus{ProfilingStatus::NOT_SET};
+    bool m_profilingStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
+    bool m_environmentHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
+    bool m_retryStrategyHasBeenSet = false;
 
     RemoteDebugConfig m_remoteDebugConfig;
+    bool m_remoteDebugConfigHasBeenSet = false;
 
     InfraCheckConfig m_infraCheckConfig;
+    bool m_infraCheckConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

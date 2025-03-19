@@ -34,7 +34,7 @@ namespace Model
   class SpeakerSearchTask
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API SpeakerSearchTask();
+    AWS_CHIMESDKMEDIAPIPELINES_API SpeakerSearchTask() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API SpeakerSearchTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API SpeakerSearchTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,63 +44,59 @@ namespace Model
     /**
      * <p>The speaker search task ID.</p>
      */
-    inline const Aws::String& GetSpeakerSearchTaskId() const{ return m_speakerSearchTaskId; }
+    inline const Aws::String& GetSpeakerSearchTaskId() const { return m_speakerSearchTaskId; }
     inline bool SpeakerSearchTaskIdHasBeenSet() const { return m_speakerSearchTaskIdHasBeenSet; }
-    inline void SetSpeakerSearchTaskId(const Aws::String& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = value; }
-    inline void SetSpeakerSearchTaskId(Aws::String&& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = std::move(value); }
-    inline void SetSpeakerSearchTaskId(const char* value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId.assign(value); }
-    inline SpeakerSearchTask& WithSpeakerSearchTaskId(const Aws::String& value) { SetSpeakerSearchTaskId(value); return *this;}
-    inline SpeakerSearchTask& WithSpeakerSearchTaskId(Aws::String&& value) { SetSpeakerSearchTaskId(std::move(value)); return *this;}
-    inline SpeakerSearchTask& WithSpeakerSearchTaskId(const char* value) { SetSpeakerSearchTaskId(value); return *this;}
+    template<typename SpeakerSearchTaskIdT = Aws::String>
+    void SetSpeakerSearchTaskId(SpeakerSearchTaskIdT&& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = std::forward<SpeakerSearchTaskIdT>(value); }
+    template<typename SpeakerSearchTaskIdT = Aws::String>
+    SpeakerSearchTask& WithSpeakerSearchTaskId(SpeakerSearchTaskIdT&& value) { SetSpeakerSearchTaskId(std::forward<SpeakerSearchTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the speaker search task.</p>
      */
-    inline const MediaPipelineTaskStatus& GetSpeakerSearchTaskStatus() const{ return m_speakerSearchTaskStatus; }
+    inline MediaPipelineTaskStatus GetSpeakerSearchTaskStatus() const { return m_speakerSearchTaskStatus; }
     inline bool SpeakerSearchTaskStatusHasBeenSet() const { return m_speakerSearchTaskStatusHasBeenSet; }
-    inline void SetSpeakerSearchTaskStatus(const MediaPipelineTaskStatus& value) { m_speakerSearchTaskStatusHasBeenSet = true; m_speakerSearchTaskStatus = value; }
-    inline void SetSpeakerSearchTaskStatus(MediaPipelineTaskStatus&& value) { m_speakerSearchTaskStatusHasBeenSet = true; m_speakerSearchTaskStatus = std::move(value); }
-    inline SpeakerSearchTask& WithSpeakerSearchTaskStatus(const MediaPipelineTaskStatus& value) { SetSpeakerSearchTaskStatus(value); return *this;}
-    inline SpeakerSearchTask& WithSpeakerSearchTaskStatus(MediaPipelineTaskStatus&& value) { SetSpeakerSearchTaskStatus(std::move(value)); return *this;}
+    inline void SetSpeakerSearchTaskStatus(MediaPipelineTaskStatus value) { m_speakerSearchTaskStatusHasBeenSet = true; m_speakerSearchTaskStatus = value; }
+    inline SpeakerSearchTask& WithSpeakerSearchTaskStatus(MediaPipelineTaskStatus value) { SetSpeakerSearchTaskStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which a speaker search task was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline SpeakerSearchTask& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline SpeakerSearchTask& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    SpeakerSearchTask& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which a speaker search task was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
-    inline SpeakerSearchTask& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline SpeakerSearchTask& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    SpeakerSearchTask& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_speakerSearchTaskId;
     bool m_speakerSearchTaskIdHasBeenSet = false;
 
-    MediaPipelineTaskStatus m_speakerSearchTaskStatus;
+    MediaPipelineTaskStatus m_speakerSearchTaskStatus{MediaPipelineTaskStatus::NOT_SET};
     bool m_speakerSearchTaskStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
     bool m_updatedTimestampHasBeenSet = false;
   };
 

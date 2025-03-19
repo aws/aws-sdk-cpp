@@ -12,15 +12,6 @@ using namespace Aws::DSQL::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMultiRegionClustersRequest::CreateMultiRegionClustersRequest() : 
-    m_linkedRegionListHasBeenSet(false),
-    m_clusterPropertiesHasBeenSet(false),
-    m_witnessRegionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateMultiRegionClustersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-TrialMinutes::TrialMinutes() : 
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_remaining(0.0),
-    m_remainingHasBeenSet(false)
-{
-}
-
 TrialMinutes::TrialMinutes(JsonView jsonValue)
-  : TrialMinutes()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TrialMinutes& TrialMinutes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetDouble("total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remaining"))
   {
     m_remaining = jsonValue.GetDouble("remaining");
-
     m_remainingHasBeenSet = true;
   }
-
   return *this;
 }
 

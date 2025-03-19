@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssetModelPropertiesRequest::ListAssetModelPropertiesRequest() : 
-    m_assetModelIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filter(ListAssetModelPropertiesFilter::NOT_SET),
-    m_filterHasBeenSet(false),
-    m_assetModelVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListAssetModelPropertiesRequest::SerializePayload() const
 {
   return {};

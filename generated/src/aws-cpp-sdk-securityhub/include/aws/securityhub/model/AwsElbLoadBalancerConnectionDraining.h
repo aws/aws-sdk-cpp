@@ -30,7 +30,7 @@ namespace Model
   class AwsElbLoadBalancerConnectionDraining
   {
   public:
-    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining() = default;
     AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Indicates whether connection draining is enabled for the load balancer.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsElbLoadBalancerConnectionDraining& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p>The maximum time, in seconds, to keep the existing connections open before
      * deregistering the instances.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline AwsElbLoadBalancerConnectionDraining& WithTimeout(int value) { SetTimeout(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
   };
 

@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetContextKeysForCustomPolicyRequest::GetContextKeysForCustomPolicyRequest() : 
-    m_policyInputListHasBeenSet(false)
-{
-}
-
 Aws::String GetContextKeysForCustomPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

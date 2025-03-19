@@ -18,21 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ProfileQuestion::ProfileQuestion() : 
-    m_questionIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_questionDescriptionHasBeenSet(false),
-    m_questionChoicesHasBeenSet(false),
-    m_selectedChoiceIdsHasBeenSet(false),
-    m_minSelectedChoices(0),
-    m_minSelectedChoicesHasBeenSet(false),
-    m_maxSelectedChoices(0),
-    m_maxSelectedChoicesHasBeenSet(false)
-{
-}
-
 ProfileQuestion::ProfileQuestion(JsonView jsonValue)
-  : ProfileQuestion()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ ProfileQuestion& ProfileQuestion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionTitle"))
   {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
-
     m_questionTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionDescription"))
   {
     m_questionDescription = jsonValue.GetString("QuestionDescription");
-
     m_questionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionChoices"))
   {
     Aws::Utils::Array<JsonView> questionChoicesJsonList = jsonValue.GetArray("QuestionChoices");
@@ -69,7 +49,6 @@ ProfileQuestion& ProfileQuestion::operator =(JsonView jsonValue)
     }
     m_questionChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedChoiceIds"))
   {
     Aws::Utils::Array<JsonView> selectedChoiceIdsJsonList = jsonValue.GetArray("SelectedChoiceIds");
@@ -79,21 +58,16 @@ ProfileQuestion& ProfileQuestion::operator =(JsonView jsonValue)
     }
     m_selectedChoiceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinSelectedChoices"))
   {
     m_minSelectedChoices = jsonValue.GetInteger("MinSelectedChoices");
-
     m_minSelectedChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSelectedChoices"))
   {
     m_maxSelectedChoices = jsonValue.GetInteger("MaxSelectedChoices");
-
     m_maxSelectedChoicesHasBeenSet = true;
   }
-
   return *this;
 }
 

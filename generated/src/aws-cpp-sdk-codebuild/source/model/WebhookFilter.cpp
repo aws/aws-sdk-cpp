@@ -18,17 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-WebhookFilter::WebhookFilter() : 
-    m_type(WebhookFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_excludeMatchedPattern(false),
-    m_excludeMatchedPatternHasBeenSet(false)
-{
-}
-
 WebhookFilter::WebhookFilter(JsonView jsonValue)
-  : WebhookFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ WebhookFilter& WebhookFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = WebhookFilterTypeMapper::GetWebhookFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetString("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludeMatchedPattern"))
   {
     m_excludeMatchedPattern = jsonValue.GetBool("excludeMatchedPattern");
-
     m_excludeMatchedPatternHasBeenSet = true;
   }
-
   return *this;
 }
 

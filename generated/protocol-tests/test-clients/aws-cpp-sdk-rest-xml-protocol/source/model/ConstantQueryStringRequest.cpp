@@ -14,10 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ConstantQueryStringRequest::ConstantQueryStringRequest() : 
-    m_helloHasBeenSet(false)
-{
-}
 
 Aws::String ConstantQueryStringRequest::SerializePayload() const
 {

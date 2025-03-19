@@ -37,7 +37,7 @@ namespace Model
   class RecommendationPreferences
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API RecommendationPreferences() = default;
     AWS_COMPUTEOPTIMIZER_API RecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,13 @@ namespace Model
      * <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer exports
      * recommendations that consist of Graviton instance types only.</p> </li> </ul>
      */
-    inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const{ return m_cpuVendorArchitectures; }
+    inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const { return m_cpuVendorArchitectures; }
     inline bool CpuVendorArchitecturesHasBeenSet() const { return m_cpuVendorArchitecturesHasBeenSet; }
-    inline void SetCpuVendorArchitectures(const Aws::Vector<CpuVendorArchitecture>& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = value; }
-    inline void SetCpuVendorArchitectures(Aws::Vector<CpuVendorArchitecture>&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = std::move(value); }
-    inline RecommendationPreferences& WithCpuVendorArchitectures(const Aws::Vector<CpuVendorArchitecture>& value) { SetCpuVendorArchitectures(value); return *this;}
-    inline RecommendationPreferences& WithCpuVendorArchitectures(Aws::Vector<CpuVendorArchitecture>&& value) { SetCpuVendorArchitectures(std::move(value)); return *this;}
-    inline RecommendationPreferences& AddCpuVendorArchitectures(const CpuVendorArchitecture& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(value); return *this; }
-    inline RecommendationPreferences& AddCpuVendorArchitectures(CpuVendorArchitecture&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(std::move(value)); return *this; }
+    template<typename CpuVendorArchitecturesT = Aws::Vector<CpuVendorArchitecture>>
+    void SetCpuVendorArchitectures(CpuVendorArchitecturesT&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = std::forward<CpuVendorArchitecturesT>(value); }
+    template<typename CpuVendorArchitecturesT = Aws::Vector<CpuVendorArchitecture>>
+    RecommendationPreferences& WithCpuVendorArchitectures(CpuVendorArchitecturesT&& value) { SetCpuVendorArchitectures(std::forward<CpuVendorArchitecturesT>(value)); return *this;}
+    inline RecommendationPreferences& AddCpuVendorArchitectures(CpuVendorArchitecture value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(value); return *this; }
     ///@}
   private:
 

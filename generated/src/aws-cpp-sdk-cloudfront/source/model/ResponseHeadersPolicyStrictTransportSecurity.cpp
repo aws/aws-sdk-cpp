@@ -20,20 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyStrictTransportSecurity::ResponseHeadersPolicyStrictTransportSecurity() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_includeSubdomains(false),
-    m_includeSubdomainsHasBeenSet(false),
-    m_preload(false),
-    m_preloadHasBeenSet(false),
-    m_accessControlMaxAgeSec(0),
-    m_accessControlMaxAgeSecHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyStrictTransportSecurity::ResponseHeadersPolicyStrictTransportSecurity(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyStrictTransportSecurity()
 {
   *this = xmlNode;
 }

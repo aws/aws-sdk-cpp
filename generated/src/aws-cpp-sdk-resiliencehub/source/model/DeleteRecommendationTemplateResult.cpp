@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult() : 
-    m_status(RecommendationTemplateStatus::NOT_SET)
-{
-}
-
 DeleteRecommendationTemplateResult::DeleteRecommendationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteRecommendationTemplateResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteRecommendationTemplateResult& DeleteRecommendationTemplateResult::operator
   if(jsonValue.ValueExists("recommendationTemplateArn"))
   {
     m_recommendationTemplateArn = jsonValue.GetString("recommendationTemplateArn");
-
+    m_recommendationTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RecommendationTemplateStatusMapper::GetRecommendationTemplateStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

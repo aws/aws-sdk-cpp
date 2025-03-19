@@ -34,7 +34,7 @@ namespace Model
   class UpdateRecordsResult
   {
   public:
-    AWS_COGNITOSYNC_API UpdateRecordsResult();
+    AWS_COGNITOSYNC_API UpdateRecordsResult() = default;
     AWS_COGNITOSYNC_API UpdateRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API UpdateRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,30 @@ namespace Model
     /**
      * A list of records that have been updated.
      */
-    inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
-    inline void SetRecords(const Aws::Vector<Record>& value) { m_records = value; }
-    inline void SetRecords(Aws::Vector<Record>&& value) { m_records = std::move(value); }
-    inline UpdateRecordsResult& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-    inline UpdateRecordsResult& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-    inline UpdateRecordsResult& AddRecords(const Record& value) { m_records.push_back(value); return *this; }
-    inline UpdateRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Record>& GetRecords() const { return m_records; }
+    template<typename RecordsT = Aws::Vector<Record>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<Record>>
+    UpdateRecordsResult& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = Record>
+    UpdateRecordsResult& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRecordsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRecordsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRecordsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRecordsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Record> m_records;
+    bool m_recordsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

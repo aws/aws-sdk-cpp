@@ -32,7 +32,7 @@ namespace Model
   class TestSetDiscrepancyReportBotAliasTarget
   {
   public:
-    AWS_LEXMODELSV2_API TestSetDiscrepancyReportBotAliasTarget();
+    AWS_LEXMODELSV2_API TestSetDiscrepancyReportBotAliasTarget() = default;
     AWS_LEXMODELSV2_API TestSetDiscrepancyReportBotAliasTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetDiscrepancyReportBotAliasTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The unique identifier for the bot alias.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline TestSetDiscrepancyReportBotAliasTarget& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline TestSetDiscrepancyReportBotAliasTarget& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline TestSetDiscrepancyReportBotAliasTarget& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    TestSetDiscrepancyReportBotAliasTarget& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the bot associated with the bot alias.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
-    inline TestSetDiscrepancyReportBotAliasTarget& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline TestSetDiscrepancyReportBotAliasTarget& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline TestSetDiscrepancyReportBotAliasTarget& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    TestSetDiscrepancyReportBotAliasTarget& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the locale associated with the bot alias.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline TestSetDiscrepancyReportBotAliasTarget& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline TestSetDiscrepancyReportBotAliasTarget& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline TestSetDiscrepancyReportBotAliasTarget& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    TestSetDiscrepancyReportBotAliasTarget& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
   private:
 

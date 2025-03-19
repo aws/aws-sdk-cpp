@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteWorldsResult::BatchDeleteWorldsResult()
-{
-}
-
 BatchDeleteWorldsResult::BatchDeleteWorldsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchDeleteWorldsResult& BatchDeleteWorldsResult::operator =(const Aws::AmazonWe
     {
       m_unprocessedWorlds.push_back(unprocessedWorldsJsonList[unprocessedWorldsIndex].AsString());
     }
+    m_unprocessedWorldsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,19 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-NodeInputPort::NodeInputPort() : 
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxConnections(0),
-    m_maxConnectionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PortType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 NodeInputPort::NodeInputPort(JsonView jsonValue)
-  : NodeInputPort()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ NodeInputPort& NodeInputPort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConnections"))
   {
     m_maxConnections = jsonValue.GetInteger("MaxConnections");
-
     m_maxConnectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PortTypeMapper::GetPortTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-SearchSummary::SearchSummary() : 
-    m_searchIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SearchSummary::SearchSummary(JsonView jsonValue)
-  : SearchSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SearchSummary& SearchSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SearchId"))
   {
     m_searchId = jsonValue.GetString("SearchId");
-
     m_searchIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

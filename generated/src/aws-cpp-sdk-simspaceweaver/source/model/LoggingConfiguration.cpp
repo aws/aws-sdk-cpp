@@ -18,13 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-LoggingConfiguration::LoggingConfiguration() : 
-    m_destinationsHasBeenSet(false)
-{
-}
-
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   return *this;
 }
 

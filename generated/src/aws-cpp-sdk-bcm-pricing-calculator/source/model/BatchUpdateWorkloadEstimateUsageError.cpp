@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchUpdateWorkloadEstimateUsageError::BatchUpdateWorkloadEstimateUsageError() : 
-    m_idHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(WorkloadEstimateUpdateUsageErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 BatchUpdateWorkloadEstimateUsageError::BatchUpdateWorkloadEstimateUsageError(JsonView jsonValue)
-  : BatchUpdateWorkloadEstimateUsageError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchUpdateWorkloadEstimateUsageError& BatchUpdateWorkloadEstimateUsageError::op
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = WorkloadEstimateUpdateUsageErrorCodeMapper::GetWorkloadEstimateUpdateUsageErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

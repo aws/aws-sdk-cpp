@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Condition::Condition() : 
-    m_stringConditionHasBeenSet(false),
-    m_numberConditionHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberCondition"))
   {
     m_numberCondition = jsonValue.GetObject("NumberCondition");
-
     m_numberConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

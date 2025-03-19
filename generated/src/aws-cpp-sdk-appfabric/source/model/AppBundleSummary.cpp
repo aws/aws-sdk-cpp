@@ -18,13 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-AppBundleSummary::AppBundleSummary() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 AppBundleSummary::AppBundleSummary(JsonView jsonValue)
-  : AppBundleSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AppBundleSummary& AppBundleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAppInputSourcesRequest::ListAppInputSourcesRequest() : 
-    m_appArnHasBeenSet(false),
-    m_appVersionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAppInputSourcesRequest::SerializePayload() const
 {
   JsonValue payload;

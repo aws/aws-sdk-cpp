@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamPolicyVersion::AwsIamPolicyVersion() : 
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 AwsIamPolicyVersion::AwsIamPolicyVersion(JsonView jsonValue)
-  : AwsIamPolicyVersion()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsIamPolicyVersion& AwsIamPolicyVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefaultVersion"))
   {
     m_isDefaultVersion = jsonValue.GetBool("IsDefaultVersion");
-
     m_isDefaultVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   return *this;
 }
 

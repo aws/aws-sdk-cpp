@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataCatalogConfig::DataCatalogConfig() : 
-    m_tableNameHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_databaseHasBeenSet(false)
-{
-}
-
 DataCatalogConfig::DataCatalogConfig(JsonView jsonValue)
-  : DataCatalogConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataCatalogConfig& DataCatalogConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
-
     m_catalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   return *this;
 }
 

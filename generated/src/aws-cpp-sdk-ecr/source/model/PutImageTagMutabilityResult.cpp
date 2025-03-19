@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutImageTagMutabilityResult::PutImageTagMutabilityResult() : 
-    m_imageTagMutability(ImageTagMutability::NOT_SET)
-{
-}
-
 PutImageTagMutabilityResult::PutImageTagMutabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutImageTagMutabilityResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ PutImageTagMutabilityResult& PutImageTagMutabilityResult::operator =(const Aws::
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
+    m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTagMutability"))
   {
     m_imageTagMutability = ImageTagMutabilityMapper::GetImageTagMutabilityForName(jsonValue.GetString("imageTagMutability"));
-
+    m_imageTagMutabilityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

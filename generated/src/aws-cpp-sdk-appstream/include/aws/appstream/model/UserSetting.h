@@ -33,7 +33,7 @@ namespace Model
   class UserSetting
   {
   public:
-    AWS_APPSTREAM_API UserSetting();
+    AWS_APPSTREAM_API UserSetting() = default;
     AWS_APPSTREAM_API UserSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API UserSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,20 @@ namespace Model
     /**
      * <p>The action that is enabled or disabled.</p>
      */
-    inline const Action& GetAction() const{ return m_action; }
+    inline Action GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UserSetting& WithAction(const Action& value) { SetAction(value); return *this;}
-    inline UserSetting& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(Action value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UserSetting& WithAction(Action value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the action is enabled or disabled.</p>
      */
-    inline const Permission& GetPermission() const{ return m_permission; }
+    inline Permission GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Permission& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Permission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline UserSetting& WithPermission(const Permission& value) { SetPermission(value); return *this;}
-    inline UserSetting& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(Permission value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline UserSetting& WithPermission(Permission value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
@@ -74,20 +70,20 @@ namespace Model
      * This can't be specified when the permission is <code>DISABLED</code>. </p>
      * <p>The value can be between 1 and 20,971,520 (20 MB).</p>
      */
-    inline int GetMaximumLength() const{ return m_maximumLength; }
+    inline int GetMaximumLength() const { return m_maximumLength; }
     inline bool MaximumLengthHasBeenSet() const { return m_maximumLengthHasBeenSet; }
     inline void SetMaximumLength(int value) { m_maximumLengthHasBeenSet = true; m_maximumLength = value; }
     inline UserSetting& WithMaximumLength(int value) { SetMaximumLength(value); return *this;}
     ///@}
   private:
 
-    Action m_action;
+    Action m_action{Action::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    Permission m_permission;
+    Permission m_permission{Permission::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
-    int m_maximumLength;
+    int m_maximumLength{0};
     bool m_maximumLengthHasBeenSet = false;
   };
 

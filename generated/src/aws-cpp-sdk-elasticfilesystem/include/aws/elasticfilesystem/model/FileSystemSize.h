@@ -38,7 +38,7 @@ namespace Model
   class FileSystemSize
   {
   public:
-    AWS_EFS_API FileSystemSize();
+    AWS_EFS_API FileSystemSize() = default;
     AWS_EFS_API FileSystemSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API FileSystemSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * <p>The latest known metered size (in bytes) of data stored in the file
      * system.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline FileSystemSize& WithValue(long long value) { SetValue(value); return *this;}
@@ -61,12 +61,12 @@ namespace Model
      * was determined. The value is the integer number of seconds since
      * 1970-01-01T00:00:00Z.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline FileSystemSize& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    FileSystemSize& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +74,7 @@ namespace Model
      * <p>The latest known metered size (in bytes) of data stored in the Infrequent
      * Access storage class.</p>
      */
-    inline long long GetValueInIA() const{ return m_valueInIA; }
+    inline long long GetValueInIA() const { return m_valueInIA; }
     inline bool ValueInIAHasBeenSet() const { return m_valueInIAHasBeenSet; }
     inline void SetValueInIA(long long value) { m_valueInIAHasBeenSet = true; m_valueInIA = value; }
     inline FileSystemSize& WithValueInIA(long long value) { SetValueInIA(value); return *this;}
@@ -85,7 +85,7 @@ namespace Model
      * <p>The latest known metered size (in bytes) of data stored in the Standard
      * storage class.</p>
      */
-    inline long long GetValueInStandard() const{ return m_valueInStandard; }
+    inline long long GetValueInStandard() const { return m_valueInStandard; }
     inline bool ValueInStandardHasBeenSet() const { return m_valueInStandardHasBeenSet; }
     inline void SetValueInStandard(long long value) { m_valueInStandardHasBeenSet = true; m_valueInStandard = value; }
     inline FileSystemSize& WithValueInStandard(long long value) { SetValueInStandard(value); return *this;}
@@ -96,26 +96,26 @@ namespace Model
      * <p>The latest known metered size (in bytes) of data stored in the Archive
      * storage class.</p>
      */
-    inline long long GetValueInArchive() const{ return m_valueInArchive; }
+    inline long long GetValueInArchive() const { return m_valueInArchive; }
     inline bool ValueInArchiveHasBeenSet() const { return m_valueInArchiveHasBeenSet; }
     inline void SetValueInArchive(long long value) { m_valueInArchiveHasBeenSet = true; m_valueInArchive = value; }
     inline FileSystemSize& WithValueInArchive(long long value) { SetValueInArchive(value); return *this;}
     ///@}
   private:
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    long long m_valueInIA;
+    long long m_valueInIA{0};
     bool m_valueInIAHasBeenSet = false;
 
-    long long m_valueInStandard;
+    long long m_valueInStandard{0};
     bool m_valueInStandardHasBeenSet = false;
 
-    long long m_valueInArchive;
+    long long m_valueInArchive{0};
     bool m_valueInArchiveHasBeenSet = false;
   };
 

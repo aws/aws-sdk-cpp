@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ADMChannelRequest::ADMChannelRequest() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 ADMChannelRequest::ADMChannelRequest(JsonView jsonValue)
-  : ADMChannelRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ADMChannelRequest& ADMChannelRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientSecret"))
   {
     m_clientSecret = jsonValue.GetString("ClientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

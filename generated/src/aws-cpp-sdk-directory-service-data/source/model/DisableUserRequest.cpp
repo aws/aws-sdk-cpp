@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisableUserRequest::DisableUserRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false)
-{
-}
-
 Aws::String DisableUserRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Total::Total() : 
-    m_amountHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 Total::Total(JsonView jsonValue)
-  : Total()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Total& Total::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetString("amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

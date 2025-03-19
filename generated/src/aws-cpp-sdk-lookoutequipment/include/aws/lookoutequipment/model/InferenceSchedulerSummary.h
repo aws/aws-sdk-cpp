@@ -36,7 +36,7 @@ namespace Model
   class InferenceSchedulerSummary
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary();
+    AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary() = default;
     AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the machine learning model used for the inference scheduler. </p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline InferenceSchedulerSummary& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline InferenceSchedulerSummary& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline InferenceSchedulerSummary& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    InferenceSchedulerSummary& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,54 +59,46 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the machine learning model used by the
      * inference scheduler. </p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline InferenceSchedulerSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline InferenceSchedulerSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline InferenceSchedulerSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    InferenceSchedulerSummary& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the inference scheduler. </p>
      */
-    inline const Aws::String& GetInferenceSchedulerName() const{ return m_inferenceSchedulerName; }
+    inline const Aws::String& GetInferenceSchedulerName() const { return m_inferenceSchedulerName; }
     inline bool InferenceSchedulerNameHasBeenSet() const { return m_inferenceSchedulerNameHasBeenSet; }
-    inline void SetInferenceSchedulerName(const Aws::String& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = value; }
-    inline void SetInferenceSchedulerName(Aws::String&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::move(value); }
-    inline void SetInferenceSchedulerName(const char* value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName.assign(value); }
-    inline InferenceSchedulerSummary& WithInferenceSchedulerName(const Aws::String& value) { SetInferenceSchedulerName(value); return *this;}
-    inline InferenceSchedulerSummary& WithInferenceSchedulerName(Aws::String&& value) { SetInferenceSchedulerName(std::move(value)); return *this;}
-    inline InferenceSchedulerSummary& WithInferenceSchedulerName(const char* value) { SetInferenceSchedulerName(value); return *this;}
+    template<typename InferenceSchedulerNameT = Aws::String>
+    void SetInferenceSchedulerName(InferenceSchedulerNameT&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::forward<InferenceSchedulerNameT>(value); }
+    template<typename InferenceSchedulerNameT = Aws::String>
+    InferenceSchedulerSummary& WithInferenceSchedulerName(InferenceSchedulerNameT&& value) { SetInferenceSchedulerName(std::forward<InferenceSchedulerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the inference scheduler. </p>
      */
-    inline const Aws::String& GetInferenceSchedulerArn() const{ return m_inferenceSchedulerArn; }
+    inline const Aws::String& GetInferenceSchedulerArn() const { return m_inferenceSchedulerArn; }
     inline bool InferenceSchedulerArnHasBeenSet() const { return m_inferenceSchedulerArnHasBeenSet; }
-    inline void SetInferenceSchedulerArn(const Aws::String& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = value; }
-    inline void SetInferenceSchedulerArn(Aws::String&& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = std::move(value); }
-    inline void SetInferenceSchedulerArn(const char* value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn.assign(value); }
-    inline InferenceSchedulerSummary& WithInferenceSchedulerArn(const Aws::String& value) { SetInferenceSchedulerArn(value); return *this;}
-    inline InferenceSchedulerSummary& WithInferenceSchedulerArn(Aws::String&& value) { SetInferenceSchedulerArn(std::move(value)); return *this;}
-    inline InferenceSchedulerSummary& WithInferenceSchedulerArn(const char* value) { SetInferenceSchedulerArn(value); return *this;}
+    template<typename InferenceSchedulerArnT = Aws::String>
+    void SetInferenceSchedulerArn(InferenceSchedulerArnT&& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = std::forward<InferenceSchedulerArnT>(value); }
+    template<typename InferenceSchedulerArnT = Aws::String>
+    InferenceSchedulerSummary& WithInferenceSchedulerArn(InferenceSchedulerArnT&& value) { SetInferenceSchedulerArn(std::forward<InferenceSchedulerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the status of the inference scheduler. </p>
      */
-    inline const InferenceSchedulerStatus& GetStatus() const{ return m_status; }
+    inline InferenceSchedulerStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InferenceSchedulerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InferenceSchedulerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline InferenceSchedulerSummary& WithStatus(const InferenceSchedulerStatus& value) { SetStatus(value); return *this;}
-    inline InferenceSchedulerSummary& WithStatus(InferenceSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(InferenceSchedulerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline InferenceSchedulerSummary& WithStatus(InferenceSchedulerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -122,7 +112,7 @@ namespace Model
      * data at the same frequency and they don't need to stop and restart the scheduler
      * when uploading new data. </p>
      */
-    inline long long GetDataDelayOffsetInMinutes() const{ return m_dataDelayOffsetInMinutes; }
+    inline long long GetDataDelayOffsetInMinutes() const { return m_dataDelayOffsetInMinutes; }
     inline bool DataDelayOffsetInMinutesHasBeenSet() const { return m_dataDelayOffsetInMinutesHasBeenSet; }
     inline void SetDataDelayOffsetInMinutes(long long value) { m_dataDelayOffsetInMinutesHasBeenSet = true; m_dataDelayOffsetInMinutes = value; }
     inline InferenceSchedulerSummary& WithDataDelayOffsetInMinutes(long long value) { SetDataDelayOffsetInMinutes(value); return *this;}
@@ -137,12 +127,10 @@ namespace Model
      * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
      * example, it starts once every 5 minutes. </p>
      */
-    inline const DataUploadFrequency& GetDataUploadFrequency() const{ return m_dataUploadFrequency; }
+    inline DataUploadFrequency GetDataUploadFrequency() const { return m_dataUploadFrequency; }
     inline bool DataUploadFrequencyHasBeenSet() const { return m_dataUploadFrequencyHasBeenSet; }
-    inline void SetDataUploadFrequency(const DataUploadFrequency& value) { m_dataUploadFrequencyHasBeenSet = true; m_dataUploadFrequency = value; }
-    inline void SetDataUploadFrequency(DataUploadFrequency&& value) { m_dataUploadFrequencyHasBeenSet = true; m_dataUploadFrequency = std::move(value); }
-    inline InferenceSchedulerSummary& WithDataUploadFrequency(const DataUploadFrequency& value) { SetDataUploadFrequency(value); return *this;}
-    inline InferenceSchedulerSummary& WithDataUploadFrequency(DataUploadFrequency&& value) { SetDataUploadFrequency(std::move(value)); return *this;}
+    inline void SetDataUploadFrequency(DataUploadFrequency value) { m_dataUploadFrequencyHasBeenSet = true; m_dataUploadFrequency = value; }
+    inline InferenceSchedulerSummary& WithDataUploadFrequency(DataUploadFrequency value) { SetDataUploadFrequency(value); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +138,10 @@ namespace Model
      * <p>Indicates whether the latest execution for the inference scheduler was
      * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
      */
-    inline const LatestInferenceResult& GetLatestInferenceResult() const{ return m_latestInferenceResult; }
+    inline LatestInferenceResult GetLatestInferenceResult() const { return m_latestInferenceResult; }
     inline bool LatestInferenceResultHasBeenSet() const { return m_latestInferenceResultHasBeenSet; }
-    inline void SetLatestInferenceResult(const LatestInferenceResult& value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = value; }
-    inline void SetLatestInferenceResult(LatestInferenceResult&& value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = std::move(value); }
-    inline InferenceSchedulerSummary& WithLatestInferenceResult(const LatestInferenceResult& value) { SetLatestInferenceResult(value); return *this;}
-    inline InferenceSchedulerSummary& WithLatestInferenceResult(LatestInferenceResult&& value) { SetLatestInferenceResult(std::move(value)); return *this;}
+    inline void SetLatestInferenceResult(LatestInferenceResult value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = value; }
+    inline InferenceSchedulerSummary& WithLatestInferenceResult(LatestInferenceResult value) { SetLatestInferenceResult(value); return *this;}
     ///@}
   private:
 
@@ -171,16 +157,16 @@ namespace Model
     Aws::String m_inferenceSchedulerArn;
     bool m_inferenceSchedulerArnHasBeenSet = false;
 
-    InferenceSchedulerStatus m_status;
+    InferenceSchedulerStatus m_status{InferenceSchedulerStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    long long m_dataDelayOffsetInMinutes;
+    long long m_dataDelayOffsetInMinutes{0};
     bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
-    DataUploadFrequency m_dataUploadFrequency;
+    DataUploadFrequency m_dataUploadFrequency{DataUploadFrequency::NOT_SET};
     bool m_dataUploadFrequencyHasBeenSet = false;
 
-    LatestInferenceResult m_latestInferenceResult;
+    LatestInferenceResult m_latestInferenceResult{LatestInferenceResult::NOT_SET};
     bool m_latestInferenceResultHasBeenSet = false;
   };
 

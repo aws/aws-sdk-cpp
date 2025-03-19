@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-PhysicalConnectionRequirements::PhysicalConnectionRequirements() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_securityGroupIdListHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_subnetIdListHasBeenSet(false)
-{
-}
-
 PhysicalConnectionRequirements::PhysicalConnectionRequirements(JsonView jsonValue)
-  : PhysicalConnectionRequirements()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(JsonV
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIdList"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("securityGroupIdList");
@@ -50,14 +39,11 @@ PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(JsonV
     }
     m_securityGroupIdListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetId"))
   {
     m_subnetId = jsonValue.GetString("subnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIdList"))
   {
     Aws::Utils::Array<JsonView> subnetIdListJsonList = jsonValue.GetArray("subnetIdList");
@@ -67,7 +53,6 @@ PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(JsonV
     }
     m_subnetIdListHasBeenSet = true;
   }
-
   return *this;
 }
 

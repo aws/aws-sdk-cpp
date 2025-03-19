@@ -12,21 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSequenceStoreRequest::CreateSequenceStoreRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_fallbackLocationHasBeenSet(false),
-    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET),
-    m_eTagAlgorithmFamilyHasBeenSet(false),
-    m_propagatedSetLevelTagsHasBeenSet(false),
-    m_s3AccessConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateSequenceStoreRequest::SerializePayload() const
 {
   JsonValue payload;

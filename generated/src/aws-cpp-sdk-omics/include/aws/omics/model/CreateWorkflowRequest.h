@@ -27,7 +27,7 @@ namespace Model
   class CreateWorkflowRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API CreateWorkflowRequest();
+    AWS_OMICS_API CreateWorkflowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,105 +42,93 @@ namespace Model
     /**
      * <p>A name for the workflow.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateWorkflowRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateWorkflowRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateWorkflowRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the workflow.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateWorkflowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateWorkflowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateWorkflowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An engine for the workflow.</p>
      */
-    inline const WorkflowEngine& GetEngine() const{ return m_engine; }
+    inline WorkflowEngine GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const WorkflowEngine& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(WorkflowEngine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline CreateWorkflowRequest& WithEngine(const WorkflowEngine& value) { SetEngine(value); return *this;}
-    inline CreateWorkflowRequest& WithEngine(WorkflowEngine&& value) { SetEngine(std::move(value)); return *this;}
+    inline void SetEngine(WorkflowEngine value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline CreateWorkflowRequest& WithEngine(WorkflowEngine value) { SetEngine(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A ZIP archive for the workflow.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetDefinitionZip() const{ return m_definitionZip; }
+    inline const Aws::Utils::ByteBuffer& GetDefinitionZip() const { return m_definitionZip; }
     inline bool DefinitionZipHasBeenSet() const { return m_definitionZipHasBeenSet; }
-    inline void SetDefinitionZip(const Aws::Utils::ByteBuffer& value) { m_definitionZipHasBeenSet = true; m_definitionZip = value; }
-    inline void SetDefinitionZip(Aws::Utils::ByteBuffer&& value) { m_definitionZipHasBeenSet = true; m_definitionZip = std::move(value); }
-    inline CreateWorkflowRequest& WithDefinitionZip(const Aws::Utils::ByteBuffer& value) { SetDefinitionZip(value); return *this;}
-    inline CreateWorkflowRequest& WithDefinitionZip(Aws::Utils::ByteBuffer&& value) { SetDefinitionZip(std::move(value)); return *this;}
+    template<typename DefinitionZipT = Aws::Utils::ByteBuffer>
+    void SetDefinitionZip(DefinitionZipT&& value) { m_definitionZipHasBeenSet = true; m_definitionZip = std::forward<DefinitionZipT>(value); }
+    template<typename DefinitionZipT = Aws::Utils::ByteBuffer>
+    CreateWorkflowRequest& WithDefinitionZip(DefinitionZipT&& value) { SetDefinitionZip(std::forward<DefinitionZipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI of a definition for the workflow.</p>
      */
-    inline const Aws::String& GetDefinitionUri() const{ return m_definitionUri; }
+    inline const Aws::String& GetDefinitionUri() const { return m_definitionUri; }
     inline bool DefinitionUriHasBeenSet() const { return m_definitionUriHasBeenSet; }
-    inline void SetDefinitionUri(const Aws::String& value) { m_definitionUriHasBeenSet = true; m_definitionUri = value; }
-    inline void SetDefinitionUri(Aws::String&& value) { m_definitionUriHasBeenSet = true; m_definitionUri = std::move(value); }
-    inline void SetDefinitionUri(const char* value) { m_definitionUriHasBeenSet = true; m_definitionUri.assign(value); }
-    inline CreateWorkflowRequest& WithDefinitionUri(const Aws::String& value) { SetDefinitionUri(value); return *this;}
-    inline CreateWorkflowRequest& WithDefinitionUri(Aws::String&& value) { SetDefinitionUri(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& WithDefinitionUri(const char* value) { SetDefinitionUri(value); return *this;}
+    template<typename DefinitionUriT = Aws::String>
+    void SetDefinitionUri(DefinitionUriT&& value) { m_definitionUriHasBeenSet = true; m_definitionUri = std::forward<DefinitionUriT>(value); }
+    template<typename DefinitionUriT = Aws::String>
+    CreateWorkflowRequest& WithDefinitionUri(DefinitionUriT&& value) { SetDefinitionUri(std::forward<DefinitionUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path of the main definition file for the workflow.</p>
      */
-    inline const Aws::String& GetMain() const{ return m_main; }
+    inline const Aws::String& GetMain() const { return m_main; }
     inline bool MainHasBeenSet() const { return m_mainHasBeenSet; }
-    inline void SetMain(const Aws::String& value) { m_mainHasBeenSet = true; m_main = value; }
-    inline void SetMain(Aws::String&& value) { m_mainHasBeenSet = true; m_main = std::move(value); }
-    inline void SetMain(const char* value) { m_mainHasBeenSet = true; m_main.assign(value); }
-    inline CreateWorkflowRequest& WithMain(const Aws::String& value) { SetMain(value); return *this;}
-    inline CreateWorkflowRequest& WithMain(Aws::String&& value) { SetMain(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& WithMain(const char* value) { SetMain(value); return *this;}
+    template<typename MainT = Aws::String>
+    void SetMain(MainT&& value) { m_mainHasBeenSet = true; m_main = std::forward<MainT>(value); }
+    template<typename MainT = Aws::String>
+    CreateWorkflowRequest& WithMain(MainT&& value) { SetMain(std::forward<MainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A parameter template for the workflow.</p>
      */
-    inline const Aws::Map<Aws::String, WorkflowParameter>& GetParameterTemplate() const{ return m_parameterTemplate; }
+    inline const Aws::Map<Aws::String, WorkflowParameter>& GetParameterTemplate() const { return m_parameterTemplate; }
     inline bool ParameterTemplateHasBeenSet() const { return m_parameterTemplateHasBeenSet; }
-    inline void SetParameterTemplate(const Aws::Map<Aws::String, WorkflowParameter>& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate = value; }
-    inline void SetParameterTemplate(Aws::Map<Aws::String, WorkflowParameter>&& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate = std::move(value); }
-    inline CreateWorkflowRequest& WithParameterTemplate(const Aws::Map<Aws::String, WorkflowParameter>& value) { SetParameterTemplate(value); return *this;}
-    inline CreateWorkflowRequest& WithParameterTemplate(Aws::Map<Aws::String, WorkflowParameter>&& value) { SetParameterTemplate(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& AddParameterTemplate(const Aws::String& key, const WorkflowParameter& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(key, value); return *this; }
-    inline CreateWorkflowRequest& AddParameterTemplate(Aws::String&& key, const WorkflowParameter& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(std::move(key), value); return *this; }
-    inline CreateWorkflowRequest& AddParameterTemplate(const Aws::String& key, WorkflowParameter&& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkflowRequest& AddParameterTemplate(Aws::String&& key, WorkflowParameter&& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWorkflowRequest& AddParameterTemplate(const char* key, WorkflowParameter&& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkflowRequest& AddParameterTemplate(const char* key, const WorkflowParameter& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(key, value); return *this; }
+    template<typename ParameterTemplateT = Aws::Map<Aws::String, WorkflowParameter>>
+    void SetParameterTemplate(ParameterTemplateT&& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate = std::forward<ParameterTemplateT>(value); }
+    template<typename ParameterTemplateT = Aws::Map<Aws::String, WorkflowParameter>>
+    CreateWorkflowRequest& WithParameterTemplate(ParameterTemplateT&& value) { SetParameterTemplate(std::forward<ParameterTemplateT>(value)); return *this;}
+    template<typename ParameterTemplateKeyT = Aws::String, typename ParameterTemplateValueT = WorkflowParameter>
+    CreateWorkflowRequest& AddParameterTemplate(ParameterTemplateKeyT&& key, ParameterTemplateValueT&& value) {
+      m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(std::forward<ParameterTemplateKeyT>(key), std::forward<ParameterTemplateValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The default storage capacity for the workflow runs, in gibibytes.</p>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline CreateWorkflowRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
@@ -150,19 +138,16 @@ namespace Model
     /**
      * <p>Tags for the workflow.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWorkflowRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateWorkflowRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateWorkflowRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorkflowRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkflowRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWorkflowRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorkflowRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorkflowRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateWorkflowRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateWorkflowRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -170,26 +155,22 @@ namespace Model
      * <p>To ensure that requests don't run multiple times, specify a unique ID for
      * each request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline CreateWorkflowRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWorkflowRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWorkflowRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The computational accelerator specified to run the workflow.</p>
      */
-    inline const Accelerators& GetAccelerators() const{ return m_accelerators; }
+    inline Accelerators GetAccelerators() const { return m_accelerators; }
     inline bool AcceleratorsHasBeenSet() const { return m_acceleratorsHasBeenSet; }
-    inline void SetAccelerators(const Accelerators& value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
-    inline void SetAccelerators(Accelerators&& value) { m_acceleratorsHasBeenSet = true; m_accelerators = std::move(value); }
-    inline CreateWorkflowRequest& WithAccelerators(const Accelerators& value) { SetAccelerators(value); return *this;}
-    inline CreateWorkflowRequest& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
+    inline void SetAccelerators(Accelerators value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
+    inline CreateWorkflowRequest& WithAccelerators(Accelerators value) { SetAccelerators(value); return *this;}
     ///@}
   private:
 
@@ -199,10 +180,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    WorkflowEngine m_engine;
+    WorkflowEngine m_engine{WorkflowEngine::NOT_SET};
     bool m_engineHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_definitionZip;
+    Aws::Utils::ByteBuffer m_definitionZip{};
     bool m_definitionZipHasBeenSet = false;
 
     Aws::String m_definitionUri;
@@ -214,7 +195,7 @@ namespace Model
     Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
     bool m_parameterTemplateHasBeenSet = false;
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
@@ -223,7 +204,7 @@ namespace Model
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    Accelerators m_accelerators;
+    Accelerators m_accelerators{Accelerators::NOT_SET};
     bool m_acceleratorsHasBeenSet = false;
   };
 

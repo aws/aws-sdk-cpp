@@ -18,13 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-HttpConfiguration::HttpConfiguration() : 
-    m_baseUrlHasBeenSet(false)
-{
-}
-
 HttpConfiguration::HttpConfiguration(JsonView jsonValue)
-  : HttpConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HttpConfiguration& HttpConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BaseUrl"))
   {
     m_baseUrl = jsonValue.GetString("BaseUrl");
-
     m_baseUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

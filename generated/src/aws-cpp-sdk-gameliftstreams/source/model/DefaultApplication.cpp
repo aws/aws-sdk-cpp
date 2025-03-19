@@ -18,14 +18,7 @@ namespace GameLiftStreams
 namespace Model
 {
 
-DefaultApplication::DefaultApplication() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 DefaultApplication::DefaultApplication(JsonView jsonValue)
-  : DefaultApplication()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultApplication& DefaultApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

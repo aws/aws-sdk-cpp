@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-QueryFilters::QueryFilters() : 
-    m_typesHasBeenSet(false),
-    m_lineageTypesHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_modifiedBeforeHasBeenSet(false),
-    m_modifiedAfterHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 QueryFilters::QueryFilters(JsonView jsonValue)
-  : QueryFilters()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ QueryFilters& QueryFilters::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineageTypes"))
   {
     Aws::Utils::Array<JsonView> lineageTypesJsonList = jsonValue.GetArray("LineageTypes");
@@ -56,35 +43,26 @@ QueryFilters& QueryFilters::operator =(JsonView jsonValue)
     }
     m_lineageTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBefore"))
   {
     m_createdBefore = jsonValue.GetDouble("CreatedBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAfter"))
   {
     m_createdAfter = jsonValue.GetDouble("CreatedAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedBefore"))
   {
     m_modifiedBefore = jsonValue.GetDouble("ModifiedBefore");
-
     m_modifiedBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedAfter"))
   {
     m_modifiedAfter = jsonValue.GetDouble("ModifiedAfter");
-
     m_modifiedAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("Properties").GetAllObjects();
@@ -94,7 +72,6 @@ QueryFilters& QueryFilters::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

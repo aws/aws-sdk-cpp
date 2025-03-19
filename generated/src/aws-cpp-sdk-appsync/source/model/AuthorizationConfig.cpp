@@ -18,15 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-AuthorizationConfig::AuthorizationConfig() : 
-    m_authorizationType(AuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_awsIamConfigHasBeenSet(false)
-{
-}
-
 AuthorizationConfig::AuthorizationConfig(JsonView jsonValue)
-  : AuthorizationConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AuthorizationConfig& AuthorizationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authorizationType"))
   {
     m_authorizationType = AuthorizationTypeMapper::GetAuthorizationTypeForName(jsonValue.GetString("authorizationType"));
-
     m_authorizationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsIamConfig"))
   {
     m_awsIamConfig = jsonValue.GetObject("awsIamConfig");
-
     m_awsIamConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

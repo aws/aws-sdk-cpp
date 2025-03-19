@@ -34,7 +34,7 @@ namespace Model
   class AggregatedValue
   {
   public:
-    AWS_IOTSITEWISE_API AggregatedValue();
+    AWS_IOTSITEWISE_API AggregatedValue() = default;
     AWS_IOTSITEWISE_API AggregatedValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API AggregatedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,43 +44,41 @@ namespace Model
     /**
      * <p>The date the aggregating computations occurred, in Unix epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline AggregatedValue& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline AggregatedValue& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    AggregatedValue& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quality of the aggregated data.</p>
      */
-    inline const Quality& GetQuality() const{ return m_quality; }
+    inline Quality GetQuality() const { return m_quality; }
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
-    inline void SetQuality(const Quality& value) { m_qualityHasBeenSet = true; m_quality = value; }
-    inline void SetQuality(Quality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
-    inline AggregatedValue& WithQuality(const Quality& value) { SetQuality(value); return *this;}
-    inline AggregatedValue& WithQuality(Quality&& value) { SetQuality(std::move(value)); return *this;}
+    inline void SetQuality(Quality value) { m_qualityHasBeenSet = true; m_quality = value; }
+    inline AggregatedValue& WithQuality(Quality value) { SetQuality(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the aggregates.</p>
      */
-    inline const Aggregates& GetValue() const{ return m_value; }
+    inline const Aggregates& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aggregates& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aggregates&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AggregatedValue& WithValue(const Aggregates& value) { SetValue(value); return *this;}
-    inline AggregatedValue& WithValue(Aggregates&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aggregates>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aggregates>
+    AggregatedValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    Quality m_quality;
+    Quality m_quality{Quality::NOT_SET};
     bool m_qualityHasBeenSet = false;
 
     Aggregates m_value;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWebhookResult::CreateWebhookResult()
-{
-}
-
 CreateWebhookResult::CreateWebhookResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWebhookResult& CreateWebhookResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("webhook"))
   {
     m_webhook = jsonValue.GetObject("webhook");
-
+    m_webhookHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

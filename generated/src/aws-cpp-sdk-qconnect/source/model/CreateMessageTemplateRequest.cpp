@@ -12,22 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMessageTemplateRequest::CreateMessageTemplateRequest() : 
-    m_channelSubtype(ChannelSubtype::NOT_SET),
-    m_channelSubtypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_contentHasBeenSet(false),
-    m_defaultAttributesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupingConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMessageTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

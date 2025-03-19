@@ -28,7 +28,7 @@ namespace Model
   class GetCallAnalyticsJobResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API GetCallAnalyticsJobResult();
+    AWS_TRANSCRIBESERVICE_API GetCallAnalyticsJobResult() = default;
     AWS_TRANSCRIBESERVICE_API GetCallAnalyticsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API GetCallAnalyticsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Provides detailed information about the specified Call Analytics job,
      * including job status and, if applicable, failure reason.</p>
      */
-    inline const CallAnalyticsJob& GetCallAnalyticsJob() const{ return m_callAnalyticsJob; }
-    inline void SetCallAnalyticsJob(const CallAnalyticsJob& value) { m_callAnalyticsJob = value; }
-    inline void SetCallAnalyticsJob(CallAnalyticsJob&& value) { m_callAnalyticsJob = std::move(value); }
-    inline GetCallAnalyticsJobResult& WithCallAnalyticsJob(const CallAnalyticsJob& value) { SetCallAnalyticsJob(value); return *this;}
-    inline GetCallAnalyticsJobResult& WithCallAnalyticsJob(CallAnalyticsJob&& value) { SetCallAnalyticsJob(std::move(value)); return *this;}
+    inline const CallAnalyticsJob& GetCallAnalyticsJob() const { return m_callAnalyticsJob; }
+    template<typename CallAnalyticsJobT = CallAnalyticsJob>
+    void SetCallAnalyticsJob(CallAnalyticsJobT&& value) { m_callAnalyticsJobHasBeenSet = true; m_callAnalyticsJob = std::forward<CallAnalyticsJobT>(value); }
+    template<typename CallAnalyticsJobT = CallAnalyticsJob>
+    GetCallAnalyticsJobResult& WithCallAnalyticsJob(CallAnalyticsJobT&& value) { SetCallAnalyticsJob(std::forward<CallAnalyticsJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCallAnalyticsJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCallAnalyticsJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCallAnalyticsJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCallAnalyticsJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CallAnalyticsJob m_callAnalyticsJob;
+    bool m_callAnalyticsJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

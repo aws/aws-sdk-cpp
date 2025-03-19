@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeviceResult::GetDeviceResult() : 
-    m_deviceStatus(DeviceStatus::NOT_SET),
-    m_deviceType(DeviceType::NOT_SET)
-{
-}
-
 GetDeviceResult::GetDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDeviceResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ GetDeviceResult& GetDeviceResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("deviceArn"))
   {
     m_deviceArn = jsonValue.GetString("deviceArn");
-
+    m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceCapabilities"))
   {
     m_deviceCapabilities = jsonValue.GetString("deviceCapabilities");
-
+    m_deviceCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
+    m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceQueueInfo"))
   {
     Aws::Utils::Array<JsonView> deviceQueueInfoJsonList = jsonValue.GetArray("deviceQueueInfo");
@@ -57,32 +47,30 @@ GetDeviceResult& GetDeviceResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_deviceQueueInfo.push_back(deviceQueueInfoJsonList[deviceQueueInfoIndex].AsObject());
     }
+    m_deviceQueueInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceStatus"))
   {
     m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("deviceStatus"));
-
+    m_deviceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceType"))
   {
     m_deviceType = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("deviceType"));
-
+    m_deviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
+    m_providerNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

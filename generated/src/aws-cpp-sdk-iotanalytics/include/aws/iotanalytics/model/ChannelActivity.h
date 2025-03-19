@@ -32,7 +32,7 @@ namespace Model
   class ChannelActivity
   {
   public:
-    AWS_IOTANALYTICS_API ChannelActivity();
+    AWS_IOTANALYTICS_API ChannelActivity() = default;
     AWS_IOTANALYTICS_API ChannelActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ChannelActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The name of the channel activity.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ChannelActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ChannelActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ChannelActivity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ChannelActivity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the channel from which the messages are processed.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline ChannelActivity& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline ChannelActivity& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline ChannelActivity& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    ChannelActivity& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next activity in the pipeline.</p>
      */
-    inline const Aws::String& GetNext() const{ return m_next; }
+    inline const Aws::String& GetNext() const { return m_next; }
     inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
-    inline void SetNext(const Aws::String& value) { m_nextHasBeenSet = true; m_next = value; }
-    inline void SetNext(Aws::String&& value) { m_nextHasBeenSet = true; m_next = std::move(value); }
-    inline void SetNext(const char* value) { m_nextHasBeenSet = true; m_next.assign(value); }
-    inline ChannelActivity& WithNext(const Aws::String& value) { SetNext(value); return *this;}
-    inline ChannelActivity& WithNext(Aws::String&& value) { SetNext(std::move(value)); return *this;}
-    inline ChannelActivity& WithNext(const char* value) { SetNext(value); return *this;}
+    template<typename NextT = Aws::String>
+    void SetNext(NextT&& value) { m_nextHasBeenSet = true; m_next = std::forward<NextT>(value); }
+    template<typename NextT = Aws::String>
+    ChannelActivity& WithNext(NextT&& value) { SetNext(std::forward<NextT>(value)); return *this;}
     ///@}
   private:
 

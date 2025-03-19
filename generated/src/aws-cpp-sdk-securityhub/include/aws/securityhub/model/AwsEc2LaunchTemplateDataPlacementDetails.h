@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataPlacementDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataPlacementDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataPlacementDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataPlacementDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataPlacementDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
      */
-    inline const Aws::String& GetAffinity() const{ return m_affinity; }
+    inline const Aws::String& GetAffinity() const { return m_affinity; }
     inline bool AffinityHasBeenSet() const { return m_affinityHasBeenSet; }
-    inline void SetAffinity(const Aws::String& value) { m_affinityHasBeenSet = true; m_affinity = value; }
-    inline void SetAffinity(Aws::String&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
-    inline void SetAffinity(const char* value) { m_affinityHasBeenSet = true; m_affinity.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithAffinity(const Aws::String& value) { SetAffinity(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithAffinity(Aws::String&& value) { SetAffinity(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithAffinity(const char* value) { SetAffinity(value); return *this;}
+    template<typename AffinityT = Aws::String>
+    void SetAffinity(AffinityT&& value) { m_affinityHasBeenSet = true; m_affinity = std::forward<AffinityT>(value); }
+    template<typename AffinityT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithAffinity(AffinityT&& value) { SetAffinity(std::forward<AffinityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Availability Zone for the instance. </p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the placement group for the instance. </p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the Dedicated Host for the instance. </p>
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline const Aws::String& GetHostId() const { return m_hostId; }
     inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
-    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithHostId(const char* value) { SetHostId(value); return *this;}
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,21 +91,19 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the host resource group in which to launch
      * the instances. </p>
      */
-    inline const Aws::String& GetHostResourceGroupArn() const{ return m_hostResourceGroupArn; }
+    inline const Aws::String& GetHostResourceGroupArn() const { return m_hostResourceGroupArn; }
     inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }
-    inline void SetHostResourceGroupArn(const Aws::String& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = value; }
-    inline void SetHostResourceGroupArn(Aws::String&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::move(value); }
-    inline void SetHostResourceGroupArn(const char* value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithHostResourceGroupArn(const Aws::String& value) { SetHostResourceGroupArn(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithHostResourceGroupArn(Aws::String&& value) { SetHostResourceGroupArn(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
+    template<typename HostResourceGroupArnT = Aws::String>
+    void SetHostResourceGroupArn(HostResourceGroupArnT&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::forward<HostResourceGroupArnT>(value); }
+    template<typename HostResourceGroupArnT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithHostResourceGroupArn(HostResourceGroupArnT&& value) { SetHostResourceGroupArn(std::forward<HostResourceGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of the partition the instance should launch in. </p>
      */
-    inline int GetPartitionNumber() const{ return m_partitionNumber; }
+    inline int GetPartitionNumber() const { return m_partitionNumber; }
     inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
     inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
     inline AwsEc2LaunchTemplateDataPlacementDetails& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
@@ -123,14 +113,12 @@ namespace Model
     /**
      * <p> Reserved for future use. </p>
      */
-    inline const Aws::String& GetSpreadDomain() const{ return m_spreadDomain; }
+    inline const Aws::String& GetSpreadDomain() const { return m_spreadDomain; }
     inline bool SpreadDomainHasBeenSet() const { return m_spreadDomainHasBeenSet; }
-    inline void SetSpreadDomain(const Aws::String& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = value; }
-    inline void SetSpreadDomain(Aws::String&& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = std::move(value); }
-    inline void SetSpreadDomain(const char* value) { m_spreadDomainHasBeenSet = true; m_spreadDomain.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithSpreadDomain(const Aws::String& value) { SetSpreadDomain(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithSpreadDomain(Aws::String&& value) { SetSpreadDomain(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithSpreadDomain(const char* value) { SetSpreadDomain(value); return *this;}
+    template<typename SpreadDomainT = Aws::String>
+    void SetSpreadDomain(SpreadDomainT&& value) { m_spreadDomainHasBeenSet = true; m_spreadDomain = std::forward<SpreadDomainT>(value); }
+    template<typename SpreadDomainT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithSpreadDomain(SpreadDomainT&& value) { SetSpreadDomain(std::forward<SpreadDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +126,12 @@ namespace Model
      * <p> The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of dedicated runs on single-tenant hardware. </p>
      */
-    inline const Aws::String& GetTenancy() const{ return m_tenancy; }
+    inline const Aws::String& GetTenancy() const { return m_tenancy; }
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(Aws::String&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline void SetTenancy(const char* value) { m_tenancyHasBeenSet = true; m_tenancy.assign(value); }
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithTenancy(const Aws::String& value) { SetTenancy(value); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithTenancy(Aws::String&& value) { SetTenancy(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataPlacementDetails& WithTenancy(const char* value) { SetTenancy(value); return *this;}
+    template<typename TenancyT = Aws::String>
+    void SetTenancy(TenancyT&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::forward<TenancyT>(value); }
+    template<typename TenancyT = Aws::String>
+    AwsEc2LaunchTemplateDataPlacementDetails& WithTenancy(TenancyT&& value) { SetTenancy(std::forward<TenancyT>(value)); return *this;}
     ///@}
   private:
 
@@ -164,7 +150,7 @@ namespace Model
     Aws::String m_hostResourceGroupArn;
     bool m_hostResourceGroupArnHasBeenSet = false;
 
-    int m_partitionNumber;
+    int m_partitionNumber{0};
     bool m_partitionNumberHasBeenSet = false;
 
     Aws::String m_spreadDomain;

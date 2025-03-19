@@ -18,21 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-CloudFormationTarget::CloudFormationTarget() : 
-    m_deploymentIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_targetVersionWeight(0.0),
-    m_targetVersionWeightHasBeenSet(false)
-{
-}
-
 CloudFormationTarget::CloudFormationTarget(JsonView jsonValue)
-  : CloudFormationTarget()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ CloudFormationTarget& CloudFormationTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetId"))
   {
     m_targetId = jsonValue.GetString("targetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
     Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
@@ -69,28 +49,21 @@ CloudFormationTarget& CloudFormationTarget::operator =(JsonView jsonValue)
     }
     m_lifecycleEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TargetStatusMapper::GetTargetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetVersionWeight"))
   {
     m_targetVersionWeight = jsonValue.GetDouble("targetVersionWeight");
-
     m_targetVersionWeightHasBeenSet = true;
   }
-
   return *this;
 }
 

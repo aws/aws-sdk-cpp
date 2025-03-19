@@ -40,7 +40,7 @@ namespace Model
   class IPSetForwardedIPConfig
   {
   public:
-    AWS_WAFV2_API IPSetForwardedIPConfig();
+    AWS_WAFV2_API IPSetForwardedIPConfig() = default;
     AWS_WAFV2_API IPSetForwardedIPConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API IPSetForwardedIPConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      *  <p>If the specified header isn't present in the request, WAF doesn't
      * apply the rule to the web request at all.</p> 
      */
-    inline const Aws::String& GetHeaderName() const{ return m_headerName; }
+    inline const Aws::String& GetHeaderName() const { return m_headerName; }
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
-    inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
-    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
-    inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
-    inline IPSetForwardedIPConfig& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
-    inline IPSetForwardedIPConfig& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
-    inline IPSetForwardedIPConfig& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
+    template<typename HeaderNameT = Aws::String>
+    void SetHeaderName(HeaderNameT&& value) { m_headerNameHasBeenSet = true; m_headerName = std::forward<HeaderNameT>(value); }
+    template<typename HeaderNameT = Aws::String>
+    IPSetForwardedIPConfig& WithHeaderName(HeaderNameT&& value) { SetHeaderName(std::forward<HeaderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,10 @@ namespace Model
      * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
      * rule statement.</p> </li> </ul>
      */
-    inline const FallbackBehavior& GetFallbackBehavior() const{ return m_fallbackBehavior; }
+    inline FallbackBehavior GetFallbackBehavior() const { return m_fallbackBehavior; }
     inline bool FallbackBehaviorHasBeenSet() const { return m_fallbackBehaviorHasBeenSet; }
-    inline void SetFallbackBehavior(const FallbackBehavior& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
-    inline void SetFallbackBehavior(FallbackBehavior&& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = std::move(value); }
-    inline IPSetForwardedIPConfig& WithFallbackBehavior(const FallbackBehavior& value) { SetFallbackBehavior(value); return *this;}
-    inline IPSetForwardedIPConfig& WithFallbackBehavior(FallbackBehavior&& value) { SetFallbackBehavior(std::move(value)); return *this;}
+    inline void SetFallbackBehavior(FallbackBehavior value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
+    inline IPSetForwardedIPConfig& WithFallbackBehavior(FallbackBehavior value) { SetFallbackBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -96,22 +92,20 @@ namespace Model
      * header for a match. If the header contains more than 10 IP addresses, WAF
      * inspects the last 10.</p> </li> </ul>
      */
-    inline const ForwardedIPPosition& GetPosition() const{ return m_position; }
+    inline ForwardedIPPosition GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const ForwardedIPPosition& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(ForwardedIPPosition&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline IPSetForwardedIPConfig& WithPosition(const ForwardedIPPosition& value) { SetPosition(value); return *this;}
-    inline IPSetForwardedIPConfig& WithPosition(ForwardedIPPosition&& value) { SetPosition(std::move(value)); return *this;}
+    inline void SetPosition(ForwardedIPPosition value) { m_positionHasBeenSet = true; m_position = value; }
+    inline IPSetForwardedIPConfig& WithPosition(ForwardedIPPosition value) { SetPosition(value); return *this;}
     ///@}
   private:
 
     Aws::String m_headerName;
     bool m_headerNameHasBeenSet = false;
 
-    FallbackBehavior m_fallbackBehavior;
+    FallbackBehavior m_fallbackBehavior{FallbackBehavior::NOT_SET};
     bool m_fallbackBehaviorHasBeenSet = false;
 
-    ForwardedIPPosition m_position;
+    ForwardedIPPosition m_position{ForwardedIPPosition::NOT_SET};
     bool m_positionHasBeenSet = false;
   };
 

@@ -18,22 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-TransformerSummary::TransformerSummary() : 
-    m_transformerIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(TransformerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_inputConversionHasBeenSet(false),
-    m_mappingHasBeenSet(false),
-    m_outputConversionHasBeenSet(false),
-    m_sampleDocumentsHasBeenSet(false)
-{
-}
-
 TransformerSummary::TransformerSummary(JsonView jsonValue)
-  : TransformerSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ TransformerSummary& TransformerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("transformerId"))
   {
     m_transformerId = jsonValue.GetString("transformerId");
-
     m_transformerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TransformerStatusMapper::GetTransformerStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputConversion"))
   {
     m_inputConversion = jsonValue.GetObject("inputConversion");
-
     m_inputConversionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapping"))
   {
     m_mapping = jsonValue.GetObject("mapping");
-
     m_mappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConversion"))
   {
     m_outputConversion = jsonValue.GetObject("outputConversion");
-
     m_outputConversionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleDocuments"))
   {
     m_sampleDocuments = jsonValue.GetObject("sampleDocuments");
-
     m_sampleDocumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

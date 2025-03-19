@@ -12,16 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSigningJobRequest::StartSigningJobRequest() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_profileOwnerHasBeenSet(false)
-{
-}
-
 Aws::String StartSigningJobRequest::SerializePayload() const
 {
   JsonValue payload;

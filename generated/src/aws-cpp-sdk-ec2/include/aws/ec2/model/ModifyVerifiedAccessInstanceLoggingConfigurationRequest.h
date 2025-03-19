@@ -23,7 +23,7 @@ namespace Model
   class ModifyVerifiedAccessInstanceLoggingConfigurationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessInstanceLoggingConfigurationRequest();
+    AWS_EC2_API ModifyVerifiedAccessInstanceLoggingConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The ID of the Verified Access instance.</p>
      */
-    inline const Aws::String& GetVerifiedAccessInstanceId() const{ return m_verifiedAccessInstanceId; }
+    inline const Aws::String& GetVerifiedAccessInstanceId() const { return m_verifiedAccessInstanceId; }
     inline bool VerifiedAccessInstanceIdHasBeenSet() const { return m_verifiedAccessInstanceIdHasBeenSet; }
-    inline void SetVerifiedAccessInstanceId(const Aws::String& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = value; }
-    inline void SetVerifiedAccessInstanceId(Aws::String&& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = std::move(value); }
-    inline void SetVerifiedAccessInstanceId(const char* value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId.assign(value); }
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithVerifiedAccessInstanceId(const Aws::String& value) { SetVerifiedAccessInstanceId(value); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithVerifiedAccessInstanceId(Aws::String&& value) { SetVerifiedAccessInstanceId(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithVerifiedAccessInstanceId(const char* value) { SetVerifiedAccessInstanceId(value); return *this;}
+    template<typename VerifiedAccessInstanceIdT = Aws::String>
+    void SetVerifiedAccessInstanceId(VerifiedAccessInstanceIdT&& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = std::forward<VerifiedAccessInstanceIdT>(value); }
+    template<typename VerifiedAccessInstanceIdT = Aws::String>
+    ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithVerifiedAccessInstanceId(VerifiedAccessInstanceIdT&& value) { SetVerifiedAccessInstanceId(std::forward<VerifiedAccessInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration options for Verified Access instances.</p>
      */
-    inline const VerifiedAccessLogOptions& GetAccessLogs() const{ return m_accessLogs; }
+    inline const VerifiedAccessLogOptions& GetAccessLogs() const { return m_accessLogs; }
     inline bool AccessLogsHasBeenSet() const { return m_accessLogsHasBeenSet; }
-    inline void SetAccessLogs(const VerifiedAccessLogOptions& value) { m_accessLogsHasBeenSet = true; m_accessLogs = value; }
-    inline void SetAccessLogs(VerifiedAccessLogOptions&& value) { m_accessLogsHasBeenSet = true; m_accessLogs = std::move(value); }
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithAccessLogs(const VerifiedAccessLogOptions& value) { SetAccessLogs(value); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithAccessLogs(VerifiedAccessLogOptions&& value) { SetAccessLogs(std::move(value)); return *this;}
+    template<typename AccessLogsT = VerifiedAccessLogOptions>
+    void SetAccessLogs(AccessLogsT&& value) { m_accessLogsHasBeenSet = true; m_accessLogs = std::forward<AccessLogsT>(value); }
+    template<typename AccessLogsT = VerifiedAccessLogOptions>
+    ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithAccessLogs(AccessLogsT&& value) { SetAccessLogs(std::forward<AccessLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +69,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,14 +82,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ModifyVerifiedAccessInstanceLoggingConfigurationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +97,7 @@ namespace Model
     VerifiedAccessLogOptions m_accessLogs;
     bool m_accessLogsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;

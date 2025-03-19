@@ -36,7 +36,7 @@ namespace Model
   class InstanceAssociationOutputLocation
   {
   public:
-    AWS_SSM_API InstanceAssociationOutputLocation();
+    AWS_SSM_API InstanceAssociationOutputLocation() = default;
     AWS_SSM_API InstanceAssociationOutputLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InstanceAssociationOutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>An S3 bucket where you want to store the results of this request.</p>
      */
-    inline const S3OutputLocation& GetS3Location() const{ return m_s3Location; }
+    inline const S3OutputLocation& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3OutputLocation& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3OutputLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline InstanceAssociationOutputLocation& WithS3Location(const S3OutputLocation& value) { SetS3Location(value); return *this;}
-    inline InstanceAssociationOutputLocation& WithS3Location(S3OutputLocation&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3OutputLocation>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3OutputLocation>
+    InstanceAssociationOutputLocation& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 

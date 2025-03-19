@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFlowResult::DescribeFlowResult()
-{
-}
-
 DescribeFlowResult::DescribeFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeFlowResult& DescribeFlowResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("flow"))
   {
     m_flow = jsonValue.GetObject("flow");
-
+    m_flowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     m_messages = jsonValue.GetObject("messages");
-
+    m_messagesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

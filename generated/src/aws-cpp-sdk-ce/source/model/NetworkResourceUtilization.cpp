@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-NetworkResourceUtilization::NetworkResourceUtilization() : 
-    m_networkInBytesPerSecondHasBeenSet(false),
-    m_networkOutBytesPerSecondHasBeenSet(false),
-    m_networkPacketsInPerSecondHasBeenSet(false),
-    m_networkPacketsOutPerSecondHasBeenSet(false)
-{
-}
-
 NetworkResourceUtilization::NetworkResourceUtilization(JsonView jsonValue)
-  : NetworkResourceUtilization()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ NetworkResourceUtilization& NetworkResourceUtilization::operator =(JsonView json
   if(jsonValue.ValueExists("NetworkInBytesPerSecond"))
   {
     m_networkInBytesPerSecond = jsonValue.GetString("NetworkInBytesPerSecond");
-
     m_networkInBytesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkOutBytesPerSecond"))
   {
     m_networkOutBytesPerSecond = jsonValue.GetString("NetworkOutBytesPerSecond");
-
     m_networkOutBytesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkPacketsInPerSecond"))
   {
     m_networkPacketsInPerSecond = jsonValue.GetString("NetworkPacketsInPerSecond");
-
     m_networkPacketsInPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkPacketsOutPerSecond"))
   {
     m_networkPacketsOutPerSecond = jsonValue.GetString("NetworkPacketsOutPerSecond");
-
     m_networkPacketsOutPerSecondHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateThemeRequest::CreateThemeRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_themeToCreateHasBeenSet(false)
-{
-}
-
 Aws::String CreateThemeRequest::SerializePayload() const
 {
   JsonValue payload;

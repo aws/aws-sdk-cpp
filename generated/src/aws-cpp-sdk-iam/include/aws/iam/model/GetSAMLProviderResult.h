@@ -39,7 +39,7 @@ namespace Model
   class GetSAMLProviderResult
   {
   public:
-    AWS_IAM_API GetSAMLProviderResult();
+    AWS_IAM_API GetSAMLProviderResult() = default;
     AWS_IAM_API GetSAMLProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -48,13 +48,11 @@ namespace Model
     /**
      * <p>The unique identifier assigned to the SAML provider.</p>
      */
-    inline const Aws::String& GetSAMLProviderUUID() const{ return m_sAMLProviderUUID; }
-    inline void SetSAMLProviderUUID(const Aws::String& value) { m_sAMLProviderUUID = value; }
-    inline void SetSAMLProviderUUID(Aws::String&& value) { m_sAMLProviderUUID = std::move(value); }
-    inline void SetSAMLProviderUUID(const char* value) { m_sAMLProviderUUID.assign(value); }
-    inline GetSAMLProviderResult& WithSAMLProviderUUID(const Aws::String& value) { SetSAMLProviderUUID(value); return *this;}
-    inline GetSAMLProviderResult& WithSAMLProviderUUID(Aws::String&& value) { SetSAMLProviderUUID(std::move(value)); return *this;}
-    inline GetSAMLProviderResult& WithSAMLProviderUUID(const char* value) { SetSAMLProviderUUID(value); return *this;}
+    inline const Aws::String& GetSAMLProviderUUID() const { return m_sAMLProviderUUID; }
+    template<typename SAMLProviderUUIDT = Aws::String>
+    void SetSAMLProviderUUID(SAMLProviderUUIDT&& value) { m_sAMLProviderUUIDHasBeenSet = true; m_sAMLProviderUUID = std::forward<SAMLProviderUUIDT>(value); }
+    template<typename SAMLProviderUUIDT = Aws::String>
+    GetSAMLProviderResult& WithSAMLProviderUUID(SAMLProviderUUIDT&& value) { SetSAMLProviderUUID(std::forward<SAMLProviderUUIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,35 +60,33 @@ namespace Model
      * <p>The XML metadata document that includes information about an identity
      * provider.</p>
      */
-    inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
-    inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocument = value; }
-    inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocument = std::move(value); }
-    inline void SetSAMLMetadataDocument(const char* value) { m_sAMLMetadataDocument.assign(value); }
-    inline GetSAMLProviderResult& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
-    inline GetSAMLProviderResult& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(std::move(value)); return *this;}
-    inline GetSAMLProviderResult& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
+    inline const Aws::String& GetSAMLMetadataDocument() const { return m_sAMLMetadataDocument; }
+    template<typename SAMLMetadataDocumentT = Aws::String>
+    void SetSAMLMetadataDocument(SAMLMetadataDocumentT&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = std::forward<SAMLMetadataDocumentT>(value); }
+    template<typename SAMLMetadataDocumentT = Aws::String>
+    GetSAMLProviderResult& WithSAMLMetadataDocument(SAMLMetadataDocumentT&& value) { SetSAMLMetadataDocument(std::forward<SAMLMetadataDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the SAML provider was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
-    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
-    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = std::move(value); }
-    inline GetSAMLProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-    inline GetSAMLProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::Utils::DateTime>
+    GetSAMLProviderResult& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
-    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntil = value; }
-    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntil = std::move(value); }
-    inline GetSAMLProviderResult& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
-    inline GetSAMLProviderResult& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetValidUntil() const { return m_validUntil; }
+    template<typename ValidUntilT = Aws::Utils::DateTime>
+    void SetValidUntil(ValidUntilT&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::forward<ValidUntilT>(value); }
+    template<typename ValidUntilT = Aws::Utils::DateTime>
+    GetSAMLProviderResult& WithValidUntil(ValidUntilT&& value) { SetValidUntil(std::forward<ValidUntilT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,64 +97,70 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * resources</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline GetSAMLProviderResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline GetSAMLProviderResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetSAMLProviderResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline GetSAMLProviderResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    GetSAMLProviderResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    GetSAMLProviderResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the encryption setting for the SAML provider.</p>
      */
-    inline const AssertionEncryptionModeType& GetAssertionEncryptionMode() const{ return m_assertionEncryptionMode; }
-    inline void SetAssertionEncryptionMode(const AssertionEncryptionModeType& value) { m_assertionEncryptionMode = value; }
-    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType&& value) { m_assertionEncryptionMode = std::move(value); }
-    inline GetSAMLProviderResult& WithAssertionEncryptionMode(const AssertionEncryptionModeType& value) { SetAssertionEncryptionMode(value); return *this;}
-    inline GetSAMLProviderResult& WithAssertionEncryptionMode(AssertionEncryptionModeType&& value) { SetAssertionEncryptionMode(std::move(value)); return *this;}
+    inline AssertionEncryptionModeType GetAssertionEncryptionMode() const { return m_assertionEncryptionMode; }
+    inline void SetAssertionEncryptionMode(AssertionEncryptionModeType value) { m_assertionEncryptionModeHasBeenSet = true; m_assertionEncryptionMode = value; }
+    inline GetSAMLProviderResult& WithAssertionEncryptionMode(AssertionEncryptionModeType value) { SetAssertionEncryptionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private key metadata for the SAML provider.</p>
      */
-    inline const Aws::Vector<SAMLPrivateKey>& GetPrivateKeyList() const{ return m_privateKeyList; }
-    inline void SetPrivateKeyList(const Aws::Vector<SAMLPrivateKey>& value) { m_privateKeyList = value; }
-    inline void SetPrivateKeyList(Aws::Vector<SAMLPrivateKey>&& value) { m_privateKeyList = std::move(value); }
-    inline GetSAMLProviderResult& WithPrivateKeyList(const Aws::Vector<SAMLPrivateKey>& value) { SetPrivateKeyList(value); return *this;}
-    inline GetSAMLProviderResult& WithPrivateKeyList(Aws::Vector<SAMLPrivateKey>&& value) { SetPrivateKeyList(std::move(value)); return *this;}
-    inline GetSAMLProviderResult& AddPrivateKeyList(const SAMLPrivateKey& value) { m_privateKeyList.push_back(value); return *this; }
-    inline GetSAMLProviderResult& AddPrivateKeyList(SAMLPrivateKey&& value) { m_privateKeyList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SAMLPrivateKey>& GetPrivateKeyList() const { return m_privateKeyList; }
+    template<typename PrivateKeyListT = Aws::Vector<SAMLPrivateKey>>
+    void SetPrivateKeyList(PrivateKeyListT&& value) { m_privateKeyListHasBeenSet = true; m_privateKeyList = std::forward<PrivateKeyListT>(value); }
+    template<typename PrivateKeyListT = Aws::Vector<SAMLPrivateKey>>
+    GetSAMLProviderResult& WithPrivateKeyList(PrivateKeyListT&& value) { SetPrivateKeyList(std::forward<PrivateKeyListT>(value)); return *this;}
+    template<typename PrivateKeyListT = SAMLPrivateKey>
+    GetSAMLProviderResult& AddPrivateKeyList(PrivateKeyListT&& value) { m_privateKeyListHasBeenSet = true; m_privateKeyList.emplace_back(std::forward<PrivateKeyListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetSAMLProviderResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sAMLProviderUUID;
+    bool m_sAMLProviderUUIDHasBeenSet = false;
 
     Aws::String m_sAMLMetadataDocument;
+    bool m_sAMLMetadataDocumentHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate;
+    Aws::Utils::DateTime m_createDate{};
+    bool m_createDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validUntil;
+    Aws::Utils::DateTime m_validUntil{};
+    bool m_validUntilHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    AssertionEncryptionModeType m_assertionEncryptionMode;
+    AssertionEncryptionModeType m_assertionEncryptionMode{AssertionEncryptionModeType::NOT_SET};
+    bool m_assertionEncryptionModeHasBeenSet = false;
 
     Aws::Vector<SAMLPrivateKey> m_privateKeyList;
+    bool m_privateKeyListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

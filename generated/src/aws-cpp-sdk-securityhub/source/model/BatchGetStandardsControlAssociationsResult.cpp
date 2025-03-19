@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetStandardsControlAssociationsResult::BatchGetStandardsControlAssociationsResult()
-{
-}
-
 BatchGetStandardsControlAssociationsResult::BatchGetStandardsControlAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetStandardsControlAssociationsResult& BatchGetStandardsControlAssociations
     {
       m_standardsControlAssociationDetails.push_back(standardsControlAssociationDetailsJsonList[standardsControlAssociationDetailsIndex].AsObject());
     }
+    m_standardsControlAssociationDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedAssociations"))
   {
     Aws::Utils::Array<JsonView> unprocessedAssociationsJsonList = jsonValue.GetArray("UnprocessedAssociations");
@@ -45,14 +41,15 @@ BatchGetStandardsControlAssociationsResult& BatchGetStandardsControlAssociations
     {
       m_unprocessedAssociations.push_back(unprocessedAssociationsJsonList[unprocessedAssociationsIndex].AsObject());
     }
+    m_unprocessedAssociationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

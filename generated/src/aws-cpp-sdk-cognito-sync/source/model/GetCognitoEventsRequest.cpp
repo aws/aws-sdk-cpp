@@ -12,11 +12,6 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCognitoEventsRequest::GetCognitoEventsRequest() : 
-    m_identityPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCognitoEventsRequest::SerializePayload() const
 {
   return {};

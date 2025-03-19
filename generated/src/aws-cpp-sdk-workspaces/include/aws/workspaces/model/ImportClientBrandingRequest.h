@@ -23,7 +23,7 @@ namespace Model
   class ImportClientBrandingRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ImportClientBrandingRequest();
+    AWS_WORKSPACES_API ImportClientBrandingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,86 +41,84 @@ namespace Model
      * <p>The directory identifier of the WorkSpace for which you want to import client
      * branding.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ImportClientBrandingRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ImportClientBrandingRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ImportClientBrandingRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ImportClientBrandingRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information to import for Windows devices.</p>
      */
-    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeWindows() const{ return m_deviceTypeWindows; }
+    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeWindows() const { return m_deviceTypeWindows; }
     inline bool DeviceTypeWindowsHasBeenSet() const { return m_deviceTypeWindowsHasBeenSet; }
-    inline void SetDeviceTypeWindows(const DefaultImportClientBrandingAttributes& value) { m_deviceTypeWindowsHasBeenSet = true; m_deviceTypeWindows = value; }
-    inline void SetDeviceTypeWindows(DefaultImportClientBrandingAttributes&& value) { m_deviceTypeWindowsHasBeenSet = true; m_deviceTypeWindows = std::move(value); }
-    inline ImportClientBrandingRequest& WithDeviceTypeWindows(const DefaultImportClientBrandingAttributes& value) { SetDeviceTypeWindows(value); return *this;}
-    inline ImportClientBrandingRequest& WithDeviceTypeWindows(DefaultImportClientBrandingAttributes&& value) { SetDeviceTypeWindows(std::move(value)); return *this;}
+    template<typename DeviceTypeWindowsT = DefaultImportClientBrandingAttributes>
+    void SetDeviceTypeWindows(DeviceTypeWindowsT&& value) { m_deviceTypeWindowsHasBeenSet = true; m_deviceTypeWindows = std::forward<DeviceTypeWindowsT>(value); }
+    template<typename DeviceTypeWindowsT = DefaultImportClientBrandingAttributes>
+    ImportClientBrandingRequest& WithDeviceTypeWindows(DeviceTypeWindowsT&& value) { SetDeviceTypeWindows(std::forward<DeviceTypeWindowsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information to import for macOS devices.</p>
      */
-    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeOsx() const{ return m_deviceTypeOsx; }
+    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeOsx() const { return m_deviceTypeOsx; }
     inline bool DeviceTypeOsxHasBeenSet() const { return m_deviceTypeOsxHasBeenSet; }
-    inline void SetDeviceTypeOsx(const DefaultImportClientBrandingAttributes& value) { m_deviceTypeOsxHasBeenSet = true; m_deviceTypeOsx = value; }
-    inline void SetDeviceTypeOsx(DefaultImportClientBrandingAttributes&& value) { m_deviceTypeOsxHasBeenSet = true; m_deviceTypeOsx = std::move(value); }
-    inline ImportClientBrandingRequest& WithDeviceTypeOsx(const DefaultImportClientBrandingAttributes& value) { SetDeviceTypeOsx(value); return *this;}
-    inline ImportClientBrandingRequest& WithDeviceTypeOsx(DefaultImportClientBrandingAttributes&& value) { SetDeviceTypeOsx(std::move(value)); return *this;}
+    template<typename DeviceTypeOsxT = DefaultImportClientBrandingAttributes>
+    void SetDeviceTypeOsx(DeviceTypeOsxT&& value) { m_deviceTypeOsxHasBeenSet = true; m_deviceTypeOsx = std::forward<DeviceTypeOsxT>(value); }
+    template<typename DeviceTypeOsxT = DefaultImportClientBrandingAttributes>
+    ImportClientBrandingRequest& WithDeviceTypeOsx(DeviceTypeOsxT&& value) { SetDeviceTypeOsx(std::forward<DeviceTypeOsxT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information to import for Android devices.</p>
      */
-    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeAndroid() const{ return m_deviceTypeAndroid; }
+    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeAndroid() const { return m_deviceTypeAndroid; }
     inline bool DeviceTypeAndroidHasBeenSet() const { return m_deviceTypeAndroidHasBeenSet; }
-    inline void SetDeviceTypeAndroid(const DefaultImportClientBrandingAttributes& value) { m_deviceTypeAndroidHasBeenSet = true; m_deviceTypeAndroid = value; }
-    inline void SetDeviceTypeAndroid(DefaultImportClientBrandingAttributes&& value) { m_deviceTypeAndroidHasBeenSet = true; m_deviceTypeAndroid = std::move(value); }
-    inline ImportClientBrandingRequest& WithDeviceTypeAndroid(const DefaultImportClientBrandingAttributes& value) { SetDeviceTypeAndroid(value); return *this;}
-    inline ImportClientBrandingRequest& WithDeviceTypeAndroid(DefaultImportClientBrandingAttributes&& value) { SetDeviceTypeAndroid(std::move(value)); return *this;}
+    template<typename DeviceTypeAndroidT = DefaultImportClientBrandingAttributes>
+    void SetDeviceTypeAndroid(DeviceTypeAndroidT&& value) { m_deviceTypeAndroidHasBeenSet = true; m_deviceTypeAndroid = std::forward<DeviceTypeAndroidT>(value); }
+    template<typename DeviceTypeAndroidT = DefaultImportClientBrandingAttributes>
+    ImportClientBrandingRequest& WithDeviceTypeAndroid(DeviceTypeAndroidT&& value) { SetDeviceTypeAndroid(std::forward<DeviceTypeAndroidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information to import for iOS devices.</p>
      */
-    inline const IosImportClientBrandingAttributes& GetDeviceTypeIos() const{ return m_deviceTypeIos; }
+    inline const IosImportClientBrandingAttributes& GetDeviceTypeIos() const { return m_deviceTypeIos; }
     inline bool DeviceTypeIosHasBeenSet() const { return m_deviceTypeIosHasBeenSet; }
-    inline void SetDeviceTypeIos(const IosImportClientBrandingAttributes& value) { m_deviceTypeIosHasBeenSet = true; m_deviceTypeIos = value; }
-    inline void SetDeviceTypeIos(IosImportClientBrandingAttributes&& value) { m_deviceTypeIosHasBeenSet = true; m_deviceTypeIos = std::move(value); }
-    inline ImportClientBrandingRequest& WithDeviceTypeIos(const IosImportClientBrandingAttributes& value) { SetDeviceTypeIos(value); return *this;}
-    inline ImportClientBrandingRequest& WithDeviceTypeIos(IosImportClientBrandingAttributes&& value) { SetDeviceTypeIos(std::move(value)); return *this;}
+    template<typename DeviceTypeIosT = IosImportClientBrandingAttributes>
+    void SetDeviceTypeIos(DeviceTypeIosT&& value) { m_deviceTypeIosHasBeenSet = true; m_deviceTypeIos = std::forward<DeviceTypeIosT>(value); }
+    template<typename DeviceTypeIosT = IosImportClientBrandingAttributes>
+    ImportClientBrandingRequest& WithDeviceTypeIos(DeviceTypeIosT&& value) { SetDeviceTypeIos(std::forward<DeviceTypeIosT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information to import for Linux devices.</p>
      */
-    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeLinux() const{ return m_deviceTypeLinux; }
+    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeLinux() const { return m_deviceTypeLinux; }
     inline bool DeviceTypeLinuxHasBeenSet() const { return m_deviceTypeLinuxHasBeenSet; }
-    inline void SetDeviceTypeLinux(const DefaultImportClientBrandingAttributes& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = value; }
-    inline void SetDeviceTypeLinux(DefaultImportClientBrandingAttributes&& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = std::move(value); }
-    inline ImportClientBrandingRequest& WithDeviceTypeLinux(const DefaultImportClientBrandingAttributes& value) { SetDeviceTypeLinux(value); return *this;}
-    inline ImportClientBrandingRequest& WithDeviceTypeLinux(DefaultImportClientBrandingAttributes&& value) { SetDeviceTypeLinux(std::move(value)); return *this;}
+    template<typename DeviceTypeLinuxT = DefaultImportClientBrandingAttributes>
+    void SetDeviceTypeLinux(DeviceTypeLinuxT&& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = std::forward<DeviceTypeLinuxT>(value); }
+    template<typename DeviceTypeLinuxT = DefaultImportClientBrandingAttributes>
+    ImportClientBrandingRequest& WithDeviceTypeLinux(DeviceTypeLinuxT&& value) { SetDeviceTypeLinux(std::forward<DeviceTypeLinuxT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The branding information to import for web access.</p>
      */
-    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeWeb() const{ return m_deviceTypeWeb; }
+    inline const DefaultImportClientBrandingAttributes& GetDeviceTypeWeb() const { return m_deviceTypeWeb; }
     inline bool DeviceTypeWebHasBeenSet() const { return m_deviceTypeWebHasBeenSet; }
-    inline void SetDeviceTypeWeb(const DefaultImportClientBrandingAttributes& value) { m_deviceTypeWebHasBeenSet = true; m_deviceTypeWeb = value; }
-    inline void SetDeviceTypeWeb(DefaultImportClientBrandingAttributes&& value) { m_deviceTypeWebHasBeenSet = true; m_deviceTypeWeb = std::move(value); }
-    inline ImportClientBrandingRequest& WithDeviceTypeWeb(const DefaultImportClientBrandingAttributes& value) { SetDeviceTypeWeb(value); return *this;}
-    inline ImportClientBrandingRequest& WithDeviceTypeWeb(DefaultImportClientBrandingAttributes&& value) { SetDeviceTypeWeb(std::move(value)); return *this;}
+    template<typename DeviceTypeWebT = DefaultImportClientBrandingAttributes>
+    void SetDeviceTypeWeb(DeviceTypeWebT&& value) { m_deviceTypeWebHasBeenSet = true; m_deviceTypeWeb = std::forward<DeviceTypeWebT>(value); }
+    template<typename DeviceTypeWebT = DefaultImportClientBrandingAttributes>
+    ImportClientBrandingRequest& WithDeviceTypeWeb(DeviceTypeWebT&& value) { SetDeviceTypeWeb(std::forward<DeviceTypeWebT>(value)); return *this;}
     ///@}
   private:
 

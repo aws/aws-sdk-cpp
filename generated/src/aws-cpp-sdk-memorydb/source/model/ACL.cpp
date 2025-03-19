@@ -18,19 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ACL::ACL() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_userNamesHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false),
-    m_pendingChangesHasBeenSet(false),
-    m_clustersHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 ACL::ACL(JsonView jsonValue)
-  : ACL()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ ACL& ACL::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserNames"))
   {
     Aws::Utils::Array<JsonView> userNamesJsonList = jsonValue.GetArray("UserNames");
@@ -60,21 +44,16 @@ ACL& ACL::operator =(JsonView jsonValue)
     }
     m_userNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumEngineVersion"))
   {
     m_minimumEngineVersion = jsonValue.GetString("MinimumEngineVersion");
-
     m_minimumEngineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingChanges"))
   {
     m_pendingChanges = jsonValue.GetObject("PendingChanges");
-
     m_pendingChangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Clusters"))
   {
     Aws::Utils::Array<JsonView> clustersJsonList = jsonValue.GetArray("Clusters");
@@ -84,14 +63,11 @@ ACL& ACL::operator =(JsonView jsonValue)
     }
     m_clustersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

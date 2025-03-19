@@ -18,16 +18,7 @@ namespace SQS
 namespace Model
 {
 
-ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry() : 
-    m_idHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false),
-    m_visibilityTimeout(0),
-    m_visibilityTimeoutHasBeenSet(false)
-{
-}
-
 ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(JsonView jsonValue)
-  : ChangeMessageVisibilityBatchRequestEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEnt
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiptHandle"))
   {
     m_receiptHandle = jsonValue.GetString("ReceiptHandle");
-
     m_receiptHandleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibilityTimeout"))
   {
     m_visibilityTimeout = jsonValue.GetInteger("VisibilityTimeout");
-
     m_visibilityTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

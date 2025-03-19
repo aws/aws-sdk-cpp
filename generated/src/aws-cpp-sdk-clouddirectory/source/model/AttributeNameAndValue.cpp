@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-AttributeNameAndValue::AttributeNameAndValue() : 
-    m_attributeNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AttributeNameAndValue::AttributeNameAndValue(JsonView jsonValue)
-  : AttributeNameAndValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AttributeNameAndValue& AttributeNameAndValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

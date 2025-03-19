@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIceServerConfigResult::GetIceServerConfigResult()
-{
-}
-
 GetIceServerConfigResult::GetIceServerConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetIceServerConfigResult& GetIceServerConfigResult::operator =(const Aws::Amazon
     {
       m_iceServerList.push_back(iceServerListJsonList[iceServerListIndex].AsObject());
     }
+    m_iceServerListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,18 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTemporaryGlueTableCredentialsRequest::GetTemporaryGlueTableCredentialsRequest() : 
-    m_tableArnHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_auditContextHasBeenSet(false),
-    m_supportedPermissionTypesHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_querySessionContextHasBeenSet(false)
-{
-}
-
 Aws::String GetTemporaryGlueTableCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

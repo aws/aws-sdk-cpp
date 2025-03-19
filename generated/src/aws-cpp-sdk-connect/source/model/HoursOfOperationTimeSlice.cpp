@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HoursOfOperationTimeSlice::HoursOfOperationTimeSlice() : 
-    m_hours(0),
-    m_hoursHasBeenSet(false),
-    m_minutes(0),
-    m_minutesHasBeenSet(false)
-{
-}
-
 HoursOfOperationTimeSlice::HoursOfOperationTimeSlice(JsonView jsonValue)
-  : HoursOfOperationTimeSlice()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ HoursOfOperationTimeSlice& HoursOfOperationTimeSlice::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Hours"))
   {
     m_hours = jsonValue.GetInteger("Hours");
-
     m_hoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Minutes"))
   {
     m_minutes = jsonValue.GetInteger("Minutes");
-
     m_minutesHasBeenSet = true;
   }
-
   return *this;
 }
 

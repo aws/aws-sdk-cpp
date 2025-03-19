@@ -12,11 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePipelineRequest::DeletePipelineRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeletePipelineRequest::SerializePayload() const
 {
   return {};

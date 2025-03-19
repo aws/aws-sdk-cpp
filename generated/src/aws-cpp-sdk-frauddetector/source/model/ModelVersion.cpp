@@ -18,17 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ModelVersion::ModelVersion() : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 ModelVersion::ModelVersion(JsonView jsonValue)
-  : ModelVersion()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ModelVersion& ModelVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelType"))
   {
     m_modelType = ModelTypeEnumMapper::GetModelTypeEnumForName(jsonValue.GetString("modelType"));
-
     m_modelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelVersionNumber"))
   {
     m_modelVersionNumber = jsonValue.GetString("modelVersionNumber");
-
     m_modelVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

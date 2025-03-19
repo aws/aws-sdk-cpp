@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBlueprintResult::CreateBlueprintResult()
-{
-}
-
 CreateBlueprintResult::CreateBlueprintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateBlueprintResult& CreateBlueprintResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("blueprint"))
   {
     m_blueprint = jsonValue.GetObject("blueprint");
-
+    m_blueprintHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

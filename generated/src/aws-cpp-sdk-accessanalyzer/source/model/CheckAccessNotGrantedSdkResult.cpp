@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckAccessNotGrantedSdkResult::CheckAccessNotGrantedSdkResult() : 
-    m_result(CheckAccessNotGrantedResult::NOT_SET)
-{
-}
-
 CheckAccessNotGrantedSdkResult::CheckAccessNotGrantedSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CheckAccessNotGrantedSdkResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ CheckAccessNotGrantedSdkResult& CheckAccessNotGrantedSdkResult::operator =(const
   if(jsonValue.ValueExists("result"))
   {
     m_result = CheckAccessNotGrantedResultMapper::GetCheckAccessNotGrantedResultForName(jsonValue.GetString("result"));
-
+    m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("reasons");
@@ -50,14 +42,15 @@ CheckAccessNotGrantedSdkResult& CheckAccessNotGrantedSdkResult::operator =(const
     {
       m_reasons.push_back(reasonsJsonList[reasonsIndex].AsObject());
     }
+    m_reasonsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

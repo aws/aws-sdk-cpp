@@ -35,7 +35,7 @@ namespace Model
   class ThemeValue
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ThemeValue();
+    AWS_AMPLIFYUIBUILDER_API ThemeValue() = default;
     AWS_AMPLIFYUIBUILDER_API ThemeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ThemeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The value of a theme property.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ThemeValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ThemeValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ThemeValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ThemeValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of key-value pairs that define the theme's properties.</p>
      */
-    inline const Aws::Vector<ThemeValues>& GetChildren() const{ return m_children; }
+    inline const Aws::Vector<ThemeValues>& GetChildren() const { return m_children; }
     inline bool ChildrenHasBeenSet() const { return m_childrenHasBeenSet; }
-    inline void SetChildren(const Aws::Vector<ThemeValues>& value) { m_childrenHasBeenSet = true; m_children = value; }
-    inline void SetChildren(Aws::Vector<ThemeValues>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
-    inline ThemeValue& WithChildren(const Aws::Vector<ThemeValues>& value) { SetChildren(value); return *this;}
-    inline ThemeValue& WithChildren(Aws::Vector<ThemeValues>&& value) { SetChildren(std::move(value)); return *this;}
-    inline ThemeValue& AddChildren(const ThemeValues& value) { m_childrenHasBeenSet = true; m_children.push_back(value); return *this; }
-    inline ThemeValue& AddChildren(ThemeValues&& value) { m_childrenHasBeenSet = true; m_children.push_back(std::move(value)); return *this; }
+    template<typename ChildrenT = Aws::Vector<ThemeValues>>
+    void SetChildren(ChildrenT&& value) { m_childrenHasBeenSet = true; m_children = std::forward<ChildrenT>(value); }
+    template<typename ChildrenT = Aws::Vector<ThemeValues>>
+    ThemeValue& WithChildren(ChildrenT&& value) { SetChildren(std::forward<ChildrenT>(value)); return *this;}
+    template<typename ChildrenT = ThemeValues>
+    ThemeValue& AddChildren(ChildrenT&& value) { m_childrenHasBeenSet = true; m_children.emplace_back(std::forward<ChildrenT>(value)); return *this; }
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class CustomArtifactConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API CustomArtifactConfiguration();
+    AWS_KINESISANALYTICSV2_API CustomArtifactConfiguration() = default;
     AWS_KINESISANALYTICSV2_API CustomArtifactConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API CustomArtifactConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,38 +46,36 @@ namespace Model
      * must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or
      * an S3 bucket.</p>
      */
-    inline const ArtifactType& GetArtifactType() const{ return m_artifactType; }
+    inline ArtifactType GetArtifactType() const { return m_artifactType; }
     inline bool ArtifactTypeHasBeenSet() const { return m_artifactTypeHasBeenSet; }
-    inline void SetArtifactType(const ArtifactType& value) { m_artifactTypeHasBeenSet = true; m_artifactType = value; }
-    inline void SetArtifactType(ArtifactType&& value) { m_artifactTypeHasBeenSet = true; m_artifactType = std::move(value); }
-    inline CustomArtifactConfiguration& WithArtifactType(const ArtifactType& value) { SetArtifactType(value); return *this;}
-    inline CustomArtifactConfiguration& WithArtifactType(ArtifactType&& value) { SetArtifactType(std::move(value)); return *this;}
+    inline void SetArtifactType(ArtifactType value) { m_artifactTypeHasBeenSet = true; m_artifactType = value; }
+    inline CustomArtifactConfiguration& WithArtifactType(ArtifactType value) { SetArtifactType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3ContentLocation& GetS3ContentLocation() const{ return m_s3ContentLocation; }
+    inline const S3ContentLocation& GetS3ContentLocation() const { return m_s3ContentLocation; }
     inline bool S3ContentLocationHasBeenSet() const { return m_s3ContentLocationHasBeenSet; }
-    inline void SetS3ContentLocation(const S3ContentLocation& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = value; }
-    inline void SetS3ContentLocation(S3ContentLocation&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::move(value); }
-    inline CustomArtifactConfiguration& WithS3ContentLocation(const S3ContentLocation& value) { SetS3ContentLocation(value); return *this;}
-    inline CustomArtifactConfiguration& WithS3ContentLocation(S3ContentLocation&& value) { SetS3ContentLocation(std::move(value)); return *this;}
+    template<typename S3ContentLocationT = S3ContentLocation>
+    void SetS3ContentLocation(S3ContentLocationT&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::forward<S3ContentLocationT>(value); }
+    template<typename S3ContentLocationT = S3ContentLocation>
+    CustomArtifactConfiguration& WithS3ContentLocation(S3ContentLocationT&& value) { SetS3ContentLocation(std::forward<S3ContentLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters required to fully specify a Maven reference.</p>
      */
-    inline const MavenReference& GetMavenReference() const{ return m_mavenReference; }
+    inline const MavenReference& GetMavenReference() const { return m_mavenReference; }
     inline bool MavenReferenceHasBeenSet() const { return m_mavenReferenceHasBeenSet; }
-    inline void SetMavenReference(const MavenReference& value) { m_mavenReferenceHasBeenSet = true; m_mavenReference = value; }
-    inline void SetMavenReference(MavenReference&& value) { m_mavenReferenceHasBeenSet = true; m_mavenReference = std::move(value); }
-    inline CustomArtifactConfiguration& WithMavenReference(const MavenReference& value) { SetMavenReference(value); return *this;}
-    inline CustomArtifactConfiguration& WithMavenReference(MavenReference&& value) { SetMavenReference(std::move(value)); return *this;}
+    template<typename MavenReferenceT = MavenReference>
+    void SetMavenReference(MavenReferenceT&& value) { m_mavenReferenceHasBeenSet = true; m_mavenReference = std::forward<MavenReferenceT>(value); }
+    template<typename MavenReferenceT = MavenReference>
+    CustomArtifactConfiguration& WithMavenReference(MavenReferenceT&& value) { SetMavenReference(std::forward<MavenReferenceT>(value)); return *this;}
     ///@}
   private:
 
-    ArtifactType m_artifactType;
+    ArtifactType m_artifactType{ArtifactType::NOT_SET};
     bool m_artifactTypeHasBeenSet = false;
 
     S3ContentLocation m_s3ContentLocation;

@@ -12,16 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelManifestsRequest::ListModelManifestsRequest() : 
-    m_signalCatalogArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_listResponseScope(ListResponseScope::NOT_SET),
-    m_listResponseScopeHasBeenSet(false)
-{
-}
-
 Aws::String ListModelManifestsRequest::SerializePayload() const
 {
   JsonValue payload;

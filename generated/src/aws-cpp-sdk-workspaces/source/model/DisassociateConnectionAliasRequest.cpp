@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateConnectionAliasRequest::DisassociateConnectionAliasRequest() : 
-    m_aliasIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateConnectionAliasRequest::SerializePayload() const
 {
   JsonValue payload;

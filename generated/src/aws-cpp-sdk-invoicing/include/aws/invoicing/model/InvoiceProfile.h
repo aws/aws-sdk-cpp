@@ -33,7 +33,7 @@ namespace Model
   class InvoiceProfile
   {
   public:
-    AWS_INVOICING_API InvoiceProfile();
+    AWS_INVOICING_API InvoiceProfile() = default;
     AWS_INVOICING_API InvoiceProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API InvoiceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,82 +43,72 @@ namespace Model
     /**
      * <p> The account ID the invoice profile is generated for. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline InvoiceProfile& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline InvoiceProfile& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline InvoiceProfile& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    InvoiceProfile& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the person receiving the invoice profile. </p>
      */
-    inline const Aws::String& GetReceiverName() const{ return m_receiverName; }
+    inline const Aws::String& GetReceiverName() const { return m_receiverName; }
     inline bool ReceiverNameHasBeenSet() const { return m_receiverNameHasBeenSet; }
-    inline void SetReceiverName(const Aws::String& value) { m_receiverNameHasBeenSet = true; m_receiverName = value; }
-    inline void SetReceiverName(Aws::String&& value) { m_receiverNameHasBeenSet = true; m_receiverName = std::move(value); }
-    inline void SetReceiverName(const char* value) { m_receiverNameHasBeenSet = true; m_receiverName.assign(value); }
-    inline InvoiceProfile& WithReceiverName(const Aws::String& value) { SetReceiverName(value); return *this;}
-    inline InvoiceProfile& WithReceiverName(Aws::String&& value) { SetReceiverName(std::move(value)); return *this;}
-    inline InvoiceProfile& WithReceiverName(const char* value) { SetReceiverName(value); return *this;}
+    template<typename ReceiverNameT = Aws::String>
+    void SetReceiverName(ReceiverNameT&& value) { m_receiverNameHasBeenSet = true; m_receiverName = std::forward<ReceiverNameT>(value); }
+    template<typename ReceiverNameT = Aws::String>
+    InvoiceProfile& WithReceiverName(ReceiverNameT&& value) { SetReceiverName(std::forward<ReceiverNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address of the receiver that will be printed on the invoice. </p>
      */
-    inline const ReceiverAddress& GetReceiverAddress() const{ return m_receiverAddress; }
+    inline const ReceiverAddress& GetReceiverAddress() const { return m_receiverAddress; }
     inline bool ReceiverAddressHasBeenSet() const { return m_receiverAddressHasBeenSet; }
-    inline void SetReceiverAddress(const ReceiverAddress& value) { m_receiverAddressHasBeenSet = true; m_receiverAddress = value; }
-    inline void SetReceiverAddress(ReceiverAddress&& value) { m_receiverAddressHasBeenSet = true; m_receiverAddress = std::move(value); }
-    inline InvoiceProfile& WithReceiverAddress(const ReceiverAddress& value) { SetReceiverAddress(value); return *this;}
-    inline InvoiceProfile& WithReceiverAddress(ReceiverAddress&& value) { SetReceiverAddress(std::move(value)); return *this;}
+    template<typename ReceiverAddressT = ReceiverAddress>
+    void SetReceiverAddress(ReceiverAddressT&& value) { m_receiverAddressHasBeenSet = true; m_receiverAddress = std::forward<ReceiverAddressT>(value); }
+    template<typename ReceiverAddressT = ReceiverAddress>
+    InvoiceProfile& WithReceiverAddress(ReceiverAddressT&& value) { SetReceiverAddress(std::forward<ReceiverAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address for the invoice profile receiver. </p>
      */
-    inline const Aws::String& GetReceiverEmail() const{ return m_receiverEmail; }
+    inline const Aws::String& GetReceiverEmail() const { return m_receiverEmail; }
     inline bool ReceiverEmailHasBeenSet() const { return m_receiverEmailHasBeenSet; }
-    inline void SetReceiverEmail(const Aws::String& value) { m_receiverEmailHasBeenSet = true; m_receiverEmail = value; }
-    inline void SetReceiverEmail(Aws::String&& value) { m_receiverEmailHasBeenSet = true; m_receiverEmail = std::move(value); }
-    inline void SetReceiverEmail(const char* value) { m_receiverEmailHasBeenSet = true; m_receiverEmail.assign(value); }
-    inline InvoiceProfile& WithReceiverEmail(const Aws::String& value) { SetReceiverEmail(value); return *this;}
-    inline InvoiceProfile& WithReceiverEmail(Aws::String&& value) { SetReceiverEmail(std::move(value)); return *this;}
-    inline InvoiceProfile& WithReceiverEmail(const char* value) { SetReceiverEmail(value); return *this;}
+    template<typename ReceiverEmailT = Aws::String>
+    void SetReceiverEmail(ReceiverEmailT&& value) { m_receiverEmailHasBeenSet = true; m_receiverEmail = std::forward<ReceiverEmailT>(value); }
+    template<typename ReceiverEmailT = Aws::String>
+    InvoiceProfile& WithReceiverEmail(ReceiverEmailT&& value) { SetReceiverEmail(std::forward<ReceiverEmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> This specifies the issuing entity of the invoice. </p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline InvoiceProfile& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline InvoiceProfile& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline InvoiceProfile& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    InvoiceProfile& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Your Tax Registration Number (TRN) information. </p>
      */
-    inline const Aws::String& GetTaxRegistrationNumber() const{ return m_taxRegistrationNumber; }
+    inline const Aws::String& GetTaxRegistrationNumber() const { return m_taxRegistrationNumber; }
     inline bool TaxRegistrationNumberHasBeenSet() const { return m_taxRegistrationNumberHasBeenSet; }
-    inline void SetTaxRegistrationNumber(const Aws::String& value) { m_taxRegistrationNumberHasBeenSet = true; m_taxRegistrationNumber = value; }
-    inline void SetTaxRegistrationNumber(Aws::String&& value) { m_taxRegistrationNumberHasBeenSet = true; m_taxRegistrationNumber = std::move(value); }
-    inline void SetTaxRegistrationNumber(const char* value) { m_taxRegistrationNumberHasBeenSet = true; m_taxRegistrationNumber.assign(value); }
-    inline InvoiceProfile& WithTaxRegistrationNumber(const Aws::String& value) { SetTaxRegistrationNumber(value); return *this;}
-    inline InvoiceProfile& WithTaxRegistrationNumber(Aws::String&& value) { SetTaxRegistrationNumber(std::move(value)); return *this;}
-    inline InvoiceProfile& WithTaxRegistrationNumber(const char* value) { SetTaxRegistrationNumber(value); return *this;}
+    template<typename TaxRegistrationNumberT = Aws::String>
+    void SetTaxRegistrationNumber(TaxRegistrationNumberT&& value) { m_taxRegistrationNumberHasBeenSet = true; m_taxRegistrationNumber = std::forward<TaxRegistrationNumberT>(value); }
+    template<typename TaxRegistrationNumberT = Aws::String>
+    InvoiceProfile& WithTaxRegistrationNumber(TaxRegistrationNumberT&& value) { SetTaxRegistrationNumber(std::forward<TaxRegistrationNumberT>(value)); return *this;}
     ///@}
   private:
 

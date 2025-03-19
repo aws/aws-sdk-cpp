@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceLocation::ResourceLocation() : 
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false)
-{
-}
-
 ResourceLocation::ResourceLocation(const XmlNode& xmlNode)
-  : ResourceLocation()
 {
   *this = xmlNode;
 }

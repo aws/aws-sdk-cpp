@@ -34,35 +34,35 @@ namespace Model
   class CreatePartnerInputResult
   {
   public:
-    AWS_MEDIALIVE_API CreatePartnerInputResult();
+    AWS_MEDIALIVE_API CreatePartnerInputResult() = default;
     AWS_MEDIALIVE_API CreatePartnerInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API CreatePartnerInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Input& GetInput() const{ return m_input; }
-    inline void SetInput(const Input& value) { m_input = value; }
-    inline void SetInput(Input&& value) { m_input = std::move(value); }
-    inline CreatePartnerInputResult& WithInput(const Input& value) { SetInput(value); return *this;}
-    inline CreatePartnerInputResult& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
+    inline const Input& GetInput() const { return m_input; }
+    template<typename InputT = Input>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Input>
+    CreatePartnerInputResult& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePartnerInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePartnerInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePartnerInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePartnerInputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Input m_input;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

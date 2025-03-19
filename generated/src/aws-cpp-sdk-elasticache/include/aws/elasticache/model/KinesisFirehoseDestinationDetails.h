@@ -32,7 +32,7 @@ namespace Model
   class KinesisFirehoseDestinationDetails
   {
   public:
-    AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails();
+    AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails() = default;
     AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the Kinesis Data Firehose delivery stream.</p>
      */
-    inline const Aws::String& GetDeliveryStream() const{ return m_deliveryStream; }
+    inline const Aws::String& GetDeliveryStream() const { return m_deliveryStream; }
     inline bool DeliveryStreamHasBeenSet() const { return m_deliveryStreamHasBeenSet; }
-    inline void SetDeliveryStream(const Aws::String& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = value; }
-    inline void SetDeliveryStream(Aws::String&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::move(value); }
-    inline void SetDeliveryStream(const char* value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream.assign(value); }
-    inline KinesisFirehoseDestinationDetails& WithDeliveryStream(const Aws::String& value) { SetDeliveryStream(value); return *this;}
-    inline KinesisFirehoseDestinationDetails& WithDeliveryStream(Aws::String&& value) { SetDeliveryStream(std::move(value)); return *this;}
-    inline KinesisFirehoseDestinationDetails& WithDeliveryStream(const char* value) { SetDeliveryStream(value); return *this;}
+    template<typename DeliveryStreamT = Aws::String>
+    void SetDeliveryStream(DeliveryStreamT&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::forward<DeliveryStreamT>(value); }
+    template<typename DeliveryStreamT = Aws::String>
+    KinesisFirehoseDestinationDetails& WithDeliveryStream(DeliveryStreamT&& value) { SetDeliveryStream(std::forward<DeliveryStreamT>(value)); return *this;}
     ///@}
   private:
 

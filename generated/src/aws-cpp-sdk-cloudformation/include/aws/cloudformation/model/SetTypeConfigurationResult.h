@@ -28,7 +28,7 @@ namespace Model
   class SetTypeConfigurationResult
   {
   public:
-    AWS_CLOUDFORMATION_API SetTypeConfigurationResult();
+    AWS_CLOUDFORMATION_API SetTypeConfigurationResult() = default;
     AWS_CLOUDFORMATION_API SetTypeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API SetTypeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
-    inline const Aws::String& GetConfigurationArn() const{ return m_configurationArn; }
-    inline void SetConfigurationArn(const Aws::String& value) { m_configurationArn = value; }
-    inline void SetConfigurationArn(Aws::String&& value) { m_configurationArn = std::move(value); }
-    inline void SetConfigurationArn(const char* value) { m_configurationArn.assign(value); }
-    inline SetTypeConfigurationResult& WithConfigurationArn(const Aws::String& value) { SetConfigurationArn(value); return *this;}
-    inline SetTypeConfigurationResult& WithConfigurationArn(Aws::String&& value) { SetConfigurationArn(std::move(value)); return *this;}
-    inline SetTypeConfigurationResult& WithConfigurationArn(const char* value) { SetConfigurationArn(value); return *this;}
+    inline const Aws::String& GetConfigurationArn() const { return m_configurationArn; }
+    template<typename ConfigurationArnT = Aws::String>
+    void SetConfigurationArn(ConfigurationArnT&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::forward<ConfigurationArnT>(value); }
+    template<typename ConfigurationArnT = Aws::String>
+    SetTypeConfigurationResult& WithConfigurationArn(ConfigurationArnT&& value) { SetConfigurationArn(std::forward<ConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline SetTypeConfigurationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline SetTypeConfigurationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    SetTypeConfigurationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationArn;
+    bool m_configurationArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

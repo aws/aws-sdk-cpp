@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-MLPaymentConfig::MLPaymentConfig() : 
-    m_modelTrainingHasBeenSet(false),
-    m_modelInferenceHasBeenSet(false)
-{
-}
-
 MLPaymentConfig::MLPaymentConfig(JsonView jsonValue)
-  : MLPaymentConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MLPaymentConfig& MLPaymentConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelTraining"))
   {
     m_modelTraining = jsonValue.GetObject("modelTraining");
-
     m_modelTrainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelInference"))
   {
     m_modelInference = jsonValue.GetObject("modelInference");
-
     m_modelInferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateSessionRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API UpdateSessionRequest();
+    AWS_BEDROCKAGENTRUNTIME_API UpdateSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The unique identifier of the session to modify. You can specify either the
      * session's <code>sessionId</code> or its Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetSessionIdentifier() const{ return m_sessionIdentifier; }
+    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
     inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
-    inline void SetSessionIdentifier(const Aws::String& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = value; }
-    inline void SetSessionIdentifier(Aws::String&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::move(value); }
-    inline void SetSessionIdentifier(const char* value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier.assign(value); }
-    inline UpdateSessionRequest& WithSessionIdentifier(const Aws::String& value) { SetSessionIdentifier(value); return *this;}
-    inline UpdateSessionRequest& WithSessionIdentifier(Aws::String&& value) { SetSessionIdentifier(std::move(value)); return *this;}
-    inline UpdateSessionRequest& WithSessionIdentifier(const char* value) { SetSessionIdentifier(value); return *this;}
+    template<typename SessionIdentifierT = Aws::String>
+    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
+    template<typename SessionIdentifierT = Aws::String>
+    UpdateSessionRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,16 @@ namespace Model
      * session. For example the user's ID, their language preference, and the type of
      * device they are using.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSessionMetadata() const{ return m_sessionMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSessionMetadata() const { return m_sessionMetadata; }
     inline bool SessionMetadataHasBeenSet() const { return m_sessionMetadataHasBeenSet; }
-    inline void SetSessionMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = value; }
-    inline void SetSessionMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::move(value); }
-    inline UpdateSessionRequest& WithSessionMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionMetadata(value); return *this;}
-    inline UpdateSessionRequest& WithSessionMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionMetadata(std::move(value)); return *this;}
-    inline UpdateSessionRequest& AddSessionMetadata(const Aws::String& key, const Aws::String& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, value); return *this; }
-    inline UpdateSessionRequest& AddSessionMetadata(Aws::String&& key, const Aws::String& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::move(key), value); return *this; }
-    inline UpdateSessionRequest& AddSessionMetadata(const Aws::String& key, Aws::String&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, std::move(value)); return *this; }
-    inline UpdateSessionRequest& AddSessionMetadata(Aws::String&& key, Aws::String&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateSessionRequest& AddSessionMetadata(const char* key, Aws::String&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, std::move(value)); return *this; }
-    inline UpdateSessionRequest& AddSessionMetadata(Aws::String&& key, const char* value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::move(key), value); return *this; }
-    inline UpdateSessionRequest& AddSessionMetadata(const char* key, const char* value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(key, value); return *this; }
+    template<typename SessionMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetSessionMetadata(SessionMetadataT&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::forward<SessionMetadataT>(value); }
+    template<typename SessionMetadataT = Aws::Map<Aws::String, Aws::String>>
+    UpdateSessionRequest& WithSessionMetadata(SessionMetadataT&& value) { SetSessionMetadata(std::forward<SessionMetadataT>(value)); return *this;}
+    template<typename SessionMetadataKeyT = Aws::String, typename SessionMetadataValueT = Aws::String>
+    UpdateSessionRequest& AddSessionMetadata(SessionMetadataKeyT&& key, SessionMetadataValueT&& value) {
+      m_sessionMetadataHasBeenSet = true; m_sessionMetadata.emplace(std::forward<SessionMetadataKeyT>(key), std::forward<SessionMetadataValueT>(value)); return *this;
+    }
     ///@}
   private:
 

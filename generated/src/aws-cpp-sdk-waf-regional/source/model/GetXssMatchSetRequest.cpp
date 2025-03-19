@@ -12,11 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetXssMatchSetRequest::GetXssMatchSetRequest() : 
-    m_xssMatchSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetXssMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

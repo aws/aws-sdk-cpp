@@ -32,7 +32,7 @@ namespace Model
   class LabelingJobS3DataSource
   {
   public:
-    AWS_SAGEMAKER_API LabelingJobS3DataSource();
+    AWS_SAGEMAKER_API LabelingJobS3DataSource() = default;
     AWS_SAGEMAKER_API LabelingJobS3DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API LabelingJobS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how
      * to create an input manifest file.</p>
      */
-    inline const Aws::String& GetManifestS3Uri() const{ return m_manifestS3Uri; }
+    inline const Aws::String& GetManifestS3Uri() const { return m_manifestS3Uri; }
     inline bool ManifestS3UriHasBeenSet() const { return m_manifestS3UriHasBeenSet; }
-    inline void SetManifestS3Uri(const Aws::String& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = value; }
-    inline void SetManifestS3Uri(Aws::String&& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = std::move(value); }
-    inline void SetManifestS3Uri(const char* value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri.assign(value); }
-    inline LabelingJobS3DataSource& WithManifestS3Uri(const Aws::String& value) { SetManifestS3Uri(value); return *this;}
-    inline LabelingJobS3DataSource& WithManifestS3Uri(Aws::String&& value) { SetManifestS3Uri(std::move(value)); return *this;}
-    inline LabelingJobS3DataSource& WithManifestS3Uri(const char* value) { SetManifestS3Uri(value); return *this;}
+    template<typename ManifestS3UriT = Aws::String>
+    void SetManifestS3Uri(ManifestS3UriT&& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = std::forward<ManifestS3UriT>(value); }
+    template<typename ManifestS3UriT = Aws::String>
+    LabelingJobS3DataSource& WithManifestS3Uri(ManifestS3UriT&& value) { SetManifestS3Uri(std::forward<ManifestS3UriT>(value)); return *this;}
     ///@}
   private:
 

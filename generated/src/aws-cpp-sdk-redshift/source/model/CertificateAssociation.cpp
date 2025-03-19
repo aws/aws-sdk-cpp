@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-CertificateAssociation::CertificateAssociation() : 
-    m_customDomainNameHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 CertificateAssociation::CertificateAssociation(const XmlNode& xmlNode)
-  : CertificateAssociation()
 {
   *this = xmlNode;
 }

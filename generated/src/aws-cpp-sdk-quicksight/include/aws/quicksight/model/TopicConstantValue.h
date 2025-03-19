@@ -35,7 +35,7 @@ namespace Model
   class TopicConstantValue
   {
   public:
-    AWS_QUICKSIGHT_API TopicConstantValue();
+    AWS_QUICKSIGHT_API TopicConstantValue() = default;
     AWS_QUICKSIGHT_API TopicConstantValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicConstantValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,72 +45,64 @@ namespace Model
     /**
      * <p>The constant type of a <code>TopicConstantValue</code>.</p>
      */
-    inline const ConstantType& GetConstantType() const{ return m_constantType; }
+    inline ConstantType GetConstantType() const { return m_constantType; }
     inline bool ConstantTypeHasBeenSet() const { return m_constantTypeHasBeenSet; }
-    inline void SetConstantType(const ConstantType& value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
-    inline void SetConstantType(ConstantType&& value) { m_constantTypeHasBeenSet = true; m_constantType = std::move(value); }
-    inline TopicConstantValue& WithConstantType(const ConstantType& value) { SetConstantType(value); return *this;}
-    inline TopicConstantValue& WithConstantType(ConstantType&& value) { SetConstantType(std::move(value)); return *this;}
+    inline void SetConstantType(ConstantType value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
+    inline TopicConstantValue& WithConstantType(ConstantType value) { SetConstantType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the <code>TopicConstantValue</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline TopicConstantValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline TopicConstantValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline TopicConstantValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    TopicConstantValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum for the <code>TopicConstantValue</code>.</p>
      */
-    inline const Aws::String& GetMinimum() const{ return m_minimum; }
+    inline const Aws::String& GetMinimum() const { return m_minimum; }
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-    inline void SetMinimum(const Aws::String& value) { m_minimumHasBeenSet = true; m_minimum = value; }
-    inline void SetMinimum(Aws::String&& value) { m_minimumHasBeenSet = true; m_minimum = std::move(value); }
-    inline void SetMinimum(const char* value) { m_minimumHasBeenSet = true; m_minimum.assign(value); }
-    inline TopicConstantValue& WithMinimum(const Aws::String& value) { SetMinimum(value); return *this;}
-    inline TopicConstantValue& WithMinimum(Aws::String&& value) { SetMinimum(std::move(value)); return *this;}
-    inline TopicConstantValue& WithMinimum(const char* value) { SetMinimum(value); return *this;}
+    template<typename MinimumT = Aws::String>
+    void SetMinimum(MinimumT&& value) { m_minimumHasBeenSet = true; m_minimum = std::forward<MinimumT>(value); }
+    template<typename MinimumT = Aws::String>
+    TopicConstantValue& WithMinimum(MinimumT&& value) { SetMinimum(std::forward<MinimumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum for the <code>TopicConstantValue</code>.</p>
      */
-    inline const Aws::String& GetMaximum() const{ return m_maximum; }
+    inline const Aws::String& GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-    inline void SetMaximum(const Aws::String& value) { m_maximumHasBeenSet = true; m_maximum = value; }
-    inline void SetMaximum(Aws::String&& value) { m_maximumHasBeenSet = true; m_maximum = std::move(value); }
-    inline void SetMaximum(const char* value) { m_maximumHasBeenSet = true; m_maximum.assign(value); }
-    inline TopicConstantValue& WithMaximum(const Aws::String& value) { SetMaximum(value); return *this;}
-    inline TopicConstantValue& WithMaximum(Aws::String&& value) { SetMaximum(std::move(value)); return *this;}
-    inline TopicConstantValue& WithMaximum(const char* value) { SetMaximum(value); return *this;}
+    template<typename MaximumT = Aws::String>
+    void SetMaximum(MaximumT&& value) { m_maximumHasBeenSet = true; m_maximum = std::forward<MaximumT>(value); }
+    template<typename MaximumT = Aws::String>
+    TopicConstantValue& WithMaximum(MaximumT&& value) { SetMaximum(std::forward<MaximumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value list of the <code>TopicConstantValue</code>.</p>
      */
-    inline const Aws::Vector<CollectiveConstantEntry>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<CollectiveConstantEntry>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<CollectiveConstantEntry>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<CollectiveConstantEntry>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline TopicConstantValue& WithValueList(const Aws::Vector<CollectiveConstantEntry>& value) { SetValueList(value); return *this;}
-    inline TopicConstantValue& WithValueList(Aws::Vector<CollectiveConstantEntry>&& value) { SetValueList(std::move(value)); return *this;}
-    inline TopicConstantValue& AddValueList(const CollectiveConstantEntry& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline TopicConstantValue& AddValueList(CollectiveConstantEntry&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
+    template<typename ValueListT = Aws::Vector<CollectiveConstantEntry>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<CollectiveConstantEntry>>
+    TopicConstantValue& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    template<typename ValueListT = CollectiveConstantEntry>
+    TopicConstantValue& AddValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList.emplace_back(std::forward<ValueListT>(value)); return *this; }
     ///@}
   private:
 
-    ConstantType m_constantType;
+    ConstantType m_constantType{ConstantType::NOT_SET};
     bool m_constantTypeHasBeenSet = false;
 
     Aws::String m_value;

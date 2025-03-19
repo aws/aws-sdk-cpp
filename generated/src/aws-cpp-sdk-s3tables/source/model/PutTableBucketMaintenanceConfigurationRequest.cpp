@@ -12,14 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTableBucketMaintenanceConfigurationRequest::PutTableBucketMaintenanceConfigurationRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_type(TableBucketMaintenanceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Aws::String PutTableBucketMaintenanceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

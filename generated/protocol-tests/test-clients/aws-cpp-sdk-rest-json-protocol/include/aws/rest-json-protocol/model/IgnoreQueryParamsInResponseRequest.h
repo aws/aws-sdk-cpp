@@ -19,7 +19,7 @@ namespace Model
   class IgnoreQueryParamsInResponseRequest : public RestJsonProtocolRequest
   {
   public:
-    AWS_RESTJSONPROTOCOL_API IgnoreQueryParamsInResponseRequest();
+    AWS_RESTJSONPROTOCOL_API IgnoreQueryParamsInResponseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

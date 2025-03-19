@@ -28,7 +28,7 @@ namespace Model
   class UpdateOrganizationalUnitResult
   {
   public:
-    AWS_ORGANIZATIONS_API UpdateOrganizationalUnitResult();
+    AWS_ORGANIZATIONS_API UpdateOrganizationalUnitResult() = default;
     AWS_ORGANIZATIONS_API UpdateOrganizationalUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API UpdateOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains the details about the specified OU, including its
      * new name.</p>
      */
-    inline const OrganizationalUnit& GetOrganizationalUnit() const{ return m_organizationalUnit; }
-    inline void SetOrganizationalUnit(const OrganizationalUnit& value) { m_organizationalUnit = value; }
-    inline void SetOrganizationalUnit(OrganizationalUnit&& value) { m_organizationalUnit = std::move(value); }
-    inline UpdateOrganizationalUnitResult& WithOrganizationalUnit(const OrganizationalUnit& value) { SetOrganizationalUnit(value); return *this;}
-    inline UpdateOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
+    inline const OrganizationalUnit& GetOrganizationalUnit() const { return m_organizationalUnit; }
+    template<typename OrganizationalUnitT = OrganizationalUnit>
+    void SetOrganizationalUnit(OrganizationalUnitT&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::forward<OrganizationalUnitT>(value); }
+    template<typename OrganizationalUnitT = OrganizationalUnit>
+    UpdateOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnitT&& value) { SetOrganizationalUnit(std::forward<OrganizationalUnitT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateOrganizationalUnitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateOrganizationalUnitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateOrganizationalUnitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateOrganizationalUnitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OrganizationalUnit m_organizationalUnit;
+    bool m_organizationalUnitHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

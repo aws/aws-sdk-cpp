@@ -34,7 +34,7 @@ namespace Model
   class LustreLogConfiguration
   {
   public:
-    AWS_FSX_API LustreLogConfiguration();
+    AWS_FSX_API LustreLogConfiguration() = default;
     AWS_FSX_API LustreLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API LustreLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * turned off.</p> </li> </ul> <p>Note that Amazon File Cache uses a default
      * setting of <code>WARN_ERROR</code>, which can't be changed.</p>
      */
-    inline const LustreAccessAuditLogLevel& GetLevel() const{ return m_level; }
+    inline LustreAccessAuditLogLevel GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const LustreAccessAuditLogLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(LustreAccessAuditLogLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline LustreLogConfiguration& WithLevel(const LustreAccessAuditLogLevel& value) { SetLevel(value); return *this;}
-    inline LustreLogConfiguration& WithLevel(LustreAccessAuditLogLevel&& value) { SetLevel(std::move(value)); return *this;}
+    inline void SetLevel(LustreAccessAuditLogLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline LustreLogConfiguration& WithLevel(LustreAccessAuditLogLevel value) { SetLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +63,16 @@ namespace Model
      * ARN must be in the same Amazon Web Services partition, Amazon Web Services
      * Region, and Amazon Web Services account as your Amazon FSx file system.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline LustreLogConfiguration& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline LustreLogConfiguration& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline LustreLogConfiguration& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    LustreLogConfiguration& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 
-    LustreAccessAuditLogLevel m_level;
+    LustreAccessAuditLogLevel m_level{LustreAccessAuditLogLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
 
     Aws::String m_destination;

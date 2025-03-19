@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNetworkInsightsAccessScopeAnalysisFindingsResponse::GetNetworkInsightsAccessScopeAnalysisFindingsResponse() : 
-    m_analysisStatus(AnalysisStatus::NOT_SET)
-{
-}
-
 GetNetworkInsightsAccessScopeAnalysisFindingsResponse::GetNetworkInsightsAccessScopeAnalysisFindingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetNetworkInsightsAccessScopeAnalysisFindingsResponse()
 {
   *this = result;
 }
@@ -44,27 +38,32 @@ GetNetworkInsightsAccessScopeAnalysisFindingsResponse& GetNetworkInsightsAccessS
     if(!networkInsightsAccessScopeAnalysisIdNode.IsNull())
     {
       m_networkInsightsAccessScopeAnalysisId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeAnalysisIdNode.GetText());
+      m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true;
     }
     XmlNode analysisStatusNode = resultNode.FirstChild("analysisStatus");
     if(!analysisStatusNode.IsNull())
     {
-      m_analysisStatus = AnalysisStatusMapper::GetAnalysisStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(analysisStatusNode.GetText()).c_str()).c_str());
+      m_analysisStatus = AnalysisStatusMapper::GetAnalysisStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(analysisStatusNode.GetText()).c_str()));
+      m_analysisStatusHasBeenSet = true;
     }
     XmlNode analysisFindingsNode = resultNode.FirstChild("analysisFindingSet");
     if(!analysisFindingsNode.IsNull())
     {
       XmlNode analysisFindingsMember = analysisFindingsNode.FirstChild("item");
+      m_analysisFindingsHasBeenSet = !analysisFindingsMember.IsNull();
       while(!analysisFindingsMember.IsNull())
       {
         m_analysisFindings.push_back(analysisFindingsMember);
         analysisFindingsMember = analysisFindingsMember.NextNode("item");
       }
 
+      m_analysisFindingsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -73,6 +72,7 @@ GetNetworkInsightsAccessScopeAnalysisFindingsResponse& GetNetworkInsightsAccessS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetNetworkInsightsAccessScopeAnalysisFindingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

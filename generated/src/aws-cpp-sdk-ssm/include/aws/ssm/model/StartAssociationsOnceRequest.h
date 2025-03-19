@@ -22,7 +22,7 @@ namespace Model
   class StartAssociationsOnceRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API StartAssociationsOnceRequest();
+    AWS_SSM_API StartAssociationsOnceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>The association IDs that you want to run immediately and only one time.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociationIds() const{ return m_associationIds; }
+    inline const Aws::Vector<Aws::String>& GetAssociationIds() const { return m_associationIds; }
     inline bool AssociationIdsHasBeenSet() const { return m_associationIdsHasBeenSet; }
-    inline void SetAssociationIds(const Aws::Vector<Aws::String>& value) { m_associationIdsHasBeenSet = true; m_associationIds = value; }
-    inline void SetAssociationIds(Aws::Vector<Aws::String>&& value) { m_associationIdsHasBeenSet = true; m_associationIds = std::move(value); }
-    inline StartAssociationsOnceRequest& WithAssociationIds(const Aws::Vector<Aws::String>& value) { SetAssociationIds(value); return *this;}
-    inline StartAssociationsOnceRequest& WithAssociationIds(Aws::Vector<Aws::String>&& value) { SetAssociationIds(std::move(value)); return *this;}
-    inline StartAssociationsOnceRequest& AddAssociationIds(const Aws::String& value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(value); return *this; }
-    inline StartAssociationsOnceRequest& AddAssociationIds(Aws::String&& value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(std::move(value)); return *this; }
-    inline StartAssociationsOnceRequest& AddAssociationIds(const char* value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(value); return *this; }
+    template<typename AssociationIdsT = Aws::Vector<Aws::String>>
+    void SetAssociationIds(AssociationIdsT&& value) { m_associationIdsHasBeenSet = true; m_associationIds = std::forward<AssociationIdsT>(value); }
+    template<typename AssociationIdsT = Aws::Vector<Aws::String>>
+    StartAssociationsOnceRequest& WithAssociationIds(AssociationIdsT&& value) { SetAssociationIds(std::forward<AssociationIdsT>(value)); return *this;}
+    template<typename AssociationIdsT = Aws::String>
+    StartAssociationsOnceRequest& AddAssociationIds(AssociationIdsT&& value) { m_associationIdsHasBeenSet = true; m_associationIds.emplace_back(std::forward<AssociationIdsT>(value)); return *this; }
     ///@}
   private:
 

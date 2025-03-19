@@ -18,14 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-S3PresignedUrl::S3PresignedUrl() : 
-    m_urlHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 S3PresignedUrl::S3PresignedUrl(JsonView jsonValue)
-  : S3PresignedUrl()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ S3PresignedUrl& S3PresignedUrl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headers"))
   {
     Aws::Map<Aws::String, JsonView> headersJsonMap = jsonValue.GetObject("headers").GetAllObjects();
@@ -48,7 +39,6 @@ S3PresignedUrl& S3PresignedUrl::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

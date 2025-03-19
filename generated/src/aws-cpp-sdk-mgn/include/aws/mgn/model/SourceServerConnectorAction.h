@@ -31,7 +31,7 @@ namespace Model
   class SourceServerConnectorAction
   {
   public:
-    AWS_MGN_API SourceServerConnectorAction();
+    AWS_MGN_API SourceServerConnectorAction() = default;
     AWS_MGN_API SourceServerConnectorAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API SourceServerConnectorAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Source Server connector action connector arn.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-    inline SourceServerConnectorAction& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline SourceServerConnectorAction& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline SourceServerConnectorAction& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    SourceServerConnectorAction& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Source Server connector action credentials secret arn.</p>
      */
-    inline const Aws::String& GetCredentialsSecretArn() const{ return m_credentialsSecretArn; }
+    inline const Aws::String& GetCredentialsSecretArn() const { return m_credentialsSecretArn; }
     inline bool CredentialsSecretArnHasBeenSet() const { return m_credentialsSecretArnHasBeenSet; }
-    inline void SetCredentialsSecretArn(const Aws::String& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = value; }
-    inline void SetCredentialsSecretArn(Aws::String&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::move(value); }
-    inline void SetCredentialsSecretArn(const char* value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn.assign(value); }
-    inline SourceServerConnectorAction& WithCredentialsSecretArn(const Aws::String& value) { SetCredentialsSecretArn(value); return *this;}
-    inline SourceServerConnectorAction& WithCredentialsSecretArn(Aws::String&& value) { SetCredentialsSecretArn(std::move(value)); return *this;}
-    inline SourceServerConnectorAction& WithCredentialsSecretArn(const char* value) { SetCredentialsSecretArn(value); return *this;}
+    template<typename CredentialsSecretArnT = Aws::String>
+    void SetCredentialsSecretArn(CredentialsSecretArnT&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::forward<CredentialsSecretArnT>(value); }
+    template<typename CredentialsSecretArnT = Aws::String>
+    SourceServerConnectorAction& WithCredentialsSecretArn(CredentialsSecretArnT&& value) { SetCredentialsSecretArn(std::forward<CredentialsSecretArnT>(value)); return *this;}
     ///@}
   private:
 

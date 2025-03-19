@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-LogGroupSummary::LogGroupSummary() : 
-    m_logGroupNameHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
-{
-}
-
 LogGroupSummary::LogGroupSummary(JsonView jsonValue)
-  : LogGroupSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LogGroupSummary& LogGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logType"))
   {
     m_logType = jsonValue.GetString("logType");
-
     m_logTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

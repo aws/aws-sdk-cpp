@@ -35,7 +35,7 @@ namespace Model
   class MonitorRemoteResource
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API MonitorRemoteResource();
+    AWS_NETWORKFLOWMONITOR_API MonitorRemoteResource() = default;
     AWS_NETWORKFLOWMONITOR_API MonitorRemoteResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API MonitorRemoteResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,30 +47,26 @@ namespace Model
      * <code>AWS::AvailabilityZone</code>, <code>AWS::EC2::Subnet</code>, or
      * <code>AWS::AWSService</code>.</p>
      */
-    inline const MonitorRemoteResourceType& GetType() const{ return m_type; }
+    inline MonitorRemoteResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MonitorRemoteResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MonitorRemoteResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MonitorRemoteResource& WithType(const MonitorRemoteResourceType& value) { SetType(value); return *this;}
-    inline MonitorRemoteResource& WithType(MonitorRemoteResourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MonitorRemoteResourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MonitorRemoteResource& WithType(MonitorRemoteResourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the remote resource, such as an ARN.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline MonitorRemoteResource& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline MonitorRemoteResource& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline MonitorRemoteResource& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    MonitorRemoteResource& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    MonitorRemoteResourceType m_type;
+    MonitorRemoteResourceType m_type{MonitorRemoteResourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_identifier;

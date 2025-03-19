@@ -12,13 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrailsRequest::DescribeTrailsRequest() : 
-    m_trailNameListHasBeenSet(false),
-    m_includeShadowTrails(false),
-    m_includeShadowTrailsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrailsRequest::SerializePayload() const
 {
   JsonValue payload;

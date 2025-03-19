@@ -30,7 +30,7 @@ namespace Model
   class InforNexusMetadata
   {
   public:
-    AWS_APPFLOW_API InforNexusMetadata();
+    AWS_APPFLOW_API InforNexusMetadata() = default;
     AWS_APPFLOW_API InforNexusMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API InforNexusMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

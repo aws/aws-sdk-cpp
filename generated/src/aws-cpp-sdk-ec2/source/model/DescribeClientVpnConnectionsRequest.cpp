@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeClientVpnConnectionsRequest::DescribeClientVpnConnectionsRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClientVpnConnectionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetApplicationDateRangeKpiRequest::GetApplicationDateRangeKpiRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_kpiNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationDateRangeKpiRequest::SerializePayload() const
 {
   return {};

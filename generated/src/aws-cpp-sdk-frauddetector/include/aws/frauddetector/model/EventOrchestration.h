@@ -29,7 +29,7 @@ namespace Model
   class EventOrchestration
   {
   public:
-    AWS_FRAUDDETECTOR_API EventOrchestration();
+    AWS_FRAUDDETECTOR_API EventOrchestration() = default;
     AWS_FRAUDDETECTOR_API EventOrchestration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API EventOrchestration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Specifies if event orchestration is enabled through Amazon EventBridge.</p>
      */
-    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+    inline bool GetEventBridgeEnabled() const { return m_eventBridgeEnabled; }
     inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
     inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
     inline EventOrchestration& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabled{false};
     bool m_eventBridgeEnabledHasBeenSet = false;
   };
 

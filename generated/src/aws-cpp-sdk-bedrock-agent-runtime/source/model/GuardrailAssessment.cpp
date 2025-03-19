@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailAssessment::GuardrailAssessment() : 
-    m_contentPolicyHasBeenSet(false),
-    m_sensitiveInformationPolicyHasBeenSet(false),
-    m_topicPolicyHasBeenSet(false),
-    m_wordPolicyHasBeenSet(false)
-{
-}
-
 GuardrailAssessment::GuardrailAssessment(JsonView jsonValue)
-  : GuardrailAssessment()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ GuardrailAssessment& GuardrailAssessment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentPolicy"))
   {
     m_contentPolicy = jsonValue.GetObject("contentPolicy");
-
     m_contentPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitiveInformationPolicy"))
   {
     m_sensitiveInformationPolicy = jsonValue.GetObject("sensitiveInformationPolicy");
-
     m_sensitiveInformationPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topicPolicy"))
   {
     m_topicPolicy = jsonValue.GetObject("topicPolicy");
-
     m_topicPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wordPolicy"))
   {
     m_wordPolicy = jsonValue.GetObject("wordPolicy");
-
     m_wordPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

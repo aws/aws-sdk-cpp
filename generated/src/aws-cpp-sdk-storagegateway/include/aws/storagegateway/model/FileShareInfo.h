@@ -33,7 +33,7 @@ namespace Model
   class FileShareInfo
   {
   public:
-    AWS_STORAGEGATEWAY_API FileShareInfo();
+    AWS_STORAGEGATEWAY_API FileShareInfo() = default;
     AWS_STORAGEGATEWAY_API FileShareInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API FileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,64 +41,54 @@ namespace Model
 
     ///@{
     
-    inline const FileShareType& GetFileShareType() const{ return m_fileShareType; }
+    inline FileShareType GetFileShareType() const { return m_fileShareType; }
     inline bool FileShareTypeHasBeenSet() const { return m_fileShareTypeHasBeenSet; }
-    inline void SetFileShareType(const FileShareType& value) { m_fileShareTypeHasBeenSet = true; m_fileShareType = value; }
-    inline void SetFileShareType(FileShareType&& value) { m_fileShareTypeHasBeenSet = true; m_fileShareType = std::move(value); }
-    inline FileShareInfo& WithFileShareType(const FileShareType& value) { SetFileShareType(value); return *this;}
-    inline FileShareInfo& WithFileShareType(FileShareType&& value) { SetFileShareType(std::move(value)); return *this;}
+    inline void SetFileShareType(FileShareType value) { m_fileShareTypeHasBeenSet = true; m_fileShareType = value; }
+    inline FileShareInfo& WithFileShareType(FileShareType value) { SetFileShareType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
+    inline const Aws::String& GetFileShareARN() const { return m_fileShareARN; }
     inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
-    inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
-    inline void SetFileShareARN(const char* value) { m_fileShareARNHasBeenSet = true; m_fileShareARN.assign(value); }
-    inline FileShareInfo& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
-    inline FileShareInfo& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
-    inline FileShareInfo& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
+    template<typename FileShareARNT = Aws::String>
+    void SetFileShareARN(FileShareARNT&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::forward<FileShareARNT>(value); }
+    template<typename FileShareARNT = Aws::String>
+    FileShareInfo& WithFileShareARN(FileShareARNT&& value) { SetFileShareARN(std::forward<FileShareARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileShareId() const{ return m_fileShareId; }
+    inline const Aws::String& GetFileShareId() const { return m_fileShareId; }
     inline bool FileShareIdHasBeenSet() const { return m_fileShareIdHasBeenSet; }
-    inline void SetFileShareId(const Aws::String& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = value; }
-    inline void SetFileShareId(Aws::String&& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = std::move(value); }
-    inline void SetFileShareId(const char* value) { m_fileShareIdHasBeenSet = true; m_fileShareId.assign(value); }
-    inline FileShareInfo& WithFileShareId(const Aws::String& value) { SetFileShareId(value); return *this;}
-    inline FileShareInfo& WithFileShareId(Aws::String&& value) { SetFileShareId(std::move(value)); return *this;}
-    inline FileShareInfo& WithFileShareId(const char* value) { SetFileShareId(value); return *this;}
+    template<typename FileShareIdT = Aws::String>
+    void SetFileShareId(FileShareIdT&& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = std::forward<FileShareIdT>(value); }
+    template<typename FileShareIdT = Aws::String>
+    FileShareInfo& WithFileShareId(FileShareIdT&& value) { SetFileShareId(std::forward<FileShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileShareStatus() const{ return m_fileShareStatus; }
+    inline const Aws::String& GetFileShareStatus() const { return m_fileShareStatus; }
     inline bool FileShareStatusHasBeenSet() const { return m_fileShareStatusHasBeenSet; }
-    inline void SetFileShareStatus(const Aws::String& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = value; }
-    inline void SetFileShareStatus(Aws::String&& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = std::move(value); }
-    inline void SetFileShareStatus(const char* value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus.assign(value); }
-    inline FileShareInfo& WithFileShareStatus(const Aws::String& value) { SetFileShareStatus(value); return *this;}
-    inline FileShareInfo& WithFileShareStatus(Aws::String&& value) { SetFileShareStatus(std::move(value)); return *this;}
-    inline FileShareInfo& WithFileShareStatus(const char* value) { SetFileShareStatus(value); return *this;}
+    template<typename FileShareStatusT = Aws::String>
+    void SetFileShareStatus(FileShareStatusT&& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = std::forward<FileShareStatusT>(value); }
+    template<typename FileShareStatusT = Aws::String>
+    FileShareInfo& WithFileShareStatus(FileShareStatusT&& value) { SetFileShareStatus(std::forward<FileShareStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline FileShareInfo& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline FileShareInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline FileShareInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    FileShareInfo& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
   private:
 
-    FileShareType m_fileShareType;
+    FileShareType m_fileShareType{FileShareType::NOT_SET};
     bool m_fileShareTypeHasBeenSet = false;
 
     Aws::String m_fileShareARN;

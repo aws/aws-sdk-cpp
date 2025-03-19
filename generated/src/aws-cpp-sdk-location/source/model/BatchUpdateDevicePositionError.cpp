@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-BatchUpdateDevicePositionError::BatchUpdateDevicePositionError() : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 BatchUpdateDevicePositionError::BatchUpdateDevicePositionError(JsonView jsonValue)
-  : BatchUpdateDevicePositionError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchUpdateDevicePositionError& BatchUpdateDevicePositionError::operator =(JsonV
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleTime"))
   {
     m_sampleTime = jsonValue.GetString("SampleTime");
-
     m_sampleTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class AvailabilityZoneMessage
   {
   public:
-    AWS_EC2_API AvailabilityZoneMessage();
+    AWS_EC2_API AvailabilityZoneMessage() = default;
     AWS_EC2_API AvailabilityZoneMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AvailabilityZoneMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The message about the Availability Zone, Local Zone, or Wavelength Zone.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AvailabilityZoneMessage& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AvailabilityZoneMessage& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AvailabilityZoneMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AvailabilityZoneMessage& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

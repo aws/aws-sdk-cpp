@@ -16,31 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPayloadTraitsResult::HttpPayloadTraitsResult()
-{
-}
-
-HttpPayloadTraitsResult::HttpPayloadTraitsResult(HttpPayloadTraitsResult&& toMove) : 
-    m_foo(std::move(toMove.m_foo)),
-    m_blob(std::move(toMove.m_blob)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-HttpPayloadTraitsResult& HttpPayloadTraitsResult::operator=(HttpPayloadTraitsResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_foo = std::move(toMove.m_foo);
-   m_blob = std::move(toMove.m_blob);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 HttpPayloadTraitsResult::HttpPayloadTraitsResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -49,18 +24,21 @@ HttpPayloadTraitsResult::HttpPayloadTraitsResult(Aws::AmazonWebServiceResult<Res
 HttpPayloadTraitsResult& HttpPayloadTraitsResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_blob = result.TakeOwnershipOfPayload();
+  m_blobHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& fooIter = headers.find("x-foo");
   if(fooIter != headers.end())
   {
     m_foo = fooIter->second;
+    m_fooHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

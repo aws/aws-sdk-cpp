@@ -29,7 +29,7 @@ namespace Model
   class TransitGatewayConnectRequestBgpOptions
   {
   public:
-    AWS_EC2_API TransitGatewayConnectRequestBgpOptions();
+    AWS_EC2_API TransitGatewayConnectRequestBgpOptions() = default;
     AWS_EC2_API TransitGatewayConnectRequestBgpOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayConnectRequestBgpOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The peer Autonomous System Number (ASN).</p>
      */
-    inline long long GetPeerAsn() const{ return m_peerAsn; }
+    inline long long GetPeerAsn() const { return m_peerAsn; }
     inline bool PeerAsnHasBeenSet() const { return m_peerAsnHasBeenSet; }
     inline void SetPeerAsn(long long value) { m_peerAsnHasBeenSet = true; m_peerAsn = value; }
     inline TransitGatewayConnectRequestBgpOptions& WithPeerAsn(long long value) { SetPeerAsn(value); return *this;}
     ///@}
   private:
 
-    long long m_peerAsn;
+    long long m_peerAsn{0};
     bool m_peerAsnHasBeenSet = false;
   };
 

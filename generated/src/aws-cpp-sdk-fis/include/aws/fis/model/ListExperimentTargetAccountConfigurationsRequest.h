@@ -25,7 +25,7 @@ namespace Model
   class ListExperimentTargetAccountConfigurationsRequest : public FISRequest
   {
   public:
-    AWS_FIS_API ListExperimentTargetAccountConfigurationsRequest();
+    AWS_FIS_API ListExperimentTargetAccountConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the experiment.</p>
      */
-    inline const Aws::String& GetExperimentId() const{ return m_experimentId; }
+    inline const Aws::String& GetExperimentId() const { return m_experimentId; }
     inline bool ExperimentIdHasBeenSet() const { return m_experimentIdHasBeenSet; }
-    inline void SetExperimentId(const Aws::String& value) { m_experimentIdHasBeenSet = true; m_experimentId = value; }
-    inline void SetExperimentId(Aws::String&& value) { m_experimentIdHasBeenSet = true; m_experimentId = std::move(value); }
-    inline void SetExperimentId(const char* value) { m_experimentIdHasBeenSet = true; m_experimentId.assign(value); }
-    inline ListExperimentTargetAccountConfigurationsRequest& WithExperimentId(const Aws::String& value) { SetExperimentId(value); return *this;}
-    inline ListExperimentTargetAccountConfigurationsRequest& WithExperimentId(Aws::String&& value) { SetExperimentId(std::move(value)); return *this;}
-    inline ListExperimentTargetAccountConfigurationsRequest& WithExperimentId(const char* value) { SetExperimentId(value); return *this;}
+    template<typename ExperimentIdT = Aws::String>
+    void SetExperimentId(ExperimentIdT&& value) { m_experimentIdHasBeenSet = true; m_experimentId = std::forward<ExperimentIdT>(value); }
+    template<typename ExperimentIdT = Aws::String>
+    ListExperimentTargetAccountConfigurationsRequest& WithExperimentId(ExperimentIdT&& value) { SetExperimentId(std::forward<ExperimentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListExperimentTargetAccountConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExperimentTargetAccountConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExperimentTargetAccountConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExperimentTargetAccountConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

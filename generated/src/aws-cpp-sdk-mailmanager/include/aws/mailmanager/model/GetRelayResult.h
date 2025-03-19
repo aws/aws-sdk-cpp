@@ -29,7 +29,7 @@ namespace Model
   class GetRelayResult
   {
   public:
-    AWS_MAILMANAGER_API GetRelayResult();
+    AWS_MAILMANAGER_API GetRelayResult() = default;
     AWS_MAILMANAGER_API GetRelayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetRelayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,125 +39,124 @@ namespace Model
      * <p>The authentication attribute—contains the secret ARN where the customer relay
      * server credentials are stored. </p>
      */
-    inline const RelayAuthentication& GetAuthentication() const{ return m_authentication; }
-    inline void SetAuthentication(const RelayAuthentication& value) { m_authentication = value; }
-    inline void SetAuthentication(RelayAuthentication&& value) { m_authentication = std::move(value); }
-    inline GetRelayResult& WithAuthentication(const RelayAuthentication& value) { SetAuthentication(value); return *this;}
-    inline GetRelayResult& WithAuthentication(RelayAuthentication&& value) { SetAuthentication(std::move(value)); return *this;}
+    inline const RelayAuthentication& GetAuthentication() const { return m_authentication; }
+    template<typename AuthenticationT = RelayAuthentication>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = RelayAuthentication>
+    GetRelayResult& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the relay was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetRelayResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetRelayResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetRelayResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when relay was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
-    inline void SetLastModifiedTimestamp(const Aws::Utils::DateTime& value) { m_lastModifiedTimestamp = value; }
-    inline void SetLastModifiedTimestamp(Aws::Utils::DateTime&& value) { m_lastModifiedTimestamp = std::move(value); }
-    inline GetRelayResult& WithLastModifiedTimestamp(const Aws::Utils::DateTime& value) { SetLastModifiedTimestamp(value); return *this;}
-    inline GetRelayResult& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    GetRelayResult& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the relay.</p>
      */
-    inline const Aws::String& GetRelayArn() const{ return m_relayArn; }
-    inline void SetRelayArn(const Aws::String& value) { m_relayArn = value; }
-    inline void SetRelayArn(Aws::String&& value) { m_relayArn = std::move(value); }
-    inline void SetRelayArn(const char* value) { m_relayArn.assign(value); }
-    inline GetRelayResult& WithRelayArn(const Aws::String& value) { SetRelayArn(value); return *this;}
-    inline GetRelayResult& WithRelayArn(Aws::String&& value) { SetRelayArn(std::move(value)); return *this;}
-    inline GetRelayResult& WithRelayArn(const char* value) { SetRelayArn(value); return *this;}
+    inline const Aws::String& GetRelayArn() const { return m_relayArn; }
+    template<typename RelayArnT = Aws::String>
+    void SetRelayArn(RelayArnT&& value) { m_relayArnHasBeenSet = true; m_relayArn = std::forward<RelayArnT>(value); }
+    template<typename RelayArnT = Aws::String>
+    GetRelayResult& WithRelayArn(RelayArnT&& value) { SetRelayArn(std::forward<RelayArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique relay identifier.</p>
      */
-    inline const Aws::String& GetRelayId() const{ return m_relayId; }
-    inline void SetRelayId(const Aws::String& value) { m_relayId = value; }
-    inline void SetRelayId(Aws::String&& value) { m_relayId = std::move(value); }
-    inline void SetRelayId(const char* value) { m_relayId.assign(value); }
-    inline GetRelayResult& WithRelayId(const Aws::String& value) { SetRelayId(value); return *this;}
-    inline GetRelayResult& WithRelayId(Aws::String&& value) { SetRelayId(std::move(value)); return *this;}
-    inline GetRelayResult& WithRelayId(const char* value) { SetRelayId(value); return *this;}
+    inline const Aws::String& GetRelayId() const { return m_relayId; }
+    template<typename RelayIdT = Aws::String>
+    void SetRelayId(RelayIdT&& value) { m_relayIdHasBeenSet = true; m_relayId = std::forward<RelayIdT>(value); }
+    template<typename RelayIdT = Aws::String>
+    GetRelayResult& WithRelayId(RelayIdT&& value) { SetRelayId(std::forward<RelayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of the relay.</p>
      */
-    inline const Aws::String& GetRelayName() const{ return m_relayName; }
-    inline void SetRelayName(const Aws::String& value) { m_relayName = value; }
-    inline void SetRelayName(Aws::String&& value) { m_relayName = std::move(value); }
-    inline void SetRelayName(const char* value) { m_relayName.assign(value); }
-    inline GetRelayResult& WithRelayName(const Aws::String& value) { SetRelayName(value); return *this;}
-    inline GetRelayResult& WithRelayName(Aws::String&& value) { SetRelayName(std::move(value)); return *this;}
-    inline GetRelayResult& WithRelayName(const char* value) { SetRelayName(value); return *this;}
+    inline const Aws::String& GetRelayName() const { return m_relayName; }
+    template<typename RelayNameT = Aws::String>
+    void SetRelayName(RelayNameT&& value) { m_relayNameHasBeenSet = true; m_relayName = std::forward<RelayNameT>(value); }
+    template<typename RelayNameT = Aws::String>
+    GetRelayResult& WithRelayName(RelayNameT&& value) { SetRelayName(std::forward<RelayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination relay server address.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
-    inline void SetServerName(const Aws::String& value) { m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverName.assign(value); }
-    inline GetRelayResult& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline GetRelayResult& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline GetRelayResult& WithServerName(const char* value) { SetServerName(value); return *this;}
+    inline const Aws::String& GetServerName() const { return m_serverName; }
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    GetRelayResult& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination relay server port.</p>
      */
-    inline int GetServerPort() const{ return m_serverPort; }
-    inline void SetServerPort(int value) { m_serverPort = value; }
+    inline int GetServerPort() const { return m_serverPort; }
+    inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
     inline GetRelayResult& WithServerPort(int value) { SetServerPort(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelayResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RelayAuthentication m_authentication;
+    bool m_authenticationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimestamp;
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
+    bool m_lastModifiedTimestampHasBeenSet = false;
 
     Aws::String m_relayArn;
+    bool m_relayArnHasBeenSet = false;
 
     Aws::String m_relayId;
+    bool m_relayIdHasBeenSet = false;
 
     Aws::String m_relayName;
+    bool m_relayNameHasBeenSet = false;
 
     Aws::String m_serverName;
+    bool m_serverNameHasBeenSet = false;
 
-    int m_serverPort;
+    int m_serverPort{0};
+    bool m_serverPortHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

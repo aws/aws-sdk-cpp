@@ -21,7 +21,7 @@ namespace Model
   class StopLabelingJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StopLabelingJobRequest();
+    AWS_SAGEMAKER_API StopLabelingJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the labeling job to stop.</p>
      */
-    inline const Aws::String& GetLabelingJobName() const{ return m_labelingJobName; }
+    inline const Aws::String& GetLabelingJobName() const { return m_labelingJobName; }
     inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
-    inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
-    inline void SetLabelingJobName(Aws::String&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::move(value); }
-    inline void SetLabelingJobName(const char* value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName.assign(value); }
-    inline StopLabelingJobRequest& WithLabelingJobName(const Aws::String& value) { SetLabelingJobName(value); return *this;}
-    inline StopLabelingJobRequest& WithLabelingJobName(Aws::String&& value) { SetLabelingJobName(std::move(value)); return *this;}
-    inline StopLabelingJobRequest& WithLabelingJobName(const char* value) { SetLabelingJobName(value); return *this;}
+    template<typename LabelingJobNameT = Aws::String>
+    void SetLabelingJobName(LabelingJobNameT&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::forward<LabelingJobNameT>(value); }
+    template<typename LabelingJobNameT = Aws::String>
+    StopLabelingJobRequest& WithLabelingJobName(LabelingJobNameT&& value) { SetLabelingJobName(std::forward<LabelingJobNameT>(value)); return *this;}
     ///@}
   private:
 

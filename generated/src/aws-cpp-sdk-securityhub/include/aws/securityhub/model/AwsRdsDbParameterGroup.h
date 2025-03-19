@@ -32,7 +32,7 @@ namespace Model
   class AwsRdsDbParameterGroup
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbParameterGroup();
+    AWS_SECURITYHUB_API AwsRdsDbParameterGroup() = default;
     AWS_SECURITYHUB_API AwsRdsDbParameterGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbParameterGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the parameter group.</p>
      */
-    inline const Aws::String& GetDbParameterGroupName() const{ return m_dbParameterGroupName; }
+    inline const Aws::String& GetDbParameterGroupName() const { return m_dbParameterGroupName; }
     inline bool DbParameterGroupNameHasBeenSet() const { return m_dbParameterGroupNameHasBeenSet; }
-    inline void SetDbParameterGroupName(const Aws::String& value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName = value; }
-    inline void SetDbParameterGroupName(Aws::String&& value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName = std::move(value); }
-    inline void SetDbParameterGroupName(const char* value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName.assign(value); }
-    inline AwsRdsDbParameterGroup& WithDbParameterGroupName(const Aws::String& value) { SetDbParameterGroupName(value); return *this;}
-    inline AwsRdsDbParameterGroup& WithDbParameterGroupName(Aws::String&& value) { SetDbParameterGroupName(std::move(value)); return *this;}
-    inline AwsRdsDbParameterGroup& WithDbParameterGroupName(const char* value) { SetDbParameterGroupName(value); return *this;}
+    template<typename DbParameterGroupNameT = Aws::String>
+    void SetDbParameterGroupName(DbParameterGroupNameT&& value) { m_dbParameterGroupNameHasBeenSet = true; m_dbParameterGroupName = std::forward<DbParameterGroupNameT>(value); }
+    template<typename DbParameterGroupNameT = Aws::String>
+    AwsRdsDbParameterGroup& WithDbParameterGroupName(DbParameterGroupNameT&& value) { SetDbParameterGroupName(std::forward<DbParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of parameter updates.</p>
      */
-    inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+    inline const Aws::String& GetParameterApplyStatus() const { return m_parameterApplyStatus; }
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
-    inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
-    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
-    inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
-    inline AwsRdsDbParameterGroup& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
-    inline AwsRdsDbParameterGroup& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
-    inline AwsRdsDbParameterGroup& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+    template<typename ParameterApplyStatusT = Aws::String>
+    void SetParameterApplyStatus(ParameterApplyStatusT&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::forward<ParameterApplyStatusT>(value); }
+    template<typename ParameterApplyStatusT = Aws::String>
+    AwsRdsDbParameterGroup& WithParameterApplyStatus(ParameterApplyStatusT&& value) { SetParameterApplyStatus(std::forward<ParameterApplyStatusT>(value)); return *this;}
     ///@}
   private:
 

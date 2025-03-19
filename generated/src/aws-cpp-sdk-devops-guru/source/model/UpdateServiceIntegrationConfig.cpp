@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-UpdateServiceIntegrationConfig::UpdateServiceIntegrationConfig() : 
-    m_opsCenterHasBeenSet(false),
-    m_logsAnomalyDetectionHasBeenSet(false),
-    m_kMSServerSideEncryptionHasBeenSet(false)
-{
-}
-
 UpdateServiceIntegrationConfig::UpdateServiceIntegrationConfig(JsonView jsonValue)
-  : UpdateServiceIntegrationConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateServiceIntegrationConfig& UpdateServiceIntegrationConfig::operator =(JsonV
   if(jsonValue.ValueExists("OpsCenter"))
   {
     m_opsCenter = jsonValue.GetObject("OpsCenter");
-
     m_opsCenterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogsAnomalyDetection"))
   {
     m_logsAnomalyDetection = jsonValue.GetObject("LogsAnomalyDetection");
-
     m_logsAnomalyDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSServerSideEncryption"))
   {
     m_kMSServerSideEncryption = jsonValue.GetObject("KMSServerSideEncryption");
-
     m_kMSServerSideEncryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

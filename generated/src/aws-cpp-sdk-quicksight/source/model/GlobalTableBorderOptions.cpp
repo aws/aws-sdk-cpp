@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GlobalTableBorderOptions::GlobalTableBorderOptions() : 
-    m_uniformBorderHasBeenSet(false),
-    m_sideSpecificBorderHasBeenSet(false)
-{
-}
-
 GlobalTableBorderOptions::GlobalTableBorderOptions(JsonView jsonValue)
-  : GlobalTableBorderOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GlobalTableBorderOptions& GlobalTableBorderOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("UniformBorder"))
   {
     m_uniformBorder = jsonValue.GetObject("UniformBorder");
-
     m_uniformBorderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SideSpecificBorder"))
   {
     m_sideSpecificBorder = jsonValue.GetObject("SideSpecificBorder");
-
     m_sideSpecificBorderHasBeenSet = true;
   }
-
   return *this;
 }
 

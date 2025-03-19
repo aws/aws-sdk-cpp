@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelCountersForWorkteam::LabelCountersForWorkteam() : 
-    m_humanLabeled(0),
-    m_humanLabeledHasBeenSet(false),
-    m_pendingHuman(0),
-    m_pendingHumanHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false)
-{
-}
-
 LabelCountersForWorkteam::LabelCountersForWorkteam(JsonView jsonValue)
-  : LabelCountersForWorkteam()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ LabelCountersForWorkteam& LabelCountersForWorkteam::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("HumanLabeled"))
   {
     m_humanLabeled = jsonValue.GetInteger("HumanLabeled");
-
     m_humanLabeledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingHuman"))
   {
     m_pendingHuman = jsonValue.GetInteger("PendingHuman");
-
     m_pendingHumanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetInteger("Total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

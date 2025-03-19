@@ -33,7 +33,7 @@ namespace Model
   class ValidationException
   {
   public:
-    AWS_MEDIAPACKAGEV2_API ValidationException();
+    AWS_MEDIAPACKAGEV2_API ValidationException() = default;
     AWS_MEDIAPACKAGEV2_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,33 +41,29 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of ValidationException.</p>
      */
-    inline const ValidationExceptionType& GetValidationExceptionType() const{ return m_validationExceptionType; }
+    inline ValidationExceptionType GetValidationExceptionType() const { return m_validationExceptionType; }
     inline bool ValidationExceptionTypeHasBeenSet() const { return m_validationExceptionTypeHasBeenSet; }
-    inline void SetValidationExceptionType(const ValidationExceptionType& value) { m_validationExceptionTypeHasBeenSet = true; m_validationExceptionType = value; }
-    inline void SetValidationExceptionType(ValidationExceptionType&& value) { m_validationExceptionTypeHasBeenSet = true; m_validationExceptionType = std::move(value); }
-    inline ValidationException& WithValidationExceptionType(const ValidationExceptionType& value) { SetValidationExceptionType(value); return *this;}
-    inline ValidationException& WithValidationExceptionType(ValidationExceptionType&& value) { SetValidationExceptionType(std::move(value)); return *this;}
+    inline void SetValidationExceptionType(ValidationExceptionType value) { m_validationExceptionTypeHasBeenSet = true; m_validationExceptionType = value; }
+    inline ValidationException& WithValidationExceptionType(ValidationExceptionType value) { SetValidationExceptionType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ValidationExceptionType m_validationExceptionType;
+    ValidationExceptionType m_validationExceptionType{ValidationExceptionType::NOT_SET};
     bool m_validationExceptionTypeHasBeenSet = false;
   };
 

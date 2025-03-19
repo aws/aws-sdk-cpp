@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLayerRequest::DeleteLayerRequest() : 
-    m_layerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLayerRequest::SerializePayload() const
 {
   JsonValue payload;

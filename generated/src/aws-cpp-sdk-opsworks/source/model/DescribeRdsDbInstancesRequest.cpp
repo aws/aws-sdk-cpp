@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRdsDbInstancesRequest::DescribeRdsDbInstancesRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_rdsDbInstanceArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRdsDbInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

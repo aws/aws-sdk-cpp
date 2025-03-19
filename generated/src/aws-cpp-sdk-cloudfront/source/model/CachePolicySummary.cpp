@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicySummary::CachePolicySummary() : 
-    m_type(CachePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_cachePolicyHasBeenSet(false)
-{
-}
-
 CachePolicySummary::CachePolicySummary(const XmlNode& xmlNode)
-  : CachePolicySummary()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ CachePolicySummary& CachePolicySummary::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = CachePolicyTypeMapper::GetCachePolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = CachePolicyTypeMapper::GetCachePolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode cachePolicyNode = resultNode.FirstChild("CachePolicy");

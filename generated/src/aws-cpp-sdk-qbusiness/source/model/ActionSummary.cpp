@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionSummary::ActionSummary() : 
-    m_actionIdentifierHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_instructionExampleHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ActionSummary::ActionSummary(JsonView jsonValue)
-  : ActionSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ActionSummary& ActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionIdentifier"))
   {
     m_actionIdentifier = jsonValue.GetString("actionIdentifier");
-
     m_actionIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instructionExample"))
   {
     m_instructionExample = jsonValue.GetString("instructionExample");
-
     m_instructionExampleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

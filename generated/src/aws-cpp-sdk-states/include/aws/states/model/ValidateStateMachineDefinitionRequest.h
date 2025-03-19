@@ -23,7 +23,7 @@ namespace Model
   class ValidateStateMachineDefinitionRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API ValidateStateMachineDefinitionRequest();
+    AWS_SFN_API ValidateStateMachineDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
      * States Language</a> (ASL).</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const Aws::String& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
-    inline ValidateStateMachineDefinitionRequest& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline ValidateStateMachineDefinitionRequest& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline ValidateStateMachineDefinitionRequest& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    ValidateStateMachineDefinitionRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>The target type of state machine for this definition. The default is
      * <code>STANDARD</code>.</p>
      */
-    inline const StateMachineType& GetType() const{ return m_type; }
+    inline StateMachineType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const StateMachineType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(StateMachineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ValidateStateMachineDefinitionRequest& WithType(const StateMachineType& value) { SetType(value); return *this;}
-    inline ValidateStateMachineDefinitionRequest& WithType(StateMachineType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(StateMachineType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ValidateStateMachineDefinitionRequest& WithType(StateMachineType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * <code>WARNING</code> and <code>ERROR</code> diagnostics. The default is
      * <code>ERROR</code>. </p>
      */
-    inline const ValidateStateMachineDefinitionSeverity& GetSeverity() const{ return m_severity; }
+    inline ValidateStateMachineDefinitionSeverity GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const ValidateStateMachineDefinitionSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(ValidateStateMachineDefinitionSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline ValidateStateMachineDefinitionRequest& WithSeverity(const ValidateStateMachineDefinitionSeverity& value) { SetSeverity(value); return *this;}
-    inline ValidateStateMachineDefinitionRequest& WithSeverity(ValidateStateMachineDefinitionSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(ValidateStateMachineDefinitionSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline ValidateStateMachineDefinitionRequest& WithSeverity(ValidateStateMachineDefinitionSeverity value) { SetSeverity(value); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * <code>maxResults</code>, the value of the <code>truncated</code> field in the
      * response will be set to <code>true</code>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ValidateStateMachineDefinitionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,13 +93,13 @@ namespace Model
     Aws::String m_definition;
     bool m_definitionHasBeenSet = false;
 
-    StateMachineType m_type;
+    StateMachineType m_type{StateMachineType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    ValidateStateMachineDefinitionSeverity m_severity;
+    ValidateStateMachineDefinitionSeverity m_severity{ValidateStateMachineDefinitionSeverity::NOT_SET};
     bool m_severityHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

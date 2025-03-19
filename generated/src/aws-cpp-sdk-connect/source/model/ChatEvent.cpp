@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ChatEvent::ChatEvent() : 
-    m_type(ChatEventType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 ChatEvent::ChatEvent(JsonView jsonValue)
-  : ChatEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ChatEvent& ChatEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChatEventTypeMapper::GetChatEventTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

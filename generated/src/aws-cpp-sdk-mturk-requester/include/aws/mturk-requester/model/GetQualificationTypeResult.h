@@ -28,7 +28,7 @@ namespace Model
   class GetQualificationTypeResult
   {
   public:
-    AWS_MTURK_API GetQualificationTypeResult();
+    AWS_MTURK_API GetQualificationTypeResult() = default;
     AWS_MTURK_API GetQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MTURK_API GetQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The returned Qualification Type</p>
      */
-    inline const QualificationType& GetQualificationType() const{ return m_qualificationType; }
-    inline void SetQualificationType(const QualificationType& value) { m_qualificationType = value; }
-    inline void SetQualificationType(QualificationType&& value) { m_qualificationType = std::move(value); }
-    inline GetQualificationTypeResult& WithQualificationType(const QualificationType& value) { SetQualificationType(value); return *this;}
-    inline GetQualificationTypeResult& WithQualificationType(QualificationType&& value) { SetQualificationType(std::move(value)); return *this;}
+    inline const QualificationType& GetQualificationType() const { return m_qualificationType; }
+    template<typename QualificationTypeT = QualificationType>
+    void SetQualificationType(QualificationTypeT&& value) { m_qualificationTypeHasBeenSet = true; m_qualificationType = std::forward<QualificationTypeT>(value); }
+    template<typename QualificationTypeT = QualificationType>
+    GetQualificationTypeResult& WithQualificationType(QualificationTypeT&& value) { SetQualificationType(std::forward<QualificationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQualificationTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQualificationTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQualificationTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQualificationTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     QualificationType m_qualificationType;
+    bool m_qualificationTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

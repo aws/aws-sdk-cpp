@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-SubstituteStringEntry::SubstituteStringEntry() : 
-    m_sourceHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 SubstituteStringEntry::SubstituteStringEntry(JsonView jsonValue)
-  : SubstituteStringEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SubstituteStringEntry& SubstituteStringEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetString("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetString("to");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

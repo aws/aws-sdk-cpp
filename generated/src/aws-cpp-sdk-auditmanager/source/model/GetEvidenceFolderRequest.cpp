@@ -12,13 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEvidenceFolderRequest::GetEvidenceFolderRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_evidenceFolderIdHasBeenSet(false)
-{
-}
-
 Aws::String GetEvidenceFolderRequest::SerializePayload() const
 {
   return {};

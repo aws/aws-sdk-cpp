@@ -18,18 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-RequestBasedServiceLevelIndicatorMetricConfig::RequestBasedServiceLevelIndicatorMetricConfig() : 
-    m_keyAttributesHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_metricType(ServiceLevelIndicatorMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_totalRequestCountMetricHasBeenSet(false),
-    m_monitoredRequestCountMetricHasBeenSet(false)
-{
-}
-
 RequestBasedServiceLevelIndicatorMetricConfig::RequestBasedServiceLevelIndicatorMetricConfig(JsonView jsonValue)
-  : RequestBasedServiceLevelIndicatorMetricConfig()
 {
   *this = jsonValue;
 }
@@ -45,21 +34,16 @@ RequestBasedServiceLevelIndicatorMetricConfig& RequestBasedServiceLevelIndicator
     }
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationName"))
   {
     m_operationName = jsonValue.GetString("OperationName");
-
     m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricType"))
   {
     m_metricType = ServiceLevelIndicatorMetricTypeMapper::GetServiceLevelIndicatorMetricTypeForName(jsonValue.GetString("MetricType"));
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalRequestCountMetric"))
   {
     Aws::Utils::Array<JsonView> totalRequestCountMetricJsonList = jsonValue.GetArray("TotalRequestCountMetric");
@@ -69,14 +53,11 @@ RequestBasedServiceLevelIndicatorMetricConfig& RequestBasedServiceLevelIndicator
     }
     m_totalRequestCountMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoredRequestCountMetric"))
   {
     m_monitoredRequestCountMetric = jsonValue.GetObject("MonitoredRequestCountMetric");
-
     m_monitoredRequestCountMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -14,10 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetHealthCheckRequest::GetHealthCheckRequest() : 
-    m_healthCheckIdHasBeenSet(false)
-{
-}
 
 Aws::String GetHealthCheckRequest::SerializePayload() const
 {

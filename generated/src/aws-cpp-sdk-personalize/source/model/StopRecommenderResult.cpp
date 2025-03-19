@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopRecommenderResult::StopRecommenderResult()
-{
-}
-
 StopRecommenderResult::StopRecommenderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StopRecommenderResult& StopRecommenderResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("recommenderArn"))
   {
     m_recommenderArn = jsonValue.GetString("recommenderArn");
-
+    m_recommenderArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

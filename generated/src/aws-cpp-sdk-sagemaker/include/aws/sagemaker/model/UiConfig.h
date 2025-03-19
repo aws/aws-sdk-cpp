@@ -36,7 +36,7 @@ namespace Model
   class UiConfig
   {
   public:
-    AWS_SAGEMAKER_API UiConfig();
+    AWS_SAGEMAKER_API UiConfig() = default;
     AWS_SAGEMAKER_API UiConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API UiConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
-    inline const Aws::String& GetUiTemplateS3Uri() const{ return m_uiTemplateS3Uri; }
+    inline const Aws::String& GetUiTemplateS3Uri() const { return m_uiTemplateS3Uri; }
     inline bool UiTemplateS3UriHasBeenSet() const { return m_uiTemplateS3UriHasBeenSet; }
-    inline void SetUiTemplateS3Uri(const Aws::String& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = value; }
-    inline void SetUiTemplateS3Uri(Aws::String&& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = std::move(value); }
-    inline void SetUiTemplateS3Uri(const char* value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri.assign(value); }
-    inline UiConfig& WithUiTemplateS3Uri(const Aws::String& value) { SetUiTemplateS3Uri(value); return *this;}
-    inline UiConfig& WithUiTemplateS3Uri(Aws::String&& value) { SetUiTemplateS3Uri(std::move(value)); return *this;}
-    inline UiConfig& WithUiTemplateS3Uri(const char* value) { SetUiTemplateS3Uri(value); return *this;}
+    template<typename UiTemplateS3UriT = Aws::String>
+    void SetUiTemplateS3Uri(UiTemplateS3UriT&& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = std::forward<UiTemplateS3UriT>(value); }
+    template<typename UiTemplateS3UriT = Aws::String>
+    UiConfig& WithUiTemplateS3Uri(UiTemplateS3UriT&& value) { SetUiTemplateS3Uri(std::forward<UiTemplateS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +93,12 @@ namespace Model
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
+    inline const Aws::String& GetHumanTaskUiArn() const { return m_humanTaskUiArn; }
     inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
-    inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
-    inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
-    inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
-    inline UiConfig& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
-    inline UiConfig& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
-    inline UiConfig& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
+    template<typename HumanTaskUiArnT = Aws::String>
+    void SetHumanTaskUiArn(HumanTaskUiArnT&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::forward<HumanTaskUiArnT>(value); }
+    template<typename HumanTaskUiArnT = Aws::String>
+    UiConfig& WithHumanTaskUiArn(HumanTaskUiArnT&& value) { SetHumanTaskUiArn(std::forward<HumanTaskUiArnT>(value)); return *this;}
     ///@}
   private:
 

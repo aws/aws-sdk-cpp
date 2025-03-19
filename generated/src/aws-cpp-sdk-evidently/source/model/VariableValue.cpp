@@ -18,19 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-VariableValue::VariableValue() : 
-    m_boolValue(false),
-    m_boolValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_longValue(0),
-    m_longValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
-{
-}
-
 VariableValue::VariableValue(JsonView jsonValue)
-  : VariableValue()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ VariableValue& VariableValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("boolValue"))
   {
     m_boolValue = jsonValue.GetBool("boolValue");
-
     m_boolValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longValue"))
   {
     m_longValue = jsonValue.GetInt64("longValue");
-
     m_longValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

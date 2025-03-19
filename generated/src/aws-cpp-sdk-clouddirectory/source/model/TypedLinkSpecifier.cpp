@@ -18,16 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedLinkSpecifier::TypedLinkSpecifier() : 
-    m_typedLinkFacetHasBeenSet(false),
-    m_sourceObjectReferenceHasBeenSet(false),
-    m_targetObjectReferenceHasBeenSet(false),
-    m_identityAttributeValuesHasBeenSet(false)
-{
-}
-
 TypedLinkSpecifier::TypedLinkSpecifier(JsonView jsonValue)
-  : TypedLinkSpecifier()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TypedLinkSpecifier& TypedLinkSpecifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypedLinkFacet"))
   {
     m_typedLinkFacet = jsonValue.GetObject("TypedLinkFacet");
-
     m_typedLinkFacetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceObjectReference"))
   {
     m_sourceObjectReference = jsonValue.GetObject("SourceObjectReference");
-
     m_sourceObjectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetObjectReference"))
   {
     m_targetObjectReference = jsonValue.GetObject("TargetObjectReference");
-
     m_targetObjectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityAttributeValues"))
   {
     Aws::Utils::Array<JsonView> identityAttributeValuesJsonList = jsonValue.GetArray("IdentityAttributeValues");
@@ -64,7 +49,6 @@ TypedLinkSpecifier& TypedLinkSpecifier::operator =(JsonView jsonValue)
     }
     m_identityAttributeValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

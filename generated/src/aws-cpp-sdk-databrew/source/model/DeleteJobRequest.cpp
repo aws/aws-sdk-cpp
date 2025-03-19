@@ -12,11 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteJobRequest::DeleteJobRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteJobRequest::SerializePayload() const
 {
   return {};

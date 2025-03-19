@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-ImmediateModeScheduleActionStartSettings::ImmediateModeScheduleActionStartSettings()
-{
-}
-
 ImmediateModeScheduleActionStartSettings::ImmediateModeScheduleActionStartSettings(JsonView jsonValue)
 {
   *this = jsonValue;

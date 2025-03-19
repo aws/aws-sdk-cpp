@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableLDAPSRequest::DisableLDAPSRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_type(LDAPSType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String DisableLDAPSRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class ValidationSettings
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API ValidationSettings();
+    AWS_VERIFIEDPERMISSIONS_API ValidationSettings() = default;
     AWS_VERIFIEDPERMISSIONS_API ValidationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API ValidationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,16 +59,14 @@ namespace Model
      * policy or policy template without a schema, you must turn off validation.</p>
      * 
      */
-    inline const ValidationMode& GetMode() const{ return m_mode; }
+    inline ValidationMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ValidationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ValidationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ValidationSettings& WithMode(const ValidationMode& value) { SetMode(value); return *this;}
-    inline ValidationSettings& WithMode(ValidationMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ValidationMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ValidationSettings& WithMode(ValidationMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    ValidationMode m_mode;
+    ValidationMode m_mode{ValidationMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

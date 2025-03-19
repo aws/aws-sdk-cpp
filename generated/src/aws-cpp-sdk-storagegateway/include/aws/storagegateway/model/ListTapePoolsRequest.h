@@ -22,7 +22,7 @@ namespace Model
   class ListTapePoolsRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API ListTapePoolsRequest();
+    AWS_STORAGEGATEWAY_API ListTapePoolsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * list. If you don't specify a custom tape pool ARN, the response lists all custom
      * tape pools. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetPoolARNs() const{ return m_poolARNs; }
+    inline const Aws::Vector<Aws::String>& GetPoolARNs() const { return m_poolARNs; }
     inline bool PoolARNsHasBeenSet() const { return m_poolARNsHasBeenSet; }
-    inline void SetPoolARNs(const Aws::Vector<Aws::String>& value) { m_poolARNsHasBeenSet = true; m_poolARNs = value; }
-    inline void SetPoolARNs(Aws::Vector<Aws::String>&& value) { m_poolARNsHasBeenSet = true; m_poolARNs = std::move(value); }
-    inline ListTapePoolsRequest& WithPoolARNs(const Aws::Vector<Aws::String>& value) { SetPoolARNs(value); return *this;}
-    inline ListTapePoolsRequest& WithPoolARNs(Aws::Vector<Aws::String>&& value) { SetPoolARNs(std::move(value)); return *this;}
-    inline ListTapePoolsRequest& AddPoolARNs(const Aws::String& value) { m_poolARNsHasBeenSet = true; m_poolARNs.push_back(value); return *this; }
-    inline ListTapePoolsRequest& AddPoolARNs(Aws::String&& value) { m_poolARNsHasBeenSet = true; m_poolARNs.push_back(std::move(value)); return *this; }
-    inline ListTapePoolsRequest& AddPoolARNs(const char* value) { m_poolARNsHasBeenSet = true; m_poolARNs.push_back(value); return *this; }
+    template<typename PoolARNsT = Aws::Vector<Aws::String>>
+    void SetPoolARNs(PoolARNsT&& value) { m_poolARNsHasBeenSet = true; m_poolARNs = std::forward<PoolARNsT>(value); }
+    template<typename PoolARNsT = Aws::Vector<Aws::String>>
+    ListTapePoolsRequest& WithPoolARNs(PoolARNsT&& value) { SetPoolARNs(std::forward<PoolARNsT>(value)); return *this;}
+    template<typename PoolARNsT = Aws::String>
+    ListTapePoolsRequest& AddPoolARNs(PoolARNsT&& value) { m_poolARNsHasBeenSet = true; m_poolARNs.emplace_back(std::forward<PoolARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,14 +56,12 @@ namespace Model
      * <p>A string that indicates the position at which to begin the returned list of
      * tape pools.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListTapePoolsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListTapePoolsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListTapePoolsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListTapePoolsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +69,7 @@ namespace Model
      * <p>An optional number limit for the tape pools in the list returned by this
      * call.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListTapePoolsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -85,7 +82,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

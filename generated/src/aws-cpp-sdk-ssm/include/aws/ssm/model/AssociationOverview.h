@@ -32,7 +32,7 @@ namespace Model
   class AssociationOverview
   {
   public:
-    AWS_SSM_API AssociationOverview();
+    AWS_SSM_API AssociationOverview() = default;
     AWS_SSM_API AssociationOverview(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API AssociationOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The status of the association. Status can be: Pending, Success, or
      * Failed.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AssociationOverview& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AssociationOverview& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AssociationOverview& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AssociationOverview& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A detailed status of the association.</p>
      */
-    inline const Aws::String& GetDetailedStatus() const{ return m_detailedStatus; }
+    inline const Aws::String& GetDetailedStatus() const { return m_detailedStatus; }
     inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
-    inline void SetDetailedStatus(const Aws::String& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
-    inline void SetDetailedStatus(Aws::String&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
-    inline void SetDetailedStatus(const char* value) { m_detailedStatusHasBeenSet = true; m_detailedStatus.assign(value); }
-    inline AssociationOverview& WithDetailedStatus(const Aws::String& value) { SetDetailedStatus(value); return *this;}
-    inline AssociationOverview& WithDetailedStatus(Aws::String&& value) { SetDetailedStatus(std::move(value)); return *this;}
-    inline AssociationOverview& WithDetailedStatus(const char* value) { SetDetailedStatus(value); return *this;}
+    template<typename DetailedStatusT = Aws::String>
+    void SetDetailedStatus(DetailedStatusT&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::forward<DetailedStatusT>(value); }
+    template<typename DetailedStatusT = Aws::String>
+    AssociationOverview& WithDetailedStatus(DetailedStatusT&& value) { SetDetailedStatus(std::forward<DetailedStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,15 +69,15 @@ namespace Model
      * created an association with two managed nodes, and one of them was successful,
      * this would return the count of managed nodes by status.</p>
      */
-    inline const Aws::Map<Aws::String, int>& GetAssociationStatusAggregatedCount() const{ return m_associationStatusAggregatedCount; }
+    inline const Aws::Map<Aws::String, int>& GetAssociationStatusAggregatedCount() const { return m_associationStatusAggregatedCount; }
     inline bool AssociationStatusAggregatedCountHasBeenSet() const { return m_associationStatusAggregatedCountHasBeenSet; }
-    inline void SetAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = value; }
-    inline void SetAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = std::move(value); }
-    inline AssociationOverview& WithAssociationStatusAggregatedCount(const Aws::Map<Aws::String, int>& value) { SetAssociationStatusAggregatedCount(value); return *this;}
-    inline AssociationOverview& WithAssociationStatusAggregatedCount(Aws::Map<Aws::String, int>&& value) { SetAssociationStatusAggregatedCount(std::move(value)); return *this;}
-    inline AssociationOverview& AddAssociationStatusAggregatedCount(const Aws::String& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
-    inline AssociationOverview& AddAssociationStatusAggregatedCount(Aws::String&& key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(std::move(key), value); return *this; }
-    inline AssociationOverview& AddAssociationStatusAggregatedCount(const char* key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
+    template<typename AssociationStatusAggregatedCountT = Aws::Map<Aws::String, int>>
+    void SetAssociationStatusAggregatedCount(AssociationStatusAggregatedCountT&& value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount = std::forward<AssociationStatusAggregatedCountT>(value); }
+    template<typename AssociationStatusAggregatedCountT = Aws::Map<Aws::String, int>>
+    AssociationOverview& WithAssociationStatusAggregatedCount(AssociationStatusAggregatedCountT&& value) { SetAssociationStatusAggregatedCount(std::forward<AssociationStatusAggregatedCountT>(value)); return *this;}
+    inline AssociationOverview& AddAssociationStatusAggregatedCount(Aws::String key, int value) {
+      m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

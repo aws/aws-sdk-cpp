@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DocumentIdOptions::DocumentIdOptions() : 
-    m_defaultDocumentIdFormat(DefaultDocumentIdFormat::NOT_SET),
-    m_defaultDocumentIdFormatHasBeenSet(false)
-{
-}
-
 DocumentIdOptions::DocumentIdOptions(JsonView jsonValue)
-  : DocumentIdOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DocumentIdOptions& DocumentIdOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultDocumentIdFormat"))
   {
     m_defaultDocumentIdFormat = DefaultDocumentIdFormatMapper::GetDefaultDocumentIdFormatForName(jsonValue.GetString("DefaultDocumentIdFormat"));
-
     m_defaultDocumentIdFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTopicRuleDestinationResult::CreateTopicRuleDestinationResult()
-{
-}
-
 CreateTopicRuleDestinationResult::CreateTopicRuleDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTopicRuleDestinationResult& CreateTopicRuleDestinationResult::operator =(c
   if(jsonValue.ValueExists("topicRuleDestination"))
   {
     m_topicRuleDestination = jsonValue.GetObject("topicRuleDestination");
-
+    m_topicRuleDestinationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -28,7 +28,7 @@ namespace Model
   class UpdateDataProtectionSettingsResult
   {
   public:
-    AWS_WORKSPACESWEB_API UpdateDataProtectionSettingsResult();
+    AWS_WORKSPACESWEB_API UpdateDataProtectionSettingsResult() = default;
     AWS_WORKSPACESWEB_API UpdateDataProtectionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API UpdateDataProtectionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The data protection settings.</p>
      */
-    inline const DataProtectionSettings& GetDataProtectionSettings() const{ return m_dataProtectionSettings; }
-    inline void SetDataProtectionSettings(const DataProtectionSettings& value) { m_dataProtectionSettings = value; }
-    inline void SetDataProtectionSettings(DataProtectionSettings&& value) { m_dataProtectionSettings = std::move(value); }
-    inline UpdateDataProtectionSettingsResult& WithDataProtectionSettings(const DataProtectionSettings& value) { SetDataProtectionSettings(value); return *this;}
-    inline UpdateDataProtectionSettingsResult& WithDataProtectionSettings(DataProtectionSettings&& value) { SetDataProtectionSettings(std::move(value)); return *this;}
+    inline const DataProtectionSettings& GetDataProtectionSettings() const { return m_dataProtectionSettings; }
+    template<typename DataProtectionSettingsT = DataProtectionSettings>
+    void SetDataProtectionSettings(DataProtectionSettingsT&& value) { m_dataProtectionSettingsHasBeenSet = true; m_dataProtectionSettings = std::forward<DataProtectionSettingsT>(value); }
+    template<typename DataProtectionSettingsT = DataProtectionSettings>
+    UpdateDataProtectionSettingsResult& WithDataProtectionSettings(DataProtectionSettingsT&& value) { SetDataProtectionSettings(std::forward<DataProtectionSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDataProtectionSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDataProtectionSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDataProtectionSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDataProtectionSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataProtectionSettings m_dataProtectionSettings;
+    bool m_dataProtectionSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePermissionSetRequest::CreatePermissionSetRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_relayStateHasBeenSet(false),
-    m_sessionDurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;

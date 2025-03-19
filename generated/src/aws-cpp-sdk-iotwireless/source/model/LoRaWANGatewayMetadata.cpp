@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANGatewayMetadata::LoRaWANGatewayMetadata() : 
-    m_gatewayEuiHasBeenSet(false),
-    m_snr(0.0),
-    m_snrHasBeenSet(false),
-    m_rssi(0.0),
-    m_rssiHasBeenSet(false)
-{
-}
-
 LoRaWANGatewayMetadata::LoRaWANGatewayMetadata(JsonView jsonValue)
-  : LoRaWANGatewayMetadata()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LoRaWANGatewayMetadata& LoRaWANGatewayMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GatewayEui"))
   {
     m_gatewayEui = jsonValue.GetString("GatewayEui");
-
     m_gatewayEuiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Snr"))
   {
     m_snr = jsonValue.GetDouble("Snr");
-
     m_snrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rssi"))
   {
     m_rssi = jsonValue.GetDouble("Rssi");
-
     m_rssiHasBeenSet = true;
   }
-
   return *this;
 }
 

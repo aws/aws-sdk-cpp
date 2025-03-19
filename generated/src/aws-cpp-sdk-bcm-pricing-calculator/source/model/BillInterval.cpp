@@ -18,14 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BillInterval::BillInterval() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
-{
-}
-
 BillInterval::BillInterval(JsonView jsonValue)
-  : BillInterval()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BillInterval& BillInterval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetDouble("start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("end"))
   {
     m_end = jsonValue.GetDouble("end");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,27 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-RtmpGroupSettings::RtmpGroupSettings() : 
-    m_adMarkersHasBeenSet(false),
-    m_authenticationScheme(AuthenticationScheme::NOT_SET),
-    m_authenticationSchemeHasBeenSet(false),
-    m_cacheFullBehavior(RtmpCacheFullBehavior::NOT_SET),
-    m_cacheFullBehaviorHasBeenSet(false),
-    m_cacheLength(0),
-    m_cacheLengthHasBeenSet(false),
-    m_captionData(RtmpCaptionData::NOT_SET),
-    m_captionDataHasBeenSet(false),
-    m_inputLossAction(InputLossActionForRtmpOut::NOT_SET),
-    m_inputLossActionHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false),
-    m_includeFillerNalUnits(IncludeFillerNalUnits::NOT_SET),
-    m_includeFillerNalUnitsHasBeenSet(false)
-{
-}
-
 RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue)
-  : RtmpGroupSettings()
 {
   *this = jsonValue;
 }
@@ -54,56 +34,41 @@ RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
     }
     m_adMarkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authenticationScheme"))
   {
     m_authenticationScheme = AuthenticationSchemeMapper::GetAuthenticationSchemeForName(jsonValue.GetString("authenticationScheme"));
-
     m_authenticationSchemeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheFullBehavior"))
   {
     m_cacheFullBehavior = RtmpCacheFullBehaviorMapper::GetRtmpCacheFullBehaviorForName(jsonValue.GetString("cacheFullBehavior"));
-
     m_cacheFullBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheLength"))
   {
     m_cacheLength = jsonValue.GetInteger("cacheLength");
-
     m_cacheLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionData"))
   {
     m_captionData = RtmpCaptionDataMapper::GetRtmpCaptionDataForName(jsonValue.GetString("captionData"));
-
     m_captionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLossAction"))
   {
     m_inputLossAction = InputLossActionForRtmpOutMapper::GetInputLossActionForRtmpOutForName(jsonValue.GetString("inputLossAction"));
-
     m_inputLossActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restartDelay"))
   {
     m_restartDelay = jsonValue.GetInteger("restartDelay");
-
     m_restartDelayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeFillerNalUnits"))
   {
     m_includeFillerNalUnits = IncludeFillerNalUnitsMapper::GetIncludeFillerNalUnitsForName(jsonValue.GetString("includeFillerNalUnits"));
-
     m_includeFillerNalUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

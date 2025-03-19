@@ -39,7 +39,7 @@ namespace Model
   class AssertionRule
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRule();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRule() = default;
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API AssertionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,29 +52,26 @@ namespace Model
      * example, you might include three routing controls, one for each of three Amazon
      * Web Services Regions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssertedControls() const{ return m_assertedControls; }
+    inline const Aws::Vector<Aws::String>& GetAssertedControls() const { return m_assertedControls; }
     inline bool AssertedControlsHasBeenSet() const { return m_assertedControlsHasBeenSet; }
-    inline void SetAssertedControls(const Aws::Vector<Aws::String>& value) { m_assertedControlsHasBeenSet = true; m_assertedControls = value; }
-    inline void SetAssertedControls(Aws::Vector<Aws::String>&& value) { m_assertedControlsHasBeenSet = true; m_assertedControls = std::move(value); }
-    inline AssertionRule& WithAssertedControls(const Aws::Vector<Aws::String>& value) { SetAssertedControls(value); return *this;}
-    inline AssertionRule& WithAssertedControls(Aws::Vector<Aws::String>&& value) { SetAssertedControls(std::move(value)); return *this;}
-    inline AssertionRule& AddAssertedControls(const Aws::String& value) { m_assertedControlsHasBeenSet = true; m_assertedControls.push_back(value); return *this; }
-    inline AssertionRule& AddAssertedControls(Aws::String&& value) { m_assertedControlsHasBeenSet = true; m_assertedControls.push_back(std::move(value)); return *this; }
-    inline AssertionRule& AddAssertedControls(const char* value) { m_assertedControlsHasBeenSet = true; m_assertedControls.push_back(value); return *this; }
+    template<typename AssertedControlsT = Aws::Vector<Aws::String>>
+    void SetAssertedControls(AssertedControlsT&& value) { m_assertedControlsHasBeenSet = true; m_assertedControls = std::forward<AssertedControlsT>(value); }
+    template<typename AssertedControlsT = Aws::Vector<Aws::String>>
+    AssertionRule& WithAssertedControls(AssertedControlsT&& value) { SetAssertedControls(std::forward<AssertedControlsT>(value)); return *this;}
+    template<typename AssertedControlsT = Aws::String>
+    AssertionRule& AddAssertedControls(AssertedControlsT&& value) { m_assertedControlsHasBeenSet = true; m_assertedControls.emplace_back(std::forward<AssertedControlsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
-    inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
+    inline const Aws::String& GetControlPanelArn() const { return m_controlPanelArn; }
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-    inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-    inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-    inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-    inline AssertionRule& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-    inline AssertionRule& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-    inline AssertionRule& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    template<typename ControlPanelArnT = Aws::String>
+    void SetControlPanelArn(ControlPanelArnT&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::forward<ControlPanelArnT>(value); }
+    template<typename ControlPanelArnT = Aws::String>
+    AssertionRule& WithControlPanelArn(ControlPanelArnT&& value) { SetControlPanelArn(std::forward<ControlPanelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +79,12 @@ namespace Model
      * <p>Name of the assertion rule. You can use any non-white space character in the
      * name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssertionRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssertionRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssertionRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssertionRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,26 +96,24 @@ namespace Model
      * that at least two assertion routing control states must be ON, so that at least
      * two Amazon Web Services Regions have traffic flowing to them.</p>
      */
-    inline const RuleConfig& GetRuleConfig() const{ return m_ruleConfig; }
+    inline const RuleConfig& GetRuleConfig() const { return m_ruleConfig; }
     inline bool RuleConfigHasBeenSet() const { return m_ruleConfigHasBeenSet; }
-    inline void SetRuleConfig(const RuleConfig& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = value; }
-    inline void SetRuleConfig(RuleConfig&& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = std::move(value); }
-    inline AssertionRule& WithRuleConfig(const RuleConfig& value) { SetRuleConfig(value); return *this;}
-    inline AssertionRule& WithRuleConfig(RuleConfig&& value) { SetRuleConfig(std::move(value)); return *this;}
+    template<typename RuleConfigT = RuleConfig>
+    void SetRuleConfig(RuleConfigT&& value) { m_ruleConfigHasBeenSet = true; m_ruleConfig = std::forward<RuleConfigT>(value); }
+    template<typename RuleConfigT = RuleConfig>
+    AssertionRule& WithRuleConfig(RuleConfigT&& value) { SetRuleConfig(std::forward<RuleConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
      */
-    inline const Aws::String& GetSafetyRuleArn() const{ return m_safetyRuleArn; }
+    inline const Aws::String& GetSafetyRuleArn() const { return m_safetyRuleArn; }
     inline bool SafetyRuleArnHasBeenSet() const { return m_safetyRuleArnHasBeenSet; }
-    inline void SetSafetyRuleArn(const Aws::String& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = value; }
-    inline void SetSafetyRuleArn(Aws::String&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::move(value); }
-    inline void SetSafetyRuleArn(const char* value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn.assign(value); }
-    inline AssertionRule& WithSafetyRuleArn(const Aws::String& value) { SetSafetyRuleArn(value); return *this;}
-    inline AssertionRule& WithSafetyRuleArn(Aws::String&& value) { SetSafetyRuleArn(std::move(value)); return *this;}
-    inline AssertionRule& WithSafetyRuleArn(const char* value) { SetSafetyRuleArn(value); return *this;}
+    template<typename SafetyRuleArnT = Aws::String>
+    void SetSafetyRuleArn(SafetyRuleArnT&& value) { m_safetyRuleArnHasBeenSet = true; m_safetyRuleArn = std::forward<SafetyRuleArnT>(value); }
+    template<typename SafetyRuleArnT = Aws::String>
+    AssertionRule& WithSafetyRuleArn(SafetyRuleArnT&& value) { SetSafetyRuleArn(std::forward<SafetyRuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +121,10 @@ namespace Model
      * <p>The deployment status of an assertion rule. Status can be one of the
      * following: PENDING, DEPLOYED, PENDING_DELETION.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AssertionRule& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline AssertionRule& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AssertionRule& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -142,7 +133,7 @@ namespace Model
      * the target routing controls will fail. This helps prevent "flapping" of state.
      * The wait period is 5000 ms by default, but you can choose a custom value.</p>
      */
-    inline int GetWaitPeriodMs() const{ return m_waitPeriodMs; }
+    inline int GetWaitPeriodMs() const { return m_waitPeriodMs; }
     inline bool WaitPeriodMsHasBeenSet() const { return m_waitPeriodMsHasBeenSet; }
     inline void SetWaitPeriodMs(int value) { m_waitPeriodMsHasBeenSet = true; m_waitPeriodMs = value; }
     inline AssertionRule& WithWaitPeriodMs(int value) { SetWaitPeriodMs(value); return *this;}
@@ -152,14 +143,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the assertion rule owner.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline AssertionRule& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline AssertionRule& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline AssertionRule& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    AssertionRule& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
   private:
 
@@ -178,10 +167,10 @@ namespace Model
     Aws::String m_safetyRuleArn;
     bool m_safetyRuleArnHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_waitPeriodMs;
+    int m_waitPeriodMs{0};
     bool m_waitPeriodMsHasBeenSet = false;
 
     Aws::String m_owner;

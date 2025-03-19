@@ -15,11 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-HttpPayloadWithUnionRequest::HttpPayloadWithUnionRequest() : 
-    m_nestedHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String HttpPayloadWithUnionRequest::SerializePayload() const
 {

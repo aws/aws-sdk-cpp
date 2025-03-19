@@ -12,12 +12,6 @@ using namespace Aws::Route53Profiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateResourceFromProfileRequest::DisassociateResourceFromProfileRequest() : 
-    m_profileIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateResourceFromProfileRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCampaignRequest::DeleteCampaignRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

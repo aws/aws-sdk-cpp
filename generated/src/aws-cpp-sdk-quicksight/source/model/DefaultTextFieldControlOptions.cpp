@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultTextFieldControlOptions::DefaultTextFieldControlOptions() : 
-    m_displayOptionsHasBeenSet(false)
-{
-}
-
 DefaultTextFieldControlOptions::DefaultTextFieldControlOptions(JsonView jsonValue)
-  : DefaultTextFieldControlOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DefaultTextFieldControlOptions& DefaultTextFieldControlOptions::operator =(JsonV
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

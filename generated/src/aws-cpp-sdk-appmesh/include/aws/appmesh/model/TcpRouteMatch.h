@@ -29,7 +29,7 @@ namespace Model
   class TcpRouteMatch
   {
   public:
-    AWS_APPMESH_API TcpRouteMatch();
+    AWS_APPMESH_API TcpRouteMatch() = default;
     AWS_APPMESH_API TcpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API TcpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The port number to match on.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline TcpRouteMatch& WithPort(int value) { SetPort(value); return *this;}
     ///@}
   private:
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

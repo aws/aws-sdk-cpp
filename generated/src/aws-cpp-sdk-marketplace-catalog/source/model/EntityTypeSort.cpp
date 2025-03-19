@@ -18,18 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-EntityTypeSort::EntityTypeSort() : 
-    m_dataProductSortHasBeenSet(false),
-    m_saaSProductSortHasBeenSet(false),
-    m_amiProductSortHasBeenSet(false),
-    m_offerSortHasBeenSet(false),
-    m_containerProductSortHasBeenSet(false),
-    m_resaleAuthorizationSortHasBeenSet(false)
-{
-}
-
 EntityTypeSort::EntityTypeSort(JsonView jsonValue)
-  : EntityTypeSort()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EntityTypeSort& EntityTypeSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataProductSort"))
   {
     m_dataProductSort = jsonValue.GetObject("DataProductSort");
-
     m_dataProductSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SaaSProductSort"))
   {
     m_saaSProductSort = jsonValue.GetObject("SaaSProductSort");
-
     m_saaSProductSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmiProductSort"))
   {
     m_amiProductSort = jsonValue.GetObject("AmiProductSort");
-
     m_amiProductSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferSort"))
   {
     m_offerSort = jsonValue.GetObject("OfferSort");
-
     m_offerSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerProductSort"))
   {
     m_containerProductSort = jsonValue.GetObject("ContainerProductSort");
-
     m_containerProductSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResaleAuthorizationSort"))
   {
     m_resaleAuthorizationSort = jsonValue.GetObject("ResaleAuthorizationSort");
-
     m_resaleAuthorizationSortHasBeenSet = true;
   }
-
   return *this;
 }
 

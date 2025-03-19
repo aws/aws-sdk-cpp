@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WaterfallChartColorConfiguration::WaterfallChartColorConfiguration() : 
-    m_groupColorConfigurationHasBeenSet(false)
-{
-}
-
 WaterfallChartColorConfiguration::WaterfallChartColorConfiguration(JsonView jsonValue)
-  : WaterfallChartColorConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WaterfallChartColorConfiguration& WaterfallChartColorConfiguration::operator =(J
   if(jsonValue.ValueExists("GroupColorConfiguration"))
   {
     m_groupColorConfiguration = jsonValue.GetObject("GroupColorConfiguration");
-
     m_groupColorConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

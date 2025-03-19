@@ -21,7 +21,7 @@ namespace Model
   class ListAppAssessmentComplianceDriftsRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API ListAppAssessmentComplianceDriftsRequest();
+    AWS_RESILIENCEHUB_API ListAppAssessmentComplianceDriftsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,21 +41,19 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
+    inline const Aws::String& GetAssessmentArn() const { return m_assessmentArn; }
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
-    inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
-    inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
-    inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
-    inline ListAppAssessmentComplianceDriftsRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
-    inline ListAppAssessmentComplianceDriftsRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
-    inline ListAppAssessmentComplianceDriftsRequest& WithAssessmentArn(const char* value) { SetAssessmentArn(value); return *this;}
+    template<typename AssessmentArnT = Aws::String>
+    void SetAssessmentArn(AssessmentArnT&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::forward<AssessmentArnT>(value); }
+    template<typename AssessmentArnT = Aws::String>
+    ListAppAssessmentComplianceDriftsRequest& WithAssessmentArn(AssessmentArnT&& value) { SetAssessmentArn(std::forward<AssessmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of compliance drifts requested.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAppAssessmentComplianceDriftsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
     /**
      * <p>Null, or the token from a previous call to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAppAssessmentComplianceDriftsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppAssessmentComplianceDriftsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppAssessmentComplianceDriftsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppAssessmentComplianceDriftsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_assessmentArn;
     bool m_assessmentArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -23,7 +23,7 @@ namespace Model
   class DescribeQueriesRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeQueriesRequest();
+    AWS_CLOUDWATCHLOGS_API DescribeQueriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>Limits the returned queries to only those for the specified log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline DescribeQueriesRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline DescribeQueriesRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline DescribeQueriesRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    DescribeQueriesRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * Valid values are <code>Cancelled</code>, <code>Complete</code>,
      * <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
      */
-    inline const QueryStatus& GetStatus() const{ return m_status; }
+    inline QueryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const QueryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(QueryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DescribeQueriesRequest& WithStatus(const QueryStatus& value) { SetStatus(value); return *this;}
-    inline DescribeQueriesRequest& WithStatus(QueryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(QueryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeQueriesRequest& WithStatus(QueryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Limits the number of returned queries to the specified number.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeQueriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -76,14 +72,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeQueriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeQueriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeQueriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeQueriesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,28 +85,26 @@ namespace Model
      * <p>Limits the returned queries to only the queries that use the specified query
      * language.</p>
      */
-    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
     inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
-    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
-    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
-    inline DescribeQueriesRequest& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
-    inline DescribeQueriesRequest& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    inline void SetQueryLanguage(QueryLanguage value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline DescribeQueriesRequest& WithQueryLanguage(QueryLanguage value) { SetQueryLanguage(value); return *this;}
     ///@}
   private:
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    QueryStatus m_status;
+    QueryStatus m_status{QueryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    QueryLanguage m_queryLanguage;
+    QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
     bool m_queryLanguageHasBeenSet = false;
   };
 

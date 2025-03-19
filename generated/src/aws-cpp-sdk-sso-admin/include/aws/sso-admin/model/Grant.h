@@ -36,7 +36,7 @@ namespace Model
   class Grant
   {
   public:
-    AWS_SSOADMIN_API Grant();
+    AWS_SSOADMIN_API Grant() = default;
     AWS_SSOADMIN_API Grant(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Grant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>Configuration options for the <code>authorization_code</code> grant type.</p>
      */
-    inline const AuthorizationCodeGrant& GetAuthorizationCode() const{ return m_authorizationCode; }
+    inline const AuthorizationCodeGrant& GetAuthorizationCode() const { return m_authorizationCode; }
     inline bool AuthorizationCodeHasBeenSet() const { return m_authorizationCodeHasBeenSet; }
-    inline void SetAuthorizationCode(const AuthorizationCodeGrant& value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode = value; }
-    inline void SetAuthorizationCode(AuthorizationCodeGrant&& value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode = std::move(value); }
-    inline Grant& WithAuthorizationCode(const AuthorizationCodeGrant& value) { SetAuthorizationCode(value); return *this;}
-    inline Grant& WithAuthorizationCode(AuthorizationCodeGrant&& value) { SetAuthorizationCode(std::move(value)); return *this;}
+    template<typename AuthorizationCodeT = AuthorizationCodeGrant>
+    void SetAuthorizationCode(AuthorizationCodeT&& value) { m_authorizationCodeHasBeenSet = true; m_authorizationCode = std::forward<AuthorizationCodeT>(value); }
+    template<typename AuthorizationCodeT = AuthorizationCodeGrant>
+    Grant& WithAuthorizationCode(AuthorizationCodeT&& value) { SetAuthorizationCode(std::forward<AuthorizationCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * <p>Configuration options for the
      * <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> grant type.</p>
      */
-    inline const JwtBearerGrant& GetJwtBearer() const{ return m_jwtBearer; }
+    inline const JwtBearerGrant& GetJwtBearer() const { return m_jwtBearer; }
     inline bool JwtBearerHasBeenSet() const { return m_jwtBearerHasBeenSet; }
-    inline void SetJwtBearer(const JwtBearerGrant& value) { m_jwtBearerHasBeenSet = true; m_jwtBearer = value; }
-    inline void SetJwtBearer(JwtBearerGrant&& value) { m_jwtBearerHasBeenSet = true; m_jwtBearer = std::move(value); }
-    inline Grant& WithJwtBearer(const JwtBearerGrant& value) { SetJwtBearer(value); return *this;}
-    inline Grant& WithJwtBearer(JwtBearerGrant&& value) { SetJwtBearer(std::move(value)); return *this;}
+    template<typename JwtBearerT = JwtBearerGrant>
+    void SetJwtBearer(JwtBearerT&& value) { m_jwtBearerHasBeenSet = true; m_jwtBearer = std::forward<JwtBearerT>(value); }
+    template<typename JwtBearerT = JwtBearerGrant>
+    Grant& WithJwtBearer(JwtBearerT&& value) { SetJwtBearer(std::forward<JwtBearerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration options for the <code>refresh_token</code> grant type.</p>
      */
-    inline const RefreshTokenGrant& GetRefreshToken() const{ return m_refreshToken; }
+    inline const RefreshTokenGrant& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const RefreshTokenGrant& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(RefreshTokenGrant&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline Grant& WithRefreshToken(const RefreshTokenGrant& value) { SetRefreshToken(value); return *this;}
-    inline Grant& WithRefreshToken(RefreshTokenGrant&& value) { SetRefreshToken(std::move(value)); return *this;}
+    template<typename RefreshTokenT = RefreshTokenGrant>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = RefreshTokenGrant>
+    Grant& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +84,12 @@ namespace Model
      * <p>Configuration options for the
      * <code>urn:ietf:params:oauth:grant-type:token-exchange</code> grant type.</p>
      */
-    inline const TokenExchangeGrant& GetTokenExchange() const{ return m_tokenExchange; }
+    inline const TokenExchangeGrant& GetTokenExchange() const { return m_tokenExchange; }
     inline bool TokenExchangeHasBeenSet() const { return m_tokenExchangeHasBeenSet; }
-    inline void SetTokenExchange(const TokenExchangeGrant& value) { m_tokenExchangeHasBeenSet = true; m_tokenExchange = value; }
-    inline void SetTokenExchange(TokenExchangeGrant&& value) { m_tokenExchangeHasBeenSet = true; m_tokenExchange = std::move(value); }
-    inline Grant& WithTokenExchange(const TokenExchangeGrant& value) { SetTokenExchange(value); return *this;}
-    inline Grant& WithTokenExchange(TokenExchangeGrant&& value) { SetTokenExchange(std::move(value)); return *this;}
+    template<typename TokenExchangeT = TokenExchangeGrant>
+    void SetTokenExchange(TokenExchangeT&& value) { m_tokenExchangeHasBeenSet = true; m_tokenExchange = std::forward<TokenExchangeT>(value); }
+    template<typename TokenExchangeT = TokenExchangeGrant>
+    Grant& WithTokenExchange(TokenExchangeT&& value) { SetTokenExchange(std::forward<TokenExchangeT>(value)); return *this;}
     ///@}
   private:
 

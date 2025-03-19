@@ -18,16 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-CalculateRouteCarModeOptions::CalculateRouteCarModeOptions() : 
-    m_avoidFerries(false),
-    m_avoidFerriesHasBeenSet(false),
-    m_avoidTolls(false),
-    m_avoidTollsHasBeenSet(false)
-{
-}
-
 CalculateRouteCarModeOptions::CalculateRouteCarModeOptions(JsonView jsonValue)
-  : CalculateRouteCarModeOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CalculateRouteCarModeOptions& CalculateRouteCarModeOptions::operator =(JsonView 
   if(jsonValue.ValueExists("AvoidFerries"))
   {
     m_avoidFerries = jsonValue.GetBool("AvoidFerries");
-
     m_avoidFerriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvoidTolls"))
   {
     m_avoidTolls = jsonValue.GetBool("AvoidTolls");
-
     m_avoidTollsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableBucketMaintenanceConfigurationRequest::GetTableBucketMaintenanceConfigurationRequest() : 
-    m_tableBucketARNHasBeenSet(false)
-{
-}
-
 Aws::String GetTableBucketMaintenanceConfigurationRequest::SerializePayload() const
 {
   return {};

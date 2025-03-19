@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GlueConnectionPatch::GlueConnectionPatch() : 
-    m_authenticationConfigurationHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 GlueConnectionPatch::GlueConnectionPatch(JsonView jsonValue)
-  : GlueConnectionPatch()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ GlueConnectionPatch& GlueConnectionPatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authenticationConfiguration"))
   {
     m_authenticationConfiguration = jsonValue.GetObject("authenticationConfiguration");
-
     m_authenticationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionProperties"))
   {
     Aws::Map<Aws::String, JsonView> connectionPropertiesJsonMap = jsonValue.GetObject("connectionProperties").GetAllObjects();
@@ -49,14 +39,11 @@ GlueConnectionPatch& GlueConnectionPatch::operator =(JsonView jsonValue)
     }
     m_connectionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

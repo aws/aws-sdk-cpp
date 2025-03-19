@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-UnsupportedDisplayLanguageCodeException::UnsupportedDisplayLanguageCodeException() : 
-    m_messageHasBeenSet(false),
-    m_displayLanguageCodeHasBeenSet(false)
-{
-}
-
 UnsupportedDisplayLanguageCodeException::UnsupportedDisplayLanguageCodeException(JsonView jsonValue)
-  : UnsupportedDisplayLanguageCodeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnsupportedDisplayLanguageCodeException& UnsupportedDisplayLanguageCodeException
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayLanguageCode"))
   {
     m_displayLanguageCode = jsonValue.GetString("DisplayLanguageCode");
-
     m_displayLanguageCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

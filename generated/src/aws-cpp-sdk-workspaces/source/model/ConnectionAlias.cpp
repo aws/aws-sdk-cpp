@@ -18,18 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ConnectionAlias::ConnectionAlias() : 
-    m_connectionStringHasBeenSet(false),
-    m_aliasIdHasBeenSet(false),
-    m_state(ConnectionAliasState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_associationsHasBeenSet(false)
-{
-}
-
 ConnectionAlias::ConnectionAlias(JsonView jsonValue)
-  : ConnectionAlias()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ConnectionAlias& ConnectionAlias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionString"))
   {
     m_connectionString = jsonValue.GetString("ConnectionString");
-
     m_connectionStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AliasId"))
   {
     m_aliasId = jsonValue.GetString("AliasId");
-
     m_aliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ConnectionAliasStateMapper::GetConnectionAliasStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Associations"))
   {
     Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
@@ -73,7 +54,6 @@ ConnectionAlias& ConnectionAlias::operator =(JsonView jsonValue)
     }
     m_associationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExperimentRequest::StartExperimentRequest() : 
-    m_analysisCompleteTimeHasBeenSet(false),
-    m_experimentHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 Aws::String StartExperimentRequest::SerializePayload() const
 {
   JsonValue payload;

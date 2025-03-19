@@ -34,7 +34,7 @@ namespace Model
   class DescribeComplianceByResourceResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeComplianceByResourceResult();
+    AWS_CONFIGSERVICE_API DescribeComplianceByResourceResult() = default;
     AWS_CONFIGSERVICE_API DescribeComplianceByResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeComplianceByResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
      * <p>Indicates whether the specified Amazon Web Services resource complies with
      * all of the Config rules that evaluate it.</p>
      */
-    inline const Aws::Vector<ComplianceByResource>& GetComplianceByResources() const{ return m_complianceByResources; }
-    inline void SetComplianceByResources(const Aws::Vector<ComplianceByResource>& value) { m_complianceByResources = value; }
-    inline void SetComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { m_complianceByResources = std::move(value); }
-    inline DescribeComplianceByResourceResult& WithComplianceByResources(const Aws::Vector<ComplianceByResource>& value) { SetComplianceByResources(value); return *this;}
-    inline DescribeComplianceByResourceResult& WithComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { SetComplianceByResources(std::move(value)); return *this;}
-    inline DescribeComplianceByResourceResult& AddComplianceByResources(const ComplianceByResource& value) { m_complianceByResources.push_back(value); return *this; }
-    inline DescribeComplianceByResourceResult& AddComplianceByResources(ComplianceByResource&& value) { m_complianceByResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComplianceByResource>& GetComplianceByResources() const { return m_complianceByResources; }
+    template<typename ComplianceByResourcesT = Aws::Vector<ComplianceByResource>>
+    void SetComplianceByResources(ComplianceByResourcesT&& value) { m_complianceByResourcesHasBeenSet = true; m_complianceByResources = std::forward<ComplianceByResourcesT>(value); }
+    template<typename ComplianceByResourcesT = Aws::Vector<ComplianceByResource>>
+    DescribeComplianceByResourceResult& WithComplianceByResources(ComplianceByResourcesT&& value) { SetComplianceByResources(std::forward<ComplianceByResourcesT>(value)); return *this;}
+    template<typename ComplianceByResourcesT = ComplianceByResource>
+    DescribeComplianceByResourceResult& AddComplianceByResources(ComplianceByResourcesT&& value) { m_complianceByResourcesHasBeenSet = true; m_complianceByResources.emplace_back(std::forward<ComplianceByResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * <p>The string that you use in a subsequent request to get the next page of
      * results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeComplianceByResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeComplianceByResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeComplianceByResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeComplianceByResourceResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeComplianceByResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeComplianceByResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeComplianceByResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeComplianceByResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ComplianceByResource> m_complianceByResources;
+    bool m_complianceByResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

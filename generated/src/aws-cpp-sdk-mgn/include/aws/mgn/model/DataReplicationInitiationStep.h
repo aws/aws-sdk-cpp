@@ -32,7 +32,7 @@ namespace Model
   class DataReplicationInitiationStep
   {
   public:
-    AWS_MGN_API DataReplicationInitiationStep();
+    AWS_MGN_API DataReplicationInitiationStep() = default;
     AWS_MGN_API DataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API DataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>Request to query data initiation step name.</p>
      */
-    inline const DataReplicationInitiationStepName& GetName() const{ return m_name; }
+    inline DataReplicationInitiationStepName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DataReplicationInitiationStepName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DataReplicationInitiationStepName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DataReplicationInitiationStep& WithName(const DataReplicationInitiationStepName& value) { SetName(value); return *this;}
-    inline DataReplicationInitiationStep& WithName(DataReplicationInitiationStepName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DataReplicationInitiationStepName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DataReplicationInitiationStep& WithName(DataReplicationInitiationStepName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request to query data initiation status.</p>
      */
-    inline const DataReplicationInitiationStepStatus& GetStatus() const{ return m_status; }
+    inline DataReplicationInitiationStepStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataReplicationInitiationStepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataReplicationInitiationStepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataReplicationInitiationStep& WithStatus(const DataReplicationInitiationStepStatus& value) { SetStatus(value); return *this;}
-    inline DataReplicationInitiationStep& WithStatus(DataReplicationInitiationStepStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataReplicationInitiationStepStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataReplicationInitiationStep& WithStatus(DataReplicationInitiationStepStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    DataReplicationInitiationStepName m_name;
+    DataReplicationInitiationStepName m_name{DataReplicationInitiationStepName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    DataReplicationInitiationStepStatus m_status;
+    DataReplicationInitiationStepStatus m_status{DataReplicationInitiationStepStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

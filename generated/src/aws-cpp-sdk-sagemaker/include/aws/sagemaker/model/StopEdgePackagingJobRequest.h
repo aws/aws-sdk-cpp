@@ -21,7 +21,7 @@ namespace Model
   class StopEdgePackagingJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StopEdgePackagingJobRequest();
+    AWS_SAGEMAKER_API StopEdgePackagingJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the edge packaging job.</p>
      */
-    inline const Aws::String& GetEdgePackagingJobName() const{ return m_edgePackagingJobName; }
+    inline const Aws::String& GetEdgePackagingJobName() const { return m_edgePackagingJobName; }
     inline bool EdgePackagingJobNameHasBeenSet() const { return m_edgePackagingJobNameHasBeenSet; }
-    inline void SetEdgePackagingJobName(const Aws::String& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = value; }
-    inline void SetEdgePackagingJobName(Aws::String&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::move(value); }
-    inline void SetEdgePackagingJobName(const char* value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName.assign(value); }
-    inline StopEdgePackagingJobRequest& WithEdgePackagingJobName(const Aws::String& value) { SetEdgePackagingJobName(value); return *this;}
-    inline StopEdgePackagingJobRequest& WithEdgePackagingJobName(Aws::String&& value) { SetEdgePackagingJobName(std::move(value)); return *this;}
-    inline StopEdgePackagingJobRequest& WithEdgePackagingJobName(const char* value) { SetEdgePackagingJobName(value); return *this;}
+    template<typename EdgePackagingJobNameT = Aws::String>
+    void SetEdgePackagingJobName(EdgePackagingJobNameT&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::forward<EdgePackagingJobNameT>(value); }
+    template<typename EdgePackagingJobNameT = Aws::String>
+    StopEdgePackagingJobRequest& WithEdgePackagingJobName(EdgePackagingJobNameT&& value) { SetEdgePackagingJobName(std::forward<EdgePackagingJobNameT>(value)); return *this;}
     ///@}
   private:
 

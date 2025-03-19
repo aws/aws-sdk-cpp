@@ -18,17 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-Match::Match() : 
-    m_frameAddressHasBeenSet(false),
-    m_targetFramesIndex(0),
-    m_targetFramesIndexHasBeenSet(false),
-    m_thresholdBreachValue(0.0),
-    m_thresholdBreachValueHasBeenSet(false)
-{
-}
-
 Match::Match(JsonView jsonValue)
-  : Match()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Match& Match::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("frameAddress"))
   {
     m_frameAddress = jsonValue.GetString("frameAddress");
-
     m_frameAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetFramesIndex"))
   {
     m_targetFramesIndex = jsonValue.GetInteger("targetFramesIndex");
-
     m_targetFramesIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thresholdBreachValue"))
   {
     m_thresholdBreachValue = jsonValue.GetDouble("thresholdBreachValue");
-
     m_thresholdBreachValueHasBeenSet = true;
   }
-
   return *this;
 }
 

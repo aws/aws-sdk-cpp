@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FailStepMetadata::FailStepMetadata() : 
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailStepMetadata::FailStepMetadata(JsonView jsonValue)
-  : FailStepMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FailStepMetadata& FailStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

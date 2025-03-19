@@ -18,21 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-Meeting::Meeting() : 
-    m_meetingIdHasBeenSet(false),
-    m_meetingHostIdHasBeenSet(false),
-    m_externalMeetingIdHasBeenSet(false),
-    m_mediaRegionHasBeenSet(false),
-    m_mediaPlacementHasBeenSet(false),
-    m_meetingFeaturesHasBeenSet(false),
-    m_primaryMeetingIdHasBeenSet(false),
-    m_tenantIdsHasBeenSet(false),
-    m_meetingArnHasBeenSet(false)
-{
-}
-
 Meeting::Meeting(JsonView jsonValue)
-  : Meeting()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ Meeting& Meeting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MeetingId"))
   {
     m_meetingId = jsonValue.GetString("MeetingId");
-
     m_meetingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeetingHostId"))
   {
     m_meetingHostId = jsonValue.GetString("MeetingHostId");
-
     m_meetingHostIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalMeetingId"))
   {
     m_externalMeetingId = jsonValue.GetString("ExternalMeetingId");
-
     m_externalMeetingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaRegion"))
   {
     m_mediaRegion = jsonValue.GetString("MediaRegion");
-
     m_mediaRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPlacement"))
   {
     m_mediaPlacement = jsonValue.GetObject("MediaPlacement");
-
     m_mediaPlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeetingFeatures"))
   {
     m_meetingFeatures = jsonValue.GetObject("MeetingFeatures");
-
     m_meetingFeaturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryMeetingId"))
   {
     m_primaryMeetingId = jsonValue.GetString("PrimaryMeetingId");
-
     m_primaryMeetingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TenantIds"))
   {
     Aws::Utils::Array<JsonView> tenantIdsJsonList = jsonValue.GetArray("TenantIds");
@@ -97,14 +69,11 @@ Meeting& Meeting::operator =(JsonView jsonValue)
     }
     m_tenantIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeetingArn"))
   {
     m_meetingArn = jsonValue.GetString("MeetingArn");
-
     m_meetingArnHasBeenSet = true;
   }
-
   return *this;
 }
 

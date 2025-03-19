@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSnapshotsResult::DescribeSnapshotsResult()
-{
-}
-
 DescribeSnapshotsResult::DescribeSnapshotsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeSnapshotsResult& DescribeSnapshotsResult::operator =(const Aws::AmazonWe
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode snapshotsNode = resultNode.FirstChild("Snapshots");
     if(!snapshotsNode.IsNull())
     {
       XmlNode snapshotsMember = snapshotsNode.FirstChild("Snapshot");
+      m_snapshotsHasBeenSet = !snapshotsMember.IsNull();
       while(!snapshotsMember.IsNull())
       {
         m_snapshots.push_back(snapshotsMember);
         snapshotsMember = snapshotsMember.NextNode("Snapshot");
       }
 
+      m_snapshotsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeSnapshotsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

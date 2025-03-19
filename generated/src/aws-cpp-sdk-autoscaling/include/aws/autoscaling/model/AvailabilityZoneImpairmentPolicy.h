@@ -32,7 +32,7 @@ namespace Model
   class AvailabilityZoneImpairmentPolicy
   {
   public:
-    AWS_AUTOSCALING_API AvailabilityZoneImpairmentPolicy();
+    AWS_AUTOSCALING_API AvailabilityZoneImpairmentPolicy() = default;
     AWS_AUTOSCALING_API AvailabilityZoneImpairmentPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API AvailabilityZoneImpairmentPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p> If <code>true</code>, enable zonal shift for your Auto Scaling group. </p>
      */
-    inline bool GetZonalShiftEnabled() const{ return m_zonalShiftEnabled; }
+    inline bool GetZonalShiftEnabled() const { return m_zonalShiftEnabled; }
     inline bool ZonalShiftEnabledHasBeenSet() const { return m_zonalShiftEnabledHasBeenSet; }
     inline void SetZonalShiftEnabled(bool value) { m_zonalShiftEnabledHasBeenSet = true; m_zonalShiftEnabled = value; }
     inline AvailabilityZoneImpairmentPolicy& WithZonalShiftEnabled(bool value) { SetZonalShiftEnabled(value); return *this;}
@@ -61,19 +61,17 @@ namespace Model
      * Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
-    inline const ImpairedZoneHealthCheckBehavior& GetImpairedZoneHealthCheckBehavior() const{ return m_impairedZoneHealthCheckBehavior; }
+    inline ImpairedZoneHealthCheckBehavior GetImpairedZoneHealthCheckBehavior() const { return m_impairedZoneHealthCheckBehavior; }
     inline bool ImpairedZoneHealthCheckBehaviorHasBeenSet() const { return m_impairedZoneHealthCheckBehaviorHasBeenSet; }
-    inline void SetImpairedZoneHealthCheckBehavior(const ImpairedZoneHealthCheckBehavior& value) { m_impairedZoneHealthCheckBehaviorHasBeenSet = true; m_impairedZoneHealthCheckBehavior = value; }
-    inline void SetImpairedZoneHealthCheckBehavior(ImpairedZoneHealthCheckBehavior&& value) { m_impairedZoneHealthCheckBehaviorHasBeenSet = true; m_impairedZoneHealthCheckBehavior = std::move(value); }
-    inline AvailabilityZoneImpairmentPolicy& WithImpairedZoneHealthCheckBehavior(const ImpairedZoneHealthCheckBehavior& value) { SetImpairedZoneHealthCheckBehavior(value); return *this;}
-    inline AvailabilityZoneImpairmentPolicy& WithImpairedZoneHealthCheckBehavior(ImpairedZoneHealthCheckBehavior&& value) { SetImpairedZoneHealthCheckBehavior(std::move(value)); return *this;}
+    inline void SetImpairedZoneHealthCheckBehavior(ImpairedZoneHealthCheckBehavior value) { m_impairedZoneHealthCheckBehaviorHasBeenSet = true; m_impairedZoneHealthCheckBehavior = value; }
+    inline AvailabilityZoneImpairmentPolicy& WithImpairedZoneHealthCheckBehavior(ImpairedZoneHealthCheckBehavior value) { SetImpairedZoneHealthCheckBehavior(value); return *this;}
     ///@}
   private:
 
-    bool m_zonalShiftEnabled;
+    bool m_zonalShiftEnabled{false};
     bool m_zonalShiftEnabledHasBeenSet = false;
 
-    ImpairedZoneHealthCheckBehavior m_impairedZoneHealthCheckBehavior;
+    ImpairedZoneHealthCheckBehavior m_impairedZoneHealthCheckBehavior{ImpairedZoneHealthCheckBehavior::NOT_SET};
     bool m_impairedZoneHealthCheckBehaviorHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHsmConfigurationsResult::DescribeHsmConfigurationsResult()
-{
-}
-
 DescribeHsmConfigurationsResult::DescribeHsmConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeHsmConfigurationsResult& DescribeHsmConfigurationsResult::operator =(con
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode hsmConfigurationsNode = resultNode.FirstChild("HsmConfigurations");
     if(!hsmConfigurationsNode.IsNull())
     {
       XmlNode hsmConfigurationsMember = hsmConfigurationsNode.FirstChild("HsmConfiguration");
+      m_hsmConfigurationsHasBeenSet = !hsmConfigurationsMember.IsNull();
       while(!hsmConfigurationsMember.IsNull())
       {
         m_hsmConfigurations.push_back(hsmConfigurationsMember);
         hsmConfigurationsMember = hsmConfigurationsMember.NextNode("HsmConfiguration");
       }
 
+      m_hsmConfigurationsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeHsmConfigurationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

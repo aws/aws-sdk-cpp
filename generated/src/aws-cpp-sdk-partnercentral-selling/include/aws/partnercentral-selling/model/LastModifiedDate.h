@@ -33,7 +33,7 @@ namespace Model
   class LastModifiedDate
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API LastModifiedDate();
+    AWS_PARTNERCENTRALSELLING_API LastModifiedDate() = default;
     AWS_PARTNERCENTRALSELLING_API LastModifiedDate(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API LastModifiedDate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * filter to retrieve only those opportunities that were modified after a given
      * timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetAfterLastModifiedDate() const{ return m_afterLastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetAfterLastModifiedDate() const { return m_afterLastModifiedDate; }
     inline bool AfterLastModifiedDateHasBeenSet() const { return m_afterLastModifiedDateHasBeenSet; }
-    inline void SetAfterLastModifiedDate(const Aws::Utils::DateTime& value) { m_afterLastModifiedDateHasBeenSet = true; m_afterLastModifiedDate = value; }
-    inline void SetAfterLastModifiedDate(Aws::Utils::DateTime&& value) { m_afterLastModifiedDateHasBeenSet = true; m_afterLastModifiedDate = std::move(value); }
-    inline LastModifiedDate& WithAfterLastModifiedDate(const Aws::Utils::DateTime& value) { SetAfterLastModifiedDate(value); return *this;}
-    inline LastModifiedDate& WithAfterLastModifiedDate(Aws::Utils::DateTime&& value) { SetAfterLastModifiedDate(std::move(value)); return *this;}
+    template<typename AfterLastModifiedDateT = Aws::Utils::DateTime>
+    void SetAfterLastModifiedDate(AfterLastModifiedDateT&& value) { m_afterLastModifiedDateHasBeenSet = true; m_afterLastModifiedDate = std::forward<AfterLastModifiedDateT>(value); }
+    template<typename AfterLastModifiedDateT = Aws::Utils::DateTime>
+    LastModifiedDate& WithAfterLastModifiedDate(AfterLastModifiedDateT&& value) { SetAfterLastModifiedDate(std::forward<AfterLastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +59,19 @@ namespace Model
      * filter to retrieve only those opportunities that were modified before a given
      * timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetBeforeLastModifiedDate() const{ return m_beforeLastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetBeforeLastModifiedDate() const { return m_beforeLastModifiedDate; }
     inline bool BeforeLastModifiedDateHasBeenSet() const { return m_beforeLastModifiedDateHasBeenSet; }
-    inline void SetBeforeLastModifiedDate(const Aws::Utils::DateTime& value) { m_beforeLastModifiedDateHasBeenSet = true; m_beforeLastModifiedDate = value; }
-    inline void SetBeforeLastModifiedDate(Aws::Utils::DateTime&& value) { m_beforeLastModifiedDateHasBeenSet = true; m_beforeLastModifiedDate = std::move(value); }
-    inline LastModifiedDate& WithBeforeLastModifiedDate(const Aws::Utils::DateTime& value) { SetBeforeLastModifiedDate(value); return *this;}
-    inline LastModifiedDate& WithBeforeLastModifiedDate(Aws::Utils::DateTime&& value) { SetBeforeLastModifiedDate(std::move(value)); return *this;}
+    template<typename BeforeLastModifiedDateT = Aws::Utils::DateTime>
+    void SetBeforeLastModifiedDate(BeforeLastModifiedDateT&& value) { m_beforeLastModifiedDateHasBeenSet = true; m_beforeLastModifiedDate = std::forward<BeforeLastModifiedDateT>(value); }
+    template<typename BeforeLastModifiedDateT = Aws::Utils::DateTime>
+    LastModifiedDate& WithBeforeLastModifiedDate(BeforeLastModifiedDateT&& value) { SetBeforeLastModifiedDate(std::forward<BeforeLastModifiedDateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_afterLastModifiedDate;
+    Aws::Utils::DateTime m_afterLastModifiedDate{};
     bool m_afterLastModifiedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_beforeLastModifiedDate;
+    Aws::Utils::DateTime m_beforeLastModifiedDate{};
     bool m_beforeLastModifiedDateHasBeenSet = false;
   };
 

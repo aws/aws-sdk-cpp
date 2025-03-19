@@ -12,21 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUnfilteredTableMetadataRequest::GetUnfilteredTableMetadataRequest() : 
-    m_regionHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_auditContextHasBeenSet(false),
-    m_supportedPermissionTypesHasBeenSet(false),
-    m_parentResourceArnHasBeenSet(false),
-    m_rootResourceArnHasBeenSet(false),
-    m_supportedDialectHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_querySessionContextHasBeenSet(false)
-{
-}
-
 Aws::String GetUnfilteredTableMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

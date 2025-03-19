@@ -28,7 +28,7 @@ namespace Model
   class UpdateThemeResult
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API UpdateThemeResult();
+    AWS_AMPLIFYUIBUILDER_API UpdateThemeResult() = default;
     AWS_AMPLIFYUIBUILDER_API UpdateThemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYUIBUILDER_API UpdateThemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Describes the configuration of the updated theme.</p>
      */
-    inline const Theme& GetEntity() const{ return m_entity; }
-    inline void SetEntity(const Theme& value) { m_entity = value; }
-    inline void SetEntity(Theme&& value) { m_entity = std::move(value); }
-    inline UpdateThemeResult& WithEntity(const Theme& value) { SetEntity(value); return *this;}
-    inline UpdateThemeResult& WithEntity(Theme&& value) { SetEntity(std::move(value)); return *this;}
+    inline const Theme& GetEntity() const { return m_entity; }
+    template<typename EntityT = Theme>
+    void SetEntity(EntityT&& value) { m_entityHasBeenSet = true; m_entity = std::forward<EntityT>(value); }
+    template<typename EntityT = Theme>
+    UpdateThemeResult& WithEntity(EntityT&& value) { SetEntity(std::forward<EntityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateThemeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateThemeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateThemeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateThemeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Theme m_entity;
+    bool m_entityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

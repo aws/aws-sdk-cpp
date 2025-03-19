@@ -18,15 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-KmsEncryptionConfig::KmsEncryptionConfig() : 
-    m_cmkType(CmkType::NOT_SET),
-    m_cmkTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 KmsEncryptionConfig::KmsEncryptionConfig(JsonView jsonValue)
-  : KmsEncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KmsEncryptionConfig& KmsEncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CmkType"))
   {
     m_cmkType = CmkTypeMapper::GetCmkTypeForName(jsonValue.GetString("CmkType"));
-
     m_cmkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

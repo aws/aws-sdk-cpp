@@ -20,41 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientVpnEndpoint::ClientVpnEndpoint() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_clientCidrBlockHasBeenSet(false),
-    m_dnsServersHasBeenSet(false),
-    m_splitTunnel(false),
-    m_splitTunnelHasBeenSet(false),
-    m_vpnProtocol(VpnProtocol::NOT_SET),
-    m_vpnProtocolHasBeenSet(false),
-    m_transportProtocol(TransportProtocol::NOT_SET),
-    m_transportProtocolHasBeenSet(false),
-    m_vpnPort(0),
-    m_vpnPortHasBeenSet(false),
-    m_serverCertificateArnHasBeenSet(false),
-    m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false),
-    m_sessionTimeoutHours(0),
-    m_sessionTimeoutHoursHasBeenSet(false),
-    m_clientLoginBannerOptionsHasBeenSet(false),
-    m_disconnectOnSessionTimeout(false),
-    m_disconnectOnSessionTimeoutHasBeenSet(false)
-{
-}
-
 ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode)
-  : ClientVpnEndpoint()
 {
   *this = xmlNode;
 }
@@ -111,6 +77,7 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     if(!dnsServersNode.IsNull())
     {
       XmlNode dnsServersMember = dnsServersNode.FirstChild("item");
+      m_dnsServersHasBeenSet = !dnsServersMember.IsNull();
       while(!dnsServersMember.IsNull())
       {
         m_dnsServers.push_back(dnsServersMember.GetText());
@@ -128,13 +95,13 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     XmlNode vpnProtocolNode = resultNode.FirstChild("vpnProtocol");
     if(!vpnProtocolNode.IsNull())
     {
-      m_vpnProtocol = VpnProtocolMapper::GetVpnProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnProtocolNode.GetText()).c_str()).c_str());
+      m_vpnProtocol = VpnProtocolMapper::GetVpnProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnProtocolNode.GetText()).c_str()));
       m_vpnProtocolHasBeenSet = true;
     }
     XmlNode transportProtocolNode = resultNode.FirstChild("transportProtocol");
     if(!transportProtocolNode.IsNull())
     {
-      m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transportProtocolNode.GetText()).c_str()).c_str());
+      m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transportProtocolNode.GetText()).c_str()));
       m_transportProtocolHasBeenSet = true;
     }
     XmlNode vpnPortNode = resultNode.FirstChild("vpnPort");
@@ -153,6 +120,7 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     if(!authenticationOptionsNode.IsNull())
     {
       XmlNode authenticationOptionsMember = authenticationOptionsNode.FirstChild("item");
+      m_authenticationOptionsHasBeenSet = !authenticationOptionsMember.IsNull();
       while(!authenticationOptionsMember.IsNull())
       {
         m_authenticationOptions.push_back(authenticationOptionsMember);
@@ -171,6 +139,7 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -183,6 +152,7 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());

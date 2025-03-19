@@ -30,7 +30,7 @@ namespace Model
   class InsightsConfiguration
   {
   public:
-    AWS_XRAY_API InsightsConfiguration();
+    AWS_XRAY_API InsightsConfiguration() = default;
     AWS_XRAY_API InsightsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API InsightsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Set the InsightsEnabled value to true to enable insights or false to disable
      * insights.</p>
      */
-    inline bool GetInsightsEnabled() const{ return m_insightsEnabled; }
+    inline bool GetInsightsEnabled() const { return m_insightsEnabled; }
     inline bool InsightsEnabledHasBeenSet() const { return m_insightsEnabledHasBeenSet; }
     inline void SetInsightsEnabled(bool value) { m_insightsEnabledHasBeenSet = true; m_insightsEnabled = value; }
     inline InsightsConfiguration& WithInsightsEnabled(bool value) { SetInsightsEnabled(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * Notifications can only be enabled on a group with InsightsEnabled set to
      * true.</p>
      */
-    inline bool GetNotificationsEnabled() const{ return m_notificationsEnabled; }
+    inline bool GetNotificationsEnabled() const { return m_notificationsEnabled; }
     inline bool NotificationsEnabledHasBeenSet() const { return m_notificationsEnabledHasBeenSet; }
     inline void SetNotificationsEnabled(bool value) { m_notificationsEnabledHasBeenSet = true; m_notificationsEnabled = value; }
     inline InsightsConfiguration& WithNotificationsEnabled(bool value) { SetNotificationsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_insightsEnabled;
+    bool m_insightsEnabled{false};
     bool m_insightsEnabledHasBeenSet = false;
 
-    bool m_notificationsEnabled;
+    bool m_notificationsEnabled{false};
     bool m_notificationsEnabledHasBeenSet = false;
   };
 

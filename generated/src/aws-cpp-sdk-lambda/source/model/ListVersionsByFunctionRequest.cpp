@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVersionsByFunctionRequest::ListVersionsByFunctionRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListVersionsByFunctionRequest::SerializePayload() const
 {
   return {};

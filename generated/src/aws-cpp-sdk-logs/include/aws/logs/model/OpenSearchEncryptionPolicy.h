@@ -37,7 +37,7 @@ namespace Model
   class OpenSearchEncryptionPolicy
   {
   public:
-    AWS_CLOUDWATCHLOGS_API OpenSearchEncryptionPolicy();
+    AWS_CLOUDWATCHLOGS_API OpenSearchEncryptionPolicy() = default;
     AWS_CLOUDWATCHLOGS_API OpenSearchEncryptionPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API OpenSearchEncryptionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the encryption policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline OpenSearchEncryptionPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline OpenSearchEncryptionPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline OpenSearchEncryptionPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    OpenSearchEncryptionPolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * <p>This structure contains information about the status of this OpenSearch
      * Service resource.</p>
      */
-    inline const OpenSearchResourceStatus& GetStatus() const{ return m_status; }
+    inline const OpenSearchResourceStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OpenSearchResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OpenSearchResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OpenSearchEncryptionPolicy& WithStatus(const OpenSearchResourceStatus& value) { SetStatus(value); return *this;}
-    inline OpenSearchEncryptionPolicy& WithStatus(OpenSearchResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OpenSearchResourceStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OpenSearchResourceStatus>
+    OpenSearchEncryptionPolicy& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

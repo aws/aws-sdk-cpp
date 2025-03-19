@@ -18,19 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ImportReferenceJobItem::ImportReferenceJobItem() : 
-    m_idHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(ReferenceImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false)
-{
-}
-
 ImportReferenceJobItem::ImportReferenceJobItem(JsonView jsonValue)
-  : ImportReferenceJobItem()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ImportReferenceJobItem& ImportReferenceJobItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceStoreId"))
   {
     m_referenceStoreId = jsonValue.GetString("referenceStoreId");
-
     m_referenceStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReferenceImportJobStatusMapper::GetReferenceImportJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetString("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

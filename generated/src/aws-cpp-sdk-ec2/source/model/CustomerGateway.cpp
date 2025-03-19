@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CustomerGateway::CustomerGateway() : 
-    m_certificateArnHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_bgpAsnExtendedHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false)
-{
-}
-
 CustomerGateway::CustomerGateway(const XmlNode& xmlNode)
-  : CustomerGateway()
 {
   *this = xmlNode;
 }
@@ -61,6 +47,7 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

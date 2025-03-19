@@ -18,15 +18,7 @@ namespace SFN
 namespace Model
 {
 
-MapIterationEventDetails::MapIterationEventDetails() : 
-    m_nameHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
-{
-}
-
 MapIterationEventDetails::MapIterationEventDetails(JsonView jsonValue)
-  : MapIterationEventDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MapIterationEventDetails& MapIterationEventDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetInteger("index");
-
     m_indexHasBeenSet = true;
   }
-
   return *this;
 }
 

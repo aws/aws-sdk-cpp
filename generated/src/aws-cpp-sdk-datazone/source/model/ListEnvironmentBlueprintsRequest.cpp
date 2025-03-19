@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEnvironmentBlueprintsRequest::ListEnvironmentBlueprintsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_managed(false),
-    m_managedHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListEnvironmentBlueprintsRequest::SerializePayload() const
 {
   return {};

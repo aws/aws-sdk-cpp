@@ -28,7 +28,7 @@ namespace Model
   class GetLensResult
   {
   public:
-    AWS_WELLARCHITECTED_API GetLensResult();
+    AWS_WELLARCHITECTED_API GetLensResult() = default;
     AWS_WELLARCHITECTED_API GetLensResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API GetLensResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A lens return object.</p>
      */
-    inline const Lens& GetLens() const{ return m_lens; }
-    inline void SetLens(const Lens& value) { m_lens = value; }
-    inline void SetLens(Lens&& value) { m_lens = std::move(value); }
-    inline GetLensResult& WithLens(const Lens& value) { SetLens(value); return *this;}
-    inline GetLensResult& WithLens(Lens&& value) { SetLens(std::move(value)); return *this;}
+    inline const Lens& GetLens() const { return m_lens; }
+    template<typename LensT = Lens>
+    void SetLens(LensT&& value) { m_lensHasBeenSet = true; m_lens = std::forward<LensT>(value); }
+    template<typename LensT = Lens>
+    GetLensResult& WithLens(LensT&& value) { SetLens(std::forward<LensT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLensResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLensResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLensResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLensResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Lens m_lens;
+    bool m_lensHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-TumblingWindow::TumblingWindow() : 
-    m_intervalHasBeenSet(false),
-    m_offsetHasBeenSet(false)
-{
-}
-
 TumblingWindow::TumblingWindow(JsonView jsonValue)
-  : TumblingWindow()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TumblingWindow& TumblingWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interval"))
   {
     m_interval = jsonValue.GetString("interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetString("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   return *this;
 }
 

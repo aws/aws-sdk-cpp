@@ -12,15 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRoomMembershipRequest::CreateRoomMembershipRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_roomIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_role(RoomMembershipRole::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 Aws::String CreateRoomMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

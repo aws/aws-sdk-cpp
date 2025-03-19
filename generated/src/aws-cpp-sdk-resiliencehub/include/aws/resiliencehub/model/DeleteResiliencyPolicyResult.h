@@ -27,7 +27,7 @@ namespace Model
   class DeleteResiliencyPolicyResult
   {
   public:
-    AWS_RESILIENCEHUB_API DeleteResiliencyPolicyResult();
+    AWS_RESILIENCEHUB_API DeleteResiliencyPolicyResult() = default;
     AWS_RESILIENCEHUB_API DeleteResiliencyPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DeleteResiliencyPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
-    inline DeleteResiliencyPolicyResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline DeleteResiliencyPolicyResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline DeleteResiliencyPolicyResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    DeleteResiliencyPolicyResult& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteResiliencyPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteResiliencyPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteResiliencyPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteResiliencyPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

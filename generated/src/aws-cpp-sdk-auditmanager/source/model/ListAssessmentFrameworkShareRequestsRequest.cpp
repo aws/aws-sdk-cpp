@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssessmentFrameworkShareRequestsRequest::ListAssessmentFrameworkShareRequestsRequest() : 
-    m_requestType(ShareRequestType::NOT_SET),
-    m_requestTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssessmentFrameworkShareRequestsRequest::SerializePayload() const
 {
   return {};

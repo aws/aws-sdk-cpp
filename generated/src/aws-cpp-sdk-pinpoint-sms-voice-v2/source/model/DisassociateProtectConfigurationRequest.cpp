@@ -12,12 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateProtectConfigurationRequest::DisassociateProtectConfigurationRequest() : 
-    m_protectConfigurationIdHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateProtectConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

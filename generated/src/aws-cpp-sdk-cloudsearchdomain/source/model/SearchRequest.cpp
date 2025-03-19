@@ -15,28 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchRequest::SearchRequest() : 
-    m_cursorHasBeenSet(false),
-    m_exprHasBeenSet(false),
-    m_facetHasBeenSet(false),
-    m_filterQueryHasBeenSet(false),
-    m_highlightHasBeenSet(false),
-    m_partial(false),
-    m_partialHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_queryOptionsHasBeenSet(false),
-    m_queryParser(QueryParser::NOT_SET),
-    m_queryParserHasBeenSet(false),
-    m_returnHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_statsHasBeenSet(false)
-{
-}
-
 Aws::String SearchRequest::SerializePayload() const
 {
   return {};

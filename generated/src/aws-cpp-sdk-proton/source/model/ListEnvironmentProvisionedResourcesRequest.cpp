@@ -12,12 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEnvironmentProvisionedResourcesRequest::ListEnvironmentProvisionedResourcesRequest() : 
-    m_environmentNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListEnvironmentProvisionedResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ParentBotNetwork::ParentBotNetwork() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false)
-{
-}
-
 ParentBotNetwork::ParentBotNetwork(JsonView jsonValue)
-  : ParentBotNetwork()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParentBotNetwork& ParentBotNetwork::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
     m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

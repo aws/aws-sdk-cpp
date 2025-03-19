@@ -30,7 +30,7 @@ namespace Model
   class DescribeEndpointAccessResult
   {
   public:
-    AWS_REDSHIFT_API DescribeEndpointAccessResult();
+    AWS_REDSHIFT_API DescribeEndpointAccessResult() = default;
     AWS_REDSHIFT_API DescribeEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The list of endpoints with access to the cluster.</p>
      */
-    inline const Aws::Vector<EndpointAccess>& GetEndpointAccessList() const{ return m_endpointAccessList; }
-    inline void SetEndpointAccessList(const Aws::Vector<EndpointAccess>& value) { m_endpointAccessList = value; }
-    inline void SetEndpointAccessList(Aws::Vector<EndpointAccess>&& value) { m_endpointAccessList = std::move(value); }
-    inline DescribeEndpointAccessResult& WithEndpointAccessList(const Aws::Vector<EndpointAccess>& value) { SetEndpointAccessList(value); return *this;}
-    inline DescribeEndpointAccessResult& WithEndpointAccessList(Aws::Vector<EndpointAccess>&& value) { SetEndpointAccessList(std::move(value)); return *this;}
-    inline DescribeEndpointAccessResult& AddEndpointAccessList(const EndpointAccess& value) { m_endpointAccessList.push_back(value); return *this; }
-    inline DescribeEndpointAccessResult& AddEndpointAccessList(EndpointAccess&& value) { m_endpointAccessList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EndpointAccess>& GetEndpointAccessList() const { return m_endpointAccessList; }
+    template<typename EndpointAccessListT = Aws::Vector<EndpointAccess>>
+    void SetEndpointAccessList(EndpointAccessListT&& value) { m_endpointAccessListHasBeenSet = true; m_endpointAccessList = std::forward<EndpointAccessListT>(value); }
+    template<typename EndpointAccessListT = Aws::Vector<EndpointAccess>>
+    DescribeEndpointAccessResult& WithEndpointAccessList(EndpointAccessListT&& value) { SetEndpointAccessList(std::forward<EndpointAccessListT>(value)); return *this;}
+    template<typename EndpointAccessListT = EndpointAccess>
+    DescribeEndpointAccessResult& AddEndpointAccessList(EndpointAccessListT&& value) { m_endpointAccessListHasBeenSet = true; m_endpointAccessList.emplace_back(std::forward<EndpointAccessListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * the <code>MaxRecords</code> parameter.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeEndpointAccessResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeEndpointAccessResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeEndpointAccessResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeEndpointAccessResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeEndpointAccessResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeEndpointAccessResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeEndpointAccessResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EndpointAccess> m_endpointAccessList;
+    bool m_endpointAccessListHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

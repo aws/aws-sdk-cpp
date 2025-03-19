@@ -36,7 +36,7 @@ namespace Model
   class ComponentSummary
   {
   public:
-    AWS_IMAGEBUILDER_API ComponentSummary();
+    AWS_IMAGEBUILDER_API ComponentSummary() = default;
     AWS_IMAGEBUILDER_API ComponentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,54 +46,46 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the component.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ComponentSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ComponentSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ComponentSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ComponentSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ComponentSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ComponentSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ComponentSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ComponentSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the component.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ComponentSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ComponentSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ComponentSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ComponentSummary& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system platform of the component.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
+    inline Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline ComponentSummary& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline ComponentSummary& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline ComponentSummary& WithPlatform(Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -102,27 +94,26 @@ namespace Model
      * information is available, Image Builder performs a prefix match against the base
      * image OS version during image recipe creation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
+    inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const { return m_supportedOsVersions; }
     inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
-    inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
-    inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
-    inline ComponentSummary& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
-    inline ComponentSummary& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
-    inline ComponentSummary& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
-    inline ComponentSummary& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
-    inline ComponentSummary& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+    template<typename SupportedOsVersionsT = Aws::Vector<Aws::String>>
+    void SetSupportedOsVersions(SupportedOsVersionsT&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::forward<SupportedOsVersionsT>(value); }
+    template<typename SupportedOsVersionsT = Aws::Vector<Aws::String>>
+    ComponentSummary& WithSupportedOsVersions(SupportedOsVersionsT&& value) { SetSupportedOsVersions(std::forward<SupportedOsVersionsT>(value)); return *this;}
+    template<typename SupportedOsVersionsT = Aws::String>
+    ComponentSummary& AddSupportedOsVersions(SupportedOsVersionsT&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.emplace_back(std::forward<SupportedOsVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Describes the current status of the component.</p>
      */
-    inline const ComponentState& GetState() const{ return m_state; }
+    inline const ComponentState& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ComponentState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ComponentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ComponentSummary& WithState(const ComponentState& value) { SetState(value); return *this;}
-    inline ComponentSummary& WithState(ComponentState&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = ComponentState>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = ComponentState>
+    ComponentSummary& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,87 +121,74 @@ namespace Model
      * <p>The component type specifies whether Image Builder uses the component to
      * build the image or only to test it.</p>
      */
-    inline const ComponentType& GetType() const{ return m_type; }
+    inline ComponentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ComponentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ComponentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ComponentSummary& WithType(const ComponentType& value) { SetType(value); return *this;}
-    inline ComponentSummary& WithType(ComponentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ComponentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ComponentSummary& WithType(ComponentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the component.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline ComponentSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline ComponentSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline ComponentSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    ComponentSummary& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the component.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ComponentSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ComponentSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ComponentSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ComponentSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The change description for the current version of the component.</p>
      */
-    inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
+    inline const Aws::String& GetChangeDescription() const { return m_changeDescription; }
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
-    inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
-    inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
-    inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
-    inline ComponentSummary& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
-    inline ComponentSummary& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
-    inline ComponentSummary& WithChangeDescription(const char* value) { SetChangeDescription(value); return *this;}
+    template<typename ChangeDescriptionT = Aws::String>
+    void SetChangeDescription(ChangeDescriptionT&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::forward<ChangeDescriptionT>(value); }
+    template<typename ChangeDescriptionT = Aws::String>
+    ComponentSummary& WithChangeDescription(ChangeDescriptionT&& value) { SetChangeDescription(std::forward<ChangeDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The original creation date of the component.</p>
      */
-    inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
-    inline ComponentSummary& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
-    inline ComponentSummary& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
-    inline ComponentSummary& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
+    template<typename DateCreatedT = Aws::String>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::String>
+    ComponentSummary& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags that apply to the component.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ComponentSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ComponentSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ComponentSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ComponentSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ComponentSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ComponentSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ComponentSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ComponentSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ComponentSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ComponentSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -218,14 +196,12 @@ namespace Model
      * <p>Contains the name of the publisher if this is a third-party component.
      * Otherwise, this property is empty.</p>
      */
-    inline const Aws::String& GetPublisher() const{ return m_publisher; }
+    inline const Aws::String& GetPublisher() const { return m_publisher; }
     inline bool PublisherHasBeenSet() const { return m_publisherHasBeenSet; }
-    inline void SetPublisher(const Aws::String& value) { m_publisherHasBeenSet = true; m_publisher = value; }
-    inline void SetPublisher(Aws::String&& value) { m_publisherHasBeenSet = true; m_publisher = std::move(value); }
-    inline void SetPublisher(const char* value) { m_publisherHasBeenSet = true; m_publisher.assign(value); }
-    inline ComponentSummary& WithPublisher(const Aws::String& value) { SetPublisher(value); return *this;}
-    inline ComponentSummary& WithPublisher(Aws::String&& value) { SetPublisher(std::move(value)); return *this;}
-    inline ComponentSummary& WithPublisher(const char* value) { SetPublisher(value); return *this;}
+    template<typename PublisherT = Aws::String>
+    void SetPublisher(PublisherT&& value) { m_publisherHasBeenSet = true; m_publisher = std::forward<PublisherT>(value); }
+    template<typename PublisherT = Aws::String>
+    ComponentSummary& WithPublisher(PublisherT&& value) { SetPublisher(std::forward<PublisherT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,7 +209,7 @@ namespace Model
      * <p>Indicates whether component source is hidden from view in the console, and
      * from component detail results for API, CLI, or SDK operations.</p>
      */
-    inline bool GetObfuscate() const{ return m_obfuscate; }
+    inline bool GetObfuscate() const { return m_obfuscate; }
     inline bool ObfuscateHasBeenSet() const { return m_obfuscateHasBeenSet; }
     inline void SetObfuscate(bool value) { m_obfuscateHasBeenSet = true; m_obfuscate = value; }
     inline ComponentSummary& WithObfuscate(bool value) { SetObfuscate(value); return *this;}
@@ -249,7 +225,7 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    Platform m_platform;
+    Platform m_platform{Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedOsVersions;
@@ -258,7 +234,7 @@ namespace Model
     ComponentState m_state;
     bool m_stateHasBeenSet = false;
 
-    ComponentType m_type;
+    ComponentType m_type{ComponentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_owner;
@@ -279,7 +255,7 @@ namespace Model
     Aws::String m_publisher;
     bool m_publisherHasBeenSet = false;
 
-    bool m_obfuscate;
+    bool m_obfuscate{false};
     bool m_obfuscateHasBeenSet = false;
   };
 

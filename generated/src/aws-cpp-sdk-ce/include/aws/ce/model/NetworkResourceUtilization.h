@@ -32,7 +32,7 @@ namespace Model
   class NetworkResourceUtilization
   {
   public:
-    AWS_COSTEXPLORER_API NetworkResourceUtilization();
+    AWS_COSTEXPLORER_API NetworkResourceUtilization() = default;
     AWS_COSTEXPLORER_API NetworkResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API NetworkResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The network inbound throughput utilization measured in Bytes per second
      * (Bps). </p>
      */
-    inline const Aws::String& GetNetworkInBytesPerSecond() const{ return m_networkInBytesPerSecond; }
+    inline const Aws::String& GetNetworkInBytesPerSecond() const { return m_networkInBytesPerSecond; }
     inline bool NetworkInBytesPerSecondHasBeenSet() const { return m_networkInBytesPerSecondHasBeenSet; }
-    inline void SetNetworkInBytesPerSecond(const Aws::String& value) { m_networkInBytesPerSecondHasBeenSet = true; m_networkInBytesPerSecond = value; }
-    inline void SetNetworkInBytesPerSecond(Aws::String&& value) { m_networkInBytesPerSecondHasBeenSet = true; m_networkInBytesPerSecond = std::move(value); }
-    inline void SetNetworkInBytesPerSecond(const char* value) { m_networkInBytesPerSecondHasBeenSet = true; m_networkInBytesPerSecond.assign(value); }
-    inline NetworkResourceUtilization& WithNetworkInBytesPerSecond(const Aws::String& value) { SetNetworkInBytesPerSecond(value); return *this;}
-    inline NetworkResourceUtilization& WithNetworkInBytesPerSecond(Aws::String&& value) { SetNetworkInBytesPerSecond(std::move(value)); return *this;}
-    inline NetworkResourceUtilization& WithNetworkInBytesPerSecond(const char* value) { SetNetworkInBytesPerSecond(value); return *this;}
+    template<typename NetworkInBytesPerSecondT = Aws::String>
+    void SetNetworkInBytesPerSecond(NetworkInBytesPerSecondT&& value) { m_networkInBytesPerSecondHasBeenSet = true; m_networkInBytesPerSecond = std::forward<NetworkInBytesPerSecondT>(value); }
+    template<typename NetworkInBytesPerSecondT = Aws::String>
+    NetworkResourceUtilization& WithNetworkInBytesPerSecond(NetworkInBytesPerSecondT&& value) { SetNetworkInBytesPerSecond(std::forward<NetworkInBytesPerSecondT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,42 +56,36 @@ namespace Model
      * <p>The network outbound throughput utilization measured in Bytes per second
      * (Bps). </p>
      */
-    inline const Aws::String& GetNetworkOutBytesPerSecond() const{ return m_networkOutBytesPerSecond; }
+    inline const Aws::String& GetNetworkOutBytesPerSecond() const { return m_networkOutBytesPerSecond; }
     inline bool NetworkOutBytesPerSecondHasBeenSet() const { return m_networkOutBytesPerSecondHasBeenSet; }
-    inline void SetNetworkOutBytesPerSecond(const Aws::String& value) { m_networkOutBytesPerSecondHasBeenSet = true; m_networkOutBytesPerSecond = value; }
-    inline void SetNetworkOutBytesPerSecond(Aws::String&& value) { m_networkOutBytesPerSecondHasBeenSet = true; m_networkOutBytesPerSecond = std::move(value); }
-    inline void SetNetworkOutBytesPerSecond(const char* value) { m_networkOutBytesPerSecondHasBeenSet = true; m_networkOutBytesPerSecond.assign(value); }
-    inline NetworkResourceUtilization& WithNetworkOutBytesPerSecond(const Aws::String& value) { SetNetworkOutBytesPerSecond(value); return *this;}
-    inline NetworkResourceUtilization& WithNetworkOutBytesPerSecond(Aws::String&& value) { SetNetworkOutBytesPerSecond(std::move(value)); return *this;}
-    inline NetworkResourceUtilization& WithNetworkOutBytesPerSecond(const char* value) { SetNetworkOutBytesPerSecond(value); return *this;}
+    template<typename NetworkOutBytesPerSecondT = Aws::String>
+    void SetNetworkOutBytesPerSecond(NetworkOutBytesPerSecondT&& value) { m_networkOutBytesPerSecondHasBeenSet = true; m_networkOutBytesPerSecond = std::forward<NetworkOutBytesPerSecondT>(value); }
+    template<typename NetworkOutBytesPerSecondT = Aws::String>
+    NetworkResourceUtilization& WithNetworkOutBytesPerSecond(NetworkOutBytesPerSecondT&& value) { SetNetworkOutBytesPerSecond(std::forward<NetworkOutBytesPerSecondT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network inbound packets that are measured in packets per second. </p>
      */
-    inline const Aws::String& GetNetworkPacketsInPerSecond() const{ return m_networkPacketsInPerSecond; }
+    inline const Aws::String& GetNetworkPacketsInPerSecond() const { return m_networkPacketsInPerSecond; }
     inline bool NetworkPacketsInPerSecondHasBeenSet() const { return m_networkPacketsInPerSecondHasBeenSet; }
-    inline void SetNetworkPacketsInPerSecond(const Aws::String& value) { m_networkPacketsInPerSecondHasBeenSet = true; m_networkPacketsInPerSecond = value; }
-    inline void SetNetworkPacketsInPerSecond(Aws::String&& value) { m_networkPacketsInPerSecondHasBeenSet = true; m_networkPacketsInPerSecond = std::move(value); }
-    inline void SetNetworkPacketsInPerSecond(const char* value) { m_networkPacketsInPerSecondHasBeenSet = true; m_networkPacketsInPerSecond.assign(value); }
-    inline NetworkResourceUtilization& WithNetworkPacketsInPerSecond(const Aws::String& value) { SetNetworkPacketsInPerSecond(value); return *this;}
-    inline NetworkResourceUtilization& WithNetworkPacketsInPerSecond(Aws::String&& value) { SetNetworkPacketsInPerSecond(std::move(value)); return *this;}
-    inline NetworkResourceUtilization& WithNetworkPacketsInPerSecond(const char* value) { SetNetworkPacketsInPerSecond(value); return *this;}
+    template<typename NetworkPacketsInPerSecondT = Aws::String>
+    void SetNetworkPacketsInPerSecond(NetworkPacketsInPerSecondT&& value) { m_networkPacketsInPerSecondHasBeenSet = true; m_networkPacketsInPerSecond = std::forward<NetworkPacketsInPerSecondT>(value); }
+    template<typename NetworkPacketsInPerSecondT = Aws::String>
+    NetworkResourceUtilization& WithNetworkPacketsInPerSecond(NetworkPacketsInPerSecondT&& value) { SetNetworkPacketsInPerSecond(std::forward<NetworkPacketsInPerSecondT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network outbound packets that are measured in packets per second. </p>
      */
-    inline const Aws::String& GetNetworkPacketsOutPerSecond() const{ return m_networkPacketsOutPerSecond; }
+    inline const Aws::String& GetNetworkPacketsOutPerSecond() const { return m_networkPacketsOutPerSecond; }
     inline bool NetworkPacketsOutPerSecondHasBeenSet() const { return m_networkPacketsOutPerSecondHasBeenSet; }
-    inline void SetNetworkPacketsOutPerSecond(const Aws::String& value) { m_networkPacketsOutPerSecondHasBeenSet = true; m_networkPacketsOutPerSecond = value; }
-    inline void SetNetworkPacketsOutPerSecond(Aws::String&& value) { m_networkPacketsOutPerSecondHasBeenSet = true; m_networkPacketsOutPerSecond = std::move(value); }
-    inline void SetNetworkPacketsOutPerSecond(const char* value) { m_networkPacketsOutPerSecondHasBeenSet = true; m_networkPacketsOutPerSecond.assign(value); }
-    inline NetworkResourceUtilization& WithNetworkPacketsOutPerSecond(const Aws::String& value) { SetNetworkPacketsOutPerSecond(value); return *this;}
-    inline NetworkResourceUtilization& WithNetworkPacketsOutPerSecond(Aws::String&& value) { SetNetworkPacketsOutPerSecond(std::move(value)); return *this;}
-    inline NetworkResourceUtilization& WithNetworkPacketsOutPerSecond(const char* value) { SetNetworkPacketsOutPerSecond(value); return *this;}
+    template<typename NetworkPacketsOutPerSecondT = Aws::String>
+    void SetNetworkPacketsOutPerSecond(NetworkPacketsOutPerSecondT&& value) { m_networkPacketsOutPerSecondHasBeenSet = true; m_networkPacketsOutPerSecond = std::forward<NetworkPacketsOutPerSecondT>(value); }
+    template<typename NetworkPacketsOutPerSecondT = Aws::String>
+    NetworkResourceUtilization& WithNetworkPacketsOutPerSecond(NetworkPacketsOutPerSecondT&& value) { SetNetworkPacketsOutPerSecond(std::forward<NetworkPacketsOutPerSecondT>(value)); return *this;}
     ///@}
   private:
 

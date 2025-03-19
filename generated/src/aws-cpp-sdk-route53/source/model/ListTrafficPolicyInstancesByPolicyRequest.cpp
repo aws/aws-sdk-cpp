@@ -17,17 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTrafficPolicyInstancesByPolicyRequest::ListTrafficPolicyInstancesByPolicyRequest() : 
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyVersion(0),
-    m_trafficPolicyVersionHasBeenSet(false),
-    m_hostedZoneIdMarkerHasBeenSet(false),
-    m_trafficPolicyInstanceNameMarkerHasBeenSet(false),
-    m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
-    m_trafficPolicyInstanceTypeMarkerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListTrafficPolicyInstancesByPolicyRequest::SerializePayload() const
 {

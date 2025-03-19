@@ -12,15 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTemplateActionsRequest::ListTemplateActionsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_launchConfigurationTemplateIDHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTemplateActionsRequest::SerializePayload() const
 {
   JsonValue payload;

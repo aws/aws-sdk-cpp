@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-DecoderManifestValidationException::DecoderManifestValidationException() : 
-    m_invalidSignalsHasBeenSet(false),
-    m_invalidNetworkInterfacesHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DecoderManifestValidationException::DecoderManifestValidationException(JsonView jsonValue)
-  : DecoderManifestValidationException()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ DecoderManifestValidationException& DecoderManifestValidationException::operator
     }
     m_invalidSignalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invalidNetworkInterfaces"))
   {
     Aws::Utils::Array<JsonView> invalidNetworkInterfacesJsonList = jsonValue.GetArray("invalidNetworkInterfaces");
@@ -52,14 +43,11 @@ DecoderManifestValidationException& DecoderManifestValidationException::operator
     }
     m_invalidNetworkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

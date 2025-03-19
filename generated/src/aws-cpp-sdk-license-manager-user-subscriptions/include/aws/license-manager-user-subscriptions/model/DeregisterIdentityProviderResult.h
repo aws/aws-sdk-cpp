@@ -28,7 +28,7 @@ namespace Model
   class DeregisterIdentityProviderResult
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API DeregisterIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Metadata that describes the results of an identity provider operation.</p>
      */
-    inline const IdentityProviderSummary& GetIdentityProviderSummary() const{ return m_identityProviderSummary; }
-    inline void SetIdentityProviderSummary(const IdentityProviderSummary& value) { m_identityProviderSummary = value; }
-    inline void SetIdentityProviderSummary(IdentityProviderSummary&& value) { m_identityProviderSummary = std::move(value); }
-    inline DeregisterIdentityProviderResult& WithIdentityProviderSummary(const IdentityProviderSummary& value) { SetIdentityProviderSummary(value); return *this;}
-    inline DeregisterIdentityProviderResult& WithIdentityProviderSummary(IdentityProviderSummary&& value) { SetIdentityProviderSummary(std::move(value)); return *this;}
+    inline const IdentityProviderSummary& GetIdentityProviderSummary() const { return m_identityProviderSummary; }
+    template<typename IdentityProviderSummaryT = IdentityProviderSummary>
+    void SetIdentityProviderSummary(IdentityProviderSummaryT&& value) { m_identityProviderSummaryHasBeenSet = true; m_identityProviderSummary = std::forward<IdentityProviderSummaryT>(value); }
+    template<typename IdentityProviderSummaryT = IdentityProviderSummary>
+    DeregisterIdentityProviderResult& WithIdentityProviderSummary(IdentityProviderSummaryT&& value) { SetIdentityProviderSummary(std::forward<IdentityProviderSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeregisterIdentityProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeregisterIdentityProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeregisterIdentityProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeregisterIdentityProviderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IdentityProviderSummary m_identityProviderSummary;
+    bool m_identityProviderSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

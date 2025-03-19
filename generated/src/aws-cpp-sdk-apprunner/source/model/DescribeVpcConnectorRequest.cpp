@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVpcConnectorRequest::DescribeVpcConnectorRequest() : 
-    m_vpcConnectorArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVpcConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

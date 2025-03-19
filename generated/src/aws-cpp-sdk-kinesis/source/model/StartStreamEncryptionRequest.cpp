@@ -12,15 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartStreamEncryptionRequest::StartStreamEncryptionRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String StartStreamEncryptionRequest::SerializePayload() const
 {
   JsonValue payload;

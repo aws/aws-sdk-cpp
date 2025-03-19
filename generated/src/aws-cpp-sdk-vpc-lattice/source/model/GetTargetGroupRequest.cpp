@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTargetGroupRequest::GetTargetGroupRequest() : 
-    m_targetGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetTargetGroupRequest::SerializePayload() const
 {
   return {};

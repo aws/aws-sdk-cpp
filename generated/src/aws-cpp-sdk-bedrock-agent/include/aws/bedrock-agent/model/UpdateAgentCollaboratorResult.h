@@ -28,7 +28,7 @@ namespace Model
   class UpdateAgentCollaboratorResult
   {
   public:
-    AWS_BEDROCKAGENT_API UpdateAgentCollaboratorResult();
+    AWS_BEDROCKAGENT_API UpdateAgentCollaboratorResult() = default;
     AWS_BEDROCKAGENT_API UpdateAgentCollaboratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API UpdateAgentCollaboratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the collaborator.</p>
      */
-    inline const AgentCollaborator& GetAgentCollaborator() const{ return m_agentCollaborator; }
-    inline void SetAgentCollaborator(const AgentCollaborator& value) { m_agentCollaborator = value; }
-    inline void SetAgentCollaborator(AgentCollaborator&& value) { m_agentCollaborator = std::move(value); }
-    inline UpdateAgentCollaboratorResult& WithAgentCollaborator(const AgentCollaborator& value) { SetAgentCollaborator(value); return *this;}
-    inline UpdateAgentCollaboratorResult& WithAgentCollaborator(AgentCollaborator&& value) { SetAgentCollaborator(std::move(value)); return *this;}
+    inline const AgentCollaborator& GetAgentCollaborator() const { return m_agentCollaborator; }
+    template<typename AgentCollaboratorT = AgentCollaborator>
+    void SetAgentCollaborator(AgentCollaboratorT&& value) { m_agentCollaboratorHasBeenSet = true; m_agentCollaborator = std::forward<AgentCollaboratorT>(value); }
+    template<typename AgentCollaboratorT = AgentCollaborator>
+    UpdateAgentCollaboratorResult& WithAgentCollaborator(AgentCollaboratorT&& value) { SetAgentCollaborator(std::forward<AgentCollaboratorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAgentCollaboratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAgentCollaboratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAgentCollaboratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAgentCollaboratorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AgentCollaborator m_agentCollaborator;
+    bool m_agentCollaboratorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

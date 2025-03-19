@@ -18,19 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-StepAutomationConfiguration::StepAutomationConfiguration() : 
-    m_scriptLocationS3BucketHasBeenSet(false),
-    m_scriptLocationS3KeyHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_runEnvironment(RunEnvironment::NOT_SET),
-    m_runEnvironmentHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 StepAutomationConfiguration::StepAutomationConfiguration(JsonView jsonValue)
-  : StepAutomationConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ StepAutomationConfiguration& StepAutomationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("scriptLocationS3Bucket"))
   {
     m_scriptLocationS3Bucket = jsonValue.GetString("scriptLocationS3Bucket");
-
     m_scriptLocationS3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptLocationS3Key"))
   {
     m_scriptLocationS3Key = jsonValue.GetObject("scriptLocationS3Key");
-
     m_scriptLocationS3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("command"))
   {
     m_command = jsonValue.GetObject("command");
-
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runEnvironment"))
   {
     m_runEnvironment = RunEnvironmentMapper::GetRunEnvironmentForName(jsonValue.GetString("runEnvironment"));
-
     m_runEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

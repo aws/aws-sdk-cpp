@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSqsQueueDetails::AwsSqsQueueDetails() : 
-    m_kmsDataKeyReusePeriodSeconds(0),
-    m_kmsDataKeyReusePeriodSecondsHasBeenSet(false),
-    m_kmsMasterKeyIdHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_deadLetterTargetArnHasBeenSet(false)
-{
-}
-
 AwsSqsQueueDetails::AwsSqsQueueDetails(JsonView jsonValue)
-  : AwsSqsQueueDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsSqsQueueDetails& AwsSqsQueueDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsDataKeyReusePeriodSeconds"))
   {
     m_kmsDataKeyReusePeriodSeconds = jsonValue.GetInteger("KmsDataKeyReusePeriodSeconds");
-
     m_kmsDataKeyReusePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsMasterKeyId"))
   {
     m_kmsMasterKeyId = jsonValue.GetString("KmsMasterKeyId");
-
     m_kmsMasterKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueName"))
   {
     m_queueName = jsonValue.GetString("QueueName");
-
     m_queueNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeadLetterTargetArn"))
   {
     m_deadLetterTargetArn = jsonValue.GetString("DeadLetterTargetArn");
-
     m_deadLetterTargetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

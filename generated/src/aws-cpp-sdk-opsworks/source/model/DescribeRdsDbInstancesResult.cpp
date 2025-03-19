@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRdsDbInstancesResult::DescribeRdsDbInstancesResult()
-{
-}
-
 DescribeRdsDbInstancesResult::DescribeRdsDbInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeRdsDbInstancesResult& DescribeRdsDbInstancesResult::operator =(const Aws
     {
       m_rdsDbInstances.push_back(rdsDbInstancesJsonList[rdsDbInstancesIndex].AsObject());
     }
+    m_rdsDbInstancesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

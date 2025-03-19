@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-AwsIamConfig::AwsIamConfig() : 
-    m_signingRegionHasBeenSet(false),
-    m_signingServiceNameHasBeenSet(false)
-{
-}
-
 AwsIamConfig::AwsIamConfig(JsonView jsonValue)
-  : AwsIamConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsIamConfig& AwsIamConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("signingRegion"))
   {
     m_signingRegion = jsonValue.GetString("signingRegion");
-
     m_signingRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingServiceName"))
   {
     m_signingServiceName = jsonValue.GetString("signingServiceName");
-
     m_signingServiceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

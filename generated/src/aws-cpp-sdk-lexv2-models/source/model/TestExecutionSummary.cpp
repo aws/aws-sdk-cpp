@@ -18,24 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestExecutionSummary::TestExecutionSummary() : 
-    m_testExecutionIdHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_testExecutionStatus(TestExecutionStatus::NOT_SET),
-    m_testExecutionStatusHasBeenSet(false),
-    m_testSetIdHasBeenSet(false),
-    m_testSetNameHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_apiMode(TestExecutionApiMode::NOT_SET),
-    m_apiModeHasBeenSet(false),
-    m_testExecutionModality(TestExecutionModality::NOT_SET),
-    m_testExecutionModalityHasBeenSet(false)
-{
-}
-
 TestExecutionSummary::TestExecutionSummary(JsonView jsonValue)
-  : TestExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ TestExecutionSummary& TestExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("testExecutionId"))
   {
     m_testExecutionId = jsonValue.GetString("testExecutionId");
-
     m_testExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testExecutionStatus"))
   {
     m_testExecutionStatus = TestExecutionStatusMapper::GetTestExecutionStatusForName(jsonValue.GetString("testExecutionStatus"));
-
     m_testExecutionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetId"))
   {
     m_testSetId = jsonValue.GetString("testSetId");
-
     m_testSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetName"))
   {
     m_testSetName = jsonValue.GetString("testSetName");
-
     m_testSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiMode"))
   {
     m_apiMode = TestExecutionApiModeMapper::GetTestExecutionApiModeForName(jsonValue.GetString("apiMode"));
-
     m_apiModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testExecutionModality"))
   {
     m_testExecutionModality = TestExecutionModalityMapper::GetTestExecutionModalityForName(jsonValue.GetString("testExecutionModality"));
-
     m_testExecutionModalityHasBeenSet = true;
   }
-
   return *this;
 }
 

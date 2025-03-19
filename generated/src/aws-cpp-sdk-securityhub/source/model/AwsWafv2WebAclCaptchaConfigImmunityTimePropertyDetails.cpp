@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails() : 
-    m_immunityTime(0),
-    m_immunityTimeHasBeenSet(false)
-{
-}
-
 AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails(JsonView jsonValue)
-  : AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& AwsWafv2WebAclCaptchaCon
   if(jsonValue.ValueExists("ImmunityTime"))
   {
     m_immunityTime = jsonValue.GetInt64("ImmunityTime");
-
     m_immunityTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

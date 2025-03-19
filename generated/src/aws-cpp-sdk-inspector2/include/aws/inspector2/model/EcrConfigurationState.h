@@ -32,7 +32,7 @@ namespace Model
   class EcrConfigurationState
   {
   public:
-    AWS_INSPECTOR2_API EcrConfigurationState();
+    AWS_INSPECTOR2_API EcrConfigurationState() = default;
     AWS_INSPECTOR2_API EcrConfigurationState(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API EcrConfigurationState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>An object that contains details about the state of the ECR re-scan
      * settings.</p>
      */
-    inline const EcrRescanDurationState& GetRescanDurationState() const{ return m_rescanDurationState; }
+    inline const EcrRescanDurationState& GetRescanDurationState() const { return m_rescanDurationState; }
     inline bool RescanDurationStateHasBeenSet() const { return m_rescanDurationStateHasBeenSet; }
-    inline void SetRescanDurationState(const EcrRescanDurationState& value) { m_rescanDurationStateHasBeenSet = true; m_rescanDurationState = value; }
-    inline void SetRescanDurationState(EcrRescanDurationState&& value) { m_rescanDurationStateHasBeenSet = true; m_rescanDurationState = std::move(value); }
-    inline EcrConfigurationState& WithRescanDurationState(const EcrRescanDurationState& value) { SetRescanDurationState(value); return *this;}
-    inline EcrConfigurationState& WithRescanDurationState(EcrRescanDurationState&& value) { SetRescanDurationState(std::move(value)); return *this;}
+    template<typename RescanDurationStateT = EcrRescanDurationState>
+    void SetRescanDurationState(RescanDurationStateT&& value) { m_rescanDurationStateHasBeenSet = true; m_rescanDurationState = std::forward<RescanDurationStateT>(value); }
+    template<typename RescanDurationStateT = EcrRescanDurationState>
+    EcrConfigurationState& WithRescanDurationState(RescanDurationStateT&& value) { SetRescanDurationState(std::forward<RescanDurationStateT>(value)); return *this;}
     ///@}
   private:
 

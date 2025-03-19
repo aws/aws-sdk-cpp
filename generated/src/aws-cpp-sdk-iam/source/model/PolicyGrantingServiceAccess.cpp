@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyGrantingServiceAccess::PolicyGrantingServiceAccess() : 
-    m_policyNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_entityType(PolicyOwnerEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_entityNameHasBeenSet(false)
-{
-}
-
 PolicyGrantingServiceAccess::PolicyGrantingServiceAccess(const XmlNode& xmlNode)
-  : PolicyGrantingServiceAccess()
 {
   *this = xmlNode;
 }
@@ -52,7 +40,7 @@ PolicyGrantingServiceAccess& PolicyGrantingServiceAccess::operator =(const XmlNo
     XmlNode policyTypeNode = resultNode.FirstChild("PolicyType");
     if(!policyTypeNode.IsNull())
     {
-      m_policyType = PolicyTypeMapper::GetPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyTypeNode.GetText()).c_str()).c_str());
+      m_policyType = PolicyTypeMapper::GetPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyTypeNode.GetText()).c_str()));
       m_policyTypeHasBeenSet = true;
     }
     XmlNode policyArnNode = resultNode.FirstChild("PolicyArn");
@@ -64,7 +52,7 @@ PolicyGrantingServiceAccess& PolicyGrantingServiceAccess::operator =(const XmlNo
     XmlNode entityTypeNode = resultNode.FirstChild("EntityType");
     if(!entityTypeNode.IsNull())
     {
-      m_entityType = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(entityTypeNode.GetText()).c_str()).c_str());
+      m_entityType = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(entityTypeNode.GetText()).c_str()));
       m_entityTypeHasBeenSet = true;
     }
     XmlNode entityNameNode = resultNode.FirstChild("EntityName");

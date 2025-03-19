@@ -32,7 +32,7 @@ namespace Model
   class IntegrationConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API IntegrationConfig();
+    AWS_CONNECTCAMPAIGNSV2_API IntegrationConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API IntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API IntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const CustomerProfilesIntegrationConfig& GetCustomerProfiles() const{ return m_customerProfiles; }
+    inline const CustomerProfilesIntegrationConfig& GetCustomerProfiles() const { return m_customerProfiles; }
     inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }
-    inline void SetCustomerProfiles(const CustomerProfilesIntegrationConfig& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = value; }
-    inline void SetCustomerProfiles(CustomerProfilesIntegrationConfig&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::move(value); }
-    inline IntegrationConfig& WithCustomerProfiles(const CustomerProfilesIntegrationConfig& value) { SetCustomerProfiles(value); return *this;}
-    inline IntegrationConfig& WithCustomerProfiles(CustomerProfilesIntegrationConfig&& value) { SetCustomerProfiles(std::move(value)); return *this;}
+    template<typename CustomerProfilesT = CustomerProfilesIntegrationConfig>
+    void SetCustomerProfiles(CustomerProfilesT&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::forward<CustomerProfilesT>(value); }
+    template<typename CustomerProfilesT = CustomerProfilesIntegrationConfig>
+    IntegrationConfig& WithCustomerProfiles(CustomerProfilesT&& value) { SetCustomerProfiles(std::forward<CustomerProfilesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const QConnectIntegrationConfig& GetQConnect() const{ return m_qConnect; }
+    inline const QConnectIntegrationConfig& GetQConnect() const { return m_qConnect; }
     inline bool QConnectHasBeenSet() const { return m_qConnectHasBeenSet; }
-    inline void SetQConnect(const QConnectIntegrationConfig& value) { m_qConnectHasBeenSet = true; m_qConnect = value; }
-    inline void SetQConnect(QConnectIntegrationConfig&& value) { m_qConnectHasBeenSet = true; m_qConnect = std::move(value); }
-    inline IntegrationConfig& WithQConnect(const QConnectIntegrationConfig& value) { SetQConnect(value); return *this;}
-    inline IntegrationConfig& WithQConnect(QConnectIntegrationConfig&& value) { SetQConnect(std::move(value)); return *this;}
+    template<typename QConnectT = QConnectIntegrationConfig>
+    void SetQConnect(QConnectT&& value) { m_qConnectHasBeenSet = true; m_qConnect = std::forward<QConnectT>(value); }
+    template<typename QConnectT = QConnectIntegrationConfig>
+    IntegrationConfig& WithQConnect(QConnectT&& value) { SetQConnect(std::forward<QConnectT>(value)); return *this;}
     ///@}
   private:
 

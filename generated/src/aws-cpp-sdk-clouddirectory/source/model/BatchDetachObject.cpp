@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDetachObject::BatchDetachObject() : 
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false),
-    m_batchReferenceNameHasBeenSet(false)
-{
-}
-
 BatchDetachObject::BatchDetachObject(JsonView jsonValue)
-  : BatchDetachObject()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchDetachObject& BatchDetachObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParentReference"))
   {
     m_parentReference = jsonValue.GetObject("ParentReference");
-
     m_parentReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkName"))
   {
     m_linkName = jsonValue.GetString("LinkName");
-
     m_linkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchReferenceName"))
   {
     m_batchReferenceName = jsonValue.GetString("BatchReferenceName");
-
     m_batchReferenceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

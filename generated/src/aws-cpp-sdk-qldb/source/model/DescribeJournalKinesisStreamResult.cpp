@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeJournalKinesisStreamResult::DescribeJournalKinesisStreamResult()
-{
-}
-
 DescribeJournalKinesisStreamResult::DescribeJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeJournalKinesisStreamResult& DescribeJournalKinesisStreamResult::operator
   if(jsonValue.ValueExists("Stream"))
   {
     m_stream = jsonValue.GetObject("Stream");
-
+    m_streamHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

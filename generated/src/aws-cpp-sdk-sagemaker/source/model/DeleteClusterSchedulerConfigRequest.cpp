@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterSchedulerConfigRequest::DeleteClusterSchedulerConfigRequest() : 
-    m_clusterSchedulerConfigIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterSchedulerConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class GetLinkedWhatsAppBusinessAccountPhoneNumberRequest : public SocialMessagingRequest
   {
   public:
-    AWS_SOCIALMESSAGING_API GetLinkedWhatsAppBusinessAccountPhoneNumberRequest();
+    AWS_SOCIALMESSAGING_API GetLinkedWhatsAppBusinessAccountPhoneNumberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
      * to find a phone number's id.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetLinkedWhatsAppBusinessAccountPhoneNumberRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class AssociateHostedConnectionRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API AssociateHostedConnectionRequest();
+    AWS_DIRECTCONNECT_API AssociateHostedConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID of the hosted connection.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline AssociateHostedConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline AssociateHostedConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline AssociateHostedConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    AssociateHostedConnectionRequest& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the interconnect or the LAG.</p>
      */
-    inline const Aws::String& GetParentConnectionId() const{ return m_parentConnectionId; }
+    inline const Aws::String& GetParentConnectionId() const { return m_parentConnectionId; }
     inline bool ParentConnectionIdHasBeenSet() const { return m_parentConnectionIdHasBeenSet; }
-    inline void SetParentConnectionId(const Aws::String& value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId = value; }
-    inline void SetParentConnectionId(Aws::String&& value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId = std::move(value); }
-    inline void SetParentConnectionId(const char* value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId.assign(value); }
-    inline AssociateHostedConnectionRequest& WithParentConnectionId(const Aws::String& value) { SetParentConnectionId(value); return *this;}
-    inline AssociateHostedConnectionRequest& WithParentConnectionId(Aws::String&& value) { SetParentConnectionId(std::move(value)); return *this;}
-    inline AssociateHostedConnectionRequest& WithParentConnectionId(const char* value) { SetParentConnectionId(value); return *this;}
+    template<typename ParentConnectionIdT = Aws::String>
+    void SetParentConnectionId(ParentConnectionIdT&& value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId = std::forward<ParentConnectionIdT>(value); }
+    template<typename ParentConnectionIdT = Aws::String>
+    AssociateHostedConnectionRequest& WithParentConnectionId(ParentConnectionIdT&& value) { SetParentConnectionId(std::forward<ParentConnectionIdT>(value)); return *this;}
     ///@}
   private:
 

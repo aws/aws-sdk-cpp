@@ -34,7 +34,7 @@ namespace Model
   class NetworkResourceDefinition
   {
   public:
-    AWS_PRIVATENETWORKS_API NetworkResourceDefinition();
+    AWS_PRIVATENETWORKS_API NetworkResourceDefinition() = default;
     AWS_PRIVATENETWORKS_API NetworkResourceDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API NetworkResourceDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The count in the network resource definition.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline NetworkResourceDefinition& WithCount(int value) { SetCount(value); return *this;}
@@ -54,36 +54,34 @@ namespace Model
     /**
      * <p>The options in the network resource definition.</p>
      */
-    inline const Aws::Vector<NameValuePair>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<NameValuePair>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<NameValuePair>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<NameValuePair>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline NetworkResourceDefinition& WithOptions(const Aws::Vector<NameValuePair>& value) { SetOptions(value); return *this;}
-    inline NetworkResourceDefinition& WithOptions(Aws::Vector<NameValuePair>&& value) { SetOptions(std::move(value)); return *this;}
-    inline NetworkResourceDefinition& AddOptions(const NameValuePair& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline NetworkResourceDefinition& AddOptions(NameValuePair&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<NameValuePair>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<NameValuePair>>
+    NetworkResourceDefinition& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsT = NameValuePair>
+    NetworkResourceDefinition& AddOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options.emplace_back(std::forward<OptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type in the network resource definition.</p>
      */
-    inline const NetworkResourceDefinitionType& GetType() const{ return m_type; }
+    inline NetworkResourceDefinitionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const NetworkResourceDefinitionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(NetworkResourceDefinitionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline NetworkResourceDefinition& WithType(const NetworkResourceDefinitionType& value) { SetType(value); return *this;}
-    inline NetworkResourceDefinition& WithType(NetworkResourceDefinitionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(NetworkResourceDefinitionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline NetworkResourceDefinition& WithType(NetworkResourceDefinitionType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::Vector<NameValuePair> m_options;
     bool m_optionsHasBeenSet = false;
 
-    NetworkResourceDefinitionType m_type;
+    NetworkResourceDefinitionType m_type{NetworkResourceDefinitionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

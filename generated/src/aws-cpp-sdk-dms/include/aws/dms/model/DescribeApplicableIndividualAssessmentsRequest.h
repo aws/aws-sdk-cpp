@@ -25,7 +25,7 @@ namespace Model
   class DescribeApplicableIndividualAssessmentsRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a migration task on which you want to base the
      * default list of individual assessments.</p>
      */
-    inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
+    inline const Aws::String& GetReplicationTaskArn() const { return m_replicationTaskArn; }
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
-    inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
-    inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
-    inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+    template<typename ReplicationTaskArnT = Aws::String>
+    void SetReplicationTaskArn(ReplicationTaskArnT&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::forward<ReplicationTaskArnT>(value); }
+    template<typename ReplicationTaskArnT = Aws::String>
+    DescribeApplicableIndividualAssessmentsRequest& WithReplicationTaskArn(ReplicationTaskArnT&& value) { SetReplicationTaskArn(std::forward<ReplicationTaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>ARN of a replication instance on which you want to base the default list of
      * individual assessments.</p>
      */
-    inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
+    inline const Aws::String& GetReplicationInstanceArn() const { return m_replicationInstanceArn; }
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
-    inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
-    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
-    inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
+    template<typename ReplicationInstanceArnT = Aws::String>
+    void SetReplicationInstanceArn(ReplicationInstanceArnT&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::forward<ReplicationInstanceArnT>(value); }
+    template<typename ReplicationInstanceArnT = Aws::String>
+    DescribeApplicableIndividualAssessmentsRequest& WithReplicationInstanceArn(ReplicationInstanceArnT&& value) { SetReplicationInstanceArn(std::forward<ReplicationInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of a serverless replication on which you want to
      * base the default list of individual assessments.</p>
      */
-    inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
+    inline const Aws::String& GetReplicationConfigArn() const { return m_replicationConfigArn; }
     inline bool ReplicationConfigArnHasBeenSet() const { return m_replicationConfigArnHasBeenSet; }
-    inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = value; }
-    inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::move(value); }
-    inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
+    template<typename ReplicationConfigArnT = Aws::String>
+    void SetReplicationConfigArn(ReplicationConfigArnT&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::forward<ReplicationConfigArnT>(value); }
+    template<typename ReplicationConfigArnT = Aws::String>
+    DescribeApplicableIndividualAssessmentsRequest& WithReplicationConfigArn(ReplicationConfigArnT&& value) { SetReplicationConfigArn(std::forward<ReplicationConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>Name of a database engine that the specified replication instance supports as
      * a source.</p>
      */
-    inline const Aws::String& GetSourceEngineName() const{ return m_sourceEngineName; }
+    inline const Aws::String& GetSourceEngineName() const { return m_sourceEngineName; }
     inline bool SourceEngineNameHasBeenSet() const { return m_sourceEngineNameHasBeenSet; }
-    inline void SetSourceEngineName(const Aws::String& value) { m_sourceEngineNameHasBeenSet = true; m_sourceEngineName = value; }
-    inline void SetSourceEngineName(Aws::String&& value) { m_sourceEngineNameHasBeenSet = true; m_sourceEngineName = std::move(value); }
-    inline void SetSourceEngineName(const char* value) { m_sourceEngineNameHasBeenSet = true; m_sourceEngineName.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithSourceEngineName(const Aws::String& value) { SetSourceEngineName(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithSourceEngineName(Aws::String&& value) { SetSourceEngineName(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithSourceEngineName(const char* value) { SetSourceEngineName(value); return *this;}
+    template<typename SourceEngineNameT = Aws::String>
+    void SetSourceEngineName(SourceEngineNameT&& value) { m_sourceEngineNameHasBeenSet = true; m_sourceEngineName = std::forward<SourceEngineNameT>(value); }
+    template<typename SourceEngineNameT = Aws::String>
+    DescribeApplicableIndividualAssessmentsRequest& WithSourceEngineName(SourceEngineNameT&& value) { SetSourceEngineName(std::forward<SourceEngineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,12 @@ namespace Model
      * <p>Name of a database engine that the specified replication instance supports as
      * a target.</p>
      */
-    inline const Aws::String& GetTargetEngineName() const{ return m_targetEngineName; }
+    inline const Aws::String& GetTargetEngineName() const { return m_targetEngineName; }
     inline bool TargetEngineNameHasBeenSet() const { return m_targetEngineNameHasBeenSet; }
-    inline void SetTargetEngineName(const Aws::String& value) { m_targetEngineNameHasBeenSet = true; m_targetEngineName = value; }
-    inline void SetTargetEngineName(Aws::String&& value) { m_targetEngineNameHasBeenSet = true; m_targetEngineName = std::move(value); }
-    inline void SetTargetEngineName(const char* value) { m_targetEngineNameHasBeenSet = true; m_targetEngineName.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithTargetEngineName(const Aws::String& value) { SetTargetEngineName(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithTargetEngineName(Aws::String&& value) { SetTargetEngineName(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithTargetEngineName(const char* value) { SetTargetEngineName(value); return *this;}
+    template<typename TargetEngineNameT = Aws::String>
+    void SetTargetEngineName(TargetEngineNameT&& value) { m_targetEngineNameHasBeenSet = true; m_targetEngineName = std::forward<TargetEngineNameT>(value); }
+    template<typename TargetEngineNameT = Aws::String>
+    DescribeApplicableIndividualAssessmentsRequest& WithTargetEngineName(TargetEngineNameT&& value) { SetTargetEngineName(std::forward<TargetEngineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +108,10 @@ namespace Model
      * <p>Name of the migration type that each provided individual assessment must
      * support.</p>
      */
-    inline const MigrationTypeValue& GetMigrationType() const{ return m_migrationType; }
+    inline MigrationTypeValue GetMigrationType() const { return m_migrationType; }
     inline bool MigrationTypeHasBeenSet() const { return m_migrationTypeHasBeenSet; }
-    inline void SetMigrationType(const MigrationTypeValue& value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
-    inline void SetMigrationType(MigrationTypeValue&& value) { m_migrationTypeHasBeenSet = true; m_migrationType = std::move(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithMigrationType(const MigrationTypeValue& value) { SetMigrationType(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
+    inline void SetMigrationType(MigrationTypeValue value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
+    inline DescribeApplicableIndividualAssessmentsRequest& WithMigrationType(MigrationTypeValue value) { SetMigrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -133,7 +121,7 @@ namespace Model
      * marker is included in the response so that the remaining results can be
      * retrieved.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeApplicableIndividualAssessmentsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -145,14 +133,12 @@ namespace Model
      * is specified, the response includes only records beyond the marker, up to the
      * value specified by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeApplicableIndividualAssessmentsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -171,10 +157,10 @@ namespace Model
     Aws::String m_targetEngineName;
     bool m_targetEngineNameHasBeenSet = false;
 
-    MigrationTypeValue m_migrationType;
+    MigrationTypeValue m_migrationType{MigrationTypeValue::NOT_SET};
     bool m_migrationTypeHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysResponse()
-{
-}
-
 DescribeEgressOnlyInternetGatewaysResponse::DescribeEgressOnlyInternetGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysRe
     if(!egressOnlyInternetGatewaysNode.IsNull())
     {
       XmlNode egressOnlyInternetGatewaysMember = egressOnlyInternetGatewaysNode.FirstChild("item");
+      m_egressOnlyInternetGatewaysHasBeenSet = !egressOnlyInternetGatewaysMember.IsNull();
       while(!egressOnlyInternetGatewaysMember.IsNull())
       {
         m_egressOnlyInternetGateways.push_back(egressOnlyInternetGatewaysMember);
         egressOnlyInternetGatewaysMember = egressOnlyInternetGatewaysMember.NextNode("item");
       }
 
+      m_egressOnlyInternetGatewaysHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeEgressOnlyInternetGatewaysResponse& DescribeEgressOnlyInternetGatewaysRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeEgressOnlyInternetGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

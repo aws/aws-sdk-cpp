@@ -21,7 +21,7 @@ namespace Model
   class VerifyDestinationNumberRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API VerifyDestinationNumberRequest();
+    AWS_PINPOINTSMSVOICEV2_API VerifyDestinationNumberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier for the verififed destination phone number.</p>
      */
-    inline const Aws::String& GetVerifiedDestinationNumberId() const{ return m_verifiedDestinationNumberId; }
+    inline const Aws::String& GetVerifiedDestinationNumberId() const { return m_verifiedDestinationNumberId; }
     inline bool VerifiedDestinationNumberIdHasBeenSet() const { return m_verifiedDestinationNumberIdHasBeenSet; }
-    inline void SetVerifiedDestinationNumberId(const Aws::String& value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId = value; }
-    inline void SetVerifiedDestinationNumberId(Aws::String&& value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId = std::move(value); }
-    inline void SetVerifiedDestinationNumberId(const char* value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId.assign(value); }
-    inline VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(const Aws::String& value) { SetVerifiedDestinationNumberId(value); return *this;}
-    inline VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(Aws::String&& value) { SetVerifiedDestinationNumberId(std::move(value)); return *this;}
-    inline VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(const char* value) { SetVerifiedDestinationNumberId(value); return *this;}
+    template<typename VerifiedDestinationNumberIdT = Aws::String>
+    void SetVerifiedDestinationNumberId(VerifiedDestinationNumberIdT&& value) { m_verifiedDestinationNumberIdHasBeenSet = true; m_verifiedDestinationNumberId = std::forward<VerifiedDestinationNumberIdT>(value); }
+    template<typename VerifiedDestinationNumberIdT = Aws::String>
+    VerifyDestinationNumberRequest& WithVerifiedDestinationNumberId(VerifiedDestinationNumberIdT&& value) { SetVerifiedDestinationNumberId(std::forward<VerifiedDestinationNumberIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The verification code that was received by the verified destination phone
      * number.</p>
      */
-    inline const Aws::String& GetVerificationCode() const{ return m_verificationCode; }
+    inline const Aws::String& GetVerificationCode() const { return m_verificationCode; }
     inline bool VerificationCodeHasBeenSet() const { return m_verificationCodeHasBeenSet; }
-    inline void SetVerificationCode(const Aws::String& value) { m_verificationCodeHasBeenSet = true; m_verificationCode = value; }
-    inline void SetVerificationCode(Aws::String&& value) { m_verificationCodeHasBeenSet = true; m_verificationCode = std::move(value); }
-    inline void SetVerificationCode(const char* value) { m_verificationCodeHasBeenSet = true; m_verificationCode.assign(value); }
-    inline VerifyDestinationNumberRequest& WithVerificationCode(const Aws::String& value) { SetVerificationCode(value); return *this;}
-    inline VerifyDestinationNumberRequest& WithVerificationCode(Aws::String&& value) { SetVerificationCode(std::move(value)); return *this;}
-    inline VerifyDestinationNumberRequest& WithVerificationCode(const char* value) { SetVerificationCode(value); return *this;}
+    template<typename VerificationCodeT = Aws::String>
+    void SetVerificationCode(VerificationCodeT&& value) { m_verificationCodeHasBeenSet = true; m_verificationCode = std::forward<VerificationCodeT>(value); }
+    template<typename VerificationCodeT = Aws::String>
+    VerifyDestinationNumberRequest& WithVerificationCode(VerificationCodeT&& value) { SetVerificationCode(std::forward<VerificationCodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-Ec2AutoScalingGroupConfiguration::Ec2AutoScalingGroupConfiguration() : 
-    m_instanceHasBeenSet(false),
-    m_mixedInstancesHasBeenSet(false),
-    m_type(Ec2AutoScalingGroupType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_allocationStrategy(AllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
-{
-}
-
 Ec2AutoScalingGroupConfiguration::Ec2AutoScalingGroupConfiguration(JsonView jsonValue)
-  : Ec2AutoScalingGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ Ec2AutoScalingGroupConfiguration& Ec2AutoScalingGroupConfiguration::operator =(J
   if(jsonValue.ValueExists("instance"))
   {
     m_instance = jsonValue.GetObject("instance");
-
     m_instanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mixedInstances"))
   {
     Aws::Utils::Array<JsonView> mixedInstancesJsonList = jsonValue.GetArray("mixedInstances");
@@ -52,21 +39,16 @@ Ec2AutoScalingGroupConfiguration& Ec2AutoScalingGroupConfiguration::operator =(J
     }
     m_mixedInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = Ec2AutoScalingGroupTypeMapper::GetEc2AutoScalingGroupTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allocationStrategy"))
   {
     m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(jsonValue.GetString("allocationStrategy"));
-
     m_allocationStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

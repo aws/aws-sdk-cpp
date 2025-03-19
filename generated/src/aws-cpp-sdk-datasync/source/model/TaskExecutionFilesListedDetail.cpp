@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-TaskExecutionFilesListedDetail::TaskExecutionFilesListedDetail() : 
-    m_atSource(0),
-    m_atSourceHasBeenSet(false),
-    m_atDestinationForDelete(0),
-    m_atDestinationForDeleteHasBeenSet(false)
-{
-}
-
 TaskExecutionFilesListedDetail::TaskExecutionFilesListedDetail(JsonView jsonValue)
-  : TaskExecutionFilesListedDetail()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TaskExecutionFilesListedDetail& TaskExecutionFilesListedDetail::operator =(JsonV
   if(jsonValue.ValueExists("AtSource"))
   {
     m_atSource = jsonValue.GetInt64("AtSource");
-
     m_atSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AtDestinationForDelete"))
   {
     m_atDestinationForDelete = jsonValue.GetInt64("AtDestinationForDelete");
-
     m_atDestinationForDeleteHasBeenSet = true;
   }
-
   return *this;
 }
 

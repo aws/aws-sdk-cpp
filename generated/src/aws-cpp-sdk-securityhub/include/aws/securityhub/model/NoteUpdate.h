@@ -31,7 +31,7 @@ namespace Model
   class NoteUpdate
   {
   public:
-    AWS_SECURITYHUB_API NoteUpdate();
+    AWS_SECURITYHUB_API NoteUpdate() = default;
     AWS_SECURITYHUB_API NoteUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API NoteUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The updated note text.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline NoteUpdate& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline NoteUpdate& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline NoteUpdate& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    NoteUpdate& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The principal that updated the note.</p>
      */
-    inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
     inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
-    inline void SetUpdatedBy(const Aws::String& value) { m_updatedByHasBeenSet = true; m_updatedBy = value; }
-    inline void SetUpdatedBy(Aws::String&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::move(value); }
-    inline void SetUpdatedBy(const char* value) { m_updatedByHasBeenSet = true; m_updatedBy.assign(value); }
-    inline NoteUpdate& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
-    inline NoteUpdate& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
-    inline NoteUpdate& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    NoteUpdate& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-PermissionInfo::PermissionInfo() : 
-    m_role(RoleType::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_type(RolePermissionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 PermissionInfo::PermissionInfo(JsonView jsonValue)
-  : PermissionInfo()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PermissionInfo& PermissionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Role"))
   {
     m_role = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("Role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RolePermissionTypeMapper::GetRolePermissionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

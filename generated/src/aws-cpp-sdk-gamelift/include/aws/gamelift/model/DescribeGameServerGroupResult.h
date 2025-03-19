@@ -28,7 +28,7 @@ namespace Model
   class DescribeGameServerGroupResult
   {
   public:
-    AWS_GAMELIFT_API DescribeGameServerGroupResult();
+    AWS_GAMELIFT_API DescribeGameServerGroupResult() = default;
     AWS_GAMELIFT_API DescribeGameServerGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeGameServerGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object with the property settings for the requested game server group
      * resource. </p>
      */
-    inline const GameServerGroup& GetGameServerGroup() const{ return m_gameServerGroup; }
-    inline void SetGameServerGroup(const GameServerGroup& value) { m_gameServerGroup = value; }
-    inline void SetGameServerGroup(GameServerGroup&& value) { m_gameServerGroup = std::move(value); }
-    inline DescribeGameServerGroupResult& WithGameServerGroup(const GameServerGroup& value) { SetGameServerGroup(value); return *this;}
-    inline DescribeGameServerGroupResult& WithGameServerGroup(GameServerGroup&& value) { SetGameServerGroup(std::move(value)); return *this;}
+    inline const GameServerGroup& GetGameServerGroup() const { return m_gameServerGroup; }
+    template<typename GameServerGroupT = GameServerGroup>
+    void SetGameServerGroup(GameServerGroupT&& value) { m_gameServerGroupHasBeenSet = true; m_gameServerGroup = std::forward<GameServerGroupT>(value); }
+    template<typename GameServerGroupT = GameServerGroup>
+    DescribeGameServerGroupResult& WithGameServerGroup(GameServerGroupT&& value) { SetGameServerGroup(std::forward<GameServerGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGameServerGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGameServerGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGameServerGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGameServerGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GameServerGroup m_gameServerGroup;
+    bool m_gameServerGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

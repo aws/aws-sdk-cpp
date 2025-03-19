@@ -24,7 +24,7 @@ namespace Model
   class CreateKxChangesetRequest : public FinspaceRequest
   {
   public:
-    AWS_FINSPACE_API CreateKxChangesetRequest();
+    AWS_FINSPACE_API CreateKxChangesetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>A unique identifier of the kdb environment.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline CreateKxChangesetRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline CreateKxChangesetRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline CreateKxChangesetRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    CreateKxChangesetRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the kdb database.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline CreateKxChangesetRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline CreateKxChangesetRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline CreateKxChangesetRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    CreateKxChangesetRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,28 +90,26 @@ namespace Model
      * "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code>
      * </p> </li> </ol>
      */
-    inline const Aws::Vector<ChangeRequest>& GetChangeRequests() const{ return m_changeRequests; }
+    inline const Aws::Vector<ChangeRequest>& GetChangeRequests() const { return m_changeRequests; }
     inline bool ChangeRequestsHasBeenSet() const { return m_changeRequestsHasBeenSet; }
-    inline void SetChangeRequests(const Aws::Vector<ChangeRequest>& value) { m_changeRequestsHasBeenSet = true; m_changeRequests = value; }
-    inline void SetChangeRequests(Aws::Vector<ChangeRequest>&& value) { m_changeRequestsHasBeenSet = true; m_changeRequests = std::move(value); }
-    inline CreateKxChangesetRequest& WithChangeRequests(const Aws::Vector<ChangeRequest>& value) { SetChangeRequests(value); return *this;}
-    inline CreateKxChangesetRequest& WithChangeRequests(Aws::Vector<ChangeRequest>&& value) { SetChangeRequests(std::move(value)); return *this;}
-    inline CreateKxChangesetRequest& AddChangeRequests(const ChangeRequest& value) { m_changeRequestsHasBeenSet = true; m_changeRequests.push_back(value); return *this; }
-    inline CreateKxChangesetRequest& AddChangeRequests(ChangeRequest&& value) { m_changeRequestsHasBeenSet = true; m_changeRequests.push_back(std::move(value)); return *this; }
+    template<typename ChangeRequestsT = Aws::Vector<ChangeRequest>>
+    void SetChangeRequests(ChangeRequestsT&& value) { m_changeRequestsHasBeenSet = true; m_changeRequests = std::forward<ChangeRequestsT>(value); }
+    template<typename ChangeRequestsT = Aws::Vector<ChangeRequest>>
+    CreateKxChangesetRequest& WithChangeRequests(ChangeRequestsT&& value) { SetChangeRequests(std::forward<ChangeRequestsT>(value)); return *this;}
+    template<typename ChangeRequestsT = ChangeRequest>
+    CreateKxChangesetRequest& AddChangeRequests(ChangeRequestsT&& value) { m_changeRequestsHasBeenSet = true; m_changeRequests.emplace_back(std::forward<ChangeRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateKxChangesetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateKxChangesetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateKxChangesetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateKxChangesetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

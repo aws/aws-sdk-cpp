@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-GitBranchFilterCriteria::GitBranchFilterCriteria() : 
-    m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
-{
-}
-
 GitBranchFilterCriteria::GitBranchFilterCriteria(JsonView jsonValue)
-  : GitBranchFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GitBranchFilterCriteria& GitBranchFilterCriteria::operator =(JsonView jsonValue)
     }
     m_includesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludes"))
   {
     Aws::Utils::Array<JsonView> excludesJsonList = jsonValue.GetArray("excludes");
@@ -51,7 +43,6 @@ GitBranchFilterCriteria& GitBranchFilterCriteria::operator =(JsonView jsonValue)
     }
     m_excludesHasBeenSet = true;
   }
-
   return *this;
 }
 

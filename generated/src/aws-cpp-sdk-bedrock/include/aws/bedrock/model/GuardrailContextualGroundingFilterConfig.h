@@ -32,7 +32,7 @@ namespace Model
   class GuardrailContextualGroundingFilterConfig
   {
   public:
-    AWS_BEDROCK_API GuardrailContextualGroundingFilterConfig();
+    AWS_BEDROCK_API GuardrailContextualGroundingFilterConfig() = default;
     AWS_BEDROCK_API GuardrailContextualGroundingFilterConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailContextualGroundingFilterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The filter details for the guardrails contextual grounding filter.</p>
      */
-    inline const GuardrailContextualGroundingFilterType& GetType() const{ return m_type; }
+    inline GuardrailContextualGroundingFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GuardrailContextualGroundingFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GuardrailContextualGroundingFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GuardrailContextualGroundingFilterConfig& WithType(const GuardrailContextualGroundingFilterType& value) { SetType(value); return *this;}
-    inline GuardrailContextualGroundingFilterConfig& WithType(GuardrailContextualGroundingFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GuardrailContextualGroundingFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailContextualGroundingFilterConfig& WithType(GuardrailContextualGroundingFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The threshold details for the guardrails contextual grounding filter.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline GuardrailContextualGroundingFilterConfig& WithThreshold(double value) { SetThreshold(value); return *this;}
     ///@}
   private:
 
-    GuardrailContextualGroundingFilterType m_type;
+    GuardrailContextualGroundingFilterType m_type{GuardrailContextualGroundingFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
   };
 

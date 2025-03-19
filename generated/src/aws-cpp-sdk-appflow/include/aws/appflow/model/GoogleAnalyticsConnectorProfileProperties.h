@@ -30,7 +30,7 @@ namespace Model
   class GoogleAnalyticsConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API GoogleAnalyticsConnectorProfileProperties();
+    AWS_APPFLOW_API GoogleAnalyticsConnectorProfileProperties() = default;
     AWS_APPFLOW_API GoogleAnalyticsConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API GoogleAnalyticsConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

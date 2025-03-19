@@ -34,7 +34,7 @@ namespace Model
   class ListConfigsResult
   {
   public:
-    AWS_GROUNDSTATION_API ListConfigsResult();
+    AWS_GROUNDSTATION_API ListConfigsResult() = default;
     AWS_GROUNDSTATION_API ListConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API ListConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>List of <code>Config</code> items.</p>
      */
-    inline const Aws::Vector<ConfigListItem>& GetConfigList() const{ return m_configList; }
-    inline void SetConfigList(const Aws::Vector<ConfigListItem>& value) { m_configList = value; }
-    inline void SetConfigList(Aws::Vector<ConfigListItem>&& value) { m_configList = std::move(value); }
-    inline ListConfigsResult& WithConfigList(const Aws::Vector<ConfigListItem>& value) { SetConfigList(value); return *this;}
-    inline ListConfigsResult& WithConfigList(Aws::Vector<ConfigListItem>&& value) { SetConfigList(std::move(value)); return *this;}
-    inline ListConfigsResult& AddConfigList(const ConfigListItem& value) { m_configList.push_back(value); return *this; }
-    inline ListConfigsResult& AddConfigList(ConfigListItem&& value) { m_configList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfigListItem>& GetConfigList() const { return m_configList; }
+    template<typename ConfigListT = Aws::Vector<ConfigListItem>>
+    void SetConfigList(ConfigListT&& value) { m_configListHasBeenSet = true; m_configList = std::forward<ConfigListT>(value); }
+    template<typename ConfigListT = Aws::Vector<ConfigListItem>>
+    ListConfigsResult& WithConfigList(ConfigListT&& value) { SetConfigList(std::forward<ConfigListT>(value)); return *this;}
+    template<typename ConfigListT = ConfigListItem>
+    ListConfigsResult& AddConfigList(ConfigListT&& value) { m_configListHasBeenSet = true; m_configList.emplace_back(std::forward<ConfigListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * <p>Next token returned in the response of a previous <code>ListConfigs</code>
      * call. Used to get the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConfigListItem> m_configList;
+    bool m_configListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

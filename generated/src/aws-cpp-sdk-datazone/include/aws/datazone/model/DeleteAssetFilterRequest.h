@@ -21,7 +21,7 @@ namespace Model
   class DeleteAssetFilterRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API DeleteAssetFilterRequest();
+    AWS_DATAZONE_API DeleteAssetFilterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The ID of the data asset.</p>
      */
-    inline const Aws::String& GetAssetIdentifier() const{ return m_assetIdentifier; }
+    inline const Aws::String& GetAssetIdentifier() const { return m_assetIdentifier; }
     inline bool AssetIdentifierHasBeenSet() const { return m_assetIdentifierHasBeenSet; }
-    inline void SetAssetIdentifier(const Aws::String& value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier = value; }
-    inline void SetAssetIdentifier(Aws::String&& value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier = std::move(value); }
-    inline void SetAssetIdentifier(const char* value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier.assign(value); }
-    inline DeleteAssetFilterRequest& WithAssetIdentifier(const Aws::String& value) { SetAssetIdentifier(value); return *this;}
-    inline DeleteAssetFilterRequest& WithAssetIdentifier(Aws::String&& value) { SetAssetIdentifier(std::move(value)); return *this;}
-    inline DeleteAssetFilterRequest& WithAssetIdentifier(const char* value) { SetAssetIdentifier(value); return *this;}
+    template<typename AssetIdentifierT = Aws::String>
+    void SetAssetIdentifier(AssetIdentifierT&& value) { m_assetIdentifierHasBeenSet = true; m_assetIdentifier = std::forward<AssetIdentifierT>(value); }
+    template<typename AssetIdentifierT = Aws::String>
+    DeleteAssetFilterRequest& WithAssetIdentifier(AssetIdentifierT&& value) { SetAssetIdentifier(std::forward<AssetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain where you want to delete an asset filter.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline DeleteAssetFilterRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline DeleteAssetFilterRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline DeleteAssetFilterRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    DeleteAssetFilterRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset filter that you want to delete.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline DeleteAssetFilterRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline DeleteAssetFilterRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline DeleteAssetFilterRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    DeleteAssetFilterRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

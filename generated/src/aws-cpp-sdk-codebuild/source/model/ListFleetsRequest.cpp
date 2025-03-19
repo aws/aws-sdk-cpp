@@ -12,17 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFleetsRequest::ListFleetsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(FleetSortByType::NOT_SET),
-    m_sortByHasBeenSet(false)
-{
-}
-
 Aws::String ListFleetsRequest::SerializePayload() const
 {
   JsonValue payload;

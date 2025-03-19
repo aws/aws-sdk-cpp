@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPoolCidr::IpamPoolCidr() : 
-    m_cidrHasBeenSet(false),
-    m_state(IpamPoolCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_ipamPoolCidrIdHasBeenSet(false),
-    m_netmaskLength(0),
-    m_netmaskLengthHasBeenSet(false)
-{
-}
-
 IpamPoolCidr::IpamPoolCidr(const XmlNode& xmlNode)
-  : IpamPoolCidr()
 {
   *this = xmlNode;
 }
@@ -52,7 +40,7 @@ IpamPoolCidr& IpamPoolCidr::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamPoolCidrStateMapper::GetIpamPoolCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamPoolCidrStateMapper::GetIpamPoolCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("failureReason");

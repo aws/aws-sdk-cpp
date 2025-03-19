@@ -35,7 +35,7 @@ namespace Model
   class ComponentEvent
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentEvent();
+    AWS_AMPLIFYUIBUILDER_API ComponentEvent() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The action to perform when a specific event is raised.</p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline ComponentEvent& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline ComponentEvent& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline ComponentEvent& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    ComponentEvent& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes information about the action.</p>
      */
-    inline const ActionParameters& GetParameters() const{ return m_parameters; }
+    inline const ActionParameters& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const ActionParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(ActionParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ComponentEvent& WithParameters(const ActionParameters& value) { SetParameters(value); return *this;}
-    inline ComponentEvent& WithParameters(ActionParameters&& value) { SetParameters(std::move(value)); return *this;}
+    template<typename ParametersT = ActionParameters>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = ActionParameters>
+    ComponentEvent& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <p>Binds an event to an action on a component. When you specify a
      * <code>bindingEvent</code>, the event is called when the action is performed.</p>
      */
-    inline const Aws::String& GetBindingEvent() const{ return m_bindingEvent; }
+    inline const Aws::String& GetBindingEvent() const { return m_bindingEvent; }
     inline bool BindingEventHasBeenSet() const { return m_bindingEventHasBeenSet; }
-    inline void SetBindingEvent(const Aws::String& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = value; }
-    inline void SetBindingEvent(Aws::String&& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = std::move(value); }
-    inline void SetBindingEvent(const char* value) { m_bindingEventHasBeenSet = true; m_bindingEvent.assign(value); }
-    inline ComponentEvent& WithBindingEvent(const Aws::String& value) { SetBindingEvent(value); return *this;}
-    inline ComponentEvent& WithBindingEvent(Aws::String&& value) { SetBindingEvent(std::move(value)); return *this;}
-    inline ComponentEvent& WithBindingEvent(const char* value) { SetBindingEvent(value); return *this;}
+    template<typename BindingEventT = Aws::String>
+    void SetBindingEvent(BindingEventT&& value) { m_bindingEventHasBeenSet = true; m_bindingEvent = std::forward<BindingEventT>(value); }
+    template<typename BindingEventT = Aws::String>
+    ComponentEvent& WithBindingEvent(BindingEventT&& value) { SetBindingEvent(std::forward<BindingEventT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOptOutListResult::CreateOptOutListResult()
-{
-}
-
 CreateOptOutListResult::CreateOptOutListResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ CreateOptOutListResult& CreateOptOutListResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("OptOutListArn"))
   {
     m_optOutListArn = jsonValue.GetString("OptOutListArn");
-
+    m_optOutListArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptOutListName"))
   {
     m_optOutListName = jsonValue.GetString("OptOutListName");
-
+    m_optOutListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -48,20 +42,20 @@ CreateOptOutListResult& CreateOptOutListResult::operator =(const Aws::AmazonWebS
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDataSourceIntrospectionRequest::StartDataSourceIntrospectionRequest() : 
-    m_rdsDataApiConfigHasBeenSet(false)
-{
-}
-
 Aws::String StartDataSourceIntrospectionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig() : 
-    m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false),
-    m_exponentialRateHasBeenSet(false)
-{
-}
-
 AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig(JsonView jsonValue)
-  : AwsJobExecutionsRolloutConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsJobExecutionsRolloutConfig& AwsJobExecutionsRolloutConfig::operator =(JsonVie
   if(jsonValue.ValueExists("maximumPerMinute"))
   {
     m_maximumPerMinute = jsonValue.GetInteger("maximumPerMinute");
-
     m_maximumPerMinuteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exponentialRate"))
   {
     m_exponentialRate = jsonValue.GetObject("exponentialRate");
-
     m_exponentialRateHasBeenSet = true;
   }
-
   return *this;
 }
 

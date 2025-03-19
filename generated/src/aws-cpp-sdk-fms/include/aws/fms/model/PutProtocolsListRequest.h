@@ -23,7 +23,7 @@ namespace Model
   class PutProtocolsListRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API PutProtocolsListRequest();
+    AWS_FMS_API PutProtocolsListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,26 @@ namespace Model
     /**
      * <p>The details of the Firewall Manager protocols list to be created.</p>
      */
-    inline const ProtocolsListData& GetProtocolsList() const{ return m_protocolsList; }
+    inline const ProtocolsListData& GetProtocolsList() const { return m_protocolsList; }
     inline bool ProtocolsListHasBeenSet() const { return m_protocolsListHasBeenSet; }
-    inline void SetProtocolsList(const ProtocolsListData& value) { m_protocolsListHasBeenSet = true; m_protocolsList = value; }
-    inline void SetProtocolsList(ProtocolsListData&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::move(value); }
-    inline PutProtocolsListRequest& WithProtocolsList(const ProtocolsListData& value) { SetProtocolsList(value); return *this;}
-    inline PutProtocolsListRequest& WithProtocolsList(ProtocolsListData&& value) { SetProtocolsList(std::move(value)); return *this;}
+    template<typename ProtocolsListT = ProtocolsListData>
+    void SetProtocolsList(ProtocolsListT&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::forward<ProtocolsListT>(value); }
+    template<typename ProtocolsListT = ProtocolsListData>
+    PutProtocolsListRequest& WithProtocolsList(ProtocolsListT&& value) { SetProtocolsList(std::forward<ProtocolsListT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline PutProtocolsListRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline PutProtocolsListRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline PutProtocolsListRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline PutProtocolsListRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    PutProtocolsListRequest& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    PutProtocolsListRequest& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
   private:
 

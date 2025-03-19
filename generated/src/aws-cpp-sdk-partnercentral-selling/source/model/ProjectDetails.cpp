@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ProjectDetails::ProjectDetails() : 
-    m_businessProblemHasBeenSet(false),
-    m_expectedCustomerSpendHasBeenSet(false),
-    m_targetCompletionDateHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 ProjectDetails::ProjectDetails(JsonView jsonValue)
-  : ProjectDetails()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ProjectDetails& ProjectDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BusinessProblem"))
   {
     m_businessProblem = jsonValue.GetString("BusinessProblem");
-
     m_businessProblemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedCustomerSpend"))
   {
     Aws::Utils::Array<JsonView> expectedCustomerSpendJsonList = jsonValue.GetArray("ExpectedCustomerSpend");
@@ -50,21 +39,16 @@ ProjectDetails& ProjectDetails::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCompletionDate"))
   {
     m_targetCompletionDate = jsonValue.GetString("TargetCompletionDate");
-
     m_targetCompletionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

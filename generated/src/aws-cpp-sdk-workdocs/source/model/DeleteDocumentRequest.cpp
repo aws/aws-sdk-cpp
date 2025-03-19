@@ -13,12 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDocumentRequest::DeleteDocumentRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDocumentRequest::SerializePayload() const
 {
   return {};

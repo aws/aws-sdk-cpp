@@ -32,7 +32,7 @@ namespace Model
   class InvalidParameterException
   {
   public:
-    AWS_ROUTE53PROFILES_API InvalidParameterException();
+    AWS_ROUTE53PROFILES_API InvalidParameterException() = default;
     AWS_ROUTE53PROFILES_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53PROFILES_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53PROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,22 @@ namespace Model
     /**
      * <p> The parameter field name for the invalid parameter exception. </p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline InvalidParameterException& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline InvalidParameterException& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline InvalidParameterException& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    InvalidParameterException& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidParameterException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

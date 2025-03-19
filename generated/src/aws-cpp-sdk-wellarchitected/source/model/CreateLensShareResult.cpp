@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLensShareResult::CreateLensShareResult()
-{
-}
-
 CreateLensShareResult::CreateLensShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLensShareResult& CreateLensShareResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ShareId"))
   {
     m_shareId = jsonValue.GetString("ShareId");
-
+    m_shareIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

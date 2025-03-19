@@ -33,7 +33,7 @@ namespace Model
   class ComponentPropertyGroupResponse
   {
   public:
-    AWS_IOTTWINMAKER_API ComponentPropertyGroupResponse();
+    AWS_IOTTWINMAKER_API ComponentPropertyGroupResponse() = default;
     AWS_IOTTWINMAKER_API ComponentPropertyGroupResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API ComponentPropertyGroupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,27 +43,24 @@ namespace Model
     /**
      * <p>The group type.</p>
      */
-    inline const GroupType& GetGroupType() const{ return m_groupType; }
+    inline GroupType GetGroupType() const { return m_groupType; }
     inline bool GroupTypeHasBeenSet() const { return m_groupTypeHasBeenSet; }
-    inline void SetGroupType(const GroupType& value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
-    inline void SetGroupType(GroupType&& value) { m_groupTypeHasBeenSet = true; m_groupType = std::move(value); }
-    inline ComponentPropertyGroupResponse& WithGroupType(const GroupType& value) { SetGroupType(value); return *this;}
-    inline ComponentPropertyGroupResponse& WithGroupType(GroupType&& value) { SetGroupType(std::move(value)); return *this;}
+    inline void SetGroupType(GroupType value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
+    inline ComponentPropertyGroupResponse& WithGroupType(GroupType value) { SetGroupType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The names of properties</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPropertyNames() const{ return m_propertyNames; }
+    inline const Aws::Vector<Aws::String>& GetPropertyNames() const { return m_propertyNames; }
     inline bool PropertyNamesHasBeenSet() const { return m_propertyNamesHasBeenSet; }
-    inline void SetPropertyNames(const Aws::Vector<Aws::String>& value) { m_propertyNamesHasBeenSet = true; m_propertyNames = value; }
-    inline void SetPropertyNames(Aws::Vector<Aws::String>&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames = std::move(value); }
-    inline ComponentPropertyGroupResponse& WithPropertyNames(const Aws::Vector<Aws::String>& value) { SetPropertyNames(value); return *this;}
-    inline ComponentPropertyGroupResponse& WithPropertyNames(Aws::Vector<Aws::String>&& value) { SetPropertyNames(std::move(value)); return *this;}
-    inline ComponentPropertyGroupResponse& AddPropertyNames(const Aws::String& value) { m_propertyNamesHasBeenSet = true; m_propertyNames.push_back(value); return *this; }
-    inline ComponentPropertyGroupResponse& AddPropertyNames(Aws::String&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames.push_back(std::move(value)); return *this; }
-    inline ComponentPropertyGroupResponse& AddPropertyNames(const char* value) { m_propertyNamesHasBeenSet = true; m_propertyNames.push_back(value); return *this; }
+    template<typename PropertyNamesT = Aws::Vector<Aws::String>>
+    void SetPropertyNames(PropertyNamesT&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames = std::forward<PropertyNamesT>(value); }
+    template<typename PropertyNamesT = Aws::Vector<Aws::String>>
+    ComponentPropertyGroupResponse& WithPropertyNames(PropertyNamesT&& value) { SetPropertyNames(std::forward<PropertyNamesT>(value)); return *this;}
+    template<typename PropertyNamesT = Aws::String>
+    ComponentPropertyGroupResponse& AddPropertyNames(PropertyNamesT&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames.emplace_back(std::forward<PropertyNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,20 +68,20 @@ namespace Model
      * <p>A Boolean value that specifies whether the property group is inherited from a
      * parent entity</p>
      */
-    inline bool GetIsInherited() const{ return m_isInherited; }
+    inline bool GetIsInherited() const { return m_isInherited; }
     inline bool IsInheritedHasBeenSet() const { return m_isInheritedHasBeenSet; }
     inline void SetIsInherited(bool value) { m_isInheritedHasBeenSet = true; m_isInherited = value; }
     inline ComponentPropertyGroupResponse& WithIsInherited(bool value) { SetIsInherited(value); return *this;}
     ///@}
   private:
 
-    GroupType m_groupType;
+    GroupType m_groupType{GroupType::NOT_SET};
     bool m_groupTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_propertyNames;
     bool m_propertyNamesHasBeenSet = false;
 
-    bool m_isInherited;
+    bool m_isInherited{false};
     bool m_isInheritedHasBeenSet = false;
   };
 

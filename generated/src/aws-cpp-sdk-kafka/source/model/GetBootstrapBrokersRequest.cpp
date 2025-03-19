@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBootstrapBrokersRequest::GetBootstrapBrokersRequest() : 
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 Aws::String GetBootstrapBrokersRequest::SerializePayload() const
 {
   return {};

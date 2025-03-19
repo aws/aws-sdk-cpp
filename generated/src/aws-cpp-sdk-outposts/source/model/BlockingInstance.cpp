@@ -18,16 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-BlockingInstance::BlockingInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsServiceName(AWSServiceName::NOT_SET),
-    m_awsServiceNameHasBeenSet(false)
-{
-}
-
 BlockingInstance::BlockingInstance(JsonView jsonValue)
-  : BlockingInstance()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BlockingInstance& BlockingInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsServiceName"))
   {
     m_awsServiceName = AWSServiceNameMapper::GetAWSServiceNameForName(jsonValue.GetString("AwsServiceName"));
-
     m_awsServiceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSpeakerSearchTaskRequest::GetSpeakerSearchTaskRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_speakerSearchTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSpeakerSearchTaskRequest::SerializePayload() const
 {
   return {};

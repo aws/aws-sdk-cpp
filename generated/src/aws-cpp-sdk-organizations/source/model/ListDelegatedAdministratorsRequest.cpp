@@ -12,14 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDelegatedAdministratorsRequest::ListDelegatedAdministratorsRequest() : 
-    m_servicePrincipalHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDelegatedAdministratorsRequest::SerializePayload() const
 {
   JsonValue payload;

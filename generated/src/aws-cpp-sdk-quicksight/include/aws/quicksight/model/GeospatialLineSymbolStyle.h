@@ -32,7 +32,7 @@ namespace Model
   class GeospatialLineSymbolStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLineSymbolStyle();
+    AWS_QUICKSIGHT_API GeospatialLineSymbolStyle() = default;
     AWS_QUICKSIGHT_API GeospatialLineSymbolStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLineSymbolStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The color and opacity values for the fill color.</p>
      */
-    inline const GeospatialColor& GetFillColor() const{ return m_fillColor; }
+    inline const GeospatialColor& GetFillColor() const { return m_fillColor; }
     inline bool FillColorHasBeenSet() const { return m_fillColorHasBeenSet; }
-    inline void SetFillColor(const GeospatialColor& value) { m_fillColorHasBeenSet = true; m_fillColor = value; }
-    inline void SetFillColor(GeospatialColor&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::move(value); }
-    inline GeospatialLineSymbolStyle& WithFillColor(const GeospatialColor& value) { SetFillColor(value); return *this;}
-    inline GeospatialLineSymbolStyle& WithFillColor(GeospatialColor&& value) { SetFillColor(std::move(value)); return *this;}
+    template<typename FillColorT = GeospatialColor>
+    void SetFillColor(FillColorT&& value) { m_fillColorHasBeenSet = true; m_fillColor = std::forward<FillColorT>(value); }
+    template<typename FillColorT = GeospatialColor>
+    GeospatialLineSymbolStyle& WithFillColor(FillColorT&& value) { SetFillColor(std::forward<FillColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The width value for a line.</p>
      */
-    inline const GeospatialLineWidth& GetLineWidth() const{ return m_lineWidth; }
+    inline const GeospatialLineWidth& GetLineWidth() const { return m_lineWidth; }
     inline bool LineWidthHasBeenSet() const { return m_lineWidthHasBeenSet; }
-    inline void SetLineWidth(const GeospatialLineWidth& value) { m_lineWidthHasBeenSet = true; m_lineWidth = value; }
-    inline void SetLineWidth(GeospatialLineWidth&& value) { m_lineWidthHasBeenSet = true; m_lineWidth = std::move(value); }
-    inline GeospatialLineSymbolStyle& WithLineWidth(const GeospatialLineWidth& value) { SetLineWidth(value); return *this;}
-    inline GeospatialLineSymbolStyle& WithLineWidth(GeospatialLineWidth&& value) { SetLineWidth(std::move(value)); return *this;}
+    template<typename LineWidthT = GeospatialLineWidth>
+    void SetLineWidth(LineWidthT&& value) { m_lineWidthHasBeenSet = true; m_lineWidth = std::forward<LineWidthT>(value); }
+    template<typename LineWidthT = GeospatialLineWidth>
+    GeospatialLineSymbolStyle& WithLineWidth(LineWidthT&& value) { SetLineWidth(std::forward<LineWidthT>(value)); return *this;}
     ///@}
   private:
 

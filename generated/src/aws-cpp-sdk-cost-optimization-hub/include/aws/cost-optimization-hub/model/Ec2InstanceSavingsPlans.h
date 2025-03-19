@@ -33,7 +33,7 @@ namespace Model
   class Ec2InstanceSavingsPlans
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceSavingsPlans();
+    AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceSavingsPlans() = default;
     AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceSavingsPlans(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceSavingsPlans& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The EC2 instance Savings Plans configuration used for recommendations.</p>
      */
-    inline const Ec2InstanceSavingsPlansConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const Ec2InstanceSavingsPlansConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Ec2InstanceSavingsPlansConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Ec2InstanceSavingsPlansConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline Ec2InstanceSavingsPlans& WithConfiguration(const Ec2InstanceSavingsPlansConfiguration& value) { SetConfiguration(value); return *this;}
-    inline Ec2InstanceSavingsPlans& WithConfiguration(Ec2InstanceSavingsPlansConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = Ec2InstanceSavingsPlansConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Ec2InstanceSavingsPlansConfiguration>
+    Ec2InstanceSavingsPlans& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the Savings Plans purchase recommendation.</p>
      */
-    inline const SavingsPlansCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const SavingsPlansCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const SavingsPlansCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(SavingsPlansCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline Ec2InstanceSavingsPlans& WithCostCalculation(const SavingsPlansCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline Ec2InstanceSavingsPlans& WithCostCalculation(SavingsPlansCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = SavingsPlansCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = SavingsPlansCostCalculation>
+    Ec2InstanceSavingsPlans& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

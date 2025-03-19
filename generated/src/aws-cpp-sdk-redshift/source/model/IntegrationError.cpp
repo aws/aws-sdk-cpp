@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-IntegrationError::IntegrationError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 IntegrationError::IntegrationError(const XmlNode& xmlNode)
-  : IntegrationError()
 {
   *this = xmlNode;
 }

@@ -29,7 +29,7 @@ namespace Model
   class SearchRasterDataCollectionResult
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API SearchRasterDataCollectionResult();
+    AWS_SAGEMAKERGEOSPATIAL_API SearchRasterDataCollectionResult() = default;
     AWS_SAGEMAKERGEOSPATIAL_API SearchRasterDataCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKERGEOSPATIAL_API SearchRasterDataCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>Approximate number of results in the response.</p>
      */
-    inline int GetApproximateResultCount() const{ return m_approximateResultCount; }
-    inline void SetApproximateResultCount(int value) { m_approximateResultCount = value; }
+    inline int GetApproximateResultCount() const { return m_approximateResultCount; }
+    inline void SetApproximateResultCount(int value) { m_approximateResultCountHasBeenSet = true; m_approximateResultCount = value; }
     inline SearchRasterDataCollectionResult& WithApproximateResultCount(int value) { SetApproximateResultCount(value); return *this;}
     ///@}
 
@@ -47,13 +47,13 @@ namespace Model
     /**
      * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
-    inline const Aws::Vector<ItemSource>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<ItemSource>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<ItemSource>&& value) { m_items = std::move(value); }
-    inline SearchRasterDataCollectionResult& WithItems(const Aws::Vector<ItemSource>& value) { SetItems(value); return *this;}
-    inline SearchRasterDataCollectionResult& WithItems(Aws::Vector<ItemSource>&& value) { SetItems(std::move(value)); return *this;}
-    inline SearchRasterDataCollectionResult& AddItems(const ItemSource& value) { m_items.push_back(value); return *this; }
-    inline SearchRasterDataCollectionResult& AddItems(ItemSource&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ItemSource>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<ItemSource>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ItemSource>>
+    SearchRasterDataCollectionResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ItemSource>
+    SearchRasterDataCollectionResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,34 +61,34 @@ namespace Model
      * <p>If the previous response was truncated, you receive this token. Use it in
      * your next request to receive the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchRasterDataCollectionResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchRasterDataCollectionResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchRasterDataCollectionResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchRasterDataCollectionResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchRasterDataCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchRasterDataCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchRasterDataCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchRasterDataCollectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_approximateResultCount;
+    int m_approximateResultCount{0};
+    bool m_approximateResultCountHasBeenSet = false;
 
     Aws::Vector<ItemSource> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

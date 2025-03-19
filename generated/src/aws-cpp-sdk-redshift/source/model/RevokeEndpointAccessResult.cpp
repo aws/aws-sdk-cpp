@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RevokeEndpointAccessResult::RevokeEndpointAccessResult() : 
-    m_status(AuthorizationStatus::NOT_SET),
-    m_allowedAllVPCs(false),
-    m_endpointCount(0)
-{
-}
-
 RevokeEndpointAccessResult::RevokeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RevokeEndpointAccessResult()
 {
   *this = result;
 }
@@ -46,58 +38,69 @@ RevokeEndpointAccessResult& RevokeEndpointAccessResult::operator =(const Aws::Am
     if(!grantorNode.IsNull())
     {
       m_grantor = Aws::Utils::Xml::DecodeEscapedXmlText(grantorNode.GetText());
+      m_grantorHasBeenSet = true;
     }
     XmlNode granteeNode = resultNode.FirstChild("Grantee");
     if(!granteeNode.IsNull())
     {
       m_grantee = Aws::Utils::Xml::DecodeEscapedXmlText(granteeNode.GetText());
+      m_granteeHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
+      m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode authorizeTimeNode = resultNode.FirstChild("AuthorizeTime");
     if(!authorizeTimeNode.IsNull())
     {
       m_authorizeTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizeTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_authorizeTimeHasBeenSet = true;
     }
     XmlNode clusterStatusNode = resultNode.FirstChild("ClusterStatus");
     if(!clusterStatusNode.IsNull())
     {
       m_clusterStatus = Aws::Utils::Xml::DecodeEscapedXmlText(clusterStatusNode.GetText());
+      m_clusterStatusHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = AuthorizationStatusMapper::GetAuthorizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AuthorizationStatusMapper::GetAuthorizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
     XmlNode allowedAllVPCsNode = resultNode.FirstChild("AllowedAllVPCs");
     if(!allowedAllVPCsNode.IsNull())
     {
       m_allowedAllVPCs = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowedAllVPCsNode.GetText()).c_str()).c_str());
+      m_allowedAllVPCsHasBeenSet = true;
     }
     XmlNode allowedVPCsNode = resultNode.FirstChild("AllowedVPCs");
     if(!allowedVPCsNode.IsNull())
     {
       XmlNode allowedVPCsMember = allowedVPCsNode.FirstChild("VpcIdentifier");
+      m_allowedVPCsHasBeenSet = !allowedVPCsMember.IsNull();
       while(!allowedVPCsMember.IsNull())
       {
         m_allowedVPCs.push_back(allowedVPCsMember.GetText());
         allowedVPCsMember = allowedVPCsMember.NextNode("VpcIdentifier");
       }
 
+      m_allowedVPCsHasBeenSet = true;
     }
     XmlNode endpointCountNode = resultNode.FirstChild("EndpointCount");
     if(!endpointCountNode.IsNull())
     {
       m_endpointCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointCountNode.GetText()).c_str()).c_str());
+      m_endpointCountHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::RevokeEndpointAccessResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

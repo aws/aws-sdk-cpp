@@ -18,15 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-PolicyQualifierInfo::PolicyQualifierInfo() : 
-    m_policyQualifierId(PolicyQualifierId::NOT_SET),
-    m_policyQualifierIdHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
-{
-}
-
 PolicyQualifierInfo::PolicyQualifierInfo(JsonView jsonValue)
-  : PolicyQualifierInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PolicyQualifierInfo& PolicyQualifierInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyQualifierId"))
   {
     m_policyQualifierId = PolicyQualifierIdMapper::GetPolicyQualifierIdForName(jsonValue.GetString("PolicyQualifierId"));
-
     m_policyQualifierIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Qualifier"))
   {
     m_qualifier = jsonValue.GetObject("Qualifier");
-
     m_qualifierHasBeenSet = true;
   }
-
   return *this;
 }
 

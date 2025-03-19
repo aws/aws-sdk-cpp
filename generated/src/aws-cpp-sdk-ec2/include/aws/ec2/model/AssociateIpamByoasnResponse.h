@@ -28,7 +28,7 @@ namespace Model
   class AssociateIpamByoasnResponse
   {
   public:
-    AWS_EC2_API AssociateIpamByoasnResponse();
+    AWS_EC2_API AssociateIpamByoasnResponse() = default;
     AWS_EC2_API AssociateIpamByoasnResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateIpamByoasnResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The ASN and BYOIP CIDR association.</p>
      */
-    inline const AsnAssociation& GetAsnAssociation() const{ return m_asnAssociation; }
-    inline void SetAsnAssociation(const AsnAssociation& value) { m_asnAssociation = value; }
-    inline void SetAsnAssociation(AsnAssociation&& value) { m_asnAssociation = std::move(value); }
-    inline AssociateIpamByoasnResponse& WithAsnAssociation(const AsnAssociation& value) { SetAsnAssociation(value); return *this;}
-    inline AssociateIpamByoasnResponse& WithAsnAssociation(AsnAssociation&& value) { SetAsnAssociation(std::move(value)); return *this;}
+    inline const AsnAssociation& GetAsnAssociation() const { return m_asnAssociation; }
+    template<typename AsnAssociationT = AsnAssociation>
+    void SetAsnAssociation(AsnAssociationT&& value) { m_asnAssociationHasBeenSet = true; m_asnAssociation = std::forward<AsnAssociationT>(value); }
+    template<typename AsnAssociationT = AsnAssociation>
+    AssociateIpamByoasnResponse& WithAsnAssociation(AsnAssociationT&& value) { SetAsnAssociation(std::forward<AsnAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateIpamByoasnResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateIpamByoasnResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateIpamByoasnResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     AsnAssociation m_asnAssociation;
+    bool m_asnAssociationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

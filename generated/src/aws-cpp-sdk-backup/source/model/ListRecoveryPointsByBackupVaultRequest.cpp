@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecoveryPointsByBackupVaultRequest::ListRecoveryPointsByBackupVaultRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultAccountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_byResourceArnHasBeenSet(false),
-    m_byResourceTypeHasBeenSet(false),
-    m_byBackupPlanIdHasBeenSet(false),
-    m_byCreatedBeforeHasBeenSet(false),
-    m_byCreatedAfterHasBeenSet(false),
-    m_byParentRecoveryPointArnHasBeenSet(false)
-{
-}
-
 Aws::String ListRecoveryPointsByBackupVaultRequest::SerializePayload() const
 {
   return {};

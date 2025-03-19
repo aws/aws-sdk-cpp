@@ -12,13 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDiscoveryJobRequest::UpdateDiscoveryJobRequest() : 
-    m_discoveryJobArnHasBeenSet(false),
-    m_collectionDurationMinutes(0),
-    m_collectionDurationMinutesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDiscoveryJobRequest::SerializePayload() const
 {
   JsonValue payload;

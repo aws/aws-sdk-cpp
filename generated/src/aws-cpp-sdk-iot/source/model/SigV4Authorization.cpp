@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-SigV4Authorization::SigV4Authorization() : 
-    m_signingRegionHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 SigV4Authorization::SigV4Authorization(JsonView jsonValue)
-  : SigV4Authorization()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SigV4Authorization& SigV4Authorization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("signingRegion"))
   {
     m_signingRegion = jsonValue.GetString("signingRegion");
-
     m_signingRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

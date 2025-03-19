@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GrantAccessResult::GrantAccessResult()
-{
-}
-
 GrantAccessResult::GrantAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GrantAccessResult& GrantAccessResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("TemporaryCredential"))
   {
     m_temporaryCredential = jsonValue.GetObject("TemporaryCredential");
-
+    m_temporaryCredentialHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

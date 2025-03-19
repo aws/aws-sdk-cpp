@@ -58,7 +58,7 @@ namespace Model
   class FindingProviderFields
   {
   public:
-    AWS_SECURITYHUB_API FindingProviderFields();
+    AWS_SECURITYHUB_API FindingProviderFields() = default;
     AWS_SECURITYHUB_API FindingProviderFields(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FindingProviderFields& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -71,7 +71,7 @@ namespace Model
      * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
      * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
-    inline int GetConfidence() const{ return m_confidence; }
+    inline int GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(int value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline FindingProviderFields& WithConfidence(int value) { SetConfidence(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
      * finding.</p> <p>A score of 0 means that the underlying resources have no
      * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
-    inline int GetCriticality() const{ return m_criticality; }
+    inline int GetCriticality() const { return m_criticality; }
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
     inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
     inline FindingProviderFields& WithCriticality(int value) { SetCriticality(value); return *this;}
@@ -93,26 +93,26 @@ namespace Model
     /**
      * <p>A list of findings that are related to the current finding.</p>
      */
-    inline const Aws::Vector<RelatedFinding>& GetRelatedFindings() const{ return m_relatedFindings; }
+    inline const Aws::Vector<RelatedFinding>& GetRelatedFindings() const { return m_relatedFindings; }
     inline bool RelatedFindingsHasBeenSet() const { return m_relatedFindingsHasBeenSet; }
-    inline void SetRelatedFindings(const Aws::Vector<RelatedFinding>& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = value; }
-    inline void SetRelatedFindings(Aws::Vector<RelatedFinding>&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = std::move(value); }
-    inline FindingProviderFields& WithRelatedFindings(const Aws::Vector<RelatedFinding>& value) { SetRelatedFindings(value); return *this;}
-    inline FindingProviderFields& WithRelatedFindings(Aws::Vector<RelatedFinding>&& value) { SetRelatedFindings(std::move(value)); return *this;}
-    inline FindingProviderFields& AddRelatedFindings(const RelatedFinding& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.push_back(value); return *this; }
-    inline FindingProviderFields& AddRelatedFindings(RelatedFinding&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.push_back(std::move(value)); return *this; }
+    template<typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
+    void SetRelatedFindings(RelatedFindingsT&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = std::forward<RelatedFindingsT>(value); }
+    template<typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
+    FindingProviderFields& WithRelatedFindings(RelatedFindingsT&& value) { SetRelatedFindings(std::forward<RelatedFindingsT>(value)); return *this;}
+    template<typename RelatedFindingsT = RelatedFinding>
+    FindingProviderFields& AddRelatedFindings(RelatedFindingsT&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.emplace_back(std::forward<RelatedFindingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The severity of a finding.</p>
      */
-    inline const FindingProviderSeverity& GetSeverity() const{ return m_severity; }
+    inline const FindingProviderSeverity& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const FindingProviderSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(FindingProviderSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline FindingProviderFields& WithSeverity(const FindingProviderSeverity& value) { SetSeverity(value); return *this;}
-    inline FindingProviderFields& WithSeverity(FindingProviderSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    template<typename SeverityT = FindingProviderSeverity>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = FindingProviderSeverity>
+    FindingProviderFields& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,22 +122,21 @@ namespace Model
      * namespace values are: Software and Configuration Checks | TTPs | Effects |
      * Unusual Behaviors | Sensitive Data Identifications</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline FindingProviderFields& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
-    inline FindingProviderFields& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
-    inline FindingProviderFields& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline FindingProviderFields& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
-    inline FindingProviderFields& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    FindingProviderFields& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    template<typename TypesT = Aws::String>
+    FindingProviderFields& AddTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types.emplace_back(std::forward<TypesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_confidence;
+    int m_confidence{0};
     bool m_confidenceHasBeenSet = false;
 
-    int m_criticality;
+    int m_criticality{0};
     bool m_criticalityHasBeenSet = false;
 
     Aws::Vector<RelatedFinding> m_relatedFindings;

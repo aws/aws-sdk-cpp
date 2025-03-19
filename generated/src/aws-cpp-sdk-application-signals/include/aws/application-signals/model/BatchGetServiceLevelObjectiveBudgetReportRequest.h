@@ -23,7 +23,7 @@ namespace Model
   class BatchGetServiceLevelObjectiveBudgetReportRequest : public ApplicationSignalsRequest
   {
   public:
-    AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportRequest();
+    AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
      * <p>The date and time that you want the report to be for. It is expressed as the
      * number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    BatchGetServiceLevelObjectiveBudgetReportRequest& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,19 +52,18 @@ namespace Model
      * <p>An array containing the IDs of the service level objectives that you want to
      * include in the report.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSloIds() const{ return m_sloIds; }
+    inline const Aws::Vector<Aws::String>& GetSloIds() const { return m_sloIds; }
     inline bool SloIdsHasBeenSet() const { return m_sloIdsHasBeenSet; }
-    inline void SetSloIds(const Aws::Vector<Aws::String>& value) { m_sloIdsHasBeenSet = true; m_sloIds = value; }
-    inline void SetSloIds(Aws::Vector<Aws::String>&& value) { m_sloIdsHasBeenSet = true; m_sloIds = std::move(value); }
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& WithSloIds(const Aws::Vector<Aws::String>& value) { SetSloIds(value); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& WithSloIds(Aws::Vector<Aws::String>&& value) { SetSloIds(std::move(value)); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& AddSloIds(const Aws::String& value) { m_sloIdsHasBeenSet = true; m_sloIds.push_back(value); return *this; }
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& AddSloIds(Aws::String&& value) { m_sloIdsHasBeenSet = true; m_sloIds.push_back(std::move(value)); return *this; }
-    inline BatchGetServiceLevelObjectiveBudgetReportRequest& AddSloIds(const char* value) { m_sloIdsHasBeenSet = true; m_sloIds.push_back(value); return *this; }
+    template<typename SloIdsT = Aws::Vector<Aws::String>>
+    void SetSloIds(SloIdsT&& value) { m_sloIdsHasBeenSet = true; m_sloIds = std::forward<SloIdsT>(value); }
+    template<typename SloIdsT = Aws::Vector<Aws::String>>
+    BatchGetServiceLevelObjectiveBudgetReportRequest& WithSloIds(SloIdsT&& value) { SetSloIds(std::forward<SloIdsT>(value)); return *this;}
+    template<typename SloIdsT = Aws::String>
+    BatchGetServiceLevelObjectiveBudgetReportRequest& AddSloIds(SloIdsT&& value) { m_sloIdsHasBeenSet = true; m_sloIds.emplace_back(std::forward<SloIdsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sloIds;

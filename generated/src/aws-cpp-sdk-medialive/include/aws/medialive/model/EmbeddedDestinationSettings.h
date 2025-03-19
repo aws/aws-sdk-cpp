@@ -29,7 +29,7 @@ namespace Model
   class EmbeddedDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API EmbeddedDestinationSettings();
+    AWS_MEDIALIVE_API EmbeddedDestinationSettings() = default;
     AWS_MEDIALIVE_API EmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API EmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

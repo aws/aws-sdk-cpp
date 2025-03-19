@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-PartitionIndexDescriptor::PartitionIndexDescriptor() : 
-    m_indexNameHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_indexStatus(PartitionIndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_backfillErrorsHasBeenSet(false)
-{
-}
-
 PartitionIndexDescriptor::PartitionIndexDescriptor(JsonView jsonValue)
-  : PartitionIndexDescriptor()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ PartitionIndexDescriptor& PartitionIndexDescriptor::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
@@ -51,14 +39,11 @@ PartitionIndexDescriptor& PartitionIndexDescriptor::operator =(JsonView jsonValu
     }
     m_keysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = PartitionIndexStatusMapper::GetPartitionIndexStatusForName(jsonValue.GetString("IndexStatus"));
-
     m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackfillErrors"))
   {
     Aws::Utils::Array<JsonView> backfillErrorsJsonList = jsonValue.GetArray("BackfillErrors");
@@ -68,7 +53,6 @@ PartitionIndexDescriptor& PartitionIndexDescriptor::operator =(JsonView jsonValu
     }
     m_backfillErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3InitiateRestoreObjectOperation::S3InitiateRestoreObjectOperation() : 
-    m_expirationInDays(0),
-    m_expirationInDaysHasBeenSet(false),
-    m_glacierJobTier(S3GlacierJobTier::NOT_SET),
-    m_glacierJobTierHasBeenSet(false)
-{
-}
-
 S3InitiateRestoreObjectOperation::S3InitiateRestoreObjectOperation(const XmlNode& xmlNode)
-  : S3InitiateRestoreObjectOperation()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ S3InitiateRestoreObjectOperation& S3InitiateRestoreObjectOperation::operator =(c
     XmlNode glacierJobTierNode = resultNode.FirstChild("GlacierJobTier");
     if(!glacierJobTierNode.IsNull())
     {
-      m_glacierJobTier = S3GlacierJobTierMapper::GetS3GlacierJobTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(glacierJobTierNode.GetText()).c_str()).c_str());
+      m_glacierJobTier = S3GlacierJobTierMapper::GetS3GlacierJobTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(glacierJobTierNode.GetText()).c_str()));
       m_glacierJobTierHasBeenSet = true;
     }
   }

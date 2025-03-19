@@ -32,7 +32,7 @@ namespace Model
   class HostPropertiesRequest
   {
   public:
-    AWS_DEADLINE_API HostPropertiesRequest();
+    AWS_DEADLINE_API HostPropertiesRequest() = default;
     AWS_DEADLINE_API HostPropertiesRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API HostPropertiesRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The IP address of the host.</p>
      */
-    inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
+    inline const IpAddresses& GetIpAddresses() const { return m_ipAddresses; }
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-    inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-    inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-    inline HostPropertiesRequest& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
-    inline HostPropertiesRequest& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
+    template<typename IpAddressesT = IpAddresses>
+    void SetIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::forward<IpAddressesT>(value); }
+    template<typename IpAddressesT = IpAddresses>
+    HostPropertiesRequest& WithIpAddresses(IpAddressesT&& value) { SetIpAddresses(std::forward<IpAddressesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The host name.</p>
      */
-    inline const Aws::String& GetHostName() const{ return m_hostName; }
+    inline const Aws::String& GetHostName() const { return m_hostName; }
     inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
-    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
-    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
-    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
-    inline HostPropertiesRequest& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
-    inline HostPropertiesRequest& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
-    inline HostPropertiesRequest& WithHostName(const char* value) { SetHostName(value); return *this;}
+    template<typename HostNameT = Aws::String>
+    void SetHostName(HostNameT&& value) { m_hostNameHasBeenSet = true; m_hostName = std::forward<HostNameT>(value); }
+    template<typename HostNameT = Aws::String>
+    HostPropertiesRequest& WithHostName(HostNameT&& value) { SetHostName(std::forward<HostNameT>(value)); return *this;}
     ///@}
   private:
 

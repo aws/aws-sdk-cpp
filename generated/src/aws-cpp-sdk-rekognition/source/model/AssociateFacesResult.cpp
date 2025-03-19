@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateFacesResult::AssociateFacesResult() : 
-    m_userStatus(UserStatus::NOT_SET)
-{
-}
-
 AssociateFacesResult::AssociateFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AssociateFacesResult()
 {
   *this = result;
 }
@@ -38,8 +32,8 @@ AssociateFacesResult& AssociateFacesResult::operator =(const Aws::AmazonWebServi
     {
       m_associatedFaces.push_back(associatedFacesJsonList[associatedFacesIndex].AsObject());
     }
+    m_associatedFacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnsuccessfulFaceAssociations"))
   {
     Aws::Utils::Array<JsonView> unsuccessfulFaceAssociationsJsonList = jsonValue.GetArray("UnsuccessfulFaceAssociations");
@@ -47,20 +41,20 @@ AssociateFacesResult& AssociateFacesResult::operator =(const Aws::AmazonWebServi
     {
       m_unsuccessfulFaceAssociations.push_back(unsuccessfulFaceAssociationsJsonList[unsuccessfulFaceAssociationsIndex].AsObject());
     }
+    m_unsuccessfulFaceAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserStatus"))
   {
     m_userStatus = UserStatusMapper::GetUserStatusForName(jsonValue.GetString("UserStatus"));
-
+    m_userStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

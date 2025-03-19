@@ -28,7 +28,7 @@ namespace Model
   class DeleteCarrierGatewayResponse
   {
   public:
-    AWS_EC2_API DeleteCarrierGatewayResponse();
+    AWS_EC2_API DeleteCarrierGatewayResponse() = default;
     AWS_EC2_API DeleteCarrierGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteCarrierGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the carrier gateway.</p>
      */
-    inline const CarrierGateway& GetCarrierGateway() const{ return m_carrierGateway; }
-    inline void SetCarrierGateway(const CarrierGateway& value) { m_carrierGateway = value; }
-    inline void SetCarrierGateway(CarrierGateway&& value) { m_carrierGateway = std::move(value); }
-    inline DeleteCarrierGatewayResponse& WithCarrierGateway(const CarrierGateway& value) { SetCarrierGateway(value); return *this;}
-    inline DeleteCarrierGatewayResponse& WithCarrierGateway(CarrierGateway&& value) { SetCarrierGateway(std::move(value)); return *this;}
+    inline const CarrierGateway& GetCarrierGateway() const { return m_carrierGateway; }
+    template<typename CarrierGatewayT = CarrierGateway>
+    void SetCarrierGateway(CarrierGatewayT&& value) { m_carrierGatewayHasBeenSet = true; m_carrierGateway = std::forward<CarrierGatewayT>(value); }
+    template<typename CarrierGatewayT = CarrierGateway>
+    DeleteCarrierGatewayResponse& WithCarrierGateway(CarrierGatewayT&& value) { SetCarrierGateway(std::forward<CarrierGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteCarrierGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteCarrierGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteCarrierGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     CarrierGateway m_carrierGateway;
+    bool m_carrierGatewayHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

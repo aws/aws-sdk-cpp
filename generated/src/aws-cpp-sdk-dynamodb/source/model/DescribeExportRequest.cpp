@@ -12,11 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExportRequest::DescribeExportRequest() : 
-    m_exportArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExportRequest::SerializePayload() const
 {
   JsonValue payload;

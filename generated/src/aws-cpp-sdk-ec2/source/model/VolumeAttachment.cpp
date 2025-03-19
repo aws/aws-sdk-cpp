@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeAttachment::VolumeAttachment() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false),
-    m_instanceOwningServiceHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_state(VolumeAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_attachTimeHasBeenSet(false)
-{
-}
-
 VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode)
-  : VolumeAttachment()
 {
   *this = xmlNode;
 }
@@ -85,7 +70,7 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
     {
-      m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");

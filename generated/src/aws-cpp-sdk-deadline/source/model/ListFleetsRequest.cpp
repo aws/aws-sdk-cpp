@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFleetsRequest::ListFleetsRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFleetsRequest::SerializePayload() const
 {
   return {};

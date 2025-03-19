@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ParameterRanges::ParameterRanges() : 
-    m_categoricalParameterRangesHasBeenSet(false),
-    m_continuousParameterRangesHasBeenSet(false),
-    m_integerParameterRangesHasBeenSet(false)
-{
-}
-
 ParameterRanges::ParameterRanges(JsonView jsonValue)
-  : ParameterRanges()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_categoricalParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContinuousParameterRanges"))
   {
     Aws::Utils::Array<JsonView> continuousParameterRangesJsonList = jsonValue.GetArray("ContinuousParameterRanges");
@@ -52,7 +43,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_continuousParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerParameterRanges"))
   {
     Aws::Utils::Array<JsonView> integerParameterRangesJsonList = jsonValue.GetArray("IntegerParameterRanges");
@@ -62,7 +52,6 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
     }
     m_integerParameterRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

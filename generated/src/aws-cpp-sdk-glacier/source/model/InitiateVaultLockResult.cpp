@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitiateVaultLockResult::InitiateVaultLockResult()
-{
-}
-
 InitiateVaultLockResult::InitiateVaultLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,12 +31,14 @@ InitiateVaultLockResult& InitiateVaultLockResult::operator =(const Aws::AmazonWe
   if(lockIdIter != headers.end())
   {
     m_lockId = lockIdIter->second;
+    m_lockIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

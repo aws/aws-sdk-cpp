@@ -20,25 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-UsageLimit::UsageLimit() : 
-    m_usageLimitIdHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_featureType(UsageLimitFeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false),
-    m_limitType(UsageLimitLimitType::NOT_SET),
-    m_limitTypeHasBeenSet(false),
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_period(UsageLimitPeriod::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_breachAction(UsageLimitBreachAction::NOT_SET),
-    m_breachActionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 UsageLimit::UsageLimit(const XmlNode& xmlNode)
-  : UsageLimit()
 {
   *this = xmlNode;
 }
@@ -64,13 +46,13 @@ UsageLimit& UsageLimit::operator =(const XmlNode& xmlNode)
     XmlNode featureTypeNode = resultNode.FirstChild("FeatureType");
     if(!featureTypeNode.IsNull())
     {
-      m_featureType = UsageLimitFeatureTypeMapper::GetUsageLimitFeatureTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(featureTypeNode.GetText()).c_str()).c_str());
+      m_featureType = UsageLimitFeatureTypeMapper::GetUsageLimitFeatureTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(featureTypeNode.GetText()).c_str()));
       m_featureTypeHasBeenSet = true;
     }
     XmlNode limitTypeNode = resultNode.FirstChild("LimitType");
     if(!limitTypeNode.IsNull())
     {
-      m_limitType = UsageLimitLimitTypeMapper::GetUsageLimitLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(limitTypeNode.GetText()).c_str()).c_str());
+      m_limitType = UsageLimitLimitTypeMapper::GetUsageLimitLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(limitTypeNode.GetText()).c_str()));
       m_limitTypeHasBeenSet = true;
     }
     XmlNode amountNode = resultNode.FirstChild("Amount");
@@ -82,19 +64,20 @@ UsageLimit& UsageLimit::operator =(const XmlNode& xmlNode)
     XmlNode periodNode = resultNode.FirstChild("Period");
     if(!periodNode.IsNull())
     {
-      m_period = UsageLimitPeriodMapper::GetUsageLimitPeriodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+      m_period = UsageLimitPeriodMapper::GetUsageLimitPeriodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()));
       m_periodHasBeenSet = true;
     }
     XmlNode breachActionNode = resultNode.FirstChild("BreachAction");
     if(!breachActionNode.IsNull())
     {
-      m_breachAction = UsageLimitBreachActionMapper::GetUsageLimitBreachActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(breachActionNode.GetText()).c_str()).c_str());
+      m_breachAction = UsageLimitBreachActionMapper::GetUsageLimitBreachActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(breachActionNode.GetText()).c_str()));
       m_breachActionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

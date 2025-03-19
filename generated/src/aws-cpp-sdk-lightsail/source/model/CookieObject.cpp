@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-CookieObject::CookieObject() : 
-    m_option(ForwardValues::NOT_SET),
-    m_optionHasBeenSet(false),
-    m_cookiesAllowListHasBeenSet(false)
-{
-}
-
 CookieObject::CookieObject(JsonView jsonValue)
-  : CookieObject()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CookieObject& CookieObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("option"))
   {
     m_option = ForwardValuesMapper::GetForwardValuesForName(jsonValue.GetString("option"));
-
     m_optionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cookiesAllowList"))
   {
     Aws::Utils::Array<JsonView> cookiesAllowListJsonList = jsonValue.GetArray("cookiesAllowList");
@@ -49,7 +39,6 @@ CookieObject& CookieObject::operator =(JsonView jsonValue)
     }
     m_cookiesAllowListHasBeenSet = true;
   }
-
   return *this;
 }
 

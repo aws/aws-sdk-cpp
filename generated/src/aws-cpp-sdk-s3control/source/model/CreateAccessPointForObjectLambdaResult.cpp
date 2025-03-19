@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAccessPointForObjectLambdaResult::CreateAccessPointForObjectLambdaResult()
-{
-}
-
 CreateAccessPointForObjectLambdaResult::CreateAccessPointForObjectLambdaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ CreateAccessPointForObjectLambdaResult& CreateAccessPointForObjectLambdaResult::
     if(!objectLambdaAccessPointArnNode.IsNull())
     {
       m_objectLambdaAccessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(objectLambdaAccessPointArnNode.GetText());
+      m_objectLambdaAccessPointArnHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = aliasNode;
+      m_aliasHasBeenSet = true;
     }
   }
 
@@ -49,12 +47,14 @@ CreateAccessPointForObjectLambdaResult& CreateAccessPointForObjectLambdaResult::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

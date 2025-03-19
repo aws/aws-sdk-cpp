@@ -10,11 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableVpcClassicLinkDnsSupportRequest::EnableVpcClassicLinkDnsSupportRequest() : 
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 Aws::String EnableVpcClassicLinkDnsSupportRequest::SerializePayload() const
 {
   Aws::StringStream ss;

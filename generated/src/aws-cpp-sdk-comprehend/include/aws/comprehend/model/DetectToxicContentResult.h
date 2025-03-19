@@ -29,7 +29,7 @@ namespace Model
   class DetectToxicContentResult
   {
   public:
-    AWS_COMPREHEND_API DetectToxicContentResult();
+    AWS_COMPREHEND_API DetectToxicContentResult() = default;
     AWS_COMPREHEND_API DetectToxicContentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DetectToxicContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,30 @@ namespace Model
      * confidence score for each content type. The results list also includes a
      * toxicity score for each entry in the results list. </p>
      */
-    inline const Aws::Vector<ToxicLabels>& GetResultList() const{ return m_resultList; }
-    inline void SetResultList(const Aws::Vector<ToxicLabels>& value) { m_resultList = value; }
-    inline void SetResultList(Aws::Vector<ToxicLabels>&& value) { m_resultList = std::move(value); }
-    inline DetectToxicContentResult& WithResultList(const Aws::Vector<ToxicLabels>& value) { SetResultList(value); return *this;}
-    inline DetectToxicContentResult& WithResultList(Aws::Vector<ToxicLabels>&& value) { SetResultList(std::move(value)); return *this;}
-    inline DetectToxicContentResult& AddResultList(const ToxicLabels& value) { m_resultList.push_back(value); return *this; }
-    inline DetectToxicContentResult& AddResultList(ToxicLabels&& value) { m_resultList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ToxicLabels>& GetResultList() const { return m_resultList; }
+    template<typename ResultListT = Aws::Vector<ToxicLabels>>
+    void SetResultList(ResultListT&& value) { m_resultListHasBeenSet = true; m_resultList = std::forward<ResultListT>(value); }
+    template<typename ResultListT = Aws::Vector<ToxicLabels>>
+    DetectToxicContentResult& WithResultList(ResultListT&& value) { SetResultList(std::forward<ResultListT>(value)); return *this;}
+    template<typename ResultListT = ToxicLabels>
+    DetectToxicContentResult& AddResultList(ResultListT&& value) { m_resultListHasBeenSet = true; m_resultList.emplace_back(std::forward<ResultListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectToxicContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectToxicContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectToxicContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectToxicContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ToxicLabels> m_resultList;
+    bool m_resultListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,15 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateForecastExportJobRequest::CreateForecastExportJobRequest() : 
-    m_forecastExportJobNameHasBeenSet(false),
-    m_forecastArnHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String CreateForecastExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

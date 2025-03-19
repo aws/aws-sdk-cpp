@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrganizationHealthResult::DescribeOrganizationHealthResult() : 
-    m_openReactiveInsights(0),
-    m_openProactiveInsights(0),
-    m_metricsAnalyzed(0),
-    m_resourceHours(0)
-{
-}
-
 DescribeOrganizationHealthResult::DescribeOrganizationHealthResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeOrganizationHealthResult()
 {
   *this = result;
 }
@@ -37,33 +28,30 @@ DescribeOrganizationHealthResult& DescribeOrganizationHealthResult::operator =(c
   if(jsonValue.ValueExists("OpenReactiveInsights"))
   {
     m_openReactiveInsights = jsonValue.GetInteger("OpenReactiveInsights");
-
+    m_openReactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenProactiveInsights"))
   {
     m_openProactiveInsights = jsonValue.GetInteger("OpenProactiveInsights");
-
+    m_openProactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricsAnalyzed"))
   {
     m_metricsAnalyzed = jsonValue.GetInteger("MetricsAnalyzed");
-
+    m_metricsAnalyzedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceHours"))
   {
     m_resourceHours = jsonValue.GetInt64("ResourceHours");
-
+    m_resourceHoursHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

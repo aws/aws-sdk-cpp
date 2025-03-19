@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchGetAssetPropertyAggregatesSuccessEntry::BatchGetAssetPropertyAggregatesSuccessEntry() : 
-    m_entryIdHasBeenSet(false),
-    m_aggregatedValuesHasBeenSet(false)
-{
-}
-
 BatchGetAssetPropertyAggregatesSuccessEntry::BatchGetAssetPropertyAggregatesSuccessEntry(JsonView jsonValue)
-  : BatchGetAssetPropertyAggregatesSuccessEntry()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BatchGetAssetPropertyAggregatesSuccessEntry& BatchGetAssetPropertyAggregatesSucc
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregatedValues"))
   {
     Aws::Utils::Array<JsonView> aggregatedValuesJsonList = jsonValue.GetArray("aggregatedValues");
@@ -48,7 +39,6 @@ BatchGetAssetPropertyAggregatesSuccessEntry& BatchGetAssetPropertyAggregatesSucc
     }
     m_aggregatedValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

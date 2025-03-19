@@ -30,7 +30,7 @@ namespace Model
   class ConnectionSettings
   {
   public:
-    AWS_ELASTICLOADBALANCING_API ConnectionSettings();
+    AWS_ELASTICLOADBALANCING_API ConnectionSettings() = default;
     AWS_ELASTICLOADBALANCING_API ConnectionSettings(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API ConnectionSettings& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
      * <p>The time, in seconds, that the connection is allowed to be idle (no data has
      * been sent over the connection) before it is closed by the load balancer.</p>
      */
-    inline int GetIdleTimeout() const{ return m_idleTimeout; }
+    inline int GetIdleTimeout() const { return m_idleTimeout; }
     inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
     inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
     inline ConnectionSettings& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
     ///@}
   private:
 
-    int m_idleTimeout;
+    int m_idleTimeout{0};
     bool m_idleTimeoutHasBeenSet = false;
   };
 

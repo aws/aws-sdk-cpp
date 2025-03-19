@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-AddRoleToDBInstanceRequest::AddRoleToDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false)
-{
-}
-
 Aws::String AddRoleToDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

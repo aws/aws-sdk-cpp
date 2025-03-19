@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSbomExportResult::GetSbomExportResult() : 
-    m_errorCode(ReportingErrorCode::NOT_SET),
-    m_format(SbomReportFormat::NOT_SET),
-    m_status(ExternalReportStatus::NOT_SET)
-{
-}
-
 GetSbomExportResult::GetSbomExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSbomExportResult()
 {
   *this = result;
 }
@@ -36,51 +28,45 @@ GetSbomExportResult& GetSbomExportResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ReportingErrorCodeMapper::GetReportingErrorCodeForName(jsonValue.GetString("errorCode"));
-
+    m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterCriteria"))
   {
     m_filterCriteria = jsonValue.GetObject("filterCriteria");
-
+    m_filterCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = SbomReportFormatMapper::GetSbomReportFormatForName(jsonValue.GetString("format"));
-
+    m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportId"))
   {
     m_reportId = jsonValue.GetString("reportId");
-
+    m_reportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("s3Destination");
-
+    m_s3DestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExternalReportStatusMapper::GetExternalReportStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

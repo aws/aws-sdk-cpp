@@ -24,7 +24,7 @@ namespace Model
   class CreateConfiguredModelAlgorithmRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API CreateConfiguredModelAlgorithmRequest();
+    AWS_CLEANROOMSML_API CreateConfiguredModelAlgorithmRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name of the configured model algorithm.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConfiguredModelAlgorithmRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the configured model algorithm.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateConfiguredModelAlgorithmRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role that is used to access the
      * repository.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateConfiguredModelAlgorithmRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +77,12 @@ namespace Model
      * <p>Configuration information for the training container, including entrypoints
      * and arguments.</p>
      */
-    inline const ContainerConfig& GetTrainingContainerConfig() const{ return m_trainingContainerConfig; }
+    inline const ContainerConfig& GetTrainingContainerConfig() const { return m_trainingContainerConfig; }
     inline bool TrainingContainerConfigHasBeenSet() const { return m_trainingContainerConfigHasBeenSet; }
-    inline void SetTrainingContainerConfig(const ContainerConfig& value) { m_trainingContainerConfigHasBeenSet = true; m_trainingContainerConfig = value; }
-    inline void SetTrainingContainerConfig(ContainerConfig&& value) { m_trainingContainerConfigHasBeenSet = true; m_trainingContainerConfig = std::move(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithTrainingContainerConfig(const ContainerConfig& value) { SetTrainingContainerConfig(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithTrainingContainerConfig(ContainerConfig&& value) { SetTrainingContainerConfig(std::move(value)); return *this;}
+    template<typename TrainingContainerConfigT = ContainerConfig>
+    void SetTrainingContainerConfig(TrainingContainerConfigT&& value) { m_trainingContainerConfigHasBeenSet = true; m_trainingContainerConfig = std::forward<TrainingContainerConfigT>(value); }
+    template<typename TrainingContainerConfigT = ContainerConfig>
+    CreateConfiguredModelAlgorithmRequest& WithTrainingContainerConfig(TrainingContainerConfigT&& value) { SetTrainingContainerConfig(std::forward<TrainingContainerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,12 @@ namespace Model
      * <p>Configuration information for the inference container that is used when you
      * run an inference job on a configured model algorithm.</p>
      */
-    inline const InferenceContainerConfig& GetInferenceContainerConfig() const{ return m_inferenceContainerConfig; }
+    inline const InferenceContainerConfig& GetInferenceContainerConfig() const { return m_inferenceContainerConfig; }
     inline bool InferenceContainerConfigHasBeenSet() const { return m_inferenceContainerConfigHasBeenSet; }
-    inline void SetInferenceContainerConfig(const InferenceContainerConfig& value) { m_inferenceContainerConfigHasBeenSet = true; m_inferenceContainerConfig = value; }
-    inline void SetInferenceContainerConfig(InferenceContainerConfig&& value) { m_inferenceContainerConfigHasBeenSet = true; m_inferenceContainerConfig = std::move(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithInferenceContainerConfig(const InferenceContainerConfig& value) { SetInferenceContainerConfig(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithInferenceContainerConfig(InferenceContainerConfig&& value) { SetInferenceContainerConfig(std::move(value)); return *this;}
+    template<typename InferenceContainerConfigT = InferenceContainerConfig>
+    void SetInferenceContainerConfig(InferenceContainerConfigT&& value) { m_inferenceContainerConfigHasBeenSet = true; m_inferenceContainerConfig = std::forward<InferenceContainerConfigT>(value); }
+    template<typename InferenceContainerConfigT = InferenceContainerConfig>
+    CreateConfiguredModelAlgorithmRequest& WithInferenceContainerConfig(InferenceContainerConfigT&& value) { SetInferenceContainerConfig(std::forward<InferenceContainerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,19 +119,16 @@ namespace Model
      * count against the limit of 50 tags. Tags with only the key prefix of aws do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConfiguredModelAlgorithmRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateConfiguredModelAlgorithmRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateConfiguredModelAlgorithmRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -146,14 +137,12 @@ namespace Model
      * and decrypt customer-owned data in the configured ML model algorithm and
      * associated data.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline CreateConfiguredModelAlgorithmRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline CreateConfiguredModelAlgorithmRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    CreateConfiguredModelAlgorithmRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 

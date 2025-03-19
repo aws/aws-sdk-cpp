@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RootCauseImpact::RootCauseImpact() : 
-    m_contribution(0.0),
-    m_contributionHasBeenSet(false)
-{
-}
-
 RootCauseImpact::RootCauseImpact(JsonView jsonValue)
-  : RootCauseImpact()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RootCauseImpact& RootCauseImpact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Contribution"))
   {
     m_contribution = jsonValue.GetDouble("Contribution");
-
     m_contributionHasBeenSet = true;
   }
-
   return *this;
 }
 

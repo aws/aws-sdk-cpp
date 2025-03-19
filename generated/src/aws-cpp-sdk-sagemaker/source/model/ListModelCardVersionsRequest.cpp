@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelCardVersionsRequest::ListModelCardVersionsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(ModelCardVersionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(ModelCardSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListModelCardVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

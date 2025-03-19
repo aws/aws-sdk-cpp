@@ -37,7 +37,7 @@ namespace Model
   class MetricsConfiguration
   {
   public:
-    AWS_S3CRT_API MetricsConfiguration();
+    AWS_S3CRT_API MetricsConfiguration() = default;
     AWS_S3CRT_API MetricsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API MetricsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
      * limit and can only contain letters, numbers, periods, dashes, and
      * underscores.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline MetricsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline MetricsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline MetricsConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    MetricsConfiguration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,12 @@ namespace Model
      * include objects that meet the filter's criteria. A filter must be a prefix, an
      * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
-    inline const MetricsFilter& GetFilter() const{ return m_filter; }
+    inline const MetricsFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const MetricsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(MetricsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline MetricsConfiguration& WithFilter(const MetricsFilter& value) { SetFilter(value); return *this;}
-    inline MetricsConfiguration& WithFilter(MetricsFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = MetricsFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = MetricsFilter>
+    MetricsConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 

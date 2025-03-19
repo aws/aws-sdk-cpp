@@ -33,7 +33,7 @@ namespace Model
   class ContainerFleetLocationAttributes
   {
   public:
-    AWS_GAMELIFT_API ContainerFleetLocationAttributes();
+    AWS_GAMELIFT_API ContainerFleetLocationAttributes() = default;
     AWS_GAMELIFT_API ContainerFleetLocationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ContainerFleetLocationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>A location identifier.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ContainerFleetLocationAttributes& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ContainerFleetLocationAttributes& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ContainerFleetLocationAttributes& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ContainerFleetLocationAttributes& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,19 +64,17 @@ namespace Model
      * Updates to the container fleet is being updated. A deployment is in
      * progress.</p> </li> </ul>
      */
-    inline const ContainerFleetLocationStatus& GetStatus() const{ return m_status; }
+    inline ContainerFleetLocationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ContainerFleetLocationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ContainerFleetLocationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ContainerFleetLocationAttributes& WithStatus(const ContainerFleetLocationStatus& value) { SetStatus(value); return *this;}
-    inline ContainerFleetLocationAttributes& WithStatus(ContainerFleetLocationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ContainerFleetLocationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ContainerFleetLocationAttributes& WithStatus(ContainerFleetLocationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
 
-    ContainerFleetLocationStatus m_status;
+    ContainerFleetLocationStatus m_status{ContainerFleetLocationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-NielsenCBET::NielsenCBET() : 
-    m_cbetCheckDigitStringHasBeenSet(false),
-    m_cbetStepaside(NielsenWatermarksCbetStepaside::NOT_SET),
-    m_cbetStepasideHasBeenSet(false),
-    m_csidHasBeenSet(false)
-{
-}
-
 NielsenCBET::NielsenCBET(JsonView jsonValue)
-  : NielsenCBET()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NielsenCBET& NielsenCBET::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cbetCheckDigitString"))
   {
     m_cbetCheckDigitString = jsonValue.GetString("cbetCheckDigitString");
-
     m_cbetCheckDigitStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cbetStepaside"))
   {
     m_cbetStepaside = NielsenWatermarksCbetStepasideMapper::GetNielsenWatermarksCbetStepasideForName(jsonValue.GetString("cbetStepaside"));
-
     m_cbetStepasideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("csid"))
   {
     m_csid = jsonValue.GetString("csid");
-
     m_csidHasBeenSet = true;
   }
-
   return *this;
 }
 

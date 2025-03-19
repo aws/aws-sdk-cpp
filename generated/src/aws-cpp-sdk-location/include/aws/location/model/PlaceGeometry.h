@@ -32,7 +32,7 @@ namespace Model
   class PlaceGeometry
   {
   public:
-    AWS_LOCATIONSERVICE_API PlaceGeometry();
+    AWS_LOCATIONSERVICE_API PlaceGeometry() = default;
     AWS_LOCATIONSERVICE_API PlaceGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API PlaceGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
      * latitude. </p> </li> </ul>
      */
-    inline const Aws::Vector<double>& GetPoint() const{ return m_point; }
+    inline const Aws::Vector<double>& GetPoint() const { return m_point; }
     inline bool PointHasBeenSet() const { return m_pointHasBeenSet; }
-    inline void SetPoint(const Aws::Vector<double>& value) { m_pointHasBeenSet = true; m_point = value; }
-    inline void SetPoint(Aws::Vector<double>&& value) { m_pointHasBeenSet = true; m_point = std::move(value); }
-    inline PlaceGeometry& WithPoint(const Aws::Vector<double>& value) { SetPoint(value); return *this;}
-    inline PlaceGeometry& WithPoint(Aws::Vector<double>&& value) { SetPoint(std::move(value)); return *this;}
+    template<typename PointT = Aws::Vector<double>>
+    void SetPoint(PointT&& value) { m_pointHasBeenSet = true; m_point = std::forward<PointT>(value); }
+    template<typename PointT = Aws::Vector<double>>
+    PlaceGeometry& WithPoint(PointT&& value) { SetPoint(std::forward<PointT>(value)); return *this;}
     inline PlaceGeometry& AddPoint(double value) { m_pointHasBeenSet = true; m_point.push_back(value); return *this; }
     ///@}
   private:

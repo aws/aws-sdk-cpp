@@ -32,7 +32,7 @@ namespace Model
   class SigningProfileRevocationRecord
   {
   public:
-    AWS_SIGNER_API SigningProfileRevocationRecord();
+    AWS_SIGNER_API SigningProfileRevocationRecord() = default;
     AWS_SIGNER_API SigningProfileRevocationRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API SigningProfileRevocationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,45 +42,43 @@ namespace Model
     /**
      * <p>The time when revocation becomes effective.</p>
      */
-    inline const Aws::Utils::DateTime& GetRevocationEffectiveFrom() const{ return m_revocationEffectiveFrom; }
+    inline const Aws::Utils::DateTime& GetRevocationEffectiveFrom() const { return m_revocationEffectiveFrom; }
     inline bool RevocationEffectiveFromHasBeenSet() const { return m_revocationEffectiveFromHasBeenSet; }
-    inline void SetRevocationEffectiveFrom(const Aws::Utils::DateTime& value) { m_revocationEffectiveFromHasBeenSet = true; m_revocationEffectiveFrom = value; }
-    inline void SetRevocationEffectiveFrom(Aws::Utils::DateTime&& value) { m_revocationEffectiveFromHasBeenSet = true; m_revocationEffectiveFrom = std::move(value); }
-    inline SigningProfileRevocationRecord& WithRevocationEffectiveFrom(const Aws::Utils::DateTime& value) { SetRevocationEffectiveFrom(value); return *this;}
-    inline SigningProfileRevocationRecord& WithRevocationEffectiveFrom(Aws::Utils::DateTime&& value) { SetRevocationEffectiveFrom(std::move(value)); return *this;}
+    template<typename RevocationEffectiveFromT = Aws::Utils::DateTime>
+    void SetRevocationEffectiveFrom(RevocationEffectiveFromT&& value) { m_revocationEffectiveFromHasBeenSet = true; m_revocationEffectiveFrom = std::forward<RevocationEffectiveFromT>(value); }
+    template<typename RevocationEffectiveFromT = Aws::Utils::DateTime>
+    SigningProfileRevocationRecord& WithRevocationEffectiveFrom(RevocationEffectiveFromT&& value) { SetRevocationEffectiveFrom(std::forward<RevocationEffectiveFromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the signing profile was revoked.</p>
      */
-    inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
+    inline const Aws::Utils::DateTime& GetRevokedAt() const { return m_revokedAt; }
     inline bool RevokedAtHasBeenSet() const { return m_revokedAtHasBeenSet; }
-    inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
-    inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::move(value); }
-    inline SigningProfileRevocationRecord& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
-    inline SigningProfileRevocationRecord& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
+    template<typename RevokedAtT = Aws::Utils::DateTime>
+    void SetRevokedAt(RevokedAtT&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::forward<RevokedAtT>(value); }
+    template<typename RevokedAtT = Aws::Utils::DateTime>
+    SigningProfileRevocationRecord& WithRevokedAt(RevokedAtT&& value) { SetRevokedAt(std::forward<RevokedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identity of the revoker.</p>
      */
-    inline const Aws::String& GetRevokedBy() const{ return m_revokedBy; }
+    inline const Aws::String& GetRevokedBy() const { return m_revokedBy; }
     inline bool RevokedByHasBeenSet() const { return m_revokedByHasBeenSet; }
-    inline void SetRevokedBy(const Aws::String& value) { m_revokedByHasBeenSet = true; m_revokedBy = value; }
-    inline void SetRevokedBy(Aws::String&& value) { m_revokedByHasBeenSet = true; m_revokedBy = std::move(value); }
-    inline void SetRevokedBy(const char* value) { m_revokedByHasBeenSet = true; m_revokedBy.assign(value); }
-    inline SigningProfileRevocationRecord& WithRevokedBy(const Aws::String& value) { SetRevokedBy(value); return *this;}
-    inline SigningProfileRevocationRecord& WithRevokedBy(Aws::String&& value) { SetRevokedBy(std::move(value)); return *this;}
-    inline SigningProfileRevocationRecord& WithRevokedBy(const char* value) { SetRevokedBy(value); return *this;}
+    template<typename RevokedByT = Aws::String>
+    void SetRevokedBy(RevokedByT&& value) { m_revokedByHasBeenSet = true; m_revokedBy = std::forward<RevokedByT>(value); }
+    template<typename RevokedByT = Aws::String>
+    SigningProfileRevocationRecord& WithRevokedBy(RevokedByT&& value) { SetRevokedBy(std::forward<RevokedByT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_revocationEffectiveFrom;
+    Aws::Utils::DateTime m_revocationEffectiveFrom{};
     bool m_revocationEffectiveFromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_revokedAt;
+    Aws::Utils::DateTime m_revokedAt{};
     bool m_revokedAtHasBeenSet = false;
 
     Aws::String m_revokedBy;

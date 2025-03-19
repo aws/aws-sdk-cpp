@@ -18,24 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-FeatureSummary::FeatureSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_defaultVariationHasBeenSet(false),
-    m_evaluationRulesHasBeenSet(false),
-    m_evaluationStrategy(FeatureEvaluationStrategy::NOT_SET),
-    m_evaluationStrategyHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 FeatureSummary::FeatureSummary(JsonView jsonValue)
-  : FeatureSummary()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ FeatureSummary& FeatureSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultVariation"))
   {
     m_defaultVariation = jsonValue.GetString("defaultVariation");
-
     m_defaultVariationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationRules"))
   {
     Aws::Utils::Array<JsonView> evaluationRulesJsonList = jsonValue.GetArray("evaluationRules");
@@ -72,42 +49,31 @@ FeatureSummary& FeatureSummary::operator =(JsonView jsonValue)
     }
     m_evaluationRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationStrategy"))
   {
     m_evaluationStrategy = FeatureEvaluationStrategyMapper::GetFeatureEvaluationStrategyForName(jsonValue.GetString("evaluationStrategy"));
-
     m_evaluationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("project"))
   {
     m_project = jsonValue.GetString("project");
-
     m_projectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -117,7 +83,6 @@ FeatureSummary& FeatureSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

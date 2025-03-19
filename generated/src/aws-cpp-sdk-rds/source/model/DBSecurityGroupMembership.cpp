@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSecurityGroupMembership::DBSecurityGroupMembership() : 
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DBSecurityGroupMembership::DBSecurityGroupMembership(const XmlNode& xmlNode)
-  : DBSecurityGroupMembership()
 {
   *this = xmlNode;
 }

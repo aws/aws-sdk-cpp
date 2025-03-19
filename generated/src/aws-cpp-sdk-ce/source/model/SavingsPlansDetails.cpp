@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansDetails::SavingsPlansDetails() : 
-    m_regionHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
-{
-}
-
 SavingsPlansDetails::SavingsPlansDetails(JsonView jsonValue)
-  : SavingsPlansDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SavingsPlansDetails& SavingsPlansDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFamily"))
   {
     m_instanceFamily = jsonValue.GetString("InstanceFamily");
-
     m_instanceFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferingId"))
   {
     m_offeringId = jsonValue.GetString("OfferingId");
-
     m_offeringIdHasBeenSet = true;
   }
-
   return *this;
 }
 

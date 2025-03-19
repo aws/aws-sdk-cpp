@@ -12,12 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFraudsterRequest::DeleteFraudsterRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_fraudsterIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFraudsterRequest::SerializePayload() const
 {
   JsonValue payload;

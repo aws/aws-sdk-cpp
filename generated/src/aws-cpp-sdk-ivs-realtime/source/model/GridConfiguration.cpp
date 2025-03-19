@@ -18,21 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-GridConfiguration::GridConfiguration() : 
-    m_featuredParticipantAttributeHasBeenSet(false),
-    m_omitStoppedVideo(false),
-    m_omitStoppedVideoHasBeenSet(false),
-    m_videoAspectRatio(VideoAspectRatio::NOT_SET),
-    m_videoAspectRatioHasBeenSet(false),
-    m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false)
-{
-}
-
 GridConfiguration::GridConfiguration(JsonView jsonValue)
-  : GridConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ GridConfiguration& GridConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("featuredParticipantAttribute"))
   {
     m_featuredParticipantAttribute = jsonValue.GetString("featuredParticipantAttribute");
-
     m_featuredParticipantAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("omitStoppedVideo"))
   {
     m_omitStoppedVideo = jsonValue.GetBool("omitStoppedVideo");
-
     m_omitStoppedVideoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoAspectRatio"))
   {
     m_videoAspectRatio = VideoAspectRatioMapper::GetVideoAspectRatioForName(jsonValue.GetString("videoAspectRatio"));
-
     m_videoAspectRatioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoFillMode"))
   {
     m_videoFillMode = VideoFillModeMapper::GetVideoFillModeForName(jsonValue.GetString("videoFillMode"));
-
     m_videoFillModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gridGap"))
   {
     m_gridGap = jsonValue.GetInteger("gridGap");
-
     m_gridGapHasBeenSet = true;
   }
-
   return *this;
 }
 

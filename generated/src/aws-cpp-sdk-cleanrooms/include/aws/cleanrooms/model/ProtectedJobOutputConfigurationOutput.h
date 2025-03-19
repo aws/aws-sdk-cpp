@@ -32,7 +32,7 @@ namespace Model
   class ProtectedJobOutputConfigurationOutput
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput();
+    AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput() = default;
     AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobOutputConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>If present, the output for a protected job with an `S3` output type.</p>
      */
-    inline const ProtectedJobS3OutputConfigurationOutput& GetS3() const{ return m_s3; }
+    inline const ProtectedJobS3OutputConfigurationOutput& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const ProtectedJobS3OutputConfigurationOutput& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(ProtectedJobS3OutputConfigurationOutput&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline ProtectedJobOutputConfigurationOutput& WithS3(const ProtectedJobS3OutputConfigurationOutput& value) { SetS3(value); return *this;}
-    inline ProtectedJobOutputConfigurationOutput& WithS3(ProtectedJobS3OutputConfigurationOutput&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = ProtectedJobS3OutputConfigurationOutput>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = ProtectedJobS3OutputConfigurationOutput>
+    ProtectedJobOutputConfigurationOutput& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The member output configuration for a protected job.</p>
      */
-    inline const ProtectedJobMemberOutputConfigurationOutput& GetMember() const{ return m_member; }
+    inline const ProtectedJobMemberOutputConfigurationOutput& GetMember() const { return m_member; }
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-    inline void SetMember(const ProtectedJobMemberOutputConfigurationOutput& value) { m_memberHasBeenSet = true; m_member = value; }
-    inline void SetMember(ProtectedJobMemberOutputConfigurationOutput&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-    inline ProtectedJobOutputConfigurationOutput& WithMember(const ProtectedJobMemberOutputConfigurationOutput& value) { SetMember(value); return *this;}
-    inline ProtectedJobOutputConfigurationOutput& WithMember(ProtectedJobMemberOutputConfigurationOutput&& value) { SetMember(std::move(value)); return *this;}
+    template<typename MemberT = ProtectedJobMemberOutputConfigurationOutput>
+    void SetMember(MemberT&& value) { m_memberHasBeenSet = true; m_member = std::forward<MemberT>(value); }
+    template<typename MemberT = ProtectedJobMemberOutputConfigurationOutput>
+    ProtectedJobOutputConfigurationOutput& WithMember(MemberT&& value) { SetMember(std::forward<MemberT>(value)); return *this;}
     ///@}
   private:
 

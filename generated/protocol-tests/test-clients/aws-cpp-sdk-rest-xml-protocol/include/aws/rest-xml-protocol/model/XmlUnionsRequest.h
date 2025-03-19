@@ -21,7 +21,7 @@ namespace Model
   class XmlUnionsRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlUnionsRequest();
+    AWS_RESTXMLPROTOCOL_API XmlUnionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const XmlUnionShape& GetUnionValue() const{ return m_unionValue; }
+    inline const XmlUnionShape& GetUnionValue() const { return m_unionValue; }
     inline bool UnionValueHasBeenSet() const { return m_unionValueHasBeenSet; }
-    inline void SetUnionValue(const XmlUnionShape& value) { m_unionValueHasBeenSet = true; m_unionValue = value; }
-    inline void SetUnionValue(XmlUnionShape&& value) { m_unionValueHasBeenSet = true; m_unionValue = std::move(value); }
-    inline XmlUnionsRequest& WithUnionValue(const XmlUnionShape& value) { SetUnionValue(value); return *this;}
-    inline XmlUnionsRequest& WithUnionValue(XmlUnionShape&& value) { SetUnionValue(std::move(value)); return *this;}
+    template<typename UnionValueT = XmlUnionShape>
+    void SetUnionValue(UnionValueT&& value) { m_unionValueHasBeenSet = true; m_unionValue = std::forward<UnionValueT>(value); }
+    template<typename UnionValueT = XmlUnionShape>
+    XmlUnionsRequest& WithUnionValue(UnionValueT&& value) { SetUnionValue(std::forward<UnionValueT>(value)); return *this;}
     ///@}
   private:
 

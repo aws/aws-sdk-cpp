@@ -18,16 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-NaturalLanguageQueryGenerationOptionsOutput::NaturalLanguageQueryGenerationOptionsOutput() : 
-    m_desiredState(NaturalLanguageQueryGenerationDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_currentState(NaturalLanguageQueryGenerationCurrentState::NOT_SET),
-    m_currentStateHasBeenSet(false)
-{
-}
-
 NaturalLanguageQueryGenerationOptionsOutput::NaturalLanguageQueryGenerationOptionsOutput(JsonView jsonValue)
-  : NaturalLanguageQueryGenerationOptionsOutput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NaturalLanguageQueryGenerationOptionsOutput& NaturalLanguageQueryGenerationOptio
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = NaturalLanguageQueryGenerationDesiredStateMapper::GetNaturalLanguageQueryGenerationDesiredStateForName(jsonValue.GetString("DesiredState"));
-
     m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentState"))
   {
     m_currentState = NaturalLanguageQueryGenerationCurrentStateMapper::GetNaturalLanguageQueryGenerationCurrentStateForName(jsonValue.GetString("CurrentState"));
-
     m_currentStateHasBeenSet = true;
   }
-
   return *this;
 }
 

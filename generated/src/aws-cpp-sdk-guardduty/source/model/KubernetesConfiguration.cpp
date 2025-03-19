@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesConfiguration::KubernetesConfiguration() : 
-    m_auditLogsHasBeenSet(false)
-{
-}
-
 KubernetesConfiguration::KubernetesConfiguration(JsonView jsonValue)
-  : KubernetesConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KubernetesConfiguration& KubernetesConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("auditLogs"))
   {
     m_auditLogs = jsonValue.GetObject("auditLogs");
-
     m_auditLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

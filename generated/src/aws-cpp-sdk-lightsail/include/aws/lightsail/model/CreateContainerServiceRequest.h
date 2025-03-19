@@ -27,7 +27,7 @@ namespace Model
   class CreateContainerServiceRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API CreateContainerServiceRequest();
+    AWS_LIGHTSAIL_API CreateContainerServiceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -58,14 +58,12 @@ namespace Model
      * hyphen (-) can separate words but cannot be at the start or end of the name.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline CreateContainerServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline CreateContainerServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline CreateContainerServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    CreateContainerServiceRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * <code>GetContainerServicePowers</code> action to get a list of power options
      * that you can specify using this parameter, and their base monthly cost.</p>
      */
-    inline const ContainerServicePowerName& GetPower() const{ return m_power; }
+    inline ContainerServicePowerName GetPower() const { return m_power; }
     inline bool PowerHasBeenSet() const { return m_powerHasBeenSet; }
-    inline void SetPower(const ContainerServicePowerName& value) { m_powerHasBeenSet = true; m_power = value; }
-    inline void SetPower(ContainerServicePowerName&& value) { m_powerHasBeenSet = true; m_power = std::move(value); }
-    inline CreateContainerServiceRequest& WithPower(const ContainerServicePowerName& value) { SetPower(value); return *this;}
-    inline CreateContainerServiceRequest& WithPower(ContainerServicePowerName&& value) { SetPower(std::move(value)); return *this;}
+    inline void SetPower(ContainerServicePowerName value) { m_powerHasBeenSet = true; m_power = value; }
+    inline CreateContainerServiceRequest& WithPower(ContainerServicePowerName value) { SetPower(value); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +92,7 @@ namespace Model
      * of the <code>power</code> with the <code>scale</code> (the number of nodes) of
      * the service.</p>
      */
-    inline int GetScale() const{ return m_scale; }
+    inline int GetScale() const { return m_scale; }
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
     inline void SetScale(int value) { m_scaleHasBeenSet = true; m_scale = value; }
     inline CreateContainerServiceRequest& WithScale(int value) { SetScale(value); return *this;}
@@ -110,14 +106,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateContainerServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateContainerServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateContainerServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateContainerServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateContainerServiceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateContainerServiceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,18 +131,16 @@ namespace Model
      *  <p>You can specify public domain names using a string to array map
      * as shown in the example later on this page.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetPublicDomainNames() const{ return m_publicDomainNames; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetPublicDomainNames() const { return m_publicDomainNames; }
     inline bool PublicDomainNamesHasBeenSet() const { return m_publicDomainNamesHasBeenSet; }
-    inline void SetPublicDomainNames(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames = value; }
-    inline void SetPublicDomainNames(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames = std::move(value); }
-    inline CreateContainerServiceRequest& WithPublicDomainNames(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetPublicDomainNames(value); return *this;}
-    inline CreateContainerServiceRequest& WithPublicDomainNames(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetPublicDomainNames(std::move(value)); return *this;}
-    inline CreateContainerServiceRequest& AddPublicDomainNames(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(key, value); return *this; }
-    inline CreateContainerServiceRequest& AddPublicDomainNames(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(std::move(key), value); return *this; }
-    inline CreateContainerServiceRequest& AddPublicDomainNames(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(key, std::move(value)); return *this; }
-    inline CreateContainerServiceRequest& AddPublicDomainNames(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateContainerServiceRequest& AddPublicDomainNames(const char* key, Aws::Vector<Aws::String>&& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(key, std::move(value)); return *this; }
-    inline CreateContainerServiceRequest& AddPublicDomainNames(const char* key, const Aws::Vector<Aws::String>& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(key, value); return *this; }
+    template<typename PublicDomainNamesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetPublicDomainNames(PublicDomainNamesT&& value) { m_publicDomainNamesHasBeenSet = true; m_publicDomainNames = std::forward<PublicDomainNamesT>(value); }
+    template<typename PublicDomainNamesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CreateContainerServiceRequest& WithPublicDomainNames(PublicDomainNamesT&& value) { SetPublicDomainNames(std::forward<PublicDomainNamesT>(value)); return *this;}
+    template<typename PublicDomainNamesKeyT = Aws::String, typename PublicDomainNamesValueT = Aws::Vector<Aws::String>>
+    CreateContainerServiceRequest& AddPublicDomainNames(PublicDomainNamesKeyT&& key, PublicDomainNamesValueT&& value) {
+      m_publicDomainNamesHasBeenSet = true; m_publicDomainNames.emplace(std::forward<PublicDomainNamesKeyT>(key), std::forward<PublicDomainNamesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -158,12 +152,12 @@ namespace Model
      * will serve as the public endpoint of the deployment and its settings, such as
      * the HTTP or HTTPS port to use, and the health check configuration.</p>
      */
-    inline const ContainerServiceDeploymentRequest& GetDeployment() const{ return m_deployment; }
+    inline const ContainerServiceDeploymentRequest& GetDeployment() const { return m_deployment; }
     inline bool DeploymentHasBeenSet() const { return m_deploymentHasBeenSet; }
-    inline void SetDeployment(const ContainerServiceDeploymentRequest& value) { m_deploymentHasBeenSet = true; m_deployment = value; }
-    inline void SetDeployment(ContainerServiceDeploymentRequest&& value) { m_deploymentHasBeenSet = true; m_deployment = std::move(value); }
-    inline CreateContainerServiceRequest& WithDeployment(const ContainerServiceDeploymentRequest& value) { SetDeployment(value); return *this;}
-    inline CreateContainerServiceRequest& WithDeployment(ContainerServiceDeploymentRequest&& value) { SetDeployment(std::move(value)); return *this;}
+    template<typename DeploymentT = ContainerServiceDeploymentRequest>
+    void SetDeployment(DeploymentT&& value) { m_deploymentHasBeenSet = true; m_deployment = std::forward<DeploymentT>(value); }
+    template<typename DeploymentT = ContainerServiceDeploymentRequest>
+    CreateContainerServiceRequest& WithDeployment(DeploymentT&& value) { SetDeployment(std::forward<DeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,22 +169,22 @@ namespace Model
      * access to an Amazon ECR private repository for an Amazon Lightsail container
      * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
      */
-    inline const PrivateRegistryAccessRequest& GetPrivateRegistryAccess() const{ return m_privateRegistryAccess; }
+    inline const PrivateRegistryAccessRequest& GetPrivateRegistryAccess() const { return m_privateRegistryAccess; }
     inline bool PrivateRegistryAccessHasBeenSet() const { return m_privateRegistryAccessHasBeenSet; }
-    inline void SetPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = value; }
-    inline void SetPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = std::move(value); }
-    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { SetPrivateRegistryAccess(value); return *this;}
-    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { SetPrivateRegistryAccess(std::move(value)); return *this;}
+    template<typename PrivateRegistryAccessT = PrivateRegistryAccessRequest>
+    void SetPrivateRegistryAccess(PrivateRegistryAccessT&& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = std::forward<PrivateRegistryAccessT>(value); }
+    template<typename PrivateRegistryAccessT = PrivateRegistryAccessRequest>
+    CreateContainerServiceRequest& WithPrivateRegistryAccess(PrivateRegistryAccessT&& value) { SetPrivateRegistryAccess(std::forward<PrivateRegistryAccessT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
-    ContainerServicePowerName m_power;
+    ContainerServicePowerName m_power{ContainerServicePowerName::NOT_SET};
     bool m_powerHasBeenSet = false;
 
-    int m_scale;
+    int m_scale{0};
     bool m_scaleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

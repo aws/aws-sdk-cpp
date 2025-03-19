@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAggregateDiscoveredResourceCountsResult::GetAggregateDiscoveredResourceCountsResult() : 
-    m_totalDiscoveredResources(0)
-{
-}
-
 GetAggregateDiscoveredResourceCountsResult::GetAggregateDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAggregateDiscoveredResourceCountsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetAggregateDiscoveredResourceCountsResult& GetAggregateDiscoveredResourceCounts
   if(jsonValue.ValueExists("TotalDiscoveredResources"))
   {
     m_totalDiscoveredResources = jsonValue.GetInt64("TotalDiscoveredResources");
-
+    m_totalDiscoveredResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupByKey"))
   {
     m_groupByKey = jsonValue.GetString("GroupByKey");
-
+    m_groupByKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupedResourceCounts"))
   {
     Aws::Utils::Array<JsonView> groupedResourceCountsJsonList = jsonValue.GetArray("GroupedResourceCounts");
@@ -50,20 +42,20 @@ GetAggregateDiscoveredResourceCountsResult& GetAggregateDiscoveredResourceCounts
     {
       m_groupedResourceCounts.push_back(groupedResourceCountsJsonList[groupedResourceCountsIndex].AsObject());
     }
+    m_groupedResourceCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

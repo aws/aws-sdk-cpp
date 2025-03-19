@@ -18,15 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-UnsupportedFeatureException::UnsupportedFeatureException() : 
-    m_messageHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
-{
-}
-
 UnsupportedFeatureException::UnsupportedFeatureException(JsonView jsonValue)
-  : UnsupportedFeatureException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UnsupportedFeatureException& UnsupportedFeatureException::operator =(JsonView js
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canRetry"))
   {
     m_canRetry = jsonValue.GetBool("canRetry");
-
     m_canRetryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class PutRecordResult
   {
   public:
-    AWS_FIREHOSE_API PutRecordResult();
+    AWS_FIREHOSE_API PutRecordResult() = default;
     AWS_FIREHOSE_API PutRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIREHOSE_API PutRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The ID of the record.</p>
      */
-    inline const Aws::String& GetRecordId() const{ return m_recordId; }
-    inline void SetRecordId(const Aws::String& value) { m_recordId = value; }
-    inline void SetRecordId(Aws::String&& value) { m_recordId = std::move(value); }
-    inline void SetRecordId(const char* value) { m_recordId.assign(value); }
-    inline PutRecordResult& WithRecordId(const Aws::String& value) { SetRecordId(value); return *this;}
-    inline PutRecordResult& WithRecordId(Aws::String&& value) { SetRecordId(std::move(value)); return *this;}
-    inline PutRecordResult& WithRecordId(const char* value) { SetRecordId(value); return *this;}
+    inline const Aws::String& GetRecordId() const { return m_recordId; }
+    template<typename RecordIdT = Aws::String>
+    void SetRecordId(RecordIdT&& value) { m_recordIdHasBeenSet = true; m_recordId = std::forward<RecordIdT>(value); }
+    template<typename RecordIdT = Aws::String>
+    PutRecordResult& WithRecordId(RecordIdT&& value) { SetRecordId(std::forward<RecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,28 +48,29 @@ namespace Model
      * <p>Indicates whether server-side encryption (SSE) was enabled during this
      * operation.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
-    inline void SetEncrypted(bool value) { m_encrypted = value; }
+    inline bool GetEncrypted() const { return m_encrypted; }
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline PutRecordResult& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRecordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRecordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRecordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRecordResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_recordId;
+    bool m_recordIdHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

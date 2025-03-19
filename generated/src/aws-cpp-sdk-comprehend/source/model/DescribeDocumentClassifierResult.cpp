@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDocumentClassifierResult::DescribeDocumentClassifierResult()
-{
-}
-
 DescribeDocumentClassifierResult::DescribeDocumentClassifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeDocumentClassifierResult& DescribeDocumentClassifierResult::operator =(c
   if(jsonValue.ValueExists("DocumentClassifierProperties"))
   {
     m_documentClassifierProperties = jsonValue.GetObject("DocumentClassifierProperties");
-
+    m_documentClassifierPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

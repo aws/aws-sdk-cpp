@@ -12,16 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLifecyclePoliciesRequest::ListLifecyclePoliciesRequest() : 
-    m_type(LifecyclePolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLifecyclePoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

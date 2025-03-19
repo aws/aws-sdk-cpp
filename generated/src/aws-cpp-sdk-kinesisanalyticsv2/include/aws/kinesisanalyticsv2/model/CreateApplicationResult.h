@@ -28,7 +28,7 @@ namespace Model
   class CreateApplicationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API CreateApplicationResult();
+    AWS_KINESISANALYTICSV2_API CreateApplicationResult() = default;
     AWS_KINESISANALYTICSV2_API CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * for Apache Flink returns a response with details of the application it
      * created.</p>
      */
-    inline const ApplicationDetail& GetApplicationDetail() const{ return m_applicationDetail; }
-    inline void SetApplicationDetail(const ApplicationDetail& value) { m_applicationDetail = value; }
-    inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = std::move(value); }
-    inline CreateApplicationResult& WithApplicationDetail(const ApplicationDetail& value) { SetApplicationDetail(value); return *this;}
-    inline CreateApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
+    inline const ApplicationDetail& GetApplicationDetail() const { return m_applicationDetail; }
+    template<typename ApplicationDetailT = ApplicationDetail>
+    void SetApplicationDetail(ApplicationDetailT&& value) { m_applicationDetailHasBeenSet = true; m_applicationDetail = std::forward<ApplicationDetailT>(value); }
+    template<typename ApplicationDetailT = ApplicationDetail>
+    CreateApplicationResult& WithApplicationDetail(ApplicationDetailT&& value) { SetApplicationDetail(std::forward<ApplicationDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationDetail m_applicationDetail;
+    bool m_applicationDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

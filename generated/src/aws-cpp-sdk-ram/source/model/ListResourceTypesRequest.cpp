@@ -12,15 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceTypesRequest::ListResourceTypesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_resourceRegionScope(ResourceRegionScopeFilter::NOT_SET),
-    m_resourceRegionScopeHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceTypesRequest::SerializePayload() const
 {
   JsonValue payload;

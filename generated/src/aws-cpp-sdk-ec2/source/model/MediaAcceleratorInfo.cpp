@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MediaAcceleratorInfo::MediaAcceleratorInfo() : 
-    m_acceleratorsHasBeenSet(false),
-    m_totalMediaMemoryInMiB(0),
-    m_totalMediaMemoryInMiBHasBeenSet(false)
-{
-}
-
 MediaAcceleratorInfo::MediaAcceleratorInfo(const XmlNode& xmlNode)
-  : MediaAcceleratorInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ MediaAcceleratorInfo& MediaAcceleratorInfo::operator =(const XmlNode& xmlNode)
     if(!acceleratorsNode.IsNull())
     {
       XmlNode acceleratorsMember = acceleratorsNode.FirstChild("item");
+      m_acceleratorsHasBeenSet = !acceleratorsMember.IsNull();
       while(!acceleratorsMember.IsNull())
       {
         m_accelerators.push_back(acceleratorsMember);

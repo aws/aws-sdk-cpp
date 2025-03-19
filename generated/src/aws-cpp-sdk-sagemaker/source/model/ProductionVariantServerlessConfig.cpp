@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantServerlessConfig::ProductionVariantServerlessConfig() : 
-    m_memorySizeInMB(0),
-    m_memorySizeInMBHasBeenSet(false),
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false),
-    m_provisionedConcurrency(0),
-    m_provisionedConcurrencyHasBeenSet(false)
-{
-}
-
 ProductionVariantServerlessConfig::ProductionVariantServerlessConfig(JsonView jsonValue)
-  : ProductionVariantServerlessConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ProductionVariantServerlessConfig& ProductionVariantServerlessConfig::operator =
   if(jsonValue.ValueExists("MemorySizeInMB"))
   {
     m_memorySizeInMB = jsonValue.GetInteger("MemorySizeInMB");
-
     m_memorySizeInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetInteger("MaxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedConcurrency"))
   {
     m_provisionedConcurrency = jsonValue.GetInteger("ProvisionedConcurrency");
-
     m_provisionedConcurrencyHasBeenSet = true;
   }
-
   return *this;
 }
 

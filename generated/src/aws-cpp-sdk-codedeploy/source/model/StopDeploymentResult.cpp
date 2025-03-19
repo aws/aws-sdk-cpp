@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopDeploymentResult::StopDeploymentResult() : 
-    m_status(StopStatus::NOT_SET)
-{
-}
-
 StopDeploymentResult::StopDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopDeploymentResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StopDeploymentResult& StopDeploymentResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("status"))
   {
     m_status = StopStatusMapper::GetStopStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDedicatedIpPoolScalingAttributesRequest::PutDedicatedIpPoolScalingAttributesRequest() : 
-    m_poolNameHasBeenSet(false),
-    m_scalingMode(ScalingMode::NOT_SET),
-    m_scalingModeHasBeenSet(false)
-{
-}
-
 Aws::String PutDedicatedIpPoolScalingAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

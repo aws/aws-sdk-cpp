@@ -12,18 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamGroupRequest::CreateStreamGroupRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_defaultApplicationIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationConfigurationsHasBeenSet(false),
-    m_streamClass(StreamClass::NOT_SET),
-    m_streamClassHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamGroupRequest::SerializePayload() const
 {
   JsonValue payload;

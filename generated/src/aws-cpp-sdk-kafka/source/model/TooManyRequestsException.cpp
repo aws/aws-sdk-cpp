@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-TooManyRequestsException::TooManyRequestsException() : 
-    m_invalidParameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-  : TooManyRequestsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("invalidParameter"))
   {
     m_invalidParameter = jsonValue.GetString("invalidParameter");
-
     m_invalidParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

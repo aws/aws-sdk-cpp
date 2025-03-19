@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMultiRegionEndpointRequest::CreateMultiRegionEndpointRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMultiRegionEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

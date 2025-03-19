@@ -14,9 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetCheckerIpRangesRequest::GetCheckerIpRangesRequest()
-{
-}
 
 Aws::String GetCheckerIpRangesRequest::SerializePayload() const
 {

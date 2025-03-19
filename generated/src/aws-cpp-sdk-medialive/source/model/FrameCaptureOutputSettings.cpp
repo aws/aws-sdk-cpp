@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FrameCaptureOutputSettings::FrameCaptureOutputSettings() : 
-    m_nameModifierHasBeenSet(false)
-{
-}
-
 FrameCaptureOutputSettings::FrameCaptureOutputSettings(JsonView jsonValue)
-  : FrameCaptureOutputSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FrameCaptureOutputSettings& FrameCaptureOutputSettings::operator =(JsonView json
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
-
     m_nameModifierHasBeenSet = true;
   }
-
   return *this;
 }
 

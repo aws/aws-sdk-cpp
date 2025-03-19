@@ -31,7 +31,7 @@ namespace Model
   class GetCostAndUsageResult
   {
   public:
-    AWS_COSTEXPLORER_API GetCostAndUsageResult();
+    AWS_COSTEXPLORER_API GetCostAndUsageResult() = default;
     AWS_COSTEXPLORER_API GetCostAndUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetCostAndUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * provides the token when the response from a previous call has more results than
      * the maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetCostAndUsageResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetCostAndUsageResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetCostAndUsageResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetCostAndUsageResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +54,26 @@ namespace Model
      * <p>The groups that are specified by the <code>Filter</code> or
      * <code>GroupBy</code> parameters in the request.</p>
      */
-    inline const Aws::Vector<GroupDefinition>& GetGroupDefinitions() const{ return m_groupDefinitions; }
-    inline void SetGroupDefinitions(const Aws::Vector<GroupDefinition>& value) { m_groupDefinitions = value; }
-    inline void SetGroupDefinitions(Aws::Vector<GroupDefinition>&& value) { m_groupDefinitions = std::move(value); }
-    inline GetCostAndUsageResult& WithGroupDefinitions(const Aws::Vector<GroupDefinition>& value) { SetGroupDefinitions(value); return *this;}
-    inline GetCostAndUsageResult& WithGroupDefinitions(Aws::Vector<GroupDefinition>&& value) { SetGroupDefinitions(std::move(value)); return *this;}
-    inline GetCostAndUsageResult& AddGroupDefinitions(const GroupDefinition& value) { m_groupDefinitions.push_back(value); return *this; }
-    inline GetCostAndUsageResult& AddGroupDefinitions(GroupDefinition&& value) { m_groupDefinitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GroupDefinition>& GetGroupDefinitions() const { return m_groupDefinitions; }
+    template<typename GroupDefinitionsT = Aws::Vector<GroupDefinition>>
+    void SetGroupDefinitions(GroupDefinitionsT&& value) { m_groupDefinitionsHasBeenSet = true; m_groupDefinitions = std::forward<GroupDefinitionsT>(value); }
+    template<typename GroupDefinitionsT = Aws::Vector<GroupDefinition>>
+    GetCostAndUsageResult& WithGroupDefinitions(GroupDefinitionsT&& value) { SetGroupDefinitions(std::forward<GroupDefinitionsT>(value)); return *this;}
+    template<typename GroupDefinitionsT = GroupDefinition>
+    GetCostAndUsageResult& AddGroupDefinitions(GroupDefinitionsT&& value) { m_groupDefinitionsHasBeenSet = true; m_groupDefinitions.emplace_back(std::forward<GroupDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time period that's covered by the results in the response.</p>
      */
-    inline const Aws::Vector<ResultByTime>& GetResultsByTime() const{ return m_resultsByTime; }
-    inline void SetResultsByTime(const Aws::Vector<ResultByTime>& value) { m_resultsByTime = value; }
-    inline void SetResultsByTime(Aws::Vector<ResultByTime>&& value) { m_resultsByTime = std::move(value); }
-    inline GetCostAndUsageResult& WithResultsByTime(const Aws::Vector<ResultByTime>& value) { SetResultsByTime(value); return *this;}
-    inline GetCostAndUsageResult& WithResultsByTime(Aws::Vector<ResultByTime>&& value) { SetResultsByTime(std::move(value)); return *this;}
-    inline GetCostAndUsageResult& AddResultsByTime(const ResultByTime& value) { m_resultsByTime.push_back(value); return *this; }
-    inline GetCostAndUsageResult& AddResultsByTime(ResultByTime&& value) { m_resultsByTime.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResultByTime>& GetResultsByTime() const { return m_resultsByTime; }
+    template<typename ResultsByTimeT = Aws::Vector<ResultByTime>>
+    void SetResultsByTime(ResultsByTimeT&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime = std::forward<ResultsByTimeT>(value); }
+    template<typename ResultsByTimeT = Aws::Vector<ResultByTime>>
+    GetCostAndUsageResult& WithResultsByTime(ResultsByTimeT&& value) { SetResultsByTime(std::forward<ResultsByTimeT>(value)); return *this;}
+    template<typename ResultsByTimeT = ResultByTime>
+    GetCostAndUsageResult& AddResultsByTime(ResultsByTimeT&& value) { m_resultsByTimeHasBeenSet = true; m_resultsByTime.emplace_back(std::forward<ResultsByTimeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,36 +81,39 @@ namespace Model
      * <p>The attributes that apply to a specific dimension value. For example, if the
      * value is a linked account, the attribute is that account name.</p>
      */
-    inline const Aws::Vector<DimensionValuesWithAttributes>& GetDimensionValueAttributes() const{ return m_dimensionValueAttributes; }
-    inline void SetDimensionValueAttributes(const Aws::Vector<DimensionValuesWithAttributes>& value) { m_dimensionValueAttributes = value; }
-    inline void SetDimensionValueAttributes(Aws::Vector<DimensionValuesWithAttributes>&& value) { m_dimensionValueAttributes = std::move(value); }
-    inline GetCostAndUsageResult& WithDimensionValueAttributes(const Aws::Vector<DimensionValuesWithAttributes>& value) { SetDimensionValueAttributes(value); return *this;}
-    inline GetCostAndUsageResult& WithDimensionValueAttributes(Aws::Vector<DimensionValuesWithAttributes>&& value) { SetDimensionValueAttributes(std::move(value)); return *this;}
-    inline GetCostAndUsageResult& AddDimensionValueAttributes(const DimensionValuesWithAttributes& value) { m_dimensionValueAttributes.push_back(value); return *this; }
-    inline GetCostAndUsageResult& AddDimensionValueAttributes(DimensionValuesWithAttributes&& value) { m_dimensionValueAttributes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DimensionValuesWithAttributes>& GetDimensionValueAttributes() const { return m_dimensionValueAttributes; }
+    template<typename DimensionValueAttributesT = Aws::Vector<DimensionValuesWithAttributes>>
+    void SetDimensionValueAttributes(DimensionValueAttributesT&& value) { m_dimensionValueAttributesHasBeenSet = true; m_dimensionValueAttributes = std::forward<DimensionValueAttributesT>(value); }
+    template<typename DimensionValueAttributesT = Aws::Vector<DimensionValuesWithAttributes>>
+    GetCostAndUsageResult& WithDimensionValueAttributes(DimensionValueAttributesT&& value) { SetDimensionValueAttributes(std::forward<DimensionValueAttributesT>(value)); return *this;}
+    template<typename DimensionValueAttributesT = DimensionValuesWithAttributes>
+    GetCostAndUsageResult& AddDimensionValueAttributes(DimensionValueAttributesT&& value) { m_dimensionValueAttributesHasBeenSet = true; m_dimensionValueAttributes.emplace_back(std::forward<DimensionValueAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCostAndUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCostAndUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCostAndUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCostAndUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::Vector<GroupDefinition> m_groupDefinitions;
+    bool m_groupDefinitionsHasBeenSet = false;
 
     Aws::Vector<ResultByTime> m_resultsByTime;
+    bool m_resultsByTimeHasBeenSet = false;
 
     Aws::Vector<DimensionValuesWithAttributes> m_dimensionValueAttributes;
+    bool m_dimensionValueAttributesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

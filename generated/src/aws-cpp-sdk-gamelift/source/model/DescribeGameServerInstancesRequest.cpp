@@ -12,15 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGameServerInstancesRequest::DescribeGameServerInstancesRequest() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGameServerInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

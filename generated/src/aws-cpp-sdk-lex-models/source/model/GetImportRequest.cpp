@@ -12,11 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetImportRequest::GetImportRequest() : 
-    m_importIdHasBeenSet(false)
-{
-}
-
 Aws::String GetImportRequest::SerializePayload() const
 {
   return {};

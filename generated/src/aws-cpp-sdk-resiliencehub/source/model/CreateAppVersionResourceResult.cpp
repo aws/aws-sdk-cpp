@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAppVersionResourceResult::CreateAppVersionResourceResult()
-{
-}
-
 CreateAppVersionResourceResult::CreateAppVersionResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateAppVersionResourceResult& CreateAppVersionResourceResult::operator =(const
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalResource"))
   {
     m_physicalResource = jsonValue.GetObject("physicalResource");
-
+    m_physicalResourceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

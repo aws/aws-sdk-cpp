@@ -18,17 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-PolicyFilter::PolicyFilter() : 
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_policyTemplateIdHasBeenSet(false)
-{
-}
-
 PolicyFilter::PolicyFilter(JsonView jsonValue)
-  : PolicyFilter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PolicyFilter& PolicyFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("policyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyTemplateId"))
   {
     m_policyTemplateId = jsonValue.GetString("policyTemplateId");
-
     m_policyTemplateIdHasBeenSet = true;
   }
-
   return *this;
 }
 

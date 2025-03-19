@@ -18,15 +18,7 @@ namespace Account
 namespace Model
 {
 
-Region::Region() : 
-    m_regionNameHasBeenSet(false),
-    m_regionOptStatus(RegionOptStatus::NOT_SET),
-    m_regionOptStatusHasBeenSet(false)
-{
-}
-
 Region::Region(JsonView jsonValue)
-  : Region()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Region& Region::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegionName"))
   {
     m_regionName = jsonValue.GetString("RegionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionOptStatus"))
   {
     m_regionOptStatus = RegionOptStatusMapper::GetRegionOptStatusForName(jsonValue.GetString("RegionOptStatus"));
-
     m_regionOptStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

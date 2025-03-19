@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMultiplexProgramResult::CreateMultiplexProgramResult()
-{
-}
-
 CreateMultiplexProgramResult::CreateMultiplexProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMultiplexProgramResult& CreateMultiplexProgramResult::operator =(const Aws
   if(jsonValue.ValueExists("multiplexProgram"))
   {
     m_multiplexProgram = jsonValue.GetObject("multiplexProgram");
-
+    m_multiplexProgramHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

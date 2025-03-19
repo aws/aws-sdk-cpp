@@ -12,15 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRulesetRequest::CreateRulesetRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRulesetRequest::SerializePayload() const
 {
   JsonValue payload;

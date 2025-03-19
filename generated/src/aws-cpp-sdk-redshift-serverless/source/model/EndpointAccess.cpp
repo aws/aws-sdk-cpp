@@ -18,23 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-EndpointAccess::EndpointAccess() : 
-    m_addressHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_endpointCreateTimeHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_endpointStatusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 EndpointAccess::EndpointAccess(JsonView jsonValue)
-  : EndpointAccess()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ EndpointAccess& EndpointAccess::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetString("address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointArn"))
   {
     m_endpointArn = jsonValue.GetString("endpointArn");
-
     m_endpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointCreateTime"))
   {
     m_endpointCreateTime = jsonValue.GetString("endpointCreateTime");
-
     m_endpointCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointName"))
   {
     m_endpointName = jsonValue.GetString("endpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointStatus"))
   {
     m_endpointStatus = jsonValue.GetString("endpointStatus");
-
     m_endpointStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -92,14 +64,11 @@ EndpointAccess& EndpointAccess::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpoint"))
   {
     m_vpcEndpoint = jsonValue.GetObject("vpcEndpoint");
-
     m_vpcEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("vpcSecurityGroups");
@@ -109,14 +78,11 @@ EndpointAccess& EndpointAccess::operator =(JsonView jsonValue)
     }
     m_vpcSecurityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupName"))
   {
     m_workgroupName = jsonValue.GetString("workgroupName");
-
     m_workgroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

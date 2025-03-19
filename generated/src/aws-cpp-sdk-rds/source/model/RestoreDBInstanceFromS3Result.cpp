@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreDBInstanceFromS3Result::RestoreDBInstanceFromS3Result()
-{
-}
-
 RestoreDBInstanceFromS3Result::RestoreDBInstanceFromS3Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ RestoreDBInstanceFromS3Result& RestoreDBInstanceFromS3Result::operator =(const A
     if(!dBInstanceNode.IsNull())
     {
       m_dBInstance = dBInstanceNode;
+      m_dBInstanceHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::RestoreDBInstanceFromS3Result", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

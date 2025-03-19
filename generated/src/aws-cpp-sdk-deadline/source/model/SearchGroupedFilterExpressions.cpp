@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-SearchGroupedFilterExpressions::SearchGroupedFilterExpressions() : 
-    m_filtersHasBeenSet(false),
-    m_operator(LogicalOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 SearchGroupedFilterExpressions::SearchGroupedFilterExpressions(JsonView jsonValue)
-  : SearchGroupedFilterExpressions()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SearchGroupedFilterExpressions& SearchGroupedFilterExpressions::operator =(JsonV
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = LogicalOperatorMapper::GetLogicalOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

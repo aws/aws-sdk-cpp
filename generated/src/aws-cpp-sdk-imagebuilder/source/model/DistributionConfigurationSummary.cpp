@@ -18,19 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-DistributionConfigurationSummary::DistributionConfigurationSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 DistributionConfigurationSummary::DistributionConfigurationSummary(JsonView jsonValue)
-  : DistributionConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DistributionConfigurationSummary& DistributionConfigurationSummary::operator =(J
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateUpdated"))
   {
     m_dateUpdated = jsonValue.GetString("dateUpdated");
-
     m_dateUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -81,7 +59,6 @@ DistributionConfigurationSummary& DistributionConfigurationSummary::operator =(J
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
@@ -91,7 +68,6 @@ DistributionConfigurationSummary& DistributionConfigurationSummary::operator =(J
     }
     m_regionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DetectLabelsSettings::DetectLabelsSettings() : 
-    m_generalLabelsHasBeenSet(false),
-    m_imagePropertiesHasBeenSet(false)
-{
-}
-
 DetectLabelsSettings::DetectLabelsSettings(JsonView jsonValue)
-  : DetectLabelsSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DetectLabelsSettings& DetectLabelsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GeneralLabels"))
   {
     m_generalLabels = jsonValue.GetObject("GeneralLabels");
-
     m_generalLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageProperties"))
   {
     m_imageProperties = jsonValue.GetObject("ImageProperties");
-
     m_imagePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

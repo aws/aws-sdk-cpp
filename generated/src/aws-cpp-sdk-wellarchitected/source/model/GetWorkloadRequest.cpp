@@ -12,11 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkloadRequest::GetWorkloadRequest() : 
-    m_workloadIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkloadRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-RelationalDatabaseDataSourceConfig::RelationalDatabaseDataSourceConfig() : 
-    m_relationalDatabaseSourceType(RelationalDatabaseSourceType::NOT_SET),
-    m_relationalDatabaseSourceTypeHasBeenSet(false),
-    m_rdsHttpEndpointConfigHasBeenSet(false)
-{
-}
-
 RelationalDatabaseDataSourceConfig::RelationalDatabaseDataSourceConfig(JsonView jsonValue)
-  : RelationalDatabaseDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RelationalDatabaseDataSourceConfig& RelationalDatabaseDataSourceConfig::operator
   if(jsonValue.ValueExists("relationalDatabaseSourceType"))
   {
     m_relationalDatabaseSourceType = RelationalDatabaseSourceTypeMapper::GetRelationalDatabaseSourceTypeForName(jsonValue.GetString("relationalDatabaseSourceType"));
-
     m_relationalDatabaseSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsHttpEndpointConfig"))
   {
     m_rdsHttpEndpointConfig = jsonValue.GetObject("rdsHttpEndpointConfig");
-
     m_rdsHttpEndpointConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

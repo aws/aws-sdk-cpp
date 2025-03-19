@@ -24,7 +24,7 @@ namespace Model
   class StartAssessmentRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartAssessmentRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The data source type of an assessment to be started.</p>
      */
-    inline const AssessmentDataSourceType& GetAssessmentDataSourceType() const{ return m_assessmentDataSourceType; }
+    inline AssessmentDataSourceType GetAssessmentDataSourceType() const { return m_assessmentDataSourceType; }
     inline bool AssessmentDataSourceTypeHasBeenSet() const { return m_assessmentDataSourceTypeHasBeenSet; }
-    inline void SetAssessmentDataSourceType(const AssessmentDataSourceType& value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = value; }
-    inline void SetAssessmentDataSourceType(AssessmentDataSourceType&& value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = std::move(value); }
-    inline StartAssessmentRequest& WithAssessmentDataSourceType(const AssessmentDataSourceType& value) { SetAssessmentDataSourceType(value); return *this;}
-    inline StartAssessmentRequest& WithAssessmentDataSourceType(AssessmentDataSourceType&& value) { SetAssessmentDataSourceType(std::move(value)); return *this;}
+    inline void SetAssessmentDataSourceType(AssessmentDataSourceType value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = value; }
+    inline StartAssessmentRequest& WithAssessmentDataSourceType(AssessmentDataSourceType value) { SetAssessmentDataSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of criteria for assessment.</p>
      */
-    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const{ return m_assessmentTargets; }
+    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const { return m_assessmentTargets; }
     inline bool AssessmentTargetsHasBeenSet() const { return m_assessmentTargetsHasBeenSet; }
-    inline void SetAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = value; }
-    inline void SetAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = std::move(value); }
-    inline StartAssessmentRequest& WithAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { SetAssessmentTargets(value); return *this;}
-    inline StartAssessmentRequest& WithAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { SetAssessmentTargets(std::move(value)); return *this;}
-    inline StartAssessmentRequest& AddAssessmentTargets(const AssessmentTarget& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.push_back(value); return *this; }
-    inline StartAssessmentRequest& AddAssessmentTargets(AssessmentTarget&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.push_back(std::move(value)); return *this; }
+    template<typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
+    void SetAssessmentTargets(AssessmentTargetsT&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = std::forward<AssessmentTargetsT>(value); }
+    template<typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
+    StartAssessmentRequest& WithAssessmentTargets(AssessmentTargetsT&& value) { SetAssessmentTargets(std::forward<AssessmentTargetsT>(value)); return *this;}
+    template<typename AssessmentTargetsT = AssessmentTarget>
+    StartAssessmentRequest& AddAssessmentTargets(AssessmentTargetsT&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.emplace_back(std::forward<AssessmentTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p> The S3 bucket used by the collectors to send analysis data to the service.
      * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
      */
-    inline const Aws::String& GetS3bucketForAnalysisData() const{ return m_s3bucketForAnalysisData; }
+    inline const Aws::String& GetS3bucketForAnalysisData() const { return m_s3bucketForAnalysisData; }
     inline bool S3bucketForAnalysisDataHasBeenSet() const { return m_s3bucketForAnalysisDataHasBeenSet; }
-    inline void SetS3bucketForAnalysisData(const Aws::String& value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData = value; }
-    inline void SetS3bucketForAnalysisData(Aws::String&& value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData = std::move(value); }
-    inline void SetS3bucketForAnalysisData(const char* value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData.assign(value); }
-    inline StartAssessmentRequest& WithS3bucketForAnalysisData(const Aws::String& value) { SetS3bucketForAnalysisData(value); return *this;}
-    inline StartAssessmentRequest& WithS3bucketForAnalysisData(Aws::String&& value) { SetS3bucketForAnalysisData(std::move(value)); return *this;}
-    inline StartAssessmentRequest& WithS3bucketForAnalysisData(const char* value) { SetS3bucketForAnalysisData(value); return *this;}
+    template<typename S3bucketForAnalysisDataT = Aws::String>
+    void SetS3bucketForAnalysisData(S3bucketForAnalysisDataT&& value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData = std::forward<S3bucketForAnalysisDataT>(value); }
+    template<typename S3bucketForAnalysisDataT = Aws::String>
+    StartAssessmentRequest& WithS3bucketForAnalysisData(S3bucketForAnalysisDataT&& value) { SetS3bucketForAnalysisData(std::forward<S3bucketForAnalysisDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,18 +77,16 @@ namespace Model
      * <p> The S3 bucket where all the reports generated by the service are stored. The
      * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
      */
-    inline const Aws::String& GetS3bucketForReportData() const{ return m_s3bucketForReportData; }
+    inline const Aws::String& GetS3bucketForReportData() const { return m_s3bucketForReportData; }
     inline bool S3bucketForReportDataHasBeenSet() const { return m_s3bucketForReportDataHasBeenSet; }
-    inline void SetS3bucketForReportData(const Aws::String& value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData = value; }
-    inline void SetS3bucketForReportData(Aws::String&& value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData = std::move(value); }
-    inline void SetS3bucketForReportData(const char* value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData.assign(value); }
-    inline StartAssessmentRequest& WithS3bucketForReportData(const Aws::String& value) { SetS3bucketForReportData(value); return *this;}
-    inline StartAssessmentRequest& WithS3bucketForReportData(Aws::String&& value) { SetS3bucketForReportData(std::move(value)); return *this;}
-    inline StartAssessmentRequest& WithS3bucketForReportData(const char* value) { SetS3bucketForReportData(value); return *this;}
+    template<typename S3bucketForReportDataT = Aws::String>
+    void SetS3bucketForReportData(S3bucketForReportDataT&& value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData = std::forward<S3bucketForReportDataT>(value); }
+    template<typename S3bucketForReportDataT = Aws::String>
+    StartAssessmentRequest& WithS3bucketForReportData(S3bucketForReportDataT&& value) { SetS3bucketForReportData(std::forward<S3bucketForReportDataT>(value)); return *this;}
     ///@}
   private:
 
-    AssessmentDataSourceType m_assessmentDataSourceType;
+    AssessmentDataSourceType m_assessmentDataSourceType{AssessmentDataSourceType::NOT_SET};
     bool m_assessmentDataSourceTypeHasBeenSet = false;
 
     Aws::Vector<AssessmentTarget> m_assessmentTargets;

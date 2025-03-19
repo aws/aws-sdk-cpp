@@ -33,7 +33,7 @@ namespace Model
   class JobRunAsUser
   {
   public:
-    AWS_DEADLINE_API JobRunAsUser();
+    AWS_DEADLINE_API JobRunAsUser() = default;
     AWS_DEADLINE_API JobRunAsUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API JobRunAsUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The user and group that the jobs in the queue run as.</p>
      */
-    inline const PosixUser& GetPosix() const{ return m_posix; }
+    inline const PosixUser& GetPosix() const { return m_posix; }
     inline bool PosixHasBeenSet() const { return m_posixHasBeenSet; }
-    inline void SetPosix(const PosixUser& value) { m_posixHasBeenSet = true; m_posix = value; }
-    inline void SetPosix(PosixUser&& value) { m_posixHasBeenSet = true; m_posix = std::move(value); }
-    inline JobRunAsUser& WithPosix(const PosixUser& value) { SetPosix(value); return *this;}
-    inline JobRunAsUser& WithPosix(PosixUser&& value) { SetPosix(std::move(value)); return *this;}
+    template<typename PosixT = PosixUser>
+    void SetPosix(PosixT&& value) { m_posixHasBeenSet = true; m_posix = std::forward<PosixT>(value); }
+    template<typename PosixT = PosixUser>
+    JobRunAsUser& WithPosix(PosixT&& value) { SetPosix(std::forward<PosixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies a Microsoft Windows user.</p>
      */
-    inline const WindowsUser& GetWindows() const{ return m_windows; }
+    inline const WindowsUser& GetWindows() const { return m_windows; }
     inline bool WindowsHasBeenSet() const { return m_windowsHasBeenSet; }
-    inline void SetWindows(const WindowsUser& value) { m_windowsHasBeenSet = true; m_windows = value; }
-    inline void SetWindows(WindowsUser&& value) { m_windowsHasBeenSet = true; m_windows = std::move(value); }
-    inline JobRunAsUser& WithWindows(const WindowsUser& value) { SetWindows(value); return *this;}
-    inline JobRunAsUser& WithWindows(WindowsUser&& value) { SetWindows(std::move(value)); return *this;}
+    template<typename WindowsT = WindowsUser>
+    void SetWindows(WindowsT&& value) { m_windowsHasBeenSet = true; m_windows = std::forward<WindowsT>(value); }
+    template<typename WindowsT = WindowsUser>
+    JobRunAsUser& WithWindows(WindowsT&& value) { SetWindows(std::forward<WindowsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,10 @@ namespace Model
      * <p>Specifies whether the job should run using the queue's system user or if the
      * job should run using the worker agent system user.</p>
      */
-    inline const RunAs& GetRunAs() const{ return m_runAs; }
+    inline RunAs GetRunAs() const { return m_runAs; }
     inline bool RunAsHasBeenSet() const { return m_runAsHasBeenSet; }
-    inline void SetRunAs(const RunAs& value) { m_runAsHasBeenSet = true; m_runAs = value; }
-    inline void SetRunAs(RunAs&& value) { m_runAsHasBeenSet = true; m_runAs = std::move(value); }
-    inline JobRunAsUser& WithRunAs(const RunAs& value) { SetRunAs(value); return *this;}
-    inline JobRunAsUser& WithRunAs(RunAs&& value) { SetRunAs(std::move(value)); return *this;}
+    inline void SetRunAs(RunAs value) { m_runAsHasBeenSet = true; m_runAs = value; }
+    inline JobRunAsUser& WithRunAs(RunAs value) { SetRunAs(value); return *this;}
     ///@}
   private:
 
@@ -83,7 +81,7 @@ namespace Model
     WindowsUser m_windows;
     bool m_windowsHasBeenSet = false;
 
-    RunAs m_runAs;
+    RunAs m_runAs{RunAs::NOT_SET};
     bool m_runAsHasBeenSet = false;
   };
 

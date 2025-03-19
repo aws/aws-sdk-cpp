@@ -29,7 +29,7 @@ namespace Model
   class CreateClusterResult
   {
   public:
-    AWS_SNOWBALL_API CreateClusterResult();
+    AWS_SNOWBALL_API CreateClusterResult() = default;
     AWS_SNOWBALL_API CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWBALL_API CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterId.assign(value); }
-    inline CreateClusterResult& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline CreateClusterResult& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline CreateClusterResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    CreateClusterResult& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a>
      * in this guide.</p>
      */
-    inline const Aws::Vector<JobListEntry>& GetJobListEntries() const{ return m_jobListEntries; }
-    inline void SetJobListEntries(const Aws::Vector<JobListEntry>& value) { m_jobListEntries = value; }
-    inline void SetJobListEntries(Aws::Vector<JobListEntry>&& value) { m_jobListEntries = std::move(value); }
-    inline CreateClusterResult& WithJobListEntries(const Aws::Vector<JobListEntry>& value) { SetJobListEntries(value); return *this;}
-    inline CreateClusterResult& WithJobListEntries(Aws::Vector<JobListEntry>&& value) { SetJobListEntries(std::move(value)); return *this;}
-    inline CreateClusterResult& AddJobListEntries(const JobListEntry& value) { m_jobListEntries.push_back(value); return *this; }
-    inline CreateClusterResult& AddJobListEntries(JobListEntry&& value) { m_jobListEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JobListEntry>& GetJobListEntries() const { return m_jobListEntries; }
+    template<typename JobListEntriesT = Aws::Vector<JobListEntry>>
+    void SetJobListEntries(JobListEntriesT&& value) { m_jobListEntriesHasBeenSet = true; m_jobListEntries = std::forward<JobListEntriesT>(value); }
+    template<typename JobListEntriesT = Aws::Vector<JobListEntry>>
+    CreateClusterResult& WithJobListEntries(JobListEntriesT&& value) { SetJobListEntries(std::forward<JobListEntriesT>(value)); return *this;}
+    template<typename JobListEntriesT = JobListEntry>
+    CreateClusterResult& AddJobListEntries(JobListEntriesT&& value) { m_jobListEntriesHasBeenSet = true; m_jobListEntries.emplace_back(std::forward<JobListEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::Vector<JobListEntry> m_jobListEntries;
+    bool m_jobListEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

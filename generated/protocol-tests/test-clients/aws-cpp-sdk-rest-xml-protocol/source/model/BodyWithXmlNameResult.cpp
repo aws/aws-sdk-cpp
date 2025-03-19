@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BodyWithXmlNameResult::BodyWithXmlNameResult()
-{
-}
-
 BodyWithXmlNameResult::BodyWithXmlNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ BodyWithXmlNameResult& BodyWithXmlNameResult::operator =(const Aws::AmazonWebSer
     if(!nestedNode.IsNull())
     {
       m_nested = nestedNode;
+      m_nestedHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ BodyWithXmlNameResult& BodyWithXmlNameResult::operator =(const Aws::AmazonWebSer
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

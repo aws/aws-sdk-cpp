@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ModifyRecommendationDetail::ModifyRecommendationDetail() : 
-    m_targetInstancesHasBeenSet(false)
-{
-}
-
 ModifyRecommendationDetail::ModifyRecommendationDetail(JsonView jsonValue)
-  : ModifyRecommendationDetail()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ModifyRecommendationDetail& ModifyRecommendationDetail::operator =(JsonView json
     }
     m_targetInstancesHasBeenSet = true;
   }
-
   return *this;
 }
 

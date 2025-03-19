@@ -18,16 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-CommitmentConfiguration::CommitmentConfiguration() : 
-    m_automaticRenewal(false),
-    m_automaticRenewalHasBeenSet(false),
-    m_commitmentLength(CommitmentLength::NOT_SET),
-    m_commitmentLengthHasBeenSet(false)
-{
-}
-
 CommitmentConfiguration::CommitmentConfiguration(JsonView jsonValue)
-  : CommitmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CommitmentConfiguration& CommitmentConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("automaticRenewal"))
   {
     m_automaticRenewal = jsonValue.GetBool("automaticRenewal");
-
     m_automaticRenewalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitmentLength"))
   {
     m_commitmentLength = CommitmentLengthMapper::GetCommitmentLengthForName(jsonValue.GetString("commitmentLength"));
-
     m_commitmentLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

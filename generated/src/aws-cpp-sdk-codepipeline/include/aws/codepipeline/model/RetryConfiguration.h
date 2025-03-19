@@ -32,7 +32,7 @@ namespace Model
   class RetryConfiguration
   {
   public:
-    AWS_CODEPIPELINE_API RetryConfiguration();
+    AWS_CODEPIPELINE_API RetryConfiguration() = default;
     AWS_CODEPIPELINE_API RetryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API RetryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * failure. You can specify to retry only failed action in the stage or all actions
      * in the stage.</p>
      */
-    inline const StageRetryMode& GetRetryMode() const{ return m_retryMode; }
+    inline StageRetryMode GetRetryMode() const { return m_retryMode; }
     inline bool RetryModeHasBeenSet() const { return m_retryModeHasBeenSet; }
-    inline void SetRetryMode(const StageRetryMode& value) { m_retryModeHasBeenSet = true; m_retryMode = value; }
-    inline void SetRetryMode(StageRetryMode&& value) { m_retryModeHasBeenSet = true; m_retryMode = std::move(value); }
-    inline RetryConfiguration& WithRetryMode(const StageRetryMode& value) { SetRetryMode(value); return *this;}
-    inline RetryConfiguration& WithRetryMode(StageRetryMode&& value) { SetRetryMode(std::move(value)); return *this;}
+    inline void SetRetryMode(StageRetryMode value) { m_retryModeHasBeenSet = true; m_retryMode = value; }
+    inline RetryConfiguration& WithRetryMode(StageRetryMode value) { SetRetryMode(value); return *this;}
     ///@}
   private:
 
-    StageRetryMode m_retryMode;
+    StageRetryMode m_retryMode{StageRetryMode::NOT_SET};
     bool m_retryModeHasBeenSet = false;
   };
 

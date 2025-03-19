@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDNSSECResult::GetDNSSECResult()
-{
-}
-
 GetDNSSECResult::GetDNSSECResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ GetDNSSECResult& GetDNSSECResult::operator =(const Aws::AmazonWebServiceResult<X
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
+      m_statusHasBeenSet = true;
     }
     XmlNode keySigningKeysNode = resultNode.FirstChild("KeySigningKeys");
     if(!keySigningKeysNode.IsNull())
     {
       XmlNode keySigningKeysMember = keySigningKeysNode.FirstChild("member");
+      m_keySigningKeysHasBeenSet = !keySigningKeysMember.IsNull();
       while(!keySigningKeysMember.IsNull())
       {
         m_keySigningKeys.push_back(keySigningKeysMember);
         keySigningKeysMember = keySigningKeysMember.NextNode("member");
       }
 
+      m_keySigningKeysHasBeenSet = true;
     }
   }
 
@@ -55,6 +54,7 @@ GetDNSSECResult& GetDNSSECResult::operator =(const Aws::AmazonWebServiceResult<X
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

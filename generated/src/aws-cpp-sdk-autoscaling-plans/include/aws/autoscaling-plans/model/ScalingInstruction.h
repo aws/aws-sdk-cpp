@@ -58,7 +58,7 @@ namespace Model
   class ScalingInstruction
   {
   public:
-    AWS_AUTOSCALINGPLANS_API ScalingInstruction();
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction() = default;
     AWS_AUTOSCALINGPLANS_API ScalingInstruction(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API ScalingInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,12 +68,10 @@ namespace Model
     /**
      * <p>The namespace of the AWS service.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline ScalingInstruction& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline ScalingInstruction& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline ScalingInstruction& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +94,12 @@ namespace Model
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ScalingInstruction& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ScalingInstruction& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ScalingInstruction& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ScalingInstruction& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,19 +122,17 @@ namespace Model
      * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
      * PostgreSQL-compatible edition.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline ScalingInstruction& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline ScalingInstruction& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline ScalingInstruction& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum capacity of the resource. </p>
      */
-    inline int GetMinCapacity() const{ return m_minCapacity; }
+    inline int GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ScalingInstruction& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
@@ -150,7 +144,7 @@ namespace Model
      * you specify a non-default setting for
      * <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ScalingInstruction& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -161,14 +155,14 @@ namespace Model
      * <p>The target tracking configurations (up to 10). Each of these structures must
      * specify a unique scaling metric and a target value for the metric. </p>
      */
-    inline const Aws::Vector<TargetTrackingConfiguration>& GetTargetTrackingConfigurations() const{ return m_targetTrackingConfigurations; }
+    inline const Aws::Vector<TargetTrackingConfiguration>& GetTargetTrackingConfigurations() const { return m_targetTrackingConfigurations; }
     inline bool TargetTrackingConfigurationsHasBeenSet() const { return m_targetTrackingConfigurationsHasBeenSet; }
-    inline void SetTargetTrackingConfigurations(const Aws::Vector<TargetTrackingConfiguration>& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations = value; }
-    inline void SetTargetTrackingConfigurations(Aws::Vector<TargetTrackingConfiguration>&& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations = std::move(value); }
-    inline ScalingInstruction& WithTargetTrackingConfigurations(const Aws::Vector<TargetTrackingConfiguration>& value) { SetTargetTrackingConfigurations(value); return *this;}
-    inline ScalingInstruction& WithTargetTrackingConfigurations(Aws::Vector<TargetTrackingConfiguration>&& value) { SetTargetTrackingConfigurations(std::move(value)); return *this;}
-    inline ScalingInstruction& AddTargetTrackingConfigurations(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations.push_back(value); return *this; }
-    inline ScalingInstruction& AddTargetTrackingConfigurations(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations.push_back(std::move(value)); return *this; }
+    template<typename TargetTrackingConfigurationsT = Aws::Vector<TargetTrackingConfiguration>>
+    void SetTargetTrackingConfigurations(TargetTrackingConfigurationsT&& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations = std::forward<TargetTrackingConfigurationsT>(value); }
+    template<typename TargetTrackingConfigurationsT = Aws::Vector<TargetTrackingConfiguration>>
+    ScalingInstruction& WithTargetTrackingConfigurations(TargetTrackingConfigurationsT&& value) { SetTargetTrackingConfigurations(std::forward<TargetTrackingConfigurationsT>(value)); return *this;}
+    template<typename TargetTrackingConfigurationsT = TargetTrackingConfiguration>
+    ScalingInstruction& AddTargetTrackingConfigurations(TargetTrackingConfigurationsT&& value) { m_targetTrackingConfigurationsHasBeenSet = true; m_targetTrackingConfigurations.emplace_back(std::forward<TargetTrackingConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -177,12 +171,12 @@ namespace Model
      * <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive
      * scaling, and cannot be used otherwise. </p>
      */
-    inline const PredefinedLoadMetricSpecification& GetPredefinedLoadMetricSpecification() const{ return m_predefinedLoadMetricSpecification; }
+    inline const PredefinedLoadMetricSpecification& GetPredefinedLoadMetricSpecification() const { return m_predefinedLoadMetricSpecification; }
     inline bool PredefinedLoadMetricSpecificationHasBeenSet() const { return m_predefinedLoadMetricSpecificationHasBeenSet; }
-    inline void SetPredefinedLoadMetricSpecification(const PredefinedLoadMetricSpecification& value) { m_predefinedLoadMetricSpecificationHasBeenSet = true; m_predefinedLoadMetricSpecification = value; }
-    inline void SetPredefinedLoadMetricSpecification(PredefinedLoadMetricSpecification&& value) { m_predefinedLoadMetricSpecificationHasBeenSet = true; m_predefinedLoadMetricSpecification = std::move(value); }
-    inline ScalingInstruction& WithPredefinedLoadMetricSpecification(const PredefinedLoadMetricSpecification& value) { SetPredefinedLoadMetricSpecification(value); return *this;}
-    inline ScalingInstruction& WithPredefinedLoadMetricSpecification(PredefinedLoadMetricSpecification&& value) { SetPredefinedLoadMetricSpecification(std::move(value)); return *this;}
+    template<typename PredefinedLoadMetricSpecificationT = PredefinedLoadMetricSpecification>
+    void SetPredefinedLoadMetricSpecification(PredefinedLoadMetricSpecificationT&& value) { m_predefinedLoadMetricSpecificationHasBeenSet = true; m_predefinedLoadMetricSpecification = std::forward<PredefinedLoadMetricSpecificationT>(value); }
+    template<typename PredefinedLoadMetricSpecificationT = PredefinedLoadMetricSpecification>
+    ScalingInstruction& WithPredefinedLoadMetricSpecification(PredefinedLoadMetricSpecificationT&& value) { SetPredefinedLoadMetricSpecification(std::forward<PredefinedLoadMetricSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +185,12 @@ namespace Model
      * <b>PredefinedLoadMetricSpecification</b> is required when configuring predictive
      * scaling, and cannot be used otherwise. </p>
      */
-    inline const CustomizedLoadMetricSpecification& GetCustomizedLoadMetricSpecification() const{ return m_customizedLoadMetricSpecification; }
+    inline const CustomizedLoadMetricSpecification& GetCustomizedLoadMetricSpecification() const { return m_customizedLoadMetricSpecification; }
     inline bool CustomizedLoadMetricSpecificationHasBeenSet() const { return m_customizedLoadMetricSpecificationHasBeenSet; }
-    inline void SetCustomizedLoadMetricSpecification(const CustomizedLoadMetricSpecification& value) { m_customizedLoadMetricSpecificationHasBeenSet = true; m_customizedLoadMetricSpecification = value; }
-    inline void SetCustomizedLoadMetricSpecification(CustomizedLoadMetricSpecification&& value) { m_customizedLoadMetricSpecificationHasBeenSet = true; m_customizedLoadMetricSpecification = std::move(value); }
-    inline ScalingInstruction& WithCustomizedLoadMetricSpecification(const CustomizedLoadMetricSpecification& value) { SetCustomizedLoadMetricSpecification(value); return *this;}
-    inline ScalingInstruction& WithCustomizedLoadMetricSpecification(CustomizedLoadMetricSpecification&& value) { SetCustomizedLoadMetricSpecification(std::move(value)); return *this;}
+    template<typename CustomizedLoadMetricSpecificationT = CustomizedLoadMetricSpecification>
+    void SetCustomizedLoadMetricSpecification(CustomizedLoadMetricSpecificationT&& value) { m_customizedLoadMetricSpecificationHasBeenSet = true; m_customizedLoadMetricSpecification = std::forward<CustomizedLoadMetricSpecificationT>(value); }
+    template<typename CustomizedLoadMetricSpecificationT = CustomizedLoadMetricSpecification>
+    ScalingInstruction& WithCustomizedLoadMetricSpecification(CustomizedLoadMetricSpecificationT&& value) { SetCustomizedLoadMetricSpecification(std::forward<CustomizedLoadMetricSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,7 +206,7 @@ namespace Model
      * of 3600 seconds (60 minutes). The default is 300 seconds. </p> <p>Only valid
      * when configuring predictive scaling. </p>
      */
-    inline int GetScheduledActionBufferTime() const{ return m_scheduledActionBufferTime; }
+    inline int GetScheduledActionBufferTime() const { return m_scheduledActionBufferTime; }
     inline bool ScheduledActionBufferTimeHasBeenSet() const { return m_scheduledActionBufferTimeHasBeenSet; }
     inline void SetScheduledActionBufferTime(int value) { m_scheduledActionBufferTimeHasBeenSet = true; m_scheduledActionBufferTime = value; }
     inline ScalingInstruction& WithScheduledActionBufferTime(int value) { SetScheduledActionBufferTime(value); return *this;}
@@ -236,12 +230,10 @@ namespace Model
      * unexpected traffic occurs. </p> </li> </ul> <p>Only valid when configuring
      * predictive scaling.</p>
      */
-    inline const PredictiveScalingMaxCapacityBehavior& GetPredictiveScalingMaxCapacityBehavior() const{ return m_predictiveScalingMaxCapacityBehavior; }
+    inline PredictiveScalingMaxCapacityBehavior GetPredictiveScalingMaxCapacityBehavior() const { return m_predictiveScalingMaxCapacityBehavior; }
     inline bool PredictiveScalingMaxCapacityBehaviorHasBeenSet() const { return m_predictiveScalingMaxCapacityBehaviorHasBeenSet; }
-    inline void SetPredictiveScalingMaxCapacityBehavior(const PredictiveScalingMaxCapacityBehavior& value) { m_predictiveScalingMaxCapacityBehaviorHasBeenSet = true; m_predictiveScalingMaxCapacityBehavior = value; }
-    inline void SetPredictiveScalingMaxCapacityBehavior(PredictiveScalingMaxCapacityBehavior&& value) { m_predictiveScalingMaxCapacityBehaviorHasBeenSet = true; m_predictiveScalingMaxCapacityBehavior = std::move(value); }
-    inline ScalingInstruction& WithPredictiveScalingMaxCapacityBehavior(const PredictiveScalingMaxCapacityBehavior& value) { SetPredictiveScalingMaxCapacityBehavior(value); return *this;}
-    inline ScalingInstruction& WithPredictiveScalingMaxCapacityBehavior(PredictiveScalingMaxCapacityBehavior&& value) { SetPredictiveScalingMaxCapacityBehavior(std::move(value)); return *this;}
+    inline void SetPredictiveScalingMaxCapacityBehavior(PredictiveScalingMaxCapacityBehavior value) { m_predictiveScalingMaxCapacityBehaviorHasBeenSet = true; m_predictiveScalingMaxCapacityBehavior = value; }
+    inline ScalingInstruction& WithPredictiveScalingMaxCapacityBehavior(PredictiveScalingMaxCapacityBehavior value) { SetPredictiveScalingMaxCapacityBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -256,7 +248,7 @@ namespace Model
      * <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used
      * otherwise.</p> <p>The range is 1-100.</p>
      */
-    inline int GetPredictiveScalingMaxCapacityBuffer() const{ return m_predictiveScalingMaxCapacityBuffer; }
+    inline int GetPredictiveScalingMaxCapacityBuffer() const { return m_predictiveScalingMaxCapacityBuffer; }
     inline bool PredictiveScalingMaxCapacityBufferHasBeenSet() const { return m_predictiveScalingMaxCapacityBufferHasBeenSet; }
     inline void SetPredictiveScalingMaxCapacityBuffer(int value) { m_predictiveScalingMaxCapacityBufferHasBeenSet = true; m_predictiveScalingMaxCapacityBuffer = value; }
     inline ScalingInstruction& WithPredictiveScalingMaxCapacityBuffer(int value) { SetPredictiveScalingMaxCapacityBuffer(value); return *this;}
@@ -269,12 +261,10 @@ namespace Model
      * but does not create any scheduled scaling actions based on the capacity
      * forecast. </p>
      */
-    inline const PredictiveScalingMode& GetPredictiveScalingMode() const{ return m_predictiveScalingMode; }
+    inline PredictiveScalingMode GetPredictiveScalingMode() const { return m_predictiveScalingMode; }
     inline bool PredictiveScalingModeHasBeenSet() const { return m_predictiveScalingModeHasBeenSet; }
-    inline void SetPredictiveScalingMode(const PredictiveScalingMode& value) { m_predictiveScalingModeHasBeenSet = true; m_predictiveScalingMode = value; }
-    inline void SetPredictiveScalingMode(PredictiveScalingMode&& value) { m_predictiveScalingModeHasBeenSet = true; m_predictiveScalingMode = std::move(value); }
-    inline ScalingInstruction& WithPredictiveScalingMode(const PredictiveScalingMode& value) { SetPredictiveScalingMode(value); return *this;}
-    inline ScalingInstruction& WithPredictiveScalingMode(PredictiveScalingMode&& value) { SetPredictiveScalingMode(std::move(value)); return *this;}
+    inline void SetPredictiveScalingMode(PredictiveScalingMode value) { m_predictiveScalingModeHasBeenSet = true; m_predictiveScalingMode = value; }
+    inline ScalingInstruction& WithPredictiveScalingMode(PredictiveScalingMode value) { SetPredictiveScalingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -288,12 +278,10 @@ namespace Model
      * than or equal to 50. If there are more than 50 policies to be replaced, AWS Auto
      * Scaling keeps all existing policies and does not create new ones.</p>
      */
-    inline const ScalingPolicyUpdateBehavior& GetScalingPolicyUpdateBehavior() const{ return m_scalingPolicyUpdateBehavior; }
+    inline ScalingPolicyUpdateBehavior GetScalingPolicyUpdateBehavior() const { return m_scalingPolicyUpdateBehavior; }
     inline bool ScalingPolicyUpdateBehaviorHasBeenSet() const { return m_scalingPolicyUpdateBehaviorHasBeenSet; }
-    inline void SetScalingPolicyUpdateBehavior(const ScalingPolicyUpdateBehavior& value) { m_scalingPolicyUpdateBehaviorHasBeenSet = true; m_scalingPolicyUpdateBehavior = value; }
-    inline void SetScalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior&& value) { m_scalingPolicyUpdateBehaviorHasBeenSet = true; m_scalingPolicyUpdateBehavior = std::move(value); }
-    inline ScalingInstruction& WithScalingPolicyUpdateBehavior(const ScalingPolicyUpdateBehavior& value) { SetScalingPolicyUpdateBehavior(value); return *this;}
-    inline ScalingInstruction& WithScalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior&& value) { SetScalingPolicyUpdateBehavior(std::move(value)); return *this;}
+    inline void SetScalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior value) { m_scalingPolicyUpdateBehaviorHasBeenSet = true; m_scalingPolicyUpdateBehavior = value; }
+    inline ScalingInstruction& WithScalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior value) { SetScalingPolicyUpdateBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -303,26 +291,26 @@ namespace Model
      * policies based on the specified target tracking configurations. </p> <p>The
      * default is enabled (<code>false</code>). </p>
      */
-    inline bool GetDisableDynamicScaling() const{ return m_disableDynamicScaling; }
+    inline bool GetDisableDynamicScaling() const { return m_disableDynamicScaling; }
     inline bool DisableDynamicScalingHasBeenSet() const { return m_disableDynamicScalingHasBeenSet; }
     inline void SetDisableDynamicScaling(bool value) { m_disableDynamicScalingHasBeenSet = true; m_disableDynamicScaling = value; }
     inline ScalingInstruction& WithDisableDynamicScaling(bool value) { SetDisableDynamicScaling(value); return *this;}
     ///@}
   private:
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
 
-    int m_minCapacity;
+    int m_minCapacity{0};
     bool m_minCapacityHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
     Aws::Vector<TargetTrackingConfiguration> m_targetTrackingConfigurations;
@@ -334,22 +322,22 @@ namespace Model
     CustomizedLoadMetricSpecification m_customizedLoadMetricSpecification;
     bool m_customizedLoadMetricSpecificationHasBeenSet = false;
 
-    int m_scheduledActionBufferTime;
+    int m_scheduledActionBufferTime{0};
     bool m_scheduledActionBufferTimeHasBeenSet = false;
 
-    PredictiveScalingMaxCapacityBehavior m_predictiveScalingMaxCapacityBehavior;
+    PredictiveScalingMaxCapacityBehavior m_predictiveScalingMaxCapacityBehavior{PredictiveScalingMaxCapacityBehavior::NOT_SET};
     bool m_predictiveScalingMaxCapacityBehaviorHasBeenSet = false;
 
-    int m_predictiveScalingMaxCapacityBuffer;
+    int m_predictiveScalingMaxCapacityBuffer{0};
     bool m_predictiveScalingMaxCapacityBufferHasBeenSet = false;
 
-    PredictiveScalingMode m_predictiveScalingMode;
+    PredictiveScalingMode m_predictiveScalingMode{PredictiveScalingMode::NOT_SET};
     bool m_predictiveScalingModeHasBeenSet = false;
 
-    ScalingPolicyUpdateBehavior m_scalingPolicyUpdateBehavior;
+    ScalingPolicyUpdateBehavior m_scalingPolicyUpdateBehavior{ScalingPolicyUpdateBehavior::NOT_SET};
     bool m_scalingPolicyUpdateBehaviorHasBeenSet = false;
 
-    bool m_disableDynamicScaling;
+    bool m_disableDynamicScaling{false};
     bool m_disableDynamicScalingHasBeenSet = false;
   };
 

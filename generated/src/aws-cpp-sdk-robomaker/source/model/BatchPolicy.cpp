@@ -18,16 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-BatchPolicy::BatchPolicy() : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_maxConcurrency(0),
-    m_maxConcurrencyHasBeenSet(false)
-{
-}
-
 BatchPolicy::BatchPolicy(JsonView jsonValue)
-  : BatchPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BatchPolicy& BatchPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInt64("timeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetInteger("maxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   return *this;
 }
 

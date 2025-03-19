@@ -33,7 +33,7 @@ namespace Model
   class TableMaintenanceJobStatusValue
   {
   public:
-    AWS_S3TABLES_API TableMaintenanceJobStatusValue();
+    AWS_S3TABLES_API TableMaintenanceJobStatusValue() = default;
     AWS_S3TABLES_API TableMaintenanceJobStatusValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API TableMaintenanceJobStatusValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,41 @@ namespace Model
     /**
      * <p>The status of the job.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline JobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TableMaintenanceJobStatusValue& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline TableMaintenanceJobStatusValue& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TableMaintenanceJobStatusValue& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the maintenance job was last run.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRunTimestamp() const{ return m_lastRunTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastRunTimestamp() const { return m_lastRunTimestamp; }
     inline bool LastRunTimestampHasBeenSet() const { return m_lastRunTimestampHasBeenSet; }
-    inline void SetLastRunTimestamp(const Aws::Utils::DateTime& value) { m_lastRunTimestampHasBeenSet = true; m_lastRunTimestamp = value; }
-    inline void SetLastRunTimestamp(Aws::Utils::DateTime&& value) { m_lastRunTimestampHasBeenSet = true; m_lastRunTimestamp = std::move(value); }
-    inline TableMaintenanceJobStatusValue& WithLastRunTimestamp(const Aws::Utils::DateTime& value) { SetLastRunTimestamp(value); return *this;}
-    inline TableMaintenanceJobStatusValue& WithLastRunTimestamp(Aws::Utils::DateTime&& value) { SetLastRunTimestamp(std::move(value)); return *this;}
+    template<typename LastRunTimestampT = Aws::Utils::DateTime>
+    void SetLastRunTimestamp(LastRunTimestampT&& value) { m_lastRunTimestampHasBeenSet = true; m_lastRunTimestamp = std::forward<LastRunTimestampT>(value); }
+    template<typename LastRunTimestampT = Aws::Utils::DateTime>
+    TableMaintenanceJobStatusValue& WithLastRunTimestamp(LastRunTimestampT&& value) { SetLastRunTimestamp(std::forward<LastRunTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure message of a failed job.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline TableMaintenanceJobStatusValue& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline TableMaintenanceJobStatusValue& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline TableMaintenanceJobStatusValue& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    TableMaintenanceJobStatusValue& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
   private:
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRunTimestamp;
+    Aws::Utils::DateTime m_lastRunTimestamp{};
     bool m_lastRunTimestampHasBeenSet = false;
 
     Aws::String m_failureMessage;

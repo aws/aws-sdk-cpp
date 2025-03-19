@@ -18,23 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RateBasedStatementCustomKey::RateBasedStatementCustomKey() : 
-    m_headerHasBeenSet(false),
-    m_cookieHasBeenSet(false),
-    m_queryArgumentHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_hTTPMethodHasBeenSet(false),
-    m_forwardedIPHasBeenSet(false),
-    m_iPHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false),
-    m_uriPathHasBeenSet(false),
-    m_jA3FingerprintHasBeenSet(false),
-    m_jA4FingerprintHasBeenSet(false)
-{
-}
-
 RateBasedStatementCustomKey::RateBasedStatementCustomKey(JsonView jsonValue)
-  : RateBasedStatementCustomKey()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ RateBasedStatementCustomKey& RateBasedStatementCustomKey::operator =(JsonView js
   if(jsonValue.ValueExists("Header"))
   {
     m_header = jsonValue.GetObject("Header");
-
     m_headerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cookie"))
   {
     m_cookie = jsonValue.GetObject("Cookie");
-
     m_cookieHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryArgument"))
   {
     m_queryArgument = jsonValue.GetObject("QueryArgument");
-
     m_queryArgumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetObject("QueryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HTTPMethod"))
   {
     m_hTTPMethod = jsonValue.GetObject("HTTPMethod");
-
     m_hTTPMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForwardedIP"))
   {
     m_forwardedIP = jsonValue.GetObject("ForwardedIP");
-
     m_forwardedIPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IP"))
   {
     m_iP = jsonValue.GetObject("IP");
-
     m_iPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelNamespace"))
   {
     m_labelNamespace = jsonValue.GetObject("LabelNamespace");
-
     m_labelNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UriPath"))
   {
     m_uriPath = jsonValue.GetObject("UriPath");
-
     m_uriPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JA3Fingerprint"))
   {
     m_jA3Fingerprint = jsonValue.GetObject("JA3Fingerprint");
-
     m_jA3FingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JA4Fingerprint"))
   {
     m_jA4Fingerprint = jsonValue.GetObject("JA4Fingerprint");
-
     m_jA4FingerprintHasBeenSet = true;
   }
-
   return *this;
 }
 

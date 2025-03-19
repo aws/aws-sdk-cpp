@@ -34,7 +34,7 @@ namespace Model
   class MetricMathAnomalyDetector
   {
   public:
-    AWS_CLOUDWATCH_API MetricMathAnomalyDetector();
+    AWS_CLOUDWATCH_API MetricMathAnomalyDetector() = default;
     AWS_CLOUDWATCH_API MetricMathAnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MetricMathAnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,14 +54,14 @@ namespace Model
      * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
+    inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const { return m_metricDataQueries; }
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
-    inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
-    inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
-    inline MetricMathAnomalyDetector& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
-    inline MetricMathAnomalyDetector& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
-    inline MetricMathAnomalyDetector& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
-    inline MetricMathAnomalyDetector& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
+    template<typename MetricDataQueriesT = Aws::Vector<MetricDataQuery>>
+    void SetMetricDataQueries(MetricDataQueriesT&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::forward<MetricDataQueriesT>(value); }
+    template<typename MetricDataQueriesT = Aws::Vector<MetricDataQuery>>
+    MetricMathAnomalyDetector& WithMetricDataQueries(MetricDataQueriesT&& value) { SetMetricDataQueries(std::forward<MetricDataQueriesT>(value)); return *this;}
+    template<typename MetricDataQueriesT = MetricDataQuery>
+    MetricMathAnomalyDetector& AddMetricDataQueries(MetricDataQueriesT&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.emplace_back(std::forward<MetricDataQueriesT>(value)); return *this; }
     ///@}
   private:
 

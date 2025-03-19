@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LambdaFunctionRecommendationFilter::LambdaFunctionRecommendationFilter() : 
-    m_name(LambdaFunctionRecommendationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 LambdaFunctionRecommendationFilter::LambdaFunctionRecommendationFilter(JsonView jsonValue)
-  : LambdaFunctionRecommendationFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LambdaFunctionRecommendationFilter& LambdaFunctionRecommendationFilter::operator
   if(jsonValue.ValueExists("name"))
   {
     m_name = LambdaFunctionRecommendationFilterNameMapper::GetLambdaFunctionRecommendationFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ LambdaFunctionRecommendationFilter& LambdaFunctionRecommendationFilter::operator
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

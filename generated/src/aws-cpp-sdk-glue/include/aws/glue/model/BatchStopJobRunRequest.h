@@ -22,7 +22,7 @@ namespace Model
   class BatchStopJobRunRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API BatchStopJobRunRequest();
+    AWS_GLUE_API BatchStopJobRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the job definition for which to stop job runs.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline BatchStopJobRunRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline BatchStopJobRunRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline BatchStopJobRunRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    BatchStopJobRunRequest& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,15 +52,14 @@ namespace Model
      * <p>A list of the <code>JobRunIds</code> that should be stopped for that job
      * definition.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobRunIds() const{ return m_jobRunIds; }
+    inline const Aws::Vector<Aws::String>& GetJobRunIds() const { return m_jobRunIds; }
     inline bool JobRunIdsHasBeenSet() const { return m_jobRunIdsHasBeenSet; }
-    inline void SetJobRunIds(const Aws::Vector<Aws::String>& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds = value; }
-    inline void SetJobRunIds(Aws::Vector<Aws::String>&& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds = std::move(value); }
-    inline BatchStopJobRunRequest& WithJobRunIds(const Aws::Vector<Aws::String>& value) { SetJobRunIds(value); return *this;}
-    inline BatchStopJobRunRequest& WithJobRunIds(Aws::Vector<Aws::String>&& value) { SetJobRunIds(std::move(value)); return *this;}
-    inline BatchStopJobRunRequest& AddJobRunIds(const Aws::String& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.push_back(value); return *this; }
-    inline BatchStopJobRunRequest& AddJobRunIds(Aws::String&& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.push_back(std::move(value)); return *this; }
-    inline BatchStopJobRunRequest& AddJobRunIds(const char* value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.push_back(value); return *this; }
+    template<typename JobRunIdsT = Aws::Vector<Aws::String>>
+    void SetJobRunIds(JobRunIdsT&& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds = std::forward<JobRunIdsT>(value); }
+    template<typename JobRunIdsT = Aws::Vector<Aws::String>>
+    BatchStopJobRunRequest& WithJobRunIds(JobRunIdsT&& value) { SetJobRunIds(std::forward<JobRunIdsT>(value)); return *this;}
+    template<typename JobRunIdsT = Aws::String>
+    BatchStopJobRunRequest& AddJobRunIds(JobRunIdsT&& value) { m_jobRunIdsHasBeenSet = true; m_jobRunIds.emplace_back(std::forward<JobRunIdsT>(value)); return *this; }
     ///@}
   private:
 

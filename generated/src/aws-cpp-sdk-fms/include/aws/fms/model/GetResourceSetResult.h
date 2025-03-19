@@ -28,7 +28,7 @@ namespace Model
   class GetResourceSetResult
   {
   public:
-    AWS_FMS_API GetResourceSetResult();
+    AWS_FMS_API GetResourceSetResult() = default;
     AWS_FMS_API GetResourceSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API GetResourceSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>Information about the specified resource set.</p>
      */
-    inline const ResourceSet& GetResourceSet() const{ return m_resourceSet; }
-    inline void SetResourceSet(const ResourceSet& value) { m_resourceSet = value; }
-    inline void SetResourceSet(ResourceSet&& value) { m_resourceSet = std::move(value); }
-    inline GetResourceSetResult& WithResourceSet(const ResourceSet& value) { SetResourceSet(value); return *this;}
-    inline GetResourceSetResult& WithResourceSet(ResourceSet&& value) { SetResourceSet(std::move(value)); return *this;}
+    inline const ResourceSet& GetResourceSet() const { return m_resourceSet; }
+    template<typename ResourceSetT = ResourceSet>
+    void SetResourceSet(ResourceSetT&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::forward<ResourceSetT>(value); }
+    template<typename ResourceSetT = ResourceSet>
+    GetResourceSetResult& WithResourceSet(ResourceSetT&& value) { SetResourceSet(std::forward<ResourceSetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource set.</p>
      */
-    inline const Aws::String& GetResourceSetArn() const{ return m_resourceSetArn; }
-    inline void SetResourceSetArn(const Aws::String& value) { m_resourceSetArn = value; }
-    inline void SetResourceSetArn(Aws::String&& value) { m_resourceSetArn = std::move(value); }
-    inline void SetResourceSetArn(const char* value) { m_resourceSetArn.assign(value); }
-    inline GetResourceSetResult& WithResourceSetArn(const Aws::String& value) { SetResourceSetArn(value); return *this;}
-    inline GetResourceSetResult& WithResourceSetArn(Aws::String&& value) { SetResourceSetArn(std::move(value)); return *this;}
-    inline GetResourceSetResult& WithResourceSetArn(const char* value) { SetResourceSetArn(value); return *this;}
+    inline const Aws::String& GetResourceSetArn() const { return m_resourceSetArn; }
+    template<typename ResourceSetArnT = Aws::String>
+    void SetResourceSetArn(ResourceSetArnT&& value) { m_resourceSetArnHasBeenSet = true; m_resourceSetArn = std::forward<ResourceSetArnT>(value); }
+    template<typename ResourceSetArnT = Aws::String>
+    GetResourceSetResult& WithResourceSetArn(ResourceSetArnT&& value) { SetResourceSetArn(std::forward<ResourceSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceSet m_resourceSet;
+    bool m_resourceSetHasBeenSet = false;
 
     Aws::String m_resourceSetArn;
+    bool m_resourceSetArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TagFilter::TagFilter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(TagFilterType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 TagFilter::TagFilter(JsonView jsonValue)
-  : TagFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TagFilterTypeMapper::GetTagFilterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

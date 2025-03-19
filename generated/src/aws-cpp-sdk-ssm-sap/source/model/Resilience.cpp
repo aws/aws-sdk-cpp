@@ -18,21 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-Resilience::Resilience() : 
-    m_hsrTierHasBeenSet(false),
-    m_hsrReplicationMode(ReplicationMode::NOT_SET),
-    m_hsrReplicationModeHasBeenSet(false),
-    m_hsrOperationMode(OperationMode::NOT_SET),
-    m_hsrOperationModeHasBeenSet(false),
-    m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false),
-    m_enqueueReplication(false),
-    m_enqueueReplicationHasBeenSet(false)
-{
-}
-
 Resilience::Resilience(JsonView jsonValue)
-  : Resilience()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ Resilience& Resilience::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HsrTier"))
   {
     m_hsrTier = jsonValue.GetString("HsrTier");
-
     m_hsrTierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsrReplicationMode"))
   {
     m_hsrReplicationMode = ReplicationModeMapper::GetReplicationModeForName(jsonValue.GetString("HsrReplicationMode"));
-
     m_hsrReplicationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsrOperationMode"))
   {
     m_hsrOperationMode = OperationModeMapper::GetOperationModeForName(jsonValue.GetString("HsrOperationMode"));
-
     m_hsrOperationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterStatus"))
   {
     m_clusterStatus = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("ClusterStatus"));
-
     m_clusterStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnqueueReplication"))
   {
     m_enqueueReplication = jsonValue.GetBool("EnqueueReplication");
-
     m_enqueueReplicationHasBeenSet = true;
   }
-
   return *this;
 }
 

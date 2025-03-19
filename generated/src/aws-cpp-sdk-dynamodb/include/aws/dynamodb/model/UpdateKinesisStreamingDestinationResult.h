@@ -29,7 +29,7 @@ namespace Model
   class UpdateKinesisStreamingDestinationResult
   {
   public:
-    AWS_DYNAMODB_API UpdateKinesisStreamingDestinationResult();
+    AWS_DYNAMODB_API UpdateKinesisStreamingDestinationResult() = default;
     AWS_DYNAMODB_API UpdateKinesisStreamingDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API UpdateKinesisStreamingDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The table name for the Kinesis streaming destination output.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
-    inline UpdateKinesisStreamingDestinationResult& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithTableName(const char* value) { SetTableName(value); return *this;}
+    inline const Aws::String& GetTableName() const { return m_tableName; }
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateKinesisStreamingDestinationResult& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the Kinesis stream input.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArn.assign(value); }
-    inline UpdateKinesisStreamingDestinationResult& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    UpdateKinesisStreamingDestinationResult& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,45 +61,46 @@ namespace Model
      * <p>The status of the attempt to update the Kinesis streaming destination
      * output.</p>
      */
-    inline const DestinationStatus& GetDestinationStatus() const{ return m_destinationStatus; }
-    inline void SetDestinationStatus(const DestinationStatus& value) { m_destinationStatus = value; }
-    inline void SetDestinationStatus(DestinationStatus&& value) { m_destinationStatus = std::move(value); }
-    inline UpdateKinesisStreamingDestinationResult& WithDestinationStatus(const DestinationStatus& value) { SetDestinationStatus(value); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithDestinationStatus(DestinationStatus&& value) { SetDestinationStatus(std::move(value)); return *this;}
+    inline DestinationStatus GetDestinationStatus() const { return m_destinationStatus; }
+    inline void SetDestinationStatus(DestinationStatus value) { m_destinationStatusHasBeenSet = true; m_destinationStatus = value; }
+    inline UpdateKinesisStreamingDestinationResult& WithDestinationStatus(DestinationStatus value) { SetDestinationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The command to update the Kinesis streaming destination configuration.</p>
      */
-    inline const UpdateKinesisStreamingConfiguration& GetUpdateKinesisStreamingConfiguration() const{ return m_updateKinesisStreamingConfiguration; }
-    inline void SetUpdateKinesisStreamingConfiguration(const UpdateKinesisStreamingConfiguration& value) { m_updateKinesisStreamingConfiguration = value; }
-    inline void SetUpdateKinesisStreamingConfiguration(UpdateKinesisStreamingConfiguration&& value) { m_updateKinesisStreamingConfiguration = std::move(value); }
-    inline UpdateKinesisStreamingDestinationResult& WithUpdateKinesisStreamingConfiguration(const UpdateKinesisStreamingConfiguration& value) { SetUpdateKinesisStreamingConfiguration(value); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithUpdateKinesisStreamingConfiguration(UpdateKinesisStreamingConfiguration&& value) { SetUpdateKinesisStreamingConfiguration(std::move(value)); return *this;}
+    inline const UpdateKinesisStreamingConfiguration& GetUpdateKinesisStreamingConfiguration() const { return m_updateKinesisStreamingConfiguration; }
+    template<typename UpdateKinesisStreamingConfigurationT = UpdateKinesisStreamingConfiguration>
+    void SetUpdateKinesisStreamingConfiguration(UpdateKinesisStreamingConfigurationT&& value) { m_updateKinesisStreamingConfigurationHasBeenSet = true; m_updateKinesisStreamingConfiguration = std::forward<UpdateKinesisStreamingConfigurationT>(value); }
+    template<typename UpdateKinesisStreamingConfigurationT = UpdateKinesisStreamingConfiguration>
+    UpdateKinesisStreamingDestinationResult& WithUpdateKinesisStreamingConfiguration(UpdateKinesisStreamingConfigurationT&& value) { SetUpdateKinesisStreamingConfiguration(std::forward<UpdateKinesisStreamingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateKinesisStreamingDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateKinesisStreamingDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateKinesisStreamingDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_streamArn;
+    bool m_streamArnHasBeenSet = false;
 
-    DestinationStatus m_destinationStatus;
+    DestinationStatus m_destinationStatus{DestinationStatus::NOT_SET};
+    bool m_destinationStatusHasBeenSet = false;
 
     UpdateKinesisStreamingConfiguration m_updateKinesisStreamingConfiguration;
+    bool m_updateKinesisStreamingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,14 +13,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigurationProfileRequest::DeleteConfigurationProfileRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_deletionProtectionCheck(DeletionProtectionCheck::NOT_SET),
-    m_deletionProtectionCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationProfileRequest::SerializePayload() const
 {
   return {};

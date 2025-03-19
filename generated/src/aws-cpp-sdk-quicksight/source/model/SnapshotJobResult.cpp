@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotJobResult::SnapshotJobResult() : 
-    m_anonymousUsersHasBeenSet(false)
-{
-}
-
 SnapshotJobResult::SnapshotJobResult(JsonView jsonValue)
-  : SnapshotJobResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnapshotJobResult& SnapshotJobResult::operator =(JsonView jsonValue)
     }
     m_anonymousUsersHasBeenSet = true;
   }
-
   return *this;
 }
 

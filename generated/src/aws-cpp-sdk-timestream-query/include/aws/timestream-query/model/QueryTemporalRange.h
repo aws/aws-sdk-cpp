@@ -32,7 +32,7 @@ namespace Model
   class QueryTemporalRange
   {
   public:
-    AWS_TIMESTREAMQUERY_API QueryTemporalRange();
+    AWS_TIMESTREAMQUERY_API QueryTemporalRange() = default;
     AWS_TIMESTREAMQUERY_API QueryTemporalRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API QueryTemporalRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * Name (ARN) of the table which is queried with the largest time range.</p> </li>
      * </ul>
      */
-    inline const QueryTemporalRangeMax& GetMax() const{ return m_max; }
+    inline const QueryTemporalRangeMax& GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(const QueryTemporalRangeMax& value) { m_maxHasBeenSet = true; m_max = value; }
-    inline void SetMax(QueryTemporalRangeMax&& value) { m_maxHasBeenSet = true; m_max = std::move(value); }
-    inline QueryTemporalRange& WithMax(const QueryTemporalRangeMax& value) { SetMax(value); return *this;}
-    inline QueryTemporalRange& WithMax(QueryTemporalRangeMax&& value) { SetMax(std::move(value)); return *this;}
+    template<typename MaxT = QueryTemporalRangeMax>
+    void SetMax(MaxT&& value) { m_maxHasBeenSet = true; m_max = std::forward<MaxT>(value); }
+    template<typename MaxT = QueryTemporalRangeMax>
+    QueryTemporalRange& WithMax(MaxT&& value) { SetMax(std::forward<MaxT>(value)); return *this;}
     ///@}
   private:
 

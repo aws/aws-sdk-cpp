@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetTypesForRule::AssetTypesForRule() : 
-    m_selectionMode(RuleScopeSelectionMode::NOT_SET),
-    m_selectionModeHasBeenSet(false),
-    m_specificAssetTypesHasBeenSet(false)
-{
-}
-
 AssetTypesForRule::AssetTypesForRule(JsonView jsonValue)
-  : AssetTypesForRule()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AssetTypesForRule& AssetTypesForRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("selectionMode"))
   {
     m_selectionMode = RuleScopeSelectionModeMapper::GetRuleScopeSelectionModeForName(jsonValue.GetString("selectionMode"));
-
     m_selectionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("specificAssetTypes"))
   {
     Aws::Utils::Array<JsonView> specificAssetTypesJsonList = jsonValue.GetArray("specificAssetTypes");
@@ -49,7 +39,6 @@ AssetTypesForRule& AssetTypesForRule::operator =(JsonView jsonValue)
     }
     m_specificAssetTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

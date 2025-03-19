@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDeploymentRequest::GetDeploymentRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_embedHasBeenSet(false)
-{
-}
-
 Aws::String GetDeploymentRequest::SerializePayload() const
 {
   return {};

@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomPermissionsRequest::CreateCustomPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

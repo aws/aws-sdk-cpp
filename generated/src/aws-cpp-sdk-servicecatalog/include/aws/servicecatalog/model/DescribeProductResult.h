@@ -32,7 +32,7 @@ namespace Model
   class DescribeProductResult
   {
   public:
-    AWS_SERVICECATALOG_API DescribeProductResult();
+    AWS_SERVICECATALOG_API DescribeProductResult() = default;
     AWS_SERVICECATALOG_API DescribeProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API DescribeProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,73 +41,76 @@ namespace Model
     /**
      * <p>Summary information about the product view.</p>
      */
-    inline const ProductViewSummary& GetProductViewSummary() const{ return m_productViewSummary; }
-    inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummary = value; }
-    inline void SetProductViewSummary(ProductViewSummary&& value) { m_productViewSummary = std::move(value); }
-    inline DescribeProductResult& WithProductViewSummary(const ProductViewSummary& value) { SetProductViewSummary(value); return *this;}
-    inline DescribeProductResult& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+    inline const ProductViewSummary& GetProductViewSummary() const { return m_productViewSummary; }
+    template<typename ProductViewSummaryT = ProductViewSummary>
+    void SetProductViewSummary(ProductViewSummaryT&& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = std::forward<ProductViewSummaryT>(value); }
+    template<typename ProductViewSummaryT = ProductViewSummary>
+    DescribeProductResult& WithProductViewSummary(ProductViewSummaryT&& value) { SetProductViewSummary(std::forward<ProductViewSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the provisioning artifacts for the specified product.</p>
      */
-    inline const Aws::Vector<ProvisioningArtifact>& GetProvisioningArtifacts() const{ return m_provisioningArtifacts; }
-    inline void SetProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { m_provisioningArtifacts = value; }
-    inline void SetProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { m_provisioningArtifacts = std::move(value); }
-    inline DescribeProductResult& WithProvisioningArtifacts(const Aws::Vector<ProvisioningArtifact>& value) { SetProvisioningArtifacts(value); return *this;}
-    inline DescribeProductResult& WithProvisioningArtifacts(Aws::Vector<ProvisioningArtifact>&& value) { SetProvisioningArtifacts(std::move(value)); return *this;}
-    inline DescribeProductResult& AddProvisioningArtifacts(const ProvisioningArtifact& value) { m_provisioningArtifacts.push_back(value); return *this; }
-    inline DescribeProductResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProvisioningArtifact>& GetProvisioningArtifacts() const { return m_provisioningArtifacts; }
+    template<typename ProvisioningArtifactsT = Aws::Vector<ProvisioningArtifact>>
+    void SetProvisioningArtifacts(ProvisioningArtifactsT&& value) { m_provisioningArtifactsHasBeenSet = true; m_provisioningArtifacts = std::forward<ProvisioningArtifactsT>(value); }
+    template<typename ProvisioningArtifactsT = Aws::Vector<ProvisioningArtifact>>
+    DescribeProductResult& WithProvisioningArtifacts(ProvisioningArtifactsT&& value) { SetProvisioningArtifacts(std::forward<ProvisioningArtifactsT>(value)); return *this;}
+    template<typename ProvisioningArtifactsT = ProvisioningArtifact>
+    DescribeProductResult& AddProvisioningArtifacts(ProvisioningArtifactsT&& value) { m_provisioningArtifactsHasBeenSet = true; m_provisioningArtifacts.emplace_back(std::forward<ProvisioningArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the associated budgets.</p>
      */
-    inline const Aws::Vector<BudgetDetail>& GetBudgets() const{ return m_budgets; }
-    inline void SetBudgets(const Aws::Vector<BudgetDetail>& value) { m_budgets = value; }
-    inline void SetBudgets(Aws::Vector<BudgetDetail>&& value) { m_budgets = std::move(value); }
-    inline DescribeProductResult& WithBudgets(const Aws::Vector<BudgetDetail>& value) { SetBudgets(value); return *this;}
-    inline DescribeProductResult& WithBudgets(Aws::Vector<BudgetDetail>&& value) { SetBudgets(std::move(value)); return *this;}
-    inline DescribeProductResult& AddBudgets(const BudgetDetail& value) { m_budgets.push_back(value); return *this; }
-    inline DescribeProductResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BudgetDetail>& GetBudgets() const { return m_budgets; }
+    template<typename BudgetsT = Aws::Vector<BudgetDetail>>
+    void SetBudgets(BudgetsT&& value) { m_budgetsHasBeenSet = true; m_budgets = std::forward<BudgetsT>(value); }
+    template<typename BudgetsT = Aws::Vector<BudgetDetail>>
+    DescribeProductResult& WithBudgets(BudgetsT&& value) { SetBudgets(std::forward<BudgetsT>(value)); return *this;}
+    template<typename BudgetsT = BudgetDetail>
+    DescribeProductResult& AddBudgets(BudgetsT&& value) { m_budgetsHasBeenSet = true; m_budgets.emplace_back(std::forward<BudgetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the associated launch paths.</p>
      */
-    inline const Aws::Vector<LaunchPath>& GetLaunchPaths() const{ return m_launchPaths; }
-    inline void SetLaunchPaths(const Aws::Vector<LaunchPath>& value) { m_launchPaths = value; }
-    inline void SetLaunchPaths(Aws::Vector<LaunchPath>&& value) { m_launchPaths = std::move(value); }
-    inline DescribeProductResult& WithLaunchPaths(const Aws::Vector<LaunchPath>& value) { SetLaunchPaths(value); return *this;}
-    inline DescribeProductResult& WithLaunchPaths(Aws::Vector<LaunchPath>&& value) { SetLaunchPaths(std::move(value)); return *this;}
-    inline DescribeProductResult& AddLaunchPaths(const LaunchPath& value) { m_launchPaths.push_back(value); return *this; }
-    inline DescribeProductResult& AddLaunchPaths(LaunchPath&& value) { m_launchPaths.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LaunchPath>& GetLaunchPaths() const { return m_launchPaths; }
+    template<typename LaunchPathsT = Aws::Vector<LaunchPath>>
+    void SetLaunchPaths(LaunchPathsT&& value) { m_launchPathsHasBeenSet = true; m_launchPaths = std::forward<LaunchPathsT>(value); }
+    template<typename LaunchPathsT = Aws::Vector<LaunchPath>>
+    DescribeProductResult& WithLaunchPaths(LaunchPathsT&& value) { SetLaunchPaths(std::forward<LaunchPathsT>(value)); return *this;}
+    template<typename LaunchPathsT = LaunchPath>
+    DescribeProductResult& AddLaunchPaths(LaunchPathsT&& value) { m_launchPathsHasBeenSet = true; m_launchPaths.emplace_back(std::forward<LaunchPathsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProductResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProductViewSummary m_productViewSummary;
+    bool m_productViewSummaryHasBeenSet = false;
 
     Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
+    bool m_provisioningArtifactsHasBeenSet = false;
 
     Aws::Vector<BudgetDetail> m_budgets;
+    bool m_budgetsHasBeenSet = false;
 
     Aws::Vector<LaunchPath> m_launchPaths;
+    bool m_launchPathsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class HumanLoopDataAttributes
   {
   public:
-    AWS_TEXTRACT_API HumanLoopDataAttributes();
+    AWS_TEXTRACT_API HumanLoopDataAttributes() = default;
     AWS_TEXTRACT_API HumanLoopDataAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API HumanLoopDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,13 @@ namespace Model
      * <p>Sets whether the input image is free of personally identifiable information
      * or adult content.</p>
      */
-    inline const Aws::Vector<ContentClassifier>& GetContentClassifiers() const{ return m_contentClassifiers; }
+    inline const Aws::Vector<ContentClassifier>& GetContentClassifiers() const { return m_contentClassifiers; }
     inline bool ContentClassifiersHasBeenSet() const { return m_contentClassifiersHasBeenSet; }
-    inline void SetContentClassifiers(const Aws::Vector<ContentClassifier>& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = value; }
-    inline void SetContentClassifiers(Aws::Vector<ContentClassifier>&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = std::move(value); }
-    inline HumanLoopDataAttributes& WithContentClassifiers(const Aws::Vector<ContentClassifier>& value) { SetContentClassifiers(value); return *this;}
-    inline HumanLoopDataAttributes& WithContentClassifiers(Aws::Vector<ContentClassifier>&& value) { SetContentClassifiers(std::move(value)); return *this;}
-    inline HumanLoopDataAttributes& AddContentClassifiers(const ContentClassifier& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(value); return *this; }
-    inline HumanLoopDataAttributes& AddContentClassifiers(ContentClassifier&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(std::move(value)); return *this; }
+    template<typename ContentClassifiersT = Aws::Vector<ContentClassifier>>
+    void SetContentClassifiers(ContentClassifiersT&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = std::forward<ContentClassifiersT>(value); }
+    template<typename ContentClassifiersT = Aws::Vector<ContentClassifier>>
+    HumanLoopDataAttributes& WithContentClassifiers(ContentClassifiersT&& value) { SetContentClassifiers(std::forward<ContentClassifiersT>(value)); return *this;}
+    inline HumanLoopDataAttributes& AddContentClassifiers(ContentClassifier value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(value); return *this; }
     ///@}
   private:
 

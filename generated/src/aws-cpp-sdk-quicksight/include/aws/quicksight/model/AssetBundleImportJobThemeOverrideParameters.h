@@ -32,7 +32,7 @@ namespace Model
   class AssetBundleImportJobThemeOverrideParameters
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideParameters();
+    AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideParameters() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobThemeOverrideParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the theme to apply overrides to.</p>
      */
-    inline const Aws::String& GetThemeId() const{ return m_themeId; }
+    inline const Aws::String& GetThemeId() const { return m_themeId; }
     inline bool ThemeIdHasBeenSet() const { return m_themeIdHasBeenSet; }
-    inline void SetThemeId(const Aws::String& value) { m_themeIdHasBeenSet = true; m_themeId = value; }
-    inline void SetThemeId(Aws::String&& value) { m_themeIdHasBeenSet = true; m_themeId = std::move(value); }
-    inline void SetThemeId(const char* value) { m_themeIdHasBeenSet = true; m_themeId.assign(value); }
-    inline AssetBundleImportJobThemeOverrideParameters& WithThemeId(const Aws::String& value) { SetThemeId(value); return *this;}
-    inline AssetBundleImportJobThemeOverrideParameters& WithThemeId(Aws::String&& value) { SetThemeId(std::move(value)); return *this;}
-    inline AssetBundleImportJobThemeOverrideParameters& WithThemeId(const char* value) { SetThemeId(value); return *this;}
+    template<typename ThemeIdT = Aws::String>
+    void SetThemeId(ThemeIdT&& value) { m_themeIdHasBeenSet = true; m_themeId = std::forward<ThemeIdT>(value); }
+    template<typename ThemeIdT = Aws::String>
+    AssetBundleImportJobThemeOverrideParameters& WithThemeId(ThemeIdT&& value) { SetThemeId(std::forward<ThemeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new name for the theme.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssetBundleImportJobThemeOverrideParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssetBundleImportJobThemeOverrideParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssetBundleImportJobThemeOverrideParameters& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssetBundleImportJobThemeOverrideParameters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

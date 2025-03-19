@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAuthorizersRequest::ListAuthorizersRequest() : 
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false),
-    m_status(AuthorizerStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListAuthorizersRequest::SerializePayload() const
 {
   return {};

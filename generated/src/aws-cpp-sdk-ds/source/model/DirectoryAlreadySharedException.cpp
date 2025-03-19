@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryAlreadySharedException::DirectoryAlreadySharedException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 DirectoryAlreadySharedException::DirectoryAlreadySharedException(JsonView jsonValue)
-  : DirectoryAlreadySharedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DirectoryAlreadySharedException& DirectoryAlreadySharedException::operator =(Jso
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

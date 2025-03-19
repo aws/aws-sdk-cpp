@@ -25,7 +25,7 @@ namespace Model
   class GetTestCaseRequest : public AppTestRequest
   {
   public:
-    AWS_APPTEST_API GetTestCaseRequest();
+    AWS_APPTEST_API GetTestCaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The request test ID of the test case.</p>
      */
-    inline const Aws::String& GetTestCaseId() const{ return m_testCaseId; }
+    inline const Aws::String& GetTestCaseId() const { return m_testCaseId; }
     inline bool TestCaseIdHasBeenSet() const { return m_testCaseIdHasBeenSet; }
-    inline void SetTestCaseId(const Aws::String& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = value; }
-    inline void SetTestCaseId(Aws::String&& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = std::move(value); }
-    inline void SetTestCaseId(const char* value) { m_testCaseIdHasBeenSet = true; m_testCaseId.assign(value); }
-    inline GetTestCaseRequest& WithTestCaseId(const Aws::String& value) { SetTestCaseId(value); return *this;}
-    inline GetTestCaseRequest& WithTestCaseId(Aws::String&& value) { SetTestCaseId(std::move(value)); return *this;}
-    inline GetTestCaseRequest& WithTestCaseId(const char* value) { SetTestCaseId(value); return *this;}
+    template<typename TestCaseIdT = Aws::String>
+    void SetTestCaseId(TestCaseIdT&& value) { m_testCaseIdHasBeenSet = true; m_testCaseId = std::forward<TestCaseIdT>(value); }
+    template<typename TestCaseIdT = Aws::String>
+    GetTestCaseRequest& WithTestCaseId(TestCaseIdT&& value) { SetTestCaseId(std::forward<TestCaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test case version of the test case.</p>
      */
-    inline int GetTestCaseVersion() const{ return m_testCaseVersion; }
+    inline int GetTestCaseVersion() const { return m_testCaseVersion; }
     inline bool TestCaseVersionHasBeenSet() const { return m_testCaseVersionHasBeenSet; }
     inline void SetTestCaseVersion(int value) { m_testCaseVersionHasBeenSet = true; m_testCaseVersion = value; }
     inline GetTestCaseRequest& WithTestCaseVersion(int value) { SetTestCaseVersion(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_testCaseId;
     bool m_testCaseIdHasBeenSet = false;
 
-    int m_testCaseVersion;
+    int m_testCaseVersion{0};
     bool m_testCaseVersionHasBeenSet = false;
   };
 

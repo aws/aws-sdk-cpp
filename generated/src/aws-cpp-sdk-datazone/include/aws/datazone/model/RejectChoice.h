@@ -33,7 +33,7 @@ namespace Model
   class RejectChoice
   {
   public:
-    AWS_DATAZONE_API RejectChoice();
+    AWS_DATAZONE_API RejectChoice() = default;
     AWS_DATAZONE_API RejectChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RejectChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Specifies the the automatically generated business metadata that can be
      * rejected.</p>
      */
-    inline const Aws::Vector<int>& GetPredictionChoices() const{ return m_predictionChoices; }
+    inline const Aws::Vector<int>& GetPredictionChoices() const { return m_predictionChoices; }
     inline bool PredictionChoicesHasBeenSet() const { return m_predictionChoicesHasBeenSet; }
-    inline void SetPredictionChoices(const Aws::Vector<int>& value) { m_predictionChoicesHasBeenSet = true; m_predictionChoices = value; }
-    inline void SetPredictionChoices(Aws::Vector<int>&& value) { m_predictionChoicesHasBeenSet = true; m_predictionChoices = std::move(value); }
-    inline RejectChoice& WithPredictionChoices(const Aws::Vector<int>& value) { SetPredictionChoices(value); return *this;}
-    inline RejectChoice& WithPredictionChoices(Aws::Vector<int>&& value) { SetPredictionChoices(std::move(value)); return *this;}
+    template<typename PredictionChoicesT = Aws::Vector<int>>
+    void SetPredictionChoices(PredictionChoicesT&& value) { m_predictionChoicesHasBeenSet = true; m_predictionChoices = std::forward<PredictionChoicesT>(value); }
+    template<typename PredictionChoicesT = Aws::Vector<int>>
+    RejectChoice& WithPredictionChoices(PredictionChoicesT&& value) { SetPredictionChoices(std::forward<PredictionChoicesT>(value)); return *this;}
     inline RejectChoice& AddPredictionChoices(int value) { m_predictionChoicesHasBeenSet = true; m_predictionChoices.push_back(value); return *this; }
     ///@}
 
@@ -58,14 +58,12 @@ namespace Model
      * <p>Specifies the target (for example, a column name) where a prediction can be
      * rejected.</p>
      */
-    inline const Aws::String& GetPredictionTarget() const{ return m_predictionTarget; }
+    inline const Aws::String& GetPredictionTarget() const { return m_predictionTarget; }
     inline bool PredictionTargetHasBeenSet() const { return m_predictionTargetHasBeenSet; }
-    inline void SetPredictionTarget(const Aws::String& value) { m_predictionTargetHasBeenSet = true; m_predictionTarget = value; }
-    inline void SetPredictionTarget(Aws::String&& value) { m_predictionTargetHasBeenSet = true; m_predictionTarget = std::move(value); }
-    inline void SetPredictionTarget(const char* value) { m_predictionTargetHasBeenSet = true; m_predictionTarget.assign(value); }
-    inline RejectChoice& WithPredictionTarget(const Aws::String& value) { SetPredictionTarget(value); return *this;}
-    inline RejectChoice& WithPredictionTarget(Aws::String&& value) { SetPredictionTarget(std::move(value)); return *this;}
-    inline RejectChoice& WithPredictionTarget(const char* value) { SetPredictionTarget(value); return *this;}
+    template<typename PredictionTargetT = Aws::String>
+    void SetPredictionTarget(PredictionTargetT&& value) { m_predictionTargetHasBeenSet = true; m_predictionTarget = std::forward<PredictionTargetT>(value); }
+    template<typename PredictionTargetT = Aws::String>
+    RejectChoice& WithPredictionTarget(PredictionTargetT&& value) { SetPredictionTarget(std::forward<PredictionTargetT>(value)); return *this;}
     ///@}
   private:
 

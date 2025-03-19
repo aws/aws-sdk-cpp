@@ -18,21 +18,7 @@ namespace IoT
 namespace Model
 {
 
-JobExecutionSummary::JobExecutionSummary() : 
-    m_status(JobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_queuedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false),
-    m_retryAttempt(0),
-    m_retryAttemptHasBeenSet(false)
-{
-}
-
 JobExecutionSummary::JobExecutionSummary(JsonView jsonValue)
-  : JobExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ JobExecutionSummary& JobExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobExecutionStatusMapper::GetJobExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queuedAt"))
   {
     m_queuedAt = jsonValue.GetDouble("queuedAt");
-
     m_queuedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionNumber"))
   {
     m_executionNumber = jsonValue.GetInt64("executionNumber");
-
     m_executionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryAttempt"))
   {
     m_retryAttempt = jsonValue.GetInteger("retryAttempt");
-
     m_retryAttemptHasBeenSet = true;
   }
-
   return *this;
 }
 

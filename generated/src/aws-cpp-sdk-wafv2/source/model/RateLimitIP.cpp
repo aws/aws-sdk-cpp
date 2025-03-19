@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-RateLimitIP::RateLimitIP()
-{
-}
-
 RateLimitIP::RateLimitIP(JsonView jsonValue)
 {
   *this = jsonValue;

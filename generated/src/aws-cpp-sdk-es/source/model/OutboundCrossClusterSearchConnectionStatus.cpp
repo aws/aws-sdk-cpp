@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-OutboundCrossClusterSearchConnectionStatus::OutboundCrossClusterSearchConnectionStatus() : 
-    m_statusCode(OutboundCrossClusterSearchConnectionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 OutboundCrossClusterSearchConnectionStatus::OutboundCrossClusterSearchConnectionStatus(JsonView jsonValue)
-  : OutboundCrossClusterSearchConnectionStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OutboundCrossClusterSearchConnectionStatus& OutboundCrossClusterSearchConnection
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = OutboundCrossClusterSearchConnectionStatusCodeMapper::GetOutboundCrossClusterSearchConnectionStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

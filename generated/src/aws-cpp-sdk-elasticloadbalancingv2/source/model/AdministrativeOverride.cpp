@@ -20,17 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-AdministrativeOverride::AdministrativeOverride() : 
-    m_state(TargetAdministrativeOverrideStateEnum::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_reason(TargetAdministrativeOverrideReasonEnum::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 AdministrativeOverride::AdministrativeOverride(const XmlNode& xmlNode)
-  : AdministrativeOverride()
 {
   *this = xmlNode;
 }
@@ -44,13 +34,13 @@ AdministrativeOverride& AdministrativeOverride::operator =(const XmlNode& xmlNod
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = TargetAdministrativeOverrideStateEnumMapper::GetTargetAdministrativeOverrideStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TargetAdministrativeOverrideStateEnumMapper::GetTargetAdministrativeOverrideStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())
     {
-      m_reason = TargetAdministrativeOverrideReasonEnumMapper::GetTargetAdministrativeOverrideReasonEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText()).c_str()).c_str());
+      m_reason = TargetAdministrativeOverrideReasonEnumMapper::GetTargetAdministrativeOverrideReasonEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText()).c_str()));
       m_reasonHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");

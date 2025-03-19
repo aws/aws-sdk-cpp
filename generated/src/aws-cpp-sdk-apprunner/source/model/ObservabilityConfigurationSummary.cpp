@@ -18,16 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-ObservabilityConfigurationSummary::ObservabilityConfigurationSummary() : 
-    m_observabilityConfigurationArnHasBeenSet(false),
-    m_observabilityConfigurationNameHasBeenSet(false),
-    m_observabilityConfigurationRevision(0),
-    m_observabilityConfigurationRevisionHasBeenSet(false)
-{
-}
-
 ObservabilityConfigurationSummary::ObservabilityConfigurationSummary(JsonView jsonValue)
-  : ObservabilityConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ObservabilityConfigurationSummary& ObservabilityConfigurationSummary::operator =
   if(jsonValue.ValueExists("ObservabilityConfigurationArn"))
   {
     m_observabilityConfigurationArn = jsonValue.GetString("ObservabilityConfigurationArn");
-
     m_observabilityConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObservabilityConfigurationName"))
   {
     m_observabilityConfigurationName = jsonValue.GetString("ObservabilityConfigurationName");
-
     m_observabilityConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObservabilityConfigurationRevision"))
   {
     m_observabilityConfigurationRevision = jsonValue.GetInteger("ObservabilityConfigurationRevision");
-
     m_observabilityConfigurationRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

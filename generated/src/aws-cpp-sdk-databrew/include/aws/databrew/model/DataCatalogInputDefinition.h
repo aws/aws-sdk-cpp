@@ -33,7 +33,7 @@ namespace Model
   class DataCatalogInputDefinition
   {
   public:
-    AWS_GLUEDATABREW_API DataCatalogInputDefinition();
+    AWS_GLUEDATABREW_API DataCatalogInputDefinition() = default;
     AWS_GLUEDATABREW_API DataCatalogInputDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API DataCatalogInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The unique identifier of the Amazon Web Services account that holds the Data
      * Catalog that stores the data.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline DataCatalogInputDefinition& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline DataCatalogInputDefinition& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline DataCatalogInputDefinition& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    DataCatalogInputDefinition& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a database in the Data Catalog.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline DataCatalogInputDefinition& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline DataCatalogInputDefinition& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline DataCatalogInputDefinition& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    DataCatalogInputDefinition& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The name of a database table in the Data Catalog. This table corresponds to a
      * DataBrew dataset.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline DataCatalogInputDefinition& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline DataCatalogInputDefinition& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline DataCatalogInputDefinition& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    DataCatalogInputDefinition& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * <p>Represents an Amazon location where DataBrew can store intermediate
      * results.</p>
      */
-    inline const S3Location& GetTempDirectory() const{ return m_tempDirectory; }
+    inline const S3Location& GetTempDirectory() const { return m_tempDirectory; }
     inline bool TempDirectoryHasBeenSet() const { return m_tempDirectoryHasBeenSet; }
-    inline void SetTempDirectory(const S3Location& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = value; }
-    inline void SetTempDirectory(S3Location&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::move(value); }
-    inline DataCatalogInputDefinition& WithTempDirectory(const S3Location& value) { SetTempDirectory(value); return *this;}
-    inline DataCatalogInputDefinition& WithTempDirectory(S3Location&& value) { SetTempDirectory(std::move(value)); return *this;}
+    template<typename TempDirectoryT = S3Location>
+    void SetTempDirectory(TempDirectoryT&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::forward<TempDirectoryT>(value); }
+    template<typename TempDirectoryT = S3Location>
+    DataCatalogInputDefinition& WithTempDirectory(TempDirectoryT&& value) { SetTempDirectory(std::forward<TempDirectoryT>(value)); return *this;}
     ///@}
   private:
 

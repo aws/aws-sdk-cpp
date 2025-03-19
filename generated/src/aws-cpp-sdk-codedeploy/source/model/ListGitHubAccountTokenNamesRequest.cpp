@@ -12,11 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGitHubAccountTokenNamesRequest::ListGitHubAccountTokenNamesRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListGitHubAccountTokenNamesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-ReportedRuntimeContextState::ReportedRuntimeContextState() : 
-    m_desiredState(DesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_deviceReportedStatus(DeviceReportedStatus::NOT_SET),
-    m_deviceReportedStatusHasBeenSet(false),
-    m_deviceReportedTimeHasBeenSet(false),
-    m_runtimeContextNameHasBeenSet(false)
-{
-}
-
 ReportedRuntimeContextState::ReportedRuntimeContextState(JsonView jsonValue)
-  : ReportedRuntimeContextState()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ReportedRuntimeContextState& ReportedRuntimeContextState::operator =(JsonView js
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = DesiredStateMapper::GetDesiredStateForName(jsonValue.GetString("DesiredState"));
-
     m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceReportedStatus"))
   {
     m_deviceReportedStatus = DeviceReportedStatusMapper::GetDeviceReportedStatusForName(jsonValue.GetString("DeviceReportedStatus"));
-
     m_deviceReportedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceReportedTime"))
   {
     m_deviceReportedTime = jsonValue.GetDouble("DeviceReportedTime");
-
     m_deviceReportedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeContextName"))
   {
     m_runtimeContextName = jsonValue.GetString("RuntimeContextName");
-
     m_runtimeContextNameHasBeenSet = true;
   }
-
   return *this;
 }
 

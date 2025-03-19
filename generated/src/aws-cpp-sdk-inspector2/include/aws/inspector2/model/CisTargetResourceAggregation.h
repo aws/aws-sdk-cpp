@@ -36,7 +36,7 @@ namespace Model
   class CisTargetResourceAggregation
   {
   public:
-    AWS_INSPECTOR2_API CisTargetResourceAggregation();
+    AWS_INSPECTOR2_API CisTargetResourceAggregation() = default;
     AWS_INSPECTOR2_API CisTargetResourceAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisTargetResourceAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,110 +46,96 @@ namespace Model
     /**
      * <p>The account ID for the CIS target resource.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CisTargetResourceAggregation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CisTargetResourceAggregation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CisTargetResourceAggregation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CisTargetResourceAggregation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The platform for the CIS target resource.</p>
      */
-    inline const Aws::String& GetPlatform() const{ return m_platform; }
+    inline const Aws::String& GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
-    inline CisTargetResourceAggregation& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
-    inline CisTargetResourceAggregation& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
-    inline CisTargetResourceAggregation& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+    template<typename PlatformT = Aws::String>
+    void SetPlatform(PlatformT&& value) { m_platformHasBeenSet = true; m_platform = std::forward<PlatformT>(value); }
+    template<typename PlatformT = Aws::String>
+    CisTargetResourceAggregation& WithPlatform(PlatformT&& value) { SetPlatform(std::forward<PlatformT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scan ARN for the CIS target resource.</p>
      */
-    inline const Aws::String& GetScanArn() const{ return m_scanArn; }
+    inline const Aws::String& GetScanArn() const { return m_scanArn; }
     inline bool ScanArnHasBeenSet() const { return m_scanArnHasBeenSet; }
-    inline void SetScanArn(const Aws::String& value) { m_scanArnHasBeenSet = true; m_scanArn = value; }
-    inline void SetScanArn(Aws::String&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::move(value); }
-    inline void SetScanArn(const char* value) { m_scanArnHasBeenSet = true; m_scanArn.assign(value); }
-    inline CisTargetResourceAggregation& WithScanArn(const Aws::String& value) { SetScanArn(value); return *this;}
-    inline CisTargetResourceAggregation& WithScanArn(Aws::String&& value) { SetScanArn(std::move(value)); return *this;}
-    inline CisTargetResourceAggregation& WithScanArn(const char* value) { SetScanArn(value); return *this;}
+    template<typename ScanArnT = Aws::String>
+    void SetScanArn(ScanArnT&& value) { m_scanArnHasBeenSet = true; m_scanArn = std::forward<ScanArnT>(value); }
+    template<typename ScanArnT = Aws::String>
+    CisTargetResourceAggregation& WithScanArn(ScanArnT&& value) { SetScanArn(std::forward<ScanArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target resource status counts.</p>
      */
-    inline const StatusCounts& GetStatusCounts() const{ return m_statusCounts; }
+    inline const StatusCounts& GetStatusCounts() const { return m_statusCounts; }
     inline bool StatusCountsHasBeenSet() const { return m_statusCountsHasBeenSet; }
-    inline void SetStatusCounts(const StatusCounts& value) { m_statusCountsHasBeenSet = true; m_statusCounts = value; }
-    inline void SetStatusCounts(StatusCounts&& value) { m_statusCountsHasBeenSet = true; m_statusCounts = std::move(value); }
-    inline CisTargetResourceAggregation& WithStatusCounts(const StatusCounts& value) { SetStatusCounts(value); return *this;}
-    inline CisTargetResourceAggregation& WithStatusCounts(StatusCounts&& value) { SetStatusCounts(std::move(value)); return *this;}
+    template<typename StatusCountsT = StatusCounts>
+    void SetStatusCounts(StatusCountsT&& value) { m_statusCountsHasBeenSet = true; m_statusCounts = std::forward<StatusCountsT>(value); }
+    template<typename StatusCountsT = StatusCounts>
+    CisTargetResourceAggregation& WithStatusCounts(StatusCountsT&& value) { SetStatusCounts(std::forward<StatusCountsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the target resource.</p>
      */
-    inline const Aws::String& GetTargetResourceId() const{ return m_targetResourceId; }
+    inline const Aws::String& GetTargetResourceId() const { return m_targetResourceId; }
     inline bool TargetResourceIdHasBeenSet() const { return m_targetResourceIdHasBeenSet; }
-    inline void SetTargetResourceId(const Aws::String& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = value; }
-    inline void SetTargetResourceId(Aws::String&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::move(value); }
-    inline void SetTargetResourceId(const char* value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId.assign(value); }
-    inline CisTargetResourceAggregation& WithTargetResourceId(const Aws::String& value) { SetTargetResourceId(value); return *this;}
-    inline CisTargetResourceAggregation& WithTargetResourceId(Aws::String&& value) { SetTargetResourceId(std::move(value)); return *this;}
-    inline CisTargetResourceAggregation& WithTargetResourceId(const char* value) { SetTargetResourceId(value); return *this;}
+    template<typename TargetResourceIdT = Aws::String>
+    void SetTargetResourceId(TargetResourceIdT&& value) { m_targetResourceIdHasBeenSet = true; m_targetResourceId = std::forward<TargetResourceIdT>(value); }
+    template<typename TargetResourceIdT = Aws::String>
+    CisTargetResourceAggregation& WithTargetResourceId(TargetResourceIdT&& value) { SetTargetResourceId(std::forward<TargetResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag for the target resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTargetResourceTags() const{ return m_targetResourceTags; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTargetResourceTags() const { return m_targetResourceTags; }
     inline bool TargetResourceTagsHasBeenSet() const { return m_targetResourceTagsHasBeenSet; }
-    inline void SetTargetResourceTags(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags = value; }
-    inline void SetTargetResourceTags(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags = std::move(value); }
-    inline CisTargetResourceAggregation& WithTargetResourceTags(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetTargetResourceTags(value); return *this;}
-    inline CisTargetResourceAggregation& WithTargetResourceTags(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetTargetResourceTags(std::move(value)); return *this;}
-    inline CisTargetResourceAggregation& AddTargetResourceTags(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, value); return *this; }
-    inline CisTargetResourceAggregation& AddTargetResourceTags(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::move(key), value); return *this; }
-    inline CisTargetResourceAggregation& AddTargetResourceTags(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, std::move(value)); return *this; }
-    inline CisTargetResourceAggregation& AddTargetResourceTags(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CisTargetResourceAggregation& AddTargetResourceTags(const char* key, Aws::Vector<Aws::String>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, std::move(value)); return *this; }
-    inline CisTargetResourceAggregation& AddTargetResourceTags(const char* key, const Aws::Vector<Aws::String>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, value); return *this; }
+    template<typename TargetResourceTagsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetTargetResourceTags(TargetResourceTagsT&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags = std::forward<TargetResourceTagsT>(value); }
+    template<typename TargetResourceTagsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CisTargetResourceAggregation& WithTargetResourceTags(TargetResourceTagsT&& value) { SetTargetResourceTags(std::forward<TargetResourceTagsT>(value)); return *this;}
+    template<typename TargetResourceTagsKeyT = Aws::String, typename TargetResourceTagsValueT = Aws::Vector<Aws::String>>
+    CisTargetResourceAggregation& AddTargetResourceTags(TargetResourceTagsKeyT&& key, TargetResourceTagsValueT&& value) {
+      m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::forward<TargetResourceTagsKeyT>(key), std::forward<TargetResourceTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The status of the target resource.</p>
      */
-    inline const CisTargetStatus& GetTargetStatus() const{ return m_targetStatus; }
+    inline CisTargetStatus GetTargetStatus() const { return m_targetStatus; }
     inline bool TargetStatusHasBeenSet() const { return m_targetStatusHasBeenSet; }
-    inline void SetTargetStatus(const CisTargetStatus& value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
-    inline void SetTargetStatus(CisTargetStatus&& value) { m_targetStatusHasBeenSet = true; m_targetStatus = std::move(value); }
-    inline CisTargetResourceAggregation& WithTargetStatus(const CisTargetStatus& value) { SetTargetStatus(value); return *this;}
-    inline CisTargetResourceAggregation& WithTargetStatus(CisTargetStatus&& value) { SetTargetStatus(std::move(value)); return *this;}
+    inline void SetTargetStatus(CisTargetStatus value) { m_targetStatusHasBeenSet = true; m_targetStatus = value; }
+    inline CisTargetResourceAggregation& WithTargetStatus(CisTargetStatus value) { SetTargetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the target resource.</p>
      */
-    inline const CisTargetStatusReason& GetTargetStatusReason() const{ return m_targetStatusReason; }
+    inline CisTargetStatusReason GetTargetStatusReason() const { return m_targetStatusReason; }
     inline bool TargetStatusReasonHasBeenSet() const { return m_targetStatusReasonHasBeenSet; }
-    inline void SetTargetStatusReason(const CisTargetStatusReason& value) { m_targetStatusReasonHasBeenSet = true; m_targetStatusReason = value; }
-    inline void SetTargetStatusReason(CisTargetStatusReason&& value) { m_targetStatusReasonHasBeenSet = true; m_targetStatusReason = std::move(value); }
-    inline CisTargetResourceAggregation& WithTargetStatusReason(const CisTargetStatusReason& value) { SetTargetStatusReason(value); return *this;}
-    inline CisTargetResourceAggregation& WithTargetStatusReason(CisTargetStatusReason&& value) { SetTargetStatusReason(std::move(value)); return *this;}
+    inline void SetTargetStatusReason(CisTargetStatusReason value) { m_targetStatusReasonHasBeenSet = true; m_targetStatusReason = value; }
+    inline CisTargetResourceAggregation& WithTargetStatusReason(CisTargetStatusReason value) { SetTargetStatusReason(value); return *this;}
     ///@}
   private:
 
@@ -171,10 +157,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_targetResourceTags;
     bool m_targetResourceTagsHasBeenSet = false;
 
-    CisTargetStatus m_targetStatus;
+    CisTargetStatus m_targetStatus{CisTargetStatus::NOT_SET};
     bool m_targetStatusHasBeenSet = false;
 
-    CisTargetStatusReason m_targetStatusReason;
+    CisTargetStatusReason m_targetStatusReason{CisTargetStatusReason::NOT_SET};
     bool m_targetStatusReasonHasBeenSet = false;
   };
 

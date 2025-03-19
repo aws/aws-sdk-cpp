@@ -18,28 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryExecutionStatistics::QueryExecutionStatistics() : 
-    m_engineExecutionTimeInMillis(0),
-    m_engineExecutionTimeInMillisHasBeenSet(false),
-    m_dataScannedInBytes(0),
-    m_dataScannedInBytesHasBeenSet(false),
-    m_dataManifestLocationHasBeenSet(false),
-    m_totalExecutionTimeInMillis(0),
-    m_totalExecutionTimeInMillisHasBeenSet(false),
-    m_queryQueueTimeInMillis(0),
-    m_queryQueueTimeInMillisHasBeenSet(false),
-    m_servicePreProcessingTimeInMillis(0),
-    m_servicePreProcessingTimeInMillisHasBeenSet(false),
-    m_queryPlanningTimeInMillis(0),
-    m_queryPlanningTimeInMillisHasBeenSet(false),
-    m_serviceProcessingTimeInMillis(0),
-    m_serviceProcessingTimeInMillisHasBeenSet(false),
-    m_resultReuseInformationHasBeenSet(false)
-{
-}
-
 QueryExecutionStatistics::QueryExecutionStatistics(JsonView jsonValue)
-  : QueryExecutionStatistics()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ QueryExecutionStatistics& QueryExecutionStatistics::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("EngineExecutionTimeInMillis"))
   {
     m_engineExecutionTimeInMillis = jsonValue.GetInt64("EngineExecutionTimeInMillis");
-
     m_engineExecutionTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataScannedInBytes"))
   {
     m_dataScannedInBytes = jsonValue.GetInt64("DataScannedInBytes");
-
     m_dataScannedInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataManifestLocation"))
   {
     m_dataManifestLocation = jsonValue.GetString("DataManifestLocation");
-
     m_dataManifestLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalExecutionTimeInMillis"))
   {
     m_totalExecutionTimeInMillis = jsonValue.GetInt64("TotalExecutionTimeInMillis");
-
     m_totalExecutionTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryQueueTimeInMillis"))
   {
     m_queryQueueTimeInMillis = jsonValue.GetInt64("QueryQueueTimeInMillis");
-
     m_queryQueueTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServicePreProcessingTimeInMillis"))
   {
     m_servicePreProcessingTimeInMillis = jsonValue.GetInt64("ServicePreProcessingTimeInMillis");
-
     m_servicePreProcessingTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryPlanningTimeInMillis"))
   {
     m_queryPlanningTimeInMillis = jsonValue.GetInt64("QueryPlanningTimeInMillis");
-
     m_queryPlanningTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceProcessingTimeInMillis"))
   {
     m_serviceProcessingTimeInMillis = jsonValue.GetInt64("ServiceProcessingTimeInMillis");
-
     m_serviceProcessingTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultReuseInformation"))
   {
     m_resultReuseInformation = jsonValue.GetObject("ResultReuseInformation");
-
     m_resultReuseInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

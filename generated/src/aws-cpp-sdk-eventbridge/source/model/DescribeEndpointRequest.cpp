@@ -12,12 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEndpointRequest::DescribeEndpointRequest() : 
-    m_nameHasBeenSet(false),
-    m_homeRegionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

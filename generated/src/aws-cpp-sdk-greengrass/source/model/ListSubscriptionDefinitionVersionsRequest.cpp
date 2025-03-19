@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSubscriptionDefinitionVersionsRequest::ListSubscriptionDefinitionVersionsRequest() : 
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_subscriptionDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String ListSubscriptionDefinitionVersionsRequest::SerializePayload() const
 {
   return {};

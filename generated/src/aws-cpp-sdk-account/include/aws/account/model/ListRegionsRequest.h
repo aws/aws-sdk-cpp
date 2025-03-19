@@ -23,7 +23,7 @@ namespace Model
   class ListRegionsRequest : public AccountRequest
   {
   public:
-    AWS_ACCOUNT_API ListRegionsRequest();
+    AWS_ACCOUNT_API ListRegionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -57,14 +57,12 @@ namespace Model
      * specify this parameter. Instead, call the operation using an identity belonging
      * to the account whose contacts you wish to retrieve or modify.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListRegionsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListRegionsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListRegionsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListRegionsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +77,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a>
      * in the <i>Amazon Web Services Command Line Interface User Guide</i>. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRegionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -93,14 +91,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a>
      * in the <i>Amazon Web Services Command Line Interface User Guide</i>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRegionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRegionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRegionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRegionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,21 +106,20 @@ namespace Model
      * For example, passing in a value of ENABLING will only return a list of Regions
      * with a Region status of ENABLING.</p>
      */
-    inline const Aws::Vector<RegionOptStatus>& GetRegionOptStatusContains() const{ return m_regionOptStatusContains; }
+    inline const Aws::Vector<RegionOptStatus>& GetRegionOptStatusContains() const { return m_regionOptStatusContains; }
     inline bool RegionOptStatusContainsHasBeenSet() const { return m_regionOptStatusContainsHasBeenSet; }
-    inline void SetRegionOptStatusContains(const Aws::Vector<RegionOptStatus>& value) { m_regionOptStatusContainsHasBeenSet = true; m_regionOptStatusContains = value; }
-    inline void SetRegionOptStatusContains(Aws::Vector<RegionOptStatus>&& value) { m_regionOptStatusContainsHasBeenSet = true; m_regionOptStatusContains = std::move(value); }
-    inline ListRegionsRequest& WithRegionOptStatusContains(const Aws::Vector<RegionOptStatus>& value) { SetRegionOptStatusContains(value); return *this;}
-    inline ListRegionsRequest& WithRegionOptStatusContains(Aws::Vector<RegionOptStatus>&& value) { SetRegionOptStatusContains(std::move(value)); return *this;}
-    inline ListRegionsRequest& AddRegionOptStatusContains(const RegionOptStatus& value) { m_regionOptStatusContainsHasBeenSet = true; m_regionOptStatusContains.push_back(value); return *this; }
-    inline ListRegionsRequest& AddRegionOptStatusContains(RegionOptStatus&& value) { m_regionOptStatusContainsHasBeenSet = true; m_regionOptStatusContains.push_back(std::move(value)); return *this; }
+    template<typename RegionOptStatusContainsT = Aws::Vector<RegionOptStatus>>
+    void SetRegionOptStatusContains(RegionOptStatusContainsT&& value) { m_regionOptStatusContainsHasBeenSet = true; m_regionOptStatusContains = std::forward<RegionOptStatusContainsT>(value); }
+    template<typename RegionOptStatusContainsT = Aws::Vector<RegionOptStatus>>
+    ListRegionsRequest& WithRegionOptStatusContains(RegionOptStatusContainsT&& value) { SetRegionOptStatusContains(std::forward<RegionOptStatusContainsT>(value)); return *this;}
+    inline ListRegionsRequest& AddRegionOptStatusContains(RegionOptStatus value) { m_regionOptStatusContainsHasBeenSet = true; m_regionOptStatusContains.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -12,11 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveKnowledgeBaseTemplateUriRequest::RemoveKnowledgeBaseTemplateUriRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveKnowledgeBaseTemplateUriRequest::SerializePayload() const
 {
   return {};

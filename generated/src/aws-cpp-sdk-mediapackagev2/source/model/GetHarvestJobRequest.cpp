@@ -12,14 +12,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetHarvestJobRequest::GetHarvestJobRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false),
-    m_harvestJobNameHasBeenSet(false)
-{
-}
-
 Aws::String GetHarvestJobRequest::SerializePayload() const
 {
   return {};

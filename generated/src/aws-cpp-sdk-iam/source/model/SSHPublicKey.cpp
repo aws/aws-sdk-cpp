@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SSHPublicKey::SSHPublicKey() : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyIdHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_sSHPublicKeyBodyHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_uploadDateHasBeenSet(false)
-{
-}
-
 SSHPublicKey::SSHPublicKey(const XmlNode& xmlNode)
-  : SSHPublicKey()
 {
   *this = xmlNode;
 }
@@ -70,7 +58,7 @@ SSHPublicKey& SSHPublicKey::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode uploadDateNode = resultNode.FirstChild("UploadDate");

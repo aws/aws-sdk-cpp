@@ -12,11 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DiscardRegistrationVersionRequest::DiscardRegistrationVersionRequest() : 
-    m_registrationIdHasBeenSet(false)
-{
-}
-
 Aws::String DiscardRegistrationVersionRequest::SerializePayload() const
 {
   JsonValue payload;

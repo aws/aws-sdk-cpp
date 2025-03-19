@@ -12,14 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAIGuardrailVersionRequest::DeleteAIGuardrailVersionRequest() : 
-    m_aiGuardrailIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAIGuardrailVersionRequest::SerializePayload() const
 {
   return {};

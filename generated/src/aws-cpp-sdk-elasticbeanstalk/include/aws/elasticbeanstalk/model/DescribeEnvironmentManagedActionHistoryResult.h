@@ -36,7 +36,7 @@ namespace Model
   class DescribeEnvironmentManagedActionHistoryResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionHistoryResult();
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionHistoryResult() = default;
     AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,13 @@ namespace Model
     /**
      * <p>A list of completed and failed managed actions.</p>
      */
-    inline const Aws::Vector<ManagedActionHistoryItem>& GetManagedActionHistoryItems() const{ return m_managedActionHistoryItems; }
-    inline void SetManagedActionHistoryItems(const Aws::Vector<ManagedActionHistoryItem>& value) { m_managedActionHistoryItems = value; }
-    inline void SetManagedActionHistoryItems(Aws::Vector<ManagedActionHistoryItem>&& value) { m_managedActionHistoryItems = std::move(value); }
-    inline DescribeEnvironmentManagedActionHistoryResult& WithManagedActionHistoryItems(const Aws::Vector<ManagedActionHistoryItem>& value) { SetManagedActionHistoryItems(value); return *this;}
-    inline DescribeEnvironmentManagedActionHistoryResult& WithManagedActionHistoryItems(Aws::Vector<ManagedActionHistoryItem>&& value) { SetManagedActionHistoryItems(std::move(value)); return *this;}
-    inline DescribeEnvironmentManagedActionHistoryResult& AddManagedActionHistoryItems(const ManagedActionHistoryItem& value) { m_managedActionHistoryItems.push_back(value); return *this; }
-    inline DescribeEnvironmentManagedActionHistoryResult& AddManagedActionHistoryItems(ManagedActionHistoryItem&& value) { m_managedActionHistoryItems.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ManagedActionHistoryItem>& GetManagedActionHistoryItems() const { return m_managedActionHistoryItems; }
+    template<typename ManagedActionHistoryItemsT = Aws::Vector<ManagedActionHistoryItem>>
+    void SetManagedActionHistoryItems(ManagedActionHistoryItemsT&& value) { m_managedActionHistoryItemsHasBeenSet = true; m_managedActionHistoryItems = std::forward<ManagedActionHistoryItemsT>(value); }
+    template<typename ManagedActionHistoryItemsT = Aws::Vector<ManagedActionHistoryItem>>
+    DescribeEnvironmentManagedActionHistoryResult& WithManagedActionHistoryItems(ManagedActionHistoryItemsT&& value) { SetManagedActionHistoryItems(std::forward<ManagedActionHistoryItemsT>(value)); return *this;}
+    template<typename ManagedActionHistoryItemsT = ManagedActionHistoryItem>
+    DescribeEnvironmentManagedActionHistoryResult& AddManagedActionHistoryItems(ManagedActionHistoryItemsT&& value) { m_managedActionHistoryItemsHasBeenSet = true; m_managedActionHistoryItems.emplace_back(std::forward<ManagedActionHistoryItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,30 +60,31 @@ namespace Model
      * <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeEnvironmentManagedActionHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEnvironmentManagedActionHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEnvironmentManagedActionHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEnvironmentManagedActionHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeEnvironmentManagedActionHistoryResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeEnvironmentManagedActionHistoryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeEnvironmentManagedActionHistoryResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ManagedActionHistoryItem> m_managedActionHistoryItems;
+    bool m_managedActionHistoryItemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

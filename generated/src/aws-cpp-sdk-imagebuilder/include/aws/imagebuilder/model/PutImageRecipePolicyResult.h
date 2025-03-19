@@ -27,7 +27,7 @@ namespace Model
   class PutImageRecipePolicyResult
   {
   public:
-    AWS_IMAGEBUILDER_API PutImageRecipePolicyResult();
+    AWS_IMAGEBUILDER_API PutImageRecipePolicyResult() = default;
     AWS_IMAGEBUILDER_API PutImageRecipePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API PutImageRecipePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutImageRecipePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutImageRecipePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutImageRecipePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutImageRecipePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,19 +48,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image recipe that this policy was
      * applied to.</p>
      */
-    inline const Aws::String& GetImageRecipeArn() const{ return m_imageRecipeArn; }
-    inline void SetImageRecipeArn(const Aws::String& value) { m_imageRecipeArn = value; }
-    inline void SetImageRecipeArn(Aws::String&& value) { m_imageRecipeArn = std::move(value); }
-    inline void SetImageRecipeArn(const char* value) { m_imageRecipeArn.assign(value); }
-    inline PutImageRecipePolicyResult& WithImageRecipeArn(const Aws::String& value) { SetImageRecipeArn(value); return *this;}
-    inline PutImageRecipePolicyResult& WithImageRecipeArn(Aws::String&& value) { SetImageRecipeArn(std::move(value)); return *this;}
-    inline PutImageRecipePolicyResult& WithImageRecipeArn(const char* value) { SetImageRecipeArn(value); return *this;}
+    inline const Aws::String& GetImageRecipeArn() const { return m_imageRecipeArn; }
+    template<typename ImageRecipeArnT = Aws::String>
+    void SetImageRecipeArn(ImageRecipeArnT&& value) { m_imageRecipeArnHasBeenSet = true; m_imageRecipeArn = std::forward<ImageRecipeArnT>(value); }
+    template<typename ImageRecipeArnT = Aws::String>
+    PutImageRecipePolicyResult& WithImageRecipeArn(ImageRecipeArnT&& value) { SetImageRecipeArn(std::forward<ImageRecipeArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_imageRecipeArn;
+    bool m_imageRecipeArnHasBeenSet = false;
   };
 
 } // namespace Model

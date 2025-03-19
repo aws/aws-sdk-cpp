@@ -18,15 +18,7 @@ namespace LaunchWizard
 namespace Model
 {
 
-DeploymentConditionalField::DeploymentConditionalField() : 
-    m_comparatorHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DeploymentConditionalField::DeploymentConditionalField(JsonView jsonValue)
-  : DeploymentConditionalField()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeploymentConditionalField& DeploymentConditionalField::operator =(JsonView json
   if(jsonValue.ValueExists("comparator"))
   {
     m_comparator = jsonValue.GetString("comparator");
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

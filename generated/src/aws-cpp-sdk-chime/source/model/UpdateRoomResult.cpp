@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRoomResult::UpdateRoomResult()
-{
-}
-
 UpdateRoomResult::UpdateRoomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateRoomResult& UpdateRoomResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Room"))
   {
     m_room = jsonValue.GetObject("Room");
-
+    m_roomHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

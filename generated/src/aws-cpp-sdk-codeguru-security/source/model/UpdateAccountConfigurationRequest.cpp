@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountConfigurationRequest::UpdateAccountConfigurationRequest() : 
-    m_encryptionConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

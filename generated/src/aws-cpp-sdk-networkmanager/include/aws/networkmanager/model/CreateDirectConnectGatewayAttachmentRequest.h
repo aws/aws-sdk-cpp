@@ -24,7 +24,7 @@ namespace Model
   class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API CreateDirectConnectGatewayAttachmentRequest();
+    AWS_NETWORKMANAGER_API CreateDirectConnectGatewayAttachmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p>The ID of the Cloud WAN core network that the Direct Connect gateway
      * attachment should be attached to.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline CreateDirectConnectGatewayAttachmentRequest& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    CreateDirectConnectGatewayAttachmentRequest& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Direct Connect gateway attachment.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayArn() const{ return m_directConnectGatewayArn; }
+    inline const Aws::String& GetDirectConnectGatewayArn() const { return m_directConnectGatewayArn; }
     inline bool DirectConnectGatewayArnHasBeenSet() const { return m_directConnectGatewayArnHasBeenSet; }
-    inline void SetDirectConnectGatewayArn(const Aws::String& value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn = value; }
-    inline void SetDirectConnectGatewayArn(Aws::String&& value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn = std::move(value); }
-    inline void SetDirectConnectGatewayArn(const char* value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn.assign(value); }
-    inline CreateDirectConnectGatewayAttachmentRequest& WithDirectConnectGatewayArn(const Aws::String& value) { SetDirectConnectGatewayArn(value); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithDirectConnectGatewayArn(Aws::String&& value) { SetDirectConnectGatewayArn(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithDirectConnectGatewayArn(const char* value) { SetDirectConnectGatewayArn(value); return *this;}
+    template<typename DirectConnectGatewayArnT = Aws::String>
+    void SetDirectConnectGatewayArn(DirectConnectGatewayArnT&& value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn = std::forward<DirectConnectGatewayArnT>(value); }
+    template<typename DirectConnectGatewayArnT = Aws::String>
+    CreateDirectConnectGatewayAttachmentRequest& WithDirectConnectGatewayArn(DirectConnectGatewayArnT&& value) { SetDirectConnectGatewayArn(std::forward<DirectConnectGatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,15 +65,14 @@ namespace Model
      * <p>One or more core network edge locations that the Direct Connect gateway
      * attachment is associated with. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const{ return m_edgeLocations; }
+    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const { return m_edgeLocations; }
     inline bool EdgeLocationsHasBeenSet() const { return m_edgeLocationsHasBeenSet; }
-    inline void SetEdgeLocations(const Aws::Vector<Aws::String>& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = value; }
-    inline void SetEdgeLocations(Aws::Vector<Aws::String>&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::move(value); }
-    inline CreateDirectConnectGatewayAttachmentRequest& WithEdgeLocations(const Aws::Vector<Aws::String>& value) { SetEdgeLocations(value); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithEdgeLocations(Aws::Vector<Aws::String>&& value) { SetEdgeLocations(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(const Aws::String& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
-    inline CreateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(Aws::String&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(std::move(value)); return *this; }
-    inline CreateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(const char* value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    void SetEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::forward<EdgeLocationsT>(value); }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    CreateDirectConnectGatewayAttachmentRequest& WithEdgeLocations(EdgeLocationsT&& value) { SetEdgeLocations(std::forward<EdgeLocationsT>(value)); return *this;}
+    template<typename EdgeLocationsT = Aws::String>
+    CreateDirectConnectGatewayAttachmentRequest& AddEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.emplace_back(std::forward<EdgeLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,28 +80,26 @@ namespace Model
      * <p>The key value tags to apply to the Direct Connect gateway attachment during
      * creation.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDirectConnectGatewayAttachmentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDirectConnectGatewayAttachmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDirectConnectGatewayAttachmentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDirectConnectGatewayAttachmentRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>client token</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateDirectConnectGatewayAttachmentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayAttachmentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateDirectConnectGatewayAttachmentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

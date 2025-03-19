@@ -33,7 +33,7 @@ namespace Model
   class RuntimeSettings
   {
   public:
-    AWS_LEXMODELSV2_API RuntimeSettings();
+    AWS_LEXMODELSV2_API RuntimeSettings() = default;
     AWS_LEXMODELSV2_API RuntimeSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API RuntimeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>An object containing specifications for the assisted slot resolution
      * feature.</p>
      */
-    inline const SlotResolutionImprovementSpecification& GetSlotResolutionImprovement() const{ return m_slotResolutionImprovement; }
+    inline const SlotResolutionImprovementSpecification& GetSlotResolutionImprovement() const { return m_slotResolutionImprovement; }
     inline bool SlotResolutionImprovementHasBeenSet() const { return m_slotResolutionImprovementHasBeenSet; }
-    inline void SetSlotResolutionImprovement(const SlotResolutionImprovementSpecification& value) { m_slotResolutionImprovementHasBeenSet = true; m_slotResolutionImprovement = value; }
-    inline void SetSlotResolutionImprovement(SlotResolutionImprovementSpecification&& value) { m_slotResolutionImprovementHasBeenSet = true; m_slotResolutionImprovement = std::move(value); }
-    inline RuntimeSettings& WithSlotResolutionImprovement(const SlotResolutionImprovementSpecification& value) { SetSlotResolutionImprovement(value); return *this;}
-    inline RuntimeSettings& WithSlotResolutionImprovement(SlotResolutionImprovementSpecification&& value) { SetSlotResolutionImprovement(std::move(value)); return *this;}
+    template<typename SlotResolutionImprovementT = SlotResolutionImprovementSpecification>
+    void SetSlotResolutionImprovement(SlotResolutionImprovementT&& value) { m_slotResolutionImprovementHasBeenSet = true; m_slotResolutionImprovement = std::forward<SlotResolutionImprovementT>(value); }
+    template<typename SlotResolutionImprovementT = SlotResolutionImprovementSpecification>
+    RuntimeSettings& WithSlotResolutionImprovement(SlotResolutionImprovementT&& value) { SetSlotResolutionImprovement(std::forward<SlotResolutionImprovementT>(value)); return *this;}
     ///@}
   private:
 

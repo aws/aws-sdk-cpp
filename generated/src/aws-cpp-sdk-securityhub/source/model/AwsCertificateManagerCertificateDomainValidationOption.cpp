@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCertificateManagerCertificateDomainValidationOption::AwsCertificateManagerCertificateDomainValidationOption() : 
-    m_domainNameHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false),
-    m_validationDomainHasBeenSet(false),
-    m_validationEmailsHasBeenSet(false),
-    m_validationMethodHasBeenSet(false),
-    m_validationStatusHasBeenSet(false)
-{
-}
-
 AwsCertificateManagerCertificateDomainValidationOption::AwsCertificateManagerCertificateDomainValidationOption(JsonView jsonValue)
-  : AwsCertificateManagerCertificateDomainValidationOption()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AwsCertificateManagerCertificateDomainValidationOption& AwsCertificateManagerCer
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRecord"))
   {
     m_resourceRecord = jsonValue.GetObject("ResourceRecord");
-
     m_resourceRecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationDomain"))
   {
     m_validationDomain = jsonValue.GetString("ValidationDomain");
-
     m_validationDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationEmails"))
   {
     Aws::Utils::Array<JsonView> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
@@ -66,21 +49,16 @@ AwsCertificateManagerCertificateDomainValidationOption& AwsCertificateManagerCer
     }
     m_validationEmailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationMethod"))
   {
     m_validationMethod = jsonValue.GetString("ValidationMethod");
-
     m_validationMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationStatus"))
   {
     m_validationStatus = jsonValue.GetString("ValidationStatus");
-
     m_validationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

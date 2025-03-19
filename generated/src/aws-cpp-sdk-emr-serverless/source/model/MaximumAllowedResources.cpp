@@ -18,15 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-MaximumAllowedResources::MaximumAllowedResources() : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_diskHasBeenSet(false)
-{
-}
-
 MaximumAllowedResources::MaximumAllowedResources(JsonView jsonValue)
-  : MaximumAllowedResources()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MaximumAllowedResources& MaximumAllowedResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetString("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetString("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disk"))
   {
     m_disk = jsonValue.GetString("disk");
-
     m_diskHasBeenSet = true;
   }
-
   return *this;
 }
 

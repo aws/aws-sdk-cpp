@@ -18,16 +18,7 @@ namespace RecycleBin
 namespace Model
 {
 
-UnlockDelay::UnlockDelay() : 
-    m_unlockDelayValue(0),
-    m_unlockDelayValueHasBeenSet(false),
-    m_unlockDelayUnit(UnlockDelayUnit::NOT_SET),
-    m_unlockDelayUnitHasBeenSet(false)
-{
-}
-
 UnlockDelay::UnlockDelay(JsonView jsonValue)
-  : UnlockDelay()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UnlockDelay& UnlockDelay::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UnlockDelayValue"))
   {
     m_unlockDelayValue = jsonValue.GetInteger("UnlockDelayValue");
-
     m_unlockDelayValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnlockDelayUnit"))
   {
     m_unlockDelayUnit = UnlockDelayUnitMapper::GetUnlockDelayUnitForName(jsonValue.GetString("UnlockDelayUnit"));
-
     m_unlockDelayUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

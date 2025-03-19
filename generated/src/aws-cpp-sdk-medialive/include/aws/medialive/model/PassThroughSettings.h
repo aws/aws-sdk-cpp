@@ -29,7 +29,7 @@ namespace Model
   class PassThroughSettings
   {
   public:
-    AWS_MEDIALIVE_API PassThroughSettings();
+    AWS_MEDIALIVE_API PassThroughSettings() = default;
     AWS_MEDIALIVE_API PassThroughSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API PassThroughSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

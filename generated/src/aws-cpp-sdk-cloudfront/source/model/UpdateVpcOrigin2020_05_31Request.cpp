@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateVpcOrigin2020_05_31Request::UpdateVpcOrigin2020_05_31Request() : 
-    m_vpcOriginEndpointConfigHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String UpdateVpcOrigin2020_05_31Request::SerializePayload() const
 {

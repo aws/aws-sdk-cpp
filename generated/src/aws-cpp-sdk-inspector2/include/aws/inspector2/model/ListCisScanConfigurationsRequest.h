@@ -24,7 +24,7 @@ namespace Model
   class ListCisScanConfigurationsRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API ListCisScanConfigurationsRequest();
+    AWS_INSPECTOR2_API ListCisScanConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
     /**
      * <p>The CIS scan configuration filter criteria.</p>
      */
-    inline const ListCisScanConfigurationsFilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+    inline const ListCisScanConfigurationsFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    inline void SetFilterCriteria(const ListCisScanConfigurationsFilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-    inline void SetFilterCriteria(ListCisScanConfigurationsFilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-    inline ListCisScanConfigurationsRequest& WithFilterCriteria(const ListCisScanConfigurationsFilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline ListCisScanConfigurationsRequest& WithFilterCriteria(ListCisScanConfigurationsFilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    template<typename FilterCriteriaT = ListCisScanConfigurationsFilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = ListCisScanConfigurationsFilterCriteria>
+    ListCisScanConfigurationsRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +52,7 @@ namespace Model
      * <p>The maximum number of CIS scan configurations to be returned in a single page
      * of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCisScanConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -63,54 +63,48 @@ namespace Model
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCisScanConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCisScanConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCisScanConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScanConfigurationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIS scan configuration sort by order.</p>
      */
-    inline const CisScanConfigurationsSortBy& GetSortBy() const{ return m_sortBy; }
+    inline CisScanConfigurationsSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const CisScanConfigurationsSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(CisScanConfigurationsSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListCisScanConfigurationsRequest& WithSortBy(const CisScanConfigurationsSortBy& value) { SetSortBy(value); return *this;}
-    inline ListCisScanConfigurationsRequest& WithSortBy(CisScanConfigurationsSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(CisScanConfigurationsSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListCisScanConfigurationsRequest& WithSortBy(CisScanConfigurationsSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIS scan configuration sort order order.</p>
      */
-    inline const CisSortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline CisSortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const CisSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(CisSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListCisScanConfigurationsRequest& WithSortOrder(const CisSortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListCisScanConfigurationsRequest& WithSortOrder(CisSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(CisSortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListCisScanConfigurationsRequest& WithSortOrder(CisSortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     ListCisScanConfigurationsFilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    CisScanConfigurationsSortBy m_sortBy;
+    CisScanConfigurationsSortBy m_sortBy{CisScanConfigurationsSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    CisSortOrder m_sortOrder;
+    CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

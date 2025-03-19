@@ -12,22 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDimensionValuesRequest::GetDimensionValuesRequest() : 
-    m_searchStringHasBeenSet(false),
-    m_timePeriodHasBeenSet(false),
-    m_dimension(Dimension::NOT_SET),
-    m_dimensionHasBeenSet(false),
-    m_context(Context::NOT_SET),
-    m_contextHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetDimensionValuesRequest::SerializePayload() const
 {
   JsonValue payload;

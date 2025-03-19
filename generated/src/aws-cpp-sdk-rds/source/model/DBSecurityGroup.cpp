@@ -20,19 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSecurityGroup::DBSecurityGroup() : 
-    m_ownerIdHasBeenSet(false),
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_dBSecurityGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_iPRangesHasBeenSet(false),
-    m_dBSecurityGroupArnHasBeenSet(false)
-{
-}
-
 DBSecurityGroup::DBSecurityGroup(const XmlNode& xmlNode)
-  : DBSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -71,6 +59,7 @@ DBSecurityGroup& DBSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!eC2SecurityGroupsNode.IsNull())
     {
       XmlNode eC2SecurityGroupsMember = eC2SecurityGroupsNode.FirstChild("EC2SecurityGroup");
+      m_eC2SecurityGroupsHasBeenSet = !eC2SecurityGroupsMember.IsNull();
       while(!eC2SecurityGroupsMember.IsNull())
       {
         m_eC2SecurityGroups.push_back(eC2SecurityGroupsMember);
@@ -83,6 +72,7 @@ DBSecurityGroup& DBSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!iPRangesNode.IsNull())
     {
       XmlNode iPRangesMember = iPRangesNode.FirstChild("IPRange");
+      m_iPRangesHasBeenSet = !iPRangesMember.IsNull();
       while(!iPRangesMember.IsNull())
       {
         m_iPRanges.push_back(iPRangesMember);

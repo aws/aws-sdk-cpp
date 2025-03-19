@@ -29,7 +29,7 @@ namespace Model
   class GetContainerServiceDeploymentsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetContainerServiceDeploymentsResult();
+    AWS_LIGHTSAIL_API GetContainerServiceDeploymentsResult() = default;
     AWS_LIGHTSAIL_API GetContainerServiceDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetContainerServiceDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An array of objects that describe deployments for a container service.</p>
      */
-    inline const Aws::Vector<ContainerServiceDeployment>& GetDeployments() const{ return m_deployments; }
-    inline void SetDeployments(const Aws::Vector<ContainerServiceDeployment>& value) { m_deployments = value; }
-    inline void SetDeployments(Aws::Vector<ContainerServiceDeployment>&& value) { m_deployments = std::move(value); }
-    inline GetContainerServiceDeploymentsResult& WithDeployments(const Aws::Vector<ContainerServiceDeployment>& value) { SetDeployments(value); return *this;}
-    inline GetContainerServiceDeploymentsResult& WithDeployments(Aws::Vector<ContainerServiceDeployment>&& value) { SetDeployments(std::move(value)); return *this;}
-    inline GetContainerServiceDeploymentsResult& AddDeployments(const ContainerServiceDeployment& value) { m_deployments.push_back(value); return *this; }
-    inline GetContainerServiceDeploymentsResult& AddDeployments(ContainerServiceDeployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerServiceDeployment>& GetDeployments() const { return m_deployments; }
+    template<typename DeploymentsT = Aws::Vector<ContainerServiceDeployment>>
+    void SetDeployments(DeploymentsT&& value) { m_deploymentsHasBeenSet = true; m_deployments = std::forward<DeploymentsT>(value); }
+    template<typename DeploymentsT = Aws::Vector<ContainerServiceDeployment>>
+    GetContainerServiceDeploymentsResult& WithDeployments(DeploymentsT&& value) { SetDeployments(std::forward<DeploymentsT>(value)); return *this;}
+    template<typename DeploymentsT = ContainerServiceDeployment>
+    GetContainerServiceDeploymentsResult& AddDeployments(DeploymentsT&& value) { m_deploymentsHasBeenSet = true; m_deployments.emplace_back(std::forward<DeploymentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContainerServiceDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContainerServiceDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContainerServiceDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContainerServiceDeploymentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContainerServiceDeployment> m_deployments;
+    bool m_deploymentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

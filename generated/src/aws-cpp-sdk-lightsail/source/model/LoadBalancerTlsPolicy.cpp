@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LoadBalancerTlsPolicy::LoadBalancerTlsPolicy() : 
-    m_nameHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_ciphersHasBeenSet(false)
-{
-}
-
 LoadBalancerTlsPolicy::LoadBalancerTlsPolicy(JsonView jsonValue)
-  : LoadBalancerTlsPolicy()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ LoadBalancerTlsPolicy& LoadBalancerTlsPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefault"))
   {
     m_isDefault = jsonValue.GetBool("isDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocols"))
   {
     Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("protocols");
@@ -66,7 +49,6 @@ LoadBalancerTlsPolicy& LoadBalancerTlsPolicy::operator =(JsonView jsonValue)
     }
     m_protocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ciphers"))
   {
     Aws::Utils::Array<JsonView> ciphersJsonList = jsonValue.GetArray("ciphers");
@@ -76,7 +58,6 @@ LoadBalancerTlsPolicy& LoadBalancerTlsPolicy::operator =(JsonView jsonValue)
     }
     m_ciphersHasBeenSet = true;
   }
-
   return *this;
 }
 

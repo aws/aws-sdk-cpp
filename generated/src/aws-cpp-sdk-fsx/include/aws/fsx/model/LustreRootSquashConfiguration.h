@@ -40,7 +40,7 @@ namespace Model
   class LustreRootSquashConfiguration
   {
   public:
-    AWS_FSX_API LustreRootSquashConfiguration();
+    AWS_FSX_API LustreRootSquashConfiguration() = default;
     AWS_FSX_API LustreRootSquashConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API LustreRootSquashConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * root squash is enabled, the user ID and group ID of a root user accessing the
      * file system are re-mapped to the UID and GID you provide.</p>
      */
-    inline const Aws::String& GetRootSquash() const{ return m_rootSquash; }
+    inline const Aws::String& GetRootSquash() const { return m_rootSquash; }
     inline bool RootSquashHasBeenSet() const { return m_rootSquashHasBeenSet; }
-    inline void SetRootSquash(const Aws::String& value) { m_rootSquashHasBeenSet = true; m_rootSquash = value; }
-    inline void SetRootSquash(Aws::String&& value) { m_rootSquashHasBeenSet = true; m_rootSquash = std::move(value); }
-    inline void SetRootSquash(const char* value) { m_rootSquashHasBeenSet = true; m_rootSquash.assign(value); }
-    inline LustreRootSquashConfiguration& WithRootSquash(const Aws::String& value) { SetRootSquash(value); return *this;}
-    inline LustreRootSquashConfiguration& WithRootSquash(Aws::String&& value) { SetRootSquash(std::move(value)); return *this;}
-    inline LustreRootSquashConfiguration& WithRootSquash(const char* value) { SetRootSquash(value); return *this;}
+    template<typename RootSquashT = Aws::String>
+    void SetRootSquash(RootSquashT&& value) { m_rootSquashHasBeenSet = true; m_rootSquash = std::forward<RootSquashT>(value); }
+    template<typename RootSquashT = Aws::String>
+    LustreRootSquashConfiguration& WithRootSquash(RootSquashT&& value) { SetRootSquash(std::forward<RootSquashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,15 +77,14 @@ namespace Model
      * </li> <li> <p>An address range is described using a dash to separate the range
      * (for example, <code>10.0.[2-10].[1-255]@tcp</code>).</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetNoSquashNids() const{ return m_noSquashNids; }
+    inline const Aws::Vector<Aws::String>& GetNoSquashNids() const { return m_noSquashNids; }
     inline bool NoSquashNidsHasBeenSet() const { return m_noSquashNidsHasBeenSet; }
-    inline void SetNoSquashNids(const Aws::Vector<Aws::String>& value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids = value; }
-    inline void SetNoSquashNids(Aws::Vector<Aws::String>&& value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids = std::move(value); }
-    inline LustreRootSquashConfiguration& WithNoSquashNids(const Aws::Vector<Aws::String>& value) { SetNoSquashNids(value); return *this;}
-    inline LustreRootSquashConfiguration& WithNoSquashNids(Aws::Vector<Aws::String>&& value) { SetNoSquashNids(std::move(value)); return *this;}
-    inline LustreRootSquashConfiguration& AddNoSquashNids(const Aws::String& value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids.push_back(value); return *this; }
-    inline LustreRootSquashConfiguration& AddNoSquashNids(Aws::String&& value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids.push_back(std::move(value)); return *this; }
-    inline LustreRootSquashConfiguration& AddNoSquashNids(const char* value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids.push_back(value); return *this; }
+    template<typename NoSquashNidsT = Aws::Vector<Aws::String>>
+    void SetNoSquashNids(NoSquashNidsT&& value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids = std::forward<NoSquashNidsT>(value); }
+    template<typename NoSquashNidsT = Aws::Vector<Aws::String>>
+    LustreRootSquashConfiguration& WithNoSquashNids(NoSquashNidsT&& value) { SetNoSquashNids(std::forward<NoSquashNidsT>(value)); return *this;}
+    template<typename NoSquashNidsT = Aws::String>
+    LustreRootSquashConfiguration& AddNoSquashNids(NoSquashNidsT&& value) { m_noSquashNidsHasBeenSet = true; m_noSquashNids.emplace_back(std::forward<NoSquashNidsT>(value)); return *this; }
     ///@}
   private:
 

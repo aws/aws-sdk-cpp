@@ -28,7 +28,7 @@ namespace Model
   class DeleteAppVersionResourceResult
   {
   public:
-    AWS_RESILIENCEHUB_API DeleteAppVersionResourceResult();
+    AWS_RESILIENCEHUB_API DeleteAppVersionResourceResult() = default;
     AWS_RESILIENCEHUB_API DeleteAppVersionResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DeleteAppVersionResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,26 +43,22 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline DeleteAppVersionResourceResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DeleteAppVersionResourceResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DeleteAppVersionResourceResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DeleteAppVersionResourceResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Resilience Hub application version.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
-    inline DeleteAppVersionResourceResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline DeleteAppVersionResourceResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline DeleteAppVersionResourceResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    DeleteAppVersionResourceResult& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,32 +67,34 @@ namespace Model
      * your account. It can be identified using an Amazon Resource Name (ARN) or a
      * Resilience Hub-native identifier.</p>
      */
-    inline const PhysicalResource& GetPhysicalResource() const{ return m_physicalResource; }
-    inline void SetPhysicalResource(const PhysicalResource& value) { m_physicalResource = value; }
-    inline void SetPhysicalResource(PhysicalResource&& value) { m_physicalResource = std::move(value); }
-    inline DeleteAppVersionResourceResult& WithPhysicalResource(const PhysicalResource& value) { SetPhysicalResource(value); return *this;}
-    inline DeleteAppVersionResourceResult& WithPhysicalResource(PhysicalResource&& value) { SetPhysicalResource(std::move(value)); return *this;}
+    inline const PhysicalResource& GetPhysicalResource() const { return m_physicalResource; }
+    template<typename PhysicalResourceT = PhysicalResource>
+    void SetPhysicalResource(PhysicalResourceT&& value) { m_physicalResourceHasBeenSet = true; m_physicalResource = std::forward<PhysicalResourceT>(value); }
+    template<typename PhysicalResourceT = PhysicalResource>
+    DeleteAppVersionResourceResult& WithPhysicalResource(PhysicalResourceT&& value) { SetPhysicalResource(std::forward<PhysicalResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAppVersionResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAppVersionResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAppVersionResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAppVersionResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
+    bool m_appVersionHasBeenSet = false;
 
     PhysicalResource m_physicalResource;
+    bool m_physicalResourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

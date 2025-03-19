@@ -12,11 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMembershipRequest::GetMembershipRequest() : 
-    m_membershipIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMembershipRequest::SerializePayload() const
 {
   return {};

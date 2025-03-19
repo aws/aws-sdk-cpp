@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-DataReplicationError::DataReplicationError() : 
-    m_error(DataReplicationErrorString::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_rawErrorHasBeenSet(false)
-{
-}
-
 DataReplicationError::DataReplicationError(JsonView jsonValue)
-  : DataReplicationError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataReplicationError& DataReplicationError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("error"))
   {
     m_error = DataReplicationErrorStringMapper::GetDataReplicationErrorStringForName(jsonValue.GetString("error"));
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawError"))
   {
     m_rawError = jsonValue.GetString("rawError");
-
     m_rawErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

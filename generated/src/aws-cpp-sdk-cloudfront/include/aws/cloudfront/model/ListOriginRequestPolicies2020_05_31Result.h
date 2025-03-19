@@ -28,7 +28,7 @@ namespace Model
   class ListOriginRequestPolicies2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListOriginRequestPolicies2020_05_31Result();
+    AWS_CLOUDFRONT_API ListOriginRequestPolicies2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListOriginRequestPolicies2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListOriginRequestPolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A list of origin request policies.</p>
      */
-    inline const OriginRequestPolicyList& GetOriginRequestPolicyList() const{ return m_originRequestPolicyList; }
-    inline void SetOriginRequestPolicyList(const OriginRequestPolicyList& value) { m_originRequestPolicyList = value; }
-    inline void SetOriginRequestPolicyList(OriginRequestPolicyList&& value) { m_originRequestPolicyList = std::move(value); }
-    inline ListOriginRequestPolicies2020_05_31Result& WithOriginRequestPolicyList(const OriginRequestPolicyList& value) { SetOriginRequestPolicyList(value); return *this;}
-    inline ListOriginRequestPolicies2020_05_31Result& WithOriginRequestPolicyList(OriginRequestPolicyList&& value) { SetOriginRequestPolicyList(std::move(value)); return *this;}
+    inline const OriginRequestPolicyList& GetOriginRequestPolicyList() const { return m_originRequestPolicyList; }
+    template<typename OriginRequestPolicyListT = OriginRequestPolicyList>
+    void SetOriginRequestPolicyList(OriginRequestPolicyListT&& value) { m_originRequestPolicyListHasBeenSet = true; m_originRequestPolicyList = std::forward<OriginRequestPolicyListT>(value); }
+    template<typename OriginRequestPolicyListT = OriginRequestPolicyList>
+    ListOriginRequestPolicies2020_05_31Result& WithOriginRequestPolicyList(OriginRequestPolicyListT&& value) { SetOriginRequestPolicyList(std::forward<OriginRequestPolicyListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOriginRequestPolicies2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOriginRequestPolicies2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOriginRequestPolicies2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOriginRequestPolicies2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OriginRequestPolicyList m_originRequestPolicyList;
+    bool m_originRequestPolicyListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ClassifyDocumentResult::ClassifyDocumentResult()
-{
-}
-
 ClassifyDocumentResult::ClassifyDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     {
       m_classes.push_back(classesJsonList[classesIndex].AsObject());
     }
+    m_classesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
@@ -45,14 +41,13 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
     }
+    m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentMetadata"))
   {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
-
+    m_documentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentType"))
   {
     Aws::Utils::Array<JsonView> documentTypeJsonList = jsonValue.GetArray("DocumentType");
@@ -60,8 +55,8 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     {
       m_documentType.push_back(documentTypeJsonList[documentTypeIndex].AsObject());
     }
+    m_documentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -69,8 +64,8 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
@@ -78,14 +73,15 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
+    m_warningsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

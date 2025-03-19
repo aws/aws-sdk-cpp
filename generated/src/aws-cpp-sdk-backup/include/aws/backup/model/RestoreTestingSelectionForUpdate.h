@@ -35,7 +35,7 @@ namespace Model
   class RestoreTestingSelectionForUpdate
   {
   public:
-    AWS_BACKUP_API RestoreTestingSelectionForUpdate();
+    AWS_BACKUP_API RestoreTestingSelectionForUpdate() = default;
     AWS_BACKUP_API RestoreTestingSelectionForUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API RestoreTestingSelectionForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline RestoreTestingSelectionForUpdate& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline RestoreTestingSelectionForUpdate& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline RestoreTestingSelectionForUpdate& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    RestoreTestingSelectionForUpdate& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * ["arn:aws:...", "arn:aws:..."]</code> or you can include a wildcard:
      * <code>ProtectedResourceArns: ["*"]</code>, but not both.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProtectedResourceArns() const{ return m_protectedResourceArns; }
+    inline const Aws::Vector<Aws::String>& GetProtectedResourceArns() const { return m_protectedResourceArns; }
     inline bool ProtectedResourceArnsHasBeenSet() const { return m_protectedResourceArnsHasBeenSet; }
-    inline void SetProtectedResourceArns(const Aws::Vector<Aws::String>& value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns = value; }
-    inline void SetProtectedResourceArns(Aws::Vector<Aws::String>&& value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns = std::move(value); }
-    inline RestoreTestingSelectionForUpdate& WithProtectedResourceArns(const Aws::Vector<Aws::String>& value) { SetProtectedResourceArns(value); return *this;}
-    inline RestoreTestingSelectionForUpdate& WithProtectedResourceArns(Aws::Vector<Aws::String>&& value) { SetProtectedResourceArns(std::move(value)); return *this;}
-    inline RestoreTestingSelectionForUpdate& AddProtectedResourceArns(const Aws::String& value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns.push_back(value); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddProtectedResourceArns(Aws::String&& value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns.push_back(std::move(value)); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddProtectedResourceArns(const char* value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns.push_back(value); return *this; }
+    template<typename ProtectedResourceArnsT = Aws::Vector<Aws::String>>
+    void SetProtectedResourceArns(ProtectedResourceArnsT&& value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns = std::forward<ProtectedResourceArnsT>(value); }
+    template<typename ProtectedResourceArnsT = Aws::Vector<Aws::String>>
+    RestoreTestingSelectionForUpdate& WithProtectedResourceArns(ProtectedResourceArnsT&& value) { SetProtectedResourceArns(std::forward<ProtectedResourceArnsT>(value)); return *this;}
+    template<typename ProtectedResourceArnsT = Aws::String>
+    RestoreTestingSelectionForUpdate& AddProtectedResourceArns(ProtectedResourceArnsT&& value) { m_protectedResourceArnsHasBeenSet = true; m_protectedResourceArns.emplace_back(std::forward<ProtectedResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,12 +76,12 @@ namespace Model
      * <p>The conditions that you define for resources in your restore testing plan
      * using tags.</p>
      */
-    inline const ProtectedResourceConditions& GetProtectedResourceConditions() const{ return m_protectedResourceConditions; }
+    inline const ProtectedResourceConditions& GetProtectedResourceConditions() const { return m_protectedResourceConditions; }
     inline bool ProtectedResourceConditionsHasBeenSet() const { return m_protectedResourceConditionsHasBeenSet; }
-    inline void SetProtectedResourceConditions(const ProtectedResourceConditions& value) { m_protectedResourceConditionsHasBeenSet = true; m_protectedResourceConditions = value; }
-    inline void SetProtectedResourceConditions(ProtectedResourceConditions&& value) { m_protectedResourceConditionsHasBeenSet = true; m_protectedResourceConditions = std::move(value); }
-    inline RestoreTestingSelectionForUpdate& WithProtectedResourceConditions(const ProtectedResourceConditions& value) { SetProtectedResourceConditions(value); return *this;}
-    inline RestoreTestingSelectionForUpdate& WithProtectedResourceConditions(ProtectedResourceConditions&& value) { SetProtectedResourceConditions(std::move(value)); return *this;}
+    template<typename ProtectedResourceConditionsT = ProtectedResourceConditions>
+    void SetProtectedResourceConditions(ProtectedResourceConditionsT&& value) { m_protectedResourceConditionsHasBeenSet = true; m_protectedResourceConditions = std::forward<ProtectedResourceConditionsT>(value); }
+    template<typename ProtectedResourceConditionsT = ProtectedResourceConditions>
+    RestoreTestingSelectionForUpdate& WithProtectedResourceConditions(ProtectedResourceConditionsT&& value) { SetProtectedResourceConditions(std::forward<ProtectedResourceConditionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,19 +93,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing-inferred-metadata.html">restore
      * testing inferred metadata</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRestoreMetadataOverrides() const{ return m_restoreMetadataOverrides; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRestoreMetadataOverrides() const { return m_restoreMetadataOverrides; }
     inline bool RestoreMetadataOverridesHasBeenSet() const { return m_restoreMetadataOverridesHasBeenSet; }
-    inline void SetRestoreMetadataOverrides(const Aws::Map<Aws::String, Aws::String>& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides = value; }
-    inline void SetRestoreMetadataOverrides(Aws::Map<Aws::String, Aws::String>&& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides = std::move(value); }
-    inline RestoreTestingSelectionForUpdate& WithRestoreMetadataOverrides(const Aws::Map<Aws::String, Aws::String>& value) { SetRestoreMetadataOverrides(value); return *this;}
-    inline RestoreTestingSelectionForUpdate& WithRestoreMetadataOverrides(Aws::Map<Aws::String, Aws::String>&& value) { SetRestoreMetadataOverrides(std::move(value)); return *this;}
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(const Aws::String& key, const Aws::String& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(key, value); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(Aws::String&& key, const Aws::String& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(std::move(key), value); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(const Aws::String& key, Aws::String&& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(key, std::move(value)); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(Aws::String&& key, Aws::String&& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(std::move(key), std::move(value)); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(const char* key, Aws::String&& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(key, std::move(value)); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(Aws::String&& key, const char* value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(std::move(key), value); return *this; }
-    inline RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(const char* key, const char* value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(key, value); return *this; }
+    template<typename RestoreMetadataOverridesT = Aws::Map<Aws::String, Aws::String>>
+    void SetRestoreMetadataOverrides(RestoreMetadataOverridesT&& value) { m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides = std::forward<RestoreMetadataOverridesT>(value); }
+    template<typename RestoreMetadataOverridesT = Aws::Map<Aws::String, Aws::String>>
+    RestoreTestingSelectionForUpdate& WithRestoreMetadataOverrides(RestoreMetadataOverridesT&& value) { SetRestoreMetadataOverrides(std::forward<RestoreMetadataOverridesT>(value)); return *this;}
+    template<typename RestoreMetadataOverridesKeyT = Aws::String, typename RestoreMetadataOverridesValueT = Aws::String>
+    RestoreTestingSelectionForUpdate& AddRestoreMetadataOverrides(RestoreMetadataOverridesKeyT&& key, RestoreMetadataOverridesValueT&& value) {
+      m_restoreMetadataOverridesHasBeenSet = true; m_restoreMetadataOverrides.emplace(std::forward<RestoreMetadataOverridesKeyT>(key), std::forward<RestoreMetadataOverridesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -117,7 +111,7 @@ namespace Model
      * test so that optional validation can be completed.</p> <p>Accepted value is an
      * integer between 0 and 168 (the hourly equivalent of seven days).</p>
      */
-    inline int GetValidationWindowHours() const{ return m_validationWindowHours; }
+    inline int GetValidationWindowHours() const { return m_validationWindowHours; }
     inline bool ValidationWindowHoursHasBeenSet() const { return m_validationWindowHoursHasBeenSet; }
     inline void SetValidationWindowHours(int value) { m_validationWindowHoursHasBeenSet = true; m_validationWindowHours = value; }
     inline RestoreTestingSelectionForUpdate& WithValidationWindowHours(int value) { SetValidationWindowHours(value); return *this;}
@@ -136,7 +130,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_restoreMetadataOverrides;
     bool m_restoreMetadataOverridesHasBeenSet = false;
 
-    int m_validationWindowHours;
+    int m_validationWindowHours{0};
     bool m_validationWindowHoursHasBeenSet = false;
   };
 

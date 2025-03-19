@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DataSourceType::DataSourceType() : 
-    m_s3GlueDataCatalogHasBeenSet(false)
-{
-}
-
 DataSourceType::DataSourceType(JsonView jsonValue)
-  : DataSourceType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataSourceType& DataSourceType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3GlueDataCatalog"))
   {
     m_s3GlueDataCatalog = jsonValue.GetObject("S3GlueDataCatalog");
-
     m_s3GlueDataCatalogHasBeenSet = true;
   }
-
   return *this;
 }
 

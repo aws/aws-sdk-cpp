@@ -12,13 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResolverDnssecConfigRequest::UpdateResolverDnssecConfigRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_validation(Validation::NOT_SET),
-    m_validationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResolverDnssecConfigRequest::SerializePayload() const
 {
   JsonValue payload;

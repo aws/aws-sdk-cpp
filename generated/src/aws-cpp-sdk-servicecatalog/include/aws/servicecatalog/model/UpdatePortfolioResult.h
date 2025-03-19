@@ -30,7 +30,7 @@ namespace Model
   class UpdatePortfolioResult
   {
   public:
-    AWS_SERVICECATALOG_API UpdatePortfolioResult();
+    AWS_SERVICECATALOG_API UpdatePortfolioResult() = default;
     AWS_SERVICECATALOG_API UpdatePortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API UpdatePortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>Information about the portfolio.</p>
      */
-    inline const PortfolioDetail& GetPortfolioDetail() const{ return m_portfolioDetail; }
-    inline void SetPortfolioDetail(const PortfolioDetail& value) { m_portfolioDetail = value; }
-    inline void SetPortfolioDetail(PortfolioDetail&& value) { m_portfolioDetail = std::move(value); }
-    inline UpdatePortfolioResult& WithPortfolioDetail(const PortfolioDetail& value) { SetPortfolioDetail(value); return *this;}
-    inline UpdatePortfolioResult& WithPortfolioDetail(PortfolioDetail&& value) { SetPortfolioDetail(std::move(value)); return *this;}
+    inline const PortfolioDetail& GetPortfolioDetail() const { return m_portfolioDetail; }
+    template<typename PortfolioDetailT = PortfolioDetail>
+    void SetPortfolioDetail(PortfolioDetailT&& value) { m_portfolioDetailHasBeenSet = true; m_portfolioDetail = std::forward<PortfolioDetailT>(value); }
+    template<typename PortfolioDetailT = PortfolioDetail>
+    UpdatePortfolioResult& WithPortfolioDetail(PortfolioDetailT&& value) { SetPortfolioDetail(std::forward<PortfolioDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the tags associated with the portfolio.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline UpdatePortfolioResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline UpdatePortfolioResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdatePortfolioResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline UpdatePortfolioResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    UpdatePortfolioResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    UpdatePortfolioResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePortfolioResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePortfolioResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePortfolioResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePortfolioResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PortfolioDetail m_portfolioDetail;
+    bool m_portfolioDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

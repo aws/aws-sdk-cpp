@@ -18,10 +18,6 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-TranslationPinDataIsoFormat1::TranslationPinDataIsoFormat1()
-{
-}
-
 TranslationPinDataIsoFormat1::TranslationPinDataIsoFormat1(JsonView jsonValue)
 {
   *this = jsonValue;

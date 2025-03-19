@@ -32,7 +32,7 @@ namespace Model
   class FlowAliasRoutingConfigurationListItem
   {
   public:
-    AWS_BEDROCKAGENT_API FlowAliasRoutingConfigurationListItem();
+    AWS_BEDROCKAGENT_API FlowAliasRoutingConfigurationListItem() = default;
     AWS_BEDROCKAGENT_API FlowAliasRoutingConfigurationListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowAliasRoutingConfigurationListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The version that the alias maps to.</p>
      */
-    inline const Aws::String& GetFlowVersion() const{ return m_flowVersion; }
+    inline const Aws::String& GetFlowVersion() const { return m_flowVersion; }
     inline bool FlowVersionHasBeenSet() const { return m_flowVersionHasBeenSet; }
-    inline void SetFlowVersion(const Aws::String& value) { m_flowVersionHasBeenSet = true; m_flowVersion = value; }
-    inline void SetFlowVersion(Aws::String&& value) { m_flowVersionHasBeenSet = true; m_flowVersion = std::move(value); }
-    inline void SetFlowVersion(const char* value) { m_flowVersionHasBeenSet = true; m_flowVersion.assign(value); }
-    inline FlowAliasRoutingConfigurationListItem& WithFlowVersion(const Aws::String& value) { SetFlowVersion(value); return *this;}
-    inline FlowAliasRoutingConfigurationListItem& WithFlowVersion(Aws::String&& value) { SetFlowVersion(std::move(value)); return *this;}
-    inline FlowAliasRoutingConfigurationListItem& WithFlowVersion(const char* value) { SetFlowVersion(value); return *this;}
+    template<typename FlowVersionT = Aws::String>
+    void SetFlowVersion(FlowVersionT&& value) { m_flowVersionHasBeenSet = true; m_flowVersion = std::forward<FlowVersionT>(value); }
+    template<typename FlowVersionT = Aws::String>
+    FlowAliasRoutingConfigurationListItem& WithFlowVersion(FlowVersionT&& value) { SetFlowVersion(std::forward<FlowVersionT>(value)); return *this;}
     ///@}
   private:
 

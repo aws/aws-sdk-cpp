@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClusterResult::DescribeClusterResult() : 
-    m_clusterStatus(ClusterStatus::NOT_SET),
-    m_nodeRecovery(ClusterNodeRecovery::NOT_SET)
-{
-}
-
 DescribeClusterResult::DescribeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeClusterResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
+    m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterStatus"))
   {
     m_clusterStatus = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("ClusterStatus"));
-
+    m_clusterStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureMessage"))
   {
     m_failureMessage = jsonValue.GetString("FailureMessage");
-
+    m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroups"))
   {
     Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
@@ -69,32 +57,30 @@ DescribeClusterResult& DescribeClusterResult::operator =(const Aws::AmazonWebSer
     {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());
     }
+    m_instanceGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
+    m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Orchestrator"))
   {
     m_orchestrator = jsonValue.GetObject("Orchestrator");
-
+    m_orchestratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeRecovery"))
   {
     m_nodeRecovery = ClusterNodeRecoveryMapper::GetClusterNodeRecoveryForName(jsonValue.GetString("NodeRecovery"));
-
+    m_nodeRecoveryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

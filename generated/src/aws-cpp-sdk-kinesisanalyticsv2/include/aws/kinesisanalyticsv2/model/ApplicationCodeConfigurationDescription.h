@@ -33,7 +33,7 @@ namespace Model
   class ApplicationCodeConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>Specifies whether the code content is in text or zip format.</p>
      */
-    inline const CodeContentType& GetCodeContentType() const{ return m_codeContentType; }
+    inline CodeContentType GetCodeContentType() const { return m_codeContentType; }
     inline bool CodeContentTypeHasBeenSet() const { return m_codeContentTypeHasBeenSet; }
-    inline void SetCodeContentType(const CodeContentType& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = value; }
-    inline void SetCodeContentType(CodeContentType&& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = std::move(value); }
-    inline ApplicationCodeConfigurationDescription& WithCodeContentType(const CodeContentType& value) { SetCodeContentType(value); return *this;}
-    inline ApplicationCodeConfigurationDescription& WithCodeContentType(CodeContentType&& value) { SetCodeContentType(std::move(value)); return *this;}
+    inline void SetCodeContentType(CodeContentType value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = value; }
+    inline ApplicationCodeConfigurationDescription& WithCodeContentType(CodeContentType value) { SetCodeContentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes details about the location and format of the application code.</p>
      */
-    inline const CodeContentDescription& GetCodeContentDescription() const{ return m_codeContentDescription; }
+    inline const CodeContentDescription& GetCodeContentDescription() const { return m_codeContentDescription; }
     inline bool CodeContentDescriptionHasBeenSet() const { return m_codeContentDescriptionHasBeenSet; }
-    inline void SetCodeContentDescription(const CodeContentDescription& value) { m_codeContentDescriptionHasBeenSet = true; m_codeContentDescription = value; }
-    inline void SetCodeContentDescription(CodeContentDescription&& value) { m_codeContentDescriptionHasBeenSet = true; m_codeContentDescription = std::move(value); }
-    inline ApplicationCodeConfigurationDescription& WithCodeContentDescription(const CodeContentDescription& value) { SetCodeContentDescription(value); return *this;}
-    inline ApplicationCodeConfigurationDescription& WithCodeContentDescription(CodeContentDescription&& value) { SetCodeContentDescription(std::move(value)); return *this;}
+    template<typename CodeContentDescriptionT = CodeContentDescription>
+    void SetCodeContentDescription(CodeContentDescriptionT&& value) { m_codeContentDescriptionHasBeenSet = true; m_codeContentDescription = std::forward<CodeContentDescriptionT>(value); }
+    template<typename CodeContentDescriptionT = CodeContentDescription>
+    ApplicationCodeConfigurationDescription& WithCodeContentDescription(CodeContentDescriptionT&& value) { SetCodeContentDescription(std::forward<CodeContentDescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    CodeContentType m_codeContentType;
+    CodeContentType m_codeContentType{CodeContentType::NOT_SET};
     bool m_codeContentTypeHasBeenSet = false;
 
     CodeContentDescription m_codeContentDescription;

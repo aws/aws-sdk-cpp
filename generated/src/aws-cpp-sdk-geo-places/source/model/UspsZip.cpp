@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-UspsZip::UspsZip() : 
-    m_zipClassificationCode(ZipClassificationCode::NOT_SET),
-    m_zipClassificationCodeHasBeenSet(false)
-{
-}
-
 UspsZip::UspsZip(JsonView jsonValue)
-  : UspsZip()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UspsZip& UspsZip::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ZipClassificationCode"))
   {
     m_zipClassificationCode = ZipClassificationCodeMapper::GetZipClassificationCodeForName(jsonValue.GetString("ZipClassificationCode"));
-
     m_zipClassificationCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

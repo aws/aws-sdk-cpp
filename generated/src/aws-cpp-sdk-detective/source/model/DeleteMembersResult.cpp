@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteMembersResult::DeleteMembersResult()
-{
-}
-
 DeleteMembersResult::DeleteMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DeleteMembersResult& DeleteMembersResult::operator =(const Aws::AmazonWebService
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
     }
+    m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedAccounts"))
   {
     Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("UnprocessedAccounts");
@@ -45,14 +41,15 @@ DeleteMembersResult& DeleteMembersResult::operator =(const Aws::AmazonWebService
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());
     }
+    m_unprocessedAccountsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

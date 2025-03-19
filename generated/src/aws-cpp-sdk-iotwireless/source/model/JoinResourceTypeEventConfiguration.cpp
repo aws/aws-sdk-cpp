@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration() : 
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration(JsonView jsonValue)
-  : JoinResourceTypeEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JoinResourceTypeEventConfiguration& JoinResourceTypeEventConfiguration::operator
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   return *this;
 }
 

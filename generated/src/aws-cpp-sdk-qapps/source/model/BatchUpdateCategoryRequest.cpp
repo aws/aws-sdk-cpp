@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateCategoryRequest::BatchUpdateCategoryRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateCategoryRequest::SerializePayload() const
 {
   JsonValue payload;

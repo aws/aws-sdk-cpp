@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-InputFile::InputFile() : 
-    m_sourceLocationHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_fileMetadataHasBeenSet(false)
-{
-}
-
 InputFile::InputFile(JsonView jsonValue)
-  : InputFile()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InputFile& InputFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceLocation"))
   {
     m_sourceLocation = jsonValue.GetString("sourceLocation");
-
     m_sourceLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetLocation"))
   {
     m_targetLocation = jsonValue.GetString("targetLocation");
-
     m_targetLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileMetadata"))
   {
     m_fileMetadata = jsonValue.GetObject("fileMetadata");
-
     m_fileMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

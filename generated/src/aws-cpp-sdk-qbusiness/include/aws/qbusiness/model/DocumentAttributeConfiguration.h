@@ -38,7 +38,7 @@ namespace Model
   class DocumentAttributeConfiguration
   {
   public:
-    AWS_QBUSINESS_API DocumentAttributeConfiguration();
+    AWS_QBUSINESS_API DocumentAttributeConfiguration() = default;
     AWS_QBUSINESS_API DocumentAttributeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentAttributeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,22 @@ namespace Model
     /**
      * <p>The name of the document attribute.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DocumentAttributeConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DocumentAttributeConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DocumentAttributeConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DocumentAttributeConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of document attribute.</p>
      */
-    inline const AttributeType& GetType() const{ return m_type; }
+    inline AttributeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DocumentAttributeConfiguration& WithType(const AttributeType& value) { SetType(value); return *this;}
-    inline DocumentAttributeConfiguration& WithType(AttributeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AttributeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DocumentAttributeConfiguration& WithType(AttributeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,22 +71,20 @@ namespace Model
      * <p>Information about whether the document attribute can be used by an end user
      * to search for information on their web experience.</p>
      */
-    inline const Status& GetSearch() const{ return m_search; }
+    inline Status GetSearch() const { return m_search; }
     inline bool SearchHasBeenSet() const { return m_searchHasBeenSet; }
-    inline void SetSearch(const Status& value) { m_searchHasBeenSet = true; m_search = value; }
-    inline void SetSearch(Status&& value) { m_searchHasBeenSet = true; m_search = std::move(value); }
-    inline DocumentAttributeConfiguration& WithSearch(const Status& value) { SetSearch(value); return *this;}
-    inline DocumentAttributeConfiguration& WithSearch(Status&& value) { SetSearch(std::move(value)); return *this;}
+    inline void SetSearch(Status value) { m_searchHasBeenSet = true; m_search = value; }
+    inline DocumentAttributeConfiguration& WithSearch(Status value) { SetSearch(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AttributeType m_type;
+    AttributeType m_type{AttributeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    Status m_search;
+    Status m_search{Status::NOT_SET};
     bool m_searchHasBeenSet = false;
   };
 

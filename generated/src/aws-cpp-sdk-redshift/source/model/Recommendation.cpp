@@ -20,25 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_idHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_namespaceArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_recommendationTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_observationHasBeenSet(false),
-    m_impactRanking(ImpactRankingType::NOT_SET),
-    m_impactRankingHasBeenSet(false),
-    m_recommendationTextHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_referenceLinksHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(const XmlNode& xmlNode)
-  : Recommendation()
 {
   *this = xmlNode;
 }
@@ -100,7 +82,7 @@ Recommendation& Recommendation::operator =(const XmlNode& xmlNode)
     XmlNode impactRankingNode = resultNode.FirstChild("ImpactRanking");
     if(!impactRankingNode.IsNull())
     {
-      m_impactRanking = ImpactRankingTypeMapper::GetImpactRankingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impactRankingNode.GetText()).c_str()).c_str());
+      m_impactRanking = ImpactRankingTypeMapper::GetImpactRankingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impactRankingNode.GetText()).c_str()));
       m_impactRankingHasBeenSet = true;
     }
     XmlNode recommendationTextNode = resultNode.FirstChild("RecommendationText");
@@ -113,6 +95,7 @@ Recommendation& Recommendation::operator =(const XmlNode& xmlNode)
     if(!recommendedActionsNode.IsNull())
     {
       XmlNode recommendedActionsMember = recommendedActionsNode.FirstChild("RecommendedAction");
+      m_recommendedActionsHasBeenSet = !recommendedActionsMember.IsNull();
       while(!recommendedActionsMember.IsNull())
       {
         m_recommendedActions.push_back(recommendedActionsMember);
@@ -125,6 +108,7 @@ Recommendation& Recommendation::operator =(const XmlNode& xmlNode)
     if(!referenceLinksNode.IsNull())
     {
       XmlNode referenceLinksMember = referenceLinksNode.FirstChild("ReferenceLink");
+      m_referenceLinksHasBeenSet = !referenceLinksMember.IsNull();
       while(!referenceLinksMember.IsNull())
       {
         m_referenceLinks.push_back(referenceLinksMember);

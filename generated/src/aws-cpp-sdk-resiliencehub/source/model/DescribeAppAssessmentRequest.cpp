@@ -12,11 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAppAssessmentRequest::DescribeAppAssessmentRequest() : 
-    m_assessmentArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAppAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;

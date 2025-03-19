@@ -18,20 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ReviewTemplateSummary::ReviewTemplateSummary() : 
-    m_descriptionHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_updateStatus(ReviewTemplateUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false)
-{
-}
-
 ReviewTemplateSummary::ReviewTemplateSummary(JsonView jsonValue)
-  : ReviewTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ ReviewTemplateSummary& ReviewTemplateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lenses"))
   {
     Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
@@ -54,42 +39,31 @@ ReviewTemplateSummary& ReviewTemplateSummary::operator =(JsonView jsonValue)
     }
     m_lensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = ReviewTemplateUpdateStatusMapper::GetReviewTemplateUpdateStatusForName(jsonValue.GetString("UpdateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

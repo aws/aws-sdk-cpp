@@ -21,7 +21,7 @@ namespace Model
   class ListImportFailuresRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API ListImportFailuresRequest();
+    AWS_CLOUDTRAIL_API ListImportFailuresRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p> The ID of the import. </p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
+    inline const Aws::String& GetImportId() const { return m_importId; }
     inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
-    inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importIdHasBeenSet = true; m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importIdHasBeenSet = true; m_importId.assign(value); }
-    inline ListImportFailuresRequest& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline ListImportFailuresRequest& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline ListImportFailuresRequest& WithImportId(const char* value) { SetImportId(value); return *this;}
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    ListImportFailuresRequest& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of failures to display on a single page. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListImportFailuresRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,21 +60,19 @@ namespace Model
     /**
      * <p> A token you can use to get the next page of import failures. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImportFailuresRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportFailuresRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportFailuresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportFailuresRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_importId;
     bool m_importIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

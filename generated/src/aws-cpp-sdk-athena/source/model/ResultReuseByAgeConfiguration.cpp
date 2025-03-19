@@ -18,16 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_maxAgeInMinutes(0),
-    m_maxAgeInMinutesHasBeenSet(false)
-{
-}
-
 ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration(JsonView jsonValue)
-  : ResultReuseByAgeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResultReuseByAgeConfiguration& ResultReuseByAgeConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAgeInMinutes"))
   {
     m_maxAgeInMinutes = jsonValue.GetInteger("MaxAgeInMinutes");
-
     m_maxAgeInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

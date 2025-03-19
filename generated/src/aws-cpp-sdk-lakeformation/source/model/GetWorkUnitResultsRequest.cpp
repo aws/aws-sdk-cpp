@@ -12,14 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkUnitResultsRequest::GetWorkUnitResultsRequest() : 
-    m_queryIdHasBeenSet(false),
-    m_workUnitId(0),
-    m_workUnitIdHasBeenSet(false),
-    m_workUnitTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkUnitResultsRequest::SerializePayload() const
 {
   JsonValue payload;

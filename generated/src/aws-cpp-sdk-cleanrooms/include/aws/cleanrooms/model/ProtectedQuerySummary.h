@@ -36,7 +36,7 @@ namespace Model
   class ProtectedQuerySummary
   {
   public:
-    AWS_CLEANROOMS_API ProtectedQuerySummary();
+    AWS_CLEANROOMS_API ProtectedQuerySummary() = default;
     AWS_CLEANROOMS_API ProtectedQuerySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedQuerySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,80 +46,72 @@ namespace Model
     /**
      * <p>The unique ID of the protected query.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ProtectedQuerySummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ProtectedQuerySummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ProtectedQuerySummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ProtectedQuerySummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID for the membership that initiated the protected query.</p>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline ProtectedQuerySummary& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline ProtectedQuerySummary& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline ProtectedQuerySummary& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    ProtectedQuerySummary& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ARN for the membership that initiated the protected query.</p>
      */
-    inline const Aws::String& GetMembershipArn() const{ return m_membershipArn; }
+    inline const Aws::String& GetMembershipArn() const { return m_membershipArn; }
     inline bool MembershipArnHasBeenSet() const { return m_membershipArnHasBeenSet; }
-    inline void SetMembershipArn(const Aws::String& value) { m_membershipArnHasBeenSet = true; m_membershipArn = value; }
-    inline void SetMembershipArn(Aws::String&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::move(value); }
-    inline void SetMembershipArn(const char* value) { m_membershipArnHasBeenSet = true; m_membershipArn.assign(value); }
-    inline ProtectedQuerySummary& WithMembershipArn(const Aws::String& value) { SetMembershipArn(value); return *this;}
-    inline ProtectedQuerySummary& WithMembershipArn(Aws::String&& value) { SetMembershipArn(std::move(value)); return *this;}
-    inline ProtectedQuerySummary& WithMembershipArn(const char* value) { SetMembershipArn(value); return *this;}
+    template<typename MembershipArnT = Aws::String>
+    void SetMembershipArn(MembershipArnT&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::forward<MembershipArnT>(value); }
+    template<typename MembershipArnT = Aws::String>
+    ProtectedQuerySummary& WithMembershipArn(MembershipArnT&& value) { SetMembershipArn(std::forward<MembershipArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the protected query was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline ProtectedQuerySummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline ProtectedQuerySummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    ProtectedQuerySummary& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the protected query.</p>
      */
-    inline const ProtectedQueryStatus& GetStatus() const{ return m_status; }
+    inline ProtectedQueryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProtectedQueryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProtectedQueryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProtectedQuerySummary& WithStatus(const ProtectedQueryStatus& value) { SetStatus(value); return *this;}
-    inline ProtectedQuerySummary& WithStatus(ProtectedQueryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProtectedQueryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProtectedQuerySummary& WithStatus(ProtectedQueryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The receiver configuration.</p>
      */
-    inline const Aws::Vector<ReceiverConfiguration>& GetReceiverConfigurations() const{ return m_receiverConfigurations; }
+    inline const Aws::Vector<ReceiverConfiguration>& GetReceiverConfigurations() const { return m_receiverConfigurations; }
     inline bool ReceiverConfigurationsHasBeenSet() const { return m_receiverConfigurationsHasBeenSet; }
-    inline void SetReceiverConfigurations(const Aws::Vector<ReceiverConfiguration>& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations = value; }
-    inline void SetReceiverConfigurations(Aws::Vector<ReceiverConfiguration>&& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations = std::move(value); }
-    inline ProtectedQuerySummary& WithReceiverConfigurations(const Aws::Vector<ReceiverConfiguration>& value) { SetReceiverConfigurations(value); return *this;}
-    inline ProtectedQuerySummary& WithReceiverConfigurations(Aws::Vector<ReceiverConfiguration>&& value) { SetReceiverConfigurations(std::move(value)); return *this;}
-    inline ProtectedQuerySummary& AddReceiverConfigurations(const ReceiverConfiguration& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations.push_back(value); return *this; }
-    inline ProtectedQuerySummary& AddReceiverConfigurations(ReceiverConfiguration&& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ReceiverConfigurationsT = Aws::Vector<ReceiverConfiguration>>
+    void SetReceiverConfigurations(ReceiverConfigurationsT&& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations = std::forward<ReceiverConfigurationsT>(value); }
+    template<typename ReceiverConfigurationsT = Aws::Vector<ReceiverConfiguration>>
+    ProtectedQuerySummary& WithReceiverConfigurations(ReceiverConfigurationsT&& value) { SetReceiverConfigurations(std::forward<ReceiverConfigurationsT>(value)); return *this;}
+    template<typename ReceiverConfigurationsT = ReceiverConfiguration>
+    ProtectedQuerySummary& AddReceiverConfigurations(ReceiverConfigurationsT&& value) { m_receiverConfigurationsHasBeenSet = true; m_receiverConfigurations.emplace_back(std::forward<ReceiverConfigurationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -132,10 +124,10 @@ namespace Model
     Aws::String m_membershipArn;
     bool m_membershipArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    ProtectedQueryStatus m_status;
+    ProtectedQueryStatus m_status{ProtectedQueryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<ReceiverConfiguration> m_receiverConfigurations;

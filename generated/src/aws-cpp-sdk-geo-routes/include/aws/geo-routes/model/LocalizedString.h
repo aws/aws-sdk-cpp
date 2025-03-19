@@ -31,7 +31,7 @@ namespace Model
   class LocalizedString
   {
   public:
-    AWS_GEOROUTES_API LocalizedString();
+    AWS_GEOROUTES_API LocalizedString() = default;
     AWS_GEOROUTES_API LocalizedString(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API LocalizedString& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * The request uses the regional default as the fallback if the requested language
      * can't be provided.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline LocalizedString& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline LocalizedString& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline LocalizedString& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    LocalizedString& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the localized string.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline LocalizedString& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline LocalizedString& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline LocalizedString& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    LocalizedString& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

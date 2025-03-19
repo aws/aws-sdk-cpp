@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeServerlessCachesResult::DescribeServerlessCachesResult()
-{
-}
-
 DescribeServerlessCachesResult::DescribeServerlessCachesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeServerlessCachesResult& DescribeServerlessCachesResult::operator =(const
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode serverlessCachesNode = resultNode.FirstChild("ServerlessCaches");
     if(!serverlessCachesNode.IsNull())
     {
       XmlNode serverlessCachesMember = serverlessCachesNode.FirstChild("member");
+      m_serverlessCachesHasBeenSet = !serverlessCachesMember.IsNull();
       while(!serverlessCachesMember.IsNull())
       {
         m_serverlessCaches.push_back(serverlessCachesMember);
         serverlessCachesMember = serverlessCachesMember.NextNode("member");
       }
 
+      m_serverlessCachesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeServerlessCachesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

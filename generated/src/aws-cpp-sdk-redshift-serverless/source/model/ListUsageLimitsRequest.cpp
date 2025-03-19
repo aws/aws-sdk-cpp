@@ -12,16 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListUsageLimitsRequest::ListUsageLimitsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_usageType(UsageLimitUsageType::NOT_SET),
-    m_usageTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListUsageLimitsRequest::SerializePayload() const
 {
   JsonValue payload;

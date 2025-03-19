@@ -31,7 +31,7 @@ namespace Model
   class RecipientDetail
   {
   public:
-    AWS_IOTEVENTS_API RecipientDetail();
+    AWS_IOTEVENTS_API RecipientDetail() = default;
     AWS_IOTEVENTS_API RecipientDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API RecipientDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
      */
-    inline const SSOIdentity& GetSsoIdentity() const{ return m_ssoIdentity; }
+    inline const SSOIdentity& GetSsoIdentity() const { return m_ssoIdentity; }
     inline bool SsoIdentityHasBeenSet() const { return m_ssoIdentityHasBeenSet; }
-    inline void SetSsoIdentity(const SSOIdentity& value) { m_ssoIdentityHasBeenSet = true; m_ssoIdentity = value; }
-    inline void SetSsoIdentity(SSOIdentity&& value) { m_ssoIdentityHasBeenSet = true; m_ssoIdentity = std::move(value); }
-    inline RecipientDetail& WithSsoIdentity(const SSOIdentity& value) { SetSsoIdentity(value); return *this;}
-    inline RecipientDetail& WithSsoIdentity(SSOIdentity&& value) { SetSsoIdentity(std::move(value)); return *this;}
+    template<typename SsoIdentityT = SSOIdentity>
+    void SetSsoIdentity(SsoIdentityT&& value) { m_ssoIdentityHasBeenSet = true; m_ssoIdentity = std::forward<SsoIdentityT>(value); }
+    template<typename SsoIdentityT = SSOIdentity>
+    RecipientDetail& WithSsoIdentity(SsoIdentityT&& value) { SetSsoIdentity(std::forward<SsoIdentityT>(value)); return *this;}
     ///@}
   private:
 

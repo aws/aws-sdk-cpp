@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSavingsPlansUtilizationDetailsResult::GetSavingsPlansUtilizationDetailsResult()
-{
-}
-
 GetSavingsPlansUtilizationDetailsResult::GetSavingsPlansUtilizationDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,32 +32,30 @@ GetSavingsPlansUtilizationDetailsResult& GetSavingsPlansUtilizationDetailsResult
     {
       m_savingsPlansUtilizationDetails.push_back(savingsPlansUtilizationDetailsJsonList[savingsPlansUtilizationDetailsIndex].AsObject());
     }
+    m_savingsPlansUtilizationDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetObject("Total");
-
+    m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimePeriod"))
   {
     m_timePeriod = jsonValue.GetObject("TimePeriod");
-
+    m_timePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

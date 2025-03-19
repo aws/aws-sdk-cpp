@@ -12,11 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProvisionedCapacityRequest::ListProvisionedCapacityRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String ListProvisionedCapacityRequest::SerializePayload() const
 {
   return {};

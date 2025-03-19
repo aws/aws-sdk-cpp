@@ -12,16 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAppVersionsRequest::ListAppVersionsRequest() : 
-    m_appArnHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String ListAppVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

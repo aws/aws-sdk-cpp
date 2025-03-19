@@ -26,7 +26,7 @@ namespace Model
   class GetPropertygraphStreamRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API GetPropertygraphStreamRequest();
+    AWS_NEPTUNEDATA_API GetPropertygraphStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,7 +50,7 @@ namespace Model
      * reached.</p> <p>The range for <code>limit</code> is 1 to 100,000, with a default
      * of 10.</p>
      */
-    inline long long GetLimit() const{ return m_limit; }
+    inline long long GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(long long value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetPropertygraphStreamRequest& WithLimit(long long value) { SetLimit(value); return *this;}
@@ -71,12 +71,10 @@ namespace Model
      * which is the latest unexpired (not yet deleted) record in the change-log
      * stream.</p> </li> </ul>
      */
-    inline const IteratorType& GetIteratorType() const{ return m_iteratorType; }
+    inline IteratorType GetIteratorType() const { return m_iteratorType; }
     inline bool IteratorTypeHasBeenSet() const { return m_iteratorTypeHasBeenSet; }
-    inline void SetIteratorType(const IteratorType& value) { m_iteratorTypeHasBeenSet = true; m_iteratorType = value; }
-    inline void SetIteratorType(IteratorType&& value) { m_iteratorTypeHasBeenSet = true; m_iteratorType = std::move(value); }
-    inline GetPropertygraphStreamRequest& WithIteratorType(const IteratorType& value) { SetIteratorType(value); return *this;}
-    inline GetPropertygraphStreamRequest& WithIteratorType(IteratorType&& value) { SetIteratorType(std::move(value)); return *this;}
+    inline void SetIteratorType(IteratorType value) { m_iteratorTypeHasBeenSet = true; m_iteratorType = value; }
+    inline GetPropertygraphStreamRequest& WithIteratorType(IteratorType value) { SetIteratorType(value); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +85,7 @@ namespace Model
      * ignored when <code>iteratorType</code> is <code>TRIM_HORIZON</code> or
      * <code>LATEST</code>.</p>
      */
-    inline long long GetCommitNum() const{ return m_commitNum; }
+    inline long long GetCommitNum() const { return m_commitNum; }
     inline bool CommitNumHasBeenSet() const { return m_commitNumHasBeenSet; }
     inline void SetCommitNum(long long value) { m_commitNumHasBeenSet = true; m_commitNum = value; }
     inline GetPropertygraphStreamRequest& WithCommitNum(long long value) { SetCommitNum(value); return *this;}
@@ -98,7 +96,7 @@ namespace Model
      * <p>The operation sequence number within the specified commit to start reading
      * from in the change-log stream data. The default is <code>1</code>.</p>
      */
-    inline long long GetOpNum() const{ return m_opNum; }
+    inline long long GetOpNum() const { return m_opNum; }
     inline bool OpNumHasBeenSet() const { return m_opNumHasBeenSet; }
     inline void SetOpNum(long long value) { m_opNumHasBeenSet = true; m_opNum = value; }
     inline GetPropertygraphStreamRequest& WithOpNum(long long value) { SetOpNum(value); return *this;}
@@ -108,28 +106,26 @@ namespace Model
     /**
      * <p>If set to TRUE, Neptune compresses the response using gzip encoding.</p>
      */
-    inline const Encoding& GetEncoding() const{ return m_encoding; }
+    inline Encoding GetEncoding() const { return m_encoding; }
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-    inline void SetEncoding(const Encoding& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-    inline void SetEncoding(Encoding&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-    inline GetPropertygraphStreamRequest& WithEncoding(const Encoding& value) { SetEncoding(value); return *this;}
-    inline GetPropertygraphStreamRequest& WithEncoding(Encoding&& value) { SetEncoding(std::move(value)); return *this;}
+    inline void SetEncoding(Encoding value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline GetPropertygraphStreamRequest& WithEncoding(Encoding value) { SetEncoding(value); return *this;}
     ///@}
   private:
 
-    long long m_limit;
+    long long m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    IteratorType m_iteratorType;
+    IteratorType m_iteratorType{IteratorType::NOT_SET};
     bool m_iteratorTypeHasBeenSet = false;
 
-    long long m_commitNum;
+    long long m_commitNum{0};
     bool m_commitNumHasBeenSet = false;
 
-    long long m_opNum;
+    long long m_opNum{0};
     bool m_opNumHasBeenSet = false;
 
-    Encoding m_encoding;
+    Encoding m_encoding{Encoding::NOT_SET};
     bool m_encodingHasBeenSet = false;
   };
 

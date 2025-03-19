@@ -12,12 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutHubConfigurationRequest::PutHubConfigurationRequest() : 
-    m_hubTokenTimerExpirySettingInSeconds(0),
-    m_hubTokenTimerExpirySettingInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String PutHubConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

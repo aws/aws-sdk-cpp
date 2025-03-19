@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-RestrictedPeriods::RestrictedPeriods() : 
-    m_restrictedPeriodListHasBeenSet(false)
-{
-}
-
 RestrictedPeriods::RestrictedPeriods(JsonView jsonValue)
-  : RestrictedPeriods()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RestrictedPeriods& RestrictedPeriods::operator =(JsonView jsonValue)
     }
     m_restrictedPeriodListHasBeenSet = true;
   }
-
   return *this;
 }
 

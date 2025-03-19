@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-NoManagementPreference::NoManagementPreference() : 
-    m_targetDestinationHasBeenSet(false)
-{
-}
-
 NoManagementPreference::NoManagementPreference(JsonView jsonValue)
-  : NoManagementPreference()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ NoManagementPreference& NoManagementPreference::operator =(JsonView jsonValue)
     }
     m_targetDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

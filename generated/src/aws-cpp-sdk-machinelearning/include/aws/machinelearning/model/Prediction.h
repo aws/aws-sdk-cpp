@@ -42,7 +42,7 @@ namespace Model
   class Prediction
   {
   public:
-    AWS_MACHINELEARNING_API Prediction();
+    AWS_MACHINELEARNING_API Prediction() = default;
     AWS_MACHINELEARNING_API Prediction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Prediction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,21 +53,19 @@ namespace Model
      * <p>The prediction label for either a <code>BINARY</code> or
      * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetPredictedLabel() const{ return m_predictedLabel; }
+    inline const Aws::String& GetPredictedLabel() const { return m_predictedLabel; }
     inline bool PredictedLabelHasBeenSet() const { return m_predictedLabelHasBeenSet; }
-    inline void SetPredictedLabel(const Aws::String& value) { m_predictedLabelHasBeenSet = true; m_predictedLabel = value; }
-    inline void SetPredictedLabel(Aws::String&& value) { m_predictedLabelHasBeenSet = true; m_predictedLabel = std::move(value); }
-    inline void SetPredictedLabel(const char* value) { m_predictedLabelHasBeenSet = true; m_predictedLabel.assign(value); }
-    inline Prediction& WithPredictedLabel(const Aws::String& value) { SetPredictedLabel(value); return *this;}
-    inline Prediction& WithPredictedLabel(Aws::String&& value) { SetPredictedLabel(std::move(value)); return *this;}
-    inline Prediction& WithPredictedLabel(const char* value) { SetPredictedLabel(value); return *this;}
+    template<typename PredictedLabelT = Aws::String>
+    void SetPredictedLabel(PredictedLabelT&& value) { m_predictedLabelHasBeenSet = true; m_predictedLabel = std::forward<PredictedLabelT>(value); }
+    template<typename PredictedLabelT = Aws::String>
+    Prediction& WithPredictedLabel(PredictedLabelT&& value) { SetPredictedLabel(std::forward<PredictedLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prediction value for <code>REGRESSION</code> <code>MLModel</code>.</p>
      */
-    inline double GetPredictedValue() const{ return m_predictedValue; }
+    inline double GetPredictedValue() const { return m_predictedValue; }
     inline bool PredictedValueHasBeenSet() const { return m_predictedValueHasBeenSet; }
     inline void SetPredictedValue(double value) { m_predictedValueHasBeenSet = true; m_predictedValue = value; }
     inline Prediction& WithPredictedValue(double value) { SetPredictedValue(value); return *this;}
@@ -75,38 +73,35 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, double>& GetPredictedScores() const{ return m_predictedScores; }
+    inline const Aws::Map<Aws::String, double>& GetPredictedScores() const { return m_predictedScores; }
     inline bool PredictedScoresHasBeenSet() const { return m_predictedScoresHasBeenSet; }
-    inline void SetPredictedScores(const Aws::Map<Aws::String, double>& value) { m_predictedScoresHasBeenSet = true; m_predictedScores = value; }
-    inline void SetPredictedScores(Aws::Map<Aws::String, double>&& value) { m_predictedScoresHasBeenSet = true; m_predictedScores = std::move(value); }
-    inline Prediction& WithPredictedScores(const Aws::Map<Aws::String, double>& value) { SetPredictedScores(value); return *this;}
-    inline Prediction& WithPredictedScores(Aws::Map<Aws::String, double>&& value) { SetPredictedScores(std::move(value)); return *this;}
-    inline Prediction& AddPredictedScores(const Aws::String& key, double value) { m_predictedScoresHasBeenSet = true; m_predictedScores.emplace(key, value); return *this; }
-    inline Prediction& AddPredictedScores(Aws::String&& key, double value) { m_predictedScoresHasBeenSet = true; m_predictedScores.emplace(std::move(key), value); return *this; }
-    inline Prediction& AddPredictedScores(const char* key, double value) { m_predictedScoresHasBeenSet = true; m_predictedScores.emplace(key, value); return *this; }
+    template<typename PredictedScoresT = Aws::Map<Aws::String, double>>
+    void SetPredictedScores(PredictedScoresT&& value) { m_predictedScoresHasBeenSet = true; m_predictedScores = std::forward<PredictedScoresT>(value); }
+    template<typename PredictedScoresT = Aws::Map<Aws::String, double>>
+    Prediction& WithPredictedScores(PredictedScoresT&& value) { SetPredictedScores(std::forward<PredictedScoresT>(value)); return *this;}
+    inline Prediction& AddPredictedScores(Aws::String key, double value) {
+      m_predictedScoresHasBeenSet = true; m_predictedScores.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<DetailsAttributes, Aws::String>& GetDetails() const{ return m_details; }
+    inline const Aws::Map<DetailsAttributes, Aws::String>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Map<DetailsAttributes, Aws::String>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Map<DetailsAttributes, Aws::String>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline Prediction& WithDetails(const Aws::Map<DetailsAttributes, Aws::String>& value) { SetDetails(value); return *this;}
-    inline Prediction& WithDetails(Aws::Map<DetailsAttributes, Aws::String>&& value) { SetDetails(std::move(value)); return *this;}
-    inline Prediction& AddDetails(const DetailsAttributes& key, const Aws::String& value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
-    inline Prediction& AddDetails(DetailsAttributes&& key, const Aws::String& value) { m_detailsHasBeenSet = true; m_details.emplace(std::move(key), value); return *this; }
-    inline Prediction& AddDetails(const DetailsAttributes& key, Aws::String&& value) { m_detailsHasBeenSet = true; m_details.emplace(key, std::move(value)); return *this; }
-    inline Prediction& AddDetails(DetailsAttributes&& key, Aws::String&& value) { m_detailsHasBeenSet = true; m_details.emplace(std::move(key), std::move(value)); return *this; }
-    inline Prediction& AddDetails(DetailsAttributes&& key, const char* value) { m_detailsHasBeenSet = true; m_details.emplace(std::move(key), value); return *this; }
-    inline Prediction& AddDetails(const DetailsAttributes& key, const char* value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
+    template<typename DetailsT = Aws::Map<DetailsAttributes, Aws::String>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Map<DetailsAttributes, Aws::String>>
+    Prediction& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    inline Prediction& AddDetails(DetailsAttributes key, Aws::String value) {
+      m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_predictedLabel;
     bool m_predictedLabelHasBeenSet = false;
 
-    double m_predictedValue;
+    double m_predictedValue{0.0};
     bool m_predictedValueHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_predictedScores;

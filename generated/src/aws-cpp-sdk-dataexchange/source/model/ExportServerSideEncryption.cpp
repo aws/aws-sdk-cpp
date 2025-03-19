@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ExportServerSideEncryption::ExportServerSideEncryption() : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_type(ServerSideEncryptionTypes::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ExportServerSideEncryption::ExportServerSideEncryption(JsonView jsonValue)
-  : ExportServerSideEncryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExportServerSideEncryption& ExportServerSideEncryption::operator =(JsonView json
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ServerSideEncryptionTypesMapper::GetServerSideEncryptionTypesForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

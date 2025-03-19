@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RerankResult::RerankResult() : 
-    m_documentHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_relevanceScore(0.0),
-    m_relevanceScoreHasBeenSet(false)
-{
-}
-
 RerankResult::RerankResult(JsonView jsonValue)
-  : RerankResult()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RerankResult& RerankResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetInteger("index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relevanceScore"))
   {
     m_relevanceScore = jsonValue.GetDouble("relevanceScore");
-
     m_relevanceScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

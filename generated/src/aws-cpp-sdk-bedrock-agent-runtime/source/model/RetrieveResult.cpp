@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetrieveResult::RetrieveResult() : 
-    m_guardrailAction(GuadrailAction::NOT_SET)
-{
-}
-
 RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RetrieveResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("guardrailAction"))
   {
     m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));
-
+    m_guardrailActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrievalResults"))
   {
     Aws::Utils::Array<JsonView> retrievalResultsJsonList = jsonValue.GetArray("retrievalResults");
@@ -50,14 +42,15 @@ RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_retrievalResults.push_back(retrievalResultsJsonList[retrievalResultsIndex].AsObject());
     }
+    m_retrievalResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

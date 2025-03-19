@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PerformanceFactorReferenceRequest::PerformanceFactorReferenceRequest() : 
-    m_instanceFamilyHasBeenSet(false)
-{
-}
-
 PerformanceFactorReferenceRequest::PerformanceFactorReferenceRequest(const XmlNode& xmlNode)
-  : PerformanceFactorReferenceRequest()
 {
   *this = xmlNode;
 }

@@ -18,18 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-DataIngestionJobSummary::DataIngestionJobSummary() : 
-    m_jobIdHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_ingestionInputConfigurationHasBeenSet(false),
-    m_status(IngestionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DataIngestionJobSummary::DataIngestionJobSummary(JsonView jsonValue)
-  : DataIngestionJobSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DataIngestionJobSummary& DataIngestionJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetName"))
   {
     m_datasetName = jsonValue.GetString("DatasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionInputConfiguration"))
   {
     m_ingestionInputConfiguration = jsonValue.GetObject("IngestionInputConfiguration");
-
     m_ingestionInputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IngestionJobStatusMapper::GetIngestionJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -43,7 +43,7 @@ namespace Model
   class Condition
   {
   public:
-    AWS_DYNAMODB_API Condition();
+    AWS_DYNAMODB_API Condition() = default;
     AWS_DYNAMODB_API Condition(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,14 +61,14 @@ namespace Model
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
      * compares binary values.</p>
      */
-    inline const Aws::Vector<AttributeValue>& GetAttributeValueList() const{ return m_attributeValueList; }
+    inline const Aws::Vector<AttributeValue>& GetAttributeValueList() const { return m_attributeValueList; }
     inline bool AttributeValueListHasBeenSet() const { return m_attributeValueListHasBeenSet; }
-    inline void SetAttributeValueList(const Aws::Vector<AttributeValue>& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = value; }
-    inline void SetAttributeValueList(Aws::Vector<AttributeValue>&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = std::move(value); }
-    inline Condition& WithAttributeValueList(const Aws::Vector<AttributeValue>& value) { SetAttributeValueList(value); return *this;}
-    inline Condition& WithAttributeValueList(Aws::Vector<AttributeValue>&& value) { SetAttributeValueList(std::move(value)); return *this;}
-    inline Condition& AddAttributeValueList(const AttributeValue& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(value); return *this; }
-    inline Condition& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(std::move(value)); return *this; }
+    template<typename AttributeValueListT = Aws::Vector<AttributeValue>>
+    void SetAttributeValueList(AttributeValueListT&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList = std::forward<AttributeValueListT>(value); }
+    template<typename AttributeValueListT = Aws::Vector<AttributeValue>>
+    Condition& WithAttributeValueList(AttributeValueListT&& value) { SetAttributeValueList(std::forward<AttributeValueListT>(value)); return *this;}
+    template<typename AttributeValueListT = AttributeValue>
+    Condition& AddAttributeValueList(AttributeValueListT&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.emplace_back(std::forward<AttributeValueListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -181,19 +181,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline Condition& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline Condition& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline Condition& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<AttributeValue> m_attributeValueList;
     bool m_attributeValueListHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
   };
 

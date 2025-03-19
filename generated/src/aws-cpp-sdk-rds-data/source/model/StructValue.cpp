@@ -18,13 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-StructValue::StructValue() : 
-    m_attributesHasBeenSet(false)
-{
-}
-
 StructValue::StructValue(JsonView jsonValue)
-  : StructValue()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ StructValue& StructValue::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

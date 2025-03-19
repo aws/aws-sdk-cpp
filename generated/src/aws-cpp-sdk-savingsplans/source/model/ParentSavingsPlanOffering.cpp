@@ -18,22 +18,7 @@ namespace SavingsPlans
 namespace Model
 {
 
-ParentSavingsPlanOffering::ParentSavingsPlanOffering() : 
-    m_offeringIdHasBeenSet(false),
-    m_paymentOption(SavingsPlanPaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_planType(SavingsPlanType::NOT_SET),
-    m_planTypeHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_planDescriptionHasBeenSet(false)
-{
-}
-
 ParentSavingsPlanOffering::ParentSavingsPlanOffering(JsonView jsonValue)
-  : ParentSavingsPlanOffering()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ParentSavingsPlanOffering& ParentSavingsPlanOffering::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("offeringId"))
   {
     m_offeringId = jsonValue.GetString("offeringId");
-
     m_offeringIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentOption"))
   {
     m_paymentOption = SavingsPlanPaymentOptionMapper::GetSavingsPlanPaymentOptionForName(jsonValue.GetString("paymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("planType"))
   {
     m_planType = SavingsPlanTypeMapper::GetSavingsPlanTypeForName(jsonValue.GetString("planType"));
-
     m_planTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationSeconds"))
   {
     m_durationSeconds = jsonValue.GetInt64("durationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("planDescription"))
   {
     m_planDescription = jsonValue.GetString("planDescription");
-
     m_planDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

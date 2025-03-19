@@ -12,11 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceSettingsRequest::UpdateServiceSettingsRequest() : 
-    m_explorerEnablingRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

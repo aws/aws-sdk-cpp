@@ -30,7 +30,7 @@ namespace Model
   class AssetBundleImportJobOverrideValidationStrategy
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy();
+    AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobOverrideValidationStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>A Boolean value that indicates whether to import all analyses and dashboards
      * under strict or lenient mode.</p>
      */
-    inline bool GetStrictModeForAllResources() const{ return m_strictModeForAllResources; }
+    inline bool GetStrictModeForAllResources() const { return m_strictModeForAllResources; }
     inline bool StrictModeForAllResourcesHasBeenSet() const { return m_strictModeForAllResourcesHasBeenSet; }
     inline void SetStrictModeForAllResources(bool value) { m_strictModeForAllResourcesHasBeenSet = true; m_strictModeForAllResources = value; }
     inline AssetBundleImportJobOverrideValidationStrategy& WithStrictModeForAllResources(bool value) { SetStrictModeForAllResources(value); return *this;}
     ///@}
   private:
 
-    bool m_strictModeForAllResources;
+    bool m_strictModeForAllResources{false};
     bool m_strictModeForAllResourcesHasBeenSet = false;
   };
 

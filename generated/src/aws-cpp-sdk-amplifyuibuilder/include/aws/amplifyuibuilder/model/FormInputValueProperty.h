@@ -35,7 +35,7 @@ namespace Model
   class FormInputValueProperty
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormInputValueProperty();
+    AWS_AMPLIFYUIBUILDER_API FormInputValueProperty() = default;
     AWS_AMPLIFYUIBUILDER_API FormInputValueProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormInputValueProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The value to assign to the input field.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline FormInputValueProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline FormInputValueProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline FormInputValueProperty& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    FormInputValueProperty& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information to bind fields to data at runtime.</p>
      */
-    inline const FormInputValuePropertyBindingProperties& GetBindingProperties() const{ return m_bindingProperties; }
+    inline const FormInputValuePropertyBindingProperties& GetBindingProperties() const { return m_bindingProperties; }
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
-    inline void SetBindingProperties(const FormInputValuePropertyBindingProperties& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
-    inline void SetBindingProperties(FormInputValuePropertyBindingProperties&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
-    inline FormInputValueProperty& WithBindingProperties(const FormInputValuePropertyBindingProperties& value) { SetBindingProperties(value); return *this;}
-    inline FormInputValueProperty& WithBindingProperties(FormInputValuePropertyBindingProperties&& value) { SetBindingProperties(std::move(value)); return *this;}
+    template<typename BindingPropertiesT = FormInputValuePropertyBindingProperties>
+    void SetBindingProperties(BindingPropertiesT&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::forward<BindingPropertiesT>(value); }
+    template<typename BindingPropertiesT = FormInputValuePropertyBindingProperties>
+    FormInputValueProperty& WithBindingProperties(BindingPropertiesT&& value) { SetBindingProperties(std::forward<BindingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,14 @@ namespace Model
      * <p>A list of form properties to concatenate to create the value to assign to
      * this field property.</p>
      */
-    inline const Aws::Vector<FormInputValueProperty>& GetConcat() const{ return m_concat; }
+    inline const Aws::Vector<FormInputValueProperty>& GetConcat() const { return m_concat; }
     inline bool ConcatHasBeenSet() const { return m_concatHasBeenSet; }
-    inline void SetConcat(const Aws::Vector<FormInputValueProperty>& value) { m_concatHasBeenSet = true; m_concat = value; }
-    inline void SetConcat(Aws::Vector<FormInputValueProperty>&& value) { m_concatHasBeenSet = true; m_concat = std::move(value); }
-    inline FormInputValueProperty& WithConcat(const Aws::Vector<FormInputValueProperty>& value) { SetConcat(value); return *this;}
-    inline FormInputValueProperty& WithConcat(Aws::Vector<FormInputValueProperty>&& value) { SetConcat(std::move(value)); return *this;}
-    inline FormInputValueProperty& AddConcat(const FormInputValueProperty& value) { m_concatHasBeenSet = true; m_concat.push_back(value); return *this; }
-    inline FormInputValueProperty& AddConcat(FormInputValueProperty&& value) { m_concatHasBeenSet = true; m_concat.push_back(std::move(value)); return *this; }
+    template<typename ConcatT = Aws::Vector<FormInputValueProperty>>
+    void SetConcat(ConcatT&& value) { m_concatHasBeenSet = true; m_concat = std::forward<ConcatT>(value); }
+    template<typename ConcatT = Aws::Vector<FormInputValueProperty>>
+    FormInputValueProperty& WithConcat(ConcatT&& value) { SetConcat(std::forward<ConcatT>(value)); return *this;}
+    template<typename ConcatT = FormInputValueProperty>
+    FormInputValueProperty& AddConcat(ConcatT&& value) { m_concatHasBeenSet = true; m_concat.emplace_back(std::forward<ConcatT>(value)); return *this; }
     ///@}
   private:
 

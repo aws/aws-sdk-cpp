@@ -18,19 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaStreamSink::MediaStreamSink() : 
-    m_sinkArnHasBeenSet(false),
-    m_sinkType(MediaStreamPipelineSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_reservedStreamCapacity(0),
-    m_reservedStreamCapacityHasBeenSet(false),
-    m_mediaStreamType(MediaStreamType::NOT_SET),
-    m_mediaStreamTypeHasBeenSet(false)
-{
-}
-
 MediaStreamSink::MediaStreamSink(JsonView jsonValue)
-  : MediaStreamSink()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ MediaStreamSink& MediaStreamSink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SinkArn"))
   {
     m_sinkArn = jsonValue.GetString("SinkArn");
-
     m_sinkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SinkType"))
   {
     m_sinkType = MediaStreamPipelineSinkTypeMapper::GetMediaStreamPipelineSinkTypeForName(jsonValue.GetString("SinkType"));
-
     m_sinkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedStreamCapacity"))
   {
     m_reservedStreamCapacity = jsonValue.GetInteger("ReservedStreamCapacity");
-
     m_reservedStreamCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaStreamType"))
   {
     m_mediaStreamType = MediaStreamTypeMapper::GetMediaStreamTypeForName(jsonValue.GetString("MediaStreamType"));
-
     m_mediaStreamTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

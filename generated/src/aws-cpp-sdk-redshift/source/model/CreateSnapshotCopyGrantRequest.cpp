@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateSnapshotCopyGrantRequest::CreateSnapshotCopyGrantRequest() : 
-    m_snapshotCopyGrantNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotCopyGrantRequest::SerializePayload() const
 {
   Aws::StringStream ss;

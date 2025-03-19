@@ -28,7 +28,7 @@ namespace Model
   class ExecuteOpenCypherQueryResult
   {
   public:
-    AWS_NEPTUNEDATA_API ExecuteOpenCypherQueryResult();
+    AWS_NEPTUNEDATA_API ExecuteOpenCypherQueryResult() = default;
     AWS_NEPTUNEDATA_API ExecuteOpenCypherQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API ExecuteOpenCypherQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The openCypherquery results.</p>
      */
-    inline Aws::Utils::DocumentView GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Utils::Document& value) { m_results = value; }
-    inline void SetResults(Aws::Utils::Document&& value) { m_results = std::move(value); }
-    inline ExecuteOpenCypherQueryResult& WithResults(const Aws::Utils::Document& value) { SetResults(value); return *this;}
-    inline ExecuteOpenCypherQueryResult& WithResults(Aws::Utils::Document&& value) { SetResults(std::move(value)); return *this;}
+    inline Aws::Utils::DocumentView GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Utils::Document>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Utils::Document>
+    ExecuteOpenCypherQueryResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExecuteOpenCypherQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExecuteOpenCypherQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExecuteOpenCypherQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExecuteOpenCypherQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Utils::Document m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVpcPeeringAuthorizationsRequest::DescribeVpcPeeringAuthorizationsRequest()
-{
-}
-
 Aws::String DescribeVpcPeeringAuthorizationsRequest::SerializePayload() const
 {
   return "{}";

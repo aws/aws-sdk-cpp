@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConfigurationSetDoesNotExistException::ConfigurationSetDoesNotExistException() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 ConfigurationSetDoesNotExistException::ConfigurationSetDoesNotExistException(const XmlNode& xmlNode)
-  : ConfigurationSetDoesNotExistException()
 {
   *this = xmlNode;
 }

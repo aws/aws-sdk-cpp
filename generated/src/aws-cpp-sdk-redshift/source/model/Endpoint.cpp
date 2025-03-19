@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcEndpointsHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(const XmlNode& xmlNode)
-  : Endpoint()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     if(!vpcEndpointsNode.IsNull())
     {
       XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("VpcEndpoint");
+      m_vpcEndpointsHasBeenSet = !vpcEndpointsMember.IsNull();
       while(!vpcEndpointsMember.IsNull())
       {
         m_vpcEndpoints.push_back(vpcEndpointsMember);

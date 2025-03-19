@@ -33,7 +33,7 @@ namespace Model
   class MetricSpecification
   {
   public:
-    AWS_SAGEMAKER_API MetricSpecification();
+    AWS_SAGEMAKER_API MetricSpecification() = default;
     AWS_SAGEMAKER_API MetricSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Information about a predefined metric.</p>
      */
-    inline const PredefinedMetricSpecification& GetPredefined() const{ return m_predefined; }
+    inline const PredefinedMetricSpecification& GetPredefined() const { return m_predefined; }
     inline bool PredefinedHasBeenSet() const { return m_predefinedHasBeenSet; }
-    inline void SetPredefined(const PredefinedMetricSpecification& value) { m_predefinedHasBeenSet = true; m_predefined = value; }
-    inline void SetPredefined(PredefinedMetricSpecification&& value) { m_predefinedHasBeenSet = true; m_predefined = std::move(value); }
-    inline MetricSpecification& WithPredefined(const PredefinedMetricSpecification& value) { SetPredefined(value); return *this;}
-    inline MetricSpecification& WithPredefined(PredefinedMetricSpecification&& value) { SetPredefined(std::move(value)); return *this;}
+    template<typename PredefinedT = PredefinedMetricSpecification>
+    void SetPredefined(PredefinedT&& value) { m_predefinedHasBeenSet = true; m_predefined = std::forward<PredefinedT>(value); }
+    template<typename PredefinedT = PredefinedMetricSpecification>
+    MetricSpecification& WithPredefined(PredefinedT&& value) { SetPredefined(std::forward<PredefinedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a customized metric.</p>
      */
-    inline const CustomizedMetricSpecification& GetCustomized() const{ return m_customized; }
+    inline const CustomizedMetricSpecification& GetCustomized() const { return m_customized; }
     inline bool CustomizedHasBeenSet() const { return m_customizedHasBeenSet; }
-    inline void SetCustomized(const CustomizedMetricSpecification& value) { m_customizedHasBeenSet = true; m_customized = value; }
-    inline void SetCustomized(CustomizedMetricSpecification&& value) { m_customizedHasBeenSet = true; m_customized = std::move(value); }
-    inline MetricSpecification& WithCustomized(const CustomizedMetricSpecification& value) { SetCustomized(value); return *this;}
-    inline MetricSpecification& WithCustomized(CustomizedMetricSpecification&& value) { SetCustomized(std::move(value)); return *this;}
+    template<typename CustomizedT = CustomizedMetricSpecification>
+    void SetCustomized(CustomizedT&& value) { m_customizedHasBeenSet = true; m_customized = std::forward<CustomizedT>(value); }
+    template<typename CustomizedT = CustomizedMetricSpecification>
+    MetricSpecification& WithCustomized(CustomizedT&& value) { SetCustomized(std::forward<CustomizedT>(value)); return *this;}
     ///@}
   private:
 

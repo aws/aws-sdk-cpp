@@ -12,12 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateExportRequest::UpdateExportRequest() : 
-    m_exportIdHasBeenSet(false),
-    m_filePasswordHasBeenSet(false)
-{
-}
-
 Aws::String UpdateExportRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class ResetParameterGroupRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API ResetParameterGroupRequest();
+    AWS_MEMORYDB_API ResetParameterGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the parameter group to reset.</p>
      */
-    inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+    inline const Aws::String& GetParameterGroupName() const { return m_parameterGroupName; }
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-    inline ResetParameterGroupRequest& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-    inline ResetParameterGroupRequest& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-    inline ResetParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    template<typename ParameterGroupNameT = Aws::String>
+    void SetParameterGroupName(ParameterGroupNameT&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::forward<ParameterGroupNameT>(value); }
+    template<typename ParameterGroupNameT = Aws::String>
+    ResetParameterGroupRequest& WithParameterGroupName(ParameterGroupNameT&& value) { SetParameterGroupName(std::forward<ParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * values. If false, only the parameters listed by ParameterNames are reset to
      * their default values.</p>
      */
-    inline bool GetAllParameters() const{ return m_allParameters; }
+    inline bool GetAllParameters() const { return m_allParameters; }
     inline bool AllParametersHasBeenSet() const { return m_allParametersHasBeenSet; }
     inline void SetAllParameters(bool value) { m_allParametersHasBeenSet = true; m_allParameters = value; }
     inline ResetParameterGroupRequest& WithAllParameters(bool value) { SetAllParameters(value); return *this;}
@@ -67,22 +65,21 @@ namespace Model
      * AllParameters is true, do not use ParameterNames. If AllParameters is false, you
      * must specify the name of at least one parameter to reset.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetParameterNames() const{ return m_parameterNames; }
+    inline const Aws::Vector<Aws::String>& GetParameterNames() const { return m_parameterNames; }
     inline bool ParameterNamesHasBeenSet() const { return m_parameterNamesHasBeenSet; }
-    inline void SetParameterNames(const Aws::Vector<Aws::String>& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = value; }
-    inline void SetParameterNames(Aws::Vector<Aws::String>&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = std::move(value); }
-    inline ResetParameterGroupRequest& WithParameterNames(const Aws::Vector<Aws::String>& value) { SetParameterNames(value); return *this;}
-    inline ResetParameterGroupRequest& WithParameterNames(Aws::Vector<Aws::String>&& value) { SetParameterNames(std::move(value)); return *this;}
-    inline ResetParameterGroupRequest& AddParameterNames(const Aws::String& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(value); return *this; }
-    inline ResetParameterGroupRequest& AddParameterNames(Aws::String&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(std::move(value)); return *this; }
-    inline ResetParameterGroupRequest& AddParameterNames(const char* value) { m_parameterNamesHasBeenSet = true; m_parameterNames.push_back(value); return *this; }
+    template<typename ParameterNamesT = Aws::Vector<Aws::String>>
+    void SetParameterNames(ParameterNamesT&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames = std::forward<ParameterNamesT>(value); }
+    template<typename ParameterNamesT = Aws::Vector<Aws::String>>
+    ResetParameterGroupRequest& WithParameterNames(ParameterNamesT&& value) { SetParameterNames(std::forward<ParameterNamesT>(value)); return *this;}
+    template<typename ParameterNamesT = Aws::String>
+    ResetParameterGroupRequest& AddParameterNames(ParameterNamesT&& value) { m_parameterNamesHasBeenSet = true; m_parameterNames.emplace_back(std::forward<ParameterNamesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet = false;
 
-    bool m_allParameters;
+    bool m_allParameters{false};
     bool m_allParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parameterNames;

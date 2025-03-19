@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RecordingMode::RecordingMode() : 
-    m_recordingFrequency(RecordingFrequency::NOT_SET),
-    m_recordingFrequencyHasBeenSet(false),
-    m_recordingModeOverridesHasBeenSet(false)
-{
-}
-
 RecordingMode::RecordingMode(JsonView jsonValue)
-  : RecordingMode()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RecordingMode& RecordingMode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recordingFrequency"))
   {
     m_recordingFrequency = RecordingFrequencyMapper::GetRecordingFrequencyForName(jsonValue.GetString("recordingFrequency"));
-
     m_recordingFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingModeOverrides"))
   {
     Aws::Utils::Array<JsonView> recordingModeOverridesJsonList = jsonValue.GetArray("recordingModeOverrides");
@@ -49,7 +39,6 @@ RecordingMode& RecordingMode::operator =(JsonView jsonValue)
     }
     m_recordingModeOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutModelInvocationLoggingConfigurationRequest::PutModelInvocationLoggingConfigurationRequest() : 
-    m_loggingConfigHasBeenSet(false)
-{
-}
-
 Aws::String PutModelInvocationLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

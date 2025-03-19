@@ -35,7 +35,7 @@ namespace Model
   class UserIdentity
   {
   public:
-    AWS_KAFKA_API UserIdentity();
+    AWS_KAFKA_API UserIdentity() = default;
     AWS_KAFKA_API UserIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * operation.</p>
          
      */
-    inline const UserIdentityType& GetType() const{ return m_type; }
+    inline UserIdentityType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const UserIdentityType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(UserIdentityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UserIdentity& WithType(const UserIdentityType& value) { SetType(value); return *this;}
-    inline UserIdentity& WithType(UserIdentityType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(UserIdentityType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UserIdentity& WithType(UserIdentityType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,18 +61,16 @@ namespace Model
      * operation.</p>
          
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline UserIdentity& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline UserIdentity& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline UserIdentity& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    UserIdentity& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
   private:
 
-    UserIdentityType m_type;
+    UserIdentityType m_type{UserIdentityType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_principalId;

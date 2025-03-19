@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ExecutionDetails::ExecutionDetails() : 
-    m_summaryHasBeenSet(false),
-    m_externalExecutionIdHasBeenSet(false),
-    m_percentComplete(0),
-    m_percentCompleteHasBeenSet(false)
-{
-}
-
 ExecutionDetails::ExecutionDetails(JsonView jsonValue)
-  : ExecutionDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExecutionDetails& ExecutionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalExecutionId"))
   {
     m_externalExecutionId = jsonValue.GetString("externalExecutionId");
-
     m_externalExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("percentComplete"))
   {
     m_percentComplete = jsonValue.GetInteger("percentComplete");
-
     m_percentCompleteHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ConnectionStatusResourceTypeEventConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration() = default;
     AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Connection status resource type event configuration object for enabling or
      * disabling LoRaWAN related event topics.</p>
      */
-    inline const LoRaWANConnectionStatusResourceTypeEventConfiguration& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANConnectionStatusResourceTypeEventConfiguration& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANConnectionStatusResourceTypeEventConfiguration& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANConnectionStatusResourceTypeEventConfiguration&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline ConnectionStatusResourceTypeEventConfiguration& WithLoRaWAN(const LoRaWANConnectionStatusResourceTypeEventConfiguration& value) { SetLoRaWAN(value); return *this;}
-    inline ConnectionStatusResourceTypeEventConfiguration& WithLoRaWAN(LoRaWANConnectionStatusResourceTypeEventConfiguration&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANConnectionStatusResourceTypeEventConfiguration>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANConnectionStatusResourceTypeEventConfiguration>
+    ConnectionStatusResourceTypeEventConfiguration& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
   private:
 

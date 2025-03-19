@@ -12,18 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContactRequest::CreateContactRequest() : 
-    m_aliasHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_type(ContactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_planHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateContactRequest::SerializePayload() const
 {
   JsonValue payload;

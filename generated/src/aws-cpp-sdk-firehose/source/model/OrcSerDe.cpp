@@ -18,31 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-OrcSerDe::OrcSerDe() : 
-    m_stripeSizeBytes(0),
-    m_stripeSizeBytesHasBeenSet(false),
-    m_blockSizeBytes(0),
-    m_blockSizeBytesHasBeenSet(false),
-    m_rowIndexStride(0),
-    m_rowIndexStrideHasBeenSet(false),
-    m_enablePadding(false),
-    m_enablePaddingHasBeenSet(false),
-    m_paddingTolerance(0.0),
-    m_paddingToleranceHasBeenSet(false),
-    m_compression(OrcCompression::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_bloomFilterColumnsHasBeenSet(false),
-    m_bloomFilterFalsePositiveProbability(0.0),
-    m_bloomFilterFalsePositiveProbabilityHasBeenSet(false),
-    m_dictionaryKeyThreshold(0.0),
-    m_dictionaryKeyThresholdHasBeenSet(false),
-    m_formatVersion(OrcFormatVersion::NOT_SET),
-    m_formatVersionHasBeenSet(false)
-{
-}
-
 OrcSerDe::OrcSerDe(JsonView jsonValue)
-  : OrcSerDe()
 {
   *this = jsonValue;
 }
@@ -52,45 +28,33 @@ OrcSerDe& OrcSerDe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StripeSizeBytes"))
   {
     m_stripeSizeBytes = jsonValue.GetInteger("StripeSizeBytes");
-
     m_stripeSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockSizeBytes"))
   {
     m_blockSizeBytes = jsonValue.GetInteger("BlockSizeBytes");
-
     m_blockSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowIndexStride"))
   {
     m_rowIndexStride = jsonValue.GetInteger("RowIndexStride");
-
     m_rowIndexStrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnablePadding"))
   {
     m_enablePadding = jsonValue.GetBool("EnablePadding");
-
     m_enablePaddingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaddingTolerance"))
   {
     m_paddingTolerance = jsonValue.GetDouble("PaddingTolerance");
-
     m_paddingToleranceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = OrcCompressionMapper::GetOrcCompressionForName(jsonValue.GetString("Compression"));
-
     m_compressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BloomFilterColumns"))
   {
     Aws::Utils::Array<JsonView> bloomFilterColumnsJsonList = jsonValue.GetArray("BloomFilterColumns");
@@ -100,28 +64,21 @@ OrcSerDe& OrcSerDe::operator =(JsonView jsonValue)
     }
     m_bloomFilterColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BloomFilterFalsePositiveProbability"))
   {
     m_bloomFilterFalsePositiveProbability = jsonValue.GetDouble("BloomFilterFalsePositiveProbability");
-
     m_bloomFilterFalsePositiveProbabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DictionaryKeyThreshold"))
   {
     m_dictionaryKeyThreshold = jsonValue.GetDouble("DictionaryKeyThreshold");
-
     m_dictionaryKeyThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatVersion"))
   {
     m_formatVersion = OrcFormatVersionMapper::GetOrcFormatVersionForName(jsonValue.GetString("FormatVersion"));
-
     m_formatVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

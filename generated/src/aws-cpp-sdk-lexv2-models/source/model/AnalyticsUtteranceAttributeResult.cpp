@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsUtteranceAttributeResult::AnalyticsUtteranceAttributeResult() : 
-    m_lastUsedIntentHasBeenSet(false)
-{
-}
-
 AnalyticsUtteranceAttributeResult::AnalyticsUtteranceAttributeResult(JsonView jsonValue)
-  : AnalyticsUtteranceAttributeResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalyticsUtteranceAttributeResult& AnalyticsUtteranceAttributeResult::operator =
   if(jsonValue.ValueExists("lastUsedIntent"))
   {
     m_lastUsedIntent = jsonValue.GetString("lastUsedIntent");
-
     m_lastUsedIntentHasBeenSet = true;
   }
-
   return *this;
 }
 

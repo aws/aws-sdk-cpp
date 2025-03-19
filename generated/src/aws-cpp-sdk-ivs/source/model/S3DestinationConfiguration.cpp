@@ -18,13 +18,7 @@ namespace IVS
 namespace Model
 {
 
-S3DestinationConfiguration::S3DestinationConfiguration() : 
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
-  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

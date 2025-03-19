@@ -24,7 +24,7 @@ namespace Model
   class CopyClusterSnapshotRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API CopyClusterSnapshotRequest();
+    AWS_REDSHIFT_API CopyClusterSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>Must be the identifier for a valid automated snapshot whose state is
      * <code>available</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceSnapshotIdentifier() const{ return m_sourceSnapshotIdentifier; }
+    inline const Aws::String& GetSourceSnapshotIdentifier() const { return m_sourceSnapshotIdentifier; }
     inline bool SourceSnapshotIdentifierHasBeenSet() const { return m_sourceSnapshotIdentifierHasBeenSet; }
-    inline void SetSourceSnapshotIdentifier(const Aws::String& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = value; }
-    inline void SetSourceSnapshotIdentifier(Aws::String&& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = std::move(value); }
-    inline void SetSourceSnapshotIdentifier(const char* value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier.assign(value); }
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(const Aws::String& value) { SetSourceSnapshotIdentifier(value); return *this;}
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(Aws::String&& value) { SetSourceSnapshotIdentifier(std::move(value)); return *this;}
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(const char* value) { SetSourceSnapshotIdentifier(value); return *this;}
+    template<typename SourceSnapshotIdentifierT = Aws::String>
+    void SetSourceSnapshotIdentifier(SourceSnapshotIdentifierT&& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = std::forward<SourceSnapshotIdentifierT>(value); }
+    template<typename SourceSnapshotIdentifierT = Aws::String>
+    CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(SourceSnapshotIdentifierT&& value) { SetSourceSnapshotIdentifier(std::forward<SourceSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetSourceSnapshotClusterIdentifier() const{ return m_sourceSnapshotClusterIdentifier; }
+    inline const Aws::String& GetSourceSnapshotClusterIdentifier() const { return m_sourceSnapshotClusterIdentifier; }
     inline bool SourceSnapshotClusterIdentifierHasBeenSet() const { return m_sourceSnapshotClusterIdentifierHasBeenSet; }
-    inline void SetSourceSnapshotClusterIdentifier(const Aws::String& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = value; }
-    inline void SetSourceSnapshotClusterIdentifier(Aws::String&& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = std::move(value); }
-    inline void SetSourceSnapshotClusterIdentifier(const char* value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier.assign(value); }
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(const Aws::String& value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(Aws::String&& value) { SetSourceSnapshotClusterIdentifier(std::move(value)); return *this;}
-    inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(const char* value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
+    template<typename SourceSnapshotClusterIdentifierT = Aws::String>
+    void SetSourceSnapshotClusterIdentifier(SourceSnapshotClusterIdentifierT&& value) { m_sourceSnapshotClusterIdentifierHasBeenSet = true; m_sourceSnapshotClusterIdentifier = std::forward<SourceSnapshotClusterIdentifierT>(value); }
+    template<typename SourceSnapshotClusterIdentifierT = Aws::String>
+    CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(SourceSnapshotClusterIdentifierT&& value) { SetSourceSnapshotClusterIdentifier(std::forward<SourceSnapshotClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
      * Services account that is making the request.</p> </li> </ul>
      */
-    inline const Aws::String& GetTargetSnapshotIdentifier() const{ return m_targetSnapshotIdentifier; }
+    inline const Aws::String& GetTargetSnapshotIdentifier() const { return m_targetSnapshotIdentifier; }
     inline bool TargetSnapshotIdentifierHasBeenSet() const { return m_targetSnapshotIdentifierHasBeenSet; }
-    inline void SetTargetSnapshotIdentifier(const Aws::String& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
-    inline void SetTargetSnapshotIdentifier(Aws::String&& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = std::move(value); }
-    inline void SetTargetSnapshotIdentifier(const char* value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier.assign(value); }
-    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const Aws::String& value) { SetTargetSnapshotIdentifier(value); return *this;}
-    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(Aws::String&& value) { SetTargetSnapshotIdentifier(std::move(value)); return *this;}
-    inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const char* value) { SetTargetSnapshotIdentifier(value); return *this;}
+    template<typename TargetSnapshotIdentifierT = Aws::String>
+    void SetTargetSnapshotIdentifier(TargetSnapshotIdentifierT&& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = std::forward<TargetSnapshotIdentifierT>(value); }
+    template<typename TargetSnapshotIdentifierT = Aws::String>
+    CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(TargetSnapshotIdentifierT&& value) { SetTargetSnapshotIdentifier(std::forward<TargetSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +92,7 @@ namespace Model
      * the manual snapshot is retained indefinitely. </p> <p>The value must be either
      * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
      */
-    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+    inline int GetManualSnapshotRetentionPeriod() const { return m_manualSnapshotRetentionPeriod; }
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
     inline CopyClusterSnapshotRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
     Aws::String m_targetSnapshotIdentifier;
     bool m_targetSnapshotIdentifierHasBeenSet = false;
 
-    int m_manualSnapshotRetentionPeriod;
+    int m_manualSnapshotRetentionPeriod{0};
     bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
   };
 

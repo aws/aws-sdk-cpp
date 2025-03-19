@@ -18,14 +18,7 @@ namespace ACM
 namespace Model
 {
 
-CertificateOptions::CertificateOptions() : 
-    m_certificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference::NOT_SET),
-    m_certificateTransparencyLoggingPreferenceHasBeenSet(false)
-{
-}
-
 CertificateOptions::CertificateOptions(JsonView jsonValue)
-  : CertificateOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CertificateOptions& CertificateOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateTransparencyLoggingPreference"))
   {
     m_certificateTransparencyLoggingPreference = CertificateTransparencyLoggingPreferenceMapper::GetCertificateTransparencyLoggingPreferenceForName(jsonValue.GetString("CertificateTransparencyLoggingPreference"));
-
     m_certificateTransparencyLoggingPreferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

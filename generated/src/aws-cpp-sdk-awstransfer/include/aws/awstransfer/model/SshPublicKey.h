@@ -38,7 +38,7 @@ namespace Model
   class SshPublicKey
   {
   public:
-    AWS_TRANSFER_API SshPublicKey();
+    AWS_TRANSFER_API SshPublicKey() = default;
     AWS_TRANSFER_API SshPublicKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API SshPublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <p>Specifies the date that the public key was added to the Transfer Family
      * user.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateImported() const{ return m_dateImported; }
+    inline const Aws::Utils::DateTime& GetDateImported() const { return m_dateImported; }
     inline bool DateImportedHasBeenSet() const { return m_dateImportedHasBeenSet; }
-    inline void SetDateImported(const Aws::Utils::DateTime& value) { m_dateImportedHasBeenSet = true; m_dateImported = value; }
-    inline void SetDateImported(Aws::Utils::DateTime&& value) { m_dateImportedHasBeenSet = true; m_dateImported = std::move(value); }
-    inline SshPublicKey& WithDateImported(const Aws::Utils::DateTime& value) { SetDateImported(value); return *this;}
-    inline SshPublicKey& WithDateImported(Aws::Utils::DateTime&& value) { SetDateImported(std::move(value)); return *this;}
+    template<typename DateImportedT = Aws::Utils::DateTime>
+    void SetDateImported(DateImportedT&& value) { m_dateImportedHasBeenSet = true; m_dateImported = std::forward<DateImportedT>(value); }
+    template<typename DateImportedT = Aws::Utils::DateTime>
+    SshPublicKey& WithDateImported(DateImportedT&& value) { SetDateImported(std::forward<DateImportedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,12 @@ namespace Model
      * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
      * keys.</p>
      */
-    inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
+    inline const Aws::String& GetSshPublicKeyBody() const { return m_sshPublicKeyBody; }
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
-    inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
-    inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
-    inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
-    inline SshPublicKey& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
-    inline SshPublicKey& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
-    inline SshPublicKey& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}
+    template<typename SshPublicKeyBodyT = Aws::String>
+    void SetSshPublicKeyBody(SshPublicKeyBodyT&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::forward<SshPublicKeyBodyT>(value); }
+    template<typename SshPublicKeyBodyT = Aws::String>
+    SshPublicKey& WithSshPublicKeyBody(SshPublicKeyBodyT&& value) { SetSshPublicKeyBody(std::forward<SshPublicKeyBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,18 +76,16 @@ namespace Model
      * <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier
      * of the public key.</p>
      */
-    inline const Aws::String& GetSshPublicKeyId() const{ return m_sshPublicKeyId; }
+    inline const Aws::String& GetSshPublicKeyId() const { return m_sshPublicKeyId; }
     inline bool SshPublicKeyIdHasBeenSet() const { return m_sshPublicKeyIdHasBeenSet; }
-    inline void SetSshPublicKeyId(const Aws::String& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = value; }
-    inline void SetSshPublicKeyId(Aws::String&& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = std::move(value); }
-    inline void SetSshPublicKeyId(const char* value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId.assign(value); }
-    inline SshPublicKey& WithSshPublicKeyId(const Aws::String& value) { SetSshPublicKeyId(value); return *this;}
-    inline SshPublicKey& WithSshPublicKeyId(Aws::String&& value) { SetSshPublicKeyId(std::move(value)); return *this;}
-    inline SshPublicKey& WithSshPublicKeyId(const char* value) { SetSshPublicKeyId(value); return *this;}
+    template<typename SshPublicKeyIdT = Aws::String>
+    void SetSshPublicKeyId(SshPublicKeyIdT&& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = std::forward<SshPublicKeyIdT>(value); }
+    template<typename SshPublicKeyIdT = Aws::String>
+    SshPublicKey& WithSshPublicKeyId(SshPublicKeyIdT&& value) { SetSshPublicKeyId(std::forward<SshPublicKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_dateImported;
+    Aws::Utils::DateTime m_dateImported{};
     bool m_dateImportedHasBeenSet = false;
 
     Aws::String m_sshPublicKeyBody;

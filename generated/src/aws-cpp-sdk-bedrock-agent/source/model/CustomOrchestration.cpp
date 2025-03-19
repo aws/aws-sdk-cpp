@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CustomOrchestration::CustomOrchestration() : 
-    m_executorHasBeenSet(false)
-{
-}
-
 CustomOrchestration::CustomOrchestration(JsonView jsonValue)
-  : CustomOrchestration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomOrchestration& CustomOrchestration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executor"))
   {
     m_executor = jsonValue.GetObject("executor");
-
     m_executorHasBeenSet = true;
   }
-
   return *this;
 }
 

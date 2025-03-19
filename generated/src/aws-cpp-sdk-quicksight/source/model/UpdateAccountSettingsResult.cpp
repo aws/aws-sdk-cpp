@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAccountSettingsResult::UpdateAccountSettingsResult() : 
-    m_status(0)
-{
-}
-
 UpdateAccountSettingsResult::UpdateAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateAccountSettingsResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ UpdateAccountSettingsResult& UpdateAccountSettingsResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

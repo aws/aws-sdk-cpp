@@ -31,7 +31,7 @@ namespace Model
   class KMSKey
   {
   public:
-    AWS_FRAUDDETECTOR_API KMSKey();
+    AWS_FRAUDDETECTOR_API KMSKey() = default;
     AWS_FRAUDDETECTOR_API KMSKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API KMSKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The encryption key ARN.</p>
      */
-    inline const Aws::String& GetKmsEncryptionKeyArn() const{ return m_kmsEncryptionKeyArn; }
+    inline const Aws::String& GetKmsEncryptionKeyArn() const { return m_kmsEncryptionKeyArn; }
     inline bool KmsEncryptionKeyArnHasBeenSet() const { return m_kmsEncryptionKeyArnHasBeenSet; }
-    inline void SetKmsEncryptionKeyArn(const Aws::String& value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn = value; }
-    inline void SetKmsEncryptionKeyArn(Aws::String&& value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn = std::move(value); }
-    inline void SetKmsEncryptionKeyArn(const char* value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn.assign(value); }
-    inline KMSKey& WithKmsEncryptionKeyArn(const Aws::String& value) { SetKmsEncryptionKeyArn(value); return *this;}
-    inline KMSKey& WithKmsEncryptionKeyArn(Aws::String&& value) { SetKmsEncryptionKeyArn(std::move(value)); return *this;}
-    inline KMSKey& WithKmsEncryptionKeyArn(const char* value) { SetKmsEncryptionKeyArn(value); return *this;}
+    template<typename KmsEncryptionKeyArnT = Aws::String>
+    void SetKmsEncryptionKeyArn(KmsEncryptionKeyArnT&& value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn = std::forward<KmsEncryptionKeyArnT>(value); }
+    template<typename KmsEncryptionKeyArnT = Aws::String>
+    KMSKey& WithKmsEncryptionKeyArn(KmsEncryptionKeyArnT&& value) { SetKmsEncryptionKeyArn(std::forward<KmsEncryptionKeyArnT>(value)); return *this;}
     ///@}
   private:
 

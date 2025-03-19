@@ -29,7 +29,7 @@ namespace Model
   class PutDashboardResult
   {
   public:
-    AWS_CLOUDWATCH_API PutDashboardResult();
+    AWS_CLOUDWATCH_API PutDashboardResult() = default;
     AWS_CLOUDWATCH_API PutDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API PutDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,30 @@ namespace Model
      * not render.</p> <p>If this result includes error messages, the input was not
      * valid and the operation failed.</p>
      */
-    inline const Aws::Vector<DashboardValidationMessage>& GetDashboardValidationMessages() const{ return m_dashboardValidationMessages; }
-    inline void SetDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { m_dashboardValidationMessages = value; }
-    inline void SetDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { m_dashboardValidationMessages = std::move(value); }
-    inline PutDashboardResult& WithDashboardValidationMessages(const Aws::Vector<DashboardValidationMessage>& value) { SetDashboardValidationMessages(value); return *this;}
-    inline PutDashboardResult& WithDashboardValidationMessages(Aws::Vector<DashboardValidationMessage>&& value) { SetDashboardValidationMessages(std::move(value)); return *this;}
-    inline PutDashboardResult& AddDashboardValidationMessages(const DashboardValidationMessage& value) { m_dashboardValidationMessages.push_back(value); return *this; }
-    inline PutDashboardResult& AddDashboardValidationMessages(DashboardValidationMessage&& value) { m_dashboardValidationMessages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DashboardValidationMessage>& GetDashboardValidationMessages() const { return m_dashboardValidationMessages; }
+    template<typename DashboardValidationMessagesT = Aws::Vector<DashboardValidationMessage>>
+    void SetDashboardValidationMessages(DashboardValidationMessagesT&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages = std::forward<DashboardValidationMessagesT>(value); }
+    template<typename DashboardValidationMessagesT = Aws::Vector<DashboardValidationMessage>>
+    PutDashboardResult& WithDashboardValidationMessages(DashboardValidationMessagesT&& value) { SetDashboardValidationMessages(std::forward<DashboardValidationMessagesT>(value)); return *this;}
+    template<typename DashboardValidationMessagesT = DashboardValidationMessage>
+    PutDashboardResult& AddDashboardValidationMessages(DashboardValidationMessagesT&& value) { m_dashboardValidationMessagesHasBeenSet = true; m_dashboardValidationMessages.emplace_back(std::forward<DashboardValidationMessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PutDashboardResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PutDashboardResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PutDashboardResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DashboardValidationMessage> m_dashboardValidationMessages;
+    bool m_dashboardValidationMessagesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAssociationsRequest::ListAssociationsRequest() : 
-    m_chatConfigurationHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

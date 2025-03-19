@@ -12,20 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitTaskStateChangeRequest::SubmitTaskStateChangeRequest() : 
-    m_clusterHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_managedAgentsHasBeenSet(false),
-    m_pullStartedAtHasBeenSet(false),
-    m_pullStoppedAtHasBeenSet(false),
-    m_executionStoppedAtHasBeenSet(false)
-{
-}
-
 Aws::String SubmitTaskStateChangeRequest::SerializePayload() const
 {
   JsonValue payload;

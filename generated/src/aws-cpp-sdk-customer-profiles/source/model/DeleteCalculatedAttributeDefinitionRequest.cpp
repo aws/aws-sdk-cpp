@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCalculatedAttributeDefinitionRequest::DeleteCalculatedAttributeDefinitionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_calculatedAttributeNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCalculatedAttributeDefinitionRequest::SerializePayload() const
 {
   return {};

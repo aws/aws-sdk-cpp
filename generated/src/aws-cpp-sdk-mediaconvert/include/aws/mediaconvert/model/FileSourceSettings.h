@@ -39,7 +39,7 @@ namespace Model
   class FileSourceSettings
   {
   public:
-    AWS_MEDIACONVERT_API FileSourceSettings();
+    AWS_MEDIACONVERT_API FileSourceSettings() = default;
     AWS_MEDIACONVERT_API FileSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API FileSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * systems require a maximum of 2 caption bytes per frame. Note that this setting
      * has no effect when your output frame rate is 30 or 60.
      */
-    inline const CaptionSourceByteRateLimit& GetByteRateLimit() const{ return m_byteRateLimit; }
+    inline CaptionSourceByteRateLimit GetByteRateLimit() const { return m_byteRateLimit; }
     inline bool ByteRateLimitHasBeenSet() const { return m_byteRateLimitHasBeenSet; }
-    inline void SetByteRateLimit(const CaptionSourceByteRateLimit& value) { m_byteRateLimitHasBeenSet = true; m_byteRateLimit = value; }
-    inline void SetByteRateLimit(CaptionSourceByteRateLimit&& value) { m_byteRateLimitHasBeenSet = true; m_byteRateLimit = std::move(value); }
-    inline FileSourceSettings& WithByteRateLimit(const CaptionSourceByteRateLimit& value) { SetByteRateLimit(value); return *this;}
-    inline FileSourceSettings& WithByteRateLimit(CaptionSourceByteRateLimit&& value) { SetByteRateLimit(std::move(value)); return *this;}
+    inline void SetByteRateLimit(CaptionSourceByteRateLimit value) { m_byteRateLimitHasBeenSet = true; m_byteRateLimit = value; }
+    inline FileSourceSettings& WithByteRateLimit(CaptionSourceByteRateLimit value) { SetByteRateLimit(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * in two ways: it passes the 608 data through using the 608 compatibility bytes
      * fields of the 708 wrapper, and it also translates the 608 data into 708.
      */
-    inline const FileSourceConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
+    inline FileSourceConvert608To708 GetConvert608To708() const { return m_convert608To708; }
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
-    inline void SetConvert608To708(const FileSourceConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
-    inline void SetConvert608To708(FileSourceConvert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
-    inline FileSourceSettings& WithConvert608To708(const FileSourceConvert608To708& value) { SetConvert608To708(value); return *this;}
-    inline FileSourceSettings& WithConvert608To708(FileSourceConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
+    inline void SetConvert608To708(FileSourceConvert608To708 value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
+    inline FileSourceSettings& WithConvert608To708(FileSourceConvert608To708 value) { SetConvert608To708(value); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
      * Enabled if you notice additional repeated lines in your output captions.
      */
-    inline const CaptionSourceConvertPaintOnToPopOn& GetConvertPaintToPop() const{ return m_convertPaintToPop; }
+    inline CaptionSourceConvertPaintOnToPopOn GetConvertPaintToPop() const { return m_convertPaintToPop; }
     inline bool ConvertPaintToPopHasBeenSet() const { return m_convertPaintToPopHasBeenSet; }
-    inline void SetConvertPaintToPop(const CaptionSourceConvertPaintOnToPopOn& value) { m_convertPaintToPopHasBeenSet = true; m_convertPaintToPop = value; }
-    inline void SetConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn&& value) { m_convertPaintToPopHasBeenSet = true; m_convertPaintToPop = std::move(value); }
-    inline FileSourceSettings& WithConvertPaintToPop(const CaptionSourceConvertPaintOnToPopOn& value) { SetConvertPaintToPop(value); return *this;}
-    inline FileSourceSettings& WithConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn&& value) { SetConvertPaintToPop(std::move(value)); return *this;}
+    inline void SetConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn value) { m_convertPaintToPopHasBeenSet = true; m_convertPaintToPop = value; }
+    inline FileSourceSettings& WithConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn value) { SetConvertPaintToPop(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +96,12 @@ namespace Model
      * a fraction. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps,
      * 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
      */
-    inline const CaptionSourceFramerate& GetFramerate() const{ return m_framerate; }
+    inline const CaptionSourceFramerate& GetFramerate() const { return m_framerate; }
     inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
-    inline void SetFramerate(const CaptionSourceFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
-    inline void SetFramerate(CaptionSourceFramerate&& value) { m_framerateHasBeenSet = true; m_framerate = std::move(value); }
-    inline FileSourceSettings& WithFramerate(const CaptionSourceFramerate& value) { SetFramerate(value); return *this;}
-    inline FileSourceSettings& WithFramerate(CaptionSourceFramerate&& value) { SetFramerate(std::move(value)); return *this;}
+    template<typename FramerateT = CaptionSourceFramerate>
+    void SetFramerate(FramerateT&& value) { m_framerateHasBeenSet = true; m_framerate = std::forward<FramerateT>(value); }
+    template<typename FramerateT = CaptionSourceFramerate>
+    FileSourceSettings& WithFramerate(FramerateT&& value) { SetFramerate(std::forward<FramerateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +109,12 @@ namespace Model
      * External caption file used for loading captions. Accepted file extensions are
      * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', 'smi', 'webvtt', and 'vtt'.
      */
-    inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
+    inline const Aws::String& GetSourceFile() const { return m_sourceFile; }
     inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
-    inline void SetSourceFile(const Aws::String& value) { m_sourceFileHasBeenSet = true; m_sourceFile = value; }
-    inline void SetSourceFile(Aws::String&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::move(value); }
-    inline void SetSourceFile(const char* value) { m_sourceFileHasBeenSet = true; m_sourceFile.assign(value); }
-    inline FileSourceSettings& WithSourceFile(const Aws::String& value) { SetSourceFile(value); return *this;}
-    inline FileSourceSettings& WithSourceFile(Aws::String&& value) { SetSourceFile(std::move(value)); return *this;}
-    inline FileSourceSettings& WithSourceFile(const char* value) { SetSourceFile(value); return *this;}
+    template<typename SourceFileT = Aws::String>
+    void SetSourceFile(SourceFileT&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::forward<SourceFileT>(value); }
+    template<typename SourceFileT = Aws::String>
+    FileSourceSettings& WithSourceFile(SourceFileT&& value) { SetSourceFile(std::forward<SourceFileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +133,7 @@ namespace Model
      * input video frame rate is 25 fps and you specify 1010ms for time delta,
      * MediaConvert delays your captions by 1000 ms.
      */
-    inline int GetTimeDelta() const{ return m_timeDelta; }
+    inline int GetTimeDelta() const { return m_timeDelta; }
     inline bool TimeDeltaHasBeenSet() const { return m_timeDeltaHasBeenSet; }
     inline void SetTimeDelta(int value) { m_timeDeltaHasBeenSet = true; m_timeDelta = value; }
     inline FileSourceSettings& WithTimeDelta(int value) { SetTimeDelta(value); return *this;}
@@ -154,22 +146,20 @@ namespace Model
      * that you specify. When you don't specify a value for Time delta units,
      * MediaConvert uses seconds by default.
      */
-    inline const FileSourceTimeDeltaUnits& GetTimeDeltaUnits() const{ return m_timeDeltaUnits; }
+    inline FileSourceTimeDeltaUnits GetTimeDeltaUnits() const { return m_timeDeltaUnits; }
     inline bool TimeDeltaUnitsHasBeenSet() const { return m_timeDeltaUnitsHasBeenSet; }
-    inline void SetTimeDeltaUnits(const FileSourceTimeDeltaUnits& value) { m_timeDeltaUnitsHasBeenSet = true; m_timeDeltaUnits = value; }
-    inline void SetTimeDeltaUnits(FileSourceTimeDeltaUnits&& value) { m_timeDeltaUnitsHasBeenSet = true; m_timeDeltaUnits = std::move(value); }
-    inline FileSourceSettings& WithTimeDeltaUnits(const FileSourceTimeDeltaUnits& value) { SetTimeDeltaUnits(value); return *this;}
-    inline FileSourceSettings& WithTimeDeltaUnits(FileSourceTimeDeltaUnits&& value) { SetTimeDeltaUnits(std::move(value)); return *this;}
+    inline void SetTimeDeltaUnits(FileSourceTimeDeltaUnits value) { m_timeDeltaUnitsHasBeenSet = true; m_timeDeltaUnits = value; }
+    inline FileSourceSettings& WithTimeDeltaUnits(FileSourceTimeDeltaUnits value) { SetTimeDeltaUnits(value); return *this;}
     ///@}
   private:
 
-    CaptionSourceByteRateLimit m_byteRateLimit;
+    CaptionSourceByteRateLimit m_byteRateLimit{CaptionSourceByteRateLimit::NOT_SET};
     bool m_byteRateLimitHasBeenSet = false;
 
-    FileSourceConvert608To708 m_convert608To708;
+    FileSourceConvert608To708 m_convert608To708{FileSourceConvert608To708::NOT_SET};
     bool m_convert608To708HasBeenSet = false;
 
-    CaptionSourceConvertPaintOnToPopOn m_convertPaintToPop;
+    CaptionSourceConvertPaintOnToPopOn m_convertPaintToPop{CaptionSourceConvertPaintOnToPopOn::NOT_SET};
     bool m_convertPaintToPopHasBeenSet = false;
 
     CaptionSourceFramerate m_framerate;
@@ -178,10 +168,10 @@ namespace Model
     Aws::String m_sourceFile;
     bool m_sourceFileHasBeenSet = false;
 
-    int m_timeDelta;
+    int m_timeDelta{0};
     bool m_timeDeltaHasBeenSet = false;
 
-    FileSourceTimeDeltaUnits m_timeDeltaUnits;
+    FileSourceTimeDeltaUnits m_timeDeltaUnits{FileSourceTimeDeltaUnits::NOT_SET};
     bool m_timeDeltaUnitsHasBeenSet = false;
   };
 

@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-GoogleAnalyticsConnectorProfileProperties::GoogleAnalyticsConnectorProfileProperties()
-{
-}
-
 GoogleAnalyticsConnectorProfileProperties::GoogleAnalyticsConnectorProfileProperties(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -12,15 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListImageBuildVersionsRequest::ListImageBuildVersionsRequest() : 
-    m_imageVersionArnHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListImageBuildVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

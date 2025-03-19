@@ -33,7 +33,7 @@ namespace Model
   class DescribeRefreshSchemasStatusResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeRefreshSchemasStatusResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeRefreshSchemasStatusResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeRefreshSchemasStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeRefreshSchemasStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The status of the schema.</p>
      */
-    inline const RefreshSchemasStatus& GetRefreshSchemasStatus() const{ return m_refreshSchemasStatus; }
-    inline void SetRefreshSchemasStatus(const RefreshSchemasStatus& value) { m_refreshSchemasStatus = value; }
-    inline void SetRefreshSchemasStatus(RefreshSchemasStatus&& value) { m_refreshSchemasStatus = std::move(value); }
-    inline DescribeRefreshSchemasStatusResult& WithRefreshSchemasStatus(const RefreshSchemasStatus& value) { SetRefreshSchemasStatus(value); return *this;}
-    inline DescribeRefreshSchemasStatusResult& WithRefreshSchemasStatus(RefreshSchemasStatus&& value) { SetRefreshSchemasStatus(std::move(value)); return *this;}
+    inline const RefreshSchemasStatus& GetRefreshSchemasStatus() const { return m_refreshSchemasStatus; }
+    template<typename RefreshSchemasStatusT = RefreshSchemasStatus>
+    void SetRefreshSchemasStatus(RefreshSchemasStatusT&& value) { m_refreshSchemasStatusHasBeenSet = true; m_refreshSchemasStatus = std::forward<RefreshSchemasStatusT>(value); }
+    template<typename RefreshSchemasStatusT = RefreshSchemasStatus>
+    DescribeRefreshSchemasStatusResult& WithRefreshSchemasStatus(RefreshSchemasStatusT&& value) { SetRefreshSchemasStatus(std::forward<RefreshSchemasStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRefreshSchemasStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRefreshSchemasStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRefreshSchemasStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRefreshSchemasStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RefreshSchemasStatus m_refreshSchemasStatus;
+    bool m_refreshSchemasStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

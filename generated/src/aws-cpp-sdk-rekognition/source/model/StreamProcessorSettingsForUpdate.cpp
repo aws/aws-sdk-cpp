@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate() : 
-    m_connectedHomeForUpdateHasBeenSet(false)
-{
-}
-
 StreamProcessorSettingsForUpdate::StreamProcessorSettingsForUpdate(JsonView jsonValue)
-  : StreamProcessorSettingsForUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StreamProcessorSettingsForUpdate& StreamProcessorSettingsForUpdate::operator =(J
   if(jsonValue.ValueExists("ConnectedHomeForUpdate"))
   {
     m_connectedHomeForUpdate = jsonValue.GetObject("ConnectedHomeForUpdate");
-
     m_connectedHomeForUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

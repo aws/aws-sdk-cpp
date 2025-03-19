@@ -12,12 +12,6 @@ using namespace Aws::CostandUsageReportService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyReportDefinitionRequest::ModifyReportDefinitionRequest() : 
-    m_reportNameHasBeenSet(false),
-    m_reportDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyReportDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

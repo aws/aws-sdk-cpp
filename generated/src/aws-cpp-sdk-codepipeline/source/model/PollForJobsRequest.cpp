@@ -12,14 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PollForJobsRequest::PollForJobsRequest() : 
-    m_actionTypeIdHasBeenSet(false),
-    m_maxBatchSize(0),
-    m_maxBatchSizeHasBeenSet(false),
-    m_queryParamHasBeenSet(false)
-{
-}
-
 Aws::String PollForJobsRequest::SerializePayload() const
 {
   JsonValue payload;

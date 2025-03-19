@@ -32,7 +32,7 @@ namespace Model
   class AwsWafRuleGroupRulesActionDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafRuleGroupRulesActionDetails();
+    AWS_SECURITYHUB_API AwsWafRuleGroupRulesActionDetails() = default;
     AWS_SECURITYHUB_API AwsWafRuleGroupRulesActionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafRuleGroupRulesActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The action that WAF should take on a web request when it matches the rule's
      * statement.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsWafRuleGroupRulesActionDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsWafRuleGroupRulesActionDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsWafRuleGroupRulesActionDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsWafRuleGroupRulesActionDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

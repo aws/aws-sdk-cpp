@@ -18,23 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-DnssecKey::DnssecKey() : 
-    m_algorithm(0),
-    m_algorithmHasBeenSet(false),
-    m_flags(0),
-    m_flagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_digestType(0),
-    m_digestTypeHasBeenSet(false),
-    m_digestHasBeenSet(false),
-    m_keyTag(0),
-    m_keyTagHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 DnssecKey::DnssecKey(JsonView jsonValue)
-  : DnssecKey()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ DnssecKey& DnssecKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Algorithm"))
   {
     m_algorithm = jsonValue.GetInteger("Algorithm");
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Flags"))
   {
     m_flags = jsonValue.GetInteger("Flags");
-
     m_flagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = jsonValue.GetString("PublicKey");
-
     m_publicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DigestType"))
   {
     m_digestType = jsonValue.GetInteger("DigestType");
-
     m_digestTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Digest"))
   {
     m_digest = jsonValue.GetString("Digest");
-
     m_digestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyTag"))
   {
     m_keyTag = jsonValue.GetInteger("KeyTag");
-
     m_keyTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

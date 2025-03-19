@@ -18,20 +18,7 @@ namespace CodeStarconnections
 namespace Model
 {
 
-Host::Host() : 
-    m_nameHasBeenSet(false),
-    m_hostArnHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_providerEndpointHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 Host::Host(JsonView jsonValue)
-  : Host()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Host& Host::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostArn"))
   {
     m_hostArn = jsonValue.GetString("HostArn");
-
     m_hostArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderEndpoint"))
   {
     m_providerEndpoint = jsonValue.GetString("ProviderEndpoint");
-
     m_providerEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

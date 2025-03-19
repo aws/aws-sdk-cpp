@@ -26,7 +26,7 @@ namespace Model
   class ListLensSharesRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API ListLensSharesRequest();
+    AWS_WELLARCHITECTED_API ListLensSharesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline ListLensSharesRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline ListLensSharesRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline ListLensSharesRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    ListLensSharesRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,33 +54,29 @@ namespace Model
      * <p>The Amazon Web Services account ID, organization ID, or organizational unit
      * (OU) ID with which the lens is shared.</p>
      */
-    inline const Aws::String& GetSharedWithPrefix() const{ return m_sharedWithPrefix; }
+    inline const Aws::String& GetSharedWithPrefix() const { return m_sharedWithPrefix; }
     inline bool SharedWithPrefixHasBeenSet() const { return m_sharedWithPrefixHasBeenSet; }
-    inline void SetSharedWithPrefix(const Aws::String& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = value; }
-    inline void SetSharedWithPrefix(Aws::String&& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = std::move(value); }
-    inline void SetSharedWithPrefix(const char* value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix.assign(value); }
-    inline ListLensSharesRequest& WithSharedWithPrefix(const Aws::String& value) { SetSharedWithPrefix(value); return *this;}
-    inline ListLensSharesRequest& WithSharedWithPrefix(Aws::String&& value) { SetSharedWithPrefix(std::move(value)); return *this;}
-    inline ListLensSharesRequest& WithSharedWithPrefix(const char* value) { SetSharedWithPrefix(value); return *this;}
+    template<typename SharedWithPrefixT = Aws::String>
+    void SetSharedWithPrefix(SharedWithPrefixT&& value) { m_sharedWithPrefixHasBeenSet = true; m_sharedWithPrefix = std::forward<SharedWithPrefixT>(value); }
+    template<typename SharedWithPrefixT = Aws::String>
+    ListLensSharesRequest& WithSharedWithPrefix(SharedWithPrefixT&& value) { SetSharedWithPrefix(std::forward<SharedWithPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLensSharesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLensSharesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLensSharesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLensSharesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return for this request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLensSharesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -90,12 +84,10 @@ namespace Model
 
     ///@{
     
-    inline const ShareStatus& GetStatus() const{ return m_status; }
+    inline ShareStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ShareStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ShareStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListLensSharesRequest& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
-    inline ListLensSharesRequest& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ShareStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListLensSharesRequest& WithStatus(ShareStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -108,10 +100,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ShareStatus m_status;
+    ShareStatus m_status{ShareStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceRevisionSummary::ServiceRevisionSummary() : 
-    m_arnHasBeenSet(false),
-    m_requestedTaskCount(0),
-    m_requestedTaskCountHasBeenSet(false),
-    m_runningTaskCount(0),
-    m_runningTaskCountHasBeenSet(false),
-    m_pendingTaskCount(0),
-    m_pendingTaskCountHasBeenSet(false)
-{
-}
-
 ServiceRevisionSummary::ServiceRevisionSummary(JsonView jsonValue)
-  : ServiceRevisionSummary()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ServiceRevisionSummary& ServiceRevisionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedTaskCount"))
   {
     m_requestedTaskCount = jsonValue.GetInteger("requestedTaskCount");
-
     m_requestedTaskCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningTaskCount"))
   {
     m_runningTaskCount = jsonValue.GetInteger("runningTaskCount");
-
     m_runningTaskCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingTaskCount"))
   {
     m_pendingTaskCount = jsonValue.GetInteger("pendingTaskCount");
-
     m_pendingTaskCountHasBeenSet = true;
   }
-
   return *this;
 }
 

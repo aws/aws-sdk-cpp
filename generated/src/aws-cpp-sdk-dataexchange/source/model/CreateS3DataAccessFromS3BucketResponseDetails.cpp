@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-CreateS3DataAccessFromS3BucketResponseDetails::CreateS3DataAccessFromS3BucketResponseDetails() : 
-    m_assetSourceHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 CreateS3DataAccessFromS3BucketResponseDetails::CreateS3DataAccessFromS3BucketResponseDetails(JsonView jsonValue)
-  : CreateS3DataAccessFromS3BucketResponseDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CreateS3DataAccessFromS3BucketResponseDetails& CreateS3DataAccessFromS3BucketRes
   if(jsonValue.ValueExists("AssetSource"))
   {
     m_assetSource = jsonValue.GetObject("AssetSource");
-
     m_assetSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

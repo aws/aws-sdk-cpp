@@ -44,7 +44,7 @@ namespace Model
   class Method
   {
   public:
-    AWS_APIGATEWAY_API Method();
+    AWS_APIGATEWAY_API Method() = default;
     AWS_APIGATEWAY_API Method(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Method& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The method's HTTP verb.</p>
      */
-    inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
+    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
-    inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
-    inline Method& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
-    inline Method& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
-    inline Method& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+    template<typename HttpMethodT = Aws::String>
+    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
+    template<typename HttpMethodT = Aws::String>
+    Method& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
      * Cognito user pool.</p>
      */
-    inline const Aws::String& GetAuthorizationType() const{ return m_authorizationType; }
+    inline const Aws::String& GetAuthorizationType() const { return m_authorizationType; }
     inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-    inline void SetAuthorizationType(const Aws::String& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
-    inline void SetAuthorizationType(Aws::String&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
-    inline void SetAuthorizationType(const char* value) { m_authorizationTypeHasBeenSet = true; m_authorizationType.assign(value); }
-    inline Method& WithAuthorizationType(const Aws::String& value) { SetAuthorizationType(value); return *this;}
-    inline Method& WithAuthorizationType(Aws::String&& value) { SetAuthorizationType(std::move(value)); return *this;}
-    inline Method& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
+    template<typename AuthorizationTypeT = Aws::String>
+    void SetAuthorizationType(AuthorizationTypeT&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::forward<AuthorizationTypeT>(value); }
+    template<typename AuthorizationTypeT = Aws::String>
+    Method& WithAuthorizationType(AuthorizationTypeT&& value) { SetAuthorizationType(std::forward<AuthorizationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p>The identifier of an Authorizer to use on this method. The
      * <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
      */
-    inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
+    inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
     inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
-    inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
-    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
-    inline void SetAuthorizerId(const char* value) { m_authorizerIdHasBeenSet = true; m_authorizerId.assign(value); }
-    inline Method& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
-    inline Method& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
-    inline Method& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
+    template<typename AuthorizerIdT = Aws::String>
+    void SetAuthorizerId(AuthorizerIdT&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::forward<AuthorizerIdT>(value); }
+    template<typename AuthorizerIdT = Aws::String>
+    Method& WithAuthorizerId(AuthorizerIdT&& value) { SetAuthorizerId(std::forward<AuthorizerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +95,7 @@ namespace Model
      * <p>A boolean flag specifying whether a valid ApiKey is required to invoke this
      * method.</p>
      */
-    inline bool GetApiKeyRequired() const{ return m_apiKeyRequired; }
+    inline bool GetApiKeyRequired() const { return m_apiKeyRequired; }
     inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
     inline void SetApiKeyRequired(bool value) { m_apiKeyRequiredHasBeenSet = true; m_apiKeyRequired = value; }
     inline Method& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
@@ -111,14 +105,12 @@ namespace Model
     /**
      * <p>The identifier of a RequestValidator for request validation.</p>
      */
-    inline const Aws::String& GetRequestValidatorId() const{ return m_requestValidatorId; }
+    inline const Aws::String& GetRequestValidatorId() const { return m_requestValidatorId; }
     inline bool RequestValidatorIdHasBeenSet() const { return m_requestValidatorIdHasBeenSet; }
-    inline void SetRequestValidatorId(const Aws::String& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = value; }
-    inline void SetRequestValidatorId(Aws::String&& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = std::move(value); }
-    inline void SetRequestValidatorId(const char* value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId.assign(value); }
-    inline Method& WithRequestValidatorId(const Aws::String& value) { SetRequestValidatorId(value); return *this;}
-    inline Method& WithRequestValidatorId(Aws::String&& value) { SetRequestValidatorId(std::move(value)); return *this;}
-    inline Method& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
+    template<typename RequestValidatorIdT = Aws::String>
+    void SetRequestValidatorId(RequestValidatorIdT&& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = std::forward<RequestValidatorIdT>(value); }
+    template<typename RequestValidatorIdT = Aws::String>
+    Method& WithRequestValidatorId(RequestValidatorIdT&& value) { SetRequestValidatorId(std::forward<RequestValidatorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +119,12 @@ namespace Model
      * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
      * /pets</code> method in the <code>PetStore</code> example.</p>
      */
-    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+    inline const Aws::String& GetOperationName() const { return m_operationName; }
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-    inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-    inline Method& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-    inline Method& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-    inline Method& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    template<typename OperationNameT = Aws::String>
+    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
+    template<typename OperationNameT = Aws::String>
+    Method& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,15 +139,15 @@ namespace Model
      * method request parameter names defined here are available in Integration to be
      * mapped to integration request parameters or templates.</p>
      */
-    inline const Aws::Map<Aws::String, bool>& GetRequestParameters() const{ return m_requestParameters; }
+    inline const Aws::Map<Aws::String, bool>& GetRequestParameters() const { return m_requestParameters; }
     inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
-    inline void SetRequestParameters(const Aws::Map<Aws::String, bool>& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
-    inline void SetRequestParameters(Aws::Map<Aws::String, bool>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::move(value); }
-    inline Method& WithRequestParameters(const Aws::Map<Aws::String, bool>& value) { SetRequestParameters(value); return *this;}
-    inline Method& WithRequestParameters(Aws::Map<Aws::String, bool>&& value) { SetRequestParameters(std::move(value)); return *this;}
-    inline Method& AddRequestParameters(const Aws::String& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
-    inline Method& AddRequestParameters(Aws::String&& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::move(key), value); return *this; }
-    inline Method& AddRequestParameters(const char* key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
+    template<typename RequestParametersT = Aws::Map<Aws::String, bool>>
+    void SetRequestParameters(RequestParametersT&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::forward<RequestParametersT>(value); }
+    template<typename RequestParametersT = Aws::Map<Aws::String, bool>>
+    Method& WithRequestParameters(RequestParametersT&& value) { SetRequestParameters(std::forward<RequestParametersT>(value)); return *this;}
+    inline Method& AddRequestParameters(Aws::String key, bool value) {
+      m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -166,37 +156,32 @@ namespace Model
      * the mapped value) of the request payloads of given content types (as the mapping
      * key).</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const{ return m_requestModels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const { return m_requestModels; }
     inline bool RequestModelsHasBeenSet() const { return m_requestModelsHasBeenSet; }
-    inline void SetRequestModels(const Aws::Map<Aws::String, Aws::String>& value) { m_requestModelsHasBeenSet = true; m_requestModels = value; }
-    inline void SetRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { m_requestModelsHasBeenSet = true; m_requestModels = std::move(value); }
-    inline Method& WithRequestModels(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestModels(value); return *this;}
-    inline Method& WithRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestModels(std::move(value)); return *this;}
-    inline Method& AddRequestModels(const Aws::String& key, const Aws::String& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, value); return *this; }
-    inline Method& AddRequestModels(Aws::String&& key, const Aws::String& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::move(key), value); return *this; }
-    inline Method& AddRequestModels(const Aws::String& key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, std::move(value)); return *this; }
-    inline Method& AddRequestModels(Aws::String&& key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::move(key), std::move(value)); return *this; }
-    inline Method& AddRequestModels(const char* key, Aws::String&& value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, std::move(value)); return *this; }
-    inline Method& AddRequestModels(Aws::String&& key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::move(key), value); return *this; }
-    inline Method& AddRequestModels(const char* key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, value); return *this; }
+    template<typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestModels(RequestModelsT&& value) { m_requestModelsHasBeenSet = true; m_requestModels = std::forward<RequestModelsT>(value); }
+    template<typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
+    Method& WithRequestModels(RequestModelsT&& value) { SetRequestModels(std::forward<RequestModelsT>(value)); return *this;}
+    template<typename RequestModelsKeyT = Aws::String, typename RequestModelsValueT = Aws::String>
+    Method& AddRequestModels(RequestModelsKeyT&& key, RequestModelsValueT&& value) {
+      m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::forward<RequestModelsKeyT>(key), std::forward<RequestModelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p>
      */
-    inline const Aws::Map<Aws::String, MethodResponse>& GetMethodResponses() const{ return m_methodResponses; }
+    inline const Aws::Map<Aws::String, MethodResponse>& GetMethodResponses() const { return m_methodResponses; }
     inline bool MethodResponsesHasBeenSet() const { return m_methodResponsesHasBeenSet; }
-    inline void SetMethodResponses(const Aws::Map<Aws::String, MethodResponse>& value) { m_methodResponsesHasBeenSet = true; m_methodResponses = value; }
-    inline void SetMethodResponses(Aws::Map<Aws::String, MethodResponse>&& value) { m_methodResponsesHasBeenSet = true; m_methodResponses = std::move(value); }
-    inline Method& WithMethodResponses(const Aws::Map<Aws::String, MethodResponse>& value) { SetMethodResponses(value); return *this;}
-    inline Method& WithMethodResponses(Aws::Map<Aws::String, MethodResponse>&& value) { SetMethodResponses(std::move(value)); return *this;}
-    inline Method& AddMethodResponses(const Aws::String& key, const MethodResponse& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(key, value); return *this; }
-    inline Method& AddMethodResponses(Aws::String&& key, const MethodResponse& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(std::move(key), value); return *this; }
-    inline Method& AddMethodResponses(const Aws::String& key, MethodResponse&& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(key, std::move(value)); return *this; }
-    inline Method& AddMethodResponses(Aws::String&& key, MethodResponse&& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(std::move(key), std::move(value)); return *this; }
-    inline Method& AddMethodResponses(const char* key, MethodResponse&& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(key, std::move(value)); return *this; }
-    inline Method& AddMethodResponses(const char* key, const MethodResponse& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(key, value); return *this; }
+    template<typename MethodResponsesT = Aws::Map<Aws::String, MethodResponse>>
+    void SetMethodResponses(MethodResponsesT&& value) { m_methodResponsesHasBeenSet = true; m_methodResponses = std::forward<MethodResponsesT>(value); }
+    template<typename MethodResponsesT = Aws::Map<Aws::String, MethodResponse>>
+    Method& WithMethodResponses(MethodResponsesT&& value) { SetMethodResponses(std::forward<MethodResponsesT>(value)); return *this;}
+    template<typename MethodResponsesKeyT = Aws::String, typename MethodResponsesValueT = MethodResponse>
+    Method& AddMethodResponses(MethodResponsesKeyT&& key, MethodResponsesValueT&& value) {
+      m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(std::forward<MethodResponsesKeyT>(key), std::forward<MethodResponsesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -205,12 +190,12 @@ namespace Model
      * request to the back end and performing necessary transformations to make the
      * request compliant with the back end.</p>
      */
-    inline const Integration& GetMethodIntegration() const{ return m_methodIntegration; }
+    inline const Integration& GetMethodIntegration() const { return m_methodIntegration; }
     inline bool MethodIntegrationHasBeenSet() const { return m_methodIntegrationHasBeenSet; }
-    inline void SetMethodIntegration(const Integration& value) { m_methodIntegrationHasBeenSet = true; m_methodIntegration = value; }
-    inline void SetMethodIntegration(Integration&& value) { m_methodIntegrationHasBeenSet = true; m_methodIntegration = std::move(value); }
-    inline Method& WithMethodIntegration(const Integration& value) { SetMethodIntegration(value); return *this;}
-    inline Method& WithMethodIntegration(Integration&& value) { SetMethodIntegration(std::move(value)); return *this;}
+    template<typename MethodIntegrationT = Integration>
+    void SetMethodIntegration(MethodIntegrationT&& value) { m_methodIntegrationHasBeenSet = true; m_methodIntegration = std::forward<MethodIntegrationT>(value); }
+    template<typename MethodIntegrationT = Integration>
+    Method& WithMethodIntegration(MethodIntegrationT&& value) { SetMethodIntegration(std::forward<MethodIntegrationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,27 +209,24 @@ namespace Model
      * is configured, the client must provide an access token instead of an identity
      * token for authorization purposes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const{ return m_authorizationScopes; }
+    inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const { return m_authorizationScopes; }
     inline bool AuthorizationScopesHasBeenSet() const { return m_authorizationScopesHasBeenSet; }
-    inline void SetAuthorizationScopes(const Aws::Vector<Aws::String>& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = value; }
-    inline void SetAuthorizationScopes(Aws::Vector<Aws::String>&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::move(value); }
-    inline Method& WithAuthorizationScopes(const Aws::Vector<Aws::String>& value) { SetAuthorizationScopes(value); return *this;}
-    inline Method& WithAuthorizationScopes(Aws::Vector<Aws::String>&& value) { SetAuthorizationScopes(std::move(value)); return *this;}
-    inline Method& AddAuthorizationScopes(const Aws::String& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
-    inline Method& AddAuthorizationScopes(Aws::String&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(std::move(value)); return *this; }
-    inline Method& AddAuthorizationScopes(const char* value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
+    template<typename AuthorizationScopesT = Aws::Vector<Aws::String>>
+    void SetAuthorizationScopes(AuthorizationScopesT&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::forward<AuthorizationScopesT>(value); }
+    template<typename AuthorizationScopesT = Aws::Vector<Aws::String>>
+    Method& WithAuthorizationScopes(AuthorizationScopesT&& value) { SetAuthorizationScopes(std::forward<AuthorizationScopesT>(value)); return *this;}
+    template<typename AuthorizationScopesT = Aws::String>
+    Method& AddAuthorizationScopes(AuthorizationScopesT&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.emplace_back(std::forward<AuthorizationScopesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline Method& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline Method& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline Method& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    Method& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -257,7 +239,7 @@ namespace Model
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet = false;
 
-    bool m_apiKeyRequired;
+    bool m_apiKeyRequired{false};
     bool m_apiKeyRequiredHasBeenSet = false;
 
     Aws::String m_requestValidatorId;

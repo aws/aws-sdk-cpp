@@ -12,13 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeactivatePipelineRequest::DeactivatePipelineRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_cancelActive(false),
-    m_cancelActiveHasBeenSet(false)
-{
-}
-
 Aws::String DeactivatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceMapping::ResourceMapping() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 ResourceMapping::ResourceMapping(const XmlNode& xmlNode)
-  : ResourceMapping()
 {
   *this = xmlNode;
 }

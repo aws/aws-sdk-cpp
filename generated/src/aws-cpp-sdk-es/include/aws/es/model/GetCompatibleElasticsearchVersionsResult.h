@@ -36,7 +36,7 @@ namespace Model
   class GetCompatibleElasticsearchVersionsResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API GetCompatibleElasticsearchVersionsResult();
+    AWS_ELASTICSEARCHSERVICE_API GetCompatibleElasticsearchVersionsResult() = default;
     AWS_ELASTICSEARCHSERVICE_API GetCompatibleElasticsearchVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API GetCompatibleElasticsearchVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,30 +46,30 @@ namespace Model
      * <p> A map of compatible Elasticsearch versions returned as part of the <code>
      * <a>GetCompatibleElasticsearchVersions</a> </code> operation. </p>
      */
-    inline const Aws::Vector<CompatibleVersionsMap>& GetCompatibleElasticsearchVersions() const{ return m_compatibleElasticsearchVersions; }
-    inline void SetCompatibleElasticsearchVersions(const Aws::Vector<CompatibleVersionsMap>& value) { m_compatibleElasticsearchVersions = value; }
-    inline void SetCompatibleElasticsearchVersions(Aws::Vector<CompatibleVersionsMap>&& value) { m_compatibleElasticsearchVersions = std::move(value); }
-    inline GetCompatibleElasticsearchVersionsResult& WithCompatibleElasticsearchVersions(const Aws::Vector<CompatibleVersionsMap>& value) { SetCompatibleElasticsearchVersions(value); return *this;}
-    inline GetCompatibleElasticsearchVersionsResult& WithCompatibleElasticsearchVersions(Aws::Vector<CompatibleVersionsMap>&& value) { SetCompatibleElasticsearchVersions(std::move(value)); return *this;}
-    inline GetCompatibleElasticsearchVersionsResult& AddCompatibleElasticsearchVersions(const CompatibleVersionsMap& value) { m_compatibleElasticsearchVersions.push_back(value); return *this; }
-    inline GetCompatibleElasticsearchVersionsResult& AddCompatibleElasticsearchVersions(CompatibleVersionsMap&& value) { m_compatibleElasticsearchVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CompatibleVersionsMap>& GetCompatibleElasticsearchVersions() const { return m_compatibleElasticsearchVersions; }
+    template<typename CompatibleElasticsearchVersionsT = Aws::Vector<CompatibleVersionsMap>>
+    void SetCompatibleElasticsearchVersions(CompatibleElasticsearchVersionsT&& value) { m_compatibleElasticsearchVersionsHasBeenSet = true; m_compatibleElasticsearchVersions = std::forward<CompatibleElasticsearchVersionsT>(value); }
+    template<typename CompatibleElasticsearchVersionsT = Aws::Vector<CompatibleVersionsMap>>
+    GetCompatibleElasticsearchVersionsResult& WithCompatibleElasticsearchVersions(CompatibleElasticsearchVersionsT&& value) { SetCompatibleElasticsearchVersions(std::forward<CompatibleElasticsearchVersionsT>(value)); return *this;}
+    template<typename CompatibleElasticsearchVersionsT = CompatibleVersionsMap>
+    GetCompatibleElasticsearchVersionsResult& AddCompatibleElasticsearchVersions(CompatibleElasticsearchVersionsT&& value) { m_compatibleElasticsearchVersionsHasBeenSet = true; m_compatibleElasticsearchVersions.emplace_back(std::forward<CompatibleElasticsearchVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCompatibleElasticsearchVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCompatibleElasticsearchVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCompatibleElasticsearchVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCompatibleElasticsearchVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CompatibleVersionsMap> m_compatibleElasticsearchVersions;
+    bool m_compatibleElasticsearchVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

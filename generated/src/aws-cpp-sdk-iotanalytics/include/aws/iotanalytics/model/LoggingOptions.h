@@ -32,7 +32,7 @@ namespace Model
   class LoggingOptions
   {
   public:
-    AWS_IOTANALYTICS_API LoggingOptions();
+    AWS_IOTANALYTICS_API LoggingOptions() = default;
     AWS_IOTANALYTICS_API LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
      * <p>The ARN of the role that grants permission to IoT Analytics to perform
      * logging.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline LoggingOptions& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline LoggingOptions& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline LoggingOptions& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    LoggingOptions& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The logging level. Currently, only ERROR is supported.</p>
      */
-    inline const LoggingLevel& GetLevel() const{ return m_level; }
+    inline LoggingLevel GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const LoggingLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(LoggingLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline LoggingOptions& WithLevel(const LoggingLevel& value) { SetLevel(value); return *this;}
-    inline LoggingOptions& WithLevel(LoggingLevel&& value) { SetLevel(std::move(value)); return *this;}
+    inline void SetLevel(LoggingLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline LoggingOptions& WithLevel(LoggingLevel value) { SetLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If true, logging is enabled for IoT Analytics.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline LoggingOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -79,10 +75,10 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    LoggingLevel m_level;
+    LoggingLevel m_level{LoggingLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

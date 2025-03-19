@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetJobRunRequest::GetJobRunRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false)
-{
-}
-
 Aws::String GetJobRunRequest::SerializePayload() const
 {
   return {};

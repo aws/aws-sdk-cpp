@@ -21,7 +21,7 @@ namespace Model
   class DeleteWebAuthnCredentialRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API DeleteWebAuthnCredentialRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API DeleteWebAuthnCredentialRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * user. Must include a scope claim for
      * <code>aws.cognito.signin.user.admin</code>.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline DeleteWebAuthnCredentialRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline DeleteWebAuthnCredentialRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline DeleteWebAuthnCredentialRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    DeleteWebAuthnCredentialRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the passkey that you want to delete.</p>
      */
-    inline const Aws::String& GetCredentialId() const{ return m_credentialId; }
+    inline const Aws::String& GetCredentialId() const { return m_credentialId; }
     inline bool CredentialIdHasBeenSet() const { return m_credentialIdHasBeenSet; }
-    inline void SetCredentialId(const Aws::String& value) { m_credentialIdHasBeenSet = true; m_credentialId = value; }
-    inline void SetCredentialId(Aws::String&& value) { m_credentialIdHasBeenSet = true; m_credentialId = std::move(value); }
-    inline void SetCredentialId(const char* value) { m_credentialIdHasBeenSet = true; m_credentialId.assign(value); }
-    inline DeleteWebAuthnCredentialRequest& WithCredentialId(const Aws::String& value) { SetCredentialId(value); return *this;}
-    inline DeleteWebAuthnCredentialRequest& WithCredentialId(Aws::String&& value) { SetCredentialId(std::move(value)); return *this;}
-    inline DeleteWebAuthnCredentialRequest& WithCredentialId(const char* value) { SetCredentialId(value); return *this;}
+    template<typename CredentialIdT = Aws::String>
+    void SetCredentialId(CredentialIdT&& value) { m_credentialIdHasBeenSet = true; m_credentialId = std::forward<CredentialIdT>(value); }
+    template<typename CredentialIdT = Aws::String>
+    DeleteWebAuthnCredentialRequest& WithCredentialId(CredentialIdT&& value) { SetCredentialId(std::forward<CredentialIdT>(value)); return *this;}
     ///@}
   private:
 

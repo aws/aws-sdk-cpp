@@ -31,7 +31,7 @@ namespace Model
   class NetworkAnalyzerConfigurations
   {
   public:
-    AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations();
+    AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations() = default;
     AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name of the new resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline NetworkAnalyzerConfigurations& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline NetworkAnalyzerConfigurations& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline NetworkAnalyzerConfigurations& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    NetworkAnalyzerConfigurations& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline NetworkAnalyzerConfigurations& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline NetworkAnalyzerConfigurations& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline NetworkAnalyzerConfigurations& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    NetworkAnalyzerConfigurations& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

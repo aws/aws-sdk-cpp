@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-CountAction::CountAction() : 
-    m_customRequestHandlingHasBeenSet(false)
-{
-}
-
 CountAction::CountAction(JsonView jsonValue)
-  : CountAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CountAction& CountAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomRequestHandling"))
   {
     m_customRequestHandling = jsonValue.GetObject("CustomRequestHandling");
-
     m_customRequestHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

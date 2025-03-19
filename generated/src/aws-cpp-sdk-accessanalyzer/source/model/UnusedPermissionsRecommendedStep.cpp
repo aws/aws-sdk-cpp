@@ -18,17 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedPermissionsRecommendedStep::UnusedPermissionsRecommendedStep() : 
-    m_policyUpdatedAtHasBeenSet(false),
-    m_recommendedAction(RecommendedRemediationAction::NOT_SET),
-    m_recommendedActionHasBeenSet(false),
-    m_recommendedPolicyHasBeenSet(false),
-    m_existingPolicyIdHasBeenSet(false)
-{
-}
-
 UnusedPermissionsRecommendedStep::UnusedPermissionsRecommendedStep(JsonView jsonValue)
-  : UnusedPermissionsRecommendedStep()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ UnusedPermissionsRecommendedStep& UnusedPermissionsRecommendedStep::operator =(J
   if(jsonValue.ValueExists("policyUpdatedAt"))
   {
     m_policyUpdatedAt = jsonValue.GetString("policyUpdatedAt");
-
     m_policyUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedAction"))
   {
     m_recommendedAction = RecommendedRemediationActionMapper::GetRecommendedRemediationActionForName(jsonValue.GetString("recommendedAction"));
-
     m_recommendedActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedPolicy"))
   {
     m_recommendedPolicy = jsonValue.GetString("recommendedPolicy");
-
     m_recommendedPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("existingPolicyId"))
   {
     m_existingPolicyId = jsonValue.GetString("existingPolicyId");
-
     m_existingPolicyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

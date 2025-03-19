@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-EntryDescription::EntryDescription() : 
-    m_entryDetailHasBeenSet(false),
-    m_entryRuleNumber(0),
-    m_entryRuleNumberHasBeenSet(false),
-    m_entryType(EntryType::NOT_SET),
-    m_entryTypeHasBeenSet(false)
-{
-}
-
 EntryDescription::EntryDescription(JsonView jsonValue)
-  : EntryDescription()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ EntryDescription& EntryDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntryDetail"))
   {
     m_entryDetail = jsonValue.GetObject("EntryDetail");
-
     m_entryDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryRuleNumber"))
   {
     m_entryRuleNumber = jsonValue.GetInteger("EntryRuleNumber");
-
     m_entryRuleNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntryType"))
   {
     m_entryType = EntryTypeMapper::GetEntryTypeForName(jsonValue.GetString("EntryType"));
-
     m_entryTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

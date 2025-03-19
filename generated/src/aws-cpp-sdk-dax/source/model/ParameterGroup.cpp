@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-ParameterGroup::ParameterGroup() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ParameterGroup::ParameterGroup(JsonView jsonValue)
-  : ParameterGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParameterGroup& ParameterGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParameterGroupName"))
   {
     m_parameterGroupName = jsonValue.GetString("ParameterGroupName");
-
     m_parameterGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

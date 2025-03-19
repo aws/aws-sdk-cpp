@@ -41,7 +41,7 @@ namespace Model
   class KeySchemaElement
   {
   public:
-    AWS_DYNAMODB_API KeySchemaElement();
+    AWS_DYNAMODB_API KeySchemaElement() = default;
     AWS_DYNAMODB_API KeySchemaElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API KeySchemaElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The name of a key attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline KeySchemaElement& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline KeySchemaElement& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline KeySchemaElement& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    KeySchemaElement& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,19 +71,17 @@ namespace Model
      * way DynamoDB stores items with the same partition key physically close together,
      * in sorted order by the sort key value.</p> 
      */
-    inline const KeyType& GetKeyType() const{ return m_keyType; }
+    inline KeyType GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline KeySchemaElement& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
-    inline KeySchemaElement& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    inline void SetKeyType(KeyType value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+    inline KeySchemaElement& WithKeyType(KeyType value) { SetKeyType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    KeyType m_keyType;
+    KeyType m_keyType{KeyType::NOT_SET};
     bool m_keyTypeHasBeenSet = false;
   };
 

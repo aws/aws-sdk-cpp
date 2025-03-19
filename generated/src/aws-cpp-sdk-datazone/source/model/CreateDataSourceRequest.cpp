@@ -12,27 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceRequest::CreateDataSourceRequest() : 
-    m_assetFormsInputHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_configurationHasBeenSet(false),
-    m_connectionIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_enableSetting(EnableSetting::NOT_SET),
-    m_enableSettingHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_projectIdentifierHasBeenSet(false),
-    m_publishOnImport(false),
-    m_publishOnImportHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

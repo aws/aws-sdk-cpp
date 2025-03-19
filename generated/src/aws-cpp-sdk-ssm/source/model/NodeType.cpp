@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-NodeType::NodeType() : 
-    m_instanceHasBeenSet(false)
-{
-}
-
 NodeType::NodeType(JsonView jsonValue)
-  : NodeType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NodeType& NodeType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Instance"))
   {
     m_instance = jsonValue.GetObject("Instance");
-
     m_instanceHasBeenSet = true;
   }
-
   return *this;
 }
 

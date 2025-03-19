@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCheckLayerAvailabilityRequest::BatchCheckLayerAvailabilityRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_layerDigestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchCheckLayerAvailabilityRequest::SerializePayload() const
 {
   JsonValue payload;

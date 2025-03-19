@@ -32,7 +32,7 @@ namespace Model
   class SlotResolutionSetting
   {
   public:
-    AWS_LEXMODELSV2_API SlotResolutionSetting();
+    AWS_LEXMODELSV2_API SlotResolutionSetting() = default;
     AWS_LEXMODELSV2_API SlotResolutionSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotResolutionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
      * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
      * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
      */
-    inline const SlotResolutionStrategy& GetSlotResolutionStrategy() const{ return m_slotResolutionStrategy; }
+    inline SlotResolutionStrategy GetSlotResolutionStrategy() const { return m_slotResolutionStrategy; }
     inline bool SlotResolutionStrategyHasBeenSet() const { return m_slotResolutionStrategyHasBeenSet; }
-    inline void SetSlotResolutionStrategy(const SlotResolutionStrategy& value) { m_slotResolutionStrategyHasBeenSet = true; m_slotResolutionStrategy = value; }
-    inline void SetSlotResolutionStrategy(SlotResolutionStrategy&& value) { m_slotResolutionStrategyHasBeenSet = true; m_slotResolutionStrategy = std::move(value); }
-    inline SlotResolutionSetting& WithSlotResolutionStrategy(const SlotResolutionStrategy& value) { SetSlotResolutionStrategy(value); return *this;}
-    inline SlotResolutionSetting& WithSlotResolutionStrategy(SlotResolutionStrategy&& value) { SetSlotResolutionStrategy(std::move(value)); return *this;}
+    inline void SetSlotResolutionStrategy(SlotResolutionStrategy value) { m_slotResolutionStrategyHasBeenSet = true; m_slotResolutionStrategy = value; }
+    inline SlotResolutionSetting& WithSlotResolutionStrategy(SlotResolutionStrategy value) { SetSlotResolutionStrategy(value); return *this;}
     ///@}
   private:
 
-    SlotResolutionStrategy m_slotResolutionStrategy;
+    SlotResolutionStrategy m_slotResolutionStrategy{SlotResolutionStrategy::NOT_SET};
     bool m_slotResolutionStrategyHasBeenSet = false;
   };
 

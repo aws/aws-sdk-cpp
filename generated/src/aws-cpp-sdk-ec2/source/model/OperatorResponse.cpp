@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-OperatorResponse::OperatorResponse() : 
-    m_managed(false),
-    m_managedHasBeenSet(false),
-    m_principalHasBeenSet(false)
-{
-}
-
 OperatorResponse::OperatorResponse(const XmlNode& xmlNode)
-  : OperatorResponse()
 {
   *this = xmlNode;
 }

@@ -18,15 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-WorkloadDiscoveryConfig::WorkloadDiscoveryConfig() : 
-    m_trustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus::NOT_SET),
-    m_trustedAdvisorIntegrationStatusHasBeenSet(false),
-    m_workloadResourceDefinitionHasBeenSet(false)
-{
-}
-
 WorkloadDiscoveryConfig::WorkloadDiscoveryConfig(JsonView jsonValue)
-  : WorkloadDiscoveryConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ WorkloadDiscoveryConfig& WorkloadDiscoveryConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrustedAdvisorIntegrationStatus"))
   {
     m_trustedAdvisorIntegrationStatus = TrustedAdvisorIntegrationStatusMapper::GetTrustedAdvisorIntegrationStatusForName(jsonValue.GetString("TrustedAdvisorIntegrationStatus"));
-
     m_trustedAdvisorIntegrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadResourceDefinition"))
   {
     Aws::Utils::Array<JsonView> workloadResourceDefinitionJsonList = jsonValue.GetArray("WorkloadResourceDefinition");
@@ -49,7 +39,6 @@ WorkloadDiscoveryConfig& WorkloadDiscoveryConfig::operator =(JsonView jsonValue)
     }
     m_workloadResourceDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult() : 
-    m_averageUploadRateLimitInBitsPerSec(0),
-    m_averageDownloadRateLimitInBitsPerSec(0)
-{
-}
-
 DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeBandwidthRateLimitResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ DescribeBandwidthRateLimitResult& DescribeBandwidthRateLimitResult::operator =(c
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageUploadRateLimitInBitsPerSec"))
   {
     m_averageUploadRateLimitInBitsPerSec = jsonValue.GetInt64("AverageUploadRateLimitInBitsPerSec");
-
+    m_averageUploadRateLimitInBitsPerSecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageDownloadRateLimitInBitsPerSec"))
   {
     m_averageDownloadRateLimitInBitsPerSec = jsonValue.GetInt64("AverageDownloadRateLimitInBitsPerSec");
-
+    m_averageDownloadRateLimitInBitsPerSecHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

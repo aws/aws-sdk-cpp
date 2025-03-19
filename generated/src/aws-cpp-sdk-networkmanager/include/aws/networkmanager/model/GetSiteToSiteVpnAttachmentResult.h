@@ -28,7 +28,7 @@ namespace Model
   class GetSiteToSiteVpnAttachmentResult
   {
   public:
-    AWS_NETWORKMANAGER_API GetSiteToSiteVpnAttachmentResult();
+    AWS_NETWORKMANAGER_API GetSiteToSiteVpnAttachmentResult() = default;
     AWS_NETWORKMANAGER_API GetSiteToSiteVpnAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API GetSiteToSiteVpnAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Describes the site-to-site attachment.</p>
      */
-    inline const SiteToSiteVpnAttachment& GetSiteToSiteVpnAttachment() const{ return m_siteToSiteVpnAttachment; }
-    inline void SetSiteToSiteVpnAttachment(const SiteToSiteVpnAttachment& value) { m_siteToSiteVpnAttachment = value; }
-    inline void SetSiteToSiteVpnAttachment(SiteToSiteVpnAttachment&& value) { m_siteToSiteVpnAttachment = std::move(value); }
-    inline GetSiteToSiteVpnAttachmentResult& WithSiteToSiteVpnAttachment(const SiteToSiteVpnAttachment& value) { SetSiteToSiteVpnAttachment(value); return *this;}
-    inline GetSiteToSiteVpnAttachmentResult& WithSiteToSiteVpnAttachment(SiteToSiteVpnAttachment&& value) { SetSiteToSiteVpnAttachment(std::move(value)); return *this;}
+    inline const SiteToSiteVpnAttachment& GetSiteToSiteVpnAttachment() const { return m_siteToSiteVpnAttachment; }
+    template<typename SiteToSiteVpnAttachmentT = SiteToSiteVpnAttachment>
+    void SetSiteToSiteVpnAttachment(SiteToSiteVpnAttachmentT&& value) { m_siteToSiteVpnAttachmentHasBeenSet = true; m_siteToSiteVpnAttachment = std::forward<SiteToSiteVpnAttachmentT>(value); }
+    template<typename SiteToSiteVpnAttachmentT = SiteToSiteVpnAttachment>
+    GetSiteToSiteVpnAttachmentResult& WithSiteToSiteVpnAttachment(SiteToSiteVpnAttachmentT&& value) { SetSiteToSiteVpnAttachment(std::forward<SiteToSiteVpnAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSiteToSiteVpnAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSiteToSiteVpnAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSiteToSiteVpnAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSiteToSiteVpnAttachmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SiteToSiteVpnAttachment m_siteToSiteVpnAttachment;
+    bool m_siteToSiteVpnAttachmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

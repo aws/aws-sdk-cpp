@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-CompositeComponentTypeRequest::CompositeComponentTypeRequest() : 
-    m_componentTypeIdHasBeenSet(false)
-{
-}
-
 CompositeComponentTypeRequest::CompositeComponentTypeRequest(JsonView jsonValue)
-  : CompositeComponentTypeRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CompositeComponentTypeRequest& CompositeComponentTypeRequest::operator =(JsonVie
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
-
     m_componentTypeIdHasBeenSet = true;
   }
-
   return *this;
 }
 

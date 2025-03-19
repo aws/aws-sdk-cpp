@@ -28,7 +28,7 @@ namespace Model
   class DeleteDirectConnectGatewayAssociationResult
   {
   public:
-    AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationResult();
+    AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationResult() = default;
     AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the deleted association.</p>
      */
-    inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const{ return m_directConnectGatewayAssociation; }
-    inline void SetDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociation = value; }
-    inline void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociation = std::move(value); }
-    inline DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { SetDirectConnectGatewayAssociation(value); return *this;}
-    inline DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { SetDirectConnectGatewayAssociation(std::move(value)); return *this;}
+    inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const { return m_directConnectGatewayAssociation; }
+    template<typename DirectConnectGatewayAssociationT = DirectConnectGatewayAssociation>
+    void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociationT&& value) { m_directConnectGatewayAssociationHasBeenSet = true; m_directConnectGatewayAssociation = std::forward<DirectConnectGatewayAssociationT>(value); }
+    template<typename DirectConnectGatewayAssociationT = DirectConnectGatewayAssociation>
+    DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociationT&& value) { SetDirectConnectGatewayAssociation(std::forward<DirectConnectGatewayAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDirectConnectGatewayAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDirectConnectGatewayAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDirectConnectGatewayAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDirectConnectGatewayAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DirectConnectGatewayAssociation m_directConnectGatewayAssociation;
+    bool m_directConnectGatewayAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

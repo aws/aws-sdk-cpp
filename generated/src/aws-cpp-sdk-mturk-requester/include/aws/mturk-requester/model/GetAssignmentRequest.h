@@ -21,7 +21,7 @@ namespace Model
   class GetAssignmentRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API GetAssignmentRequest();
+    AWS_MTURK_API GetAssignmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
      */
-    inline const Aws::String& GetAssignmentId() const{ return m_assignmentId; }
+    inline const Aws::String& GetAssignmentId() const { return m_assignmentId; }
     inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
-    inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
-    inline void SetAssignmentId(const char* value) { m_assignmentIdHasBeenSet = true; m_assignmentId.assign(value); }
-    inline GetAssignmentRequest& WithAssignmentId(const Aws::String& value) { SetAssignmentId(value); return *this;}
-    inline GetAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
-    inline GetAssignmentRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+    template<typename AssignmentIdT = Aws::String>
+    void SetAssignmentId(AssignmentIdT&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::forward<AssignmentIdT>(value); }
+    template<typename AssignmentIdT = Aws::String>
+    GetAssignmentRequest& WithAssignmentId(AssignmentIdT&& value) { SetAssignmentId(std::forward<AssignmentIdT>(value)); return *this;}
     ///@}
   private:
 

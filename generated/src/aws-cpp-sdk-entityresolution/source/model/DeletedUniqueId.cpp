@@ -18,13 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-DeletedUniqueId::DeletedUniqueId() : 
-    m_uniqueIdHasBeenSet(false)
-{
-}
-
 DeletedUniqueId::DeletedUniqueId(JsonView jsonValue)
-  : DeletedUniqueId()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeletedUniqueId& DeletedUniqueId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uniqueId"))
   {
     m_uniqueId = jsonValue.GetString("uniqueId");
-
     m_uniqueIdHasBeenSet = true;
   }
-
   return *this;
 }
 

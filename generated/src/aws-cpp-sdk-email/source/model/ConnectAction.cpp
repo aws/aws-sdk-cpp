@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConnectAction::ConnectAction() : 
-    m_instanceARNHasBeenSet(false),
-    m_iAMRoleARNHasBeenSet(false)
-{
-}
-
 ConnectAction::ConnectAction(const XmlNode& xmlNode)
-  : ConnectAction()
 {
   *this = xmlNode;
 }

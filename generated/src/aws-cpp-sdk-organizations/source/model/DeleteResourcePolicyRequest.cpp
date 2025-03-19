@@ -12,10 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourcePolicyRequest::DeleteResourcePolicyRequest()
-{
-}
-
 Aws::String DeleteResourcePolicyRequest::SerializePayload() const
 {
   return "{}";

@@ -22,7 +22,7 @@ namespace Model
   class BatchGetConfigurationPolicyAssociationsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchGetConfigurationPolicyAssociationsRequest();
+    AWS_SECURITYHUB_API BatchGetConfigurationPolicyAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p> Specifies one or more target account IDs, organizational unit (OU) IDs, or
      * the root ID to retrieve associations for. </p>
      */
-    inline const Aws::Vector<ConfigurationPolicyAssociation>& GetConfigurationPolicyAssociationIdentifiers() const{ return m_configurationPolicyAssociationIdentifiers; }
+    inline const Aws::Vector<ConfigurationPolicyAssociation>& GetConfigurationPolicyAssociationIdentifiers() const { return m_configurationPolicyAssociationIdentifiers; }
     inline bool ConfigurationPolicyAssociationIdentifiersHasBeenSet() const { return m_configurationPolicyAssociationIdentifiersHasBeenSet; }
-    inline void SetConfigurationPolicyAssociationIdentifiers(const Aws::Vector<ConfigurationPolicyAssociation>& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = value; }
-    inline void SetConfigurationPolicyAssociationIdentifiers(Aws::Vector<ConfigurationPolicyAssociation>&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = std::move(value); }
-    inline BatchGetConfigurationPolicyAssociationsRequest& WithConfigurationPolicyAssociationIdentifiers(const Aws::Vector<ConfigurationPolicyAssociation>& value) { SetConfigurationPolicyAssociationIdentifiers(value); return *this;}
-    inline BatchGetConfigurationPolicyAssociationsRequest& WithConfigurationPolicyAssociationIdentifiers(Aws::Vector<ConfigurationPolicyAssociation>&& value) { SetConfigurationPolicyAssociationIdentifiers(std::move(value)); return *this;}
-    inline BatchGetConfigurationPolicyAssociationsRequest& AddConfigurationPolicyAssociationIdentifiers(const ConfigurationPolicyAssociation& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers.push_back(value); return *this; }
-    inline BatchGetConfigurationPolicyAssociationsRequest& AddConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociation&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationPolicyAssociationIdentifiersT = Aws::Vector<ConfigurationPolicyAssociation>>
+    void SetConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociationIdentifiersT&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = std::forward<ConfigurationPolicyAssociationIdentifiersT>(value); }
+    template<typename ConfigurationPolicyAssociationIdentifiersT = Aws::Vector<ConfigurationPolicyAssociation>>
+    BatchGetConfigurationPolicyAssociationsRequest& WithConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociationIdentifiersT&& value) { SetConfigurationPolicyAssociationIdentifiers(std::forward<ConfigurationPolicyAssociationIdentifiersT>(value)); return *this;}
+    template<typename ConfigurationPolicyAssociationIdentifiersT = ConfigurationPolicyAssociation>
+    BatchGetConfigurationPolicyAssociationsRequest& AddConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociationIdentifiersT&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers.emplace_back(std::forward<ConfigurationPolicyAssociationIdentifiersT>(value)); return *this; }
     ///@}
   private:
 

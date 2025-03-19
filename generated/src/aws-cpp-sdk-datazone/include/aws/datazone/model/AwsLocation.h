@@ -31,7 +31,7 @@ namespace Model
   class AwsLocation
   {
   public:
-    AWS_DATAZONE_API AwsLocation();
+    AWS_DATAZONE_API AwsLocation() = default;
     AWS_DATAZONE_API AwsLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AwsLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,56 +41,48 @@ namespace Model
     /**
      * <p>The access role of a connection.</p>
      */
-    inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
+    inline const Aws::String& GetAccessRole() const { return m_accessRole; }
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
-    inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
-    inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
-    inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
-    inline AwsLocation& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
-    inline AwsLocation& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
-    inline AwsLocation& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
+    template<typename AccessRoleT = Aws::String>
+    void SetAccessRole(AccessRoleT&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::forward<AccessRoleT>(value); }
+    template<typename AccessRoleT = Aws::String>
+    AwsLocation& WithAccessRole(AccessRoleT&& value) { SetAccessRole(std::forward<AccessRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID of a connection.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline AwsLocation& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline AwsLocation& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline AwsLocation& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    AwsLocation& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region of a connection.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline AwsLocation& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline AwsLocation& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline AwsLocation& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    AwsLocation& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM connection ID of a connection.</p>
      */
-    inline const Aws::String& GetIamConnectionId() const{ return m_iamConnectionId; }
+    inline const Aws::String& GetIamConnectionId() const { return m_iamConnectionId; }
     inline bool IamConnectionIdHasBeenSet() const { return m_iamConnectionIdHasBeenSet; }
-    inline void SetIamConnectionId(const Aws::String& value) { m_iamConnectionIdHasBeenSet = true; m_iamConnectionId = value; }
-    inline void SetIamConnectionId(Aws::String&& value) { m_iamConnectionIdHasBeenSet = true; m_iamConnectionId = std::move(value); }
-    inline void SetIamConnectionId(const char* value) { m_iamConnectionIdHasBeenSet = true; m_iamConnectionId.assign(value); }
-    inline AwsLocation& WithIamConnectionId(const Aws::String& value) { SetIamConnectionId(value); return *this;}
-    inline AwsLocation& WithIamConnectionId(Aws::String&& value) { SetIamConnectionId(std::move(value)); return *this;}
-    inline AwsLocation& WithIamConnectionId(const char* value) { SetIamConnectionId(value); return *this;}
+    template<typename IamConnectionIdT = Aws::String>
+    void SetIamConnectionId(IamConnectionIdT&& value) { m_iamConnectionIdHasBeenSet = true; m_iamConnectionId = std::forward<IamConnectionIdT>(value); }
+    template<typename IamConnectionIdT = Aws::String>
+    AwsLocation& WithIamConnectionId(IamConnectionIdT&& value) { SetIamConnectionId(std::forward<IamConnectionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteGlobalReplicationGroupRequest::DeleteGlobalReplicationGroupRequest() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_retainPrimaryReplicationGroup(false),
-    m_retainPrimaryReplicationGroupHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGlobalReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

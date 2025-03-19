@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFeatureRequest::DeleteFeatureRequest() : 
-    m_featureHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFeatureRequest::SerializePayload() const
 {
   return {};

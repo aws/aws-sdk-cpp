@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-RedshiftDataShareAsset::RedshiftDataShareAsset() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 RedshiftDataShareAsset::RedshiftDataShareAsset(JsonView jsonValue)
-  : RedshiftDataShareAsset()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RedshiftDataShareAsset& RedshiftDataShareAsset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class MembershipProtectedJobResultConfiguration
   {
   public:
-    AWS_CLEANROOMS_API MembershipProtectedJobResultConfiguration();
+    AWS_CLEANROOMS_API MembershipProtectedJobResultConfiguration() = default;
     AWS_CLEANROOMS_API MembershipProtectedJobResultConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipProtectedJobResultConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p> The output configuration for a protected job result.</p>
      */
-    inline const MembershipProtectedJobOutputConfiguration& GetOutputConfiguration() const{ return m_outputConfiguration; }
+    inline const MembershipProtectedJobOutputConfiguration& GetOutputConfiguration() const { return m_outputConfiguration; }
     inline bool OutputConfigurationHasBeenSet() const { return m_outputConfigurationHasBeenSet; }
-    inline void SetOutputConfiguration(const MembershipProtectedJobOutputConfiguration& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = value; }
-    inline void SetOutputConfiguration(MembershipProtectedJobOutputConfiguration&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::move(value); }
-    inline MembershipProtectedJobResultConfiguration& WithOutputConfiguration(const MembershipProtectedJobOutputConfiguration& value) { SetOutputConfiguration(value); return *this;}
-    inline MembershipProtectedJobResultConfiguration& WithOutputConfiguration(MembershipProtectedJobOutputConfiguration&& value) { SetOutputConfiguration(std::move(value)); return *this;}
+    template<typename OutputConfigurationT = MembershipProtectedJobOutputConfiguration>
+    void SetOutputConfiguration(OutputConfigurationT&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::forward<OutputConfigurationT>(value); }
+    template<typename OutputConfigurationT = MembershipProtectedJobOutputConfiguration>
+    MembershipProtectedJobResultConfiguration& WithOutputConfiguration(OutputConfigurationT&& value) { SetOutputConfiguration(std::forward<OutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,12 @@ namespace Model
      * job results to the result location, given by the member who can receive
      * results.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline MembershipProtectedJobResultConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline MembershipProtectedJobResultConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline MembershipProtectedJobResultConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    MembershipProtectedJobResultConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

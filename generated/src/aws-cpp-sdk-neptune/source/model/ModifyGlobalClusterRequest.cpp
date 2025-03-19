@@ -10,17 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-ModifyGlobalClusterRequest::ModifyGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_newGlobalClusterIdentifierHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_allowMajorVersionUpgrade(false),
-    m_allowMajorVersionUpgradeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

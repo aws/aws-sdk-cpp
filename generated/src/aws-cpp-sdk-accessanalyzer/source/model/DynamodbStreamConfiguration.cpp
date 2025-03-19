@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-DynamodbStreamConfiguration::DynamodbStreamConfiguration() : 
-    m_streamPolicyHasBeenSet(false)
-{
-}
-
 DynamodbStreamConfiguration::DynamodbStreamConfiguration(JsonView jsonValue)
-  : DynamodbStreamConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DynamodbStreamConfiguration& DynamodbStreamConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("streamPolicy"))
   {
     m_streamPolicy = jsonValue.GetString("streamPolicy");
-
     m_streamPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

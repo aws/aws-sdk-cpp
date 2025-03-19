@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSitesRequest::ListSitesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_operatingAddressCountryCodeFilterHasBeenSet(false),
-    m_operatingAddressStateOrRegionFilterHasBeenSet(false),
-    m_operatingAddressCityFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListSitesRequest::SerializePayload() const
 {
   return {};

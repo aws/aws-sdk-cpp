@@ -26,7 +26,7 @@ namespace Model
   class CreateIpamRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateIpamRequest();
+    AWS_EC2_API CreateIpamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,7 +48,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateIpamRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,14 +58,12 @@ namespace Model
     /**
      * <p>A description for the IPAM.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateIpamRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateIpamRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateIpamRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateIpamRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,14 @@ namespace Model
      * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
      * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
-    inline const Aws::Vector<AddIpamOperatingRegion>& GetOperatingRegions() const{ return m_operatingRegions; }
+    inline const Aws::Vector<AddIpamOperatingRegion>& GetOperatingRegions() const { return m_operatingRegions; }
     inline bool OperatingRegionsHasBeenSet() const { return m_operatingRegionsHasBeenSet; }
-    inline void SetOperatingRegions(const Aws::Vector<AddIpamOperatingRegion>& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = value; }
-    inline void SetOperatingRegions(Aws::Vector<AddIpamOperatingRegion>&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = std::move(value); }
-    inline CreateIpamRequest& WithOperatingRegions(const Aws::Vector<AddIpamOperatingRegion>& value) { SetOperatingRegions(value); return *this;}
-    inline CreateIpamRequest& WithOperatingRegions(Aws::Vector<AddIpamOperatingRegion>&& value) { SetOperatingRegions(std::move(value)); return *this;}
-    inline CreateIpamRequest& AddOperatingRegions(const AddIpamOperatingRegion& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(value); return *this; }
-    inline CreateIpamRequest& AddOperatingRegions(AddIpamOperatingRegion&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(std::move(value)); return *this; }
+    template<typename OperatingRegionsT = Aws::Vector<AddIpamOperatingRegion>>
+    void SetOperatingRegions(OperatingRegionsT&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = std::forward<OperatingRegionsT>(value); }
+    template<typename OperatingRegionsT = Aws::Vector<AddIpamOperatingRegion>>
+    CreateIpamRequest& WithOperatingRegions(OperatingRegionsT&& value) { SetOperatingRegions(std::forward<OperatingRegionsT>(value)); return *this;}
+    template<typename OperatingRegionsT = AddIpamOperatingRegion>
+    CreateIpamRequest& AddOperatingRegions(OperatingRegionsT&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.emplace_back(std::forward<OperatingRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,14 +93,14 @@ namespace Model
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateIpamRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateIpamRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateIpamRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateIpamRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateIpamRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateIpamRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -112,14 +110,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateIpamRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateIpamRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateIpamRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateIpamRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +125,10 @@ namespace Model
      * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
      * IPAM tab</a>.</p>
      */
-    inline const IpamTier& GetTier() const{ return m_tier; }
+    inline IpamTier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const IpamTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(IpamTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline CreateIpamRequest& WithTier(const IpamTier& value) { SetTier(value); return *this;}
-    inline CreateIpamRequest& WithTier(IpamTier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(IpamTier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline CreateIpamRequest& WithTier(IpamTier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +136,14 @@ namespace Model
      * <p>Enable this option to use your own GUA ranges as private IPv6 addresses. This
      * option is disabled by default.</p>
      */
-    inline bool GetEnablePrivateGua() const{ return m_enablePrivateGua; }
+    inline bool GetEnablePrivateGua() const { return m_enablePrivateGua; }
     inline bool EnablePrivateGuaHasBeenSet() const { return m_enablePrivateGuaHasBeenSet; }
     inline void SetEnablePrivateGua(bool value) { m_enablePrivateGuaHasBeenSet = true; m_enablePrivateGua = value; }
     inline CreateIpamRequest& WithEnablePrivateGua(bool value) { SetEnablePrivateGua(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_description;
@@ -164,10 +158,10 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    IpamTier m_tier;
+    IpamTier m_tier{IpamTier::NOT_SET};
     bool m_tierHasBeenSet = false;
 
-    bool m_enablePrivateGua;
+    bool m_enablePrivateGua{false};
     bool m_enablePrivateGuaHasBeenSet = false;
   };
 

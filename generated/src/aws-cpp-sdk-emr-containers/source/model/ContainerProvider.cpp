@@ -18,16 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-ContainerProvider::ContainerProvider() : 
-    m_type(ContainerProviderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_infoHasBeenSet(false)
-{
-}
-
 ContainerProvider::ContainerProvider(JsonView jsonValue)
-  : ContainerProvider()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContainerProvider& ContainerProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = ContainerProviderTypeMapper::GetContainerProviderTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("info"))
   {
     m_info = jsonValue.GetObject("info");
-
     m_infoHasBeenSet = true;
   }
-
   return *this;
 }
 

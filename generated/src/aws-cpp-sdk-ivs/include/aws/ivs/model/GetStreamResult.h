@@ -28,7 +28,7 @@ namespace Model
   class GetStreamResult
   {
   public:
-    AWS_IVS_API GetStreamResult();
+    AWS_IVS_API GetStreamResult() = default;
     AWS_IVS_API GetStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVS_API GetStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Stream& GetStream() const{ return m_stream; }
-    inline void SetStream(const Stream& value) { m_stream = value; }
-    inline void SetStream(Stream&& value) { m_stream = std::move(value); }
-    inline GetStreamResult& WithStream(const Stream& value) { SetStream(value); return *this;}
-    inline GetStreamResult& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
+    inline const Stream& GetStream() const { return m_stream; }
+    template<typename StreamT = Stream>
+    void SetStream(StreamT&& value) { m_streamHasBeenSet = true; m_stream = std::forward<StreamT>(value); }
+    template<typename StreamT = Stream>
+    GetStreamResult& WithStream(StreamT&& value) { SetStream(std::forward<StreamT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Stream m_stream;
+    bool m_streamHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

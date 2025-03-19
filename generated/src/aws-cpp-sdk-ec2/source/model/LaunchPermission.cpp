@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchPermission::LaunchPermission() : 
-    m_organizationArnHasBeenSet(false),
-    m_organizationalUnitArnHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false)
-{
-}
-
 LaunchPermission::LaunchPermission(const XmlNode& xmlNode)
-  : LaunchPermission()
 {
   *this = xmlNode;
 }
@@ -62,7 +52,7 @@ LaunchPermission& LaunchPermission::operator =(const XmlNode& xmlNode)
     XmlNode groupNode = resultNode.FirstChild("group");
     if(!groupNode.IsNull())
     {
-      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
+      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()));
       m_groupHasBeenSet = true;
     }
   }

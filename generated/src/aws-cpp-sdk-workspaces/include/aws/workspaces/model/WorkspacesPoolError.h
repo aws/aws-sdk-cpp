@@ -32,7 +32,7 @@ namespace Model
   class WorkspacesPoolError
   {
   public:
-    AWS_WORKSPACES_API WorkspacesPoolError();
+    AWS_WORKSPACES_API WorkspacesPoolError() = default;
     AWS_WORKSPACES_API WorkspacesPoolError(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkspacesPoolError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const WorkspacesPoolErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline WorkspacesPoolErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const WorkspacesPoolErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(WorkspacesPoolErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline WorkspacesPoolError& WithErrorCode(const WorkspacesPoolErrorCode& value) { SetErrorCode(value); return *this;}
-    inline WorkspacesPoolError& WithErrorCode(WorkspacesPoolErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(WorkspacesPoolErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline WorkspacesPoolError& WithErrorCode(WorkspacesPoolErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline WorkspacesPoolError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline WorkspacesPoolError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline WorkspacesPoolError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    WorkspacesPoolError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    WorkspacesPoolErrorCode m_errorCode;
+    WorkspacesPoolErrorCode m_errorCode{WorkspacesPoolErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

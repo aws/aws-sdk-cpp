@@ -12,13 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ContinueDeploymentRequest::ContinueDeploymentRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentWaitType(DeploymentWaitType::NOT_SET),
-    m_deploymentWaitTypeHasBeenSet(false)
-{
-}
-
 Aws::String ContinueDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

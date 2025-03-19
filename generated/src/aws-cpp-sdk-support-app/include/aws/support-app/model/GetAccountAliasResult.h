@@ -27,7 +27,7 @@ namespace Model
   class GetAccountAliasResult
   {
   public:
-    AWS_SUPPORTAPP_API GetAccountAliasResult();
+    AWS_SUPPORTAPP_API GetAccountAliasResult() = default;
     AWS_SUPPORTAPP_API GetAccountAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORTAPP_API GetAccountAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>An alias or short name for an Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
-    inline void SetAccountAlias(const Aws::String& value) { m_accountAlias = value; }
-    inline void SetAccountAlias(Aws::String&& value) { m_accountAlias = std::move(value); }
-    inline void SetAccountAlias(const char* value) { m_accountAlias.assign(value); }
-    inline GetAccountAliasResult& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
-    inline GetAccountAliasResult& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
-    inline GetAccountAliasResult& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
+    inline const Aws::String& GetAccountAlias() const { return m_accountAlias; }
+    template<typename AccountAliasT = Aws::String>
+    void SetAccountAlias(AccountAliasT&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::forward<AccountAliasT>(value); }
+    template<typename AccountAliasT = Aws::String>
+    GetAccountAliasResult& WithAccountAlias(AccountAliasT&& value) { SetAccountAlias(std::forward<AccountAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountAlias;
+    bool m_accountAliasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

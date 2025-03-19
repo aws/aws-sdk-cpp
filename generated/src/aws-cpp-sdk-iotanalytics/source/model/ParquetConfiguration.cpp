@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ParquetConfiguration::ParquetConfiguration() : 
-    m_schemaDefinitionHasBeenSet(false)
-{
-}
-
 ParquetConfiguration::ParquetConfiguration(JsonView jsonValue)
-  : ParquetConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParquetConfiguration& ParquetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schemaDefinition"))
   {
     m_schemaDefinition = jsonValue.GetObject("schemaDefinition");
-
     m_schemaDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

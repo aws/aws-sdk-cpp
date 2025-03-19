@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-TaskPropertiesOverride::TaskPropertiesOverride() : 
-    m_containersHasBeenSet(false)
-{
-}
-
 TaskPropertiesOverride::TaskPropertiesOverride(JsonView jsonValue)
-  : TaskPropertiesOverride()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TaskPropertiesOverride& TaskPropertiesOverride::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   return *this;
 }
 

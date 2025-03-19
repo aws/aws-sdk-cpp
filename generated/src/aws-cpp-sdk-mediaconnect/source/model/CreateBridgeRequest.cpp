@@ -12,17 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBridgeRequest::CreateBridgeRequest() : 
-    m_egressGatewayBridgeHasBeenSet(false),
-    m_ingressGatewayBridgeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_placementArnHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String CreateBridgeRequest::SerializePayload() const
 {
   JsonValue payload;

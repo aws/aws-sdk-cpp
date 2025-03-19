@@ -31,7 +31,7 @@ namespace Model
   class DirectoryServiceAuthentication
   {
   public:
-    AWS_EC2_API DirectoryServiceAuthentication();
+    AWS_EC2_API DirectoryServiceAuthentication() = default;
     AWS_EC2_API DirectoryServiceAuthentication(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DirectoryServiceAuthentication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the Active Directory used for authentication.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DirectoryServiceAuthentication& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DirectoryServiceAuthentication& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DirectoryServiceAuthentication& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DirectoryServiceAuthentication& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
   private:
 

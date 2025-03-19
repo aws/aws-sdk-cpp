@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisSecurityGroupRule::AnalysisSecurityGroupRule() : 
-    m_cidrHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_protocolHasBeenSet(false)
-{
-}
-
 AnalysisSecurityGroupRule::AnalysisSecurityGroupRule(const XmlNode& xmlNode)
-  : AnalysisSecurityGroupRule()
 {
   *this = xmlNode;
 }

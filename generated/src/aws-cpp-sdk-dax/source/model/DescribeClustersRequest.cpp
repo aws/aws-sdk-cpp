@@ -12,14 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClustersRequest::DescribeClustersRequest() : 
-    m_clusterNamesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClustersRequest::SerializePayload() const
 {
   JsonValue payload;

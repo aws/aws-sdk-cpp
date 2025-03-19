@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLogGroupsForQueryRequest::ListLogGroupsForQueryRequest() : 
-    m_queryIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLogGroupsForQueryRequest::SerializePayload() const
 {
   JsonValue payload;

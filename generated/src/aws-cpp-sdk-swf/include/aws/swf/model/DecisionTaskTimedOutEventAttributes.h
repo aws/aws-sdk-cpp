@@ -32,7 +32,7 @@ namespace Model
   class DecisionTaskTimedOutEventAttributes
   {
   public:
-    AWS_SWF_API DecisionTaskTimedOutEventAttributes();
+    AWS_SWF_API DecisionTaskTimedOutEventAttributes() = default;
     AWS_SWF_API DecisionTaskTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API DecisionTaskTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * <p>The type of timeout that expired before the decision task could be
      * completed.</p>
      */
-    inline const DecisionTaskTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
+    inline DecisionTaskTimeoutType GetTimeoutType() const { return m_timeoutType; }
     inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
-    inline void SetTimeoutType(const DecisionTaskTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
-    inline void SetTimeoutType(DecisionTaskTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
-    inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(const DecisionTaskTimeoutType& value) { SetTimeoutType(value); return *this;}
-    inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(DecisionTaskTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
+    inline void SetTimeoutType(DecisionTaskTimeoutType value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline DecisionTaskTimedOutEventAttributes& WithTimeoutType(DecisionTaskTimeoutType value) { SetTimeoutType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * this decision task was scheduled. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
+    inline long long GetScheduledEventId() const { return m_scheduledEventId; }
     inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
     inline DecisionTaskTimedOutEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
@@ -69,20 +67,20 @@ namespace Model
      * decision task was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetStartedEventId() const{ return m_startedEventId; }
+    inline long long GetStartedEventId() const { return m_startedEventId; }
     inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
     inline DecisionTaskTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
     ///@}
   private:
 
-    DecisionTaskTimeoutType m_timeoutType;
+    DecisionTaskTimeoutType m_timeoutType{DecisionTaskTimeoutType::NOT_SET};
     bool m_timeoutTypeHasBeenSet = false;
 
-    long long m_scheduledEventId;
+    long long m_scheduledEventId{0};
     bool m_scheduledEventIdHasBeenSet = false;
 
-    long long m_startedEventId;
+    long long m_startedEventId{0};
     bool m_startedEventIdHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-LambdaFunctionSinkConfiguration::LambdaFunctionSinkConfiguration() : 
-    m_insightsTargetHasBeenSet(false)
-{
-}
-
 LambdaFunctionSinkConfiguration::LambdaFunctionSinkConfiguration(JsonView jsonValue)
-  : LambdaFunctionSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaFunctionSinkConfiguration& LambdaFunctionSinkConfiguration::operator =(Jso
   if(jsonValue.ValueExists("InsightsTarget"))
   {
     m_insightsTarget = jsonValue.GetString("InsightsTarget");
-
     m_insightsTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class DeleteDbInstanceResult
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API DeleteDbInstanceResult();
+    AWS_TIMESTREAMINFLUXDB_API DeleteDbInstanceResult() = default;
     AWS_TIMESTREAMINFLUXDB_API DeleteDbInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMINFLUXDB_API DeleteDbInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,11 @@ namespace Model
     /**
      * <p>A service-generated unique identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline DeleteDbInstanceResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteDbInstanceResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteDbInstanceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,37 +56,31 @@ namespace Model
      * <p>The customer-supplied name that uniquely identifies the DB instance when
      * interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteDbInstanceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteDbInstanceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteDbInstanceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the DB instance.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DeleteDbInstanceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeleteDbInstanceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeleteDbInstanceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the DB instance.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline DeleteDbInstanceResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline DeleteDbInstanceResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteDbInstanceResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -96,21 +88,19 @@ namespace Model
      * <p>The endpoint used to connect to InfluxDB. The default InfluxDB port is
      * 8086.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpoint.assign(value); }
-    inline DeleteDbInstanceResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline DeleteDbInstanceResult& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    DeleteDbInstanceResult& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number on which InfluxDB accepts connections.</p>
      */
-    inline int GetPort() const{ return m_port; }
-    inline void SetPort(int value) { m_port = value; }
+    inline int GetPort() const { return m_port; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline DeleteDbInstanceResult& WithPort(int value) { SetPort(value); return *this;}
     ///@}
 
@@ -120,41 +110,35 @@ namespace Model
      * IPV4, which can communicate over IPv4 protocol only, or DUAL, which can
      * communicate over both IPv4 and IPv6 protocols.</p>
      */
-    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
-    inline void SetNetworkType(const NetworkType& value) { m_networkType = value; }
-    inline void SetNetworkType(NetworkType&& value) { m_networkType = std::move(value); }
-    inline DeleteDbInstanceResult& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
-    inline DeleteDbInstanceResult& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    inline NetworkType GetNetworkType() const { return m_networkType; }
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline DeleteDbInstanceResult& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Timestream for InfluxDB instance type that InfluxDB runs on.</p>
      */
-    inline const DbInstanceType& GetDbInstanceType() const{ return m_dbInstanceType; }
-    inline void SetDbInstanceType(const DbInstanceType& value) { m_dbInstanceType = value; }
-    inline void SetDbInstanceType(DbInstanceType&& value) { m_dbInstanceType = std::move(value); }
-    inline DeleteDbInstanceResult& WithDbInstanceType(const DbInstanceType& value) { SetDbInstanceType(value); return *this;}
-    inline DeleteDbInstanceResult& WithDbInstanceType(DbInstanceType&& value) { SetDbInstanceType(std::move(value)); return *this;}
+    inline DbInstanceType GetDbInstanceType() const { return m_dbInstanceType; }
+    inline void SetDbInstanceType(DbInstanceType value) { m_dbInstanceTypeHasBeenSet = true; m_dbInstanceType = value; }
+    inline DeleteDbInstanceResult& WithDbInstanceType(DbInstanceType value) { SetDbInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Timestream for InfluxDB DB storage type that InfluxDB stores data on.</p>
      */
-    inline const DbStorageType& GetDbStorageType() const{ return m_dbStorageType; }
-    inline void SetDbStorageType(const DbStorageType& value) { m_dbStorageType = value; }
-    inline void SetDbStorageType(DbStorageType&& value) { m_dbStorageType = std::move(value); }
-    inline DeleteDbInstanceResult& WithDbStorageType(const DbStorageType& value) { SetDbStorageType(value); return *this;}
-    inline DeleteDbInstanceResult& WithDbStorageType(DbStorageType&& value) { SetDbStorageType(std::move(value)); return *this;}
+    inline DbStorageType GetDbStorageType() const { return m_dbStorageType; }
+    inline void SetDbStorageType(DbStorageType value) { m_dbStorageTypeHasBeenSet = true; m_dbStorageType = value; }
+    inline DeleteDbInstanceResult& WithDbStorageType(DbStorageType value) { SetDbStorageType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of storage allocated for your DB storage type (in gibibytes).</p>
      */
-    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
-    inline void SetAllocatedStorage(int value) { m_allocatedStorage = value; }
+    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
     inline DeleteDbInstanceResult& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
     ///@}
 
@@ -163,33 +147,30 @@ namespace Model
      * <p>Specifies whether the Timestream for InfluxDB is deployed as Single-AZ or
      * with a MultiAZ Standby for High availability.</p>
      */
-    inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
-    inline void SetDeploymentType(const DeploymentType& value) { m_deploymentType = value; }
-    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentType = std::move(value); }
-    inline DeleteDbInstanceResult& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
-    inline DeleteDbInstanceResult& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline DeploymentType GetDeploymentType() const { return m_deploymentType; }
+    inline void SetDeploymentType(DeploymentType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline DeleteDbInstanceResult& WithDeploymentType(DeploymentType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of VPC subnet IDs associated with the DB instance.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSubnetIds() const{ return m_vpcSubnetIds; }
-    inline void SetVpcSubnetIds(const Aws::Vector<Aws::String>& value) { m_vpcSubnetIds = value; }
-    inline void SetVpcSubnetIds(Aws::Vector<Aws::String>&& value) { m_vpcSubnetIds = std::move(value); }
-    inline DeleteDbInstanceResult& WithVpcSubnetIds(const Aws::Vector<Aws::String>& value) { SetVpcSubnetIds(value); return *this;}
-    inline DeleteDbInstanceResult& WithVpcSubnetIds(Aws::Vector<Aws::String>&& value) { SetVpcSubnetIds(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& AddVpcSubnetIds(const Aws::String& value) { m_vpcSubnetIds.push_back(value); return *this; }
-    inline DeleteDbInstanceResult& AddVpcSubnetIds(Aws::String&& value) { m_vpcSubnetIds.push_back(std::move(value)); return *this; }
-    inline DeleteDbInstanceResult& AddVpcSubnetIds(const char* value) { m_vpcSubnetIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetVpcSubnetIds() const { return m_vpcSubnetIds; }
+    template<typename VpcSubnetIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSubnetIds(VpcSubnetIdsT&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds = std::forward<VpcSubnetIdsT>(value); }
+    template<typename VpcSubnetIdsT = Aws::Vector<Aws::String>>
+    DeleteDbInstanceResult& WithVpcSubnetIds(VpcSubnetIdsT&& value) { SetVpcSubnetIds(std::forward<VpcSubnetIdsT>(value)); return *this;}
+    template<typename VpcSubnetIdsT = Aws::String>
+    DeleteDbInstanceResult& AddVpcSubnetIds(VpcSubnetIdsT&& value) { m_vpcSubnetIdsHasBeenSet = true; m_vpcSubnetIds.emplace_back(std::forward<VpcSubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates if the DB instance has a public IP to facilitate access.</p>
      */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
-    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessible = value; }
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
+    inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline DeleteDbInstanceResult& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
     ///@}
 
@@ -197,40 +178,35 @@ namespace Model
     /**
      * <p>A list of VPC security group IDs associated with the DB instance.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIds = std::move(value); }
-    inline DeleteDbInstanceResult& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline DeleteDbInstanceResult& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline DeleteDbInstanceResult& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline DeleteDbInstanceResult& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    DeleteDbInstanceResult& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    DeleteDbInstanceResult& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The id of the DB parameter group assigned to your DB instance.</p>
      */
-    inline const Aws::String& GetDbParameterGroupIdentifier() const{ return m_dbParameterGroupIdentifier; }
-    inline void SetDbParameterGroupIdentifier(const Aws::String& value) { m_dbParameterGroupIdentifier = value; }
-    inline void SetDbParameterGroupIdentifier(Aws::String&& value) { m_dbParameterGroupIdentifier = std::move(value); }
-    inline void SetDbParameterGroupIdentifier(const char* value) { m_dbParameterGroupIdentifier.assign(value); }
-    inline DeleteDbInstanceResult& WithDbParameterGroupIdentifier(const Aws::String& value) { SetDbParameterGroupIdentifier(value); return *this;}
-    inline DeleteDbInstanceResult& WithDbParameterGroupIdentifier(Aws::String&& value) { SetDbParameterGroupIdentifier(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithDbParameterGroupIdentifier(const char* value) { SetDbParameterGroupIdentifier(value); return *this;}
+    inline const Aws::String& GetDbParameterGroupIdentifier() const { return m_dbParameterGroupIdentifier; }
+    template<typename DbParameterGroupIdentifierT = Aws::String>
+    void SetDbParameterGroupIdentifier(DbParameterGroupIdentifierT&& value) { m_dbParameterGroupIdentifierHasBeenSet = true; m_dbParameterGroupIdentifier = std::forward<DbParameterGroupIdentifierT>(value); }
+    template<typename DbParameterGroupIdentifierT = Aws::String>
+    DeleteDbInstanceResult& WithDbParameterGroupIdentifier(DbParameterGroupIdentifierT&& value) { SetDbParameterGroupIdentifier(std::forward<DbParameterGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone in which the DB instance resides.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
-    inline DeleteDbInstanceResult& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline DeleteDbInstanceResult& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    DeleteDbInstanceResult& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,13 +214,11 @@ namespace Model
      * <p>The Availability Zone in which the standby instance is located when deploying
      * with a MultiAZ standby instance.</p>
      */
-    inline const Aws::String& GetSecondaryAvailabilityZone() const{ return m_secondaryAvailabilityZone; }
-    inline void SetSecondaryAvailabilityZone(const Aws::String& value) { m_secondaryAvailabilityZone = value; }
-    inline void SetSecondaryAvailabilityZone(Aws::String&& value) { m_secondaryAvailabilityZone = std::move(value); }
-    inline void SetSecondaryAvailabilityZone(const char* value) { m_secondaryAvailabilityZone.assign(value); }
-    inline DeleteDbInstanceResult& WithSecondaryAvailabilityZone(const Aws::String& value) { SetSecondaryAvailabilityZone(value); return *this;}
-    inline DeleteDbInstanceResult& WithSecondaryAvailabilityZone(Aws::String&& value) { SetSecondaryAvailabilityZone(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithSecondaryAvailabilityZone(const char* value) { SetSecondaryAvailabilityZone(value); return *this;}
+    inline const Aws::String& GetSecondaryAvailabilityZone() const { return m_secondaryAvailabilityZone; }
+    template<typename SecondaryAvailabilityZoneT = Aws::String>
+    void SetSecondaryAvailabilityZone(SecondaryAvailabilityZoneT&& value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone = std::forward<SecondaryAvailabilityZoneT>(value); }
+    template<typename SecondaryAvailabilityZoneT = Aws::String>
+    DeleteDbInstanceResult& WithSecondaryAvailabilityZone(SecondaryAvailabilityZoneT&& value) { SetSecondaryAvailabilityZone(std::forward<SecondaryAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,11 +226,11 @@ namespace Model
      * <p>Configuration for sending InfluxDB engine logs to send to specified S3
      * bucket.</p>
      */
-    inline const LogDeliveryConfiguration& GetLogDeliveryConfiguration() const{ return m_logDeliveryConfiguration; }
-    inline void SetLogDeliveryConfiguration(const LogDeliveryConfiguration& value) { m_logDeliveryConfiguration = value; }
-    inline void SetLogDeliveryConfiguration(LogDeliveryConfiguration&& value) { m_logDeliveryConfiguration = std::move(value); }
-    inline DeleteDbInstanceResult& WithLogDeliveryConfiguration(const LogDeliveryConfiguration& value) { SetLogDeliveryConfiguration(value); return *this;}
-    inline DeleteDbInstanceResult& WithLogDeliveryConfiguration(LogDeliveryConfiguration&& value) { SetLogDeliveryConfiguration(std::move(value)); return *this;}
+    inline const LogDeliveryConfiguration& GetLogDeliveryConfiguration() const { return m_logDeliveryConfiguration; }
+    template<typename LogDeliveryConfigurationT = LogDeliveryConfiguration>
+    void SetLogDeliveryConfiguration(LogDeliveryConfigurationT&& value) { m_logDeliveryConfigurationHasBeenSet = true; m_logDeliveryConfiguration = std::forward<LogDeliveryConfigurationT>(value); }
+    template<typename LogDeliveryConfigurationT = LogDeliveryConfiguration>
+    DeleteDbInstanceResult& WithLogDeliveryConfiguration(LogDeliveryConfigurationT&& value) { SetLogDeliveryConfiguration(std::forward<LogDeliveryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,94 +240,108 @@ namespace Model
      * key-value pair holding InfluxDB authorization values: organization, bucket,
      * username, and password.</p>
      */
-    inline const Aws::String& GetInfluxAuthParametersSecretArn() const{ return m_influxAuthParametersSecretArn; }
-    inline void SetInfluxAuthParametersSecretArn(const Aws::String& value) { m_influxAuthParametersSecretArn = value; }
-    inline void SetInfluxAuthParametersSecretArn(Aws::String&& value) { m_influxAuthParametersSecretArn = std::move(value); }
-    inline void SetInfluxAuthParametersSecretArn(const char* value) { m_influxAuthParametersSecretArn.assign(value); }
-    inline DeleteDbInstanceResult& WithInfluxAuthParametersSecretArn(const Aws::String& value) { SetInfluxAuthParametersSecretArn(value); return *this;}
-    inline DeleteDbInstanceResult& WithInfluxAuthParametersSecretArn(Aws::String&& value) { SetInfluxAuthParametersSecretArn(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithInfluxAuthParametersSecretArn(const char* value) { SetInfluxAuthParametersSecretArn(value); return *this;}
+    inline const Aws::String& GetInfluxAuthParametersSecretArn() const { return m_influxAuthParametersSecretArn; }
+    template<typename InfluxAuthParametersSecretArnT = Aws::String>
+    void SetInfluxAuthParametersSecretArn(InfluxAuthParametersSecretArnT&& value) { m_influxAuthParametersSecretArnHasBeenSet = true; m_influxAuthParametersSecretArn = std::forward<InfluxAuthParametersSecretArnT>(value); }
+    template<typename InfluxAuthParametersSecretArnT = Aws::String>
+    DeleteDbInstanceResult& WithInfluxAuthParametersSecretArn(InfluxAuthParametersSecretArnT&& value) { SetInfluxAuthParametersSecretArn(std::forward<InfluxAuthParametersSecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
      */
-    inline const Aws::String& GetDbClusterId() const{ return m_dbClusterId; }
-    inline void SetDbClusterId(const Aws::String& value) { m_dbClusterId = value; }
-    inline void SetDbClusterId(Aws::String&& value) { m_dbClusterId = std::move(value); }
-    inline void SetDbClusterId(const char* value) { m_dbClusterId.assign(value); }
-    inline DeleteDbInstanceResult& WithDbClusterId(const Aws::String& value) { SetDbClusterId(value); return *this;}
-    inline DeleteDbInstanceResult& WithDbClusterId(Aws::String&& value) { SetDbClusterId(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithDbClusterId(const char* value) { SetDbClusterId(value); return *this;}
+    inline const Aws::String& GetDbClusterId() const { return m_dbClusterId; }
+    template<typename DbClusterIdT = Aws::String>
+    void SetDbClusterId(DbClusterIdT&& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = std::forward<DbClusterIdT>(value); }
+    template<typename DbClusterIdT = Aws::String>
+    DeleteDbInstanceResult& WithDbClusterId(DbClusterIdT&& value) { SetDbClusterId(std::forward<DbClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the DbInstance's role in the cluster.</p>
      */
-    inline const InstanceMode& GetInstanceMode() const{ return m_instanceMode; }
-    inline void SetInstanceMode(const InstanceMode& value) { m_instanceMode = value; }
-    inline void SetInstanceMode(InstanceMode&& value) { m_instanceMode = std::move(value); }
-    inline DeleteDbInstanceResult& WithInstanceMode(const InstanceMode& value) { SetInstanceMode(value); return *this;}
-    inline DeleteDbInstanceResult& WithInstanceMode(InstanceMode&& value) { SetInstanceMode(std::move(value)); return *this;}
+    inline InstanceMode GetInstanceMode() const { return m_instanceMode; }
+    inline void SetInstanceMode(InstanceMode value) { m_instanceModeHasBeenSet = true; m_instanceMode = value; }
+    inline DeleteDbInstanceResult& WithInstanceMode(InstanceMode value) { SetInstanceMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDbInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDbInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDbInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDbInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_endpoint;
+    bool m_endpointHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
+    bool m_portHasBeenSet = false;
 
-    NetworkType m_networkType;
+    NetworkType m_networkType{NetworkType::NOT_SET};
+    bool m_networkTypeHasBeenSet = false;
 
-    DbInstanceType m_dbInstanceType;
+    DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
+    bool m_dbInstanceTypeHasBeenSet = false;
 
-    DbStorageType m_dbStorageType;
+    DbStorageType m_dbStorageType{DbStorageType::NOT_SET};
+    bool m_dbStorageTypeHasBeenSet = false;
 
-    int m_allocatedStorage;
+    int m_allocatedStorage{0};
+    bool m_allocatedStorageHasBeenSet = false;
 
-    DeploymentType m_deploymentType;
+    DeploymentType m_deploymentType{DeploymentType::NOT_SET};
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
+    bool m_vpcSubnetIdsHasBeenSet = false;
 
-    bool m_publiclyAccessible;
+    bool m_publiclyAccessible{false};
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_dbParameterGroupIdentifier;
+    bool m_dbParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_secondaryAvailabilityZone;
+    bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
     LogDeliveryConfiguration m_logDeliveryConfiguration;
+    bool m_logDeliveryConfigurationHasBeenSet = false;
 
     Aws::String m_influxAuthParametersSecretArn;
+    bool m_influxAuthParametersSecretArnHasBeenSet = false;
 
     Aws::String m_dbClusterId;
+    bool m_dbClusterIdHasBeenSet = false;
 
-    InstanceMode m_instanceMode;
+    InstanceMode m_instanceMode{InstanceMode::NOT_SET};
+    bool m_instanceModeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

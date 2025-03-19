@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeJobResult::DescribeJobResult()
-{
-}
-
 DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("documentSource"))
   {
     m_documentSource = jsonValue.GetString("documentSource");
-
+    m_documentSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("job"))
   {
     m_job = jsonValue.GetObject("job");
-
+    m_jobHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

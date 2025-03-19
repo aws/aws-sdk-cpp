@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NatGatewayAddress::NatGatewayAddress() : 
-    m_allocationIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_isPrimary(false),
-    m_isPrimaryHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_status(NatGatewayAddressStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 NatGatewayAddress::NatGatewayAddress(const XmlNode& xmlNode)
-  : NatGatewayAddress()
 {
   *this = xmlNode;
 }
@@ -91,7 +76,7 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = NatGatewayAddressStatusMapper::GetNatGatewayAddressStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = NatGatewayAddressStatusMapper::GetNatGatewayAddressStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

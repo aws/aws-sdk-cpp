@@ -21,7 +21,7 @@ namespace Model
   class StopClockRequest : public SimSpaceWeaverRequest
   {
   public:
-    AWS_SIMSPACEWEAVER_API StopClockRequest();
+    AWS_SIMSPACEWEAVER_API StopClockRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the simulation.</p>
      */
-    inline const Aws::String& GetSimulation() const{ return m_simulation; }
+    inline const Aws::String& GetSimulation() const { return m_simulation; }
     inline bool SimulationHasBeenSet() const { return m_simulationHasBeenSet; }
-    inline void SetSimulation(const Aws::String& value) { m_simulationHasBeenSet = true; m_simulation = value; }
-    inline void SetSimulation(Aws::String&& value) { m_simulationHasBeenSet = true; m_simulation = std::move(value); }
-    inline void SetSimulation(const char* value) { m_simulationHasBeenSet = true; m_simulation.assign(value); }
-    inline StopClockRequest& WithSimulation(const Aws::String& value) { SetSimulation(value); return *this;}
-    inline StopClockRequest& WithSimulation(Aws::String&& value) { SetSimulation(std::move(value)); return *this;}
-    inline StopClockRequest& WithSimulation(const char* value) { SetSimulation(value); return *this;}
+    template<typename SimulationT = Aws::String>
+    void SetSimulation(SimulationT&& value) { m_simulationHasBeenSet = true; m_simulation = std::forward<SimulationT>(value); }
+    template<typename SimulationT = Aws::String>
+    StopClockRequest& WithSimulation(SimulationT&& value) { SetSimulation(std::forward<SimulationT>(value)); return *this;}
     ///@}
   private:
 

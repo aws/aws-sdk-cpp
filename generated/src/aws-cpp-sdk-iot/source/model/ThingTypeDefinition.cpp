@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingTypeDefinition::ThingTypeDefinition() : 
-    m_thingTypeNameHasBeenSet(false),
-    m_thingTypeArnHasBeenSet(false),
-    m_thingTypePropertiesHasBeenSet(false),
-    m_thingTypeMetadataHasBeenSet(false)
-{
-}
-
 ThingTypeDefinition::ThingTypeDefinition(JsonView jsonValue)
-  : ThingTypeDefinition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ThingTypeDefinition& ThingTypeDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingTypeName"))
   {
     m_thingTypeName = jsonValue.GetString("thingTypeName");
-
     m_thingTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingTypeArn"))
   {
     m_thingTypeArn = jsonValue.GetString("thingTypeArn");
-
     m_thingTypeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingTypeProperties"))
   {
     m_thingTypeProperties = jsonValue.GetObject("thingTypeProperties");
-
     m_thingTypePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingTypeMetadata"))
   {
     m_thingTypeMetadata = jsonValue.GetObject("thingTypeMetadata");
-
     m_thingTypeMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ExecuteCommandLogConfiguration::ExecuteCommandLogConfiguration() : 
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_cloudWatchEncryptionEnabled(false),
-    m_cloudWatchEncryptionEnabledHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3EncryptionEnabled(false),
-    m_s3EncryptionEnabledHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
-{
-}
-
 ExecuteCommandLogConfiguration::ExecuteCommandLogConfiguration(JsonView jsonValue)
-  : ExecuteCommandLogConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ExecuteCommandLogConfiguration& ExecuteCommandLogConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("cloudWatchLogGroupName"))
   {
     m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
-
     m_cloudWatchLogGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchEncryptionEnabled"))
   {
     m_cloudWatchEncryptionEnabled = jsonValue.GetBool("cloudWatchEncryptionEnabled");
-
     m_cloudWatchEncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3EncryptionEnabled"))
   {
     m_s3EncryptionEnabled = jsonValue.GetBool("s3EncryptionEnabled");
-
     m_s3EncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("s3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

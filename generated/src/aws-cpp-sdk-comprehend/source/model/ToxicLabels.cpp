@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-ToxicLabels::ToxicLabels() : 
-    m_labelsHasBeenSet(false),
-    m_toxicity(0.0),
-    m_toxicityHasBeenSet(false)
-{
-}
-
 ToxicLabels::ToxicLabels(JsonView jsonValue)
-  : ToxicLabels()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ToxicLabels& ToxicLabels::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Toxicity"))
   {
     m_toxicity = jsonValue.GetDouble("Toxicity");
-
     m_toxicityHasBeenSet = true;
   }
-
   return *this;
 }
 

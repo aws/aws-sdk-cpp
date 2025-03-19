@@ -12,18 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCisScanConfigurationsRequest::ListCisScanConfigurationsRequest() : 
-    m_filterCriteriaHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(CisScanConfigurationsSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(CisSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListCisScanConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

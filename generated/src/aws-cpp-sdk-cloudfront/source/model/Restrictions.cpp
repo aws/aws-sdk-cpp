@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Restrictions::Restrictions() : 
-    m_geoRestrictionHasBeenSet(false)
-{
-}
-
 Restrictions::Restrictions(const XmlNode& xmlNode)
-  : Restrictions()
 {
   *this = xmlNode;
 }

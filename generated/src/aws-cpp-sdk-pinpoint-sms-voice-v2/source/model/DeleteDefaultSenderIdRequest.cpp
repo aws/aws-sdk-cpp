@@ -12,11 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDefaultSenderIdRequest::DeleteDefaultSenderIdRequest() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDefaultSenderIdRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -30,7 +30,7 @@ namespace Model
   class DescribeCapacityReservationsResponse
   {
   public:
-    AWS_EC2_API DescribeCapacityReservationsResponse();
+    AWS_EC2_API DescribeCapacityReservationsResponse() = default;
     AWS_EC2_API DescribeCapacityReservationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeCapacityReservationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeCapacityReservationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCapacityReservationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCapacityReservationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCapacityReservationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the Capacity Reservations.</p>
      */
-    inline const Aws::Vector<CapacityReservation>& GetCapacityReservations() const{ return m_capacityReservations; }
-    inline void SetCapacityReservations(const Aws::Vector<CapacityReservation>& value) { m_capacityReservations = value; }
-    inline void SetCapacityReservations(Aws::Vector<CapacityReservation>&& value) { m_capacityReservations = std::move(value); }
-    inline DescribeCapacityReservationsResponse& WithCapacityReservations(const Aws::Vector<CapacityReservation>& value) { SetCapacityReservations(value); return *this;}
-    inline DescribeCapacityReservationsResponse& WithCapacityReservations(Aws::Vector<CapacityReservation>&& value) { SetCapacityReservations(std::move(value)); return *this;}
-    inline DescribeCapacityReservationsResponse& AddCapacityReservations(const CapacityReservation& value) { m_capacityReservations.push_back(value); return *this; }
-    inline DescribeCapacityReservationsResponse& AddCapacityReservations(CapacityReservation&& value) { m_capacityReservations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapacityReservation>& GetCapacityReservations() const { return m_capacityReservations; }
+    template<typename CapacityReservationsT = Aws::Vector<CapacityReservation>>
+    void SetCapacityReservations(CapacityReservationsT&& value) { m_capacityReservationsHasBeenSet = true; m_capacityReservations = std::forward<CapacityReservationsT>(value); }
+    template<typename CapacityReservationsT = Aws::Vector<CapacityReservation>>
+    DescribeCapacityReservationsResponse& WithCapacityReservations(CapacityReservationsT&& value) { SetCapacityReservations(std::forward<CapacityReservationsT>(value)); return *this;}
+    template<typename CapacityReservationsT = CapacityReservation>
+    DescribeCapacityReservationsResponse& AddCapacityReservations(CapacityReservationsT&& value) { m_capacityReservationsHasBeenSet = true; m_capacityReservations.emplace_back(std::forward<CapacityReservationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCapacityReservationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCapacityReservationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCapacityReservationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CapacityReservation> m_capacityReservations;
+    bool m_capacityReservationsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

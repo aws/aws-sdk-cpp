@@ -20,19 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PublishBatchRequestEntry::PublishBatchRequestEntry() : 
-    m_idHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_messageStructureHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_messageDeduplicationIdHasBeenSet(false),
-    m_messageGroupIdHasBeenSet(false)
-{
-}
-
 PublishBatchRequestEntry::PublishBatchRequestEntry(const XmlNode& xmlNode)
-  : PublishBatchRequestEntry()
 {
   *this = xmlNode;
 }
@@ -72,6 +60,7 @@ PublishBatchRequestEntry& PublishBatchRequestEntry::operator =(const XmlNode& xm
     if(!messageAttributesNode.IsNull())
     {
       XmlNode messageAttributesEntry = messageAttributesNode.FirstChild("entry");
+      m_messageAttributesHasBeenSet = !messageAttributesEntry.IsNull();
       while(!messageAttributesEntry.IsNull())
       {
         XmlNode keyNode = messageAttributesEntry.FirstChild("key");

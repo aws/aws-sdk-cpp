@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-IdentitySourceFilter::IdentitySourceFilter() : 
-    m_principalEntityTypeHasBeenSet(false)
-{
-}
-
 IdentitySourceFilter::IdentitySourceFilter(JsonView jsonValue)
-  : IdentitySourceFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IdentitySourceFilter& IdentitySourceFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("principalEntityType"))
   {
     m_principalEntityType = jsonValue.GetString("principalEntityType");
-
     m_principalEntityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-Rec601Settings::Rec601Settings()
-{
-}
-
 Rec601Settings::Rec601Settings(JsonView jsonValue)
 {
   *this = jsonValue;

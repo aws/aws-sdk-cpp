@@ -29,7 +29,7 @@ namespace Model
   class ValidatePolicyResult
   {
   public:
-    AWS_ACCESSANALYZER_API ValidatePolicyResult();
+    AWS_ACCESSANALYZER_API ValidatePolicyResult() = default;
     AWS_ACCESSANALYZER_API ValidatePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API ValidatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The list of findings in a policy returned by IAM Access Analyzer based on its
      * suite of policy checks.</p>
      */
-    inline const Aws::Vector<ValidatePolicyFinding>& GetFindings() const{ return m_findings; }
-    inline void SetFindings(const Aws::Vector<ValidatePolicyFinding>& value) { m_findings = value; }
-    inline void SetFindings(Aws::Vector<ValidatePolicyFinding>&& value) { m_findings = std::move(value); }
-    inline ValidatePolicyResult& WithFindings(const Aws::Vector<ValidatePolicyFinding>& value) { SetFindings(value); return *this;}
-    inline ValidatePolicyResult& WithFindings(Aws::Vector<ValidatePolicyFinding>&& value) { SetFindings(std::move(value)); return *this;}
-    inline ValidatePolicyResult& AddFindings(const ValidatePolicyFinding& value) { m_findings.push_back(value); return *this; }
-    inline ValidatePolicyResult& AddFindings(ValidatePolicyFinding&& value) { m_findings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidatePolicyFinding>& GetFindings() const { return m_findings; }
+    template<typename FindingsT = Aws::Vector<ValidatePolicyFinding>>
+    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
+    template<typename FindingsT = Aws::Vector<ValidatePolicyFinding>>
+    ValidatePolicyResult& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
+    template<typename FindingsT = ValidatePolicyFinding>
+    ValidatePolicyResult& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ValidatePolicyResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ValidatePolicyResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ValidatePolicyResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ValidatePolicyResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ValidatePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ValidatePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ValidatePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ValidatePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ValidatePolicyFinding> m_findings;
+    bool m_findingsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CompareDataSetsStepInput::CompareDataSetsStepInput() : 
-    m_sourceLocationHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_sourceDataSetsHasBeenSet(false),
-    m_targetDataSetsHasBeenSet(false)
-{
-}
-
 CompareDataSetsStepInput::CompareDataSetsStepInput(JsonView jsonValue)
-  : CompareDataSetsStepInput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CompareDataSetsStepInput& CompareDataSetsStepInput::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("sourceLocation"))
   {
     m_sourceLocation = jsonValue.GetString("sourceLocation");
-
     m_sourceLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetLocation"))
   {
     m_targetLocation = jsonValue.GetString("targetLocation");
-
     m_targetLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceDataSets"))
   {
     Aws::Utils::Array<JsonView> sourceDataSetsJsonList = jsonValue.GetArray("sourceDataSets");
@@ -57,7 +44,6 @@ CompareDataSetsStepInput& CompareDataSetsStepInput::operator =(JsonView jsonValu
     }
     m_sourceDataSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetDataSets"))
   {
     Aws::Utils::Array<JsonView> targetDataSetsJsonList = jsonValue.GetArray("targetDataSets");
@@ -67,7 +53,6 @@ CompareDataSetsStepInput& CompareDataSetsStepInput::operator =(JsonView jsonValu
     }
     m_targetDataSetsHasBeenSet = true;
   }
-
   return *this;
 }
 

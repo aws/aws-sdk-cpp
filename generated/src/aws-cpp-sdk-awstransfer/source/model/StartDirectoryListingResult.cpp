@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartDirectoryListingResult::StartDirectoryListingResult()
-{
-}
-
 StartDirectoryListingResult::StartDirectoryListingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ StartDirectoryListingResult& StartDirectoryListingResult::operator =(const Aws::
   if(jsonValue.ValueExists("ListingId"))
   {
     m_listingId = jsonValue.GetString("ListingId");
-
+    m_listingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFileName"))
   {
     m_outputFileName = jsonValue.GetString("OutputFileName");
-
+    m_outputFileNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class ModifyVerifiedAccessEndpointEniOptions
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessEndpointEniOptions();
+    AWS_EC2_API ModifyVerifiedAccessEndpointEniOptions() = default;
     AWS_EC2_API ModifyVerifiedAccessEndpointEniOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ModifyVerifiedAccessEndpointEniOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,19 +46,17 @@ namespace Model
     /**
      * <p>The IP protocol.</p>
      */
-    inline const VerifiedAccessEndpointProtocol& GetProtocol() const{ return m_protocol; }
+    inline VerifiedAccessEndpointProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const VerifiedAccessEndpointProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(VerifiedAccessEndpointProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline ModifyVerifiedAccessEndpointEniOptions& WithProtocol(const VerifiedAccessEndpointProtocol& value) { SetProtocol(value); return *this;}
-    inline ModifyVerifiedAccessEndpointEniOptions& WithProtocol(VerifiedAccessEndpointProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(VerifiedAccessEndpointProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline ModifyVerifiedAccessEndpointEniOptions& WithProtocol(VerifiedAccessEndpointProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP port number.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline ModifyVerifiedAccessEndpointEniOptions& WithPort(int value) { SetPort(value); return *this;}
@@ -68,21 +66,21 @@ namespace Model
     /**
      * <p>The port ranges.</p>
      */
-    inline const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& GetPortRanges() const{ return m_portRanges; }
+    inline const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& GetPortRanges() const { return m_portRanges; }
     inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
-    inline void SetPortRanges(const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
-    inline void SetPortRanges(Aws::Vector<ModifyVerifiedAccessEndpointPortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
-    inline ModifyVerifiedAccessEndpointEniOptions& WithPortRanges(const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& value) { SetPortRanges(value); return *this;}
-    inline ModifyVerifiedAccessEndpointEniOptions& WithPortRanges(Aws::Vector<ModifyVerifiedAccessEndpointPortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointEniOptions& AddPortRanges(const ModifyVerifiedAccessEndpointPortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
-    inline ModifyVerifiedAccessEndpointEniOptions& AddPortRanges(ModifyVerifiedAccessEndpointPortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
+    template<typename PortRangesT = Aws::Vector<ModifyVerifiedAccessEndpointPortRange>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<ModifyVerifiedAccessEndpointPortRange>>
+    ModifyVerifiedAccessEndpointEniOptions& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = ModifyVerifiedAccessEndpointPortRange>
+    ModifyVerifiedAccessEndpointEniOptions& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
   private:
 
-    VerifiedAccessEndpointProtocol m_protocol;
+    VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::Vector<ModifyVerifiedAccessEndpointPortRange> m_portRanges;

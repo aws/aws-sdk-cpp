@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ListManagementOptions::ListManagementOptions() : 
-    m_contactListNameHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
-{
-}
-
 ListManagementOptions::ListManagementOptions(JsonView jsonValue)
-  : ListManagementOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListManagementOptions& ListManagementOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactListName"))
   {
     m_contactListName = jsonValue.GetString("ContactListName");
-
     m_contactListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,15 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeApplicationVersionsRequest::DescribeApplicationVersionsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelsHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationVersionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

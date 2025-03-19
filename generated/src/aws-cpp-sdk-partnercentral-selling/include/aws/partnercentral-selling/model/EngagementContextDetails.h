@@ -34,7 +34,7 @@ namespace Model
   class EngagementContextDetails
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API EngagementContextDetails();
+    AWS_PARTNERCENTRALSELLING_API EngagementContextDetails() = default;
     AWS_PARTNERCENTRALSELLING_API EngagementContextDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API EngagementContextDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Contains the specific details of the Engagement context. The structure of
      * this payload varies depending on the Type field. </p>
      */
-    inline const EngagementContextPayload& GetPayload() const{ return m_payload; }
+    inline const EngagementContextPayload& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const EngagementContextPayload& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(EngagementContextPayload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline EngagementContextDetails& WithPayload(const EngagementContextPayload& value) { SetPayload(value); return *this;}
-    inline EngagementContextDetails& WithPayload(EngagementContextPayload&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = EngagementContextPayload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = EngagementContextPayload>
+    EngagementContextDetails& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +59,17 @@ namespace Model
      * or "Document", indicating whether the context relates to a customer project or a
      * document respectively. </p>
      */
-    inline const EngagementContextType& GetType() const{ return m_type; }
+    inline EngagementContextType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EngagementContextType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EngagementContextType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EngagementContextDetails& WithType(const EngagementContextType& value) { SetType(value); return *this;}
-    inline EngagementContextDetails& WithType(EngagementContextType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EngagementContextType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EngagementContextDetails& WithType(EngagementContextType value) { SetType(value); return *this;}
     ///@}
   private:
 
     EngagementContextPayload m_payload;
     bool m_payloadHasBeenSet = false;
 
-    EngagementContextType m_type;
+    EngagementContextType m_type{EngagementContextType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

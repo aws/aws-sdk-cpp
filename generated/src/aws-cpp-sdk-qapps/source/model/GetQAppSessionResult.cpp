@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQAppSessionResult::GetQAppSessionResult() : 
-    m_appVersion(0),
-    m_latestPublishedAppVersion(0),
-    m_status(ExecutionStatus::NOT_SET),
-    m_userIsHost(false)
-{
-}
-
 GetQAppSessionResult::GetQAppSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQAppSessionResult()
 {
   *this = result;
 }
@@ -37,39 +28,33 @@ GetQAppSessionResult& GetQAppSessionResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
-
+    m_sessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionName"))
   {
     m_sessionName = jsonValue.GetString("sessionName");
-
+    m_sessionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetInteger("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestPublishedAppVersion"))
   {
     m_latestPublishedAppVersion = jsonValue.GetInteger("latestPublishedAppVersion");
-
+    m_latestPublishedAppVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cardStatus"))
   {
     Aws::Map<Aws::String, JsonView> cardStatusJsonMap = jsonValue.GetObject("cardStatus").GetAllObjects();
@@ -77,20 +62,20 @@ GetQAppSessionResult& GetQAppSessionResult::operator =(const Aws::AmazonWebServi
     {
       m_cardStatus[cardStatusItem.first] = cardStatusItem.second.AsObject();
     }
+    m_cardStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userIsHost"))
   {
     m_userIsHost = jsonValue.GetBool("userIsHost");
-
+    m_userIsHostHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

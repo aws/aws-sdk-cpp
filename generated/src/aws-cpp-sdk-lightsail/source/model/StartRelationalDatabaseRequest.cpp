@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRelationalDatabaseRequest::StartRelationalDatabaseRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false)
-{
-}
-
 Aws::String StartRelationalDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

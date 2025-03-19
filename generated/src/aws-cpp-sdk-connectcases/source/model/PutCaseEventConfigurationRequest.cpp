@@ -12,12 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutCaseEventConfigurationRequest::PutCaseEventConfigurationRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_eventBridgeHasBeenSet(false)
-{
-}
-
 Aws::String PutCaseEventConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

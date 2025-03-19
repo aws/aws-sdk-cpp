@@ -12,31 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutIntegrationRequest::PutIntegrationRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_type(IntegrationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_integrationHttpMethodHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_requestTemplatesHasBeenSet(false),
-    m_passthroughBehaviorHasBeenSet(false),
-    m_cacheNamespaceHasBeenSet(false),
-    m_cacheKeyParametersHasBeenSet(false),
-    m_contentHandling(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingHasBeenSet(false),
-    m_timeoutInMillis(0),
-    m_timeoutInMillisHasBeenSet(false),
-    m_tlsConfigHasBeenSet(false)
-{
-}
-
 Aws::String PutIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class GetConfigurationResult
   {
   public:
-    AWS_SSMQUICKSETUP_API GetConfigurationResult();
+    AWS_SSMQUICKSETUP_API GetConfigurationResult() = default;
     AWS_SSMQUICKSETUP_API GetConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMQUICKSETUP_API GetConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,105 +41,92 @@ namespace Model
      * <p>The ID of the Amazon Web Services account where the configuration was
      * deployed.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
-    inline void SetAccount(const Aws::String& value) { m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_account.assign(value); }
-    inline GetConfigurationResult& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline GetConfigurationResult& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithAccount(const char* value) { SetAccount(value); return *this;}
+    inline const Aws::String& GetAccount() const { return m_account; }
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    GetConfigurationResult& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the configuration definition.</p>
      */
-    inline const Aws::String& GetConfigurationDefinitionId() const{ return m_configurationDefinitionId; }
-    inline void SetConfigurationDefinitionId(const Aws::String& value) { m_configurationDefinitionId = value; }
-    inline void SetConfigurationDefinitionId(Aws::String&& value) { m_configurationDefinitionId = std::move(value); }
-    inline void SetConfigurationDefinitionId(const char* value) { m_configurationDefinitionId.assign(value); }
-    inline GetConfigurationResult& WithConfigurationDefinitionId(const Aws::String& value) { SetConfigurationDefinitionId(value); return *this;}
-    inline GetConfigurationResult& WithConfigurationDefinitionId(Aws::String&& value) { SetConfigurationDefinitionId(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithConfigurationDefinitionId(const char* value) { SetConfigurationDefinitionId(value); return *this;}
+    inline const Aws::String& GetConfigurationDefinitionId() const { return m_configurationDefinitionId; }
+    template<typename ConfigurationDefinitionIdT = Aws::String>
+    void SetConfigurationDefinitionId(ConfigurationDefinitionIdT&& value) { m_configurationDefinitionIdHasBeenSet = true; m_configurationDefinitionId = std::forward<ConfigurationDefinitionIdT>(value); }
+    template<typename ConfigurationDefinitionIdT = Aws::String>
+    GetConfigurationResult& WithConfigurationDefinitionId(ConfigurationDefinitionIdT&& value) { SetConfigurationDefinitionId(std::forward<ConfigurationDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The datetime stamp when the configuration manager was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetConfigurationResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetConfigurationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetConfigurationResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A service generated identifier for the configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetConfigurationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetConfigurationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetConfigurationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The datetime stamp when the configuration manager was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedAt() const{ return m_lastModifiedAt; }
-    inline void SetLastModifiedAt(const Aws::Utils::DateTime& value) { m_lastModifiedAt = value; }
-    inline void SetLastModifiedAt(Aws::Utils::DateTime&& value) { m_lastModifiedAt = std::move(value); }
-    inline GetConfigurationResult& WithLastModifiedAt(const Aws::Utils::DateTime& value) { SetLastModifiedAt(value); return *this;}
-    inline GetConfigurationResult& WithLastModifiedAt(Aws::Utils::DateTime&& value) { SetLastModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedAt() const { return m_lastModifiedAt; }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    void SetLastModifiedAt(LastModifiedAtT&& value) { m_lastModifiedAtHasBeenSet = true; m_lastModifiedAt = std::forward<LastModifiedAtT>(value); }
+    template<typename LastModifiedAtT = Aws::Utils::DateTime>
+    GetConfigurationResult& WithLastModifiedAt(LastModifiedAtT&& value) { SetLastModifiedAt(std::forward<LastModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the configuration manager.</p>
      */
-    inline const Aws::String& GetManagerArn() const{ return m_managerArn; }
-    inline void SetManagerArn(const Aws::String& value) { m_managerArn = value; }
-    inline void SetManagerArn(Aws::String&& value) { m_managerArn = std::move(value); }
-    inline void SetManagerArn(const char* value) { m_managerArn.assign(value); }
-    inline GetConfigurationResult& WithManagerArn(const Aws::String& value) { SetManagerArn(value); return *this;}
-    inline GetConfigurationResult& WithManagerArn(Aws::String&& value) { SetManagerArn(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithManagerArn(const char* value) { SetManagerArn(value); return *this;}
+    inline const Aws::String& GetManagerArn() const { return m_managerArn; }
+    template<typename ManagerArnT = Aws::String>
+    void SetManagerArn(ManagerArnT&& value) { m_managerArnHasBeenSet = true; m_managerArn = std::forward<ManagerArnT>(value); }
+    template<typename ManagerArnT = Aws::String>
+    GetConfigurationResult& WithManagerArn(ManagerArnT&& value) { SetManagerArn(std::forward<ManagerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for the configuration definition type.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parameters = std::move(value); }
-    inline GetConfigurationResult& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline GetConfigurationResult& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline GetConfigurationResult& AddParameters(const Aws::String& key, const Aws::String& value) { m_parameters.emplace(key, value); return *this; }
-    inline GetConfigurationResult& AddParameters(Aws::String&& key, const Aws::String& value) { m_parameters.emplace(std::move(key), value); return *this; }
-    inline GetConfigurationResult& AddParameters(const Aws::String& key, Aws::String&& value) { m_parameters.emplace(key, std::move(value)); return *this; }
-    inline GetConfigurationResult& AddParameters(Aws::String&& key, Aws::String&& value) { m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetConfigurationResult& AddParameters(const char* key, Aws::String&& value) { m_parameters.emplace(key, std::move(value)); return *this; }
-    inline GetConfigurationResult& AddParameters(Aws::String&& key, const char* value) { m_parameters.emplace(std::move(key), value); return *this; }
-    inline GetConfigurationResult& AddParameters(const char* key, const char* value) { m_parameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    GetConfigurationResult& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    GetConfigurationResult& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where the configuration was deployed.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
-    inline void SetRegion(const Aws::String& value) { m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_region.assign(value); }
-    inline GetConfigurationResult& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline GetConfigurationResult& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithRegion(const char* value) { SetRegion(value); return *this;}
+    inline const Aws::String& GetRegion() const { return m_region; }
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    GetConfigurationResult& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,76 +134,82 @@ namespace Model
      * <p>A summary of the state of the configuration manager. This includes deployment
      * statuses, association statuses, drift statuses, health checks, and more.</p>
      */
-    inline const Aws::Vector<StatusSummary>& GetStatusSummaries() const{ return m_statusSummaries; }
-    inline void SetStatusSummaries(const Aws::Vector<StatusSummary>& value) { m_statusSummaries = value; }
-    inline void SetStatusSummaries(Aws::Vector<StatusSummary>&& value) { m_statusSummaries = std::move(value); }
-    inline GetConfigurationResult& WithStatusSummaries(const Aws::Vector<StatusSummary>& value) { SetStatusSummaries(value); return *this;}
-    inline GetConfigurationResult& WithStatusSummaries(Aws::Vector<StatusSummary>&& value) { SetStatusSummaries(std::move(value)); return *this;}
-    inline GetConfigurationResult& AddStatusSummaries(const StatusSummary& value) { m_statusSummaries.push_back(value); return *this; }
-    inline GetConfigurationResult& AddStatusSummaries(StatusSummary&& value) { m_statusSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StatusSummary>& GetStatusSummaries() const { return m_statusSummaries; }
+    template<typename StatusSummariesT = Aws::Vector<StatusSummary>>
+    void SetStatusSummaries(StatusSummariesT&& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries = std::forward<StatusSummariesT>(value); }
+    template<typename StatusSummariesT = Aws::Vector<StatusSummary>>
+    GetConfigurationResult& WithStatusSummaries(StatusSummariesT&& value) { SetStatusSummaries(std::forward<StatusSummariesT>(value)); return *this;}
+    template<typename StatusSummariesT = StatusSummary>
+    GetConfigurationResult& AddStatusSummaries(StatusSummariesT&& value) { m_statusSummariesHasBeenSet = true; m_statusSummaries.emplace_back(std::forward<StatusSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of the Quick Setup configuration.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
-    inline void SetType(const Aws::String& value) { m_type = value; }
-    inline void SetType(Aws::String&& value) { m_type = std::move(value); }
-    inline void SetType(const char* value) { m_type.assign(value); }
-    inline GetConfigurationResult& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline GetConfigurationResult& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithType(const char* value) { SetType(value); return *this;}
+    inline const Aws::String& GetType() const { return m_type; }
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    GetConfigurationResult& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Quick Setup type used.</p>
      */
-    inline const Aws::String& GetTypeVersion() const{ return m_typeVersion; }
-    inline void SetTypeVersion(const Aws::String& value) { m_typeVersion = value; }
-    inline void SetTypeVersion(Aws::String&& value) { m_typeVersion = std::move(value); }
-    inline void SetTypeVersion(const char* value) { m_typeVersion.assign(value); }
-    inline GetConfigurationResult& WithTypeVersion(const Aws::String& value) { SetTypeVersion(value); return *this;}
-    inline GetConfigurationResult& WithTypeVersion(Aws::String&& value) { SetTypeVersion(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithTypeVersion(const char* value) { SetTypeVersion(value); return *this;}
+    inline const Aws::String& GetTypeVersion() const { return m_typeVersion; }
+    template<typename TypeVersionT = Aws::String>
+    void SetTypeVersion(TypeVersionT&& value) { m_typeVersionHasBeenSet = true; m_typeVersion = std::forward<TypeVersionT>(value); }
+    template<typename TypeVersionT = Aws::String>
+    GetConfigurationResult& WithTypeVersion(TypeVersionT&& value) { SetTypeVersion(std::forward<TypeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_account;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_configurationDefinitionId;
+    bool m_configurationDefinitionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedAt;
+    Aws::Utils::DateTime m_lastModifiedAt{};
+    bool m_lastModifiedAtHasBeenSet = false;
 
     Aws::String m_managerArn;
+    bool m_managerArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_region;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<StatusSummary> m_statusSummaries;
+    bool m_statusSummariesHasBeenSet = false;
 
     Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeVersion;
+    bool m_typeVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

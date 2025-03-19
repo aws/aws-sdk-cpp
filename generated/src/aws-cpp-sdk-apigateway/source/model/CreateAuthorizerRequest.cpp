@@ -12,22 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAuthorizerRequest::CreateAuthorizerRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(AuthorizerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_providerARNsHasBeenSet(false),
-    m_authTypeHasBeenSet(false),
-    m_authorizerUriHasBeenSet(false),
-    m_authorizerCredentialsHasBeenSet(false),
-    m_identitySourceHasBeenSet(false),
-    m_identityValidationExpressionHasBeenSet(false),
-    m_authorizerResultTtlInSeconds(0),
-    m_authorizerResultTtlInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAuthorizerRequest::SerializePayload() const
 {
   JsonValue payload;

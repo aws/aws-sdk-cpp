@@ -12,38 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBranchRequest::CreateBranchRequest() : 
-    m_appIdHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_enableNotification(false),
-    m_enableNotificationHasBeenSet(false),
-    m_enableAutoBuild(false),
-    m_enableAutoBuildHasBeenSet(false),
-    m_enableSkewProtection(false),
-    m_enableSkewProtectionHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_enableBasicAuth(false),
-    m_enableBasicAuthHasBeenSet(false),
-    m_enablePerformanceMode(false),
-    m_enablePerformanceModeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_buildSpecHasBeenSet(false),
-    m_ttlHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false),
-    m_pullRequestEnvironmentNameHasBeenSet(false),
-    m_backendEnvironmentArnHasBeenSet(false),
-    m_backendHasBeenSet(false),
-    m_computeRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateBranchRequest::SerializePayload() const
 {
   JsonValue payload;

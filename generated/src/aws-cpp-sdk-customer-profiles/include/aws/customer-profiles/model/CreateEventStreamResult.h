@@ -28,7 +28,7 @@ namespace Model
   class CreateEventStreamResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API CreateEventStreamResult();
+    AWS_CUSTOMERPROFILES_API CreateEventStreamResult() = default;
     AWS_CUSTOMERPROFILES_API CreateEventStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API CreateEventStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,50 +37,46 @@ namespace Model
     /**
      * <p>A unique identifier for the event stream.</p>
      */
-    inline const Aws::String& GetEventStreamArn() const{ return m_eventStreamArn; }
-    inline void SetEventStreamArn(const Aws::String& value) { m_eventStreamArn = value; }
-    inline void SetEventStreamArn(Aws::String&& value) { m_eventStreamArn = std::move(value); }
-    inline void SetEventStreamArn(const char* value) { m_eventStreamArn.assign(value); }
-    inline CreateEventStreamResult& WithEventStreamArn(const Aws::String& value) { SetEventStreamArn(value); return *this;}
-    inline CreateEventStreamResult& WithEventStreamArn(Aws::String&& value) { SetEventStreamArn(std::move(value)); return *this;}
-    inline CreateEventStreamResult& WithEventStreamArn(const char* value) { SetEventStreamArn(value); return *this;}
+    inline const Aws::String& GetEventStreamArn() const { return m_eventStreamArn; }
+    template<typename EventStreamArnT = Aws::String>
+    void SetEventStreamArn(EventStreamArnT&& value) { m_eventStreamArnHasBeenSet = true; m_eventStreamArn = std::forward<EventStreamArnT>(value); }
+    template<typename EventStreamArnT = Aws::String>
+    CreateEventStreamResult& WithEventStreamArn(EventStreamArnT&& value) { SetEventStreamArn(std::forward<EventStreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateEventStreamResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateEventStreamResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEventStreamResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateEventStreamResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEventStreamResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEventStreamResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateEventStreamResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEventStreamResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEventStreamResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateEventStreamResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateEventStreamResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEventStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEventStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEventStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEventStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventStreamArn;
+    bool m_eventStreamArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

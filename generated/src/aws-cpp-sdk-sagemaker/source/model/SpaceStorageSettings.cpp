@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SpaceStorageSettings::SpaceStorageSettings() : 
-    m_ebsStorageSettingsHasBeenSet(false)
-{
-}
-
 SpaceStorageSettings::SpaceStorageSettings(JsonView jsonValue)
-  : SpaceStorageSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SpaceStorageSettings& SpaceStorageSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EbsStorageSettings"))
   {
     m_ebsStorageSettings = jsonValue.GetObject("EbsStorageSettings");
-
     m_ebsStorageSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

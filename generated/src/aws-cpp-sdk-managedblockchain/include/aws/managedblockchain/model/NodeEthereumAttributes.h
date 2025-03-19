@@ -31,7 +31,7 @@ namespace Model
   class NodeEthereumAttributes
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes() = default;
     AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
-    inline const Aws::String& GetHttpEndpoint() const{ return m_httpEndpoint; }
+    inline const Aws::String& GetHttpEndpoint() const { return m_httpEndpoint; }
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
-    inline void SetHttpEndpoint(const Aws::String& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
-    inline void SetHttpEndpoint(Aws::String&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
-    inline void SetHttpEndpoint(const char* value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint.assign(value); }
-    inline NodeEthereumAttributes& WithHttpEndpoint(const Aws::String& value) { SetHttpEndpoint(value); return *this;}
-    inline NodeEthereumAttributes& WithHttpEndpoint(Aws::String&& value) { SetHttpEndpoint(std::move(value)); return *this;}
-    inline NodeEthereumAttributes& WithHttpEndpoint(const char* value) { SetHttpEndpoint(value); return *this;}
+    template<typename HttpEndpointT = Aws::String>
+    void SetHttpEndpoint(HttpEndpointT&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::forward<HttpEndpointT>(value); }
+    template<typename HttpEndpointT = Aws::String>
+    NodeEthereumAttributes& WithHttpEndpoint(HttpEndpointT&& value) { SetHttpEndpoint(std::forward<HttpEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4</a>.</p>
      */
-    inline const Aws::String& GetWebSocketEndpoint() const{ return m_webSocketEndpoint; }
+    inline const Aws::String& GetWebSocketEndpoint() const { return m_webSocketEndpoint; }
     inline bool WebSocketEndpointHasBeenSet() const { return m_webSocketEndpointHasBeenSet; }
-    inline void SetWebSocketEndpoint(const Aws::String& value) { m_webSocketEndpointHasBeenSet = true; m_webSocketEndpoint = value; }
-    inline void SetWebSocketEndpoint(Aws::String&& value) { m_webSocketEndpointHasBeenSet = true; m_webSocketEndpoint = std::move(value); }
-    inline void SetWebSocketEndpoint(const char* value) { m_webSocketEndpointHasBeenSet = true; m_webSocketEndpoint.assign(value); }
-    inline NodeEthereumAttributes& WithWebSocketEndpoint(const Aws::String& value) { SetWebSocketEndpoint(value); return *this;}
-    inline NodeEthereumAttributes& WithWebSocketEndpoint(Aws::String&& value) { SetWebSocketEndpoint(std::move(value)); return *this;}
-    inline NodeEthereumAttributes& WithWebSocketEndpoint(const char* value) { SetWebSocketEndpoint(value); return *this;}
+    template<typename WebSocketEndpointT = Aws::String>
+    void SetWebSocketEndpoint(WebSocketEndpointT&& value) { m_webSocketEndpointHasBeenSet = true; m_webSocketEndpoint = std::forward<WebSocketEndpointT>(value); }
+    template<typename WebSocketEndpointT = Aws::String>
+    NodeEthereumAttributes& WithWebSocketEndpoint(WebSocketEndpointT&& value) { SetWebSocketEndpoint(std::forward<WebSocketEndpointT>(value)); return *this;}
     ///@}
   private:
 

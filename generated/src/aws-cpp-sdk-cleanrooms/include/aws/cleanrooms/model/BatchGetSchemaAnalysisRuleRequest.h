@@ -23,7 +23,7 @@ namespace Model
   class BatchGetSchemaAnalysisRuleRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API BatchGetSchemaAnalysisRuleRequest();
+    AWS_CLEANROOMS_API BatchGetSchemaAnalysisRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,26 @@ namespace Model
      * <p>The unique identifier of the collaboration that contains the schema analysis
      * rule.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-    inline BatchGetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline BatchGetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline BatchGetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    BatchGetSchemaAnalysisRuleRequest& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information that's necessary to retrieve a schema analysis rule.</p>
      */
-    inline const Aws::Vector<SchemaAnalysisRuleRequest>& GetSchemaAnalysisRuleRequests() const{ return m_schemaAnalysisRuleRequests; }
+    inline const Aws::Vector<SchemaAnalysisRuleRequest>& GetSchemaAnalysisRuleRequests() const { return m_schemaAnalysisRuleRequests; }
     inline bool SchemaAnalysisRuleRequestsHasBeenSet() const { return m_schemaAnalysisRuleRequestsHasBeenSet; }
-    inline void SetSchemaAnalysisRuleRequests(const Aws::Vector<SchemaAnalysisRuleRequest>& value) { m_schemaAnalysisRuleRequestsHasBeenSet = true; m_schemaAnalysisRuleRequests = value; }
-    inline void SetSchemaAnalysisRuleRequests(Aws::Vector<SchemaAnalysisRuleRequest>&& value) { m_schemaAnalysisRuleRequestsHasBeenSet = true; m_schemaAnalysisRuleRequests = std::move(value); }
-    inline BatchGetSchemaAnalysisRuleRequest& WithSchemaAnalysisRuleRequests(const Aws::Vector<SchemaAnalysisRuleRequest>& value) { SetSchemaAnalysisRuleRequests(value); return *this;}
-    inline BatchGetSchemaAnalysisRuleRequest& WithSchemaAnalysisRuleRequests(Aws::Vector<SchemaAnalysisRuleRequest>&& value) { SetSchemaAnalysisRuleRequests(std::move(value)); return *this;}
-    inline BatchGetSchemaAnalysisRuleRequest& AddSchemaAnalysisRuleRequests(const SchemaAnalysisRuleRequest& value) { m_schemaAnalysisRuleRequestsHasBeenSet = true; m_schemaAnalysisRuleRequests.push_back(value); return *this; }
-    inline BatchGetSchemaAnalysisRuleRequest& AddSchemaAnalysisRuleRequests(SchemaAnalysisRuleRequest&& value) { m_schemaAnalysisRuleRequestsHasBeenSet = true; m_schemaAnalysisRuleRequests.push_back(std::move(value)); return *this; }
+    template<typename SchemaAnalysisRuleRequestsT = Aws::Vector<SchemaAnalysisRuleRequest>>
+    void SetSchemaAnalysisRuleRequests(SchemaAnalysisRuleRequestsT&& value) { m_schemaAnalysisRuleRequestsHasBeenSet = true; m_schemaAnalysisRuleRequests = std::forward<SchemaAnalysisRuleRequestsT>(value); }
+    template<typename SchemaAnalysisRuleRequestsT = Aws::Vector<SchemaAnalysisRuleRequest>>
+    BatchGetSchemaAnalysisRuleRequest& WithSchemaAnalysisRuleRequests(SchemaAnalysisRuleRequestsT&& value) { SetSchemaAnalysisRuleRequests(std::forward<SchemaAnalysisRuleRequestsT>(value)); return *this;}
+    template<typename SchemaAnalysisRuleRequestsT = SchemaAnalysisRuleRequest>
+    BatchGetSchemaAnalysisRuleRequest& AddSchemaAnalysisRuleRequests(SchemaAnalysisRuleRequestsT&& value) { m_schemaAnalysisRuleRequestsHasBeenSet = true; m_schemaAnalysisRuleRequests.emplace_back(std::forward<SchemaAnalysisRuleRequestsT>(value)); return *this; }
     ///@}
   private:
 

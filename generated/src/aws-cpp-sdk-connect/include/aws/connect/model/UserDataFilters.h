@@ -33,7 +33,7 @@ namespace Model
   class UserDataFilters
   {
   public:
-    AWS_CONNECT_API UserDataFilters();
+    AWS_CONNECT_API UserDataFilters() = default;
     AWS_CONNECT_API UserDataFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserDataFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A list of up to 100 queues or ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
+    inline const Aws::Vector<Aws::String>& GetQueues() const { return m_queues; }
     inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
-    inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queuesHasBeenSet = true; m_queues = value; }
-    inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queuesHasBeenSet = true; m_queues = std::move(value); }
-    inline UserDataFilters& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
-    inline UserDataFilters& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
-    inline UserDataFilters& AddQueues(const Aws::String& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
-    inline UserDataFilters& AddQueues(Aws::String&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
-    inline UserDataFilters& AddQueues(const char* value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
+    template<typename QueuesT = Aws::Vector<Aws::String>>
+    void SetQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues = std::forward<QueuesT>(value); }
+    template<typename QueuesT = Aws::Vector<Aws::String>>
+    UserDataFilters& WithQueues(QueuesT&& value) { SetQueues(std::forward<QueuesT>(value)); return *this;}
+    template<typename QueuesT = Aws::String>
+    UserDataFilters& AddQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues.emplace_back(std::forward<QueuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,57 +58,54 @@ namespace Model
      * <p>A filter for the user data based on the contact information that is
      * associated to the user. It contains a list of contact states. </p>
      */
-    inline const ContactFilter& GetContactFilter() const{ return m_contactFilter; }
+    inline const ContactFilter& GetContactFilter() const { return m_contactFilter; }
     inline bool ContactFilterHasBeenSet() const { return m_contactFilterHasBeenSet; }
-    inline void SetContactFilter(const ContactFilter& value) { m_contactFilterHasBeenSet = true; m_contactFilter = value; }
-    inline void SetContactFilter(ContactFilter&& value) { m_contactFilterHasBeenSet = true; m_contactFilter = std::move(value); }
-    inline UserDataFilters& WithContactFilter(const ContactFilter& value) { SetContactFilter(value); return *this;}
-    inline UserDataFilters& WithContactFilter(ContactFilter&& value) { SetContactFilter(std::move(value)); return *this;}
+    template<typename ContactFilterT = ContactFilter>
+    void SetContactFilter(ContactFilterT&& value) { m_contactFilterHasBeenSet = true; m_contactFilter = std::forward<ContactFilterT>(value); }
+    template<typename ContactFilterT = ContactFilter>
+    UserDataFilters& WithContactFilter(ContactFilterT&& value) { SetContactFilter(std::forward<ContactFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of up to 100 routing profile IDs or ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRoutingProfiles() const{ return m_routingProfiles; }
+    inline const Aws::Vector<Aws::String>& GetRoutingProfiles() const { return m_routingProfiles; }
     inline bool RoutingProfilesHasBeenSet() const { return m_routingProfilesHasBeenSet; }
-    inline void SetRoutingProfiles(const Aws::Vector<Aws::String>& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = value; }
-    inline void SetRoutingProfiles(Aws::Vector<Aws::String>&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = std::move(value); }
-    inline UserDataFilters& WithRoutingProfiles(const Aws::Vector<Aws::String>& value) { SetRoutingProfiles(value); return *this;}
-    inline UserDataFilters& WithRoutingProfiles(Aws::Vector<Aws::String>&& value) { SetRoutingProfiles(std::move(value)); return *this;}
-    inline UserDataFilters& AddRoutingProfiles(const Aws::String& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
-    inline UserDataFilters& AddRoutingProfiles(Aws::String&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(std::move(value)); return *this; }
-    inline UserDataFilters& AddRoutingProfiles(const char* value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
+    template<typename RoutingProfilesT = Aws::Vector<Aws::String>>
+    void SetRoutingProfiles(RoutingProfilesT&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = std::forward<RoutingProfilesT>(value); }
+    template<typename RoutingProfilesT = Aws::Vector<Aws::String>>
+    UserDataFilters& WithRoutingProfiles(RoutingProfilesT&& value) { SetRoutingProfiles(std::forward<RoutingProfilesT>(value)); return *this;}
+    template<typename RoutingProfilesT = Aws::String>
+    UserDataFilters& AddRoutingProfiles(RoutingProfilesT&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.emplace_back(std::forward<RoutingProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of up to 100 agent IDs or ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgents() const{ return m_agents; }
+    inline const Aws::Vector<Aws::String>& GetAgents() const { return m_agents; }
     inline bool AgentsHasBeenSet() const { return m_agentsHasBeenSet; }
-    inline void SetAgents(const Aws::Vector<Aws::String>& value) { m_agentsHasBeenSet = true; m_agents = value; }
-    inline void SetAgents(Aws::Vector<Aws::String>&& value) { m_agentsHasBeenSet = true; m_agents = std::move(value); }
-    inline UserDataFilters& WithAgents(const Aws::Vector<Aws::String>& value) { SetAgents(value); return *this;}
-    inline UserDataFilters& WithAgents(Aws::Vector<Aws::String>&& value) { SetAgents(std::move(value)); return *this;}
-    inline UserDataFilters& AddAgents(const Aws::String& value) { m_agentsHasBeenSet = true; m_agents.push_back(value); return *this; }
-    inline UserDataFilters& AddAgents(Aws::String&& value) { m_agentsHasBeenSet = true; m_agents.push_back(std::move(value)); return *this; }
-    inline UserDataFilters& AddAgents(const char* value) { m_agentsHasBeenSet = true; m_agents.push_back(value); return *this; }
+    template<typename AgentsT = Aws::Vector<Aws::String>>
+    void SetAgents(AgentsT&& value) { m_agentsHasBeenSet = true; m_agents = std::forward<AgentsT>(value); }
+    template<typename AgentsT = Aws::Vector<Aws::String>>
+    UserDataFilters& WithAgents(AgentsT&& value) { SetAgents(std::forward<AgentsT>(value)); return *this;}
+    template<typename AgentsT = Aws::String>
+    UserDataFilters& AddAgents(AgentsT&& value) { m_agentsHasBeenSet = true; m_agents.emplace_back(std::forward<AgentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A UserHierarchyGroup ID or ARN.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserHierarchyGroups() const{ return m_userHierarchyGroups; }
+    inline const Aws::Vector<Aws::String>& GetUserHierarchyGroups() const { return m_userHierarchyGroups; }
     inline bool UserHierarchyGroupsHasBeenSet() const { return m_userHierarchyGroupsHasBeenSet; }
-    inline void SetUserHierarchyGroups(const Aws::Vector<Aws::String>& value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups = value; }
-    inline void SetUserHierarchyGroups(Aws::Vector<Aws::String>&& value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups = std::move(value); }
-    inline UserDataFilters& WithUserHierarchyGroups(const Aws::Vector<Aws::String>& value) { SetUserHierarchyGroups(value); return *this;}
-    inline UserDataFilters& WithUserHierarchyGroups(Aws::Vector<Aws::String>&& value) { SetUserHierarchyGroups(std::move(value)); return *this;}
-    inline UserDataFilters& AddUserHierarchyGroups(const Aws::String& value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups.push_back(value); return *this; }
-    inline UserDataFilters& AddUserHierarchyGroups(Aws::String&& value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups.push_back(std::move(value)); return *this; }
-    inline UserDataFilters& AddUserHierarchyGroups(const char* value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups.push_back(value); return *this; }
+    template<typename UserHierarchyGroupsT = Aws::Vector<Aws::String>>
+    void SetUserHierarchyGroups(UserHierarchyGroupsT&& value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups = std::forward<UserHierarchyGroupsT>(value); }
+    template<typename UserHierarchyGroupsT = Aws::Vector<Aws::String>>
+    UserDataFilters& WithUserHierarchyGroups(UserHierarchyGroupsT&& value) { SetUserHierarchyGroups(std::forward<UserHierarchyGroupsT>(value)); return *this;}
+    template<typename UserHierarchyGroupsT = Aws::String>
+    UserDataFilters& AddUserHierarchyGroups(UserHierarchyGroupsT&& value) { m_userHierarchyGroupsHasBeenSet = true; m_userHierarchyGroups.emplace_back(std::forward<UserHierarchyGroupsT>(value)); return *this; }
     ///@}
   private:
 

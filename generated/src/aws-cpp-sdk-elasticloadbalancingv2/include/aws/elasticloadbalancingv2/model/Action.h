@@ -40,7 +40,7 @@ namespace Model
   class Action
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API Action();
+    AWS_ELASTICLOADBALANCINGV2_API Action() = default;
     AWS_ELASTICLOADBALANCINGV2_API Action(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API Action& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,12 +52,10 @@ namespace Model
     /**
      * <p>The type of action.</p>
      */
-    inline const ActionTypeEnum& GetType() const{ return m_type; }
+    inline ActionTypeEnum GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ActionTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ActionTypeEnum&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Action& WithType(const ActionTypeEnum& value) { SetType(value); return *this;}
-    inline Action& WithType(ActionTypeEnum&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ActionTypeEnum value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Action& WithType(ActionTypeEnum value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * target group. To route to one or more target groups, use
      * <code>ForwardConfig</code> instead.</p>
      */
-    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+    inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-    inline Action& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-    inline Action& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-    inline Action& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    template<typename TargetGroupArnT = Aws::String>
+    void SetTargetGroupArn(TargetGroupArnT&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::forward<TargetGroupArnT>(value); }
+    template<typename TargetGroupArnT = Aws::String>
+    Action& WithTargetGroupArn(TargetGroupArnT&& value) { SetTargetGroupArn(std::forward<TargetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,12 @@ namespace Model
      * with OpenID Connect (OIDC). Specify only when <code>Type</code> is
      * <code>authenticate-oidc</code>.</p>
      */
-    inline const AuthenticateOidcActionConfig& GetAuthenticateOidcConfig() const{ return m_authenticateOidcConfig; }
+    inline const AuthenticateOidcActionConfig& GetAuthenticateOidcConfig() const { return m_authenticateOidcConfig; }
     inline bool AuthenticateOidcConfigHasBeenSet() const { return m_authenticateOidcConfigHasBeenSet; }
-    inline void SetAuthenticateOidcConfig(const AuthenticateOidcActionConfig& value) { m_authenticateOidcConfigHasBeenSet = true; m_authenticateOidcConfig = value; }
-    inline void SetAuthenticateOidcConfig(AuthenticateOidcActionConfig&& value) { m_authenticateOidcConfigHasBeenSet = true; m_authenticateOidcConfig = std::move(value); }
-    inline Action& WithAuthenticateOidcConfig(const AuthenticateOidcActionConfig& value) { SetAuthenticateOidcConfig(value); return *this;}
-    inline Action& WithAuthenticateOidcConfig(AuthenticateOidcActionConfig&& value) { SetAuthenticateOidcConfig(std::move(value)); return *this;}
+    template<typename AuthenticateOidcConfigT = AuthenticateOidcActionConfig>
+    void SetAuthenticateOidcConfig(AuthenticateOidcConfigT&& value) { m_authenticateOidcConfigHasBeenSet = true; m_authenticateOidcConfig = std::forward<AuthenticateOidcConfigT>(value); }
+    template<typename AuthenticateOidcConfigT = AuthenticateOidcActionConfig>
+    Action& WithAuthenticateOidcConfig(AuthenticateOidcConfigT&& value) { SetAuthenticateOidcConfig(std::forward<AuthenticateOidcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,12 @@ namespace Model
      * <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users.
      * Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
      */
-    inline const AuthenticateCognitoActionConfig& GetAuthenticateCognitoConfig() const{ return m_authenticateCognitoConfig; }
+    inline const AuthenticateCognitoActionConfig& GetAuthenticateCognitoConfig() const { return m_authenticateCognitoConfig; }
     inline bool AuthenticateCognitoConfigHasBeenSet() const { return m_authenticateCognitoConfigHasBeenSet; }
-    inline void SetAuthenticateCognitoConfig(const AuthenticateCognitoActionConfig& value) { m_authenticateCognitoConfigHasBeenSet = true; m_authenticateCognitoConfig = value; }
-    inline void SetAuthenticateCognitoConfig(AuthenticateCognitoActionConfig&& value) { m_authenticateCognitoConfigHasBeenSet = true; m_authenticateCognitoConfig = std::move(value); }
-    inline Action& WithAuthenticateCognitoConfig(const AuthenticateCognitoActionConfig& value) { SetAuthenticateCognitoConfig(value); return *this;}
-    inline Action& WithAuthenticateCognitoConfig(AuthenticateCognitoActionConfig&& value) { SetAuthenticateCognitoConfig(std::move(value)); return *this;}
+    template<typename AuthenticateCognitoConfigT = AuthenticateCognitoActionConfig>
+    void SetAuthenticateCognitoConfig(AuthenticateCognitoConfigT&& value) { m_authenticateCognitoConfigHasBeenSet = true; m_authenticateCognitoConfig = std::forward<AuthenticateCognitoConfigT>(value); }
+    template<typename AuthenticateCognitoConfigT = AuthenticateCognitoActionConfig>
+    Action& WithAuthenticateCognitoConfig(AuthenticateCognitoConfigT&& value) { SetAuthenticateCognitoConfig(std::forward<AuthenticateCognitoConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,7 +105,7 @@ namespace Model
      * <p>The order for the action. This value is required for rules with multiple
      * actions. The action with the lowest value for order is performed first.</p>
      */
-    inline int GetOrder() const{ return m_order; }
+    inline int GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
     inline Action& WithOrder(int value) { SetOrder(value); return *this;}
@@ -120,12 +116,12 @@ namespace Model
      * <p>[Application Load Balancer] Information for creating a redirect action.
      * Specify only when <code>Type</code> is <code>redirect</code>.</p>
      */
-    inline const RedirectActionConfig& GetRedirectConfig() const{ return m_redirectConfig; }
+    inline const RedirectActionConfig& GetRedirectConfig() const { return m_redirectConfig; }
     inline bool RedirectConfigHasBeenSet() const { return m_redirectConfigHasBeenSet; }
-    inline void SetRedirectConfig(const RedirectActionConfig& value) { m_redirectConfigHasBeenSet = true; m_redirectConfig = value; }
-    inline void SetRedirectConfig(RedirectActionConfig&& value) { m_redirectConfigHasBeenSet = true; m_redirectConfig = std::move(value); }
-    inline Action& WithRedirectConfig(const RedirectActionConfig& value) { SetRedirectConfig(value); return *this;}
-    inline Action& WithRedirectConfig(RedirectActionConfig&& value) { SetRedirectConfig(std::move(value)); return *this;}
+    template<typename RedirectConfigT = RedirectActionConfig>
+    void SetRedirectConfig(RedirectConfigT&& value) { m_redirectConfigHasBeenSet = true; m_redirectConfig = std::forward<RedirectConfigT>(value); }
+    template<typename RedirectConfigT = RedirectActionConfig>
+    Action& WithRedirectConfig(RedirectConfigT&& value) { SetRedirectConfig(std::forward<RedirectConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +130,12 @@ namespace Model
      * custom HTTP response. Specify only when <code>Type</code> is
      * <code>fixed-response</code>.</p>
      */
-    inline const FixedResponseActionConfig& GetFixedResponseConfig() const{ return m_fixedResponseConfig; }
+    inline const FixedResponseActionConfig& GetFixedResponseConfig() const { return m_fixedResponseConfig; }
     inline bool FixedResponseConfigHasBeenSet() const { return m_fixedResponseConfigHasBeenSet; }
-    inline void SetFixedResponseConfig(const FixedResponseActionConfig& value) { m_fixedResponseConfigHasBeenSet = true; m_fixedResponseConfig = value; }
-    inline void SetFixedResponseConfig(FixedResponseActionConfig&& value) { m_fixedResponseConfigHasBeenSet = true; m_fixedResponseConfig = std::move(value); }
-    inline Action& WithFixedResponseConfig(const FixedResponseActionConfig& value) { SetFixedResponseConfig(value); return *this;}
-    inline Action& WithFixedResponseConfig(FixedResponseActionConfig&& value) { SetFixedResponseConfig(std::move(value)); return *this;}
+    template<typename FixedResponseConfigT = FixedResponseActionConfig>
+    void SetFixedResponseConfig(FixedResponseConfigT&& value) { m_fixedResponseConfigHasBeenSet = true; m_fixedResponseConfig = std::forward<FixedResponseConfigT>(value); }
+    template<typename FixedResponseConfigT = FixedResponseActionConfig>
+    Action& WithFixedResponseConfig(FixedResponseConfigT&& value) { SetFixedResponseConfig(std::forward<FixedResponseConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,16 +147,16 @@ namespace Model
      * specify only one target group using <code>ForwardConfig</code> and it must be
      * the same target group specified in <code>TargetGroupArn</code>.</p>
      */
-    inline const ForwardActionConfig& GetForwardConfig() const{ return m_forwardConfig; }
+    inline const ForwardActionConfig& GetForwardConfig() const { return m_forwardConfig; }
     inline bool ForwardConfigHasBeenSet() const { return m_forwardConfigHasBeenSet; }
-    inline void SetForwardConfig(const ForwardActionConfig& value) { m_forwardConfigHasBeenSet = true; m_forwardConfig = value; }
-    inline void SetForwardConfig(ForwardActionConfig&& value) { m_forwardConfigHasBeenSet = true; m_forwardConfig = std::move(value); }
-    inline Action& WithForwardConfig(const ForwardActionConfig& value) { SetForwardConfig(value); return *this;}
-    inline Action& WithForwardConfig(ForwardActionConfig&& value) { SetForwardConfig(std::move(value)); return *this;}
+    template<typename ForwardConfigT = ForwardActionConfig>
+    void SetForwardConfig(ForwardConfigT&& value) { m_forwardConfigHasBeenSet = true; m_forwardConfig = std::forward<ForwardConfigT>(value); }
+    template<typename ForwardConfigT = ForwardActionConfig>
+    Action& WithForwardConfig(ForwardConfigT&& value) { SetForwardConfig(std::forward<ForwardConfigT>(value)); return *this;}
     ///@}
   private:
 
-    ActionTypeEnum m_type;
+    ActionTypeEnum m_type{ActionTypeEnum::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_targetGroupArn;
@@ -172,7 +168,7 @@ namespace Model
     AuthenticateCognitoActionConfig m_authenticateCognitoConfig;
     bool m_authenticateCognitoConfigHasBeenSet = false;
 
-    int m_order;
+    int m_order{0};
     bool m_orderHasBeenSet = false;
 
     RedirectActionConfig m_redirectConfig;

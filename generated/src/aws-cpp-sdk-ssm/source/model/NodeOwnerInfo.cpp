@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-NodeOwnerInfo::NodeOwnerInfo() : 
-    m_accountIdHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_organizationalUnitPathHasBeenSet(false)
-{
-}
-
 NodeOwnerInfo::NodeOwnerInfo(JsonView jsonValue)
-  : NodeOwnerInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NodeOwnerInfo& NodeOwnerInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("OrganizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitPath"))
   {
     m_organizationalUnitPath = jsonValue.GetString("OrganizationalUnitPath");
-
     m_organizationalUnitPathHasBeenSet = true;
   }
-
   return *this;
 }
 

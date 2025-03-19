@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateExplainabilityResult::CreateExplainabilityResult()
-{
-}
-
 CreateExplainabilityResult::CreateExplainabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateExplainabilityResult& CreateExplainabilityResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ExplainabilityArn"))
   {
     m_explainabilityArn = jsonValue.GetString("ExplainabilityArn");
-
+    m_explainabilityArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

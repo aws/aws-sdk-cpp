@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTargetsRequest::PutTargetsRequest() : 
-    m_ruleHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Aws::String PutTargetsRequest::SerializePayload() const
 {
   JsonValue payload;

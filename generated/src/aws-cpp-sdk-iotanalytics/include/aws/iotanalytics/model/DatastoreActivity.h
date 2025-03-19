@@ -32,7 +32,7 @@ namespace Model
   class DatastoreActivity
   {
   public:
-    AWS_IOTANALYTICS_API DatastoreActivity();
+    AWS_IOTANALYTICS_API DatastoreActivity() = default;
     AWS_IOTANALYTICS_API DatastoreActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatastoreActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the datastore activity.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DatastoreActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DatastoreActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DatastoreActivity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DatastoreActivity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data store where processed messages are stored.</p>
      */
-    inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
+    inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
-    inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
-    inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
-    inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
-    inline DatastoreActivity& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
-    inline DatastoreActivity& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
-    inline DatastoreActivity& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
+    template<typename DatastoreNameT = Aws::String>
+    void SetDatastoreName(DatastoreNameT&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::forward<DatastoreNameT>(value); }
+    template<typename DatastoreNameT = Aws::String>
+    DatastoreActivity& WithDatastoreName(DatastoreNameT&& value) { SetDatastoreName(std::forward<DatastoreNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class SystemStatus
   {
   public:
-    AWS_ELASTICBEANSTALK_API SystemStatus();
+    AWS_ELASTICBEANSTALK_API SystemStatus() = default;
     AWS_ELASTICBEANSTALK_API SystemStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API SystemStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>CPU utilization metrics for the instance.</p>
      */
-    inline const CPUUtilization& GetCPUUtilization() const{ return m_cPUUtilization; }
+    inline const CPUUtilization& GetCPUUtilization() const { return m_cPUUtilization; }
     inline bool CPUUtilizationHasBeenSet() const { return m_cPUUtilizationHasBeenSet; }
-    inline void SetCPUUtilization(const CPUUtilization& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
-    inline void SetCPUUtilization(CPUUtilization&& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = std::move(value); }
-    inline SystemStatus& WithCPUUtilization(const CPUUtilization& value) { SetCPUUtilization(value); return *this;}
-    inline SystemStatus& WithCPUUtilization(CPUUtilization&& value) { SetCPUUtilization(std::move(value)); return *this;}
+    template<typename CPUUtilizationT = CPUUtilization>
+    void SetCPUUtilization(CPUUtilizationT&& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = std::forward<CPUUtilizationT>(value); }
+    template<typename CPUUtilizationT = CPUUtilization>
+    SystemStatus& WithCPUUtilization(CPUUtilizationT&& value) { SetCPUUtilization(std::forward<CPUUtilizationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
-    inline const Aws::Vector<double>& GetLoadAverage() const{ return m_loadAverage; }
+    inline const Aws::Vector<double>& GetLoadAverage() const { return m_loadAverage; }
     inline bool LoadAverageHasBeenSet() const { return m_loadAverageHasBeenSet; }
-    inline void SetLoadAverage(const Aws::Vector<double>& value) { m_loadAverageHasBeenSet = true; m_loadAverage = value; }
-    inline void SetLoadAverage(Aws::Vector<double>&& value) { m_loadAverageHasBeenSet = true; m_loadAverage = std::move(value); }
-    inline SystemStatus& WithLoadAverage(const Aws::Vector<double>& value) { SetLoadAverage(value); return *this;}
-    inline SystemStatus& WithLoadAverage(Aws::Vector<double>&& value) { SetLoadAverage(std::move(value)); return *this;}
+    template<typename LoadAverageT = Aws::Vector<double>>
+    void SetLoadAverage(LoadAverageT&& value) { m_loadAverageHasBeenSet = true; m_loadAverage = std::forward<LoadAverageT>(value); }
+    template<typename LoadAverageT = Aws::Vector<double>>
+    SystemStatus& WithLoadAverage(LoadAverageT&& value) { SetLoadAverage(std::forward<LoadAverageT>(value)); return *this;}
     inline SystemStatus& AddLoadAverage(double value) { m_loadAverageHasBeenSet = true; m_loadAverage.push_back(value); return *this; }
     ///@}
   private:

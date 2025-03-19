@@ -18,19 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes() : 
-    m_timeoutType(ActivityTaskTimeoutType::NOT_SET),
-    m_timeoutTypeHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes(JsonView jsonValue)
-  : ActivityTaskTimedOutEventAttributes()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ActivityTaskTimedOutEventAttributes& ActivityTaskTimedOutEventAttributes::operat
   if(jsonValue.ValueExists("timeoutType"))
   {
     m_timeoutType = ActivityTaskTimeoutTypeMapper::GetActivityTaskTimeoutTypeForName(jsonValue.GetString("timeoutType"));
-
     m_timeoutTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledEventId"))
   {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
-
     m_scheduledEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

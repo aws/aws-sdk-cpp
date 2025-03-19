@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceTopology::InstanceTopology() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_networkNodesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
-{
-}
-
 InstanceTopology::InstanceTopology(const XmlNode& xmlNode)
-  : InstanceTopology()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ InstanceTopology& InstanceTopology::operator =(const XmlNode& xmlNode)
     if(!networkNodesNode.IsNull())
     {
       XmlNode networkNodesMember = networkNodesNode.FirstChild("item");
+      m_networkNodesHasBeenSet = !networkNodesMember.IsNull();
       while(!networkNodesMember.IsNull())
       {
         m_networkNodes.push_back(networkNodesMember.GetText());

@@ -31,7 +31,7 @@ namespace Model
   class DeleteStatisticsValueMap
   {
   public:
-    AWS_NEPTUNEDATA_API DeleteStatisticsValueMap();
+    AWS_NEPTUNEDATA_API DeleteStatisticsValueMap() = default;
     AWS_NEPTUNEDATA_API DeleteStatisticsValueMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API DeleteStatisticsValueMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The current status of the statistics.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline DeleteStatisticsValueMap& WithActive(bool value) { SetActive(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
     /**
      * <p>The ID of the statistics generation run that is currently occurring.</p>
      */
-    inline const Aws::String& GetStatisticsId() const{ return m_statisticsId; }
+    inline const Aws::String& GetStatisticsId() const { return m_statisticsId; }
     inline bool StatisticsIdHasBeenSet() const { return m_statisticsIdHasBeenSet; }
-    inline void SetStatisticsId(const Aws::String& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = value; }
-    inline void SetStatisticsId(Aws::String&& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = std::move(value); }
-    inline void SetStatisticsId(const char* value) { m_statisticsIdHasBeenSet = true; m_statisticsId.assign(value); }
-    inline DeleteStatisticsValueMap& WithStatisticsId(const Aws::String& value) { SetStatisticsId(value); return *this;}
-    inline DeleteStatisticsValueMap& WithStatisticsId(Aws::String&& value) { SetStatisticsId(std::move(value)); return *this;}
-    inline DeleteStatisticsValueMap& WithStatisticsId(const char* value) { SetStatisticsId(value); return *this;}
+    template<typename StatisticsIdT = Aws::String>
+    void SetStatisticsId(StatisticsIdT&& value) { m_statisticsIdHasBeenSet = true; m_statisticsId = std::forward<StatisticsIdT>(value); }
+    template<typename StatisticsIdT = Aws::String>
+    DeleteStatisticsValueMap& WithStatisticsId(StatisticsIdT&& value) { SetStatisticsId(std::forward<StatisticsIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
 
     Aws::String m_statisticsId;

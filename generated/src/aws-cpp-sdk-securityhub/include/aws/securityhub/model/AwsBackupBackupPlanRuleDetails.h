@@ -36,7 +36,7 @@ namespace Model
   class AwsBackupBackupPlanRuleDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails() = default;
     AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * create them and the Amazon Web Services Region where they are created. They
      * consist of letters, numbers, and hyphens. </p>
      */
-    inline const Aws::String& GetTargetBackupVault() const{ return m_targetBackupVault; }
+    inline const Aws::String& GetTargetBackupVault() const { return m_targetBackupVault; }
     inline bool TargetBackupVaultHasBeenSet() const { return m_targetBackupVaultHasBeenSet; }
-    inline void SetTargetBackupVault(const Aws::String& value) { m_targetBackupVaultHasBeenSet = true; m_targetBackupVault = value; }
-    inline void SetTargetBackupVault(Aws::String&& value) { m_targetBackupVaultHasBeenSet = true; m_targetBackupVault = std::move(value); }
-    inline void SetTargetBackupVault(const char* value) { m_targetBackupVaultHasBeenSet = true; m_targetBackupVault.assign(value); }
-    inline AwsBackupBackupPlanRuleDetails& WithTargetBackupVault(const Aws::String& value) { SetTargetBackupVault(value); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithTargetBackupVault(Aws::String&& value) { SetTargetBackupVault(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithTargetBackupVault(const char* value) { SetTargetBackupVault(value); return *this;}
+    template<typename TargetBackupVaultT = Aws::String>
+    void SetTargetBackupVault(TargetBackupVaultT&& value) { m_targetBackupVaultHasBeenSet = true; m_targetBackupVault = std::forward<TargetBackupVaultT>(value); }
+    template<typename TargetBackupVaultT = Aws::String>
+    AwsBackupBackupPlanRuleDetails& WithTargetBackupVault(TargetBackupVaultT&& value) { SetTargetBackupVault(std::forward<TargetBackupVaultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
      * if it doesn't start successfully. </p>
      */
-    inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
+    inline long long GetStartWindowMinutes() const { return m_startWindowMinutes; }
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
     inline AwsBackupBackupPlanRuleDetails& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
@@ -74,14 +72,12 @@ namespace Model
     /**
      * <p>A cron expression in UTC specifying when Backup initiates a backup job. </p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline AwsBackupBackupPlanRuleDetails& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    AwsBackupBackupPlanRuleDetails& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * <p>A display name for a backup rule. Must contain 1 to 50 alphanumeric or '-_.'
      * characters. </p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline AwsBackupBackupPlanRuleDetails& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    AwsBackupBackupPlanRuleDetails& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * <p>Uniquely identifies a rule that is used to schedule the backup of a selection
      * of resources. </p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline AwsBackupBackupPlanRuleDetails& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    AwsBackupBackupPlanRuleDetails& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +111,7 @@ namespace Model
      * <p>Specifies whether Backup creates continuous backups capable of point-in-time
      * restore (PITR). </p>
      */
-    inline bool GetEnableContinuousBackup() const{ return m_enableContinuousBackup; }
+    inline bool GetEnableContinuousBackup() const { return m_enableContinuousBackup; }
     inline bool EnableContinuousBackupHasBeenSet() const { return m_enableContinuousBackupHasBeenSet; }
     inline void SetEnableContinuousBackup(bool value) { m_enableContinuousBackupHasBeenSet = true; m_enableContinuousBackup = value; }
     inline AwsBackupBackupPlanRuleDetails& WithEnableContinuousBackup(bool value) { SetEnableContinuousBackup(value); return *this;}
@@ -130,7 +122,7 @@ namespace Model
      * <p>A value in minutes after a backup job is successfully started before it must
      * be completed, or it is canceled by Backup. </p>
      */
-    inline long long GetCompletionWindowMinutes() const{ return m_completionWindowMinutes; }
+    inline long long GetCompletionWindowMinutes() const { return m_completionWindowMinutes; }
     inline bool CompletionWindowMinutesHasBeenSet() const { return m_completionWindowMinutesHasBeenSet; }
     inline void SetCompletionWindowMinutes(long long value) { m_completionWindowMinutesHasBeenSet = true; m_completionWindowMinutes = value; }
     inline AwsBackupBackupPlanRuleDetails& WithCompletionWindowMinutes(long long value) { SetCompletionWindowMinutes(value); return *this;}
@@ -141,14 +133,14 @@ namespace Model
      * <p>An array of <code>CopyAction</code> objects, each of which contains details
      * of the copy operation. </p>
      */
-    inline const Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>& GetCopyActions() const{ return m_copyActions; }
+    inline const Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>& GetCopyActions() const { return m_copyActions; }
     inline bool CopyActionsHasBeenSet() const { return m_copyActionsHasBeenSet; }
-    inline void SetCopyActions(const Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>& value) { m_copyActionsHasBeenSet = true; m_copyActions = value; }
-    inline void SetCopyActions(Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>&& value) { m_copyActionsHasBeenSet = true; m_copyActions = std::move(value); }
-    inline AwsBackupBackupPlanRuleDetails& WithCopyActions(const Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>& value) { SetCopyActions(value); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithCopyActions(Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>&& value) { SetCopyActions(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& AddCopyActions(const AwsBackupBackupPlanRuleCopyActionsDetails& value) { m_copyActionsHasBeenSet = true; m_copyActions.push_back(value); return *this; }
-    inline AwsBackupBackupPlanRuleDetails& AddCopyActions(AwsBackupBackupPlanRuleCopyActionsDetails&& value) { m_copyActionsHasBeenSet = true; m_copyActions.push_back(std::move(value)); return *this; }
+    template<typename CopyActionsT = Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>>
+    void SetCopyActions(CopyActionsT&& value) { m_copyActionsHasBeenSet = true; m_copyActions = std::forward<CopyActionsT>(value); }
+    template<typename CopyActionsT = Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails>>
+    AwsBackupBackupPlanRuleDetails& WithCopyActions(CopyActionsT&& value) { SetCopyActions(std::forward<CopyActionsT>(value)); return *this;}
+    template<typename CopyActionsT = AwsBackupBackupPlanRuleCopyActionsDetails>
+    AwsBackupBackupPlanRuleDetails& AddCopyActions(CopyActionsT&& value) { m_copyActionsHasBeenSet = true; m_copyActions.emplace_back(std::forward<CopyActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -160,19 +152,19 @@ namespace Model
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days.</p>
      */
-    inline const AwsBackupBackupPlanLifecycleDetails& GetLifecycle() const{ return m_lifecycle; }
+    inline const AwsBackupBackupPlanLifecycleDetails& GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const AwsBackupBackupPlanLifecycleDetails& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(AwsBackupBackupPlanLifecycleDetails&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline AwsBackupBackupPlanRuleDetails& WithLifecycle(const AwsBackupBackupPlanLifecycleDetails& value) { SetLifecycle(value); return *this;}
-    inline AwsBackupBackupPlanRuleDetails& WithLifecycle(AwsBackupBackupPlanLifecycleDetails&& value) { SetLifecycle(std::move(value)); return *this;}
+    template<typename LifecycleT = AwsBackupBackupPlanLifecycleDetails>
+    void SetLifecycle(LifecycleT&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::forward<LifecycleT>(value); }
+    template<typename LifecycleT = AwsBackupBackupPlanLifecycleDetails>
+    AwsBackupBackupPlanRuleDetails& WithLifecycle(LifecycleT&& value) { SetLifecycle(std::forward<LifecycleT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_targetBackupVault;
     bool m_targetBackupVaultHasBeenSet = false;
 
-    long long m_startWindowMinutes;
+    long long m_startWindowMinutes{0};
     bool m_startWindowMinutesHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
@@ -184,10 +176,10 @@ namespace Model
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet = false;
 
-    bool m_enableContinuousBackup;
+    bool m_enableContinuousBackup{false};
     bool m_enableContinuousBackupHasBeenSet = false;
 
-    long long m_completionWindowMinutes;
+    long long m_completionWindowMinutes{0};
     bool m_completionWindowMinutesHasBeenSet = false;
 
     Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails> m_copyActions;

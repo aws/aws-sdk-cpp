@@ -18,16 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SipRuleTargetApplication::SipRuleTargetApplication() : 
-    m_sipMediaApplicationIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 SipRuleTargetApplication::SipRuleTargetApplication(JsonView jsonValue)
-  : SipRuleTargetApplication()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SipRuleTargetApplication& SipRuleTargetApplication::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SipMediaApplicationId"))
   {
     m_sipMediaApplicationId = jsonValue.GetString("SipMediaApplicationId");
-
     m_sipMediaApplicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

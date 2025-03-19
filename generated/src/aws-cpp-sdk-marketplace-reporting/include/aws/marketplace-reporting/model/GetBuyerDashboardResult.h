@@ -28,7 +28,7 @@ namespace Model
   class GetBuyerDashboardResult
   {
   public:
-    AWS_MARKETPLACEREPORTING_API GetBuyerDashboardResult();
+    AWS_MARKETPLACEREPORTING_API GetBuyerDashboardResult() = default;
     AWS_MARKETPLACEREPORTING_API GetBuyerDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MARKETPLACEREPORTING_API GetBuyerDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The dashboard's embedding URL.</p>
      */
-    inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
-    inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
-    inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
-    inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
-    inline GetBuyerDashboardResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
-    inline GetBuyerDashboardResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
-    inline GetBuyerDashboardResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
+    inline const Aws::String& GetEmbedUrl() const { return m_embedUrl; }
+    template<typename EmbedUrlT = Aws::String>
+    void SetEmbedUrl(EmbedUrlT&& value) { m_embedUrlHasBeenSet = true; m_embedUrl = std::forward<EmbedUrlT>(value); }
+    template<typename EmbedUrlT = Aws::String>
+    GetBuyerDashboardResult& WithEmbedUrl(EmbedUrlT&& value) { SetEmbedUrl(std::forward<EmbedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the returned dashboard.</p>
      */
-    inline const Aws::String& GetDashboardIdentifier() const{ return m_dashboardIdentifier; }
-    inline void SetDashboardIdentifier(const Aws::String& value) { m_dashboardIdentifier = value; }
-    inline void SetDashboardIdentifier(Aws::String&& value) { m_dashboardIdentifier = std::move(value); }
-    inline void SetDashboardIdentifier(const char* value) { m_dashboardIdentifier.assign(value); }
-    inline GetBuyerDashboardResult& WithDashboardIdentifier(const Aws::String& value) { SetDashboardIdentifier(value); return *this;}
-    inline GetBuyerDashboardResult& WithDashboardIdentifier(Aws::String&& value) { SetDashboardIdentifier(std::move(value)); return *this;}
-    inline GetBuyerDashboardResult& WithDashboardIdentifier(const char* value) { SetDashboardIdentifier(value); return *this;}
+    inline const Aws::String& GetDashboardIdentifier() const { return m_dashboardIdentifier; }
+    template<typename DashboardIdentifierT = Aws::String>
+    void SetDashboardIdentifier(DashboardIdentifierT&& value) { m_dashboardIdentifierHasBeenSet = true; m_dashboardIdentifier = std::forward<DashboardIdentifierT>(value); }
+    template<typename DashboardIdentifierT = Aws::String>
+    GetBuyerDashboardResult& WithDashboardIdentifier(DashboardIdentifierT&& value) { SetDashboardIdentifier(std::forward<DashboardIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,35 +64,36 @@ namespace Model
      * <code>https:// *.amazon.com</code> includes all subdomains under
      * <code>https://aws.amazon.com</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEmbeddingDomains() const{ return m_embeddingDomains; }
-    inline void SetEmbeddingDomains(const Aws::Vector<Aws::String>& value) { m_embeddingDomains = value; }
-    inline void SetEmbeddingDomains(Aws::Vector<Aws::String>&& value) { m_embeddingDomains = std::move(value); }
-    inline GetBuyerDashboardResult& WithEmbeddingDomains(const Aws::Vector<Aws::String>& value) { SetEmbeddingDomains(value); return *this;}
-    inline GetBuyerDashboardResult& WithEmbeddingDomains(Aws::Vector<Aws::String>&& value) { SetEmbeddingDomains(std::move(value)); return *this;}
-    inline GetBuyerDashboardResult& AddEmbeddingDomains(const Aws::String& value) { m_embeddingDomains.push_back(value); return *this; }
-    inline GetBuyerDashboardResult& AddEmbeddingDomains(Aws::String&& value) { m_embeddingDomains.push_back(std::move(value)); return *this; }
-    inline GetBuyerDashboardResult& AddEmbeddingDomains(const char* value) { m_embeddingDomains.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetEmbeddingDomains() const { return m_embeddingDomains; }
+    template<typename EmbeddingDomainsT = Aws::Vector<Aws::String>>
+    void SetEmbeddingDomains(EmbeddingDomainsT&& value) { m_embeddingDomainsHasBeenSet = true; m_embeddingDomains = std::forward<EmbeddingDomainsT>(value); }
+    template<typename EmbeddingDomainsT = Aws::Vector<Aws::String>>
+    GetBuyerDashboardResult& WithEmbeddingDomains(EmbeddingDomainsT&& value) { SetEmbeddingDomains(std::forward<EmbeddingDomainsT>(value)); return *this;}
+    template<typename EmbeddingDomainsT = Aws::String>
+    GetBuyerDashboardResult& AddEmbeddingDomains(EmbeddingDomainsT&& value) { m_embeddingDomainsHasBeenSet = true; m_embeddingDomains.emplace_back(std::forward<EmbeddingDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBuyerDashboardResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBuyerDashboardResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBuyerDashboardResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBuyerDashboardResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_embedUrl;
+    bool m_embedUrlHasBeenSet = false;
 
     Aws::String m_dashboardIdentifier;
+    bool m_dashboardIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_embeddingDomains;
+    bool m_embeddingDomainsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

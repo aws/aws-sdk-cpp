@@ -18,24 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConfiguredTableAssociation::ConfiguredTableAssociation() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_configuredTableIdHasBeenSet(false),
-    m_configuredTableArnHasBeenSet(false),
-    m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_analysisRuleTypesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ConfiguredTableAssociation::ConfiguredTableAssociation(JsonView jsonValue)
-  : ConfiguredTableAssociation()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ ConfiguredTableAssociation& ConfiguredTableAssociation::operator =(JsonView json
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredTableId"))
   {
     m_configuredTableId = jsonValue.GetString("configuredTableId");
-
     m_configuredTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredTableArn"))
   {
     m_configuredTableArn = jsonValue.GetString("configuredTableArn");
-
     m_configuredTableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipId"))
   {
     m_membershipId = jsonValue.GetString("membershipId");
-
     m_membershipIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipArn"))
   {
     m_membershipArn = jsonValue.GetString("membershipArn");
-
     m_membershipArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analysisRuleTypes"))
   {
     Aws::Utils::Array<JsonView> analysisRuleTypesJsonList = jsonValue.GetArray("analysisRuleTypes");
@@ -114,21 +79,16 @@ ConfiguredTableAssociation& ConfiguredTableAssociation::operator =(JsonView json
     }
     m_analysisRuleTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

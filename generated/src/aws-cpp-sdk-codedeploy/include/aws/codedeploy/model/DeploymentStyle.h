@@ -34,7 +34,7 @@ namespace Model
   class DeploymentStyle
   {
   public:
-    AWS_CODEDEPLOY_API DeploymentStyle();
+    AWS_CODEDEPLOY_API DeploymentStyle() = default;
     AWS_CODEDEPLOY_API DeploymentStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API DeploymentStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,31 +45,27 @@ namespace Model
      * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
-    inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+    inline DeploymentType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline DeploymentStyle& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
-    inline DeploymentStyle& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(DeploymentType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline DeploymentStyle& WithDeploymentType(DeploymentType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
      */
-    inline const DeploymentOption& GetDeploymentOption() const{ return m_deploymentOption; }
+    inline DeploymentOption GetDeploymentOption() const { return m_deploymentOption; }
     inline bool DeploymentOptionHasBeenSet() const { return m_deploymentOptionHasBeenSet; }
-    inline void SetDeploymentOption(const DeploymentOption& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = value; }
-    inline void SetDeploymentOption(DeploymentOption&& value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = std::move(value); }
-    inline DeploymentStyle& WithDeploymentOption(const DeploymentOption& value) { SetDeploymentOption(value); return *this;}
-    inline DeploymentStyle& WithDeploymentOption(DeploymentOption&& value) { SetDeploymentOption(std::move(value)); return *this;}
+    inline void SetDeploymentOption(DeploymentOption value) { m_deploymentOptionHasBeenSet = true; m_deploymentOption = value; }
+    inline DeploymentStyle& WithDeploymentOption(DeploymentOption value) { SetDeploymentOption(value); return *this;}
     ///@}
   private:
 
-    DeploymentType m_deploymentType;
+    DeploymentType m_deploymentType{DeploymentType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
-    DeploymentOption m_deploymentOption;
+    DeploymentOption m_deploymentOption{DeploymentOption::NOT_SET};
     bool m_deploymentOptionHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContainerRequest::DeleteContainerRequest() : 
-    m_containerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContainerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateConnectorRequest::DisassociateConnectorRequest() : 
-    m_connectorIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

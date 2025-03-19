@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAddressesResponse::DescribeAddressesResponse()
-{
-}
-
 DescribeAddressesResponse::DescribeAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeAddressesResponse& DescribeAddressesResponse::operator =(const Aws::Amaz
     if(!addressesNode.IsNull())
     {
       XmlNode addressesMember = addressesNode.FirstChild("item");
+      m_addressesHasBeenSet = !addressesMember.IsNull();
       while(!addressesMember.IsNull())
       {
         m_addresses.push_back(addressesMember);
         addressesMember = addressesMember.NextNode("item");
       }
 
+      m_addressesHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeAddressesResponse& DescribeAddressesResponse::operator =(const Aws::Amaz
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

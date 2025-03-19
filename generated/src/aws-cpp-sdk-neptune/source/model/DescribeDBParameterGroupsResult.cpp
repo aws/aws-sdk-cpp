@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBParameterGroupsResult::DescribeDBParameterGroupsResult()
-{
-}
-
 DescribeDBParameterGroupsResult::DescribeDBParameterGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDBParameterGroupsResult& DescribeDBParameterGroupsResult::operator =(con
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBParameterGroupsNode = resultNode.FirstChild("DBParameterGroups");
     if(!dBParameterGroupsNode.IsNull())
     {
       XmlNode dBParameterGroupsMember = dBParameterGroupsNode.FirstChild("DBParameterGroup");
+      m_dBParameterGroupsHasBeenSet = !dBParameterGroupsMember.IsNull();
       while(!dBParameterGroupsMember.IsNull())
       {
         m_dBParameterGroups.push_back(dBParameterGroupsMember);
         dBParameterGroupsMember = dBParameterGroupsMember.NextNode("DBParameterGroup");
       }
 
+      m_dBParameterGroupsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::DescribeDBParameterGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -23,7 +23,7 @@ namespace Model
   class ListFleetsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API ListFleetsRequest();
+    AWS_CODEBUILD_API ListFleetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * the list, keep calling this operation with each subsequent next token that is
      * returned, until no more next tokens are returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFleetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFleetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFleetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFleetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <code>nextToken</code> to iterate pages in the list of returned compute
      * fleets.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFleetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -75,12 +73,10 @@ namespace Model
      * <code>sortBy</code> to specify the criterion to be used to list compute fleet
      * names.</p>
      */
-    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrderType GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListFleetsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-    inline ListFleetsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrderType value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListFleetsRequest& WithSortOrder(SortOrderType value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -93,25 +89,23 @@ namespace Model
      * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
      * compute fleet names based on the preceding criteria.</p>
      */
-    inline const FleetSortByType& GetSortBy() const{ return m_sortBy; }
+    inline FleetSortByType GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const FleetSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(FleetSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListFleetsRequest& WithSortBy(const FleetSortByType& value) { SetSortBy(value); return *this;}
-    inline ListFleetsRequest& WithSortBy(FleetSortByType&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(FleetSortByType value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListFleetsRequest& WithSortBy(FleetSortByType value) { SetSortBy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    SortOrderType m_sortOrder;
+    SortOrderType m_sortOrder{SortOrderType::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    FleetSortByType m_sortBy;
+    FleetSortByType m_sortBy{FleetSortByType::NOT_SET};
     bool m_sortByHasBeenSet = false;
   };
 

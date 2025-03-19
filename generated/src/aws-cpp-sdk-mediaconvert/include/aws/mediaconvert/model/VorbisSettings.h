@@ -30,7 +30,7 @@ namespace Model
   class VorbisSettings
   {
   public:
-    AWS_MEDIACONVERT_API VorbisSettings();
+    AWS_MEDIACONVERT_API VorbisSettings() = default;
     AWS_MEDIACONVERT_API VorbisSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VorbisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In
      * the API, valid values are 1 and 2. The default value is 2.
      */
-    inline int GetChannels() const{ return m_channels; }
+    inline int GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
     inline VorbisSettings& WithChannels(int value) { SetChannels(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
      * Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000,
      * 44100, and 48000. The default value is 48000.
      */
-    inline int GetSampleRate() const{ return m_sampleRate; }
+    inline int GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline VorbisSettings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
@@ -66,20 +66,20 @@ namespace Model
      * value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s,
      * respectively.
      */
-    inline int GetVbrQuality() const{ return m_vbrQuality; }
+    inline int GetVbrQuality() const { return m_vbrQuality; }
     inline bool VbrQualityHasBeenSet() const { return m_vbrQualityHasBeenSet; }
     inline void SetVbrQuality(int value) { m_vbrQualityHasBeenSet = true; m_vbrQuality = value; }
     inline VorbisSettings& WithVbrQuality(int value) { SetVbrQuality(value); return *this;}
     ///@}
   private:
 
-    int m_channels;
+    int m_channels{0};
     bool m_channelsHasBeenSet = false;
 
-    int m_sampleRate;
+    int m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
 
-    int m_vbrQuality;
+    int m_vbrQuality{0};
     bool m_vbrQualityHasBeenSet = false;
   };
 

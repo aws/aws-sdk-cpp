@@ -14,10 +14,5 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateSolNetworkPackageContentRequest::ValidateSolNetworkPackageContentRequest() : 
-    m_nsdInfoIdHasBeenSet(false)
-{
-}
-
 
 

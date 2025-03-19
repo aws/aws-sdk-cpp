@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-SplitStringEntry::SplitStringEntry() : 
-    m_sourceHasBeenSet(false),
-    m_delimiterHasBeenSet(false)
-{
-}
-
 SplitStringEntry::SplitStringEntry(JsonView jsonValue)
-  : SplitStringEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SplitStringEntry& SplitStringEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("delimiter"))
   {
     m_delimiter = jsonValue.GetString("delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   return *this;
 }
 

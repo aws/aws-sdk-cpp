@@ -23,7 +23,7 @@ namespace Model
   class ListImageScanFindingsRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API ListImageScanFindingsRequest();
+    AWS_IMAGEBUILDER_API ListImageScanFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,21 @@ namespace Model
      * </p> </li> <li> <p> <code>severity</code> </p> </li> </ul> <p>If you don't
      * request a filter, then all findings in your account are listed.</p>
      */
-    inline const Aws::Vector<ImageScanFindingsFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ImageScanFindingsFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ImageScanFindingsFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ImageScanFindingsFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListImageScanFindingsRequest& WithFilters(const Aws::Vector<ImageScanFindingsFilter>& value) { SetFilters(value); return *this;}
-    inline ListImageScanFindingsRequest& WithFilters(Aws::Vector<ImageScanFindingsFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListImageScanFindingsRequest& AddFilters(const ImageScanFindingsFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListImageScanFindingsRequest& AddFilters(ImageScanFindingsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ImageScanFindingsFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ImageScanFindingsFilter>>
+    ListImageScanFindingsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ImageScanFindingsFilter>
+    ListImageScanFindingsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum items to return in a request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListImageScanFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,21 +68,19 @@ namespace Model
      * <p>A token to specify where to start paginating. This is the nextToken from a
      * previously truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImageScanFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImageScanFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImageScanFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImageScanFindingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ImageScanFindingsFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

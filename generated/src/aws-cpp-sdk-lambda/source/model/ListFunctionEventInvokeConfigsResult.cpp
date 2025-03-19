@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFunctionEventInvokeConfigsResult::ListFunctionEventInvokeConfigsResult()
-{
-}
-
 ListFunctionEventInvokeConfigsResult::ListFunctionEventInvokeConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListFunctionEventInvokeConfigsResult& ListFunctionEventInvokeConfigsResult::oper
     {
       m_functionEventInvokeConfigs.push_back(functionEventInvokeConfigsJsonList[functionEventInvokeConfigsIndex].AsObject());
     }
+    m_functionEventInvokeConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-OpenIdConnectIdentityTokenConfigurationItem::OpenIdConnectIdentityTokenConfigurationItem() : 
-    m_principalIdClaimHasBeenSet(false),
-    m_clientIdsHasBeenSet(false)
-{
-}
-
 OpenIdConnectIdentityTokenConfigurationItem::OpenIdConnectIdentityTokenConfigurationItem(JsonView jsonValue)
-  : OpenIdConnectIdentityTokenConfigurationItem()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OpenIdConnectIdentityTokenConfigurationItem& OpenIdConnectIdentityTokenConfigura
   if(jsonValue.ValueExists("principalIdClaim"))
   {
     m_principalIdClaim = jsonValue.GetString("principalIdClaim");
-
     m_principalIdClaimHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientIds"))
   {
     Aws::Utils::Array<JsonView> clientIdsJsonList = jsonValue.GetArray("clientIds");
@@ -48,7 +39,6 @@ OpenIdConnectIdentityTokenConfigurationItem& OpenIdConnectIdentityTokenConfigura
     }
     m_clientIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

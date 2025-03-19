@@ -12,11 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForCertificateRequest::ListTagsForCertificateRequest() : 
-    m_certificateArnHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

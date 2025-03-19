@@ -22,7 +22,7 @@ namespace Model
   class UpdateIndexingRuleRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API UpdateIndexingRuleRequest();
+    AWS_XRAY_API UpdateIndexingRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p> Name of the indexing rule to be updated. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateIndexingRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateIndexingRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateIndexingRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateIndexingRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Rule configuration to be updated. </p>
      */
-    inline const IndexingRuleValueUpdate& GetRule() const{ return m_rule; }
+    inline const IndexingRuleValueUpdate& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const IndexingRuleValueUpdate& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(IndexingRuleValueUpdate&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline UpdateIndexingRuleRequest& WithRule(const IndexingRuleValueUpdate& value) { SetRule(value); return *this;}
-    inline UpdateIndexingRuleRequest& WithRule(IndexingRuleValueUpdate&& value) { SetRule(std::move(value)); return *this;}
+    template<typename RuleT = IndexingRuleValueUpdate>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = IndexingRuleValueUpdate>
+    UpdateIndexingRuleRequest& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
     ///@}
   private:
 

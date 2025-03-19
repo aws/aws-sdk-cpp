@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVpcConnectionRequest::DescribeVpcConnectionRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVpcConnectionRequest::SerializePayload() const
 {
   return {};

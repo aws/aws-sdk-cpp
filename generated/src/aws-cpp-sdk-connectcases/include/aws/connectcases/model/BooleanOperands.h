@@ -36,7 +36,7 @@ namespace Model
   class BooleanOperands
   {
   public:
-    AWS_CONNECTCASES_API BooleanOperands();
+    AWS_CONNECTCASES_API BooleanOperands() = default;
     AWS_CONNECTCASES_API BooleanOperands(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API BooleanOperands& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,31 +46,31 @@ namespace Model
     /**
      * <p>Represents the left hand operand in the condition.</p>
      */
-    inline const OperandOne& GetOperandOne() const{ return m_operandOne; }
+    inline const OperandOne& GetOperandOne() const { return m_operandOne; }
     inline bool OperandOneHasBeenSet() const { return m_operandOneHasBeenSet; }
-    inline void SetOperandOne(const OperandOne& value) { m_operandOneHasBeenSet = true; m_operandOne = value; }
-    inline void SetOperandOne(OperandOne&& value) { m_operandOneHasBeenSet = true; m_operandOne = std::move(value); }
-    inline BooleanOperands& WithOperandOne(const OperandOne& value) { SetOperandOne(value); return *this;}
-    inline BooleanOperands& WithOperandOne(OperandOne&& value) { SetOperandOne(std::move(value)); return *this;}
+    template<typename OperandOneT = OperandOne>
+    void SetOperandOne(OperandOneT&& value) { m_operandOneHasBeenSet = true; m_operandOne = std::forward<OperandOneT>(value); }
+    template<typename OperandOneT = OperandOne>
+    BooleanOperands& WithOperandOne(OperandOneT&& value) { SetOperandOne(std::forward<OperandOneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the right hand operand in the condition.</p>
      */
-    inline const OperandTwo& GetOperandTwo() const{ return m_operandTwo; }
+    inline const OperandTwo& GetOperandTwo() const { return m_operandTwo; }
     inline bool OperandTwoHasBeenSet() const { return m_operandTwoHasBeenSet; }
-    inline void SetOperandTwo(const OperandTwo& value) { m_operandTwoHasBeenSet = true; m_operandTwo = value; }
-    inline void SetOperandTwo(OperandTwo&& value) { m_operandTwoHasBeenSet = true; m_operandTwo = std::move(value); }
-    inline BooleanOperands& WithOperandTwo(const OperandTwo& value) { SetOperandTwo(value); return *this;}
-    inline BooleanOperands& WithOperandTwo(OperandTwo&& value) { SetOperandTwo(std::move(value)); return *this;}
+    template<typename OperandTwoT = OperandTwo>
+    void SetOperandTwo(OperandTwoT&& value) { m_operandTwoHasBeenSet = true; m_operandTwo = std::forward<OperandTwoT>(value); }
+    template<typename OperandTwoT = OperandTwo>
+    BooleanOperands& WithOperandTwo(OperandTwoT&& value) { SetOperandTwo(std::forward<OperandTwoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the outer rule if the condition evaluates to true.</p>
      */
-    inline bool GetResult() const{ return m_result; }
+    inline bool GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
     inline void SetResult(bool value) { m_resultHasBeenSet = true; m_result = value; }
     inline BooleanOperands& WithResult(bool value) { SetResult(value); return *this;}
@@ -83,7 +83,7 @@ namespace Model
     OperandTwo m_operandTwo;
     bool m_operandTwoHasBeenSet = false;
 
-    bool m_result;
+    bool m_result{false};
     bool m_resultHasBeenSet = false;
   };
 

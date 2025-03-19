@@ -32,7 +32,7 @@ namespace Model
   class DataPathValue
   {
   public:
-    AWS_QUICKSIGHT_API DataPathValue();
+    AWS_QUICKSIGHT_API DataPathValue() = default;
     AWS_QUICKSIGHT_API DataPathValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataPathValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The field ID of the field that needs to be sorted.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline DataPathValue& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline DataPathValue& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline DataPathValue& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    DataPathValue& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actual value of the field that needs to be sorted.</p>
      */
-    inline const Aws::String& GetFieldValue() const{ return m_fieldValue; }
+    inline const Aws::String& GetFieldValue() const { return m_fieldValue; }
     inline bool FieldValueHasBeenSet() const { return m_fieldValueHasBeenSet; }
-    inline void SetFieldValue(const Aws::String& value) { m_fieldValueHasBeenSet = true; m_fieldValue = value; }
-    inline void SetFieldValue(Aws::String&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::move(value); }
-    inline void SetFieldValue(const char* value) { m_fieldValueHasBeenSet = true; m_fieldValue.assign(value); }
-    inline DataPathValue& WithFieldValue(const Aws::String& value) { SetFieldValue(value); return *this;}
-    inline DataPathValue& WithFieldValue(Aws::String&& value) { SetFieldValue(std::move(value)); return *this;}
-    inline DataPathValue& WithFieldValue(const char* value) { SetFieldValue(value); return *this;}
+    template<typename FieldValueT = Aws::String>
+    void SetFieldValue(FieldValueT&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::forward<FieldValueT>(value); }
+    template<typename FieldValueT = Aws::String>
+    DataPathValue& WithFieldValue(FieldValueT&& value) { SetFieldValue(std::forward<FieldValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type configuration of the field.</p>
      */
-    inline const DataPathType& GetDataPathType() const{ return m_dataPathType; }
+    inline const DataPathType& GetDataPathType() const { return m_dataPathType; }
     inline bool DataPathTypeHasBeenSet() const { return m_dataPathTypeHasBeenSet; }
-    inline void SetDataPathType(const DataPathType& value) { m_dataPathTypeHasBeenSet = true; m_dataPathType = value; }
-    inline void SetDataPathType(DataPathType&& value) { m_dataPathTypeHasBeenSet = true; m_dataPathType = std::move(value); }
-    inline DataPathValue& WithDataPathType(const DataPathType& value) { SetDataPathType(value); return *this;}
-    inline DataPathValue& WithDataPathType(DataPathType&& value) { SetDataPathType(std::move(value)); return *this;}
+    template<typename DataPathTypeT = DataPathType>
+    void SetDataPathType(DataPathTypeT&& value) { m_dataPathTypeHasBeenSet = true; m_dataPathType = std::forward<DataPathTypeT>(value); }
+    template<typename DataPathTypeT = DataPathType>
+    DataPathValue& WithDataPathType(DataPathTypeT&& value) { SetDataPathType(std::forward<DataPathTypeT>(value)); return *this;}
     ///@}
   private:
 

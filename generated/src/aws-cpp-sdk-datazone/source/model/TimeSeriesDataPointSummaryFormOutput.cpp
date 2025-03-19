@@ -18,18 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-TimeSeriesDataPointSummaryFormOutput::TimeSeriesDataPointSummaryFormOutput() : 
-    m_contentSummaryHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 TimeSeriesDataPointSummaryFormOutput::TimeSeriesDataPointSummaryFormOutput(JsonView jsonValue)
-  : TimeSeriesDataPointSummaryFormOutput()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ TimeSeriesDataPointSummaryFormOutput& TimeSeriesDataPointSummaryFormOutput::oper
   if(jsonValue.ValueExists("contentSummary"))
   {
     m_contentSummary = jsonValue.GetString("contentSummary");
-
     m_contentSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formName"))
   {
     m_formName = jsonValue.GetString("formName");
-
     m_formNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeIdentifier"))
   {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
-
     m_typeIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeRevision"))
   {
     m_typeRevision = jsonValue.GetString("typeRevision");
-
     m_typeRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

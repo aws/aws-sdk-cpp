@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CpuPerformanceFactor::CpuPerformanceFactor() : 
-    m_referencesHasBeenSet(false)
-{
-}
-
 CpuPerformanceFactor::CpuPerformanceFactor(const XmlNode& xmlNode)
-  : CpuPerformanceFactor()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ CpuPerformanceFactor& CpuPerformanceFactor::operator =(const XmlNode& xmlNode)
     if(!referencesNode.IsNull())
     {
       XmlNode referencesMember = referencesNode.FirstChild("item");
+      m_referencesHasBeenSet = !referencesMember.IsNull();
       while(!referencesMember.IsNull())
       {
         m_references.push_back(referencesMember);

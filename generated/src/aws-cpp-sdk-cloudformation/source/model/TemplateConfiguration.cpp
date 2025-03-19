@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TemplateConfiguration::TemplateConfiguration() : 
-    m_deletionPolicy(GeneratedTemplateDeletionPolicy::NOT_SET),
-    m_deletionPolicyHasBeenSet(false),
-    m_updateReplacePolicy(GeneratedTemplateUpdateReplacePolicy::NOT_SET),
-    m_updateReplacePolicyHasBeenSet(false)
-{
-}
-
 TemplateConfiguration::TemplateConfiguration(const XmlNode& xmlNode)
-  : TemplateConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,13 +34,13 @@ TemplateConfiguration& TemplateConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode deletionPolicyNode = resultNode.FirstChild("DeletionPolicy");
     if(!deletionPolicyNode.IsNull())
     {
-      m_deletionPolicy = GeneratedTemplateDeletionPolicyMapper::GetGeneratedTemplateDeletionPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionPolicyNode.GetText()).c_str()).c_str());
+      m_deletionPolicy = GeneratedTemplateDeletionPolicyMapper::GetGeneratedTemplateDeletionPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionPolicyNode.GetText()).c_str()));
       m_deletionPolicyHasBeenSet = true;
     }
     XmlNode updateReplacePolicyNode = resultNode.FirstChild("UpdateReplacePolicy");
     if(!updateReplacePolicyNode.IsNull())
     {
-      m_updateReplacePolicy = GeneratedTemplateUpdateReplacePolicyMapper::GetGeneratedTemplateUpdateReplacePolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateReplacePolicyNode.GetText()).c_str()).c_str());
+      m_updateReplacePolicy = GeneratedTemplateUpdateReplacePolicyMapper::GetGeneratedTemplateUpdateReplacePolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateReplacePolicyNode.GetText()).c_str()));
       m_updateReplacePolicyHasBeenSet = true;
     }
   }

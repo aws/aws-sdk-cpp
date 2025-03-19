@@ -29,7 +29,7 @@ namespace Model
   class ListRefreshSchedulesResult
   {
   public:
-    AWS_QUICKSIGHT_API ListRefreshSchedulesResult();
+    AWS_QUICKSIGHT_API ListRefreshSchedulesResult() = default;
     AWS_QUICKSIGHT_API ListRefreshSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API ListRefreshSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,42 @@ namespace Model
     /**
      * <p>The list of refresh schedules for the dataset.</p>
      */
-    inline const Aws::Vector<RefreshSchedule>& GetRefreshSchedules() const{ return m_refreshSchedules; }
-    inline void SetRefreshSchedules(const Aws::Vector<RefreshSchedule>& value) { m_refreshSchedules = value; }
-    inline void SetRefreshSchedules(Aws::Vector<RefreshSchedule>&& value) { m_refreshSchedules = std::move(value); }
-    inline ListRefreshSchedulesResult& WithRefreshSchedules(const Aws::Vector<RefreshSchedule>& value) { SetRefreshSchedules(value); return *this;}
-    inline ListRefreshSchedulesResult& WithRefreshSchedules(Aws::Vector<RefreshSchedule>&& value) { SetRefreshSchedules(std::move(value)); return *this;}
-    inline ListRefreshSchedulesResult& AddRefreshSchedules(const RefreshSchedule& value) { m_refreshSchedules.push_back(value); return *this; }
-    inline ListRefreshSchedulesResult& AddRefreshSchedules(RefreshSchedule&& value) { m_refreshSchedules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RefreshSchedule>& GetRefreshSchedules() const { return m_refreshSchedules; }
+    template<typename RefreshSchedulesT = Aws::Vector<RefreshSchedule>>
+    void SetRefreshSchedules(RefreshSchedulesT&& value) { m_refreshSchedulesHasBeenSet = true; m_refreshSchedules = std::forward<RefreshSchedulesT>(value); }
+    template<typename RefreshSchedulesT = Aws::Vector<RefreshSchedule>>
+    ListRefreshSchedulesResult& WithRefreshSchedules(RefreshSchedulesT&& value) { SetRefreshSchedules(std::forward<RefreshSchedulesT>(value)); return *this;}
+    template<typename RefreshSchedulesT = RefreshSchedule>
+    ListRefreshSchedulesResult& AddRefreshSchedules(RefreshSchedulesT&& value) { m_refreshSchedulesHasBeenSet = true; m_refreshSchedules.emplace_back(std::forward<RefreshSchedulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListRefreshSchedulesResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRefreshSchedulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRefreshSchedulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRefreshSchedulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRefreshSchedulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RefreshSchedule> m_refreshSchedules;
+    bool m_refreshSchedulesHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

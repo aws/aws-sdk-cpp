@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InlineBedrockModelConfigurations::InlineBedrockModelConfigurations() : 
-    m_performanceConfigHasBeenSet(false)
-{
-}
-
 InlineBedrockModelConfigurations::InlineBedrockModelConfigurations(JsonView jsonValue)
-  : InlineBedrockModelConfigurations()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InlineBedrockModelConfigurations& InlineBedrockModelConfigurations::operator =(J
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
     m_performanceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

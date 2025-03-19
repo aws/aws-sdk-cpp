@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-InputLambdaProcessor::InputLambdaProcessor() : 
-    m_resourceARNHasBeenSet(false)
-{
-}
-
 InputLambdaProcessor::InputLambdaProcessor(JsonView jsonValue)
-  : InputLambdaProcessor()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputLambdaProcessor& InputLambdaProcessor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   return *this;
 }
 

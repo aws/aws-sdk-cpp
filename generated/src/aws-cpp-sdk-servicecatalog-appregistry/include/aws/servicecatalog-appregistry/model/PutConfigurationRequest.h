@@ -21,7 +21,7 @@ namespace Model
   class PutConfigurationRequest : public AppRegistryRequest
   {
   public:
-    AWS_APPREGISTRY_API PutConfigurationRequest();
+    AWS_APPREGISTRY_API PutConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p> Associates a <code>TagKey</code> configuration to an account. </p>
      */
-    inline const AppRegistryConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AppRegistryConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AppRegistryConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AppRegistryConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline PutConfigurationRequest& WithConfiguration(const AppRegistryConfiguration& value) { SetConfiguration(value); return *this;}
-    inline PutConfigurationRequest& WithConfiguration(AppRegistryConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AppRegistryConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AppRegistryConfiguration>
+    PutConfigurationRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

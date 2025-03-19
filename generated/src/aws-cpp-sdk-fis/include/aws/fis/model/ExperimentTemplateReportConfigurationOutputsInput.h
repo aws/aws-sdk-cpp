@@ -32,7 +32,7 @@ namespace Model
   class ExperimentTemplateReportConfigurationOutputsInput
   {
   public:
-    AWS_FIS_API ExperimentTemplateReportConfigurationOutputsInput();
+    AWS_FIS_API ExperimentTemplateReportConfigurationOutputsInput() = default;
     AWS_FIS_API ExperimentTemplateReportConfigurationOutputsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentTemplateReportConfigurationOutputsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The S3 destination for the experiment report.</p>
      */
-    inline const ReportConfigurationS3OutputInput& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const ReportConfigurationS3OutputInput& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const ReportConfigurationS3OutputInput& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(ReportConfigurationS3OutputInput&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline ExperimentTemplateReportConfigurationOutputsInput& WithS3Configuration(const ReportConfigurationS3OutputInput& value) { SetS3Configuration(value); return *this;}
-    inline ExperimentTemplateReportConfigurationOutputsInput& WithS3Configuration(ReportConfigurationS3OutputInput&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = ReportConfigurationS3OutputInput>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = ReportConfigurationS3OutputInput>
+    ExperimentTemplateReportConfigurationOutputsInput& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

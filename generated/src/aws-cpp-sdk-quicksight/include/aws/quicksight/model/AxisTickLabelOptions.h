@@ -31,7 +31,7 @@ namespace Model
   class AxisTickLabelOptions
   {
   public:
-    AWS_QUICKSIGHT_API AxisTickLabelOptions();
+    AWS_QUICKSIGHT_API AxisTickLabelOptions() = default;
     AWS_QUICKSIGHT_API AxisTickLabelOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AxisTickLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>Determines whether or not the axis ticks are visible.</p>
      */
-    inline const LabelOptions& GetLabelOptions() const{ return m_labelOptions; }
+    inline const LabelOptions& GetLabelOptions() const { return m_labelOptions; }
     inline bool LabelOptionsHasBeenSet() const { return m_labelOptionsHasBeenSet; }
-    inline void SetLabelOptions(const LabelOptions& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = value; }
-    inline void SetLabelOptions(LabelOptions&& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = std::move(value); }
-    inline AxisTickLabelOptions& WithLabelOptions(const LabelOptions& value) { SetLabelOptions(value); return *this;}
-    inline AxisTickLabelOptions& WithLabelOptions(LabelOptions&& value) { SetLabelOptions(std::move(value)); return *this;}
+    template<typename LabelOptionsT = LabelOptions>
+    void SetLabelOptions(LabelOptionsT&& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = std::forward<LabelOptionsT>(value); }
+    template<typename LabelOptionsT = LabelOptions>
+    AxisTickLabelOptions& WithLabelOptions(LabelOptionsT&& value) { SetLabelOptions(std::forward<LabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rotation angle of the axis tick labels.</p>
      */
-    inline double GetRotationAngle() const{ return m_rotationAngle; }
+    inline double GetRotationAngle() const { return m_rotationAngle; }
     inline bool RotationAngleHasBeenSet() const { return m_rotationAngleHasBeenSet; }
     inline void SetRotationAngle(double value) { m_rotationAngleHasBeenSet = true; m_rotationAngle = value; }
     inline AxisTickLabelOptions& WithRotationAngle(double value) { SetRotationAngle(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     LabelOptions m_labelOptions;
     bool m_labelOptionsHasBeenSet = false;
 
-    double m_rotationAngle;
+    double m_rotationAngle{0.0};
     bool m_rotationAngleHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListUniqueProblemsResult::ListUniqueProblemsResult()
-{
-}
-
 ListUniqueProblemsResult::ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -43,20 +39,20 @@ ListUniqueProblemsResult& ListUniqueProblemsResult::operator =(const Aws::Amazon
       }
       m_uniqueProblems[ExecutionResultMapper::GetExecutionResultForName(uniqueProblemsItem.first)] = std::move(uniqueProblemsList);
     }
+    m_uniqueProblemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

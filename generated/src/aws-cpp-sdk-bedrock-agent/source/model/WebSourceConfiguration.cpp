@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-WebSourceConfiguration::WebSourceConfiguration() : 
-    m_urlConfigurationHasBeenSet(false)
-{
-}
-
 WebSourceConfiguration::WebSourceConfiguration(JsonView jsonValue)
-  : WebSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WebSourceConfiguration& WebSourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("urlConfiguration"))
   {
     m_urlConfiguration = jsonValue.GetObject("urlConfiguration");
-
     m_urlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

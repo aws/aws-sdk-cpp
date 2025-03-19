@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSupportedPhoneNumberCountriesRequest::ListSupportedPhoneNumberCountriesRequest() : 
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListSupportedPhoneNumberCountriesRequest::SerializePayload() const
 {
   return {};

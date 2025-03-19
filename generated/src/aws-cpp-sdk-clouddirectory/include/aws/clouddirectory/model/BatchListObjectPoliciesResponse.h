@@ -33,7 +33,7 @@ namespace Model
   class BatchListObjectPoliciesResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse();
+    AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
      * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttachedPolicyIds() const{ return m_attachedPolicyIds; }
+    inline const Aws::Vector<Aws::String>& GetAttachedPolicyIds() const { return m_attachedPolicyIds; }
     inline bool AttachedPolicyIdsHasBeenSet() const { return m_attachedPolicyIdsHasBeenSet; }
-    inline void SetAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds = value; }
-    inline void SetAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds = std::move(value); }
-    inline BatchListObjectPoliciesResponse& WithAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { SetAttachedPolicyIds(value); return *this;}
-    inline BatchListObjectPoliciesResponse& WithAttachedPolicyIds(Aws::Vector<Aws::String>&& value) { SetAttachedPolicyIds(std::move(value)); return *this;}
-    inline BatchListObjectPoliciesResponse& AddAttachedPolicyIds(const Aws::String& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds.push_back(value); return *this; }
-    inline BatchListObjectPoliciesResponse& AddAttachedPolicyIds(Aws::String&& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds.push_back(std::move(value)); return *this; }
-    inline BatchListObjectPoliciesResponse& AddAttachedPolicyIds(const char* value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds.push_back(value); return *this; }
+    template<typename AttachedPolicyIdsT = Aws::Vector<Aws::String>>
+    void SetAttachedPolicyIds(AttachedPolicyIdsT&& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds = std::forward<AttachedPolicyIdsT>(value); }
+    template<typename AttachedPolicyIdsT = Aws::Vector<Aws::String>>
+    BatchListObjectPoliciesResponse& WithAttachedPolicyIds(AttachedPolicyIdsT&& value) { SetAttachedPolicyIds(std::forward<AttachedPolicyIdsT>(value)); return *this;}
+    template<typename AttachedPolicyIdsT = Aws::String>
+    BatchListObjectPoliciesResponse& AddAttachedPolicyIds(AttachedPolicyIdsT&& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds.emplace_back(std::forward<AttachedPolicyIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchListObjectPoliciesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchListObjectPoliciesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchListObjectPoliciesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchListObjectPoliciesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

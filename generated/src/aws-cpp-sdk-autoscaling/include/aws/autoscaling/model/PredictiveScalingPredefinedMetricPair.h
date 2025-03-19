@@ -33,7 +33,7 @@ namespace Model
   class PredictiveScalingPredefinedMetricPair
   {
   public:
-    AWS_AUTOSCALING_API PredictiveScalingPredefinedMetricPair();
+    AWS_AUTOSCALING_API PredictiveScalingPredefinedMetricPair() = default;
     AWS_AUTOSCALING_API PredictiveScalingPredefinedMetricPair(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API PredictiveScalingPredefinedMetricPair& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,10 @@ namespace Model
      * total CPU metric is used as the load metric, and the average CPU metric is used
      * for the scaling metric.</p>
      */
-    inline const PredefinedMetricPairType& GetPredefinedMetricType() const{ return m_predefinedMetricType; }
+    inline PredefinedMetricPairType GetPredefinedMetricType() const { return m_predefinedMetricType; }
     inline bool PredefinedMetricTypeHasBeenSet() const { return m_predefinedMetricTypeHasBeenSet; }
-    inline void SetPredefinedMetricType(const PredefinedMetricPairType& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
-    inline void SetPredefinedMetricType(PredefinedMetricPairType&& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = std::move(value); }
-    inline PredictiveScalingPredefinedMetricPair& WithPredefinedMetricType(const PredefinedMetricPairType& value) { SetPredefinedMetricType(value); return *this;}
-    inline PredictiveScalingPredefinedMetricPair& WithPredefinedMetricType(PredefinedMetricPairType&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
+    inline void SetPredefinedMetricType(PredefinedMetricPairType value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
+    inline PredictiveScalingPredefinedMetricPair& WithPredefinedMetricType(PredefinedMetricPairType value) { SetPredefinedMetricType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,18 +76,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
      * API operation.</p>
      */
-    inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
+    inline const Aws::String& GetResourceLabel() const { return m_resourceLabel; }
     inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
-    inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
-    inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
-    inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
-    inline PredictiveScalingPredefinedMetricPair& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
-    inline PredictiveScalingPredefinedMetricPair& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
-    inline PredictiveScalingPredefinedMetricPair& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
+    template<typename ResourceLabelT = Aws::String>
+    void SetResourceLabel(ResourceLabelT&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::forward<ResourceLabelT>(value); }
+    template<typename ResourceLabelT = Aws::String>
+    PredictiveScalingPredefinedMetricPair& WithResourceLabel(ResourceLabelT&& value) { SetResourceLabel(std::forward<ResourceLabelT>(value)); return *this;}
     ///@}
   private:
 
-    PredefinedMetricPairType m_predefinedMetricType;
+    PredefinedMetricPairType m_predefinedMetricType{PredefinedMetricPairType::NOT_SET};
     bool m_predefinedMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;

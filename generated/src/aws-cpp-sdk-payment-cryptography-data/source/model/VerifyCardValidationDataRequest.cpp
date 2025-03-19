@@ -12,14 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifyCardValidationDataRequest::VerifyCardValidationDataRequest() : 
-    m_keyIdentifierHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_verificationAttributesHasBeenSet(false),
-    m_validationDataHasBeenSet(false)
-{
-}
-
 Aws::String VerifyCardValidationDataRequest::SerializePayload() const
 {
   JsonValue payload;

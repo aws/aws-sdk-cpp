@@ -32,7 +32,7 @@ namespace Model
   class AudioExtractionConfiguration
   {
   public:
-    AWS_QBUSINESS_API AudioExtractionConfiguration();
+    AWS_QBUSINESS_API AudioExtractionConfiguration() = default;
     AWS_QBUSINESS_API AudioExtractionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AudioExtractionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The status of audio extraction (ENABLED or DISABLED) for processing audio
      * content from files.</p>
      */
-    inline const AudioExtractionStatus& GetAudioExtractionStatus() const{ return m_audioExtractionStatus; }
+    inline AudioExtractionStatus GetAudioExtractionStatus() const { return m_audioExtractionStatus; }
     inline bool AudioExtractionStatusHasBeenSet() const { return m_audioExtractionStatusHasBeenSet; }
-    inline void SetAudioExtractionStatus(const AudioExtractionStatus& value) { m_audioExtractionStatusHasBeenSet = true; m_audioExtractionStatus = value; }
-    inline void SetAudioExtractionStatus(AudioExtractionStatus&& value) { m_audioExtractionStatusHasBeenSet = true; m_audioExtractionStatus = std::move(value); }
-    inline AudioExtractionConfiguration& WithAudioExtractionStatus(const AudioExtractionStatus& value) { SetAudioExtractionStatus(value); return *this;}
-    inline AudioExtractionConfiguration& WithAudioExtractionStatus(AudioExtractionStatus&& value) { SetAudioExtractionStatus(std::move(value)); return *this;}
+    inline void SetAudioExtractionStatus(AudioExtractionStatus value) { m_audioExtractionStatusHasBeenSet = true; m_audioExtractionStatus = value; }
+    inline AudioExtractionConfiguration& WithAudioExtractionStatus(AudioExtractionStatus value) { SetAudioExtractionStatus(value); return *this;}
     ///@}
   private:
 
-    AudioExtractionStatus m_audioExtractionStatus;
+    AudioExtractionStatus m_audioExtractionStatus{AudioExtractionStatus::NOT_SET};
     bool m_audioExtractionStatusHasBeenSet = false;
   };
 

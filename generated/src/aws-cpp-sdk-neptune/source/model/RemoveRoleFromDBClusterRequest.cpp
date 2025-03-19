@@ -10,13 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-RemoveRoleFromDBClusterRequest::RemoveRoleFromDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false)
-{
-}
-
 Aws::String RemoveRoleFromDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

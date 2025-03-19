@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentsResponse::SegmentsResponse() : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 SegmentsResponse::SegmentsResponse(JsonView jsonValue)
-  : SegmentsResponse()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ SegmentsResponse& SegmentsResponse::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

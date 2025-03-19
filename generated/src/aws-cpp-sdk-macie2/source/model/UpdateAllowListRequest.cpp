@@ -12,14 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAllowListRequest::UpdateAllowListRequest() : 
-    m_criteriaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAllowListRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -36,7 +36,7 @@ namespace Model
   class Taint
   {
   public:
-    AWS_EKS_API Taint();
+    AWS_EKS_API Taint() = default;
     AWS_EKS_API Taint(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Taint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,34 @@ namespace Model
     /**
      * <p>The key of the taint.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline Taint& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline Taint& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline Taint& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    Taint& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the taint.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Taint& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Taint& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Taint& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Taint& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The effect of the taint.</p>
      */
-    inline const TaintEffect& GetEffect() const{ return m_effect; }
+    inline TaintEffect GetEffect() const { return m_effect; }
     inline bool EffectHasBeenSet() const { return m_effectHasBeenSet; }
-    inline void SetEffect(const TaintEffect& value) { m_effectHasBeenSet = true; m_effect = value; }
-    inline void SetEffect(TaintEffect&& value) { m_effectHasBeenSet = true; m_effect = std::move(value); }
-    inline Taint& WithEffect(const TaintEffect& value) { SetEffect(value); return *this;}
-    inline Taint& WithEffect(TaintEffect&& value) { SetEffect(std::move(value)); return *this;}
+    inline void SetEffect(TaintEffect value) { m_effectHasBeenSet = true; m_effect = value; }
+    inline Taint& WithEffect(TaintEffect value) { SetEffect(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +83,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    TaintEffect m_effect;
+    TaintEffect m_effect{TaintEffect::NOT_SET};
     bool m_effectHasBeenSet = false;
   };
 

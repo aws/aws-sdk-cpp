@@ -33,7 +33,7 @@ namespace Model
   class UpdateEncryption
   {
   public:
-    AWS_MEDIACONNECT_API UpdateEncryption();
+    AWS_MEDIACONNECT_API UpdateEncryption() = default;
     AWS_MEDIACONNECT_API UpdateEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API UpdateEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * The type of algorithm that is used for the encryption (such as aes128, aes192,
      * or aes256).
      */
-    inline const Algorithm& GetAlgorithm() const{ return m_algorithm; }
+    inline Algorithm GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-    inline void SetAlgorithm(const Algorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
-    inline void SetAlgorithm(Algorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
-    inline UpdateEncryption& WithAlgorithm(const Algorithm& value) { SetAlgorithm(value); return *this;}
-    inline UpdateEncryption& WithAlgorithm(Algorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline void SetAlgorithm(Algorithm value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
+    inline UpdateEncryption& WithAlgorithm(Algorithm value) { SetAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * with the key for encrypting content. This parameter is not valid for static key
      * encryption.
      */
-    inline const Aws::String& GetConstantInitializationVector() const{ return m_constantInitializationVector; }
+    inline const Aws::String& GetConstantInitializationVector() const { return m_constantInitializationVector; }
     inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
-    inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
-    inline void SetConstantInitializationVector(Aws::String&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::move(value); }
-    inline void SetConstantInitializationVector(const char* value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector.assign(value); }
-    inline UpdateEncryption& WithConstantInitializationVector(const Aws::String& value) { SetConstantInitializationVector(value); return *this;}
-    inline UpdateEncryption& WithConstantInitializationVector(Aws::String&& value) { SetConstantInitializationVector(std::move(value)); return *this;}
-    inline UpdateEncryption& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
+    template<typename ConstantInitializationVectorT = Aws::String>
+    void SetConstantInitializationVector(ConstantInitializationVectorT&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::forward<ConstantInitializationVectorT>(value); }
+    template<typename ConstantInitializationVectorT = Aws::String>
+    UpdateEncryption& WithConstantInitializationVector(ConstantInitializationVectorT&& value) { SetConstantInitializationVector(std::forward<ConstantInitializationVectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * management (DRM) platform key provider. This parameter is required for SPEKE
      * encryption and is not valid for static key encryption.
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline UpdateEncryption& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline UpdateEncryption& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline UpdateEncryption& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    UpdateEncryption& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,10 @@ namespace Model
      * The type of key that is used for the encryption. If no keyType is provided, the
      * service will use the default setting (static-key).
      */
-    inline const KeyType& GetKeyType() const{ return m_keyType; }
+    inline KeyType GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline UpdateEncryption& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
-    inline UpdateEncryption& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    inline void SetKeyType(KeyType value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+    inline UpdateEncryption& WithKeyType(KeyType value) { SetKeyType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,12 @@ namespace Model
      * parameter is required for SPEKE encryption and is not valid for static key
      * encryption.
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline UpdateEncryption& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline UpdateEncryption& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline UpdateEncryption& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    UpdateEncryption& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +110,12 @@ namespace Model
      * This parameter is required for SPEKE encryption and is not valid for static key
      * encryption.
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline UpdateEncryption& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline UpdateEncryption& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline UpdateEncryption& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    UpdateEncryption& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +123,12 @@ namespace Model
      * The ARN of the role that you created during setup (when you set up AWS Elemental
      * MediaConnect as a trusted entity).
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateEncryption& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateEncryption& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateEncryption& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateEncryption& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +137,12 @@ namespace Model
      * encryption key. This parameter is required for static key encryption and is not
      * valid for SPEKE encryption.
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline UpdateEncryption& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline UpdateEncryption& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline UpdateEncryption& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    UpdateEncryption& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,18 +151,16 @@ namespace Model
      * This parameter is required for SPEKE encryption and is not valid for static key
      * encryption.
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline UpdateEncryption& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline UpdateEncryption& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline UpdateEncryption& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    UpdateEncryption& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 
-    Algorithm m_algorithm;
+    Algorithm m_algorithm{Algorithm::NOT_SET};
     bool m_algorithmHasBeenSet = false;
 
     Aws::String m_constantInitializationVector;
@@ -187,7 +169,7 @@ namespace Model
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    KeyType m_keyType;
+    KeyType m_keyType{KeyType::NOT_SET};
     bool m_keyTypeHasBeenSet = false;
 
     Aws::String m_region;

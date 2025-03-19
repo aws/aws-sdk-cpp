@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ResourceErrorsDetails::ResourceErrorsDetails() : 
-    m_hasMoreErrors(false),
-    m_hasMoreErrorsHasBeenSet(false),
-    m_resourceErrorsHasBeenSet(false)
-{
-}
-
 ResourceErrorsDetails::ResourceErrorsDetails(JsonView jsonValue)
-  : ResourceErrorsDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ResourceErrorsDetails& ResourceErrorsDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hasMoreErrors"))
   {
     m_hasMoreErrors = jsonValue.GetBool("hasMoreErrors");
-
     m_hasMoreErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceErrors"))
   {
     Aws::Utils::Array<JsonView> resourceErrorsJsonList = jsonValue.GetArray("resourceErrors");
@@ -49,7 +39,6 @@ ResourceErrorsDetails& ResourceErrorsDetails::operator =(JsonView jsonValue)
     }
     m_resourceErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

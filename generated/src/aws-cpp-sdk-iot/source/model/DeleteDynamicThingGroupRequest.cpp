@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteDynamicThingGroupRequest::DeleteDynamicThingGroupRequest() : 
-    m_thingGroupNameHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDynamicThingGroupRequest::SerializePayload() const
 {
   return {};

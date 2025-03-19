@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ModelInvocationJobInputDataConfig::ModelInvocationJobInputDataConfig() : 
-    m_s3InputDataConfigHasBeenSet(false)
-{
-}
-
 ModelInvocationJobInputDataConfig::ModelInvocationJobInputDataConfig(JsonView jsonValue)
-  : ModelInvocationJobInputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelInvocationJobInputDataConfig& ModelInvocationJobInputDataConfig::operator =
   if(jsonValue.ValueExists("s3InputDataConfig"))
   {
     m_s3InputDataConfig = jsonValue.GetObject("s3InputDataConfig");
-
     m_s3InputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

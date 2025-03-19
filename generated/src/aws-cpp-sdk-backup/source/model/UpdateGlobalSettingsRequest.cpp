@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlobalSettingsRequest::UpdateGlobalSettingsRequest() : 
-    m_globalSettingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGlobalSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

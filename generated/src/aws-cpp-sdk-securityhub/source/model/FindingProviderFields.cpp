@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FindingProviderFields::FindingProviderFields() : 
-    m_confidence(0),
-    m_confidenceHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_relatedFindingsHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_typesHasBeenSet(false)
-{
-}
-
 FindingProviderFields::FindingProviderFields(JsonView jsonValue)
-  : FindingProviderFields()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ FindingProviderFields& FindingProviderFields::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetInteger("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criticality"))
   {
     m_criticality = jsonValue.GetInteger("Criticality");
-
     m_criticalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindings"))
   {
     Aws::Utils::Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
@@ -60,14 +44,11 @@ FindingProviderFields& FindingProviderFields::operator =(JsonView jsonValue)
     }
     m_relatedFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetObject("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
@@ -77,7 +58,6 @@ FindingProviderFields& FindingProviderFields::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

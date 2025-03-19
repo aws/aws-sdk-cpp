@@ -45,7 +45,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == FOO_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RestJsonProtocolErrors::FOO), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RestJsonProtocolErrors::FOO), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

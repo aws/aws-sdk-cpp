@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssignIpv6AddressesRequest::AssignIpv6AddressesRequest() : 
-    m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false)
-{
-}
-
 Aws::String AssignIpv6AddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

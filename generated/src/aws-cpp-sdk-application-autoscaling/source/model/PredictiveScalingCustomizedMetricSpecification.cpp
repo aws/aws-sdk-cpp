@@ -18,13 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-PredictiveScalingCustomizedMetricSpecification::PredictiveScalingCustomizedMetricSpecification() : 
-    m_metricDataQueriesHasBeenSet(false)
-{
-}
-
 PredictiveScalingCustomizedMetricSpecification::PredictiveScalingCustomizedMetricSpecification(JsonView jsonValue)
-  : PredictiveScalingCustomizedMetricSpecification()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PredictiveScalingCustomizedMetricSpecification& PredictiveScalingCustomizedMetri
     }
     m_metricDataQueriesHasBeenSet = true;
   }
-
   return *this;
 }
 

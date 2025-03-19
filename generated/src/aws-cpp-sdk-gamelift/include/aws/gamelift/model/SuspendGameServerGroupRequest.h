@@ -23,7 +23,7 @@ namespace Model
   class SuspendGameServerGroupRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API SuspendGameServerGroupRequest();
+    AWS_GAMELIFT_API SuspendGameServerGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,25 @@ namespace Model
      * <p>A unique identifier for the game server group. Use either the name or ARN
      * value.</p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline SuspendGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline SuspendGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline SuspendGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    SuspendGameServerGroupRequest& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The activity to suspend for this game server group.</p>
      */
-    inline const Aws::Vector<GameServerGroupAction>& GetSuspendActions() const{ return m_suspendActions; }
+    inline const Aws::Vector<GameServerGroupAction>& GetSuspendActions() const { return m_suspendActions; }
     inline bool SuspendActionsHasBeenSet() const { return m_suspendActionsHasBeenSet; }
-    inline void SetSuspendActions(const Aws::Vector<GameServerGroupAction>& value) { m_suspendActionsHasBeenSet = true; m_suspendActions = value; }
-    inline void SetSuspendActions(Aws::Vector<GameServerGroupAction>&& value) { m_suspendActionsHasBeenSet = true; m_suspendActions = std::move(value); }
-    inline SuspendGameServerGroupRequest& WithSuspendActions(const Aws::Vector<GameServerGroupAction>& value) { SetSuspendActions(value); return *this;}
-    inline SuspendGameServerGroupRequest& WithSuspendActions(Aws::Vector<GameServerGroupAction>&& value) { SetSuspendActions(std::move(value)); return *this;}
-    inline SuspendGameServerGroupRequest& AddSuspendActions(const GameServerGroupAction& value) { m_suspendActionsHasBeenSet = true; m_suspendActions.push_back(value); return *this; }
-    inline SuspendGameServerGroupRequest& AddSuspendActions(GameServerGroupAction&& value) { m_suspendActionsHasBeenSet = true; m_suspendActions.push_back(std::move(value)); return *this; }
+    template<typename SuspendActionsT = Aws::Vector<GameServerGroupAction>>
+    void SetSuspendActions(SuspendActionsT&& value) { m_suspendActionsHasBeenSet = true; m_suspendActions = std::forward<SuspendActionsT>(value); }
+    template<typename SuspendActionsT = Aws::Vector<GameServerGroupAction>>
+    SuspendGameServerGroupRequest& WithSuspendActions(SuspendActionsT&& value) { SetSuspendActions(std::forward<SuspendActionsT>(value)); return *this;}
+    inline SuspendGameServerGroupRequest& AddSuspendActions(GameServerGroupAction value) { m_suspendActionsHasBeenSet = true; m_suspendActions.push_back(value); return *this; }
     ///@}
   private:
 

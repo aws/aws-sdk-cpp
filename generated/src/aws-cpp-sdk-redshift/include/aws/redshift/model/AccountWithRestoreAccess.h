@@ -32,7 +32,7 @@ namespace Model
   class AccountWithRestoreAccess
   {
   public:
-    AWS_REDSHIFT_API AccountWithRestoreAccess();
+    AWS_REDSHIFT_API AccountWithRestoreAccess() = default;
     AWS_REDSHIFT_API AccountWithRestoreAccess(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API AccountWithRestoreAccess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The identifier of an Amazon Web Services account authorized to restore a
      * snapshot.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountWithRestoreAccess& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountWithRestoreAccess& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountWithRestoreAccess& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountWithRestoreAccess& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * restore a snapshot. For Amazon Web Services Support, the identifier is
      * <code>amazon-redshift-support</code>. </p>
      */
-    inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
+    inline const Aws::String& GetAccountAlias() const { return m_accountAlias; }
     inline bool AccountAliasHasBeenSet() const { return m_accountAliasHasBeenSet; }
-    inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
-    inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::move(value); }
-    inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
-    inline AccountWithRestoreAccess& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
-    inline AccountWithRestoreAccess& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
-    inline AccountWithRestoreAccess& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
+    template<typename AccountAliasT = Aws::String>
+    void SetAccountAlias(AccountAliasT&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::forward<AccountAliasT>(value); }
+    template<typename AccountAliasT = Aws::String>
+    AccountWithRestoreAccess& WithAccountAlias(AccountAliasT&& value) { SetAccountAlias(std::forward<AccountAliasT>(value)); return *this;}
     ///@}
   private:
 

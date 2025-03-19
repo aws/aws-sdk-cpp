@@ -18,20 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-InstanceProfile::InstanceProfile() : 
-    m_arnHasBeenSet(false),
-    m_packageCleanup(false),
-    m_packageCleanupHasBeenSet(false),
-    m_excludeAppPackagesFromCleanupHasBeenSet(false),
-    m_rebootAfterUse(false),
-    m_rebootAfterUseHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 InstanceProfile::InstanceProfile(JsonView jsonValue)
-  : InstanceProfile()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ InstanceProfile& InstanceProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageCleanup"))
   {
     m_packageCleanup = jsonValue.GetBool("packageCleanup");
-
     m_packageCleanupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludeAppPackagesFromCleanup"))
   {
     Aws::Utils::Array<JsonView> excludeAppPackagesFromCleanupJsonList = jsonValue.GetArray("excludeAppPackagesFromCleanup");
@@ -61,28 +44,21 @@ InstanceProfile& InstanceProfile::operator =(JsonView jsonValue)
     }
     m_excludeAppPackagesFromCleanupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rebootAfterUse"))
   {
     m_rebootAfterUse = jsonValue.GetBool("rebootAfterUse");
-
     m_rebootAfterUseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

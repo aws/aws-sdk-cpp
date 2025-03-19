@@ -33,7 +33,7 @@ namespace Model
   class AmazonConnectGuideAssociationData
   {
   public:
-    AWS_QCONNECT_API AmazonConnectGuideAssociationData();
+    AWS_QCONNECT_API AmazonConnectGuideAssociationData() = default;
     AWS_QCONNECT_API AmazonConnectGuideAssociationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AmazonConnectGuideAssociationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step
      * guides are a type of flow.</p>
      */
-    inline const Aws::String& GetFlowId() const{ return m_flowId; }
+    inline const Aws::String& GetFlowId() const { return m_flowId; }
     inline bool FlowIdHasBeenSet() const { return m_flowIdHasBeenSet; }
-    inline void SetFlowId(const Aws::String& value) { m_flowIdHasBeenSet = true; m_flowId = value; }
-    inline void SetFlowId(Aws::String&& value) { m_flowIdHasBeenSet = true; m_flowId = std::move(value); }
-    inline void SetFlowId(const char* value) { m_flowIdHasBeenSet = true; m_flowId.assign(value); }
-    inline AmazonConnectGuideAssociationData& WithFlowId(const Aws::String& value) { SetFlowId(value); return *this;}
-    inline AmazonConnectGuideAssociationData& WithFlowId(Aws::String&& value) { SetFlowId(std::move(value)); return *this;}
-    inline AmazonConnectGuideAssociationData& WithFlowId(const char* value) { SetFlowId(value); return *this;}
+    template<typename FlowIdT = Aws::String>
+    void SetFlowId(FlowIdT&& value) { m_flowIdHasBeenSet = true; m_flowId = std::forward<FlowIdT>(value); }
+    template<typename FlowIdT = Aws::String>
+    AmazonConnectGuideAssociationData& WithFlowId(FlowIdT&& value) { SetFlowId(std::forward<FlowIdT>(value)); return *this;}
     ///@}
   private:
 

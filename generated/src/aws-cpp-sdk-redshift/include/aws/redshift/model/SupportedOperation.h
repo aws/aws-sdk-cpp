@@ -32,7 +32,7 @@ namespace Model
   class SupportedOperation
   {
   public:
-    AWS_REDSHIFT_API SupportedOperation();
+    AWS_REDSHIFT_API SupportedOperation() = default;
     AWS_REDSHIFT_API SupportedOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API SupportedOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A list of the supported operations.</p>
      */
-    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+    inline const Aws::String& GetOperationName() const { return m_operationName; }
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-    inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-    inline SupportedOperation& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-    inline SupportedOperation& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-    inline SupportedOperation& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    template<typename OperationNameT = Aws::String>
+    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
+    template<typename OperationNameT = Aws::String>
+    SupportedOperation& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
     ///@}
   private:
 

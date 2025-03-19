@@ -18,24 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesApiCallAction::KubernetesApiCallAction() : 
-    m_requestUriHasBeenSet(false),
-    m_verbHasBeenSet(false),
-    m_sourceIpsHasBeenSet(false),
-    m_userAgentHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_subresourceHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 KubernetesApiCallAction::KubernetesApiCallAction(JsonView jsonValue)
-  : KubernetesApiCallAction()
 {
   *this = jsonValue;
 }
@@ -45,17 +28,13 @@ KubernetesApiCallAction& KubernetesApiCallAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("requestUri"))
   {
     m_requestUri = jsonValue.GetString("requestUri");
-
     m_requestUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verb"))
   {
     m_verb = jsonValue.GetString("verb");
-
     m_verbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceIPs"))
   {
     Aws::Utils::Array<JsonView> sourceIPsJsonList = jsonValue.GetArray("sourceIPs");
@@ -65,63 +44,46 @@ KubernetesApiCallAction& KubernetesApiCallAction::operator =(JsonView jsonValue)
     }
     m_sourceIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAgent"))
   {
     m_userAgent = jsonValue.GetString("userAgent");
-
     m_userAgentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("remoteIpDetails");
-
     m_remoteIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetInteger("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetString("parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subresource"))
   {
     m_subresource = jsonValue.GetString("subresource");
-
     m_subresourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteWorkflowResult::DeleteWorkflowResult() : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET)
-{
-}
-
 DeleteWorkflowResult::DeleteWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteWorkflowResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteWorkflowResult& DeleteWorkflowResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MigrationWorkflowStatusEnumMapper::GetMigrationWorkflowStatusEnumForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

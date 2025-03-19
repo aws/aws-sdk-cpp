@@ -23,7 +23,7 @@ namespace Model
   class DescribeSSLPoliciesRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesRequest();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeSSLPoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The names of the policies.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline DescribeSSLPoliciesRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-    inline DescribeSSLPoliciesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-    inline DescribeSSLPoliciesRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline DescribeSSLPoliciesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-    inline DescribeSSLPoliciesRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    DescribeSSLPoliciesRequest& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = Aws::String>
+    DescribeSSLPoliciesRequest& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,21 +57,19 @@ namespace Model
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeSSLPoliciesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeSSLPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeSSLPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeSSLPoliciesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline DescribeSSLPoliciesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -83,12 +80,10 @@ namespace Model
      * <p> The type of load balancer. The default lists the SSL policies for all load
      * balancers.</p>
      */
-    inline const LoadBalancerTypeEnum& GetLoadBalancerType() const{ return m_loadBalancerType; }
+    inline LoadBalancerTypeEnum GetLoadBalancerType() const { return m_loadBalancerType; }
     inline bool LoadBalancerTypeHasBeenSet() const { return m_loadBalancerTypeHasBeenSet; }
-    inline void SetLoadBalancerType(const LoadBalancerTypeEnum& value) { m_loadBalancerTypeHasBeenSet = true; m_loadBalancerType = value; }
-    inline void SetLoadBalancerType(LoadBalancerTypeEnum&& value) { m_loadBalancerTypeHasBeenSet = true; m_loadBalancerType = std::move(value); }
-    inline DescribeSSLPoliciesRequest& WithLoadBalancerType(const LoadBalancerTypeEnum& value) { SetLoadBalancerType(value); return *this;}
-    inline DescribeSSLPoliciesRequest& WithLoadBalancerType(LoadBalancerTypeEnum&& value) { SetLoadBalancerType(std::move(value)); return *this;}
+    inline void SetLoadBalancerType(LoadBalancerTypeEnum value) { m_loadBalancerTypeHasBeenSet = true; m_loadBalancerType = value; }
+    inline DescribeSSLPoliciesRequest& WithLoadBalancerType(LoadBalancerTypeEnum value) { SetLoadBalancerType(value); return *this;}
     ///@}
   private:
 
@@ -98,10 +93,10 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
-    LoadBalancerTypeEnum m_loadBalancerType;
+    LoadBalancerTypeEnum m_loadBalancerType{LoadBalancerTypeEnum::NOT_SET};
     bool m_loadBalancerTypeHasBeenSet = false;
   };
 

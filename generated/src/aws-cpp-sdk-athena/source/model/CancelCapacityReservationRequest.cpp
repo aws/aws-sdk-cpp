@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelCapacityReservationRequest::CancelCapacityReservationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CancelCapacityReservationRequest::SerializePayload() const
 {
   JsonValue payload;

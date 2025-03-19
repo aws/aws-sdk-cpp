@@ -33,7 +33,7 @@ namespace Model
   class Goal
   {
   public:
-    AWS_APPLICATIONSIGNALS_API Goal();
+    AWS_APPLICATIONSIGNALS_API Goal() = default;
     AWS_APPLICATIONSIGNALS_API Goal(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Goal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * interval or rolling interval.</p> <p>If you omit this parameter, a rolling
      * interval of 7 days is used.</p>
      */
-    inline const Interval& GetInterval() const{ return m_interval; }
+    inline const Interval& GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-    inline void SetInterval(const Interval& value) { m_intervalHasBeenSet = true; m_interval = value; }
-    inline void SetInterval(Interval&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-    inline Goal& WithInterval(const Interval& value) { SetInterval(value); return *this;}
-    inline Goal& WithInterval(Interval&& value) { SetInterval(std::move(value)); return *this;}
+    template<typename IntervalT = Interval>
+    void SetInterval(IntervalT&& value) { m_intervalHasBeenSet = true; m_interval = std::forward<IntervalT>(value); }
+    template<typename IntervalT = Interval>
+    Goal& WithInterval(IntervalT&& value) { SetInterval(std::forward<IntervalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +64,7 @@ namespace Model
      * be successful to meet the attainment goal.</p> <p>If you omit this parameter, 99
      * is used to represent 99% as the attainment goal.</p>
      */
-    inline double GetAttainmentGoal() const{ return m_attainmentGoal; }
+    inline double GetAttainmentGoal() const { return m_attainmentGoal; }
     inline bool AttainmentGoalHasBeenSet() const { return m_attainmentGoalHasBeenSet; }
     inline void SetAttainmentGoal(double value) { m_attainmentGoalHasBeenSet = true; m_attainmentGoal = value; }
     inline Goal& WithAttainmentGoal(double value) { SetAttainmentGoal(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
      * <p>The percentage of remaining budget over total budget that you want to get
      * warnings for. If you omit this parameter, the default of 50.0 is used. </p>
      */
-    inline double GetWarningThreshold() const{ return m_warningThreshold; }
+    inline double GetWarningThreshold() const { return m_warningThreshold; }
     inline bool WarningThresholdHasBeenSet() const { return m_warningThresholdHasBeenSet; }
     inline void SetWarningThreshold(double value) { m_warningThresholdHasBeenSet = true; m_warningThreshold = value; }
     inline Goal& WithWarningThreshold(double value) { SetWarningThreshold(value); return *this;}
@@ -85,10 +85,10 @@ namespace Model
     Interval m_interval;
     bool m_intervalHasBeenSet = false;
 
-    double m_attainmentGoal;
+    double m_attainmentGoal{0.0};
     bool m_attainmentGoalHasBeenSet = false;
 
-    double m_warningThreshold;
+    double m_warningThreshold{0.0};
     bool m_warningThresholdHasBeenSet = false;
   };
 

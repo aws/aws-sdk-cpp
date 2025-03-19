@@ -22,7 +22,7 @@ namespace Model
   class PutRetentionSettingsRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API PutRetentionSettingsRequest();
+    AWS_CHIME_API PutRetentionSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline PutRetentionSettingsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline PutRetentionSettingsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline PutRetentionSettingsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PutRetentionSettingsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention settings.</p>
      */
-    inline const RetentionSettings& GetRetentionSettings() const{ return m_retentionSettings; }
+    inline const RetentionSettings& GetRetentionSettings() const { return m_retentionSettings; }
     inline bool RetentionSettingsHasBeenSet() const { return m_retentionSettingsHasBeenSet; }
-    inline void SetRetentionSettings(const RetentionSettings& value) { m_retentionSettingsHasBeenSet = true; m_retentionSettings = value; }
-    inline void SetRetentionSettings(RetentionSettings&& value) { m_retentionSettingsHasBeenSet = true; m_retentionSettings = std::move(value); }
-    inline PutRetentionSettingsRequest& WithRetentionSettings(const RetentionSettings& value) { SetRetentionSettings(value); return *this;}
-    inline PutRetentionSettingsRequest& WithRetentionSettings(RetentionSettings&& value) { SetRetentionSettings(std::move(value)); return *this;}
+    template<typename RetentionSettingsT = RetentionSettings>
+    void SetRetentionSettings(RetentionSettingsT&& value) { m_retentionSettingsHasBeenSet = true; m_retentionSettings = std::forward<RetentionSettingsT>(value); }
+    template<typename RetentionSettingsT = RetentionSettings>
+    PutRetentionSettingsRequest& WithRetentionSettings(RetentionSettingsT&& value) { SetRetentionSettings(std::forward<RetentionSettingsT>(value)); return *this;}
     ///@}
   private:
 

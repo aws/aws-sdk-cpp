@@ -29,7 +29,7 @@ namespace Model
   class GetDimensionValuesResult
   {
   public:
-    AWS_COSTEXPLORER_API GetDimensionValuesResult();
+    AWS_COSTEXPLORER_API GetDimensionValuesResult() = default;
     AWS_COSTEXPLORER_API GetDimensionValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetDimensionValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -94,21 +94,21 @@ namespace Model
      * account.</p> </li> <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your
      * Savings Plan</p> </li> </ul>
      */
-    inline const Aws::Vector<DimensionValuesWithAttributes>& GetDimensionValues() const{ return m_dimensionValues; }
-    inline void SetDimensionValues(const Aws::Vector<DimensionValuesWithAttributes>& value) { m_dimensionValues = value; }
-    inline void SetDimensionValues(Aws::Vector<DimensionValuesWithAttributes>&& value) { m_dimensionValues = std::move(value); }
-    inline GetDimensionValuesResult& WithDimensionValues(const Aws::Vector<DimensionValuesWithAttributes>& value) { SetDimensionValues(value); return *this;}
-    inline GetDimensionValuesResult& WithDimensionValues(Aws::Vector<DimensionValuesWithAttributes>&& value) { SetDimensionValues(std::move(value)); return *this;}
-    inline GetDimensionValuesResult& AddDimensionValues(const DimensionValuesWithAttributes& value) { m_dimensionValues.push_back(value); return *this; }
-    inline GetDimensionValuesResult& AddDimensionValues(DimensionValuesWithAttributes&& value) { m_dimensionValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DimensionValuesWithAttributes>& GetDimensionValues() const { return m_dimensionValues; }
+    template<typename DimensionValuesT = Aws::Vector<DimensionValuesWithAttributes>>
+    void SetDimensionValues(DimensionValuesT&& value) { m_dimensionValuesHasBeenSet = true; m_dimensionValues = std::forward<DimensionValuesT>(value); }
+    template<typename DimensionValuesT = Aws::Vector<DimensionValuesWithAttributes>>
+    GetDimensionValuesResult& WithDimensionValues(DimensionValuesT&& value) { SetDimensionValues(std::forward<DimensionValuesT>(value)); return *this;}
+    template<typename DimensionValuesT = DimensionValuesWithAttributes>
+    GetDimensionValuesResult& AddDimensionValues(DimensionValuesT&& value) { m_dimensionValuesHasBeenSet = true; m_dimensionValues.emplace_back(std::forward<DimensionValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of results that Amazon Web Services returned at one time.</p>
      */
-    inline int GetReturnSize() const{ return m_returnSize; }
-    inline void SetReturnSize(int value) { m_returnSize = value; }
+    inline int GetReturnSize() const { return m_returnSize; }
+    inline void SetReturnSize(int value) { m_returnSizeHasBeenSet = true; m_returnSize = value; }
     inline GetDimensionValuesResult& WithReturnSize(int value) { SetReturnSize(value); return *this;}
     ///@}
 
@@ -116,8 +116,8 @@ namespace Model
     /**
      * <p>The total number of search results.</p>
      */
-    inline int GetTotalSize() const{ return m_totalSize; }
-    inline void SetTotalSize(int value) { m_totalSize = value; }
+    inline int GetTotalSize() const { return m_totalSize; }
+    inline void SetTotalSize(int value) { m_totalSizeHasBeenSet = true; m_totalSize = value; }
     inline GetDimensionValuesResult& WithTotalSize(int value) { SetTotalSize(value); return *this;}
     ///@}
 
@@ -127,36 +127,37 @@ namespace Model
      * provides the token when the response from a previous call has more results than
      * the maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetDimensionValuesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetDimensionValuesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetDimensionValuesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetDimensionValuesResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDimensionValuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDimensionValuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDimensionValuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDimensionValuesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DimensionValuesWithAttributes> m_dimensionValues;
+    bool m_dimensionValuesHasBeenSet = false;
 
-    int m_returnSize;
+    int m_returnSize{0};
+    bool m_returnSizeHasBeenSet = false;
 
-    int m_totalSize;
+    int m_totalSize{0};
+    bool m_totalSizeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

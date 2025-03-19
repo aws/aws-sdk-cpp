@@ -28,7 +28,7 @@ namespace Model
   class GetTypedLinkFacetInformationResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API GetTypedLinkFacetInformationResult();
+    AWS_CLOUDDIRECTORY_API GetTypedLinkFacetInformationResult() = default;
     AWS_CLOUDDIRECTORY_API GetTypedLinkFacetInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API GetTypedLinkFacetInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,31 +46,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
-    inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrder = value; }
-    inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrder = std::move(value); }
-    inline GetTypedLinkFacetInformationResult& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
-    inline GetTypedLinkFacetInformationResult& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
-    inline GetTypedLinkFacetInformationResult& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrder.push_back(value); return *this; }
-    inline GetTypedLinkFacetInformationResult& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrder.push_back(std::move(value)); return *this; }
-    inline GetTypedLinkFacetInformationResult& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrder.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const { return m_identityAttributeOrder; }
+    template<typename IdentityAttributeOrderT = Aws::Vector<Aws::String>>
+    void SetIdentityAttributeOrder(IdentityAttributeOrderT&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::forward<IdentityAttributeOrderT>(value); }
+    template<typename IdentityAttributeOrderT = Aws::Vector<Aws::String>>
+    GetTypedLinkFacetInformationResult& WithIdentityAttributeOrder(IdentityAttributeOrderT&& value) { SetIdentityAttributeOrder(std::forward<IdentityAttributeOrderT>(value)); return *this;}
+    template<typename IdentityAttributeOrderT = Aws::String>
+    GetTypedLinkFacetInformationResult& AddIdentityAttributeOrder(IdentityAttributeOrderT&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.emplace_back(std::forward<IdentityAttributeOrderT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTypedLinkFacetInformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTypedLinkFacetInformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTypedLinkFacetInformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTypedLinkFacetInformationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_identityAttributeOrder;
+    bool m_identityAttributeOrderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

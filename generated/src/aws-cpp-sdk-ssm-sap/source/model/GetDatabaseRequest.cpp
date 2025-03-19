@@ -12,14 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDatabaseRequest::GetDatabaseRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_componentIdHasBeenSet(false),
-    m_databaseIdHasBeenSet(false),
-    m_databaseArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

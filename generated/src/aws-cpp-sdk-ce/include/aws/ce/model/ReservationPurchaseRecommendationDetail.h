@@ -34,7 +34,7 @@ namespace Model
   class ReservationPurchaseRecommendationDetail
   {
   public:
-    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail();
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail() = default;
     AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The account that this Reserved Instance (RI) recommendation is for.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const InstanceDetails& GetInstanceDetails() const{ return m_instanceDetails; }
+    inline const InstanceDetails& GetInstanceDetails() const { return m_instanceDetails; }
     inline bool InstanceDetailsHasBeenSet() const { return m_instanceDetailsHasBeenSet; }
-    inline void SetInstanceDetails(const InstanceDetails& value) { m_instanceDetailsHasBeenSet = true; m_instanceDetails = value; }
-    inline void SetInstanceDetails(InstanceDetails&& value) { m_instanceDetailsHasBeenSet = true; m_instanceDetails = std::move(value); }
-    inline ReservationPurchaseRecommendationDetail& WithInstanceDetails(const InstanceDetails& value) { SetInstanceDetails(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithInstanceDetails(InstanceDetails&& value) { SetInstanceDetails(std::move(value)); return *this;}
+    template<typename InstanceDetailsT = InstanceDetails>
+    void SetInstanceDetails(InstanceDetailsT&& value) { m_instanceDetailsHasBeenSet = true; m_instanceDetails = std::forward<InstanceDetailsT>(value); }
+    template<typename InstanceDetailsT = InstanceDetails>
+    ReservationPurchaseRecommendationDetail& WithInstanceDetails(InstanceDetailsT&& value) { SetInstanceDetails(std::forward<InstanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <p>The number of instances that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const Aws::String& GetRecommendedNumberOfInstancesToPurchase() const{ return m_recommendedNumberOfInstancesToPurchase; }
+    inline const Aws::String& GetRecommendedNumberOfInstancesToPurchase() const { return m_recommendedNumberOfInstancesToPurchase; }
     inline bool RecommendedNumberOfInstancesToPurchaseHasBeenSet() const { return m_recommendedNumberOfInstancesToPurchaseHasBeenSet; }
-    inline void SetRecommendedNumberOfInstancesToPurchase(const Aws::String& value) { m_recommendedNumberOfInstancesToPurchaseHasBeenSet = true; m_recommendedNumberOfInstancesToPurchase = value; }
-    inline void SetRecommendedNumberOfInstancesToPurchase(Aws::String&& value) { m_recommendedNumberOfInstancesToPurchaseHasBeenSet = true; m_recommendedNumberOfInstancesToPurchase = std::move(value); }
-    inline void SetRecommendedNumberOfInstancesToPurchase(const char* value) { m_recommendedNumberOfInstancesToPurchaseHasBeenSet = true; m_recommendedNumberOfInstancesToPurchase.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfInstancesToPurchase(const Aws::String& value) { SetRecommendedNumberOfInstancesToPurchase(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfInstancesToPurchase(Aws::String&& value) { SetRecommendedNumberOfInstancesToPurchase(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfInstancesToPurchase(const char* value) { SetRecommendedNumberOfInstancesToPurchase(value); return *this;}
+    template<typename RecommendedNumberOfInstancesToPurchaseT = Aws::String>
+    void SetRecommendedNumberOfInstancesToPurchase(RecommendedNumberOfInstancesToPurchaseT&& value) { m_recommendedNumberOfInstancesToPurchaseHasBeenSet = true; m_recommendedNumberOfInstancesToPurchase = std::forward<RecommendedNumberOfInstancesToPurchaseT>(value); }
+    template<typename RecommendedNumberOfInstancesToPurchaseT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfInstancesToPurchase(RecommendedNumberOfInstancesToPurchaseT&& value) { SetRecommendedNumberOfInstancesToPurchase(std::forward<RecommendedNumberOfInstancesToPurchaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * <p>The number of normalized units that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const Aws::String& GetRecommendedNormalizedUnitsToPurchase() const{ return m_recommendedNormalizedUnitsToPurchase; }
+    inline const Aws::String& GetRecommendedNormalizedUnitsToPurchase() const { return m_recommendedNormalizedUnitsToPurchase; }
     inline bool RecommendedNormalizedUnitsToPurchaseHasBeenSet() const { return m_recommendedNormalizedUnitsToPurchaseHasBeenSet; }
-    inline void SetRecommendedNormalizedUnitsToPurchase(const Aws::String& value) { m_recommendedNormalizedUnitsToPurchaseHasBeenSet = true; m_recommendedNormalizedUnitsToPurchase = value; }
-    inline void SetRecommendedNormalizedUnitsToPurchase(Aws::String&& value) { m_recommendedNormalizedUnitsToPurchaseHasBeenSet = true; m_recommendedNormalizedUnitsToPurchase = std::move(value); }
-    inline void SetRecommendedNormalizedUnitsToPurchase(const char* value) { m_recommendedNormalizedUnitsToPurchaseHasBeenSet = true; m_recommendedNormalizedUnitsToPurchase.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNormalizedUnitsToPurchase(const Aws::String& value) { SetRecommendedNormalizedUnitsToPurchase(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNormalizedUnitsToPurchase(Aws::String&& value) { SetRecommendedNormalizedUnitsToPurchase(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNormalizedUnitsToPurchase(const char* value) { SetRecommendedNormalizedUnitsToPurchase(value); return *this;}
+    template<typename RecommendedNormalizedUnitsToPurchaseT = Aws::String>
+    void SetRecommendedNormalizedUnitsToPurchase(RecommendedNormalizedUnitsToPurchaseT&& value) { m_recommendedNormalizedUnitsToPurchaseHasBeenSet = true; m_recommendedNormalizedUnitsToPurchase = std::forward<RecommendedNormalizedUnitsToPurchaseT>(value); }
+    template<typename RecommendedNormalizedUnitsToPurchaseT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithRecommendedNormalizedUnitsToPurchase(RecommendedNormalizedUnitsToPurchaseT&& value) { SetRecommendedNormalizedUnitsToPurchase(std::forward<RecommendedNormalizedUnitsToPurchaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * historical period. Amazon Web Services uses this to calculate your recommended
      * reservation purchases.</p>
      */
-    inline const Aws::String& GetMinimumNumberOfInstancesUsedPerHour() const{ return m_minimumNumberOfInstancesUsedPerHour; }
+    inline const Aws::String& GetMinimumNumberOfInstancesUsedPerHour() const { return m_minimumNumberOfInstancesUsedPerHour; }
     inline bool MinimumNumberOfInstancesUsedPerHourHasBeenSet() const { return m_minimumNumberOfInstancesUsedPerHourHasBeenSet; }
-    inline void SetMinimumNumberOfInstancesUsedPerHour(const Aws::String& value) { m_minimumNumberOfInstancesUsedPerHourHasBeenSet = true; m_minimumNumberOfInstancesUsedPerHour = value; }
-    inline void SetMinimumNumberOfInstancesUsedPerHour(Aws::String&& value) { m_minimumNumberOfInstancesUsedPerHourHasBeenSet = true; m_minimumNumberOfInstancesUsedPerHour = std::move(value); }
-    inline void SetMinimumNumberOfInstancesUsedPerHour(const char* value) { m_minimumNumberOfInstancesUsedPerHourHasBeenSet = true; m_minimumNumberOfInstancesUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfInstancesUsedPerHour(const Aws::String& value) { SetMinimumNumberOfInstancesUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfInstancesUsedPerHour(Aws::String&& value) { SetMinimumNumberOfInstancesUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfInstancesUsedPerHour(const char* value) { SetMinimumNumberOfInstancesUsedPerHour(value); return *this;}
+    template<typename MinimumNumberOfInstancesUsedPerHourT = Aws::String>
+    void SetMinimumNumberOfInstancesUsedPerHour(MinimumNumberOfInstancesUsedPerHourT&& value) { m_minimumNumberOfInstancesUsedPerHourHasBeenSet = true; m_minimumNumberOfInstancesUsedPerHour = std::forward<MinimumNumberOfInstancesUsedPerHourT>(value); }
+    template<typename MinimumNumberOfInstancesUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithMinimumNumberOfInstancesUsedPerHour(MinimumNumberOfInstancesUsedPerHourT&& value) { SetMinimumNumberOfInstancesUsedPerHour(std::forward<MinimumNumberOfInstancesUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +111,12 @@ namespace Model
      * historical period. Amazon Web Services uses this to calculate your recommended
      * reservation purchases.</p>
      */
-    inline const Aws::String& GetMinimumNormalizedUnitsUsedPerHour() const{ return m_minimumNormalizedUnitsUsedPerHour; }
+    inline const Aws::String& GetMinimumNormalizedUnitsUsedPerHour() const { return m_minimumNormalizedUnitsUsedPerHour; }
     inline bool MinimumNormalizedUnitsUsedPerHourHasBeenSet() const { return m_minimumNormalizedUnitsUsedPerHourHasBeenSet; }
-    inline void SetMinimumNormalizedUnitsUsedPerHour(const Aws::String& value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour = value; }
-    inline void SetMinimumNormalizedUnitsUsedPerHour(Aws::String&& value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour = std::move(value); }
-    inline void SetMinimumNormalizedUnitsUsedPerHour(const char* value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(const Aws::String& value) { SetMinimumNormalizedUnitsUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(Aws::String&& value) { SetMinimumNormalizedUnitsUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(const char* value) { SetMinimumNormalizedUnitsUsedPerHour(value); return *this;}
+    template<typename MinimumNormalizedUnitsUsedPerHourT = Aws::String>
+    void SetMinimumNormalizedUnitsUsedPerHour(MinimumNormalizedUnitsUsedPerHourT&& value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour = std::forward<MinimumNormalizedUnitsUsedPerHourT>(value); }
+    template<typename MinimumNormalizedUnitsUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(MinimumNormalizedUnitsUsedPerHourT&& value) { SetMinimumNormalizedUnitsUsedPerHour(std::forward<MinimumNormalizedUnitsUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +125,12 @@ namespace Model
      * historical period. Amazon Web Services uses this to calculate your recommended
      * reservation purchases.</p>
      */
-    inline const Aws::String& GetMaximumNumberOfInstancesUsedPerHour() const{ return m_maximumNumberOfInstancesUsedPerHour; }
+    inline const Aws::String& GetMaximumNumberOfInstancesUsedPerHour() const { return m_maximumNumberOfInstancesUsedPerHour; }
     inline bool MaximumNumberOfInstancesUsedPerHourHasBeenSet() const { return m_maximumNumberOfInstancesUsedPerHourHasBeenSet; }
-    inline void SetMaximumNumberOfInstancesUsedPerHour(const Aws::String& value) { m_maximumNumberOfInstancesUsedPerHourHasBeenSet = true; m_maximumNumberOfInstancesUsedPerHour = value; }
-    inline void SetMaximumNumberOfInstancesUsedPerHour(Aws::String&& value) { m_maximumNumberOfInstancesUsedPerHourHasBeenSet = true; m_maximumNumberOfInstancesUsedPerHour = std::move(value); }
-    inline void SetMaximumNumberOfInstancesUsedPerHour(const char* value) { m_maximumNumberOfInstancesUsedPerHourHasBeenSet = true; m_maximumNumberOfInstancesUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfInstancesUsedPerHour(const Aws::String& value) { SetMaximumNumberOfInstancesUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfInstancesUsedPerHour(Aws::String&& value) { SetMaximumNumberOfInstancesUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfInstancesUsedPerHour(const char* value) { SetMaximumNumberOfInstancesUsedPerHour(value); return *this;}
+    template<typename MaximumNumberOfInstancesUsedPerHourT = Aws::String>
+    void SetMaximumNumberOfInstancesUsedPerHour(MaximumNumberOfInstancesUsedPerHourT&& value) { m_maximumNumberOfInstancesUsedPerHourHasBeenSet = true; m_maximumNumberOfInstancesUsedPerHour = std::forward<MaximumNumberOfInstancesUsedPerHourT>(value); }
+    template<typename MaximumNumberOfInstancesUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithMaximumNumberOfInstancesUsedPerHour(MaximumNumberOfInstancesUsedPerHourT&& value) { SetMaximumNumberOfInstancesUsedPerHour(std::forward<MaximumNumberOfInstancesUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +139,12 @@ namespace Model
      * historical period. Amazon Web Services uses this to calculate your recommended
      * reservation purchases.</p>
      */
-    inline const Aws::String& GetMaximumNormalizedUnitsUsedPerHour() const{ return m_maximumNormalizedUnitsUsedPerHour; }
+    inline const Aws::String& GetMaximumNormalizedUnitsUsedPerHour() const { return m_maximumNormalizedUnitsUsedPerHour; }
     inline bool MaximumNormalizedUnitsUsedPerHourHasBeenSet() const { return m_maximumNormalizedUnitsUsedPerHourHasBeenSet; }
-    inline void SetMaximumNormalizedUnitsUsedPerHour(const Aws::String& value) { m_maximumNormalizedUnitsUsedPerHourHasBeenSet = true; m_maximumNormalizedUnitsUsedPerHour = value; }
-    inline void SetMaximumNormalizedUnitsUsedPerHour(Aws::String&& value) { m_maximumNormalizedUnitsUsedPerHourHasBeenSet = true; m_maximumNormalizedUnitsUsedPerHour = std::move(value); }
-    inline void SetMaximumNormalizedUnitsUsedPerHour(const char* value) { m_maximumNormalizedUnitsUsedPerHourHasBeenSet = true; m_maximumNormalizedUnitsUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNormalizedUnitsUsedPerHour(const Aws::String& value) { SetMaximumNormalizedUnitsUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNormalizedUnitsUsedPerHour(Aws::String&& value) { SetMaximumNormalizedUnitsUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNormalizedUnitsUsedPerHour(const char* value) { SetMaximumNormalizedUnitsUsedPerHour(value); return *this;}
+    template<typename MaximumNormalizedUnitsUsedPerHourT = Aws::String>
+    void SetMaximumNormalizedUnitsUsedPerHour(MaximumNormalizedUnitsUsedPerHourT&& value) { m_maximumNormalizedUnitsUsedPerHourHasBeenSet = true; m_maximumNormalizedUnitsUsedPerHour = std::forward<MaximumNormalizedUnitsUsedPerHourT>(value); }
+    template<typename MaximumNormalizedUnitsUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithMaximumNormalizedUnitsUsedPerHour(MaximumNormalizedUnitsUsedPerHourT&& value) { SetMaximumNormalizedUnitsUsedPerHour(std::forward<MaximumNormalizedUnitsUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,14 +153,12 @@ namespace Model
      * historical period. Amazon Web Services uses this to calculate your recommended
      * reservation purchases.</p>
      */
-    inline const Aws::String& GetAverageNumberOfInstancesUsedPerHour() const{ return m_averageNumberOfInstancesUsedPerHour; }
+    inline const Aws::String& GetAverageNumberOfInstancesUsedPerHour() const { return m_averageNumberOfInstancesUsedPerHour; }
     inline bool AverageNumberOfInstancesUsedPerHourHasBeenSet() const { return m_averageNumberOfInstancesUsedPerHourHasBeenSet; }
-    inline void SetAverageNumberOfInstancesUsedPerHour(const Aws::String& value) { m_averageNumberOfInstancesUsedPerHourHasBeenSet = true; m_averageNumberOfInstancesUsedPerHour = value; }
-    inline void SetAverageNumberOfInstancesUsedPerHour(Aws::String&& value) { m_averageNumberOfInstancesUsedPerHourHasBeenSet = true; m_averageNumberOfInstancesUsedPerHour = std::move(value); }
-    inline void SetAverageNumberOfInstancesUsedPerHour(const char* value) { m_averageNumberOfInstancesUsedPerHourHasBeenSet = true; m_averageNumberOfInstancesUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfInstancesUsedPerHour(const Aws::String& value) { SetAverageNumberOfInstancesUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfInstancesUsedPerHour(Aws::String&& value) { SetAverageNumberOfInstancesUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfInstancesUsedPerHour(const char* value) { SetAverageNumberOfInstancesUsedPerHour(value); return *this;}
+    template<typename AverageNumberOfInstancesUsedPerHourT = Aws::String>
+    void SetAverageNumberOfInstancesUsedPerHour(AverageNumberOfInstancesUsedPerHourT&& value) { m_averageNumberOfInstancesUsedPerHourHasBeenSet = true; m_averageNumberOfInstancesUsedPerHour = std::forward<AverageNumberOfInstancesUsedPerHourT>(value); }
+    template<typename AverageNumberOfInstancesUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithAverageNumberOfInstancesUsedPerHour(AverageNumberOfInstancesUsedPerHourT&& value) { SetAverageNumberOfInstancesUsedPerHour(std::forward<AverageNumberOfInstancesUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,14 +167,12 @@ namespace Model
      * historical period. Amazon Web Services uses this to calculate your recommended
      * reservation purchases.</p>
      */
-    inline const Aws::String& GetAverageNormalizedUnitsUsedPerHour() const{ return m_averageNormalizedUnitsUsedPerHour; }
+    inline const Aws::String& GetAverageNormalizedUnitsUsedPerHour() const { return m_averageNormalizedUnitsUsedPerHour; }
     inline bool AverageNormalizedUnitsUsedPerHourHasBeenSet() const { return m_averageNormalizedUnitsUsedPerHourHasBeenSet; }
-    inline void SetAverageNormalizedUnitsUsedPerHour(const Aws::String& value) { m_averageNormalizedUnitsUsedPerHourHasBeenSet = true; m_averageNormalizedUnitsUsedPerHour = value; }
-    inline void SetAverageNormalizedUnitsUsedPerHour(Aws::String&& value) { m_averageNormalizedUnitsUsedPerHourHasBeenSet = true; m_averageNormalizedUnitsUsedPerHour = std::move(value); }
-    inline void SetAverageNormalizedUnitsUsedPerHour(const char* value) { m_averageNormalizedUnitsUsedPerHourHasBeenSet = true; m_averageNormalizedUnitsUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithAverageNormalizedUnitsUsedPerHour(const Aws::String& value) { SetAverageNormalizedUnitsUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageNormalizedUnitsUsedPerHour(Aws::String&& value) { SetAverageNormalizedUnitsUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageNormalizedUnitsUsedPerHour(const char* value) { SetAverageNormalizedUnitsUsedPerHour(value); return *this;}
+    template<typename AverageNormalizedUnitsUsedPerHourT = Aws::String>
+    void SetAverageNormalizedUnitsUsedPerHour(AverageNormalizedUnitsUsedPerHourT&& value) { m_averageNormalizedUnitsUsedPerHourHasBeenSet = true; m_averageNormalizedUnitsUsedPerHour = std::forward<AverageNormalizedUnitsUsedPerHourT>(value); }
+    template<typename AverageNormalizedUnitsUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithAverageNormalizedUnitsUsedPerHour(AverageNormalizedUnitsUsedPerHourT&& value) { SetAverageNormalizedUnitsUsedPerHour(std::forward<AverageNormalizedUnitsUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,14 +180,12 @@ namespace Model
      * <p>The average utilization of your instances. Amazon Web Services uses this to
      * calculate your recommended reservation purchases.</p>
      */
-    inline const Aws::String& GetAverageUtilization() const{ return m_averageUtilization; }
+    inline const Aws::String& GetAverageUtilization() const { return m_averageUtilization; }
     inline bool AverageUtilizationHasBeenSet() const { return m_averageUtilizationHasBeenSet; }
-    inline void SetAverageUtilization(const Aws::String& value) { m_averageUtilizationHasBeenSet = true; m_averageUtilization = value; }
-    inline void SetAverageUtilization(Aws::String&& value) { m_averageUtilizationHasBeenSet = true; m_averageUtilization = std::move(value); }
-    inline void SetAverageUtilization(const char* value) { m_averageUtilizationHasBeenSet = true; m_averageUtilization.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithAverageUtilization(const Aws::String& value) { SetAverageUtilization(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageUtilization(Aws::String&& value) { SetAverageUtilization(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageUtilization(const char* value) { SetAverageUtilization(value); return *this;}
+    template<typename AverageUtilizationT = Aws::String>
+    void SetAverageUtilization(AverageUtilizationT&& value) { m_averageUtilizationHasBeenSet = true; m_averageUtilization = std::forward<AverageUtilizationT>(value); }
+    template<typename AverageUtilizationT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithAverageUtilization(AverageUtilizationT&& value) { SetAverageUtilization(std::forward<AverageUtilizationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,14 +193,12 @@ namespace Model
      * <p>How long Amazon Web Services estimates that it takes for this instance to
      * start saving you money, in months.</p>
      */
-    inline const Aws::String& GetEstimatedBreakEvenInMonths() const{ return m_estimatedBreakEvenInMonths; }
+    inline const Aws::String& GetEstimatedBreakEvenInMonths() const { return m_estimatedBreakEvenInMonths; }
     inline bool EstimatedBreakEvenInMonthsHasBeenSet() const { return m_estimatedBreakEvenInMonthsHasBeenSet; }
-    inline void SetEstimatedBreakEvenInMonths(const Aws::String& value) { m_estimatedBreakEvenInMonthsHasBeenSet = true; m_estimatedBreakEvenInMonths = value; }
-    inline void SetEstimatedBreakEvenInMonths(Aws::String&& value) { m_estimatedBreakEvenInMonthsHasBeenSet = true; m_estimatedBreakEvenInMonths = std::move(value); }
-    inline void SetEstimatedBreakEvenInMonths(const char* value) { m_estimatedBreakEvenInMonthsHasBeenSet = true; m_estimatedBreakEvenInMonths.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedBreakEvenInMonths(const Aws::String& value) { SetEstimatedBreakEvenInMonths(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedBreakEvenInMonths(Aws::String&& value) { SetEstimatedBreakEvenInMonths(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedBreakEvenInMonths(const char* value) { SetEstimatedBreakEvenInMonths(value); return *this;}
+    template<typename EstimatedBreakEvenInMonthsT = Aws::String>
+    void SetEstimatedBreakEvenInMonths(EstimatedBreakEvenInMonthsT&& value) { m_estimatedBreakEvenInMonthsHasBeenSet = true; m_estimatedBreakEvenInMonths = std::forward<EstimatedBreakEvenInMonthsT>(value); }
+    template<typename EstimatedBreakEvenInMonthsT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithEstimatedBreakEvenInMonths(EstimatedBreakEvenInMonthsT&& value) { SetEstimatedBreakEvenInMonths(std::forward<EstimatedBreakEvenInMonthsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,14 +206,12 @@ namespace Model
      * <p>The currency code that Amazon Web Services used to calculate the costs for
      * this instance.</p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,14 +219,12 @@ namespace Model
      * <p>How much Amazon Web Services estimates that this specific recommendation
      * might save you in a month.</p>
      */
-    inline const Aws::String& GetEstimatedMonthlySavingsAmount() const{ return m_estimatedMonthlySavingsAmount; }
+    inline const Aws::String& GetEstimatedMonthlySavingsAmount() const { return m_estimatedMonthlySavingsAmount; }
     inline bool EstimatedMonthlySavingsAmountHasBeenSet() const { return m_estimatedMonthlySavingsAmountHasBeenSet; }
-    inline void SetEstimatedMonthlySavingsAmount(const Aws::String& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = value; }
-    inline void SetEstimatedMonthlySavingsAmount(Aws::String&& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = std::move(value); }
-    inline void SetEstimatedMonthlySavingsAmount(const char* value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(const Aws::String& value) { SetEstimatedMonthlySavingsAmount(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(Aws::String&& value) { SetEstimatedMonthlySavingsAmount(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(const char* value) { SetEstimatedMonthlySavingsAmount(value); return *this;}
+    template<typename EstimatedMonthlySavingsAmountT = Aws::String>
+    void SetEstimatedMonthlySavingsAmount(EstimatedMonthlySavingsAmountT&& value) { m_estimatedMonthlySavingsAmountHasBeenSet = true; m_estimatedMonthlySavingsAmount = std::forward<EstimatedMonthlySavingsAmountT>(value); }
+    template<typename EstimatedMonthlySavingsAmountT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsAmount(EstimatedMonthlySavingsAmountT&& value) { SetEstimatedMonthlySavingsAmount(std::forward<EstimatedMonthlySavingsAmountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -258,14 +232,12 @@ namespace Model
      * <p>How much Amazon Web Services estimates that this specific recommendation
      * might save you in a month, as a percentage of your overall costs.</p>
      */
-    inline const Aws::String& GetEstimatedMonthlySavingsPercentage() const{ return m_estimatedMonthlySavingsPercentage; }
+    inline const Aws::String& GetEstimatedMonthlySavingsPercentage() const { return m_estimatedMonthlySavingsPercentage; }
     inline bool EstimatedMonthlySavingsPercentageHasBeenSet() const { return m_estimatedMonthlySavingsPercentageHasBeenSet; }
-    inline void SetEstimatedMonthlySavingsPercentage(const Aws::String& value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage = value; }
-    inline void SetEstimatedMonthlySavingsPercentage(Aws::String&& value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage = std::move(value); }
-    inline void SetEstimatedMonthlySavingsPercentage(const char* value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(const Aws::String& value) { SetEstimatedMonthlySavingsPercentage(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(Aws::String&& value) { SetEstimatedMonthlySavingsPercentage(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(const char* value) { SetEstimatedMonthlySavingsPercentage(value); return *this;}
+    template<typename EstimatedMonthlySavingsPercentageT = Aws::String>
+    void SetEstimatedMonthlySavingsPercentage(EstimatedMonthlySavingsPercentageT&& value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage = std::forward<EstimatedMonthlySavingsPercentageT>(value); }
+    template<typename EstimatedMonthlySavingsPercentageT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithEstimatedMonthlySavingsPercentage(EstimatedMonthlySavingsPercentageT&& value) { SetEstimatedMonthlySavingsPercentage(std::forward<EstimatedMonthlySavingsPercentageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,14 +245,12 @@ namespace Model
      * <p>How much Amazon Web Services estimates that you spend on On-Demand Instances
      * in a month.</p>
      */
-    inline const Aws::String& GetEstimatedMonthlyOnDemandCost() const{ return m_estimatedMonthlyOnDemandCost; }
+    inline const Aws::String& GetEstimatedMonthlyOnDemandCost() const { return m_estimatedMonthlyOnDemandCost; }
     inline bool EstimatedMonthlyOnDemandCostHasBeenSet() const { return m_estimatedMonthlyOnDemandCostHasBeenSet; }
-    inline void SetEstimatedMonthlyOnDemandCost(const Aws::String& value) { m_estimatedMonthlyOnDemandCostHasBeenSet = true; m_estimatedMonthlyOnDemandCost = value; }
-    inline void SetEstimatedMonthlyOnDemandCost(Aws::String&& value) { m_estimatedMonthlyOnDemandCostHasBeenSet = true; m_estimatedMonthlyOnDemandCost = std::move(value); }
-    inline void SetEstimatedMonthlyOnDemandCost(const char* value) { m_estimatedMonthlyOnDemandCostHasBeenSet = true; m_estimatedMonthlyOnDemandCost.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlyOnDemandCost(const Aws::String& value) { SetEstimatedMonthlyOnDemandCost(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlyOnDemandCost(Aws::String&& value) { SetEstimatedMonthlyOnDemandCost(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedMonthlyOnDemandCost(const char* value) { SetEstimatedMonthlyOnDemandCost(value); return *this;}
+    template<typename EstimatedMonthlyOnDemandCostT = Aws::String>
+    void SetEstimatedMonthlyOnDemandCost(EstimatedMonthlyOnDemandCostT&& value) { m_estimatedMonthlyOnDemandCostHasBeenSet = true; m_estimatedMonthlyOnDemandCost = std::forward<EstimatedMonthlyOnDemandCostT>(value); }
+    template<typename EstimatedMonthlyOnDemandCostT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithEstimatedMonthlyOnDemandCost(EstimatedMonthlyOnDemandCostT&& value) { SetEstimatedMonthlyOnDemandCost(std::forward<EstimatedMonthlyOnDemandCostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -288,42 +258,36 @@ namespace Model
      * <p>How much Amazon Web Services estimates that you might spend for all usage
      * during the specified historical period if you had a reservation.</p>
      */
-    inline const Aws::String& GetEstimatedReservationCostForLookbackPeriod() const{ return m_estimatedReservationCostForLookbackPeriod; }
+    inline const Aws::String& GetEstimatedReservationCostForLookbackPeriod() const { return m_estimatedReservationCostForLookbackPeriod; }
     inline bool EstimatedReservationCostForLookbackPeriodHasBeenSet() const { return m_estimatedReservationCostForLookbackPeriodHasBeenSet; }
-    inline void SetEstimatedReservationCostForLookbackPeriod(const Aws::String& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = value; }
-    inline void SetEstimatedReservationCostForLookbackPeriod(Aws::String&& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = std::move(value); }
-    inline void SetEstimatedReservationCostForLookbackPeriod(const char* value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(const Aws::String& value) { SetEstimatedReservationCostForLookbackPeriod(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(Aws::String&& value) { SetEstimatedReservationCostForLookbackPeriod(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(const char* value) { SetEstimatedReservationCostForLookbackPeriod(value); return *this;}
+    template<typename EstimatedReservationCostForLookbackPeriodT = Aws::String>
+    void SetEstimatedReservationCostForLookbackPeriod(EstimatedReservationCostForLookbackPeriodT&& value) { m_estimatedReservationCostForLookbackPeriodHasBeenSet = true; m_estimatedReservationCostForLookbackPeriod = std::forward<EstimatedReservationCostForLookbackPeriodT>(value); }
+    template<typename EstimatedReservationCostForLookbackPeriodT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithEstimatedReservationCostForLookbackPeriod(EstimatedReservationCostForLookbackPeriodT&& value) { SetEstimatedReservationCostForLookbackPeriod(std::forward<EstimatedReservationCostForLookbackPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How much purchasing this instance costs you upfront.</p>
      */
-    inline const Aws::String& GetUpfrontCost() const{ return m_upfrontCost; }
+    inline const Aws::String& GetUpfrontCost() const { return m_upfrontCost; }
     inline bool UpfrontCostHasBeenSet() const { return m_upfrontCostHasBeenSet; }
-    inline void SetUpfrontCost(const Aws::String& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = value; }
-    inline void SetUpfrontCost(Aws::String&& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = std::move(value); }
-    inline void SetUpfrontCost(const char* value) { m_upfrontCostHasBeenSet = true; m_upfrontCost.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithUpfrontCost(const Aws::String& value) { SetUpfrontCost(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithUpfrontCost(Aws::String&& value) { SetUpfrontCost(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithUpfrontCost(const char* value) { SetUpfrontCost(value); return *this;}
+    template<typename UpfrontCostT = Aws::String>
+    void SetUpfrontCost(UpfrontCostT&& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = std::forward<UpfrontCostT>(value); }
+    template<typename UpfrontCostT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithUpfrontCost(UpfrontCostT&& value) { SetUpfrontCost(std::forward<UpfrontCostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>How much purchasing this instance costs you on a monthly basis.</p>
      */
-    inline const Aws::String& GetRecurringStandardMonthlyCost() const{ return m_recurringStandardMonthlyCost; }
+    inline const Aws::String& GetRecurringStandardMonthlyCost() const { return m_recurringStandardMonthlyCost; }
     inline bool RecurringStandardMonthlyCostHasBeenSet() const { return m_recurringStandardMonthlyCostHasBeenSet; }
-    inline void SetRecurringStandardMonthlyCost(const Aws::String& value) { m_recurringStandardMonthlyCostHasBeenSet = true; m_recurringStandardMonthlyCost = value; }
-    inline void SetRecurringStandardMonthlyCost(Aws::String&& value) { m_recurringStandardMonthlyCostHasBeenSet = true; m_recurringStandardMonthlyCost = std::move(value); }
-    inline void SetRecurringStandardMonthlyCost(const char* value) { m_recurringStandardMonthlyCostHasBeenSet = true; m_recurringStandardMonthlyCost.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(const Aws::String& value) { SetRecurringStandardMonthlyCost(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(Aws::String&& value) { SetRecurringStandardMonthlyCost(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(const char* value) { SetRecurringStandardMonthlyCost(value); return *this;}
+    template<typename RecurringStandardMonthlyCostT = Aws::String>
+    void SetRecurringStandardMonthlyCost(RecurringStandardMonthlyCostT&& value) { m_recurringStandardMonthlyCostHasBeenSet = true; m_recurringStandardMonthlyCost = std::forward<RecurringStandardMonthlyCostT>(value); }
+    template<typename RecurringStandardMonthlyCostT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(RecurringStandardMonthlyCostT&& value) { SetRecurringStandardMonthlyCost(std::forward<RecurringStandardMonthlyCostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -331,12 +295,12 @@ namespace Model
      * <p>Details about the reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const ReservedCapacityDetails& GetReservedCapacityDetails() const{ return m_reservedCapacityDetails; }
+    inline const ReservedCapacityDetails& GetReservedCapacityDetails() const { return m_reservedCapacityDetails; }
     inline bool ReservedCapacityDetailsHasBeenSet() const { return m_reservedCapacityDetailsHasBeenSet; }
-    inline void SetReservedCapacityDetails(const ReservedCapacityDetails& value) { m_reservedCapacityDetailsHasBeenSet = true; m_reservedCapacityDetails = value; }
-    inline void SetReservedCapacityDetails(ReservedCapacityDetails&& value) { m_reservedCapacityDetailsHasBeenSet = true; m_reservedCapacityDetails = std::move(value); }
-    inline ReservationPurchaseRecommendationDetail& WithReservedCapacityDetails(const ReservedCapacityDetails& value) { SetReservedCapacityDetails(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithReservedCapacityDetails(ReservedCapacityDetails&& value) { SetReservedCapacityDetails(std::move(value)); return *this;}
+    template<typename ReservedCapacityDetailsT = ReservedCapacityDetails>
+    void SetReservedCapacityDetails(ReservedCapacityDetailsT&& value) { m_reservedCapacityDetailsHasBeenSet = true; m_reservedCapacityDetails = std::forward<ReservedCapacityDetailsT>(value); }
+    template<typename ReservedCapacityDetailsT = ReservedCapacityDetails>
+    ReservationPurchaseRecommendationDetail& WithReservedCapacityDetails(ReservedCapacityDetailsT&& value) { SetReservedCapacityDetails(std::forward<ReservedCapacityDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -344,14 +308,12 @@ namespace Model
      * <p>The number of reserved capacity units that Amazon Web Services recommends
      * that you purchase.</p>
      */
-    inline const Aws::String& GetRecommendedNumberOfCapacityUnitsToPurchase() const{ return m_recommendedNumberOfCapacityUnitsToPurchase; }
+    inline const Aws::String& GetRecommendedNumberOfCapacityUnitsToPurchase() const { return m_recommendedNumberOfCapacityUnitsToPurchase; }
     inline bool RecommendedNumberOfCapacityUnitsToPurchaseHasBeenSet() const { return m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet; }
-    inline void SetRecommendedNumberOfCapacityUnitsToPurchase(const Aws::String& value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase = value; }
-    inline void SetRecommendedNumberOfCapacityUnitsToPurchase(Aws::String&& value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase = std::move(value); }
-    inline void SetRecommendedNumberOfCapacityUnitsToPurchase(const char* value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(const Aws::String& value) { SetRecommendedNumberOfCapacityUnitsToPurchase(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(Aws::String&& value) { SetRecommendedNumberOfCapacityUnitsToPurchase(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(const char* value) { SetRecommendedNumberOfCapacityUnitsToPurchase(value); return *this;}
+    template<typename RecommendedNumberOfCapacityUnitsToPurchaseT = Aws::String>
+    void SetRecommendedNumberOfCapacityUnitsToPurchase(RecommendedNumberOfCapacityUnitsToPurchaseT&& value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase = std::forward<RecommendedNumberOfCapacityUnitsToPurchaseT>(value); }
+    template<typename RecommendedNumberOfCapacityUnitsToPurchaseT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(RecommendedNumberOfCapacityUnitsToPurchaseT&& value) { SetRecommendedNumberOfCapacityUnitsToPurchase(std::forward<RecommendedNumberOfCapacityUnitsToPurchaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -360,14 +322,12 @@ namespace Model
      * during the historical period. Amazon Web Services uses this to calculate your
      * recommended reservation purchases.</p>
      */
-    inline const Aws::String& GetMinimumNumberOfCapacityUnitsUsedPerHour() const{ return m_minimumNumberOfCapacityUnitsUsedPerHour; }
+    inline const Aws::String& GetMinimumNumberOfCapacityUnitsUsedPerHour() const { return m_minimumNumberOfCapacityUnitsUsedPerHour; }
     inline bool MinimumNumberOfCapacityUnitsUsedPerHourHasBeenSet() const { return m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet; }
-    inline void SetMinimumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour = value; }
-    inline void SetMinimumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour = std::move(value); }
-    inline void SetMinimumNumberOfCapacityUnitsUsedPerHour(const char* value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(const char* value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    template<typename MinimumNumberOfCapacityUnitsUsedPerHourT = Aws::String>
+    void SetMinimumNumberOfCapacityUnitsUsedPerHour(MinimumNumberOfCapacityUnitsUsedPerHourT&& value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour = std::forward<MinimumNumberOfCapacityUnitsUsedPerHourT>(value); }
+    template<typename MinimumNumberOfCapacityUnitsUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(MinimumNumberOfCapacityUnitsUsedPerHourT&& value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(std::forward<MinimumNumberOfCapacityUnitsUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -376,14 +336,12 @@ namespace Model
      * during the historical period. Amazon Web Services uses this to calculate your
      * recommended reservation purchases.</p>
      */
-    inline const Aws::String& GetMaximumNumberOfCapacityUnitsUsedPerHour() const{ return m_maximumNumberOfCapacityUnitsUsedPerHour; }
+    inline const Aws::String& GetMaximumNumberOfCapacityUnitsUsedPerHour() const { return m_maximumNumberOfCapacityUnitsUsedPerHour; }
     inline bool MaximumNumberOfCapacityUnitsUsedPerHourHasBeenSet() const { return m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet; }
-    inline void SetMaximumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour = value; }
-    inline void SetMaximumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour = std::move(value); }
-    inline void SetMaximumNumberOfCapacityUnitsUsedPerHour(const char* value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(const char* value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    template<typename MaximumNumberOfCapacityUnitsUsedPerHourT = Aws::String>
+    void SetMaximumNumberOfCapacityUnitsUsedPerHour(MaximumNumberOfCapacityUnitsUsedPerHourT&& value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour = std::forward<MaximumNumberOfCapacityUnitsUsedPerHourT>(value); }
+    template<typename MaximumNumberOfCapacityUnitsUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(MaximumNumberOfCapacityUnitsUsedPerHourT&& value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(std::forward<MaximumNumberOfCapacityUnitsUsedPerHourT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -392,14 +350,12 @@ namespace Model
      * during the historical period. Amazon Web Services uses this to calculate your
      * recommended reservation purchases.</p>
      */
-    inline const Aws::String& GetAverageNumberOfCapacityUnitsUsedPerHour() const{ return m_averageNumberOfCapacityUnitsUsedPerHour; }
+    inline const Aws::String& GetAverageNumberOfCapacityUnitsUsedPerHour() const { return m_averageNumberOfCapacityUnitsUsedPerHour; }
     inline bool AverageNumberOfCapacityUnitsUsedPerHourHasBeenSet() const { return m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet; }
-    inline void SetAverageNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour = value; }
-    inline void SetAverageNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour = std::move(value); }
-    inline void SetAverageNumberOfCapacityUnitsUsedPerHour(const char* value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour.assign(value); }
-    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { SetAverageNumberOfCapacityUnitsUsedPerHour(value); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { SetAverageNumberOfCapacityUnitsUsedPerHour(std::move(value)); return *this;}
-    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(const char* value) { SetAverageNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    template<typename AverageNumberOfCapacityUnitsUsedPerHourT = Aws::String>
+    void SetAverageNumberOfCapacityUnitsUsedPerHour(AverageNumberOfCapacityUnitsUsedPerHourT&& value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour = std::forward<AverageNumberOfCapacityUnitsUsedPerHourT>(value); }
+    template<typename AverageNumberOfCapacityUnitsUsedPerHourT = Aws::String>
+    ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(AverageNumberOfCapacityUnitsUsedPerHourT&& value) { SetAverageNumberOfCapacityUnitsUsedPerHour(std::forward<AverageNumberOfCapacityUnitsUsedPerHourT>(value)); return *this;}
     ///@}
   private:
 

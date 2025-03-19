@@ -12,16 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMobileDeviceAccessOverrideRequest::PutMobileDeviceAccessOverrideRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String PutMobileDeviceAccessOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

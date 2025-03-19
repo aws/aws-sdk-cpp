@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAppRequest::DeleteAppRequest() : 
-    m_appHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppRequest::SerializePayload() const
 {
   return {};

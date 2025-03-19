@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ReplicationInfoSummary::ReplicationInfoSummary() : 
-    m_sourceKafkaClusterAliasHasBeenSet(false),
-    m_targetKafkaClusterAliasHasBeenSet(false)
-{
-}
-
 ReplicationInfoSummary::ReplicationInfoSummary(JsonView jsonValue)
-  : ReplicationInfoSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReplicationInfoSummary& ReplicationInfoSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceKafkaClusterAlias"))
   {
     m_sourceKafkaClusterAlias = jsonValue.GetString("sourceKafkaClusterAlias");
-
     m_sourceKafkaClusterAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetKafkaClusterAlias"))
   {
     m_targetKafkaClusterAlias = jsonValue.GetString("targetKafkaClusterAlias");
-
     m_targetKafkaClusterAliasHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CryptogramVerificationArpcMethod1::CryptogramVerificationArpcMethod1() : 
-    m_authResponseCodeHasBeenSet(false)
-{
-}
-
 CryptogramVerificationArpcMethod1::CryptogramVerificationArpcMethod1(JsonView jsonValue)
-  : CryptogramVerificationArpcMethod1()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CryptogramVerificationArpcMethod1& CryptogramVerificationArpcMethod1::operator =
   if(jsonValue.ValueExists("AuthResponseCode"))
   {
     m_authResponseCode = jsonValue.GetString("AuthResponseCode");
-
     m_authResponseCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

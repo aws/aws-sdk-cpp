@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfiguration() : 
-    m_arnHasBeenSet(false),
-    m_muxType(LiveConnectorMuxType::NOT_SET),
-    m_muxTypeHasBeenSet(false),
-    m_compositedVideoHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false)
-{
-}
-
 ChimeSdkMeetingLiveConnectorConfiguration::ChimeSdkMeetingLiveConnectorConfiguration(JsonView jsonValue)
-  : ChimeSdkMeetingLiveConnectorConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ChimeSdkMeetingLiveConnectorConfiguration& ChimeSdkMeetingLiveConnectorConfigura
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MuxType"))
   {
     m_muxType = LiveConnectorMuxTypeMapper::GetLiveConnectorMuxTypeForName(jsonValue.GetString("MuxType"));
-
     m_muxTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompositedVideo"))
   {
     m_compositedVideo = jsonValue.GetObject("CompositedVideo");
-
     m_compositedVideoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("SourceConfiguration");
-
     m_sourceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

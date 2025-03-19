@@ -34,7 +34,7 @@ namespace Model
   class AccountRecoverySettingType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AccountRecoverySettingType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * SMS message priority, whether users should fall back to a second delivery
      * method, and whether passwords should only be reset by administrators.</p>
      */
-    inline const Aws::Vector<RecoveryOptionType>& GetRecoveryMechanisms() const{ return m_recoveryMechanisms; }
+    inline const Aws::Vector<RecoveryOptionType>& GetRecoveryMechanisms() const { return m_recoveryMechanisms; }
     inline bool RecoveryMechanismsHasBeenSet() const { return m_recoveryMechanismsHasBeenSet; }
-    inline void SetRecoveryMechanisms(const Aws::Vector<RecoveryOptionType>& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms = value; }
-    inline void SetRecoveryMechanisms(Aws::Vector<RecoveryOptionType>&& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms = std::move(value); }
-    inline AccountRecoverySettingType& WithRecoveryMechanisms(const Aws::Vector<RecoveryOptionType>& value) { SetRecoveryMechanisms(value); return *this;}
-    inline AccountRecoverySettingType& WithRecoveryMechanisms(Aws::Vector<RecoveryOptionType>&& value) { SetRecoveryMechanisms(std::move(value)); return *this;}
-    inline AccountRecoverySettingType& AddRecoveryMechanisms(const RecoveryOptionType& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms.push_back(value); return *this; }
-    inline AccountRecoverySettingType& AddRecoveryMechanisms(RecoveryOptionType&& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms.push_back(std::move(value)); return *this; }
+    template<typename RecoveryMechanismsT = Aws::Vector<RecoveryOptionType>>
+    void SetRecoveryMechanisms(RecoveryMechanismsT&& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms = std::forward<RecoveryMechanismsT>(value); }
+    template<typename RecoveryMechanismsT = Aws::Vector<RecoveryOptionType>>
+    AccountRecoverySettingType& WithRecoveryMechanisms(RecoveryMechanismsT&& value) { SetRecoveryMechanisms(std::forward<RecoveryMechanismsT>(value)); return *this;}
+    template<typename RecoveryMechanismsT = RecoveryOptionType>
+    AccountRecoverySettingType& AddRecoveryMechanisms(RecoveryMechanismsT&& value) { m_recoveryMechanismsHasBeenSet = true; m_recoveryMechanisms.emplace_back(std::forward<RecoveryMechanismsT>(value)); return *this; }
     ///@}
   private:
 

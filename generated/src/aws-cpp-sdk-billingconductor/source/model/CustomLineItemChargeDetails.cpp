@@ -18,17 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-CustomLineItemChargeDetails::CustomLineItemChargeDetails() : 
-    m_flatHasBeenSet(false),
-    m_percentageHasBeenSet(false),
-    m_type(CustomLineItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lineItemFiltersHasBeenSet(false)
-{
-}
-
 CustomLineItemChargeDetails::CustomLineItemChargeDetails(JsonView jsonValue)
-  : CustomLineItemChargeDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CustomLineItemChargeDetails& CustomLineItemChargeDetails::operator =(JsonView js
   if(jsonValue.ValueExists("Flat"))
   {
     m_flat = jsonValue.GetObject("Flat");
-
     m_flatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Percentage"))
   {
     m_percentage = jsonValue.GetObject("Percentage");
-
     m_percentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CustomLineItemTypeMapper::GetCustomLineItemTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineItemFilters"))
   {
     Aws::Utils::Array<JsonView> lineItemFiltersJsonList = jsonValue.GetArray("LineItemFilters");
@@ -65,7 +49,6 @@ CustomLineItemChargeDetails& CustomLineItemChargeDetails::operator =(JsonView js
     }
     m_lineItemFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListDocumentsResult
   {
   public:
-    AWS_QBUSINESS_API ListDocumentsResult();
+    AWS_QBUSINESS_API ListDocumentsResult() = default;
     AWS_QBUSINESS_API ListDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API ListDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of document details.</p>
      */
-    inline const Aws::Vector<DocumentDetails>& GetDocumentDetailList() const{ return m_documentDetailList; }
-    inline void SetDocumentDetailList(const Aws::Vector<DocumentDetails>& value) { m_documentDetailList = value; }
-    inline void SetDocumentDetailList(Aws::Vector<DocumentDetails>&& value) { m_documentDetailList = std::move(value); }
-    inline ListDocumentsResult& WithDocumentDetailList(const Aws::Vector<DocumentDetails>& value) { SetDocumentDetailList(value); return *this;}
-    inline ListDocumentsResult& WithDocumentDetailList(Aws::Vector<DocumentDetails>&& value) { SetDocumentDetailList(std::move(value)); return *this;}
-    inline ListDocumentsResult& AddDocumentDetailList(const DocumentDetails& value) { m_documentDetailList.push_back(value); return *this; }
-    inline ListDocumentsResult& AddDocumentDetailList(DocumentDetails&& value) { m_documentDetailList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DocumentDetails>& GetDocumentDetailList() const { return m_documentDetailList; }
+    template<typename DocumentDetailListT = Aws::Vector<DocumentDetails>>
+    void SetDocumentDetailList(DocumentDetailListT&& value) { m_documentDetailListHasBeenSet = true; m_documentDetailList = std::forward<DocumentDetailListT>(value); }
+    template<typename DocumentDetailListT = Aws::Vector<DocumentDetails>>
+    ListDocumentsResult& WithDocumentDetailList(DocumentDetailListT&& value) { SetDocumentDetailList(std::forward<DocumentDetailListT>(value)); return *this;}
+    template<typename DocumentDetailListT = DocumentDetails>
+    ListDocumentsResult& AddDocumentDetailList(DocumentDetailListT&& value) { m_documentDetailListHasBeenSet = true; m_documentDetailList.emplace_back(std::forward<DocumentDetailListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * data to retrieve, Amazon Q Business returns a pagination token in the response.
      * You can use this pagination token to retrieve the next set of documents.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDocumentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDocumentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDocumentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDocumentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDocumentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDocumentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDocumentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDocumentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DocumentDetails> m_documentDetailList;
+    bool m_documentDetailListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

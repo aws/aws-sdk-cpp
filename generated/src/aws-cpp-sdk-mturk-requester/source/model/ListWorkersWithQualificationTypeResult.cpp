@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkersWithQualificationTypeResult::ListWorkersWithQualificationTypeResult() : 
-    m_numResults(0)
-{
-}
-
 ListWorkersWithQualificationTypeResult::ListWorkersWithQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListWorkersWithQualificationTypeResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListWorkersWithQualificationTypeResult& ListWorkersWithQualificationTypeResult::
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumResults"))
   {
     m_numResults = jsonValue.GetInteger("NumResults");
-
+    m_numResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Qualifications"))
   {
     Aws::Utils::Array<JsonView> qualificationsJsonList = jsonValue.GetArray("Qualifications");
@@ -50,14 +42,15 @@ ListWorkersWithQualificationTypeResult& ListWorkersWithQualificationTypeResult::
     {
       m_qualifications.push_back(qualificationsJsonList[qualificationsIndex].AsObject());
     }
+    m_qualificationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

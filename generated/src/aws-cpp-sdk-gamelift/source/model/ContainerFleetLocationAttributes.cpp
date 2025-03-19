@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ContainerFleetLocationAttributes::ContainerFleetLocationAttributes() : 
-    m_locationHasBeenSet(false),
-    m_status(ContainerFleetLocationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ContainerFleetLocationAttributes::ContainerFleetLocationAttributes(JsonView jsonValue)
-  : ContainerFleetLocationAttributes()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContainerFleetLocationAttributes& ContainerFleetLocationAttributes::operator =(J
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ContainerFleetLocationStatusMapper::GetContainerFleetLocationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

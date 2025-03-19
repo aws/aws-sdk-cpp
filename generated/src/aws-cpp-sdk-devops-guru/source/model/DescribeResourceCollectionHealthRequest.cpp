@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeResourceCollectionHealthRequest::DescribeResourceCollectionHealthRequest() : 
-    m_resourceCollectionType(ResourceCollectionType::NOT_SET),
-    m_resourceCollectionTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourceCollectionHealthRequest::SerializePayload() const
 {
   return {};

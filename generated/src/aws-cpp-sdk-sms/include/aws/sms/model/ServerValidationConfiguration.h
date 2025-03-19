@@ -34,7 +34,7 @@ namespace Model
   class ServerValidationConfiguration
   {
   public:
-    AWS_SMS_API ServerValidationConfiguration();
+    AWS_SMS_API ServerValidationConfiguration() = default;
     AWS_SMS_API ServerValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API ServerValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,64 +42,58 @@ namespace Model
 
     ///@{
     
-    inline const Server& GetServer() const{ return m_server; }
+    inline const Server& GetServer() const { return m_server; }
     inline bool ServerHasBeenSet() const { return m_serverHasBeenSet; }
-    inline void SetServer(const Server& value) { m_serverHasBeenSet = true; m_server = value; }
-    inline void SetServer(Server&& value) { m_serverHasBeenSet = true; m_server = std::move(value); }
-    inline ServerValidationConfiguration& WithServer(const Server& value) { SetServer(value); return *this;}
-    inline ServerValidationConfiguration& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+    template<typename ServerT = Server>
+    void SetServer(ServerT&& value) { m_serverHasBeenSet = true; m_server = std::forward<ServerT>(value); }
+    template<typename ServerT = Server>
+    ServerValidationConfiguration& WithServer(ServerT&& value) { SetServer(std::forward<ServerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the validation.</p>
      */
-    inline const Aws::String& GetValidationId() const{ return m_validationId; }
+    inline const Aws::String& GetValidationId() const { return m_validationId; }
     inline bool ValidationIdHasBeenSet() const { return m_validationIdHasBeenSet; }
-    inline void SetValidationId(const Aws::String& value) { m_validationIdHasBeenSet = true; m_validationId = value; }
-    inline void SetValidationId(Aws::String&& value) { m_validationIdHasBeenSet = true; m_validationId = std::move(value); }
-    inline void SetValidationId(const char* value) { m_validationIdHasBeenSet = true; m_validationId.assign(value); }
-    inline ServerValidationConfiguration& WithValidationId(const Aws::String& value) { SetValidationId(value); return *this;}
-    inline ServerValidationConfiguration& WithValidationId(Aws::String&& value) { SetValidationId(std::move(value)); return *this;}
-    inline ServerValidationConfiguration& WithValidationId(const char* value) { SetValidationId(value); return *this;}
+    template<typename ValidationIdT = Aws::String>
+    void SetValidationId(ValidationIdT&& value) { m_validationIdHasBeenSet = true; m_validationId = std::forward<ValidationIdT>(value); }
+    template<typename ValidationIdT = Aws::String>
+    ServerValidationConfiguration& WithValidationId(ValidationIdT&& value) { SetValidationId(std::forward<ValidationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ServerValidationConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ServerValidationConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ServerValidationConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServerValidationConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The validation strategy.</p>
      */
-    inline const ServerValidationStrategy& GetServerValidationStrategy() const{ return m_serverValidationStrategy; }
+    inline ServerValidationStrategy GetServerValidationStrategy() const { return m_serverValidationStrategy; }
     inline bool ServerValidationStrategyHasBeenSet() const { return m_serverValidationStrategyHasBeenSet; }
-    inline void SetServerValidationStrategy(const ServerValidationStrategy& value) { m_serverValidationStrategyHasBeenSet = true; m_serverValidationStrategy = value; }
-    inline void SetServerValidationStrategy(ServerValidationStrategy&& value) { m_serverValidationStrategyHasBeenSet = true; m_serverValidationStrategy = std::move(value); }
-    inline ServerValidationConfiguration& WithServerValidationStrategy(const ServerValidationStrategy& value) { SetServerValidationStrategy(value); return *this;}
-    inline ServerValidationConfiguration& WithServerValidationStrategy(ServerValidationStrategy&& value) { SetServerValidationStrategy(std::move(value)); return *this;}
+    inline void SetServerValidationStrategy(ServerValidationStrategy value) { m_serverValidationStrategyHasBeenSet = true; m_serverValidationStrategy = value; }
+    inline ServerValidationConfiguration& WithServerValidationStrategy(ServerValidationStrategy value) { SetServerValidationStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The validation parameters.</p>
      */
-    inline const UserDataValidationParameters& GetUserDataValidationParameters() const{ return m_userDataValidationParameters; }
+    inline const UserDataValidationParameters& GetUserDataValidationParameters() const { return m_userDataValidationParameters; }
     inline bool UserDataValidationParametersHasBeenSet() const { return m_userDataValidationParametersHasBeenSet; }
-    inline void SetUserDataValidationParameters(const UserDataValidationParameters& value) { m_userDataValidationParametersHasBeenSet = true; m_userDataValidationParameters = value; }
-    inline void SetUserDataValidationParameters(UserDataValidationParameters&& value) { m_userDataValidationParametersHasBeenSet = true; m_userDataValidationParameters = std::move(value); }
-    inline ServerValidationConfiguration& WithUserDataValidationParameters(const UserDataValidationParameters& value) { SetUserDataValidationParameters(value); return *this;}
-    inline ServerValidationConfiguration& WithUserDataValidationParameters(UserDataValidationParameters&& value) { SetUserDataValidationParameters(std::move(value)); return *this;}
+    template<typename UserDataValidationParametersT = UserDataValidationParameters>
+    void SetUserDataValidationParameters(UserDataValidationParametersT&& value) { m_userDataValidationParametersHasBeenSet = true; m_userDataValidationParameters = std::forward<UserDataValidationParametersT>(value); }
+    template<typename UserDataValidationParametersT = UserDataValidationParameters>
+    ServerValidationConfiguration& WithUserDataValidationParameters(UserDataValidationParametersT&& value) { SetUserDataValidationParameters(std::forward<UserDataValidationParametersT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +106,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ServerValidationStrategy m_serverValidationStrategy;
+    ServerValidationStrategy m_serverValidationStrategy{ServerValidationStrategy::NOT_SET};
     bool m_serverValidationStrategyHasBeenSet = false;
 
     UserDataValidationParameters m_userDataValidationParameters;

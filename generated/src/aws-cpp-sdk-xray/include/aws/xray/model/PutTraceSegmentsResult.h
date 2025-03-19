@@ -29,7 +29,7 @@ namespace Model
   class PutTraceSegmentsResult
   {
   public:
-    AWS_XRAY_API PutTraceSegmentsResult();
+    AWS_XRAY_API PutTraceSegmentsResult() = default;
     AWS_XRAY_API PutTraceSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API PutTraceSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Segments that failed processing.</p>
      */
-    inline const Aws::Vector<UnprocessedTraceSegment>& GetUnprocessedTraceSegments() const{ return m_unprocessedTraceSegments; }
-    inline void SetUnprocessedTraceSegments(const Aws::Vector<UnprocessedTraceSegment>& value) { m_unprocessedTraceSegments = value; }
-    inline void SetUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { m_unprocessedTraceSegments = std::move(value); }
-    inline PutTraceSegmentsResult& WithUnprocessedTraceSegments(const Aws::Vector<UnprocessedTraceSegment>& value) { SetUnprocessedTraceSegments(value); return *this;}
-    inline PutTraceSegmentsResult& WithUnprocessedTraceSegments(Aws::Vector<UnprocessedTraceSegment>&& value) { SetUnprocessedTraceSegments(std::move(value)); return *this;}
-    inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(const UnprocessedTraceSegment& value) { m_unprocessedTraceSegments.push_back(value); return *this; }
-    inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(UnprocessedTraceSegment&& value) { m_unprocessedTraceSegments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedTraceSegment>& GetUnprocessedTraceSegments() const { return m_unprocessedTraceSegments; }
+    template<typename UnprocessedTraceSegmentsT = Aws::Vector<UnprocessedTraceSegment>>
+    void SetUnprocessedTraceSegments(UnprocessedTraceSegmentsT&& value) { m_unprocessedTraceSegmentsHasBeenSet = true; m_unprocessedTraceSegments = std::forward<UnprocessedTraceSegmentsT>(value); }
+    template<typename UnprocessedTraceSegmentsT = Aws::Vector<UnprocessedTraceSegment>>
+    PutTraceSegmentsResult& WithUnprocessedTraceSegments(UnprocessedTraceSegmentsT&& value) { SetUnprocessedTraceSegments(std::forward<UnprocessedTraceSegmentsT>(value)); return *this;}
+    template<typename UnprocessedTraceSegmentsT = UnprocessedTraceSegment>
+    PutTraceSegmentsResult& AddUnprocessedTraceSegments(UnprocessedTraceSegmentsT&& value) { m_unprocessedTraceSegmentsHasBeenSet = true; m_unprocessedTraceSegments.emplace_back(std::forward<UnprocessedTraceSegmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutTraceSegmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutTraceSegmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutTraceSegmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutTraceSegmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<UnprocessedTraceSegment> m_unprocessedTraceSegments;
+    bool m_unprocessedTraceSegmentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

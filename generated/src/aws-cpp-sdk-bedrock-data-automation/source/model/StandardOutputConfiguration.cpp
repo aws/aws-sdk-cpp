@@ -18,16 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-StandardOutputConfiguration::StandardOutputConfiguration() : 
-    m_documentHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_audioHasBeenSet(false)
-{
-}
-
 StandardOutputConfiguration::StandardOutputConfiguration(JsonView jsonValue)
-  : StandardOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ StandardOutputConfiguration& StandardOutputConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("video"))
   {
     m_video = jsonValue.GetObject("video");
-
     m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audio"))
   {
     m_audio = jsonValue.GetObject("audio");
-
     m_audioHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,19 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-CreateGlobalClusterRequest::CreateGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_sourceDBClusterIdentifierHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false)
-{
-}
-
 Aws::String CreateGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

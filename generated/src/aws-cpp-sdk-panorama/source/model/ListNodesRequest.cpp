@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNodesRequest::ListNodesRequest() : 
-    m_category(NodeCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListNodesRequest::SerializePayload() const
 {
   return {};

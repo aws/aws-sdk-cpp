@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SuggestionValue::SuggestionValue() : 
-    m_textHasBeenSet(false)
-{
-}
-
 SuggestionValue::SuggestionValue(JsonView jsonValue)
-  : SuggestionValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SuggestionValue& SuggestionValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetObject("Text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

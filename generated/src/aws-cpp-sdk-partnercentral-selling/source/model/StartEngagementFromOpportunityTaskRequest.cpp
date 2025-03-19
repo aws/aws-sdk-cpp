@@ -12,16 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartEngagementFromOpportunityTaskRequest::StartEngagementFromOpportunityTaskRequest() : 
-    m_awsSubmissionHasBeenSet(false),
-    m_catalogHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_identifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartEngagementFromOpportunityTaskRequest::SerializePayload() const
 {
   JsonValue payload;

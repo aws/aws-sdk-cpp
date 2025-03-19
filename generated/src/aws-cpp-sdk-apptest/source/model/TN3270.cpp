@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TN3270::TN3270() : 
-    m_scriptHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false)
-{
-}
-
 TN3270::TN3270(JsonView jsonValue)
-  : TN3270()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TN3270& TN3270::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("script"))
   {
     m_script = jsonValue.GetObject("script");
-
     m_scriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportDataSetNames"))
   {
     Aws::Utils::Array<JsonView> exportDataSetNamesJsonList = jsonValue.GetArray("exportDataSetNames");
@@ -48,7 +39,6 @@ TN3270& TN3270::operator =(JsonView jsonValue)
     }
     m_exportDataSetNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCapacityProviderRequest::CreateCapacityProviderRequest() : 
-    m_nameHasBeenSet(false),
-    m_autoScalingGroupProviderHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCapacityProviderRequest::SerializePayload() const
 {
   JsonValue payload;

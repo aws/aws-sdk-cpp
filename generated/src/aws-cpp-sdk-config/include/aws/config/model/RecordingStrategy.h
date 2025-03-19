@@ -32,7 +32,7 @@ namespace Model
   class RecordingStrategy
   {
   public:
-    AWS_CONFIGSERVICE_API RecordingStrategy();
+    AWS_CONFIGSERVICE_API RecordingStrategy() = default;
     AWS_CONFIGSERVICE_API RecordingStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RecordingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -95,16 +95,14 @@ namespace Model
      * <p>Europe (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel
      * (Tel Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul> 
      */
-    inline const RecordingStrategyType& GetUseOnly() const{ return m_useOnly; }
+    inline RecordingStrategyType GetUseOnly() const { return m_useOnly; }
     inline bool UseOnlyHasBeenSet() const { return m_useOnlyHasBeenSet; }
-    inline void SetUseOnly(const RecordingStrategyType& value) { m_useOnlyHasBeenSet = true; m_useOnly = value; }
-    inline void SetUseOnly(RecordingStrategyType&& value) { m_useOnlyHasBeenSet = true; m_useOnly = std::move(value); }
-    inline RecordingStrategy& WithUseOnly(const RecordingStrategyType& value) { SetUseOnly(value); return *this;}
-    inline RecordingStrategy& WithUseOnly(RecordingStrategyType&& value) { SetUseOnly(std::move(value)); return *this;}
+    inline void SetUseOnly(RecordingStrategyType value) { m_useOnlyHasBeenSet = true; m_useOnly = value; }
+    inline RecordingStrategy& WithUseOnly(RecordingStrategyType value) { SetUseOnly(value); return *this;}
     ///@}
   private:
 
-    RecordingStrategyType m_useOnly;
+    RecordingStrategyType m_useOnly{RecordingStrategyType::NOT_SET};
     bool m_useOnlyHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class MemberUser
   {
   public:
-    AWS_QBUSINESS_API MemberUser();
+    AWS_QBUSINESS_API MemberUser() = default;
     AWS_QBUSINESS_API MemberUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API MemberUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The identifier of the user you want to map to a group.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline MemberUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline MemberUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline MemberUser& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    MemberUser& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the user.</p>
      */
-    inline const MembershipType& GetType() const{ return m_type; }
+    inline MembershipType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MembershipType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MembershipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MemberUser& WithType(const MembershipType& value) { SetType(value); return *this;}
-    inline MemberUser& WithType(MembershipType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MembershipType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MemberUser& WithType(MembershipType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    MembershipType m_type;
+    MembershipType m_type{MembershipType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class CelebrityRecognition
   {
   public:
-    AWS_REKOGNITION_API CelebrityRecognition();
+    AWS_REKOGNITION_API CelebrityRecognition() = default;
     AWS_REKOGNITION_API CelebrityRecognition(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API CelebrityRecognition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
      * the individual frame where the celebrity first appears.</p>
      */
-    inline long long GetTimestamp() const{ return m_timestamp; }
+    inline long long GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
     inline CelebrityRecognition& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
@@ -55,16 +55,16 @@ namespace Model
     /**
      * <p>Information about a recognized celebrity.</p>
      */
-    inline const CelebrityDetail& GetCelebrity() const{ return m_celebrity; }
+    inline const CelebrityDetail& GetCelebrity() const { return m_celebrity; }
     inline bool CelebrityHasBeenSet() const { return m_celebrityHasBeenSet; }
-    inline void SetCelebrity(const CelebrityDetail& value) { m_celebrityHasBeenSet = true; m_celebrity = value; }
-    inline void SetCelebrity(CelebrityDetail&& value) { m_celebrityHasBeenSet = true; m_celebrity = std::move(value); }
-    inline CelebrityRecognition& WithCelebrity(const CelebrityDetail& value) { SetCelebrity(value); return *this;}
-    inline CelebrityRecognition& WithCelebrity(CelebrityDetail&& value) { SetCelebrity(std::move(value)); return *this;}
+    template<typename CelebrityT = CelebrityDetail>
+    void SetCelebrity(CelebrityT&& value) { m_celebrityHasBeenSet = true; m_celebrity = std::forward<CelebrityT>(value); }
+    template<typename CelebrityT = CelebrityDetail>
+    CelebrityRecognition& WithCelebrity(CelebrityT&& value) { SetCelebrity(std::forward<CelebrityT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_timestamp;
+    long long m_timestamp{0};
     bool m_timestampHasBeenSet = false;
 
     CelebrityDetail m_celebrity;

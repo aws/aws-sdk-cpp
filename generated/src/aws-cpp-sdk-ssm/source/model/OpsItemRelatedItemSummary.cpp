@@ -18,21 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemRelatedItemSummary::OpsItemRelatedItemSummary() : 
-    m_opsItemIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_associationTypeHasBeenSet(false),
-    m_resourceUriHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 OpsItemRelatedItemSummary::OpsItemRelatedItemSummary(JsonView jsonValue)
-  : OpsItemRelatedItemSummary()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ OpsItemRelatedItemSummary& OpsItemRelatedItemSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("OpsItemId"))
   {
     m_opsItemId = jsonValue.GetString("OpsItemId");
-
     m_opsItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationType"))
   {
     m_associationType = jsonValue.GetString("AssociationType");
-
     m_associationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceUri"))
   {
     m_resourceUri = jsonValue.GetString("ResourceUri");
-
     m_resourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

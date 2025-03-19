@@ -32,7 +32,7 @@ namespace Model
   class StopTimecode
   {
   public:
-    AWS_MEDIALIVE_API StopTimecode();
+    AWS_MEDIALIVE_API StopTimecode() = default;
     AWS_MEDIALIVE_API StopTimecode(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API StopTimecode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * specify if you want the clip to exclude (the default) or include the frame
      * specified by the timecode.
      */
-    inline const LastFrameClippingBehavior& GetLastFrameClippingBehavior() const{ return m_lastFrameClippingBehavior; }
+    inline LastFrameClippingBehavior GetLastFrameClippingBehavior() const { return m_lastFrameClippingBehavior; }
     inline bool LastFrameClippingBehaviorHasBeenSet() const { return m_lastFrameClippingBehaviorHasBeenSet; }
-    inline void SetLastFrameClippingBehavior(const LastFrameClippingBehavior& value) { m_lastFrameClippingBehaviorHasBeenSet = true; m_lastFrameClippingBehavior = value; }
-    inline void SetLastFrameClippingBehavior(LastFrameClippingBehavior&& value) { m_lastFrameClippingBehaviorHasBeenSet = true; m_lastFrameClippingBehavior = std::move(value); }
-    inline StopTimecode& WithLastFrameClippingBehavior(const LastFrameClippingBehavior& value) { SetLastFrameClippingBehavior(value); return *this;}
-    inline StopTimecode& WithLastFrameClippingBehavior(LastFrameClippingBehavior&& value) { SetLastFrameClippingBehavior(std::move(value)); return *this;}
+    inline void SetLastFrameClippingBehavior(LastFrameClippingBehavior value) { m_lastFrameClippingBehaviorHasBeenSet = true; m_lastFrameClippingBehavior = value; }
+    inline StopTimecode& WithLastFrameClippingBehavior(LastFrameClippingBehavior value) { SetLastFrameClippingBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * specified, the clip continues to the end of the file. Enter the timecode as
      * HH:MM:SS:FF or HH:MM:SS;FF.
      */
-    inline const Aws::String& GetTimecode() const{ return m_timecode; }
+    inline const Aws::String& GetTimecode() const { return m_timecode; }
     inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
-    inline void SetTimecode(const Aws::String& value) { m_timecodeHasBeenSet = true; m_timecode = value; }
-    inline void SetTimecode(Aws::String&& value) { m_timecodeHasBeenSet = true; m_timecode = std::move(value); }
-    inline void SetTimecode(const char* value) { m_timecodeHasBeenSet = true; m_timecode.assign(value); }
-    inline StopTimecode& WithTimecode(const Aws::String& value) { SetTimecode(value); return *this;}
-    inline StopTimecode& WithTimecode(Aws::String&& value) { SetTimecode(std::move(value)); return *this;}
-    inline StopTimecode& WithTimecode(const char* value) { SetTimecode(value); return *this;}
+    template<typename TimecodeT = Aws::String>
+    void SetTimecode(TimecodeT&& value) { m_timecodeHasBeenSet = true; m_timecode = std::forward<TimecodeT>(value); }
+    template<typename TimecodeT = Aws::String>
+    StopTimecode& WithTimecode(TimecodeT&& value) { SetTimecode(std::forward<TimecodeT>(value)); return *this;}
     ///@}
   private:
 
-    LastFrameClippingBehavior m_lastFrameClippingBehavior;
+    LastFrameClippingBehavior m_lastFrameClippingBehavior{LastFrameClippingBehavior::NOT_SET};
     bool m_lastFrameClippingBehaviorHasBeenSet = false;
 
     Aws::String m_timecode;

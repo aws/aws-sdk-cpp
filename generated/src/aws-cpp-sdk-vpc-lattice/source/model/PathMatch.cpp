@@ -18,15 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-PathMatch::PathMatch() : 
-    m_caseSensitive(false),
-    m_caseSensitiveHasBeenSet(false),
-    m_matchHasBeenSet(false)
-{
-}
-
 PathMatch::PathMatch(JsonView jsonValue)
-  : PathMatch()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PathMatch& PathMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseSensitive"))
   {
     m_caseSensitive = jsonValue.GetBool("caseSensitive");
-
     m_caseSensitiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-SupportedResourceType::SupportedResourceType() : 
-    m_resourceTypeHasBeenSet(false),
-    m_serviceHasBeenSet(false)
-{
-}
-
 SupportedResourceType::SupportedResourceType(JsonView jsonValue)
-  : SupportedResourceType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SupportedResourceType& SupportedResourceType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetString("Service");
-
     m_serviceHasBeenSet = true;
   }
-
   return *this;
 }
 

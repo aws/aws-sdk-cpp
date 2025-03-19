@@ -18,14 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-BufferOptions::BufferOptions() : 
-    m_persistentBufferEnabled(false),
-    m_persistentBufferEnabledHasBeenSet(false)
-{
-}
-
 BufferOptions::BufferOptions(JsonView jsonValue)
-  : BufferOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BufferOptions& BufferOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PersistentBufferEnabled"))
   {
     m_persistentBufferEnabled = jsonValue.GetBool("PersistentBufferEnabled");
-
     m_persistentBufferEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateFileSystemRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API UpdateFileSystemRequest();
+    AWS_EFS_API UpdateFileSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The ID of the file system that you want to update.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline UpdateFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline UpdateFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline UpdateFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    UpdateFileSystemRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,10 @@ namespace Model
      * you are changing the <code>ThroughputMode</code> to <code>provisioned</code>,
      * you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
      */
-    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+    inline ThroughputMode GetThroughputMode() const { return m_throughputMode; }
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
-    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
-    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
-    inline UpdateFileSystemRequest& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
-    inline UpdateFileSystemRequest& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+    inline void SetThroughputMode(ThroughputMode value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+    inline UpdateFileSystemRequest& WithThroughputMode(ThroughputMode value) { SetThroughputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
-    inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
+    inline double GetProvisionedThroughputInMibps() const { return m_provisionedThroughputInMibps; }
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
     inline UpdateFileSystemRequest& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
@@ -82,10 +78,10 @@ namespace Model
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet = false;
 
-    ThroughputMode m_throughputMode;
+    ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
     bool m_throughputModeHasBeenSet = false;
 
-    double m_provisionedThroughputInMibps;
+    double m_provisionedThroughputInMibps{0.0};
     bool m_provisionedThroughputInMibpsHasBeenSet = false;
   };
 

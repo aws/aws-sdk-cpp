@@ -18,25 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PipelineExecutionStep::PipelineExecutionStep() : 
-    m_stepNameHasBeenSet(false),
-    m_stepDisplayNameHasBeenSet(false),
-    m_stepDescriptionHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_stepStatus(StepStatus::NOT_SET),
-    m_stepStatusHasBeenSet(false),
-    m_cacheHitResultHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_attemptCount(0),
-    m_attemptCountHasBeenSet(false),
-    m_selectiveExecutionResultHasBeenSet(false)
-{
-}
-
 PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue)
-  : PipelineExecutionStep()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ PipelineExecutionStep& PipelineExecutionStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepName"))
   {
     m_stepName = jsonValue.GetString("StepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepDisplayName"))
   {
     m_stepDisplayName = jsonValue.GetString("StepDisplayName");
-
     m_stepDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepDescription"))
   {
     m_stepDescription = jsonValue.GetString("StepDescription");
-
     m_stepDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepStatus"))
   {
     m_stepStatus = StepStatusMapper::GetStepStatusForName(jsonValue.GetString("StepStatus"));
-
     m_stepStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheHitResult"))
   {
     m_cacheHitResult = jsonValue.GetObject("CacheHitResult");
-
     m_cacheHitResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttemptCount"))
   {
     m_attemptCount = jsonValue.GetInteger("AttemptCount");
-
     m_attemptCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectiveExecutionResult"))
   {
     m_selectiveExecutionResult = jsonValue.GetObject("SelectiveExecutionResult");
-
     m_selectiveExecutionResultHasBeenSet = true;
   }
-
   return *this;
 }
 

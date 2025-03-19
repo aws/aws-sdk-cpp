@@ -29,7 +29,7 @@ namespace Model
   class PutRecordBatchResult
   {
   public:
-    AWS_FIREHOSE_API PutRecordBatchResult();
+    AWS_FIREHOSE_API PutRecordBatchResult() = default;
     AWS_FIREHOSE_API PutRecordBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIREHOSE_API PutRecordBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,8 +41,8 @@ namespace Model
      * <code>FailedPutCount</code> to determine whether there are records that you need
      * to resend.</p>
      */
-    inline int GetFailedPutCount() const{ return m_failedPutCount; }
-    inline void SetFailedPutCount(int value) { m_failedPutCount = value; }
+    inline int GetFailedPutCount() const { return m_failedPutCount; }
+    inline void SetFailedPutCount(int value) { m_failedPutCountHasBeenSet = true; m_failedPutCount = value; }
     inline PutRecordBatchResult& WithFailedPutCount(int value) { SetFailedPutCount(value); return *this;}
     ///@}
 
@@ -51,8 +51,8 @@ namespace Model
      * <p>Indicates whether server-side encryption (SSE) was enabled during this
      * operation.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
-    inline void SetEncrypted(bool value) { m_encrypted = value; }
+    inline bool GetEncrypted() const { return m_encrypted; }
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline PutRecordBatchResult& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
     ///@}
 
@@ -61,34 +61,36 @@ namespace Model
      * <p>The results array. For each record, the index of the response element is the
      * same as the index used in the request array.</p>
      */
-    inline const Aws::Vector<PutRecordBatchResponseEntry>& GetRequestResponses() const{ return m_requestResponses; }
-    inline void SetRequestResponses(const Aws::Vector<PutRecordBatchResponseEntry>& value) { m_requestResponses = value; }
-    inline void SetRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { m_requestResponses = std::move(value); }
-    inline PutRecordBatchResult& WithRequestResponses(const Aws::Vector<PutRecordBatchResponseEntry>& value) { SetRequestResponses(value); return *this;}
-    inline PutRecordBatchResult& WithRequestResponses(Aws::Vector<PutRecordBatchResponseEntry>&& value) { SetRequestResponses(std::move(value)); return *this;}
-    inline PutRecordBatchResult& AddRequestResponses(const PutRecordBatchResponseEntry& value) { m_requestResponses.push_back(value); return *this; }
-    inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PutRecordBatchResponseEntry>& GetRequestResponses() const { return m_requestResponses; }
+    template<typename RequestResponsesT = Aws::Vector<PutRecordBatchResponseEntry>>
+    void SetRequestResponses(RequestResponsesT&& value) { m_requestResponsesHasBeenSet = true; m_requestResponses = std::forward<RequestResponsesT>(value); }
+    template<typename RequestResponsesT = Aws::Vector<PutRecordBatchResponseEntry>>
+    PutRecordBatchResult& WithRequestResponses(RequestResponsesT&& value) { SetRequestResponses(std::forward<RequestResponsesT>(value)); return *this;}
+    template<typename RequestResponsesT = PutRecordBatchResponseEntry>
+    PutRecordBatchResult& AddRequestResponses(RequestResponsesT&& value) { m_requestResponsesHasBeenSet = true; m_requestResponses.emplace_back(std::forward<RequestResponsesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRecordBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRecordBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRecordBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRecordBatchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_failedPutCount;
+    int m_failedPutCount{0};
+    bool m_failedPutCountHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
+    bool m_encryptedHasBeenSet = false;
 
     Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
+    bool m_requestResponsesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

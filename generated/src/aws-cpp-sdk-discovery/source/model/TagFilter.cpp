@@ -18,14 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-TagFilter::TagFilter() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 TagFilter::TagFilter(JsonView jsonValue)
-  : TagFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,22 +18,7 @@ namespace Backup
 namespace Model
 {
 
-IndexedRecoveryPoint::IndexedRecoveryPoint() : 
-    m_recoveryPointArnHasBeenSet(false),
-    m_sourceResourceArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_backupCreationDateHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_indexCreationDateHasBeenSet(false),
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false),
-    m_indexStatusMessageHasBeenSet(false),
-    m_backupVaultArnHasBeenSet(false)
-{
-}
-
 IndexedRecoveryPoint::IndexedRecoveryPoint(JsonView jsonValue)
-  : IndexedRecoveryPoint()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ IndexedRecoveryPoint& IndexedRecoveryPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
-
     m_recoveryPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceArn"))
   {
     m_sourceResourceArn = jsonValue.GetString("SourceResourceArn");
-
     m_sourceResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupCreationDate"))
   {
     m_backupCreationDate = jsonValue.GetDouble("BackupCreationDate");
-
     m_backupCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexCreationDate"))
   {
     m_indexCreationDate = jsonValue.GetDouble("IndexCreationDate");
-
     m_indexCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
-
     m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatusMessage"))
   {
     m_indexStatusMessage = jsonValue.GetString("IndexStatusMessage");
-
     m_indexStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
     m_backupVaultArnHasBeenSet = true;
   }
-
   return *this;
 }
 

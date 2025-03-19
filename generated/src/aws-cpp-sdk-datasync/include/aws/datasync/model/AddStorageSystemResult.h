@@ -27,7 +27,7 @@ namespace Model
   class AddStorageSystemResult
   {
   public:
-    AWS_DATASYNC_API AddStorageSystemResult();
+    AWS_DATASYNC_API AddStorageSystemResult() = default;
     AWS_DATASYNC_API AddStorageSystemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API AddStorageSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The ARN of the on-premises storage system that you can use with DataSync
      * Discovery.</p>
      */
-    inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
-    inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArn = value; }
-    inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArn = std::move(value); }
-    inline void SetStorageSystemArn(const char* value) { m_storageSystemArn.assign(value); }
-    inline AddStorageSystemResult& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-    inline AddStorageSystemResult& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-    inline AddStorageSystemResult& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    inline const Aws::String& GetStorageSystemArn() const { return m_storageSystemArn; }
+    template<typename StorageSystemArnT = Aws::String>
+    void SetStorageSystemArn(StorageSystemArnT&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::forward<StorageSystemArnT>(value); }
+    template<typename StorageSystemArnT = Aws::String>
+    AddStorageSystemResult& WithStorageSystemArn(StorageSystemArnT&& value) { SetStorageSystemArn(std::forward<StorageSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddStorageSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddStorageSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddStorageSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddStorageSystemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_storageSystemArn;
+    bool m_storageSystemArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

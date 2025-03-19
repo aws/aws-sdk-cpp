@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StartExportTaskRequest::StartExportTaskRequest() : 
-    m_exportTaskIdentifierHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false),
-    m_exportOnlyHasBeenSet(false)
-{
-}
-
 Aws::String StartExportTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

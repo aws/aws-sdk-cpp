@@ -12,13 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataSourceRequest::GetDataSourceRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDataSourceRequest::SerializePayload() const
 {
   return {};

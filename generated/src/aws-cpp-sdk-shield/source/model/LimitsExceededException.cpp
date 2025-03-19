@@ -18,16 +18,7 @@ namespace Shield
 namespace Model
 {
 
-LimitsExceededException::LimitsExceededException() : 
-    m_messageHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 LimitsExceededException::LimitsExceededException(JsonView jsonValue)
-  : LimitsExceededException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LimitsExceededException& LimitsExceededException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetInt64("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   return *this;
 }
 

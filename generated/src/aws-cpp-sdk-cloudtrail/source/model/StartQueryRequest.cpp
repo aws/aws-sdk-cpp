@@ -12,15 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartQueryRequest::StartQueryRequest() : 
-    m_queryStatementHasBeenSet(false),
-    m_deliveryS3UriHasBeenSet(false),
-    m_queryAliasHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_eventDataStoreOwnerAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String StartQueryRequest::SerializePayload() const
 {
   JsonValue payload;

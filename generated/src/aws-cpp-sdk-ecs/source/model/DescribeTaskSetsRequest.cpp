@@ -12,14 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTaskSetsRequest::DescribeTaskSetsRequest() : 
-    m_clusterHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_taskSetsHasBeenSet(false),
-    m_includeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTaskSetsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_netAppONTAPSVMsHasBeenSet(false),
-    m_netAppONTAPVolumesHasBeenSet(false),
-    m_netAppONTAPClustersHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     }
     m_netAppONTAPSVMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetAppONTAPVolumes"))
   {
     Aws::Utils::Array<JsonView> netAppONTAPVolumesJsonList = jsonValue.GetArray("NetAppONTAPVolumes");
@@ -52,7 +43,6 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     }
     m_netAppONTAPVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetAppONTAPClusters"))
   {
     Aws::Utils::Array<JsonView> netAppONTAPClustersJsonList = jsonValue.GetArray("NetAppONTAPClusters");
@@ -62,7 +52,6 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     }
     m_netAppONTAPClustersHasBeenSet = true;
   }
-
   return *this;
 }
 

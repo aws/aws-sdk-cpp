@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVerifiedAccessEndpointPortRange::CreateVerifiedAccessEndpointPortRange() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
-{
-}
-
 CreateVerifiedAccessEndpointPortRange::CreateVerifiedAccessEndpointPortRange(const XmlNode& xmlNode)
-  : CreateVerifiedAccessEndpointPortRange()
 {
   *this = xmlNode;
 }

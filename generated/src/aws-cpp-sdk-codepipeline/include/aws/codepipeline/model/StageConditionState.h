@@ -33,7 +33,7 @@ namespace Model
   class StageConditionState
   {
   public:
-    AWS_CODEPIPELINE_API StageConditionState();
+    AWS_CODEPIPELINE_API StageConditionState() = default;
     AWS_CODEPIPELINE_API StageConditionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API StageConditionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>Represents information about the latest run of a condition for a stage.</p>
      */
-    inline const StageConditionsExecution& GetLatestExecution() const{ return m_latestExecution; }
+    inline const StageConditionsExecution& GetLatestExecution() const { return m_latestExecution; }
     inline bool LatestExecutionHasBeenSet() const { return m_latestExecutionHasBeenSet; }
-    inline void SetLatestExecution(const StageConditionsExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
-    inline void SetLatestExecution(StageConditionsExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::move(value); }
-    inline StageConditionState& WithLatestExecution(const StageConditionsExecution& value) { SetLatestExecution(value); return *this;}
-    inline StageConditionState& WithLatestExecution(StageConditionsExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
+    template<typename LatestExecutionT = StageConditionsExecution>
+    void SetLatestExecution(LatestExecutionT&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::forward<LatestExecutionT>(value); }
+    template<typename LatestExecutionT = StageConditionsExecution>
+    StageConditionState& WithLatestExecution(LatestExecutionT&& value) { SetLatestExecution(std::forward<LatestExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The states of the conditions for a run of a condition for a stage.</p>
      */
-    inline const Aws::Vector<ConditionState>& GetConditionStates() const{ return m_conditionStates; }
+    inline const Aws::Vector<ConditionState>& GetConditionStates() const { return m_conditionStates; }
     inline bool ConditionStatesHasBeenSet() const { return m_conditionStatesHasBeenSet; }
-    inline void SetConditionStates(const Aws::Vector<ConditionState>& value) { m_conditionStatesHasBeenSet = true; m_conditionStates = value; }
-    inline void SetConditionStates(Aws::Vector<ConditionState>&& value) { m_conditionStatesHasBeenSet = true; m_conditionStates = std::move(value); }
-    inline StageConditionState& WithConditionStates(const Aws::Vector<ConditionState>& value) { SetConditionStates(value); return *this;}
-    inline StageConditionState& WithConditionStates(Aws::Vector<ConditionState>&& value) { SetConditionStates(std::move(value)); return *this;}
-    inline StageConditionState& AddConditionStates(const ConditionState& value) { m_conditionStatesHasBeenSet = true; m_conditionStates.push_back(value); return *this; }
-    inline StageConditionState& AddConditionStates(ConditionState&& value) { m_conditionStatesHasBeenSet = true; m_conditionStates.push_back(std::move(value)); return *this; }
+    template<typename ConditionStatesT = Aws::Vector<ConditionState>>
+    void SetConditionStates(ConditionStatesT&& value) { m_conditionStatesHasBeenSet = true; m_conditionStates = std::forward<ConditionStatesT>(value); }
+    template<typename ConditionStatesT = Aws::Vector<ConditionState>>
+    StageConditionState& WithConditionStates(ConditionStatesT&& value) { SetConditionStates(std::forward<ConditionStatesT>(value)); return *this;}
+    template<typename ConditionStatesT = ConditionState>
+    StageConditionState& AddConditionStates(ConditionStatesT&& value) { m_conditionStatesHasBeenSet = true; m_conditionStates.emplace_back(std::forward<ConditionStatesT>(value)); return *this; }
     ///@}
   private:
 

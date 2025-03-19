@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProvisioningProfileRequest::GetProvisioningProfileRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetProvisioningProfileRequest::SerializePayload() const
 {
   return {};

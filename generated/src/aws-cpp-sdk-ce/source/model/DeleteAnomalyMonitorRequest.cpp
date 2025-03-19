@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAnomalyMonitorRequest::DeleteAnomalyMonitorRequest() : 
-    m_monitorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAnomalyMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

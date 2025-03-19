@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetChannelRequest::BatchGetChannelRequest() : 
-    m_arnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetChannelRequest::SerializePayload() const
 {
   JsonValue payload;

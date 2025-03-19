@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDashboardSnapshotJobResultRequest::DescribeDashboardSnapshotJobResultRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_snapshotJobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDashboardSnapshotJobResultRequest::SerializePayload() const
 {
   return {};

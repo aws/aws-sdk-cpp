@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetKeyGroupConfig2020_05_31Request::GetKeyGroupConfig2020_05_31Request() : 
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String GetKeyGroupConfig2020_05_31Request::SerializePayload() const
 {

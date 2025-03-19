@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PlacementGroupInfo::PlacementGroupInfo() : 
-    m_supportedStrategiesHasBeenSet(false)
-{
-}
-
 PlacementGroupInfo::PlacementGroupInfo(const XmlNode& xmlNode)
-  : PlacementGroupInfo()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ PlacementGroupInfo& PlacementGroupInfo::operator =(const XmlNode& xmlNode)
     if(!supportedStrategiesNode.IsNull())
     {
       XmlNode supportedStrategiesMember = supportedStrategiesNode.FirstChild("item");
+      m_supportedStrategiesHasBeenSet = !supportedStrategiesMember.IsNull();
       while(!supportedStrategiesMember.IsNull())
       {
         m_supportedStrategies.push_back(PlacementGroupStrategyMapper::GetPlacementGroupStrategyForName(StringUtils::Trim(supportedStrategiesMember.GetText().c_str())));

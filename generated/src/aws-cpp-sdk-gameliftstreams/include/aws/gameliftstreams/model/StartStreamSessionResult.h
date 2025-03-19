@@ -34,7 +34,7 @@ namespace Model
   class StartStreamSessionResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API StartStreamSessionResult();
+    AWS_GAMELIFTSTREAMS_API StartStreamSessionResult() = default;
     AWS_GAMELIFTSTREAMS_API StartStreamSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API StartStreamSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -55,18 +55,15 @@ namespace Model
      * variables; while <code>AdditionalLaunchArgs</code> passes data using
      * command-line arguments.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEnvironmentVariables() const{ return m_additionalEnvironmentVariables; }
-    inline void SetAdditionalEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalEnvironmentVariables = value; }
-    inline void SetAdditionalEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalEnvironmentVariables = std::move(value); }
-    inline StartStreamSessionResult& WithAdditionalEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalEnvironmentVariables(value); return *this;}
-    inline StartStreamSessionResult& WithAdditionalEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalEnvironmentVariables(std::move(value)); return *this;}
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_additionalEnvironmentVariables.emplace(key, value); return *this; }
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_additionalEnvironmentVariables.emplace(std::move(key), value); return *this; }
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_additionalEnvironmentVariables.emplace(key, std::move(value)); return *this; }
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_additionalEnvironmentVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(const char* key, Aws::String&& value) { m_additionalEnvironmentVariables.emplace(key, std::move(value)); return *this; }
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(Aws::String&& key, const char* value) { m_additionalEnvironmentVariables.emplace(std::move(key), value); return *this; }
-    inline StartStreamSessionResult& AddAdditionalEnvironmentVariables(const char* key, const char* value) { m_additionalEnvironmentVariables.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEnvironmentVariables() const { return m_additionalEnvironmentVariables; }
+    template<typename AdditionalEnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalEnvironmentVariables(AdditionalEnvironmentVariablesT&& value) { m_additionalEnvironmentVariablesHasBeenSet = true; m_additionalEnvironmentVariables = std::forward<AdditionalEnvironmentVariablesT>(value); }
+    template<typename AdditionalEnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    StartStreamSessionResult& WithAdditionalEnvironmentVariables(AdditionalEnvironmentVariablesT&& value) { SetAdditionalEnvironmentVariables(std::forward<AdditionalEnvironmentVariablesT>(value)); return *this;}
+    template<typename AdditionalEnvironmentVariablesKeyT = Aws::String, typename AdditionalEnvironmentVariablesValueT = Aws::String>
+    StartStreamSessionResult& AddAdditionalEnvironmentVariables(AdditionalEnvironmentVariablesKeyT&& key, AdditionalEnvironmentVariablesValueT&& value) {
+      m_additionalEnvironmentVariablesHasBeenSet = true; m_additionalEnvironmentVariables.emplace(std::forward<AdditionalEnvironmentVariablesKeyT>(key), std::forward<AdditionalEnvironmentVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -81,14 +78,13 @@ namespace Model
      * variables; while <code>AdditionalLaunchArgs</code> passes data using
      * command-line arguments.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalLaunchArgs() const{ return m_additionalLaunchArgs; }
-    inline void SetAdditionalLaunchArgs(const Aws::Vector<Aws::String>& value) { m_additionalLaunchArgs = value; }
-    inline void SetAdditionalLaunchArgs(Aws::Vector<Aws::String>&& value) { m_additionalLaunchArgs = std::move(value); }
-    inline StartStreamSessionResult& WithAdditionalLaunchArgs(const Aws::Vector<Aws::String>& value) { SetAdditionalLaunchArgs(value); return *this;}
-    inline StartStreamSessionResult& WithAdditionalLaunchArgs(Aws::Vector<Aws::String>&& value) { SetAdditionalLaunchArgs(std::move(value)); return *this;}
-    inline StartStreamSessionResult& AddAdditionalLaunchArgs(const Aws::String& value) { m_additionalLaunchArgs.push_back(value); return *this; }
-    inline StartStreamSessionResult& AddAdditionalLaunchArgs(Aws::String&& value) { m_additionalLaunchArgs.push_back(std::move(value)); return *this; }
-    inline StartStreamSessionResult& AddAdditionalLaunchArgs(const char* value) { m_additionalLaunchArgs.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalLaunchArgs() const { return m_additionalLaunchArgs; }
+    template<typename AdditionalLaunchArgsT = Aws::Vector<Aws::String>>
+    void SetAdditionalLaunchArgs(AdditionalLaunchArgsT&& value) { m_additionalLaunchArgsHasBeenSet = true; m_additionalLaunchArgs = std::forward<AdditionalLaunchArgsT>(value); }
+    template<typename AdditionalLaunchArgsT = Aws::Vector<Aws::String>>
+    StartStreamSessionResult& WithAdditionalLaunchArgs(AdditionalLaunchArgsT&& value) { SetAdditionalLaunchArgs(std::forward<AdditionalLaunchArgsT>(value)); return *this;}
+    template<typename AdditionalLaunchArgsT = Aws::String>
+    StartStreamSessionResult& AddAdditionalLaunchArgs(AdditionalLaunchArgsT&& value) { m_additionalLaunchArgsHasBeenSet = true; m_additionalLaunchArgs.emplace_back(std::forward<AdditionalLaunchArgsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,13 +96,11 @@ namespace Model
      * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.
      * </p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
-    inline StartStreamSessionResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline StartStreamSessionResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    StartStreamSessionResult& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,13 +110,11 @@ namespace Model
      * Amazon Web Services Regions. Format is <code>arn:aws:gameliftstreams:[AWS
      * Region]:[AWS account]:streamsession/[resource ID]</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline StartStreamSessionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline StartStreamSessionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    StartStreamSessionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,8 +123,8 @@ namespace Model
      * the stream session open. At this point, Amazon GameLift Streams ends the stream
      * session regardless of any existing client connections.</p>
      */
-    inline int GetConnectionTimeoutSeconds() const{ return m_connectionTimeoutSeconds; }
-    inline void SetConnectionTimeoutSeconds(int value) { m_connectionTimeoutSeconds = value; }
+    inline int GetConnectionTimeoutSeconds() const { return m_connectionTimeoutSeconds; }
+    inline void SetConnectionTimeoutSeconds(int value) { m_connectionTimeoutSecondsHasBeenSet = true; m_connectionTimeoutSeconds = value; }
     inline StartStreamSessionResult& WithConnectionTimeoutSeconds(int value) { SetConnectionTimeoutSeconds(value); return *this;}
     ///@}
 
@@ -142,11 +134,11 @@ namespace Model
      * expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline StartStreamSessionResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline StartStreamSessionResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    StartStreamSessionResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,24 +146,22 @@ namespace Model
      * <p>A human-readable label for the stream session. You can update this value at
      * any time.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline StartStreamSessionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartStreamSessionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartStreamSessionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides details about the stream session's exported files. </p>
      */
-    inline const ExportFilesMetadata& GetExportFilesMetadata() const{ return m_exportFilesMetadata; }
-    inline void SetExportFilesMetadata(const ExportFilesMetadata& value) { m_exportFilesMetadata = value; }
-    inline void SetExportFilesMetadata(ExportFilesMetadata&& value) { m_exportFilesMetadata = std::move(value); }
-    inline StartStreamSessionResult& WithExportFilesMetadata(const ExportFilesMetadata& value) { SetExportFilesMetadata(value); return *this;}
-    inline StartStreamSessionResult& WithExportFilesMetadata(ExportFilesMetadata&& value) { SetExportFilesMetadata(std::move(value)); return *this;}
+    inline const ExportFilesMetadata& GetExportFilesMetadata() const { return m_exportFilesMetadata; }
+    template<typename ExportFilesMetadataT = ExportFilesMetadata>
+    void SetExportFilesMetadata(ExportFilesMetadataT&& value) { m_exportFilesMetadataHasBeenSet = true; m_exportFilesMetadata = std::forward<ExportFilesMetadataT>(value); }
+    template<typename ExportFilesMetadataT = ExportFilesMetadata>
+    StartStreamSessionResult& WithExportFilesMetadata(ExportFilesMetadataT&& value) { SetExportFilesMetadata(std::forward<ExportFilesMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,11 +170,11 @@ namespace Model
      * are expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline StartStreamSessionResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline StartStreamSessionResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    StartStreamSessionResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,13 +184,11 @@ namespace Model
      * complete list of locations that Amazon GameLift Streams supports, see the
      * Regions and quotas section in the Amazon GameLift Streams Developer Guide . </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline StartStreamSessionResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline StartStreamSessionResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    StartStreamSessionResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,24 +198,20 @@ namespace Model
      * stream session. The Amazon GameLift Streams application resource defines which
      * log files to upload.</p>
      */
-    inline const Aws::String& GetLogFileLocationUri() const{ return m_logFileLocationUri; }
-    inline void SetLogFileLocationUri(const Aws::String& value) { m_logFileLocationUri = value; }
-    inline void SetLogFileLocationUri(Aws::String&& value) { m_logFileLocationUri = std::move(value); }
-    inline void SetLogFileLocationUri(const char* value) { m_logFileLocationUri.assign(value); }
-    inline StartStreamSessionResult& WithLogFileLocationUri(const Aws::String& value) { SetLogFileLocationUri(value); return *this;}
-    inline StartStreamSessionResult& WithLogFileLocationUri(Aws::String&& value) { SetLogFileLocationUri(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithLogFileLocationUri(const char* value) { SetLogFileLocationUri(value); return *this;}
+    inline const Aws::String& GetLogFileLocationUri() const { return m_logFileLocationUri; }
+    template<typename LogFileLocationUriT = Aws::String>
+    void SetLogFileLocationUri(LogFileLocationUriT&& value) { m_logFileLocationUriHasBeenSet = true; m_logFileLocationUri = std::forward<LogFileLocationUriT>(value); }
+    template<typename LogFileLocationUriT = Aws::String>
+    StartStreamSessionResult& WithLogFileLocationUri(LogFileLocationUriT&& value) { SetLogFileLocationUri(std::forward<LogFileLocationUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data transfer protocol in use with the stream session.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
-    inline void SetProtocol(const Protocol& value) { m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocol = std::move(value); }
-    inline StartStreamSessionResult& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline StartStreamSessionResult& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline Protocol GetProtocol() const { return m_protocol; }
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline StartStreamSessionResult& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -235,8 +219,8 @@ namespace Model
      * <p>The length of time that Amazon GameLift Streams keeps the game session
      * open.</p>
      */
-    inline int GetSessionLengthSeconds() const{ return m_sessionLengthSeconds; }
-    inline void SetSessionLengthSeconds(int value) { m_sessionLengthSeconds = value; }
+    inline int GetSessionLengthSeconds() const { return m_sessionLengthSeconds; }
+    inline void SetSessionLengthSeconds(int value) { m_sessionLengthSecondsHasBeenSet = true; m_sessionLengthSeconds = value; }
     inline StartStreamSessionResult& WithSessionLengthSeconds(int value) { SetSessionLengthSeconds(value); return *this;}
     ///@}
 
@@ -245,13 +229,11 @@ namespace Model
      * <p>The WebRTC ICE offer string that a client generates to initiate a connection
      * to the stream session.</p>
      */
-    inline const Aws::String& GetSignalRequest() const{ return m_signalRequest; }
-    inline void SetSignalRequest(const Aws::String& value) { m_signalRequest = value; }
-    inline void SetSignalRequest(Aws::String&& value) { m_signalRequest = std::move(value); }
-    inline void SetSignalRequest(const char* value) { m_signalRequest.assign(value); }
-    inline StartStreamSessionResult& WithSignalRequest(const Aws::String& value) { SetSignalRequest(value); return *this;}
-    inline StartStreamSessionResult& WithSignalRequest(Aws::String&& value) { SetSignalRequest(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithSignalRequest(const char* value) { SetSignalRequest(value); return *this;}
+    inline const Aws::String& GetSignalRequest() const { return m_signalRequest; }
+    template<typename SignalRequestT = Aws::String>
+    void SetSignalRequest(SignalRequestT&& value) { m_signalRequestHasBeenSet = true; m_signalRequest = std::forward<SignalRequestT>(value); }
+    template<typename SignalRequestT = Aws::String>
+    StartStreamSessionResult& WithSignalRequest(SignalRequestT&& value) { SetSignalRequest(std::forward<SignalRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,13 +241,11 @@ namespace Model
      * <p>The WebRTC answer string that the stream server generates in response to the
      * <code>SignalRequest</code>.</p>
      */
-    inline const Aws::String& GetSignalResponse() const{ return m_signalResponse; }
-    inline void SetSignalResponse(const Aws::String& value) { m_signalResponse = value; }
-    inline void SetSignalResponse(Aws::String&& value) { m_signalResponse = std::move(value); }
-    inline void SetSignalResponse(const char* value) { m_signalResponse.assign(value); }
-    inline StartStreamSessionResult& WithSignalResponse(const Aws::String& value) { SetSignalResponse(value); return *this;}
-    inline StartStreamSessionResult& WithSignalResponse(Aws::String&& value) { SetSignalResponse(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithSignalResponse(const char* value) { SetSignalResponse(value); return *this;}
+    inline const Aws::String& GetSignalResponse() const { return m_signalResponse; }
+    template<typename SignalResponseT = Aws::String>
+    void SetSignalResponse(SignalResponseT&& value) { m_signalResponseHasBeenSet = true; m_signalResponse = std::forward<SignalResponseT>(value); }
+    template<typename SignalResponseT = Aws::String>
+    StartStreamSessionResult& WithSignalResponse(SignalResponseT&& value) { SetSignalResponse(std::forward<SignalResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,11 +253,9 @@ namespace Model
      * <p>The current status of the stream session. A stream session can host clients
      * when in <code>ACTIVE</code> status.</p>
      */
-    inline const StreamSessionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const StreamSessionStatus& value) { m_status = value; }
-    inline void SetStatus(StreamSessionStatus&& value) { m_status = std::move(value); }
-    inline StartStreamSessionResult& WithStatus(const StreamSessionStatus& value) { SetStatus(value); return *this;}
-    inline StartStreamSessionResult& WithStatus(StreamSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline StreamSessionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(StreamSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StartStreamSessionResult& WithStatus(StreamSessionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -285,11 +263,9 @@ namespace Model
      * <p>A short description of the reason the stream session is in <code>ERROR</code>
      * status.</p>
      */
-    inline const StreamSessionStatusReason& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const StreamSessionStatusReason& value) { m_statusReason = value; }
-    inline void SetStatusReason(StreamSessionStatusReason&& value) { m_statusReason = std::move(value); }
-    inline StartStreamSessionResult& WithStatusReason(const StreamSessionStatusReason& value) { SetStatusReason(value); return *this;}
-    inline StartStreamSessionResult& WithStatusReason(StreamSessionStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline StreamSessionStatusReason GetStatusReason() const { return m_statusReason; }
+    inline void SetStatusReason(StreamSessionStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline StartStreamSessionResult& WithStatusReason(StreamSessionStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
 
     ///@{
@@ -297,26 +273,22 @@ namespace Model
      * <p>The unique identifier for the Amazon GameLift Streams stream group that is
      * hosting the stream session.</p>
      */
-    inline const Aws::String& GetStreamGroupId() const{ return m_streamGroupId; }
-    inline void SetStreamGroupId(const Aws::String& value) { m_streamGroupId = value; }
-    inline void SetStreamGroupId(Aws::String&& value) { m_streamGroupId = std::move(value); }
-    inline void SetStreamGroupId(const char* value) { m_streamGroupId.assign(value); }
-    inline StartStreamSessionResult& WithStreamGroupId(const Aws::String& value) { SetStreamGroupId(value); return *this;}
-    inline StartStreamSessionResult& WithStreamGroupId(Aws::String&& value) { SetStreamGroupId(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithStreamGroupId(const char* value) { SetStreamGroupId(value); return *this;}
+    inline const Aws::String& GetStreamGroupId() const { return m_streamGroupId; }
+    template<typename StreamGroupIdT = Aws::String>
+    void SetStreamGroupId(StreamGroupIdT&& value) { m_streamGroupIdHasBeenSet = true; m_streamGroupId = std::forward<StreamGroupIdT>(value); }
+    template<typename StreamGroupIdT = Aws::String>
+    StartStreamSessionResult& WithStreamGroupId(StreamGroupIdT&& value) { SetStreamGroupId(std::forward<StreamGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An opaque, unique identifier for an end-user, defined by the developer. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline void SetUserId(const Aws::String& value) { m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userId.assign(value); }
-    inline StartStreamSessionResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline StartStreamSessionResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline const Aws::String& GetUserId() const { return m_userId; }
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    StartStreamSessionResult& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -324,68 +296,85 @@ namespace Model
      * <p>The URL of an S3 bucket that stores Amazon GameLift Streams WebSDK files. The
      * URL is used to establish connection with the client.</p>
      */
-    inline const Aws::String& GetWebSdkProtocolUrl() const{ return m_webSdkProtocolUrl; }
-    inline void SetWebSdkProtocolUrl(const Aws::String& value) { m_webSdkProtocolUrl = value; }
-    inline void SetWebSdkProtocolUrl(Aws::String&& value) { m_webSdkProtocolUrl = std::move(value); }
-    inline void SetWebSdkProtocolUrl(const char* value) { m_webSdkProtocolUrl.assign(value); }
-    inline StartStreamSessionResult& WithWebSdkProtocolUrl(const Aws::String& value) { SetWebSdkProtocolUrl(value); return *this;}
-    inline StartStreamSessionResult& WithWebSdkProtocolUrl(Aws::String&& value) { SetWebSdkProtocolUrl(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithWebSdkProtocolUrl(const char* value) { SetWebSdkProtocolUrl(value); return *this;}
+    inline const Aws::String& GetWebSdkProtocolUrl() const { return m_webSdkProtocolUrl; }
+    template<typename WebSdkProtocolUrlT = Aws::String>
+    void SetWebSdkProtocolUrl(WebSdkProtocolUrlT&& value) { m_webSdkProtocolUrlHasBeenSet = true; m_webSdkProtocolUrl = std::forward<WebSdkProtocolUrlT>(value); }
+    template<typename WebSdkProtocolUrlT = Aws::String>
+    StartStreamSessionResult& WithWebSdkProtocolUrl(WebSdkProtocolUrlT&& value) { SetWebSdkProtocolUrl(std::forward<WebSdkProtocolUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartStreamSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartStreamSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartStreamSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartStreamSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_additionalEnvironmentVariables;
+    bool m_additionalEnvironmentVariablesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalLaunchArgs;
+    bool m_additionalLaunchArgsHasBeenSet = false;
 
     Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    int m_connectionTimeoutSeconds;
+    int m_connectionTimeoutSeconds{0};
+    bool m_connectionTimeoutSecondsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     ExportFilesMetadata m_exportFilesMetadata;
+    bool m_exportFilesMetadataHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_logFileLocationUri;
+    bool m_logFileLocationUriHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
+    bool m_protocolHasBeenSet = false;
 
-    int m_sessionLengthSeconds;
+    int m_sessionLengthSeconds{0};
+    bool m_sessionLengthSecondsHasBeenSet = false;
 
     Aws::String m_signalRequest;
+    bool m_signalRequestHasBeenSet = false;
 
     Aws::String m_signalResponse;
+    bool m_signalResponseHasBeenSet = false;
 
-    StreamSessionStatus m_status;
+    StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    StreamSessionStatusReason m_statusReason;
+    StreamSessionStatusReason m_statusReason{StreamSessionStatusReason::NOT_SET};
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_streamGroupId;
+    bool m_streamGroupIdHasBeenSet = false;
 
     Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_webSdkProtocolUrl;
+    bool m_webSdkProtocolUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,12 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePrimaryRegionRequest::UpdatePrimaryRegionRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_primaryRegionHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePrimaryRegionRequest::SerializePayload() const
 {
   JsonValue payload;

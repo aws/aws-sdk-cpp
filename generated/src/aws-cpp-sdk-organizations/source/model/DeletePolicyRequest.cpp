@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePolicyRequest::DeletePolicyRequest() : 
-    m_policyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

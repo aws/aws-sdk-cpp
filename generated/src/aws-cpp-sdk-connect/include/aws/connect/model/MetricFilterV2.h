@@ -36,7 +36,7 @@ namespace Model
   class MetricFilterV2
   {
   public:
-    AWS_CONNECT_API MetricFilterV2();
+    AWS_CONNECT_API MetricFilterV2() = default;
     AWS_CONNECT_API MetricFilterV2(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API MetricFilterV2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * </li> <li> <p>FLOWS_OUTCOME_TYPE</p> </li> <li> <p>FLOWS_RESOURCE_TYPE</p> </li>
      * <li> <p>INITIATION_METHOD</p> </li> </ul>
      */
-    inline const Aws::String& GetMetricFilterKey() const{ return m_metricFilterKey; }
+    inline const Aws::String& GetMetricFilterKey() const { return m_metricFilterKey; }
     inline bool MetricFilterKeyHasBeenSet() const { return m_metricFilterKeyHasBeenSet; }
-    inline void SetMetricFilterKey(const Aws::String& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = value; }
-    inline void SetMetricFilterKey(Aws::String&& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = std::move(value); }
-    inline void SetMetricFilterKey(const char* value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey.assign(value); }
-    inline MetricFilterV2& WithMetricFilterKey(const Aws::String& value) { SetMetricFilterKey(value); return *this;}
-    inline MetricFilterV2& WithMetricFilterKey(Aws::String&& value) { SetMetricFilterKey(std::move(value)); return *this;}
-    inline MetricFilterV2& WithMetricFilterKey(const char* value) { SetMetricFilterKey(value); return *this;}
+    template<typename MetricFilterKeyT = Aws::String>
+    void SetMetricFilterKey(MetricFilterKeyT&& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = std::forward<MetricFilterKeyT>(value); }
+    template<typename MetricFilterKeyT = Aws::String>
+    MetricFilterV2& WithMetricFilterKey(MetricFilterKeyT&& value) { SetMetricFilterKey(std::forward<MetricFilterKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,15 +82,14 @@ namespace Model
      * intents completed</a> metric in the <i>Amazon Connect Administrator
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricFilterValues() const{ return m_metricFilterValues; }
+    inline const Aws::Vector<Aws::String>& GetMetricFilterValues() const { return m_metricFilterValues; }
     inline bool MetricFilterValuesHasBeenSet() const { return m_metricFilterValuesHasBeenSet; }
-    inline void SetMetricFilterValues(const Aws::Vector<Aws::String>& value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues = value; }
-    inline void SetMetricFilterValues(Aws::Vector<Aws::String>&& value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues = std::move(value); }
-    inline MetricFilterV2& WithMetricFilterValues(const Aws::Vector<Aws::String>& value) { SetMetricFilterValues(value); return *this;}
-    inline MetricFilterV2& WithMetricFilterValues(Aws::Vector<Aws::String>&& value) { SetMetricFilterValues(std::move(value)); return *this;}
-    inline MetricFilterV2& AddMetricFilterValues(const Aws::String& value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues.push_back(value); return *this; }
-    inline MetricFilterV2& AddMetricFilterValues(Aws::String&& value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues.push_back(std::move(value)); return *this; }
-    inline MetricFilterV2& AddMetricFilterValues(const char* value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues.push_back(value); return *this; }
+    template<typename MetricFilterValuesT = Aws::Vector<Aws::String>>
+    void SetMetricFilterValues(MetricFilterValuesT&& value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues = std::forward<MetricFilterValuesT>(value); }
+    template<typename MetricFilterValuesT = Aws::Vector<Aws::String>>
+    MetricFilterV2& WithMetricFilterValues(MetricFilterValuesT&& value) { SetMetricFilterValues(std::forward<MetricFilterValuesT>(value)); return *this;}
+    template<typename MetricFilterValuesT = Aws::String>
+    MetricFilterV2& AddMetricFilterValues(MetricFilterValuesT&& value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues.emplace_back(std::forward<MetricFilterValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,7 +98,7 @@ namespace Model
      * out the results matched by the metric-level filters condition. By default,
      * <code>Negate</code> is set to <code>false</code>. </p>
      */
-    inline bool GetNegate() const{ return m_negate; }
+    inline bool GetNegate() const { return m_negate; }
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
     inline MetricFilterV2& WithNegate(bool value) { SetNegate(value); return *this;}
@@ -114,7 +111,7 @@ namespace Model
     Aws::Vector<Aws::String> m_metricFilterValues;
     bool m_metricFilterValuesHasBeenSet = false;
 
-    bool m_negate;
+    bool m_negate{false};
     bool m_negateHasBeenSet = false;
   };
 

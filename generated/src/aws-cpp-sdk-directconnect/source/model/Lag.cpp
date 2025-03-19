@@ -19,41 +19,7 @@ namespace DirectConnect
 namespace Model
 {
 
-Lag::Lag() : 
-    m_connectionsBandwidthHasBeenSet(false),
-    m_numberOfConnections(0),
-    m_numberOfConnectionsHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_lagNameHasBeenSet(false),
-    m_lagState(LagState::NOT_SET),
-    m_lagStateHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_minimumLinks(0),
-    m_minimumLinksHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_allowsHostedConnections(false),
-    m_allowsHostedConnectionsHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_macSecCapable(false),
-    m_macSecCapableHasBeenSet(false),
-    m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Lag::Lag(JsonView jsonValue)
-  : Lag()
 {
   *this = jsonValue;
 }
@@ -63,87 +29,63 @@ Lag& Lag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectionsBandwidth"))
   {
     m_connectionsBandwidth = jsonValue.GetString("connectionsBandwidth");
-
     m_connectionsBandwidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfConnections"))
   {
     m_numberOfConnections = jsonValue.GetInteger("numberOfConnections");
-
     m_numberOfConnectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagId"))
   {
     m_lagId = jsonValue.GetString("lagId");
-
     m_lagIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagName"))
   {
     m_lagName = jsonValue.GetString("lagName");
-
     m_lagNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagState"))
   {
     m_lagState = LagStateMapper::GetLagStateForName(jsonValue.GetString("lagState"));
-
     m_lagStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumLinks"))
   {
     m_minimumLinks = jsonValue.GetInteger("minimumLinks");
-
     m_minimumLinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
-
     m_awsDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-
     m_awsDeviceV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLogicalDeviceId"))
   {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-
     m_awsLogicalDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connections"))
   {
     Aws::Utils::Array<JsonView> connectionsJsonList = jsonValue.GetArray("connections");
@@ -153,28 +95,21 @@ Lag& Lag::operator =(JsonView jsonValue)
     }
     m_connectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowsHostedConnections"))
   {
     m_allowsHostedConnections = jsonValue.GetBool("allowsHostedConnections");
-
     m_allowsHostedConnectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jumboFrameCapable"))
   {
     m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
-
     m_jumboFrameCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
   {
     m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
-
     m_hasLogicalRedundancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -184,28 +119,21 @@ Lag& Lag::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
     m_providerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macSecCapable"))
   {
     m_macSecCapable = jsonValue.GetBool("macSecCapable");
-
     m_macSecCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionMode"))
   {
     m_encryptionMode = jsonValue.GetString("encryptionMode");
-
     m_encryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macSecKeys"))
   {
     Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
@@ -215,7 +143,6 @@ Lag& Lag::operator =(JsonView jsonValue)
     }
     m_macSecKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

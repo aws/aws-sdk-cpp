@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_optInStatus(AvailabilityZoneOptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_zoneNameHasBeenSet(false),
-    m_zoneIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_zoneTypeHasBeenSet(false),
-    m_parentZoneNameHasBeenSet(false),
-    m_parentZoneIdHasBeenSet(false),
-    m_groupLongNameHasBeenSet(false),
-    m_state(AvailabilityZoneState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-  : AvailabilityZone()
 {
   *this = xmlNode;
 }
@@ -53,13 +34,14 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     XmlNode optInStatusNode = resultNode.FirstChild("optInStatus");
     if(!optInStatusNode.IsNull())
     {
-      m_optInStatus = AvailabilityZoneOptInStatusMapper::GetAvailabilityZoneOptInStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText()).c_str()).c_str());
+      m_optInStatus = AvailabilityZoneOptInStatusMapper::GetAvailabilityZoneOptInStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText()).c_str()));
       m_optInStatusHasBeenSet = true;
     }
     XmlNode messagesNode = resultNode.FirstChild("messageSet");
     if(!messagesNode.IsNull())
     {
       XmlNode messagesMember = messagesNode.FirstChild("item");
+      m_messagesHasBeenSet = !messagesMember.IsNull();
       while(!messagesMember.IsNull())
       {
         m_messages.push_back(messagesMember);
@@ -125,7 +107,7 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("zoneState");
     if(!stateNode.IsNull())
     {
-      m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

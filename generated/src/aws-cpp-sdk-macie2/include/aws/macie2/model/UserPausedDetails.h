@@ -38,7 +38,7 @@ namespace Model
   class UserPausedDetails
   {
   public:
-    AWS_MACIE2_API UserPausedDetails();
+    AWS_MACIE2_API UserPausedDetails() = default;
     AWS_MACIE2_API UserPausedDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API UserPausedDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job or job
      * run will expire and be cancelled if you don't resume it first.</p>
      */
-    inline const Aws::Utils::DateTime& GetJobExpiresAt() const{ return m_jobExpiresAt; }
+    inline const Aws::Utils::DateTime& GetJobExpiresAt() const { return m_jobExpiresAt; }
     inline bool JobExpiresAtHasBeenSet() const { return m_jobExpiresAtHasBeenSet; }
-    inline void SetJobExpiresAt(const Aws::Utils::DateTime& value) { m_jobExpiresAtHasBeenSet = true; m_jobExpiresAt = value; }
-    inline void SetJobExpiresAt(Aws::Utils::DateTime&& value) { m_jobExpiresAtHasBeenSet = true; m_jobExpiresAt = std::move(value); }
-    inline UserPausedDetails& WithJobExpiresAt(const Aws::Utils::DateTime& value) { SetJobExpiresAt(value); return *this;}
-    inline UserPausedDetails& WithJobExpiresAt(Aws::Utils::DateTime&& value) { SetJobExpiresAt(std::move(value)); return *this;}
+    template<typename JobExpiresAtT = Aws::Utils::DateTime>
+    void SetJobExpiresAt(JobExpiresAtT&& value) { m_jobExpiresAtHasBeenSet = true; m_jobExpiresAt = std::forward<JobExpiresAtT>(value); }
+    template<typename JobExpiresAtT = Aws::Utils::DateTime>
+    UserPausedDetails& WithJobExpiresAt(JobExpiresAtT&& value) { SetJobExpiresAt(std::forward<JobExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,12 @@ namespace Model
      * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
-    inline const Aws::String& GetJobImminentExpirationHealthEventArn() const{ return m_jobImminentExpirationHealthEventArn; }
+    inline const Aws::String& GetJobImminentExpirationHealthEventArn() const { return m_jobImminentExpirationHealthEventArn; }
     inline bool JobImminentExpirationHealthEventArnHasBeenSet() const { return m_jobImminentExpirationHealthEventArnHasBeenSet; }
-    inline void SetJobImminentExpirationHealthEventArn(const Aws::String& value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn = value; }
-    inline void SetJobImminentExpirationHealthEventArn(Aws::String&& value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn = std::move(value); }
-    inline void SetJobImminentExpirationHealthEventArn(const char* value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn.assign(value); }
-    inline UserPausedDetails& WithJobImminentExpirationHealthEventArn(const Aws::String& value) { SetJobImminentExpirationHealthEventArn(value); return *this;}
-    inline UserPausedDetails& WithJobImminentExpirationHealthEventArn(Aws::String&& value) { SetJobImminentExpirationHealthEventArn(std::move(value)); return *this;}
-    inline UserPausedDetails& WithJobImminentExpirationHealthEventArn(const char* value) { SetJobImminentExpirationHealthEventArn(value); return *this;}
+    template<typename JobImminentExpirationHealthEventArnT = Aws::String>
+    void SetJobImminentExpirationHealthEventArn(JobImminentExpirationHealthEventArnT&& value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn = std::forward<JobImminentExpirationHealthEventArnT>(value); }
+    template<typename JobImminentExpirationHealthEventArnT = Aws::String>
+    UserPausedDetails& WithJobImminentExpirationHealthEventArn(JobImminentExpirationHealthEventArnT&& value) { SetJobImminentExpirationHealthEventArn(std::forward<JobImminentExpirationHealthEventArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,22 +76,22 @@ namespace Model
      * <p>The date and time, in UTC and extended ISO 8601 format, when you paused the
      * job.</p>
      */
-    inline const Aws::Utils::DateTime& GetJobPausedAt() const{ return m_jobPausedAt; }
+    inline const Aws::Utils::DateTime& GetJobPausedAt() const { return m_jobPausedAt; }
     inline bool JobPausedAtHasBeenSet() const { return m_jobPausedAtHasBeenSet; }
-    inline void SetJobPausedAt(const Aws::Utils::DateTime& value) { m_jobPausedAtHasBeenSet = true; m_jobPausedAt = value; }
-    inline void SetJobPausedAt(Aws::Utils::DateTime&& value) { m_jobPausedAtHasBeenSet = true; m_jobPausedAt = std::move(value); }
-    inline UserPausedDetails& WithJobPausedAt(const Aws::Utils::DateTime& value) { SetJobPausedAt(value); return *this;}
-    inline UserPausedDetails& WithJobPausedAt(Aws::Utils::DateTime&& value) { SetJobPausedAt(std::move(value)); return *this;}
+    template<typename JobPausedAtT = Aws::Utils::DateTime>
+    void SetJobPausedAt(JobPausedAtT&& value) { m_jobPausedAtHasBeenSet = true; m_jobPausedAt = std::forward<JobPausedAtT>(value); }
+    template<typename JobPausedAtT = Aws::Utils::DateTime>
+    UserPausedDetails& WithJobPausedAt(JobPausedAtT&& value) { SetJobPausedAt(std::forward<JobPausedAtT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_jobExpiresAt;
+    Aws::Utils::DateTime m_jobExpiresAt{};
     bool m_jobExpiresAtHasBeenSet = false;
 
     Aws::String m_jobImminentExpirationHealthEventArn;
     bool m_jobImminentExpirationHealthEventArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_jobPausedAt;
+    Aws::Utils::DateTime m_jobPausedAt{};
     bool m_jobPausedAtHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateDetectorVersionResult
   {
   public:
-    AWS_FRAUDDETECTOR_API CreateDetectorVersionResult();
+    AWS_FRAUDDETECTOR_API CreateDetectorVersionResult() = default;
     AWS_FRAUDDETECTOR_API CreateDetectorVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API CreateDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The ID for the created version's parent detector.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorId.assign(value); }
-    inline CreateDetectorVersionResult& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline CreateDetectorVersionResult& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline CreateDetectorVersionResult& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    CreateDetectorVersionResult& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the created detector. </p>
      */
-    inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
-    inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionId = value; }
-    inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionId = std::move(value); }
-    inline void SetDetectorVersionId(const char* value) { m_detectorVersionId.assign(value); }
-    inline CreateDetectorVersionResult& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-    inline CreateDetectorVersionResult& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-    inline CreateDetectorVersionResult& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    inline const Aws::String& GetDetectorVersionId() const { return m_detectorVersionId; }
+    template<typename DetectorVersionIdT = Aws::String>
+    void SetDetectorVersionId(DetectorVersionIdT&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::forward<DetectorVersionIdT>(value); }
+    template<typename DetectorVersionIdT = Aws::String>
+    CreateDetectorVersionResult& WithDetectorVersionId(DetectorVersionIdT&& value) { SetDetectorVersionId(std::forward<DetectorVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the detector version.</p>
      */
-    inline const DetectorVersionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DetectorVersionStatus& value) { m_status = value; }
-    inline void SetStatus(DetectorVersionStatus&& value) { m_status = std::move(value); }
-    inline CreateDetectorVersionResult& WithStatus(const DetectorVersionStatus& value) { SetStatus(value); return *this;}
-    inline CreateDetectorVersionResult& WithStatus(DetectorVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DetectorVersionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DetectorVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateDetectorVersionResult& WithStatus(DetectorVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDetectorVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDetectorVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDetectorVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDetectorVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_detectorId;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
+    bool m_detectorVersionIdHasBeenSet = false;
 
-    DetectorVersionStatus m_status;
+    DetectorVersionStatus m_status{DetectorVersionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,46 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ContainerDetail::ContainerDetail() : 
-    m_imageHasBeenSet(false),
-    m_vcpus(0),
-    m_vcpusHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_jobRoleArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_readonlyRootFilesystem(false),
-    m_readonlyRootFilesystemHasBeenSet(false),
-    m_ulimitsHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_containerInstanceArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_secretsHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_fargatePlatformConfigurationHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_repositoryCredentialsHasBeenSet(false)
-{
-}
-
 ContainerDetail::ContainerDetail(JsonView jsonValue)
-  : ContainerDetail()
 {
   *this = jsonValue;
 }
@@ -67,24 +28,18 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcpus"))
   {
     m_vcpus = jsonValue.GetInteger("vcpus");
-
     m_vcpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInteger("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("command"))
   {
     Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
@@ -94,21 +49,16 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobRoleArn"))
   {
     m_jobRoleArn = jsonValue.GetString("jobRoleArn");
-
     m_jobRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -118,7 +68,6 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
@@ -128,7 +77,6 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountPoints"))
   {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
@@ -138,14 +86,11 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_mountPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readonlyRootFilesystem"))
   {
     m_readonlyRootFilesystem = jsonValue.GetBool("readonlyRootFilesystem");
-
     m_readonlyRootFilesystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ulimits"))
   {
     Aws::Utils::Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
@@ -155,63 +100,46 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_ulimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privileged"))
   {
     m_privileged = jsonValue.GetBool("privileged");
-
     m_privilegedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
-
     m_exitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerInstanceArn"))
   {
     m_containerInstanceArn = jsonValue.GetString("containerInstanceArn");
-
     m_containerInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStreamName"))
   {
     m_logStreamName = jsonValue.GetString("logStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -221,7 +149,6 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRequirements"))
   {
     Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
@@ -231,21 +158,16 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_resourceRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linuxParameters"))
   {
     m_linuxParameters = jsonValue.GetObject("linuxParameters");
-
     m_linuxParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secrets"))
   {
     Aws::Utils::Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
@@ -255,42 +177,31 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     }
     m_secretsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fargatePlatformConfiguration"))
   {
     m_fargatePlatformConfiguration = jsonValue.GetObject("fargatePlatformConfiguration");
-
     m_fargatePlatformConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ephemeralStorage"))
   {
     m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
-
     m_ephemeralStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimePlatform"))
   {
     m_runtimePlatform = jsonValue.GetObject("runtimePlatform");
-
     m_runtimePlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryCredentials"))
   {
     m_repositoryCredentials = jsonValue.GetObject("repositoryCredentials");
-
     m_repositoryCredentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class ExportBackupPlanTemplateResult
   {
   public:
-    AWS_BACKUP_API ExportBackupPlanTemplateResult();
+    AWS_BACKUP_API ExportBackupPlanTemplateResult() = default;
     AWS_BACKUP_API ExportBackupPlanTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API ExportBackupPlanTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * signed JSON document that cannot be modified before being passed to
      * <code>GetBackupPlanFromJSON.</code> </p> 
      */
-    inline const Aws::String& GetBackupPlanTemplateJson() const{ return m_backupPlanTemplateJson; }
-    inline void SetBackupPlanTemplateJson(const Aws::String& value) { m_backupPlanTemplateJson = value; }
-    inline void SetBackupPlanTemplateJson(Aws::String&& value) { m_backupPlanTemplateJson = std::move(value); }
-    inline void SetBackupPlanTemplateJson(const char* value) { m_backupPlanTemplateJson.assign(value); }
-    inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(const Aws::String& value) { SetBackupPlanTemplateJson(value); return *this;}
-    inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(Aws::String&& value) { SetBackupPlanTemplateJson(std::move(value)); return *this;}
-    inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(const char* value) { SetBackupPlanTemplateJson(value); return *this;}
+    inline const Aws::String& GetBackupPlanTemplateJson() const { return m_backupPlanTemplateJson; }
+    template<typename BackupPlanTemplateJsonT = Aws::String>
+    void SetBackupPlanTemplateJson(BackupPlanTemplateJsonT&& value) { m_backupPlanTemplateJsonHasBeenSet = true; m_backupPlanTemplateJson = std::forward<BackupPlanTemplateJsonT>(value); }
+    template<typename BackupPlanTemplateJsonT = Aws::String>
+    ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(BackupPlanTemplateJsonT&& value) { SetBackupPlanTemplateJson(std::forward<BackupPlanTemplateJsonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportBackupPlanTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportBackupPlanTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportBackupPlanTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportBackupPlanTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backupPlanTemplateJson;
+    bool m_backupPlanTemplateJsonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

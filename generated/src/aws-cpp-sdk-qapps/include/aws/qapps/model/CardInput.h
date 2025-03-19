@@ -36,7 +36,7 @@ namespace Model
   class CardInput
   {
   public:
-    AWS_QAPPS_API CardInput();
+    AWS_QAPPS_API CardInput() = default;
     AWS_QAPPS_API CardInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API CardInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,60 +46,60 @@ namespace Model
     /**
      * <p>A container for the properties of the text input card.</p>
      */
-    inline const TextInputCardInput& GetTextInput() const{ return m_textInput; }
+    inline const TextInputCardInput& GetTextInput() const { return m_textInput; }
     inline bool TextInputHasBeenSet() const { return m_textInputHasBeenSet; }
-    inline void SetTextInput(const TextInputCardInput& value) { m_textInputHasBeenSet = true; m_textInput = value; }
-    inline void SetTextInput(TextInputCardInput&& value) { m_textInputHasBeenSet = true; m_textInput = std::move(value); }
-    inline CardInput& WithTextInput(const TextInputCardInput& value) { SetTextInput(value); return *this;}
-    inline CardInput& WithTextInput(TextInputCardInput&& value) { SetTextInput(std::move(value)); return *this;}
+    template<typename TextInputT = TextInputCardInput>
+    void SetTextInput(TextInputT&& value) { m_textInputHasBeenSet = true; m_textInput = std::forward<TextInputT>(value); }
+    template<typename TextInputT = TextInputCardInput>
+    CardInput& WithTextInput(TextInputT&& value) { SetTextInput(std::forward<TextInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A container for the properties of the query input card.</p>
      */
-    inline const QQueryCardInput& GetQQuery() const{ return m_qQuery; }
+    inline const QQueryCardInput& GetQQuery() const { return m_qQuery; }
     inline bool QQueryHasBeenSet() const { return m_qQueryHasBeenSet; }
-    inline void SetQQuery(const QQueryCardInput& value) { m_qQueryHasBeenSet = true; m_qQuery = value; }
-    inline void SetQQuery(QQueryCardInput&& value) { m_qQueryHasBeenSet = true; m_qQuery = std::move(value); }
-    inline CardInput& WithQQuery(const QQueryCardInput& value) { SetQQuery(value); return *this;}
-    inline CardInput& WithQQuery(QQueryCardInput&& value) { SetQQuery(std::move(value)); return *this;}
+    template<typename QQueryT = QQueryCardInput>
+    void SetQQuery(QQueryT&& value) { m_qQueryHasBeenSet = true; m_qQuery = std::forward<QQueryT>(value); }
+    template<typename QQueryT = QQueryCardInput>
+    CardInput& WithQQuery(QQueryT&& value) { SetQQuery(std::forward<QQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A container for the properties of the plugin input card.</p>
      */
-    inline const QPluginCardInput& GetQPlugin() const{ return m_qPlugin; }
+    inline const QPluginCardInput& GetQPlugin() const { return m_qPlugin; }
     inline bool QPluginHasBeenSet() const { return m_qPluginHasBeenSet; }
-    inline void SetQPlugin(const QPluginCardInput& value) { m_qPluginHasBeenSet = true; m_qPlugin = value; }
-    inline void SetQPlugin(QPluginCardInput&& value) { m_qPluginHasBeenSet = true; m_qPlugin = std::move(value); }
-    inline CardInput& WithQPlugin(const QPluginCardInput& value) { SetQPlugin(value); return *this;}
-    inline CardInput& WithQPlugin(QPluginCardInput&& value) { SetQPlugin(std::move(value)); return *this;}
+    template<typename QPluginT = QPluginCardInput>
+    void SetQPlugin(QPluginT&& value) { m_qPluginHasBeenSet = true; m_qPlugin = std::forward<QPluginT>(value); }
+    template<typename QPluginT = QPluginCardInput>
+    CardInput& WithQPlugin(QPluginT&& value) { SetQPlugin(std::forward<QPluginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A container for the properties of the file upload input card.</p>
      */
-    inline const FileUploadCardInput& GetFileUpload() const{ return m_fileUpload; }
+    inline const FileUploadCardInput& GetFileUpload() const { return m_fileUpload; }
     inline bool FileUploadHasBeenSet() const { return m_fileUploadHasBeenSet; }
-    inline void SetFileUpload(const FileUploadCardInput& value) { m_fileUploadHasBeenSet = true; m_fileUpload = value; }
-    inline void SetFileUpload(FileUploadCardInput&& value) { m_fileUploadHasBeenSet = true; m_fileUpload = std::move(value); }
-    inline CardInput& WithFileUpload(const FileUploadCardInput& value) { SetFileUpload(value); return *this;}
-    inline CardInput& WithFileUpload(FileUploadCardInput&& value) { SetFileUpload(std::move(value)); return *this;}
+    template<typename FileUploadT = FileUploadCardInput>
+    void SetFileUpload(FileUploadT&& value) { m_fileUploadHasBeenSet = true; m_fileUpload = std::forward<FileUploadT>(value); }
+    template<typename FileUploadT = FileUploadCardInput>
+    CardInput& WithFileUpload(FileUploadT&& value) { SetFileUpload(std::forward<FileUploadT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A container for the properties of the form input card.</p>
      */
-    inline const FormInputCardInput& GetFormInput() const{ return m_formInput; }
+    inline const FormInputCardInput& GetFormInput() const { return m_formInput; }
     inline bool FormInputHasBeenSet() const { return m_formInputHasBeenSet; }
-    inline void SetFormInput(const FormInputCardInput& value) { m_formInputHasBeenSet = true; m_formInput = value; }
-    inline void SetFormInput(FormInputCardInput&& value) { m_formInputHasBeenSet = true; m_formInput = std::move(value); }
-    inline CardInput& WithFormInput(const FormInputCardInput& value) { SetFormInput(value); return *this;}
-    inline CardInput& WithFormInput(FormInputCardInput&& value) { SetFormInput(std::move(value)); return *this;}
+    template<typename FormInputT = FormInputCardInput>
+    void SetFormInput(FormInputT&& value) { m_formInputHasBeenSet = true; m_formInput = std::forward<FormInputT>(value); }
+    template<typename FormInputT = FormInputCardInput>
+    CardInput& WithFormInput(FormInputT&& value) { SetFormInput(std::forward<FormInputT>(value)); return *this;}
     ///@}
   private:
 

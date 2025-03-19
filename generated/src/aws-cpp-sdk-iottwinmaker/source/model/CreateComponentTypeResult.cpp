@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateComponentTypeResult::CreateComponentTypeResult() : 
-    m_state(State::NOT_SET)
-{
-}
-
 CreateComponentTypeResult::CreateComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateComponentTypeResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateComponentTypeResult& CreateComponentTypeResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

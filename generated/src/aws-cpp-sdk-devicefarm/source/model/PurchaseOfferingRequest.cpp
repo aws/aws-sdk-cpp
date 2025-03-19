@@ -12,14 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurchaseOfferingRequest::PurchaseOfferingRequest() : 
-    m_offeringIdHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_offeringPromotionIdHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

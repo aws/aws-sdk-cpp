@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateResourceProfileRequest::UpdateResourceProfileRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_sensitivityScoreOverride(0),
-    m_sensitivityScoreOverrideHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

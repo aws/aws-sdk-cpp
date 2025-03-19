@@ -18,14 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-SearchPrincipalType::SearchPrincipalType() : 
-    m_idHasBeenSet(false),
-    m_rolesHasBeenSet(false)
-{
-}
-
 SearchPrincipalType::SearchPrincipalType(JsonView jsonValue)
-  : SearchPrincipalType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SearchPrincipalType& SearchPrincipalType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Roles"))
   {
     Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
@@ -48,7 +39,6 @@ SearchPrincipalType& SearchPrincipalType::operator =(JsonView jsonValue)
     }
     m_rolesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-Entity::Entity() : 
-    m_entityTypeHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
-{
-}
-
 Entity::Entity(JsonView jsonValue)
-  : Entity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Entity& Entity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entityType"))
   {
     m_entityType = jsonValue.GetString("entityType");
-
     m_entityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

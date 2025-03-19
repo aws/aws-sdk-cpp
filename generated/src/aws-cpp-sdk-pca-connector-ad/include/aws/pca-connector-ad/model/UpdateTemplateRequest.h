@@ -22,7 +22,7 @@ namespace Model
   class UpdateTemplateRequest : public PcaConnectorAdRequest
   {
   public:
-    AWS_PCACONNECTORAD_API UpdateTemplateRequest();
+    AWS_PCACONNECTORAD_API UpdateTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
      * and enrollment options, key usage extensions, application policies, and
      * cryptography settings.</p>
      */
-    inline const TemplateDefinition& GetDefinition() const{ return m_definition; }
+    inline const TemplateDefinition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const TemplateDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(TemplateDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline UpdateTemplateRequest& WithDefinition(const TemplateDefinition& value) { SetDefinition(value); return *this;}
-    inline UpdateTemplateRequest& WithDefinition(TemplateDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = TemplateDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = TemplateDefinition>
+    UpdateTemplateRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,7 +54,7 @@ namespace Model
      * automatically. All members of Active Directory groups that are allowed to enroll
      * with a template will receive a new certificate issued using that template.</p>
      */
-    inline bool GetReenrollAllCertificateHolders() const{ return m_reenrollAllCertificateHolders; }
+    inline bool GetReenrollAllCertificateHolders() const { return m_reenrollAllCertificateHolders; }
     inline bool ReenrollAllCertificateHoldersHasBeenSet() const { return m_reenrollAllCertificateHoldersHasBeenSet; }
     inline void SetReenrollAllCertificateHolders(bool value) { m_reenrollAllCertificateHoldersHasBeenSet = true; m_reenrollAllCertificateHolders = value; }
     inline UpdateTemplateRequest& WithReenrollAllCertificateHolders(bool value) { SetReenrollAllCertificateHolders(value); return *this;}
@@ -65,21 +65,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that was returned when you called <a
      * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline UpdateTemplateRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline UpdateTemplateRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline UpdateTemplateRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    UpdateTemplateRequest& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
   private:
 
     TemplateDefinition m_definition;
     bool m_definitionHasBeenSet = false;
 
-    bool m_reenrollAllCertificateHolders;
+    bool m_reenrollAllCertificateHolders{false};
     bool m_reenrollAllCertificateHoldersHasBeenSet = false;
 
     Aws::String m_templateArn;

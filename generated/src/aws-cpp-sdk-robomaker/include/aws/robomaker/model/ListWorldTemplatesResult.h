@@ -29,7 +29,7 @@ namespace Model
   class ListWorldTemplatesResult
   {
   public:
-    AWS_ROBOMAKER_API ListWorldTemplatesResult();
+    AWS_ROBOMAKER_API ListWorldTemplatesResult() = default;
     AWS_ROBOMAKER_API ListWorldTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API ListWorldTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information for templates.</p>
      */
-    inline const Aws::Vector<TemplateSummary>& GetTemplateSummaries() const{ return m_templateSummaries; }
-    inline void SetTemplateSummaries(const Aws::Vector<TemplateSummary>& value) { m_templateSummaries = value; }
-    inline void SetTemplateSummaries(Aws::Vector<TemplateSummary>&& value) { m_templateSummaries = std::move(value); }
-    inline ListWorldTemplatesResult& WithTemplateSummaries(const Aws::Vector<TemplateSummary>& value) { SetTemplateSummaries(value); return *this;}
-    inline ListWorldTemplatesResult& WithTemplateSummaries(Aws::Vector<TemplateSummary>&& value) { SetTemplateSummaries(std::move(value)); return *this;}
-    inline ListWorldTemplatesResult& AddTemplateSummaries(const TemplateSummary& value) { m_templateSummaries.push_back(value); return *this; }
-    inline ListWorldTemplatesResult& AddTemplateSummaries(TemplateSummary&& value) { m_templateSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TemplateSummary>& GetTemplateSummaries() const { return m_templateSummaries; }
+    template<typename TemplateSummariesT = Aws::Vector<TemplateSummary>>
+    void SetTemplateSummaries(TemplateSummariesT&& value) { m_templateSummariesHasBeenSet = true; m_templateSummaries = std::forward<TemplateSummariesT>(value); }
+    template<typename TemplateSummariesT = Aws::Vector<TemplateSummary>>
+    ListWorldTemplatesResult& WithTemplateSummaries(TemplateSummariesT&& value) { SetTemplateSummaries(std::forward<TemplateSummariesT>(value)); return *this;}
+    template<typename TemplateSummariesT = TemplateSummary>
+    ListWorldTemplatesResult& AddTemplateSummaries(TemplateSummariesT&& value) { m_templateSummariesHasBeenSet = true; m_templateSummaries.emplace_back(std::forward<TemplateSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * object's <code>nextToken</code> parameter. If there are no remaining results,
      * the previous response object's NextToken parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorldTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorldTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorldTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorldTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorldTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorldTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorldTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorldTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TemplateSummary> m_templateSummaries;
+    bool m_templateSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

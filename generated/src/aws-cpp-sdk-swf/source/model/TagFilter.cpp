@@ -18,13 +18,7 @@ namespace SWF
 namespace Model
 {
 
-TagFilter::TagFilter() : 
-    m_tagHasBeenSet(false)
-{
-}
-
 TagFilter::TagFilter(JsonView jsonValue)
-  : TagFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tag"))
   {
     m_tag = jsonValue.GetString("tag");
-
     m_tagHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftCredentials::RedshiftCredentials() : 
-    m_secretArnHasBeenSet(false),
-    m_usernamePasswordHasBeenSet(false)
-{
-}
-
 RedshiftCredentials::RedshiftCredentials(JsonView jsonValue)
-  : RedshiftCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedshiftCredentials& RedshiftCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usernamePassword"))
   {
     m_usernamePassword = jsonValue.GetObject("usernamePassword");
-
     m_usernamePasswordHasBeenSet = true;
   }
-
   return *this;
 }
 

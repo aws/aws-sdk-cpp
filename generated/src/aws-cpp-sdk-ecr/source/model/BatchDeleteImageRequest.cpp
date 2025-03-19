@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteImageRequest::BatchDeleteImageRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteImageRequest::SerializePayload() const
 {
   JsonValue payload;

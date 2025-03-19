@@ -18,20 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BillScenarioSummary::BillScenarioSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_billIntervalHasBeenSet(false),
-    m_status(BillScenarioStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
-{
-}
-
 BillScenarioSummary::BillScenarioSummary(JsonView jsonValue)
-  : BillScenarioSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ BillScenarioSummary& BillScenarioSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billInterval"))
   {
     m_billInterval = jsonValue.GetObject("billInterval");
-
     m_billIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BillScenarioStatusMapper::GetBillScenarioStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

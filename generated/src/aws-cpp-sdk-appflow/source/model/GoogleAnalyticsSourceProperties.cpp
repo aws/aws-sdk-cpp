@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-GoogleAnalyticsSourceProperties::GoogleAnalyticsSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 GoogleAnalyticsSourceProperties::GoogleAnalyticsSourceProperties(JsonView jsonValue)
-  : GoogleAnalyticsSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GoogleAnalyticsSourceProperties& GoogleAnalyticsSourceProperties::operator =(Jso
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

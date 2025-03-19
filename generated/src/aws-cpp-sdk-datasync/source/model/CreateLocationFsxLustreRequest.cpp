@@ -12,14 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLocationFsxLustreRequest::CreateLocationFsxLustreRequest() : 
-    m_fsxFilesystemArnHasBeenSet(false),
-    m_securityGroupArnsHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocationFsxLustreRequest::SerializePayload() const
 {
   JsonValue payload;

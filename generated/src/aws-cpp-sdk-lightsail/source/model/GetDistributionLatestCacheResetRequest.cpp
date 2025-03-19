@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDistributionLatestCacheResetRequest::GetDistributionLatestCacheResetRequest() : 
-    m_distributionNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDistributionLatestCacheResetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails& AwsEc2LaunchTemplateD
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

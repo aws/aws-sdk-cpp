@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAgentActionGroupResult::GetAgentActionGroupResult()
-{
-}
-
 GetAgentActionGroupResult::GetAgentActionGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAgentActionGroupResult& GetAgentActionGroupResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("agentActionGroup"))
   {
     m_agentActionGroup = jsonValue.GetObject("agentActionGroup");
-
+    m_agentActionGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

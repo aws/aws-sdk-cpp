@@ -22,7 +22,7 @@ namespace Model
   class VerifyOTPMessageRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API VerifyOTPMessageRequest();
+    AWS_PINPOINT_API VerifyOTPMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
     /**
      * <p>The unique ID of your Amazon Pinpoint application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline VerifyOTPMessageRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline VerifyOTPMessageRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline VerifyOTPMessageRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    VerifyOTPMessageRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VerifyOTPMessageRequestParameters& GetVerifyOTPMessageRequestParameters() const{ return m_verifyOTPMessageRequestParameters; }
+    inline const VerifyOTPMessageRequestParameters& GetVerifyOTPMessageRequestParameters() const { return m_verifyOTPMessageRequestParameters; }
     inline bool VerifyOTPMessageRequestParametersHasBeenSet() const { return m_verifyOTPMessageRequestParametersHasBeenSet; }
-    inline void SetVerifyOTPMessageRequestParameters(const VerifyOTPMessageRequestParameters& value) { m_verifyOTPMessageRequestParametersHasBeenSet = true; m_verifyOTPMessageRequestParameters = value; }
-    inline void SetVerifyOTPMessageRequestParameters(VerifyOTPMessageRequestParameters&& value) { m_verifyOTPMessageRequestParametersHasBeenSet = true; m_verifyOTPMessageRequestParameters = std::move(value); }
-    inline VerifyOTPMessageRequest& WithVerifyOTPMessageRequestParameters(const VerifyOTPMessageRequestParameters& value) { SetVerifyOTPMessageRequestParameters(value); return *this;}
-    inline VerifyOTPMessageRequest& WithVerifyOTPMessageRequestParameters(VerifyOTPMessageRequestParameters&& value) { SetVerifyOTPMessageRequestParameters(std::move(value)); return *this;}
+    template<typename VerifyOTPMessageRequestParametersT = VerifyOTPMessageRequestParameters>
+    void SetVerifyOTPMessageRequestParameters(VerifyOTPMessageRequestParametersT&& value) { m_verifyOTPMessageRequestParametersHasBeenSet = true; m_verifyOTPMessageRequestParameters = std::forward<VerifyOTPMessageRequestParametersT>(value); }
+    template<typename VerifyOTPMessageRequestParametersT = VerifyOTPMessageRequestParameters>
+    VerifyOTPMessageRequest& WithVerifyOTPMessageRequestParameters(VerifyOTPMessageRequestParametersT&& value) { SetVerifyOTPMessageRequestParameters(std::forward<VerifyOTPMessageRequestParametersT>(value)); return *this;}
     ///@}
   private:
 

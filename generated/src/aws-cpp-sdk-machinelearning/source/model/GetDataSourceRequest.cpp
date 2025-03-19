@@ -12,13 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataSourceRequest::GetDataSourceRequest() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_verbose(false),
-    m_verboseHasBeenSet(false)
-{
-}
-
 Aws::String GetDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

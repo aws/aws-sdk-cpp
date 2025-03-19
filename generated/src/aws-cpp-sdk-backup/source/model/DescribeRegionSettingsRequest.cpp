@@ -12,10 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRegionSettingsRequest::DescribeRegionSettingsRequest()
-{
-}
-
 Aws::String DescribeRegionSettingsRequest::SerializePayload() const
 {
   return {};

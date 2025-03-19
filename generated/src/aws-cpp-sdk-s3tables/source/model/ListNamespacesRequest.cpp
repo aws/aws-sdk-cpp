@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNamespacesRequest::ListNamespacesRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_continuationTokenHasBeenSet(false),
-    m_maxNamespaces(0),
-    m_maxNamespacesHasBeenSet(false)
-{
-}
-
 Aws::String ListNamespacesRequest::SerializePayload() const
 {
   return {};

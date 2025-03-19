@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteServiceLinkedRoleResult::DeleteServiceLinkedRoleResult()
-{
-}
-
 DeleteServiceLinkedRoleResult::DeleteServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DeleteServiceLinkedRoleResult& DeleteServiceLinkedRoleResult::operator =(const A
     if(!deletionTaskIdNode.IsNull())
     {
       m_deletionTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(deletionTaskIdNode.GetText());
+      m_deletionTaskIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::DeleteServiceLinkedRoleResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

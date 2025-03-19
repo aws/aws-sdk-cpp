@@ -27,7 +27,7 @@ namespace Model
   class CreateEventTrackerResult
   {
   public:
-    AWS_PERSONALIZE_API CreateEventTrackerResult();
+    AWS_PERSONALIZE_API CreateEventTrackerResult() = default;
     AWS_PERSONALIZE_API CreateEventTrackerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API CreateEventTrackerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The ARN of the event tracker.</p>
      */
-    inline const Aws::String& GetEventTrackerArn() const{ return m_eventTrackerArn; }
-    inline void SetEventTrackerArn(const Aws::String& value) { m_eventTrackerArn = value; }
-    inline void SetEventTrackerArn(Aws::String&& value) { m_eventTrackerArn = std::move(value); }
-    inline void SetEventTrackerArn(const char* value) { m_eventTrackerArn.assign(value); }
-    inline CreateEventTrackerResult& WithEventTrackerArn(const Aws::String& value) { SetEventTrackerArn(value); return *this;}
-    inline CreateEventTrackerResult& WithEventTrackerArn(Aws::String&& value) { SetEventTrackerArn(std::move(value)); return *this;}
-    inline CreateEventTrackerResult& WithEventTrackerArn(const char* value) { SetEventTrackerArn(value); return *this;}
+    inline const Aws::String& GetEventTrackerArn() const { return m_eventTrackerArn; }
+    template<typename EventTrackerArnT = Aws::String>
+    void SetEventTrackerArn(EventTrackerArnT&& value) { m_eventTrackerArnHasBeenSet = true; m_eventTrackerArn = std::forward<EventTrackerArnT>(value); }
+    template<typename EventTrackerArnT = Aws::String>
+    CreateEventTrackerResult& WithEventTrackerArn(EventTrackerArnT&& value) { SetEventTrackerArn(std::forward<EventTrackerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
      * API.</p>
      */
-    inline const Aws::String& GetTrackingId() const{ return m_trackingId; }
-    inline void SetTrackingId(const Aws::String& value) { m_trackingId = value; }
-    inline void SetTrackingId(Aws::String&& value) { m_trackingId = std::move(value); }
-    inline void SetTrackingId(const char* value) { m_trackingId.assign(value); }
-    inline CreateEventTrackerResult& WithTrackingId(const Aws::String& value) { SetTrackingId(value); return *this;}
-    inline CreateEventTrackerResult& WithTrackingId(Aws::String&& value) { SetTrackingId(std::move(value)); return *this;}
-    inline CreateEventTrackerResult& WithTrackingId(const char* value) { SetTrackingId(value); return *this;}
+    inline const Aws::String& GetTrackingId() const { return m_trackingId; }
+    template<typename TrackingIdT = Aws::String>
+    void SetTrackingId(TrackingIdT&& value) { m_trackingIdHasBeenSet = true; m_trackingId = std::forward<TrackingIdT>(value); }
+    template<typename TrackingIdT = Aws::String>
+    CreateEventTrackerResult& WithTrackingId(TrackingIdT&& value) { SetTrackingId(std::forward<TrackingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEventTrackerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEventTrackerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEventTrackerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEventTrackerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventTrackerArn;
+    bool m_eventTrackerArnHasBeenSet = false;
 
     Aws::String m_trackingId;
+    bool m_trackingIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,7 +38,7 @@ namespace Model
   class Object
   {
   public:
-    AWS_S3_API Object();
+    AWS_S3_API Object() = default;
     AWS_S3_API Object(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API Object& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,26 +50,24 @@ namespace Model
      * <p>The name that you assign to an object. You use the object key to retrieve the
      * object.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline Object& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline Object& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline Object& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    Object& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Creation date of the object.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline Object& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline Object& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    Object& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,28 +89,25 @@ namespace Model
      * MD5 digest.</p> </li> </ul>  <p> <b>Directory buckets</b> - MD5 is not
      * supported by directory buckets.</p> 
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline Object& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    Object& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The algorithm that was used to create a checksum of the object.</p>
      */
-    inline const Aws::Vector<ChecksumAlgorithm>& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+    inline const Aws::Vector<ChecksumAlgorithm>& GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
-    inline Object& WithChecksumAlgorithm(const Aws::Vector<ChecksumAlgorithm>& value) { SetChecksumAlgorithm(value); return *this;}
-    inline Object& WithChecksumAlgorithm(Aws::Vector<ChecksumAlgorithm>&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
-    inline Object& AddChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
-    inline Object& AddChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(std::move(value)); return *this; }
+    template<typename ChecksumAlgorithmT = Aws::Vector<ChecksumAlgorithm>>
+    void SetChecksumAlgorithm(ChecksumAlgorithmT&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::forward<ChecksumAlgorithmT>(value); }
+    template<typename ChecksumAlgorithmT = Aws::Vector<ChecksumAlgorithm>>
+    Object& WithChecksumAlgorithm(ChecksumAlgorithmT&& value) { SetChecksumAlgorithm(std::forward<ChecksumAlgorithmT>(value)); return *this;}
+    inline Object& AddChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -122,19 +117,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
+    inline ChecksumType GetChecksumType() const { return m_checksumType; }
     inline bool ChecksumTypeHasBeenSet() const { return m_checksumTypeHasBeenSet; }
-    inline void SetChecksumType(const ChecksumType& value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
-    inline void SetChecksumType(ChecksumType&& value) { m_checksumTypeHasBeenSet = true; m_checksumType = std::move(value); }
-    inline Object& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
-    inline Object& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    inline void SetChecksumType(ChecksumType value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline Object& WithChecksumType(ChecksumType value) { SetChecksumType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Size in bytes of the object</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline Object& WithSize(long long value) { SetSize(value); return *this;}
@@ -146,12 +139,10 @@ namespace Model
      * buckets</b> - Only the S3 Express One Zone storage class is supported by
      * directory buckets to store objects.</p> 
      */
-    inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline ObjectStorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const ObjectStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(ObjectStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline Object& WithStorageClass(const ObjectStorageClass& value) { SetStorageClass(value); return *this;}
-    inline Object& WithStorageClass(ObjectStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(ObjectStorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline Object& WithStorageClass(ObjectStorageClass value) { SetStorageClass(value); return *this;}
     ///@}
 
     ///@{
@@ -159,12 +150,12 @@ namespace Model
      * <p>The owner of the object</p>  <p> <b>Directory buckets</b> - The bucket
      * owner is returned as the object owner.</p> 
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
+    inline const Owner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline Object& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline Object& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = Owner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Owner>
+    Object& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,19 +169,19 @@ namespace Model
      * Express One Zone storage class is supported by directory buckets to store
      * objects.</p> 
      */
-    inline const RestoreStatus& GetRestoreStatus() const{ return m_restoreStatus; }
+    inline const RestoreStatus& GetRestoreStatus() const { return m_restoreStatus; }
     inline bool RestoreStatusHasBeenSet() const { return m_restoreStatusHasBeenSet; }
-    inline void SetRestoreStatus(const RestoreStatus& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = value; }
-    inline void SetRestoreStatus(RestoreStatus&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::move(value); }
-    inline Object& WithRestoreStatus(const RestoreStatus& value) { SetRestoreStatus(value); return *this;}
-    inline Object& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
+    template<typename RestoreStatusT = RestoreStatus>
+    void SetRestoreStatus(RestoreStatusT&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::forward<RestoreStatusT>(value); }
+    template<typename RestoreStatusT = RestoreStatus>
+    Object& WithRestoreStatus(RestoreStatusT&& value) { SetRestoreStatus(std::forward<RestoreStatusT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
     bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_eTag;
@@ -199,13 +190,13 @@ namespace Model
     Aws::Vector<ChecksumAlgorithm> m_checksumAlgorithm;
     bool m_checksumAlgorithmHasBeenSet = false;
 
-    ChecksumType m_checksumType;
+    ChecksumType m_checksumType{ChecksumType::NOT_SET};
     bool m_checksumTypeHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
 
-    ObjectStorageClass m_storageClass;
+    ObjectStorageClass m_storageClass{ObjectStorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
 
     Owner m_owner;

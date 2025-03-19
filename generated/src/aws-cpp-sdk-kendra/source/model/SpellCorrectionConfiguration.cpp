@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SpellCorrectionConfiguration::SpellCorrectionConfiguration() : 
-    m_includeQuerySpellCheckSuggestions(false),
-    m_includeQuerySpellCheckSuggestionsHasBeenSet(false)
-{
-}
-
 SpellCorrectionConfiguration::SpellCorrectionConfiguration(JsonView jsonValue)
-  : SpellCorrectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SpellCorrectionConfiguration& SpellCorrectionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("IncludeQuerySpellCheckSuggestions"))
   {
     m_includeQuerySpellCheckSuggestions = jsonValue.GetBool("IncludeQuerySpellCheckSuggestions");
-
     m_includeQuerySpellCheckSuggestionsHasBeenSet = true;
   }
-
   return *this;
 }
 

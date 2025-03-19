@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLensReviewImprovementsResult::ListLensReviewImprovementsResult() : 
-    m_milestoneNumber(0)
-{
-}
-
 ListLensReviewImprovementsResult::ListLensReviewImprovementsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListLensReviewImprovementsResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ ListLensReviewImprovementsResult& ListLensReviewImprovementsResult::operator =(c
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MilestoneNumber"))
   {
     m_milestoneNumber = jsonValue.GetInteger("MilestoneNumber");
-
+    m_milestoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensAlias"))
   {
     m_lensAlias = jsonValue.GetString("LensAlias");
-
+    m_lensAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
+    m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementSummaries"))
   {
     Aws::Utils::Array<JsonView> improvementSummariesJsonList = jsonValue.GetArray("ImprovementSummaries");
@@ -62,20 +52,20 @@ ListLensReviewImprovementsResult& ListLensReviewImprovementsResult::operator =(c
     {
       m_improvementSummaries.push_back(improvementSummariesJsonList[improvementSummariesIndex].AsObject());
     }
+    m_improvementSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

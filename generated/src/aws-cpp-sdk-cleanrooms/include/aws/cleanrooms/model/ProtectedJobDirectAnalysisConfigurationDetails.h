@@ -33,7 +33,7 @@ namespace Model
   class ProtectedJobDirectAnalysisConfigurationDetails
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobDirectAnalysisConfigurationDetails();
+    AWS_CLEANROOMS_API ProtectedJobDirectAnalysisConfigurationDetails() = default;
     AWS_CLEANROOMS_API ProtectedJobDirectAnalysisConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobDirectAnalysisConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p> The receiver account IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReceiverAccountIds() const{ return m_receiverAccountIds; }
+    inline const Aws::Vector<Aws::String>& GetReceiverAccountIds() const { return m_receiverAccountIds; }
     inline bool ReceiverAccountIdsHasBeenSet() const { return m_receiverAccountIdsHasBeenSet; }
-    inline void SetReceiverAccountIds(const Aws::Vector<Aws::String>& value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds = value; }
-    inline void SetReceiverAccountIds(Aws::Vector<Aws::String>&& value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds = std::move(value); }
-    inline ProtectedJobDirectAnalysisConfigurationDetails& WithReceiverAccountIds(const Aws::Vector<Aws::String>& value) { SetReceiverAccountIds(value); return *this;}
-    inline ProtectedJobDirectAnalysisConfigurationDetails& WithReceiverAccountIds(Aws::Vector<Aws::String>&& value) { SetReceiverAccountIds(std::move(value)); return *this;}
-    inline ProtectedJobDirectAnalysisConfigurationDetails& AddReceiverAccountIds(const Aws::String& value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds.push_back(value); return *this; }
-    inline ProtectedJobDirectAnalysisConfigurationDetails& AddReceiverAccountIds(Aws::String&& value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds.push_back(std::move(value)); return *this; }
-    inline ProtectedJobDirectAnalysisConfigurationDetails& AddReceiverAccountIds(const char* value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds.push_back(value); return *this; }
+    template<typename ReceiverAccountIdsT = Aws::Vector<Aws::String>>
+    void SetReceiverAccountIds(ReceiverAccountIdsT&& value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds = std::forward<ReceiverAccountIdsT>(value); }
+    template<typename ReceiverAccountIdsT = Aws::Vector<Aws::String>>
+    ProtectedJobDirectAnalysisConfigurationDetails& WithReceiverAccountIds(ReceiverAccountIdsT&& value) { SetReceiverAccountIds(std::forward<ReceiverAccountIdsT>(value)); return *this;}
+    template<typename ReceiverAccountIdsT = Aws::String>
+    ProtectedJobDirectAnalysisConfigurationDetails& AddReceiverAccountIds(ReceiverAccountIdsT&& value) { m_receiverAccountIdsHasBeenSet = true; m_receiverAccountIds.emplace_back(std::forward<ReceiverAccountIdsT>(value)); return *this; }
     ///@}
   private:
 

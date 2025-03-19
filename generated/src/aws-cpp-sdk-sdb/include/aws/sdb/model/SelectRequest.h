@@ -21,7 +21,7 @@ namespace Model
   class SelectRequest : public SimpleDBRequest
   {
   public:
-    AWS_SIMPLEDB_API SelectRequest();
+    AWS_SIMPLEDB_API SelectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * The expression used to query the domain.
      */
-    inline const Aws::String& GetSelectExpression() const{ return m_selectExpression; }
+    inline const Aws::String& GetSelectExpression() const { return m_selectExpression; }
     inline bool SelectExpressionHasBeenSet() const { return m_selectExpressionHasBeenSet; }
-    inline void SetSelectExpression(const Aws::String& value) { m_selectExpressionHasBeenSet = true; m_selectExpression = value; }
-    inline void SetSelectExpression(Aws::String&& value) { m_selectExpressionHasBeenSet = true; m_selectExpression = std::move(value); }
-    inline void SetSelectExpression(const char* value) { m_selectExpressionHasBeenSet = true; m_selectExpression.assign(value); }
-    inline SelectRequest& WithSelectExpression(const Aws::String& value) { SetSelectExpression(value); return *this;}
-    inline SelectRequest& WithSelectExpression(Aws::String&& value) { SetSelectExpression(std::move(value)); return *this;}
-    inline SelectRequest& WithSelectExpression(const char* value) { SetSelectExpression(value); return *this;}
+    template<typename SelectExpressionT = Aws::String>
+    void SetSelectExpression(SelectExpressionT&& value) { m_selectExpressionHasBeenSet = true; m_selectExpression = std::forward<SelectExpressionT>(value); }
+    template<typename SelectExpressionT = Aws::String>
+    SelectRequest& WithSelectExpression(SelectExpressionT&& value) { SetSelectExpression(std::forward<SelectExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * A string informing Amazon SimpleDB where to start the next list of
      * <code>ItemNames</code>.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SelectRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SelectRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SelectRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SelectRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * SimpleDB will be returned. Otherwise, results will be consistent eventually, and
      * the client may not see data that was written immediately before your read.
      */
-    inline bool GetConsistentRead() const{ return m_consistentRead; }
+    inline bool GetConsistentRead() const { return m_consistentRead; }
     inline bool ConsistentReadHasBeenSet() const { return m_consistentReadHasBeenSet; }
     inline void SetConsistentRead(bool value) { m_consistentReadHasBeenSet = true; m_consistentRead = value; }
     inline SelectRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_consistentRead;
+    bool m_consistentRead{false};
     bool m_consistentReadHasBeenSet = false;
   };
 

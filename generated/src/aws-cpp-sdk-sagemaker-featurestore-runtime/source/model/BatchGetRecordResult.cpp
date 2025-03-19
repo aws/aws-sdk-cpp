@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetRecordResult::BatchGetRecordResult()
-{
-}
-
 BatchGetRecordResult::BatchGetRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetRecordResult& BatchGetRecordResult::operator =(const Aws::AmazonWebServi
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
+    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -45,8 +41,8 @@ BatchGetRecordResult& BatchGetRecordResult::operator =(const Aws::AmazonWebServi
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedIdentifiers"))
   {
     Aws::Utils::Array<JsonView> unprocessedIdentifiersJsonList = jsonValue.GetArray("UnprocessedIdentifiers");
@@ -54,14 +50,15 @@ BatchGetRecordResult& BatchGetRecordResult::operator =(const Aws::AmazonWebServi
     {
       m_unprocessedIdentifiers.push_back(unprocessedIdentifiersJsonList[unprocessedIdentifiersIndex].AsObject());
     }
+    m_unprocessedIdentifiersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditCheckConfiguration::AuditCheckConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 AuditCheckConfiguration::AuditCheckConfiguration(JsonView jsonValue)
-  : AuditCheckConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AuditCheckConfiguration& AuditCheckConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
@@ -49,7 +39,6 @@ AuditCheckConfiguration& AuditCheckConfiguration::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

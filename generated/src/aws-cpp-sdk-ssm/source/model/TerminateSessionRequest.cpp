@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateSessionRequest::TerminateSessionRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String TerminateSessionRequest::SerializePayload() const
 {
   JsonValue payload;

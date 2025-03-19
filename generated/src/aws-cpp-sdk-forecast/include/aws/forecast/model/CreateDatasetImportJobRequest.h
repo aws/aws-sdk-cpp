@@ -25,7 +25,7 @@ namespace Model
   class CreateDatasetImportJobRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API CreateDatasetImportJobRequest();
+    AWS_FORECASTSERVICE_API CreateDatasetImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * help you avoid getting a <code>ResourceAlreadyExistsException</code>
      * exception.</p>
      */
-    inline const Aws::String& GetDatasetImportJobName() const{ return m_datasetImportJobName; }
+    inline const Aws::String& GetDatasetImportJobName() const { return m_datasetImportJobName; }
     inline bool DatasetImportJobNameHasBeenSet() const { return m_datasetImportJobNameHasBeenSet; }
-    inline void SetDatasetImportJobName(const Aws::String& value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName = value; }
-    inline void SetDatasetImportJobName(Aws::String&& value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName = std::move(value); }
-    inline void SetDatasetImportJobName(const char* value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName.assign(value); }
-    inline CreateDatasetImportJobRequest& WithDatasetImportJobName(const Aws::String& value) { SetDatasetImportJobName(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithDatasetImportJobName(Aws::String&& value) { SetDatasetImportJobName(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& WithDatasetImportJobName(const char* value) { SetDatasetImportJobName(value); return *this;}
+    template<typename DatasetImportJobNameT = Aws::String>
+    void SetDatasetImportJobName(DatasetImportJobNameT&& value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName = std::forward<DatasetImportJobNameT>(value); }
+    template<typename DatasetImportJobNameT = Aws::String>
+    CreateDatasetImportJobRequest& WithDatasetImportJobName(DatasetImportJobNameT&& value) { SetDatasetImportJobName(std::forward<DatasetImportJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want
      * to import data to.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline CreateDatasetImportJobRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    CreateDatasetImportJobRequest& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline CreateDatasetImportJobRequest& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    CreateDatasetImportJobRequest& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +96,12 @@ namespace Model
      * and optionally, for: Y, M, W, and D</p> </li> </ul> <p>If the format isn't
      * specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
      */
-    inline const Aws::String& GetTimestampFormat() const{ return m_timestampFormat; }
+    inline const Aws::String& GetTimestampFormat() const { return m_timestampFormat; }
     inline bool TimestampFormatHasBeenSet() const { return m_timestampFormatHasBeenSet; }
-    inline void SetTimestampFormat(const Aws::String& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = value; }
-    inline void SetTimestampFormat(Aws::String&& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = std::move(value); }
-    inline void SetTimestampFormat(const char* value) { m_timestampFormatHasBeenSet = true; m_timestampFormat.assign(value); }
-    inline CreateDatasetImportJobRequest& WithTimestampFormat(const Aws::String& value) { SetTimestampFormat(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithTimestampFormat(Aws::String&& value) { SetTimestampFormat(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& WithTimestampFormat(const char* value) { SetTimestampFormat(value); return *this;}
+    template<typename TimestampFormatT = Aws::String>
+    void SetTimestampFormat(TimestampFormatT&& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = std::forward<TimestampFormatT>(value); }
+    template<typename TimestampFormatT = Aws::String>
+    CreateDatasetImportJobRequest& WithTimestampFormat(TimestampFormatT&& value) { SetTimestampFormat(std::forward<TimestampFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +112,12 @@ namespace Model
      * href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a
      * complete list of valid time zone names.</p>
      */
-    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+    inline const Aws::String& GetTimeZone() const { return m_timeZone; }
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
-    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
-    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
-    inline CreateDatasetImportJobRequest& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+    template<typename TimeZoneT = Aws::String>
+    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
+    template<typename TimeZoneT = Aws::String>
+    CreateDatasetImportJobRequest& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,7 +126,7 @@ namespace Model
      * This option is ideal for datasets that contain timestamps in multiple time zones
      * and those timestamps are expressed in local time.</p>
      */
-    inline bool GetUseGeolocationForTimeZone() const{ return m_useGeolocationForTimeZone; }
+    inline bool GetUseGeolocationForTimeZone() const { return m_useGeolocationForTimeZone; }
     inline bool UseGeolocationForTimeZoneHasBeenSet() const { return m_useGeolocationForTimeZoneHasBeenSet; }
     inline void SetUseGeolocationForTimeZone(bool value) { m_useGeolocationForTimeZoneHasBeenSet = true; m_useGeolocationForTimeZone = value; }
     inline CreateDatasetImportJobRequest& WithUseGeolocationForTimeZone(bool value) { SetUseGeolocationForTimeZone(value); return *this;}
@@ -148,14 +140,12 @@ namespace Model
      * <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed
      * by the 5-digit ZIP code (Example: US_98121).</p> </li> </ul>
      */
-    inline const Aws::String& GetGeolocationFormat() const{ return m_geolocationFormat; }
+    inline const Aws::String& GetGeolocationFormat() const { return m_geolocationFormat; }
     inline bool GeolocationFormatHasBeenSet() const { return m_geolocationFormatHasBeenSet; }
-    inline void SetGeolocationFormat(const Aws::String& value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat = value; }
-    inline void SetGeolocationFormat(Aws::String&& value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat = std::move(value); }
-    inline void SetGeolocationFormat(const char* value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat.assign(value); }
-    inline CreateDatasetImportJobRequest& WithGeolocationFormat(const Aws::String& value) { SetGeolocationFormat(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithGeolocationFormat(Aws::String&& value) { SetGeolocationFormat(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& WithGeolocationFormat(const char* value) { SetGeolocationFormat(value); return *this;}
+    template<typename GeolocationFormatT = Aws::String>
+    void SetGeolocationFormat(GeolocationFormatT&& value) { m_geolocationFormatHasBeenSet = true; m_geolocationFormat = std::forward<GeolocationFormatT>(value); }
+    template<typename GeolocationFormatT = Aws::String>
+    CreateDatasetImportJobRequest& WithGeolocationFormat(GeolocationFormatT&& value) { SetGeolocationFormat(std::forward<GeolocationFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,14 +170,14 @@ namespace Model
      * tags. Tags with only the key prefix of <code>aws</code> do not count against
      * your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDatasetImportJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDatasetImportJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDatasetImportJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDatasetImportJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -195,14 +185,12 @@ namespace Model
      * <p>The format of the imported data, CSV or PARQUET. The default value is
      * CSV.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline CreateDatasetImportJobRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline CreateDatasetImportJobRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    CreateDatasetImportJobRequest& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,12 +200,10 @@ namespace Model
      * of the existing data with the newly imported data. An <code>INCREMENTAL</code>
      * import appends the imported data to the existing data.</p>
      */
-    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+    inline ImportMode GetImportMode() const { return m_importMode; }
     inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
-    inline void SetImportMode(const ImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
-    inline void SetImportMode(ImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
-    inline CreateDatasetImportJobRequest& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
-    inline CreateDatasetImportJobRequest& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+    inline void SetImportMode(ImportMode value) { m_importModeHasBeenSet = true; m_importMode = value; }
+    inline CreateDatasetImportJobRequest& WithImportMode(ImportMode value) { SetImportMode(value); return *this;}
     ///@}
   private:
 
@@ -236,7 +222,7 @@ namespace Model
     Aws::String m_timeZone;
     bool m_timeZoneHasBeenSet = false;
 
-    bool m_useGeolocationForTimeZone;
+    bool m_useGeolocationForTimeZone{false};
     bool m_useGeolocationForTimeZoneHasBeenSet = false;
 
     Aws::String m_geolocationFormat;
@@ -248,7 +234,7 @@ namespace Model
     Aws::String m_format;
     bool m_formatHasBeenSet = false;
 
-    ImportMode m_importMode;
+    ImportMode m_importMode{ImportMode::NOT_SET};
     bool m_importModeHasBeenSet = false;
   };
 

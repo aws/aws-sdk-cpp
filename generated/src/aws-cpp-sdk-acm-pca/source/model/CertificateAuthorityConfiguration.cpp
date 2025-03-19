@@ -18,18 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-CertificateAuthorityConfiguration::CertificateAuthorityConfiguration() : 
-    m_keyAlgorithm(KeyAlgorithm::NOT_SET),
-    m_keyAlgorithmHasBeenSet(false),
-    m_signingAlgorithm(SigningAlgorithm::NOT_SET),
-    m_signingAlgorithmHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_csrExtensionsHasBeenSet(false)
-{
-}
-
 CertificateAuthorityConfiguration::CertificateAuthorityConfiguration(JsonView jsonValue)
-  : CertificateAuthorityConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CertificateAuthorityConfiguration& CertificateAuthorityConfiguration::operator =
   if(jsonValue.ValueExists("KeyAlgorithm"))
   {
     m_keyAlgorithm = KeyAlgorithmMapper::GetKeyAlgorithmForName(jsonValue.GetString("KeyAlgorithm"));
-
     m_keyAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningAlgorithm"))
   {
     m_signingAlgorithm = SigningAlgorithmMapper::GetSigningAlgorithmForName(jsonValue.GetString("SigningAlgorithm"));
-
     m_signingAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetObject("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CsrExtensions"))
   {
     m_csrExtensions = jsonValue.GetObject("CsrExtensions");
-
     m_csrExtensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

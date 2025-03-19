@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-GsmLocalId::GsmLocalId() : 
-    m_bsic(0),
-    m_bsicHasBeenSet(false),
-    m_bcch(0),
-    m_bcchHasBeenSet(false)
-{
-}
-
 GsmLocalId::GsmLocalId(JsonView jsonValue)
-  : GsmLocalId()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GsmLocalId& GsmLocalId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bsic"))
   {
     m_bsic = jsonValue.GetInteger("Bsic");
-
     m_bsicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bcch"))
   {
     m_bcch = jsonValue.GetInteger("Bcch");
-
     m_bcchHasBeenSet = true;
   }
-
   return *this;
 }
 

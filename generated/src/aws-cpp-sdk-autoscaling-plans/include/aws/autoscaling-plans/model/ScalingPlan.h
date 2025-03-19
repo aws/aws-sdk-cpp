@@ -36,7 +36,7 @@ namespace Model
   class ScalingPlan
   {
   public:
-    AWS_AUTOSCALINGPLANS_API ScalingPlan();
+    AWS_AUTOSCALINGPLANS_API ScalingPlan() = default;
     AWS_AUTOSCALINGPLANS_API ScalingPlan(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API ScalingPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p>The name of the scaling plan.</p>
      */
-    inline const Aws::String& GetScalingPlanName() const{ return m_scalingPlanName; }
+    inline const Aws::String& GetScalingPlanName() const { return m_scalingPlanName; }
     inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
-    inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
-    inline void SetScalingPlanName(Aws::String&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::move(value); }
-    inline void SetScalingPlanName(const char* value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName.assign(value); }
-    inline ScalingPlan& WithScalingPlanName(const Aws::String& value) { SetScalingPlanName(value); return *this;}
-    inline ScalingPlan& WithScalingPlanName(Aws::String&& value) { SetScalingPlanName(std::move(value)); return *this;}
-    inline ScalingPlan& WithScalingPlanName(const char* value) { SetScalingPlanName(value); return *this;}
+    template<typename ScalingPlanNameT = Aws::String>
+    void SetScalingPlanName(ScalingPlanNameT&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::forward<ScalingPlanNameT>(value); }
+    template<typename ScalingPlanNameT = Aws::String>
+    ScalingPlan& WithScalingPlanName(ScalingPlanNameT&& value) { SetScalingPlanName(std::forward<ScalingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the scaling plan.</p>
      */
-    inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
+    inline long long GetScalingPlanVersion() const { return m_scalingPlanVersion; }
     inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
     inline ScalingPlan& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
@@ -71,26 +69,26 @@ namespace Model
      * <p>A CloudFormation stack or a set of tags. You can create one scaling plan per
      * application source.</p>
      */
-    inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
+    inline const ApplicationSource& GetApplicationSource() const { return m_applicationSource; }
     inline bool ApplicationSourceHasBeenSet() const { return m_applicationSourceHasBeenSet; }
-    inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
-    inline void SetApplicationSource(ApplicationSource&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::move(value); }
-    inline ScalingPlan& WithApplicationSource(const ApplicationSource& value) { SetApplicationSource(value); return *this;}
-    inline ScalingPlan& WithApplicationSource(ApplicationSource&& value) { SetApplicationSource(std::move(value)); return *this;}
+    template<typename ApplicationSourceT = ApplicationSource>
+    void SetApplicationSource(ApplicationSourceT&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::forward<ApplicationSourceT>(value); }
+    template<typename ApplicationSourceT = ApplicationSource>
+    ScalingPlan& WithApplicationSource(ApplicationSourceT&& value) { SetApplicationSource(std::forward<ApplicationSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scaling instructions.</p>
      */
-    inline const Aws::Vector<ScalingInstruction>& GetScalingInstructions() const{ return m_scalingInstructions; }
+    inline const Aws::Vector<ScalingInstruction>& GetScalingInstructions() const { return m_scalingInstructions; }
     inline bool ScalingInstructionsHasBeenSet() const { return m_scalingInstructionsHasBeenSet; }
-    inline void SetScalingInstructions(const Aws::Vector<ScalingInstruction>& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions = value; }
-    inline void SetScalingInstructions(Aws::Vector<ScalingInstruction>&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions = std::move(value); }
-    inline ScalingPlan& WithScalingInstructions(const Aws::Vector<ScalingInstruction>& value) { SetScalingInstructions(value); return *this;}
-    inline ScalingPlan& WithScalingInstructions(Aws::Vector<ScalingInstruction>&& value) { SetScalingInstructions(std::move(value)); return *this;}
-    inline ScalingPlan& AddScalingInstructions(const ScalingInstruction& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions.push_back(value); return *this; }
-    inline ScalingPlan& AddScalingInstructions(ScalingInstruction&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions.push_back(std::move(value)); return *this; }
+    template<typename ScalingInstructionsT = Aws::Vector<ScalingInstruction>>
+    void SetScalingInstructions(ScalingInstructionsT&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions = std::forward<ScalingInstructionsT>(value); }
+    template<typename ScalingInstructionsT = Aws::Vector<ScalingInstruction>>
+    ScalingPlan& WithScalingInstructions(ScalingInstructionsT&& value) { SetScalingInstructions(std::forward<ScalingInstructionsT>(value)); return *this;}
+    template<typename ScalingInstructionsT = ScalingInstruction>
+    ScalingPlan& AddScalingInstructions(ScalingInstructionsT&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions.emplace_back(std::forward<ScalingInstructionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,57 +105,53 @@ namespace Model
      * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
      * could not be updated.</p> </li> </ul>
      */
-    inline const ScalingPlanStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline ScalingPlanStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const ScalingPlanStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(ScalingPlanStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline ScalingPlan& WithStatusCode(const ScalingPlanStatusCode& value) { SetStatusCode(value); return *this;}
-    inline ScalingPlan& WithStatusCode(ScalingPlanStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(ScalingPlanStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline ScalingPlan& WithStatusCode(ScalingPlanStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A simple message about the current status of the scaling plan.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ScalingPlan& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ScalingPlan& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ScalingPlan& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ScalingPlan& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
-    inline const Aws::Utils::DateTime& GetStatusStartTime() const{ return m_statusStartTime; }
+    inline const Aws::Utils::DateTime& GetStatusStartTime() const { return m_statusStartTime; }
     inline bool StatusStartTimeHasBeenSet() const { return m_statusStartTimeHasBeenSet; }
-    inline void SetStatusStartTime(const Aws::Utils::DateTime& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = value; }
-    inline void SetStatusStartTime(Aws::Utils::DateTime&& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = std::move(value); }
-    inline ScalingPlan& WithStatusStartTime(const Aws::Utils::DateTime& value) { SetStatusStartTime(value); return *this;}
-    inline ScalingPlan& WithStatusStartTime(Aws::Utils::DateTime&& value) { SetStatusStartTime(std::move(value)); return *this;}
+    template<typename StatusStartTimeT = Aws::Utils::DateTime>
+    void SetStatusStartTime(StatusStartTimeT&& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = std::forward<StatusStartTimeT>(value); }
+    template<typename StatusStartTimeT = Aws::Utils::DateTime>
+    ScalingPlan& WithStatusStartTime(StatusStartTimeT&& value) { SetStatusStartTime(std::forward<StatusStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix time stamp when the scaling plan was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ScalingPlan& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ScalingPlan& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ScalingPlan& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scalingPlanName;
     bool m_scalingPlanNameHasBeenSet = false;
 
-    long long m_scalingPlanVersion;
+    long long m_scalingPlanVersion{0};
     bool m_scalingPlanVersionHasBeenSet = false;
 
     ApplicationSource m_applicationSource;
@@ -166,16 +160,16 @@ namespace Model
     Aws::Vector<ScalingInstruction> m_scalingInstructions;
     bool m_scalingInstructionsHasBeenSet = false;
 
-    ScalingPlanStatusCode m_statusCode;
+    ScalingPlanStatusCode m_statusCode{ScalingPlanStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_statusStartTime;
+    Aws::Utils::DateTime m_statusStartTime{};
     bool m_statusStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

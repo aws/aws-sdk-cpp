@@ -31,7 +31,7 @@ namespace Model
   class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolClientRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolClientRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to create an app client.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline CreateUserPoolClientRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline CreateUserPoolClientRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    CreateUserPoolClientRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A friendly name for the app client that you want to create.</p>
      */
-    inline const Aws::String& GetClientName() const{ return m_clientName; }
+    inline const Aws::String& GetClientName() const { return m_clientName; }
     inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }
-    inline void SetClientName(const Aws::String& value) { m_clientNameHasBeenSet = true; m_clientName = value; }
-    inline void SetClientName(Aws::String&& value) { m_clientNameHasBeenSet = true; m_clientName = std::move(value); }
-    inline void SetClientName(const char* value) { m_clientNameHasBeenSet = true; m_clientName.assign(value); }
-    inline CreateUserPoolClientRequest& WithClientName(const Aws::String& value) { SetClientName(value); return *this;}
-    inline CreateUserPoolClientRequest& WithClientName(Aws::String&& value) { SetClientName(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& WithClientName(const char* value) { SetClientName(value); return *this;}
+    template<typename ClientNameT = Aws::String>
+    void SetClientName(ClientNameT&& value) { m_clientNameHasBeenSet = true; m_clientName = std::forward<ClientNameT>(value); }
+    template<typename ClientNameT = Aws::String>
+    CreateUserPoolClientRequest& WithClientName(ClientNameT&& value) { SetClientName(std::forward<ClientNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App
      * client types</a>.</p>
      */
-    inline bool GetGenerateSecret() const{ return m_generateSecret; }
+    inline bool GetGenerateSecret() const { return m_generateSecret; }
     inline bool GenerateSecretHasBeenSet() const { return m_generateSecretHasBeenSet; }
     inline void SetGenerateSecret(bool value) { m_generateSecretHasBeenSet = true; m_generateSecret = value; }
     inline CreateUserPoolClientRequest& WithGenerateSecret(bool value) { SetGenerateSecret(value); return *this;}
@@ -104,7 +100,7 @@ namespace Model
      * in the configuration of your app client, your refresh tokens are valid for 30
      * days.</p>
      */
-    inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
+    inline int GetRefreshTokenValidity() const { return m_refreshTokenValidity; }
     inline bool RefreshTokenValidityHasBeenSet() const { return m_refreshTokenValidityHasBeenSet; }
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
     inline CreateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
@@ -124,7 +120,7 @@ namespace Model
      * is displayed below in seconds.</p> <p>If you don't specify otherwise in the
      * configuration of your app client, your access tokens are valid for one hour.</p>
      */
-    inline int GetAccessTokenValidity() const{ return m_accessTokenValidity; }
+    inline int GetAccessTokenValidity() const { return m_accessTokenValidity; }
     inline bool AccessTokenValidityHasBeenSet() const { return m_accessTokenValidityHasBeenSet; }
     inline void SetAccessTokenValidity(int value) { m_accessTokenValidityHasBeenSet = true; m_accessTokenValidity = value; }
     inline CreateUserPoolClientRequest& WithAccessTokenValidity(int value) { SetAccessTokenValidity(value); return *this;}
@@ -144,7 +140,7 @@ namespace Model
      * otherwise in the configuration of your app client, your ID tokens are valid for
      * one hour.</p>
      */
-    inline int GetIdTokenValidity() const{ return m_idTokenValidity; }
+    inline int GetIdTokenValidity() const { return m_idTokenValidity; }
     inline bool IdTokenValidityHasBeenSet() const { return m_idTokenValidityHasBeenSet; }
     inline void SetIdTokenValidity(int value) { m_idTokenValidityHasBeenSet = true; m_idTokenValidity = value; }
     inline CreateUserPoolClientRequest& WithIdTokenValidity(int value) { SetIdTokenValidity(value); return *this;}
@@ -155,12 +151,12 @@ namespace Model
      * <p>The units that validity times are represented in. The default unit for
      * refresh tokens is days, and the default for ID and access tokens are hours.</p>
      */
-    inline const TokenValidityUnitsType& GetTokenValidityUnits() const{ return m_tokenValidityUnits; }
+    inline const TokenValidityUnitsType& GetTokenValidityUnits() const { return m_tokenValidityUnits; }
     inline bool TokenValidityUnitsHasBeenSet() const { return m_tokenValidityUnitsHasBeenSet; }
-    inline void SetTokenValidityUnits(const TokenValidityUnitsType& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = value; }
-    inline void SetTokenValidityUnits(TokenValidityUnitsType&& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = std::move(value); }
-    inline CreateUserPoolClientRequest& WithTokenValidityUnits(const TokenValidityUnitsType& value) { SetTokenValidityUnits(value); return *this;}
-    inline CreateUserPoolClientRequest& WithTokenValidityUnits(TokenValidityUnitsType&& value) { SetTokenValidityUnits(std::move(value)); return *this;}
+    template<typename TokenValidityUnitsT = TokenValidityUnitsType>
+    void SetTokenValidityUnits(TokenValidityUnitsT&& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = std::forward<TokenValidityUnitsT>(value); }
+    template<typename TokenValidityUnitsT = TokenValidityUnitsType>
+    CreateUserPoolClientRequest& WithTokenValidityUnits(TokenValidityUnitsT&& value) { SetTokenValidityUnits(std::forward<TokenValidityUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,15 +172,14 @@ namespace Model
      * Cognito only populates <code>ReadAttributes</code> in the API response if you
      * have specified your own custom set of read attributes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReadAttributes() const{ return m_readAttributes; }
+    inline const Aws::Vector<Aws::String>& GetReadAttributes() const { return m_readAttributes; }
     inline bool ReadAttributesHasBeenSet() const { return m_readAttributesHasBeenSet; }
-    inline void SetReadAttributes(const Aws::Vector<Aws::String>& value) { m_readAttributesHasBeenSet = true; m_readAttributes = value; }
-    inline void SetReadAttributes(Aws::Vector<Aws::String>&& value) { m_readAttributesHasBeenSet = true; m_readAttributes = std::move(value); }
-    inline CreateUserPoolClientRequest& WithReadAttributes(const Aws::Vector<Aws::String>& value) { SetReadAttributes(value); return *this;}
-    inline CreateUserPoolClientRequest& WithReadAttributes(Aws::Vector<Aws::String>&& value) { SetReadAttributes(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddReadAttributes(const Aws::String& value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddReadAttributes(Aws::String&& value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(std::move(value)); return *this; }
-    inline CreateUserPoolClientRequest& AddReadAttributes(const char* value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
+    template<typename ReadAttributesT = Aws::Vector<Aws::String>>
+    void SetReadAttributes(ReadAttributesT&& value) { m_readAttributesHasBeenSet = true; m_readAttributes = std::forward<ReadAttributesT>(value); }
+    template<typename ReadAttributesT = Aws::Vector<Aws::String>>
+    CreateUserPoolClientRequest& WithReadAttributes(ReadAttributesT&& value) { SetReadAttributes(std::forward<ReadAttributesT>(value)); return *this;}
+    template<typename ReadAttributesT = Aws::String>
+    CreateUserPoolClientRequest& AddReadAttributes(ReadAttributesT&& value) { m_readAttributesHasBeenSet = true; m_readAttributes.emplace_back(std::forward<ReadAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -206,15 +201,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * IdP Attribute Mappings for Your user pool</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWriteAttributes() const{ return m_writeAttributes; }
+    inline const Aws::Vector<Aws::String>& GetWriteAttributes() const { return m_writeAttributes; }
     inline bool WriteAttributesHasBeenSet() const { return m_writeAttributesHasBeenSet; }
-    inline void SetWriteAttributes(const Aws::Vector<Aws::String>& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
-    inline void SetWriteAttributes(Aws::Vector<Aws::String>&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = std::move(value); }
-    inline CreateUserPoolClientRequest& WithWriteAttributes(const Aws::Vector<Aws::String>& value) { SetWriteAttributes(value); return *this;}
-    inline CreateUserPoolClientRequest& WithWriteAttributes(Aws::Vector<Aws::String>&& value) { SetWriteAttributes(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddWriteAttributes(const Aws::String& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddWriteAttributes(Aws::String&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(std::move(value)); return *this; }
-    inline CreateUserPoolClientRequest& AddWriteAttributes(const char* value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
+    template<typename WriteAttributesT = Aws::Vector<Aws::String>>
+    void SetWriteAttributes(WriteAttributesT&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = std::forward<WriteAttributesT>(value); }
+    template<typename WriteAttributesT = Aws::Vector<Aws::String>>
+    CreateUserPoolClientRequest& WithWriteAttributes(WriteAttributesT&& value) { SetWriteAttributes(std::forward<WriteAttributesT>(value)); return *this;}
+    template<typename WriteAttributesT = Aws::String>
+    CreateUserPoolClientRequest& AddWriteAttributes(WriteAttributesT&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.emplace_back(std::forward<WriteAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -260,14 +254,13 @@ namespace Model
      * values that begin with <code>ALLOW_</code>, like
      * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
-    inline const Aws::Vector<ExplicitAuthFlowsType>& GetExplicitAuthFlows() const{ return m_explicitAuthFlows; }
+    inline const Aws::Vector<ExplicitAuthFlowsType>& GetExplicitAuthFlows() const { return m_explicitAuthFlows; }
     inline bool ExplicitAuthFlowsHasBeenSet() const { return m_explicitAuthFlowsHasBeenSet; }
-    inline void SetExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
-    inline void SetExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = std::move(value); }
-    inline CreateUserPoolClientRequest& WithExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { SetExplicitAuthFlows(value); return *this;}
-    inline CreateUserPoolClientRequest& WithExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { SetExplicitAuthFlows(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(const ExplicitAuthFlowsType& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(std::move(value)); return *this; }
+    template<typename ExplicitAuthFlowsT = Aws::Vector<ExplicitAuthFlowsType>>
+    void SetExplicitAuthFlows(ExplicitAuthFlowsT&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = std::forward<ExplicitAuthFlowsT>(value); }
+    template<typename ExplicitAuthFlowsT = Aws::Vector<ExplicitAuthFlowsType>>
+    CreateUserPoolClientRequest& WithExplicitAuthFlows(ExplicitAuthFlowsT&& value) { SetExplicitAuthFlows(std::forward<ExplicitAuthFlowsT>(value)); return *this;}
+    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -286,15 +279,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
      * rule</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
+    inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const { return m_supportedIdentityProviders; }
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
-    inline void SetSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = value; }
-    inline void SetSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = std::move(value); }
-    inline CreateUserPoolClientRequest& WithSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { SetSupportedIdentityProviders(value); return *this;}
-    inline CreateUserPoolClientRequest& WithSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { SetSupportedIdentityProviders(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(const Aws::String& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(Aws::String&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(std::move(value)); return *this; }
-    inline CreateUserPoolClientRequest& AddSupportedIdentityProviders(const char* value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
+    template<typename SupportedIdentityProvidersT = Aws::Vector<Aws::String>>
+    void SetSupportedIdentityProviders(SupportedIdentityProvidersT&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = std::forward<SupportedIdentityProvidersT>(value); }
+    template<typename SupportedIdentityProvidersT = Aws::Vector<Aws::String>>
+    CreateUserPoolClientRequest& WithSupportedIdentityProviders(SupportedIdentityProvidersT&& value) { SetSupportedIdentityProviders(std::forward<SupportedIdentityProvidersT>(value)); return *this;}
+    template<typename SupportedIdentityProvidersT = Aws::String>
+    CreateUserPoolClientRequest& AddSupportedIdentityProviders(SupportedIdentityProvidersT&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.emplace_back(std::forward<SupportedIdentityProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -314,15 +306,14 @@ namespace Model
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
      * myapp://example are also supported.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCallbackURLs() const{ return m_callbackURLs; }
+    inline const Aws::Vector<Aws::String>& GetCallbackURLs() const { return m_callbackURLs; }
     inline bool CallbackURLsHasBeenSet() const { return m_callbackURLsHasBeenSet; }
-    inline void SetCallbackURLs(const Aws::Vector<Aws::String>& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = value; }
-    inline void SetCallbackURLs(Aws::Vector<Aws::String>&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = std::move(value); }
-    inline CreateUserPoolClientRequest& WithCallbackURLs(const Aws::Vector<Aws::String>& value) { SetCallbackURLs(value); return *this;}
-    inline CreateUserPoolClientRequest& WithCallbackURLs(Aws::Vector<Aws::String>&& value) { SetCallbackURLs(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddCallbackURLs(const Aws::String& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddCallbackURLs(Aws::String&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(std::move(value)); return *this; }
-    inline CreateUserPoolClientRequest& AddCallbackURLs(const char* value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
+    template<typename CallbackURLsT = Aws::Vector<Aws::String>>
+    void SetCallbackURLs(CallbackURLsT&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = std::forward<CallbackURLsT>(value); }
+    template<typename CallbackURLsT = Aws::Vector<Aws::String>>
+    CreateUserPoolClientRequest& WithCallbackURLs(CallbackURLsT&& value) { SetCallbackURLs(std::forward<CallbackURLsT>(value)); return *this;}
+    template<typename CallbackURLsT = Aws::String>
+    CreateUserPoolClientRequest& AddCallbackURLs(CallbackURLsT&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.emplace_back(std::forward<CallbackURLsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -337,15 +328,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout
      * endpoint</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogoutURLs() const{ return m_logoutURLs; }
+    inline const Aws::Vector<Aws::String>& GetLogoutURLs() const { return m_logoutURLs; }
     inline bool LogoutURLsHasBeenSet() const { return m_logoutURLsHasBeenSet; }
-    inline void SetLogoutURLs(const Aws::Vector<Aws::String>& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = value; }
-    inline void SetLogoutURLs(Aws::Vector<Aws::String>&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = std::move(value); }
-    inline CreateUserPoolClientRequest& WithLogoutURLs(const Aws::Vector<Aws::String>& value) { SetLogoutURLs(value); return *this;}
-    inline CreateUserPoolClientRequest& WithLogoutURLs(Aws::Vector<Aws::String>&& value) { SetLogoutURLs(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddLogoutURLs(const Aws::String& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddLogoutURLs(Aws::String&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(std::move(value)); return *this; }
-    inline CreateUserPoolClientRequest& AddLogoutURLs(const char* value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
+    template<typename LogoutURLsT = Aws::Vector<Aws::String>>
+    void SetLogoutURLs(LogoutURLsT&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = std::forward<LogoutURLsT>(value); }
+    template<typename LogoutURLsT = Aws::Vector<Aws::String>>
+    CreateUserPoolClientRequest& WithLogoutURLs(LogoutURLsT&& value) { SetLogoutURLs(std::forward<LogoutURLsT>(value)); return *this;}
+    template<typename LogoutURLsT = Aws::String>
+    CreateUserPoolClientRequest& AddLogoutURLs(LogoutURLsT&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.emplace_back(std::forward<LogoutURLsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -354,14 +344,12 @@ namespace Model
      * <code>redirect_uri</code> in authentication requests. Must be in the
      * <code>CallbackURLs</code> list.</p>
      */
-    inline const Aws::String& GetDefaultRedirectURI() const{ return m_defaultRedirectURI; }
+    inline const Aws::String& GetDefaultRedirectURI() const { return m_defaultRedirectURI; }
     inline bool DefaultRedirectURIHasBeenSet() const { return m_defaultRedirectURIHasBeenSet; }
-    inline void SetDefaultRedirectURI(const Aws::String& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = value; }
-    inline void SetDefaultRedirectURI(Aws::String&& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = std::move(value); }
-    inline void SetDefaultRedirectURI(const char* value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI.assign(value); }
-    inline CreateUserPoolClientRequest& WithDefaultRedirectURI(const Aws::String& value) { SetDefaultRedirectURI(value); return *this;}
-    inline CreateUserPoolClientRequest& WithDefaultRedirectURI(Aws::String&& value) { SetDefaultRedirectURI(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& WithDefaultRedirectURI(const char* value) { SetDefaultRedirectURI(value); return *this;}
+    template<typename DefaultRedirectURIT = Aws::String>
+    void SetDefaultRedirectURI(DefaultRedirectURIT&& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = std::forward<DefaultRedirectURIT>(value); }
+    template<typename DefaultRedirectURIT = Aws::String>
+    CreateUserPoolClientRequest& WithDefaultRedirectURI(DefaultRedirectURIT&& value) { SetDefaultRedirectURI(std::forward<DefaultRedirectURIT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -378,14 +366,13 @@ namespace Model
      * from the <code>/oauth2/token</code> endpoint directly to a non-person user,
      * authorized by a combination of the client ID and client secret.</p> </dd> </dl>
      */
-    inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const{ return m_allowedOAuthFlows; }
+    inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const { return m_allowedOAuthFlows; }
     inline bool AllowedOAuthFlowsHasBeenSet() const { return m_allowedOAuthFlowsHasBeenSet; }
-    inline void SetAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = value; }
-    inline void SetAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = std::move(value); }
-    inline CreateUserPoolClientRequest& WithAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { SetAllowedOAuthFlows(value); return *this;}
-    inline CreateUserPoolClientRequest& WithAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { SetAllowedOAuthFlows(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddAllowedOAuthFlows(const OAuthFlowType& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(std::move(value)); return *this; }
+    template<typename AllowedOAuthFlowsT = Aws::Vector<OAuthFlowType>>
+    void SetAllowedOAuthFlows(AllowedOAuthFlowsT&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = std::forward<AllowedOAuthFlowsT>(value); }
+    template<typename AllowedOAuthFlowsT = Aws::Vector<OAuthFlowType>>
+    CreateUserPoolClientRequest& WithAllowedOAuthFlows(AllowedOAuthFlowsT&& value) { SetAllowedOAuthFlows(std::forward<AllowedOAuthFlowsT>(value)); return *this;}
+    inline CreateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -399,15 +386,14 @@ namespace Model
      * operations. Custom scopes with resource servers authorize access to external
      * APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
+    inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const { return m_allowedOAuthScopes; }
     inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
-    inline void SetAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = value; }
-    inline void SetAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = std::move(value); }
-    inline CreateUserPoolClientRequest& WithAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { SetAllowedOAuthScopes(value); return *this;}
-    inline CreateUserPoolClientRequest& WithAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { SetAllowedOAuthScopes(std::move(value)); return *this;}
-    inline CreateUserPoolClientRequest& AddAllowedOAuthScopes(const Aws::String& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
-    inline CreateUserPoolClientRequest& AddAllowedOAuthScopes(Aws::String&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(std::move(value)); return *this; }
-    inline CreateUserPoolClientRequest& AddAllowedOAuthScopes(const char* value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
+    template<typename AllowedOAuthScopesT = Aws::Vector<Aws::String>>
+    void SetAllowedOAuthScopes(AllowedOAuthScopesT&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = std::forward<AllowedOAuthScopesT>(value); }
+    template<typename AllowedOAuthScopesT = Aws::Vector<Aws::String>>
+    CreateUserPoolClientRequest& WithAllowedOAuthScopes(AllowedOAuthScopesT&& value) { SetAllowedOAuthScopes(std::forward<AllowedOAuthScopesT>(value)); return *this;}
+    template<typename AllowedOAuthScopesT = Aws::String>
+    CreateUserPoolClientRequest& AddAllowedOAuthScopes(AllowedOAuthScopesT&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.emplace_back(std::forward<AllowedOAuthScopesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -428,7 +414,7 @@ namespace Model
      * it defaults to <code>false</code>. When <code>false</code>, only SDK-based API
      * sign-in is permitted.</p>
      */
-    inline bool GetAllowedOAuthFlowsUserPoolClient() const{ return m_allowedOAuthFlowsUserPoolClient; }
+    inline bool GetAllowedOAuthFlowsUserPoolClient() const { return m_allowedOAuthFlowsUserPoolClient; }
     inline bool AllowedOAuthFlowsUserPoolClientHasBeenSet() const { return m_allowedOAuthFlowsUserPoolClientHasBeenSet; }
     inline void SetAllowedOAuthFlowsUserPoolClient(bool value) { m_allowedOAuthFlowsUserPoolClientHasBeenSet = true; m_allowedOAuthFlowsUserPoolClient = value; }
     inline CreateUserPoolClientRequest& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
@@ -444,12 +430,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using
      * Amazon Pinpoint analytics</a>.</p>
      */
-    inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
+    inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const { return m_analyticsConfiguration; }
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
-    inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
-    inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
-    inline CreateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
-    inline CreateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
+    template<typename AnalyticsConfigurationT = AnalyticsConfigurationType>
+    void SetAnalyticsConfiguration(AnalyticsConfigurationT&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::forward<AnalyticsConfigurationT>(value); }
+    template<typename AnalyticsConfigurationT = AnalyticsConfigurationType>
+    CreateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationT&& value) { SetAnalyticsConfiguration(std::forward<AnalyticsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -466,12 +452,10 @@ namespace Model
      * exception if the user doesn't exist in the user pool.</p> <p>Defaults to
      * <code>LEGACY</code>.</p>
      */
-    inline const PreventUserExistenceErrorTypes& GetPreventUserExistenceErrors() const{ return m_preventUserExistenceErrors; }
+    inline PreventUserExistenceErrorTypes GetPreventUserExistenceErrors() const { return m_preventUserExistenceErrors; }
     inline bool PreventUserExistenceErrorsHasBeenSet() const { return m_preventUserExistenceErrorsHasBeenSet; }
-    inline void SetPreventUserExistenceErrors(const PreventUserExistenceErrorTypes& value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = value; }
-    inline void SetPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = std::move(value); }
-    inline CreateUserPoolClientRequest& WithPreventUserExistenceErrors(const PreventUserExistenceErrorTypes& value) { SetPreventUserExistenceErrors(value); return *this;}
-    inline CreateUserPoolClientRequest& WithPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { SetPreventUserExistenceErrors(std::move(value)); return *this;}
+    inline void SetPreventUserExistenceErrors(PreventUserExistenceErrorTypes value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = value; }
+    inline CreateUserPoolClientRequest& WithPreventUserExistenceErrors(PreventUserExistenceErrorTypes value) { SetPreventUserExistenceErrors(value); return *this;}
     ///@}
 
     ///@{
@@ -482,7 +466,7 @@ namespace Model
      * parameter, token revocation is automatically activated for the new user pool
      * client.</p>
      */
-    inline bool GetEnableTokenRevocation() const{ return m_enableTokenRevocation; }
+    inline bool GetEnableTokenRevocation() const { return m_enableTokenRevocation; }
     inline bool EnableTokenRevocationHasBeenSet() const { return m_enableTokenRevocationHasBeenSet; }
     inline void SetEnableTokenRevocation(bool value) { m_enableTokenRevocationHasBeenSet = true; m_enableTokenRevocation = value; }
     inline CreateUserPoolClientRequest& WithEnableTokenRevocation(bool value) { SetEnableTokenRevocation(value); return *this;}
@@ -500,7 +484,7 @@ namespace Model
      * only activate <code>EnablePropagateAdditionalUserContextData</code> in an app
      * client that has a client secret.</p>
      */
-    inline bool GetEnablePropagateAdditionalUserContextData() const{ return m_enablePropagateAdditionalUserContextData; }
+    inline bool GetEnablePropagateAdditionalUserContextData() const { return m_enablePropagateAdditionalUserContextData; }
     inline bool EnablePropagateAdditionalUserContextDataHasBeenSet() const { return m_enablePropagateAdditionalUserContextDataHasBeenSet; }
     inline void SetEnablePropagateAdditionalUserContextData(bool value) { m_enablePropagateAdditionalUserContextDataHasBeenSet = true; m_enablePropagateAdditionalUserContextData = value; }
     inline CreateUserPoolClientRequest& WithEnablePropagateAdditionalUserContextData(bool value) { SetEnablePropagateAdditionalUserContextData(value); return *this;}
@@ -513,7 +497,7 @@ namespace Model
      * minutes, of that session token. Your user pool native user must respond to each
      * authentication challenge before the session expires.</p>
      */
-    inline int GetAuthSessionValidity() const{ return m_authSessionValidity; }
+    inline int GetAuthSessionValidity() const { return m_authSessionValidity; }
     inline bool AuthSessionValidityHasBeenSet() const { return m_authSessionValidityHasBeenSet; }
     inline void SetAuthSessionValidity(int value) { m_authSessionValidityHasBeenSet = true; m_authSessionValidity = value; }
     inline CreateUserPoolClientRequest& WithAuthSessionValidity(int value) { SetAuthSessionValidity(value); return *this;}
@@ -526,16 +510,16 @@ namespace Model
     Aws::String m_clientName;
     bool m_clientNameHasBeenSet = false;
 
-    bool m_generateSecret;
+    bool m_generateSecret{false};
     bool m_generateSecretHasBeenSet = false;
 
-    int m_refreshTokenValidity;
+    int m_refreshTokenValidity{0};
     bool m_refreshTokenValidityHasBeenSet = false;
 
-    int m_accessTokenValidity;
+    int m_accessTokenValidity{0};
     bool m_accessTokenValidityHasBeenSet = false;
 
-    int m_idTokenValidity;
+    int m_idTokenValidity{0};
     bool m_idTokenValidityHasBeenSet = false;
 
     TokenValidityUnitsType m_tokenValidityUnits;
@@ -568,22 +552,22 @@ namespace Model
     Aws::Vector<Aws::String> m_allowedOAuthScopes;
     bool m_allowedOAuthScopesHasBeenSet = false;
 
-    bool m_allowedOAuthFlowsUserPoolClient;
+    bool m_allowedOAuthFlowsUserPoolClient{false};
     bool m_allowedOAuthFlowsUserPoolClientHasBeenSet = false;
 
     AnalyticsConfigurationType m_analyticsConfiguration;
     bool m_analyticsConfigurationHasBeenSet = false;
 
-    PreventUserExistenceErrorTypes m_preventUserExistenceErrors;
+    PreventUserExistenceErrorTypes m_preventUserExistenceErrors{PreventUserExistenceErrorTypes::NOT_SET};
     bool m_preventUserExistenceErrorsHasBeenSet = false;
 
-    bool m_enableTokenRevocation;
+    bool m_enableTokenRevocation{false};
     bool m_enableTokenRevocationHasBeenSet = false;
 
-    bool m_enablePropagateAdditionalUserContextData;
+    bool m_enablePropagateAdditionalUserContextData{false};
     bool m_enablePropagateAdditionalUserContextDataHasBeenSet = false;
 
-    int m_authSessionValidity;
+    int m_authSessionValidity{0};
     bool m_authSessionValidityHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSchedulingPoliciesResult::DescribeSchedulingPoliciesResult()
-{
-}
-
 DescribeSchedulingPoliciesResult::DescribeSchedulingPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeSchedulingPoliciesResult& DescribeSchedulingPoliciesResult::operator =(c
     {
       m_schedulingPolicies.push_back(schedulingPoliciesJsonList[schedulingPoliciesIndex].AsObject());
     }
+    m_schedulingPoliciesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

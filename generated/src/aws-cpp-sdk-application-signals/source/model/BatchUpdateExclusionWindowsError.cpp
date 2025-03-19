@@ -18,15 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-BatchUpdateExclusionWindowsError::BatchUpdateExclusionWindowsError() : 
-    m_sloIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchUpdateExclusionWindowsError::BatchUpdateExclusionWindowsError(JsonView jsonValue)
-  : BatchUpdateExclusionWindowsError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchUpdateExclusionWindowsError& BatchUpdateExclusionWindowsError::operator =(J
   if(jsonValue.ValueExists("SloId"))
   {
     m_sloId = jsonValue.GetString("SloId");
-
     m_sloIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

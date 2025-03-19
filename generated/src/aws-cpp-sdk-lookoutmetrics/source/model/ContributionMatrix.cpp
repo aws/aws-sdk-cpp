@@ -18,13 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-ContributionMatrix::ContributionMatrix() : 
-    m_dimensionContributionListHasBeenSet(false)
-{
-}
-
 ContributionMatrix::ContributionMatrix(JsonView jsonValue)
-  : ContributionMatrix()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ContributionMatrix& ContributionMatrix::operator =(JsonView jsonValue)
     }
     m_dimensionContributionListHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitiateLayerUploadResult::InitiateLayerUploadResult() : 
-    m_partSize(0)
-{
-}
-
 InitiateLayerUploadResult::InitiateLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : InitiateLayerUploadResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ InitiateLayerUploadResult& InitiateLayerUploadResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
-
+    m_uploadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partSize"))
   {
     m_partSize = jsonValue.GetInt64("partSize");
-
+    m_partSizeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

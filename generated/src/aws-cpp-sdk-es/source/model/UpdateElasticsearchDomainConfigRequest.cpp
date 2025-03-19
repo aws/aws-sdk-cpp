@@ -12,26 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateElasticsearchDomainConfigRequest::UpdateElasticsearchDomainConfigRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_elasticsearchClusterConfigHasBeenSet(false),
-    m_eBSOptionsHasBeenSet(false),
-    m_snapshotOptionsHasBeenSet(false),
-    m_vPCOptionsHasBeenSet(false),
-    m_cognitoOptionsHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_autoTuneOptionsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const
 {
   JsonValue payload;

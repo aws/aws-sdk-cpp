@@ -30,7 +30,7 @@ namespace Model
   class RedshiftMetadata
   {
   public:
-    AWS_APPFLOW_API RedshiftMetadata();
+    AWS_APPFLOW_API RedshiftMetadata() = default;
     AWS_APPFLOW_API RedshiftMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API RedshiftMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

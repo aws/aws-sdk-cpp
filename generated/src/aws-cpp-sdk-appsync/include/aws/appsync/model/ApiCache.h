@@ -34,7 +34,7 @@ namespace Model
   class ApiCache
   {
   public:
-    AWS_APPSYNC_API ApiCache();
+    AWS_APPSYNC_API ApiCache() = default;
     AWS_APPSYNC_API ApiCache(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API ApiCache& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
-    inline long long GetTtl() const{ return m_ttl; }
+    inline long long GetTtl() const { return m_ttl; }
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
     inline void SetTtl(long long value) { m_ttlHasBeenSet = true; m_ttl = value; }
     inline ApiCache& WithTtl(long long value) { SetTtl(value); return *this;}
@@ -60,12 +60,10 @@ namespace Model
      * cached.</p> </li> <li> <p> <b>OPERATION_LEVEL_CACHING</b>: Full requests are
      * cached together and returned without executing resolvers.</p> </li> </ul>
      */
-    inline const ApiCachingBehavior& GetApiCachingBehavior() const{ return m_apiCachingBehavior; }
+    inline ApiCachingBehavior GetApiCachingBehavior() const { return m_apiCachingBehavior; }
     inline bool ApiCachingBehaviorHasBeenSet() const { return m_apiCachingBehaviorHasBeenSet; }
-    inline void SetApiCachingBehavior(const ApiCachingBehavior& value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = value; }
-    inline void SetApiCachingBehavior(ApiCachingBehavior&& value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = std::move(value); }
-    inline ApiCache& WithApiCachingBehavior(const ApiCachingBehavior& value) { SetApiCachingBehavior(value); return *this;}
-    inline ApiCache& WithApiCachingBehavior(ApiCachingBehavior&& value) { SetApiCachingBehavior(std::move(value)); return *this;}
+    inline void SetApiCachingBehavior(ApiCachingBehavior value) { m_apiCachingBehaviorHasBeenSet = true; m_apiCachingBehavior = value; }
+    inline ApiCache& WithApiCachingBehavior(ApiCachingBehavior value) { SetApiCachingBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * <p>Transit encryption flag when connecting to cache. You cannot update this
      * setting after creation.</p>
      */
-    inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+    inline bool GetTransitEncryptionEnabled() const { return m_transitEncryptionEnabled; }
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
     inline ApiCache& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
-    inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+    inline bool GetAtRestEncryptionEnabled() const { return m_atRestEncryptionEnabled; }
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
     inline ApiCache& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
@@ -108,12 +106,10 @@ namespace Model
      * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
-    inline const ApiCacheType& GetType() const{ return m_type; }
+    inline ApiCacheType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ApiCacheType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ApiCacheType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ApiCache& WithType(const ApiCacheType& value) { SetType(value); return *this;}
-    inline ApiCache& WithType(ApiCacheType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ApiCacheType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ApiCache& WithType(ApiCacheType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +121,10 @@ namespace Model
      * currently modifying.</p> </li> <li> <p> <b>FAILED</b>: The instance has failed
      * creation.</p> </li> </ul>
      */
-    inline const ApiCacheStatus& GetStatus() const{ return m_status; }
+    inline ApiCacheStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApiCacheStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApiCacheStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApiCache& WithStatus(const ApiCacheStatus& value) { SetStatus(value); return *this;}
-    inline ApiCache& WithStatus(ApiCacheStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApiCacheStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApiCache& WithStatus(ApiCacheStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -144,34 +138,32 @@ namespace Model
      * configuration.</p> </li> </ul> <p>Metrics will be recorded by API ID. You can
      * set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const CacheHealthMetricsConfig& GetHealthMetricsConfig() const{ return m_healthMetricsConfig; }
+    inline CacheHealthMetricsConfig GetHealthMetricsConfig() const { return m_healthMetricsConfig; }
     inline bool HealthMetricsConfigHasBeenSet() const { return m_healthMetricsConfigHasBeenSet; }
-    inline void SetHealthMetricsConfig(const CacheHealthMetricsConfig& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
-    inline void SetHealthMetricsConfig(CacheHealthMetricsConfig&& value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = std::move(value); }
-    inline ApiCache& WithHealthMetricsConfig(const CacheHealthMetricsConfig& value) { SetHealthMetricsConfig(value); return *this;}
-    inline ApiCache& WithHealthMetricsConfig(CacheHealthMetricsConfig&& value) { SetHealthMetricsConfig(std::move(value)); return *this;}
+    inline void SetHealthMetricsConfig(CacheHealthMetricsConfig value) { m_healthMetricsConfigHasBeenSet = true; m_healthMetricsConfig = value; }
+    inline ApiCache& WithHealthMetricsConfig(CacheHealthMetricsConfig value) { SetHealthMetricsConfig(value); return *this;}
     ///@}
   private:
 
-    long long m_ttl;
+    long long m_ttl{0};
     bool m_ttlHasBeenSet = false;
 
-    ApiCachingBehavior m_apiCachingBehavior;
+    ApiCachingBehavior m_apiCachingBehavior{ApiCachingBehavior::NOT_SET};
     bool m_apiCachingBehaviorHasBeenSet = false;
 
-    bool m_transitEncryptionEnabled;
+    bool m_transitEncryptionEnabled{false};
     bool m_transitEncryptionEnabledHasBeenSet = false;
 
-    bool m_atRestEncryptionEnabled;
+    bool m_atRestEncryptionEnabled{false};
     bool m_atRestEncryptionEnabledHasBeenSet = false;
 
-    ApiCacheType m_type;
+    ApiCacheType m_type{ApiCacheType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    ApiCacheStatus m_status;
+    ApiCacheStatus m_status{ApiCacheStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    CacheHealthMetricsConfig m_healthMetricsConfig;
+    CacheHealthMetricsConfig m_healthMetricsConfig{CacheHealthMetricsConfig::NOT_SET};
     bool m_healthMetricsConfigHasBeenSet = false;
   };
 

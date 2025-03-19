@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RowLevelPermissionTagRule::RowLevelPermissionTagRule() : 
-    m_tagKeyHasBeenSet(false),
-    m_columnNameHasBeenSet(false),
-    m_tagMultiValueDelimiterHasBeenSet(false),
-    m_matchAllValueHasBeenSet(false)
-{
-}
-
 RowLevelPermissionTagRule::RowLevelPermissionTagRule(JsonView jsonValue)
-  : RowLevelPermissionTagRule()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RowLevelPermissionTagRule& RowLevelPermissionTagRule::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagMultiValueDelimiter"))
   {
     m_tagMultiValueDelimiter = jsonValue.GetString("TagMultiValueDelimiter");
-
     m_tagMultiValueDelimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchAllValue"))
   {
     m_matchAllValue = jsonValue.GetString("MatchAllValue");
-
     m_matchAllValueHasBeenSet = true;
   }
-
   return *this;
 }
 

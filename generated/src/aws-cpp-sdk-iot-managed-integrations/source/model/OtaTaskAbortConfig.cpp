@@ -18,13 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskAbortConfig::OtaTaskAbortConfig() : 
-    m_abortConfigCriteriaListHasBeenSet(false)
-{
-}
-
 OtaTaskAbortConfig::OtaTaskAbortConfig(JsonView jsonValue)
-  : OtaTaskAbortConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OtaTaskAbortConfig& OtaTaskAbortConfig::operator =(JsonView jsonValue)
     }
     m_abortConfigCriteriaListHasBeenSet = true;
   }
-
   return *this;
 }
 

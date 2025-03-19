@@ -28,7 +28,7 @@ namespace Model
   class GetCostCategoriesResult
   {
   public:
-    AWS_COSTEXPLORER_API GetCostCategoriesResult();
+    AWS_COSTEXPLORER_API GetCostCategoriesResult() = default;
     AWS_COSTEXPLORER_API GetCostCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetCostCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,27 +40,24 @@ namespace Model
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetCostCategoriesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetCostCategoriesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetCostCategoriesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetCostCategoriesResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The names of the Cost Categories.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCostCategoryNames() const{ return m_costCategoryNames; }
-    inline void SetCostCategoryNames(const Aws::Vector<Aws::String>& value) { m_costCategoryNames = value; }
-    inline void SetCostCategoryNames(Aws::Vector<Aws::String>&& value) { m_costCategoryNames = std::move(value); }
-    inline GetCostCategoriesResult& WithCostCategoryNames(const Aws::Vector<Aws::String>& value) { SetCostCategoryNames(value); return *this;}
-    inline GetCostCategoriesResult& WithCostCategoryNames(Aws::Vector<Aws::String>&& value) { SetCostCategoryNames(std::move(value)); return *this;}
-    inline GetCostCategoriesResult& AddCostCategoryNames(const Aws::String& value) { m_costCategoryNames.push_back(value); return *this; }
-    inline GetCostCategoriesResult& AddCostCategoryNames(Aws::String&& value) { m_costCategoryNames.push_back(std::move(value)); return *this; }
-    inline GetCostCategoriesResult& AddCostCategoryNames(const char* value) { m_costCategoryNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCostCategoryNames() const { return m_costCategoryNames; }
+    template<typename CostCategoryNamesT = Aws::Vector<Aws::String>>
+    void SetCostCategoryNames(CostCategoryNamesT&& value) { m_costCategoryNamesHasBeenSet = true; m_costCategoryNames = std::forward<CostCategoryNamesT>(value); }
+    template<typename CostCategoryNamesT = Aws::Vector<Aws::String>>
+    GetCostCategoriesResult& WithCostCategoryNames(CostCategoryNamesT&& value) { SetCostCategoryNames(std::forward<CostCategoryNamesT>(value)); return *this;}
+    template<typename CostCategoryNamesT = Aws::String>
+    GetCostCategoriesResult& AddCostCategoryNames(CostCategoryNamesT&& value) { m_costCategoryNamesHasBeenSet = true; m_costCategoryNames.emplace_back(std::forward<CostCategoryNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,22 +66,21 @@ namespace Model
      * isn't specified in the request, the <code>CostCategoryValues</code> fields
      * aren't returned. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetCostCategoryValues() const{ return m_costCategoryValues; }
-    inline void SetCostCategoryValues(const Aws::Vector<Aws::String>& value) { m_costCategoryValues = value; }
-    inline void SetCostCategoryValues(Aws::Vector<Aws::String>&& value) { m_costCategoryValues = std::move(value); }
-    inline GetCostCategoriesResult& WithCostCategoryValues(const Aws::Vector<Aws::String>& value) { SetCostCategoryValues(value); return *this;}
-    inline GetCostCategoriesResult& WithCostCategoryValues(Aws::Vector<Aws::String>&& value) { SetCostCategoryValues(std::move(value)); return *this;}
-    inline GetCostCategoriesResult& AddCostCategoryValues(const Aws::String& value) { m_costCategoryValues.push_back(value); return *this; }
-    inline GetCostCategoriesResult& AddCostCategoryValues(Aws::String&& value) { m_costCategoryValues.push_back(std::move(value)); return *this; }
-    inline GetCostCategoriesResult& AddCostCategoryValues(const char* value) { m_costCategoryValues.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCostCategoryValues() const { return m_costCategoryValues; }
+    template<typename CostCategoryValuesT = Aws::Vector<Aws::String>>
+    void SetCostCategoryValues(CostCategoryValuesT&& value) { m_costCategoryValuesHasBeenSet = true; m_costCategoryValues = std::forward<CostCategoryValuesT>(value); }
+    template<typename CostCategoryValuesT = Aws::Vector<Aws::String>>
+    GetCostCategoriesResult& WithCostCategoryValues(CostCategoryValuesT&& value) { SetCostCategoryValues(std::forward<CostCategoryValuesT>(value)); return *this;}
+    template<typename CostCategoryValuesT = Aws::String>
+    GetCostCategoriesResult& AddCostCategoryValues(CostCategoryValuesT&& value) { m_costCategoryValuesHasBeenSet = true; m_costCategoryValues.emplace_back(std::forward<CostCategoryValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of objects that are returned.</p>
      */
-    inline int GetReturnSize() const{ return m_returnSize; }
-    inline void SetReturnSize(int value) { m_returnSize = value; }
+    inline int GetReturnSize() const { return m_returnSize; }
+    inline void SetReturnSize(int value) { m_returnSizeHasBeenSet = true; m_returnSize = value; }
     inline GetCostCategoriesResult& WithReturnSize(int value) { SetReturnSize(value); return *this;}
     ///@}
 
@@ -92,34 +88,38 @@ namespace Model
     /**
      * <p>The total number of objects.</p>
      */
-    inline int GetTotalSize() const{ return m_totalSize; }
-    inline void SetTotalSize(int value) { m_totalSize = value; }
+    inline int GetTotalSize() const { return m_totalSize; }
+    inline void SetTotalSize(int value) { m_totalSizeHasBeenSet = true; m_totalSize = value; }
     inline GetCostCategoriesResult& WithTotalSize(int value) { SetTotalSize(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCostCategoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCostCategoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCostCategoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCostCategoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_costCategoryNames;
+    bool m_costCategoryNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_costCategoryValues;
+    bool m_costCategoryValuesHasBeenSet = false;
 
-    int m_returnSize;
+    int m_returnSize{0};
+    bool m_returnSizeHasBeenSet = false;
 
-    int m_totalSize;
+    int m_totalSize{0};
+    bool m_totalSizeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

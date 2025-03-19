@@ -30,7 +30,7 @@ namespace Model
   class ResourceUtilization
   {
   public:
-    AWS_EMRSERVERLESS_API ResourceUtilization();
+    AWS_EMRSERVERLESS_API ResourceUtilization() = default;
     AWS_EMRSERVERLESS_API ResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API ResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The aggregated vCPU used per hour from the time the job starts executing
      * until the job is terminated.</p>
      */
-    inline double GetVCPUHour() const{ return m_vCPUHour; }
+    inline double GetVCPUHour() const { return m_vCPUHour; }
     inline bool VCPUHourHasBeenSet() const { return m_vCPUHourHasBeenSet; }
     inline void SetVCPUHour(double value) { m_vCPUHourHasBeenSet = true; m_vCPUHour = value; }
     inline ResourceUtilization& WithVCPUHour(double value) { SetVCPUHour(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * <p>The aggregated memory used per hour from the time the job starts executing
      * until the job is terminated.</p>
      */
-    inline double GetMemoryGBHour() const{ return m_memoryGBHour; }
+    inline double GetMemoryGBHour() const { return m_memoryGBHour; }
     inline bool MemoryGBHourHasBeenSet() const { return m_memoryGBHourHasBeenSet; }
     inline void SetMemoryGBHour(double value) { m_memoryGBHourHasBeenSet = true; m_memoryGBHour = value; }
     inline ResourceUtilization& WithMemoryGBHour(double value) { SetMemoryGBHour(value); return *this;}
@@ -63,20 +63,20 @@ namespace Model
      * <p>The aggregated storage used per hour from the time the job starts executing
      * until the job is terminated.</p>
      */
-    inline double GetStorageGBHour() const{ return m_storageGBHour; }
+    inline double GetStorageGBHour() const { return m_storageGBHour; }
     inline bool StorageGBHourHasBeenSet() const { return m_storageGBHourHasBeenSet; }
     inline void SetStorageGBHour(double value) { m_storageGBHourHasBeenSet = true; m_storageGBHour = value; }
     inline ResourceUtilization& WithStorageGBHour(double value) { SetStorageGBHour(value); return *this;}
     ///@}
   private:
 
-    double m_vCPUHour;
+    double m_vCPUHour{0.0};
     bool m_vCPUHourHasBeenSet = false;
 
-    double m_memoryGBHour;
+    double m_memoryGBHour{0.0};
     bool m_memoryGBHourHasBeenSet = false;
 
-    double m_storageGBHour;
+    double m_storageGBHour{0.0};
     bool m_storageGBHourHasBeenSet = false;
   };
 

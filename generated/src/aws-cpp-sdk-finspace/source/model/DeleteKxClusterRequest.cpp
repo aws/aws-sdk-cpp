@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteKxClusterRequest::DeleteKxClusterRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteKxClusterRequest::SerializePayload() const
 {
   return {};

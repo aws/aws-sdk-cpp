@@ -35,7 +35,7 @@ namespace Model
   class RuleVerdictExpression
   {
   public:
-    AWS_MAILMANAGER_API RuleVerdictExpression();
+    AWS_MAILMANAGER_API RuleVerdictExpression() = default;
     AWS_MAILMANAGER_API RuleVerdictExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleVerdictExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,22 @@ namespace Model
     /**
      * <p>The verdict to evaluate in a verdict condition expression.</p>
      */
-    inline const RuleVerdictToEvaluate& GetEvaluate() const{ return m_evaluate; }
+    inline const RuleVerdictToEvaluate& GetEvaluate() const { return m_evaluate; }
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-    inline void SetEvaluate(const RuleVerdictToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-    inline void SetEvaluate(RuleVerdictToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-    inline RuleVerdictExpression& WithEvaluate(const RuleVerdictToEvaluate& value) { SetEvaluate(value); return *this;}
-    inline RuleVerdictExpression& WithEvaluate(RuleVerdictToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    template<typename EvaluateT = RuleVerdictToEvaluate>
+    void SetEvaluate(EvaluateT&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::forward<EvaluateT>(value); }
+    template<typename EvaluateT = RuleVerdictToEvaluate>
+    RuleVerdictExpression& WithEvaluate(EvaluateT&& value) { SetEvaluate(std::forward<EvaluateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The matching operator for a verdict condition expression.</p>
      */
-    inline const RuleVerdictOperator& GetOperator() const{ return m_operator; }
+    inline RuleVerdictOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const RuleVerdictOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(RuleVerdictOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline RuleVerdictExpression& WithOperator(const RuleVerdictOperator& value) { SetOperator(value); return *this;}
-    inline RuleVerdictExpression& WithOperator(RuleVerdictOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(RuleVerdictOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline RuleVerdictExpression& WithOperator(RuleVerdictOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +71,20 @@ namespace Model
      * operator, if multiple values are given, the condition is deemed to match of none
      * of the given verdicts match the verdict of the email.</p>
      */
-    inline const Aws::Vector<RuleVerdict>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<RuleVerdict>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<RuleVerdict>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<RuleVerdict>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline RuleVerdictExpression& WithValues(const Aws::Vector<RuleVerdict>& value) { SetValues(value); return *this;}
-    inline RuleVerdictExpression& WithValues(Aws::Vector<RuleVerdict>&& value) { SetValues(std::move(value)); return *this;}
-    inline RuleVerdictExpression& AddValues(const RuleVerdict& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline RuleVerdictExpression& AddValues(RuleVerdict&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<RuleVerdict>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<RuleVerdict>>
+    RuleVerdictExpression& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    inline RuleVerdictExpression& AddValues(RuleVerdict value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
     ///@}
   private:
 
     RuleVerdictToEvaluate m_evaluate;
     bool m_evaluateHasBeenSet = false;
 
-    RuleVerdictOperator m_operator;
+    RuleVerdictOperator m_operator{RuleVerdictOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::Vector<RuleVerdict> m_values;

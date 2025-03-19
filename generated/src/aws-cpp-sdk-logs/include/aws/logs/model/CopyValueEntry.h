@@ -33,7 +33,7 @@ namespace Model
   class CopyValueEntry
   {
   public:
-    AWS_CLOUDWATCHLOGS_API CopyValueEntry();
+    AWS_CLOUDWATCHLOGS_API CopyValueEntry() = default;
     AWS_CLOUDWATCHLOGS_API CopyValueEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API CopyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The key to copy.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline CopyValueEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline CopyValueEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline CopyValueEntry& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    CopyValueEntry& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key of the field to copy the value to.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline CopyValueEntry& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline CopyValueEntry& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline CopyValueEntry& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    CopyValueEntry& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>Specifies whether to overwrite the value if the destination key already
      * exists. If you omit this, the default is <code>false</code>.</p>
      */
-    inline bool GetOverwriteIfExists() const{ return m_overwriteIfExists; }
+    inline bool GetOverwriteIfExists() const { return m_overwriteIfExists; }
     inline bool OverwriteIfExistsHasBeenSet() const { return m_overwriteIfExistsHasBeenSet; }
     inline void SetOverwriteIfExists(bool value) { m_overwriteIfExistsHasBeenSet = true; m_overwriteIfExists = value; }
     inline CopyValueEntry& WithOverwriteIfExists(bool value) { SetOverwriteIfExists(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    bool m_overwriteIfExists;
+    bool m_overwriteIfExists{false};
     bool m_overwriteIfExistsHasBeenSet = false;
   };
 

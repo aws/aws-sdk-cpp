@@ -18,18 +18,7 @@ namespace deadline
 namespace Model
 {
 
-Ec2EbsVolume::Ec2EbsVolume() : 
-    m_sizeGiB(0),
-    m_sizeGiBHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughputMiB(0),
-    m_throughputMiBHasBeenSet(false)
-{
-}
-
 Ec2EbsVolume::Ec2EbsVolume(JsonView jsonValue)
-  : Ec2EbsVolume()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Ec2EbsVolume& Ec2EbsVolume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sizeGiB"))
   {
     m_sizeGiB = jsonValue.GetInteger("sizeGiB");
-
     m_sizeGiBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iops"))
   {
     m_iops = jsonValue.GetInteger("iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throughputMiB"))
   {
     m_throughputMiB = jsonValue.GetInteger("throughputMiB");
-
     m_throughputMiBHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlossaryTermRequest::UpdateGlossaryTermRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_glossaryIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_status(GlossaryTermStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_termRelationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGlossaryTermRequest::SerializePayload() const
 {
   JsonValue payload;

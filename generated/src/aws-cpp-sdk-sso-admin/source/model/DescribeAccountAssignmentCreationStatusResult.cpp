@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountAssignmentCreationStatusResult::DescribeAccountAssignmentCreationStatusResult()
-{
-}
-
 DescribeAccountAssignmentCreationStatusResult::DescribeAccountAssignmentCreationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeAccountAssignmentCreationStatusResult& DescribeAccountAssignmentCreation
   if(jsonValue.ValueExists("AccountAssignmentCreationStatus"))
   {
     m_accountAssignmentCreationStatus = jsonValue.GetObject("AccountAssignmentCreationStatus");
-
+    m_accountAssignmentCreationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

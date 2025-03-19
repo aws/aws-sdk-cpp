@@ -24,7 +24,7 @@ namespace Model
   class CreateAccessPreviewRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API CreateAccessPreviewRequest();
+    AWS_ACCESSANALYZER_API CreateAccessPreviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * create an access preview for analyzers with an <code>Account</code> type and
      * <code>Active</code> status.</p>
      */
-    inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
+    inline const Aws::String& GetAnalyzerArn() const { return m_analyzerArn; }
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-    inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-    inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-    inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-    inline CreateAccessPreviewRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-    inline CreateAccessPreviewRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-    inline CreateAccessPreviewRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    template<typename AnalyzerArnT = Aws::String>
+    void SetAnalyzerArn(AnalyzerArnT&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::forward<AnalyzerArnT>(value); }
+    template<typename AnalyzerArnT = Aws::String>
+    CreateAccessPreviewRequest& WithAnalyzerArn(AnalyzerArnT&& value) { SetAnalyzerArn(std::forward<AnalyzerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,32 +58,28 @@ namespace Model
      * to the resource with the proposed access control configuration. The
      * configuration must contain exactly one element.</p>
      */
-    inline const Aws::Map<Aws::String, Configuration>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Map<Aws::String, Configuration>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Map<Aws::String, Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Map<Aws::String, Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline CreateAccessPreviewRequest& WithConfigurations(const Aws::Map<Aws::String, Configuration>& value) { SetConfigurations(value); return *this;}
-    inline CreateAccessPreviewRequest& WithConfigurations(Aws::Map<Aws::String, Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline CreateAccessPreviewRequest& AddConfigurations(const Aws::String& key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, value); return *this; }
-    inline CreateAccessPreviewRequest& AddConfigurations(Aws::String&& key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(std::move(key), value); return *this; }
-    inline CreateAccessPreviewRequest& AddConfigurations(const Aws::String& key, Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, std::move(value)); return *this; }
-    inline CreateAccessPreviewRequest& AddConfigurations(Aws::String&& key, Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAccessPreviewRequest& AddConfigurations(const char* key, Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, std::move(value)); return *this; }
-    inline CreateAccessPreviewRequest& AddConfigurations(const char* key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, value); return *this; }
+    template<typename ConfigurationsT = Aws::Map<Aws::String, Configuration>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Map<Aws::String, Configuration>>
+    CreateAccessPreviewRequest& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsKeyT = Aws::String, typename ConfigurationsValueT = Configuration>
+    CreateAccessPreviewRequest& AddConfigurations(ConfigurationsKeyT&& key, ConfigurationsValueT&& value) {
+      m_configurationsHasBeenSet = true; m_configurations.emplace(std::forward<ConfigurationsKeyT>(key), std::forward<ConfigurationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A client token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAccessPreviewRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAccessPreviewRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAccessPreviewRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAccessPreviewRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class TextSegment
   {
   public:
-    AWS_QBUSINESS_API TextSegment();
+    AWS_QBUSINESS_API TextSegment() = default;
     AWS_QBUSINESS_API TextSegment(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API TextSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The zero-based location in the response string where the source attribution
      * starts.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline TextSegment& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * <p>The zero-based location in the response string where the source attribution
      * ends.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline TextSegment& WithEndOffset(int value) { SetEndOffset(value); return *this;}
@@ -66,12 +66,12 @@ namespace Model
      * <p>The relevant text excerpt from a source that was used to generate a citation
      * text segment in an Amazon Q Business chat response.</p>
      */
-    inline const SnippetExcerpt& GetSnippetExcerpt() const{ return m_snippetExcerpt; }
+    inline const SnippetExcerpt& GetSnippetExcerpt() const { return m_snippetExcerpt; }
     inline bool SnippetExcerptHasBeenSet() const { return m_snippetExcerptHasBeenSet; }
-    inline void SetSnippetExcerpt(const SnippetExcerpt& value) { m_snippetExcerptHasBeenSet = true; m_snippetExcerpt = value; }
-    inline void SetSnippetExcerpt(SnippetExcerpt&& value) { m_snippetExcerptHasBeenSet = true; m_snippetExcerpt = std::move(value); }
-    inline TextSegment& WithSnippetExcerpt(const SnippetExcerpt& value) { SetSnippetExcerpt(value); return *this;}
-    inline TextSegment& WithSnippetExcerpt(SnippetExcerpt&& value) { SetSnippetExcerpt(std::move(value)); return *this;}
+    template<typename SnippetExcerptT = SnippetExcerpt>
+    void SetSnippetExcerpt(SnippetExcerptT&& value) { m_snippetExcerptHasBeenSet = true; m_snippetExcerpt = std::forward<SnippetExcerptT>(value); }
+    template<typename SnippetExcerptT = SnippetExcerpt>
+    TextSegment& WithSnippetExcerpt(SnippetExcerptT&& value) { SetSnippetExcerpt(std::forward<SnippetExcerptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +79,19 @@ namespace Model
      * <p>Source information for a segment of extracted text, including its media
      * type.</p>
      */
-    inline const SourceDetails& GetSourceDetails() const{ return m_sourceDetails; }
+    inline const SourceDetails& GetSourceDetails() const { return m_sourceDetails; }
     inline bool SourceDetailsHasBeenSet() const { return m_sourceDetailsHasBeenSet; }
-    inline void SetSourceDetails(const SourceDetails& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = value; }
-    inline void SetSourceDetails(SourceDetails&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = std::move(value); }
-    inline TextSegment& WithSourceDetails(const SourceDetails& value) { SetSourceDetails(value); return *this;}
-    inline TextSegment& WithSourceDetails(SourceDetails&& value) { SetSourceDetails(std::move(value)); return *this;}
+    template<typename SourceDetailsT = SourceDetails>
+    void SetSourceDetails(SourceDetailsT&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails = std::forward<SourceDetailsT>(value); }
+    template<typename SourceDetailsT = SourceDetails>
+    TextSegment& WithSourceDetails(SourceDetailsT&& value) { SetSourceDetails(std::forward<SourceDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
 
     SnippetExcerpt m_snippetExcerpt;

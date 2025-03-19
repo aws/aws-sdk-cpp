@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexProgramSummary::MultiplexProgramSummary() : 
-    m_channelIdHasBeenSet(false),
-    m_programNameHasBeenSet(false)
-{
-}
-
 MultiplexProgramSummary::MultiplexProgramSummary(JsonView jsonValue)
-  : MultiplexProgramSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MultiplexProgramSummary& MultiplexProgramSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelId"))
   {
     m_channelId = jsonValue.GetString("channelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programName"))
   {
     m_programName = jsonValue.GetString("programName");
-
     m_programNameHasBeenSet = true;
   }
-
   return *this;
 }
 

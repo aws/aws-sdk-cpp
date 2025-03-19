@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EnvironmentParameterRanges::EnvironmentParameterRanges() : 
-    m_categoricalParameterRangesHasBeenSet(false)
-{
-}
-
 EnvironmentParameterRanges::EnvironmentParameterRanges(JsonView jsonValue)
-  : EnvironmentParameterRanges()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EnvironmentParameterRanges& EnvironmentParameterRanges::operator =(JsonView json
     }
     m_categoricalParameterRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class SendCisSessionTelemetryRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API SendCisSessionTelemetryRequest();
+    AWS_INSPECTOR2_API SendCisSessionTelemetryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,38 @@ namespace Model
     /**
      * <p>The CIS session telemetry messages.</p>
      */
-    inline const Aws::Vector<CisSessionMessage>& GetMessages() const{ return m_messages; }
+    inline const Aws::Vector<CisSessionMessage>& GetMessages() const { return m_messages; }
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-    inline void SetMessages(const Aws::Vector<CisSessionMessage>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-    inline void SetMessages(Aws::Vector<CisSessionMessage>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-    inline SendCisSessionTelemetryRequest& WithMessages(const Aws::Vector<CisSessionMessage>& value) { SetMessages(value); return *this;}
-    inline SendCisSessionTelemetryRequest& WithMessages(Aws::Vector<CisSessionMessage>&& value) { SetMessages(std::move(value)); return *this;}
-    inline SendCisSessionTelemetryRequest& AddMessages(const CisSessionMessage& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-    inline SendCisSessionTelemetryRequest& AddMessages(CisSessionMessage&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    template<typename MessagesT = Aws::Vector<CisSessionMessage>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<CisSessionMessage>>
+    SendCisSessionTelemetryRequest& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = CisSessionMessage>
+    SendCisSessionTelemetryRequest& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the scan job.</p>
      */
-    inline const Aws::String& GetScanJobId() const{ return m_scanJobId; }
+    inline const Aws::String& GetScanJobId() const { return m_scanJobId; }
     inline bool ScanJobIdHasBeenSet() const { return m_scanJobIdHasBeenSet; }
-    inline void SetScanJobId(const Aws::String& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = value; }
-    inline void SetScanJobId(Aws::String&& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = std::move(value); }
-    inline void SetScanJobId(const char* value) { m_scanJobIdHasBeenSet = true; m_scanJobId.assign(value); }
-    inline SendCisSessionTelemetryRequest& WithScanJobId(const Aws::String& value) { SetScanJobId(value); return *this;}
-    inline SendCisSessionTelemetryRequest& WithScanJobId(Aws::String&& value) { SetScanJobId(std::move(value)); return *this;}
-    inline SendCisSessionTelemetryRequest& WithScanJobId(const char* value) { SetScanJobId(value); return *this;}
+    template<typename ScanJobIdT = Aws::String>
+    void SetScanJobId(ScanJobIdT&& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = std::forward<ScanJobIdT>(value); }
+    template<typename ScanJobIdT = Aws::String>
+    SendCisSessionTelemetryRequest& WithScanJobId(ScanJobIdT&& value) { SetScanJobId(std::forward<ScanJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique token that identifies the CIS session.</p>
      */
-    inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+    inline const Aws::String& GetSessionToken() const { return m_sessionToken; }
     inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
-    inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
-    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
-    inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
-    inline SendCisSessionTelemetryRequest& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
-    inline SendCisSessionTelemetryRequest& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
-    inline SendCisSessionTelemetryRequest& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
+    template<typename SessionTokenT = Aws::String>
+    void SetSessionToken(SessionTokenT&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::forward<SessionTokenT>(value); }
+    template<typename SessionTokenT = Aws::String>
+    SendCisSessionTelemetryRequest& WithSessionToken(SessionTokenT&& value) { SetSessionToken(std::forward<SessionTokenT>(value)); return *this;}
     ///@}
   private:
 

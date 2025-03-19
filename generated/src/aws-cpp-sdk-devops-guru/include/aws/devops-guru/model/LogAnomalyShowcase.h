@@ -33,7 +33,7 @@ namespace Model
   class LogAnomalyShowcase
   {
   public:
-    AWS_DEVOPSGURU_API LogAnomalyShowcase();
+    AWS_DEVOPSGURU_API LogAnomalyShowcase() = default;
     AWS_DEVOPSGURU_API LogAnomalyShowcase(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API LogAnomalyShowcase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p> A list of anomalous log events that may be related. </p>
      */
-    inline const Aws::Vector<LogAnomalyClass>& GetLogAnomalyClasses() const{ return m_logAnomalyClasses; }
+    inline const Aws::Vector<LogAnomalyClass>& GetLogAnomalyClasses() const { return m_logAnomalyClasses; }
     inline bool LogAnomalyClassesHasBeenSet() const { return m_logAnomalyClassesHasBeenSet; }
-    inline void SetLogAnomalyClasses(const Aws::Vector<LogAnomalyClass>& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses = value; }
-    inline void SetLogAnomalyClasses(Aws::Vector<LogAnomalyClass>&& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses = std::move(value); }
-    inline LogAnomalyShowcase& WithLogAnomalyClasses(const Aws::Vector<LogAnomalyClass>& value) { SetLogAnomalyClasses(value); return *this;}
-    inline LogAnomalyShowcase& WithLogAnomalyClasses(Aws::Vector<LogAnomalyClass>&& value) { SetLogAnomalyClasses(std::move(value)); return *this;}
-    inline LogAnomalyShowcase& AddLogAnomalyClasses(const LogAnomalyClass& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses.push_back(value); return *this; }
-    inline LogAnomalyShowcase& AddLogAnomalyClasses(LogAnomalyClass&& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses.push_back(std::move(value)); return *this; }
+    template<typename LogAnomalyClassesT = Aws::Vector<LogAnomalyClass>>
+    void SetLogAnomalyClasses(LogAnomalyClassesT&& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses = std::forward<LogAnomalyClassesT>(value); }
+    template<typename LogAnomalyClassesT = Aws::Vector<LogAnomalyClass>>
+    LogAnomalyShowcase& WithLogAnomalyClasses(LogAnomalyClassesT&& value) { SetLogAnomalyClasses(std::forward<LogAnomalyClassesT>(value)); return *this;}
+    template<typename LogAnomalyClassesT = LogAnomalyClass>
+    LogAnomalyShowcase& AddLogAnomalyClasses(LogAnomalyClassesT&& value) { m_logAnomalyClassesHasBeenSet = true; m_logAnomalyClasses.emplace_back(std::forward<LogAnomalyClassesT>(value)); return *this; }
     ///@}
   private:
 

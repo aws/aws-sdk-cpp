@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimationResourceCollectionFilter() : 
-    m_stackNamesHasBeenSet(false)
-{
-}
-
 CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimationResourceCollectionFilter(JsonView jsonValue)
-  : CloudFormationCostEstimationResourceCollectionFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CloudFormationCostEstimationResourceCollectionFilter& CloudFormationCostEstimati
     }
     m_stackNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

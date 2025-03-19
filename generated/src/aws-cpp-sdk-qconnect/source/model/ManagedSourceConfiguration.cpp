@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ManagedSourceConfiguration::ManagedSourceConfiguration() : 
-    m_webCrawlerConfigurationHasBeenSet(false)
-{
-}
-
 ManagedSourceConfiguration::ManagedSourceConfiguration(JsonView jsonValue)
-  : ManagedSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ManagedSourceConfiguration& ManagedSourceConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("webCrawlerConfiguration"))
   {
     m_webCrawlerConfiguration = jsonValue.GetObject("webCrawlerConfiguration");
-
     m_webCrawlerConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

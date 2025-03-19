@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceExperimentDataStorageConfig::InferenceExperimentDataStorageConfig() : 
-    m_destinationHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 InferenceExperimentDataStorageConfig::InferenceExperimentDataStorageConfig(JsonView jsonValue)
-  : InferenceExperimentDataStorageConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InferenceExperimentDataStorageConfig& InferenceExperimentDataStorageConfig::oper
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKey"))
   {
     m_kmsKey = jsonValue.GetString("KmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetObject("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

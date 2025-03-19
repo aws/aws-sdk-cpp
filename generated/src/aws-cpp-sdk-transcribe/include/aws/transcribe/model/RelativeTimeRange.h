@@ -40,7 +40,7 @@ namespace Model
   class RelativeTimeRange
   {
   public:
-    AWS_TRANSCRIBESERVICE_API RelativeTimeRange();
+    AWS_TRANSCRIBESERVICE_API RelativeTimeRange() = default;
     AWS_TRANSCRIBESERVICE_API RelativeTimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API RelativeTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * <code>StartPercentage</code> in your request, you must also include
      * <code>EndPercentage</code>.</p>
      */
-    inline int GetStartPercentage() const{ return m_startPercentage; }
+    inline int GetStartPercentage() const { return m_startPercentage; }
     inline bool StartPercentageHasBeenSet() const { return m_startPercentageHasBeenSet; }
     inline void SetStartPercentage(int value) { m_startPercentageHasBeenSet = true; m_startPercentage = value; }
     inline RelativeTimeRange& WithStartPercentage(int value) { SetStartPercentage(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
      * specified criteria in your media file. If you include <code>EndPercentage</code>
      * in your request, you must also include <code>StartPercentage</code>.</p>
      */
-    inline int GetEndPercentage() const{ return m_endPercentage; }
+    inline int GetEndPercentage() const { return m_endPercentage; }
     inline bool EndPercentageHasBeenSet() const { return m_endPercentageHasBeenSet; }
     inline void SetEndPercentage(int value) { m_endPercentageHasBeenSet = true; m_endPercentage = value; }
     inline RelativeTimeRange& WithEndPercentage(int value) { SetEndPercentage(value); return *this;}
@@ -77,7 +77,7 @@ namespace Model
      * specified value. Amazon Transcribe searches for your specified criteria in this
      * time segment.</p>
      */
-    inline int GetFirst() const{ return m_first; }
+    inline int GetFirst() const { return m_first; }
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
     inline void SetFirst(int value) { m_firstHasBeenSet = true; m_first = value; }
     inline RelativeTimeRange& WithFirst(int value) { SetFirst(value); return *this;}
@@ -89,23 +89,23 @@ namespace Model
      * file. Amazon Transcribe searches for your specified criteria in this time
      * segment.</p>
      */
-    inline int GetLast() const{ return m_last; }
+    inline int GetLast() const { return m_last; }
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
     inline void SetLast(int value) { m_lastHasBeenSet = true; m_last = value; }
     inline RelativeTimeRange& WithLast(int value) { SetLast(value); return *this;}
     ///@}
   private:
 
-    int m_startPercentage;
+    int m_startPercentage{0};
     bool m_startPercentageHasBeenSet = false;
 
-    int m_endPercentage;
+    int m_endPercentage{0};
     bool m_endPercentageHasBeenSet = false;
 
-    int m_first;
+    int m_first{0};
     bool m_firstHasBeenSet = false;
 
-    int m_last;
+    int m_last{0};
     bool m_lastHasBeenSet = false;
   };
 

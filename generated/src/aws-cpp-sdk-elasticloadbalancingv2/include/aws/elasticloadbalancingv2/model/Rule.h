@@ -34,7 +34,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API Rule();
+    AWS_ELASTICLOADBALANCINGV2_API Rule() = default;
     AWS_ELASTICLOADBALANCINGV2_API Rule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API Rule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
-    inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
+    inline const Aws::String& GetRuleArn() const { return m_ruleArn; }
     inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
-    inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
-    inline void SetRuleArn(const char* value) { m_ruleArnHasBeenSet = true; m_ruleArn.assign(value); }
-    inline Rule& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
-    inline Rule& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
-    inline Rule& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+    template<typename RuleArnT = Aws::String>
+    void SetRuleArn(RuleArnT&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::forward<RuleArnT>(value); }
+    template<typename RuleArnT = Aws::String>
+    Rule& WithRuleArn(RuleArnT&& value) { SetRuleArn(std::forward<RuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The priority.</p>
      */
-    inline const Aws::String& GetPriority() const{ return m_priority; }
+    inline const Aws::String& GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-    inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
-    inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
-    inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
-    inline Rule& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
-    inline Rule& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
-    inline Rule& WithPriority(const char* value) { SetPriority(value); return *this;}
+    template<typename PriorityT = Aws::String>
+    void SetPriority(PriorityT&& value) { m_priorityHasBeenSet = true; m_priority = std::forward<PriorityT>(value); }
+    template<typename PriorityT = Aws::String>
+    Rule& WithPriority(PriorityT&& value) { SetPriority(std::forward<PriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,14 @@ namespace Model
      * following conditions: <code>http-header</code> and
      * <code>query-string</code>.</p>
      */
-    inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
+    inline const Aws::Vector<RuleCondition>& GetConditions() const { return m_conditions; }
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
-    inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
-    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
-    inline Rule& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
-    inline Rule& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
-    inline Rule& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
-    inline Rule& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+    template<typename ConditionsT = Aws::Vector<RuleCondition>>
+    void SetConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions = std::forward<ConditionsT>(value); }
+    template<typename ConditionsT = Aws::Vector<RuleCondition>>
+    Rule& WithConditions(ConditionsT&& value) { SetConditions(std::forward<ConditionsT>(value)); return *this;}
+    template<typename ConditionsT = RuleCondition>
+    Rule& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,21 +90,21 @@ namespace Model
      * actions: <code>forward</code>, <code>redirect</code>, or
      * <code>fixed-response</code>, and it must be the last action to be performed.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline Rule& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline Rule& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline Rule& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline Rule& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    Rule& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    Rule& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether this is the default rule.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline Rule& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -127,7 +123,7 @@ namespace Model
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
   };
 

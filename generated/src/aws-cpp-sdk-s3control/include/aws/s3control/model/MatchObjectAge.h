@@ -29,7 +29,7 @@ namespace Model
   class MatchObjectAge
   {
   public:
-    AWS_S3CONTROL_API MatchObjectAge();
+    AWS_S3CONTROL_API MatchObjectAge() = default;
     AWS_S3CONTROL_API MatchObjectAge(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API MatchObjectAge& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,7 +42,7 @@ namespace Model
      * greater than the minimum object age and less than or equal to 2,147,483,647.
      * </p>
      */
-    inline int GetDaysGreaterThan() const{ return m_daysGreaterThan; }
+    inline int GetDaysGreaterThan() const { return m_daysGreaterThan; }
     inline bool DaysGreaterThanHasBeenSet() const { return m_daysGreaterThanHasBeenSet; }
     inline void SetDaysGreaterThan(int value) { m_daysGreaterThanHasBeenSet = true; m_daysGreaterThan = value; }
     inline MatchObjectAge& WithDaysGreaterThan(int value) { SetDaysGreaterThan(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p> Specifies the minimum object age in days. The value must be a positive whole
      * number, greater than 0 and less than or equal to 2,147,483,647. </p>
      */
-    inline int GetDaysLessThan() const{ return m_daysLessThan; }
+    inline int GetDaysLessThan() const { return m_daysLessThan; }
     inline bool DaysLessThanHasBeenSet() const { return m_daysLessThanHasBeenSet; }
     inline void SetDaysLessThan(int value) { m_daysLessThanHasBeenSet = true; m_daysLessThan = value; }
     inline MatchObjectAge& WithDaysLessThan(int value) { SetDaysLessThan(value); return *this;}
     ///@}
   private:
 
-    int m_daysGreaterThan;
+    int m_daysGreaterThan{0};
     bool m_daysGreaterThanHasBeenSet = false;
 
-    int m_daysLessThan;
+    int m_daysLessThan{0};
     bool m_daysLessThanHasBeenSet = false;
   };
 

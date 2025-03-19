@@ -18,23 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-ComponentStatusData::ComponentStatusData() : 
-    m_bytesReceived(0),
-    m_bytesReceivedHasBeenSet(false),
-    m_bytesSent(0),
-    m_bytesSentHasBeenSet(false),
-    m_capabilityArnHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_dataflowIdHasBeenSet(false),
-    m_packetsDropped(0),
-    m_packetsDroppedHasBeenSet(false),
-    m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ComponentStatusData::ComponentStatusData(JsonView jsonValue)
-  : ComponentStatusData()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ ComponentStatusData& ComponentStatusData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bytesReceived"))
   {
     m_bytesReceived = jsonValue.GetInt64("bytesReceived");
-
     m_bytesReceivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bytesSent"))
   {
     m_bytesSent = jsonValue.GetInt64("bytesSent");
-
     m_bytesSentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityArn"))
   {
     m_capabilityArn = jsonValue.GetString("capabilityArn");
-
     m_capabilityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentType"))
   {
     m_componentType = jsonValue.GetString("componentType");
-
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataflowId"))
   {
     m_dataflowId = jsonValue.GetString("dataflowId");
-
     m_dataflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packetsDropped"))
   {
     m_packetsDropped = jsonValue.GetInt64("packetsDropped");
-
     m_packetsDroppedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

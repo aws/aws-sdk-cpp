@@ -22,7 +22,7 @@ namespace Model
   class DescribeConfigurationsRequest : public ApplicationDiscoveryServiceRequest
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeConfigurationsRequest();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>One or more configuration IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigurationIds() const{ return m_configurationIds; }
+    inline const Aws::Vector<Aws::String>& GetConfigurationIds() const { return m_configurationIds; }
     inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
-    inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
-    inline void SetConfigurationIds(Aws::Vector<Aws::String>&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = std::move(value); }
-    inline DescribeConfigurationsRequest& WithConfigurationIds(const Aws::Vector<Aws::String>& value) { SetConfigurationIds(value); return *this;}
-    inline DescribeConfigurationsRequest& WithConfigurationIds(Aws::Vector<Aws::String>&& value) { SetConfigurationIds(std::move(value)); return *this;}
-    inline DescribeConfigurationsRequest& AddConfigurationIds(const Aws::String& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
-    inline DescribeConfigurationsRequest& AddConfigurationIds(Aws::String&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(std::move(value)); return *this; }
-    inline DescribeConfigurationsRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
+    template<typename ConfigurationIdsT = Aws::Vector<Aws::String>>
+    void SetConfigurationIds(ConfigurationIdsT&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = std::forward<ConfigurationIdsT>(value); }
+    template<typename ConfigurationIdsT = Aws::Vector<Aws::String>>
+    DescribeConfigurationsRequest& WithConfigurationIds(ConfigurationIdsT&& value) { SetConfigurationIds(std::forward<ConfigurationIdsT>(value)); return *this;}
+    template<typename ConfigurationIdsT = Aws::String>
+    DescribeConfigurationsRequest& AddConfigurationIds(ConfigurationIdsT&& value) { m_configurationIdsHasBeenSet = true; m_configurationIds.emplace_back(std::forward<ConfigurationIdsT>(value)); return *this; }
     ///@}
   private:
 

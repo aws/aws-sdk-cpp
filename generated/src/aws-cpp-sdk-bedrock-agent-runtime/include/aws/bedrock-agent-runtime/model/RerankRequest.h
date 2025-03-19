@@ -25,7 +25,7 @@ namespace Model
   class RerankRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RerankRequest();
+    AWS_BEDROCKAGENTRUNTIME_API RerankRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * token is returned in the <code>nextToken</code> field. You can enter that token
      * in this field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline RerankRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline RerankRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline RerankRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    RerankRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,26 +55,26 @@ namespace Model
      * <p>An array of objects, each of which contains information about a query to
      * submit to the reranker model.</p>
      */
-    inline const Aws::Vector<RerankQuery>& GetQueries() const{ return m_queries; }
+    inline const Aws::Vector<RerankQuery>& GetQueries() const { return m_queries; }
     inline bool QueriesHasBeenSet() const { return m_queriesHasBeenSet; }
-    inline void SetQueries(const Aws::Vector<RerankQuery>& value) { m_queriesHasBeenSet = true; m_queries = value; }
-    inline void SetQueries(Aws::Vector<RerankQuery>&& value) { m_queriesHasBeenSet = true; m_queries = std::move(value); }
-    inline RerankRequest& WithQueries(const Aws::Vector<RerankQuery>& value) { SetQueries(value); return *this;}
-    inline RerankRequest& WithQueries(Aws::Vector<RerankQuery>&& value) { SetQueries(std::move(value)); return *this;}
-    inline RerankRequest& AddQueries(const RerankQuery& value) { m_queriesHasBeenSet = true; m_queries.push_back(value); return *this; }
-    inline RerankRequest& AddQueries(RerankQuery&& value) { m_queriesHasBeenSet = true; m_queries.push_back(std::move(value)); return *this; }
+    template<typename QueriesT = Aws::Vector<RerankQuery>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<RerankQuery>>
+    RerankRequest& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = RerankQuery>
+    RerankRequest& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contains configurations for reranking.</p>
      */
-    inline const RerankingConfiguration& GetRerankingConfiguration() const{ return m_rerankingConfiguration; }
+    inline const RerankingConfiguration& GetRerankingConfiguration() const { return m_rerankingConfiguration; }
     inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
-    inline void SetRerankingConfiguration(const RerankingConfiguration& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = value; }
-    inline void SetRerankingConfiguration(RerankingConfiguration&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::move(value); }
-    inline RerankRequest& WithRerankingConfiguration(const RerankingConfiguration& value) { SetRerankingConfiguration(value); return *this;}
-    inline RerankRequest& WithRerankingConfiguration(RerankingConfiguration&& value) { SetRerankingConfiguration(std::move(value)); return *this;}
+    template<typename RerankingConfigurationT = RerankingConfiguration>
+    void SetRerankingConfiguration(RerankingConfigurationT&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::forward<RerankingConfigurationT>(value); }
+    template<typename RerankingConfigurationT = RerankingConfiguration>
+    RerankRequest& WithRerankingConfiguration(RerankingConfigurationT&& value) { SetRerankingConfiguration(std::forward<RerankingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +82,14 @@ namespace Model
      * <p>An array of objects, each of which contains information about the sources to
      * rerank.</p>
      */
-    inline const Aws::Vector<RerankSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<RerankSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<RerankSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<RerankSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline RerankRequest& WithSources(const Aws::Vector<RerankSource>& value) { SetSources(value); return *this;}
-    inline RerankRequest& WithSources(Aws::Vector<RerankSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline RerankRequest& AddSources(const RerankSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline RerankRequest& AddSources(RerankSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<RerankSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<RerankSource>>
+    RerankRequest& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = RerankSource>
+    RerankRequest& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CancelledSpotInstanceRequest::CancelledSpotInstanceRequest() : 
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_state(CancelSpotInstanceRequestState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 CancelledSpotInstanceRequest::CancelledSpotInstanceRequest(const XmlNode& xmlNode)
-  : CancelledSpotInstanceRequest()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ CancelledSpotInstanceRequest& CancelledSpotInstanceRequest::operator =(const Xml
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CancelSpotInstanceRequestStateMapper::GetCancelSpotInstanceRequestStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = CancelSpotInstanceRequestStateMapper::GetCancelSpotInstanceRequestStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

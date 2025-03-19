@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-BatchModifyClusterSnapshotsRequest::BatchModifyClusterSnapshotsRequest() : 
-    m_snapshotIdentifierListHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String BatchModifyClusterSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

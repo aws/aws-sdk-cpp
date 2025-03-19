@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAddonSubscriptionRequest::DeleteAddonSubscriptionRequest() : 
-    m_addonSubscriptionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAddonSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

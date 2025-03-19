@@ -34,7 +34,7 @@ namespace Model
   class RuleIsInAddressList
   {
   public:
-    AWS_MAILMANAGER_API RuleIsInAddressList();
+    AWS_MAILMANAGER_API RuleIsInAddressList() = default;
     AWS_MAILMANAGER_API RuleIsInAddressList(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleIsInAddressList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,34 +44,31 @@ namespace Model
     /**
      * <p>The address lists that will be used for evaluation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddressLists() const{ return m_addressLists; }
+    inline const Aws::Vector<Aws::String>& GetAddressLists() const { return m_addressLists; }
     inline bool AddressListsHasBeenSet() const { return m_addressListsHasBeenSet; }
-    inline void SetAddressLists(const Aws::Vector<Aws::String>& value) { m_addressListsHasBeenSet = true; m_addressLists = value; }
-    inline void SetAddressLists(Aws::Vector<Aws::String>&& value) { m_addressListsHasBeenSet = true; m_addressLists = std::move(value); }
-    inline RuleIsInAddressList& WithAddressLists(const Aws::Vector<Aws::String>& value) { SetAddressLists(value); return *this;}
-    inline RuleIsInAddressList& WithAddressLists(Aws::Vector<Aws::String>&& value) { SetAddressLists(std::move(value)); return *this;}
-    inline RuleIsInAddressList& AddAddressLists(const Aws::String& value) { m_addressListsHasBeenSet = true; m_addressLists.push_back(value); return *this; }
-    inline RuleIsInAddressList& AddAddressLists(Aws::String&& value) { m_addressListsHasBeenSet = true; m_addressLists.push_back(std::move(value)); return *this; }
-    inline RuleIsInAddressList& AddAddressLists(const char* value) { m_addressListsHasBeenSet = true; m_addressLists.push_back(value); return *this; }
+    template<typename AddressListsT = Aws::Vector<Aws::String>>
+    void SetAddressLists(AddressListsT&& value) { m_addressListsHasBeenSet = true; m_addressLists = std::forward<AddressListsT>(value); }
+    template<typename AddressListsT = Aws::Vector<Aws::String>>
+    RuleIsInAddressList& WithAddressLists(AddressListsT&& value) { SetAddressLists(std::forward<AddressListsT>(value)); return *this;}
+    template<typename AddressListsT = Aws::String>
+    RuleIsInAddressList& AddAddressLists(AddressListsT&& value) { m_addressListsHasBeenSet = true; m_addressLists.emplace_back(std::forward<AddressListsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The email attribute that needs to be evaluated against the address list.</p>
      */
-    inline const RuleAddressListEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline RuleAddressListEmailAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const RuleAddressListEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(RuleAddressListEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline RuleIsInAddressList& WithAttribute(const RuleAddressListEmailAttribute& value) { SetAttribute(value); return *this;}
-    inline RuleIsInAddressList& WithAttribute(RuleAddressListEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(RuleAddressListEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline RuleIsInAddressList& WithAttribute(RuleAddressListEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_addressLists;
     bool m_addressListsHasBeenSet = false;
 
-    RuleAddressListEmailAttribute m_attribute;
+    RuleAddressListEmailAttribute m_attribute{RuleAddressListEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

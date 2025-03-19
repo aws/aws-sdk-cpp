@@ -28,7 +28,7 @@ namespace Model
   class UpdateUploadResult
   {
   public:
-    AWS_DEVICEFARM_API UpdateUploadResult();
+    AWS_DEVICEFARM_API UpdateUploadResult() = default;
     AWS_DEVICEFARM_API UpdateUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API UpdateUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A test spec uploaded to Device Farm.</p>
      */
-    inline const Upload& GetUpload() const{ return m_upload; }
-    inline void SetUpload(const Upload& value) { m_upload = value; }
-    inline void SetUpload(Upload&& value) { m_upload = std::move(value); }
-    inline UpdateUploadResult& WithUpload(const Upload& value) { SetUpload(value); return *this;}
-    inline UpdateUploadResult& WithUpload(Upload&& value) { SetUpload(std::move(value)); return *this;}
+    inline const Upload& GetUpload() const { return m_upload; }
+    template<typename UploadT = Upload>
+    void SetUpload(UploadT&& value) { m_uploadHasBeenSet = true; m_upload = std::forward<UploadT>(value); }
+    template<typename UploadT = Upload>
+    UpdateUploadResult& WithUpload(UploadT&& value) { SetUpload(std::forward<UploadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateUploadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Upload m_upload;
+    bool m_uploadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

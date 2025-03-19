@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkflowStepExecutionsResult::ListWorkflowStepExecutionsResult()
-{
-}
-
 ListWorkflowStepExecutionsResult::ListWorkflowStepExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListWorkflowStepExecutionsResult& ListWorkflowStepExecutionsResult::operator =(c
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
@@ -41,38 +36,33 @@ ListWorkflowStepExecutionsResult& ListWorkflowStepExecutionsResult::operator =(c
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
     }
+    m_stepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowBuildVersionArn"))
   {
     m_workflowBuildVersionArn = jsonValue.GetString("workflowBuildVersionArn");
-
+    m_workflowBuildVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowExecutionId"))
   {
     m_workflowExecutionId = jsonValue.GetString("workflowExecutionId");
-
+    m_workflowExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBuildVersionArn"))
   {
     m_imageBuildVersionArn = jsonValue.GetString("imageBuildVersionArn");
-
+    m_imageBuildVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

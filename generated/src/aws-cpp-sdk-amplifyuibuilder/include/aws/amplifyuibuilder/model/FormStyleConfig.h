@@ -32,7 +32,7 @@ namespace Model
   class FormStyleConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormStyleConfig();
+    AWS_AMPLIFYUIBUILDER_API FormStyleConfig() = default;
     AWS_AMPLIFYUIBUILDER_API FormStyleConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormStyleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>A reference to a design token to use to bind the form's style properties to
      * an existing theme.</p>
      */
-    inline const Aws::String& GetTokenReference() const{ return m_tokenReference; }
+    inline const Aws::String& GetTokenReference() const { return m_tokenReference; }
     inline bool TokenReferenceHasBeenSet() const { return m_tokenReferenceHasBeenSet; }
-    inline void SetTokenReference(const Aws::String& value) { m_tokenReferenceHasBeenSet = true; m_tokenReference = value; }
-    inline void SetTokenReference(Aws::String&& value) { m_tokenReferenceHasBeenSet = true; m_tokenReference = std::move(value); }
-    inline void SetTokenReference(const char* value) { m_tokenReferenceHasBeenSet = true; m_tokenReference.assign(value); }
-    inline FormStyleConfig& WithTokenReference(const Aws::String& value) { SetTokenReference(value); return *this;}
-    inline FormStyleConfig& WithTokenReference(Aws::String&& value) { SetTokenReference(std::move(value)); return *this;}
-    inline FormStyleConfig& WithTokenReference(const char* value) { SetTokenReference(value); return *this;}
+    template<typename TokenReferenceT = Aws::String>
+    void SetTokenReference(TokenReferenceT&& value) { m_tokenReferenceHasBeenSet = true; m_tokenReference = std::forward<TokenReferenceT>(value); }
+    template<typename TokenReferenceT = Aws::String>
+    FormStyleConfig& WithTokenReference(TokenReferenceT&& value) { SetTokenReference(std::forward<TokenReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the style setting.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline FormStyleConfig& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline FormStyleConfig& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline FormStyleConfig& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    FormStyleConfig& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

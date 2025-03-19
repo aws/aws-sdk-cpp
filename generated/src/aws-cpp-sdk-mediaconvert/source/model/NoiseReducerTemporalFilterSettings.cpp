@@ -18,22 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings() : 
-    m_aggressiveMode(0),
-    m_aggressiveModeHasBeenSet(false),
-    m_postTemporalSharpening(NoiseFilterPostTemporalSharpening::NOT_SET),
-    m_postTemporalSharpeningHasBeenSet(false),
-    m_postTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength::NOT_SET),
-    m_postTemporalSharpeningStrengthHasBeenSet(false),
-    m_speed(0),
-    m_speedHasBeenSet(false),
-    m_strength(0),
-    m_strengthHasBeenSet(false)
-{
-}
-
 NoiseReducerTemporalFilterSettings::NoiseReducerTemporalFilterSettings(JsonView jsonValue)
-  : NoiseReducerTemporalFilterSettings()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ NoiseReducerTemporalFilterSettings& NoiseReducerTemporalFilterSettings::operator
   if(jsonValue.ValueExists("aggressiveMode"))
   {
     m_aggressiveMode = jsonValue.GetInteger("aggressiveMode");
-
     m_aggressiveModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postTemporalSharpening"))
   {
     m_postTemporalSharpening = NoiseFilterPostTemporalSharpeningMapper::GetNoiseFilterPostTemporalSharpeningForName(jsonValue.GetString("postTemporalSharpening"));
-
     m_postTemporalSharpeningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postTemporalSharpeningStrength"))
   {
     m_postTemporalSharpeningStrength = NoiseFilterPostTemporalSharpeningStrengthMapper::GetNoiseFilterPostTemporalSharpeningStrengthForName(jsonValue.GetString("postTemporalSharpeningStrength"));
-
     m_postTemporalSharpeningStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speed"))
   {
     m_speed = jsonValue.GetInteger("speed");
-
     m_speedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strength"))
   {
     m_strength = jsonValue.GetInteger("strength");
-
     m_strengthHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMultiRegionAccessPointPolicyStatusResult::GetMultiRegionAccessPointPolicyStatusResult()
-{
-}
-
 GetMultiRegionAccessPointPolicyStatusResult::GetMultiRegionAccessPointPolicyStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetMultiRegionAccessPointPolicyStatusResult& GetMultiRegionAccessPointPolicyStat
     if(!establishedNode.IsNull())
     {
       m_established = establishedNode;
+      m_establishedHasBeenSet = true;
     }
   }
 
@@ -44,12 +41,14 @@ GetMultiRegionAccessPointPolicyStatusResult& GetMultiRegionAccessPointPolicyStat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

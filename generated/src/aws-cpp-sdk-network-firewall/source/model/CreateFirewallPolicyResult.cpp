@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFirewallPolicyResult::CreateFirewallPolicyResult()
-{
-}
-
 CreateFirewallPolicyResult::CreateFirewallPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateFirewallPolicyResult& CreateFirewallPolicyResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("UpdateToken"))
   {
     m_updateToken = jsonValue.GetString("UpdateToken");
-
+    m_updateTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyResponse"))
   {
     m_firewallPolicyResponse = jsonValue.GetObject("FirewallPolicyResponse");
-
+    m_firewallPolicyResponseHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

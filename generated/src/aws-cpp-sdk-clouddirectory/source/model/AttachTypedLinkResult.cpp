@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AttachTypedLinkResult::AttachTypedLinkResult()
-{
-}
-
 AttachTypedLinkResult::AttachTypedLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AttachTypedLinkResult& AttachTypedLinkResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("TypedLinkSpecifier"))
   {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");
-
+    m_typedLinkSpecifierHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

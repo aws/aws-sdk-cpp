@@ -30,7 +30,7 @@ namespace Model
   class UpdateProvisionedProductPropertiesResult
   {
   public:
-    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult();
+    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult() = default;
     AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,77 +39,71 @@ namespace Model
     /**
      * <p>The provisioned product identifier.</p>
      */
-    inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
-    inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductId = value; }
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductId = std::move(value); }
-    inline void SetProvisionedProductId(const char* value) { m_provisionedProductId.assign(value); }
-    inline UpdateProvisionedProductPropertiesResult& WithProvisionedProductId(const Aws::String& value) { SetProvisionedProductId(value); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
+    inline const Aws::String& GetProvisionedProductId() const { return m_provisionedProductId; }
+    template<typename ProvisionedProductIdT = Aws::String>
+    void SetProvisionedProductId(ProvisionedProductIdT&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::forward<ProvisionedProductIdT>(value); }
+    template<typename ProvisionedProductIdT = Aws::String>
+    UpdateProvisionedProductPropertiesResult& WithProvisionedProductId(ProvisionedProductIdT&& value) { SetProvisionedProductId(std::forward<ProvisionedProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map that contains the properties updated.</p>
      */
-    inline const Aws::Map<PropertyKey, Aws::String>& GetProvisionedProductProperties() const{ return m_provisionedProductProperties; }
-    inline void SetProvisionedProductProperties(const Aws::Map<PropertyKey, Aws::String>& value) { m_provisionedProductProperties = value; }
-    inline void SetProvisionedProductProperties(Aws::Map<PropertyKey, Aws::String>&& value) { m_provisionedProductProperties = std::move(value); }
-    inline UpdateProvisionedProductPropertiesResult& WithProvisionedProductProperties(const Aws::Map<PropertyKey, Aws::String>& value) { SetProvisionedProductProperties(value); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithProvisionedProductProperties(Aws::Map<PropertyKey, Aws::String>&& value) { SetProvisionedProductProperties(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(const PropertyKey& key, const Aws::String& value) { m_provisionedProductProperties.emplace(key, value); return *this; }
-    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(PropertyKey&& key, const Aws::String& value) { m_provisionedProductProperties.emplace(std::move(key), value); return *this; }
-    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(const PropertyKey& key, Aws::String&& value) { m_provisionedProductProperties.emplace(key, std::move(value)); return *this; }
-    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(PropertyKey&& key, Aws::String&& value) { m_provisionedProductProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(PropertyKey&& key, const char* value) { m_provisionedProductProperties.emplace(std::move(key), value); return *this; }
-    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(const PropertyKey& key, const char* value) { m_provisionedProductProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<PropertyKey, Aws::String>& GetProvisionedProductProperties() const { return m_provisionedProductProperties; }
+    template<typename ProvisionedProductPropertiesT = Aws::Map<PropertyKey, Aws::String>>
+    void SetProvisionedProductProperties(ProvisionedProductPropertiesT&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties = std::forward<ProvisionedProductPropertiesT>(value); }
+    template<typename ProvisionedProductPropertiesT = Aws::Map<PropertyKey, Aws::String>>
+    UpdateProvisionedProductPropertiesResult& WithProvisionedProductProperties(ProvisionedProductPropertiesT&& value) { SetProvisionedProductProperties(std::forward<ProvisionedProductPropertiesT>(value)); return *this;}
+    inline UpdateProvisionedProductPropertiesResult& AddProvisionedProductProperties(PropertyKey key, Aws::String value) {
+      m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the record.</p>
      */
-    inline const Aws::String& GetRecordId() const{ return m_recordId; }
-    inline void SetRecordId(const Aws::String& value) { m_recordId = value; }
-    inline void SetRecordId(Aws::String&& value) { m_recordId = std::move(value); }
-    inline void SetRecordId(const char* value) { m_recordId.assign(value); }
-    inline UpdateProvisionedProductPropertiesResult& WithRecordId(const Aws::String& value) { SetRecordId(value); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithRecordId(Aws::String&& value) { SetRecordId(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithRecordId(const char* value) { SetRecordId(value); return *this;}
+    inline const Aws::String& GetRecordId() const { return m_recordId; }
+    template<typename RecordIdT = Aws::String>
+    void SetRecordId(RecordIdT&& value) { m_recordIdHasBeenSet = true; m_recordId = std::forward<RecordIdT>(value); }
+    template<typename RecordIdT = Aws::String>
+    UpdateProvisionedProductPropertiesResult& WithRecordId(RecordIdT&& value) { SetRecordId(std::forward<RecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the request.</p>
      */
-    inline const RecordStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const RecordStatus& value) { m_status = value; }
-    inline void SetStatus(RecordStatus&& value) { m_status = std::move(value); }
-    inline UpdateProvisionedProductPropertiesResult& WithStatus(const RecordStatus& value) { SetStatus(value); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithStatus(RecordStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline RecordStatus GetStatus() const { return m_status; }
+    inline void SetStatus(RecordStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateProvisionedProductPropertiesResult& WithStatus(RecordStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProvisionedProductPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProvisionedProductPropertiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_provisionedProductId;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::Map<PropertyKey, Aws::String> m_provisionedProductProperties;
+    bool m_provisionedProductPropertiesHasBeenSet = false;
 
     Aws::String m_recordId;
+    bool m_recordIdHasBeenSet = false;
 
-    RecordStatus m_status;
+    RecordStatus m_status{RecordStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

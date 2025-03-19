@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchListObjectChildrenResponse::BatchListObjectChildrenResponse() : 
-    m_childrenHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(JsonView jsonValue)
-  : BatchListObjectChildrenResponse()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BatchListObjectChildrenResponse& BatchListObjectChildrenResponse::operator =(Jso
     }
     m_childrenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

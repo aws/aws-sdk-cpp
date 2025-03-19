@@ -35,7 +35,7 @@ namespace Model
   class VectorIngestionConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API VectorIngestionConfiguration();
+    AWS_BEDROCKAGENT_API VectorIngestionConfiguration() = default;
     AWS_BEDROCKAGENT_API VectorIngestionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API VectorIngestionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * refers to an excerpt from a data source that is returned when the knowledge base
      * that it belongs to is queried.</p>
      */
-    inline const ChunkingConfiguration& GetChunkingConfiguration() const{ return m_chunkingConfiguration; }
+    inline const ChunkingConfiguration& GetChunkingConfiguration() const { return m_chunkingConfiguration; }
     inline bool ChunkingConfigurationHasBeenSet() const { return m_chunkingConfigurationHasBeenSet; }
-    inline void SetChunkingConfiguration(const ChunkingConfiguration& value) { m_chunkingConfigurationHasBeenSet = true; m_chunkingConfiguration = value; }
-    inline void SetChunkingConfiguration(ChunkingConfiguration&& value) { m_chunkingConfigurationHasBeenSet = true; m_chunkingConfiguration = std::move(value); }
-    inline VectorIngestionConfiguration& WithChunkingConfiguration(const ChunkingConfiguration& value) { SetChunkingConfiguration(value); return *this;}
-    inline VectorIngestionConfiguration& WithChunkingConfiguration(ChunkingConfiguration&& value) { SetChunkingConfiguration(std::move(value)); return *this;}
+    template<typename ChunkingConfigurationT = ChunkingConfiguration>
+    void SetChunkingConfiguration(ChunkingConfigurationT&& value) { m_chunkingConfigurationHasBeenSet = true; m_chunkingConfiguration = std::forward<ChunkingConfigurationT>(value); }
+    template<typename ChunkingConfigurationT = ChunkingConfiguration>
+    VectorIngestionConfiguration& WithChunkingConfiguration(ChunkingConfigurationT&& value) { SetChunkingConfiguration(std::forward<ChunkingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,24 +60,24 @@ namespace Model
      * <p>The context enrichment configuration used for ingestion of the data into the
      * vector store.</p>
      */
-    inline const ContextEnrichmentConfiguration& GetContextEnrichmentConfiguration() const{ return m_contextEnrichmentConfiguration; }
+    inline const ContextEnrichmentConfiguration& GetContextEnrichmentConfiguration() const { return m_contextEnrichmentConfiguration; }
     inline bool ContextEnrichmentConfigurationHasBeenSet() const { return m_contextEnrichmentConfigurationHasBeenSet; }
-    inline void SetContextEnrichmentConfiguration(const ContextEnrichmentConfiguration& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = value; }
-    inline void SetContextEnrichmentConfiguration(ContextEnrichmentConfiguration&& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = std::move(value); }
-    inline VectorIngestionConfiguration& WithContextEnrichmentConfiguration(const ContextEnrichmentConfiguration& value) { SetContextEnrichmentConfiguration(value); return *this;}
-    inline VectorIngestionConfiguration& WithContextEnrichmentConfiguration(ContextEnrichmentConfiguration&& value) { SetContextEnrichmentConfiguration(std::move(value)); return *this;}
+    template<typename ContextEnrichmentConfigurationT = ContextEnrichmentConfiguration>
+    void SetContextEnrichmentConfiguration(ContextEnrichmentConfigurationT&& value) { m_contextEnrichmentConfigurationHasBeenSet = true; m_contextEnrichmentConfiguration = std::forward<ContextEnrichmentConfigurationT>(value); }
+    template<typename ContextEnrichmentConfigurationT = ContextEnrichmentConfiguration>
+    VectorIngestionConfiguration& WithContextEnrichmentConfiguration(ContextEnrichmentConfigurationT&& value) { SetContextEnrichmentConfiguration(std::forward<ContextEnrichmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom document transformer for parsed data source documents.</p>
      */
-    inline const CustomTransformationConfiguration& GetCustomTransformationConfiguration() const{ return m_customTransformationConfiguration; }
+    inline const CustomTransformationConfiguration& GetCustomTransformationConfiguration() const { return m_customTransformationConfiguration; }
     inline bool CustomTransformationConfigurationHasBeenSet() const { return m_customTransformationConfigurationHasBeenSet; }
-    inline void SetCustomTransformationConfiguration(const CustomTransformationConfiguration& value) { m_customTransformationConfigurationHasBeenSet = true; m_customTransformationConfiguration = value; }
-    inline void SetCustomTransformationConfiguration(CustomTransformationConfiguration&& value) { m_customTransformationConfigurationHasBeenSet = true; m_customTransformationConfiguration = std::move(value); }
-    inline VectorIngestionConfiguration& WithCustomTransformationConfiguration(const CustomTransformationConfiguration& value) { SetCustomTransformationConfiguration(value); return *this;}
-    inline VectorIngestionConfiguration& WithCustomTransformationConfiguration(CustomTransformationConfiguration&& value) { SetCustomTransformationConfiguration(std::move(value)); return *this;}
+    template<typename CustomTransformationConfigurationT = CustomTransformationConfiguration>
+    void SetCustomTransformationConfiguration(CustomTransformationConfigurationT&& value) { m_customTransformationConfigurationHasBeenSet = true; m_customTransformationConfiguration = std::forward<CustomTransformationConfigurationT>(value); }
+    template<typename CustomTransformationConfigurationT = CustomTransformationConfiguration>
+    VectorIngestionConfiguration& WithCustomTransformationConfiguration(CustomTransformationConfigurationT&& value) { SetCustomTransformationConfiguration(std::forward<CustomTransformationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +85,12 @@ namespace Model
      * <p>Configurations for a parser to use for parsing documents in your data source.
      * If you exclude this field, the default parser will be used.</p>
      */
-    inline const ParsingConfiguration& GetParsingConfiguration() const{ return m_parsingConfiguration; }
+    inline const ParsingConfiguration& GetParsingConfiguration() const { return m_parsingConfiguration; }
     inline bool ParsingConfigurationHasBeenSet() const { return m_parsingConfigurationHasBeenSet; }
-    inline void SetParsingConfiguration(const ParsingConfiguration& value) { m_parsingConfigurationHasBeenSet = true; m_parsingConfiguration = value; }
-    inline void SetParsingConfiguration(ParsingConfiguration&& value) { m_parsingConfigurationHasBeenSet = true; m_parsingConfiguration = std::move(value); }
-    inline VectorIngestionConfiguration& WithParsingConfiguration(const ParsingConfiguration& value) { SetParsingConfiguration(value); return *this;}
-    inline VectorIngestionConfiguration& WithParsingConfiguration(ParsingConfiguration&& value) { SetParsingConfiguration(std::move(value)); return *this;}
+    template<typename ParsingConfigurationT = ParsingConfiguration>
+    void SetParsingConfiguration(ParsingConfigurationT&& value) { m_parsingConfigurationHasBeenSet = true; m_parsingConfiguration = std::forward<ParsingConfigurationT>(value); }
+    template<typename ParsingConfigurationT = ParsingConfiguration>
+    VectorIngestionConfiguration& WithParsingConfiguration(ParsingConfigurationT&& value) { SetParsingConfiguration(std::forward<ParsingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

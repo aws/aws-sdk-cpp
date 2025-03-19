@@ -35,7 +35,7 @@ namespace Model
   class IdMappingWorkflowSummary
   {
   public:
-    AWS_ENTITYRESOLUTION_API IdMappingWorkflowSummary();
+    AWS_ENTITYRESOLUTION_API IdMappingWorkflowSummary() = default;
     AWS_ENTITYRESOLUTION_API IdMappingWorkflowSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API IdMappingWorkflowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The timestamp of when the workflow was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline IdMappingWorkflowSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline IdMappingWorkflowSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    IdMappingWorkflowSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the workflow was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline IdMappingWorkflowSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline IdMappingWorkflowSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    IdMappingWorkflowSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,35 +70,31 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
      * <code>IdMappingWorkflow</code>.</p>
      */
-    inline const Aws::String& GetWorkflowArn() const{ return m_workflowArn; }
+    inline const Aws::String& GetWorkflowArn() const { return m_workflowArn; }
     inline bool WorkflowArnHasBeenSet() const { return m_workflowArnHasBeenSet; }
-    inline void SetWorkflowArn(const Aws::String& value) { m_workflowArnHasBeenSet = true; m_workflowArn = value; }
-    inline void SetWorkflowArn(Aws::String&& value) { m_workflowArnHasBeenSet = true; m_workflowArn = std::move(value); }
-    inline void SetWorkflowArn(const char* value) { m_workflowArnHasBeenSet = true; m_workflowArn.assign(value); }
-    inline IdMappingWorkflowSummary& WithWorkflowArn(const Aws::String& value) { SetWorkflowArn(value); return *this;}
-    inline IdMappingWorkflowSummary& WithWorkflowArn(Aws::String&& value) { SetWorkflowArn(std::move(value)); return *this;}
-    inline IdMappingWorkflowSummary& WithWorkflowArn(const char* value) { SetWorkflowArn(value); return *this;}
+    template<typename WorkflowArnT = Aws::String>
+    void SetWorkflowArn(WorkflowArnT&& value) { m_workflowArnHasBeenSet = true; m_workflowArn = std::forward<WorkflowArnT>(value); }
+    template<typename WorkflowArnT = Aws::String>
+    IdMappingWorkflowSummary& WithWorkflowArn(WorkflowArnT&& value) { SetWorkflowArn(std::forward<WorkflowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-    inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-    inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-    inline IdMappingWorkflowSummary& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-    inline IdMappingWorkflowSummary& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-    inline IdMappingWorkflowSummary& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    IdMappingWorkflowSummary& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_workflowArn;

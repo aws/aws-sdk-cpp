@@ -12,13 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLFTagRequest::CreateLFTagRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 Aws::String CreateLFTagRequest::SerializePayload() const
 {
   JsonValue payload;

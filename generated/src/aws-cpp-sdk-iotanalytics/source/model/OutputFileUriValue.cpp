@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-OutputFileUriValue::OutputFileUriValue() : 
-    m_fileNameHasBeenSet(false)
-{
-}
-
 OutputFileUriValue::OutputFileUriValue(JsonView jsonValue)
-  : OutputFileUriValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputFileUriValue& OutputFileUriValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   return *this;
 }
 

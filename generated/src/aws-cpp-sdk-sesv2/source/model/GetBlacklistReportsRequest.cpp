@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBlacklistReportsRequest::GetBlacklistReportsRequest() : 
-    m_blacklistItemNamesHasBeenSet(false)
-{
-}
-
 Aws::String GetBlacklistReportsRequest::SerializePayload() const
 {
   return {};

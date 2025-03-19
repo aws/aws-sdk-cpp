@@ -12,17 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSchemaRequest::CreateSchemaRequest() : 
-    m_contentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

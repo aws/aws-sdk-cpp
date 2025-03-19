@@ -32,7 +32,7 @@ namespace Model
   class SmbMountOptions
   {
   public:
-    AWS_DATASYNC_API SmbMountOptions();
+    AWS_DATASYNC_API SmbMountOptions() = default;
     AWS_DATASYNC_API SmbMountOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API SmbMountOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,16 +59,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */
-    inline const SmbVersion& GetVersion() const{ return m_version; }
+    inline SmbVersion GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const SmbVersion& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(SmbVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline SmbMountOptions& WithVersion(const SmbVersion& value) { SetVersion(value); return *this;}
-    inline SmbMountOptions& WithVersion(SmbVersion&& value) { SetVersion(std::move(value)); return *this;}
+    inline void SetVersion(SmbVersion value) { m_versionHasBeenSet = true; m_version = value; }
+    inline SmbMountOptions& WithVersion(SmbVersion value) { SetVersion(value); return *this;}
     ///@}
   private:
 
-    SmbVersion m_version;
+    SmbVersion m_version{SmbVersion::NOT_SET};
     bool m_versionHasBeenSet = false;
   };
 

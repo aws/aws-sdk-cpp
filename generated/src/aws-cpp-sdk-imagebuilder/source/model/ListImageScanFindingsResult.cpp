@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListImageScanFindingsResult::ListImageScanFindingsResult()
-{
-}
-
 ListImageScanFindingsResult::ListImageScanFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListImageScanFindingsResult& ListImageScanFindingsResult::operator =(const Aws::
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findings"))
   {
     Aws::Utils::Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
@@ -41,14 +36,13 @@ ListImageScanFindingsResult& ListImageScanFindingsResult::operator =(const Aws::
     {
       m_findings.push_back(findingsJsonList[findingsIndex].AsObject());
     }
+    m_findingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

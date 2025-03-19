@@ -31,7 +31,7 @@ namespace Model
   class EmailRecipient
   {
   public:
-    AWS_CONNECT_API EmailRecipient();
+    AWS_CONNECT_API EmailRecipient() = default;
     AWS_CONNECT_API EmailRecipient(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EmailRecipient& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>Address of the email recipient.</p> <p>Type: String</p> <p>Length
      * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline EmailRecipient& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline EmailRecipient& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline EmailRecipient& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    EmailRecipient& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>Display name of the email recipient.</p> <p>Type: String</p> <p>Length
      * Constraints: Minimum length of 1. Maximum length of 256.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline EmailRecipient& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline EmailRecipient& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline EmailRecipient& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    EmailRecipient& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 

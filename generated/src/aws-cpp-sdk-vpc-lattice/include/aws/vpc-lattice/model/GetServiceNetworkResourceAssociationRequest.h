@@ -21,7 +21,7 @@ namespace Model
   class GetServiceNetworkResourceAssociationRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API GetServiceNetworkResourceAssociationRequest();
+    AWS_VPCLATTICE_API GetServiceNetworkResourceAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetServiceNetworkResourceAssociationIdentifier() const{ return m_serviceNetworkResourceAssociationIdentifier; }
+    inline const Aws::String& GetServiceNetworkResourceAssociationIdentifier() const { return m_serviceNetworkResourceAssociationIdentifier; }
     inline bool ServiceNetworkResourceAssociationIdentifierHasBeenSet() const { return m_serviceNetworkResourceAssociationIdentifierHasBeenSet; }
-    inline void SetServiceNetworkResourceAssociationIdentifier(const Aws::String& value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier = value; }
-    inline void SetServiceNetworkResourceAssociationIdentifier(Aws::String&& value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier = std::move(value); }
-    inline void SetServiceNetworkResourceAssociationIdentifier(const char* value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier.assign(value); }
-    inline GetServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(const Aws::String& value) { SetServiceNetworkResourceAssociationIdentifier(value); return *this;}
-    inline GetServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(Aws::String&& value) { SetServiceNetworkResourceAssociationIdentifier(std::move(value)); return *this;}
-    inline GetServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(const char* value) { SetServiceNetworkResourceAssociationIdentifier(value); return *this;}
+    template<typename ServiceNetworkResourceAssociationIdentifierT = Aws::String>
+    void SetServiceNetworkResourceAssociationIdentifier(ServiceNetworkResourceAssociationIdentifierT&& value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier = std::forward<ServiceNetworkResourceAssociationIdentifierT>(value); }
+    template<typename ServiceNetworkResourceAssociationIdentifierT = Aws::String>
+    GetServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(ServiceNetworkResourceAssociationIdentifierT&& value) { SetServiceNetworkResourceAssociationIdentifier(std::forward<ServiceNetworkResourceAssociationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

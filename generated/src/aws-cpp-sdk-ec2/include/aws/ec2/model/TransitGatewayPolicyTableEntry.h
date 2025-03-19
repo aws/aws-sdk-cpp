@@ -32,7 +32,7 @@ namespace Model
   class TransitGatewayPolicyTableEntry
   {
   public:
-    AWS_EC2_API TransitGatewayPolicyTableEntry();
+    AWS_EC2_API TransitGatewayPolicyTableEntry() = default;
     AWS_EC2_API TransitGatewayPolicyTableEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayPolicyTableEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The rule number for the transit gateway policy table entry.</p>
      */
-    inline const Aws::String& GetPolicyRuleNumber() const{ return m_policyRuleNumber; }
+    inline const Aws::String& GetPolicyRuleNumber() const { return m_policyRuleNumber; }
     inline bool PolicyRuleNumberHasBeenSet() const { return m_policyRuleNumberHasBeenSet; }
-    inline void SetPolicyRuleNumber(const Aws::String& value) { m_policyRuleNumberHasBeenSet = true; m_policyRuleNumber = value; }
-    inline void SetPolicyRuleNumber(Aws::String&& value) { m_policyRuleNumberHasBeenSet = true; m_policyRuleNumber = std::move(value); }
-    inline void SetPolicyRuleNumber(const char* value) { m_policyRuleNumberHasBeenSet = true; m_policyRuleNumber.assign(value); }
-    inline TransitGatewayPolicyTableEntry& WithPolicyRuleNumber(const Aws::String& value) { SetPolicyRuleNumber(value); return *this;}
-    inline TransitGatewayPolicyTableEntry& WithPolicyRuleNumber(Aws::String&& value) { SetPolicyRuleNumber(std::move(value)); return *this;}
-    inline TransitGatewayPolicyTableEntry& WithPolicyRuleNumber(const char* value) { SetPolicyRuleNumber(value); return *this;}
+    template<typename PolicyRuleNumberT = Aws::String>
+    void SetPolicyRuleNumber(PolicyRuleNumberT&& value) { m_policyRuleNumberHasBeenSet = true; m_policyRuleNumber = std::forward<PolicyRuleNumberT>(value); }
+    template<typename PolicyRuleNumberT = Aws::String>
+    TransitGatewayPolicyTableEntry& WithPolicyRuleNumber(PolicyRuleNumberT&& value) { SetPolicyRuleNumber(std::forward<PolicyRuleNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy rule associated with the transit gateway policy table.</p>
      */
-    inline const TransitGatewayPolicyRule& GetPolicyRule() const{ return m_policyRule; }
+    inline const TransitGatewayPolicyRule& GetPolicyRule() const { return m_policyRule; }
     inline bool PolicyRuleHasBeenSet() const { return m_policyRuleHasBeenSet; }
-    inline void SetPolicyRule(const TransitGatewayPolicyRule& value) { m_policyRuleHasBeenSet = true; m_policyRule = value; }
-    inline void SetPolicyRule(TransitGatewayPolicyRule&& value) { m_policyRuleHasBeenSet = true; m_policyRule = std::move(value); }
-    inline TransitGatewayPolicyTableEntry& WithPolicyRule(const TransitGatewayPolicyRule& value) { SetPolicyRule(value); return *this;}
-    inline TransitGatewayPolicyTableEntry& WithPolicyRule(TransitGatewayPolicyRule&& value) { SetPolicyRule(std::move(value)); return *this;}
+    template<typename PolicyRuleT = TransitGatewayPolicyRule>
+    void SetPolicyRule(PolicyRuleT&& value) { m_policyRuleHasBeenSet = true; m_policyRule = std::forward<PolicyRuleT>(value); }
+    template<typename PolicyRuleT = TransitGatewayPolicyRule>
+    TransitGatewayPolicyTableEntry& WithPolicyRule(PolicyRuleT&& value) { SetPolicyRule(std::forward<PolicyRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the target route table.</p>
      */
-    inline const Aws::String& GetTargetRouteTableId() const{ return m_targetRouteTableId; }
+    inline const Aws::String& GetTargetRouteTableId() const { return m_targetRouteTableId; }
     inline bool TargetRouteTableIdHasBeenSet() const { return m_targetRouteTableIdHasBeenSet; }
-    inline void SetTargetRouteTableId(const Aws::String& value) { m_targetRouteTableIdHasBeenSet = true; m_targetRouteTableId = value; }
-    inline void SetTargetRouteTableId(Aws::String&& value) { m_targetRouteTableIdHasBeenSet = true; m_targetRouteTableId = std::move(value); }
-    inline void SetTargetRouteTableId(const char* value) { m_targetRouteTableIdHasBeenSet = true; m_targetRouteTableId.assign(value); }
-    inline TransitGatewayPolicyTableEntry& WithTargetRouteTableId(const Aws::String& value) { SetTargetRouteTableId(value); return *this;}
-    inline TransitGatewayPolicyTableEntry& WithTargetRouteTableId(Aws::String&& value) { SetTargetRouteTableId(std::move(value)); return *this;}
-    inline TransitGatewayPolicyTableEntry& WithTargetRouteTableId(const char* value) { SetTargetRouteTableId(value); return *this;}
+    template<typename TargetRouteTableIdT = Aws::String>
+    void SetTargetRouteTableId(TargetRouteTableIdT&& value) { m_targetRouteTableIdHasBeenSet = true; m_targetRouteTableId = std::forward<TargetRouteTableIdT>(value); }
+    template<typename TargetRouteTableIdT = Aws::String>
+    TransitGatewayPolicyTableEntry& WithTargetRouteTableId(TargetRouteTableIdT&& value) { SetTargetRouteTableId(std::forward<TargetRouteTableIdT>(value)); return *this;}
     ///@}
   private:
 

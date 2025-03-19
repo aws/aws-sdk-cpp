@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AquaConfiguration::AquaConfiguration() : 
-    m_aquaStatus(AquaStatus::NOT_SET),
-    m_aquaStatusHasBeenSet(false),
-    m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
-    m_aquaConfigurationStatusHasBeenSet(false)
-{
-}
-
 AquaConfiguration::AquaConfiguration(const XmlNode& xmlNode)
-  : AquaConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,13 +34,13 @@ AquaConfiguration& AquaConfiguration::operator =(const XmlNode& xmlNode)
     XmlNode aquaStatusNode = resultNode.FirstChild("AquaStatus");
     if(!aquaStatusNode.IsNull())
     {
-      m_aquaStatus = AquaStatusMapper::GetAquaStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(aquaStatusNode.GetText()).c_str()).c_str());
+      m_aquaStatus = AquaStatusMapper::GetAquaStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(aquaStatusNode.GetText()).c_str()));
       m_aquaStatusHasBeenSet = true;
     }
     XmlNode aquaConfigurationStatusNode = resultNode.FirstChild("AquaConfigurationStatus");
     if(!aquaConfigurationStatusNode.IsNull())
     {
-      m_aquaConfigurationStatus = AquaConfigurationStatusMapper::GetAquaConfigurationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(aquaConfigurationStatusNode.GetText()).c_str()).c_str());
+      m_aquaConfigurationStatus = AquaConfigurationStatusMapper::GetAquaConfigurationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(aquaConfigurationStatusNode.GetText()).c_str()));
       m_aquaConfigurationStatusHasBeenSet = true;
     }
   }

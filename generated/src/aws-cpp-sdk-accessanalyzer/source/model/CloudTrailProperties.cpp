@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-CloudTrailProperties::CloudTrailProperties() : 
-    m_trailPropertiesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 CloudTrailProperties::CloudTrailProperties(JsonView jsonValue)
-  : CloudTrailProperties()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ CloudTrailProperties& CloudTrailProperties::operator =(JsonView jsonValue)
     }
     m_trailPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

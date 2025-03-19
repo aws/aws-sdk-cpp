@@ -18,15 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-ServiceTemporarilyUnavailableException::ServiceTemporarilyUnavailableException() : 
-    m_messageHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
-{
-}
-
 ServiceTemporarilyUnavailableException::ServiceTemporarilyUnavailableException(JsonView jsonValue)
-  : ServiceTemporarilyUnavailableException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ServiceTemporarilyUnavailableException& ServiceTemporarilyUnavailableException::
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canRetry"))
   {
     m_canRetry = jsonValue.GetBool("canRetry");
-
     m_canRetryHasBeenSet = true;
   }
-
   return *this;
 }
 

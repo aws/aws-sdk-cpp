@@ -18,14 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeAutoEnableNewAccountConfiguration::DataLakeAutoEnableNewAccountConfiguration() : 
-    m_regionHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 DataLakeAutoEnableNewAccountConfiguration::DataLakeAutoEnableNewAccountConfiguration(JsonView jsonValue)
-  : DataLakeAutoEnableNewAccountConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataLakeAutoEnableNewAccountConfiguration& DataLakeAutoEnableNewAccountConfigura
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -48,7 +39,6 @@ DataLakeAutoEnableNewAccountConfiguration& DataLakeAutoEnableNewAccountConfigura
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

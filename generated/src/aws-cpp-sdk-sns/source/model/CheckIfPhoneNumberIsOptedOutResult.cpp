@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult() : 
-    m_isOptedOut(false)
-{
-}
-
 CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CheckIfPhoneNumberIsOptedOutResult()
 {
   *this = result;
 }
@@ -44,12 +38,14 @@ CheckIfPhoneNumberIsOptedOutResult& CheckIfPhoneNumberIsOptedOutResult::operator
     if(!isOptedOutNode.IsNull())
     {
       m_isOptedOut = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isOptedOutNode.GetText()).c_str()).c_str());
+      m_isOptedOutHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::CheckIfPhoneNumberIsOptedOutResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,14 +18,7 @@ namespace Braket
 namespace Model
 {
 
-SearchDevicesFilter::SearchDevicesFilter() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchDevicesFilter::SearchDevicesFilter(JsonView jsonValue)
-  : SearchDevicesFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SearchDevicesFilter& SearchDevicesFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ SearchDevicesFilter& SearchDevicesFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

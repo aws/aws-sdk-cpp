@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DvbTdtSettings::DvbTdtSettings() : 
-    m_tdtInterval(0),
-    m_tdtIntervalHasBeenSet(false)
-{
-}
-
 DvbTdtSettings::DvbTdtSettings(JsonView jsonValue)
-  : DvbTdtSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DvbTdtSettings& DvbTdtSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tdtInterval"))
   {
     m_tdtInterval = jsonValue.GetInteger("tdtInterval");
-
     m_tdtIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

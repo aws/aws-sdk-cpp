@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-GetConnectionsFilter::GetConnectionsFilter() : 
-    m_matchCriteriaHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_connectionSchemaVersion(0),
-    m_connectionSchemaVersionHasBeenSet(false)
-{
-}
-
 GetConnectionsFilter::GetConnectionsFilter(JsonView jsonValue)
-  : GetConnectionsFilter()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ GetConnectionsFilter& GetConnectionsFilter::operator =(JsonView jsonValue)
     }
     m_matchCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionType"))
   {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("ConnectionType"));
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionSchemaVersion"))
   {
     m_connectionSchemaVersion = jsonValue.GetInteger("ConnectionSchemaVersion");
-
     m_connectionSchemaVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

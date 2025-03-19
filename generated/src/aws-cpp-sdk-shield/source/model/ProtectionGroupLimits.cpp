@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-ProtectionGroupLimits::ProtectionGroupLimits() : 
-    m_maxProtectionGroups(0),
-    m_maxProtectionGroupsHasBeenSet(false),
-    m_patternTypeLimitsHasBeenSet(false)
-{
-}
-
 ProtectionGroupLimits::ProtectionGroupLimits(JsonView jsonValue)
-  : ProtectionGroupLimits()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProtectionGroupLimits& ProtectionGroupLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxProtectionGroups"))
   {
     m_maxProtectionGroups = jsonValue.GetInt64("MaxProtectionGroups");
-
     m_maxProtectionGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PatternTypeLimits"))
   {
     m_patternTypeLimits = jsonValue.GetObject("PatternTypeLimits");
-
     m_patternTypeLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

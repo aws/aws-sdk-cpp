@@ -33,7 +33,7 @@ namespace Model
   class RefreshScheduleFrequency
   {
   public:
-    AWS_CLOUDTRAIL_API RefreshScheduleFrequency();
+    AWS_CLOUDTRAIL_API RefreshScheduleFrequency() = default;
     AWS_CLOUDTRAIL_API RefreshScheduleFrequency(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API RefreshScheduleFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * be <code>HOURS</code> or <code>DAYS</code>.</p> <p>For the Highlights dashboard,
      * the <code>Unit</code> must be <code>HOURS</code>.</p>
      */
-    inline const RefreshScheduleFrequencyUnit& GetUnit() const{ return m_unit; }
+    inline RefreshScheduleFrequencyUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const RefreshScheduleFrequencyUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(RefreshScheduleFrequencyUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline RefreshScheduleFrequency& WithUnit(const RefreshScheduleFrequencyUnit& value) { SetUnit(value); return *this;}
-    inline RefreshScheduleFrequency& WithUnit(RefreshScheduleFrequencyUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(RefreshScheduleFrequencyUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline RefreshScheduleFrequency& WithUnit(RefreshScheduleFrequencyUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -62,17 +60,17 @@ namespace Model
      * <p>For the Highlights dashboard, the <code>Value</code> must be
      * <code>6</code>.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline RefreshScheduleFrequency& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    RefreshScheduleFrequencyUnit m_unit;
+    RefreshScheduleFrequencyUnit m_unit{RefreshScheduleFrequencyUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

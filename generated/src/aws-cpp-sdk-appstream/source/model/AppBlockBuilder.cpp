@@ -18,29 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-AppBlockBuilder::AppBlockBuilder() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platform(AppBlockBuilderPlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_state(AppBlockBuilderState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_appBlockBuilderErrorsHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false)
-{
-}
-
 AppBlockBuilder::AppBlockBuilder(JsonView jsonValue)
-  : AppBlockBuilder()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ AppBlockBuilder& AppBlockBuilder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = AppBlockBuilderPlatformTypeMapper::GetAppBlockBuilderPlatformTypeForName(jsonValue.GetString("Platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableDefaultInternetAccess"))
   {
     m_enableDefaultInternetAccess = jsonValue.GetBool("EnableDefaultInternetAccess");
-
     m_enableDefaultInternetAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = AppBlockBuilderStateMapper::GetAppBlockBuilderStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppBlockBuilderErrors"))
   {
     Aws::Utils::Array<JsonView> appBlockBuilderErrorsJsonList = jsonValue.GetArray("AppBlockBuilderErrors");
@@ -133,14 +89,11 @@ AppBlockBuilder& AppBlockBuilder::operator =(JsonView jsonValue)
     }
     m_appBlockBuilderErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateChangeReason"))
   {
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
-
     m_stateChangeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessEndpoints"))
   {
     Aws::Utils::Array<JsonView> accessEndpointsJsonList = jsonValue.GetArray("AccessEndpoints");
@@ -150,7 +103,6 @@ AppBlockBuilder& AppBlockBuilder::operator =(JsonView jsonValue)
     }
     m_accessEndpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

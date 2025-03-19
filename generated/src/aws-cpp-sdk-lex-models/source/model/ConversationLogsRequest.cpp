@@ -18,14 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-ConversationLogsRequest::ConversationLogsRequest() : 
-    m_logSettingsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
-{
-}
-
 ConversationLogsRequest::ConversationLogsRequest(JsonView jsonValue)
-  : ConversationLogsRequest()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ConversationLogsRequest& ConversationLogsRequest::operator =(JsonView jsonValue)
     }
     m_logSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("iamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

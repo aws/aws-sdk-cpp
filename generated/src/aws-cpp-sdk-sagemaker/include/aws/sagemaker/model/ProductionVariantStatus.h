@@ -33,7 +33,7 @@ namespace Model
   class ProductionVariantStatus
   {
   public:
-    AWS_SAGEMAKER_API ProductionVariantStatus();
+    AWS_SAGEMAKER_API ProductionVariantStatus() = default;
     AWS_SAGEMAKER_API ProductionVariantStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProductionVariantStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,48 +51,44 @@ namespace Model
      * Waiting period to monitor the CloudWatch alarms in the automatic rollback
      * configuration.</p> </li> </ul>
      */
-    inline const VariantStatus& GetStatus() const{ return m_status; }
+    inline VariantStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VariantStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VariantStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProductionVariantStatus& WithStatus(const VariantStatus& value) { SetStatus(value); return *this;}
-    inline ProductionVariantStatus& WithStatus(VariantStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VariantStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProductionVariantStatus& WithStatus(VariantStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that describes the status of the production variant.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ProductionVariantStatus& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ProductionVariantStatus& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ProductionVariantStatus& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ProductionVariantStatus& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the current status change.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ProductionVariantStatus& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ProductionVariantStatus& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ProductionVariantStatus& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    VariantStatus m_status;
+    VariantStatus m_status{VariantStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

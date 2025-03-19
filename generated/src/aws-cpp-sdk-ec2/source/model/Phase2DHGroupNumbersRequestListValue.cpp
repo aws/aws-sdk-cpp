@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase2DHGroupNumbersRequestListValue::Phase2DHGroupNumbersRequestListValue() : 
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase2DHGroupNumbersRequestListValue::Phase2DHGroupNumbersRequestListValue(const XmlNode& xmlNode)
-  : Phase2DHGroupNumbersRequestListValue()
 {
   *this = xmlNode;
 }

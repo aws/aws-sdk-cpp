@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamResourceDiscoveryAssociation::IpamResourceDiscoveryAssociation() : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamResourceDiscoveryAssociationIdHasBeenSet(false),
-    m_ipamResourceDiscoveryAssociationArnHasBeenSet(false),
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_resourceDiscoveryStatus(IpamAssociatedResourceDiscoveryStatus::NOT_SET),
-    m_resourceDiscoveryStatusHasBeenSet(false),
-    m_state(IpamResourceDiscoveryAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IpamResourceDiscoveryAssociation::IpamResourceDiscoveryAssociation(const XmlNode& xmlNode)
-  : IpamResourceDiscoveryAssociation()
 {
   *this = xmlNode;
 }
@@ -101,19 +82,20 @@ IpamResourceDiscoveryAssociation& IpamResourceDiscoveryAssociation::operator =(c
     XmlNode resourceDiscoveryStatusNode = resultNode.FirstChild("resourceDiscoveryStatus");
     if(!resourceDiscoveryStatusNode.IsNull())
     {
-      m_resourceDiscoveryStatus = IpamAssociatedResourceDiscoveryStatusMapper::GetIpamAssociatedResourceDiscoveryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDiscoveryStatusNode.GetText()).c_str()).c_str());
+      m_resourceDiscoveryStatus = IpamAssociatedResourceDiscoveryStatusMapper::GetIpamAssociatedResourceDiscoveryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDiscoveryStatusNode.GetText()).c_str()));
       m_resourceDiscoveryStatusHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamResourceDiscoveryAssociationStateMapper::GetIpamResourceDiscoveryAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamResourceDiscoveryAssociationStateMapper::GetIpamResourceDiscoveryAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

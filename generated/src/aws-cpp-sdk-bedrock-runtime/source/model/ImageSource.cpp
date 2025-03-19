@@ -19,13 +19,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ImageSource::ImageSource() : 
-    m_bytesHasBeenSet(false)
-{
-}
-
 ImageSource::ImageSource(JsonView jsonValue)
-  : ImageSource()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ ImageSource& ImageSource::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   return *this;
 }
 

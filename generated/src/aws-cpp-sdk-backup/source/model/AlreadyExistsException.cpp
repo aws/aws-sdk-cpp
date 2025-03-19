@@ -18,18 +18,7 @@ namespace Backup
 namespace Model
 {
 
-AlreadyExistsException::AlreadyExistsException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 AlreadyExistsException::AlreadyExistsException(JsonView jsonValue)
-  : AlreadyExistsException()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AlreadyExistsException& AlreadyExistsException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     m_context = jsonValue.GetString("Context");
-
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

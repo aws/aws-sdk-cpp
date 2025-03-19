@@ -18,14 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-HashKeyRange::HashKeyRange() : 
-    m_startingHashKeyHasBeenSet(false),
-    m_endingHashKeyHasBeenSet(false)
-{
-}
-
 HashKeyRange::HashKeyRange(JsonView jsonValue)
-  : HashKeyRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HashKeyRange& HashKeyRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartingHashKey"))
   {
     m_startingHashKey = jsonValue.GetString("StartingHashKey");
-
     m_startingHashKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndingHashKey"))
   {
     m_endingHashKey = jsonValue.GetString("EndingHashKey");
-
     m_endingHashKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

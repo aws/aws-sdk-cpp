@@ -24,7 +24,7 @@ namespace Model
   class DeleteInputRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API DeleteInputRequest();
+    AWS_MEDIALIVE_API DeleteInputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * Unique ID of the input
      */
-    inline const Aws::String& GetInputId() const{ return m_inputId; }
+    inline const Aws::String& GetInputId() const { return m_inputId; }
     inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
-    inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
-    inline void SetInputId(Aws::String&& value) { m_inputIdHasBeenSet = true; m_inputId = std::move(value); }
-    inline void SetInputId(const char* value) { m_inputIdHasBeenSet = true; m_inputId.assign(value); }
-    inline DeleteInputRequest& WithInputId(const Aws::String& value) { SetInputId(value); return *this;}
-    inline DeleteInputRequest& WithInputId(Aws::String&& value) { SetInputId(std::move(value)); return *this;}
-    inline DeleteInputRequest& WithInputId(const char* value) { SetInputId(value); return *this;}
+    template<typename InputIdT = Aws::String>
+    void SetInputId(InputIdT&& value) { m_inputIdHasBeenSet = true; m_inputId = std::forward<InputIdT>(value); }
+    template<typename InputIdT = Aws::String>
+    DeleteInputRequest& WithInputId(InputIdT&& value) { SetInputId(std::forward<InputIdT>(value)); return *this;}
     ///@}
   private:
 

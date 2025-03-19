@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RescoreResult::RescoreResult()
-{
-}
-
 RescoreResult::RescoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ RescoreResult& RescoreResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("RescoreId"))
   {
     m_rescoreId = jsonValue.GetString("RescoreId");
-
+    m_rescoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultItems"))
   {
     Aws::Utils::Array<JsonView> resultItemsJsonList = jsonValue.GetArray("ResultItems");
@@ -42,14 +37,15 @@ RescoreResult& RescoreResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_resultItems.push_back(resultItemsJsonList[resultItemsIndex].AsObject());
     }
+    m_resultItemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

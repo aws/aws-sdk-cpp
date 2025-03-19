@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-InvalidSourceException::InvalidSourceException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidSourceException::InvalidSourceException(JsonView jsonValue)
-  : InvalidSourceException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidSourceException& InvalidSourceException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

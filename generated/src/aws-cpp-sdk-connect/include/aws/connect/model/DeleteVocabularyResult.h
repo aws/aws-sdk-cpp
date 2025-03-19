@@ -28,7 +28,7 @@ namespace Model
   class DeleteVocabularyResult
   {
   public:
-    AWS_CONNECT_API DeleteVocabularyResult();
+    AWS_CONNECT_API DeleteVocabularyResult() = default;
     AWS_CONNECT_API DeleteVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DeleteVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
      */
-    inline const Aws::String& GetVocabularyArn() const{ return m_vocabularyArn; }
-    inline void SetVocabularyArn(const Aws::String& value) { m_vocabularyArn = value; }
-    inline void SetVocabularyArn(Aws::String&& value) { m_vocabularyArn = std::move(value); }
-    inline void SetVocabularyArn(const char* value) { m_vocabularyArn.assign(value); }
-    inline DeleteVocabularyResult& WithVocabularyArn(const Aws::String& value) { SetVocabularyArn(value); return *this;}
-    inline DeleteVocabularyResult& WithVocabularyArn(Aws::String&& value) { SetVocabularyArn(std::move(value)); return *this;}
-    inline DeleteVocabularyResult& WithVocabularyArn(const char* value) { SetVocabularyArn(value); return *this;}
+    inline const Aws::String& GetVocabularyArn() const { return m_vocabularyArn; }
+    template<typename VocabularyArnT = Aws::String>
+    void SetVocabularyArn(VocabularyArnT&& value) { m_vocabularyArnHasBeenSet = true; m_vocabularyArn = std::forward<VocabularyArnT>(value); }
+    template<typename VocabularyArnT = Aws::String>
+    DeleteVocabularyResult& WithVocabularyArn(VocabularyArnT&& value) { SetVocabularyArn(std::forward<VocabularyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the custom vocabulary.</p>
      */
-    inline const Aws::String& GetVocabularyId() const{ return m_vocabularyId; }
-    inline void SetVocabularyId(const Aws::String& value) { m_vocabularyId = value; }
-    inline void SetVocabularyId(Aws::String&& value) { m_vocabularyId = std::move(value); }
-    inline void SetVocabularyId(const char* value) { m_vocabularyId.assign(value); }
-    inline DeleteVocabularyResult& WithVocabularyId(const Aws::String& value) { SetVocabularyId(value); return *this;}
-    inline DeleteVocabularyResult& WithVocabularyId(Aws::String&& value) { SetVocabularyId(std::move(value)); return *this;}
-    inline DeleteVocabularyResult& WithVocabularyId(const char* value) { SetVocabularyId(value); return *this;}
+    inline const Aws::String& GetVocabularyId() const { return m_vocabularyId; }
+    template<typename VocabularyIdT = Aws::String>
+    void SetVocabularyId(VocabularyIdT&& value) { m_vocabularyIdHasBeenSet = true; m_vocabularyId = std::forward<VocabularyIdT>(value); }
+    template<typename VocabularyIdT = Aws::String>
+    DeleteVocabularyResult& WithVocabularyId(VocabularyIdT&& value) { SetVocabularyId(std::forward<VocabularyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the custom vocabulary.</p>
      */
-    inline const VocabularyState& GetState() const{ return m_state; }
-    inline void SetState(const VocabularyState& value) { m_state = value; }
-    inline void SetState(VocabularyState&& value) { m_state = std::move(value); }
-    inline DeleteVocabularyResult& WithState(const VocabularyState& value) { SetState(value); return *this;}
-    inline DeleteVocabularyResult& WithState(VocabularyState&& value) { SetState(std::move(value)); return *this;}
+    inline VocabularyState GetState() const { return m_state; }
+    inline void SetState(VocabularyState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DeleteVocabularyResult& WithState(VocabularyState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteVocabularyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteVocabularyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteVocabularyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteVocabularyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vocabularyArn;
+    bool m_vocabularyArnHasBeenSet = false;
 
     Aws::String m_vocabularyId;
+    bool m_vocabularyIdHasBeenSet = false;
 
-    VocabularyState m_state;
+    VocabularyState m_state{VocabularyState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

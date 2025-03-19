@@ -12,12 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComponentRequest::GetComponentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_componentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetComponentRequest::SerializePayload() const
 {
   JsonValue payload;

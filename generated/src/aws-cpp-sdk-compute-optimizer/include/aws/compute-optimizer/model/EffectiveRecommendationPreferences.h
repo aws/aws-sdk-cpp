@@ -40,7 +40,7 @@ namespace Model
   class EffectiveRecommendationPreferences
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences() = default;
     AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,14 +60,13 @@ namespace Model
      * <a>ExportAutoScalingGroupRecommendations</a> request, Compute Optimizer exports
      * recommendations that consist of Graviton instance types only.</p> </li> </ul>
      */
-    inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const{ return m_cpuVendorArchitectures; }
+    inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const { return m_cpuVendorArchitectures; }
     inline bool CpuVendorArchitecturesHasBeenSet() const { return m_cpuVendorArchitecturesHasBeenSet; }
-    inline void SetCpuVendorArchitectures(const Aws::Vector<CpuVendorArchitecture>& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = value; }
-    inline void SetCpuVendorArchitectures(Aws::Vector<CpuVendorArchitecture>&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithCpuVendorArchitectures(const Aws::Vector<CpuVendorArchitecture>& value) { SetCpuVendorArchitectures(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithCpuVendorArchitectures(Aws::Vector<CpuVendorArchitecture>&& value) { SetCpuVendorArchitectures(std::move(value)); return *this;}
-    inline EffectiveRecommendationPreferences& AddCpuVendorArchitectures(const CpuVendorArchitecture& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(value); return *this; }
-    inline EffectiveRecommendationPreferences& AddCpuVendorArchitectures(CpuVendorArchitecture&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(std::move(value)); return *this; }
+    template<typename CpuVendorArchitecturesT = Aws::Vector<CpuVendorArchitecture>>
+    void SetCpuVendorArchitectures(CpuVendorArchitecturesT&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = std::forward<CpuVendorArchitecturesT>(value); }
+    template<typename CpuVendorArchitecturesT = Aws::Vector<CpuVendorArchitecture>>
+    EffectiveRecommendationPreferences& WithCpuVendorArchitectures(CpuVendorArchitecturesT&& value) { SetCpuVendorArchitectures(std::forward<CpuVendorArchitecturesT>(value)); return *this;}
+    inline EffectiveRecommendationPreferences& AddCpuVendorArchitectures(CpuVendorArchitecture value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -80,12 +79,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const EnhancedInfrastructureMetrics& GetEnhancedInfrastructureMetrics() const{ return m_enhancedInfrastructureMetrics; }
+    inline EnhancedInfrastructureMetrics GetEnhancedInfrastructureMetrics() const { return m_enhancedInfrastructureMetrics; }
     inline bool EnhancedInfrastructureMetricsHasBeenSet() const { return m_enhancedInfrastructureMetricsHasBeenSet; }
-    inline void SetEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
-    inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { SetEnhancedInfrastructureMetrics(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { SetEnhancedInfrastructureMetrics(std::move(value)); return *this;}
+    inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
+    inline EffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics value) { SetEnhancedInfrastructureMetrics(value); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +92,10 @@ namespace Model
      * is applied in the latest recommendation refresh. A status of
      * <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
      */
-    inline const InferredWorkloadTypesPreference& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+    inline InferredWorkloadTypesPreference GetInferredWorkloadTypes() const { return m_inferredWorkloadTypes; }
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
-    inline void SetInferredWorkloadTypes(const InferredWorkloadTypesPreference& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
-    inline void SetInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(const InferredWorkloadTypesPreference& value) { SetInferredWorkloadTypes(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
+    inline void SetInferredWorkloadTypes(InferredWorkloadTypesPreference value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
+    inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(InferredWorkloadTypesPreference value) { SetInferredWorkloadTypes(value); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +106,12 @@ namespace Model
      * preference isn't applied to the recommendations already, then this object
      * doesn't appear in the response. </p>
      */
-    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const{ return m_externalMetricsPreference; }
+    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const { return m_externalMetricsPreference; }
     inline bool ExternalMetricsPreferenceHasBeenSet() const { return m_externalMetricsPreferenceHasBeenSet; }
-    inline void SetExternalMetricsPreference(const ExternalMetricsPreference& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = value; }
-    inline void SetExternalMetricsPreference(ExternalMetricsPreference&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(const ExternalMetricsPreference& value) { SetExternalMetricsPreference(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
+    template<typename ExternalMetricsPreferenceT = ExternalMetricsPreference>
+    void SetExternalMetricsPreference(ExternalMetricsPreferenceT&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::forward<ExternalMetricsPreferenceT>(value); }
+    template<typename ExternalMetricsPreferenceT = ExternalMetricsPreference>
+    EffectiveRecommendationPreferences& WithExternalMetricsPreference(ExternalMetricsPreferenceT&& value) { SetExternalMetricsPreference(std::forward<ExternalMetricsPreferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +119,10 @@ namespace Model
      * <p> The number of days the utilization metrics of the Amazon Web Services
      * resource are analyzed. </p>
      */
-    inline const LookBackPeriodPreference& GetLookBackPeriod() const{ return m_lookBackPeriod; }
+    inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
     inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
-    inline void SetLookBackPeriod(const LookBackPeriodPreference& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
-    inline void SetLookBackPeriod(LookBackPeriodPreference&& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithLookBackPeriod(const LookBackPeriodPreference& value) { SetLookBackPeriod(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithLookBackPeriod(LookBackPeriodPreference&& value) { SetLookBackPeriod(std::move(value)); return *this;}
+    inline void SetLookBackPeriod(LookBackPeriodPreference value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
+    inline EffectiveRecommendationPreferences& WithLookBackPeriod(LookBackPeriodPreference value) { SetLookBackPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +132,14 @@ namespace Model
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
      */
-    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
+    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const { return m_utilizationPreferences; }
     inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
-    inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
-    inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
-    inline EffectiveRecommendationPreferences& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
-    inline EffectiveRecommendationPreferences& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(std::move(value)); return *this; }
+    template<typename UtilizationPreferencesT = Aws::Vector<UtilizationPreference>>
+    void SetUtilizationPreferences(UtilizationPreferencesT&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::forward<UtilizationPreferencesT>(value); }
+    template<typename UtilizationPreferencesT = Aws::Vector<UtilizationPreference>>
+    EffectiveRecommendationPreferences& WithUtilizationPreferences(UtilizationPreferencesT&& value) { SetUtilizationPreferences(std::forward<UtilizationPreferencesT>(value)); return *this;}
+    template<typename UtilizationPreferencesT = UtilizationPreference>
+    EffectiveRecommendationPreferences& AddUtilizationPreferences(UtilizationPreferencesT&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.emplace_back(std::forward<UtilizationPreferencesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -154,14 +147,14 @@ namespace Model
      * <p> The resource type values that are considered as candidates when generating
      * rightsizing recommendations. </p>
      */
-    inline const Aws::Vector<EffectivePreferredResource>& GetPreferredResources() const{ return m_preferredResources; }
+    inline const Aws::Vector<EffectivePreferredResource>& GetPreferredResources() const { return m_preferredResources; }
     inline bool PreferredResourcesHasBeenSet() const { return m_preferredResourcesHasBeenSet; }
-    inline void SetPreferredResources(const Aws::Vector<EffectivePreferredResource>& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = value; }
-    inline void SetPreferredResources(Aws::Vector<EffectivePreferredResource>&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithPreferredResources(const Aws::Vector<EffectivePreferredResource>& value) { SetPreferredResources(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithPreferredResources(Aws::Vector<EffectivePreferredResource>&& value) { SetPreferredResources(std::move(value)); return *this;}
-    inline EffectiveRecommendationPreferences& AddPreferredResources(const EffectivePreferredResource& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(value); return *this; }
-    inline EffectiveRecommendationPreferences& AddPreferredResources(EffectivePreferredResource&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(std::move(value)); return *this; }
+    template<typename PreferredResourcesT = Aws::Vector<EffectivePreferredResource>>
+    void SetPreferredResources(PreferredResourcesT&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = std::forward<PreferredResourcesT>(value); }
+    template<typename PreferredResourcesT = Aws::Vector<EffectivePreferredResource>>
+    EffectiveRecommendationPreferences& WithPreferredResources(PreferredResourcesT&& value) { SetPreferredResources(std::forward<PreferredResourcesT>(value)); return *this;}
+    template<typename PreferredResourcesT = EffectivePreferredResource>
+    EffectiveRecommendationPreferences& AddPreferredResources(PreferredResourcesT&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.emplace_back(std::forward<PreferredResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -169,28 +162,28 @@ namespace Model
      * <p> Describes the savings estimation mode applied for calculating savings
      * opportunity for a resource. </p>
      */
-    inline const InstanceSavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
+    inline const InstanceSavingsEstimationMode& GetSavingsEstimationMode() const { return m_savingsEstimationMode; }
     inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
-    inline void SetSavingsEstimationMode(const InstanceSavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
-    inline void SetSavingsEstimationMode(InstanceSavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
-    inline EffectiveRecommendationPreferences& WithSavingsEstimationMode(const InstanceSavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
-    inline EffectiveRecommendationPreferences& WithSavingsEstimationMode(InstanceSavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+    template<typename SavingsEstimationModeT = InstanceSavingsEstimationMode>
+    void SetSavingsEstimationMode(SavingsEstimationModeT&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::forward<SavingsEstimationModeT>(value); }
+    template<typename SavingsEstimationModeT = InstanceSavingsEstimationMode>
+    EffectiveRecommendationPreferences& WithSavingsEstimationMode(SavingsEstimationModeT&& value) { SetSavingsEstimationMode(std::forward<SavingsEstimationModeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
     bool m_cpuVendorArchitecturesHasBeenSet = false;
 
-    EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
+    EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
     bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
-    InferredWorkloadTypesPreference m_inferredWorkloadTypes;
+    InferredWorkloadTypesPreference m_inferredWorkloadTypes{InferredWorkloadTypesPreference::NOT_SET};
     bool m_inferredWorkloadTypesHasBeenSet = false;
 
     ExternalMetricsPreference m_externalMetricsPreference;
     bool m_externalMetricsPreferenceHasBeenSet = false;
 
-    LookBackPeriodPreference m_lookBackPeriod;
+    LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
     bool m_lookBackPeriodHasBeenSet = false;
 
     Aws::Vector<UtilizationPreference> m_utilizationPreferences;

@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-WorkflowStepItem::WorkflowStepItem() : 
-    m_appflowIntegrationHasBeenSet(false)
-{
-}
-
 WorkflowStepItem::WorkflowStepItem(JsonView jsonValue)
-  : WorkflowStepItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorkflowStepItem& WorkflowStepItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppflowIntegration"))
   {
     m_appflowIntegration = jsonValue.GetObject("AppflowIntegration");
-
     m_appflowIntegrationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProfileTimesRequest::ListProfileTimesRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false),
-    m_period(AggregationPeriod::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String ListProfileTimesRequest::SerializePayload() const
 {
   return {};

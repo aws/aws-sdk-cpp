@@ -18,18 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ModerationLabel::ModerationLabel() : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentNameHasBeenSet(false),
-    m_taxonomyLevel(0),
-    m_taxonomyLevelHasBeenSet(false)
-{
-}
-
 ModerationLabel::ModerationLabel(JsonView jsonValue)
-  : ModerationLabel()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ModerationLabel& ModerationLabel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentName"))
   {
     m_parentName = jsonValue.GetString("ParentName");
-
     m_parentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaxonomyLevel"))
   {
     m_taxonomyLevel = jsonValue.GetInteger("TaxonomyLevel");
-
     m_taxonomyLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

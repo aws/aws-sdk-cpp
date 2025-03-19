@@ -22,7 +22,7 @@ namespace Model
   class UpdateSMBLocalGroupsRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateSMBLocalGroupsRequest();
+    AWS_STORAGEGATEWAY_API UpdateSMBLocalGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline UpdateSMBLocalGroupsRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline UpdateSMBLocalGroupsRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline UpdateSMBLocalGroupsRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    UpdateSMBLocalGroupsRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,12 +50,12 @@ namespace Model
      * <p>A list of Active Directory users and groups that you want to grant special
      * permissions for SMB file shares on the gateway.</p>
      */
-    inline const SMBLocalGroups& GetSMBLocalGroups() const{ return m_sMBLocalGroups; }
+    inline const SMBLocalGroups& GetSMBLocalGroups() const { return m_sMBLocalGroups; }
     inline bool SMBLocalGroupsHasBeenSet() const { return m_sMBLocalGroupsHasBeenSet; }
-    inline void SetSMBLocalGroups(const SMBLocalGroups& value) { m_sMBLocalGroupsHasBeenSet = true; m_sMBLocalGroups = value; }
-    inline void SetSMBLocalGroups(SMBLocalGroups&& value) { m_sMBLocalGroupsHasBeenSet = true; m_sMBLocalGroups = std::move(value); }
-    inline UpdateSMBLocalGroupsRequest& WithSMBLocalGroups(const SMBLocalGroups& value) { SetSMBLocalGroups(value); return *this;}
-    inline UpdateSMBLocalGroupsRequest& WithSMBLocalGroups(SMBLocalGroups&& value) { SetSMBLocalGroups(std::move(value)); return *this;}
+    template<typename SMBLocalGroupsT = SMBLocalGroups>
+    void SetSMBLocalGroups(SMBLocalGroupsT&& value) { m_sMBLocalGroupsHasBeenSet = true; m_sMBLocalGroups = std::forward<SMBLocalGroupsT>(value); }
+    template<typename SMBLocalGroupsT = SMBLocalGroups>
+    UpdateSMBLocalGroupsRequest& WithSMBLocalGroups(SMBLocalGroupsT&& value) { SetSMBLocalGroups(std::forward<SMBLocalGroupsT>(value)); return *this;}
     ///@}
   private:
 

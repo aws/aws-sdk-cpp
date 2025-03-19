@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Tiering::Tiering() : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_accessTier(IntelligentTieringAccessTier::NOT_SET),
-    m_accessTierHasBeenSet(false)
-{
-}
-
 Tiering::Tiering(const XmlNode& xmlNode)
-  : Tiering()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ Tiering& Tiering::operator =(const XmlNode& xmlNode)
     XmlNode accessTierNode = resultNode.FirstChild("AccessTier");
     if(!accessTierNode.IsNull())
     {
-      m_accessTier = IntelligentTieringAccessTierMapper::GetIntelligentTieringAccessTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessTierNode.GetText()).c_str()).c_str());
+      m_accessTier = IntelligentTieringAccessTierMapper::GetIntelligentTieringAccessTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accessTierNode.GetText()).c_str()));
       m_accessTierHasBeenSet = true;
     }
   }

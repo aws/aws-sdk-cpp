@@ -31,7 +31,7 @@ namespace Model
   class DescribeHubResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeHubResult();
+    AWS_SAGEMAKER_API DescribeHubResult() = default;
     AWS_SAGEMAKER_API DescribeHubResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeHubResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,158 +40,154 @@ namespace Model
     /**
      * <p>The name of the hub.</p>
      */
-    inline const Aws::String& GetHubName() const{ return m_hubName; }
-    inline void SetHubName(const Aws::String& value) { m_hubName = value; }
-    inline void SetHubName(Aws::String&& value) { m_hubName = std::move(value); }
-    inline void SetHubName(const char* value) { m_hubName.assign(value); }
-    inline DescribeHubResult& WithHubName(const Aws::String& value) { SetHubName(value); return *this;}
-    inline DescribeHubResult& WithHubName(Aws::String&& value) { SetHubName(std::move(value)); return *this;}
-    inline DescribeHubResult& WithHubName(const char* value) { SetHubName(value); return *this;}
+    inline const Aws::String& GetHubName() const { return m_hubName; }
+    template<typename HubNameT = Aws::String>
+    void SetHubName(HubNameT&& value) { m_hubNameHasBeenSet = true; m_hubName = std::forward<HubNameT>(value); }
+    template<typename HubNameT = Aws::String>
+    DescribeHubResult& WithHubName(HubNameT&& value) { SetHubName(std::forward<HubNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the hub.</p>
      */
-    inline const Aws::String& GetHubArn() const{ return m_hubArn; }
-    inline void SetHubArn(const Aws::String& value) { m_hubArn = value; }
-    inline void SetHubArn(Aws::String&& value) { m_hubArn = std::move(value); }
-    inline void SetHubArn(const char* value) { m_hubArn.assign(value); }
-    inline DescribeHubResult& WithHubArn(const Aws::String& value) { SetHubArn(value); return *this;}
-    inline DescribeHubResult& WithHubArn(Aws::String&& value) { SetHubArn(std::move(value)); return *this;}
-    inline DescribeHubResult& WithHubArn(const char* value) { SetHubArn(value); return *this;}
+    inline const Aws::String& GetHubArn() const { return m_hubArn; }
+    template<typename HubArnT = Aws::String>
+    void SetHubArn(HubArnT&& value) { m_hubArnHasBeenSet = true; m_hubArn = std::forward<HubArnT>(value); }
+    template<typename HubArnT = Aws::String>
+    DescribeHubResult& WithHubArn(HubArnT&& value) { SetHubArn(std::forward<HubArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the hub.</p>
      */
-    inline const Aws::String& GetHubDisplayName() const{ return m_hubDisplayName; }
-    inline void SetHubDisplayName(const Aws::String& value) { m_hubDisplayName = value; }
-    inline void SetHubDisplayName(Aws::String&& value) { m_hubDisplayName = std::move(value); }
-    inline void SetHubDisplayName(const char* value) { m_hubDisplayName.assign(value); }
-    inline DescribeHubResult& WithHubDisplayName(const Aws::String& value) { SetHubDisplayName(value); return *this;}
-    inline DescribeHubResult& WithHubDisplayName(Aws::String&& value) { SetHubDisplayName(std::move(value)); return *this;}
-    inline DescribeHubResult& WithHubDisplayName(const char* value) { SetHubDisplayName(value); return *this;}
+    inline const Aws::String& GetHubDisplayName() const { return m_hubDisplayName; }
+    template<typename HubDisplayNameT = Aws::String>
+    void SetHubDisplayName(HubDisplayNameT&& value) { m_hubDisplayNameHasBeenSet = true; m_hubDisplayName = std::forward<HubDisplayNameT>(value); }
+    template<typename HubDisplayNameT = Aws::String>
+    DescribeHubResult& WithHubDisplayName(HubDisplayNameT&& value) { SetHubDisplayName(std::forward<HubDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the hub.</p>
      */
-    inline const Aws::String& GetHubDescription() const{ return m_hubDescription; }
-    inline void SetHubDescription(const Aws::String& value) { m_hubDescription = value; }
-    inline void SetHubDescription(Aws::String&& value) { m_hubDescription = std::move(value); }
-    inline void SetHubDescription(const char* value) { m_hubDescription.assign(value); }
-    inline DescribeHubResult& WithHubDescription(const Aws::String& value) { SetHubDescription(value); return *this;}
-    inline DescribeHubResult& WithHubDescription(Aws::String&& value) { SetHubDescription(std::move(value)); return *this;}
-    inline DescribeHubResult& WithHubDescription(const char* value) { SetHubDescription(value); return *this;}
+    inline const Aws::String& GetHubDescription() const { return m_hubDescription; }
+    template<typename HubDescriptionT = Aws::String>
+    void SetHubDescription(HubDescriptionT&& value) { m_hubDescriptionHasBeenSet = true; m_hubDescription = std::forward<HubDescriptionT>(value); }
+    template<typename HubDescriptionT = Aws::String>
+    DescribeHubResult& WithHubDescription(HubDescriptionT&& value) { SetHubDescription(std::forward<HubDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The searchable keywords for the hub.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHubSearchKeywords() const{ return m_hubSearchKeywords; }
-    inline void SetHubSearchKeywords(const Aws::Vector<Aws::String>& value) { m_hubSearchKeywords = value; }
-    inline void SetHubSearchKeywords(Aws::Vector<Aws::String>&& value) { m_hubSearchKeywords = std::move(value); }
-    inline DescribeHubResult& WithHubSearchKeywords(const Aws::Vector<Aws::String>& value) { SetHubSearchKeywords(value); return *this;}
-    inline DescribeHubResult& WithHubSearchKeywords(Aws::Vector<Aws::String>&& value) { SetHubSearchKeywords(std::move(value)); return *this;}
-    inline DescribeHubResult& AddHubSearchKeywords(const Aws::String& value) { m_hubSearchKeywords.push_back(value); return *this; }
-    inline DescribeHubResult& AddHubSearchKeywords(Aws::String&& value) { m_hubSearchKeywords.push_back(std::move(value)); return *this; }
-    inline DescribeHubResult& AddHubSearchKeywords(const char* value) { m_hubSearchKeywords.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetHubSearchKeywords() const { return m_hubSearchKeywords; }
+    template<typename HubSearchKeywordsT = Aws::Vector<Aws::String>>
+    void SetHubSearchKeywords(HubSearchKeywordsT&& value) { m_hubSearchKeywordsHasBeenSet = true; m_hubSearchKeywords = std::forward<HubSearchKeywordsT>(value); }
+    template<typename HubSearchKeywordsT = Aws::Vector<Aws::String>>
+    DescribeHubResult& WithHubSearchKeywords(HubSearchKeywordsT&& value) { SetHubSearchKeywords(std::forward<HubSearchKeywordsT>(value)); return *this;}
+    template<typename HubSearchKeywordsT = Aws::String>
+    DescribeHubResult& AddHubSearchKeywords(HubSearchKeywordsT&& value) { m_hubSearchKeywordsHasBeenSet = true; m_hubSearchKeywords.emplace_back(std::forward<HubSearchKeywordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 storage configuration for the hub.</p>
      */
-    inline const HubS3StorageConfig& GetS3StorageConfig() const{ return m_s3StorageConfig; }
-    inline void SetS3StorageConfig(const HubS3StorageConfig& value) { m_s3StorageConfig = value; }
-    inline void SetS3StorageConfig(HubS3StorageConfig&& value) { m_s3StorageConfig = std::move(value); }
-    inline DescribeHubResult& WithS3StorageConfig(const HubS3StorageConfig& value) { SetS3StorageConfig(value); return *this;}
-    inline DescribeHubResult& WithS3StorageConfig(HubS3StorageConfig&& value) { SetS3StorageConfig(std::move(value)); return *this;}
+    inline const HubS3StorageConfig& GetS3StorageConfig() const { return m_s3StorageConfig; }
+    template<typename S3StorageConfigT = HubS3StorageConfig>
+    void SetS3StorageConfig(S3StorageConfigT&& value) { m_s3StorageConfigHasBeenSet = true; m_s3StorageConfig = std::forward<S3StorageConfigT>(value); }
+    template<typename S3StorageConfigT = HubS3StorageConfig>
+    DescribeHubResult& WithS3StorageConfig(S3StorageConfigT&& value) { SetS3StorageConfig(std::forward<S3StorageConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the hub.</p>
      */
-    inline const HubStatus& GetHubStatus() const{ return m_hubStatus; }
-    inline void SetHubStatus(const HubStatus& value) { m_hubStatus = value; }
-    inline void SetHubStatus(HubStatus&& value) { m_hubStatus = std::move(value); }
-    inline DescribeHubResult& WithHubStatus(const HubStatus& value) { SetHubStatus(value); return *this;}
-    inline DescribeHubResult& WithHubStatus(HubStatus&& value) { SetHubStatus(std::move(value)); return *this;}
+    inline HubStatus GetHubStatus() const { return m_hubStatus; }
+    inline void SetHubStatus(HubStatus value) { m_hubStatusHasBeenSet = true; m_hubStatus = value; }
+    inline DescribeHubResult& WithHubStatus(HubStatus value) { SetHubStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure reason if importing hub content failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeHubResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeHubResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeHubResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeHubResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the hub was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeHubResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeHubResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeHubResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the hub was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeHubResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeHubResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeHubResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeHubResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeHubResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeHubResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeHubResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_hubName;
+    bool m_hubNameHasBeenSet = false;
 
     Aws::String m_hubArn;
+    bool m_hubArnHasBeenSet = false;
 
     Aws::String m_hubDisplayName;
+    bool m_hubDisplayNameHasBeenSet = false;
 
     Aws::String m_hubDescription;
+    bool m_hubDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hubSearchKeywords;
+    bool m_hubSearchKeywordsHasBeenSet = false;
 
     HubS3StorageConfig m_s3StorageConfig;
+    bool m_s3StorageConfigHasBeenSet = false;
 
-    HubStatus m_hubStatus;
+    HubStatus m_hubStatus{HubStatus::NOT_SET};
+    bool m_hubStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

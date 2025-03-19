@@ -28,7 +28,7 @@ namespace Model
   class EnableAllowedImagesSettingsResponse
   {
   public:
-    AWS_EC2_API EnableAllowedImagesSettingsResponse();
+    AWS_EC2_API EnableAllowedImagesSettingsResponse() = default;
     AWS_EC2_API EnableAllowedImagesSettingsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API EnableAllowedImagesSettingsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,26 +38,26 @@ namespace Model
      * <p>Returns <code>enabled</code> or <code>audit-mode</code> if the request
      * succeeds; otherwise, it returns an error.</p>
      */
-    inline const AllowedImagesSettingsEnabledState& GetAllowedImagesSettingsState() const{ return m_allowedImagesSettingsState; }
-    inline void SetAllowedImagesSettingsState(const AllowedImagesSettingsEnabledState& value) { m_allowedImagesSettingsState = value; }
-    inline void SetAllowedImagesSettingsState(AllowedImagesSettingsEnabledState&& value) { m_allowedImagesSettingsState = std::move(value); }
-    inline EnableAllowedImagesSettingsResponse& WithAllowedImagesSettingsState(const AllowedImagesSettingsEnabledState& value) { SetAllowedImagesSettingsState(value); return *this;}
-    inline EnableAllowedImagesSettingsResponse& WithAllowedImagesSettingsState(AllowedImagesSettingsEnabledState&& value) { SetAllowedImagesSettingsState(std::move(value)); return *this;}
+    inline AllowedImagesSettingsEnabledState GetAllowedImagesSettingsState() const { return m_allowedImagesSettingsState; }
+    inline void SetAllowedImagesSettingsState(AllowedImagesSettingsEnabledState value) { m_allowedImagesSettingsStateHasBeenSet = true; m_allowedImagesSettingsState = value; }
+    inline EnableAllowedImagesSettingsResponse& WithAllowedImagesSettingsState(AllowedImagesSettingsEnabledState value) { SetAllowedImagesSettingsState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline EnableAllowedImagesSettingsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline EnableAllowedImagesSettingsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    EnableAllowedImagesSettingsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    AllowedImagesSettingsEnabledState m_allowedImagesSettingsState;
+    AllowedImagesSettingsEnabledState m_allowedImagesSettingsState{AllowedImagesSettingsEnabledState::NOT_SET};
+    bool m_allowedImagesSettingsStateHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

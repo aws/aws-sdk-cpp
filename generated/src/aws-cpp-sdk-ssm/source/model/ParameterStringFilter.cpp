@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ParameterStringFilter::ParameterStringFilter() : 
-    m_keyHasBeenSet(false),
-    m_optionHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ParameterStringFilter::ParameterStringFilter(JsonView jsonValue)
-  : ParameterStringFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ParameterStringFilter& ParameterStringFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Option"))
   {
     m_option = jsonValue.GetString("Option");
-
     m_optionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -56,7 +44,6 @@ ParameterStringFilter& ParameterStringFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

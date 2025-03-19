@@ -28,7 +28,7 @@ namespace Model
   class SetLogDeliveryConfigurationResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetLogDeliveryConfigurationResult();
+    AWS_COGNITOIDENTITYPROVIDER_API SetLogDeliveryConfigurationResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SetLogDeliveryConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API SetLogDeliveryConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The logging configuration that you applied to the requested user pool.</p>
      */
-    inline const LogDeliveryConfigurationType& GetLogDeliveryConfiguration() const{ return m_logDeliveryConfiguration; }
-    inline void SetLogDeliveryConfiguration(const LogDeliveryConfigurationType& value) { m_logDeliveryConfiguration = value; }
-    inline void SetLogDeliveryConfiguration(LogDeliveryConfigurationType&& value) { m_logDeliveryConfiguration = std::move(value); }
-    inline SetLogDeliveryConfigurationResult& WithLogDeliveryConfiguration(const LogDeliveryConfigurationType& value) { SetLogDeliveryConfiguration(value); return *this;}
-    inline SetLogDeliveryConfigurationResult& WithLogDeliveryConfiguration(LogDeliveryConfigurationType&& value) { SetLogDeliveryConfiguration(std::move(value)); return *this;}
+    inline const LogDeliveryConfigurationType& GetLogDeliveryConfiguration() const { return m_logDeliveryConfiguration; }
+    template<typename LogDeliveryConfigurationT = LogDeliveryConfigurationType>
+    void SetLogDeliveryConfiguration(LogDeliveryConfigurationT&& value) { m_logDeliveryConfigurationHasBeenSet = true; m_logDeliveryConfiguration = std::forward<LogDeliveryConfigurationT>(value); }
+    template<typename LogDeliveryConfigurationT = LogDeliveryConfigurationType>
+    SetLogDeliveryConfigurationResult& WithLogDeliveryConfiguration(LogDeliveryConfigurationT&& value) { SetLogDeliveryConfiguration(std::forward<LogDeliveryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SetLogDeliveryConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SetLogDeliveryConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SetLogDeliveryConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SetLogDeliveryConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LogDeliveryConfigurationType m_logDeliveryConfiguration;
+    bool m_logDeliveryConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

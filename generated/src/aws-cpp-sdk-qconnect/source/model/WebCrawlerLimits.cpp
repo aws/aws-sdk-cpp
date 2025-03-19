@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-WebCrawlerLimits::WebCrawlerLimits() : 
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false)
-{
-}
-
 WebCrawlerLimits::WebCrawlerLimits(JsonView jsonValue)
-  : WebCrawlerLimits()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WebCrawlerLimits& WebCrawlerLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rateLimit"))
   {
     m_rateLimit = jsonValue.GetInteger("rateLimit");
-
     m_rateLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

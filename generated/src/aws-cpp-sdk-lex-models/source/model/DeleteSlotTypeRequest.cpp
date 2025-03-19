@@ -12,11 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSlotTypeRequest::DeleteSlotTypeRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlotTypeRequest::SerializePayload() const
 {
   return {};

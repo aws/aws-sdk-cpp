@@ -33,7 +33,7 @@ namespace Model
   class S3DestinationConfiguration
   {
   public:
-    AWS_IOTANALYTICS_API S3DestinationConfiguration();
+    AWS_IOTANALYTICS_API S3DestinationConfiguration() = default;
     AWS_IOTANALYTICS_API S3DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API S3DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the S3 bucket to which dataset contents are delivered.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3DestinationConfiguration& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3DestinationConfiguration& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3DestinationConfiguration& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <code>versionId</code>s. This means that one dataset content overwrites the
      * other. </p> 
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3DestinationConfiguration& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3DestinationConfiguration& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3DestinationConfiguration& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * <p>Configuration information for coordination with Glue, a fully managed
      * extract, transform and load (ETL) service.</p>
      */
-    inline const GlueConfiguration& GetGlueConfiguration() const{ return m_glueConfiguration; }
+    inline const GlueConfiguration& GetGlueConfiguration() const { return m_glueConfiguration; }
     inline bool GlueConfigurationHasBeenSet() const { return m_glueConfigurationHasBeenSet; }
-    inline void SetGlueConfiguration(const GlueConfiguration& value) { m_glueConfigurationHasBeenSet = true; m_glueConfiguration = value; }
-    inline void SetGlueConfiguration(GlueConfiguration&& value) { m_glueConfigurationHasBeenSet = true; m_glueConfiguration = std::move(value); }
-    inline S3DestinationConfiguration& WithGlueConfiguration(const GlueConfiguration& value) { SetGlueConfiguration(value); return *this;}
-    inline S3DestinationConfiguration& WithGlueConfiguration(GlueConfiguration&& value) { SetGlueConfiguration(std::move(value)); return *this;}
+    template<typename GlueConfigurationT = GlueConfiguration>
+    void SetGlueConfiguration(GlueConfigurationT&& value) { m_glueConfigurationHasBeenSet = true; m_glueConfiguration = std::forward<GlueConfigurationT>(value); }
+    template<typename GlueConfigurationT = GlueConfiguration>
+    S3DestinationConfiguration& WithGlueConfiguration(GlueConfigurationT&& value) { SetGlueConfiguration(std::forward<GlueConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 and Glue resources.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline S3DestinationConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline S3DestinationConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline S3DestinationConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    S3DestinationConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppInstanceRequest::DeleteAppInstanceRequest() : 
-    m_appInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppInstanceRequest::SerializePayload() const
 {
   return {};

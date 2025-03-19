@@ -31,7 +31,7 @@ namespace Model
   class WindowsUser
   {
   public:
-    AWS_DEADLINE_API WindowsUser();
+    AWS_DEADLINE_API WindowsUser() = default;
     AWS_DEADLINE_API WindowsUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API WindowsUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The user.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline WindowsUser& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline WindowsUser& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline WindowsUser& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    WindowsUser& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password ARN for the Windows user.</p>
      */
-    inline const Aws::String& GetPasswordArn() const{ return m_passwordArn; }
+    inline const Aws::String& GetPasswordArn() const { return m_passwordArn; }
     inline bool PasswordArnHasBeenSet() const { return m_passwordArnHasBeenSet; }
-    inline void SetPasswordArn(const Aws::String& value) { m_passwordArnHasBeenSet = true; m_passwordArn = value; }
-    inline void SetPasswordArn(Aws::String&& value) { m_passwordArnHasBeenSet = true; m_passwordArn = std::move(value); }
-    inline void SetPasswordArn(const char* value) { m_passwordArnHasBeenSet = true; m_passwordArn.assign(value); }
-    inline WindowsUser& WithPasswordArn(const Aws::String& value) { SetPasswordArn(value); return *this;}
-    inline WindowsUser& WithPasswordArn(Aws::String&& value) { SetPasswordArn(std::move(value)); return *this;}
-    inline WindowsUser& WithPasswordArn(const char* value) { SetPasswordArn(value); return *this;}
+    template<typename PasswordArnT = Aws::String>
+    void SetPasswordArn(PasswordArnT&& value) { m_passwordArnHasBeenSet = true; m_passwordArn = std::forward<PasswordArnT>(value); }
+    template<typename PasswordArnT = Aws::String>
+    WindowsUser& WithPasswordArn(PasswordArnT&& value) { SetPasswordArn(std::forward<PasswordArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-TimeSeriesIdentifiers::TimeSeriesIdentifiers() : 
-    m_dataSourceHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_formatHasBeenSet(false)
-{
-}
-
 TimeSeriesIdentifiers::TimeSeriesIdentifiers(JsonView jsonValue)
-  : TimeSeriesIdentifiers()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TimeSeriesIdentifiers& TimeSeriesIdentifiers::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetObject("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterKafkaVersionRequest::UpdateClusterKafkaVersionRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_configurationInfoHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_targetKafkaVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterKafkaVersionRequest::SerializePayload() const
 {
   JsonValue payload;

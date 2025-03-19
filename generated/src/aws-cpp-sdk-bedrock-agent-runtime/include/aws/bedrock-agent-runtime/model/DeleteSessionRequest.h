@@ -21,7 +21,7 @@ namespace Model
   class DeleteSessionRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API DeleteSessionRequest();
+    AWS_BEDROCKAGENTRUNTIME_API DeleteSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The unique identifier for the session to be deleted. You can specify either
      * the session's <code>sessionId</code> or its Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetSessionIdentifier() const{ return m_sessionIdentifier; }
+    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
     inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
-    inline void SetSessionIdentifier(const Aws::String& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = value; }
-    inline void SetSessionIdentifier(Aws::String&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::move(value); }
-    inline void SetSessionIdentifier(const char* value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier.assign(value); }
-    inline DeleteSessionRequest& WithSessionIdentifier(const Aws::String& value) { SetSessionIdentifier(value); return *this;}
-    inline DeleteSessionRequest& WithSessionIdentifier(Aws::String&& value) { SetSessionIdentifier(std::move(value)); return *this;}
-    inline DeleteSessionRequest& WithSessionIdentifier(const char* value) { SetSessionIdentifier(value); return *this;}
+    template<typename SessionIdentifierT = Aws::String>
+    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
+    template<typename SessionIdentifierT = Aws::String>
+    DeleteSessionRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
     ///@}
   private:
 

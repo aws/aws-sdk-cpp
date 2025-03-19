@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutMetricStreamResult::PutMetricStreamResult()
-{
-}
-
 PutMetricStreamResult::PutMetricStreamResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ PutMetricStreamResult& PutMetricStreamResult::operator =(const Aws::AmazonWebSer
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
+      m_arnHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::PutMetricStreamResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

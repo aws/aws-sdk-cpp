@@ -28,7 +28,7 @@ namespace Model
   class DescribeCustomRoutingEndpointGroupResult
   {
   public:
-    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult();
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult() = default;
     AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLOBALACCELERATOR_API DescribeCustomRoutingEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of an endpoint group for a custom routing accelerator.</p>
      */
-    inline const CustomRoutingEndpointGroup& GetEndpointGroup() const{ return m_endpointGroup; }
-    inline void SetEndpointGroup(const CustomRoutingEndpointGroup& value) { m_endpointGroup = value; }
-    inline void SetEndpointGroup(CustomRoutingEndpointGroup&& value) { m_endpointGroup = std::move(value); }
-    inline DescribeCustomRoutingEndpointGroupResult& WithEndpointGroup(const CustomRoutingEndpointGroup& value) { SetEndpointGroup(value); return *this;}
-    inline DescribeCustomRoutingEndpointGroupResult& WithEndpointGroup(CustomRoutingEndpointGroup&& value) { SetEndpointGroup(std::move(value)); return *this;}
+    inline const CustomRoutingEndpointGroup& GetEndpointGroup() const { return m_endpointGroup; }
+    template<typename EndpointGroupT = CustomRoutingEndpointGroup>
+    void SetEndpointGroup(EndpointGroupT&& value) { m_endpointGroupHasBeenSet = true; m_endpointGroup = std::forward<EndpointGroupT>(value); }
+    template<typename EndpointGroupT = CustomRoutingEndpointGroup>
+    DescribeCustomRoutingEndpointGroupResult& WithEndpointGroup(EndpointGroupT&& value) { SetEndpointGroup(std::forward<EndpointGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCustomRoutingEndpointGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCustomRoutingEndpointGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCustomRoutingEndpointGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCustomRoutingEndpointGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CustomRoutingEndpointGroup m_endpointGroup;
+    bool m_endpointGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

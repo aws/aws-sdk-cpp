@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateTransitGatewayPeeringAttachmentRequestOptions::CreateTransitGatewayPeeringAttachmentRequestOptions() : 
-    m_dynamicRouting(DynamicRoutingValue::NOT_SET),
-    m_dynamicRoutingHasBeenSet(false)
-{
-}
-
 CreateTransitGatewayPeeringAttachmentRequestOptions::CreateTransitGatewayPeeringAttachmentRequestOptions(const XmlNode& xmlNode)
-  : CreateTransitGatewayPeeringAttachmentRequestOptions()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ CreateTransitGatewayPeeringAttachmentRequestOptions& CreateTransitGatewayPeering
     XmlNode dynamicRoutingNode = resultNode.FirstChild("DynamicRouting");
     if(!dynamicRoutingNode.IsNull())
     {
-      m_dynamicRouting = DynamicRoutingValueMapper::GetDynamicRoutingValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dynamicRoutingNode.GetText()).c_str()).c_str());
+      m_dynamicRouting = DynamicRoutingValueMapper::GetDynamicRoutingValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dynamicRoutingNode.GetText()).c_str()));
       m_dynamicRoutingHasBeenSet = true;
     }
   }

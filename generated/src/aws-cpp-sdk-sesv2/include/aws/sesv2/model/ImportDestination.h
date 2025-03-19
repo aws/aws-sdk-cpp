@@ -33,7 +33,7 @@ namespace Model
   class ImportDestination
   {
   public:
-    AWS_SESV2_API ImportDestination();
+    AWS_SESV2_API ImportDestination() = default;
     AWS_SESV2_API ImportDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ImportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>An object that contains the action of the import job towards suppression
      * list.</p>
      */
-    inline const SuppressionListDestination& GetSuppressionListDestination() const{ return m_suppressionListDestination; }
+    inline const SuppressionListDestination& GetSuppressionListDestination() const { return m_suppressionListDestination; }
     inline bool SuppressionListDestinationHasBeenSet() const { return m_suppressionListDestinationHasBeenSet; }
-    inline void SetSuppressionListDestination(const SuppressionListDestination& value) { m_suppressionListDestinationHasBeenSet = true; m_suppressionListDestination = value; }
-    inline void SetSuppressionListDestination(SuppressionListDestination&& value) { m_suppressionListDestinationHasBeenSet = true; m_suppressionListDestination = std::move(value); }
-    inline ImportDestination& WithSuppressionListDestination(const SuppressionListDestination& value) { SetSuppressionListDestination(value); return *this;}
-    inline ImportDestination& WithSuppressionListDestination(SuppressionListDestination&& value) { SetSuppressionListDestination(std::move(value)); return *this;}
+    template<typename SuppressionListDestinationT = SuppressionListDestination>
+    void SetSuppressionListDestination(SuppressionListDestinationT&& value) { m_suppressionListDestinationHasBeenSet = true; m_suppressionListDestination = std::forward<SuppressionListDestinationT>(value); }
+    template<typename SuppressionListDestinationT = SuppressionListDestination>
+    ImportDestination& WithSuppressionListDestination(SuppressionListDestinationT&& value) { SetSuppressionListDestination(std::forward<SuppressionListDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>An object that contains the action of the import job towards a contact
      * list.</p>
      */
-    inline const ContactListDestination& GetContactListDestination() const{ return m_contactListDestination; }
+    inline const ContactListDestination& GetContactListDestination() const { return m_contactListDestination; }
     inline bool ContactListDestinationHasBeenSet() const { return m_contactListDestinationHasBeenSet; }
-    inline void SetContactListDestination(const ContactListDestination& value) { m_contactListDestinationHasBeenSet = true; m_contactListDestination = value; }
-    inline void SetContactListDestination(ContactListDestination&& value) { m_contactListDestinationHasBeenSet = true; m_contactListDestination = std::move(value); }
-    inline ImportDestination& WithContactListDestination(const ContactListDestination& value) { SetContactListDestination(value); return *this;}
-    inline ImportDestination& WithContactListDestination(ContactListDestination&& value) { SetContactListDestination(std::move(value)); return *this;}
+    template<typename ContactListDestinationT = ContactListDestination>
+    void SetContactListDestination(ContactListDestinationT&& value) { m_contactListDestinationHasBeenSet = true; m_contactListDestination = std::forward<ContactListDestinationT>(value); }
+    template<typename ContactListDestinationT = ContactListDestination>
+    ImportDestination& WithContactListDestination(ContactListDestinationT&& value) { SetContactListDestination(std::forward<ContactListDestinationT>(value)); return *this;}
     ///@}
   private:
 

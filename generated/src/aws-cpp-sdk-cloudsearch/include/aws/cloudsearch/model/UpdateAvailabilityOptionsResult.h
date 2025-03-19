@@ -34,7 +34,7 @@ namespace Model
   class UpdateAvailabilityOptionsResult
   {
   public:
-    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult();
+    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult() = default;
     AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,26 +44,28 @@ namespace Model
      * <p>The newly-configured availability options. Indicates whether Multi-AZ is
      * enabled for the domain. </p>
      */
-    inline const AvailabilityOptionsStatus& GetAvailabilityOptions() const{ return m_availabilityOptions; }
-    inline void SetAvailabilityOptions(const AvailabilityOptionsStatus& value) { m_availabilityOptions = value; }
-    inline void SetAvailabilityOptions(AvailabilityOptionsStatus&& value) { m_availabilityOptions = std::move(value); }
-    inline UpdateAvailabilityOptionsResult& WithAvailabilityOptions(const AvailabilityOptionsStatus& value) { SetAvailabilityOptions(value); return *this;}
-    inline UpdateAvailabilityOptionsResult& WithAvailabilityOptions(AvailabilityOptionsStatus&& value) { SetAvailabilityOptions(std::move(value)); return *this;}
+    inline const AvailabilityOptionsStatus& GetAvailabilityOptions() const { return m_availabilityOptions; }
+    template<typename AvailabilityOptionsT = AvailabilityOptionsStatus>
+    void SetAvailabilityOptions(AvailabilityOptionsT&& value) { m_availabilityOptionsHasBeenSet = true; m_availabilityOptions = std::forward<AvailabilityOptionsT>(value); }
+    template<typename AvailabilityOptionsT = AvailabilityOptionsStatus>
+    UpdateAvailabilityOptionsResult& WithAvailabilityOptions(AvailabilityOptionsT&& value) { SetAvailabilityOptions(std::forward<AvailabilityOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UpdateAvailabilityOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UpdateAvailabilityOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UpdateAvailabilityOptionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     AvailabilityOptionsStatus m_availabilityOptions;
+    bool m_availabilityOptionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

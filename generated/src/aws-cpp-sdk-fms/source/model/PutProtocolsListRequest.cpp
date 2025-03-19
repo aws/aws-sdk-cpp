@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutProtocolsListRequest::PutProtocolsListRequest() : 
-    m_protocolsListHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 Aws::String PutProtocolsListRequest::SerializePayload() const
 {
   JsonValue payload;

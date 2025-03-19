@@ -12,16 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CompareFacesRequest::CompareFacesRequest() : 
-    m_sourceImageHasBeenSet(false),
-    m_targetImageHasBeenSet(false),
-    m_similarityThreshold(0.0),
-    m_similarityThresholdHasBeenSet(false),
-    m_qualityFilter(QualityFilter::NOT_SET),
-    m_qualityFilterHasBeenSet(false)
-{
-}
-
 Aws::String CompareFacesRequest::SerializePayload() const
 {
   JsonValue payload;

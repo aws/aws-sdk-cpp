@@ -33,7 +33,7 @@ namespace Model
   class AutomatedDiscoveryAccount
   {
   public:
-    AWS_MACIE2_API AutomatedDiscoveryAccount();
+    AWS_MACIE2_API AutomatedDiscoveryAccount() = default;
     AWS_MACIE2_API AutomatedDiscoveryAccount(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API AutomatedDiscoveryAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID for the account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AutomatedDiscoveryAccount& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AutomatedDiscoveryAccount& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AutomatedDiscoveryAccount& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AutomatedDiscoveryAccount& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * activities for the account; and, DISABLED, don't perform automated sensitive
      * data discovery activities for the account.</p>
      */
-    inline const AutomatedDiscoveryAccountStatus& GetStatus() const{ return m_status; }
+    inline AutomatedDiscoveryAccountStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutomatedDiscoveryAccountStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutomatedDiscoveryAccountStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AutomatedDiscoveryAccount& WithStatus(const AutomatedDiscoveryAccountStatus& value) { SetStatus(value); return *this;}
-    inline AutomatedDiscoveryAccount& WithStatus(AutomatedDiscoveryAccountStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AutomatedDiscoveryAccountStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AutomatedDiscoveryAccount& WithStatus(AutomatedDiscoveryAccountStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    AutomatedDiscoveryAccountStatus m_status;
+    AutomatedDiscoveryAccountStatus m_status{AutomatedDiscoveryAccountStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

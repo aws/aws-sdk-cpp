@@ -12,17 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPermissionSetsProvisionedToAccountRequest::ListPermissionSetsProvisionedToAccountRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_provisioningStatus(ProvisioningStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListPermissionSetsProvisionedToAccountRequest::SerializePayload() const
 {
   JsonValue payload;

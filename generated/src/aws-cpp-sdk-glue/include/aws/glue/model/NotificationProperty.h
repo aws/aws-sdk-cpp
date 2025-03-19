@@ -30,7 +30,7 @@ namespace Model
   class NotificationProperty
   {
   public:
-    AWS_GLUE_API NotificationProperty();
+    AWS_GLUE_API NotificationProperty() = default;
     AWS_GLUE_API NotificationProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API NotificationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>After a job run starts, the number of minutes to wait before sending a job
      * run delay notification.</p>
      */
-    inline int GetNotifyDelayAfter() const{ return m_notifyDelayAfter; }
+    inline int GetNotifyDelayAfter() const { return m_notifyDelayAfter; }
     inline bool NotifyDelayAfterHasBeenSet() const { return m_notifyDelayAfterHasBeenSet; }
     inline void SetNotifyDelayAfter(int value) { m_notifyDelayAfterHasBeenSet = true; m_notifyDelayAfter = value; }
     inline NotificationProperty& WithNotifyDelayAfter(int value) { SetNotifyDelayAfter(value); return *this;}
     ///@}
   private:
 
-    int m_notifyDelayAfter;
+    int m_notifyDelayAfter{0};
     bool m_notifyDelayAfterHasBeenSet = false;
   };
 

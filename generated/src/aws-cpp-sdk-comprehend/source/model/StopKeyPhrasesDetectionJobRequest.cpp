@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopKeyPhrasesDetectionJobRequest::StopKeyPhrasesDetectionJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopKeyPhrasesDetectionJobRequest::SerializePayload() const
 {
   JsonValue payload;

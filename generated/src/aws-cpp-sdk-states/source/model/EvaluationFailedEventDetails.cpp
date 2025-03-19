@@ -18,16 +18,7 @@ namespace SFN
 namespace Model
 {
 
-EvaluationFailedEventDetails::EvaluationFailedEventDetails() : 
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 EvaluationFailedEventDetails::EvaluationFailedEventDetails(JsonView jsonValue)
-  : EvaluationFailedEventDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EvaluationFailedEventDetails& EvaluationFailedEventDetails::operator =(JsonView 
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

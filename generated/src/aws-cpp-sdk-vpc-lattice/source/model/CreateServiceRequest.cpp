@@ -12,18 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceRequest::CreateServiceRequest() : 
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_customDomainNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

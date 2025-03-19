@@ -37,7 +37,7 @@ namespace Model
   class ListDomainDeliverabilityCampaignsResult
   {
   public:
-    AWS_SESV2_API ListDomainDeliverabilityCampaignsResult();
+    AWS_SESV2_API ListDomainDeliverabilityCampaignsResult() = default;
     AWS_SESV2_API ListDomainDeliverabilityCampaignsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API ListDomainDeliverabilityCampaignsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,13 +47,13 @@ namespace Model
      * <p>An array of responses, one for each campaign that used the domain to send
      * email during the specified time range.</p>
      */
-    inline const Aws::Vector<DomainDeliverabilityCampaign>& GetDomainDeliverabilityCampaigns() const{ return m_domainDeliverabilityCampaigns; }
-    inline void SetDomainDeliverabilityCampaigns(const Aws::Vector<DomainDeliverabilityCampaign>& value) { m_domainDeliverabilityCampaigns = value; }
-    inline void SetDomainDeliverabilityCampaigns(Aws::Vector<DomainDeliverabilityCampaign>&& value) { m_domainDeliverabilityCampaigns = std::move(value); }
-    inline ListDomainDeliverabilityCampaignsResult& WithDomainDeliverabilityCampaigns(const Aws::Vector<DomainDeliverabilityCampaign>& value) { SetDomainDeliverabilityCampaigns(value); return *this;}
-    inline ListDomainDeliverabilityCampaignsResult& WithDomainDeliverabilityCampaigns(Aws::Vector<DomainDeliverabilityCampaign>&& value) { SetDomainDeliverabilityCampaigns(std::move(value)); return *this;}
-    inline ListDomainDeliverabilityCampaignsResult& AddDomainDeliverabilityCampaigns(const DomainDeliverabilityCampaign& value) { m_domainDeliverabilityCampaigns.push_back(value); return *this; }
-    inline ListDomainDeliverabilityCampaignsResult& AddDomainDeliverabilityCampaigns(DomainDeliverabilityCampaign&& value) { m_domainDeliverabilityCampaigns.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainDeliverabilityCampaign>& GetDomainDeliverabilityCampaigns() const { return m_domainDeliverabilityCampaigns; }
+    template<typename DomainDeliverabilityCampaignsT = Aws::Vector<DomainDeliverabilityCampaign>>
+    void SetDomainDeliverabilityCampaigns(DomainDeliverabilityCampaignsT&& value) { m_domainDeliverabilityCampaignsHasBeenSet = true; m_domainDeliverabilityCampaigns = std::forward<DomainDeliverabilityCampaignsT>(value); }
+    template<typename DomainDeliverabilityCampaignsT = Aws::Vector<DomainDeliverabilityCampaign>>
+    ListDomainDeliverabilityCampaignsResult& WithDomainDeliverabilityCampaigns(DomainDeliverabilityCampaignsT&& value) { SetDomainDeliverabilityCampaigns(std::forward<DomainDeliverabilityCampaignsT>(value)); return *this;}
+    template<typename DomainDeliverabilityCampaignsT = DomainDeliverabilityCampaign>
+    ListDomainDeliverabilityCampaignsResult& AddDomainDeliverabilityCampaigns(DomainDeliverabilityCampaignsT&& value) { m_domainDeliverabilityCampaignsHasBeenSet = true; m_domainDeliverabilityCampaigns.emplace_back(std::forward<DomainDeliverabilityCampaignsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,32 +62,31 @@ namespace Model
      * <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates
      * the position of the campaign in the list of campaigns.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDomainDeliverabilityCampaignsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDomainDeliverabilityCampaignsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDomainDeliverabilityCampaignsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDomainDeliverabilityCampaignsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDomainDeliverabilityCampaignsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDomainDeliverabilityCampaignsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDomainDeliverabilityCampaignsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDomainDeliverabilityCampaignsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainDeliverabilityCampaign> m_domainDeliverabilityCampaigns;
+    bool m_domainDeliverabilityCampaignsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

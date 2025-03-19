@@ -21,7 +21,7 @@ namespace Model
   class StopMatchmakingRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API StopMatchmakingRequest();
+    AWS_GAMELIFT_API StopMatchmakingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A unique identifier for a matchmaking ticket.</p>
      */
-    inline const Aws::String& GetTicketId() const{ return m_ticketId; }
+    inline const Aws::String& GetTicketId() const { return m_ticketId; }
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
-    inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
-    inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
-    inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
-    inline StopMatchmakingRequest& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
-    inline StopMatchmakingRequest& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
-    inline StopMatchmakingRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+    template<typename TicketIdT = Aws::String>
+    void SetTicketId(TicketIdT&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::forward<TicketIdT>(value); }
+    template<typename TicketIdT = Aws::String>
+    StopMatchmakingRequest& WithTicketId(TicketIdT&& value) { SetTicketId(std::forward<TicketIdT>(value)); return *this;}
     ///@}
   private:
 

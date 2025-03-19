@@ -39,7 +39,7 @@ namespace Model
   class Output
   {
   public:
-    AWS_KINESISANALYTICSV2_API Output();
+    AWS_KINESISANALYTICSV2_API Output() = default;
     AWS_KINESISANALYTICSV2_API Output(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,62 +49,60 @@ namespace Model
     /**
      * <p>The name of the in-application stream.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Output& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Output& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Output& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Output& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies a Kinesis data stream as the destination.</p>
      */
-    inline const KinesisStreamsOutput& GetKinesisStreamsOutput() const{ return m_kinesisStreamsOutput; }
+    inline const KinesisStreamsOutput& GetKinesisStreamsOutput() const { return m_kinesisStreamsOutput; }
     inline bool KinesisStreamsOutputHasBeenSet() const { return m_kinesisStreamsOutputHasBeenSet; }
-    inline void SetKinesisStreamsOutput(const KinesisStreamsOutput& value) { m_kinesisStreamsOutputHasBeenSet = true; m_kinesisStreamsOutput = value; }
-    inline void SetKinesisStreamsOutput(KinesisStreamsOutput&& value) { m_kinesisStreamsOutputHasBeenSet = true; m_kinesisStreamsOutput = std::move(value); }
-    inline Output& WithKinesisStreamsOutput(const KinesisStreamsOutput& value) { SetKinesisStreamsOutput(value); return *this;}
-    inline Output& WithKinesisStreamsOutput(KinesisStreamsOutput&& value) { SetKinesisStreamsOutput(std::move(value)); return *this;}
+    template<typename KinesisStreamsOutputT = KinesisStreamsOutput>
+    void SetKinesisStreamsOutput(KinesisStreamsOutputT&& value) { m_kinesisStreamsOutputHasBeenSet = true; m_kinesisStreamsOutput = std::forward<KinesisStreamsOutputT>(value); }
+    template<typename KinesisStreamsOutputT = KinesisStreamsOutput>
+    Output& WithKinesisStreamsOutput(KinesisStreamsOutputT&& value) { SetKinesisStreamsOutput(std::forward<KinesisStreamsOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies a Kinesis Data Firehose delivery stream as the destination.</p>
      */
-    inline const KinesisFirehoseOutput& GetKinesisFirehoseOutput() const{ return m_kinesisFirehoseOutput; }
+    inline const KinesisFirehoseOutput& GetKinesisFirehoseOutput() const { return m_kinesisFirehoseOutput; }
     inline bool KinesisFirehoseOutputHasBeenSet() const { return m_kinesisFirehoseOutputHasBeenSet; }
-    inline void SetKinesisFirehoseOutput(const KinesisFirehoseOutput& value) { m_kinesisFirehoseOutputHasBeenSet = true; m_kinesisFirehoseOutput = value; }
-    inline void SetKinesisFirehoseOutput(KinesisFirehoseOutput&& value) { m_kinesisFirehoseOutputHasBeenSet = true; m_kinesisFirehoseOutput = std::move(value); }
-    inline Output& WithKinesisFirehoseOutput(const KinesisFirehoseOutput& value) { SetKinesisFirehoseOutput(value); return *this;}
-    inline Output& WithKinesisFirehoseOutput(KinesisFirehoseOutput&& value) { SetKinesisFirehoseOutput(std::move(value)); return *this;}
+    template<typename KinesisFirehoseOutputT = KinesisFirehoseOutput>
+    void SetKinesisFirehoseOutput(KinesisFirehoseOutputT&& value) { m_kinesisFirehoseOutputHasBeenSet = true; m_kinesisFirehoseOutput = std::forward<KinesisFirehoseOutputT>(value); }
+    template<typename KinesisFirehoseOutputT = KinesisFirehoseOutput>
+    Output& WithKinesisFirehoseOutput(KinesisFirehoseOutputT&& value) { SetKinesisFirehoseOutput(std::forward<KinesisFirehoseOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies an Amazon Lambda function as the destination.</p>
      */
-    inline const LambdaOutput& GetLambdaOutput() const{ return m_lambdaOutput; }
+    inline const LambdaOutput& GetLambdaOutput() const { return m_lambdaOutput; }
     inline bool LambdaOutputHasBeenSet() const { return m_lambdaOutputHasBeenSet; }
-    inline void SetLambdaOutput(const LambdaOutput& value) { m_lambdaOutputHasBeenSet = true; m_lambdaOutput = value; }
-    inline void SetLambdaOutput(LambdaOutput&& value) { m_lambdaOutputHasBeenSet = true; m_lambdaOutput = std::move(value); }
-    inline Output& WithLambdaOutput(const LambdaOutput& value) { SetLambdaOutput(value); return *this;}
-    inline Output& WithLambdaOutput(LambdaOutput&& value) { SetLambdaOutput(std::move(value)); return *this;}
+    template<typename LambdaOutputT = LambdaOutput>
+    void SetLambdaOutput(LambdaOutputT&& value) { m_lambdaOutputHasBeenSet = true; m_lambdaOutput = std::forward<LambdaOutputT>(value); }
+    template<typename LambdaOutputT = LambdaOutput>
+    Output& WithLambdaOutput(LambdaOutputT&& value) { SetLambdaOutput(std::forward<LambdaOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the data format when records are written to the destination. </p>
      */
-    inline const DestinationSchema& GetDestinationSchema() const{ return m_destinationSchema; }
+    inline const DestinationSchema& GetDestinationSchema() const { return m_destinationSchema; }
     inline bool DestinationSchemaHasBeenSet() const { return m_destinationSchemaHasBeenSet; }
-    inline void SetDestinationSchema(const DestinationSchema& value) { m_destinationSchemaHasBeenSet = true; m_destinationSchema = value; }
-    inline void SetDestinationSchema(DestinationSchema&& value) { m_destinationSchemaHasBeenSet = true; m_destinationSchema = std::move(value); }
-    inline Output& WithDestinationSchema(const DestinationSchema& value) { SetDestinationSchema(value); return *this;}
-    inline Output& WithDestinationSchema(DestinationSchema&& value) { SetDestinationSchema(std::move(value)); return *this;}
+    template<typename DestinationSchemaT = DestinationSchema>
+    void SetDestinationSchema(DestinationSchemaT&& value) { m_destinationSchemaHasBeenSet = true; m_destinationSchema = std::forward<DestinationSchemaT>(value); }
+    template<typename DestinationSchemaT = DestinationSchema>
+    Output& WithDestinationSchema(DestinationSchemaT&& value) { SetDestinationSchema(std::forward<DestinationSchemaT>(value)); return *this;}
     ///@}
   private:
 

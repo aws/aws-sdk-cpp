@@ -29,7 +29,7 @@ namespace Model
   class DynatraceMetadata
   {
   public:
-    AWS_APPFLOW_API DynatraceMetadata();
+    AWS_APPFLOW_API DynatraceMetadata() = default;
     AWS_APPFLOW_API DynatraceMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API DynatraceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

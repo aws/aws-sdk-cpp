@@ -12,15 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-IngestKnowledgeBaseDocumentsRequest::IngestKnowledgeBaseDocumentsRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataSourceIdHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String IngestKnowledgeBaseDocumentsRequest::SerializePayload() const
 {
   JsonValue payload;

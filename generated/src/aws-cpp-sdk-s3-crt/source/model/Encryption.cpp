@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Encryption::Encryption() : 
-    m_encryptionType(ServerSideEncryption::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_kMSContextHasBeenSet(false)
-{
-}
-
 Encryption::Encryption(const XmlNode& xmlNode)
-  : Encryption()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ Encryption& Encryption::operator =(const XmlNode& xmlNode)
     XmlNode encryptionTypeNode = resultNode.FirstChild("EncryptionType");
     if(!encryptionTypeNode.IsNull())
     {
-      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionTypeNode.GetText()).c_str()).c_str());
+      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionTypeNode.GetText()).c_str()));
       m_encryptionTypeHasBeenSet = true;
     }
     XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");

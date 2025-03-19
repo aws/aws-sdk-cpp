@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetUtterancesViewRequest::GetUtterancesViewRequest() : 
-    m_botNameHasBeenSet(false),
-    m_botVersionsHasBeenSet(false),
-    m_statusType(StatusType::NOT_SET),
-    m_statusTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetUtterancesViewRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class InstanceHealthSummary
   {
   public:
-    AWS_LIGHTSAIL_API InstanceHealthSummary();
+    AWS_LIGHTSAIL_API InstanceHealthSummary() = default;
     AWS_LIGHTSAIL_API InstanceHealthSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API InstanceHealthSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,22 @@ namespace Model
      * <p>The name of the Lightsail instance for which you are requesting health check
      * data.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline InstanceHealthSummary& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline InstanceHealthSummary& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline InstanceHealthSummary& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    InstanceHealthSummary& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the overall instance health. Valid values are below.</p>
      */
-    inline const InstanceHealthState& GetInstanceHealth() const{ return m_instanceHealth; }
+    inline InstanceHealthState GetInstanceHealth() const { return m_instanceHealth; }
     inline bool InstanceHealthHasBeenSet() const { return m_instanceHealthHasBeenSet; }
-    inline void SetInstanceHealth(const InstanceHealthState& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
-    inline void SetInstanceHealth(InstanceHealthState&& value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = std::move(value); }
-    inline InstanceHealthSummary& WithInstanceHealth(const InstanceHealthState& value) { SetInstanceHealth(value); return *this;}
-    inline InstanceHealthSummary& WithInstanceHealth(InstanceHealthState&& value) { SetInstanceHealth(std::move(value)); return *this;}
+    inline void SetInstanceHealth(InstanceHealthState value) { m_instanceHealthHasBeenSet = true; m_instanceHealth = value; }
+    inline InstanceHealthSummary& WithInstanceHealth(InstanceHealthState value) { SetInstanceHealth(value); return *this;}
     ///@}
 
     ///@{
@@ -106,22 +102,20 @@ namespace Model
      * the process of being deregistered and the deregistration delay period has not
      * expired.</p> </li> </ul>
      */
-    inline const InstanceHealthReason& GetInstanceHealthReason() const{ return m_instanceHealthReason; }
+    inline InstanceHealthReason GetInstanceHealthReason() const { return m_instanceHealthReason; }
     inline bool InstanceHealthReasonHasBeenSet() const { return m_instanceHealthReasonHasBeenSet; }
-    inline void SetInstanceHealthReason(const InstanceHealthReason& value) { m_instanceHealthReasonHasBeenSet = true; m_instanceHealthReason = value; }
-    inline void SetInstanceHealthReason(InstanceHealthReason&& value) { m_instanceHealthReasonHasBeenSet = true; m_instanceHealthReason = std::move(value); }
-    inline InstanceHealthSummary& WithInstanceHealthReason(const InstanceHealthReason& value) { SetInstanceHealthReason(value); return *this;}
-    inline InstanceHealthSummary& WithInstanceHealthReason(InstanceHealthReason&& value) { SetInstanceHealthReason(std::move(value)); return *this;}
+    inline void SetInstanceHealthReason(InstanceHealthReason value) { m_instanceHealthReasonHasBeenSet = true; m_instanceHealthReason = value; }
+    inline InstanceHealthSummary& WithInstanceHealthReason(InstanceHealthReason value) { SetInstanceHealthReason(value); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet = false;
 
-    InstanceHealthState m_instanceHealth;
+    InstanceHealthState m_instanceHealth{InstanceHealthState::NOT_SET};
     bool m_instanceHealthHasBeenSet = false;
 
-    InstanceHealthReason m_instanceHealthReason;
+    InstanceHealthReason m_instanceHealthReason{InstanceHealthReason::NOT_SET};
     bool m_instanceHealthReasonHasBeenSet = false;
   };
 

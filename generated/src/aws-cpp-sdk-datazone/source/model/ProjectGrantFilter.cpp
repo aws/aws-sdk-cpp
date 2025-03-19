@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ProjectGrantFilter::ProjectGrantFilter() : 
-    m_domainUnitFilterHasBeenSet(false)
-{
-}
-
 ProjectGrantFilter::ProjectGrantFilter(JsonView jsonValue)
-  : ProjectGrantFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProjectGrantFilter& ProjectGrantFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainUnitFilter"))
   {
     m_domainUnitFilter = jsonValue.GetObject("domainUnitFilter");
-
     m_domainUnitFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

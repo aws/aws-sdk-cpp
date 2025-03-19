@@ -28,7 +28,7 @@ namespace Model
   class GetManagedThingCapabilitiesResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingCapabilitiesResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingCapabilitiesResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingCapabilitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingCapabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,56 @@ namespace Model
     /**
      * <p>The id of the device.</p>
      */
-    inline const Aws::String& GetManagedThingId() const{ return m_managedThingId; }
-    inline void SetManagedThingId(const Aws::String& value) { m_managedThingId = value; }
-    inline void SetManagedThingId(Aws::String&& value) { m_managedThingId = std::move(value); }
-    inline void SetManagedThingId(const char* value) { m_managedThingId.assign(value); }
-    inline GetManagedThingCapabilitiesResult& WithManagedThingId(const Aws::String& value) { SetManagedThingId(value); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithManagedThingId(Aws::String&& value) { SetManagedThingId(std::move(value)); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithManagedThingId(const char* value) { SetManagedThingId(value); return *this;}
+    inline const Aws::String& GetManagedThingId() const { return m_managedThingId; }
+    template<typename ManagedThingIdT = Aws::String>
+    void SetManagedThingId(ManagedThingIdT&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::forward<ManagedThingIdT>(value); }
+    template<typename ManagedThingIdT = Aws::String>
+    GetManagedThingCapabilitiesResult& WithManagedThingId(ManagedThingIdT&& value) { SetManagedThingId(std::forward<ManagedThingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capabilities of the device such as light bulb.</p>
      */
-    inline const Aws::String& GetCapabilities() const{ return m_capabilities; }
-    inline void SetCapabilities(const Aws::String& value) { m_capabilities = value; }
-    inline void SetCapabilities(Aws::String&& value) { m_capabilities = std::move(value); }
-    inline void SetCapabilities(const char* value) { m_capabilities.assign(value); }
-    inline GetManagedThingCapabilitiesResult& WithCapabilities(const Aws::String& value) { SetCapabilities(value); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithCapabilities(Aws::String&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithCapabilities(const char* value) { SetCapabilities(value); return *this;}
+    inline const Aws::String& GetCapabilities() const { return m_capabilities; }
+    template<typename CapabilitiesT = Aws::String>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::String>
+    GetManagedThingCapabilitiesResult& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A report of the capabilities for the managed thing.</p>
      */
-    inline const CapabilityReport& GetCapabilityReport() const{ return m_capabilityReport; }
-    inline void SetCapabilityReport(const CapabilityReport& value) { m_capabilityReport = value; }
-    inline void SetCapabilityReport(CapabilityReport&& value) { m_capabilityReport = std::move(value); }
-    inline GetManagedThingCapabilitiesResult& WithCapabilityReport(const CapabilityReport& value) { SetCapabilityReport(value); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithCapabilityReport(CapabilityReport&& value) { SetCapabilityReport(std::move(value)); return *this;}
+    inline const CapabilityReport& GetCapabilityReport() const { return m_capabilityReport; }
+    template<typename CapabilityReportT = CapabilityReport>
+    void SetCapabilityReport(CapabilityReportT&& value) { m_capabilityReportHasBeenSet = true; m_capabilityReport = std::forward<CapabilityReportT>(value); }
+    template<typename CapabilityReportT = CapabilityReport>
+    GetManagedThingCapabilitiesResult& WithCapabilityReport(CapabilityReportT&& value) { SetCapabilityReport(std::forward<CapabilityReportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedThingCapabilitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedThingCapabilitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedThingCapabilitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_managedThingId;
+    bool m_managedThingIdHasBeenSet = false;
 
     Aws::String m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
 
     CapabilityReport m_capabilityReport;
+    bool m_capabilityReportHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   class BatchImportFindingsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchImportFindingsRequest();
+    AWS_SECURITYHUB_API BatchImportFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
      * Web Services Security Finding Format</a>. Maximum of 100 findings per
      * request.</p>
      */
-    inline const Aws::Vector<AwsSecurityFinding>& GetFindings() const{ return m_findings; }
+    inline const Aws::Vector<AwsSecurityFinding>& GetFindings() const { return m_findings; }
     inline bool FindingsHasBeenSet() const { return m_findingsHasBeenSet; }
-    inline void SetFindings(const Aws::Vector<AwsSecurityFinding>& value) { m_findingsHasBeenSet = true; m_findings = value; }
-    inline void SetFindings(Aws::Vector<AwsSecurityFinding>&& value) { m_findingsHasBeenSet = true; m_findings = std::move(value); }
-    inline BatchImportFindingsRequest& WithFindings(const Aws::Vector<AwsSecurityFinding>& value) { SetFindings(value); return *this;}
-    inline BatchImportFindingsRequest& WithFindings(Aws::Vector<AwsSecurityFinding>&& value) { SetFindings(std::move(value)); return *this;}
-    inline BatchImportFindingsRequest& AddFindings(const AwsSecurityFinding& value) { m_findingsHasBeenSet = true; m_findings.push_back(value); return *this; }
-    inline BatchImportFindingsRequest& AddFindings(AwsSecurityFinding&& value) { m_findingsHasBeenSet = true; m_findings.push_back(std::move(value)); return *this; }
+    template<typename FindingsT = Aws::Vector<AwsSecurityFinding>>
+    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
+    template<typename FindingsT = Aws::Vector<AwsSecurityFinding>>
+    BatchImportFindingsRequest& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
+    template<typename FindingsT = AwsSecurityFinding>
+    BatchImportFindingsRequest& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
     ///@}
   private:
 

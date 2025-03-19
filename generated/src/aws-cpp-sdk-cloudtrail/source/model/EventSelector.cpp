@@ -18,18 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-EventSelector::EventSelector() : 
-    m_readWriteType(ReadWriteType::NOT_SET),
-    m_readWriteTypeHasBeenSet(false),
-    m_includeManagementEvents(false),
-    m_includeManagementEventsHasBeenSet(false),
-    m_dataResourcesHasBeenSet(false),
-    m_excludeManagementEventSourcesHasBeenSet(false)
-{
-}
-
 EventSelector::EventSelector(JsonView jsonValue)
-  : EventSelector()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ EventSelector& EventSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReadWriteType"))
   {
     m_readWriteType = ReadWriteTypeMapper::GetReadWriteTypeForName(jsonValue.GetString("ReadWriteType"));
-
     m_readWriteTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeManagementEvents"))
   {
     m_includeManagementEvents = jsonValue.GetBool("IncludeManagementEvents");
-
     m_includeManagementEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataResources"))
   {
     Aws::Utils::Array<JsonView> dataResourcesJsonList = jsonValue.GetArray("DataResources");
@@ -59,7 +44,6 @@ EventSelector& EventSelector::operator =(JsonView jsonValue)
     }
     m_dataResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeManagementEventSources"))
   {
     Aws::Utils::Array<JsonView> excludeManagementEventSourcesJsonList = jsonValue.GetArray("ExcludeManagementEventSources");
@@ -69,7 +53,6 @@ EventSelector& EventSelector::operator =(JsonView jsonValue)
     }
     m_excludeManagementEventSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

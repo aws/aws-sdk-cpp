@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutInstancePublicPortsRequest::PutInstancePublicPortsRequest() : 
-    m_portInfosHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
-{
-}
-
 Aws::String PutInstancePublicPortsRequest::SerializePayload() const
 {
   JsonValue payload;

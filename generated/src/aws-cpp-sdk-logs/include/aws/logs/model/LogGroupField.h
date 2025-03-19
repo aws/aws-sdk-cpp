@@ -33,7 +33,7 @@ namespace Model
   class LogGroupField
   {
   public:
-    AWS_CLOUDWATCHLOGS_API LogGroupField();
+    AWS_CLOUDWATCHLOGS_API LogGroupField() = default;
     AWS_CLOUDWATCHLOGS_API LogGroupField(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API LogGroupField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The name of a log field.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LogGroupField& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LogGroupField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LogGroupField& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LogGroupField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage of log events queried that contained the field.</p>
      */
-    inline int GetPercent() const{ return m_percent; }
+    inline int GetPercent() const { return m_percent; }
     inline bool PercentHasBeenSet() const { return m_percentHasBeenSet; }
     inline void SetPercent(int value) { m_percentHasBeenSet = true; m_percent = value; }
     inline LogGroupField& WithPercent(int value) { SetPercent(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_percent;
+    int m_percent{0};
     bool m_percentHasBeenSet = false;
   };
 

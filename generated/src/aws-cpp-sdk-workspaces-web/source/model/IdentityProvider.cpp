@@ -18,17 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-IdentityProvider::IdentityProvider() : 
-    m_identityProviderArnHasBeenSet(false),
-    m_identityProviderDetailsHasBeenSet(false),
-    m_identityProviderNameHasBeenSet(false),
-    m_identityProviderType(IdentityProviderType::NOT_SET),
-    m_identityProviderTypeHasBeenSet(false)
-{
-}
-
 IdentityProvider::IdentityProvider(JsonView jsonValue)
-  : IdentityProvider()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ IdentityProvider& IdentityProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identityProviderArn"))
   {
     m_identityProviderArn = jsonValue.GetString("identityProviderArn");
-
     m_identityProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityProviderDetails"))
   {
     Aws::Map<Aws::String, JsonView> identityProviderDetailsJsonMap = jsonValue.GetObject("identityProviderDetails").GetAllObjects();
@@ -51,21 +39,16 @@ IdentityProvider& IdentityProvider::operator =(JsonView jsonValue)
     }
     m_identityProviderDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityProviderName"))
   {
     m_identityProviderName = jsonValue.GetString("identityProviderName");
-
     m_identityProviderNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityProviderType"))
   {
     m_identityProviderType = IdentityProviderTypeMapper::GetIdentityProviderTypeForName(jsonValue.GetString("identityProviderType"));
-
     m_identityProviderTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

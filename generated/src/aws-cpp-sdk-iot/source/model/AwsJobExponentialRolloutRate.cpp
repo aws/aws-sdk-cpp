@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AwsJobExponentialRolloutRate::AwsJobExponentialRolloutRate() : 
-    m_baseRatePerMinute(0),
-    m_baseRatePerMinuteHasBeenSet(false),
-    m_incrementFactor(0.0),
-    m_incrementFactorHasBeenSet(false),
-    m_rateIncreaseCriteriaHasBeenSet(false)
-{
-}
-
 AwsJobExponentialRolloutRate::AwsJobExponentialRolloutRate(JsonView jsonValue)
-  : AwsJobExponentialRolloutRate()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsJobExponentialRolloutRate& AwsJobExponentialRolloutRate::operator =(JsonView 
   if(jsonValue.ValueExists("baseRatePerMinute"))
   {
     m_baseRatePerMinute = jsonValue.GetInteger("baseRatePerMinute");
-
     m_baseRatePerMinuteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incrementFactor"))
   {
     m_incrementFactor = jsonValue.GetDouble("incrementFactor");
-
     m_incrementFactorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateIncreaseCriteria"))
   {
     m_rateIncreaseCriteria = jsonValue.GetObject("rateIncreaseCriteria");
-
     m_rateIncreaseCriteriaHasBeenSet = true;
   }
-
   return *this;
 }
 

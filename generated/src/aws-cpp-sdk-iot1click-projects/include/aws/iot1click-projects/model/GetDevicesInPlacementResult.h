@@ -28,7 +28,7 @@ namespace Model
   class GetDevicesInPlacementResult
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API GetDevicesInPlacementResult();
+    AWS_IOT1CLICKPROJECTS_API GetDevicesInPlacementResult() = default;
     AWS_IOT1CLICKPROJECTS_API GetDevicesInPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT1CLICKPROJECTS_API GetDevicesInPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,35 +37,32 @@ namespace Model
     /**
      * <p>An object containing the devices (zero or more) within the placement.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDevices() const{ return m_devices; }
-    inline void SetDevices(const Aws::Map<Aws::String, Aws::String>& value) { m_devices = value; }
-    inline void SetDevices(Aws::Map<Aws::String, Aws::String>&& value) { m_devices = std::move(value); }
-    inline GetDevicesInPlacementResult& WithDevices(const Aws::Map<Aws::String, Aws::String>& value) { SetDevices(value); return *this;}
-    inline GetDevicesInPlacementResult& WithDevices(Aws::Map<Aws::String, Aws::String>&& value) { SetDevices(std::move(value)); return *this;}
-    inline GetDevicesInPlacementResult& AddDevices(const Aws::String& key, const Aws::String& value) { m_devices.emplace(key, value); return *this; }
-    inline GetDevicesInPlacementResult& AddDevices(Aws::String&& key, const Aws::String& value) { m_devices.emplace(std::move(key), value); return *this; }
-    inline GetDevicesInPlacementResult& AddDevices(const Aws::String& key, Aws::String&& value) { m_devices.emplace(key, std::move(value)); return *this; }
-    inline GetDevicesInPlacementResult& AddDevices(Aws::String&& key, Aws::String&& value) { m_devices.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDevicesInPlacementResult& AddDevices(const char* key, Aws::String&& value) { m_devices.emplace(key, std::move(value)); return *this; }
-    inline GetDevicesInPlacementResult& AddDevices(Aws::String&& key, const char* value) { m_devices.emplace(std::move(key), value); return *this; }
-    inline GetDevicesInPlacementResult& AddDevices(const char* key, const char* value) { m_devices.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDevices() const { return m_devices; }
+    template<typename DevicesT = Aws::Map<Aws::String, Aws::String>>
+    void SetDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices = std::forward<DevicesT>(value); }
+    template<typename DevicesT = Aws::Map<Aws::String, Aws::String>>
+    GetDevicesInPlacementResult& WithDevices(DevicesT&& value) { SetDevices(std::forward<DevicesT>(value)); return *this;}
+    template<typename DevicesKeyT = Aws::String, typename DevicesValueT = Aws::String>
+    GetDevicesInPlacementResult& AddDevices(DevicesKeyT&& key, DevicesValueT&& value) {
+      m_devicesHasBeenSet = true; m_devices.emplace(std::forward<DevicesKeyT>(key), std::forward<DevicesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDevicesInPlacementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDevicesInPlacementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDevicesInPlacementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDevicesInPlacementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_devices;
+    bool m_devicesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

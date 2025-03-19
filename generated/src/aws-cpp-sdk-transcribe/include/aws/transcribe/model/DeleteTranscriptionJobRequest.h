@@ -21,7 +21,7 @@ namespace Model
   class DeleteTranscriptionJobRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API DeleteTranscriptionJobRequest();
+    AWS_TRANSCRIBESERVICE_API DeleteTranscriptionJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the transcription job you want to delete. Job names are case
      * sensitive.</p>
      */
-    inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
+    inline const Aws::String& GetTranscriptionJobName() const { return m_transcriptionJobName; }
     inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
-    inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
-    inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
-    inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
-    inline DeleteTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
-    inline DeleteTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
-    inline DeleteTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
+    template<typename TranscriptionJobNameT = Aws::String>
+    void SetTranscriptionJobName(TranscriptionJobNameT&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::forward<TranscriptionJobNameT>(value); }
+    template<typename TranscriptionJobNameT = Aws::String>
+    DeleteTranscriptionJobRequest& WithTranscriptionJobName(TranscriptionJobNameT&& value) { SetTranscriptionJobName(std::forward<TranscriptionJobNameT>(value)); return *this;}
     ///@}
   private:
 

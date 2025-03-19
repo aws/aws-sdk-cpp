@@ -18,41 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabase::RelationalDatabase() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_relationalDatabaseBlueprintIdHasBeenSet(false),
-    m_relationalDatabaseBundleIdHasBeenSet(false),
-    m_masterDatabaseNameHasBeenSet(false),
-    m_hardwareHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_backupRetentionEnabled(false),
-    m_backupRetentionEnabledHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_masterEndpointHasBeenSet(false),
-    m_pendingMaintenanceActionsHasBeenSet(false),
-    m_caCertificateIdentifierHasBeenSet(false)
-{
-}
-
 RelationalDatabase::RelationalDatabase(JsonView jsonValue)
-  : RelationalDatabase()
 {
   *this = jsonValue;
 }
@@ -62,45 +28,33 @@ RelationalDatabase& RelationalDatabase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -110,126 +64,91 @@ RelationalDatabase& RelationalDatabase::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalDatabaseBlueprintId"))
   {
     m_relationalDatabaseBlueprintId = jsonValue.GetString("relationalDatabaseBlueprintId");
-
     m_relationalDatabaseBlueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalDatabaseBundleId"))
   {
     m_relationalDatabaseBundleId = jsonValue.GetString("relationalDatabaseBundleId");
-
     m_relationalDatabaseBundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("masterDatabaseName"))
   {
     m_masterDatabaseName = jsonValue.GetString("masterDatabaseName");
-
     m_masterDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hardware"))
   {
     m_hardware = jsonValue.GetObject("hardware");
-
     m_hardwareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondaryAvailabilityZone"))
   {
     m_secondaryAvailabilityZone = jsonValue.GetString("secondaryAvailabilityZone");
-
     m_secondaryAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backupRetentionEnabled"))
   {
     m_backupRetentionEnabled = jsonValue.GetBool("backupRetentionEnabled");
-
     m_backupRetentionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingModifiedValues"))
   {
     m_pendingModifiedValues = jsonValue.GetObject("pendingModifiedValues");
-
     m_pendingModifiedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = jsonValue.GetString("engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestRestorableTime"))
   {
     m_latestRestorableTime = jsonValue.GetDouble("latestRestorableTime");
-
     m_latestRestorableTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("masterUsername"))
   {
     m_masterUsername = jsonValue.GetString("masterUsername");
-
     m_masterUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterApplyStatus"))
   {
     m_parameterApplyStatus = jsonValue.GetString("parameterApplyStatus");
-
     m_parameterApplyStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preferredBackupWindow"))
   {
     m_preferredBackupWindow = jsonValue.GetString("preferredBackupWindow");
-
     m_preferredBackupWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("preferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("masterEndpoint"))
   {
     m_masterEndpoint = jsonValue.GetObject("masterEndpoint");
-
     m_masterEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingMaintenanceActions"))
   {
     Aws::Utils::Array<JsonView> pendingMaintenanceActionsJsonList = jsonValue.GetArray("pendingMaintenanceActions");
@@ -239,14 +158,11 @@ RelationalDatabase& RelationalDatabase::operator =(JsonView jsonValue)
     }
     m_pendingMaintenanceActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("caCertificateIdentifier"))
   {
     m_caCertificateIdentifier = jsonValue.GetString("caCertificateIdentifier");
-
     m_caCertificateIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

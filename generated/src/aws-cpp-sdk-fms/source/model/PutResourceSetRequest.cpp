@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResourceSetRequest::PutResourceSetRequest() : 
-    m_resourceSetHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 Aws::String PutResourceSetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteBotVersionResult::DeleteBotVersionResult() : 
-    m_botStatus(BotStatus::NOT_SET)
-{
-}
-
 DeleteBotVersionResult::DeleteBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteBotVersionResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteBotVersionResult& DeleteBotVersionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
+    m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botStatus"))
   {
     m_botStatus = BotStatusMapper::GetBotStatusForName(jsonValue.GetString("botStatus"));
-
+    m_botStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

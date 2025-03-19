@@ -12,12 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteOpenCypherQueryRequest::ExecuteOpenCypherQueryRequest() : 
-    m_openCypherQueryHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteOpenCypherQueryRequest::SerializePayload() const
 {
   JsonValue payload;

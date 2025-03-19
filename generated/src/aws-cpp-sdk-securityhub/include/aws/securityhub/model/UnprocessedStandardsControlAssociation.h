@@ -37,7 +37,7 @@ namespace Model
   class UnprocessedStandardsControlAssociation
   {
   public:
-    AWS_SECURITYHUB_API UnprocessedStandardsControlAssociation();
+    AWS_SECURITYHUB_API UnprocessedStandardsControlAssociation() = default;
     AWS_SECURITYHUB_API UnprocessedStandardsControlAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API UnprocessedStandardsControlAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,45 +54,41 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.
      * </p>
      */
-    inline const StandardsControlAssociationId& GetStandardsControlAssociationId() const{ return m_standardsControlAssociationId; }
+    inline const StandardsControlAssociationId& GetStandardsControlAssociationId() const { return m_standardsControlAssociationId; }
     inline bool StandardsControlAssociationIdHasBeenSet() const { return m_standardsControlAssociationIdHasBeenSet; }
-    inline void SetStandardsControlAssociationId(const StandardsControlAssociationId& value) { m_standardsControlAssociationIdHasBeenSet = true; m_standardsControlAssociationId = value; }
-    inline void SetStandardsControlAssociationId(StandardsControlAssociationId&& value) { m_standardsControlAssociationIdHasBeenSet = true; m_standardsControlAssociationId = std::move(value); }
-    inline UnprocessedStandardsControlAssociation& WithStandardsControlAssociationId(const StandardsControlAssociationId& value) { SetStandardsControlAssociationId(value); return *this;}
-    inline UnprocessedStandardsControlAssociation& WithStandardsControlAssociationId(StandardsControlAssociationId&& value) { SetStandardsControlAssociationId(std::move(value)); return *this;}
+    template<typename StandardsControlAssociationIdT = StandardsControlAssociationId>
+    void SetStandardsControlAssociationId(StandardsControlAssociationIdT&& value) { m_standardsControlAssociationIdHasBeenSet = true; m_standardsControlAssociationId = std::forward<StandardsControlAssociationIdT>(value); }
+    template<typename StandardsControlAssociationIdT = StandardsControlAssociationId>
+    UnprocessedStandardsControlAssociation& WithStandardsControlAssociationId(StandardsControlAssociationIdT&& value) { SetStandardsControlAssociationId(std::forward<StandardsControlAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code for the unprocessed standard and control association. </p>
      */
-    inline const UnprocessedErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline UnprocessedErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const UnprocessedErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(UnprocessedErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline UnprocessedStandardsControlAssociation& WithErrorCode(const UnprocessedErrorCode& value) { SetErrorCode(value); return *this;}
-    inline UnprocessedStandardsControlAssociation& WithErrorCode(UnprocessedErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(UnprocessedErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline UnprocessedStandardsControlAssociation& WithErrorCode(UnprocessedErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason why the standard and control association was unprocessed. </p>
      */
-    inline const Aws::String& GetErrorReason() const{ return m_errorReason; }
+    inline const Aws::String& GetErrorReason() const { return m_errorReason; }
     inline bool ErrorReasonHasBeenSet() const { return m_errorReasonHasBeenSet; }
-    inline void SetErrorReason(const Aws::String& value) { m_errorReasonHasBeenSet = true; m_errorReason = value; }
-    inline void SetErrorReason(Aws::String&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::move(value); }
-    inline void SetErrorReason(const char* value) { m_errorReasonHasBeenSet = true; m_errorReason.assign(value); }
-    inline UnprocessedStandardsControlAssociation& WithErrorReason(const Aws::String& value) { SetErrorReason(value); return *this;}
-    inline UnprocessedStandardsControlAssociation& WithErrorReason(Aws::String&& value) { SetErrorReason(std::move(value)); return *this;}
-    inline UnprocessedStandardsControlAssociation& WithErrorReason(const char* value) { SetErrorReason(value); return *this;}
+    template<typename ErrorReasonT = Aws::String>
+    void SetErrorReason(ErrorReasonT&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::forward<ErrorReasonT>(value); }
+    template<typename ErrorReasonT = Aws::String>
+    UnprocessedStandardsControlAssociation& WithErrorReason(ErrorReasonT&& value) { SetErrorReason(std::forward<ErrorReasonT>(value)); return *this;}
     ///@}
   private:
 
     StandardsControlAssociationId m_standardsControlAssociationId;
     bool m_standardsControlAssociationIdHasBeenSet = false;
 
-    UnprocessedErrorCode m_errorCode;
+    UnprocessedErrorCode m_errorCode{UnprocessedErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorReason;

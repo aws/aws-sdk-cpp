@@ -13,12 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreDocumentVersionsRequest::RestoreDocumentVersionsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false)
-{
-}
-
 Aws::String RestoreDocumentVersionsRequest::SerializePayload() const
 {
   return {};

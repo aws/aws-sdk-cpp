@@ -18,21 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-EngineVersion::EngineVersion() : 
-    m_versionHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_releaseStatus(ReleaseStatusValues::NOT_SET),
-    m_releaseStatusHasBeenSet(false),
-    m_launchDateHasBeenSet(false),
-    m_autoUpgradeDateHasBeenSet(false),
-    m_deprecationDateHasBeenSet(false),
-    m_forceUpgradeDateHasBeenSet(false),
-    m_availableUpgradesHasBeenSet(false)
-{
-}
-
 EngineVersion::EngineVersion(JsonView jsonValue)
-  : EngineVersion()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ EngineVersion& EngineVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = jsonValue.GetString("Lifecycle");
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseStatus"))
   {
     m_releaseStatus = ReleaseStatusValuesMapper::GetReleaseStatusValuesForName(jsonValue.GetString("ReleaseStatus"));
-
     m_releaseStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchDate"))
   {
     m_launchDate = jsonValue.GetDouble("LaunchDate");
-
     m_launchDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoUpgradeDate"))
   {
     m_autoUpgradeDate = jsonValue.GetDouble("AutoUpgradeDate");
-
     m_autoUpgradeDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeprecationDate"))
   {
     m_deprecationDate = jsonValue.GetDouble("DeprecationDate");
-
     m_deprecationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForceUpgradeDate"))
   {
     m_forceUpgradeDate = jsonValue.GetDouble("ForceUpgradeDate");
-
     m_forceUpgradeDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableUpgrades"))
   {
     Aws::Utils::Array<JsonView> availableUpgradesJsonList = jsonValue.GetArray("AvailableUpgrades");
@@ -97,7 +69,6 @@ EngineVersion& EngineVersion::operator =(JsonView jsonValue)
     }
     m_availableUpgradesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgeOutputConfig::EdgeOutputConfig() : 
-    m_s3OutputLocationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_presetDeploymentType(EdgePresetDeploymentType::NOT_SET),
-    m_presetDeploymentTypeHasBeenSet(false),
-    m_presetDeploymentConfigHasBeenSet(false)
-{
-}
-
 EdgeOutputConfig::EdgeOutputConfig(JsonView jsonValue)
-  : EdgeOutputConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EdgeOutputConfig& EdgeOutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3OutputLocation"))
   {
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
-
     m_s3OutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PresetDeploymentType"))
   {
     m_presetDeploymentType = EdgePresetDeploymentTypeMapper::GetEdgePresetDeploymentTypeForName(jsonValue.GetString("PresetDeploymentType"));
-
     m_presetDeploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PresetDeploymentConfig"))
   {
     m_presetDeploymentConfig = jsonValue.GetString("PresetDeploymentConfig");
-
     m_presetDeploymentConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

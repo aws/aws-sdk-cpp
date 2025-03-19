@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-ProcessorParameter::ProcessorParameter() : 
-    m_parameterName(ProcessorParameterName::NOT_SET),
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 ProcessorParameter::ProcessorParameter(JsonView jsonValue)
-  : ProcessorParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProcessorParameter& ProcessorParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = ProcessorParameterNameMapper::GetProcessorParameterNameForName(jsonValue.GetString("ParameterName"));
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterValue"))
   {
     m_parameterValue = jsonValue.GetString("ParameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

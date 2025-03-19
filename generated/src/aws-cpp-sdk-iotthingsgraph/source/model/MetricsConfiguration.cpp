@@ -18,15 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-MetricsConfiguration::MetricsConfiguration() : 
-    m_cloudMetricEnabled(false),
-    m_cloudMetricEnabledHasBeenSet(false),
-    m_metricRuleRoleArnHasBeenSet(false)
-{
-}
-
 MetricsConfiguration::MetricsConfiguration(JsonView jsonValue)
-  : MetricsConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricsConfiguration& MetricsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cloudMetricEnabled"))
   {
     m_cloudMetricEnabled = jsonValue.GetBool("cloudMetricEnabled");
-
     m_cloudMetricEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricRuleRoleArn"))
   {
     m_metricRuleRoleArn = jsonValue.GetString("metricRuleRoleArn");
-
     m_metricRuleRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

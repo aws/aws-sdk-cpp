@@ -33,7 +33,7 @@ namespace Model
   class OpenSearchReservedInstances
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API OpenSearchReservedInstances();
+    AWS_COSTOPTIMIZATIONHUB_API OpenSearchReservedInstances() = default;
     AWS_COSTOPTIMIZATIONHUB_API OpenSearchReservedInstances(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API OpenSearchReservedInstances& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The OpenSearch reserved instances configuration used for recommendations.</p>
      */
-    inline const OpenSearchReservedInstancesConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const OpenSearchReservedInstancesConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const OpenSearchReservedInstancesConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(OpenSearchReservedInstancesConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline OpenSearchReservedInstances& WithConfiguration(const OpenSearchReservedInstancesConfiguration& value) { SetConfiguration(value); return *this;}
-    inline OpenSearchReservedInstances& WithConfiguration(OpenSearchReservedInstancesConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = OpenSearchReservedInstancesConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = OpenSearchReservedInstancesConfiguration>
+    OpenSearchReservedInstances& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cost impact of the purchase recommendation.</p>
      */
-    inline const ReservedInstancesCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const ReservedInstancesCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const ReservedInstancesCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(ReservedInstancesCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline OpenSearchReservedInstances& WithCostCalculation(const ReservedInstancesCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline OpenSearchReservedInstances& WithCostCalculation(ReservedInstancesCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = ReservedInstancesCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = ReservedInstancesCostCalculation>
+    OpenSearchReservedInstances& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateSiteResult
   {
   public:
-    AWS_NETWORKMANAGER_API CreateSiteResult();
+    AWS_NETWORKMANAGER_API CreateSiteResult() = default;
     AWS_NETWORKMANAGER_API CreateSiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API CreateSiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the site.</p>
      */
-    inline const Site& GetSite() const{ return m_site; }
-    inline void SetSite(const Site& value) { m_site = value; }
-    inline void SetSite(Site&& value) { m_site = std::move(value); }
-    inline CreateSiteResult& WithSite(const Site& value) { SetSite(value); return *this;}
-    inline CreateSiteResult& WithSite(Site&& value) { SetSite(std::move(value)); return *this;}
+    inline const Site& GetSite() const { return m_site; }
+    template<typename SiteT = Site>
+    void SetSite(SiteT&& value) { m_siteHasBeenSet = true; m_site = std::forward<SiteT>(value); }
+    template<typename SiteT = Site>
+    CreateSiteResult& WithSite(SiteT&& value) { SetSite(std::forward<SiteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSiteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Site m_site;
+    bool m_siteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

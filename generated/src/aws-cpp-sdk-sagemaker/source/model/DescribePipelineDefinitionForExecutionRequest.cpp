@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePipelineDefinitionForExecutionRequest::DescribePipelineDefinitionForExecutionRequest() : 
-    m_pipelineExecutionArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribePipelineDefinitionForExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

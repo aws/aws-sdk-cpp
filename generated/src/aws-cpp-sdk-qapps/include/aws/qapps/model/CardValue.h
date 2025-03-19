@@ -33,7 +33,7 @@ namespace Model
   class CardValue
   {
   public:
-    AWS_QAPPS_API CardValue();
+    AWS_QAPPS_API CardValue() = default;
     AWS_QAPPS_API CardValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API CardValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier of the card.</p>
      */
-    inline const Aws::String& GetCardId() const{ return m_cardId; }
+    inline const Aws::String& GetCardId() const { return m_cardId; }
     inline bool CardIdHasBeenSet() const { return m_cardIdHasBeenSet; }
-    inline void SetCardId(const Aws::String& value) { m_cardIdHasBeenSet = true; m_cardId = value; }
-    inline void SetCardId(Aws::String&& value) { m_cardIdHasBeenSet = true; m_cardId = std::move(value); }
-    inline void SetCardId(const char* value) { m_cardIdHasBeenSet = true; m_cardId.assign(value); }
-    inline CardValue& WithCardId(const Aws::String& value) { SetCardId(value); return *this;}
-    inline CardValue& WithCardId(Aws::String&& value) { SetCardId(std::move(value)); return *this;}
-    inline CardValue& WithCardId(const char* value) { SetCardId(value); return *this;}
+    template<typename CardIdT = Aws::String>
+    void SetCardId(CardIdT&& value) { m_cardIdHasBeenSet = true; m_cardId = std::forward<CardIdT>(value); }
+    template<typename CardIdT = Aws::String>
+    CardValue& WithCardId(CardIdT&& value) { SetCardId(std::forward<CardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value or result associated with the card.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline CardValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline CardValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline CardValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    CardValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>The structure that describes how the current form card value is mutated. Only
      * applies for form cards when multiple responses are allowed.</p>
      */
-    inline const SubmissionMutation& GetSubmissionMutation() const{ return m_submissionMutation; }
+    inline const SubmissionMutation& GetSubmissionMutation() const { return m_submissionMutation; }
     inline bool SubmissionMutationHasBeenSet() const { return m_submissionMutationHasBeenSet; }
-    inline void SetSubmissionMutation(const SubmissionMutation& value) { m_submissionMutationHasBeenSet = true; m_submissionMutation = value; }
-    inline void SetSubmissionMutation(SubmissionMutation&& value) { m_submissionMutationHasBeenSet = true; m_submissionMutation = std::move(value); }
-    inline CardValue& WithSubmissionMutation(const SubmissionMutation& value) { SetSubmissionMutation(value); return *this;}
-    inline CardValue& WithSubmissionMutation(SubmissionMutation&& value) { SetSubmissionMutation(std::move(value)); return *this;}
+    template<typename SubmissionMutationT = SubmissionMutation>
+    void SetSubmissionMutation(SubmissionMutationT&& value) { m_submissionMutationHasBeenSet = true; m_submissionMutation = std::forward<SubmissionMutationT>(value); }
+    template<typename SubmissionMutationT = SubmissionMutation>
+    CardValue& WithSubmissionMutation(SubmissionMutationT&& value) { SetSubmissionMutation(std::forward<SubmissionMutationT>(value)); return *this;}
     ///@}
   private:
 

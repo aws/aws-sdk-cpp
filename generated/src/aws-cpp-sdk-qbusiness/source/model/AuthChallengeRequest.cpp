@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AuthChallengeRequest::AuthChallengeRequest() : 
-    m_authorizationUrlHasBeenSet(false)
-{
-}
-
 AuthChallengeRequest::AuthChallengeRequest(JsonView jsonValue)
-  : AuthChallengeRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AuthChallengeRequest& AuthChallengeRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authorizationUrl"))
   {
     m_authorizationUrl = jsonValue.GetString("authorizationUrl");
-
     m_authorizationUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

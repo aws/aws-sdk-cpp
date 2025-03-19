@@ -25,7 +25,7 @@ namespace Model
   class UpdateStorageProfileRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API UpdateStorageProfileRequest();
+    AWS_DEADLINE_API UpdateStorageProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,36 @@ namespace Model
      * <p>The unique token which the server uses to recognize retries of the same
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateStorageProfileRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateStorageProfileRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateStorageProfileRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateStorageProfileRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The farm ID to update.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline UpdateStorageProfileRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline UpdateStorageProfileRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline UpdateStorageProfileRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    UpdateStorageProfileRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage profile ID to update.</p>
      */
-    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
+    inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
     inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
-    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
-    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
-    inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
-    inline UpdateStorageProfileRequest& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-    inline UpdateStorageProfileRequest& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-    inline UpdateStorageProfileRequest& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    template<typename StorageProfileIdT = Aws::String>
+    void SetStorageProfileId(StorageProfileIdT&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::forward<StorageProfileIdT>(value); }
+    template<typename StorageProfileIdT = Aws::String>
+    UpdateStorageProfileRequest& WithStorageProfileId(StorageProfileIdT&& value) { SetStorageProfileId(std::forward<StorageProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,54 +82,50 @@ namespace Model
      * on a webpage or any other system that might interpret the content of this
      * field.</p> 
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateStorageProfileRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateStorageProfileRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateStorageProfileRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateStorageProfileRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OS system to update.</p>
      */
-    inline const StorageProfileOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
+    inline StorageProfileOperatingSystemFamily GetOsFamily() const { return m_osFamily; }
     inline bool OsFamilyHasBeenSet() const { return m_osFamilyHasBeenSet; }
-    inline void SetOsFamily(const StorageProfileOperatingSystemFamily& value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
-    inline void SetOsFamily(StorageProfileOperatingSystemFamily&& value) { m_osFamilyHasBeenSet = true; m_osFamily = std::move(value); }
-    inline UpdateStorageProfileRequest& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
-    inline UpdateStorageProfileRequest& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
+    inline void SetOsFamily(StorageProfileOperatingSystemFamily value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
+    inline UpdateStorageProfileRequest& WithOsFamily(StorageProfileOperatingSystemFamily value) { SetOsFamily(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file system location names to add.</p>
      */
-    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocationsToAdd() const{ return m_fileSystemLocationsToAdd; }
+    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocationsToAdd() const { return m_fileSystemLocationsToAdd; }
     inline bool FileSystemLocationsToAddHasBeenSet() const { return m_fileSystemLocationsToAddHasBeenSet; }
-    inline void SetFileSystemLocationsToAdd(const Aws::Vector<FileSystemLocation>& value) { m_fileSystemLocationsToAddHasBeenSet = true; m_fileSystemLocationsToAdd = value; }
-    inline void SetFileSystemLocationsToAdd(Aws::Vector<FileSystemLocation>&& value) { m_fileSystemLocationsToAddHasBeenSet = true; m_fileSystemLocationsToAdd = std::move(value); }
-    inline UpdateStorageProfileRequest& WithFileSystemLocationsToAdd(const Aws::Vector<FileSystemLocation>& value) { SetFileSystemLocationsToAdd(value); return *this;}
-    inline UpdateStorageProfileRequest& WithFileSystemLocationsToAdd(Aws::Vector<FileSystemLocation>&& value) { SetFileSystemLocationsToAdd(std::move(value)); return *this;}
-    inline UpdateStorageProfileRequest& AddFileSystemLocationsToAdd(const FileSystemLocation& value) { m_fileSystemLocationsToAddHasBeenSet = true; m_fileSystemLocationsToAdd.push_back(value); return *this; }
-    inline UpdateStorageProfileRequest& AddFileSystemLocationsToAdd(FileSystemLocation&& value) { m_fileSystemLocationsToAddHasBeenSet = true; m_fileSystemLocationsToAdd.push_back(std::move(value)); return *this; }
+    template<typename FileSystemLocationsToAddT = Aws::Vector<FileSystemLocation>>
+    void SetFileSystemLocationsToAdd(FileSystemLocationsToAddT&& value) { m_fileSystemLocationsToAddHasBeenSet = true; m_fileSystemLocationsToAdd = std::forward<FileSystemLocationsToAddT>(value); }
+    template<typename FileSystemLocationsToAddT = Aws::Vector<FileSystemLocation>>
+    UpdateStorageProfileRequest& WithFileSystemLocationsToAdd(FileSystemLocationsToAddT&& value) { SetFileSystemLocationsToAdd(std::forward<FileSystemLocationsToAddT>(value)); return *this;}
+    template<typename FileSystemLocationsToAddT = FileSystemLocation>
+    UpdateStorageProfileRequest& AddFileSystemLocationsToAdd(FileSystemLocationsToAddT&& value) { m_fileSystemLocationsToAddHasBeenSet = true; m_fileSystemLocationsToAdd.emplace_back(std::forward<FileSystemLocationsToAddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The file system location names to remove.</p>
      */
-    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocationsToRemove() const{ return m_fileSystemLocationsToRemove; }
+    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocationsToRemove() const { return m_fileSystemLocationsToRemove; }
     inline bool FileSystemLocationsToRemoveHasBeenSet() const { return m_fileSystemLocationsToRemoveHasBeenSet; }
-    inline void SetFileSystemLocationsToRemove(const Aws::Vector<FileSystemLocation>& value) { m_fileSystemLocationsToRemoveHasBeenSet = true; m_fileSystemLocationsToRemove = value; }
-    inline void SetFileSystemLocationsToRemove(Aws::Vector<FileSystemLocation>&& value) { m_fileSystemLocationsToRemoveHasBeenSet = true; m_fileSystemLocationsToRemove = std::move(value); }
-    inline UpdateStorageProfileRequest& WithFileSystemLocationsToRemove(const Aws::Vector<FileSystemLocation>& value) { SetFileSystemLocationsToRemove(value); return *this;}
-    inline UpdateStorageProfileRequest& WithFileSystemLocationsToRemove(Aws::Vector<FileSystemLocation>&& value) { SetFileSystemLocationsToRemove(std::move(value)); return *this;}
-    inline UpdateStorageProfileRequest& AddFileSystemLocationsToRemove(const FileSystemLocation& value) { m_fileSystemLocationsToRemoveHasBeenSet = true; m_fileSystemLocationsToRemove.push_back(value); return *this; }
-    inline UpdateStorageProfileRequest& AddFileSystemLocationsToRemove(FileSystemLocation&& value) { m_fileSystemLocationsToRemoveHasBeenSet = true; m_fileSystemLocationsToRemove.push_back(std::move(value)); return *this; }
+    template<typename FileSystemLocationsToRemoveT = Aws::Vector<FileSystemLocation>>
+    void SetFileSystemLocationsToRemove(FileSystemLocationsToRemoveT&& value) { m_fileSystemLocationsToRemoveHasBeenSet = true; m_fileSystemLocationsToRemove = std::forward<FileSystemLocationsToRemoveT>(value); }
+    template<typename FileSystemLocationsToRemoveT = Aws::Vector<FileSystemLocation>>
+    UpdateStorageProfileRequest& WithFileSystemLocationsToRemove(FileSystemLocationsToRemoveT&& value) { SetFileSystemLocationsToRemove(std::forward<FileSystemLocationsToRemoveT>(value)); return *this;}
+    template<typename FileSystemLocationsToRemoveT = FileSystemLocation>
+    UpdateStorageProfileRequest& AddFileSystemLocationsToRemove(FileSystemLocationsToRemoveT&& value) { m_fileSystemLocationsToRemoveHasBeenSet = true; m_fileSystemLocationsToRemove.emplace_back(std::forward<FileSystemLocationsToRemoveT>(value)); return *this; }
     ///@}
   private:
 
@@ -151,7 +141,7 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    StorageProfileOperatingSystemFamily m_osFamily;
+    StorageProfileOperatingSystemFamily m_osFamily{StorageProfileOperatingSystemFamily::NOT_SET};
     bool m_osFamilyHasBeenSet = false;
 
     Aws::Vector<FileSystemLocation> m_fileSystemLocationsToAdd;

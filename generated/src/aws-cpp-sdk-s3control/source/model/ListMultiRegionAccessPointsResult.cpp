@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMultiRegionAccessPointsResult::ListMultiRegionAccessPointsResult()
-{
-}
-
 ListMultiRegionAccessPointsResult::ListMultiRegionAccessPointsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ ListMultiRegionAccessPointsResult& ListMultiRegionAccessPointsResult::operator =
     if(!accessPointsNode.IsNull())
     {
       XmlNode accessPointsMember = accessPointsNode.FirstChild("AccessPoint");
+      m_accessPointsHasBeenSet = !accessPointsMember.IsNull();
       while(!accessPointsMember.IsNull())
       {
         m_accessPoints.push_back(accessPointsMember);
         accessPointsMember = accessPointsMember.NextNode("AccessPoint");
       }
 
+      m_accessPointsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -55,12 +54,14 @@ ListMultiRegionAccessPointsResult& ListMultiRegionAccessPointsResult::operator =
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

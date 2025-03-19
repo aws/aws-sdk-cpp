@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetOptions::AssetOptions() : 
-    m_timezoneHasBeenSet(false),
-    m_weekStart(DayOfTheWeek::NOT_SET),
-    m_weekStartHasBeenSet(false)
-{
-}
-
 AssetOptions::AssetOptions(JsonView jsonValue)
-  : AssetOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssetOptions& AssetOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeekStart"))
   {
     m_weekStart = DayOfTheWeekMapper::GetDayOfTheWeekForName(jsonValue.GetString("WeekStart"));
-
     m_weekStartHasBeenSet = true;
   }
-
   return *this;
 }
 

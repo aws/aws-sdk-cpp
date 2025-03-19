@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure() : 
-    m_customDnsServersHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 DnsServersOptionsModifyStructure::DnsServersOptionsModifyStructure(const XmlNode& xmlNode)
-  : DnsServersOptionsModifyStructure()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ DnsServersOptionsModifyStructure& DnsServersOptionsModifyStructure::operator =(c
     if(!customDnsServersNode.IsNull())
     {
       XmlNode customDnsServersMember = customDnsServersNode.FirstChild("item");
+      m_customDnsServersHasBeenSet = !customDnsServersMember.IsNull();
       while(!customDnsServersMember.IsNull())
       {
         m_customDnsServers.push_back(customDnsServersMember.GetText());

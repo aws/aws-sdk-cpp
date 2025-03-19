@@ -22,7 +22,7 @@ namespace Model
   class UpdateCrlRequest : public RolesAnywhereRequest
   {
   public:
-    AWS_ROLESANYWHERE_API UpdateCrlRequest();
+    AWS_ROLESANYWHERE_API UpdateCrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,44 +37,40 @@ namespace Model
     /**
      * <p>The x509 v3 specified certificate revocation list (CRL).</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCrlData() const{ return m_crlData; }
+    inline const Aws::Utils::ByteBuffer& GetCrlData() const { return m_crlData; }
     inline bool CrlDataHasBeenSet() const { return m_crlDataHasBeenSet; }
-    inline void SetCrlData(const Aws::Utils::ByteBuffer& value) { m_crlDataHasBeenSet = true; m_crlData = value; }
-    inline void SetCrlData(Aws::Utils::ByteBuffer&& value) { m_crlDataHasBeenSet = true; m_crlData = std::move(value); }
-    inline UpdateCrlRequest& WithCrlData(const Aws::Utils::ByteBuffer& value) { SetCrlData(value); return *this;}
-    inline UpdateCrlRequest& WithCrlData(Aws::Utils::ByteBuffer&& value) { SetCrlData(std::move(value)); return *this;}
+    template<typename CrlDataT = Aws::Utils::ByteBuffer>
+    void SetCrlData(CrlDataT&& value) { m_crlDataHasBeenSet = true; m_crlData = std::forward<CrlDataT>(value); }
+    template<typename CrlDataT = Aws::Utils::ByteBuffer>
+    UpdateCrlRequest& WithCrlData(CrlDataT&& value) { SetCrlData(std::forward<CrlDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the certificate revocation list (CRL).</p>
      */
-    inline const Aws::String& GetCrlId() const{ return m_crlId; }
+    inline const Aws::String& GetCrlId() const { return m_crlId; }
     inline bool CrlIdHasBeenSet() const { return m_crlIdHasBeenSet; }
-    inline void SetCrlId(const Aws::String& value) { m_crlIdHasBeenSet = true; m_crlId = value; }
-    inline void SetCrlId(Aws::String&& value) { m_crlIdHasBeenSet = true; m_crlId = std::move(value); }
-    inline void SetCrlId(const char* value) { m_crlIdHasBeenSet = true; m_crlId.assign(value); }
-    inline UpdateCrlRequest& WithCrlId(const Aws::String& value) { SetCrlId(value); return *this;}
-    inline UpdateCrlRequest& WithCrlId(Aws::String&& value) { SetCrlId(std::move(value)); return *this;}
-    inline UpdateCrlRequest& WithCrlId(const char* value) { SetCrlId(value); return *this;}
+    template<typename CrlIdT = Aws::String>
+    void SetCrlId(CrlIdT&& value) { m_crlIdHasBeenSet = true; m_crlId = std::forward<CrlIdT>(value); }
+    template<typename CrlIdT = Aws::String>
+    UpdateCrlRequest& WithCrlId(CrlIdT&& value) { SetCrlId(std::forward<CrlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Crl.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateCrlRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateCrlRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateCrlRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateCrlRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_crlData;
+    Aws::Utils::ByteBuffer m_crlData{};
     bool m_crlDataHasBeenSet = false;
 
     Aws::String m_crlId;

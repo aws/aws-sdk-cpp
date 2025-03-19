@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectEntitiesV2Result::DetectEntitiesV2Result()
-{
-}
-
 DetectEntitiesV2Result::DetectEntitiesV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DetectEntitiesV2Result& DetectEntitiesV2Result::operator =(const Aws::AmazonWebS
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
     }
+    m_entitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnmappedAttributes"))
   {
     Aws::Utils::Array<JsonView> unmappedAttributesJsonList = jsonValue.GetArray("UnmappedAttributes");
@@ -45,26 +41,25 @@ DetectEntitiesV2Result& DetectEntitiesV2Result::operator =(const Aws::AmazonWebS
     {
       m_unmappedAttributes.push_back(unmappedAttributesJsonList[unmappedAttributesIndex].AsObject());
     }
+    m_unmappedAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaginationToken"))
   {
     m_paginationToken = jsonValue.GetString("PaginationToken");
-
+    m_paginationTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
+    m_modelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

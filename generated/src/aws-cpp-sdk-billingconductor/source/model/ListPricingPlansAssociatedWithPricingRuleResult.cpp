@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPricingPlansAssociatedWithPricingRuleResult::ListPricingPlansAssociatedWithPricingRuleResult()
-{
-}
-
 ListPricingPlansAssociatedWithPricingRuleResult::ListPricingPlansAssociatedWithPricingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListPricingPlansAssociatedWithPricingRuleResult& ListPricingPlansAssociatedWithP
   if(jsonValue.ValueExists("BillingPeriod"))
   {
     m_billingPeriod = jsonValue.GetString("BillingPeriod");
-
+    m_billingPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PricingRuleArn"))
   {
     m_pricingRuleArn = jsonValue.GetString("PricingRuleArn");
-
+    m_pricingRuleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PricingPlanArns"))
   {
     Aws::Utils::Array<JsonView> pricingPlanArnsJsonList = jsonValue.GetArray("PricingPlanArns");
@@ -48,20 +42,20 @@ ListPricingPlansAssociatedWithPricingRuleResult& ListPricingPlansAssociatedWithP
     {
       m_pricingPlanArns.push_back(pricingPlanArnsJsonList[pricingPlanArnsIndex].AsString());
     }
+    m_pricingPlanArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

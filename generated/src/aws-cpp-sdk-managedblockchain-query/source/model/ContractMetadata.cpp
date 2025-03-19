@@ -18,16 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-ContractMetadata::ContractMetadata() : 
-    m_nameHasBeenSet(false),
-    m_symbolHasBeenSet(false),
-    m_decimals(0),
-    m_decimalsHasBeenSet(false)
-{
-}
-
 ContractMetadata::ContractMetadata(JsonView jsonValue)
-  : ContractMetadata()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContractMetadata& ContractMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("symbol"))
   {
     m_symbol = jsonValue.GetString("symbol");
-
     m_symbolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decimals"))
   {
     m_decimals = jsonValue.GetInteger("decimals");
-
     m_decimalsHasBeenSet = true;
   }
-
   return *this;
 }
 

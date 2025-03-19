@@ -18,18 +18,7 @@ namespace LaunchWizard
 namespace Model
 {
 
-DeploymentEventDataSummary::DeploymentEventDataSummary() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 DeploymentEventDataSummary::DeploymentEventDataSummary(JsonView jsonValue)
-  : DeploymentEventDataSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DeploymentEventDataSummary& DeploymentEventDataSummary::operator =(JsonView json
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EventStatusMapper::GetEventStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

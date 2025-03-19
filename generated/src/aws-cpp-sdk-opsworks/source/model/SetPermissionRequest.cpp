@@ -12,17 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetPermissionRequest::SetPermissionRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_allowSsh(false),
-    m_allowSshHasBeenSet(false),
-    m_allowSudo(false),
-    m_allowSudoHasBeenSet(false),
-    m_levelHasBeenSet(false)
-{
-}
-
 Aws::String SetPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ContentBlockDeltaEvent::ContentBlockDeltaEvent() : 
-    m_deltaHasBeenSet(false),
-    m_contentBlockIndex(0),
-    m_contentBlockIndexHasBeenSet(false)
-{
-}
-
 ContentBlockDeltaEvent::ContentBlockDeltaEvent(JsonView jsonValue)
-  : ContentBlockDeltaEvent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContentBlockDeltaEvent& ContentBlockDeltaEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("delta"))
   {
     m_delta = jsonValue.GetObject("delta");
-
     m_deltaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentBlockIndex"))
   {
     m_contentBlockIndex = jsonValue.GetInteger("contentBlockIndex");
-
     m_contentBlockIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

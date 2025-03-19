@@ -34,7 +34,7 @@ namespace Model
   class EventDetails
   {
   public:
-    AWS_SESV2_API EventDetails();
+    AWS_SESV2_API EventDetails() = default;
     AWS_SESV2_API EventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API EventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>Information about a <code>Bounce</code> event.</p>
      */
-    inline const Bounce& GetBounce() const{ return m_bounce; }
+    inline const Bounce& GetBounce() const { return m_bounce; }
     inline bool BounceHasBeenSet() const { return m_bounceHasBeenSet; }
-    inline void SetBounce(const Bounce& value) { m_bounceHasBeenSet = true; m_bounce = value; }
-    inline void SetBounce(Bounce&& value) { m_bounceHasBeenSet = true; m_bounce = std::move(value); }
-    inline EventDetails& WithBounce(const Bounce& value) { SetBounce(value); return *this;}
-    inline EventDetails& WithBounce(Bounce&& value) { SetBounce(std::move(value)); return *this;}
+    template<typename BounceT = Bounce>
+    void SetBounce(BounceT&& value) { m_bounceHasBeenSet = true; m_bounce = std::forward<BounceT>(value); }
+    template<typename BounceT = Bounce>
+    EventDetails& WithBounce(BounceT&& value) { SetBounce(std::forward<BounceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a <code>Complaint</code> event.</p>
      */
-    inline const Complaint& GetComplaint() const{ return m_complaint; }
+    inline const Complaint& GetComplaint() const { return m_complaint; }
     inline bool ComplaintHasBeenSet() const { return m_complaintHasBeenSet; }
-    inline void SetComplaint(const Complaint& value) { m_complaintHasBeenSet = true; m_complaint = value; }
-    inline void SetComplaint(Complaint&& value) { m_complaintHasBeenSet = true; m_complaint = std::move(value); }
-    inline EventDetails& WithComplaint(const Complaint& value) { SetComplaint(value); return *this;}
-    inline EventDetails& WithComplaint(Complaint&& value) { SetComplaint(std::move(value)); return *this;}
+    template<typename ComplaintT = Complaint>
+    void SetComplaint(ComplaintT&& value) { m_complaintHasBeenSet = true; m_complaint = std::forward<ComplaintT>(value); }
+    template<typename ComplaintT = Complaint>
+    EventDetails& WithComplaint(ComplaintT&& value) { SetComplaint(std::forward<ComplaintT>(value)); return *this;}
     ///@}
   private:
 

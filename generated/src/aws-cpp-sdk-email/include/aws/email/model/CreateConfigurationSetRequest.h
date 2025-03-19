@@ -28,7 +28,7 @@ namespace Model
   class CreateConfigurationSetRequest : public SESRequest
   {
   public:
-    AWS_SES_API CreateConfigurationSetRequest();
+    AWS_SES_API CreateConfigurationSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,12 @@ namespace Model
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
      */
-    inline const ConfigurationSet& GetConfigurationSet() const{ return m_configurationSet; }
+    inline const ConfigurationSet& GetConfigurationSet() const { return m_configurationSet; }
     inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
-    inline void SetConfigurationSet(const ConfigurationSet& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
-    inline void SetConfigurationSet(ConfigurationSet&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
-    inline CreateConfigurationSetRequest& WithConfigurationSet(const ConfigurationSet& value) { SetConfigurationSet(value); return *this;}
-    inline CreateConfigurationSetRequest& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(std::move(value)); return *this;}
+    template<typename ConfigurationSetT = ConfigurationSet>
+    void SetConfigurationSet(ConfigurationSetT&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::forward<ConfigurationSetT>(value); }
+    template<typename ConfigurationSetT = ConfigurationSet>
+    CreateConfigurationSetRequest& WithConfigurationSet(ConfigurationSetT&& value) { SetConfigurationSet(std::forward<ConfigurationSetT>(value)); return *this;}
     ///@}
   private:
 

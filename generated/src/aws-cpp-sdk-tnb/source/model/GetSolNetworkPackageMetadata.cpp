@@ -18,15 +18,7 @@ namespace tnb
 namespace Model
 {
 
-GetSolNetworkPackageMetadata::GetSolNetworkPackageMetadata() : 
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_nsdHasBeenSet(false)
-{
-}
-
 GetSolNetworkPackageMetadata::GetSolNetworkPackageMetadata(JsonView jsonValue)
-  : GetSolNetworkPackageMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GetSolNetworkPackageMetadata& GetSolNetworkPackageMetadata::operator =(JsonView 
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetString("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsd"))
   {
     m_nsd = jsonValue.GetObject("nsd");
-
     m_nsdHasBeenSet = true;
   }
-
   return *this;
 }
 

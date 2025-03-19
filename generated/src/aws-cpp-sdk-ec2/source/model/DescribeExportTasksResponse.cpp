@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeExportTasksResponse::DescribeExportTasksResponse()
-{
-}
-
 DescribeExportTasksResponse::DescribeExportTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeExportTasksResponse& DescribeExportTasksResponse::operator =(const Aws::
     if(!exportTasksNode.IsNull())
     {
       XmlNode exportTasksMember = exportTasksNode.FirstChild("item");
+      m_exportTasksHasBeenSet = !exportTasksMember.IsNull();
       while(!exportTasksMember.IsNull())
       {
         m_exportTasks.push_back(exportTasksMember);
         exportTasksMember = exportTasksMember.NextNode("item");
       }
 
+      m_exportTasksHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeExportTasksResponse& DescribeExportTasksResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeExportTasksResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

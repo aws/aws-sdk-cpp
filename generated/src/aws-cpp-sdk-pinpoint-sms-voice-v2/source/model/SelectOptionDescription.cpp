@@ -18,15 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-SelectOptionDescription::SelectOptionDescription() : 
-    m_optionHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 SelectOptionDescription::SelectOptionDescription(JsonView jsonValue)
-  : SelectOptionDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SelectOptionDescription& SelectOptionDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Option"))
   {
     m_option = jsonValue.GetString("Option");
-
     m_optionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

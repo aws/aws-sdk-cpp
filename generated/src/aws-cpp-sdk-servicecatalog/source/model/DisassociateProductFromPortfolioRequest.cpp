@@ -12,13 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateProductFromPortfolioRequest::DisassociateProductFromPortfolioRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateProductFromPortfolioRequest::SerializePayload() const
 {
   JsonValue payload;

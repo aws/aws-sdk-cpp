@@ -29,7 +29,7 @@ namespace Model
   class GetTransitGatewayPolicyTableEntriesResponse
   {
   public:
-    AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse();
+    AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse() = default;
     AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>The entries for the transit gateway policy table.</p>
      */
-    inline const Aws::Vector<TransitGatewayPolicyTableEntry>& GetTransitGatewayPolicyTableEntries() const{ return m_transitGatewayPolicyTableEntries; }
-    inline void SetTransitGatewayPolicyTableEntries(const Aws::Vector<TransitGatewayPolicyTableEntry>& value) { m_transitGatewayPolicyTableEntries = value; }
-    inline void SetTransitGatewayPolicyTableEntries(Aws::Vector<TransitGatewayPolicyTableEntry>&& value) { m_transitGatewayPolicyTableEntries = std::move(value); }
-    inline GetTransitGatewayPolicyTableEntriesResponse& WithTransitGatewayPolicyTableEntries(const Aws::Vector<TransitGatewayPolicyTableEntry>& value) { SetTransitGatewayPolicyTableEntries(value); return *this;}
-    inline GetTransitGatewayPolicyTableEntriesResponse& WithTransitGatewayPolicyTableEntries(Aws::Vector<TransitGatewayPolicyTableEntry>&& value) { SetTransitGatewayPolicyTableEntries(std::move(value)); return *this;}
-    inline GetTransitGatewayPolicyTableEntriesResponse& AddTransitGatewayPolicyTableEntries(const TransitGatewayPolicyTableEntry& value) { m_transitGatewayPolicyTableEntries.push_back(value); return *this; }
-    inline GetTransitGatewayPolicyTableEntriesResponse& AddTransitGatewayPolicyTableEntries(TransitGatewayPolicyTableEntry&& value) { m_transitGatewayPolicyTableEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransitGatewayPolicyTableEntry>& GetTransitGatewayPolicyTableEntries() const { return m_transitGatewayPolicyTableEntries; }
+    template<typename TransitGatewayPolicyTableEntriesT = Aws::Vector<TransitGatewayPolicyTableEntry>>
+    void SetTransitGatewayPolicyTableEntries(TransitGatewayPolicyTableEntriesT&& value) { m_transitGatewayPolicyTableEntriesHasBeenSet = true; m_transitGatewayPolicyTableEntries = std::forward<TransitGatewayPolicyTableEntriesT>(value); }
+    template<typename TransitGatewayPolicyTableEntriesT = Aws::Vector<TransitGatewayPolicyTableEntry>>
+    GetTransitGatewayPolicyTableEntriesResponse& WithTransitGatewayPolicyTableEntries(TransitGatewayPolicyTableEntriesT&& value) { SetTransitGatewayPolicyTableEntries(std::forward<TransitGatewayPolicyTableEntriesT>(value)); return *this;}
+    template<typename TransitGatewayPolicyTableEntriesT = TransitGatewayPolicyTableEntry>
+    GetTransitGatewayPolicyTableEntriesResponse& AddTransitGatewayPolicyTableEntries(TransitGatewayPolicyTableEntriesT&& value) { m_transitGatewayPolicyTableEntriesHasBeenSet = true; m_transitGatewayPolicyTableEntries.emplace_back(std::forward<TransitGatewayPolicyTableEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetTransitGatewayPolicyTableEntriesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetTransitGatewayPolicyTableEntriesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetTransitGatewayPolicyTableEntriesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransitGatewayPolicyTableEntry> m_transitGatewayPolicyTableEntries;
+    bool m_transitGatewayPolicyTableEntriesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

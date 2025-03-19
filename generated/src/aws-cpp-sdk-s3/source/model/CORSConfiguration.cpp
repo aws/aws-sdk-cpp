@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-CORSConfiguration::CORSConfiguration() : 
-    m_cORSRulesHasBeenSet(false)
-{
-}
-
 CORSConfiguration::CORSConfiguration(const XmlNode& xmlNode)
-  : CORSConfiguration()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ CORSConfiguration& CORSConfiguration::operator =(const XmlNode& xmlNode)
     if(!cORSRulesNode.IsNull())
     {
       XmlNode cORSRuleMember = cORSRulesNode;
+      m_cORSRulesHasBeenSet = !cORSRuleMember.IsNull();
       while(!cORSRuleMember.IsNull())
       {
         m_cORSRules.push_back(cORSRuleMember);

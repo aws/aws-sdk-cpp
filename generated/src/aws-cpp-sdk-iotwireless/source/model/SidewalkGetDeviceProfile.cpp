@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkGetDeviceProfile::SidewalkGetDeviceProfile() : 
-    m_applicationServerPublicKeyHasBeenSet(false),
-    m_qualificationStatus(false),
-    m_qualificationStatusHasBeenSet(false),
-    m_dakCertificateMetadataHasBeenSet(false)
-{
-}
-
 SidewalkGetDeviceProfile::SidewalkGetDeviceProfile(JsonView jsonValue)
-  : SidewalkGetDeviceProfile()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SidewalkGetDeviceProfile& SidewalkGetDeviceProfile::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ApplicationServerPublicKey"))
   {
     m_applicationServerPublicKey = jsonValue.GetString("ApplicationServerPublicKey");
-
     m_applicationServerPublicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QualificationStatus"))
   {
     m_qualificationStatus = jsonValue.GetBool("QualificationStatus");
-
     m_qualificationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DakCertificateMetadata"))
   {
     Aws::Utils::Array<JsonView> dakCertificateMetadataJsonList = jsonValue.GetArray("DakCertificateMetadata");
@@ -57,7 +44,6 @@ SidewalkGetDeviceProfile& SidewalkGetDeviceProfile::operator =(JsonView jsonValu
     }
     m_dakCertificateMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

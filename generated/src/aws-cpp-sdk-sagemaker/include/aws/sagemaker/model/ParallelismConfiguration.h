@@ -31,7 +31,7 @@ namespace Model
   class ParallelismConfiguration
   {
   public:
-    AWS_SAGEMAKER_API ParallelismConfiguration();
+    AWS_SAGEMAKER_API ParallelismConfiguration() = default;
     AWS_SAGEMAKER_API ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The max number of steps that can be executed in parallel. </p>
      */
-    inline int GetMaxParallelExecutionSteps() const{ return m_maxParallelExecutionSteps; }
+    inline int GetMaxParallelExecutionSteps() const { return m_maxParallelExecutionSteps; }
     inline bool MaxParallelExecutionStepsHasBeenSet() const { return m_maxParallelExecutionStepsHasBeenSet; }
     inline void SetMaxParallelExecutionSteps(int value) { m_maxParallelExecutionStepsHasBeenSet = true; m_maxParallelExecutionSteps = value; }
     inline ParallelismConfiguration& WithMaxParallelExecutionSteps(int value) { SetMaxParallelExecutionSteps(value); return *this;}
     ///@}
   private:
 
-    int m_maxParallelExecutionSteps;
+    int m_maxParallelExecutionSteps{0};
     bool m_maxParallelExecutionStepsHasBeenSet = false;
   };
 

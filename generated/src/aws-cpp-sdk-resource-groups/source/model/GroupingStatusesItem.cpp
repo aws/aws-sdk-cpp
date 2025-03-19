@@ -18,20 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-GroupingStatusesItem::GroupingStatusesItem() : 
-    m_resourceArnHasBeenSet(false),
-    m_action(GroupingType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_status(GroupingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 GroupingStatusesItem::GroupingStatusesItem(JsonView jsonValue)
-  : GroupingStatusesItem()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ GroupingStatusesItem& GroupingStatusesItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = GroupingTypeMapper::GetGroupingTypeForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = GroupingStatusMapper::GetGroupingStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

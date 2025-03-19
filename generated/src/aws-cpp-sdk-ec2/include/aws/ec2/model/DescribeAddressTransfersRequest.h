@@ -22,7 +22,7 @@ namespace Model
   class DescribeAddressTransfersRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeAddressTransfersRequest();
+    AWS_EC2_API DescribeAddressTransfersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
     /**
      * <p>The allocation IDs of Elastic IP addresses.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllocationIds() const{ return m_allocationIds; }
+    inline const Aws::Vector<Aws::String>& GetAllocationIds() const { return m_allocationIds; }
     inline bool AllocationIdsHasBeenSet() const { return m_allocationIdsHasBeenSet; }
-    inline void SetAllocationIds(const Aws::Vector<Aws::String>& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = value; }
-    inline void SetAllocationIds(Aws::Vector<Aws::String>&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::move(value); }
-    inline DescribeAddressTransfersRequest& WithAllocationIds(const Aws::Vector<Aws::String>& value) { SetAllocationIds(value); return *this;}
-    inline DescribeAddressTransfersRequest& WithAllocationIds(Aws::Vector<Aws::String>&& value) { SetAllocationIds(std::move(value)); return *this;}
-    inline DescribeAddressTransfersRequest& AddAllocationIds(const Aws::String& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
-    inline DescribeAddressTransfersRequest& AddAllocationIds(Aws::String&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(std::move(value)); return *this; }
-    inline DescribeAddressTransfersRequest& AddAllocationIds(const char* value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
+    template<typename AllocationIdsT = Aws::Vector<Aws::String>>
+    void SetAllocationIds(AllocationIdsT&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::forward<AllocationIdsT>(value); }
+    template<typename AllocationIdsT = Aws::Vector<Aws::String>>
+    DescribeAddressTransfersRequest& WithAllocationIds(AllocationIdsT&& value) { SetAllocationIds(std::forward<AllocationIdsT>(value)); return *this;}
+    template<typename AllocationIdsT = Aws::String>
+    DescribeAddressTransfersRequest& AddAllocationIds(AllocationIdsT&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.emplace_back(std::forward<AllocationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,21 +56,19 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeAddressTransfersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAddressTransfersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAddressTransfersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAddressTransfersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of address transfers to return in one page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeAddressTransfersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +81,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeAddressTransfersRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -97,10 +94,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

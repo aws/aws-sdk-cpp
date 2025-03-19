@@ -37,7 +37,7 @@ namespace Model
   class ClientVpnAuthenticationRequest
   {
   public:
-    AWS_EC2_API ClientVpnAuthenticationRequest();
+    AWS_EC2_API ClientVpnAuthenticationRequest() = default;
     AWS_EC2_API ClientVpnAuthenticationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClientVpnAuthenticationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,10 @@ namespace Model
     /**
      * <p>The type of client authentication to be used.</p>
      */
-    inline const ClientVpnAuthenticationType& GetType() const{ return m_type; }
+    inline ClientVpnAuthenticationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ClientVpnAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ClientVpnAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ClientVpnAuthenticationRequest& WithType(const ClientVpnAuthenticationType& value) { SetType(value); return *this;}
-    inline ClientVpnAuthenticationRequest& WithType(ClientVpnAuthenticationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ClientVpnAuthenticationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ClientVpnAuthenticationRequest& WithType(ClientVpnAuthenticationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * provide this information if <b>Type</b> is
      * <code>directory-service-authentication</code>.</p>
      */
-    inline const DirectoryServiceAuthenticationRequest& GetActiveDirectory() const{ return m_activeDirectory; }
+    inline const DirectoryServiceAuthenticationRequest& GetActiveDirectory() const { return m_activeDirectory; }
     inline bool ActiveDirectoryHasBeenSet() const { return m_activeDirectoryHasBeenSet; }
-    inline void SetActiveDirectory(const DirectoryServiceAuthenticationRequest& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = value; }
-    inline void SetActiveDirectory(DirectoryServiceAuthenticationRequest&& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = std::move(value); }
-    inline ClientVpnAuthenticationRequest& WithActiveDirectory(const DirectoryServiceAuthenticationRequest& value) { SetActiveDirectory(value); return *this;}
-    inline ClientVpnAuthenticationRequest& WithActiveDirectory(DirectoryServiceAuthenticationRequest&& value) { SetActiveDirectory(std::move(value)); return *this;}
+    template<typename ActiveDirectoryT = DirectoryServiceAuthenticationRequest>
+    void SetActiveDirectory(ActiveDirectoryT&& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = std::forward<ActiveDirectoryT>(value); }
+    template<typename ActiveDirectoryT = DirectoryServiceAuthenticationRequest>
+    ClientVpnAuthenticationRequest& WithActiveDirectory(ActiveDirectoryT&& value) { SetActiveDirectory(std::forward<ActiveDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * You must provide this information if <b>Type</b> is
      * <code>certificate-authentication</code>.</p>
      */
-    inline const CertificateAuthenticationRequest& GetMutualAuthentication() const{ return m_mutualAuthentication; }
+    inline const CertificateAuthenticationRequest& GetMutualAuthentication() const { return m_mutualAuthentication; }
     inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
-    inline void SetMutualAuthentication(const CertificateAuthenticationRequest& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = value; }
-    inline void SetMutualAuthentication(CertificateAuthenticationRequest&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::move(value); }
-    inline ClientVpnAuthenticationRequest& WithMutualAuthentication(const CertificateAuthenticationRequest& value) { SetMutualAuthentication(value); return *this;}
-    inline ClientVpnAuthenticationRequest& WithMutualAuthentication(CertificateAuthenticationRequest&& value) { SetMutualAuthentication(std::move(value)); return *this;}
+    template<typename MutualAuthenticationT = CertificateAuthenticationRequest>
+    void SetMutualAuthentication(MutualAuthenticationT&& value) { m_mutualAuthenticationHasBeenSet = true; m_mutualAuthentication = std::forward<MutualAuthenticationT>(value); }
+    template<typename MutualAuthenticationT = CertificateAuthenticationRequest>
+    ClientVpnAuthenticationRequest& WithMutualAuthentication(MutualAuthenticationT&& value) { SetMutualAuthentication(std::forward<MutualAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,16 +89,16 @@ namespace Model
      * You must provide this information if <b>Type</b> is
      * <code>federated-authentication</code>.</p>
      */
-    inline const FederatedAuthenticationRequest& GetFederatedAuthentication() const{ return m_federatedAuthentication; }
+    inline const FederatedAuthenticationRequest& GetFederatedAuthentication() const { return m_federatedAuthentication; }
     inline bool FederatedAuthenticationHasBeenSet() const { return m_federatedAuthenticationHasBeenSet; }
-    inline void SetFederatedAuthentication(const FederatedAuthenticationRequest& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = value; }
-    inline void SetFederatedAuthentication(FederatedAuthenticationRequest&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::move(value); }
-    inline ClientVpnAuthenticationRequest& WithFederatedAuthentication(const FederatedAuthenticationRequest& value) { SetFederatedAuthentication(value); return *this;}
-    inline ClientVpnAuthenticationRequest& WithFederatedAuthentication(FederatedAuthenticationRequest&& value) { SetFederatedAuthentication(std::move(value)); return *this;}
+    template<typename FederatedAuthenticationT = FederatedAuthenticationRequest>
+    void SetFederatedAuthentication(FederatedAuthenticationT&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::forward<FederatedAuthenticationT>(value); }
+    template<typename FederatedAuthenticationT = FederatedAuthenticationRequest>
+    ClientVpnAuthenticationRequest& WithFederatedAuthentication(FederatedAuthenticationT&& value) { SetFederatedAuthentication(std::forward<FederatedAuthenticationT>(value)); return *this;}
     ///@}
   private:
 
-    ClientVpnAuthenticationType m_type;
+    ClientVpnAuthenticationType m_type{ClientVpnAuthenticationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     DirectoryServiceAuthenticationRequest m_activeDirectory;

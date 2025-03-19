@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentRequires::DocumentRequires() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_requireTypeHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
-{
-}
-
 DocumentRequires::DocumentRequires(JsonView jsonValue)
-  : DocumentRequires()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DocumentRequires& DocumentRequires::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireType"))
   {
     m_requireType = jsonValue.GetString("RequireType");
-
     m_requireTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionName"))
   {
     m_versionName = jsonValue.GetString("VersionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

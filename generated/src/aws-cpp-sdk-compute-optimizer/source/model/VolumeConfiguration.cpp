@@ -18,25 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-VolumeConfiguration::VolumeConfiguration() : 
-    m_volumeTypeHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeBaselineIOPS(0),
-    m_volumeBaselineIOPSHasBeenSet(false),
-    m_volumeBurstIOPS(0),
-    m_volumeBurstIOPSHasBeenSet(false),
-    m_volumeBaselineThroughput(0),
-    m_volumeBaselineThroughputHasBeenSet(false),
-    m_volumeBurstThroughput(0),
-    m_volumeBurstThroughputHasBeenSet(false),
-    m_rootVolume(false),
-    m_rootVolumeHasBeenSet(false)
-{
-}
-
 VolumeConfiguration::VolumeConfiguration(JsonView jsonValue)
-  : VolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ VolumeConfiguration& VolumeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("volumeType"))
   {
     m_volumeType = jsonValue.GetString("volumeType");
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeSize"))
   {
     m_volumeSize = jsonValue.GetInteger("volumeSize");
-
     m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeBaselineIOPS"))
   {
     m_volumeBaselineIOPS = jsonValue.GetInteger("volumeBaselineIOPS");
-
     m_volumeBaselineIOPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeBurstIOPS"))
   {
     m_volumeBurstIOPS = jsonValue.GetInteger("volumeBurstIOPS");
-
     m_volumeBurstIOPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeBaselineThroughput"))
   {
     m_volumeBaselineThroughput = jsonValue.GetInteger("volumeBaselineThroughput");
-
     m_volumeBaselineThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeBurstThroughput"))
   {
     m_volumeBurstThroughput = jsonValue.GetInteger("volumeBurstThroughput");
-
     m_volumeBurstThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootVolume"))
   {
     m_rootVolume = jsonValue.GetBool("rootVolume");
-
     m_rootVolumeHasBeenSet = true;
   }
-
   return *this;
 }
 

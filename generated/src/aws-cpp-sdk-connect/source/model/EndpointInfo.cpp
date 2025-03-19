@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EndpointInfo::EndpointInfo() : 
-    m_type(EndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 EndpointInfo::EndpointInfo(JsonView jsonValue)
-  : EndpointInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EndpointInfo& EndpointInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

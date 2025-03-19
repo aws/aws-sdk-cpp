@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-BulkEmailDestination::BulkEmailDestination() : 
-    m_destinationHasBeenSet(false),
-    m_replacementTagsHasBeenSet(false),
-    m_replacementTemplateDataHasBeenSet(false)
-{
-}
-
 BulkEmailDestination::BulkEmailDestination(const XmlNode& xmlNode)
-  : BulkEmailDestination()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ BulkEmailDestination& BulkEmailDestination::operator =(const XmlNode& xmlNode)
     if(!replacementTagsNode.IsNull())
     {
       XmlNode replacementTagsMember = replacementTagsNode.FirstChild("member");
+      m_replacementTagsHasBeenSet = !replacementTagsMember.IsNull();
       while(!replacementTagsMember.IsNull())
       {
         m_replacementTags.push_back(replacementTagsMember);

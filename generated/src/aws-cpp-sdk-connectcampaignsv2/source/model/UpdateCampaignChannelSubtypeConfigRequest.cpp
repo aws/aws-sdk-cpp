@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignChannelSubtypeConfigRequest::UpdateCampaignChannelSubtypeConfigRequest() : 
-    m_idHasBeenSet(false),
-    m_channelSubtypeConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignChannelSubtypeConfigRequest::SerializePayload() const
 {
   JsonValue payload;

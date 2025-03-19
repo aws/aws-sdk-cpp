@@ -18,16 +18,7 @@ namespace ECR
 namespace Model
 {
 
-RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure() : 
-    m_repositoryNameHasBeenSet(false),
-    m_failureCode(ScanningConfigurationFailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 RepositoryScanningConfigurationFailure::RepositoryScanningConfigurationFailure(JsonView jsonValue)
-  : RepositoryScanningConfigurationFailure()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RepositoryScanningConfigurationFailure& RepositoryScanningConfigurationFailure::
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = ScanningConfigurationFailureCodeMapper::GetScanningConfigurationFailureCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

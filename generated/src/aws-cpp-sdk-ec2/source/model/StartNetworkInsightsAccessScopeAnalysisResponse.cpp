@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartNetworkInsightsAccessScopeAnalysisResponse::StartNetworkInsightsAccessScopeAnalysisResponse()
-{
-}
-
 StartNetworkInsightsAccessScopeAnalysisResponse::StartNetworkInsightsAccessScopeAnalysisResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ StartNetworkInsightsAccessScopeAnalysisResponse& StartNetworkInsightsAccessScope
     if(!networkInsightsAccessScopeAnalysisNode.IsNull())
     {
       m_networkInsightsAccessScopeAnalysis = networkInsightsAccessScopeAnalysisNode;
+      m_networkInsightsAccessScopeAnalysisHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ StartNetworkInsightsAccessScopeAnalysisResponse& StartNetworkInsightsAccessScope
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::StartNetworkInsightsAccessScopeAnalysisResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

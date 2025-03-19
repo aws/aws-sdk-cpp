@@ -33,7 +33,7 @@ namespace Model
   class FunctionDefinitionVersion
   {
   public:
-    AWS_GREENGRASS_API FunctionDefinitionVersion();
+    AWS_GREENGRASS_API FunctionDefinitionVersion() = default;
     AWS_GREENGRASS_API FunctionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API FunctionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
      * The default configuration that applies to all Lambda functions in this function
      * definition version. Individual Lambda functions can override these settings.
      */
-    inline const FunctionDefaultConfig& GetDefaultConfig() const{ return m_defaultConfig; }
+    inline const FunctionDefaultConfig& GetDefaultConfig() const { return m_defaultConfig; }
     inline bool DefaultConfigHasBeenSet() const { return m_defaultConfigHasBeenSet; }
-    inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
-    inline void SetDefaultConfig(FunctionDefaultConfig&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::move(value); }
-    inline FunctionDefinitionVersion& WithDefaultConfig(const FunctionDefaultConfig& value) { SetDefaultConfig(value); return *this;}
-    inline FunctionDefinitionVersion& WithDefaultConfig(FunctionDefaultConfig&& value) { SetDefaultConfig(std::move(value)); return *this;}
+    template<typename DefaultConfigT = FunctionDefaultConfig>
+    void SetDefaultConfig(DefaultConfigT&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::forward<DefaultConfigT>(value); }
+    template<typename DefaultConfigT = FunctionDefaultConfig>
+    FunctionDefinitionVersion& WithDefaultConfig(DefaultConfigT&& value) { SetDefaultConfig(std::forward<DefaultConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of Lambda functions in this function definition version.
      */
-    inline const Aws::Vector<Function>& GetFunctions() const{ return m_functions; }
+    inline const Aws::Vector<Function>& GetFunctions() const { return m_functions; }
     inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
-    inline void SetFunctions(const Aws::Vector<Function>& value) { m_functionsHasBeenSet = true; m_functions = value; }
-    inline void SetFunctions(Aws::Vector<Function>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
-    inline FunctionDefinitionVersion& WithFunctions(const Aws::Vector<Function>& value) { SetFunctions(value); return *this;}
-    inline FunctionDefinitionVersion& WithFunctions(Aws::Vector<Function>&& value) { SetFunctions(std::move(value)); return *this;}
-    inline FunctionDefinitionVersion& AddFunctions(const Function& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
-    inline FunctionDefinitionVersion& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
+    template<typename FunctionsT = Aws::Vector<Function>>
+    void SetFunctions(FunctionsT&& value) { m_functionsHasBeenSet = true; m_functions = std::forward<FunctionsT>(value); }
+    template<typename FunctionsT = Aws::Vector<Function>>
+    FunctionDefinitionVersion& WithFunctions(FunctionsT&& value) { SetFunctions(std::forward<FunctionsT>(value)); return *this;}
+    template<typename FunctionsT = Function>
+    FunctionDefinitionVersion& AddFunctions(FunctionsT&& value) { m_functionsHasBeenSet = true; m_functions.emplace_back(std::forward<FunctionsT>(value)); return *this; }
     ///@}
   private:
 

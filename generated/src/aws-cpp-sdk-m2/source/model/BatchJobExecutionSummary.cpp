@@ -18,24 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-BatchJobExecutionSummary::BatchJobExecutionSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_batchJobIdentifierHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobType(BatchJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_returnCodeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(BatchJobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 BatchJobExecutionSummary::BatchJobExecutionSummary(JsonView jsonValue)
-  : BatchJobExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ BatchJobExecutionSummary& BatchJobExecutionSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchJobIdentifier"))
   {
     m_batchJobIdentifier = jsonValue.GetObject("batchJobIdentifier");
-
     m_batchJobIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobType"))
   {
     m_jobType = BatchJobTypeMapper::GetBatchJobTypeForName(jsonValue.GetString("jobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("returnCode"))
   {
     m_returnCode = jsonValue.GetString("returnCode");
-
     m_returnCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BatchJobExecutionStatusMapper::GetBatchJobExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

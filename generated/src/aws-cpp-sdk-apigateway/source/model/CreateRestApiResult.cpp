@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRestApiResult::CreateRestApiResult() : 
-    m_minimumCompressionSize(0),
-    m_apiKeySource(ApiKeySourceType::NOT_SET),
-    m_disableExecuteApiEndpoint(false)
-{
-}
-
 CreateRestApiResult::CreateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateRestApiResult()
 {
   *this = result;
 }
@@ -36,33 +28,28 @@ CreateRestApiResult& CreateRestApiResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
+    m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
@@ -70,8 +57,8 @@ CreateRestApiResult& CreateRestApiResult::operator =(const Aws::AmazonWebService
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
+    m_warningsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("binaryMediaTypes"))
   {
     Aws::Utils::Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
@@ -79,32 +66,28 @@ CreateRestApiResult& CreateRestApiResult::operator =(const Aws::AmazonWebService
     {
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
     }
+    m_binaryMediaTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumCompressionSize"))
   {
     m_minimumCompressionSize = jsonValue.GetInteger("minimumCompressionSize");
-
+    m_minimumCompressionSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKeySource"))
   {
     m_apiKeySource = ApiKeySourceTypeMapper::GetApiKeySourceTypeForName(jsonValue.GetString("apiKeySource"));
-
+    m_apiKeySourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointConfiguration"))
   {
     m_endpointConfiguration = jsonValue.GetObject("endpointConfiguration");
-
+    m_endpointConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetString("policy");
-
+    m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -112,26 +95,25 @@ CreateRestApiResult& CreateRestApiResult::operator =(const Aws::AmazonWebService
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
   {
     m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
-
+    m_disableExecuteApiEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootResourceId"))
   {
     m_rootResourceId = jsonValue.GetString("rootResourceId");
-
+    m_rootResourceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

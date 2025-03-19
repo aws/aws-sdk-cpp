@@ -54,7 +54,7 @@ namespace Model
   class AutoSnapshotAddOnRequest
   {
   public:
-    AWS_LIGHTSAIL_API AutoSnapshotAddOnRequest();
+    AWS_LIGHTSAIL_API AutoSnapshotAddOnRequest() = default;
     AWS_LIGHTSAIL_API AutoSnapshotAddOnRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API AutoSnapshotAddOnRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,14 +68,12 @@ namespace Model
      * (UTC).</p> </li> <li> <p>The snapshot will be automatically created between the
      * time specified and up to 45 minutes after.</p> </li> </ul>
      */
-    inline const Aws::String& GetSnapshotTimeOfDay() const{ return m_snapshotTimeOfDay; }
+    inline const Aws::String& GetSnapshotTimeOfDay() const { return m_snapshotTimeOfDay; }
     inline bool SnapshotTimeOfDayHasBeenSet() const { return m_snapshotTimeOfDayHasBeenSet; }
-    inline void SetSnapshotTimeOfDay(const Aws::String& value) { m_snapshotTimeOfDayHasBeenSet = true; m_snapshotTimeOfDay = value; }
-    inline void SetSnapshotTimeOfDay(Aws::String&& value) { m_snapshotTimeOfDayHasBeenSet = true; m_snapshotTimeOfDay = std::move(value); }
-    inline void SetSnapshotTimeOfDay(const char* value) { m_snapshotTimeOfDayHasBeenSet = true; m_snapshotTimeOfDay.assign(value); }
-    inline AutoSnapshotAddOnRequest& WithSnapshotTimeOfDay(const Aws::String& value) { SetSnapshotTimeOfDay(value); return *this;}
-    inline AutoSnapshotAddOnRequest& WithSnapshotTimeOfDay(Aws::String&& value) { SetSnapshotTimeOfDay(std::move(value)); return *this;}
-    inline AutoSnapshotAddOnRequest& WithSnapshotTimeOfDay(const char* value) { SetSnapshotTimeOfDay(value); return *this;}
+    template<typename SnapshotTimeOfDayT = Aws::String>
+    void SetSnapshotTimeOfDay(SnapshotTimeOfDayT&& value) { m_snapshotTimeOfDayHasBeenSet = true; m_snapshotTimeOfDay = std::forward<SnapshotTimeOfDayT>(value); }
+    template<typename SnapshotTimeOfDayT = Aws::String>
+    AutoSnapshotAddOnRequest& WithSnapshotTimeOfDay(SnapshotTimeOfDayT&& value) { SetSnapshotTimeOfDay(std::forward<SnapshotTimeOfDayT>(value)); return *this;}
     ///@}
   private:
 

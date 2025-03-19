@@ -26,7 +26,7 @@ namespace Model
   class PutConfigurationAggregatorRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutConfigurationAggregatorRequest();
+    AWS_CONFIGSERVICE_API PutConfigurationAggregatorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,54 +43,52 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator.</p>
      */
-    inline const Aws::String& GetConfigurationAggregatorName() const{ return m_configurationAggregatorName; }
+    inline const Aws::String& GetConfigurationAggregatorName() const { return m_configurationAggregatorName; }
     inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
-    inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
-    inline void SetConfigurationAggregatorName(Aws::String&& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = std::move(value); }
-    inline void SetConfigurationAggregatorName(const char* value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName.assign(value); }
-    inline PutConfigurationAggregatorRequest& WithConfigurationAggregatorName(const Aws::String& value) { SetConfigurationAggregatorName(value); return *this;}
-    inline PutConfigurationAggregatorRequest& WithConfigurationAggregatorName(Aws::String&& value) { SetConfigurationAggregatorName(std::move(value)); return *this;}
-    inline PutConfigurationAggregatorRequest& WithConfigurationAggregatorName(const char* value) { SetConfigurationAggregatorName(value); return *this;}
+    template<typename ConfigurationAggregatorNameT = Aws::String>
+    void SetConfigurationAggregatorName(ConfigurationAggregatorNameT&& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = std::forward<ConfigurationAggregatorNameT>(value); }
+    template<typename ConfigurationAggregatorNameT = Aws::String>
+    PutConfigurationAggregatorRequest& WithConfigurationAggregatorName(ConfigurationAggregatorNameT&& value) { SetConfigurationAggregatorName(std::forward<ConfigurationAggregatorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of AccountAggregationSource object. </p>
      */
-    inline const Aws::Vector<AccountAggregationSource>& GetAccountAggregationSources() const{ return m_accountAggregationSources; }
+    inline const Aws::Vector<AccountAggregationSource>& GetAccountAggregationSources() const { return m_accountAggregationSources; }
     inline bool AccountAggregationSourcesHasBeenSet() const { return m_accountAggregationSourcesHasBeenSet; }
-    inline void SetAccountAggregationSources(const Aws::Vector<AccountAggregationSource>& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources = value; }
-    inline void SetAccountAggregationSources(Aws::Vector<AccountAggregationSource>&& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources = std::move(value); }
-    inline PutConfigurationAggregatorRequest& WithAccountAggregationSources(const Aws::Vector<AccountAggregationSource>& value) { SetAccountAggregationSources(value); return *this;}
-    inline PutConfigurationAggregatorRequest& WithAccountAggregationSources(Aws::Vector<AccountAggregationSource>&& value) { SetAccountAggregationSources(std::move(value)); return *this;}
-    inline PutConfigurationAggregatorRequest& AddAccountAggregationSources(const AccountAggregationSource& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources.push_back(value); return *this; }
-    inline PutConfigurationAggregatorRequest& AddAccountAggregationSources(AccountAggregationSource&& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources.push_back(std::move(value)); return *this; }
+    template<typename AccountAggregationSourcesT = Aws::Vector<AccountAggregationSource>>
+    void SetAccountAggregationSources(AccountAggregationSourcesT&& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources = std::forward<AccountAggregationSourcesT>(value); }
+    template<typename AccountAggregationSourcesT = Aws::Vector<AccountAggregationSource>>
+    PutConfigurationAggregatorRequest& WithAccountAggregationSources(AccountAggregationSourcesT&& value) { SetAccountAggregationSources(std::forward<AccountAggregationSourcesT>(value)); return *this;}
+    template<typename AccountAggregationSourcesT = AccountAggregationSource>
+    PutConfigurationAggregatorRequest& AddAccountAggregationSources(AccountAggregationSourcesT&& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources.emplace_back(std::forward<AccountAggregationSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An OrganizationAggregationSource object.</p>
      */
-    inline const OrganizationAggregationSource& GetOrganizationAggregationSource() const{ return m_organizationAggregationSource; }
+    inline const OrganizationAggregationSource& GetOrganizationAggregationSource() const { return m_organizationAggregationSource; }
     inline bool OrganizationAggregationSourceHasBeenSet() const { return m_organizationAggregationSourceHasBeenSet; }
-    inline void SetOrganizationAggregationSource(const OrganizationAggregationSource& value) { m_organizationAggregationSourceHasBeenSet = true; m_organizationAggregationSource = value; }
-    inline void SetOrganizationAggregationSource(OrganizationAggregationSource&& value) { m_organizationAggregationSourceHasBeenSet = true; m_organizationAggregationSource = std::move(value); }
-    inline PutConfigurationAggregatorRequest& WithOrganizationAggregationSource(const OrganizationAggregationSource& value) { SetOrganizationAggregationSource(value); return *this;}
-    inline PutConfigurationAggregatorRequest& WithOrganizationAggregationSource(OrganizationAggregationSource&& value) { SetOrganizationAggregationSource(std::move(value)); return *this;}
+    template<typename OrganizationAggregationSourceT = OrganizationAggregationSource>
+    void SetOrganizationAggregationSource(OrganizationAggregationSourceT&& value) { m_organizationAggregationSourceHasBeenSet = true; m_organizationAggregationSource = std::forward<OrganizationAggregationSourceT>(value); }
+    template<typename OrganizationAggregationSourceT = OrganizationAggregationSource>
+    PutConfigurationAggregatorRequest& WithOrganizationAggregationSource(OrganizationAggregationSourceT&& value) { SetOrganizationAggregationSource(std::forward<OrganizationAggregationSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of tag object.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutConfigurationAggregatorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutConfigurationAggregatorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutConfigurationAggregatorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutConfigurationAggregatorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutConfigurationAggregatorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutConfigurationAggregatorRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,12 +96,12 @@ namespace Model
      * <p>An object to filter configuration recorders in an aggregator. Either
      * <code>ResourceType</code> or <code>ServicePrincipal</code> is required.</p>
      */
-    inline const AggregatorFilters& GetAggregatorFilters() const{ return m_aggregatorFilters; }
+    inline const AggregatorFilters& GetAggregatorFilters() const { return m_aggregatorFilters; }
     inline bool AggregatorFiltersHasBeenSet() const { return m_aggregatorFiltersHasBeenSet; }
-    inline void SetAggregatorFilters(const AggregatorFilters& value) { m_aggregatorFiltersHasBeenSet = true; m_aggregatorFilters = value; }
-    inline void SetAggregatorFilters(AggregatorFilters&& value) { m_aggregatorFiltersHasBeenSet = true; m_aggregatorFilters = std::move(value); }
-    inline PutConfigurationAggregatorRequest& WithAggregatorFilters(const AggregatorFilters& value) { SetAggregatorFilters(value); return *this;}
-    inline PutConfigurationAggregatorRequest& WithAggregatorFilters(AggregatorFilters&& value) { SetAggregatorFilters(std::move(value)); return *this;}
+    template<typename AggregatorFiltersT = AggregatorFilters>
+    void SetAggregatorFilters(AggregatorFiltersT&& value) { m_aggregatorFiltersHasBeenSet = true; m_aggregatorFilters = std::forward<AggregatorFiltersT>(value); }
+    template<typename AggregatorFiltersT = AggregatorFilters>
+    PutConfigurationAggregatorRequest& WithAggregatorFilters(AggregatorFiltersT&& value) { SetAggregatorFilters(std::forward<AggregatorFiltersT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterContainerInstanceRequest::DeregisterContainerInstanceRequest() : 
-    m_clusterHasBeenSet(false),
-    m_containerInstanceHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterContainerInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

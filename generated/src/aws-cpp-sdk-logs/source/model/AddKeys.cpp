@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-AddKeys::AddKeys() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 AddKeys::AddKeys(JsonView jsonValue)
-  : AddKeys()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AddKeys& AddKeys::operator =(JsonView jsonValue)
     }
     m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

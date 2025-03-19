@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteToll::RouteToll() : 
-    m_countryHasBeenSet(false),
-    m_paymentSitesHasBeenSet(false),
-    m_ratesHasBeenSet(false),
-    m_systemsHasBeenSet(false)
-{
-}
-
 RouteToll::RouteToll(JsonView jsonValue)
-  : RouteToll()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ RouteToll& RouteToll::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentSites"))
   {
     Aws::Utils::Array<JsonView> paymentSitesJsonList = jsonValue.GetArray("PaymentSites");
@@ -50,7 +39,6 @@ RouteToll& RouteToll::operator =(JsonView jsonValue)
     }
     m_paymentSitesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rates"))
   {
     Aws::Utils::Array<JsonView> ratesJsonList = jsonValue.GetArray("Rates");
@@ -60,7 +48,6 @@ RouteToll& RouteToll::operator =(JsonView jsonValue)
     }
     m_ratesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Systems"))
   {
     Aws::Utils::Array<JsonView> systemsJsonList = jsonValue.GetArray("Systems");
@@ -70,7 +57,6 @@ RouteToll& RouteToll::operator =(JsonView jsonValue)
     }
     m_systemsHasBeenSet = true;
   }
-
   return *this;
 }
 

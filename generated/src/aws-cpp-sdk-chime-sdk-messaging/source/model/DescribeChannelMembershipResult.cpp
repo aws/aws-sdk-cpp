@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeChannelMembershipResult::DescribeChannelMembershipResult()
-{
-}
-
 DescribeChannelMembershipResult::DescribeChannelMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeChannelMembershipResult& DescribeChannelMembershipResult::operator =(con
   if(jsonValue.ValueExists("ChannelMembership"))
   {
     m_channelMembership = jsonValue.GetObject("ChannelMembership");
-
+    m_channelMembershipHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

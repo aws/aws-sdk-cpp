@@ -30,7 +30,7 @@ namespace Model
   class ExecuteQueryResult
   {
   public:
-    AWS_IOTTWINMAKER_API ExecuteQueryResult();
+    AWS_IOTTWINMAKER_API ExecuteQueryResult() = default;
     AWS_IOTTWINMAKER_API ExecuteQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API ExecuteQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,60 +39,60 @@ namespace Model
     /**
      * <p>A list of ColumnDescription objects.</p>
      */
-    inline const Aws::Vector<ColumnDescription>& GetColumnDescriptions() const{ return m_columnDescriptions; }
-    inline void SetColumnDescriptions(const Aws::Vector<ColumnDescription>& value) { m_columnDescriptions = value; }
-    inline void SetColumnDescriptions(Aws::Vector<ColumnDescription>&& value) { m_columnDescriptions = std::move(value); }
-    inline ExecuteQueryResult& WithColumnDescriptions(const Aws::Vector<ColumnDescription>& value) { SetColumnDescriptions(value); return *this;}
-    inline ExecuteQueryResult& WithColumnDescriptions(Aws::Vector<ColumnDescription>&& value) { SetColumnDescriptions(std::move(value)); return *this;}
-    inline ExecuteQueryResult& AddColumnDescriptions(const ColumnDescription& value) { m_columnDescriptions.push_back(value); return *this; }
-    inline ExecuteQueryResult& AddColumnDescriptions(ColumnDescription&& value) { m_columnDescriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ColumnDescription>& GetColumnDescriptions() const { return m_columnDescriptions; }
+    template<typename ColumnDescriptionsT = Aws::Vector<ColumnDescription>>
+    void SetColumnDescriptions(ColumnDescriptionsT&& value) { m_columnDescriptionsHasBeenSet = true; m_columnDescriptions = std::forward<ColumnDescriptionsT>(value); }
+    template<typename ColumnDescriptionsT = Aws::Vector<ColumnDescription>>
+    ExecuteQueryResult& WithColumnDescriptions(ColumnDescriptionsT&& value) { SetColumnDescriptions(std::forward<ColumnDescriptionsT>(value)); return *this;}
+    template<typename ColumnDescriptionsT = ColumnDescription>
+    ExecuteQueryResult& AddColumnDescriptions(ColumnDescriptionsT&& value) { m_columnDescriptionsHasBeenSet = true; m_columnDescriptions.emplace_back(std::forward<ColumnDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Represents a single row in the query results.</p>
      */
-    inline const Aws::Vector<Row>& GetRows() const{ return m_rows; }
-    inline void SetRows(const Aws::Vector<Row>& value) { m_rows = value; }
-    inline void SetRows(Aws::Vector<Row>&& value) { m_rows = std::move(value); }
-    inline ExecuteQueryResult& WithRows(const Aws::Vector<Row>& value) { SetRows(value); return *this;}
-    inline ExecuteQueryResult& WithRows(Aws::Vector<Row>&& value) { SetRows(std::move(value)); return *this;}
-    inline ExecuteQueryResult& AddRows(const Row& value) { m_rows.push_back(value); return *this; }
-    inline ExecuteQueryResult& AddRows(Row&& value) { m_rows.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Row>& GetRows() const { return m_rows; }
+    template<typename RowsT = Aws::Vector<Row>>
+    void SetRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows = std::forward<RowsT>(value); }
+    template<typename RowsT = Aws::Vector<Row>>
+    ExecuteQueryResult& WithRows(RowsT&& value) { SetRows(std::forward<RowsT>(value)); return *this;}
+    template<typename RowsT = Row>
+    ExecuteQueryResult& AddRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows.emplace_back(std::forward<RowsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The string that specifies the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ExecuteQueryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ExecuteQueryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ExecuteQueryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ExecuteQueryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExecuteQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExecuteQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExecuteQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExecuteQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ColumnDescription> m_columnDescriptions;
+    bool m_columnDescriptionsHasBeenSet = false;
 
     Aws::Vector<Row> m_rows;
+    bool m_rowsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

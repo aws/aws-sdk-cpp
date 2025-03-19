@@ -34,7 +34,7 @@ namespace Model
   class OrganizationConformancePackStatus
   {
   public:
-    AWS_CONFIGSERVICE_API OrganizationConformancePackStatus();
+    AWS_CONFIGSERVICE_API OrganizationConformancePackStatus() = default;
     AWS_CONFIGSERVICE_API OrganizationConformancePackStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API OrganizationConformancePackStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name that you assign to organization conformance pack.</p>
      */
-    inline const Aws::String& GetOrganizationConformancePackName() const{ return m_organizationConformancePackName; }
+    inline const Aws::String& GetOrganizationConformancePackName() const { return m_organizationConformancePackName; }
     inline bool OrganizationConformancePackNameHasBeenSet() const { return m_organizationConformancePackNameHasBeenSet; }
-    inline void SetOrganizationConformancePackName(const Aws::String& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = value; }
-    inline void SetOrganizationConformancePackName(Aws::String&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::move(value); }
-    inline void SetOrganizationConformancePackName(const char* value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName.assign(value); }
-    inline OrganizationConformancePackStatus& WithOrganizationConformancePackName(const Aws::String& value) { SetOrganizationConformancePackName(value); return *this;}
-    inline OrganizationConformancePackStatus& WithOrganizationConformancePackName(Aws::String&& value) { SetOrganizationConformancePackName(std::move(value)); return *this;}
-    inline OrganizationConformancePackStatus& WithOrganizationConformancePackName(const char* value) { SetOrganizationConformancePackName(value); return *this;}
+    template<typename OrganizationConformancePackNameT = Aws::String>
+    void SetOrganizationConformancePackName(OrganizationConformancePackNameT&& value) { m_organizationConformancePackNameHasBeenSet = true; m_organizationConformancePackName = std::forward<OrganizationConformancePackNameT>(value); }
+    template<typename OrganizationConformancePackNameT = Aws::String>
+    OrganizationConformancePackStatus& WithOrganizationConformancePackName(OrganizationConformancePackNameT&& value) { SetOrganizationConformancePackName(std::forward<OrganizationConformancePackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,10 @@ namespace Model
      * conformance pack update failed in one or more member accounts within that
      * organization.</p> </li> </ul>
      */
-    inline const OrganizationResourceStatus& GetStatus() const{ return m_status; }
+    inline OrganizationResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OrganizationResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OrganizationResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OrganizationConformancePackStatus& WithStatus(const OrganizationResourceStatus& value) { SetStatus(value); return *this;}
-    inline OrganizationConformancePackStatus& WithStatus(OrganizationResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OrganizationResourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OrganizationConformancePackStatus& WithStatus(OrganizationResourceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +93,12 @@ namespace Model
      * <p>An error code that is returned when organization conformance pack creation or
      * deletion has failed in a member account. </p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline OrganizationConformancePackStatus& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline OrganizationConformancePackStatus& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline OrganizationConformancePackStatus& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    OrganizationConformancePackStatus& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,33 +106,31 @@ namespace Model
      * <p>An error message indicating that organization conformance pack creation or
      * deletion failed due to an error. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline OrganizationConformancePackStatus& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline OrganizationConformancePackStatus& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline OrganizationConformancePackStatus& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    OrganizationConformancePackStatus& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the last update.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline OrganizationConformancePackStatus& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline OrganizationConformancePackStatus& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    OrganizationConformancePackStatus& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_organizationConformancePackName;
     bool m_organizationConformancePackNameHasBeenSet = false;
 
-    OrganizationResourceStatus m_status;
+    OrganizationResourceStatus m_status{OrganizationResourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_errorCode;
@@ -147,7 +139,7 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
   };
 

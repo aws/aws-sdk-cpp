@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteUserGroupRequest::DeleteUserGroupRequest() : 
-    m_userGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

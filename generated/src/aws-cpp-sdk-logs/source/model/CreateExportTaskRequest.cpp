@@ -12,19 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateExportTaskRequest::CreateExportTaskRequest() : 
-    m_taskNameHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNamePrefixHasBeenSet(false),
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPrefixHasBeenSet(false)
-{
-}
-
 Aws::String CreateExportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIConditionalFormatting::KPIConditionalFormatting() : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
-{
-}
-
 KPIConditionalFormatting::KPIConditionalFormatting(JsonView jsonValue)
-  : KPIConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ KPIConditionalFormatting& KPIConditionalFormatting::operator =(JsonView jsonValu
     }
     m_conditionalFormattingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

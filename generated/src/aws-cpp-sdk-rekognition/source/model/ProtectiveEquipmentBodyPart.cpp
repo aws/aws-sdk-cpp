@@ -18,17 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ProtectiveEquipmentBodyPart::ProtectiveEquipmentBodyPart() : 
-    m_name(BodyPart::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_equipmentDetectionsHasBeenSet(false)
-{
-}
-
 ProtectiveEquipmentBodyPart::ProtectiveEquipmentBodyPart(JsonView jsonValue)
-  : ProtectiveEquipmentBodyPart()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ProtectiveEquipmentBodyPart& ProtectiveEquipmentBodyPart::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = BodyPartMapper::GetBodyPartForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EquipmentDetections"))
   {
     Aws::Utils::Array<JsonView> equipmentDetectionsJsonList = jsonValue.GetArray("EquipmentDetections");
@@ -58,7 +44,6 @@ ProtectiveEquipmentBodyPart& ProtectiveEquipmentBodyPart::operator =(JsonView js
     }
     m_equipmentDetectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ExactResponseFields::ExactResponseFields() : 
-    m_questionFieldHasBeenSet(false),
-    m_answerFieldHasBeenSet(false)
-{
-}
-
 ExactResponseFields::ExactResponseFields(JsonView jsonValue)
-  : ExactResponseFields()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExactResponseFields& ExactResponseFields::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("questionField"))
   {
     m_questionField = jsonValue.GetString("questionField");
-
     m_questionFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("answerField"))
   {
     m_answerField = jsonValue.GetString("answerField");
-
     m_answerFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

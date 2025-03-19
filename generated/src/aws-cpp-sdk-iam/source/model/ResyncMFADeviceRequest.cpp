@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ResyncMFADeviceRequest::ResyncMFADeviceRequest() : 
-    m_userNameHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_authenticationCode1HasBeenSet(false),
-    m_authenticationCode2HasBeenSet(false)
-{
-}
-
 Aws::String ResyncMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

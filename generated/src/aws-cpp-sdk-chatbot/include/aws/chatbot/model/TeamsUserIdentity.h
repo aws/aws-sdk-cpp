@@ -32,7 +32,7 @@ namespace Model
   class TeamsUserIdentity
   {
   public:
-    AWS_CHATBOT_API TeamsUserIdentity();
+    AWS_CHATBOT_API TeamsUserIdentity() = default;
     AWS_CHATBOT_API TeamsUserIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API TeamsUserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.
      * </p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline TeamsUserIdentity& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline TeamsUserIdentity& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    TeamsUserIdentity& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration
      * associated with the user identity to delete.</p>
      */
-    inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
+    inline const Aws::String& GetChatConfigurationArn() const { return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-    inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-    inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-    inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-    inline TeamsUserIdentity& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-    inline TeamsUserIdentity& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
+    template<typename ChatConfigurationArnT = Aws::String>
+    void SetChatConfigurationArn(ChatConfigurationArnT&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::forward<ChatConfigurationArnT>(value); }
+    template<typename ChatConfigurationArnT = Aws::String>
+    TeamsUserIdentity& WithChatConfigurationArn(ChatConfigurationArnT&& value) { SetChatConfigurationArn(std::forward<ChatConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,28 +77,24 @@ namespace Model
      * 1: Configure a Microsoft Teams client</a> in the <i> AWS Chatbot Administrator
      * Guide</i>. </p>
      */
-    inline const Aws::String& GetTeamId() const{ return m_teamId; }
+    inline const Aws::String& GetTeamId() const { return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
-    inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
-    inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
-    inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
-    inline TeamsUserIdentity& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
-    inline TeamsUserIdentity& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithTeamId(const char* value) { SetTeamId(value); return *this;}
+    template<typename TeamIdT = Aws::String>
+    void SetTeamId(TeamIdT&& value) { m_teamIdHasBeenSet = true; m_teamId = std::forward<TeamIdT>(value); }
+    template<typename TeamIdT = Aws::String>
+    TeamsUserIdentity& WithTeamId(TeamIdT&& value) { SetTeamId(std::forward<TeamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Microsoft Teams user ID.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline TeamsUserIdentity& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline TeamsUserIdentity& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    TeamsUserIdentity& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,42 +102,36 @@ namespace Model
      * <p>The AWS user identity ARN used to associate a Microsoft Teams user Identity
      * with an IAM Role.</p>
      */
-    inline const Aws::String& GetAwsUserIdentity() const{ return m_awsUserIdentity; }
+    inline const Aws::String& GetAwsUserIdentity() const { return m_awsUserIdentity; }
     inline bool AwsUserIdentityHasBeenSet() const { return m_awsUserIdentityHasBeenSet; }
-    inline void SetAwsUserIdentity(const Aws::String& value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity = value; }
-    inline void SetAwsUserIdentity(Aws::String&& value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity = std::move(value); }
-    inline void SetAwsUserIdentity(const char* value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity.assign(value); }
-    inline TeamsUserIdentity& WithAwsUserIdentity(const Aws::String& value) { SetAwsUserIdentity(value); return *this;}
-    inline TeamsUserIdentity& WithAwsUserIdentity(Aws::String&& value) { SetAwsUserIdentity(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithAwsUserIdentity(const char* value) { SetAwsUserIdentity(value); return *this;}
+    template<typename AwsUserIdentityT = Aws::String>
+    void SetAwsUserIdentity(AwsUserIdentityT&& value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity = std::forward<AwsUserIdentityT>(value); }
+    template<typename AwsUserIdentityT = Aws::String>
+    TeamsUserIdentity& WithAwsUserIdentity(AwsUserIdentityT&& value) { SetAwsUserIdentity(std::forward<AwsUserIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Microsoft Teams channel.</p>
      */
-    inline const Aws::String& GetTeamsChannelId() const{ return m_teamsChannelId; }
+    inline const Aws::String& GetTeamsChannelId() const { return m_teamsChannelId; }
     inline bool TeamsChannelIdHasBeenSet() const { return m_teamsChannelIdHasBeenSet; }
-    inline void SetTeamsChannelId(const Aws::String& value) { m_teamsChannelIdHasBeenSet = true; m_teamsChannelId = value; }
-    inline void SetTeamsChannelId(Aws::String&& value) { m_teamsChannelIdHasBeenSet = true; m_teamsChannelId = std::move(value); }
-    inline void SetTeamsChannelId(const char* value) { m_teamsChannelIdHasBeenSet = true; m_teamsChannelId.assign(value); }
-    inline TeamsUserIdentity& WithTeamsChannelId(const Aws::String& value) { SetTeamsChannelId(value); return *this;}
-    inline TeamsUserIdentity& WithTeamsChannelId(Aws::String&& value) { SetTeamsChannelId(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithTeamsChannelId(const char* value) { SetTeamsChannelId(value); return *this;}
+    template<typename TeamsChannelIdT = Aws::String>
+    void SetTeamsChannelId(TeamsChannelIdT&& value) { m_teamsChannelIdHasBeenSet = true; m_teamsChannelId = std::forward<TeamsChannelIdT>(value); }
+    template<typename TeamsChannelIdT = Aws::String>
+    TeamsUserIdentity& WithTeamsChannelId(TeamsChannelIdT&& value) { SetTeamsChannelId(std::forward<TeamsChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Microsoft Teams tenant.</p>
      */
-    inline const Aws::String& GetTeamsTenantId() const{ return m_teamsTenantId; }
+    inline const Aws::String& GetTeamsTenantId() const { return m_teamsTenantId; }
     inline bool TeamsTenantIdHasBeenSet() const { return m_teamsTenantIdHasBeenSet; }
-    inline void SetTeamsTenantId(const Aws::String& value) { m_teamsTenantIdHasBeenSet = true; m_teamsTenantId = value; }
-    inline void SetTeamsTenantId(Aws::String&& value) { m_teamsTenantIdHasBeenSet = true; m_teamsTenantId = std::move(value); }
-    inline void SetTeamsTenantId(const char* value) { m_teamsTenantIdHasBeenSet = true; m_teamsTenantId.assign(value); }
-    inline TeamsUserIdentity& WithTeamsTenantId(const Aws::String& value) { SetTeamsTenantId(value); return *this;}
-    inline TeamsUserIdentity& WithTeamsTenantId(Aws::String&& value) { SetTeamsTenantId(std::move(value)); return *this;}
-    inline TeamsUserIdentity& WithTeamsTenantId(const char* value) { SetTeamsTenantId(value); return *this;}
+    template<typename TeamsTenantIdT = Aws::String>
+    void SetTeamsTenantId(TeamsTenantIdT&& value) { m_teamsTenantIdHasBeenSet = true; m_teamsTenantId = std::forward<TeamsTenantIdT>(value); }
+    template<typename TeamsTenantIdT = Aws::String>
+    TeamsUserIdentity& WithTeamsTenantId(TeamsTenantIdT&& value) { SetTeamsTenantId(std::forward<TeamsTenantIdT>(value)); return *this;}
     ///@}
   private:
 

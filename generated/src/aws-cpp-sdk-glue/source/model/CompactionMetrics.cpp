@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CompactionMetrics::CompactionMetrics() : 
-    m_icebergMetricsHasBeenSet(false)
-{
-}
-
 CompactionMetrics::CompactionMetrics(JsonView jsonValue)
-  : CompactionMetrics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CompactionMetrics& CompactionMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IcebergMetrics"))
   {
     m_icebergMetrics = jsonValue.GetObject("IcebergMetrics");
-
     m_icebergMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

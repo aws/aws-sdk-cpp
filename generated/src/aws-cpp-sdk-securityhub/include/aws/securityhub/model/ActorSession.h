@@ -40,7 +40,7 @@ namespace Model
   class ActorSession
   {
   public:
-    AWS_SECURITYHUB_API ActorSession();
+    AWS_SECURITYHUB_API ActorSession() = default;
     AWS_SECURITYHUB_API ActorSession(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API ActorSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p> Unique identifier of the session. </p>
      */
-    inline const Aws::String& GetUid() const{ return m_uid; }
+    inline const Aws::String& GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-    inline void SetUid(const Aws::String& value) { m_uidHasBeenSet = true; m_uid = value; }
-    inline void SetUid(Aws::String&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
-    inline void SetUid(const char* value) { m_uidHasBeenSet = true; m_uid.assign(value); }
-    inline ActorSession& WithUid(const Aws::String& value) { SetUid(value); return *this;}
-    inline ActorSession& WithUid(Aws::String&& value) { SetUid(std::move(value)); return *this;}
-    inline ActorSession& WithUid(const char* value) { SetUid(value); return *this;}
+    template<typename UidT = Aws::String>
+    void SetUid(UidT&& value) { m_uidHasBeenSet = true; m_uid = std::forward<UidT>(value); }
+    template<typename UidT = Aws::String>
+    ActorSession& WithUid(UidT&& value) { SetUid(std::forward<UidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * authentication during the session.</p> <p>In CloudTrail, you can find this value
      * as <code>userIdentity.sessionContext.attributes.mfaAuthenticated</code>.</p>
      */
-    inline const ActorSessionMfaStatus& GetMfaStatus() const{ return m_mfaStatus; }
+    inline ActorSessionMfaStatus GetMfaStatus() const { return m_mfaStatus; }
     inline bool MfaStatusHasBeenSet() const { return m_mfaStatusHasBeenSet; }
-    inline void SetMfaStatus(const ActorSessionMfaStatus& value) { m_mfaStatusHasBeenSet = true; m_mfaStatus = value; }
-    inline void SetMfaStatus(ActorSessionMfaStatus&& value) { m_mfaStatusHasBeenSet = true; m_mfaStatus = std::move(value); }
-    inline ActorSession& WithMfaStatus(const ActorSessionMfaStatus& value) { SetMfaStatus(value); return *this;}
-    inline ActorSession& WithMfaStatus(ActorSessionMfaStatus&& value) { SetMfaStatus(std::move(value)); return *this;}
+    inline void SetMfaStatus(ActorSessionMfaStatus value) { m_mfaStatusHasBeenSet = true; m_mfaStatus = value; }
+    inline ActorSession& WithMfaStatus(ActorSessionMfaStatus value) { SetMfaStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * can find this value as
      * <code>userIdentity.sessionContext.attributes.creationDate</code>.</p>
      */
-    inline long long GetCreatedTime() const{ return m_createdTime; }
+    inline long long GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
     inline void SetCreatedTime(long long value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
     inline ActorSession& WithCreatedTime(long long value) { SetCreatedTime(value); return *this;}
@@ -91,24 +87,22 @@ namespace Model
      * <p> The issuer of the session. </p> <p>In CloudTrail, you can find this value as
      * <code>userIdentity.sessionContext.sessionIssuer.arn</code>.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline ActorSession& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline ActorSession& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline ActorSession& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    ActorSession& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_uid;
     bool m_uidHasBeenSet = false;
 
-    ActorSessionMfaStatus m_mfaStatus;
+    ActorSessionMfaStatus m_mfaStatus{ActorSessionMfaStatus::NOT_SET};
     bool m_mfaStatusHasBeenSet = false;
 
-    long long m_createdTime;
+    long long m_createdTime{0};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_issuer;

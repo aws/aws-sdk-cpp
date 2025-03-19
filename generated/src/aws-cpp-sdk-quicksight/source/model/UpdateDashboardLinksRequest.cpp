@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDashboardLinksRequest::UpdateDashboardLinksRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_linkEntitiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDashboardLinksRequest::SerializePayload() const
 {
   JsonValue payload;

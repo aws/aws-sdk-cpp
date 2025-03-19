@@ -18,26 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ConnectorDetail::ConnectorDetail() : 
-    m_connectorDescriptionHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectorOwnerHasBeenSet(false),
-    m_connectorVersionHasBeenSet(false),
-    m_applicationTypeHasBeenSet(false),
-    m_connectorType(ConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_connectorLabelHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
-    m_connectorProvisioningTypeHasBeenSet(false),
-    m_connectorModesHasBeenSet(false),
-    m_supportedDataTransferTypesHasBeenSet(false)
-{
-}
-
 ConnectorDetail::ConnectorDetail(JsonView jsonValue)
-  : ConnectorDetail()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ ConnectorDetail& ConnectorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectorDescription"))
   {
     m_connectorDescription = jsonValue.GetString("connectorDescription");
-
     m_connectorDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorName"))
   {
     m_connectorName = jsonValue.GetString("connectorName");
-
     m_connectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOwner"))
   {
     m_connectorOwner = jsonValue.GetString("connectorOwner");
-
     m_connectorOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorVersion"))
   {
     m_connectorVersion = jsonValue.GetString("connectorVersion");
-
     m_connectorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationType"))
   {
     m_applicationType = jsonValue.GetString("applicationType");
-
     m_applicationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorType"))
   {
     m_connectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("connectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorLabel"))
   {
     m_connectorLabel = jsonValue.GetString("connectorLabel");
-
     m_connectorLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredAt"))
   {
     m_registeredAt = jsonValue.GetDouble("registeredAt");
-
     m_registeredAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredBy"))
   {
     m_registeredBy = jsonValue.GetString("registeredBy");
-
     m_registeredByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorProvisioningType"))
   {
     m_connectorProvisioningType = ConnectorProvisioningTypeMapper::GetConnectorProvisioningTypeForName(jsonValue.GetString("connectorProvisioningType"));
-
     m_connectorProvisioningTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorModes"))
   {
     Aws::Utils::Array<JsonView> connectorModesJsonList = jsonValue.GetArray("connectorModes");
@@ -123,7 +84,6 @@ ConnectorDetail& ConnectorDetail::operator =(JsonView jsonValue)
     }
     m_connectorModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedDataTransferTypes"))
   {
     Aws::Utils::Array<JsonView> supportedDataTransferTypesJsonList = jsonValue.GetArray("supportedDataTransferTypes");
@@ -133,7 +93,6 @@ ConnectorDetail& ConnectorDetail::operator =(JsonView jsonValue)
     }
     m_supportedDataTransferTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

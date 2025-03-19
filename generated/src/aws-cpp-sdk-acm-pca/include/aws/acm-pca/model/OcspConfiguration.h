@@ -34,7 +34,7 @@ namespace Model
   class OcspConfiguration
   {
   public:
-    AWS_ACMPCA_API OcspConfiguration();
+    AWS_ACMPCA_API OcspConfiguration() = default;
     AWS_ACMPCA_API OcspConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API OcspConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>Flag enabling use of the Online Certificate Status Protocol (OCSP) for
      * validating certificate revocation status.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline OcspConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -66,18 +66,16 @@ namespace Model
      * Online Certificate Status Protocol (OCSP) </a> in the <i>Amazon Web Services
      * Private Certificate Authority User Guide</i>.</p>
      */
-    inline const Aws::String& GetOcspCustomCname() const{ return m_ocspCustomCname; }
+    inline const Aws::String& GetOcspCustomCname() const { return m_ocspCustomCname; }
     inline bool OcspCustomCnameHasBeenSet() const { return m_ocspCustomCnameHasBeenSet; }
-    inline void SetOcspCustomCname(const Aws::String& value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname = value; }
-    inline void SetOcspCustomCname(Aws::String&& value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname = std::move(value); }
-    inline void SetOcspCustomCname(const char* value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname.assign(value); }
-    inline OcspConfiguration& WithOcspCustomCname(const Aws::String& value) { SetOcspCustomCname(value); return *this;}
-    inline OcspConfiguration& WithOcspCustomCname(Aws::String&& value) { SetOcspCustomCname(std::move(value)); return *this;}
-    inline OcspConfiguration& WithOcspCustomCname(const char* value) { SetOcspCustomCname(value); return *this;}
+    template<typename OcspCustomCnameT = Aws::String>
+    void SetOcspCustomCname(OcspCustomCnameT&& value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname = std::forward<OcspCustomCnameT>(value); }
+    template<typename OcspCustomCnameT = Aws::String>
+    OcspConfiguration& WithOcspCustomCname(OcspCustomCnameT&& value) { SetOcspCustomCname(std::forward<OcspCustomCnameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_ocspCustomCname;

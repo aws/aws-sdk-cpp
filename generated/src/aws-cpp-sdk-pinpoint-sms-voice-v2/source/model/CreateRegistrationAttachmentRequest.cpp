@@ -13,15 +13,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRegistrationAttachmentRequest::CreateRegistrationAttachmentRequest() : 
-    m_attachmentBodyHasBeenSet(false),
-    m_attachmentUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateRegistrationAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

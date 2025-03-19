@@ -18,20 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ParticipantToken::ParticipantToken() : 
-    m_participantIdHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false)
-{
-}
-
 ParticipantToken::ParticipantToken(JsonView jsonValue)
-  : ParticipantToken()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ ParticipantToken& ParticipantToken::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("participantId"))
   {
     m_participantId = jsonValue.GetString("participantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("token"))
   {
     m_token = jsonValue.GetString("token");
-
     m_tokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -68,14 +49,11 @@ ParticipantToken& ParticipantToken::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInteger("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilities"))
   {
     Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
@@ -85,14 +63,11 @@ ParticipantToken& ParticipantToken::operator =(JsonView jsonValue)
     }
     m_capabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationTime"))
   {
     m_expirationTime = jsonValue.GetString("expirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

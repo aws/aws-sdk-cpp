@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssetModelCompositeModelsRequest::ListAssetModelCompositeModelsRequest() : 
-    m_assetModelIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_assetModelVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListAssetModelCompositeModelsRequest::SerializePayload() const
 {
   return {};

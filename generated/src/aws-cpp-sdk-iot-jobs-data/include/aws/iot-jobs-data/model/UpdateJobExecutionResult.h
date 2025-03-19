@@ -28,7 +28,7 @@ namespace Model
   class UpdateJobExecutionResult
   {
   public:
-    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult();
+    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult() = default;
     AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>A JobExecutionState object.</p>
      */
-    inline const JobExecutionState& GetExecutionState() const{ return m_executionState; }
-    inline void SetExecutionState(const JobExecutionState& value) { m_executionState = value; }
-    inline void SetExecutionState(JobExecutionState&& value) { m_executionState = std::move(value); }
-    inline UpdateJobExecutionResult& WithExecutionState(const JobExecutionState& value) { SetExecutionState(value); return *this;}
-    inline UpdateJobExecutionResult& WithExecutionState(JobExecutionState&& value) { SetExecutionState(std::move(value)); return *this;}
+    inline const JobExecutionState& GetExecutionState() const { return m_executionState; }
+    template<typename ExecutionStateT = JobExecutionState>
+    void SetExecutionState(ExecutionStateT&& value) { m_executionStateHasBeenSet = true; m_executionState = std::forward<ExecutionStateT>(value); }
+    template<typename ExecutionStateT = JobExecutionState>
+    UpdateJobExecutionResult& WithExecutionState(ExecutionStateT&& value) { SetExecutionState(std::forward<ExecutionStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contents of the Job Documents.</p>
      */
-    inline const Aws::String& GetJobDocument() const{ return m_jobDocument; }
-    inline void SetJobDocument(const Aws::String& value) { m_jobDocument = value; }
-    inline void SetJobDocument(Aws::String&& value) { m_jobDocument = std::move(value); }
-    inline void SetJobDocument(const char* value) { m_jobDocument.assign(value); }
-    inline UpdateJobExecutionResult& WithJobDocument(const Aws::String& value) { SetJobDocument(value); return *this;}
-    inline UpdateJobExecutionResult& WithJobDocument(Aws::String&& value) { SetJobDocument(std::move(value)); return *this;}
-    inline UpdateJobExecutionResult& WithJobDocument(const char* value) { SetJobDocument(value); return *this;}
+    inline const Aws::String& GetJobDocument() const { return m_jobDocument; }
+    template<typename JobDocumentT = Aws::String>
+    void SetJobDocument(JobDocumentT&& value) { m_jobDocumentHasBeenSet = true; m_jobDocument = std::forward<JobDocumentT>(value); }
+    template<typename JobDocumentT = Aws::String>
+    UpdateJobExecutionResult& WithJobDocument(JobDocumentT&& value) { SetJobDocument(std::forward<JobDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateJobExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateJobExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateJobExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateJobExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JobExecutionState m_executionState;
+    bool m_executionStateHasBeenSet = false;
 
     Aws::String m_jobDocument;
+    bool m_jobDocumentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

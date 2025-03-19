@@ -18,15 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-RecommendationFeedbackSummary::RecommendationFeedbackSummary() : 
-    m_recommendationIdHasBeenSet(false),
-    m_reactionsHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 RecommendationFeedbackSummary::RecommendationFeedbackSummary(JsonView jsonValue)
-  : RecommendationFeedbackSummary()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RecommendationFeedbackSummary& RecommendationFeedbackSummary::operator =(JsonVie
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reactions"))
   {
     Aws::Utils::Array<JsonView> reactionsJsonList = jsonValue.GetArray("Reactions");
@@ -49,14 +39,11 @@ RecommendationFeedbackSummary& RecommendationFeedbackSummary::operator =(JsonVie
     }
     m_reactionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

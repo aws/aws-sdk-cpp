@@ -18,14 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-TranscriptEvent::TranscriptEvent() : 
-    m_transcriptHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
-{
-}
-
 TranscriptEvent::TranscriptEvent(JsonView jsonValue)
-  : TranscriptEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TranscriptEvent& TranscriptEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("transcript"))
   {
     m_transcript = jsonValue.GetString("transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

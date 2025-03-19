@@ -18,13 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-AWSService::AWSService() : 
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 AWSService::AWSService(JsonView jsonValue)
-  : AWSService()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AWSService& AWSService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class SearchTextRequest : public GeoPlacesRequest
   {
   public:
-    AWS_GEOPLACES_API SearchTextRequest();
+    AWS_GEOPLACES_API SearchTextRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,35 +47,31 @@ namespace Model
      * <p>The free-form text query to match addresses against. This is usually a
      * partially typed address from an end user in an address box or form.</p>
      */
-    inline const Aws::String& GetQueryText() const{ return m_queryText; }
+    inline const Aws::String& GetQueryText() const { return m_queryText; }
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
-    inline void SetQueryText(const Aws::String& value) { m_queryTextHasBeenSet = true; m_queryText = value; }
-    inline void SetQueryText(Aws::String&& value) { m_queryTextHasBeenSet = true; m_queryText = std::move(value); }
-    inline void SetQueryText(const char* value) { m_queryTextHasBeenSet = true; m_queryText.assign(value); }
-    inline SearchTextRequest& WithQueryText(const Aws::String& value) { SetQueryText(value); return *this;}
-    inline SearchTextRequest& WithQueryText(Aws::String&& value) { SetQueryText(std::move(value)); return *this;}
-    inline SearchTextRequest& WithQueryText(const char* value) { SetQueryText(value); return *this;}
+    template<typename QueryTextT = Aws::String>
+    void SetQueryText(QueryTextT&& value) { m_queryTextHasBeenSet = true; m_queryText = std::forward<QueryTextT>(value); }
+    template<typename QueryTextT = Aws::String>
+    SearchTextRequest& WithQueryText(QueryTextT&& value) { SetQueryText(std::forward<QueryTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The query Id.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-    inline SearchTextRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline SearchTextRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline SearchTextRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    SearchTextRequest& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional limit for the number of results returned in a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchTextRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -89,12 +85,12 @@ namespace Model
      * <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and
      * <code>FilterCircle</code> are mutually exclusive.</p> 
      */
-    inline const Aws::Vector<double>& GetBiasPosition() const{ return m_biasPosition; }
+    inline const Aws::Vector<double>& GetBiasPosition() const { return m_biasPosition; }
     inline bool BiasPositionHasBeenSet() const { return m_biasPositionHasBeenSet; }
-    inline void SetBiasPosition(const Aws::Vector<double>& value) { m_biasPositionHasBeenSet = true; m_biasPosition = value; }
-    inline void SetBiasPosition(Aws::Vector<double>&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::move(value); }
-    inline SearchTextRequest& WithBiasPosition(const Aws::Vector<double>& value) { SetBiasPosition(value); return *this;}
-    inline SearchTextRequest& WithBiasPosition(Aws::Vector<double>&& value) { SetBiasPosition(std::move(value)); return *this;}
+    template<typename BiasPositionT = Aws::Vector<double>>
+    void SetBiasPosition(BiasPositionT&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::forward<BiasPositionT>(value); }
+    template<typename BiasPositionT = Aws::Vector<double>>
+    SearchTextRequest& WithBiasPosition(BiasPositionT&& value) { SetBiasPosition(std::forward<BiasPositionT>(value)); return *this;}
     inline SearchTextRequest& AddBiasPosition(double value) { m_biasPositionHasBeenSet = true; m_biasPosition.push_back(value); return *this; }
     ///@}
 
@@ -103,12 +99,12 @@ namespace Model
      * <p>A structure which contains a set of inclusion/exclusion properties that
      * results must posses in order to be returned as a result.</p>
      */
-    inline const SearchTextFilter& GetFilter() const{ return m_filter; }
+    inline const SearchTextFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const SearchTextFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(SearchTextFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline SearchTextRequest& WithFilter(const SearchTextFilter& value) { SetFilter(value); return *this;}
-    inline SearchTextRequest& WithFilter(SearchTextFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = SearchTextFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = SearchTextFilter>
+    SearchTextRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +112,13 @@ namespace Model
      * <p>A list of optional additional parameters, such as time zone, that can be
      * requested for each result.</p>
      */
-    inline const Aws::Vector<SearchTextAdditionalFeature>& GetAdditionalFeatures() const{ return m_additionalFeatures; }
+    inline const Aws::Vector<SearchTextAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
     inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
-    inline void SetAdditionalFeatures(const Aws::Vector<SearchTextAdditionalFeature>& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = value; }
-    inline void SetAdditionalFeatures(Aws::Vector<SearchTextAdditionalFeature>&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::move(value); }
-    inline SearchTextRequest& WithAdditionalFeatures(const Aws::Vector<SearchTextAdditionalFeature>& value) { SetAdditionalFeatures(value); return *this;}
-    inline SearchTextRequest& WithAdditionalFeatures(Aws::Vector<SearchTextAdditionalFeature>&& value) { SetAdditionalFeatures(std::move(value)); return *this;}
-    inline SearchTextRequest& AddAdditionalFeatures(const SearchTextAdditionalFeature& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
-    inline SearchTextRequest& AddAdditionalFeatures(SearchTextAdditionalFeature&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(std::move(value)); return *this; }
+    template<typename AdditionalFeaturesT = Aws::Vector<SearchTextAdditionalFeature>>
+    void SetAdditionalFeatures(AdditionalFeaturesT&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::forward<AdditionalFeaturesT>(value); }
+    template<typename AdditionalFeaturesT = Aws::Vector<SearchTextAdditionalFeature>>
+    SearchTextRequest& WithAdditionalFeatures(AdditionalFeaturesT&& value) { SetAdditionalFeatures(std::forward<AdditionalFeaturesT>(value)); return *this;}
+    inline SearchTextRequest& AddAdditionalFeatures(SearchTextAdditionalFeature value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -133,14 +128,12 @@ namespace Model
      * no data for the result in the requested language, data will be returned in the
      * default language for the entry.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline SearchTextRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline SearchTextRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline SearchTextRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    SearchTextRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +142,12 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline SearchTextRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline SearchTextRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline SearchTextRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    SearchTextRequest& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,12 +155,10 @@ namespace Model
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
      * if left empty.</p>
      */
-    inline const SearchTextIntendedUse& GetIntendedUse() const{ return m_intendedUse; }
+    inline SearchTextIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }
-    inline void SetIntendedUse(const SearchTextIntendedUse& value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
-    inline void SetIntendedUse(SearchTextIntendedUse&& value) { m_intendedUseHasBeenSet = true; m_intendedUse = std::move(value); }
-    inline SearchTextRequest& WithIntendedUse(const SearchTextIntendedUse& value) { SetIntendedUse(value); return *this;}
-    inline SearchTextRequest& WithIntendedUse(SearchTextIntendedUse&& value) { SetIntendedUse(std::move(value)); return *this;}
+    inline void SetIntendedUse(SearchTextIntendedUse value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
+    inline SearchTextRequest& WithIntendedUse(SearchTextIntendedUse value) { SetIntendedUse(value); return *this;}
     ///@}
 
     ///@{
@@ -177,14 +166,12 @@ namespace Model
      * <p>If <code>nextToken</code> is returned, there are more results available. The
      * value of <code>nextToken</code> is a unique pagination token for each page. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchTextRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchTextRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchTextRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchTextRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,14 +179,12 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline SearchTextRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline SearchTextRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline SearchTextRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    SearchTextRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -209,7 +194,7 @@ namespace Model
     Aws::String m_queryId;
     bool m_queryIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<double> m_biasPosition;
@@ -227,7 +212,7 @@ namespace Model
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
 
-    SearchTextIntendedUse m_intendedUse;
+    SearchTextIntendedUse m_intendedUse{SearchTextIntendedUse::NOT_SET};
     bool m_intendedUseHasBeenSet = false;
 
     Aws::String m_nextToken;

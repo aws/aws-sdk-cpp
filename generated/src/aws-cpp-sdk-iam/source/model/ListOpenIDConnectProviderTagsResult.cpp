@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOpenIDConnectProviderTagsResult::ListOpenIDConnectProviderTagsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListOpenIDConnectProviderTagsResult::ListOpenIDConnectProviderTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListOpenIDConnectProviderTagsResult()
 {
   *this = result;
 }
@@ -44,28 +38,33 @@ ListOpenIDConnectProviderTagsResult& ListOpenIDConnectProviderTagsResult::operat
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
+      m_tagsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListOpenIDConnectProviderTagsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

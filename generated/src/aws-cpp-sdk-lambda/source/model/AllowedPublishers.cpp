@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-AllowedPublishers::AllowedPublishers() : 
-    m_signingProfileVersionArnsHasBeenSet(false)
-{
-}
-
 AllowedPublishers::AllowedPublishers(JsonView jsonValue)
-  : AllowedPublishers()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AllowedPublishers& AllowedPublishers::operator =(JsonView jsonValue)
     }
     m_signingProfileVersionArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

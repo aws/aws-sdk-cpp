@@ -29,7 +29,7 @@ namespace Model
   class ListHealthEventsResult
   {
   public:
-    AWS_INTERNETMONITOR_API ListHealthEventsResult();
+    AWS_INTERNETMONITOR_API ListHealthEventsResult() = default;
     AWS_INTERNETMONITOR_API ListHealthEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INTERNETMONITOR_API ListHealthEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of health events.</p>
      */
-    inline const Aws::Vector<HealthEvent>& GetHealthEvents() const{ return m_healthEvents; }
-    inline void SetHealthEvents(const Aws::Vector<HealthEvent>& value) { m_healthEvents = value; }
-    inline void SetHealthEvents(Aws::Vector<HealthEvent>&& value) { m_healthEvents = std::move(value); }
-    inline ListHealthEventsResult& WithHealthEvents(const Aws::Vector<HealthEvent>& value) { SetHealthEvents(value); return *this;}
-    inline ListHealthEventsResult& WithHealthEvents(Aws::Vector<HealthEvent>&& value) { SetHealthEvents(std::move(value)); return *this;}
-    inline ListHealthEventsResult& AddHealthEvents(const HealthEvent& value) { m_healthEvents.push_back(value); return *this; }
-    inline ListHealthEventsResult& AddHealthEvents(HealthEvent&& value) { m_healthEvents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HealthEvent>& GetHealthEvents() const { return m_healthEvents; }
+    template<typename HealthEventsT = Aws::Vector<HealthEvent>>
+    void SetHealthEvents(HealthEventsT&& value) { m_healthEventsHasBeenSet = true; m_healthEvents = std::forward<HealthEventsT>(value); }
+    template<typename HealthEventsT = Aws::Vector<HealthEvent>>
+    ListHealthEventsResult& WithHealthEvents(HealthEventsT&& value) { SetHealthEvents(std::forward<HealthEventsT>(value)); return *this;}
+    template<typename HealthEventsT = HealthEvent>
+    ListHealthEventsResult& AddHealthEvents(HealthEventsT&& value) { m_healthEventsHasBeenSet = true; m_healthEvents.emplace_back(std::forward<HealthEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. You receive this token from a previous
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListHealthEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHealthEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHealthEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHealthEventsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHealthEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHealthEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHealthEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHealthEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HealthEvent> m_healthEvents;
+    bool m_healthEventsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

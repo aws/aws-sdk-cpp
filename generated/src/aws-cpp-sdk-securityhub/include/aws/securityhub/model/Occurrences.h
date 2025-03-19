@@ -35,7 +35,7 @@ namespace Model
   class Occurrences
   {
   public:
-    AWS_SECURITYHUB_API Occurrences();
+    AWS_SECURITYHUB_API Occurrences() = default;
     AWS_SECURITYHUB_API Occurrences(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Occurrences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,28 @@ namespace Model
      * Microsoft Word file. Non-binary text files include files such as HTML, XML,
      * JSON, and TXT files.</p>
      */
-    inline const Aws::Vector<Range>& GetLineRanges() const{ return m_lineRanges; }
+    inline const Aws::Vector<Range>& GetLineRanges() const { return m_lineRanges; }
     inline bool LineRangesHasBeenSet() const { return m_lineRangesHasBeenSet; }
-    inline void SetLineRanges(const Aws::Vector<Range>& value) { m_lineRangesHasBeenSet = true; m_lineRanges = value; }
-    inline void SetLineRanges(Aws::Vector<Range>&& value) { m_lineRangesHasBeenSet = true; m_lineRanges = std::move(value); }
-    inline Occurrences& WithLineRanges(const Aws::Vector<Range>& value) { SetLineRanges(value); return *this;}
-    inline Occurrences& WithLineRanges(Aws::Vector<Range>&& value) { SetLineRanges(std::move(value)); return *this;}
-    inline Occurrences& AddLineRanges(const Range& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(value); return *this; }
-    inline Occurrences& AddLineRanges(Range&& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(std::move(value)); return *this; }
+    template<typename LineRangesT = Aws::Vector<Range>>
+    void SetLineRanges(LineRangesT&& value) { m_lineRangesHasBeenSet = true; m_lineRanges = std::forward<LineRangesT>(value); }
+    template<typename LineRangesT = Aws::Vector<Range>>
+    Occurrences& WithLineRanges(LineRangesT&& value) { SetLineRanges(std::forward<LineRangesT>(value)); return *this;}
+    template<typename LineRangesT = Range>
+    Occurrences& AddLineRanges(LineRangesT&& value) { m_lineRangesHasBeenSet = true; m_lineRanges.emplace_back(std::forward<LineRangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Occurrences of sensitive data detected in a binary text file.</p>
      */
-    inline const Aws::Vector<Range>& GetOffsetRanges() const{ return m_offsetRanges; }
+    inline const Aws::Vector<Range>& GetOffsetRanges() const { return m_offsetRanges; }
     inline bool OffsetRangesHasBeenSet() const { return m_offsetRangesHasBeenSet; }
-    inline void SetOffsetRanges(const Aws::Vector<Range>& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = value; }
-    inline void SetOffsetRanges(Aws::Vector<Range>&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = std::move(value); }
-    inline Occurrences& WithOffsetRanges(const Aws::Vector<Range>& value) { SetOffsetRanges(value); return *this;}
-    inline Occurrences& WithOffsetRanges(Aws::Vector<Range>&& value) { SetOffsetRanges(std::move(value)); return *this;}
-    inline Occurrences& AddOffsetRanges(const Range& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(value); return *this; }
-    inline Occurrences& AddOffsetRanges(Range&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(std::move(value)); return *this; }
+    template<typename OffsetRangesT = Aws::Vector<Range>>
+    void SetOffsetRanges(OffsetRangesT&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = std::forward<OffsetRangesT>(value); }
+    template<typename OffsetRangesT = Aws::Vector<Range>>
+    Occurrences& WithOffsetRanges(OffsetRangesT&& value) { SetOffsetRanges(std::forward<OffsetRangesT>(value)); return *this;}
+    template<typename OffsetRangesT = Range>
+    Occurrences& AddOffsetRanges(OffsetRangesT&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.emplace_back(std::forward<OffsetRangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +76,14 @@ namespace Model
      * <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF)
      * file.</p>
      */
-    inline const Aws::Vector<Page>& GetPages() const{ return m_pages; }
+    inline const Aws::Vector<Page>& GetPages() const { return m_pages; }
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-    inline void SetPages(const Aws::Vector<Page>& value) { m_pagesHasBeenSet = true; m_pages = value; }
-    inline void SetPages(Aws::Vector<Page>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
-    inline Occurrences& WithPages(const Aws::Vector<Page>& value) { SetPages(value); return *this;}
-    inline Occurrences& WithPages(Aws::Vector<Page>&& value) { SetPages(std::move(value)); return *this;}
-    inline Occurrences& AddPages(const Page& value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
-    inline Occurrences& AddPages(Page&& value) { m_pagesHasBeenSet = true; m_pages.push_back(std::move(value)); return *this; }
+    template<typename PagesT = Aws::Vector<Page>>
+    void SetPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages = std::forward<PagesT>(value); }
+    template<typename PagesT = Aws::Vector<Page>>
+    Occurrences& WithPages(PagesT&& value) { SetPages(std::forward<PagesT>(value)); return *this;}
+    template<typename PagesT = Page>
+    Occurrences& AddPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages.emplace_back(std::forward<PagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +91,14 @@ namespace Model
      * <p>Occurrences of sensitive data in an Apache Avro object container or an Apache
      * Parquet file.</p>
      */
-    inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
+    inline const Aws::Vector<Record>& GetRecords() const { return m_records; }
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
-    inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
-    inline void SetRecords(Aws::Vector<Record>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
-    inline Occurrences& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-    inline Occurrences& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-    inline Occurrences& AddRecords(const Record& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
-    inline Occurrences& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
+    template<typename RecordsT = Aws::Vector<Record>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<Record>>
+    Occurrences& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = Record>
+    Occurrences& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,14 +106,14 @@ namespace Model
      * <p>Occurrences of sensitive data detected in Microsoft Excel workbooks,
      * comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
      */
-    inline const Aws::Vector<Cell>& GetCells() const{ return m_cells; }
+    inline const Aws::Vector<Cell>& GetCells() const { return m_cells; }
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
-    inline void SetCells(const Aws::Vector<Cell>& value) { m_cellsHasBeenSet = true; m_cells = value; }
-    inline void SetCells(Aws::Vector<Cell>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
-    inline Occurrences& WithCells(const Aws::Vector<Cell>& value) { SetCells(value); return *this;}
-    inline Occurrences& WithCells(Aws::Vector<Cell>&& value) { SetCells(std::move(value)); return *this;}
-    inline Occurrences& AddCells(const Cell& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
-    inline Occurrences& AddCells(Cell&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
+    template<typename CellsT = Aws::Vector<Cell>>
+    void SetCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells = std::forward<CellsT>(value); }
+    template<typename CellsT = Aws::Vector<Cell>>
+    Occurrences& WithCells(CellsT&& value) { SetCells(std::forward<CellsT>(value)); return *this;}
+    template<typename CellsT = Cell>
+    Occurrences& AddCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells.emplace_back(std::forward<CellsT>(value)); return *this; }
     ///@}
   private:
 

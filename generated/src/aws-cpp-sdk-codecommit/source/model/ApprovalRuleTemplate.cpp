@@ -18,20 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ApprovalRuleTemplate::ApprovalRuleTemplate() : 
-    m_approvalRuleTemplateIdHasBeenSet(false),
-    m_approvalRuleTemplateNameHasBeenSet(false),
-    m_approvalRuleTemplateDescriptionHasBeenSet(false),
-    m_approvalRuleTemplateContentHasBeenSet(false),
-    m_ruleContentSha256HasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false)
-{
-}
-
 ApprovalRuleTemplate::ApprovalRuleTemplate(JsonView jsonValue)
-  : ApprovalRuleTemplate()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ApprovalRuleTemplate& ApprovalRuleTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("approvalRuleTemplateId"))
   {
     m_approvalRuleTemplateId = jsonValue.GetString("approvalRuleTemplateId");
-
     m_approvalRuleTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleTemplateName"))
   {
     m_approvalRuleTemplateName = jsonValue.GetString("approvalRuleTemplateName");
-
     m_approvalRuleTemplateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleTemplateDescription"))
   {
     m_approvalRuleTemplateDescription = jsonValue.GetString("approvalRuleTemplateDescription");
-
     m_approvalRuleTemplateDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleTemplateContent"))
   {
     m_approvalRuleTemplateContent = jsonValue.GetString("approvalRuleTemplateContent");
-
     m_approvalRuleTemplateContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleContentSha256"))
   {
     m_ruleContentSha256 = jsonValue.GetString("ruleContentSha256");
-
     m_ruleContentSha256HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedUser"))
   {
     m_lastModifiedUser = jsonValue.GetString("lastModifiedUser");
-
     m_lastModifiedUserHasBeenSet = true;
   }
-
   return *this;
 }
 

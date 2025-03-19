@@ -28,7 +28,7 @@ namespace Model
   class DeleteTransitGatewayConnectPeerResponse
   {
   public:
-    AWS_EC2_API DeleteTransitGatewayConnectPeerResponse();
+    AWS_EC2_API DeleteTransitGatewayConnectPeerResponse() = default;
     AWS_EC2_API DeleteTransitGatewayConnectPeerResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteTransitGatewayConnectPeerResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the deleted Connect peer.</p>
      */
-    inline const TransitGatewayConnectPeer& GetTransitGatewayConnectPeer() const{ return m_transitGatewayConnectPeer; }
-    inline void SetTransitGatewayConnectPeer(const TransitGatewayConnectPeer& value) { m_transitGatewayConnectPeer = value; }
-    inline void SetTransitGatewayConnectPeer(TransitGatewayConnectPeer&& value) { m_transitGatewayConnectPeer = std::move(value); }
-    inline DeleteTransitGatewayConnectPeerResponse& WithTransitGatewayConnectPeer(const TransitGatewayConnectPeer& value) { SetTransitGatewayConnectPeer(value); return *this;}
-    inline DeleteTransitGatewayConnectPeerResponse& WithTransitGatewayConnectPeer(TransitGatewayConnectPeer&& value) { SetTransitGatewayConnectPeer(std::move(value)); return *this;}
+    inline const TransitGatewayConnectPeer& GetTransitGatewayConnectPeer() const { return m_transitGatewayConnectPeer; }
+    template<typename TransitGatewayConnectPeerT = TransitGatewayConnectPeer>
+    void SetTransitGatewayConnectPeer(TransitGatewayConnectPeerT&& value) { m_transitGatewayConnectPeerHasBeenSet = true; m_transitGatewayConnectPeer = std::forward<TransitGatewayConnectPeerT>(value); }
+    template<typename TransitGatewayConnectPeerT = TransitGatewayConnectPeer>
+    DeleteTransitGatewayConnectPeerResponse& WithTransitGatewayConnectPeer(TransitGatewayConnectPeerT&& value) { SetTransitGatewayConnectPeer(std::forward<TransitGatewayConnectPeerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteTransitGatewayConnectPeerResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteTransitGatewayConnectPeerResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteTransitGatewayConnectPeerResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayConnectPeer m_transitGatewayConnectPeer;
+    bool m_transitGatewayConnectPeerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,7 @@ namespace Model
   class StartSigningJobRequest : public SignerRequest
   {
   public:
-    AWS_SIGNER_API StartSigningJobRequest();
+    AWS_SIGNER_API StartSigningJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
      * <p>The S3 bucket that contains the object to sign or a BLOB that contains your
      * raw code.</p>
      */
-    inline const Source& GetSource() const{ return m_source; }
+    inline const Source& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline StartSigningJobRequest& WithSource(const Source& value) { SetSource(value); return *this;}
-    inline StartSigningJobRequest& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = Source>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Source>
+    StartSigningJobRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,26 +53,24 @@ namespace Model
      * <p>The S3 bucket in which to save your signed object. The destination contains
      * the name of your bucket and an optional prefix.</p>
      */
-    inline const Destination& GetDestination() const{ return m_destination; }
+    inline const Destination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline StartSigningJobRequest& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-    inline StartSigningJobRequest& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = Destination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Destination>
+    StartSigningJobRequest& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the signing profile.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline StartSigningJobRequest& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline StartSigningJobRequest& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline StartSigningJobRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    StartSigningJobRequest& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,28 +78,24 @@ namespace Model
      * <p>String that identifies the signing request. All calls after the first that
      * use this token return the same response as the first call.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartSigningJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartSigningJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartSigningJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartSigningJobRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS account ID of the signing profile owner.</p>
      */
-    inline const Aws::String& GetProfileOwner() const{ return m_profileOwner; }
+    inline const Aws::String& GetProfileOwner() const { return m_profileOwner; }
     inline bool ProfileOwnerHasBeenSet() const { return m_profileOwnerHasBeenSet; }
-    inline void SetProfileOwner(const Aws::String& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = value; }
-    inline void SetProfileOwner(Aws::String&& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = std::move(value); }
-    inline void SetProfileOwner(const char* value) { m_profileOwnerHasBeenSet = true; m_profileOwner.assign(value); }
-    inline StartSigningJobRequest& WithProfileOwner(const Aws::String& value) { SetProfileOwner(value); return *this;}
-    inline StartSigningJobRequest& WithProfileOwner(Aws::String&& value) { SetProfileOwner(std::move(value)); return *this;}
-    inline StartSigningJobRequest& WithProfileOwner(const char* value) { SetProfileOwner(value); return *this;}
+    template<typename ProfileOwnerT = Aws::String>
+    void SetProfileOwner(ProfileOwnerT&& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = std::forward<ProfileOwnerT>(value); }
+    template<typename ProfileOwnerT = Aws::String>
+    StartSigningJobRequest& WithProfileOwner(ProfileOwnerT&& value) { SetProfileOwner(std::forward<ProfileOwnerT>(value)); return *this;}
     ///@}
   private:
 

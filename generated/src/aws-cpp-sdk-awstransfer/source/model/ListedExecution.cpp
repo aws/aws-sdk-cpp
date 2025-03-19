@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedExecution::ListedExecution() : 
-    m_executionIdHasBeenSet(false),
-    m_initialFileLocationHasBeenSet(false),
-    m_serviceMetadataHasBeenSet(false),
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ListedExecution::ListedExecution(JsonView jsonValue)
-  : ListedExecution()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ListedExecution& ListedExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionId"))
   {
     m_executionId = jsonValue.GetString("ExecutionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialFileLocation"))
   {
     m_initialFileLocation = jsonValue.GetObject("InitialFileLocation");
-
     m_initialFileLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceMetadata"))
   {
     m_serviceMetadata = jsonValue.GetObject("ServiceMetadata");
-
     m_serviceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

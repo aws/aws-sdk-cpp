@@ -33,7 +33,7 @@ namespace Model
   class MetadataCatalogConfig
   {
   public:
-    AWS_APPFLOW_API MetadataCatalogConfig();
+    AWS_APPFLOW_API MetadataCatalogConfig() = default;
     AWS_APPFLOW_API MetadataCatalogConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API MetadataCatalogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
      * data with the Glue Data Catalog.</p>
      */
-    inline const GlueDataCatalogConfig& GetGlueDataCatalog() const{ return m_glueDataCatalog; }
+    inline const GlueDataCatalogConfig& GetGlueDataCatalog() const { return m_glueDataCatalog; }
     inline bool GlueDataCatalogHasBeenSet() const { return m_glueDataCatalogHasBeenSet; }
-    inline void SetGlueDataCatalog(const GlueDataCatalogConfig& value) { m_glueDataCatalogHasBeenSet = true; m_glueDataCatalog = value; }
-    inline void SetGlueDataCatalog(GlueDataCatalogConfig&& value) { m_glueDataCatalogHasBeenSet = true; m_glueDataCatalog = std::move(value); }
-    inline MetadataCatalogConfig& WithGlueDataCatalog(const GlueDataCatalogConfig& value) { SetGlueDataCatalog(value); return *this;}
-    inline MetadataCatalogConfig& WithGlueDataCatalog(GlueDataCatalogConfig&& value) { SetGlueDataCatalog(std::move(value)); return *this;}
+    template<typename GlueDataCatalogT = GlueDataCatalogConfig>
+    void SetGlueDataCatalog(GlueDataCatalogT&& value) { m_glueDataCatalogHasBeenSet = true; m_glueDataCatalog = std::forward<GlueDataCatalogT>(value); }
+    template<typename GlueDataCatalogT = GlueDataCatalogConfig>
+    MetadataCatalogConfig& WithGlueDataCatalog(GlueDataCatalogT&& value) { SetGlueDataCatalog(std::forward<GlueDataCatalogT>(value)); return *this;}
     ///@}
   private:
 

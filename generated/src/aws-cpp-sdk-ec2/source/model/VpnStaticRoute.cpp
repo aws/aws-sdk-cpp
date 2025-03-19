@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnStaticRoute::VpnStaticRoute() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_source(VpnStaticRouteSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_state(VpnState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 VpnStaticRoute::VpnStaticRoute(const XmlNode& xmlNode)
-  : VpnStaticRoute()
 {
   *this = xmlNode;
 }
@@ -50,13 +40,13 @@ VpnStaticRoute& VpnStaticRoute::operator =(const XmlNode& xmlNode)
     XmlNode sourceNode = resultNode.FirstChild("source");
     if(!sourceNode.IsNull())
     {
-      m_source = VpnStaticRouteSourceMapper::GetVpnStaticRouteSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText()).c_str()).c_str());
+      m_source = VpnStaticRouteSourceMapper::GetVpnStaticRouteSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText()).c_str()));
       m_sourceHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

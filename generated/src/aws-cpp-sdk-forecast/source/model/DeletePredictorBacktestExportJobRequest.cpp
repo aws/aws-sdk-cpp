@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePredictorBacktestExportJobRequest::DeletePredictorBacktestExportJobRequest() : 
-    m_predictorBacktestExportJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePredictorBacktestExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

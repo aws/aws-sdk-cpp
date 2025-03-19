@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoOverlayInput::VideoOverlayInput() : 
-    m_fileInputHasBeenSet(false),
-    m_inputClippingsHasBeenSet(false),
-    m_timecodeSource(InputTimecodeSource::NOT_SET),
-    m_timecodeSourceHasBeenSet(false),
-    m_timecodeStartHasBeenSet(false)
-{
-}
-
 VideoOverlayInput::VideoOverlayInput(JsonView jsonValue)
-  : VideoOverlayInput()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ VideoOverlayInput& VideoOverlayInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileInput"))
   {
     m_fileInput = jsonValue.GetString("fileInput");
-
     m_fileInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputClippings"))
   {
     Aws::Utils::Array<JsonView> inputClippingsJsonList = jsonValue.GetArray("inputClippings");
@@ -51,21 +39,16 @@ VideoOverlayInput& VideoOverlayInput::operator =(JsonView jsonValue)
     }
     m_inputClippingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeSource"))
   {
     m_timecodeSource = InputTimecodeSourceMapper::GetInputTimecodeSourceForName(jsonValue.GetString("timecodeSource"));
-
     m_timecodeSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeStart"))
   {
     m_timecodeStart = jsonValue.GetString("timecodeStart");
-
     m_timecodeStartHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PrepareQueryRequest::PrepareQueryRequest() : 
-    m_queryStringHasBeenSet(false),
-    m_validateOnly(false),
-    m_validateOnlyHasBeenSet(false)
-{
-}
-
 Aws::String PrepareQueryRequest::SerializePayload() const
 {
   JsonValue payload;

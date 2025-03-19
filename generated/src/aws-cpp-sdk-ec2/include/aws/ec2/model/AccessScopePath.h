@@ -33,7 +33,7 @@ namespace Model
   class AccessScopePath
   {
   public:
-    AWS_EC2_API AccessScopePath();
+    AWS_EC2_API AccessScopePath() = default;
     AWS_EC2_API AccessScopePath(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AccessScopePath& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,38 +45,38 @@ namespace Model
     /**
      * <p>The source.</p>
      */
-    inline const PathStatement& GetSource() const{ return m_source; }
+    inline const PathStatement& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const PathStatement& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(PathStatement&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline AccessScopePath& WithSource(const PathStatement& value) { SetSource(value); return *this;}
-    inline AccessScopePath& WithSource(PathStatement&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = PathStatement>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = PathStatement>
+    AccessScopePath& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination.</p>
      */
-    inline const PathStatement& GetDestination() const{ return m_destination; }
+    inline const PathStatement& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const PathStatement& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(PathStatement&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline AccessScopePath& WithDestination(const PathStatement& value) { SetDestination(value); return *this;}
-    inline AccessScopePath& WithDestination(PathStatement&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = PathStatement>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = PathStatement>
+    AccessScopePath& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The through resources.</p>
      */
-    inline const Aws::Vector<ThroughResourcesStatement>& GetThroughResources() const{ return m_throughResources; }
+    inline const Aws::Vector<ThroughResourcesStatement>& GetThroughResources() const { return m_throughResources; }
     inline bool ThroughResourcesHasBeenSet() const { return m_throughResourcesHasBeenSet; }
-    inline void SetThroughResources(const Aws::Vector<ThroughResourcesStatement>& value) { m_throughResourcesHasBeenSet = true; m_throughResources = value; }
-    inline void SetThroughResources(Aws::Vector<ThroughResourcesStatement>&& value) { m_throughResourcesHasBeenSet = true; m_throughResources = std::move(value); }
-    inline AccessScopePath& WithThroughResources(const Aws::Vector<ThroughResourcesStatement>& value) { SetThroughResources(value); return *this;}
-    inline AccessScopePath& WithThroughResources(Aws::Vector<ThroughResourcesStatement>&& value) { SetThroughResources(std::move(value)); return *this;}
-    inline AccessScopePath& AddThroughResources(const ThroughResourcesStatement& value) { m_throughResourcesHasBeenSet = true; m_throughResources.push_back(value); return *this; }
-    inline AccessScopePath& AddThroughResources(ThroughResourcesStatement&& value) { m_throughResourcesHasBeenSet = true; m_throughResources.push_back(std::move(value)); return *this; }
+    template<typename ThroughResourcesT = Aws::Vector<ThroughResourcesStatement>>
+    void SetThroughResources(ThroughResourcesT&& value) { m_throughResourcesHasBeenSet = true; m_throughResources = std::forward<ThroughResourcesT>(value); }
+    template<typename ThroughResourcesT = Aws::Vector<ThroughResourcesStatement>>
+    AccessScopePath& WithThroughResources(ThroughResourcesT&& value) { SetThroughResources(std::forward<ThroughResourcesT>(value)); return *this;}
+    template<typename ThroughResourcesT = ThroughResourcesStatement>
+    AccessScopePath& AddThroughResources(ThroughResourcesT&& value) { m_throughResourcesHasBeenSet = true; m_throughResources.emplace_back(std::forward<ThroughResourcesT>(value)); return *this; }
     ///@}
   private:
 

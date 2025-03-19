@@ -18,15 +18,7 @@ namespace Chime
 namespace Model
 {
 
-AlexaForBusinessMetadata::AlexaForBusinessMetadata() : 
-    m_isAlexaForBusinessEnabled(false),
-    m_isAlexaForBusinessEnabledHasBeenSet(false),
-    m_alexaForBusinessRoomArnHasBeenSet(false)
-{
-}
-
 AlexaForBusinessMetadata::AlexaForBusinessMetadata(JsonView jsonValue)
-  : AlexaForBusinessMetadata()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AlexaForBusinessMetadata& AlexaForBusinessMetadata::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("IsAlexaForBusinessEnabled"))
   {
     m_isAlexaForBusinessEnabled = jsonValue.GetBool("IsAlexaForBusinessEnabled");
-
     m_isAlexaForBusinessEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlexaForBusinessRoomArn"))
   {
     m_alexaForBusinessRoomArn = jsonValue.GetString("AlexaForBusinessRoomArn");
-
     m_alexaForBusinessRoomArnHasBeenSet = true;
   }
-
   return *this;
 }
 

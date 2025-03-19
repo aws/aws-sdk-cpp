@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPipelineBlueprintResult::GetPipelineBlueprintResult()
-{
-}
-
 GetPipelineBlueprintResult::GetPipelineBlueprintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetPipelineBlueprintResult& GetPipelineBlueprintResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Blueprint"))
   {
     m_blueprint = jsonValue.GetObject("Blueprint");
-
+    m_blueprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
+    m_formatHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

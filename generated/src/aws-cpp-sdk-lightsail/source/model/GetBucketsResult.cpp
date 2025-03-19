@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketsResult::GetBucketsResult()
-{
-}
-
 GetBucketsResult::GetBucketsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ GetBucketsResult& GetBucketsResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_buckets.push_back(bucketsJsonList[bucketsIndex].AsObject());
     }
+    m_bucketsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountLevelBpaSync"))
   {
     m_accountLevelBpaSync = jsonValue.GetObject("accountLevelBpaSync");
-
+    m_accountLevelBpaSyncHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

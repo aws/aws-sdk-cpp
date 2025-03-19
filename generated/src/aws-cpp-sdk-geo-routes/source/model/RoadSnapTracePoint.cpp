@@ -18,18 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoadSnapTracePoint::RoadSnapTracePoint() : 
-    m_heading(0.0),
-    m_headingHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_speed(0.0),
-    m_speedHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 RoadSnapTracePoint::RoadSnapTracePoint(JsonView jsonValue)
-  : RoadSnapTracePoint()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ RoadSnapTracePoint& RoadSnapTracePoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Heading"))
   {
     m_heading = jsonValue.GetDouble("Heading");
-
     m_headingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -52,21 +39,16 @@ RoadSnapTracePoint& RoadSnapTracePoint::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Speed"))
   {
     m_speed = jsonValue.GetDouble("Speed");
-
     m_speedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetString("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInstancePropertiesRequest::DescribeInstancePropertiesRequest() : 
-    m_instancePropertyFilterListHasBeenSet(false),
-    m_filtersWithOperatorHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstancePropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

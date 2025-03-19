@@ -18,15 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-ThirdPartySourceRepository::ThirdPartySourceRepository() : 
-    m_nameHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 ThirdPartySourceRepository::ThirdPartySourceRepository(JsonView jsonValue)
-  : ThirdPartySourceRepository()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ThirdPartySourceRepository& ThirdPartySourceRepository::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionArn"))
   {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
-
     m_connectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   return *this;
 }
 

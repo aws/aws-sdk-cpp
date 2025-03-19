@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringGroundTruthS3Input::MonitoringGroundTruthS3Input() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 MonitoringGroundTruthS3Input::MonitoringGroundTruthS3Input(JsonView jsonValue)
-  : MonitoringGroundTruthS3Input()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitoringGroundTruthS3Input& MonitoringGroundTruthS3Input::operator =(JsonView 
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

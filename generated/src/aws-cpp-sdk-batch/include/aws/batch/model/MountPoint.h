@@ -35,7 +35,7 @@ namespace Model
   class MountPoint
   {
   public:
-    AWS_BATCH_API MountPoint();
+    AWS_BATCH_API MountPoint() = default;
     AWS_BATCH_API MountPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The path on the container where the host volume is mounted.</p>
      */
-    inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
+    inline const Aws::String& GetContainerPath() const { return m_containerPath; }
     inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
-    inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
-    inline void SetContainerPath(Aws::String&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::move(value); }
-    inline void SetContainerPath(const char* value) { m_containerPathHasBeenSet = true; m_containerPath.assign(value); }
-    inline MountPoint& WithContainerPath(const Aws::String& value) { SetContainerPath(value); return *this;}
-    inline MountPoint& WithContainerPath(Aws::String&& value) { SetContainerPath(std::move(value)); return *this;}
-    inline MountPoint& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
+    template<typename ContainerPathT = Aws::String>
+    void SetContainerPath(ContainerPathT&& value) { m_containerPathHasBeenSet = true; m_containerPath = std::forward<ContainerPathT>(value); }
+    template<typename ContainerPathT = Aws::String>
+    MountPoint& WithContainerPath(ContainerPathT&& value) { SetContainerPath(std::forward<ContainerPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline MountPoint& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -71,21 +69,19 @@ namespace Model
     /**
      * <p>The name of the volume to mount.</p>
      */
-    inline const Aws::String& GetSourceVolume() const{ return m_sourceVolume; }
+    inline const Aws::String& GetSourceVolume() const { return m_sourceVolume; }
     inline bool SourceVolumeHasBeenSet() const { return m_sourceVolumeHasBeenSet; }
-    inline void SetSourceVolume(const Aws::String& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
-    inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::move(value); }
-    inline void SetSourceVolume(const char* value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume.assign(value); }
-    inline MountPoint& WithSourceVolume(const Aws::String& value) { SetSourceVolume(value); return *this;}
-    inline MountPoint& WithSourceVolume(Aws::String&& value) { SetSourceVolume(std::move(value)); return *this;}
-    inline MountPoint& WithSourceVolume(const char* value) { SetSourceVolume(value); return *this;}
+    template<typename SourceVolumeT = Aws::String>
+    void SetSourceVolume(SourceVolumeT&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::forward<SourceVolumeT>(value); }
+    template<typename SourceVolumeT = Aws::String>
+    MountPoint& WithSourceVolume(SourceVolumeT&& value) { SetSourceVolume(std::forward<SourceVolumeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_containerPath;
     bool m_containerPathHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
 
     Aws::String m_sourceVolume;

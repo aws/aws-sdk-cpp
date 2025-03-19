@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDeclarativePoliciesReportsResponse::DescribeDeclarativePoliciesReportsResponse()
-{
-}
-
 DescribeDeclarativePoliciesReportsResponse::DescribeDeclarativePoliciesReportsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeDeclarativePoliciesReportsResponse& DescribeDeclarativePoliciesReportsRe
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode reportsNode = resultNode.FirstChild("reportSet");
     if(!reportsNode.IsNull())
     {
       XmlNode reportsMember = reportsNode.FirstChild("item");
+      m_reportsHasBeenSet = !reportsMember.IsNull();
       while(!reportsMember.IsNull())
       {
         m_reports.push_back(reportsMember);
         reportsMember = reportsMember.NextNode("item");
       }
 
+      m_reportsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeDeclarativePoliciesReportsResponse& DescribeDeclarativePoliciesReportsRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeDeclarativePoliciesReportsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

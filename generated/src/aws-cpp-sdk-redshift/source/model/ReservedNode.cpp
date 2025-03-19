@@ -20,30 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReservedNode::ReservedNode() : 
-    m_reservedNodeIdHasBeenSet(false),
-    m_reservedNodeOfferingIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_reservedNodeOfferingType(ReservedNodeOfferingType::NOT_SET),
-    m_reservedNodeOfferingTypeHasBeenSet(false)
-{
-}
-
 ReservedNode::ReservedNode(const XmlNode& xmlNode)
-  : ReservedNode()
 {
   *this = xmlNode;
 }
@@ -124,6 +101,7 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
+      m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
       while(!recurringChargesMember.IsNull())
       {
         m_recurringCharges.push_back(recurringChargesMember);
@@ -135,7 +113,7 @@ ReservedNode& ReservedNode::operator =(const XmlNode& xmlNode)
     XmlNode reservedNodeOfferingTypeNode = resultNode.FirstChild("ReservedNodeOfferingType");
     if(!reservedNodeOfferingTypeNode.IsNull())
     {
-      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingTypeNode.GetText()).c_str()).c_str());
+      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeOfferingTypeNode.GetText()).c_str()));
       m_reservedNodeOfferingTypeHasBeenSet = true;
     }
   }

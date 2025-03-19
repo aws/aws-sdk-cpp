@@ -18,16 +18,7 @@ namespace FIS
 namespace Model
 {
 
-UpdateExperimentTemplateReportConfigurationInput::UpdateExperimentTemplateReportConfigurationInput() : 
-    m_outputsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_preExperimentDurationHasBeenSet(false),
-    m_postExperimentDurationHasBeenSet(false)
-{
-}
-
 UpdateExperimentTemplateReportConfigurationInput::UpdateExperimentTemplateReportConfigurationInput(JsonView jsonValue)
-  : UpdateExperimentTemplateReportConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ UpdateExperimentTemplateReportConfigurationInput& UpdateExperimentTemplateReport
   if(jsonValue.ValueExists("outputs"))
   {
     m_outputs = jsonValue.GetObject("outputs");
-
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSources"))
   {
     m_dataSources = jsonValue.GetObject("dataSources");
-
     m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preExperimentDuration"))
   {
     m_preExperimentDuration = jsonValue.GetString("preExperimentDuration");
-
     m_preExperimentDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postExperimentDuration"))
   {
     m_postExperimentDuration = jsonValue.GetString("postExperimentDuration");
-
     m_postExperimentDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

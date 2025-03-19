@@ -12,13 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectorProfileRequest::DeleteConnectorProfileRequest() : 
-    m_connectorProfileNameHasBeenSet(false),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectorProfileRequest::SerializePayload() const
 {
   JsonValue payload;

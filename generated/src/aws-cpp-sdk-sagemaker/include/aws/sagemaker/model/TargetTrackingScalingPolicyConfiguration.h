@@ -35,7 +35,7 @@ namespace Model
   class TargetTrackingScalingPolicyConfiguration
   {
   public:
-    AWS_SAGEMAKER_API TargetTrackingScalingPolicyConfiguration();
+    AWS_SAGEMAKER_API TargetTrackingScalingPolicyConfiguration() = default;
     AWS_SAGEMAKER_API TargetTrackingScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TargetTrackingScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>An object containing information about a metric.</p>
      */
-    inline const MetricSpecification& GetMetricSpecification() const{ return m_metricSpecification; }
+    inline const MetricSpecification& GetMetricSpecification() const { return m_metricSpecification; }
     inline bool MetricSpecificationHasBeenSet() const { return m_metricSpecificationHasBeenSet; }
-    inline void SetMetricSpecification(const MetricSpecification& value) { m_metricSpecificationHasBeenSet = true; m_metricSpecification = value; }
-    inline void SetMetricSpecification(MetricSpecification&& value) { m_metricSpecificationHasBeenSet = true; m_metricSpecification = std::move(value); }
-    inline TargetTrackingScalingPolicyConfiguration& WithMetricSpecification(const MetricSpecification& value) { SetMetricSpecification(value); return *this;}
-    inline TargetTrackingScalingPolicyConfiguration& WithMetricSpecification(MetricSpecification&& value) { SetMetricSpecification(std::move(value)); return *this;}
+    template<typename MetricSpecificationT = MetricSpecification>
+    void SetMetricSpecification(MetricSpecificationT&& value) { m_metricSpecificationHasBeenSet = true; m_metricSpecification = std::forward<MetricSpecificationT>(value); }
+    template<typename MetricSpecificationT = MetricSpecification>
+    TargetTrackingScalingPolicyConfiguration& WithMetricSpecification(MetricSpecificationT&& value) { SetMetricSpecification(std::forward<MetricSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +58,7 @@ namespace Model
      * <p>The recommended target value to specify for the metric when creating a
      * scaling policy.</p>
      */
-    inline double GetTargetValue() const{ return m_targetValue; }
+    inline double GetTargetValue() const { return m_targetValue; }
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
     inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
     MetricSpecification m_metricSpecification;
     bool m_metricSpecificationHasBeenSet = false;
 
-    double m_targetValue;
+    double m_targetValue{0.0};
     bool m_targetValueHasBeenSet = false;
   };
 

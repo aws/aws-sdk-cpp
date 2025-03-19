@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RollingDateConfiguration::RollingDateConfiguration() : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 RollingDateConfiguration::RollingDateConfiguration(JsonView jsonValue)
-  : RollingDateConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RollingDateConfiguration& RollingDateConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DataSetIdentifier"))
   {
     m_dataSetIdentifier = jsonValue.GetString("DataSetIdentifier");
-
     m_dataSetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class EFSFileSystemConfig
   {
   public:
-    AWS_SAGEMAKER_API EFSFileSystemConfig();
+    AWS_SAGEMAKER_API EFSFileSystemConfig() = default;
     AWS_SAGEMAKER_API EFSFileSystemConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EFSFileSystemConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of your Amazon EFS file system.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline EFSFileSystemConfig& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline EFSFileSystemConfig& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline EFSFileSystemConfig& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    EFSFileSystemConfig& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The path to the file system directory that is accessible in Amazon SageMaker
      * AI Studio. Permitted users can access only this directory and below.</p>
      */
-    inline const Aws::String& GetFileSystemPath() const{ return m_fileSystemPath; }
+    inline const Aws::String& GetFileSystemPath() const { return m_fileSystemPath; }
     inline bool FileSystemPathHasBeenSet() const { return m_fileSystemPathHasBeenSet; }
-    inline void SetFileSystemPath(const Aws::String& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = value; }
-    inline void SetFileSystemPath(Aws::String&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::move(value); }
-    inline void SetFileSystemPath(const char* value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath.assign(value); }
-    inline EFSFileSystemConfig& WithFileSystemPath(const Aws::String& value) { SetFileSystemPath(value); return *this;}
-    inline EFSFileSystemConfig& WithFileSystemPath(Aws::String&& value) { SetFileSystemPath(std::move(value)); return *this;}
-    inline EFSFileSystemConfig& WithFileSystemPath(const char* value) { SetFileSystemPath(value); return *this;}
+    template<typename FileSystemPathT = Aws::String>
+    void SetFileSystemPath(FileSystemPathT&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::forward<FileSystemPathT>(value); }
+    template<typename FileSystemPathT = Aws::String>
+    EFSFileSystemConfig& WithFileSystemPath(FileSystemPathT&& value) { SetFileSystemPath(std::forward<FileSystemPathT>(value)); return *this;}
     ///@}
   private:
 

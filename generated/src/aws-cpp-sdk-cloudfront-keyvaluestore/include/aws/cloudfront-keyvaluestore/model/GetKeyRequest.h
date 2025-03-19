@@ -21,7 +21,7 @@ namespace Model
   class GetKeyRequest : public CloudFrontKeyValueStoreRequest
   {
   public:
-    AWS_CLOUDFRONTKEYVALUESTORE_API GetKeyRequest();
+    AWS_CLOUDFRONTKEYVALUESTORE_API GetKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Key Value Store.</p>
      */
-    inline const Aws::String& GetKvsARN() const{ return m_kvsARN; }
+    inline const Aws::String& GetKvsARN() const { return m_kvsARN; }
     inline bool KvsARNHasBeenSet() const { return m_kvsARNHasBeenSet; }
-    inline void SetKvsARN(const Aws::String& value) { m_kvsARNHasBeenSet = true; m_kvsARN = value; }
-    inline void SetKvsARN(Aws::String&& value) { m_kvsARNHasBeenSet = true; m_kvsARN = std::move(value); }
-    inline void SetKvsARN(const char* value) { m_kvsARNHasBeenSet = true; m_kvsARN.assign(value); }
-    inline GetKeyRequest& WithKvsARN(const Aws::String& value) { SetKvsARN(value); return *this;}
-    inline GetKeyRequest& WithKvsARN(Aws::String&& value) { SetKvsARN(std::move(value)); return *this;}
-    inline GetKeyRequest& WithKvsARN(const char* value) { SetKvsARN(value); return *this;}
+    template<typename KvsARNT = Aws::String>
+    void SetKvsARN(KvsARNT&& value) { m_kvsARNHasBeenSet = true; m_kvsARN = std::forward<KvsARNT>(value); }
+    template<typename KvsARNT = Aws::String>
+    GetKeyRequest& WithKvsARN(KvsARNT&& value) { SetKvsARN(std::forward<KvsARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key to get.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetKeyRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetKeyRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetKeyRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetKeyRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

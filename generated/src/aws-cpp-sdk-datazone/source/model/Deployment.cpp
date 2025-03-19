@@ -18,21 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_deploymentIdHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_isDeploymentComplete(false),
-    m_isDeploymentCompleteHasBeenSet(false),
-    m_messagesHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(JsonView jsonValue)
-  : Deployment()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ Deployment& Deployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentType"))
   {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("deploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetObject("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDeploymentComplete"))
   {
     m_isDeploymentComplete = jsonValue.GetBool("isDeploymentComplete");
-
     m_isDeploymentCompleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -83,7 +59,6 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     }
     m_messagesHasBeenSet = true;
   }
-
   return *this;
 }
 

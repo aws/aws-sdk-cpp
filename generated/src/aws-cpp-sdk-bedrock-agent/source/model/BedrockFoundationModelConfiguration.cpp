@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-BedrockFoundationModelConfiguration::BedrockFoundationModelConfiguration() : 
-    m_modelArnHasBeenSet(false),
-    m_parsingModality(ParsingModality::NOT_SET),
-    m_parsingModalityHasBeenSet(false),
-    m_parsingPromptHasBeenSet(false)
-{
-}
-
 BedrockFoundationModelConfiguration::BedrockFoundationModelConfiguration(JsonView jsonValue)
-  : BedrockFoundationModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BedrockFoundationModelConfiguration& BedrockFoundationModelConfiguration::operat
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsingModality"))
   {
     m_parsingModality = ParsingModalityMapper::GetParsingModalityForName(jsonValue.GetString("parsingModality"));
-
     m_parsingModalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsingPrompt"))
   {
     m_parsingPrompt = jsonValue.GetObject("parsingPrompt");
-
     m_parsingPromptHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFormationStackDriftInformationDetails::AwsCloudFormationStackDriftInformationDetails() : 
-    m_stackDriftStatusHasBeenSet(false)
-{
-}
-
 AwsCloudFormationStackDriftInformationDetails::AwsCloudFormationStackDriftInformationDetails(JsonView jsonValue)
-  : AwsCloudFormationStackDriftInformationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsCloudFormationStackDriftInformationDetails& AwsCloudFormationStackDriftInform
   if(jsonValue.ValueExists("StackDriftStatus"))
   {
     m_stackDriftStatus = jsonValue.GetString("StackDriftStatus");
-
     m_stackDriftStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

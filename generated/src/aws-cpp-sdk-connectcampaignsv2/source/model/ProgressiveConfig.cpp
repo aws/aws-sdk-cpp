@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-ProgressiveConfig::ProgressiveConfig() : 
-    m_bandwidthAllocation(0.0),
-    m_bandwidthAllocationHasBeenSet(false)
-{
-}
-
 ProgressiveConfig::ProgressiveConfig(JsonView jsonValue)
-  : ProgressiveConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ProgressiveConfig& ProgressiveConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bandwidthAllocation"))
   {
     m_bandwidthAllocation = jsonValue.GetDouble("bandwidthAllocation");
-
     m_bandwidthAllocationHasBeenSet = true;
   }
-
   return *this;
 }
 

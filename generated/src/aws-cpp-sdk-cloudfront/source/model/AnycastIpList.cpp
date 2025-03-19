@@ -20,20 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-AnycastIpList::AnycastIpList() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_anycastIpsHasBeenSet(false),
-    m_ipCount(0),
-    m_ipCountHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 AnycastIpList::AnycastIpList(const XmlNode& xmlNode)
-  : AnycastIpList()
 {
   *this = xmlNode;
 }
@@ -72,6 +59,7 @@ AnycastIpList& AnycastIpList::operator =(const XmlNode& xmlNode)
     if(!anycastIpsNode.IsNull())
     {
       XmlNode anycastIpsMember = anycastIpsNode.FirstChild("AnycastIp");
+      m_anycastIpsHasBeenSet = !anycastIpsMember.IsNull();
       while(!anycastIpsMember.IsNull())
       {
         m_anycastIps.push_back(anycastIpsMember.GetText());

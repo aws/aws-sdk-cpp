@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkflowRequest::DescribeWorkflowRequest() : 
-    m_workflowIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

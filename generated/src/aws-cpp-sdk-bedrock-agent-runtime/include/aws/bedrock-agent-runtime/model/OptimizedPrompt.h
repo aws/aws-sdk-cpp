@@ -32,7 +32,7 @@ namespace Model
   class OptimizedPrompt
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OptimizedPrompt();
+    AWS_BEDROCKAGENTRUNTIME_API OptimizedPrompt() = default;
     AWS_BEDROCKAGENTRUNTIME_API OptimizedPrompt(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OptimizedPrompt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains information about the text in the prompt that was optimized.</p>
      */
-    inline const TextPrompt& GetTextPrompt() const{ return m_textPrompt; }
+    inline const TextPrompt& GetTextPrompt() const { return m_textPrompt; }
     inline bool TextPromptHasBeenSet() const { return m_textPromptHasBeenSet; }
-    inline void SetTextPrompt(const TextPrompt& value) { m_textPromptHasBeenSet = true; m_textPrompt = value; }
-    inline void SetTextPrompt(TextPrompt&& value) { m_textPromptHasBeenSet = true; m_textPrompt = std::move(value); }
-    inline OptimizedPrompt& WithTextPrompt(const TextPrompt& value) { SetTextPrompt(value); return *this;}
-    inline OptimizedPrompt& WithTextPrompt(TextPrompt&& value) { SetTextPrompt(std::move(value)); return *this;}
+    template<typename TextPromptT = TextPrompt>
+    void SetTextPrompt(TextPromptT&& value) { m_textPromptHasBeenSet = true; m_textPrompt = std::forward<TextPromptT>(value); }
+    template<typename TextPromptT = TextPrompt>
+    OptimizedPrompt& WithTextPrompt(TextPromptT&& value) { SetTextPrompt(std::forward<TextPromptT>(value)); return *this;}
     ///@}
   private:
 

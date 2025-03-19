@@ -12,16 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationVersionRequest::CreateApplicationVersionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_sourceCodeArchiveUrlHasBeenSet(false),
-    m_sourceCodeUrlHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateUrlHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationVersionRequest::SerializePayload() const
 {
   JsonValue payload;

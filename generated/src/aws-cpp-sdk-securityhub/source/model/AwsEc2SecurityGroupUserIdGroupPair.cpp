@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2SecurityGroupUserIdGroupPair::AwsEc2SecurityGroupUserIdGroupPair() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_peeringStatusHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 AwsEc2SecurityGroupUserIdGroupPair::AwsEc2SecurityGroupUserIdGroupPair(JsonView jsonValue)
-  : AwsEc2SecurityGroupUserIdGroupPair()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AwsEc2SecurityGroupUserIdGroupPair& AwsEc2SecurityGroupUserIdGroupPair::operator
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeeringStatus"))
   {
     m_peeringStatus = jsonValue.GetString("PeeringStatus");
-
     m_peeringStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcPeeringConnectionId"))
   {
     m_vpcPeeringConnectionId = jsonValue.GetString("VpcPeeringConnectionId");
-
     m_vpcPeeringConnectionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

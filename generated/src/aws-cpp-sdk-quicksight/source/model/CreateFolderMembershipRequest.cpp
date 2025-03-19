@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFolderMembershipRequest::CreateFolderMembershipRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_memberType(MemberType::NOT_SET),
-    m_memberTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateFolderMembershipRequest::SerializePayload() const
 {
   return {};

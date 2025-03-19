@@ -18,14 +18,7 @@ namespace KMS
 namespace Model
 {
 
-KeyListEntry::KeyListEntry() : 
-    m_keyIdHasBeenSet(false),
-    m_keyArnHasBeenSet(false)
-{
-}
-
 KeyListEntry::KeyListEntry(JsonView jsonValue)
-  : KeyListEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KeyListEntry& KeyListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

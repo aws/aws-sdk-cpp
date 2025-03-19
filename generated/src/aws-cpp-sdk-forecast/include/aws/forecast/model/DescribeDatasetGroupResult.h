@@ -30,7 +30,7 @@ namespace Model
   class DescribeDatasetGroupResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeDatasetGroupResult();
+    AWS_FORECASTSERVICE_API DescribeDatasetGroupResult() = default;
     AWS_FORECASTSERVICE_API DescribeDatasetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeDatasetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The name of the dataset group.</p>
      */
-    inline const Aws::String& GetDatasetGroupName() const{ return m_datasetGroupName; }
-    inline void SetDatasetGroupName(const Aws::String& value) { m_datasetGroupName = value; }
-    inline void SetDatasetGroupName(Aws::String&& value) { m_datasetGroupName = std::move(value); }
-    inline void SetDatasetGroupName(const char* value) { m_datasetGroupName.assign(value); }
-    inline DescribeDatasetGroupResult& WithDatasetGroupName(const Aws::String& value) { SetDatasetGroupName(value); return *this;}
-    inline DescribeDatasetGroupResult& WithDatasetGroupName(Aws::String&& value) { SetDatasetGroupName(std::move(value)); return *this;}
-    inline DescribeDatasetGroupResult& WithDatasetGroupName(const char* value) { SetDatasetGroupName(value); return *this;}
+    inline const Aws::String& GetDatasetGroupName() const { return m_datasetGroupName; }
+    template<typename DatasetGroupNameT = Aws::String>
+    void SetDatasetGroupName(DatasetGroupNameT&& value) { m_datasetGroupNameHasBeenSet = true; m_datasetGroupName = std::forward<DatasetGroupNameT>(value); }
+    template<typename DatasetGroupNameT = Aws::String>
+    DescribeDatasetGroupResult& WithDatasetGroupName(DatasetGroupNameT&& value) { SetDatasetGroupName(std::forward<DatasetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the dataset group.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArn.assign(value); }
-    inline DescribeDatasetGroupResult& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline DescribeDatasetGroupResult& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline DescribeDatasetGroupResult& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    DescribeDatasetGroupResult& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,25 +62,22 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the
      * dataset group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatasetArns() const{ return m_datasetArns; }
-    inline void SetDatasetArns(const Aws::Vector<Aws::String>& value) { m_datasetArns = value; }
-    inline void SetDatasetArns(Aws::Vector<Aws::String>&& value) { m_datasetArns = std::move(value); }
-    inline DescribeDatasetGroupResult& WithDatasetArns(const Aws::Vector<Aws::String>& value) { SetDatasetArns(value); return *this;}
-    inline DescribeDatasetGroupResult& WithDatasetArns(Aws::Vector<Aws::String>&& value) { SetDatasetArns(std::move(value)); return *this;}
-    inline DescribeDatasetGroupResult& AddDatasetArns(const Aws::String& value) { m_datasetArns.push_back(value); return *this; }
-    inline DescribeDatasetGroupResult& AddDatasetArns(Aws::String&& value) { m_datasetArns.push_back(std::move(value)); return *this; }
-    inline DescribeDatasetGroupResult& AddDatasetArns(const char* value) { m_datasetArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDatasetArns() const { return m_datasetArns; }
+    template<typename DatasetArnsT = Aws::Vector<Aws::String>>
+    void SetDatasetArns(DatasetArnsT&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::forward<DatasetArnsT>(value); }
+    template<typename DatasetArnsT = Aws::Vector<Aws::String>>
+    DescribeDatasetGroupResult& WithDatasetArns(DatasetArnsT&& value) { SetDatasetArns(std::forward<DatasetArnsT>(value)); return *this;}
+    template<typename DatasetArnsT = Aws::String>
+    DescribeDatasetGroupResult& AddDatasetArns(DatasetArnsT&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.emplace_back(std::forward<DatasetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The domain associated with the dataset group.</p>
      */
-    inline const Domain& GetDomain() const{ return m_domain; }
-    inline void SetDomain(const Domain& value) { m_domain = value; }
-    inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
-    inline DescribeDatasetGroupResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
-    inline DescribeDatasetGroupResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+    inline Domain GetDomain() const { return m_domain; }
+    inline void SetDomain(Domain value) { m_domainHasBeenSet = true; m_domain = value; }
+    inline DescribeDatasetGroupResult& WithDomain(Domain value) { SetDomain(value); return *this;}
     ///@}
 
     ///@{
@@ -101,24 +94,22 @@ namespace Model
      * <code>ACTIVE</code> before you can use the dataset group to create a
      * predictor.</p> 
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeDatasetGroupResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeDatasetGroupResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeDatasetGroupResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeDatasetGroupResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the dataset group was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeDatasetGroupResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeDatasetGroupResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeDatasetGroupResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,40 +120,46 @@ namespace Model
      * <code>LastModificationTime</code> is the current time of the
      * <code>DescribeDatasetGroup</code> call.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeDatasetGroupResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeDatasetGroupResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeDatasetGroupResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDatasetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDatasetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDatasetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDatasetGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datasetGroupName;
+    bool m_datasetGroupNameHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_datasetArns;
+    bool m_datasetArnsHasBeenSet = false;
 
-    Domain m_domain;
+    Domain m_domain{Domain::NOT_SET};
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

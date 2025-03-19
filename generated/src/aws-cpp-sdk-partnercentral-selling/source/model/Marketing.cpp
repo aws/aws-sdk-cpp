@@ -18,19 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-Marketing::Marketing() : 
-    m_awsFundingUsed(AwsFundingUsed::NOT_SET),
-    m_awsFundingUsedHasBeenSet(false),
-    m_campaignNameHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_source(MarketingSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_useCasesHasBeenSet(false)
-{
-}
-
 Marketing::Marketing(JsonView jsonValue)
-  : Marketing()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ Marketing& Marketing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AwsFundingUsed"))
   {
     m_awsFundingUsed = AwsFundingUsedMapper::GetAwsFundingUsedForName(jsonValue.GetString("AwsFundingUsed"));
-
     m_awsFundingUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CampaignName"))
   {
     m_campaignName = jsonValue.GetString("CampaignName");
-
     m_campaignNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channels"))
   {
     Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
@@ -60,14 +44,11 @@ Marketing& Marketing::operator =(JsonView jsonValue)
     }
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = MarketingSourceMapper::GetMarketingSourceForName(jsonValue.GetString("Source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseCases"))
   {
     Aws::Utils::Array<JsonView> useCasesJsonList = jsonValue.GetArray("UseCases");
@@ -77,7 +58,6 @@ Marketing& Marketing::operator =(JsonView jsonValue)
     }
     m_useCasesHasBeenSet = true;
   }
-
   return *this;
 }
 

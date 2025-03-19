@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentReportS3Report::ExperimentReportS3Report() : 
-    m_arnHasBeenSet(false),
-    m_reportTypeHasBeenSet(false)
-{
-}
-
 ExperimentReportS3Report::ExperimentReportS3Report(JsonView jsonValue)
-  : ExperimentReportS3Report()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExperimentReportS3Report& ExperimentReportS3Report::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportType"))
   {
     m_reportType = jsonValue.GetString("reportType");
-
     m_reportTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

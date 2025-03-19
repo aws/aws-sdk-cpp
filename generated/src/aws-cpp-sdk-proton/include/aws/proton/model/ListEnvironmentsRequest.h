@@ -23,7 +23,7 @@ namespace Model
   class ListEnvironmentsRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API ListEnvironmentsRequest();
+    AWS_PROTON_API ListEnvironmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,21 @@ namespace Model
     /**
      * <p>An array of the versions of the environment template.</p>
      */
-    inline const Aws::Vector<EnvironmentTemplateFilter>& GetEnvironmentTemplates() const{ return m_environmentTemplates; }
+    inline const Aws::Vector<EnvironmentTemplateFilter>& GetEnvironmentTemplates() const { return m_environmentTemplates; }
     inline bool EnvironmentTemplatesHasBeenSet() const { return m_environmentTemplatesHasBeenSet; }
-    inline void SetEnvironmentTemplates(const Aws::Vector<EnvironmentTemplateFilter>& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = value; }
-    inline void SetEnvironmentTemplates(Aws::Vector<EnvironmentTemplateFilter>&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = std::move(value); }
-    inline ListEnvironmentsRequest& WithEnvironmentTemplates(const Aws::Vector<EnvironmentTemplateFilter>& value) { SetEnvironmentTemplates(value); return *this;}
-    inline ListEnvironmentsRequest& WithEnvironmentTemplates(Aws::Vector<EnvironmentTemplateFilter>&& value) { SetEnvironmentTemplates(std::move(value)); return *this;}
-    inline ListEnvironmentsRequest& AddEnvironmentTemplates(const EnvironmentTemplateFilter& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates.push_back(value); return *this; }
-    inline ListEnvironmentsRequest& AddEnvironmentTemplates(EnvironmentTemplateFilter&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentTemplatesT = Aws::Vector<EnvironmentTemplateFilter>>
+    void SetEnvironmentTemplates(EnvironmentTemplatesT&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = std::forward<EnvironmentTemplatesT>(value); }
+    template<typename EnvironmentTemplatesT = Aws::Vector<EnvironmentTemplateFilter>>
+    ListEnvironmentsRequest& WithEnvironmentTemplates(EnvironmentTemplatesT&& value) { SetEnvironmentTemplates(std::forward<EnvironmentTemplatesT>(value)); return *this;}
+    template<typename EnvironmentTemplatesT = EnvironmentTemplateFilter>
+    ListEnvironmentsRequest& AddEnvironmentTemplates(EnvironmentTemplatesT&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates.emplace_back(std::forward<EnvironmentTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of environments to list.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEnvironmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,21 +65,19 @@ namespace Model
      * <p>A token that indicates the location of the next environment in the array of
      * environments, after the list of environments that was previously requested.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEnvironmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEnvironmentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EnvironmentTemplateFilter> m_environmentTemplates;
     bool m_environmentTemplatesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

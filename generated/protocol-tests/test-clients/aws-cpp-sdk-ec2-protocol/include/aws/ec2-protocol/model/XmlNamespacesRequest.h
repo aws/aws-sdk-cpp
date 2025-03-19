@@ -19,7 +19,7 @@ namespace Model
   class XmlNamespacesRequest : public EC2ProtocolRequest
   {
   public:
-    AWS_EC2PROTOCOL_API XmlNamespacesRequest();
+    AWS_EC2PROTOCOL_API XmlNamespacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

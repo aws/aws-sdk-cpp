@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeDataSharesRequest::DescribeDataSharesRequest() : 
-    m_dataShareArnHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDataSharesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

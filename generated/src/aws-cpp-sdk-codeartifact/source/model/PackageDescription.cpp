@@ -18,17 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageDescription::PackageDescription() : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_originConfigurationHasBeenSet(false)
-{
-}
-
 PackageDescription::PackageDescription(JsonView jsonValue)
-  : PackageDescription()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PackageDescription& PackageDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originConfiguration"))
   {
     m_originConfiguration = jsonValue.GetObject("originConfiguration");
-
     m_originConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

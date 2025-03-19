@@ -33,7 +33,7 @@ namespace Model
   class GetOpenIdTokenResult
   {
   public:
-    AWS_COGNITOIDENTITY_API GetOpenIdTokenResult();
+    AWS_COGNITOIDENTITY_API GetOpenIdTokenResult() = default;
     AWS_COGNITOIDENTITY_API GetOpenIdTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITY_API GetOpenIdTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,42 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID. Note that the IdentityId
      * returned may not match the one passed on input.</p>
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
-    inline GetOpenIdTokenResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline GetOpenIdTokenResult& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline GetOpenIdTokenResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    GetOpenIdTokenResult& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An OpenID token, valid for 10 minutes.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
-    inline void SetToken(const Aws::String& value) { m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_token.assign(value); }
-    inline GetOpenIdTokenResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline GetOpenIdTokenResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline GetOpenIdTokenResult& WithToken(const char* value) { SetToken(value); return *this;}
+    inline const Aws::String& GetToken() const { return m_token; }
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    GetOpenIdTokenResult& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOpenIdTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOpenIdTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOpenIdTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOpenIdTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_token;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

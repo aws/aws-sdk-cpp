@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRoleCredentialsResult::GetRoleCredentialsResult()
-{
-}
-
 GetRoleCredentialsResult::GetRoleCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetRoleCredentialsResult& GetRoleCredentialsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("roleCredentials"))
   {
     m_roleCredentials = jsonValue.GetObject("roleCredentials");
-
+    m_roleCredentialsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -23,7 +23,7 @@ namespace Model
   class DescribeConfigurationTemplatesRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeConfigurationTemplatesRequest();
+    AWS_CLOUDWATCHLOGS_API DescribeConfigurationTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * templates that apply to the Amazon Web Services service that you specify
      * here.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline DescribeConfigurationTemplatesRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    DescribeConfigurationTemplatesRequest& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,15 +55,14 @@ namespace Model
      * <p>Use this parameter to filter the response to include only the configuration
      * templates that apply to the log types that you specify here.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogTypes() const{ return m_logTypes; }
+    inline const Aws::Vector<Aws::String>& GetLogTypes() const { return m_logTypes; }
     inline bool LogTypesHasBeenSet() const { return m_logTypesHasBeenSet; }
-    inline void SetLogTypes(const Aws::Vector<Aws::String>& value) { m_logTypesHasBeenSet = true; m_logTypes = value; }
-    inline void SetLogTypes(Aws::Vector<Aws::String>&& value) { m_logTypesHasBeenSet = true; m_logTypes = std::move(value); }
-    inline DescribeConfigurationTemplatesRequest& WithLogTypes(const Aws::Vector<Aws::String>& value) { SetLogTypes(value); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithLogTypes(Aws::Vector<Aws::String>&& value) { SetLogTypes(std::move(value)); return *this;}
-    inline DescribeConfigurationTemplatesRequest& AddLogTypes(const Aws::String& value) { m_logTypesHasBeenSet = true; m_logTypes.push_back(value); return *this; }
-    inline DescribeConfigurationTemplatesRequest& AddLogTypes(Aws::String&& value) { m_logTypesHasBeenSet = true; m_logTypes.push_back(std::move(value)); return *this; }
-    inline DescribeConfigurationTemplatesRequest& AddLogTypes(const char* value) { m_logTypesHasBeenSet = true; m_logTypes.push_back(value); return *this; }
+    template<typename LogTypesT = Aws::Vector<Aws::String>>
+    void SetLogTypes(LogTypesT&& value) { m_logTypesHasBeenSet = true; m_logTypes = std::forward<LogTypesT>(value); }
+    template<typename LogTypesT = Aws::Vector<Aws::String>>
+    DescribeConfigurationTemplatesRequest& WithLogTypes(LogTypesT&& value) { SetLogTypes(std::forward<LogTypesT>(value)); return *this;}
+    template<typename LogTypesT = Aws::String>
+    DescribeConfigurationTemplatesRequest& AddLogTypes(LogTypesT&& value) { m_logTypesHasBeenSet = true; m_logTypes.emplace_back(std::forward<LogTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +70,14 @@ namespace Model
      * <p>Use this parameter to filter the response to include only the configuration
      * templates that apply to the resource types that you specify here.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline DescribeConfigurationTemplatesRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline DescribeConfigurationTemplatesRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline DescribeConfigurationTemplatesRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-    inline DescribeConfigurationTemplatesRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    DescribeConfigurationTemplatesRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = Aws::String>
+    DescribeConfigurationTemplatesRequest& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,26 +86,23 @@ namespace Model
      * templates that apply to the delivery destination types that you specify
      * here.</p>
      */
-    inline const Aws::Vector<DeliveryDestinationType>& GetDeliveryDestinationTypes() const{ return m_deliveryDestinationTypes; }
+    inline const Aws::Vector<DeliveryDestinationType>& GetDeliveryDestinationTypes() const { return m_deliveryDestinationTypes; }
     inline bool DeliveryDestinationTypesHasBeenSet() const { return m_deliveryDestinationTypesHasBeenSet; }
-    inline void SetDeliveryDestinationTypes(const Aws::Vector<DeliveryDestinationType>& value) { m_deliveryDestinationTypesHasBeenSet = true; m_deliveryDestinationTypes = value; }
-    inline void SetDeliveryDestinationTypes(Aws::Vector<DeliveryDestinationType>&& value) { m_deliveryDestinationTypesHasBeenSet = true; m_deliveryDestinationTypes = std::move(value); }
-    inline DescribeConfigurationTemplatesRequest& WithDeliveryDestinationTypes(const Aws::Vector<DeliveryDestinationType>& value) { SetDeliveryDestinationTypes(value); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithDeliveryDestinationTypes(Aws::Vector<DeliveryDestinationType>&& value) { SetDeliveryDestinationTypes(std::move(value)); return *this;}
-    inline DescribeConfigurationTemplatesRequest& AddDeliveryDestinationTypes(const DeliveryDestinationType& value) { m_deliveryDestinationTypesHasBeenSet = true; m_deliveryDestinationTypes.push_back(value); return *this; }
-    inline DescribeConfigurationTemplatesRequest& AddDeliveryDestinationTypes(DeliveryDestinationType&& value) { m_deliveryDestinationTypesHasBeenSet = true; m_deliveryDestinationTypes.push_back(std::move(value)); return *this; }
+    template<typename DeliveryDestinationTypesT = Aws::Vector<DeliveryDestinationType>>
+    void SetDeliveryDestinationTypes(DeliveryDestinationTypesT&& value) { m_deliveryDestinationTypesHasBeenSet = true; m_deliveryDestinationTypes = std::forward<DeliveryDestinationTypesT>(value); }
+    template<typename DeliveryDestinationTypesT = Aws::Vector<DeliveryDestinationType>>
+    DescribeConfigurationTemplatesRequest& WithDeliveryDestinationTypes(DeliveryDestinationTypesT&& value) { SetDeliveryDestinationTypes(std::forward<DeliveryDestinationTypesT>(value)); return *this;}
+    inline DescribeConfigurationTemplatesRequest& AddDeliveryDestinationTypes(DeliveryDestinationType value) { m_deliveryDestinationTypesHasBeenSet = true; m_deliveryDestinationTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeConfigurationTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeConfigurationTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeConfigurationTemplatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +110,7 @@ namespace Model
      * <p>Use this parameter to limit the number of configuration templates that are
      * returned in the response.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeConfigurationTemplatesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -139,7 +132,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

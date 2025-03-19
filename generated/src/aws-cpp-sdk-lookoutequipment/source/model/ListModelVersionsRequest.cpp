@@ -12,24 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelVersionsRequest::ListModelVersionsRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_status(ModelVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceType(ModelVersionSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_createdAtEndTimeHasBeenSet(false),
-    m_createdAtStartTimeHasBeenSet(false),
-    m_maxModelVersion(0),
-    m_maxModelVersionHasBeenSet(false),
-    m_minModelVersion(0),
-    m_minModelVersionHasBeenSet(false)
-{
-}
-
 Aws::String ListModelVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

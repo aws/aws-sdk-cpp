@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePassThroughPlace::RoutePassThroughPlace() : 
-    m_originalPositionHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_waypointIndex(0),
-    m_waypointIndexHasBeenSet(false)
-{
-}
-
 RoutePassThroughPlace::RoutePassThroughPlace(JsonView jsonValue)
-  : RoutePassThroughPlace()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ RoutePassThroughPlace& RoutePassThroughPlace::operator =(JsonView jsonValue)
     }
     m_originalPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -53,14 +43,11 @@ RoutePassThroughPlace& RoutePassThroughPlace::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaypointIndex"))
   {
     m_waypointIndex = jsonValue.GetInteger("WaypointIndex");
-
     m_waypointIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterNamespaceResult::DeregisterNamespaceResult() : 
-    m_status(NamespaceRegistrationStatus::NOT_SET)
-{
-}
-
 DeregisterNamespaceResult::DeregisterNamespaceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DeregisterNamespaceResult()
 {
   *this = result;
 }
@@ -43,13 +37,15 @@ DeregisterNamespaceResult& DeregisterNamespaceResult::operator =(const Aws::Amaz
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = NamespaceRegistrationStatusMapper::GetNamespaceRegistrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = NamespaceRegistrationStatusMapper::GetNamespaceRegistrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DeregisterNamespaceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

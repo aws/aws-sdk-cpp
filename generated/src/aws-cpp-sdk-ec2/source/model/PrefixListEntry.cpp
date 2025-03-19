@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixListEntry::PrefixListEntry() : 
-    m_cidrHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 PrefixListEntry::PrefixListEntry(const XmlNode& xmlNode)
-  : PrefixListEntry()
 {
   *this = xmlNode;
 }

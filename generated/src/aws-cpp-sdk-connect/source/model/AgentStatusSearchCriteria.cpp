@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentStatusSearchCriteria::AgentStatusSearchCriteria() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
-{
-}
-
 AgentStatusSearchCriteria::AgentStatusSearchCriteria(JsonView jsonValue)
-  : AgentStatusSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ AgentStatusSearchCriteria& AgentStatusSearchCriteria::operator =(JsonView jsonVa
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -52,14 +43,11 @@ AgentStatusSearchCriteria& AgentStatusSearchCriteria::operator =(JsonView jsonVa
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

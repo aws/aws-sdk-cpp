@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInboundIntegrationsRequest::DescribeInboundIntegrationsRequest() : 
-    m_integrationArnHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInboundIntegrationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -30,7 +30,7 @@ namespace Model
   class Beard
   {
   public:
-    AWS_REKOGNITION_API Beard();
+    AWS_REKOGNITION_API Beard() = default;
     AWS_REKOGNITION_API Beard(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Beard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Boolean value that indicates whether the face has beard or not.</p>
      */
-    inline bool GetValue() const{ return m_value; }
+    inline bool GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
     inline Beard& WithValue(bool value) { SetValue(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>Level of confidence in the determination.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline Beard& WithConfidence(double value) { SetConfidence(value); return *this;}
     ///@}
   private:
 
-    bool m_value;
+    bool m_value{false};
     bool m_valueHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

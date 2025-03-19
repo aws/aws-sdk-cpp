@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClusterSecurityGroupsResult::DescribeClusterSecurityGroupsResult()
-{
-}
-
 DescribeClusterSecurityGroupsResult::DescribeClusterSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeClusterSecurityGroupsResult& DescribeClusterSecurityGroupsResult::operat
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode clusterSecurityGroupsNode = resultNode.FirstChild("ClusterSecurityGroups");
     if(!clusterSecurityGroupsNode.IsNull())
     {
       XmlNode clusterSecurityGroupsMember = clusterSecurityGroupsNode.FirstChild("ClusterSecurityGroup");
+      m_clusterSecurityGroupsHasBeenSet = !clusterSecurityGroupsMember.IsNull();
       while(!clusterSecurityGroupsMember.IsNull())
       {
         m_clusterSecurityGroups.push_back(clusterSecurityGroupsMember);
         clusterSecurityGroupsMember = clusterSecurityGroupsMember.NextNode("ClusterSecurityGroup");
       }
 
+      m_clusterSecurityGroupsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeClusterSecurityGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

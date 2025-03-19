@@ -18,13 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-TerraformSource::TerraformSource() : 
-    m_s3StateFileUrlHasBeenSet(false)
-{
-}
-
 TerraformSource::TerraformSource(JsonView jsonValue)
-  : TerraformSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TerraformSource& TerraformSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3StateFileUrl"))
   {
     m_s3StateFileUrl = jsonValue.GetString("s3StateFileUrl");
-
     m_s3StateFileUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

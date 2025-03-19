@@ -30,7 +30,7 @@ namespace Model
   class DescribeCertificateProviderResult
   {
   public:
-    AWS_IOT_API DescribeCertificateProviderResult();
+    AWS_IOT_API DescribeCertificateProviderResult() = default;
     AWS_IOT_API DescribeCertificateProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeCertificateProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,39 +39,33 @@ namespace Model
     /**
      * <p>The name of the certificate provider.</p>
      */
-    inline const Aws::String& GetCertificateProviderName() const{ return m_certificateProviderName; }
-    inline void SetCertificateProviderName(const Aws::String& value) { m_certificateProviderName = value; }
-    inline void SetCertificateProviderName(Aws::String&& value) { m_certificateProviderName = std::move(value); }
-    inline void SetCertificateProviderName(const char* value) { m_certificateProviderName.assign(value); }
-    inline DescribeCertificateProviderResult& WithCertificateProviderName(const Aws::String& value) { SetCertificateProviderName(value); return *this;}
-    inline DescribeCertificateProviderResult& WithCertificateProviderName(Aws::String&& value) { SetCertificateProviderName(std::move(value)); return *this;}
-    inline DescribeCertificateProviderResult& WithCertificateProviderName(const char* value) { SetCertificateProviderName(value); return *this;}
+    inline const Aws::String& GetCertificateProviderName() const { return m_certificateProviderName; }
+    template<typename CertificateProviderNameT = Aws::String>
+    void SetCertificateProviderName(CertificateProviderNameT&& value) { m_certificateProviderNameHasBeenSet = true; m_certificateProviderName = std::forward<CertificateProviderNameT>(value); }
+    template<typename CertificateProviderNameT = Aws::String>
+    DescribeCertificateProviderResult& WithCertificateProviderName(CertificateProviderNameT&& value) { SetCertificateProviderName(std::forward<CertificateProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the certificate provider.</p>
      */
-    inline const Aws::String& GetCertificateProviderArn() const{ return m_certificateProviderArn; }
-    inline void SetCertificateProviderArn(const Aws::String& value) { m_certificateProviderArn = value; }
-    inline void SetCertificateProviderArn(Aws::String&& value) { m_certificateProviderArn = std::move(value); }
-    inline void SetCertificateProviderArn(const char* value) { m_certificateProviderArn.assign(value); }
-    inline DescribeCertificateProviderResult& WithCertificateProviderArn(const Aws::String& value) { SetCertificateProviderArn(value); return *this;}
-    inline DescribeCertificateProviderResult& WithCertificateProviderArn(Aws::String&& value) { SetCertificateProviderArn(std::move(value)); return *this;}
-    inline DescribeCertificateProviderResult& WithCertificateProviderArn(const char* value) { SetCertificateProviderArn(value); return *this;}
+    inline const Aws::String& GetCertificateProviderArn() const { return m_certificateProviderArn; }
+    template<typename CertificateProviderArnT = Aws::String>
+    void SetCertificateProviderArn(CertificateProviderArnT&& value) { m_certificateProviderArnHasBeenSet = true; m_certificateProviderArn = std::forward<CertificateProviderArnT>(value); }
+    template<typename CertificateProviderArnT = Aws::String>
+    DescribeCertificateProviderResult& WithCertificateProviderArn(CertificateProviderArnT&& value) { SetCertificateProviderArn(std::forward<CertificateProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Lambda function ARN that's associated with the certificate provider.</p>
      */
-    inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
-    inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArn = value; }
-    inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArn = std::move(value); }
-    inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArn.assign(value); }
-    inline DescribeCertificateProviderResult& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
-    inline DescribeCertificateProviderResult& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
-    inline DescribeCertificateProviderResult& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
+    inline const Aws::String& GetLambdaFunctionArn() const { return m_lambdaFunctionArn; }
+    template<typename LambdaFunctionArnT = Aws::String>
+    void SetLambdaFunctionArn(LambdaFunctionArnT&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::forward<LambdaFunctionArnT>(value); }
+    template<typename LambdaFunctionArnT = Aws::String>
+    DescribeCertificateProviderResult& WithLambdaFunctionArn(LambdaFunctionArnT&& value) { SetLambdaFunctionArn(std::forward<LambdaFunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,13 +73,12 @@ namespace Model
      * <p>A list of the operations that the certificate provider will use to generate
      * certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
      */
-    inline const Aws::Vector<CertificateProviderOperation>& GetAccountDefaultForOperations() const{ return m_accountDefaultForOperations; }
-    inline void SetAccountDefaultForOperations(const Aws::Vector<CertificateProviderOperation>& value) { m_accountDefaultForOperations = value; }
-    inline void SetAccountDefaultForOperations(Aws::Vector<CertificateProviderOperation>&& value) { m_accountDefaultForOperations = std::move(value); }
-    inline DescribeCertificateProviderResult& WithAccountDefaultForOperations(const Aws::Vector<CertificateProviderOperation>& value) { SetAccountDefaultForOperations(value); return *this;}
-    inline DescribeCertificateProviderResult& WithAccountDefaultForOperations(Aws::Vector<CertificateProviderOperation>&& value) { SetAccountDefaultForOperations(std::move(value)); return *this;}
-    inline DescribeCertificateProviderResult& AddAccountDefaultForOperations(const CertificateProviderOperation& value) { m_accountDefaultForOperations.push_back(value); return *this; }
-    inline DescribeCertificateProviderResult& AddAccountDefaultForOperations(CertificateProviderOperation&& value) { m_accountDefaultForOperations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CertificateProviderOperation>& GetAccountDefaultForOperations() const { return m_accountDefaultForOperations; }
+    template<typename AccountDefaultForOperationsT = Aws::Vector<CertificateProviderOperation>>
+    void SetAccountDefaultForOperations(AccountDefaultForOperationsT&& value) { m_accountDefaultForOperationsHasBeenSet = true; m_accountDefaultForOperations = std::forward<AccountDefaultForOperationsT>(value); }
+    template<typename AccountDefaultForOperationsT = Aws::Vector<CertificateProviderOperation>>
+    DescribeCertificateProviderResult& WithAccountDefaultForOperations(AccountDefaultForOperationsT&& value) { SetAccountDefaultForOperations(std::forward<AccountDefaultForOperationsT>(value)); return *this;}
+    inline DescribeCertificateProviderResult& AddAccountDefaultForOperations(CertificateProviderOperation value) { m_accountDefaultForOperationsHasBeenSet = true; m_accountDefaultForOperations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -93,11 +86,11 @@ namespace Model
      * <p>The date-time string that indicates when the certificate provider was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline DescribeCertificateProviderResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline DescribeCertificateProviderResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    DescribeCertificateProviderResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,38 +98,43 @@ namespace Model
      * <p>The date-time string that indicates when the certificate provider was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
-    inline DescribeCertificateProviderResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline DescribeCertificateProviderResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    DescribeCertificateProviderResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCertificateProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCertificateProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCertificateProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCertificateProviderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateProviderName;
+    bool m_certificateProviderNameHasBeenSet = false;
 
     Aws::String m_certificateProviderArn;
+    bool m_certificateProviderArnHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;
+    bool m_lambdaFunctionArnHasBeenSet = false;
 
     Aws::Vector<CertificateProviderOperation> m_accountDefaultForOperations;
+    bool m_accountDefaultForOperationsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ namespace Model
   class Payload
   {
   public:
-    AWS_IOTEVENTS_API Payload();
+    AWS_IOTEVENTS_API Payload() = default;
     AWS_IOTEVENTS_API Payload(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Payload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * concatenations, and quoted strings that contain <code>${}</code> as the content.
      * The recommended maximum size of a content expression is 1 KB.</p>
      */
-    inline const Aws::String& GetContentExpression() const{ return m_contentExpression; }
+    inline const Aws::String& GetContentExpression() const { return m_contentExpression; }
     inline bool ContentExpressionHasBeenSet() const { return m_contentExpressionHasBeenSet; }
-    inline void SetContentExpression(const Aws::String& value) { m_contentExpressionHasBeenSet = true; m_contentExpression = value; }
-    inline void SetContentExpression(Aws::String&& value) { m_contentExpressionHasBeenSet = true; m_contentExpression = std::move(value); }
-    inline void SetContentExpression(const char* value) { m_contentExpressionHasBeenSet = true; m_contentExpression.assign(value); }
-    inline Payload& WithContentExpression(const Aws::String& value) { SetContentExpression(value); return *this;}
-    inline Payload& WithContentExpression(Aws::String&& value) { SetContentExpression(std::move(value)); return *this;}
-    inline Payload& WithContentExpression(const char* value) { SetContentExpression(value); return *this;}
+    template<typename ContentExpressionT = Aws::String>
+    void SetContentExpression(ContentExpressionT&& value) { m_contentExpressionHasBeenSet = true; m_contentExpression = std::forward<ContentExpressionT>(value); }
+    template<typename ContentExpressionT = Aws::String>
+    Payload& WithContentExpression(ContentExpressionT&& value) { SetContentExpression(std::forward<ContentExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,17 @@ namespace Model
      * <p>The value of the payload type can be either <code>STRING</code> or
      * <code>JSON</code>.</p>
      */
-    inline const PayloadType& GetType() const{ return m_type; }
+    inline PayloadType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PayloadType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PayloadType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Payload& WithType(const PayloadType& value) { SetType(value); return *this;}
-    inline Payload& WithType(PayloadType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PayloadType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Payload& WithType(PayloadType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_contentExpression;
     bool m_contentExpressionHasBeenSet = false;
 
-    PayloadType m_type;
+    PayloadType m_type{PayloadType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

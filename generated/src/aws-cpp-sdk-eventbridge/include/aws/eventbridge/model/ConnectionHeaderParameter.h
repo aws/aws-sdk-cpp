@@ -33,7 +33,7 @@ namespace Model
   class ConnectionHeaderParameter
   {
   public:
-    AWS_EVENTBRIDGE_API ConnectionHeaderParameter();
+    AWS_EVENTBRIDGE_API ConnectionHeaderParameter() = default;
     AWS_EVENTBRIDGE_API ConnectionHeaderParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ConnectionHeaderParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>The key for the parameter.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ConnectionHeaderParameter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ConnectionHeaderParameter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ConnectionHeaderParameter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ConnectionHeaderParameter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value associated with the key.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ConnectionHeaderParameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ConnectionHeaderParameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ConnectionHeaderParameter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ConnectionHeaderParameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the value is a secret.</p>
      */
-    inline bool GetIsValueSecret() const{ return m_isValueSecret; }
+    inline bool GetIsValueSecret() const { return m_isValueSecret; }
     inline bool IsValueSecretHasBeenSet() const { return m_isValueSecretHasBeenSet; }
     inline void SetIsValueSecret(bool value) { m_isValueSecretHasBeenSet = true; m_isValueSecret = value; }
     inline ConnectionHeaderParameter& WithIsValueSecret(bool value) { SetIsValueSecret(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_isValueSecret;
+    bool m_isValueSecret{false};
     bool m_isValueSecretHasBeenSet = false;
   };
 

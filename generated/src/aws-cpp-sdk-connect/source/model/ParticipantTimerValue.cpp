@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ParticipantTimerValue::ParticipantTimerValue() : 
-    m_participantTimerAction(ParticipantTimerAction::NOT_SET),
-    m_participantTimerActionHasBeenSet(false),
-    m_participantTimerDurationInMinutes(0),
-    m_participantTimerDurationInMinutesHasBeenSet(false)
-{
-}
-
 ParticipantTimerValue::ParticipantTimerValue(JsonView jsonValue)
-  : ParticipantTimerValue()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ParticipantTimerValue& ParticipantTimerValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParticipantTimerAction"))
   {
     m_participantTimerAction = ParticipantTimerActionMapper::GetParticipantTimerActionForName(jsonValue.GetString("ParticipantTimerAction"));
-
     m_participantTimerActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantTimerDurationInMinutes"))
   {
     m_participantTimerDurationInMinutes = jsonValue.GetInteger("ParticipantTimerDurationInMinutes");
-
     m_participantTimerDurationInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

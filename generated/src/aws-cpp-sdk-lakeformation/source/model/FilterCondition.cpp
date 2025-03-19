@@ -18,17 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-FilterCondition::FilterCondition() : 
-    m_field(FieldNameString::NOT_SET),
-    m_fieldHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_stringValueListHasBeenSet(false)
-{
-}
-
 FilterCondition::FilterCondition(JsonView jsonValue)
-  : FilterCondition()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Field"))
   {
     m_field = FieldNameStringMapper::GetFieldNameStringForName(jsonValue.GetString("Field"));
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringValueList"))
   {
     Aws::Utils::Array<JsonView> stringValueListJsonList = jsonValue.GetArray("StringValueList");
@@ -58,7 +44,6 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
     }
     m_stringValueListHasBeenSet = true;
   }
-
   return *this;
 }
 

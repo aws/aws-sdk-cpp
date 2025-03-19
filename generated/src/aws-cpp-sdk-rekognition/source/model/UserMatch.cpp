@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-UserMatch::UserMatch() : 
-    m_similarity(0.0),
-    m_similarityHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 UserMatch::UserMatch(JsonView jsonValue)
-  : UserMatch()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UserMatch& UserMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Similarity"))
   {
     m_similarity = jsonValue.GetDouble("Similarity");
-
     m_similarityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetObject("User");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,20 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateThemeForStackRequest::UpdateThemeForStackRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_footerLinksHasBeenSet(false),
-    m_titleTextHasBeenSet(false),
-    m_themeStyling(ThemeStyling::NOT_SET),
-    m_themeStylingHasBeenSet(false),
-    m_organizationLogoS3LocationHasBeenSet(false),
-    m_faviconS3LocationHasBeenSet(false),
-    m_state(ThemeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_attributesToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateThemeForStackRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,22 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-Rule::Rule() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_eventPatternHasBeenSet(false),
-    m_state(RuleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_managedByHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventPattern"))
   {
     m_eventPattern = jsonValue.GetString("EventPattern");
-
     m_eventPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = RuleStateMapper::GetRuleStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedBy"))
   {
     m_managedBy = jsonValue.GetString("ManagedBy");
-
     m_managedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBusName"))
   {
     m_eventBusName = jsonValue.GetString("EventBusName");
-
     m_eventBusNameHasBeenSet = true;
   }
-
   return *this;
 }
 

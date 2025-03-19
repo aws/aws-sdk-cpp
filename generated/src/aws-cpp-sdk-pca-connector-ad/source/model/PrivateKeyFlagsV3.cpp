@@ -18,20 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-PrivateKeyFlagsV3::PrivateKeyFlagsV3() : 
-    m_clientVersion(ClientCompatibilityV3::NOT_SET),
-    m_clientVersionHasBeenSet(false),
-    m_exportableKey(false),
-    m_exportableKeyHasBeenSet(false),
-    m_requireAlternateSignatureAlgorithm(false),
-    m_requireAlternateSignatureAlgorithmHasBeenSet(false),
-    m_strongKeyProtectionRequired(false),
-    m_strongKeyProtectionRequiredHasBeenSet(false)
-{
-}
-
 PrivateKeyFlagsV3::PrivateKeyFlagsV3(JsonView jsonValue)
-  : PrivateKeyFlagsV3()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ PrivateKeyFlagsV3& PrivateKeyFlagsV3::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientVersion"))
   {
     m_clientVersion = ClientCompatibilityV3Mapper::GetClientCompatibilityV3ForName(jsonValue.GetString("ClientVersion"));
-
     m_clientVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportableKey"))
   {
     m_exportableKey = jsonValue.GetBool("ExportableKey");
-
     m_exportableKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequireAlternateSignatureAlgorithm"))
   {
     m_requireAlternateSignatureAlgorithm = jsonValue.GetBool("RequireAlternateSignatureAlgorithm");
-
     m_requireAlternateSignatureAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrongKeyProtectionRequired"))
   {
     m_strongKeyProtectionRequired = jsonValue.GetBool("StrongKeyProtectionRequired");
-
     m_strongKeyProtectionRequiredHasBeenSet = true;
   }
-
   return *this;
 }
 

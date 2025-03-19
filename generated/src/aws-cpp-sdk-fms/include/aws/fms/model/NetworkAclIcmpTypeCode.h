@@ -29,7 +29,7 @@ namespace Model
   class NetworkAclIcmpTypeCode
   {
   public:
-    AWS_FMS_API NetworkAclIcmpTypeCode();
+    AWS_FMS_API NetworkAclIcmpTypeCode() = default;
     AWS_FMS_API NetworkAclIcmpTypeCode(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API NetworkAclIcmpTypeCode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>ICMP code. </p>
      */
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline NetworkAclIcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>ICMP type. </p>
      */
-    inline int GetType() const{ return m_type; }
+    inline int GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
     inline NetworkAclIcmpTypeCode& WithType(int value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
 
-    int m_type;
+    int m_type{0};
     bool m_typeHasBeenSet = false;
   };
 

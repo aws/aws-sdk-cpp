@@ -42,7 +42,7 @@ namespace Model
   class DeployedImage
   {
   public:
-    AWS_SAGEMAKER_API DeployedImage();
+    AWS_SAGEMAKER_API DeployedImage() = default;
     AWS_SAGEMAKER_API DeployedImage(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DeployedImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The image path you specified when you created the model.</p>
      */
-    inline const Aws::String& GetSpecifiedImage() const{ return m_specifiedImage; }
+    inline const Aws::String& GetSpecifiedImage() const { return m_specifiedImage; }
     inline bool SpecifiedImageHasBeenSet() const { return m_specifiedImageHasBeenSet; }
-    inline void SetSpecifiedImage(const Aws::String& value) { m_specifiedImageHasBeenSet = true; m_specifiedImage = value; }
-    inline void SetSpecifiedImage(Aws::String&& value) { m_specifiedImageHasBeenSet = true; m_specifiedImage = std::move(value); }
-    inline void SetSpecifiedImage(const char* value) { m_specifiedImageHasBeenSet = true; m_specifiedImage.assign(value); }
-    inline DeployedImage& WithSpecifiedImage(const Aws::String& value) { SetSpecifiedImage(value); return *this;}
-    inline DeployedImage& WithSpecifiedImage(Aws::String&& value) { SetSpecifiedImage(std::move(value)); return *this;}
-    inline DeployedImage& WithSpecifiedImage(const char* value) { SetSpecifiedImage(value); return *this;}
+    template<typename SpecifiedImageT = Aws::String>
+    void SetSpecifiedImage(SpecifiedImageT&& value) { m_specifiedImageHasBeenSet = true; m_specifiedImage = std::forward<SpecifiedImageT>(value); }
+    template<typename SpecifiedImageT = Aws::String>
+    DeployedImage& WithSpecifiedImage(SpecifiedImageT&& value) { SetSpecifiedImage(std::forward<SpecifiedImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <p>The specific digest path of the image hosted in this
      * <code>ProductionVariant</code>.</p>
      */
-    inline const Aws::String& GetResolvedImage() const{ return m_resolvedImage; }
+    inline const Aws::String& GetResolvedImage() const { return m_resolvedImage; }
     inline bool ResolvedImageHasBeenSet() const { return m_resolvedImageHasBeenSet; }
-    inline void SetResolvedImage(const Aws::String& value) { m_resolvedImageHasBeenSet = true; m_resolvedImage = value; }
-    inline void SetResolvedImage(Aws::String&& value) { m_resolvedImageHasBeenSet = true; m_resolvedImage = std::move(value); }
-    inline void SetResolvedImage(const char* value) { m_resolvedImageHasBeenSet = true; m_resolvedImage.assign(value); }
-    inline DeployedImage& WithResolvedImage(const Aws::String& value) { SetResolvedImage(value); return *this;}
-    inline DeployedImage& WithResolvedImage(Aws::String&& value) { SetResolvedImage(std::move(value)); return *this;}
-    inline DeployedImage& WithResolvedImage(const char* value) { SetResolvedImage(value); return *this;}
+    template<typename ResolvedImageT = Aws::String>
+    void SetResolvedImage(ResolvedImageT&& value) { m_resolvedImageHasBeenSet = true; m_resolvedImage = std::forward<ResolvedImageT>(value); }
+    template<typename ResolvedImageT = Aws::String>
+    DeployedImage& WithResolvedImage(ResolvedImageT&& value) { SetResolvedImage(std::forward<ResolvedImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,12 @@ namespace Model
      * <p>The date and time when the image path for the model resolved to the
      * <code>ResolvedImage</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetResolutionTime() const{ return m_resolutionTime; }
+    inline const Aws::Utils::DateTime& GetResolutionTime() const { return m_resolutionTime; }
     inline bool ResolutionTimeHasBeenSet() const { return m_resolutionTimeHasBeenSet; }
-    inline void SetResolutionTime(const Aws::Utils::DateTime& value) { m_resolutionTimeHasBeenSet = true; m_resolutionTime = value; }
-    inline void SetResolutionTime(Aws::Utils::DateTime&& value) { m_resolutionTimeHasBeenSet = true; m_resolutionTime = std::move(value); }
-    inline DeployedImage& WithResolutionTime(const Aws::Utils::DateTime& value) { SetResolutionTime(value); return *this;}
-    inline DeployedImage& WithResolutionTime(Aws::Utils::DateTime&& value) { SetResolutionTime(std::move(value)); return *this;}
+    template<typename ResolutionTimeT = Aws::Utils::DateTime>
+    void SetResolutionTime(ResolutionTimeT&& value) { m_resolutionTimeHasBeenSet = true; m_resolutionTime = std::forward<ResolutionTimeT>(value); }
+    template<typename ResolutionTimeT = Aws::Utils::DateTime>
+    DeployedImage& WithResolutionTime(ResolutionTimeT&& value) { SetResolutionTime(std::forward<ResolutionTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -97,7 +93,7 @@ namespace Model
     Aws::String m_resolvedImage;
     bool m_resolvedImageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_resolutionTime;
+    Aws::Utils::DateTime m_resolutionTime{};
     bool m_resolutionTimeHasBeenSet = false;
   };
 

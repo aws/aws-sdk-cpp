@@ -34,7 +34,7 @@ namespace Model
   class CreateBackendEnvironmentResult
   {
   public:
-    AWS_AMPLIFY_API CreateBackendEnvironmentResult();
+    AWS_AMPLIFY_API CreateBackendEnvironmentResult() = default;
     AWS_AMPLIFY_API CreateBackendEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API CreateBackendEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Describes the backend environment for an Amplify app. </p>
      */
-    inline const BackendEnvironment& GetBackendEnvironment() const{ return m_backendEnvironment; }
-    inline void SetBackendEnvironment(const BackendEnvironment& value) { m_backendEnvironment = value; }
-    inline void SetBackendEnvironment(BackendEnvironment&& value) { m_backendEnvironment = std::move(value); }
-    inline CreateBackendEnvironmentResult& WithBackendEnvironment(const BackendEnvironment& value) { SetBackendEnvironment(value); return *this;}
-    inline CreateBackendEnvironmentResult& WithBackendEnvironment(BackendEnvironment&& value) { SetBackendEnvironment(std::move(value)); return *this;}
+    inline const BackendEnvironment& GetBackendEnvironment() const { return m_backendEnvironment; }
+    template<typename BackendEnvironmentT = BackendEnvironment>
+    void SetBackendEnvironment(BackendEnvironmentT&& value) { m_backendEnvironmentHasBeenSet = true; m_backendEnvironment = std::forward<BackendEnvironmentT>(value); }
+    template<typename BackendEnvironmentT = BackendEnvironment>
+    CreateBackendEnvironmentResult& WithBackendEnvironment(BackendEnvironmentT&& value) { SetBackendEnvironment(std::forward<BackendEnvironmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBackendEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBackendEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBackendEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBackendEnvironmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BackendEnvironment m_backendEnvironment;
+    bool m_backendEnvironmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

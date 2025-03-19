@@ -18,10 +18,6 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Parquet::Parquet()
-{
-}
-
 Parquet::Parquet(JsonView jsonValue)
 {
   *this = jsonValue;

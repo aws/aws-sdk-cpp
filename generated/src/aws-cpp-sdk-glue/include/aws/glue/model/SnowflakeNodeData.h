@@ -35,7 +35,7 @@ namespace Model
   class SnowflakeNodeData
   {
   public:
-    AWS_GLUE_API SnowflakeNodeData();
+    AWS_GLUE_API SnowflakeNodeData() = default;
     AWS_GLUE_API SnowflakeNodeData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SnowflakeNodeData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,94 +46,84 @@ namespace Model
      * <p>Specifies how retrieved data is specified. Valid values:
      * <code>"table"</code>, <code> "query"</code>.</p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline SnowflakeNodeData& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline SnowflakeNodeData& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    SnowflakeNodeData& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a Glue Data Catalog Connection to a Snowflake endpoint.</p>
      */
-    inline const Option& GetConnection() const{ return m_connection; }
+    inline const Option& GetConnection() const { return m_connection; }
     inline bool ConnectionHasBeenSet() const { return m_connectionHasBeenSet; }
-    inline void SetConnection(const Option& value) { m_connectionHasBeenSet = true; m_connection = value; }
-    inline void SetConnection(Option&& value) { m_connectionHasBeenSet = true; m_connection = std::move(value); }
-    inline SnowflakeNodeData& WithConnection(const Option& value) { SetConnection(value); return *this;}
-    inline SnowflakeNodeData& WithConnection(Option&& value) { SetConnection(std::move(value)); return *this;}
+    template<typename ConnectionT = Option>
+    void SetConnection(ConnectionT&& value) { m_connectionHasBeenSet = true; m_connection = std::forward<ConnectionT>(value); }
+    template<typename ConnectionT = Option>
+    SnowflakeNodeData& WithConnection(ConnectionT&& value) { SetConnection(std::forward<ConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a Snowflake database schema for your node to use.</p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
+    inline const Aws::String& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-    inline SnowflakeNodeData& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline SnowflakeNodeData& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithSchema(const char* value) { SetSchema(value); return *this;}
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    SnowflakeNodeData& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a Snowflake table for your node to use.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline SnowflakeNodeData& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline SnowflakeNodeData& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    SnowflakeNodeData& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a Snowflake database for your node to use.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline SnowflakeNodeData& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline SnowflakeNodeData& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    SnowflakeNodeData& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not currently used.</p>
      */
-    inline const Aws::String& GetTempDir() const{ return m_tempDir; }
+    inline const Aws::String& GetTempDir() const { return m_tempDir; }
     inline bool TempDirHasBeenSet() const { return m_tempDirHasBeenSet; }
-    inline void SetTempDir(const Aws::String& value) { m_tempDirHasBeenSet = true; m_tempDir = value; }
-    inline void SetTempDir(Aws::String&& value) { m_tempDirHasBeenSet = true; m_tempDir = std::move(value); }
-    inline void SetTempDir(const char* value) { m_tempDirHasBeenSet = true; m_tempDir.assign(value); }
-    inline SnowflakeNodeData& WithTempDir(const Aws::String& value) { SetTempDir(value); return *this;}
-    inline SnowflakeNodeData& WithTempDir(Aws::String&& value) { SetTempDir(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithTempDir(const char* value) { SetTempDir(value); return *this;}
+    template<typename TempDirT = Aws::String>
+    void SetTempDir(TempDirT&& value) { m_tempDirHasBeenSet = true; m_tempDir = std::forward<TempDirT>(value); }
+    template<typename TempDirT = Aws::String>
+    SnowflakeNodeData& WithTempDir(TempDirT&& value) { SetTempDir(std::forward<TempDirT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not currently used.</p>
      */
-    inline const Option& GetIamRole() const{ return m_iamRole; }
+    inline const Option& GetIamRole() const { return m_iamRole; }
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
-    inline void SetIamRole(const Option& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
-    inline void SetIamRole(Option&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
-    inline SnowflakeNodeData& WithIamRole(const Option& value) { SetIamRole(value); return *this;}
-    inline SnowflakeNodeData& WithIamRole(Option&& value) { SetIamRole(std::move(value)); return *this;}
+    template<typename IamRoleT = Option>
+    void SetIamRole(IamRoleT&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::forward<IamRoleT>(value); }
+    template<typename IamRoleT = Option>
+    SnowflakeNodeData& WithIamRole(IamRoleT&& value) { SetIamRole(std::forward<IamRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,19 +131,16 @@ namespace Model
      * <p>Specifies additional options passed to the Snowflake connector. If options
      * are specified elsewhere in this node, this will take precedence.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalOptions() const{ return m_additionalOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalOptions() const { return m_additionalOptions; }
     inline bool AdditionalOptionsHasBeenSet() const { return m_additionalOptionsHasBeenSet; }
-    inline void SetAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = value; }
-    inline void SetAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::move(value); }
-    inline SnowflakeNodeData& WithAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalOptions(value); return *this;}
-    inline SnowflakeNodeData& WithAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalOptions(std::move(value)); return *this;}
-    inline SnowflakeNodeData& AddAdditionalOptions(const Aws::String& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
-    inline SnowflakeNodeData& AddAdditionalOptions(Aws::String&& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
-    inline SnowflakeNodeData& AddAdditionalOptions(const Aws::String& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
-    inline SnowflakeNodeData& AddAdditionalOptions(Aws::String&& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline SnowflakeNodeData& AddAdditionalOptions(const char* key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
-    inline SnowflakeNodeData& AddAdditionalOptions(Aws::String&& key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
-    inline SnowflakeNodeData& AddAdditionalOptions(const char* key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
+    template<typename AdditionalOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalOptions(AdditionalOptionsT&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::forward<AdditionalOptionsT>(value); }
+    template<typename AdditionalOptionsT = Aws::Map<Aws::String, Aws::String>>
+    SnowflakeNodeData& WithAdditionalOptions(AdditionalOptionsT&& value) { SetAdditionalOptions(std::forward<AdditionalOptionsT>(value)); return *this;}
+    template<typename AdditionalOptionsKeyT = Aws::String, typename AdditionalOptionsValueT = Aws::String>
+    SnowflakeNodeData& AddAdditionalOptions(AdditionalOptionsKeyT&& key, AdditionalOptionsValueT&& value) {
+      m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::forward<AdditionalOptionsKeyT>(key), std::forward<AdditionalOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -161,14 +148,12 @@ namespace Model
      * <p>A SQL string used to retrieve data with the <code>query</code>
      * sourcetype.</p>
      */
-    inline const Aws::String& GetSampleQuery() const{ return m_sampleQuery; }
+    inline const Aws::String& GetSampleQuery() const { return m_sampleQuery; }
     inline bool SampleQueryHasBeenSet() const { return m_sampleQueryHasBeenSet; }
-    inline void SetSampleQuery(const Aws::String& value) { m_sampleQueryHasBeenSet = true; m_sampleQuery = value; }
-    inline void SetSampleQuery(Aws::String&& value) { m_sampleQueryHasBeenSet = true; m_sampleQuery = std::move(value); }
-    inline void SetSampleQuery(const char* value) { m_sampleQueryHasBeenSet = true; m_sampleQuery.assign(value); }
-    inline SnowflakeNodeData& WithSampleQuery(const Aws::String& value) { SetSampleQuery(value); return *this;}
-    inline SnowflakeNodeData& WithSampleQuery(Aws::String&& value) { SetSampleQuery(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithSampleQuery(const char* value) { SetSampleQuery(value); return *this;}
+    template<typename SampleQueryT = Aws::String>
+    void SetSampleQuery(SampleQueryT&& value) { m_sampleQueryHasBeenSet = true; m_sampleQuery = std::forward<SampleQueryT>(value); }
+    template<typename SampleQueryT = Aws::String>
+    SnowflakeNodeData& WithSampleQuery(SampleQueryT&& value) { SetSampleQuery(std::forward<SampleQueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +161,12 @@ namespace Model
      * <p>A SQL string run before the Snowflake connector performs its standard
      * actions.</p>
      */
-    inline const Aws::String& GetPreAction() const{ return m_preAction; }
+    inline const Aws::String& GetPreAction() const { return m_preAction; }
     inline bool PreActionHasBeenSet() const { return m_preActionHasBeenSet; }
-    inline void SetPreAction(const Aws::String& value) { m_preActionHasBeenSet = true; m_preAction = value; }
-    inline void SetPreAction(Aws::String&& value) { m_preActionHasBeenSet = true; m_preAction = std::move(value); }
-    inline void SetPreAction(const char* value) { m_preActionHasBeenSet = true; m_preAction.assign(value); }
-    inline SnowflakeNodeData& WithPreAction(const Aws::String& value) { SetPreAction(value); return *this;}
-    inline SnowflakeNodeData& WithPreAction(Aws::String&& value) { SetPreAction(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithPreAction(const char* value) { SetPreAction(value); return *this;}
+    template<typename PreActionT = Aws::String>
+    void SetPreAction(PreActionT&& value) { m_preActionHasBeenSet = true; m_preAction = std::forward<PreActionT>(value); }
+    template<typename PreActionT = Aws::String>
+    SnowflakeNodeData& WithPreAction(PreActionT&& value) { SetPreAction(std::forward<PreActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,14 +174,12 @@ namespace Model
      * <p>A SQL string run after the Snowflake connector performs its standard
      * actions.</p>
      */
-    inline const Aws::String& GetPostAction() const{ return m_postAction; }
+    inline const Aws::String& GetPostAction() const { return m_postAction; }
     inline bool PostActionHasBeenSet() const { return m_postActionHasBeenSet; }
-    inline void SetPostAction(const Aws::String& value) { m_postActionHasBeenSet = true; m_postAction = value; }
-    inline void SetPostAction(Aws::String&& value) { m_postActionHasBeenSet = true; m_postAction = std::move(value); }
-    inline void SetPostAction(const char* value) { m_postActionHasBeenSet = true; m_postAction.assign(value); }
-    inline SnowflakeNodeData& WithPostAction(const Aws::String& value) { SetPostAction(value); return *this;}
-    inline SnowflakeNodeData& WithPostAction(Aws::String&& value) { SetPostAction(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithPostAction(const char* value) { SetPostAction(value); return *this;}
+    template<typename PostActionT = Aws::String>
+    void SetPostAction(PostActionT&& value) { m_postActionHasBeenSet = true; m_postAction = std::forward<PostActionT>(value); }
+    template<typename PostActionT = Aws::String>
+    SnowflakeNodeData& WithPostAction(PostActionT&& value) { SetPostAction(std::forward<PostActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,14 +188,12 @@ namespace Model
      * Valid values: <code> append</code>, <code>merge</code>, <code>truncate</code>,
      * <code>drop</code>.</p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline SnowflakeNodeData& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline SnowflakeNodeData& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    SnowflakeNodeData& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,7 +202,7 @@ namespace Model
      * when a row already exists. If true, preexisting rows will be updated. If false,
      * those rows will be inserted.</p>
      */
-    inline bool GetUpsert() const{ return m_upsert; }
+    inline bool GetUpsert() const { return m_upsert; }
     inline bool UpsertHasBeenSet() const { return m_upsertHasBeenSet; }
     inline void SetUpsert(bool value) { m_upsertHasBeenSet = true; m_upsert = value; }
     inline SnowflakeNodeData& WithUpsert(bool value) { SetUpsert(value); return *this;}
@@ -236,14 +215,12 @@ namespace Model
      * <code>MergeWhenMatched</code> and <code> MergeWhenNotMatched</code>. If custom,
      * defined by <code>MergeClause</code>.</p>
      */
-    inline const Aws::String& GetMergeAction() const{ return m_mergeAction; }
+    inline const Aws::String& GetMergeAction() const { return m_mergeAction; }
     inline bool MergeActionHasBeenSet() const { return m_mergeActionHasBeenSet; }
-    inline void SetMergeAction(const Aws::String& value) { m_mergeActionHasBeenSet = true; m_mergeAction = value; }
-    inline void SetMergeAction(Aws::String&& value) { m_mergeActionHasBeenSet = true; m_mergeAction = std::move(value); }
-    inline void SetMergeAction(const char* value) { m_mergeActionHasBeenSet = true; m_mergeAction.assign(value); }
-    inline SnowflakeNodeData& WithMergeAction(const Aws::String& value) { SetMergeAction(value); return *this;}
-    inline SnowflakeNodeData& WithMergeAction(Aws::String&& value) { SetMergeAction(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithMergeAction(const char* value) { SetMergeAction(value); return *this;}
+    template<typename MergeActionT = Aws::String>
+    void SetMergeAction(MergeActionT&& value) { m_mergeActionHasBeenSet = true; m_mergeAction = std::forward<MergeActionT>(value); }
+    template<typename MergeActionT = Aws::String>
+    SnowflakeNodeData& WithMergeAction(MergeActionT&& value) { SetMergeAction(std::forward<MergeActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,14 +228,12 @@ namespace Model
      * <p>Specifies how to resolve records that match preexisting data when merging.
      * Valid values: <code> update</code>, <code>delete</code>.</p>
      */
-    inline const Aws::String& GetMergeWhenMatched() const{ return m_mergeWhenMatched; }
+    inline const Aws::String& GetMergeWhenMatched() const { return m_mergeWhenMatched; }
     inline bool MergeWhenMatchedHasBeenSet() const { return m_mergeWhenMatchedHasBeenSet; }
-    inline void SetMergeWhenMatched(const Aws::String& value) { m_mergeWhenMatchedHasBeenSet = true; m_mergeWhenMatched = value; }
-    inline void SetMergeWhenMatched(Aws::String&& value) { m_mergeWhenMatchedHasBeenSet = true; m_mergeWhenMatched = std::move(value); }
-    inline void SetMergeWhenMatched(const char* value) { m_mergeWhenMatchedHasBeenSet = true; m_mergeWhenMatched.assign(value); }
-    inline SnowflakeNodeData& WithMergeWhenMatched(const Aws::String& value) { SetMergeWhenMatched(value); return *this;}
-    inline SnowflakeNodeData& WithMergeWhenMatched(Aws::String&& value) { SetMergeWhenMatched(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithMergeWhenMatched(const char* value) { SetMergeWhenMatched(value); return *this;}
+    template<typename MergeWhenMatchedT = Aws::String>
+    void SetMergeWhenMatched(MergeWhenMatchedT&& value) { m_mergeWhenMatchedHasBeenSet = true; m_mergeWhenMatched = std::forward<MergeWhenMatchedT>(value); }
+    template<typename MergeWhenMatchedT = Aws::String>
+    SnowflakeNodeData& WithMergeWhenMatched(MergeWhenMatchedT&& value) { SetMergeWhenMatched(std::forward<MergeWhenMatchedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -266,28 +241,24 @@ namespace Model
      * <p>Specifies how to process records that do not match preexisting data when
      * merging. Valid values: <code>insert</code>, <code>none</code>.</p>
      */
-    inline const Aws::String& GetMergeWhenNotMatched() const{ return m_mergeWhenNotMatched; }
+    inline const Aws::String& GetMergeWhenNotMatched() const { return m_mergeWhenNotMatched; }
     inline bool MergeWhenNotMatchedHasBeenSet() const { return m_mergeWhenNotMatchedHasBeenSet; }
-    inline void SetMergeWhenNotMatched(const Aws::String& value) { m_mergeWhenNotMatchedHasBeenSet = true; m_mergeWhenNotMatched = value; }
-    inline void SetMergeWhenNotMatched(Aws::String&& value) { m_mergeWhenNotMatchedHasBeenSet = true; m_mergeWhenNotMatched = std::move(value); }
-    inline void SetMergeWhenNotMatched(const char* value) { m_mergeWhenNotMatchedHasBeenSet = true; m_mergeWhenNotMatched.assign(value); }
-    inline SnowflakeNodeData& WithMergeWhenNotMatched(const Aws::String& value) { SetMergeWhenNotMatched(value); return *this;}
-    inline SnowflakeNodeData& WithMergeWhenNotMatched(Aws::String&& value) { SetMergeWhenNotMatched(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithMergeWhenNotMatched(const char* value) { SetMergeWhenNotMatched(value); return *this;}
+    template<typename MergeWhenNotMatchedT = Aws::String>
+    void SetMergeWhenNotMatched(MergeWhenNotMatchedT&& value) { m_mergeWhenNotMatchedHasBeenSet = true; m_mergeWhenNotMatched = std::forward<MergeWhenNotMatchedT>(value); }
+    template<typename MergeWhenNotMatchedT = Aws::String>
+    SnowflakeNodeData& WithMergeWhenNotMatched(MergeWhenNotMatchedT&& value) { SetMergeWhenNotMatched(std::forward<MergeWhenNotMatchedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A SQL statement that specifies a custom merge behavior.</p>
      */
-    inline const Aws::String& GetMergeClause() const{ return m_mergeClause; }
+    inline const Aws::String& GetMergeClause() const { return m_mergeClause; }
     inline bool MergeClauseHasBeenSet() const { return m_mergeClauseHasBeenSet; }
-    inline void SetMergeClause(const Aws::String& value) { m_mergeClauseHasBeenSet = true; m_mergeClause = value; }
-    inline void SetMergeClause(Aws::String&& value) { m_mergeClauseHasBeenSet = true; m_mergeClause = std::move(value); }
-    inline void SetMergeClause(const char* value) { m_mergeClauseHasBeenSet = true; m_mergeClause.assign(value); }
-    inline SnowflakeNodeData& WithMergeClause(const Aws::String& value) { SetMergeClause(value); return *this;}
-    inline SnowflakeNodeData& WithMergeClause(Aws::String&& value) { SetMergeClause(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithMergeClause(const char* value) { SetMergeClause(value); return *this;}
+    template<typename MergeClauseT = Aws::String>
+    void SetMergeClause(MergeClauseT&& value) { m_mergeClauseHasBeenSet = true; m_mergeClause = std::forward<MergeClauseT>(value); }
+    template<typename MergeClauseT = Aws::String>
+    SnowflakeNodeData& WithMergeClause(MergeClauseT&& value) { SetMergeClause(std::forward<MergeClauseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -296,14 +267,12 @@ namespace Model
      * <code>append</code> actions. Data is written to this table, then moved to
      * <code>table</code> by a generated postaction.</p>
      */
-    inline const Aws::String& GetStagingTable() const{ return m_stagingTable; }
+    inline const Aws::String& GetStagingTable() const { return m_stagingTable; }
     inline bool StagingTableHasBeenSet() const { return m_stagingTableHasBeenSet; }
-    inline void SetStagingTable(const Aws::String& value) { m_stagingTableHasBeenSet = true; m_stagingTable = value; }
-    inline void SetStagingTable(Aws::String&& value) { m_stagingTableHasBeenSet = true; m_stagingTable = std::move(value); }
-    inline void SetStagingTable(const char* value) { m_stagingTableHasBeenSet = true; m_stagingTable.assign(value); }
-    inline SnowflakeNodeData& WithStagingTable(const Aws::String& value) { SetStagingTable(value); return *this;}
-    inline SnowflakeNodeData& WithStagingTable(Aws::String&& value) { SetStagingTable(std::move(value)); return *this;}
-    inline SnowflakeNodeData& WithStagingTable(const char* value) { SetStagingTable(value); return *this;}
+    template<typename StagingTableT = Aws::String>
+    void SetStagingTable(StagingTableT&& value) { m_stagingTableHasBeenSet = true; m_stagingTable = std::forward<StagingTableT>(value); }
+    template<typename StagingTableT = Aws::String>
+    SnowflakeNodeData& WithStagingTable(StagingTableT&& value) { SetStagingTable(std::forward<StagingTableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -313,14 +282,14 @@ namespace Model
      * <code>label</code> and <code> description</code> keys. Each structure describes
      * a column.</p>
      */
-    inline const Aws::Vector<Option>& GetSelectedColumns() const{ return m_selectedColumns; }
+    inline const Aws::Vector<Option>& GetSelectedColumns() const { return m_selectedColumns; }
     inline bool SelectedColumnsHasBeenSet() const { return m_selectedColumnsHasBeenSet; }
-    inline void SetSelectedColumns(const Aws::Vector<Option>& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = value; }
-    inline void SetSelectedColumns(Aws::Vector<Option>&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = std::move(value); }
-    inline SnowflakeNodeData& WithSelectedColumns(const Aws::Vector<Option>& value) { SetSelectedColumns(value); return *this;}
-    inline SnowflakeNodeData& WithSelectedColumns(Aws::Vector<Option>&& value) { SetSelectedColumns(std::move(value)); return *this;}
-    inline SnowflakeNodeData& AddSelectedColumns(const Option& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.push_back(value); return *this; }
-    inline SnowflakeNodeData& AddSelectedColumns(Option&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.push_back(std::move(value)); return *this; }
+    template<typename SelectedColumnsT = Aws::Vector<Option>>
+    void SetSelectedColumns(SelectedColumnsT&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = std::forward<SelectedColumnsT>(value); }
+    template<typename SelectedColumnsT = Aws::Vector<Option>>
+    SnowflakeNodeData& WithSelectedColumns(SelectedColumnsT&& value) { SetSelectedColumns(std::forward<SelectedColumnsT>(value)); return *this;}
+    template<typename SelectedColumnsT = Option>
+    SnowflakeNodeData& AddSelectedColumns(SelectedColumnsT&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.emplace_back(std::forward<SelectedColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -330,7 +299,7 @@ namespace Model
      * down" to the Snowflake server, it is pushed down. This improves performance of
      * some queries.</p>
      */
-    inline bool GetAutoPushdown() const{ return m_autoPushdown; }
+    inline bool GetAutoPushdown() const { return m_autoPushdown; }
     inline bool AutoPushdownHasBeenSet() const { return m_autoPushdownHasBeenSet; }
     inline void SetAutoPushdown(bool value) { m_autoPushdownHasBeenSet = true; m_autoPushdown = value; }
     inline SnowflakeNodeData& WithAutoPushdown(bool value) { SetAutoPushdown(value); return *this;}
@@ -342,14 +311,14 @@ namespace Model
      * <code>value</code> , <code>label</code> and <code>description</code> keys. Each
      * structure defines a column.</p>
      */
-    inline const Aws::Vector<Option>& GetTableSchema() const{ return m_tableSchema; }
+    inline const Aws::Vector<Option>& GetTableSchema() const { return m_tableSchema; }
     inline bool TableSchemaHasBeenSet() const { return m_tableSchemaHasBeenSet; }
-    inline void SetTableSchema(const Aws::Vector<Option>& value) { m_tableSchemaHasBeenSet = true; m_tableSchema = value; }
-    inline void SetTableSchema(Aws::Vector<Option>&& value) { m_tableSchemaHasBeenSet = true; m_tableSchema = std::move(value); }
-    inline SnowflakeNodeData& WithTableSchema(const Aws::Vector<Option>& value) { SetTableSchema(value); return *this;}
-    inline SnowflakeNodeData& WithTableSchema(Aws::Vector<Option>&& value) { SetTableSchema(std::move(value)); return *this;}
-    inline SnowflakeNodeData& AddTableSchema(const Option& value) { m_tableSchemaHasBeenSet = true; m_tableSchema.push_back(value); return *this; }
-    inline SnowflakeNodeData& AddTableSchema(Option&& value) { m_tableSchemaHasBeenSet = true; m_tableSchema.push_back(std::move(value)); return *this; }
+    template<typename TableSchemaT = Aws::Vector<Option>>
+    void SetTableSchema(TableSchemaT&& value) { m_tableSchemaHasBeenSet = true; m_tableSchema = std::forward<TableSchemaT>(value); }
+    template<typename TableSchemaT = Aws::Vector<Option>>
+    SnowflakeNodeData& WithTableSchema(TableSchemaT&& value) { SetTableSchema(std::forward<TableSchemaT>(value)); return *this;}
+    template<typename TableSchemaT = Option>
+    SnowflakeNodeData& AddTableSchema(TableSchemaT&& value) { m_tableSchemaHasBeenSet = true; m_tableSchema.emplace_back(std::forward<TableSchemaT>(value)); return *this; }
     ///@}
   private:
 
@@ -389,7 +358,7 @@ namespace Model
     Aws::String m_action;
     bool m_actionHasBeenSet = false;
 
-    bool m_upsert;
+    bool m_upsert{false};
     bool m_upsertHasBeenSet = false;
 
     Aws::String m_mergeAction;
@@ -410,7 +379,7 @@ namespace Model
     Aws::Vector<Option> m_selectedColumns;
     bool m_selectedColumnsHasBeenSet = false;
 
-    bool m_autoPushdown;
+    bool m_autoPushdown{false};
     bool m_autoPushdownHasBeenSet = false;
 
     Aws::Vector<Option> m_tableSchema;

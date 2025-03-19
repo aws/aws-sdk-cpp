@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericalDimensionField::NumericalDimensionField() : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
-{
-}
-
 NumericalDimensionField::NumericalDimensionField(JsonView jsonValue)
-  : NumericalDimensionField()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ NumericalDimensionField& NumericalDimensionField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyId"))
   {
     m_hierarchyId = jsonValue.GetString("HierarchyId");
-
     m_hierarchyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatConfiguration"))
   {
     m_formatConfiguration = jsonValue.GetObject("FormatConfiguration");
-
     m_formatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

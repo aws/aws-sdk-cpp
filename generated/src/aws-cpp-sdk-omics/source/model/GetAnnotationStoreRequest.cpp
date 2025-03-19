@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnnotationStoreRequest::GetAnnotationStoreRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetAnnotationStoreRequest::SerializePayload() const
 {
   return {};

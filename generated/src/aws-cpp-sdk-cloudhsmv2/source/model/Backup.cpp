@@ -18,29 +18,7 @@ namespace CloudHSMV2
 namespace Model
 {
 
-Backup::Backup() : 
-    m_backupIdHasBeenSet(false),
-    m_backupArnHasBeenSet(false),
-    m_backupState(BackupState::NOT_SET),
-    m_backupStateHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_copyTimestampHasBeenSet(false),
-    m_neverExpires(false),
-    m_neverExpiresHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_sourceBackupHasBeenSet(false),
-    m_sourceClusterHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false),
-    m_mode(ClusterMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Backup::Backup(JsonView jsonValue)
-  : Backup()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ Backup& Backup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupId"))
   {
     m_backupId = jsonValue.GetString("BackupId");
-
     m_backupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupArn"))
   {
     m_backupArn = jsonValue.GetString("BackupArn");
-
     m_backupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupState"))
   {
     m_backupState = BackupStateMapper::GetBackupStateForName(jsonValue.GetString("BackupState"));
-
     m_backupStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTimestamp"))
   {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-
     m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTimestamp"))
   {
     m_copyTimestamp = jsonValue.GetDouble("CopyTimestamp");
-
     m_copyTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NeverExpires"))
   {
     m_neverExpires = jsonValue.GetBool("NeverExpires");
-
     m_neverExpiresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRegion"))
   {
     m_sourceRegion = jsonValue.GetString("SourceRegion");
-
     m_sourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceBackup"))
   {
     m_sourceBackup = jsonValue.GetString("SourceBackup");
-
     m_sourceBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceCluster"))
   {
     m_sourceCluster = jsonValue.GetString("SourceCluster");
-
     m_sourceClusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteTimestamp"))
   {
     m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
-
     m_deleteTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
@@ -133,21 +89,16 @@ Backup& Backup::operator =(JsonView jsonValue)
     }
     m_tagListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsmType"))
   {
     m_hsmType = jsonValue.GetString("HsmType");
-
     m_hsmTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = ClusterModeMapper::GetClusterModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

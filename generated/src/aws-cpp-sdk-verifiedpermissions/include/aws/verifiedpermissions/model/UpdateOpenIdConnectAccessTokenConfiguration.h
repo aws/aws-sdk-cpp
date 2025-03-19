@@ -40,7 +40,7 @@ namespace Model
   class UpdateOpenIdConnectAccessTokenConfiguration
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectAccessTokenConfiguration();
+    AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectAccessTokenConfiguration() = default;
     AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>The claim that determines the principal in OIDC access tokens. For example,
      * <code>sub</code>.</p>
      */
-    inline const Aws::String& GetPrincipalIdClaim() const{ return m_principalIdClaim; }
+    inline const Aws::String& GetPrincipalIdClaim() const { return m_principalIdClaim; }
     inline bool PrincipalIdClaimHasBeenSet() const { return m_principalIdClaimHasBeenSet; }
-    inline void SetPrincipalIdClaim(const Aws::String& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = value; }
-    inline void SetPrincipalIdClaim(Aws::String&& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = std::move(value); }
-    inline void SetPrincipalIdClaim(const char* value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim.assign(value); }
-    inline UpdateOpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(const Aws::String& value) { SetPrincipalIdClaim(value); return *this;}
-    inline UpdateOpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(Aws::String&& value) { SetPrincipalIdClaim(std::move(value)); return *this;}
-    inline UpdateOpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(const char* value) { SetPrincipalIdClaim(value); return *this;}
+    template<typename PrincipalIdClaimT = Aws::String>
+    void SetPrincipalIdClaim(PrincipalIdClaimT&& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = std::forward<PrincipalIdClaimT>(value); }
+    template<typename PrincipalIdClaimT = Aws::String>
+    UpdateOpenIdConnectAccessTokenConfiguration& WithPrincipalIdClaim(PrincipalIdClaimT&& value) { SetPrincipalIdClaim(std::forward<PrincipalIdClaimT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * your policy store. For example, <code>https://myapp.example.com,
      * https://myapp2.example.com</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+    inline const Aws::Vector<Aws::String>& GetAudiences() const { return m_audiences; }
     inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
-    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
-    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
-    inline UpdateOpenIdConnectAccessTokenConfiguration& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
-    inline UpdateOpenIdConnectAccessTokenConfiguration& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
-    inline UpdateOpenIdConnectAccessTokenConfiguration& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
-    inline UpdateOpenIdConnectAccessTokenConfiguration& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
-    inline UpdateOpenIdConnectAccessTokenConfiguration& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+    template<typename AudiencesT = Aws::Vector<Aws::String>>
+    void SetAudiences(AudiencesT&& value) { m_audiencesHasBeenSet = true; m_audiences = std::forward<AudiencesT>(value); }
+    template<typename AudiencesT = Aws::Vector<Aws::String>>
+    UpdateOpenIdConnectAccessTokenConfiguration& WithAudiences(AudiencesT&& value) { SetAudiences(std::forward<AudiencesT>(value)); return *this;}
+    template<typename AudiencesT = Aws::String>
+    UpdateOpenIdConnectAccessTokenConfiguration& AddAudiences(AudiencesT&& value) { m_audiencesHasBeenSet = true; m_audiences.emplace_back(std::forward<AudiencesT>(value)); return *this; }
     ///@}
   private:
 

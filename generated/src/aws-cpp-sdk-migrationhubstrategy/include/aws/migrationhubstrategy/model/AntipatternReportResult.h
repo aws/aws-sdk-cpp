@@ -34,7 +34,7 @@ namespace Model
   class AntipatternReportResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternReportResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternReportResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternReportResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AntipatternReportResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,44 @@ namespace Model
     /**
      * <p>The analyzer name.</p>
      */
-    inline const AnalyzerNameUnion& GetAnalyzerName() const{ return m_analyzerName; }
+    inline const AnalyzerNameUnion& GetAnalyzerName() const { return m_analyzerName; }
     inline bool AnalyzerNameHasBeenSet() const { return m_analyzerNameHasBeenSet; }
-    inline void SetAnalyzerName(const AnalyzerNameUnion& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = value; }
-    inline void SetAnalyzerName(AnalyzerNameUnion&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::move(value); }
-    inline AntipatternReportResult& WithAnalyzerName(const AnalyzerNameUnion& value) { SetAnalyzerName(value); return *this;}
-    inline AntipatternReportResult& WithAnalyzerName(AnalyzerNameUnion&& value) { SetAnalyzerName(std::move(value)); return *this;}
+    template<typename AnalyzerNameT = AnalyzerNameUnion>
+    void SetAnalyzerName(AnalyzerNameT&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::forward<AnalyzerNameT>(value); }
+    template<typename AnalyzerNameT = AnalyzerNameUnion>
+    AntipatternReportResult& WithAnalyzerName(AnalyzerNameT&& value) { SetAnalyzerName(std::forward<AnalyzerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Object& GetAntiPatternReportS3Object() const{ return m_antiPatternReportS3Object; }
+    inline const S3Object& GetAntiPatternReportS3Object() const { return m_antiPatternReportS3Object; }
     inline bool AntiPatternReportS3ObjectHasBeenSet() const { return m_antiPatternReportS3ObjectHasBeenSet; }
-    inline void SetAntiPatternReportS3Object(const S3Object& value) { m_antiPatternReportS3ObjectHasBeenSet = true; m_antiPatternReportS3Object = value; }
-    inline void SetAntiPatternReportS3Object(S3Object&& value) { m_antiPatternReportS3ObjectHasBeenSet = true; m_antiPatternReportS3Object = std::move(value); }
-    inline AntipatternReportResult& WithAntiPatternReportS3Object(const S3Object& value) { SetAntiPatternReportS3Object(value); return *this;}
-    inline AntipatternReportResult& WithAntiPatternReportS3Object(S3Object&& value) { SetAntiPatternReportS3Object(std::move(value)); return *this;}
+    template<typename AntiPatternReportS3ObjectT = S3Object>
+    void SetAntiPatternReportS3Object(AntiPatternReportS3ObjectT&& value) { m_antiPatternReportS3ObjectHasBeenSet = true; m_antiPatternReportS3Object = std::forward<AntiPatternReportS3ObjectT>(value); }
+    template<typename AntiPatternReportS3ObjectT = S3Object>
+    AntipatternReportResult& WithAntiPatternReportS3Object(AntiPatternReportS3ObjectT&& value) { SetAntiPatternReportS3Object(std::forward<AntiPatternReportS3ObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the anti-pattern report generation.</p>
      */
-    inline const AntipatternReportStatus& GetAntipatternReportStatus() const{ return m_antipatternReportStatus; }
+    inline AntipatternReportStatus GetAntipatternReportStatus() const { return m_antipatternReportStatus; }
     inline bool AntipatternReportStatusHasBeenSet() const { return m_antipatternReportStatusHasBeenSet; }
-    inline void SetAntipatternReportStatus(const AntipatternReportStatus& value) { m_antipatternReportStatusHasBeenSet = true; m_antipatternReportStatus = value; }
-    inline void SetAntipatternReportStatus(AntipatternReportStatus&& value) { m_antipatternReportStatusHasBeenSet = true; m_antipatternReportStatus = std::move(value); }
-    inline AntipatternReportResult& WithAntipatternReportStatus(const AntipatternReportStatus& value) { SetAntipatternReportStatus(value); return *this;}
-    inline AntipatternReportResult& WithAntipatternReportStatus(AntipatternReportStatus&& value) { SetAntipatternReportStatus(std::move(value)); return *this;}
+    inline void SetAntipatternReportStatus(AntipatternReportStatus value) { m_antipatternReportStatusHasBeenSet = true; m_antipatternReportStatus = value; }
+    inline AntipatternReportResult& WithAntipatternReportStatus(AntipatternReportStatus value) { SetAntipatternReportStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message for the anti-pattern.</p>
      */
-    inline const Aws::String& GetAntipatternReportStatusMessage() const{ return m_antipatternReportStatusMessage; }
+    inline const Aws::String& GetAntipatternReportStatusMessage() const { return m_antipatternReportStatusMessage; }
     inline bool AntipatternReportStatusMessageHasBeenSet() const { return m_antipatternReportStatusMessageHasBeenSet; }
-    inline void SetAntipatternReportStatusMessage(const Aws::String& value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage = value; }
-    inline void SetAntipatternReportStatusMessage(Aws::String&& value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage = std::move(value); }
-    inline void SetAntipatternReportStatusMessage(const char* value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage.assign(value); }
-    inline AntipatternReportResult& WithAntipatternReportStatusMessage(const Aws::String& value) { SetAntipatternReportStatusMessage(value); return *this;}
-    inline AntipatternReportResult& WithAntipatternReportStatusMessage(Aws::String&& value) { SetAntipatternReportStatusMessage(std::move(value)); return *this;}
-    inline AntipatternReportResult& WithAntipatternReportStatusMessage(const char* value) { SetAntipatternReportStatusMessage(value); return *this;}
+    template<typename AntipatternReportStatusMessageT = Aws::String>
+    void SetAntipatternReportStatusMessage(AntipatternReportStatusMessageT&& value) { m_antipatternReportStatusMessageHasBeenSet = true; m_antipatternReportStatusMessage = std::forward<AntipatternReportStatusMessageT>(value); }
+    template<typename AntipatternReportStatusMessageT = Aws::String>
+    AntipatternReportResult& WithAntipatternReportStatusMessage(AntipatternReportStatusMessageT&& value) { SetAntipatternReportStatusMessage(std::forward<AntipatternReportStatusMessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -95,7 +91,7 @@ namespace Model
     S3Object m_antiPatternReportS3Object;
     bool m_antiPatternReportS3ObjectHasBeenSet = false;
 
-    AntipatternReportStatus m_antipatternReportStatus;
+    AntipatternReportStatus m_antipatternReportStatus{AntipatternReportStatus::NOT_SET};
     bool m_antipatternReportStatusHasBeenSet = false;
 
     Aws::String m_antipatternReportStatusMessage;

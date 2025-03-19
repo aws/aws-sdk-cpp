@@ -35,7 +35,7 @@ namespace Model
   class DisableEnhancedMonitoringResult
   {
   public:
-    AWS_KINESIS_API DisableEnhancedMonitoringResult();
+    AWS_KINESIS_API DisableEnhancedMonitoringResult() = default;
     AWS_KINESIS_API DisableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API DisableEnhancedMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,11 @@ namespace Model
     /**
      * <p>The name of the Kinesis data stream.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
-    inline DisableEnhancedMonitoringResult& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline DisableEnhancedMonitoringResult& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringResult& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    DisableEnhancedMonitoringResult& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,13 +56,12 @@ namespace Model
      * <p>Represents the current state of the metrics that are in the enhanced state
      * before the operation.</p>
      */
-    inline const Aws::Vector<MetricsName>& GetCurrentShardLevelMetrics() const{ return m_currentShardLevelMetrics; }
-    inline void SetCurrentShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_currentShardLevelMetrics = value; }
-    inline void SetCurrentShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_currentShardLevelMetrics = std::move(value); }
-    inline DisableEnhancedMonitoringResult& WithCurrentShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetCurrentShardLevelMetrics(value); return *this;}
-    inline DisableEnhancedMonitoringResult& WithCurrentShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetCurrentShardLevelMetrics(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringResult& AddCurrentShardLevelMetrics(const MetricsName& value) { m_currentShardLevelMetrics.push_back(value); return *this; }
-    inline DisableEnhancedMonitoringResult& AddCurrentShardLevelMetrics(MetricsName&& value) { m_currentShardLevelMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricsName>& GetCurrentShardLevelMetrics() const { return m_currentShardLevelMetrics; }
+    template<typename CurrentShardLevelMetricsT = Aws::Vector<MetricsName>>
+    void SetCurrentShardLevelMetrics(CurrentShardLevelMetricsT&& value) { m_currentShardLevelMetricsHasBeenSet = true; m_currentShardLevelMetrics = std::forward<CurrentShardLevelMetricsT>(value); }
+    template<typename CurrentShardLevelMetricsT = Aws::Vector<MetricsName>>
+    DisableEnhancedMonitoringResult& WithCurrentShardLevelMetrics(CurrentShardLevelMetricsT&& value) { SetCurrentShardLevelMetrics(std::forward<CurrentShardLevelMetricsT>(value)); return *this;}
+    inline DisableEnhancedMonitoringResult& AddCurrentShardLevelMetrics(MetricsName value) { m_currentShardLevelMetricsHasBeenSet = true; m_currentShardLevelMetrics.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -72,49 +69,49 @@ namespace Model
      * <p>Represents the list of all the metrics that would be in the enhanced state
      * after the operation.</p>
      */
-    inline const Aws::Vector<MetricsName>& GetDesiredShardLevelMetrics() const{ return m_desiredShardLevelMetrics; }
-    inline void SetDesiredShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_desiredShardLevelMetrics = value; }
-    inline void SetDesiredShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_desiredShardLevelMetrics = std::move(value); }
-    inline DisableEnhancedMonitoringResult& WithDesiredShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetDesiredShardLevelMetrics(value); return *this;}
-    inline DisableEnhancedMonitoringResult& WithDesiredShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetDesiredShardLevelMetrics(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(const MetricsName& value) { m_desiredShardLevelMetrics.push_back(value); return *this; }
-    inline DisableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(MetricsName&& value) { m_desiredShardLevelMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricsName>& GetDesiredShardLevelMetrics() const { return m_desiredShardLevelMetrics; }
+    template<typename DesiredShardLevelMetricsT = Aws::Vector<MetricsName>>
+    void SetDesiredShardLevelMetrics(DesiredShardLevelMetricsT&& value) { m_desiredShardLevelMetricsHasBeenSet = true; m_desiredShardLevelMetrics = std::forward<DesiredShardLevelMetricsT>(value); }
+    template<typename DesiredShardLevelMetricsT = Aws::Vector<MetricsName>>
+    DisableEnhancedMonitoringResult& WithDesiredShardLevelMetrics(DesiredShardLevelMetricsT&& value) { SetDesiredShardLevelMetrics(std::forward<DesiredShardLevelMetricsT>(value)); return *this;}
+    inline DisableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(MetricsName value) { m_desiredShardLevelMetricsHasBeenSet = true; m_desiredShardLevelMetrics.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
-    inline DisableEnhancedMonitoringResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline DisableEnhancedMonitoringResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    DisableEnhancedMonitoringResult& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisableEnhancedMonitoringResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisableEnhancedMonitoringResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisableEnhancedMonitoringResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::Vector<MetricsName> m_currentShardLevelMetrics;
+    bool m_currentShardLevelMetricsHasBeenSet = false;
 
     Aws::Vector<MetricsName> m_desiredShardLevelMetrics;
+    bool m_desiredShardLevelMetricsHasBeenSet = false;
 
     Aws::String m_streamARN;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

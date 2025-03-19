@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutKMSEncryptionKeyRequest::PutKMSEncryptionKeyRequest() : 
-    m_kmsEncryptionKeyArnHasBeenSet(false)
-{
-}
-
 Aws::String PutKMSEncryptionKeyRequest::SerializePayload() const
 {
   JsonValue payload;

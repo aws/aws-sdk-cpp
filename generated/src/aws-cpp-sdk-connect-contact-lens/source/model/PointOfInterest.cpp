@@ -18,16 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-PointOfInterest::PointOfInterest() : 
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false)
-{
-}
-
 PointOfInterest::PointOfInterest(JsonView jsonValue)
-  : PointOfInterest()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PointOfInterest& PointOfInterest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BeginOffsetMillis"))
   {
     m_beginOffsetMillis = jsonValue.GetInteger("BeginOffsetMillis");
-
     m_beginOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffsetMillis"))
   {
     m_endOffsetMillis = jsonValue.GetInteger("EndOffsetMillis");
-
     m_endOffsetMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

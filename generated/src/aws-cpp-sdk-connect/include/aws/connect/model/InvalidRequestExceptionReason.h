@@ -31,7 +31,7 @@ namespace Model
   class InvalidRequestExceptionReason
   {
   public:
-    AWS_CONNECT_API InvalidRequestExceptionReason();
+    AWS_CONNECT_API InvalidRequestExceptionReason() = default;
     AWS_CONNECT_API InvalidRequestExceptionReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API InvalidRequestExceptionReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
      */
-    inline const AttachedFileInvalidRequestExceptionReason& GetAttachedFileInvalidRequestExceptionReason() const{ return m_attachedFileInvalidRequestExceptionReason; }
+    inline AttachedFileInvalidRequestExceptionReason GetAttachedFileInvalidRequestExceptionReason() const { return m_attachedFileInvalidRequestExceptionReason; }
     inline bool AttachedFileInvalidRequestExceptionReasonHasBeenSet() const { return m_attachedFileInvalidRequestExceptionReasonHasBeenSet; }
-    inline void SetAttachedFileInvalidRequestExceptionReason(const AttachedFileInvalidRequestExceptionReason& value) { m_attachedFileInvalidRequestExceptionReasonHasBeenSet = true; m_attachedFileInvalidRequestExceptionReason = value; }
-    inline void SetAttachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason&& value) { m_attachedFileInvalidRequestExceptionReasonHasBeenSet = true; m_attachedFileInvalidRequestExceptionReason = std::move(value); }
-    inline InvalidRequestExceptionReason& WithAttachedFileInvalidRequestExceptionReason(const AttachedFileInvalidRequestExceptionReason& value) { SetAttachedFileInvalidRequestExceptionReason(value); return *this;}
-    inline InvalidRequestExceptionReason& WithAttachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason&& value) { SetAttachedFileInvalidRequestExceptionReason(std::move(value)); return *this;}
+    inline void SetAttachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason value) { m_attachedFileInvalidRequestExceptionReasonHasBeenSet = true; m_attachedFileInvalidRequestExceptionReason = value; }
+    inline InvalidRequestExceptionReason& WithAttachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason value) { SetAttachedFileInvalidRequestExceptionReason(value); return *this;}
     ///@}
   private:
 
-    AttachedFileInvalidRequestExceptionReason m_attachedFileInvalidRequestExceptionReason;
+    AttachedFileInvalidRequestExceptionReason m_attachedFileInvalidRequestExceptionReason{AttachedFileInvalidRequestExceptionReason::NOT_SET};
     bool m_attachedFileInvalidRequestExceptionReasonHasBeenSet = false;
   };
 

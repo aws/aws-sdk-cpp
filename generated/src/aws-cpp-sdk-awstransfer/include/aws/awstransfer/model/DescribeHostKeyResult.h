@@ -28,7 +28,7 @@ namespace Model
   class DescribeHostKeyResult
   {
   public:
-    AWS_TRANSFER_API DescribeHostKeyResult();
+    AWS_TRANSFER_API DescribeHostKeyResult() = default;
     AWS_TRANSFER_API DescribeHostKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API DescribeHostKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns the details for the specified host key.</p>
      */
-    inline const DescribedHostKey& GetHostKey() const{ return m_hostKey; }
-    inline void SetHostKey(const DescribedHostKey& value) { m_hostKey = value; }
-    inline void SetHostKey(DescribedHostKey&& value) { m_hostKey = std::move(value); }
-    inline DescribeHostKeyResult& WithHostKey(const DescribedHostKey& value) { SetHostKey(value); return *this;}
-    inline DescribeHostKeyResult& WithHostKey(DescribedHostKey&& value) { SetHostKey(std::move(value)); return *this;}
+    inline const DescribedHostKey& GetHostKey() const { return m_hostKey; }
+    template<typename HostKeyT = DescribedHostKey>
+    void SetHostKey(HostKeyT&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::forward<HostKeyT>(value); }
+    template<typename HostKeyT = DescribedHostKey>
+    DescribeHostKeyResult& WithHostKey(HostKeyT&& value) { SetHostKey(std::forward<HostKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeHostKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeHostKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeHostKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeHostKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DescribedHostKey m_hostKey;
+    bool m_hostKeyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

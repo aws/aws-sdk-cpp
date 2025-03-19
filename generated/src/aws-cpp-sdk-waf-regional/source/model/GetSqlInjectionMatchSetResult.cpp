@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult()
-{
-}
-
 GetSqlInjectionMatchSetResult::GetSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSqlInjectionMatchSetResult& GetSqlInjectionMatchSetResult::operator =(const A
   if(jsonValue.ValueExists("SqlInjectionMatchSet"))
   {
     m_sqlInjectionMatchSet = jsonValue.GetObject("SqlInjectionMatchSet");
-
+    m_sqlInjectionMatchSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

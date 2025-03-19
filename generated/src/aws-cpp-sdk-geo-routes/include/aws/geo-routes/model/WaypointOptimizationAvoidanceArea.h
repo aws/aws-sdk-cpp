@@ -31,7 +31,7 @@ namespace Model
   class WaypointOptimizationAvoidanceArea
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationAvoidanceArea();
+    AWS_GEOROUTES_API WaypointOptimizationAvoidanceArea() = default;
     AWS_GEOROUTES_API WaypointOptimizationAvoidanceArea(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationAvoidanceArea& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Geometry of the area to be avoided.</p>
      */
-    inline const WaypointOptimizationAvoidanceAreaGeometry& GetGeometry() const{ return m_geometry; }
+    inline const WaypointOptimizationAvoidanceAreaGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const WaypointOptimizationAvoidanceAreaGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(WaypointOptimizationAvoidanceAreaGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline WaypointOptimizationAvoidanceArea& WithGeometry(const WaypointOptimizationAvoidanceAreaGeometry& value) { SetGeometry(value); return *this;}
-    inline WaypointOptimizationAvoidanceArea& WithGeometry(WaypointOptimizationAvoidanceAreaGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = WaypointOptimizationAvoidanceAreaGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = WaypointOptimizationAvoidanceAreaGeometry>
+    WaypointOptimizationAvoidanceArea& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
   private:
 

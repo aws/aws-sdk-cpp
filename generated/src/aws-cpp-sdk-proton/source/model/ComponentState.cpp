@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ComponentState::ComponentState() : 
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceSpecHasBeenSet(false),
-    m_templateFileHasBeenSet(false)
-{
-}
-
 ComponentState::ComponentState(JsonView jsonValue)
-  : ComponentState()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ComponentState& ComponentState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceInstanceName"))
   {
     m_serviceInstanceName = jsonValue.GetString("serviceInstanceName");
-
     m_serviceInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceSpec"))
   {
     m_serviceSpec = jsonValue.GetString("serviceSpec");
-
     m_serviceSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateFile"))
   {
     m_templateFile = jsonValue.GetString("templateFile");
-
     m_templateFileHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBackupsRequest::DescribeBackupsRequest() : 
-    m_backupIdHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBackupsRequest::SerializePayload() const
 {
   JsonValue payload;

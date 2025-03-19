@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateRumMetricDefinitionsRequest::BatchCreateRumMetricDefinitionsRequest() : 
-    m_appMonitorNameHasBeenSet(false),
-    m_destination(MetricDestination::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateRumMetricDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;

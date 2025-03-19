@@ -19,7 +19,7 @@ namespace Model
   class GetPricingPlanRequest : public IoTTwinMakerRequest
   {
   public:
-    AWS_IOTTWINMAKER_API GetPricingPlanRequest();
+    AWS_IOTTWINMAKER_API GetPricingPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

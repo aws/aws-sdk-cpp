@@ -20,13 +20,7 @@ namespace STS
 namespace Model
 {
 
-ResponseMetadata::ResponseMetadata() : 
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode)
-  : ResponseMetadata()
 {
   *this = xmlNode;
 }

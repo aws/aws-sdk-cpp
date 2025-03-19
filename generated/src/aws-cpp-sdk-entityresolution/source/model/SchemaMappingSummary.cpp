@@ -18,18 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-SchemaMappingSummary::SchemaMappingSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_hasWorkflows(false),
-    m_hasWorkflowsHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 SchemaMappingSummary::SchemaMappingSummary(JsonView jsonValue)
-  : SchemaMappingSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SchemaMappingSummary& SchemaMappingSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasWorkflows"))
   {
     m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
-
     m_hasWorkflowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaArn"))
   {
     m_schemaArn = jsonValue.GetString("schemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaName"))
   {
     m_schemaName = jsonValue.GetString("schemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

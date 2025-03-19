@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-S3AccessGrantsScopeUnion::S3AccessGrantsScopeUnion() : 
-    m_readWriteAccessHasBeenSet(false)
-{
-}
-
 S3AccessGrantsScopeUnion::S3AccessGrantsScopeUnion(const XmlNode& xmlNode)
-  : S3AccessGrantsScopeUnion()
 {
   *this = xmlNode;
 }

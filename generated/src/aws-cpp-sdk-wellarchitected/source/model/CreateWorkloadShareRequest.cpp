@@ -12,16 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkloadShareRequest::CreateWorkloadShareRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateWorkloadShareRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class GetDeploymentStrategyRequest : public AppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API GetDeploymentStrategyRequest();
+    AWS_APPCONFIG_API GetDeploymentStrategyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the deployment strategy to get.</p>
      */
-    inline const Aws::String& GetDeploymentStrategyId() const{ return m_deploymentStrategyId; }
+    inline const Aws::String& GetDeploymentStrategyId() const { return m_deploymentStrategyId; }
     inline bool DeploymentStrategyIdHasBeenSet() const { return m_deploymentStrategyIdHasBeenSet; }
-    inline void SetDeploymentStrategyId(const Aws::String& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = value; }
-    inline void SetDeploymentStrategyId(Aws::String&& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = std::move(value); }
-    inline void SetDeploymentStrategyId(const char* value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId.assign(value); }
-    inline GetDeploymentStrategyRequest& WithDeploymentStrategyId(const Aws::String& value) { SetDeploymentStrategyId(value); return *this;}
-    inline GetDeploymentStrategyRequest& WithDeploymentStrategyId(Aws::String&& value) { SetDeploymentStrategyId(std::move(value)); return *this;}
-    inline GetDeploymentStrategyRequest& WithDeploymentStrategyId(const char* value) { SetDeploymentStrategyId(value); return *this;}
+    template<typename DeploymentStrategyIdT = Aws::String>
+    void SetDeploymentStrategyId(DeploymentStrategyIdT&& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = std::forward<DeploymentStrategyIdT>(value); }
+    template<typename DeploymentStrategyIdT = Aws::String>
+    GetDeploymentStrategyRequest& WithDeploymentStrategyId(DeploymentStrategyIdT&& value) { SetDeploymentStrategyId(std::forward<DeploymentStrategyIdT>(value)); return *this;}
     ///@}
   private:
 

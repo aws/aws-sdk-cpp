@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppMonitorRequest::GetAppMonitorRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetAppMonitorRequest::SerializePayload() const
 {
   return {};

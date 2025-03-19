@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateCustomerGatewayResult::DisassociateCustomerGatewayResult()
-{
-}
-
 DisassociateCustomerGatewayResult::DisassociateCustomerGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DisassociateCustomerGatewayResult& DisassociateCustomerGatewayResult::operator =
   if(jsonValue.ValueExists("CustomerGatewayAssociation"))
   {
     m_customerGatewayAssociation = jsonValue.GetObject("CustomerGatewayAssociation");
-
+    m_customerGatewayAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

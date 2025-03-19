@@ -12,13 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSshPublicKeyRequest::DeleteSshPublicKeyRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_sshPublicKeyIdHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSshPublicKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-PlatformBranchSummary::PlatformBranchSummary() : 
-    m_platformNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_lifecycleStateHasBeenSet(false),
-    m_branchOrder(0),
-    m_branchOrderHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false)
-{
-}
-
 PlatformBranchSummary::PlatformBranchSummary(const XmlNode& xmlNode)
-  : PlatformBranchSummary()
 {
   *this = xmlNode;
 }
@@ -70,6 +59,7 @@ PlatformBranchSummary& PlatformBranchSummary::operator =(const XmlNode& xmlNode)
     if(!supportedTierListNode.IsNull())
     {
       XmlNode supportedTierListMember = supportedTierListNode.FirstChild("member");
+      m_supportedTierListHasBeenSet = !supportedTierListMember.IsNull();
       while(!supportedTierListMember.IsNull())
       {
         m_supportedTierList.push_back(supportedTierListMember.GetText());

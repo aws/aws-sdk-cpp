@@ -33,7 +33,7 @@ namespace Model
   class IntegrateServices
   {
   public:
-    AWS_EC2_API IntegrateServices();
+    AWS_EC2_API IntegrateServices() = default;
     AWS_EC2_API IntegrateServices(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IntegrateServices& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>Information about the integration with Amazon Athena.</p>
      */
-    inline const Aws::Vector<AthenaIntegration>& GetAthenaIntegrations() const{ return m_athenaIntegrations; }
+    inline const Aws::Vector<AthenaIntegration>& GetAthenaIntegrations() const { return m_athenaIntegrations; }
     inline bool AthenaIntegrationsHasBeenSet() const { return m_athenaIntegrationsHasBeenSet; }
-    inline void SetAthenaIntegrations(const Aws::Vector<AthenaIntegration>& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations = value; }
-    inline void SetAthenaIntegrations(Aws::Vector<AthenaIntegration>&& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations = std::move(value); }
-    inline IntegrateServices& WithAthenaIntegrations(const Aws::Vector<AthenaIntegration>& value) { SetAthenaIntegrations(value); return *this;}
-    inline IntegrateServices& WithAthenaIntegrations(Aws::Vector<AthenaIntegration>&& value) { SetAthenaIntegrations(std::move(value)); return *this;}
-    inline IntegrateServices& AddAthenaIntegrations(const AthenaIntegration& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations.push_back(value); return *this; }
-    inline IntegrateServices& AddAthenaIntegrations(AthenaIntegration&& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations.push_back(std::move(value)); return *this; }
+    template<typename AthenaIntegrationsT = Aws::Vector<AthenaIntegration>>
+    void SetAthenaIntegrations(AthenaIntegrationsT&& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations = std::forward<AthenaIntegrationsT>(value); }
+    template<typename AthenaIntegrationsT = Aws::Vector<AthenaIntegration>>
+    IntegrateServices& WithAthenaIntegrations(AthenaIntegrationsT&& value) { SetAthenaIntegrations(std::forward<AthenaIntegrationsT>(value)); return *this;}
+    template<typename AthenaIntegrationsT = AthenaIntegration>
+    IntegrateServices& AddAthenaIntegrations(AthenaIntegrationsT&& value) { m_athenaIntegrationsHasBeenSet = true; m_athenaIntegrations.emplace_back(std::forward<AthenaIntegrationsT>(value)); return *this; }
     ///@}
   private:
 

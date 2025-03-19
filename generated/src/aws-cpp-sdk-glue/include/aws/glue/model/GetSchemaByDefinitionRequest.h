@@ -22,7 +22,7 @@ namespace Model
   class GetSchemaByDefinitionRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetSchemaByDefinitionRequest();
+    AWS_GLUE_API GetSchemaByDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,24 @@ namespace Model
      * <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
      * </ul>
      */
-    inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
+    inline const SchemaId& GetSchemaId() const { return m_schemaId; }
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-    inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-    inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-    inline GetSchemaByDefinitionRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-    inline GetSchemaByDefinitionRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
+    template<typename SchemaIdT = SchemaId>
+    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
+    template<typename SchemaIdT = SchemaId>
+    GetSchemaByDefinitionRequest& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of the schema for which schema details are required.</p>
      */
-    inline const Aws::String& GetSchemaDefinition() const{ return m_schemaDefinition; }
+    inline const Aws::String& GetSchemaDefinition() const { return m_schemaDefinition; }
     inline bool SchemaDefinitionHasBeenSet() const { return m_schemaDefinitionHasBeenSet; }
-    inline void SetSchemaDefinition(const Aws::String& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = value; }
-    inline void SetSchemaDefinition(Aws::String&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::move(value); }
-    inline void SetSchemaDefinition(const char* value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition.assign(value); }
-    inline GetSchemaByDefinitionRequest& WithSchemaDefinition(const Aws::String& value) { SetSchemaDefinition(value); return *this;}
-    inline GetSchemaByDefinitionRequest& WithSchemaDefinition(Aws::String&& value) { SetSchemaDefinition(std::move(value)); return *this;}
-    inline GetSchemaByDefinitionRequest& WithSchemaDefinition(const char* value) { SetSchemaDefinition(value); return *this;}
+    template<typename SchemaDefinitionT = Aws::String>
+    void SetSchemaDefinition(SchemaDefinitionT&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::forward<SchemaDefinitionT>(value); }
+    template<typename SchemaDefinitionT = Aws::String>
+    GetSchemaByDefinitionRequest& WithSchemaDefinition(SchemaDefinitionT&& value) { SetSchemaDefinition(std::forward<SchemaDefinitionT>(value)); return *this;}
     ///@}
   private:
 

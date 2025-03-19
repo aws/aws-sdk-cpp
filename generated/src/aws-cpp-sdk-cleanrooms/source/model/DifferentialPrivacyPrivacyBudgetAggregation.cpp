@@ -18,18 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DifferentialPrivacyPrivacyBudgetAggregation::DifferentialPrivacyPrivacyBudgetAggregation() : 
-    m_type(DifferentialPrivacyAggregationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_remainingCount(0),
-    m_remainingCountHasBeenSet(false)
-{
-}
-
 DifferentialPrivacyPrivacyBudgetAggregation::DifferentialPrivacyPrivacyBudgetAggregation(JsonView jsonValue)
-  : DifferentialPrivacyPrivacyBudgetAggregation()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DifferentialPrivacyPrivacyBudgetAggregation& DifferentialPrivacyPrivacyBudgetAgg
   if(jsonValue.ValueExists("type"))
   {
     m_type = DifferentialPrivacyAggregationTypeMapper::GetDifferentialPrivacyAggregationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxCount"))
   {
     m_maxCount = jsonValue.GetInteger("maxCount");
-
     m_maxCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remainingCount"))
   {
     m_remainingCount = jsonValue.GetInteger("remainingCount");
-
     m_remainingCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class UpdateTrafficPolicyCommentRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API UpdateTrafficPolicyCommentRequest();
+    AWS_ROUTE53_API UpdateTrafficPolicyCommentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The value of <code>Id</code> for the traffic policy that you want to update
      * the comment for.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateTrafficPolicyCommentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateTrafficPolicyCommentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateTrafficPolicyCommentRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateTrafficPolicyCommentRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>The value of <code>Version</code> for the traffic policy that you want to
      * update the comment for.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline UpdateTrafficPolicyCommentRequest& WithVersion(int value) { SetVersion(value); return *this;}
@@ -66,21 +64,19 @@ namespace Model
     /**
      * <p>The new comment for the specified traffic policy and version.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline UpdateTrafficPolicyCommentRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline UpdateTrafficPolicyCommentRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline UpdateTrafficPolicyCommentRequest& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    UpdateTrafficPolicyCommentRequest& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
 
     Aws::String m_comment;

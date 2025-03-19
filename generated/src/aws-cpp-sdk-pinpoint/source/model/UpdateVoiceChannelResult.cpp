@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateVoiceChannelResult::UpdateVoiceChannelResult()
-{
-}
-
 UpdateVoiceChannelResult::UpdateVoiceChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ UpdateVoiceChannelResult& UpdateVoiceChannelResult::operator =(const Aws::Amazon
 {
   JsonView jsonValue = result.GetPayload().View();
   m_voiceChannelResponse = jsonValue;
+  m_voiceChannelResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

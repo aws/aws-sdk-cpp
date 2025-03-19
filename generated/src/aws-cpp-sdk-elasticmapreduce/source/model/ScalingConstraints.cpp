@@ -18,16 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ScalingConstraints::ScalingConstraints() : 
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false)
-{
-}
-
 ScalingConstraints::ScalingConstraints(JsonView jsonValue)
-  : ScalingConstraints()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ScalingConstraints& ScalingConstraints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinCapacity"))
   {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
-
     m_minCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

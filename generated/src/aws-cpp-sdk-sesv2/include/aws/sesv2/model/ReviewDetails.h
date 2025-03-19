@@ -33,7 +33,7 @@ namespace Model
   class ReviewDetails
   {
   public:
-    AWS_SESV2_API ReviewDetails();
+    AWS_SESV2_API ReviewDetails() = default;
     AWS_SESV2_API ReviewDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ReviewDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,30 +50,26 @@ namespace Model
      * internal error occurred and we didn't receive your appeal. You can submit your
      * appeal again.</p> </li> </ul>
      */
-    inline const ReviewStatus& GetStatus() const{ return m_status; }
+    inline ReviewStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReviewStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReviewStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReviewDetails& WithStatus(const ReviewStatus& value) { SetStatus(value); return *this;}
-    inline ReviewDetails& WithStatus(ReviewStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReviewStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReviewDetails& WithStatus(ReviewStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated support center case ID (if any).</p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline ReviewDetails& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline ReviewDetails& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline ReviewDetails& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    ReviewDetails& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
   private:
 
-    ReviewStatus m_status;
+    ReviewStatus m_status{ReviewStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_caseId;

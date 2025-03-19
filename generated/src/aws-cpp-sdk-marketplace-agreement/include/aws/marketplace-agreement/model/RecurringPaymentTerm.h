@@ -32,7 +32,7 @@ namespace Model
   class RecurringPaymentTerm
   {
   public:
-    AWS_AGREEMENTSERVICE_API RecurringPaymentTerm();
+    AWS_AGREEMENTSERVICE_API RecurringPaymentTerm() = default;
     AWS_AGREEMENTSERVICE_API RecurringPaymentTerm(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API RecurringPaymentTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>Defines the recurrence at which buyers are charged.</p>
      */
-    inline const Aws::String& GetBillingPeriod() const{ return m_billingPeriod; }
+    inline const Aws::String& GetBillingPeriod() const { return m_billingPeriod; }
     inline bool BillingPeriodHasBeenSet() const { return m_billingPeriodHasBeenSet; }
-    inline void SetBillingPeriod(const Aws::String& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = value; }
-    inline void SetBillingPeriod(Aws::String&& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = std::move(value); }
-    inline void SetBillingPeriod(const char* value) { m_billingPeriodHasBeenSet = true; m_billingPeriod.assign(value); }
-    inline RecurringPaymentTerm& WithBillingPeriod(const Aws::String& value) { SetBillingPeriod(value); return *this;}
-    inline RecurringPaymentTerm& WithBillingPeriod(Aws::String&& value) { SetBillingPeriod(std::move(value)); return *this;}
-    inline RecurringPaymentTerm& WithBillingPeriod(const char* value) { SetBillingPeriod(value); return *this;}
+    template<typename BillingPeriodT = Aws::String>
+    void SetBillingPeriod(BillingPeriodT&& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = std::forward<BillingPeriodT>(value); }
+    template<typename BillingPeriodT = Aws::String>
+    RecurringPaymentTerm& WithBillingPeriod(BillingPeriodT&& value) { SetBillingPeriod(std::forward<BillingPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the currency for the prices mentioned in this term. </p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline RecurringPaymentTerm& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline RecurringPaymentTerm& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline RecurringPaymentTerm& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    RecurringPaymentTerm& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amount charged to the buyer every billing period.</p>
      */
-    inline const Aws::String& GetPrice() const{ return m_price; }
+    inline const Aws::String& GetPrice() const { return m_price; }
     inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
-    inline void SetPrice(const Aws::String& value) { m_priceHasBeenSet = true; m_price = value; }
-    inline void SetPrice(Aws::String&& value) { m_priceHasBeenSet = true; m_price = std::move(value); }
-    inline void SetPrice(const char* value) { m_priceHasBeenSet = true; m_price.assign(value); }
-    inline RecurringPaymentTerm& WithPrice(const Aws::String& value) { SetPrice(value); return *this;}
-    inline RecurringPaymentTerm& WithPrice(Aws::String&& value) { SetPrice(std::move(value)); return *this;}
-    inline RecurringPaymentTerm& WithPrice(const char* value) { SetPrice(value); return *this;}
+    template<typename PriceT = Aws::String>
+    void SetPrice(PriceT&& value) { m_priceHasBeenSet = true; m_price = std::forward<PriceT>(value); }
+    template<typename PriceT = Aws::String>
+    RecurringPaymentTerm& WithPrice(PriceT&& value) { SetPrice(std::forward<PriceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the term being updated.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline RecurringPaymentTerm& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline RecurringPaymentTerm& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline RecurringPaymentTerm& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    RecurringPaymentTerm& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

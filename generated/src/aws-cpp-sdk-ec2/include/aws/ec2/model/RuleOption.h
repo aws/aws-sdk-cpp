@@ -32,7 +32,7 @@ namespace Model
   class RuleOption
   {
   public:
-    AWS_EC2_API RuleOption();
+    AWS_EC2_API RuleOption() = default;
     AWS_EC2_API RuleOption(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RuleOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>The Suricata keyword.</p>
      */
-    inline const Aws::String& GetKeyword() const{ return m_keyword; }
+    inline const Aws::String& GetKeyword() const { return m_keyword; }
     inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
-    inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
-    inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
-    inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
-    inline RuleOption& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
-    inline RuleOption& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
-    inline RuleOption& WithKeyword(const char* value) { SetKeyword(value); return *this;}
+    template<typename KeywordT = Aws::String>
+    void SetKeyword(KeywordT&& value) { m_keywordHasBeenSet = true; m_keyword = std::forward<KeywordT>(value); }
+    template<typename KeywordT = Aws::String>
+    RuleOption& WithKeyword(KeywordT&& value) { SetKeyword(std::forward<KeywordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The settings for the keyword.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSettings() const{ return m_settings; }
+    inline const Aws::Vector<Aws::String>& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Aws::Vector<Aws::String>& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Aws::Vector<Aws::String>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline RuleOption& WithSettings(const Aws::Vector<Aws::String>& value) { SetSettings(value); return *this;}
-    inline RuleOption& WithSettings(Aws::Vector<Aws::String>&& value) { SetSettings(std::move(value)); return *this;}
-    inline RuleOption& AddSettings(const Aws::String& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
-    inline RuleOption& AddSettings(Aws::String&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
-    inline RuleOption& AddSettings(const char* value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
+    template<typename SettingsT = Aws::Vector<Aws::String>>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Aws::Vector<Aws::String>>
+    RuleOption& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
+    template<typename SettingsT = Aws::String>
+    RuleOption& AddSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings.emplace_back(std::forward<SettingsT>(value)); return *this; }
     ///@}
   private:
 

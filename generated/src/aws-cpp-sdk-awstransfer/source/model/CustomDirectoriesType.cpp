@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-CustomDirectoriesType::CustomDirectoriesType() : 
-    m_failedFilesDirectoryHasBeenSet(false),
-    m_mdnFilesDirectoryHasBeenSet(false),
-    m_payloadFilesDirectoryHasBeenSet(false),
-    m_statusFilesDirectoryHasBeenSet(false),
-    m_temporaryFilesDirectoryHasBeenSet(false)
-{
-}
-
 CustomDirectoriesType::CustomDirectoriesType(JsonView jsonValue)
-  : CustomDirectoriesType()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CustomDirectoriesType& CustomDirectoriesType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailedFilesDirectory"))
   {
     m_failedFilesDirectory = jsonValue.GetString("FailedFilesDirectory");
-
     m_failedFilesDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MdnFilesDirectory"))
   {
     m_mdnFilesDirectory = jsonValue.GetString("MdnFilesDirectory");
-
     m_mdnFilesDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PayloadFilesDirectory"))
   {
     m_payloadFilesDirectory = jsonValue.GetString("PayloadFilesDirectory");
-
     m_payloadFilesDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusFilesDirectory"))
   {
     m_statusFilesDirectory = jsonValue.GetString("StatusFilesDirectory");
-
     m_statusFilesDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemporaryFilesDirectory"))
   {
     m_temporaryFilesDirectory = jsonValue.GetString("TemporaryFilesDirectory");
-
     m_temporaryFilesDirectoryHasBeenSet = true;
   }
-
   return *this;
 }
 

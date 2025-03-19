@@ -12,14 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRetrievedTracesRequest::ListRetrievedTracesRequest() : 
-    m_retrievalTokenHasBeenSet(false),
-    m_traceFormat(TraceFormatType::NOT_SET),
-    m_traceFormatHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRetrievedTracesRequest::SerializePayload() const
 {
   JsonValue payload;

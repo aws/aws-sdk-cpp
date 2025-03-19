@@ -30,7 +30,7 @@ namespace Model
   class GetSchemaVersionResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetSchemaVersionResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetSchemaVersionResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetSchemaVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetSchemaVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,50 +39,42 @@ namespace Model
     /**
      * <p>The id of the schema version.</p>
      */
-    inline const Aws::String& GetSchemaId() const{ return m_schemaId; }
-    inline void SetSchemaId(const Aws::String& value) { m_schemaId = value; }
-    inline void SetSchemaId(Aws::String&& value) { m_schemaId = std::move(value); }
-    inline void SetSchemaId(const char* value) { m_schemaId.assign(value); }
-    inline GetSchemaVersionResult& WithSchemaId(const Aws::String& value) { SetSchemaId(value); return *this;}
-    inline GetSchemaVersionResult& WithSchemaId(Aws::String&& value) { SetSchemaId(std::move(value)); return *this;}
-    inline GetSchemaVersionResult& WithSchemaId(const char* value) { SetSchemaId(value); return *this;}
+    inline const Aws::String& GetSchemaId() const { return m_schemaId; }
+    template<typename SchemaIdT = Aws::String>
+    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
+    template<typename SchemaIdT = Aws::String>
+    GetSchemaVersionResult& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of schema version.</p>
      */
-    inline const SchemaVersionType& GetType() const{ return m_type; }
-    inline void SetType(const SchemaVersionType& value) { m_type = value; }
-    inline void SetType(SchemaVersionType&& value) { m_type = std::move(value); }
-    inline GetSchemaVersionResult& WithType(const SchemaVersionType& value) { SetType(value); return *this;}
-    inline GetSchemaVersionResult& WithType(SchemaVersionType&& value) { SetType(std::move(value)); return *this;}
+    inline SchemaVersionType GetType() const { return m_type; }
+    inline void SetType(SchemaVersionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetSchemaVersionResult& WithType(SchemaVersionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the schema version.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetSchemaVersionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetSchemaVersionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetSchemaVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetSchemaVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema version.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
-    inline GetSchemaVersionResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline GetSchemaVersionResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline GetSchemaVersionResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    GetSchemaVersionResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,64 +82,66 @@ namespace Model
      * <p>The schema version. If this is left blank, it defaults to the latest
      * version.</p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersion.assign(value); }
-    inline GetSchemaVersionResult& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline GetSchemaVersionResult& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline GetSchemaVersionResult& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    GetSchemaVersionResult& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility of the schema version.</p>
      */
-    inline const SchemaVersionVisibility& GetVisibility() const{ return m_visibility; }
-    inline void SetVisibility(const SchemaVersionVisibility& value) { m_visibility = value; }
-    inline void SetVisibility(SchemaVersionVisibility&& value) { m_visibility = std::move(value); }
-    inline GetSchemaVersionResult& WithVisibility(const SchemaVersionVisibility& value) { SetVisibility(value); return *this;}
-    inline GetSchemaVersionResult& WithVisibility(SchemaVersionVisibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline SchemaVersionVisibility GetVisibility() const { return m_visibility; }
+    inline void SetVisibility(SchemaVersionVisibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline GetSchemaVersionResult& WithVisibility(SchemaVersionVisibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema of the schema version.</p>
      */
-    inline Aws::Utils::DocumentView GetSchema() const{ return m_schema; }
-    inline void SetSchema(const Aws::Utils::Document& value) { m_schema = value; }
-    inline void SetSchema(Aws::Utils::Document&& value) { m_schema = std::move(value); }
-    inline GetSchemaVersionResult& WithSchema(const Aws::Utils::Document& value) { SetSchema(value); return *this;}
-    inline GetSchemaVersionResult& WithSchema(Aws::Utils::Document&& value) { SetSchema(std::move(value)); return *this;}
+    inline Aws::Utils::DocumentView GetSchema() const { return m_schema; }
+    template<typename SchemaT = Aws::Utils::Document>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::Utils::Document>
+    GetSchemaVersionResult& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSchemaVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSchemaVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSchemaVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSchemaVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_schemaId;
+    bool m_schemaIdHasBeenSet = false;
 
-    SchemaVersionType m_type;
+    SchemaVersionType m_type{SchemaVersionType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_semanticVersion;
+    bool m_semanticVersionHasBeenSet = false;
 
-    SchemaVersionVisibility m_visibility;
+    SchemaVersionVisibility m_visibility{SchemaVersionVisibility::NOT_SET};
+    bool m_visibilityHasBeenSet = false;
 
     Aws::Utils::Document m_schema;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVocabularyResult::DescribeVocabularyResult()
-{
-}
-
 DescribeVocabularyResult::DescribeVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeVocabularyResult& DescribeVocabularyResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("Vocabulary"))
   {
     m_vocabulary = jsonValue.GetObject("Vocabulary");
-
+    m_vocabularyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

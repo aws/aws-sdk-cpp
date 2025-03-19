@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-ReleaseConfiguration::ReleaseConfiguration() : 
-    m_durationSinceLastAccessHasBeenSet(false)
-{
-}
-
 ReleaseConfiguration::ReleaseConfiguration(JsonView jsonValue)
-  : ReleaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReleaseConfiguration& ReleaseConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationSinceLastAccess"))
   {
     m_durationSinceLastAccess = jsonValue.GetObject("DurationSinceLastAccess");
-
     m_durationSinceLastAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

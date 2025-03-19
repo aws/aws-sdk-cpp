@@ -33,7 +33,7 @@ namespace Model
   class RerankQuery
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RerankQuery();
+    AWS_BEDROCKAGENTRUNTIME_API RerankQuery() = default;
     AWS_BEDROCKAGENTRUNTIME_API RerankQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RerankQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>Contains information about a text query.</p>
      */
-    inline const RerankTextDocument& GetTextQuery() const{ return m_textQuery; }
+    inline const RerankTextDocument& GetTextQuery() const { return m_textQuery; }
     inline bool TextQueryHasBeenSet() const { return m_textQueryHasBeenSet; }
-    inline void SetTextQuery(const RerankTextDocument& value) { m_textQueryHasBeenSet = true; m_textQuery = value; }
-    inline void SetTextQuery(RerankTextDocument&& value) { m_textQueryHasBeenSet = true; m_textQuery = std::move(value); }
-    inline RerankQuery& WithTextQuery(const RerankTextDocument& value) { SetTextQuery(value); return *this;}
-    inline RerankQuery& WithTextQuery(RerankTextDocument&& value) { SetTextQuery(std::move(value)); return *this;}
+    template<typename TextQueryT = RerankTextDocument>
+    void SetTextQuery(TextQueryT&& value) { m_textQueryHasBeenSet = true; m_textQuery = std::forward<TextQueryT>(value); }
+    template<typename TextQueryT = RerankTextDocument>
+    RerankQuery& WithTextQuery(TextQueryT&& value) { SetTextQuery(std::forward<TextQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the query.</p>
      */
-    inline const RerankQueryContentType& GetType() const{ return m_type; }
+    inline RerankQueryContentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RerankQueryContentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RerankQueryContentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RerankQuery& WithType(const RerankQueryContentType& value) { SetType(value); return *this;}
-    inline RerankQuery& WithType(RerankQueryContentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RerankQueryContentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RerankQuery& WithType(RerankQueryContentType value) { SetType(value); return *this;}
     ///@}
   private:
 
     RerankTextDocument m_textQuery;
     bool m_textQueryHasBeenSet = false;
 
-    RerankQueryContentType m_type;
+    RerankQueryContentType m_type{RerankQueryContentType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

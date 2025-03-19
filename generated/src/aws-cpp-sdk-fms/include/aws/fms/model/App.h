@@ -31,7 +31,7 @@ namespace Model
   class App
   {
   public:
-    AWS_FMS_API App();
+    AWS_FMS_API App() = default;
     AWS_FMS_API App(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API App& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The application's name.</p>
      */
-    inline const Aws::String& GetAppName() const{ return m_appName; }
+    inline const Aws::String& GetAppName() const { return m_appName; }
     inline bool AppNameHasBeenSet() const { return m_appNameHasBeenSet; }
-    inline void SetAppName(const Aws::String& value) { m_appNameHasBeenSet = true; m_appName = value; }
-    inline void SetAppName(Aws::String&& value) { m_appNameHasBeenSet = true; m_appName = std::move(value); }
-    inline void SetAppName(const char* value) { m_appNameHasBeenSet = true; m_appName.assign(value); }
-    inline App& WithAppName(const Aws::String& value) { SetAppName(value); return *this;}
-    inline App& WithAppName(Aws::String&& value) { SetAppName(std::move(value)); return *this;}
-    inline App& WithAppName(const char* value) { SetAppName(value); return *this;}
+    template<typename AppNameT = Aws::String>
+    void SetAppName(AppNameT&& value) { m_appNameHasBeenSet = true; m_appName = std::forward<AppNameT>(value); }
+    template<typename AppNameT = Aws::String>
+    App& WithAppName(AppNameT&& value) { SetAppName(std::forward<AppNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,21 +57,19 @@ namespace Model
      * href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline App& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline App& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline App& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    App& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The application's port number, for example <code>80</code>.</p>
      */
-    inline long long GetPort() const{ return m_port; }
+    inline long long GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(long long value) { m_portHasBeenSet = true; m_port = value; }
     inline App& WithPort(long long value) { SetPort(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    long long m_port;
+    long long m_port{0};
     bool m_portHasBeenSet = false;
   };
 

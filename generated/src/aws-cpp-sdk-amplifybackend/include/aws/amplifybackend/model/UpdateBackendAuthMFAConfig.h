@@ -33,7 +33,7 @@ namespace Model
   class UpdateBackendAuthMFAConfig
   {
   public:
-    AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig() = default;
     AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The MFA mode for the backend of your Amplify project.</p>
      */
-    inline const MFAMode& GetMFAMode() const{ return m_mFAMode; }
+    inline MFAMode GetMFAMode() const { return m_mFAMode; }
     inline bool MFAModeHasBeenSet() const { return m_mFAModeHasBeenSet; }
-    inline void SetMFAMode(const MFAMode& value) { m_mFAModeHasBeenSet = true; m_mFAMode = value; }
-    inline void SetMFAMode(MFAMode&& value) { m_mFAModeHasBeenSet = true; m_mFAMode = std::move(value); }
-    inline UpdateBackendAuthMFAConfig& WithMFAMode(const MFAMode& value) { SetMFAMode(value); return *this;}
-    inline UpdateBackendAuthMFAConfig& WithMFAMode(MFAMode&& value) { SetMFAMode(std::move(value)); return *this;}
+    inline void SetMFAMode(MFAMode value) { m_mFAModeHasBeenSet = true; m_mFAMode = value; }
+    inline UpdateBackendAuthMFAConfig& WithMFAMode(MFAMode value) { SetMFAMode(value); return *this;}
     ///@}
 
     ///@{
@@ -56,16 +54,16 @@ namespace Model
      * <p>The settings of your MFA configuration for the backend of your Amplify
      * project.</p>
      */
-    inline const Settings& GetSettings() const{ return m_settings; }
+    inline const Settings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline UpdateBackendAuthMFAConfig& WithSettings(const Settings& value) { SetSettings(value); return *this;}
-    inline UpdateBackendAuthMFAConfig& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = Settings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Settings>
+    UpdateBackendAuthMFAConfig& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 
-    MFAMode m_mFAMode;
+    MFAMode m_mFAMode{MFAMode::NOT_SET};
     bool m_mFAModeHasBeenSet = false;
 
     Settings m_settings;

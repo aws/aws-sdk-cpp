@@ -33,7 +33,7 @@ namespace Model
   class AudioMetadata
   {
   public:
-    AWS_REKOGNITION_API AudioMetadata();
+    AWS_REKOGNITION_API AudioMetadata() = default;
     AWS_REKOGNITION_API AudioMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API AudioMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The audio codec used to encode or decode the audio stream. </p>
      */
-    inline const Aws::String& GetCodec() const{ return m_codec; }
+    inline const Aws::String& GetCodec() const { return m_codec; }
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
-    inline void SetCodec(const Aws::String& value) { m_codecHasBeenSet = true; m_codec = value; }
-    inline void SetCodec(Aws::String&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
-    inline void SetCodec(const char* value) { m_codecHasBeenSet = true; m_codec.assign(value); }
-    inline AudioMetadata& WithCodec(const Aws::String& value) { SetCodec(value); return *this;}
-    inline AudioMetadata& WithCodec(Aws::String&& value) { SetCodec(std::move(value)); return *this;}
-    inline AudioMetadata& WithCodec(const char* value) { SetCodec(value); return *this;}
+    template<typename CodecT = Aws::String>
+    void SetCodec(CodecT&& value) { m_codecHasBeenSet = true; m_codec = std::forward<CodecT>(value); }
+    template<typename CodecT = Aws::String>
+    AudioMetadata& WithCodec(CodecT&& value) { SetCodec(std::forward<CodecT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the audio stream in milliseconds.</p>
      */
-    inline long long GetDurationMillis() const{ return m_durationMillis; }
+    inline long long GetDurationMillis() const { return m_durationMillis; }
     inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
     inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
     inline AudioMetadata& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     /**
      * <p>The sample rate for the audio stream.</p>
      */
-    inline long long GetSampleRate() const{ return m_sampleRate; }
+    inline long long GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(long long value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline AudioMetadata& WithSampleRate(long long value) { SetSampleRate(value); return *this;}
@@ -77,7 +75,7 @@ namespace Model
     /**
      * <p>The number of audio channels in the segment.</p>
      */
-    inline long long GetNumberOfChannels() const{ return m_numberOfChannels; }
+    inline long long GetNumberOfChannels() const { return m_numberOfChannels; }
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
     inline void SetNumberOfChannels(long long value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
     inline AudioMetadata& WithNumberOfChannels(long long value) { SetNumberOfChannels(value); return *this;}
@@ -87,13 +85,13 @@ namespace Model
     Aws::String m_codec;
     bool m_codecHasBeenSet = false;
 
-    long long m_durationMillis;
+    long long m_durationMillis{0};
     bool m_durationMillisHasBeenSet = false;
 
-    long long m_sampleRate;
+    long long m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
 
-    long long m_numberOfChannels;
+    long long m_numberOfChannels{0};
     bool m_numberOfChannelsHasBeenSet = false;
   };
 

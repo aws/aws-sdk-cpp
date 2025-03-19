@@ -12,24 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFeatureGroupsRequest::ListFeatureGroupsRequest() : 
-    m_nameContainsHasBeenSet(false),
-    m_featureGroupStatusEquals(FeatureGroupStatus::NOT_SET),
-    m_featureGroupStatusEqualsHasBeenSet(false),
-    m_offlineStoreStatusEquals(OfflineStoreStatusValue::NOT_SET),
-    m_offlineStoreStatusEqualsHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_sortOrder(FeatureGroupSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(FeatureGroupSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListFeatureGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

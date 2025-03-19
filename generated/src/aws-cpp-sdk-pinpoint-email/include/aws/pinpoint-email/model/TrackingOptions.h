@@ -37,7 +37,7 @@ namespace Model
   class TrackingOptions
   {
   public:
-    AWS_PINPOINTEMAIL_API TrackingOptions();
+    AWS_PINPOINTEMAIL_API TrackingOptions() = default;
     AWS_PINPOINTEMAIL_API TrackingOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API TrackingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The domain that you want to use for tracking open and click events.</p>
      */
-    inline const Aws::String& GetCustomRedirectDomain() const{ return m_customRedirectDomain; }
+    inline const Aws::String& GetCustomRedirectDomain() const { return m_customRedirectDomain; }
     inline bool CustomRedirectDomainHasBeenSet() const { return m_customRedirectDomainHasBeenSet; }
-    inline void SetCustomRedirectDomain(const Aws::String& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = value; }
-    inline void SetCustomRedirectDomain(Aws::String&& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = std::move(value); }
-    inline void SetCustomRedirectDomain(const char* value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain.assign(value); }
-    inline TrackingOptions& WithCustomRedirectDomain(const Aws::String& value) { SetCustomRedirectDomain(value); return *this;}
-    inline TrackingOptions& WithCustomRedirectDomain(Aws::String&& value) { SetCustomRedirectDomain(std::move(value)); return *this;}
-    inline TrackingOptions& WithCustomRedirectDomain(const char* value) { SetCustomRedirectDomain(value); return *this;}
+    template<typename CustomRedirectDomainT = Aws::String>
+    void SetCustomRedirectDomain(CustomRedirectDomainT&& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = std::forward<CustomRedirectDomainT>(value); }
+    template<typename CustomRedirectDomainT = Aws::String>
+    TrackingOptions& WithCustomRedirectDomain(CustomRedirectDomainT&& value) { SetCustomRedirectDomain(std::forward<CustomRedirectDomainT>(value)); return *this;}
     ///@}
   private:
 

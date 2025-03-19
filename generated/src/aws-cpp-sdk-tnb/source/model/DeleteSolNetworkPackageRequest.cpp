@@ -12,11 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSolNetworkPackageRequest::DeleteSolNetworkPackageRequest() : 
-    m_nsdInfoIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSolNetworkPackageRequest::SerializePayload() const
 {
   return {};

@@ -52,7 +52,7 @@ namespace Model
   class Service
   {
   public:
-    AWS_APPRUNNER_API Service();
+    AWS_APPRUNNER_API Service() = default;
     AWS_APPRUNNER_API Service(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,14 +62,12 @@ namespace Model
     /**
      * <p>The customer-provided service name.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline Service& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline Service& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    Service& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,28 +75,24 @@ namespace Model
      * <p>An ID that App Runner generated for this service. It's unique within the
      * Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline Service& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline Service& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline Service& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    Service& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of this service.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline Service& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    Service& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +100,12 @@ namespace Model
      * <p>A subdomain URL that App Runner generated for this service. You can use this
      * URL to access your service web application.</p>
      */
-    inline const Aws::String& GetServiceUrl() const{ return m_serviceUrl; }
+    inline const Aws::String& GetServiceUrl() const { return m_serviceUrl; }
     inline bool ServiceUrlHasBeenSet() const { return m_serviceUrlHasBeenSet; }
-    inline void SetServiceUrl(const Aws::String& value) { m_serviceUrlHasBeenSet = true; m_serviceUrl = value; }
-    inline void SetServiceUrl(Aws::String&& value) { m_serviceUrlHasBeenSet = true; m_serviceUrl = std::move(value); }
-    inline void SetServiceUrl(const char* value) { m_serviceUrlHasBeenSet = true; m_serviceUrl.assign(value); }
-    inline Service& WithServiceUrl(const Aws::String& value) { SetServiceUrl(value); return *this;}
-    inline Service& WithServiceUrl(Aws::String&& value) { SetServiceUrl(std::move(value)); return *this;}
-    inline Service& WithServiceUrl(const char* value) { SetServiceUrl(value); return *this;}
+    template<typename ServiceUrlT = Aws::String>
+    void SetServiceUrl(ServiceUrlT&& value) { m_serviceUrlHasBeenSet = true; m_serviceUrl = std::forward<ServiceUrlT>(value); }
+    template<typename ServiceUrlT = Aws::String>
+    Service& WithServiceUrl(ServiceUrlT&& value) { SetServiceUrl(std::forward<ServiceUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +113,12 @@ namespace Model
      * <p>The time when the App Runner service was created. It's in the Unix time stamp
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Service& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Service& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +126,12 @@ namespace Model
      * <p>The time when the App Runner service was last updated at. It's in the Unix
      * time stamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline Service& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline Service& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    Service& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +139,12 @@ namespace Model
      * <p>The time when the App Runner service was deleted. It's in the Unix time stamp
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletedAt() const{ return m_deletedAt; }
+    inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
     inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-    inline void SetDeletedAt(const Aws::Utils::DateTime& value) { m_deletedAtHasBeenSet = true; m_deletedAt = value; }
-    inline void SetDeletedAt(Aws::Utils::DateTime&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::move(value); }
-    inline Service& WithDeletedAt(const Aws::Utils::DateTime& value) { SetDeletedAt(value); return *this;}
-    inline Service& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    void SetDeletedAt(DeletedAtT&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::forward<DeletedAtT>(value); }
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    Service& WithDeletedAt(DeletedAtT&& value) { SetDeletedAt(std::forward<DeletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +158,10 @@ namespace Model
      * service failed to delete and can't be successfully recovered. Retry the service
      * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
-    inline const ServiceStatus& GetStatus() const{ return m_status; }
+    inline ServiceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ServiceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ServiceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Service& WithStatus(const ServiceStatus& value) { SetStatus(value); return *this;}
-    inline Service& WithStatus(ServiceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ServiceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Service& WithStatus(ServiceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -179,24 +169,24 @@ namespace Model
      * <p>The source deployed to the App Runner service. It can be a code or an image
      * repository.</p>
      */
-    inline const SourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
+    inline const SourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    inline void SetSourceConfiguration(const SourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
-    inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
-    inline Service& WithSourceConfiguration(const SourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
-    inline Service& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
+    template<typename SourceConfigurationT = SourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = SourceConfiguration>
+    Service& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime configuration of instances (scaling units) of this service.</p>
      */
-    inline const InstanceConfiguration& GetInstanceConfiguration() const{ return m_instanceConfiguration; }
+    inline const InstanceConfiguration& GetInstanceConfiguration() const { return m_instanceConfiguration; }
     inline bool InstanceConfigurationHasBeenSet() const { return m_instanceConfigurationHasBeenSet; }
-    inline void SetInstanceConfiguration(const InstanceConfiguration& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = value; }
-    inline void SetInstanceConfiguration(InstanceConfiguration&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::move(value); }
-    inline Service& WithInstanceConfiguration(const InstanceConfiguration& value) { SetInstanceConfiguration(value); return *this;}
-    inline Service& WithInstanceConfiguration(InstanceConfiguration&& value) { SetInstanceConfiguration(std::move(value)); return *this;}
+    template<typename InstanceConfigurationT = InstanceConfiguration>
+    void SetInstanceConfiguration(InstanceConfigurationT&& value) { m_instanceConfigurationHasBeenSet = true; m_instanceConfiguration = std::forward<InstanceConfigurationT>(value); }
+    template<typename InstanceConfigurationT = InstanceConfiguration>
+    Service& WithInstanceConfiguration(InstanceConfigurationT&& value) { SetInstanceConfiguration(std::forward<InstanceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,12 +196,12 @@ namespace Model
      * be either a customer-provided encryption key or an Amazon Web Services managed
      * key.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline Service& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline Service& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    Service& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,12 +209,12 @@ namespace Model
      * <p>The settings for the health check that App Runner performs to monitor the
      * health of this service.</p>
      */
-    inline const HealthCheckConfiguration& GetHealthCheckConfiguration() const{ return m_healthCheckConfiguration; }
+    inline const HealthCheckConfiguration& GetHealthCheckConfiguration() const { return m_healthCheckConfiguration; }
     inline bool HealthCheckConfigurationHasBeenSet() const { return m_healthCheckConfigurationHasBeenSet; }
-    inline void SetHealthCheckConfiguration(const HealthCheckConfiguration& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = value; }
-    inline void SetHealthCheckConfiguration(HealthCheckConfiguration&& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = std::move(value); }
-    inline Service& WithHealthCheckConfiguration(const HealthCheckConfiguration& value) { SetHealthCheckConfiguration(value); return *this;}
-    inline Service& WithHealthCheckConfiguration(HealthCheckConfiguration&& value) { SetHealthCheckConfiguration(std::move(value)); return *this;}
+    template<typename HealthCheckConfigurationT = HealthCheckConfiguration>
+    void SetHealthCheckConfiguration(HealthCheckConfigurationT&& value) { m_healthCheckConfigurationHasBeenSet = true; m_healthCheckConfiguration = std::forward<HealthCheckConfigurationT>(value); }
+    template<typename HealthCheckConfigurationT = HealthCheckConfiguration>
+    Service& WithHealthCheckConfiguration(HealthCheckConfigurationT&& value) { SetHealthCheckConfiguration(std::forward<HealthCheckConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -232,12 +222,12 @@ namespace Model
      * <p>Summary information for the App Runner automatic scaling configuration
      * resource that's associated with this service.</p>
      */
-    inline const AutoScalingConfigurationSummary& GetAutoScalingConfigurationSummary() const{ return m_autoScalingConfigurationSummary; }
+    inline const AutoScalingConfigurationSummary& GetAutoScalingConfigurationSummary() const { return m_autoScalingConfigurationSummary; }
     inline bool AutoScalingConfigurationSummaryHasBeenSet() const { return m_autoScalingConfigurationSummaryHasBeenSet; }
-    inline void SetAutoScalingConfigurationSummary(const AutoScalingConfigurationSummary& value) { m_autoScalingConfigurationSummaryHasBeenSet = true; m_autoScalingConfigurationSummary = value; }
-    inline void SetAutoScalingConfigurationSummary(AutoScalingConfigurationSummary&& value) { m_autoScalingConfigurationSummaryHasBeenSet = true; m_autoScalingConfigurationSummary = std::move(value); }
-    inline Service& WithAutoScalingConfigurationSummary(const AutoScalingConfigurationSummary& value) { SetAutoScalingConfigurationSummary(value); return *this;}
-    inline Service& WithAutoScalingConfigurationSummary(AutoScalingConfigurationSummary&& value) { SetAutoScalingConfigurationSummary(std::move(value)); return *this;}
+    template<typename AutoScalingConfigurationSummaryT = AutoScalingConfigurationSummary>
+    void SetAutoScalingConfigurationSummary(AutoScalingConfigurationSummaryT&& value) { m_autoScalingConfigurationSummaryHasBeenSet = true; m_autoScalingConfigurationSummary = std::forward<AutoScalingConfigurationSummaryT>(value); }
+    template<typename AutoScalingConfigurationSummaryT = AutoScalingConfigurationSummary>
+    Service& WithAutoScalingConfigurationSummary(AutoScalingConfigurationSummaryT&& value) { SetAutoScalingConfigurationSummary(std::forward<AutoScalingConfigurationSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,24 +235,24 @@ namespace Model
      * <p>Configuration settings related to network traffic of the web application that
      * this service runs.</p>
      */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+    inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-    inline Service& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-    inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    void SetNetworkConfiguration(NetworkConfigurationT&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::forward<NetworkConfigurationT>(value); }
+    template<typename NetworkConfigurationT = NetworkConfiguration>
+    Service& WithNetworkConfiguration(NetworkConfigurationT&& value) { SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The observability configuration of this service.</p>
      */
-    inline const ServiceObservabilityConfiguration& GetObservabilityConfiguration() const{ return m_observabilityConfiguration; }
+    inline const ServiceObservabilityConfiguration& GetObservabilityConfiguration() const { return m_observabilityConfiguration; }
     inline bool ObservabilityConfigurationHasBeenSet() const { return m_observabilityConfigurationHasBeenSet; }
-    inline void SetObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = value; }
-    inline void SetObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::move(value); }
-    inline Service& WithObservabilityConfiguration(const ServiceObservabilityConfiguration& value) { SetObservabilityConfiguration(value); return *this;}
-    inline Service& WithObservabilityConfiguration(ServiceObservabilityConfiguration&& value) { SetObservabilityConfiguration(std::move(value)); return *this;}
+    template<typename ObservabilityConfigurationT = ServiceObservabilityConfiguration>
+    void SetObservabilityConfiguration(ObservabilityConfigurationT&& value) { m_observabilityConfigurationHasBeenSet = true; m_observabilityConfiguration = std::forward<ObservabilityConfigurationT>(value); }
+    template<typename ObservabilityConfigurationT = ServiceObservabilityConfiguration>
+    Service& WithObservabilityConfiguration(ObservabilityConfigurationT&& value) { SetObservabilityConfiguration(std::forward<ObservabilityConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -278,16 +268,16 @@ namespace Model
     Aws::String m_serviceUrl;
     bool m_serviceUrlHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletedAt;
+    Aws::Utils::DateTime m_deletedAt{};
     bool m_deletedAtHasBeenSet = false;
 
-    ServiceStatus m_status;
+    ServiceStatus m_status{ServiceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     SourceConfiguration m_sourceConfiguration;

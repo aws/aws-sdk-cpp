@@ -23,7 +23,7 @@ namespace Model
   class StartPersonTrackingRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API StartPersonTrackingRequest();
+    AWS_REKOGNITION_API StartPersonTrackingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,12 @@ namespace Model
      * <p>The video in which you want to detect people. The video must be stored in an
      * Amazon S3 bucket.</p>
      */
-    inline const Video& GetVideo() const{ return m_video; }
+    inline const Video& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(Video&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline StartPersonTrackingRequest& WithVideo(const Video& value) { SetVideo(value); return *this;}
-    inline StartPersonTrackingRequest& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = Video>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = Video>
+    StartPersonTrackingRequest& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent
      * the same job from being accidently started more than once. </p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartPersonTrackingRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartPersonTrackingRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartPersonTrackingRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartPersonTrackingRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,12 @@ namespace Model
      * must have a topic name that begins with <i>AmazonRekognition</i> if you are
      * using the AmazonRekognitionServiceRole permissions policy.</p>
      */
-    inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+    inline const NotificationChannel& GetNotificationChannel() const { return m_notificationChannel; }
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
-    inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
-    inline void SetNotificationChannel(NotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
-    inline StartPersonTrackingRequest& WithNotificationChannel(const NotificationChannel& value) { SetNotificationChannel(value); return *this;}
-    inline StartPersonTrackingRequest& WithNotificationChannel(NotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
+    template<typename NotificationChannelT = NotificationChannel>
+    void SetNotificationChannel(NotificationChannelT&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::forward<NotificationChannelT>(value); }
+    template<typename NotificationChannelT = NotificationChannel>
+    StartPersonTrackingRequest& WithNotificationChannel(NotificationChannelT&& value) { SetNotificationChannel(std::forward<NotificationChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +86,12 @@ namespace Model
      * you can use <code>JobTag</code> to group related jobs and identify them in the
      * completion notification.</p>
      */
-    inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+    inline const Aws::String& GetJobTag() const { return m_jobTag; }
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
-    inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
-    inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
-    inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
-    inline StartPersonTrackingRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
-    inline StartPersonTrackingRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
-    inline StartPersonTrackingRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
+    template<typename JobTagT = Aws::String>
+    void SetJobTag(JobTagT&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::forward<JobTagT>(value); }
+    template<typename JobTagT = Aws::String>
+    StartPersonTrackingRequest& WithJobTag(JobTagT&& value) { SetJobTag(std::forward<JobTagT>(value)); return *this;}
     ///@}
   private:
 

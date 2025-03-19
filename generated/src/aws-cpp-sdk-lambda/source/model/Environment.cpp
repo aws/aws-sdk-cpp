@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-Environment::Environment() : 
-    m_variablesHasBeenSet(false)
-{
-}
-
 Environment::Environment(JsonView jsonValue)
-  : Environment()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Environment& Environment::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   return *this;
 }
 

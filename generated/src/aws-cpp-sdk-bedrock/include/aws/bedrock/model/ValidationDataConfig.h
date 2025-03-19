@@ -32,7 +32,7 @@ namespace Model
   class ValidationDataConfig
   {
   public:
-    AWS_BEDROCK_API ValidationDataConfig();
+    AWS_BEDROCK_API ValidationDataConfig() = default;
     AWS_BEDROCK_API ValidationDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ValidationDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>Information about the validators.</p>
      */
-    inline const Aws::Vector<Validator>& GetValidators() const{ return m_validators; }
+    inline const Aws::Vector<Validator>& GetValidators() const { return m_validators; }
     inline bool ValidatorsHasBeenSet() const { return m_validatorsHasBeenSet; }
-    inline void SetValidators(const Aws::Vector<Validator>& value) { m_validatorsHasBeenSet = true; m_validators = value; }
-    inline void SetValidators(Aws::Vector<Validator>&& value) { m_validatorsHasBeenSet = true; m_validators = std::move(value); }
-    inline ValidationDataConfig& WithValidators(const Aws::Vector<Validator>& value) { SetValidators(value); return *this;}
-    inline ValidationDataConfig& WithValidators(Aws::Vector<Validator>&& value) { SetValidators(std::move(value)); return *this;}
-    inline ValidationDataConfig& AddValidators(const Validator& value) { m_validatorsHasBeenSet = true; m_validators.push_back(value); return *this; }
-    inline ValidationDataConfig& AddValidators(Validator&& value) { m_validatorsHasBeenSet = true; m_validators.push_back(std::move(value)); return *this; }
+    template<typename ValidatorsT = Aws::Vector<Validator>>
+    void SetValidators(ValidatorsT&& value) { m_validatorsHasBeenSet = true; m_validators = std::forward<ValidatorsT>(value); }
+    template<typename ValidatorsT = Aws::Vector<Validator>>
+    ValidationDataConfig& WithValidators(ValidatorsT&& value) { SetValidators(std::forward<ValidatorsT>(value)); return *this;}
+    template<typename ValidatorsT = Validator>
+    ValidationDataConfig& AddValidators(ValidatorsT&& value) { m_validatorsHasBeenSet = true; m_validators.emplace_back(std::forward<ValidatorsT>(value)); return *this; }
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class VerifyDomainIdentityResult
   {
   public:
-    AWS_SES_API VerifyDomainIdentityResult();
+    AWS_SES_API VerifyDomainIdentityResult() = default;
     AWS_SES_API VerifyDomainIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API VerifyDomainIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -50,28 +50,28 @@ namespace Model
      * must restart the verification process from the beginning. The domain's
      * verification status also changes to "Success" when it is DKIM verified.</p>
      */
-    inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
-    inline void SetVerificationToken(const Aws::String& value) { m_verificationToken = value; }
-    inline void SetVerificationToken(Aws::String&& value) { m_verificationToken = std::move(value); }
-    inline void SetVerificationToken(const char* value) { m_verificationToken.assign(value); }
-    inline VerifyDomainIdentityResult& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
-    inline VerifyDomainIdentityResult& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
-    inline VerifyDomainIdentityResult& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
+    inline const Aws::String& GetVerificationToken() const { return m_verificationToken; }
+    template<typename VerificationTokenT = Aws::String>
+    void SetVerificationToken(VerificationTokenT&& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = std::forward<VerificationTokenT>(value); }
+    template<typename VerificationTokenT = Aws::String>
+    VerifyDomainIdentityResult& WithVerificationToken(VerificationTokenT&& value) { SetVerificationToken(std::forward<VerificationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline VerifyDomainIdentityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline VerifyDomainIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    VerifyDomainIdentityResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_verificationToken;
+    bool m_verificationTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

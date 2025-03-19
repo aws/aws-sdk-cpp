@@ -34,7 +34,7 @@ namespace Model
   class AwsEcsTaskDefinitionProxyConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionProxyConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionProxyConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionProxyConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionProxyConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the container that will serve as the App Mesh proxy.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    AwsEcsTaskDefinitionProxyConfigurationDetails& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,26 @@ namespace Model
      * <p>The set of network configuration parameters to provide to the Container
      * Network Interface (CNI) plugin, specified as key-value pairs.</p>
      */
-    inline const Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>& GetProxyConfigurationProperties() const{ return m_proxyConfigurationProperties; }
+    inline const Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>& GetProxyConfigurationProperties() const { return m_proxyConfigurationProperties; }
     inline bool ProxyConfigurationPropertiesHasBeenSet() const { return m_proxyConfigurationPropertiesHasBeenSet; }
-    inline void SetProxyConfigurationProperties(const Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>& value) { m_proxyConfigurationPropertiesHasBeenSet = true; m_proxyConfigurationProperties = value; }
-    inline void SetProxyConfigurationProperties(Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>&& value) { m_proxyConfigurationPropertiesHasBeenSet = true; m_proxyConfigurationProperties = std::move(value); }
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithProxyConfigurationProperties(const Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>& value) { SetProxyConfigurationProperties(value); return *this;}
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithProxyConfigurationProperties(Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>&& value) { SetProxyConfigurationProperties(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& AddProxyConfigurationProperties(const AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails& value) { m_proxyConfigurationPropertiesHasBeenSet = true; m_proxyConfigurationProperties.push_back(value); return *this; }
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& AddProxyConfigurationProperties(AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails&& value) { m_proxyConfigurationPropertiesHasBeenSet = true; m_proxyConfigurationProperties.push_back(std::move(value)); return *this; }
+    template<typename ProxyConfigurationPropertiesT = Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>>
+    void SetProxyConfigurationProperties(ProxyConfigurationPropertiesT&& value) { m_proxyConfigurationPropertiesHasBeenSet = true; m_proxyConfigurationProperties = std::forward<ProxyConfigurationPropertiesT>(value); }
+    template<typename ProxyConfigurationPropertiesT = Aws::Vector<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>>
+    AwsEcsTaskDefinitionProxyConfigurationDetails& WithProxyConfigurationProperties(ProxyConfigurationPropertiesT&& value) { SetProxyConfigurationProperties(std::forward<ProxyConfigurationPropertiesT>(value)); return *this;}
+    template<typename ProxyConfigurationPropertiesT = AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>
+    AwsEcsTaskDefinitionProxyConfigurationDetails& AddProxyConfigurationProperties(ProxyConfigurationPropertiesT&& value) { m_proxyConfigurationPropertiesHasBeenSet = true; m_proxyConfigurationProperties.emplace_back(std::forward<ProxyConfigurationPropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The proxy type.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionProxyConfigurationDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsEcsTaskDefinitionProxyConfigurationDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

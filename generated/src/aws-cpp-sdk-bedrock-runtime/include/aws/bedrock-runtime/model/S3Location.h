@@ -31,7 +31,7 @@ namespace Model
   class S3Location
   {
   public:
-    AWS_BEDROCKRUNTIME_API S3Location();
+    AWS_BEDROCKRUNTIME_API S3Location() = default;
     AWS_BEDROCKRUNTIME_API S3Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>An object URI starting with <code>s3://</code>.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline S3Location& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline S3Location& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline S3Location& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    S3Location& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the bucket belongs to another AWS account, specify that account's ID.</p>
      */
-    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
+    inline const Aws::String& GetBucketOwner() const { return m_bucketOwner; }
     inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
-    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
-    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
-    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
-    inline S3Location& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
-    inline S3Location& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
-    inline S3Location& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
+    template<typename BucketOwnerT = Aws::String>
+    void SetBucketOwner(BucketOwnerT&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::forward<BucketOwnerT>(value); }
+    template<typename BucketOwnerT = Aws::String>
+    S3Location& WithBucketOwner(BucketOwnerT&& value) { SetBucketOwner(std::forward<BucketOwnerT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSnapshotRequest::UpdateSnapshotRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventPredictionMetadataResult::GetEventPredictionMetadataResult() : 
-    m_ruleExecutionMode(RuleExecutionMode::NOT_SET)
-{
-}
-
 GetEventPredictionMetadataResult::GetEventPredictionMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetEventPredictionMetadataResult()
 {
   *this = result;
 }
@@ -34,51 +28,43 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
+    m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
+    m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
+    m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityType"))
   {
     m_entityType = jsonValue.GetString("entityType");
-
+    m_entityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTimestamp"))
   {
     m_eventTimestamp = jsonValue.GetString("eventTimestamp");
-
+    m_eventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
+    m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorVersionId"))
   {
     m_detectorVersionId = jsonValue.GetString("detectorVersionId");
-
+    m_detectorVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorVersionStatus"))
   {
     m_detectorVersionStatus = jsonValue.GetString("detectorVersionStatus");
-
+    m_detectorVersionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventVariables"))
   {
     Aws::Utils::Array<JsonView> eventVariablesJsonList = jsonValue.GetArray("eventVariables");
@@ -86,8 +72,8 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
     {
       m_eventVariables.push_back(eventVariablesJsonList[eventVariablesIndex].AsObject());
     }
+    m_eventVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -95,14 +81,13 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
+    m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleExecutionMode"))
   {
     m_ruleExecutionMode = RuleExecutionModeMapper::GetRuleExecutionModeForName(jsonValue.GetString("ruleExecutionMode"));
-
+    m_ruleExecutionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outcomes"))
   {
     Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
@@ -110,8 +95,8 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
     {
       m_outcomes.push_back(outcomesJsonList[outcomesIndex].AsString());
     }
+    m_outcomesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluatedModelVersions"))
   {
     Aws::Utils::Array<JsonView> evaluatedModelVersionsJsonList = jsonValue.GetArray("evaluatedModelVersions");
@@ -119,8 +104,8 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
     {
       m_evaluatedModelVersions.push_back(evaluatedModelVersionsJsonList[evaluatedModelVersionsIndex].AsObject());
     }
+    m_evaluatedModelVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluatedExternalModels"))
   {
     Aws::Utils::Array<JsonView> evaluatedExternalModelsJsonList = jsonValue.GetArray("evaluatedExternalModels");
@@ -128,20 +113,20 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
     {
       m_evaluatedExternalModels.push_back(evaluatedExternalModelsJsonList[evaluatedExternalModelsIndex].AsObject());
     }
+    m_evaluatedExternalModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictionTimestamp"))
   {
     m_predictionTimestamp = jsonValue.GetString("predictionTimestamp");
-
+    m_predictionTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

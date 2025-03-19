@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateInstanceMarketOptionsRequest::LaunchTemplateInstanceMarketOptionsRequest() : 
-    m_marketType(MarketType::NOT_SET),
-    m_marketTypeHasBeenSet(false),
-    m_spotOptionsHasBeenSet(false)
-{
-}
-
 LaunchTemplateInstanceMarketOptionsRequest::LaunchTemplateInstanceMarketOptionsRequest(const XmlNode& xmlNode)
-  : LaunchTemplateInstanceMarketOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ LaunchTemplateInstanceMarketOptionsRequest& LaunchTemplateInstanceMarketOptionsR
     XmlNode marketTypeNode = resultNode.FirstChild("MarketType");
     if(!marketTypeNode.IsNull())
     {
-      m_marketType = MarketTypeMapper::GetMarketTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(marketTypeNode.GetText()).c_str()).c_str());
+      m_marketType = MarketTypeMapper::GetMarketTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(marketTypeNode.GetText()).c_str()));
       m_marketTypeHasBeenSet = true;
     }
     XmlNode spotOptionsNode = resultNode.FirstChild("SpotOptions");

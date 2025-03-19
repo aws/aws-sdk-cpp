@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-OAuth2ClientApplication::OAuth2ClientApplication() : 
-    m_aWSManagedClientApplicationReferenceHasBeenSet(false),
-    m_userManagedClientApplicationClientIdHasBeenSet(false)
-{
-}
-
 OAuth2ClientApplication::OAuth2ClientApplication(JsonView jsonValue)
-  : OAuth2ClientApplication()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OAuth2ClientApplication& OAuth2ClientApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aWSManagedClientApplicationReference"))
   {
     m_aWSManagedClientApplicationReference = jsonValue.GetString("aWSManagedClientApplicationReference");
-
     m_aWSManagedClientApplicationReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userManagedClientApplicationClientId"))
   {
     m_userManagedClientApplicationClientId = jsonValue.GetString("userManagedClientApplicationClientId");
-
     m_userManagedClientApplicationClientIdHasBeenSet = true;
   }
-
   return *this;
 }
 

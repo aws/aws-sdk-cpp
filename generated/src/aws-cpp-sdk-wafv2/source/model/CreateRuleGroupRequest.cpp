@@ -12,20 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRuleGroupRequest::CreateRuleGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

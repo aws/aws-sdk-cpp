@@ -22,7 +22,7 @@ namespace Model
   class BatchDescribeModelPackageRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API BatchDescribeModelPackageRequest();
+    AWS_SAGEMAKER_API BatchDescribeModelPackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetModelPackageArnList() const{ return m_modelPackageArnList; }
+    inline const Aws::Vector<Aws::String>& GetModelPackageArnList() const { return m_modelPackageArnList; }
     inline bool ModelPackageArnListHasBeenSet() const { return m_modelPackageArnListHasBeenSet; }
-    inline void SetModelPackageArnList(const Aws::Vector<Aws::String>& value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList = value; }
-    inline void SetModelPackageArnList(Aws::Vector<Aws::String>&& value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList = std::move(value); }
-    inline BatchDescribeModelPackageRequest& WithModelPackageArnList(const Aws::Vector<Aws::String>& value) { SetModelPackageArnList(value); return *this;}
-    inline BatchDescribeModelPackageRequest& WithModelPackageArnList(Aws::Vector<Aws::String>&& value) { SetModelPackageArnList(std::move(value)); return *this;}
-    inline BatchDescribeModelPackageRequest& AddModelPackageArnList(const Aws::String& value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList.push_back(value); return *this; }
-    inline BatchDescribeModelPackageRequest& AddModelPackageArnList(Aws::String&& value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList.push_back(std::move(value)); return *this; }
-    inline BatchDescribeModelPackageRequest& AddModelPackageArnList(const char* value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList.push_back(value); return *this; }
+    template<typename ModelPackageArnListT = Aws::Vector<Aws::String>>
+    void SetModelPackageArnList(ModelPackageArnListT&& value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList = std::forward<ModelPackageArnListT>(value); }
+    template<typename ModelPackageArnListT = Aws::Vector<Aws::String>>
+    BatchDescribeModelPackageRequest& WithModelPackageArnList(ModelPackageArnListT&& value) { SetModelPackageArnList(std::forward<ModelPackageArnListT>(value)); return *this;}
+    template<typename ModelPackageArnListT = Aws::String>
+    BatchDescribeModelPackageRequest& AddModelPackageArnList(ModelPackageArnListT&& value) { m_modelPackageArnListHasBeenSet = true; m_modelPackageArnList.emplace_back(std::forward<ModelPackageArnListT>(value)); return *this; }
     ///@}
   private:
 

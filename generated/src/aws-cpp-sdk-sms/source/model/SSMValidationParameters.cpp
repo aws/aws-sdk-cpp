@@ -18,20 +18,7 @@ namespace SMS
 namespace Model
 {
 
-SSMValidationParameters::SSMValidationParameters() : 
-    m_sourceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_scriptType(ScriptType::NOT_SET),
-    m_scriptTypeHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_executionTimeoutSeconds(0),
-    m_executionTimeoutSecondsHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false)
-{
-}
-
 SSMValidationParameters::SSMValidationParameters(JsonView jsonValue)
-  : SSMValidationParameters()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ SSMValidationParameters& SSMValidationParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptType"))
   {
     m_scriptType = ScriptTypeMapper::GetScriptTypeForName(jsonValue.GetString("scriptType"));
-
     m_scriptTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("command"))
   {
     m_command = jsonValue.GetString("command");
-
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionTimeoutSeconds"))
   {
     m_executionTimeoutSeconds = jsonValue.GetInteger("executionTimeoutSeconds");
-
     m_executionTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3BucketName"))
   {
     m_outputS3BucketName = jsonValue.GetString("outputS3BucketName");
-
     m_outputS3BucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

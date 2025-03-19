@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOptimizationJobRequest::CreateOptimizationJobRequest() : 
-    m_optimizationJobNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_modelSourceHasBeenSet(false),
-    m_deploymentInstanceType(OptimizationJobDeploymentInstanceType::NOT_SET),
-    m_deploymentInstanceTypeHasBeenSet(false),
-    m_optimizationEnvironmentHasBeenSet(false),
-    m_optimizationConfigsHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateOptimizationJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHubRequest::CreateHubRequest() : 
-    m_hubNameHasBeenSet(false),
-    m_hubDescriptionHasBeenSet(false),
-    m_hubDisplayNameHasBeenSet(false),
-    m_hubSearchKeywordsHasBeenSet(false),
-    m_s3StorageConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateHubRequest::SerializePayload() const
 {
   JsonValue payload;

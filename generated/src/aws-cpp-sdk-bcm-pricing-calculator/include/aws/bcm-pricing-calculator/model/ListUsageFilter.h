@@ -34,7 +34,7 @@ namespace Model
   class ListUsageFilter
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API ListUsageFilter();
+    AWS_BCMPRICINGCALCULATOR_API ListUsageFilter() = default;
     AWS_BCMPRICINGCALCULATOR_API ListUsageFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API ListUsageFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,49 +44,44 @@ namespace Model
     /**
      * <p> The name of the filter attribute. </p>
      */
-    inline const ListUsageFilterName& GetName() const{ return m_name; }
+    inline ListUsageFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ListUsageFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ListUsageFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ListUsageFilter& WithName(const ListUsageFilterName& value) { SetName(value); return *this;}
-    inline ListUsageFilter& WithName(ListUsageFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ListUsageFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ListUsageFilter& WithName(ListUsageFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The values to filter by. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ListUsageFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ListUsageFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ListUsageFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ListUsageFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ListUsageFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ListUsageFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ListUsageFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The match option for the filter (e.g., equals, contains). </p>
      */
-    inline const MatchOption& GetMatchOption() const{ return m_matchOption; }
+    inline MatchOption GetMatchOption() const { return m_matchOption; }
     inline bool MatchOptionHasBeenSet() const { return m_matchOptionHasBeenSet; }
-    inline void SetMatchOption(const MatchOption& value) { m_matchOptionHasBeenSet = true; m_matchOption = value; }
-    inline void SetMatchOption(MatchOption&& value) { m_matchOptionHasBeenSet = true; m_matchOption = std::move(value); }
-    inline ListUsageFilter& WithMatchOption(const MatchOption& value) { SetMatchOption(value); return *this;}
-    inline ListUsageFilter& WithMatchOption(MatchOption&& value) { SetMatchOption(std::move(value)); return *this;}
+    inline void SetMatchOption(MatchOption value) { m_matchOptionHasBeenSet = true; m_matchOption = value; }
+    inline ListUsageFilter& WithMatchOption(MatchOption value) { SetMatchOption(value); return *this;}
     ///@}
   private:
 
-    ListUsageFilterName m_name;
+    ListUsageFilterName m_name{ListUsageFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    MatchOption m_matchOption;
+    MatchOption m_matchOption{MatchOption::NOT_SET};
     bool m_matchOptionHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-StatelessRuleGroup::StatelessRuleGroup() : 
-    m_ruleGroupNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 StatelessRuleGroup::StatelessRuleGroup(JsonView jsonValue)
-  : StatelessRuleGroup()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StatelessRuleGroup& StatelessRuleGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleGroupName"))
   {
     m_ruleGroupName = jsonValue.GetString("RuleGroupName");
-
     m_ruleGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

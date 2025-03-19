@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNotebookInstanceRequest::DeleteNotebookInstanceRequest() : 
-    m_notebookInstanceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotebookInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

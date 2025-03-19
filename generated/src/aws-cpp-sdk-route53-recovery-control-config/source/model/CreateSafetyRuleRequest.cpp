@@ -12,15 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSafetyRuleRequest::CreateSafetyRuleRequest() : 
-    m_assertionRuleHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_gatingRuleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSafetyRuleRequest::SerializePayload() const
 {
   JsonValue payload;

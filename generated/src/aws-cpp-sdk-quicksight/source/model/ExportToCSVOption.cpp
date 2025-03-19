@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ExportToCSVOption::ExportToCSVOption() : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
-{
-}
-
 ExportToCSVOption::ExportToCSVOption(JsonView jsonValue)
-  : ExportToCSVOption()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExportToCSVOption& ExportToCSVOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvailabilityStatus"))
   {
     m_availabilityStatus = DashboardBehaviorMapper::GetDashboardBehaviorForName(jsonValue.GetString("AvailabilityStatus"));
-
     m_availabilityStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

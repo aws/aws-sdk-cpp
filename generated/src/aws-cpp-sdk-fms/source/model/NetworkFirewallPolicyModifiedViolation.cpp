@@ -18,15 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkFirewallPolicyModifiedViolation::NetworkFirewallPolicyModifiedViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_currentPolicyDescriptionHasBeenSet(false),
-    m_expectedPolicyDescriptionHasBeenSet(false)
-{
-}
-
 NetworkFirewallPolicyModifiedViolation::NetworkFirewallPolicyModifiedViolation(JsonView jsonValue)
-  : NetworkFirewallPolicyModifiedViolation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NetworkFirewallPolicyModifiedViolation& NetworkFirewallPolicyModifiedViolation::
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentPolicyDescription"))
   {
     m_currentPolicyDescription = jsonValue.GetObject("CurrentPolicyDescription");
-
     m_currentPolicyDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedPolicyDescription"))
   {
     m_expectedPolicyDescription = jsonValue.GetObject("ExpectedPolicyDescription");
-
     m_expectedPolicyDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

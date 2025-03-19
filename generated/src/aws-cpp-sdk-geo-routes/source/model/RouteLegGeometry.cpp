@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteLegGeometry::RouteLegGeometry() : 
-    m_lineStringHasBeenSet(false),
-    m_polylineHasBeenSet(false)
-{
-}
-
 RouteLegGeometry::RouteLegGeometry(JsonView jsonValue)
-  : RouteLegGeometry()
 {
   *this = jsonValue;
 }
@@ -48,14 +41,11 @@ RouteLegGeometry& RouteLegGeometry::operator =(JsonView jsonValue)
     }
     m_lineStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Polyline"))
   {
     m_polyline = jsonValue.GetString("Polyline");
-
     m_polylineHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class BatchPutFieldOptionsRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API BatchPutFieldOptionsRequest();
+    AWS_CONNECTCASES_API BatchPutFieldOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,38 @@ namespace Model
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline BatchPutFieldOptionsRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline BatchPutFieldOptionsRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline BatchPutFieldOptionsRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    BatchPutFieldOptionsRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of a field.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline BatchPutFieldOptionsRequest& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline BatchPutFieldOptionsRequest& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline BatchPutFieldOptionsRequest& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    BatchPutFieldOptionsRequest& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>FieldOption</code> objects.</p>
      */
-    inline const Aws::Vector<FieldOption>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<FieldOption>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<FieldOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<FieldOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline BatchPutFieldOptionsRequest& WithOptions(const Aws::Vector<FieldOption>& value) { SetOptions(value); return *this;}
-    inline BatchPutFieldOptionsRequest& WithOptions(Aws::Vector<FieldOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline BatchPutFieldOptionsRequest& AddOptions(const FieldOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline BatchPutFieldOptionsRequest& AddOptions(FieldOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<FieldOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<FieldOption>>
+    BatchPutFieldOptionsRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsT = FieldOption>
+    BatchPutFieldOptionsRequest& AddOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options.emplace_back(std::forward<OptionsT>(value)); return *this; }
     ///@}
   private:
 

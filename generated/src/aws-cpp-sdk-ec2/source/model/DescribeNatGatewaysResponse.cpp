@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNatGatewaysResponse::DescribeNatGatewaysResponse()
-{
-}
-
 DescribeNatGatewaysResponse::DescribeNatGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator =(const Aws::
     if(!natGatewaysNode.IsNull())
     {
       XmlNode natGatewaysMember = natGatewaysNode.FirstChild("item");
+      m_natGatewaysHasBeenSet = !natGatewaysMember.IsNull();
       while(!natGatewaysMember.IsNull())
       {
         m_natGateways.push_back(natGatewaysMember);
         natGatewaysMember = natGatewaysMember.NextNode("item");
       }
 
+      m_natGatewaysHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeNatGatewaysResponse& DescribeNatGatewaysResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNatGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

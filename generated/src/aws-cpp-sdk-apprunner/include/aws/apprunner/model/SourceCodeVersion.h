@@ -33,7 +33,7 @@ namespace Model
   class SourceCodeVersion
   {
   public:
-    AWS_APPRUNNER_API SourceCodeVersion();
+    AWS_APPRUNNER_API SourceCodeVersion() = default;
     AWS_APPRUNNER_API SourceCodeVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API SourceCodeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The type of version identifier.</p> <p>For a git-based repository, branches
      * represent versions.</p>
      */
-    inline const SourceCodeVersionType& GetType() const{ return m_type; }
+    inline SourceCodeVersionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SourceCodeVersionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SourceCodeVersionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SourceCodeVersion& WithType(const SourceCodeVersionType& value) { SetType(value); return *this;}
-    inline SourceCodeVersion& WithType(SourceCodeVersionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SourceCodeVersionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SourceCodeVersion& WithType(SourceCodeVersionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
      * to a specific version. App Runner uses the most recent commit to the branch.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline SourceCodeVersion& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline SourceCodeVersion& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline SourceCodeVersion& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    SourceCodeVersion& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    SourceCodeVersionType m_type;
+    SourceCodeVersionType m_type{SourceCodeVersionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_value;

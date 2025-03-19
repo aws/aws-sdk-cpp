@@ -18,24 +18,7 @@ namespace IoTSecureTunneling
 namespace Model
 {
 
-Tunnel::Tunnel() : 
-    m_tunnelIdHasBeenSet(false),
-    m_tunnelArnHasBeenSet(false),
-    m_status(TunnelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceConnectionStateHasBeenSet(false),
-    m_destinationConnectionStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 Tunnel::Tunnel(JsonView jsonValue)
-  : Tunnel()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ Tunnel& Tunnel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tunnelId"))
   {
     m_tunnelId = jsonValue.GetString("tunnelId");
-
     m_tunnelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tunnelArn"))
   {
     m_tunnelArn = jsonValue.GetString("tunnelArn");
-
     m_tunnelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TunnelStatusMapper::GetTunnelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceConnectionState"))
   {
     m_sourceConnectionState = jsonValue.GetObject("sourceConnectionState");
-
     m_sourceConnectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationConnectionState"))
   {
     m_destinationConnectionState = jsonValue.GetObject("destinationConnectionState");
-
     m_destinationConnectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationConfig"))
   {
     m_destinationConfig = jsonValue.GetObject("destinationConfig");
-
     m_destinationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutConfig"))
   {
     m_timeoutConfig = jsonValue.GetObject("timeoutConfig");
-
     m_timeoutConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -107,21 +74,16 @@ Tunnel& Tunnel::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

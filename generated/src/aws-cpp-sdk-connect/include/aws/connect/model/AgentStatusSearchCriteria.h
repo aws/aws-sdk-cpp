@@ -33,7 +33,7 @@ namespace Model
   class AgentStatusSearchCriteria
   {
   public:
-    AWS_CONNECT_API AgentStatusSearchCriteria();
+    AWS_CONNECT_API AgentStatusSearchCriteria() = default;
     AWS_CONNECT_API AgentStatusSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AgentStatusSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
-    inline const Aws::Vector<AgentStatusSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<AgentStatusSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<AgentStatusSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<AgentStatusSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline AgentStatusSearchCriteria& WithOrConditions(const Aws::Vector<AgentStatusSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline AgentStatusSearchCriteria& WithOrConditions(Aws::Vector<AgentStatusSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline AgentStatusSearchCriteria& AddOrConditions(const AgentStatusSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline AgentStatusSearchCriteria& AddOrConditions(AgentStatusSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<AgentStatusSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<AgentStatusSearchCriteria>>
+    AgentStatusSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = AgentStatusSearchCriteria>
+    AgentStatusSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,14 @@ namespace Model
      * <code>type</code>, <code>displayOrder</code>,&#x2028; and
      * <code>resourceID</code>.</p> 
      */
-    inline const Aws::Vector<AgentStatusSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<AgentStatusSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<AgentStatusSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<AgentStatusSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline AgentStatusSearchCriteria& WithAndConditions(const Aws::Vector<AgentStatusSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline AgentStatusSearchCriteria& WithAndConditions(Aws::Vector<AgentStatusSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline AgentStatusSearchCriteria& AddAndConditions(const AgentStatusSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline AgentStatusSearchCriteria& AddAndConditions(AgentStatusSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<AgentStatusSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<AgentStatusSearchCriteria>>
+    AgentStatusSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = AgentStatusSearchCriteria>
+    AgentStatusSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,12 +80,12 @@ namespace Model
      * <code>type</code>, <code>displayOrder</code>,&#x2028; and
      * <code>resourceID</code>.</p> 
      */
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline AgentStatusSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline AgentStatusSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    AgentStatusSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
   private:
 

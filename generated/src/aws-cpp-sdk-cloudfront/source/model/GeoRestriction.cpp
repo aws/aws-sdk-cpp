@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-GeoRestriction::GeoRestriction() : 
-    m_restrictionType(GeoRestrictionType::NOT_SET),
-    m_restrictionTypeHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 GeoRestriction::GeoRestriction(const XmlNode& xmlNode)
-  : GeoRestriction()
 {
   *this = xmlNode;
 }
@@ -44,7 +34,7 @@ GeoRestriction& GeoRestriction::operator =(const XmlNode& xmlNode)
     XmlNode restrictionTypeNode = resultNode.FirstChild("RestrictionType");
     if(!restrictionTypeNode.IsNull())
     {
-      m_restrictionType = GeoRestrictionTypeMapper::GetGeoRestrictionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restrictionTypeNode.GetText()).c_str()).c_str());
+      m_restrictionType = GeoRestrictionTypeMapper::GetGeoRestrictionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restrictionTypeNode.GetText()).c_str()));
       m_restrictionTypeHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
@@ -57,6 +47,7 @@ GeoRestriction& GeoRestriction::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Location");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ExportTaskS3Location::ExportTaskS3Location() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
-{
-}
-
 ExportTaskS3Location::ExportTaskS3Location(const XmlNode& xmlNode)
-  : ExportTaskS3Location()
 {
   *this = xmlNode;
 }

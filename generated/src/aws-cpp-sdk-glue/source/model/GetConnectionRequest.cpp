@@ -12,16 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConnectionRequest::GetConnectionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_hidePassword(false),
-    m_hidePasswordHasBeenSet(false),
-    m_applyOverrideForComputeEnvironment(ComputeEnvironment::NOT_SET),
-    m_applyOverrideForComputeEnvironmentHasBeenSet(false)
-{
-}
-
 Aws::String GetConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTemplateSyncConfigResult::CreateTemplateSyncConfigResult()
-{
-}
-
 CreateTemplateSyncConfigResult::CreateTemplateSyncConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTemplateSyncConfigResult& CreateTemplateSyncConfigResult::operator =(const
   if(jsonValue.ValueExists("templateSyncConfig"))
   {
     m_templateSyncConfig = jsonValue.GetObject("templateSyncConfig");
-
+    m_templateSyncConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

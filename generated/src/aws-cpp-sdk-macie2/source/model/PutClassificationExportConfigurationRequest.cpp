@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutClassificationExportConfigurationRequest::PutClassificationExportConfigurationRequest() : 
-    m_configurationHasBeenSet(false)
-{
-}
-
 Aws::String PutClassificationExportConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

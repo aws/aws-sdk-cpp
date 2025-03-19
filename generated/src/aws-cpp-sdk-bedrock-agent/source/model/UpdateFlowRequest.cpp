@@ -12,16 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlowRequest::UpdateFlowRequest() : 
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_flowIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFlowRequest::SerializePayload() const
 {
   JsonValue payload;

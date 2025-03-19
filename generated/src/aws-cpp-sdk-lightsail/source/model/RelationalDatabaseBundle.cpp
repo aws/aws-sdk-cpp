@@ -18,28 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseBundle::RelationalDatabaseBundle() : 
-    m_bundleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false),
-    m_diskSizeInGb(0),
-    m_diskSizeInGbHasBeenSet(false),
-    m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false),
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_isEncrypted(false),
-    m_isEncryptedHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false)
-{
-}
-
 RelationalDatabaseBundle::RelationalDatabaseBundle(JsonView jsonValue)
-  : RelationalDatabaseBundle()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ RelationalDatabaseBundle& RelationalDatabaseBundle::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("bundleId"))
   {
     m_bundleId = jsonValue.GetString("bundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("price"))
   {
     m_price = jsonValue.GetDouble("price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramSizeInGb"))
   {
     m_ramSizeInGb = jsonValue.GetDouble("ramSizeInGb");
-
     m_ramSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diskSizeInGb"))
   {
     m_diskSizeInGb = jsonValue.GetInteger("diskSizeInGb");
-
     m_diskSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferPerMonthInGb"))
   {
     m_transferPerMonthInGb = jsonValue.GetInteger("transferPerMonthInGb");
-
     m_transferPerMonthInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpuCount"))
   {
     m_cpuCount = jsonValue.GetInteger("cpuCount");
-
     m_cpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isEncrypted"))
   {
     m_isEncrypted = jsonValue.GetBool("isEncrypted");
-
     m_isEncryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isActive"))
   {
     m_isActive = jsonValue.GetBool("isActive");
-
     m_isActiveHasBeenSet = true;
   }
-
   return *this;
 }
 

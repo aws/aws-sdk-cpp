@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-RowFilter::RowFilter() : 
-    m_filterExpressionHasBeenSet(false),
-    m_allRowsWildcardHasBeenSet(false)
-{
-}
-
 RowFilter::RowFilter(JsonView jsonValue)
-  : RowFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RowFilter& RowFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterExpression"))
   {
     m_filterExpression = jsonValue.GetString("FilterExpression");
-
     m_filterExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllRowsWildcard"))
   {
     m_allRowsWildcard = jsonValue.GetObject("AllRowsWildcard");
-
     m_allRowsWildcardHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class GetDomainDeliverabilityCampaignResult
   {
   public:
-    AWS_PINPOINTEMAIL_API GetDomainDeliverabilityCampaignResult();
+    AWS_PINPOINTEMAIL_API GetDomainDeliverabilityCampaignResult() = default;
     AWS_PINPOINTEMAIL_API GetDomainDeliverabilityCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API GetDomainDeliverabilityCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
     /**
      * <p>An object that contains the deliverability data for the campaign.</p>
      */
-    inline const DomainDeliverabilityCampaign& GetDomainDeliverabilityCampaign() const{ return m_domainDeliverabilityCampaign; }
-    inline void SetDomainDeliverabilityCampaign(const DomainDeliverabilityCampaign& value) { m_domainDeliverabilityCampaign = value; }
-    inline void SetDomainDeliverabilityCampaign(DomainDeliverabilityCampaign&& value) { m_domainDeliverabilityCampaign = std::move(value); }
-    inline GetDomainDeliverabilityCampaignResult& WithDomainDeliverabilityCampaign(const DomainDeliverabilityCampaign& value) { SetDomainDeliverabilityCampaign(value); return *this;}
-    inline GetDomainDeliverabilityCampaignResult& WithDomainDeliverabilityCampaign(DomainDeliverabilityCampaign&& value) { SetDomainDeliverabilityCampaign(std::move(value)); return *this;}
+    inline const DomainDeliverabilityCampaign& GetDomainDeliverabilityCampaign() const { return m_domainDeliverabilityCampaign; }
+    template<typename DomainDeliverabilityCampaignT = DomainDeliverabilityCampaign>
+    void SetDomainDeliverabilityCampaign(DomainDeliverabilityCampaignT&& value) { m_domainDeliverabilityCampaignHasBeenSet = true; m_domainDeliverabilityCampaign = std::forward<DomainDeliverabilityCampaignT>(value); }
+    template<typename DomainDeliverabilityCampaignT = DomainDeliverabilityCampaign>
+    GetDomainDeliverabilityCampaignResult& WithDomainDeliverabilityCampaign(DomainDeliverabilityCampaignT&& value) { SetDomainDeliverabilityCampaign(std::forward<DomainDeliverabilityCampaignT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDomainDeliverabilityCampaignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDomainDeliverabilityCampaignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDomainDeliverabilityCampaignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDomainDeliverabilityCampaignResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainDeliverabilityCampaign m_domainDeliverabilityCampaign;
+    bool m_domainDeliverabilityCampaignHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

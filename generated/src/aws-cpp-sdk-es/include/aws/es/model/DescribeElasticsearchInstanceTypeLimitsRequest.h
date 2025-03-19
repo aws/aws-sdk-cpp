@@ -31,7 +31,7 @@ namespace Model
   class DescribeElasticsearchInstanceTypeLimitsRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchInstanceTypeLimitsRequest();
+    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchInstanceTypeLimitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * This should be present only if we are querying for Elasticsearch <code>
      * <a>Limits</a> </code> for existing domain. </p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,10 @@ namespace Model
      * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
      * <code> <a>Limits</a> </code> are needed. </p>
      */
-    inline const ESPartitionInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ESPartitionInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ESPartitionInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ESPartitionInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithInstanceType(const ESPartitionInstanceType& value) { SetInstanceType(value); return *this;}
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ESPartitionInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithInstanceType(ESPartitionInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,21 +74,19 @@ namespace Model
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
      * </p>
      */
-    inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+    inline const Aws::String& GetElasticsearchVersion() const { return m_elasticsearchVersion; }
     inline bool ElasticsearchVersionHasBeenSet() const { return m_elasticsearchVersionHasBeenSet; }
-    inline void SetElasticsearchVersion(const Aws::String& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
-    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::move(value); }
-    inline void SetElasticsearchVersion(const char* value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion.assign(value); }
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(const Aws::String& value) { SetElasticsearchVersion(value); return *this;}
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(std::move(value)); return *this;}
-    inline DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
+    template<typename ElasticsearchVersionT = Aws::String>
+    void SetElasticsearchVersion(ElasticsearchVersionT&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = std::forward<ElasticsearchVersionT>(value); }
+    template<typename ElasticsearchVersionT = Aws::String>
+    DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(ElasticsearchVersionT&& value) { SetElasticsearchVersion(std::forward<ElasticsearchVersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    ESPartitionInstanceType m_instanceType;
+    ESPartitionInstanceType m_instanceType{ESPartitionInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_elasticsearchVersion;

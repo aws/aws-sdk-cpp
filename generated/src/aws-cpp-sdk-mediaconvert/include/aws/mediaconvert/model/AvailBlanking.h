@@ -36,7 +36,7 @@ namespace Model
   class AvailBlanking
   {
   public:
-    AWS_MEDIACONVERT_API AvailBlanking();
+    AWS_MEDIACONVERT_API AvailBlanking() = default;
     AWS_MEDIACONVERT_API AvailBlanking(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AvailBlanking& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * Blanking image to be used. Leave empty for solid black. Only bmp and png images
      * are supported.
      */
-    inline const Aws::String& GetAvailBlankingImage() const{ return m_availBlankingImage; }
+    inline const Aws::String& GetAvailBlankingImage() const { return m_availBlankingImage; }
     inline bool AvailBlankingImageHasBeenSet() const { return m_availBlankingImageHasBeenSet; }
-    inline void SetAvailBlankingImage(const Aws::String& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = value; }
-    inline void SetAvailBlankingImage(Aws::String&& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = std::move(value); }
-    inline void SetAvailBlankingImage(const char* value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage.assign(value); }
-    inline AvailBlanking& WithAvailBlankingImage(const Aws::String& value) { SetAvailBlankingImage(value); return *this;}
-    inline AvailBlanking& WithAvailBlankingImage(Aws::String&& value) { SetAvailBlankingImage(std::move(value)); return *this;}
-    inline AvailBlanking& WithAvailBlankingImage(const char* value) { SetAvailBlankingImage(value); return *this;}
+    template<typename AvailBlankingImageT = Aws::String>
+    void SetAvailBlankingImage(AvailBlankingImageT&& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = std::forward<AvailBlankingImageT>(value); }
+    template<typename AvailBlankingImageT = Aws::String>
+    AvailBlanking& WithAvailBlankingImage(AvailBlankingImageT&& value) { SetAvailBlankingImage(std::forward<AvailBlankingImageT>(value)); return *this;}
     ///@}
   private:
 

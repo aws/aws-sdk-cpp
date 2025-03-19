@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DeleteChangeSetRequest::DeleteChangeSetRequest() : 
-    m_changeSetNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChangeSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

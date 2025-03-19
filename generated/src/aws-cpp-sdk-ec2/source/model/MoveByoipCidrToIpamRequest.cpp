@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-MoveByoipCidrToIpamRequest::MoveByoipCidrToIpamRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_ipamPoolOwnerHasBeenSet(false)
-{
-}
-
 Aws::String MoveByoipCidrToIpamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

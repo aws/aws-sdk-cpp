@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterResizeInfo::AwsRedshiftClusterResizeInfo() : 
-    m_allowCancelResize(false),
-    m_allowCancelResizeHasBeenSet(false),
-    m_resizeTypeHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterResizeInfo::AwsRedshiftClusterResizeInfo(JsonView jsonValue)
-  : AwsRedshiftClusterResizeInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsRedshiftClusterResizeInfo& AwsRedshiftClusterResizeInfo::operator =(JsonView 
   if(jsonValue.ValueExists("AllowCancelResize"))
   {
     m_allowCancelResize = jsonValue.GetBool("AllowCancelResize");
-
     m_allowCancelResizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResizeType"))
   {
     m_resizeType = jsonValue.GetString("ResizeType");
-
     m_resizeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

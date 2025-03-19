@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SampleChannelDataRequest::SampleChannelDataRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_maxMessages(0),
-    m_maxMessagesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String SampleChannelDataRequest::SerializePayload() const
 {
   return {};

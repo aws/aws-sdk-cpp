@@ -34,7 +34,7 @@ namespace Model
   class RecordFormat
   {
   public:
-    AWS_KINESISANALYTICSV2_API RecordFormat();
+    AWS_KINESISANALYTICSV2_API RecordFormat() = default;
     AWS_KINESISANALYTICSV2_API RecordFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API RecordFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The type of record format.</p>
      */
-    inline const RecordFormatType& GetRecordFormatType() const{ return m_recordFormatType; }
+    inline RecordFormatType GetRecordFormatType() const { return m_recordFormatType; }
     inline bool RecordFormatTypeHasBeenSet() const { return m_recordFormatTypeHasBeenSet; }
-    inline void SetRecordFormatType(const RecordFormatType& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
-    inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = std::move(value); }
-    inline RecordFormat& WithRecordFormatType(const RecordFormatType& value) { SetRecordFormatType(value); return *this;}
-    inline RecordFormat& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
+    inline void SetRecordFormatType(RecordFormatType value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
+    inline RecordFormat& WithRecordFormatType(RecordFormatType value) { SetRecordFormatType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,16 +57,16 @@ namespace Model
      * format (such as JSON, CSV, or record fields delimited by some delimiter) on the
      * streaming source.</p>
      */
-    inline const MappingParameters& GetMappingParameters() const{ return m_mappingParameters; }
+    inline const MappingParameters& GetMappingParameters() const { return m_mappingParameters; }
     inline bool MappingParametersHasBeenSet() const { return m_mappingParametersHasBeenSet; }
-    inline void SetMappingParameters(const MappingParameters& value) { m_mappingParametersHasBeenSet = true; m_mappingParameters = value; }
-    inline void SetMappingParameters(MappingParameters&& value) { m_mappingParametersHasBeenSet = true; m_mappingParameters = std::move(value); }
-    inline RecordFormat& WithMappingParameters(const MappingParameters& value) { SetMappingParameters(value); return *this;}
-    inline RecordFormat& WithMappingParameters(MappingParameters&& value) { SetMappingParameters(std::move(value)); return *this;}
+    template<typename MappingParametersT = MappingParameters>
+    void SetMappingParameters(MappingParametersT&& value) { m_mappingParametersHasBeenSet = true; m_mappingParameters = std::forward<MappingParametersT>(value); }
+    template<typename MappingParametersT = MappingParameters>
+    RecordFormat& WithMappingParameters(MappingParametersT&& value) { SetMappingParameters(std::forward<MappingParametersT>(value)); return *this;}
     ///@}
   private:
 
-    RecordFormatType m_recordFormatType;
+    RecordFormatType m_recordFormatType{RecordFormatType::NOT_SET};
     bool m_recordFormatTypeHasBeenSet = false;
 
     MappingParameters m_mappingParameters;

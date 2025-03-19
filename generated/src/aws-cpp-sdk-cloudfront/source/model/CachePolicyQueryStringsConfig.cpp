@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicyQueryStringsConfig::CachePolicyQueryStringsConfig() : 
-    m_queryStringBehavior(CachePolicyQueryStringBehavior::NOT_SET),
-    m_queryStringBehaviorHasBeenSet(false),
-    m_queryStringsHasBeenSet(false)
-{
-}
-
 CachePolicyQueryStringsConfig::CachePolicyQueryStringsConfig(const XmlNode& xmlNode)
-  : CachePolicyQueryStringsConfig()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ CachePolicyQueryStringsConfig& CachePolicyQueryStringsConfig::operator =(const X
     XmlNode queryStringBehaviorNode = resultNode.FirstChild("QueryStringBehavior");
     if(!queryStringBehaviorNode.IsNull())
     {
-      m_queryStringBehavior = CachePolicyQueryStringBehaviorMapper::GetCachePolicyQueryStringBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(queryStringBehaviorNode.GetText()).c_str()).c_str());
+      m_queryStringBehavior = CachePolicyQueryStringBehaviorMapper::GetCachePolicyQueryStringBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(queryStringBehaviorNode.GetText()).c_str()));
       m_queryStringBehaviorHasBeenSet = true;
     }
     XmlNode queryStringsNode = resultNode.FirstChild("QueryStrings");

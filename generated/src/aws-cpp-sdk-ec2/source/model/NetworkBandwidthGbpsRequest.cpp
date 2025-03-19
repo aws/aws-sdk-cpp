@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkBandwidthGbpsRequest::NetworkBandwidthGbpsRequest() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 NetworkBandwidthGbpsRequest::NetworkBandwidthGbpsRequest(const XmlNode& xmlNode)
-  : NetworkBandwidthGbpsRequest()
 {
   *this = xmlNode;
 }

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult() : 
-    m_status(EnvironmentHealth::NOT_SET)
-{
-}
-
 DescribeEnvironmentHealthResult::DescribeEnvironmentHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribeEnvironmentHealthResult()
 {
   *this = result;
 }
@@ -44,53 +38,63 @@ DescribeEnvironmentHealthResult& DescribeEnvironmentHealthResult::operator =(con
     if(!environmentNameNode.IsNull())
     {
       m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
+      m_environmentNameHasBeenSet = true;
     }
     XmlNode healthStatusNode = resultNode.FirstChild("HealthStatus");
     if(!healthStatusNode.IsNull())
     {
       m_healthStatus = Aws::Utils::Xml::DecodeEscapedXmlText(healthStatusNode.GetText());
+      m_healthStatusHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = EnvironmentHealthMapper::GetEnvironmentHealthForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
     XmlNode colorNode = resultNode.FirstChild("Color");
     if(!colorNode.IsNull())
     {
       m_color = Aws::Utils::Xml::DecodeEscapedXmlText(colorNode.GetText());
+      m_colorHasBeenSet = true;
     }
     XmlNode causesNode = resultNode.FirstChild("Causes");
     if(!causesNode.IsNull())
     {
       XmlNode causesMember = causesNode.FirstChild("member");
+      m_causesHasBeenSet = !causesMember.IsNull();
       while(!causesMember.IsNull())
       {
         m_causes.push_back(causesMember.GetText());
         causesMember = causesMember.NextNode("member");
       }
 
+      m_causesHasBeenSet = true;
     }
     XmlNode applicationMetricsNode = resultNode.FirstChild("ApplicationMetrics");
     if(!applicationMetricsNode.IsNull())
     {
       m_applicationMetrics = applicationMetricsNode;
+      m_applicationMetricsHasBeenSet = true;
     }
     XmlNode instancesHealthNode = resultNode.FirstChild("InstancesHealth");
     if(!instancesHealthNode.IsNull())
     {
       m_instancesHealth = instancesHealthNode;
+      m_instancesHealthHasBeenSet = true;
     }
     XmlNode refreshedAtNode = resultNode.FirstChild("RefreshedAt");
     if(!refreshedAtNode.IsNull())
     {
       m_refreshedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(refreshedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_refreshedAtHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeEnvironmentHealthResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

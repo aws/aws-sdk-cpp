@@ -34,7 +34,7 @@ namespace Model
   class BatchLookupPolicyResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchLookupPolicyResponse();
+    AWS_CLOUDDIRECTORY_API BatchLookupPolicyResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchLookupPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchLookupPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,26 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
-    inline const Aws::Vector<PolicyToPath>& GetPolicyToPathList() const{ return m_policyToPathList; }
+    inline const Aws::Vector<PolicyToPath>& GetPolicyToPathList() const { return m_policyToPathList; }
     inline bool PolicyToPathListHasBeenSet() const { return m_policyToPathListHasBeenSet; }
-    inline void SetPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList = value; }
-    inline void SetPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList = std::move(value); }
-    inline BatchLookupPolicyResponse& WithPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { SetPolicyToPathList(value); return *this;}
-    inline BatchLookupPolicyResponse& WithPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { SetPolicyToPathList(std::move(value)); return *this;}
-    inline BatchLookupPolicyResponse& AddPolicyToPathList(const PolicyToPath& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList.push_back(value); return *this; }
-    inline BatchLookupPolicyResponse& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList.push_back(std::move(value)); return *this; }
+    template<typename PolicyToPathListT = Aws::Vector<PolicyToPath>>
+    void SetPolicyToPathList(PolicyToPathListT&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList = std::forward<PolicyToPathListT>(value); }
+    template<typename PolicyToPathListT = Aws::Vector<PolicyToPath>>
+    BatchLookupPolicyResponse& WithPolicyToPathList(PolicyToPathListT&& value) { SetPolicyToPathList(std::forward<PolicyToPathListT>(value)); return *this;}
+    template<typename PolicyToPathListT = PolicyToPath>
+    BatchLookupPolicyResponse& AddPolicyToPathList(PolicyToPathListT&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList.emplace_back(std::forward<PolicyToPathListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchLookupPolicyResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchLookupPolicyResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchLookupPolicyResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchLookupPolicyResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

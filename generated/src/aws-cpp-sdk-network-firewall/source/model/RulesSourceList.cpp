@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-RulesSourceList::RulesSourceList() : 
-    m_targetsHasBeenSet(false),
-    m_targetTypesHasBeenSet(false),
-    m_generatedRulesType(GeneratedRulesType::NOT_SET),
-    m_generatedRulesTypeHasBeenSet(false)
-{
-}
-
 RulesSourceList::RulesSourceList(JsonView jsonValue)
-  : RulesSourceList()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ RulesSourceList& RulesSourceList::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTypes"))
   {
     Aws::Utils::Array<JsonView> targetTypesJsonList = jsonValue.GetArray("TargetTypes");
@@ -53,14 +43,11 @@ RulesSourceList& RulesSourceList::operator =(JsonView jsonValue)
     }
     m_targetTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratedRulesType"))
   {
     m_generatedRulesType = GeneratedRulesTypeMapper::GetGeneratedRulesTypeForName(jsonValue.GetString("GeneratedRulesType"));
-
     m_generatedRulesTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

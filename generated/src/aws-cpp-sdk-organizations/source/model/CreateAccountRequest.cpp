@@ -12,16 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccountRequest::CreateAccountRequest() : 
-    m_emailHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_iamUserAccessToBilling(IAMUserAccessToBilling::NOT_SET),
-    m_iamUserAccessToBillingHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccountRequest::SerializePayload() const
 {
   JsonValue payload;

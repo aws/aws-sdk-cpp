@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievedReference::RetrievedReference() : 
-    m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 RetrievedReference::RetrievedReference(JsonView jsonValue)
-  : RetrievedReference()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RetrievedReference& RetrievedReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -56,7 +44,6 @@ RetrievedReference& RetrievedReference::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class RecommendationJobStoppingConditions
   {
   public:
-    AWS_SAGEMAKER_API RecommendationJobStoppingConditions();
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions() = default;
     AWS_SAGEMAKER_API RecommendationJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RecommendationJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The maximum number of requests per minute expected for the endpoint.</p>
      */
-    inline int GetMaxInvocations() const{ return m_maxInvocations; }
+    inline int GetMaxInvocations() const { return m_maxInvocations; }
     inline bool MaxInvocationsHasBeenSet() const { return m_maxInvocationsHasBeenSet; }
     inline void SetMaxInvocations(int value) { m_maxInvocationsHasBeenSet = true; m_maxInvocations = value; }
     inline RecommendationJobStoppingConditions& WithMaxInvocations(int value) { SetMaxInvocations(value); return *this;}
@@ -57,14 +57,14 @@ namespace Model
      * to fetch the response from the container of a model and the time taken to
      * complete the inference in the container.</p>
      */
-    inline const Aws::Vector<ModelLatencyThreshold>& GetModelLatencyThresholds() const{ return m_modelLatencyThresholds; }
+    inline const Aws::Vector<ModelLatencyThreshold>& GetModelLatencyThresholds() const { return m_modelLatencyThresholds; }
     inline bool ModelLatencyThresholdsHasBeenSet() const { return m_modelLatencyThresholdsHasBeenSet; }
-    inline void SetModelLatencyThresholds(const Aws::Vector<ModelLatencyThreshold>& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds = value; }
-    inline void SetModelLatencyThresholds(Aws::Vector<ModelLatencyThreshold>&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds = std::move(value); }
-    inline RecommendationJobStoppingConditions& WithModelLatencyThresholds(const Aws::Vector<ModelLatencyThreshold>& value) { SetModelLatencyThresholds(value); return *this;}
-    inline RecommendationJobStoppingConditions& WithModelLatencyThresholds(Aws::Vector<ModelLatencyThreshold>&& value) { SetModelLatencyThresholds(std::move(value)); return *this;}
-    inline RecommendationJobStoppingConditions& AddModelLatencyThresholds(const ModelLatencyThreshold& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds.push_back(value); return *this; }
-    inline RecommendationJobStoppingConditions& AddModelLatencyThresholds(ModelLatencyThreshold&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds.push_back(std::move(value)); return *this; }
+    template<typename ModelLatencyThresholdsT = Aws::Vector<ModelLatencyThreshold>>
+    void SetModelLatencyThresholds(ModelLatencyThresholdsT&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds = std::forward<ModelLatencyThresholdsT>(value); }
+    template<typename ModelLatencyThresholdsT = Aws::Vector<ModelLatencyThreshold>>
+    RecommendationJobStoppingConditions& WithModelLatencyThresholds(ModelLatencyThresholdsT&& value) { SetModelLatencyThresholds(std::forward<ModelLatencyThresholdsT>(value)); return *this;}
+    template<typename ModelLatencyThresholdsT = ModelLatencyThreshold>
+    RecommendationJobStoppingConditions& AddModelLatencyThresholds(ModelLatencyThresholdsT&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds.emplace_back(std::forward<ModelLatencyThresholdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,22 +74,20 @@ namespace Model
      * <code>Stop</code>. If you want the load test to continue after invocations have
      * flattened, set the value to <code>Continue</code>.</p>
      */
-    inline const FlatInvocations& GetFlatInvocations() const{ return m_flatInvocations; }
+    inline FlatInvocations GetFlatInvocations() const { return m_flatInvocations; }
     inline bool FlatInvocationsHasBeenSet() const { return m_flatInvocationsHasBeenSet; }
-    inline void SetFlatInvocations(const FlatInvocations& value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = value; }
-    inline void SetFlatInvocations(FlatInvocations&& value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = std::move(value); }
-    inline RecommendationJobStoppingConditions& WithFlatInvocations(const FlatInvocations& value) { SetFlatInvocations(value); return *this;}
-    inline RecommendationJobStoppingConditions& WithFlatInvocations(FlatInvocations&& value) { SetFlatInvocations(std::move(value)); return *this;}
+    inline void SetFlatInvocations(FlatInvocations value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = value; }
+    inline RecommendationJobStoppingConditions& WithFlatInvocations(FlatInvocations value) { SetFlatInvocations(value); return *this;}
     ///@}
   private:
 
-    int m_maxInvocations;
+    int m_maxInvocations{0};
     bool m_maxInvocationsHasBeenSet = false;
 
     Aws::Vector<ModelLatencyThreshold> m_modelLatencyThresholds;
     bool m_modelLatencyThresholdsHasBeenSet = false;
 
-    FlatInvocations m_flatInvocations;
+    FlatInvocations m_flatInvocations{FlatInvocations::NOT_SET};
     bool m_flatInvocationsHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ColumnSchema::ColumnSchema() : 
-    m_columnNameHasBeenSet(false),
-    m_columnTypesHasBeenSet(false)
-{
-}
-
 ColumnSchema::ColumnSchema(JsonView jsonValue)
-  : ColumnSchema()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ColumnSchema& ColumnSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columnTypes"))
   {
     Aws::Utils::Array<JsonView> columnTypesJsonList = jsonValue.GetArray("columnTypes");
@@ -48,7 +39,6 @@ ColumnSchema& ColumnSchema::operator =(JsonView jsonValue)
     }
     m_columnTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

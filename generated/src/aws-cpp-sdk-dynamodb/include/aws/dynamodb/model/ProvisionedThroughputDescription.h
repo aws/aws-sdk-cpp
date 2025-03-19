@@ -33,7 +33,7 @@ namespace Model
   class ProvisionedThroughputDescription
   {
   public:
-    AWS_DYNAMODB_API ProvisionedThroughputDescription();
+    AWS_DYNAMODB_API ProvisionedThroughputDescription() = default;
     AWS_DYNAMODB_API ProvisionedThroughputDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ProvisionedThroughputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
+    inline const Aws::Utils::DateTime& GetLastIncreaseDateTime() const { return m_lastIncreaseDateTime; }
     inline bool LastIncreaseDateTimeHasBeenSet() const { return m_lastIncreaseDateTimeHasBeenSet; }
-    inline void SetLastIncreaseDateTime(const Aws::Utils::DateTime& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
-    inline void SetLastIncreaseDateTime(Aws::Utils::DateTime&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = std::move(value); }
-    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(const Aws::Utils::DateTime& value) { SetLastIncreaseDateTime(value); return *this;}
-    inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::Utils::DateTime&& value) { SetLastIncreaseDateTime(std::move(value)); return *this;}
+    template<typename LastIncreaseDateTimeT = Aws::Utils::DateTime>
+    void SetLastIncreaseDateTime(LastIncreaseDateTimeT&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = std::forward<LastIncreaseDateTimeT>(value); }
+    template<typename LastIncreaseDateTimeT = Aws::Utils::DateTime>
+    ProvisionedThroughputDescription& WithLastIncreaseDateTime(LastIncreaseDateTimeT&& value) { SetLastIncreaseDateTime(std::forward<LastIncreaseDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
+    inline const Aws::Utils::DateTime& GetLastDecreaseDateTime() const { return m_lastDecreaseDateTime; }
     inline bool LastDecreaseDateTimeHasBeenSet() const { return m_lastDecreaseDateTimeHasBeenSet; }
-    inline void SetLastDecreaseDateTime(const Aws::Utils::DateTime& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
-    inline void SetLastDecreaseDateTime(Aws::Utils::DateTime&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = std::move(value); }
-    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(const Aws::Utils::DateTime& value) { SetLastDecreaseDateTime(value); return *this;}
-    inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::Utils::DateTime&& value) { SetLastDecreaseDateTime(std::move(value)); return *this;}
+    template<typename LastDecreaseDateTimeT = Aws::Utils::DateTime>
+    void SetLastDecreaseDateTime(LastDecreaseDateTimeT&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = std::forward<LastDecreaseDateTimeT>(value); }
+    template<typename LastDecreaseDateTimeT = Aws::Utils::DateTime>
+    ProvisionedThroughputDescription& WithLastDecreaseDateTime(LastDecreaseDateTimeT&& value) { SetLastDecreaseDateTime(std::forward<LastDecreaseDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +72,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
      * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline long long GetNumberOfDecreasesToday() const{ return m_numberOfDecreasesToday; }
+    inline long long GetNumberOfDecreasesToday() const { return m_numberOfDecreasesToday; }
     inline bool NumberOfDecreasesTodayHasBeenSet() const { return m_numberOfDecreasesTodayHasBeenSet; }
     inline void SetNumberOfDecreasesToday(long long value) { m_numberOfDecreasesTodayHasBeenSet = true; m_numberOfDecreasesToday = value; }
     inline ProvisionedThroughputDescription& WithNumberOfDecreasesToday(long long value) { SetNumberOfDecreasesToday(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
      * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
      * <code>ReadCapacityUnits</code> per second.</p>
      */
-    inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+    inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
     inline ProvisionedThroughputDescription& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
@@ -97,26 +97,26 @@ namespace Model
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>.</p>
      */
-    inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+    inline long long GetWriteCapacityUnits() const { return m_writeCapacityUnits; }
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
     inline ProvisionedThroughputDescription& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastIncreaseDateTime;
+    Aws::Utils::DateTime m_lastIncreaseDateTime{};
     bool m_lastIncreaseDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastDecreaseDateTime;
+    Aws::Utils::DateTime m_lastDecreaseDateTime{};
     bool m_lastDecreaseDateTimeHasBeenSet = false;
 
-    long long m_numberOfDecreasesToday;
+    long long m_numberOfDecreasesToday{0};
     bool m_numberOfDecreasesTodayHasBeenSet = false;
 
-    long long m_readCapacityUnits;
+    long long m_readCapacityUnits{0};
     bool m_readCapacityUnitsHasBeenSet = false;
 
-    long long m_writeCapacityUnits;
+    long long m_writeCapacityUnits{0};
     bool m_writeCapacityUnitsHasBeenSet = false;
   };
 

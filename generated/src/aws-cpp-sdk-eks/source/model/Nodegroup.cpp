@@ -18,40 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Nodegroup::Nodegroup() : 
-    m_nodegroupNameHasBeenSet(false),
-    m_nodegroupArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releaseVersionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_status(NodegroupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capacityType(CapacityTypes::NOT_SET),
-    m_capacityTypeHasBeenSet(false),
-    m_scalingConfigHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_remoteAccessHasBeenSet(false),
-    m_amiType(AMITypes::NOT_SET),
-    m_amiTypeHasBeenSet(false),
-    m_nodeRoleHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_taintsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_diskSize(0),
-    m_diskSizeHasBeenSet(false),
-    m_healthHasBeenSet(false),
-    m_updateConfigHasBeenSet(false),
-    m_nodeRepairConfigHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Nodegroup::Nodegroup(JsonView jsonValue)
-  : Nodegroup()
 {
   *this = jsonValue;
 }
@@ -61,73 +28,53 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nodegroupName"))
   {
     m_nodegroupName = jsonValue.GetString("nodegroupName");
-
     m_nodegroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodegroupArn"))
   {
     m_nodegroupArn = jsonValue.GetString("nodegroupArn");
-
     m_nodegroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseVersion"))
   {
     m_releaseVersion = jsonValue.GetString("releaseVersion");
-
     m_releaseVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NodegroupStatusMapper::GetNodegroupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacityType"))
   {
     m_capacityType = CapacityTypesMapper::GetCapacityTypesForName(jsonValue.GetString("capacityType"));
-
     m_capacityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingConfig"))
   {
     m_scalingConfig = jsonValue.GetObject("scalingConfig");
-
     m_scalingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTypes"))
   {
     Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
@@ -137,7 +84,6 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     }
     m_instanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
@@ -147,28 +93,21 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteAccess"))
   {
     m_remoteAccess = jsonValue.GetObject("remoteAccess");
-
     m_remoteAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiType"))
   {
     m_amiType = AMITypesMapper::GetAMITypesForName(jsonValue.GetString("amiType"));
-
     m_amiTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeRole"))
   {
     m_nodeRole = jsonValue.GetString("nodeRole");
-
     m_nodeRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labels"))
   {
     Aws::Map<Aws::String, JsonView> labelsJsonMap = jsonValue.GetObject("labels").GetAllObjects();
@@ -178,7 +117,6 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taints"))
   {
     Aws::Utils::Array<JsonView> taintsJsonList = jsonValue.GetArray("taints");
@@ -188,49 +126,36 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     }
     m_taintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     m_resources = jsonValue.GetObject("resources");
-
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diskSize"))
   {
     m_diskSize = jsonValue.GetInteger("diskSize");
-
     m_diskSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = jsonValue.GetObject("health");
-
     m_healthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateConfig"))
   {
     m_updateConfig = jsonValue.GetObject("updateConfig");
-
     m_updateConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeRepairConfig"))
   {
     m_nodeRepairConfig = jsonValue.GetObject("nodeRepairConfig");
-
     m_nodeRepairConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTemplate"))
   {
     m_launchTemplate = jsonValue.GetObject("launchTemplate");
-
     m_launchTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -240,7 +165,6 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

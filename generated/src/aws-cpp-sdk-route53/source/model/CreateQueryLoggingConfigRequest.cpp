@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateQueryLoggingConfigRequest::CreateQueryLoggingConfigRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false)
-{
-}
 
 Aws::String CreateQueryLoggingConfigRequest::SerializePayload() const
 {

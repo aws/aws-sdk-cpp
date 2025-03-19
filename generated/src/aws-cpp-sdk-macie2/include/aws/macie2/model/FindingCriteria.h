@@ -34,7 +34,7 @@ namespace Model
   class FindingCriteria
   {
   public:
-    AWS_MACIE2_API FindingCriteria();
+    AWS_MACIE2_API FindingCriteria() = default;
     AWS_MACIE2_API FindingCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API FindingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,18 +45,16 @@ namespace Model
      * <p>A condition that specifies the property, operator, and one or more values to
      * use to filter the results.</p>
      */
-    inline const Aws::Map<Aws::String, CriterionAdditionalProperties>& GetCriterion() const{ return m_criterion; }
+    inline const Aws::Map<Aws::String, CriterionAdditionalProperties>& GetCriterion() const { return m_criterion; }
     inline bool CriterionHasBeenSet() const { return m_criterionHasBeenSet; }
-    inline void SetCriterion(const Aws::Map<Aws::String, CriterionAdditionalProperties>& value) { m_criterionHasBeenSet = true; m_criterion = value; }
-    inline void SetCriterion(Aws::Map<Aws::String, CriterionAdditionalProperties>&& value) { m_criterionHasBeenSet = true; m_criterion = std::move(value); }
-    inline FindingCriteria& WithCriterion(const Aws::Map<Aws::String, CriterionAdditionalProperties>& value) { SetCriterion(value); return *this;}
-    inline FindingCriteria& WithCriterion(Aws::Map<Aws::String, CriterionAdditionalProperties>&& value) { SetCriterion(std::move(value)); return *this;}
-    inline FindingCriteria& AddCriterion(const Aws::String& key, const CriterionAdditionalProperties& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, value); return *this; }
-    inline FindingCriteria& AddCriterion(Aws::String&& key, const CriterionAdditionalProperties& value) { m_criterionHasBeenSet = true; m_criterion.emplace(std::move(key), value); return *this; }
-    inline FindingCriteria& AddCriterion(const Aws::String& key, CriterionAdditionalProperties&& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, std::move(value)); return *this; }
-    inline FindingCriteria& AddCriterion(Aws::String&& key, CriterionAdditionalProperties&& value) { m_criterionHasBeenSet = true; m_criterion.emplace(std::move(key), std::move(value)); return *this; }
-    inline FindingCriteria& AddCriterion(const char* key, CriterionAdditionalProperties&& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, std::move(value)); return *this; }
-    inline FindingCriteria& AddCriterion(const char* key, const CriterionAdditionalProperties& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, value); return *this; }
+    template<typename CriterionT = Aws::Map<Aws::String, CriterionAdditionalProperties>>
+    void SetCriterion(CriterionT&& value) { m_criterionHasBeenSet = true; m_criterion = std::forward<CriterionT>(value); }
+    template<typename CriterionT = Aws::Map<Aws::String, CriterionAdditionalProperties>>
+    FindingCriteria& WithCriterion(CriterionT&& value) { SetCriterion(std::forward<CriterionT>(value)); return *this;}
+    template<typename CriterionKeyT = Aws::String, typename CriterionValueT = CriterionAdditionalProperties>
+    FindingCriteria& AddCriterion(CriterionKeyT&& key, CriterionValueT&& value) {
+      m_criterionHasBeenSet = true; m_criterion.emplace(std::forward<CriterionKeyT>(key), std::forward<CriterionValueT>(value)); return *this;
+    }
     ///@}
   private:
 

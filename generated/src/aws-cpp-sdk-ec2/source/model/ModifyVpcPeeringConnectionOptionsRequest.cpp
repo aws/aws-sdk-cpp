@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcPeeringConnectionOptionsRequest::ModifyVpcPeeringConnectionOptionsRequest() : 
-    m_accepterPeeringConnectionOptionsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_requesterPeeringConnectionOptionsHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcPeeringConnectionOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

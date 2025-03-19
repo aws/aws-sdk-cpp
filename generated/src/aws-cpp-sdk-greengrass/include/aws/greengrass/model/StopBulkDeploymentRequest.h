@@ -21,7 +21,7 @@ namespace Model
   class StopBulkDeploymentRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API StopBulkDeploymentRequest();
+    AWS_GREENGRASS_API StopBulkDeploymentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the bulk deployment.
      */
-    inline const Aws::String& GetBulkDeploymentId() const{ return m_bulkDeploymentId; }
+    inline const Aws::String& GetBulkDeploymentId() const { return m_bulkDeploymentId; }
     inline bool BulkDeploymentIdHasBeenSet() const { return m_bulkDeploymentIdHasBeenSet; }
-    inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = value; }
-    inline void SetBulkDeploymentId(Aws::String&& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = std::move(value); }
-    inline void SetBulkDeploymentId(const char* value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId.assign(value); }
-    inline StopBulkDeploymentRequest& WithBulkDeploymentId(const Aws::String& value) { SetBulkDeploymentId(value); return *this;}
-    inline StopBulkDeploymentRequest& WithBulkDeploymentId(Aws::String&& value) { SetBulkDeploymentId(std::move(value)); return *this;}
-    inline StopBulkDeploymentRequest& WithBulkDeploymentId(const char* value) { SetBulkDeploymentId(value); return *this;}
+    template<typename BulkDeploymentIdT = Aws::String>
+    void SetBulkDeploymentId(BulkDeploymentIdT&& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = std::forward<BulkDeploymentIdT>(value); }
+    template<typename BulkDeploymentIdT = Aws::String>
+    StopBulkDeploymentRequest& WithBulkDeploymentId(BulkDeploymentIdT&& value) { SetBulkDeploymentId(std::forward<BulkDeploymentIdT>(value)); return *this;}
     ///@}
   private:
 

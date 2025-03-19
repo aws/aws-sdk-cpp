@@ -33,7 +33,7 @@ namespace Model
   class LaunchTemplateNetworkPerformanceOptionsRequest
   {
   public:
-    AWS_EC2_API LaunchTemplateNetworkPerformanceOptionsRequest();
+    AWS_EC2_API LaunchTemplateNetworkPerformanceOptionsRequest() = default;
     AWS_EC2_API LaunchTemplateNetworkPerformanceOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateNetworkPerformanceOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,16 +51,14 @@ namespace Model
      * option boosts your EBS baseline bandwidth and reduces your networking baseline
      * bandwidth.</p> </dd> </dl>
      */
-    inline const InstanceBandwidthWeighting& GetBandwidthWeighting() const{ return m_bandwidthWeighting; }
+    inline InstanceBandwidthWeighting GetBandwidthWeighting() const { return m_bandwidthWeighting; }
     inline bool BandwidthWeightingHasBeenSet() const { return m_bandwidthWeightingHasBeenSet; }
-    inline void SetBandwidthWeighting(const InstanceBandwidthWeighting& value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
-    inline void SetBandwidthWeighting(InstanceBandwidthWeighting&& value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = std::move(value); }
-    inline LaunchTemplateNetworkPerformanceOptionsRequest& WithBandwidthWeighting(const InstanceBandwidthWeighting& value) { SetBandwidthWeighting(value); return *this;}
-    inline LaunchTemplateNetworkPerformanceOptionsRequest& WithBandwidthWeighting(InstanceBandwidthWeighting&& value) { SetBandwidthWeighting(std::move(value)); return *this;}
+    inline void SetBandwidthWeighting(InstanceBandwidthWeighting value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
+    inline LaunchTemplateNetworkPerformanceOptionsRequest& WithBandwidthWeighting(InstanceBandwidthWeighting value) { SetBandwidthWeighting(value); return *this;}
     ///@}
   private:
 
-    InstanceBandwidthWeighting m_bandwidthWeighting;
+    InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
     bool m_bandwidthWeightingHasBeenSet = false;
   };
 

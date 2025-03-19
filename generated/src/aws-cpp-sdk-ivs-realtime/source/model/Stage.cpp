@@ -18,18 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-Stage::Stage() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_activeSessionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autoParticipantRecordingConfigurationHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
-{
-}
-
 Stage::Stage(JsonView jsonValue)
-  : Stage()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Stage& Stage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeSessionId"))
   {
     m_activeSessionId = jsonValue.GetString("activeSessionId");
-
     m_activeSessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -66,21 +49,16 @@ Stage& Stage::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoParticipantRecordingConfiguration"))
   {
     m_autoParticipantRecordingConfiguration = jsonValue.GetObject("autoParticipantRecordingConfiguration");
-
     m_autoParticipantRecordingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     m_endpoints = jsonValue.GetObject("endpoints");
-
     m_endpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

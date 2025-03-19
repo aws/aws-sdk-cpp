@@ -15,11 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteFieldLevelEncryptionConfig2020_05_31Request::DeleteFieldLevelEncryptionConfig2020_05_31Request() : 
-    m_idHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String DeleteFieldLevelEncryptionConfig2020_05_31Request::SerializePayload() const
 {

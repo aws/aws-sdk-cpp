@@ -28,7 +28,7 @@ namespace Model
   class GetTestGridProjectResult
   {
   public:
-    AWS_DEVICEFARM_API GetTestGridProjectResult();
+    AWS_DEVICEFARM_API GetTestGridProjectResult() = default;
     AWS_DEVICEFARM_API GetTestGridProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API GetTestGridProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A <a>TestGridProject</a>.</p>
      */
-    inline const TestGridProject& GetTestGridProject() const{ return m_testGridProject; }
-    inline void SetTestGridProject(const TestGridProject& value) { m_testGridProject = value; }
-    inline void SetTestGridProject(TestGridProject&& value) { m_testGridProject = std::move(value); }
-    inline GetTestGridProjectResult& WithTestGridProject(const TestGridProject& value) { SetTestGridProject(value); return *this;}
-    inline GetTestGridProjectResult& WithTestGridProject(TestGridProject&& value) { SetTestGridProject(std::move(value)); return *this;}
+    inline const TestGridProject& GetTestGridProject() const { return m_testGridProject; }
+    template<typename TestGridProjectT = TestGridProject>
+    void SetTestGridProject(TestGridProjectT&& value) { m_testGridProjectHasBeenSet = true; m_testGridProject = std::forward<TestGridProjectT>(value); }
+    template<typename TestGridProjectT = TestGridProject>
+    GetTestGridProjectResult& WithTestGridProject(TestGridProjectT&& value) { SetTestGridProject(std::forward<TestGridProjectT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTestGridProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTestGridProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTestGridProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTestGridProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TestGridProject m_testGridProject;
+    bool m_testGridProjectHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

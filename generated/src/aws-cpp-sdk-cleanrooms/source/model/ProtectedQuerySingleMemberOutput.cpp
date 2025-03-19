@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedQuerySingleMemberOutput::ProtectedQuerySingleMemberOutput() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 ProtectedQuerySingleMemberOutput::ProtectedQuerySingleMemberOutput(JsonView jsonValue)
-  : ProtectedQuerySingleMemberOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedQuerySingleMemberOutput& ProtectedQuerySingleMemberOutput::operator =(J
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

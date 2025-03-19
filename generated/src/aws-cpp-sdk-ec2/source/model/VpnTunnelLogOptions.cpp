@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnTunnelLogOptions::VpnTunnelLogOptions() : 
-    m_cloudWatchLogOptionsHasBeenSet(false)
-{
-}
-
 VpnTunnelLogOptions::VpnTunnelLogOptions(const XmlNode& xmlNode)
-  : VpnTunnelLogOptions()
 {
   *this = xmlNode;
 }

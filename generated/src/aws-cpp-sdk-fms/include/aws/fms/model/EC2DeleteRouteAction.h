@@ -33,7 +33,7 @@ namespace Model
   class EC2DeleteRouteAction
   {
   public:
-    AWS_FMS_API EC2DeleteRouteAction();
+    AWS_FMS_API EC2DeleteRouteAction() = default;
     AWS_FMS_API EC2DeleteRouteAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EC2DeleteRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>A description of the DeleteRoute action.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EC2DeleteRouteAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EC2DeleteRouteAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EC2DeleteRouteAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EC2DeleteRouteAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <p>Information about the IPv4 CIDR range for the route. The value you specify
      * must match the CIDR for the route exactly.</p>
      */
-    inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
+    inline const Aws::String& GetDestinationCidrBlock() const { return m_destinationCidrBlock; }
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-    inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-    inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-    inline EC2DeleteRouteAction& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-    inline EC2DeleteRouteAction& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-    inline EC2DeleteRouteAction& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    template<typename DestinationCidrBlockT = Aws::String>
+    void SetDestinationCidrBlock(DestinationCidrBlockT&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::forward<DestinationCidrBlockT>(value); }
+    template<typename DestinationCidrBlockT = Aws::String>
+    EC2DeleteRouteAction& WithDestinationCidrBlock(DestinationCidrBlockT&& value) { SetDestinationCidrBlock(std::forward<DestinationCidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the ID of the prefix list for the route.</p>
      */
-    inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
+    inline const Aws::String& GetDestinationPrefixListId() const { return m_destinationPrefixListId; }
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
-    inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
-    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
-    inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
-    inline EC2DeleteRouteAction& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
-    inline EC2DeleteRouteAction& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
-    inline EC2DeleteRouteAction& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
+    template<typename DestinationPrefixListIdT = Aws::String>
+    void SetDestinationPrefixListId(DestinationPrefixListIdT&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::forward<DestinationPrefixListIdT>(value); }
+    template<typename DestinationPrefixListIdT = Aws::String>
+    EC2DeleteRouteAction& WithDestinationPrefixListId(DestinationPrefixListIdT&& value) { SetDestinationPrefixListId(std::forward<DestinationPrefixListIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,26 +81,24 @@ namespace Model
      * <p>Information about the IPv6 CIDR range for the route. The value you specify
      * must match the CIDR for the route exactly.</p>
      */
-    inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+    inline const Aws::String& GetDestinationIpv6CidrBlock() const { return m_destinationIpv6CidrBlock; }
     inline bool DestinationIpv6CidrBlockHasBeenSet() const { return m_destinationIpv6CidrBlockHasBeenSet; }
-    inline void SetDestinationIpv6CidrBlock(const Aws::String& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
-    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = std::move(value); }
-    inline void SetDestinationIpv6CidrBlock(const char* value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock.assign(value); }
-    inline EC2DeleteRouteAction& WithDestinationIpv6CidrBlock(const Aws::String& value) { SetDestinationIpv6CidrBlock(value); return *this;}
-    inline EC2DeleteRouteAction& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(std::move(value)); return *this;}
-    inline EC2DeleteRouteAction& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
+    template<typename DestinationIpv6CidrBlockT = Aws::String>
+    void SetDestinationIpv6CidrBlock(DestinationIpv6CidrBlockT&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = std::forward<DestinationIpv6CidrBlockT>(value); }
+    template<typename DestinationIpv6CidrBlockT = Aws::String>
+    EC2DeleteRouteAction& WithDestinationIpv6CidrBlock(DestinationIpv6CidrBlockT&& value) { SetDestinationIpv6CidrBlock(std::forward<DestinationIpv6CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the ID of the route table.</p>
      */
-    inline const ActionTarget& GetRouteTableId() const{ return m_routeTableId; }
+    inline const ActionTarget& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const ActionTarget& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(ActionTarget&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline EC2DeleteRouteAction& WithRouteTableId(const ActionTarget& value) { SetRouteTableId(value); return *this;}
-    inline EC2DeleteRouteAction& WithRouteTableId(ActionTarget&& value) { SetRouteTableId(std::move(value)); return *this;}
+    template<typename RouteTableIdT = ActionTarget>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = ActionTarget>
+    EC2DeleteRouteAction& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
   private:
 

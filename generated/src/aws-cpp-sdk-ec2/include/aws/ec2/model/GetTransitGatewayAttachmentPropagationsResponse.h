@@ -30,7 +30,7 @@ namespace Model
   class GetTransitGatewayAttachmentPropagationsResponse
   {
   public:
-    AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse();
+    AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse() = default;
     AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the propagation route tables.</p>
      */
-    inline const Aws::Vector<TransitGatewayAttachmentPropagation>& GetTransitGatewayAttachmentPropagations() const{ return m_transitGatewayAttachmentPropagations; }
-    inline void SetTransitGatewayAttachmentPropagations(const Aws::Vector<TransitGatewayAttachmentPropagation>& value) { m_transitGatewayAttachmentPropagations = value; }
-    inline void SetTransitGatewayAttachmentPropagations(Aws::Vector<TransitGatewayAttachmentPropagation>&& value) { m_transitGatewayAttachmentPropagations = std::move(value); }
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithTransitGatewayAttachmentPropagations(const Aws::Vector<TransitGatewayAttachmentPropagation>& value) { SetTransitGatewayAttachmentPropagations(value); return *this;}
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithTransitGatewayAttachmentPropagations(Aws::Vector<TransitGatewayAttachmentPropagation>&& value) { SetTransitGatewayAttachmentPropagations(std::move(value)); return *this;}
-    inline GetTransitGatewayAttachmentPropagationsResponse& AddTransitGatewayAttachmentPropagations(const TransitGatewayAttachmentPropagation& value) { m_transitGatewayAttachmentPropagations.push_back(value); return *this; }
-    inline GetTransitGatewayAttachmentPropagationsResponse& AddTransitGatewayAttachmentPropagations(TransitGatewayAttachmentPropagation&& value) { m_transitGatewayAttachmentPropagations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransitGatewayAttachmentPropagation>& GetTransitGatewayAttachmentPropagations() const { return m_transitGatewayAttachmentPropagations; }
+    template<typename TransitGatewayAttachmentPropagationsT = Aws::Vector<TransitGatewayAttachmentPropagation>>
+    void SetTransitGatewayAttachmentPropagations(TransitGatewayAttachmentPropagationsT&& value) { m_transitGatewayAttachmentPropagationsHasBeenSet = true; m_transitGatewayAttachmentPropagations = std::forward<TransitGatewayAttachmentPropagationsT>(value); }
+    template<typename TransitGatewayAttachmentPropagationsT = Aws::Vector<TransitGatewayAttachmentPropagation>>
+    GetTransitGatewayAttachmentPropagationsResponse& WithTransitGatewayAttachmentPropagations(TransitGatewayAttachmentPropagationsT&& value) { SetTransitGatewayAttachmentPropagations(std::forward<TransitGatewayAttachmentPropagationsT>(value)); return *this;}
+    template<typename TransitGatewayAttachmentPropagationsT = TransitGatewayAttachmentPropagation>
+    GetTransitGatewayAttachmentPropagationsResponse& AddTransitGatewayAttachmentPropagations(TransitGatewayAttachmentPropagationsT&& value) { m_transitGatewayAttachmentPropagationsHasBeenSet = true; m_transitGatewayAttachmentPropagations.emplace_back(std::forward<TransitGatewayAttachmentPropagationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetTransitGatewayAttachmentPropagationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetTransitGatewayAttachmentPropagationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetTransitGatewayAttachmentPropagationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransitGatewayAttachmentPropagation> m_transitGatewayAttachmentPropagations;
+    bool m_transitGatewayAttachmentPropagationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class InstanceMetadataOptionsRequest
   {
   public:
-    AWS_EC2_API InstanceMetadataOptionsRequest();
+    AWS_EC2_API InstanceMetadataOptionsRequest() = default;
     AWS_EC2_API InstanceMetadataOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceMetadataOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -60,12 +60,10 @@ namespace Model
      * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
      * Guide</i>.</p>
      */
-    inline const HttpTokensState& GetHttpTokens() const{ return m_httpTokens; }
+    inline HttpTokensState GetHttpTokens() const { return m_httpTokens; }
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
-    inline void SetHttpTokens(const HttpTokensState& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
-    inline void SetHttpTokens(HttpTokensState&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
-    inline InstanceMetadataOptionsRequest& WithHttpTokens(const HttpTokensState& value) { SetHttpTokens(value); return *this;}
-    inline InstanceMetadataOptionsRequest& WithHttpTokens(HttpTokensState&& value) { SetHttpTokens(std::move(value)); return *this;}
+    inline void SetHttpTokens(HttpTokensState value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
+    inline InstanceMetadataOptionsRequest& WithHttpTokens(HttpTokensState value) { SetHttpTokens(value); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * <p>The maximum number of hops that the metadata token can travel.</p>
      * <p>Possible values: Integers from 1 to 64</p>
      */
-    inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
+    inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
     inline InstanceMetadataOptionsRequest& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
@@ -85,12 +83,10 @@ namespace Model
      * you specify a value of <code>disabled</code>, you cannot access your instance
      * metadata.</p> <p>Default: <code>enabled</code> </p>
      */
-    inline const InstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
+    inline InstanceMetadataEndpointState GetHttpEndpoint() const { return m_httpEndpoint; }
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
-    inline void SetHttpEndpoint(const InstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
-    inline void SetHttpEndpoint(InstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
-    inline InstanceMetadataOptionsRequest& WithHttpEndpoint(const InstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
-    inline InstanceMetadataOptionsRequest& WithHttpEndpoint(InstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
+    inline void SetHttpEndpoint(InstanceMetadataEndpointState value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
+    inline InstanceMetadataOptionsRequest& WithHttpEndpoint(InstanceMetadataEndpointState value) { SetHttpEndpoint(value); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +94,10 @@ namespace Model
      * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
      * <p>Default: <code>disabled</code> </p>
      */
-    inline const InstanceMetadataProtocolState& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+    inline InstanceMetadataProtocolState GetHttpProtocolIpv6() const { return m_httpProtocolIpv6; }
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
-    inline void SetHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
-    inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
-    inline InstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { SetHttpProtocolIpv6(value); return *this;}
-    inline InstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+    inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+    inline InstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState value) { SetHttpProtocolIpv6(value); return *this;}
     ///@}
 
     ///@{
@@ -115,28 +109,26 @@ namespace Model
      * with instance tags using the instance metadata</a>.</p> <p>Default:
      * <code>disabled</code> </p>
      */
-    inline const InstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }
+    inline InstanceMetadataTagsState GetInstanceMetadataTags() const { return m_instanceMetadataTags; }
     inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }
-    inline void SetInstanceMetadataTags(const InstanceMetadataTagsState& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
-    inline void SetInstanceMetadataTags(InstanceMetadataTagsState&& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = std::move(value); }
-    inline InstanceMetadataOptionsRequest& WithInstanceMetadataTags(const InstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
-    inline InstanceMetadataOptionsRequest& WithInstanceMetadataTags(InstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
+    inline void SetInstanceMetadataTags(InstanceMetadataTagsState value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
+    inline InstanceMetadataOptionsRequest& WithInstanceMetadataTags(InstanceMetadataTagsState value) { SetInstanceMetadataTags(value); return *this;}
     ///@}
   private:
 
-    HttpTokensState m_httpTokens;
+    HttpTokensState m_httpTokens{HttpTokensState::NOT_SET};
     bool m_httpTokensHasBeenSet = false;
 
-    int m_httpPutResponseHopLimit;
+    int m_httpPutResponseHopLimit{0};
     bool m_httpPutResponseHopLimitHasBeenSet = false;
 
-    InstanceMetadataEndpointState m_httpEndpoint;
+    InstanceMetadataEndpointState m_httpEndpoint{InstanceMetadataEndpointState::NOT_SET};
     bool m_httpEndpointHasBeenSet = false;
 
-    InstanceMetadataProtocolState m_httpProtocolIpv6;
+    InstanceMetadataProtocolState m_httpProtocolIpv6{InstanceMetadataProtocolState::NOT_SET};
     bool m_httpProtocolIpv6HasBeenSet = false;
 
-    InstanceMetadataTagsState m_instanceMetadataTags;
+    InstanceMetadataTagsState m_instanceMetadataTags{InstanceMetadataTagsState::NOT_SET};
     bool m_instanceMetadataTagsHasBeenSet = false;
   };
 

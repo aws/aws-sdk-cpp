@@ -12,19 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListExecutionsRequest::ListExecutionsRequest() : 
-    m_stateMachineArnHasBeenSet(false),
-    m_statusFilter(ExecutionStatus::NOT_SET),
-    m_statusFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_mapRunArnHasBeenSet(false),
-    m_redriveFilter(ExecutionRedriveFilter::NOT_SET),
-    m_redriveFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

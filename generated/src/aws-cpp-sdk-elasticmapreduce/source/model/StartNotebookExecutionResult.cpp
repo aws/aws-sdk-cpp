@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartNotebookExecutionResult::StartNotebookExecutionResult()
-{
-}
-
 StartNotebookExecutionResult::StartNotebookExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartNotebookExecutionResult& StartNotebookExecutionResult::operator =(const Aws
   if(jsonValue.ValueExists("NotebookExecutionId"))
   {
     m_notebookExecutionId = jsonValue.GetString("NotebookExecutionId");
-
+    m_notebookExecutionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

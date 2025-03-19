@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RedshiftSource::RedshiftSource() : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_redshiftTmpDirHasBeenSet(false),
-    m_tmpDirIAMRoleHasBeenSet(false)
-{
-}
-
 RedshiftSource::RedshiftSource(JsonView jsonValue)
-  : RedshiftSource()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RedshiftSource& RedshiftSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftTmpDir"))
   {
     m_redshiftTmpDir = jsonValue.GetString("RedshiftTmpDir");
-
     m_redshiftTmpDirHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TmpDirIAMRole"))
   {
     m_tmpDirIAMRole = jsonValue.GetString("TmpDirIAMRole");
-
     m_tmpDirIAMRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

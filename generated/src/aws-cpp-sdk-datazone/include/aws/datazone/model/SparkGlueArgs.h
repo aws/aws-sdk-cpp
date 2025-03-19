@@ -31,7 +31,7 @@ namespace Model
   class SparkGlueArgs
   {
   public:
-    AWS_DATAZONE_API SparkGlueArgs();
+    AWS_DATAZONE_API SparkGlueArgs() = default;
     AWS_DATAZONE_API SparkGlueArgs(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SparkGlueArgs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The connection in the Spark Amazon Web Services Glue args.</p>
      */
-    inline const Aws::String& GetConnection() const{ return m_connection; }
+    inline const Aws::String& GetConnection() const { return m_connection; }
     inline bool ConnectionHasBeenSet() const { return m_connectionHasBeenSet; }
-    inline void SetConnection(const Aws::String& value) { m_connectionHasBeenSet = true; m_connection = value; }
-    inline void SetConnection(Aws::String&& value) { m_connectionHasBeenSet = true; m_connection = std::move(value); }
-    inline void SetConnection(const char* value) { m_connectionHasBeenSet = true; m_connection.assign(value); }
-    inline SparkGlueArgs& WithConnection(const Aws::String& value) { SetConnection(value); return *this;}
-    inline SparkGlueArgs& WithConnection(Aws::String&& value) { SetConnection(std::move(value)); return *this;}
-    inline SparkGlueArgs& WithConnection(const char* value) { SetConnection(value); return *this;}
+    template<typename ConnectionT = Aws::String>
+    void SetConnection(ConnectionT&& value) { m_connectionHasBeenSet = true; m_connection = std::forward<ConnectionT>(value); }
+    template<typename ConnectionT = Aws::String>
+    SparkGlueArgs& WithConnection(ConnectionT&& value) { SetConnection(std::forward<ConnectionT>(value)); return *this;}
     ///@}
   private:
 

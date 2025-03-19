@@ -24,7 +24,7 @@ namespace Model
   class CreateConfigurationProfileRequest : public AppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API CreateConfigurationProfileRequest();
+    AWS_APPCONFIG_API CreateConfigurationProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
     /**
      * <p>The application ID.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateConfigurationProfileRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateConfigurationProfileRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the configuration profile.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateConfigurationProfileRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConfigurationProfileRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the configuration profile.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateConfigurationProfileRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateConfigurationProfileRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
      * (ARN).</p> </li> </ul>
      */
-    inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
+    inline const Aws::String& GetLocationUri() const { return m_locationUri; }
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
-    inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
-    inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
-    inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
-    inline CreateConfigurationProfileRequest& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
+    template<typename LocationUriT = Aws::String>
+    void SetLocationUri(LocationUriT&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::forward<LocationUriT>(value); }
+    template<typename LocationUriT = Aws::String>
+    CreateConfigurationProfileRequest& WithLocationUri(LocationUriT&& value) { SetLocationUri(std::forward<LocationUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +105,26 @@ namespace Model
      * store. It is required for all other sources that store your configuration. </p>
      * 
      */
-    inline const Aws::String& GetRetrievalRoleArn() const{ return m_retrievalRoleArn; }
+    inline const Aws::String& GetRetrievalRoleArn() const { return m_retrievalRoleArn; }
     inline bool RetrievalRoleArnHasBeenSet() const { return m_retrievalRoleArnHasBeenSet; }
-    inline void SetRetrievalRoleArn(const Aws::String& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = value; }
-    inline void SetRetrievalRoleArn(Aws::String&& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = std::move(value); }
-    inline void SetRetrievalRoleArn(const char* value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn.assign(value); }
-    inline CreateConfigurationProfileRequest& WithRetrievalRoleArn(const Aws::String& value) { SetRetrievalRoleArn(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithRetrievalRoleArn(Aws::String&& value) { SetRetrievalRoleArn(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithRetrievalRoleArn(const char* value) { SetRetrievalRoleArn(value); return *this;}
+    template<typename RetrievalRoleArnT = Aws::String>
+    void SetRetrievalRoleArn(RetrievalRoleArnT&& value) { m_retrievalRoleArnHasBeenSet = true; m_retrievalRoleArn = std::forward<RetrievalRoleArnT>(value); }
+    template<typename RetrievalRoleArnT = Aws::String>
+    CreateConfigurationProfileRequest& WithRetrievalRoleArn(RetrievalRoleArnT&& value) { SetRetrievalRoleArn(std::forward<RetrievalRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of methods for validating the configuration.</p>
      */
-    inline const Aws::Vector<Validator>& GetValidators() const{ return m_validators; }
+    inline const Aws::Vector<Validator>& GetValidators() const { return m_validators; }
     inline bool ValidatorsHasBeenSet() const { return m_validatorsHasBeenSet; }
-    inline void SetValidators(const Aws::Vector<Validator>& value) { m_validatorsHasBeenSet = true; m_validators = value; }
-    inline void SetValidators(Aws::Vector<Validator>&& value) { m_validatorsHasBeenSet = true; m_validators = std::move(value); }
-    inline CreateConfigurationProfileRequest& WithValidators(const Aws::Vector<Validator>& value) { SetValidators(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithValidators(Aws::Vector<Validator>&& value) { SetValidators(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& AddValidators(const Validator& value) { m_validatorsHasBeenSet = true; m_validators.push_back(value); return *this; }
-    inline CreateConfigurationProfileRequest& AddValidators(Validator&& value) { m_validatorsHasBeenSet = true; m_validators.push_back(std::move(value)); return *this; }
+    template<typename ValidatorsT = Aws::Vector<Validator>>
+    void SetValidators(ValidatorsT&& value) { m_validatorsHasBeenSet = true; m_validators = std::forward<ValidatorsT>(value); }
+    template<typename ValidatorsT = Aws::Vector<Validator>>
+    CreateConfigurationProfileRequest& WithValidators(ValidatorsT&& value) { SetValidators(std::forward<ValidatorsT>(value)); return *this;}
+    template<typename ValidatorsT = Validator>
+    CreateConfigurationProfileRequest& AddValidators(ValidatorsT&& value) { m_validatorsHasBeenSet = true; m_validators.emplace_back(std::forward<ValidatorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -143,19 +133,16 @@ namespace Model
      * categorize your AppConfig resources. Each tag consists of a key and an optional
      * value, both of which you define.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateConfigurationProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateConfigurationProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConfigurationProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConfigurationProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateConfigurationProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConfigurationProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConfigurationProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateConfigurationProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateConfigurationProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -168,14 +155,12 @@ namespace Model
      * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
      * <code>AWS.Freeform</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline CreateConfigurationProfileRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    CreateConfigurationProfileRequest& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,14 +172,12 @@ namespace Model
      * encrypt data managed in other configuration stores, see the documentation for
      * how to specify an KMS key for that particular service.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
-    inline CreateConfigurationProfileRequest& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline CreateConfigurationProfileRequest& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline CreateConfigurationProfileRequest& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    CreateConfigurationProfileRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
   private:
 

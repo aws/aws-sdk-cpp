@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBucketMetricsConfigurationsResult::ListBucketMetricsConfigurationsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListBucketMetricsConfigurationsResult::ListBucketMetricsConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListBucketMetricsConfigurationsResult()
 {
   *this = result;
 }
@@ -38,27 +32,32 @@ ListBucketMetricsConfigurationsResult& ListBucketMetricsConfigurationsResult::op
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
       m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
+      m_continuationTokenHasBeenSet = true;
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
       m_nextContinuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextContinuationTokenNode.GetText());
+      m_nextContinuationTokenHasBeenSet = true;
     }
     XmlNode metricsConfigurationListNode = resultNode.FirstChild("MetricsConfiguration");
     if(!metricsConfigurationListNode.IsNull())
     {
       XmlNode metricsConfigurationMember = metricsConfigurationListNode;
+      m_metricsConfigurationListHasBeenSet = !metricsConfigurationMember.IsNull();
       while(!metricsConfigurationMember.IsNull())
       {
         m_metricsConfigurationList.push_back(metricsConfigurationMember);
         metricsConfigurationMember = metricsConfigurationMember.NextNode("MetricsConfiguration");
       }
 
+      m_metricsConfigurationListHasBeenSet = true;
     }
   }
 
@@ -67,6 +66,7 @@ ListBucketMetricsConfigurationsResult& ListBucketMetricsConfigurationsResult::op
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

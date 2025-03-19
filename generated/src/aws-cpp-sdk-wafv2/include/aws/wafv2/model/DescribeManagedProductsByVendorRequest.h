@@ -22,7 +22,7 @@ namespace Model
   class DescribeManagedProductsByVendorRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API DescribeManagedProductsByVendorRequest();
+    AWS_WAFV2_API DescribeManagedProductsByVendorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The name of the managed rule group vendor. You use this, along with the rule
      * group name, to identify a rule group.</p>
      */
-    inline const Aws::String& GetVendorName() const{ return m_vendorName; }
+    inline const Aws::String& GetVendorName() const { return m_vendorName; }
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
-    inline void SetVendorName(const Aws::String& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
-    inline void SetVendorName(Aws::String&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
-    inline void SetVendorName(const char* value) { m_vendorNameHasBeenSet = true; m_vendorName.assign(value); }
-    inline DescribeManagedProductsByVendorRequest& WithVendorName(const Aws::String& value) { SetVendorName(value); return *this;}
-    inline DescribeManagedProductsByVendorRequest& WithVendorName(Aws::String&& value) { SetVendorName(std::move(value)); return *this;}
-    inline DescribeManagedProductsByVendorRequest& WithVendorName(const char* value) { SetVendorName(value); return *this;}
+    template<typename VendorNameT = Aws::String>
+    void SetVendorName(VendorNameT&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::forward<VendorNameT>(value); }
+    template<typename VendorNameT = Aws::String>
+    DescribeManagedProductsByVendorRequest& WithVendorName(VendorNameT&& value) { SetVendorName(std::forward<VendorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline DescribeManagedProductsByVendorRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline DescribeManagedProductsByVendorRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline DescribeManagedProductsByVendorRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
   private:
 
     Aws::String m_vendorName;
     bool m_vendorNameHasBeenSet = false;
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
   };
 

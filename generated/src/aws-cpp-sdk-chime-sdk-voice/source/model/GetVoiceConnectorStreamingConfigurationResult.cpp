@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVoiceConnectorStreamingConfigurationResult::GetVoiceConnectorStreamingConfigurationResult()
-{
-}
-
 GetVoiceConnectorStreamingConfigurationResult::GetVoiceConnectorStreamingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVoiceConnectorStreamingConfigurationResult& GetVoiceConnectorStreamingConfigu
   if(jsonValue.ValueExists("StreamingConfiguration"))
   {
     m_streamingConfiguration = jsonValue.GetObject("StreamingConfiguration");
-
+    m_streamingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

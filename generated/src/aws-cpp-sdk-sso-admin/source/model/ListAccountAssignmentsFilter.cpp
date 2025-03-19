@@ -18,13 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ListAccountAssignmentsFilter::ListAccountAssignmentsFilter() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 ListAccountAssignmentsFilter::ListAccountAssignmentsFilter(JsonView jsonValue)
-  : ListAccountAssignmentsFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListAccountAssignmentsFilter& ListAccountAssignmentsFilter::operator =(JsonView 
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

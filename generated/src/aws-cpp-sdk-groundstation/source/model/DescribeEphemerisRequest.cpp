@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEphemerisRequest::DescribeEphemerisRequest() : 
-    m_ephemerisIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEphemerisRequest::SerializePayload() const
 {
   return {};

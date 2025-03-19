@@ -37,7 +37,7 @@ namespace Model
   class BlueGreenUpdatePolicy
   {
   public:
-    AWS_SAGEMAKER_API BlueGreenUpdatePolicy();
+    AWS_SAGEMAKER_API BlueGreenUpdatePolicy() = default;
     AWS_SAGEMAKER_API BlueGreenUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API BlueGreenUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * <p>Defines the traffic routing strategy to shift traffic from the old fleet to
      * the new fleet during an endpoint deployment.</p>
      */
-    inline const TrafficRoutingConfig& GetTrafficRoutingConfiguration() const{ return m_trafficRoutingConfiguration; }
+    inline const TrafficRoutingConfig& GetTrafficRoutingConfiguration() const { return m_trafficRoutingConfiguration; }
     inline bool TrafficRoutingConfigurationHasBeenSet() const { return m_trafficRoutingConfigurationHasBeenSet; }
-    inline void SetTrafficRoutingConfiguration(const TrafficRoutingConfig& value) { m_trafficRoutingConfigurationHasBeenSet = true; m_trafficRoutingConfiguration = value; }
-    inline void SetTrafficRoutingConfiguration(TrafficRoutingConfig&& value) { m_trafficRoutingConfigurationHasBeenSet = true; m_trafficRoutingConfiguration = std::move(value); }
-    inline BlueGreenUpdatePolicy& WithTrafficRoutingConfiguration(const TrafficRoutingConfig& value) { SetTrafficRoutingConfiguration(value); return *this;}
-    inline BlueGreenUpdatePolicy& WithTrafficRoutingConfiguration(TrafficRoutingConfig&& value) { SetTrafficRoutingConfiguration(std::move(value)); return *this;}
+    template<typename TrafficRoutingConfigurationT = TrafficRoutingConfig>
+    void SetTrafficRoutingConfiguration(TrafficRoutingConfigurationT&& value) { m_trafficRoutingConfigurationHasBeenSet = true; m_trafficRoutingConfiguration = std::forward<TrafficRoutingConfigurationT>(value); }
+    template<typename TrafficRoutingConfigurationT = TrafficRoutingConfig>
+    BlueGreenUpdatePolicy& WithTrafficRoutingConfiguration(TrafficRoutingConfigurationT&& value) { SetTrafficRoutingConfiguration(std::forward<TrafficRoutingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +61,7 @@ namespace Model
      * <p>Additional waiting time in seconds after the completion of an endpoint
      * deployment before terminating the old endpoint fleet. Default is 0.</p>
      */
-    inline int GetTerminationWaitInSeconds() const{ return m_terminationWaitInSeconds; }
+    inline int GetTerminationWaitInSeconds() const { return m_terminationWaitInSeconds; }
     inline bool TerminationWaitInSecondsHasBeenSet() const { return m_terminationWaitInSecondsHasBeenSet; }
     inline void SetTerminationWaitInSeconds(int value) { m_terminationWaitInSecondsHasBeenSet = true; m_terminationWaitInSeconds = value; }
     inline BlueGreenUpdatePolicy& WithTerminationWaitInSeconds(int value) { SetTerminationWaitInSeconds(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
      * <code>TerminationWaitInSeconds</code> and
      * <code>WaitIntervalInSeconds</code>.</p>
      */
-    inline int GetMaximumExecutionTimeoutInSeconds() const{ return m_maximumExecutionTimeoutInSeconds; }
+    inline int GetMaximumExecutionTimeoutInSeconds() const { return m_maximumExecutionTimeoutInSeconds; }
     inline bool MaximumExecutionTimeoutInSecondsHasBeenSet() const { return m_maximumExecutionTimeoutInSecondsHasBeenSet; }
     inline void SetMaximumExecutionTimeoutInSeconds(int value) { m_maximumExecutionTimeoutInSecondsHasBeenSet = true; m_maximumExecutionTimeoutInSeconds = value; }
     inline BlueGreenUpdatePolicy& WithMaximumExecutionTimeoutInSeconds(int value) { SetMaximumExecutionTimeoutInSeconds(value); return *this;}
@@ -84,10 +84,10 @@ namespace Model
     TrafficRoutingConfig m_trafficRoutingConfiguration;
     bool m_trafficRoutingConfigurationHasBeenSet = false;
 
-    int m_terminationWaitInSeconds;
+    int m_terminationWaitInSeconds{0};
     bool m_terminationWaitInSecondsHasBeenSet = false;
 
-    int m_maximumExecutionTimeoutInSeconds;
+    int m_maximumExecutionTimeoutInSeconds{0};
     bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
   };
 

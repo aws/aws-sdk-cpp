@@ -18,18 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-HttpInstanceSummary::HttpInstanceSummary() : 
-    m_instanceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 HttpInstanceSummary::HttpInstanceSummary(JsonView jsonValue)
-  : HttpInstanceSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ HttpInstanceSummary& HttpInstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamespaceName"))
   {
     m_namespaceName = jsonValue.GetString("NamespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthStatus"))
   {
     m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("HealthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -73,7 +54,6 @@ HttpInstanceSummary& HttpInstanceSummary::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

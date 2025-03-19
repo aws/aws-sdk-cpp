@@ -21,7 +21,7 @@ namespace Model
   class DeleteQualificationTypeRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API DeleteQualificationTypeRequest();
+    AWS_MTURK_API DeleteQualificationTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the QualificationType to dispose.</p>
      */
-    inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
+    inline const Aws::String& GetQualificationTypeId() const { return m_qualificationTypeId; }
     inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
-    inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
-    inline void SetQualificationTypeId(const char* value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId.assign(value); }
-    inline DeleteQualificationTypeRequest& WithQualificationTypeId(const Aws::String& value) { SetQualificationTypeId(value); return *this;}
-    inline DeleteQualificationTypeRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
-    inline DeleteQualificationTypeRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+    template<typename QualificationTypeIdT = Aws::String>
+    void SetQualificationTypeId(QualificationTypeIdT&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::forward<QualificationTypeIdT>(value); }
+    template<typename QualificationTypeIdT = Aws::String>
+    DeleteQualificationTypeRequest& WithQualificationTypeId(QualificationTypeIdT&& value) { SetQualificationTypeId(std::forward<QualificationTypeIdT>(value)); return *this;}
     ///@}
   private:
 

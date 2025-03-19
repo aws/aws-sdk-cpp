@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentClassificationTestResultItem::IntentClassificationTestResultItem() : 
-    m_intentNameHasBeenSet(false),
-    m_multiTurnConversation(false),
-    m_multiTurnConversationHasBeenSet(false),
-    m_resultCountsHasBeenSet(false)
-{
-}
-
 IntentClassificationTestResultItem::IntentClassificationTestResultItem(JsonView jsonValue)
-  : IntentClassificationTestResultItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ IntentClassificationTestResultItem& IntentClassificationTestResultItem::operator
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiTurnConversation"))
   {
     m_multiTurnConversation = jsonValue.GetBool("multiTurnConversation");
-
     m_multiTurnConversationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultCounts"))
   {
     m_resultCounts = jsonValue.GetObject("resultCounts");
-
     m_resultCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

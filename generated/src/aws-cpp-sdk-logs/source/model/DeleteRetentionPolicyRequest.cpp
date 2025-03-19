@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRetentionPolicyRequest::DeleteRetentionPolicyRequest() : 
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRetentionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

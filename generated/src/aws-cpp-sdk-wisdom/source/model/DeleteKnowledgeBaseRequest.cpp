@@ -12,11 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKnowledgeBaseRequest::DeleteKnowledgeBaseRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKnowledgeBaseRequest::SerializePayload() const
 {
   return {};

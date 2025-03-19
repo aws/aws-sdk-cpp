@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixList::PrefixList() : 
-    m_cidrsHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false)
-{
-}
-
 PrefixList::PrefixList(const XmlNode& xmlNode)
-  : PrefixList()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
     if(!cidrsNode.IsNull())
     {
       XmlNode cidrsMember = cidrsNode.FirstChild("item");
+      m_cidrsHasBeenSet = !cidrsMember.IsNull();
       while(!cidrsMember.IsNull())
       {
         m_cidrs.push_back(cidrsMember.GetText());

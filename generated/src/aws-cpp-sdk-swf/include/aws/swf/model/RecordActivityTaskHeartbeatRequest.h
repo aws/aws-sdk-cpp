@@ -21,7 +21,7 @@ namespace Model
   class RecordActivityTaskHeartbeatRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API RecordActivityTaskHeartbeatRequest();
+    AWS_SWF_API RecordActivityTaskHeartbeatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results. </p> 
      */
-    inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
+    inline const Aws::String& GetTaskToken() const { return m_taskToken; }
     inline bool TaskTokenHasBeenSet() const { return m_taskTokenHasBeenSet; }
-    inline void SetTaskToken(const Aws::String& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
-    inline void SetTaskToken(const char* value) { m_taskTokenHasBeenSet = true; m_taskToken.assign(value); }
-    inline RecordActivityTaskHeartbeatRequest& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-    inline RecordActivityTaskHeartbeatRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-    inline RecordActivityTaskHeartbeatRequest& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    template<typename TaskTokenT = Aws::String>
+    void SetTaskToken(TaskTokenT&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::forward<TaskTokenT>(value); }
+    template<typename TaskTokenT = Aws::String>
+    RecordActivityTaskHeartbeatRequest& WithTaskToken(TaskTokenT&& value) { SetTaskToken(std::forward<TaskTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If specified, contains details about the progress of the task.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline RecordActivityTaskHeartbeatRequest& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline RecordActivityTaskHeartbeatRequest& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline RecordActivityTaskHeartbeatRequest& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    RecordActivityTaskHeartbeatRequest& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

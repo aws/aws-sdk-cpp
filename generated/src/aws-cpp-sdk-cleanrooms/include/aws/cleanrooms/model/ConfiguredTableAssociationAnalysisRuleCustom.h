@@ -33,7 +33,7 @@ namespace Model
   class ConfiguredTableAssociationAnalysisRuleCustom
   {
   public:
-    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRuleCustom();
+    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRuleCustom() = default;
     AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRuleCustom(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRuleCustom& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p> The list of collaboration members who are allowed to receive results of
      * queries run with this configured table.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedResultReceivers() const{ return m_allowedResultReceivers; }
+    inline const Aws::Vector<Aws::String>& GetAllowedResultReceivers() const { return m_allowedResultReceivers; }
     inline bool AllowedResultReceiversHasBeenSet() const { return m_allowedResultReceiversHasBeenSet; }
-    inline void SetAllowedResultReceivers(const Aws::Vector<Aws::String>& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers = value; }
-    inline void SetAllowedResultReceivers(Aws::Vector<Aws::String>&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers = std::move(value); }
-    inline ConfiguredTableAssociationAnalysisRuleCustom& WithAllowedResultReceivers(const Aws::Vector<Aws::String>& value) { SetAllowedResultReceivers(value); return *this;}
-    inline ConfiguredTableAssociationAnalysisRuleCustom& WithAllowedResultReceivers(Aws::Vector<Aws::String>&& value) { SetAllowedResultReceivers(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedResultReceivers(const Aws::String& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.push_back(value); return *this; }
-    inline ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedResultReceivers(Aws::String&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.push_back(std::move(value)); return *this; }
-    inline ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedResultReceivers(const char* value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.push_back(value); return *this; }
+    template<typename AllowedResultReceiversT = Aws::Vector<Aws::String>>
+    void SetAllowedResultReceivers(AllowedResultReceiversT&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers = std::forward<AllowedResultReceiversT>(value); }
+    template<typename AllowedResultReceiversT = Aws::Vector<Aws::String>>
+    ConfiguredTableAssociationAnalysisRuleCustom& WithAllowedResultReceivers(AllowedResultReceiversT&& value) { SetAllowedResultReceivers(std::forward<AllowedResultReceiversT>(value)); return *this;}
+    template<typename AllowedResultReceiversT = Aws::String>
+    ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedResultReceivers(AllowedResultReceiversT&& value) { m_allowedResultReceiversHasBeenSet = true; m_allowedResultReceivers.emplace_back(std::forward<AllowedResultReceiversT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p> The list of resources or wildcards (ARNs) that are allowed to perform
      * additional analysis on query output.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedAdditionalAnalyses() const{ return m_allowedAdditionalAnalyses; }
+    inline const Aws::Vector<Aws::String>& GetAllowedAdditionalAnalyses() const { return m_allowedAdditionalAnalyses; }
     inline bool AllowedAdditionalAnalysesHasBeenSet() const { return m_allowedAdditionalAnalysesHasBeenSet; }
-    inline void SetAllowedAdditionalAnalyses(const Aws::Vector<Aws::String>& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses = value; }
-    inline void SetAllowedAdditionalAnalyses(Aws::Vector<Aws::String>&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses = std::move(value); }
-    inline ConfiguredTableAssociationAnalysisRuleCustom& WithAllowedAdditionalAnalyses(const Aws::Vector<Aws::String>& value) { SetAllowedAdditionalAnalyses(value); return *this;}
-    inline ConfiguredTableAssociationAnalysisRuleCustom& WithAllowedAdditionalAnalyses(Aws::Vector<Aws::String>&& value) { SetAllowedAdditionalAnalyses(std::move(value)); return *this;}
-    inline ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedAdditionalAnalyses(const Aws::String& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.push_back(value); return *this; }
-    inline ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedAdditionalAnalyses(Aws::String&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.push_back(std::move(value)); return *this; }
-    inline ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedAdditionalAnalyses(const char* value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.push_back(value); return *this; }
+    template<typename AllowedAdditionalAnalysesT = Aws::Vector<Aws::String>>
+    void SetAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses = std::forward<AllowedAdditionalAnalysesT>(value); }
+    template<typename AllowedAdditionalAnalysesT = Aws::Vector<Aws::String>>
+    ConfiguredTableAssociationAnalysisRuleCustom& WithAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) { SetAllowedAdditionalAnalyses(std::forward<AllowedAdditionalAnalysesT>(value)); return *this;}
+    template<typename AllowedAdditionalAnalysesT = Aws::String>
+    ConfiguredTableAssociationAnalysisRuleCustom& AddAllowedAdditionalAnalyses(AllowedAdditionalAnalysesT&& value) { m_allowedAdditionalAnalysesHasBeenSet = true; m_allowedAdditionalAnalyses.emplace_back(std::forward<AllowedAdditionalAnalysesT>(value)); return *this; }
     ///@}
   private:
 

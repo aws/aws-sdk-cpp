@@ -12,20 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelsRequest::ListModelsRequest() : 
-    m_sortBy(ModelSortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(OrderKey::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false)
-{
-}
-
 Aws::String ListModelsRequest::SerializePayload() const
 {
   JsonValue payload;

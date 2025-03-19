@@ -31,7 +31,7 @@ namespace Model
   class HistoricalMetricData
   {
   public:
-    AWS_CONNECT_API HistoricalMetricData();
+    AWS_CONNECT_API HistoricalMetricData() = default;
     AWS_CONNECT_API HistoricalMetricData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HistoricalMetricData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>Information about the metric.</p>
      */
-    inline const HistoricalMetric& GetMetric() const{ return m_metric; }
+    inline const HistoricalMetric& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const HistoricalMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(HistoricalMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline HistoricalMetricData& WithMetric(const HistoricalMetric& value) { SetMetric(value); return *this;}
-    inline HistoricalMetricData& WithMetric(HistoricalMetric&& value) { SetMetric(std::move(value)); return *this;}
+    template<typename MetricT = HistoricalMetric>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = HistoricalMetric>
+    HistoricalMetricData& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the metric.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline HistoricalMetricData& WithValue(double value) { SetValue(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     HistoricalMetric m_metric;
     bool m_metricHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

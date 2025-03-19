@@ -18,13 +18,7 @@ namespace XRay
 namespace Model
 {
 
-IndexingRuleValueUpdate::IndexingRuleValueUpdate() : 
-    m_probabilisticHasBeenSet(false)
-{
-}
-
 IndexingRuleValueUpdate::IndexingRuleValueUpdate(JsonView jsonValue)
-  : IndexingRuleValueUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IndexingRuleValueUpdate& IndexingRuleValueUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Probabilistic"))
   {
     m_probabilistic = jsonValue.GetObject("Probabilistic");
-
     m_probabilisticHasBeenSet = true;
   }
-
   return *this;
 }
 

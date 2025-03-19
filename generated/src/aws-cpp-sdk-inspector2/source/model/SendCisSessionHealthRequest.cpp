@@ -12,12 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendCisSessionHealthRequest::SendCisSessionHealthRequest() : 
-    m_scanJobIdHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
-{
-}
-
 Aws::String SendCisSessionHealthRequest::SerializePayload() const
 {
   JsonValue payload;

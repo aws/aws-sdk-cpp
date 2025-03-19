@@ -18,17 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-FirewallConfig::FirewallConfig() : 
-    m_idHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_firewallFailOpen(FirewallFailOpenStatus::NOT_SET),
-    m_firewallFailOpenHasBeenSet(false)
-{
-}
-
 FirewallConfig::FirewallConfig(JsonView jsonValue)
-  : FirewallConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ FirewallConfig& FirewallConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallFailOpen"))
   {
     m_firewallFailOpen = FirewallFailOpenStatusMapper::GetFirewallFailOpenStatusForName(jsonValue.GetString("FirewallFailOpen"));
-
     m_firewallFailOpenHasBeenSet = true;
   }
-
   return *this;
 }
 

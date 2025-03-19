@@ -32,7 +32,7 @@ namespace Model
   class MongoDbAtlasFieldMapping
   {
   public:
-    AWS_BEDROCKAGENT_API MongoDbAtlasFieldMapping();
+    AWS_BEDROCKAGENT_API MongoDbAtlasFieldMapping() = default;
     AWS_BEDROCKAGENT_API MongoDbAtlasFieldMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API MongoDbAtlasFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores metadata about the
      * vector store.</p>
      */
-    inline const Aws::String& GetMetadataField() const{ return m_metadataField; }
+    inline const Aws::String& GetMetadataField() const { return m_metadataField; }
     inline bool MetadataFieldHasBeenSet() const { return m_metadataFieldHasBeenSet; }
-    inline void SetMetadataField(const Aws::String& value) { m_metadataFieldHasBeenSet = true; m_metadataField = value; }
-    inline void SetMetadataField(Aws::String&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::move(value); }
-    inline void SetMetadataField(const char* value) { m_metadataFieldHasBeenSet = true; m_metadataField.assign(value); }
-    inline MongoDbAtlasFieldMapping& WithMetadataField(const Aws::String& value) { SetMetadataField(value); return *this;}
-    inline MongoDbAtlasFieldMapping& WithMetadataField(Aws::String&& value) { SetMetadataField(std::move(value)); return *this;}
-    inline MongoDbAtlasFieldMapping& WithMetadataField(const char* value) { SetMetadataField(value); return *this;}
+    template<typename MetadataFieldT = Aws::String>
+    void SetMetadataField(MetadataFieldT&& value) { m_metadataFieldHasBeenSet = true; m_metadataField = std::forward<MetadataFieldT>(value); }
+    template<typename MetadataFieldT = Aws::String>
+    MongoDbAtlasFieldMapping& WithMetadataField(MetadataFieldT&& value) { SetMetadataField(std::forward<MetadataFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores the raw text from your
      * data. The text is split according to the chunking strategy you choose.</p>
      */
-    inline const Aws::String& GetTextField() const{ return m_textField; }
+    inline const Aws::String& GetTextField() const { return m_textField; }
     inline bool TextFieldHasBeenSet() const { return m_textFieldHasBeenSet; }
-    inline void SetTextField(const Aws::String& value) { m_textFieldHasBeenSet = true; m_textField = value; }
-    inline void SetTextField(Aws::String&& value) { m_textFieldHasBeenSet = true; m_textField = std::move(value); }
-    inline void SetTextField(const char* value) { m_textFieldHasBeenSet = true; m_textField.assign(value); }
-    inline MongoDbAtlasFieldMapping& WithTextField(const Aws::String& value) { SetTextField(value); return *this;}
-    inline MongoDbAtlasFieldMapping& WithTextField(Aws::String&& value) { SetTextField(std::move(value)); return *this;}
-    inline MongoDbAtlasFieldMapping& WithTextField(const char* value) { SetTextField(value); return *this;}
+    template<typename TextFieldT = Aws::String>
+    void SetTextField(TextFieldT&& value) { m_textFieldHasBeenSet = true; m_textField = std::forward<TextFieldT>(value); }
+    template<typename TextFieldT = Aws::String>
+    MongoDbAtlasFieldMapping& WithTextField(TextFieldT&& value) { SetTextField(std::forward<TextFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The name of the field in which Amazon Bedrock stores the vector embeddings
      * for your data sources.</p>
      */
-    inline const Aws::String& GetVectorField() const{ return m_vectorField; }
+    inline const Aws::String& GetVectorField() const { return m_vectorField; }
     inline bool VectorFieldHasBeenSet() const { return m_vectorFieldHasBeenSet; }
-    inline void SetVectorField(const Aws::String& value) { m_vectorFieldHasBeenSet = true; m_vectorField = value; }
-    inline void SetVectorField(Aws::String&& value) { m_vectorFieldHasBeenSet = true; m_vectorField = std::move(value); }
-    inline void SetVectorField(const char* value) { m_vectorFieldHasBeenSet = true; m_vectorField.assign(value); }
-    inline MongoDbAtlasFieldMapping& WithVectorField(const Aws::String& value) { SetVectorField(value); return *this;}
-    inline MongoDbAtlasFieldMapping& WithVectorField(Aws::String&& value) { SetVectorField(std::move(value)); return *this;}
-    inline MongoDbAtlasFieldMapping& WithVectorField(const char* value) { SetVectorField(value); return *this;}
+    template<typename VectorFieldT = Aws::String>
+    void SetVectorField(VectorFieldT&& value) { m_vectorFieldHasBeenSet = true; m_vectorField = std::forward<VectorFieldT>(value); }
+    template<typename VectorFieldT = Aws::String>
+    MongoDbAtlasFieldMapping& WithVectorField(VectorFieldT&& value) { SetVectorField(std::forward<VectorFieldT>(value)); return *this;}
     ///@}
   private:
 

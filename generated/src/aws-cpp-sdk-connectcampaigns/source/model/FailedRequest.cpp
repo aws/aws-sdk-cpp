@@ -18,16 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-FailedRequest::FailedRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_failureCode(FailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 FailedRequest::FailedRequest(JsonView jsonValue)
-  : FailedRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedRequest& FailedRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

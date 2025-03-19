@@ -33,7 +33,7 @@ namespace Model
   class Page
   {
   public:
-    AWS_SSMCONTACTS_API Page();
+    AWS_SSMCONTACTS_API Page() = default;
     AWS_SSMCONTACTS_API Page(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Page& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,106 +43,96 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
      */
-    inline const Aws::String& GetPageArn() const{ return m_pageArn; }
+    inline const Aws::String& GetPageArn() const { return m_pageArn; }
     inline bool PageArnHasBeenSet() const { return m_pageArnHasBeenSet; }
-    inline void SetPageArn(const Aws::String& value) { m_pageArnHasBeenSet = true; m_pageArn = value; }
-    inline void SetPageArn(Aws::String&& value) { m_pageArnHasBeenSet = true; m_pageArn = std::move(value); }
-    inline void SetPageArn(const char* value) { m_pageArnHasBeenSet = true; m_pageArn.assign(value); }
-    inline Page& WithPageArn(const Aws::String& value) { SetPageArn(value); return *this;}
-    inline Page& WithPageArn(Aws::String&& value) { SetPageArn(std::move(value)); return *this;}
-    inline Page& WithPageArn(const char* value) { SetPageArn(value); return *this;}
+    template<typename PageArnT = Aws::String>
+    void SetPageArn(PageArnT&& value) { m_pageArnHasBeenSet = true; m_pageArn = std::forward<PageArnT>(value); }
+    template<typename PageArnT = Aws::String>
+    Page& WithPageArn(PageArnT&& value) { SetPageArn(std::forward<PageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the engagement that this page is part of.</p>
      */
-    inline const Aws::String& GetEngagementArn() const{ return m_engagementArn; }
+    inline const Aws::String& GetEngagementArn() const { return m_engagementArn; }
     inline bool EngagementArnHasBeenSet() const { return m_engagementArnHasBeenSet; }
-    inline void SetEngagementArn(const Aws::String& value) { m_engagementArnHasBeenSet = true; m_engagementArn = value; }
-    inline void SetEngagementArn(Aws::String&& value) { m_engagementArnHasBeenSet = true; m_engagementArn = std::move(value); }
-    inline void SetEngagementArn(const char* value) { m_engagementArnHasBeenSet = true; m_engagementArn.assign(value); }
-    inline Page& WithEngagementArn(const Aws::String& value) { SetEngagementArn(value); return *this;}
-    inline Page& WithEngagementArn(Aws::String&& value) { SetEngagementArn(std::move(value)); return *this;}
-    inline Page& WithEngagementArn(const char* value) { SetEngagementArn(value); return *this;}
+    template<typename EngagementArnT = Aws::String>
+    void SetEngagementArn(EngagementArnT&& value) { m_engagementArnHasBeenSet = true; m_engagementArn = std::forward<EngagementArnT>(value); }
+    template<typename EngagementArnT = Aws::String>
+    Page& WithEngagementArn(EngagementArnT&& value) { SetEngagementArn(std::forward<EngagementArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the contact that Incident Manager is engaging.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline Page& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline Page& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline Page& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    Page& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user that started the engagement.</p>
      */
-    inline const Aws::String& GetSender() const{ return m_sender; }
+    inline const Aws::String& GetSender() const { return m_sender; }
     inline bool SenderHasBeenSet() const { return m_senderHasBeenSet; }
-    inline void SetSender(const Aws::String& value) { m_senderHasBeenSet = true; m_sender = value; }
-    inline void SetSender(Aws::String&& value) { m_senderHasBeenSet = true; m_sender = std::move(value); }
-    inline void SetSender(const char* value) { m_senderHasBeenSet = true; m_sender.assign(value); }
-    inline Page& WithSender(const Aws::String& value) { SetSender(value); return *this;}
-    inline Page& WithSender(Aws::String&& value) { SetSender(std::move(value)); return *this;}
-    inline Page& WithSender(const char* value) { SetSender(value); return *this;}
+    template<typename SenderT = Aws::String>
+    void SetSender(SenderT&& value) { m_senderHasBeenSet = true; m_sender = std::forward<SenderT>(value); }
+    template<typename SenderT = Aws::String>
+    Page& WithSender(SenderT&& value) { SetSender(std::forward<SenderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the incident that's engaging the contact channel.</p>
      */
-    inline const Aws::String& GetIncidentId() const{ return m_incidentId; }
+    inline const Aws::String& GetIncidentId() const { return m_incidentId; }
     inline bool IncidentIdHasBeenSet() const { return m_incidentIdHasBeenSet; }
-    inline void SetIncidentId(const Aws::String& value) { m_incidentIdHasBeenSet = true; m_incidentId = value; }
-    inline void SetIncidentId(Aws::String&& value) { m_incidentIdHasBeenSet = true; m_incidentId = std::move(value); }
-    inline void SetIncidentId(const char* value) { m_incidentIdHasBeenSet = true; m_incidentId.assign(value); }
-    inline Page& WithIncidentId(const Aws::String& value) { SetIncidentId(value); return *this;}
-    inline Page& WithIncidentId(Aws::String&& value) { SetIncidentId(std::move(value)); return *this;}
-    inline Page& WithIncidentId(const char* value) { SetIncidentId(value); return *this;}
+    template<typename IncidentIdT = Aws::String>
+    void SetIncidentId(IncidentIdT&& value) { m_incidentIdHasBeenSet = true; m_incidentId = std::forward<IncidentIdT>(value); }
+    template<typename IncidentIdT = Aws::String>
+    Page& WithIncidentId(IncidentIdT&& value) { SetIncidentId(std::forward<IncidentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that Incident Manager engaged the contact channel.</p>
      */
-    inline const Aws::Utils::DateTime& GetSentTime() const{ return m_sentTime; }
+    inline const Aws::Utils::DateTime& GetSentTime() const { return m_sentTime; }
     inline bool SentTimeHasBeenSet() const { return m_sentTimeHasBeenSet; }
-    inline void SetSentTime(const Aws::Utils::DateTime& value) { m_sentTimeHasBeenSet = true; m_sentTime = value; }
-    inline void SetSentTime(Aws::Utils::DateTime&& value) { m_sentTimeHasBeenSet = true; m_sentTime = std::move(value); }
-    inline Page& WithSentTime(const Aws::Utils::DateTime& value) { SetSentTime(value); return *this;}
-    inline Page& WithSentTime(Aws::Utils::DateTime&& value) { SetSentTime(std::move(value)); return *this;}
+    template<typename SentTimeT = Aws::Utils::DateTime>
+    void SetSentTime(SentTimeT&& value) { m_sentTimeHasBeenSet = true; m_sentTime = std::forward<SentTimeT>(value); }
+    template<typename SentTimeT = Aws::Utils::DateTime>
+    Page& WithSentTime(SentTimeT&& value) { SetSentTime(std::forward<SentTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the message was delivered to the contact channel.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeliveryTime() const{ return m_deliveryTime; }
+    inline const Aws::Utils::DateTime& GetDeliveryTime() const { return m_deliveryTime; }
     inline bool DeliveryTimeHasBeenSet() const { return m_deliveryTimeHasBeenSet; }
-    inline void SetDeliveryTime(const Aws::Utils::DateTime& value) { m_deliveryTimeHasBeenSet = true; m_deliveryTime = value; }
-    inline void SetDeliveryTime(Aws::Utils::DateTime&& value) { m_deliveryTimeHasBeenSet = true; m_deliveryTime = std::move(value); }
-    inline Page& WithDeliveryTime(const Aws::Utils::DateTime& value) { SetDeliveryTime(value); return *this;}
-    inline Page& WithDeliveryTime(Aws::Utils::DateTime&& value) { SetDeliveryTime(std::move(value)); return *this;}
+    template<typename DeliveryTimeT = Aws::Utils::DateTime>
+    void SetDeliveryTime(DeliveryTimeT&& value) { m_deliveryTimeHasBeenSet = true; m_deliveryTime = std::forward<DeliveryTimeT>(value); }
+    template<typename DeliveryTimeT = Aws::Utils::DateTime>
+    Page& WithDeliveryTime(DeliveryTimeT&& value) { SetDeliveryTime(std::forward<DeliveryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the contact channel acknowledged engagement.</p>
      */
-    inline const Aws::Utils::DateTime& GetReadTime() const{ return m_readTime; }
+    inline const Aws::Utils::DateTime& GetReadTime() const { return m_readTime; }
     inline bool ReadTimeHasBeenSet() const { return m_readTimeHasBeenSet; }
-    inline void SetReadTime(const Aws::Utils::DateTime& value) { m_readTimeHasBeenSet = true; m_readTime = value; }
-    inline void SetReadTime(Aws::Utils::DateTime&& value) { m_readTimeHasBeenSet = true; m_readTime = std::move(value); }
-    inline Page& WithReadTime(const Aws::Utils::DateTime& value) { SetReadTime(value); return *this;}
-    inline Page& WithReadTime(Aws::Utils::DateTime&& value) { SetReadTime(std::move(value)); return *this;}
+    template<typename ReadTimeT = Aws::Utils::DateTime>
+    void SetReadTime(ReadTimeT&& value) { m_readTimeHasBeenSet = true; m_readTime = std::forward<ReadTimeT>(value); }
+    template<typename ReadTimeT = Aws::Utils::DateTime>
+    Page& WithReadTime(ReadTimeT&& value) { SetReadTime(std::forward<ReadTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -161,13 +151,13 @@ namespace Model
     Aws::String m_incidentId;
     bool m_incidentIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sentTime;
+    Aws::Utils::DateTime m_sentTime{};
     bool m_sentTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deliveryTime;
+    Aws::Utils::DateTime m_deliveryTime{};
     bool m_deliveryTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_readTime;
+    Aws::Utils::DateTime m_readTime{};
     bool m_readTimeHasBeenSet = false;
   };
 

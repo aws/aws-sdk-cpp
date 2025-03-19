@@ -12,12 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePermissionsRequest::UpdatePermissionsRequest() : 
-    m_updateInstructionBatchHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

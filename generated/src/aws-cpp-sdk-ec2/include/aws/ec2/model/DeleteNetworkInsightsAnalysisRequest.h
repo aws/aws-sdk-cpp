@@ -21,7 +21,7 @@ namespace Model
   class DeleteNetworkInsightsAnalysisRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteNetworkInsightsAnalysisRequest();
+    AWS_EC2_API DeleteNetworkInsightsAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteNetworkInsightsAnalysisRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The ID of the network insights analysis.</p>
      */
-    inline const Aws::String& GetNetworkInsightsAnalysisId() const{ return m_networkInsightsAnalysisId; }
+    inline const Aws::String& GetNetworkInsightsAnalysisId() const { return m_networkInsightsAnalysisId; }
     inline bool NetworkInsightsAnalysisIdHasBeenSet() const { return m_networkInsightsAnalysisIdHasBeenSet; }
-    inline void SetNetworkInsightsAnalysisId(const Aws::String& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = value; }
-    inline void SetNetworkInsightsAnalysisId(Aws::String&& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = std::move(value); }
-    inline void SetNetworkInsightsAnalysisId(const char* value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId.assign(value); }
-    inline DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(const Aws::String& value) { SetNetworkInsightsAnalysisId(value); return *this;}
-    inline DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(Aws::String&& value) { SetNetworkInsightsAnalysisId(std::move(value)); return *this;}
-    inline DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(const char* value) { SetNetworkInsightsAnalysisId(value); return *this;}
+    template<typename NetworkInsightsAnalysisIdT = Aws::String>
+    void SetNetworkInsightsAnalysisId(NetworkInsightsAnalysisIdT&& value) { m_networkInsightsAnalysisIdHasBeenSet = true; m_networkInsightsAnalysisId = std::forward<NetworkInsightsAnalysisIdT>(value); }
+    template<typename NetworkInsightsAnalysisIdT = Aws::String>
+    DeleteNetworkInsightsAnalysisRequest& WithNetworkInsightsAnalysisId(NetworkInsightsAnalysisIdT&& value) { SetNetworkInsightsAnalysisId(std::forward<NetworkInsightsAnalysisIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_networkInsightsAnalysisId;

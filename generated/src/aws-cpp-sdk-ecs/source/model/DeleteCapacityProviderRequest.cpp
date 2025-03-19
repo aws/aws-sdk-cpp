@@ -12,11 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCapacityProviderRequest::DeleteCapacityProviderRequest() : 
-    m_capacityProviderHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCapacityProviderRequest::SerializePayload() const
 {
   JsonValue payload;

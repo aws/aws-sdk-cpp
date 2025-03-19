@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaChangePolicy::SchemaChangePolicy() : 
-    m_updateBehavior(UpdateBehavior::NOT_SET),
-    m_updateBehaviorHasBeenSet(false),
-    m_deleteBehavior(DeleteBehavior::NOT_SET),
-    m_deleteBehaviorHasBeenSet(false)
-{
-}
-
 SchemaChangePolicy::SchemaChangePolicy(JsonView jsonValue)
-  : SchemaChangePolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SchemaChangePolicy& SchemaChangePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UpdateBehavior"))
   {
     m_updateBehavior = UpdateBehaviorMapper::GetUpdateBehaviorForName(jsonValue.GetString("UpdateBehavior"));
-
     m_updateBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteBehavior"))
   {
     m_deleteBehavior = DeleteBehaviorMapper::GetDeleteBehaviorForName(jsonValue.GetString("DeleteBehavior"));
-
     m_deleteBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

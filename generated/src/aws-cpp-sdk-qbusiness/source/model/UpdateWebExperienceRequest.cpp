@@ -12,22 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWebExperienceRequest::UpdateWebExperienceRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_webExperienceIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_welcomeMessageHasBeenSet(false),
-    m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
-    m_samplePromptsControlModeHasBeenSet(false),
-    m_identityProviderConfigurationHasBeenSet(false),
-    m_originsHasBeenSet(false),
-    m_browserExtensionConfigurationHasBeenSet(false),
-    m_customizationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWebExperienceRequest::SerializePayload() const
 {
   JsonValue payload;

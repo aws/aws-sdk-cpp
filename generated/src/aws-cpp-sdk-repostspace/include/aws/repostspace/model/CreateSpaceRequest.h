@@ -23,7 +23,7 @@ namespace Model
   class CreateSpaceRequest : public RepostspaceRequest
   {
   public:
-    AWS_REPOSTSPACE_API CreateSpaceRequest();
+    AWS_REPOSTSPACE_API CreateSpaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>A description for the private re:Post. This is used only to help you identify
      * this private re:Post.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateSpaceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSpaceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSpaceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateSpaceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the private re:Post. This must be unique in your account.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSpaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSpaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSpaceRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSpaceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The IAM role that grants permissions to the private re:Post to convert
      * unanswered questions into AWS support tickets.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateSpaceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateSpaceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateSpaceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateSpaceRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,45 +79,38 @@ namespace Model
      * to your custom subdomain, all private re:Posts are issued an AWS generated
      * subdomain for immediate use.</p>
      */
-    inline const Aws::String& GetSubdomain() const{ return m_subdomain; }
+    inline const Aws::String& GetSubdomain() const { return m_subdomain; }
     inline bool SubdomainHasBeenSet() const { return m_subdomainHasBeenSet; }
-    inline void SetSubdomain(const Aws::String& value) { m_subdomainHasBeenSet = true; m_subdomain = value; }
-    inline void SetSubdomain(Aws::String&& value) { m_subdomainHasBeenSet = true; m_subdomain = std::move(value); }
-    inline void SetSubdomain(const char* value) { m_subdomainHasBeenSet = true; m_subdomain.assign(value); }
-    inline CreateSpaceRequest& WithSubdomain(const Aws::String& value) { SetSubdomain(value); return *this;}
-    inline CreateSpaceRequest& WithSubdomain(Aws::String&& value) { SetSubdomain(std::move(value)); return *this;}
-    inline CreateSpaceRequest& WithSubdomain(const char* value) { SetSubdomain(value); return *this;}
+    template<typename SubdomainT = Aws::String>
+    void SetSubdomain(SubdomainT&& value) { m_subdomainHasBeenSet = true; m_subdomain = std::forward<SubdomainT>(value); }
+    template<typename SubdomainT = Aws::String>
+    CreateSpaceRequest& WithSubdomain(SubdomainT&& value) { SetSubdomain(std::forward<SubdomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags associated with the private re:Post.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSpaceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSpaceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSpaceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateSpaceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSpaceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSpaceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSpaceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSpaceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSpaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSpaceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSpaceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The pricing tier for the private re:Post.</p>
      */
-    inline const TierLevel& GetTier() const{ return m_tier; }
+    inline TierLevel GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const TierLevel& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(TierLevel&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline CreateSpaceRequest& WithTier(const TierLevel& value) { SetTier(value); return *this;}
-    inline CreateSpaceRequest& WithTier(TierLevel&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(TierLevel value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline CreateSpaceRequest& WithTier(TierLevel value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +119,12 @@ namespace Model
      * provide a key, your data is encrypted by default with a key that AWS owns and
      * manages for you.</p>
      */
-    inline const Aws::String& GetUserKMSKey() const{ return m_userKMSKey; }
+    inline const Aws::String& GetUserKMSKey() const { return m_userKMSKey; }
     inline bool UserKMSKeyHasBeenSet() const { return m_userKMSKeyHasBeenSet; }
-    inline void SetUserKMSKey(const Aws::String& value) { m_userKMSKeyHasBeenSet = true; m_userKMSKey = value; }
-    inline void SetUserKMSKey(Aws::String&& value) { m_userKMSKeyHasBeenSet = true; m_userKMSKey = std::move(value); }
-    inline void SetUserKMSKey(const char* value) { m_userKMSKeyHasBeenSet = true; m_userKMSKey.assign(value); }
-    inline CreateSpaceRequest& WithUserKMSKey(const Aws::String& value) { SetUserKMSKey(value); return *this;}
-    inline CreateSpaceRequest& WithUserKMSKey(Aws::String&& value) { SetUserKMSKey(std::move(value)); return *this;}
-    inline CreateSpaceRequest& WithUserKMSKey(const char* value) { SetUserKMSKey(value); return *this;}
+    template<typename UserKMSKeyT = Aws::String>
+    void SetUserKMSKey(UserKMSKeyT&& value) { m_userKMSKeyHasBeenSet = true; m_userKMSKey = std::forward<UserKMSKeyT>(value); }
+    template<typename UserKMSKeyT = Aws::String>
+    CreateSpaceRequest& WithUserKMSKey(UserKMSKeyT&& value) { SetUserKMSKey(std::forward<UserKMSKeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,7 +143,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    TierLevel m_tier;
+    TierLevel m_tier{TierLevel::NOT_SET};
     bool m_tierHasBeenSet = false;
 
     Aws::String m_userKMSKey;

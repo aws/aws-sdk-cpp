@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBotResourceGenerationsResult::ListBotResourceGenerationsResult()
-{
-}
-
 ListBotResourceGenerationsResult::ListBotResourceGenerationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ ListBotResourceGenerationsResult& ListBotResourceGenerationsResult::operator =(c
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
+    m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
+    m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generationSummaries"))
   {
     Aws::Utils::Array<JsonView> generationSummariesJsonList = jsonValue.GetArray("generationSummaries");
@@ -54,20 +47,20 @@ ListBotResourceGenerationsResult& ListBotResourceGenerationsResult::operator =(c
     {
       m_generationSummaries.push_back(generationSummariesJsonList[generationSummariesIndex].AsObject());
     }
+    m_generationSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

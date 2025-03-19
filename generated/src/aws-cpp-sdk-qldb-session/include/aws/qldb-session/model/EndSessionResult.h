@@ -31,7 +31,7 @@ namespace Model
   class EndSessionResult
   {
   public:
-    AWS_QLDBSESSION_API EndSessionResult();
+    AWS_QLDBSESSION_API EndSessionResult() = default;
     AWS_QLDBSESSION_API EndSessionResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API EndSessionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Contains server-side performance information for the command.</p>
      */
-    inline const TimingInformation& GetTimingInformation() const{ return m_timingInformation; }
+    inline const TimingInformation& GetTimingInformation() const { return m_timingInformation; }
     inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
-    inline void SetTimingInformation(const TimingInformation& value) { m_timingInformationHasBeenSet = true; m_timingInformation = value; }
-    inline void SetTimingInformation(TimingInformation&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::move(value); }
-    inline EndSessionResult& WithTimingInformation(const TimingInformation& value) { SetTimingInformation(value); return *this;}
-    inline EndSessionResult& WithTimingInformation(TimingInformation&& value) { SetTimingInformation(std::move(value)); return *this;}
+    template<typename TimingInformationT = TimingInformation>
+    void SetTimingInformation(TimingInformationT&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::forward<TimingInformationT>(value); }
+    template<typename TimingInformationT = TimingInformation>
+    EndSessionResult& WithTimingInformation(TimingInformationT&& value) { SetTimingInformation(std::forward<TimingInformationT>(value)); return *this;}
     ///@}
   private:
 

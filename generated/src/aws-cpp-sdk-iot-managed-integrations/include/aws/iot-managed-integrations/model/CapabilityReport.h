@@ -34,7 +34,7 @@ namespace Model
   class CapabilityReport
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API CapabilityReport();
+    AWS_IOTMANAGEDINTEGRATIONS_API CapabilityReport() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API CapabilityReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API CapabilityReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,38 @@ namespace Model
     /**
      * <p>The version of the capability report.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline CapabilityReport& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CapabilityReport& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CapabilityReport& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CapabilityReport& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The numeric identifier of the node.</p>
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const Aws::String& GetNodeId() const { return m_nodeId; }
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-    inline CapabilityReport& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-    inline CapabilityReport& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-    inline CapabilityReport& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    template<typename NodeIdT = Aws::String>
+    void SetNodeId(NodeIdT&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::forward<NodeIdT>(value); }
+    template<typename NodeIdT = Aws::String>
+    CapabilityReport& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoints used in the capability report.</p>
      */
-    inline const Aws::Vector<CapabilityReportEndpoint>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<CapabilityReportEndpoint>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<CapabilityReportEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<CapabilityReportEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline CapabilityReport& WithEndpoints(const Aws::Vector<CapabilityReportEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline CapabilityReport& WithEndpoints(Aws::Vector<CapabilityReportEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline CapabilityReport& AddEndpoints(const CapabilityReportEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline CapabilityReport& AddEndpoints(CapabilityReportEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<CapabilityReportEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<CapabilityReportEndpoint>>
+    CapabilityReport& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = CapabilityReportEndpoint>
+    CapabilityReport& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
   private:
 

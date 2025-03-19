@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-LambdaAction::LambdaAction() : 
-    m_topicArnHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
-{
-}
-
 LambdaAction::LambdaAction(const XmlNode& xmlNode)
-  : LambdaAction()
 {
   *this = xmlNode;
 }
@@ -55,7 +46,7 @@ LambdaAction& LambdaAction::operator =(const XmlNode& xmlNode)
     XmlNode invocationTypeNode = resultNode.FirstChild("InvocationType");
     if(!invocationTypeNode.IsNull())
     {
-      m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationTypeNode.GetText()).c_str()).c_str());
+      m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationTypeNode.GetText()).c_str()));
       m_invocationTypeHasBeenSet = true;
     }
   }

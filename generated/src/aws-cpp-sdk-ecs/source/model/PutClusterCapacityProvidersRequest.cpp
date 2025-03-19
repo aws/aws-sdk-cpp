@@ -12,13 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutClusterCapacityProvidersRequest::PutClusterCapacityProvidersRequest() : 
-    m_clusterHasBeenSet(false),
-    m_capacityProvidersHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false)
-{
-}
-
 Aws::String PutClusterCapacityProvidersRequest::SerializePayload() const
 {
   JsonValue payload;

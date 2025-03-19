@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeResourceResult::DescribeResourceResult() : 
-    m_type(ResourceType::NOT_SET),
-    m_state(EntityState::NOT_SET),
-    m_hiddenFromGlobalAddressList(false)
-{
-}
-
 DescribeResourceResult::DescribeResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeResourceResult()
 {
   *this = result;
 }
@@ -36,69 +28,60 @@ DescribeResourceResult& DescribeResourceResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
+    m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
+    m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("Type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BookingOptions"))
   {
     m_bookingOptions = jsonValue.GetObject("BookingOptions");
-
+    m_bookingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EntityStateMapper::GetEntityStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledDate"))
   {
     m_enabledDate = jsonValue.GetDouble("EnabledDate");
-
+    m_enabledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledDate"))
   {
     m_disabledDate = jsonValue.GetDouble("DisabledDate");
-
+    m_disabledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiddenFromGlobalAddressList"))
   {
     m_hiddenFromGlobalAddressList = jsonValue.GetBool("HiddenFromGlobalAddressList");
-
+    m_hiddenFromGlobalAddressListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

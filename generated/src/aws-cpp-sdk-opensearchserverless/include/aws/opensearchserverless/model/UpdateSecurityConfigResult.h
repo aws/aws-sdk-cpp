@@ -28,7 +28,7 @@ namespace Model
   class UpdateSecurityConfigResult
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityConfigResult();
+    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityConfigResult() = default;
     AWS_OPENSEARCHSERVERLESS_API UpdateSecurityConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVERLESS_API UpdateSecurityConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the updated security configuration. </p>
      */
-    inline const SecurityConfigDetail& GetSecurityConfigDetail() const{ return m_securityConfigDetail; }
-    inline void SetSecurityConfigDetail(const SecurityConfigDetail& value) { m_securityConfigDetail = value; }
-    inline void SetSecurityConfigDetail(SecurityConfigDetail&& value) { m_securityConfigDetail = std::move(value); }
-    inline UpdateSecurityConfigResult& WithSecurityConfigDetail(const SecurityConfigDetail& value) { SetSecurityConfigDetail(value); return *this;}
-    inline UpdateSecurityConfigResult& WithSecurityConfigDetail(SecurityConfigDetail&& value) { SetSecurityConfigDetail(std::move(value)); return *this;}
+    inline const SecurityConfigDetail& GetSecurityConfigDetail() const { return m_securityConfigDetail; }
+    template<typename SecurityConfigDetailT = SecurityConfigDetail>
+    void SetSecurityConfigDetail(SecurityConfigDetailT&& value) { m_securityConfigDetailHasBeenSet = true; m_securityConfigDetail = std::forward<SecurityConfigDetailT>(value); }
+    template<typename SecurityConfigDetailT = SecurityConfigDetail>
+    UpdateSecurityConfigResult& WithSecurityConfigDetail(SecurityConfigDetailT&& value) { SetSecurityConfigDetail(std::forward<SecurityConfigDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSecurityConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSecurityConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSecurityConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSecurityConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SecurityConfigDetail m_securityConfigDetail;
+    bool m_securityConfigDetailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

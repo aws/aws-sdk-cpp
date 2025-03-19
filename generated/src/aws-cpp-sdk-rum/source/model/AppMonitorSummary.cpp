@@ -18,18 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-AppMonitorSummary::AppMonitorSummary() : 
-    m_createdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(StateEnum::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AppMonitorSummary::AppMonitorSummary(JsonView jsonValue)
-  : AppMonitorSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AppMonitorSummary& AppMonitorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetString("Created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateEnumMapper::GetStateEnumForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

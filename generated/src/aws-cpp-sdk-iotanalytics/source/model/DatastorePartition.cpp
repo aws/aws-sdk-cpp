@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatastorePartition::DatastorePartition() : 
-    m_attributePartitionHasBeenSet(false),
-    m_timestampPartitionHasBeenSet(false)
-{
-}
-
 DatastorePartition::DatastorePartition(JsonView jsonValue)
-  : DatastorePartition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatastorePartition& DatastorePartition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributePartition"))
   {
     m_attributePartition = jsonValue.GetObject("attributePartition");
-
     m_attributePartitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestampPartition"))
   {
     m_timestampPartition = jsonValue.GetObject("timestampPartition");
-
     m_timestampPartitionHasBeenSet = true;
   }
-
   return *this;
 }
 

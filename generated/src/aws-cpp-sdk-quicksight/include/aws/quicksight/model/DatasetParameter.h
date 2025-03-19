@@ -35,7 +35,7 @@ namespace Model
   class DatasetParameter
   {
   public:
-    AWS_QUICKSIGHT_API DatasetParameter();
+    AWS_QUICKSIGHT_API DatasetParameter() = default;
     AWS_QUICKSIGHT_API DatasetParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DatasetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,48 @@ namespace Model
     /**
      * <p>A string parameter that is created in the dataset.</p>
      */
-    inline const StringDatasetParameter& GetStringDatasetParameter() const{ return m_stringDatasetParameter; }
+    inline const StringDatasetParameter& GetStringDatasetParameter() const { return m_stringDatasetParameter; }
     inline bool StringDatasetParameterHasBeenSet() const { return m_stringDatasetParameterHasBeenSet; }
-    inline void SetStringDatasetParameter(const StringDatasetParameter& value) { m_stringDatasetParameterHasBeenSet = true; m_stringDatasetParameter = value; }
-    inline void SetStringDatasetParameter(StringDatasetParameter&& value) { m_stringDatasetParameterHasBeenSet = true; m_stringDatasetParameter = std::move(value); }
-    inline DatasetParameter& WithStringDatasetParameter(const StringDatasetParameter& value) { SetStringDatasetParameter(value); return *this;}
-    inline DatasetParameter& WithStringDatasetParameter(StringDatasetParameter&& value) { SetStringDatasetParameter(std::move(value)); return *this;}
+    template<typename StringDatasetParameterT = StringDatasetParameter>
+    void SetStringDatasetParameter(StringDatasetParameterT&& value) { m_stringDatasetParameterHasBeenSet = true; m_stringDatasetParameter = std::forward<StringDatasetParameterT>(value); }
+    template<typename StringDatasetParameterT = StringDatasetParameter>
+    DatasetParameter& WithStringDatasetParameter(StringDatasetParameterT&& value) { SetStringDatasetParameter(std::forward<StringDatasetParameterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A decimal parameter that is created in the dataset.</p>
      */
-    inline const DecimalDatasetParameter& GetDecimalDatasetParameter() const{ return m_decimalDatasetParameter; }
+    inline const DecimalDatasetParameter& GetDecimalDatasetParameter() const { return m_decimalDatasetParameter; }
     inline bool DecimalDatasetParameterHasBeenSet() const { return m_decimalDatasetParameterHasBeenSet; }
-    inline void SetDecimalDatasetParameter(const DecimalDatasetParameter& value) { m_decimalDatasetParameterHasBeenSet = true; m_decimalDatasetParameter = value; }
-    inline void SetDecimalDatasetParameter(DecimalDatasetParameter&& value) { m_decimalDatasetParameterHasBeenSet = true; m_decimalDatasetParameter = std::move(value); }
-    inline DatasetParameter& WithDecimalDatasetParameter(const DecimalDatasetParameter& value) { SetDecimalDatasetParameter(value); return *this;}
-    inline DatasetParameter& WithDecimalDatasetParameter(DecimalDatasetParameter&& value) { SetDecimalDatasetParameter(std::move(value)); return *this;}
+    template<typename DecimalDatasetParameterT = DecimalDatasetParameter>
+    void SetDecimalDatasetParameter(DecimalDatasetParameterT&& value) { m_decimalDatasetParameterHasBeenSet = true; m_decimalDatasetParameter = std::forward<DecimalDatasetParameterT>(value); }
+    template<typename DecimalDatasetParameterT = DecimalDatasetParameter>
+    DatasetParameter& WithDecimalDatasetParameter(DecimalDatasetParameterT&& value) { SetDecimalDatasetParameter(std::forward<DecimalDatasetParameterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An integer parameter that is created in the dataset.</p>
      */
-    inline const IntegerDatasetParameter& GetIntegerDatasetParameter() const{ return m_integerDatasetParameter; }
+    inline const IntegerDatasetParameter& GetIntegerDatasetParameter() const { return m_integerDatasetParameter; }
     inline bool IntegerDatasetParameterHasBeenSet() const { return m_integerDatasetParameterHasBeenSet; }
-    inline void SetIntegerDatasetParameter(const IntegerDatasetParameter& value) { m_integerDatasetParameterHasBeenSet = true; m_integerDatasetParameter = value; }
-    inline void SetIntegerDatasetParameter(IntegerDatasetParameter&& value) { m_integerDatasetParameterHasBeenSet = true; m_integerDatasetParameter = std::move(value); }
-    inline DatasetParameter& WithIntegerDatasetParameter(const IntegerDatasetParameter& value) { SetIntegerDatasetParameter(value); return *this;}
-    inline DatasetParameter& WithIntegerDatasetParameter(IntegerDatasetParameter&& value) { SetIntegerDatasetParameter(std::move(value)); return *this;}
+    template<typename IntegerDatasetParameterT = IntegerDatasetParameter>
+    void SetIntegerDatasetParameter(IntegerDatasetParameterT&& value) { m_integerDatasetParameterHasBeenSet = true; m_integerDatasetParameter = std::forward<IntegerDatasetParameterT>(value); }
+    template<typename IntegerDatasetParameterT = IntegerDatasetParameter>
+    DatasetParameter& WithIntegerDatasetParameter(IntegerDatasetParameterT&& value) { SetIntegerDatasetParameter(std::forward<IntegerDatasetParameterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A date time parameter that is created in the dataset.</p>
      */
-    inline const DateTimeDatasetParameter& GetDateTimeDatasetParameter() const{ return m_dateTimeDatasetParameter; }
+    inline const DateTimeDatasetParameter& GetDateTimeDatasetParameter() const { return m_dateTimeDatasetParameter; }
     inline bool DateTimeDatasetParameterHasBeenSet() const { return m_dateTimeDatasetParameterHasBeenSet; }
-    inline void SetDateTimeDatasetParameter(const DateTimeDatasetParameter& value) { m_dateTimeDatasetParameterHasBeenSet = true; m_dateTimeDatasetParameter = value; }
-    inline void SetDateTimeDatasetParameter(DateTimeDatasetParameter&& value) { m_dateTimeDatasetParameterHasBeenSet = true; m_dateTimeDatasetParameter = std::move(value); }
-    inline DatasetParameter& WithDateTimeDatasetParameter(const DateTimeDatasetParameter& value) { SetDateTimeDatasetParameter(value); return *this;}
-    inline DatasetParameter& WithDateTimeDatasetParameter(DateTimeDatasetParameter&& value) { SetDateTimeDatasetParameter(std::move(value)); return *this;}
+    template<typename DateTimeDatasetParameterT = DateTimeDatasetParameter>
+    void SetDateTimeDatasetParameter(DateTimeDatasetParameterT&& value) { m_dateTimeDatasetParameterHasBeenSet = true; m_dateTimeDatasetParameter = std::forward<DateTimeDatasetParameterT>(value); }
+    template<typename DateTimeDatasetParameterT = DateTimeDatasetParameter>
+    DatasetParameter& WithDateTimeDatasetParameter(DateTimeDatasetParameterT&& value) { SetDateTimeDatasetParameter(std::forward<DateTimeDatasetParameterT>(value)); return *this;}
     ///@}
   private:
 

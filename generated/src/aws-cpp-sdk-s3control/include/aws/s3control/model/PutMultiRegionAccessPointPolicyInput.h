@@ -32,7 +32,7 @@ namespace Model
   class PutMultiRegionAccessPointPolicyInput
   {
   public:
-    AWS_S3CONTROL_API PutMultiRegionAccessPointPolicyInput();
+    AWS_S3CONTROL_API PutMultiRegionAccessPointPolicyInput() = default;
     AWS_S3CONTROL_API PutMultiRegionAccessPointPolicyInput(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API PutMultiRegionAccessPointPolicyInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the Multi-Region Access Point associated with the request.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutMultiRegionAccessPointPolicyInput& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutMultiRegionAccessPointPolicyInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutMultiRegionAccessPointPolicyInput& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutMultiRegionAccessPointPolicyInput& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The policy details for the <code>PutMultiRegionAccessPoint</code>
      * request.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutMultiRegionAccessPointPolicyInput& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutMultiRegionAccessPointPolicyInput& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutMultiRegionAccessPointPolicyInput& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutMultiRegionAccessPointPolicyInput& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

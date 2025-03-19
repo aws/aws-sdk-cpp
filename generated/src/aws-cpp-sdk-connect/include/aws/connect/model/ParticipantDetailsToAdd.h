@@ -32,7 +32,7 @@ namespace Model
   class ParticipantDetailsToAdd
   {
   public:
-    AWS_CONNECT_API ParticipantDetailsToAdd();
+    AWS_CONNECT_API ParticipantDetailsToAdd() = default;
     AWS_CONNECT_API ParticipantDetailsToAdd(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ParticipantDetailsToAdd& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The role of the participant being added.</p>
      */
-    inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
+    inline ParticipantRole GetParticipantRole() const { return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-    inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-    inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-    inline ParticipantDetailsToAdd& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-    inline ParticipantDetailsToAdd& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    inline void SetParticipantRole(ParticipantRole value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
+    inline ParticipantDetailsToAdd& WithParticipantRole(ParticipantRole value) { SetParticipantRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the participant.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline ParticipantDetailsToAdd& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline ParticipantDetailsToAdd& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline ParticipantDetailsToAdd& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    ParticipantDetailsToAdd& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 
-    ParticipantRole m_participantRole;
+    ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
     bool m_participantRoleHasBeenSet = false;
 
     Aws::String m_displayName;

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOptimizationJobRequest::DeleteOptimizationJobRequest() : 
-    m_optimizationJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOptimizationJobRequest::SerializePayload() const
 {
   JsonValue payload;

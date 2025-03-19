@@ -12,11 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationRequest::DeleteApplicationRequest() : 
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

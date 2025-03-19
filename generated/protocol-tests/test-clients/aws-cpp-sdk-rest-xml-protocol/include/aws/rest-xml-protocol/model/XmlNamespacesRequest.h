@@ -21,7 +21,7 @@ namespace Model
   class XmlNamespacesRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlNamespacesRequest();
+    AWS_RESTXMLPROTOCOL_API XmlNamespacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const XmlNamespaceNested& GetNested() const{ return m_nested; }
+    inline const XmlNamespaceNested& GetNested() const { return m_nested; }
     inline bool NestedHasBeenSet() const { return m_nestedHasBeenSet; }
-    inline void SetNested(const XmlNamespaceNested& value) { m_nestedHasBeenSet = true; m_nested = value; }
-    inline void SetNested(XmlNamespaceNested&& value) { m_nestedHasBeenSet = true; m_nested = std::move(value); }
-    inline XmlNamespacesRequest& WithNested(const XmlNamespaceNested& value) { SetNested(value); return *this;}
-    inline XmlNamespacesRequest& WithNested(XmlNamespaceNested&& value) { SetNested(std::move(value)); return *this;}
+    template<typename NestedT = XmlNamespaceNested>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = XmlNamespaceNested>
+    XmlNamespacesRequest& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
   private:
 

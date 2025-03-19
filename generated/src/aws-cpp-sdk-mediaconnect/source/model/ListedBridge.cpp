@@ -18,18 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-ListedBridge::ListedBridge() : 
-    m_bridgeArnHasBeenSet(false),
-    m_bridgeState(BridgeState::NOT_SET),
-    m_bridgeStateHasBeenSet(false),
-    m_bridgeTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_placementArnHasBeenSet(false)
-{
-}
-
 ListedBridge::ListedBridge(JsonView jsonValue)
-  : ListedBridge()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ListedBridge& ListedBridge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bridgeArn"))
   {
     m_bridgeArn = jsonValue.GetString("bridgeArn");
-
     m_bridgeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bridgeState"))
   {
     m_bridgeState = BridgeStateMapper::GetBridgeStateForName(jsonValue.GetString("bridgeState"));
-
     m_bridgeStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bridgeType"))
   {
     m_bridgeType = jsonValue.GetString("bridgeType");
-
     m_bridgeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementArn"))
   {
     m_placementArn = jsonValue.GetString("placementArn");
-
     m_placementArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class SageMakerRunConfigurationOutput
   {
   public:
-    AWS_DATAZONE_API SageMakerRunConfigurationOutput();
+    AWS_DATAZONE_API SageMakerRunConfigurationOutput() = default;
     AWS_DATAZONE_API SageMakerRunConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SageMakerRunConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,46 +43,40 @@ namespace Model
     /**
      * <p>The Amazon SageMaker account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline SageMakerRunConfigurationOutput& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline SageMakerRunConfigurationOutput& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline SageMakerRunConfigurationOutput& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    SageMakerRunConfigurationOutput& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon SageMaker Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline SageMakerRunConfigurationOutput& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline SageMakerRunConfigurationOutput& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline SageMakerRunConfigurationOutput& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    SageMakerRunConfigurationOutput& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tracking assets of the Amazon SageMaker.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTrackingAssets() const{ return m_trackingAssets; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTrackingAssets() const { return m_trackingAssets; }
     inline bool TrackingAssetsHasBeenSet() const { return m_trackingAssetsHasBeenSet; }
-    inline void SetTrackingAssets(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets = value; }
-    inline void SetTrackingAssets(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets = std::move(value); }
-    inline SageMakerRunConfigurationOutput& WithTrackingAssets(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetTrackingAssets(value); return *this;}
-    inline SageMakerRunConfigurationOutput& WithTrackingAssets(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetTrackingAssets(std::move(value)); return *this;}
-    inline SageMakerRunConfigurationOutput& AddTrackingAssets(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(key, value); return *this; }
-    inline SageMakerRunConfigurationOutput& AddTrackingAssets(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(std::move(key), value); return *this; }
-    inline SageMakerRunConfigurationOutput& AddTrackingAssets(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(key, std::move(value)); return *this; }
-    inline SageMakerRunConfigurationOutput& AddTrackingAssets(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(std::move(key), std::move(value)); return *this; }
-    inline SageMakerRunConfigurationOutput& AddTrackingAssets(const char* key, Aws::Vector<Aws::String>&& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(key, std::move(value)); return *this; }
-    inline SageMakerRunConfigurationOutput& AddTrackingAssets(const char* key, const Aws::Vector<Aws::String>& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(key, value); return *this; }
+    template<typename TrackingAssetsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetTrackingAssets(TrackingAssetsT&& value) { m_trackingAssetsHasBeenSet = true; m_trackingAssets = std::forward<TrackingAssetsT>(value); }
+    template<typename TrackingAssetsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    SageMakerRunConfigurationOutput& WithTrackingAssets(TrackingAssetsT&& value) { SetTrackingAssets(std::forward<TrackingAssetsT>(value)); return *this;}
+    template<typename TrackingAssetsKeyT = Aws::String, typename TrackingAssetsValueT = Aws::Vector<Aws::String>>
+    SageMakerRunConfigurationOutput& AddTrackingAssets(TrackingAssetsKeyT&& key, TrackingAssetsValueT&& value) {
+      m_trackingAssetsHasBeenSet = true; m_trackingAssets.emplace(std::forward<TrackingAssetsKeyT>(key), std::forward<TrackingAssetsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

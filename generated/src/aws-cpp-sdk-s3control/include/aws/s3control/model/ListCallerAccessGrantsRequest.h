@@ -25,7 +25,7 @@ namespace Model
   class ListCallerAccessGrantsRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API ListCallerAccessGrantsRequest();
+    AWS_S3CONTROL_API ListCallerAccessGrantsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListCallerAccessGrantsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListCallerAccessGrantsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListCallerAccessGrantsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * path, and S3 Access Grants will search for all applicable grants for the path
      * fragment. </p>
      */
-    inline const Aws::String& GetGrantScope() const{ return m_grantScope; }
+    inline const Aws::String& GetGrantScope() const { return m_grantScope; }
     inline bool GrantScopeHasBeenSet() const { return m_grantScopeHasBeenSet; }
-    inline void SetGrantScope(const Aws::String& value) { m_grantScopeHasBeenSet = true; m_grantScope = value; }
-    inline void SetGrantScope(Aws::String&& value) { m_grantScopeHasBeenSet = true; m_grantScope = std::move(value); }
-    inline void SetGrantScope(const char* value) { m_grantScopeHasBeenSet = true; m_grantScope.assign(value); }
-    inline ListCallerAccessGrantsRequest& WithGrantScope(const Aws::String& value) { SetGrantScope(value); return *this;}
-    inline ListCallerAccessGrantsRequest& WithGrantScope(Aws::String&& value) { SetGrantScope(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsRequest& WithGrantScope(const char* value) { SetGrantScope(value); return *this;}
+    template<typename GrantScopeT = Aws::String>
+    void SetGrantScope(GrantScopeT&& value) { m_grantScopeHasBeenSet = true; m_grantScope = std::forward<GrantScopeT>(value); }
+    template<typename GrantScopeT = Aws::String>
+    ListCallerAccessGrantsRequest& WithGrantScope(GrantScopeT&& value) { SetGrantScope(std::forward<GrantScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * a subsequent <code>List Caller Access Grants</code> request in order to retrieve
      * the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCallerAccessGrantsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCallerAccessGrantsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCallerAccessGrantsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCallerAccessGrantsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +94,7 @@ namespace Model
      * pagination token <code>NextToken</code>, make another call using the
      * <code>NextToken</code> to determine if there are more results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCallerAccessGrantsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -113,7 +107,7 @@ namespace Model
      * Identity Center application or for any other applications
      * (<code>ALL</code>).</p>
      */
-    inline bool GetAllowedByApplication() const{ return m_allowedByApplication; }
+    inline bool GetAllowedByApplication() const { return m_allowedByApplication; }
     inline bool AllowedByApplicationHasBeenSet() const { return m_allowedByApplicationHasBeenSet; }
     inline void SetAllowedByApplication(bool value) { m_allowedByApplicationHasBeenSet = true; m_allowedByApplication = value; }
     inline ListCallerAccessGrantsRequest& WithAllowedByApplication(bool value) { SetAllowedByApplication(value); return *this;}
@@ -129,10 +123,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_allowedByApplication;
+    bool m_allowedByApplication{false};
     bool m_allowedByApplicationHasBeenSet = false;
   };
 

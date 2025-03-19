@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AxisLinearScale::AxisLinearScale() : 
-    m_stepCount(0),
-    m_stepCountHasBeenSet(false),
-    m_stepSize(0.0),
-    m_stepSizeHasBeenSet(false)
-{
-}
-
 AxisLinearScale::AxisLinearScale(JsonView jsonValue)
-  : AxisLinearScale()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AxisLinearScale& AxisLinearScale::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepCount"))
   {
     m_stepCount = jsonValue.GetInteger("StepCount");
-
     m_stepCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepSize"))
   {
     m_stepSize = jsonValue.GetDouble("StepSize");
-
     m_stepSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

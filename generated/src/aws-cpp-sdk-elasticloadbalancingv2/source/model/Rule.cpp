@@ -20,18 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Rule::Rule() : 
-    m_ruleArnHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_conditionsHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false)
-{
-}
-
 Rule::Rule(const XmlNode& xmlNode)
-  : Rule()
 {
   *this = xmlNode;
 }
@@ -58,6 +47,7 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     if(!conditionsNode.IsNull())
     {
       XmlNode conditionsMember = conditionsNode.FirstChild("member");
+      m_conditionsHasBeenSet = !conditionsMember.IsNull();
       while(!conditionsMember.IsNull())
       {
         m_conditions.push_back(conditionsMember);
@@ -70,6 +60,7 @@ Rule& Rule::operator =(const XmlNode& xmlNode)
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("member");
+      m_actionsHasBeenSet = !actionsMember.IsNull();
       while(!actionsMember.IsNull())
       {
         m_actions.push_back(actionsMember);

@@ -37,7 +37,7 @@ namespace Model
   class TranscriptResultStream
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <code/> object contains a set of transcription results from one or more audio
      * segments, along with additional information per your request parameters.</p>
      */
-    inline const TranscriptEvent& GetTranscriptEvent() const{ return m_transcriptEvent; }
+    inline const TranscriptEvent& GetTranscriptEvent() const { return m_transcriptEvent; }
     inline bool TranscriptEventHasBeenSet() const { return m_transcriptEventHasBeenSet; }
-    inline void SetTranscriptEvent(const TranscriptEvent& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = value; }
-    inline void SetTranscriptEvent(TranscriptEvent&& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = std::move(value); }
-    inline TranscriptResultStream& WithTranscriptEvent(const TranscriptEvent& value) { SetTranscriptEvent(value); return *this;}
-    inline TranscriptResultStream& WithTranscriptEvent(TranscriptEvent&& value) { SetTranscriptEvent(std::move(value)); return *this;}
+    template<typename TranscriptEventT = TranscriptEvent>
+    void SetTranscriptEvent(TranscriptEventT&& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = std::forward<TranscriptEventT>(value); }
+    template<typename TranscriptEventT = TranscriptEvent>
+    TranscriptResultStream& WithTranscriptEvent(TranscriptEventT&& value) { SetTranscriptEvent(std::forward<TranscriptEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>A client error occurred when the stream was created. Check the parameters of
      * the request and try your request again.</p>
      */
-    inline const BadRequestException& GetBadRequestException() const{ return m_badRequestException; }
+    inline const BadRequestException& GetBadRequestException() const { return m_badRequestException; }
     inline bool BadRequestExceptionHasBeenSet() const { return m_badRequestExceptionHasBeenSet; }
-    inline void SetBadRequestException(const BadRequestException& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = value; }
-    inline void SetBadRequestException(BadRequestException&& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = std::move(value); }
-    inline TranscriptResultStream& WithBadRequestException(const BadRequestException& value) { SetBadRequestException(value); return *this;}
-    inline TranscriptResultStream& WithBadRequestException(BadRequestException&& value) { SetBadRequestException(std::move(value)); return *this;}
+    template<typename BadRequestExceptionT = BadRequestException>
+    void SetBadRequestException(BadRequestExceptionT&& value) { m_badRequestExceptionHasBeenSet = true; m_badRequestException = std::forward<BadRequestExceptionT>(value); }
+    template<typename BadRequestExceptionT = BadRequestException>
+    TranscriptResultStream& WithBadRequestException(BadRequestExceptionT&& value) { SetBadRequestException(std::forward<BadRequestExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * typically the audio length limit. Break your audio stream into smaller chunks
      * and try your request again.</p>
      */
-    inline const LimitExceededException& GetLimitExceededException() const{ return m_limitExceededException; }
+    inline const LimitExceededException& GetLimitExceededException() const { return m_limitExceededException; }
     inline bool LimitExceededExceptionHasBeenSet() const { return m_limitExceededExceptionHasBeenSet; }
-    inline void SetLimitExceededException(const LimitExceededException& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = value; }
-    inline void SetLimitExceededException(LimitExceededException&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::move(value); }
-    inline TranscriptResultStream& WithLimitExceededException(const LimitExceededException& value) { SetLimitExceededException(value); return *this;}
-    inline TranscriptResultStream& WithLimitExceededException(LimitExceededException&& value) { SetLimitExceededException(std::move(value)); return *this;}
+    template<typename LimitExceededExceptionT = LimitExceededException>
+    void SetLimitExceededException(LimitExceededExceptionT&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::forward<LimitExceededExceptionT>(value); }
+    template<typename LimitExceededExceptionT = LimitExceededException>
+    TranscriptResultStream& WithLimitExceededException(LimitExceededExceptionT&& value) { SetLimitExceededException(std::forward<LimitExceededExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,12 @@ namespace Model
      * <p>A problem occurred while processing the audio. Amazon Transcribe terminated
      * processing.</p>
      */
-    inline const InternalFailureException& GetInternalFailureException() const{ return m_internalFailureException; }
+    inline const InternalFailureException& GetInternalFailureException() const { return m_internalFailureException; }
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
-    inline void SetInternalFailureException(const InternalFailureException& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = value; }
-    inline void SetInternalFailureException(InternalFailureException&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::move(value); }
-    inline TranscriptResultStream& WithInternalFailureException(const InternalFailureException& value) { SetInternalFailureException(value); return *this;}
-    inline TranscriptResultStream& WithInternalFailureException(InternalFailureException&& value) { SetInternalFailureException(std::move(value)); return *this;}
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    void SetInternalFailureException(InternalFailureExceptionT&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::forward<InternalFailureExceptionT>(value); }
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    TranscriptResultStream& WithInternalFailureException(InternalFailureExceptionT&& value) { SetInternalFailureException(std::forward<InternalFailureExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,24 +102,24 @@ namespace Model
      * <p>A new stream started with the same session ID. The current stream has been
      * terminated.</p>
      */
-    inline const ConflictException& GetConflictException() const{ return m_conflictException; }
+    inline const ConflictException& GetConflictException() const { return m_conflictException; }
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-    inline void SetConflictException(const ConflictException& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = value; }
-    inline void SetConflictException(ConflictException&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::move(value); }
-    inline TranscriptResultStream& WithConflictException(const ConflictException& value) { SetConflictException(value); return *this;}
-    inline TranscriptResultStream& WithConflictException(ConflictException&& value) { SetConflictException(std::move(value)); return *this;}
+    template<typename ConflictExceptionT = ConflictException>
+    void SetConflictException(ConflictExceptionT&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::forward<ConflictExceptionT>(value); }
+    template<typename ConflictExceptionT = ConflictException>
+    TranscriptResultStream& WithConflictException(ConflictExceptionT&& value) { SetConflictException(std::forward<ConflictExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service is currently unavailable. Try your request later.</p>
      */
-    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
-    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
-    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
-    inline TranscriptResultStream& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
-    inline TranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    void SetServiceUnavailableException(ServiceUnavailableExceptionT&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::forward<ServiceUnavailableExceptionT>(value); }
+    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    TranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableExceptionT&& value) { SetServiceUnavailableException(std::forward<ServiceUnavailableExceptionT>(value)); return *this;}
     ///@}
   private:
 

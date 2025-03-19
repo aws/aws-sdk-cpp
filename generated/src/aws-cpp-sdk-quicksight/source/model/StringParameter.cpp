@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-StringParameter::StringParameter() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 StringParameter::StringParameter(JsonView jsonValue)
-  : StringParameter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StringParameter& StringParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ StringParameter& StringParameter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

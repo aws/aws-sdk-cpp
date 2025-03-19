@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkAutonomousSystem::NetworkAutonomousSystem() : 
-    m_nameHasBeenSet(false),
-    m_number(0),
-    m_numberHasBeenSet(false)
-{
-}
-
 NetworkAutonomousSystem::NetworkAutonomousSystem(JsonView jsonValue)
-  : NetworkAutonomousSystem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NetworkAutonomousSystem& NetworkAutonomousSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Number"))
   {
     m_number = jsonValue.GetInteger("Number");
-
     m_numberHasBeenSet = true;
   }
-
   return *this;
 }
 

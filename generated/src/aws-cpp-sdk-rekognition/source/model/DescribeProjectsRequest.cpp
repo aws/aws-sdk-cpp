@@ -12,15 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProjectsRequest::DescribeProjectsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_projectNamesHasBeenSet(false),
-    m_featuresHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProjectsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class GetOrganizationCustomRulePolicyResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetOrganizationCustomRulePolicyResult();
+    AWS_CONFIGSERVICE_API GetOrganizationCustomRulePolicyResult() = default;
     AWS_CONFIGSERVICE_API GetOrganizationCustomRulePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetOrganizationCustomRulePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The policy definition containing the logic for your organization Config
      * Custom Policy rule.</p>
      */
-    inline const Aws::String& GetPolicyText() const{ return m_policyText; }
-    inline void SetPolicyText(const Aws::String& value) { m_policyText = value; }
-    inline void SetPolicyText(Aws::String&& value) { m_policyText = std::move(value); }
-    inline void SetPolicyText(const char* value) { m_policyText.assign(value); }
-    inline GetOrganizationCustomRulePolicyResult& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
-    inline GetOrganizationCustomRulePolicyResult& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
-    inline GetOrganizationCustomRulePolicyResult& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
+    inline const Aws::String& GetPolicyText() const { return m_policyText; }
+    template<typename PolicyTextT = Aws::String>
+    void SetPolicyText(PolicyTextT&& value) { m_policyTextHasBeenSet = true; m_policyText = std::forward<PolicyTextT>(value); }
+    template<typename PolicyTextT = Aws::String>
+    GetOrganizationCustomRulePolicyResult& WithPolicyText(PolicyTextT&& value) { SetPolicyText(std::forward<PolicyTextT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOrganizationCustomRulePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOrganizationCustomRulePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOrganizationCustomRulePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOrganizationCustomRulePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyText;
+    bool m_policyTextHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

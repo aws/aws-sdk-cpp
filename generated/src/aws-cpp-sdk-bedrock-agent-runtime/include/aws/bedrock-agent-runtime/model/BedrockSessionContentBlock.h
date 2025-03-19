@@ -41,7 +41,7 @@ namespace Model
   class BedrockSessionContentBlock
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API BedrockSessionContentBlock();
+    AWS_BEDROCKAGENTRUNTIME_API BedrockSessionContentBlock() = default;
     AWS_BEDROCKAGENTRUNTIME_API BedrockSessionContentBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API BedrockSessionContentBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,26 +51,24 @@ namespace Model
     /**
      * <p>The image in the invocation step.</p>
      */
-    inline const ImageBlock& GetImage() const{ return m_image; }
+    inline const ImageBlock& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const ImageBlock& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(ImageBlock&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline BedrockSessionContentBlock& WithImage(const ImageBlock& value) { SetImage(value); return *this;}
-    inline BedrockSessionContentBlock& WithImage(ImageBlock&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = ImageBlock>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = ImageBlock>
+    BedrockSessionContentBlock& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text in the invocation step.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline BedrockSessionContentBlock& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline BedrockSessionContentBlock& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline BedrockSessionContentBlock& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    BedrockSessionContentBlock& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

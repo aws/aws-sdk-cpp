@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-Adapter::Adapter() : 
-    m_adapterIdHasBeenSet(false),
-    m_pagesHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Adapter::Adapter(JsonView jsonValue)
-  : Adapter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Adapter& Adapter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdapterId"))
   {
     m_adapterId = jsonValue.GetString("AdapterId");
-
     m_adapterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pages"))
   {
     Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
@@ -49,14 +39,11 @@ Adapter& Adapter::operator =(JsonView jsonValue)
     }
     m_pagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

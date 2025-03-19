@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-BatchRestrictions::BatchRestrictions() : 
-    m_maximumBuildsAllowed(0),
-    m_maximumBuildsAllowedHasBeenSet(false),
-    m_computeTypesAllowedHasBeenSet(false),
-    m_fleetsAllowedHasBeenSet(false)
-{
-}
-
 BatchRestrictions::BatchRestrictions(JsonView jsonValue)
-  : BatchRestrictions()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ BatchRestrictions& BatchRestrictions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maximumBuildsAllowed"))
   {
     m_maximumBuildsAllowed = jsonValue.GetInteger("maximumBuildsAllowed");
-
     m_maximumBuildsAllowedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeTypesAllowed"))
   {
     Aws::Utils::Array<JsonView> computeTypesAllowedJsonList = jsonValue.GetArray("computeTypesAllowed");
@@ -50,7 +39,6 @@ BatchRestrictions& BatchRestrictions::operator =(JsonView jsonValue)
     }
     m_computeTypesAllowedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetsAllowed"))
   {
     Aws::Utils::Array<JsonView> fleetsAllowedJsonList = jsonValue.GetArray("fleetsAllowed");
@@ -60,7 +48,6 @@ BatchRestrictions& BatchRestrictions::operator =(JsonView jsonValue)
     }
     m_fleetsAllowedHasBeenSet = true;
   }
-
   return *this;
 }
 

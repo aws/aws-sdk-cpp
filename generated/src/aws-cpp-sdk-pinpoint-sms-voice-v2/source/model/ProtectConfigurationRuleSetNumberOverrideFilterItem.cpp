@@ -18,15 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-ProtectConfigurationRuleSetNumberOverrideFilterItem::ProtectConfigurationRuleSetNumberOverrideFilterItem() : 
-    m_name(ProtectConfigurationRuleSetNumberOverrideFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ProtectConfigurationRuleSetNumberOverrideFilterItem::ProtectConfigurationRuleSetNumberOverrideFilterItem(JsonView jsonValue)
-  : ProtectConfigurationRuleSetNumberOverrideFilterItem()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProtectConfigurationRuleSetNumberOverrideFilterItem& ProtectConfigurationRuleSet
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ProtectConfigurationRuleSetNumberOverrideFilterNameMapper::GetProtectConfigurationRuleSetNumberOverrideFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ ProtectConfigurationRuleSetNumberOverrideFilterItem& ProtectConfigurationRuleSet
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

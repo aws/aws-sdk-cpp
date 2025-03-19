@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetImageBlockPublicAccessStateRequest::GetImageBlockPublicAccessStateRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetImageBlockPublicAccessStateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

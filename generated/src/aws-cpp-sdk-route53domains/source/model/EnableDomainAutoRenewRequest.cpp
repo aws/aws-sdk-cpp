@@ -12,11 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableDomainAutoRenewRequest::EnableDomainAutoRenewRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String EnableDomainAutoRenewRequest::SerializePayload() const
 {
   JsonValue payload;

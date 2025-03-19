@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PartnerAppMaintenanceConfig::PartnerAppMaintenanceConfig() : 
-    m_maintenanceWindowStartHasBeenSet(false)
-{
-}
-
 PartnerAppMaintenanceConfig::PartnerAppMaintenanceConfig(JsonView jsonValue)
-  : PartnerAppMaintenanceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PartnerAppMaintenanceConfig& PartnerAppMaintenanceConfig::operator =(JsonView js
   if(jsonValue.ValueExists("MaintenanceWindowStart"))
   {
     m_maintenanceWindowStart = jsonValue.GetString("MaintenanceWindowStart");
-
     m_maintenanceWindowStartHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class PublicAccess
   {
   public:
-    AWS_KAFKA_API PublicAccess();
+    AWS_KAFKA_API PublicAccess() = default;
     AWS_KAFKA_API PublicAccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API PublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
          
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline PublicAccess& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline PublicAccess& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline PublicAccess& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    PublicAccess& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

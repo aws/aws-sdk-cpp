@@ -18,22 +18,7 @@ namespace Athena
 namespace Model
 {
 
-DataCatalog::DataCatalog() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(DataCatalogType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_status(DataCatalogStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 DataCatalog::DataCatalog(JsonView jsonValue)
-  : DataCatalog()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ DataCatalog& DataCatalog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataCatalogTypeMapper::GetDataCatalogTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -70,28 +49,21 @@ DataCatalog& DataCatalog::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DataCatalogStatusMapper::GetDataCatalogStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionType"))
   {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("ConnectionType"));
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

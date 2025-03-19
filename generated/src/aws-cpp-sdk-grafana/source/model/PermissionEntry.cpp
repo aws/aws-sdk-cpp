@@ -18,15 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-PermissionEntry::PermissionEntry() : 
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 PermissionEntry::PermissionEntry(JsonView jsonValue)
-  : PermissionEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PermissionEntry& PermissionEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("role"))
   {
     m_role = RoleMapper::GetRoleForName(jsonValue.GetString("role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

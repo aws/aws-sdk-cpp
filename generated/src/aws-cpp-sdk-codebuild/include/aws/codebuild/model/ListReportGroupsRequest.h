@@ -23,7 +23,7 @@ namespace Model
   class ListReportGroupsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API ListReportGroupsRequest();
+    AWS_CODEBUILD_API ListReportGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,10 @@ namespace Model
      * <p> Used to specify the order to sort the list of returned report groups. Valid
      * values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
      */
-    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrderType GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListReportGroupsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-    inline ListReportGroupsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrderType value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListReportGroupsRequest& WithSortOrder(SortOrderType value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,10 @@ namespace Model
      * based on when each report group was last changed.</p> </li> <li> <p>
      * <code>NAME</code>: List based on each report group's name.</p> </li> </ul>
      */
-    inline const ReportGroupSortByType& GetSortBy() const{ return m_sortBy; }
+    inline ReportGroupSortByType GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ReportGroupSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ReportGroupSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListReportGroupsRequest& WithSortBy(const ReportGroupSortByType& value) { SetSortBy(value); return *this;}
-    inline ListReportGroupsRequest& WithSortBy(ReportGroupSortByType&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ReportGroupSortByType value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListReportGroupsRequest& WithSortBy(ReportGroupSortByType value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * each subsequent next token that is returned, until no more next tokens are
      * returned. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListReportGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReportGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReportGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReportGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,23 +85,23 @@ namespace Model
      * <code>nextToken</code> to iterate pages in the list of returned
      * <code>ReportGroup</code> objects. The default value is 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListReportGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    SortOrderType m_sortOrder;
+    SortOrderType m_sortOrder{SortOrderType::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    ReportGroupSortByType m_sortBy;
+    ReportGroupSortByType m_sortBy{ReportGroupSortByType::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

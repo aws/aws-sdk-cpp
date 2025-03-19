@@ -35,7 +35,7 @@ namespace Model
   class BackupJob
   {
   public:
-    AWS_BACKUP_API BackupJob();
+    AWS_BACKUP_API BackupJob() = default;
     AWS_BACKUP_API BackupJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API BackupJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The account ID that owns the backup job.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline BackupJob& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline BackupJob& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline BackupJob& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    BackupJob& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Uniquely identifies a request to Backup to back up a resource.</p>
      */
-    inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
+    inline const Aws::String& GetBackupJobId() const { return m_backupJobId; }
     inline bool BackupJobIdHasBeenSet() const { return m_backupJobIdHasBeenSet; }
-    inline void SetBackupJobId(const Aws::String& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = value; }
-    inline void SetBackupJobId(Aws::String&& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = std::move(value); }
-    inline void SetBackupJobId(const char* value) { m_backupJobIdHasBeenSet = true; m_backupJobId.assign(value); }
-    inline BackupJob& WithBackupJobId(const Aws::String& value) { SetBackupJobId(value); return *this;}
-    inline BackupJob& WithBackupJobId(Aws::String&& value) { SetBackupJobId(std::move(value)); return *this;}
-    inline BackupJob& WithBackupJobId(const char* value) { SetBackupJobId(value); return *this;}
+    template<typename BackupJobIdT = Aws::String>
+    void SetBackupJobId(BackupJobIdT&& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = std::forward<BackupJobIdT>(value); }
+    template<typename BackupJobIdT = Aws::String>
+    BackupJob& WithBackupJobId(BackupJobIdT&& value) { SetBackupJobId(std::forward<BackupJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * identified by names that are unique to the account used to create them and the
      * Amazon Web Services Region where they are created.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline BackupJob& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline BackupJob& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline BackupJob& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    BackupJob& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
-    inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
     inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
-    inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = value; }
-    inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::move(value); }
-    inline void SetBackupVaultArn(const char* value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn.assign(value); }
-    inline BackupJob& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-    inline BackupJob& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-    inline BackupJob& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    BackupJob& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +98,12 @@ namespace Model
      * <p>An ARN that uniquely identifies a recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
     inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn.assign(value); }
-    inline BackupJob& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline BackupJob& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline BackupJob& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    BackupJob& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +111,12 @@ namespace Model
      * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
      * the resource type.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline BackupJob& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline BackupJob& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline BackupJob& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    BackupJob& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +126,12 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline BackupJob& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline BackupJob& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    BackupJob& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,24 +141,22 @@ namespace Model
      * is accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionDate() const{ return m_completionDate; }
+    inline const Aws::Utils::DateTime& GetCompletionDate() const { return m_completionDate; }
     inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
-    inline void SetCompletionDate(const Aws::Utils::DateTime& value) { m_completionDateHasBeenSet = true; m_completionDate = value; }
-    inline void SetCompletionDate(Aws::Utils::DateTime&& value) { m_completionDateHasBeenSet = true; m_completionDate = std::move(value); }
-    inline BackupJob& WithCompletionDate(const Aws::Utils::DateTime& value) { SetCompletionDate(value); return *this;}
-    inline BackupJob& WithCompletionDate(Aws::Utils::DateTime&& value) { SetCompletionDate(std::move(value)); return *this;}
+    template<typename CompletionDateT = Aws::Utils::DateTime>
+    void SetCompletionDate(CompletionDateT&& value) { m_completionDateHasBeenSet = true; m_completionDate = std::forward<CompletionDateT>(value); }
+    template<typename CompletionDateT = Aws::Utils::DateTime>
+    BackupJob& WithCompletionDate(CompletionDateT&& value) { SetCompletionDate(std::forward<CompletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of a backup job.</p>
      */
-    inline const BackupJobState& GetState() const{ return m_state; }
+    inline BackupJobState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const BackupJobState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(BackupJobState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline BackupJob& WithState(const BackupJobState& value) { SetState(value); return *this;}
-    inline BackupJob& WithState(BackupJobState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(BackupJobState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline BackupJob& WithState(BackupJobState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +164,12 @@ namespace Model
      * <p>A detailed message explaining the status of the job to back up a
      * resource.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline BackupJob& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline BackupJob& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline BackupJob& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    BackupJob& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,21 +177,19 @@ namespace Model
      * <p>Contains an estimated percentage complete of a job at the time the job status
      * was queried.</p>
      */
-    inline const Aws::String& GetPercentDone() const{ return m_percentDone; }
+    inline const Aws::String& GetPercentDone() const { return m_percentDone; }
     inline bool PercentDoneHasBeenSet() const { return m_percentDoneHasBeenSet; }
-    inline void SetPercentDone(const Aws::String& value) { m_percentDoneHasBeenSet = true; m_percentDone = value; }
-    inline void SetPercentDone(Aws::String&& value) { m_percentDoneHasBeenSet = true; m_percentDone = std::move(value); }
-    inline void SetPercentDone(const char* value) { m_percentDoneHasBeenSet = true; m_percentDone.assign(value); }
-    inline BackupJob& WithPercentDone(const Aws::String& value) { SetPercentDone(value); return *this;}
-    inline BackupJob& WithPercentDone(Aws::String&& value) { SetPercentDone(std::move(value)); return *this;}
-    inline BackupJob& WithPercentDone(const char* value) { SetPercentDone(value); return *this;}
+    template<typename PercentDoneT = Aws::String>
+    void SetPercentDone(PercentDoneT&& value) { m_percentDoneHasBeenSet = true; m_percentDone = std::forward<PercentDoneT>(value); }
+    template<typename PercentDoneT = Aws::String>
+    BackupJob& WithPercentDone(PercentDoneT&& value) { SetPercentDone(std::forward<PercentDoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size, in bytes, of a backup.</p>
      */
-    inline long long GetBackupSizeInBytes() const{ return m_backupSizeInBytes; }
+    inline long long GetBackupSizeInBytes() const { return m_backupSizeInBytes; }
     inline bool BackupSizeInBytesHasBeenSet() const { return m_backupSizeInBytesHasBeenSet; }
     inline void SetBackupSizeInBytes(long long value) { m_backupSizeInBytesHasBeenSet = true; m_backupSizeInBytes = value; }
     inline BackupJob& WithBackupSizeInBytes(long long value) { SetBackupSizeInBytes(value); return *this;}
@@ -221,14 +203,12 @@ namespace Model
      * <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names
      * without those strings lack permissions to perform backup jobs.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline BackupJob& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline BackupJob& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline BackupJob& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    BackupJob& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,12 +218,12 @@ namespace Model
      * <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan
      * used to create it.</p>
      */
-    inline const RecoveryPointCreator& GetCreatedBy() const{ return m_createdBy; }
+    inline const RecoveryPointCreator& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const RecoveryPointCreator& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(RecoveryPointCreator&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline BackupJob& WithCreatedBy(const RecoveryPointCreator& value) { SetCreatedBy(value); return *this;}
-    inline BackupJob& WithCreatedBy(RecoveryPointCreator&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = RecoveryPointCreator>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = RecoveryPointCreator>
+    BackupJob& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,12 +234,12 @@ namespace Model
      * the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
      * AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpectedCompletionDate() const{ return m_expectedCompletionDate; }
+    inline const Aws::Utils::DateTime& GetExpectedCompletionDate() const { return m_expectedCompletionDate; }
     inline bool ExpectedCompletionDateHasBeenSet() const { return m_expectedCompletionDateHasBeenSet; }
-    inline void SetExpectedCompletionDate(const Aws::Utils::DateTime& value) { m_expectedCompletionDateHasBeenSet = true; m_expectedCompletionDate = value; }
-    inline void SetExpectedCompletionDate(Aws::Utils::DateTime&& value) { m_expectedCompletionDateHasBeenSet = true; m_expectedCompletionDate = std::move(value); }
-    inline BackupJob& WithExpectedCompletionDate(const Aws::Utils::DateTime& value) { SetExpectedCompletionDate(value); return *this;}
-    inline BackupJob& WithExpectedCompletionDate(Aws::Utils::DateTime&& value) { SetExpectedCompletionDate(std::move(value)); return *this;}
+    template<typename ExpectedCompletionDateT = Aws::Utils::DateTime>
+    void SetExpectedCompletionDate(ExpectedCompletionDateT&& value) { m_expectedCompletionDateHasBeenSet = true; m_expectedCompletionDate = std::forward<ExpectedCompletionDateT>(value); }
+    template<typename ExpectedCompletionDateT = Aws::Utils::DateTime>
+    BackupJob& WithExpectedCompletionDate(ExpectedCompletionDateT&& value) { SetExpectedCompletionDate(std::forward<ExpectedCompletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,12 +252,12 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartBy() const{ return m_startBy; }
+    inline const Aws::Utils::DateTime& GetStartBy() const { return m_startBy; }
     inline bool StartByHasBeenSet() const { return m_startByHasBeenSet; }
-    inline void SetStartBy(const Aws::Utils::DateTime& value) { m_startByHasBeenSet = true; m_startBy = value; }
-    inline void SetStartBy(Aws::Utils::DateTime&& value) { m_startByHasBeenSet = true; m_startBy = std::move(value); }
-    inline BackupJob& WithStartBy(const Aws::Utils::DateTime& value) { SetStartBy(value); return *this;}
-    inline BackupJob& WithStartBy(Aws::Utils::DateTime&& value) { SetStartBy(std::move(value)); return *this;}
+    template<typename StartByT = Aws::Utils::DateTime>
+    void SetStartBy(StartByT&& value) { m_startByHasBeenSet = true; m_startBy = std::forward<StartByT>(value); }
+    template<typename StartByT = Aws::Utils::DateTime>
+    BackupJob& WithStartBy(StartByT&& value) { SetStartBy(std::forward<StartByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -287,14 +267,12 @@ namespace Model
      * Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS)
      * backups, the only supported resource type is Amazon EC2.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline BackupJob& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline BackupJob& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline BackupJob& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    BackupJob& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -302,7 +280,7 @@ namespace Model
      * <p>The size in bytes transferred to a backup vault at the time that the job
      * status was queried.</p>
      */
-    inline long long GetBytesTransferred() const{ return m_bytesTransferred; }
+    inline long long GetBytesTransferred() const { return m_bytesTransferred; }
     inline bool BytesTransferredHasBeenSet() const { return m_bytesTransferredHasBeenSet; }
     inline void SetBytesTransferred(long long value) { m_bytesTransferredHasBeenSet = true; m_bytesTransferred = value; }
     inline BackupJob& WithBytesTransferred(long long value) { SetBytesTransferred(value); return *this;}
@@ -318,33 +296,28 @@ namespace Model
      * an invalid option, you get an <code>InvalidParameterValueException</code>
      * exception.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const{ return m_backupOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const { return m_backupOptions; }
     inline bool BackupOptionsHasBeenSet() const { return m_backupOptionsHasBeenSet; }
-    inline void SetBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = value; }
-    inline void SetBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::move(value); }
-    inline BackupJob& WithBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetBackupOptions(value); return *this;}
-    inline BackupJob& WithBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetBackupOptions(std::move(value)); return *this;}
-    inline BackupJob& AddBackupOptions(const Aws::String& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
-    inline BackupJob& AddBackupOptions(Aws::String&& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
-    inline BackupJob& AddBackupOptions(const Aws::String& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
-    inline BackupJob& AddBackupOptions(Aws::String&& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline BackupJob& AddBackupOptions(const char* key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
-    inline BackupJob& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
-    inline BackupJob& AddBackupOptions(const char* key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
+    template<typename BackupOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetBackupOptions(BackupOptionsT&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::forward<BackupOptionsT>(value); }
+    template<typename BackupOptionsT = Aws::Map<Aws::String, Aws::String>>
+    BackupJob& WithBackupOptions(BackupOptionsT&& value) { SetBackupOptions(std::forward<BackupOptionsT>(value)); return *this;}
+    template<typename BackupOptionsKeyT = Aws::String, typename BackupOptionsValueT = Aws::String>
+    BackupJob& AddBackupOptions(BackupOptionsKeyT&& key, BackupOptionsValueT&& value) {
+      m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::forward<BackupOptionsKeyT>(key), std::forward<BackupOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Represents the type of backup for a backup job.</p>
      */
-    inline const Aws::String& GetBackupType() const{ return m_backupType; }
+    inline const Aws::String& GetBackupType() const { return m_backupType; }
     inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
-    inline void SetBackupType(const Aws::String& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
-    inline void SetBackupType(Aws::String&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
-    inline void SetBackupType(const char* value) { m_backupTypeHasBeenSet = true; m_backupType.assign(value); }
-    inline BackupJob& WithBackupType(const Aws::String& value) { SetBackupType(value); return *this;}
-    inline BackupJob& WithBackupType(Aws::String&& value) { SetBackupType(std::move(value)); return *this;}
-    inline BackupJob& WithBackupType(const char* value) { SetBackupType(value); return *this;}
+    template<typename BackupTypeT = Aws::String>
+    void SetBackupType(BackupTypeT&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::forward<BackupTypeT>(value); }
+    template<typename BackupTypeT = Aws::String>
+    BackupJob& WithBackupType(BackupTypeT&& value) { SetBackupType(std::forward<BackupTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -352,14 +325,12 @@ namespace Model
      * <p>This uniquely identifies a request to Backup to back up a resource. The
      * return will be the parent (composite) job ID.</p>
      */
-    inline const Aws::String& GetParentJobId() const{ return m_parentJobId; }
+    inline const Aws::String& GetParentJobId() const { return m_parentJobId; }
     inline bool ParentJobIdHasBeenSet() const { return m_parentJobIdHasBeenSet; }
-    inline void SetParentJobId(const Aws::String& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = value; }
-    inline void SetParentJobId(Aws::String&& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = std::move(value); }
-    inline void SetParentJobId(const char* value) { m_parentJobIdHasBeenSet = true; m_parentJobId.assign(value); }
-    inline BackupJob& WithParentJobId(const Aws::String& value) { SetParentJobId(value); return *this;}
-    inline BackupJob& WithParentJobId(Aws::String&& value) { SetParentJobId(std::move(value)); return *this;}
-    inline BackupJob& WithParentJobId(const char* value) { SetParentJobId(value); return *this;}
+    template<typename ParentJobIdT = Aws::String>
+    void SetParentJobId(ParentJobIdT&& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = std::forward<ParentJobIdT>(value); }
+    template<typename ParentJobIdT = Aws::String>
+    BackupJob& WithParentJobId(ParentJobIdT&& value) { SetParentJobId(std::forward<ParentJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -367,7 +338,7 @@ namespace Model
      * <p>This is a boolean value indicating this is a parent (composite) backup
      * job.</p>
      */
-    inline bool GetIsParent() const{ return m_isParent; }
+    inline bool GetIsParent() const { return m_isParent; }
     inline bool IsParentHasBeenSet() const { return m_isParentHasBeenSet; }
     inline void SetIsParent(bool value) { m_isParentHasBeenSet = true; m_isParent = value; }
     inline BackupJob& WithIsParent(bool value) { SetIsParent(value); return *this;}
@@ -377,26 +348,24 @@ namespace Model
     /**
      * <p>The non-unique name of the resource that belongs to the specified backup.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline BackupJob& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline BackupJob& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline BackupJob& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    BackupJob& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date on which the backup job was initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetInitiationDate() const{ return m_initiationDate; }
+    inline const Aws::Utils::DateTime& GetInitiationDate() const { return m_initiationDate; }
     inline bool InitiationDateHasBeenSet() const { return m_initiationDateHasBeenSet; }
-    inline void SetInitiationDate(const Aws::Utils::DateTime& value) { m_initiationDateHasBeenSet = true; m_initiationDate = value; }
-    inline void SetInitiationDate(Aws::Utils::DateTime&& value) { m_initiationDateHasBeenSet = true; m_initiationDate = std::move(value); }
-    inline BackupJob& WithInitiationDate(const Aws::Utils::DateTime& value) { SetInitiationDate(value); return *this;}
-    inline BackupJob& WithInitiationDate(Aws::Utils::DateTime&& value) { SetInitiationDate(std::move(value)); return *this;}
+    template<typename InitiationDateT = Aws::Utils::DateTime>
+    void SetInitiationDate(InitiationDateT&& value) { m_initiationDateHasBeenSet = true; m_initiationDate = std::forward<InitiationDateT>(value); }
+    template<typename InitiationDateT = Aws::Utils::DateTime>
+    BackupJob& WithInitiationDate(InitiationDateT&& value) { SetInitiationDate(std::forward<InitiationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -409,14 +378,12 @@ namespace Model
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
      * for all message categories and returns the sum.</p>
      */
-    inline const Aws::String& GetMessageCategory() const{ return m_messageCategory; }
+    inline const Aws::String& GetMessageCategory() const { return m_messageCategory; }
     inline bool MessageCategoryHasBeenSet() const { return m_messageCategoryHasBeenSet; }
-    inline void SetMessageCategory(const Aws::String& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = value; }
-    inline void SetMessageCategory(Aws::String&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::move(value); }
-    inline void SetMessageCategory(const char* value) { m_messageCategoryHasBeenSet = true; m_messageCategory.assign(value); }
-    inline BackupJob& WithMessageCategory(const Aws::String& value) { SetMessageCategory(value); return *this;}
-    inline BackupJob& WithMessageCategory(Aws::String&& value) { SetMessageCategory(std::move(value)); return *this;}
-    inline BackupJob& WithMessageCategory(const char* value) { SetMessageCategory(value); return *this;}
+    template<typename MessageCategoryT = Aws::String>
+    void SetMessageCategory(MessageCategoryT&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::forward<MessageCategoryT>(value); }
+    template<typename MessageCategoryT = Aws::String>
+    BackupJob& WithMessageCategory(MessageCategoryT&& value) { SetMessageCategory(std::forward<MessageCategoryT>(value)); return *this;}
     ///@}
   private:
 
@@ -438,13 +405,13 @@ namespace Model
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionDate;
+    Aws::Utils::DateTime m_completionDate{};
     bool m_completionDateHasBeenSet = false;
 
-    BackupJobState m_state;
+    BackupJobState m_state{BackupJobState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
@@ -453,7 +420,7 @@ namespace Model
     Aws::String m_percentDone;
     bool m_percentDoneHasBeenSet = false;
 
-    long long m_backupSizeInBytes;
+    long long m_backupSizeInBytes{0};
     bool m_backupSizeInBytesHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
@@ -462,16 +429,16 @@ namespace Model
     RecoveryPointCreator m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expectedCompletionDate;
+    Aws::Utils::DateTime m_expectedCompletionDate{};
     bool m_expectedCompletionDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startBy;
+    Aws::Utils::DateTime m_startBy{};
     bool m_startByHasBeenSet = false;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    long long m_bytesTransferred;
+    long long m_bytesTransferred{0};
     bool m_bytesTransferredHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
@@ -483,13 +450,13 @@ namespace Model
     Aws::String m_parentJobId;
     bool m_parentJobIdHasBeenSet = false;
 
-    bool m_isParent;
+    bool m_isParent{false};
     bool m_isParentHasBeenSet = false;
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_initiationDate;
+    Aws::Utils::DateTime m_initiationDate{};
     bool m_initiationDateHasBeenSet = false;
 
     Aws::String m_messageCategory;

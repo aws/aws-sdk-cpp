@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuthResult::AuthResult() : 
-    m_authInfoHasBeenSet(false),
-    m_allowedHasBeenSet(false),
-    m_deniedHasBeenSet(false),
-    m_authDecision(AuthDecision::NOT_SET),
-    m_authDecisionHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false)
-{
-}
-
 AuthResult::AuthResult(JsonView jsonValue)
-  : AuthResult()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AuthResult& AuthResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authInfo"))
   {
     m_authInfo = jsonValue.GetObject("authInfo");
-
     m_authInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowed"))
   {
     m_allowed = jsonValue.GetObject("allowed");
-
     m_allowedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denied"))
   {
     m_denied = jsonValue.GetObject("denied");
-
     m_deniedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authDecision"))
   {
     m_authDecision = AuthDecisionMapper::GetAuthDecisionForName(jsonValue.GetString("authDecision"));
-
     m_authDecisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("missingContextValues"))
   {
     Aws::Utils::Array<JsonView> missingContextValuesJsonList = jsonValue.GetArray("missingContextValues");
@@ -73,7 +54,6 @@ AuthResult& AuthResult::operator =(JsonView jsonValue)
     }
     m_missingContextValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

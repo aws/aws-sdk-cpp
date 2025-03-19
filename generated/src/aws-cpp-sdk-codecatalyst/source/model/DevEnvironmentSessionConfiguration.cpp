@@ -18,15 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-DevEnvironmentSessionConfiguration::DevEnvironmentSessionConfiguration() : 
-    m_sessionType(DevEnvironmentSessionType::NOT_SET),
-    m_sessionTypeHasBeenSet(false),
-    m_executeCommandSessionConfigurationHasBeenSet(false)
-{
-}
-
 DevEnvironmentSessionConfiguration::DevEnvironmentSessionConfiguration(JsonView jsonValue)
-  : DevEnvironmentSessionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DevEnvironmentSessionConfiguration& DevEnvironmentSessionConfiguration::operator
   if(jsonValue.ValueExists("sessionType"))
   {
     m_sessionType = DevEnvironmentSessionTypeMapper::GetDevEnvironmentSessionTypeForName(jsonValue.GetString("sessionType"));
-
     m_sessionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executeCommandSessionConfiguration"))
   {
     m_executeCommandSessionConfiguration = jsonValue.GetObject("executeCommandSessionConfiguration");
-
     m_executeCommandSessionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,22 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSlackChannelConfigurationRequest::CreateSlackChannelConfigurationRequest() : 
-    m_channelIdHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_channelRoleArnHasBeenSet(false),
-    m_notifyOnAddCorrespondenceToCase(false),
-    m_notifyOnAddCorrespondenceToCaseHasBeenSet(false),
-    m_notifyOnCaseSeverity(NotificationSeverityLevel::NOT_SET),
-    m_notifyOnCaseSeverityHasBeenSet(false),
-    m_notifyOnCreateOrReopenCase(false),
-    m_notifyOnCreateOrReopenCaseHasBeenSet(false),
-    m_notifyOnResolveCase(false),
-    m_notifyOnResolveCaseHasBeenSet(false),
-    m_teamIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateSlackChannelConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

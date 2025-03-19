@@ -18,17 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionState::ActionState() : 
-    m_actionNameHasBeenSet(false),
-    m_currentRevisionHasBeenSet(false),
-    m_latestExecutionHasBeenSet(false),
-    m_entityUrlHasBeenSet(false),
-    m_revisionUrlHasBeenSet(false)
-{
-}
-
 ActionState::ActionState(JsonView jsonValue)
-  : ActionState()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ActionState& ActionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentRevision"))
   {
     m_currentRevision = jsonValue.GetObject("currentRevision");
-
     m_currentRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestExecution"))
   {
     m_latestExecution = jsonValue.GetObject("latestExecution");
-
     m_latestExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityUrl"))
   {
     m_entityUrl = jsonValue.GetString("entityUrl");
-
     m_entityUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionUrl"))
   {
     m_revisionUrl = jsonValue.GetString("revisionUrl");
-
     m_revisionUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

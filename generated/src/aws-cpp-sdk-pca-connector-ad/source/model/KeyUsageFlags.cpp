@@ -18,22 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-KeyUsageFlags::KeyUsageFlags() : 
-    m_dataEncipherment(false),
-    m_dataEnciphermentHasBeenSet(false),
-    m_digitalSignature(false),
-    m_digitalSignatureHasBeenSet(false),
-    m_keyAgreement(false),
-    m_keyAgreementHasBeenSet(false),
-    m_keyEncipherment(false),
-    m_keyEnciphermentHasBeenSet(false),
-    m_nonRepudiation(false),
-    m_nonRepudiationHasBeenSet(false)
-{
-}
-
 KeyUsageFlags::KeyUsageFlags(JsonView jsonValue)
-  : KeyUsageFlags()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ KeyUsageFlags& KeyUsageFlags::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataEncipherment"))
   {
     m_dataEncipherment = jsonValue.GetBool("DataEncipherment");
-
     m_dataEnciphermentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DigitalSignature"))
   {
     m_digitalSignature = jsonValue.GetBool("DigitalSignature");
-
     m_digitalSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAgreement"))
   {
     m_keyAgreement = jsonValue.GetBool("KeyAgreement");
-
     m_keyAgreementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyEncipherment"))
   {
     m_keyEncipherment = jsonValue.GetBool("KeyEncipherment");
-
     m_keyEnciphermentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonRepudiation"))
   {
     m_nonRepudiation = jsonValue.GetBool("NonRepudiation");
-
     m_nonRepudiationHasBeenSet = true;
   }
-
   return *this;
 }
 

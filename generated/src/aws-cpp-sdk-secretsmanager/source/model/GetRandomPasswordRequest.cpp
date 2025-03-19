@@ -12,25 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRandomPasswordRequest::GetRandomPasswordRequest() : 
-    m_passwordLength(0),
-    m_passwordLengthHasBeenSet(false),
-    m_excludeCharactersHasBeenSet(false),
-    m_excludeNumbers(false),
-    m_excludeNumbersHasBeenSet(false),
-    m_excludePunctuation(false),
-    m_excludePunctuationHasBeenSet(false),
-    m_excludeUppercase(false),
-    m_excludeUppercaseHasBeenSet(false),
-    m_excludeLowercase(false),
-    m_excludeLowercaseHasBeenSet(false),
-    m_includeSpace(false),
-    m_includeSpaceHasBeenSet(false),
-    m_requireEachIncludedType(false),
-    m_requireEachIncludedTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetRandomPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

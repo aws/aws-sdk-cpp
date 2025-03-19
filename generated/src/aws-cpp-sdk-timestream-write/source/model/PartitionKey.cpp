@@ -18,17 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-PartitionKey::PartitionKey() : 
-    m_type(PartitionKeyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_enforcementInRecord(PartitionKeyEnforcementLevel::NOT_SET),
-    m_enforcementInRecordHasBeenSet(false)
-{
-}
-
 PartitionKey::PartitionKey(JsonView jsonValue)
-  : PartitionKey()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PartitionKey& PartitionKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PartitionKeyTypeMapper::GetPartitionKeyTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnforcementInRecord"))
   {
     m_enforcementInRecord = PartitionKeyEnforcementLevelMapper::GetPartitionKeyEnforcementLevelForName(jsonValue.GetString("EnforcementInRecord"));
-
     m_enforcementInRecordHasBeenSet = true;
   }
-
   return *this;
 }
 

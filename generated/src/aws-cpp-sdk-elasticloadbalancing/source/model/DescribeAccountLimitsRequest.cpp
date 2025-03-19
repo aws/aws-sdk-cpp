@@ -10,13 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DescribeAccountLimitsRequest::DescribeAccountLimitsRequest() : 
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountLimitsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

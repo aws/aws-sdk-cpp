@@ -34,7 +34,7 @@ namespace Model
   class InputConfig
   {
   public:
-    AWS_SAGEMAKER_API InputConfig();
+    AWS_SAGEMAKER_API InputConfig() = default;
     AWS_SAGEMAKER_API InputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
      * suffix).</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline InputConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline InputConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline InputConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    InputConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,14 +165,12 @@ namespace Model
      * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
      * </p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetDataInputConfig() const{ return m_dataInputConfig; }
+    inline const Aws::String& GetDataInputConfig() const { return m_dataInputConfig; }
     inline bool DataInputConfigHasBeenSet() const { return m_dataInputConfigHasBeenSet; }
-    inline void SetDataInputConfig(const Aws::String& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = value; }
-    inline void SetDataInputConfig(Aws::String&& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = std::move(value); }
-    inline void SetDataInputConfig(const char* value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig.assign(value); }
-    inline InputConfig& WithDataInputConfig(const Aws::String& value) { SetDataInputConfig(value); return *this;}
-    inline InputConfig& WithDataInputConfig(Aws::String&& value) { SetDataInputConfig(std::move(value)); return *this;}
-    inline InputConfig& WithDataInputConfig(const char* value) { SetDataInputConfig(value); return *this;}
+    template<typename DataInputConfigT = Aws::String>
+    void SetDataInputConfig(DataInputConfigT&& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = std::forward<DataInputConfigT>(value); }
+    template<typename DataInputConfigT = Aws::String>
+    InputConfig& WithDataInputConfig(DataInputConfigT&& value) { SetDataInputConfig(std::forward<DataInputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +178,10 @@ namespace Model
      * <p>Identifies the framework in which the model was trained. For example:
      * TENSORFLOW.</p>
      */
-    inline const Framework& GetFramework() const{ return m_framework; }
+    inline Framework GetFramework() const { return m_framework; }
     inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
-    inline void SetFramework(const Framework& value) { m_frameworkHasBeenSet = true; m_framework = value; }
-    inline void SetFramework(Framework&& value) { m_frameworkHasBeenSet = true; m_framework = std::move(value); }
-    inline InputConfig& WithFramework(const Framework& value) { SetFramework(value); return *this;}
-    inline InputConfig& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
+    inline void SetFramework(Framework value) { m_frameworkHasBeenSet = true; m_framework = value; }
+    inline InputConfig& WithFramework(Framework value) { SetFramework(value); return *this;}
     ///@}
 
     ///@{
@@ -201,14 +195,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
      * Supported Frameworks</a>.</p>
      */
-    inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
+    inline const Aws::String& GetFrameworkVersion() const { return m_frameworkVersion; }
     inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
-    inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
-    inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
-    inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
-    inline InputConfig& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
-    inline InputConfig& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
-    inline InputConfig& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
+    template<typename FrameworkVersionT = Aws::String>
+    void SetFrameworkVersion(FrameworkVersionT&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::forward<FrameworkVersionT>(value); }
+    template<typename FrameworkVersionT = Aws::String>
+    InputConfig& WithFrameworkVersion(FrameworkVersionT&& value) { SetFrameworkVersion(std::forward<FrameworkVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -218,7 +210,7 @@ namespace Model
     Aws::String m_dataInputConfig;
     bool m_dataInputConfigHasBeenSet = false;
 
-    Framework m_framework;
+    Framework m_framework{Framework::NOT_SET};
     bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;

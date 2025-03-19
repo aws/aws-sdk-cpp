@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDashboardsQAConfigurationResult::UpdateDashboardsQAConfigurationResult() : 
-    m_dashboardsQAStatus(DashboardsQAStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 UpdateDashboardsQAConfigurationResult::UpdateDashboardsQAConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDashboardsQAConfigurationResult()
 {
   *this = result;
 }
@@ -35,19 +28,19 @@ UpdateDashboardsQAConfigurationResult& UpdateDashboardsQAConfigurationResult::op
   if(jsonValue.ValueExists("DashboardsQAStatus"))
   {
     m_dashboardsQAStatus = DashboardsQAStatusMapper::GetDashboardsQAStatusForName(jsonValue.GetString("DashboardsQAStatus"));
-
+    m_dashboardsQAStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

@@ -33,7 +33,7 @@ namespace Model
   class JobMessages
   {
   public:
-    AWS_MEDIACONVERT_API JobMessages();
+    AWS_MEDIACONVERT_API JobMessages() = default;
     AWS_MEDIACONVERT_API JobMessages(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API JobMessages& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * List of messages that are informational only and don't indicate a problem with
      * your job.
      */
-    inline const Aws::Vector<Aws::String>& GetInfo() const{ return m_info; }
+    inline const Aws::Vector<Aws::String>& GetInfo() const { return m_info; }
     inline bool InfoHasBeenSet() const { return m_infoHasBeenSet; }
-    inline void SetInfo(const Aws::Vector<Aws::String>& value) { m_infoHasBeenSet = true; m_info = value; }
-    inline void SetInfo(Aws::Vector<Aws::String>&& value) { m_infoHasBeenSet = true; m_info = std::move(value); }
-    inline JobMessages& WithInfo(const Aws::Vector<Aws::String>& value) { SetInfo(value); return *this;}
-    inline JobMessages& WithInfo(Aws::Vector<Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
-    inline JobMessages& AddInfo(const Aws::String& value) { m_infoHasBeenSet = true; m_info.push_back(value); return *this; }
-    inline JobMessages& AddInfo(Aws::String&& value) { m_infoHasBeenSet = true; m_info.push_back(std::move(value)); return *this; }
-    inline JobMessages& AddInfo(const char* value) { m_infoHasBeenSet = true; m_info.push_back(value); return *this; }
+    template<typename InfoT = Aws::Vector<Aws::String>>
+    void SetInfo(InfoT&& value) { m_infoHasBeenSet = true; m_info = std::forward<InfoT>(value); }
+    template<typename InfoT = Aws::Vector<Aws::String>>
+    JobMessages& WithInfo(InfoT&& value) { SetInfo(std::forward<InfoT>(value)); return *this;}
+    template<typename InfoT = Aws::String>
+    JobMessages& AddInfo(InfoT&& value) { m_infoHasBeenSet = true; m_info.emplace_back(std::forward<InfoT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * List of messages that warn about conditions that might cause your job not to run
      * or to fail.
      */
-    inline const Aws::Vector<Aws::String>& GetWarning() const{ return m_warning; }
+    inline const Aws::Vector<Aws::String>& GetWarning() const { return m_warning; }
     inline bool WarningHasBeenSet() const { return m_warningHasBeenSet; }
-    inline void SetWarning(const Aws::Vector<Aws::String>& value) { m_warningHasBeenSet = true; m_warning = value; }
-    inline void SetWarning(Aws::Vector<Aws::String>&& value) { m_warningHasBeenSet = true; m_warning = std::move(value); }
-    inline JobMessages& WithWarning(const Aws::Vector<Aws::String>& value) { SetWarning(value); return *this;}
-    inline JobMessages& WithWarning(Aws::Vector<Aws::String>&& value) { SetWarning(std::move(value)); return *this;}
-    inline JobMessages& AddWarning(const Aws::String& value) { m_warningHasBeenSet = true; m_warning.push_back(value); return *this; }
-    inline JobMessages& AddWarning(Aws::String&& value) { m_warningHasBeenSet = true; m_warning.push_back(std::move(value)); return *this; }
-    inline JobMessages& AddWarning(const char* value) { m_warningHasBeenSet = true; m_warning.push_back(value); return *this; }
+    template<typename WarningT = Aws::Vector<Aws::String>>
+    void SetWarning(WarningT&& value) { m_warningHasBeenSet = true; m_warning = std::forward<WarningT>(value); }
+    template<typename WarningT = Aws::Vector<Aws::String>>
+    JobMessages& WithWarning(WarningT&& value) { SetWarning(std::forward<WarningT>(value)); return *this;}
+    template<typename WarningT = Aws::String>
+    JobMessages& AddWarning(WarningT&& value) { m_warningHasBeenSet = true; m_warning.emplace_back(std::forward<WarningT>(value)); return *this; }
     ///@}
   private:
 

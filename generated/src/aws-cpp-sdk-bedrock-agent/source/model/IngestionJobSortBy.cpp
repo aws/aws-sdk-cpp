@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-IngestionJobSortBy::IngestionJobSortBy() : 
-    m_attribute(IngestionJobSortByAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 IngestionJobSortBy::IngestionJobSortBy(JsonView jsonValue)
-  : IngestionJobSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IngestionJobSortBy& IngestionJobSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = IngestionJobSortByAttributeMapper::GetIngestionJobSortByAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

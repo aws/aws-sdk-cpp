@@ -34,7 +34,7 @@ namespace Model
   class AttributeAndCondition
   {
   public:
-    AWS_CONNECT_API AttributeAndCondition();
+    AWS_CONNECT_API AttributeAndCondition() = default;
     AWS_CONNECT_API AttributeAndCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AttributeAndCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>A leaf node condition which can be used to specify a tag condition.</p>
      */
-    inline const Aws::Vector<TagCondition>& GetTagConditions() const{ return m_tagConditions; }
+    inline const Aws::Vector<TagCondition>& GetTagConditions() const { return m_tagConditions; }
     inline bool TagConditionsHasBeenSet() const { return m_tagConditionsHasBeenSet; }
-    inline void SetTagConditions(const Aws::Vector<TagCondition>& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = value; }
-    inline void SetTagConditions(Aws::Vector<TagCondition>&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = std::move(value); }
-    inline AttributeAndCondition& WithTagConditions(const Aws::Vector<TagCondition>& value) { SetTagConditions(value); return *this;}
-    inline AttributeAndCondition& WithTagConditions(Aws::Vector<TagCondition>&& value) { SetTagConditions(std::move(value)); return *this;}
-    inline AttributeAndCondition& AddTagConditions(const TagCondition& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.push_back(value); return *this; }
-    inline AttributeAndCondition& AddTagConditions(TagCondition&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.push_back(std::move(value)); return *this; }
+    template<typename TagConditionsT = Aws::Vector<TagCondition>>
+    void SetTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = std::forward<TagConditionsT>(value); }
+    template<typename TagConditionsT = Aws::Vector<TagCondition>>
+    AttributeAndCondition& WithTagConditions(TagConditionsT&& value) { SetTagConditions(std::forward<TagConditionsT>(value)); return *this;}
+    template<typename TagConditionsT = TagCondition>
+    AttributeAndCondition& AddTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.emplace_back(std::forward<TagConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const{ return m_hierarchyGroupCondition; }
+    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
     inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
-    inline void SetHierarchyGroupCondition(const HierarchyGroupCondition& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = value; }
-    inline void SetHierarchyGroupCondition(HierarchyGroupCondition&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::move(value); }
-    inline AttributeAndCondition& WithHierarchyGroupCondition(const HierarchyGroupCondition& value) { SetHierarchyGroupCondition(value); return *this;}
-    inline AttributeAndCondition& WithHierarchyGroupCondition(HierarchyGroupCondition&& value) { SetHierarchyGroupCondition(std::move(value)); return *this;}
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value); }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    AttributeAndCondition& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) { SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value)); return *this;}
     ///@}
   private:
 

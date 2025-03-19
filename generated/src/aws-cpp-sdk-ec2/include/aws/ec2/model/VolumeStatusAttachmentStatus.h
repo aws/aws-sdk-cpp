@@ -32,7 +32,7 @@ namespace Model
   class VolumeStatusAttachmentStatus
   {
   public:
-    AWS_EC2_API VolumeStatusAttachmentStatus();
+    AWS_EC2_API VolumeStatusAttachmentStatus() = default;
     AWS_EC2_API VolumeStatusAttachmentStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VolumeStatusAttachmentStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The maximum IOPS supported by the attached instance.</p>
      */
-    inline const Aws::String& GetIoPerformance() const{ return m_ioPerformance; }
+    inline const Aws::String& GetIoPerformance() const { return m_ioPerformance; }
     inline bool IoPerformanceHasBeenSet() const { return m_ioPerformanceHasBeenSet; }
-    inline void SetIoPerformance(const Aws::String& value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance = value; }
-    inline void SetIoPerformance(Aws::String&& value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance = std::move(value); }
-    inline void SetIoPerformance(const char* value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance.assign(value); }
-    inline VolumeStatusAttachmentStatus& WithIoPerformance(const Aws::String& value) { SetIoPerformance(value); return *this;}
-    inline VolumeStatusAttachmentStatus& WithIoPerformance(Aws::String&& value) { SetIoPerformance(std::move(value)); return *this;}
-    inline VolumeStatusAttachmentStatus& WithIoPerformance(const char* value) { SetIoPerformance(value); return *this;}
+    template<typename IoPerformanceT = Aws::String>
+    void SetIoPerformance(IoPerformanceT&& value) { m_ioPerformanceHasBeenSet = true; m_ioPerformance = std::forward<IoPerformanceT>(value); }
+    template<typename IoPerformanceT = Aws::String>
+    VolumeStatusAttachmentStatus& WithIoPerformance(IoPerformanceT&& value) { SetIoPerformance(std::forward<IoPerformanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the attached instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline VolumeStatusAttachmentStatus& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline VolumeStatusAttachmentStatus& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline VolumeStatusAttachmentStatus& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    VolumeStatusAttachmentStatus& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 

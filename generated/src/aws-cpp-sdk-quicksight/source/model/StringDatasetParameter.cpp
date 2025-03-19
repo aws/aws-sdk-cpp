@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-StringDatasetParameter::StringDatasetParameter() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueType(DatasetParameterValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false)
-{
-}
-
 StringDatasetParameter::StringDatasetParameter(JsonView jsonValue)
-  : StringDatasetParameter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StringDatasetParameter& StringDatasetParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueType"))
   {
     m_valueType = DatasetParameterValueTypeMapper::GetDatasetParameterValueTypeForName(jsonValue.GetString("ValueType"));
-
     m_valueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValues"))
   {
     m_defaultValues = jsonValue.GetObject("DefaultValues");
-
     m_defaultValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

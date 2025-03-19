@@ -12,13 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePlayerSessionRequest::CreatePlayerSessionRequest() : 
-    m_gameSessionIdHasBeenSet(false),
-    m_playerIdHasBeenSet(false),
-    m_playerDataHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlayerSessionRequest::SerializePayload() const
 {
   JsonValue payload;

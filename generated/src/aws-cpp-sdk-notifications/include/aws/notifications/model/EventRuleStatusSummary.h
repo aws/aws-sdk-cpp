@@ -33,7 +33,7 @@ namespace Model
   class EventRuleStatusSummary
   {
   public:
-    AWS_NOTIFICATIONS_API EventRuleStatusSummary();
+    AWS_NOTIFICATIONS_API EventRuleStatusSummary() = default;
     AWS_NOTIFICATIONS_API EventRuleStatusSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API EventRuleStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,30 +54,26 @@ namespace Model
      * <code>EventRule</code> is being deleted.</p> <p>Only <code>GET</code> and
      * <code>LIST</code> calls can be run.</p> </li> </ul> </li> </ul> </li> </ul>
      */
-    inline const EventRuleStatus& GetStatus() const{ return m_status; }
+    inline EventRuleStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EventRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EventRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EventRuleStatusSummary& WithStatus(const EventRuleStatus& value) { SetStatus(value); return *this;}
-    inline EventRuleStatusSummary& WithStatus(EventRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EventRuleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EventRuleStatusSummary& WithStatus(EventRuleStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable reason for <code>EventRuleStatus</code>.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline EventRuleStatusSummary& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline EventRuleStatusSummary& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline EventRuleStatusSummary& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    EventRuleStatusSummary& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    EventRuleStatus m_status;
+    EventRuleStatus m_status{EventRuleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;

@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-BilledJobResourceUtilization::BilledJobResourceUtilization() : 
-    m_units(0.0),
-    m_unitsHasBeenSet(false)
-{
-}
-
 BilledJobResourceUtilization::BilledJobResourceUtilization(JsonView jsonValue)
-  : BilledJobResourceUtilization()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BilledJobResourceUtilization& BilledJobResourceUtilization::operator =(JsonView 
   if(jsonValue.ValueExists("units"))
   {
     m_units = jsonValue.GetDouble("units");
-
     m_unitsHasBeenSet = true;
   }
-
   return *this;
 }
 

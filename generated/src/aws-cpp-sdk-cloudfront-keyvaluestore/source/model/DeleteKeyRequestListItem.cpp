@@ -18,13 +18,7 @@ namespace CloudFrontKeyValueStore
 namespace Model
 {
 
-DeleteKeyRequestListItem::DeleteKeyRequestListItem() : 
-    m_keyHasBeenSet(false)
-{
-}
-
 DeleteKeyRequestListItem::DeleteKeyRequestListItem(JsonView jsonValue)
-  : DeleteKeyRequestListItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteKeyRequestListItem& DeleteKeyRequestListItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

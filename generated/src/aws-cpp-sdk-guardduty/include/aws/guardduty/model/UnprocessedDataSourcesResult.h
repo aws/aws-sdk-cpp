@@ -32,7 +32,7 @@ namespace Model
   class UnprocessedDataSourcesResult
   {
   public:
-    AWS_GUARDDUTY_API UnprocessedDataSourcesResult();
+    AWS_GUARDDUTY_API UnprocessedDataSourcesResult() = default;
     AWS_GUARDDUTY_API UnprocessedDataSourcesResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API UnprocessedDataSourcesResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const MalwareProtectionConfigurationResult& GetMalwareProtection() const{ return m_malwareProtection; }
+    inline const MalwareProtectionConfigurationResult& GetMalwareProtection() const { return m_malwareProtection; }
     inline bool MalwareProtectionHasBeenSet() const { return m_malwareProtectionHasBeenSet; }
-    inline void SetMalwareProtection(const MalwareProtectionConfigurationResult& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = value; }
-    inline void SetMalwareProtection(MalwareProtectionConfigurationResult&& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = std::move(value); }
-    inline UnprocessedDataSourcesResult& WithMalwareProtection(const MalwareProtectionConfigurationResult& value) { SetMalwareProtection(value); return *this;}
-    inline UnprocessedDataSourcesResult& WithMalwareProtection(MalwareProtectionConfigurationResult&& value) { SetMalwareProtection(std::move(value)); return *this;}
+    template<typename MalwareProtectionT = MalwareProtectionConfigurationResult>
+    void SetMalwareProtection(MalwareProtectionT&& value) { m_malwareProtectionHasBeenSet = true; m_malwareProtection = std::forward<MalwareProtectionT>(value); }
+    template<typename MalwareProtectionT = MalwareProtectionConfigurationResult>
+    UnprocessedDataSourcesResult& WithMalwareProtection(MalwareProtectionT&& value) { SetMalwareProtection(std::forward<MalwareProtectionT>(value)); return *this;}
     ///@}
   private:
 

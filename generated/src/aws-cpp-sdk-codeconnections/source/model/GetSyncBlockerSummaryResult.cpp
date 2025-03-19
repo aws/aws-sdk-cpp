@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSyncBlockerSummaryResult::GetSyncBlockerSummaryResult()
-{
-}
-
 GetSyncBlockerSummaryResult::GetSyncBlockerSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSyncBlockerSummaryResult& GetSyncBlockerSummaryResult::operator =(const Aws::
   if(jsonValue.ValueExists("SyncBlockerSummary"))
   {
     m_syncBlockerSummary = jsonValue.GetObject("SyncBlockerSummary");
-
+    m_syncBlockerSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

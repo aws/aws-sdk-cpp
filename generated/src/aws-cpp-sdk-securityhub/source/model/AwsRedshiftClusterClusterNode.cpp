@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterClusterNode::AwsRedshiftClusterClusterNode() : 
-    m_nodeRoleHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterClusterNode::AwsRedshiftClusterClusterNode(JsonView jsonValue)
-  : AwsRedshiftClusterClusterNode()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsRedshiftClusterClusterNode& AwsRedshiftClusterClusterNode::operator =(JsonVie
   if(jsonValue.ValueExists("NodeRole"))
   {
     m_nodeRole = jsonValue.GetString("NodeRole");
-
     m_nodeRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("PrivateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIpAddress"))
   {
     m_publicIpAddress = jsonValue.GetString("PublicIpAddress");
-
     m_publicIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

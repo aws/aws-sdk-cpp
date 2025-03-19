@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-DateFilter::DateFilter() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_dateRangeHasBeenSet(false)
-{
-}
-
 DateFilter::DateFilter(JsonView jsonValue)
-  : DateFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DateFilter& DateFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetString("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetString("End");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateRange"))
   {
     m_dateRange = jsonValue.GetObject("DateRange");
-
     m_dateRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

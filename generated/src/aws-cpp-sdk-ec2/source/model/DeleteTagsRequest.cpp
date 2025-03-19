@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteTagsRequest::DeleteTagsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

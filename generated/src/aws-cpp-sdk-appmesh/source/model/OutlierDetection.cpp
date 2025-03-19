@@ -18,18 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-OutlierDetection::OutlierDetection() : 
-    m_baseEjectionDurationHasBeenSet(false),
-    m_intervalHasBeenSet(false),
-    m_maxEjectionPercent(0),
-    m_maxEjectionPercentHasBeenSet(false),
-    m_maxServerErrors(0),
-    m_maxServerErrorsHasBeenSet(false)
-{
-}
-
 OutlierDetection::OutlierDetection(JsonView jsonValue)
-  : OutlierDetection()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ OutlierDetection& OutlierDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("baseEjectionDuration"))
   {
     m_baseEjectionDuration = jsonValue.GetObject("baseEjectionDuration");
-
     m_baseEjectionDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interval"))
   {
     m_interval = jsonValue.GetObject("interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxEjectionPercent"))
   {
     m_maxEjectionPercent = jsonValue.GetInteger("maxEjectionPercent");
-
     m_maxEjectionPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxServerErrors"))
   {
     m_maxServerErrors = jsonValue.GetInt64("maxServerErrors");
-
     m_maxServerErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStreamSummaryRequest::DescribeStreamSummaryRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStreamSummaryRequest::SerializePayload() const
 {
   JsonValue payload;

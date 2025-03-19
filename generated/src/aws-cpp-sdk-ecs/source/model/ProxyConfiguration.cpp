@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ProxyConfiguration::ProxyConfiguration() : 
-    m_type(ProxyConfigurationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 ProxyConfiguration::ProxyConfiguration(JsonView jsonValue)
-  : ProxyConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ProxyConfiguration& ProxyConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = ProxyConfigurationTypeMapper::GetProxyConfigurationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
@@ -57,7 +44,6 @@ ProxyConfiguration& ProxyConfiguration::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

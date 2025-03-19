@@ -32,7 +32,7 @@ namespace Model
   class IngressTlsProtocolToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API IngressTlsProtocolToEvaluate();
+    AWS_MAILMANAGER_API IngressTlsProtocolToEvaluate() = default;
     AWS_MAILMANAGER_API IngressTlsProtocolToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressTlsProtocolToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The enum type representing the allowed attribute types for the TLS
      * condition.</p>
      */
-    inline const IngressTlsAttribute& GetAttribute() const{ return m_attribute; }
+    inline IngressTlsAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const IngressTlsAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(IngressTlsAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline IngressTlsProtocolToEvaluate& WithAttribute(const IngressTlsAttribute& value) { SetAttribute(value); return *this;}
-    inline IngressTlsProtocolToEvaluate& WithAttribute(IngressTlsAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(IngressTlsAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline IngressTlsProtocolToEvaluate& WithAttribute(IngressTlsAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    IngressTlsAttribute m_attribute;
+    IngressTlsAttribute m_attribute{IngressTlsAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

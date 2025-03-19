@@ -36,7 +36,7 @@ namespace Model
   class ConditionFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ConditionFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API ConditionFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API ConditionFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ConditionFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>An array of conditions. Each member contains the name of a condition and an
      * expression that defines the condition.</p>
      */
-    inline const Aws::Vector<FlowCondition>& GetConditions() const{ return m_conditions; }
+    inline const Aws::Vector<FlowCondition>& GetConditions() const { return m_conditions; }
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
-    inline void SetConditions(const Aws::Vector<FlowCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
-    inline void SetConditions(Aws::Vector<FlowCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
-    inline ConditionFlowNodeConfiguration& WithConditions(const Aws::Vector<FlowCondition>& value) { SetConditions(value); return *this;}
-    inline ConditionFlowNodeConfiguration& WithConditions(Aws::Vector<FlowCondition>&& value) { SetConditions(std::move(value)); return *this;}
-    inline ConditionFlowNodeConfiguration& AddConditions(const FlowCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
-    inline ConditionFlowNodeConfiguration& AddConditions(FlowCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+    template<typename ConditionsT = Aws::Vector<FlowCondition>>
+    void SetConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions = std::forward<ConditionsT>(value); }
+    template<typename ConditionsT = Aws::Vector<FlowCondition>>
+    ConditionFlowNodeConfiguration& WithConditions(ConditionsT&& value) { SetConditions(std::forward<ConditionsT>(value)); return *this;}
+    template<typename ConditionsT = FlowCondition>
+    ConditionFlowNodeConfiguration& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
     ///@}
   private:
 

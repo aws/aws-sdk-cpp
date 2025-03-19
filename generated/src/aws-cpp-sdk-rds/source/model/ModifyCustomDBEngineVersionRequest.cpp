@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyCustomDBEngineVersionRequest::ModifyCustomDBEngineVersionRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(CustomEngineVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCustomDBEngineVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

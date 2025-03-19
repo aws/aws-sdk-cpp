@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-FeaturedDocumentWithMetadata::FeaturedDocumentWithMetadata() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_uRIHasBeenSet(false)
-{
-}
-
 FeaturedDocumentWithMetadata::FeaturedDocumentWithMetadata(JsonView jsonValue)
-  : FeaturedDocumentWithMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FeaturedDocumentWithMetadata& FeaturedDocumentWithMetadata::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URI"))
   {
     m_uRI = jsonValue.GetString("URI");
-
     m_uRIHasBeenSet = true;
   }
-
   return *this;
 }
 

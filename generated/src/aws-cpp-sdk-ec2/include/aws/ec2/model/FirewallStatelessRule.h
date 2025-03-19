@@ -33,7 +33,7 @@ namespace Model
   class FirewallStatelessRule
   {
   public:
-    AWS_EC2_API FirewallStatelessRule();
+    AWS_EC2_API FirewallStatelessRule() = default;
     AWS_EC2_API FirewallStatelessRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FirewallStatelessRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,84 +45,80 @@ namespace Model
     /**
      * <p>The ARN of the stateless rule group.</p>
      */
-    inline const Aws::String& GetRuleGroupArn() const{ return m_ruleGroupArn; }
+    inline const Aws::String& GetRuleGroupArn() const { return m_ruleGroupArn; }
     inline bool RuleGroupArnHasBeenSet() const { return m_ruleGroupArnHasBeenSet; }
-    inline void SetRuleGroupArn(const Aws::String& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = value; }
-    inline void SetRuleGroupArn(Aws::String&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::move(value); }
-    inline void SetRuleGroupArn(const char* value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn.assign(value); }
-    inline FirewallStatelessRule& WithRuleGroupArn(const Aws::String& value) { SetRuleGroupArn(value); return *this;}
-    inline FirewallStatelessRule& WithRuleGroupArn(Aws::String&& value) { SetRuleGroupArn(std::move(value)); return *this;}
-    inline FirewallStatelessRule& WithRuleGroupArn(const char* value) { SetRuleGroupArn(value); return *this;}
+    template<typename RuleGroupArnT = Aws::String>
+    void SetRuleGroupArn(RuleGroupArnT&& value) { m_ruleGroupArnHasBeenSet = true; m_ruleGroupArn = std::forward<RuleGroupArnT>(value); }
+    template<typename RuleGroupArnT = Aws::String>
+    FirewallStatelessRule& WithRuleGroupArn(RuleGroupArnT&& value) { SetRuleGroupArn(std::forward<RuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source IP addresses, in CIDR notation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<Aws::String>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<Aws::String>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<Aws::String>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline FirewallStatelessRule& WithSources(const Aws::Vector<Aws::String>& value) { SetSources(value); return *this;}
-    inline FirewallStatelessRule& WithSources(Aws::Vector<Aws::String>&& value) { SetSources(std::move(value)); return *this;}
-    inline FirewallStatelessRule& AddSources(const Aws::String& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline FirewallStatelessRule& AddSources(Aws::String&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
-    inline FirewallStatelessRule& AddSources(const char* value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+    template<typename SourcesT = Aws::Vector<Aws::String>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<Aws::String>>
+    FirewallStatelessRule& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = Aws::String>
+    FirewallStatelessRule& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination IP addresses, in CIDR notation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<Aws::String>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline FirewallStatelessRule& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
-    inline FirewallStatelessRule& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline FirewallStatelessRule& AddDestinations(const Aws::String& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline FirewallStatelessRule& AddDestinations(Aws::String&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
-    inline FirewallStatelessRule& AddDestinations(const char* value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+    template<typename DestinationsT = Aws::Vector<Aws::String>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<Aws::String>>
+    FirewallStatelessRule& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = Aws::String>
+    FirewallStatelessRule& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The source ports.</p>
      */
-    inline const Aws::Vector<PortRange>& GetSourcePorts() const{ return m_sourcePorts; }
+    inline const Aws::Vector<PortRange>& GetSourcePorts() const { return m_sourcePorts; }
     inline bool SourcePortsHasBeenSet() const { return m_sourcePortsHasBeenSet; }
-    inline void SetSourcePorts(const Aws::Vector<PortRange>& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = value; }
-    inline void SetSourcePorts(Aws::Vector<PortRange>&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::move(value); }
-    inline FirewallStatelessRule& WithSourcePorts(const Aws::Vector<PortRange>& value) { SetSourcePorts(value); return *this;}
-    inline FirewallStatelessRule& WithSourcePorts(Aws::Vector<PortRange>&& value) { SetSourcePorts(std::move(value)); return *this;}
-    inline FirewallStatelessRule& AddSourcePorts(const PortRange& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(value); return *this; }
-    inline FirewallStatelessRule& AddSourcePorts(PortRange&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(std::move(value)); return *this; }
+    template<typename SourcePortsT = Aws::Vector<PortRange>>
+    void SetSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::forward<SourcePortsT>(value); }
+    template<typename SourcePortsT = Aws::Vector<PortRange>>
+    FirewallStatelessRule& WithSourcePorts(SourcePortsT&& value) { SetSourcePorts(std::forward<SourcePortsT>(value)); return *this;}
+    template<typename SourcePortsT = PortRange>
+    FirewallStatelessRule& AddSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.emplace_back(std::forward<SourcePortsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The destination ports.</p>
      */
-    inline const Aws::Vector<PortRange>& GetDestinationPorts() const{ return m_destinationPorts; }
+    inline const Aws::Vector<PortRange>& GetDestinationPorts() const { return m_destinationPorts; }
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
-    inline void SetDestinationPorts(const Aws::Vector<PortRange>& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = value; }
-    inline void SetDestinationPorts(Aws::Vector<PortRange>&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::move(value); }
-    inline FirewallStatelessRule& WithDestinationPorts(const Aws::Vector<PortRange>& value) { SetDestinationPorts(value); return *this;}
-    inline FirewallStatelessRule& WithDestinationPorts(Aws::Vector<PortRange>&& value) { SetDestinationPorts(std::move(value)); return *this;}
-    inline FirewallStatelessRule& AddDestinationPorts(const PortRange& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
-    inline FirewallStatelessRule& AddDestinationPorts(PortRange&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(std::move(value)); return *this; }
+    template<typename DestinationPortsT = Aws::Vector<PortRange>>
+    void SetDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::forward<DestinationPortsT>(value); }
+    template<typename DestinationPortsT = Aws::Vector<PortRange>>
+    FirewallStatelessRule& WithDestinationPorts(DestinationPortsT&& value) { SetDestinationPorts(std::forward<DestinationPortsT>(value)); return *this;}
+    template<typename DestinationPortsT = PortRange>
+    FirewallStatelessRule& AddDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.emplace_back(std::forward<DestinationPortsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The protocols.</p>
      */
-    inline const Aws::Vector<int>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<int>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<int>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<int>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline FirewallStatelessRule& WithProtocols(const Aws::Vector<int>& value) { SetProtocols(value); return *this;}
-    inline FirewallStatelessRule& WithProtocols(Aws::Vector<int>&& value) { SetProtocols(std::move(value)); return *this;}
+    template<typename ProtocolsT = Aws::Vector<int>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<int>>
+    FirewallStatelessRule& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
     inline FirewallStatelessRule& AddProtocols(int value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
@@ -131,21 +127,19 @@ namespace Model
      * <p>The rule action. The possible values are <code>pass</code>,
      * <code>drop</code>, and <code>forward_to_site</code>.</p>
      */
-    inline const Aws::String& GetRuleAction() const{ return m_ruleAction; }
+    inline const Aws::String& GetRuleAction() const { return m_ruleAction; }
     inline bool RuleActionHasBeenSet() const { return m_ruleActionHasBeenSet; }
-    inline void SetRuleAction(const Aws::String& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
-    inline void SetRuleAction(Aws::String&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
-    inline void SetRuleAction(const char* value) { m_ruleActionHasBeenSet = true; m_ruleAction.assign(value); }
-    inline FirewallStatelessRule& WithRuleAction(const Aws::String& value) { SetRuleAction(value); return *this;}
-    inline FirewallStatelessRule& WithRuleAction(Aws::String&& value) { SetRuleAction(std::move(value)); return *this;}
-    inline FirewallStatelessRule& WithRuleAction(const char* value) { SetRuleAction(value); return *this;}
+    template<typename RuleActionT = Aws::String>
+    void SetRuleAction(RuleActionT&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::forward<RuleActionT>(value); }
+    template<typename RuleActionT = Aws::String>
+    FirewallStatelessRule& WithRuleAction(RuleActionT&& value) { SetRuleAction(std::forward<RuleActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule priority.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline FirewallStatelessRule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -173,7 +167,7 @@ namespace Model
     Aws::String m_ruleAction;
     bool m_ruleActionHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
   };
 

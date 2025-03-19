@@ -12,10 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateServiceRoleFromAccountRequest::DisassociateServiceRoleFromAccountRequest()
-{
-}
-
 Aws::String DisassociateServiceRoleFromAccountRequest::SerializePayload() const
 {
   return {};

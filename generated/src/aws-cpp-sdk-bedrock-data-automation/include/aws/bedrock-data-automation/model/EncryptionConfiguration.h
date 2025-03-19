@@ -32,7 +32,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API EncryptionConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API EncryptionConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,31 +40,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline EncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline EncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline EncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    EncryptionConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetKmsEncryptionContext() const{ return m_kmsEncryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKmsEncryptionContext() const { return m_kmsEncryptionContext; }
     inline bool KmsEncryptionContextHasBeenSet() const { return m_kmsEncryptionContextHasBeenSet; }
-    inline void SetKmsEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = value; }
-    inline void SetKmsEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = std::move(value); }
-    inline EncryptionConfiguration& WithKmsEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetKmsEncryptionContext(value); return *this;}
-    inline EncryptionConfiguration& WithKmsEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetKmsEncryptionContext(std::move(value)); return *this;}
-    inline EncryptionConfiguration& AddKmsEncryptionContext(const Aws::String& key, const Aws::String& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(key, value); return *this; }
-    inline EncryptionConfiguration& AddKmsEncryptionContext(Aws::String&& key, const Aws::String& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline EncryptionConfiguration& AddKmsEncryptionContext(const Aws::String& key, Aws::String&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline EncryptionConfiguration& AddKmsEncryptionContext(Aws::String&& key, Aws::String&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline EncryptionConfiguration& AddKmsEncryptionContext(const char* key, Aws::String&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline EncryptionConfiguration& AddKmsEncryptionContext(Aws::String&& key, const char* value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline EncryptionConfiguration& AddKmsEncryptionContext(const char* key, const char* value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(key, value); return *this; }
+    template<typename KmsEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetKmsEncryptionContext(KmsEncryptionContextT&& value) { m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext = std::forward<KmsEncryptionContextT>(value); }
+    template<typename KmsEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    EncryptionConfiguration& WithKmsEncryptionContext(KmsEncryptionContextT&& value) { SetKmsEncryptionContext(std::forward<KmsEncryptionContextT>(value)); return *this;}
+    template<typename KmsEncryptionContextKeyT = Aws::String, typename KmsEncryptionContextValueT = Aws::String>
+    EncryptionConfiguration& AddKmsEncryptionContext(KmsEncryptionContextKeyT&& key, KmsEncryptionContextValueT&& value) {
+      m_kmsEncryptionContextHasBeenSet = true; m_kmsEncryptionContext.emplace(std::forward<KmsEncryptionContextKeyT>(key), std::forward<KmsEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
   private:
 

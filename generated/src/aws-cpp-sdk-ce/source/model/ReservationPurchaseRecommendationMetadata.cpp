@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata() : 
-    m_recommendationIdHasBeenSet(false),
-    m_generationTimestampHasBeenSet(false),
-    m_additionalMetadataHasBeenSet(false)
-{
-}
-
 ReservationPurchaseRecommendationMetadata::ReservationPurchaseRecommendationMetadata(JsonView jsonValue)
-  : ReservationPurchaseRecommendationMetadata()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReservationPurchaseRecommendationMetadata& ReservationPurchaseRecommendationMeta
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerationTimestamp"))
   {
     m_generationTimestamp = jsonValue.GetString("GenerationTimestamp");
-
     m_generationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalMetadata"))
   {
     m_additionalMetadata = jsonValue.GetString("AdditionalMetadata");
-
     m_additionalMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

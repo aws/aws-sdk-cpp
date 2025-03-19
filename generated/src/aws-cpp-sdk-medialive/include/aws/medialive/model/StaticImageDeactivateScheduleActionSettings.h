@@ -30,7 +30,7 @@ namespace Model
   class StaticImageDeactivateScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings();
+    AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings() = default;
     AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      */
-    inline int GetFadeOut() const{ return m_fadeOut; }
+    inline int GetFadeOut() const { return m_fadeOut; }
     inline bool FadeOutHasBeenSet() const { return m_fadeOutHasBeenSet; }
     inline void SetFadeOut(int value) { m_fadeOutHasBeenSet = true; m_fadeOut = value; }
     inline StaticImageDeactivateScheduleActionSettings& WithFadeOut(int value) { SetFadeOut(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * The image overlay layer to deactivate, 0 to 7. Default is 0.
      */
-    inline int GetLayer() const{ return m_layer; }
+    inline int GetLayer() const { return m_layer; }
     inline bool LayerHasBeenSet() const { return m_layerHasBeenSet; }
     inline void SetLayer(int value) { m_layerHasBeenSet = true; m_layer = value; }
     inline StaticImageDeactivateScheduleActionSettings& WithLayer(int value) { SetLayer(value); return *this;}
     ///@}
   private:
 
-    int m_fadeOut;
+    int m_fadeOut{0};
     bool m_fadeOutHasBeenSet = false;
 
-    int m_layer;
+    int m_layer{0};
     bool m_layerHasBeenSet = false;
   };
 

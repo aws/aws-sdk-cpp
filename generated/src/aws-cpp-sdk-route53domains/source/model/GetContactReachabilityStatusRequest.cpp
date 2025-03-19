@@ -12,11 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContactReachabilityStatusRequest::GetContactReachabilityStatusRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetContactReachabilityStatusRequest::SerializePayload() const
 {
   JsonValue payload;

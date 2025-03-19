@@ -21,7 +21,7 @@ namespace Model
   class GetModelCustomizationJobRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API GetModelCustomizationJobRequest();
+    AWS_BEDROCK_API GetModelCustomizationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>Identifier for the customization job.</p>
      */
-    inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
+    inline const Aws::String& GetJobIdentifier() const { return m_jobIdentifier; }
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
-    inline void SetJobIdentifier(const Aws::String& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = value; }
-    inline void SetJobIdentifier(Aws::String&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::move(value); }
-    inline void SetJobIdentifier(const char* value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier.assign(value); }
-    inline GetModelCustomizationJobRequest& WithJobIdentifier(const Aws::String& value) { SetJobIdentifier(value); return *this;}
-    inline GetModelCustomizationJobRequest& WithJobIdentifier(Aws::String&& value) { SetJobIdentifier(std::move(value)); return *this;}
-    inline GetModelCustomizationJobRequest& WithJobIdentifier(const char* value) { SetJobIdentifier(value); return *this;}
+    template<typename JobIdentifierT = Aws::String>
+    void SetJobIdentifier(JobIdentifierT&& value) { m_jobIdentifierHasBeenSet = true; m_jobIdentifier = std::forward<JobIdentifierT>(value); }
+    template<typename JobIdentifierT = Aws::String>
+    GetModelCustomizationJobRequest& WithJobIdentifier(JobIdentifierT&& value) { SetJobIdentifier(std::forward<JobIdentifierT>(value)); return *this;}
     ///@}
   private:
 

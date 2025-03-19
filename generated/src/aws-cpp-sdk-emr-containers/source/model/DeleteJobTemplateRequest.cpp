@@ -12,11 +12,6 @@ using namespace Aws::EMRContainers::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteJobTemplateRequest::DeleteJobTemplateRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteJobTemplateRequest::SerializePayload() const
 {
   return {};

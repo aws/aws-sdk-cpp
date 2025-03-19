@@ -19,19 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-ClientCertificate::ClientCertificate() : 
-    m_clientCertificateIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_pemEncodedCertificateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ClientCertificate::ClientCertificate(JsonView jsonValue)
-  : ClientCertificate()
 {
   *this = jsonValue;
 }
@@ -41,38 +29,28 @@ ClientCertificate& ClientCertificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientCertificateId"))
   {
     m_clientCertificateId = jsonValue.GetString("clientCertificateId");
-
     m_clientCertificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pemEncodedCertificate"))
   {
     m_pemEncodedCertificate = jsonValue.GetString("pemEncodedCertificate");
-
     m_pemEncodedCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -82,7 +60,6 @@ ClientCertificate& ClientCertificate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

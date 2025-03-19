@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ForecastGeofenceEventsDeviceState::ForecastGeofenceEventsDeviceState() : 
-    m_positionHasBeenSet(false),
-    m_speed(0.0),
-    m_speedHasBeenSet(false)
-{
-}
-
 ForecastGeofenceEventsDeviceState::ForecastGeofenceEventsDeviceState(JsonView jsonValue)
-  : ForecastGeofenceEventsDeviceState()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ForecastGeofenceEventsDeviceState& ForecastGeofenceEventsDeviceState::operator =
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Speed"))
   {
     m_speed = jsonValue.GetDouble("Speed");
-
     m_speedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFacesRequest::DeleteFacesRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_faceIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFacesRequest::SerializePayload() const
 {
   JsonValue payload;

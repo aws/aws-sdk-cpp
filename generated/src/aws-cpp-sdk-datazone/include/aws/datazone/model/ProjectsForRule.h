@@ -34,7 +34,7 @@ namespace Model
   class ProjectsForRule
   {
   public:
-    AWS_DATAZONE_API ProjectsForRule();
+    AWS_DATAZONE_API ProjectsForRule() = default;
     AWS_DATAZONE_API ProjectsForRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ProjectsForRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>The selection mode of the rule.</p>
      */
-    inline const RuleScopeSelectionMode& GetSelectionMode() const{ return m_selectionMode; }
+    inline RuleScopeSelectionMode GetSelectionMode() const { return m_selectionMode; }
     inline bool SelectionModeHasBeenSet() const { return m_selectionModeHasBeenSet; }
-    inline void SetSelectionMode(const RuleScopeSelectionMode& value) { m_selectionModeHasBeenSet = true; m_selectionMode = value; }
-    inline void SetSelectionMode(RuleScopeSelectionMode&& value) { m_selectionModeHasBeenSet = true; m_selectionMode = std::move(value); }
-    inline ProjectsForRule& WithSelectionMode(const RuleScopeSelectionMode& value) { SetSelectionMode(value); return *this;}
-    inline ProjectsForRule& WithSelectionMode(RuleScopeSelectionMode&& value) { SetSelectionMode(std::move(value)); return *this;}
+    inline void SetSelectionMode(RuleScopeSelectionMode value) { m_selectionModeHasBeenSet = true; m_selectionMode = value; }
+    inline ProjectsForRule& WithSelectionMode(RuleScopeSelectionMode value) { SetSelectionMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specific projects in which the rule is created.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSpecificProjects() const{ return m_specificProjects; }
+    inline const Aws::Vector<Aws::String>& GetSpecificProjects() const { return m_specificProjects; }
     inline bool SpecificProjectsHasBeenSet() const { return m_specificProjectsHasBeenSet; }
-    inline void SetSpecificProjects(const Aws::Vector<Aws::String>& value) { m_specificProjectsHasBeenSet = true; m_specificProjects = value; }
-    inline void SetSpecificProjects(Aws::Vector<Aws::String>&& value) { m_specificProjectsHasBeenSet = true; m_specificProjects = std::move(value); }
-    inline ProjectsForRule& WithSpecificProjects(const Aws::Vector<Aws::String>& value) { SetSpecificProjects(value); return *this;}
-    inline ProjectsForRule& WithSpecificProjects(Aws::Vector<Aws::String>&& value) { SetSpecificProjects(std::move(value)); return *this;}
-    inline ProjectsForRule& AddSpecificProjects(const Aws::String& value) { m_specificProjectsHasBeenSet = true; m_specificProjects.push_back(value); return *this; }
-    inline ProjectsForRule& AddSpecificProjects(Aws::String&& value) { m_specificProjectsHasBeenSet = true; m_specificProjects.push_back(std::move(value)); return *this; }
-    inline ProjectsForRule& AddSpecificProjects(const char* value) { m_specificProjectsHasBeenSet = true; m_specificProjects.push_back(value); return *this; }
+    template<typename SpecificProjectsT = Aws::Vector<Aws::String>>
+    void SetSpecificProjects(SpecificProjectsT&& value) { m_specificProjectsHasBeenSet = true; m_specificProjects = std::forward<SpecificProjectsT>(value); }
+    template<typename SpecificProjectsT = Aws::Vector<Aws::String>>
+    ProjectsForRule& WithSpecificProjects(SpecificProjectsT&& value) { SetSpecificProjects(std::forward<SpecificProjectsT>(value)); return *this;}
+    template<typename SpecificProjectsT = Aws::String>
+    ProjectsForRule& AddSpecificProjects(SpecificProjectsT&& value) { m_specificProjectsHasBeenSet = true; m_specificProjects.emplace_back(std::forward<SpecificProjectsT>(value)); return *this; }
     ///@}
   private:
 
-    RuleScopeSelectionMode m_selectionMode;
+    RuleScopeSelectionMode m_selectionMode{RuleScopeSelectionMode::NOT_SET};
     bool m_selectionModeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_specificProjects;

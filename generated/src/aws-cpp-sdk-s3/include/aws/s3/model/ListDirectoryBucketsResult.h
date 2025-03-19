@@ -29,7 +29,7 @@ namespace Model
   class ListDirectoryBucketsResult
   {
   public:
-    AWS_S3_API ListDirectoryBucketsResult();
+    AWS_S3_API ListDirectoryBucketsResult() = default;
     AWS_S3_API ListDirectoryBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API ListDirectoryBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of buckets owned by the requester. </p>
      */
-    inline const Aws::Vector<Bucket>& GetBuckets() const{ return m_buckets; }
-    inline void SetBuckets(const Aws::Vector<Bucket>& value) { m_buckets = value; }
-    inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_buckets = std::move(value); }
-    inline ListDirectoryBucketsResult& WithBuckets(const Aws::Vector<Bucket>& value) { SetBuckets(value); return *this;}
-    inline ListDirectoryBucketsResult& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(std::move(value)); return *this;}
-    inline ListDirectoryBucketsResult& AddBuckets(const Bucket& value) { m_buckets.push_back(value); return *this; }
-    inline ListDirectoryBucketsResult& AddBuckets(Bucket&& value) { m_buckets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Bucket>& GetBuckets() const { return m_buckets; }
+    template<typename BucketsT = Aws::Vector<Bucket>>
+    void SetBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets = std::forward<BucketsT>(value); }
+    template<typename BucketsT = Aws::Vector<Bucket>>
+    ListDirectoryBucketsResult& WithBuckets(BucketsT&& value) { SetBuckets(std::forward<BucketsT>(value)); return *this;}
+    template<typename BucketsT = Bucket>
+    ListDirectoryBucketsResult& AddBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets.emplace_back(std::forward<BucketsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * in the response. You can use the returned <code>ContinuationToken</code> for
      * pagination of the list response.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
-    inline ListDirectoryBucketsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListDirectoryBucketsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListDirectoryBucketsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListDirectoryBucketsResult& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDirectoryBucketsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDirectoryBucketsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDirectoryBucketsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDirectoryBucketsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Bucket> m_buckets;
+    bool m_bucketsHasBeenSet = false;
 
     Aws::String m_continuationToken;
+    bool m_continuationTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-QueryParamsAsStringListMapRequest::QueryParamsAsStringListMapRequest() : 
-    m_quxHasBeenSet(false),
-    m_fooHasBeenSet(false)
-{
-}
 
 Aws::String QueryParamsAsStringListMapRequest::SerializePayload() const
 {

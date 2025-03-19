@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetV2LoggingOptionsResult::GetV2LoggingOptionsResult() : 
-    m_defaultLogLevel(LogLevel::NOT_SET),
-    m_disableAllLogs(false)
-{
-}
-
 GetV2LoggingOptionsResult::GetV2LoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetV2LoggingOptionsResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ GetV2LoggingOptionsResult& GetV2LoggingOptionsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultLogLevel"))
   {
     m_defaultLogLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("defaultLogLevel"));
-
+    m_defaultLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disableAllLogs"))
   {
     m_disableAllLogs = jsonValue.GetBool("disableAllLogs");
-
+    m_disableAllLogsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

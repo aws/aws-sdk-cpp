@@ -26,7 +26,7 @@ namespace Model
   class DeleteQueuedMessagesRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API DeleteQueuedMessagesRequest();
+    AWS_IOTWIRELESS_API DeleteQueuedMessagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The ID of a given wireless device for which downlink messages will be
      * deleted.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteQueuedMessagesRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteQueuedMessagesRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteQueuedMessagesRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteQueuedMessagesRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,22 @@ namespace Model
      * given device, specified by the wireless device ID. Otherwise, the downlink
      * message with the specified message ID will be deleted.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline DeleteQueuedMessagesRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline DeleteQueuedMessagesRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline DeleteQueuedMessagesRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    DeleteQueuedMessagesRequest& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
      */
-    inline const WirelessDeviceType& GetWirelessDeviceType() const{ return m_wirelessDeviceType; }
+    inline WirelessDeviceType GetWirelessDeviceType() const { return m_wirelessDeviceType; }
     inline bool WirelessDeviceTypeHasBeenSet() const { return m_wirelessDeviceTypeHasBeenSet; }
-    inline void SetWirelessDeviceType(const WirelessDeviceType& value) { m_wirelessDeviceTypeHasBeenSet = true; m_wirelessDeviceType = value; }
-    inline void SetWirelessDeviceType(WirelessDeviceType&& value) { m_wirelessDeviceTypeHasBeenSet = true; m_wirelessDeviceType = std::move(value); }
-    inline DeleteQueuedMessagesRequest& WithWirelessDeviceType(const WirelessDeviceType& value) { SetWirelessDeviceType(value); return *this;}
-    inline DeleteQueuedMessagesRequest& WithWirelessDeviceType(WirelessDeviceType&& value) { SetWirelessDeviceType(std::move(value)); return *this;}
+    inline void SetWirelessDeviceType(WirelessDeviceType value) { m_wirelessDeviceTypeHasBeenSet = true; m_wirelessDeviceType = value; }
+    inline DeleteQueuedMessagesRequest& WithWirelessDeviceType(WirelessDeviceType value) { SetWirelessDeviceType(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +83,7 @@ namespace Model
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    WirelessDeviceType m_wirelessDeviceType;
+    WirelessDeviceType m_wirelessDeviceType{WirelessDeviceType::NOT_SET};
     bool m_wirelessDeviceTypeHasBeenSet = false;
   };
 

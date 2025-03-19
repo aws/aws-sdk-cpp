@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateCustomMetadataRequest::CreateCustomMetadataRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_customMetadataHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

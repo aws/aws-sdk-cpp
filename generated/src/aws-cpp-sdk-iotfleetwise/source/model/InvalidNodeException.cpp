@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-InvalidNodeException::InvalidNodeException() : 
-    m_invalidNodesHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidNodeException::InvalidNodeException(JsonView jsonValue)
-  : InvalidNodeException()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ InvalidNodeException& InvalidNodeException::operator =(JsonView jsonValue)
     }
     m_invalidNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportJobDataSourceOverrideTags
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceOverrideTags();
+    AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceOverrideTags() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceOverrideTags(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobDataSourceOverrideTags& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,28 @@ namespace Model
      * <p>A list of data source IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all data sources in this asset bundle.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataSourceIds() const{ return m_dataSourceIds; }
+    inline const Aws::Vector<Aws::String>& GetDataSourceIds() const { return m_dataSourceIds; }
     inline bool DataSourceIdsHasBeenSet() const { return m_dataSourceIdsHasBeenSet; }
-    inline void SetDataSourceIds(const Aws::Vector<Aws::String>& value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds = value; }
-    inline void SetDataSourceIds(Aws::Vector<Aws::String>&& value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds = std::move(value); }
-    inline AssetBundleImportJobDataSourceOverrideTags& WithDataSourceIds(const Aws::Vector<Aws::String>& value) { SetDataSourceIds(value); return *this;}
-    inline AssetBundleImportJobDataSourceOverrideTags& WithDataSourceIds(Aws::Vector<Aws::String>&& value) { SetDataSourceIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobDataSourceOverrideTags& AddDataSourceIds(const Aws::String& value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds.push_back(value); return *this; }
-    inline AssetBundleImportJobDataSourceOverrideTags& AddDataSourceIds(Aws::String&& value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobDataSourceOverrideTags& AddDataSourceIds(const char* value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds.push_back(value); return *this; }
+    template<typename DataSourceIdsT = Aws::Vector<Aws::String>>
+    void SetDataSourceIds(DataSourceIdsT&& value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds = std::forward<DataSourceIdsT>(value); }
+    template<typename DataSourceIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobDataSourceOverrideTags& WithDataSourceIds(DataSourceIdsT&& value) { SetDataSourceIds(std::forward<DataSourceIdsT>(value)); return *this;}
+    template<typename DataSourceIdsT = Aws::String>
+    AssetBundleImportJobDataSourceOverrideTags& AddDataSourceIds(DataSourceIdsT&& value) { m_dataSourceIdsHasBeenSet = true; m_dataSourceIds.emplace_back(std::forward<DataSourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of tags for the data source that you want to apply overrides to.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssetBundleImportJobDataSourceOverrideTags& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AssetBundleImportJobDataSourceOverrideTags& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssetBundleImportJobDataSourceOverrideTags& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AssetBundleImportJobDataSourceOverrideTags& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AssetBundleImportJobDataSourceOverrideTags& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AssetBundleImportJobDataSourceOverrideTags& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

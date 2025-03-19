@@ -34,7 +34,7 @@ namespace Model
   class SalesforceStandardKnowledgeArticleTypeConfiguration
   {
   public:
-    AWS_KENDRA_API SalesforceStandardKnowledgeArticleTypeConfiguration();
+    AWS_KENDRA_API SalesforceStandardKnowledgeArticleTypeConfiguration() = default;
     AWS_KENDRA_API SalesforceStandardKnowledgeArticleTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SalesforceStandardKnowledgeArticleTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the field that contains the document data to index.</p>
      */
-    inline const Aws::String& GetDocumentDataFieldName() const{ return m_documentDataFieldName; }
+    inline const Aws::String& GetDocumentDataFieldName() const { return m_documentDataFieldName; }
     inline bool DocumentDataFieldNameHasBeenSet() const { return m_documentDataFieldNameHasBeenSet; }
-    inline void SetDocumentDataFieldName(const Aws::String& value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName = value; }
-    inline void SetDocumentDataFieldName(Aws::String&& value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName = std::move(value); }
-    inline void SetDocumentDataFieldName(const char* value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName.assign(value); }
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentDataFieldName(const Aws::String& value) { SetDocumentDataFieldName(value); return *this;}
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentDataFieldName(Aws::String&& value) { SetDocumentDataFieldName(std::move(value)); return *this;}
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentDataFieldName(const char* value) { SetDocumentDataFieldName(value); return *this;}
+    template<typename DocumentDataFieldNameT = Aws::String>
+    void SetDocumentDataFieldName(DocumentDataFieldNameT&& value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName = std::forward<DocumentDataFieldNameT>(value); }
+    template<typename DocumentDataFieldNameT = Aws::String>
+    SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentDataFieldName(DocumentDataFieldNameT&& value) { SetDocumentDataFieldName(std::forward<DocumentDataFieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the field that contains the document title.</p>
      */
-    inline const Aws::String& GetDocumentTitleFieldName() const{ return m_documentTitleFieldName; }
+    inline const Aws::String& GetDocumentTitleFieldName() const { return m_documentTitleFieldName; }
     inline bool DocumentTitleFieldNameHasBeenSet() const { return m_documentTitleFieldNameHasBeenSet; }
-    inline void SetDocumentTitleFieldName(const Aws::String& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = value; }
-    inline void SetDocumentTitleFieldName(Aws::String&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::move(value); }
-    inline void SetDocumentTitleFieldName(const char* value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName.assign(value); }
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentTitleFieldName(const Aws::String& value) { SetDocumentTitleFieldName(value); return *this;}
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentTitleFieldName(Aws::String&& value) { SetDocumentTitleFieldName(std::move(value)); return *this;}
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
+    template<typename DocumentTitleFieldNameT = Aws::String>
+    void SetDocumentTitleFieldName(DocumentTitleFieldNameT&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::forward<DocumentTitleFieldNameT>(value); }
+    template<typename DocumentTitleFieldNameT = Aws::String>
+    SalesforceStandardKnowledgeArticleTypeConfiguration& WithDocumentTitleFieldName(DocumentTitleFieldNameT&& value) { SetDocumentTitleFieldName(std::forward<DocumentTitleFieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,14 @@ namespace Model
      * data source fields</a>. The Salesforce data source field names must exist in
      * your Salesforce custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const { return m_fieldMappings; }
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
-    inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
-    inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
-    inline SalesforceStandardKnowledgeArticleTypeConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::forward<FieldMappingsT>(value); }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    SalesforceStandardKnowledgeArticleTypeConfiguration& WithFieldMappings(FieldMappingsT&& value) { SetFieldMappings(std::forward<FieldMappingsT>(value)); return *this;}
+    template<typename FieldMappingsT = DataSourceToIndexFieldMapping>
+    SalesforceStandardKnowledgeArticleTypeConfiguration& AddFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.emplace_back(std::forward<FieldMappingsT>(value)); return *this; }
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyCacheParameterGroupRequest::ModifyCacheParameterGroupRequest() : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_parameterNameValuesHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

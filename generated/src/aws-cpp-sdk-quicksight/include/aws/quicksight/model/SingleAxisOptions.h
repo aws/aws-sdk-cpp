@@ -32,7 +32,7 @@ namespace Model
   class SingleAxisOptions
   {
   public:
-    AWS_QUICKSIGHT_API SingleAxisOptions();
+    AWS_QUICKSIGHT_API SingleAxisOptions() = default;
     AWS_QUICKSIGHT_API SingleAxisOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SingleAxisOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The Y axis options of a single axis configuration.</p>
      */
-    inline const YAxisOptions& GetYAxisOptions() const{ return m_yAxisOptions; }
+    inline const YAxisOptions& GetYAxisOptions() const { return m_yAxisOptions; }
     inline bool YAxisOptionsHasBeenSet() const { return m_yAxisOptionsHasBeenSet; }
-    inline void SetYAxisOptions(const YAxisOptions& value) { m_yAxisOptionsHasBeenSet = true; m_yAxisOptions = value; }
-    inline void SetYAxisOptions(YAxisOptions&& value) { m_yAxisOptionsHasBeenSet = true; m_yAxisOptions = std::move(value); }
-    inline SingleAxisOptions& WithYAxisOptions(const YAxisOptions& value) { SetYAxisOptions(value); return *this;}
-    inline SingleAxisOptions& WithYAxisOptions(YAxisOptions&& value) { SetYAxisOptions(std::move(value)); return *this;}
+    template<typename YAxisOptionsT = YAxisOptions>
+    void SetYAxisOptions(YAxisOptionsT&& value) { m_yAxisOptionsHasBeenSet = true; m_yAxisOptions = std::forward<YAxisOptionsT>(value); }
+    template<typename YAxisOptionsT = YAxisOptions>
+    SingleAxisOptions& WithYAxisOptions(YAxisOptionsT&& value) { SetYAxisOptions(std::forward<YAxisOptionsT>(value)); return *this;}
     ///@}
   private:
 

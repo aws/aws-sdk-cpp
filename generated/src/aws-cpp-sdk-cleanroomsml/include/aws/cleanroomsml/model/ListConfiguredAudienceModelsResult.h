@@ -29,7 +29,7 @@ namespace Model
   class ListConfiguredAudienceModelsResult
   {
   public:
-    AWS_CLEANROOMSML_API ListConfiguredAudienceModelsResult();
+    AWS_CLEANROOMSML_API ListConfiguredAudienceModelsResult() = default;
     AWS_CLEANROOMSML_API ListConfiguredAudienceModelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMSML_API ListConfiguredAudienceModelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The token value used to access the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConfiguredAudienceModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfiguredAudienceModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfiguredAudienceModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfiguredAudienceModelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configured audience models.</p>
      */
-    inline const Aws::Vector<ConfiguredAudienceModelSummary>& GetConfiguredAudienceModels() const{ return m_configuredAudienceModels; }
-    inline void SetConfiguredAudienceModels(const Aws::Vector<ConfiguredAudienceModelSummary>& value) { m_configuredAudienceModels = value; }
-    inline void SetConfiguredAudienceModels(Aws::Vector<ConfiguredAudienceModelSummary>&& value) { m_configuredAudienceModels = std::move(value); }
-    inline ListConfiguredAudienceModelsResult& WithConfiguredAudienceModels(const Aws::Vector<ConfiguredAudienceModelSummary>& value) { SetConfiguredAudienceModels(value); return *this;}
-    inline ListConfiguredAudienceModelsResult& WithConfiguredAudienceModels(Aws::Vector<ConfiguredAudienceModelSummary>&& value) { SetConfiguredAudienceModels(std::move(value)); return *this;}
-    inline ListConfiguredAudienceModelsResult& AddConfiguredAudienceModels(const ConfiguredAudienceModelSummary& value) { m_configuredAudienceModels.push_back(value); return *this; }
-    inline ListConfiguredAudienceModelsResult& AddConfiguredAudienceModels(ConfiguredAudienceModelSummary&& value) { m_configuredAudienceModels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfiguredAudienceModelSummary>& GetConfiguredAudienceModels() const { return m_configuredAudienceModels; }
+    template<typename ConfiguredAudienceModelsT = Aws::Vector<ConfiguredAudienceModelSummary>>
+    void SetConfiguredAudienceModels(ConfiguredAudienceModelsT&& value) { m_configuredAudienceModelsHasBeenSet = true; m_configuredAudienceModels = std::forward<ConfiguredAudienceModelsT>(value); }
+    template<typename ConfiguredAudienceModelsT = Aws::Vector<ConfiguredAudienceModelSummary>>
+    ListConfiguredAudienceModelsResult& WithConfiguredAudienceModels(ConfiguredAudienceModelsT&& value) { SetConfiguredAudienceModels(std::forward<ConfiguredAudienceModelsT>(value)); return *this;}
+    template<typename ConfiguredAudienceModelsT = ConfiguredAudienceModelSummary>
+    ListConfiguredAudienceModelsResult& AddConfiguredAudienceModels(ConfiguredAudienceModelsT&& value) { m_configuredAudienceModelsHasBeenSet = true; m_configuredAudienceModels.emplace_back(std::forward<ConfiguredAudienceModelsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConfiguredAudienceModelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConfiguredAudienceModelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConfiguredAudienceModelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConfiguredAudienceModelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ConfiguredAudienceModelSummary> m_configuredAudienceModels;
+    bool m_configuredAudienceModelsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

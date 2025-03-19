@@ -18,21 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-TapeInfo::TapeInfo() : 
-    m_tapeARNHasBeenSet(false),
-    m_tapeBarcodeHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_tapeStatusHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_retentionStartDateHasBeenSet(false),
-    m_poolEntryDateHasBeenSet(false)
-{
-}
-
 TapeInfo::TapeInfo(JsonView jsonValue)
-  : TapeInfo()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ TapeInfo& TapeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TapeARN"))
   {
     m_tapeARN = jsonValue.GetString("TapeARN");
-
     m_tapeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeBarcode"))
   {
     m_tapeBarcode = jsonValue.GetString("TapeBarcode");
-
     m_tapeBarcodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeSizeInBytes"))
   {
     m_tapeSizeInBytes = jsonValue.GetInt64("TapeSizeInBytes");
-
     m_tapeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeStatus"))
   {
     m_tapeStatus = jsonValue.GetString("TapeStatus");
-
     m_tapeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolId"))
   {
     m_poolId = jsonValue.GetString("PoolId");
-
     m_poolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionStartDate"))
   {
     m_retentionStartDate = jsonValue.GetDouble("RetentionStartDate");
-
     m_retentionStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolEntryDate"))
   {
     m_poolEntryDate = jsonValue.GetDouble("PoolEntryDate");
-
     m_poolEntryDateHasBeenSet = true;
   }
-
   return *this;
 }
 

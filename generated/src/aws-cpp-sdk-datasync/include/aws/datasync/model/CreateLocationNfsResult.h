@@ -32,7 +32,7 @@ namespace Model
   class CreateLocationNfsResult
   {
   public:
-    AWS_DATASYNC_API CreateLocationNfsResult();
+    AWS_DATASYNC_API CreateLocationNfsResult() = default;
     AWS_DATASYNC_API CreateLocationNfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API CreateLocationNfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
      * <p>The ARN of the transfer location that you created for your NFS file
      * server.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
-    inline CreateLocationNfsResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline CreateLocationNfsResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline CreateLocationNfsResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    CreateLocationNfsResult& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLocationNfsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLocationNfsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLocationNfsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLocationNfsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_locationArn;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

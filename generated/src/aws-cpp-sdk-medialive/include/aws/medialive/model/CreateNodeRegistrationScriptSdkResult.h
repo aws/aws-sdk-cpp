@@ -33,7 +33,7 @@ namespace Model
   class CreateNodeRegistrationScriptSdkResult
   {
   public:
-    AWS_MEDIALIVE_API CreateNodeRegistrationScriptSdkResult();
+    AWS_MEDIALIVE_API CreateNodeRegistrationScriptSdkResult() = default;
     AWS_MEDIALIVE_API CreateNodeRegistrationScriptSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API CreateNodeRegistrationScriptSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,28 @@ namespace Model
      * A script that can be run on a Bring Your Own Device Elemental Anywhere system to
      * create a node in a cluster.
      */
-    inline const Aws::String& GetNodeRegistrationScript() const{ return m_nodeRegistrationScript; }
-    inline void SetNodeRegistrationScript(const Aws::String& value) { m_nodeRegistrationScript = value; }
-    inline void SetNodeRegistrationScript(Aws::String&& value) { m_nodeRegistrationScript = std::move(value); }
-    inline void SetNodeRegistrationScript(const char* value) { m_nodeRegistrationScript.assign(value); }
-    inline CreateNodeRegistrationScriptSdkResult& WithNodeRegistrationScript(const Aws::String& value) { SetNodeRegistrationScript(value); return *this;}
-    inline CreateNodeRegistrationScriptSdkResult& WithNodeRegistrationScript(Aws::String&& value) { SetNodeRegistrationScript(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptSdkResult& WithNodeRegistrationScript(const char* value) { SetNodeRegistrationScript(value); return *this;}
+    inline const Aws::String& GetNodeRegistrationScript() const { return m_nodeRegistrationScript; }
+    template<typename NodeRegistrationScriptT = Aws::String>
+    void SetNodeRegistrationScript(NodeRegistrationScriptT&& value) { m_nodeRegistrationScriptHasBeenSet = true; m_nodeRegistrationScript = std::forward<NodeRegistrationScriptT>(value); }
+    template<typename NodeRegistrationScriptT = Aws::String>
+    CreateNodeRegistrationScriptSdkResult& WithNodeRegistrationScript(NodeRegistrationScriptT&& value) { SetNodeRegistrationScript(std::forward<NodeRegistrationScriptT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNodeRegistrationScriptSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNodeRegistrationScriptSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNodeRegistrationScriptSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNodeRegistrationScriptSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nodeRegistrationScript;
+    bool m_nodeRegistrationScriptHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

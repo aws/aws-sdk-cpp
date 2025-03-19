@@ -18,23 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReadSetFilter::ReadSetFilter() : 
-    m_nameHasBeenSet(false),
-    m_status(ReadSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_creationType(CreationType::NOT_SET),
-    m_creationTypeHasBeenSet(false)
-{
-}
-
 ReadSetFilter::ReadSetFilter(JsonView jsonValue)
-  : ReadSetFilter()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ReadSetFilter& ReadSetFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetStatusMapper::GetReadSetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceArn"))
   {
     m_referenceArn = jsonValue.GetString("referenceArn");
-
     m_referenceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBefore"))
   {
     m_createdBefore = jsonValue.GetString("createdBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleId"))
   {
     m_sampleId = jsonValue.GetString("sampleId");
-
     m_sampleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subjectId"))
   {
     m_subjectId = jsonValue.GetString("subjectId");
-
     m_subjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generatedFrom"))
   {
     m_generatedFrom = jsonValue.GetString("generatedFrom");
-
     m_generatedFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationType"))
   {
     m_creationType = CreationTypeMapper::GetCreationTypeForName(jsonValue.GetString("creationType"));
-
     m_creationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

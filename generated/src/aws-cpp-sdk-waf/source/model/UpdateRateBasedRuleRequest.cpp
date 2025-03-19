@@ -12,15 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRateBasedRuleRequest::UpdateRateBasedRuleRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRateBasedRuleRequest::SerializePayload() const
 {
   JsonValue payload;

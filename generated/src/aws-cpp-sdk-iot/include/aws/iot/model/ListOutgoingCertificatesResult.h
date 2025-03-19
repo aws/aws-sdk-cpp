@@ -35,7 +35,7 @@ namespace Model
   class ListOutgoingCertificatesResult
   {
   public:
-    AWS_IOT_API ListOutgoingCertificatesResult();
+    AWS_IOT_API ListOutgoingCertificatesResult() = default;
     AWS_IOT_API ListOutgoingCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListOutgoingCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
     /**
      * <p>The certificates that are being transferred but not yet accepted.</p>
      */
-    inline const Aws::Vector<OutgoingCertificate>& GetOutgoingCertificates() const{ return m_outgoingCertificates; }
-    inline void SetOutgoingCertificates(const Aws::Vector<OutgoingCertificate>& value) { m_outgoingCertificates = value; }
-    inline void SetOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { m_outgoingCertificates = std::move(value); }
-    inline ListOutgoingCertificatesResult& WithOutgoingCertificates(const Aws::Vector<OutgoingCertificate>& value) { SetOutgoingCertificates(value); return *this;}
-    inline ListOutgoingCertificatesResult& WithOutgoingCertificates(Aws::Vector<OutgoingCertificate>&& value) { SetOutgoingCertificates(std::move(value)); return *this;}
-    inline ListOutgoingCertificatesResult& AddOutgoingCertificates(const OutgoingCertificate& value) { m_outgoingCertificates.push_back(value); return *this; }
-    inline ListOutgoingCertificatesResult& AddOutgoingCertificates(OutgoingCertificate&& value) { m_outgoingCertificates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OutgoingCertificate>& GetOutgoingCertificates() const { return m_outgoingCertificates; }
+    template<typename OutgoingCertificatesT = Aws::Vector<OutgoingCertificate>>
+    void SetOutgoingCertificates(OutgoingCertificatesT&& value) { m_outgoingCertificatesHasBeenSet = true; m_outgoingCertificates = std::forward<OutgoingCertificatesT>(value); }
+    template<typename OutgoingCertificatesT = Aws::Vector<OutgoingCertificate>>
+    ListOutgoingCertificatesResult& WithOutgoingCertificates(OutgoingCertificatesT&& value) { SetOutgoingCertificates(std::forward<OutgoingCertificatesT>(value)); return *this;}
+    template<typename OutgoingCertificatesT = OutgoingCertificate>
+    ListOutgoingCertificatesResult& AddOutgoingCertificates(OutgoingCertificatesT&& value) { m_outgoingCertificatesHasBeenSet = true; m_outgoingCertificates.emplace_back(std::forward<OutgoingCertificatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListOutgoingCertificatesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListOutgoingCertificatesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListOutgoingCertificatesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListOutgoingCertificatesResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOutgoingCertificatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOutgoingCertificatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOutgoingCertificatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOutgoingCertificatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OutgoingCertificate> m_outgoingCertificates;
+    bool m_outgoingCertificatesHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

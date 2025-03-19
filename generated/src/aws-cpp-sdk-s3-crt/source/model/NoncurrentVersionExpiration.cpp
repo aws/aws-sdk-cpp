@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-NoncurrentVersionExpiration::NoncurrentVersionExpiration() : 
-    m_noncurrentDays(0),
-    m_noncurrentDaysHasBeenSet(false),
-    m_newerNoncurrentVersions(0),
-    m_newerNoncurrentVersionsHasBeenSet(false)
-{
-}
-
 NoncurrentVersionExpiration::NoncurrentVersionExpiration(const XmlNode& xmlNode)
-  : NoncurrentVersionExpiration()
 {
   *this = xmlNode;
 }

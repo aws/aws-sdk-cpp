@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-Projection::Projection() : 
-    m_projectionType(ProjectionType::NOT_SET),
-    m_projectionTypeHasBeenSet(false),
-    m_nonKeyAttributesHasBeenSet(false)
-{
-}
-
 Projection::Projection(JsonView jsonValue)
-  : Projection()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Projection& Projection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProjectionType"))
   {
     m_projectionType = ProjectionTypeMapper::GetProjectionTypeForName(jsonValue.GetString("ProjectionType"));
-
     m_projectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonKeyAttributes"))
   {
     Aws::Utils::Array<JsonView> nonKeyAttributesJsonList = jsonValue.GetArray("NonKeyAttributes");
@@ -49,7 +39,6 @@ Projection& Projection::operator =(JsonView jsonValue)
     }
     m_nonKeyAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

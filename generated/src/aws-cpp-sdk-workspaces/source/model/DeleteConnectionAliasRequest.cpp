@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectionAliasRequest::DeleteConnectionAliasRequest() : 
-    m_aliasIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectionAliasRequest::SerializePayload() const
 {
   JsonValue payload;

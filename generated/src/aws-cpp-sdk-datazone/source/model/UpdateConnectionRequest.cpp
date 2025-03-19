@@ -12,15 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConnectionRequest::UpdateConnectionRequest() : 
-    m_awsLocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_propsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

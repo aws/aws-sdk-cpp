@@ -18,15 +18,7 @@ namespace WorkMailMessageFlow
 namespace Model
 {
 
-S3Reference::S3Reference() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_objectVersionHasBeenSet(false)
-{
-}
-
 S3Reference::S3Reference(JsonView jsonValue)
-  : S3Reference()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Reference& S3Reference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectVersion"))
   {
     m_objectVersion = jsonValue.GetString("objectVersion");
-
     m_objectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class StreamingDistributionConfigWithTags
   {
   public:
-    AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags();
+    AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags() = default;
     AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>A streaming distribution Configuration.</p>
      */
-    inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
+    inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const { return m_streamingDistributionConfig; }
     inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
-    inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
-    inline void SetStreamingDistributionConfig(StreamingDistributionConfig&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::move(value); }
-    inline StreamingDistributionConfigWithTags& WithStreamingDistributionConfig(const StreamingDistributionConfig& value) { SetStreamingDistributionConfig(value); return *this;}
-    inline StreamingDistributionConfigWithTags& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
+    template<typename StreamingDistributionConfigT = StreamingDistributionConfig>
+    void SetStreamingDistributionConfig(StreamingDistributionConfigT&& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = std::forward<StreamingDistributionConfigT>(value); }
+    template<typename StreamingDistributionConfigT = StreamingDistributionConfig>
+    StreamingDistributionConfigWithTags& WithStreamingDistributionConfig(StreamingDistributionConfigT&& value) { SetStreamingDistributionConfig(std::forward<StreamingDistributionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
-    inline const Tags& GetTags() const{ return m_tags; }
+    inline const Tags& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Tags& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Tags&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StreamingDistributionConfigWithTags& WithTags(const Tags& value) { SetTags(value); return *this;}
-    inline StreamingDistributionConfigWithTags& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
+    template<typename TagsT = Tags>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Tags>
+    StreamingDistributionConfigWithTags& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
   private:
 

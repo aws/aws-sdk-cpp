@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateSecurityProfileBehaviorsResult::ValidateSecurityProfileBehaviorsResult() : 
-    m_valid(false)
-{
-}
-
 ValidateSecurityProfileBehaviorsResult::ValidateSecurityProfileBehaviorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ValidateSecurityProfileBehaviorsResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ ValidateSecurityProfileBehaviorsResult& ValidateSecurityProfileBehaviorsResult::
   if(jsonValue.ValueExists("valid"))
   {
     m_valid = jsonValue.GetBool("valid");
-
+    m_validHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationErrors"))
   {
     Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
@@ -44,14 +37,15 @@ ValidateSecurityProfileBehaviorsResult& ValidateSecurityProfileBehaviorsResult::
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
     }
+    m_validationErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

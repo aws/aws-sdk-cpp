@@ -18,15 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-ReportedOs::ReportedOs() : 
-    m_familyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ReportedOs::ReportedOs(JsonView jsonValue)
-  : ReportedOs()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReportedOs& ReportedOs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

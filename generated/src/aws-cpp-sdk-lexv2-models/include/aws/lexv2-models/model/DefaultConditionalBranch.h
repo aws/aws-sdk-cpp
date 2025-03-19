@@ -33,7 +33,7 @@ namespace Model
   class DefaultConditionalBranch
   {
   public:
-    AWS_LEXMODELSV2_API DefaultConditionalBranch();
+    AWS_LEXMODELSV2_API DefaultConditionalBranch() = default;
     AWS_LEXMODELSV2_API DefaultConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API DefaultConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,22 +43,22 @@ namespace Model
     /**
      * <p>The next step in the conversation.</p>
      */
-    inline const DialogState& GetNextStep() const{ return m_nextStep; }
+    inline const DialogState& GetNextStep() const { return m_nextStep; }
     inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
-    inline void SetNextStep(const DialogState& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
-    inline void SetNextStep(DialogState&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
-    inline DefaultConditionalBranch& WithNextStep(const DialogState& value) { SetNextStep(value); return *this;}
-    inline DefaultConditionalBranch& WithNextStep(DialogState&& value) { SetNextStep(std::move(value)); return *this;}
+    template<typename NextStepT = DialogState>
+    void SetNextStep(NextStepT&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::forward<NextStepT>(value); }
+    template<typename NextStepT = DialogState>
+    DefaultConditionalBranch& WithNextStep(NextStepT&& value) { SetNextStep(std::forward<NextStepT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseSpecification& GetResponse() const{ return m_response; }
+    inline const ResponseSpecification& GetResponse() const { return m_response; }
     inline bool ResponseHasBeenSet() const { return m_responseHasBeenSet; }
-    inline void SetResponse(const ResponseSpecification& value) { m_responseHasBeenSet = true; m_response = value; }
-    inline void SetResponse(ResponseSpecification&& value) { m_responseHasBeenSet = true; m_response = std::move(value); }
-    inline DefaultConditionalBranch& WithResponse(const ResponseSpecification& value) { SetResponse(value); return *this;}
-    inline DefaultConditionalBranch& WithResponse(ResponseSpecification&& value) { SetResponse(std::move(value)); return *this;}
+    template<typename ResponseT = ResponseSpecification>
+    void SetResponse(ResponseT&& value) { m_responseHasBeenSet = true; m_response = std::forward<ResponseT>(value); }
+    template<typename ResponseT = ResponseSpecification>
+    DefaultConditionalBranch& WithResponse(ResponseT&& value) { SetResponse(std::forward<ResponseT>(value)); return *this;}
     ///@}
   private:
 

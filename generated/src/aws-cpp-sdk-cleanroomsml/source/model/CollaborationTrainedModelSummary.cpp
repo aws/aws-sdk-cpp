@@ -18,23 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-CollaborationTrainedModelSummary::CollaborationTrainedModelSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false),
-    m_status(TrainedModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_configuredModelAlgorithmAssociationArnHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false)
-{
-}
-
 CollaborationTrainedModelSummary::CollaborationTrainedModelSummary(JsonView jsonValue)
-  : CollaborationTrainedModelSummary()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ CollaborationTrainedModelSummary& CollaborationTrainedModelSummary::operator =(J
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainedModelArn"))
   {
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
-
     m_trainedModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
-
     m_membershipIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationIdentifier"))
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
-
     m_collaborationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TrainedModelStatusMapper::GetTrainedModelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredModelAlgorithmAssociationArn"))
   {
     m_configuredModelAlgorithmAssociationArn = jsonValue.GetString("configuredModelAlgorithmAssociationArn");
-
     m_configuredModelAlgorithmAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

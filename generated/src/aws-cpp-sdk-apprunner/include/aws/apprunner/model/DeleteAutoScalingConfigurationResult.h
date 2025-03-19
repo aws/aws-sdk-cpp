@@ -28,7 +28,7 @@ namespace Model
   class DeleteAutoScalingConfigurationResult
   {
   public:
-    AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult();
+    AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult() = default;
     AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A description of the App Runner auto scaling configuration that this request
      * just deleted.</p>
      */
-    inline const AutoScalingConfiguration& GetAutoScalingConfiguration() const{ return m_autoScalingConfiguration; }
-    inline void SetAutoScalingConfiguration(const AutoScalingConfiguration& value) { m_autoScalingConfiguration = value; }
-    inline void SetAutoScalingConfiguration(AutoScalingConfiguration&& value) { m_autoScalingConfiguration = std::move(value); }
-    inline DeleteAutoScalingConfigurationResult& WithAutoScalingConfiguration(const AutoScalingConfiguration& value) { SetAutoScalingConfiguration(value); return *this;}
-    inline DeleteAutoScalingConfigurationResult& WithAutoScalingConfiguration(AutoScalingConfiguration&& value) { SetAutoScalingConfiguration(std::move(value)); return *this;}
+    inline const AutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
+    template<typename AutoScalingConfigurationT = AutoScalingConfiguration>
+    void SetAutoScalingConfiguration(AutoScalingConfigurationT&& value) { m_autoScalingConfigurationHasBeenSet = true; m_autoScalingConfiguration = std::forward<AutoScalingConfigurationT>(value); }
+    template<typename AutoScalingConfigurationT = AutoScalingConfiguration>
+    DeleteAutoScalingConfigurationResult& WithAutoScalingConfiguration(AutoScalingConfigurationT&& value) { SetAutoScalingConfiguration(std::forward<AutoScalingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAutoScalingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAutoScalingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAutoScalingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAutoScalingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AutoScalingConfiguration m_autoScalingConfiguration;
+    bool m_autoScalingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class AnonymousUserSnapshotJobResult
   {
   public:
-    AWS_QUICKSIGHT_API AnonymousUserSnapshotJobResult();
+    AWS_QUICKSIGHT_API AnonymousUserSnapshotJobResult() = default;
     AWS_QUICKSIGHT_API AnonymousUserSnapshotJobResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AnonymousUserSnapshotJobResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * fails, the objects contain information about the error that caused the job to
      * fail.</p>
      */
-    inline const Aws::Vector<SnapshotJobResultFileGroup>& GetFileGroups() const{ return m_fileGroups; }
+    inline const Aws::Vector<SnapshotJobResultFileGroup>& GetFileGroups() const { return m_fileGroups; }
     inline bool FileGroupsHasBeenSet() const { return m_fileGroupsHasBeenSet; }
-    inline void SetFileGroups(const Aws::Vector<SnapshotJobResultFileGroup>& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = value; }
-    inline void SetFileGroups(Aws::Vector<SnapshotJobResultFileGroup>&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = std::move(value); }
-    inline AnonymousUserSnapshotJobResult& WithFileGroups(const Aws::Vector<SnapshotJobResultFileGroup>& value) { SetFileGroups(value); return *this;}
-    inline AnonymousUserSnapshotJobResult& WithFileGroups(Aws::Vector<SnapshotJobResultFileGroup>&& value) { SetFileGroups(std::move(value)); return *this;}
-    inline AnonymousUserSnapshotJobResult& AddFileGroups(const SnapshotJobResultFileGroup& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.push_back(value); return *this; }
-    inline AnonymousUserSnapshotJobResult& AddFileGroups(SnapshotJobResultFileGroup&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.push_back(std::move(value)); return *this; }
+    template<typename FileGroupsT = Aws::Vector<SnapshotJobResultFileGroup>>
+    void SetFileGroups(FileGroupsT&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = std::forward<FileGroupsT>(value); }
+    template<typename FileGroupsT = Aws::Vector<SnapshotJobResultFileGroup>>
+    AnonymousUserSnapshotJobResult& WithFileGroups(FileGroupsT&& value) { SetFileGroups(std::forward<FileGroupsT>(value)); return *this;}
+    template<typename FileGroupsT = SnapshotJobResultFileGroup>
+    AnonymousUserSnapshotJobResult& AddFileGroups(FileGroupsT&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.emplace_back(std::forward<FileGroupsT>(value)); return *this; }
     ///@}
   private:
 

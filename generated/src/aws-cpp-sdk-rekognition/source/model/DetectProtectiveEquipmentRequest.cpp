@@ -12,12 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectProtectiveEquipmentRequest::DetectProtectiveEquipmentRequest() : 
-    m_imageHasBeenSet(false),
-    m_summarizationAttributesHasBeenSet(false)
-{
-}
-
 Aws::String DetectProtectiveEquipmentRequest::SerializePayload() const
 {
   JsonValue payload;

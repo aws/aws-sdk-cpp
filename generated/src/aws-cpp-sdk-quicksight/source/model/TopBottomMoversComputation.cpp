@@ -18,23 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopBottomMoversComputation::TopBottomMoversComputation() : 
-    m_computationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_moverSize(0),
-    m_moverSizeHasBeenSet(false),
-    m_sortOrder(TopBottomSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_type(TopBottomComputationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 TopBottomMoversComputation::TopBottomMoversComputation(JsonView jsonValue)
-  : TopBottomMoversComputation()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ TopBottomMoversComputation& TopBottomMoversComputation::operator =(JsonView json
   if(jsonValue.ValueExists("ComputationId"))
   {
     m_computationId = jsonValue.GetString("ComputationId");
-
     m_computationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetObject("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetObject("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetObject("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MoverSize"))
   {
     m_moverSize = jsonValue.GetInteger("MoverSize");
-
     m_moverSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = TopBottomSortOrderMapper::GetTopBottomSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TopBottomComputationTypeMapper::GetTopBottomComputationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

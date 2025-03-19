@@ -22,7 +22,7 @@ namespace Model
   class ListStateTemplatesRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API ListStateTemplatesRequest();
+    AWS_IOTFLEETWISE_API ListStateTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
      * <p> The token to retrieve the next set of results, or <code>null</code> if there
      * are no more results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStateTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStateTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStateTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStateTemplatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListStateTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -66,22 +64,20 @@ namespace Model
      * <code>METADATA_ONLY</code>, the list response includes: state template ID,
      * Amazon Resource Name (ARN), creation time, and last modification time.</p>
      */
-    inline const ListResponseScope& GetListResponseScope() const{ return m_listResponseScope; }
+    inline ListResponseScope GetListResponseScope() const { return m_listResponseScope; }
     inline bool ListResponseScopeHasBeenSet() const { return m_listResponseScopeHasBeenSet; }
-    inline void SetListResponseScope(const ListResponseScope& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
-    inline void SetListResponseScope(ListResponseScope&& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = std::move(value); }
-    inline ListStateTemplatesRequest& WithListResponseScope(const ListResponseScope& value) { SetListResponseScope(value); return *this;}
-    inline ListStateTemplatesRequest& WithListResponseScope(ListResponseScope&& value) { SetListResponseScope(std::move(value)); return *this;}
+    inline void SetListResponseScope(ListResponseScope value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
+    inline ListStateTemplatesRequest& WithListResponseScope(ListResponseScope value) { SetListResponseScope(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ListResponseScope m_listResponseScope;
+    ListResponseScope m_listResponseScope{ListResponseScope::NOT_SET};
     bool m_listResponseScopeHasBeenSet = false;
   };
 

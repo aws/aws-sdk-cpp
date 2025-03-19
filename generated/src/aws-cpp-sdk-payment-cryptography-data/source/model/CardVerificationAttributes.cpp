@@ -18,20 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CardVerificationAttributes::CardVerificationAttributes() : 
-    m_amexCardSecurityCodeVersion1HasBeenSet(false),
-    m_amexCardSecurityCodeVersion2HasBeenSet(false),
-    m_cardVerificationValue1HasBeenSet(false),
-    m_cardVerificationValue2HasBeenSet(false),
-    m_cardHolderVerificationValueHasBeenSet(false),
-    m_dynamicCardVerificationCodeHasBeenSet(false),
-    m_dynamicCardVerificationValueHasBeenSet(false),
-    m_discoverDynamicCardVerificationCodeHasBeenSet(false)
-{
-}
-
 CardVerificationAttributes::CardVerificationAttributes(JsonView jsonValue)
-  : CardVerificationAttributes()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ CardVerificationAttributes& CardVerificationAttributes::operator =(JsonView json
   if(jsonValue.ValueExists("AmexCardSecurityCodeVersion1"))
   {
     m_amexCardSecurityCodeVersion1 = jsonValue.GetObject("AmexCardSecurityCodeVersion1");
-
     m_amexCardSecurityCodeVersion1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmexCardSecurityCodeVersion2"))
   {
     m_amexCardSecurityCodeVersion2 = jsonValue.GetObject("AmexCardSecurityCodeVersion2");
-
     m_amexCardSecurityCodeVersion2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CardVerificationValue1"))
   {
     m_cardVerificationValue1 = jsonValue.GetObject("CardVerificationValue1");
-
     m_cardVerificationValue1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CardVerificationValue2"))
   {
     m_cardVerificationValue2 = jsonValue.GetObject("CardVerificationValue2");
-
     m_cardVerificationValue2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CardHolderVerificationValue"))
   {
     m_cardHolderVerificationValue = jsonValue.GetObject("CardHolderVerificationValue");
-
     m_cardHolderVerificationValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicCardVerificationCode"))
   {
     m_dynamicCardVerificationCode = jsonValue.GetObject("DynamicCardVerificationCode");
-
     m_dynamicCardVerificationCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicCardVerificationValue"))
   {
     m_dynamicCardVerificationValue = jsonValue.GetObject("DynamicCardVerificationValue");
-
     m_dynamicCardVerificationValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscoverDynamicCardVerificationCode"))
   {
     m_discoverDynamicCardVerificationCode = jsonValue.GetObject("DiscoverDynamicCardVerificationCode");
-
     m_discoverDynamicCardVerificationCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

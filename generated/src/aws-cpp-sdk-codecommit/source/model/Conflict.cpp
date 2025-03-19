@@ -18,14 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-Conflict::Conflict() : 
-    m_conflictMetadataHasBeenSet(false),
-    m_mergeHunksHasBeenSet(false)
-{
-}
-
 Conflict::Conflict(JsonView jsonValue)
-  : Conflict()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Conflict& Conflict::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conflictMetadata"))
   {
     m_conflictMetadata = jsonValue.GetObject("conflictMetadata");
-
     m_conflictMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mergeHunks"))
   {
     Aws::Utils::Array<JsonView> mergeHunksJsonList = jsonValue.GetArray("mergeHunks");
@@ -48,7 +39,6 @@ Conflict& Conflict::operator =(JsonView jsonValue)
     }
     m_mergeHunksHasBeenSet = true;
   }
-
   return *this;
 }
 

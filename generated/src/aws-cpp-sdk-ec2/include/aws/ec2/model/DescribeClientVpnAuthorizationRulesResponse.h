@@ -30,7 +30,7 @@ namespace Model
   class DescribeClientVpnAuthorizationRulesResponse
   {
   public:
-    AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse();
+    AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse() = default;
     AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the authorization rules.</p>
      */
-    inline const Aws::Vector<AuthorizationRule>& GetAuthorizationRules() const{ return m_authorizationRules; }
-    inline void SetAuthorizationRules(const Aws::Vector<AuthorizationRule>& value) { m_authorizationRules = value; }
-    inline void SetAuthorizationRules(Aws::Vector<AuthorizationRule>&& value) { m_authorizationRules = std::move(value); }
-    inline DescribeClientVpnAuthorizationRulesResponse& WithAuthorizationRules(const Aws::Vector<AuthorizationRule>& value) { SetAuthorizationRules(value); return *this;}
-    inline DescribeClientVpnAuthorizationRulesResponse& WithAuthorizationRules(Aws::Vector<AuthorizationRule>&& value) { SetAuthorizationRules(std::move(value)); return *this;}
-    inline DescribeClientVpnAuthorizationRulesResponse& AddAuthorizationRules(const AuthorizationRule& value) { m_authorizationRules.push_back(value); return *this; }
-    inline DescribeClientVpnAuthorizationRulesResponse& AddAuthorizationRules(AuthorizationRule&& value) { m_authorizationRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthorizationRule>& GetAuthorizationRules() const { return m_authorizationRules; }
+    template<typename AuthorizationRulesT = Aws::Vector<AuthorizationRule>>
+    void SetAuthorizationRules(AuthorizationRulesT&& value) { m_authorizationRulesHasBeenSet = true; m_authorizationRules = std::forward<AuthorizationRulesT>(value); }
+    template<typename AuthorizationRulesT = Aws::Vector<AuthorizationRule>>
+    DescribeClientVpnAuthorizationRulesResponse& WithAuthorizationRules(AuthorizationRulesT&& value) { SetAuthorizationRules(std::forward<AuthorizationRulesT>(value)); return *this;}
+    template<typename AuthorizationRulesT = AuthorizationRule>
+    DescribeClientVpnAuthorizationRulesResponse& AddAuthorizationRules(AuthorizationRulesT&& value) { m_authorizationRulesHasBeenSet = true; m_authorizationRules.emplace_back(std::forward<AuthorizationRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeClientVpnAuthorizationRulesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeClientVpnAuthorizationRulesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeClientVpnAuthorizationRulesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeClientVpnAuthorizationRulesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeClientVpnAuthorizationRulesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeClientVpnAuthorizationRulesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeClientVpnAuthorizationRulesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuthorizationRule> m_authorizationRules;
+    bool m_authorizationRulesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

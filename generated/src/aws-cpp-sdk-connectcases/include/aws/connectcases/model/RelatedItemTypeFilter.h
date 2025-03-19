@@ -34,7 +34,7 @@ namespace Model
   class RelatedItemTypeFilter
   {
   public:
-    AWS_CONNECTCASES_API RelatedItemTypeFilter();
+    AWS_CONNECTCASES_API RelatedItemTypeFilter() = default;
     AWS_CONNECTCASES_API RelatedItemTypeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API RelatedItemTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>A filter for related items of type <code>Comment</code>.</p>
      */
-    inline const CommentFilter& GetComment() const{ return m_comment; }
+    inline const CommentFilter& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const CommentFilter& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(CommentFilter&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline RelatedItemTypeFilter& WithComment(const CommentFilter& value) { SetComment(value); return *this;}
-    inline RelatedItemTypeFilter& WithComment(CommentFilter&& value) { SetComment(std::move(value)); return *this;}
+    template<typename CommentT = CommentFilter>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = CommentFilter>
+    RelatedItemTypeFilter& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter for related items of type <code>Contact</code>.</p>
      */
-    inline const ContactFilter& GetContact() const{ return m_contact; }
+    inline const ContactFilter& GetContact() const { return m_contact; }
     inline bool ContactHasBeenSet() const { return m_contactHasBeenSet; }
-    inline void SetContact(const ContactFilter& value) { m_contactHasBeenSet = true; m_contact = value; }
-    inline void SetContact(ContactFilter&& value) { m_contactHasBeenSet = true; m_contact = std::move(value); }
-    inline RelatedItemTypeFilter& WithContact(const ContactFilter& value) { SetContact(value); return *this;}
-    inline RelatedItemTypeFilter& WithContact(ContactFilter&& value) { SetContact(std::move(value)); return *this;}
+    template<typename ContactT = ContactFilter>
+    void SetContact(ContactT&& value) { m_contactHasBeenSet = true; m_contact = std::forward<ContactT>(value); }
+    template<typename ContactT = ContactFilter>
+    RelatedItemTypeFilter& WithContact(ContactT&& value) { SetContact(std::forward<ContactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter for related items of this type of <code>File</code>.</p>
      */
-    inline const FileFilter& GetFile() const{ return m_file; }
+    inline const FileFilter& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const FileFilter& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(FileFilter&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline RelatedItemTypeFilter& WithFile(const FileFilter& value) { SetFile(value); return *this;}
-    inline RelatedItemTypeFilter& WithFile(FileFilter&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = FileFilter>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = FileFilter>
+    RelatedItemTypeFilter& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
   private:
 

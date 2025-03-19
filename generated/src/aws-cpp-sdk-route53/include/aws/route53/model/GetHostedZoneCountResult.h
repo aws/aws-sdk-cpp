@@ -33,7 +33,7 @@ namespace Model
   class GetHostedZoneCountResult
   {
   public:
-    AWS_ROUTE53_API GetHostedZoneCountResult();
+    AWS_ROUTE53_API GetHostedZoneCountResult() = default;
     AWS_ROUTE53_API GetHostedZoneCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetHostedZoneCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,26 @@ namespace Model
      * <p>The total number of public and private hosted zones that are associated with
      * the current Amazon Web Services account.</p>
      */
-    inline long long GetHostedZoneCount() const{ return m_hostedZoneCount; }
-    inline void SetHostedZoneCount(long long value) { m_hostedZoneCount = value; }
+    inline long long GetHostedZoneCount() const { return m_hostedZoneCount; }
+    inline void SetHostedZoneCount(long long value) { m_hostedZoneCountHasBeenSet = true; m_hostedZoneCount = value; }
     inline GetHostedZoneCountResult& WithHostedZoneCount(long long value) { SetHostedZoneCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHostedZoneCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHostedZoneCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHostedZoneCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHostedZoneCountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_hostedZoneCount;
+    long long m_hostedZoneCount{0};
+    bool m_hostedZoneCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

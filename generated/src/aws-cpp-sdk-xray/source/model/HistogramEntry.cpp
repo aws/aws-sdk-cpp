@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-HistogramEntry::HistogramEntry() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 HistogramEntry::HistogramEntry(JsonView jsonValue)
-  : HistogramEntry()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ HistogramEntry& HistogramEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

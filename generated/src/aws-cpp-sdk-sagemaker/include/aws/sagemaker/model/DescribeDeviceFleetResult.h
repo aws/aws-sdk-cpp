@@ -29,7 +29,7 @@ namespace Model
   class DescribeDeviceFleetResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeDeviceFleetResult();
+    AWS_SAGEMAKER_API DescribeDeviceFleetResult() = default;
     AWS_SAGEMAKER_API DescribeDeviceFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeDeviceFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,72 +38,66 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline const Aws::String& GetDeviceFleetName() const{ return m_deviceFleetName; }
-    inline void SetDeviceFleetName(const Aws::String& value) { m_deviceFleetName = value; }
-    inline void SetDeviceFleetName(Aws::String&& value) { m_deviceFleetName = std::move(value); }
-    inline void SetDeviceFleetName(const char* value) { m_deviceFleetName.assign(value); }
-    inline DescribeDeviceFleetResult& WithDeviceFleetName(const Aws::String& value) { SetDeviceFleetName(value); return *this;}
-    inline DescribeDeviceFleetResult& WithDeviceFleetName(Aws::String&& value) { SetDeviceFleetName(std::move(value)); return *this;}
-    inline DescribeDeviceFleetResult& WithDeviceFleetName(const char* value) { SetDeviceFleetName(value); return *this;}
+    inline const Aws::String& GetDeviceFleetName() const { return m_deviceFleetName; }
+    template<typename DeviceFleetNameT = Aws::String>
+    void SetDeviceFleetName(DeviceFleetNameT&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::forward<DeviceFleetNameT>(value); }
+    template<typename DeviceFleetNameT = Aws::String>
+    DescribeDeviceFleetResult& WithDeviceFleetName(DeviceFleetNameT&& value) { SetDeviceFleetName(std::forward<DeviceFleetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The The Amazon Resource Name (ARN) of the fleet.</p>
      */
-    inline const Aws::String& GetDeviceFleetArn() const{ return m_deviceFleetArn; }
-    inline void SetDeviceFleetArn(const Aws::String& value) { m_deviceFleetArn = value; }
-    inline void SetDeviceFleetArn(Aws::String&& value) { m_deviceFleetArn = std::move(value); }
-    inline void SetDeviceFleetArn(const char* value) { m_deviceFleetArn.assign(value); }
-    inline DescribeDeviceFleetResult& WithDeviceFleetArn(const Aws::String& value) { SetDeviceFleetArn(value); return *this;}
-    inline DescribeDeviceFleetResult& WithDeviceFleetArn(Aws::String&& value) { SetDeviceFleetArn(std::move(value)); return *this;}
-    inline DescribeDeviceFleetResult& WithDeviceFleetArn(const char* value) { SetDeviceFleetArn(value); return *this;}
+    inline const Aws::String& GetDeviceFleetArn() const { return m_deviceFleetArn; }
+    template<typename DeviceFleetArnT = Aws::String>
+    void SetDeviceFleetArn(DeviceFleetArnT&& value) { m_deviceFleetArnHasBeenSet = true; m_deviceFleetArn = std::forward<DeviceFleetArnT>(value); }
+    template<typename DeviceFleetArnT = Aws::String>
+    DescribeDeviceFleetResult& WithDeviceFleetArn(DeviceFleetArnT&& value) { SetDeviceFleetArn(std::forward<DeviceFleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output configuration for storing sampled data.</p>
      */
-    inline const EdgeOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-    inline void SetOutputConfig(const EdgeOutputConfig& value) { m_outputConfig = value; }
-    inline void SetOutputConfig(EdgeOutputConfig&& value) { m_outputConfig = std::move(value); }
-    inline DescribeDeviceFleetResult& WithOutputConfig(const EdgeOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline DescribeDeviceFleetResult& WithOutputConfig(EdgeOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    inline const EdgeOutputConfig& GetOutputConfig() const { return m_outputConfig; }
+    template<typename OutputConfigT = EdgeOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = EdgeOutputConfig>
+    DescribeDeviceFleetResult& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the fleet.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeDeviceFleetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeDeviceFleetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeDeviceFleetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeDeviceFleetResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp of when the device fleet was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeDeviceFleetResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeDeviceFleetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeDeviceFleetResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Timestamp of when the device fleet was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeDeviceFleetResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeDeviceFleetResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeDeviceFleetResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,13 +105,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
      * Internet of Things (IoT).</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeDeviceFleetResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeDeviceFleetResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeDeviceFleetResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeDeviceFleetResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,44 +117,49 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) alias created in Amazon Web Services Internet
      * of Things (IoT).</p>
      */
-    inline const Aws::String& GetIotRoleAlias() const{ return m_iotRoleAlias; }
-    inline void SetIotRoleAlias(const Aws::String& value) { m_iotRoleAlias = value; }
-    inline void SetIotRoleAlias(Aws::String&& value) { m_iotRoleAlias = std::move(value); }
-    inline void SetIotRoleAlias(const char* value) { m_iotRoleAlias.assign(value); }
-    inline DescribeDeviceFleetResult& WithIotRoleAlias(const Aws::String& value) { SetIotRoleAlias(value); return *this;}
-    inline DescribeDeviceFleetResult& WithIotRoleAlias(Aws::String&& value) { SetIotRoleAlias(std::move(value)); return *this;}
-    inline DescribeDeviceFleetResult& WithIotRoleAlias(const char* value) { SetIotRoleAlias(value); return *this;}
+    inline const Aws::String& GetIotRoleAlias() const { return m_iotRoleAlias; }
+    template<typename IotRoleAliasT = Aws::String>
+    void SetIotRoleAlias(IotRoleAliasT&& value) { m_iotRoleAliasHasBeenSet = true; m_iotRoleAlias = std::forward<IotRoleAliasT>(value); }
+    template<typename IotRoleAliasT = Aws::String>
+    DescribeDeviceFleetResult& WithIotRoleAlias(IotRoleAliasT&& value) { SetIotRoleAlias(std::forward<IotRoleAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDeviceFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDeviceFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDeviceFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDeviceFleetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceFleetName;
+    bool m_deviceFleetNameHasBeenSet = false;
 
     Aws::String m_deviceFleetArn;
+    bool m_deviceFleetArnHasBeenSet = false;
 
     EdgeOutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_iotRoleAlias;
+    bool m_iotRoleAliasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

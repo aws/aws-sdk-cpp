@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CancelCapacityReservationFleetError::CancelCapacityReservationFleetError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 CancelCapacityReservationFleetError::CancelCapacityReservationFleetError(const XmlNode& xmlNode)
-  : CancelCapacityReservationFleetError()
 {
   *this = xmlNode;
 }

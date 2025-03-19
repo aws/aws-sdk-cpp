@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SelfServiceConversationHistory::SelfServiceConversationHistory() : 
-    m_botResponseHasBeenSet(false),
-    m_inputTranscriptHasBeenSet(false),
-    m_turnNumber(0),
-    m_turnNumberHasBeenSet(false)
-{
-}
-
 SelfServiceConversationHistory::SelfServiceConversationHistory(JsonView jsonValue)
-  : SelfServiceConversationHistory()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SelfServiceConversationHistory& SelfServiceConversationHistory::operator =(JsonV
   if(jsonValue.ValueExists("botResponse"))
   {
     m_botResponse = jsonValue.GetString("botResponse");
-
     m_botResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputTranscript"))
   {
     m_inputTranscript = jsonValue.GetString("inputTranscript");
-
     m_inputTranscriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("turnNumber"))
   {
     m_turnNumber = jsonValue.GetInteger("turnNumber");
-
     m_turnNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

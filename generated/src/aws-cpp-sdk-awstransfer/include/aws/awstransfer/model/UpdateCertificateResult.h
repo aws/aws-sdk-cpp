@@ -27,7 +27,7 @@ namespace Model
   class UpdateCertificateResult
   {
   public:
-    AWS_TRANSFER_API UpdateCertificateResult();
+    AWS_TRANSFER_API UpdateCertificateResult() = default;
     AWS_TRANSFER_API UpdateCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API UpdateCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Returns the identifier of the certificate object that you are updating.</p>
      */
-    inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
-    inline void SetCertificateId(const Aws::String& value) { m_certificateId = value; }
-    inline void SetCertificateId(Aws::String&& value) { m_certificateId = std::move(value); }
-    inline void SetCertificateId(const char* value) { m_certificateId.assign(value); }
-    inline UpdateCertificateResult& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-    inline UpdateCertificateResult& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-    inline UpdateCertificateResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    inline const Aws::String& GetCertificateId() const { return m_certificateId; }
+    template<typename CertificateIdT = Aws::String>
+    void SetCertificateId(CertificateIdT&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::forward<CertificateIdT>(value); }
+    template<typename CertificateIdT = Aws::String>
+    UpdateCertificateResult& WithCertificateId(CertificateIdT&& value) { SetCertificateId(std::forward<CertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateId;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

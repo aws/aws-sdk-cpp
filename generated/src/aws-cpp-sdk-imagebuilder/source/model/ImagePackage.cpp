@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImagePackage::ImagePackage() : 
-    m_packageNameHasBeenSet(false),
-    m_packageVersionHasBeenSet(false)
-{
-}
-
 ImagePackage::ImagePackage(JsonView jsonValue)
-  : ImagePackage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImagePackage& ImagePackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageVersion"))
   {
     m_packageVersion = jsonValue.GetString("packageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

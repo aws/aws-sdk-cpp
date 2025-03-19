@@ -22,7 +22,7 @@ namespace Model
   class StartAnalysisReportRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API StartAnalysisReportRequest();
+    AWS_NETWORKFIREWALL_API StartAnalysisReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * after you create it.</p> <p>You must specify the ARN or the name, and you can
      * specify both. </p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
     inline bool FirewallNameHasBeenSet() const { return m_firewallNameHasBeenSet; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallNameHasBeenSet = true; m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallNameHasBeenSet = true; m_firewallName.assign(value); }
-    inline StartAnalysisReportRequest& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline StartAnalysisReportRequest& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline StartAnalysisReportRequest& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    StartAnalysisReportRequest& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,26 +54,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the firewall.</p> <p>You must specify the
      * ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
     inline bool FirewallArnHasBeenSet() const { return m_firewallArnHasBeenSet; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArnHasBeenSet = true; m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArnHasBeenSet = true; m_firewallArn.assign(value); }
-    inline StartAnalysisReportRequest& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline StartAnalysisReportRequest& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline StartAnalysisReportRequest& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    StartAnalysisReportRequest& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of traffic that will be used to generate a report. </p>
      */
-    inline const EnabledAnalysisType& GetAnalysisType() const{ return m_analysisType; }
+    inline EnabledAnalysisType GetAnalysisType() const { return m_analysisType; }
     inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
-    inline void SetAnalysisType(const EnabledAnalysisType& value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
-    inline void SetAnalysisType(EnabledAnalysisType&& value) { m_analysisTypeHasBeenSet = true; m_analysisType = std::move(value); }
-    inline StartAnalysisReportRequest& WithAnalysisType(const EnabledAnalysisType& value) { SetAnalysisType(value); return *this;}
-    inline StartAnalysisReportRequest& WithAnalysisType(EnabledAnalysisType&& value) { SetAnalysisType(std::move(value)); return *this;}
+    inline void SetAnalysisType(EnabledAnalysisType value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
+    inline StartAnalysisReportRequest& WithAnalysisType(EnabledAnalysisType value) { SetAnalysisType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +79,7 @@ namespace Model
     Aws::String m_firewallArn;
     bool m_firewallArnHasBeenSet = false;
 
-    EnabledAnalysisType m_analysisType;
+    EnabledAnalysisType m_analysisType{EnabledAnalysisType::NOT_SET};
     bool m_analysisTypeHasBeenSet = false;
   };
 

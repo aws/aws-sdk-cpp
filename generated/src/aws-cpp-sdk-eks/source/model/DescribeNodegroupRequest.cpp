@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNodegroupRequest::DescribeNodegroupRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNodegroupRequest::SerializePayload() const
 {
   return {};

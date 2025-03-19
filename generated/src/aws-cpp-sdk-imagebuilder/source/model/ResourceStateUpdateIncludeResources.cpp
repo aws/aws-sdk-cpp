@@ -18,18 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ResourceStateUpdateIncludeResources::ResourceStateUpdateIncludeResources() : 
-    m_amis(false),
-    m_amisHasBeenSet(false),
-    m_snapshots(false),
-    m_snapshotsHasBeenSet(false),
-    m_containers(false),
-    m_containersHasBeenSet(false)
-{
-}
-
 ResourceStateUpdateIncludeResources::ResourceStateUpdateIncludeResources(JsonView jsonValue)
-  : ResourceStateUpdateIncludeResources()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ResourceStateUpdateIncludeResources& ResourceStateUpdateIncludeResources::operat
   if(jsonValue.ValueExists("amis"))
   {
     m_amis = jsonValue.GetBool("amis");
-
     m_amisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshots"))
   {
     m_snapshots = jsonValue.GetBool("snapshots");
-
     m_snapshotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containers"))
   {
     m_containers = jsonValue.GetBool("containers");
-
     m_containersHasBeenSet = true;
   }
-
   return *this;
 }
 

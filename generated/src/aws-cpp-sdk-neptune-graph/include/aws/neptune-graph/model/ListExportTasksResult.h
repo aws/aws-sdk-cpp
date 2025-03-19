@@ -29,7 +29,7 @@ namespace Model
   class ListExportTasksResult
   {
   public:
-    AWS_NEPTUNEGRAPH_API ListExportTasksResult();
+    AWS_NEPTUNEGRAPH_API ListExportTasksResult() = default;
     AWS_NEPTUNEGRAPH_API ListExportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEGRAPH_API ListExportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The requested list of export tasks.</p>
      */
-    inline const Aws::Vector<ExportTaskSummary>& GetTasks() const{ return m_tasks; }
-    inline void SetTasks(const Aws::Vector<ExportTaskSummary>& value) { m_tasks = value; }
-    inline void SetTasks(Aws::Vector<ExportTaskSummary>&& value) { m_tasks = std::move(value); }
-    inline ListExportTasksResult& WithTasks(const Aws::Vector<ExportTaskSummary>& value) { SetTasks(value); return *this;}
-    inline ListExportTasksResult& WithTasks(Aws::Vector<ExportTaskSummary>&& value) { SetTasks(std::move(value)); return *this;}
-    inline ListExportTasksResult& AddTasks(const ExportTaskSummary& value) { m_tasks.push_back(value); return *this; }
-    inline ListExportTasksResult& AddTasks(ExportTaskSummary&& value) { m_tasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExportTaskSummary>& GetTasks() const { return m_tasks; }
+    template<typename TasksT = Aws::Vector<ExportTaskSummary>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<ExportTaskSummary>>
+    ListExportTasksResult& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = ExportTaskSummary>
+    ListExportTasksResult& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token used to paginate output.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListExportTasksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExportTasksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExportTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExportTasksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListExportTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListExportTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListExportTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListExportTasksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ExportTaskSummary> m_tasks;
+    bool m_tasksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

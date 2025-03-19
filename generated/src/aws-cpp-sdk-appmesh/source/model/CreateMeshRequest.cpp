@@ -12,15 +12,6 @@ using namespace Aws::AppMesh::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMeshRequest::CreateMeshRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_meshNameHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMeshRequest::SerializePayload() const
 {
   JsonValue payload;

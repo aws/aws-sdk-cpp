@@ -21,7 +21,7 @@ namespace Model
   class DeleteDataCatalogRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API DeleteDataCatalogRequest();
+    AWS_ATHENA_API DeleteDataCatalogRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the data catalog to delete.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteDataCatalogRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteDataCatalogRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteDataCatalogRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteDataCatalogRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * connector with Glue Data Catalog. After deletion, you will have to manage the
      * Glue Connection and Lambda function. </p>
      */
-    inline bool GetDeleteCatalogOnly() const{ return m_deleteCatalogOnly; }
+    inline bool GetDeleteCatalogOnly() const { return m_deleteCatalogOnly; }
     inline bool DeleteCatalogOnlyHasBeenSet() const { return m_deleteCatalogOnlyHasBeenSet; }
     inline void SetDeleteCatalogOnly(bool value) { m_deleteCatalogOnlyHasBeenSet = true; m_deleteCatalogOnly = value; }
     inline DeleteDataCatalogRequest& WithDeleteCatalogOnly(bool value) { SetDeleteCatalogOnly(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_deleteCatalogOnly;
+    bool m_deleteCatalogOnly{false};
     bool m_deleteCatalogOnlyHasBeenSet = false;
   };
 

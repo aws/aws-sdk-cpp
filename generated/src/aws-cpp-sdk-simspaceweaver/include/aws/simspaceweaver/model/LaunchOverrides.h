@@ -33,7 +33,7 @@ namespace Model
   class LaunchOverrides
   {
   public:
-    AWS_SIMSPACEWEAVER_API LaunchOverrides();
+    AWS_SIMSPACEWEAVER_API LaunchOverrides() = default;
     AWS_SIMSPACEWEAVER_API LaunchOverrides(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API LaunchOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>App launch commands and command line parameters that override the launch
      * command configured in the simulation schema.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLaunchCommands() const{ return m_launchCommands; }
+    inline const Aws::Vector<Aws::String>& GetLaunchCommands() const { return m_launchCommands; }
     inline bool LaunchCommandsHasBeenSet() const { return m_launchCommandsHasBeenSet; }
-    inline void SetLaunchCommands(const Aws::Vector<Aws::String>& value) { m_launchCommandsHasBeenSet = true; m_launchCommands = value; }
-    inline void SetLaunchCommands(Aws::Vector<Aws::String>&& value) { m_launchCommandsHasBeenSet = true; m_launchCommands = std::move(value); }
-    inline LaunchOverrides& WithLaunchCommands(const Aws::Vector<Aws::String>& value) { SetLaunchCommands(value); return *this;}
-    inline LaunchOverrides& WithLaunchCommands(Aws::Vector<Aws::String>&& value) { SetLaunchCommands(std::move(value)); return *this;}
-    inline LaunchOverrides& AddLaunchCommands(const Aws::String& value) { m_launchCommandsHasBeenSet = true; m_launchCommands.push_back(value); return *this; }
-    inline LaunchOverrides& AddLaunchCommands(Aws::String&& value) { m_launchCommandsHasBeenSet = true; m_launchCommands.push_back(std::move(value)); return *this; }
-    inline LaunchOverrides& AddLaunchCommands(const char* value) { m_launchCommandsHasBeenSet = true; m_launchCommands.push_back(value); return *this; }
+    template<typename LaunchCommandsT = Aws::Vector<Aws::String>>
+    void SetLaunchCommands(LaunchCommandsT&& value) { m_launchCommandsHasBeenSet = true; m_launchCommands = std::forward<LaunchCommandsT>(value); }
+    template<typename LaunchCommandsT = Aws::Vector<Aws::String>>
+    LaunchOverrides& WithLaunchCommands(LaunchCommandsT&& value) { SetLaunchCommands(std::forward<LaunchCommandsT>(value)); return *this;}
+    template<typename LaunchCommandsT = Aws::String>
+    LaunchOverrides& AddLaunchCommands(LaunchCommandsT&& value) { m_launchCommandsHasBeenSet = true; m_launchCommands.emplace_back(std::forward<LaunchCommandsT>(value)); return *this; }
     ///@}
   private:
 

@@ -14,10 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-EnableHostedZoneDNSSECRequest::EnableHostedZoneDNSSECRequest() : 
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
 
 Aws::String EnableHostedZoneDNSSECRequest::SerializePayload() const
 {

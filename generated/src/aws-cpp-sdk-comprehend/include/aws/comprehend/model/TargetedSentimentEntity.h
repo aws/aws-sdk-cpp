@@ -36,7 +36,7 @@ namespace Model
   class TargetedSentimentEntity
   {
   public:
-    AWS_COMPREHEND_API TargetedSentimentEntity();
+    AWS_COMPREHEND_API TargetedSentimentEntity() = default;
     AWS_COMPREHEND_API TargetedSentimentEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API TargetedSentimentEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>One or more index into the Mentions array that provides the best name for the
      * entity group.</p>
      */
-    inline const Aws::Vector<int>& GetDescriptiveMentionIndex() const{ return m_descriptiveMentionIndex; }
+    inline const Aws::Vector<int>& GetDescriptiveMentionIndex() const { return m_descriptiveMentionIndex; }
     inline bool DescriptiveMentionIndexHasBeenSet() const { return m_descriptiveMentionIndexHasBeenSet; }
-    inline void SetDescriptiveMentionIndex(const Aws::Vector<int>& value) { m_descriptiveMentionIndexHasBeenSet = true; m_descriptiveMentionIndex = value; }
-    inline void SetDescriptiveMentionIndex(Aws::Vector<int>&& value) { m_descriptiveMentionIndexHasBeenSet = true; m_descriptiveMentionIndex = std::move(value); }
-    inline TargetedSentimentEntity& WithDescriptiveMentionIndex(const Aws::Vector<int>& value) { SetDescriptiveMentionIndex(value); return *this;}
-    inline TargetedSentimentEntity& WithDescriptiveMentionIndex(Aws::Vector<int>&& value) { SetDescriptiveMentionIndex(std::move(value)); return *this;}
+    template<typename DescriptiveMentionIndexT = Aws::Vector<int>>
+    void SetDescriptiveMentionIndex(DescriptiveMentionIndexT&& value) { m_descriptiveMentionIndexHasBeenSet = true; m_descriptiveMentionIndex = std::forward<DescriptiveMentionIndexT>(value); }
+    template<typename DescriptiveMentionIndexT = Aws::Vector<int>>
+    TargetedSentimentEntity& WithDescriptiveMentionIndex(DescriptiveMentionIndexT&& value) { SetDescriptiveMentionIndex(std::forward<DescriptiveMentionIndexT>(value)); return *this;}
     inline TargetedSentimentEntity& AddDescriptiveMentionIndex(int value) { m_descriptiveMentionIndexHasBeenSet = true; m_descriptiveMentionIndex.push_back(value); return *this; }
     ///@}
 
@@ -63,14 +63,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values">
      * Co-reference group</a> for an example. </p>
      */
-    inline const Aws::Vector<TargetedSentimentMention>& GetMentions() const{ return m_mentions; }
+    inline const Aws::Vector<TargetedSentimentMention>& GetMentions() const { return m_mentions; }
     inline bool MentionsHasBeenSet() const { return m_mentionsHasBeenSet; }
-    inline void SetMentions(const Aws::Vector<TargetedSentimentMention>& value) { m_mentionsHasBeenSet = true; m_mentions = value; }
-    inline void SetMentions(Aws::Vector<TargetedSentimentMention>&& value) { m_mentionsHasBeenSet = true; m_mentions = std::move(value); }
-    inline TargetedSentimentEntity& WithMentions(const Aws::Vector<TargetedSentimentMention>& value) { SetMentions(value); return *this;}
-    inline TargetedSentimentEntity& WithMentions(Aws::Vector<TargetedSentimentMention>&& value) { SetMentions(std::move(value)); return *this;}
-    inline TargetedSentimentEntity& AddMentions(const TargetedSentimentMention& value) { m_mentionsHasBeenSet = true; m_mentions.push_back(value); return *this; }
-    inline TargetedSentimentEntity& AddMentions(TargetedSentimentMention&& value) { m_mentionsHasBeenSet = true; m_mentions.push_back(std::move(value)); return *this; }
+    template<typename MentionsT = Aws::Vector<TargetedSentimentMention>>
+    void SetMentions(MentionsT&& value) { m_mentionsHasBeenSet = true; m_mentions = std::forward<MentionsT>(value); }
+    template<typename MentionsT = Aws::Vector<TargetedSentimentMention>>
+    TargetedSentimentEntity& WithMentions(MentionsT&& value) { SetMentions(std::forward<MentionsT>(value)); return *this;}
+    template<typename MentionsT = TargetedSentimentMention>
+    TargetedSentimentEntity& AddMentions(MentionsT&& value) { m_mentionsHasBeenSet = true; m_mentions.emplace_back(std::forward<MentionsT>(value)); return *this; }
     ///@}
   private:
 

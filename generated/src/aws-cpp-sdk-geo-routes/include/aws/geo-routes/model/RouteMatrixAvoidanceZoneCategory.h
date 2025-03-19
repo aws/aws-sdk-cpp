@@ -31,7 +31,7 @@ namespace Model
   class RouteMatrixAvoidanceZoneCategory
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixAvoidanceZoneCategory();
+    AWS_GEOROUTES_API RouteMatrixAvoidanceZoneCategory() = default;
     AWS_GEOROUTES_API RouteMatrixAvoidanceZoneCategory(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixAvoidanceZoneCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Zone category to be avoided.</p>
      */
-    inline const RouteMatrixZoneCategory& GetCategory() const{ return m_category; }
+    inline RouteMatrixZoneCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const RouteMatrixZoneCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(RouteMatrixZoneCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline RouteMatrixAvoidanceZoneCategory& WithCategory(const RouteMatrixZoneCategory& value) { SetCategory(value); return *this;}
-    inline RouteMatrixAvoidanceZoneCategory& WithCategory(RouteMatrixZoneCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(RouteMatrixZoneCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline RouteMatrixAvoidanceZoneCategory& WithCategory(RouteMatrixZoneCategory value) { SetCategory(value); return *this;}
     ///@}
   private:
 
-    RouteMatrixZoneCategory m_category;
+    RouteMatrixZoneCategory m_category{RouteMatrixZoneCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
   };
 

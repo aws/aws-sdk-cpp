@@ -19,53 +19,28 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleGroupStatement::ManagedRuleGroupStatement() : 
-    m_vendorNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false),
-    m_managedRuleGroupConfigsHasBeenSet(false),
-    m_ruleActionOverridesHasBeenSet(false)
-{
-}
-
 ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue)
-  : ManagedRuleGroupStatement()
 {
   *this = jsonValue;
 }
-
-const Statement& ManagedRuleGroupStatement::GetScopeDownStatement() const{ return *m_scopeDownStatement; }
-bool ManagedRuleGroupStatement::ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
-void ManagedRuleGroupStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", value); }
-void ManagedRuleGroupStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", std::move(value)); }
-ManagedRuleGroupStatement& ManagedRuleGroupStatement::WithScopeDownStatement(const Statement& value) { SetScopeDownStatement(value); return *this;}
-ManagedRuleGroupStatement& ManagedRuleGroupStatement::WithScopeDownStatement(Statement&& value) { SetScopeDownStatement(std::move(value)); return *this;}
 
 ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VendorName"))
   {
     m_vendorName = jsonValue.GetString("VendorName");
-
     m_vendorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludedRules"))
   {
     Aws::Utils::Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
@@ -75,14 +50,11 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     }
     m_excludedRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScopeDownStatement"))
   {
     m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", jsonValue.GetObject("ScopeDownStatement"));
-
     m_scopeDownStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedRuleGroupConfigs"))
   {
     Aws::Utils::Array<JsonView> managedRuleGroupConfigsJsonList = jsonValue.GetArray("ManagedRuleGroupConfigs");
@@ -92,7 +64,6 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     }
     m_managedRuleGroupConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleActionOverrides"))
   {
     Aws::Utils::Array<JsonView> ruleActionOverridesJsonList = jsonValue.GetArray("RuleActionOverrides");
@@ -102,7 +73,6 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     }
     m_ruleActionOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

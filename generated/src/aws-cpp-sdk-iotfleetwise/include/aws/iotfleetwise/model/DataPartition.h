@@ -39,7 +39,7 @@ namespace Model
   class DataPartition
   {
   public:
-    AWS_IOTFLEETWISE_API DataPartition();
+    AWS_IOTFLEETWISE_API DataPartition() = default;
     AWS_IOTFLEETWISE_API DataPartition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API DataPartition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,38 +51,36 @@ namespace Model
      * campaign. You can establish a data partition as the default partition for a
      * campaign by using <code>default</code> as the ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DataPartition& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DataPartition& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DataPartition& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DataPartition& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage options for a data partition.</p>
      */
-    inline const DataPartitionStorageOptions& GetStorageOptions() const{ return m_storageOptions; }
+    inline const DataPartitionStorageOptions& GetStorageOptions() const { return m_storageOptions; }
     inline bool StorageOptionsHasBeenSet() const { return m_storageOptionsHasBeenSet; }
-    inline void SetStorageOptions(const DataPartitionStorageOptions& value) { m_storageOptionsHasBeenSet = true; m_storageOptions = value; }
-    inline void SetStorageOptions(DataPartitionStorageOptions&& value) { m_storageOptionsHasBeenSet = true; m_storageOptions = std::move(value); }
-    inline DataPartition& WithStorageOptions(const DataPartitionStorageOptions& value) { SetStorageOptions(value); return *this;}
-    inline DataPartition& WithStorageOptions(DataPartitionStorageOptions&& value) { SetStorageOptions(std::move(value)); return *this;}
+    template<typename StorageOptionsT = DataPartitionStorageOptions>
+    void SetStorageOptions(StorageOptionsT&& value) { m_storageOptionsHasBeenSet = true; m_storageOptions = std::forward<StorageOptionsT>(value); }
+    template<typename StorageOptionsT = DataPartitionStorageOptions>
+    DataPartition& WithStorageOptions(StorageOptionsT&& value) { SetStorageOptions(std::forward<StorageOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The upload options for the data partition.</p>
      */
-    inline const DataPartitionUploadOptions& GetUploadOptions() const{ return m_uploadOptions; }
+    inline const DataPartitionUploadOptions& GetUploadOptions() const { return m_uploadOptions; }
     inline bool UploadOptionsHasBeenSet() const { return m_uploadOptionsHasBeenSet; }
-    inline void SetUploadOptions(const DataPartitionUploadOptions& value) { m_uploadOptionsHasBeenSet = true; m_uploadOptions = value; }
-    inline void SetUploadOptions(DataPartitionUploadOptions&& value) { m_uploadOptionsHasBeenSet = true; m_uploadOptions = std::move(value); }
-    inline DataPartition& WithUploadOptions(const DataPartitionUploadOptions& value) { SetUploadOptions(value); return *this;}
-    inline DataPartition& WithUploadOptions(DataPartitionUploadOptions&& value) { SetUploadOptions(std::move(value)); return *this;}
+    template<typename UploadOptionsT = DataPartitionUploadOptions>
+    void SetUploadOptions(UploadOptionsT&& value) { m_uploadOptionsHasBeenSet = true; m_uploadOptions = std::forward<UploadOptionsT>(value); }
+    template<typename UploadOptionsT = DataPartitionUploadOptions>
+    DataPartition& WithUploadOptions(UploadOptionsT&& value) { SetUploadOptions(std::forward<UploadOptionsT>(value)); return *this;}
     ///@}
   private:
 

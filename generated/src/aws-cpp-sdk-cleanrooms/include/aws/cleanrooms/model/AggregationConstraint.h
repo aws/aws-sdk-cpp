@@ -33,7 +33,7 @@ namespace Model
   class AggregationConstraint
   {
   public:
-    AWS_CLEANROOMS_API AggregationConstraint();
+    AWS_CLEANROOMS_API AggregationConstraint() = default;
     AWS_CLEANROOMS_API AggregationConstraint(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AggregationConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Column in aggregation constraint for which there must be a minimum number of
      * distinct values in an output row for it to be in the query output.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline AggregationConstraint& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline AggregationConstraint& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline AggregationConstraint& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    AggregationConstraint& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * aggregation of. Minimum threshold of distinct values for a specified column that
      * must exist in an output row for it to be in the query output.</p>
      */
-    inline int GetMinimum() const{ return m_minimum; }
+    inline int GetMinimum() const { return m_minimum; }
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
     inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
     inline AggregationConstraint& WithMinimum(int value) { SetMinimum(value); return *this;}
@@ -71,22 +69,20 @@ namespace Model
      * <p>The type of aggregation the constraint allows. The only valid value is
      * currently `COUNT_DISTINCT`.</p>
      */
-    inline const AggregationType& GetType() const{ return m_type; }
+    inline AggregationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AggregationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AggregationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AggregationConstraint& WithType(const AggregationType& value) { SetType(value); return *this;}
-    inline AggregationConstraint& WithType(AggregationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AggregationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AggregationConstraint& WithType(AggregationType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_columnName;
     bool m_columnNameHasBeenSet = false;
 
-    int m_minimum;
+    int m_minimum{0};
     bool m_minimumHasBeenSet = false;
 
-    AggregationType m_type;
+    AggregationType m_type{AggregationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

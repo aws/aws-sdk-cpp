@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelDataQualityRulesetEvaluationRunRequest::CancelDataQualityRulesetEvaluationRunRequest() : 
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelDataQualityRulesetEvaluationRunRequest::SerializePayload() const
 {
   JsonValue payload;

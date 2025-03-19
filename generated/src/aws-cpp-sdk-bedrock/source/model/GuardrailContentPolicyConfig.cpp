@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailContentPolicyConfig::GuardrailContentPolicyConfig() : 
-    m_filtersConfigHasBeenSet(false)
-{
-}
-
 GuardrailContentPolicyConfig::GuardrailContentPolicyConfig(JsonView jsonValue)
-  : GuardrailContentPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GuardrailContentPolicyConfig& GuardrailContentPolicyConfig::operator =(JsonView 
     }
     m_filtersConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

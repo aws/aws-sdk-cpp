@@ -32,7 +32,7 @@ namespace Model
   class SubscriptionTargetForm
   {
   public:
-    AWS_DATAZONE_API SubscriptionTargetForm();
+    AWS_DATAZONE_API SubscriptionTargetForm() = default;
     AWS_DATAZONE_API SubscriptionTargetForm(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SubscriptionTargetForm& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The content of the subscription target configuration.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline SubscriptionTargetForm& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline SubscriptionTargetForm& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline SubscriptionTargetForm& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    SubscriptionTargetForm& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The form name included in the subscription target configuration.</p>
      */
-    inline const Aws::String& GetFormName() const{ return m_formName; }
+    inline const Aws::String& GetFormName() const { return m_formName; }
     inline bool FormNameHasBeenSet() const { return m_formNameHasBeenSet; }
-    inline void SetFormName(const Aws::String& value) { m_formNameHasBeenSet = true; m_formName = value; }
-    inline void SetFormName(Aws::String&& value) { m_formNameHasBeenSet = true; m_formName = std::move(value); }
-    inline void SetFormName(const char* value) { m_formNameHasBeenSet = true; m_formName.assign(value); }
-    inline SubscriptionTargetForm& WithFormName(const Aws::String& value) { SetFormName(value); return *this;}
-    inline SubscriptionTargetForm& WithFormName(Aws::String&& value) { SetFormName(std::move(value)); return *this;}
-    inline SubscriptionTargetForm& WithFormName(const char* value) { SetFormName(value); return *this;}
+    template<typename FormNameT = Aws::String>
+    void SetFormName(FormNameT&& value) { m_formNameHasBeenSet = true; m_formName = std::forward<FormNameT>(value); }
+    template<typename FormNameT = Aws::String>
+    SubscriptionTargetForm& WithFormName(FormNameT&& value) { SetFormName(std::forward<FormNameT>(value)); return *this;}
     ///@}
   private:
 

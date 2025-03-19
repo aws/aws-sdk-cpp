@@ -32,7 +32,7 @@ namespace Model
   class VpcOriginList
   {
   public:
-    AWS_CLOUDFRONT_API VpcOriginList();
+    AWS_CLOUDFRONT_API VpcOriginList() = default;
     AWS_CLOUDFRONT_API VpcOriginList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API VpcOriginList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>The marker associated with the VPC origins list.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline VpcOriginList& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline VpcOriginList& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline VpcOriginList& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    VpcOriginList& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next marker associated with the VPC origins list.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline VpcOriginList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline VpcOriginList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline VpcOriginList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    VpcOriginList& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items included in the list.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline VpcOriginList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more VPC origins in the
      * list.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
     inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
     inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline VpcOriginList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
@@ -94,7 +90,7 @@ namespace Model
     /**
      * <p>The number of VPC origins in the list.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline VpcOriginList& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -104,14 +100,14 @@ namespace Model
     /**
      * <p>The items of the VPC origins list.</p>
      */
-    inline const Aws::Vector<VpcOriginSummary>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<VpcOriginSummary>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<VpcOriginSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<VpcOriginSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline VpcOriginList& WithItems(const Aws::Vector<VpcOriginSummary>& value) { SetItems(value); return *this;}
-    inline VpcOriginList& WithItems(Aws::Vector<VpcOriginSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline VpcOriginList& AddItems(const VpcOriginSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline VpcOriginList& AddItems(VpcOriginSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<VpcOriginSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<VpcOriginSummary>>
+    VpcOriginList& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = VpcOriginSummary>
+    VpcOriginList& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
@@ -121,13 +117,13 @@ namespace Model
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
     bool m_isTruncatedHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<VpcOriginSummary> m_items;

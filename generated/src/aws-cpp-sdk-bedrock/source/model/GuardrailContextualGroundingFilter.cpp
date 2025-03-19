@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailContextualGroundingFilter::GuardrailContextualGroundingFilter() : 
-    m_type(GuardrailContextualGroundingFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 GuardrailContextualGroundingFilter::GuardrailContextualGroundingFilter(JsonView jsonValue)
-  : GuardrailContextualGroundingFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GuardrailContextualGroundingFilter& GuardrailContextualGroundingFilter::operator
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailContextualGroundingFilterTypeMapper::GetGuardrailContextualGroundingFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetDouble("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

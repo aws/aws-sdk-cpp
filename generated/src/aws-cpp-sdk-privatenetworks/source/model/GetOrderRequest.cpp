@@ -12,11 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOrderRequest::GetOrderRequest() : 
-    m_orderArnHasBeenSet(false)
-{
-}
-
 Aws::String GetOrderRequest::SerializePayload() const
 {
   return {};

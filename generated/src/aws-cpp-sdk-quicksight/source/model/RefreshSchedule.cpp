@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RefreshSchedule::RefreshSchedule() : 
-    m_scheduleIdHasBeenSet(false),
-    m_scheduleFrequencyHasBeenSet(false),
-    m_startAfterDateTimeHasBeenSet(false),
-    m_refreshType(IngestionType::NOT_SET),
-    m_refreshTypeHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 RefreshSchedule::RefreshSchedule(JsonView jsonValue)
-  : RefreshSchedule()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RefreshSchedule& RefreshSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScheduleId"))
   {
     m_scheduleId = jsonValue.GetString("ScheduleId");
-
     m_scheduleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleFrequency"))
   {
     m_scheduleFrequency = jsonValue.GetObject("ScheduleFrequency");
-
     m_scheduleFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartAfterDateTime"))
   {
     m_startAfterDateTime = jsonValue.GetDouble("StartAfterDateTime");
-
     m_startAfterDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshType"))
   {
     m_refreshType = IngestionTypeMapper::GetIngestionTypeForName(jsonValue.GetString("RefreshType"));
-
     m_refreshTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfigureAgentRequest::ConfigureAgentRequest() : 
-    m_fleetInstanceIdHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ConfigureAgentRequest::SerializePayload() const
 {
   JsonValue payload;

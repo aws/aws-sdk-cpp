@@ -35,7 +35,7 @@ namespace Model
   class KafkaAction
   {
   public:
-    AWS_IOT_API KafkaAction();
+    AWS_IOT_API KafkaAction() = default;
     AWS_IOT_API KafkaAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API KafkaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,89 +45,78 @@ namespace Model
     /**
      * <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline KafkaAction& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline KafkaAction& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline KafkaAction& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    KafkaAction& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline KafkaAction& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline KafkaAction& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline KafkaAction& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    KafkaAction& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Kafka message key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline KafkaAction& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline KafkaAction& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline KafkaAction& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    KafkaAction& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Kafka message partition.</p>
      */
-    inline const Aws::String& GetPartition() const{ return m_partition; }
+    inline const Aws::String& GetPartition() const { return m_partition; }
     inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
-    inline void SetPartition(const Aws::String& value) { m_partitionHasBeenSet = true; m_partition = value; }
-    inline void SetPartition(Aws::String&& value) { m_partitionHasBeenSet = true; m_partition = std::move(value); }
-    inline void SetPartition(const char* value) { m_partitionHasBeenSet = true; m_partition.assign(value); }
-    inline KafkaAction& WithPartition(const Aws::String& value) { SetPartition(value); return *this;}
-    inline KafkaAction& WithPartition(Aws::String&& value) { SetPartition(std::move(value)); return *this;}
-    inline KafkaAction& WithPartition(const char* value) { SetPartition(value); return *this;}
+    template<typename PartitionT = Aws::String>
+    void SetPartition(PartitionT&& value) { m_partitionHasBeenSet = true; m_partition = std::forward<PartitionT>(value); }
+    template<typename PartitionT = Aws::String>
+    KafkaAction& WithPartition(PartitionT&& value) { SetPartition(std::forward<PartitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Properties of the Apache Kafka producer client.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetClientProperties() const{ return m_clientProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientProperties() const { return m_clientProperties; }
     inline bool ClientPropertiesHasBeenSet() const { return m_clientPropertiesHasBeenSet; }
-    inline void SetClientProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties = value; }
-    inline void SetClientProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties = std::move(value); }
-    inline KafkaAction& WithClientProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetClientProperties(value); return *this;}
-    inline KafkaAction& WithClientProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetClientProperties(std::move(value)); return *this;}
-    inline KafkaAction& AddClientProperties(const Aws::String& key, const Aws::String& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, value); return *this; }
-    inline KafkaAction& AddClientProperties(Aws::String&& key, const Aws::String& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::move(key), value); return *this; }
-    inline KafkaAction& AddClientProperties(const Aws::String& key, Aws::String&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, std::move(value)); return *this; }
-    inline KafkaAction& AddClientProperties(Aws::String&& key, Aws::String&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline KafkaAction& AddClientProperties(const char* key, Aws::String&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, std::move(value)); return *this; }
-    inline KafkaAction& AddClientProperties(Aws::String&& key, const char* value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::move(key), value); return *this; }
-    inline KafkaAction& AddClientProperties(const char* key, const char* value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, value); return *this; }
+    template<typename ClientPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetClientProperties(ClientPropertiesT&& value) { m_clientPropertiesHasBeenSet = true; m_clientProperties = std::forward<ClientPropertiesT>(value); }
+    template<typename ClientPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    KafkaAction& WithClientProperties(ClientPropertiesT&& value) { SetClientProperties(std::forward<ClientPropertiesT>(value)); return *this;}
+    template<typename ClientPropertiesKeyT = Aws::String, typename ClientPropertiesValueT = Aws::String>
+    KafkaAction& AddClientProperties(ClientPropertiesKeyT&& key, ClientPropertiesValueT&& value) {
+      m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(std::forward<ClientPropertiesKeyT>(key), std::forward<ClientPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The list of Kafka headers that you specify.</p>
      */
-    inline const Aws::Vector<KafkaActionHeader>& GetHeaders() const{ return m_headers; }
+    inline const Aws::Vector<KafkaActionHeader>& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Aws::Vector<KafkaActionHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Aws::Vector<KafkaActionHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline KafkaAction& WithHeaders(const Aws::Vector<KafkaActionHeader>& value) { SetHeaders(value); return *this;}
-    inline KafkaAction& WithHeaders(Aws::Vector<KafkaActionHeader>&& value) { SetHeaders(std::move(value)); return *this;}
-    inline KafkaAction& AddHeaders(const KafkaActionHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
-    inline KafkaAction& AddHeaders(KafkaActionHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+    template<typename HeadersT = Aws::Vector<KafkaActionHeader>>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Aws::Vector<KafkaActionHeader>>
+    KafkaAction& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
+    template<typename HeadersT = KafkaActionHeader>
+    KafkaAction& AddHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers.emplace_back(std::forward<HeadersT>(value)); return *this; }
     ///@}
   private:
 

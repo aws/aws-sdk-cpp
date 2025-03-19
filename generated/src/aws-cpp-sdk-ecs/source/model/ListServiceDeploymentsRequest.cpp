@@ -12,17 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServiceDeploymentsRequest::ListServiceDeploymentsRequest() : 
-    m_serviceHasBeenSet(false),
-    m_clusterHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceDeploymentsRequest::SerializePayload() const
 {
   JsonValue payload;

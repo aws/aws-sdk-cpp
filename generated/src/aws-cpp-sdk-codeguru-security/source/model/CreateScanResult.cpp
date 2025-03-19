@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateScanResult::CreateScanResult() : 
-    m_scanState(ScanState::NOT_SET)
-{
-}
-
 CreateScanResult::CreateScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateScanResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ CreateScanResult& CreateScanResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetObject("resourceId");
-
+    m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
+    m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
-
+    m_scanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanNameArn"))
   {
     m_scanNameArn = jsonValue.GetString("scanNameArn");
-
+    m_scanNameArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanState"))
   {
     m_scanState = ScanStateMapper::GetScanStateForName(jsonValue.GetString("scanState"));
-
+    m_scanStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -40,7 +40,7 @@ namespace Model
   class NumericQuestionPropertyValueAutomation
   {
   public:
-    AWS_CONNECT_API NumericQuestionPropertyValueAutomation();
+    AWS_CONNECT_API NumericQuestionPropertyValueAutomation() = default;
     AWS_CONNECT_API NumericQuestionPropertyValueAutomation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API NumericQuestionPropertyValueAutomation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
     /**
      * <p>The property label of the automation.</p>
      */
-    inline const NumericQuestionPropertyAutomationLabel& GetLabel() const{ return m_label; }
+    inline NumericQuestionPropertyAutomationLabel GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const NumericQuestionPropertyAutomationLabel& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(NumericQuestionPropertyAutomationLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline NumericQuestionPropertyValueAutomation& WithLabel(const NumericQuestionPropertyAutomationLabel& value) { SetLabel(value); return *this;}
-    inline NumericQuestionPropertyValueAutomation& WithLabel(NumericQuestionPropertyAutomationLabel&& value) { SetLabel(std::move(value)); return *this;}
+    inline void SetLabel(NumericQuestionPropertyAutomationLabel value) { m_labelHasBeenSet = true; m_label = value; }
+    inline NumericQuestionPropertyValueAutomation& WithLabel(NumericQuestionPropertyAutomationLabel value) { SetLabel(value); return *this;}
     ///@}
   private:
 
-    NumericQuestionPropertyAutomationLabel m_label;
+    NumericQuestionPropertyAutomationLabel m_label{NumericQuestionPropertyAutomationLabel::NOT_SET};
     bool m_labelHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-ShareLimitExceededException::ShareLimitExceededException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ShareLimitExceededException::ShareLimitExceededException(JsonView jsonValue)
-  : ShareLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ShareLimitExceededException& ShareLimitExceededException::operator =(JsonView js
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

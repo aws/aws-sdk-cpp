@@ -42,7 +42,7 @@ namespace Model
   class XssMatchTuple
   {
   public:
-    AWS_WAF_API XssMatchTuple();
+    AWS_WAF_API XssMatchTuple() = default;
     AWS_WAF_API XssMatchTuple(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API XssMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,12 @@ namespace Model
      * <p>Specifies where in a web request to look for cross-site scripting
      * attacks.</p>
      */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+    inline const FieldToMatch& GetFieldToMatch() const { return m_fieldToMatch; }
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-    inline XssMatchTuple& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-    inline XssMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    template<typename FieldToMatchT = FieldToMatch>
+    void SetFieldToMatch(FieldToMatchT&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::forward<FieldToMatchT>(value); }
+    template<typename FieldToMatchT = FieldToMatch>
+    XssMatchTuple& WithFieldToMatch(FieldToMatchT&& value) { SetFieldToMatch(std::forward<FieldToMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,19 +97,17 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline const TextTransformation& GetTextTransformation() const{ return m_textTransformation; }
+    inline TextTransformation GetTextTransformation() const { return m_textTransformation; }
     inline bool TextTransformationHasBeenSet() const { return m_textTransformationHasBeenSet; }
-    inline void SetTextTransformation(const TextTransformation& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
-    inline XssMatchTuple& WithTextTransformation(const TextTransformation& value) { SetTextTransformation(value); return *this;}
-    inline XssMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
+    inline void SetTextTransformation(TextTransformation value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline XssMatchTuple& WithTextTransformation(TextTransformation value) { SetTextTransformation(value); return *this;}
     ///@}
   private:
 
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet = false;
 
-    TextTransformation m_textTransformation;
+    TextTransformation m_textTransformation{TextTransformation::NOT_SET};
     bool m_textTransformationHasBeenSet = false;
   };
 

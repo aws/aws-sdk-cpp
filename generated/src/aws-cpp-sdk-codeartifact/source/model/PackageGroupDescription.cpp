@@ -18,21 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageGroupDescription::PackageGroupDescription() : 
-    m_arnHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_contactInfoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_originConfigurationHasBeenSet(false),
-    m_parentHasBeenSet(false)
-{
-}
-
 PackageGroupDescription::PackageGroupDescription(JsonView jsonValue)
-  : PackageGroupDescription()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ PackageGroupDescription& PackageGroupDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetString("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainOwner"))
   {
     m_domainOwner = jsonValue.GetString("domainOwner");
-
     m_domainOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contactInfo"))
   {
     m_contactInfo = jsonValue.GetString("contactInfo");
-
     m_contactInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originConfiguration"))
   {
     m_originConfiguration = jsonValue.GetObject("originConfiguration");
-
     m_originConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parent"))
   {
     m_parent = jsonValue.GetObject("parent");
-
     m_parentHasBeenSet = true;
   }
-
   return *this;
 }
 

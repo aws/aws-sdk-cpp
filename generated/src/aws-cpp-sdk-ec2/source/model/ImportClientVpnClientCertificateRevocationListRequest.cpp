@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ImportClientVpnClientCertificateRevocationListRequest::ImportClientVpnClientCertificateRevocationListRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_certificateRevocationListHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ImportClientVpnClientCertificateRevocationListRequest::SerializePayload() const
 {
   Aws::StringStream ss;

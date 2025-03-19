@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-GitSubmodulesConfig::GitSubmodulesConfig() : 
-    m_fetchSubmodules(false),
-    m_fetchSubmodulesHasBeenSet(false)
-{
-}
-
 GitSubmodulesConfig::GitSubmodulesConfig(JsonView jsonValue)
-  : GitSubmodulesConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GitSubmodulesConfig& GitSubmodulesConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fetchSubmodules"))
   {
     m_fetchSubmodules = jsonValue.GetBool("fetchSubmodules");
-
     m_fetchSubmodulesHasBeenSet = true;
   }
-
   return *this;
 }
 

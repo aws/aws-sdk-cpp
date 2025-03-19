@@ -32,7 +32,7 @@ namespace Model
   class RowFilter
   {
   public:
-    AWS_LAKEFORMATION_API RowFilter();
+    AWS_LAKEFORMATION_API RowFilter() = default;
     AWS_LAKEFORMATION_API RowFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API RowFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>A filter expression.</p>
      */
-    inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
+    inline const Aws::String& GetFilterExpression() const { return m_filterExpression; }
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
-    inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
-    inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
-    inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
-    inline RowFilter& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
-    inline RowFilter& WithFilterExpression(Aws::String&& value) { SetFilterExpression(std::move(value)); return *this;}
-    inline RowFilter& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+    template<typename FilterExpressionT = Aws::String>
+    void SetFilterExpression(FilterExpressionT&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::forward<FilterExpressionT>(value); }
+    template<typename FilterExpressionT = Aws::String>
+    RowFilter& WithFilterExpression(FilterExpressionT&& value) { SetFilterExpression(std::forward<FilterExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A wildcard for all rows.</p>
      */
-    inline const AllRowsWildcard& GetAllRowsWildcard() const{ return m_allRowsWildcard; }
+    inline const AllRowsWildcard& GetAllRowsWildcard() const { return m_allRowsWildcard; }
     inline bool AllRowsWildcardHasBeenSet() const { return m_allRowsWildcardHasBeenSet; }
-    inline void SetAllRowsWildcard(const AllRowsWildcard& value) { m_allRowsWildcardHasBeenSet = true; m_allRowsWildcard = value; }
-    inline void SetAllRowsWildcard(AllRowsWildcard&& value) { m_allRowsWildcardHasBeenSet = true; m_allRowsWildcard = std::move(value); }
-    inline RowFilter& WithAllRowsWildcard(const AllRowsWildcard& value) { SetAllRowsWildcard(value); return *this;}
-    inline RowFilter& WithAllRowsWildcard(AllRowsWildcard&& value) { SetAllRowsWildcard(std::move(value)); return *this;}
+    template<typename AllRowsWildcardT = AllRowsWildcard>
+    void SetAllRowsWildcard(AllRowsWildcardT&& value) { m_allRowsWildcardHasBeenSet = true; m_allRowsWildcard = std::forward<AllRowsWildcardT>(value); }
+    template<typename AllRowsWildcardT = AllRowsWildcard>
+    RowFilter& WithAllRowsWildcard(AllRowsWildcardT&& value) { SetAllRowsWildcard(std::forward<AllRowsWildcardT>(value)); return *this;}
     ///@}
   private:
 

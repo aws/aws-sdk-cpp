@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAlarmResult::DescribeAlarmResult()
-{
-}
-
 DescribeAlarmResult::DescribeAlarmResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeAlarmResult& DescribeAlarmResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("alarm"))
   {
     m_alarm = jsonValue.GetObject("alarm");
-
+    m_alarmHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

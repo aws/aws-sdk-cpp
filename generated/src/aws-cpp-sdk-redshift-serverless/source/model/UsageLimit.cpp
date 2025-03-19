@@ -18,23 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-UsageLimit::UsageLimit() : 
-    m_amount(0),
-    m_amountHasBeenSet(false),
-    m_breachAction(UsageLimitBreachAction::NOT_SET),
-    m_breachActionHasBeenSet(false),
-    m_period(UsageLimitPeriod::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_usageLimitArnHasBeenSet(false),
-    m_usageLimitIdHasBeenSet(false),
-    m_usageType(UsageLimitUsageType::NOT_SET),
-    m_usageTypeHasBeenSet(false)
-{
-}
-
 UsageLimit::UsageLimit(JsonView jsonValue)
-  : UsageLimit()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ UsageLimit& UsageLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetInt64("amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("breachAction"))
   {
     m_breachAction = UsageLimitBreachActionMapper::GetUsageLimitBreachActionForName(jsonValue.GetString("breachAction"));
-
     m_breachActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("period"))
   {
     m_period = UsageLimitPeriodMapper::GetUsageLimitPeriodForName(jsonValue.GetString("period"));
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageLimitArn"))
   {
     m_usageLimitArn = jsonValue.GetString("usageLimitArn");
-
     m_usageLimitArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageLimitId"))
   {
     m_usageLimitId = jsonValue.GetString("usageLimitId");
-
     m_usageLimitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = UsageLimitUsageTypeMapper::GetUsageLimitUsageTypeForName(jsonValue.GetString("usageType"));
-
     m_usageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

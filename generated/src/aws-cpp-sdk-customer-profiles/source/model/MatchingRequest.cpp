@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-MatchingRequest::MatchingRequest() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_jobScheduleHasBeenSet(false),
-    m_autoMergingHasBeenSet(false),
-    m_exportingConfigHasBeenSet(false)
-{
-}
-
 MatchingRequest::MatchingRequest(JsonView jsonValue)
-  : MatchingRequest()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MatchingRequest& MatchingRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobSchedule"))
   {
     m_jobSchedule = jsonValue.GetObject("JobSchedule");
-
     m_jobScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMerging"))
   {
     m_autoMerging = jsonValue.GetObject("AutoMerging");
-
     m_autoMergingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportingConfig"))
   {
     m_exportingConfig = jsonValue.GetObject("ExportingConfig");
-
     m_exportingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteReceiptRuleSetRequest::DeleteReceiptRuleSetRequest() : 
-    m_ruleSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReceiptRuleSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

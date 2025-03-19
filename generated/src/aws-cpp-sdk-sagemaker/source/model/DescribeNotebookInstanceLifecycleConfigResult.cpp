@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNotebookInstanceLifecycleConfigResult::DescribeNotebookInstanceLifecycleConfigResult()
-{
-}
-
 DescribeNotebookInstanceLifecycleConfigResult::DescribeNotebookInstanceLifecycleConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigArn"))
   {
     m_notebookInstanceLifecycleConfigArn = jsonValue.GetString("NotebookInstanceLifecycleConfigArn");
-
+    m_notebookInstanceLifecycleConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
   {
     m_notebookInstanceLifecycleConfigName = jsonValue.GetString("NotebookInstanceLifecycleConfigName");
-
+    m_notebookInstanceLifecycleConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnCreate"))
   {
     Aws::Utils::Array<JsonView> onCreateJsonList = jsonValue.GetArray("OnCreate");
@@ -48,8 +42,8 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
     {
       m_onCreate.push_back(onCreateJsonList[onCreateIndex].AsObject());
     }
+    m_onCreateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnStart"))
   {
     Aws::Utils::Array<JsonView> onStartJsonList = jsonValue.GetArray("OnStart");
@@ -57,26 +51,25 @@ DescribeNotebookInstanceLifecycleConfigResult& DescribeNotebookInstanceLifecycle
     {
       m_onStart.push_back(onStartJsonList[onStartIndex].AsObject());
     }
+    m_onStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

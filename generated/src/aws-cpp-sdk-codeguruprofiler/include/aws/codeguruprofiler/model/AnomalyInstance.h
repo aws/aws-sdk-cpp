@@ -34,7 +34,7 @@ namespace Model
   class AnomalyInstance
   {
   public:
-    AWS_CODEGURUPROFILER_API AnomalyInstance();
+    AWS_CODEGURUPROFILER_API AnomalyInstance() = default;
     AWS_CODEGURUPROFILER_API AnomalyInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API AnomalyInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM
      * UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline AnomalyInstance& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline AnomalyInstance& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    AnomalyInstance& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * <p> The universally unique identifier (UUID) of an instance of an anomaly in a
      * metric. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AnomalyInstance& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AnomalyInstance& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AnomalyInstance& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AnomalyInstance& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,34 +75,34 @@ namespace Model
      * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM
      * UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline AnomalyInstance& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline AnomalyInstance& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    AnomalyInstance& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Feedback type on a specific instance of anomaly submitted by the user.</p>
      */
-    inline const UserFeedback& GetUserFeedback() const{ return m_userFeedback; }
+    inline const UserFeedback& GetUserFeedback() const { return m_userFeedback; }
     inline bool UserFeedbackHasBeenSet() const { return m_userFeedbackHasBeenSet; }
-    inline void SetUserFeedback(const UserFeedback& value) { m_userFeedbackHasBeenSet = true; m_userFeedback = value; }
-    inline void SetUserFeedback(UserFeedback&& value) { m_userFeedbackHasBeenSet = true; m_userFeedback = std::move(value); }
-    inline AnomalyInstance& WithUserFeedback(const UserFeedback& value) { SetUserFeedback(value); return *this;}
-    inline AnomalyInstance& WithUserFeedback(UserFeedback&& value) { SetUserFeedback(std::move(value)); return *this;}
+    template<typename UserFeedbackT = UserFeedback>
+    void SetUserFeedback(UserFeedbackT&& value) { m_userFeedbackHasBeenSet = true; m_userFeedback = std::forward<UserFeedbackT>(value); }
+    template<typename UserFeedbackT = UserFeedback>
+    AnomalyInstance& WithUserFeedback(UserFeedbackT&& value) { SetUserFeedback(std::forward<UserFeedbackT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
     UserFeedback m_userFeedback;

@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicyList::CachePolicyList() : 
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 CachePolicyList::CachePolicyList(const XmlNode& xmlNode)
-  : CachePolicyList()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ CachePolicyList& CachePolicyList::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("CachePolicySummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckDomainAvailabilityRequest::CheckDomainAvailabilityRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_idnLangCodeHasBeenSet(false)
-{
-}
-
 Aws::String CheckDomainAvailabilityRequest::SerializePayload() const
 {
   JsonValue payload;

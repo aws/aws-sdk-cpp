@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-RequestTooLargeException::RequestTooLargeException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RequestTooLargeException::RequestTooLargeException(JsonView jsonValue)
-  : RequestTooLargeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RequestTooLargeException& RequestTooLargeException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

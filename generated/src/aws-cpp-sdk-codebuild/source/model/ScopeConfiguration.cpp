@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ScopeConfiguration::ScopeConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_scope(WebhookScopeType::NOT_SET),
-    m_scopeHasBeenSet(false)
-{
-}
-
 ScopeConfiguration::ScopeConfiguration(JsonView jsonValue)
-  : ScopeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ScopeConfiguration& ScopeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = jsonValue.GetString("domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = WebhookScopeTypeMapper::GetWebhookScopeTypeForName(jsonValue.GetString("scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   return *this;
 }
 

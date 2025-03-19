@@ -12,21 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLocationAzureBlobRequest::CreateLocationAzureBlobRequest() : 
-    m_containerUrlHasBeenSet(false),
-    m_authenticationType(AzureBlobAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_sasConfigurationHasBeenSet(false),
-    m_blobType(AzureBlobType::NOT_SET),
-    m_blobTypeHasBeenSet(false),
-    m_accessTier(AzureAccessTier::NOT_SET),
-    m_accessTierHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_agentArnsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocationAzureBlobRequest::SerializePayload() const
 {
   JsonValue payload;

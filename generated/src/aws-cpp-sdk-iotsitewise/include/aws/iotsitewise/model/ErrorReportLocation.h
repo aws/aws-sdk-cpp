@@ -32,7 +32,7 @@ namespace Model
   class ErrorReportLocation
   {
   public:
-    AWS_IOTSITEWISE_API ErrorReportLocation();
+    AWS_IOTSITEWISE_API ErrorReportLocation() = default;
     AWS_IOTSITEWISE_API ErrorReportLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ErrorReportLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket to which errors associated with the bulk
      * import job are sent.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline ErrorReportLocation& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline ErrorReportLocation& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline ErrorReportLocation& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    ErrorReportLocation& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ErrorReportLocation& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ErrorReportLocation& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ErrorReportLocation& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ErrorReportLocation& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 

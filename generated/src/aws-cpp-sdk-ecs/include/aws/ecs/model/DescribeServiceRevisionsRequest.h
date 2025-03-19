@@ -22,7 +22,7 @@ namespace Model
   class DescribeServiceRevisionsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DescribeServiceRevisionsRequest();
+    AWS_ECS_API DescribeServiceRevisionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServiceDeployments.html">ListServiceDeployments</a>
      * to get the ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServiceRevisionArns() const{ return m_serviceRevisionArns; }
+    inline const Aws::Vector<Aws::String>& GetServiceRevisionArns() const { return m_serviceRevisionArns; }
     inline bool ServiceRevisionArnsHasBeenSet() const { return m_serviceRevisionArnsHasBeenSet; }
-    inline void SetServiceRevisionArns(const Aws::Vector<Aws::String>& value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns = value; }
-    inline void SetServiceRevisionArns(Aws::Vector<Aws::String>&& value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns = std::move(value); }
-    inline DescribeServiceRevisionsRequest& WithServiceRevisionArns(const Aws::Vector<Aws::String>& value) { SetServiceRevisionArns(value); return *this;}
-    inline DescribeServiceRevisionsRequest& WithServiceRevisionArns(Aws::Vector<Aws::String>&& value) { SetServiceRevisionArns(std::move(value)); return *this;}
-    inline DescribeServiceRevisionsRequest& AddServiceRevisionArns(const Aws::String& value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns.push_back(value); return *this; }
-    inline DescribeServiceRevisionsRequest& AddServiceRevisionArns(Aws::String&& value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns.push_back(std::move(value)); return *this; }
-    inline DescribeServiceRevisionsRequest& AddServiceRevisionArns(const char* value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns.push_back(value); return *this; }
+    template<typename ServiceRevisionArnsT = Aws::Vector<Aws::String>>
+    void SetServiceRevisionArns(ServiceRevisionArnsT&& value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns = std::forward<ServiceRevisionArnsT>(value); }
+    template<typename ServiceRevisionArnsT = Aws::Vector<Aws::String>>
+    DescribeServiceRevisionsRequest& WithServiceRevisionArns(ServiceRevisionArnsT&& value) { SetServiceRevisionArns(std::forward<ServiceRevisionArnsT>(value)); return *this;}
+    template<typename ServiceRevisionArnsT = Aws::String>
+    DescribeServiceRevisionsRequest& AddServiceRevisionArns(ServiceRevisionArnsT&& value) { m_serviceRevisionArnsHasBeenSet = true; m_serviceRevisionArns.emplace_back(std::forward<ServiceRevisionArnsT>(value)); return *this; }
     ///@}
   private:
 

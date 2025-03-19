@@ -18,18 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-RedshiftDataShareDetails::RedshiftDataShareDetails() : 
-    m_arnHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_viewHasBeenSet(false)
-{
-}
-
 RedshiftDataShareDetails::RedshiftDataShareDetails(JsonView jsonValue)
-  : RedshiftDataShareDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RedshiftDataShareDetails& RedshiftDataShareDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Function"))
   {
     m_function = jsonValue.GetString("Function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetString("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("View"))
   {
     m_view = jsonValue.GetString("View");
-
     m_viewHasBeenSet = true;
   }
-
   return *this;
 }
 

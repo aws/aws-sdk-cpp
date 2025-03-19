@@ -18,15 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-SourceResource::SourceResource() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusDetailHasBeenSet(false)
-{
-}
-
 SourceResource::SourceResource(JsonView jsonValue)
-  : SourceResource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SourceResource& SourceResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetail"))
   {
     m_statusDetail = jsonValue.GetString("StatusDetail");
-
     m_statusDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

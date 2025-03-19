@@ -33,7 +33,7 @@ namespace Model
   class DocumentReviewCommentSource
   {
   public:
-    AWS_SSM_API DocumentReviewCommentSource();
+    AWS_SSM_API DocumentReviewCommentSource() = default;
     AWS_SSM_API DocumentReviewCommentSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API DocumentReviewCommentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The type of information added to a review request. Currently, only the value
      * <code>Comment</code> is supported.</p>
      */
-    inline const DocumentReviewCommentType& GetType() const{ return m_type; }
+    inline DocumentReviewCommentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DocumentReviewCommentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DocumentReviewCommentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DocumentReviewCommentSource& WithType(const DocumentReviewCommentType& value) { SetType(value); return *this;}
-    inline DocumentReviewCommentSource& WithType(DocumentReviewCommentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DocumentReviewCommentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DocumentReviewCommentSource& WithType(DocumentReviewCommentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * <p>The content of a comment entered by a user who requests a review of a new
      * document version, or who reviews the new version.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline DocumentReviewCommentSource& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline DocumentReviewCommentSource& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline DocumentReviewCommentSource& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    DocumentReviewCommentSource& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 
-    DocumentReviewCommentType m_type;
+    DocumentReviewCommentType m_type{DocumentReviewCommentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_content;

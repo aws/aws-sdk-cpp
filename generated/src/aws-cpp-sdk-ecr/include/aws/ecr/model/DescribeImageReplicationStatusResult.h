@@ -30,7 +30,7 @@ namespace Model
   class DescribeImageReplicationStatusResult
   {
   public:
-    AWS_ECR_API DescribeImageReplicationStatusResult();
+    AWS_ECR_API DescribeImageReplicationStatusResult() = default;
     AWS_ECR_API DescribeImageReplicationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API DescribeImageReplicationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,22 +39,20 @@ namespace Model
     /**
      * <p>The repository name associated with the request.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryName.assign(value); }
-    inline DescribeImageReplicationStatusResult& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline DescribeImageReplicationStatusResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline DescribeImageReplicationStatusResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    DescribeImageReplicationStatusResult& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ImageIdentifier& GetImageId() const{ return m_imageId; }
-    inline void SetImageId(const ImageIdentifier& value) { m_imageId = value; }
-    inline void SetImageId(ImageIdentifier&& value) { m_imageId = std::move(value); }
-    inline DescribeImageReplicationStatusResult& WithImageId(const ImageIdentifier& value) { SetImageId(value); return *this;}
-    inline DescribeImageReplicationStatusResult& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
+    inline const ImageIdentifier& GetImageId() const { return m_imageId; }
+    template<typename ImageIdT = ImageIdentifier>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = ImageIdentifier>
+    DescribeImageReplicationStatusResult& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,36 @@ namespace Model
      * <p>The replication status details for the images in the specified
      * repository.</p>
      */
-    inline const Aws::Vector<ImageReplicationStatus>& GetReplicationStatuses() const{ return m_replicationStatuses; }
-    inline void SetReplicationStatuses(const Aws::Vector<ImageReplicationStatus>& value) { m_replicationStatuses = value; }
-    inline void SetReplicationStatuses(Aws::Vector<ImageReplicationStatus>&& value) { m_replicationStatuses = std::move(value); }
-    inline DescribeImageReplicationStatusResult& WithReplicationStatuses(const Aws::Vector<ImageReplicationStatus>& value) { SetReplicationStatuses(value); return *this;}
-    inline DescribeImageReplicationStatusResult& WithReplicationStatuses(Aws::Vector<ImageReplicationStatus>&& value) { SetReplicationStatuses(std::move(value)); return *this;}
-    inline DescribeImageReplicationStatusResult& AddReplicationStatuses(const ImageReplicationStatus& value) { m_replicationStatuses.push_back(value); return *this; }
-    inline DescribeImageReplicationStatusResult& AddReplicationStatuses(ImageReplicationStatus&& value) { m_replicationStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImageReplicationStatus>& GetReplicationStatuses() const { return m_replicationStatuses; }
+    template<typename ReplicationStatusesT = Aws::Vector<ImageReplicationStatus>>
+    void SetReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses = std::forward<ReplicationStatusesT>(value); }
+    template<typename ReplicationStatusesT = Aws::Vector<ImageReplicationStatus>>
+    DescribeImageReplicationStatusResult& WithReplicationStatuses(ReplicationStatusesT&& value) { SetReplicationStatuses(std::forward<ReplicationStatusesT>(value)); return *this;}
+    template<typename ReplicationStatusesT = ImageReplicationStatus>
+    DescribeImageReplicationStatusResult& AddReplicationStatuses(ReplicationStatusesT&& value) { m_replicationStatusesHasBeenSet = true; m_replicationStatuses.emplace_back(std::forward<ReplicationStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeImageReplicationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeImageReplicationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeImageReplicationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeImageReplicationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_repositoryName;
+    bool m_repositoryNameHasBeenSet = false;
 
     ImageIdentifier m_imageId;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::Vector<ImageReplicationStatus> m_replicationStatuses;
+    bool m_replicationStatusesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

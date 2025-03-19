@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-Segment::Segment() : 
-    m_idHasBeenSet(false),
-    m_documentHasBeenSet(false)
-{
-}
-
 Segment::Segment(JsonView jsonValue)
-  : Segment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Segment& Segment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Document"))
   {
     m_document = jsonValue.GetString("Document");
-
     m_documentHasBeenSet = true;
   }
-
   return *this;
 }
 

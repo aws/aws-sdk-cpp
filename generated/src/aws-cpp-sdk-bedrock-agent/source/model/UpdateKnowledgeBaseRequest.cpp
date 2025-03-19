@@ -12,16 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKnowledgeBaseRequest::UpdateKnowledgeBaseRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_storageConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKnowledgeBaseRequest::SerializePayload() const
 {
   JsonValue payload;

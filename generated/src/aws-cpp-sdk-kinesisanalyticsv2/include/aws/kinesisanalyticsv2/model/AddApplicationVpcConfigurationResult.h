@@ -28,7 +28,7 @@ namespace Model
   class AddApplicationVpcConfigurationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API AddApplicationVpcConfigurationResult();
+    AWS_KINESISANALYTICSV2_API AddApplicationVpcConfigurationResult() = default;
     AWS_KINESISANALYTICSV2_API AddApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API AddApplicationVpcConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ARN of the application.</p>
      */
-    inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-    inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-    inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-    inline AddApplicationVpcConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    inline const Aws::String& GetApplicationARN() const { return m_applicationARN; }
+    template<typename ApplicationARNT = Aws::String>
+    void SetApplicationARN(ApplicationARNT&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::forward<ApplicationARNT>(value); }
+    template<typename ApplicationARNT = Aws::String>
+    AddApplicationVpcConfigurationResult& WithApplicationARN(ApplicationARNT&& value) { SetApplicationARN(std::forward<ApplicationARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,8 +49,8 @@ namespace Model
      * <p>Provides the current application version. Managed Service for Apache Flink
      * updates the ApplicationVersionId each time you update the application.</p>
      */
-    inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-    inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
+    inline long long GetApplicationVersionId() const { return m_applicationVersionId; }
+    inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
     inline AddApplicationVpcConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
     ///@}
 
@@ -60,47 +58,48 @@ namespace Model
     /**
      * <p>The parameters of the new VPC configuration.</p>
      */
-    inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const{ return m_vpcConfigurationDescription; }
-    inline void SetVpcConfigurationDescription(const VpcConfigurationDescription& value) { m_vpcConfigurationDescription = value; }
-    inline void SetVpcConfigurationDescription(VpcConfigurationDescription&& value) { m_vpcConfigurationDescription = std::move(value); }
-    inline AddApplicationVpcConfigurationResult& WithVpcConfigurationDescription(const VpcConfigurationDescription& value) { SetVpcConfigurationDescription(value); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithVpcConfigurationDescription(VpcConfigurationDescription&& value) { SetVpcConfigurationDescription(std::move(value)); return *this;}
+    inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const { return m_vpcConfigurationDescription; }
+    template<typename VpcConfigurationDescriptionT = VpcConfigurationDescription>
+    void SetVpcConfigurationDescription(VpcConfigurationDescriptionT&& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = std::forward<VpcConfigurationDescriptionT>(value); }
+    template<typename VpcConfigurationDescriptionT = VpcConfigurationDescription>
+    AddApplicationVpcConfigurationResult& WithVpcConfigurationDescription(VpcConfigurationDescriptionT&& value) { SetVpcConfigurationDescription(std::forward<VpcConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Operation ID for tracking AddApplicationVpcConfiguration request
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
-    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-    inline AddApplicationVpcConfigurationResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    AddApplicationVpcConfigurationResult& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddApplicationVpcConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddApplicationVpcConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddApplicationVpcConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationARN;
+    bool m_applicationARNHasBeenSet = false;
 
-    long long m_applicationVersionId;
+    long long m_applicationVersionId{0};
+    bool m_applicationVersionIdHasBeenSet = false;
 
     VpcConfigurationDescription m_vpcConfigurationDescription;
+    bool m_vpcConfigurationDescriptionHasBeenSet = false;
 
     Aws::String m_operationId;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

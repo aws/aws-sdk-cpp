@@ -12,11 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeComponentRequest::DescribeComponentRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeComponentRequest::SerializePayload() const
 {
   return {};

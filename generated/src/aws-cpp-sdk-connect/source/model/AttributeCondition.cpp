@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AttributeCondition::AttributeCondition() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_proficiencyLevel(0.0),
-    m_proficiencyLevelHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_matchCriteriaHasBeenSet(false),
-    m_comparisonOperatorHasBeenSet(false)
-{
-}
-
 AttributeCondition::AttributeCondition(JsonView jsonValue)
-  : AttributeCondition()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AttributeCondition& AttributeCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProficiencyLevel"))
   {
     m_proficiencyLevel = jsonValue.GetDouble("ProficiencyLevel");
-
     m_proficiencyLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchCriteria"))
   {
     m_matchCriteria = jsonValue.GetObject("MatchCriteria");
-
     m_matchCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = jsonValue.GetString("ComparisonOperator");
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,10 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetSendStatisticsRequest::GetSendStatisticsRequest()
-{
-}
-
 Aws::String GetSendStatisticsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

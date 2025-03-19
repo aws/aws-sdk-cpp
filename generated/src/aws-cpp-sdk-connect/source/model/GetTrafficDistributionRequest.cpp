@@ -12,11 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTrafficDistributionRequest::GetTrafficDistributionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetTrafficDistributionRequest::SerializePayload() const
 {
   return {};

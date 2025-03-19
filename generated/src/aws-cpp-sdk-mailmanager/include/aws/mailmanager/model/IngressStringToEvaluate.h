@@ -32,7 +32,7 @@ namespace Model
   class IngressStringToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API IngressStringToEvaluate();
+    AWS_MAILMANAGER_API IngressStringToEvaluate() = default;
     AWS_MAILMANAGER_API IngressStringToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressStringToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The enum type representing the allowed attribute types for a string
      * condition.</p>
      */
-    inline const IngressStringEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline IngressStringEmailAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const IngressStringEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(IngressStringEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline IngressStringToEvaluate& WithAttribute(const IngressStringEmailAttribute& value) { SetAttribute(value); return *this;}
-    inline IngressStringToEvaluate& WithAttribute(IngressStringEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(IngressStringEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline IngressStringToEvaluate& WithAttribute(IngressStringEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    IngressStringEmailAttribute m_attribute;
+    IngressStringEmailAttribute m_attribute{IngressStringEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

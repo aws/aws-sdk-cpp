@@ -29,7 +29,7 @@ namespace Model
   class ListLandingZoneOperationsResult
   {
   public:
-    AWS_CONTROLTOWER_API ListLandingZoneOperationsResult();
+    AWS_CONTROLTOWER_API ListLandingZoneOperationsResult() = default;
     AWS_CONTROLTOWER_API ListLandingZoneOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLTOWER_API ListLandingZoneOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Lists landing zone operations.</p>
      */
-    inline const Aws::Vector<LandingZoneOperationSummary>& GetLandingZoneOperations() const{ return m_landingZoneOperations; }
-    inline void SetLandingZoneOperations(const Aws::Vector<LandingZoneOperationSummary>& value) { m_landingZoneOperations = value; }
-    inline void SetLandingZoneOperations(Aws::Vector<LandingZoneOperationSummary>&& value) { m_landingZoneOperations = std::move(value); }
-    inline ListLandingZoneOperationsResult& WithLandingZoneOperations(const Aws::Vector<LandingZoneOperationSummary>& value) { SetLandingZoneOperations(value); return *this;}
-    inline ListLandingZoneOperationsResult& WithLandingZoneOperations(Aws::Vector<LandingZoneOperationSummary>&& value) { SetLandingZoneOperations(std::move(value)); return *this;}
-    inline ListLandingZoneOperationsResult& AddLandingZoneOperations(const LandingZoneOperationSummary& value) { m_landingZoneOperations.push_back(value); return *this; }
-    inline ListLandingZoneOperationsResult& AddLandingZoneOperations(LandingZoneOperationSummary&& value) { m_landingZoneOperations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LandingZoneOperationSummary>& GetLandingZoneOperations() const { return m_landingZoneOperations; }
+    template<typename LandingZoneOperationsT = Aws::Vector<LandingZoneOperationSummary>>
+    void SetLandingZoneOperations(LandingZoneOperationsT&& value) { m_landingZoneOperationsHasBeenSet = true; m_landingZoneOperations = std::forward<LandingZoneOperationsT>(value); }
+    template<typename LandingZoneOperationsT = Aws::Vector<LandingZoneOperationSummary>>
+    ListLandingZoneOperationsResult& WithLandingZoneOperations(LandingZoneOperationsT&& value) { SetLandingZoneOperations(std::forward<LandingZoneOperationsT>(value)); return *this;}
+    template<typename LandingZoneOperationsT = LandingZoneOperationSummary>
+    ListLandingZoneOperationsResult& AddLandingZoneOperations(LandingZoneOperationsT&& value) { m_landingZoneOperationsHasBeenSet = true; m_landingZoneOperations.emplace_back(std::forward<LandingZoneOperationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>Retrieves the next page of results. If the string is empty, the response is
      * the end of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLandingZoneOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLandingZoneOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLandingZoneOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLandingZoneOperationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLandingZoneOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLandingZoneOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLandingZoneOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLandingZoneOperationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LandingZoneOperationSummary> m_landingZoneOperations;
+    bool m_landingZoneOperationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

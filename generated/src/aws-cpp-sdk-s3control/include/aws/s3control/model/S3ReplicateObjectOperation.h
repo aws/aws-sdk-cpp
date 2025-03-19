@@ -29,7 +29,7 @@ namespace Model
   class S3ReplicateObjectOperation
   {
   public:
-    AWS_S3CONTROL_API S3ReplicateObjectOperation();
+    AWS_S3CONTROL_API S3ReplicateObjectOperation() = default;
     AWS_S3CONTROL_API S3ReplicateObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3ReplicateObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

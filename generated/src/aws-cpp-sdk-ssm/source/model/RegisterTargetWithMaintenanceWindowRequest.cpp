@@ -12,19 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterTargetWithMaintenanceWindowRequest::RegisterTargetWithMaintenanceWindowRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_resourceType(MaintenanceWindowResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_ownerInformationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String RegisterTargetWithMaintenanceWindowRequest::SerializePayload() const
 {
   JsonValue payload;

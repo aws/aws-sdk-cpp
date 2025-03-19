@@ -30,7 +30,7 @@ namespace Model
   class BillingDetails
   {
   public:
-    AWS_SFN_API BillingDetails();
+    AWS_SFN_API BillingDetails() = default;
     AWS_SFN_API BillingDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API BillingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Billed memory consumption of your workflow, in MB.</p>
      */
-    inline long long GetBilledMemoryUsedInMB() const{ return m_billedMemoryUsedInMB; }
+    inline long long GetBilledMemoryUsedInMB() const { return m_billedMemoryUsedInMB; }
     inline bool BilledMemoryUsedInMBHasBeenSet() const { return m_billedMemoryUsedInMBHasBeenSet; }
     inline void SetBilledMemoryUsedInMB(long long value) { m_billedMemoryUsedInMBHasBeenSet = true; m_billedMemoryUsedInMB = value; }
     inline BillingDetails& WithBilledMemoryUsedInMB(long long value) { SetBilledMemoryUsedInMB(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>Billed duration of your workflow, in milliseconds.</p>
      */
-    inline long long GetBilledDurationInMilliseconds() const{ return m_billedDurationInMilliseconds; }
+    inline long long GetBilledDurationInMilliseconds() const { return m_billedDurationInMilliseconds; }
     inline bool BilledDurationInMillisecondsHasBeenSet() const { return m_billedDurationInMillisecondsHasBeenSet; }
     inline void SetBilledDurationInMilliseconds(long long value) { m_billedDurationInMillisecondsHasBeenSet = true; m_billedDurationInMilliseconds = value; }
     inline BillingDetails& WithBilledDurationInMilliseconds(long long value) { SetBilledDurationInMilliseconds(value); return *this;}
     ///@}
   private:
 
-    long long m_billedMemoryUsedInMB;
+    long long m_billedMemoryUsedInMB{0};
     bool m_billedMemoryUsedInMBHasBeenSet = false;
 
-    long long m_billedDurationInMilliseconds;
+    long long m_billedDurationInMilliseconds{0};
     bool m_billedDurationInMillisecondsHasBeenSet = false;
   };
 

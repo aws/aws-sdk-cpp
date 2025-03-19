@@ -36,7 +36,7 @@ namespace Model
   class XavcHdProfileSettings
   {
   public:
-    AWS_MEDIACONVERT_API XavcHdProfileSettings();
+    AWS_MEDIACONVERT_API XavcHdProfileSettings() = default;
     AWS_MEDIACONVERT_API XavcHdProfileSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API XavcHdProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * Outputs of the same class have similar image quality over the operating points
      * that are valid for that class.
      */
-    inline const XavcHdProfileBitrateClass& GetBitrateClass() const{ return m_bitrateClass; }
+    inline XavcHdProfileBitrateClass GetBitrateClass() const { return m_bitrateClass; }
     inline bool BitrateClassHasBeenSet() const { return m_bitrateClassHasBeenSet; }
-    inline void SetBitrateClass(const XavcHdProfileBitrateClass& value) { m_bitrateClassHasBeenSet = true; m_bitrateClass = value; }
-    inline void SetBitrateClass(XavcHdProfileBitrateClass&& value) { m_bitrateClassHasBeenSet = true; m_bitrateClass = std::move(value); }
-    inline XavcHdProfileSettings& WithBitrateClass(const XavcHdProfileBitrateClass& value) { SetBitrateClass(value); return *this;}
-    inline XavcHdProfileSettings& WithBitrateClass(XavcHdProfileBitrateClass&& value) { SetBitrateClass(std::move(value)); return *this;}
+    inline void SetBitrateClass(XavcHdProfileBitrateClass value) { m_bitrateClassHasBeenSet = true; m_bitrateClass = value; }
+    inline XavcHdProfileSettings& WithBitrateClass(XavcHdProfileBitrateClass value) { SetBitrateClass(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * other than Off or Auto. Use Adaptive quantization to adjust the degree of
      * smoothing that Flicker adaptive quantization provides.
      */
-    inline const XavcFlickerAdaptiveQuantization& GetFlickerAdaptiveQuantization() const{ return m_flickerAdaptiveQuantization; }
+    inline XavcFlickerAdaptiveQuantization GetFlickerAdaptiveQuantization() const { return m_flickerAdaptiveQuantization; }
     inline bool FlickerAdaptiveQuantizationHasBeenSet() const { return m_flickerAdaptiveQuantizationHasBeenSet; }
-    inline void SetFlickerAdaptiveQuantization(const XavcFlickerAdaptiveQuantization& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
-    inline void SetFlickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization&& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = std::move(value); }
-    inline XavcHdProfileSettings& WithFlickerAdaptiveQuantization(const XavcFlickerAdaptiveQuantization& value) { SetFlickerAdaptiveQuantization(value); return *this;}
-    inline XavcHdProfileSettings& WithFlickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization&& value) { SetFlickerAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetFlickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
+    inline XavcHdProfileSettings& WithFlickerAdaptiveQuantization(XavcFlickerAdaptiveQuantization value) { SetFlickerAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,10 @@ namespace Model
      * frames. Choose Don't allow to prevent the encoder from using B-frames as
      * reference frames.
      */
-    inline const XavcGopBReference& GetGopBReference() const{ return m_gopBReference; }
+    inline XavcGopBReference GetGopBReference() const { return m_gopBReference; }
     inline bool GopBReferenceHasBeenSet() const { return m_gopBReferenceHasBeenSet; }
-    inline void SetGopBReference(const XavcGopBReference& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
-    inline void SetGopBReference(XavcGopBReference&& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = std::move(value); }
-    inline XavcHdProfileSettings& WithGopBReference(const XavcGopBReference& value) { SetGopBReference(value); return *this;}
-    inline XavcHdProfileSettings& WithGopBReference(XavcGopBReference&& value) { SetGopBReference(std::move(value)); return *this;}
+    inline void SetGopBReference(XavcGopBReference value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
+    inline XavcHdProfileSettings& WithGopBReference(XavcGopBReference value) { SetGopBReference(value); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +95,7 @@ namespace Model
      * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
      * as possible. Setting this value to 0 will break output segmenting.
      */
-    inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
+    inline int GetGopClosedCadence() const { return m_gopClosedCadence; }
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
     inline XavcHdProfileSettings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
      * 5000000. When you don't set this value, or you set it to zero, MediaConvert
      * calculates the default by doubling the bitrate of this output point.
      */
-    inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
+    inline int GetHrdBufferSize() const { return m_hrdBufferSize; }
     inline bool HrdBufferSizeHasBeenSet() const { return m_hrdBufferSizeHasBeenSet; }
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
     inline XavcHdProfileSettings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
@@ -133,12 +127,10 @@ namespace Model
      * the source. If the source is progressive, the output will be interlaced with top
      * field bottom field first, depending on which of the Follow options you choose.
      */
-    inline const XavcInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline XavcInterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const XavcInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(XavcInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline XavcHdProfileSettings& WithInterlaceMode(const XavcInterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline XavcHdProfileSettings& WithInterlaceMode(XavcInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(XavcInterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline XavcHdProfileSettings& WithInterlaceMode(XavcInterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +139,10 @@ namespace Model
      * speed for output video quality. The default behavior is faster, lower quality,
      * single-pass encoding.
      */
-    inline const XavcHdProfileQualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
+    inline XavcHdProfileQualityTuningLevel GetQualityTuningLevel() const { return m_qualityTuningLevel; }
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
-    inline void SetQualityTuningLevel(const XavcHdProfileQualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
-    inline void SetQualityTuningLevel(XavcHdProfileQualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
-    inline XavcHdProfileSettings& WithQualityTuningLevel(const XavcHdProfileQualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
-    inline XavcHdProfileSettings& WithQualityTuningLevel(XavcHdProfileQualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+    inline void SetQualityTuningLevel(XavcHdProfileQualityTuningLevel value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
+    inline XavcHdProfileSettings& WithQualityTuningLevel(XavcHdProfileQualityTuningLevel value) { SetQualityTuningLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -161,7 +151,7 @@ namespace Model
      * macroblock rows for progressive pictures, and less than or equal to half the
      * number of macroblock rows for interlaced pictures.
      */
-    inline int GetSlices() const{ return m_slices; }
+    inline int GetSlices() const { return m_slices; }
     inline bool SlicesHasBeenSet() const { return m_slicesHasBeenSet; }
     inline void SetSlices(int value) { m_slicesHasBeenSet = true; m_slices = value; }
     inline XavcHdProfileSettings& WithSlices(int value) { SetSlices(value); return *this;}
@@ -174,40 +164,38 @@ namespace Model
      * Otherwise, keep the default value None. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      */
-    inline const XavcHdProfileTelecine& GetTelecine() const{ return m_telecine; }
+    inline XavcHdProfileTelecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const XavcHdProfileTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(XavcHdProfileTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline XavcHdProfileSettings& WithTelecine(const XavcHdProfileTelecine& value) { SetTelecine(value); return *this;}
-    inline XavcHdProfileSettings& WithTelecine(XavcHdProfileTelecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(XavcHdProfileTelecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline XavcHdProfileSettings& WithTelecine(XavcHdProfileTelecine value) { SetTelecine(value); return *this;}
     ///@}
   private:
 
-    XavcHdProfileBitrateClass m_bitrateClass;
+    XavcHdProfileBitrateClass m_bitrateClass{XavcHdProfileBitrateClass::NOT_SET};
     bool m_bitrateClassHasBeenSet = false;
 
-    XavcFlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
+    XavcFlickerAdaptiveQuantization m_flickerAdaptiveQuantization{XavcFlickerAdaptiveQuantization::NOT_SET};
     bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
-    XavcGopBReference m_gopBReference;
+    XavcGopBReference m_gopBReference{XavcGopBReference::NOT_SET};
     bool m_gopBReferenceHasBeenSet = false;
 
-    int m_gopClosedCadence;
+    int m_gopClosedCadence{0};
     bool m_gopClosedCadenceHasBeenSet = false;
 
-    int m_hrdBufferSize;
+    int m_hrdBufferSize{0};
     bool m_hrdBufferSizeHasBeenSet = false;
 
-    XavcInterlaceMode m_interlaceMode;
+    XavcInterlaceMode m_interlaceMode{XavcInterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    XavcHdProfileQualityTuningLevel m_qualityTuningLevel;
+    XavcHdProfileQualityTuningLevel m_qualityTuningLevel{XavcHdProfileQualityTuningLevel::NOT_SET};
     bool m_qualityTuningLevelHasBeenSet = false;
 
-    int m_slices;
+    int m_slices{0};
     bool m_slicesHasBeenSet = false;
 
-    XavcHdProfileTelecine m_telecine;
+    XavcHdProfileTelecine m_telecine{XavcHdProfileTelecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
   };
 

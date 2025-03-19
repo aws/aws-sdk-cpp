@@ -20,21 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PredictiveScalingConfiguration::PredictiveScalingConfiguration() : 
-    m_metricSpecificationsHasBeenSet(false),
-    m_mode(PredictiveScalingMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_schedulingBufferTime(0),
-    m_schedulingBufferTimeHasBeenSet(false),
-    m_maxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior::NOT_SET),
-    m_maxCapacityBreachBehaviorHasBeenSet(false),
-    m_maxCapacityBuffer(0),
-    m_maxCapacityBufferHasBeenSet(false)
-{
-}
-
 PredictiveScalingConfiguration::PredictiveScalingConfiguration(const XmlNode& xmlNode)
-  : PredictiveScalingConfiguration()
 {
   *this = xmlNode;
 }
@@ -49,6 +35,7 @@ PredictiveScalingConfiguration& PredictiveScalingConfiguration::operator =(const
     if(!metricSpecificationsNode.IsNull())
     {
       XmlNode metricSpecificationsMember = metricSpecificationsNode.FirstChild("member");
+      m_metricSpecificationsHasBeenSet = !metricSpecificationsMember.IsNull();
       while(!metricSpecificationsMember.IsNull())
       {
         m_metricSpecifications.push_back(metricSpecificationsMember);
@@ -60,7 +47,7 @@ PredictiveScalingConfiguration& PredictiveScalingConfiguration::operator =(const
     XmlNode modeNode = resultNode.FirstChild("Mode");
     if(!modeNode.IsNull())
     {
-      m_mode = PredictiveScalingModeMapper::GetPredictiveScalingModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()).c_str());
+      m_mode = PredictiveScalingModeMapper::GetPredictiveScalingModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeNode.GetText()).c_str()));
       m_modeHasBeenSet = true;
     }
     XmlNode schedulingBufferTimeNode = resultNode.FirstChild("SchedulingBufferTime");
@@ -72,7 +59,7 @@ PredictiveScalingConfiguration& PredictiveScalingConfiguration::operator =(const
     XmlNode maxCapacityBreachBehaviorNode = resultNode.FirstChild("MaxCapacityBreachBehavior");
     if(!maxCapacityBreachBehaviorNode.IsNull())
     {
-      m_maxCapacityBreachBehavior = PredictiveScalingMaxCapacityBreachBehaviorMapper::GetPredictiveScalingMaxCapacityBreachBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityBreachBehaviorNode.GetText()).c_str()).c_str());
+      m_maxCapacityBreachBehavior = PredictiveScalingMaxCapacityBreachBehaviorMapper::GetPredictiveScalingMaxCapacityBreachBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityBreachBehaviorNode.GetText()).c_str()));
       m_maxCapacityBreachBehaviorHasBeenSet = true;
     }
     XmlNode maxCapacityBufferNode = resultNode.FirstChild("MaxCapacityBuffer");

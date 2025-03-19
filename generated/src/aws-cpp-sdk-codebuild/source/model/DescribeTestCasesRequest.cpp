@@ -12,15 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTestCasesRequest::DescribeTestCasesRequest() : 
-    m_reportArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTestCasesRequest::SerializePayload() const
 {
   JsonValue payload;

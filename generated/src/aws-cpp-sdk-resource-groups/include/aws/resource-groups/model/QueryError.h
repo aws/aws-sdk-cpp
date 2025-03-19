@@ -33,7 +33,7 @@ namespace Model
   class QueryError
   {
   public:
-    AWS_RESOURCEGROUPS_API QueryError();
+    AWS_RESOURCEGROUPS_API QueryError() = default;
     AWS_RESOURCEGROUPS_API QueryError(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API QueryError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>Specifies the error code that was raised.</p>
      */
-    inline const QueryErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline QueryErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const QueryErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(QueryErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline QueryError& WithErrorCode(const QueryErrorCode& value) { SetErrorCode(value); return *this;}
-    inline QueryError& WithErrorCode(QueryErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(QueryErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline QueryError& WithErrorCode(QueryErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that explains the <code>ErrorCode</code>. </p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline QueryError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline QueryError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline QueryError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    QueryError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    QueryErrorCode m_errorCode;
+    QueryErrorCode m_errorCode{QueryErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;

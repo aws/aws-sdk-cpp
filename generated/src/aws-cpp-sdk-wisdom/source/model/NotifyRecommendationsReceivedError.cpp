@@ -18,14 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-NotifyRecommendationsReceivedError::NotifyRecommendationsReceivedError() : 
-    m_messageHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false)
-{
-}
-
 NotifyRecommendationsReceivedError::NotifyRecommendationsReceivedError(JsonView jsonValue)
-  : NotifyRecommendationsReceivedError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotifyRecommendationsReceivedError& NotifyRecommendationsReceivedError::operator
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationId"))
   {
     m_recommendationId = jsonValue.GetString("recommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

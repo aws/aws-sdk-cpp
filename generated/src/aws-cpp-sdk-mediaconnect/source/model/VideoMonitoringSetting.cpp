@@ -18,14 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-VideoMonitoringSetting::VideoMonitoringSetting() : 
-    m_blackFramesHasBeenSet(false),
-    m_frozenFramesHasBeenSet(false)
-{
-}
-
 VideoMonitoringSetting::VideoMonitoringSetting(JsonView jsonValue)
-  : VideoMonitoringSetting()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VideoMonitoringSetting& VideoMonitoringSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blackFrames"))
   {
     m_blackFrames = jsonValue.GetObject("blackFrames");
-
     m_blackFramesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frozenFrames"))
   {
     m_frozenFrames = jsonValue.GetObject("frozenFrames");
-
     m_frozenFramesHasBeenSet = true;
   }
-
   return *this;
 }
 

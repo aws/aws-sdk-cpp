@@ -31,7 +31,7 @@ namespace Model
   class DiskInfo
   {
   public:
-    AWS_EC2_API DiskInfo();
+    AWS_EC2_API DiskInfo() = default;
     AWS_EC2_API DiskInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DiskInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The size of the disk in GB.</p>
      */
-    inline long long GetSizeInGB() const{ return m_sizeInGB; }
+    inline long long GetSizeInGB() const { return m_sizeInGB; }
     inline bool SizeInGBHasBeenSet() const { return m_sizeInGBHasBeenSet; }
     inline void SetSizeInGB(long long value) { m_sizeInGBHasBeenSet = true; m_sizeInGB = value; }
     inline DiskInfo& WithSizeInGB(long long value) { SetSizeInGB(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The number of disks with this configuration.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline DiskInfo& WithCount(int value) { SetCount(value); return *this;}
@@ -63,22 +63,20 @@ namespace Model
     /**
      * <p>The type of disk.</p>
      */
-    inline const DiskType& GetType() const{ return m_type; }
+    inline DiskType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DiskType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DiskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DiskInfo& WithType(const DiskType& value) { SetType(value); return *this;}
-    inline DiskInfo& WithType(DiskType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DiskType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DiskInfo& WithType(DiskType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    long long m_sizeInGB;
+    long long m_sizeInGB{0};
     bool m_sizeInGBHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    DiskType m_type;
+    DiskType m_type{DiskType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

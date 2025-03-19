@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DQResultsPublishingOptions::DQResultsPublishingOptions() : 
-    m_evaluationContextHasBeenSet(false),
-    m_resultsS3PrefixHasBeenSet(false),
-    m_cloudWatchMetricsEnabled(false),
-    m_cloudWatchMetricsEnabledHasBeenSet(false),
-    m_resultsPublishingEnabled(false),
-    m_resultsPublishingEnabledHasBeenSet(false)
-{
-}
-
 DQResultsPublishingOptions::DQResultsPublishingOptions(JsonView jsonValue)
-  : DQResultsPublishingOptions()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DQResultsPublishingOptions& DQResultsPublishingOptions::operator =(JsonView json
   if(jsonValue.ValueExists("EvaluationContext"))
   {
     m_evaluationContext = jsonValue.GetString("EvaluationContext");
-
     m_evaluationContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultsS3Prefix"))
   {
     m_resultsS3Prefix = jsonValue.GetString("ResultsS3Prefix");
-
     m_resultsS3PrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchMetricsEnabled"))
   {
     m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
-
     m_cloudWatchMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultsPublishingEnabled"))
   {
     m_resultsPublishingEnabled = jsonValue.GetBool("ResultsPublishingEnabled");
-
     m_resultsPublishingEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,29 +18,7 @@ namespace Chime
 namespace Model
 {
 
-PhoneNumber::PhoneNumber() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_e164PhoneNumberHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_type(PhoneNumberType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_productType(PhoneNumberProductType::NOT_SET),
-    m_productTypeHasBeenSet(false),
-    m_status(PhoneNumberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_associationsHasBeenSet(false),
-    m_callingNameHasBeenSet(false),
-    m_callingNameStatus(CallingNameStatus::NOT_SET),
-    m_callingNameStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_deletionTimestampHasBeenSet(false)
-{
-}
-
 PhoneNumber::PhoneNumber(JsonView jsonValue)
-  : PhoneNumber()
 {
   *this = jsonValue;
 }
@@ -50,52 +28,38 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
-
     m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("E164PhoneNumber"))
   {
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
-
     m_e164PhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PhoneNumberTypeMapper::GetPhoneNumberTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductType"))
   {
     m_productType = PhoneNumberProductTypeMapper::GetPhoneNumberProductTypeForName(jsonValue.GetString("ProductType"));
-
     m_productTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PhoneNumberStatusMapper::GetPhoneNumberStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capabilities"))
   {
     m_capabilities = jsonValue.GetObject("Capabilities");
-
     m_capabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Associations"))
   {
     Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
@@ -105,42 +69,31 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
     }
     m_associationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallingName"))
   {
     m_callingName = jsonValue.GetString("CallingName");
-
     m_callingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallingNameStatus"))
   {
     m_callingNameStatus = CallingNameStatusMapper::GetCallingNameStatusForName(jsonValue.GetString("CallingNameStatus"));
-
     m_callingNameStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionTimestamp"))
   {
     m_deletionTimestamp = jsonValue.GetString("DeletionTimestamp");
-
     m_deletionTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

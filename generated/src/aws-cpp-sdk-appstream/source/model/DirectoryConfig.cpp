@@ -18,17 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-DirectoryConfig::DirectoryConfig() : 
-    m_directoryNameHasBeenSet(false),
-    m_organizationalUnitDistinguishedNamesHasBeenSet(false),
-    m_serviceAccountCredentialsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_certificateBasedAuthPropertiesHasBeenSet(false)
-{
-}
-
 DirectoryConfig::DirectoryConfig(JsonView jsonValue)
-  : DirectoryConfig()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryName"))
   {
     m_directoryName = jsonValue.GetString("DirectoryName");
-
     m_directoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedNames"))
   {
     Aws::Utils::Array<JsonView> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
@@ -51,28 +39,21 @@ DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
     }
     m_organizationalUnitDistinguishedNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccountCredentials"))
   {
     m_serviceAccountCredentials = jsonValue.GetObject("ServiceAccountCredentials");
-
     m_serviceAccountCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateBasedAuthProperties"))
   {
     m_certificateBasedAuthProperties = jsonValue.GetObject("CertificateBasedAuthProperties");
-
     m_certificateBasedAuthPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

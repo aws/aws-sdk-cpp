@@ -29,7 +29,7 @@ namespace Model
   class ListStreamSessionsResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ListStreamSessionsResult();
+    AWS_GAMELIFTSTREAMS_API ListStreamSessionsResult() = default;
     AWS_GAMELIFTSTREAMS_API ListStreamSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API ListStreamSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * with a stream group and returned in response to a list request. Each item
      * includes stream session metadata and status.</p>
      */
-    inline const Aws::Vector<StreamSessionSummary>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<StreamSessionSummary>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<StreamSessionSummary>&& value) { m_items = std::move(value); }
-    inline ListStreamSessionsResult& WithItems(const Aws::Vector<StreamSessionSummary>& value) { SetItems(value); return *this;}
-    inline ListStreamSessionsResult& WithItems(Aws::Vector<StreamSessionSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListStreamSessionsResult& AddItems(const StreamSessionSummary& value) { m_items.push_back(value); return *this; }
-    inline ListStreamSessionsResult& AddItems(StreamSessionSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StreamSessionSummary>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<StreamSessionSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<StreamSessionSummary>>
+    ListStreamSessionsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = StreamSessionSummary>
+    ListStreamSessionsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * <p>A token that marks the start of the next sequential page of results. If an
      * operation doesn't return a token, you've reached the end of the list. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStreamSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamSessionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStreamSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStreamSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStreamSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStreamSessionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StreamSessionSummary> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

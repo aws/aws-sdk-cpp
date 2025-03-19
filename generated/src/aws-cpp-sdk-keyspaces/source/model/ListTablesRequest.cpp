@@ -12,14 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTablesRequest::ListTablesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_keyspaceNameHasBeenSet(false)
-{
-}
-
 Aws::String ListTablesRequest::SerializePayload() const
 {
   JsonValue payload;

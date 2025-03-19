@@ -34,7 +34,7 @@ namespace Model
   class CatalogConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API CatalogConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API CatalogConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API CatalogConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API CatalogConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * this database for SQL queries that you write in a Managed Service for Apache
      * Flink Studio notebook.</p>
      */
-    inline const GlueDataCatalogConfigurationDescription& GetGlueDataCatalogConfigurationDescription() const{ return m_glueDataCatalogConfigurationDescription; }
+    inline const GlueDataCatalogConfigurationDescription& GetGlueDataCatalogConfigurationDescription() const { return m_glueDataCatalogConfigurationDescription; }
     inline bool GlueDataCatalogConfigurationDescriptionHasBeenSet() const { return m_glueDataCatalogConfigurationDescriptionHasBeenSet; }
-    inline void SetGlueDataCatalogConfigurationDescription(const GlueDataCatalogConfigurationDescription& value) { m_glueDataCatalogConfigurationDescriptionHasBeenSet = true; m_glueDataCatalogConfigurationDescription = value; }
-    inline void SetGlueDataCatalogConfigurationDescription(GlueDataCatalogConfigurationDescription&& value) { m_glueDataCatalogConfigurationDescriptionHasBeenSet = true; m_glueDataCatalogConfigurationDescription = std::move(value); }
-    inline CatalogConfigurationDescription& WithGlueDataCatalogConfigurationDescription(const GlueDataCatalogConfigurationDescription& value) { SetGlueDataCatalogConfigurationDescription(value); return *this;}
-    inline CatalogConfigurationDescription& WithGlueDataCatalogConfigurationDescription(GlueDataCatalogConfigurationDescription&& value) { SetGlueDataCatalogConfigurationDescription(std::move(value)); return *this;}
+    template<typename GlueDataCatalogConfigurationDescriptionT = GlueDataCatalogConfigurationDescription>
+    void SetGlueDataCatalogConfigurationDescription(GlueDataCatalogConfigurationDescriptionT&& value) { m_glueDataCatalogConfigurationDescriptionHasBeenSet = true; m_glueDataCatalogConfigurationDescription = std::forward<GlueDataCatalogConfigurationDescriptionT>(value); }
+    template<typename GlueDataCatalogConfigurationDescriptionT = GlueDataCatalogConfigurationDescription>
+    CatalogConfigurationDescription& WithGlueDataCatalogConfigurationDescription(GlueDataCatalogConfigurationDescriptionT&& value) { SetGlueDataCatalogConfigurationDescription(std::forward<GlueDataCatalogConfigurationDescriptionT>(value)); return *this;}
     ///@}
   private:
 

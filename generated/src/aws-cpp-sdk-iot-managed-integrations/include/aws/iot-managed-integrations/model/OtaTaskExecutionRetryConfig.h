@@ -32,7 +32,7 @@ namespace Model
   class OtaTaskExecutionRetryConfig
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRetryConfig();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRetryConfig() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRetryConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionRetryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The list of retry config criteria.</p>
      */
-    inline const Aws::Vector<RetryConfigCriteria>& GetRetryConfigCriteria() const{ return m_retryConfigCriteria; }
+    inline const Aws::Vector<RetryConfigCriteria>& GetRetryConfigCriteria() const { return m_retryConfigCriteria; }
     inline bool RetryConfigCriteriaHasBeenSet() const { return m_retryConfigCriteriaHasBeenSet; }
-    inline void SetRetryConfigCriteria(const Aws::Vector<RetryConfigCriteria>& value) { m_retryConfigCriteriaHasBeenSet = true; m_retryConfigCriteria = value; }
-    inline void SetRetryConfigCriteria(Aws::Vector<RetryConfigCriteria>&& value) { m_retryConfigCriteriaHasBeenSet = true; m_retryConfigCriteria = std::move(value); }
-    inline OtaTaskExecutionRetryConfig& WithRetryConfigCriteria(const Aws::Vector<RetryConfigCriteria>& value) { SetRetryConfigCriteria(value); return *this;}
-    inline OtaTaskExecutionRetryConfig& WithRetryConfigCriteria(Aws::Vector<RetryConfigCriteria>&& value) { SetRetryConfigCriteria(std::move(value)); return *this;}
-    inline OtaTaskExecutionRetryConfig& AddRetryConfigCriteria(const RetryConfigCriteria& value) { m_retryConfigCriteriaHasBeenSet = true; m_retryConfigCriteria.push_back(value); return *this; }
-    inline OtaTaskExecutionRetryConfig& AddRetryConfigCriteria(RetryConfigCriteria&& value) { m_retryConfigCriteriaHasBeenSet = true; m_retryConfigCriteria.push_back(std::move(value)); return *this; }
+    template<typename RetryConfigCriteriaT = Aws::Vector<RetryConfigCriteria>>
+    void SetRetryConfigCriteria(RetryConfigCriteriaT&& value) { m_retryConfigCriteriaHasBeenSet = true; m_retryConfigCriteria = std::forward<RetryConfigCriteriaT>(value); }
+    template<typename RetryConfigCriteriaT = Aws::Vector<RetryConfigCriteria>>
+    OtaTaskExecutionRetryConfig& WithRetryConfigCriteria(RetryConfigCriteriaT&& value) { SetRetryConfigCriteria(std::forward<RetryConfigCriteriaT>(value)); return *this;}
+    template<typename RetryConfigCriteriaT = RetryConfigCriteria>
+    OtaTaskExecutionRetryConfig& AddRetryConfigCriteria(RetryConfigCriteriaT&& value) { m_retryConfigCriteriaHasBeenSet = true; m_retryConfigCriteria.emplace_back(std::forward<RetryConfigCriteriaT>(value)); return *this; }
     ///@}
   private:
 

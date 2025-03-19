@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPhoneNumbersRequest::ListPhoneNumbersRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_phoneNumberTypesHasBeenSet(false),
-    m_phoneNumberCountryCodesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPhoneNumbersRequest::SerializePayload() const
 {
   return {};

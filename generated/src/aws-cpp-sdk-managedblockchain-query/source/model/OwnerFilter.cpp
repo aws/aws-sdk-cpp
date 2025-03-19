@@ -18,13 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-OwnerFilter::OwnerFilter() : 
-    m_addressHasBeenSet(false)
-{
-}
-
 OwnerFilter::OwnerFilter(JsonView jsonValue)
-  : OwnerFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OwnerFilter& OwnerFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetString("address");
-
     m_addressHasBeenSet = true;
   }
-
   return *this;
 }
 

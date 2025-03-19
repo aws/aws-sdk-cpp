@@ -18,26 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-CustomerAgentInfo::CustomerAgentInfo() : 
-    m_activeAgents(0),
-    m_activeAgentsHasBeenSet(false),
-    m_healthyAgents(0),
-    m_healthyAgentsHasBeenSet(false),
-    m_blackListedAgents(0),
-    m_blackListedAgentsHasBeenSet(false),
-    m_shutdownAgents(0),
-    m_shutdownAgentsHasBeenSet(false),
-    m_unhealthyAgents(0),
-    m_unhealthyAgentsHasBeenSet(false),
-    m_totalAgents(0),
-    m_totalAgentsHasBeenSet(false),
-    m_unknownAgents(0),
-    m_unknownAgentsHasBeenSet(false)
-{
-}
-
 CustomerAgentInfo::CustomerAgentInfo(JsonView jsonValue)
-  : CustomerAgentInfo()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ CustomerAgentInfo& CustomerAgentInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activeAgents"))
   {
     m_activeAgents = jsonValue.GetInteger("activeAgents");
-
     m_activeAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthyAgents"))
   {
     m_healthyAgents = jsonValue.GetInteger("healthyAgents");
-
     m_healthyAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blackListedAgents"))
   {
     m_blackListedAgents = jsonValue.GetInteger("blackListedAgents");
-
     m_blackListedAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shutdownAgents"))
   {
     m_shutdownAgents = jsonValue.GetInteger("shutdownAgents");
-
     m_shutdownAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unhealthyAgents"))
   {
     m_unhealthyAgents = jsonValue.GetInteger("unhealthyAgents");
-
     m_unhealthyAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalAgents"))
   {
     m_totalAgents = jsonValue.GetInteger("totalAgents");
-
     m_totalAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknownAgents"))
   {
     m_unknownAgents = jsonValue.GetInteger("unknownAgents");
-
     m_unknownAgentsHasBeenSet = true;
   }
-
   return *this;
 }
 

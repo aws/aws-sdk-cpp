@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-EFSMountConnectivityException::EFSMountConnectivityException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 EFSMountConnectivityException::EFSMountConnectivityException(JsonView jsonValue)
-  : EFSMountConnectivityException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EFSMountConnectivityException& EFSMountConnectivityException::operator =(JsonVie
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

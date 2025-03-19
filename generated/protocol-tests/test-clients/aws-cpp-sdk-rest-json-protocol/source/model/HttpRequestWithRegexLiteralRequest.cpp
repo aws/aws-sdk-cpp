@@ -12,11 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpRequestWithRegexLiteralRequest::HttpRequestWithRegexLiteralRequest() : 
-    m_strHasBeenSet(false)
-{
-}
-
 Aws::String HttpRequestWithRegexLiteralRequest::SerializePayload() const
 {
   return {};

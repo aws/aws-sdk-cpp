@@ -12,11 +12,6 @@ using namespace Aws::DLM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLifecyclePolicyRequest::DeleteLifecyclePolicyRequest() : 
-    m_policyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLifecyclePolicyRequest::SerializePayload() const
 {
   return {};

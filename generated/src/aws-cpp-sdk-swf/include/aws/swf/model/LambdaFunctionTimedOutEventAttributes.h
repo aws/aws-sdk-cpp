@@ -32,7 +32,7 @@ namespace Model
   class LambdaFunctionTimedOutEventAttributes
   {
   public:
-    AWS_SWF_API LambdaFunctionTimedOutEventAttributes();
+    AWS_SWF_API LambdaFunctionTimedOutEventAttributes() = default;
     AWS_SWF_API LambdaFunctionTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API LambdaFunctionTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * when this activity task was scheduled. To help diagnose issues, use this
      * information to trace back the chain of events leading up to this event.</p>
      */
-    inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
+    inline long long GetScheduledEventId() const { return m_scheduledEventId; }
     inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
     inline LambdaFunctionTimedOutEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * this activity task started. To help diagnose issues, use this information to
      * trace back the chain of events leading up to this event.</p>
      */
-    inline long long GetStartedEventId() const{ return m_startedEventId; }
+    inline long long GetStartedEventId() const { return m_startedEventId; }
     inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
     inline LambdaFunctionTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
@@ -66,22 +66,20 @@ namespace Model
     /**
      * <p>The type of the timeout that caused this event.</p>
      */
-    inline const LambdaFunctionTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
+    inline LambdaFunctionTimeoutType GetTimeoutType() const { return m_timeoutType; }
     inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
-    inline void SetTimeoutType(const LambdaFunctionTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
-    inline void SetTimeoutType(LambdaFunctionTimeoutType&& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = std::move(value); }
-    inline LambdaFunctionTimedOutEventAttributes& WithTimeoutType(const LambdaFunctionTimeoutType& value) { SetTimeoutType(value); return *this;}
-    inline LambdaFunctionTimedOutEventAttributes& WithTimeoutType(LambdaFunctionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
+    inline void SetTimeoutType(LambdaFunctionTimeoutType value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
+    inline LambdaFunctionTimedOutEventAttributes& WithTimeoutType(LambdaFunctionTimeoutType value) { SetTimeoutType(value); return *this;}
     ///@}
   private:
 
-    long long m_scheduledEventId;
+    long long m_scheduledEventId{0};
     bool m_scheduledEventIdHasBeenSet = false;
 
-    long long m_startedEventId;
+    long long m_startedEventId{0};
     bool m_startedEventIdHasBeenSet = false;
 
-    LambdaFunctionTimeoutType m_timeoutType;
+    LambdaFunctionTimeoutType m_timeoutType{LambdaFunctionTimeoutType::NOT_SET};
     bool m_timeoutTypeHasBeenSet = false;
   };
 

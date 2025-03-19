@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-OwnershipControls::OwnershipControls() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 OwnershipControls::OwnershipControls(const XmlNode& xmlNode)
-  : OwnershipControls()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ OwnershipControls& OwnershipControls::operator =(const XmlNode& xmlNode)
     if(!rulesNode.IsNull())
     {
       XmlNode ruleMember = rulesNode;
+      m_rulesHasBeenSet = !ruleMember.IsNull();
       while(!ruleMember.IsNull())
       {
         m_rules.push_back(ruleMember);

@@ -29,7 +29,7 @@ namespace Model
   class FrameCaptureHlsSettings
   {
   public:
-    AWS_MEDIALIVE_API FrameCaptureHlsSettings();
+    AWS_MEDIALIVE_API FrameCaptureHlsSettings() = default;
     AWS_MEDIALIVE_API FrameCaptureHlsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FrameCaptureHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

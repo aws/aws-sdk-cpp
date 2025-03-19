@@ -21,7 +21,7 @@ namespace Model
   class RegisterContainerImageRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API RegisterContainerImageRequest();
+    AWS_LIGHTSAIL_API RegisterContainerImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the container service for which to register a container
      * image.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline RegisterContainerImageRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline RegisterContainerImageRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline RegisterContainerImageRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    RegisterContainerImageRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,28 +67,24 @@ namespace Model
      * register another container image, the version number will be <code>3</code>, and
      * so on.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline RegisterContainerImageRequest& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline RegisterContainerImageRequest& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline RegisterContainerImageRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    RegisterContainerImageRequest& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The digest of the container image to be registered.</p>
      */
-    inline const Aws::String& GetDigest() const{ return m_digest; }
+    inline const Aws::String& GetDigest() const { return m_digest; }
     inline bool DigestHasBeenSet() const { return m_digestHasBeenSet; }
-    inline void SetDigest(const Aws::String& value) { m_digestHasBeenSet = true; m_digest = value; }
-    inline void SetDigest(Aws::String&& value) { m_digestHasBeenSet = true; m_digest = std::move(value); }
-    inline void SetDigest(const char* value) { m_digestHasBeenSet = true; m_digest.assign(value); }
-    inline RegisterContainerImageRequest& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
-    inline RegisterContainerImageRequest& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
-    inline RegisterContainerImageRequest& WithDigest(const char* value) { SetDigest(value); return *this;}
+    template<typename DigestT = Aws::String>
+    void SetDigest(DigestT&& value) { m_digestHasBeenSet = true; m_digest = std::forward<DigestT>(value); }
+    template<typename DigestT = Aws::String>
+    RegisterContainerImageRequest& WithDigest(DigestT&& value) { SetDigest(std::forward<DigestT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class CreateScanResult
   {
   public:
-    AWS_CODEGURUSECURITY_API CreateScanResult();
+    AWS_CODEGURUSECURITY_API CreateScanResult() = default;
     AWS_CODEGURUSECURITY_API CreateScanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUSECURITY_API CreateScanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,50 +39,44 @@ namespace Model
      * <p>The identifier for the resource object that contains resources that were
      * scanned.</p>
      */
-    inline const ResourceId& GetResourceId() const{ return m_resourceId; }
-    inline void SetResourceId(const ResourceId& value) { m_resourceId = value; }
-    inline void SetResourceId(ResourceId&& value) { m_resourceId = std::move(value); }
-    inline CreateScanResult& WithResourceId(const ResourceId& value) { SetResourceId(value); return *this;}
-    inline CreateScanResult& WithResourceId(ResourceId&& value) { SetResourceId(std::move(value)); return *this;}
+    inline const ResourceId& GetResourceId() const { return m_resourceId; }
+    template<typename ResourceIdT = ResourceId>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = ResourceId>
+    CreateScanResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>UUID that identifies the individual scan run.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
-    inline void SetRunId(const Aws::String& value) { m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runId.assign(value); }
-    inline CreateScanResult& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline CreateScanResult& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline CreateScanResult& WithRunId(const char* value) { SetRunId(value); return *this;}
+    inline const Aws::String& GetRunId() const { return m_runId; }
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    CreateScanResult& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the scan.</p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
-    inline void SetScanName(const Aws::String& value) { m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanName.assign(value); }
-    inline CreateScanResult& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline CreateScanResult& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline CreateScanResult& WithScanName(const char* value) { SetScanName(value); return *this;}
+    inline const Aws::String& GetScanName() const { return m_scanName; }
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    CreateScanResult& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the scan name.</p>
      */
-    inline const Aws::String& GetScanNameArn() const{ return m_scanNameArn; }
-    inline void SetScanNameArn(const Aws::String& value) { m_scanNameArn = value; }
-    inline void SetScanNameArn(Aws::String&& value) { m_scanNameArn = std::move(value); }
-    inline void SetScanNameArn(const char* value) { m_scanNameArn.assign(value); }
-    inline CreateScanResult& WithScanNameArn(const Aws::String& value) { SetScanNameArn(value); return *this;}
-    inline CreateScanResult& WithScanNameArn(Aws::String&& value) { SetScanNameArn(std::move(value)); return *this;}
-    inline CreateScanResult& WithScanNameArn(const char* value) { SetScanNameArn(value); return *this;}
+    inline const Aws::String& GetScanNameArn() const { return m_scanNameArn; }
+    template<typename ScanNameArnT = Aws::String>
+    void SetScanNameArn(ScanNameArnT&& value) { m_scanNameArnHasBeenSet = true; m_scanNameArn = std::forward<ScanNameArnT>(value); }
+    template<typename ScanNameArnT = Aws::String>
+    CreateScanResult& WithScanNameArn(ScanNameArnT&& value) { SetScanNameArn(std::forward<ScanNameArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,36 +84,38 @@ namespace Model
      * <p>The current state of the scan. Returns either <code>InProgress</code>,
      * <code>Successful</code>, or <code>Failed</code>.</p>
      */
-    inline const ScanState& GetScanState() const{ return m_scanState; }
-    inline void SetScanState(const ScanState& value) { m_scanState = value; }
-    inline void SetScanState(ScanState&& value) { m_scanState = std::move(value); }
-    inline CreateScanResult& WithScanState(const ScanState& value) { SetScanState(value); return *this;}
-    inline CreateScanResult& WithScanState(ScanState&& value) { SetScanState(std::move(value)); return *this;}
+    inline ScanState GetScanState() const { return m_scanState; }
+    inline void SetScanState(ScanState value) { m_scanStateHasBeenSet = true; m_scanState = value; }
+    inline CreateScanResult& WithScanState(ScanState value) { SetScanState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateScanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateScanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateScanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateScanResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceId m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_runId;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_scanName;
+    bool m_scanNameHasBeenSet = false;
 
     Aws::String m_scanNameArn;
+    bool m_scanNameArnHasBeenSet = false;
 
-    ScanState m_scanState;
+    ScanState m_scanState{ScanState::NOT_SET};
+    bool m_scanStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineTrafficOptions::IsolineTrafficOptions() : 
-    m_flowEventThresholdOverride(0),
-    m_flowEventThresholdOverrideHasBeenSet(false),
-    m_usage(TrafficUsage::NOT_SET),
-    m_usageHasBeenSet(false)
-{
-}
-
 IsolineTrafficOptions::IsolineTrafficOptions(JsonView jsonValue)
-  : IsolineTrafficOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IsolineTrafficOptions& IsolineTrafficOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FlowEventThresholdOverride"))
   {
     m_flowEventThresholdOverride = jsonValue.GetInt64("FlowEventThresholdOverride");
-
     m_flowEventThresholdOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Usage"))
   {
     m_usage = TrafficUsageMapper::GetTrafficUsageForName(jsonValue.GetString("Usage"));
-
     m_usageHasBeenSet = true;
   }
-
   return *this;
 }
 

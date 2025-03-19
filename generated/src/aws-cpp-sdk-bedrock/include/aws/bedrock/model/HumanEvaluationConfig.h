@@ -49,7 +49,7 @@ namespace Model
   class HumanEvaluationConfig
   {
   public:
-    AWS_BEDROCK_API HumanEvaluationConfig();
+    AWS_BEDROCK_API HumanEvaluationConfig() = default;
     AWS_BEDROCK_API HumanEvaluationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API HumanEvaluationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,12 @@ namespace Model
     /**
      * <p>The parameters of the human workflow.</p>
      */
-    inline const HumanWorkflowConfig& GetHumanWorkflowConfig() const{ return m_humanWorkflowConfig; }
+    inline const HumanWorkflowConfig& GetHumanWorkflowConfig() const { return m_humanWorkflowConfig; }
     inline bool HumanWorkflowConfigHasBeenSet() const { return m_humanWorkflowConfigHasBeenSet; }
-    inline void SetHumanWorkflowConfig(const HumanWorkflowConfig& value) { m_humanWorkflowConfigHasBeenSet = true; m_humanWorkflowConfig = value; }
-    inline void SetHumanWorkflowConfig(HumanWorkflowConfig&& value) { m_humanWorkflowConfigHasBeenSet = true; m_humanWorkflowConfig = std::move(value); }
-    inline HumanEvaluationConfig& WithHumanWorkflowConfig(const HumanWorkflowConfig& value) { SetHumanWorkflowConfig(value); return *this;}
-    inline HumanEvaluationConfig& WithHumanWorkflowConfig(HumanWorkflowConfig&& value) { SetHumanWorkflowConfig(std::move(value)); return *this;}
+    template<typename HumanWorkflowConfigT = HumanWorkflowConfig>
+    void SetHumanWorkflowConfig(HumanWorkflowConfigT&& value) { m_humanWorkflowConfigHasBeenSet = true; m_humanWorkflowConfig = std::forward<HumanWorkflowConfigT>(value); }
+    template<typename HumanWorkflowConfigT = HumanWorkflowConfig>
+    HumanEvaluationConfig& WithHumanWorkflowConfig(HumanWorkflowConfigT&& value) { SetHumanWorkflowConfig(std::forward<HumanWorkflowConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +72,14 @@ namespace Model
      * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
      * metrics, how the metrics are to be evaluated, an optional description.</p>
      */
-    inline const Aws::Vector<HumanEvaluationCustomMetric>& GetCustomMetrics() const{ return m_customMetrics; }
+    inline const Aws::Vector<HumanEvaluationCustomMetric>& GetCustomMetrics() const { return m_customMetrics; }
     inline bool CustomMetricsHasBeenSet() const { return m_customMetricsHasBeenSet; }
-    inline void SetCustomMetrics(const Aws::Vector<HumanEvaluationCustomMetric>& value) { m_customMetricsHasBeenSet = true; m_customMetrics = value; }
-    inline void SetCustomMetrics(Aws::Vector<HumanEvaluationCustomMetric>&& value) { m_customMetricsHasBeenSet = true; m_customMetrics = std::move(value); }
-    inline HumanEvaluationConfig& WithCustomMetrics(const Aws::Vector<HumanEvaluationCustomMetric>& value) { SetCustomMetrics(value); return *this;}
-    inline HumanEvaluationConfig& WithCustomMetrics(Aws::Vector<HumanEvaluationCustomMetric>&& value) { SetCustomMetrics(std::move(value)); return *this;}
-    inline HumanEvaluationConfig& AddCustomMetrics(const HumanEvaluationCustomMetric& value) { m_customMetricsHasBeenSet = true; m_customMetrics.push_back(value); return *this; }
-    inline HumanEvaluationConfig& AddCustomMetrics(HumanEvaluationCustomMetric&& value) { m_customMetricsHasBeenSet = true; m_customMetrics.push_back(std::move(value)); return *this; }
+    template<typename CustomMetricsT = Aws::Vector<HumanEvaluationCustomMetric>>
+    void SetCustomMetrics(CustomMetricsT&& value) { m_customMetricsHasBeenSet = true; m_customMetrics = std::forward<CustomMetricsT>(value); }
+    template<typename CustomMetricsT = Aws::Vector<HumanEvaluationCustomMetric>>
+    HumanEvaluationConfig& WithCustomMetrics(CustomMetricsT&& value) { SetCustomMetrics(std::forward<CustomMetricsT>(value)); return *this;}
+    template<typename CustomMetricsT = HumanEvaluationCustomMetric>
+    HumanEvaluationConfig& AddCustomMetrics(CustomMetricsT&& value) { m_customMetricsHasBeenSet = true; m_customMetrics.emplace_back(std::forward<CustomMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,14 +87,14 @@ namespace Model
      * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
      * evaluation job.</p>
      */
-    inline const Aws::Vector<EvaluationDatasetMetricConfig>& GetDatasetMetricConfigs() const{ return m_datasetMetricConfigs; }
+    inline const Aws::Vector<EvaluationDatasetMetricConfig>& GetDatasetMetricConfigs() const { return m_datasetMetricConfigs; }
     inline bool DatasetMetricConfigsHasBeenSet() const { return m_datasetMetricConfigsHasBeenSet; }
-    inline void SetDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = value; }
-    inline void SetDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = std::move(value); }
-    inline HumanEvaluationConfig& WithDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { SetDatasetMetricConfigs(value); return *this;}
-    inline HumanEvaluationConfig& WithDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { SetDatasetMetricConfigs(std::move(value)); return *this;}
-    inline HumanEvaluationConfig& AddDatasetMetricConfigs(const EvaluationDatasetMetricConfig& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(value); return *this; }
-    inline HumanEvaluationConfig& AddDatasetMetricConfigs(EvaluationDatasetMetricConfig&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(std::move(value)); return *this; }
+    template<typename DatasetMetricConfigsT = Aws::Vector<EvaluationDatasetMetricConfig>>
+    void SetDatasetMetricConfigs(DatasetMetricConfigsT&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = std::forward<DatasetMetricConfigsT>(value); }
+    template<typename DatasetMetricConfigsT = Aws::Vector<EvaluationDatasetMetricConfig>>
+    HumanEvaluationConfig& WithDatasetMetricConfigs(DatasetMetricConfigsT&& value) { SetDatasetMetricConfigs(std::forward<DatasetMetricConfigsT>(value)); return *this;}
+    template<typename DatasetMetricConfigsT = EvaluationDatasetMetricConfig>
+    HumanEvaluationConfig& AddDatasetMetricConfigs(DatasetMetricConfigsT&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.emplace_back(std::forward<DatasetMetricConfigsT>(value)); return *this; }
     ///@}
   private:
 

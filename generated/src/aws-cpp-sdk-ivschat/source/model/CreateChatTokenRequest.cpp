@@ -12,16 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChatTokenRequest::CreateChatTokenRequest() : 
-    m_roomIdentifierHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_sessionDurationInMinutes(0),
-    m_sessionDurationInMinutesHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String CreateChatTokenRequest::SerializePayload() const
 {
   JsonValue payload;

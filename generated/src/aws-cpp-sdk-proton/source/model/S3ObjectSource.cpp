@@ -18,14 +18,7 @@ namespace Proton
 namespace Model
 {
 
-S3ObjectSource::S3ObjectSource() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 S3ObjectSource::S3ObjectSource(JsonView jsonValue)
-  : S3ObjectSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3ObjectSource& S3ObjectSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

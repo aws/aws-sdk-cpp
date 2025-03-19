@@ -18,20 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-ExportJobSummary::ExportJobSummary() : 
-    m_exportJobIdentifierHasBeenSet(false),
-    m_exportJobArnHasBeenSet(false),
-    m_status(ExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_searchJobArnHasBeenSet(false)
-{
-}
-
 ExportJobSummary::ExportJobSummary(JsonView jsonValue)
-  : ExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ExportJobSummary& ExportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportJobIdentifier"))
   {
     m_exportJobIdentifier = jsonValue.GetString("ExportJobIdentifier");
-
     m_exportJobIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportJobArn"))
   {
     m_exportJobArn = jsonValue.GetString("ExportJobArn");
-
     m_exportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExportJobStatusMapper::GetExportJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchJobArn"))
   {
     m_searchJobArn = jsonValue.GetString("SearchJobArn");
-
     m_searchJobArnHasBeenSet = true;
   }
-
   return *this;
 }
 

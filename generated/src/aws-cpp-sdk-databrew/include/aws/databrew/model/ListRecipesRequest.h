@@ -25,7 +25,7 @@ namespace Model
   class ListRecipesRequest : public GlueDataBrewRequest
   {
   public:
-    AWS_GLUEDATABREW_API ListRecipesRequest();
+    AWS_GLUEDATABREW_API ListRecipesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return in this request. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRecipesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
      * <p>The token returned by a previous call to retrieve the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRecipesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecipesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecipesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecipesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,16 @@ namespace Model
      * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
      * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
-    inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
+    inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
-    inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
-    inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
-    inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
-    inline ListRecipesRequest& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
-    inline ListRecipesRequest& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
-    inline ListRecipesRequest& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
+    template<typename RecipeVersionT = Aws::String>
+    void SetRecipeVersion(RecipeVersionT&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::forward<RecipeVersionT>(value); }
+    template<typename RecipeVersionT = Aws::String>
+    ListRecipesRequest& WithRecipeVersion(RecipeVersionT&& value) { SetRecipeVersion(std::forward<RecipeVersionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -29,7 +29,7 @@ namespace Model
   class DetectTextResult
   {
   public:
-    AWS_REKOGNITION_API DetectTextResult();
+    AWS_REKOGNITION_API DetectTextResult() = default;
     AWS_REKOGNITION_API DetectTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DetectTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>An array of text that was detected in the input image.</p>
      */
-    inline const Aws::Vector<TextDetection>& GetTextDetections() const{ return m_textDetections; }
-    inline void SetTextDetections(const Aws::Vector<TextDetection>& value) { m_textDetections = value; }
-    inline void SetTextDetections(Aws::Vector<TextDetection>&& value) { m_textDetections = std::move(value); }
-    inline DetectTextResult& WithTextDetections(const Aws::Vector<TextDetection>& value) { SetTextDetections(value); return *this;}
-    inline DetectTextResult& WithTextDetections(Aws::Vector<TextDetection>&& value) { SetTextDetections(std::move(value)); return *this;}
-    inline DetectTextResult& AddTextDetections(const TextDetection& value) { m_textDetections.push_back(value); return *this; }
-    inline DetectTextResult& AddTextDetections(TextDetection&& value) { m_textDetections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TextDetection>& GetTextDetections() const { return m_textDetections; }
+    template<typename TextDetectionsT = Aws::Vector<TextDetection>>
+    void SetTextDetections(TextDetectionsT&& value) { m_textDetectionsHasBeenSet = true; m_textDetections = std::forward<TextDetectionsT>(value); }
+    template<typename TextDetectionsT = Aws::Vector<TextDetection>>
+    DetectTextResult& WithTextDetections(TextDetectionsT&& value) { SetTextDetections(std::forward<TextDetectionsT>(value)); return *this;}
+    template<typename TextDetectionsT = TextDetection>
+    DetectTextResult& AddTextDetections(TextDetectionsT&& value) { m_textDetectionsHasBeenSet = true; m_textDetections.emplace_back(std::forward<TextDetectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The model version used to detect text.</p>
      */
-    inline const Aws::String& GetTextModelVersion() const{ return m_textModelVersion; }
-    inline void SetTextModelVersion(const Aws::String& value) { m_textModelVersion = value; }
-    inline void SetTextModelVersion(Aws::String&& value) { m_textModelVersion = std::move(value); }
-    inline void SetTextModelVersion(const char* value) { m_textModelVersion.assign(value); }
-    inline DetectTextResult& WithTextModelVersion(const Aws::String& value) { SetTextModelVersion(value); return *this;}
-    inline DetectTextResult& WithTextModelVersion(Aws::String&& value) { SetTextModelVersion(std::move(value)); return *this;}
-    inline DetectTextResult& WithTextModelVersion(const char* value) { SetTextModelVersion(value); return *this;}
+    inline const Aws::String& GetTextModelVersion() const { return m_textModelVersion; }
+    template<typename TextModelVersionT = Aws::String>
+    void SetTextModelVersion(TextModelVersionT&& value) { m_textModelVersionHasBeenSet = true; m_textModelVersion = std::forward<TextModelVersionT>(value); }
+    template<typename TextModelVersionT = Aws::String>
+    DetectTextResult& WithTextModelVersion(TextModelVersionT&& value) { SetTextModelVersion(std::forward<TextModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectTextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectTextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectTextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectTextResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TextDetection> m_textDetections;
+    bool m_textDetectionsHasBeenSet = false;
 
     Aws::String m_textModelVersion;
+    bool m_textModelVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

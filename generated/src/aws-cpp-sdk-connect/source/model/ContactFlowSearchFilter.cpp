@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFlowSearchFilter::ContactFlowSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 ContactFlowSearchFilter::ContactFlowSearchFilter(JsonView jsonValue)
-  : ContactFlowSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContactFlowSearchFilter& ContactFlowSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

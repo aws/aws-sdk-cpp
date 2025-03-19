@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSeverityLevelsResult::DescribeSeverityLevelsResult()
-{
-}
-
 DescribeSeverityLevelsResult::DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeSeverityLevelsResult& DescribeSeverityLevelsResult::operator =(const Aws
     {
       m_severityLevels.push_back(severityLevelsJsonList[severityLevelsIndex].AsObject());
     }
+    m_severityLevelsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

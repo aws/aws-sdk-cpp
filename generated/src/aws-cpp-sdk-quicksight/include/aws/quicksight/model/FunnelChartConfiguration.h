@@ -38,7 +38,7 @@ namespace Model
   class FunnelChartConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API FunnelChartConfiguration();
+    AWS_QUICKSIGHT_API FunnelChartConfiguration() = default;
     AWS_QUICKSIGHT_API FunnelChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FunnelChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,24 +48,24 @@ namespace Model
     /**
      * <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
      */
-    inline const FunnelChartFieldWells& GetFieldWells() const{ return m_fieldWells; }
+    inline const FunnelChartFieldWells& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const FunnelChartFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(FunnelChartFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline FunnelChartConfiguration& WithFieldWells(const FunnelChartFieldWells& value) { SetFieldWells(value); return *this;}
-    inline FunnelChartConfiguration& WithFieldWells(FunnelChartFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    template<typename FieldWellsT = FunnelChartFieldWells>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = FunnelChartFieldWells>
+    FunnelChartConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of a <code>FunnelChartVisual</code>.</p>
      */
-    inline const FunnelChartSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const FunnelChartSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const FunnelChartSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(FunnelChartSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline FunnelChartConfiguration& WithSortConfiguration(const FunnelChartSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline FunnelChartConfiguration& WithSortConfiguration(FunnelChartSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = FunnelChartSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = FunnelChartSortConfiguration>
+    FunnelChartConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>The label options of the categories that are displayed in a
      * <code>FunnelChartVisual</code>.</p>
      */
-    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const{ return m_categoryLabelOptions; }
+    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const { return m_categoryLabelOptions; }
     inline bool CategoryLabelOptionsHasBeenSet() const { return m_categoryLabelOptionsHasBeenSet; }
-    inline void SetCategoryLabelOptions(const ChartAxisLabelOptions& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = value; }
-    inline void SetCategoryLabelOptions(ChartAxisLabelOptions&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::move(value); }
-    inline FunnelChartConfiguration& WithCategoryLabelOptions(const ChartAxisLabelOptions& value) { SetCategoryLabelOptions(value); return *this;}
-    inline FunnelChartConfiguration& WithCategoryLabelOptions(ChartAxisLabelOptions&& value) { SetCategoryLabelOptions(std::move(value)); return *this;}
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    void SetCategoryLabelOptions(CategoryLabelOptionsT&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::forward<CategoryLabelOptionsT>(value); }
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    FunnelChartConfiguration& WithCategoryLabelOptions(CategoryLabelOptionsT&& value) { SetCategoryLabelOptions(std::forward<CategoryLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,60 +86,60 @@ namespace Model
      * <p>The label options for the values that are displayed in a
      * <code>FunnelChartVisual</code>.</p>
      */
-    inline const ChartAxisLabelOptions& GetValueLabelOptions() const{ return m_valueLabelOptions; }
+    inline const ChartAxisLabelOptions& GetValueLabelOptions() const { return m_valueLabelOptions; }
     inline bool ValueLabelOptionsHasBeenSet() const { return m_valueLabelOptionsHasBeenSet; }
-    inline void SetValueLabelOptions(const ChartAxisLabelOptions& value) { m_valueLabelOptionsHasBeenSet = true; m_valueLabelOptions = value; }
-    inline void SetValueLabelOptions(ChartAxisLabelOptions&& value) { m_valueLabelOptionsHasBeenSet = true; m_valueLabelOptions = std::move(value); }
-    inline FunnelChartConfiguration& WithValueLabelOptions(const ChartAxisLabelOptions& value) { SetValueLabelOptions(value); return *this;}
-    inline FunnelChartConfiguration& WithValueLabelOptions(ChartAxisLabelOptions&& value) { SetValueLabelOptions(std::move(value)); return *this;}
+    template<typename ValueLabelOptionsT = ChartAxisLabelOptions>
+    void SetValueLabelOptions(ValueLabelOptionsT&& value) { m_valueLabelOptionsHasBeenSet = true; m_valueLabelOptions = std::forward<ValueLabelOptionsT>(value); }
+    template<typename ValueLabelOptionsT = ChartAxisLabelOptions>
+    FunnelChartConfiguration& WithValueLabelOptions(ValueLabelOptionsT&& value) { SetValueLabelOptions(std::forward<ValueLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tooltip configuration of a <code>FunnelChartVisual</code>.</p>
      */
-    inline const TooltipOptions& GetTooltip() const{ return m_tooltip; }
+    inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-    inline void SetTooltip(const TooltipOptions& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-    inline void SetTooltip(TooltipOptions&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-    inline FunnelChartConfiguration& WithTooltip(const TooltipOptions& value) { SetTooltip(value); return *this;}
-    inline FunnelChartConfiguration& WithTooltip(TooltipOptions&& value) { SetTooltip(std::move(value)); return *this;}
+    template<typename TooltipT = TooltipOptions>
+    void SetTooltip(TooltipT&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::forward<TooltipT>(value); }
+    template<typename TooltipT = TooltipOptions>
+    FunnelChartConfiguration& WithTooltip(TooltipT&& value) { SetTooltip(std::forward<TooltipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the presentation of the data labels.</p>
      */
-    inline const FunnelChartDataLabelOptions& GetDataLabelOptions() const{ return m_dataLabelOptions; }
+    inline const FunnelChartDataLabelOptions& GetDataLabelOptions() const { return m_dataLabelOptions; }
     inline bool DataLabelOptionsHasBeenSet() const { return m_dataLabelOptionsHasBeenSet; }
-    inline void SetDataLabelOptions(const FunnelChartDataLabelOptions& value) { m_dataLabelOptionsHasBeenSet = true; m_dataLabelOptions = value; }
-    inline void SetDataLabelOptions(FunnelChartDataLabelOptions&& value) { m_dataLabelOptionsHasBeenSet = true; m_dataLabelOptions = std::move(value); }
-    inline FunnelChartConfiguration& WithDataLabelOptions(const FunnelChartDataLabelOptions& value) { SetDataLabelOptions(value); return *this;}
-    inline FunnelChartConfiguration& WithDataLabelOptions(FunnelChartDataLabelOptions&& value) { SetDataLabelOptions(std::move(value)); return *this;}
+    template<typename DataLabelOptionsT = FunnelChartDataLabelOptions>
+    void SetDataLabelOptions(DataLabelOptionsT&& value) { m_dataLabelOptionsHasBeenSet = true; m_dataLabelOptions = std::forward<DataLabelOptionsT>(value); }
+    template<typename DataLabelOptionsT = FunnelChartDataLabelOptions>
+    FunnelChartConfiguration& WithDataLabelOptions(DataLabelOptionsT&& value) { SetDataLabelOptions(std::forward<DataLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>
      */
-    inline const VisualPalette& GetVisualPalette() const{ return m_visualPalette; }
+    inline const VisualPalette& GetVisualPalette() const { return m_visualPalette; }
     inline bool VisualPaletteHasBeenSet() const { return m_visualPaletteHasBeenSet; }
-    inline void SetVisualPalette(const VisualPalette& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = value; }
-    inline void SetVisualPalette(VisualPalette&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::move(value); }
-    inline FunnelChartConfiguration& WithVisualPalette(const VisualPalette& value) { SetVisualPalette(value); return *this;}
-    inline FunnelChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
+    template<typename VisualPaletteT = VisualPalette>
+    void SetVisualPalette(VisualPaletteT&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::forward<VisualPaletteT>(value); }
+    template<typename VisualPaletteT = VisualPalette>
+    FunnelChartConfiguration& WithVisualPalette(VisualPaletteT&& value) { SetVisualPalette(std::forward<VisualPaletteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline FunnelChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline FunnelChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    FunnelChartConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteFeaturedResultsSetRequest::BatchDeleteFeaturedResultsSetRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_featuredResultsSetIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteFeaturedResultsSetRequest::SerializePayload() const
 {
   JsonValue payload;

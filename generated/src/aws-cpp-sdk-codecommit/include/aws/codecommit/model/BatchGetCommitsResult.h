@@ -30,7 +30,7 @@ namespace Model
   class BatchGetCommitsResult
   {
   public:
-    AWS_CODECOMMIT_API BatchGetCommitsResult();
+    AWS_CODECOMMIT_API BatchGetCommitsResult() = default;
     AWS_CODECOMMIT_API BatchGetCommitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API BatchGetCommitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An array of commit data type objects, each of which contains information
      * about a specified commit.</p>
      */
-    inline const Aws::Vector<Commit>& GetCommits() const{ return m_commits; }
-    inline void SetCommits(const Aws::Vector<Commit>& value) { m_commits = value; }
-    inline void SetCommits(Aws::Vector<Commit>&& value) { m_commits = std::move(value); }
-    inline BatchGetCommitsResult& WithCommits(const Aws::Vector<Commit>& value) { SetCommits(value); return *this;}
-    inline BatchGetCommitsResult& WithCommits(Aws::Vector<Commit>&& value) { SetCommits(std::move(value)); return *this;}
-    inline BatchGetCommitsResult& AddCommits(const Commit& value) { m_commits.push_back(value); return *this; }
-    inline BatchGetCommitsResult& AddCommits(Commit&& value) { m_commits.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Commit>& GetCommits() const { return m_commits; }
+    template<typename CommitsT = Aws::Vector<Commit>>
+    void SetCommits(CommitsT&& value) { m_commitsHasBeenSet = true; m_commits = std::forward<CommitsT>(value); }
+    template<typename CommitsT = Aws::Vector<Commit>>
+    BatchGetCommitsResult& WithCommits(CommitsT&& value) { SetCommits(std::forward<CommitsT>(value)); return *this;}
+    template<typename CommitsT = Commit>
+    BatchGetCommitsResult& AddCommits(CommitsT&& value) { m_commitsHasBeenSet = true; m_commits.emplace_back(std::forward<CommitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,33 @@ namespace Model
      * the specified repository, the ID returns an error object with more
      * information.</p>
      */
-    inline const Aws::Vector<BatchGetCommitsError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetCommitsError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetCommitsError>&& value) { m_errors = std::move(value); }
-    inline BatchGetCommitsResult& WithErrors(const Aws::Vector<BatchGetCommitsError>& value) { SetErrors(value); return *this;}
-    inline BatchGetCommitsResult& WithErrors(Aws::Vector<BatchGetCommitsError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetCommitsResult& AddErrors(const BatchGetCommitsError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetCommitsResult& AddErrors(BatchGetCommitsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetCommitsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetCommitsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetCommitsError>>
+    BatchGetCommitsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetCommitsError>
+    BatchGetCommitsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetCommitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetCommitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetCommitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetCommitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Commit> m_commits;
+    bool m_commitsHasBeenSet = false;
 
     Aws::Vector<BatchGetCommitsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

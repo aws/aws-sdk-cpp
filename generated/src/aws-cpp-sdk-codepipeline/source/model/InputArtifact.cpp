@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-InputArtifact::InputArtifact() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 InputArtifact::InputArtifact(JsonView jsonValue)
-  : InputArtifact()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputArtifact& InputArtifact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

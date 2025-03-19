@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-CvssScoreAdjustment::CvssScoreAdjustment() : 
-    m_metricHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 CvssScoreAdjustment::CvssScoreAdjustment(JsonView jsonValue)
-  : CvssScoreAdjustment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CvssScoreAdjustment& CvssScoreAdjustment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metric"))
   {
     m_metric = jsonValue.GetString("metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

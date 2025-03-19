@@ -25,7 +25,7 @@ namespace Model
   class SetLoadBalancerListenerSSLCertificateRequest : public ElasticLoadBalancingRequest
   {
   public:
-    AWS_ELASTICLOADBALANCING_API SetLoadBalancerListenerSSLCertificateRequest();
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerListenerSSLCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port that uses the specified SSL certificate.</p>
      */
-    inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+    inline int GetLoadBalancerPort() const { return m_loadBalancerPort; }
     inline bool LoadBalancerPortHasBeenSet() const { return m_loadBalancerPortHasBeenSet; }
     inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
     inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
@@ -68,21 +66,19 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
      */
-    inline const Aws::String& GetSSLCertificateId() const{ return m_sSLCertificateId; }
+    inline const Aws::String& GetSSLCertificateId() const { return m_sSLCertificateId; }
     inline bool SSLCertificateIdHasBeenSet() const { return m_sSLCertificateIdHasBeenSet; }
-    inline void SetSSLCertificateId(const Aws::String& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = value; }
-    inline void SetSSLCertificateId(Aws::String&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = std::move(value); }
-    inline void SetSSLCertificateId(const char* value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId.assign(value); }
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(const Aws::String& value) { SetSSLCertificateId(value); return *this;}
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(Aws::String&& value) { SetSSLCertificateId(std::move(value)); return *this;}
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(const char* value) { SetSSLCertificateId(value); return *this;}
+    template<typename SSLCertificateIdT = Aws::String>
+    void SetSSLCertificateId(SSLCertificateIdT&& value) { m_sSLCertificateIdHasBeenSet = true; m_sSLCertificateId = std::forward<SSLCertificateIdT>(value); }
+    template<typename SSLCertificateIdT = Aws::String>
+    SetLoadBalancerListenerSSLCertificateRequest& WithSSLCertificateId(SSLCertificateIdT&& value) { SetSSLCertificateId(std::forward<SSLCertificateIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet = false;
 
-    int m_loadBalancerPort;
+    int m_loadBalancerPort{0};
     bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_sSLCertificateId;

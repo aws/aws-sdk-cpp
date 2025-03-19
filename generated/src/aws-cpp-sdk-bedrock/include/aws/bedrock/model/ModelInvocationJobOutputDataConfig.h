@@ -32,7 +32,7 @@ namespace Model
   class ModelInvocationJobOutputDataConfig
   {
   public:
-    AWS_BEDROCK_API ModelInvocationJobOutputDataConfig();
+    AWS_BEDROCK_API ModelInvocationJobOutputDataConfig() = default;
     AWS_BEDROCK_API ModelInvocationJobOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ModelInvocationJobOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains the configuration of the S3 location of the output data.</p>
      */
-    inline const ModelInvocationJobS3OutputDataConfig& GetS3OutputDataConfig() const{ return m_s3OutputDataConfig; }
+    inline const ModelInvocationJobS3OutputDataConfig& GetS3OutputDataConfig() const { return m_s3OutputDataConfig; }
     inline bool S3OutputDataConfigHasBeenSet() const { return m_s3OutputDataConfigHasBeenSet; }
-    inline void SetS3OutputDataConfig(const ModelInvocationJobS3OutputDataConfig& value) { m_s3OutputDataConfigHasBeenSet = true; m_s3OutputDataConfig = value; }
-    inline void SetS3OutputDataConfig(ModelInvocationJobS3OutputDataConfig&& value) { m_s3OutputDataConfigHasBeenSet = true; m_s3OutputDataConfig = std::move(value); }
-    inline ModelInvocationJobOutputDataConfig& WithS3OutputDataConfig(const ModelInvocationJobS3OutputDataConfig& value) { SetS3OutputDataConfig(value); return *this;}
-    inline ModelInvocationJobOutputDataConfig& WithS3OutputDataConfig(ModelInvocationJobS3OutputDataConfig&& value) { SetS3OutputDataConfig(std::move(value)); return *this;}
+    template<typename S3OutputDataConfigT = ModelInvocationJobS3OutputDataConfig>
+    void SetS3OutputDataConfig(S3OutputDataConfigT&& value) { m_s3OutputDataConfigHasBeenSet = true; m_s3OutputDataConfig = std::forward<S3OutputDataConfigT>(value); }
+    template<typename S3OutputDataConfigT = ModelInvocationJobS3OutputDataConfig>
+    ModelInvocationJobOutputDataConfig& WithS3OutputDataConfig(S3OutputDataConfigT&& value) { SetS3OutputDataConfig(std::forward<S3OutputDataConfigT>(value)); return *this;}
     ///@}
   private:
 

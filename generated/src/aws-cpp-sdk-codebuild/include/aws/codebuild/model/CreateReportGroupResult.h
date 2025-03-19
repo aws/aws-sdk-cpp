@@ -28,7 +28,7 @@ namespace Model
   class CreateReportGroupResult
   {
   public:
-    AWS_CODEBUILD_API CreateReportGroupResult();
+    AWS_CODEBUILD_API CreateReportGroupResult() = default;
     AWS_CODEBUILD_API CreateReportGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API CreateReportGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> Information about the report group that was created. </p>
      */
-    inline const ReportGroup& GetReportGroup() const{ return m_reportGroup; }
-    inline void SetReportGroup(const ReportGroup& value) { m_reportGroup = value; }
-    inline void SetReportGroup(ReportGroup&& value) { m_reportGroup = std::move(value); }
-    inline CreateReportGroupResult& WithReportGroup(const ReportGroup& value) { SetReportGroup(value); return *this;}
-    inline CreateReportGroupResult& WithReportGroup(ReportGroup&& value) { SetReportGroup(std::move(value)); return *this;}
+    inline const ReportGroup& GetReportGroup() const { return m_reportGroup; }
+    template<typename ReportGroupT = ReportGroup>
+    void SetReportGroup(ReportGroupT&& value) { m_reportGroupHasBeenSet = true; m_reportGroup = std::forward<ReportGroupT>(value); }
+    template<typename ReportGroupT = ReportGroup>
+    CreateReportGroupResult& WithReportGroup(ReportGroupT&& value) { SetReportGroup(std::forward<ReportGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateReportGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateReportGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateReportGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateReportGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReportGroup m_reportGroup;
+    bool m_reportGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

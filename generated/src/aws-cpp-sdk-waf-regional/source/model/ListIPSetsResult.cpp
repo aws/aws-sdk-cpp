@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIPSetsResult::ListIPSetsResult()
-{
-}
-
 ListIPSetsResult::ListIPSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IPSets"))
   {
     Aws::Utils::Array<JsonView> iPSetsJsonList = jsonValue.GetArray("IPSets");
@@ -42,14 +37,15 @@ ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_iPSets.push_back(iPSetsJsonList[iPSetsIndex].AsObject());
     }
+    m_iPSetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

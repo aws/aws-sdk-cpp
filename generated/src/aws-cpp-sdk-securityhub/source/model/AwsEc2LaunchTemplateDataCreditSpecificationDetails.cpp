@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataCreditSpecificationDetails::AwsEc2LaunchTemplateDataCreditSpecificationDetails() : 
-    m_cpuCreditsHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataCreditSpecificationDetails::AwsEc2LaunchTemplateDataCreditSpecificationDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataCreditSpecificationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2LaunchTemplateDataCreditSpecificationDetails& AwsEc2LaunchTemplateDataCred
   if(jsonValue.ValueExists("CpuCredits"))
   {
     m_cpuCredits = jsonValue.GetString("CpuCredits");
-
     m_cpuCreditsHasBeenSet = true;
   }
-
   return *this;
 }
 

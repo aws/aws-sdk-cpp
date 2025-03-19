@@ -31,7 +31,7 @@ namespace Model
   class IoTJobRateIncreaseCriteria
   {
   public:
-    AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria();
+    AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria() = default;
     AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The number of devices to receive the job notification before the rollout rate
      * increases.</p>
      */
-    inline int GetNumberOfNotifiedThings() const{ return m_numberOfNotifiedThings; }
+    inline int GetNumberOfNotifiedThings() const { return m_numberOfNotifiedThings; }
     inline bool NumberOfNotifiedThingsHasBeenSet() const { return m_numberOfNotifiedThingsHasBeenSet; }
     inline void SetNumberOfNotifiedThings(int value) { m_numberOfNotifiedThingsHasBeenSet = true; m_numberOfNotifiedThings = value; }
     inline IoTJobRateIncreaseCriteria& WithNumberOfNotifiedThings(int value) { SetNumberOfNotifiedThings(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p>The number of devices to successfully run the configuration job before the
      * rollout rate increases.</p>
      */
-    inline int GetNumberOfSucceededThings() const{ return m_numberOfSucceededThings; }
+    inline int GetNumberOfSucceededThings() const { return m_numberOfSucceededThings; }
     inline bool NumberOfSucceededThingsHasBeenSet() const { return m_numberOfSucceededThingsHasBeenSet; }
     inline void SetNumberOfSucceededThings(int value) { m_numberOfSucceededThingsHasBeenSet = true; m_numberOfSucceededThings = value; }
     inline IoTJobRateIncreaseCriteria& WithNumberOfSucceededThings(int value) { SetNumberOfSucceededThings(value); return *this;}
     ///@}
   private:
 
-    int m_numberOfNotifiedThings;
+    int m_numberOfNotifiedThings{0};
     bool m_numberOfNotifiedThingsHasBeenSet = false;
 
-    int m_numberOfSucceededThings;
+    int m_numberOfSucceededThings{0};
     bool m_numberOfSucceededThingsHasBeenSet = false;
   };
 

@@ -45,7 +45,7 @@ namespace Model
   class WAFEntityMigrationException
   {
   public:
-    AWS_WAFREGIONAL_API WAFEntityMigrationException();
+    AWS_WAFREGIONAL_API WAFEntityMigrationException() = default;
     AWS_WAFREGIONAL_API WAFEntityMigrationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API WAFEntityMigrationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,43 +53,37 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline WAFEntityMigrationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline WAFEntityMigrationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline WAFEntityMigrationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    WAFEntityMigrationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MigrationErrorType& GetMigrationErrorType() const{ return m_migrationErrorType; }
+    inline MigrationErrorType GetMigrationErrorType() const { return m_migrationErrorType; }
     inline bool MigrationErrorTypeHasBeenSet() const { return m_migrationErrorTypeHasBeenSet; }
-    inline void SetMigrationErrorType(const MigrationErrorType& value) { m_migrationErrorTypeHasBeenSet = true; m_migrationErrorType = value; }
-    inline void SetMigrationErrorType(MigrationErrorType&& value) { m_migrationErrorTypeHasBeenSet = true; m_migrationErrorType = std::move(value); }
-    inline WAFEntityMigrationException& WithMigrationErrorType(const MigrationErrorType& value) { SetMigrationErrorType(value); return *this;}
-    inline WAFEntityMigrationException& WithMigrationErrorType(MigrationErrorType&& value) { SetMigrationErrorType(std::move(value)); return *this;}
+    inline void SetMigrationErrorType(MigrationErrorType value) { m_migrationErrorTypeHasBeenSet = true; m_migrationErrorType = value; }
+    inline WAFEntityMigrationException& WithMigrationErrorType(MigrationErrorType value) { SetMigrationErrorType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMigrationErrorReason() const{ return m_migrationErrorReason; }
+    inline const Aws::String& GetMigrationErrorReason() const { return m_migrationErrorReason; }
     inline bool MigrationErrorReasonHasBeenSet() const { return m_migrationErrorReasonHasBeenSet; }
-    inline void SetMigrationErrorReason(const Aws::String& value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason = value; }
-    inline void SetMigrationErrorReason(Aws::String&& value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason = std::move(value); }
-    inline void SetMigrationErrorReason(const char* value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason.assign(value); }
-    inline WAFEntityMigrationException& WithMigrationErrorReason(const Aws::String& value) { SetMigrationErrorReason(value); return *this;}
-    inline WAFEntityMigrationException& WithMigrationErrorReason(Aws::String&& value) { SetMigrationErrorReason(std::move(value)); return *this;}
-    inline WAFEntityMigrationException& WithMigrationErrorReason(const char* value) { SetMigrationErrorReason(value); return *this;}
+    template<typename MigrationErrorReasonT = Aws::String>
+    void SetMigrationErrorReason(MigrationErrorReasonT&& value) { m_migrationErrorReasonHasBeenSet = true; m_migrationErrorReason = std::forward<MigrationErrorReasonT>(value); }
+    template<typename MigrationErrorReasonT = Aws::String>
+    WAFEntityMigrationException& WithMigrationErrorReason(MigrationErrorReasonT&& value) { SetMigrationErrorReason(std::forward<MigrationErrorReasonT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    MigrationErrorType m_migrationErrorType;
+    MigrationErrorType m_migrationErrorType{MigrationErrorType::NOT_SET};
     bool m_migrationErrorTypeHasBeenSet = false;
 
     Aws::String m_migrationErrorReason;

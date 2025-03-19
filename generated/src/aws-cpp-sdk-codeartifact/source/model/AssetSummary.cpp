@@ -18,16 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-AssetSummary::AssetSummary() : 
-    m_nameHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_hashesHasBeenSet(false)
-{
-}
-
 AssetSummary::AssetSummary(JsonView jsonValue)
-  : AssetSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AssetSummary& AssetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInt64("size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashes"))
   {
     Aws::Map<Aws::String, JsonView> hashesJsonMap = jsonValue.GetObject("hashes").GetAllObjects();
@@ -57,7 +44,6 @@ AssetSummary& AssetSummary::operator =(JsonView jsonValue)
     }
     m_hashesHasBeenSet = true;
   }
-
   return *this;
 }
 

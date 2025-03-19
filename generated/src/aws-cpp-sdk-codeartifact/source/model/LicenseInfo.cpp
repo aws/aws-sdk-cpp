@@ -18,14 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-LicenseInfo::LicenseInfo() : 
-    m_nameHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 LicenseInfo::LicenseInfo(JsonView jsonValue)
-  : LicenseInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LicenseInfo& LicenseInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

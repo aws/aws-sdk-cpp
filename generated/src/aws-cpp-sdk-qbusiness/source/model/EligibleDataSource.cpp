@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-EligibleDataSource::EligibleDataSource() : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 EligibleDataSource::EligibleDataSource(JsonView jsonValue)
-  : EligibleDataSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EligibleDataSource& EligibleDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("indexId"))
   {
     m_indexId = jsonValue.GetString("indexId");
-
     m_indexIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

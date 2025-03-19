@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeIpamExternalResourceVerificationTokensRequest::DescribeIpamExternalResourceVerificationTokensRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_ipamExternalResourceVerificationTokenIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIpamExternalResourceVerificationTokensRequest::SerializePayload() const
 {
   Aws::StringStream ss;

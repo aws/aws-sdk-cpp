@@ -12,13 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateManagedNotificationAccountContactRequest::AssociateManagedNotificationAccountContactRequest() : 
-    m_contactIdentifier(AccountContactType::NOT_SET),
-    m_contactIdentifierHasBeenSet(false),
-    m_managedNotificationConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateManagedNotificationAccountContactRequest::SerializePayload() const
 {
   JsonValue payload;

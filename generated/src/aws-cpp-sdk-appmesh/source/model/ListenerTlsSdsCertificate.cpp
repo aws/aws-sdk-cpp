@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ListenerTlsSdsCertificate::ListenerTlsSdsCertificate() : 
-    m_secretNameHasBeenSet(false)
-{
-}
-
 ListenerTlsSdsCertificate::ListenerTlsSdsCertificate(JsonView jsonValue)
-  : ListenerTlsSdsCertificate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListenerTlsSdsCertificate& ListenerTlsSdsCertificate::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("secretName"))
   {
     m_secretName = jsonValue.GetString("secretName");
-
     m_secretNameHasBeenSet = true;
   }
-
   return *this;
 }
 

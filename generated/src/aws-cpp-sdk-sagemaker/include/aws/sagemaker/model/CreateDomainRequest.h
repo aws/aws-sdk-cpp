@@ -30,7 +30,7 @@ namespace Model
   class CreateDomainRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateDomainRequest();
+    AWS_SAGEMAKER_API CreateDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,26 +47,22 @@ namespace Model
     /**
      * <p>A name for the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mode of authentication that members use to access the domain.</p>
      */
-    inline const AuthMode& GetAuthMode() const{ return m_authMode; }
+    inline AuthMode GetAuthMode() const { return m_authMode; }
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
-    inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
-    inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
-    inline CreateDomainRequest& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
-    inline CreateDomainRequest& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
+    inline void SetAuthMode(AuthMode value) { m_authModeHasBeenSet = true; m_authMode = value; }
+    inline CreateDomainRequest& WithAuthMode(AuthMode value) { SetAuthMode(value); return *this;}
     ///@}
 
     ///@{
@@ -79,39 +75,38 @@ namespace Model
      * <code>CreateUserProfile</code> take precedence over those specified in
      * <code>CreateDomain</code>.</p>
      */
-    inline const UserSettings& GetDefaultUserSettings() const{ return m_defaultUserSettings; }
+    inline const UserSettings& GetDefaultUserSettings() const { return m_defaultUserSettings; }
     inline bool DefaultUserSettingsHasBeenSet() const { return m_defaultUserSettingsHasBeenSet; }
-    inline void SetDefaultUserSettings(const UserSettings& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = value; }
-    inline void SetDefaultUserSettings(UserSettings&& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = std::move(value); }
-    inline CreateDomainRequest& WithDefaultUserSettings(const UserSettings& value) { SetDefaultUserSettings(value); return *this;}
-    inline CreateDomainRequest& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
+    template<typename DefaultUserSettingsT = UserSettings>
+    void SetDefaultUserSettings(DefaultUserSettingsT&& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = std::forward<DefaultUserSettingsT>(value); }
+    template<typename DefaultUserSettingsT = UserSettings>
+    CreateDomainRequest& WithDefaultUserSettings(DefaultUserSettingsT&& value) { SetDefaultUserSettings(std::forward<DefaultUserSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of <code>Domain</code> settings.</p>
      */
-    inline const DomainSettings& GetDomainSettings() const{ return m_domainSettings; }
+    inline const DomainSettings& GetDomainSettings() const { return m_domainSettings; }
     inline bool DomainSettingsHasBeenSet() const { return m_domainSettingsHasBeenSet; }
-    inline void SetDomainSettings(const DomainSettings& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = value; }
-    inline void SetDomainSettings(DomainSettings&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::move(value); }
-    inline CreateDomainRequest& WithDomainSettings(const DomainSettings& value) { SetDomainSettings(value); return *this;}
-    inline CreateDomainRequest& WithDomainSettings(DomainSettings&& value) { SetDomainSettings(std::move(value)); return *this;}
+    template<typename DomainSettingsT = DomainSettings>
+    void SetDomainSettings(DomainSettingsT&& value) { m_domainSettingsHasBeenSet = true; m_domainSettings = std::forward<DomainSettingsT>(value); }
+    template<typename DomainSettingsT = DomainSettings>
+    CreateDomainRequest& WithDomainSettings(DomainSettingsT&& value) { SetDomainSettings(std::forward<DomainSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC subnets that the domain uses for communication.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline CreateDomainRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline CreateDomainRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline CreateDomainRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline CreateDomainRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline CreateDomainRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    CreateDomainRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    CreateDomainRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,14 +114,12 @@ namespace Model
      * <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for
      * communication.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline CreateDomainRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline CreateDomainRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline CreateDomainRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    CreateDomainRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +129,14 @@ namespace Model
      * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
      * also added to all Apps that the Domain launches.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDomainRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDomainRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -155,12 +148,10 @@ namespace Model
      * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
      * </li> </ul>
      */
-    inline const AppNetworkAccessType& GetAppNetworkAccessType() const{ return m_appNetworkAccessType; }
+    inline AppNetworkAccessType GetAppNetworkAccessType() const { return m_appNetworkAccessType; }
     inline bool AppNetworkAccessTypeHasBeenSet() const { return m_appNetworkAccessTypeHasBeenSet; }
-    inline void SetAppNetworkAccessType(const AppNetworkAccessType& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = value; }
-    inline void SetAppNetworkAccessType(AppNetworkAccessType&& value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = std::move(value); }
-    inline CreateDomainRequest& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
-    inline CreateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
+    inline void SetAppNetworkAccessType(AppNetworkAccessType value) { m_appNetworkAccessTypeHasBeenSet = true; m_appNetworkAccessType = value; }
+    inline CreateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType value) { SetAppNetworkAccessType(value); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +160,12 @@ namespace Model
      * attached to the domain with an Amazon Web Services managed key by default. For
      * more control, specify a customer managed key.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateDomainRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,12 +177,10 @@ namespace Model
      * is provided. If setting up the domain for use with RStudio, this value must be
      * set to <code>Service</code>.</p>
      */
-    inline const AppSecurityGroupManagement& GetAppSecurityGroupManagement() const{ return m_appSecurityGroupManagement; }
+    inline AppSecurityGroupManagement GetAppSecurityGroupManagement() const { return m_appSecurityGroupManagement; }
     inline bool AppSecurityGroupManagementHasBeenSet() const { return m_appSecurityGroupManagementHasBeenSet; }
-    inline void SetAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = value; }
-    inline void SetAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = std::move(value); }
-    inline CreateDomainRequest& WithAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { SetAppSecurityGroupManagement(value); return *this;}
-    inline CreateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
+    inline void SetAppSecurityGroupManagement(AppSecurityGroupManagement value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = value; }
+    inline CreateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement value) { SetAppSecurityGroupManagement(value); return *this;}
     ///@}
 
     ///@{
@@ -201,31 +188,29 @@ namespace Model
      * <p>Indicates whether custom tag propagation is supported for the domain.
      * Defaults to <code>DISABLED</code>.</p>
      */
-    inline const TagPropagation& GetTagPropagation() const{ return m_tagPropagation; }
+    inline TagPropagation GetTagPropagation() const { return m_tagPropagation; }
     inline bool TagPropagationHasBeenSet() const { return m_tagPropagationHasBeenSet; }
-    inline void SetTagPropagation(const TagPropagation& value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = value; }
-    inline void SetTagPropagation(TagPropagation&& value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = std::move(value); }
-    inline CreateDomainRequest& WithTagPropagation(const TagPropagation& value) { SetTagPropagation(value); return *this;}
-    inline CreateDomainRequest& WithTagPropagation(TagPropagation&& value) { SetTagPropagation(std::move(value)); return *this;}
+    inline void SetTagPropagation(TagPropagation value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = value; }
+    inline CreateDomainRequest& WithTagPropagation(TagPropagation value) { SetTagPropagation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default settings for shared spaces that users create in the domain.</p>
      */
-    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
+    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const { return m_defaultSpaceSettings; }
     inline bool DefaultSpaceSettingsHasBeenSet() const { return m_defaultSpaceSettingsHasBeenSet; }
-    inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = value; }
-    inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::move(value); }
-    inline CreateDomainRequest& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
-    inline CreateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
+    template<typename DefaultSpaceSettingsT = DefaultSpaceSettings>
+    void SetDefaultSpaceSettings(DefaultSpaceSettingsT&& value) { m_defaultSpaceSettingsHasBeenSet = true; m_defaultSpaceSettings = std::forward<DefaultSpaceSettingsT>(value); }
+    template<typename DefaultSpaceSettingsT = DefaultSpaceSettings>
+    CreateDomainRequest& WithDefaultSpaceSettings(DefaultSpaceSettingsT&& value) { SetDefaultSpaceSettings(std::forward<DefaultSpaceSettingsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    AuthMode m_authMode;
+    AuthMode m_authMode{AuthMode::NOT_SET};
     bool m_authModeHasBeenSet = false;
 
     UserSettings m_defaultUserSettings;
@@ -243,16 +228,16 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    AppNetworkAccessType m_appNetworkAccessType;
+    AppNetworkAccessType m_appNetworkAccessType{AppNetworkAccessType::NOT_SET};
     bool m_appNetworkAccessTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    AppSecurityGroupManagement m_appSecurityGroupManagement;
+    AppSecurityGroupManagement m_appSecurityGroupManagement{AppSecurityGroupManagement::NOT_SET};
     bool m_appSecurityGroupManagementHasBeenSet = false;
 
-    TagPropagation m_tagPropagation;
+    TagPropagation m_tagPropagation{TagPropagation::NOT_SET};
     bool m_tagPropagationHasBeenSet = false;
 
     DefaultSpaceSettings m_defaultSpaceSettings;

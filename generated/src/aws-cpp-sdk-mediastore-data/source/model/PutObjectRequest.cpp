@@ -15,16 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectRequest::PutObjectRequest() : 
-    m_pathHasBeenSet(false),
-    m_cacheControlHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_uploadAvailability(UploadAvailability::NOT_SET),
-    m_uploadAvailabilityHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() const

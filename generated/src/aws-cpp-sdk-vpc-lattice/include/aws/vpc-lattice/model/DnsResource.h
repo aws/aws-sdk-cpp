@@ -32,7 +32,7 @@ namespace Model
   class DnsResource
   {
   public:
-    AWS_VPCLATTICE_API DnsResource();
+    AWS_VPCLATTICE_API DnsResource() = default;
     AWS_VPCLATTICE_API DnsResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API DnsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The domain name of the resource.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DnsResource& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DnsResource& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DnsResource& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DnsResource& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of IP address.</p>
      */
-    inline const ResourceConfigurationIpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+    inline ResourceConfigurationIpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const ResourceConfigurationIpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(ResourceConfigurationIpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline DnsResource& WithIpAddressType(const ResourceConfigurationIpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline DnsResource& WithIpAddressType(ResourceConfigurationIpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline void SetIpAddressType(ResourceConfigurationIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline DnsResource& WithIpAddressType(ResourceConfigurationIpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    ResourceConfigurationIpAddressType m_ipAddressType;
+    ResourceConfigurationIpAddressType m_ipAddressType{ResourceConfigurationIpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
   };
 

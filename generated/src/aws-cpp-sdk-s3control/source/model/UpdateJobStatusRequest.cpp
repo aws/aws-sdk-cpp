@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateJobStatusRequest::UpdateJobStatusRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_requestedJobStatus(RequestedJobStatus::NOT_SET),
-    m_requestedJobStatusHasBeenSet(false),
-    m_statusUpdateReasonHasBeenSet(false)
-{
-}
 
 Aws::String UpdateJobStatusRequest::SerializePayload() const
 {

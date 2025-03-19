@@ -12,14 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataCellsFilterRequest::DeleteDataCellsFilterRequest() : 
-    m_tableCatalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataCellsFilterRequest::SerializePayload() const
 {
   JsonValue payload;

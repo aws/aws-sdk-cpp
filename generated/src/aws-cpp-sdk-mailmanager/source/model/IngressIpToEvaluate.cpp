@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressIpToEvaluate::IngressIpToEvaluate() : 
-    m_attribute(IngressIpv4Attribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 IngressIpToEvaluate::IngressIpToEvaluate(JsonView jsonValue)
-  : IngressIpToEvaluate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IngressIpToEvaluate& IngressIpToEvaluate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = IngressIpv4AttributeMapper::GetIngressIpv4AttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   return *this;
 }
 

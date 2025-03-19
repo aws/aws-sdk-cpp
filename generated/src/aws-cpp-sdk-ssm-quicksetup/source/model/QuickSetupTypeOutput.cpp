@@ -18,14 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-QuickSetupTypeOutput::QuickSetupTypeOutput() : 
-    m_latestVersionHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 QuickSetupTypeOutput::QuickSetupTypeOutput(JsonView jsonValue)
-  : QuickSetupTypeOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QuickSetupTypeOutput& QuickSetupTypeOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LatestVersion"))
   {
     m_latestVersion = jsonValue.GetString("LatestVersion");
-
     m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

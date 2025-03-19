@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ContainerSummary::ContainerSummary() : 
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ContainerSummary::ContainerSummary(JsonView jsonValue)
-  : ContainerSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContainerSummary& ContainerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
-
     m_exitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

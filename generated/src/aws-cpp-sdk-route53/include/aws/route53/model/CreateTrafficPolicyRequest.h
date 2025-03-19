@@ -25,7 +25,7 @@ namespace Model
   class CreateTrafficPolicyRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API CreateTrafficPolicyRequest();
+    AWS_ROUTE53_API CreateTrafficPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the traffic policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateTrafficPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTrafficPolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
      * Policy Document Format</a>.</p>
      */
-    inline const Aws::String& GetDocument() const{ return m_document; }
+    inline const Aws::String& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
-    inline CreateTrafficPolicyRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
+    template<typename DocumentT = Aws::String>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Aws::String>
+    CreateTrafficPolicyRequest& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>(Optional) Any comments that you want to include about the traffic
      * policy.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline CreateTrafficPolicyRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline CreateTrafficPolicyRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline CreateTrafficPolicyRequest& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    CreateTrafficPolicyRequest& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
   private:
 

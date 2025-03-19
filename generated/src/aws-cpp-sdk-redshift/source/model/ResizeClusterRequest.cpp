@@ -10,19 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ResizeClusterRequest::ResizeClusterRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_classic(false),
-    m_classicHasBeenSet(false),
-    m_reservedNodeIdHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false)
-{
-}
-
 Aws::String ResizeClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

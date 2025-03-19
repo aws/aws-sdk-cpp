@@ -34,7 +34,7 @@ namespace Model
   class ConfiguredTableAssociationAnalysisRulePolicyV1
   {
   public:
-    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1();
+    AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1() = default;
     AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConfiguredTableAssociationAnalysisRulePolicyV1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p> Analysis rule type that enables only list queries on a configured table.</p>
      */
-    inline const ConfiguredTableAssociationAnalysisRuleList& GetList() const{ return m_list; }
+    inline const ConfiguredTableAssociationAnalysisRuleList& GetList() const { return m_list; }
     inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
-    inline void SetList(const ConfiguredTableAssociationAnalysisRuleList& value) { m_listHasBeenSet = true; m_list = value; }
-    inline void SetList(ConfiguredTableAssociationAnalysisRuleList&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
-    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithList(const ConfiguredTableAssociationAnalysisRuleList& value) { SetList(value); return *this;}
-    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithList(ConfiguredTableAssociationAnalysisRuleList&& value) { SetList(std::move(value)); return *this;}
+    template<typename ListT = ConfiguredTableAssociationAnalysisRuleList>
+    void SetList(ListT&& value) { m_listHasBeenSet = true; m_list = std::forward<ListT>(value); }
+    template<typename ListT = ConfiguredTableAssociationAnalysisRuleList>
+    ConfiguredTableAssociationAnalysisRulePolicyV1& WithList(ListT&& value) { SetList(std::forward<ListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p> Analysis rule type that enables only aggregation queries on a configured
      * table.</p>
      */
-    inline const ConfiguredTableAssociationAnalysisRuleAggregation& GetAggregation() const{ return m_aggregation; }
+    inline const ConfiguredTableAssociationAnalysisRuleAggregation& GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const ConfiguredTableAssociationAnalysisRuleAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(ConfiguredTableAssociationAnalysisRuleAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithAggregation(const ConfiguredTableAssociationAnalysisRuleAggregation& value) { SetAggregation(value); return *this;}
-    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithAggregation(ConfiguredTableAssociationAnalysisRuleAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    template<typename AggregationT = ConfiguredTableAssociationAnalysisRuleAggregation>
+    void SetAggregation(AggregationT&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::forward<AggregationT>(value); }
+    template<typename AggregationT = ConfiguredTableAssociationAnalysisRuleAggregation>
+    ConfiguredTableAssociationAnalysisRulePolicyV1& WithAggregation(AggregationT&& value) { SetAggregation(std::forward<AggregationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * <p> Analysis rule type that enables the table owner to approve custom SQL
      * queries on their configured tables. It supports differential privacy.</p>
      */
-    inline const ConfiguredTableAssociationAnalysisRuleCustom& GetCustom() const{ return m_custom; }
+    inline const ConfiguredTableAssociationAnalysisRuleCustom& GetCustom() const { return m_custom; }
     inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
-    inline void SetCustom(const ConfiguredTableAssociationAnalysisRuleCustom& value) { m_customHasBeenSet = true; m_custom = value; }
-    inline void SetCustom(ConfiguredTableAssociationAnalysisRuleCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
-    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithCustom(const ConfiguredTableAssociationAnalysisRuleCustom& value) { SetCustom(value); return *this;}
-    inline ConfiguredTableAssociationAnalysisRulePolicyV1& WithCustom(ConfiguredTableAssociationAnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
+    template<typename CustomT = ConfiguredTableAssociationAnalysisRuleCustom>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = ConfiguredTableAssociationAnalysisRuleCustom>
+    ConfiguredTableAssociationAnalysisRulePolicyV1& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class BatchUpdateUserRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API BatchUpdateUserRequest();
+    AWS_CHIME_API BatchUpdateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,26 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline BatchUpdateUserRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline BatchUpdateUserRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline BatchUpdateUserRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    BatchUpdateUserRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request containing the user IDs and details to update.</p>
      */
-    inline const Aws::Vector<UpdateUserRequestItem>& GetUpdateUserRequestItems() const{ return m_updateUserRequestItems; }
+    inline const Aws::Vector<UpdateUserRequestItem>& GetUpdateUserRequestItems() const { return m_updateUserRequestItems; }
     inline bool UpdateUserRequestItemsHasBeenSet() const { return m_updateUserRequestItemsHasBeenSet; }
-    inline void SetUpdateUserRequestItems(const Aws::Vector<UpdateUserRequestItem>& value) { m_updateUserRequestItemsHasBeenSet = true; m_updateUserRequestItems = value; }
-    inline void SetUpdateUserRequestItems(Aws::Vector<UpdateUserRequestItem>&& value) { m_updateUserRequestItemsHasBeenSet = true; m_updateUserRequestItems = std::move(value); }
-    inline BatchUpdateUserRequest& WithUpdateUserRequestItems(const Aws::Vector<UpdateUserRequestItem>& value) { SetUpdateUserRequestItems(value); return *this;}
-    inline BatchUpdateUserRequest& WithUpdateUserRequestItems(Aws::Vector<UpdateUserRequestItem>&& value) { SetUpdateUserRequestItems(std::move(value)); return *this;}
-    inline BatchUpdateUserRequest& AddUpdateUserRequestItems(const UpdateUserRequestItem& value) { m_updateUserRequestItemsHasBeenSet = true; m_updateUserRequestItems.push_back(value); return *this; }
-    inline BatchUpdateUserRequest& AddUpdateUserRequestItems(UpdateUserRequestItem&& value) { m_updateUserRequestItemsHasBeenSet = true; m_updateUserRequestItems.push_back(std::move(value)); return *this; }
+    template<typename UpdateUserRequestItemsT = Aws::Vector<UpdateUserRequestItem>>
+    void SetUpdateUserRequestItems(UpdateUserRequestItemsT&& value) { m_updateUserRequestItemsHasBeenSet = true; m_updateUserRequestItems = std::forward<UpdateUserRequestItemsT>(value); }
+    template<typename UpdateUserRequestItemsT = Aws::Vector<UpdateUserRequestItem>>
+    BatchUpdateUserRequest& WithUpdateUserRequestItems(UpdateUserRequestItemsT&& value) { SetUpdateUserRequestItems(std::forward<UpdateUserRequestItemsT>(value)); return *this;}
+    template<typename UpdateUserRequestItemsT = UpdateUserRequestItem>
+    BatchUpdateUserRequest& AddUpdateUserRequestItems(UpdateUserRequestItemsT&& value) { m_updateUserRequestItemsHasBeenSet = true; m_updateUserRequestItems.emplace_back(std::forward<UpdateUserRequestItemsT>(value)); return *this; }
     ///@}
   private:
 

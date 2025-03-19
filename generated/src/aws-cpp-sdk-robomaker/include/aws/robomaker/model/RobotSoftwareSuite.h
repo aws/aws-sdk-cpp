@@ -32,7 +32,7 @@ namespace Model
   class RobotSoftwareSuite
   {
   public:
-    AWS_ROBOMAKER_API RobotSoftwareSuite();
+    AWS_ROBOMAKER_API RobotSoftwareSuite() = default;
     AWS_ROBOMAKER_API RobotSoftwareSuite(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API RobotSoftwareSuite& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * <p>The name of the robot software suite. <code>General</code> is the only
      * supported value.</p>
      */
-    inline const RobotSoftwareSuiteType& GetName() const{ return m_name; }
+    inline RobotSoftwareSuiteType GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const RobotSoftwareSuiteType& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(RobotSoftwareSuiteType&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline RobotSoftwareSuite& WithName(const RobotSoftwareSuiteType& value) { SetName(value); return *this;}
-    inline RobotSoftwareSuite& WithName(RobotSoftwareSuiteType&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(RobotSoftwareSuiteType value) { m_nameHasBeenSet = true; m_name = value; }
+    inline RobotSoftwareSuite& WithName(RobotSoftwareSuiteType value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * <p>The version of the robot software suite. Not applicable for General software
      * suite.</p>
      */
-    inline const RobotSoftwareSuiteVersionType& GetVersion() const{ return m_version; }
+    inline RobotSoftwareSuiteVersionType GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const RobotSoftwareSuiteVersionType& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(RobotSoftwareSuiteVersionType&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline RobotSoftwareSuite& WithVersion(const RobotSoftwareSuiteVersionType& value) { SetVersion(value); return *this;}
-    inline RobotSoftwareSuite& WithVersion(RobotSoftwareSuiteVersionType&& value) { SetVersion(std::move(value)); return *this;}
+    inline void SetVersion(RobotSoftwareSuiteVersionType value) { m_versionHasBeenSet = true; m_version = value; }
+    inline RobotSoftwareSuite& WithVersion(RobotSoftwareSuiteVersionType value) { SetVersion(value); return *this;}
     ///@}
   private:
 
-    RobotSoftwareSuiteType m_name;
+    RobotSoftwareSuiteType m_name{RobotSoftwareSuiteType::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    RobotSoftwareSuiteVersionType m_version;
+    RobotSoftwareSuiteVersionType m_version{RobotSoftwareSuiteVersionType::NOT_SET};
     bool m_versionHasBeenSet = false;
   };
 

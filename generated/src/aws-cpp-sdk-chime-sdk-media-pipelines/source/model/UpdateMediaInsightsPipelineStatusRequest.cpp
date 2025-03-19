@@ -12,13 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMediaInsightsPipelineStatusRequest::UpdateMediaInsightsPipelineStatusRequest() : 
-    m_identifierHasBeenSet(false),
-    m_updateStatus(MediaPipelineStatusUpdate::NOT_SET),
-    m_updateStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMediaInsightsPipelineStatusRequest::SerializePayload() const
 {
   JsonValue payload;

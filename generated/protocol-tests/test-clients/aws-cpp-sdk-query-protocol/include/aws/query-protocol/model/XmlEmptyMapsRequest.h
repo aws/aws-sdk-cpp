@@ -19,7 +19,7 @@ namespace Model
   class XmlEmptyMapsRequest : public QueryProtocolRequest
   {
   public:
-    AWS_QUERYPROTOCOL_API XmlEmptyMapsRequest();
+    AWS_QUERYPROTOCOL_API XmlEmptyMapsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

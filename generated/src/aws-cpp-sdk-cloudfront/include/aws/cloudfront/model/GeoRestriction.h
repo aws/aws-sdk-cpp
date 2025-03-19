@@ -34,7 +34,7 @@ namespace Model
   class GeoRestriction
   {
   public:
-    AWS_CLOUDFRONT_API GeoRestriction();
+    AWS_CLOUDFRONT_API GeoRestriction() = default;
     AWS_CLOUDFRONT_API GeoRestriction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API GeoRestriction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,12 +52,10 @@ namespace Model
      * specify the countries in which you want CloudFront to distribute your
      * content.</p> </li> </ul>
      */
-    inline const GeoRestrictionType& GetRestrictionType() const{ return m_restrictionType; }
+    inline GeoRestrictionType GetRestrictionType() const { return m_restrictionType; }
     inline bool RestrictionTypeHasBeenSet() const { return m_restrictionTypeHasBeenSet; }
-    inline void SetRestrictionType(const GeoRestrictionType& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = value; }
-    inline void SetRestrictionType(GeoRestrictionType&& value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = std::move(value); }
-    inline GeoRestriction& WithRestrictionType(const GeoRestrictionType& value) { SetRestrictionType(value); return *this;}
-    inline GeoRestriction& WithRestrictionType(GeoRestrictionType&& value) { SetRestrictionType(std::move(value)); return *this;}
+    inline void SetRestrictionType(GeoRestrictionType value) { m_restrictionTypeHasBeenSet = true; m_restrictionType = value; }
+    inline GeoRestriction& WithRestrictionType(GeoRestrictionType value) { SetRestrictionType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * not enabled, <code>Quantity</code> is <code>0</code>, and you can omit
      * <code>Items</code>.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline GeoRestriction& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -88,22 +86,21 @@ namespace Model
      * Standardization</i> website. You can also refer to the country list on the
      * CloudFront console, which includes both country names and codes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Aws::String>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline GeoRestriction& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
-    inline GeoRestriction& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
-    inline GeoRestriction& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline GeoRestriction& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-    inline GeoRestriction& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    template<typename ItemsT = Aws::Vector<Aws::String>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Aws::String>>
+    GeoRestriction& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Aws::String>
+    GeoRestriction& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    GeoRestrictionType m_restrictionType;
+    GeoRestrictionType m_restrictionType{GeoRestrictionType::NOT_SET};
     bool m_restrictionTypeHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;

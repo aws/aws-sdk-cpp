@@ -22,7 +22,7 @@ namespace Model
   class DetectProtectiveEquipmentRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DetectProtectiveEquipmentRequest();
+    AWS_REKOGNITION_API DetectProtectiveEquipmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,24 +41,24 @@ namespace Model
      * be passed as image bytes or you can reference an image stored in an Amazon S3
      * bucket. </p>
      */
-    inline const Image& GetImage() const{ return m_image; }
+    inline const Image& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline DetectProtectiveEquipmentRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-    inline DetectProtectiveEquipmentRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = Image>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Image>
+    DetectProtectiveEquipmentRequest& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of PPE types that you want to summarize.</p>
      */
-    inline const ProtectiveEquipmentSummarizationAttributes& GetSummarizationAttributes() const{ return m_summarizationAttributes; }
+    inline const ProtectiveEquipmentSummarizationAttributes& GetSummarizationAttributes() const { return m_summarizationAttributes; }
     inline bool SummarizationAttributesHasBeenSet() const { return m_summarizationAttributesHasBeenSet; }
-    inline void SetSummarizationAttributes(const ProtectiveEquipmentSummarizationAttributes& value) { m_summarizationAttributesHasBeenSet = true; m_summarizationAttributes = value; }
-    inline void SetSummarizationAttributes(ProtectiveEquipmentSummarizationAttributes&& value) { m_summarizationAttributesHasBeenSet = true; m_summarizationAttributes = std::move(value); }
-    inline DetectProtectiveEquipmentRequest& WithSummarizationAttributes(const ProtectiveEquipmentSummarizationAttributes& value) { SetSummarizationAttributes(value); return *this;}
-    inline DetectProtectiveEquipmentRequest& WithSummarizationAttributes(ProtectiveEquipmentSummarizationAttributes&& value) { SetSummarizationAttributes(std::move(value)); return *this;}
+    template<typename SummarizationAttributesT = ProtectiveEquipmentSummarizationAttributes>
+    void SetSummarizationAttributes(SummarizationAttributesT&& value) { m_summarizationAttributesHasBeenSet = true; m_summarizationAttributes = std::forward<SummarizationAttributesT>(value); }
+    template<typename SummarizationAttributesT = ProtectiveEquipmentSummarizationAttributes>
+    DetectProtectiveEquipmentRequest& WithSummarizationAttributes(SummarizationAttributesT&& value) { SetSummarizationAttributes(std::forward<SummarizationAttributesT>(value)); return *this;}
     ///@}
   private:
 

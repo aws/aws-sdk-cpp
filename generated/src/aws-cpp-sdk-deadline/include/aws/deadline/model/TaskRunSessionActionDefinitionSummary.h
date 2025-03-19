@@ -31,7 +31,7 @@ namespace Model
   class TaskRunSessionActionDefinitionSummary
   {
   public:
-    AWS_DEADLINE_API TaskRunSessionActionDefinitionSummary();
+    AWS_DEADLINE_API TaskRunSessionActionDefinitionSummary() = default;
     AWS_DEADLINE_API TaskRunSessionActionDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API TaskRunSessionActionDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The task ID.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline TaskRunSessionActionDefinitionSummary& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline TaskRunSessionActionDefinitionSummary& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline TaskRunSessionActionDefinitionSummary& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    TaskRunSessionActionDefinitionSummary& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step ID.</p>
      */
-    inline const Aws::String& GetStepId() const{ return m_stepId; }
+    inline const Aws::String& GetStepId() const { return m_stepId; }
     inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
-    inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
-    inline void SetStepId(Aws::String&& value) { m_stepIdHasBeenSet = true; m_stepId = std::move(value); }
-    inline void SetStepId(const char* value) { m_stepIdHasBeenSet = true; m_stepId.assign(value); }
-    inline TaskRunSessionActionDefinitionSummary& WithStepId(const Aws::String& value) { SetStepId(value); return *this;}
-    inline TaskRunSessionActionDefinitionSummary& WithStepId(Aws::String&& value) { SetStepId(std::move(value)); return *this;}
-    inline TaskRunSessionActionDefinitionSummary& WithStepId(const char* value) { SetStepId(value); return *this;}
+    template<typename StepIdT = Aws::String>
+    void SetStepId(StepIdT&& value) { m_stepIdHasBeenSet = true; m_stepId = std::forward<StepIdT>(value); }
+    template<typename StepIdT = Aws::String>
+    TaskRunSessionActionDefinitionSummary& WithStepId(StepIdT&& value) { SetStepId(std::forward<StepIdT>(value)); return *this;}
     ///@}
   private:
 

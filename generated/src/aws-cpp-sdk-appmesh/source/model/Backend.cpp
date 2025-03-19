@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-Backend::Backend() : 
-    m_virtualServiceHasBeenSet(false)
-{
-}
-
 Backend::Backend(JsonView jsonValue)
-  : Backend()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Backend& Backend::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("virtualService"))
   {
     m_virtualService = jsonValue.GetObject("virtualService");
-
     m_virtualServiceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DerivedInformation::DerivedInformation() : 
-    m_derivedDataInputConfigHasBeenSet(false)
-{
-}
-
 DerivedInformation::DerivedInformation(JsonView jsonValue)
-  : DerivedInformation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DerivedInformation& DerivedInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DerivedDataInputConfig"))
   {
     m_derivedDataInputConfig = jsonValue.GetString("DerivedDataInputConfig");
-
     m_derivedDataInputConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

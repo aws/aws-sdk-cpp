@@ -12,26 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePatchBaselineRequest::UpdatePatchBaselineRequest() : 
-    m_baselineIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_globalFiltersHasBeenSet(false),
-    m_approvalRulesHasBeenSet(false),
-    m_approvedPatchesHasBeenSet(false),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesComplianceLevelHasBeenSet(false),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_approvedPatchesEnableNonSecurityHasBeenSet(false),
-    m_rejectedPatchesHasBeenSet(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET),
-    m_rejectedPatchesActionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_replace(false),
-    m_replaceHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePatchBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

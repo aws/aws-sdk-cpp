@@ -31,7 +31,7 @@ namespace Model
   class GetEventRuleResult
   {
   public:
-    AWS_NOTIFICATIONS_API GetEventRuleResult();
+    AWS_NOTIFICATIONS_API GetEventRuleResult() = default;
     AWS_NOTIFICATIONS_API GetEventRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONS_API GetEventRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,37 +40,33 @@ namespace Model
     /**
      * <p>The ARN of the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetEventRuleResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetEventRuleResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetEventRuleResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetEventRuleResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
-    inline void SetNotificationConfigurationArn(const Aws::String& value) { m_notificationConfigurationArn = value; }
-    inline void SetNotificationConfigurationArn(Aws::String&& value) { m_notificationConfigurationArn = std::move(value); }
-    inline void SetNotificationConfigurationArn(const char* value) { m_notificationConfigurationArn.assign(value); }
-    inline GetEventRuleResult& WithNotificationConfigurationArn(const Aws::String& value) { SetNotificationConfigurationArn(value); return *this;}
-    inline GetEventRuleResult& WithNotificationConfigurationArn(Aws::String&& value) { SetNotificationConfigurationArn(std::move(value)); return *this;}
-    inline GetEventRuleResult& WithNotificationConfigurationArn(const char* value) { SetNotificationConfigurationArn(value); return *this;}
+    inline const Aws::String& GetNotificationConfigurationArn() const { return m_notificationConfigurationArn; }
+    template<typename NotificationConfigurationArnT = Aws::String>
+    void SetNotificationConfigurationArn(NotificationConfigurationArnT&& value) { m_notificationConfigurationArnHasBeenSet = true; m_notificationConfigurationArn = std::forward<NotificationConfigurationArnT>(value); }
+    template<typename NotificationConfigurationArnT = Aws::String>
+    GetEventRuleResult& WithNotificationConfigurationArn(NotificationConfigurationArnT&& value) { SetNotificationConfigurationArn(std::forward<NotificationConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the <code>EventRule</code> was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetEventRuleResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetEventRuleResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetEventRuleResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,13 +79,11 @@ namespace Model
      * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
-    inline void SetSource(const Aws::String& value) { m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_source.assign(value); }
-    inline GetEventRuleResult& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline GetEventRuleResult& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline GetEventRuleResult& WithSource(const char* value) { SetSource(value); return *this;}
+    inline const Aws::String& GetSource() const { return m_source; }
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    GetEventRuleResult& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,13 +95,11 @@ namespace Model
      * delivery from Amazon Web Services services</a> in the <i>Amazon EventBridge User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
-    inline void SetEventType(const Aws::String& value) { m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventType.assign(value); }
-    inline GetEventRuleResult& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline GetEventRuleResult& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline GetEventRuleResult& WithEventType(const char* value) { SetEventType(value); return *this;}
+    inline const Aws::String& GetEventType() const { return m_eventType; }
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    GetEventRuleResult& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,13 +109,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon
      * EventBridge event patterns</a> in the <i>Amazon EventBridge User Guide.</i> </p>
      */
-    inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
-    inline void SetEventPattern(const Aws::String& value) { m_eventPattern = value; }
-    inline void SetEventPattern(Aws::String&& value) { m_eventPattern = std::move(value); }
-    inline void SetEventPattern(const char* value) { m_eventPattern.assign(value); }
-    inline GetEventRuleResult& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
-    inline GetEventRuleResult& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
-    inline GetEventRuleResult& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
+    inline const Aws::String& GetEventPattern() const { return m_eventPattern; }
+    template<typename EventPatternT = Aws::String>
+    void SetEventPattern(EventPatternT&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::forward<EventPatternT>(value); }
+    template<typename EventPatternT = Aws::String>
+    GetEventRuleResult& WithEventPattern(EventPatternT&& value) { SetEventPattern(std::forward<EventPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +121,13 @@ namespace Model
      * <p>A list of Amazon Web Services Regions that send events to this
      * <code>EventRule</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regions = std::move(value); }
-    inline GetEventRuleResult& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline GetEventRuleResult& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline GetEventRuleResult& AddRegions(const Aws::String& value) { m_regions.push_back(value); return *this; }
-    inline GetEventRuleResult& AddRegions(Aws::String&& value) { m_regions.push_back(std::move(value)); return *this; }
-    inline GetEventRuleResult& AddRegions(const char* value) { m_regions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    GetEventRuleResult& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    GetEventRuleResult& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -147,14 +136,13 @@ namespace Model
      * <code>EventRule</code>.</p>  <p>These are created by User Notifications
      * within your account so this <code>EventRule</code> functions.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetManagedRules() const{ return m_managedRules; }
-    inline void SetManagedRules(const Aws::Vector<Aws::String>& value) { m_managedRules = value; }
-    inline void SetManagedRules(Aws::Vector<Aws::String>&& value) { m_managedRules = std::move(value); }
-    inline GetEventRuleResult& WithManagedRules(const Aws::Vector<Aws::String>& value) { SetManagedRules(value); return *this;}
-    inline GetEventRuleResult& WithManagedRules(Aws::Vector<Aws::String>&& value) { SetManagedRules(std::move(value)); return *this;}
-    inline GetEventRuleResult& AddManagedRules(const Aws::String& value) { m_managedRules.push_back(value); return *this; }
-    inline GetEventRuleResult& AddManagedRules(Aws::String&& value) { m_managedRules.push_back(std::move(value)); return *this; }
-    inline GetEventRuleResult& AddManagedRules(const char* value) { m_managedRules.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetManagedRules() const { return m_managedRules; }
+    template<typename ManagedRulesT = Aws::Vector<Aws::String>>
+    void SetManagedRules(ManagedRulesT&& value) { m_managedRulesHasBeenSet = true; m_managedRules = std::forward<ManagedRulesT>(value); }
+    template<typename ManagedRulesT = Aws::Vector<Aws::String>>
+    GetEventRuleResult& WithManagedRules(ManagedRulesT&& value) { SetManagedRules(std::forward<ManagedRulesT>(value)); return *this;}
+    template<typename ManagedRulesT = Aws::String>
+    GetEventRuleResult& AddManagedRules(ManagedRulesT&& value) { m_managedRulesHasBeenSet = true; m_managedRules.emplace_back(std::forward<ManagedRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,50 +150,56 @@ namespace Model
      * <p>A list of an <code>EventRule</code>'s status by Region. Regions are mapped to
      * <code>EventRuleStatusSummary</code>.</p>
      */
-    inline const Aws::Map<Aws::String, EventRuleStatusSummary>& GetStatusSummaryByRegion() const{ return m_statusSummaryByRegion; }
-    inline void SetStatusSummaryByRegion(const Aws::Map<Aws::String, EventRuleStatusSummary>& value) { m_statusSummaryByRegion = value; }
-    inline void SetStatusSummaryByRegion(Aws::Map<Aws::String, EventRuleStatusSummary>&& value) { m_statusSummaryByRegion = std::move(value); }
-    inline GetEventRuleResult& WithStatusSummaryByRegion(const Aws::Map<Aws::String, EventRuleStatusSummary>& value) { SetStatusSummaryByRegion(value); return *this;}
-    inline GetEventRuleResult& WithStatusSummaryByRegion(Aws::Map<Aws::String, EventRuleStatusSummary>&& value) { SetStatusSummaryByRegion(std::move(value)); return *this;}
-    inline GetEventRuleResult& AddStatusSummaryByRegion(const Aws::String& key, const EventRuleStatusSummary& value) { m_statusSummaryByRegion.emplace(key, value); return *this; }
-    inline GetEventRuleResult& AddStatusSummaryByRegion(Aws::String&& key, const EventRuleStatusSummary& value) { m_statusSummaryByRegion.emplace(std::move(key), value); return *this; }
-    inline GetEventRuleResult& AddStatusSummaryByRegion(const Aws::String& key, EventRuleStatusSummary&& value) { m_statusSummaryByRegion.emplace(key, std::move(value)); return *this; }
-    inline GetEventRuleResult& AddStatusSummaryByRegion(Aws::String&& key, EventRuleStatusSummary&& value) { m_statusSummaryByRegion.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetEventRuleResult& AddStatusSummaryByRegion(const char* key, EventRuleStatusSummary&& value) { m_statusSummaryByRegion.emplace(key, std::move(value)); return *this; }
-    inline GetEventRuleResult& AddStatusSummaryByRegion(const char* key, const EventRuleStatusSummary& value) { m_statusSummaryByRegion.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, EventRuleStatusSummary>& GetStatusSummaryByRegion() const { return m_statusSummaryByRegion; }
+    template<typename StatusSummaryByRegionT = Aws::Map<Aws::String, EventRuleStatusSummary>>
+    void SetStatusSummaryByRegion(StatusSummaryByRegionT&& value) { m_statusSummaryByRegionHasBeenSet = true; m_statusSummaryByRegion = std::forward<StatusSummaryByRegionT>(value); }
+    template<typename StatusSummaryByRegionT = Aws::Map<Aws::String, EventRuleStatusSummary>>
+    GetEventRuleResult& WithStatusSummaryByRegion(StatusSummaryByRegionT&& value) { SetStatusSummaryByRegion(std::forward<StatusSummaryByRegionT>(value)); return *this;}
+    template<typename StatusSummaryByRegionKeyT = Aws::String, typename StatusSummaryByRegionValueT = EventRuleStatusSummary>
+    GetEventRuleResult& AddStatusSummaryByRegion(StatusSummaryByRegionKeyT&& key, StatusSummaryByRegionValueT&& value) {
+      m_statusSummaryByRegionHasBeenSet = true; m_statusSummaryByRegion.emplace(std::forward<StatusSummaryByRegionKeyT>(key), std::forward<StatusSummaryByRegionValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEventRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEventRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEventRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEventRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_notificationConfigurationArn;
+    bool m_notificationConfigurationArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_source;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_eventType;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_eventPattern;
+    bool m_eventPatternHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
+    bool m_regionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedRules;
+    bool m_managedRulesHasBeenSet = false;
 
     Aws::Map<Aws::String, EventRuleStatusSummary> m_statusSummaryByRegion;
+    bool m_statusSummaryByRegionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

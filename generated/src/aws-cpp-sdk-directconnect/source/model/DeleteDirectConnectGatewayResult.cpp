@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDirectConnectGatewayResult::DeleteDirectConnectGatewayResult()
-{
-}
-
 DeleteDirectConnectGatewayResult::DeleteDirectConnectGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteDirectConnectGatewayResult& DeleteDirectConnectGatewayResult::operator =(c
   if(jsonValue.ValueExists("directConnectGateway"))
   {
     m_directConnectGateway = jsonValue.GetObject("directConnectGateway");
-
+    m_directConnectGatewayHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

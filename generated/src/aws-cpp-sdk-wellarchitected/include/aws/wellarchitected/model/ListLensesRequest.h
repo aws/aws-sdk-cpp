@@ -30,7 +30,7 @@ namespace Model
   class ListLensesRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API ListLensesRequest();
+    AWS_WELLARCHITECTED_API ListLensesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,19 +45,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLensesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLensesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLensesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLensesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLensesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -67,49 +65,43 @@ namespace Model
     /**
      * <p>The type of lenses to be returned.</p>
      */
-    inline const LensType& GetLensType() const{ return m_lensType; }
+    inline LensType GetLensType() const { return m_lensType; }
     inline bool LensTypeHasBeenSet() const { return m_lensTypeHasBeenSet; }
-    inline void SetLensType(const LensType& value) { m_lensTypeHasBeenSet = true; m_lensType = value; }
-    inline void SetLensType(LensType&& value) { m_lensTypeHasBeenSet = true; m_lensType = std::move(value); }
-    inline ListLensesRequest& WithLensType(const LensType& value) { SetLensType(value); return *this;}
-    inline ListLensesRequest& WithLensType(LensType&& value) { SetLensType(std::move(value)); return *this;}
+    inline void SetLensType(LensType value) { m_lensTypeHasBeenSet = true; m_lensType = value; }
+    inline ListLensesRequest& WithLensType(LensType value) { SetLensType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of lenses to be returned.</p>
      */
-    inline const LensStatusType& GetLensStatus() const{ return m_lensStatus; }
+    inline LensStatusType GetLensStatus() const { return m_lensStatus; }
     inline bool LensStatusHasBeenSet() const { return m_lensStatusHasBeenSet; }
-    inline void SetLensStatus(const LensStatusType& value) { m_lensStatusHasBeenSet = true; m_lensStatus = value; }
-    inline void SetLensStatus(LensStatusType&& value) { m_lensStatusHasBeenSet = true; m_lensStatus = std::move(value); }
-    inline ListLensesRequest& WithLensStatus(const LensStatusType& value) { SetLensStatus(value); return *this;}
-    inline ListLensesRequest& WithLensStatus(LensStatusType&& value) { SetLensStatus(std::move(value)); return *this;}
+    inline void SetLensStatus(LensStatusType value) { m_lensStatusHasBeenSet = true; m_lensStatus = value; }
+    inline ListLensesRequest& WithLensStatus(LensStatusType value) { SetLensStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensName() const{ return m_lensName; }
+    inline const Aws::String& GetLensName() const { return m_lensName; }
     inline bool LensNameHasBeenSet() const { return m_lensNameHasBeenSet; }
-    inline void SetLensName(const Aws::String& value) { m_lensNameHasBeenSet = true; m_lensName = value; }
-    inline void SetLensName(Aws::String&& value) { m_lensNameHasBeenSet = true; m_lensName = std::move(value); }
-    inline void SetLensName(const char* value) { m_lensNameHasBeenSet = true; m_lensName.assign(value); }
-    inline ListLensesRequest& WithLensName(const Aws::String& value) { SetLensName(value); return *this;}
-    inline ListLensesRequest& WithLensName(Aws::String&& value) { SetLensName(std::move(value)); return *this;}
-    inline ListLensesRequest& WithLensName(const char* value) { SetLensName(value); return *this;}
+    template<typename LensNameT = Aws::String>
+    void SetLensName(LensNameT&& value) { m_lensNameHasBeenSet = true; m_lensName = std::forward<LensNameT>(value); }
+    template<typename LensNameT = Aws::String>
+    ListLensesRequest& WithLensName(LensNameT&& value) { SetLensName(std::forward<LensNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    LensType m_lensType;
+    LensType m_lensType{LensType::NOT_SET};
     bool m_lensTypeHasBeenSet = false;
 
-    LensStatusType m_lensStatus;
+    LensStatusType m_lensStatus{LensStatusType::NOT_SET};
     bool m_lensStatusHasBeenSet = false;
 
     Aws::String m_lensName;

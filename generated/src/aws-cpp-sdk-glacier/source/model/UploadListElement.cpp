@@ -18,18 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-UploadListElement::UploadListElement() : 
-    m_multipartUploadIdHasBeenSet(false),
-    m_vaultARNHasBeenSet(false),
-    m_archiveDescriptionHasBeenSet(false),
-    m_partSizeInBytes(0),
-    m_partSizeInBytesHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 UploadListElement::UploadListElement(JsonView jsonValue)
-  : UploadListElement()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ UploadListElement& UploadListElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MultipartUploadId"))
   {
     m_multipartUploadId = jsonValue.GetString("MultipartUploadId");
-
     m_multipartUploadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VaultARN"))
   {
     m_vaultARN = jsonValue.GetString("VaultARN");
-
     m_vaultARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveDescription"))
   {
     m_archiveDescription = jsonValue.GetString("ArchiveDescription");
-
     m_archiveDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartSizeInBytes"))
   {
     m_partSizeInBytes = jsonValue.GetInt64("PartSizeInBytes");
-
     m_partSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

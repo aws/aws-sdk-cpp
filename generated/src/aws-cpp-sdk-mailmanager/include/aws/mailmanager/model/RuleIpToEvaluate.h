@@ -31,7 +31,7 @@ namespace Model
   class RuleIpToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API RuleIpToEvaluate();
+    AWS_MAILMANAGER_API RuleIpToEvaluate() = default;
     AWS_MAILMANAGER_API RuleIpToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleIpToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The attribute of the email to evaluate.</p>
      */
-    inline const RuleIpEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline RuleIpEmailAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const RuleIpEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(RuleIpEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline RuleIpToEvaluate& WithAttribute(const RuleIpEmailAttribute& value) { SetAttribute(value); return *this;}
-    inline RuleIpToEvaluate& WithAttribute(RuleIpEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(RuleIpEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline RuleIpToEvaluate& WithAttribute(RuleIpEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    RuleIpEmailAttribute m_attribute;
+    RuleIpEmailAttribute m_attribute{RuleIpEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

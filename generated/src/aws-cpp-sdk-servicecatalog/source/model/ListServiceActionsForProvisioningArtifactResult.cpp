@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceActionsForProvisioningArtifactResult::ListServiceActionsForProvisioningArtifactResult()
-{
-}
-
 ListServiceActionsForProvisioningArtifactResult::ListServiceActionsForProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListServiceActionsForProvisioningArtifactResult& ListServiceActionsForProvisioni
     {
       m_serviceActionSummaries.push_back(serviceActionSummariesJsonList[serviceActionSummariesIndex].AsObject());
     }
+    m_serviceActionSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

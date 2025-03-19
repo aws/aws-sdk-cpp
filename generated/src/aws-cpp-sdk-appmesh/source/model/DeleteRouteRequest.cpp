@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteRouteRequest::DeleteRouteRequest() : 
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_routeNameHasBeenSet(false),
-    m_virtualRouterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRouteRequest::SerializePayload() const
 {
   return {};

@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails() : 
-    m_capabilitiesHasBeenSet(false),
-    m_devicesHasBeenSet(false),
-    m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false),
-    m_maxSwap(0),
-    m_maxSwapHasBeenSet(false),
-    m_sharedMemorySize(0),
-    m_sharedMemorySizeHasBeenSet(false),
-    m_swappiness(0),
-    m_swappinessHasBeenSet(false),
-    m_tmpfsHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails& AwsEcsTaskDefini
   if(jsonValue.ValueExists("Capabilities"))
   {
     m_capabilities = jsonValue.GetObject("Capabilities");
-
     m_capabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Devices"))
   {
     Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
@@ -57,35 +39,26 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails& AwsEcsTaskDefini
     }
     m_devicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitProcessEnabled"))
   {
     m_initProcessEnabled = jsonValue.GetBool("InitProcessEnabled");
-
     m_initProcessEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSwap"))
   {
     m_maxSwap = jsonValue.GetInteger("MaxSwap");
-
     m_maxSwapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedMemorySize"))
   {
     m_sharedMemorySize = jsonValue.GetInteger("SharedMemorySize");
-
     m_sharedMemorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Swappiness"))
   {
     m_swappiness = jsonValue.GetInteger("Swappiness");
-
     m_swappinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tmpfs"))
   {
     Aws::Utils::Array<JsonView> tmpfsJsonList = jsonValue.GetArray("Tmpfs");
@@ -95,7 +68,6 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails& AwsEcsTaskDefini
     }
     m_tmpfsHasBeenSet = true;
   }
-
   return *this;
 }
 

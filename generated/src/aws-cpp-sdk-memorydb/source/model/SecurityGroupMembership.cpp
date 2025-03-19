@@ -18,14 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-SecurityGroupMembership::SecurityGroupMembership() : 
-    m_securityGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SecurityGroupMembership::SecurityGroupMembership(JsonView jsonValue)
-  : SecurityGroupMembership()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityGroupMembership& SecurityGroupMembership::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SecurityGroupId"))
   {
     m_securityGroupId = jsonValue.GetString("SecurityGroupId");
-
     m_securityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

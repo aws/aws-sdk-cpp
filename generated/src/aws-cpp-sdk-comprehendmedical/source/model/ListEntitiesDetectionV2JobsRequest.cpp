@@ -12,14 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEntitiesDetectionV2JobsRequest::ListEntitiesDetectionV2JobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEntitiesDetectionV2JobsRequest::SerializePayload() const
 {
   JsonValue payload;

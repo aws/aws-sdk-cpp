@@ -25,7 +25,7 @@ namespace Model
   class SetDataRetrievalPolicyRequest : public GlacierRequest
   {
   public:
-    AWS_GLACIER_API SetDataRetrievalPolicyRequest();
+    AWS_GLACIER_API SetDataRetrievalPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,26 +45,24 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline SetDataRetrievalPolicyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline SetDataRetrievalPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline SetDataRetrievalPolicyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    SetDataRetrievalPolicyRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data retrieval policy in JSON format.</p>
      */
-    inline const DataRetrievalPolicy& GetPolicy() const{ return m_policy; }
+    inline const DataRetrievalPolicy& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const DataRetrievalPolicy& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(DataRetrievalPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline SetDataRetrievalPolicyRequest& WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
-    inline SetDataRetrievalPolicyRequest& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    template<typename PolicyT = DataRetrievalPolicy>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = DataRetrievalPolicy>
+    SetDataRetrievalPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

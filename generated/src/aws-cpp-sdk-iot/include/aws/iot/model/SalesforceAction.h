@@ -32,7 +32,7 @@ namespace Model
   class SalesforceAction
   {
   public:
-    AWS_IOT_API SalesforceAction();
+    AWS_IOT_API SalesforceAction() = default;
     AWS_IOT_API SalesforceAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API SalesforceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * Stream. The token is available from the Salesforce IoT Cloud platform after
      * creation of the Input Stream.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline SalesforceAction& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline SalesforceAction& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline SalesforceAction& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    SalesforceAction& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * available from the Salesforce IoT Cloud platform after creation of the Input
      * Stream.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline SalesforceAction& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline SalesforceAction& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline SalesforceAction& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    SalesforceAction& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

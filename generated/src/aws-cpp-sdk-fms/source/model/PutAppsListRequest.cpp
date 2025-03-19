@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAppsListRequest::PutAppsListRequest() : 
-    m_appsListHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 Aws::String PutAppsListRequest::SerializePayload() const
 {
   JsonValue payload;

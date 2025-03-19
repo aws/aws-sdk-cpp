@@ -12,10 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEncryptionConfigurationRequest::GetEncryptionConfigurationRequest()
-{
-}
-
 Aws::String GetEncryptionConfigurationRequest::SerializePayload() const
 {
   return "{}";

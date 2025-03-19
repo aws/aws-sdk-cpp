@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventTrackerResult::DescribeEventTrackerResult()
-{
-}
-
 DescribeEventTrackerResult::DescribeEventTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeEventTrackerResult& DescribeEventTrackerResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("eventTracker"))
   {
     m_eventTracker = jsonValue.GetObject("eventTracker");
-
+    m_eventTrackerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

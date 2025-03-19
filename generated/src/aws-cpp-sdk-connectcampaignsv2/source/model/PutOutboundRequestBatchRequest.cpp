@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutOutboundRequestBatchRequest::PutOutboundRequestBatchRequest() : 
-    m_idHasBeenSet(false),
-    m_outboundRequestsHasBeenSet(false)
-{
-}
-
 Aws::String PutOutboundRequestBatchRequest::SerializePayload() const
 {
   JsonValue payload;

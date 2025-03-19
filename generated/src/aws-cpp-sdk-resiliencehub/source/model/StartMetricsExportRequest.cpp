@@ -12,13 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMetricsExportRequest::StartMetricsExportRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartMetricsExportRequest::SerializePayload() const
 {
   JsonValue payload;

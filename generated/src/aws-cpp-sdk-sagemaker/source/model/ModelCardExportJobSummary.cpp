@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelCardExportJobSummary::ModelCardExportJobSummary() : 
-    m_modelCardExportJobNameHasBeenSet(false),
-    m_modelCardExportJobArnHasBeenSet(false),
-    m_status(ModelCardExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false)
-{
-}
-
 ModelCardExportJobSummary::ModelCardExportJobSummary(JsonView jsonValue)
-  : ModelCardExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ModelCardExportJobSummary& ModelCardExportJobSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ModelCardExportJobName"))
   {
     m_modelCardExportJobName = jsonValue.GetString("ModelCardExportJobName");
-
     m_modelCardExportJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardExportJobArn"))
   {
     m_modelCardExportJobArn = jsonValue.GetString("ModelCardExportJobArn");
-
     m_modelCardExportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelCardExportJobStatusMapper::GetModelCardExportJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardName"))
   {
     m_modelCardName = jsonValue.GetString("ModelCardName");
-
     m_modelCardNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardVersion"))
   {
     m_modelCardVersion = jsonValue.GetInteger("ModelCardVersion");
-
     m_modelCardVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("LastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

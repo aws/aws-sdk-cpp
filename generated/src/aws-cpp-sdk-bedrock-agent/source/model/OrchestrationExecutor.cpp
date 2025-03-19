@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-OrchestrationExecutor::OrchestrationExecutor() : 
-    m_lambdaHasBeenSet(false)
-{
-}
-
 OrchestrationExecutor::OrchestrationExecutor(JsonView jsonValue)
-  : OrchestrationExecutor()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OrchestrationExecutor& OrchestrationExecutor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lambda"))
   {
     m_lambda = jsonValue.GetString("lambda");
-
     m_lambdaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class CreateAliasResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API CreateAliasResult();
+    AWS_DIRECTORYSERVICE_API CreateAliasResult() = default;
     AWS_DIRECTORYSERVICE_API CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,45 +42,42 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
-    inline CreateAliasResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline CreateAliasResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline CreateAliasResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    CreateAliasResult& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias for the directory.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
-    inline void SetAlias(const Aws::String& value) { m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_alias.assign(value); }
-    inline CreateAliasResult& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline CreateAliasResult& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline CreateAliasResult& WithAlias(const char* value) { SetAlias(value); return *this;}
+    inline const Aws::String& GetAlias() const { return m_alias; }
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    CreateAliasResult& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_alias;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

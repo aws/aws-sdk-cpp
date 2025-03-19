@@ -29,7 +29,7 @@ namespace Model
   class ListUsageForLicenseConfigurationResult
   {
   public:
-    AWS_LICENSEMANAGER_API ListUsageForLicenseConfigurationResult();
+    AWS_LICENSEMANAGER_API ListUsageForLicenseConfigurationResult() = default;
     AWS_LICENSEMANAGER_API ListUsageForLicenseConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API ListUsageForLicenseConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Information about the license configurations.</p>
      */
-    inline const Aws::Vector<LicenseConfigurationUsage>& GetLicenseConfigurationUsageList() const{ return m_licenseConfigurationUsageList; }
-    inline void SetLicenseConfigurationUsageList(const Aws::Vector<LicenseConfigurationUsage>& value) { m_licenseConfigurationUsageList = value; }
-    inline void SetLicenseConfigurationUsageList(Aws::Vector<LicenseConfigurationUsage>&& value) { m_licenseConfigurationUsageList = std::move(value); }
-    inline ListUsageForLicenseConfigurationResult& WithLicenseConfigurationUsageList(const Aws::Vector<LicenseConfigurationUsage>& value) { SetLicenseConfigurationUsageList(value); return *this;}
-    inline ListUsageForLicenseConfigurationResult& WithLicenseConfigurationUsageList(Aws::Vector<LicenseConfigurationUsage>&& value) { SetLicenseConfigurationUsageList(std::move(value)); return *this;}
-    inline ListUsageForLicenseConfigurationResult& AddLicenseConfigurationUsageList(const LicenseConfigurationUsage& value) { m_licenseConfigurationUsageList.push_back(value); return *this; }
-    inline ListUsageForLicenseConfigurationResult& AddLicenseConfigurationUsageList(LicenseConfigurationUsage&& value) { m_licenseConfigurationUsageList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LicenseConfigurationUsage>& GetLicenseConfigurationUsageList() const { return m_licenseConfigurationUsageList; }
+    template<typename LicenseConfigurationUsageListT = Aws::Vector<LicenseConfigurationUsage>>
+    void SetLicenseConfigurationUsageList(LicenseConfigurationUsageListT&& value) { m_licenseConfigurationUsageListHasBeenSet = true; m_licenseConfigurationUsageList = std::forward<LicenseConfigurationUsageListT>(value); }
+    template<typename LicenseConfigurationUsageListT = Aws::Vector<LicenseConfigurationUsage>>
+    ListUsageForLicenseConfigurationResult& WithLicenseConfigurationUsageList(LicenseConfigurationUsageListT&& value) { SetLicenseConfigurationUsageList(std::forward<LicenseConfigurationUsageListT>(value)); return *this;}
+    template<typename LicenseConfigurationUsageListT = LicenseConfigurationUsage>
+    ListUsageForLicenseConfigurationResult& AddLicenseConfigurationUsageList(LicenseConfigurationUsageListT&& value) { m_licenseConfigurationUsageListHasBeenSet = true; m_licenseConfigurationUsageList.emplace_back(std::forward<LicenseConfigurationUsageListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListUsageForLicenseConfigurationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUsageForLicenseConfigurationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUsageForLicenseConfigurationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUsageForLicenseConfigurationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListUsageForLicenseConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListUsageForLicenseConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListUsageForLicenseConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListUsageForLicenseConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LicenseConfigurationUsage> m_licenseConfigurationUsageList;
+    bool m_licenseConfigurationUsageListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

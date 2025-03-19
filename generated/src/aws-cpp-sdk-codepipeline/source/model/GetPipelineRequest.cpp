@@ -12,13 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPipelineRequest::GetPipelineRequest() : 
-    m_nameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String GetPipelineRequest::SerializePayload() const
 {
   JsonValue payload;

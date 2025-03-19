@@ -36,7 +36,7 @@ namespace Model
   class RuleType
   {
   public:
-    AWS_CODEPIPELINE_API RuleType();
+    AWS_CODEPIPELINE_API RuleType() = default;
     AWS_CODEPIPELINE_API RuleType(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API RuleType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,48 @@ namespace Model
     /**
      * <p>Represents information about a rule type.</p>
      */
-    inline const RuleTypeId& GetId() const{ return m_id; }
+    inline const RuleTypeId& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const RuleTypeId& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(RuleTypeId&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline RuleType& WithId(const RuleTypeId& value) { SetId(value); return *this;}
-    inline RuleType& WithId(RuleTypeId&& value) { SetId(std::move(value)); return *this;}
+    template<typename IdT = RuleTypeId>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = RuleTypeId>
+    RuleType& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns information about the settings for a rule type.</p>
      */
-    inline const RuleTypeSettings& GetSettings() const{ return m_settings; }
+    inline const RuleTypeSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const RuleTypeSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(RuleTypeSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline RuleType& WithSettings(const RuleTypeSettings& value) { SetSettings(value); return *this;}
-    inline RuleType& WithSettings(RuleTypeSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = RuleTypeSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = RuleTypeSettings>
+    RuleType& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration properties for the rule type.</p>
      */
-    inline const Aws::Vector<RuleConfigurationProperty>& GetRuleConfigurationProperties() const{ return m_ruleConfigurationProperties; }
+    inline const Aws::Vector<RuleConfigurationProperty>& GetRuleConfigurationProperties() const { return m_ruleConfigurationProperties; }
     inline bool RuleConfigurationPropertiesHasBeenSet() const { return m_ruleConfigurationPropertiesHasBeenSet; }
-    inline void SetRuleConfigurationProperties(const Aws::Vector<RuleConfigurationProperty>& value) { m_ruleConfigurationPropertiesHasBeenSet = true; m_ruleConfigurationProperties = value; }
-    inline void SetRuleConfigurationProperties(Aws::Vector<RuleConfigurationProperty>&& value) { m_ruleConfigurationPropertiesHasBeenSet = true; m_ruleConfigurationProperties = std::move(value); }
-    inline RuleType& WithRuleConfigurationProperties(const Aws::Vector<RuleConfigurationProperty>& value) { SetRuleConfigurationProperties(value); return *this;}
-    inline RuleType& WithRuleConfigurationProperties(Aws::Vector<RuleConfigurationProperty>&& value) { SetRuleConfigurationProperties(std::move(value)); return *this;}
-    inline RuleType& AddRuleConfigurationProperties(const RuleConfigurationProperty& value) { m_ruleConfigurationPropertiesHasBeenSet = true; m_ruleConfigurationProperties.push_back(value); return *this; }
-    inline RuleType& AddRuleConfigurationProperties(RuleConfigurationProperty&& value) { m_ruleConfigurationPropertiesHasBeenSet = true; m_ruleConfigurationProperties.push_back(std::move(value)); return *this; }
+    template<typename RuleConfigurationPropertiesT = Aws::Vector<RuleConfigurationProperty>>
+    void SetRuleConfigurationProperties(RuleConfigurationPropertiesT&& value) { m_ruleConfigurationPropertiesHasBeenSet = true; m_ruleConfigurationProperties = std::forward<RuleConfigurationPropertiesT>(value); }
+    template<typename RuleConfigurationPropertiesT = Aws::Vector<RuleConfigurationProperty>>
+    RuleType& WithRuleConfigurationProperties(RuleConfigurationPropertiesT&& value) { SetRuleConfigurationProperties(std::forward<RuleConfigurationPropertiesT>(value)); return *this;}
+    template<typename RuleConfigurationPropertiesT = RuleConfigurationProperty>
+    RuleType& AddRuleConfigurationProperties(RuleConfigurationPropertiesT&& value) { m_ruleConfigurationPropertiesHasBeenSet = true; m_ruleConfigurationProperties.emplace_back(std::forward<RuleConfigurationPropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ArtifactDetails& GetInputArtifactDetails() const{ return m_inputArtifactDetails; }
+    inline const ArtifactDetails& GetInputArtifactDetails() const { return m_inputArtifactDetails; }
     inline bool InputArtifactDetailsHasBeenSet() const { return m_inputArtifactDetailsHasBeenSet; }
-    inline void SetInputArtifactDetails(const ArtifactDetails& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = value; }
-    inline void SetInputArtifactDetails(ArtifactDetails&& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = std::move(value); }
-    inline RuleType& WithInputArtifactDetails(const ArtifactDetails& value) { SetInputArtifactDetails(value); return *this;}
-    inline RuleType& WithInputArtifactDetails(ArtifactDetails&& value) { SetInputArtifactDetails(std::move(value)); return *this;}
+    template<typename InputArtifactDetailsT = ArtifactDetails>
+    void SetInputArtifactDetails(InputArtifactDetailsT&& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = std::forward<InputArtifactDetailsT>(value); }
+    template<typename InputArtifactDetailsT = ArtifactDetails>
+    RuleType& WithInputArtifactDetails(InputArtifactDetailsT&& value) { SetInputArtifactDetails(std::forward<InputArtifactDetailsT>(value)); return *this;}
     ///@}
   private:
 

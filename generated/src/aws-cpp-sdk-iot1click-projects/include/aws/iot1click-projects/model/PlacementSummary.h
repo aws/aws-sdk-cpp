@@ -33,7 +33,7 @@ namespace Model
   class PlacementSummary
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API PlacementSummary();
+    AWS_IOT1CLICKPROJECTS_API PlacementSummary() = default;
     AWS_IOT1CLICKPROJECTS_API PlacementSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API PlacementSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the project containing the placement.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline PlacementSummary& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline PlacementSummary& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline PlacementSummary& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    PlacementSummary& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the placement being summarized.</p>
      */
-    inline const Aws::String& GetPlacementName() const{ return m_placementName; }
+    inline const Aws::String& GetPlacementName() const { return m_placementName; }
     inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
-    inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
-    inline void SetPlacementName(Aws::String&& value) { m_placementNameHasBeenSet = true; m_placementName = std::move(value); }
-    inline void SetPlacementName(const char* value) { m_placementNameHasBeenSet = true; m_placementName.assign(value); }
-    inline PlacementSummary& WithPlacementName(const Aws::String& value) { SetPlacementName(value); return *this;}
-    inline PlacementSummary& WithPlacementName(Aws::String&& value) { SetPlacementName(std::move(value)); return *this;}
-    inline PlacementSummary& WithPlacementName(const char* value) { SetPlacementName(value); return *this;}
+    template<typename PlacementNameT = Aws::String>
+    void SetPlacementName(PlacementNameT&& value) { m_placementNameHasBeenSet = true; m_placementName = std::forward<PlacementNameT>(value); }
+    template<typename PlacementNameT = Aws::String>
+    PlacementSummary& WithPlacementName(PlacementNameT&& value) { SetPlacementName(std::forward<PlacementNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>The date when the placement was originally created, in UNIX epoch time
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline PlacementSummary& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline PlacementSummary& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    PlacementSummary& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * the placement was not updated, then <code>createdDate</code> and
      * <code>updatedDate</code> are the same.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
+    inline const Aws::Utils::DateTime& GetUpdatedDate() const { return m_updatedDate; }
     inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
-    inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDateHasBeenSet = true; m_updatedDate = value; }
-    inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::move(value); }
-    inline PlacementSummary& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
-    inline PlacementSummary& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
+    template<typename UpdatedDateT = Aws::Utils::DateTime>
+    void SetUpdatedDate(UpdatedDateT&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::forward<UpdatedDateT>(value); }
+    template<typename UpdatedDateT = Aws::Utils::DateTime>
+    PlacementSummary& WithUpdatedDate(UpdatedDateT&& value) { SetUpdatedDate(std::forward<UpdatedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,10 +97,10 @@ namespace Model
     Aws::String m_placementName;
     bool m_placementNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedDate;
+    Aws::Utils::DateTime m_updatedDate{};
     bool m_updatedDateHasBeenSet = false;
   };
 

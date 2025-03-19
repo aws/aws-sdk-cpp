@@ -28,7 +28,7 @@ namespace Model
   class ListAllowedNodeTypeUpdatesResult
   {
   public:
-    AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult();
+    AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult() = default;
     AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,47 +37,46 @@ namespace Model
     /**
      * <p>A list node types which you can use to scale up your cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetScaleUpNodeTypes() const{ return m_scaleUpNodeTypes; }
-    inline void SetScaleUpNodeTypes(const Aws::Vector<Aws::String>& value) { m_scaleUpNodeTypes = value; }
-    inline void SetScaleUpNodeTypes(Aws::Vector<Aws::String>&& value) { m_scaleUpNodeTypes = std::move(value); }
-    inline ListAllowedNodeTypeUpdatesResult& WithScaleUpNodeTypes(const Aws::Vector<Aws::String>& value) { SetScaleUpNodeTypes(value); return *this;}
-    inline ListAllowedNodeTypeUpdatesResult& WithScaleUpNodeTypes(Aws::Vector<Aws::String>&& value) { SetScaleUpNodeTypes(std::move(value)); return *this;}
-    inline ListAllowedNodeTypeUpdatesResult& AddScaleUpNodeTypes(const Aws::String& value) { m_scaleUpNodeTypes.push_back(value); return *this; }
-    inline ListAllowedNodeTypeUpdatesResult& AddScaleUpNodeTypes(Aws::String&& value) { m_scaleUpNodeTypes.push_back(std::move(value)); return *this; }
-    inline ListAllowedNodeTypeUpdatesResult& AddScaleUpNodeTypes(const char* value) { m_scaleUpNodeTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetScaleUpNodeTypes() const { return m_scaleUpNodeTypes; }
+    template<typename ScaleUpNodeTypesT = Aws::Vector<Aws::String>>
+    void SetScaleUpNodeTypes(ScaleUpNodeTypesT&& value) { m_scaleUpNodeTypesHasBeenSet = true; m_scaleUpNodeTypes = std::forward<ScaleUpNodeTypesT>(value); }
+    template<typename ScaleUpNodeTypesT = Aws::Vector<Aws::String>>
+    ListAllowedNodeTypeUpdatesResult& WithScaleUpNodeTypes(ScaleUpNodeTypesT&& value) { SetScaleUpNodeTypes(std::forward<ScaleUpNodeTypesT>(value)); return *this;}
+    template<typename ScaleUpNodeTypesT = Aws::String>
+    ListAllowedNodeTypeUpdatesResult& AddScaleUpNodeTypes(ScaleUpNodeTypesT&& value) { m_scaleUpNodeTypesHasBeenSet = true; m_scaleUpNodeTypes.emplace_back(std::forward<ScaleUpNodeTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list node types which you can use to scale down your cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetScaleDownNodeTypes() const{ return m_scaleDownNodeTypes; }
-    inline void SetScaleDownNodeTypes(const Aws::Vector<Aws::String>& value) { m_scaleDownNodeTypes = value; }
-    inline void SetScaleDownNodeTypes(Aws::Vector<Aws::String>&& value) { m_scaleDownNodeTypes = std::move(value); }
-    inline ListAllowedNodeTypeUpdatesResult& WithScaleDownNodeTypes(const Aws::Vector<Aws::String>& value) { SetScaleDownNodeTypes(value); return *this;}
-    inline ListAllowedNodeTypeUpdatesResult& WithScaleDownNodeTypes(Aws::Vector<Aws::String>&& value) { SetScaleDownNodeTypes(std::move(value)); return *this;}
-    inline ListAllowedNodeTypeUpdatesResult& AddScaleDownNodeTypes(const Aws::String& value) { m_scaleDownNodeTypes.push_back(value); return *this; }
-    inline ListAllowedNodeTypeUpdatesResult& AddScaleDownNodeTypes(Aws::String&& value) { m_scaleDownNodeTypes.push_back(std::move(value)); return *this; }
-    inline ListAllowedNodeTypeUpdatesResult& AddScaleDownNodeTypes(const char* value) { m_scaleDownNodeTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetScaleDownNodeTypes() const { return m_scaleDownNodeTypes; }
+    template<typename ScaleDownNodeTypesT = Aws::Vector<Aws::String>>
+    void SetScaleDownNodeTypes(ScaleDownNodeTypesT&& value) { m_scaleDownNodeTypesHasBeenSet = true; m_scaleDownNodeTypes = std::forward<ScaleDownNodeTypesT>(value); }
+    template<typename ScaleDownNodeTypesT = Aws::Vector<Aws::String>>
+    ListAllowedNodeTypeUpdatesResult& WithScaleDownNodeTypes(ScaleDownNodeTypesT&& value) { SetScaleDownNodeTypes(std::forward<ScaleDownNodeTypesT>(value)); return *this;}
+    template<typename ScaleDownNodeTypesT = Aws::String>
+    ListAllowedNodeTypeUpdatesResult& AddScaleDownNodeTypes(ScaleDownNodeTypesT&& value) { m_scaleDownNodeTypesHasBeenSet = true; m_scaleDownNodeTypes.emplace_back(std::forward<ScaleDownNodeTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAllowedNodeTypeUpdatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAllowedNodeTypeUpdatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAllowedNodeTypeUpdatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAllowedNodeTypeUpdatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_scaleUpNodeTypes;
+    bool m_scaleUpNodeTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scaleDownNodeTypes;
+    bool m_scaleDownNodeTypesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

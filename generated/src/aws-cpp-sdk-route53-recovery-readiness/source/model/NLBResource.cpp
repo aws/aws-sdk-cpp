@@ -18,13 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-NLBResource::NLBResource() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 NLBResource::NLBResource(JsonView jsonValue)
-  : NLBResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NLBResource& NLBResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCostForecastRequest::GetCostForecastRequest() : 
-    m_timePeriodHasBeenSet(false),
-    m_metric(Metric::NOT_SET),
-    m_metricHasBeenSet(false),
-    m_granularity(Granularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false),
-    m_predictionIntervalLevel(0),
-    m_predictionIntervalLevelHasBeenSet(false)
-{
-}
-
 Aws::String GetCostForecastRequest::SerializePayload() const
 {
   JsonValue payload;

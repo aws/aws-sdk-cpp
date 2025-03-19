@@ -32,7 +32,7 @@ namespace Model
   class CORSRule
   {
   public:
-    AWS_S3CRT_API CORSRule();
+    AWS_S3CRT_API CORSRule() = default;
     AWS_S3CRT_API CORSRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API CORSRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * <p>Unique identifier for the rule. The value cannot be longer than 255
      * characters.</p>
      */
-    inline const Aws::String& GetID() const{ return m_iD; }
+    inline const Aws::String& GetID() const { return m_iD; }
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
-    inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
-    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
-    inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
-    inline CORSRule& WithID(const Aws::String& value) { SetID(value); return *this;}
-    inline CORSRule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
-    inline CORSRule& WithID(const char* value) { SetID(value); return *this;}
+    template<typename IDT = Aws::String>
+    void SetID(IDT&& value) { m_iDHasBeenSet = true; m_iD = std::forward<IDT>(value); }
+    template<typename IDT = Aws::String>
+    CORSRule& WithID(IDT&& value) { SetID(std::forward<IDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * any preflight OPTIONS request, Amazon S3 returns any requested headers that are
      * allowed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedHeaders() const{ return m_allowedHeaders; }
+    inline const Aws::Vector<Aws::String>& GetAllowedHeaders() const { return m_allowedHeaders; }
     inline bool AllowedHeadersHasBeenSet() const { return m_allowedHeadersHasBeenSet; }
-    inline void SetAllowedHeaders(const Aws::Vector<Aws::String>& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders = value; }
-    inline void SetAllowedHeaders(Aws::Vector<Aws::String>&& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders = std::move(value); }
-    inline CORSRule& WithAllowedHeaders(const Aws::Vector<Aws::String>& value) { SetAllowedHeaders(value); return *this;}
-    inline CORSRule& WithAllowedHeaders(Aws::Vector<Aws::String>&& value) { SetAllowedHeaders(std::move(value)); return *this;}
-    inline CORSRule& AddAllowedHeaders(const Aws::String& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(value); return *this; }
-    inline CORSRule& AddAllowedHeaders(Aws::String&& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(std::move(value)); return *this; }
-    inline CORSRule& AddAllowedHeaders(const char* value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(value); return *this; }
+    template<typename AllowedHeadersT = Aws::Vector<Aws::String>>
+    void SetAllowedHeaders(AllowedHeadersT&& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders = std::forward<AllowedHeadersT>(value); }
+    template<typename AllowedHeadersT = Aws::Vector<Aws::String>>
+    CORSRule& WithAllowedHeaders(AllowedHeadersT&& value) { SetAllowedHeaders(std::forward<AllowedHeadersT>(value)); return *this;}
+    template<typename AllowedHeadersT = Aws::String>
+    CORSRule& AddAllowedHeaders(AllowedHeadersT&& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.emplace_back(std::forward<AllowedHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,15 +75,14 @@ namespace Model
      * <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and
      * <code>DELETE</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedMethods() const{ return m_allowedMethods; }
+    inline const Aws::Vector<Aws::String>& GetAllowedMethods() const { return m_allowedMethods; }
     inline bool AllowedMethodsHasBeenSet() const { return m_allowedMethodsHasBeenSet; }
-    inline void SetAllowedMethods(const Aws::Vector<Aws::String>& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = value; }
-    inline void SetAllowedMethods(Aws::Vector<Aws::String>&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::move(value); }
-    inline CORSRule& WithAllowedMethods(const Aws::Vector<Aws::String>& value) { SetAllowedMethods(value); return *this;}
-    inline CORSRule& WithAllowedMethods(Aws::Vector<Aws::String>&& value) { SetAllowedMethods(std::move(value)); return *this;}
-    inline CORSRule& AddAllowedMethods(const Aws::String& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(value); return *this; }
-    inline CORSRule& AddAllowedMethods(Aws::String&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(std::move(value)); return *this; }
-    inline CORSRule& AddAllowedMethods(const char* value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(value); return *this; }
+    template<typename AllowedMethodsT = Aws::Vector<Aws::String>>
+    void SetAllowedMethods(AllowedMethodsT&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::forward<AllowedMethodsT>(value); }
+    template<typename AllowedMethodsT = Aws::Vector<Aws::String>>
+    CORSRule& WithAllowedMethods(AllowedMethodsT&& value) { SetAllowedMethods(std::forward<AllowedMethodsT>(value)); return *this;}
+    template<typename AllowedMethodsT = Aws::String>
+    CORSRule& AddAllowedMethods(AllowedMethodsT&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.emplace_back(std::forward<AllowedMethodsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,15 +90,14 @@ namespace Model
      * <p>One or more origins you want customers to be able to access the bucket
      * from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedOrigins() const{ return m_allowedOrigins; }
+    inline const Aws::Vector<Aws::String>& GetAllowedOrigins() const { return m_allowedOrigins; }
     inline bool AllowedOriginsHasBeenSet() const { return m_allowedOriginsHasBeenSet; }
-    inline void SetAllowedOrigins(const Aws::Vector<Aws::String>& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = value; }
-    inline void SetAllowedOrigins(Aws::Vector<Aws::String>&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = std::move(value); }
-    inline CORSRule& WithAllowedOrigins(const Aws::Vector<Aws::String>& value) { SetAllowedOrigins(value); return *this;}
-    inline CORSRule& WithAllowedOrigins(Aws::Vector<Aws::String>&& value) { SetAllowedOrigins(std::move(value)); return *this;}
-    inline CORSRule& AddAllowedOrigins(const Aws::String& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
-    inline CORSRule& AddAllowedOrigins(Aws::String&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(std::move(value)); return *this; }
-    inline CORSRule& AddAllowedOrigins(const char* value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
+    template<typename AllowedOriginsT = Aws::Vector<Aws::String>>
+    void SetAllowedOrigins(AllowedOriginsT&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = std::forward<AllowedOriginsT>(value); }
+    template<typename AllowedOriginsT = Aws::Vector<Aws::String>>
+    CORSRule& WithAllowedOrigins(AllowedOriginsT&& value) { SetAllowedOrigins(std::forward<AllowedOriginsT>(value)); return *this;}
+    template<typename AllowedOriginsT = Aws::String>
+    CORSRule& AddAllowedOrigins(AllowedOriginsT&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.emplace_back(std::forward<AllowedOriginsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,15 +106,14 @@ namespace Model
      * access from their applications (for example, from a JavaScript
      * <code>XMLHttpRequest</code> object).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExposeHeaders() const{ return m_exposeHeaders; }
+    inline const Aws::Vector<Aws::String>& GetExposeHeaders() const { return m_exposeHeaders; }
     inline bool ExposeHeadersHasBeenSet() const { return m_exposeHeadersHasBeenSet; }
-    inline void SetExposeHeaders(const Aws::Vector<Aws::String>& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = value; }
-    inline void SetExposeHeaders(Aws::Vector<Aws::String>&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = std::move(value); }
-    inline CORSRule& WithExposeHeaders(const Aws::Vector<Aws::String>& value) { SetExposeHeaders(value); return *this;}
-    inline CORSRule& WithExposeHeaders(Aws::Vector<Aws::String>&& value) { SetExposeHeaders(std::move(value)); return *this;}
-    inline CORSRule& AddExposeHeaders(const Aws::String& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
-    inline CORSRule& AddExposeHeaders(Aws::String&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(std::move(value)); return *this; }
-    inline CORSRule& AddExposeHeaders(const char* value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
+    template<typename ExposeHeadersT = Aws::Vector<Aws::String>>
+    void SetExposeHeaders(ExposeHeadersT&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = std::forward<ExposeHeadersT>(value); }
+    template<typename ExposeHeadersT = Aws::Vector<Aws::String>>
+    CORSRule& WithExposeHeaders(ExposeHeadersT&& value) { SetExposeHeaders(std::forward<ExposeHeadersT>(value)); return *this;}
+    template<typename ExposeHeadersT = Aws::String>
+    CORSRule& AddExposeHeaders(ExposeHeadersT&& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.emplace_back(std::forward<ExposeHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,7 +121,7 @@ namespace Model
      * <p>The time in seconds that your browser is to cache the preflight response for
      * the specified resource.</p>
      */
-    inline int GetMaxAgeSeconds() const{ return m_maxAgeSeconds; }
+    inline int GetMaxAgeSeconds() const { return m_maxAgeSeconds; }
     inline bool MaxAgeSecondsHasBeenSet() const { return m_maxAgeSecondsHasBeenSet; }
     inline void SetMaxAgeSeconds(int value) { m_maxAgeSecondsHasBeenSet = true; m_maxAgeSeconds = value; }
     inline CORSRule& WithMaxAgeSeconds(int value) { SetMaxAgeSeconds(value); return *this;}
@@ -149,7 +143,7 @@ namespace Model
     Aws::Vector<Aws::String> m_exposeHeaders;
     bool m_exposeHeadersHasBeenSet = false;
 
-    int m_maxAgeSeconds;
+    int m_maxAgeSeconds{0};
     bool m_maxAgeSecondsHasBeenSet = false;
   };
 

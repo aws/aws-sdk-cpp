@@ -20,14 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-XmlAttributesPayloadRequest::XmlAttributesPayloadRequest() : 
-    m_fooHasBeenSet(false),
-    m_attrHasBeenSet(false)
-{
-}
-
 XmlAttributesPayloadRequest::XmlAttributesPayloadRequest(const XmlNode& xmlNode)
-  : XmlAttributesPayloadRequest()
 {
   *this = xmlNode;
 }

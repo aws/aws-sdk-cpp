@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-EFSVolumeConfiguration::EFSVolumeConfiguration() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_transitEncryption(EFSTransitEncryption::NOT_SET),
-    m_transitEncryptionHasBeenSet(false),
-    m_transitEncryptionPort(0),
-    m_transitEncryptionPortHasBeenSet(false),
-    m_authorizationConfigHasBeenSet(false)
-{
-}
-
 EFSVolumeConfiguration::EFSVolumeConfiguration(JsonView jsonValue)
-  : EFSVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ EFSVolumeConfiguration& EFSVolumeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("fileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootDirectory"))
   {
     m_rootDirectory = jsonValue.GetString("rootDirectory");
-
     m_rootDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transitEncryption"))
   {
     m_transitEncryption = EFSTransitEncryptionMapper::GetEFSTransitEncryptionForName(jsonValue.GetString("transitEncryption"));
-
     m_transitEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transitEncryptionPort"))
   {
     m_transitEncryptionPort = jsonValue.GetInteger("transitEncryptionPort");
-
     m_transitEncryptionPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationConfig"))
   {
     m_authorizationConfig = jsonValue.GetObject("authorizationConfig");
-
     m_authorizationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class CreateKeyRequest : public PaymentCryptographyRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API CreateKeyRequest();
+    AWS_PAYMENTCRYPTOGRAPHY_API CreateKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * operations allowed with the key. This data is immutable after the key is
      * created.</p>
      */
-    inline const KeyAttributes& GetKeyAttributes() const{ return m_keyAttributes; }
+    inline const KeyAttributes& GetKeyAttributes() const { return m_keyAttributes; }
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-    inline void SetKeyAttributes(const KeyAttributes& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-    inline void SetKeyAttributes(KeyAttributes&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-    inline CreateKeyRequest& WithKeyAttributes(const KeyAttributes& value) { SetKeyAttributes(value); return *this;}
-    inline CreateKeyRequest& WithKeyAttributes(KeyAttributes&& value) { SetKeyAttributes(std::move(value)); return *this;}
+    template<typename KeyAttributesT = KeyAttributes>
+    void SetKeyAttributes(KeyAttributesT&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::forward<KeyAttributesT>(value); }
+    template<typename KeyAttributesT = KeyAttributes>
+    CreateKeyRequest& WithKeyAttributes(KeyAttributesT&& value) { SetKeyAttributes(std::forward<KeyAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +61,17 @@ namespace Model
      * the input data is 16 bytes of zero and retaining the 3 highest order bytes of
      * the encrypted result.</p>
      */
-    inline const KeyCheckValueAlgorithm& GetKeyCheckValueAlgorithm() const{ return m_keyCheckValueAlgorithm; }
+    inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
     inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }
-    inline void SetKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
-    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = std::move(value); }
-    inline CreateKeyRequest& WithKeyCheckValueAlgorithm(const KeyCheckValueAlgorithm& value) { SetKeyCheckValueAlgorithm(value); return *this;}
-    inline CreateKeyRequest& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm&& value) { SetKeyCheckValueAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { m_keyCheckValueAlgorithmHasBeenSet = true; m_keyCheckValueAlgorithm = value; }
+    inline CreateKeyRequest& WithKeyCheckValueAlgorithm(KeyCheckValueAlgorithm value) { SetKeyCheckValueAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the key is exportable from the service.</p>
      */
-    inline bool GetExportable() const{ return m_exportable; }
+    inline bool GetExportable() const { return m_exportable; }
     inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
     inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
     inline CreateKeyRequest& WithExportable(bool value) { SetExportable(value); return *this;}
@@ -85,7 +83,7 @@ namespace Model
      * for use within the service. If the key is not enabled, then it is created but
      * not activated. The default value is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CreateKeyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -106,27 +104,27 @@ namespace Model
      *  <p>Tagging or untagging an Amazon Web Services Payment Cryptography key
      * can allow or deny permission to the key.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateKeyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateKeyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateKeyRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateKeyRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     KeyAttributes m_keyAttributes;
     bool m_keyAttributesHasBeenSet = false;
 
-    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm;
+    KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
     bool m_keyCheckValueAlgorithmHasBeenSet = false;
 
-    bool m_exportable;
+    bool m_exportable{false};
     bool m_exportableHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

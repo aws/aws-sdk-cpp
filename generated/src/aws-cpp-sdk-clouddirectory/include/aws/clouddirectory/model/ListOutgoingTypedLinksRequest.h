@@ -26,7 +26,7 @@ namespace Model
   class ListOutgoingTypedLinksRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API ListOutgoingTypedLinksRequest();
+    AWS_CLOUDDIRECTORY_API ListOutgoingTypedLinksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the directory where you want to list the
      * typed links.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline ListOutgoingTypedLinksRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    ListOutgoingTypedLinksRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A reference that identifies the object whose attributes will be listed.</p>
      */
-    inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+    inline const ObjectReference& GetObjectReference() const { return m_objectReference; }
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-    inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-    inline ListOutgoingTypedLinksRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+    template<typename ObjectReferenceT = ObjectReference>
+    void SetObjectReference(ObjectReferenceT&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::forward<ObjectReferenceT>(value); }
+    template<typename ObjectReferenceT = ObjectReference>
+    ListOutgoingTypedLinksRequest& WithObjectReference(ObjectReferenceT&& value) { SetObjectReference(std::forward<ObjectReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,14 @@ namespace Model
      * attributes that do not have a range specified are presumed to match the entire
      * range.</p>
      */
-    inline const Aws::Vector<TypedLinkAttributeRange>& GetFilterAttributeRanges() const{ return m_filterAttributeRanges; }
+    inline const Aws::Vector<TypedLinkAttributeRange>& GetFilterAttributeRanges() const { return m_filterAttributeRanges; }
     inline bool FilterAttributeRangesHasBeenSet() const { return m_filterAttributeRangesHasBeenSet; }
-    inline void SetFilterAttributeRanges(const Aws::Vector<TypedLinkAttributeRange>& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges = value; }
-    inline void SetFilterAttributeRanges(Aws::Vector<TypedLinkAttributeRange>&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges = std::move(value); }
-    inline ListOutgoingTypedLinksRequest& WithFilterAttributeRanges(const Aws::Vector<TypedLinkAttributeRange>& value) { SetFilterAttributeRanges(value); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithFilterAttributeRanges(Aws::Vector<TypedLinkAttributeRange>&& value) { SetFilterAttributeRanges(std::move(value)); return *this;}
-    inline ListOutgoingTypedLinksRequest& AddFilterAttributeRanges(const TypedLinkAttributeRange& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.push_back(value); return *this; }
-    inline ListOutgoingTypedLinksRequest& AddFilterAttributeRanges(TypedLinkAttributeRange&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.push_back(std::move(value)); return *this; }
+    template<typename FilterAttributeRangesT = Aws::Vector<TypedLinkAttributeRange>>
+    void SetFilterAttributeRanges(FilterAttributeRangesT&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges = std::forward<FilterAttributeRangesT>(value); }
+    template<typename FilterAttributeRangesT = Aws::Vector<TypedLinkAttributeRange>>
+    ListOutgoingTypedLinksRequest& WithFilterAttributeRanges(FilterAttributeRangesT&& value) { SetFilterAttributeRanges(std::forward<FilterAttributeRangesT>(value)); return *this;}
+    template<typename FilterAttributeRangesT = TypedLinkAttributeRange>
+    ListOutgoingTypedLinksRequest& AddFilterAttributeRanges(FilterAttributeRangesT&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.emplace_back(std::forward<FilterAttributeRangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,33 +86,31 @@ namespace Model
      * <p>Filters are interpreted in the order of the attributes defined on the typed
      * link facet, not the order they are supplied to any API calls.</p>
      */
-    inline const TypedLinkSchemaAndFacetName& GetFilterTypedLink() const{ return m_filterTypedLink; }
+    inline const TypedLinkSchemaAndFacetName& GetFilterTypedLink() const { return m_filterTypedLink; }
     inline bool FilterTypedLinkHasBeenSet() const { return m_filterTypedLinkHasBeenSet; }
-    inline void SetFilterTypedLink(const TypedLinkSchemaAndFacetName& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = value; }
-    inline void SetFilterTypedLink(TypedLinkSchemaAndFacetName&& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = std::move(value); }
-    inline ListOutgoingTypedLinksRequest& WithFilterTypedLink(const TypedLinkSchemaAndFacetName& value) { SetFilterTypedLink(value); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithFilterTypedLink(TypedLinkSchemaAndFacetName&& value) { SetFilterTypedLink(std::move(value)); return *this;}
+    template<typename FilterTypedLinkT = TypedLinkSchemaAndFacetName>
+    void SetFilterTypedLink(FilterTypedLinkT&& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = std::forward<FilterTypedLinkT>(value); }
+    template<typename FilterTypedLinkT = TypedLinkSchemaAndFacetName>
+    ListOutgoingTypedLinksRequest& WithFilterTypedLink(FilterTypedLinkT&& value) { SetFilterTypedLink(std::forward<FilterTypedLinkT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOutgoingTypedLinksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOutgoingTypedLinksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListOutgoingTypedLinksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -124,12 +120,10 @@ namespace Model
     /**
      * <p>The consistency level to execute the request at.</p>
      */
-    inline const ConsistencyLevel& GetConsistencyLevel() const{ return m_consistencyLevel; }
+    inline ConsistencyLevel GetConsistencyLevel() const { return m_consistencyLevel; }
     inline bool ConsistencyLevelHasBeenSet() const { return m_consistencyLevelHasBeenSet; }
-    inline void SetConsistencyLevel(const ConsistencyLevel& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
-    inline ListOutgoingTypedLinksRequest& WithConsistencyLevel(const ConsistencyLevel& value) { SetConsistencyLevel(value); return *this;}
-    inline ListOutgoingTypedLinksRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
+    inline void SetConsistencyLevel(ConsistencyLevel value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline ListOutgoingTypedLinksRequest& WithConsistencyLevel(ConsistencyLevel value) { SetConsistencyLevel(value); return *this;}
     ///@}
   private:
 
@@ -148,10 +142,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ConsistencyLevel m_consistencyLevel;
+    ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
     bool m_consistencyLevelHasBeenSet = false;
   };
 

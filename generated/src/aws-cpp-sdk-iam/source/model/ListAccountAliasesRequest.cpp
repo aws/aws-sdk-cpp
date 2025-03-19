@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListAccountAliasesRequest::ListAccountAliasesRequest() : 
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountAliasesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetSortBy::TestSetSortBy() : 
-    m_attribute(TestSetSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 TestSetSortBy::TestSetSortBy(JsonView jsonValue)
-  : TestSetSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TestSetSortBy& TestSetSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = TestSetSortAttributeMapper::GetTestSetSortAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

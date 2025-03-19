@@ -12,12 +12,6 @@ using namespace Aws::Account::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutContactInformationRequest::PutContactInformationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_contactInformationHasBeenSet(false)
-{
-}
-
 Aws::String PutContactInformationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class Environment
   {
   public:
-    AWS_LAMBDA_API Environment();
+    AWS_LAMBDA_API Environment() = default;
     AWS_LAMBDA_API Environment(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,19 +47,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Using
      * Lambda environment variables</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline Environment& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
-    inline Environment& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(std::move(value)); return *this;}
-    inline Environment& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
-    inline Environment& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-    inline Environment& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-    inline Environment& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
-    inline Environment& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-    inline Environment& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-    inline Environment& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
+    template<typename VariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Map<Aws::String, Aws::String>>
+    Environment& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesKeyT = Aws::String, typename VariablesValueT = Aws::String>
+    Environment& AddVariables(VariablesKeyT&& key, VariablesValueT&& value) {
+      m_variablesHasBeenSet = true; m_variables.emplace(std::forward<VariablesKeyT>(key), std::forward<VariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

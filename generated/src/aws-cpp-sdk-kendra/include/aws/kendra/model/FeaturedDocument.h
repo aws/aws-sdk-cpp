@@ -34,7 +34,7 @@ namespace Model
   class FeaturedDocument
   {
   public:
-    AWS_KENDRA_API FeaturedDocument();
+    AWS_KENDRA_API FeaturedDocument() = default;
     AWS_KENDRA_API FeaturedDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API FeaturedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * to search for specific documents with their document IDs included in the result
      * items, or you can use the console.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FeaturedDocument& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FeaturedDocument& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FeaturedDocument& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FeaturedDocument& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

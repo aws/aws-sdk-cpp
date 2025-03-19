@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ArchiveCdnSettings::ArchiveCdnSettings() : 
-    m_archiveS3SettingsHasBeenSet(false)
-{
-}
-
 ArchiveCdnSettings::ArchiveCdnSettings(JsonView jsonValue)
-  : ArchiveCdnSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ArchiveCdnSettings& ArchiveCdnSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("archiveS3Settings"))
   {
     m_archiveS3Settings = jsonValue.GetObject("archiveS3Settings");
-
     m_archiveS3SettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

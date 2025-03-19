@@ -27,7 +27,7 @@ namespace Model
   class CheckSchemaVersionValidityResult
   {
   public:
-    AWS_GLUE_API CheckSchemaVersionValidityResult();
+    AWS_GLUE_API CheckSchemaVersionValidityResult() = default;
     AWS_GLUE_API CheckSchemaVersionValidityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API CheckSchemaVersionValidityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,8 +36,8 @@ namespace Model
     /**
      * <p>Return true, if the schema is valid and false otherwise.</p>
      */
-    inline bool GetValid() const{ return m_valid; }
-    inline void SetValid(bool value) { m_valid = value; }
+    inline bool GetValid() const { return m_valid; }
+    inline void SetValid(bool value) { m_validHasBeenSet = true; m_valid = value; }
     inline CheckSchemaVersionValidityResult& WithValid(bool value) { SetValid(value); return *this;}
     ///@}
 
@@ -45,32 +45,31 @@ namespace Model
     /**
      * <p>A validation failure error message.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
-    inline void SetError(const Aws::String& value) { m_error = value; }
-    inline void SetError(Aws::String&& value) { m_error = std::move(value); }
-    inline void SetError(const char* value) { m_error.assign(value); }
-    inline CheckSchemaVersionValidityResult& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline CheckSchemaVersionValidityResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline CheckSchemaVersionValidityResult& WithError(const char* value) { SetError(value); return *this;}
+    inline const Aws::String& GetError() const { return m_error; }
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    CheckSchemaVersionValidityResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CheckSchemaVersionValidityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CheckSchemaVersionValidityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CheckSchemaVersionValidityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CheckSchemaVersionValidityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_valid;
+    bool m_valid{false};
+    bool m_validHasBeenSet = false;
 
     Aws::String m_error;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

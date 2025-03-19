@@ -18,22 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-WorkloadInsightsTopContributorsRow::WorkloadInsightsTopContributorsRow() : 
-    m_accountIdHasBeenSet(false),
-    m_localSubnetIdHasBeenSet(false),
-    m_localAzHasBeenSet(false),
-    m_localVpcIdHasBeenSet(false),
-    m_localRegionHasBeenSet(false),
-    m_remoteIdentifierHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_localSubnetArnHasBeenSet(false),
-    m_localVpcArnHasBeenSet(false)
-{
-}
-
 WorkloadInsightsTopContributorsRow::WorkloadInsightsTopContributorsRow(JsonView jsonValue)
-  : WorkloadInsightsTopContributorsRow()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ WorkloadInsightsTopContributorsRow& WorkloadInsightsTopContributorsRow::operator
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localSubnetId"))
   {
     m_localSubnetId = jsonValue.GetString("localSubnetId");
-
     m_localSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localAz"))
   {
     m_localAz = jsonValue.GetString("localAz");
-
     m_localAzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localVpcId"))
   {
     m_localVpcId = jsonValue.GetString("localVpcId");
-
     m_localVpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localRegion"))
   {
     m_localRegion = jsonValue.GetString("localRegion");
-
     m_localRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteIdentifier"))
   {
     m_remoteIdentifier = jsonValue.GetString("remoteIdentifier");
-
     m_remoteIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInt64("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localSubnetArn"))
   {
     m_localSubnetArn = jsonValue.GetString("localSubnetArn");
-
     m_localSubnetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localVpcArn"))
   {
     m_localVpcArn = jsonValue.GetString("localVpcArn");
-
     m_localVpcArnHasBeenSet = true;
   }
-
   return *this;
 }
 

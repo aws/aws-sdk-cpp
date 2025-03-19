@@ -30,7 +30,7 @@ namespace Model
   class GetIntegrationResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetIntegrationResult();
+    AWS_CLOUDWATCHLOGS_API GetIntegrationResult() = default;
     AWS_CLOUDWATCHLOGS_API GetIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API GetIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The name of the integration.</p>
      */
-    inline const Aws::String& GetIntegrationName() const{ return m_integrationName; }
-    inline void SetIntegrationName(const Aws::String& value) { m_integrationName = value; }
-    inline void SetIntegrationName(Aws::String&& value) { m_integrationName = std::move(value); }
-    inline void SetIntegrationName(const char* value) { m_integrationName.assign(value); }
-    inline GetIntegrationResult& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
-    inline GetIntegrationResult& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
-    inline GetIntegrationResult& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    inline const Aws::String& GetIntegrationName() const { return m_integrationName; }
+    template<typename IntegrationNameT = Aws::String>
+    void SetIntegrationName(IntegrationNameT&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::forward<IntegrationNameT>(value); }
+    template<typename IntegrationNameT = Aws::String>
+    GetIntegrationResult& WithIntegrationName(IntegrationNameT&& value) { SetIntegrationName(std::forward<IntegrationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,22 +51,18 @@ namespace Model
      * <p>The type of integration. Integrations with OpenSearch Service have the type
      * <code>OPENSEARCH</code>.</p>
      */
-    inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
-    inline void SetIntegrationType(const IntegrationType& value) { m_integrationType = value; }
-    inline void SetIntegrationType(IntegrationType&& value) { m_integrationType = std::move(value); }
-    inline GetIntegrationResult& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
-    inline GetIntegrationResult& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    inline IntegrationType GetIntegrationType() const { return m_integrationType; }
+    inline void SetIntegrationType(IntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline GetIntegrationResult& WithIntegrationType(IntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of this integration.</p>
      */
-    inline const IntegrationStatus& GetIntegrationStatus() const{ return m_integrationStatus; }
-    inline void SetIntegrationStatus(const IntegrationStatus& value) { m_integrationStatus = value; }
-    inline void SetIntegrationStatus(IntegrationStatus&& value) { m_integrationStatus = std::move(value); }
-    inline GetIntegrationResult& WithIntegrationStatus(const IntegrationStatus& value) { SetIntegrationStatus(value); return *this;}
-    inline GetIntegrationResult& WithIntegrationStatus(IntegrationStatus&& value) { SetIntegrationStatus(std::move(value)); return *this;}
+    inline IntegrationStatus GetIntegrationStatus() const { return m_integrationStatus; }
+    inline void SetIntegrationStatus(IntegrationStatus value) { m_integrationStatusHasBeenSet = true; m_integrationStatus = value; }
+    inline GetIntegrationResult& WithIntegrationStatus(IntegrationStatus value) { SetIntegrationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -78,34 +72,37 @@ namespace Model
      * OpenSearch Service resources such as the collection, the workspace, and
      * policies.</p>
      */
-    inline const IntegrationDetails& GetIntegrationDetails() const{ return m_integrationDetails; }
-    inline void SetIntegrationDetails(const IntegrationDetails& value) { m_integrationDetails = value; }
-    inline void SetIntegrationDetails(IntegrationDetails&& value) { m_integrationDetails = std::move(value); }
-    inline GetIntegrationResult& WithIntegrationDetails(const IntegrationDetails& value) { SetIntegrationDetails(value); return *this;}
-    inline GetIntegrationResult& WithIntegrationDetails(IntegrationDetails&& value) { SetIntegrationDetails(std::move(value)); return *this;}
+    inline const IntegrationDetails& GetIntegrationDetails() const { return m_integrationDetails; }
+    template<typename IntegrationDetailsT = IntegrationDetails>
+    void SetIntegrationDetails(IntegrationDetailsT&& value) { m_integrationDetailsHasBeenSet = true; m_integrationDetails = std::forward<IntegrationDetailsT>(value); }
+    template<typename IntegrationDetailsT = IntegrationDetails>
+    GetIntegrationResult& WithIntegrationDetails(IntegrationDetailsT&& value) { SetIntegrationDetails(std::forward<IntegrationDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIntegrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIntegrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIntegrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIntegrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_integrationName;
+    bool m_integrationNameHasBeenSet = false;
 
-    IntegrationType m_integrationType;
+    IntegrationType m_integrationType{IntegrationType::NOT_SET};
+    bool m_integrationTypeHasBeenSet = false;
 
-    IntegrationStatus m_integrationStatus;
+    IntegrationStatus m_integrationStatus{IntegrationStatus::NOT_SET};
+    bool m_integrationStatusHasBeenSet = false;
 
     IntegrationDetails m_integrationDetails;
+    bool m_integrationDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

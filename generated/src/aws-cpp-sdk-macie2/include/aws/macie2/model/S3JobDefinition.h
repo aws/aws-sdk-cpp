@@ -40,7 +40,7 @@ namespace Model
   class S3JobDefinition
   {
   public:
-    AWS_MACIE2_API S3JobDefinition();
+    AWS_MACIE2_API S3JobDefinition() = default;
     AWS_MACIE2_API S3JobDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3JobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,12 @@ namespace Model
      * definition can contain a bucketCriteria object or a bucketDefinitions array, not
      * both.</p>
      */
-    inline const S3BucketCriteriaForJob& GetBucketCriteria() const{ return m_bucketCriteria; }
+    inline const S3BucketCriteriaForJob& GetBucketCriteria() const { return m_bucketCriteria; }
     inline bool BucketCriteriaHasBeenSet() const { return m_bucketCriteriaHasBeenSet; }
-    inline void SetBucketCriteria(const S3BucketCriteriaForJob& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = value; }
-    inline void SetBucketCriteria(S3BucketCriteriaForJob&& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = std::move(value); }
-    inline S3JobDefinition& WithBucketCriteria(const S3BucketCriteriaForJob& value) { SetBucketCriteria(value); return *this;}
-    inline S3JobDefinition& WithBucketCriteria(S3BucketCriteriaForJob&& value) { SetBucketCriteria(std::move(value)); return *this;}
+    template<typename BucketCriteriaT = S3BucketCriteriaForJob>
+    void SetBucketCriteria(BucketCriteriaT&& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = std::forward<BucketCriteriaT>(value); }
+    template<typename BucketCriteriaT = S3BucketCriteriaForJob>
+    S3JobDefinition& WithBucketCriteria(BucketCriteriaT&& value) { SetBucketCriteria(std::forward<BucketCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +69,14 @@ namespace Model
      * account and one or more buckets to analyze for that account. A job's definition
      * can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
      */
-    inline const Aws::Vector<S3BucketDefinitionForJob>& GetBucketDefinitions() const{ return m_bucketDefinitions; }
+    inline const Aws::Vector<S3BucketDefinitionForJob>& GetBucketDefinitions() const { return m_bucketDefinitions; }
     inline bool BucketDefinitionsHasBeenSet() const { return m_bucketDefinitionsHasBeenSet; }
-    inline void SetBucketDefinitions(const Aws::Vector<S3BucketDefinitionForJob>& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = value; }
-    inline void SetBucketDefinitions(Aws::Vector<S3BucketDefinitionForJob>&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = std::move(value); }
-    inline S3JobDefinition& WithBucketDefinitions(const Aws::Vector<S3BucketDefinitionForJob>& value) { SetBucketDefinitions(value); return *this;}
-    inline S3JobDefinition& WithBucketDefinitions(Aws::Vector<S3BucketDefinitionForJob>&& value) { SetBucketDefinitions(std::move(value)); return *this;}
-    inline S3JobDefinition& AddBucketDefinitions(const S3BucketDefinitionForJob& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.push_back(value); return *this; }
-    inline S3JobDefinition& AddBucketDefinitions(S3BucketDefinitionForJob&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.push_back(std::move(value)); return *this; }
+    template<typename BucketDefinitionsT = Aws::Vector<S3BucketDefinitionForJob>>
+    void SetBucketDefinitions(BucketDefinitionsT&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = std::forward<BucketDefinitionsT>(value); }
+    template<typename BucketDefinitionsT = Aws::Vector<S3BucketDefinitionForJob>>
+    S3JobDefinition& WithBucketDefinitions(BucketDefinitionsT&& value) { SetBucketDefinitions(std::forward<BucketDefinitionsT>(value)); return *this;}
+    template<typename BucketDefinitionsT = S3BucketDefinitionForJob>
+    S3JobDefinition& AddBucketDefinitions(BucketDefinitionsT&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.emplace_back(std::forward<BucketDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,12 +85,12 @@ namespace Model
      * include or exclude from the analysis. Each time the job runs, the job uses these
      * criteria to determine which objects to analyze.</p>
      */
-    inline const Scoping& GetScoping() const{ return m_scoping; }
+    inline const Scoping& GetScoping() const { return m_scoping; }
     inline bool ScopingHasBeenSet() const { return m_scopingHasBeenSet; }
-    inline void SetScoping(const Scoping& value) { m_scopingHasBeenSet = true; m_scoping = value; }
-    inline void SetScoping(Scoping&& value) { m_scopingHasBeenSet = true; m_scoping = std::move(value); }
-    inline S3JobDefinition& WithScoping(const Scoping& value) { SetScoping(value); return *this;}
-    inline S3JobDefinition& WithScoping(Scoping&& value) { SetScoping(std::move(value)); return *this;}
+    template<typename ScopingT = Scoping>
+    void SetScoping(ScopingT&& value) { m_scopingHasBeenSet = true; m_scoping = std::forward<ScopingT>(value); }
+    template<typename ScopingT = Scoping>
+    S3JobDefinition& WithScoping(ScopingT&& value) { SetScoping(std::forward<ScopingT>(value)); return *this;}
     ///@}
   private:
 

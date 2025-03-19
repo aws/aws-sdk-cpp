@@ -18,37 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LoadBalancer::LoadBalancer() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_state(LoadBalancerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_protocol(LoadBalancerProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_publicPortsHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_instanceHealthSummaryHasBeenSet(false),
-    m_tlsCertificateSummariesHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_httpsRedirectionEnabled(false),
-    m_httpsRedirectionEnabledHasBeenSet(false),
-    m_tlsPolicyNameHasBeenSet(false)
-{
-}
-
 LoadBalancer::LoadBalancer(JsonView jsonValue)
-  : LoadBalancer()
 {
   *this = jsonValue;
 }
@@ -58,45 +28,33 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -106,28 +64,21 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsName"))
   {
     m_dnsName = jsonValue.GetString("dnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = LoadBalancerStateMapper::GetLoadBalancerStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = LoadBalancerProtocolMapper::GetLoadBalancerProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicPorts"))
   {
     Aws::Utils::Array<JsonView> publicPortsJsonList = jsonValue.GetArray("publicPorts");
@@ -137,21 +88,16 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     }
     m_publicPortsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthCheckPath"))
   {
     m_healthCheckPath = jsonValue.GetString("healthCheckPath");
-
     m_healthCheckPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instancePort"))
   {
     m_instancePort = jsonValue.GetInteger("instancePort");
-
     m_instancePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceHealthSummary"))
   {
     Aws::Utils::Array<JsonView> instanceHealthSummaryJsonList = jsonValue.GetArray("instanceHealthSummary");
@@ -161,7 +107,6 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     }
     m_instanceHealthSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tlsCertificateSummaries"))
   {
     Aws::Utils::Array<JsonView> tlsCertificateSummariesJsonList = jsonValue.GetArray("tlsCertificateSummaries");
@@ -171,7 +116,6 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     }
     m_tlsCertificateSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationOptions"))
   {
     Aws::Map<Aws::String, JsonView> configurationOptionsJsonMap = jsonValue.GetObject("configurationOptions").GetAllObjects();
@@ -181,28 +125,21 @@ LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
     }
     m_configurationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpsRedirectionEnabled"))
   {
     m_httpsRedirectionEnabled = jsonValue.GetBool("httpsRedirectionEnabled");
-
     m_httpsRedirectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tlsPolicyName"))
   {
     m_tlsPolicyName = jsonValue.GetString("tlsPolicyName");
-
     m_tlsPolicyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

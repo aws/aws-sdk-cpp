@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ArcConfiguration::ArcConfiguration() : 
-    m_arcAngle(0.0),
-    m_arcAngleHasBeenSet(false),
-    m_arcThickness(ArcThicknessOptions::NOT_SET),
-    m_arcThicknessHasBeenSet(false)
-{
-}
-
 ArcConfiguration::ArcConfiguration(JsonView jsonValue)
-  : ArcConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ArcConfiguration& ArcConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArcAngle"))
   {
     m_arcAngle = jsonValue.GetDouble("ArcAngle");
-
     m_arcAngleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArcThickness"))
   {
     m_arcThickness = ArcThicknessOptionsMapper::GetArcThicknessOptionsForName(jsonValue.GetString("ArcThickness"));
-
     m_arcThicknessHasBeenSet = true;
   }
-
   return *this;
 }
 

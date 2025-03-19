@@ -12,12 +12,6 @@ using namespace Aws::LaunchWizard::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkloadDeploymentPatternRequest::GetWorkloadDeploymentPatternRequest() : 
-    m_deploymentPatternNameHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkloadDeploymentPatternRequest::SerializePayload() const
 {
   JsonValue payload;

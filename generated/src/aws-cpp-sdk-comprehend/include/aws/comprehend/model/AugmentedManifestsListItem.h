@@ -36,7 +36,7 @@ namespace Model
   class AugmentedManifestsListItem
   {
   public:
-    AWS_COMPREHEND_API AugmentedManifestsListItem();
+    AWS_COMPREHEND_API AugmentedManifestsListItem() = default;
     AWS_COMPREHEND_API AugmentedManifestsListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API AugmentedManifestsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the augmented manifest file.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline AugmentedManifestsListItem& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline AugmentedManifestsListItem& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline AugmentedManifestsListItem& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    AugmentedManifestsListItem& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,10 @@ namespace Model
      * portion of the training documents for testing.</p> <p> TEST - all of the
      * documents in the manifest will be used for testing.</p>
      */
-    inline const Split& GetSplit() const{ return m_split; }
+    inline Split GetSplit() const { return m_split; }
     inline bool SplitHasBeenSet() const { return m_splitHasBeenSet; }
-    inline void SetSplit(const Split& value) { m_splitHasBeenSet = true; m_split = value; }
-    inline void SetSplit(Split&& value) { m_splitHasBeenSet = true; m_split = std::move(value); }
-    inline AugmentedManifestsListItem& WithSplit(const Split& value) { SetSplit(value); return *this;}
-    inline AugmentedManifestsListItem& WithSplit(Split&& value) { SetSplit(std::move(value)); return *this;}
+    inline void SetSplit(Split value) { m_splitHasBeenSet = true; m_split = value; }
+    inline AugmentedManifestsListItem& WithSplit(Split value) { SetSplit(value); return *this;}
     ///@}
 
     ///@{
@@ -84,15 +80,14 @@ namespace Model
      * LabelAttributeName key for one or more jobs in the chain. Each
      * LabelAttributeName key provides the annotations from an individual job.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+    inline const Aws::Vector<Aws::String>& GetAttributeNames() const { return m_attributeNames; }
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
-    inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
-    inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
-    inline AugmentedManifestsListItem& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
-    inline AugmentedManifestsListItem& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(std::move(value)); return *this;}
-    inline AugmentedManifestsListItem& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-    inline AugmentedManifestsListItem& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
-    inline AugmentedManifestsListItem& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    template<typename AttributeNamesT = Aws::Vector<Aws::String>>
+    void SetAttributeNames(AttributeNamesT&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::forward<AttributeNamesT>(value); }
+    template<typename AttributeNamesT = Aws::Vector<Aws::String>>
+    AugmentedManifestsListItem& WithAttributeNames(AttributeNamesT&& value) { SetAttributeNames(std::forward<AttributeNamesT>(value)); return *this;}
+    template<typename AttributeNamesT = Aws::String>
+    AugmentedManifestsListItem& AddAttributeNames(AttributeNamesT&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.emplace_back(std::forward<AttributeNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,14 +95,12 @@ namespace Model
      * <p>The S3 prefix to the annotation files that are referred in the augmented
      * manifest file.</p>
      */
-    inline const Aws::String& GetAnnotationDataS3Uri() const{ return m_annotationDataS3Uri; }
+    inline const Aws::String& GetAnnotationDataS3Uri() const { return m_annotationDataS3Uri; }
     inline bool AnnotationDataS3UriHasBeenSet() const { return m_annotationDataS3UriHasBeenSet; }
-    inline void SetAnnotationDataS3Uri(const Aws::String& value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri = value; }
-    inline void SetAnnotationDataS3Uri(Aws::String&& value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri = std::move(value); }
-    inline void SetAnnotationDataS3Uri(const char* value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri.assign(value); }
-    inline AugmentedManifestsListItem& WithAnnotationDataS3Uri(const Aws::String& value) { SetAnnotationDataS3Uri(value); return *this;}
-    inline AugmentedManifestsListItem& WithAnnotationDataS3Uri(Aws::String&& value) { SetAnnotationDataS3Uri(std::move(value)); return *this;}
-    inline AugmentedManifestsListItem& WithAnnotationDataS3Uri(const char* value) { SetAnnotationDataS3Uri(value); return *this;}
+    template<typename AnnotationDataS3UriT = Aws::String>
+    void SetAnnotationDataS3Uri(AnnotationDataS3UriT&& value) { m_annotationDataS3UriHasBeenSet = true; m_annotationDataS3Uri = std::forward<AnnotationDataS3UriT>(value); }
+    template<typename AnnotationDataS3UriT = Aws::String>
+    AugmentedManifestsListItem& WithAnnotationDataS3Uri(AnnotationDataS3UriT&& value) { SetAnnotationDataS3Uri(std::forward<AnnotationDataS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +108,12 @@ namespace Model
      * <p>The S3 prefix to the source files (PDFs) that are referred to in the
      * augmented manifest file.</p>
      */
-    inline const Aws::String& GetSourceDocumentsS3Uri() const{ return m_sourceDocumentsS3Uri; }
+    inline const Aws::String& GetSourceDocumentsS3Uri() const { return m_sourceDocumentsS3Uri; }
     inline bool SourceDocumentsS3UriHasBeenSet() const { return m_sourceDocumentsS3UriHasBeenSet; }
-    inline void SetSourceDocumentsS3Uri(const Aws::String& value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri = value; }
-    inline void SetSourceDocumentsS3Uri(Aws::String&& value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri = std::move(value); }
-    inline void SetSourceDocumentsS3Uri(const char* value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri.assign(value); }
-    inline AugmentedManifestsListItem& WithSourceDocumentsS3Uri(const Aws::String& value) { SetSourceDocumentsS3Uri(value); return *this;}
-    inline AugmentedManifestsListItem& WithSourceDocumentsS3Uri(Aws::String&& value) { SetSourceDocumentsS3Uri(std::move(value)); return *this;}
-    inline AugmentedManifestsListItem& WithSourceDocumentsS3Uri(const char* value) { SetSourceDocumentsS3Uri(value); return *this;}
+    template<typename SourceDocumentsS3UriT = Aws::String>
+    void SetSourceDocumentsS3Uri(SourceDocumentsS3UriT&& value) { m_sourceDocumentsS3UriHasBeenSet = true; m_sourceDocumentsS3Uri = std::forward<SourceDocumentsS3UriT>(value); }
+    template<typename SourceDocumentsS3UriT = Aws::String>
+    AugmentedManifestsListItem& WithSourceDocumentsS3Uri(SourceDocumentsS3UriT&& value) { SetSourceDocumentsS3Uri(std::forward<SourceDocumentsS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,19 +127,17 @@ namespace Model
      * are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
      * </li> </ul>
      */
-    inline const AugmentedManifestsDocumentTypeFormat& GetDocumentType() const{ return m_documentType; }
+    inline AugmentedManifestsDocumentTypeFormat GetDocumentType() const { return m_documentType; }
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
-    inline void SetDocumentType(const AugmentedManifestsDocumentTypeFormat& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
-    inline void SetDocumentType(AugmentedManifestsDocumentTypeFormat&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
-    inline AugmentedManifestsListItem& WithDocumentType(const AugmentedManifestsDocumentTypeFormat& value) { SetDocumentType(value); return *this;}
-    inline AugmentedManifestsListItem& WithDocumentType(AugmentedManifestsDocumentTypeFormat&& value) { SetDocumentType(std::move(value)); return *this;}
+    inline void SetDocumentType(AugmentedManifestsDocumentTypeFormat value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+    inline AugmentedManifestsListItem& WithDocumentType(AugmentedManifestsDocumentTypeFormat value) { SetDocumentType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
 
-    Split m_split;
+    Split m_split{Split::NOT_SET};
     bool m_splitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
@@ -160,7 +149,7 @@ namespace Model
     Aws::String m_sourceDocumentsS3Uri;
     bool m_sourceDocumentsS3UriHasBeenSet = false;
 
-    AugmentedManifestsDocumentTypeFormat m_documentType;
+    AugmentedManifestsDocumentTypeFormat m_documentType{AugmentedManifestsDocumentTypeFormat::NOT_SET};
     bool m_documentTypeHasBeenSet = false;
   };
 

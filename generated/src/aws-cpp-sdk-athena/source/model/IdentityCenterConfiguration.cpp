@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-IdentityCenterConfiguration::IdentityCenterConfiguration() : 
-    m_enableIdentityCenter(false),
-    m_enableIdentityCenterHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false)
-{
-}
-
 IdentityCenterConfiguration::IdentityCenterConfiguration(JsonView jsonValue)
-  : IdentityCenterConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IdentityCenterConfiguration& IdentityCenterConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("EnableIdentityCenter"))
   {
     m_enableIdentityCenter = jsonValue.GetBool("EnableIdentityCenter");
-
     m_enableIdentityCenterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityCenterInstanceArn"))
   {
     m_identityCenterInstanceArn = jsonValue.GetString("IdentityCenterInstanceArn");
-
     m_identityCenterInstanceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

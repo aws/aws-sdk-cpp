@@ -42,7 +42,7 @@ namespace Model
   class SubscribeToShardEventStream
   {
   public:
-    AWS_KINESIS_API SubscribeToShardEventStream();
+    AWS_KINESIS_API SubscribeToShardEventStream() = default;
     AWS_KINESIS_API SubscribeToShardEventStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API SubscribeToShardEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,92 +55,92 @@ namespace Model
      * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
      * Using the Kinesis Data Streams API</a>.</p>
      */
-    inline const SubscribeToShardEvent& GetSubscribeToShardEvent() const{ return m_subscribeToShardEvent; }
+    inline const SubscribeToShardEvent& GetSubscribeToShardEvent() const { return m_subscribeToShardEvent; }
     inline bool SubscribeToShardEventHasBeenSet() const { return m_subscribeToShardEventHasBeenSet; }
-    inline void SetSubscribeToShardEvent(const SubscribeToShardEvent& value) { m_subscribeToShardEventHasBeenSet = true; m_subscribeToShardEvent = value; }
-    inline void SetSubscribeToShardEvent(SubscribeToShardEvent&& value) { m_subscribeToShardEventHasBeenSet = true; m_subscribeToShardEvent = std::move(value); }
-    inline SubscribeToShardEventStream& WithSubscribeToShardEvent(const SubscribeToShardEvent& value) { SetSubscribeToShardEvent(value); return *this;}
-    inline SubscribeToShardEventStream& WithSubscribeToShardEvent(SubscribeToShardEvent&& value) { SetSubscribeToShardEvent(std::move(value)); return *this;}
+    template<typename SubscribeToShardEventT = SubscribeToShardEvent>
+    void SetSubscribeToShardEvent(SubscribeToShardEventT&& value) { m_subscribeToShardEventHasBeenSet = true; m_subscribeToShardEvent = std::forward<SubscribeToShardEventT>(value); }
+    template<typename SubscribeToShardEventT = SubscribeToShardEvent>
+    SubscribeToShardEventStream& WithSubscribeToShardEvent(SubscribeToShardEventT&& value) { SetSubscribeToShardEvent(std::forward<SubscribeToShardEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceNotFoundException& GetResourceNotFoundException() const{ return m_resourceNotFoundException; }
+    inline const ResourceNotFoundException& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
-    inline void SetResourceNotFoundException(const ResourceNotFoundException& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = value; }
-    inline void SetResourceNotFoundException(ResourceNotFoundException&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::move(value); }
-    inline SubscribeToShardEventStream& WithResourceNotFoundException(const ResourceNotFoundException& value) { SetResourceNotFoundException(value); return *this;}
-    inline SubscribeToShardEventStream& WithResourceNotFoundException(ResourceNotFoundException&& value) { SetResourceNotFoundException(std::move(value)); return *this;}
+    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    void SetResourceNotFoundException(ResourceNotFoundExceptionT&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::forward<ResourceNotFoundExceptionT>(value); }
+    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    SubscribeToShardEventStream& WithResourceNotFoundException(ResourceNotFoundExceptionT&& value) { SetResourceNotFoundException(std::forward<ResourceNotFoundExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceInUseException& GetResourceInUseException() const{ return m_resourceInUseException; }
+    inline const ResourceInUseException& GetResourceInUseException() const { return m_resourceInUseException; }
     inline bool ResourceInUseExceptionHasBeenSet() const { return m_resourceInUseExceptionHasBeenSet; }
-    inline void SetResourceInUseException(const ResourceInUseException& value) { m_resourceInUseExceptionHasBeenSet = true; m_resourceInUseException = value; }
-    inline void SetResourceInUseException(ResourceInUseException&& value) { m_resourceInUseExceptionHasBeenSet = true; m_resourceInUseException = std::move(value); }
-    inline SubscribeToShardEventStream& WithResourceInUseException(const ResourceInUseException& value) { SetResourceInUseException(value); return *this;}
-    inline SubscribeToShardEventStream& WithResourceInUseException(ResourceInUseException&& value) { SetResourceInUseException(std::move(value)); return *this;}
+    template<typename ResourceInUseExceptionT = ResourceInUseException>
+    void SetResourceInUseException(ResourceInUseExceptionT&& value) { m_resourceInUseExceptionHasBeenSet = true; m_resourceInUseException = std::forward<ResourceInUseExceptionT>(value); }
+    template<typename ResourceInUseExceptionT = ResourceInUseException>
+    SubscribeToShardEventStream& WithResourceInUseException(ResourceInUseExceptionT&& value) { SetResourceInUseException(std::forward<ResourceInUseExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KMSDisabledException& GetKMSDisabledException() const{ return m_kMSDisabledException; }
+    inline const KMSDisabledException& GetKMSDisabledException() const { return m_kMSDisabledException; }
     inline bool KMSDisabledExceptionHasBeenSet() const { return m_kMSDisabledExceptionHasBeenSet; }
-    inline void SetKMSDisabledException(const KMSDisabledException& value) { m_kMSDisabledExceptionHasBeenSet = true; m_kMSDisabledException = value; }
-    inline void SetKMSDisabledException(KMSDisabledException&& value) { m_kMSDisabledExceptionHasBeenSet = true; m_kMSDisabledException = std::move(value); }
-    inline SubscribeToShardEventStream& WithKMSDisabledException(const KMSDisabledException& value) { SetKMSDisabledException(value); return *this;}
-    inline SubscribeToShardEventStream& WithKMSDisabledException(KMSDisabledException&& value) { SetKMSDisabledException(std::move(value)); return *this;}
+    template<typename KMSDisabledExceptionT = KMSDisabledException>
+    void SetKMSDisabledException(KMSDisabledExceptionT&& value) { m_kMSDisabledExceptionHasBeenSet = true; m_kMSDisabledException = std::forward<KMSDisabledExceptionT>(value); }
+    template<typename KMSDisabledExceptionT = KMSDisabledException>
+    SubscribeToShardEventStream& WithKMSDisabledException(KMSDisabledExceptionT&& value) { SetKMSDisabledException(std::forward<KMSDisabledExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KMSInvalidStateException& GetKMSInvalidStateException() const{ return m_kMSInvalidStateException; }
+    inline const KMSInvalidStateException& GetKMSInvalidStateException() const { return m_kMSInvalidStateException; }
     inline bool KMSInvalidStateExceptionHasBeenSet() const { return m_kMSInvalidStateExceptionHasBeenSet; }
-    inline void SetKMSInvalidStateException(const KMSInvalidStateException& value) { m_kMSInvalidStateExceptionHasBeenSet = true; m_kMSInvalidStateException = value; }
-    inline void SetKMSInvalidStateException(KMSInvalidStateException&& value) { m_kMSInvalidStateExceptionHasBeenSet = true; m_kMSInvalidStateException = std::move(value); }
-    inline SubscribeToShardEventStream& WithKMSInvalidStateException(const KMSInvalidStateException& value) { SetKMSInvalidStateException(value); return *this;}
-    inline SubscribeToShardEventStream& WithKMSInvalidStateException(KMSInvalidStateException&& value) { SetKMSInvalidStateException(std::move(value)); return *this;}
+    template<typename KMSInvalidStateExceptionT = KMSInvalidStateException>
+    void SetKMSInvalidStateException(KMSInvalidStateExceptionT&& value) { m_kMSInvalidStateExceptionHasBeenSet = true; m_kMSInvalidStateException = std::forward<KMSInvalidStateExceptionT>(value); }
+    template<typename KMSInvalidStateExceptionT = KMSInvalidStateException>
+    SubscribeToShardEventStream& WithKMSInvalidStateException(KMSInvalidStateExceptionT&& value) { SetKMSInvalidStateException(std::forward<KMSInvalidStateExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KMSAccessDeniedException& GetKMSAccessDeniedException() const{ return m_kMSAccessDeniedException; }
+    inline const KMSAccessDeniedException& GetKMSAccessDeniedException() const { return m_kMSAccessDeniedException; }
     inline bool KMSAccessDeniedExceptionHasBeenSet() const { return m_kMSAccessDeniedExceptionHasBeenSet; }
-    inline void SetKMSAccessDeniedException(const KMSAccessDeniedException& value) { m_kMSAccessDeniedExceptionHasBeenSet = true; m_kMSAccessDeniedException = value; }
-    inline void SetKMSAccessDeniedException(KMSAccessDeniedException&& value) { m_kMSAccessDeniedExceptionHasBeenSet = true; m_kMSAccessDeniedException = std::move(value); }
-    inline SubscribeToShardEventStream& WithKMSAccessDeniedException(const KMSAccessDeniedException& value) { SetKMSAccessDeniedException(value); return *this;}
-    inline SubscribeToShardEventStream& WithKMSAccessDeniedException(KMSAccessDeniedException&& value) { SetKMSAccessDeniedException(std::move(value)); return *this;}
+    template<typename KMSAccessDeniedExceptionT = KMSAccessDeniedException>
+    void SetKMSAccessDeniedException(KMSAccessDeniedExceptionT&& value) { m_kMSAccessDeniedExceptionHasBeenSet = true; m_kMSAccessDeniedException = std::forward<KMSAccessDeniedExceptionT>(value); }
+    template<typename KMSAccessDeniedExceptionT = KMSAccessDeniedException>
+    SubscribeToShardEventStream& WithKMSAccessDeniedException(KMSAccessDeniedExceptionT&& value) { SetKMSAccessDeniedException(std::forward<KMSAccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KMSNotFoundException& GetKMSNotFoundException() const{ return m_kMSNotFoundException; }
+    inline const KMSNotFoundException& GetKMSNotFoundException() const { return m_kMSNotFoundException; }
     inline bool KMSNotFoundExceptionHasBeenSet() const { return m_kMSNotFoundExceptionHasBeenSet; }
-    inline void SetKMSNotFoundException(const KMSNotFoundException& value) { m_kMSNotFoundExceptionHasBeenSet = true; m_kMSNotFoundException = value; }
-    inline void SetKMSNotFoundException(KMSNotFoundException&& value) { m_kMSNotFoundExceptionHasBeenSet = true; m_kMSNotFoundException = std::move(value); }
-    inline SubscribeToShardEventStream& WithKMSNotFoundException(const KMSNotFoundException& value) { SetKMSNotFoundException(value); return *this;}
-    inline SubscribeToShardEventStream& WithKMSNotFoundException(KMSNotFoundException&& value) { SetKMSNotFoundException(std::move(value)); return *this;}
+    template<typename KMSNotFoundExceptionT = KMSNotFoundException>
+    void SetKMSNotFoundException(KMSNotFoundExceptionT&& value) { m_kMSNotFoundExceptionHasBeenSet = true; m_kMSNotFoundException = std::forward<KMSNotFoundExceptionT>(value); }
+    template<typename KMSNotFoundExceptionT = KMSNotFoundException>
+    SubscribeToShardEventStream& WithKMSNotFoundException(KMSNotFoundExceptionT&& value) { SetKMSNotFoundException(std::forward<KMSNotFoundExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KMSOptInRequired& GetKMSOptInRequired() const{ return m_kMSOptInRequired; }
+    inline const KMSOptInRequired& GetKMSOptInRequired() const { return m_kMSOptInRequired; }
     inline bool KMSOptInRequiredHasBeenSet() const { return m_kMSOptInRequiredHasBeenSet; }
-    inline void SetKMSOptInRequired(const KMSOptInRequired& value) { m_kMSOptInRequiredHasBeenSet = true; m_kMSOptInRequired = value; }
-    inline void SetKMSOptInRequired(KMSOptInRequired&& value) { m_kMSOptInRequiredHasBeenSet = true; m_kMSOptInRequired = std::move(value); }
-    inline SubscribeToShardEventStream& WithKMSOptInRequired(const KMSOptInRequired& value) { SetKMSOptInRequired(value); return *this;}
-    inline SubscribeToShardEventStream& WithKMSOptInRequired(KMSOptInRequired&& value) { SetKMSOptInRequired(std::move(value)); return *this;}
+    template<typename KMSOptInRequiredT = KMSOptInRequired>
+    void SetKMSOptInRequired(KMSOptInRequiredT&& value) { m_kMSOptInRequiredHasBeenSet = true; m_kMSOptInRequired = std::forward<KMSOptInRequiredT>(value); }
+    template<typename KMSOptInRequiredT = KMSOptInRequired>
+    SubscribeToShardEventStream& WithKMSOptInRequired(KMSOptInRequiredT&& value) { SetKMSOptInRequired(std::forward<KMSOptInRequiredT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KMSThrottlingException& GetKMSThrottlingException() const{ return m_kMSThrottlingException; }
+    inline const KMSThrottlingException& GetKMSThrottlingException() const { return m_kMSThrottlingException; }
     inline bool KMSThrottlingExceptionHasBeenSet() const { return m_kMSThrottlingExceptionHasBeenSet; }
-    inline void SetKMSThrottlingException(const KMSThrottlingException& value) { m_kMSThrottlingExceptionHasBeenSet = true; m_kMSThrottlingException = value; }
-    inline void SetKMSThrottlingException(KMSThrottlingException&& value) { m_kMSThrottlingExceptionHasBeenSet = true; m_kMSThrottlingException = std::move(value); }
-    inline SubscribeToShardEventStream& WithKMSThrottlingException(const KMSThrottlingException& value) { SetKMSThrottlingException(value); return *this;}
-    inline SubscribeToShardEventStream& WithKMSThrottlingException(KMSThrottlingException&& value) { SetKMSThrottlingException(std::move(value)); return *this;}
+    template<typename KMSThrottlingExceptionT = KMSThrottlingException>
+    void SetKMSThrottlingException(KMSThrottlingExceptionT&& value) { m_kMSThrottlingExceptionHasBeenSet = true; m_kMSThrottlingException = std::forward<KMSThrottlingExceptionT>(value); }
+    template<typename KMSThrottlingExceptionT = KMSThrottlingException>
+    SubscribeToShardEventStream& WithKMSThrottlingException(KMSThrottlingExceptionT&& value) { SetKMSThrottlingException(std::forward<KMSThrottlingExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +148,12 @@ namespace Model
      * <p>The processing of the request failed because of an unknown error, exception,
      * or failure.</p>
      */
-    inline const InternalFailureException& GetInternalFailureException() const{ return m_internalFailureException; }
+    inline const InternalFailureException& GetInternalFailureException() const { return m_internalFailureException; }
     inline bool InternalFailureExceptionHasBeenSet() const { return m_internalFailureExceptionHasBeenSet; }
-    inline void SetInternalFailureException(const InternalFailureException& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = value; }
-    inline void SetInternalFailureException(InternalFailureException&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::move(value); }
-    inline SubscribeToShardEventStream& WithInternalFailureException(const InternalFailureException& value) { SetInternalFailureException(value); return *this;}
-    inline SubscribeToShardEventStream& WithInternalFailureException(InternalFailureException&& value) { SetInternalFailureException(std::move(value)); return *this;}
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    void SetInternalFailureException(InternalFailureExceptionT&& value) { m_internalFailureExceptionHasBeenSet = true; m_internalFailureException = std::forward<InternalFailureExceptionT>(value); }
+    template<typename InternalFailureExceptionT = InternalFailureException>
+    SubscribeToShardEventStream& WithInternalFailureException(InternalFailureExceptionT&& value) { SetInternalFailureException(std::forward<InternalFailureExceptionT>(value)); return *this;}
     ///@}
   private:
 

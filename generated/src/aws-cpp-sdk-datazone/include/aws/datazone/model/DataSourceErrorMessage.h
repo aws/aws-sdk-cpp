@@ -33,7 +33,7 @@ namespace Model
   class DataSourceErrorMessage
   {
   public:
-    AWS_DATAZONE_API DataSourceErrorMessage();
+    AWS_DATAZONE_API DataSourceErrorMessage() = default;
     AWS_DATAZONE_API DataSourceErrorMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DataSourceErrorMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The details of the error message that is returned if the operation cannot be
      * successfully completed.</p>
      */
-    inline const Aws::String& GetErrorDetail() const{ return m_errorDetail; }
+    inline const Aws::String& GetErrorDetail() const { return m_errorDetail; }
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
-    inline void SetErrorDetail(const Aws::String& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
-    inline void SetErrorDetail(Aws::String&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
-    inline void SetErrorDetail(const char* value) { m_errorDetailHasBeenSet = true; m_errorDetail.assign(value); }
-    inline DataSourceErrorMessage& WithErrorDetail(const Aws::String& value) { SetErrorDetail(value); return *this;}
-    inline DataSourceErrorMessage& WithErrorDetail(Aws::String&& value) { SetErrorDetail(std::move(value)); return *this;}
-    inline DataSourceErrorMessage& WithErrorDetail(const char* value) { SetErrorDetail(value); return *this;}
+    template<typename ErrorDetailT = Aws::String>
+    void SetErrorDetail(ErrorDetailT&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::forward<ErrorDetailT>(value); }
+    template<typename ErrorDetailT = Aws::String>
+    DataSourceErrorMessage& WithErrorDetail(ErrorDetailT&& value) { SetErrorDetail(std::forward<ErrorDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * <p>The type of the error message that is returned if the operation cannot be
      * successfully completed.</p>
      */
-    inline const DataSourceErrorType& GetErrorType() const{ return m_errorType; }
+    inline DataSourceErrorType GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const DataSourceErrorType& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(DataSourceErrorType&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline DataSourceErrorMessage& WithErrorType(const DataSourceErrorType& value) { SetErrorType(value); return *this;}
-    inline DataSourceErrorMessage& WithErrorType(DataSourceErrorType&& value) { SetErrorType(std::move(value)); return *this;}
+    inline void SetErrorType(DataSourceErrorType value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline DataSourceErrorMessage& WithErrorType(DataSourceErrorType value) { SetErrorType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_errorDetail;
     bool m_errorDetailHasBeenSet = false;
 
-    DataSourceErrorType m_errorType;
+    DataSourceErrorType m_errorType{DataSourceErrorType::NOT_SET};
     bool m_errorTypeHasBeenSet = false;
   };
 

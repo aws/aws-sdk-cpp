@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLaunchConfigurationRequest::GetLaunchConfigurationRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String GetLaunchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-SessionStickinessConfig::SessionStickinessConfig() : 
-    m_idleTTL(0),
-    m_idleTTLHasBeenSet(false),
-    m_maximumTTL(0),
-    m_maximumTTLHasBeenSet(false)
-{
-}
-
 SessionStickinessConfig::SessionStickinessConfig(const XmlNode& xmlNode)
-  : SessionStickinessConfig()
 {
   *this = xmlNode;
 }

@@ -18,14 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-VectorSearchConfiguration::VectorSearchConfiguration() : 
-    m_dimension(0),
-    m_dimensionHasBeenSet(false)
-{
-}
-
 VectorSearchConfiguration::VectorSearchConfiguration(JsonView jsonValue)
-  : VectorSearchConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VectorSearchConfiguration& VectorSearchConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("dimension"))
   {
     m_dimension = jsonValue.GetInteger("dimension");
-
     m_dimensionHasBeenSet = true;
   }
-
   return *this;
 }
 

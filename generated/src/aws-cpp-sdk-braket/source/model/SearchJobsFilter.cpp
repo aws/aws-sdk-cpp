@@ -18,16 +18,7 @@ namespace Braket
 namespace Model
 {
 
-SearchJobsFilter::SearchJobsFilter() : 
-    m_nameHasBeenSet(false),
-    m_operator(SearchJobsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchJobsFilter::SearchJobsFilter(JsonView jsonValue)
-  : SearchJobsFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SearchJobsFilter& SearchJobsFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = SearchJobsFilterOperatorMapper::GetSearchJobsFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -57,7 +44,6 @@ SearchJobsFilter& SearchJobsFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

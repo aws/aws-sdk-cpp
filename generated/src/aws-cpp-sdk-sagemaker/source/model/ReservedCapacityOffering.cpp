@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ReservedCapacityOffering::ReservedCapacityOffering() : 
-    m_instanceType(ReservedCapacityInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_durationHours(0),
-    m_durationHoursHasBeenSet(false),
-    m_durationMinutes(0),
-    m_durationMinutesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 ReservedCapacityOffering::ReservedCapacityOffering(JsonView jsonValue)
-  : ReservedCapacityOffering()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ ReservedCapacityOffering& ReservedCapacityOffering::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ReservedCapacityInstanceTypeMapper::GetReservedCapacityInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationHours"))
   {
     m_durationHours = jsonValue.GetInt64("DurationHours");
-
     m_durationHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMinutes"))
   {
     m_durationMinutes = jsonValue.GetInt64("DurationMinutes");
-
     m_durationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

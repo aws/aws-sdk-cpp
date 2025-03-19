@@ -18,18 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-Position::Position() : 
-    m_line(0),
-    m_lineHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false)
-{
-}
-
 Position::Position(JsonView jsonValue)
-  : Position()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Position& Position::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("line"))
   {
     m_line = jsonValue.GetInteger("line");
-
     m_lineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("column"))
   {
     m_column = jsonValue.GetInteger("column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetInteger("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   return *this;
 }
 

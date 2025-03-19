@@ -31,7 +31,7 @@ namespace Model
   class ConnectionCredentials
   {
   public:
-    AWS_CONNECTPARTICIPANT_API ConnectionCredentials();
+    AWS_CONNECTPARTICIPANT_API ConnectionCredentials() = default;
     AWS_CONNECTPARTICIPANT_API ConnectionCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API ConnectionCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The connection token.</p>
      */
-    inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
+    inline const Aws::String& GetConnectionToken() const { return m_connectionToken; }
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-    inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-    inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-    inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-    inline ConnectionCredentials& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-    inline ConnectionCredentials& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-    inline ConnectionCredentials& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
+    template<typename ConnectionTokenT = Aws::String>
+    void SetConnectionToken(ConnectionTokenT&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::forward<ConnectionTokenT>(value); }
+    template<typename ConnectionTokenT = Aws::String>
+    ConnectionCredentials& WithConnectionToken(ConnectionTokenT&& value) { SetConnectionToken(std::forward<ConnectionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The expiration of the token.</p> <p>It's specified in ISO 8601 format:
      * yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
      */
-    inline const Aws::String& GetExpiry() const{ return m_expiry; }
+    inline const Aws::String& GetExpiry() const { return m_expiry; }
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-    inline void SetExpiry(const Aws::String& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-    inline void SetExpiry(Aws::String&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-    inline void SetExpiry(const char* value) { m_expiryHasBeenSet = true; m_expiry.assign(value); }
-    inline ConnectionCredentials& WithExpiry(const Aws::String& value) { SetExpiry(value); return *this;}
-    inline ConnectionCredentials& WithExpiry(Aws::String&& value) { SetExpiry(std::move(value)); return *this;}
-    inline ConnectionCredentials& WithExpiry(const char* value) { SetExpiry(value); return *this;}
+    template<typename ExpiryT = Aws::String>
+    void SetExpiry(ExpiryT&& value) { m_expiryHasBeenSet = true; m_expiry = std::forward<ExpiryT>(value); }
+    template<typename ExpiryT = Aws::String>
+    ConnectionCredentials& WithExpiry(ExpiryT&& value) { SetExpiry(std::forward<ExpiryT>(value)); return *this;}
     ///@}
   private:
 

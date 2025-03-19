@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ServerCertificate::ServerCertificate() : 
-    m_serverCertificateMetadataHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ServerCertificate::ServerCertificate(const XmlNode& xmlNode)
-  : ServerCertificate()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ ServerCertificate& ServerCertificate::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

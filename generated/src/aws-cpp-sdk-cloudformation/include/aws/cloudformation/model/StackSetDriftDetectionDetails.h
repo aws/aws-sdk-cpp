@@ -41,7 +41,7 @@ namespace Model
   class StackSetDriftDetectionDetails
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails();
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails() = default;
     AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -63,12 +63,10 @@ namespace Model
      * the stack instances belonging to the stack set stack match from the expected
      * template and parameter configuration.</p> </li> </ul>
      */
-    inline const StackSetDriftStatus& GetDriftStatus() const{ return m_driftStatus; }
+    inline StackSetDriftStatus GetDriftStatus() const { return m_driftStatus; }
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
-    inline void SetDriftStatus(const StackSetDriftStatus& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
-    inline void SetDriftStatus(StackSetDriftStatus&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
-    inline StackSetDriftDetectionDetails& WithDriftStatus(const StackSetDriftStatus& value) { SetDriftStatus(value); return *this;}
-    inline StackSetDriftDetectionDetails& WithDriftStatus(StackSetDriftStatus&& value) { SetDriftStatus(std::move(value)); return *this;}
+    inline void SetDriftStatus(StackSetDriftStatus value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
+    inline StackSetDriftDetectionDetails& WithDriftStatus(StackSetDriftStatus value) { SetDriftStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +81,10 @@ namespace Model
      * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
      * drift detection operation.</p> </li> </ul>
      */
-    inline const StackSetDriftDetectionStatus& GetDriftDetectionStatus() const{ return m_driftDetectionStatus; }
+    inline StackSetDriftDetectionStatus GetDriftDetectionStatus() const { return m_driftDetectionStatus; }
     inline bool DriftDetectionStatusHasBeenSet() const { return m_driftDetectionStatusHasBeenSet; }
-    inline void SetDriftDetectionStatus(const StackSetDriftDetectionStatus& value) { m_driftDetectionStatusHasBeenSet = true; m_driftDetectionStatus = value; }
-    inline void SetDriftDetectionStatus(StackSetDriftDetectionStatus&& value) { m_driftDetectionStatusHasBeenSet = true; m_driftDetectionStatus = std::move(value); }
-    inline StackSetDriftDetectionDetails& WithDriftDetectionStatus(const StackSetDriftDetectionStatus& value) { SetDriftDetectionStatus(value); return *this;}
-    inline StackSetDriftDetectionDetails& WithDriftDetectionStatus(StackSetDriftDetectionStatus&& value) { SetDriftDetectionStatus(std::move(value)); return *this;}
+    inline void SetDriftDetectionStatus(StackSetDriftDetectionStatus value) { m_driftDetectionStatusHasBeenSet = true; m_driftDetectionStatus = value; }
+    inline StackSetDriftDetectionDetails& WithDriftDetectionStatus(StackSetDriftDetectionStatus value) { SetDriftDetectionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +93,12 @@ namespace Model
      * the stack set. This value will be <code>NULL</code> for any stack set on which
      * drift detection hasn't yet been performed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const { return m_lastDriftCheckTimestamp; }
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
-    inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
-    inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
-    inline StackSetDriftDetectionDetails& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
-    inline StackSetDriftDetectionDetails& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
+    template<typename LastDriftCheckTimestampT = Aws::Utils::DateTime>
+    void SetLastDriftCheckTimestamp(LastDriftCheckTimestampT&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::forward<LastDriftCheckTimestampT>(value); }
+    template<typename LastDriftCheckTimestampT = Aws::Utils::DateTime>
+    StackSetDriftDetectionDetails& WithLastDriftCheckTimestamp(LastDriftCheckTimestampT&& value) { SetLastDriftCheckTimestamp(std::forward<LastDriftCheckTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +110,7 @@ namespace Model
      * <p>Stack instances where the drift detection operation has failed.</p> </li>
      * <li> <p>Stack instances currently being checked for drift.</p> </li> </ul>
      */
-    inline int GetTotalStackInstancesCount() const{ return m_totalStackInstancesCount; }
+    inline int GetTotalStackInstancesCount() const { return m_totalStackInstancesCount; }
     inline bool TotalStackInstancesCountHasBeenSet() const { return m_totalStackInstancesCountHasBeenSet; }
     inline void SetTotalStackInstancesCount(int value) { m_totalStackInstancesCountHasBeenSet = true; m_totalStackInstancesCount = value; }
     inline StackSetDriftDetectionDetails& WithTotalStackInstancesCount(int value) { SetTotalStackInstancesCount(value); return *this;}
@@ -127,7 +123,7 @@ namespace Model
      * have drifted if one or more of the resources in the associated stack don't match
      * their expected configuration.</p>
      */
-    inline int GetDriftedStackInstancesCount() const{ return m_driftedStackInstancesCount; }
+    inline int GetDriftedStackInstancesCount() const { return m_driftedStackInstancesCount; }
     inline bool DriftedStackInstancesCountHasBeenSet() const { return m_driftedStackInstancesCountHasBeenSet; }
     inline void SetDriftedStackInstancesCount(int value) { m_driftedStackInstancesCountHasBeenSet = true; m_driftedStackInstancesCount = value; }
     inline StackSetDriftDetectionDetails& WithDriftedStackInstancesCount(int value) { SetDriftedStackInstancesCount(value); return *this;}
@@ -138,7 +134,7 @@ namespace Model
      * <p>The number of stack instances which match the expected template and parameter
      * configuration of the stack set.</p>
      */
-    inline int GetInSyncStackInstancesCount() const{ return m_inSyncStackInstancesCount; }
+    inline int GetInSyncStackInstancesCount() const { return m_inSyncStackInstancesCount; }
     inline bool InSyncStackInstancesCountHasBeenSet() const { return m_inSyncStackInstancesCountHasBeenSet; }
     inline void SetInSyncStackInstancesCount(int value) { m_inSyncStackInstancesCountHasBeenSet = true; m_inSyncStackInstancesCount = value; }
     inline StackSetDriftDetectionDetails& WithInSyncStackInstancesCount(int value) { SetInSyncStackInstancesCount(value); return *this;}
@@ -148,7 +144,7 @@ namespace Model
     /**
      * <p>The number of stack instances that are currently being checked for drift.</p>
      */
-    inline int GetInProgressStackInstancesCount() const{ return m_inProgressStackInstancesCount; }
+    inline int GetInProgressStackInstancesCount() const { return m_inProgressStackInstancesCount; }
     inline bool InProgressStackInstancesCountHasBeenSet() const { return m_inProgressStackInstancesCountHasBeenSet; }
     inline void SetInProgressStackInstancesCount(int value) { m_inProgressStackInstancesCountHasBeenSet = true; m_inProgressStackInstancesCount = value; }
     inline StackSetDriftDetectionDetails& WithInProgressStackInstancesCount(int value) { SetInProgressStackInstancesCount(value); return *this;}
@@ -159,35 +155,35 @@ namespace Model
      * <p>The number of stack instances for which the drift detection operation
      * failed.</p>
      */
-    inline int GetFailedStackInstancesCount() const{ return m_failedStackInstancesCount; }
+    inline int GetFailedStackInstancesCount() const { return m_failedStackInstancesCount; }
     inline bool FailedStackInstancesCountHasBeenSet() const { return m_failedStackInstancesCountHasBeenSet; }
     inline void SetFailedStackInstancesCount(int value) { m_failedStackInstancesCountHasBeenSet = true; m_failedStackInstancesCount = value; }
     inline StackSetDriftDetectionDetails& WithFailedStackInstancesCount(int value) { SetFailedStackInstancesCount(value); return *this;}
     ///@}
   private:
 
-    StackSetDriftStatus m_driftStatus;
+    StackSetDriftStatus m_driftStatus{StackSetDriftStatus::NOT_SET};
     bool m_driftStatusHasBeenSet = false;
 
-    StackSetDriftDetectionStatus m_driftDetectionStatus;
+    StackSetDriftDetectionStatus m_driftDetectionStatus{StackSetDriftDetectionStatus::NOT_SET};
     bool m_driftDetectionStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastDriftCheckTimestamp;
+    Aws::Utils::DateTime m_lastDriftCheckTimestamp{};
     bool m_lastDriftCheckTimestampHasBeenSet = false;
 
-    int m_totalStackInstancesCount;
+    int m_totalStackInstancesCount{0};
     bool m_totalStackInstancesCountHasBeenSet = false;
 
-    int m_driftedStackInstancesCount;
+    int m_driftedStackInstancesCount{0};
     bool m_driftedStackInstancesCountHasBeenSet = false;
 
-    int m_inSyncStackInstancesCount;
+    int m_inSyncStackInstancesCount{0};
     bool m_inSyncStackInstancesCountHasBeenSet = false;
 
-    int m_inProgressStackInstancesCount;
+    int m_inProgressStackInstancesCount{0};
     bool m_inProgressStackInstancesCountHasBeenSet = false;
 
-    int m_failedStackInstancesCount;
+    int m_failedStackInstancesCount{0};
     bool m_failedStackInstancesCountHasBeenSet = false;
   };
 

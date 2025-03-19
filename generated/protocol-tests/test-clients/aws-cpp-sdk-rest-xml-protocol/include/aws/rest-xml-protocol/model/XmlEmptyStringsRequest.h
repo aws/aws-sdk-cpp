@@ -21,7 +21,7 @@ namespace Model
   class XmlEmptyStringsRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlEmptyStringsRequest();
+    AWS_RESTXMLPROTOCOL_API XmlEmptyStringsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetEmptyString() const{ return m_emptyString; }
+    inline const Aws::String& GetEmptyString() const { return m_emptyString; }
     inline bool EmptyStringHasBeenSet() const { return m_emptyStringHasBeenSet; }
-    inline void SetEmptyString(const Aws::String& value) { m_emptyStringHasBeenSet = true; m_emptyString = value; }
-    inline void SetEmptyString(Aws::String&& value) { m_emptyStringHasBeenSet = true; m_emptyString = std::move(value); }
-    inline void SetEmptyString(const char* value) { m_emptyStringHasBeenSet = true; m_emptyString.assign(value); }
-    inline XmlEmptyStringsRequest& WithEmptyString(const Aws::String& value) { SetEmptyString(value); return *this;}
-    inline XmlEmptyStringsRequest& WithEmptyString(Aws::String&& value) { SetEmptyString(std::move(value)); return *this;}
-    inline XmlEmptyStringsRequest& WithEmptyString(const char* value) { SetEmptyString(value); return *this;}
+    template<typename EmptyStringT = Aws::String>
+    void SetEmptyString(EmptyStringT&& value) { m_emptyStringHasBeenSet = true; m_emptyString = std::forward<EmptyStringT>(value); }
+    template<typename EmptyStringT = Aws::String>
+    XmlEmptyStringsRequest& WithEmptyString(EmptyStringT&& value) { SetEmptyString(std::forward<EmptyStringT>(value)); return *this;}
     ///@}
   private:
 

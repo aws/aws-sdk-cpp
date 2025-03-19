@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-BatchGetSchemaError::BatchGetSchemaError() : 
-    m_nameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchGetSchemaError::BatchGetSchemaError(JsonView jsonValue)
-  : BatchGetSchemaError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchGetSchemaError& BatchGetSchemaError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

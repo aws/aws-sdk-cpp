@@ -12,13 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationManagerRequest::UpdateConfigurationManagerRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_managerArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationManagerRequest::SerializePayload() const
 {
   JsonValue payload;

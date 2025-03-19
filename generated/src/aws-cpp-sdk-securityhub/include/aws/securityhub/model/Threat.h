@@ -34,7 +34,7 @@ namespace Model
   class Threat
   {
   public:
-    AWS_SECURITYHUB_API Threat();
+    AWS_SECURITYHUB_API Threat() = default;
     AWS_SECURITYHUB_API Threat(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Threat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the threat. </p> <p>Length Constraints: Minimum of 1 length.
      * Maximum of 128 length.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Threat& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Threat& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Threat& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Threat& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,21 +58,19 @@ namespace Model
      * <p>The severity of the threat. </p> <p>Length Constraints: Minimum of 1 length.
      * Maximum of 128 length.</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline const Aws::String& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-    inline Threat& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-    inline Threat& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-    inline Threat& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+    template<typename SeverityT = Aws::String>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = Aws::String>
+    Threat& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This total number of items in which the threat has been detected. </p>
      */
-    inline int GetItemCount() const{ return m_itemCount; }
+    inline int GetItemCount() const { return m_itemCount; }
     inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
     inline void SetItemCount(int value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
     inline Threat& WithItemCount(int value) { SetItemCount(value); return *this;}
@@ -85,14 +81,14 @@ namespace Model
      * <p>Provides information about the file paths that were affected by the threat.
      * </p> <p>Array Members: Minimum number of 1 item. Maximum number of 5 items.</p>
      */
-    inline const Aws::Vector<FilePaths>& GetFilePaths() const{ return m_filePaths; }
+    inline const Aws::Vector<FilePaths>& GetFilePaths() const { return m_filePaths; }
     inline bool FilePathsHasBeenSet() const { return m_filePathsHasBeenSet; }
-    inline void SetFilePaths(const Aws::Vector<FilePaths>& value) { m_filePathsHasBeenSet = true; m_filePaths = value; }
-    inline void SetFilePaths(Aws::Vector<FilePaths>&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::move(value); }
-    inline Threat& WithFilePaths(const Aws::Vector<FilePaths>& value) { SetFilePaths(value); return *this;}
-    inline Threat& WithFilePaths(Aws::Vector<FilePaths>&& value) { SetFilePaths(std::move(value)); return *this;}
-    inline Threat& AddFilePaths(const FilePaths& value) { m_filePathsHasBeenSet = true; m_filePaths.push_back(value); return *this; }
-    inline Threat& AddFilePaths(FilePaths&& value) { m_filePathsHasBeenSet = true; m_filePaths.push_back(std::move(value)); return *this; }
+    template<typename FilePathsT = Aws::Vector<FilePaths>>
+    void SetFilePaths(FilePathsT&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::forward<FilePathsT>(value); }
+    template<typename FilePathsT = Aws::Vector<FilePaths>>
+    Threat& WithFilePaths(FilePathsT&& value) { SetFilePaths(std::forward<FilePathsT>(value)); return *this;}
+    template<typename FilePathsT = FilePaths>
+    Threat& AddFilePaths(FilePathsT&& value) { m_filePathsHasBeenSet = true; m_filePaths.emplace_back(std::forward<FilePathsT>(value)); return *this; }
     ///@}
   private:
 
@@ -102,7 +98,7 @@ namespace Model
     Aws::String m_severity;
     bool m_severityHasBeenSet = false;
 
-    int m_itemCount;
+    int m_itemCount{0};
     bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<FilePaths> m_filePaths;

@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStorageProfileForQueueRequest::GetStorageProfileForQueueRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String GetStorageProfileForQueueRequest::SerializePayload() const
 {
   return {};

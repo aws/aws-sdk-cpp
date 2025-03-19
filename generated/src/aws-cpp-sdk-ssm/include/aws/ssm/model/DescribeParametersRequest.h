@@ -24,7 +24,7 @@ namespace Model
   class DescribeParametersRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DescribeParametersRequest();
+    AWS_SSM_API DescribeParametersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,28 @@ namespace Model
     /**
      * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
-    inline const Aws::Vector<ParametersFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ParametersFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ParametersFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ParametersFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeParametersRequest& WithFilters(const Aws::Vector<ParametersFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeParametersRequest& WithFilters(Aws::Vector<ParametersFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeParametersRequest& AddFilters(const ParametersFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeParametersRequest& AddFilters(ParametersFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ParametersFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ParametersFilter>>
+    DescribeParametersRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ParametersFilter>
+    DescribeParametersRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters to limit the request results.</p>
      */
-    inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const{ return m_parameterFilters; }
+    inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const { return m_parameterFilters; }
     inline bool ParameterFiltersHasBeenSet() const { return m_parameterFiltersHasBeenSet; }
-    inline void SetParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = value; }
-    inline void SetParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = std::move(value); }
-    inline DescribeParametersRequest& WithParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { SetParameterFilters(value); return *this;}
-    inline DescribeParametersRequest& WithParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { SetParameterFilters(std::move(value)); return *this;}
-    inline DescribeParametersRequest& AddParameterFilters(const ParameterStringFilter& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(value); return *this; }
-    inline DescribeParametersRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }
+    template<typename ParameterFiltersT = Aws::Vector<ParameterStringFilter>>
+    void SetParameterFilters(ParameterFiltersT&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = std::forward<ParameterFiltersT>(value); }
+    template<typename ParameterFiltersT = Aws::Vector<ParameterStringFilter>>
+    DescribeParametersRequest& WithParameterFilters(ParameterFiltersT&& value) { SetParameterFilters(std::forward<ParameterFiltersT>(value)); return *this;}
+    template<typename ParameterFiltersT = ParameterStringFilter>
+    DescribeParametersRequest& AddParameterFilters(ParameterFiltersT&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.emplace_back(std::forward<ParameterFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,7 +71,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeParametersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,14 +82,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeParametersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeParametersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeParametersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeParametersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,7 +104,7 @@ namespace Model
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */
-    inline bool GetShared() const{ return m_shared; }
+    inline bool GetShared() const { return m_shared; }
     inline bool SharedHasBeenSet() const { return m_sharedHasBeenSet; }
     inline void SetShared(bool value) { m_sharedHasBeenSet = true; m_shared = value; }
     inline DescribeParametersRequest& WithShared(bool value) { SetShared(value); return *this;}
@@ -119,13 +117,13 @@ namespace Model
     Aws::Vector<ParameterStringFilter> m_parameterFilters;
     bool m_parameterFiltersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_shared;
+    bool m_shared{false};
     bool m_sharedHasBeenSet = false;
   };
 

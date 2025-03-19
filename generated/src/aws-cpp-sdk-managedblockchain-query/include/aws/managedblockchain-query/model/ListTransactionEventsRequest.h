@@ -22,7 +22,7 @@ namespace Model
   class ListTransactionEventsRequest : public ManagedBlockchainQueryRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ListTransactionEventsRequest();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ListTransactionEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
-    inline const Aws::String& GetTransactionHash() const{ return m_transactionHash; }
+    inline const Aws::String& GetTransactionHash() const { return m_transactionHash; }
     inline bool TransactionHashHasBeenSet() const { return m_transactionHashHasBeenSet; }
-    inline void SetTransactionHash(const Aws::String& value) { m_transactionHashHasBeenSet = true; m_transactionHash = value; }
-    inline void SetTransactionHash(Aws::String&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::move(value); }
-    inline void SetTransactionHash(const char* value) { m_transactionHashHasBeenSet = true; m_transactionHash.assign(value); }
-    inline ListTransactionEventsRequest& WithTransactionHash(const Aws::String& value) { SetTransactionHash(value); return *this;}
-    inline ListTransactionEventsRequest& WithTransactionHash(Aws::String&& value) { SetTransactionHash(std::move(value)); return *this;}
-    inline ListTransactionEventsRequest& WithTransactionHash(const char* value) { SetTransactionHash(value); return *this;}
+    template<typename TransactionHashT = Aws::String>
+    void SetTransactionHash(TransactionHashT&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::forward<TransactionHashT>(value); }
+    template<typename TransactionHashT = Aws::String>
+    ListTransactionEventsRequest& WithTransactionHash(TransactionHashT&& value) { SetTransactionHash(std::forward<TransactionHashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,40 +51,34 @@ namespace Model
      * is created.</p>  <p> <code>transactionId</code> is only supported on the
      * Bitcoin networks.</p> 
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-    inline ListTransactionEventsRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline ListTransactionEventsRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline ListTransactionEventsRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    ListTransactionEventsRequest& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The blockchain network where the transaction events occurred.</p>
      */
-    inline const QueryNetwork& GetNetwork() const{ return m_network; }
+    inline QueryNetwork GetNetwork() const { return m_network; }
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-    inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-    inline ListTransactionEventsRequest& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-    inline ListTransactionEventsRequest& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
+    inline void SetNetwork(QueryNetwork value) { m_networkHasBeenSet = true; m_network = value; }
+    inline ListTransactionEventsRequest& WithNetwork(QueryNetwork value) { SetNetwork(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTransactionEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTransactionEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTransactionEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTransactionEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +91,7 @@ namespace Model
      * <code>nextToken</code> is <code>null</code> when there are no more results to
      * return</p> 
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTransactionEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -112,13 +104,13 @@ namespace Model
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet = false;
 
-    QueryNetwork m_network;
+    QueryNetwork m_network{QueryNetwork::NOT_SET};
     bool m_networkHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

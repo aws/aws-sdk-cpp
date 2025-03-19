@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSolNetworkPackageResult::UpdateSolNetworkPackageResult() : 
-    m_nsdOperationalState(NsdOperationalState::NOT_SET)
-{
-}
-
 UpdateSolNetworkPackageResult::UpdateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateSolNetworkPackageResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ UpdateSolNetworkPackageResult& UpdateSolNetworkPackageResult::operator =(const A
   if(jsonValue.ValueExists("nsdOperationalState"))
   {
     m_nsdOperationalState = NsdOperationalStateMapper::GetNsdOperationalStateForName(jsonValue.GetString("nsdOperationalState"));
-
+    m_nsdOperationalStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

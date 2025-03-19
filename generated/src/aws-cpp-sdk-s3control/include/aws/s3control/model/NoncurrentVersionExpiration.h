@@ -29,7 +29,7 @@ namespace Model
   class NoncurrentVersionExpiration
   {
   public:
-    AWS_S3CONTROL_API NoncurrentVersionExpiration();
+    AWS_S3CONTROL_API NoncurrentVersionExpiration() = default;
     AWS_S3CONTROL_API NoncurrentVersionExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API NoncurrentVersionExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3
      * User Guide</i>.</p>
      */
-    inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
+    inline int GetNoncurrentDays() const { return m_noncurrentDays; }
     inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
     inline NoncurrentVersionExpiration& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
      * configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline int GetNewerNoncurrentVersions() const{ return m_newerNoncurrentVersions; }
+    inline int GetNewerNoncurrentVersions() const { return m_newerNoncurrentVersions; }
     inline bool NewerNoncurrentVersionsHasBeenSet() const { return m_newerNoncurrentVersionsHasBeenSet; }
     inline void SetNewerNoncurrentVersions(int value) { m_newerNoncurrentVersionsHasBeenSet = true; m_newerNoncurrentVersions = value; }
     inline NoncurrentVersionExpiration& WithNewerNoncurrentVersions(int value) { SetNewerNoncurrentVersions(value); return *this;}
     ///@}
   private:
 
-    int m_noncurrentDays;
+    int m_noncurrentDays{0};
     bool m_noncurrentDaysHasBeenSet = false;
 
-    int m_newerNoncurrentVersions;
+    int m_newerNoncurrentVersions{0};
     bool m_newerNoncurrentVersionsHasBeenSet = false;
   };
 

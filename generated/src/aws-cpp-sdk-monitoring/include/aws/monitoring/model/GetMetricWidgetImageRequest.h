@@ -21,7 +21,7 @@ namespace Model
   class GetMetricWidgetImageRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API GetMetricWidgetImageRequest();
+    AWS_CLOUDWATCH_API GetMetricWidgetImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * not load all the requested data points, an orange triangle with an exclamation
      * point appears next to the graph legend.</p>
      */
-    inline const Aws::String& GetMetricWidget() const{ return m_metricWidget; }
+    inline const Aws::String& GetMetricWidget() const { return m_metricWidget; }
     inline bool MetricWidgetHasBeenSet() const { return m_metricWidgetHasBeenSet; }
-    inline void SetMetricWidget(const Aws::String& value) { m_metricWidgetHasBeenSet = true; m_metricWidget = value; }
-    inline void SetMetricWidget(Aws::String&& value) { m_metricWidgetHasBeenSet = true; m_metricWidget = std::move(value); }
-    inline void SetMetricWidget(const char* value) { m_metricWidgetHasBeenSet = true; m_metricWidget.assign(value); }
-    inline GetMetricWidgetImageRequest& WithMetricWidget(const Aws::String& value) { SetMetricWidget(value); return *this;}
-    inline GetMetricWidgetImageRequest& WithMetricWidget(Aws::String&& value) { SetMetricWidget(std::move(value)); return *this;}
-    inline GetMetricWidgetImageRequest& WithMetricWidget(const char* value) { SetMetricWidget(value); return *this;}
+    template<typename MetricWidgetT = Aws::String>
+    void SetMetricWidget(MetricWidgetT&& value) { m_metricWidgetHasBeenSet = true; m_metricWidget = std::forward<MetricWidgetT>(value); }
+    template<typename MetricWidgetT = Aws::String>
+    GetMetricWidgetImageRequest& WithMetricWidget(MetricWidgetT&& value) { SetMetricWidget(std::forward<MetricWidgetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image.</p>
      */
-    inline const Aws::String& GetOutputFormat() const{ return m_outputFormat; }
+    inline const Aws::String& GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const Aws::String& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(Aws::String&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline void SetOutputFormat(const char* value) { m_outputFormatHasBeenSet = true; m_outputFormat.assign(value); }
-    inline GetMetricWidgetImageRequest& WithOutputFormat(const Aws::String& value) { SetOutputFormat(value); return *this;}
-    inline GetMetricWidgetImageRequest& WithOutputFormat(Aws::String&& value) { SetOutputFormat(std::move(value)); return *this;}
-    inline GetMetricWidgetImageRequest& WithOutputFormat(const char* value) { SetOutputFormat(value); return *this;}
+    template<typename OutputFormatT = Aws::String>
+    void SetOutputFormat(OutputFormatT&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::forward<OutputFormatT>(value); }
+    template<typename OutputFormatT = Aws::String>
+    GetMetricWidgetImageRequest& WithOutputFormat(OutputFormatT&& value) { SetOutputFormat(std::forward<OutputFormatT>(value)); return *this;}
     ///@}
   private:
 

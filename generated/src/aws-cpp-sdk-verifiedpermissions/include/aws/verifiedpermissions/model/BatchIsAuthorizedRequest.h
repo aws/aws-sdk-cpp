@@ -24,7 +24,7 @@ namespace Model
   class BatchIsAuthorizedRequest : public VerifiedPermissionsRequest
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedRequest();
+    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>Specifies the ID of the policy store. Policies in this policy store will be
      * used to make the authorization decisions for the input.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-    inline BatchIsAuthorizedRequest& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline BatchIsAuthorizedRequest& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline BatchIsAuthorizedRequest& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    BatchIsAuthorizedRequest& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * parameter; you can't include actions. You must specify actions in the
      * schema.</p> 
      */
-    inline const EntitiesDefinition& GetEntities() const{ return m_entities; }
+    inline const EntitiesDefinition& GetEntities() const { return m_entities; }
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
-    inline void SetEntities(const EntitiesDefinition& value) { m_entitiesHasBeenSet = true; m_entities = value; }
-    inline void SetEntities(EntitiesDefinition&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
-    inline BatchIsAuthorizedRequest& WithEntities(const EntitiesDefinition& value) { SetEntities(value); return *this;}
-    inline BatchIsAuthorizedRequest& WithEntities(EntitiesDefinition&& value) { SetEntities(std::move(value)); return *this;}
+    template<typename EntitiesT = EntitiesDefinition>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = EntitiesDefinition>
+    BatchIsAuthorizedRequest& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,14 @@ namespace Model
      * <p>An array of up to 30 requests that you want Verified Permissions to
      * evaluate.</p>
      */
-    inline const Aws::Vector<BatchIsAuthorizedInputItem>& GetRequests() const{ return m_requests; }
+    inline const Aws::Vector<BatchIsAuthorizedInputItem>& GetRequests() const { return m_requests; }
     inline bool RequestsHasBeenSet() const { return m_requestsHasBeenSet; }
-    inline void SetRequests(const Aws::Vector<BatchIsAuthorizedInputItem>& value) { m_requestsHasBeenSet = true; m_requests = value; }
-    inline void SetRequests(Aws::Vector<BatchIsAuthorizedInputItem>&& value) { m_requestsHasBeenSet = true; m_requests = std::move(value); }
-    inline BatchIsAuthorizedRequest& WithRequests(const Aws::Vector<BatchIsAuthorizedInputItem>& value) { SetRequests(value); return *this;}
-    inline BatchIsAuthorizedRequest& WithRequests(Aws::Vector<BatchIsAuthorizedInputItem>&& value) { SetRequests(std::move(value)); return *this;}
-    inline BatchIsAuthorizedRequest& AddRequests(const BatchIsAuthorizedInputItem& value) { m_requestsHasBeenSet = true; m_requests.push_back(value); return *this; }
-    inline BatchIsAuthorizedRequest& AddRequests(BatchIsAuthorizedInputItem&& value) { m_requestsHasBeenSet = true; m_requests.push_back(std::move(value)); return *this; }
+    template<typename RequestsT = Aws::Vector<BatchIsAuthorizedInputItem>>
+    void SetRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests = std::forward<RequestsT>(value); }
+    template<typename RequestsT = Aws::Vector<BatchIsAuthorizedInputItem>>
+    BatchIsAuthorizedRequest& WithRequests(RequestsT&& value) { SetRequests(std::forward<RequestsT>(value)); return *this;}
+    template<typename RequestsT = BatchIsAuthorizedInputItem>
+    BatchIsAuthorizedRequest& AddRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests.emplace_back(std::forward<RequestsT>(value)); return *this; }
     ///@}
   private:
 

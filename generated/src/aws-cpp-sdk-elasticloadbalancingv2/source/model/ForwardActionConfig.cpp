@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-ForwardActionConfig::ForwardActionConfig() : 
-    m_targetGroupsHasBeenSet(false),
-    m_targetGroupStickinessConfigHasBeenSet(false)
-{
-}
-
 ForwardActionConfig::ForwardActionConfig(const XmlNode& xmlNode)
-  : ForwardActionConfig()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ ForwardActionConfig& ForwardActionConfig::operator =(const XmlNode& xmlNode)
     if(!targetGroupsNode.IsNull())
     {
       XmlNode targetGroupsMember = targetGroupsNode.FirstChild("member");
+      m_targetGroupsHasBeenSet = !targetGroupsMember.IsNull();
       while(!targetGroupsMember.IsNull())
       {
         m_targetGroups.push_back(targetGroupsMember);

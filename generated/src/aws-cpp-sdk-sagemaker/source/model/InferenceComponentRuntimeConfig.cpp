@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceComponentRuntimeConfig::InferenceComponentRuntimeConfig() : 
-    m_copyCount(0),
-    m_copyCountHasBeenSet(false)
-{
-}
-
 InferenceComponentRuntimeConfig::InferenceComponentRuntimeConfig(JsonView jsonValue)
-  : InferenceComponentRuntimeConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InferenceComponentRuntimeConfig& InferenceComponentRuntimeConfig::operator =(Jso
   if(jsonValue.ValueExists("CopyCount"))
   {
     m_copyCount = jsonValue.GetInteger("CopyCount");
-
     m_copyCountHasBeenSet = true;
   }
-
   return *this;
 }
 

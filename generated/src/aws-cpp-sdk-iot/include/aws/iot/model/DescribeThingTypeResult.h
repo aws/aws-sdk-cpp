@@ -34,7 +34,7 @@ namespace Model
   class DescribeThingTypeResult
   {
   public:
-    AWS_IOT_API DescribeThingTypeResult();
+    AWS_IOT_API DescribeThingTypeResult() = default;
     AWS_IOT_API DescribeThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,39 +43,33 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
-    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
-    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeName = value; }
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeName = std::move(value); }
-    inline void SetThingTypeName(const char* value) { m_thingTypeName.assign(value); }
-    inline DescribeThingTypeResult& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    inline const Aws::String& GetThingTypeName() const { return m_thingTypeName; }
+    template<typename ThingTypeNameT = Aws::String>
+    void SetThingTypeName(ThingTypeNameT&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::forward<ThingTypeNameT>(value); }
+    template<typename ThingTypeNameT = Aws::String>
+    DescribeThingTypeResult& WithThingTypeName(ThingTypeNameT&& value) { SetThingTypeName(std::forward<ThingTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing type ID.</p>
      */
-    inline const Aws::String& GetThingTypeId() const{ return m_thingTypeId; }
-    inline void SetThingTypeId(const Aws::String& value) { m_thingTypeId = value; }
-    inline void SetThingTypeId(Aws::String&& value) { m_thingTypeId = std::move(value); }
-    inline void SetThingTypeId(const char* value) { m_thingTypeId.assign(value); }
-    inline DescribeThingTypeResult& WithThingTypeId(const Aws::String& value) { SetThingTypeId(value); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeId(Aws::String&& value) { SetThingTypeId(std::move(value)); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeId(const char* value) { SetThingTypeId(value); return *this;}
+    inline const Aws::String& GetThingTypeId() const { return m_thingTypeId; }
+    template<typename ThingTypeIdT = Aws::String>
+    void SetThingTypeId(ThingTypeIdT&& value) { m_thingTypeIdHasBeenSet = true; m_thingTypeId = std::forward<ThingTypeIdT>(value); }
+    template<typename ThingTypeIdT = Aws::String>
+    DescribeThingTypeResult& WithThingTypeId(ThingTypeIdT&& value) { SetThingTypeId(std::forward<ThingTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing type ARN.</p>
      */
-    inline const Aws::String& GetThingTypeArn() const{ return m_thingTypeArn; }
-    inline void SetThingTypeArn(const Aws::String& value) { m_thingTypeArn = value; }
-    inline void SetThingTypeArn(Aws::String&& value) { m_thingTypeArn = std::move(value); }
-    inline void SetThingTypeArn(const char* value) { m_thingTypeArn.assign(value); }
-    inline DescribeThingTypeResult& WithThingTypeArn(const Aws::String& value) { SetThingTypeArn(value); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeArn(Aws::String&& value) { SetThingTypeArn(std::move(value)); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeArn(const char* value) { SetThingTypeArn(value); return *this;}
+    inline const Aws::String& GetThingTypeArn() const { return m_thingTypeArn; }
+    template<typename ThingTypeArnT = Aws::String>
+    void SetThingTypeArn(ThingTypeArnT&& value) { m_thingTypeArnHasBeenSet = true; m_thingTypeArn = std::forward<ThingTypeArnT>(value); }
+    template<typename ThingTypeArnT = Aws::String>
+    DescribeThingTypeResult& WithThingTypeArn(ThingTypeArnT&& value) { SetThingTypeArn(std::forward<ThingTypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,11 +78,11 @@ namespace Model
      * description, a list of searchable thing attribute names, and MQTT5
      * configuration.</p>
      */
-    inline const ThingTypeProperties& GetThingTypeProperties() const{ return m_thingTypeProperties; }
-    inline void SetThingTypeProperties(const ThingTypeProperties& value) { m_thingTypeProperties = value; }
-    inline void SetThingTypeProperties(ThingTypeProperties&& value) { m_thingTypeProperties = std::move(value); }
-    inline DescribeThingTypeResult& WithThingTypeProperties(const ThingTypeProperties& value) { SetThingTypeProperties(value); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
+    inline const ThingTypeProperties& GetThingTypeProperties() const { return m_thingTypeProperties; }
+    template<typename ThingTypePropertiesT = ThingTypeProperties>
+    void SetThingTypeProperties(ThingTypePropertiesT&& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = std::forward<ThingTypePropertiesT>(value); }
+    template<typename ThingTypePropertiesT = ThingTypeProperties>
+    DescribeThingTypeResult& WithThingTypeProperties(ThingTypePropertiesT&& value) { SetThingTypeProperties(std::forward<ThingTypePropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,36 +91,40 @@ namespace Model
      * including: creation date and time, a value indicating whether the thing type is
      * deprecated, and a date and time when it was deprecated.</p>
      */
-    inline const ThingTypeMetadata& GetThingTypeMetadata() const{ return m_thingTypeMetadata; }
-    inline void SetThingTypeMetadata(const ThingTypeMetadata& value) { m_thingTypeMetadata = value; }
-    inline void SetThingTypeMetadata(ThingTypeMetadata&& value) { m_thingTypeMetadata = std::move(value); }
-    inline DescribeThingTypeResult& WithThingTypeMetadata(const ThingTypeMetadata& value) { SetThingTypeMetadata(value); return *this;}
-    inline DescribeThingTypeResult& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(std::move(value)); return *this;}
+    inline const ThingTypeMetadata& GetThingTypeMetadata() const { return m_thingTypeMetadata; }
+    template<typename ThingTypeMetadataT = ThingTypeMetadata>
+    void SetThingTypeMetadata(ThingTypeMetadataT&& value) { m_thingTypeMetadataHasBeenSet = true; m_thingTypeMetadata = std::forward<ThingTypeMetadataT>(value); }
+    template<typename ThingTypeMetadataT = ThingTypeMetadata>
+    DescribeThingTypeResult& WithThingTypeMetadata(ThingTypeMetadataT&& value) { SetThingTypeMetadata(std::forward<ThingTypeMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThingTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThingTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThingTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThingTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_thingTypeName;
+    bool m_thingTypeNameHasBeenSet = false;
 
     Aws::String m_thingTypeId;
+    bool m_thingTypeIdHasBeenSet = false;
 
     Aws::String m_thingTypeArn;
+    bool m_thingTypeArnHasBeenSet = false;
 
     ThingTypeProperties m_thingTypeProperties;
+    bool m_thingTypePropertiesHasBeenSet = false;
 
     ThingTypeMetadata m_thingTypeMetadata;
+    bool m_thingTypeMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class NitroTpmInfo
   {
   public:
-    AWS_EC2_API NitroTpmInfo();
+    AWS_EC2_API NitroTpmInfo() = default;
     AWS_EC2_API NitroTpmInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NitroTpmInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,15 +45,14 @@ namespace Model
     /**
      * <p>Indicates the supported NitroTPM versions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedVersions() const{ return m_supportedVersions; }
+    inline const Aws::Vector<Aws::String>& GetSupportedVersions() const { return m_supportedVersions; }
     inline bool SupportedVersionsHasBeenSet() const { return m_supportedVersionsHasBeenSet; }
-    inline void SetSupportedVersions(const Aws::Vector<Aws::String>& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions = value; }
-    inline void SetSupportedVersions(Aws::Vector<Aws::String>&& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions = std::move(value); }
-    inline NitroTpmInfo& WithSupportedVersions(const Aws::Vector<Aws::String>& value) { SetSupportedVersions(value); return *this;}
-    inline NitroTpmInfo& WithSupportedVersions(Aws::Vector<Aws::String>&& value) { SetSupportedVersions(std::move(value)); return *this;}
-    inline NitroTpmInfo& AddSupportedVersions(const Aws::String& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.push_back(value); return *this; }
-    inline NitroTpmInfo& AddSupportedVersions(Aws::String&& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.push_back(std::move(value)); return *this; }
-    inline NitroTpmInfo& AddSupportedVersions(const char* value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.push_back(value); return *this; }
+    template<typename SupportedVersionsT = Aws::Vector<Aws::String>>
+    void SetSupportedVersions(SupportedVersionsT&& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions = std::forward<SupportedVersionsT>(value); }
+    template<typename SupportedVersionsT = Aws::Vector<Aws::String>>
+    NitroTpmInfo& WithSupportedVersions(SupportedVersionsT&& value) { SetSupportedVersions(std::forward<SupportedVersionsT>(value)); return *this;}
+    template<typename SupportedVersionsT = Aws::String>
+    NitroTpmInfo& AddSupportedVersions(SupportedVersionsT&& value) { m_supportedVersionsHasBeenSet = true; m_supportedVersions.emplace_back(std::forward<SupportedVersionsT>(value)); return *this; }
     ///@}
   private:
 

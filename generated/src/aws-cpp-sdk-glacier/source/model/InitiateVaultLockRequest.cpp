@@ -12,13 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitiateVaultLockRequest::InitiateVaultLockRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String InitiateVaultLockRequest::SerializePayload() const
 {
   JsonValue payload;

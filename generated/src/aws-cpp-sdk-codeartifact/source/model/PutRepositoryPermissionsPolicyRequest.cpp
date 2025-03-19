@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutRepositoryPermissionsPolicyRequest::PutRepositoryPermissionsPolicyRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_policyRevisionHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 Aws::String PutRepositoryPermissionsPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

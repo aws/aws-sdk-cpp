@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AuthenticationConfigurationPatch::AuthenticationConfigurationPatch() : 
-    m_basicAuthenticationCredentialsHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 AuthenticationConfigurationPatch::AuthenticationConfigurationPatch(JsonView jsonValue)
-  : AuthenticationConfigurationPatch()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuthenticationConfigurationPatch& AuthenticationConfigurationPatch::operator =(J
   if(jsonValue.ValueExists("basicAuthenticationCredentials"))
   {
     m_basicAuthenticationCredentials = jsonValue.GetObject("basicAuthenticationCredentials");
-
     m_basicAuthenticationCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

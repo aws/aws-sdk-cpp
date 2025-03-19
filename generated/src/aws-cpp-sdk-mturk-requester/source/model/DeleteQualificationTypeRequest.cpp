@@ -12,11 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQualificationTypeRequest::DeleteQualificationTypeRequest() : 
-    m_qualificationTypeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQualificationTypeRequest::SerializePayload() const
 {
   JsonValue payload;

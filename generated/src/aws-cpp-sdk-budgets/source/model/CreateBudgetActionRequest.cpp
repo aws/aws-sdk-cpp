@@ -12,23 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBudgetActionRequest::CreateBudgetActionRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false),
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_actionThresholdHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_approvalModel(ApprovalModel::NOT_SET),
-    m_approvalModelHasBeenSet(false),
-    m_subscribersHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBudgetActionRequest::SerializePayload() const
 {
   JsonValue payload;

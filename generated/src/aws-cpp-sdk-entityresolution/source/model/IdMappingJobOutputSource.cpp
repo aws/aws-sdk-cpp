@@ -18,15 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdMappingJobOutputSource::IdMappingJobOutputSource() : 
-    m_kMSArnHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IdMappingJobOutputSource::IdMappingJobOutputSource(JsonView jsonValue)
-  : IdMappingJobOutputSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IdMappingJobOutputSource& IdMappingJobOutputSource::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("KMSArn"))
   {
     m_kMSArn = jsonValue.GetString("KMSArn");
-
     m_kMSArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("outputS3Path");
-
     m_outputS3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

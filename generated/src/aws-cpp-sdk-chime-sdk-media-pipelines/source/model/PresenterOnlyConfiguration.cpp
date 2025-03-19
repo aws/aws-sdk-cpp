@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-PresenterOnlyConfiguration::PresenterOnlyConfiguration() : 
-    m_presenterPosition(PresenterPosition::NOT_SET),
-    m_presenterPositionHasBeenSet(false)
-{
-}
-
 PresenterOnlyConfiguration::PresenterOnlyConfiguration(JsonView jsonValue)
-  : PresenterOnlyConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PresenterOnlyConfiguration& PresenterOnlyConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("PresenterPosition"))
   {
     m_presenterPosition = PresenterPositionMapper::GetPresenterPositionForName(jsonValue.GetString("PresenterPosition"));
-
     m_presenterPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAttachedLinksRequest::ListAttachedLinksRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sinkIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListAttachedLinksRequest::SerializePayload() const
 {
   JsonValue payload;

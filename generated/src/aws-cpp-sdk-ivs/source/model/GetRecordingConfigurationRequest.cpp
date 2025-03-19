@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRecordingConfigurationRequest::GetRecordingConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetRecordingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

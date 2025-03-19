@@ -23,7 +23,7 @@ namespace Model
   class ModifyIpamPoolRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyIpamPoolRequest();
+    AWS_EC2_API ModifyIpamPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyIpamPoolRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -55,28 +55,24 @@ namespace Model
     /**
      * <p>The ID of the IPAM pool you want to modify.</p>
      */
-    inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
+    inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
     inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
-    inline void SetIpamPoolId(const Aws::String& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = value; }
-    inline void SetIpamPoolId(Aws::String&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::move(value); }
-    inline void SetIpamPoolId(const char* value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId.assign(value); }
-    inline ModifyIpamPoolRequest& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
-    inline ModifyIpamPoolRequest& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
-    inline ModifyIpamPoolRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    template<typename IpamPoolIdT = Aws::String>
+    void SetIpamPoolId(IpamPoolIdT&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::forward<IpamPoolIdT>(value); }
+    template<typename IpamPoolIdT = Aws::String>
+    ModifyIpamPoolRequest& WithIpamPoolId(IpamPoolIdT&& value) { SetIpamPoolId(std::forward<IpamPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the IPAM pool you want to modify.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ModifyIpamPoolRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ModifyIpamPoolRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ModifyIpamPoolRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyIpamPoolRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * them only. </p> <p>A locale must be set on the pool for this feature to
      * work.</p>
      */
-    inline bool GetAutoImport() const{ return m_autoImport; }
+    inline bool GetAutoImport() const { return m_autoImport; }
     inline bool AutoImportHasBeenSet() const { return m_autoImportHasBeenSet; }
     inline void SetAutoImport(bool value) { m_autoImportHasBeenSet = true; m_autoImport = value; }
     inline ModifyIpamPoolRequest& WithAutoImport(bool value) { SetAutoImport(value); return *this;}
@@ -105,7 +101,7 @@ namespace Model
      * netmask lengths for IPv6 addresses are 0 - 128. The minimum netmask length must
      * be less than the maximum netmask length.</p>
      */
-    inline int GetAllocationMinNetmaskLength() const{ return m_allocationMinNetmaskLength; }
+    inline int GetAllocationMinNetmaskLength() const { return m_allocationMinNetmaskLength; }
     inline bool AllocationMinNetmaskLengthHasBeenSet() const { return m_allocationMinNetmaskLengthHasBeenSet; }
     inline void SetAllocationMinNetmaskLength(int value) { m_allocationMinNetmaskLengthHasBeenSet = true; m_allocationMinNetmaskLength = value; }
     inline ModifyIpamPoolRequest& WithAllocationMinNetmaskLength(int value) { SetAllocationMinNetmaskLength(value); return *this;}
@@ -118,7 +114,7 @@ namespace Model
      * netmask lengths for IPv6 addresses are 0 - 128.The maximum netmask length must
      * be greater than the minimum netmask length.</p>
      */
-    inline int GetAllocationMaxNetmaskLength() const{ return m_allocationMaxNetmaskLength; }
+    inline int GetAllocationMaxNetmaskLength() const { return m_allocationMaxNetmaskLength; }
     inline bool AllocationMaxNetmaskLengthHasBeenSet() const { return m_allocationMaxNetmaskLengthHasBeenSet; }
     inline void SetAllocationMaxNetmaskLength(int value) { m_allocationMaxNetmaskLengthHasBeenSet = true; m_allocationMaxNetmaskLength = value; }
     inline ModifyIpamPoolRequest& WithAllocationMaxNetmaskLength(int value) { SetAllocationMaxNetmaskLength(value); return *this;}
@@ -130,7 +126,7 @@ namespace Model
      * example, the CIDR assigned to this pool is 10.0.0.0/8 and you enter 16 here, new
      * allocations will default to 10.0.0.0/16.</p>
      */
-    inline int GetAllocationDefaultNetmaskLength() const{ return m_allocationDefaultNetmaskLength; }
+    inline int GetAllocationDefaultNetmaskLength() const { return m_allocationDefaultNetmaskLength; }
     inline bool AllocationDefaultNetmaskLengthHasBeenSet() const { return m_allocationDefaultNetmaskLengthHasBeenSet; }
     inline void SetAllocationDefaultNetmaskLength(int value) { m_allocationDefaultNetmaskLengthHasBeenSet = true; m_allocationDefaultNetmaskLength = value; }
     inline ModifyIpamPoolRequest& WithAllocationDefaultNetmaskLength(int value) { SetAllocationDefaultNetmaskLength(value); return *this;}
@@ -140,7 +136,7 @@ namespace Model
     /**
      * <p>Clear the default netmask length allocation rule for this pool.</p>
      */
-    inline bool GetClearAllocationDefaultNetmaskLength() const{ return m_clearAllocationDefaultNetmaskLength; }
+    inline bool GetClearAllocationDefaultNetmaskLength() const { return m_clearAllocationDefaultNetmaskLength; }
     inline bool ClearAllocationDefaultNetmaskLengthHasBeenSet() const { return m_clearAllocationDefaultNetmaskLengthHasBeenSet; }
     inline void SetClearAllocationDefaultNetmaskLength(bool value) { m_clearAllocationDefaultNetmaskLengthHasBeenSet = true; m_clearAllocationDefaultNetmaskLength = value; }
     inline ModifyIpamPoolRequest& WithClearAllocationDefaultNetmaskLength(bool value) { SetClearAllocationDefaultNetmaskLength(value); return *this;}
@@ -153,32 +149,32 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create a
      * top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<RequestIpamResourceTag>& GetAddAllocationResourceTags() const{ return m_addAllocationResourceTags; }
+    inline const Aws::Vector<RequestIpamResourceTag>& GetAddAllocationResourceTags() const { return m_addAllocationResourceTags; }
     inline bool AddAllocationResourceTagsHasBeenSet() const { return m_addAllocationResourceTagsHasBeenSet; }
-    inline void SetAddAllocationResourceTags(const Aws::Vector<RequestIpamResourceTag>& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags = value; }
-    inline void SetAddAllocationResourceTags(Aws::Vector<RequestIpamResourceTag>&& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags = std::move(value); }
-    inline ModifyIpamPoolRequest& WithAddAllocationResourceTags(const Aws::Vector<RequestIpamResourceTag>& value) { SetAddAllocationResourceTags(value); return *this;}
-    inline ModifyIpamPoolRequest& WithAddAllocationResourceTags(Aws::Vector<RequestIpamResourceTag>&& value) { SetAddAllocationResourceTags(std::move(value)); return *this;}
-    inline ModifyIpamPoolRequest& AddAddAllocationResourceTags(const RequestIpamResourceTag& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags.push_back(value); return *this; }
-    inline ModifyIpamPoolRequest& AddAddAllocationResourceTags(RequestIpamResourceTag&& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags.push_back(std::move(value)); return *this; }
+    template<typename AddAllocationResourceTagsT = Aws::Vector<RequestIpamResourceTag>>
+    void SetAddAllocationResourceTags(AddAllocationResourceTagsT&& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags = std::forward<AddAllocationResourceTagsT>(value); }
+    template<typename AddAllocationResourceTagsT = Aws::Vector<RequestIpamResourceTag>>
+    ModifyIpamPoolRequest& WithAddAllocationResourceTags(AddAllocationResourceTagsT&& value) { SetAddAllocationResourceTags(std::forward<AddAllocationResourceTagsT>(value)); return *this;}
+    template<typename AddAllocationResourceTagsT = RequestIpamResourceTag>
+    ModifyIpamPoolRequest& AddAddAllocationResourceTags(AddAllocationResourceTagsT&& value) { m_addAllocationResourceTagsHasBeenSet = true; m_addAllocationResourceTags.emplace_back(std::forward<AddAllocationResourceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Remove tag allocation rules from a pool.</p>
      */
-    inline const Aws::Vector<RequestIpamResourceTag>& GetRemoveAllocationResourceTags() const{ return m_removeAllocationResourceTags; }
+    inline const Aws::Vector<RequestIpamResourceTag>& GetRemoveAllocationResourceTags() const { return m_removeAllocationResourceTags; }
     inline bool RemoveAllocationResourceTagsHasBeenSet() const { return m_removeAllocationResourceTagsHasBeenSet; }
-    inline void SetRemoveAllocationResourceTags(const Aws::Vector<RequestIpamResourceTag>& value) { m_removeAllocationResourceTagsHasBeenSet = true; m_removeAllocationResourceTags = value; }
-    inline void SetRemoveAllocationResourceTags(Aws::Vector<RequestIpamResourceTag>&& value) { m_removeAllocationResourceTagsHasBeenSet = true; m_removeAllocationResourceTags = std::move(value); }
-    inline ModifyIpamPoolRequest& WithRemoveAllocationResourceTags(const Aws::Vector<RequestIpamResourceTag>& value) { SetRemoveAllocationResourceTags(value); return *this;}
-    inline ModifyIpamPoolRequest& WithRemoveAllocationResourceTags(Aws::Vector<RequestIpamResourceTag>&& value) { SetRemoveAllocationResourceTags(std::move(value)); return *this;}
-    inline ModifyIpamPoolRequest& AddRemoveAllocationResourceTags(const RequestIpamResourceTag& value) { m_removeAllocationResourceTagsHasBeenSet = true; m_removeAllocationResourceTags.push_back(value); return *this; }
-    inline ModifyIpamPoolRequest& AddRemoveAllocationResourceTags(RequestIpamResourceTag&& value) { m_removeAllocationResourceTagsHasBeenSet = true; m_removeAllocationResourceTags.push_back(std::move(value)); return *this; }
+    template<typename RemoveAllocationResourceTagsT = Aws::Vector<RequestIpamResourceTag>>
+    void SetRemoveAllocationResourceTags(RemoveAllocationResourceTagsT&& value) { m_removeAllocationResourceTagsHasBeenSet = true; m_removeAllocationResourceTags = std::forward<RemoveAllocationResourceTagsT>(value); }
+    template<typename RemoveAllocationResourceTagsT = Aws::Vector<RequestIpamResourceTag>>
+    ModifyIpamPoolRequest& WithRemoveAllocationResourceTags(RemoveAllocationResourceTagsT&& value) { SetRemoveAllocationResourceTags(std::forward<RemoveAllocationResourceTagsT>(value)); return *this;}
+    template<typename RemoveAllocationResourceTagsT = RequestIpamResourceTag>
+    ModifyIpamPoolRequest& AddRemoveAllocationResourceTags(RemoveAllocationResourceTagsT&& value) { m_removeAllocationResourceTagsHasBeenSet = true; m_removeAllocationResourceTags.emplace_back(std::forward<RemoveAllocationResourceTagsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
@@ -187,19 +183,19 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_autoImport;
+    bool m_autoImport{false};
     bool m_autoImportHasBeenSet = false;
 
-    int m_allocationMinNetmaskLength;
+    int m_allocationMinNetmaskLength{0};
     bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
-    int m_allocationMaxNetmaskLength;
+    int m_allocationMaxNetmaskLength{0};
     bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
-    int m_allocationDefaultNetmaskLength;
+    int m_allocationDefaultNetmaskLength{0};
     bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
-    bool m_clearAllocationDefaultNetmaskLength;
+    bool m_clearAllocationDefaultNetmaskLength{false};
     bool m_clearAllocationDefaultNetmaskLengthHasBeenSet = false;
 
     Aws::Vector<RequestIpamResourceTag> m_addAllocationResourceTags;

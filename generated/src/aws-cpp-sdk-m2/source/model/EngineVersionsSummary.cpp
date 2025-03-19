@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-EngineVersionsSummary::EngineVersionsSummary() : 
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
-{
-}
-
 EngineVersionsSummary::EngineVersionsSummary(JsonView jsonValue)
-  : EngineVersionsSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EngineVersionsSummary& EngineVersionsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = jsonValue.GetString("engineType");
-
     m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

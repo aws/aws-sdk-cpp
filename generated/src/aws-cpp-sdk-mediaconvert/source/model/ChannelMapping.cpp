@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ChannelMapping::ChannelMapping() : 
-    m_outputChannelsHasBeenSet(false)
-{
-}
-
 ChannelMapping::ChannelMapping(JsonView jsonValue)
-  : ChannelMapping()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ChannelMapping& ChannelMapping::operator =(JsonView jsonValue)
     }
     m_outputChannelsHasBeenSet = true;
   }
-
   return *this;
 }
 

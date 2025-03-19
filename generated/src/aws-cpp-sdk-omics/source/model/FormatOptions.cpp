@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-FormatOptions::FormatOptions() : 
-    m_tsvOptionsHasBeenSet(false),
-    m_vcfOptionsHasBeenSet(false)
-{
-}
-
 FormatOptions::FormatOptions(JsonView jsonValue)
-  : FormatOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FormatOptions& FormatOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tsvOptions"))
   {
     m_tsvOptions = jsonValue.GetObject("tsvOptions");
-
     m_tsvOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcfOptions"))
   {
     m_vcfOptions = jsonValue.GetObject("vcfOptions");
-
     m_vcfOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

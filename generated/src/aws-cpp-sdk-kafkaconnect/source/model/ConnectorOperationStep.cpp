@@ -18,16 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-ConnectorOperationStep::ConnectorOperationStep() : 
-    m_stepType(ConnectorOperationStepType::NOT_SET),
-    m_stepTypeHasBeenSet(false),
-    m_stepState(ConnectorOperationStepState::NOT_SET),
-    m_stepStateHasBeenSet(false)
-{
-}
-
 ConnectorOperationStep::ConnectorOperationStep(JsonView jsonValue)
-  : ConnectorOperationStep()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConnectorOperationStep& ConnectorOperationStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepType"))
   {
     m_stepType = ConnectorOperationStepTypeMapper::GetConnectorOperationStepTypeForName(jsonValue.GetString("stepType"));
-
     m_stepTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepState"))
   {
     m_stepState = ConnectorOperationStepStateMapper::GetConnectorOperationStepStateForName(jsonValue.GetString("stepState"));
-
     m_stepStateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchDescribeSimulationJobResult
   {
   public:
-    AWS_ROBOMAKER_API BatchDescribeSimulationJobResult();
+    AWS_ROBOMAKER_API BatchDescribeSimulationJobResult() = default;
     AWS_ROBOMAKER_API BatchDescribeSimulationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API BatchDescribeSimulationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>A list of simulation jobs.</p>
      */
-    inline const Aws::Vector<SimulationJob>& GetJobs() const{ return m_jobs; }
-    inline void SetJobs(const Aws::Vector<SimulationJob>& value) { m_jobs = value; }
-    inline void SetJobs(Aws::Vector<SimulationJob>&& value) { m_jobs = std::move(value); }
-    inline BatchDescribeSimulationJobResult& WithJobs(const Aws::Vector<SimulationJob>& value) { SetJobs(value); return *this;}
-    inline BatchDescribeSimulationJobResult& WithJobs(Aws::Vector<SimulationJob>&& value) { SetJobs(std::move(value)); return *this;}
-    inline BatchDescribeSimulationJobResult& AddJobs(const SimulationJob& value) { m_jobs.push_back(value); return *this; }
-    inline BatchDescribeSimulationJobResult& AddJobs(SimulationJob&& value) { m_jobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SimulationJob>& GetJobs() const { return m_jobs; }
+    template<typename JobsT = Aws::Vector<SimulationJob>>
+    void SetJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs = std::forward<JobsT>(value); }
+    template<typename JobsT = Aws::Vector<SimulationJob>>
+    BatchDescribeSimulationJobResult& WithJobs(JobsT&& value) { SetJobs(std::forward<JobsT>(value)); return *this;}
+    template<typename JobsT = SimulationJob>
+    BatchDescribeSimulationJobResult& AddJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs.emplace_back(std::forward<JobsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUnprocessedJobs() const{ return m_unprocessedJobs; }
-    inline void SetUnprocessedJobs(const Aws::Vector<Aws::String>& value) { m_unprocessedJobs = value; }
-    inline void SetUnprocessedJobs(Aws::Vector<Aws::String>&& value) { m_unprocessedJobs = std::move(value); }
-    inline BatchDescribeSimulationJobResult& WithUnprocessedJobs(const Aws::Vector<Aws::String>& value) { SetUnprocessedJobs(value); return *this;}
-    inline BatchDescribeSimulationJobResult& WithUnprocessedJobs(Aws::Vector<Aws::String>&& value) { SetUnprocessedJobs(std::move(value)); return *this;}
-    inline BatchDescribeSimulationJobResult& AddUnprocessedJobs(const Aws::String& value) { m_unprocessedJobs.push_back(value); return *this; }
-    inline BatchDescribeSimulationJobResult& AddUnprocessedJobs(Aws::String&& value) { m_unprocessedJobs.push_back(std::move(value)); return *this; }
-    inline BatchDescribeSimulationJobResult& AddUnprocessedJobs(const char* value) { m_unprocessedJobs.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetUnprocessedJobs() const { return m_unprocessedJobs; }
+    template<typename UnprocessedJobsT = Aws::Vector<Aws::String>>
+    void SetUnprocessedJobs(UnprocessedJobsT&& value) { m_unprocessedJobsHasBeenSet = true; m_unprocessedJobs = std::forward<UnprocessedJobsT>(value); }
+    template<typename UnprocessedJobsT = Aws::Vector<Aws::String>>
+    BatchDescribeSimulationJobResult& WithUnprocessedJobs(UnprocessedJobsT&& value) { SetUnprocessedJobs(std::forward<UnprocessedJobsT>(value)); return *this;}
+    template<typename UnprocessedJobsT = Aws::String>
+    BatchDescribeSimulationJobResult& AddUnprocessedJobs(UnprocessedJobsT&& value) { m_unprocessedJobsHasBeenSet = true; m_unprocessedJobs.emplace_back(std::forward<UnprocessedJobsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDescribeSimulationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDescribeSimulationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDescribeSimulationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDescribeSimulationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SimulationJob> m_jobs;
+    bool m_jobsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_unprocessedJobs;
+    bool m_unprocessedJobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEntityRecognizerResult::CreateEntityRecognizerResult()
-{
-}
-
 CreateEntityRecognizerResult::CreateEntityRecognizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateEntityRecognizerResult& CreateEntityRecognizerResult::operator =(const Aws
   if(jsonValue.ValueExists("EntityRecognizerArn"))
   {
     m_entityRecognizerArn = jsonValue.GetString("EntityRecognizerArn");
-
+    m_entityRecognizerArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class GetSnapshotLimitsResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult();
+    AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult() = default;
     AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
      * the specified directory.</p>
      */
-    inline const SnapshotLimits& GetSnapshotLimits() const{ return m_snapshotLimits; }
-    inline void SetSnapshotLimits(const SnapshotLimits& value) { m_snapshotLimits = value; }
-    inline void SetSnapshotLimits(SnapshotLimits&& value) { m_snapshotLimits = std::move(value); }
-    inline GetSnapshotLimitsResult& WithSnapshotLimits(const SnapshotLimits& value) { SetSnapshotLimits(value); return *this;}
-    inline GetSnapshotLimitsResult& WithSnapshotLimits(SnapshotLimits&& value) { SetSnapshotLimits(std::move(value)); return *this;}
+    inline const SnapshotLimits& GetSnapshotLimits() const { return m_snapshotLimits; }
+    template<typename SnapshotLimitsT = SnapshotLimits>
+    void SetSnapshotLimits(SnapshotLimitsT&& value) { m_snapshotLimitsHasBeenSet = true; m_snapshotLimits = std::forward<SnapshotLimitsT>(value); }
+    template<typename SnapshotLimitsT = SnapshotLimits>
+    GetSnapshotLimitsResult& WithSnapshotLimits(SnapshotLimitsT&& value) { SetSnapshotLimits(std::forward<SnapshotLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSnapshotLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSnapshotLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSnapshotLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSnapshotLimitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SnapshotLimits m_snapshotLimits;
+    bool m_snapshotLimitsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

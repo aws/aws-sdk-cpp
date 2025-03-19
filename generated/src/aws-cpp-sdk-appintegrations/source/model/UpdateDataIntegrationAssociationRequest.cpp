@@ -12,13 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataIntegrationAssociationRequest::UpdateDataIntegrationAssociationRequest() : 
-    m_dataIntegrationIdentifierHasBeenSet(false),
-    m_dataIntegrationAssociationIdentifierHasBeenSet(false),
-    m_executionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataIntegrationAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendTaskFailureRequest::SendTaskFailureRequest() : 
-    m_taskTokenHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_causeHasBeenSet(false)
-{
-}
-
 Aws::String SendTaskFailureRequest::SerializePayload() const
 {
   JsonValue payload;

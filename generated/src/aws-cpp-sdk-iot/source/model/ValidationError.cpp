@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ValidationError::ValidationError() : 
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ValidationError::ValidationError(JsonView jsonValue)
-  : ValidationError()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ValidationError& ValidationError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

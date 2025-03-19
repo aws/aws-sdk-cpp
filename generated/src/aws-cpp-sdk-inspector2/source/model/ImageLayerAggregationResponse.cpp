@@ -18,17 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ImageLayerAggregationResponse::ImageLayerAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_layerHashHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 ImageLayerAggregationResponse::ImageLayerAggregationResponse(JsonView jsonValue)
-  : ImageLayerAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ImageLayerAggregationResponse& ImageLayerAggregationResponse::operator =(JsonVie
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerHash"))
   {
     m_layerHash = jsonValue.GetString("layerHash");
-
     m_layerHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

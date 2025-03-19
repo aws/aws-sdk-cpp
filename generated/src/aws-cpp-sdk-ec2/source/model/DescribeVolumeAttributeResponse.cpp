@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVolumeAttributeResponse::DescribeVolumeAttributeResponse()
-{
-}
-
 DescribeVolumeAttributeResponse::DescribeVolumeAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,22 +38,26 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
     if(!autoEnableIONode.IsNull())
     {
       m_autoEnableIO = autoEnableIONode;
+      m_autoEnableIOHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
         productCodesMember = productCodesMember.NextNode("item");
       }
 
+      m_productCodesHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
+      m_volumeIdHasBeenSet = true;
     }
   }
 
@@ -66,6 +66,7 @@ DescribeVolumeAttributeResponse& DescribeVolumeAttributeResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVolumeAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

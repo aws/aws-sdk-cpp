@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactConfiguration::ContactConfiguration() : 
-    m_contactIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_includeRawMessage(false),
-    m_includeRawMessageHasBeenSet(false)
-{
-}
-
 ContactConfiguration::ContactConfiguration(JsonView jsonValue)
-  : ContactConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ContactConfiguration& ContactConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeRawMessage"))
   {
     m_includeRawMessage = jsonValue.GetBool("IncludeRawMessage");
-
     m_includeRawMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

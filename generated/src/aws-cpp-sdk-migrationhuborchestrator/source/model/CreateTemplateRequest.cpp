@@ -12,16 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTemplateRequest::CreateTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateSourceHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

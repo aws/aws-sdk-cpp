@@ -18,20 +18,7 @@ namespace deadline
 namespace Model
 {
 
-Stats::Stats() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false)
-{
-}
-
 Stats::Stats(JsonView jsonValue)
-  : Stats()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Stats& Stats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetDouble("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetDouble("max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("avg"))
   {
     m_avg = jsonValue.GetDouble("avg");
-
     m_avgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sum"))
   {
     m_sum = jsonValue.GetDouble("sum");
-
     m_sumHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AmiProductVisibilityFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API AmiProductVisibilityFilter();
+    AWS_MARKETPLACECATALOG_API AmiProductVisibilityFilter() = default;
     AWS_MARKETPLACECATALOG_API AmiProductVisibilityFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API AmiProductVisibilityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,13 @@ namespace Model
     /**
      * <p>A string array of unique visibility values to be filtered on.</p>
      */
-    inline const Aws::Vector<AmiProductVisibilityString>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<AmiProductVisibilityString>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<AmiProductVisibilityString>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<AmiProductVisibilityString>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline AmiProductVisibilityFilter& WithValueList(const Aws::Vector<AmiProductVisibilityString>& value) { SetValueList(value); return *this;}
-    inline AmiProductVisibilityFilter& WithValueList(Aws::Vector<AmiProductVisibilityString>&& value) { SetValueList(std::move(value)); return *this;}
-    inline AmiProductVisibilityFilter& AddValueList(const AmiProductVisibilityString& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline AmiProductVisibilityFilter& AddValueList(AmiProductVisibilityString&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
+    template<typename ValueListT = Aws::Vector<AmiProductVisibilityString>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<AmiProductVisibilityString>>
+    AmiProductVisibilityFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    inline AmiProductVisibilityFilter& AddValueList(AmiProductVisibilityString value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
     ///@}
   private:
 

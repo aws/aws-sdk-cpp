@@ -32,7 +32,7 @@ namespace Model
   class GeospatialNullDataSettings
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialNullDataSettings();
+    AWS_QUICKSIGHT_API GeospatialNullDataSettings() = default;
     AWS_QUICKSIGHT_API GeospatialNullDataSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialNullDataSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The symbol style for null data.</p>
      */
-    inline const GeospatialNullSymbolStyle& GetSymbolStyle() const{ return m_symbolStyle; }
+    inline const GeospatialNullSymbolStyle& GetSymbolStyle() const { return m_symbolStyle; }
     inline bool SymbolStyleHasBeenSet() const { return m_symbolStyleHasBeenSet; }
-    inline void SetSymbolStyle(const GeospatialNullSymbolStyle& value) { m_symbolStyleHasBeenSet = true; m_symbolStyle = value; }
-    inline void SetSymbolStyle(GeospatialNullSymbolStyle&& value) { m_symbolStyleHasBeenSet = true; m_symbolStyle = std::move(value); }
-    inline GeospatialNullDataSettings& WithSymbolStyle(const GeospatialNullSymbolStyle& value) { SetSymbolStyle(value); return *this;}
-    inline GeospatialNullDataSettings& WithSymbolStyle(GeospatialNullSymbolStyle&& value) { SetSymbolStyle(std::move(value)); return *this;}
+    template<typename SymbolStyleT = GeospatialNullSymbolStyle>
+    void SetSymbolStyle(SymbolStyleT&& value) { m_symbolStyleHasBeenSet = true; m_symbolStyle = std::forward<SymbolStyleT>(value); }
+    template<typename SymbolStyleT = GeospatialNullSymbolStyle>
+    GeospatialNullDataSettings& WithSymbolStyle(SymbolStyleT&& value) { SetSymbolStyle(std::forward<SymbolStyleT>(value)); return *this;}
     ///@}
   private:
 

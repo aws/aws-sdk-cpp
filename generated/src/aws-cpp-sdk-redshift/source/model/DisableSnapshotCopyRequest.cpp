@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DisableSnapshotCopyRequest::DisableSnapshotCopyRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DisableSnapshotCopyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

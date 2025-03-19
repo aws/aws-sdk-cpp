@@ -12,14 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAppsRequest::ListAppsRequest() : 
-    m_appIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAppsRequest::SerializePayload() const
 {
   JsonValue payload;

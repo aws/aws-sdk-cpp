@@ -27,7 +27,7 @@ namespace Model
   class DeleteTrialComponentResult
   {
   public:
-    AWS_SAGEMAKER_API DeleteTrialComponentResult();
+    AWS_SAGEMAKER_API DeleteTrialComponentResult() = default;
     AWS_SAGEMAKER_API DeleteTrialComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DeleteTrialComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
      */
-    inline const Aws::String& GetTrialComponentArn() const{ return m_trialComponentArn; }
-    inline void SetTrialComponentArn(const Aws::String& value) { m_trialComponentArn = value; }
-    inline void SetTrialComponentArn(Aws::String&& value) { m_trialComponentArn = std::move(value); }
-    inline void SetTrialComponentArn(const char* value) { m_trialComponentArn.assign(value); }
-    inline DeleteTrialComponentResult& WithTrialComponentArn(const Aws::String& value) { SetTrialComponentArn(value); return *this;}
-    inline DeleteTrialComponentResult& WithTrialComponentArn(Aws::String&& value) { SetTrialComponentArn(std::move(value)); return *this;}
-    inline DeleteTrialComponentResult& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
+    inline const Aws::String& GetTrialComponentArn() const { return m_trialComponentArn; }
+    template<typename TrialComponentArnT = Aws::String>
+    void SetTrialComponentArn(TrialComponentArnT&& value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn = std::forward<TrialComponentArnT>(value); }
+    template<typename TrialComponentArnT = Aws::String>
+    DeleteTrialComponentResult& WithTrialComponentArn(TrialComponentArnT&& value) { SetTrialComponentArn(std::forward<TrialComponentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteTrialComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteTrialComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteTrialComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteTrialComponentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trialComponentArn;
+    bool m_trialComponentArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

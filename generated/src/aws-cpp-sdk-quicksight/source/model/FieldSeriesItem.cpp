@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FieldSeriesItem::FieldSeriesItem() : 
-    m_fieldIdHasBeenSet(false),
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 FieldSeriesItem::FieldSeriesItem(JsonView jsonValue)
-  : FieldSeriesItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FieldSeriesItem& FieldSeriesItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxisBinding"))
   {
     m_axisBinding = AxisBindingMapper::GetAxisBindingForName(jsonValue.GetString("AxisBinding"));
-
     m_axisBindingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   return *this;
 }
 

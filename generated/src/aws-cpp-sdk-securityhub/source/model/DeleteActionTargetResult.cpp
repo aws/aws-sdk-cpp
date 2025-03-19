@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteActionTargetResult::DeleteActionTargetResult()
-{
-}
-
 DeleteActionTargetResult::DeleteActionTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteActionTargetResult& DeleteActionTargetResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ActionTargetArn"))
   {
     m_actionTargetArn = jsonValue.GetString("ActionTargetArn");
-
+    m_actionTargetArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

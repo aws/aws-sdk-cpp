@@ -31,7 +31,7 @@ namespace Model
   class Duration
   {
   public:
-    AWS_APPMESH_API Duration();
+    AWS_APPMESH_API Duration() = default;
     AWS_APPMESH_API Duration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,29 +41,27 @@ namespace Model
     /**
      * <p>A unit of time.</p>
      */
-    inline const DurationUnit& GetUnit() const{ return m_unit; }
+    inline DurationUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const DurationUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(DurationUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Duration& WithUnit(const DurationUnit& value) { SetUnit(value); return *this;}
-    inline Duration& WithUnit(DurationUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(DurationUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Duration& WithUnit(DurationUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A number of time units.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline Duration& WithValue(long long value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    DurationUnit m_unit;
+    DurationUnit m_unit{DurationUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

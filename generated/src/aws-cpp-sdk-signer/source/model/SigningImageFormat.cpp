@@ -18,15 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningImageFormat::SigningImageFormat() : 
-    m_supportedFormatsHasBeenSet(false),
-    m_defaultFormat(ImageFormat::NOT_SET),
-    m_defaultFormatHasBeenSet(false)
-{
-}
-
 SigningImageFormat::SigningImageFormat(JsonView jsonValue)
-  : SigningImageFormat()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SigningImageFormat& SigningImageFormat::operator =(JsonView jsonValue)
     }
     m_supportedFormatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultFormat"))
   {
     m_defaultFormat = ImageFormatMapper::GetImageFormatForName(jsonValue.GetString("defaultFormat"));
-
     m_defaultFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

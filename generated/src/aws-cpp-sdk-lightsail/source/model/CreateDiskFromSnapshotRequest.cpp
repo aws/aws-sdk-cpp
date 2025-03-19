@@ -12,21 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDiskFromSnapshotRequest::CreateDiskFromSnapshotRequest() : 
-    m_diskNameHasBeenSet(false),
-    m_diskSnapshotNameHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_addOnsHasBeenSet(false),
-    m_sourceDiskNameHasBeenSet(false),
-    m_restoreDateHasBeenSet(false),
-    m_useLatestRestorableAutoSnapshot(false),
-    m_useLatestRestorableAutoSnapshotHasBeenSet(false)
-{
-}
-
 Aws::String CreateDiskFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

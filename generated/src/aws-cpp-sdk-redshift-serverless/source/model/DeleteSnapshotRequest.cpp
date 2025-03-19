@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSnapshotRequest::DeleteSnapshotRequest() : 
-    m_snapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

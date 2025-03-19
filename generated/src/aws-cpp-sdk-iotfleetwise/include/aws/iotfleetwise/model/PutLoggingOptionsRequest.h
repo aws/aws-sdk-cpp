@@ -21,7 +21,7 @@ namespace Model
   class PutLoggingOptionsRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API PutLoggingOptionsRequest();
+    AWS_IOTFLEETWISE_API PutLoggingOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
     /**
      * <p>Creates or updates the log delivery option to Amazon CloudWatch Logs.</p>
      */
-    inline const CloudWatchLogDeliveryOptions& GetCloudWatchLogDelivery() const{ return m_cloudWatchLogDelivery; }
+    inline const CloudWatchLogDeliveryOptions& GetCloudWatchLogDelivery() const { return m_cloudWatchLogDelivery; }
     inline bool CloudWatchLogDeliveryHasBeenSet() const { return m_cloudWatchLogDeliveryHasBeenSet; }
-    inline void SetCloudWatchLogDelivery(const CloudWatchLogDeliveryOptions& value) { m_cloudWatchLogDeliveryHasBeenSet = true; m_cloudWatchLogDelivery = value; }
-    inline void SetCloudWatchLogDelivery(CloudWatchLogDeliveryOptions&& value) { m_cloudWatchLogDeliveryHasBeenSet = true; m_cloudWatchLogDelivery = std::move(value); }
-    inline PutLoggingOptionsRequest& WithCloudWatchLogDelivery(const CloudWatchLogDeliveryOptions& value) { SetCloudWatchLogDelivery(value); return *this;}
-    inline PutLoggingOptionsRequest& WithCloudWatchLogDelivery(CloudWatchLogDeliveryOptions&& value) { SetCloudWatchLogDelivery(std::move(value)); return *this;}
+    template<typename CloudWatchLogDeliveryT = CloudWatchLogDeliveryOptions>
+    void SetCloudWatchLogDelivery(CloudWatchLogDeliveryT&& value) { m_cloudWatchLogDeliveryHasBeenSet = true; m_cloudWatchLogDelivery = std::forward<CloudWatchLogDeliveryT>(value); }
+    template<typename CloudWatchLogDeliveryT = CloudWatchLogDeliveryOptions>
+    PutLoggingOptionsRequest& WithCloudWatchLogDelivery(CloudWatchLogDeliveryT&& value) { SetCloudWatchLogDelivery(std::forward<CloudWatchLogDeliveryT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_ATHENA_API EncryptionConfiguration();
+    AWS_ATHENA_API EncryptionConfiguration() = default;
     AWS_ATHENA_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * encryption is used. It specifies whether query results must be encrypted, for
      * all queries that run in this workgroup. </p>
      */
-    inline const EncryptionOption& GetEncryptionOption() const{ return m_encryptionOption; }
+    inline EncryptionOption GetEncryptionOption() const { return m_encryptionOption; }
     inline bool EncryptionOptionHasBeenSet() const { return m_encryptionOptionHasBeenSet; }
-    inline void SetEncryptionOption(const EncryptionOption& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
-    inline void SetEncryptionOption(EncryptionOption&& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = std::move(value); }
-    inline EncryptionConfiguration& WithEncryptionOption(const EncryptionOption& value) { SetEncryptionOption(value); return *this;}
-    inline EncryptionConfiguration& WithEncryptionOption(EncryptionOption&& value) { SetEncryptionOption(std::move(value)); return *this;}
+    inline void SetEncryptionOption(EncryptionOption value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
+    inline EncryptionConfiguration& WithEncryptionOption(EncryptionOption value) { SetEncryptionOption(value); return *this;}
     ///@}
 
     ///@{
@@ -63,18 +61,16 @@ namespace Model
      * <p>For <code>SSE_KMS</code> and <code>CSE_KMS</code>, this is the KMS key ARN or
      * ID.</p>
      */
-    inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
+    inline const Aws::String& GetKmsKey() const { return m_kmsKey; }
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
-    inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
-    inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
-    inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
-    inline EncryptionConfiguration& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
-    inline EncryptionConfiguration& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
-    inline EncryptionConfiguration& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
+    template<typename KmsKeyT = Aws::String>
+    void SetKmsKey(KmsKeyT&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::forward<KmsKeyT>(value); }
+    template<typename KmsKeyT = Aws::String>
+    EncryptionConfiguration& WithKmsKey(KmsKeyT&& value) { SetKmsKey(std::forward<KmsKeyT>(value)); return *this;}
     ///@}
   private:
 
-    EncryptionOption m_encryptionOption;
+    EncryptionOption m_encryptionOption{EncryptionOption::NOT_SET};
     bool m_encryptionOptionHasBeenSet = false;
 
     Aws::String m_kmsKey;

@@ -31,7 +31,7 @@ namespace Model
   class EventSummary
   {
   public:
-    AWS_DATAZONE_API EventSummary();
+    AWS_DATAZONE_API EventSummary() = default;
     AWS_DATAZONE_API EventSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API EventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The open lineage run event summary.</p>
      */
-    inline const OpenLineageRunEventSummary& GetOpenLineageRunEventSummary() const{ return m_openLineageRunEventSummary; }
+    inline const OpenLineageRunEventSummary& GetOpenLineageRunEventSummary() const { return m_openLineageRunEventSummary; }
     inline bool OpenLineageRunEventSummaryHasBeenSet() const { return m_openLineageRunEventSummaryHasBeenSet; }
-    inline void SetOpenLineageRunEventSummary(const OpenLineageRunEventSummary& value) { m_openLineageRunEventSummaryHasBeenSet = true; m_openLineageRunEventSummary = value; }
-    inline void SetOpenLineageRunEventSummary(OpenLineageRunEventSummary&& value) { m_openLineageRunEventSummaryHasBeenSet = true; m_openLineageRunEventSummary = std::move(value); }
-    inline EventSummary& WithOpenLineageRunEventSummary(const OpenLineageRunEventSummary& value) { SetOpenLineageRunEventSummary(value); return *this;}
-    inline EventSummary& WithOpenLineageRunEventSummary(OpenLineageRunEventSummary&& value) { SetOpenLineageRunEventSummary(std::move(value)); return *this;}
+    template<typename OpenLineageRunEventSummaryT = OpenLineageRunEventSummary>
+    void SetOpenLineageRunEventSummary(OpenLineageRunEventSummaryT&& value) { m_openLineageRunEventSummaryHasBeenSet = true; m_openLineageRunEventSummary = std::forward<OpenLineageRunEventSummaryT>(value); }
+    template<typename OpenLineageRunEventSummaryT = OpenLineageRunEventSummary>
+    EventSummary& WithOpenLineageRunEventSummary(OpenLineageRunEventSummaryT&& value) { SetOpenLineageRunEventSummary(std::forward<OpenLineageRunEventSummaryT>(value)); return *this;}
     ///@}
   private:
 

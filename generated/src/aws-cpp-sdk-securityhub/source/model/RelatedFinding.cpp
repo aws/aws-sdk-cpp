@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RelatedFinding::RelatedFinding() : 
-    m_productArnHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 RelatedFinding::RelatedFinding(JsonView jsonValue)
-  : RelatedFinding()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RelatedFinding& RelatedFinding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProductArn"))
   {
     m_productArn = jsonValue.GetString("ProductArn");
-
     m_productArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

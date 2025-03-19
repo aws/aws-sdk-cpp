@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfigurationPolicyAssociationRequest::GetConfigurationPolicyAssociationRequest() : 
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String GetConfigurationPolicyAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

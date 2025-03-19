@@ -23,7 +23,7 @@ namespace Model
   class CreateGraphRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API CreateGraphRequest();
+    AWS_NEPTUNEGRAPH_API CreateGraphRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * must be a letter. It cannot end with a hyphen or contain two consecutive
      * hyphens. Only lowercase letters are allowed.</p>
      */
-    inline const Aws::String& GetGraphName() const{ return m_graphName; }
+    inline const Aws::String& GetGraphName() const { return m_graphName; }
     inline bool GraphNameHasBeenSet() const { return m_graphNameHasBeenSet; }
-    inline void SetGraphName(const Aws::String& value) { m_graphNameHasBeenSet = true; m_graphName = value; }
-    inline void SetGraphName(Aws::String&& value) { m_graphNameHasBeenSet = true; m_graphName = std::move(value); }
-    inline void SetGraphName(const char* value) { m_graphNameHasBeenSet = true; m_graphName.assign(value); }
-    inline CreateGraphRequest& WithGraphName(const Aws::String& value) { SetGraphName(value); return *this;}
-    inline CreateGraphRequest& WithGraphName(Aws::String&& value) { SetGraphName(std::move(value)); return *this;}
-    inline CreateGraphRequest& WithGraphName(const char* value) { SetGraphName(value); return *this;}
+    template<typename GraphNameT = Aws::String>
+    void SetGraphName(GraphNameT&& value) { m_graphNameHasBeenSet = true; m_graphName = std::forward<GraphNameT>(value); }
+    template<typename GraphNameT = Aws::String>
+    CreateGraphRequest& WithGraphName(GraphNameT&& value) { SetGraphName(std::forward<GraphNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,16 @@ namespace Model
      * <p>Adds metadata tags to the new graph. These tags can also be used with cost
      * allocation reporting, or used in a Condition statement in an IAM policy.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateGraphRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateGraphRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateGraphRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateGraphRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateGraphRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateGraphRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateGraphRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateGraphRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateGraphRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateGraphRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateGraphRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -81,7 +76,7 @@ namespace Model
      * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable.</p>
      */
-    inline bool GetPublicConnectivity() const{ return m_publicConnectivity; }
+    inline bool GetPublicConnectivity() const { return m_publicConnectivity; }
     inline bool PublicConnectivityHasBeenSet() const { return m_publicConnectivityHasBeenSet; }
     inline void SetPublicConnectivity(bool value) { m_publicConnectivityHasBeenSet = true; m_publicConnectivity = value; }
     inline CreateGraphRequest& WithPublicConnectivity(bool value) { SetPublicConnectivity(value); return *this;}
@@ -91,14 +86,12 @@ namespace Model
     /**
      * <p>Specifies a KMS key to use to encrypt data in the new graph.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
-    inline CreateGraphRequest& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline CreateGraphRequest& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline CreateGraphRequest& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    CreateGraphRequest& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +100,12 @@ namespace Model
      * into the graph. The value is specified as <code>dimension=</code>value. Max =
      * 65,535</p>
      */
-    inline const VectorSearchConfiguration& GetVectorSearchConfiguration() const{ return m_vectorSearchConfiguration; }
+    inline const VectorSearchConfiguration& GetVectorSearchConfiguration() const { return m_vectorSearchConfiguration; }
     inline bool VectorSearchConfigurationHasBeenSet() const { return m_vectorSearchConfigurationHasBeenSet; }
-    inline void SetVectorSearchConfiguration(const VectorSearchConfiguration& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = value; }
-    inline void SetVectorSearchConfiguration(VectorSearchConfiguration&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::move(value); }
-    inline CreateGraphRequest& WithVectorSearchConfiguration(const VectorSearchConfiguration& value) { SetVectorSearchConfiguration(value); return *this;}
-    inline CreateGraphRequest& WithVectorSearchConfiguration(VectorSearchConfiguration&& value) { SetVectorSearchConfiguration(std::move(value)); return *this;}
+    template<typename VectorSearchConfigurationT = VectorSearchConfiguration>
+    void SetVectorSearchConfiguration(VectorSearchConfigurationT&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::forward<VectorSearchConfigurationT>(value); }
+    template<typename VectorSearchConfigurationT = VectorSearchConfiguration>
+    CreateGraphRequest& WithVectorSearchConfiguration(VectorSearchConfigurationT&& value) { SetVectorSearchConfiguration(std::forward<VectorSearchConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +114,7 @@ namespace Model
      *  <p> Additional charges equivalent to the m-NCUs selected for the
      * graph apply for each replica. </p> 
      */
-    inline int GetReplicaCount() const{ return m_replicaCount; }
+    inline int GetReplicaCount() const { return m_replicaCount; }
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
     inline CreateGraphRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
@@ -133,7 +126,7 @@ namespace Model
      * graph can’t be deleted when deletion protection is enabled. (<code>true</code>
      * or <code>false</code>).</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline CreateGraphRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -144,7 +137,7 @@ namespace Model
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
      * the graph. Min = 16</p>
      */
-    inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
+    inline int GetProvisionedMemory() const { return m_provisionedMemory; }
     inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
     inline void SetProvisionedMemory(int value) { m_provisionedMemoryHasBeenSet = true; m_provisionedMemory = value; }
     inline CreateGraphRequest& WithProvisionedMemory(int value) { SetProvisionedMemory(value); return *this;}
@@ -157,7 +150,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_publicConnectivity;
+    bool m_publicConnectivity{false};
     bool m_publicConnectivityHasBeenSet = false;
 
     Aws::String m_kmsKeyIdentifier;
@@ -166,13 +159,13 @@ namespace Model
     VectorSearchConfiguration m_vectorSearchConfiguration;
     bool m_vectorSearchConfigurationHasBeenSet = false;
 
-    int m_replicaCount;
+    int m_replicaCount{0};
     bool m_replicaCountHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
-    int m_provisionedMemory;
+    int m_provisionedMemory{0};
     bool m_provisionedMemoryHasBeenSet = false;
   };
 

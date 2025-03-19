@@ -32,7 +32,7 @@ namespace Model
   class UseCase
   {
   public:
-    AWS_CONNECT_API UseCase();
+    AWS_CONNECT_API UseCase() = default;
     AWS_CONNECT_API UseCase(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UseCase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The identifier for the use case.</p>
      */
-    inline const Aws::String& GetUseCaseId() const{ return m_useCaseId; }
+    inline const Aws::String& GetUseCaseId() const { return m_useCaseId; }
     inline bool UseCaseIdHasBeenSet() const { return m_useCaseIdHasBeenSet; }
-    inline void SetUseCaseId(const Aws::String& value) { m_useCaseIdHasBeenSet = true; m_useCaseId = value; }
-    inline void SetUseCaseId(Aws::String&& value) { m_useCaseIdHasBeenSet = true; m_useCaseId = std::move(value); }
-    inline void SetUseCaseId(const char* value) { m_useCaseIdHasBeenSet = true; m_useCaseId.assign(value); }
-    inline UseCase& WithUseCaseId(const Aws::String& value) { SetUseCaseId(value); return *this;}
-    inline UseCase& WithUseCaseId(Aws::String&& value) { SetUseCaseId(std::move(value)); return *this;}
-    inline UseCase& WithUseCaseId(const char* value) { SetUseCaseId(value); return *this;}
+    template<typename UseCaseIdT = Aws::String>
+    void SetUseCaseId(UseCaseIdT&& value) { m_useCaseIdHasBeenSet = true; m_useCaseId = std::forward<UseCaseIdT>(value); }
+    template<typename UseCaseIdT = Aws::String>
+    UseCase& WithUseCaseId(UseCaseIdT&& value) { SetUseCaseId(std::forward<UseCaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the use case.</p>
      */
-    inline const Aws::String& GetUseCaseArn() const{ return m_useCaseArn; }
+    inline const Aws::String& GetUseCaseArn() const { return m_useCaseArn; }
     inline bool UseCaseArnHasBeenSet() const { return m_useCaseArnHasBeenSet; }
-    inline void SetUseCaseArn(const Aws::String& value) { m_useCaseArnHasBeenSet = true; m_useCaseArn = value; }
-    inline void SetUseCaseArn(Aws::String&& value) { m_useCaseArnHasBeenSet = true; m_useCaseArn = std::move(value); }
-    inline void SetUseCaseArn(const char* value) { m_useCaseArnHasBeenSet = true; m_useCaseArn.assign(value); }
-    inline UseCase& WithUseCaseArn(const Aws::String& value) { SetUseCaseArn(value); return *this;}
-    inline UseCase& WithUseCaseArn(Aws::String&& value) { SetUseCaseArn(std::move(value)); return *this;}
-    inline UseCase& WithUseCaseArn(const char* value) { SetUseCaseArn(value); return *this;}
+    template<typename UseCaseArnT = Aws::String>
+    void SetUseCaseArn(UseCaseArnT&& value) { m_useCaseArnHasBeenSet = true; m_useCaseArn = std::forward<UseCaseArnT>(value); }
+    template<typename UseCaseArnT = Aws::String>
+    UseCase& WithUseCaseArn(UseCaseArnT&& value) { SetUseCaseArn(std::forward<UseCaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,10 @@ namespace Model
      * <p>The type of use case to associate to the integration association. Each
      * integration association can have only one of each use case type.</p>
      */
-    inline const UseCaseType& GetUseCaseType() const{ return m_useCaseType; }
+    inline UseCaseType GetUseCaseType() const { return m_useCaseType; }
     inline bool UseCaseTypeHasBeenSet() const { return m_useCaseTypeHasBeenSet; }
-    inline void SetUseCaseType(const UseCaseType& value) { m_useCaseTypeHasBeenSet = true; m_useCaseType = value; }
-    inline void SetUseCaseType(UseCaseType&& value) { m_useCaseTypeHasBeenSet = true; m_useCaseType = std::move(value); }
-    inline UseCase& WithUseCaseType(const UseCaseType& value) { SetUseCaseType(value); return *this;}
-    inline UseCase& WithUseCaseType(UseCaseType&& value) { SetUseCaseType(std::move(value)); return *this;}
+    inline void SetUseCaseType(UseCaseType value) { m_useCaseTypeHasBeenSet = true; m_useCaseType = value; }
+    inline UseCase& WithUseCaseType(UseCaseType value) { SetUseCaseType(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_useCaseArn;
     bool m_useCaseArnHasBeenSet = false;
 
-    UseCaseType m_useCaseType;
+    UseCaseType m_useCaseType{UseCaseType::NOT_SET};
     bool m_useCaseTypeHasBeenSet = false;
   };
 

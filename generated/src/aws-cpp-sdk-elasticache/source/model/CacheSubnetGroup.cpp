@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheSubnetGroup::CacheSubnetGroup() : 
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
-{
-}
-
 CacheSubnetGroup::CacheSubnetGroup(const XmlNode& xmlNode)
-  : CacheSubnetGroup()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("Subnet");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);
@@ -82,6 +72,7 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
     if(!supportedNetworkTypesNode.IsNull())
     {
       XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
       while(!supportedNetworkTypesMember.IsNull())
       {
         m_supportedNetworkTypes.push_back(NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(supportedNetworkTypesMember.GetText().c_str())));

@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMedicalVocabularyRequest::DeleteMedicalVocabularyRequest() : 
-    m_vocabularyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMedicalVocabularyRequest::SerializePayload() const
 {
   JsonValue payload;

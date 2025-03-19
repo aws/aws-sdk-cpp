@@ -12,12 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeJobRunRequest::DescribeJobRunRequest() : 
-    m_nameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobRunRequest::SerializePayload() const
 {
   return {};

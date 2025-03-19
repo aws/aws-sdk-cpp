@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-FlattenedXmlMapWithXmlNamespaceResult::FlattenedXmlMapWithXmlNamespaceResult()
-{
-}
-
 FlattenedXmlMapWithXmlNamespaceResult::FlattenedXmlMapWithXmlNamespaceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ FlattenedXmlMapWithXmlNamespaceResult& FlattenedXmlMapWithXmlNamespaceResult::op
     if(!myMapNode.IsNull())
     {
       XmlNode kVPEntry = myMapNode;
+      m_myMapHasBeenSet = !kVPEntry.IsNull();
       while(!kVPEntry.IsNull())
       {
         XmlNode keyNode = kVPEntry.FirstChild("K");
@@ -51,12 +48,14 @@ FlattenedXmlMapWithXmlNamespaceResult& FlattenedXmlMapWithXmlNamespaceResult::op
         kVPEntry = kVPEntry.NextNode("KVP");
       }
 
+      m_myMapHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::FlattenedXmlMapWithXmlNamespaceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

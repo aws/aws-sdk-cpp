@@ -18,13 +18,7 @@ namespace SWF
 namespace Model
 {
 
-CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes() : 
-    m_detailsHasBeenSet(false)
-{
-}
-
 CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-  : CancelWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CancelWorkflowExecutionDecisionAttributes& CancelWorkflowExecutionDecisionAttrib
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

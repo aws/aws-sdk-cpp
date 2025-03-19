@@ -32,7 +32,7 @@ namespace Model
   class MasterUserOptions
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API MasterUserOptions();
+    AWS_ELASTICSEARCHSERVICE_API MasterUserOptions() = default;
     AWS_ELASTICSEARCHSERVICE_API MasterUserOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API MasterUserOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>ARN for the master user (if IAM is enabled).</p>
      */
-    inline const Aws::String& GetMasterUserARN() const{ return m_masterUserARN; }
+    inline const Aws::String& GetMasterUserARN() const { return m_masterUserARN; }
     inline bool MasterUserARNHasBeenSet() const { return m_masterUserARNHasBeenSet; }
-    inline void SetMasterUserARN(const Aws::String& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = value; }
-    inline void SetMasterUserARN(Aws::String&& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = std::move(value); }
-    inline void SetMasterUserARN(const char* value) { m_masterUserARNHasBeenSet = true; m_masterUserARN.assign(value); }
-    inline MasterUserOptions& WithMasterUserARN(const Aws::String& value) { SetMasterUserARN(value); return *this;}
-    inline MasterUserOptions& WithMasterUserARN(Aws::String&& value) { SetMasterUserARN(std::move(value)); return *this;}
-    inline MasterUserOptions& WithMasterUserARN(const char* value) { SetMasterUserARN(value); return *this;}
+    template<typename MasterUserARNT = Aws::String>
+    void SetMasterUserARN(MasterUserARNT&& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = std::forward<MasterUserARNT>(value); }
+    template<typename MasterUserARNT = Aws::String>
+    MasterUserOptions& WithMasterUserARN(MasterUserARNT&& value) { SetMasterUserARN(std::forward<MasterUserARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The master user's username, which is stored in the Amazon Elasticsearch
      * Service domain's internal database.</p>
      */
-    inline const Aws::String& GetMasterUserName() const{ return m_masterUserName; }
+    inline const Aws::String& GetMasterUserName() const { return m_masterUserName; }
     inline bool MasterUserNameHasBeenSet() const { return m_masterUserNameHasBeenSet; }
-    inline void SetMasterUserName(const Aws::String& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = value; }
-    inline void SetMasterUserName(Aws::String&& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = std::move(value); }
-    inline void SetMasterUserName(const char* value) { m_masterUserNameHasBeenSet = true; m_masterUserName.assign(value); }
-    inline MasterUserOptions& WithMasterUserName(const Aws::String& value) { SetMasterUserName(value); return *this;}
-    inline MasterUserOptions& WithMasterUserName(Aws::String&& value) { SetMasterUserName(std::move(value)); return *this;}
-    inline MasterUserOptions& WithMasterUserName(const char* value) { SetMasterUserName(value); return *this;}
+    template<typename MasterUserNameT = Aws::String>
+    void SetMasterUserName(MasterUserNameT&& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = std::forward<MasterUserNameT>(value); }
+    template<typename MasterUserNameT = Aws::String>
+    MasterUserOptions& WithMasterUserName(MasterUserNameT&& value) { SetMasterUserName(std::forward<MasterUserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The master user's password, which is stored in the Amazon Elasticsearch
      * Service domain's internal database.</p>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-    inline MasterUserOptions& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline MasterUserOptions& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline MasterUserOptions& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    MasterUserOptions& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
   private:
 

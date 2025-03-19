@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListActionsRequest::ListActionsRequest() : 
-    m_targetResourceType(TargetResourceType::NOT_SET),
-    m_targetResourceTypeHasBeenSet(false),
-    m_targetResourceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListActionsRequest::SerializePayload() const
 {
   return {};

@@ -19,21 +19,7 @@ namespace Glacier
 namespace Model
 {
 
-DescribeVaultOutput::DescribeVaultOutput() : 
-    m_vaultARNHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastInventoryDateHasBeenSet(false),
-    m_numberOfArchives(0),
-    m_numberOfArchivesHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 DescribeVaultOutput::DescribeVaultOutput(JsonView jsonValue)
-  : DescribeVaultOutput()
 {
   *this = jsonValue;
 }
@@ -43,45 +29,33 @@ DescribeVaultOutput& DescribeVaultOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VaultARN"))
   {
     m_vaultARN = jsonValue.GetString("VaultARN");
-
     m_vaultARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VaultName"))
   {
     m_vaultName = jsonValue.GetString("VaultName");
-
     m_vaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastInventoryDate"))
   {
     m_lastInventoryDate = jsonValue.GetString("LastInventoryDate");
-
     m_lastInventoryDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfArchives"))
   {
     m_numberOfArchives = jsonValue.GetInt64("NumberOfArchives");
-
     m_numberOfArchivesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeInBytes"))
   {
     m_sizeInBytes = jsonValue.GetInt64("SizeInBytes");
-
     m_sizeInBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionExecutionResult::ActionExecutionResult() : 
-    m_externalExecutionIdHasBeenSet(false),
-    m_externalExecutionSummaryHasBeenSet(false),
-    m_externalExecutionUrlHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_logStreamARNHasBeenSet(false)
-{
-}
-
 ActionExecutionResult::ActionExecutionResult(JsonView jsonValue)
-  : ActionExecutionResult()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ActionExecutionResult& ActionExecutionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("externalExecutionId"))
   {
     m_externalExecutionId = jsonValue.GetString("externalExecutionId");
-
     m_externalExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalExecutionSummary"))
   {
     m_externalExecutionSummary = jsonValue.GetString("externalExecutionSummary");
-
     m_externalExecutionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalExecutionUrl"))
   {
     m_externalExecutionUrl = jsonValue.GetString("externalExecutionUrl");
-
     m_externalExecutionUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("errorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStreamARN"))
   {
     m_logStreamARN = jsonValue.GetString("logStreamARN");
-
     m_logStreamARNHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkAclPortRange::NetworkAclPortRange() : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false)
-{
-}
-
 NetworkAclPortRange::NetworkAclPortRange(JsonView jsonValue)
-  : NetworkAclPortRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NetworkAclPortRange& NetworkAclPortRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetInteger("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     m_to = jsonValue.GetInteger("To");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class SnapshotJobS3Result
   {
   public:
-    AWS_QUICKSIGHT_API SnapshotJobS3Result();
+    AWS_QUICKSIGHT_API SnapshotJobS3Result() = default;
     AWS_QUICKSIGHT_API SnapshotJobS3Result(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SnapshotJobS3Result& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,24 @@ namespace Model
      * <p>A list of Amazon S3 bucket configurations that are provided when you make a
      * <code>StartDashboardSnapshotJob</code> API call. </p>
      */
-    inline const SnapshotS3DestinationConfiguration& GetS3DestinationConfiguration() const{ return m_s3DestinationConfiguration; }
+    inline const SnapshotS3DestinationConfiguration& GetS3DestinationConfiguration() const { return m_s3DestinationConfiguration; }
     inline bool S3DestinationConfigurationHasBeenSet() const { return m_s3DestinationConfigurationHasBeenSet; }
-    inline void SetS3DestinationConfiguration(const SnapshotS3DestinationConfiguration& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = value; }
-    inline void SetS3DestinationConfiguration(SnapshotS3DestinationConfiguration&& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = std::move(value); }
-    inline SnapshotJobS3Result& WithS3DestinationConfiguration(const SnapshotS3DestinationConfiguration& value) { SetS3DestinationConfiguration(value); return *this;}
-    inline SnapshotJobS3Result& WithS3DestinationConfiguration(SnapshotS3DestinationConfiguration&& value) { SetS3DestinationConfiguration(std::move(value)); return *this;}
+    template<typename S3DestinationConfigurationT = SnapshotS3DestinationConfiguration>
+    void SetS3DestinationConfiguration(S3DestinationConfigurationT&& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = std::forward<S3DestinationConfigurationT>(value); }
+    template<typename S3DestinationConfigurationT = SnapshotS3DestinationConfiguration>
+    SnapshotJobS3Result& WithS3DestinationConfiguration(S3DestinationConfigurationT&& value) { SetS3DestinationConfiguration(std::forward<S3DestinationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 Uri.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline SnapshotJobS3Result& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline SnapshotJobS3Result& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline SnapshotJobS3Result& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    SnapshotJobS3Result& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,14 @@ namespace Model
      * <p>An array of error records that describe any failures that occur while the
      * dashboard snapshot job runs.</p>
      */
-    inline const Aws::Vector<SnapshotJobResultErrorInfo>& GetErrorInfo() const{ return m_errorInfo; }
+    inline const Aws::Vector<SnapshotJobResultErrorInfo>& GetErrorInfo() const { return m_errorInfo; }
     inline bool ErrorInfoHasBeenSet() const { return m_errorInfoHasBeenSet; }
-    inline void SetErrorInfo(const Aws::Vector<SnapshotJobResultErrorInfo>& value) { m_errorInfoHasBeenSet = true; m_errorInfo = value; }
-    inline void SetErrorInfo(Aws::Vector<SnapshotJobResultErrorInfo>&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::move(value); }
-    inline SnapshotJobS3Result& WithErrorInfo(const Aws::Vector<SnapshotJobResultErrorInfo>& value) { SetErrorInfo(value); return *this;}
-    inline SnapshotJobS3Result& WithErrorInfo(Aws::Vector<SnapshotJobResultErrorInfo>&& value) { SetErrorInfo(std::move(value)); return *this;}
-    inline SnapshotJobS3Result& AddErrorInfo(const SnapshotJobResultErrorInfo& value) { m_errorInfoHasBeenSet = true; m_errorInfo.push_back(value); return *this; }
-    inline SnapshotJobS3Result& AddErrorInfo(SnapshotJobResultErrorInfo&& value) { m_errorInfoHasBeenSet = true; m_errorInfo.push_back(std::move(value)); return *this; }
+    template<typename ErrorInfoT = Aws::Vector<SnapshotJobResultErrorInfo>>
+    void SetErrorInfo(ErrorInfoT&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::forward<ErrorInfoT>(value); }
+    template<typename ErrorInfoT = Aws::Vector<SnapshotJobResultErrorInfo>>
+    SnapshotJobS3Result& WithErrorInfo(ErrorInfoT&& value) { SetErrorInfo(std::forward<ErrorInfoT>(value)); return *this;}
+    template<typename ErrorInfoT = SnapshotJobResultErrorInfo>
+    SnapshotJobS3Result& AddErrorInfo(ErrorInfoT&& value) { m_errorInfoHasBeenSet = true; m_errorInfo.emplace_back(std::forward<ErrorInfoT>(value)); return *this; }
     ///@}
   private:
 

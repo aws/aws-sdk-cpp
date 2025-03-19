@@ -18,15 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification() : 
-    m_predefinedScalingMetricType(ScalingMetricType::NOT_SET),
-    m_predefinedScalingMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
-{
-}
-
 PredefinedScalingMetricSpecification::PredefinedScalingMetricSpecification(JsonView jsonValue)
-  : PredefinedScalingMetricSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PredefinedScalingMetricSpecification& PredefinedScalingMetricSpecification::oper
   if(jsonValue.ValueExists("PredefinedScalingMetricType"))
   {
     m_predefinedScalingMetricType = ScalingMetricTypeMapper::GetScalingMetricTypeForName(jsonValue.GetString("PredefinedScalingMetricType"));
-
     m_predefinedScalingMetricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLabel"))
   {
     m_resourceLabel = jsonValue.GetString("ResourceLabel");
-
     m_resourceLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class RoutePassThroughWaypoint
   {
   public:
-    AWS_GEOROUTES_API RoutePassThroughWaypoint();
+    AWS_GEOROUTES_API RoutePassThroughWaypoint() = default;
     AWS_GEOROUTES_API RoutePassThroughWaypoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePassThroughWaypoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Offset in the leg geometry corresponding to the start of this step.</p>
      */
-    inline int GetGeometryOffset() const{ return m_geometryOffset; }
+    inline int GetGeometryOffset() const { return m_geometryOffset; }
     inline bool GeometryOffsetHasBeenSet() const { return m_geometryOffsetHasBeenSet; }
     inline void SetGeometryOffset(int value) { m_geometryOffsetHasBeenSet = true; m_geometryOffset = value; }
     inline RoutePassThroughWaypoint& WithGeometryOffset(int value) { SetGeometryOffset(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
     /**
      * <p>The place details.</p>
      */
-    inline const RoutePassThroughPlace& GetPlace() const{ return m_place; }
+    inline const RoutePassThroughPlace& GetPlace() const { return m_place; }
     inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }
-    inline void SetPlace(const RoutePassThroughPlace& value) { m_placeHasBeenSet = true; m_place = value; }
-    inline void SetPlace(RoutePassThroughPlace&& value) { m_placeHasBeenSet = true; m_place = std::move(value); }
-    inline RoutePassThroughWaypoint& WithPlace(const RoutePassThroughPlace& value) { SetPlace(value); return *this;}
-    inline RoutePassThroughWaypoint& WithPlace(RoutePassThroughPlace&& value) { SetPlace(std::move(value)); return *this;}
+    template<typename PlaceT = RoutePassThroughPlace>
+    void SetPlace(PlaceT&& value) { m_placeHasBeenSet = true; m_place = std::forward<PlaceT>(value); }
+    template<typename PlaceT = RoutePassThroughPlace>
+    RoutePassThroughWaypoint& WithPlace(PlaceT&& value) { SetPlace(std::forward<PlaceT>(value)); return *this;}
     ///@}
   private:
 
-    int m_geometryOffset;
+    int m_geometryOffset{0};
     bool m_geometryOffsetHasBeenSet = false;
 
     RoutePassThroughPlace m_place;

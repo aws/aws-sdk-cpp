@@ -33,7 +33,7 @@ namespace Model
   class BatchDetectTargetedSentimentItemResult
   {
   public:
-    AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult();
+    AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult() = default;
     AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The zero-based index of this result in the input list.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline BatchDetectTargetedSentimentItemResult& WithIndex(int value) { SetIndex(value); return *this;}
@@ -53,18 +53,18 @@ namespace Model
     /**
      * <p>An array of targeted sentiment entities.</p>
      */
-    inline const Aws::Vector<TargetedSentimentEntity>& GetEntities() const{ return m_entities; }
+    inline const Aws::Vector<TargetedSentimentEntity>& GetEntities() const { return m_entities; }
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
-    inline void SetEntities(const Aws::Vector<TargetedSentimentEntity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
-    inline void SetEntities(Aws::Vector<TargetedSentimentEntity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
-    inline BatchDetectTargetedSentimentItemResult& WithEntities(const Aws::Vector<TargetedSentimentEntity>& value) { SetEntities(value); return *this;}
-    inline BatchDetectTargetedSentimentItemResult& WithEntities(Aws::Vector<TargetedSentimentEntity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline BatchDetectTargetedSentimentItemResult& AddEntities(const TargetedSentimentEntity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
-    inline BatchDetectTargetedSentimentItemResult& AddEntities(TargetedSentimentEntity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
+    template<typename EntitiesT = Aws::Vector<TargetedSentimentEntity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<TargetedSentimentEntity>>
+    BatchDetectTargetedSentimentItemResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = TargetedSentimentEntity>
+    BatchDetectTargetedSentimentItemResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
     Aws::Vector<TargetedSentimentEntity> m_entities;

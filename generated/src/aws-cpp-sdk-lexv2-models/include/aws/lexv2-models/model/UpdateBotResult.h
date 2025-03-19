@@ -33,7 +33,7 @@ namespace Model
   class UpdateBotResult
   {
   public:
-    AWS_LEXMODELSV2_API UpdateBotResult();
+    AWS_LEXMODELSV2_API UpdateBotResult() = default;
     AWS_LEXMODELSV2_API UpdateBotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API UpdateBotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,39 +42,33 @@ namespace Model
     /**
      * <p>The unique identifier of the bot that was updated.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline UpdateBotResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline UpdateBotResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline UpdateBotResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    UpdateBotResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bot after the update.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
-    inline void SetBotName(const Aws::String& value) { m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botName.assign(value); }
-    inline UpdateBotResult& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline UpdateBotResult& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline UpdateBotResult& WithBotName(const char* value) { SetBotName(value); return *this;}
+    inline const Aws::String& GetBotName() const { return m_botName; }
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    UpdateBotResult& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the bot after the update.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateBotResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateBotResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateBotResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateBotResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,32 +76,30 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role used by the bot after the
      * update.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline UpdateBotResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateBotResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateBotResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateBotResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data privacy settings for the bot after the update.</p>
      */
-    inline const DataPrivacy& GetDataPrivacy() const{ return m_dataPrivacy; }
-    inline void SetDataPrivacy(const DataPrivacy& value) { m_dataPrivacy = value; }
-    inline void SetDataPrivacy(DataPrivacy&& value) { m_dataPrivacy = std::move(value); }
-    inline UpdateBotResult& WithDataPrivacy(const DataPrivacy& value) { SetDataPrivacy(value); return *this;}
-    inline UpdateBotResult& WithDataPrivacy(DataPrivacy&& value) { SetDataPrivacy(std::move(value)); return *this;}
+    inline const DataPrivacy& GetDataPrivacy() const { return m_dataPrivacy; }
+    template<typename DataPrivacyT = DataPrivacy>
+    void SetDataPrivacy(DataPrivacyT&& value) { m_dataPrivacyHasBeenSet = true; m_dataPrivacy = std::forward<DataPrivacyT>(value); }
+    template<typename DataPrivacyT = DataPrivacy>
+    UpdateBotResult& WithDataPrivacy(DataPrivacyT&& value) { SetDataPrivacy(std::forward<DataPrivacyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The session timeout, in seconds, for the bot after the update.</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
-    inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSeconds = value; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
+    inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline UpdateBotResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
     ///@}
 
@@ -118,94 +110,100 @@ namespace Model
      * <code>Available</code> status. After the bot is created, you can use the
      * <code>DRAFT</code> version of the bot.</p>
      */
-    inline const BotStatus& GetBotStatus() const{ return m_botStatus; }
-    inline void SetBotStatus(const BotStatus& value) { m_botStatus = value; }
-    inline void SetBotStatus(BotStatus&& value) { m_botStatus = std::move(value); }
-    inline UpdateBotResult& WithBotStatus(const BotStatus& value) { SetBotStatus(value); return *this;}
-    inline UpdateBotResult& WithBotStatus(BotStatus&& value) { SetBotStatus(std::move(value)); return *this;}
+    inline BotStatus GetBotStatus() const { return m_botStatus; }
+    inline void SetBotStatus(BotStatus value) { m_botStatusHasBeenSet = true; m_botStatus = value; }
+    inline UpdateBotResult& WithBotStatus(BotStatus value) { SetBotStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the bot was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline UpdateBotResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline UpdateBotResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    UpdateBotResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the bot was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTime = std::move(value); }
-    inline UpdateBotResult& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline UpdateBotResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    UpdateBotResult& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the bot that was updated.</p>
      */
-    inline const BotType& GetBotType() const{ return m_botType; }
-    inline void SetBotType(const BotType& value) { m_botType = value; }
-    inline void SetBotType(BotType&& value) { m_botType = std::move(value); }
-    inline UpdateBotResult& WithBotType(const BotType& value) { SetBotType(value); return *this;}
-    inline UpdateBotResult& WithBotType(BotType&& value) { SetBotType(std::move(value)); return *this;}
+    inline BotType GetBotType() const { return m_botType; }
+    inline void SetBotType(BotType value) { m_botTypeHasBeenSet = true; m_botType = value; }
+    inline UpdateBotResult& WithBotType(BotType value) { SetBotType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of bot members in the network that was updated.</p>
      */
-    inline const Aws::Vector<BotMember>& GetBotMembers() const{ return m_botMembers; }
-    inline void SetBotMembers(const Aws::Vector<BotMember>& value) { m_botMembers = value; }
-    inline void SetBotMembers(Aws::Vector<BotMember>&& value) { m_botMembers = std::move(value); }
-    inline UpdateBotResult& WithBotMembers(const Aws::Vector<BotMember>& value) { SetBotMembers(value); return *this;}
-    inline UpdateBotResult& WithBotMembers(Aws::Vector<BotMember>&& value) { SetBotMembers(std::move(value)); return *this;}
-    inline UpdateBotResult& AddBotMembers(const BotMember& value) { m_botMembers.push_back(value); return *this; }
-    inline UpdateBotResult& AddBotMembers(BotMember&& value) { m_botMembers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BotMember>& GetBotMembers() const { return m_botMembers; }
+    template<typename BotMembersT = Aws::Vector<BotMember>>
+    void SetBotMembers(BotMembersT&& value) { m_botMembersHasBeenSet = true; m_botMembers = std::forward<BotMembersT>(value); }
+    template<typename BotMembersT = Aws::Vector<BotMember>>
+    UpdateBotResult& WithBotMembers(BotMembersT&& value) { SetBotMembers(std::forward<BotMembersT>(value)); return *this;}
+    template<typename BotMembersT = BotMember>
+    UpdateBotResult& AddBotMembers(BotMembersT&& value) { m_botMembersHasBeenSet = true; m_botMembers.emplace_back(std::forward<BotMembersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateBotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateBotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateBotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateBotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botName;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     DataPrivacy m_dataPrivacy;
+    bool m_dataPrivacyHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
-    BotStatus m_botStatus;
+    BotStatus m_botStatus{BotStatus::NOT_SET};
+    bool m_botStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
-    BotType m_botType;
+    BotType m_botType{BotType::NOT_SET};
+    bool m_botTypeHasBeenSet = false;
 
     Aws::Vector<BotMember> m_botMembers;
+    bool m_botMembersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

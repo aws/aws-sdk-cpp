@@ -20,19 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetOperationResultSummary::StackSetOperationResultSummary() : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_status(StackSetOperationResultStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_accountGateResultHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 StackSetOperationResultSummary::StackSetOperationResultSummary(const XmlNode& xmlNode)
-  : StackSetOperationResultSummary()
 {
   *this = xmlNode;
 }
@@ -58,7 +46,7 @@ StackSetOperationResultSummary& StackSetOperationResultSummary::operator =(const
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetOperationResultStatusMapper::GetStackSetOperationResultStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetOperationResultStatusMapper::GetStackSetOperationResultStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");

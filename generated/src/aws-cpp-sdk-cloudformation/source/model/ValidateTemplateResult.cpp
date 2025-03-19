@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateTemplateResult::ValidateTemplateResult()
-{
-}
-
 ValidateTemplateResult::ValidateTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,50 +38,59 @@ ValidateTemplateResult& ValidateTemplateResult::operator =(const Aws::AmazonWebS
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("member");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("member");
       }
 
+      m_parametersHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+      m_descriptionHasBeenSet = true;
     }
     XmlNode capabilitiesNode = resultNode.FirstChild("Capabilities");
     if(!capabilitiesNode.IsNull())
     {
       XmlNode capabilitiesMember = capabilitiesNode.FirstChild("member");
+      m_capabilitiesHasBeenSet = !capabilitiesMember.IsNull();
       while(!capabilitiesMember.IsNull())
       {
         m_capabilities.push_back(CapabilityMapper::GetCapabilityForName(StringUtils::Trim(capabilitiesMember.GetText().c_str())));
         capabilitiesMember = capabilitiesMember.NextNode("member");
       }
 
+      m_capabilitiesHasBeenSet = true;
     }
     XmlNode capabilitiesReasonNode = resultNode.FirstChild("CapabilitiesReason");
     if(!capabilitiesReasonNode.IsNull())
     {
       m_capabilitiesReason = Aws::Utils::Xml::DecodeEscapedXmlText(capabilitiesReasonNode.GetText());
+      m_capabilitiesReasonHasBeenSet = true;
     }
     XmlNode declaredTransformsNode = resultNode.FirstChild("DeclaredTransforms");
     if(!declaredTransformsNode.IsNull())
     {
       XmlNode declaredTransformsMember = declaredTransformsNode.FirstChild("member");
+      m_declaredTransformsHasBeenSet = !declaredTransformsMember.IsNull();
       while(!declaredTransformsMember.IsNull())
       {
         m_declaredTransforms.push_back(declaredTransformsMember.GetText());
         declaredTransformsMember = declaredTransformsMember.NextNode("member");
       }
 
+      m_declaredTransformsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ValidateTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

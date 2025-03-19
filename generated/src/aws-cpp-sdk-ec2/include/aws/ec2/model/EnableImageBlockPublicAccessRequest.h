@@ -21,7 +21,7 @@ namespace Model
   class EnableImageBlockPublicAccessRequest : public EC2Request
   {
   public:
-    AWS_EC2_API EnableImageBlockPublicAccessRequest();
+    AWS_EC2_API EnableImageBlockPublicAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,10 @@ namespace Model
      * at the account level in the specified Region. This will block any attempt to
      * publicly share your AMIs in the specified Region.</p>
      */
-    inline const ImageBlockPublicAccessEnabledState& GetImageBlockPublicAccessState() const{ return m_imageBlockPublicAccessState; }
+    inline ImageBlockPublicAccessEnabledState GetImageBlockPublicAccessState() const { return m_imageBlockPublicAccessState; }
     inline bool ImageBlockPublicAccessStateHasBeenSet() const { return m_imageBlockPublicAccessStateHasBeenSet; }
-    inline void SetImageBlockPublicAccessState(const ImageBlockPublicAccessEnabledState& value) { m_imageBlockPublicAccessStateHasBeenSet = true; m_imageBlockPublicAccessState = value; }
-    inline void SetImageBlockPublicAccessState(ImageBlockPublicAccessEnabledState&& value) { m_imageBlockPublicAccessStateHasBeenSet = true; m_imageBlockPublicAccessState = std::move(value); }
-    inline EnableImageBlockPublicAccessRequest& WithImageBlockPublicAccessState(const ImageBlockPublicAccessEnabledState& value) { SetImageBlockPublicAccessState(value); return *this;}
-    inline EnableImageBlockPublicAccessRequest& WithImageBlockPublicAccessState(ImageBlockPublicAccessEnabledState&& value) { SetImageBlockPublicAccessState(std::move(value)); return *this;}
+    inline void SetImageBlockPublicAccessState(ImageBlockPublicAccessEnabledState value) { m_imageBlockPublicAccessStateHasBeenSet = true; m_imageBlockPublicAccessState = value; }
+    inline EnableImageBlockPublicAccessRequest& WithImageBlockPublicAccessState(ImageBlockPublicAccessEnabledState value) { SetImageBlockPublicAccessState(value); return *this;}
     ///@}
 
     ///@{
@@ -57,17 +55,17 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline EnableImageBlockPublicAccessRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    ImageBlockPublicAccessEnabledState m_imageBlockPublicAccessState;
+    ImageBlockPublicAccessEnabledState m_imageBlockPublicAccessState{ImageBlockPublicAccessEnabledState::NOT_SET};
     bool m_imageBlockPublicAccessStateHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

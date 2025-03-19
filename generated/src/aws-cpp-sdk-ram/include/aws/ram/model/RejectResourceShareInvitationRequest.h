@@ -21,7 +21,7 @@ namespace Model
   class RejectResourceShareInvitationRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API RejectResourceShareInvitationRequest();
+    AWS_RAM_API RejectResourceShareInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
-    inline const Aws::String& GetResourceShareInvitationArn() const{ return m_resourceShareInvitationArn; }
+    inline const Aws::String& GetResourceShareInvitationArn() const { return m_resourceShareInvitationArn; }
     inline bool ResourceShareInvitationArnHasBeenSet() const { return m_resourceShareInvitationArnHasBeenSet; }
-    inline void SetResourceShareInvitationArn(const Aws::String& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = value; }
-    inline void SetResourceShareInvitationArn(Aws::String&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::move(value); }
-    inline void SetResourceShareInvitationArn(const char* value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn.assign(value); }
-    inline RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(const Aws::String& value) { SetResourceShareInvitationArn(value); return *this;}
-    inline RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(Aws::String&& value) { SetResourceShareInvitationArn(std::move(value)); return *this;}
-    inline RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(const char* value) { SetResourceShareInvitationArn(value); return *this;}
+    template<typename ResourceShareInvitationArnT = Aws::String>
+    void SetResourceShareInvitationArn(ResourceShareInvitationArnT&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::forward<ResourceShareInvitationArnT>(value); }
+    template<typename ResourceShareInvitationArnT = Aws::String>
+    RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(ResourceShareInvitationArnT&& value) { SetResourceShareInvitationArn(std::forward<ResourceShareInvitationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline RejectResourceShareInvitationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RejectResourceShareInvitationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RejectResourceShareInvitationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    RejectResourceShareInvitationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticGpuSpecification::ElasticGpuSpecification() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 ElasticGpuSpecification::ElasticGpuSpecification(const XmlNode& xmlNode)
-  : ElasticGpuSpecification()
 {
   *this = xmlNode;
 }

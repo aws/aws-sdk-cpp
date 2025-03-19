@@ -33,7 +33,7 @@ namespace Model
   class LifecycleExecutionSnapshotResource
   {
   public:
-    AWS_IMAGEBUILDER_API LifecycleExecutionSnapshotResource();
+    AWS_IMAGEBUILDER_API LifecycleExecutionSnapshotResource() = default;
     AWS_IMAGEBUILDER_API LifecycleExecutionSnapshotResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API LifecycleExecutionSnapshotResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>Identifies the impacted snapshot resource.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline LifecycleExecutionSnapshotResource& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline LifecycleExecutionSnapshotResource& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline LifecycleExecutionSnapshotResource& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    LifecycleExecutionSnapshotResource& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime status of the lifecycle action taken for the snapshot.</p>
      */
-    inline const LifecycleExecutionResourceState& GetState() const{ return m_state; }
+    inline const LifecycleExecutionResourceState& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const LifecycleExecutionResourceState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(LifecycleExecutionResourceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline LifecycleExecutionSnapshotResource& WithState(const LifecycleExecutionResourceState& value) { SetState(value); return *this;}
-    inline LifecycleExecutionSnapshotResource& WithState(LifecycleExecutionResourceState&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = LifecycleExecutionResourceState>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = LifecycleExecutionResourceState>
+    LifecycleExecutionSnapshotResource& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
   private:
 

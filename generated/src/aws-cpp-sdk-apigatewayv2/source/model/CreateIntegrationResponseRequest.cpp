@@ -12,18 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntegrationResponseRequest::CreateIntegrationResponseRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_contentHandlingStrategy(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingStrategyHasBeenSet(false),
-    m_integrationIdHasBeenSet(false),
-    m_integrationResponseKeyHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false),
-    m_templateSelectionExpressionHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntegrationResponseRequest::SerializePayload() const
 {
   JsonValue payload;

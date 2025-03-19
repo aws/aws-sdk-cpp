@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-FirewallSubnetIsOutOfScopeViolation::FirewallSubnetIsOutOfScopeViolation() : 
-    m_firewallSubnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetAvailabilityZoneIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
-{
-}
-
 FirewallSubnetIsOutOfScopeViolation::FirewallSubnetIsOutOfScopeViolation(JsonView jsonValue)
-  : FirewallSubnetIsOutOfScopeViolation()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ FirewallSubnetIsOutOfScopeViolation& FirewallSubnetIsOutOfScopeViolation::operat
   if(jsonValue.ValueExists("FirewallSubnetId"))
   {
     m_firewallSubnetId = jsonValue.GetString("FirewallSubnetId");
-
     m_firewallSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetString("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZoneId"))
   {
     m_subnetAvailabilityZoneId = jsonValue.GetString("SubnetAvailabilityZoneId");
-
     m_subnetAvailabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   return *this;
 }
 

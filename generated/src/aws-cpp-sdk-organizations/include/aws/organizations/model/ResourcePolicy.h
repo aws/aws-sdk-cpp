@@ -33,7 +33,7 @@ namespace Model
   class ResourcePolicy
   {
   public:
-    AWS_ORGANIZATIONS_API ResourcePolicy();
+    AWS_ORGANIZATIONS_API ResourcePolicy() = default;
     AWS_ORGANIZATIONS_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>A structure that contains resource policy ID and Amazon Resource Name
      * (ARN).</p>
      */
-    inline const ResourcePolicySummary& GetResourcePolicySummary() const{ return m_resourcePolicySummary; }
+    inline const ResourcePolicySummary& GetResourcePolicySummary() const { return m_resourcePolicySummary; }
     inline bool ResourcePolicySummaryHasBeenSet() const { return m_resourcePolicySummaryHasBeenSet; }
-    inline void SetResourcePolicySummary(const ResourcePolicySummary& value) { m_resourcePolicySummaryHasBeenSet = true; m_resourcePolicySummary = value; }
-    inline void SetResourcePolicySummary(ResourcePolicySummary&& value) { m_resourcePolicySummaryHasBeenSet = true; m_resourcePolicySummary = std::move(value); }
-    inline ResourcePolicy& WithResourcePolicySummary(const ResourcePolicySummary& value) { SetResourcePolicySummary(value); return *this;}
-    inline ResourcePolicy& WithResourcePolicySummary(ResourcePolicySummary&& value) { SetResourcePolicySummary(std::move(value)); return *this;}
+    template<typename ResourcePolicySummaryT = ResourcePolicySummary>
+    void SetResourcePolicySummary(ResourcePolicySummaryT&& value) { m_resourcePolicySummaryHasBeenSet = true; m_resourcePolicySummary = std::forward<ResourcePolicySummaryT>(value); }
+    template<typename ResourcePolicySummaryT = ResourcePolicySummary>
+    ResourcePolicy& WithResourcePolicySummary(ResourcePolicySummaryT&& value) { SetResourcePolicySummary(std::forward<ResourcePolicySummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy text of the resource policy.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline ResourcePolicy& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline ResourcePolicy& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline ResourcePolicy& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    ResourcePolicy& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

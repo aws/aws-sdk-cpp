@@ -18,17 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-ClusterListEntry::ClusterListEntry() : 
-    m_clusterIdHasBeenSet(false),
-    m_clusterState(ClusterState::NOT_SET),
-    m_clusterStateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ClusterListEntry::ClusterListEntry(JsonView jsonValue)
-  : ClusterListEntry()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ClusterListEntry& ClusterListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterState"))
   {
     m_clusterState = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("ClusterState"));
-
     m_clusterStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

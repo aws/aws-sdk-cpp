@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBrokerResult::CreateBrokerResult()
-{
-}
-
 CreateBrokerResult::CreateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateBrokerResult& CreateBrokerResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("brokerArn"))
   {
     m_brokerArn = jsonValue.GetString("brokerArn");
-
+    m_brokerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
-
+    m_brokerIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

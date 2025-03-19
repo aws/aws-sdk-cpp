@@ -12,14 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAutomatedDiscoveryConfigurationRequest::UpdateAutomatedDiscoveryConfigurationRequest() : 
-    m_autoEnableOrganizationMembers(AutoEnableMode::NOT_SET),
-    m_autoEnableOrganizationMembersHasBeenSet(false),
-    m_status(AutomatedDiscoveryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAutomatedDiscoveryConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

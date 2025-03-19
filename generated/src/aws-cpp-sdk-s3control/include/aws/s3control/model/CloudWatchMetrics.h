@@ -33,7 +33,7 @@ namespace Model
   class CloudWatchMetrics
   {
   public:
-    AWS_S3CONTROL_API CloudWatchMetrics();
+    AWS_S3CONTROL_API CloudWatchMetrics() = default;
     AWS_S3CONTROL_API CloudWatchMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API CloudWatchMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
      * metrics is enabled. A value of <code>true</code> indicates that CloudWatch
      * publishing for S3 Storage Lens metrics is enabled.</p>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline CloudWatchMetrics& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
   };
 

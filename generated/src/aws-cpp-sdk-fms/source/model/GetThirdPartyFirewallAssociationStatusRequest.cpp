@@ -12,12 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetThirdPartyFirewallAssociationStatusRequest::GetThirdPartyFirewallAssociationStatusRequest() : 
-    m_thirdPartyFirewall(ThirdPartyFirewall::NOT_SET),
-    m_thirdPartyFirewallHasBeenSet(false)
-{
-}
-
 Aws::String GetThirdPartyFirewallAssociationStatusRequest::SerializePayload() const
 {
   JsonValue payload;

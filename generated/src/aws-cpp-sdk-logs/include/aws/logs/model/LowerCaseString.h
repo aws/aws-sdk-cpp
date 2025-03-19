@@ -36,7 +36,7 @@ namespace Model
   class LowerCaseString
   {
   public:
-    AWS_CLOUDWATCHLOGS_API LowerCaseString();
+    AWS_CLOUDWATCHLOGS_API LowerCaseString() = default;
     AWS_CLOUDWATCHLOGS_API LowerCaseString(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API LowerCaseString& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
     /**
      * <p>The array caontaining the keys of the fields to convert to lowercase.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWithKeys() const{ return m_withKeys; }
+    inline const Aws::Vector<Aws::String>& GetWithKeys() const { return m_withKeys; }
     inline bool WithKeysHasBeenSet() const { return m_withKeysHasBeenSet; }
-    inline void SetWithKeys(const Aws::Vector<Aws::String>& value) { m_withKeysHasBeenSet = true; m_withKeys = value; }
-    inline void SetWithKeys(Aws::Vector<Aws::String>&& value) { m_withKeysHasBeenSet = true; m_withKeys = std::move(value); }
-    inline LowerCaseString& WithWithKeys(const Aws::Vector<Aws::String>& value) { SetWithKeys(value); return *this;}
-    inline LowerCaseString& WithWithKeys(Aws::Vector<Aws::String>&& value) { SetWithKeys(std::move(value)); return *this;}
-    inline LowerCaseString& AddWithKeys(const Aws::String& value) { m_withKeysHasBeenSet = true; m_withKeys.push_back(value); return *this; }
-    inline LowerCaseString& AddWithKeys(Aws::String&& value) { m_withKeysHasBeenSet = true; m_withKeys.push_back(std::move(value)); return *this; }
-    inline LowerCaseString& AddWithKeys(const char* value) { m_withKeysHasBeenSet = true; m_withKeys.push_back(value); return *this; }
+    template<typename WithKeysT = Aws::Vector<Aws::String>>
+    void SetWithKeys(WithKeysT&& value) { m_withKeysHasBeenSet = true; m_withKeys = std::forward<WithKeysT>(value); }
+    template<typename WithKeysT = Aws::Vector<Aws::String>>
+    LowerCaseString& WithWithKeys(WithKeysT&& value) { SetWithKeys(std::forward<WithKeysT>(value)); return *this;}
+    template<typename WithKeysT = Aws::String>
+    LowerCaseString& AddWithKeys(WithKeysT&& value) { m_withKeysHasBeenSet = true; m_withKeys.emplace_back(std::forward<WithKeysT>(value)); return *this; }
     ///@}
   private:
 

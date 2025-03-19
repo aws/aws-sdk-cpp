@@ -22,7 +22,7 @@ namespace Model
   class StartDataMigrationRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartDataMigrationRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API StartDataMigrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier (name or ARN) of the data migration to start.</p>
      */
-    inline const Aws::String& GetDataMigrationIdentifier() const{ return m_dataMigrationIdentifier; }
+    inline const Aws::String& GetDataMigrationIdentifier() const { return m_dataMigrationIdentifier; }
     inline bool DataMigrationIdentifierHasBeenSet() const { return m_dataMigrationIdentifierHasBeenSet; }
-    inline void SetDataMigrationIdentifier(const Aws::String& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = value; }
-    inline void SetDataMigrationIdentifier(Aws::String&& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = std::move(value); }
-    inline void SetDataMigrationIdentifier(const char* value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier.assign(value); }
-    inline StartDataMigrationRequest& WithDataMigrationIdentifier(const Aws::String& value) { SetDataMigrationIdentifier(value); return *this;}
-    inline StartDataMigrationRequest& WithDataMigrationIdentifier(Aws::String&& value) { SetDataMigrationIdentifier(std::move(value)); return *this;}
-    inline StartDataMigrationRequest& WithDataMigrationIdentifier(const char* value) { SetDataMigrationIdentifier(value); return *this;}
+    template<typename DataMigrationIdentifierT = Aws::String>
+    void SetDataMigrationIdentifier(DataMigrationIdentifierT&& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = std::forward<DataMigrationIdentifierT>(value); }
+    template<typename DataMigrationIdentifierT = Aws::String>
+    StartDataMigrationRequest& WithDataMigrationIdentifier(DataMigrationIdentifierT&& value) { SetDataMigrationIdentifier(std::forward<DataMigrationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,19 +53,17 @@ namespace Model
      * <code>start-replication</code>, <code>reload-target</code>, and
      * <code>resume-processing</code>.</p>
      */
-    inline const StartReplicationMigrationTypeValue& GetStartType() const{ return m_startType; }
+    inline StartReplicationMigrationTypeValue GetStartType() const { return m_startType; }
     inline bool StartTypeHasBeenSet() const { return m_startTypeHasBeenSet; }
-    inline void SetStartType(const StartReplicationMigrationTypeValue& value) { m_startTypeHasBeenSet = true; m_startType = value; }
-    inline void SetStartType(StartReplicationMigrationTypeValue&& value) { m_startTypeHasBeenSet = true; m_startType = std::move(value); }
-    inline StartDataMigrationRequest& WithStartType(const StartReplicationMigrationTypeValue& value) { SetStartType(value); return *this;}
-    inline StartDataMigrationRequest& WithStartType(StartReplicationMigrationTypeValue&& value) { SetStartType(std::move(value)); return *this;}
+    inline void SetStartType(StartReplicationMigrationTypeValue value) { m_startTypeHasBeenSet = true; m_startType = value; }
+    inline StartDataMigrationRequest& WithStartType(StartReplicationMigrationTypeValue value) { SetStartType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_dataMigrationIdentifier;
     bool m_dataMigrationIdentifierHasBeenSet = false;
 
-    StartReplicationMigrationTypeValue m_startType;
+    StartReplicationMigrationTypeValue m_startType{StartReplicationMigrationTypeValue::NOT_SET};
     bool m_startTypeHasBeenSet = false;
   };
 

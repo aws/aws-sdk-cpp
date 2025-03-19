@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BillScenarioCommitmentModificationAction::BillScenarioCommitmentModificationAction() : 
-    m_addReservedInstanceActionHasBeenSet(false),
-    m_addSavingsPlanActionHasBeenSet(false),
-    m_negateReservedInstanceActionHasBeenSet(false),
-    m_negateSavingsPlanActionHasBeenSet(false)
-{
-}
-
 BillScenarioCommitmentModificationAction::BillScenarioCommitmentModificationAction(JsonView jsonValue)
-  : BillScenarioCommitmentModificationAction()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BillScenarioCommitmentModificationAction& BillScenarioCommitmentModificationActi
   if(jsonValue.ValueExists("addReservedInstanceAction"))
   {
     m_addReservedInstanceAction = jsonValue.GetObject("addReservedInstanceAction");
-
     m_addReservedInstanceActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addSavingsPlanAction"))
   {
     m_addSavingsPlanAction = jsonValue.GetObject("addSavingsPlanAction");
-
     m_addSavingsPlanActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("negateReservedInstanceAction"))
   {
     m_negateReservedInstanceAction = jsonValue.GetObject("negateReservedInstanceAction");
-
     m_negateReservedInstanceActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("negateSavingsPlanAction"))
   {
     m_negateSavingsPlanAction = jsonValue.GetObject("negateSavingsPlanAction");
-
     m_negateSavingsPlanActionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ComponentRecommendation::ComponentRecommendation() : 
-    m_appComponentNameHasBeenSet(false),
-    m_configRecommendationsHasBeenSet(false),
-    m_recommendationStatus(RecommendationComplianceStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false)
-{
-}
-
 ComponentRecommendation::ComponentRecommendation(JsonView jsonValue)
-  : ComponentRecommendation()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ComponentRecommendation& ComponentRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
-
     m_appComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configRecommendations"))
   {
     Aws::Utils::Array<JsonView> configRecommendationsJsonList = jsonValue.GetArray("configRecommendations");
@@ -50,14 +39,11 @@ ComponentRecommendation& ComponentRecommendation::operator =(JsonView jsonValue)
     }
     m_configRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationStatus"))
   {
     m_recommendationStatus = RecommendationComplianceStatusMapper::GetRecommendationComplianceStatusForName(jsonValue.GetString("recommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

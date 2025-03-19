@@ -34,7 +34,7 @@ namespace Model
   class DoubleArrayOptions
   {
   public:
-    AWS_CLOUDSEARCH_API DoubleArrayOptions();
+    AWS_CLOUDSEARCH_API DoubleArrayOptions() = default;
     AWS_CLOUDSEARCH_API DoubleArrayOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API DoubleArrayOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline double GetDefaultValue() const{ return m_defaultValue; }
+    inline double GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
     inline void SetDefaultValue(double value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
     inline DoubleArrayOptions& WithDefaultValue(double value) { SetDefaultValue(value); return *this;}
@@ -56,21 +56,19 @@ namespace Model
     /**
      * <p>A list of source fields to map to the field. </p>
      */
-    inline const Aws::String& GetSourceFields() const{ return m_sourceFields; }
+    inline const Aws::String& GetSourceFields() const { return m_sourceFields; }
     inline bool SourceFieldsHasBeenSet() const { return m_sourceFieldsHasBeenSet; }
-    inline void SetSourceFields(const Aws::String& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = value; }
-    inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::move(value); }
-    inline void SetSourceFields(const char* value) { m_sourceFieldsHasBeenSet = true; m_sourceFields.assign(value); }
-    inline DoubleArrayOptions& WithSourceFields(const Aws::String& value) { SetSourceFields(value); return *this;}
-    inline DoubleArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(std::move(value)); return *this;}
-    inline DoubleArrayOptions& WithSourceFields(const char* value) { SetSourceFields(value); return *this;}
+    template<typename SourceFieldsT = Aws::String>
+    void SetSourceFields(SourceFieldsT&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::forward<SourceFieldsT>(value); }
+    template<typename SourceFieldsT = Aws::String>
+    DoubleArrayOptions& WithSourceFields(SourceFieldsT&& value) { SetSourceFields(std::forward<SourceFieldsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether facet information can be returned for the field.</p>
      */
-    inline bool GetFacetEnabled() const{ return m_facetEnabled; }
+    inline bool GetFacetEnabled() const { return m_facetEnabled; }
     inline bool FacetEnabledHasBeenSet() const { return m_facetEnabledHasBeenSet; }
     inline void SetFacetEnabled(bool value) { m_facetEnabledHasBeenSet = true; m_facetEnabled = value; }
     inline DoubleArrayOptions& WithFacetEnabled(bool value) { SetFacetEnabled(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     /**
      * <p>Whether the contents of the field are searchable.</p>
      */
-    inline bool GetSearchEnabled() const{ return m_searchEnabled; }
+    inline bool GetSearchEnabled() const { return m_searchEnabled; }
     inline bool SearchEnabledHasBeenSet() const { return m_searchEnabledHasBeenSet; }
     inline void SetSearchEnabled(bool value) { m_searchEnabledHasBeenSet = true; m_searchEnabled = value; }
     inline DoubleArrayOptions& WithSearchEnabled(bool value) { SetSearchEnabled(value); return *this;}
@@ -90,26 +88,26 @@ namespace Model
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
-    inline bool GetReturnEnabled() const{ return m_returnEnabled; }
+    inline bool GetReturnEnabled() const { return m_returnEnabled; }
     inline bool ReturnEnabledHasBeenSet() const { return m_returnEnabledHasBeenSet; }
     inline void SetReturnEnabled(bool value) { m_returnEnabledHasBeenSet = true; m_returnEnabled = value; }
     inline DoubleArrayOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
     ///@}
   private:
 
-    double m_defaultValue;
+    double m_defaultValue{0.0};
     bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_sourceFields;
     bool m_sourceFieldsHasBeenSet = false;
 
-    bool m_facetEnabled;
+    bool m_facetEnabled{false};
     bool m_facetEnabledHasBeenSet = false;
 
-    bool m_searchEnabled;
+    bool m_searchEnabled{false};
     bool m_searchEnabledHasBeenSet = false;
 
-    bool m_returnEnabled;
+    bool m_returnEnabled{false};
     bool m_returnEnabledHasBeenSet = false;
   };
 

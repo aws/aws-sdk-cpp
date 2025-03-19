@@ -30,7 +30,7 @@ namespace Model
   class CompleteMultipartUploadResult
   {
   public:
-    AWS_S3CRT_API CompleteMultipartUploadResult();
+    AWS_S3CRT_API CompleteMultipartUploadResult() = default;
     AWS_S3CRT_API CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API CompleteMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The URI that identifies the newly created object.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CompleteMultipartUploadResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CompleteMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CompleteMultipartUploadResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,22 @@ namespace Model
      * return the access point ARN or access point alias if used.</p>  <p>Access
      * points are not supported by directory buckets.</p> 
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
-    inline void SetBucket(const Aws::String& value) { m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucket.assign(value); }
-    inline CompleteMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline CompleteMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
+    inline const Aws::String& GetBucket() const { return m_bucket; }
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    CompleteMultipartUploadResult& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object key of the newly created object.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
-    inline void SetKey(const Aws::String& value) { m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_key.assign(value); }
-    inline CompleteMultipartUploadResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline CompleteMultipartUploadResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithKey(const char* value) { SetKey(value); return *this;}
+    inline const Aws::String& GetKey() const { return m_key; }
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    CompleteMultipartUploadResult& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,13 +77,11 @@ namespace Model
      * <code>rule-id</code> is URL-encoded.</p>  <p>This functionality is not
      * supported for directory buckets.</p> 
      */
-    inline const Aws::String& GetExpiration() const{ return m_expiration; }
-    inline void SetExpiration(const Aws::String& value) { m_expiration = value; }
-    inline void SetExpiration(Aws::String&& value) { m_expiration = std::move(value); }
-    inline void SetExpiration(const char* value) { m_expiration.assign(value); }
-    inline CompleteMultipartUploadResult& WithExpiration(const Aws::String& value) { SetExpiration(value); return *this;}
-    inline CompleteMultipartUploadResult& WithExpiration(Aws::String&& value) { SetExpiration(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
+    inline const Aws::String& GetExpiration() const { return m_expiration; }
+    template<typename ExpirationT = Aws::String>
+    void SetExpiration(ExpirationT&& value) { m_expirationHasBeenSet = true; m_expiration = std::forward<ExpirationT>(value); }
+    template<typename ExpirationT = Aws::String>
+    CompleteMultipartUploadResult& WithExpiration(ExpirationT&& value) { SetExpiration(std::forward<ExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,13 +96,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline CompleteMultipartUploadResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CompleteMultipartUploadResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CompleteMultipartUploadResult& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,13 +114,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
-    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32 = value; }
-    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32 = std::move(value); }
-    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32.assign(value); }
-    inline CompleteMultipartUploadResult& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
+    inline const Aws::String& GetChecksumCRC32() const { return m_checksumCRC32; }
+    template<typename ChecksumCRC32T = Aws::String>
+    void SetChecksumCRC32(ChecksumCRC32T&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::forward<ChecksumCRC32T>(value); }
+    template<typename ChecksumCRC32T = Aws::String>
+    CompleteMultipartUploadResult& WithChecksumCRC32(ChecksumCRC32T&& value) { SetChecksumCRC32(std::forward<ChecksumCRC32T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,13 +132,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
-    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32C = value; }
-    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32C = std::move(value); }
-    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32C.assign(value); }
-    inline CompleteMultipartUploadResult& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
+    inline const Aws::String& GetChecksumCRC32C() const { return m_checksumCRC32C; }
+    template<typename ChecksumCRC32CT = Aws::String>
+    void SetChecksumCRC32C(ChecksumCRC32CT&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::forward<ChecksumCRC32CT>(value); }
+    template<typename ChecksumCRC32CT = Aws::String>
+    CompleteMultipartUploadResult& WithChecksumCRC32C(ChecksumCRC32CT&& value) { SetChecksumCRC32C(std::forward<ChecksumCRC32CT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,13 +149,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity in the Amazon S3 User Guide</a>. </p>
      */
-    inline const Aws::String& GetChecksumCRC64NVME() const{ return m_checksumCRC64NVME; }
-    inline void SetChecksumCRC64NVME(const Aws::String& value) { m_checksumCRC64NVME = value; }
-    inline void SetChecksumCRC64NVME(Aws::String&& value) { m_checksumCRC64NVME = std::move(value); }
-    inline void SetChecksumCRC64NVME(const char* value) { m_checksumCRC64NVME.assign(value); }
-    inline CompleteMultipartUploadResult& WithChecksumCRC64NVME(const Aws::String& value) { SetChecksumCRC64NVME(value); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumCRC64NVME(Aws::String&& value) { SetChecksumCRC64NVME(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumCRC64NVME(const char* value) { SetChecksumCRC64NVME(value); return *this;}
+    inline const Aws::String& GetChecksumCRC64NVME() const { return m_checksumCRC64NVME; }
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    void SetChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { m_checksumCRC64NVMEHasBeenSet = true; m_checksumCRC64NVME = std::forward<ChecksumCRC64NVMET>(value); }
+    template<typename ChecksumCRC64NVMET = Aws::String>
+    CompleteMultipartUploadResult& WithChecksumCRC64NVME(ChecksumCRC64NVMET&& value) { SetChecksumCRC64NVME(std::forward<ChecksumCRC64NVMET>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,13 +167,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
-    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1 = value; }
-    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1 = std::move(value); }
-    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1.assign(value); }
-    inline CompleteMultipartUploadResult& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
+    inline const Aws::String& GetChecksumSHA1() const { return m_checksumSHA1; }
+    template<typename ChecksumSHA1T = Aws::String>
+    void SetChecksumSHA1(ChecksumSHA1T&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::forward<ChecksumSHA1T>(value); }
+    template<typename ChecksumSHA1T = Aws::String>
+    CompleteMultipartUploadResult& WithChecksumSHA1(ChecksumSHA1T&& value) { SetChecksumSHA1(std::forward<ChecksumSHA1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,13 +185,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
      * Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
-    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256 = value; }
-    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256 = std::move(value); }
-    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256.assign(value); }
-    inline CompleteMultipartUploadResult& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
+    inline const Aws::String& GetChecksumSHA256() const { return m_checksumSHA256; }
+    template<typename ChecksumSHA256T = Aws::String>
+    void SetChecksumSHA256(ChecksumSHA256T&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::forward<ChecksumSHA256T>(value); }
+    template<typename ChecksumSHA256T = Aws::String>
+    CompleteMultipartUploadResult& WithChecksumSHA256(ChecksumSHA256T&& value) { SetChecksumSHA256(std::forward<ChecksumSHA256T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,11 +202,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity in the Amazon S3 User Guide</a>.</p>
      */
-    inline const ChecksumType& GetChecksumType() const{ return m_checksumType; }
-    inline void SetChecksumType(const ChecksumType& value) { m_checksumType = value; }
-    inline void SetChecksumType(ChecksumType&& value) { m_checksumType = std::move(value); }
-    inline CompleteMultipartUploadResult& WithChecksumType(const ChecksumType& value) { SetChecksumType(value); return *this;}
-    inline CompleteMultipartUploadResult& WithChecksumType(ChecksumType&& value) { SetChecksumType(std::move(value)); return *this;}
+    inline ChecksumType GetChecksumType() const { return m_checksumType; }
+    inline void SetChecksumType(ChecksumType value) { m_checksumTypeHasBeenSet = true; m_checksumType = value; }
+    inline CompleteMultipartUploadResult& WithChecksumType(ChecksumType value) { SetChecksumType(value); return *this;}
     ///@}
 
     ///@{
@@ -234,11 +212,9 @@ namespace Model
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>).</p>
      */
-    inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
-    inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
-    inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
-    inline CompleteMultipartUploadResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
-    inline CompleteMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+    inline ServerSideEncryption GetServerSideEncryption() const { return m_serverSideEncryption; }
+    inline void SetServerSideEncryption(ServerSideEncryption value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
+    inline CompleteMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption value) { SetServerSideEncryption(value); return *this;}
     ///@}
 
     ///@{
@@ -247,13 +223,11 @@ namespace Model
      * turned on.</p>  <p>This functionality is not supported for directory
      * buckets.</p> 
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
-    inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionId.assign(value); }
-    inline CompleteMultipartUploadResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline CompleteMultipartUploadResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    CompleteMultipartUploadResult& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,13 +235,11 @@ namespace Model
      * <p>If present, indicates the ID of the KMS key that was used for object
      * encryption.</p>
      */
-    inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
-    inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
-    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
-    inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
-    inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
-    inline CompleteMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
+    inline const Aws::String& GetSSEKMSKeyId() const { return m_sSEKMSKeyId; }
+    template<typename SSEKMSKeyIdT = Aws::String>
+    void SetSSEKMSKeyId(SSEKMSKeyIdT&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::forward<SSEKMSKeyIdT>(value); }
+    template<typename SSEKMSKeyIdT = Aws::String>
+    CompleteMultipartUploadResult& WithSSEKMSKeyId(SSEKMSKeyIdT&& value) { SetSSEKMSKeyId(std::forward<SSEKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -275,65 +247,78 @@ namespace Model
      * <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side
      * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
      */
-    inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
-    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
+    inline bool GetBucketKeyEnabled() const { return m_bucketKeyEnabled; }
+    inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
     inline CompleteMultipartUploadResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-    inline CompleteMultipartUploadResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-    inline CompleteMultipartUploadResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    inline RequestCharged GetRequestCharged() const { return m_requestCharged; }
+    inline void SetRequestCharged(RequestCharged value) { m_requestChargedHasBeenSet = true; m_requestCharged = value; }
+    inline CompleteMultipartUploadResult& WithRequestCharged(RequestCharged value) { SetRequestCharged(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CompleteMultipartUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CompleteMultipartUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CompleteMultipartUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CompleteMultipartUploadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_bucket;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_expiration;
+    bool m_expirationHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_checksumCRC32;
+    bool m_checksumCRC32HasBeenSet = false;
 
     Aws::String m_checksumCRC32C;
+    bool m_checksumCRC32CHasBeenSet = false;
 
     Aws::String m_checksumCRC64NVME;
+    bool m_checksumCRC64NVMEHasBeenSet = false;
 
     Aws::String m_checksumSHA1;
+    bool m_checksumSHA1HasBeenSet = false;
 
     Aws::String m_checksumSHA256;
+    bool m_checksumSHA256HasBeenSet = false;
 
-    ChecksumType m_checksumType;
+    ChecksumType m_checksumType{ChecksumType::NOT_SET};
+    bool m_checksumTypeHasBeenSet = false;
 
-    ServerSideEncryption m_serverSideEncryption;
+    ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
+    bool m_serverSideEncryptionHasBeenSet = false;
 
     Aws::String m_versionId;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_sSEKMSKeyId;
+    bool m_sSEKMSKeyIdHasBeenSet = false;
 
-    bool m_bucketKeyEnabled;
+    bool m_bucketKeyEnabled{false};
+    bool m_bucketKeyEnabledHasBeenSet = false;
 
-    RequestCharged m_requestCharged;
+    RequestCharged m_requestCharged{RequestCharged::NOT_SET};
+    bool m_requestChargedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

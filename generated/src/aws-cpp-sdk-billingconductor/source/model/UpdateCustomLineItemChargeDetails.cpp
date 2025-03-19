@@ -18,15 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-UpdateCustomLineItemChargeDetails::UpdateCustomLineItemChargeDetails() : 
-    m_flatHasBeenSet(false),
-    m_percentageHasBeenSet(false),
-    m_lineItemFiltersHasBeenSet(false)
-{
-}
-
 UpdateCustomLineItemChargeDetails::UpdateCustomLineItemChargeDetails(JsonView jsonValue)
-  : UpdateCustomLineItemChargeDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpdateCustomLineItemChargeDetails& UpdateCustomLineItemChargeDetails::operator =
   if(jsonValue.ValueExists("Flat"))
   {
     m_flat = jsonValue.GetObject("Flat");
-
     m_flatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Percentage"))
   {
     m_percentage = jsonValue.GetObject("Percentage");
-
     m_percentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineItemFilters"))
   {
     Aws::Utils::Array<JsonView> lineItemFiltersJsonList = jsonValue.GetArray("LineItemFilters");
@@ -56,7 +44,6 @@ UpdateCustomLineItemChargeDetails& UpdateCustomLineItemChargeDetails::operator =
     }
     m_lineItemFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

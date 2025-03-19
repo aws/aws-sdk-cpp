@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DatasetLabelDescription::DatasetLabelDescription() : 
-    m_labelNameHasBeenSet(false),
-    m_labelStatsHasBeenSet(false)
-{
-}
-
 DatasetLabelDescription::DatasetLabelDescription(JsonView jsonValue)
-  : DatasetLabelDescription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatasetLabelDescription& DatasetLabelDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LabelName"))
   {
     m_labelName = jsonValue.GetString("LabelName");
-
     m_labelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelStats"))
   {
     m_labelStats = jsonValue.GetObject("LabelStats");
-
     m_labelStatsHasBeenSet = true;
   }
-
   return *this;
 }
 

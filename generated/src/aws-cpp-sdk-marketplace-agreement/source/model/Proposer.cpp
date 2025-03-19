@@ -18,13 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-Proposer::Proposer() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Proposer::Proposer(JsonView jsonValue)
-  : Proposer()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Proposer& Proposer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

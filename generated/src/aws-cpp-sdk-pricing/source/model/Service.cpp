@@ -18,14 +18,7 @@ namespace Pricing
 namespace Model
 {
 
-Service::Service() : 
-    m_serviceCodeHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Service& Service::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeNames"))
   {
     Aws::Utils::Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
@@ -48,7 +39,6 @@ Service& Service::operator =(JsonView jsonValue)
     }
     m_attributeNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

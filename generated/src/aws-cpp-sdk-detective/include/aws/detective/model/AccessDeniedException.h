@@ -33,7 +33,7 @@ namespace Model
   class AccessDeniedException
   {
   public:
-    AWS_DETECTIVE_API AccessDeniedException();
+    AWS_DETECTIVE_API AccessDeniedException() = default;
     AWS_DETECTIVE_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,79 +41,69 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AccessDeniedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AccessDeniedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AccessDeniedException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AccessDeniedException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SDK default error code associated with the access denied exception.</p>
      */
-    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline ErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline AccessDeniedException& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-    inline AccessDeniedException& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(ErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline AccessDeniedException& WithErrorCode(ErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SDK default explanation of why access was denied.</p>
      */
-    inline const Aws::String& GetErrorCodeReason() const{ return m_errorCodeReason; }
+    inline const Aws::String& GetErrorCodeReason() const { return m_errorCodeReason; }
     inline bool ErrorCodeReasonHasBeenSet() const { return m_errorCodeReasonHasBeenSet; }
-    inline void SetErrorCodeReason(const Aws::String& value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason = value; }
-    inline void SetErrorCodeReason(Aws::String&& value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason = std::move(value); }
-    inline void SetErrorCodeReason(const char* value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason.assign(value); }
-    inline AccessDeniedException& WithErrorCodeReason(const Aws::String& value) { SetErrorCodeReason(value); return *this;}
-    inline AccessDeniedException& WithErrorCodeReason(Aws::String&& value) { SetErrorCodeReason(std::move(value)); return *this;}
-    inline AccessDeniedException& WithErrorCodeReason(const char* value) { SetErrorCodeReason(value); return *this;}
+    template<typename ErrorCodeReasonT = Aws::String>
+    void SetErrorCodeReason(ErrorCodeReasonT&& value) { m_errorCodeReasonHasBeenSet = true; m_errorCodeReason = std::forward<ErrorCodeReasonT>(value); }
+    template<typename ErrorCodeReasonT = Aws::String>
+    AccessDeniedException& WithErrorCodeReason(ErrorCodeReasonT&& value) { SetErrorCodeReason(std::forward<ErrorCodeReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code associated with the access denied exception.</p>
      */
-    inline const ErrorCode& GetSubErrorCode() const{ return m_subErrorCode; }
+    inline ErrorCode GetSubErrorCode() const { return m_subErrorCode; }
     inline bool SubErrorCodeHasBeenSet() const { return m_subErrorCodeHasBeenSet; }
-    inline void SetSubErrorCode(const ErrorCode& value) { m_subErrorCodeHasBeenSet = true; m_subErrorCode = value; }
-    inline void SetSubErrorCode(ErrorCode&& value) { m_subErrorCodeHasBeenSet = true; m_subErrorCode = std::move(value); }
-    inline AccessDeniedException& WithSubErrorCode(const ErrorCode& value) { SetSubErrorCode(value); return *this;}
-    inline AccessDeniedException& WithSubErrorCode(ErrorCode&& value) { SetSubErrorCode(std::move(value)); return *this;}
+    inline void SetSubErrorCode(ErrorCode value) { m_subErrorCodeHasBeenSet = true; m_subErrorCode = value; }
+    inline AccessDeniedException& WithSubErrorCode(ErrorCode value) { SetSubErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An explanation of why access was denied.</p>
      */
-    inline const Aws::String& GetSubErrorCodeReason() const{ return m_subErrorCodeReason; }
+    inline const Aws::String& GetSubErrorCodeReason() const { return m_subErrorCodeReason; }
     inline bool SubErrorCodeReasonHasBeenSet() const { return m_subErrorCodeReasonHasBeenSet; }
-    inline void SetSubErrorCodeReason(const Aws::String& value) { m_subErrorCodeReasonHasBeenSet = true; m_subErrorCodeReason = value; }
-    inline void SetSubErrorCodeReason(Aws::String&& value) { m_subErrorCodeReasonHasBeenSet = true; m_subErrorCodeReason = std::move(value); }
-    inline void SetSubErrorCodeReason(const char* value) { m_subErrorCodeReasonHasBeenSet = true; m_subErrorCodeReason.assign(value); }
-    inline AccessDeniedException& WithSubErrorCodeReason(const Aws::String& value) { SetSubErrorCodeReason(value); return *this;}
-    inline AccessDeniedException& WithSubErrorCodeReason(Aws::String&& value) { SetSubErrorCodeReason(std::move(value)); return *this;}
-    inline AccessDeniedException& WithSubErrorCodeReason(const char* value) { SetSubErrorCodeReason(value); return *this;}
+    template<typename SubErrorCodeReasonT = Aws::String>
+    void SetSubErrorCodeReason(SubErrorCodeReasonT&& value) { m_subErrorCodeReasonHasBeenSet = true; m_subErrorCodeReason = std::forward<SubErrorCodeReasonT>(value); }
+    template<typename SubErrorCodeReasonT = Aws::String>
+    AccessDeniedException& WithSubErrorCodeReason(SubErrorCodeReasonT&& value) { SetSubErrorCodeReason(std::forward<SubErrorCodeReasonT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ErrorCode m_errorCode;
+    ErrorCode m_errorCode{ErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorCodeReason;
     bool m_errorCodeReasonHasBeenSet = false;
 
-    ErrorCode m_subErrorCode;
+    ErrorCode m_subErrorCode{ErrorCode::NOT_SET};
     bool m_subErrorCodeHasBeenSet = false;
 
     Aws::String m_subErrorCodeReason;

@@ -37,7 +37,7 @@ namespace Model
   class ConditionExpression
   {
   public:
-    AWS_GLUEDATABREW_API ConditionExpression();
+    AWS_GLUEDATABREW_API ConditionExpression() = default;
     AWS_GLUEDATABREW_API ConditionExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API ConditionExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,42 +50,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetCondition() const{ return m_condition; }
+    inline const Aws::String& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-    inline ConditionExpression& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-    inline ConditionExpression& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-    inline ConditionExpression& WithCondition(const char* value) { SetCondition(value); return *this;}
+    template<typename ConditionT = Aws::String>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::String>
+    ConditionExpression& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value that the condition must evaluate to for the condition to succeed.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ConditionExpression& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ConditionExpression& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ConditionExpression& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ConditionExpression& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A column to apply this condition to.</p>
      */
-    inline const Aws::String& GetTargetColumn() const{ return m_targetColumn; }
+    inline const Aws::String& GetTargetColumn() const { return m_targetColumn; }
     inline bool TargetColumnHasBeenSet() const { return m_targetColumnHasBeenSet; }
-    inline void SetTargetColumn(const Aws::String& value) { m_targetColumnHasBeenSet = true; m_targetColumn = value; }
-    inline void SetTargetColumn(Aws::String&& value) { m_targetColumnHasBeenSet = true; m_targetColumn = std::move(value); }
-    inline void SetTargetColumn(const char* value) { m_targetColumnHasBeenSet = true; m_targetColumn.assign(value); }
-    inline ConditionExpression& WithTargetColumn(const Aws::String& value) { SetTargetColumn(value); return *this;}
-    inline ConditionExpression& WithTargetColumn(Aws::String&& value) { SetTargetColumn(std::move(value)); return *this;}
-    inline ConditionExpression& WithTargetColumn(const char* value) { SetTargetColumn(value); return *this;}
+    template<typename TargetColumnT = Aws::String>
+    void SetTargetColumn(TargetColumnT&& value) { m_targetColumnHasBeenSet = true; m_targetColumn = std::forward<TargetColumnT>(value); }
+    template<typename TargetColumnT = Aws::String>
+    ConditionExpression& WithTargetColumn(TargetColumnT&& value) { SetTargetColumn(std::forward<TargetColumnT>(value)); return *this;}
     ///@}
   private:
 

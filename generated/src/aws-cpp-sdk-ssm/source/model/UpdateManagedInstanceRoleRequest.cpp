@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateManagedInstanceRoleRequest::UpdateManagedInstanceRoleRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_iamRoleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateManagedInstanceRoleRequest::SerializePayload() const
 {
   JsonValue payload;

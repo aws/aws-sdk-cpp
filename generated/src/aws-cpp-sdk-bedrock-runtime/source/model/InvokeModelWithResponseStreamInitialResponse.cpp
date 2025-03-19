@@ -21,15 +21,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamInitialResponse() : 
-    m_contentTypeHasBeenSet(false),
-    m_performanceConfigLatency(PerformanceConfigLatency::NOT_SET),
-    m_performanceConfigLatencyHasBeenSet(false)
-{
-}
-
 InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamInitialResponse(JsonView jsonValue)
-  : InvokeModelWithResponseStreamInitialResponse()
 {
   *this = jsonValue;
 }
@@ -46,12 +38,14 @@ InvokeModelWithResponseStreamInitialResponse::InvokeModelWithResponseStreamIniti
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& performanceConfigLatencyIter = headers.find("x-amzn-bedrock-performanceconfig-latency");
   if(performanceConfigLatencyIter != headers.end())
   {
     m_performanceConfigLatency = PerformanceConfigLatencyMapper::GetPerformanceConfigLatencyForName(performanceConfigLatencyIter->second);
+    m_performanceConfigLatencyHasBeenSet = true;
   }
 
 }

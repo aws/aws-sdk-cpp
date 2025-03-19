@@ -13,13 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourceDefinitionVersionRequest::CreateResourceDefinitionVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_resourceDefinitionIdHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourceDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-GroupNameAndArn::GroupNameAndArn() : 
-    m_groupNameHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
-{
-}
-
 GroupNameAndArn::GroupNameAndArn(JsonView jsonValue)
-  : GroupNameAndArn()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GroupNameAndArn& GroupNameAndArn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupArn"))
   {
     m_groupArn = jsonValue.GetString("groupArn");
-
     m_groupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

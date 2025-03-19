@@ -32,7 +32,7 @@ namespace Model
   class IdFormat
   {
   public:
-    AWS_EC2_API IdFormat();
+    AWS_EC2_API IdFormat() = default;
     AWS_EC2_API IdFormat(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IdFormat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,26 +46,24 @@ namespace Model
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeadline() const{ return m_deadline; }
+    inline const Aws::Utils::DateTime& GetDeadline() const { return m_deadline; }
     inline bool DeadlineHasBeenSet() const { return m_deadlineHasBeenSet; }
-    inline void SetDeadline(const Aws::Utils::DateTime& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
-    inline void SetDeadline(Aws::Utils::DateTime&& value) { m_deadlineHasBeenSet = true; m_deadline = std::move(value); }
-    inline IdFormat& WithDeadline(const Aws::Utils::DateTime& value) { SetDeadline(value); return *this;}
-    inline IdFormat& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(std::move(value)); return *this;}
+    template<typename DeadlineT = Aws::Utils::DateTime>
+    void SetDeadline(DeadlineT&& value) { m_deadlineHasBeenSet = true; m_deadline = std::forward<DeadlineT>(value); }
+    template<typename DeadlineT = Aws::Utils::DateTime>
+    IdFormat& WithDeadline(DeadlineT&& value) { SetDeadline(std::forward<DeadlineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline IdFormat& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline IdFormat& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline IdFormat& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    IdFormat& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,20 +71,20 @@ namespace Model
      * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
      * resource.</p>
      */
-    inline bool GetUseLongIds() const{ return m_useLongIds; }
+    inline bool GetUseLongIds() const { return m_useLongIds; }
     inline bool UseLongIdsHasBeenSet() const { return m_useLongIdsHasBeenSet; }
     inline void SetUseLongIds(bool value) { m_useLongIdsHasBeenSet = true; m_useLongIds = value; }
     inline IdFormat& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_deadline;
+    Aws::Utils::DateTime m_deadline{};
     bool m_deadlineHasBeenSet = false;
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    bool m_useLongIds;
+    bool m_useLongIds{false};
     bool m_useLongIdsHasBeenSet = false;
   };
 

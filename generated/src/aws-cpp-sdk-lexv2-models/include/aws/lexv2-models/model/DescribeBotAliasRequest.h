@@ -21,7 +21,7 @@ namespace Model
   class DescribeBotAliasRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API DescribeBotAliasRequest();
+    AWS_LEXMODELSV2_API DescribeBotAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The identifier of the bot alias to describe.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
     inline bool BotAliasIdHasBeenSet() const { return m_botAliasIdHasBeenSet; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasIdHasBeenSet = true; m_botAliasId.assign(value); }
-    inline DescribeBotAliasRequest& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline DescribeBotAliasRequest& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline DescribeBotAliasRequest& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    DescribeBotAliasRequest& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the bot associated with the bot alias to describe.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline DescribeBotAliasRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline DescribeBotAliasRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline DescribeBotAliasRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    DescribeBotAliasRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
   private:
 

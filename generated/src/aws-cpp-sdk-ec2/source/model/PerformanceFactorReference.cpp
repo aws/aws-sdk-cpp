@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PerformanceFactorReference::PerformanceFactorReference() : 
-    m_instanceFamilyHasBeenSet(false)
-{
-}
-
 PerformanceFactorReference::PerformanceFactorReference(const XmlNode& xmlNode)
-  : PerformanceFactorReference()
 {
   *this = xmlNode;
 }

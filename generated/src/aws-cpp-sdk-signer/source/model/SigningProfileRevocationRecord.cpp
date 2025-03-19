@@ -18,15 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningProfileRevocationRecord::SigningProfileRevocationRecord() : 
-    m_revocationEffectiveFromHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revokedByHasBeenSet(false)
-{
-}
-
 SigningProfileRevocationRecord::SigningProfileRevocationRecord(JsonView jsonValue)
-  : SigningProfileRevocationRecord()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SigningProfileRevocationRecord& SigningProfileRevocationRecord::operator =(JsonV
   if(jsonValue.ValueExists("revocationEffectiveFrom"))
   {
     m_revocationEffectiveFrom = jsonValue.GetDouble("revocationEffectiveFrom");
-
     m_revocationEffectiveFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revokedAt"))
   {
     m_revokedAt = jsonValue.GetDouble("revokedAt");
-
     m_revokedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revokedBy"))
   {
     m_revokedBy = jsonValue.GetString("revokedBy");
-
     m_revokedByHasBeenSet = true;
   }
-
   return *this;
 }
 

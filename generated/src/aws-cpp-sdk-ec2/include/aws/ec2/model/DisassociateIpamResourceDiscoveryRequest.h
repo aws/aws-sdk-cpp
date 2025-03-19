@@ -21,7 +21,7 @@ namespace Model
   class DisassociateIpamResourceDiscoveryRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DisassociateIpamResourceDiscoveryRequest();
+    AWS_EC2_API DisassociateIpamResourceDiscoveryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DisassociateIpamResourceDiscoveryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>A resource discovery association ID.</p>
      */
-    inline const Aws::String& GetIpamResourceDiscoveryAssociationId() const{ return m_ipamResourceDiscoveryAssociationId; }
+    inline const Aws::String& GetIpamResourceDiscoveryAssociationId() const { return m_ipamResourceDiscoveryAssociationId; }
     inline bool IpamResourceDiscoveryAssociationIdHasBeenSet() const { return m_ipamResourceDiscoveryAssociationIdHasBeenSet; }
-    inline void SetIpamResourceDiscoveryAssociationId(const Aws::String& value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId = value; }
-    inline void SetIpamResourceDiscoveryAssociationId(Aws::String&& value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId = std::move(value); }
-    inline void SetIpamResourceDiscoveryAssociationId(const char* value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId.assign(value); }
-    inline DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(const Aws::String& value) { SetIpamResourceDiscoveryAssociationId(value); return *this;}
-    inline DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(Aws::String&& value) { SetIpamResourceDiscoveryAssociationId(std::move(value)); return *this;}
-    inline DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(const char* value) { SetIpamResourceDiscoveryAssociationId(value); return *this;}
+    template<typename IpamResourceDiscoveryAssociationIdT = Aws::String>
+    void SetIpamResourceDiscoveryAssociationId(IpamResourceDiscoveryAssociationIdT&& value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId = std::forward<IpamResourceDiscoveryAssociationIdT>(value); }
+    template<typename IpamResourceDiscoveryAssociationIdT = Aws::String>
+    DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(IpamResourceDiscoveryAssociationIdT&& value) { SetIpamResourceDiscoveryAssociationId(std::forward<IpamResourceDiscoveryAssociationIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamResourceDiscoveryAssociationId;

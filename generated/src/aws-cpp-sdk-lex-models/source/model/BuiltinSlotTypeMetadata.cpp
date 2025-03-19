@@ -18,14 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata() : 
-    m_signatureHasBeenSet(false),
-    m_supportedLocalesHasBeenSet(false)
-{
-}
-
 BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata(JsonView jsonValue)
-  : BuiltinSlotTypeMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BuiltinSlotTypeMetadata& BuiltinSlotTypeMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = jsonValue.GetString("signature");
-
     m_signatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedLocales"))
   {
     Aws::Utils::Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
@@ -48,7 +39,6 @@ BuiltinSlotTypeMetadata& BuiltinSlotTypeMetadata::operator =(JsonView jsonValue)
     }
     m_supportedLocalesHasBeenSet = true;
   }
-
   return *this;
 }
 

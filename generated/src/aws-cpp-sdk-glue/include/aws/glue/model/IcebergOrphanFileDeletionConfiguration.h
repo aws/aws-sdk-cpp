@@ -32,7 +32,7 @@ namespace Model
   class IcebergOrphanFileDeletionConfiguration
   {
   public:
-    AWS_GLUE_API IcebergOrphanFileDeletionConfiguration();
+    AWS_GLUE_API IcebergOrphanFileDeletionConfiguration() = default;
     AWS_GLUE_API IcebergOrphanFileDeletionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API IcebergOrphanFileDeletionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of days that orphan files should be retained before file deletion.
      * If an input is not provided, the default value 3 will be used.</p>
      */
-    inline int GetOrphanFileRetentionPeriodInDays() const{ return m_orphanFileRetentionPeriodInDays; }
+    inline int GetOrphanFileRetentionPeriodInDays() const { return m_orphanFileRetentionPeriodInDays; }
     inline bool OrphanFileRetentionPeriodInDaysHasBeenSet() const { return m_orphanFileRetentionPeriodInDaysHasBeenSet; }
     inline void SetOrphanFileRetentionPeriodInDays(int value) { m_orphanFileRetentionPeriodInDaysHasBeenSet = true; m_orphanFileRetentionPeriodInDays = value; }
     inline IcebergOrphanFileDeletionConfiguration& WithOrphanFileRetentionPeriodInDays(int value) { SetOrphanFileRetentionPeriodInDays(value); return *this;}
@@ -55,18 +55,16 @@ namespace Model
      * location). You may choose a sub-directory rather than the top-level table
      * location.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline IcebergOrphanFileDeletionConfiguration& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline IcebergOrphanFileDeletionConfiguration& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline IcebergOrphanFileDeletionConfiguration& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    IcebergOrphanFileDeletionConfiguration& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_orphanFileRetentionPeriodInDays;
+    int m_orphanFileRetentionPeriodInDays{0};
     bool m_orphanFileRetentionPeriodInDaysHasBeenSet = false;
 
     Aws::String m_location;

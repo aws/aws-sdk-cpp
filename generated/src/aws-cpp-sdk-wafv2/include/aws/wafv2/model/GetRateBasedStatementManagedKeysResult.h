@@ -28,7 +28,7 @@ namespace Model
   class GetRateBasedStatementManagedKeysResult
   {
   public:
-    AWS_WAFV2_API GetRateBasedStatementManagedKeysResult();
+    AWS_WAFV2_API GetRateBasedStatementManagedKeysResult() = default;
     AWS_WAFV2_API GetRateBasedStatementManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API GetRateBasedStatementManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,41 +37,42 @@ namespace Model
     /**
      * <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
      */
-    inline const RateBasedStatementManagedKeysIPSet& GetManagedKeysIPV4() const{ return m_managedKeysIPV4; }
-    inline void SetManagedKeysIPV4(const RateBasedStatementManagedKeysIPSet& value) { m_managedKeysIPV4 = value; }
-    inline void SetManagedKeysIPV4(RateBasedStatementManagedKeysIPSet&& value) { m_managedKeysIPV4 = std::move(value); }
-    inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV4(const RateBasedStatementManagedKeysIPSet& value) { SetManagedKeysIPV4(value); return *this;}
-    inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV4(RateBasedStatementManagedKeysIPSet&& value) { SetManagedKeysIPV4(std::move(value)); return *this;}
+    inline const RateBasedStatementManagedKeysIPSet& GetManagedKeysIPV4() const { return m_managedKeysIPV4; }
+    template<typename ManagedKeysIPV4T = RateBasedStatementManagedKeysIPSet>
+    void SetManagedKeysIPV4(ManagedKeysIPV4T&& value) { m_managedKeysIPV4HasBeenSet = true; m_managedKeysIPV4 = std::forward<ManagedKeysIPV4T>(value); }
+    template<typename ManagedKeysIPV4T = RateBasedStatementManagedKeysIPSet>
+    GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV4(ManagedKeysIPV4T&& value) { SetManagedKeysIPV4(std::forward<ManagedKeysIPV4T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
      */
-    inline const RateBasedStatementManagedKeysIPSet& GetManagedKeysIPV6() const{ return m_managedKeysIPV6; }
-    inline void SetManagedKeysIPV6(const RateBasedStatementManagedKeysIPSet& value) { m_managedKeysIPV6 = value; }
-    inline void SetManagedKeysIPV6(RateBasedStatementManagedKeysIPSet&& value) { m_managedKeysIPV6 = std::move(value); }
-    inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV6(const RateBasedStatementManagedKeysIPSet& value) { SetManagedKeysIPV6(value); return *this;}
-    inline GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV6(RateBasedStatementManagedKeysIPSet&& value) { SetManagedKeysIPV6(std::move(value)); return *this;}
+    inline const RateBasedStatementManagedKeysIPSet& GetManagedKeysIPV6() const { return m_managedKeysIPV6; }
+    template<typename ManagedKeysIPV6T = RateBasedStatementManagedKeysIPSet>
+    void SetManagedKeysIPV6(ManagedKeysIPV6T&& value) { m_managedKeysIPV6HasBeenSet = true; m_managedKeysIPV6 = std::forward<ManagedKeysIPV6T>(value); }
+    template<typename ManagedKeysIPV6T = RateBasedStatementManagedKeysIPSet>
+    GetRateBasedStatementManagedKeysResult& WithManagedKeysIPV6(ManagedKeysIPV6T&& value) { SetManagedKeysIPV6(std::forward<ManagedKeysIPV6T>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRateBasedStatementManagedKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRateBasedStatementManagedKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRateBasedStatementManagedKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRateBasedStatementManagedKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RateBasedStatementManagedKeysIPSet m_managedKeysIPV4;
+    bool m_managedKeysIPV4HasBeenSet = false;
 
     RateBasedStatementManagedKeysIPSet m_managedKeysIPV6;
+    bool m_managedKeysIPV6HasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

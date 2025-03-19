@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAssociatedAccessPoliciesResult::ListAssociatedAccessPoliciesResult()
-{
-}
-
 ListAssociatedAccessPoliciesResult::ListAssociatedAccessPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ ListAssociatedAccessPoliciesResult& ListAssociatedAccessPoliciesResult::operator
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
+    m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalArn"))
   {
     m_principalArn = jsonValue.GetString("principalArn");
-
+    m_principalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedAccessPolicies"))
   {
     Aws::Utils::Array<JsonView> associatedAccessPoliciesJsonList = jsonValue.GetArray("associatedAccessPolicies");
@@ -54,14 +47,15 @@ ListAssociatedAccessPoliciesResult& ListAssociatedAccessPoliciesResult::operator
     {
       m_associatedAccessPolicies.push_back(associatedAccessPoliciesJsonList[associatedAccessPoliciesIndex].AsObject());
     }
+    m_associatedAccessPoliciesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

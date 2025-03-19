@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDatasetGroupResult::DescribeDatasetGroupResult()
-{
-}
-
 DescribeDatasetGroupResult::DescribeDatasetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeDatasetGroupResult& DescribeDatasetGroupResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("datasetGroup"))
   {
     m_datasetGroup = jsonValue.GetObject("datasetGroup");
-
+    m_datasetGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

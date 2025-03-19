@@ -28,7 +28,7 @@ namespace Model
   class GetCollaborationResult
   {
   public:
-    AWS_CLEANROOMS_API GetCollaborationResult();
+    AWS_CLEANROOMS_API GetCollaborationResult() = default;
     AWS_CLEANROOMS_API GetCollaborationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API GetCollaborationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The entire collaboration for this identifier.</p>
      */
-    inline const Collaboration& GetCollaboration() const{ return m_collaboration; }
-    inline void SetCollaboration(const Collaboration& value) { m_collaboration = value; }
-    inline void SetCollaboration(Collaboration&& value) { m_collaboration = std::move(value); }
-    inline GetCollaborationResult& WithCollaboration(const Collaboration& value) { SetCollaboration(value); return *this;}
-    inline GetCollaborationResult& WithCollaboration(Collaboration&& value) { SetCollaboration(std::move(value)); return *this;}
+    inline const Collaboration& GetCollaboration() const { return m_collaboration; }
+    template<typename CollaborationT = Collaboration>
+    void SetCollaboration(CollaborationT&& value) { m_collaborationHasBeenSet = true; m_collaboration = std::forward<CollaborationT>(value); }
+    template<typename CollaborationT = Collaboration>
+    GetCollaborationResult& WithCollaboration(CollaborationT&& value) { SetCollaboration(std::forward<CollaborationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCollaborationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCollaborationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCollaborationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCollaborationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Collaboration m_collaboration;
+    bool m_collaborationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::CostOptimizationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEnrollmentStatusesRequest::ListEnrollmentStatusesRequest() : 
-    m_includeOrganizationInfo(false),
-    m_includeOrganizationInfoHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEnrollmentStatusesRequest::SerializePayload() const
 {
   JsonValue payload;

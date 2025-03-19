@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-QueryCompileError::QueryCompileError() : 
-    m_locationHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 QueryCompileError::QueryCompileError(JsonView jsonValue)
-  : QueryCompileError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ QueryCompileError& QueryCompileError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

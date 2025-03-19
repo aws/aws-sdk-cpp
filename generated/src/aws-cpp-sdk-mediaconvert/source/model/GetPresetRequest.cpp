@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPresetRequest::GetPresetRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetPresetRequest::SerializePayload() const
 {
   return {};

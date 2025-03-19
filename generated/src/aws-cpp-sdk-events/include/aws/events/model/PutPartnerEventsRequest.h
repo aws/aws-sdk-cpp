@@ -22,7 +22,7 @@ namespace Model
   class PutPartnerEventsRequest : public CloudWatchEventsRequest
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API PutPartnerEventsRequest();
+    AWS_CLOUDWATCHEVENTS_API PutPartnerEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The list of events to write to the event bus.</p>
      */
-    inline const Aws::Vector<PutPartnerEventsRequestEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<PutPartnerEventsRequestEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<PutPartnerEventsRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<PutPartnerEventsRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline PutPartnerEventsRequest& WithEntries(const Aws::Vector<PutPartnerEventsRequestEntry>& value) { SetEntries(value); return *this;}
-    inline PutPartnerEventsRequest& WithEntries(Aws::Vector<PutPartnerEventsRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline PutPartnerEventsRequest& AddEntries(const PutPartnerEventsRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline PutPartnerEventsRequest& AddEntries(PutPartnerEventsRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<PutPartnerEventsRequestEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<PutPartnerEventsRequestEntry>>
+    PutPartnerEventsRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = PutPartnerEventsRequestEntry>
+    PutPartnerEventsRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

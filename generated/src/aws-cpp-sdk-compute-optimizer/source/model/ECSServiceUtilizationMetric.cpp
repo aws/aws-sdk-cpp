@@ -18,18 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSServiceUtilizationMetric::ECSServiceUtilizationMetric() : 
-    m_name(ECSServiceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(ECSServiceMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 ECSServiceUtilizationMetric::ECSServiceUtilizationMetric(JsonView jsonValue)
-  : ECSServiceUtilizationMetric()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ECSServiceUtilizationMetric& ECSServiceUtilizationMetric::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = ECSServiceMetricNameMapper::GetECSServiceMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = ECSServiceMetricStatisticMapper::GetECSServiceMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

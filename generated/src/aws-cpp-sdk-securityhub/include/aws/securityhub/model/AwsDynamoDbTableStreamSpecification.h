@@ -32,7 +32,7 @@ namespace Model
   class AwsDynamoDbTableStreamSpecification
   {
   public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification();
+    AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification() = default;
     AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
      */
-    inline bool GetStreamEnabled() const{ return m_streamEnabled; }
+    inline bool GetStreamEnabled() const { return m_streamEnabled; }
     inline bool StreamEnabledHasBeenSet() const { return m_streamEnabledHasBeenSet; }
     inline void SetStreamEnabled(bool value) { m_streamEnabledHasBeenSet = true; m_streamEnabled = value; }
     inline AwsDynamoDbTableStreamSpecification& WithStreamEnabled(bool value) { SetStreamEnabled(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>Determines the information that is written to the table.</p>
      */
-    inline const Aws::String& GetStreamViewType() const{ return m_streamViewType; }
+    inline const Aws::String& GetStreamViewType() const { return m_streamViewType; }
     inline bool StreamViewTypeHasBeenSet() const { return m_streamViewTypeHasBeenSet; }
-    inline void SetStreamViewType(const Aws::String& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
-    inline void SetStreamViewType(Aws::String&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = std::move(value); }
-    inline void SetStreamViewType(const char* value) { m_streamViewTypeHasBeenSet = true; m_streamViewType.assign(value); }
-    inline AwsDynamoDbTableStreamSpecification& WithStreamViewType(const Aws::String& value) { SetStreamViewType(value); return *this;}
-    inline AwsDynamoDbTableStreamSpecification& WithStreamViewType(Aws::String&& value) { SetStreamViewType(std::move(value)); return *this;}
-    inline AwsDynamoDbTableStreamSpecification& WithStreamViewType(const char* value) { SetStreamViewType(value); return *this;}
+    template<typename StreamViewTypeT = Aws::String>
+    void SetStreamViewType(StreamViewTypeT&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = std::forward<StreamViewTypeT>(value); }
+    template<typename StreamViewTypeT = Aws::String>
+    AwsDynamoDbTableStreamSpecification& WithStreamViewType(StreamViewTypeT&& value) { SetStreamViewType(std::forward<StreamViewTypeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_streamEnabled;
+    bool m_streamEnabled{false};
     bool m_streamEnabledHasBeenSet = false;
 
     Aws::String m_streamViewType;

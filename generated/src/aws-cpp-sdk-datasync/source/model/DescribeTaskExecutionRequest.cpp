@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTaskExecutionRequest::DescribeTaskExecutionRequest() : 
-    m_taskExecutionArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTaskExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

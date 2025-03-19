@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterOrchestratorEksConfig::ClusterOrchestratorEksConfig() : 
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 ClusterOrchestratorEksConfig::ClusterOrchestratorEksConfig(JsonView jsonValue)
-  : ClusterOrchestratorEksConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClusterOrchestratorEksConfig& ClusterOrchestratorEksConfig::operator =(JsonView 
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   return *this;
 }
 

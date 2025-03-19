@@ -36,7 +36,7 @@ namespace Model
   class NetworkFirewallPolicyDescription
   {
   public:
-    AWS_FMS_API NetworkFirewallPolicyDescription();
+    AWS_FMS_API NetworkFirewallPolicyDescription() = default;
     AWS_FMS_API NetworkFirewallPolicyDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API NetworkFirewallPolicyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>The stateless rule groups that are used in the Network Firewall firewall
      * policy. </p>
      */
-    inline const Aws::Vector<StatelessRuleGroup>& GetStatelessRuleGroups() const{ return m_statelessRuleGroups; }
+    inline const Aws::Vector<StatelessRuleGroup>& GetStatelessRuleGroups() const { return m_statelessRuleGroups; }
     inline bool StatelessRuleGroupsHasBeenSet() const { return m_statelessRuleGroupsHasBeenSet; }
-    inline void SetStatelessRuleGroups(const Aws::Vector<StatelessRuleGroup>& value) { m_statelessRuleGroupsHasBeenSet = true; m_statelessRuleGroups = value; }
-    inline void SetStatelessRuleGroups(Aws::Vector<StatelessRuleGroup>&& value) { m_statelessRuleGroupsHasBeenSet = true; m_statelessRuleGroups = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatelessRuleGroups(const Aws::Vector<StatelessRuleGroup>& value) { SetStatelessRuleGroups(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatelessRuleGroups(Aws::Vector<StatelessRuleGroup>&& value) { SetStatelessRuleGroups(std::move(value)); return *this;}
-    inline NetworkFirewallPolicyDescription& AddStatelessRuleGroups(const StatelessRuleGroup& value) { m_statelessRuleGroupsHasBeenSet = true; m_statelessRuleGroups.push_back(value); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessRuleGroups(StatelessRuleGroup&& value) { m_statelessRuleGroupsHasBeenSet = true; m_statelessRuleGroups.push_back(std::move(value)); return *this; }
+    template<typename StatelessRuleGroupsT = Aws::Vector<StatelessRuleGroup>>
+    void SetStatelessRuleGroups(StatelessRuleGroupsT&& value) { m_statelessRuleGroupsHasBeenSet = true; m_statelessRuleGroups = std::forward<StatelessRuleGroupsT>(value); }
+    template<typename StatelessRuleGroupsT = Aws::Vector<StatelessRuleGroup>>
+    NetworkFirewallPolicyDescription& WithStatelessRuleGroups(StatelessRuleGroupsT&& value) { SetStatelessRuleGroups(std::forward<StatelessRuleGroupsT>(value)); return *this;}
+    template<typename StatelessRuleGroupsT = StatelessRuleGroup>
+    NetworkFirewallPolicyDescription& AddStatelessRuleGroups(StatelessRuleGroupsT&& value) { m_statelessRuleGroupsHasBeenSet = true; m_statelessRuleGroups.emplace_back(std::forward<StatelessRuleGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,15 +62,14 @@ namespace Model
      * <p>The actions to take on packets that don't match any of the stateless rule
      * groups. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStatelessDefaultActions() const{ return m_statelessDefaultActions; }
+    inline const Aws::Vector<Aws::String>& GetStatelessDefaultActions() const { return m_statelessDefaultActions; }
     inline bool StatelessDefaultActionsHasBeenSet() const { return m_statelessDefaultActionsHasBeenSet; }
-    inline void SetStatelessDefaultActions(const Aws::Vector<Aws::String>& value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions = value; }
-    inline void SetStatelessDefaultActions(Aws::Vector<Aws::String>&& value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatelessDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatelessDefaultActions(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatelessDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatelessDefaultActions(std::move(value)); return *this;}
-    inline NetworkFirewallPolicyDescription& AddStatelessDefaultActions(const Aws::String& value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions.push_back(value); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessDefaultActions(Aws::String&& value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions.push_back(std::move(value)); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessDefaultActions(const char* value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions.push_back(value); return *this; }
+    template<typename StatelessDefaultActionsT = Aws::Vector<Aws::String>>
+    void SetStatelessDefaultActions(StatelessDefaultActionsT&& value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions = std::forward<StatelessDefaultActionsT>(value); }
+    template<typename StatelessDefaultActionsT = Aws::Vector<Aws::String>>
+    NetworkFirewallPolicyDescription& WithStatelessDefaultActions(StatelessDefaultActionsT&& value) { SetStatelessDefaultActions(std::forward<StatelessDefaultActionsT>(value)); return *this;}
+    template<typename StatelessDefaultActionsT = Aws::String>
+    NetworkFirewallPolicyDescription& AddStatelessDefaultActions(StatelessDefaultActionsT&& value) { m_statelessDefaultActionsHasBeenSet = true; m_statelessDefaultActions.emplace_back(std::forward<StatelessDefaultActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,15 +77,14 @@ namespace Model
      * <p>The actions to take on packet fragments that don't match any of the stateless
      * rule groups. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStatelessFragmentDefaultActions() const{ return m_statelessFragmentDefaultActions; }
+    inline const Aws::Vector<Aws::String>& GetStatelessFragmentDefaultActions() const { return m_statelessFragmentDefaultActions; }
     inline bool StatelessFragmentDefaultActionsHasBeenSet() const { return m_statelessFragmentDefaultActionsHasBeenSet; }
-    inline void SetStatelessFragmentDefaultActions(const Aws::Vector<Aws::String>& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions = value; }
-    inline void SetStatelessFragmentDefaultActions(Aws::Vector<Aws::String>&& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatelessFragmentDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatelessFragmentDefaultActions(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatelessFragmentDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatelessFragmentDefaultActions(std::move(value)); return *this;}
-    inline NetworkFirewallPolicyDescription& AddStatelessFragmentDefaultActions(const Aws::String& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.push_back(value); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessFragmentDefaultActions(Aws::String&& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.push_back(std::move(value)); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessFragmentDefaultActions(const char* value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.push_back(value); return *this; }
+    template<typename StatelessFragmentDefaultActionsT = Aws::Vector<Aws::String>>
+    void SetStatelessFragmentDefaultActions(StatelessFragmentDefaultActionsT&& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions = std::forward<StatelessFragmentDefaultActionsT>(value); }
+    template<typename StatelessFragmentDefaultActionsT = Aws::Vector<Aws::String>>
+    NetworkFirewallPolicyDescription& WithStatelessFragmentDefaultActions(StatelessFragmentDefaultActionsT&& value) { SetStatelessFragmentDefaultActions(std::forward<StatelessFragmentDefaultActionsT>(value)); return *this;}
+    template<typename StatelessFragmentDefaultActionsT = Aws::String>
+    NetworkFirewallPolicyDescription& AddStatelessFragmentDefaultActions(StatelessFragmentDefaultActionsT&& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.emplace_back(std::forward<StatelessFragmentDefaultActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,15 +92,14 @@ namespace Model
      * <p>Names of custom actions that are available for use in the stateless default
      * actions settings.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStatelessCustomActions() const{ return m_statelessCustomActions; }
+    inline const Aws::Vector<Aws::String>& GetStatelessCustomActions() const { return m_statelessCustomActions; }
     inline bool StatelessCustomActionsHasBeenSet() const { return m_statelessCustomActionsHasBeenSet; }
-    inline void SetStatelessCustomActions(const Aws::Vector<Aws::String>& value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions = value; }
-    inline void SetStatelessCustomActions(Aws::Vector<Aws::String>&& value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatelessCustomActions(const Aws::Vector<Aws::String>& value) { SetStatelessCustomActions(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatelessCustomActions(Aws::Vector<Aws::String>&& value) { SetStatelessCustomActions(std::move(value)); return *this;}
-    inline NetworkFirewallPolicyDescription& AddStatelessCustomActions(const Aws::String& value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions.push_back(value); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessCustomActions(Aws::String&& value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions.push_back(std::move(value)); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatelessCustomActions(const char* value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions.push_back(value); return *this; }
+    template<typename StatelessCustomActionsT = Aws::Vector<Aws::String>>
+    void SetStatelessCustomActions(StatelessCustomActionsT&& value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions = std::forward<StatelessCustomActionsT>(value); }
+    template<typename StatelessCustomActionsT = Aws::Vector<Aws::String>>
+    NetworkFirewallPolicyDescription& WithStatelessCustomActions(StatelessCustomActionsT&& value) { SetStatelessCustomActions(std::forward<StatelessCustomActionsT>(value)); return *this;}
+    template<typename StatelessCustomActionsT = Aws::String>
+    NetworkFirewallPolicyDescription& AddStatelessCustomActions(StatelessCustomActionsT&& value) { m_statelessCustomActionsHasBeenSet = true; m_statelessCustomActions.emplace_back(std::forward<StatelessCustomActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -110,14 +107,14 @@ namespace Model
      * <p>The stateful rule groups that are used in the Network Firewall firewall
      * policy. </p>
      */
-    inline const Aws::Vector<StatefulRuleGroup>& GetStatefulRuleGroups() const{ return m_statefulRuleGroups; }
+    inline const Aws::Vector<StatefulRuleGroup>& GetStatefulRuleGroups() const { return m_statefulRuleGroups; }
     inline bool StatefulRuleGroupsHasBeenSet() const { return m_statefulRuleGroupsHasBeenSet; }
-    inline void SetStatefulRuleGroups(const Aws::Vector<StatefulRuleGroup>& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups = value; }
-    inline void SetStatefulRuleGroups(Aws::Vector<StatefulRuleGroup>&& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatefulRuleGroups(const Aws::Vector<StatefulRuleGroup>& value) { SetStatefulRuleGroups(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatefulRuleGroups(Aws::Vector<StatefulRuleGroup>&& value) { SetStatefulRuleGroups(std::move(value)); return *this;}
-    inline NetworkFirewallPolicyDescription& AddStatefulRuleGroups(const StatefulRuleGroup& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups.push_back(value); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatefulRuleGroups(StatefulRuleGroup&& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups.push_back(std::move(value)); return *this; }
+    template<typename StatefulRuleGroupsT = Aws::Vector<StatefulRuleGroup>>
+    void SetStatefulRuleGroups(StatefulRuleGroupsT&& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups = std::forward<StatefulRuleGroupsT>(value); }
+    template<typename StatefulRuleGroupsT = Aws::Vector<StatefulRuleGroup>>
+    NetworkFirewallPolicyDescription& WithStatefulRuleGroups(StatefulRuleGroupsT&& value) { SetStatefulRuleGroups(std::forward<StatefulRuleGroupsT>(value)); return *this;}
+    template<typename StatefulRuleGroupsT = StatefulRuleGroup>
+    NetworkFirewallPolicyDescription& AddStatefulRuleGroups(StatefulRuleGroupsT&& value) { m_statefulRuleGroupsHasBeenSet = true; m_statefulRuleGroups.emplace_back(std::forward<StatefulRuleGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -128,15 +125,14 @@ namespace Model
      * <ul> <li> <p>aws:drop_strict</p> </li> <li> <p>aws:drop_established</p> </li>
      * <li> <p>aws:alert_strict</p> </li> <li> <p>aws:alert_established</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetStatefulDefaultActions() const{ return m_statefulDefaultActions; }
+    inline const Aws::Vector<Aws::String>& GetStatefulDefaultActions() const { return m_statefulDefaultActions; }
     inline bool StatefulDefaultActionsHasBeenSet() const { return m_statefulDefaultActionsHasBeenSet; }
-    inline void SetStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = value; }
-    inline void SetStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatefulDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatefulDefaultActions(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatefulDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatefulDefaultActions(std::move(value)); return *this;}
-    inline NetworkFirewallPolicyDescription& AddStatefulDefaultActions(const Aws::String& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatefulDefaultActions(Aws::String&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(std::move(value)); return *this; }
-    inline NetworkFirewallPolicyDescription& AddStatefulDefaultActions(const char* value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.push_back(value); return *this; }
+    template<typename StatefulDefaultActionsT = Aws::Vector<Aws::String>>
+    void SetStatefulDefaultActions(StatefulDefaultActionsT&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions = std::forward<StatefulDefaultActionsT>(value); }
+    template<typename StatefulDefaultActionsT = Aws::Vector<Aws::String>>
+    NetworkFirewallPolicyDescription& WithStatefulDefaultActions(StatefulDefaultActionsT&& value) { SetStatefulDefaultActions(std::forward<StatefulDefaultActionsT>(value)); return *this;}
+    template<typename StatefulDefaultActionsT = Aws::String>
+    NetworkFirewallPolicyDescription& AddStatefulDefaultActions(StatefulDefaultActionsT&& value) { m_statefulDefaultActionsHasBeenSet = true; m_statefulDefaultActions.emplace_back(std::forward<StatefulDefaultActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,12 +141,12 @@ namespace Model
      * stateful rule groups that you use in your policy must have stateful rule options
      * settings that are compatible with these settings.</p>
      */
-    inline const StatefulEngineOptions& GetStatefulEngineOptions() const{ return m_statefulEngineOptions; }
+    inline const StatefulEngineOptions& GetStatefulEngineOptions() const { return m_statefulEngineOptions; }
     inline bool StatefulEngineOptionsHasBeenSet() const { return m_statefulEngineOptionsHasBeenSet; }
-    inline void SetStatefulEngineOptions(const StatefulEngineOptions& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = value; }
-    inline void SetStatefulEngineOptions(StatefulEngineOptions&& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = std::move(value); }
-    inline NetworkFirewallPolicyDescription& WithStatefulEngineOptions(const StatefulEngineOptions& value) { SetStatefulEngineOptions(value); return *this;}
-    inline NetworkFirewallPolicyDescription& WithStatefulEngineOptions(StatefulEngineOptions&& value) { SetStatefulEngineOptions(std::move(value)); return *this;}
+    template<typename StatefulEngineOptionsT = StatefulEngineOptions>
+    void SetStatefulEngineOptions(StatefulEngineOptionsT&& value) { m_statefulEngineOptionsHasBeenSet = true; m_statefulEngineOptions = std::forward<StatefulEngineOptionsT>(value); }
+    template<typename StatefulEngineOptionsT = StatefulEngineOptions>
+    NetworkFirewallPolicyDescription& WithStatefulEngineOptions(StatefulEngineOptionsT&& value) { SetStatefulEngineOptions(std::forward<StatefulEngineOptionsT>(value)); return *this;}
     ///@}
   private:
 

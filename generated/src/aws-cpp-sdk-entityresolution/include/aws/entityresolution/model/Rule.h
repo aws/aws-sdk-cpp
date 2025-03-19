@@ -33,7 +33,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_ENTITYRESOLUTION_API Rule();
+    AWS_ENTITYRESOLUTION_API Rule() = default;
     AWS_ENTITYRESOLUTION_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
      * been defined in the <code>SchemaMapping</code>. Two records are considered to
      * match according to this rule if all of the <code>MatchingKeys</code> match.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchingKeys() const{ return m_matchingKeys; }
+    inline const Aws::Vector<Aws::String>& GetMatchingKeys() const { return m_matchingKeys; }
     inline bool MatchingKeysHasBeenSet() const { return m_matchingKeysHasBeenSet; }
-    inline void SetMatchingKeys(const Aws::Vector<Aws::String>& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys = value; }
-    inline void SetMatchingKeys(Aws::Vector<Aws::String>&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys = std::move(value); }
-    inline Rule& WithMatchingKeys(const Aws::Vector<Aws::String>& value) { SetMatchingKeys(value); return *this;}
-    inline Rule& WithMatchingKeys(Aws::Vector<Aws::String>&& value) { SetMatchingKeys(std::move(value)); return *this;}
-    inline Rule& AddMatchingKeys(const Aws::String& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.push_back(value); return *this; }
-    inline Rule& AddMatchingKeys(Aws::String&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.push_back(std::move(value)); return *this; }
-    inline Rule& AddMatchingKeys(const char* value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.push_back(value); return *this; }
+    template<typename MatchingKeysT = Aws::Vector<Aws::String>>
+    void SetMatchingKeys(MatchingKeysT&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys = std::forward<MatchingKeysT>(value); }
+    template<typename MatchingKeysT = Aws::Vector<Aws::String>>
+    Rule& WithMatchingKeys(MatchingKeysT&& value) { SetMatchingKeys(std::forward<MatchingKeysT>(value)); return *this;}
+    template<typename MatchingKeysT = Aws::String>
+    Rule& AddMatchingKeys(MatchingKeysT&& value) { m_matchingKeysHasBeenSet = true; m_matchingKeys.emplace_back(std::forward<MatchingKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A name for the matching rule.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline Rule& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline Rule& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline Rule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    Rule& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-PathOptions::PathOptions() : 
-    m_lastModifiedDateConditionHasBeenSet(false),
-    m_filesLimitHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 PathOptions::PathOptions(JsonView jsonValue)
-  : PathOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PathOptions& PathOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastModifiedDateCondition"))
   {
     m_lastModifiedDateCondition = jsonValue.GetObject("LastModifiedDateCondition");
-
     m_lastModifiedDateConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilesLimit"))
   {
     m_filesLimit = jsonValue.GetObject("FilesLimit");
-
     m_filesLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -56,7 +44,6 @@ PathOptions& PathOptions::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

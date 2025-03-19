@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOfferingRequest::DescribeOfferingRequest() : 
-    m_offeringIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOfferingRequest::SerializePayload() const
 {
   return {};

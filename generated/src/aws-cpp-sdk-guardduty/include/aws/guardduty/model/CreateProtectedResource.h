@@ -33,7 +33,7 @@ namespace Model
   class CreateProtectedResource
   {
   public:
-    AWS_GUARDDUTY_API CreateProtectedResource();
+    AWS_GUARDDUTY_API CreateProtectedResource() = default;
     AWS_GUARDDUTY_API CreateProtectedResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CreateProtectedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Information about the protected S3 bucket resource.</p>
      */
-    inline const CreateS3BucketResource& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const CreateS3BucketResource& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const CreateS3BucketResource& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(CreateS3BucketResource&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline CreateProtectedResource& WithS3Bucket(const CreateS3BucketResource& value) { SetS3Bucket(value); return *this;}
-    inline CreateProtectedResource& WithS3Bucket(CreateS3BucketResource&& value) { SetS3Bucket(std::move(value)); return *this;}
+    template<typename S3BucketT = CreateS3BucketResource>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = CreateS3BucketResource>
+    CreateProtectedResource& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
   private:
 

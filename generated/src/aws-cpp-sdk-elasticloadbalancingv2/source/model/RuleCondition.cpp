@@ -20,20 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-RuleCondition::RuleCondition() : 
-    m_fieldHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_hostHeaderConfigHasBeenSet(false),
-    m_pathPatternConfigHasBeenSet(false),
-    m_httpHeaderConfigHasBeenSet(false),
-    m_queryStringConfigHasBeenSet(false),
-    m_httpRequestMethodConfigHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
-{
-}
-
 RuleCondition::RuleCondition(const XmlNode& xmlNode)
-  : RuleCondition()
 {
   *this = xmlNode;
 }
@@ -54,6 +41,7 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

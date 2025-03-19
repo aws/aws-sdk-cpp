@@ -12,11 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAllowedNodeTypeUpdatesRequest::ListAllowedNodeTypeUpdatesRequest() : 
-    m_clusterNameHasBeenSet(false)
-{
-}
-
 Aws::String ListAllowedNodeTypeUpdatesRequest::SerializePayload() const
 {
   JsonValue payload;

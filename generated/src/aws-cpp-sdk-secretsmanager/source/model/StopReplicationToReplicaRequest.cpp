@@ -12,11 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopReplicationToReplicaRequest::StopReplicationToReplicaRequest() : 
-    m_secretIdHasBeenSet(false)
-{
-}
-
 Aws::String StopReplicationToReplicaRequest::SerializePayload() const
 {
   JsonValue payload;

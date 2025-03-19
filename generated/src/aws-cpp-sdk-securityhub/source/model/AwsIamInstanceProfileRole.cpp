@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamInstanceProfileRole::AwsIamInstanceProfileRole() : 
-    m_arnHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
-{
-}
-
 AwsIamInstanceProfileRole::AwsIamInstanceProfileRole(JsonView jsonValue)
-  : AwsIamInstanceProfileRole()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AwsIamInstanceProfileRole& AwsIamInstanceProfileRole::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssumeRolePolicyDocument"))
   {
     m_assumeRolePolicyDocument = jsonValue.GetString("AssumeRolePolicyDocument");
-
     m_assumeRolePolicyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleId"))
   {
     m_roleId = jsonValue.GetString("RoleId");
-
     m_roleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleName"))
   {
     m_roleName = jsonValue.GetString("RoleName");
-
     m_roleNameHasBeenSet = true;
   }
-
   return *this;
 }
 

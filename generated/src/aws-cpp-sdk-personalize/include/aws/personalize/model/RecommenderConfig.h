@@ -33,7 +33,7 @@ namespace Model
   class RecommenderConfig
   {
   public:
-    AWS_PERSONALIZE_API RecommenderConfig();
+    AWS_PERSONALIZE_API RecommenderConfig() = default;
     AWS_PERSONALIZE_API RecommenderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API RecommenderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,19 +48,16 @@ namespace Model
      * your recommenders generate personalized recommendations for a user (not popular
      * items or similar items).</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetItemExplorationConfig() const{ return m_itemExplorationConfig; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetItemExplorationConfig() const { return m_itemExplorationConfig; }
     inline bool ItemExplorationConfigHasBeenSet() const { return m_itemExplorationConfigHasBeenSet; }
-    inline void SetItemExplorationConfig(const Aws::Map<Aws::String, Aws::String>& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig = value; }
-    inline void SetItemExplorationConfig(Aws::Map<Aws::String, Aws::String>&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig = std::move(value); }
-    inline RecommenderConfig& WithItemExplorationConfig(const Aws::Map<Aws::String, Aws::String>& value) { SetItemExplorationConfig(value); return *this;}
-    inline RecommenderConfig& WithItemExplorationConfig(Aws::Map<Aws::String, Aws::String>&& value) { SetItemExplorationConfig(std::move(value)); return *this;}
-    inline RecommenderConfig& AddItemExplorationConfig(const Aws::String& key, const Aws::String& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, value); return *this; }
-    inline RecommenderConfig& AddItemExplorationConfig(Aws::String&& key, const Aws::String& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::move(key), value); return *this; }
-    inline RecommenderConfig& AddItemExplorationConfig(const Aws::String& key, Aws::String&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, std::move(value)); return *this; }
-    inline RecommenderConfig& AddItemExplorationConfig(Aws::String&& key, Aws::String&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::move(key), std::move(value)); return *this; }
-    inline RecommenderConfig& AddItemExplorationConfig(const char* key, Aws::String&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, std::move(value)); return *this; }
-    inline RecommenderConfig& AddItemExplorationConfig(Aws::String&& key, const char* value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::move(key), value); return *this; }
-    inline RecommenderConfig& AddItemExplorationConfig(const char* key, const char* value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, value); return *this; }
+    template<typename ItemExplorationConfigT = Aws::Map<Aws::String, Aws::String>>
+    void SetItemExplorationConfig(ItemExplorationConfigT&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig = std::forward<ItemExplorationConfigT>(value); }
+    template<typename ItemExplorationConfigT = Aws::Map<Aws::String, Aws::String>>
+    RecommenderConfig& WithItemExplorationConfig(ItemExplorationConfigT&& value) { SetItemExplorationConfig(std::forward<ItemExplorationConfigT>(value)); return *this;}
+    template<typename ItemExplorationConfigKeyT = Aws::String, typename ItemExplorationConfigValueT = Aws::String>
+    RecommenderConfig& AddItemExplorationConfig(ItemExplorationConfigKeyT&& key, ItemExplorationConfigValueT&& value) {
+      m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::forward<ItemExplorationConfigKeyT>(key), std::forward<ItemExplorationConfigValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -72,7 +69,7 @@ namespace Model
      * (the default). Track your usage using Amazon CloudWatch metrics, and increase
      * the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
      */
-    inline int GetMinRecommendationRequestsPerSecond() const{ return m_minRecommendationRequestsPerSecond; }
+    inline int GetMinRecommendationRequestsPerSecond() const { return m_minRecommendationRequestsPerSecond; }
     inline bool MinRecommendationRequestsPerSecondHasBeenSet() const { return m_minRecommendationRequestsPerSecondHasBeenSet; }
     inline void SetMinRecommendationRequestsPerSecond(int value) { m_minRecommendationRequestsPerSecondHasBeenSet = true; m_minRecommendationRequestsPerSecond = value; }
     inline RecommenderConfig& WithMinRecommendationRequestsPerSecond(int value) { SetMinRecommendationRequestsPerSecond(value); return *this;}
@@ -83,12 +80,12 @@ namespace Model
      * <p> Specifies the training data configuration to use when creating a domain
      * recommender. </p>
      */
-    inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
+    inline const TrainingDataConfig& GetTrainingDataConfig() const { return m_trainingDataConfig; }
     inline bool TrainingDataConfigHasBeenSet() const { return m_trainingDataConfigHasBeenSet; }
-    inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = value; }
-    inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = std::move(value); }
-    inline RecommenderConfig& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
-    inline RecommenderConfig& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
+    template<typename TrainingDataConfigT = TrainingDataConfig>
+    void SetTrainingDataConfig(TrainingDataConfigT&& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = std::forward<TrainingDataConfigT>(value); }
+    template<typename TrainingDataConfigT = TrainingDataConfig>
+    RecommenderConfig& WithTrainingDataConfig(TrainingDataConfigT&& value) { SetTrainingDataConfig(std::forward<TrainingDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +101,7 @@ namespace Model
      * information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
      * Personalize pricing</a>. </p>
      */
-    inline bool GetEnableMetadataWithRecommendations() const{ return m_enableMetadataWithRecommendations; }
+    inline bool GetEnableMetadataWithRecommendations() const { return m_enableMetadataWithRecommendations; }
     inline bool EnableMetadataWithRecommendationsHasBeenSet() const { return m_enableMetadataWithRecommendationsHasBeenSet; }
     inline void SetEnableMetadataWithRecommendations(bool value) { m_enableMetadataWithRecommendationsHasBeenSet = true; m_enableMetadataWithRecommendations = value; }
     inline RecommenderConfig& WithEnableMetadataWithRecommendations(bool value) { SetEnableMetadataWithRecommendations(value); return *this;}
@@ -114,13 +111,13 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
     bool m_itemExplorationConfigHasBeenSet = false;
 
-    int m_minRecommendationRequestsPerSecond;
+    int m_minRecommendationRequestsPerSecond{0};
     bool m_minRecommendationRequestsPerSecondHasBeenSet = false;
 
     TrainingDataConfig m_trainingDataConfig;
     bool m_trainingDataConfigHasBeenSet = false;
 
-    bool m_enableMetadataWithRecommendations;
+    bool m_enableMetadataWithRecommendations{false};
     bool m_enableMetadataWithRecommendationsHasBeenSet = false;
   };
 

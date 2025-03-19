@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PauseServiceRequest::PauseServiceRequest() : 
-    m_serviceArnHasBeenSet(false)
-{
-}
-
 Aws::String PauseServiceRequest::SerializePayload() const
 {
   JsonValue payload;

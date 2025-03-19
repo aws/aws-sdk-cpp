@@ -30,7 +30,7 @@ namespace Model
   class Capacity
   {
   public:
-    AWS_DATASYNC_API Capacity();
+    AWS_DATASYNC_API Capacity() = default;
     AWS_DATASYNC_API Capacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The amount of space that's being used in a storage system resource.</p>
      */
-    inline long long GetUsed() const{ return m_used; }
+    inline long long GetUsed() const { return m_used; }
     inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
     inline void SetUsed(long long value) { m_usedHasBeenSet = true; m_used = value; }
     inline Capacity& WithUsed(long long value) { SetUsed(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The total amount of space available in a storage system resource.</p>
      */
-    inline long long GetProvisioned() const{ return m_provisioned; }
+    inline long long GetProvisioned() const { return m_provisioned; }
     inline bool ProvisionedHasBeenSet() const { return m_provisionedHasBeenSet; }
     inline void SetProvisioned(long long value) { m_provisionedHasBeenSet = true; m_provisioned = value; }
     inline Capacity& WithProvisioned(long long value) { SetProvisioned(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
      * <p>The amount of space that's being used in a storage system resource without
      * accounting for compression or deduplication.</p>
      */
-    inline long long GetLogicalUsed() const{ return m_logicalUsed; }
+    inline long long GetLogicalUsed() const { return m_logicalUsed; }
     inline bool LogicalUsedHasBeenSet() const { return m_logicalUsedHasBeenSet; }
     inline void SetLogicalUsed(long long value) { m_logicalUsedHasBeenSet = true; m_logicalUsed = value; }
     inline Capacity& WithLogicalUsed(long long value) { SetLogicalUsed(value); return *this;}
@@ -72,23 +72,23 @@ namespace Model
      * <p>The amount of space in the cluster that's in cloud storage (for example, if
      * you're using data tiering).</p>
      */
-    inline long long GetClusterCloudStorageUsed() const{ return m_clusterCloudStorageUsed; }
+    inline long long GetClusterCloudStorageUsed() const { return m_clusterCloudStorageUsed; }
     inline bool ClusterCloudStorageUsedHasBeenSet() const { return m_clusterCloudStorageUsedHasBeenSet; }
     inline void SetClusterCloudStorageUsed(long long value) { m_clusterCloudStorageUsedHasBeenSet = true; m_clusterCloudStorageUsed = value; }
     inline Capacity& WithClusterCloudStorageUsed(long long value) { SetClusterCloudStorageUsed(value); return *this;}
     ///@}
   private:
 
-    long long m_used;
+    long long m_used{0};
     bool m_usedHasBeenSet = false;
 
-    long long m_provisioned;
+    long long m_provisioned{0};
     bool m_provisionedHasBeenSet = false;
 
-    long long m_logicalUsed;
+    long long m_logicalUsed{0};
     bool m_logicalUsedHasBeenSet = false;
 
-    long long m_clusterCloudStorageUsed;
+    long long m_clusterCloudStorageUsed{0};
     bool m_clusterCloudStorageUsedHasBeenSet = false;
   };
 

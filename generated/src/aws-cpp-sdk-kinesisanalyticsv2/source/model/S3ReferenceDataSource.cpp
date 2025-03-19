@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-S3ReferenceDataSource::S3ReferenceDataSource() : 
-    m_bucketARNHasBeenSet(false),
-    m_fileKeyHasBeenSet(false)
-{
-}
-
 S3ReferenceDataSource::S3ReferenceDataSource(JsonView jsonValue)
-  : S3ReferenceDataSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3ReferenceDataSource& S3ReferenceDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketARN"))
   {
     m_bucketARN = jsonValue.GetString("BucketARN");
-
     m_bucketARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileKey"))
   {
     m_fileKey = jsonValue.GetString("FileKey");
-
     m_fileKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

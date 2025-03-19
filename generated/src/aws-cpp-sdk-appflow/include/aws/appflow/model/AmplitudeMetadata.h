@@ -29,7 +29,7 @@ namespace Model
   class AmplitudeMetadata
   {
   public:
-    AWS_APPFLOW_API AmplitudeMetadata();
+    AWS_APPFLOW_API AmplitudeMetadata() = default;
     AWS_APPFLOW_API AmplitudeMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API AmplitudeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

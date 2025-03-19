@@ -158,7 +158,7 @@ namespace Model
   class ConstraintViolationException
   {
   public:
-    AWS_ORGANIZATIONS_API ConstraintViolationException();
+    AWS_ORGANIZATIONS_API ConstraintViolationException() = default;
     AWS_ORGANIZATIONS_API ConstraintViolationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API ConstraintViolationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -166,31 +166,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ConstraintViolationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ConstraintViolationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ConstraintViolationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ConstraintViolationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConstraintViolationExceptionReason& GetReason() const{ return m_reason; }
+    inline ConstraintViolationExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ConstraintViolationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ConstraintViolationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline ConstraintViolationException& WithReason(const ConstraintViolationExceptionReason& value) { SetReason(value); return *this;}
-    inline ConstraintViolationException& WithReason(ConstraintViolationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ConstraintViolationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ConstraintViolationException& WithReason(ConstraintViolationExceptionReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ConstraintViolationExceptionReason m_reason;
+    ConstraintViolationExceptionReason m_reason{ConstraintViolationExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

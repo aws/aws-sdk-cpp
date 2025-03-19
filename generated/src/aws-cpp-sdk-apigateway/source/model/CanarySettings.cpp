@@ -18,18 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-CanarySettings::CanarySettings() : 
-    m_percentTraffic(0.0),
-    m_percentTrafficHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_stageVariableOverridesHasBeenSet(false),
-    m_useStageCache(false),
-    m_useStageCacheHasBeenSet(false)
-{
-}
-
 CanarySettings::CanarySettings(JsonView jsonValue)
-  : CanarySettings()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ CanarySettings& CanarySettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("percentTraffic"))
   {
     m_percentTraffic = jsonValue.GetDouble("percentTraffic");
-
     m_percentTrafficHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageVariableOverrides"))
   {
     Aws::Map<Aws::String, JsonView> stageVariableOverridesJsonMap = jsonValue.GetObject("stageVariableOverrides").GetAllObjects();
@@ -59,14 +44,11 @@ CanarySettings& CanarySettings::operator =(JsonView jsonValue)
     }
     m_stageVariableOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useStageCache"))
   {
     m_useStageCache = jsonValue.GetBool("useStageCache");
-
     m_useStageCacheHasBeenSet = true;
   }
-
   return *this;
 }
 

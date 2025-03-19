@@ -18,21 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-EC2ResourceDetails::EC2ResourceDetails() : 
-    m_hourlyOnDemandRateHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_skuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_networkPerformanceHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_vcpuHasBeenSet(false)
-{
-}
-
 EC2ResourceDetails::EC2ResourceDetails(JsonView jsonValue)
-  : EC2ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ EC2ResourceDetails& EC2ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HourlyOnDemandRate"))
   {
     m_hourlyOnDemandRate = jsonValue.GetString("HourlyOnDemandRate");
-
     m_hourlyOnDemandRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sku"))
   {
     m_sku = jsonValue.GetString("Sku");
-
     m_skuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Memory"))
   {
     m_memory = jsonValue.GetString("Memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkPerformance"))
   {
     m_networkPerformance = jsonValue.GetString("NetworkPerformance");
-
     m_networkPerformanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Storage"))
   {
     m_storage = jsonValue.GetString("Storage");
-
     m_storageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vcpu"))
   {
     m_vcpu = jsonValue.GetString("Vcpu");
-
     m_vcpuHasBeenSet = true;
   }
-
   return *this;
 }
 

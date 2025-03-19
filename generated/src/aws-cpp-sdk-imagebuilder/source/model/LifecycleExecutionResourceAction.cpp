@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecycleExecutionResourceAction::LifecycleExecutionResourceAction() : 
-    m_name(LifecycleExecutionResourceActionName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 LifecycleExecutionResourceAction::LifecycleExecutionResourceAction(JsonView jsonValue)
-  : LifecycleExecutionResourceAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LifecycleExecutionResourceAction& LifecycleExecutionResourceAction::operator =(J
   if(jsonValue.ValueExists("name"))
   {
     m_name = LifecycleExecutionResourceActionNameMapper::GetLifecycleExecutionResourceActionNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

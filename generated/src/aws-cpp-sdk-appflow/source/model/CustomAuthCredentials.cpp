@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomAuthCredentials::CustomAuthCredentials() : 
-    m_customAuthenticationTypeHasBeenSet(false),
-    m_credentialsMapHasBeenSet(false)
-{
-}
-
 CustomAuthCredentials::CustomAuthCredentials(JsonView jsonValue)
-  : CustomAuthCredentials()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomAuthCredentials& CustomAuthCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customAuthenticationType"))
   {
     m_customAuthenticationType = jsonValue.GetString("customAuthenticationType");
-
     m_customAuthenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialsMap"))
   {
     Aws::Map<Aws::String, JsonView> credentialsMapJsonMap = jsonValue.GetObject("credentialsMap").GetAllObjects();
@@ -48,7 +39,6 @@ CustomAuthCredentials& CustomAuthCredentials::operator =(JsonView jsonValue)
     }
     m_credentialsMapHasBeenSet = true;
   }
-
   return *this;
 }
 

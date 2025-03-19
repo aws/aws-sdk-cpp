@@ -24,7 +24,7 @@ namespace Model
   class UpdateBucketRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API UpdateBucketRequest();
+    AWS_LIGHTSAIL_API UpdateBucketRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the bucket to update.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline UpdateBucketRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline UpdateBucketRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline UpdateBucketRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    UpdateBucketRequest& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,12 @@ namespace Model
      * <p>An object that sets the public accessibility of objects in the specified
      * bucket.</p>
      */
-    inline const AccessRules& GetAccessRules() const{ return m_accessRules; }
+    inline const AccessRules& GetAccessRules() const { return m_accessRules; }
     inline bool AccessRulesHasBeenSet() const { return m_accessRulesHasBeenSet; }
-    inline void SetAccessRules(const AccessRules& value) { m_accessRulesHasBeenSet = true; m_accessRules = value; }
-    inline void SetAccessRules(AccessRules&& value) { m_accessRulesHasBeenSet = true; m_accessRules = std::move(value); }
-    inline UpdateBucketRequest& WithAccessRules(const AccessRules& value) { SetAccessRules(value); return *this;}
-    inline UpdateBucketRequest& WithAccessRules(AccessRules&& value) { SetAccessRules(std::move(value)); return *this;}
+    template<typename AccessRulesT = AccessRules>
+    void SetAccessRules(AccessRulesT&& value) { m_accessRulesHasBeenSet = true; m_accessRules = std::forward<AccessRulesT>(value); }
+    template<typename AccessRulesT = AccessRules>
+    UpdateBucketRequest& WithAccessRules(AccessRulesT&& value) { SetAccessRules(std::forward<AccessRulesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * objects in the specified bucket. Existing object versions are retained.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetVersioning() const{ return m_versioning; }
+    inline const Aws::String& GetVersioning() const { return m_versioning; }
     inline bool VersioningHasBeenSet() const { return m_versioningHasBeenSet; }
-    inline void SetVersioning(const Aws::String& value) { m_versioningHasBeenSet = true; m_versioning = value; }
-    inline void SetVersioning(Aws::String&& value) { m_versioningHasBeenSet = true; m_versioning = std::move(value); }
-    inline void SetVersioning(const char* value) { m_versioningHasBeenSet = true; m_versioning.assign(value); }
-    inline UpdateBucketRequest& WithVersioning(const Aws::String& value) { SetVersioning(value); return *this;}
-    inline UpdateBucketRequest& WithVersioning(Aws::String&& value) { SetVersioning(std::move(value)); return *this;}
-    inline UpdateBucketRequest& WithVersioning(const char* value) { SetVersioning(value); return *this;}
+    template<typename VersioningT = Aws::String>
+    void SetVersioning(VersioningT&& value) { m_versioningHasBeenSet = true; m_versioning = std::forward<VersioningT>(value); }
+    template<typename VersioningT = Aws::String>
+    UpdateBucketRequest& WithVersioning(VersioningT&& value) { SetVersioning(std::forward<VersioningT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,27 +85,26 @@ namespace Model
      * access the bucket.</p> <p>You can give a maximum of 10 Amazon Web Services
      * accounts access to a bucket.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const{ return m_readonlyAccessAccounts; }
+    inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const { return m_readonlyAccessAccounts; }
     inline bool ReadonlyAccessAccountsHasBeenSet() const { return m_readonlyAccessAccountsHasBeenSet; }
-    inline void SetReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = value; }
-    inline void SetReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::move(value); }
-    inline UpdateBucketRequest& WithReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { SetReadonlyAccessAccounts(value); return *this;}
-    inline UpdateBucketRequest& WithReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { SetReadonlyAccessAccounts(std::move(value)); return *this;}
-    inline UpdateBucketRequest& AddReadonlyAccessAccounts(const Aws::String& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
-    inline UpdateBucketRequest& AddReadonlyAccessAccounts(Aws::String&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(std::move(value)); return *this; }
-    inline UpdateBucketRequest& AddReadonlyAccessAccounts(const char* value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
+    template<typename ReadonlyAccessAccountsT = Aws::Vector<Aws::String>>
+    void SetReadonlyAccessAccounts(ReadonlyAccessAccountsT&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::forward<ReadonlyAccessAccountsT>(value); }
+    template<typename ReadonlyAccessAccountsT = Aws::Vector<Aws::String>>
+    UpdateBucketRequest& WithReadonlyAccessAccounts(ReadonlyAccessAccountsT&& value) { SetReadonlyAccessAccounts(std::forward<ReadonlyAccessAccountsT>(value)); return *this;}
+    template<typename ReadonlyAccessAccountsT = Aws::String>
+    UpdateBucketRequest& AddReadonlyAccessAccounts(ReadonlyAccessAccountsT&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.emplace_back(std::forward<ReadonlyAccessAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An object that describes the access log configuration for the bucket.</p>
      */
-    inline const BucketAccessLogConfig& GetAccessLogConfig() const{ return m_accessLogConfig; }
+    inline const BucketAccessLogConfig& GetAccessLogConfig() const { return m_accessLogConfig; }
     inline bool AccessLogConfigHasBeenSet() const { return m_accessLogConfigHasBeenSet; }
-    inline void SetAccessLogConfig(const BucketAccessLogConfig& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = value; }
-    inline void SetAccessLogConfig(BucketAccessLogConfig&& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = std::move(value); }
-    inline UpdateBucketRequest& WithAccessLogConfig(const BucketAccessLogConfig& value) { SetAccessLogConfig(value); return *this;}
-    inline UpdateBucketRequest& WithAccessLogConfig(BucketAccessLogConfig&& value) { SetAccessLogConfig(std::move(value)); return *this;}
+    template<typename AccessLogConfigT = BucketAccessLogConfig>
+    void SetAccessLogConfig(AccessLogConfigT&& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = std::forward<AccessLogConfigT>(value); }
+    template<typename AccessLogConfigT = BucketAccessLogConfig>
+    UpdateBucketRequest& WithAccessLogConfig(AccessLogConfigT&& value) { SetAccessLogConfig(std::forward<AccessLogConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class GetTrainingDatasetRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API GetTrainingDatasetRequest();
+    AWS_CLEANROOMSML_API GetTrainingDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the training dataset that you are
      * interested in.</p>
      */
-    inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
+    inline const Aws::String& GetTrainingDatasetArn() const { return m_trainingDatasetArn; }
     inline bool TrainingDatasetArnHasBeenSet() const { return m_trainingDatasetArnHasBeenSet; }
-    inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = value; }
-    inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::move(value); }
-    inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn.assign(value); }
-    inline GetTrainingDatasetRequest& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
-    inline GetTrainingDatasetRequest& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
-    inline GetTrainingDatasetRequest& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
+    template<typename TrainingDatasetArnT = Aws::String>
+    void SetTrainingDatasetArn(TrainingDatasetArnT&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::forward<TrainingDatasetArnT>(value); }
+    template<typename TrainingDatasetArnT = Aws::String>
+    GetTrainingDatasetRequest& WithTrainingDatasetArn(TrainingDatasetArnT&& value) { SetTrainingDatasetArn(std::forward<TrainingDatasetArnT>(value)); return *this;}
     ///@}
   private:
 

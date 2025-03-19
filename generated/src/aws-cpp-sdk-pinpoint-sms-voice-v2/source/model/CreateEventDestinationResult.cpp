@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventDestinationResult::CreateEventDestinationResult()
-{
-}
-
 CreateEventDestinationResult::CreateEventDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateEventDestinationResult& CreateEventDestinationResult::operator =(const Aws
   if(jsonValue.ValueExists("ConfigurationSetArn"))
   {
     m_configurationSetArn = jsonValue.GetString("ConfigurationSetArn");
-
+    m_configurationSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSetName"))
   {
     m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
-
+    m_configurationSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDestination"))
   {
     m_eventDestination = jsonValue.GetObject("EventDestination");
-
+    m_eventDestinationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

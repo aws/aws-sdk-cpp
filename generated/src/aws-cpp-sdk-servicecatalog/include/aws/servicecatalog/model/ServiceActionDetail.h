@@ -35,7 +35,7 @@ namespace Model
   class ServiceActionDetail
   {
   public:
-    AWS_SERVICECATALOG_API ServiceActionDetail();
+    AWS_SERVICECATALOG_API ServiceActionDetail() = default;
     AWS_SERVICECATALOG_API ServiceActionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ServiceActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,27 @@ namespace Model
     /**
      * <p>Summary information about the self-service action.</p>
      */
-    inline const ServiceActionSummary& GetServiceActionSummary() const{ return m_serviceActionSummary; }
+    inline const ServiceActionSummary& GetServiceActionSummary() const { return m_serviceActionSummary; }
     inline bool ServiceActionSummaryHasBeenSet() const { return m_serviceActionSummaryHasBeenSet; }
-    inline void SetServiceActionSummary(const ServiceActionSummary& value) { m_serviceActionSummaryHasBeenSet = true; m_serviceActionSummary = value; }
-    inline void SetServiceActionSummary(ServiceActionSummary&& value) { m_serviceActionSummaryHasBeenSet = true; m_serviceActionSummary = std::move(value); }
-    inline ServiceActionDetail& WithServiceActionSummary(const ServiceActionSummary& value) { SetServiceActionSummary(value); return *this;}
-    inline ServiceActionDetail& WithServiceActionSummary(ServiceActionSummary&& value) { SetServiceActionSummary(std::move(value)); return *this;}
+    template<typename ServiceActionSummaryT = ServiceActionSummary>
+    void SetServiceActionSummary(ServiceActionSummaryT&& value) { m_serviceActionSummaryHasBeenSet = true; m_serviceActionSummary = std::forward<ServiceActionSummaryT>(value); }
+    template<typename ServiceActionSummaryT = ServiceActionSummary>
+    ServiceActionDetail& WithServiceActionSummary(ServiceActionSummaryT&& value) { SetServiceActionSummary(std::forward<ServiceActionSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map that defines the self-service action.</p>
      */
-    inline const Aws::Map<ServiceActionDefinitionKey, Aws::String>& GetDefinition() const{ return m_definition; }
+    inline const Aws::Map<ServiceActionDefinitionKey, Aws::String>& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::Map<ServiceActionDefinitionKey, Aws::String>& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::Map<ServiceActionDefinitionKey, Aws::String>&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline ServiceActionDetail& WithDefinition(const Aws::Map<ServiceActionDefinitionKey, Aws::String>& value) { SetDefinition(value); return *this;}
-    inline ServiceActionDetail& WithDefinition(Aws::Map<ServiceActionDefinitionKey, Aws::String>&& value) { SetDefinition(std::move(value)); return *this;}
-    inline ServiceActionDetail& AddDefinition(const ServiceActionDefinitionKey& key, const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.emplace(key, value); return *this; }
-    inline ServiceActionDetail& AddDefinition(ServiceActionDefinitionKey&& key, const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.emplace(std::move(key), value); return *this; }
-    inline ServiceActionDetail& AddDefinition(const ServiceActionDefinitionKey& key, Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.emplace(key, std::move(value)); return *this; }
-    inline ServiceActionDetail& AddDefinition(ServiceActionDefinitionKey&& key, Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.emplace(std::move(key), std::move(value)); return *this; }
-    inline ServiceActionDetail& AddDefinition(ServiceActionDefinitionKey&& key, const char* value) { m_definitionHasBeenSet = true; m_definition.emplace(std::move(key), value); return *this; }
-    inline ServiceActionDetail& AddDefinition(const ServiceActionDefinitionKey& key, const char* value) { m_definitionHasBeenSet = true; m_definition.emplace(key, value); return *this; }
+    template<typename DefinitionT = Aws::Map<ServiceActionDefinitionKey, Aws::String>>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::Map<ServiceActionDefinitionKey, Aws::String>>
+    ServiceActionDetail& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    inline ServiceActionDetail& AddDefinition(ServiceActionDefinitionKey key, Aws::String value) {
+      m_definitionHasBeenSet = true; m_definition.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

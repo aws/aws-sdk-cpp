@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-UpdateTaintsPayload::UpdateTaintsPayload() : 
-    m_addOrUpdateTaintsHasBeenSet(false),
-    m_removeTaintsHasBeenSet(false)
-{
-}
-
 UpdateTaintsPayload::UpdateTaintsPayload(JsonView jsonValue)
-  : UpdateTaintsPayload()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ UpdateTaintsPayload& UpdateTaintsPayload::operator =(JsonView jsonValue)
     }
     m_addOrUpdateTaintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("removeTaints"))
   {
     Aws::Utils::Array<JsonView> removeTaintsJsonList = jsonValue.GetArray("removeTaints");
@@ -51,7 +43,6 @@ UpdateTaintsPayload& UpdateTaintsPayload::operator =(JsonView jsonValue)
     }
     m_removeTaintsHasBeenSet = true;
   }
-
   return *this;
 }
 

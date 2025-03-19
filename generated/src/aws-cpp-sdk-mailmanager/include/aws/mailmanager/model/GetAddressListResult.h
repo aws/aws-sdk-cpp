@@ -28,7 +28,7 @@ namespace Model
   class GetAddressListResult
   {
   public:
-    AWS_MAILMANAGER_API GetAddressListResult();
+    AWS_MAILMANAGER_API GetAddressListResult() = default;
     AWS_MAILMANAGER_API GetAddressListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetAddressListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,86 +37,84 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the address list resource.</p>
      */
-    inline const Aws::String& GetAddressListArn() const{ return m_addressListArn; }
-    inline void SetAddressListArn(const Aws::String& value) { m_addressListArn = value; }
-    inline void SetAddressListArn(Aws::String&& value) { m_addressListArn = std::move(value); }
-    inline void SetAddressListArn(const char* value) { m_addressListArn.assign(value); }
-    inline GetAddressListResult& WithAddressListArn(const Aws::String& value) { SetAddressListArn(value); return *this;}
-    inline GetAddressListResult& WithAddressListArn(Aws::String&& value) { SetAddressListArn(std::move(value)); return *this;}
-    inline GetAddressListResult& WithAddressListArn(const char* value) { SetAddressListArn(value); return *this;}
+    inline const Aws::String& GetAddressListArn() const { return m_addressListArn; }
+    template<typename AddressListArnT = Aws::String>
+    void SetAddressListArn(AddressListArnT&& value) { m_addressListArnHasBeenSet = true; m_addressListArn = std::forward<AddressListArnT>(value); }
+    template<typename AddressListArnT = Aws::String>
+    GetAddressListResult& WithAddressListArn(AddressListArnT&& value) { SetAddressListArn(std::forward<AddressListArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the address list resource.</p>
      */
-    inline const Aws::String& GetAddressListId() const{ return m_addressListId; }
-    inline void SetAddressListId(const Aws::String& value) { m_addressListId = value; }
-    inline void SetAddressListId(Aws::String&& value) { m_addressListId = std::move(value); }
-    inline void SetAddressListId(const char* value) { m_addressListId.assign(value); }
-    inline GetAddressListResult& WithAddressListId(const Aws::String& value) { SetAddressListId(value); return *this;}
-    inline GetAddressListResult& WithAddressListId(Aws::String&& value) { SetAddressListId(std::move(value)); return *this;}
-    inline GetAddressListResult& WithAddressListId(const char* value) { SetAddressListId(value); return *this;}
+    inline const Aws::String& GetAddressListId() const { return m_addressListId; }
+    template<typename AddressListIdT = Aws::String>
+    void SetAddressListId(AddressListIdT&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::forward<AddressListIdT>(value); }
+    template<typename AddressListIdT = Aws::String>
+    GetAddressListResult& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-friendly name for the address list resource.</p>
      */
-    inline const Aws::String& GetAddressListName() const{ return m_addressListName; }
-    inline void SetAddressListName(const Aws::String& value) { m_addressListName = value; }
-    inline void SetAddressListName(Aws::String&& value) { m_addressListName = std::move(value); }
-    inline void SetAddressListName(const char* value) { m_addressListName.assign(value); }
-    inline GetAddressListResult& WithAddressListName(const Aws::String& value) { SetAddressListName(value); return *this;}
-    inline GetAddressListResult& WithAddressListName(Aws::String&& value) { SetAddressListName(std::move(value)); return *this;}
-    inline GetAddressListResult& WithAddressListName(const char* value) { SetAddressListName(value); return *this;}
+    inline const Aws::String& GetAddressListName() const { return m_addressListName; }
+    template<typename AddressListNameT = Aws::String>
+    void SetAddressListName(AddressListNameT&& value) { m_addressListNameHasBeenSet = true; m_addressListName = std::forward<AddressListNameT>(value); }
+    template<typename AddressListNameT = Aws::String>
+    GetAddressListResult& WithAddressListName(AddressListNameT&& value) { SetAddressListName(std::forward<AddressListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date of when then address list was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetAddressListResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetAddressListResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetAddressListResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date of when the address list was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-    inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestamp = std::move(value); }
-    inline GetAddressListResult& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline GetAddressListResult& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::Utils::DateTime>
+    GetAddressListResult& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAddressListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAddressListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAddressListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAddressListResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_addressListArn;
+    bool m_addressListArnHasBeenSet = false;
 
     Aws::String m_addressListId;
+    bool m_addressListIdHasBeenSet = false;
 
     Aws::String m_addressListName;
+    bool m_addressListNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTimestamp;
+    Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

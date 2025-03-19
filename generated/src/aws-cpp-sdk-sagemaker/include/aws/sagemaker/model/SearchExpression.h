@@ -48,7 +48,7 @@ namespace Model
   class SearchExpression
   {
   public:
-    AWS_SAGEMAKER_API SearchExpression();
+    AWS_SAGEMAKER_API SearchExpression() = default;
     AWS_SAGEMAKER_API SearchExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,42 +58,42 @@ namespace Model
     /**
      * <p>A list of filter objects.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SearchExpression& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline SearchExpression& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline SearchExpression& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline SearchExpression& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    SearchExpression& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    SearchExpression& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of nested filter objects.</p>
      */
-    inline const Aws::Vector<NestedFilters>& GetNestedFilters() const{ return m_nestedFilters; }
+    inline const Aws::Vector<NestedFilters>& GetNestedFilters() const { return m_nestedFilters; }
     inline bool NestedFiltersHasBeenSet() const { return m_nestedFiltersHasBeenSet; }
-    inline void SetNestedFilters(const Aws::Vector<NestedFilters>& value) { m_nestedFiltersHasBeenSet = true; m_nestedFilters = value; }
-    inline void SetNestedFilters(Aws::Vector<NestedFilters>&& value) { m_nestedFiltersHasBeenSet = true; m_nestedFilters = std::move(value); }
-    inline SearchExpression& WithNestedFilters(const Aws::Vector<NestedFilters>& value) { SetNestedFilters(value); return *this;}
-    inline SearchExpression& WithNestedFilters(Aws::Vector<NestedFilters>&& value) { SetNestedFilters(std::move(value)); return *this;}
-    inline SearchExpression& AddNestedFilters(const NestedFilters& value) { m_nestedFiltersHasBeenSet = true; m_nestedFilters.push_back(value); return *this; }
-    inline SearchExpression& AddNestedFilters(NestedFilters&& value) { m_nestedFiltersHasBeenSet = true; m_nestedFilters.push_back(std::move(value)); return *this; }
+    template<typename NestedFiltersT = Aws::Vector<NestedFilters>>
+    void SetNestedFilters(NestedFiltersT&& value) { m_nestedFiltersHasBeenSet = true; m_nestedFilters = std::forward<NestedFiltersT>(value); }
+    template<typename NestedFiltersT = Aws::Vector<NestedFilters>>
+    SearchExpression& WithNestedFilters(NestedFiltersT&& value) { SetNestedFilters(std::forward<NestedFiltersT>(value)); return *this;}
+    template<typename NestedFiltersT = NestedFilters>
+    SearchExpression& AddNestedFilters(NestedFiltersT&& value) { m_nestedFiltersHasBeenSet = true; m_nestedFilters.emplace_back(std::forward<NestedFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of search expression objects.</p>
      */
-    inline const Aws::Vector<SearchExpression>& GetSubExpressions() const{ return m_subExpressions; }
+    inline const Aws::Vector<SearchExpression>& GetSubExpressions() const { return m_subExpressions; }
     inline bool SubExpressionsHasBeenSet() const { return m_subExpressionsHasBeenSet; }
-    inline void SetSubExpressions(const Aws::Vector<SearchExpression>& value) { m_subExpressionsHasBeenSet = true; m_subExpressions = value; }
-    inline void SetSubExpressions(Aws::Vector<SearchExpression>&& value) { m_subExpressionsHasBeenSet = true; m_subExpressions = std::move(value); }
-    inline SearchExpression& WithSubExpressions(const Aws::Vector<SearchExpression>& value) { SetSubExpressions(value); return *this;}
-    inline SearchExpression& WithSubExpressions(Aws::Vector<SearchExpression>&& value) { SetSubExpressions(std::move(value)); return *this;}
-    inline SearchExpression& AddSubExpressions(const SearchExpression& value) { m_subExpressionsHasBeenSet = true; m_subExpressions.push_back(value); return *this; }
-    inline SearchExpression& AddSubExpressions(SearchExpression&& value) { m_subExpressionsHasBeenSet = true; m_subExpressions.push_back(std::move(value)); return *this; }
+    template<typename SubExpressionsT = Aws::Vector<SearchExpression>>
+    void SetSubExpressions(SubExpressionsT&& value) { m_subExpressionsHasBeenSet = true; m_subExpressions = std::forward<SubExpressionsT>(value); }
+    template<typename SubExpressionsT = Aws::Vector<SearchExpression>>
+    SearchExpression& WithSubExpressions(SubExpressionsT&& value) { SetSubExpressions(std::forward<SubExpressionsT>(value)); return *this;}
+    template<typename SubExpressionsT = SearchExpression>
+    SearchExpression& AddSubExpressions(SubExpressionsT&& value) { m_subExpressionsHasBeenSet = true; m_subExpressions.emplace_back(std::forward<SubExpressionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,12 +104,10 @@ namespace Model
      * statement needs to be true for the entire search expression to be true, specify
      * <code>Or</code>. The default value is <code>And</code>.</p>
      */
-    inline const BooleanOperator& GetOperator() const{ return m_operator; }
+    inline BooleanOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const BooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(BooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline SearchExpression& WithOperator(const BooleanOperator& value) { SetOperator(value); return *this;}
-    inline SearchExpression& WithOperator(BooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(BooleanOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline SearchExpression& WithOperator(BooleanOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
@@ -122,7 +120,7 @@ namespace Model
     Aws::Vector<SearchExpression> m_subExpressions;
     bool m_subExpressionsHasBeenSet = false;
 
-    BooleanOperator m_operator;
+    BooleanOperator m_operator{BooleanOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

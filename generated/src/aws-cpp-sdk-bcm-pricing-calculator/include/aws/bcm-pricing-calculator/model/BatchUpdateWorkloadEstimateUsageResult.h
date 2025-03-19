@@ -30,7 +30,7 @@ namespace Model
   class BatchUpdateWorkloadEstimateUsageResult
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchUpdateWorkloadEstimateUsageResult();
+    AWS_BCMPRICINGCALCULATOR_API BatchUpdateWorkloadEstimateUsageResult() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchUpdateWorkloadEstimateUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMPRICINGCALCULATOR_API BatchUpdateWorkloadEstimateUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p> Returns the list of successful usage line items that were updated for a
      * Workload estimate. </p>
      */
-    inline const Aws::Vector<WorkloadEstimateUsageItem>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<WorkloadEstimateUsageItem>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<WorkloadEstimateUsageItem>&& value) { m_items = std::move(value); }
-    inline BatchUpdateWorkloadEstimateUsageResult& WithItems(const Aws::Vector<WorkloadEstimateUsageItem>& value) { SetItems(value); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageResult& WithItems(Aws::Vector<WorkloadEstimateUsageItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageResult& AddItems(const WorkloadEstimateUsageItem& value) { m_items.push_back(value); return *this; }
-    inline BatchUpdateWorkloadEstimateUsageResult& AddItems(WorkloadEstimateUsageItem&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkloadEstimateUsageItem>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<WorkloadEstimateUsageItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<WorkloadEstimateUsageItem>>
+    BatchUpdateWorkloadEstimateUsageResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = WorkloadEstimateUsageItem>
+    BatchUpdateWorkloadEstimateUsageResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p> Returns the list of error reasons and usage line item IDs that could not be
      * updated for the Workload estimate. </p>
      */
-    inline const Aws::Vector<BatchUpdateWorkloadEstimateUsageError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchUpdateWorkloadEstimateUsageError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchUpdateWorkloadEstimateUsageError>&& value) { m_errors = std::move(value); }
-    inline BatchUpdateWorkloadEstimateUsageResult& WithErrors(const Aws::Vector<BatchUpdateWorkloadEstimateUsageError>& value) { SetErrors(value); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageResult& WithErrors(Aws::Vector<BatchUpdateWorkloadEstimateUsageError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageResult& AddErrors(const BatchUpdateWorkloadEstimateUsageError& value) { m_errors.push_back(value); return *this; }
-    inline BatchUpdateWorkloadEstimateUsageResult& AddErrors(BatchUpdateWorkloadEstimateUsageError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchUpdateWorkloadEstimateUsageError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchUpdateWorkloadEstimateUsageError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchUpdateWorkloadEstimateUsageError>>
+    BatchUpdateWorkloadEstimateUsageResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchUpdateWorkloadEstimateUsageError>
+    BatchUpdateWorkloadEstimateUsageResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateWorkloadEstimateUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateWorkloadEstimateUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateWorkloadEstimateUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WorkloadEstimateUsageItem> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::Vector<BatchUpdateWorkloadEstimateUsageError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

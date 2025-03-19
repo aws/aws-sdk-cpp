@@ -31,7 +31,7 @@ namespace Model
   class ProtectedJobParameters
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobParameters();
+    AWS_CLEANROOMS_API ProtectedJobParameters() = default;
     AWS_CLEANROOMS_API ProtectedJobParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p> The ARN of the analysis template.</p>
      */
-    inline const Aws::String& GetAnalysisTemplateArn() const{ return m_analysisTemplateArn; }
+    inline const Aws::String& GetAnalysisTemplateArn() const { return m_analysisTemplateArn; }
     inline bool AnalysisTemplateArnHasBeenSet() const { return m_analysisTemplateArnHasBeenSet; }
-    inline void SetAnalysisTemplateArn(const Aws::String& value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn = value; }
-    inline void SetAnalysisTemplateArn(Aws::String&& value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn = std::move(value); }
-    inline void SetAnalysisTemplateArn(const char* value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn.assign(value); }
-    inline ProtectedJobParameters& WithAnalysisTemplateArn(const Aws::String& value) { SetAnalysisTemplateArn(value); return *this;}
-    inline ProtectedJobParameters& WithAnalysisTemplateArn(Aws::String&& value) { SetAnalysisTemplateArn(std::move(value)); return *this;}
-    inline ProtectedJobParameters& WithAnalysisTemplateArn(const char* value) { SetAnalysisTemplateArn(value); return *this;}
+    template<typename AnalysisTemplateArnT = Aws::String>
+    void SetAnalysisTemplateArn(AnalysisTemplateArnT&& value) { m_analysisTemplateArnHasBeenSet = true; m_analysisTemplateArn = std::forward<AnalysisTemplateArnT>(value); }
+    template<typename AnalysisTemplateArnT = Aws::String>
+    ProtectedJobParameters& WithAnalysisTemplateArn(AnalysisTemplateArnT&& value) { SetAnalysisTemplateArn(std::forward<AnalysisTemplateArnT>(value)); return *this;}
     ///@}
   private:
 

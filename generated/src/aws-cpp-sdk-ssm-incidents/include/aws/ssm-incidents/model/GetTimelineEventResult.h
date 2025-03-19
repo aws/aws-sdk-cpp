@@ -28,7 +28,7 @@ namespace Model
   class GetTimelineEventResult
   {
   public:
-    AWS_SSMINCIDENTS_API GetTimelineEventResult();
+    AWS_SSMINCIDENTS_API GetTimelineEventResult() = default;
     AWS_SSMINCIDENTS_API GetTimelineEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMINCIDENTS_API GetTimelineEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the timeline event.</p>
      */
-    inline const TimelineEvent& GetEvent() const{ return m_event; }
-    inline void SetEvent(const TimelineEvent& value) { m_event = value; }
-    inline void SetEvent(TimelineEvent&& value) { m_event = std::move(value); }
-    inline GetTimelineEventResult& WithEvent(const TimelineEvent& value) { SetEvent(value); return *this;}
-    inline GetTimelineEventResult& WithEvent(TimelineEvent&& value) { SetEvent(std::move(value)); return *this;}
+    inline const TimelineEvent& GetEvent() const { return m_event; }
+    template<typename EventT = TimelineEvent>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = TimelineEvent>
+    GetTimelineEventResult& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTimelineEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTimelineEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTimelineEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTimelineEventResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TimelineEvent m_event;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

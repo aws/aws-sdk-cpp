@@ -35,7 +35,7 @@ namespace Model
   class AnalysisRuleList
   {
   public:
-    AWS_CLEANROOMS_API AnalysisRuleList();
+    AWS_CLEANROOMS_API AnalysisRuleList() = default;
     AWS_CLEANROOMS_API AnalysisRuleList(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AnalysisRuleList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * <p>Columns that can be used to join a configured table with the table of the
      * member who can query and other members' configured tables.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJoinColumns() const{ return m_joinColumns; }
+    inline const Aws::Vector<Aws::String>& GetJoinColumns() const { return m_joinColumns; }
     inline bool JoinColumnsHasBeenSet() const { return m_joinColumnsHasBeenSet; }
-    inline void SetJoinColumns(const Aws::Vector<Aws::String>& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = value; }
-    inline void SetJoinColumns(Aws::Vector<Aws::String>&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = std::move(value); }
-    inline AnalysisRuleList& WithJoinColumns(const Aws::Vector<Aws::String>& value) { SetJoinColumns(value); return *this;}
-    inline AnalysisRuleList& WithJoinColumns(Aws::Vector<Aws::String>&& value) { SetJoinColumns(std::move(value)); return *this;}
-    inline AnalysisRuleList& AddJoinColumns(const Aws::String& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(value); return *this; }
-    inline AnalysisRuleList& AddJoinColumns(Aws::String&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(std::move(value)); return *this; }
-    inline AnalysisRuleList& AddJoinColumns(const char* value) { m_joinColumnsHasBeenSet = true; m_joinColumns.push_back(value); return *this; }
+    template<typename JoinColumnsT = Aws::Vector<Aws::String>>
+    void SetJoinColumns(JoinColumnsT&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns = std::forward<JoinColumnsT>(value); }
+    template<typename JoinColumnsT = Aws::Vector<Aws::String>>
+    AnalysisRuleList& WithJoinColumns(JoinColumnsT&& value) { SetJoinColumns(std::forward<JoinColumnsT>(value)); return *this;}
+    template<typename JoinColumnsT = Aws::String>
+    AnalysisRuleList& AddJoinColumns(JoinColumnsT&& value) { m_joinColumnsHasBeenSet = true; m_joinColumns.emplace_back(std::forward<JoinColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,29 +61,27 @@ namespace Model
      * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
-    inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const{ return m_allowedJoinOperators; }
+    inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const { return m_allowedJoinOperators; }
     inline bool AllowedJoinOperatorsHasBeenSet() const { return m_allowedJoinOperatorsHasBeenSet; }
-    inline void SetAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = value; }
-    inline void SetAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::move(value); }
-    inline AnalysisRuleList& WithAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { SetAllowedJoinOperators(value); return *this;}
-    inline AnalysisRuleList& WithAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { SetAllowedJoinOperators(std::move(value)); return *this;}
-    inline AnalysisRuleList& AddAllowedJoinOperators(const JoinOperator& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
-    inline AnalysisRuleList& AddAllowedJoinOperators(JoinOperator&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(std::move(value)); return *this; }
+    template<typename AllowedJoinOperatorsT = Aws::Vector<JoinOperator>>
+    void SetAllowedJoinOperators(AllowedJoinOperatorsT&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::forward<AllowedJoinOperatorsT>(value); }
+    template<typename AllowedJoinOperatorsT = Aws::Vector<JoinOperator>>
+    AnalysisRuleList& WithAllowedJoinOperators(AllowedJoinOperatorsT&& value) { SetAllowedJoinOperators(std::forward<AllowedJoinOperatorsT>(value)); return *this;}
+    inline AnalysisRuleList& AddAllowedJoinOperators(JoinOperator value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Columns that can be listed in the output.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetListColumns() const{ return m_listColumns; }
+    inline const Aws::Vector<Aws::String>& GetListColumns() const { return m_listColumns; }
     inline bool ListColumnsHasBeenSet() const { return m_listColumnsHasBeenSet; }
-    inline void SetListColumns(const Aws::Vector<Aws::String>& value) { m_listColumnsHasBeenSet = true; m_listColumns = value; }
-    inline void SetListColumns(Aws::Vector<Aws::String>&& value) { m_listColumnsHasBeenSet = true; m_listColumns = std::move(value); }
-    inline AnalysisRuleList& WithListColumns(const Aws::Vector<Aws::String>& value) { SetListColumns(value); return *this;}
-    inline AnalysisRuleList& WithListColumns(Aws::Vector<Aws::String>&& value) { SetListColumns(std::move(value)); return *this;}
-    inline AnalysisRuleList& AddListColumns(const Aws::String& value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(value); return *this; }
-    inline AnalysisRuleList& AddListColumns(Aws::String&& value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(std::move(value)); return *this; }
-    inline AnalysisRuleList& AddListColumns(const char* value) { m_listColumnsHasBeenSet = true; m_listColumns.push_back(value); return *this; }
+    template<typename ListColumnsT = Aws::Vector<Aws::String>>
+    void SetListColumns(ListColumnsT&& value) { m_listColumnsHasBeenSet = true; m_listColumns = std::forward<ListColumnsT>(value); }
+    template<typename ListColumnsT = Aws::Vector<Aws::String>>
+    AnalysisRuleList& WithListColumns(ListColumnsT&& value) { SetListColumns(std::forward<ListColumnsT>(value)); return *this;}
+    template<typename ListColumnsT = Aws::String>
+    AnalysisRuleList& AddListColumns(ListColumnsT&& value) { m_listColumnsHasBeenSet = true; m_listColumns.emplace_back(std::forward<ListColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,12 +89,10 @@ namespace Model
      * <p> An indicator as to whether additional analyses (such as Clean Rooms ML) can
      * be applied to the output of the direct query.</p>
      */
-    inline const AdditionalAnalyses& GetAdditionalAnalyses() const{ return m_additionalAnalyses; }
+    inline AdditionalAnalyses GetAdditionalAnalyses() const { return m_additionalAnalyses; }
     inline bool AdditionalAnalysesHasBeenSet() const { return m_additionalAnalysesHasBeenSet; }
-    inline void SetAdditionalAnalyses(const AdditionalAnalyses& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
-    inline void SetAdditionalAnalyses(AdditionalAnalyses&& value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = std::move(value); }
-    inline AnalysisRuleList& WithAdditionalAnalyses(const AdditionalAnalyses& value) { SetAdditionalAnalyses(value); return *this;}
-    inline AnalysisRuleList& WithAdditionalAnalyses(AdditionalAnalyses&& value) { SetAdditionalAnalyses(std::move(value)); return *this;}
+    inline void SetAdditionalAnalyses(AdditionalAnalyses value) { m_additionalAnalysesHasBeenSet = true; m_additionalAnalyses = value; }
+    inline AnalysisRuleList& WithAdditionalAnalyses(AdditionalAnalyses value) { SetAdditionalAnalyses(value); return *this;}
     ///@}
   private:
 
@@ -110,7 +105,7 @@ namespace Model
     Aws::Vector<Aws::String> m_listColumns;
     bool m_listColumnsHasBeenSet = false;
 
-    AdditionalAnalyses m_additionalAnalyses;
+    AdditionalAnalyses m_additionalAnalyses{AdditionalAnalyses::NOT_SET};
     bool m_additionalAnalysesHasBeenSet = false;
   };
 

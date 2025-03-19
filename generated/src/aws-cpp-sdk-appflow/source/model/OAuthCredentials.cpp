@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-OAuthCredentials::OAuthCredentials() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false)
-{
-}
-
 OAuthCredentials::OAuthCredentials(JsonView jsonValue)
-  : OAuthCredentials()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OAuthCredentials& OAuthCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSecret"))
   {
     m_clientSecret = jsonValue.GetString("clientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshToken"))
   {
     m_refreshToken = jsonValue.GetString("refreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthRequest"))
   {
     m_oAuthRequest = jsonValue.GetObject("oAuthRequest");
-
     m_oAuthRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

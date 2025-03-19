@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSipMediaApplicationLoggingConfigurationResult::PutSipMediaApplicationLoggingConfigurationResult()
-{
-}
-
 PutSipMediaApplicationLoggingConfigurationResult::PutSipMediaApplicationLoggingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutSipMediaApplicationLoggingConfigurationResult& PutSipMediaApplicationLoggingC
   if(jsonValue.ValueExists("SipMediaApplicationLoggingConfiguration"))
   {
     m_sipMediaApplicationLoggingConfiguration = jsonValue.GetObject("SipMediaApplicationLoggingConfiguration");
-
+    m_sipMediaApplicationLoggingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

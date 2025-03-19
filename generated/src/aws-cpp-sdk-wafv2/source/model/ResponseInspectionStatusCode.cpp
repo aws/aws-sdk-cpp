@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ResponseInspectionStatusCode::ResponseInspectionStatusCode() : 
-    m_successCodesHasBeenSet(false),
-    m_failureCodesHasBeenSet(false)
-{
-}
-
 ResponseInspectionStatusCode::ResponseInspectionStatusCode(JsonView jsonValue)
-  : ResponseInspectionStatusCode()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ResponseInspectionStatusCode& ResponseInspectionStatusCode::operator =(JsonView 
     }
     m_successCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCodes"))
   {
     Aws::Utils::Array<JsonView> failureCodesJsonList = jsonValue.GetArray("FailureCodes");
@@ -51,7 +43,6 @@ ResponseInspectionStatusCode& ResponseInspectionStatusCode::operator =(JsonView 
     }
     m_failureCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ValidateFlowDefinitionRequest::ValidateFlowDefinitionRequest() : 
-    m_definitionHasBeenSet(false)
-{
-}
-
 Aws::String ValidateFlowDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

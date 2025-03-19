@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixAutoCircle::RouteMatrixAutoCircle() : 
-    m_margin(0),
-    m_marginHasBeenSet(false),
-    m_maxRadius(0),
-    m_maxRadiusHasBeenSet(false)
-{
-}
-
 RouteMatrixAutoCircle::RouteMatrixAutoCircle(JsonView jsonValue)
-  : RouteMatrixAutoCircle()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteMatrixAutoCircle& RouteMatrixAutoCircle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Margin"))
   {
     m_margin = jsonValue.GetInt64("Margin");
-
     m_marginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRadius"))
   {
     m_maxRadius = jsonValue.GetInt64("MaxRadius");
-
     m_maxRadiusHasBeenSet = true;
   }
-
   return *this;
 }
 

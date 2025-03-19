@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-TemplateCreateMessageBody::TemplateCreateMessageBody() : 
-    m_arnHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
-{
-}
-
 TemplateCreateMessageBody::TemplateCreateMessageBody(JsonView jsonValue)
-  : TemplateCreateMessageBody()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TemplateCreateMessageBody& TemplateCreateMessageBody::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestID"))
   {
     m_requestID = jsonValue.GetString("RequestID");
-
     m_requestIDHasBeenSet = true;
   }
-
   return *this;
 }
 

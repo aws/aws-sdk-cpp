@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterPublisherResult::RegisterPublisherResult()
-{
-}
-
 RegisterPublisherResult::RegisterPublisherResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ RegisterPublisherResult& RegisterPublisherResult::operator =(const Aws::AmazonWe
     if(!publisherIdNode.IsNull())
     {
       m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
+      m_publisherIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::RegisterPublisherResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

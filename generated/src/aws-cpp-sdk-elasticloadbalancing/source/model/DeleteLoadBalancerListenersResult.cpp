@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteLoadBalancerListenersResult::DeleteLoadBalancerListenersResult()
-{
-}
-
 DeleteLoadBalancerListenersResult::DeleteLoadBalancerListenersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ DeleteLoadBalancerListenersResult& DeleteLoadBalancerListenersResult::operator =
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DeleteLoadBalancerListenersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

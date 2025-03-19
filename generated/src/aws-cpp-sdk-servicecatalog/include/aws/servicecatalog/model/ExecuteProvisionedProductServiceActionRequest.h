@@ -24,7 +24,7 @@ namespace Model
   class ExecuteProvisionedProductServiceActionRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API ExecuteProvisionedProductServiceActionRequest();
+    AWS_SERVICECATALOG_API ExecuteProvisionedProductServiceActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identifier of the provisioned product.</p>
      */
-    inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
+    inline const Aws::String& GetProvisionedProductId() const { return m_provisionedProductId; }
     inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
-    inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
-    inline void SetProvisionedProductId(const char* value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId.assign(value); }
-    inline ExecuteProvisionedProductServiceActionRequest& WithProvisionedProductId(const Aws::String& value) { SetProvisionedProductId(value); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
+    template<typename ProvisionedProductIdT = Aws::String>
+    void SetProvisionedProductId(ProvisionedProductIdT&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::forward<ProvisionedProductIdT>(value); }
+    template<typename ProvisionedProductIdT = Aws::String>
+    ExecuteProvisionedProductServiceActionRequest& WithProvisionedProductId(ProvisionedProductIdT&& value) { SetProvisionedProductId(std::forward<ProvisionedProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <p>The self-service action identifier. For example,
      * <code>act-fs7abcd89wxyz</code>.</p>
      */
-    inline const Aws::String& GetServiceActionId() const{ return m_serviceActionId; }
+    inline const Aws::String& GetServiceActionId() const { return m_serviceActionId; }
     inline bool ServiceActionIdHasBeenSet() const { return m_serviceActionIdHasBeenSet; }
-    inline void SetServiceActionId(const Aws::String& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = value; }
-    inline void SetServiceActionId(Aws::String&& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = std::move(value); }
-    inline void SetServiceActionId(const char* value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId.assign(value); }
-    inline ExecuteProvisionedProductServiceActionRequest& WithServiceActionId(const Aws::String& value) { SetServiceActionId(value); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithServiceActionId(Aws::String&& value) { SetServiceActionId(std::move(value)); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithServiceActionId(const char* value) { SetServiceActionId(value); return *this;}
+    template<typename ServiceActionIdT = Aws::String>
+    void SetServiceActionId(ServiceActionIdT&& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = std::forward<ServiceActionIdT>(value); }
+    template<typename ServiceActionIdT = Aws::String>
+    ExecuteProvisionedProductServiceActionRequest& WithServiceActionId(ServiceActionIdT&& value) { SetServiceActionId(std::forward<ServiceActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An idempotency token that uniquely identifies the execute request.</p>
      */
-    inline const Aws::String& GetExecuteToken() const{ return m_executeToken; }
+    inline const Aws::String& GetExecuteToken() const { return m_executeToken; }
     inline bool ExecuteTokenHasBeenSet() const { return m_executeTokenHasBeenSet; }
-    inline void SetExecuteToken(const Aws::String& value) { m_executeTokenHasBeenSet = true; m_executeToken = value; }
-    inline void SetExecuteToken(Aws::String&& value) { m_executeTokenHasBeenSet = true; m_executeToken = std::move(value); }
-    inline void SetExecuteToken(const char* value) { m_executeTokenHasBeenSet = true; m_executeToken.assign(value); }
-    inline ExecuteProvisionedProductServiceActionRequest& WithExecuteToken(const Aws::String& value) { SetExecuteToken(value); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithExecuteToken(Aws::String&& value) { SetExecuteToken(std::move(value)); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithExecuteToken(const char* value) { SetExecuteToken(value); return *this;}
+    template<typename ExecuteTokenT = Aws::String>
+    void SetExecuteToken(ExecuteTokenT&& value) { m_executeTokenHasBeenSet = true; m_executeToken = std::forward<ExecuteTokenT>(value); }
+    template<typename ExecuteTokenT = Aws::String>
+    ExecuteProvisionedProductServiceActionRequest& WithExecuteToken(ExecuteTokenT&& value) { SetExecuteToken(std::forward<ExecuteTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline ExecuteProvisionedProductServiceActionRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    ExecuteProvisionedProductServiceActionRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,18 +95,16 @@ namespace Model
      * field is not provided, no additional parameters are passed and default values
      * will be used for any special parameters such as <code>TARGET</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ExecuteProvisionedProductServiceActionRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ExecuteProvisionedProductServiceActionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    ExecuteProvisionedProductServiceActionRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::Vector<Aws::String>>
+    ExecuteProvisionedProductServiceActionRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -12,16 +12,6 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceLevelObjectiveRequest::UpdateServiceLevelObjectiveRequest() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sliConfigHasBeenSet(false),
-    m_requestBasedSliConfigHasBeenSet(false),
-    m_goalHasBeenSet(false),
-    m_burnRateConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceLevelObjectiveRequest::SerializePayload() const
 {
   JsonValue payload;

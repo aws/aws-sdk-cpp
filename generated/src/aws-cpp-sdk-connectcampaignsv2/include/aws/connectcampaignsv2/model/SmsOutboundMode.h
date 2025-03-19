@@ -31,7 +31,7 @@ namespace Model
   class SmsOutboundMode
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode();
+    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode() = default;
     AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const AgentlessConfig& GetAgentless() const{ return m_agentless; }
+    inline const AgentlessConfig& GetAgentless() const { return m_agentless; }
     inline bool AgentlessHasBeenSet() const { return m_agentlessHasBeenSet; }
-    inline void SetAgentless(const AgentlessConfig& value) { m_agentlessHasBeenSet = true; m_agentless = value; }
-    inline void SetAgentless(AgentlessConfig&& value) { m_agentlessHasBeenSet = true; m_agentless = std::move(value); }
-    inline SmsOutboundMode& WithAgentless(const AgentlessConfig& value) { SetAgentless(value); return *this;}
-    inline SmsOutboundMode& WithAgentless(AgentlessConfig&& value) { SetAgentless(std::move(value)); return *this;}
+    template<typename AgentlessT = AgentlessConfig>
+    void SetAgentless(AgentlessT&& value) { m_agentlessHasBeenSet = true; m_agentless = std::forward<AgentlessT>(value); }
+    template<typename AgentlessT = AgentlessConfig>
+    SmsOutboundMode& WithAgentless(AgentlessT&& value) { SetAgentless(std::forward<AgentlessT>(value)); return *this;}
     ///@}
   private:
 

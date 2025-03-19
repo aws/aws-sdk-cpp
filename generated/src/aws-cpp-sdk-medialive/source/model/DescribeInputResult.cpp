@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInputResult::DescribeInputResult() : 
-    m_inputClass(InputClass::NOT_SET),
-    m_inputSourceType(InputSourceType::NOT_SET),
-    m_state(InputState::NOT_SET),
-    m_type(InputType::NOT_SET),
-    m_inputNetworkLocation(InputNetworkLocation::NOT_SET)
-{
-}
-
 DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeInputResult()
 {
   *this = result;
 }
@@ -38,9 +28,8 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachedChannels"))
   {
     Aws::Utils::Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
@@ -48,8 +37,8 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_attachedChannels.push_back(attachedChannelsJsonList[attachedChannelsIndex].AsString());
     }
+    m_attachedChannelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
@@ -57,20 +46,18 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
+    m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputClass"))
   {
     m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
-
+    m_inputClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDevices"))
   {
     Aws::Utils::Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
@@ -78,8 +65,8 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
     }
+    m_inputDevicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputPartnerIds"))
   {
     Aws::Utils::Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
@@ -87,14 +74,13 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
     }
+    m_inputPartnerIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputSourceType"))
   {
     m_inputSourceType = InputSourceTypeMapper::GetInputSourceTypeForName(jsonValue.GetString("inputSourceType"));
-
+    m_inputSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaConnectFlows"))
   {
     Aws::Utils::Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
@@ -102,20 +88,18 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_mediaConnectFlows.push_back(mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject());
     }
+    m_mediaConnectFlowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -123,8 +107,8 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
+    m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -132,14 +116,13 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
     }
+    m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = InputStateMapper::GetInputStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -147,38 +130,35 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srtSettings"))
   {
     m_srtSettings = jsonValue.GetObject("srtSettings");
-
+    m_srtSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputNetworkLocation"))
   {
     m_inputNetworkLocation = InputNetworkLocationMapper::GetInputNetworkLocationForName(jsonValue.GetString("inputNetworkLocation"));
-
+    m_inputNetworkLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multicastSettings"))
   {
     m_multicastSettings = jsonValue.GetObject("multicastSettings");
-
+    m_multicastSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

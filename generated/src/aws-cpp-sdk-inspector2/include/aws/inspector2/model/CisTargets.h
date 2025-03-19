@@ -33,7 +33,7 @@ namespace Model
   class CisTargets
   {
   public:
-    AWS_INSPECTOR2_API CisTargets();
+    AWS_INSPECTOR2_API CisTargets() = default;
     AWS_INSPECTOR2_API CisTargets(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CisTargets& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,30 @@ namespace Model
     /**
      * <p>The CIS target account ids.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline CisTargets& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline CisTargets& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline CisTargets& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline CisTargets& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline CisTargets& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    CisTargets& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    CisTargets& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The CIS target resource tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTargetResourceTags() const{ return m_targetResourceTags; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetTargetResourceTags() const { return m_targetResourceTags; }
     inline bool TargetResourceTagsHasBeenSet() const { return m_targetResourceTagsHasBeenSet; }
-    inline void SetTargetResourceTags(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags = value; }
-    inline void SetTargetResourceTags(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags = std::move(value); }
-    inline CisTargets& WithTargetResourceTags(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetTargetResourceTags(value); return *this;}
-    inline CisTargets& WithTargetResourceTags(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetTargetResourceTags(std::move(value)); return *this;}
-    inline CisTargets& AddTargetResourceTags(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, value); return *this; }
-    inline CisTargets& AddTargetResourceTags(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::move(key), value); return *this; }
-    inline CisTargets& AddTargetResourceTags(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, std::move(value)); return *this; }
-    inline CisTargets& AddTargetResourceTags(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CisTargets& AddTargetResourceTags(const char* key, Aws::Vector<Aws::String>&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, std::move(value)); return *this; }
-    inline CisTargets& AddTargetResourceTags(const char* key, const Aws::Vector<Aws::String>& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(key, value); return *this; }
+    template<typename TargetResourceTagsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetTargetResourceTags(TargetResourceTagsT&& value) { m_targetResourceTagsHasBeenSet = true; m_targetResourceTags = std::forward<TargetResourceTagsT>(value); }
+    template<typename TargetResourceTagsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CisTargets& WithTargetResourceTags(TargetResourceTagsT&& value) { SetTargetResourceTags(std::forward<TargetResourceTagsT>(value)); return *this;}
+    template<typename TargetResourceTagsKeyT = Aws::String, typename TargetResourceTagsValueT = Aws::Vector<Aws::String>>
+    CisTargets& AddTargetResourceTags(TargetResourceTagsKeyT&& key, TargetResourceTagsValueT&& value) {
+      m_targetResourceTagsHasBeenSet = true; m_targetResourceTags.emplace(std::forward<TargetResourceTagsKeyT>(key), std::forward<TargetResourceTagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

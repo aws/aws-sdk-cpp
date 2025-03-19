@@ -18,13 +18,7 @@ namespace BedrockDataAutomationRuntime
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_eventBridgeConfigurationHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-  : NotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("eventBridgeConfiguration"))
   {
     m_eventBridgeConfiguration = jsonValue.GetObject("eventBridgeConfiguration");
-
     m_eventBridgeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,23 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMonitoringAlertHistoryRequest::ListMonitoringAlertHistoryRequest() : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringAlertNameHasBeenSet(false),
-    m_sortBy(MonitoringAlertHistorySortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_statusEquals(MonitoringAlertStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListMonitoringAlertHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class AdminCreateUserConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * register themselves and create a new user profile with the <code>SignUp</code>
      * operation.</p>
      */
-    inline bool GetAllowAdminCreateUserOnly() const{ return m_allowAdminCreateUserOnly; }
+    inline bool GetAllowAdminCreateUserOnly() const { return m_allowAdminCreateUserOnly; }
     inline bool AllowAdminCreateUserOnlyHasBeenSet() const { return m_allowAdminCreateUserOnlyHasBeenSet; }
     inline void SetAllowAdminCreateUserOnly(bool value) { m_allowAdminCreateUserOnlyHasBeenSet = true; m_allowAdminCreateUserOnly = value; }
     inline AdminCreateUserConfigType& WithAllowAdminCreateUserOnly(bool value) { SetAllowAdminCreateUserOnly(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
      * <code>RESEND</code> for the <code>MessageAction</code> parameter. </p> <p>The
      * default value for this parameter is 7.</p>
      */
-    inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
+    inline int GetUnusedAccountValidityDays() const { return m_unusedAccountValidityDays; }
     inline bool UnusedAccountValidityDaysHasBeenSet() const { return m_unusedAccountValidityDaysHasBeenSet; }
     inline void SetUnusedAccountValidityDays(int value) { m_unusedAccountValidityDaysHasBeenSet = true; m_unusedAccountValidityDays = value; }
     inline AdminCreateUserConfigType& WithUnusedAccountValidityDays(int value) { SetUnusedAccountValidityDays(value); return *this;}
@@ -77,19 +77,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
      * User Invitation Messages</a>.</p>
      */
-    inline const MessageTemplateType& GetInviteMessageTemplate() const{ return m_inviteMessageTemplate; }
+    inline const MessageTemplateType& GetInviteMessageTemplate() const { return m_inviteMessageTemplate; }
     inline bool InviteMessageTemplateHasBeenSet() const { return m_inviteMessageTemplateHasBeenSet; }
-    inline void SetInviteMessageTemplate(const MessageTemplateType& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = value; }
-    inline void SetInviteMessageTemplate(MessageTemplateType&& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = std::move(value); }
-    inline AdminCreateUserConfigType& WithInviteMessageTemplate(const MessageTemplateType& value) { SetInviteMessageTemplate(value); return *this;}
-    inline AdminCreateUserConfigType& WithInviteMessageTemplate(MessageTemplateType&& value) { SetInviteMessageTemplate(std::move(value)); return *this;}
+    template<typename InviteMessageTemplateT = MessageTemplateType>
+    void SetInviteMessageTemplate(InviteMessageTemplateT&& value) { m_inviteMessageTemplateHasBeenSet = true; m_inviteMessageTemplate = std::forward<InviteMessageTemplateT>(value); }
+    template<typename InviteMessageTemplateT = MessageTemplateType>
+    AdminCreateUserConfigType& WithInviteMessageTemplate(InviteMessageTemplateT&& value) { SetInviteMessageTemplate(std::forward<InviteMessageTemplateT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allowAdminCreateUserOnly;
+    bool m_allowAdminCreateUserOnly{false};
     bool m_allowAdminCreateUserOnlyHasBeenSet = false;
 
-    int m_unusedAccountValidityDays;
+    int m_unusedAccountValidityDays{0};
     bool m_unusedAccountValidityDaysHasBeenSet = false;
 
     MessageTemplateType m_inviteMessageTemplate;

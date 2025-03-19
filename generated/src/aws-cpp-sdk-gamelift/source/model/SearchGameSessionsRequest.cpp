@@ -12,18 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchGameSessionsRequest::SearchGameSessionsRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_aliasIdHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false),
-    m_sortExpressionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchGameSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

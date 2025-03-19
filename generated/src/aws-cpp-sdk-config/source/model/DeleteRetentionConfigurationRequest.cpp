@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRetentionConfigurationRequest::DeleteRetentionConfigurationRequest() : 
-    m_retentionConfigurationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRetentionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

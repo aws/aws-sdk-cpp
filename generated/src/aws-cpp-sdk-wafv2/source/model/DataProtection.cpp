@@ -18,19 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-DataProtection::DataProtection() : 
-    m_fieldHasBeenSet(false),
-    m_action(DataProtectionAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_excludeRuleMatchDetails(false),
-    m_excludeRuleMatchDetailsHasBeenSet(false),
-    m_excludeRateBasedDetails(false),
-    m_excludeRateBasedDetailsHasBeenSet(false)
-{
-}
-
 DataProtection::DataProtection(JsonView jsonValue)
-  : DataProtection()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DataProtection& DataProtection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Field"))
   {
     m_field = jsonValue.GetObject("Field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = DataProtectionActionMapper::GetDataProtectionActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeRuleMatchDetails"))
   {
     m_excludeRuleMatchDetails = jsonValue.GetBool("ExcludeRuleMatchDetails");
-
     m_excludeRuleMatchDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeRateBasedDetails"))
   {
     m_excludeRateBasedDetails = jsonValue.GetBool("ExcludeRateBasedDetails");
-
     m_excludeRateBasedDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

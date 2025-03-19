@@ -12,24 +12,6 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentEC2Request::CreateEnvironmentEC2Request() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_automaticStopTimeMinutes(0),
-    m_automaticStopTimeMinutesHasBeenSet(false),
-    m_ownerArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentEC2Request::SerializePayload() const
 {
   JsonValue payload;

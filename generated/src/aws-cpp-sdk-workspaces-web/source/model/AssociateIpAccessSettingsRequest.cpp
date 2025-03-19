@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateIpAccessSettingsRequest::AssociateIpAccessSettingsRequest() : 
-    m_ipAccessSettingsArnHasBeenSet(false),
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateIpAccessSettingsRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnGroup::ColumnGroup() : 
-    m_geoSpatialColumnGroupHasBeenSet(false)
-{
-}
-
 ColumnGroup::ColumnGroup(JsonView jsonValue)
-  : ColumnGroup()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ColumnGroup& ColumnGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GeoSpatialColumnGroup"))
   {
     m_geoSpatialColumnGroup = jsonValue.GetObject("GeoSpatialColumnGroup");
-
     m_geoSpatialColumnGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

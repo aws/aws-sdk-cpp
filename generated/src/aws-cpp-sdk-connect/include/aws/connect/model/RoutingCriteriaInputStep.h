@@ -34,7 +34,7 @@ namespace Model
   class RoutingCriteriaInputStep
   {
   public:
-    AWS_CONNECT_API RoutingCriteriaInputStep();
+    AWS_CONNECT_API RoutingCriteriaInputStep() = default;
     AWS_CONNECT_API RoutingCriteriaInputStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RoutingCriteriaInputStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>An object to specify the expiration of a routing step.</p>
      */
-    inline const RoutingCriteriaInputStepExpiry& GetExpiry() const{ return m_expiry; }
+    inline const RoutingCriteriaInputStepExpiry& GetExpiry() const { return m_expiry; }
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-    inline void SetExpiry(const RoutingCriteriaInputStepExpiry& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-    inline void SetExpiry(RoutingCriteriaInputStepExpiry&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-    inline RoutingCriteriaInputStep& WithExpiry(const RoutingCriteriaInputStepExpiry& value) { SetExpiry(value); return *this;}
-    inline RoutingCriteriaInputStep& WithExpiry(RoutingCriteriaInputStepExpiry&& value) { SetExpiry(std::move(value)); return *this;}
+    template<typename ExpiryT = RoutingCriteriaInputStepExpiry>
+    void SetExpiry(ExpiryT&& value) { m_expiryHasBeenSet = true; m_expiry = std::forward<ExpiryT>(value); }
+    template<typename ExpiryT = RoutingCriteriaInputStepExpiry>
+    RoutingCriteriaInputStep& WithExpiry(ExpiryT&& value) { SetExpiry(std::forward<ExpiryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A tagged union to specify expression for a routing step.</p>
      */
-    inline const Expression& GetExpression() const{ return m_expression; }
+    inline const Expression& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Expression& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Expression&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline RoutingCriteriaInputStep& WithExpression(const Expression& value) { SetExpression(value); return *this;}
-    inline RoutingCriteriaInputStep& WithExpression(Expression&& value) { SetExpression(std::move(value)); return *this;}
+    template<typename ExpressionT = Expression>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Expression>
+    RoutingCriteriaInputStep& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
   private:
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMultiRegionAccessPointResult::GetMultiRegionAccessPointResult()
-{
-}
-
 GetMultiRegionAccessPointResult::GetMultiRegionAccessPointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetMultiRegionAccessPointResult& GetMultiRegionAccessPointResult::operator =(con
     if(!accessPointNode.IsNull())
     {
       m_accessPoint = accessPointNode;
+      m_accessPointHasBeenSet = true;
     }
   }
 
@@ -44,12 +41,14 @@ GetMultiRegionAccessPointResult& GetMultiRegionAccessPointResult::operator =(con
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

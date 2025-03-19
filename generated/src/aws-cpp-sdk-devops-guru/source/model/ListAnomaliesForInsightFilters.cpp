@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ListAnomaliesForInsightFilters::ListAnomaliesForInsightFilters() : 
-    m_serviceCollectionHasBeenSet(false)
-{
-}
-
 ListAnomaliesForInsightFilters::ListAnomaliesForInsightFilters(JsonView jsonValue)
-  : ListAnomaliesForInsightFilters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListAnomaliesForInsightFilters& ListAnomaliesForInsightFilters::operator =(JsonV
   if(jsonValue.ValueExists("ServiceCollection"))
   {
     m_serviceCollection = jsonValue.GetObject("ServiceCollection");
-
     m_serviceCollectionHasBeenSet = true;
   }
-
   return *this;
 }
 

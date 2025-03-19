@@ -33,7 +33,7 @@ namespace Model
   class RestoreTestingPlanForCreate
   {
   public:
-    AWS_BACKUP_API RestoreTestingPlanForCreate();
+    AWS_BACKUP_API RestoreTestingPlanForCreate() = default;
     AWS_BACKUP_API RestoreTestingPlanForCreate(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API RestoreTestingPlanForCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,12 @@ namespace Model
      * contents from restore eligibility. Or, you can include a list of selectors. If
      * this parameter and its value are not included, it defaults to empty list.</p>
      */
-    inline const RestoreTestingRecoveryPointSelection& GetRecoveryPointSelection() const{ return m_recoveryPointSelection; }
+    inline const RestoreTestingRecoveryPointSelection& GetRecoveryPointSelection() const { return m_recoveryPointSelection; }
     inline bool RecoveryPointSelectionHasBeenSet() const { return m_recoveryPointSelectionHasBeenSet; }
-    inline void SetRecoveryPointSelection(const RestoreTestingRecoveryPointSelection& value) { m_recoveryPointSelectionHasBeenSet = true; m_recoveryPointSelection = value; }
-    inline void SetRecoveryPointSelection(RestoreTestingRecoveryPointSelection&& value) { m_recoveryPointSelectionHasBeenSet = true; m_recoveryPointSelection = std::move(value); }
-    inline RestoreTestingPlanForCreate& WithRecoveryPointSelection(const RestoreTestingRecoveryPointSelection& value) { SetRecoveryPointSelection(value); return *this;}
-    inline RestoreTestingPlanForCreate& WithRecoveryPointSelection(RestoreTestingRecoveryPointSelection&& value) { SetRecoveryPointSelection(std::move(value)); return *this;}
+    template<typename RecoveryPointSelectionT = RestoreTestingRecoveryPointSelection>
+    void SetRecoveryPointSelection(RecoveryPointSelectionT&& value) { m_recoveryPointSelectionHasBeenSet = true; m_recoveryPointSelection = std::forward<RecoveryPointSelectionT>(value); }
+    template<typename RecoveryPointSelectionT = RestoreTestingRecoveryPointSelection>
+    RestoreTestingPlanForCreate& WithRecoveryPointSelection(RecoveryPointSelectionT&& value) { SetRecoveryPointSelection(std::forward<RecoveryPointSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +78,12 @@ namespace Model
      * testing plan. This cannot be changed after creation, and it must consist of only
      * alphanumeric characters and underscores.</p>
      */
-    inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
+    inline const Aws::String& GetRestoreTestingPlanName() const { return m_restoreTestingPlanName; }
     inline bool RestoreTestingPlanNameHasBeenSet() const { return m_restoreTestingPlanNameHasBeenSet; }
-    inline void SetRestoreTestingPlanName(const Aws::String& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = value; }
-    inline void SetRestoreTestingPlanName(Aws::String&& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = std::move(value); }
-    inline void SetRestoreTestingPlanName(const char* value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName.assign(value); }
-    inline RestoreTestingPlanForCreate& WithRestoreTestingPlanName(const Aws::String& value) { SetRestoreTestingPlanName(value); return *this;}
-    inline RestoreTestingPlanForCreate& WithRestoreTestingPlanName(Aws::String&& value) { SetRestoreTestingPlanName(std::move(value)); return *this;}
-    inline RestoreTestingPlanForCreate& WithRestoreTestingPlanName(const char* value) { SetRestoreTestingPlanName(value); return *this;}
+    template<typename RestoreTestingPlanNameT = Aws::String>
+    void SetRestoreTestingPlanName(RestoreTestingPlanNameT&& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = std::forward<RestoreTestingPlanNameT>(value); }
+    template<typename RestoreTestingPlanNameT = Aws::String>
+    RestoreTestingPlanForCreate& WithRestoreTestingPlanName(RestoreTestingPlanNameT&& value) { SetRestoreTestingPlanName(std::forward<RestoreTestingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +91,12 @@ namespace Model
      * <p>A CRON expression in specified timezone when a restore testing plan is
      * executed.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline RestoreTestingPlanForCreate& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline RestoreTestingPlanForCreate& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline RestoreTestingPlanForCreate& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    RestoreTestingPlanForCreate& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * default, ScheduleExpressions are in UTC. You can modify this to a specified
      * timezone.</p>
      */
-    inline const Aws::String& GetScheduleExpressionTimezone() const{ return m_scheduleExpressionTimezone; }
+    inline const Aws::String& GetScheduleExpressionTimezone() const { return m_scheduleExpressionTimezone; }
     inline bool ScheduleExpressionTimezoneHasBeenSet() const { return m_scheduleExpressionTimezoneHasBeenSet; }
-    inline void SetScheduleExpressionTimezone(const Aws::String& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = value; }
-    inline void SetScheduleExpressionTimezone(Aws::String&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::move(value); }
-    inline void SetScheduleExpressionTimezone(const char* value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone.assign(value); }
-    inline RestoreTestingPlanForCreate& WithScheduleExpressionTimezone(const Aws::String& value) { SetScheduleExpressionTimezone(value); return *this;}
-    inline RestoreTestingPlanForCreate& WithScheduleExpressionTimezone(Aws::String&& value) { SetScheduleExpressionTimezone(std::move(value)); return *this;}
-    inline RestoreTestingPlanForCreate& WithScheduleExpressionTimezone(const char* value) { SetScheduleExpressionTimezone(value); return *this;}
+    template<typename ScheduleExpressionTimezoneT = Aws::String>
+    void SetScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::forward<ScheduleExpressionTimezoneT>(value); }
+    template<typename ScheduleExpressionTimezoneT = Aws::String>
+    RestoreTestingPlanForCreate& WithScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) { SetScheduleExpressionTimezone(std::forward<ScheduleExpressionTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,7 +120,7 @@ namespace Model
      * value is optional. If this value is included, this parameter has a maximum value
      * of 168 hours (one week).</p>
      */
-    inline int GetStartWindowHours() const{ return m_startWindowHours; }
+    inline int GetStartWindowHours() const { return m_startWindowHours; }
     inline bool StartWindowHoursHasBeenSet() const { return m_startWindowHoursHasBeenSet; }
     inline void SetStartWindowHours(int value) { m_startWindowHoursHasBeenSet = true; m_startWindowHours = value; }
     inline RestoreTestingPlanForCreate& WithStartWindowHours(int value) { SetStartWindowHours(value); return *this;}
@@ -145,7 +139,7 @@ namespace Model
     Aws::String m_scheduleExpressionTimezone;
     bool m_scheduleExpressionTimezoneHasBeenSet = false;
 
-    int m_startWindowHours;
+    int m_startWindowHours{0};
     bool m_startWindowHoursHasBeenSet = false;
   };
 

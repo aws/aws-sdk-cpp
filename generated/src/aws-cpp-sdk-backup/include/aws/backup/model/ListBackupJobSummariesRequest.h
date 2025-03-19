@@ -27,7 +27,7 @@ namespace Model
   class ListBackupJobSummariesRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API ListBackupJobSummariesRequest();
+    AWS_BACKUP_API ListBackupJobSummariesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the
      * authenticated organization, then returns the sum.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListBackupJobSummariesRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListBackupJobSummariesRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListBackupJobSummariesRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListBackupJobSummariesRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * <p>GET
      * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
-    inline const BackupJobStatus& GetState() const{ return m_state; }
+    inline BackupJobStatus GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const BackupJobStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(BackupJobStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ListBackupJobSummariesRequest& WithState(const BackupJobStatus& value) { SetState(value); return *this;}
-    inline ListBackupJobSummariesRequest& WithState(BackupJobStatus&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(BackupJobStatus value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ListBackupJobSummariesRequest& WithState(BackupJobStatus value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
      * Relational Database Service (Amazon RDS) database.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ListBackupJobSummariesRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ListBackupJobSummariesRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ListBackupJobSummariesRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ListBackupJobSummariesRequest& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +107,12 @@ namespace Model
      * count of all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates
      * job counts for all message categories and returns the sum.</p>
      */
-    inline const Aws::String& GetMessageCategory() const{ return m_messageCategory; }
+    inline const Aws::String& GetMessageCategory() const { return m_messageCategory; }
     inline bool MessageCategoryHasBeenSet() const { return m_messageCategoryHasBeenSet; }
-    inline void SetMessageCategory(const Aws::String& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = value; }
-    inline void SetMessageCategory(Aws::String&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::move(value); }
-    inline void SetMessageCategory(const char* value) { m_messageCategoryHasBeenSet = true; m_messageCategory.assign(value); }
-    inline ListBackupJobSummariesRequest& WithMessageCategory(const Aws::String& value) { SetMessageCategory(value); return *this;}
-    inline ListBackupJobSummariesRequest& WithMessageCategory(Aws::String&& value) { SetMessageCategory(std::move(value)); return *this;}
-    inline ListBackupJobSummariesRequest& WithMessageCategory(const char* value) { SetMessageCategory(value); return *this;}
+    template<typename MessageCategoryT = Aws::String>
+    void SetMessageCategory(MessageCategoryT&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::forward<MessageCategoryT>(value); }
+    template<typename MessageCategoryT = Aws::String>
+    ListBackupJobSummariesRequest& WithMessageCategory(MessageCategoryT&& value) { SetMessageCategory(std::forward<MessageCategoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,10 @@ namespace Model
      * </li> <li> <p> <code>FOURTEEN_DAYS</code> - The aggregated job count for prior
      * 14 days.</p> </li> </ul>
      */
-    inline const AggregationPeriod& GetAggregationPeriod() const{ return m_aggregationPeriod; }
+    inline AggregationPeriod GetAggregationPeriod() const { return m_aggregationPeriod; }
     inline bool AggregationPeriodHasBeenSet() const { return m_aggregationPeriodHasBeenSet; }
-    inline void SetAggregationPeriod(const AggregationPeriod& value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = value; }
-    inline void SetAggregationPeriod(AggregationPeriod&& value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = std::move(value); }
-    inline ListBackupJobSummariesRequest& WithAggregationPeriod(const AggregationPeriod& value) { SetAggregationPeriod(value); return *this;}
-    inline ListBackupJobSummariesRequest& WithAggregationPeriod(AggregationPeriod&& value) { SetAggregationPeriod(std::move(value)); return *this;}
+    inline void SetAggregationPeriod(AggregationPeriod value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = value; }
+    inline ListBackupJobSummariesRequest& WithAggregationPeriod(AggregationPeriod value) { SetAggregationPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -144,7 +134,7 @@ namespace Model
      * <p>The maximum number of items to be returned.</p> <p>The value is an integer.
      * Range of accepted values is from 1 to 500.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBackupJobSummariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -157,21 +147,19 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBackupJobSummariesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBackupJobSummariesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBackupJobSummariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBackupJobSummariesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    BackupJobStatus m_state;
+    BackupJobStatus m_state{BackupJobStatus::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_resourceType;
@@ -180,10 +168,10 @@ namespace Model
     Aws::String m_messageCategory;
     bool m_messageCategoryHasBeenSet = false;
 
-    AggregationPeriod m_aggregationPeriod;
+    AggregationPeriod m_aggregationPeriod{AggregationPeriod::NOT_SET};
     bool m_aggregationPeriodHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

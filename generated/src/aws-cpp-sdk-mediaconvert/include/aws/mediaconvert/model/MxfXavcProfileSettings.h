@@ -32,7 +32,7 @@ namespace Model
   class MxfXavcProfileSettings
   {
   public:
-    AWS_MEDIACONVERT_API MxfXavcProfileSettings();
+    AWS_MEDIACONVERT_API MxfXavcProfileSettings() = default;
     AWS_MEDIACONVERT_API MxfXavcProfileSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MxfXavcProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * duration. The number of frames that MediaConvert excludes when you set this to
      * Drop frames for compliance depends on the output frame rate and duration.
      */
-    inline const MxfXavcDurationMode& GetDurationMode() const{ return m_durationMode; }
+    inline MxfXavcDurationMode GetDurationMode() const { return m_durationMode; }
     inline bool DurationModeHasBeenSet() const { return m_durationModeHasBeenSet; }
-    inline void SetDurationMode(const MxfXavcDurationMode& value) { m_durationModeHasBeenSet = true; m_durationMode = value; }
-    inline void SetDurationMode(MxfXavcDurationMode&& value) { m_durationModeHasBeenSet = true; m_durationMode = std::move(value); }
-    inline MxfXavcProfileSettings& WithDurationMode(const MxfXavcDurationMode& value) { SetDurationMode(value); return *this;}
-    inline MxfXavcProfileSettings& WithDurationMode(MxfXavcDurationMode&& value) { SetDurationMode(std::move(value)); return *this;}
+    inline void SetDurationMode(MxfXavcDurationMode value) { m_durationModeHasBeenSet = true; m_durationMode = value; }
+    inline MxfXavcProfileSettings& WithDurationMode(MxfXavcDurationMode value) { SetDurationMode(value); return *this;}
     ///@}
 
     ///@{
@@ -64,17 +62,17 @@ namespace Model
      * pages of teletext captions data. If you have a large amount of teletext data,
      * specify a larger number.
      */
-    inline int GetMaxAncDataSize() const{ return m_maxAncDataSize; }
+    inline int GetMaxAncDataSize() const { return m_maxAncDataSize; }
     inline bool MaxAncDataSizeHasBeenSet() const { return m_maxAncDataSizeHasBeenSet; }
     inline void SetMaxAncDataSize(int value) { m_maxAncDataSizeHasBeenSet = true; m_maxAncDataSize = value; }
     inline MxfXavcProfileSettings& WithMaxAncDataSize(int value) { SetMaxAncDataSize(value); return *this;}
     ///@}
   private:
 
-    MxfXavcDurationMode m_durationMode;
+    MxfXavcDurationMode m_durationMode{MxfXavcDurationMode::NOT_SET};
     bool m_durationModeHasBeenSet = false;
 
-    int m_maxAncDataSize;
+    int m_maxAncDataSize{0};
     bool m_maxAncDataSizeHasBeenSet = false;
   };
 

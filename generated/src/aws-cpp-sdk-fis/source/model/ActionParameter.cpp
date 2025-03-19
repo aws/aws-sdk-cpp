@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ActionParameter::ActionParameter() : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
-{
-}
-
 ActionParameter::ActionParameter(JsonView jsonValue)
-  : ActionParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ActionParameter& ActionParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

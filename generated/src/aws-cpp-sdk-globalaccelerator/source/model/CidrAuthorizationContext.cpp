@@ -18,14 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CidrAuthorizationContext::CidrAuthorizationContext() : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
-{
-}
-
 CidrAuthorizationContext::CidrAuthorizationContext(JsonView jsonValue)
-  : CidrAuthorizationContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CidrAuthorizationContext& CidrAuthorizationContext::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signature"))
   {
     m_signature = jsonValue.GetString("Signature");
-
     m_signatureHasBeenSet = true;
   }
-
   return *this;
 }
 

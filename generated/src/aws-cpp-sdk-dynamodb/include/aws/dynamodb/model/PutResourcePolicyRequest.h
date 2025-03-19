@@ -21,7 +21,7 @@ namespace Model
   class PutResourcePolicyRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API PutResourcePolicyRequest();
+    AWS_DYNAMODB_API PutResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * to specify different permissions for your table, indexes, or both, you can
      * define multiple <code>Statement</code> fields in your policy document.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline PutResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline PutResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    PutResourcePolicyRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html">Resource-based
      * policy considerations</a>.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutResourcePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutResourcePolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * policy when no policy exists for the resource, specify <code>NO_POLICY</code>
      * for the revision ID.</p>
      */
-    inline const Aws::String& GetExpectedRevisionId() const{ return m_expectedRevisionId; }
+    inline const Aws::String& GetExpectedRevisionId() const { return m_expectedRevisionId; }
     inline bool ExpectedRevisionIdHasBeenSet() const { return m_expectedRevisionIdHasBeenSet; }
-    inline void SetExpectedRevisionId(const Aws::String& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = value; }
-    inline void SetExpectedRevisionId(Aws::String&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::move(value); }
-    inline void SetExpectedRevisionId(const char* value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId.assign(value); }
-    inline PutResourcePolicyRequest& WithExpectedRevisionId(const Aws::String& value) { SetExpectedRevisionId(value); return *this;}
-    inline PutResourcePolicyRequest& WithExpectedRevisionId(Aws::String&& value) { SetExpectedRevisionId(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithExpectedRevisionId(const char* value) { SetExpectedRevisionId(value); return *this;}
+    template<typename ExpectedRevisionIdT = Aws::String>
+    void SetExpectedRevisionId(ExpectedRevisionIdT&& value) { m_expectedRevisionIdHasBeenSet = true; m_expectedRevisionId = std::forward<ExpectedRevisionIdT>(value); }
+    template<typename ExpectedRevisionIdT = Aws::String>
+    PutResourcePolicyRequest& WithExpectedRevisionId(ExpectedRevisionIdT&& value) { SetExpectedRevisionId(std::forward<ExpectedRevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +102,7 @@ namespace Model
      * <p>Set this parameter to <code>true</code> to confirm that you want to remove
      * your permissions to change the policy of this resource in the future.</p>
      */
-    inline bool GetConfirmRemoveSelfResourceAccess() const{ return m_confirmRemoveSelfResourceAccess; }
+    inline bool GetConfirmRemoveSelfResourceAccess() const { return m_confirmRemoveSelfResourceAccess; }
     inline bool ConfirmRemoveSelfResourceAccessHasBeenSet() const { return m_confirmRemoveSelfResourceAccessHasBeenSet; }
     inline void SetConfirmRemoveSelfResourceAccess(bool value) { m_confirmRemoveSelfResourceAccessHasBeenSet = true; m_confirmRemoveSelfResourceAccess = value; }
     inline PutResourcePolicyRequest& WithConfirmRemoveSelfResourceAccess(bool value) { SetConfirmRemoveSelfResourceAccess(value); return *this;}
@@ -124,7 +118,7 @@ namespace Model
     Aws::String m_expectedRevisionId;
     bool m_expectedRevisionIdHasBeenSet = false;
 
-    bool m_confirmRemoveSelfResourceAccess;
+    bool m_confirmRemoveSelfResourceAccess{false};
     bool m_confirmRemoveSelfResourceAccessHasBeenSet = false;
   };
 

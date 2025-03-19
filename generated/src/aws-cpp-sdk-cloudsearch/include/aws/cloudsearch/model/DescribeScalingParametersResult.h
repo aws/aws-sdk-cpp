@@ -35,33 +35,35 @@ namespace Model
   class DescribeScalingParametersResult
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeScalingParametersResult();
+    AWS_CLOUDSEARCH_API DescribeScalingParametersResult() = default;
     AWS_CLOUDSEARCH_API DescribeScalingParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DescribeScalingParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ScalingParametersStatus& GetScalingParameters() const{ return m_scalingParameters; }
-    inline void SetScalingParameters(const ScalingParametersStatus& value) { m_scalingParameters = value; }
-    inline void SetScalingParameters(ScalingParametersStatus&& value) { m_scalingParameters = std::move(value); }
-    inline DescribeScalingParametersResult& WithScalingParameters(const ScalingParametersStatus& value) { SetScalingParameters(value); return *this;}
-    inline DescribeScalingParametersResult& WithScalingParameters(ScalingParametersStatus&& value) { SetScalingParameters(std::move(value)); return *this;}
+    inline const ScalingParametersStatus& GetScalingParameters() const { return m_scalingParameters; }
+    template<typename ScalingParametersT = ScalingParametersStatus>
+    void SetScalingParameters(ScalingParametersT&& value) { m_scalingParametersHasBeenSet = true; m_scalingParameters = std::forward<ScalingParametersT>(value); }
+    template<typename ScalingParametersT = ScalingParametersStatus>
+    DescribeScalingParametersResult& WithScalingParameters(ScalingParametersT&& value) { SetScalingParameters(std::forward<ScalingParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeScalingParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeScalingParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeScalingParametersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ScalingParametersStatus m_scalingParameters;
+    bool m_scalingParametersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

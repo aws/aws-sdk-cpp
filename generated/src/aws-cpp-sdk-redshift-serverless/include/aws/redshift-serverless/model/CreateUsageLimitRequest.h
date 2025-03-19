@@ -24,7 +24,7 @@ namespace Model
   class CreateUsageLimitRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API CreateUsageLimitRequest();
+    AWS_REDSHIFTSERVERLESS_API CreateUsageLimitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * transferred between Regions in cross-account sharing. The value must be a
      * positive number.</p>
      */
-    inline long long GetAmount() const{ return m_amount; }
+    inline long long GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(long long value) { m_amountHasBeenSet = true; m_amount = value; }
     inline CreateUsageLimitRequest& WithAmount(long long value) { SetAmount(value); return *this;}
@@ -55,12 +55,10 @@ namespace Model
      * <p>The action that Amazon Redshift Serverless takes when the limit is reached.
      * The default is log.</p>
      */
-    inline const UsageLimitBreachAction& GetBreachAction() const{ return m_breachAction; }
+    inline UsageLimitBreachAction GetBreachAction() const { return m_breachAction; }
     inline bool BreachActionHasBeenSet() const { return m_breachActionHasBeenSet; }
-    inline void SetBreachAction(const UsageLimitBreachAction& value) { m_breachActionHasBeenSet = true; m_breachAction = value; }
-    inline void SetBreachAction(UsageLimitBreachAction&& value) { m_breachActionHasBeenSet = true; m_breachAction = std::move(value); }
-    inline CreateUsageLimitRequest& WithBreachAction(const UsageLimitBreachAction& value) { SetBreachAction(value); return *this;}
-    inline CreateUsageLimitRequest& WithBreachAction(UsageLimitBreachAction&& value) { SetBreachAction(std::move(value)); return *this;}
+    inline void SetBreachAction(UsageLimitBreachAction value) { m_breachActionHasBeenSet = true; m_breachAction = value; }
+    inline CreateUsageLimitRequest& WithBreachAction(UsageLimitBreachAction value) { SetBreachAction(value); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * <p>The time period that the amount applies to. A weekly period begins on Sunday.
      * The default is monthly.</p>
      */
-    inline const UsageLimitPeriod& GetPeriod() const{ return m_period; }
+    inline UsageLimitPeriod GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-    inline void SetPeriod(const UsageLimitPeriod& value) { m_periodHasBeenSet = true; m_period = value; }
-    inline void SetPeriod(UsageLimitPeriod&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
-    inline CreateUsageLimitRequest& WithPeriod(const UsageLimitPeriod& value) { SetPeriod(value); return *this;}
-    inline CreateUsageLimitRequest& WithPeriod(UsageLimitPeriod&& value) { SetPeriod(std::move(value)); return *this;}
+    inline void SetPeriod(UsageLimitPeriod value) { m_periodHasBeenSet = true; m_period = value; }
+    inline CreateUsageLimitRequest& WithPeriod(UsageLimitPeriod value) { SetPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -81,42 +77,38 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to
      * create the usage limit for.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline CreateUsageLimitRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline CreateUsageLimitRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline CreateUsageLimitRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    CreateUsageLimitRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of Amazon Redshift Serverless usage to create a usage limit for.</p>
      */
-    inline const UsageLimitUsageType& GetUsageType() const{ return m_usageType; }
+    inline UsageLimitUsageType GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const UsageLimitUsageType& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(UsageLimitUsageType&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline CreateUsageLimitRequest& WithUsageType(const UsageLimitUsageType& value) { SetUsageType(value); return *this;}
-    inline CreateUsageLimitRequest& WithUsageType(UsageLimitUsageType&& value) { SetUsageType(std::move(value)); return *this;}
+    inline void SetUsageType(UsageLimitUsageType value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
+    inline CreateUsageLimitRequest& WithUsageType(UsageLimitUsageType value) { SetUsageType(value); return *this;}
     ///@}
   private:
 
-    long long m_amount;
+    long long m_amount{0};
     bool m_amountHasBeenSet = false;
 
-    UsageLimitBreachAction m_breachAction;
+    UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
     bool m_breachActionHasBeenSet = false;
 
-    UsageLimitPeriod m_period;
+    UsageLimitPeriod m_period{UsageLimitPeriod::NOT_SET};
     bool m_periodHasBeenSet = false;
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    UsageLimitUsageType m_usageType;
+    UsageLimitUsageType m_usageType{UsageLimitUsageType::NOT_SET};
     bool m_usageTypeHasBeenSet = false;
   };
 

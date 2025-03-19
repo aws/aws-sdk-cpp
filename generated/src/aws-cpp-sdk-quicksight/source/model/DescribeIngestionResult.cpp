@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIngestionResult::DescribeIngestionResult() : 
-    m_status(0)
-{
-}
-
 DescribeIngestionResult::DescribeIngestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeIngestionResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeIngestionResult& DescribeIngestionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Ingestion"))
   {
     m_ingestion = jsonValue.GetObject("Ingestion");
-
+    m_ingestionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

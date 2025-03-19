@@ -12,14 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkspaceRequest::UpdateWorkspaceRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkspaceRequest::SerializePayload() const
 {
   JsonValue payload;

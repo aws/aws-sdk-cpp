@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-StorageMaximumSize::StorageMaximumSize() : 
-    m_unit(StorageMaximumSizeUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 StorageMaximumSize::StorageMaximumSize(JsonView jsonValue)
-  : StorageMaximumSize()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StorageMaximumSize& StorageMaximumSize::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = StorageMaximumSizeUnitMapper::GetStorageMaximumSizeUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

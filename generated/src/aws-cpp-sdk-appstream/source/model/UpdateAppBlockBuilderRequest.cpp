@@ -12,22 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppBlockBuilderRequest::UpdateAppBlockBuilderRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_accessEndpointsHasBeenSet(false),
-    m_attributesToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppBlockBuilderRequest::SerializePayload() const
 {
   JsonValue payload;

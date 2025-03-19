@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVocabularyFiltersResult::ListVocabularyFiltersResult()
-{
-}
-
 ListVocabularyFiltersResult::ListVocabularyFiltersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListVocabularyFiltersResult& ListVocabularyFiltersResult::operator =(const Aws::
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilters"))
   {
     Aws::Utils::Array<JsonView> vocabularyFiltersJsonList = jsonValue.GetArray("VocabularyFilters");
@@ -42,14 +37,15 @@ ListVocabularyFiltersResult& ListVocabularyFiltersResult::operator =(const Aws::
     {
       m_vocabularyFilters.push_back(vocabularyFiltersJsonList[vocabularyFiltersIndex].AsObject());
     }
+    m_vocabularyFiltersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

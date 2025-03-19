@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSessionStatusRequest::GetSessionStatusRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class UpdateTableReplicaAutoScalingResult
   {
   public:
-    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult();
+    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult() = default;
     AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returns information about the auto scaling settings of a table with
      * replicas.</p>
      */
-    inline const TableAutoScalingDescription& GetTableAutoScalingDescription() const{ return m_tableAutoScalingDescription; }
-    inline void SetTableAutoScalingDescription(const TableAutoScalingDescription& value) { m_tableAutoScalingDescription = value; }
-    inline void SetTableAutoScalingDescription(TableAutoScalingDescription&& value) { m_tableAutoScalingDescription = std::move(value); }
-    inline UpdateTableReplicaAutoScalingResult& WithTableAutoScalingDescription(const TableAutoScalingDescription& value) { SetTableAutoScalingDescription(value); return *this;}
-    inline UpdateTableReplicaAutoScalingResult& WithTableAutoScalingDescription(TableAutoScalingDescription&& value) { SetTableAutoScalingDescription(std::move(value)); return *this;}
+    inline const TableAutoScalingDescription& GetTableAutoScalingDescription() const { return m_tableAutoScalingDescription; }
+    template<typename TableAutoScalingDescriptionT = TableAutoScalingDescription>
+    void SetTableAutoScalingDescription(TableAutoScalingDescriptionT&& value) { m_tableAutoScalingDescriptionHasBeenSet = true; m_tableAutoScalingDescription = std::forward<TableAutoScalingDescriptionT>(value); }
+    template<typename TableAutoScalingDescriptionT = TableAutoScalingDescription>
+    UpdateTableReplicaAutoScalingResult& WithTableAutoScalingDescription(TableAutoScalingDescriptionT&& value) { SetTableAutoScalingDescription(std::forward<TableAutoScalingDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTableReplicaAutoScalingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTableReplicaAutoScalingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTableReplicaAutoScalingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTableReplicaAutoScalingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TableAutoScalingDescription m_tableAutoScalingDescription;
+    bool m_tableAutoScalingDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

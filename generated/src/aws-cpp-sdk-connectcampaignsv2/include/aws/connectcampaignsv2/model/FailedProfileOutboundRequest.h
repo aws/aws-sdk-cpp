@@ -32,7 +32,7 @@ namespace Model
   class FailedProfileOutboundRequest
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API FailedProfileOutboundRequest();
+    AWS_CONNECTCAMPAIGNSV2_API FailedProfileOutboundRequest() = default;
     AWS_CONNECTCAMPAIGNSV2_API FailedProfileOutboundRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API FailedProfileOutboundRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,36 +40,30 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline FailedProfileOutboundRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline FailedProfileOutboundRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline FailedProfileOutboundRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    FailedProfileOutboundRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FailedProfileOutboundRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FailedProfileOutboundRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FailedProfileOutboundRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FailedProfileOutboundRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProfileOutboundRequestFailureCode& GetFailureCode() const{ return m_failureCode; }
+    inline ProfileOutboundRequestFailureCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const ProfileOutboundRequestFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(ProfileOutboundRequestFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline FailedProfileOutboundRequest& WithFailureCode(const ProfileOutboundRequestFailureCode& value) { SetFailureCode(value); return *this;}
-    inline FailedProfileOutboundRequest& WithFailureCode(ProfileOutboundRequestFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(ProfileOutboundRequestFailureCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline FailedProfileOutboundRequest& WithFailureCode(ProfileOutboundRequestFailureCode value) { SetFailureCode(value); return *this;}
     ///@}
   private:
 
@@ -79,7 +73,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ProfileOutboundRequestFailureCode m_failureCode;
+    ProfileOutboundRequestFailureCode m_failureCode{ProfileOutboundRequestFailureCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
   };
 

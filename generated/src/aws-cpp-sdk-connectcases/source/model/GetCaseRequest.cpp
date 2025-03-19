@@ -12,14 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCaseRequest::GetCaseRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCaseRequest::SerializePayload() const
 {
   JsonValue payload;

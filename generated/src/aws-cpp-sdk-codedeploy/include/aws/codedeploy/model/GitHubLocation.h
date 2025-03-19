@@ -32,7 +32,7 @@ namespace Model
   class GitHubLocation
   {
   public:
-    AWS_CODEDEPLOY_API GitHubLocation();
+    AWS_CODEDEPLOY_API GitHubLocation() = default;
     AWS_CODEDEPLOY_API GitHubLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API GitHubLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * that represents the bundled artifacts for the application revision. </p>
      * <p>Specified as account/repository.</p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline GitHubLocation& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline GitHubLocation& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline GitHubLocation& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    GitHubLocation& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts
      * for the application revision.</p>
      */
-    inline const Aws::String& GetCommitId() const{ return m_commitId; }
+    inline const Aws::String& GetCommitId() const { return m_commitId; }
     inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
-    inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
-    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = std::move(value); }
-    inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
-    inline GitHubLocation& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
-    inline GitHubLocation& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
-    inline GitHubLocation& WithCommitId(const char* value) { SetCommitId(value); return *this;}
+    template<typename CommitIdT = Aws::String>
+    void SetCommitId(CommitIdT&& value) { m_commitIdHasBeenSet = true; m_commitId = std::forward<CommitIdT>(value); }
+    template<typename CommitIdT = Aws::String>
+    GitHubLocation& WithCommitId(CommitIdT&& value) { SetCommitId(std::forward<CommitIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeJournalKinesisStreamResult
   {
   public:
-    AWS_QLDB_API DescribeJournalKinesisStreamResult();
+    AWS_QLDB_API DescribeJournalKinesisStreamResult() = default;
     AWS_QLDB_API DescribeJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API DescribeJournalKinesisStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about the QLDB journal stream returned by a
      * <code>DescribeJournalS3Export</code> request.</p>
      */
-    inline const JournalKinesisStreamDescription& GetStream() const{ return m_stream; }
-    inline void SetStream(const JournalKinesisStreamDescription& value) { m_stream = value; }
-    inline void SetStream(JournalKinesisStreamDescription&& value) { m_stream = std::move(value); }
-    inline DescribeJournalKinesisStreamResult& WithStream(const JournalKinesisStreamDescription& value) { SetStream(value); return *this;}
-    inline DescribeJournalKinesisStreamResult& WithStream(JournalKinesisStreamDescription&& value) { SetStream(std::move(value)); return *this;}
+    inline const JournalKinesisStreamDescription& GetStream() const { return m_stream; }
+    template<typename StreamT = JournalKinesisStreamDescription>
+    void SetStream(StreamT&& value) { m_streamHasBeenSet = true; m_stream = std::forward<StreamT>(value); }
+    template<typename StreamT = JournalKinesisStreamDescription>
+    DescribeJournalKinesisStreamResult& WithStream(StreamT&& value) { SetStream(std::forward<StreamT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeJournalKinesisStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeJournalKinesisStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeJournalKinesisStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeJournalKinesisStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JournalKinesisStreamDescription m_stream;
+    bool m_streamHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

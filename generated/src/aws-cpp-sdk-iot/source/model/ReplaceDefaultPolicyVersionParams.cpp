@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams() : 
-    m_templateName(PolicyTemplateName::NOT_SET),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams(JsonView jsonValue)
-  : ReplaceDefaultPolicyVersionParams()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReplaceDefaultPolicyVersionParams& ReplaceDefaultPolicyVersionParams::operator =
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = PolicyTemplateNameMapper::GetPolicyTemplateNameForName(jsonValue.GetString("templateName"));
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

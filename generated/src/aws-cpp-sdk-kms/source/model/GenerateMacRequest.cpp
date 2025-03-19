@@ -13,17 +13,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateMacRequest::GenerateMacRequest() : 
-    m_messageHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_macAlgorithm(MacAlgorithmSpec::NOT_SET),
-    m_macAlgorithmHasBeenSet(false),
-    m_grantTokensHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GenerateMacRequest::SerializePayload() const
 {
   JsonValue payload;

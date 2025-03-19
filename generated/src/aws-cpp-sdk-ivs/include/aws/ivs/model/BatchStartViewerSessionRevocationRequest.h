@@ -22,7 +22,7 @@ namespace Model
   class BatchStartViewerSessionRevocationRequest : public IVSRequest
   {
   public:
-    AWS_IVS_API BatchStartViewerSessionRevocationRequest();
+    AWS_IVS_API BatchStartViewerSessionRevocationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
      */
-    inline const Aws::Vector<BatchStartViewerSessionRevocationViewerSession>& GetViewerSessions() const{ return m_viewerSessions; }
+    inline const Aws::Vector<BatchStartViewerSessionRevocationViewerSession>& GetViewerSessions() const { return m_viewerSessions; }
     inline bool ViewerSessionsHasBeenSet() const { return m_viewerSessionsHasBeenSet; }
-    inline void SetViewerSessions(const Aws::Vector<BatchStartViewerSessionRevocationViewerSession>& value) { m_viewerSessionsHasBeenSet = true; m_viewerSessions = value; }
-    inline void SetViewerSessions(Aws::Vector<BatchStartViewerSessionRevocationViewerSession>&& value) { m_viewerSessionsHasBeenSet = true; m_viewerSessions = std::move(value); }
-    inline BatchStartViewerSessionRevocationRequest& WithViewerSessions(const Aws::Vector<BatchStartViewerSessionRevocationViewerSession>& value) { SetViewerSessions(value); return *this;}
-    inline BatchStartViewerSessionRevocationRequest& WithViewerSessions(Aws::Vector<BatchStartViewerSessionRevocationViewerSession>&& value) { SetViewerSessions(std::move(value)); return *this;}
-    inline BatchStartViewerSessionRevocationRequest& AddViewerSessions(const BatchStartViewerSessionRevocationViewerSession& value) { m_viewerSessionsHasBeenSet = true; m_viewerSessions.push_back(value); return *this; }
-    inline BatchStartViewerSessionRevocationRequest& AddViewerSessions(BatchStartViewerSessionRevocationViewerSession&& value) { m_viewerSessionsHasBeenSet = true; m_viewerSessions.push_back(std::move(value)); return *this; }
+    template<typename ViewerSessionsT = Aws::Vector<BatchStartViewerSessionRevocationViewerSession>>
+    void SetViewerSessions(ViewerSessionsT&& value) { m_viewerSessionsHasBeenSet = true; m_viewerSessions = std::forward<ViewerSessionsT>(value); }
+    template<typename ViewerSessionsT = Aws::Vector<BatchStartViewerSessionRevocationViewerSession>>
+    BatchStartViewerSessionRevocationRequest& WithViewerSessions(ViewerSessionsT&& value) { SetViewerSessions(std::forward<ViewerSessionsT>(value)); return *this;}
+    template<typename ViewerSessionsT = BatchStartViewerSessionRevocationViewerSession>
+    BatchStartViewerSessionRevocationRequest& AddViewerSessions(ViewerSessionsT&& value) { m_viewerSessionsHasBeenSet = true; m_viewerSessions.emplace_back(std::forward<ViewerSessionsT>(value)); return *this; }
     ///@}
   private:
 

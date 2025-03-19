@@ -18,20 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-GrantEntitlementRequest::GrantEntitlementRequest() : 
-    m_dataTransferSubscriberFeePercent(0),
-    m_dataTransferSubscriberFeePercentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_entitlementStatus(EntitlementStatus::NOT_SET),
-    m_entitlementStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_subscribersHasBeenSet(false)
-{
-}
-
 GrantEntitlementRequest::GrantEntitlementRequest(JsonView jsonValue)
-  : GrantEntitlementRequest()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataTransferSubscriberFeePercent"))
   {
     m_dataTransferSubscriberFeePercent = jsonValue.GetInteger("dataTransferSubscriberFeePercent");
-
     m_dataTransferSubscriberFeePercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entitlementStatus"))
   {
     m_entitlementStatus = EntitlementStatusMapper::GetEntitlementStatusForName(jsonValue.GetString("entitlementStatus"));
-
     m_entitlementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscribers"))
   {
     Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("subscribers");
@@ -82,7 +59,6 @@ GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
     }
     m_subscribersHasBeenSet = true;
   }
-
   return *this;
 }
 

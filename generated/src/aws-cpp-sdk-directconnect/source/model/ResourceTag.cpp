@@ -18,14 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-ResourceTag::ResourceTag() : 
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ResourceTag::ResourceTag(JsonView jsonValue)
-  : ResourceTag()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResourceTag& ResourceTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -48,7 +39,6 @@ ResourceTag& ResourceTag::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

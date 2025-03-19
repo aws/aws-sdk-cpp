@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLbCookieStickinessPolicy::AwsElbLbCookieStickinessPolicy() : 
-    m_cookieExpirationPeriod(0),
-    m_cookieExpirationPeriodHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 AwsElbLbCookieStickinessPolicy::AwsElbLbCookieStickinessPolicy(JsonView jsonValue)
-  : AwsElbLbCookieStickinessPolicy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsElbLbCookieStickinessPolicy& AwsElbLbCookieStickinessPolicy::operator =(JsonV
   if(jsonValue.ValueExists("CookieExpirationPeriod"))
   {
     m_cookieExpirationPeriod = jsonValue.GetInt64("CookieExpirationPeriod");
-
     m_cookieExpirationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

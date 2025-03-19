@@ -18,14 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowS3Options::DataIntegrationFlowS3Options() : 
-    m_fileType(DataIntegrationFlowFileType::NOT_SET),
-    m_fileTypeHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowS3Options::DataIntegrationFlowS3Options(JsonView jsonValue)
-  : DataIntegrationFlowS3Options()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataIntegrationFlowS3Options& DataIntegrationFlowS3Options::operator =(JsonView 
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = DataIntegrationFlowFileTypeMapper::GetDataIntegrationFlowFileTypeForName(jsonValue.GetString("fileType"));
-
     m_fileTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

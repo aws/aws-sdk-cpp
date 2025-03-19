@@ -38,7 +38,7 @@ namespace Model
   class ECSTaskSet
   {
   public:
-    AWS_CODEDEPLOY_API ECSTaskSet();
+    AWS_CODEDEPLOY_API ECSTaskSet() = default;
     AWS_CODEDEPLOY_API ECSTaskSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API ECSTaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p> A unique ID of an <code>ECSTaskSet</code>. </p>
      */
-    inline const Aws::String& GetIdentifer() const{ return m_identifer; }
+    inline const Aws::String& GetIdentifer() const { return m_identifer; }
     inline bool IdentiferHasBeenSet() const { return m_identiferHasBeenSet; }
-    inline void SetIdentifer(const Aws::String& value) { m_identiferHasBeenSet = true; m_identifer = value; }
-    inline void SetIdentifer(Aws::String&& value) { m_identiferHasBeenSet = true; m_identifer = std::move(value); }
-    inline void SetIdentifer(const char* value) { m_identiferHasBeenSet = true; m_identifer.assign(value); }
-    inline ECSTaskSet& WithIdentifer(const Aws::String& value) { SetIdentifer(value); return *this;}
-    inline ECSTaskSet& WithIdentifer(Aws::String&& value) { SetIdentifer(std::move(value)); return *this;}
-    inline ECSTaskSet& WithIdentifer(const char* value) { SetIdentifer(value); return *this;}
+    template<typename IdentiferT = Aws::String>
+    void SetIdentifer(IdentiferT&& value) { m_identiferHasBeenSet = true; m_identifer = std::forward<IdentiferT>(value); }
+    template<typename IdentiferT = Aws::String>
+    ECSTaskSet& WithIdentifer(IdentiferT&& value) { SetIdentifer(std::forward<IdentiferT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * uses this value to determine how many tasks to create. After the updated task
      * set is created, CodeDeploy shifts traffic to the new task set. </p>
      */
-    inline long long GetDesiredCount() const{ return m_desiredCount; }
+    inline long long GetDesiredCount() const { return m_desiredCount; }
     inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
     inline void SetDesiredCount(long long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
     inline ECSTaskSet& WithDesiredCount(long long value) { SetDesiredCount(value); return *this;}
@@ -79,7 +77,7 @@ namespace Model
      * <code>PENDING</code> status when it launches for the first time, or when it is
      * restarted after being in the <code>STOPPED</code> state. </p>
      */
-    inline long long GetPendingCount() const{ return m_pendingCount; }
+    inline long long GetPendingCount() const { return m_pendingCount; }
     inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
     inline void SetPendingCount(long long value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
     inline ECSTaskSet& WithPendingCount(long long value) { SetPendingCount(value); return *this;}
@@ -91,7 +89,7 @@ namespace Model
      * status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state
      * is running and ready for use. </p>
      */
-    inline long long GetRunningCount() const{ return m_runningCount; }
+    inline long long GetRunningCount() const { return m_runningCount; }
     inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
     inline void SetRunningCount(long long value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
     inline ECSTaskSet& WithRunningCount(long long value) { SetRunningCount(value); return *this;}
@@ -106,21 +104,19 @@ namespace Model
      * the tasks in the task set are being stopped and their corresponding targets are
      * being deregistered from their target group. </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ECSTaskSet& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ECSTaskSet& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ECSTaskSet& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ECSTaskSet& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The percentage of traffic served by this task set. </p>
      */
-    inline double GetTrafficWeight() const{ return m_trafficWeight; }
+    inline double GetTrafficWeight() const { return m_trafficWeight; }
     inline bool TrafficWeightHasBeenSet() const { return m_trafficWeightHasBeenSet; }
     inline void SetTrafficWeight(double value) { m_trafficWeightHasBeenSet = true; m_trafficWeight = value; }
     inline ECSTaskSet& WithTrafficWeight(double value) { SetTrafficWeight(value); return *this;}
@@ -131,12 +127,12 @@ namespace Model
      * <p> The target group associated with the task set. The target group is used by
      * CodeDeploy to manage traffic to a task set. </p>
      */
-    inline const TargetGroupInfo& GetTargetGroup() const{ return m_targetGroup; }
+    inline const TargetGroupInfo& GetTargetGroup() const { return m_targetGroup; }
     inline bool TargetGroupHasBeenSet() const { return m_targetGroupHasBeenSet; }
-    inline void SetTargetGroup(const TargetGroupInfo& value) { m_targetGroupHasBeenSet = true; m_targetGroup = value; }
-    inline void SetTargetGroup(TargetGroupInfo&& value) { m_targetGroupHasBeenSet = true; m_targetGroup = std::move(value); }
-    inline ECSTaskSet& WithTargetGroup(const TargetGroupInfo& value) { SetTargetGroup(value); return *this;}
-    inline ECSTaskSet& WithTargetGroup(TargetGroupInfo&& value) { SetTargetGroup(std::move(value)); return *this;}
+    template<typename TargetGroupT = TargetGroupInfo>
+    void SetTargetGroup(TargetGroupT&& value) { m_targetGroupHasBeenSet = true; m_targetGroup = std::forward<TargetGroupT>(value); }
+    template<typename TargetGroupT = TargetGroupInfo>
+    ECSTaskSet& WithTargetGroup(TargetGroupT&& value) { SetTargetGroup(std::forward<TargetGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,37 +140,35 @@ namespace Model
      * <p> A label that identifies whether the ECS task set is an original target
      * (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
      */
-    inline const TargetLabel& GetTaskSetLabel() const{ return m_taskSetLabel; }
+    inline TargetLabel GetTaskSetLabel() const { return m_taskSetLabel; }
     inline bool TaskSetLabelHasBeenSet() const { return m_taskSetLabelHasBeenSet; }
-    inline void SetTaskSetLabel(const TargetLabel& value) { m_taskSetLabelHasBeenSet = true; m_taskSetLabel = value; }
-    inline void SetTaskSetLabel(TargetLabel&& value) { m_taskSetLabelHasBeenSet = true; m_taskSetLabel = std::move(value); }
-    inline ECSTaskSet& WithTaskSetLabel(const TargetLabel& value) { SetTaskSetLabel(value); return *this;}
-    inline ECSTaskSet& WithTaskSetLabel(TargetLabel&& value) { SetTaskSetLabel(std::move(value)); return *this;}
+    inline void SetTaskSetLabel(TargetLabel value) { m_taskSetLabelHasBeenSet = true; m_taskSetLabel = value; }
+    inline ECSTaskSet& WithTaskSetLabel(TargetLabel value) { SetTaskSetLabel(value); return *this;}
     ///@}
   private:
 
     Aws::String m_identifer;
     bool m_identiferHasBeenSet = false;
 
-    long long m_desiredCount;
+    long long m_desiredCount{0};
     bool m_desiredCountHasBeenSet = false;
 
-    long long m_pendingCount;
+    long long m_pendingCount{0};
     bool m_pendingCountHasBeenSet = false;
 
-    long long m_runningCount;
+    long long m_runningCount{0};
     bool m_runningCountHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    double m_trafficWeight;
+    double m_trafficWeight{0.0};
     bool m_trafficWeightHasBeenSet = false;
 
     TargetGroupInfo m_targetGroup;
     bool m_targetGroupHasBeenSet = false;
 
-    TargetLabel m_taskSetLabel;
+    TargetLabel m_taskSetLabel{TargetLabel::NOT_SET};
     bool m_taskSetLabelHasBeenSet = false;
   };
 

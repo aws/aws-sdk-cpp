@@ -18,18 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-AccountLimit::AccountLimit() : 
-    m_name(AccountLimitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AccountLimit::AccountLimit(JsonView jsonValue)
-  : AccountLimit()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AccountLimit& AccountLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = AccountLimitNameMapper::GetAccountLimitNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Used"))
   {
     m_used = jsonValue.GetInt64("Used");
-
     m_usedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetInt64("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

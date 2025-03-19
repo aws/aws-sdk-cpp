@@ -32,7 +32,7 @@ namespace Model
   class Attendee
   {
   public:
-    AWS_CONNECT_API Attendee();
+    AWS_CONNECT_API Attendee() = default;
     AWS_CONNECT_API Attendee(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Attendee& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Chime SDK attendee ID.</p>
      */
-    inline const Aws::String& GetAttendeeId() const{ return m_attendeeId; }
+    inline const Aws::String& GetAttendeeId() const { return m_attendeeId; }
     inline bool AttendeeIdHasBeenSet() const { return m_attendeeIdHasBeenSet; }
-    inline void SetAttendeeId(const Aws::String& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = value; }
-    inline void SetAttendeeId(Aws::String&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::move(value); }
-    inline void SetAttendeeId(const char* value) { m_attendeeIdHasBeenSet = true; m_attendeeId.assign(value); }
-    inline Attendee& WithAttendeeId(const Aws::String& value) { SetAttendeeId(value); return *this;}
-    inline Attendee& WithAttendeeId(Aws::String&& value) { SetAttendeeId(std::move(value)); return *this;}
-    inline Attendee& WithAttendeeId(const char* value) { SetAttendeeId(value); return *this;}
+    template<typename AttendeeIdT = Aws::String>
+    void SetAttendeeId(AttendeeIdT&& value) { m_attendeeIdHasBeenSet = true; m_attendeeId = std::forward<AttendeeIdT>(value); }
+    template<typename AttendeeIdT = Aws::String>
+    Attendee& WithAttendeeId(AttendeeIdT&& value) { SetAttendeeId(std::forward<AttendeeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The join token used by the Amazon Chime SDK attendee.</p>
      */
-    inline const Aws::String& GetJoinToken() const{ return m_joinToken; }
+    inline const Aws::String& GetJoinToken() const { return m_joinToken; }
     inline bool JoinTokenHasBeenSet() const { return m_joinTokenHasBeenSet; }
-    inline void SetJoinToken(const Aws::String& value) { m_joinTokenHasBeenSet = true; m_joinToken = value; }
-    inline void SetJoinToken(Aws::String&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::move(value); }
-    inline void SetJoinToken(const char* value) { m_joinTokenHasBeenSet = true; m_joinToken.assign(value); }
-    inline Attendee& WithJoinToken(const Aws::String& value) { SetJoinToken(value); return *this;}
-    inline Attendee& WithJoinToken(Aws::String&& value) { SetJoinToken(std::move(value)); return *this;}
-    inline Attendee& WithJoinToken(const char* value) { SetJoinToken(value); return *this;}
+    template<typename JoinTokenT = Aws::String>
+    void SetJoinToken(JoinTokenT&& value) { m_joinTokenHasBeenSet = true; m_joinToken = std::forward<JoinTokenT>(value); }
+    template<typename JoinTokenT = Aws::String>
+    Attendee& WithJoinToken(JoinTokenT&& value) { SetJoinToken(std::forward<JoinTokenT>(value)); return *this;}
     ///@}
   private:
 

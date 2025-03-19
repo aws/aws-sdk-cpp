@@ -12,12 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveEndpointsRequest::RemoveEndpointsRequest() : 
-    m_endpointIdentifiersHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String RemoveEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

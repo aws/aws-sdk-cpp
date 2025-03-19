@@ -12,15 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBonusPaymentsRequest::ListBonusPaymentsRequest() : 
-    m_hITIdHasBeenSet(false),
-    m_assignmentIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListBonusPaymentsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace Athena
 namespace Model
 {
 
-AthenaError::AthenaError() : 
-    m_errorCategory(0),
-    m_errorCategoryHasBeenSet(false),
-    m_errorType(0),
-    m_errorTypeHasBeenSet(false),
-    m_retryable(false),
-    m_retryableHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 AthenaError::AthenaError(JsonView jsonValue)
-  : AthenaError()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AthenaError& AthenaError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCategory"))
   {
     m_errorCategory = jsonValue.GetInteger("ErrorCategory");
-
     m_errorCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorType"))
   {
     m_errorType = jsonValue.GetInteger("ErrorType");
-
     m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Retryable"))
   {
     m_retryable = jsonValue.GetBool("Retryable");
-
     m_retryableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

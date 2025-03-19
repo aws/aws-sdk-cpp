@@ -18,20 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ComponentSummary::ComponentSummary() : 
-    m_componentNameHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_definedInHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_componentPathHasBeenSet(false)
-{
-}
-
 ComponentSummary::ComponentSummary(JsonView jsonValue)
-  : ComponentSummary()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
-
     m_componentTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definedIn"))
   {
     m_definedIn = jsonValue.GetString("definedIn");
-
     m_definedInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyGroups"))
   {
     Aws::Map<Aws::String, JsonView> propertyGroupsJsonMap = jsonValue.GetObject("propertyGroups").GetAllObjects();
@@ -75,28 +54,21 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
     }
     m_propertyGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("syncSource"))
   {
     m_syncSource = jsonValue.GetString("syncSource");
-
     m_syncSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentPath"))
   {
     m_componentPath = jsonValue.GetString("componentPath");
-
     m_componentPathHasBeenSet = true;
   }
-
   return *this;
 }
 

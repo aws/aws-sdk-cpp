@@ -12,13 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGatewayInstanceRequest::UpdateGatewayInstanceRequest() : 
-    m_bridgePlacement(BridgePlacement::NOT_SET),
-    m_bridgePlacementHasBeenSet(false),
-    m_gatewayInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGatewayInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

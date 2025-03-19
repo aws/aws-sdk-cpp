@@ -12,17 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIAMPolicyAssignmentRequest::UpdateIAMPolicyAssignmentRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_assignmentNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_assignmentStatus(AssignmentStatus::NOT_SET),
-    m_assignmentStatusHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_identitiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIAMPolicyAssignmentRequest::SerializePayload() const
 {
   JsonValue payload;

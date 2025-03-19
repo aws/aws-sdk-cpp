@@ -12,11 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetParallelDataRequest::GetParallelDataRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetParallelDataRequest::SerializePayload() const
 {
   JsonValue payload;

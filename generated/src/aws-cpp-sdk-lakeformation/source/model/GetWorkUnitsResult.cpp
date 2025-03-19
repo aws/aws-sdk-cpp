@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkUnitsResult::GetWorkUnitsResult()
-{
-}
-
 GetWorkUnitsResult::GetWorkUnitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetWorkUnitsResult& GetWorkUnitsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
+    m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkUnitRanges"))
   {
     Aws::Utils::Array<JsonView> workUnitRangesJsonList = jsonValue.GetArray("WorkUnitRanges");
@@ -48,14 +42,15 @@ GetWorkUnitsResult& GetWorkUnitsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_workUnitRanges.push_back(workUnitRangesJsonList[workUnitRangesIndex].AsObject());
     }
+    m_workUnitRangesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

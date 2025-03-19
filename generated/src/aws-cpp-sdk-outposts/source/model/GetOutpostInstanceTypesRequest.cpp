@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetOutpostInstanceTypesRequest::GetOutpostInstanceTypesRequest() : 
-    m_outpostIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetOutpostInstanceTypesRequest::SerializePayload() const
 {
   return {};

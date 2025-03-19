@@ -32,7 +32,7 @@ namespace Model
   class ResourceMapping
   {
   public:
-    AWS_CLOUDFORMATION_API ResourceMapping();
+    AWS_CLOUDFORMATION_API ResourceMapping() = default;
     AWS_CLOUDFORMATION_API ResourceMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ResourceMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,12 @@ namespace Model
      * <p>The source stack <code>StackName</code> and <code>LogicalResourceId</code>
      * for the resource being refactored.</p>
      */
-    inline const ResourceLocation& GetSource() const{ return m_source; }
+    inline const ResourceLocation& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ResourceLocation& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ResourceLocation&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ResourceMapping& WithSource(const ResourceLocation& value) { SetSource(value); return *this;}
-    inline ResourceMapping& WithSource(ResourceLocation&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ResourceLocation>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ResourceLocation>
+    ResourceMapping& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The destination stack <code>StackName</code> and
      * <code>LogicalResourceId</code> for the resource being refactored.</p>
      */
-    inline const ResourceLocation& GetDestination() const{ return m_destination; }
+    inline const ResourceLocation& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const ResourceLocation& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(ResourceLocation&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline ResourceMapping& WithDestination(const ResourceLocation& value) { SetDestination(value); return *this;}
-    inline ResourceMapping& WithDestination(ResourceLocation&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = ResourceLocation>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = ResourceLocation>
+    ResourceMapping& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

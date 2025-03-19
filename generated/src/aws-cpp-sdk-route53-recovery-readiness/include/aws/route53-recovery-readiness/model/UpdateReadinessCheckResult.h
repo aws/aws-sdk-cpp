@@ -28,7 +28,7 @@ namespace Model
   class UpdateReadinessCheckResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API UpdateReadinessCheckResult();
+    AWS_ROUTE53RECOVERYREADINESS_API UpdateReadinessCheckResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API UpdateReadinessCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API UpdateReadinessCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,78 +37,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
      */
-    inline const Aws::String& GetReadinessCheckArn() const{ return m_readinessCheckArn; }
-    inline void SetReadinessCheckArn(const Aws::String& value) { m_readinessCheckArn = value; }
-    inline void SetReadinessCheckArn(Aws::String&& value) { m_readinessCheckArn = std::move(value); }
-    inline void SetReadinessCheckArn(const char* value) { m_readinessCheckArn.assign(value); }
-    inline UpdateReadinessCheckResult& WithReadinessCheckArn(const Aws::String& value) { SetReadinessCheckArn(value); return *this;}
-    inline UpdateReadinessCheckResult& WithReadinessCheckArn(Aws::String&& value) { SetReadinessCheckArn(std::move(value)); return *this;}
-    inline UpdateReadinessCheckResult& WithReadinessCheckArn(const char* value) { SetReadinessCheckArn(value); return *this;}
+    inline const Aws::String& GetReadinessCheckArn() const { return m_readinessCheckArn; }
+    template<typename ReadinessCheckArnT = Aws::String>
+    void SetReadinessCheckArn(ReadinessCheckArnT&& value) { m_readinessCheckArnHasBeenSet = true; m_readinessCheckArn = std::forward<ReadinessCheckArnT>(value); }
+    template<typename ReadinessCheckArnT = Aws::String>
+    UpdateReadinessCheckResult& WithReadinessCheckArn(ReadinessCheckArnT&& value) { SetReadinessCheckArn(std::forward<ReadinessCheckArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of a readiness check.</p>
      */
-    inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
-    inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckName = value; }
-    inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckName = std::move(value); }
-    inline void SetReadinessCheckName(const char* value) { m_readinessCheckName.assign(value); }
-    inline UpdateReadinessCheckResult& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
-    inline UpdateReadinessCheckResult& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
-    inline UpdateReadinessCheckResult& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
+    inline const Aws::String& GetReadinessCheckName() const { return m_readinessCheckName; }
+    template<typename ReadinessCheckNameT = Aws::String>
+    void SetReadinessCheckName(ReadinessCheckNameT&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::forward<ReadinessCheckNameT>(value); }
+    template<typename ReadinessCheckNameT = Aws::String>
+    UpdateReadinessCheckResult& WithReadinessCheckName(ReadinessCheckNameT&& value) { SetReadinessCheckName(std::forward<ReadinessCheckNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the resource set to be checked.</p>
      */
-    inline const Aws::String& GetResourceSet() const{ return m_resourceSet; }
-    inline void SetResourceSet(const Aws::String& value) { m_resourceSet = value; }
-    inline void SetResourceSet(Aws::String&& value) { m_resourceSet = std::move(value); }
-    inline void SetResourceSet(const char* value) { m_resourceSet.assign(value); }
-    inline UpdateReadinessCheckResult& WithResourceSet(const Aws::String& value) { SetResourceSet(value); return *this;}
-    inline UpdateReadinessCheckResult& WithResourceSet(Aws::String&& value) { SetResourceSet(std::move(value)); return *this;}
-    inline UpdateReadinessCheckResult& WithResourceSet(const char* value) { SetResourceSet(value); return *this;}
+    inline const Aws::String& GetResourceSet() const { return m_resourceSet; }
+    template<typename ResourceSetT = Aws::String>
+    void SetResourceSet(ResourceSetT&& value) { m_resourceSetHasBeenSet = true; m_resourceSet = std::forward<ResourceSetT>(value); }
+    template<typename ResourceSetT = Aws::String>
+    UpdateReadinessCheckResult& WithResourceSet(ResourceSetT&& value) { SetResourceSet(std::forward<ResourceSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline UpdateReadinessCheckResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline UpdateReadinessCheckResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateReadinessCheckResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline UpdateReadinessCheckResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateReadinessCheckResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateReadinessCheckResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateReadinessCheckResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateReadinessCheckResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateReadinessCheckResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateReadinessCheckResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    UpdateReadinessCheckResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateReadinessCheckResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateReadinessCheckResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateReadinessCheckResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateReadinessCheckResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_readinessCheckArn;
+    bool m_readinessCheckArnHasBeenSet = false;
 
     Aws::String m_readinessCheckName;
+    bool m_readinessCheckNameHasBeenSet = false;
 
     Aws::String m_resourceSet;
+    bool m_resourceSetHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

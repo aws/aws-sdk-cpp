@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-Gpu::Gpu() : 
-    m_gpuCount(0),
-    m_gpuCountHasBeenSet(false),
-    m_gpuMemorySizeInMiB(0),
-    m_gpuMemorySizeInMiBHasBeenSet(false)
-{
-}
-
 Gpu::Gpu(JsonView jsonValue)
-  : Gpu()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Gpu& Gpu::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("gpuCount"))
   {
     m_gpuCount = jsonValue.GetInteger("gpuCount");
-
     m_gpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gpuMemorySizeInMiB"))
   {
     m_gpuMemorySizeInMiB = jsonValue.GetInteger("gpuMemorySizeInMiB");
-
     m_gpuMemorySizeInMiBHasBeenSet = true;
   }
-
   return *this;
 }
 

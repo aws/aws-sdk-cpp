@@ -32,7 +32,7 @@ namespace Model
   class IdentityProviderConfig
   {
   public:
-    AWS_EKS_API IdentityProviderConfig();
+    AWS_EKS_API IdentityProviderConfig() = default;
     AWS_EKS_API IdentityProviderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API IdentityProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The type of the identity provider configuration. The only type available is
      * <code>oidc</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline IdentityProviderConfig& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline IdentityProviderConfig& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline IdentityProviderConfig& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    IdentityProviderConfig& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the identity provider configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline IdentityProviderConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline IdentityProviderConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline IdentityProviderConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    IdentityProviderConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

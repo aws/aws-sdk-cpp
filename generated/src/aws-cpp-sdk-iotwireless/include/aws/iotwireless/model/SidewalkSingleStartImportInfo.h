@@ -32,7 +32,7 @@ namespace Model
   class SidewalkSingleStartImportInfo
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkSingleStartImportInfo();
+    AWS_IOTWIRELESS_API SidewalkSingleStartImportInfo() = default;
     AWS_IOTWIRELESS_API SidewalkSingleStartImportInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkSingleStartImportInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Sidewalk manufacturing serial number (SMSN) of the device added to the
      * import task.</p>
      */
-    inline const Aws::String& GetSidewalkManufacturingSn() const{ return m_sidewalkManufacturingSn; }
+    inline const Aws::String& GetSidewalkManufacturingSn() const { return m_sidewalkManufacturingSn; }
     inline bool SidewalkManufacturingSnHasBeenSet() const { return m_sidewalkManufacturingSnHasBeenSet; }
-    inline void SetSidewalkManufacturingSn(const Aws::String& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = value; }
-    inline void SetSidewalkManufacturingSn(Aws::String&& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = std::move(value); }
-    inline void SetSidewalkManufacturingSn(const char* value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn.assign(value); }
-    inline SidewalkSingleStartImportInfo& WithSidewalkManufacturingSn(const Aws::String& value) { SetSidewalkManufacturingSn(value); return *this;}
-    inline SidewalkSingleStartImportInfo& WithSidewalkManufacturingSn(Aws::String&& value) { SetSidewalkManufacturingSn(std::move(value)); return *this;}
-    inline SidewalkSingleStartImportInfo& WithSidewalkManufacturingSn(const char* value) { SetSidewalkManufacturingSn(value); return *this;}
+    template<typename SidewalkManufacturingSnT = Aws::String>
+    void SetSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = std::forward<SidewalkManufacturingSnT>(value); }
+    template<typename SidewalkManufacturingSnT = Aws::String>
+    SidewalkSingleStartImportInfo& WithSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) { SetSidewalkManufacturingSn(std::forward<SidewalkManufacturingSnT>(value)); return *this;}
     ///@}
   private:
 

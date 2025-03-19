@@ -30,7 +30,7 @@ namespace Model
   class BatchGetTokenBalanceResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceResult();
+    AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceResult() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by
      * the response.</p>
      */
-    inline const Aws::Vector<BatchGetTokenBalanceOutputItem>& GetTokenBalances() const{ return m_tokenBalances; }
-    inline void SetTokenBalances(const Aws::Vector<BatchGetTokenBalanceOutputItem>& value) { m_tokenBalances = value; }
-    inline void SetTokenBalances(Aws::Vector<BatchGetTokenBalanceOutputItem>&& value) { m_tokenBalances = std::move(value); }
-    inline BatchGetTokenBalanceResult& WithTokenBalances(const Aws::Vector<BatchGetTokenBalanceOutputItem>& value) { SetTokenBalances(value); return *this;}
-    inline BatchGetTokenBalanceResult& WithTokenBalances(Aws::Vector<BatchGetTokenBalanceOutputItem>&& value) { SetTokenBalances(std::move(value)); return *this;}
-    inline BatchGetTokenBalanceResult& AddTokenBalances(const BatchGetTokenBalanceOutputItem& value) { m_tokenBalances.push_back(value); return *this; }
-    inline BatchGetTokenBalanceResult& AddTokenBalances(BatchGetTokenBalanceOutputItem&& value) { m_tokenBalances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetTokenBalanceOutputItem>& GetTokenBalances() const { return m_tokenBalances; }
+    template<typename TokenBalancesT = Aws::Vector<BatchGetTokenBalanceOutputItem>>
+    void SetTokenBalances(TokenBalancesT&& value) { m_tokenBalancesHasBeenSet = true; m_tokenBalances = std::forward<TokenBalancesT>(value); }
+    template<typename TokenBalancesT = Aws::Vector<BatchGetTokenBalanceOutputItem>>
+    BatchGetTokenBalanceResult& WithTokenBalances(TokenBalancesT&& value) { SetTokenBalances(std::forward<TokenBalancesT>(value)); return *this;}
+    template<typename TokenBalancesT = BatchGetTokenBalanceOutputItem>
+    BatchGetTokenBalanceResult& AddTokenBalances(TokenBalancesT&& value) { m_tokenBalancesHasBeenSet = true; m_tokenBalances.emplace_back(std::forward<TokenBalancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from
      * the request.</p>
      */
-    inline const Aws::Vector<BatchGetTokenBalanceErrorItem>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetTokenBalanceErrorItem>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetTokenBalanceErrorItem>&& value) { m_errors = std::move(value); }
-    inline BatchGetTokenBalanceResult& WithErrors(const Aws::Vector<BatchGetTokenBalanceErrorItem>& value) { SetErrors(value); return *this;}
-    inline BatchGetTokenBalanceResult& WithErrors(Aws::Vector<BatchGetTokenBalanceErrorItem>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetTokenBalanceResult& AddErrors(const BatchGetTokenBalanceErrorItem& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetTokenBalanceResult& AddErrors(BatchGetTokenBalanceErrorItem&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetTokenBalanceErrorItem>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetTokenBalanceErrorItem>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetTokenBalanceErrorItem>>
+    BatchGetTokenBalanceResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetTokenBalanceErrorItem>
+    BatchGetTokenBalanceResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetTokenBalanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetTokenBalanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetTokenBalanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetTokenBalanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetTokenBalanceOutputItem> m_tokenBalances;
+    bool m_tokenBalancesHasBeenSet = false;
 
     Aws::Vector<BatchGetTokenBalanceErrorItem> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

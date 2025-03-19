@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadSSHPublicKeyResult::UploadSSHPublicKeyResult()
-{
-}
-
 UploadSSHPublicKeyResult::UploadSSHPublicKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ UploadSSHPublicKeyResult& UploadSSHPublicKeyResult::operator =(const Aws::Amazon
     if(!sSHPublicKeyNode.IsNull())
     {
       m_sSHPublicKey = sSHPublicKeyNode;
+      m_sSHPublicKeyHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::UploadSSHPublicKeyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

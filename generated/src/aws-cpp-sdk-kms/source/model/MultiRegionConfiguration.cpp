@@ -18,16 +18,7 @@ namespace KMS
 namespace Model
 {
 
-MultiRegionConfiguration::MultiRegionConfiguration() : 
-    m_multiRegionKeyType(MultiRegionKeyType::NOT_SET),
-    m_multiRegionKeyTypeHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false),
-    m_replicaKeysHasBeenSet(false)
-{
-}
-
 MultiRegionConfiguration::MultiRegionConfiguration(JsonView jsonValue)
-  : MultiRegionConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MultiRegionConfiguration& MultiRegionConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("MultiRegionKeyType"))
   {
     m_multiRegionKeyType = MultiRegionKeyTypeMapper::GetMultiRegionKeyTypeForName(jsonValue.GetString("MultiRegionKeyType"));
-
     m_multiRegionKeyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryKey"))
   {
     m_primaryKey = jsonValue.GetObject("PrimaryKey");
-
     m_primaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaKeys"))
   {
     Aws::Utils::Array<JsonView> replicaKeysJsonList = jsonValue.GetArray("ReplicaKeys");
@@ -57,7 +44,6 @@ MultiRegionConfiguration& MultiRegionConfiguration::operator =(JsonView jsonValu
     }
     m_replicaKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class DkimSigningAttributes
   {
   public:
-    AWS_SESV2_API DkimSigningAttributes();
+    AWS_SESV2_API DkimSigningAttributes() = default;
     AWS_SESV2_API DkimSigningAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API DkimSigningAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>[Bring Your Own DKIM] A string that's used to identify a public key in the
      * DNS configuration for a domain.</p>
      */
-    inline const Aws::String& GetDomainSigningSelector() const{ return m_domainSigningSelector; }
+    inline const Aws::String& GetDomainSigningSelector() const { return m_domainSigningSelector; }
     inline bool DomainSigningSelectorHasBeenSet() const { return m_domainSigningSelectorHasBeenSet; }
-    inline void SetDomainSigningSelector(const Aws::String& value) { m_domainSigningSelectorHasBeenSet = true; m_domainSigningSelector = value; }
-    inline void SetDomainSigningSelector(Aws::String&& value) { m_domainSigningSelectorHasBeenSet = true; m_domainSigningSelector = std::move(value); }
-    inline void SetDomainSigningSelector(const char* value) { m_domainSigningSelectorHasBeenSet = true; m_domainSigningSelector.assign(value); }
-    inline DkimSigningAttributes& WithDomainSigningSelector(const Aws::String& value) { SetDomainSigningSelector(value); return *this;}
-    inline DkimSigningAttributes& WithDomainSigningSelector(Aws::String&& value) { SetDomainSigningSelector(std::move(value)); return *this;}
-    inline DkimSigningAttributes& WithDomainSigningSelector(const char* value) { SetDomainSigningSelector(value); return *this;}
+    template<typename DomainSigningSelectorT = Aws::String>
+    void SetDomainSigningSelector(DomainSigningSelectorT&& value) { m_domainSigningSelectorHasBeenSet = true; m_domainSigningSelector = std::forward<DomainSigningSelectorT>(value); }
+    template<typename DomainSigningSelectorT = Aws::String>
+    DkimSigningAttributes& WithDomainSigningSelector(DomainSigningSelectorT&& value) { SetDomainSigningSelector(std::forward<DomainSigningSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * signature.</p> <p>The private key must use 1024 or 2048-bit RSA encryption, and
      * must be encoded using base64 encoding.</p>
      */
-    inline const Aws::String& GetDomainSigningPrivateKey() const{ return m_domainSigningPrivateKey; }
+    inline const Aws::String& GetDomainSigningPrivateKey() const { return m_domainSigningPrivateKey; }
     inline bool DomainSigningPrivateKeyHasBeenSet() const { return m_domainSigningPrivateKeyHasBeenSet; }
-    inline void SetDomainSigningPrivateKey(const Aws::String& value) { m_domainSigningPrivateKeyHasBeenSet = true; m_domainSigningPrivateKey = value; }
-    inline void SetDomainSigningPrivateKey(Aws::String&& value) { m_domainSigningPrivateKeyHasBeenSet = true; m_domainSigningPrivateKey = std::move(value); }
-    inline void SetDomainSigningPrivateKey(const char* value) { m_domainSigningPrivateKeyHasBeenSet = true; m_domainSigningPrivateKey.assign(value); }
-    inline DkimSigningAttributes& WithDomainSigningPrivateKey(const Aws::String& value) { SetDomainSigningPrivateKey(value); return *this;}
-    inline DkimSigningAttributes& WithDomainSigningPrivateKey(Aws::String&& value) { SetDomainSigningPrivateKey(std::move(value)); return *this;}
-    inline DkimSigningAttributes& WithDomainSigningPrivateKey(const char* value) { SetDomainSigningPrivateKey(value); return *this;}
+    template<typename DomainSigningPrivateKeyT = Aws::String>
+    void SetDomainSigningPrivateKey(DomainSigningPrivateKeyT&& value) { m_domainSigningPrivateKeyHasBeenSet = true; m_domainSigningPrivateKey = std::forward<DomainSigningPrivateKeyT>(value); }
+    template<typename DomainSigningPrivateKeyT = Aws::String>
+    DkimSigningAttributes& WithDomainSigningPrivateKey(DomainSigningPrivateKeyT&& value) { SetDomainSigningPrivateKey(std::forward<DomainSigningPrivateKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
      * can be changed at most once per day.</p>
      */
-    inline const DkimSigningKeyLength& GetNextSigningKeyLength() const{ return m_nextSigningKeyLength; }
+    inline DkimSigningKeyLength GetNextSigningKeyLength() const { return m_nextSigningKeyLength; }
     inline bool NextSigningKeyLengthHasBeenSet() const { return m_nextSigningKeyLengthHasBeenSet; }
-    inline void SetNextSigningKeyLength(const DkimSigningKeyLength& value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = value; }
-    inline void SetNextSigningKeyLength(DkimSigningKeyLength&& value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = std::move(value); }
-    inline DkimSigningAttributes& WithNextSigningKeyLength(const DkimSigningKeyLength& value) { SetNextSigningKeyLength(value); return *this;}
-    inline DkimSigningAttributes& WithNextSigningKeyLength(DkimSigningKeyLength&& value) { SetNextSigningKeyLength(std::move(value)); return *this;}
+    inline void SetNextSigningKeyLength(DkimSigningKeyLength value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = value; }
+    inline DkimSigningAttributes& WithNextSigningKeyLength(DkimSigningKeyLength value) { SetNextSigningKeyLength(value); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +151,10 @@ namespace Model
      * DKIM for the identity by replicating from a parent identity in US West (Oregon)
      * region using Deterministic Easy-DKIM (DEED). </p> </li> </ul>
      */
-    inline const DkimSigningAttributesOrigin& GetDomainSigningAttributesOrigin() const{ return m_domainSigningAttributesOrigin; }
+    inline DkimSigningAttributesOrigin GetDomainSigningAttributesOrigin() const { return m_domainSigningAttributesOrigin; }
     inline bool DomainSigningAttributesOriginHasBeenSet() const { return m_domainSigningAttributesOriginHasBeenSet; }
-    inline void SetDomainSigningAttributesOrigin(const DkimSigningAttributesOrigin& value) { m_domainSigningAttributesOriginHasBeenSet = true; m_domainSigningAttributesOrigin = value; }
-    inline void SetDomainSigningAttributesOrigin(DkimSigningAttributesOrigin&& value) { m_domainSigningAttributesOriginHasBeenSet = true; m_domainSigningAttributesOrigin = std::move(value); }
-    inline DkimSigningAttributes& WithDomainSigningAttributesOrigin(const DkimSigningAttributesOrigin& value) { SetDomainSigningAttributesOrigin(value); return *this;}
-    inline DkimSigningAttributes& WithDomainSigningAttributesOrigin(DkimSigningAttributesOrigin&& value) { SetDomainSigningAttributesOrigin(std::move(value)); return *this;}
+    inline void SetDomainSigningAttributesOrigin(DkimSigningAttributesOrigin value) { m_domainSigningAttributesOriginHasBeenSet = true; m_domainSigningAttributesOrigin = value; }
+    inline DkimSigningAttributes& WithDomainSigningAttributesOrigin(DkimSigningAttributesOrigin value) { SetDomainSigningAttributesOrigin(value); return *this;}
     ///@}
   private:
 
@@ -172,10 +164,10 @@ namespace Model
     Aws::String m_domainSigningPrivateKey;
     bool m_domainSigningPrivateKeyHasBeenSet = false;
 
-    DkimSigningKeyLength m_nextSigningKeyLength;
+    DkimSigningKeyLength m_nextSigningKeyLength{DkimSigningKeyLength::NOT_SET};
     bool m_nextSigningKeyLengthHasBeenSet = false;
 
-    DkimSigningAttributesOrigin m_domainSigningAttributesOrigin;
+    DkimSigningAttributesOrigin m_domainSigningAttributesOrigin{DkimSigningAttributesOrigin::NOT_SET};
     bool m_domainSigningAttributesOriginHasBeenSet = false;
   };
 

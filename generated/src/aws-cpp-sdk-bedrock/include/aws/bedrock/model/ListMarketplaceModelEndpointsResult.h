@@ -29,7 +29,7 @@ namespace Model
   class ListMarketplaceModelEndpointsResult
   {
   public:
-    AWS_BEDROCK_API ListMarketplaceModelEndpointsResult();
+    AWS_BEDROCK_API ListMarketplaceModelEndpointsResult() = default;
     AWS_BEDROCK_API ListMarketplaceModelEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API ListMarketplaceModelEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of endpoint summaries.</p>
      */
-    inline const Aws::Vector<MarketplaceModelEndpointSummary>& GetMarketplaceModelEndpoints() const{ return m_marketplaceModelEndpoints; }
-    inline void SetMarketplaceModelEndpoints(const Aws::Vector<MarketplaceModelEndpointSummary>& value) { m_marketplaceModelEndpoints = value; }
-    inline void SetMarketplaceModelEndpoints(Aws::Vector<MarketplaceModelEndpointSummary>&& value) { m_marketplaceModelEndpoints = std::move(value); }
-    inline ListMarketplaceModelEndpointsResult& WithMarketplaceModelEndpoints(const Aws::Vector<MarketplaceModelEndpointSummary>& value) { SetMarketplaceModelEndpoints(value); return *this;}
-    inline ListMarketplaceModelEndpointsResult& WithMarketplaceModelEndpoints(Aws::Vector<MarketplaceModelEndpointSummary>&& value) { SetMarketplaceModelEndpoints(std::move(value)); return *this;}
-    inline ListMarketplaceModelEndpointsResult& AddMarketplaceModelEndpoints(const MarketplaceModelEndpointSummary& value) { m_marketplaceModelEndpoints.push_back(value); return *this; }
-    inline ListMarketplaceModelEndpointsResult& AddMarketplaceModelEndpoints(MarketplaceModelEndpointSummary&& value) { m_marketplaceModelEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MarketplaceModelEndpointSummary>& GetMarketplaceModelEndpoints() const { return m_marketplaceModelEndpoints; }
+    template<typename MarketplaceModelEndpointsT = Aws::Vector<MarketplaceModelEndpointSummary>>
+    void SetMarketplaceModelEndpoints(MarketplaceModelEndpointsT&& value) { m_marketplaceModelEndpointsHasBeenSet = true; m_marketplaceModelEndpoints = std::forward<MarketplaceModelEndpointsT>(value); }
+    template<typename MarketplaceModelEndpointsT = Aws::Vector<MarketplaceModelEndpointSummary>>
+    ListMarketplaceModelEndpointsResult& WithMarketplaceModelEndpoints(MarketplaceModelEndpointsT&& value) { SetMarketplaceModelEndpoints(std::forward<MarketplaceModelEndpointsT>(value)); return *this;}
+    template<typename MarketplaceModelEndpointsT = MarketplaceModelEndpointSummary>
+    ListMarketplaceModelEndpointsResult& AddMarketplaceModelEndpoints(MarketplaceModelEndpointsT&& value) { m_marketplaceModelEndpointsHasBeenSet = true; m_marketplaceModelEndpoints.emplace_back(std::forward<MarketplaceModelEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. Use this token to get the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMarketplaceModelEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMarketplaceModelEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMarketplaceModelEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMarketplaceModelEndpointsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMarketplaceModelEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMarketplaceModelEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMarketplaceModelEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMarketplaceModelEndpointsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MarketplaceModelEndpointSummary> m_marketplaceModelEndpoints;
+    bool m_marketplaceModelEndpointsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

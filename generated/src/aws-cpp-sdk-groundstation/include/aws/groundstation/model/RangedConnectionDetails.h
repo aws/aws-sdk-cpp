@@ -32,7 +32,7 @@ namespace Model
   class RangedConnectionDetails
   {
   public:
-    AWS_GROUNDSTATION_API RangedConnectionDetails();
+    AWS_GROUNDSTATION_API RangedConnectionDetails() = default;
     AWS_GROUNDSTATION_API RangedConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API RangedConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
      */
-    inline int GetMtu() const{ return m_mtu; }
+    inline int GetMtu() const { return m_mtu; }
     inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
     inline void SetMtu(int value) { m_mtuHasBeenSet = true; m_mtu = value; }
     inline RangedConnectionDetails& WithMtu(int value) { SetMtu(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
     /**
      * <p>A ranged socket address.</p>
      */
-    inline const RangedSocketAddress& GetSocketAddress() const{ return m_socketAddress; }
+    inline const RangedSocketAddress& GetSocketAddress() const { return m_socketAddress; }
     inline bool SocketAddressHasBeenSet() const { return m_socketAddressHasBeenSet; }
-    inline void SetSocketAddress(const RangedSocketAddress& value) { m_socketAddressHasBeenSet = true; m_socketAddress = value; }
-    inline void SetSocketAddress(RangedSocketAddress&& value) { m_socketAddressHasBeenSet = true; m_socketAddress = std::move(value); }
-    inline RangedConnectionDetails& WithSocketAddress(const RangedSocketAddress& value) { SetSocketAddress(value); return *this;}
-    inline RangedConnectionDetails& WithSocketAddress(RangedSocketAddress&& value) { SetSocketAddress(std::move(value)); return *this;}
+    template<typename SocketAddressT = RangedSocketAddress>
+    void SetSocketAddress(SocketAddressT&& value) { m_socketAddressHasBeenSet = true; m_socketAddress = std::forward<SocketAddressT>(value); }
+    template<typename SocketAddressT = RangedSocketAddress>
+    RangedConnectionDetails& WithSocketAddress(SocketAddressT&& value) { SetSocketAddress(std::forward<SocketAddressT>(value)); return *this;}
     ///@}
   private:
 
-    int m_mtu;
+    int m_mtu{0};
     bool m_mtuHasBeenSet = false;
 
     RangedSocketAddress m_socketAddress;

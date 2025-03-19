@@ -29,7 +29,7 @@ namespace Model
   class ListCalculationExecutionsResult
   {
   public:
-    AWS_ATHENA_API ListCalculationExecutionsResult();
+    AWS_ATHENA_API ListCalculationExecutionsResult() = default;
     AWS_ATHENA_API ListCalculationExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListCalculationExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCalculationExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCalculationExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCalculationExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCalculationExecutionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <a>CalculationSummary</a> objects.</p>
      */
-    inline const Aws::Vector<CalculationSummary>& GetCalculations() const{ return m_calculations; }
-    inline void SetCalculations(const Aws::Vector<CalculationSummary>& value) { m_calculations = value; }
-    inline void SetCalculations(Aws::Vector<CalculationSummary>&& value) { m_calculations = std::move(value); }
-    inline ListCalculationExecutionsResult& WithCalculations(const Aws::Vector<CalculationSummary>& value) { SetCalculations(value); return *this;}
-    inline ListCalculationExecutionsResult& WithCalculations(Aws::Vector<CalculationSummary>&& value) { SetCalculations(std::move(value)); return *this;}
-    inline ListCalculationExecutionsResult& AddCalculations(const CalculationSummary& value) { m_calculations.push_back(value); return *this; }
-    inline ListCalculationExecutionsResult& AddCalculations(CalculationSummary&& value) { m_calculations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CalculationSummary>& GetCalculations() const { return m_calculations; }
+    template<typename CalculationsT = Aws::Vector<CalculationSummary>>
+    void SetCalculations(CalculationsT&& value) { m_calculationsHasBeenSet = true; m_calculations = std::forward<CalculationsT>(value); }
+    template<typename CalculationsT = Aws::Vector<CalculationSummary>>
+    ListCalculationExecutionsResult& WithCalculations(CalculationsT&& value) { SetCalculations(std::forward<CalculationsT>(value)); return *this;}
+    template<typename CalculationsT = CalculationSummary>
+    ListCalculationExecutionsResult& AddCalculations(CalculationsT&& value) { m_calculationsHasBeenSet = true; m_calculations.emplace_back(std::forward<CalculationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCalculationExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCalculationExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCalculationExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCalculationExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CalculationSummary> m_calculations;
+    bool m_calculationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFaceLivenessSessionResultsRequest::GetFaceLivenessSessionResultsRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetFaceLivenessSessionResultsRequest::SerializePayload() const
 {
   JsonValue payload;

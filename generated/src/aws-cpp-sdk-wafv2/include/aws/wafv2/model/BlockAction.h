@@ -34,7 +34,7 @@ namespace Model
   class BlockAction
   {
   public:
-    AWS_WAFV2_API BlockAction();
+    AWS_WAFV2_API BlockAction() = default;
     AWS_WAFV2_API BlockAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API BlockAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
      * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline const CustomResponse& GetCustomResponse() const{ return m_customResponse; }
+    inline const CustomResponse& GetCustomResponse() const { return m_customResponse; }
     inline bool CustomResponseHasBeenSet() const { return m_customResponseHasBeenSet; }
-    inline void SetCustomResponse(const CustomResponse& value) { m_customResponseHasBeenSet = true; m_customResponse = value; }
-    inline void SetCustomResponse(CustomResponse&& value) { m_customResponseHasBeenSet = true; m_customResponse = std::move(value); }
-    inline BlockAction& WithCustomResponse(const CustomResponse& value) { SetCustomResponse(value); return *this;}
-    inline BlockAction& WithCustomResponse(CustomResponse&& value) { SetCustomResponse(std::move(value)); return *this;}
+    template<typename CustomResponseT = CustomResponse>
+    void SetCustomResponse(CustomResponseT&& value) { m_customResponseHasBeenSet = true; m_customResponse = std::forward<CustomResponseT>(value); }
+    template<typename CustomResponseT = CustomResponse>
+    BlockAction& WithCustomResponse(CustomResponseT&& value) { SetCustomResponse(std::forward<CustomResponseT>(value)); return *this;}
     ///@}
   private:
 

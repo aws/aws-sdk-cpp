@@ -32,7 +32,7 @@ namespace Model
   class WebSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API WebSourceConfiguration();
+    AWS_BEDROCKAGENT_API WebSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API WebSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API WebSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration of the URL/URLs.</p>
      */
-    inline const UrlConfiguration& GetUrlConfiguration() const{ return m_urlConfiguration; }
+    inline const UrlConfiguration& GetUrlConfiguration() const { return m_urlConfiguration; }
     inline bool UrlConfigurationHasBeenSet() const { return m_urlConfigurationHasBeenSet; }
-    inline void SetUrlConfiguration(const UrlConfiguration& value) { m_urlConfigurationHasBeenSet = true; m_urlConfiguration = value; }
-    inline void SetUrlConfiguration(UrlConfiguration&& value) { m_urlConfigurationHasBeenSet = true; m_urlConfiguration = std::move(value); }
-    inline WebSourceConfiguration& WithUrlConfiguration(const UrlConfiguration& value) { SetUrlConfiguration(value); return *this;}
-    inline WebSourceConfiguration& WithUrlConfiguration(UrlConfiguration&& value) { SetUrlConfiguration(std::move(value)); return *this;}
+    template<typename UrlConfigurationT = UrlConfiguration>
+    void SetUrlConfiguration(UrlConfigurationT&& value) { m_urlConfigurationHasBeenSet = true; m_urlConfiguration = std::forward<UrlConfigurationT>(value); }
+    template<typename UrlConfigurationT = UrlConfiguration>
+    WebSourceConfiguration& WithUrlConfiguration(UrlConfigurationT&& value) { SetUrlConfiguration(std::forward<UrlConfigurationT>(value)); return *this;}
     ///@}
   private:
 

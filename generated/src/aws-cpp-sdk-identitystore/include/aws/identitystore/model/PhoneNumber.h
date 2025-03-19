@@ -31,7 +31,7 @@ namespace Model
   class PhoneNumber
   {
   public:
-    AWS_IDENTITYSTORE_API PhoneNumber();
+    AWS_IDENTITYSTORE_API PhoneNumber() = default;
     AWS_IDENTITYSTORE_API PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * <p>A string containing a phone number. For example, "8675309" or "+1 (800)
      * 123-4567".</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PhoneNumber& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PhoneNumber& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PhoneNumber& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PhoneNumber& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string representing the type of a phone number. For example, "Mobile."</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline PhoneNumber& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline PhoneNumber& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline PhoneNumber& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    PhoneNumber& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <p>A Boolean value representing whether this is the primary phone number for the
      * associated resource.</p>
      */
-    inline bool GetPrimary() const{ return m_primary; }
+    inline bool GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
     inline PhoneNumber& WithPrimary(bool value) { SetPrimary(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    bool m_primary;
+    bool m_primary{false};
     bool m_primaryHasBeenSet = false;
   };
 

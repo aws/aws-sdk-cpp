@@ -31,7 +31,7 @@ namespace Model
   class DashboardValidationMessage
   {
   public:
-    AWS_CLOUDWATCH_API DashboardValidationMessage();
+    AWS_CLOUDWATCH_API DashboardValidationMessage() = default;
     AWS_CLOUDWATCH_API DashboardValidationMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API DashboardValidationMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The data path related to the message.</p>
      */
-    inline const Aws::String& GetDataPath() const{ return m_dataPath; }
+    inline const Aws::String& GetDataPath() const { return m_dataPath; }
     inline bool DataPathHasBeenSet() const { return m_dataPathHasBeenSet; }
-    inline void SetDataPath(const Aws::String& value) { m_dataPathHasBeenSet = true; m_dataPath = value; }
-    inline void SetDataPath(Aws::String&& value) { m_dataPathHasBeenSet = true; m_dataPath = std::move(value); }
-    inline void SetDataPath(const char* value) { m_dataPathHasBeenSet = true; m_dataPath.assign(value); }
-    inline DashboardValidationMessage& WithDataPath(const Aws::String& value) { SetDataPath(value); return *this;}
-    inline DashboardValidationMessage& WithDataPath(Aws::String&& value) { SetDataPath(std::move(value)); return *this;}
-    inline DashboardValidationMessage& WithDataPath(const char* value) { SetDataPath(value); return *this;}
+    template<typename DataPathT = Aws::String>
+    void SetDataPath(DataPathT&& value) { m_dataPathHasBeenSet = true; m_dataPath = std::forward<DataPathT>(value); }
+    template<typename DataPathT = Aws::String>
+    DashboardValidationMessage& WithDataPath(DataPathT&& value) { SetDataPath(std::forward<DataPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message describing the error or warning.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DashboardValidationMessage& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DashboardValidationMessage& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DashboardValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DashboardValidationMessage& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

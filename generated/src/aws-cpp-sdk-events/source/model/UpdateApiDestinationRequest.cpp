@@ -12,18 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApiDestinationRequest::UpdateApiDestinationRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_invocationEndpointHasBeenSet(false),
-    m_httpMethod(ApiDestinationHttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_invocationRateLimitPerSecond(0),
-    m_invocationRateLimitPerSecondHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApiDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

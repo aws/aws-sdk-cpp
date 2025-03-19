@@ -28,7 +28,7 @@ namespace Model
   class GetStorageConfigurationResult
   {
   public:
-    AWS_IVSREALTIME_API GetStorageConfigurationResult();
+    AWS_IVSREALTIME_API GetStorageConfigurationResult() = default;
     AWS_IVSREALTIME_API GetStorageConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API GetStorageConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The StorageConfiguration that was returned.</p>
      */
-    inline const StorageConfiguration& GetStorageConfiguration() const{ return m_storageConfiguration; }
-    inline void SetStorageConfiguration(const StorageConfiguration& value) { m_storageConfiguration = value; }
-    inline void SetStorageConfiguration(StorageConfiguration&& value) { m_storageConfiguration = std::move(value); }
-    inline GetStorageConfigurationResult& WithStorageConfiguration(const StorageConfiguration& value) { SetStorageConfiguration(value); return *this;}
-    inline GetStorageConfigurationResult& WithStorageConfiguration(StorageConfiguration&& value) { SetStorageConfiguration(std::move(value)); return *this;}
+    inline const StorageConfiguration& GetStorageConfiguration() const { return m_storageConfiguration; }
+    template<typename StorageConfigurationT = StorageConfiguration>
+    void SetStorageConfiguration(StorageConfigurationT&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = std::forward<StorageConfigurationT>(value); }
+    template<typename StorageConfigurationT = StorageConfiguration>
+    GetStorageConfigurationResult& WithStorageConfiguration(StorageConfigurationT&& value) { SetStorageConfiguration(std::forward<StorageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStorageConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStorageConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStorageConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStorageConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StorageConfiguration m_storageConfiguration;
+    bool m_storageConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

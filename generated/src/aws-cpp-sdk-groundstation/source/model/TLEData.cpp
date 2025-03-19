@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-TLEData::TLEData() : 
-    m_tleLine1HasBeenSet(false),
-    m_tleLine2HasBeenSet(false),
-    m_validTimeRangeHasBeenSet(false)
-{
-}
-
 TLEData::TLEData(JsonView jsonValue)
-  : TLEData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TLEData& TLEData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tleLine1"))
   {
     m_tleLine1 = jsonValue.GetString("tleLine1");
-
     m_tleLine1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tleLine2"))
   {
     m_tleLine2 = jsonValue.GetString("tleLine2");
-
     m_tleLine2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validTimeRange"))
   {
     m_validTimeRange = jsonValue.GetObject("validTimeRange");
-
     m_validTimeRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

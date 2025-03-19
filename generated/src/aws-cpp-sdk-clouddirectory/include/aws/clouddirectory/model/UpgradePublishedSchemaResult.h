@@ -27,7 +27,7 @@ namespace Model
   class UpgradePublishedSchemaResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API UpgradePublishedSchemaResult();
+    AWS_CLOUDDIRECTORY_API UpgradePublishedSchemaResult() = default;
     AWS_CLOUDDIRECTORY_API UpgradePublishedSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API UpgradePublishedSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the upgraded schema that is returned as part of the response.</p>
      */
-    inline const Aws::String& GetUpgradedSchemaArn() const{ return m_upgradedSchemaArn; }
-    inline void SetUpgradedSchemaArn(const Aws::String& value) { m_upgradedSchemaArn = value; }
-    inline void SetUpgradedSchemaArn(Aws::String&& value) { m_upgradedSchemaArn = std::move(value); }
-    inline void SetUpgradedSchemaArn(const char* value) { m_upgradedSchemaArn.assign(value); }
-    inline UpgradePublishedSchemaResult& WithUpgradedSchemaArn(const Aws::String& value) { SetUpgradedSchemaArn(value); return *this;}
-    inline UpgradePublishedSchemaResult& WithUpgradedSchemaArn(Aws::String&& value) { SetUpgradedSchemaArn(std::move(value)); return *this;}
-    inline UpgradePublishedSchemaResult& WithUpgradedSchemaArn(const char* value) { SetUpgradedSchemaArn(value); return *this;}
+    inline const Aws::String& GetUpgradedSchemaArn() const { return m_upgradedSchemaArn; }
+    template<typename UpgradedSchemaArnT = Aws::String>
+    void SetUpgradedSchemaArn(UpgradedSchemaArnT&& value) { m_upgradedSchemaArnHasBeenSet = true; m_upgradedSchemaArn = std::forward<UpgradedSchemaArnT>(value); }
+    template<typename UpgradedSchemaArnT = Aws::String>
+    UpgradePublishedSchemaResult& WithUpgradedSchemaArn(UpgradedSchemaArnT&& value) { SetUpgradedSchemaArn(std::forward<UpgradedSchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpgradePublishedSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpgradePublishedSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpgradePublishedSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpgradePublishedSchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_upgradedSchemaArn;
+    bool m_upgradedSchemaArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

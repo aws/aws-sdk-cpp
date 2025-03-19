@@ -31,7 +31,7 @@ namespace Model
   class ScanResultDetails
   {
   public:
-    AWS_GUARDDUTY_API ScanResultDetails();
+    AWS_GUARDDUTY_API ScanResultDetails() = default;
     AWS_GUARDDUTY_API ScanResultDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ScanResultDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>An enum value representing possible scan results.</p>
      */
-    inline const ScanResult& GetScanResult() const{ return m_scanResult; }
+    inline ScanResult GetScanResult() const { return m_scanResult; }
     inline bool ScanResultHasBeenSet() const { return m_scanResultHasBeenSet; }
-    inline void SetScanResult(const ScanResult& value) { m_scanResultHasBeenSet = true; m_scanResult = value; }
-    inline void SetScanResult(ScanResult&& value) { m_scanResultHasBeenSet = true; m_scanResult = std::move(value); }
-    inline ScanResultDetails& WithScanResult(const ScanResult& value) { SetScanResult(value); return *this;}
-    inline ScanResultDetails& WithScanResult(ScanResult&& value) { SetScanResult(std::move(value)); return *this;}
+    inline void SetScanResult(ScanResult value) { m_scanResultHasBeenSet = true; m_scanResult = value; }
+    inline ScanResultDetails& WithScanResult(ScanResult value) { SetScanResult(value); return *this;}
     ///@}
   private:
 
-    ScanResult m_scanResult;
+    ScanResult m_scanResult{ScanResult::NOT_SET};
     bool m_scanResultHasBeenSet = false;
   };
 

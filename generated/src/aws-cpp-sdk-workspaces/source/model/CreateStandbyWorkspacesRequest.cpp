@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStandbyWorkspacesRequest::CreateStandbyWorkspacesRequest() : 
-    m_primaryRegionHasBeenSet(false),
-    m_standbyWorkspacesHasBeenSet(false)
-{
-}
-
 Aws::String CreateStandbyWorkspacesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-PositionConfigurationItem::PositionConfigurationItem() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(PositionResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_solversHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 PositionConfigurationItem::PositionConfigurationItem(JsonView jsonValue)
-  : PositionConfigurationItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PositionConfigurationItem& PositionConfigurationItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ResourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = PositionResourceTypeMapper::GetPositionResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Solvers"))
   {
     m_solvers = jsonValue.GetObject("Solvers");
-
     m_solversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBatchJobRequest::StartBatchJobRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_authSecretsManagerArnHasBeenSet(false),
-    m_batchJobIdentifierHasBeenSet(false),
-    m_jobParamsHasBeenSet(false)
-{
-}
-
 Aws::String StartBatchJobRequest::SerializePayload() const
 {
   JsonValue payload;

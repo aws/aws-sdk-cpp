@@ -12,11 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartInferenceSchedulerRequest::StartInferenceSchedulerRequest() : 
-    m_inferenceSchedulerNameHasBeenSet(false)
-{
-}
-
 Aws::String StartInferenceSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

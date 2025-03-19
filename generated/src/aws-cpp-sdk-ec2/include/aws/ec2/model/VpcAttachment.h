@@ -33,7 +33,7 @@ namespace Model
   class VpcAttachment
   {
   public:
-    AWS_EC2_API VpcAttachment();
+    AWS_EC2_API VpcAttachment() = default;
     AWS_EC2_API VpcAttachment(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpcAttachment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,33 +45,29 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline VpcAttachment& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline VpcAttachment& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline VpcAttachment& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    VpcAttachment& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the attachment.</p>
      */
-    inline const AttachmentStatus& GetState() const{ return m_state; }
+    inline AttachmentStatus GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpcAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
-    inline VpcAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AttachmentStatus value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VpcAttachment& WithState(AttachmentStatus value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
-    AttachmentStatus m_state;
+    AttachmentStatus m_state{AttachmentStatus::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

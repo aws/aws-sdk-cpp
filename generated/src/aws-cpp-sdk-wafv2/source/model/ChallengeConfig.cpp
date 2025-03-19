@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ChallengeConfig::ChallengeConfig() : 
-    m_immunityTimePropertyHasBeenSet(false)
-{
-}
-
 ChallengeConfig::ChallengeConfig(JsonView jsonValue)
-  : ChallengeConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChallengeConfig& ChallengeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImmunityTimeProperty"))
   {
     m_immunityTimeProperty = jsonValue.GetObject("ImmunityTimeProperty");
-
     m_immunityTimePropertyHasBeenSet = true;
   }
-
   return *this;
 }
 

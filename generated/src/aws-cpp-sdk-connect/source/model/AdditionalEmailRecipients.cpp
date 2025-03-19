@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AdditionalEmailRecipients::AdditionalEmailRecipients() : 
-    m_toListHasBeenSet(false),
-    m_ccListHasBeenSet(false)
-{
-}
-
 AdditionalEmailRecipients::AdditionalEmailRecipients(JsonView jsonValue)
-  : AdditionalEmailRecipients()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AdditionalEmailRecipients& AdditionalEmailRecipients::operator =(JsonView jsonVa
     }
     m_toListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CcList"))
   {
     Aws::Utils::Array<JsonView> ccListJsonList = jsonValue.GetArray("CcList");
@@ -51,7 +43,6 @@ AdditionalEmailRecipients& AdditionalEmailRecipients::operator =(JsonView jsonVa
     }
     m_ccListHasBeenSet = true;
   }
-
   return *this;
 }
 

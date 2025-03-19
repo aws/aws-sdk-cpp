@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-JoinEventConfiguration::JoinEventConfiguration() : 
-    m_loRaWANHasBeenSet(false),
-    m_wirelessDeviceIdEventTopic(EventNotificationTopicStatus::NOT_SET),
-    m_wirelessDeviceIdEventTopicHasBeenSet(false)
-{
-}
-
 JoinEventConfiguration::JoinEventConfiguration(JsonView jsonValue)
-  : JoinEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ JoinEventConfiguration& JoinEventConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessDeviceIdEventTopic"))
   {
     m_wirelessDeviceIdEventTopic = EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("WirelessDeviceIdEventTopic"));
-
     m_wirelessDeviceIdEventTopicHasBeenSet = true;
   }
-
   return *this;
 }
 

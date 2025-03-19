@@ -23,7 +23,7 @@ namespace Model
   class BatchPutDataQualityStatisticAnnotationRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API BatchPutDataQualityStatisticAnnotationRequest();
+    AWS_GLUE_API BatchPutDataQualityStatisticAnnotationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p>A list of <code>DatapointInclusionAnnotation</code>'s.</p>
      */
-    inline const Aws::Vector<DatapointInclusionAnnotation>& GetInclusionAnnotations() const{ return m_inclusionAnnotations; }
+    inline const Aws::Vector<DatapointInclusionAnnotation>& GetInclusionAnnotations() const { return m_inclusionAnnotations; }
     inline bool InclusionAnnotationsHasBeenSet() const { return m_inclusionAnnotationsHasBeenSet; }
-    inline void SetInclusionAnnotations(const Aws::Vector<DatapointInclusionAnnotation>& value) { m_inclusionAnnotationsHasBeenSet = true; m_inclusionAnnotations = value; }
-    inline void SetInclusionAnnotations(Aws::Vector<DatapointInclusionAnnotation>&& value) { m_inclusionAnnotationsHasBeenSet = true; m_inclusionAnnotations = std::move(value); }
-    inline BatchPutDataQualityStatisticAnnotationRequest& WithInclusionAnnotations(const Aws::Vector<DatapointInclusionAnnotation>& value) { SetInclusionAnnotations(value); return *this;}
-    inline BatchPutDataQualityStatisticAnnotationRequest& WithInclusionAnnotations(Aws::Vector<DatapointInclusionAnnotation>&& value) { SetInclusionAnnotations(std::move(value)); return *this;}
-    inline BatchPutDataQualityStatisticAnnotationRequest& AddInclusionAnnotations(const DatapointInclusionAnnotation& value) { m_inclusionAnnotationsHasBeenSet = true; m_inclusionAnnotations.push_back(value); return *this; }
-    inline BatchPutDataQualityStatisticAnnotationRequest& AddInclusionAnnotations(DatapointInclusionAnnotation&& value) { m_inclusionAnnotationsHasBeenSet = true; m_inclusionAnnotations.push_back(std::move(value)); return *this; }
+    template<typename InclusionAnnotationsT = Aws::Vector<DatapointInclusionAnnotation>>
+    void SetInclusionAnnotations(InclusionAnnotationsT&& value) { m_inclusionAnnotationsHasBeenSet = true; m_inclusionAnnotations = std::forward<InclusionAnnotationsT>(value); }
+    template<typename InclusionAnnotationsT = Aws::Vector<DatapointInclusionAnnotation>>
+    BatchPutDataQualityStatisticAnnotationRequest& WithInclusionAnnotations(InclusionAnnotationsT&& value) { SetInclusionAnnotations(std::forward<InclusionAnnotationsT>(value)); return *this;}
+    template<typename InclusionAnnotationsT = DatapointInclusionAnnotation>
+    BatchPutDataQualityStatisticAnnotationRequest& AddInclusionAnnotations(InclusionAnnotationsT&& value) { m_inclusionAnnotationsHasBeenSet = true; m_inclusionAnnotations.emplace_back(std::forward<InclusionAnnotationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Client Token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline BatchPutDataQualityStatisticAnnotationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline BatchPutDataQualityStatisticAnnotationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline BatchPutDataQualityStatisticAnnotationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    BatchPutDataQualityStatisticAnnotationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

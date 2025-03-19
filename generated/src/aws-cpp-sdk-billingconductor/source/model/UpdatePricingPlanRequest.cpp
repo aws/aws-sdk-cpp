@@ -12,13 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePricingPlanRequest::UpdatePricingPlanRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePricingPlanRequest::SerializePayload() const
 {
   JsonValue payload;

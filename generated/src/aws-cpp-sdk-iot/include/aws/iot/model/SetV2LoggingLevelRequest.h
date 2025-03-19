@@ -22,7 +22,7 @@ namespace Model
   class SetV2LoggingLevelRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API SetV2LoggingLevelRequest();
+    AWS_IOT_API SetV2LoggingLevelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,31 +37,29 @@ namespace Model
     /**
      * <p>The log target.</p>
      */
-    inline const LogTarget& GetLogTarget() const{ return m_logTarget; }
+    inline const LogTarget& GetLogTarget() const { return m_logTarget; }
     inline bool LogTargetHasBeenSet() const { return m_logTargetHasBeenSet; }
-    inline void SetLogTarget(const LogTarget& value) { m_logTargetHasBeenSet = true; m_logTarget = value; }
-    inline void SetLogTarget(LogTarget&& value) { m_logTargetHasBeenSet = true; m_logTarget = std::move(value); }
-    inline SetV2LoggingLevelRequest& WithLogTarget(const LogTarget& value) { SetLogTarget(value); return *this;}
-    inline SetV2LoggingLevelRequest& WithLogTarget(LogTarget&& value) { SetLogTarget(std::move(value)); return *this;}
+    template<typename LogTargetT = LogTarget>
+    void SetLogTarget(LogTargetT&& value) { m_logTargetHasBeenSet = true; m_logTarget = std::forward<LogTargetT>(value); }
+    template<typename LogTargetT = LogTarget>
+    SetV2LoggingLevelRequest& WithLogTarget(LogTargetT&& value) { SetLogTarget(std::forward<LogTargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log level.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline SetV2LoggingLevelRequest& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline SetV2LoggingLevelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline SetV2LoggingLevelRequest& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
   private:
 
     LogTarget m_logTarget;
     bool m_logTargetHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
   };
 

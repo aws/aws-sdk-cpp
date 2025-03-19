@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CompareFacesMatch::CompareFacesMatch() : 
-    m_similarity(0.0),
-    m_similarityHasBeenSet(false),
-    m_faceHasBeenSet(false)
-{
-}
-
 CompareFacesMatch::CompareFacesMatch(JsonView jsonValue)
-  : CompareFacesMatch()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CompareFacesMatch& CompareFacesMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Similarity"))
   {
     m_similarity = jsonValue.GetDouble("Similarity");
-
     m_similarityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Face"))
   {
     m_face = jsonValue.GetObject("Face");
-
     m_faceHasBeenSet = true;
   }
-
   return *this;
 }
 

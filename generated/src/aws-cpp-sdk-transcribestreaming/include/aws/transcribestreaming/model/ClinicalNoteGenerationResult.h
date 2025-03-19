@@ -35,7 +35,7 @@ namespace Model
   class ClinicalNoteGenerationResult
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationResult();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationResult() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>Holds the Amazon S3 URI for the output Clinical Note. </p>
      */
-    inline const Aws::String& GetClinicalNoteOutputLocation() const{ return m_clinicalNoteOutputLocation; }
+    inline const Aws::String& GetClinicalNoteOutputLocation() const { return m_clinicalNoteOutputLocation; }
     inline bool ClinicalNoteOutputLocationHasBeenSet() const { return m_clinicalNoteOutputLocationHasBeenSet; }
-    inline void SetClinicalNoteOutputLocation(const Aws::String& value) { m_clinicalNoteOutputLocationHasBeenSet = true; m_clinicalNoteOutputLocation = value; }
-    inline void SetClinicalNoteOutputLocation(Aws::String&& value) { m_clinicalNoteOutputLocationHasBeenSet = true; m_clinicalNoteOutputLocation = std::move(value); }
-    inline void SetClinicalNoteOutputLocation(const char* value) { m_clinicalNoteOutputLocationHasBeenSet = true; m_clinicalNoteOutputLocation.assign(value); }
-    inline ClinicalNoteGenerationResult& WithClinicalNoteOutputLocation(const Aws::String& value) { SetClinicalNoteOutputLocation(value); return *this;}
-    inline ClinicalNoteGenerationResult& WithClinicalNoteOutputLocation(Aws::String&& value) { SetClinicalNoteOutputLocation(std::move(value)); return *this;}
-    inline ClinicalNoteGenerationResult& WithClinicalNoteOutputLocation(const char* value) { SetClinicalNoteOutputLocation(value); return *this;}
+    template<typename ClinicalNoteOutputLocationT = Aws::String>
+    void SetClinicalNoteOutputLocation(ClinicalNoteOutputLocationT&& value) { m_clinicalNoteOutputLocationHasBeenSet = true; m_clinicalNoteOutputLocation = std::forward<ClinicalNoteOutputLocationT>(value); }
+    template<typename ClinicalNoteOutputLocationT = Aws::String>
+    ClinicalNoteGenerationResult& WithClinicalNoteOutputLocation(ClinicalNoteOutputLocationT&& value) { SetClinicalNoteOutputLocation(std::forward<ClinicalNoteOutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Holds the Amazon S3 URI for the output Transcript. </p>
      */
-    inline const Aws::String& GetTranscriptOutputLocation() const{ return m_transcriptOutputLocation; }
+    inline const Aws::String& GetTranscriptOutputLocation() const { return m_transcriptOutputLocation; }
     inline bool TranscriptOutputLocationHasBeenSet() const { return m_transcriptOutputLocationHasBeenSet; }
-    inline void SetTranscriptOutputLocation(const Aws::String& value) { m_transcriptOutputLocationHasBeenSet = true; m_transcriptOutputLocation = value; }
-    inline void SetTranscriptOutputLocation(Aws::String&& value) { m_transcriptOutputLocationHasBeenSet = true; m_transcriptOutputLocation = std::move(value); }
-    inline void SetTranscriptOutputLocation(const char* value) { m_transcriptOutputLocationHasBeenSet = true; m_transcriptOutputLocation.assign(value); }
-    inline ClinicalNoteGenerationResult& WithTranscriptOutputLocation(const Aws::String& value) { SetTranscriptOutputLocation(value); return *this;}
-    inline ClinicalNoteGenerationResult& WithTranscriptOutputLocation(Aws::String&& value) { SetTranscriptOutputLocation(std::move(value)); return *this;}
-    inline ClinicalNoteGenerationResult& WithTranscriptOutputLocation(const char* value) { SetTranscriptOutputLocation(value); return *this;}
+    template<typename TranscriptOutputLocationT = Aws::String>
+    void SetTranscriptOutputLocation(TranscriptOutputLocationT&& value) { m_transcriptOutputLocationHasBeenSet = true; m_transcriptOutputLocation = std::forward<TranscriptOutputLocationT>(value); }
+    template<typename TranscriptOutputLocationT = Aws::String>
+    ClinicalNoteGenerationResult& WithTranscriptOutputLocation(TranscriptOutputLocationT&& value) { SetTranscriptOutputLocation(std::forward<TranscriptOutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * <code>TranscriptOutputLocation</code>. If the status is <code>FAILED</code>,
      * <code>FailureReason</code> provides details about the failure. </p>
      */
-    inline const ClinicalNoteGenerationStatus& GetStatus() const{ return m_status; }
+    inline ClinicalNoteGenerationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ClinicalNoteGenerationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ClinicalNoteGenerationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ClinicalNoteGenerationResult& WithStatus(const ClinicalNoteGenerationStatus& value) { SetStatus(value); return *this;}
-    inline ClinicalNoteGenerationResult& WithStatus(ClinicalNoteGenerationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ClinicalNoteGenerationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ClinicalNoteGenerationResult& WithStatus(ClinicalNoteGenerationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>If <code>ClinicalNoteGenerationResult</code> is <code>FAILED</code>,
      * information about why it failed. </p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline ClinicalNoteGenerationResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline ClinicalNoteGenerationResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline ClinicalNoteGenerationResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    ClinicalNoteGenerationResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_transcriptOutputLocation;
     bool m_transcriptOutputLocationHasBeenSet = false;
 
-    ClinicalNoteGenerationStatus m_status;
+    ClinicalNoteGenerationStatus m_status{ClinicalNoteGenerationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;

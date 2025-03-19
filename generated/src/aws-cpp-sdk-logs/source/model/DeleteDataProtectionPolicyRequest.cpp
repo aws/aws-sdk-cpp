@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataProtectionPolicyRequest::DeleteDataProtectionPolicyRequest() : 
-    m_logGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataProtectionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

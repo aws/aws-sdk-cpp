@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ContentDataDetails::ContentDataDetails() : 
-    m_rankingDataHasBeenSet(false),
-    m_textDataHasBeenSet(false)
-{
-}
-
 ContentDataDetails::ContentDataDetails(JsonView jsonValue)
-  : ContentDataDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ContentDataDetails& ContentDataDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rankingData"))
   {
     m_rankingData = jsonValue.GetObject("rankingData");
-
     m_rankingDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textData"))
   {
     m_textData = jsonValue.GetObject("textData");
-
     m_textDataHasBeenSet = true;
   }
-
   return *this;
 }
 

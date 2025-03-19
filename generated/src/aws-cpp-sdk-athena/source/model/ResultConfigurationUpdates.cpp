@@ -18,24 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ResultConfigurationUpdates::ResultConfigurationUpdates() : 
-    m_outputLocationHasBeenSet(false),
-    m_removeOutputLocation(false),
-    m_removeOutputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_removeEncryptionConfiguration(false),
-    m_removeEncryptionConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_removeExpectedBucketOwner(false),
-    m_removeExpectedBucketOwnerHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false),
-    m_removeAclConfiguration(false),
-    m_removeAclConfigurationHasBeenSet(false)
-{
-}
-
 ResultConfigurationUpdates::ResultConfigurationUpdates(JsonView jsonValue)
-  : ResultConfigurationUpdates()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ ResultConfigurationUpdates& ResultConfigurationUpdates::operator =(JsonView json
   if(jsonValue.ValueExists("OutputLocation"))
   {
     m_outputLocation = jsonValue.GetString("OutputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveOutputLocation"))
   {
     m_removeOutputLocation = jsonValue.GetBool("RemoveOutputLocation");
-
     m_removeOutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveEncryptionConfiguration"))
   {
     m_removeEncryptionConfiguration = jsonValue.GetBool("RemoveEncryptionConfiguration");
-
     m_removeEncryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedBucketOwner"))
   {
     m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
-
     m_expectedBucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveExpectedBucketOwner"))
   {
     m_removeExpectedBucketOwner = jsonValue.GetBool("RemoveExpectedBucketOwner");
-
     m_removeExpectedBucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AclConfiguration"))
   {
     m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
-
     m_aclConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoveAclConfiguration"))
   {
     m_removeAclConfiguration = jsonValue.GetBool("RemoveAclConfiguration");
-
     m_removeAclConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

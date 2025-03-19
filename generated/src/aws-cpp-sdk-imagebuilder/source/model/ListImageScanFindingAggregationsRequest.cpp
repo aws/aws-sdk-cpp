@@ -12,12 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListImageScanFindingAggregationsRequest::ListImageScanFindingAggregationsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListImageScanFindingAggregationsRequest::SerializePayload() const
 {
   JsonValue payload;

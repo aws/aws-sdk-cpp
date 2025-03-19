@@ -18,13 +18,7 @@ namespace EMR
 namespace Model
 {
 
-OSRelease::OSRelease() : 
-    m_labelHasBeenSet(false)
-{
-}
-
 OSRelease::OSRelease(JsonView jsonValue)
-  : OSRelease()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OSRelease& OSRelease::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   return *this;
 }
 

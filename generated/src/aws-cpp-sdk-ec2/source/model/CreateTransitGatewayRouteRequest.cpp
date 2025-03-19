@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTransitGatewayRouteRequest::CreateTransitGatewayRouteRequest() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_blackhole(false),
-    m_blackholeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateTransitGatewayRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

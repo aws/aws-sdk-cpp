@@ -10,11 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-DomainMetadataRequest::DomainMetadataRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DomainMetadataRequest::SerializePayload() const
 {
   Aws::StringStream ss;

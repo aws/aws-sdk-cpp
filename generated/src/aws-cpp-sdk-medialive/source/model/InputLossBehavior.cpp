@@ -18,20 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputLossBehavior::InputLossBehavior() : 
-    m_blackFrameMsec(0),
-    m_blackFrameMsecHasBeenSet(false),
-    m_inputLossImageColorHasBeenSet(false),
-    m_inputLossImageSlateHasBeenSet(false),
-    m_inputLossImageType(InputLossImageType::NOT_SET),
-    m_inputLossImageTypeHasBeenSet(false),
-    m_repeatFrameMsec(0),
-    m_repeatFrameMsecHasBeenSet(false)
-{
-}
-
 InputLossBehavior::InputLossBehavior(JsonView jsonValue)
-  : InputLossBehavior()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ InputLossBehavior& InputLossBehavior::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blackFrameMsec"))
   {
     m_blackFrameMsec = jsonValue.GetInteger("blackFrameMsec");
-
     m_blackFrameMsecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLossImageColor"))
   {
     m_inputLossImageColor = jsonValue.GetString("inputLossImageColor");
-
     m_inputLossImageColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLossImageSlate"))
   {
     m_inputLossImageSlate = jsonValue.GetObject("inputLossImageSlate");
-
     m_inputLossImageSlateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLossImageType"))
   {
     m_inputLossImageType = InputLossImageTypeMapper::GetInputLossImageTypeForName(jsonValue.GetString("inputLossImageType"));
-
     m_inputLossImageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repeatFrameMsec"))
   {
     m_repeatFrameMsec = jsonValue.GetInteger("repeatFrameMsec");
-
     m_repeatFrameMsecHasBeenSet = true;
   }
-
   return *this;
 }
 

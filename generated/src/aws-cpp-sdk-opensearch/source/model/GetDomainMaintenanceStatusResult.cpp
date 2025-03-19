@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDomainMaintenanceStatusResult::GetDomainMaintenanceStatusResult() : 
-    m_status(MaintenanceStatus::NOT_SET),
-    m_action(MaintenanceType::NOT_SET)
-{
-}
-
 GetDomainMaintenanceStatusResult::GetDomainMaintenanceStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDomainMaintenanceStatusResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ GetDomainMaintenanceStatusResult& GetDomainMaintenanceStatusResult::operator =(c
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MaintenanceStatusMapper::GetMaintenanceStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeId"))
   {
     m_nodeId = jsonValue.GetString("NodeId");
-
+    m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = MaintenanceTypeMapper::GetMaintenanceTypeForName(jsonValue.GetString("Action"));
-
+    m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

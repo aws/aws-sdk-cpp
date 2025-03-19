@@ -33,7 +33,7 @@ namespace Model
   class GeospatialPointStyleOptions
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialPointStyleOptions();
+    AWS_QUICKSIGHT_API GeospatialPointStyleOptions() = default;
     AWS_QUICKSIGHT_API GeospatialPointStyleOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialPointStyleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,38 @@ namespace Model
     /**
      * <p>The selected point styles (point, cluster) of the geospatial map.</p>
      */
-    inline const GeospatialSelectedPointStyle& GetSelectedPointStyle() const{ return m_selectedPointStyle; }
+    inline GeospatialSelectedPointStyle GetSelectedPointStyle() const { return m_selectedPointStyle; }
     inline bool SelectedPointStyleHasBeenSet() const { return m_selectedPointStyleHasBeenSet; }
-    inline void SetSelectedPointStyle(const GeospatialSelectedPointStyle& value) { m_selectedPointStyleHasBeenSet = true; m_selectedPointStyle = value; }
-    inline void SetSelectedPointStyle(GeospatialSelectedPointStyle&& value) { m_selectedPointStyleHasBeenSet = true; m_selectedPointStyle = std::move(value); }
-    inline GeospatialPointStyleOptions& WithSelectedPointStyle(const GeospatialSelectedPointStyle& value) { SetSelectedPointStyle(value); return *this;}
-    inline GeospatialPointStyleOptions& WithSelectedPointStyle(GeospatialSelectedPointStyle&& value) { SetSelectedPointStyle(std::move(value)); return *this;}
+    inline void SetSelectedPointStyle(GeospatialSelectedPointStyle value) { m_selectedPointStyleHasBeenSet = true; m_selectedPointStyle = value; }
+    inline GeospatialPointStyleOptions& WithSelectedPointStyle(GeospatialSelectedPointStyle value) { SetSelectedPointStyle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cluster marker configuration of the geospatial point style.</p>
      */
-    inline const ClusterMarkerConfiguration& GetClusterMarkerConfiguration() const{ return m_clusterMarkerConfiguration; }
+    inline const ClusterMarkerConfiguration& GetClusterMarkerConfiguration() const { return m_clusterMarkerConfiguration; }
     inline bool ClusterMarkerConfigurationHasBeenSet() const { return m_clusterMarkerConfigurationHasBeenSet; }
-    inline void SetClusterMarkerConfiguration(const ClusterMarkerConfiguration& value) { m_clusterMarkerConfigurationHasBeenSet = true; m_clusterMarkerConfiguration = value; }
-    inline void SetClusterMarkerConfiguration(ClusterMarkerConfiguration&& value) { m_clusterMarkerConfigurationHasBeenSet = true; m_clusterMarkerConfiguration = std::move(value); }
-    inline GeospatialPointStyleOptions& WithClusterMarkerConfiguration(const ClusterMarkerConfiguration& value) { SetClusterMarkerConfiguration(value); return *this;}
-    inline GeospatialPointStyleOptions& WithClusterMarkerConfiguration(ClusterMarkerConfiguration&& value) { SetClusterMarkerConfiguration(std::move(value)); return *this;}
+    template<typename ClusterMarkerConfigurationT = ClusterMarkerConfiguration>
+    void SetClusterMarkerConfiguration(ClusterMarkerConfigurationT&& value) { m_clusterMarkerConfigurationHasBeenSet = true; m_clusterMarkerConfiguration = std::forward<ClusterMarkerConfigurationT>(value); }
+    template<typename ClusterMarkerConfigurationT = ClusterMarkerConfiguration>
+    GeospatialPointStyleOptions& WithClusterMarkerConfiguration(ClusterMarkerConfigurationT&& value) { SetClusterMarkerConfiguration(std::forward<ClusterMarkerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The heatmap configuration of the geospatial point style.</p>
      */
-    inline const GeospatialHeatmapConfiguration& GetHeatmapConfiguration() const{ return m_heatmapConfiguration; }
+    inline const GeospatialHeatmapConfiguration& GetHeatmapConfiguration() const { return m_heatmapConfiguration; }
     inline bool HeatmapConfigurationHasBeenSet() const { return m_heatmapConfigurationHasBeenSet; }
-    inline void SetHeatmapConfiguration(const GeospatialHeatmapConfiguration& value) { m_heatmapConfigurationHasBeenSet = true; m_heatmapConfiguration = value; }
-    inline void SetHeatmapConfiguration(GeospatialHeatmapConfiguration&& value) { m_heatmapConfigurationHasBeenSet = true; m_heatmapConfiguration = std::move(value); }
-    inline GeospatialPointStyleOptions& WithHeatmapConfiguration(const GeospatialHeatmapConfiguration& value) { SetHeatmapConfiguration(value); return *this;}
-    inline GeospatialPointStyleOptions& WithHeatmapConfiguration(GeospatialHeatmapConfiguration&& value) { SetHeatmapConfiguration(std::move(value)); return *this;}
+    template<typename HeatmapConfigurationT = GeospatialHeatmapConfiguration>
+    void SetHeatmapConfiguration(HeatmapConfigurationT&& value) { m_heatmapConfigurationHasBeenSet = true; m_heatmapConfiguration = std::forward<HeatmapConfigurationT>(value); }
+    template<typename HeatmapConfigurationT = GeospatialHeatmapConfiguration>
+    GeospatialPointStyleOptions& WithHeatmapConfiguration(HeatmapConfigurationT&& value) { SetHeatmapConfiguration(std::forward<HeatmapConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    GeospatialSelectedPointStyle m_selectedPointStyle;
+    GeospatialSelectedPointStyle m_selectedPointStyle{GeospatialSelectedPointStyle::NOT_SET};
     bool m_selectedPointStyleHasBeenSet = false;
 
     ClusterMarkerConfiguration m_clusterMarkerConfiguration;

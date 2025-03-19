@@ -33,7 +33,7 @@ namespace Model
   class TLSCertificateConfiguration
   {
   public:
-    AWS_EMRCONTAINERS_API TLSCertificateConfiguration();
+    AWS_EMRCONTAINERS_API TLSCertificateConfiguration() = default;
     AWS_EMRCONTAINERS_API TLSCertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API TLSCertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The TLS certificate type. Acceptable values: <code>PEM</code> or
      * <code>Custom</code>.</p>
      */
-    inline const CertificateProviderType& GetCertificateProviderType() const{ return m_certificateProviderType; }
+    inline CertificateProviderType GetCertificateProviderType() const { return m_certificateProviderType; }
     inline bool CertificateProviderTypeHasBeenSet() const { return m_certificateProviderTypeHasBeenSet; }
-    inline void SetCertificateProviderType(const CertificateProviderType& value) { m_certificateProviderTypeHasBeenSet = true; m_certificateProviderType = value; }
-    inline void SetCertificateProviderType(CertificateProviderType&& value) { m_certificateProviderTypeHasBeenSet = true; m_certificateProviderType = std::move(value); }
-    inline TLSCertificateConfiguration& WithCertificateProviderType(const CertificateProviderType& value) { SetCertificateProviderType(value); return *this;}
-    inline TLSCertificateConfiguration& WithCertificateProviderType(CertificateProviderType&& value) { SetCertificateProviderType(std::move(value)); return *this;}
+    inline void SetCertificateProviderType(CertificateProviderType value) { m_certificateProviderTypeHasBeenSet = true; m_certificateProviderType = value; }
+    inline TLSCertificateConfiguration& WithCertificateProviderType(CertificateProviderType value) { SetCertificateProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>Secrets Manager ARN that contains the public TLS certificate contents, used
      * for communication between the user job and the system job.</p>
      */
-    inline const Aws::String& GetPublicCertificateSecretArn() const{ return m_publicCertificateSecretArn; }
+    inline const Aws::String& GetPublicCertificateSecretArn() const { return m_publicCertificateSecretArn; }
     inline bool PublicCertificateSecretArnHasBeenSet() const { return m_publicCertificateSecretArnHasBeenSet; }
-    inline void SetPublicCertificateSecretArn(const Aws::String& value) { m_publicCertificateSecretArnHasBeenSet = true; m_publicCertificateSecretArn = value; }
-    inline void SetPublicCertificateSecretArn(Aws::String&& value) { m_publicCertificateSecretArnHasBeenSet = true; m_publicCertificateSecretArn = std::move(value); }
-    inline void SetPublicCertificateSecretArn(const char* value) { m_publicCertificateSecretArnHasBeenSet = true; m_publicCertificateSecretArn.assign(value); }
-    inline TLSCertificateConfiguration& WithPublicCertificateSecretArn(const Aws::String& value) { SetPublicCertificateSecretArn(value); return *this;}
-    inline TLSCertificateConfiguration& WithPublicCertificateSecretArn(Aws::String&& value) { SetPublicCertificateSecretArn(std::move(value)); return *this;}
-    inline TLSCertificateConfiguration& WithPublicCertificateSecretArn(const char* value) { SetPublicCertificateSecretArn(value); return *this;}
+    template<typename PublicCertificateSecretArnT = Aws::String>
+    void SetPublicCertificateSecretArn(PublicCertificateSecretArnT&& value) { m_publicCertificateSecretArnHasBeenSet = true; m_publicCertificateSecretArn = std::forward<PublicCertificateSecretArnT>(value); }
+    template<typename PublicCertificateSecretArnT = Aws::String>
+    TLSCertificateConfiguration& WithPublicCertificateSecretArn(PublicCertificateSecretArnT&& value) { SetPublicCertificateSecretArn(std::forward<PublicCertificateSecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +68,16 @@ namespace Model
      * <p>Secrets Manager ARN that contains the private TLS certificate contents, used
      * for communication between the user job and the system job.</p>
      */
-    inline const Aws::String& GetPrivateCertificateSecretArn() const{ return m_privateCertificateSecretArn; }
+    inline const Aws::String& GetPrivateCertificateSecretArn() const { return m_privateCertificateSecretArn; }
     inline bool PrivateCertificateSecretArnHasBeenSet() const { return m_privateCertificateSecretArnHasBeenSet; }
-    inline void SetPrivateCertificateSecretArn(const Aws::String& value) { m_privateCertificateSecretArnHasBeenSet = true; m_privateCertificateSecretArn = value; }
-    inline void SetPrivateCertificateSecretArn(Aws::String&& value) { m_privateCertificateSecretArnHasBeenSet = true; m_privateCertificateSecretArn = std::move(value); }
-    inline void SetPrivateCertificateSecretArn(const char* value) { m_privateCertificateSecretArnHasBeenSet = true; m_privateCertificateSecretArn.assign(value); }
-    inline TLSCertificateConfiguration& WithPrivateCertificateSecretArn(const Aws::String& value) { SetPrivateCertificateSecretArn(value); return *this;}
-    inline TLSCertificateConfiguration& WithPrivateCertificateSecretArn(Aws::String&& value) { SetPrivateCertificateSecretArn(std::move(value)); return *this;}
-    inline TLSCertificateConfiguration& WithPrivateCertificateSecretArn(const char* value) { SetPrivateCertificateSecretArn(value); return *this;}
+    template<typename PrivateCertificateSecretArnT = Aws::String>
+    void SetPrivateCertificateSecretArn(PrivateCertificateSecretArnT&& value) { m_privateCertificateSecretArnHasBeenSet = true; m_privateCertificateSecretArn = std::forward<PrivateCertificateSecretArnT>(value); }
+    template<typename PrivateCertificateSecretArnT = Aws::String>
+    TLSCertificateConfiguration& WithPrivateCertificateSecretArn(PrivateCertificateSecretArnT&& value) { SetPrivateCertificateSecretArn(std::forward<PrivateCertificateSecretArnT>(value)); return *this;}
     ///@}
   private:
 
-    CertificateProviderType m_certificateProviderType;
+    CertificateProviderType m_certificateProviderType{CertificateProviderType::NOT_SET};
     bool m_certificateProviderTypeHasBeenSet = false;
 
     Aws::String m_publicCertificateSecretArn;

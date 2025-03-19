@@ -30,7 +30,7 @@ namespace Model
   class CreateFleetRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateFleetRequest();
+    AWS_APPSTREAM_API CreateFleetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>A unique name for the fleet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateFleetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateFleetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFleetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the image used to create the fleet.</p>
      */
-    inline const Aws::String& GetImageName() const{ return m_imageName; }
+    inline const Aws::String& GetImageName() const { return m_imageName; }
     inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
-    inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
-    inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
-    inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
-    inline CreateFleetRequest& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
-    inline CreateFleetRequest& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithImageName(const char* value) { SetImageName(value); return *this;}
+    template<typename ImageNameT = Aws::String>
+    void SetImageName(ImageNameT&& value) { m_imageNameHasBeenSet = true; m_imageName = std::forward<ImageNameT>(value); }
+    template<typename ImageNameT = Aws::String>
+    CreateFleetRequest& WithImageName(ImageNameT&& value) { SetImageName(std::forward<ImageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the public, private, or shared image to use.</p>
      */
-    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
+    inline const Aws::String& GetImageArn() const { return m_imageArn; }
     inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
-    inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
-    inline void SetImageArn(Aws::String&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::move(value); }
-    inline void SetImageArn(const char* value) { m_imageArnHasBeenSet = true; m_imageArn.assign(value); }
-    inline CreateFleetRequest& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
-    inline CreateFleetRequest& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithImageArn(const char* value) { SetImageArn(value); return *this;}
+    template<typename ImageArnT = Aws::String>
+    void SetImageArn(ImageArnT&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::forward<ImageArnT>(value); }
+    template<typename ImageArnT = Aws::String>
+    CreateFleetRequest& WithImageArn(ImageArnT&& value) { SetImageArn(std::forward<ImageArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +117,12 @@ namespace Model
      * </li> <li> <p>stream.standard.xlarge</p> </li> <li>
      * <p>stream.standard.2xlarge</p> </li> </ul>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline CreateFleetRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline CreateFleetRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    CreateFleetRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +135,10 @@ namespace Model
      * connected and a small hourly fee for instances that are not streaming apps.</p>
      * </dd> </dl>
      */
-    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+    inline FleetType GetFleetType() const { return m_fleetType; }
     inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
-    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
-    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
-    inline CreateFleetRequest& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
-    inline CreateFleetRequest& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
+    inline void SetFleetType(FleetType value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+    inline CreateFleetRequest& WithFleetType(FleetType value) { SetFleetType(value); return *this;}
     ///@}
 
     ///@{
@@ -156,12 +146,12 @@ namespace Model
      * <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.
      * For Elastic fleets, specify MaxConcurrentSessions instead.</p>
      */
-    inline const ComputeCapacity& GetComputeCapacity() const{ return m_computeCapacity; }
+    inline const ComputeCapacity& GetComputeCapacity() const { return m_computeCapacity; }
     inline bool ComputeCapacityHasBeenSet() const { return m_computeCapacityHasBeenSet; }
-    inline void SetComputeCapacity(const ComputeCapacity& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = value; }
-    inline void SetComputeCapacity(ComputeCapacity&& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = std::move(value); }
-    inline CreateFleetRequest& WithComputeCapacity(const ComputeCapacity& value) { SetComputeCapacity(value); return *this;}
-    inline CreateFleetRequest& WithComputeCapacity(ComputeCapacity&& value) { SetComputeCapacity(std::move(value)); return *this;}
+    template<typename ComputeCapacityT = ComputeCapacity>
+    void SetComputeCapacity(ComputeCapacityT&& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = std::forward<ComputeCapacityT>(value); }
+    template<typename ComputeCapacityT = ComputeCapacity>
+    CreateFleetRequest& WithComputeCapacity(ComputeCapacityT&& value) { SetComputeCapacity(std::forward<ComputeCapacityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,12 +160,12 @@ namespace Model
      * not required for other fleet types. Elastic fleets require that you specify at
      * least two subnets in different availability zones.</p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline CreateFleetRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline CreateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    CreateFleetRequest& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +177,7 @@ namespace Model
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
      * 432000.</p>
      */
-    inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
+    inline int GetMaxUserDurationInSeconds() const { return m_maxUserDurationInSeconds; }
     inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
     inline CreateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
@@ -202,7 +192,7 @@ namespace Model
      * session with a new streaming instance. </p> <p>Specify a value between 60 and
      * 36000.</p>
      */
-    inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
+    inline int GetDisconnectTimeoutInSeconds() const { return m_disconnectTimeoutInSeconds; }
     inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
     inline CreateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
@@ -212,35 +202,31 @@ namespace Model
     /**
      * <p>The description to display.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFleetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fleet name to display.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateFleetRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    CreateFleetRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables or disables default internet access for the fleet.</p>
      */
-    inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
+    inline bool GetEnableDefaultInternetAccess() const { return m_enableDefaultInternetAccess; }
     inline bool EnableDefaultInternetAccessHasBeenSet() const { return m_enableDefaultInternetAccessHasBeenSet; }
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
     inline CreateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
@@ -252,12 +238,12 @@ namespace Model
      * fleet to a Microsoft Active Directory domain. This is not allowed for Elastic
      * fleets. </p>
      */
-    inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
+    inline const DomainJoinInfo& GetDomainJoinInfo() const { return m_domainJoinInfo; }
     inline bool DomainJoinInfoHasBeenSet() const { return m_domainJoinInfoHasBeenSet; }
-    inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
-    inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
-    inline CreateFleetRequest& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
-    inline CreateFleetRequest& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
+    template<typename DomainJoinInfoT = DomainJoinInfo>
+    void SetDomainJoinInfo(DomainJoinInfoT&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::forward<DomainJoinInfoT>(value); }
+    template<typename DomainJoinInfoT = DomainJoinInfo>
+    CreateFleetRequest& WithDomainJoinInfo(DomainJoinInfoT&& value) { SetDomainJoinInfo(std::forward<DomainJoinInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -271,19 +257,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFleetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateFleetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFleetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateFleetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateFleetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateFleetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateFleetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateFleetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateFleetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateFleetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateFleetRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -309,7 +292,7 @@ namespace Model
      * different minutes, the value is rounded up. For example, if you specify a value
      * of 90, users are disconnected after 2 minutes of inactivity. </p> 
      */
-    inline int GetIdleDisconnectTimeoutInSeconds() const{ return m_idleDisconnectTimeoutInSeconds; }
+    inline int GetIdleDisconnectTimeoutInSeconds() const { return m_idleDisconnectTimeoutInSeconds; }
     inline bool IdleDisconnectTimeoutInSecondsHasBeenSet() const { return m_idleDisconnectTimeoutInSecondsHasBeenSet; }
     inline void SetIdleDisconnectTimeoutInSeconds(int value) { m_idleDisconnectTimeoutInSecondsHasBeenSet = true; m_idleDisconnectTimeoutInSeconds = value; }
     inline CreateFleetRequest& WithIdleDisconnectTimeoutInSeconds(int value) { SetIdleDisconnectTimeoutInSeconds(value); return *this;}
@@ -329,14 +312,12 @@ namespace Model
      * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
      * Administration Guide</i>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline CreateFleetRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline CreateFleetRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline CreateFleetRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    CreateFleetRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -347,12 +328,10 @@ namespace Model
      * desktop that is provided by the operating system displays.</p> <p>The default
      * value is <code>APP</code>.</p>
      */
-    inline const StreamView& GetStreamView() const{ return m_streamView; }
+    inline StreamView GetStreamView() const { return m_streamView; }
     inline bool StreamViewHasBeenSet() const { return m_streamViewHasBeenSet; }
-    inline void SetStreamView(const StreamView& value) { m_streamViewHasBeenSet = true; m_streamView = value; }
-    inline void SetStreamView(StreamView&& value) { m_streamViewHasBeenSet = true; m_streamView = std::move(value); }
-    inline CreateFleetRequest& WithStreamView(const StreamView& value) { SetStreamView(value); return *this;}
-    inline CreateFleetRequest& WithStreamView(StreamView&& value) { SetStreamView(std::move(value)); return *this;}
+    inline void SetStreamView(StreamView value) { m_streamViewHasBeenSet = true; m_streamView = value; }
+    inline CreateFleetRequest& WithStreamView(StreamView value) { SetStreamView(value); return *this;}
     ///@}
 
     ///@{
@@ -360,12 +339,10 @@ namespace Model
      * <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for
      * Elastic fleets. </p>
      */
-    inline const PlatformType& GetPlatform() const{ return m_platform; }
+    inline PlatformType GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const PlatformType& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(PlatformType&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline CreateFleetRequest& WithPlatform(const PlatformType& value) { SetPlatform(value); return *this;}
-    inline CreateFleetRequest& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(PlatformType value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline CreateFleetRequest& WithPlatform(PlatformType value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -373,7 +350,7 @@ namespace Model
      * <p>The maximum concurrent sessions of the Elastic fleet. This is required for
      * Elastic fleets, and not allowed for other fleet types.</p>
      */
-    inline int GetMaxConcurrentSessions() const{ return m_maxConcurrentSessions; }
+    inline int GetMaxConcurrentSessions() const { return m_maxConcurrentSessions; }
     inline bool MaxConcurrentSessionsHasBeenSet() const { return m_maxConcurrentSessionsHasBeenSet; }
     inline void SetMaxConcurrentSessions(int value) { m_maxConcurrentSessionsHasBeenSet = true; m_maxConcurrentSessions = value; }
     inline CreateFleetRequest& WithMaxConcurrentSessions(int value) { SetMaxConcurrentSessions(value); return *this;}
@@ -385,15 +362,14 @@ namespace Model
      * redirect to the fleet streaming session, when using the Windows native client.
      * This is allowed but not required for Elastic fleets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUsbDeviceFilterStrings() const{ return m_usbDeviceFilterStrings; }
+    inline const Aws::Vector<Aws::String>& GetUsbDeviceFilterStrings() const { return m_usbDeviceFilterStrings; }
     inline bool UsbDeviceFilterStringsHasBeenSet() const { return m_usbDeviceFilterStringsHasBeenSet; }
-    inline void SetUsbDeviceFilterStrings(const Aws::Vector<Aws::String>& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings = value; }
-    inline void SetUsbDeviceFilterStrings(Aws::Vector<Aws::String>&& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings = std::move(value); }
-    inline CreateFleetRequest& WithUsbDeviceFilterStrings(const Aws::Vector<Aws::String>& value) { SetUsbDeviceFilterStrings(value); return *this;}
-    inline CreateFleetRequest& WithUsbDeviceFilterStrings(Aws::Vector<Aws::String>&& value) { SetUsbDeviceFilterStrings(std::move(value)); return *this;}
-    inline CreateFleetRequest& AddUsbDeviceFilterStrings(const Aws::String& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(value); return *this; }
-    inline CreateFleetRequest& AddUsbDeviceFilterStrings(Aws::String&& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(std::move(value)); return *this; }
-    inline CreateFleetRequest& AddUsbDeviceFilterStrings(const char* value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.push_back(value); return *this; }
+    template<typename UsbDeviceFilterStringsT = Aws::Vector<Aws::String>>
+    void SetUsbDeviceFilterStrings(UsbDeviceFilterStringsT&& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings = std::forward<UsbDeviceFilterStringsT>(value); }
+    template<typename UsbDeviceFilterStringsT = Aws::Vector<Aws::String>>
+    CreateFleetRequest& WithUsbDeviceFilterStrings(UsbDeviceFilterStringsT&& value) { SetUsbDeviceFilterStrings(std::forward<UsbDeviceFilterStringsT>(value)); return *this;}
+    template<typename UsbDeviceFilterStringsT = Aws::String>
+    CreateFleetRequest& AddUsbDeviceFilterStrings(UsbDeviceFilterStringsT&& value) { m_usbDeviceFilterStringsHasBeenSet = true; m_usbDeviceFilterStrings.emplace_back(std::forward<UsbDeviceFilterStringsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -401,12 +377,12 @@ namespace Model
      * <p>The S3 location of the session scripts configuration zip file. This only
      * applies to Elastic fleets.</p>
      */
-    inline const S3Location& GetSessionScriptS3Location() const{ return m_sessionScriptS3Location; }
+    inline const S3Location& GetSessionScriptS3Location() const { return m_sessionScriptS3Location; }
     inline bool SessionScriptS3LocationHasBeenSet() const { return m_sessionScriptS3LocationHasBeenSet; }
-    inline void SetSessionScriptS3Location(const S3Location& value) { m_sessionScriptS3LocationHasBeenSet = true; m_sessionScriptS3Location = value; }
-    inline void SetSessionScriptS3Location(S3Location&& value) { m_sessionScriptS3LocationHasBeenSet = true; m_sessionScriptS3Location = std::move(value); }
-    inline CreateFleetRequest& WithSessionScriptS3Location(const S3Location& value) { SetSessionScriptS3Location(value); return *this;}
-    inline CreateFleetRequest& WithSessionScriptS3Location(S3Location&& value) { SetSessionScriptS3Location(std::move(value)); return *this;}
+    template<typename SessionScriptS3LocationT = S3Location>
+    void SetSessionScriptS3Location(SessionScriptS3LocationT&& value) { m_sessionScriptS3LocationHasBeenSet = true; m_sessionScriptS3Location = std::forward<SessionScriptS3LocationT>(value); }
+    template<typename SessionScriptS3LocationT = S3Location>
+    CreateFleetRequest& WithSessionScriptS3Location(SessionScriptS3LocationT&& value) { SetSessionScriptS3Location(std::forward<SessionScriptS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -414,7 +390,7 @@ namespace Model
      * <p>The maximum number of user sessions on an instance. This only applies to
      * multi-session fleets.</p>
      */
-    inline int GetMaxSessionsPerInstance() const{ return m_maxSessionsPerInstance; }
+    inline int GetMaxSessionsPerInstance() const { return m_maxSessionsPerInstance; }
     inline bool MaxSessionsPerInstanceHasBeenSet() const { return m_maxSessionsPerInstanceHasBeenSet; }
     inline void SetMaxSessionsPerInstance(int value) { m_maxSessionsPerInstanceHasBeenSet = true; m_maxSessionsPerInstance = value; }
     inline CreateFleetRequest& WithMaxSessionsPerInstance(int value) { SetMaxSessionsPerInstance(value); return *this;}
@@ -433,7 +409,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    FleetType m_fleetType;
+    FleetType m_fleetType{FleetType::NOT_SET};
     bool m_fleetTypeHasBeenSet = false;
 
     ComputeCapacity m_computeCapacity;
@@ -442,10 +418,10 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
 
-    int m_maxUserDurationInSeconds;
+    int m_maxUserDurationInSeconds{0};
     bool m_maxUserDurationInSecondsHasBeenSet = false;
 
-    int m_disconnectTimeoutInSeconds;
+    int m_disconnectTimeoutInSeconds{0};
     bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
     Aws::String m_description;
@@ -454,7 +430,7 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    bool m_enableDefaultInternetAccess;
+    bool m_enableDefaultInternetAccess{false};
     bool m_enableDefaultInternetAccessHasBeenSet = false;
 
     DomainJoinInfo m_domainJoinInfo;
@@ -463,19 +439,19 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_idleDisconnectTimeoutInSeconds;
+    int m_idleDisconnectTimeoutInSeconds{0};
     bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet = false;
 
-    StreamView m_streamView;
+    StreamView m_streamView{StreamView::NOT_SET};
     bool m_streamViewHasBeenSet = false;
 
-    PlatformType m_platform;
+    PlatformType m_platform{PlatformType::NOT_SET};
     bool m_platformHasBeenSet = false;
 
-    int m_maxConcurrentSessions;
+    int m_maxConcurrentSessions{0};
     bool m_maxConcurrentSessionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
@@ -484,7 +460,7 @@ namespace Model
     S3Location m_sessionScriptS3Location;
     bool m_sessionScriptS3LocationHasBeenSet = false;
 
-    int m_maxSessionsPerInstance;
+    int m_maxSessionsPerInstance{0};
     bool m_maxSessionsPerInstanceHasBeenSet = false;
   };
 

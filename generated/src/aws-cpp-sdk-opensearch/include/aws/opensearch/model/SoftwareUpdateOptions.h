@@ -30,7 +30,7 @@ namespace Model
   class SoftwareUpdateOptions
   {
   public:
-    AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptions();
+    AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptions() = default;
     AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API SoftwareUpdateOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Whether automatic service software updates are enabled for the domain.</p>
      */
-    inline bool GetAutoSoftwareUpdateEnabled() const{ return m_autoSoftwareUpdateEnabled; }
+    inline bool GetAutoSoftwareUpdateEnabled() const { return m_autoSoftwareUpdateEnabled; }
     inline bool AutoSoftwareUpdateEnabledHasBeenSet() const { return m_autoSoftwareUpdateEnabledHasBeenSet; }
     inline void SetAutoSoftwareUpdateEnabled(bool value) { m_autoSoftwareUpdateEnabledHasBeenSet = true; m_autoSoftwareUpdateEnabled = value; }
     inline SoftwareUpdateOptions& WithAutoSoftwareUpdateEnabled(bool value) { SetAutoSoftwareUpdateEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_autoSoftwareUpdateEnabled;
+    bool m_autoSoftwareUpdateEnabled{false};
     bool m_autoSoftwareUpdateEnabledHasBeenSet = false;
   };
 

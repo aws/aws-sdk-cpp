@@ -18,29 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ReservationAggregates::ReservationAggregates() : 
-    m_utilizationPercentageHasBeenSet(false),
-    m_utilizationPercentageInUnitsHasBeenSet(false),
-    m_purchasedHoursHasBeenSet(false),
-    m_purchasedUnitsHasBeenSet(false),
-    m_totalActualHoursHasBeenSet(false),
-    m_totalActualUnitsHasBeenSet(false),
-    m_unusedHoursHasBeenSet(false),
-    m_unusedUnitsHasBeenSet(false),
-    m_onDemandCostOfRIHoursUsedHasBeenSet(false),
-    m_netRISavingsHasBeenSet(false),
-    m_totalPotentialRISavingsHasBeenSet(false),
-    m_amortizedUpfrontFeeHasBeenSet(false),
-    m_amortizedRecurringFeeHasBeenSet(false),
-    m_totalAmortizedFeeHasBeenSet(false),
-    m_rICostForUnusedHoursHasBeenSet(false),
-    m_realizedSavingsHasBeenSet(false),
-    m_unrealizedSavingsHasBeenSet(false)
-{
-}
-
 ReservationAggregates::ReservationAggregates(JsonView jsonValue)
-  : ReservationAggregates()
 {
   *this = jsonValue;
 }
@@ -50,122 +28,88 @@ ReservationAggregates& ReservationAggregates::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UtilizationPercentage"))
   {
     m_utilizationPercentage = jsonValue.GetString("UtilizationPercentage");
-
     m_utilizationPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UtilizationPercentageInUnits"))
   {
     m_utilizationPercentageInUnits = jsonValue.GetString("UtilizationPercentageInUnits");
-
     m_utilizationPercentageInUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PurchasedHours"))
   {
     m_purchasedHours = jsonValue.GetString("PurchasedHours");
-
     m_purchasedHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PurchasedUnits"))
   {
     m_purchasedUnits = jsonValue.GetString("PurchasedUnits");
-
     m_purchasedUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalActualHours"))
   {
     m_totalActualHours = jsonValue.GetString("TotalActualHours");
-
     m_totalActualHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalActualUnits"))
   {
     m_totalActualUnits = jsonValue.GetString("TotalActualUnits");
-
     m_totalActualUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnusedHours"))
   {
     m_unusedHours = jsonValue.GetString("UnusedHours");
-
     m_unusedHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnusedUnits"))
   {
     m_unusedUnits = jsonValue.GetString("UnusedUnits");
-
     m_unusedUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandCostOfRIHoursUsed"))
   {
     m_onDemandCostOfRIHoursUsed = jsonValue.GetString("OnDemandCostOfRIHoursUsed");
-
     m_onDemandCostOfRIHoursUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetRISavings"))
   {
     m_netRISavings = jsonValue.GetString("NetRISavings");
-
     m_netRISavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalPotentialRISavings"))
   {
     m_totalPotentialRISavings = jsonValue.GetString("TotalPotentialRISavings");
-
     m_totalPotentialRISavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmortizedUpfrontFee"))
   {
     m_amortizedUpfrontFee = jsonValue.GetString("AmortizedUpfrontFee");
-
     m_amortizedUpfrontFeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmortizedRecurringFee"))
   {
     m_amortizedRecurringFee = jsonValue.GetString("AmortizedRecurringFee");
-
     m_amortizedRecurringFeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalAmortizedFee"))
   {
     m_totalAmortizedFee = jsonValue.GetString("TotalAmortizedFee");
-
     m_totalAmortizedFeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RICostForUnusedHours"))
   {
     m_rICostForUnusedHours = jsonValue.GetString("RICostForUnusedHours");
-
     m_rICostForUnusedHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RealizedSavings"))
   {
     m_realizedSavings = jsonValue.GetString("RealizedSavings");
-
     m_realizedSavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnrealizedSavings"))
   {
     m_unrealizedSavings = jsonValue.GetString("UnrealizedSavings");
-
     m_unrealizedSavingsHasBeenSet = true;
   }
-
   return *this;
 }
 

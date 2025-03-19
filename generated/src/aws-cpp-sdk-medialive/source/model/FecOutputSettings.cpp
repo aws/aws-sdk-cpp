@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FecOutputSettings::FecOutputSettings() : 
-    m_columnDepth(0),
-    m_columnDepthHasBeenSet(false),
-    m_includeFec(FecOutputIncludeFec::NOT_SET),
-    m_includeFecHasBeenSet(false),
-    m_rowLength(0),
-    m_rowLengthHasBeenSet(false)
-{
-}
-
 FecOutputSettings::FecOutputSettings(JsonView jsonValue)
-  : FecOutputSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ FecOutputSettings& FecOutputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnDepth"))
   {
     m_columnDepth = jsonValue.GetInteger("columnDepth");
-
     m_columnDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeFec"))
   {
     m_includeFec = FecOutputIncludeFecMapper::GetFecOutputIncludeFecForName(jsonValue.GetString("includeFec"));
-
     m_includeFecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rowLength"))
   {
     m_rowLength = jsonValue.GetInteger("rowLength");
-
     m_rowLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

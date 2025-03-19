@@ -26,7 +26,7 @@ namespace Model
   class DeletePortalRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DeletePortalRequest();
+    AWS_IOTSITEWISE_API DeletePortalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the portal to delete.</p>
      */
-    inline const Aws::String& GetPortalId() const{ return m_portalId; }
+    inline const Aws::String& GetPortalId() const { return m_portalId; }
     inline bool PortalIdHasBeenSet() const { return m_portalIdHasBeenSet; }
-    inline void SetPortalId(const Aws::String& value) { m_portalIdHasBeenSet = true; m_portalId = value; }
-    inline void SetPortalId(Aws::String&& value) { m_portalIdHasBeenSet = true; m_portalId = std::move(value); }
-    inline void SetPortalId(const char* value) { m_portalIdHasBeenSet = true; m_portalId.assign(value); }
-    inline DeletePortalRequest& WithPortalId(const Aws::String& value) { SetPortalId(value); return *this;}
-    inline DeletePortalRequest& WithPortalId(Aws::String&& value) { SetPortalId(std::move(value)); return *this;}
-    inline DeletePortalRequest& WithPortalId(const char* value) { SetPortalId(value); return *this;}
+    template<typename PortalIdT = Aws::String>
+    void SetPortalId(PortalIdT&& value) { m_portalIdHasBeenSet = true; m_portalId = std::forward<PortalIdT>(value); }
+    template<typename PortalIdT = Aws::String>
+    DeletePortalRequest& WithPortalId(PortalIdT&& value) { SetPortalId(std::forward<PortalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeletePortalRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeletePortalRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeletePortalRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeletePortalRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

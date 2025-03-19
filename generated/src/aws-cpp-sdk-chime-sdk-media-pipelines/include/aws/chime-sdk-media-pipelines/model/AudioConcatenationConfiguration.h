@@ -32,7 +32,7 @@ namespace Model
   class AudioConcatenationConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Enables or disables the configuration object.</p>
      */
-    inline const AudioArtifactsConcatenationState& GetState() const{ return m_state; }
+    inline AudioArtifactsConcatenationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AudioArtifactsConcatenationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AudioArtifactsConcatenationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AudioConcatenationConfiguration& WithState(const AudioArtifactsConcatenationState& value) { SetState(value); return *this;}
-    inline AudioConcatenationConfiguration& WithState(AudioArtifactsConcatenationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AudioArtifactsConcatenationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline AudioConcatenationConfiguration& WithState(AudioArtifactsConcatenationState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    AudioArtifactsConcatenationState m_state;
+    AudioArtifactsConcatenationState m_state{AudioArtifactsConcatenationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

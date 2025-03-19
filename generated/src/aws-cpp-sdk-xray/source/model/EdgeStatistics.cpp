@@ -18,20 +18,7 @@ namespace XRay
 namespace Model
 {
 
-EdgeStatistics::EdgeStatistics() : 
-    m_okCount(0),
-    m_okCountHasBeenSet(false),
-    m_errorStatisticsHasBeenSet(false),
-    m_faultStatisticsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_totalResponseTime(0.0),
-    m_totalResponseTimeHasBeenSet(false)
-{
-}
-
 EdgeStatistics::EdgeStatistics(JsonView jsonValue)
-  : EdgeStatistics()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ EdgeStatistics& EdgeStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OkCount"))
   {
     m_okCount = jsonValue.GetInt64("OkCount");
-
     m_okCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorStatistics"))
   {
     m_errorStatistics = jsonValue.GetObject("ErrorStatistics");
-
     m_errorStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaultStatistics"))
   {
     m_faultStatistics = jsonValue.GetObject("FaultStatistics");
-
     m_faultStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalResponseTime"))
   {
     m_totalResponseTime = jsonValue.GetDouble("TotalResponseTime");
-
     m_totalResponseTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

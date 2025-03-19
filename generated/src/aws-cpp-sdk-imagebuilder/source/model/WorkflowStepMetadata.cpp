@@ -18,25 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-WorkflowStepMetadata::WorkflowStepMetadata() : 
-    m_stepExecutionIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_status(WorkflowStepExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_rollbackStatus(WorkflowStepExecutionRollbackStatus::NOT_SET),
-    m_rollbackStatusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 WorkflowStepMetadata::WorkflowStepMetadata(JsonView jsonValue)
-  : WorkflowStepMetadata()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ WorkflowStepMetadata& WorkflowStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepExecutionId"))
   {
     m_stepExecutionId = jsonValue.GetString("stepExecutionId");
-
     m_stepExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkflowStepExecutionStatusMapper::GetWorkflowStepExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollbackStatus"))
   {
     m_rollbackStatus = WorkflowStepExecutionRollbackStatusMapper::GetWorkflowStepExecutionRollbackStatusForName(jsonValue.GetString("rollbackStatus"));
-
     m_rollbackStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputs"))
   {
     m_inputs = jsonValue.GetString("inputs");
-
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     m_outputs = jsonValue.GetString("outputs");
-
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

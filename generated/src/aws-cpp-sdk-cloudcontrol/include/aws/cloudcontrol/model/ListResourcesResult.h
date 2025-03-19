@@ -29,7 +29,7 @@ namespace Model
   class ListResourcesResult
   {
   public:
-    AWS_CLOUDCONTROLAPI_API ListResourcesResult();
+    AWS_CLOUDCONTROLAPI_API ListResourcesResult() = default;
     AWS_CLOUDCONTROLAPI_API ListResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDCONTROLAPI_API ListResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The name of the resource type.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
-    inline void SetTypeName(const Aws::String& value) { m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeName.assign(value); }
-    inline ListResourcesResult& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ListResourcesResult& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ListResourcesResult& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ListResourcesResult& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,13 @@ namespace Model
      * <p>Information about the specified resources, including primary identifier and
      * resource model.</p>
      */
-    inline const Aws::Vector<ResourceDescription>& GetResourceDescriptions() const{ return m_resourceDescriptions; }
-    inline void SetResourceDescriptions(const Aws::Vector<ResourceDescription>& value) { m_resourceDescriptions = value; }
-    inline void SetResourceDescriptions(Aws::Vector<ResourceDescription>&& value) { m_resourceDescriptions = std::move(value); }
-    inline ListResourcesResult& WithResourceDescriptions(const Aws::Vector<ResourceDescription>& value) { SetResourceDescriptions(value); return *this;}
-    inline ListResourcesResult& WithResourceDescriptions(Aws::Vector<ResourceDescription>&& value) { SetResourceDescriptions(std::move(value)); return *this;}
-    inline ListResourcesResult& AddResourceDescriptions(const ResourceDescription& value) { m_resourceDescriptions.push_back(value); return *this; }
-    inline ListResourcesResult& AddResourceDescriptions(ResourceDescription&& value) { m_resourceDescriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceDescription>& GetResourceDescriptions() const { return m_resourceDescriptions; }
+    template<typename ResourceDescriptionsT = Aws::Vector<ResourceDescription>>
+    void SetResourceDescriptions(ResourceDescriptionsT&& value) { m_resourceDescriptionsHasBeenSet = true; m_resourceDescriptions = std::forward<ResourceDescriptionsT>(value); }
+    template<typename ResourceDescriptionsT = Aws::Vector<ResourceDescription>>
+    ListResourcesResult& WithResourceDescriptions(ResourceDescriptionsT&& value) { SetResourceDescriptions(std::forward<ResourceDescriptionsT>(value)); return *this;}
+    template<typename ResourceDescriptionsT = ResourceDescription>
+    ListResourcesResult& AddResourceDescriptions(ResourceDescriptionsT&& value) { m_resourceDescriptionsHasBeenSet = true; m_resourceDescriptions.emplace_back(std::forward<ResourceDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,34 +67,34 @@ namespace Model
      * object's <code>NextToken</code> parameter. If the request returns all results,
      * <code>NextToken</code> is set to null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_typeName;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::Vector<ResourceDescription> m_resourceDescriptions;
+    bool m_resourceDescriptionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

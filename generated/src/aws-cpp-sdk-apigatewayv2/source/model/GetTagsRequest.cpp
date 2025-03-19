@@ -12,11 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTagsRequest::GetTagsRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTagsRequest::SerializePayload() const
 {
   return {};

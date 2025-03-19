@@ -21,7 +21,7 @@ namespace Model
   class RegisterComputeRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API RegisterComputeRequest();
+    AWS_GAMELIFT_API RegisterComputeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>A unique identifier for the fleet to register the compute to. You can use
      * either the fleet ID or ARN value.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline RegisterComputeRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline RegisterComputeRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline RegisterComputeRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    RegisterComputeRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A descriptive label for the compute resource.</p>
      */
-    inline const Aws::String& GetComputeName() const{ return m_computeName; }
+    inline const Aws::String& GetComputeName() const { return m_computeName; }
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
-    inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
-    inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
-    inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
-    inline RegisterComputeRequest& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
-    inline RegisterComputeRequest& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
-    inline RegisterComputeRequest& WithComputeName(const char* value) { SetComputeName(value); return *this;}
+    template<typename ComputeNameT = Aws::String>
+    void SetComputeName(ComputeNameT&& value) { m_computeNameHasBeenSet = true; m_computeName = std::forward<ComputeNameT>(value); }
+    template<typename ComputeNameT = Aws::String>
+    RegisterComputeRequest& WithComputeName(ComputeNameT&& value) { SetComputeName(std::forward<ComputeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
      * doesn't validate the path and certificate.</p>
      */
-    inline const Aws::String& GetCertificatePath() const{ return m_certificatePath; }
+    inline const Aws::String& GetCertificatePath() const { return m_certificatePath; }
     inline bool CertificatePathHasBeenSet() const { return m_certificatePathHasBeenSet; }
-    inline void SetCertificatePath(const Aws::String& value) { m_certificatePathHasBeenSet = true; m_certificatePath = value; }
-    inline void SetCertificatePath(Aws::String&& value) { m_certificatePathHasBeenSet = true; m_certificatePath = std::move(value); }
-    inline void SetCertificatePath(const char* value) { m_certificatePathHasBeenSet = true; m_certificatePath.assign(value); }
-    inline RegisterComputeRequest& WithCertificatePath(const Aws::String& value) { SetCertificatePath(value); return *this;}
-    inline RegisterComputeRequest& WithCertificatePath(Aws::String&& value) { SetCertificatePath(std::move(value)); return *this;}
-    inline RegisterComputeRequest& WithCertificatePath(const char* value) { SetCertificatePath(value); return *this;}
+    template<typename CertificatePathT = Aws::String>
+    void SetCertificatePath(CertificatePathT&& value) { m_certificatePathHasBeenSet = true; m_certificatePath = std::forward<CertificatePathT>(value); }
+    template<typename CertificatePathT = Aws::String>
+    RegisterComputeRequest& WithCertificatePath(CertificatePathT&& value) { SetCertificatePath(std::forward<CertificatePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +77,12 @@ namespace Model
      * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
      * name or IP address.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline RegisterComputeRequest& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline RegisterComputeRequest& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline RegisterComputeRequest& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    RegisterComputeRequest& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +91,12 @@ namespace Model
      * name or IP address. When registering an Anywhere fleet, an IP address is
      * required.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline RegisterComputeRequest& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline RegisterComputeRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline RegisterComputeRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    RegisterComputeRequest& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +105,12 @@ namespace Model
      * registered. This parameter is required when registering a compute for an
      * Anywhere fleet.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline RegisterComputeRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline RegisterComputeRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline RegisterComputeRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    RegisterComputeRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

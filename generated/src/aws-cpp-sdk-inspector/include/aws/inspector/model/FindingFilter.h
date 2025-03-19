@@ -36,7 +36,7 @@ namespace Model
   class FindingFilter
   {
   public:
-    AWS_INSPECTOR_API FindingFilter();
+    AWS_INSPECTOR_API FindingFilter() = default;
     AWS_INSPECTOR_API FindingFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API FindingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * data type property must be the exact match of the value of the <b>agentId</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentIds() const{ return m_agentIds; }
+    inline const Aws::Vector<Aws::String>& GetAgentIds() const { return m_agentIds; }
     inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
-    inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
-    inline void SetAgentIds(Aws::Vector<Aws::String>&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::move(value); }
-    inline FindingFilter& WithAgentIds(const Aws::Vector<Aws::String>& value) { SetAgentIds(value); return *this;}
-    inline FindingFilter& WithAgentIds(Aws::Vector<Aws::String>&& value) { SetAgentIds(std::move(value)); return *this;}
-    inline FindingFilter& AddAgentIds(const Aws::String& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
-    inline FindingFilter& AddAgentIds(Aws::String&& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(std::move(value)); return *this; }
-    inline FindingFilter& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
+    template<typename AgentIdsT = Aws::Vector<Aws::String>>
+    void SetAgentIds(AgentIdsT&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::forward<AgentIdsT>(value); }
+    template<typename AgentIdsT = Aws::Vector<Aws::String>>
+    FindingFilter& WithAgentIds(AgentIdsT&& value) { SetAgentIds(std::forward<AgentIdsT>(value)); return *this;}
+    template<typename AgentIdsT = Aws::String>
+    FindingFilter& AddAgentIds(AgentIdsT&& value) { m_agentIdsHasBeenSet = true; m_agentIds.emplace_back(std::forward<AgentIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,15 +64,14 @@ namespace Model
      * data type property must be the exact match of the value of the
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+    inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const { return m_autoScalingGroups; }
     inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
-    inline void SetAutoScalingGroups(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
-    inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
-    inline FindingFilter& WithAutoScalingGroups(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroups(value); return *this;}
-    inline FindingFilter& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
-    inline FindingFilter& AddAutoScalingGroups(const Aws::String& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
-    inline FindingFilter& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
-    inline FindingFilter& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
+    template<typename AutoScalingGroupsT = Aws::Vector<Aws::String>>
+    void SetAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::forward<AutoScalingGroupsT>(value); }
+    template<typename AutoScalingGroupsT = Aws::Vector<Aws::String>>
+    FindingFilter& WithAutoScalingGroups(AutoScalingGroupsT&& value) { SetAutoScalingGroups(std::forward<AutoScalingGroupsT>(value)); return *this;}
+    template<typename AutoScalingGroupsT = Aws::String>
+    FindingFilter& AddAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.emplace_back(std::forward<AutoScalingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,15 +80,14 @@ namespace Model
      * data type property must be the exact match of the value of the <b>ruleName</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRuleNames() const{ return m_ruleNames; }
+    inline const Aws::Vector<Aws::String>& GetRuleNames() const { return m_ruleNames; }
     inline bool RuleNamesHasBeenSet() const { return m_ruleNamesHasBeenSet; }
-    inline void SetRuleNames(const Aws::Vector<Aws::String>& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = value; }
-    inline void SetRuleNames(Aws::Vector<Aws::String>&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = std::move(value); }
-    inline FindingFilter& WithRuleNames(const Aws::Vector<Aws::String>& value) { SetRuleNames(value); return *this;}
-    inline FindingFilter& WithRuleNames(Aws::Vector<Aws::String>&& value) { SetRuleNames(std::move(value)); return *this;}
-    inline FindingFilter& AddRuleNames(const Aws::String& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
-    inline FindingFilter& AddRuleNames(Aws::String&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(std::move(value)); return *this; }
-    inline FindingFilter& AddRuleNames(const char* value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
+    template<typename RuleNamesT = Aws::Vector<Aws::String>>
+    void SetRuleNames(RuleNamesT&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = std::forward<RuleNamesT>(value); }
+    template<typename RuleNamesT = Aws::Vector<Aws::String>>
+    FindingFilter& WithRuleNames(RuleNamesT&& value) { SetRuleNames(std::forward<RuleNamesT>(value)); return *this;}
+    template<typename RuleNamesT = Aws::String>
+    FindingFilter& AddRuleNames(RuleNamesT&& value) { m_ruleNamesHasBeenSet = true; m_ruleNames.emplace_back(std::forward<RuleNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,14 +96,13 @@ namespace Model
      * data type property must be the exact match of the value of the <b>severity</b>
      * property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Severity>& GetSeverities() const{ return m_severities; }
+    inline const Aws::Vector<Severity>& GetSeverities() const { return m_severities; }
     inline bool SeveritiesHasBeenSet() const { return m_severitiesHasBeenSet; }
-    inline void SetSeverities(const Aws::Vector<Severity>& value) { m_severitiesHasBeenSet = true; m_severities = value; }
-    inline void SetSeverities(Aws::Vector<Severity>&& value) { m_severitiesHasBeenSet = true; m_severities = std::move(value); }
-    inline FindingFilter& WithSeverities(const Aws::Vector<Severity>& value) { SetSeverities(value); return *this;}
-    inline FindingFilter& WithSeverities(Aws::Vector<Severity>&& value) { SetSeverities(std::move(value)); return *this;}
-    inline FindingFilter& AddSeverities(const Severity& value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
-    inline FindingFilter& AddSeverities(Severity&& value) { m_severitiesHasBeenSet = true; m_severities.push_back(std::move(value)); return *this; }
+    template<typename SeveritiesT = Aws::Vector<Severity>>
+    void SetSeverities(SeveritiesT&& value) { m_severitiesHasBeenSet = true; m_severities = std::forward<SeveritiesT>(value); }
+    template<typename SeveritiesT = Aws::Vector<Severity>>
+    FindingFilter& WithSeverities(SeveritiesT&& value) { SetSeverities(std::forward<SeveritiesT>(value)); return *this;}
+    inline FindingFilter& AddSeverities(Severity value) { m_severitiesHasBeenSet = true; m_severities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -115,15 +111,14 @@ namespace Model
      * data type property must be the exact match of the value of the
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const { return m_rulesPackageArns; }
     inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
-    inline void SetRulesPackageArns(const Aws::Vector<Aws::String>& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = value; }
-    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::move(value); }
-    inline FindingFilter& WithRulesPackageArns(const Aws::Vector<Aws::String>& value) { SetRulesPackageArns(value); return *this;}
-    inline FindingFilter& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
-    inline FindingFilter& AddRulesPackageArns(const Aws::String& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
-    inline FindingFilter& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(std::move(value)); return *this; }
-    inline FindingFilter& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    void SetRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::forward<RulesPackageArnsT>(value); }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    FindingFilter& WithRulesPackageArns(RulesPackageArnsT&& value) { SetRulesPackageArns(std::forward<RulesPackageArnsT>(value)); return *this;}
+    template<typename RulesPackageArnsT = Aws::String>
+    FindingFilter& AddRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.emplace_back(std::forward<RulesPackageArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -132,14 +127,14 @@ namespace Model
      * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline FindingFilter& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline FindingFilter& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline FindingFilter& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline FindingFilter& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    FindingFilter& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Attribute>
+    FindingFilter& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,26 +143,26 @@ namespace Model
      * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.</p>
      */
-    inline const Aws::Vector<Attribute>& GetUserAttributes() const{ return m_userAttributes; }
+    inline const Aws::Vector<Attribute>& GetUserAttributes() const { return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
-    inline void SetUserAttributes(const Aws::Vector<Attribute>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
-    inline void SetUserAttributes(Aws::Vector<Attribute>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
-    inline FindingFilter& WithUserAttributes(const Aws::Vector<Attribute>& value) { SetUserAttributes(value); return *this;}
-    inline FindingFilter& WithUserAttributes(Aws::Vector<Attribute>&& value) { SetUserAttributes(std::move(value)); return *this;}
-    inline FindingFilter& AddUserAttributes(const Attribute& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(value); return *this; }
-    inline FindingFilter& AddUserAttributes(Attribute&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
+    template<typename UserAttributesT = Aws::Vector<Attribute>>
+    void SetUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::forward<UserAttributesT>(value); }
+    template<typename UserAttributesT = Aws::Vector<Attribute>>
+    FindingFilter& WithUserAttributes(UserAttributesT&& value) { SetUserAttributes(std::forward<UserAttributesT>(value)); return *this;}
+    template<typename UserAttributesT = Attribute>
+    FindingFilter& AddUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace_back(std::forward<UserAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time range during which the finding is generated.</p>
      */
-    inline const TimestampRange& GetCreationTimeRange() const{ return m_creationTimeRange; }
+    inline const TimestampRange& GetCreationTimeRange() const { return m_creationTimeRange; }
     inline bool CreationTimeRangeHasBeenSet() const { return m_creationTimeRangeHasBeenSet; }
-    inline void SetCreationTimeRange(const TimestampRange& value) { m_creationTimeRangeHasBeenSet = true; m_creationTimeRange = value; }
-    inline void SetCreationTimeRange(TimestampRange&& value) { m_creationTimeRangeHasBeenSet = true; m_creationTimeRange = std::move(value); }
-    inline FindingFilter& WithCreationTimeRange(const TimestampRange& value) { SetCreationTimeRange(value); return *this;}
-    inline FindingFilter& WithCreationTimeRange(TimestampRange&& value) { SetCreationTimeRange(std::move(value)); return *this;}
+    template<typename CreationTimeRangeT = TimestampRange>
+    void SetCreationTimeRange(CreationTimeRangeT&& value) { m_creationTimeRangeHasBeenSet = true; m_creationTimeRange = std::forward<CreationTimeRangeT>(value); }
+    template<typename CreationTimeRangeT = TimestampRange>
+    FindingFilter& WithCreationTimeRange(CreationTimeRangeT&& value) { SetCreationTimeRange(std::forward<CreationTimeRangeT>(value)); return *this;}
     ///@}
   private:
 

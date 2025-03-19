@@ -10,17 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DecreaseNodeGroupsInGlobalReplicationGroupRequest::DecreaseNodeGroupsInGlobalReplicationGroupRequest() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_nodeGroupCount(0),
-    m_nodeGroupCountHasBeenSet(false),
-    m_globalNodeGroupsToRemoveHasBeenSet(false),
-    m_globalNodeGroupsToRetainHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String DecreaseNodeGroupsInGlobalReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

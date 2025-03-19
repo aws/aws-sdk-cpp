@@ -18,14 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-ExtensionsV4::ExtensionsV4() : 
-    m_applicationPoliciesHasBeenSet(false),
-    m_keyUsageHasBeenSet(false)
-{
-}
-
 ExtensionsV4::ExtensionsV4(JsonView jsonValue)
-  : ExtensionsV4()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExtensionsV4& ExtensionsV4::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationPolicies"))
   {
     m_applicationPolicies = jsonValue.GetObject("ApplicationPolicies");
-
     m_applicationPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyUsage"))
   {
     m_keyUsage = jsonValue.GetObject("KeyUsage");
-
     m_keyUsageHasBeenSet = true;
   }
-
   return *this;
 }
 

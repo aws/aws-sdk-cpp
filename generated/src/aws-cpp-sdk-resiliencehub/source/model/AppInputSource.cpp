@@ -18,20 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AppInputSource::AppInputSource() : 
-    m_eksSourceClusterNamespaceHasBeenSet(false),
-    m_importType(ResourceMappingType::NOT_SET),
-    m_importTypeHasBeenSet(false),
-    m_resourceCount(0),
-    m_resourceCountHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_terraformSourceHasBeenSet(false)
-{
-}
-
 AppInputSource::AppInputSource(JsonView jsonValue)
-  : AppInputSource()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ AppInputSource& AppInputSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eksSourceClusterNamespace"))
   {
     m_eksSourceClusterNamespace = jsonValue.GetObject("eksSourceClusterNamespace");
-
     m_eksSourceClusterNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importType"))
   {
     m_importType = ResourceMappingTypeMapper::GetResourceMappingTypeForName(jsonValue.GetString("importType"));
-
     m_importTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceCount"))
   {
     m_resourceCount = jsonValue.GetInteger("resourceCount");
-
     m_resourceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceArn"))
   {
     m_sourceArn = jsonValue.GetString("sourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = jsonValue.GetString("sourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terraformSource"))
   {
     m_terraformSource = jsonValue.GetObject("terraformSource");
-
     m_terraformSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

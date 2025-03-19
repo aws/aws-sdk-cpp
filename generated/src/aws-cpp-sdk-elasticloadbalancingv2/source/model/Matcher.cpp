@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Matcher::Matcher() : 
-    m_httpCodeHasBeenSet(false),
-    m_grpcCodeHasBeenSet(false)
-{
-}
-
 Matcher::Matcher(const XmlNode& xmlNode)
-  : Matcher()
 {
   *this = xmlNode;
 }

@@ -12,18 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplateSyncConfigRequest::UpdateTemplateSyncConfigRequest() : 
-    m_branchHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateSyncConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class FilterCircle
   {
   public:
-    AWS_GEOPLACES_API FilterCircle();
+    AWS_GEOPLACES_API FilterCircle() = default;
     AWS_GEOPLACES_API FilterCircle(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API FilterCircle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The center position, in longitude and latitude, of the
      * <code>FilterCircle</code>.</p>
      */
-    inline const Aws::Vector<double>& GetCenter() const{ return m_center; }
+    inline const Aws::Vector<double>& GetCenter() const { return m_center; }
     inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }
-    inline void SetCenter(const Aws::Vector<double>& value) { m_centerHasBeenSet = true; m_center = value; }
-    inline void SetCenter(Aws::Vector<double>&& value) { m_centerHasBeenSet = true; m_center = std::move(value); }
-    inline FilterCircle& WithCenter(const Aws::Vector<double>& value) { SetCenter(value); return *this;}
-    inline FilterCircle& WithCenter(Aws::Vector<double>&& value) { SetCenter(std::move(value)); return *this;}
+    template<typename CenterT = Aws::Vector<double>>
+    void SetCenter(CenterT&& value) { m_centerHasBeenSet = true; m_center = std::forward<CenterT>(value); }
+    template<typename CenterT = Aws::Vector<double>>
+    FilterCircle& WithCenter(CenterT&& value) { SetCenter(std::forward<CenterT>(value)); return *this;}
     inline FilterCircle& AddCenter(double value) { m_centerHasBeenSet = true; m_center.push_back(value); return *this; }
     ///@}
 
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
      */
-    inline long long GetRadius() const{ return m_radius; }
+    inline long long GetRadius() const { return m_radius; }
     inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
     inline void SetRadius(long long value) { m_radiusHasBeenSet = true; m_radius = value; }
     inline FilterCircle& WithRadius(long long value) { SetRadius(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
     Aws::Vector<double> m_center;
     bool m_centerHasBeenSet = false;
 
-    long long m_radius;
+    long long m_radius{0};
     bool m_radiusHasBeenSet = false;
   };
 

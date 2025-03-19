@@ -18,13 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-DatasetSource::DatasetSource() : 
-    m_groundTruthManifestHasBeenSet(false)
-{
-}
-
 DatasetSource::DatasetSource(JsonView jsonValue)
-  : DatasetSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatasetSource& DatasetSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroundTruthManifest"))
   {
     m_groundTruthManifest = jsonValue.GetObject("GroundTruthManifest");
-
     m_groundTruthManifestHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class GetByteMatchSetRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API GetByteMatchSetRequest();
+    AWS_WAF_API GetByteMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
      * <a>ListByteMatchSets</a>.</p>
      */
-    inline const Aws::String& GetByteMatchSetId() const{ return m_byteMatchSetId; }
+    inline const Aws::String& GetByteMatchSetId() const { return m_byteMatchSetId; }
     inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
-    inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
-    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
-    inline void SetByteMatchSetId(const char* value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId.assign(value); }
-    inline GetByteMatchSetRequest& WithByteMatchSetId(const Aws::String& value) { SetByteMatchSetId(value); return *this;}
-    inline GetByteMatchSetRequest& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
-    inline GetByteMatchSetRequest& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
+    template<typename ByteMatchSetIdT = Aws::String>
+    void SetByteMatchSetId(ByteMatchSetIdT&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::forward<ByteMatchSetIdT>(value); }
+    template<typename ByteMatchSetIdT = Aws::String>
+    GetByteMatchSetRequest& WithByteMatchSetId(ByteMatchSetIdT&& value) { SetByteMatchSetId(std::forward<ByteMatchSetIdT>(value)); return *this;}
     ///@}
   private:
 

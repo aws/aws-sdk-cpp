@@ -32,7 +32,7 @@ namespace Model
   class LogConfig
   {
   public:
-    AWS_APPSYNC_API LogConfig();
+    AWS_APPSYNC_API LogConfig() = default;
     AWS_APPSYNC_API LogConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API LogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * request/response functions that got resolved for each field.</p> </li> </ul>
      * </li> </ul>
      */
-    inline const FieldLogLevel& GetFieldLogLevel() const{ return m_fieldLogLevel; }
+    inline FieldLogLevel GetFieldLogLevel() const { return m_fieldLogLevel; }
     inline bool FieldLogLevelHasBeenSet() const { return m_fieldLogLevelHasBeenSet; }
-    inline void SetFieldLogLevel(const FieldLogLevel& value) { m_fieldLogLevelHasBeenSet = true; m_fieldLogLevel = value; }
-    inline void SetFieldLogLevel(FieldLogLevel&& value) { m_fieldLogLevelHasBeenSet = true; m_fieldLogLevel = std::move(value); }
-    inline LogConfig& WithFieldLogLevel(const FieldLogLevel& value) { SetFieldLogLevel(value); return *this;}
-    inline LogConfig& WithFieldLogLevel(FieldLogLevel&& value) { SetFieldLogLevel(std::move(value)); return *this;}
+    inline void SetFieldLogLevel(FieldLogLevel value) { m_fieldLogLevelHasBeenSet = true; m_fieldLogLevel = value; }
+    inline LogConfig& WithFieldLogLevel(FieldLogLevel value) { SetFieldLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The service role that AppSync assumes to publish to CloudWatch logs in your
      * account.</p>
      */
-    inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
+    inline const Aws::String& GetCloudWatchLogsRoleArn() const { return m_cloudWatchLogsRoleArn; }
     inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
-    inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
-    inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::move(value); }
-    inline void SetCloudWatchLogsRoleArn(const char* value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn.assign(value); }
-    inline LogConfig& WithCloudWatchLogsRoleArn(const Aws::String& value) { SetCloudWatchLogsRoleArn(value); return *this;}
-    inline LogConfig& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
-    inline LogConfig& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
+    template<typename CloudWatchLogsRoleArnT = Aws::String>
+    void SetCloudWatchLogsRoleArn(CloudWatchLogsRoleArnT&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::forward<CloudWatchLogsRoleArnT>(value); }
+    template<typename CloudWatchLogsRoleArnT = Aws::String>
+    LogConfig& WithCloudWatchLogsRoleArn(CloudWatchLogsRoleArnT&& value) { SetCloudWatchLogsRoleArn(std::forward<CloudWatchLogsRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,20 +75,20 @@ namespace Model
      * <p>Set to TRUE to exclude sections that contain information such as headers,
      * context, and evaluated mapping templates, regardless of logging level.</p>
      */
-    inline bool GetExcludeVerboseContent() const{ return m_excludeVerboseContent; }
+    inline bool GetExcludeVerboseContent() const { return m_excludeVerboseContent; }
     inline bool ExcludeVerboseContentHasBeenSet() const { return m_excludeVerboseContentHasBeenSet; }
     inline void SetExcludeVerboseContent(bool value) { m_excludeVerboseContentHasBeenSet = true; m_excludeVerboseContent = value; }
     inline LogConfig& WithExcludeVerboseContent(bool value) { SetExcludeVerboseContent(value); return *this;}
     ///@}
   private:
 
-    FieldLogLevel m_fieldLogLevel;
+    FieldLogLevel m_fieldLogLevel{FieldLogLevel::NOT_SET};
     bool m_fieldLogLevelHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
     bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
-    bool m_excludeVerboseContent;
+    bool m_excludeVerboseContent{false};
     bool m_excludeVerboseContentHasBeenSet = false;
   };
 

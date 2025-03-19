@@ -12,29 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_resourcesVpcConfigHasBeenSet(false),
-    m_kubernetesNetworkConfigHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false),
-    m_outpostConfigHasBeenSet(false),
-    m_accessConfigHasBeenSet(false),
-    m_bootstrapSelfManagedAddons(false),
-    m_bootstrapSelfManagedAddonsHasBeenSet(false),
-    m_upgradePolicyHasBeenSet(false),
-    m_zonalShiftConfigHasBeenSet(false),
-    m_remoteNetworkConfigHasBeenSet(false),
-    m_computeConfigHasBeenSet(false),
-    m_storageConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

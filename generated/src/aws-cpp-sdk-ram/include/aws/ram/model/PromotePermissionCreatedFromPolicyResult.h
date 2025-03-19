@@ -28,18 +28,18 @@ namespace Model
   class PromotePermissionCreatedFromPolicyResult
   {
   public:
-    AWS_RAM_API PromotePermissionCreatedFromPolicyResult();
+    AWS_RAM_API PromotePermissionCreatedFromPolicyResult() = default;
     AWS_RAM_API PromotePermissionCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RAM_API PromotePermissionCreatedFromPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ResourceSharePermissionSummary& GetPermission() const{ return m_permission; }
-    inline void SetPermission(const ResourceSharePermissionSummary& value) { m_permission = value; }
-    inline void SetPermission(ResourceSharePermissionSummary&& value) { m_permission = std::move(value); }
-    inline PromotePermissionCreatedFromPolicyResult& WithPermission(const ResourceSharePermissionSummary& value) { SetPermission(value); return *this;}
-    inline PromotePermissionCreatedFromPolicyResult& WithPermission(ResourceSharePermissionSummary&& value) { SetPermission(std::move(value)); return *this;}
+    inline const ResourceSharePermissionSummary& GetPermission() const { return m_permission; }
+    template<typename PermissionT = ResourceSharePermissionSummary>
+    void SetPermission(PermissionT&& value) { m_permissionHasBeenSet = true; m_permission = std::forward<PermissionT>(value); }
+    template<typename PermissionT = ResourceSharePermissionSummary>
+    PromotePermissionCreatedFromPolicyResult& WithPermission(PermissionT&& value) { SetPermission(std::forward<PermissionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +50,31 @@ namespace Model
      * other parameters must also have the same values that you used in the first
      * call.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline PromotePermissionCreatedFromPolicyResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline PromotePermissionCreatedFromPolicyResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline PromotePermissionCreatedFromPolicyResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    PromotePermissionCreatedFromPolicyResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PromotePermissionCreatedFromPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PromotePermissionCreatedFromPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PromotePermissionCreatedFromPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PromotePermissionCreatedFromPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceSharePermissionSummary m_permission;
+    bool m_permissionHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

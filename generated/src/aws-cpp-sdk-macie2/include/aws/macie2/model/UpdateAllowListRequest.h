@@ -22,7 +22,7 @@ namespace Model
   class UpdateAllowListRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateAllowListRequest();
+    AWS_MACIE2_API UpdateAllowListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * the S3 object or the regular expression to use. However, you can't change the
      * type from s3WordsList to regex or the other way around.</p>
      */
-    inline const AllowListCriteria& GetCriteria() const{ return m_criteria; }
+    inline const AllowListCriteria& GetCriteria() const { return m_criteria; }
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-    inline void SetCriteria(const AllowListCriteria& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-    inline void SetCriteria(AllowListCriteria&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-    inline UpdateAllowListRequest& WithCriteria(const AllowListCriteria& value) { SetCriteria(value); return *this;}
-    inline UpdateAllowListRequest& WithCriteria(AllowListCriteria&& value) { SetCriteria(std::move(value)); return *this;}
+    template<typename CriteriaT = AllowListCriteria>
+    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
+    template<typename CriteriaT = AllowListCriteria>
+    UpdateAllowListRequest& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,12 @@ namespace Model
      * <p>A custom description of the allow list. The description can contain as many
      * as 512 characters.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAllowListRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAllowListRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAllowListRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAllowListRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The unique identifier for the Amazon Macie resource that the request applies
      * to.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateAllowListRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateAllowListRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateAllowListRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateAllowListRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * <p>A custom name for the allow list. The name can contain as many as 128
      * characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAllowListRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAllowListRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAllowListRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAllowListRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

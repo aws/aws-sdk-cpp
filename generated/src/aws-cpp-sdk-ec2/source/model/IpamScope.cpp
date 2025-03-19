@@ -20,27 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamScope::IpamScope() : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_ipamScopeArnHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_ipamScopeType(IpamScopeType::NOT_SET),
-    m_ipamScopeTypeHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolCount(0),
-    m_poolCountHasBeenSet(false),
-    m_state(IpamScopeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IpamScope::IpamScope(const XmlNode& xmlNode)
-  : IpamScope()
 {
   *this = xmlNode;
 }
@@ -84,7 +64,7 @@ IpamScope& IpamScope::operator =(const XmlNode& xmlNode)
     XmlNode ipamScopeTypeNode = resultNode.FirstChild("ipamScopeType");
     if(!ipamScopeTypeNode.IsNull())
     {
-      m_ipamScopeType = IpamScopeTypeMapper::GetIpamScopeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipamScopeTypeNode.GetText()).c_str()).c_str());
+      m_ipamScopeType = IpamScopeTypeMapper::GetIpamScopeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipamScopeTypeNode.GetText()).c_str()));
       m_ipamScopeTypeHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("isDefault");
@@ -108,13 +88,14 @@ IpamScope& IpamScope::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamScopeStateMapper::GetIpamScopeStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamScopeStateMapper::GetIpamScopeStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -12,14 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLFTagExpressionsRequest::ListLFTagExpressionsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListLFTagExpressionsRequest::SerializePayload() const
 {
   JsonValue payload;

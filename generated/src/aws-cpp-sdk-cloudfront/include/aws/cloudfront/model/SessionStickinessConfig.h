@@ -32,7 +32,7 @@ namespace Model
   class SessionStickinessConfig
   {
   public:
-    AWS_CLOUDFRONT_API SessionStickinessConfig();
+    AWS_CLOUDFRONT_API SessionStickinessConfig() = default;
     AWS_CLOUDFRONT_API SessionStickinessConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API SessionStickinessConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
      * received. Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The value
      * must be less than or equal to <code>MaximumTTL</code>.</p>
      */
-    inline int GetIdleTTL() const{ return m_idleTTL; }
+    inline int GetIdleTTL() const { return m_idleTTL; }
     inline bool IdleTTLHasBeenSet() const { return m_idleTTLHasBeenSet; }
     inline void SetIdleTTL(int value) { m_idleTTLHasBeenSet = true; m_idleTTL = value; }
     inline SessionStickinessConfig& WithIdleTTL(int value) { SetIdleTTL(value); return *this;}
@@ -57,17 +57,17 @@ namespace Model
      * of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
      * <p>The value must be greater than or equal to <code>IdleTTL</code>.</p>
      */
-    inline int GetMaximumTTL() const{ return m_maximumTTL; }
+    inline int GetMaximumTTL() const { return m_maximumTTL; }
     inline bool MaximumTTLHasBeenSet() const { return m_maximumTTLHasBeenSet; }
     inline void SetMaximumTTL(int value) { m_maximumTTLHasBeenSet = true; m_maximumTTL = value; }
     inline SessionStickinessConfig& WithMaximumTTL(int value) { SetMaximumTTL(value); return *this;}
     ///@}
   private:
 
-    int m_idleTTL;
+    int m_idleTTL{0};
     bool m_idleTTLHasBeenSet = false;
 
-    int m_maximumTTL;
+    int m_maximumTTL{0};
     bool m_maximumTTLHasBeenSet = false;
   };
 

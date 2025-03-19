@@ -34,7 +34,7 @@ namespace Model
   class Step
   {
   public:
-    AWS_EMR_API Step();
+    AWS_EMR_API Step() = default;
     AWS_EMR_API Step(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The identifier of the cluster step.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Step& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Step& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Step& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Step& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the cluster step.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Step& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Step& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Step& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Step& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Hadoop job configuration of the cluster step.</p>
      */
-    inline const HadoopStepConfig& GetConfig() const{ return m_config; }
+    inline const HadoopStepConfig& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const HadoopStepConfig& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(HadoopStepConfig&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline Step& WithConfig(const HadoopStepConfig& value) { SetConfig(value); return *this;}
-    inline Step& WithConfig(HadoopStepConfig&& value) { SetConfig(std::move(value)); return *this;}
+    template<typename ConfigT = HadoopStepConfig>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = HadoopStepConfig>
+    Step& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,24 +94,22 @@ namespace Model
      * step are not canceled; for a step that fails with this parameter set to
      * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
-    inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
+    inline ActionOnFailure GetActionOnFailure() const { return m_actionOnFailure; }
     inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
-    inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
-    inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = std::move(value); }
-    inline Step& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
-    inline Step& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
+    inline void SetActionOnFailure(ActionOnFailure value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
+    inline Step& WithActionOnFailure(ActionOnFailure value) { SetActionOnFailure(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current execution status details of the cluster step.</p>
      */
-    inline const StepStatus& GetStatus() const{ return m_status; }
+    inline const StepStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Step& WithStatus(const StepStatus& value) { SetStatus(value); return *this;}
-    inline Step& WithStatus(StepStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = StepStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = StepStatus>
+    Step& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +121,12 @@ namespace Model
      * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline Step& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline Step& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline Step& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    Step& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,7 +139,7 @@ namespace Model
     HadoopStepConfig m_config;
     bool m_configHasBeenSet = false;
 
-    ActionOnFailure m_actionOnFailure;
+    ActionOnFailure m_actionOnFailure{ActionOnFailure::NOT_SET};
     bool m_actionOnFailureHasBeenSet = false;
 
     StepStatus m_status;

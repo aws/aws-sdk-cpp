@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFeedbackRequest::DescribeFeedbackRequest() : 
-    m_insightIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

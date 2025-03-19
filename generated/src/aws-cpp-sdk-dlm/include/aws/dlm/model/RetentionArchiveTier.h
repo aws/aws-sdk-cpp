@@ -40,7 +40,7 @@ namespace Model
   class RetentionArchiveTier
   {
   public:
-    AWS_DLM_API RetentionArchiveTier();
+    AWS_DLM_API RetentionArchiveTier() = default;
     AWS_DLM_API RetentionArchiveTier(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API RetentionArchiveTier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,7 +54,7 @@ namespace Model
      * 30 days, you must specify a count of 3 or more to ensure that each snapshot is
      * archived for at least 90 days.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline RetentionArchiveTier& WithCount(int value) { SetCount(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
      * <p>Specifies the period of time to retain snapshots in the archive tier. After
      * this period expires, the snapshot is permanently deleted.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline RetentionArchiveTier& WithInterval(int value) { SetInterval(value); return *this;}
@@ -77,22 +77,20 @@ namespace Model
      * retain a snapshots in the archive tier for 6 months, specify
      * <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.</p>
      */
-    inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
+    inline RetentionIntervalUnitValues GetIntervalUnit() const { return m_intervalUnit; }
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
-    inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
-    inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
-    inline RetentionArchiveTier& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
-    inline RetentionArchiveTier& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
+    inline void SetIntervalUnit(RetentionIntervalUnitValues value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
+    inline RetentionArchiveTier& WithIntervalUnit(RetentionIntervalUnitValues value) { SetIntervalUnit(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    RetentionIntervalUnitValues m_intervalUnit;
+    RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
     bool m_intervalUnitHasBeenSet = false;
   };
 

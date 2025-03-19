@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartFlowRequest::StartFlowRequest() : 
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String StartFlowRequest::SerializePayload() const
 {
   return {};

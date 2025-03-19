@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomActionRequest::DeleteCustomActionRequest() : 
-    m_customActionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomActionRequest::SerializePayload() const
 {
   JsonValue payload;

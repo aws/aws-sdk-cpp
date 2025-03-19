@@ -27,7 +27,7 @@ namespace Model
   class VpcEncryptionControlExclusion
   {
   public:
-    AWS_EC2_API VpcEncryptionControlExclusion();
+    AWS_EC2_API VpcEncryptionControlExclusion() = default;
     AWS_EC2_API VpcEncryptionControlExclusion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpcEncryptionControlExclusion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -37,28 +37,24 @@ namespace Model
 
     ///@{
     
-    inline const VpcEncryptionControlExclusionState& GetState() const{ return m_state; }
+    inline VpcEncryptionControlExclusionState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VpcEncryptionControlExclusionState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VpcEncryptionControlExclusionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpcEncryptionControlExclusion& WithState(const VpcEncryptionControlExclusionState& value) { SetState(value); return *this;}
-    inline VpcEncryptionControlExclusion& WithState(VpcEncryptionControlExclusionState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VpcEncryptionControlExclusionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VpcEncryptionControlExclusion& WithState(VpcEncryptionControlExclusionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
+    inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
     inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
-    inline void SetStateMessage(const Aws::String& value) { m_stateMessageHasBeenSet = true; m_stateMessage = value; }
-    inline void SetStateMessage(Aws::String&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::move(value); }
-    inline void SetStateMessage(const char* value) { m_stateMessageHasBeenSet = true; m_stateMessage.assign(value); }
-    inline VpcEncryptionControlExclusion& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
-    inline VpcEncryptionControlExclusion& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
-    inline VpcEncryptionControlExclusion& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
+    template<typename StateMessageT = Aws::String>
+    void SetStateMessage(StateMessageT&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::forward<StateMessageT>(value); }
+    template<typename StateMessageT = Aws::String>
+    VpcEncryptionControlExclusion& WithStateMessage(StateMessageT&& value) { SetStateMessage(std::forward<StateMessageT>(value)); return *this;}
     ///@}
   private:
 
-    VpcEncryptionControlExclusionState m_state;
+    VpcEncryptionControlExclusionState m_state{VpcEncryptionControlExclusionState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;

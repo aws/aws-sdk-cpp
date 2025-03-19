@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSecurityFindingIdentifier::AwsSecurityFindingIdentifier() : 
-    m_idHasBeenSet(false),
-    m_productArnHasBeenSet(false)
-{
-}
-
 AwsSecurityFindingIdentifier::AwsSecurityFindingIdentifier(JsonView jsonValue)
-  : AwsSecurityFindingIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsSecurityFindingIdentifier& AwsSecurityFindingIdentifier::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductArn"))
   {
     m_productArn = jsonValue.GetString("ProductArn");
-
     m_productArnHasBeenSet = true;
   }
-
   return *this;
 }
 

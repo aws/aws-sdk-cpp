@@ -34,7 +34,7 @@ namespace Model
   class CapacityBlockExtension
   {
   public:
-    AWS_EC2_API CapacityBlockExtension();
+    AWS_EC2_API CapacityBlockExtension() = default;
     AWS_EC2_API CapacityBlockExtension(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityBlockExtension& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,35 +46,31 @@ namespace Model
     /**
      * <p>The reservation ID of the Capacity Block extension.</p>
      */
-    inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
+    inline const Aws::String& GetCapacityReservationId() const { return m_capacityReservationId; }
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
-    inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
-    inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
-    inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
-    inline CapacityBlockExtension& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
-    inline CapacityBlockExtension& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
+    template<typename CapacityReservationIdT = Aws::String>
+    void SetCapacityReservationId(CapacityReservationIdT&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::forward<CapacityReservationIdT>(value); }
+    template<typename CapacityReservationIdT = Aws::String>
+    CapacityBlockExtension& WithCapacityReservationId(CapacityReservationIdT&& value) { SetCapacityReservationId(std::forward<CapacityReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type of the Capacity Block extension.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline CapacityBlockExtension& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline CapacityBlockExtension& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    CapacityBlockExtension& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances in the Capacity Block extension.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline CapacityBlockExtension& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -84,49 +80,43 @@ namespace Model
     /**
      * <p>The Availability Zone of the Capacity Block extension.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline CapacityBlockExtension& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CapacityBlockExtension& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CapacityBlockExtension& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone ID of the Capacity Block extension.</p>
      */
-    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-    inline CapacityBlockExtension& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-    inline CapacityBlockExtension& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    CapacityBlockExtension& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Capacity Block extension offering.</p>
      */
-    inline const Aws::String& GetCapacityBlockExtensionOfferingId() const{ return m_capacityBlockExtensionOfferingId; }
+    inline const Aws::String& GetCapacityBlockExtensionOfferingId() const { return m_capacityBlockExtensionOfferingId; }
     inline bool CapacityBlockExtensionOfferingIdHasBeenSet() const { return m_capacityBlockExtensionOfferingIdHasBeenSet; }
-    inline void SetCapacityBlockExtensionOfferingId(const Aws::String& value) { m_capacityBlockExtensionOfferingIdHasBeenSet = true; m_capacityBlockExtensionOfferingId = value; }
-    inline void SetCapacityBlockExtensionOfferingId(Aws::String&& value) { m_capacityBlockExtensionOfferingIdHasBeenSet = true; m_capacityBlockExtensionOfferingId = std::move(value); }
-    inline void SetCapacityBlockExtensionOfferingId(const char* value) { m_capacityBlockExtensionOfferingIdHasBeenSet = true; m_capacityBlockExtensionOfferingId.assign(value); }
-    inline CapacityBlockExtension& WithCapacityBlockExtensionOfferingId(const Aws::String& value) { SetCapacityBlockExtensionOfferingId(value); return *this;}
-    inline CapacityBlockExtension& WithCapacityBlockExtensionOfferingId(Aws::String&& value) { SetCapacityBlockExtensionOfferingId(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithCapacityBlockExtensionOfferingId(const char* value) { SetCapacityBlockExtensionOfferingId(value); return *this;}
+    template<typename CapacityBlockExtensionOfferingIdT = Aws::String>
+    void SetCapacityBlockExtensionOfferingId(CapacityBlockExtensionOfferingIdT&& value) { m_capacityBlockExtensionOfferingIdHasBeenSet = true; m_capacityBlockExtensionOfferingId = std::forward<CapacityBlockExtensionOfferingIdT>(value); }
+    template<typename CapacityBlockExtensionOfferingIdT = Aws::String>
+    CapacityBlockExtension& WithCapacityBlockExtensionOfferingId(CapacityBlockExtensionOfferingIdT&& value) { SetCapacityBlockExtensionOfferingId(std::forward<CapacityBlockExtensionOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the Capacity Block extension in hours.</p>
      */
-    inline int GetCapacityBlockExtensionDurationHours() const{ return m_capacityBlockExtensionDurationHours; }
+    inline int GetCapacityBlockExtensionDurationHours() const { return m_capacityBlockExtensionDurationHours; }
     inline bool CapacityBlockExtensionDurationHoursHasBeenSet() const { return m_capacityBlockExtensionDurationHoursHasBeenSet; }
     inline void SetCapacityBlockExtensionDurationHours(int value) { m_capacityBlockExtensionDurationHoursHasBeenSet = true; m_capacityBlockExtensionDurationHours = value; }
     inline CapacityBlockExtension& WithCapacityBlockExtensionDurationHours(int value) { SetCapacityBlockExtensionDurationHours(value); return *this;}
@@ -145,76 +135,70 @@ namespace Model
      * one-time upfront payment. In the invoice, you can associate the paid amount with
      * the Capacity Block reservation ID.</p> </li> </ul>
      */
-    inline const CapacityBlockExtensionStatus& GetCapacityBlockExtensionStatus() const{ return m_capacityBlockExtensionStatus; }
+    inline CapacityBlockExtensionStatus GetCapacityBlockExtensionStatus() const { return m_capacityBlockExtensionStatus; }
     inline bool CapacityBlockExtensionStatusHasBeenSet() const { return m_capacityBlockExtensionStatusHasBeenSet; }
-    inline void SetCapacityBlockExtensionStatus(const CapacityBlockExtensionStatus& value) { m_capacityBlockExtensionStatusHasBeenSet = true; m_capacityBlockExtensionStatus = value; }
-    inline void SetCapacityBlockExtensionStatus(CapacityBlockExtensionStatus&& value) { m_capacityBlockExtensionStatusHasBeenSet = true; m_capacityBlockExtensionStatus = std::move(value); }
-    inline CapacityBlockExtension& WithCapacityBlockExtensionStatus(const CapacityBlockExtensionStatus& value) { SetCapacityBlockExtensionStatus(value); return *this;}
-    inline CapacityBlockExtension& WithCapacityBlockExtensionStatus(CapacityBlockExtensionStatus&& value) { SetCapacityBlockExtensionStatus(std::move(value)); return *this;}
+    inline void SetCapacityBlockExtensionStatus(CapacityBlockExtensionStatus value) { m_capacityBlockExtensionStatusHasBeenSet = true; m_capacityBlockExtensionStatus = value; }
+    inline CapacityBlockExtension& WithCapacityBlockExtensionStatus(CapacityBlockExtensionStatus value) { SetCapacityBlockExtensionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the Capacity Block extension was purchased.</p>
      */
-    inline const Aws::Utils::DateTime& GetCapacityBlockExtensionPurchaseDate() const{ return m_capacityBlockExtensionPurchaseDate; }
+    inline const Aws::Utils::DateTime& GetCapacityBlockExtensionPurchaseDate() const { return m_capacityBlockExtensionPurchaseDate; }
     inline bool CapacityBlockExtensionPurchaseDateHasBeenSet() const { return m_capacityBlockExtensionPurchaseDateHasBeenSet; }
-    inline void SetCapacityBlockExtensionPurchaseDate(const Aws::Utils::DateTime& value) { m_capacityBlockExtensionPurchaseDateHasBeenSet = true; m_capacityBlockExtensionPurchaseDate = value; }
-    inline void SetCapacityBlockExtensionPurchaseDate(Aws::Utils::DateTime&& value) { m_capacityBlockExtensionPurchaseDateHasBeenSet = true; m_capacityBlockExtensionPurchaseDate = std::move(value); }
-    inline CapacityBlockExtension& WithCapacityBlockExtensionPurchaseDate(const Aws::Utils::DateTime& value) { SetCapacityBlockExtensionPurchaseDate(value); return *this;}
-    inline CapacityBlockExtension& WithCapacityBlockExtensionPurchaseDate(Aws::Utils::DateTime&& value) { SetCapacityBlockExtensionPurchaseDate(std::move(value)); return *this;}
+    template<typename CapacityBlockExtensionPurchaseDateT = Aws::Utils::DateTime>
+    void SetCapacityBlockExtensionPurchaseDate(CapacityBlockExtensionPurchaseDateT&& value) { m_capacityBlockExtensionPurchaseDateHasBeenSet = true; m_capacityBlockExtensionPurchaseDate = std::forward<CapacityBlockExtensionPurchaseDateT>(value); }
+    template<typename CapacityBlockExtensionPurchaseDateT = Aws::Utils::DateTime>
+    CapacityBlockExtension& WithCapacityBlockExtensionPurchaseDate(CapacityBlockExtensionPurchaseDateT&& value) { SetCapacityBlockExtensionPurchaseDate(std::forward<CapacityBlockExtensionPurchaseDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start date of the Capacity Block extension.</p>
      */
-    inline const Aws::Utils::DateTime& GetCapacityBlockExtensionStartDate() const{ return m_capacityBlockExtensionStartDate; }
+    inline const Aws::Utils::DateTime& GetCapacityBlockExtensionStartDate() const { return m_capacityBlockExtensionStartDate; }
     inline bool CapacityBlockExtensionStartDateHasBeenSet() const { return m_capacityBlockExtensionStartDateHasBeenSet; }
-    inline void SetCapacityBlockExtensionStartDate(const Aws::Utils::DateTime& value) { m_capacityBlockExtensionStartDateHasBeenSet = true; m_capacityBlockExtensionStartDate = value; }
-    inline void SetCapacityBlockExtensionStartDate(Aws::Utils::DateTime&& value) { m_capacityBlockExtensionStartDateHasBeenSet = true; m_capacityBlockExtensionStartDate = std::move(value); }
-    inline CapacityBlockExtension& WithCapacityBlockExtensionStartDate(const Aws::Utils::DateTime& value) { SetCapacityBlockExtensionStartDate(value); return *this;}
-    inline CapacityBlockExtension& WithCapacityBlockExtensionStartDate(Aws::Utils::DateTime&& value) { SetCapacityBlockExtensionStartDate(std::move(value)); return *this;}
+    template<typename CapacityBlockExtensionStartDateT = Aws::Utils::DateTime>
+    void SetCapacityBlockExtensionStartDate(CapacityBlockExtensionStartDateT&& value) { m_capacityBlockExtensionStartDateHasBeenSet = true; m_capacityBlockExtensionStartDate = std::forward<CapacityBlockExtensionStartDateT>(value); }
+    template<typename CapacityBlockExtensionStartDateT = Aws::Utils::DateTime>
+    CapacityBlockExtension& WithCapacityBlockExtensionStartDate(CapacityBlockExtensionStartDateT&& value) { SetCapacityBlockExtensionStartDate(std::forward<CapacityBlockExtensionStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end date of the Capacity Block extension.</p>
      */
-    inline const Aws::Utils::DateTime& GetCapacityBlockExtensionEndDate() const{ return m_capacityBlockExtensionEndDate; }
+    inline const Aws::Utils::DateTime& GetCapacityBlockExtensionEndDate() const { return m_capacityBlockExtensionEndDate; }
     inline bool CapacityBlockExtensionEndDateHasBeenSet() const { return m_capacityBlockExtensionEndDateHasBeenSet; }
-    inline void SetCapacityBlockExtensionEndDate(const Aws::Utils::DateTime& value) { m_capacityBlockExtensionEndDateHasBeenSet = true; m_capacityBlockExtensionEndDate = value; }
-    inline void SetCapacityBlockExtensionEndDate(Aws::Utils::DateTime&& value) { m_capacityBlockExtensionEndDateHasBeenSet = true; m_capacityBlockExtensionEndDate = std::move(value); }
-    inline CapacityBlockExtension& WithCapacityBlockExtensionEndDate(const Aws::Utils::DateTime& value) { SetCapacityBlockExtensionEndDate(value); return *this;}
-    inline CapacityBlockExtension& WithCapacityBlockExtensionEndDate(Aws::Utils::DateTime&& value) { SetCapacityBlockExtensionEndDate(std::move(value)); return *this;}
+    template<typename CapacityBlockExtensionEndDateT = Aws::Utils::DateTime>
+    void SetCapacityBlockExtensionEndDate(CapacityBlockExtensionEndDateT&& value) { m_capacityBlockExtensionEndDateHasBeenSet = true; m_capacityBlockExtensionEndDate = std::forward<CapacityBlockExtensionEndDateT>(value); }
+    template<typename CapacityBlockExtensionEndDateT = Aws::Utils::DateTime>
+    CapacityBlockExtension& WithCapacityBlockExtensionEndDate(CapacityBlockExtensionEndDateT&& value) { SetCapacityBlockExtensionEndDate(std::forward<CapacityBlockExtensionEndDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total price to be paid up front.</p>
      */
-    inline const Aws::String& GetUpfrontFee() const{ return m_upfrontFee; }
+    inline const Aws::String& GetUpfrontFee() const { return m_upfrontFee; }
     inline bool UpfrontFeeHasBeenSet() const { return m_upfrontFeeHasBeenSet; }
-    inline void SetUpfrontFee(const Aws::String& value) { m_upfrontFeeHasBeenSet = true; m_upfrontFee = value; }
-    inline void SetUpfrontFee(Aws::String&& value) { m_upfrontFeeHasBeenSet = true; m_upfrontFee = std::move(value); }
-    inline void SetUpfrontFee(const char* value) { m_upfrontFeeHasBeenSet = true; m_upfrontFee.assign(value); }
-    inline CapacityBlockExtension& WithUpfrontFee(const Aws::String& value) { SetUpfrontFee(value); return *this;}
-    inline CapacityBlockExtension& WithUpfrontFee(Aws::String&& value) { SetUpfrontFee(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithUpfrontFee(const char* value) { SetUpfrontFee(value); return *this;}
+    template<typename UpfrontFeeT = Aws::String>
+    void SetUpfrontFee(UpfrontFeeT&& value) { m_upfrontFeeHasBeenSet = true; m_upfrontFee = std::forward<UpfrontFeeT>(value); }
+    template<typename UpfrontFeeT = Aws::String>
+    CapacityBlockExtension& WithUpfrontFee(UpfrontFeeT&& value) { SetUpfrontFee(std::forward<UpfrontFeeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The currency of the payment for the Capacity Block extension.</p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline CapacityBlockExtension& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline CapacityBlockExtension& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline CapacityBlockExtension& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    CapacityBlockExtension& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
   private:
 
@@ -224,7 +208,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_availabilityZone;
@@ -236,19 +220,19 @@ namespace Model
     Aws::String m_capacityBlockExtensionOfferingId;
     bool m_capacityBlockExtensionOfferingIdHasBeenSet = false;
 
-    int m_capacityBlockExtensionDurationHours;
+    int m_capacityBlockExtensionDurationHours{0};
     bool m_capacityBlockExtensionDurationHoursHasBeenSet = false;
 
-    CapacityBlockExtensionStatus m_capacityBlockExtensionStatus;
+    CapacityBlockExtensionStatus m_capacityBlockExtensionStatus{CapacityBlockExtensionStatus::NOT_SET};
     bool m_capacityBlockExtensionStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_capacityBlockExtensionPurchaseDate;
+    Aws::Utils::DateTime m_capacityBlockExtensionPurchaseDate{};
     bool m_capacityBlockExtensionPurchaseDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_capacityBlockExtensionStartDate;
+    Aws::Utils::DateTime m_capacityBlockExtensionStartDate{};
     bool m_capacityBlockExtensionStartDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_capacityBlockExtensionEndDate;
+    Aws::Utils::DateTime m_capacityBlockExtensionEndDate{};
     bool m_capacityBlockExtensionEndDateHasBeenSet = false;
 
     Aws::String m_upfrontFee;

@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableVgwRoutePropagationRequest::DisableVgwRoutePropagationRequest() : 
-    m_gatewayIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisableVgwRoutePropagationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

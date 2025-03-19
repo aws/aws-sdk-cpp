@@ -34,7 +34,7 @@ namespace Model
   class ExportDataSource
   {
   public:
-    AWS_SESV2_API ExportDataSource();
+    AWS_SESV2_API ExportDataSource() = default;
     AWS_SESV2_API ExportDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ExportDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,22 +42,22 @@ namespace Model
 
     ///@{
     
-    inline const MetricsDataSource& GetMetricsDataSource() const{ return m_metricsDataSource; }
+    inline const MetricsDataSource& GetMetricsDataSource() const { return m_metricsDataSource; }
     inline bool MetricsDataSourceHasBeenSet() const { return m_metricsDataSourceHasBeenSet; }
-    inline void SetMetricsDataSource(const MetricsDataSource& value) { m_metricsDataSourceHasBeenSet = true; m_metricsDataSource = value; }
-    inline void SetMetricsDataSource(MetricsDataSource&& value) { m_metricsDataSourceHasBeenSet = true; m_metricsDataSource = std::move(value); }
-    inline ExportDataSource& WithMetricsDataSource(const MetricsDataSource& value) { SetMetricsDataSource(value); return *this;}
-    inline ExportDataSource& WithMetricsDataSource(MetricsDataSource&& value) { SetMetricsDataSource(std::move(value)); return *this;}
+    template<typename MetricsDataSourceT = MetricsDataSource>
+    void SetMetricsDataSource(MetricsDataSourceT&& value) { m_metricsDataSourceHasBeenSet = true; m_metricsDataSource = std::forward<MetricsDataSourceT>(value); }
+    template<typename MetricsDataSourceT = MetricsDataSource>
+    ExportDataSource& WithMetricsDataSource(MetricsDataSourceT&& value) { SetMetricsDataSource(std::forward<MetricsDataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MessageInsightsDataSource& GetMessageInsightsDataSource() const{ return m_messageInsightsDataSource; }
+    inline const MessageInsightsDataSource& GetMessageInsightsDataSource() const { return m_messageInsightsDataSource; }
     inline bool MessageInsightsDataSourceHasBeenSet() const { return m_messageInsightsDataSourceHasBeenSet; }
-    inline void SetMessageInsightsDataSource(const MessageInsightsDataSource& value) { m_messageInsightsDataSourceHasBeenSet = true; m_messageInsightsDataSource = value; }
-    inline void SetMessageInsightsDataSource(MessageInsightsDataSource&& value) { m_messageInsightsDataSourceHasBeenSet = true; m_messageInsightsDataSource = std::move(value); }
-    inline ExportDataSource& WithMessageInsightsDataSource(const MessageInsightsDataSource& value) { SetMessageInsightsDataSource(value); return *this;}
-    inline ExportDataSource& WithMessageInsightsDataSource(MessageInsightsDataSource&& value) { SetMessageInsightsDataSource(std::move(value)); return *this;}
+    template<typename MessageInsightsDataSourceT = MessageInsightsDataSource>
+    void SetMessageInsightsDataSource(MessageInsightsDataSourceT&& value) { m_messageInsightsDataSourceHasBeenSet = true; m_messageInsightsDataSource = std::forward<MessageInsightsDataSourceT>(value); }
+    template<typename MessageInsightsDataSourceT = MessageInsightsDataSource>
+    ExportDataSource& WithMessageInsightsDataSource(MessageInsightsDataSourceT&& value) { SetMessageInsightsDataSource(std::forward<MessageInsightsDataSourceT>(value)); return *this;}
     ///@}
   private:
 

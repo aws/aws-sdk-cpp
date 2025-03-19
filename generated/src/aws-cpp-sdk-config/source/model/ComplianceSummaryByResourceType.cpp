@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ComplianceSummaryByResourceType::ComplianceSummaryByResourceType() : 
-    m_resourceTypeHasBeenSet(false),
-    m_complianceSummaryHasBeenSet(false)
-{
-}
-
 ComplianceSummaryByResourceType::ComplianceSummaryByResourceType(JsonView jsonValue)
-  : ComplianceSummaryByResourceType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ComplianceSummaryByResourceType& ComplianceSummaryByResourceType::operator =(Jso
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceSummary"))
   {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");
-
     m_complianceSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

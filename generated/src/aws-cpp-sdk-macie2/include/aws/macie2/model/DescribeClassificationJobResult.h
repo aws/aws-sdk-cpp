@@ -39,7 +39,7 @@ namespace Model
   class DescribeClassificationJobResult
   {
   public:
-    AWS_MACIE2_API DescribeClassificationJobResult();
+    AWS_MACIE2_API DescribeClassificationJobResult() = default;
     AWS_MACIE2_API DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API DescribeClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,14 +49,13 @@ namespace Model
      * <p>An array of unique identifiers, one for each allow list that the job is
      * configured to use when it analyzes data.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowListIds() const{ return m_allowListIds; }
-    inline void SetAllowListIds(const Aws::Vector<Aws::String>& value) { m_allowListIds = value; }
-    inline void SetAllowListIds(Aws::Vector<Aws::String>&& value) { m_allowListIds = std::move(value); }
-    inline DescribeClassificationJobResult& WithAllowListIds(const Aws::Vector<Aws::String>& value) { SetAllowListIds(value); return *this;}
-    inline DescribeClassificationJobResult& WithAllowListIds(Aws::Vector<Aws::String>&& value) { SetAllowListIds(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& AddAllowListIds(const Aws::String& value) { m_allowListIds.push_back(value); return *this; }
-    inline DescribeClassificationJobResult& AddAllowListIds(Aws::String&& value) { m_allowListIds.push_back(std::move(value)); return *this; }
-    inline DescribeClassificationJobResult& AddAllowListIds(const char* value) { m_allowListIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAllowListIds() const { return m_allowListIds; }
+    template<typename AllowListIdsT = Aws::Vector<Aws::String>>
+    void SetAllowListIds(AllowListIdsT&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds = std::forward<AllowListIdsT>(value); }
+    template<typename AllowListIdsT = Aws::Vector<Aws::String>>
+    DescribeClassificationJobResult& WithAllowListIds(AllowListIdsT&& value) { SetAllowListIds(std::forward<AllowListIdsT>(value)); return *this;}
+    template<typename AllowListIdsT = Aws::String>
+    DescribeClassificationJobResult& AddAllowListIds(AllowListIdsT&& value) { m_allowListIdsHasBeenSet = true; m_allowListIds.emplace_back(std::forward<AllowListIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,13 +63,11 @@ namespace Model
      * <p>The token that was provided to ensure the idempotency of the request to
      * create the job.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline DescribeClassificationJobResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DescribeClassificationJobResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DescribeClassificationJobResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +75,11 @@ namespace Model
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeClassificationJobResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeClassificationJobResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeClassificationJobResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,27 +88,24 @@ namespace Model
      * job is configured to use when it analyzes data. This value is null if the job is
      * configured to use only managed data identifiers to analyze data.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const{ return m_customDataIdentifierIds; }
-    inline void SetCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_customDataIdentifierIds = value; }
-    inline void SetCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_customDataIdentifierIds = std::move(value); }
-    inline DescribeClassificationJobResult& WithCustomDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetCustomDataIdentifierIds(value); return *this;}
-    inline DescribeClassificationJobResult& WithCustomDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetCustomDataIdentifierIds(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(const Aws::String& value) { m_customDataIdentifierIds.push_back(value); return *this; }
-    inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(Aws::String&& value) { m_customDataIdentifierIds.push_back(std::move(value)); return *this; }
-    inline DescribeClassificationJobResult& AddCustomDataIdentifierIds(const char* value) { m_customDataIdentifierIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCustomDataIdentifierIds() const { return m_customDataIdentifierIds; }
+    template<typename CustomDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    void SetCustomDataIdentifierIds(CustomDataIdentifierIdsT&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds = std::forward<CustomDataIdentifierIdsT>(value); }
+    template<typename CustomDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    DescribeClassificationJobResult& WithCustomDataIdentifierIds(CustomDataIdentifierIdsT&& value) { SetCustomDataIdentifierIds(std::forward<CustomDataIdentifierIdsT>(value)); return *this;}
+    template<typename CustomDataIdentifierIdsT = Aws::String>
+    DescribeClassificationJobResult& AddCustomDataIdentifierIds(CustomDataIdentifierIdsT&& value) { m_customDataIdentifierIdsHasBeenSet = true; m_customDataIdentifierIds.emplace_back(std::forward<CustomDataIdentifierIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The custom description of the job.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeClassificationJobResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeClassificationJobResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeClassificationJobResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,8 +116,8 @@ namespace Model
      * after the job was created and before the job's first scheduled run, this value
      * is false. This value is also false for a one-time job.</p>
      */
-    inline bool GetInitialRun() const{ return m_initialRun; }
-    inline void SetInitialRun(bool value) { m_initialRun = value; }
+    inline bool GetInitialRun() const { return m_initialRun; }
+    inline void SetInitialRun(bool value) { m_initialRunHasBeenSet = true; m_initialRun = value; }
     inline DescribeClassificationJobResult& WithInitialRun(bool value) { SetInitialRun(value); return *this;}
     ///@}
 
@@ -131,26 +125,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the job.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-    inline DescribeClassificationJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline DescribeClassificationJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    DescribeClassificationJobResult& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline DescribeClassificationJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DescribeClassificationJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DescribeClassificationJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,11 +162,9 @@ namespace Model
      * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
-    inline DescribeClassificationJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline DescribeClassificationJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline DescribeClassificationJobResult& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -186,11 +174,9 @@ namespace Model
      * job runs on a daily, weekly, or monthly basis. The scheduleFrequency property
      * indicates the recurrence pattern for the job.</p></li></ul>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
-    inline void SetJobType(const JobType& value) { m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobType = std::move(value); }
-    inline DescribeClassificationJobResult& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline DescribeClassificationJobResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline JobType GetJobType() const { return m_jobType; }
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline DescribeClassificationJobResult& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
@@ -199,11 +185,11 @@ namespace Model
      * the job ran. For a recurring job, this value indicates the error status of the
      * job's most recent run.</p>
      */
-    inline const LastRunErrorStatus& GetLastRunErrorStatus() const{ return m_lastRunErrorStatus; }
-    inline void SetLastRunErrorStatus(const LastRunErrorStatus& value) { m_lastRunErrorStatus = value; }
-    inline void SetLastRunErrorStatus(LastRunErrorStatus&& value) { m_lastRunErrorStatus = std::move(value); }
-    inline DescribeClassificationJobResult& WithLastRunErrorStatus(const LastRunErrorStatus& value) { SetLastRunErrorStatus(value); return *this;}
-    inline DescribeClassificationJobResult& WithLastRunErrorStatus(LastRunErrorStatus&& value) { SetLastRunErrorStatus(std::move(value)); return *this;}
+    inline const LastRunErrorStatus& GetLastRunErrorStatus() const { return m_lastRunErrorStatus; }
+    template<typename LastRunErrorStatusT = LastRunErrorStatus>
+    void SetLastRunErrorStatus(LastRunErrorStatusT&& value) { m_lastRunErrorStatusHasBeenSet = true; m_lastRunErrorStatus = std::forward<LastRunErrorStatusT>(value); }
+    template<typename LastRunErrorStatusT = LastRunErrorStatus>
+    DescribeClassificationJobResult& WithLastRunErrorStatus(LastRunErrorStatusT&& value) { SetLastRunErrorStatus(std::forward<LastRunErrorStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,11 +198,11 @@ namespace Model
      * If the job is a recurring job, this value indicates when the most recent run
      * started or, if the job hasn't run yet, when the job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRunTime() const{ return m_lastRunTime; }
-    inline void SetLastRunTime(const Aws::Utils::DateTime& value) { m_lastRunTime = value; }
-    inline void SetLastRunTime(Aws::Utils::DateTime&& value) { m_lastRunTime = std::move(value); }
-    inline DescribeClassificationJobResult& WithLastRunTime(const Aws::Utils::DateTime& value) { SetLastRunTime(value); return *this;}
-    inline DescribeClassificationJobResult& WithLastRunTime(Aws::Utils::DateTime&& value) { SetLastRunTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastRunTime() const { return m_lastRunTime; }
+    template<typename LastRunTimeT = Aws::Utils::DateTime>
+    void SetLastRunTime(LastRunTimeT&& value) { m_lastRunTimeHasBeenSet = true; m_lastRunTime = std::forward<LastRunTimeT>(value); }
+    template<typename LastRunTimeT = Aws::Utils::DateTime>
+    DescribeClassificationJobResult& WithLastRunTime(LastRunTimeT&& value) { SetLastRunTime(std::forward<LastRunTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,14 +214,13 @@ namespace Model
      * value is null if the job's managed data identifier selection type is ALL, NONE,
      * or RECOMMENDED.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
-    inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIds = value; }
-    inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIds = std::move(value); }
-    inline DescribeClassificationJobResult& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
-    inline DescribeClassificationJobResult& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIds.push_back(value); return *this; }
-    inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
-    inline DescribeClassificationJobResult& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const { return m_managedDataIdentifierIds; }
+    template<typename ManagedDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    void SetManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::forward<ManagedDataIdentifierIdsT>(value); }
+    template<typename ManagedDataIdentifierIdsT = Aws::Vector<Aws::String>>
+    DescribeClassificationJobResult& WithManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { SetManagedDataIdentifierIds(std::forward<ManagedDataIdentifierIdsT>(value)); return *this;}
+    template<typename ManagedDataIdentifierIdsT = Aws::String>
+    DescribeClassificationJobResult& AddManagedDataIdentifierIds(ManagedDataIdentifierIdsT&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.emplace_back(std::forward<ManagedDataIdentifierIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -261,24 +246,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
      * managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
-    inline const ManagedDataIdentifierSelector& GetManagedDataIdentifierSelector() const{ return m_managedDataIdentifierSelector; }
-    inline void SetManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { m_managedDataIdentifierSelector = value; }
-    inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { m_managedDataIdentifierSelector = std::move(value); }
-    inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(const ManagedDataIdentifierSelector& value) { SetManagedDataIdentifierSelector(value); return *this;}
-    inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector&& value) { SetManagedDataIdentifierSelector(std::move(value)); return *this;}
+    inline ManagedDataIdentifierSelector GetManagedDataIdentifierSelector() const { return m_managedDataIdentifierSelector; }
+    inline void SetManagedDataIdentifierSelector(ManagedDataIdentifierSelector value) { m_managedDataIdentifierSelectorHasBeenSet = true; m_managedDataIdentifierSelector = value; }
+    inline DescribeClassificationJobResult& WithManagedDataIdentifierSelector(ManagedDataIdentifierSelector value) { SetManagedDataIdentifierSelector(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom name of the job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeClassificationJobResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeClassificationJobResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeClassificationJobResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -286,11 +267,11 @@ namespace Model
      * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
-    inline const S3JobDefinition& GetS3JobDefinition() const{ return m_s3JobDefinition; }
-    inline void SetS3JobDefinition(const S3JobDefinition& value) { m_s3JobDefinition = value; }
-    inline void SetS3JobDefinition(S3JobDefinition&& value) { m_s3JobDefinition = std::move(value); }
-    inline DescribeClassificationJobResult& WithS3JobDefinition(const S3JobDefinition& value) { SetS3JobDefinition(value); return *this;}
-    inline DescribeClassificationJobResult& WithS3JobDefinition(S3JobDefinition&& value) { SetS3JobDefinition(std::move(value)); return *this;}
+    inline const S3JobDefinition& GetS3JobDefinition() const { return m_s3JobDefinition; }
+    template<typename S3JobDefinitionT = S3JobDefinition>
+    void SetS3JobDefinition(S3JobDefinitionT&& value) { m_s3JobDefinitionHasBeenSet = true; m_s3JobDefinition = std::forward<S3JobDefinitionT>(value); }
+    template<typename S3JobDefinitionT = S3JobDefinition>
+    DescribeClassificationJobResult& WithS3JobDefinition(S3JobDefinitionT&& value) { SetS3JobDefinition(std::forward<S3JobDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -298,8 +279,8 @@ namespace Model
      * <p>The sampling depth, as a percentage, that determines the percentage of
      * eligible objects that the job analyzes.</p>
      */
-    inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
-    inline void SetSamplingPercentage(int value) { m_samplingPercentage = value; }
+    inline int GetSamplingPercentage() const { return m_samplingPercentage; }
+    inline void SetSamplingPercentage(int value) { m_samplingPercentageHasBeenSet = true; m_samplingPercentage = value; }
     inline DescribeClassificationJobResult& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
     ///@}
 
@@ -308,11 +289,11 @@ namespace Model
      * <p>The recurrence pattern for running the job. This value is null if the job is
      * configured to run only once.</p>
      */
-    inline const JobScheduleFrequency& GetScheduleFrequency() const{ return m_scheduleFrequency; }
-    inline void SetScheduleFrequency(const JobScheduleFrequency& value) { m_scheduleFrequency = value; }
-    inline void SetScheduleFrequency(JobScheduleFrequency&& value) { m_scheduleFrequency = std::move(value); }
-    inline DescribeClassificationJobResult& WithScheduleFrequency(const JobScheduleFrequency& value) { SetScheduleFrequency(value); return *this;}
-    inline DescribeClassificationJobResult& WithScheduleFrequency(JobScheduleFrequency&& value) { SetScheduleFrequency(std::move(value)); return *this;}
+    inline const JobScheduleFrequency& GetScheduleFrequency() const { return m_scheduleFrequency; }
+    template<typename ScheduleFrequencyT = JobScheduleFrequency>
+    void SetScheduleFrequency(ScheduleFrequencyT&& value) { m_scheduleFrequencyHasBeenSet = true; m_scheduleFrequency = std::forward<ScheduleFrequencyT>(value); }
+    template<typename ScheduleFrequencyT = JobScheduleFrequency>
+    DescribeClassificationJobResult& WithScheduleFrequency(ScheduleFrequencyT&& value) { SetScheduleFrequency(std::forward<ScheduleFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -320,11 +301,11 @@ namespace Model
      * <p>The number of times that the job has run and processing statistics for the
      * job's current run.</p>
      */
-    inline const Statistics& GetStatistics() const{ return m_statistics; }
-    inline void SetStatistics(const Statistics& value) { m_statistics = value; }
-    inline void SetStatistics(Statistics&& value) { m_statistics = std::move(value); }
-    inline DescribeClassificationJobResult& WithStatistics(const Statistics& value) { SetStatistics(value); return *this;}
-    inline DescribeClassificationJobResult& WithStatistics(Statistics&& value) { SetStatistics(std::move(value)); return *this;}
+    inline const Statistics& GetStatistics() const { return m_statistics; }
+    template<typename StatisticsT = Statistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Statistics>
+    DescribeClassificationJobResult& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -332,18 +313,15 @@ namespace Model
      * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeClassificationJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeClassificationJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeClassificationJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeClassificationJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeClassificationJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeClassificationJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeClassificationJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeClassificationJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeClassificationJobResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeClassificationJobResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -353,68 +331,88 @@ namespace Model
      * resumed. This value is present only if the value for jobStatus is
      * USER_PAUSED.</p>
      */
-    inline const UserPausedDetails& GetUserPausedDetails() const{ return m_userPausedDetails; }
-    inline void SetUserPausedDetails(const UserPausedDetails& value) { m_userPausedDetails = value; }
-    inline void SetUserPausedDetails(UserPausedDetails&& value) { m_userPausedDetails = std::move(value); }
-    inline DescribeClassificationJobResult& WithUserPausedDetails(const UserPausedDetails& value) { SetUserPausedDetails(value); return *this;}
-    inline DescribeClassificationJobResult& WithUserPausedDetails(UserPausedDetails&& value) { SetUserPausedDetails(std::move(value)); return *this;}
+    inline const UserPausedDetails& GetUserPausedDetails() const { return m_userPausedDetails; }
+    template<typename UserPausedDetailsT = UserPausedDetails>
+    void SetUserPausedDetails(UserPausedDetailsT&& value) { m_userPausedDetailsHasBeenSet = true; m_userPausedDetails = std::forward<UserPausedDetailsT>(value); }
+    template<typename UserPausedDetailsT = UserPausedDetails>
+    DescribeClassificationJobResult& WithUserPausedDetails(UserPausedDetailsT&& value) { SetUserPausedDetails(std::forward<UserPausedDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeClassificationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeClassificationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeClassificationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeClassificationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_allowListIds;
+    bool m_allowListIdsHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customDataIdentifierIds;
+    bool m_customDataIdentifierIdsHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    bool m_initialRun;
+    bool m_initialRun{false};
+    bool m_initialRunHasBeenSet = false;
 
     Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
+    bool m_jobStatusHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
+    bool m_jobTypeHasBeenSet = false;
 
     LastRunErrorStatus m_lastRunErrorStatus;
+    bool m_lastRunErrorStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRunTime;
+    Aws::Utils::DateTime m_lastRunTime{};
+    bool m_lastRunTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_managedDataIdentifierIds;
+    bool m_managedDataIdentifierIdsHasBeenSet = false;
 
-    ManagedDataIdentifierSelector m_managedDataIdentifierSelector;
+    ManagedDataIdentifierSelector m_managedDataIdentifierSelector{ManagedDataIdentifierSelector::NOT_SET};
+    bool m_managedDataIdentifierSelectorHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     S3JobDefinition m_s3JobDefinition;
+    bool m_s3JobDefinitionHasBeenSet = false;
 
-    int m_samplingPercentage;
+    int m_samplingPercentage{0};
+    bool m_samplingPercentageHasBeenSet = false;
 
     JobScheduleFrequency m_scheduleFrequency;
+    bool m_scheduleFrequencyHasBeenSet = false;
 
     Statistics m_statistics;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     UserPausedDetails m_userPausedDetails;
+    bool m_userPausedDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

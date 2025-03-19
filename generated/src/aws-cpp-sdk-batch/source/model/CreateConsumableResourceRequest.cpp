@@ -12,15 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConsumableResourceRequest::CreateConsumableResourceRequest() : 
-    m_consumableResourceNameHasBeenSet(false),
-    m_totalQuantity(0),
-    m_totalQuantityHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConsumableResourceRequest::SerializePayload() const
 {
   JsonValue payload;

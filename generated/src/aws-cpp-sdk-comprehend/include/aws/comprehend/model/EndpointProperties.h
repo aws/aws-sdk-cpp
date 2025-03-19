@@ -36,7 +36,7 @@ namespace Model
   class EndpointProperties
   {
   public:
-    AWS_COMPREHEND_API EndpointProperties();
+    AWS_COMPREHEND_API EndpointProperties() = default;
     AWS_COMPREHEND_API EndpointProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EndpointProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline EndpointProperties& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline EndpointProperties& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline EndpointProperties& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    EndpointProperties& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,22 @@ namespace Model
      * creation are asynchronous, so customers will need to wait for the endpoint to be
      * <code>Ready</code> status before making inference requests.</p>
      */
-    inline const EndpointStatus& GetStatus() const{ return m_status; }
+    inline EndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EndpointProperties& WithStatus(const EndpointStatus& value) { SetStatus(value); return *this;}
-    inline EndpointProperties& WithStatus(EndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EndpointProperties& WithStatus(EndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline EndpointProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline EndpointProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline EndpointProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    EndpointProperties& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the model to which the endpoint is
      * attached.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline EndpointProperties& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline EndpointProperties& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline EndpointProperties& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    EndpointProperties& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +96,12 @@ namespace Model
      * <p>ARN of the new model to use for updating an existing endpoint. This ARN is
      * going to be different from the model ARN when the update is in progress</p>
      */
-    inline const Aws::String& GetDesiredModelArn() const{ return m_desiredModelArn; }
+    inline const Aws::String& GetDesiredModelArn() const { return m_desiredModelArn; }
     inline bool DesiredModelArnHasBeenSet() const { return m_desiredModelArnHasBeenSet; }
-    inline void SetDesiredModelArn(const Aws::String& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = value; }
-    inline void SetDesiredModelArn(Aws::String&& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = std::move(value); }
-    inline void SetDesiredModelArn(const char* value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn.assign(value); }
-    inline EndpointProperties& WithDesiredModelArn(const Aws::String& value) { SetDesiredModelArn(value); return *this;}
-    inline EndpointProperties& WithDesiredModelArn(Aws::String&& value) { SetDesiredModelArn(std::move(value)); return *this;}
-    inline EndpointProperties& WithDesiredModelArn(const char* value) { SetDesiredModelArn(value); return *this;}
+    template<typename DesiredModelArnT = Aws::String>
+    void SetDesiredModelArn(DesiredModelArnT&& value) { m_desiredModelArnHasBeenSet = true; m_desiredModelArn = std::forward<DesiredModelArnT>(value); }
+    template<typename DesiredModelArnT = Aws::String>
+    EndpointProperties& WithDesiredModelArn(DesiredModelArnT&& value) { SetDesiredModelArn(std::forward<DesiredModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +110,7 @@ namespace Model
      * endpoint. Each inference unit represents of a throughput of 100 characters per
      * second.</p>
      */
-    inline int GetDesiredInferenceUnits() const{ return m_desiredInferenceUnits; }
+    inline int GetDesiredInferenceUnits() const { return m_desiredInferenceUnits; }
     inline bool DesiredInferenceUnitsHasBeenSet() const { return m_desiredInferenceUnitsHasBeenSet; }
     inline void SetDesiredInferenceUnits(int value) { m_desiredInferenceUnitsHasBeenSet = true; m_desiredInferenceUnits = value; }
     inline EndpointProperties& WithDesiredInferenceUnits(int value) { SetDesiredInferenceUnits(value); return *this;}
@@ -131,7 +121,7 @@ namespace Model
      * <p>The number of inference units currently used by the model using this
      * endpoint.</p>
      */
-    inline int GetCurrentInferenceUnits() const{ return m_currentInferenceUnits; }
+    inline int GetCurrentInferenceUnits() const { return m_currentInferenceUnits; }
     inline bool CurrentInferenceUnitsHasBeenSet() const { return m_currentInferenceUnitsHasBeenSet; }
     inline void SetCurrentInferenceUnits(int value) { m_currentInferenceUnitsHasBeenSet = true; m_currentInferenceUnits = value; }
     inline EndpointProperties& WithCurrentInferenceUnits(int value) { SetCurrentInferenceUnits(value); return *this;}
@@ -141,24 +131,24 @@ namespace Model
     /**
      * <p>The creation date and time of the endpoint.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline EndpointProperties& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline EndpointProperties& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    EndpointProperties& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the endpoint was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline EndpointProperties& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline EndpointProperties& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    EndpointProperties& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,14 +157,12 @@ namespace Model
      * read access to trained custom models encrypted with a customer managed key
      * (ModelKmsKeyId).</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline EndpointProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline EndpointProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline EndpointProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    EndpointProperties& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,35 +170,31 @@ namespace Model
      * <p>Data access role ARN to use in case the new model is encrypted with a
      * customer KMS key.</p>
      */
-    inline const Aws::String& GetDesiredDataAccessRoleArn() const{ return m_desiredDataAccessRoleArn; }
+    inline const Aws::String& GetDesiredDataAccessRoleArn() const { return m_desiredDataAccessRoleArn; }
     inline bool DesiredDataAccessRoleArnHasBeenSet() const { return m_desiredDataAccessRoleArnHasBeenSet; }
-    inline void SetDesiredDataAccessRoleArn(const Aws::String& value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn = value; }
-    inline void SetDesiredDataAccessRoleArn(Aws::String&& value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn = std::move(value); }
-    inline void SetDesiredDataAccessRoleArn(const char* value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn.assign(value); }
-    inline EndpointProperties& WithDesiredDataAccessRoleArn(const Aws::String& value) { SetDesiredDataAccessRoleArn(value); return *this;}
-    inline EndpointProperties& WithDesiredDataAccessRoleArn(Aws::String&& value) { SetDesiredDataAccessRoleArn(std::move(value)); return *this;}
-    inline EndpointProperties& WithDesiredDataAccessRoleArn(const char* value) { SetDesiredDataAccessRoleArn(value); return *this;}
+    template<typename DesiredDataAccessRoleArnT = Aws::String>
+    void SetDesiredDataAccessRoleArn(DesiredDataAccessRoleArnT&& value) { m_desiredDataAccessRoleArnHasBeenSet = true; m_desiredDataAccessRoleArn = std::forward<DesiredDataAccessRoleArnT>(value); }
+    template<typename DesiredDataAccessRoleArnT = Aws::String>
+    EndpointProperties& WithDesiredDataAccessRoleArn(DesiredDataAccessRoleArnT&& value) { SetDesiredDataAccessRoleArn(std::forward<DesiredDataAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Number (ARN) of the flywheel</p>
      */
-    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+    inline const Aws::String& GetFlywheelArn() const { return m_flywheelArn; }
     inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
-    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
-    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
-    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
-    inline EndpointProperties& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-    inline EndpointProperties& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-    inline EndpointProperties& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+    template<typename FlywheelArnT = Aws::String>
+    void SetFlywheelArn(FlywheelArnT&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::forward<FlywheelArnT>(value); }
+    template<typename FlywheelArnT = Aws::String>
+    EndpointProperties& WithFlywheelArn(FlywheelArnT&& value) { SetFlywheelArn(std::forward<FlywheelArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet = false;
 
-    EndpointStatus m_status;
+    EndpointStatus m_status{EndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
@@ -222,16 +206,16 @@ namespace Model
     Aws::String m_desiredModelArn;
     bool m_desiredModelArnHasBeenSet = false;
 
-    int m_desiredInferenceUnits;
+    int m_desiredInferenceUnits{0};
     bool m_desiredInferenceUnitsHasBeenSet = false;
 
-    int m_currentInferenceUnits;
+    int m_currentInferenceUnits{0};
     bool m_currentInferenceUnitsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;

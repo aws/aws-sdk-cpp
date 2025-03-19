@@ -28,7 +28,7 @@ namespace Model
   class ValidatePolicyRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API ValidatePolicyRequest();
+    AWS_ACCESSANALYZER_API ValidatePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,19 +45,17 @@ namespace Model
     /**
      * <p>The locale to use for localizing the findings.</p>
      */
-    inline const Locale& GetLocale() const{ return m_locale; }
+    inline Locale GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline ValidatePolicyRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-    inline ValidatePolicyRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+    inline void SetLocale(Locale value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline ValidatePolicyRequest& WithLocale(Locale value) { SetLocale(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ValidatePolicyRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -67,28 +65,24 @@ namespace Model
     /**
      * <p>A token used for pagination of results returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ValidatePolicyRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ValidatePolicyRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ValidatePolicyRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ValidatePolicyRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON policy document to use as the content for the policy.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline ValidatePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline ValidatePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline ValidatePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    ValidatePolicyRequest& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,10 @@ namespace Model
      * organization policy attached to an Amazon Web Services organization,
      * organizational unit (OU), or an account.</p>
      */
-    inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+    inline PolicyType GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline ValidatePolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-    inline ValidatePolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(PolicyType value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline ValidatePolicyRequest& WithPolicyType(PolicyType value) { SetPolicyType(value); return *this;}
     ///@}
 
     ///@{
@@ -123,19 +115,17 @@ namespace Model
      * not specify a value for the policy validation resource type and IAM Access
      * Analyzer will run policy checks that apply to all resource policies.</p>
      */
-    inline const ValidatePolicyResourceType& GetValidatePolicyResourceType() const{ return m_validatePolicyResourceType; }
+    inline ValidatePolicyResourceType GetValidatePolicyResourceType() const { return m_validatePolicyResourceType; }
     inline bool ValidatePolicyResourceTypeHasBeenSet() const { return m_validatePolicyResourceTypeHasBeenSet; }
-    inline void SetValidatePolicyResourceType(const ValidatePolicyResourceType& value) { m_validatePolicyResourceTypeHasBeenSet = true; m_validatePolicyResourceType = value; }
-    inline void SetValidatePolicyResourceType(ValidatePolicyResourceType&& value) { m_validatePolicyResourceTypeHasBeenSet = true; m_validatePolicyResourceType = std::move(value); }
-    inline ValidatePolicyRequest& WithValidatePolicyResourceType(const ValidatePolicyResourceType& value) { SetValidatePolicyResourceType(value); return *this;}
-    inline ValidatePolicyRequest& WithValidatePolicyResourceType(ValidatePolicyResourceType&& value) { SetValidatePolicyResourceType(std::move(value)); return *this;}
+    inline void SetValidatePolicyResourceType(ValidatePolicyResourceType value) { m_validatePolicyResourceTypeHasBeenSet = true; m_validatePolicyResourceType = value; }
+    inline ValidatePolicyRequest& WithValidatePolicyResourceType(ValidatePolicyResourceType value) { SetValidatePolicyResourceType(value); return *this;}
     ///@}
   private:
 
-    Locale m_locale;
+    Locale m_locale{Locale::NOT_SET};
     bool m_localeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -144,10 +134,10 @@ namespace Model
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet = false;
 
-    PolicyType m_policyType;
+    PolicyType m_policyType{PolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
 
-    ValidatePolicyResourceType m_validatePolicyResourceType;
+    ValidatePolicyResourceType m_validatePolicyResourceType{ValidatePolicyResourceType::NOT_SET};
     bool m_validatePolicyResourceTypeHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class EventTriggerDefinition
   {
   public:
-    AWS_SNOWBALL_API EventTriggerDefinition();
+    AWS_SNOWBALL_API EventTriggerDefinition() = default;
     AWS_SNOWBALL_API EventTriggerDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API EventTriggerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
      * Lambda function's event trigger associated with this job.</p>
      */
-    inline const Aws::String& GetEventResourceARN() const{ return m_eventResourceARN; }
+    inline const Aws::String& GetEventResourceARN() const { return m_eventResourceARN; }
     inline bool EventResourceARNHasBeenSet() const { return m_eventResourceARNHasBeenSet; }
-    inline void SetEventResourceARN(const Aws::String& value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN = value; }
-    inline void SetEventResourceARN(Aws::String&& value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN = std::move(value); }
-    inline void SetEventResourceARN(const char* value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN.assign(value); }
-    inline EventTriggerDefinition& WithEventResourceARN(const Aws::String& value) { SetEventResourceARN(value); return *this;}
-    inline EventTriggerDefinition& WithEventResourceARN(Aws::String&& value) { SetEventResourceARN(std::move(value)); return *this;}
-    inline EventTriggerDefinition& WithEventResourceARN(const char* value) { SetEventResourceARN(value); return *this;}
+    template<typename EventResourceARNT = Aws::String>
+    void SetEventResourceARN(EventResourceARNT&& value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN = std::forward<EventResourceARNT>(value); }
+    template<typename EventResourceARNT = Aws::String>
+    EventTriggerDefinition& WithEventResourceARN(EventResourceARNT&& value) { SetEventResourceARN(std::forward<EventResourceARNT>(value)); return *this;}
     ///@}
   private:
 

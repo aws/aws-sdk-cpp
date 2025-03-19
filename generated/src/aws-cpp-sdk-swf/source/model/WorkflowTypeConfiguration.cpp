@@ -18,19 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowTypeConfiguration::WorkflowTypeConfiguration() : 
-    m_defaultTaskStartToCloseTimeoutHasBeenSet(false),
-    m_defaultExecutionStartToCloseTimeoutHasBeenSet(false),
-    m_defaultTaskListHasBeenSet(false),
-    m_defaultTaskPriorityHasBeenSet(false),
-    m_defaultChildPolicy(ChildPolicy::NOT_SET),
-    m_defaultChildPolicyHasBeenSet(false),
-    m_defaultLambdaRoleHasBeenSet(false)
-{
-}
-
 WorkflowTypeConfiguration::WorkflowTypeConfiguration(JsonView jsonValue)
-  : WorkflowTypeConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ WorkflowTypeConfiguration& WorkflowTypeConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("defaultTaskStartToCloseTimeout"))
   {
     m_defaultTaskStartToCloseTimeout = jsonValue.GetString("defaultTaskStartToCloseTimeout");
-
     m_defaultTaskStartToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultExecutionStartToCloseTimeout"))
   {
     m_defaultExecutionStartToCloseTimeout = jsonValue.GetString("defaultExecutionStartToCloseTimeout");
-
     m_defaultExecutionStartToCloseTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskList"))
   {
     m_defaultTaskList = jsonValue.GetObject("defaultTaskList");
-
     m_defaultTaskListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultTaskPriority"))
   {
     m_defaultTaskPriority = jsonValue.GetString("defaultTaskPriority");
-
     m_defaultTaskPriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultChildPolicy"))
   {
     m_defaultChildPolicy = ChildPolicyMapper::GetChildPolicyForName(jsonValue.GetString("defaultChildPolicy"));
-
     m_defaultChildPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultLambdaRole"))
   {
     m_defaultLambdaRole = jsonValue.GetString("defaultLambdaRole");
-
     m_defaultLambdaRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

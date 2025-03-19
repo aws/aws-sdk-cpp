@@ -18,16 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration() : 
-    m_dbPathsHasBeenSet(false),
-    m_volumeNameHasBeenSet(false),
-    m_onDemand(false),
-    m_onDemandHasBeenSet(false)
-{
-}
-
 KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration(JsonView jsonValue)
-  : KxDataviewSegmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ KxDataviewSegmentConfiguration& KxDataviewSegmentConfiguration::operator =(JsonV
     }
     m_dbPathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeName"))
   {
     m_volumeName = jsonValue.GetString("volumeName");
-
     m_volumeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onDemand"))
   {
     m_onDemand = jsonValue.GetBool("onDemand");
-
     m_onDemandHasBeenSet = true;
   }
-
   return *this;
 }
 

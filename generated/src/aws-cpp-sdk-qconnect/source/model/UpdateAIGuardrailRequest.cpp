@@ -12,24 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAIGuardrailRequest::UpdateAIGuardrailRequest() : 
-    m_aiGuardrailIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_blockedInputMessagingHasBeenSet(false),
-    m_blockedOutputsMessagingHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_contentPolicyConfigHasBeenSet(false),
-    m_contextualGroundingPolicyConfigHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sensitiveInformationPolicyConfigHasBeenSet(false),
-    m_topicPolicyConfigHasBeenSet(false),
-    m_visibilityStatus(VisibilityStatus::NOT_SET),
-    m_visibilityStatusHasBeenSet(false),
-    m_wordPolicyConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAIGuardrailRequest::SerializePayload() const
 {
   JsonValue payload;

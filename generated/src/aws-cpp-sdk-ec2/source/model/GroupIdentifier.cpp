@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-GroupIdentifier::GroupIdentifier() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 GroupIdentifier::GroupIdentifier(const XmlNode& xmlNode)
-  : GroupIdentifier()
 {
   *this = xmlNode;
 }

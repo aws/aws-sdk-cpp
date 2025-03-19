@@ -12,11 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterWebhookWithThirdPartyRequest::RegisterWebhookWithThirdPartyRequest() : 
-    m_webhookNameHasBeenSet(false)
-{
-}
-
 Aws::String RegisterWebhookWithThirdPartyRequest::SerializePayload() const
 {
   JsonValue payload;

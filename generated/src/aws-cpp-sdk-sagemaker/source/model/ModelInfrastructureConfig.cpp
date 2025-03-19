@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelInfrastructureConfig::ModelInfrastructureConfig() : 
-    m_infrastructureType(ModelInfrastructureType::NOT_SET),
-    m_infrastructureTypeHasBeenSet(false),
-    m_realTimeInferenceConfigHasBeenSet(false)
-{
-}
-
 ModelInfrastructureConfig::ModelInfrastructureConfig(JsonView jsonValue)
-  : ModelInfrastructureConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelInfrastructureConfig& ModelInfrastructureConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("InfrastructureType"))
   {
     m_infrastructureType = ModelInfrastructureTypeMapper::GetModelInfrastructureTypeForName(jsonValue.GetString("InfrastructureType"));
-
     m_infrastructureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RealTimeInferenceConfig"))
   {
     m_realTimeInferenceConfig = jsonValue.GetObject("RealTimeInferenceConfig");
-
     m_realTimeInferenceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

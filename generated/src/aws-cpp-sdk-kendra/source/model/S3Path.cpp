@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-S3Path::S3Path() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 S3Path::S3Path(JsonView jsonValue)
-  : S3Path()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Path& S3Path::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

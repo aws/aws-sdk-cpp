@@ -28,7 +28,7 @@ namespace Model
   class CreateAppResult
   {
   public:
-    AWS_RESILIENCEHUB_API CreateAppResult();
+    AWS_RESILIENCEHUB_API CreateAppResult() = default;
     AWS_RESILIENCEHUB_API CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The created application returned as an object with details including
      * compliance status, creation time, description, resiliency score, and more.</p>
      */
-    inline const App& GetApp() const{ return m_app; }
-    inline void SetApp(const App& value) { m_app = value; }
-    inline void SetApp(App&& value) { m_app = std::move(value); }
-    inline CreateAppResult& WithApp(const App& value) { SetApp(value); return *this;}
-    inline CreateAppResult& WithApp(App&& value) { SetApp(std::move(value)); return *this;}
+    inline const App& GetApp() const { return m_app; }
+    template<typename AppT = App>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = App>
+    CreateAppResult& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     App m_app;
+    bool m_appHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

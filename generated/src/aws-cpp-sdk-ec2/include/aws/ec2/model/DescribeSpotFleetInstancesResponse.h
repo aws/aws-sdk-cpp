@@ -36,7 +36,7 @@ namespace Model
   class DescribeSpotFleetInstancesResponse
   {
   public:
-    AWS_EC2_API DescribeSpotFleetInstancesResponse();
+    AWS_EC2_API DescribeSpotFleetInstancesResponse() = default;
     AWS_EC2_API DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeSpotFleetInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,13 +46,13 @@ namespace Model
      * <p>The running instances. This list is refreshed periodically and might be out
      * of date.</p>
      */
-    inline const Aws::Vector<ActiveInstance>& GetActiveInstances() const{ return m_activeInstances; }
-    inline void SetActiveInstances(const Aws::Vector<ActiveInstance>& value) { m_activeInstances = value; }
-    inline void SetActiveInstances(Aws::Vector<ActiveInstance>&& value) { m_activeInstances = std::move(value); }
-    inline DescribeSpotFleetInstancesResponse& WithActiveInstances(const Aws::Vector<ActiveInstance>& value) { SetActiveInstances(value); return *this;}
-    inline DescribeSpotFleetInstancesResponse& WithActiveInstances(Aws::Vector<ActiveInstance>&& value) { SetActiveInstances(std::move(value)); return *this;}
-    inline DescribeSpotFleetInstancesResponse& AddActiveInstances(const ActiveInstance& value) { m_activeInstances.push_back(value); return *this; }
-    inline DescribeSpotFleetInstancesResponse& AddActiveInstances(ActiveInstance&& value) { m_activeInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActiveInstance>& GetActiveInstances() const { return m_activeInstances; }
+    template<typename ActiveInstancesT = Aws::Vector<ActiveInstance>>
+    void SetActiveInstances(ActiveInstancesT&& value) { m_activeInstancesHasBeenSet = true; m_activeInstances = std::forward<ActiveInstancesT>(value); }
+    template<typename ActiveInstancesT = Aws::Vector<ActiveInstance>>
+    DescribeSpotFleetInstancesResponse& WithActiveInstances(ActiveInstancesT&& value) { SetActiveInstances(std::forward<ActiveInstancesT>(value)); return *this;}
+    template<typename ActiveInstancesT = ActiveInstance>
+    DescribeSpotFleetInstancesResponse& AddActiveInstances(ActiveInstancesT&& value) { m_activeInstancesHasBeenSet = true; m_activeInstances.emplace_back(std::forward<ActiveInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,45 +60,45 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSpotFleetInstancesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSpotFleetInstancesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSpotFleetInstancesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSpotFleetInstancesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Spot Fleet request.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestId = value; }
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestId = std::move(value); }
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestId.assign(value); }
-    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-    inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    inline const Aws::String& GetSpotFleetRequestId() const { return m_spotFleetRequestId; }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    void SetSpotFleetRequestId(SpotFleetRequestIdT&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::forward<SpotFleetRequestIdT>(value); }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(SpotFleetRequestIdT&& value) { SetSpotFleetRequestId(std::forward<SpotFleetRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeSpotFleetInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeSpotFleetInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeSpotFleetInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ActiveInstance> m_activeInstances;
+    bool m_activeInstancesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

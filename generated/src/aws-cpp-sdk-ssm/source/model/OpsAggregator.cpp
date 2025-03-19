@@ -18,18 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsAggregator::OpsAggregator() : 
-    m_aggregatorTypeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_attributeNameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_aggregatorsHasBeenSet(false)
-{
-}
-
 OpsAggregator::OpsAggregator(JsonView jsonValue)
-  : OpsAggregator()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ OpsAggregator& OpsAggregator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AggregatorType"))
   {
     m_aggregatorType = jsonValue.GetString("AggregatorType");
-
     m_aggregatorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Map<Aws::String, JsonView> valuesJsonMap = jsonValue.GetObject("Values").GetAllObjects();
@@ -66,7 +49,6 @@ OpsAggregator& OpsAggregator::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
@@ -76,7 +58,6 @@ OpsAggregator& OpsAggregator::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregators"))
   {
     Aws::Utils::Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
@@ -86,7 +67,6 @@ OpsAggregator& OpsAggregator::operator =(JsonView jsonValue)
     }
     m_aggregatorsHasBeenSet = true;
   }
-
   return *this;
 }
 

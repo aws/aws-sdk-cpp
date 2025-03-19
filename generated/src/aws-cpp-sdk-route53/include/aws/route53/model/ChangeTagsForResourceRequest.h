@@ -28,7 +28,7 @@ namespace Model
   class ChangeTagsForResourceRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ChangeTagsForResourceRequest();
+    AWS_ROUTE53_API ChangeTagsForResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,26 +45,22 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
-    inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
+    inline TagResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ChangeTagsForResourceRequest& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
-    inline ChangeTagsForResourceRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(TagResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ChangeTagsForResourceRequest& WithResourceType(TagResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource for which you want to add, change, or delete tags.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ChangeTagsForResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ChangeTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ChangeTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ChangeTagsForResourceRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,14 @@ namespace Model
      * <code>Value</code> for.</p> <p>You can add a maximum of 10 tags to a health
      * check or a hosted zone.</p>
      */
-    inline const Aws::Vector<Tag>& GetAddTags() const{ return m_addTags; }
+    inline const Aws::Vector<Tag>& GetAddTags() const { return m_addTags; }
     inline bool AddTagsHasBeenSet() const { return m_addTagsHasBeenSet; }
-    inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
-    inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = std::move(value); }
-    inline ChangeTagsForResourceRequest& WithAddTags(const Aws::Vector<Tag>& value) { SetAddTags(value); return *this;}
-    inline ChangeTagsForResourceRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(std::move(value)); return *this;}
-    inline ChangeTagsForResourceRequest& AddAddTags(const Tag& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
-    inline ChangeTagsForResourceRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
+    template<typename AddTagsT = Aws::Vector<Tag>>
+    void SetAddTags(AddTagsT&& value) { m_addTagsHasBeenSet = true; m_addTags = std::forward<AddTagsT>(value); }
+    template<typename AddTagsT = Aws::Vector<Tag>>
+    ChangeTagsForResourceRequest& WithAddTags(AddTagsT&& value) { SetAddTags(std::forward<AddTagsT>(value)); return *this;}
+    template<typename AddTagsT = Tag>
+    ChangeTagsForResourceRequest& AddAddTags(AddTagsT&& value) { m_addTagsHasBeenSet = true; m_addTags.emplace_back(std::forward<AddTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,19 +85,18 @@ namespace Model
      * <p>A complex type that contains a list of the tags that you want to delete from
      * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveTagKeys() const{ return m_removeTagKeys; }
+    inline const Aws::Vector<Aws::String>& GetRemoveTagKeys() const { return m_removeTagKeys; }
     inline bool RemoveTagKeysHasBeenSet() const { return m_removeTagKeysHasBeenSet; }
-    inline void SetRemoveTagKeys(const Aws::Vector<Aws::String>& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys = value; }
-    inline void SetRemoveTagKeys(Aws::Vector<Aws::String>&& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys = std::move(value); }
-    inline ChangeTagsForResourceRequest& WithRemoveTagKeys(const Aws::Vector<Aws::String>& value) { SetRemoveTagKeys(value); return *this;}
-    inline ChangeTagsForResourceRequest& WithRemoveTagKeys(Aws::Vector<Aws::String>&& value) { SetRemoveTagKeys(std::move(value)); return *this;}
-    inline ChangeTagsForResourceRequest& AddRemoveTagKeys(const Aws::String& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(value); return *this; }
-    inline ChangeTagsForResourceRequest& AddRemoveTagKeys(Aws::String&& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(std::move(value)); return *this; }
-    inline ChangeTagsForResourceRequest& AddRemoveTagKeys(const char* value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(value); return *this; }
+    template<typename RemoveTagKeysT = Aws::Vector<Aws::String>>
+    void SetRemoveTagKeys(RemoveTagKeysT&& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys = std::forward<RemoveTagKeysT>(value); }
+    template<typename RemoveTagKeysT = Aws::Vector<Aws::String>>
+    ChangeTagsForResourceRequest& WithRemoveTagKeys(RemoveTagKeysT&& value) { SetRemoveTagKeys(std::forward<RemoveTagKeysT>(value)); return *this;}
+    template<typename RemoveTagKeysT = Aws::String>
+    ChangeTagsForResourceRequest& AddRemoveTagKeys(RemoveTagKeysT&& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.emplace_back(std::forward<RemoveTagKeysT>(value)); return *this; }
     ///@}
   private:
 
-    TagResourceType m_resourceType;
+    TagResourceType m_resourceType{TagResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;

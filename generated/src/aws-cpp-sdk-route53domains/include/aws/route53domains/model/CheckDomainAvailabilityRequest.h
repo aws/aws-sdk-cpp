@@ -25,7 +25,7 @@ namespace Model
   class CheckDomainAvailabilityRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityRequest();
+    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -58,28 +58,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
      * Internationalized Domain Names</a>. </p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CheckDomainAvailabilityRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CheckDomainAvailabilityRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CheckDomainAvailabilityRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CheckDomainAvailabilityRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetIdnLangCode() const{ return m_idnLangCode; }
+    inline const Aws::String& GetIdnLangCode() const { return m_idnLangCode; }
     inline bool IdnLangCodeHasBeenSet() const { return m_idnLangCodeHasBeenSet; }
-    inline void SetIdnLangCode(const Aws::String& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = value; }
-    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::move(value); }
-    inline void SetIdnLangCode(const char* value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode.assign(value); }
-    inline CheckDomainAvailabilityRequest& WithIdnLangCode(const Aws::String& value) { SetIdnLangCode(value); return *this;}
-    inline CheckDomainAvailabilityRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(std::move(value)); return *this;}
-    inline CheckDomainAvailabilityRequest& WithIdnLangCode(const char* value) { SetIdnLangCode(value); return *this;}
+    template<typename IdnLangCodeT = Aws::String>
+    void SetIdnLangCode(IdnLangCodeT&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::forward<IdnLangCodeT>(value); }
+    template<typename IdnLangCodeT = Aws::String>
+    CheckDomainAvailabilityRequest& WithIdnLangCode(IdnLangCodeT&& value) { SetIdnLangCode(std::forward<IdnLangCodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateListRequest::CreateListRequest() : 
-    m_nameHasBeenSet(false),
-    m_elementsHasBeenSet(false),
-    m_variableTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateListRequest::SerializePayload() const
 {
   JsonValue payload;

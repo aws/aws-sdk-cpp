@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessPointResult::GetAccessPointResult() : 
-    m_networkOrigin(NetworkOrigin::NOT_SET)
-{
-}
-
 GetAccessPointResult::GetAccessPointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetAccessPointResult()
 {
   *this = result;
 }
@@ -38,47 +32,56 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
+      m_nameHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
+      m_bucketHasBeenSet = true;
     }
     XmlNode networkOriginNode = resultNode.FirstChild("NetworkOrigin");
     if(!networkOriginNode.IsNull())
     {
-      m_networkOrigin = NetworkOriginMapper::GetNetworkOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkOriginNode.GetText()).c_str()).c_str());
+      m_networkOrigin = NetworkOriginMapper::GetNetworkOriginForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkOriginNode.GetText()).c_str()));
+      m_networkOriginHasBeenSet = true;
     }
     XmlNode vpcConfigurationNode = resultNode.FirstChild("VpcConfiguration");
     if(!vpcConfigurationNode.IsNull())
     {
       m_vpcConfiguration = vpcConfigurationNode;
+      m_vpcConfigurationHasBeenSet = true;
     }
     XmlNode publicAccessBlockConfigurationNode = resultNode.FirstChild("PublicAccessBlockConfiguration");
     if(!publicAccessBlockConfigurationNode.IsNull())
     {
       m_publicAccessBlockConfiguration = publicAccessBlockConfigurationNode;
+      m_publicAccessBlockConfigurationHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_creationDateHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
+      m_aliasHasBeenSet = true;
     }
     XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
     if(!accessPointArnNode.IsNull())
     {
       m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
+      m_accessPointArnHasBeenSet = true;
     }
     XmlNode endpointsNode = resultNode.FirstChild("Endpoints");
 
     if(!endpointsNode.IsNull())
     {
       XmlNode endpointsEntry = endpointsNode.FirstChild("entry");
+      m_endpointsHasBeenSet = !endpointsEntry.IsNull();
       while(!endpointsEntry.IsNull())
       {
         XmlNode keyNode = endpointsEntry.FirstChild("key");
@@ -88,11 +91,13 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
         endpointsEntry = endpointsEntry.NextNode("entry");
       }
 
+      m_endpointsHasBeenSet = true;
     }
     XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
     if(!bucketAccountIdNode.IsNull())
     {
       m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
+      m_bucketAccountIdHasBeenSet = true;
     }
   }
 
@@ -101,12 +106,14 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

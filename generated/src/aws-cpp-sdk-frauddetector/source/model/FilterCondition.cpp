@@ -18,13 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-FilterCondition::FilterCondition() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 FilterCondition::FilterCondition(JsonView jsonValue)
-  : FilterCondition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

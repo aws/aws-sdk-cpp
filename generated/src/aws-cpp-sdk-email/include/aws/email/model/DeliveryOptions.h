@@ -32,7 +32,7 @@ namespace Model
   class DeliveryOptions
   {
   public:
-    AWS_SES_API DeliveryOptions();
+    AWS_SES_API DeliveryOptions() = default;
     AWS_SES_API DeliveryOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API DeliveryOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,16 +48,14 @@ namespace Model
      * <code>Optional</code>, messages can be delivered in plain text if a TLS
      * connection can't be established.</p>
      */
-    inline const TlsPolicy& GetTlsPolicy() const{ return m_tlsPolicy; }
+    inline TlsPolicy GetTlsPolicy() const { return m_tlsPolicy; }
     inline bool TlsPolicyHasBeenSet() const { return m_tlsPolicyHasBeenSet; }
-    inline void SetTlsPolicy(const TlsPolicy& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
-    inline void SetTlsPolicy(TlsPolicy&& value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = std::move(value); }
-    inline DeliveryOptions& WithTlsPolicy(const TlsPolicy& value) { SetTlsPolicy(value); return *this;}
-    inline DeliveryOptions& WithTlsPolicy(TlsPolicy&& value) { SetTlsPolicy(std::move(value)); return *this;}
+    inline void SetTlsPolicy(TlsPolicy value) { m_tlsPolicyHasBeenSet = true; m_tlsPolicy = value; }
+    inline DeliveryOptions& WithTlsPolicy(TlsPolicy value) { SetTlsPolicy(value); return *this;}
     ///@}
   private:
 
-    TlsPolicy m_tlsPolicy;
+    TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
     bool m_tlsPolicyHasBeenSet = false;
   };
 

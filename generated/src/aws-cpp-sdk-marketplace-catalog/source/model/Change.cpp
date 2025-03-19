@@ -18,18 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-Change::Change() : 
-    m_changeTypeHasBeenSet(false),
-    m_entityHasBeenSet(false),
-    m_entityTagsHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_detailsDocumentHasBeenSet(false),
-    m_changeNameHasBeenSet(false)
-{
-}
-
 Change::Change(JsonView jsonValue)
-  : Change()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ Change& Change::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChangeType"))
   {
     m_changeType = jsonValue.GetString("ChangeType");
-
     m_changeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entity"))
   {
     m_entity = jsonValue.GetObject("Entity");
-
     m_entityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityTags"))
   {
     Aws::Utils::Array<JsonView> entityTagsJsonList = jsonValue.GetArray("EntityTags");
@@ -59,28 +44,21 @@ Change& Change::operator =(JsonView jsonValue)
     }
     m_entityTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetString("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailsDocument"))
   {
     m_detailsDocument = jsonValue.GetObject("DetailsDocument");
-
     m_detailsDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeName"))
   {
     m_changeName = jsonValue.GetString("ChangeName");
-
     m_changeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

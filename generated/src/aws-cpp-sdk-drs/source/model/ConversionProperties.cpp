@@ -18,19 +18,7 @@ namespace drs
 namespace Model
 {
 
-ConversionProperties::ConversionProperties() : 
-    m_dataTimestampHasBeenSet(false),
-    m_forceUefi(false),
-    m_forceUefiHasBeenSet(false),
-    m_rootVolumeNameHasBeenSet(false),
-    m_volumeToConversionMapHasBeenSet(false),
-    m_volumeToProductCodesHasBeenSet(false),
-    m_volumeToVolumeSizeHasBeenSet(false)
-{
-}
-
 ConversionProperties::ConversionProperties(JsonView jsonValue)
-  : ConversionProperties()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ ConversionProperties& ConversionProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataTimestamp"))
   {
     m_dataTimestamp = jsonValue.GetString("dataTimestamp");
-
     m_dataTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forceUefi"))
   {
     m_forceUefi = jsonValue.GetBool("forceUefi");
-
     m_forceUefiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootVolumeName"))
   {
     m_rootVolumeName = jsonValue.GetString("rootVolumeName");
-
     m_rootVolumeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeToConversionMap"))
   {
     Aws::Map<Aws::String, JsonView> volumeToConversionMapJsonMap = jsonValue.GetObject("volumeToConversionMap").GetAllObjects();
@@ -73,7 +55,6 @@ ConversionProperties& ConversionProperties::operator =(JsonView jsonValue)
     }
     m_volumeToConversionMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeToProductCodes"))
   {
     Aws::Map<Aws::String, JsonView> volumeToProductCodesJsonMap = jsonValue.GetObject("volumeToProductCodes").GetAllObjects();
@@ -90,7 +71,6 @@ ConversionProperties& ConversionProperties::operator =(JsonView jsonValue)
     }
     m_volumeToProductCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeToVolumeSize"))
   {
     Aws::Map<Aws::String, JsonView> volumeToVolumeSizeJsonMap = jsonValue.GetObject("volumeToVolumeSize").GetAllObjects();
@@ -100,7 +80,6 @@ ConversionProperties& ConversionProperties::operator =(JsonView jsonValue)
     }
     m_volumeToVolumeSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

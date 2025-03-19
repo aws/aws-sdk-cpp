@@ -35,7 +35,7 @@ namespace Model
   class DescribeSigningJobResult
   {
   public:
-    AWS_SIGNER_API DescribeSigningJobResult();
+    AWS_SIGNER_API DescribeSigningJobResult() = default;
     AWS_SIGNER_API DescribeSigningJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SIGNER_API DescribeSigningJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,35 +44,33 @@ namespace Model
     /**
      * <p>The ID of the signing job on output.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline DescribeSigningJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline DescribeSigningJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    DescribeSigningJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object that contains the name of your S3 bucket or your raw code.</p>
      */
-    inline const Source& GetSource() const{ return m_source; }
-    inline void SetSource(const Source& value) { m_source = value; }
-    inline void SetSource(Source&& value) { m_source = std::move(value); }
-    inline DescribeSigningJobResult& WithSource(const Source& value) { SetSource(value); return *this;}
-    inline DescribeSigningJobResult& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    inline const Source& GetSource() const { return m_source; }
+    template<typename SourceT = Source>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Source>
+    DescribeSigningJobResult& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
      */
-    inline const SigningMaterial& GetSigningMaterial() const{ return m_signingMaterial; }
-    inline void SetSigningMaterial(const SigningMaterial& value) { m_signingMaterial = value; }
-    inline void SetSigningMaterial(SigningMaterial&& value) { m_signingMaterial = std::move(value); }
-    inline DescribeSigningJobResult& WithSigningMaterial(const SigningMaterial& value) { SetSigningMaterial(value); return *this;}
-    inline DescribeSigningJobResult& WithSigningMaterial(SigningMaterial&& value) { SetSigningMaterial(std::move(value)); return *this;}
+    inline const SigningMaterial& GetSigningMaterial() const { return m_signingMaterial; }
+    template<typename SigningMaterialT = SigningMaterial>
+    void SetSigningMaterial(SigningMaterialT&& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = std::forward<SigningMaterialT>(value); }
+    template<typename SigningMaterialT = SigningMaterial>
+    DescribeSigningJobResult& WithSigningMaterial(SigningMaterialT&& value) { SetSigningMaterial(std::forward<SigningMaterialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,13 +78,11 @@ namespace Model
      * <p>The microcontroller platform to which your signed code image will be
      * distributed.</p>
      */
-    inline const Aws::String& GetPlatformId() const{ return m_platformId; }
-    inline void SetPlatformId(const Aws::String& value) { m_platformId = value; }
-    inline void SetPlatformId(Aws::String&& value) { m_platformId = std::move(value); }
-    inline void SetPlatformId(const char* value) { m_platformId.assign(value); }
-    inline DescribeSigningJobResult& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
-    inline DescribeSigningJobResult& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+    inline const Aws::String& GetPlatformId() const { return m_platformId; }
+    template<typename PlatformIdT = Aws::String>
+    void SetPlatformId(PlatformIdT&& value) { m_platformIdHasBeenSet = true; m_platformId = std::forward<PlatformIdT>(value); }
+    template<typename PlatformIdT = Aws::String>
+    DescribeSigningJobResult& WithPlatformId(PlatformIdT&& value) { SetPlatformId(std::forward<PlatformIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,50 +90,44 @@ namespace Model
      * <p>A human-readable name for the signing platform associated with the signing
      * job.</p>
      */
-    inline const Aws::String& GetPlatformDisplayName() const{ return m_platformDisplayName; }
-    inline void SetPlatformDisplayName(const Aws::String& value) { m_platformDisplayName = value; }
-    inline void SetPlatformDisplayName(Aws::String&& value) { m_platformDisplayName = std::move(value); }
-    inline void SetPlatformDisplayName(const char* value) { m_platformDisplayName.assign(value); }
-    inline DescribeSigningJobResult& WithPlatformDisplayName(const Aws::String& value) { SetPlatformDisplayName(value); return *this;}
-    inline DescribeSigningJobResult& WithPlatformDisplayName(Aws::String&& value) { SetPlatformDisplayName(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithPlatformDisplayName(const char* value) { SetPlatformDisplayName(value); return *this;}
+    inline const Aws::String& GetPlatformDisplayName() const { return m_platformDisplayName; }
+    template<typename PlatformDisplayNameT = Aws::String>
+    void SetPlatformDisplayName(PlatformDisplayNameT&& value) { m_platformDisplayNameHasBeenSet = true; m_platformDisplayName = std::forward<PlatformDisplayNameT>(value); }
+    template<typename PlatformDisplayNameT = Aws::String>
+    DescribeSigningJobResult& WithPlatformDisplayName(PlatformDisplayNameT&& value) { SetPlatformDisplayName(std::forward<PlatformDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the profile that initiated the signing operation.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
-    inline void SetProfileName(const Aws::String& value) { m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileName.assign(value); }
-    inline DescribeSigningJobResult& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline DescribeSigningJobResult& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    DescribeSigningJobResult& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the signing profile used to initiate the signing job.</p>
      */
-    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
-    inline void SetProfileVersion(const Aws::String& value) { m_profileVersion = value; }
-    inline void SetProfileVersion(Aws::String&& value) { m_profileVersion = std::move(value); }
-    inline void SetProfileVersion(const char* value) { m_profileVersion.assign(value); }
-    inline DescribeSigningJobResult& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
-    inline DescribeSigningJobResult& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+    inline const Aws::String& GetProfileVersion() const { return m_profileVersion; }
+    template<typename ProfileVersionT = Aws::String>
+    void SetProfileVersion(ProfileVersionT&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::forward<ProfileVersionT>(value); }
+    template<typename ProfileVersionT = Aws::String>
+    DescribeSigningJobResult& WithProfileVersion(ProfileVersionT&& value) { SetProfileVersion(std::forward<ProfileVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of any overrides that were applied to the signing operation.</p>
      */
-    inline const SigningPlatformOverrides& GetOverrides() const{ return m_overrides; }
-    inline void SetOverrides(const SigningPlatformOverrides& value) { m_overrides = value; }
-    inline void SetOverrides(SigningPlatformOverrides&& value) { m_overrides = std::move(value); }
-    inline DescribeSigningJobResult& WithOverrides(const SigningPlatformOverrides& value) { SetOverrides(value); return *this;}
-    inline DescribeSigningJobResult& WithOverrides(SigningPlatformOverrides&& value) { SetOverrides(std::move(value)); return *this;}
+    inline const SigningPlatformOverrides& GetOverrides() const { return m_overrides; }
+    template<typename OverridesT = SigningPlatformOverrides>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = SigningPlatformOverrides>
+    DescribeSigningJobResult& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,88 +135,79 @@ namespace Model
      * <p>Map of user-assigned key-value pairs used during signing. These values
      * contain any information that you specified for use in your signing job. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const{ return m_signingParameters; }
-    inline void SetSigningParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_signingParameters = value; }
-    inline void SetSigningParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_signingParameters = std::move(value); }
-    inline DescribeSigningJobResult& WithSigningParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetSigningParameters(value); return *this;}
-    inline DescribeSigningJobResult& WithSigningParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetSigningParameters(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& AddSigningParameters(const Aws::String& key, const Aws::String& value) { m_signingParameters.emplace(key, value); return *this; }
-    inline DescribeSigningJobResult& AddSigningParameters(Aws::String&& key, const Aws::String& value) { m_signingParameters.emplace(std::move(key), value); return *this; }
-    inline DescribeSigningJobResult& AddSigningParameters(const Aws::String& key, Aws::String&& value) { m_signingParameters.emplace(key, std::move(value)); return *this; }
-    inline DescribeSigningJobResult& AddSigningParameters(Aws::String&& key, Aws::String&& value) { m_signingParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeSigningJobResult& AddSigningParameters(const char* key, Aws::String&& value) { m_signingParameters.emplace(key, std::move(value)); return *this; }
-    inline DescribeSigningJobResult& AddSigningParameters(Aws::String&& key, const char* value) { m_signingParameters.emplace(std::move(key), value); return *this; }
-    inline DescribeSigningJobResult& AddSigningParameters(const char* key, const char* value) { m_signingParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const { return m_signingParameters; }
+    template<typename SigningParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetSigningParameters(SigningParametersT&& value) { m_signingParametersHasBeenSet = true; m_signingParameters = std::forward<SigningParametersT>(value); }
+    template<typename SigningParametersT = Aws::Map<Aws::String, Aws::String>>
+    DescribeSigningJobResult& WithSigningParameters(SigningParametersT&& value) { SetSigningParameters(std::forward<SigningParametersT>(value)); return *this;}
+    template<typename SigningParametersKeyT = Aws::String, typename SigningParametersValueT = Aws::String>
+    DescribeSigningJobResult& AddSigningParameters(SigningParametersKeyT&& key, SigningParametersValueT&& value) {
+      m_signingParametersHasBeenSet = true; m_signingParameters.emplace(std::forward<SigningParametersKeyT>(key), std::forward<SigningParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Date and time that the signing job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeSigningJobResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeSigningJobResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeSigningJobResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Date and time that the signing job was completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
-    inline void SetCompletedAt(const Aws::Utils::DateTime& value) { m_completedAt = value; }
-    inline void SetCompletedAt(Aws::Utils::DateTime&& value) { m_completedAt = std::move(value); }
-    inline DescribeSigningJobResult& WithCompletedAt(const Aws::Utils::DateTime& value) { SetCompletedAt(value); return *this;}
-    inline DescribeSigningJobResult& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletedAt() const { return m_completedAt; }
+    template<typename CompletedAtT = Aws::Utils::DateTime>
+    void SetCompletedAt(CompletedAtT&& value) { m_completedAtHasBeenSet = true; m_completedAt = std::forward<CompletedAtT>(value); }
+    template<typename CompletedAtT = Aws::Utils::DateTime>
+    DescribeSigningJobResult& WithCompletedAt(CompletedAtT&& value) { SetCompletedAt(std::forward<CompletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Thr expiration timestamp for the signature generated by the signing job.</p>
      */
-    inline const Aws::Utils::DateTime& GetSignatureExpiresAt() const{ return m_signatureExpiresAt; }
-    inline void SetSignatureExpiresAt(const Aws::Utils::DateTime& value) { m_signatureExpiresAt = value; }
-    inline void SetSignatureExpiresAt(Aws::Utils::DateTime&& value) { m_signatureExpiresAt = std::move(value); }
-    inline DescribeSigningJobResult& WithSignatureExpiresAt(const Aws::Utils::DateTime& value) { SetSignatureExpiresAt(value); return *this;}
-    inline DescribeSigningJobResult& WithSignatureExpiresAt(Aws::Utils::DateTime&& value) { SetSignatureExpiresAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetSignatureExpiresAt() const { return m_signatureExpiresAt; }
+    template<typename SignatureExpiresAtT = Aws::Utils::DateTime>
+    void SetSignatureExpiresAt(SignatureExpiresAtT&& value) { m_signatureExpiresAtHasBeenSet = true; m_signatureExpiresAt = std::forward<SignatureExpiresAtT>(value); }
+    template<typename SignatureExpiresAtT = Aws::Utils::DateTime>
+    DescribeSigningJobResult& WithSignatureExpiresAt(SignatureExpiresAtT&& value) { SetSignatureExpiresAt(std::forward<SignatureExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM principal that requested the signing job.</p>
      */
-    inline const Aws::String& GetRequestedBy() const{ return m_requestedBy; }
-    inline void SetRequestedBy(const Aws::String& value) { m_requestedBy = value; }
-    inline void SetRequestedBy(Aws::String&& value) { m_requestedBy = std::move(value); }
-    inline void SetRequestedBy(const char* value) { m_requestedBy.assign(value); }
-    inline DescribeSigningJobResult& WithRequestedBy(const Aws::String& value) { SetRequestedBy(value); return *this;}
-    inline DescribeSigningJobResult& WithRequestedBy(Aws::String&& value) { SetRequestedBy(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithRequestedBy(const char* value) { SetRequestedBy(value); return *this;}
+    inline const Aws::String& GetRequestedBy() const { return m_requestedBy; }
+    template<typename RequestedByT = Aws::String>
+    void SetRequestedBy(RequestedByT&& value) { m_requestedByHasBeenSet = true; m_requestedBy = std::forward<RequestedByT>(value); }
+    template<typename RequestedByT = Aws::String>
+    DescribeSigningJobResult& WithRequestedBy(RequestedByT&& value) { SetRequestedBy(std::forward<RequestedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the signing job.</p>
      */
-    inline const SigningStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SigningStatus& value) { m_status = value; }
-    inline void SetStatus(SigningStatus&& value) { m_status = std::move(value); }
-    inline DescribeSigningJobResult& WithStatus(const SigningStatus& value) { SetStatus(value); return *this;}
-    inline DescribeSigningJobResult& WithStatus(SigningStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SigningStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SigningStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeSigningJobResult& WithStatus(SigningStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>String value that contains the status reason.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
-    inline DescribeSigningJobResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline DescribeSigningJobResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    DescribeSigningJobResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,101 +216,115 @@ namespace Model
      * revoked. Contains a timestamp and the ID of the IAM entity that revoked the
      * signature.</p>
      */
-    inline const SigningJobRevocationRecord& GetRevocationRecord() const{ return m_revocationRecord; }
-    inline void SetRevocationRecord(const SigningJobRevocationRecord& value) { m_revocationRecord = value; }
-    inline void SetRevocationRecord(SigningJobRevocationRecord&& value) { m_revocationRecord = std::move(value); }
-    inline DescribeSigningJobResult& WithRevocationRecord(const SigningJobRevocationRecord& value) { SetRevocationRecord(value); return *this;}
-    inline DescribeSigningJobResult& WithRevocationRecord(SigningJobRevocationRecord&& value) { SetRevocationRecord(std::move(value)); return *this;}
+    inline const SigningJobRevocationRecord& GetRevocationRecord() const { return m_revocationRecord; }
+    template<typename RevocationRecordT = SigningJobRevocationRecord>
+    void SetRevocationRecord(RevocationRecordT&& value) { m_revocationRecordHasBeenSet = true; m_revocationRecord = std::forward<RevocationRecordT>(value); }
+    template<typename RevocationRecordT = SigningJobRevocationRecord>
+    DescribeSigningJobResult& WithRevocationRecord(RevocationRecordT&& value) { SetRevocationRecord(std::forward<RevocationRecordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>
      */
-    inline const SignedObject& GetSignedObject() const{ return m_signedObject; }
-    inline void SetSignedObject(const SignedObject& value) { m_signedObject = value; }
-    inline void SetSignedObject(SignedObject&& value) { m_signedObject = std::move(value); }
-    inline DescribeSigningJobResult& WithSignedObject(const SignedObject& value) { SetSignedObject(value); return *this;}
-    inline DescribeSigningJobResult& WithSignedObject(SignedObject&& value) { SetSignedObject(std::move(value)); return *this;}
+    inline const SignedObject& GetSignedObject() const { return m_signedObject; }
+    template<typename SignedObjectT = SignedObject>
+    void SetSignedObject(SignedObjectT&& value) { m_signedObjectHasBeenSet = true; m_signedObject = std::forward<SignedObjectT>(value); }
+    template<typename SignedObjectT = SignedObject>
+    DescribeSigningJobResult& WithSignedObject(SignedObjectT&& value) { SetSignedObject(std::forward<SignedObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS account ID of the job owner.</p>
      */
-    inline const Aws::String& GetJobOwner() const{ return m_jobOwner; }
-    inline void SetJobOwner(const Aws::String& value) { m_jobOwner = value; }
-    inline void SetJobOwner(Aws::String&& value) { m_jobOwner = std::move(value); }
-    inline void SetJobOwner(const char* value) { m_jobOwner.assign(value); }
-    inline DescribeSigningJobResult& WithJobOwner(const Aws::String& value) { SetJobOwner(value); return *this;}
-    inline DescribeSigningJobResult& WithJobOwner(Aws::String&& value) { SetJobOwner(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithJobOwner(const char* value) { SetJobOwner(value); return *this;}
+    inline const Aws::String& GetJobOwner() const { return m_jobOwner; }
+    template<typename JobOwnerT = Aws::String>
+    void SetJobOwner(JobOwnerT&& value) { m_jobOwnerHasBeenSet = true; m_jobOwner = std::forward<JobOwnerT>(value); }
+    template<typename JobOwnerT = Aws::String>
+    DescribeSigningJobResult& WithJobOwner(JobOwnerT&& value) { SetJobOwner(std::forward<JobOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM entity that initiated the signing job.</p>
      */
-    inline const Aws::String& GetJobInvoker() const{ return m_jobInvoker; }
-    inline void SetJobInvoker(const Aws::String& value) { m_jobInvoker = value; }
-    inline void SetJobInvoker(Aws::String&& value) { m_jobInvoker = std::move(value); }
-    inline void SetJobInvoker(const char* value) { m_jobInvoker.assign(value); }
-    inline DescribeSigningJobResult& WithJobInvoker(const Aws::String& value) { SetJobInvoker(value); return *this;}
-    inline DescribeSigningJobResult& WithJobInvoker(Aws::String&& value) { SetJobInvoker(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithJobInvoker(const char* value) { SetJobInvoker(value); return *this;}
+    inline const Aws::String& GetJobInvoker() const { return m_jobInvoker; }
+    template<typename JobInvokerT = Aws::String>
+    void SetJobInvoker(JobInvokerT&& value) { m_jobInvokerHasBeenSet = true; m_jobInvoker = std::forward<JobInvokerT>(value); }
+    template<typename JobInvokerT = Aws::String>
+    DescribeSigningJobResult& WithJobInvoker(JobInvokerT&& value) { SetJobInvoker(std::forward<JobInvokerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSigningJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSigningJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSigningJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSigningJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Source m_source;
+    bool m_sourceHasBeenSet = false;
 
     SigningMaterial m_signingMaterial;
+    bool m_signingMaterialHasBeenSet = false;
 
     Aws::String m_platformId;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::String m_platformDisplayName;
+    bool m_platformDisplayNameHasBeenSet = false;
 
     Aws::String m_profileName;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_profileVersion;
+    bool m_profileVersionHasBeenSet = false;
 
     SigningPlatformOverrides m_overrides;
+    bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_signingParameters;
+    bool m_signingParametersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedAt;
+    Aws::Utils::DateTime m_completedAt{};
+    bool m_completedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_signatureExpiresAt;
+    Aws::Utils::DateTime m_signatureExpiresAt{};
+    bool m_signatureExpiresAtHasBeenSet = false;
 
     Aws::String m_requestedBy;
+    bool m_requestedByHasBeenSet = false;
 
-    SigningStatus m_status;
+    SigningStatus m_status{SigningStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
 
     SigningJobRevocationRecord m_revocationRecord;
+    bool m_revocationRecordHasBeenSet = false;
 
     SignedObject m_signedObject;
+    bool m_signedObjectHasBeenSet = false;
 
     Aws::String m_jobOwner;
+    bool m_jobOwnerHasBeenSet = false;
 
     Aws::String m_jobInvoker;
+    bool m_jobInvokerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

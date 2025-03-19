@@ -32,7 +32,7 @@ namespace Model
   class RouteContinueStepDetails
   {
   public:
-    AWS_GEOROUTES_API RouteContinueStepDetails();
+    AWS_GEOROUTES_API RouteContinueStepDetails() = default;
     AWS_GEOROUTES_API RouteContinueStepDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteContinueStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>Name of the intersection, if applicable to the step.</p>
      */
-    inline const Aws::Vector<LocalizedString>& GetIntersection() const{ return m_intersection; }
+    inline const Aws::Vector<LocalizedString>& GetIntersection() const { return m_intersection; }
     inline bool IntersectionHasBeenSet() const { return m_intersectionHasBeenSet; }
-    inline void SetIntersection(const Aws::Vector<LocalizedString>& value) { m_intersectionHasBeenSet = true; m_intersection = value; }
-    inline void SetIntersection(Aws::Vector<LocalizedString>&& value) { m_intersectionHasBeenSet = true; m_intersection = std::move(value); }
-    inline RouteContinueStepDetails& WithIntersection(const Aws::Vector<LocalizedString>& value) { SetIntersection(value); return *this;}
-    inline RouteContinueStepDetails& WithIntersection(Aws::Vector<LocalizedString>&& value) { SetIntersection(std::move(value)); return *this;}
-    inline RouteContinueStepDetails& AddIntersection(const LocalizedString& value) { m_intersectionHasBeenSet = true; m_intersection.push_back(value); return *this; }
-    inline RouteContinueStepDetails& AddIntersection(LocalizedString&& value) { m_intersectionHasBeenSet = true; m_intersection.push_back(std::move(value)); return *this; }
+    template<typename IntersectionT = Aws::Vector<LocalizedString>>
+    void SetIntersection(IntersectionT&& value) { m_intersectionHasBeenSet = true; m_intersection = std::forward<IntersectionT>(value); }
+    template<typename IntersectionT = Aws::Vector<LocalizedString>>
+    RouteContinueStepDetails& WithIntersection(IntersectionT&& value) { SetIntersection(std::forward<IntersectionT>(value)); return *this;}
+    template<typename IntersectionT = LocalizedString>
+    RouteContinueStepDetails& AddIntersection(IntersectionT&& value) { m_intersectionHasBeenSet = true; m_intersection.emplace_back(std::forward<IntersectionT>(value)); return *this; }
     ///@}
   private:
 

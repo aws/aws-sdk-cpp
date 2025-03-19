@@ -36,7 +36,7 @@ namespace Model
   class ByoipCidr
   {
   public:
-    AWS_EC2_API ByoipCidr();
+    AWS_EC2_API ByoipCidr() = default;
     AWS_EC2_API ByoipCidr(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ByoipCidr& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,42 +48,38 @@ namespace Model
     /**
      * <p>The address range, in CIDR notation.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline ByoipCidr& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline ByoipCidr& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline ByoipCidr& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    ByoipCidr& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the address range.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ByoipCidr& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ByoipCidr& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ByoipCidr& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ByoipCidr& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The BYOIP CIDR associations with ASNs.</p>
      */
-    inline const Aws::Vector<AsnAssociation>& GetAsnAssociations() const{ return m_asnAssociations; }
+    inline const Aws::Vector<AsnAssociation>& GetAsnAssociations() const { return m_asnAssociations; }
     inline bool AsnAssociationsHasBeenSet() const { return m_asnAssociationsHasBeenSet; }
-    inline void SetAsnAssociations(const Aws::Vector<AsnAssociation>& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations = value; }
-    inline void SetAsnAssociations(Aws::Vector<AsnAssociation>&& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations = std::move(value); }
-    inline ByoipCidr& WithAsnAssociations(const Aws::Vector<AsnAssociation>& value) { SetAsnAssociations(value); return *this;}
-    inline ByoipCidr& WithAsnAssociations(Aws::Vector<AsnAssociation>&& value) { SetAsnAssociations(std::move(value)); return *this;}
-    inline ByoipCidr& AddAsnAssociations(const AsnAssociation& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations.push_back(value); return *this; }
-    inline ByoipCidr& AddAsnAssociations(AsnAssociation&& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations.push_back(std::move(value)); return *this; }
+    template<typename AsnAssociationsT = Aws::Vector<AsnAssociation>>
+    void SetAsnAssociations(AsnAssociationsT&& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations = std::forward<AsnAssociationsT>(value); }
+    template<typename AsnAssociationsT = Aws::Vector<AsnAssociation>>
+    ByoipCidr& WithAsnAssociations(AsnAssociationsT&& value) { SetAsnAssociations(std::forward<AsnAssociationsT>(value)); return *this;}
+    template<typename AsnAssociationsT = AsnAssociation>
+    ByoipCidr& AddAsnAssociations(AsnAssociationsT&& value) { m_asnAssociationsHasBeenSet = true; m_asnAssociations.emplace_back(std::forward<AsnAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * <p>Upon success, contains the ID of the address pool. Otherwise, contains an
      * error message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ByoipCidr& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ByoipCidr& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ByoipCidr& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ByoipCidr& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,10 @@ namespace Model
      * <code>provisioned-not-publicly-advertisable</code>: The address range is
      * provisioned and cannot be advertised.</p> </li> </ul>
      */
-    inline const ByoipCidrState& GetState() const{ return m_state; }
+    inline ByoipCidrState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ByoipCidrState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ByoipCidrState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ByoipCidr& WithState(const ByoipCidrState& value) { SetState(value); return *this;}
-    inline ByoipCidr& WithState(ByoipCidrState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ByoipCidrState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ByoipCidr& WithState(ByoipCidrState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +132,12 @@ namespace Model
      * </li> <li> <p>us-west-2-phx-2</p> </li> </ul>  <p>You cannot provision or
      * advertise BYOIPv6 address ranges in Local Zones at this time.</p> 
      */
-    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+    inline const Aws::String& GetNetworkBorderGroup() const { return m_networkBorderGroup; }
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
-    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
-    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
-    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
-    inline ByoipCidr& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
-    inline ByoipCidr& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
-    inline ByoipCidr& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+    template<typename NetworkBorderGroupT = Aws::String>
+    void SetNetworkBorderGroup(NetworkBorderGroupT&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::forward<NetworkBorderGroupT>(value); }
+    template<typename NetworkBorderGroupT = Aws::String>
+    ByoipCidr& WithNetworkBorderGroup(NetworkBorderGroupT&& value) { SetNetworkBorderGroup(std::forward<NetworkBorderGroupT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,7 +153,7 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    ByoipCidrState m_state;
+    ByoipCidrState m_state{ByoipCidrState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;

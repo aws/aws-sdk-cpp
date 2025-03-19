@@ -32,7 +32,7 @@ namespace Model
   class DeviceRegistrationStateResourceTypeEventConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration() = default;
     AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Device registration resource type state event configuration object for
      * enabling or disabling Sidewalk related event topics.</p>
      */
-    inline const SidewalkResourceTypeEventConfiguration& GetSidewalk() const{ return m_sidewalk; }
+    inline const SidewalkResourceTypeEventConfiguration& GetSidewalk() const { return m_sidewalk; }
     inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
-    inline void SetSidewalk(const SidewalkResourceTypeEventConfiguration& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
-    inline void SetSidewalk(SidewalkResourceTypeEventConfiguration&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
-    inline DeviceRegistrationStateResourceTypeEventConfiguration& WithSidewalk(const SidewalkResourceTypeEventConfiguration& value) { SetSidewalk(value); return *this;}
-    inline DeviceRegistrationStateResourceTypeEventConfiguration& WithSidewalk(SidewalkResourceTypeEventConfiguration&& value) { SetSidewalk(std::move(value)); return *this;}
+    template<typename SidewalkT = SidewalkResourceTypeEventConfiguration>
+    void SetSidewalk(SidewalkT&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::forward<SidewalkT>(value); }
+    template<typename SidewalkT = SidewalkResourceTypeEventConfiguration>
+    DeviceRegistrationStateResourceTypeEventConfiguration& WithSidewalk(SidewalkT&& value) { SetSidewalk(std::forward<SidewalkT>(value)); return *this;}
     ///@}
   private:
 

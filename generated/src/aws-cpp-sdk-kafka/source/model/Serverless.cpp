@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Serverless::Serverless() : 
-    m_vpcConfigsHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false)
-{
-}
-
 Serverless::Serverless(JsonView jsonValue)
-  : Serverless()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ Serverless& Serverless::operator =(JsonView jsonValue)
     }
     m_vpcConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientAuthentication"))
   {
     m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
-
     m_clientAuthenticationHasBeenSet = true;
   }
-
   return *this;
 }
 

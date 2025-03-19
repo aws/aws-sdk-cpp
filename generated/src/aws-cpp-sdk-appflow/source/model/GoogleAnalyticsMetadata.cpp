@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-GoogleAnalyticsMetadata::GoogleAnalyticsMetadata() : 
-    m_oAuthScopesHasBeenSet(false)
-{
-}
-
 GoogleAnalyticsMetadata::GoogleAnalyticsMetadata(JsonView jsonValue)
-  : GoogleAnalyticsMetadata()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GoogleAnalyticsMetadata& GoogleAnalyticsMetadata::operator =(JsonView jsonValue)
     }
     m_oAuthScopesHasBeenSet = true;
   }
-
   return *this;
 }
 

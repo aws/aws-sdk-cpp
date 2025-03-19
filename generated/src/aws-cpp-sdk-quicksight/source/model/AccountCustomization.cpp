@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AccountCustomization::AccountCustomization() : 
-    m_defaultThemeHasBeenSet(false),
-    m_defaultEmailCustomizationTemplateHasBeenSet(false)
-{
-}
-
 AccountCustomization::AccountCustomization(JsonView jsonValue)
-  : AccountCustomization()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountCustomization& AccountCustomization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultTheme"))
   {
     m_defaultTheme = jsonValue.GetString("DefaultTheme");
-
     m_defaultThemeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultEmailCustomizationTemplate"))
   {
     m_defaultEmailCustomizationTemplate = jsonValue.GetString("DefaultEmailCustomizationTemplate");
-
     m_defaultEmailCustomizationTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

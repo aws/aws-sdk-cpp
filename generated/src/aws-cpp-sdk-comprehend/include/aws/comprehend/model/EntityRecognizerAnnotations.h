@@ -32,7 +32,7 @@ namespace Model
   class EntityRecognizerAnnotations
   {
   public:
-    AWS_COMPREHEND_API EntityRecognizerAnnotations();
+    AWS_COMPREHEND_API EntityRecognizerAnnotations() = default;
     AWS_COMPREHEND_API EntityRecognizerAnnotations(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityRecognizerAnnotations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * recognizer are located. The URI must be in the same Region as the API endpoint
      * that you are calling.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline EntityRecognizerAnnotations& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline EntityRecognizerAnnotations& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline EntityRecognizerAnnotations& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    EntityRecognizerAnnotations& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * recognizer are located. The URI must be in the same Region as the API endpoint
      * that you are calling.</p>
      */
-    inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
+    inline const Aws::String& GetTestS3Uri() const { return m_testS3Uri; }
     inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
-    inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
-    inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
-    inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
-    inline EntityRecognizerAnnotations& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
-    inline EntityRecognizerAnnotations& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
-    inline EntityRecognizerAnnotations& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
+    template<typename TestS3UriT = Aws::String>
+    void SetTestS3Uri(TestS3UriT&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::forward<TestS3UriT>(value); }
+    template<typename TestS3UriT = Aws::String>
+    EntityRecognizerAnnotations& WithTestS3Uri(TestS3UriT&& value) { SetTestS3Uri(std::forward<TestS3UriT>(value)); return *this;}
     ///@}
   private:
 

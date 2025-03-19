@@ -34,7 +34,7 @@ namespace Model
   class SourceManifestConfig
   {
   public:
-    AWS_DATASYNC_API SourceManifestConfig();
+    AWS_DATASYNC_API SourceManifestConfig() = default;
     AWS_DATASYNC_API SourceManifestConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API SourceManifestConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Specifies the S3 bucket where you're hosting your manifest.</p>
      */
-    inline const S3ManifestConfig& GetS3() const{ return m_s3; }
+    inline const S3ManifestConfig& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3ManifestConfig& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3ManifestConfig&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline SourceManifestConfig& WithS3(const S3ManifestConfig& value) { SetS3(value); return *this;}
-    inline SourceManifestConfig& WithS3(S3ManifestConfig&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3ManifestConfig>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3ManifestConfig>
+    SourceManifestConfig& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

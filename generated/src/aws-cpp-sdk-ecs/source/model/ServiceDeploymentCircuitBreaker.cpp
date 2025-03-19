@@ -18,18 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceDeploymentCircuitBreaker::ServiceDeploymentCircuitBreaker() : 
-    m_status(ServiceDeploymentRollbackMonitorsStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureCount(0),
-    m_failureCountHasBeenSet(false),
-    m_threshold(0),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 ServiceDeploymentCircuitBreaker::ServiceDeploymentCircuitBreaker(JsonView jsonValue)
-  : ServiceDeploymentCircuitBreaker()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ServiceDeploymentCircuitBreaker& ServiceDeploymentCircuitBreaker::operator =(Jso
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceDeploymentRollbackMonitorsStatusMapper::GetServiceDeploymentRollbackMonitorsStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCount"))
   {
     m_failureCount = jsonValue.GetInteger("failureCount");
-
     m_failureCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetInteger("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

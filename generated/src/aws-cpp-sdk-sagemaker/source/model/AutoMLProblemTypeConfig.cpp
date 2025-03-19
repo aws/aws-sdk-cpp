@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLProblemTypeConfig::AutoMLProblemTypeConfig() : 
-    m_imageClassificationJobConfigHasBeenSet(false),
-    m_textClassificationJobConfigHasBeenSet(false),
-    m_timeSeriesForecastingJobConfigHasBeenSet(false),
-    m_tabularJobConfigHasBeenSet(false),
-    m_textGenerationJobConfigHasBeenSet(false)
-{
-}
-
 AutoMLProblemTypeConfig::AutoMLProblemTypeConfig(JsonView jsonValue)
-  : AutoMLProblemTypeConfig()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AutoMLProblemTypeConfig& AutoMLProblemTypeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageClassificationJobConfig"))
   {
     m_imageClassificationJobConfig = jsonValue.GetObject("ImageClassificationJobConfig");
-
     m_imageClassificationJobConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextClassificationJobConfig"))
   {
     m_textClassificationJobConfig = jsonValue.GetObject("TextClassificationJobConfig");
-
     m_textClassificationJobConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSeriesForecastingJobConfig"))
   {
     m_timeSeriesForecastingJobConfig = jsonValue.GetObject("TimeSeriesForecastingJobConfig");
-
     m_timeSeriesForecastingJobConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TabularJobConfig"))
   {
     m_tabularJobConfig = jsonValue.GetObject("TabularJobConfig");
-
     m_tabularJobConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextGenerationJobConfig"))
   {
     m_textGenerationJobConfig = jsonValue.GetObject("TextGenerationJobConfig");
-
     m_textGenerationJobConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

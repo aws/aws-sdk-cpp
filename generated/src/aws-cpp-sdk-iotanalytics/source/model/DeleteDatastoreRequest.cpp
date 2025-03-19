@@ -12,11 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatastoreRequest::DeleteDatastoreRequest() : 
-    m_datastoreNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatastoreRequest::SerializePayload() const
 {
   return {};

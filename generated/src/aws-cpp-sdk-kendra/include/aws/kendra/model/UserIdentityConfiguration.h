@@ -32,7 +32,7 @@ namespace Model
   class UserIdentityConfiguration
   {
   public:
-    AWS_KENDRA_API UserIdentityConfiguration();
+    AWS_KENDRA_API UserIdentityConfiguration() = default;
     AWS_KENDRA_API UserIdentityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API UserIdentityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting
      * started with an IAM Identity Center identity source</a>.</p>
      */
-    inline const Aws::String& GetIdentityAttributeName() const{ return m_identityAttributeName; }
+    inline const Aws::String& GetIdentityAttributeName() const { return m_identityAttributeName; }
     inline bool IdentityAttributeNameHasBeenSet() const { return m_identityAttributeNameHasBeenSet; }
-    inline void SetIdentityAttributeName(const Aws::String& value) { m_identityAttributeNameHasBeenSet = true; m_identityAttributeName = value; }
-    inline void SetIdentityAttributeName(Aws::String&& value) { m_identityAttributeNameHasBeenSet = true; m_identityAttributeName = std::move(value); }
-    inline void SetIdentityAttributeName(const char* value) { m_identityAttributeNameHasBeenSet = true; m_identityAttributeName.assign(value); }
-    inline UserIdentityConfiguration& WithIdentityAttributeName(const Aws::String& value) { SetIdentityAttributeName(value); return *this;}
-    inline UserIdentityConfiguration& WithIdentityAttributeName(Aws::String&& value) { SetIdentityAttributeName(std::move(value)); return *this;}
-    inline UserIdentityConfiguration& WithIdentityAttributeName(const char* value) { SetIdentityAttributeName(value); return *this;}
+    template<typename IdentityAttributeNameT = Aws::String>
+    void SetIdentityAttributeName(IdentityAttributeNameT&& value) { m_identityAttributeNameHasBeenSet = true; m_identityAttributeName = std::forward<IdentityAttributeNameT>(value); }
+    template<typename IdentityAttributeNameT = Aws::String>
+    UserIdentityConfiguration& WithIdentityAttributeName(IdentityAttributeNameT&& value) { SetIdentityAttributeName(std::forward<IdentityAttributeNameT>(value)); return *this;}
     ///@}
   private:
 

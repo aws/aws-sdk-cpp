@@ -12,11 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetrieveDomainAuthCodeRequest::RetrieveDomainAuthCodeRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String RetrieveDomainAuthCodeRequest::SerializePayload() const
 {
   JsonValue payload;

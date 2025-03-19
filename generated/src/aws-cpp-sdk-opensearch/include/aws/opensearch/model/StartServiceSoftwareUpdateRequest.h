@@ -26,7 +26,7 @@ namespace Model
   class StartServiceSoftwareUpdateRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API StartServiceSoftwareUpdateRequest();
+    AWS_OPENSEARCHSERVICE_API StartServiceSoftwareUpdateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name of the domain that you want to update to the latest service
      * software.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline StartServiceSoftwareUpdateRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline StartServiceSoftwareUpdateRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline StartServiceSoftwareUpdateRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    StartServiceSoftwareUpdateRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if
      * you do.</p>
      */
-    inline const ScheduleAt& GetScheduleAt() const{ return m_scheduleAt; }
+    inline ScheduleAt GetScheduleAt() const { return m_scheduleAt; }
     inline bool ScheduleAtHasBeenSet() const { return m_scheduleAtHasBeenSet; }
-    inline void SetScheduleAt(const ScheduleAt& value) { m_scheduleAtHasBeenSet = true; m_scheduleAt = value; }
-    inline void SetScheduleAt(ScheduleAt&& value) { m_scheduleAtHasBeenSet = true; m_scheduleAt = std::move(value); }
-    inline StartServiceSoftwareUpdateRequest& WithScheduleAt(const ScheduleAt& value) { SetScheduleAt(value); return *this;}
-    inline StartServiceSoftwareUpdateRequest& WithScheduleAt(ScheduleAt&& value) { SetScheduleAt(std::move(value)); return *this;}
+    inline void SetScheduleAt(ScheduleAt value) { m_scheduleAtHasBeenSet = true; m_scheduleAt = value; }
+    inline StartServiceSoftwareUpdateRequest& WithScheduleAt(ScheduleAt value) { SetScheduleAt(value); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * only need to specify this parameter if you set <code>ScheduleAt</code> to
      * <code>TIMESTAMP</code>.</p>
      */
-    inline long long GetDesiredStartTime() const{ return m_desiredStartTime; }
+    inline long long GetDesiredStartTime() const { return m_desiredStartTime; }
     inline bool DesiredStartTimeHasBeenSet() const { return m_desiredStartTimeHasBeenSet; }
     inline void SetDesiredStartTime(long long value) { m_desiredStartTimeHasBeenSet = true; m_desiredStartTime = value; }
     inline StartServiceSoftwareUpdateRequest& WithDesiredStartTime(long long value) { SetDesiredStartTime(value); return *this;}
@@ -90,10 +86,10 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    ScheduleAt m_scheduleAt;
+    ScheduleAt m_scheduleAt{ScheduleAt::NOT_SET};
     bool m_scheduleAtHasBeenSet = false;
 
-    long long m_desiredStartTime;
+    long long m_desiredStartTime{0};
     bool m_desiredStartTimeHasBeenSet = false;
   };
 

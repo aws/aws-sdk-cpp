@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-InboundConnectionStatus::InboundConnectionStatus() : 
-    m_statusCode(InboundConnectionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InboundConnectionStatus::InboundConnectionStatus(JsonView jsonValue)
-  : InboundConnectionStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InboundConnectionStatus& InboundConnectionStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = InboundConnectionStatusCodeMapper::GetInboundConnectionStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

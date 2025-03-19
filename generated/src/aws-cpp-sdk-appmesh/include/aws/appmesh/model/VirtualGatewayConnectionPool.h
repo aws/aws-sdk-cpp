@@ -37,7 +37,7 @@ namespace Model
   class VirtualGatewayConnectionPool
   {
   public:
-    AWS_APPMESH_API VirtualGatewayConnectionPool();
+    AWS_APPMESH_API VirtualGatewayConnectionPool() = default;
     AWS_APPMESH_API VirtualGatewayConnectionPool(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,36 +47,36 @@ namespace Model
     /**
      * <p>An object that represents a type of connection pool. </p>
      */
-    inline const VirtualGatewayGrpcConnectionPool& GetGrpc() const{ return m_grpc; }
+    inline const VirtualGatewayGrpcConnectionPool& GetGrpc() const { return m_grpc; }
     inline bool GrpcHasBeenSet() const { return m_grpcHasBeenSet; }
-    inline void SetGrpc(const VirtualGatewayGrpcConnectionPool& value) { m_grpcHasBeenSet = true; m_grpc = value; }
-    inline void SetGrpc(VirtualGatewayGrpcConnectionPool&& value) { m_grpcHasBeenSet = true; m_grpc = std::move(value); }
-    inline VirtualGatewayConnectionPool& WithGrpc(const VirtualGatewayGrpcConnectionPool& value) { SetGrpc(value); return *this;}
-    inline VirtualGatewayConnectionPool& WithGrpc(VirtualGatewayGrpcConnectionPool&& value) { SetGrpc(std::move(value)); return *this;}
+    template<typename GrpcT = VirtualGatewayGrpcConnectionPool>
+    void SetGrpc(GrpcT&& value) { m_grpcHasBeenSet = true; m_grpc = std::forward<GrpcT>(value); }
+    template<typename GrpcT = VirtualGatewayGrpcConnectionPool>
+    VirtualGatewayConnectionPool& WithGrpc(GrpcT&& value) { SetGrpc(std::forward<GrpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents a type of connection pool.</p>
      */
-    inline const VirtualGatewayHttpConnectionPool& GetHttp() const{ return m_http; }
+    inline const VirtualGatewayHttpConnectionPool& GetHttp() const { return m_http; }
     inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
-    inline void SetHttp(const VirtualGatewayHttpConnectionPool& value) { m_httpHasBeenSet = true; m_http = value; }
-    inline void SetHttp(VirtualGatewayHttpConnectionPool&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
-    inline VirtualGatewayConnectionPool& WithHttp(const VirtualGatewayHttpConnectionPool& value) { SetHttp(value); return *this;}
-    inline VirtualGatewayConnectionPool& WithHttp(VirtualGatewayHttpConnectionPool&& value) { SetHttp(std::move(value)); return *this;}
+    template<typename HttpT = VirtualGatewayHttpConnectionPool>
+    void SetHttp(HttpT&& value) { m_httpHasBeenSet = true; m_http = std::forward<HttpT>(value); }
+    template<typename HttpT = VirtualGatewayHttpConnectionPool>
+    VirtualGatewayConnectionPool& WithHttp(HttpT&& value) { SetHttp(std::forward<HttpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents a type of connection pool.</p>
      */
-    inline const VirtualGatewayHttp2ConnectionPool& GetHttp2() const{ return m_http2; }
+    inline const VirtualGatewayHttp2ConnectionPool& GetHttp2() const { return m_http2; }
     inline bool Http2HasBeenSet() const { return m_http2HasBeenSet; }
-    inline void SetHttp2(const VirtualGatewayHttp2ConnectionPool& value) { m_http2HasBeenSet = true; m_http2 = value; }
-    inline void SetHttp2(VirtualGatewayHttp2ConnectionPool&& value) { m_http2HasBeenSet = true; m_http2 = std::move(value); }
-    inline VirtualGatewayConnectionPool& WithHttp2(const VirtualGatewayHttp2ConnectionPool& value) { SetHttp2(value); return *this;}
-    inline VirtualGatewayConnectionPool& WithHttp2(VirtualGatewayHttp2ConnectionPool&& value) { SetHttp2(std::move(value)); return *this;}
+    template<typename Http2T = VirtualGatewayHttp2ConnectionPool>
+    void SetHttp2(Http2T&& value) { m_http2HasBeenSet = true; m_http2 = std::forward<Http2T>(value); }
+    template<typename Http2T = VirtualGatewayHttp2ConnectionPool>
+    VirtualGatewayConnectionPool& WithHttp2(Http2T&& value) { SetHttp2(std::forward<Http2T>(value)); return *this;}
     ///@}
   private:
 

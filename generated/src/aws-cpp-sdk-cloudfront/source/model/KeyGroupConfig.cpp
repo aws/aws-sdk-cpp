@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KeyGroupConfig::KeyGroupConfig() : 
-    m_nameHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 KeyGroupConfig::KeyGroupConfig(const XmlNode& xmlNode)
-  : KeyGroupConfig()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ KeyGroupConfig& KeyGroupConfig::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("PublicKey");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());

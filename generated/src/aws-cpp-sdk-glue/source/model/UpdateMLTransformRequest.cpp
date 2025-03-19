@@ -12,26 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMLTransformRequest::UpdateMLTransformRequest() : 
-    m_transformIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMLTransformRequest::SerializePayload() const
 {
   JsonValue payload;

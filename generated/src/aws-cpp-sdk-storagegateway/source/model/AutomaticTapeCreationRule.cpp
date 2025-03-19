@@ -18,20 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-AutomaticTapeCreationRule::AutomaticTapeCreationRule() : 
-    m_tapeBarcodePrefixHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_tapeSizeInBytes(0),
-    m_tapeSizeInBytesHasBeenSet(false),
-    m_minimumNumTapes(0),
-    m_minimumNumTapesHasBeenSet(false),
-    m_worm(false),
-    m_wormHasBeenSet(false)
-{
-}
-
 AutomaticTapeCreationRule::AutomaticTapeCreationRule(JsonView jsonValue)
-  : AutomaticTapeCreationRule()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AutomaticTapeCreationRule& AutomaticTapeCreationRule::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TapeBarcodePrefix"))
   {
     m_tapeBarcodePrefix = jsonValue.GetString("TapeBarcodePrefix");
-
     m_tapeBarcodePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolId"))
   {
     m_poolId = jsonValue.GetString("PoolId");
-
     m_poolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TapeSizeInBytes"))
   {
     m_tapeSizeInBytes = jsonValue.GetInt64("TapeSizeInBytes");
-
     m_tapeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumNumTapes"))
   {
     m_minimumNumTapes = jsonValue.GetInteger("MinimumNumTapes");
-
     m_minimumNumTapesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Worm"))
   {
     m_worm = jsonValue.GetBool("Worm");
-
     m_wormHasBeenSet = true;
   }
-
   return *this;
 }
 

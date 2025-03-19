@@ -18,13 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-S3ExportDestinationConfiguration::S3ExportDestinationConfiguration() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 S3ExportDestinationConfiguration::S3ExportDestinationConfiguration(JsonView jsonValue)
-  : S3ExportDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ExportDestinationConfiguration& S3ExportDestinationConfiguration::operator =(J
   if(jsonValue.ValueExists("S3Location"))
   {
     m_s3Location = jsonValue.GetString("S3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

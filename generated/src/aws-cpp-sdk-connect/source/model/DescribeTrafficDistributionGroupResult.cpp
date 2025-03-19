@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrafficDistributionGroupResult::DescribeTrafficDistributionGroupResult()
-{
-}
-
 DescribeTrafficDistributionGroupResult::DescribeTrafficDistributionGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeTrafficDistributionGroupResult& DescribeTrafficDistributionGroupResult::
   if(jsonValue.ValueExists("TrafficDistributionGroup"))
   {
     m_trafficDistributionGroup = jsonValue.GetObject("TrafficDistributionGroup");
-
+    m_trafficDistributionGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

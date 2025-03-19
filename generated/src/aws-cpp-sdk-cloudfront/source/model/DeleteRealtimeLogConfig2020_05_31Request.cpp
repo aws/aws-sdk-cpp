@@ -14,11 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteRealtimeLogConfig2020_05_31Request::DeleteRealtimeLogConfig2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
 
 Aws::String DeleteRealtimeLogConfig2020_05_31Request::SerializePayload() const
 {

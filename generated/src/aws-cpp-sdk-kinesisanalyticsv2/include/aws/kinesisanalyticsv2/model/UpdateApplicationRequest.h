@@ -26,7 +26,7 @@ namespace Model
   class UpdateApplicationRequest : public KinesisAnalyticsV2Request
   {
   public:
-    AWS_KINESISANALYTICSV2_API UpdateApplicationRequest();
+    AWS_KINESISANALYTICSV2_API UpdateApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the application to update.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline UpdateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    UpdateApplicationRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <code>ConditionalToken</code> parameter instead of
      * <code>CurrentApplicationVersionId</code>.</p>
      */
-    inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
+    inline long long GetCurrentApplicationVersionId() const { return m_currentApplicationVersionId; }
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
     inline UpdateApplicationRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
@@ -72,38 +70,36 @@ namespace Model
     /**
      * <p>Describes application configuration updates.</p>
      */
-    inline const ApplicationConfigurationUpdate& GetApplicationConfigurationUpdate() const{ return m_applicationConfigurationUpdate; }
+    inline const ApplicationConfigurationUpdate& GetApplicationConfigurationUpdate() const { return m_applicationConfigurationUpdate; }
     inline bool ApplicationConfigurationUpdateHasBeenSet() const { return m_applicationConfigurationUpdateHasBeenSet; }
-    inline void SetApplicationConfigurationUpdate(const ApplicationConfigurationUpdate& value) { m_applicationConfigurationUpdateHasBeenSet = true; m_applicationConfigurationUpdate = value; }
-    inline void SetApplicationConfigurationUpdate(ApplicationConfigurationUpdate&& value) { m_applicationConfigurationUpdateHasBeenSet = true; m_applicationConfigurationUpdate = std::move(value); }
-    inline UpdateApplicationRequest& WithApplicationConfigurationUpdate(const ApplicationConfigurationUpdate& value) { SetApplicationConfigurationUpdate(value); return *this;}
-    inline UpdateApplicationRequest& WithApplicationConfigurationUpdate(ApplicationConfigurationUpdate&& value) { SetApplicationConfigurationUpdate(std::move(value)); return *this;}
+    template<typename ApplicationConfigurationUpdateT = ApplicationConfigurationUpdate>
+    void SetApplicationConfigurationUpdate(ApplicationConfigurationUpdateT&& value) { m_applicationConfigurationUpdateHasBeenSet = true; m_applicationConfigurationUpdate = std::forward<ApplicationConfigurationUpdateT>(value); }
+    template<typename ApplicationConfigurationUpdateT = ApplicationConfigurationUpdate>
+    UpdateApplicationRequest& WithApplicationConfigurationUpdate(ApplicationConfigurationUpdateT&& value) { SetApplicationConfigurationUpdate(std::forward<ApplicationConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes updates to the service execution role.</p>
      */
-    inline const Aws::String& GetServiceExecutionRoleUpdate() const{ return m_serviceExecutionRoleUpdate; }
+    inline const Aws::String& GetServiceExecutionRoleUpdate() const { return m_serviceExecutionRoleUpdate; }
     inline bool ServiceExecutionRoleUpdateHasBeenSet() const { return m_serviceExecutionRoleUpdateHasBeenSet; }
-    inline void SetServiceExecutionRoleUpdate(const Aws::String& value) { m_serviceExecutionRoleUpdateHasBeenSet = true; m_serviceExecutionRoleUpdate = value; }
-    inline void SetServiceExecutionRoleUpdate(Aws::String&& value) { m_serviceExecutionRoleUpdateHasBeenSet = true; m_serviceExecutionRoleUpdate = std::move(value); }
-    inline void SetServiceExecutionRoleUpdate(const char* value) { m_serviceExecutionRoleUpdateHasBeenSet = true; m_serviceExecutionRoleUpdate.assign(value); }
-    inline UpdateApplicationRequest& WithServiceExecutionRoleUpdate(const Aws::String& value) { SetServiceExecutionRoleUpdate(value); return *this;}
-    inline UpdateApplicationRequest& WithServiceExecutionRoleUpdate(Aws::String&& value) { SetServiceExecutionRoleUpdate(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithServiceExecutionRoleUpdate(const char* value) { SetServiceExecutionRoleUpdate(value); return *this;}
+    template<typename ServiceExecutionRoleUpdateT = Aws::String>
+    void SetServiceExecutionRoleUpdate(ServiceExecutionRoleUpdateT&& value) { m_serviceExecutionRoleUpdateHasBeenSet = true; m_serviceExecutionRoleUpdate = std::forward<ServiceExecutionRoleUpdateT>(value); }
+    template<typename ServiceExecutionRoleUpdateT = Aws::String>
+    UpdateApplicationRequest& WithServiceExecutionRoleUpdate(ServiceExecutionRoleUpdateT&& value) { SetServiceExecutionRoleUpdate(std::forward<ServiceExecutionRoleUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes updates to the application's starting parameters.</p>
      */
-    inline const RunConfigurationUpdate& GetRunConfigurationUpdate() const{ return m_runConfigurationUpdate; }
+    inline const RunConfigurationUpdate& GetRunConfigurationUpdate() const { return m_runConfigurationUpdate; }
     inline bool RunConfigurationUpdateHasBeenSet() const { return m_runConfigurationUpdateHasBeenSet; }
-    inline void SetRunConfigurationUpdate(const RunConfigurationUpdate& value) { m_runConfigurationUpdateHasBeenSet = true; m_runConfigurationUpdate = value; }
-    inline void SetRunConfigurationUpdate(RunConfigurationUpdate&& value) { m_runConfigurationUpdateHasBeenSet = true; m_runConfigurationUpdate = std::move(value); }
-    inline UpdateApplicationRequest& WithRunConfigurationUpdate(const RunConfigurationUpdate& value) { SetRunConfigurationUpdate(value); return *this;}
-    inline UpdateApplicationRequest& WithRunConfigurationUpdate(RunConfigurationUpdate&& value) { SetRunConfigurationUpdate(std::move(value)); return *this;}
+    template<typename RunConfigurationUpdateT = RunConfigurationUpdate>
+    void SetRunConfigurationUpdate(RunConfigurationUpdateT&& value) { m_runConfigurationUpdateHasBeenSet = true; m_runConfigurationUpdate = std::forward<RunConfigurationUpdateT>(value); }
+    template<typename RunConfigurationUpdateT = RunConfigurationUpdate>
+    UpdateApplicationRequest& WithRunConfigurationUpdate(RunConfigurationUpdateT&& value) { SetRunConfigurationUpdate(std::forward<RunConfigurationUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +108,14 @@ namespace Model
      * update existing CloudWatch logging options with this action. To add a new
      * CloudWatch logging option, use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
      */
-    inline const Aws::Vector<CloudWatchLoggingOptionUpdate>& GetCloudWatchLoggingOptionUpdates() const{ return m_cloudWatchLoggingOptionUpdates; }
+    inline const Aws::Vector<CloudWatchLoggingOptionUpdate>& GetCloudWatchLoggingOptionUpdates() const { return m_cloudWatchLoggingOptionUpdates; }
     inline bool CloudWatchLoggingOptionUpdatesHasBeenSet() const { return m_cloudWatchLoggingOptionUpdatesHasBeenSet; }
-    inline void SetCloudWatchLoggingOptionUpdates(const Aws::Vector<CloudWatchLoggingOptionUpdate>& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates = value; }
-    inline void SetCloudWatchLoggingOptionUpdates(Aws::Vector<CloudWatchLoggingOptionUpdate>&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates = std::move(value); }
-    inline UpdateApplicationRequest& WithCloudWatchLoggingOptionUpdates(const Aws::Vector<CloudWatchLoggingOptionUpdate>& value) { SetCloudWatchLoggingOptionUpdates(value); return *this;}
-    inline UpdateApplicationRequest& WithCloudWatchLoggingOptionUpdates(Aws::Vector<CloudWatchLoggingOptionUpdate>&& value) { SetCloudWatchLoggingOptionUpdates(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& AddCloudWatchLoggingOptionUpdates(const CloudWatchLoggingOptionUpdate& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.push_back(value); return *this; }
-    inline UpdateApplicationRequest& AddCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdate&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.push_back(std::move(value)); return *this; }
+    template<typename CloudWatchLoggingOptionUpdatesT = Aws::Vector<CloudWatchLoggingOptionUpdate>>
+    void SetCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdatesT&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates = std::forward<CloudWatchLoggingOptionUpdatesT>(value); }
+    template<typename CloudWatchLoggingOptionUpdatesT = Aws::Vector<CloudWatchLoggingOptionUpdate>>
+    UpdateApplicationRequest& WithCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdatesT&& value) { SetCloudWatchLoggingOptionUpdates(std::forward<CloudWatchLoggingOptionUpdatesT>(value)); return *this;}
+    template<typename CloudWatchLoggingOptionUpdatesT = CloudWatchLoggingOptionUpdate>
+    UpdateApplicationRequest& AddCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdatesT&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.emplace_back(std::forward<CloudWatchLoggingOptionUpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,14 +127,12 @@ namespace Model
      * concurrency support, use the <code>ConditionalToken</code> parameter instead of
      * <code>CurrentApplicationVersionId</code>.</p>
      */
-    inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
+    inline const Aws::String& GetConditionalToken() const { return m_conditionalToken; }
     inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
-    inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
-    inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
-    inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
-    inline UpdateApplicationRequest& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
-    inline UpdateApplicationRequest& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
+    template<typename ConditionalTokenT = Aws::String>
+    void SetConditionalToken(ConditionalTokenT&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::forward<ConditionalTokenT>(value); }
+    template<typename ConditionalTokenT = Aws::String>
+    UpdateApplicationRequest& WithConditionalToken(ConditionalTokenT&& value) { SetConditionalToken(std::forward<ConditionalTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,19 +143,17 @@ namespace Model
      * <p>Ensure your new code's state is compatible with the snapshot from which your
      * application will start</p> </li> </ul>
      */
-    inline const RuntimeEnvironment& GetRuntimeEnvironmentUpdate() const{ return m_runtimeEnvironmentUpdate; }
+    inline RuntimeEnvironment GetRuntimeEnvironmentUpdate() const { return m_runtimeEnvironmentUpdate; }
     inline bool RuntimeEnvironmentUpdateHasBeenSet() const { return m_runtimeEnvironmentUpdateHasBeenSet; }
-    inline void SetRuntimeEnvironmentUpdate(const RuntimeEnvironment& value) { m_runtimeEnvironmentUpdateHasBeenSet = true; m_runtimeEnvironmentUpdate = value; }
-    inline void SetRuntimeEnvironmentUpdate(RuntimeEnvironment&& value) { m_runtimeEnvironmentUpdateHasBeenSet = true; m_runtimeEnvironmentUpdate = std::move(value); }
-    inline UpdateApplicationRequest& WithRuntimeEnvironmentUpdate(const RuntimeEnvironment& value) { SetRuntimeEnvironmentUpdate(value); return *this;}
-    inline UpdateApplicationRequest& WithRuntimeEnvironmentUpdate(RuntimeEnvironment&& value) { SetRuntimeEnvironmentUpdate(std::move(value)); return *this;}
+    inline void SetRuntimeEnvironmentUpdate(RuntimeEnvironment value) { m_runtimeEnvironmentUpdateHasBeenSet = true; m_runtimeEnvironmentUpdate = value; }
+    inline UpdateApplicationRequest& WithRuntimeEnvironmentUpdate(RuntimeEnvironment value) { SetRuntimeEnvironmentUpdate(value); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet = false;
 
-    long long m_currentApplicationVersionId;
+    long long m_currentApplicationVersionId{0};
     bool m_currentApplicationVersionIdHasBeenSet = false;
 
     ApplicationConfigurationUpdate m_applicationConfigurationUpdate;
@@ -179,7 +171,7 @@ namespace Model
     Aws::String m_conditionalToken;
     bool m_conditionalTokenHasBeenSet = false;
 
-    RuntimeEnvironment m_runtimeEnvironmentUpdate;
+    RuntimeEnvironment m_runtimeEnvironmentUpdate{RuntimeEnvironment::NOT_SET};
     bool m_runtimeEnvironmentUpdateHasBeenSet = false;
   };
 

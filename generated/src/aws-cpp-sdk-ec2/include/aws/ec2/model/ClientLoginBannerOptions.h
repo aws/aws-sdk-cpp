@@ -33,7 +33,7 @@ namespace Model
   class ClientLoginBannerOptions
   {
   public:
-    AWS_EC2_API ClientLoginBannerOptions();
+    AWS_EC2_API ClientLoginBannerOptions() = default;
     AWS_EC2_API ClientLoginBannerOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClientLoginBannerOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * Web Services provided clients when a VPN session is established.</p> <p>Valid
      * values: <code>true | false</code> </p> <p>Default value: <code>false</code> </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ClientLoginBannerOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -59,18 +59,16 @@ namespace Model
      * provided clients when a VPN session is established. UTF-8 encoded characters
      * only. Maximum of 1400 characters.</p>
      */
-    inline const Aws::String& GetBannerText() const{ return m_bannerText; }
+    inline const Aws::String& GetBannerText() const { return m_bannerText; }
     inline bool BannerTextHasBeenSet() const { return m_bannerTextHasBeenSet; }
-    inline void SetBannerText(const Aws::String& value) { m_bannerTextHasBeenSet = true; m_bannerText = value; }
-    inline void SetBannerText(Aws::String&& value) { m_bannerTextHasBeenSet = true; m_bannerText = std::move(value); }
-    inline void SetBannerText(const char* value) { m_bannerTextHasBeenSet = true; m_bannerText.assign(value); }
-    inline ClientLoginBannerOptions& WithBannerText(const Aws::String& value) { SetBannerText(value); return *this;}
-    inline ClientLoginBannerOptions& WithBannerText(Aws::String&& value) { SetBannerText(std::move(value)); return *this;}
-    inline ClientLoginBannerOptions& WithBannerText(const char* value) { SetBannerText(value); return *this;}
+    template<typename BannerTextT = Aws::String>
+    void SetBannerText(BannerTextT&& value) { m_bannerTextHasBeenSet = true; m_bannerText = std::forward<BannerTextT>(value); }
+    template<typename BannerTextT = Aws::String>
+    ClientLoginBannerOptions& WithBannerText(BannerTextT&& value) { SetBannerText(std::forward<BannerTextT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_bannerText;

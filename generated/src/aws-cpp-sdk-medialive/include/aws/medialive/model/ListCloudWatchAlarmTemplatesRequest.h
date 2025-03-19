@@ -29,7 +29,7 @@ namespace Model
   class ListCloudWatchAlarmTemplatesRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API ListCloudWatchAlarmTemplatesRequest();
+    AWS_MEDIALIVE_API ListCloudWatchAlarmTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,19 +47,17 @@ namespace Model
      * A cloudwatch alarm template group's identifier. Can be either be its id or
      * current name.
      */
-    inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
+    inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
-    inline void SetGroupIdentifier(const Aws::String& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = value; }
-    inline void SetGroupIdentifier(Aws::String&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::move(value); }
-    inline void SetGroupIdentifier(const char* value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier.assign(value); }
-    inline ListCloudWatchAlarmTemplatesRequest& WithGroupIdentifier(const Aws::String& value) { SetGroupIdentifier(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithGroupIdentifier(Aws::String&& value) { SetGroupIdentifier(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithGroupIdentifier(const char* value) { SetGroupIdentifier(value); return *this;}
+    template<typename GroupIdentifierT = Aws::String>
+    void SetGroupIdentifier(GroupIdentifierT&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::forward<GroupIdentifierT>(value); }
+    template<typename GroupIdentifierT = Aws::String>
+    ListCloudWatchAlarmTemplatesRequest& WithGroupIdentifier(GroupIdentifierT&& value) { SetGroupIdentifier(std::forward<GroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCloudWatchAlarmTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,14 +67,12 @@ namespace Model
     /**
      * A token used to retrieve the next set of results in paginated list responses.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCloudWatchAlarmTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCloudWatchAlarmTemplatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,35 +80,31 @@ namespace Model
      * Represents the scope of a resource, with options for all scopes, AWS provided
      * resources, or local resources.
      */
-    inline const Aws::String& GetScope() const{ return m_scope; }
+    inline const Aws::String& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
-    inline ListCloudWatchAlarmTemplatesRequest& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithScope(const char* value) { SetScope(value); return *this;}
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    ListCloudWatchAlarmTemplatesRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A signal map's identifier. Can be either be its id or current name.
      */
-    inline const Aws::String& GetSignalMapIdentifier() const{ return m_signalMapIdentifier; }
+    inline const Aws::String& GetSignalMapIdentifier() const { return m_signalMapIdentifier; }
     inline bool SignalMapIdentifierHasBeenSet() const { return m_signalMapIdentifierHasBeenSet; }
-    inline void SetSignalMapIdentifier(const Aws::String& value) { m_signalMapIdentifierHasBeenSet = true; m_signalMapIdentifier = value; }
-    inline void SetSignalMapIdentifier(Aws::String&& value) { m_signalMapIdentifierHasBeenSet = true; m_signalMapIdentifier = std::move(value); }
-    inline void SetSignalMapIdentifier(const char* value) { m_signalMapIdentifierHasBeenSet = true; m_signalMapIdentifier.assign(value); }
-    inline ListCloudWatchAlarmTemplatesRequest& WithSignalMapIdentifier(const Aws::String& value) { SetSignalMapIdentifier(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithSignalMapIdentifier(Aws::String&& value) { SetSignalMapIdentifier(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesRequest& WithSignalMapIdentifier(const char* value) { SetSignalMapIdentifier(value); return *this;}
+    template<typename SignalMapIdentifierT = Aws::String>
+    void SetSignalMapIdentifier(SignalMapIdentifierT&& value) { m_signalMapIdentifierHasBeenSet = true; m_signalMapIdentifier = std::forward<SignalMapIdentifierT>(value); }
+    template<typename SignalMapIdentifierT = Aws::String>
+    ListCloudWatchAlarmTemplatesRequest& WithSignalMapIdentifier(SignalMapIdentifierT&& value) { SetSignalMapIdentifier(std::forward<SignalMapIdentifierT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_groupIdentifier;
     bool m_groupIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

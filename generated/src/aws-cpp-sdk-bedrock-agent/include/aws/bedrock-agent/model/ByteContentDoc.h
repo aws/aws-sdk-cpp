@@ -33,7 +33,7 @@ namespace Model
   class ByteContentDoc
   {
   public:
-    AWS_BEDROCKAGENT_API ByteContentDoc();
+    AWS_BEDROCKAGENT_API ByteContentDoc() = default;
     AWS_BEDROCKAGENT_API ByteContentDoc(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ByteContentDoc& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The base64-encoded string of the content.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::CryptoBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::CryptoBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::CryptoBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline ByteContentDoc& WithData(const Aws::Utils::CryptoBuffer& value) { SetData(value); return *this;}
-    inline ByteContentDoc& WithData(Aws::Utils::CryptoBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::CryptoBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::CryptoBuffer>
+    ByteContentDoc& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,18 +76,16 @@ namespace Model
      * <p>application/vnd.openxmlformats-officedocument.wordprocessingml.template</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetMimeType() const{ return m_mimeType; }
+    inline const Aws::String& GetMimeType() const { return m_mimeType; }
     inline bool MimeTypeHasBeenSet() const { return m_mimeTypeHasBeenSet; }
-    inline void SetMimeType(const Aws::String& value) { m_mimeTypeHasBeenSet = true; m_mimeType = value; }
-    inline void SetMimeType(Aws::String&& value) { m_mimeTypeHasBeenSet = true; m_mimeType = std::move(value); }
-    inline void SetMimeType(const char* value) { m_mimeTypeHasBeenSet = true; m_mimeType.assign(value); }
-    inline ByteContentDoc& WithMimeType(const Aws::String& value) { SetMimeType(value); return *this;}
-    inline ByteContentDoc& WithMimeType(Aws::String&& value) { SetMimeType(std::move(value)); return *this;}
-    inline ByteContentDoc& WithMimeType(const char* value) { SetMimeType(value); return *this;}
+    template<typename MimeTypeT = Aws::String>
+    void SetMimeType(MimeTypeT&& value) { m_mimeTypeHasBeenSet = true; m_mimeType = std::forward<MimeTypeT>(value); }
+    template<typename MimeTypeT = Aws::String>
+    ByteContentDoc& WithMimeType(MimeTypeT&& value) { SetMimeType(std::forward<MimeTypeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::CryptoBuffer m_data;
+    Aws::Utils::CryptoBuffer m_data{};
     bool m_dataHasBeenSet = false;
 
     Aws::String m_mimeType;

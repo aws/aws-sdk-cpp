@@ -18,15 +18,7 @@ namespace SFN
 namespace Model
 {
 
-RoutingConfigurationListItem::RoutingConfigurationListItem() : 
-    m_stateMachineVersionArnHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 RoutingConfigurationListItem::RoutingConfigurationListItem(JsonView jsonValue)
-  : RoutingConfigurationListItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RoutingConfigurationListItem& RoutingConfigurationListItem::operator =(JsonView 
   if(jsonValue.ValueExists("stateMachineVersionArn"))
   {
     m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
-
     m_stateMachineVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weight"))
   {
     m_weight = jsonValue.GetInteger("weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateOrganizationalUnitResult::UpdateOrganizationalUnitResult()
-{
-}
-
 UpdateOrganizationalUnitResult::UpdateOrganizationalUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateOrganizationalUnitResult& UpdateOrganizationalUnitResult::operator =(const
   if(jsonValue.ValueExists("OrganizationalUnit"))
   {
     m_organizationalUnit = jsonValue.GetObject("OrganizationalUnit");
-
+    m_organizationalUnitHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

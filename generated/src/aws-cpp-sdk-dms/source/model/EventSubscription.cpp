@@ -18,22 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-EventSubscription::EventSubscription() : 
-    m_customerAwsIdHasBeenSet(false),
-    m_custSubscriptionIdHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionCreationTimeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdsListHasBeenSet(false),
-    m_eventCategoriesListHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 EventSubscription::EventSubscription(JsonView jsonValue)
-  : EventSubscription()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ EventSubscription& EventSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomerAwsId"))
   {
     m_customerAwsId = jsonValue.GetString("CustomerAwsId");
-
     m_customerAwsIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustSubscriptionId"))
   {
     m_custSubscriptionId = jsonValue.GetString("CustSubscriptionId");
-
     m_custSubscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionCreationTime"))
   {
     m_subscriptionCreationTime = jsonValue.GetString("SubscriptionCreationTime");
-
     m_subscriptionCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceIdsList"))
   {
     Aws::Utils::Array<JsonView> sourceIdsListJsonList = jsonValue.GetArray("SourceIdsList");
@@ -91,7 +64,6 @@ EventSubscription& EventSubscription::operator =(JsonView jsonValue)
     }
     m_sourceIdsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventCategoriesList"))
   {
     Aws::Utils::Array<JsonView> eventCategoriesListJsonList = jsonValue.GetArray("EventCategoriesList");
@@ -101,14 +73,11 @@ EventSubscription& EventSubscription::operator =(JsonView jsonValue)
     }
     m_eventCategoriesListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

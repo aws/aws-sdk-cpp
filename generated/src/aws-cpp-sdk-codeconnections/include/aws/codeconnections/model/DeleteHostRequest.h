@@ -21,7 +21,7 @@ namespace Model
   class DeleteHostRequest : public CodeConnectionsRequest
   {
   public:
-    AWS_CODECONNECTIONS_API DeleteHostRequest();
+    AWS_CODECONNECTIONS_API DeleteHostRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
      */
-    inline const Aws::String& GetHostArn() const{ return m_hostArn; }
+    inline const Aws::String& GetHostArn() const { return m_hostArn; }
     inline bool HostArnHasBeenSet() const { return m_hostArnHasBeenSet; }
-    inline void SetHostArn(const Aws::String& value) { m_hostArnHasBeenSet = true; m_hostArn = value; }
-    inline void SetHostArn(Aws::String&& value) { m_hostArnHasBeenSet = true; m_hostArn = std::move(value); }
-    inline void SetHostArn(const char* value) { m_hostArnHasBeenSet = true; m_hostArn.assign(value); }
-    inline DeleteHostRequest& WithHostArn(const Aws::String& value) { SetHostArn(value); return *this;}
-    inline DeleteHostRequest& WithHostArn(Aws::String&& value) { SetHostArn(std::move(value)); return *this;}
-    inline DeleteHostRequest& WithHostArn(const char* value) { SetHostArn(value); return *this;}
+    template<typename HostArnT = Aws::String>
+    void SetHostArn(HostArnT&& value) { m_hostArnHasBeenSet = true; m_hostArn = std::forward<HostArnT>(value); }
+    template<typename HostArnT = Aws::String>
+    DeleteHostRequest& WithHostArn(HostArnT&& value) { SetHostArn(std::forward<HostArnT>(value)); return *this;}
     ///@}
   private:
 

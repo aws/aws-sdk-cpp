@@ -18,18 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ThesaurusSummary::ThesaurusSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ThesaurusStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ThesaurusSummary::ThesaurusSummary(JsonView jsonValue)
-  : ThesaurusSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ThesaurusSummary& ThesaurusSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ThesaurusStatusMapper::GetThesaurusStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

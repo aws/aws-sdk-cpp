@@ -25,7 +25,7 @@ namespace Model
   class GetRecoveryPointRestoreMetadataRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API GetRecoveryPointRestoreMetadataRequest();
+    AWS_BACKUP_API GetRecoveryPointRestoreMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * identified by names that are unique to the account used to create them and the
      * Amazon Web Services Region where they are created.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    GetRecoveryPointRestoreMetadataRequest& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
     inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn.assign(value); }
-    inline GetRecoveryPointRestoreMetadataRequest& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataRequest& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataRequest& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    GetRecoveryPointRestoreMetadataRequest& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID of the specified backup vault.</p>
      */
-    inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
+    inline const Aws::String& GetBackupVaultAccountId() const { return m_backupVaultAccountId; }
     inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }
-    inline void SetBackupVaultAccountId(const Aws::String& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = value; }
-    inline void SetBackupVaultAccountId(Aws::String&& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = std::move(value); }
-    inline void SetBackupVaultAccountId(const char* value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId.assign(value); }
-    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(const Aws::String& value) { SetBackupVaultAccountId(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(Aws::String&& value) { SetBackupVaultAccountId(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(const char* value) { SetBackupVaultAccountId(value); return *this;}
+    template<typename BackupVaultAccountIdT = Aws::String>
+    void SetBackupVaultAccountId(BackupVaultAccountIdT&& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = std::forward<BackupVaultAccountIdT>(value); }
+    template<typename BackupVaultAccountIdT = Aws::String>
+    GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(BackupVaultAccountIdT&& value) { SetBackupVaultAccountId(std::forward<BackupVaultAccountIdT>(value)); return *this;}
     ///@}
   private:
 

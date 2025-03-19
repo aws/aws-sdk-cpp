@@ -21,7 +21,7 @@ namespace Model
   class PutKMSEncryptionKeyRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API PutKMSEncryptionKeyRequest();
+    AWS_FRAUDDETECTOR_API PutKMSEncryptionKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The KMS encryption key ARN.</p> <p>The KMS key must be single-Region key.
      * Amazon Fraud Detector does not support multi-Region KMS key.</p>
      */
-    inline const Aws::String& GetKmsEncryptionKeyArn() const{ return m_kmsEncryptionKeyArn; }
+    inline const Aws::String& GetKmsEncryptionKeyArn() const { return m_kmsEncryptionKeyArn; }
     inline bool KmsEncryptionKeyArnHasBeenSet() const { return m_kmsEncryptionKeyArnHasBeenSet; }
-    inline void SetKmsEncryptionKeyArn(const Aws::String& value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn = value; }
-    inline void SetKmsEncryptionKeyArn(Aws::String&& value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn = std::move(value); }
-    inline void SetKmsEncryptionKeyArn(const char* value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn.assign(value); }
-    inline PutKMSEncryptionKeyRequest& WithKmsEncryptionKeyArn(const Aws::String& value) { SetKmsEncryptionKeyArn(value); return *this;}
-    inline PutKMSEncryptionKeyRequest& WithKmsEncryptionKeyArn(Aws::String&& value) { SetKmsEncryptionKeyArn(std::move(value)); return *this;}
-    inline PutKMSEncryptionKeyRequest& WithKmsEncryptionKeyArn(const char* value) { SetKmsEncryptionKeyArn(value); return *this;}
+    template<typename KmsEncryptionKeyArnT = Aws::String>
+    void SetKmsEncryptionKeyArn(KmsEncryptionKeyArnT&& value) { m_kmsEncryptionKeyArnHasBeenSet = true; m_kmsEncryptionKeyArn = std::forward<KmsEncryptionKeyArnT>(value); }
+    template<typename KmsEncryptionKeyArnT = Aws::String>
+    PutKMSEncryptionKeyRequest& WithKmsEncryptionKeyArn(KmsEncryptionKeyArnT&& value) { SetKmsEncryptionKeyArn(std::forward<KmsEncryptionKeyArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class UpdateDomainContactRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API UpdateDomainContactRequest();
+    AWS_ROUTE53DOMAINS_API UpdateDomainContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,50 +44,48 @@ namespace Model
     /**
      * <p>The name of the domain that you want to update contact information for.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline UpdateDomainContactRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpdateDomainContactRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpdateDomainContactRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpdateDomainContactRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides detailed contact information.</p>
      */
-    inline const ContactDetail& GetAdminContact() const{ return m_adminContact; }
+    inline const ContactDetail& GetAdminContact() const { return m_adminContact; }
     inline bool AdminContactHasBeenSet() const { return m_adminContactHasBeenSet; }
-    inline void SetAdminContact(const ContactDetail& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
-    inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::move(value); }
-    inline UpdateDomainContactRequest& WithAdminContact(const ContactDetail& value) { SetAdminContact(value); return *this;}
-    inline UpdateDomainContactRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
+    template<typename AdminContactT = ContactDetail>
+    void SetAdminContact(AdminContactT&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::forward<AdminContactT>(value); }
+    template<typename AdminContactT = ContactDetail>
+    UpdateDomainContactRequest& WithAdminContact(AdminContactT&& value) { SetAdminContact(std::forward<AdminContactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides detailed contact information.</p>
      */
-    inline const ContactDetail& GetRegistrantContact() const{ return m_registrantContact; }
+    inline const ContactDetail& GetRegistrantContact() const { return m_registrantContact; }
     inline bool RegistrantContactHasBeenSet() const { return m_registrantContactHasBeenSet; }
-    inline void SetRegistrantContact(const ContactDetail& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
-    inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::move(value); }
-    inline UpdateDomainContactRequest& WithRegistrantContact(const ContactDetail& value) { SetRegistrantContact(value); return *this;}
-    inline UpdateDomainContactRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
+    template<typename RegistrantContactT = ContactDetail>
+    void SetRegistrantContact(RegistrantContactT&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::forward<RegistrantContactT>(value); }
+    template<typename RegistrantContactT = ContactDetail>
+    UpdateDomainContactRequest& WithRegistrantContact(RegistrantContactT&& value) { SetRegistrantContact(std::forward<RegistrantContactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides detailed contact information.</p>
      */
-    inline const ContactDetail& GetTechContact() const{ return m_techContact; }
+    inline const ContactDetail& GetTechContact() const { return m_techContact; }
     inline bool TechContactHasBeenSet() const { return m_techContactHasBeenSet; }
-    inline void SetTechContact(const ContactDetail& value) { m_techContactHasBeenSet = true; m_techContact = value; }
-    inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = std::move(value); }
-    inline UpdateDomainContactRequest& WithTechContact(const ContactDetail& value) { SetTechContact(value); return *this;}
-    inline UpdateDomainContactRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
+    template<typename TechContactT = ContactDetail>
+    void SetTechContact(TechContactT&& value) { m_techContactHasBeenSet = true; m_techContact = std::forward<TechContactT>(value); }
+    template<typename TechContactT = ContactDetail>
+    UpdateDomainContactRequest& WithTechContact(TechContactT&& value) { SetTechContact(std::forward<TechContactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,24 +93,24 @@ namespace Model
      * <p> Customer's consent for the owner change request. Required if the domain is
      * not free (consent price is more than $0.00).</p>
      */
-    inline const Consent& GetConsent() const{ return m_consent; }
+    inline const Consent& GetConsent() const { return m_consent; }
     inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }
-    inline void SetConsent(const Consent& value) { m_consentHasBeenSet = true; m_consent = value; }
-    inline void SetConsent(Consent&& value) { m_consentHasBeenSet = true; m_consent = std::move(value); }
-    inline UpdateDomainContactRequest& WithConsent(const Consent& value) { SetConsent(value); return *this;}
-    inline UpdateDomainContactRequest& WithConsent(Consent&& value) { SetConsent(std::move(value)); return *this;}
+    template<typename ConsentT = Consent>
+    void SetConsent(ConsentT&& value) { m_consentHasBeenSet = true; m_consent = std::forward<ConsentT>(value); }
+    template<typename ConsentT = Consent>
+    UpdateDomainContactRequest& WithConsent(ConsentT&& value) { SetConsent(std::forward<ConsentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides detailed contact information.</p>
      */
-    inline const ContactDetail& GetBillingContact() const{ return m_billingContact; }
+    inline const ContactDetail& GetBillingContact() const { return m_billingContact; }
     inline bool BillingContactHasBeenSet() const { return m_billingContactHasBeenSet; }
-    inline void SetBillingContact(const ContactDetail& value) { m_billingContactHasBeenSet = true; m_billingContact = value; }
-    inline void SetBillingContact(ContactDetail&& value) { m_billingContactHasBeenSet = true; m_billingContact = std::move(value); }
-    inline UpdateDomainContactRequest& WithBillingContact(const ContactDetail& value) { SetBillingContact(value); return *this;}
-    inline UpdateDomainContactRequest& WithBillingContact(ContactDetail&& value) { SetBillingContact(std::move(value)); return *this;}
+    template<typename BillingContactT = ContactDetail>
+    void SetBillingContact(BillingContactT&& value) { m_billingContactHasBeenSet = true; m_billingContact = std::forward<BillingContactT>(value); }
+    template<typename BillingContactT = ContactDetail>
+    UpdateDomainContactRequest& WithBillingContact(BillingContactT&& value) { SetBillingContact(std::forward<BillingContactT>(value)); return *this;}
     ///@}
   private:
 

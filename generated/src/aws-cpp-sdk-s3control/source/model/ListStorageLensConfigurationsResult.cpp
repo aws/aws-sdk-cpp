@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStorageLensConfigurationsResult::ListStorageLensConfigurationsResult()
-{
-}
-
 ListStorageLensConfigurationsResult::ListStorageLensConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ ListStorageLensConfigurationsResult& ListStorageLensConfigurationsResult::operat
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode storageLensConfigurationListNode = resultNode.FirstChild("StorageLensConfiguration");
     if(!storageLensConfigurationListNode.IsNull())
     {
       XmlNode storageLensConfigurationMember = storageLensConfigurationListNode;
+      m_storageLensConfigurationListHasBeenSet = !storageLensConfigurationMember.IsNull();
       while(!storageLensConfigurationMember.IsNull())
       {
         m_storageLensConfigurationList.push_back(storageLensConfigurationMember);
         storageLensConfigurationMember = storageLensConfigurationMember.NextNode("StorageLensConfiguration");
       }
 
+      m_storageLensConfigurationListHasBeenSet = true;
     }
   }
 
@@ -55,12 +54,14 @@ ListStorageLensConfigurationsResult& ListStorageLensConfigurationsResult::operat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

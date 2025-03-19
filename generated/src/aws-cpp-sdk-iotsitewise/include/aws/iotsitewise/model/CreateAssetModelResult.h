@@ -28,7 +28,7 @@ namespace Model
   class CreateAssetModelResult
   {
   public:
-    AWS_IOTSITEWISE_API CreateAssetModelResult();
+    AWS_IOTSITEWISE_API CreateAssetModelResult() = default;
     AWS_IOTSITEWISE_API CreateAssetModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API CreateAssetModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>The ID of the asset model, in UUID format. You can use this ID when you call
      * other IoT SiteWise API operations.</p>
      */
-    inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
-    inline void SetAssetModelId(const Aws::String& value) { m_assetModelId = value; }
-    inline void SetAssetModelId(Aws::String&& value) { m_assetModelId = std::move(value); }
-    inline void SetAssetModelId(const char* value) { m_assetModelId.assign(value); }
-    inline CreateAssetModelResult& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
-    inline CreateAssetModelResult& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
-    inline CreateAssetModelResult& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+    inline const Aws::String& GetAssetModelId() const { return m_assetModelId; }
+    template<typename AssetModelIdT = Aws::String>
+    void SetAssetModelId(AssetModelIdT&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::forward<AssetModelIdT>(value); }
+    template<typename AssetModelIdT = Aws::String>
+    CreateAssetModelResult& WithAssetModelId(AssetModelIdT&& value) { SetAssetModelId(std::forward<AssetModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,13 +53,11 @@ namespace Model
      * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
      * </p>
      */
-    inline const Aws::String& GetAssetModelArn() const{ return m_assetModelArn; }
-    inline void SetAssetModelArn(const Aws::String& value) { m_assetModelArn = value; }
-    inline void SetAssetModelArn(Aws::String&& value) { m_assetModelArn = std::move(value); }
-    inline void SetAssetModelArn(const char* value) { m_assetModelArn.assign(value); }
-    inline CreateAssetModelResult& WithAssetModelArn(const Aws::String& value) { SetAssetModelArn(value); return *this;}
-    inline CreateAssetModelResult& WithAssetModelArn(Aws::String&& value) { SetAssetModelArn(std::move(value)); return *this;}
-    inline CreateAssetModelResult& WithAssetModelArn(const char* value) { SetAssetModelArn(value); return *this;}
+    inline const Aws::String& GetAssetModelArn() const { return m_assetModelArn; }
+    template<typename AssetModelArnT = Aws::String>
+    void SetAssetModelArn(AssetModelArnT&& value) { m_assetModelArnHasBeenSet = true; m_assetModelArn = std::forward<AssetModelArnT>(value); }
+    template<typename AssetModelArnT = Aws::String>
+    CreateAssetModelResult& WithAssetModelArn(AssetModelArnT&& value) { SetAssetModelArn(std::forward<AssetModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,32 +65,34 @@ namespace Model
      * <p>The status of the asset model, which contains a state (<code>CREATING</code>
      * after successfully calling this operation) and any error message.</p>
      */
-    inline const AssetModelStatus& GetAssetModelStatus() const{ return m_assetModelStatus; }
-    inline void SetAssetModelStatus(const AssetModelStatus& value) { m_assetModelStatus = value; }
-    inline void SetAssetModelStatus(AssetModelStatus&& value) { m_assetModelStatus = std::move(value); }
-    inline CreateAssetModelResult& WithAssetModelStatus(const AssetModelStatus& value) { SetAssetModelStatus(value); return *this;}
-    inline CreateAssetModelResult& WithAssetModelStatus(AssetModelStatus&& value) { SetAssetModelStatus(std::move(value)); return *this;}
+    inline const AssetModelStatus& GetAssetModelStatus() const { return m_assetModelStatus; }
+    template<typename AssetModelStatusT = AssetModelStatus>
+    void SetAssetModelStatus(AssetModelStatusT&& value) { m_assetModelStatusHasBeenSet = true; m_assetModelStatus = std::forward<AssetModelStatusT>(value); }
+    template<typename AssetModelStatusT = AssetModelStatus>
+    CreateAssetModelResult& WithAssetModelStatus(AssetModelStatusT&& value) { SetAssetModelStatus(std::forward<AssetModelStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAssetModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAssetModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAssetModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAssetModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_assetModelId;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_assetModelArn;
+    bool m_assetModelArnHasBeenSet = false;
 
     AssetModelStatus m_assetModelStatus;
+    bool m_assetModelStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

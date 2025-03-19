@@ -29,7 +29,7 @@ namespace Model
   class DescribeSchedulingPoliciesResult
   {
   public:
-    AWS_BATCH_API DescribeSchedulingPoliciesResult();
+    AWS_BATCH_API DescribeSchedulingPoliciesResult() = default;
     AWS_BATCH_API DescribeSchedulingPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BATCH_API DescribeSchedulingPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The list of scheduling policies.</p>
      */
-    inline const Aws::Vector<SchedulingPolicyDetail>& GetSchedulingPolicies() const{ return m_schedulingPolicies; }
-    inline void SetSchedulingPolicies(const Aws::Vector<SchedulingPolicyDetail>& value) { m_schedulingPolicies = value; }
-    inline void SetSchedulingPolicies(Aws::Vector<SchedulingPolicyDetail>&& value) { m_schedulingPolicies = std::move(value); }
-    inline DescribeSchedulingPoliciesResult& WithSchedulingPolicies(const Aws::Vector<SchedulingPolicyDetail>& value) { SetSchedulingPolicies(value); return *this;}
-    inline DescribeSchedulingPoliciesResult& WithSchedulingPolicies(Aws::Vector<SchedulingPolicyDetail>&& value) { SetSchedulingPolicies(std::move(value)); return *this;}
-    inline DescribeSchedulingPoliciesResult& AddSchedulingPolicies(const SchedulingPolicyDetail& value) { m_schedulingPolicies.push_back(value); return *this; }
-    inline DescribeSchedulingPoliciesResult& AddSchedulingPolicies(SchedulingPolicyDetail&& value) { m_schedulingPolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SchedulingPolicyDetail>& GetSchedulingPolicies() const { return m_schedulingPolicies; }
+    template<typename SchedulingPoliciesT = Aws::Vector<SchedulingPolicyDetail>>
+    void SetSchedulingPolicies(SchedulingPoliciesT&& value) { m_schedulingPoliciesHasBeenSet = true; m_schedulingPolicies = std::forward<SchedulingPoliciesT>(value); }
+    template<typename SchedulingPoliciesT = Aws::Vector<SchedulingPolicyDetail>>
+    DescribeSchedulingPoliciesResult& WithSchedulingPolicies(SchedulingPoliciesT&& value) { SetSchedulingPolicies(std::forward<SchedulingPoliciesT>(value)); return *this;}
+    template<typename SchedulingPoliciesT = SchedulingPolicyDetail>
+    DescribeSchedulingPoliciesResult& AddSchedulingPolicies(SchedulingPoliciesT&& value) { m_schedulingPoliciesHasBeenSet = true; m_schedulingPolicies.emplace_back(std::forward<SchedulingPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSchedulingPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSchedulingPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSchedulingPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSchedulingPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SchedulingPolicyDetail> m_schedulingPolicies;
+    bool m_schedulingPoliciesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

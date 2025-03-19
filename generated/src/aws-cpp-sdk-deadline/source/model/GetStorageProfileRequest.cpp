@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStorageProfileRequest::GetStorageProfileRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String GetStorageProfileRequest::SerializePayload() const
 {
   return {};

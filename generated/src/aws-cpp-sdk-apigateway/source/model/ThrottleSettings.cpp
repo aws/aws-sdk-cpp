@@ -18,16 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-ThrottleSettings::ThrottleSettings() : 
-    m_burstLimit(0),
-    m_burstLimitHasBeenSet(false),
-    m_rateLimit(0.0),
-    m_rateLimitHasBeenSet(false)
-{
-}
-
 ThrottleSettings::ThrottleSettings(JsonView jsonValue)
-  : ThrottleSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ThrottleSettings& ThrottleSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("burstLimit"))
   {
     m_burstLimit = jsonValue.GetInteger("burstLimit");
-
     m_burstLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateLimit"))
   {
     m_rateLimit = jsonValue.GetDouble("rateLimit");
-
     m_rateLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

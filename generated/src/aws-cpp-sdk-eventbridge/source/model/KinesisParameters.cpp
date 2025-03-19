@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-KinesisParameters::KinesisParameters() : 
-    m_partitionKeyPathHasBeenSet(false)
-{
-}
-
 KinesisParameters::KinesisParameters(JsonView jsonValue)
-  : KinesisParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KinesisParameters& KinesisParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PartitionKeyPath"))
   {
     m_partitionKeyPath = jsonValue.GetString("PartitionKeyPath");
-
     m_partitionKeyPathHasBeenSet = true;
   }
-
   return *this;
 }
 

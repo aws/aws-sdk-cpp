@@ -12,13 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateChangeSetRequest::GenerateChangeSetRequest() : 
-    m_appIdHasBeenSet(false),
-    m_changesetFormat(OutputFormat::NOT_SET),
-    m_changesetFormatHasBeenSet(false)
-{
-}
-
 Aws::String GenerateChangeSetRequest::SerializePayload() const
 {
   JsonValue payload;

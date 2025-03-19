@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataProtectionSettingsRequest::GetDataProtectionSettingsRequest() : 
-    m_dataProtectionSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDataProtectionSettingsRequest::SerializePayload() const
 {
   return {};

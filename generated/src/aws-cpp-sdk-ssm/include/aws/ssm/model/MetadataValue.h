@@ -32,7 +32,7 @@ namespace Model
   class MetadataValue
   {
   public:
-    AWS_SSM_API MetadataValue();
+    AWS_SSM_API MetadataValue() = default;
     AWS_SSM_API MetadataValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API MetadataValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Metadata value to assign to an Application Manager application.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline MetadataValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline MetadataValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline MetadataValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    MetadataValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

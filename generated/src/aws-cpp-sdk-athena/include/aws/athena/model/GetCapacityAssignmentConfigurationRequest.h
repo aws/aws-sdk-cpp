@@ -21,7 +21,7 @@ namespace Model
   class GetCapacityAssignmentConfigurationRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API GetCapacityAssignmentConfigurationRequest();
+    AWS_ATHENA_API GetCapacityAssignmentConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the capacity reservation to retrieve the capacity assignment
      * configuration for.</p>
      */
-    inline const Aws::String& GetCapacityReservationName() const{ return m_capacityReservationName; }
+    inline const Aws::String& GetCapacityReservationName() const { return m_capacityReservationName; }
     inline bool CapacityReservationNameHasBeenSet() const { return m_capacityReservationNameHasBeenSet; }
-    inline void SetCapacityReservationName(const Aws::String& value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName = value; }
-    inline void SetCapacityReservationName(Aws::String&& value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName = std::move(value); }
-    inline void SetCapacityReservationName(const char* value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName.assign(value); }
-    inline GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(const Aws::String& value) { SetCapacityReservationName(value); return *this;}
-    inline GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(Aws::String&& value) { SetCapacityReservationName(std::move(value)); return *this;}
-    inline GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(const char* value) { SetCapacityReservationName(value); return *this;}
+    template<typename CapacityReservationNameT = Aws::String>
+    void SetCapacityReservationName(CapacityReservationNameT&& value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName = std::forward<CapacityReservationNameT>(value); }
+    template<typename CapacityReservationNameT = Aws::String>
+    GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(CapacityReservationNameT&& value) { SetCapacityReservationName(std::forward<CapacityReservationNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CollectiveConstantEntry::CollectiveConstantEntry() : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CollectiveConstantEntry::CollectiveConstantEntry(JsonView jsonValue)
-  : CollectiveConstantEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CollectiveConstantEntry& CollectiveConstantEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConstantType"))
   {
     m_constantType = ConstantTypeMapper::GetConstantTypeForName(jsonValue.GetString("ConstantType"));
-
     m_constantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-StackSummary::StackSummary() : 
-    m_stackIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_layersCount(0),
-    m_layersCountHasBeenSet(false),
-    m_appsCount(0),
-    m_appsCountHasBeenSet(false),
-    m_instancesCountHasBeenSet(false)
-{
-}
-
 StackSummary::StackSummary(JsonView jsonValue)
-  : StackSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ StackSummary& StackSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayersCount"))
   {
     m_layersCount = jsonValue.GetInteger("LayersCount");
-
     m_layersCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppsCount"))
   {
     m_appsCount = jsonValue.GetInteger("AppsCount");
-
     m_appsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstancesCount"))
   {
     m_instancesCount = jsonValue.GetObject("InstancesCount");
-
     m_instancesCountHasBeenSet = true;
   }
-
   return *this;
 }
 

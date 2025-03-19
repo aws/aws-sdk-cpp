@@ -25,7 +25,7 @@ namespace Model
   class ConverseStreamInitialResponse
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseStreamInitialResponse();
+    AWS_BEDROCKRUNTIME_API ConverseStreamInitialResponse() = default;
     AWS_BEDROCKRUNTIME_API ConverseStreamInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseStreamInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);

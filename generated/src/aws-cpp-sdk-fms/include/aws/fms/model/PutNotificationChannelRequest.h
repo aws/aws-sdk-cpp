@@ -21,7 +21,7 @@ namespace Model
   class PutNotificationChannelRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API PutNotificationChannelRequest();
+    AWS_FMS_API PutNotificationChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications
      * from Firewall Manager.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline PutNotificationChannelRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline PutNotificationChannelRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline PutNotificationChannelRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    PutNotificationChannelRequest& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to
      * record Firewall Manager activity. </p>
      */
-    inline const Aws::String& GetSnsRoleName() const{ return m_snsRoleName; }
+    inline const Aws::String& GetSnsRoleName() const { return m_snsRoleName; }
     inline bool SnsRoleNameHasBeenSet() const { return m_snsRoleNameHasBeenSet; }
-    inline void SetSnsRoleName(const Aws::String& value) { m_snsRoleNameHasBeenSet = true; m_snsRoleName = value; }
-    inline void SetSnsRoleName(Aws::String&& value) { m_snsRoleNameHasBeenSet = true; m_snsRoleName = std::move(value); }
-    inline void SetSnsRoleName(const char* value) { m_snsRoleNameHasBeenSet = true; m_snsRoleName.assign(value); }
-    inline PutNotificationChannelRequest& WithSnsRoleName(const Aws::String& value) { SetSnsRoleName(value); return *this;}
-    inline PutNotificationChannelRequest& WithSnsRoleName(Aws::String&& value) { SetSnsRoleName(std::move(value)); return *this;}
-    inline PutNotificationChannelRequest& WithSnsRoleName(const char* value) { SetSnsRoleName(value); return *this;}
+    template<typename SnsRoleNameT = Aws::String>
+    void SetSnsRoleName(SnsRoleNameT&& value) { m_snsRoleNameHasBeenSet = true; m_snsRoleName = std::forward<SnsRoleNameT>(value); }
+    template<typename SnsRoleNameT = Aws::String>
+    PutNotificationChannelRequest& WithSnsRoleName(SnsRoleNameT&& value) { SetSnsRoleName(std::forward<SnsRoleNameT>(value)); return *this;}
     ///@}
   private:
 

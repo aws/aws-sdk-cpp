@@ -12,11 +12,6 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelResourceRequestRequest::CancelResourceRequestRequest() : 
-    m_requestTokenHasBeenSet(false)
-{
-}
-
 Aws::String CancelResourceRequestRequest::SerializePayload() const
 {
   JsonValue payload;

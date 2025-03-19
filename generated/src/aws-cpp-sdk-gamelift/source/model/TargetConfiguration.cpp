@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-TargetConfiguration::TargetConfiguration() : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
-{
-}
-
 TargetConfiguration::TargetConfiguration(JsonView jsonValue)
-  : TargetConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TargetConfiguration& TargetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetValue"))
   {
     m_targetValue = jsonValue.GetDouble("TargetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CustomRoutingListener::CustomRoutingListener() : 
-    m_listenerArnHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 CustomRoutingListener::CustomRoutingListener(JsonView jsonValue)
-  : CustomRoutingListener()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomRoutingListener& CustomRoutingListener::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ListenerArn"))
   {
     m_listenerArn = jsonValue.GetString("ListenerArn");
-
     m_listenerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortRanges"))
   {
     Aws::Utils::Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
@@ -48,7 +39,6 @@ CustomRoutingListener& CustomRoutingListener::operator =(JsonView jsonValue)
     }
     m_portRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

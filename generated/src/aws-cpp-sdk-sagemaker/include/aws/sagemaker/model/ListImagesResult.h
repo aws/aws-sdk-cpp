@@ -29,7 +29,7 @@ namespace Model
   class ListImagesResult
   {
   public:
-    AWS_SAGEMAKER_API ListImagesResult();
+    AWS_SAGEMAKER_API ListImagesResult() = default;
     AWS_SAGEMAKER_API ListImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of images and their properties.</p>
      */
-    inline const Aws::Vector<Image>& GetImages() const{ return m_images; }
-    inline void SetImages(const Aws::Vector<Image>& value) { m_images = value; }
-    inline void SetImages(Aws::Vector<Image>&& value) { m_images = std::move(value); }
-    inline ListImagesResult& WithImages(const Aws::Vector<Image>& value) { SetImages(value); return *this;}
-    inline ListImagesResult& WithImages(Aws::Vector<Image>&& value) { SetImages(std::move(value)); return *this;}
-    inline ListImagesResult& AddImages(const Image& value) { m_images.push_back(value); return *this; }
-    inline ListImagesResult& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Image>& GetImages() const { return m_images; }
+    template<typename ImagesT = Aws::Vector<Image>>
+    void SetImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images = std::forward<ImagesT>(value); }
+    template<typename ImagesT = Aws::Vector<Image>>
+    ListImagesResult& WithImages(ImagesT&& value) { SetImages(std::forward<ImagesT>(value)); return *this;}
+    template<typename ImagesT = Image>
+    ListImagesResult& AddImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images.emplace_back(std::forward<ImagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token for getting the next set of images, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListImagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListImagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListImagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListImagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListImagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Image> m_images;
+    bool m_imagesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

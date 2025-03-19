@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The IPv6 prefix. </p>
      */
-    inline const Aws::String& GetIpv6Prefix() const{ return m_ipv6Prefix; }
+    inline const Aws::String& GetIpv6Prefix() const { return m_ipv6Prefix; }
     inline bool Ipv6PrefixHasBeenSet() const { return m_ipv6PrefixHasBeenSet; }
-    inline void SetIpv6Prefix(const Aws::String& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = value; }
-    inline void SetIpv6Prefix(Aws::String&& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = std::move(value); }
-    inline void SetIpv6Prefix(const char* value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix.assign(value); }
-    inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(const Aws::String& value) { SetIpv6Prefix(value); return *this;}
-    inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(Aws::String&& value) { SetIpv6Prefix(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(const char* value) { SetIpv6Prefix(value); return *this;}
+    template<typename Ipv6PrefixT = Aws::String>
+    void SetIpv6Prefix(Ipv6PrefixT&& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = std::forward<Ipv6PrefixT>(value); }
+    template<typename Ipv6PrefixT = Aws::String>
+    AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails& WithIpv6Prefix(Ipv6PrefixT&& value) { SetIpv6Prefix(std::forward<Ipv6PrefixT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class MsSmoothAdditionalManifest
   {
   public:
-    AWS_MEDIACONVERT_API MsSmoothAdditionalManifest();
+    AWS_MEDIACONVERT_API MsSmoothAdditionalManifest() = default;
     AWS_MEDIACONVERT_API MsSmoothAdditionalManifest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MsSmoothAdditionalManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * file name the service generates for this top-level manifest is
      * film-name-no-premium.ismv.
      */
-    inline const Aws::String& GetManifestNameModifier() const{ return m_manifestNameModifier; }
+    inline const Aws::String& GetManifestNameModifier() const { return m_manifestNameModifier; }
     inline bool ManifestNameModifierHasBeenSet() const { return m_manifestNameModifierHasBeenSet; }
-    inline void SetManifestNameModifier(const Aws::String& value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier = value; }
-    inline void SetManifestNameModifier(Aws::String&& value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier = std::move(value); }
-    inline void SetManifestNameModifier(const char* value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier.assign(value); }
-    inline MsSmoothAdditionalManifest& WithManifestNameModifier(const Aws::String& value) { SetManifestNameModifier(value); return *this;}
-    inline MsSmoothAdditionalManifest& WithManifestNameModifier(Aws::String&& value) { SetManifestNameModifier(std::move(value)); return *this;}
-    inline MsSmoothAdditionalManifest& WithManifestNameModifier(const char* value) { SetManifestNameModifier(value); return *this;}
+    template<typename ManifestNameModifierT = Aws::String>
+    void SetManifestNameModifier(ManifestNameModifierT&& value) { m_manifestNameModifierHasBeenSet = true; m_manifestNameModifier = std::forward<ManifestNameModifierT>(value); }
+    template<typename ManifestNameModifierT = Aws::String>
+    MsSmoothAdditionalManifest& WithManifestNameModifier(ManifestNameModifierT&& value) { SetManifestNameModifier(std::forward<ManifestNameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * Specify the outputs that you want this additional top-level manifest to
      * reference.
      */
-    inline const Aws::Vector<Aws::String>& GetSelectedOutputs() const{ return m_selectedOutputs; }
+    inline const Aws::Vector<Aws::String>& GetSelectedOutputs() const { return m_selectedOutputs; }
     inline bool SelectedOutputsHasBeenSet() const { return m_selectedOutputsHasBeenSet; }
-    inline void SetSelectedOutputs(const Aws::Vector<Aws::String>& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs = value; }
-    inline void SetSelectedOutputs(Aws::Vector<Aws::String>&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs = std::move(value); }
-    inline MsSmoothAdditionalManifest& WithSelectedOutputs(const Aws::Vector<Aws::String>& value) { SetSelectedOutputs(value); return *this;}
-    inline MsSmoothAdditionalManifest& WithSelectedOutputs(Aws::Vector<Aws::String>&& value) { SetSelectedOutputs(std::move(value)); return *this;}
-    inline MsSmoothAdditionalManifest& AddSelectedOutputs(const Aws::String& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.push_back(value); return *this; }
-    inline MsSmoothAdditionalManifest& AddSelectedOutputs(Aws::String&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.push_back(std::move(value)); return *this; }
-    inline MsSmoothAdditionalManifest& AddSelectedOutputs(const char* value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.push_back(value); return *this; }
+    template<typename SelectedOutputsT = Aws::Vector<Aws::String>>
+    void SetSelectedOutputs(SelectedOutputsT&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs = std::forward<SelectedOutputsT>(value); }
+    template<typename SelectedOutputsT = Aws::Vector<Aws::String>>
+    MsSmoothAdditionalManifest& WithSelectedOutputs(SelectedOutputsT&& value) { SetSelectedOutputs(std::forward<SelectedOutputsT>(value)); return *this;}
+    template<typename SelectedOutputsT = Aws::String>
+    MsSmoothAdditionalManifest& AddSelectedOutputs(SelectedOutputsT&& value) { m_selectedOutputsHasBeenSet = true; m_selectedOutputs.emplace_back(std::forward<SelectedOutputsT>(value)); return *this; }
     ///@}
   private:
 

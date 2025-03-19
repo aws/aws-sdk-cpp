@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSessionResult::StartSessionResult() : 
-    m_state(SessionState::NOT_SET)
-{
-}
-
 StartSessionResult::StartSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartSessionResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StartSessionResult& StartSessionResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = SessionStateMapper::GetSessionStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

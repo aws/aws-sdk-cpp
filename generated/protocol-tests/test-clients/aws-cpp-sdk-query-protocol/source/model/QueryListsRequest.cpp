@@ -10,16 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-QueryListsRequest::QueryListsRequest() : 
-    m_listArgHasBeenSet(false),
-    m_complexListArgHasBeenSet(false),
-    m_flattenedListArgHasBeenSet(false),
-    m_listArgWithXmlNameMemberHasBeenSet(false),
-    m_flattenedListArgWithXmlNameHasBeenSet(false),
-    m_nestedWithListHasBeenSet(false)
-{
-}
-
 Aws::String QueryListsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

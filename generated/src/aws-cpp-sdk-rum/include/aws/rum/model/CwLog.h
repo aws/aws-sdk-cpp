@@ -33,7 +33,7 @@ namespace Model
   class CwLog
   {
   public:
-    AWS_CLOUDWATCHRUM_API CwLog();
+    AWS_CLOUDWATCHRUM_API CwLog() = default;
     AWS_CLOUDWATCHRUM_API CwLog(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API CwLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Indicated whether the app monitor stores copies of the data that RUM collects
      * in CloudWatch Logs.</p>
      */
-    inline bool GetCwLogEnabled() const{ return m_cwLogEnabled; }
+    inline bool GetCwLogEnabled() const { return m_cwLogEnabled; }
     inline bool CwLogEnabledHasBeenSet() const { return m_cwLogEnabledHasBeenSet; }
     inline void SetCwLogEnabled(bool value) { m_cwLogEnabledHasBeenSet = true; m_cwLogEnabled = value; }
     inline CwLog& WithCwLogEnabled(bool value) { SetCwLogEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
     /**
      * <p>The name of the log group where the copies are stored.</p>
      */
-    inline const Aws::String& GetCwLogGroup() const{ return m_cwLogGroup; }
+    inline const Aws::String& GetCwLogGroup() const { return m_cwLogGroup; }
     inline bool CwLogGroupHasBeenSet() const { return m_cwLogGroupHasBeenSet; }
-    inline void SetCwLogGroup(const Aws::String& value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup = value; }
-    inline void SetCwLogGroup(Aws::String&& value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup = std::move(value); }
-    inline void SetCwLogGroup(const char* value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup.assign(value); }
-    inline CwLog& WithCwLogGroup(const Aws::String& value) { SetCwLogGroup(value); return *this;}
-    inline CwLog& WithCwLogGroup(Aws::String&& value) { SetCwLogGroup(std::move(value)); return *this;}
-    inline CwLog& WithCwLogGroup(const char* value) { SetCwLogGroup(value); return *this;}
+    template<typename CwLogGroupT = Aws::String>
+    void SetCwLogGroup(CwLogGroupT&& value) { m_cwLogGroupHasBeenSet = true; m_cwLogGroup = std::forward<CwLogGroupT>(value); }
+    template<typename CwLogGroupT = Aws::String>
+    CwLog& WithCwLogGroup(CwLogGroupT&& value) { SetCwLogGroup(std::forward<CwLogGroupT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_cwLogEnabled;
+    bool m_cwLogEnabled{false};
     bool m_cwLogEnabledHasBeenSet = false;
 
     Aws::String m_cwLogGroup;

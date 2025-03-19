@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeByoipCidrsResponse::DescribeByoipCidrsResponse()
-{
-}
-
 DescribeByoipCidrsResponse::DescribeByoipCidrsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeByoipCidrsResponse& DescribeByoipCidrsResponse::operator =(const Aws::Am
     if(!byoipCidrsNode.IsNull())
     {
       XmlNode byoipCidrsMember = byoipCidrsNode.FirstChild("item");
+      m_byoipCidrsHasBeenSet = !byoipCidrsMember.IsNull();
       while(!byoipCidrsMember.IsNull())
       {
         m_byoipCidrs.push_back(byoipCidrsMember);
         byoipCidrsMember = byoipCidrsMember.NextNode("item");
       }
 
+      m_byoipCidrsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeByoipCidrsResponse& DescribeByoipCidrsResponse::operator =(const Aws::Am
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeByoipCidrsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTargetsForPolicyResult::ListTargetsForPolicyResult()
-{
-}
-
 ListTargetsForPolicyResult::ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListTargetsForPolicyResult& ListTargetsForPolicyResult::operator =(const Aws::Am
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
     }
+    m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextMarker"))
   {
     m_nextMarker = jsonValue.GetString("nextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

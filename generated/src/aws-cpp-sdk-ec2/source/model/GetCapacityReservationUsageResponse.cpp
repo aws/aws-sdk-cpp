@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCapacityReservationUsageResponse::GetCapacityReservationUsageResponse() : 
-    m_totalInstanceCount(0),
-    m_availableInstanceCount(0),
-    m_state(CapacityReservationState::NOT_SET)
-{
-}
-
 GetCapacityReservationUsageResponse::GetCapacityReservationUsageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetCapacityReservationUsageResponse()
 {
   *this = result;
 }
@@ -46,42 +38,50 @@ GetCapacityReservationUsageResponse& GetCapacityReservationUsageResponse::operat
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
     if(!capacityReservationIdNode.IsNull())
     {
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
+      m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
+      m_instanceTypeHasBeenSet = true;
     }
     XmlNode totalInstanceCountNode = resultNode.FirstChild("totalInstanceCount");
     if(!totalInstanceCountNode.IsNull())
     {
       m_totalInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalInstanceCountNode.GetText()).c_str()).c_str());
+      m_totalInstanceCountHasBeenSet = true;
     }
     XmlNode availableInstanceCountNode = resultNode.FirstChild("availableInstanceCount");
     if(!availableInstanceCountNode.IsNull())
     {
       m_availableInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableInstanceCountNode.GetText()).c_str()).c_str());
+      m_availableInstanceCountHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+      m_stateHasBeenSet = true;
     }
     XmlNode instanceUsagesNode = resultNode.FirstChild("instanceUsageSet");
     if(!instanceUsagesNode.IsNull())
     {
       XmlNode instanceUsagesMember = instanceUsagesNode.FirstChild("item");
+      m_instanceUsagesHasBeenSet = !instanceUsagesMember.IsNull();
       while(!instanceUsagesMember.IsNull())
       {
         m_instanceUsages.push_back(instanceUsagesMember);
         instanceUsagesMember = instanceUsagesMember.NextNode("item");
       }
 
+      m_instanceUsagesHasBeenSet = true;
     }
   }
 
@@ -90,6 +90,7 @@ GetCapacityReservationUsageResponse& GetCapacityReservationUsageResponse::operat
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetCapacityReservationUsageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSourceRepositoryCloneUrlsResult::GetSourceRepositoryCloneUrlsResult()
-{
-}
-
 GetSourceRepositoryCloneUrlsResult::GetSourceRepositoryCloneUrlsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSourceRepositoryCloneUrlsResult& GetSourceRepositoryCloneUrlsResult::operator
   if(jsonValue.ValueExists("https"))
   {
     m_https = jsonValue.GetString("https");
-
+    m_httpsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

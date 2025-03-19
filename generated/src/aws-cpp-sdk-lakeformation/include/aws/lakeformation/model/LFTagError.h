@@ -33,7 +33,7 @@ namespace Model
   class LFTagError
   {
   public:
-    AWS_LAKEFORMATION_API LFTagError();
+    AWS_LAKEFORMATION_API LFTagError() = default;
     AWS_LAKEFORMATION_API LFTagError(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API LFTagError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The key-name of the LF-tag.</p>
      */
-    inline const LFTagPair& GetLFTag() const{ return m_lFTag; }
+    inline const LFTagPair& GetLFTag() const { return m_lFTag; }
     inline bool LFTagHasBeenSet() const { return m_lFTagHasBeenSet; }
-    inline void SetLFTag(const LFTagPair& value) { m_lFTagHasBeenSet = true; m_lFTag = value; }
-    inline void SetLFTag(LFTagPair&& value) { m_lFTagHasBeenSet = true; m_lFTag = std::move(value); }
-    inline LFTagError& WithLFTag(const LFTagPair& value) { SetLFTag(value); return *this;}
-    inline LFTagError& WithLFTag(LFTagPair&& value) { SetLFTag(std::move(value)); return *this;}
+    template<typename LFTagT = LFTagPair>
+    void SetLFTag(LFTagT&& value) { m_lFTagHasBeenSet = true; m_lFTag = std::forward<LFTagT>(value); }
+    template<typename LFTagT = LFTagPair>
+    LFTagError& WithLFTag(LFTagT&& value) { SetLFTag(std::forward<LFTagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
      */
-    inline const ErrorDetail& GetError() const{ return m_error; }
+    inline const ErrorDetail& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetail& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetail&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline LFTagError& WithError(const ErrorDetail& value) { SetError(value); return *this;}
-    inline LFTagError& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetail>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetail>
+    LFTagError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

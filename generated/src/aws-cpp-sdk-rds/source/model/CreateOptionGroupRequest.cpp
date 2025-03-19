@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateOptionGroupRequest::CreateOptionGroupRequest() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_optionGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

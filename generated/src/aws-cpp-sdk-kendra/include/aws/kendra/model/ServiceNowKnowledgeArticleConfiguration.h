@@ -34,7 +34,7 @@ namespace Model
   class ServiceNowKnowledgeArticleConfiguration
   {
   public:
-    AWS_KENDRA_API ServiceNowKnowledgeArticleConfiguration();
+    AWS_KENDRA_API ServiceNowKnowledgeArticleConfiguration() = default;
     AWS_KENDRA_API ServiceNowKnowledgeArticleConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ServiceNowKnowledgeArticleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
      */
-    inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
+    inline bool GetCrawlAttachments() const { return m_crawlAttachments; }
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
     inline ServiceNowKnowledgeArticleConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
@@ -58,15 +58,14 @@ namespace Model
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
      * precedence and the item isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const{ return m_includeAttachmentFilePatterns; }
+    inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const { return m_includeAttachmentFilePatterns; }
     inline bool IncludeAttachmentFilePatternsHasBeenSet() const { return m_includeAttachmentFilePatternsHasBeenSet; }
-    inline void SetIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = value; }
-    inline void SetIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::move(value); }
-    inline ServiceNowKnowledgeArticleConfiguration& WithIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetIncludeAttachmentFilePatterns(value); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetIncludeAttachmentFilePatterns(std::move(value)); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(const Aws::String& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
-    inline ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(Aws::String&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
-    inline ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(const char* value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
+    template<typename IncludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    void SetIncludeAttachmentFilePatterns(IncludeAttachmentFilePatternsT&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::forward<IncludeAttachmentFilePatternsT>(value); }
+    template<typename IncludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    ServiceNowKnowledgeArticleConfiguration& WithIncludeAttachmentFilePatterns(IncludeAttachmentFilePatternsT&& value) { SetIncludeAttachmentFilePatterns(std::forward<IncludeAttachmentFilePatternsT>(value)); return *this;}
+    template<typename IncludeAttachmentFilePatternsT = Aws::String>
+    ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(IncludeAttachmentFilePatternsT&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.emplace_back(std::forward<IncludeAttachmentFilePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,15 +76,14 @@ namespace Model
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
      * precedence and the item isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const{ return m_excludeAttachmentFilePatterns; }
+    inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const { return m_excludeAttachmentFilePatterns; }
     inline bool ExcludeAttachmentFilePatternsHasBeenSet() const { return m_excludeAttachmentFilePatternsHasBeenSet; }
-    inline void SetExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = value; }
-    inline void SetExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::move(value); }
-    inline ServiceNowKnowledgeArticleConfiguration& WithExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetExcludeAttachmentFilePatterns(value); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetExcludeAttachmentFilePatterns(std::move(value)); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(const Aws::String& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
-    inline ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(Aws::String&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
-    inline ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(const char* value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
+    template<typename ExcludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    void SetExcludeAttachmentFilePatterns(ExcludeAttachmentFilePatternsT&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::forward<ExcludeAttachmentFilePatternsT>(value); }
+    template<typename ExcludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    ServiceNowKnowledgeArticleConfiguration& WithExcludeAttachmentFilePatterns(ExcludeAttachmentFilePatternsT&& value) { SetExcludeAttachmentFilePatterns(std::forward<ExcludeAttachmentFilePatternsT>(value)); return *this;}
+    template<typename ExcludeAttachmentFilePatternsT = Aws::String>
+    ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(ExcludeAttachmentFilePatternsT&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.emplace_back(std::forward<ExcludeAttachmentFilePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,14 +91,12 @@ namespace Model
      * <p>The name of the ServiceNow field that is mapped to the index document
      * contents field in the Amazon Kendra index.</p>
      */
-    inline const Aws::String& GetDocumentDataFieldName() const{ return m_documentDataFieldName; }
+    inline const Aws::String& GetDocumentDataFieldName() const { return m_documentDataFieldName; }
     inline bool DocumentDataFieldNameHasBeenSet() const { return m_documentDataFieldNameHasBeenSet; }
-    inline void SetDocumentDataFieldName(const Aws::String& value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName = value; }
-    inline void SetDocumentDataFieldName(Aws::String&& value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName = std::move(value); }
-    inline void SetDocumentDataFieldName(const char* value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName.assign(value); }
-    inline ServiceNowKnowledgeArticleConfiguration& WithDocumentDataFieldName(const Aws::String& value) { SetDocumentDataFieldName(value); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithDocumentDataFieldName(Aws::String&& value) { SetDocumentDataFieldName(std::move(value)); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithDocumentDataFieldName(const char* value) { SetDocumentDataFieldName(value); return *this;}
+    template<typename DocumentDataFieldNameT = Aws::String>
+    void SetDocumentDataFieldName(DocumentDataFieldNameT&& value) { m_documentDataFieldNameHasBeenSet = true; m_documentDataFieldName = std::forward<DocumentDataFieldNameT>(value); }
+    template<typename DocumentDataFieldNameT = Aws::String>
+    ServiceNowKnowledgeArticleConfiguration& WithDocumentDataFieldName(DocumentDataFieldNameT&& value) { SetDocumentDataFieldName(std::forward<DocumentDataFieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +104,12 @@ namespace Model
      * <p>The name of the ServiceNow field that is mapped to the index document title
      * field.</p>
      */
-    inline const Aws::String& GetDocumentTitleFieldName() const{ return m_documentTitleFieldName; }
+    inline const Aws::String& GetDocumentTitleFieldName() const { return m_documentTitleFieldName; }
     inline bool DocumentTitleFieldNameHasBeenSet() const { return m_documentTitleFieldNameHasBeenSet; }
-    inline void SetDocumentTitleFieldName(const Aws::String& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = value; }
-    inline void SetDocumentTitleFieldName(Aws::String&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::move(value); }
-    inline void SetDocumentTitleFieldName(const char* value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName.assign(value); }
-    inline ServiceNowKnowledgeArticleConfiguration& WithDocumentTitleFieldName(const Aws::String& value) { SetDocumentTitleFieldName(value); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithDocumentTitleFieldName(Aws::String&& value) { SetDocumentTitleFieldName(std::move(value)); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
+    template<typename DocumentTitleFieldNameT = Aws::String>
+    void SetDocumentTitleFieldName(DocumentTitleFieldNameT&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::forward<DocumentTitleFieldNameT>(value); }
+    template<typename DocumentTitleFieldNameT = Aws::String>
+    ServiceNowKnowledgeArticleConfiguration& WithDocumentTitleFieldName(DocumentTitleFieldNameT&& value) { SetDocumentTitleFieldName(std::forward<DocumentTitleFieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +121,14 @@ namespace Model
      * data source fields</a>. The ServiceNow data source field names must exist in
      * your ServiceNow custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const { return m_fieldMappings; }
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
-    inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
-    inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
-    inline ServiceNowKnowledgeArticleConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
-    inline ServiceNowKnowledgeArticleConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::forward<FieldMappingsT>(value); }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    ServiceNowKnowledgeArticleConfiguration& WithFieldMappings(FieldMappingsT&& value) { SetFieldMappings(std::forward<FieldMappingsT>(value)); return *this;}
+    template<typename FieldMappingsT = DataSourceToIndexFieldMapping>
+    ServiceNowKnowledgeArticleConfiguration& AddFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.emplace_back(std::forward<FieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,18 +140,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/servicenow-query.html">Specifying
      * documents to index with a query</a>. </p>
      */
-    inline const Aws::String& GetFilterQuery() const{ return m_filterQuery; }
+    inline const Aws::String& GetFilterQuery() const { return m_filterQuery; }
     inline bool FilterQueryHasBeenSet() const { return m_filterQueryHasBeenSet; }
-    inline void SetFilterQuery(const Aws::String& value) { m_filterQueryHasBeenSet = true; m_filterQuery = value; }
-    inline void SetFilterQuery(Aws::String&& value) { m_filterQueryHasBeenSet = true; m_filterQuery = std::move(value); }
-    inline void SetFilterQuery(const char* value) { m_filterQueryHasBeenSet = true; m_filterQuery.assign(value); }
-    inline ServiceNowKnowledgeArticleConfiguration& WithFilterQuery(const Aws::String& value) { SetFilterQuery(value); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithFilterQuery(Aws::String&& value) { SetFilterQuery(std::move(value)); return *this;}
-    inline ServiceNowKnowledgeArticleConfiguration& WithFilterQuery(const char* value) { SetFilterQuery(value); return *this;}
+    template<typename FilterQueryT = Aws::String>
+    void SetFilterQuery(FilterQueryT&& value) { m_filterQueryHasBeenSet = true; m_filterQuery = std::forward<FilterQueryT>(value); }
+    template<typename FilterQueryT = Aws::String>
+    ServiceNowKnowledgeArticleConfiguration& WithFilterQuery(FilterQueryT&& value) { SetFilterQuery(std::forward<FilterQueryT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_crawlAttachments;
+    bool m_crawlAttachments{false};
     bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;

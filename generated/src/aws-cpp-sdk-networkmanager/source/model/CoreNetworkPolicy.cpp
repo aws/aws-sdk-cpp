@@ -18,23 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkPolicy::CoreNetworkPolicy() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_policyVersionId(0),
-    m_policyVersionIdHasBeenSet(false),
-    m_alias(CoreNetworkPolicyAlias::NOT_SET),
-    m_aliasHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_changeSetState(ChangeSetState::NOT_SET),
-    m_changeSetStateHasBeenSet(false),
-    m_policyErrorsHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 CoreNetworkPolicy::CoreNetworkPolicy(JsonView jsonValue)
-  : CoreNetworkPolicy()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ CoreNetworkPolicy& CoreNetworkPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyVersionId"))
   {
     m_policyVersionId = jsonValue.GetInteger("PolicyVersionId");
-
     m_policyVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = CoreNetworkPolicyAliasMapper::GetCoreNetworkPolicyAliasForName(jsonValue.GetString("Alias"));
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSetState"))
   {
     m_changeSetState = ChangeSetStateMapper::GetChangeSetStateForName(jsonValue.GetString("ChangeSetState"));
-
     m_changeSetStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyErrors"))
   {
     Aws::Utils::Array<JsonView> policyErrorsJsonList = jsonValue.GetArray("PolicyErrors");
@@ -92,14 +64,11 @@ CoreNetworkPolicy& CoreNetworkPolicy::operator =(JsonView jsonValue)
     }
     m_policyErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyDocument"))
   {
     m_policyDocument = jsonValue.GetString("PolicyDocument");
-
     m_policyDocumentHasBeenSet = true;
   }
-
   return *this;
 }
 

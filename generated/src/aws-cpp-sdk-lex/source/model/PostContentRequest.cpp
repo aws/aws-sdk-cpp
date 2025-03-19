@@ -15,17 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PostContentRequest::PostContentRequest() : 
-    m_botNameHasBeenSet(false),
-    m_botAliasHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_acceptHasBeenSet(false),
-    m_activeContextsHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders() const

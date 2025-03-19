@@ -30,7 +30,7 @@ namespace Model
   class PutRecommendationPreferencesRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API PutRecommendationPreferencesRequest();
+    AWS_COMPUTEOPTIMIZER_API PutRecommendationPreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,12 +51,10 @@ namespace Model
      * <code>AutoScalingGroup</code> option encompasses only instances that are part of
      * an Auto Scaling group.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline PutRecommendationPreferencesRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * instances that are part of an Auto Scaling group. You can create recommendation
      * preferences at the resource level only for standalone instances.</p> 
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline const Scope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    template<typename ScopeT = Scope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Scope>
+    PutRecommendationPreferencesRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +92,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const EnhancedInfrastructureMetrics& GetEnhancedInfrastructureMetrics() const{ return m_enhancedInfrastructureMetrics; }
+    inline EnhancedInfrastructureMetrics GetEnhancedInfrastructureMetrics() const { return m_enhancedInfrastructureMetrics; }
     inline bool EnhancedInfrastructureMetricsHasBeenSet() const { return m_enhancedInfrastructureMetricsHasBeenSet; }
-    inline void SetEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
-    inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { SetEnhancedInfrastructureMetrics(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { SetEnhancedInfrastructureMetrics(std::move(value)); return *this;}
+    inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
+    inline PutRecommendationPreferencesRequest& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics value) { SetEnhancedInfrastructureMetrics(value); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +108,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred
      * workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const InferredWorkloadTypesPreference& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+    inline InferredWorkloadTypesPreference GetInferredWorkloadTypes() const { return m_inferredWorkloadTypes; }
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
-    inline void SetInferredWorkloadTypes(const InferredWorkloadTypesPreference& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
-    inline void SetInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithInferredWorkloadTypes(const InferredWorkloadTypesPreference& value) { SetInferredWorkloadTypes(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
+    inline void SetInferredWorkloadTypes(InferredWorkloadTypesPreference value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
+    inline PutRecommendationPreferencesRequest& WithInferredWorkloadTypes(InferredWorkloadTypesPreference value) { SetInferredWorkloadTypes(value); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +125,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
      * metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const{ return m_externalMetricsPreference; }
+    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const { return m_externalMetricsPreference; }
     inline bool ExternalMetricsPreferenceHasBeenSet() const { return m_externalMetricsPreferenceHasBeenSet; }
-    inline void SetExternalMetricsPreference(const ExternalMetricsPreference& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = value; }
-    inline void SetExternalMetricsPreference(ExternalMetricsPreference&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithExternalMetricsPreference(const ExternalMetricsPreference& value) { SetExternalMetricsPreference(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
+    template<typename ExternalMetricsPreferenceT = ExternalMetricsPreference>
+    void SetExternalMetricsPreference(ExternalMetricsPreferenceT&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::forward<ExternalMetricsPreferenceT>(value); }
+    template<typename ExternalMetricsPreferenceT = ExternalMetricsPreference>
+    PutRecommendationPreferencesRequest& WithExternalMetricsPreference(ExternalMetricsPreferenceT&& value) { SetExternalMetricsPreference(std::forward<ExternalMetricsPreferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +144,10 @@ namespace Model
      * group lookback preferences can only be set at the resource level.</p> </li>
      * </ul> 
      */
-    inline const LookBackPeriodPreference& GetLookBackPeriod() const{ return m_lookBackPeriod; }
+    inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
     inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
-    inline void SetLookBackPeriod(const LookBackPeriodPreference& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
-    inline void SetLookBackPeriod(LookBackPeriodPreference&& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithLookBackPeriod(const LookBackPeriodPreference& value) { SetLookBackPeriod(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithLookBackPeriod(LookBackPeriodPreference&& value) { SetLookBackPeriod(std::move(value)); return *this;}
+    inline void SetLookBackPeriod(LookBackPeriodPreference value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
+    inline PutRecommendationPreferencesRequest& WithLookBackPeriod(LookBackPeriodPreference value) { SetLookBackPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +163,14 @@ namespace Model
      * threshold setting isn’t available for memory utilization.</p> </li> </ul>
      * 
      */
-    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
+    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const { return m_utilizationPreferences; }
     inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
-    inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
-    inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
-    inline PutRecommendationPreferencesRequest& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
-    inline PutRecommendationPreferencesRequest& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(std::move(value)); return *this; }
+    template<typename UtilizationPreferencesT = Aws::Vector<UtilizationPreference>>
+    void SetUtilizationPreferences(UtilizationPreferencesT&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::forward<UtilizationPreferencesT>(value); }
+    template<typename UtilizationPreferencesT = Aws::Vector<UtilizationPreference>>
+    PutRecommendationPreferencesRequest& WithUtilizationPreferences(UtilizationPreferencesT&& value) { SetUtilizationPreferences(std::forward<UtilizationPreferencesT>(value)); return *this;}
+    template<typename UtilizationPreferencesT = UtilizationPreference>
+    PutRecommendationPreferencesRequest& AddUtilizationPreferences(UtilizationPreferencesT&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.emplace_back(std::forward<UtilizationPreferencesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -191,14 +183,14 @@ namespace Model
      * set this preference for the Amazon EC2 instance and Auto Scaling group resource
      * types.</p> 
      */
-    inline const Aws::Vector<PreferredResource>& GetPreferredResources() const{ return m_preferredResources; }
+    inline const Aws::Vector<PreferredResource>& GetPreferredResources() const { return m_preferredResources; }
     inline bool PreferredResourcesHasBeenSet() const { return m_preferredResourcesHasBeenSet; }
-    inline void SetPreferredResources(const Aws::Vector<PreferredResource>& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = value; }
-    inline void SetPreferredResources(Aws::Vector<PreferredResource>&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithPreferredResources(const Aws::Vector<PreferredResource>& value) { SetPreferredResources(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithPreferredResources(Aws::Vector<PreferredResource>&& value) { SetPreferredResources(std::move(value)); return *this;}
-    inline PutRecommendationPreferencesRequest& AddPreferredResources(const PreferredResource& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(value); return *this; }
-    inline PutRecommendationPreferencesRequest& AddPreferredResources(PreferredResource&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(std::move(value)); return *this; }
+    template<typename PreferredResourcesT = Aws::Vector<PreferredResource>>
+    void SetPreferredResources(PreferredResourcesT&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = std::forward<PreferredResourcesT>(value); }
+    template<typename PreferredResourcesT = Aws::Vector<PreferredResource>>
+    PutRecommendationPreferencesRequest& WithPreferredResources(PreferredResourcesT&& value) { SetPreferredResources(std::forward<PreferredResourcesT>(value)); return *this;}
+    template<typename PreferredResourcesT = PreferredResource>
+    PutRecommendationPreferencesRequest& AddPreferredResources(PreferredResourcesT&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.emplace_back(std::forward<PreferredResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -211,31 +203,29 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
      * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const SavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
+    inline SavingsEstimationMode GetSavingsEstimationMode() const { return m_savingsEstimationMode; }
     inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
-    inline void SetSavingsEstimationMode(const SavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
-    inline void SetSavingsEstimationMode(SavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
-    inline PutRecommendationPreferencesRequest& WithSavingsEstimationMode(const SavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
-    inline PutRecommendationPreferencesRequest& WithSavingsEstimationMode(SavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+    inline void SetSavingsEstimationMode(SavingsEstimationMode value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
+    inline PutRecommendationPreferencesRequest& WithSavingsEstimationMode(SavingsEstimationMode value) { SetSavingsEstimationMode(value); return *this;}
     ///@}
   private:
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Scope m_scope;
     bool m_scopeHasBeenSet = false;
 
-    EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
+    EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
     bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
-    InferredWorkloadTypesPreference m_inferredWorkloadTypes;
+    InferredWorkloadTypesPreference m_inferredWorkloadTypes{InferredWorkloadTypesPreference::NOT_SET};
     bool m_inferredWorkloadTypesHasBeenSet = false;
 
     ExternalMetricsPreference m_externalMetricsPreference;
     bool m_externalMetricsPreferenceHasBeenSet = false;
 
-    LookBackPeriodPreference m_lookBackPeriod;
+    LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
     bool m_lookBackPeriodHasBeenSet = false;
 
     Aws::Vector<UtilizationPreference> m_utilizationPreferences;
@@ -244,7 +234,7 @@ namespace Model
     Aws::Vector<PreferredResource> m_preferredResources;
     bool m_preferredResourcesHasBeenSet = false;
 
-    SavingsEstimationMode m_savingsEstimationMode;
+    SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
     bool m_savingsEstimationModeHasBeenSet = false;
   };
 

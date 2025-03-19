@@ -34,7 +34,7 @@ namespace Model
   class CommentMetadata
   {
   public:
-    AWS_WORKDOCS_API CommentMetadata();
+    AWS_WORKDOCS_API CommentMetadata() = default;
     AWS_WORKDOCS_API CommentMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API CommentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,78 +44,70 @@ namespace Model
     /**
      * <p>The ID of the comment.</p>
      */
-    inline const Aws::String& GetCommentId() const{ return m_commentId; }
+    inline const Aws::String& GetCommentId() const { return m_commentId; }
     inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
-    inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
-    inline void SetCommentId(Aws::String&& value) { m_commentIdHasBeenSet = true; m_commentId = std::move(value); }
-    inline void SetCommentId(const char* value) { m_commentIdHasBeenSet = true; m_commentId.assign(value); }
-    inline CommentMetadata& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-    inline CommentMetadata& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-    inline CommentMetadata& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+    template<typename CommentIdT = Aws::String>
+    void SetCommentId(CommentIdT&& value) { m_commentIdHasBeenSet = true; m_commentId = std::forward<CommentIdT>(value); }
+    template<typename CommentIdT = Aws::String>
+    CommentMetadata& WithCommentId(CommentIdT&& value) { SetCommentId(std::forward<CommentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who made the comment.</p>
      */
-    inline const User& GetContributor() const{ return m_contributor; }
+    inline const User& GetContributor() const { return m_contributor; }
     inline bool ContributorHasBeenSet() const { return m_contributorHasBeenSet; }
-    inline void SetContributor(const User& value) { m_contributorHasBeenSet = true; m_contributor = value; }
-    inline void SetContributor(User&& value) { m_contributorHasBeenSet = true; m_contributor = std::move(value); }
-    inline CommentMetadata& WithContributor(const User& value) { SetContributor(value); return *this;}
-    inline CommentMetadata& WithContributor(User&& value) { SetContributor(std::move(value)); return *this;}
+    template<typename ContributorT = User>
+    void SetContributor(ContributorT&& value) { m_contributorHasBeenSet = true; m_contributor = std::forward<ContributorT>(value); }
+    template<typename ContributorT = User>
+    CommentMetadata& WithContributor(ContributorT&& value) { SetContributor(std::forward<ContributorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp that the comment was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline CommentMetadata& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline CommentMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    CommentMetadata& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the comment.</p>
      */
-    inline const CommentStatusType& GetCommentStatus() const{ return m_commentStatus; }
+    inline CommentStatusType GetCommentStatus() const { return m_commentStatus; }
     inline bool CommentStatusHasBeenSet() const { return m_commentStatusHasBeenSet; }
-    inline void SetCommentStatus(const CommentStatusType& value) { m_commentStatusHasBeenSet = true; m_commentStatus = value; }
-    inline void SetCommentStatus(CommentStatusType&& value) { m_commentStatusHasBeenSet = true; m_commentStatus = std::move(value); }
-    inline CommentMetadata& WithCommentStatus(const CommentStatusType& value) { SetCommentStatus(value); return *this;}
-    inline CommentMetadata& WithCommentStatus(CommentStatusType&& value) { SetCommentStatus(std::move(value)); return *this;}
+    inline void SetCommentStatus(CommentStatusType value) { m_commentStatusHasBeenSet = true; m_commentStatus = value; }
+    inline CommentMetadata& WithCommentStatus(CommentStatusType value) { SetCommentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user being replied to.</p>
      */
-    inline const Aws::String& GetRecipientId() const{ return m_recipientId; }
+    inline const Aws::String& GetRecipientId() const { return m_recipientId; }
     inline bool RecipientIdHasBeenSet() const { return m_recipientIdHasBeenSet; }
-    inline void SetRecipientId(const Aws::String& value) { m_recipientIdHasBeenSet = true; m_recipientId = value; }
-    inline void SetRecipientId(Aws::String&& value) { m_recipientIdHasBeenSet = true; m_recipientId = std::move(value); }
-    inline void SetRecipientId(const char* value) { m_recipientIdHasBeenSet = true; m_recipientId.assign(value); }
-    inline CommentMetadata& WithRecipientId(const Aws::String& value) { SetRecipientId(value); return *this;}
-    inline CommentMetadata& WithRecipientId(Aws::String&& value) { SetRecipientId(std::move(value)); return *this;}
-    inline CommentMetadata& WithRecipientId(const char* value) { SetRecipientId(value); return *this;}
+    template<typename RecipientIdT = Aws::String>
+    void SetRecipientId(RecipientIdT&& value) { m_recipientIdHasBeenSet = true; m_recipientId = std::forward<RecipientIdT>(value); }
+    template<typename RecipientIdT = Aws::String>
+    CommentMetadata& WithRecipientId(RecipientIdT&& value) { SetRecipientId(std::forward<RecipientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user who made the comment.</p>
      */
-    inline const Aws::String& GetContributorId() const{ return m_contributorId; }
+    inline const Aws::String& GetContributorId() const { return m_contributorId; }
     inline bool ContributorIdHasBeenSet() const { return m_contributorIdHasBeenSet; }
-    inline void SetContributorId(const Aws::String& value) { m_contributorIdHasBeenSet = true; m_contributorId = value; }
-    inline void SetContributorId(Aws::String&& value) { m_contributorIdHasBeenSet = true; m_contributorId = std::move(value); }
-    inline void SetContributorId(const char* value) { m_contributorIdHasBeenSet = true; m_contributorId.assign(value); }
-    inline CommentMetadata& WithContributorId(const Aws::String& value) { SetContributorId(value); return *this;}
-    inline CommentMetadata& WithContributorId(Aws::String&& value) { SetContributorId(std::move(value)); return *this;}
-    inline CommentMetadata& WithContributorId(const char* value) { SetContributorId(value); return *this;}
+    template<typename ContributorIdT = Aws::String>
+    void SetContributorId(ContributorIdT&& value) { m_contributorIdHasBeenSet = true; m_contributorId = std::forward<ContributorIdT>(value); }
+    template<typename ContributorIdT = Aws::String>
+    CommentMetadata& WithContributorId(ContributorIdT&& value) { SetContributorId(std::forward<ContributorIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,10 +117,10 @@ namespace Model
     User m_contributor;
     bool m_contributorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    CommentStatusType m_commentStatus;
+    CommentStatusType m_commentStatus{CommentStatusType::NOT_SET};
     bool m_commentStatusHasBeenSet = false;
 
     Aws::String m_recipientId;

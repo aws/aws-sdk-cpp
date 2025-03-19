@@ -40,7 +40,7 @@ namespace Model
   class MemberDetail
   {
   public:
-    AWS_DETECTIVE_API MemberDetail();
+    AWS_DETECTIVE_API MemberDetail() = default;
     AWS_DETECTIVE_API MemberDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API MemberDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account identifier for the member account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline MemberDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline MemberDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline MemberDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    MemberDetail& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,28 +63,24 @@ namespace Model
      * <p>The Amazon Web Services account root user email address for the member
      * account.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline MemberDetail& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline MemberDetail& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline MemberDetail& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    MemberDetail& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline MemberDetail& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline MemberDetail& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline MemberDetail& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    MemberDetail& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,12 @@ namespace Model
      * <p>The Amazon Web Services account identifier of the administrator account for
      * the behavior graph.</p>
      */
-    inline const Aws::String& GetAdministratorId() const{ return m_administratorId; }
+    inline const Aws::String& GetAdministratorId() const { return m_administratorId; }
     inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }
-    inline void SetAdministratorId(const Aws::String& value) { m_administratorIdHasBeenSet = true; m_administratorId = value; }
-    inline void SetAdministratorId(Aws::String&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::move(value); }
-    inline void SetAdministratorId(const char* value) { m_administratorIdHasBeenSet = true; m_administratorId.assign(value); }
-    inline MemberDetail& WithAdministratorId(const Aws::String& value) { SetAdministratorId(value); return *this;}
-    inline MemberDetail& WithAdministratorId(Aws::String&& value) { SetAdministratorId(std::move(value)); return *this;}
-    inline MemberDetail& WithAdministratorId(const char* value) { SetAdministratorId(value); return *this;}
+    template<typename AdministratorIdT = Aws::String>
+    void SetAdministratorId(AdministratorIdT&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::forward<AdministratorIdT>(value); }
+    template<typename AdministratorIdT = Aws::String>
+    MemberDetail& WithAdministratorId(AdministratorIdT&& value) { SetAdministratorId(std::forward<AdministratorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +125,10 @@ namespace Model
      * accounts that the Detective administrator account did not enable are not
      * included.</p>
      */
-    inline const MemberStatus& GetStatus() const{ return m_status; }
+    inline MemberStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MemberDetail& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
-    inline MemberDetail& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MemberStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MemberDetail& WithStatus(MemberStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +142,10 @@ namespace Model
      * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
-    inline const MemberDisabledReason& GetDisabledReason() const{ return m_disabledReason; }
+    inline MemberDisabledReason GetDisabledReason() const { return m_disabledReason; }
     inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
-    inline void SetDisabledReason(const MemberDisabledReason& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
-    inline void SetDisabledReason(MemberDisabledReason&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
-    inline MemberDetail& WithDisabledReason(const MemberDisabledReason& value) { SetDisabledReason(value); return *this;}
-    inline MemberDetail& WithDisabledReason(MemberDisabledReason&& value) { SetDisabledReason(std::move(value)); return *this;}
+    inline void SetDisabledReason(MemberDisabledReason value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
+    inline MemberDetail& WithDisabledReason(MemberDisabledReason value) { SetDisabledReason(value); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +154,12 @@ namespace Model
      * the account. The value is an ISO8601 formatted string. For example,
      * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetInvitedTime() const{ return m_invitedTime; }
+    inline const Aws::Utils::DateTime& GetInvitedTime() const { return m_invitedTime; }
     inline bool InvitedTimeHasBeenSet() const { return m_invitedTimeHasBeenSet; }
-    inline void SetInvitedTime(const Aws::Utils::DateTime& value) { m_invitedTimeHasBeenSet = true; m_invitedTime = value; }
-    inline void SetInvitedTime(Aws::Utils::DateTime&& value) { m_invitedTimeHasBeenSet = true; m_invitedTime = std::move(value); }
-    inline MemberDetail& WithInvitedTime(const Aws::Utils::DateTime& value) { SetInvitedTime(value); return *this;}
-    inline MemberDetail& WithInvitedTime(Aws::Utils::DateTime&& value) { SetInvitedTime(std::move(value)); return *this;}
+    template<typename InvitedTimeT = Aws::Utils::DateTime>
+    void SetInvitedTime(InvitedTimeT&& value) { m_invitedTimeHasBeenSet = true; m_invitedTime = std::forward<InvitedTimeT>(value); }
+    template<typename InvitedTimeT = Aws::Utils::DateTime>
+    MemberDetail& WithInvitedTime(InvitedTimeT&& value) { SetInvitedTime(std::forward<InvitedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +168,12 @@ namespace Model
      * ISO8601 formatted string. For example,
      * <code>2021-08-18T16:35:56.284Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
+    inline const Aws::Utils::DateTime& GetUpdatedTime() const { return m_updatedTime; }
     inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
-    inline void SetUpdatedTime(const Aws::Utils::DateTime& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = value; }
-    inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::move(value); }
-    inline MemberDetail& WithUpdatedTime(const Aws::Utils::DateTime& value) { SetUpdatedTime(value); return *this;}
-    inline MemberDetail& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
+    template<typename UpdatedTimeT = Aws::Utils::DateTime>
+    void SetUpdatedTime(UpdatedTimeT&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::forward<UpdatedTimeT>(value); }
+    template<typename UpdatedTimeT = Aws::Utils::DateTime>
+    MemberDetail& WithUpdatedTime(UpdatedTimeT&& value) { SetUpdatedTime(std::forward<UpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +183,10 @@ namespace Model
      * <p>For an account that was invited to a behavior graph, the type is
      * <code>INVITATION</code>. </p>
      */
-    inline const InvitationType& GetInvitationType() const{ return m_invitationType; }
+    inline InvitationType GetInvitationType() const { return m_invitationType; }
     inline bool InvitationTypeHasBeenSet() const { return m_invitationTypeHasBeenSet; }
-    inline void SetInvitationType(const InvitationType& value) { m_invitationTypeHasBeenSet = true; m_invitationType = value; }
-    inline void SetInvitationType(InvitationType&& value) { m_invitationTypeHasBeenSet = true; m_invitationType = std::move(value); }
-    inline MemberDetail& WithInvitationType(const InvitationType& value) { SetInvitationType(value); return *this;}
-    inline MemberDetail& WithInvitationType(InvitationType&& value) { SetInvitationType(std::move(value)); return *this;}
+    inline void SetInvitationType(InvitationType value) { m_invitationTypeHasBeenSet = true; m_invitationType = value; }
+    inline MemberDetail& WithInvitationType(InvitationType value) { SetInvitationType(value); return *this;}
     ///@}
 
     ///@{
@@ -208,32 +194,30 @@ namespace Model
      * <p>Details on the volume of usage for each data source package in a behavior
      * graph.</p>
      */
-    inline const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& GetVolumeUsageByDatasourcePackage() const{ return m_volumeUsageByDatasourcePackage; }
+    inline const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& GetVolumeUsageByDatasourcePackage() const { return m_volumeUsageByDatasourcePackage; }
     inline bool VolumeUsageByDatasourcePackageHasBeenSet() const { return m_volumeUsageByDatasourcePackageHasBeenSet; }
-    inline void SetVolumeUsageByDatasourcePackage(const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage = value; }
-    inline void SetVolumeUsageByDatasourcePackage(Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage = std::move(value); }
-    inline MemberDetail& WithVolumeUsageByDatasourcePackage(const Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>& value) { SetVolumeUsageByDatasourcePackage(value); return *this;}
-    inline MemberDetail& WithVolumeUsageByDatasourcePackage(Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>&& value) { SetVolumeUsageByDatasourcePackage(std::move(value)); return *this;}
-    inline MemberDetail& AddVolumeUsageByDatasourcePackage(const DatasourcePackage& key, const DatasourcePackageUsageInfo& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(key, value); return *this; }
-    inline MemberDetail& AddVolumeUsageByDatasourcePackage(DatasourcePackage&& key, const DatasourcePackageUsageInfo& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(std::move(key), value); return *this; }
-    inline MemberDetail& AddVolumeUsageByDatasourcePackage(const DatasourcePackage& key, DatasourcePackageUsageInfo&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(key, std::move(value)); return *this; }
-    inline MemberDetail& AddVolumeUsageByDatasourcePackage(DatasourcePackage&& key, DatasourcePackageUsageInfo&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename VolumeUsageByDatasourcePackageT = Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>>
+    void SetVolumeUsageByDatasourcePackage(VolumeUsageByDatasourcePackageT&& value) { m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage = std::forward<VolumeUsageByDatasourcePackageT>(value); }
+    template<typename VolumeUsageByDatasourcePackageT = Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo>>
+    MemberDetail& WithVolumeUsageByDatasourcePackage(VolumeUsageByDatasourcePackageT&& value) { SetVolumeUsageByDatasourcePackage(std::forward<VolumeUsageByDatasourcePackageT>(value)); return *this;}
+    inline MemberDetail& AddVolumeUsageByDatasourcePackage(DatasourcePackage key, DatasourcePackageUsageInfo value) {
+      m_volumeUsageByDatasourcePackageHasBeenSet = true; m_volumeUsageByDatasourcePackage.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The state of a data source package for the behavior graph.</p>
      */
-    inline const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& GetDatasourcePackageIngestStates() const{ return m_datasourcePackageIngestStates; }
+    inline const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& GetDatasourcePackageIngestStates() const { return m_datasourcePackageIngestStates; }
     inline bool DatasourcePackageIngestStatesHasBeenSet() const { return m_datasourcePackageIngestStatesHasBeenSet; }
-    inline void SetDatasourcePackageIngestStates(const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates = value; }
-    inline void SetDatasourcePackageIngestStates(Aws::Map<DatasourcePackage, DatasourcePackageIngestState>&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates = std::move(value); }
-    inline MemberDetail& WithDatasourcePackageIngestStates(const Aws::Map<DatasourcePackage, DatasourcePackageIngestState>& value) { SetDatasourcePackageIngestStates(value); return *this;}
-    inline MemberDetail& WithDatasourcePackageIngestStates(Aws::Map<DatasourcePackage, DatasourcePackageIngestState>&& value) { SetDatasourcePackageIngestStates(std::move(value)); return *this;}
-    inline MemberDetail& AddDatasourcePackageIngestStates(const DatasourcePackage& key, const DatasourcePackageIngestState& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(key, value); return *this; }
-    inline MemberDetail& AddDatasourcePackageIngestStates(DatasourcePackage&& key, const DatasourcePackageIngestState& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(std::move(key), value); return *this; }
-    inline MemberDetail& AddDatasourcePackageIngestStates(const DatasourcePackage& key, DatasourcePackageIngestState&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(key, std::move(value)); return *this; }
-    inline MemberDetail& AddDatasourcePackageIngestStates(DatasourcePackage&& key, DatasourcePackageIngestState&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename DatasourcePackageIngestStatesT = Aws::Map<DatasourcePackage, DatasourcePackageIngestState>>
+    void SetDatasourcePackageIngestStates(DatasourcePackageIngestStatesT&& value) { m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates = std::forward<DatasourcePackageIngestStatesT>(value); }
+    template<typename DatasourcePackageIngestStatesT = Aws::Map<DatasourcePackage, DatasourcePackageIngestState>>
+    MemberDetail& WithDatasourcePackageIngestStates(DatasourcePackageIngestStatesT&& value) { SetDatasourcePackageIngestStates(std::forward<DatasourcePackageIngestStatesT>(value)); return *this;}
+    inline MemberDetail& AddDatasourcePackageIngestStates(DatasourcePackage key, DatasourcePackageIngestState value) {
+      m_datasourcePackageIngestStatesHasBeenSet = true; m_datasourcePackageIngestStates.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
@@ -249,19 +233,19 @@ namespace Model
     Aws::String m_administratorId;
     bool m_administratorIdHasBeenSet = false;
 
-    MemberStatus m_status;
+    MemberStatus m_status{MemberStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    MemberDisabledReason m_disabledReason;
+    MemberDisabledReason m_disabledReason{MemberDisabledReason::NOT_SET};
     bool m_disabledReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_invitedTime;
+    Aws::Utils::DateTime m_invitedTime{};
     bool m_invitedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTime;
+    Aws::Utils::DateTime m_updatedTime{};
     bool m_updatedTimeHasBeenSet = false;
 
-    InvitationType m_invitationType;
+    InvitationType m_invitationType{InvitationType::NOT_SET};
     bool m_invitationTypeHasBeenSet = false;
 
     Aws::Map<DatasourcePackage, DatasourcePackageUsageInfo> m_volumeUsageByDatasourcePackage;

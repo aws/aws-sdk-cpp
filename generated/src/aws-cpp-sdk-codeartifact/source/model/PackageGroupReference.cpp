@@ -18,14 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageGroupReference::PackageGroupReference() : 
-    m_arnHasBeenSet(false),
-    m_patternHasBeenSet(false)
-{
-}
-
 PackageGroupReference::PackageGroupReference(JsonView jsonValue)
-  : PackageGroupReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PackageGroupReference& PackageGroupReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetString("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-StringCondition::StringCondition() : 
-    m_valueHasBeenSet(false),
-    m_operator(StringConditionOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 StringCondition::StringCondition(JsonView jsonValue)
-  : StringCondition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StringCondition& StringCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = StringConditionOperatorMapper::GetStringConditionOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

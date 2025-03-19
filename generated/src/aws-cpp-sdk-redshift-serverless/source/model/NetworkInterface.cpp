@@ -18,17 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Address"))
   {
     m_ipv6Address = jsonValue.GetString("ipv6Address");
-
     m_ipv6AddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetId"))
   {
     m_subnetId = jsonValue.GetString("subnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

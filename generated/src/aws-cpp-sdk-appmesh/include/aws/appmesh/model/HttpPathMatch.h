@@ -32,7 +32,7 @@ namespace Model
   class HttpPathMatch
   {
   public:
-    AWS_APPMESH_API HttpPathMatch();
+    AWS_APPMESH_API HttpPathMatch() = default;
     AWS_APPMESH_API HttpPathMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API HttpPathMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The exact path to match on.</p>
      */
-    inline const Aws::String& GetExact() const{ return m_exact; }
+    inline const Aws::String& GetExact() const { return m_exact; }
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-    inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-    inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-    inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-    inline HttpPathMatch& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-    inline HttpPathMatch& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-    inline HttpPathMatch& WithExact(const char* value) { SetExact(value); return *this;}
+    template<typename ExactT = Aws::String>
+    void SetExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact = std::forward<ExactT>(value); }
+    template<typename ExactT = Aws::String>
+    HttpPathMatch& WithExact(ExactT&& value) { SetExact(std::forward<ExactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The regex used to match the path.</p>
      */
-    inline const Aws::String& GetRegex() const{ return m_regex; }
+    inline const Aws::String& GetRegex() const { return m_regex; }
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-    inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-    inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-    inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-    inline HttpPathMatch& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-    inline HttpPathMatch& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-    inline HttpPathMatch& WithRegex(const char* value) { SetRegex(value); return *this;}
+    template<typename RegexT = Aws::String>
+    void SetRegex(RegexT&& value) { m_regexHasBeenSet = true; m_regex = std::forward<RegexT>(value); }
+    template<typename RegexT = Aws::String>
+    HttpPathMatch& WithRegex(RegexT&& value) { SetRegex(std::forward<RegexT>(value)); return *this;}
     ///@}
   private:
 

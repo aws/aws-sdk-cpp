@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UserTurnInputSpecification::UserTurnInputSpecification() : 
-    m_utteranceInputHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_sessionStateHasBeenSet(false)
-{
-}
-
 UserTurnInputSpecification::UserTurnInputSpecification(JsonView jsonValue)
-  : UserTurnInputSpecification()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ UserTurnInputSpecification& UserTurnInputSpecification::operator =(JsonView json
   if(jsonValue.ValueExists("utteranceInput"))
   {
     m_utteranceInput = jsonValue.GetObject("utteranceInput");
-
     m_utteranceInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestAttributes"))
   {
     Aws::Map<Aws::String, JsonView> requestAttributesJsonMap = jsonValue.GetObject("requestAttributes").GetAllObjects();
@@ -49,14 +39,11 @@ UserTurnInputSpecification& UserTurnInputSpecification::operator =(JsonView json
     }
     m_requestAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionState"))
   {
     m_sessionState = jsonValue.GetObject("sessionState");
-
     m_sessionStateHasBeenSet = true;
   }
-
   return *this;
 }
 

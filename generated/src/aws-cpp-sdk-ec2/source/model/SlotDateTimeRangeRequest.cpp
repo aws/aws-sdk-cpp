@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SlotDateTimeRangeRequest::SlotDateTimeRangeRequest() : 
-    m_earliestTimeHasBeenSet(false),
-    m_latestTimeHasBeenSet(false)
-{
-}
-
 SlotDateTimeRangeRequest::SlotDateTimeRangeRequest(const XmlNode& xmlNode)
-  : SlotDateTimeRangeRequest()
 {
   *this = xmlNode;
 }

@@ -32,7 +32,7 @@ namespace Model
   class DifferentialPrivacyPrivacyBudgetAggregation
   {
   public:
-    AWS_CLEANROOMS_API DifferentialPrivacyPrivacyBudgetAggregation();
+    AWS_CLEANROOMS_API DifferentialPrivacyPrivacyBudgetAggregation() = default;
     AWS_CLEANROOMS_API DifferentialPrivacyPrivacyBudgetAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API DifferentialPrivacyPrivacyBudgetAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>The different types of aggregation functions that you can perform.</p>
      */
-    inline const DifferentialPrivacyAggregationType& GetType() const{ return m_type; }
+    inline DifferentialPrivacyAggregationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DifferentialPrivacyAggregationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DifferentialPrivacyAggregationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DifferentialPrivacyPrivacyBudgetAggregation& WithType(const DifferentialPrivacyAggregationType& value) { SetType(value); return *this;}
-    inline DifferentialPrivacyPrivacyBudgetAggregation& WithType(DifferentialPrivacyAggregationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DifferentialPrivacyAggregationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DifferentialPrivacyPrivacyBudgetAggregation& WithType(DifferentialPrivacyAggregationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * <p>The maximum number of aggregation functions that you can perform with the
      * given privacy budget.</p>
      */
-    inline int GetMaxCount() const{ return m_maxCount; }
+    inline int GetMaxCount() const { return m_maxCount; }
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
     inline DifferentialPrivacyPrivacyBudgetAggregation& WithMaxCount(int value) { SetMaxCount(value); return *this;}
@@ -66,20 +64,20 @@ namespace Model
      * <p>The remaining number of aggregation functions that can be run with the
      * available privacy budget.</p>
      */
-    inline int GetRemainingCount() const{ return m_remainingCount; }
+    inline int GetRemainingCount() const { return m_remainingCount; }
     inline bool RemainingCountHasBeenSet() const { return m_remainingCountHasBeenSet; }
     inline void SetRemainingCount(int value) { m_remainingCountHasBeenSet = true; m_remainingCount = value; }
     inline DifferentialPrivacyPrivacyBudgetAggregation& WithRemainingCount(int value) { SetRemainingCount(value); return *this;}
     ///@}
   private:
 
-    DifferentialPrivacyAggregationType m_type;
+    DifferentialPrivacyAggregationType m_type{DifferentialPrivacyAggregationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_maxCount;
+    int m_maxCount{0};
     bool m_maxCountHasBeenSet = false;
 
-    int m_remainingCount;
+    int m_remainingCount{0};
     bool m_remainingCountHasBeenSet = false;
   };
 

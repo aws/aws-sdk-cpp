@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLayoutResult::CreateLayoutResult()
-{
-}
-
 CreateLayoutResult::CreateLayoutResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateLayoutResult& CreateLayoutResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("layoutArn"))
   {
     m_layoutArn = jsonValue.GetString("layoutArn");
-
+    m_layoutArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layoutId"))
   {
     m_layoutId = jsonValue.GetString("layoutId");
-
+    m_layoutIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEffectiveRecommendationPreferencesRequest::GetEffectiveRecommendationPreferencesRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetEffectiveRecommendationPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

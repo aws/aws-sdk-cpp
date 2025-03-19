@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ViewInputContent::ViewInputContent() : 
-    m_templateHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 ViewInputContent::ViewInputContent(JsonView jsonValue)
-  : ViewInputContent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ViewInputContent& ViewInputContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Template"))
   {
     m_template = jsonValue.GetString("Template");
-
     m_templateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -48,7 +39,6 @@ ViewInputContent& ViewInputContent::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

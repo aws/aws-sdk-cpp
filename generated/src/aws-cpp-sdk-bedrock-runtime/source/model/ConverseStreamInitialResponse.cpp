@@ -20,10 +20,6 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ConverseStreamInitialResponse::ConverseStreamInitialResponse()
-{
-}
-
 ConverseStreamInitialResponse::ConverseStreamInitialResponse(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -12,11 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTargetResourceTypeRequest::GetTargetResourceTypeRequest() : 
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetTargetResourceTypeRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class EbsVolumesResult
   {
   public:
-    AWS_GUARDDUTY_API EbsVolumesResult();
+    AWS_GUARDDUTY_API EbsVolumesResult() = default;
     AWS_GUARDDUTY_API EbsVolumesResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API EbsVolumesResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
      */
-    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+    inline DataSourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EbsVolumesResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
-    inline EbsVolumesResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataSourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EbsVolumesResult& WithStatus(DataSourceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not
      * enabled as a data source.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline EbsVolumesResult& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline EbsVolumesResult& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline EbsVolumesResult& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    EbsVolumesResult& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    DataSourceStatus m_status;
+    DataSourceStatus m_status{DataSourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;

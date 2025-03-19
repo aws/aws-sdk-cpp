@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateKeyRegistrationResult::UpdateKeyRegistrationResult()
-{
-}
-
 UpdateKeyRegistrationResult::UpdateKeyRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ UpdateKeyRegistrationResult& UpdateKeyRegistrationResult::operator =(const Aws::
     {
       m_failedKeyRegistration.push_back(failedKeyRegistrationJsonList[failedKeyRegistrationIndex].AsObject());
     }
+    m_failedKeyRegistrationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessfulKeyRegistration"))
   {
     Aws::Utils::Array<JsonView> successfulKeyRegistrationJsonList = jsonValue.GetArray("SuccessfulKeyRegistration");
@@ -45,14 +41,15 @@ UpdateKeyRegistrationResult& UpdateKeyRegistrationResult::operator =(const Aws::
     {
       m_successfulKeyRegistration.push_back(successfulKeyRegistrationJsonList[successfulKeyRegistrationIndex].AsObject());
     }
+    m_successfulKeyRegistrationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

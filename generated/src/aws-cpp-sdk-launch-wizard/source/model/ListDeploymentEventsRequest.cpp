@@ -12,14 +12,6 @@ using namespace Aws::LaunchWizard::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeploymentEventsRequest::ListDeploymentEventsRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDeploymentEventsRequest::SerializePayload() const
 {
   JsonValue payload;

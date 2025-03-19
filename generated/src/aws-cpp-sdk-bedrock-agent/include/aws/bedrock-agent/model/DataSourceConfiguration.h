@@ -37,7 +37,7 @@ namespace Model
   class DataSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API DataSourceConfiguration();
+    AWS_BEDROCKAGENT_API DataSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * source.</p>  <p>Confluence data source connector is in preview release and
      * is subject to change.</p> 
      */
-    inline const ConfluenceDataSourceConfiguration& GetConfluenceConfiguration() const{ return m_confluenceConfiguration; }
+    inline const ConfluenceDataSourceConfiguration& GetConfluenceConfiguration() const { return m_confluenceConfiguration; }
     inline bool ConfluenceConfigurationHasBeenSet() const { return m_confluenceConfigurationHasBeenSet; }
-    inline void SetConfluenceConfiguration(const ConfluenceDataSourceConfiguration& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = value; }
-    inline void SetConfluenceConfiguration(ConfluenceDataSourceConfiguration&& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithConfluenceConfiguration(const ConfluenceDataSourceConfiguration& value) { SetConfluenceConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithConfluenceConfiguration(ConfluenceDataSourceConfiguration&& value) { SetConfluenceConfiguration(std::move(value)); return *this;}
+    template<typename ConfluenceConfigurationT = ConfluenceDataSourceConfiguration>
+    void SetConfluenceConfiguration(ConfluenceConfigurationT&& value) { m_confluenceConfigurationHasBeenSet = true; m_confluenceConfiguration = std::forward<ConfluenceConfigurationT>(value); }
+    template<typename ConfluenceConfigurationT = ConfluenceDataSourceConfiguration>
+    DataSourceConfiguration& WithConfluenceConfiguration(ConfluenceConfigurationT&& value) { SetConfluenceConfiguration(std::forward<ConfluenceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>The configuration information to connect to Amazon S3 as your data
      * source.</p>
      */
-    inline const S3DataSourceConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3DataSourceConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3DataSourceConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3DataSourceConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline DataSourceConfiguration& WithS3Configuration(const S3DataSourceConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline DataSourceConfiguration& WithS3Configuration(S3DataSourceConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3DataSourceConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3DataSourceConfiguration>
+    DataSourceConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * source.</p>  <p>Salesforce data source connector is in preview release and
      * is subject to change.</p> 
      */
-    inline const SalesforceDataSourceConfiguration& GetSalesforceConfiguration() const{ return m_salesforceConfiguration; }
+    inline const SalesforceDataSourceConfiguration& GetSalesforceConfiguration() const { return m_salesforceConfiguration; }
     inline bool SalesforceConfigurationHasBeenSet() const { return m_salesforceConfigurationHasBeenSet; }
-    inline void SetSalesforceConfiguration(const SalesforceDataSourceConfiguration& value) { m_salesforceConfigurationHasBeenSet = true; m_salesforceConfiguration = value; }
-    inline void SetSalesforceConfiguration(SalesforceDataSourceConfiguration&& value) { m_salesforceConfigurationHasBeenSet = true; m_salesforceConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithSalesforceConfiguration(const SalesforceDataSourceConfiguration& value) { SetSalesforceConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithSalesforceConfiguration(SalesforceDataSourceConfiguration&& value) { SetSalesforceConfiguration(std::move(value)); return *this;}
+    template<typename SalesforceConfigurationT = SalesforceDataSourceConfiguration>
+    void SetSalesforceConfiguration(SalesforceConfigurationT&& value) { m_salesforceConfigurationHasBeenSet = true; m_salesforceConfiguration = std::forward<SalesforceConfigurationT>(value); }
+    template<typename SalesforceConfigurationT = SalesforceDataSourceConfiguration>
+    DataSourceConfiguration& WithSalesforceConfiguration(SalesforceConfigurationT&& value) { SetSalesforceConfiguration(std::forward<SalesforceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,24 +90,22 @@ namespace Model
      * source.</p>  <p>SharePoint data source connector is in preview release and
      * is subject to change.</p> 
      */
-    inline const SharePointDataSourceConfiguration& GetSharePointConfiguration() const{ return m_sharePointConfiguration; }
+    inline const SharePointDataSourceConfiguration& GetSharePointConfiguration() const { return m_sharePointConfiguration; }
     inline bool SharePointConfigurationHasBeenSet() const { return m_sharePointConfigurationHasBeenSet; }
-    inline void SetSharePointConfiguration(const SharePointDataSourceConfiguration& value) { m_sharePointConfigurationHasBeenSet = true; m_sharePointConfiguration = value; }
-    inline void SetSharePointConfiguration(SharePointDataSourceConfiguration&& value) { m_sharePointConfigurationHasBeenSet = true; m_sharePointConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithSharePointConfiguration(const SharePointDataSourceConfiguration& value) { SetSharePointConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithSharePointConfiguration(SharePointDataSourceConfiguration&& value) { SetSharePointConfiguration(std::move(value)); return *this;}
+    template<typename SharePointConfigurationT = SharePointDataSourceConfiguration>
+    void SetSharePointConfiguration(SharePointConfigurationT&& value) { m_sharePointConfigurationHasBeenSet = true; m_sharePointConfiguration = std::forward<SharePointConfigurationT>(value); }
+    template<typename SharePointConfigurationT = SharePointDataSourceConfiguration>
+    DataSourceConfiguration& WithSharePointConfiguration(SharePointConfigurationT&& value) { SetSharePointConfiguration(std::forward<SharePointConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of data source.</p>
      */
-    inline const DataSourceType& GetType() const{ return m_type; }
+    inline DataSourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DataSourceConfiguration& WithType(const DataSourceType& value) { SetType(value); return *this;}
-    inline DataSourceConfiguration& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataSourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DataSourceConfiguration& WithType(DataSourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +114,12 @@ namespace Model
      * authorized to crawl the URLs.</p>  <p>Crawling web URLs as your data
      * source is in preview release and is subject to change.</p> 
      */
-    inline const WebDataSourceConfiguration& GetWebConfiguration() const{ return m_webConfiguration; }
+    inline const WebDataSourceConfiguration& GetWebConfiguration() const { return m_webConfiguration; }
     inline bool WebConfigurationHasBeenSet() const { return m_webConfigurationHasBeenSet; }
-    inline void SetWebConfiguration(const WebDataSourceConfiguration& value) { m_webConfigurationHasBeenSet = true; m_webConfiguration = value; }
-    inline void SetWebConfiguration(WebDataSourceConfiguration&& value) { m_webConfigurationHasBeenSet = true; m_webConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithWebConfiguration(const WebDataSourceConfiguration& value) { SetWebConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithWebConfiguration(WebDataSourceConfiguration&& value) { SetWebConfiguration(std::move(value)); return *this;}
+    template<typename WebConfigurationT = WebDataSourceConfiguration>
+    void SetWebConfiguration(WebConfigurationT&& value) { m_webConfigurationHasBeenSet = true; m_webConfiguration = std::forward<WebConfigurationT>(value); }
+    template<typename WebConfigurationT = WebDataSourceConfiguration>
+    DataSourceConfiguration& WithWebConfiguration(WebConfigurationT&& value) { SetWebConfiguration(std::forward<WebConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,7 +135,7 @@ namespace Model
     SharePointDataSourceConfiguration m_sharePointConfiguration;
     bool m_sharePointConfigurationHasBeenSet = false;
 
-    DataSourceType m_type;
+    DataSourceType m_type{DataSourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     WebDataSourceConfiguration m_webConfiguration;

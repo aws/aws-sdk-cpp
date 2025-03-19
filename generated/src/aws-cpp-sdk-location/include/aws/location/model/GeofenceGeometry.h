@@ -38,7 +38,7 @@ namespace Model
   class GeofenceGeometry
   {
   public:
-    AWS_LOCATIONSERVICE_API GeofenceGeometry();
+    AWS_LOCATIONSERVICE_API GeofenceGeometry() = default;
     AWS_LOCATIONSERVICE_API GeofenceGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API GeofenceGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,26 +60,26 @@ namespace Model
      * (<code>[[[double, double], ...], ...]</code>).</p> <p>A linear ring for use in
      * geofences can consist of between 4 and 1,000 vertices.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const{ return m_polygon; }
+    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const { return m_polygon; }
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-    inline void SetPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-    inline void SetPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-    inline GeofenceGeometry& WithPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { SetPolygon(value); return *this;}
-    inline GeofenceGeometry& WithPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { SetPolygon(std::move(value)); return *this;}
-    inline GeofenceGeometry& AddPolygon(const Aws::Vector<Aws::Vector<double>>& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-    inline GeofenceGeometry& AddPolygon(Aws::Vector<Aws::Vector<double>>&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    void SetPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon = std::forward<PolygonT>(value); }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    GeofenceGeometry& WithPolygon(PolygonT&& value) { SetPolygon(std::forward<PolygonT>(value)); return *this;}
+    template<typename PolygonT = Aws::Vector<Aws::Vector<double>>>
+    GeofenceGeometry& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A circle on the earth, as defined by a center point and a radius.</p>
      */
-    inline const Circle& GetCircle() const{ return m_circle; }
+    inline const Circle& GetCircle() const { return m_circle; }
     inline bool CircleHasBeenSet() const { return m_circleHasBeenSet; }
-    inline void SetCircle(const Circle& value) { m_circleHasBeenSet = true; m_circle = value; }
-    inline void SetCircle(Circle&& value) { m_circleHasBeenSet = true; m_circle = std::move(value); }
-    inline GeofenceGeometry& WithCircle(const Circle& value) { SetCircle(value); return *this;}
-    inline GeofenceGeometry& WithCircle(Circle&& value) { SetCircle(std::move(value)); return *this;}
+    template<typename CircleT = Circle>
+    void SetCircle(CircleT&& value) { m_circleHasBeenSet = true; m_circle = std::forward<CircleT>(value); }
+    template<typename CircleT = Circle>
+    GeofenceGeometry& WithCircle(CircleT&& value) { SetCircle(std::forward<CircleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +88,12 @@ namespace Model
      * lossless compression of GeoJSON polygons. The Geobuf must be Base64-encoded.</p>
      * <p>A polygon in Geobuf format can have up to 100,000 vertices.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetGeobuf() const{ return m_geobuf; }
+    inline const Aws::Utils::CryptoBuffer& GetGeobuf() const { return m_geobuf; }
     inline bool GeobufHasBeenSet() const { return m_geobufHasBeenSet; }
-    inline void SetGeobuf(const Aws::Utils::CryptoBuffer& value) { m_geobufHasBeenSet = true; m_geobuf = value; }
-    inline void SetGeobuf(Aws::Utils::CryptoBuffer&& value) { m_geobufHasBeenSet = true; m_geobuf = std::move(value); }
-    inline GeofenceGeometry& WithGeobuf(const Aws::Utils::CryptoBuffer& value) { SetGeobuf(value); return *this;}
-    inline GeofenceGeometry& WithGeobuf(Aws::Utils::CryptoBuffer&& value) { SetGeobuf(std::move(value)); return *this;}
+    template<typename GeobufT = Aws::Utils::CryptoBuffer>
+    void SetGeobuf(GeobufT&& value) { m_geobufHasBeenSet = true; m_geobuf = std::forward<GeobufT>(value); }
+    template<typename GeobufT = Aws::Utils::CryptoBuffer>
+    GeofenceGeometry& WithGeobuf(GeobufT&& value) { SetGeobuf(std::forward<GeobufT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +103,7 @@ namespace Model
     Circle m_circle;
     bool m_circleHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_geobuf;
+    Aws::Utils::CryptoBuffer m_geobuf{};
     bool m_geobufHasBeenSet = false;
   };
 

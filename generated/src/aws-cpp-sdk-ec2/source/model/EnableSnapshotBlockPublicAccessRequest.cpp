@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableSnapshotBlockPublicAccessRequest::EnableSnapshotBlockPublicAccessRequest() : 
-    m_state(SnapshotBlockPublicAccessState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EnableSnapshotBlockPublicAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

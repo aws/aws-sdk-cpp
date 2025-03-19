@@ -29,7 +29,7 @@ namespace Model
   class ListKxDataviewsResult
   {
   public:
-    AWS_FINSPACE_API ListKxDataviewsResult();
+    AWS_FINSPACE_API ListKxDataviewsResult() = default;
     AWS_FINSPACE_API ListKxDataviewsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API ListKxDataviewsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p> The list of kdb dataviews that are currently active for the given database.
      * </p>
      */
-    inline const Aws::Vector<KxDataviewListEntry>& GetKxDataviews() const{ return m_kxDataviews; }
-    inline void SetKxDataviews(const Aws::Vector<KxDataviewListEntry>& value) { m_kxDataviews = value; }
-    inline void SetKxDataviews(Aws::Vector<KxDataviewListEntry>&& value) { m_kxDataviews = std::move(value); }
-    inline ListKxDataviewsResult& WithKxDataviews(const Aws::Vector<KxDataviewListEntry>& value) { SetKxDataviews(value); return *this;}
-    inline ListKxDataviewsResult& WithKxDataviews(Aws::Vector<KxDataviewListEntry>&& value) { SetKxDataviews(std::move(value)); return *this;}
-    inline ListKxDataviewsResult& AddKxDataviews(const KxDataviewListEntry& value) { m_kxDataviews.push_back(value); return *this; }
-    inline ListKxDataviewsResult& AddKxDataviews(KxDataviewListEntry&& value) { m_kxDataviews.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KxDataviewListEntry>& GetKxDataviews() const { return m_kxDataviews; }
+    template<typename KxDataviewsT = Aws::Vector<KxDataviewListEntry>>
+    void SetKxDataviews(KxDataviewsT&& value) { m_kxDataviewsHasBeenSet = true; m_kxDataviews = std::forward<KxDataviewsT>(value); }
+    template<typename KxDataviewsT = Aws::Vector<KxDataviewListEntry>>
+    ListKxDataviewsResult& WithKxDataviews(KxDataviewsT&& value) { SetKxDataviews(std::forward<KxDataviewsT>(value)); return *this;}
+    template<typename KxDataviewsT = KxDataviewListEntry>
+    ListKxDataviewsResult& AddKxDataviews(KxDataviewsT&& value) { m_kxDataviewsHasBeenSet = true; m_kxDataviews.emplace_back(std::forward<KxDataviewsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> A token that indicates where a results page should begin. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListKxDataviewsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListKxDataviewsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListKxDataviewsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListKxDataviewsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKxDataviewsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKxDataviewsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKxDataviewsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKxDataviewsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KxDataviewListEntry> m_kxDataviews;
+    bool m_kxDataviewsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

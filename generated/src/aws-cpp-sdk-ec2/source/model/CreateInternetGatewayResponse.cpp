@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInternetGatewayResponse::CreateInternetGatewayResponse()
-{
-}
-
 CreateInternetGatewayResponse::CreateInternetGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateInternetGatewayResponse& CreateInternetGatewayResponse::operator =(const A
     if(!internetGatewayNode.IsNull())
     {
       m_internetGateway = internetGatewayNode;
+      m_internetGatewayHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateInternetGatewayResponse& CreateInternetGatewayResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateInternetGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

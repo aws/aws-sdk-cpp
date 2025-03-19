@@ -18,18 +18,7 @@ namespace ECS
 namespace Model
 {
 
-AutoScalingGroupProvider::AutoScalingGroupProvider() : 
-    m_autoScalingGroupArnHasBeenSet(false),
-    m_managedScalingHasBeenSet(false),
-    m_managedTerminationProtection(ManagedTerminationProtection::NOT_SET),
-    m_managedTerminationProtectionHasBeenSet(false),
-    m_managedDraining(ManagedDraining::NOT_SET),
-    m_managedDrainingHasBeenSet(false)
-{
-}
-
 AutoScalingGroupProvider::AutoScalingGroupProvider(JsonView jsonValue)
-  : AutoScalingGroupProvider()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AutoScalingGroupProvider& AutoScalingGroupProvider::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("autoScalingGroupArn"))
   {
     m_autoScalingGroupArn = jsonValue.GetString("autoScalingGroupArn");
-
     m_autoScalingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedScaling"))
   {
     m_managedScaling = jsonValue.GetObject("managedScaling");
-
     m_managedScalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedTerminationProtection"))
   {
     m_managedTerminationProtection = ManagedTerminationProtectionMapper::GetManagedTerminationProtectionForName(jsonValue.GetString("managedTerminationProtection"));
-
     m_managedTerminationProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedDraining"))
   {
     m_managedDraining = ManagedDrainingMapper::GetManagedDrainingForName(jsonValue.GetString("managedDraining"));
-
     m_managedDrainingHasBeenSet = true;
   }
-
   return *this;
 }
 

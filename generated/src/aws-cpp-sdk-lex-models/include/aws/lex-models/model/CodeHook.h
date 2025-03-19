@@ -32,7 +32,7 @@ namespace Model
   class CodeHook
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API CodeHook();
+    AWS_LEXMODELBUILDINGSERVICE_API CodeHook() = default;
     AWS_LEXMODELBUILDINGSERVICE_API CodeHook(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API CodeHook& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline CodeHook& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline CodeHook& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline CodeHook& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    CodeHook& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The version of the request-response that you want Amazon Lex to use to invoke
      * your Lambda function. For more information, see <a>using-lambda</a>.</p>
      */
-    inline const Aws::String& GetMessageVersion() const{ return m_messageVersion; }
+    inline const Aws::String& GetMessageVersion() const { return m_messageVersion; }
     inline bool MessageVersionHasBeenSet() const { return m_messageVersionHasBeenSet; }
-    inline void SetMessageVersion(const Aws::String& value) { m_messageVersionHasBeenSet = true; m_messageVersion = value; }
-    inline void SetMessageVersion(Aws::String&& value) { m_messageVersionHasBeenSet = true; m_messageVersion = std::move(value); }
-    inline void SetMessageVersion(const char* value) { m_messageVersionHasBeenSet = true; m_messageVersion.assign(value); }
-    inline CodeHook& WithMessageVersion(const Aws::String& value) { SetMessageVersion(value); return *this;}
-    inline CodeHook& WithMessageVersion(Aws::String&& value) { SetMessageVersion(std::move(value)); return *this;}
-    inline CodeHook& WithMessageVersion(const char* value) { SetMessageVersion(value); return *this;}
+    template<typename MessageVersionT = Aws::String>
+    void SetMessageVersion(MessageVersionT&& value) { m_messageVersionHasBeenSet = true; m_messageVersion = std::forward<MessageVersionT>(value); }
+    template<typename MessageVersionT = Aws::String>
+    CodeHook& WithMessageVersion(MessageVersionT&& value) { SetMessageVersion(std::forward<MessageVersionT>(value)); return *this;}
     ///@}
   private:
 

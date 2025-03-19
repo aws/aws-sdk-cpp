@@ -18,36 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CmfcSettings::CmfcSettings() : 
-    m_audioDuration(CmfcAudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_audioGroupIdHasBeenSet(false),
-    m_audioRenditionSetsHasBeenSet(false),
-    m_audioTrackType(CmfcAudioTrackType::NOT_SET),
-    m_audioTrackTypeHasBeenSet(false),
-    m_descriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag::NOT_SET),
-    m_descriptiveVideoServiceFlagHasBeenSet(false),
-    m_iFrameOnlyManifest(CmfcIFrameOnlyManifest::NOT_SET),
-    m_iFrameOnlyManifestHasBeenSet(false),
-    m_klvMetadata(CmfcKlvMetadata::NOT_SET),
-    m_klvMetadataHasBeenSet(false),
-    m_manifestMetadataSignaling(CmfcManifestMetadataSignaling::NOT_SET),
-    m_manifestMetadataSignalingHasBeenSet(false),
-    m_scte35Esam(CmfcScte35Esam::NOT_SET),
-    m_scte35EsamHasBeenSet(false),
-    m_scte35Source(CmfcScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false),
-    m_timedMetadata(CmfcTimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false),
-    m_timedMetadataBoxVersion(CmfcTimedMetadataBoxVersion::NOT_SET),
-    m_timedMetadataBoxVersionHasBeenSet(false),
-    m_timedMetadataSchemeIdUriHasBeenSet(false),
-    m_timedMetadataValueHasBeenSet(false)
-{
-}
-
 CmfcSettings::CmfcSettings(JsonView jsonValue)
-  : CmfcSettings()
 {
   *this = jsonValue;
 }
@@ -57,101 +28,73 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioDuration"))
   {
     m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
-
     m_audioDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioGroupId"))
   {
     m_audioGroupId = jsonValue.GetString("audioGroupId");
-
     m_audioGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioRenditionSets"))
   {
     m_audioRenditionSets = jsonValue.GetString("audioRenditionSets");
-
     m_audioRenditionSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioTrackType"))
   {
     m_audioTrackType = CmfcAudioTrackTypeMapper::GetCmfcAudioTrackTypeForName(jsonValue.GetString("audioTrackType"));
-
     m_audioTrackTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("descriptiveVideoServiceFlag"))
   {
     m_descriptiveVideoServiceFlag = CmfcDescriptiveVideoServiceFlagMapper::GetCmfcDescriptiveVideoServiceFlagForName(jsonValue.GetString("descriptiveVideoServiceFlag"));
-
     m_descriptiveVideoServiceFlagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iFrameOnlyManifest"))
   {
     m_iFrameOnlyManifest = CmfcIFrameOnlyManifestMapper::GetCmfcIFrameOnlyManifestForName(jsonValue.GetString("iFrameOnlyManifest"));
-
     m_iFrameOnlyManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("klvMetadata"))
   {
     m_klvMetadata = CmfcKlvMetadataMapper::GetCmfcKlvMetadataForName(jsonValue.GetString("klvMetadata"));
-
     m_klvMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestMetadataSignaling"))
   {
     m_manifestMetadataSignaling = CmfcManifestMetadataSignalingMapper::GetCmfcManifestMetadataSignalingForName(jsonValue.GetString("manifestMetadataSignaling"));
-
     m_manifestMetadataSignalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Esam"))
   {
     m_scte35Esam = CmfcScte35EsamMapper::GetCmfcScte35EsamForName(jsonValue.GetString("scte35Esam"));
-
     m_scte35EsamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Source"))
   {
     m_scte35Source = CmfcScte35SourceMapper::GetCmfcScte35SourceForName(jsonValue.GetString("scte35Source"));
-
     m_scte35SourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadata"))
   {
     m_timedMetadata = CmfcTimedMetadataMapper::GetCmfcTimedMetadataForName(jsonValue.GetString("timedMetadata"));
-
     m_timedMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataBoxVersion"))
   {
     m_timedMetadataBoxVersion = CmfcTimedMetadataBoxVersionMapper::GetCmfcTimedMetadataBoxVersionForName(jsonValue.GetString("timedMetadataBoxVersion"));
-
     m_timedMetadataBoxVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataSchemeIdUri"))
   {
     m_timedMetadataSchemeIdUri = jsonValue.GetString("timedMetadataSchemeIdUri");
-
     m_timedMetadataSchemeIdUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataValue"))
   {
     m_timedMetadataValue = jsonValue.GetString("timedMetadataValue");
-
     m_timedMetadataValueHasBeenSet = true;
   }
-
   return *this;
 }
 

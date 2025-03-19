@@ -31,7 +31,7 @@ namespace Model
   class DataSetReference
   {
   public:
-    AWS_QUICKSIGHT_API DataSetReference();
+    AWS_QUICKSIGHT_API DataSetReference() = default;
     AWS_QUICKSIGHT_API DataSetReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataSetReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Dataset placeholder.</p>
      */
-    inline const Aws::String& GetDataSetPlaceholder() const{ return m_dataSetPlaceholder; }
+    inline const Aws::String& GetDataSetPlaceholder() const { return m_dataSetPlaceholder; }
     inline bool DataSetPlaceholderHasBeenSet() const { return m_dataSetPlaceholderHasBeenSet; }
-    inline void SetDataSetPlaceholder(const Aws::String& value) { m_dataSetPlaceholderHasBeenSet = true; m_dataSetPlaceholder = value; }
-    inline void SetDataSetPlaceholder(Aws::String&& value) { m_dataSetPlaceholderHasBeenSet = true; m_dataSetPlaceholder = std::move(value); }
-    inline void SetDataSetPlaceholder(const char* value) { m_dataSetPlaceholderHasBeenSet = true; m_dataSetPlaceholder.assign(value); }
-    inline DataSetReference& WithDataSetPlaceholder(const Aws::String& value) { SetDataSetPlaceholder(value); return *this;}
-    inline DataSetReference& WithDataSetPlaceholder(Aws::String&& value) { SetDataSetPlaceholder(std::move(value)); return *this;}
-    inline DataSetReference& WithDataSetPlaceholder(const char* value) { SetDataSetPlaceholder(value); return *this;}
+    template<typename DataSetPlaceholderT = Aws::String>
+    void SetDataSetPlaceholder(DataSetPlaceholderT&& value) { m_dataSetPlaceholderHasBeenSet = true; m_dataSetPlaceholder = std::forward<DataSetPlaceholderT>(value); }
+    template<typename DataSetPlaceholderT = Aws::String>
+    DataSetReference& WithDataSetPlaceholder(DataSetPlaceholderT&& value) { SetDataSetPlaceholder(std::forward<DataSetPlaceholderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Dataset Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetDataSetArn() const{ return m_dataSetArn; }
+    inline const Aws::String& GetDataSetArn() const { return m_dataSetArn; }
     inline bool DataSetArnHasBeenSet() const { return m_dataSetArnHasBeenSet; }
-    inline void SetDataSetArn(const Aws::String& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = value; }
-    inline void SetDataSetArn(Aws::String&& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = std::move(value); }
-    inline void SetDataSetArn(const char* value) { m_dataSetArnHasBeenSet = true; m_dataSetArn.assign(value); }
-    inline DataSetReference& WithDataSetArn(const Aws::String& value) { SetDataSetArn(value); return *this;}
-    inline DataSetReference& WithDataSetArn(Aws::String&& value) { SetDataSetArn(std::move(value)); return *this;}
-    inline DataSetReference& WithDataSetArn(const char* value) { SetDataSetArn(value); return *this;}
+    template<typename DataSetArnT = Aws::String>
+    void SetDataSetArn(DataSetArnT&& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = std::forward<DataSetArnT>(value); }
+    template<typename DataSetArnT = Aws::String>
+    DataSetReference& WithDataSetArn(DataSetArnT&& value) { SetDataSetArn(std::forward<DataSetArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteModelRequest::DeleteModelRequest() : 
-    m_modelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteModelRequest::SerializePayload() const
 {
   JsonValue payload;

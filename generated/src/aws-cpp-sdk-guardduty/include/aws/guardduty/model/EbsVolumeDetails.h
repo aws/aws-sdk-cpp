@@ -33,7 +33,7 @@ namespace Model
   class EbsVolumeDetails
   {
   public:
-    AWS_GUARDDUTY_API EbsVolumeDetails();
+    AWS_GUARDDUTY_API EbsVolumeDetails() = default;
     AWS_GUARDDUTY_API EbsVolumeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API EbsVolumeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>List of EBS volumes that were scanned.</p>
      */
-    inline const Aws::Vector<VolumeDetail>& GetScannedVolumeDetails() const{ return m_scannedVolumeDetails; }
+    inline const Aws::Vector<VolumeDetail>& GetScannedVolumeDetails() const { return m_scannedVolumeDetails; }
     inline bool ScannedVolumeDetailsHasBeenSet() const { return m_scannedVolumeDetailsHasBeenSet; }
-    inline void SetScannedVolumeDetails(const Aws::Vector<VolumeDetail>& value) { m_scannedVolumeDetailsHasBeenSet = true; m_scannedVolumeDetails = value; }
-    inline void SetScannedVolumeDetails(Aws::Vector<VolumeDetail>&& value) { m_scannedVolumeDetailsHasBeenSet = true; m_scannedVolumeDetails = std::move(value); }
-    inline EbsVolumeDetails& WithScannedVolumeDetails(const Aws::Vector<VolumeDetail>& value) { SetScannedVolumeDetails(value); return *this;}
-    inline EbsVolumeDetails& WithScannedVolumeDetails(Aws::Vector<VolumeDetail>&& value) { SetScannedVolumeDetails(std::move(value)); return *this;}
-    inline EbsVolumeDetails& AddScannedVolumeDetails(const VolumeDetail& value) { m_scannedVolumeDetailsHasBeenSet = true; m_scannedVolumeDetails.push_back(value); return *this; }
-    inline EbsVolumeDetails& AddScannedVolumeDetails(VolumeDetail&& value) { m_scannedVolumeDetailsHasBeenSet = true; m_scannedVolumeDetails.push_back(std::move(value)); return *this; }
+    template<typename ScannedVolumeDetailsT = Aws::Vector<VolumeDetail>>
+    void SetScannedVolumeDetails(ScannedVolumeDetailsT&& value) { m_scannedVolumeDetailsHasBeenSet = true; m_scannedVolumeDetails = std::forward<ScannedVolumeDetailsT>(value); }
+    template<typename ScannedVolumeDetailsT = Aws::Vector<VolumeDetail>>
+    EbsVolumeDetails& WithScannedVolumeDetails(ScannedVolumeDetailsT&& value) { SetScannedVolumeDetails(std::forward<ScannedVolumeDetailsT>(value)); return *this;}
+    template<typename ScannedVolumeDetailsT = VolumeDetail>
+    EbsVolumeDetails& AddScannedVolumeDetails(ScannedVolumeDetailsT&& value) { m_scannedVolumeDetailsHasBeenSet = true; m_scannedVolumeDetails.emplace_back(std::forward<ScannedVolumeDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of EBS volumes that were skipped from the malware scan.</p>
      */
-    inline const Aws::Vector<VolumeDetail>& GetSkippedVolumeDetails() const{ return m_skippedVolumeDetails; }
+    inline const Aws::Vector<VolumeDetail>& GetSkippedVolumeDetails() const { return m_skippedVolumeDetails; }
     inline bool SkippedVolumeDetailsHasBeenSet() const { return m_skippedVolumeDetailsHasBeenSet; }
-    inline void SetSkippedVolumeDetails(const Aws::Vector<VolumeDetail>& value) { m_skippedVolumeDetailsHasBeenSet = true; m_skippedVolumeDetails = value; }
-    inline void SetSkippedVolumeDetails(Aws::Vector<VolumeDetail>&& value) { m_skippedVolumeDetailsHasBeenSet = true; m_skippedVolumeDetails = std::move(value); }
-    inline EbsVolumeDetails& WithSkippedVolumeDetails(const Aws::Vector<VolumeDetail>& value) { SetSkippedVolumeDetails(value); return *this;}
-    inline EbsVolumeDetails& WithSkippedVolumeDetails(Aws::Vector<VolumeDetail>&& value) { SetSkippedVolumeDetails(std::move(value)); return *this;}
-    inline EbsVolumeDetails& AddSkippedVolumeDetails(const VolumeDetail& value) { m_skippedVolumeDetailsHasBeenSet = true; m_skippedVolumeDetails.push_back(value); return *this; }
-    inline EbsVolumeDetails& AddSkippedVolumeDetails(VolumeDetail&& value) { m_skippedVolumeDetailsHasBeenSet = true; m_skippedVolumeDetails.push_back(std::move(value)); return *this; }
+    template<typename SkippedVolumeDetailsT = Aws::Vector<VolumeDetail>>
+    void SetSkippedVolumeDetails(SkippedVolumeDetailsT&& value) { m_skippedVolumeDetailsHasBeenSet = true; m_skippedVolumeDetails = std::forward<SkippedVolumeDetailsT>(value); }
+    template<typename SkippedVolumeDetailsT = Aws::Vector<VolumeDetail>>
+    EbsVolumeDetails& WithSkippedVolumeDetails(SkippedVolumeDetailsT&& value) { SetSkippedVolumeDetails(std::forward<SkippedVolumeDetailsT>(value)); return *this;}
+    template<typename SkippedVolumeDetailsT = VolumeDetail>
+    EbsVolumeDetails& AddSkippedVolumeDetails(SkippedVolumeDetailsT&& value) { m_skippedVolumeDetailsHasBeenSet = true; m_skippedVolumeDetails.emplace_back(std::forward<SkippedVolumeDetailsT>(value)); return *this; }
     ///@}
   private:
 

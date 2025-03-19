@@ -18,10 +18,6 @@ namespace SSOAdmin
 namespace Model
 {
 
-RefreshTokenGrant::RefreshTokenGrant()
-{
-}
-
 RefreshTokenGrant::RefreshTokenGrant(JsonView jsonValue)
 {
   *this = jsonValue;

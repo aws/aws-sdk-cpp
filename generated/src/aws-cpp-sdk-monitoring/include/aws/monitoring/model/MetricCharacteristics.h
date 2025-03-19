@@ -31,7 +31,7 @@ namespace Model
   class MetricCharacteristics
   {
   public:
-    AWS_CLOUDWATCH_API MetricCharacteristics();
+    AWS_CLOUDWATCH_API MetricCharacteristics() = default;
     AWS_CLOUDWATCH_API MetricCharacteristics(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MetricCharacteristics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,14 @@ namespace Model
      * occurred consistently during the model training period, and won't flag future
      * similar spikes as anomalies.</p>
      */
-    inline bool GetPeriodicSpikes() const{ return m_periodicSpikes; }
+    inline bool GetPeriodicSpikes() const { return m_periodicSpikes; }
     inline bool PeriodicSpikesHasBeenSet() const { return m_periodicSpikesHasBeenSet; }
     inline void SetPeriodicSpikes(bool value) { m_periodicSpikesHasBeenSet = true; m_periodicSpikes = value; }
     inline MetricCharacteristics& WithPeriodicSpikes(bool value) { SetPeriodicSpikes(value); return *this;}
     ///@}
   private:
 
-    bool m_periodicSpikes;
+    bool m_periodicSpikes{false};
     bool m_periodicSpikesHasBeenSet = false;
   };
 

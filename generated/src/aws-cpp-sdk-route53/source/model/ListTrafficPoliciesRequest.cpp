@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTrafficPoliciesRequest::ListTrafficPoliciesRequest() : 
-    m_trafficPolicyIdMarkerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListTrafficPoliciesRequest::SerializePayload() const
 {

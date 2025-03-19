@@ -32,7 +32,7 @@ namespace Model
   class CandidateArtifactLocations
   {
   public:
-    AWS_SAGEMAKER_API CandidateArtifactLocations();
+    AWS_SAGEMAKER_API CandidateArtifactLocations() = default;
     AWS_SAGEMAKER_API CandidateArtifactLocations(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CandidateArtifactLocations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
-    inline const Aws::String& GetExplainability() const{ return m_explainability; }
+    inline const Aws::String& GetExplainability() const { return m_explainability; }
     inline bool ExplainabilityHasBeenSet() const { return m_explainabilityHasBeenSet; }
-    inline void SetExplainability(const Aws::String& value) { m_explainabilityHasBeenSet = true; m_explainability = value; }
-    inline void SetExplainability(Aws::String&& value) { m_explainabilityHasBeenSet = true; m_explainability = std::move(value); }
-    inline void SetExplainability(const char* value) { m_explainabilityHasBeenSet = true; m_explainability.assign(value); }
-    inline CandidateArtifactLocations& WithExplainability(const Aws::String& value) { SetExplainability(value); return *this;}
-    inline CandidateArtifactLocations& WithExplainability(Aws::String&& value) { SetExplainability(std::move(value)); return *this;}
-    inline CandidateArtifactLocations& WithExplainability(const char* value) { SetExplainability(value); return *this;}
+    template<typename ExplainabilityT = Aws::String>
+    void SetExplainability(ExplainabilityT&& value) { m_explainabilityHasBeenSet = true; m_explainability = std::forward<ExplainabilityT>(value); }
+    template<typename ExplainabilityT = Aws::String>
+    CandidateArtifactLocations& WithExplainability(ExplainabilityT&& value) { SetExplainability(std::forward<ExplainabilityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML
      * candidate.</p>
      */
-    inline const Aws::String& GetModelInsights() const{ return m_modelInsights; }
+    inline const Aws::String& GetModelInsights() const { return m_modelInsights; }
     inline bool ModelInsightsHasBeenSet() const { return m_modelInsightsHasBeenSet; }
-    inline void SetModelInsights(const Aws::String& value) { m_modelInsightsHasBeenSet = true; m_modelInsights = value; }
-    inline void SetModelInsights(Aws::String&& value) { m_modelInsightsHasBeenSet = true; m_modelInsights = std::move(value); }
-    inline void SetModelInsights(const char* value) { m_modelInsightsHasBeenSet = true; m_modelInsights.assign(value); }
-    inline CandidateArtifactLocations& WithModelInsights(const Aws::String& value) { SetModelInsights(value); return *this;}
-    inline CandidateArtifactLocations& WithModelInsights(Aws::String&& value) { SetModelInsights(std::move(value)); return *this;}
-    inline CandidateArtifactLocations& WithModelInsights(const char* value) { SetModelInsights(value); return *this;}
+    template<typename ModelInsightsT = Aws::String>
+    void SetModelInsights(ModelInsightsT&& value) { m_modelInsightsHasBeenSet = true; m_modelInsights = std::forward<ModelInsightsT>(value); }
+    template<typename ModelInsightsT = Aws::String>
+    CandidateArtifactLocations& WithModelInsights(ModelInsightsT&& value) { SetModelInsights(std::forward<ModelInsightsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * observed over the testing window. Available only for the time-series forecasting
      * problem type.</p>
      */
-    inline const Aws::String& GetBacktestResults() const{ return m_backtestResults; }
+    inline const Aws::String& GetBacktestResults() const { return m_backtestResults; }
     inline bool BacktestResultsHasBeenSet() const { return m_backtestResultsHasBeenSet; }
-    inline void SetBacktestResults(const Aws::String& value) { m_backtestResultsHasBeenSet = true; m_backtestResults = value; }
-    inline void SetBacktestResults(Aws::String&& value) { m_backtestResultsHasBeenSet = true; m_backtestResults = std::move(value); }
-    inline void SetBacktestResults(const char* value) { m_backtestResultsHasBeenSet = true; m_backtestResults.assign(value); }
-    inline CandidateArtifactLocations& WithBacktestResults(const Aws::String& value) { SetBacktestResults(value); return *this;}
-    inline CandidateArtifactLocations& WithBacktestResults(Aws::String&& value) { SetBacktestResults(std::move(value)); return *this;}
-    inline CandidateArtifactLocations& WithBacktestResults(const char* value) { SetBacktestResults(value); return *this;}
+    template<typename BacktestResultsT = Aws::String>
+    void SetBacktestResults(BacktestResultsT&& value) { m_backtestResultsHasBeenSet = true; m_backtestResults = std::forward<BacktestResultsT>(value); }
+    template<typename BacktestResultsT = Aws::String>
+    CandidateArtifactLocations& WithBacktestResults(BacktestResultsT&& value) { SetBacktestResults(std::forward<BacktestResultsT>(value)); return *this;}
     ///@}
   private:
 

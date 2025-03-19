@@ -18,15 +18,7 @@ namespace SagemakerEdgeManager
 namespace Model
 {
 
-Checksum::Checksum() : 
-    m_type(ChecksumType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_sumHasBeenSet(false)
-{
-}
-
 Checksum::Checksum(JsonView jsonValue)
-  : Checksum()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Checksum& Checksum::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChecksumTypeMapper::GetChecksumTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sum"))
   {
     m_sum = jsonValue.GetString("Sum");
-
     m_sumHasBeenSet = true;
   }
-
   return *this;
 }
 

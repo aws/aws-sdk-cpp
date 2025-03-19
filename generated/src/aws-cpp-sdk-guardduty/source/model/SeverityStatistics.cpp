@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-SeverityStatistics::SeverityStatistics() : 
-    m_lastGeneratedAtHasBeenSet(false),
-    m_severity(0.0),
-    m_severityHasBeenSet(false),
-    m_totalFindings(0),
-    m_totalFindingsHasBeenSet(false)
-{
-}
-
 SeverityStatistics::SeverityStatistics(JsonView jsonValue)
-  : SeverityStatistics()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SeverityStatistics& SeverityStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lastGeneratedAt"))
   {
     m_lastGeneratedAt = jsonValue.GetDouble("lastGeneratedAt");
-
     m_lastGeneratedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = jsonValue.GetDouble("severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalFindings"))
   {
     m_totalFindings = jsonValue.GetInteger("totalFindings");
-
     m_totalFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

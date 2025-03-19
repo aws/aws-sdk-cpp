@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HierarchyGroups::HierarchyGroups() : 
-    m_level1HasBeenSet(false),
-    m_level2HasBeenSet(false),
-    m_level3HasBeenSet(false),
-    m_level4HasBeenSet(false),
-    m_level5HasBeenSet(false)
-{
-}
-
 HierarchyGroups::HierarchyGroups(JsonView jsonValue)
-  : HierarchyGroups()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ HierarchyGroups& HierarchyGroups::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Level1"))
   {
     m_level1 = jsonValue.GetObject("Level1");
-
     m_level1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level2"))
   {
     m_level2 = jsonValue.GetObject("Level2");
-
     m_level2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level3"))
   {
     m_level3 = jsonValue.GetObject("Level3");
-
     m_level3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level4"))
   {
     m_level4 = jsonValue.GetObject("Level4");
-
     m_level4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Level5"))
   {
     m_level5 = jsonValue.GetObject("Level5");
-
     m_level5HasBeenSet = true;
   }
-
   return *this;
 }
 

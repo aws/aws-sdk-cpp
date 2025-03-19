@@ -19,19 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-DomainNameAccessAssociation::DomainNameAccessAssociation() : 
-    m_domainNameAccessAssociationArnHasBeenSet(false),
-    m_domainNameArnHasBeenSet(false),
-    m_accessAssociationSourceType(AccessAssociationSourceType::NOT_SET),
-    m_accessAssociationSourceTypeHasBeenSet(false),
-    m_accessAssociationSourceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 DomainNameAccessAssociation::DomainNameAccessAssociation(JsonView jsonValue)
-  : DomainNameAccessAssociation()
 {
   *this = jsonValue;
 }
@@ -41,31 +29,23 @@ DomainNameAccessAssociation& DomainNameAccessAssociation::operator =(JsonView js
   if(jsonValue.ValueExists("domainNameAccessAssociationArn"))
   {
     m_domainNameAccessAssociationArn = jsonValue.GetString("domainNameAccessAssociationArn");
-
     m_domainNameAccessAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainNameArn"))
   {
     m_domainNameArn = jsonValue.GetString("domainNameArn");
-
     m_domainNameArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessAssociationSourceType"))
   {
     m_accessAssociationSourceType = AccessAssociationSourceTypeMapper::GetAccessAssociationSourceTypeForName(jsonValue.GetString("accessAssociationSourceType"));
-
     m_accessAssociationSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessAssociationSource"))
   {
     m_accessAssociationSource = jsonValue.GetString("accessAssociationSource");
-
     m_accessAssociationSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -75,7 +55,6 @@ DomainNameAccessAssociation& DomainNameAccessAssociation::operator =(JsonView js
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,24 +20,7 @@ namespace Route53
 namespace Model
 {
 
-TrafficPolicyInstance::TrafficPolicyInstance() : 
-    m_idHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyVersion(0),
-    m_trafficPolicyVersionHasBeenSet(false),
-    m_trafficPolicyType(RRType::NOT_SET),
-    m_trafficPolicyTypeHasBeenSet(false)
-{
-}
-
 TrafficPolicyInstance::TrafficPolicyInstance(const XmlNode& xmlNode)
-  : TrafficPolicyInstance()
 {
   *this = xmlNode;
 }
@@ -99,7 +82,7 @@ TrafficPolicyInstance& TrafficPolicyInstance::operator =(const XmlNode& xmlNode)
     XmlNode trafficPolicyTypeNode = resultNode.FirstChild("TrafficPolicyType");
     if(!trafficPolicyTypeNode.IsNull())
     {
-      m_trafficPolicyType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyTypeNode.GetText()).c_str()).c_str());
+      m_trafficPolicyType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyTypeNode.GetText()).c_str()));
       m_trafficPolicyTypeHasBeenSet = true;
     }
   }

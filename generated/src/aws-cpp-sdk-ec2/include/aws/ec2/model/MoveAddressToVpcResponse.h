@@ -29,7 +29,7 @@ namespace Model
   class MoveAddressToVpcResponse
   {
   public:
-    AWS_EC2_API MoveAddressToVpcResponse();
+    AWS_EC2_API MoveAddressToVpcResponse() = default;
     AWS_EC2_API MoveAddressToVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API MoveAddressToVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,41 +38,40 @@ namespace Model
     /**
      * <p>The allocation ID for the Elastic IP address.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationId.assign(value); }
-    inline MoveAddressToVpcResponse& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline MoveAddressToVpcResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline MoveAddressToVpcResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    MoveAddressToVpcResponse& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the move of the IP address.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline MoveAddressToVpcResponse& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline MoveAddressToVpcResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MoveAddressToVpcResponse& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline MoveAddressToVpcResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline MoveAddressToVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    MoveAddressToVpcResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_allocationId;
+    bool m_allocationIdHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

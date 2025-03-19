@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-UpdateLabelsPayload::UpdateLabelsPayload() : 
-    m_addOrUpdateLabelsHasBeenSet(false),
-    m_removeLabelsHasBeenSet(false)
-{
-}
-
 UpdateLabelsPayload::UpdateLabelsPayload(JsonView jsonValue)
-  : UpdateLabelsPayload()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ UpdateLabelsPayload& UpdateLabelsPayload::operator =(JsonView jsonValue)
     }
     m_addOrUpdateLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("removeLabels"))
   {
     Aws::Utils::Array<JsonView> removeLabelsJsonList = jsonValue.GetArray("removeLabels");
@@ -51,7 +43,6 @@ UpdateLabelsPayload& UpdateLabelsPayload::operator =(JsonView jsonValue)
     }
     m_removeLabelsHasBeenSet = true;
   }
-
   return *this;
 }
 

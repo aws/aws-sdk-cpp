@@ -12,18 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationInstanceRequest::CreateApplicationInstanceRequest() : 
-    m_applicationInstanceIdToReplaceHasBeenSet(false),
-    m_defaultRuntimeContextDeviceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_manifestOverridesPayloadHasBeenSet(false),
-    m_manifestPayloadHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_runtimeRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

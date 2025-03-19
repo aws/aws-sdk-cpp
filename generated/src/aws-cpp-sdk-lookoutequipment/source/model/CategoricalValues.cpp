@@ -18,16 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-CategoricalValues::CategoricalValues() : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_numberOfCategory(0),
-    m_numberOfCategoryHasBeenSet(false)
-{
-}
-
 CategoricalValues::CategoricalValues(JsonView jsonValue)
-  : CategoricalValues()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CategoricalValues& CategoricalValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatisticalIssueStatusMapper::GetStatisticalIssueStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfCategory"))
   {
     m_numberOfCategory = jsonValue.GetInteger("NumberOfCategory");
-
     m_numberOfCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

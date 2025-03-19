@@ -31,7 +31,7 @@ namespace Model
   class AnomalyGroupTimeSeries
   {
   public:
-    AWS_LOOKOUTMETRICS_API AnomalyGroupTimeSeries();
+    AWS_LOOKOUTMETRICS_API AnomalyGroupTimeSeries() = default;
     AWS_LOOKOUTMETRICS_API AnomalyGroupTimeSeries(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API AnomalyGroupTimeSeries& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID of the anomaly group.</p>
      */
-    inline const Aws::String& GetAnomalyGroupId() const{ return m_anomalyGroupId; }
+    inline const Aws::String& GetAnomalyGroupId() const { return m_anomalyGroupId; }
     inline bool AnomalyGroupIdHasBeenSet() const { return m_anomalyGroupIdHasBeenSet; }
-    inline void SetAnomalyGroupId(const Aws::String& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = value; }
-    inline void SetAnomalyGroupId(Aws::String&& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = std::move(value); }
-    inline void SetAnomalyGroupId(const char* value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId.assign(value); }
-    inline AnomalyGroupTimeSeries& WithAnomalyGroupId(const Aws::String& value) { SetAnomalyGroupId(value); return *this;}
-    inline AnomalyGroupTimeSeries& WithAnomalyGroupId(Aws::String&& value) { SetAnomalyGroupId(std::move(value)); return *this;}
-    inline AnomalyGroupTimeSeries& WithAnomalyGroupId(const char* value) { SetAnomalyGroupId(value); return *this;}
+    template<typename AnomalyGroupIdT = Aws::String>
+    void SetAnomalyGroupId(AnomalyGroupIdT&& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = std::forward<AnomalyGroupIdT>(value); }
+    template<typename AnomalyGroupIdT = Aws::String>
+    AnomalyGroupTimeSeries& WithAnomalyGroupId(AnomalyGroupIdT&& value) { SetAnomalyGroupId(std::forward<AnomalyGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the metric.</p>
      */
-    inline const Aws::String& GetTimeSeriesId() const{ return m_timeSeriesId; }
+    inline const Aws::String& GetTimeSeriesId() const { return m_timeSeriesId; }
     inline bool TimeSeriesIdHasBeenSet() const { return m_timeSeriesIdHasBeenSet; }
-    inline void SetTimeSeriesId(const Aws::String& value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId = value; }
-    inline void SetTimeSeriesId(Aws::String&& value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId = std::move(value); }
-    inline void SetTimeSeriesId(const char* value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId.assign(value); }
-    inline AnomalyGroupTimeSeries& WithTimeSeriesId(const Aws::String& value) { SetTimeSeriesId(value); return *this;}
-    inline AnomalyGroupTimeSeries& WithTimeSeriesId(Aws::String&& value) { SetTimeSeriesId(std::move(value)); return *this;}
-    inline AnomalyGroupTimeSeries& WithTimeSeriesId(const char* value) { SetTimeSeriesId(value); return *this;}
+    template<typename TimeSeriesIdT = Aws::String>
+    void SetTimeSeriesId(TimeSeriesIdT&& value) { m_timeSeriesIdHasBeenSet = true; m_timeSeriesId = std::forward<TimeSeriesIdT>(value); }
+    template<typename TimeSeriesIdT = Aws::String>
+    AnomalyGroupTimeSeries& WithTimeSeriesId(TimeSeriesIdT&& value) { SetTimeSeriesId(std::forward<TimeSeriesIdT>(value)); return *this;}
     ///@}
   private:
 

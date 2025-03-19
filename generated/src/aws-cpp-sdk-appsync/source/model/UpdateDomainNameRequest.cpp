@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDomainNameRequest::UpdateDomainNameRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainNameRequest::SerializePayload() const
 {
   JsonValue payload;

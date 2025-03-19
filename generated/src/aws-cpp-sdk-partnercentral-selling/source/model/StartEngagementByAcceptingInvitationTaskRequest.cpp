@@ -12,15 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartEngagementByAcceptingInvitationTaskRequest::StartEngagementByAcceptingInvitationTaskRequest() : 
-    m_catalogHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_identifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartEngagementByAcceptingInvitationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

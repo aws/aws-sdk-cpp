@@ -37,7 +37,7 @@ namespace Model
   class WindowSummary
   {
   public:
-    AWS_FORECASTSERVICE_API WindowSummary();
+    AWS_FORECASTSERVICE_API WindowSummary() = default;
     AWS_FORECASTSERVICE_API WindowSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API WindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,31 +47,31 @@ namespace Model
     /**
      * <p>The timestamp that defines the start of the window.</p>
      */
-    inline const Aws::Utils::DateTime& GetTestWindowStart() const{ return m_testWindowStart; }
+    inline const Aws::Utils::DateTime& GetTestWindowStart() const { return m_testWindowStart; }
     inline bool TestWindowStartHasBeenSet() const { return m_testWindowStartHasBeenSet; }
-    inline void SetTestWindowStart(const Aws::Utils::DateTime& value) { m_testWindowStartHasBeenSet = true; m_testWindowStart = value; }
-    inline void SetTestWindowStart(Aws::Utils::DateTime&& value) { m_testWindowStartHasBeenSet = true; m_testWindowStart = std::move(value); }
-    inline WindowSummary& WithTestWindowStart(const Aws::Utils::DateTime& value) { SetTestWindowStart(value); return *this;}
-    inline WindowSummary& WithTestWindowStart(Aws::Utils::DateTime&& value) { SetTestWindowStart(std::move(value)); return *this;}
+    template<typename TestWindowStartT = Aws::Utils::DateTime>
+    void SetTestWindowStart(TestWindowStartT&& value) { m_testWindowStartHasBeenSet = true; m_testWindowStart = std::forward<TestWindowStartT>(value); }
+    template<typename TestWindowStartT = Aws::Utils::DateTime>
+    WindowSummary& WithTestWindowStart(TestWindowStartT&& value) { SetTestWindowStart(std::forward<TestWindowStartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp that defines the end of the window.</p>
      */
-    inline const Aws::Utils::DateTime& GetTestWindowEnd() const{ return m_testWindowEnd; }
+    inline const Aws::Utils::DateTime& GetTestWindowEnd() const { return m_testWindowEnd; }
     inline bool TestWindowEndHasBeenSet() const { return m_testWindowEndHasBeenSet; }
-    inline void SetTestWindowEnd(const Aws::Utils::DateTime& value) { m_testWindowEndHasBeenSet = true; m_testWindowEnd = value; }
-    inline void SetTestWindowEnd(Aws::Utils::DateTime&& value) { m_testWindowEndHasBeenSet = true; m_testWindowEnd = std::move(value); }
-    inline WindowSummary& WithTestWindowEnd(const Aws::Utils::DateTime& value) { SetTestWindowEnd(value); return *this;}
-    inline WindowSummary& WithTestWindowEnd(Aws::Utils::DateTime&& value) { SetTestWindowEnd(std::move(value)); return *this;}
+    template<typename TestWindowEndT = Aws::Utils::DateTime>
+    void SetTestWindowEnd(TestWindowEndT&& value) { m_testWindowEndHasBeenSet = true; m_testWindowEnd = std::forward<TestWindowEndT>(value); }
+    template<typename TestWindowEndT = Aws::Utils::DateTime>
+    WindowSummary& WithTestWindowEnd(TestWindowEndT&& value) { SetTestWindowEnd(std::forward<TestWindowEndT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of data points within the window.</p>
      */
-    inline int GetItemCount() const{ return m_itemCount; }
+    inline int GetItemCount() const { return m_itemCount; }
     inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
     inline void SetItemCount(int value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
     inline WindowSummary& WithItemCount(int value) { SetItemCount(value); return *this;}
@@ -83,37 +83,35 @@ namespace Model
      * metrics across all windows.</p> </li> <li> <p> <code>COMPUTED</code> - The
      * metrics for the specified window.</p> </li> </ul>
      */
-    inline const EvaluationType& GetEvaluationType() const{ return m_evaluationType; }
+    inline EvaluationType GetEvaluationType() const { return m_evaluationType; }
     inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
-    inline void SetEvaluationType(const EvaluationType& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
-    inline void SetEvaluationType(EvaluationType&& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = std::move(value); }
-    inline WindowSummary& WithEvaluationType(const EvaluationType& value) { SetEvaluationType(value); return *this;}
-    inline WindowSummary& WithEvaluationType(EvaluationType&& value) { SetEvaluationType(std::move(value)); return *this;}
+    inline void SetEvaluationType(EvaluationType value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
+    inline WindowSummary& WithEvaluationType(EvaluationType value) { SetEvaluationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides metrics used to evaluate the performance of a predictor.</p>
      */
-    inline const Metrics& GetMetrics() const{ return m_metrics; }
+    inline const Metrics& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Metrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Metrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline WindowSummary& WithMetrics(const Metrics& value) { SetMetrics(value); return *this;}
-    inline WindowSummary& WithMetrics(Metrics&& value) { SetMetrics(std::move(value)); return *this;}
+    template<typename MetricsT = Metrics>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Metrics>
+    WindowSummary& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_testWindowStart;
+    Aws::Utils::DateTime m_testWindowStart{};
     bool m_testWindowStartHasBeenSet = false;
 
-    Aws::Utils::DateTime m_testWindowEnd;
+    Aws::Utils::DateTime m_testWindowEnd{};
     bool m_testWindowEndHasBeenSet = false;
 
-    int m_itemCount;
+    int m_itemCount{0};
     bool m_itemCountHasBeenSet = false;
 
-    EvaluationType m_evaluationType;
+    EvaluationType m_evaluationType{EvaluationType::NOT_SET};
     bool m_evaluationTypeHasBeenSet = false;
 
     Metrics m_metrics;

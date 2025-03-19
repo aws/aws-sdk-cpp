@@ -31,7 +31,7 @@ namespace Model
   class HlsConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API HlsConfiguration();
+    AWS_MEDIATAILOR_API HlsConfiguration() = default;
     AWS_MEDIATAILOR_API HlsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API HlsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The URL that is used to initiate a playback session for devices that support
      * Apple HLS. The session uses server-side reporting.</p>
      */
-    inline const Aws::String& GetManifestEndpointPrefix() const{ return m_manifestEndpointPrefix; }
+    inline const Aws::String& GetManifestEndpointPrefix() const { return m_manifestEndpointPrefix; }
     inline bool ManifestEndpointPrefixHasBeenSet() const { return m_manifestEndpointPrefixHasBeenSet; }
-    inline void SetManifestEndpointPrefix(const Aws::String& value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix = value; }
-    inline void SetManifestEndpointPrefix(Aws::String&& value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix = std::move(value); }
-    inline void SetManifestEndpointPrefix(const char* value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix.assign(value); }
-    inline HlsConfiguration& WithManifestEndpointPrefix(const Aws::String& value) { SetManifestEndpointPrefix(value); return *this;}
-    inline HlsConfiguration& WithManifestEndpointPrefix(Aws::String&& value) { SetManifestEndpointPrefix(std::move(value)); return *this;}
-    inline HlsConfiguration& WithManifestEndpointPrefix(const char* value) { SetManifestEndpointPrefix(value); return *this;}
+    template<typename ManifestEndpointPrefixT = Aws::String>
+    void SetManifestEndpointPrefix(ManifestEndpointPrefixT&& value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix = std::forward<ManifestEndpointPrefixT>(value); }
+    template<typename ManifestEndpointPrefixT = Aws::String>
+    HlsConfiguration& WithManifestEndpointPrefix(ManifestEndpointPrefixT&& value) { SetManifestEndpointPrefix(std::forward<ManifestEndpointPrefixT>(value)); return *this;}
     ///@}
   private:
 

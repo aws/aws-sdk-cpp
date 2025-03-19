@@ -33,7 +33,7 @@ namespace Model
   class S3ReportExportConfig
   {
   public:
-    AWS_CODEBUILD_API S3ReportExportConfig();
+    AWS_CODEBUILD_API S3ReportExportConfig() = default;
     AWS_CODEBUILD_API S3ReportExportConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API S3ReportExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The name of the S3 bucket where the raw data of a report are exported. </p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3ReportExportConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3ReportExportConfig& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3ReportExportConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3ReportExportConfig& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * bucket. This allows report data to be exported to an Amazon S3 bucket that is
      * owned by an account other than the account running the build.</p>
      */
-    inline const Aws::String& GetBucketOwner() const{ return m_bucketOwner; }
+    inline const Aws::String& GetBucketOwner() const { return m_bucketOwner; }
     inline bool BucketOwnerHasBeenSet() const { return m_bucketOwnerHasBeenSet; }
-    inline void SetBucketOwner(const Aws::String& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = value; }
-    inline void SetBucketOwner(Aws::String&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::move(value); }
-    inline void SetBucketOwner(const char* value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner.assign(value); }
-    inline S3ReportExportConfig& WithBucketOwner(const Aws::String& value) { SetBucketOwner(value); return *this;}
-    inline S3ReportExportConfig& WithBucketOwner(Aws::String&& value) { SetBucketOwner(std::move(value)); return *this;}
-    inline S3ReportExportConfig& WithBucketOwner(const char* value) { SetBucketOwner(value); return *this;}
+    template<typename BucketOwnerT = Aws::String>
+    void SetBucketOwner(BucketOwnerT&& value) { m_bucketOwnerHasBeenSet = true; m_bucketOwner = std::forward<BucketOwnerT>(value); }
+    template<typename BucketOwnerT = Aws::String>
+    S3ReportExportConfig& WithBucketOwner(BucketOwnerT&& value) { SetBucketOwner(std::forward<BucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The path to the exported report's raw data results. </p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline S3ReportExportConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline S3ReportExportConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline S3ReportExportConfig& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    S3ReportExportConfig& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,26 +85,22 @@ namespace Model
      * <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output
      * bucket. </p> </li> </ul>
      */
-    inline const ReportPackagingType& GetPackaging() const{ return m_packaging; }
+    inline ReportPackagingType GetPackaging() const { return m_packaging; }
     inline bool PackagingHasBeenSet() const { return m_packagingHasBeenSet; }
-    inline void SetPackaging(const ReportPackagingType& value) { m_packagingHasBeenSet = true; m_packaging = value; }
-    inline void SetPackaging(ReportPackagingType&& value) { m_packagingHasBeenSet = true; m_packaging = std::move(value); }
-    inline S3ReportExportConfig& WithPackaging(const ReportPackagingType& value) { SetPackaging(value); return *this;}
-    inline S3ReportExportConfig& WithPackaging(ReportPackagingType&& value) { SetPackaging(std::move(value)); return *this;}
+    inline void SetPackaging(ReportPackagingType value) { m_packagingHasBeenSet = true; m_packaging = value; }
+    inline S3ReportExportConfig& WithPackaging(ReportPackagingType value) { SetPackaging(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The encryption key for the report's encrypted raw data. </p>
      */
-    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+    inline const Aws::String& GetEncryptionKey() const { return m_encryptionKey; }
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
-    inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
-    inline S3ReportExportConfig& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
-    inline S3ReportExportConfig& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
-    inline S3ReportExportConfig& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+    template<typename EncryptionKeyT = Aws::String>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = Aws::String>
+    S3ReportExportConfig& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,7 +108,7 @@ namespace Model
      * <p> A boolean value that specifies if the results of a report are encrypted.
      * </p>
      */
-    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+    inline bool GetEncryptionDisabled() const { return m_encryptionDisabled; }
     inline bool EncryptionDisabledHasBeenSet() const { return m_encryptionDisabledHasBeenSet; }
     inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
     inline S3ReportExportConfig& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
@@ -134,13 +124,13 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    ReportPackagingType m_packaging;
+    ReportPackagingType m_packaging{ReportPackagingType::NOT_SET};
     bool m_packagingHasBeenSet = false;
 
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet = false;
 
-    bool m_encryptionDisabled;
+    bool m_encryptionDisabled{false};
     bool m_encryptionDisabledHasBeenSet = false;
   };
 

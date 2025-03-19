@@ -38,7 +38,7 @@ namespace Model
   class Sheet
   {
   public:
-    AWS_QUICKSIGHT_API Sheet();
+    AWS_QUICKSIGHT_API Sheet() = default;
     AWS_QUICKSIGHT_API Sheet(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Sheet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The unique identifier associated with a sheet.</p>
      */
-    inline const Aws::String& GetSheetId() const{ return m_sheetId; }
+    inline const Aws::String& GetSheetId() const { return m_sheetId; }
     inline bool SheetIdHasBeenSet() const { return m_sheetIdHasBeenSet; }
-    inline void SetSheetId(const Aws::String& value) { m_sheetIdHasBeenSet = true; m_sheetId = value; }
-    inline void SetSheetId(Aws::String&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::move(value); }
-    inline void SetSheetId(const char* value) { m_sheetIdHasBeenSet = true; m_sheetId.assign(value); }
-    inline Sheet& WithSheetId(const Aws::String& value) { SetSheetId(value); return *this;}
-    inline Sheet& WithSheetId(Aws::String&& value) { SetSheetId(std::move(value)); return *this;}
-    inline Sheet& WithSheetId(const char* value) { SetSheetId(value); return *this;}
+    template<typename SheetIdT = Aws::String>
+    void SetSheetId(SheetIdT&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::forward<SheetIdT>(value); }
+    template<typename SheetIdT = Aws::String>
+    Sheet& WithSheetId(SheetIdT&& value) { SetSheetId(std::forward<SheetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,28 +61,26 @@ namespace Model
      * <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon
      * QuickSight console.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Sheet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Sheet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Sheet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Sheet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of images on a sheet.</p>
      */
-    inline const Aws::Vector<SheetImage>& GetImages() const{ return m_images; }
+    inline const Aws::Vector<SheetImage>& GetImages() const { return m_images; }
     inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
-    inline void SetImages(const Aws::Vector<SheetImage>& value) { m_imagesHasBeenSet = true; m_images = value; }
-    inline void SetImages(Aws::Vector<SheetImage>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
-    inline Sheet& WithImages(const Aws::Vector<SheetImage>& value) { SetImages(value); return *this;}
-    inline Sheet& WithImages(Aws::Vector<SheetImage>&& value) { SetImages(std::move(value)); return *this;}
-    inline Sheet& AddImages(const SheetImage& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
-    inline Sheet& AddImages(SheetImage&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
+    template<typename ImagesT = Aws::Vector<SheetImage>>
+    void SetImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images = std::forward<ImagesT>(value); }
+    template<typename ImagesT = Aws::Vector<SheetImage>>
+    Sheet& WithImages(ImagesT&& value) { SetImages(std::forward<ImagesT>(value)); return *this;}
+    template<typename ImagesT = SheetImage>
+    Sheet& AddImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images.emplace_back(std::forward<ImagesT>(value)); return *this; }
     ///@}
   private:
 

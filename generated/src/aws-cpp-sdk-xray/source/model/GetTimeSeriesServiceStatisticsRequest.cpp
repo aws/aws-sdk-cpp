@@ -12,20 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTimeSeriesServiceStatisticsRequest::GetTimeSeriesServiceStatisticsRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupARNHasBeenSet(false),
-    m_entitySelectorExpressionHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_forecastStatistics(false),
-    m_forecastStatisticsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetTimeSeriesServiceStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

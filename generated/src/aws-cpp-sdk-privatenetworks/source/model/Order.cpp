@@ -18,21 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-Order::Order() : 
-    m_acknowledgmentStatus(AcknowledgmentStatus::NOT_SET),
-    m_acknowledgmentStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_orderArnHasBeenSet(false),
-    m_orderedResourcesHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_trackingInformationHasBeenSet(false)
-{
-}
-
 Order::Order(JsonView jsonValue)
-  : Order()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ Order& Order::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("acknowledgmentStatus"))
   {
     m_acknowledgmentStatus = AcknowledgmentStatusMapper::GetAcknowledgmentStatusForName(jsonValue.GetString("acknowledgmentStatus"));
-
     m_acknowledgmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkArn"))
   {
     m_networkArn = jsonValue.GetString("networkArn");
-
     m_networkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkSiteArn"))
   {
     m_networkSiteArn = jsonValue.GetString("networkSiteArn");
-
     m_networkSiteArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderArn"))
   {
     m_orderArn = jsonValue.GetString("orderArn");
-
     m_orderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderedResources"))
   {
     Aws::Utils::Array<JsonView> orderedResourcesJsonList = jsonValue.GetArray("orderedResources");
@@ -83,14 +59,11 @@ Order& Order::operator =(JsonView jsonValue)
     }
     m_orderedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingAddress"))
   {
     m_shippingAddress = jsonValue.GetObject("shippingAddress");
-
     m_shippingAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackingInformation"))
   {
     Aws::Utils::Array<JsonView> trackingInformationJsonList = jsonValue.GetArray("trackingInformation");
@@ -100,7 +73,6 @@ Order& Order::operator =(JsonView jsonValue)
     }
     m_trackingInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

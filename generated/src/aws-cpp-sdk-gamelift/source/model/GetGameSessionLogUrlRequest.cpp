@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGameSessionLogUrlRequest::GetGameSessionLogUrlRequest() : 
-    m_gameSessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetGameSessionLogUrlRequest::SerializePayload() const
 {
   JsonValue payload;

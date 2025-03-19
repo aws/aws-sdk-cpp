@@ -12,14 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartViewerSessionRevocationRequest::StartViewerSessionRevocationRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_viewerIdHasBeenSet(false),
-    m_viewerSessionVersionsLessThanOrEqualTo(0),
-    m_viewerSessionVersionsLessThanOrEqualToHasBeenSet(false)
-{
-}
-
 Aws::String StartViewerSessionRevocationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSMBSettingsRequest::DescribeSMBSettingsRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSMBSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ContinuousBackupsDescription::ContinuousBackupsDescription() : 
-    m_continuousBackupsStatus(ContinuousBackupsStatus::NOT_SET),
-    m_continuousBackupsStatusHasBeenSet(false),
-    m_pointInTimeRecoveryDescriptionHasBeenSet(false)
-{
-}
-
 ContinuousBackupsDescription::ContinuousBackupsDescription(JsonView jsonValue)
-  : ContinuousBackupsDescription()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContinuousBackupsDescription& ContinuousBackupsDescription::operator =(JsonView 
   if(jsonValue.ValueExists("ContinuousBackupsStatus"))
   {
     m_continuousBackupsStatus = ContinuousBackupsStatusMapper::GetContinuousBackupsStatusForName(jsonValue.GetString("ContinuousBackupsStatus"));
-
     m_continuousBackupsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PointInTimeRecoveryDescription"))
   {
     m_pointInTimeRecoveryDescription = jsonValue.GetObject("PointInTimeRecoveryDescription");
-
     m_pointInTimeRecoveryDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

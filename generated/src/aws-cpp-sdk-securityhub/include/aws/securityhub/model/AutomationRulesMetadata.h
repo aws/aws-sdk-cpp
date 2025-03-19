@@ -35,7 +35,7 @@ namespace Model
   class AutomationRulesMetadata
   {
   public:
-    AWS_SECURITYHUB_API AutomationRulesMetadata();
+    AWS_SECURITYHUB_API AutomationRulesMetadata() = default;
     AWS_SECURITYHUB_API AutomationRulesMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AutomationRulesMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) for the rule. </p>
      */
-    inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
+    inline const Aws::String& GetRuleArn() const { return m_ruleArn; }
     inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
-    inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
-    inline void SetRuleArn(const char* value) { m_ruleArnHasBeenSet = true; m_ruleArn.assign(value); }
-    inline AutomationRulesMetadata& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
-    inline AutomationRulesMetadata& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
-    inline AutomationRulesMetadata& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+    template<typename RuleArnT = Aws::String>
+    void SetRuleArn(RuleArnT&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::forward<RuleArnT>(value); }
+    template<typename RuleArnT = Aws::String>
+    AutomationRulesMetadata& WithRuleArn(RuleArnT&& value) { SetRuleArn(std::forward<RuleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
      * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
-    inline const RuleStatus& GetRuleStatus() const{ return m_ruleStatus; }
+    inline RuleStatus GetRuleStatus() const { return m_ruleStatus; }
     inline bool RuleStatusHasBeenSet() const { return m_ruleStatusHasBeenSet; }
-    inline void SetRuleStatus(const RuleStatus& value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = value; }
-    inline void SetRuleStatus(RuleStatus&& value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = std::move(value); }
-    inline AutomationRulesMetadata& WithRuleStatus(const RuleStatus& value) { SetRuleStatus(value); return *this;}
-    inline AutomationRulesMetadata& WithRuleStatus(RuleStatus&& value) { SetRuleStatus(std::move(value)); return *this;}
+    inline void SetRuleStatus(RuleStatus value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = value; }
+    inline AutomationRulesMetadata& WithRuleStatus(RuleStatus value) { SetRuleStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * action is applied to findings. Security Hub applies rules with lower values for
      * this parameter first. </p>
      */
-    inline int GetRuleOrder() const{ return m_ruleOrder; }
+    inline int GetRuleOrder() const { return m_ruleOrder; }
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
     inline void SetRuleOrder(int value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
     inline AutomationRulesMetadata& WithRuleOrder(int value) { SetRuleOrder(value); return *this;}
@@ -88,28 +84,24 @@ namespace Model
     /**
      * <p> The name of the rule. </p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline AutomationRulesMetadata& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline AutomationRulesMetadata& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline AutomationRulesMetadata& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    AutomationRulesMetadata& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the rule. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AutomationRulesMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AutomationRulesMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AutomationRulesMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AutomationRulesMetadata& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +113,7 @@ namespace Model
      * rule criteria and doesn't evaluate other rules for the finding. By default, a
      * rule isn't terminal. </p>
      */
-    inline bool GetIsTerminal() const{ return m_isTerminal; }
+    inline bool GetIsTerminal() const { return m_isTerminal; }
     inline bool IsTerminalHasBeenSet() const { return m_isTerminalHasBeenSet; }
     inline void SetIsTerminal(bool value) { m_isTerminalHasBeenSet = true; m_isTerminal = value; }
     inline AutomationRulesMetadata& WithIsTerminal(bool value) { SetIsTerminal(value); return *this;}
@@ -134,12 +126,12 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AutomationRulesMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AutomationRulesMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AutomationRulesMetadata& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,36 +141,34 @@ namespace Model
      * in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline AutomationRulesMetadata& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline AutomationRulesMetadata& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    AutomationRulesMetadata& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The principal that created a rule. </p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline AutomationRulesMetadata& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline AutomationRulesMetadata& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline AutomationRulesMetadata& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    AutomationRulesMetadata& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ruleArn;
     bool m_ruleArnHasBeenSet = false;
 
-    RuleStatus m_ruleStatus;
+    RuleStatus m_ruleStatus{RuleStatus::NOT_SET};
     bool m_ruleStatusHasBeenSet = false;
 
-    int m_ruleOrder;
+    int m_ruleOrder{0};
     bool m_ruleOrderHasBeenSet = false;
 
     Aws::String m_ruleName;
@@ -187,13 +177,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_isTerminal;
+    bool m_isTerminal{false};
     bool m_isTerminalHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_createdBy;

@@ -20,19 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-PendingLogDeliveryConfiguration::PendingLogDeliveryConfiguration() : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_destinationType(DestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_destinationDetailsHasBeenSet(false),
-    m_logFormat(LogFormat::NOT_SET),
-    m_logFormatHasBeenSet(false)
-{
-}
-
 PendingLogDeliveryConfiguration::PendingLogDeliveryConfiguration(const XmlNode& xmlNode)
-  : PendingLogDeliveryConfiguration()
 {
   *this = xmlNode;
 }
@@ -46,13 +34,13 @@ PendingLogDeliveryConfiguration& PendingLogDeliveryConfiguration::operator =(con
     XmlNode logTypeNode = resultNode.FirstChild("LogType");
     if(!logTypeNode.IsNull())
     {
-      m_logType = LogTypeMapper::GetLogTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logTypeNode.GetText()).c_str()).c_str());
+      m_logType = LogTypeMapper::GetLogTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logTypeNode.GetText()).c_str()));
       m_logTypeHasBeenSet = true;
     }
     XmlNode destinationTypeNode = resultNode.FirstChild("DestinationType");
     if(!destinationTypeNode.IsNull())
     {
-      m_destinationType = DestinationTypeMapper::GetDestinationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(destinationTypeNode.GetText()).c_str()).c_str());
+      m_destinationType = DestinationTypeMapper::GetDestinationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(destinationTypeNode.GetText()).c_str()));
       m_destinationTypeHasBeenSet = true;
     }
     XmlNode destinationDetailsNode = resultNode.FirstChild("DestinationDetails");
@@ -64,7 +52,7 @@ PendingLogDeliveryConfiguration& PendingLogDeliveryConfiguration::operator =(con
     XmlNode logFormatNode = resultNode.FirstChild("LogFormat");
     if(!logFormatNode.IsNull())
     {
-      m_logFormat = LogFormatMapper::GetLogFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logFormatNode.GetText()).c_str()).c_str());
+      m_logFormat = LogFormatMapper::GetLogFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logFormatNode.GetText()).c_str()));
       m_logFormatHasBeenSet = true;
     }
   }

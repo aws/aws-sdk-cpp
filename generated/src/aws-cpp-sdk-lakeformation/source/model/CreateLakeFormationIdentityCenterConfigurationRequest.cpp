@@ -12,14 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLakeFormationIdentityCenterConfigurationRequest::CreateLakeFormationIdentityCenterConfigurationRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_externalFilteringHasBeenSet(false),
-    m_shareRecipientsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLakeFormationIdentityCenterConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

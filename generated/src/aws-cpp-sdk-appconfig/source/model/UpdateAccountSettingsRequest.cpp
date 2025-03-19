@@ -12,11 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() : 
-    m_deletionProtectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

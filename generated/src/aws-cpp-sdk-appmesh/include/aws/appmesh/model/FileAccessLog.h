@@ -32,7 +32,7 @@ namespace Model
   class FileAccessLog
   {
   public:
-    AWS_APPMESH_API FileAccessLog();
+    AWS_APPMESH_API FileAccessLog() = default;
     AWS_APPMESH_API FileAccessLog(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API FileAccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The specified format for the logs. The format is either
      * <code>json_format</code> or <code>text_format</code>.</p>
      */
-    inline const LoggingFormat& GetFormat() const{ return m_format; }
+    inline const LoggingFormat& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const LoggingFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(LoggingFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline FileAccessLog& WithFormat(const LoggingFormat& value) { SetFormat(value); return *this;}
-    inline FileAccessLog& WithFormat(LoggingFormat&& value) { SetFormat(std::move(value)); return *this;}
+    template<typename FormatT = LoggingFormat>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = LoggingFormat>
+    FileAccessLog& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * Envoy process must have write permissions to the path that you specify here.
      * Otherwise, Envoy fails to bootstrap properly.</p> 
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline FileAccessLog& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline FileAccessLog& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline FileAccessLog& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    FileAccessLog& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

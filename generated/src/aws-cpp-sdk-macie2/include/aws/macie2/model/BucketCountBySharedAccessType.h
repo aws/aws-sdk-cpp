@@ -34,7 +34,7 @@ namespace Model
   class BucketCountBySharedAccessType
   {
   public:
-    AWS_MACIE2_API BucketCountBySharedAccessType();
+    AWS_MACIE2_API BucketCountBySharedAccessType() = default;
     AWS_MACIE2_API BucketCountBySharedAccessType(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketCountBySharedAccessType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * or an Amazon Web Services account that isn't in the same Amazon Macie
      * organization.</p>
      */
-    inline long long GetExternal() const{ return m_external; }
+    inline long long GetExternal() const { return m_external; }
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
     inline void SetExternal(long long value) { m_externalHasBeenSet = true; m_external = value; }
     inline BucketCountBySharedAccessType& WithExternal(long long value) { SetExternal(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
      * Services accounts in the same Amazon Macie organization. These buckets aren't
      * shared with Amazon CloudFront OAIs or OACs.</p>
      */
-    inline long long GetInternal() const{ return m_internal; }
+    inline long long GetInternal() const { return m_internal; }
     inline bool InternalHasBeenSet() const { return m_internalHasBeenSet; }
     inline void SetInternal(long long value) { m_internalHasBeenSet = true; m_internal = value; }
     inline BucketCountBySharedAccessType& WithInternal(long long value) { SetInternal(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
      * <p>The total number of buckets that aren't shared with other Amazon Web Services
      * accounts, Amazon CloudFront OAIs, or CloudFront OACs.</p>
      */
-    inline long long GetNotShared() const{ return m_notShared; }
+    inline long long GetNotShared() const { return m_notShared; }
     inline bool NotSharedHasBeenSet() const { return m_notSharedHasBeenSet; }
     inline void SetNotShared(long long value) { m_notSharedHasBeenSet = true; m_notShared = value; }
     inline BucketCountBySharedAccessType& WithNotShared(long long value) { SetNotShared(value); return *this;}
@@ -84,23 +84,23 @@ namespace Model
      * whether the buckets are shared with other Amazon Web Services accounts, Amazon
      * CloudFront OAIs, or CloudFront OACs.</p>
      */
-    inline long long GetUnknown() const{ return m_unknown; }
+    inline long long GetUnknown() const { return m_unknown; }
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
     inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
     inline BucketCountBySharedAccessType& WithUnknown(long long value) { SetUnknown(value); return *this;}
     ///@}
   private:
 
-    long long m_external;
+    long long m_external{0};
     bool m_externalHasBeenSet = false;
 
-    long long m_internal;
+    long long m_internal{0};
     bool m_internalHasBeenSet = false;
 
-    long long m_notShared;
+    long long m_notShared{0};
     bool m_notSharedHasBeenSet = false;
 
-    long long m_unknown;
+    long long m_unknown{0};
     bool m_unknownHasBeenSet = false;
   };
 

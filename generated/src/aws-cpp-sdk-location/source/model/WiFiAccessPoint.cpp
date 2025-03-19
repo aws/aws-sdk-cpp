@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-WiFiAccessPoint::WiFiAccessPoint() : 
-    m_macAddressHasBeenSet(false),
-    m_rss(0),
-    m_rssHasBeenSet(false)
-{
-}
-
 WiFiAccessPoint::WiFiAccessPoint(JsonView jsonValue)
-  : WiFiAccessPoint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WiFiAccessPoint& WiFiAccessPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MacAddress"))
   {
     m_macAddress = jsonValue.GetString("MacAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rss"))
   {
     m_rss = jsonValue.GetInteger("Rss");
-
     m_rssHasBeenSet = true;
   }
-
   return *this;
 }
 

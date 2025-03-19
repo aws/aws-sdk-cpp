@@ -30,7 +30,7 @@ namespace Model
   class AnomalyScore
   {
   public:
-    AWS_COSTEXPLORER_API AnomalyScore();
+    AWS_COSTEXPLORER_API AnomalyScore() = default;
     AWS_COSTEXPLORER_API AnomalyScore(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API AnomalyScore& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The maximum score that's observed during the
      * <code>AnomalyDateInterval</code>. </p>
      */
-    inline double GetMaxScore() const{ return m_maxScore; }
+    inline double GetMaxScore() const { return m_maxScore; }
     inline bool MaxScoreHasBeenSet() const { return m_maxScoreHasBeenSet; }
     inline void SetMaxScore(double value) { m_maxScoreHasBeenSet = true; m_maxScore = value; }
     inline AnomalyScore& WithMaxScore(double value) { SetMaxScore(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The last observed score. </p>
      */
-    inline double GetCurrentScore() const{ return m_currentScore; }
+    inline double GetCurrentScore() const { return m_currentScore; }
     inline bool CurrentScoreHasBeenSet() const { return m_currentScoreHasBeenSet; }
     inline void SetCurrentScore(double value) { m_currentScoreHasBeenSet = true; m_currentScore = value; }
     inline AnomalyScore& WithCurrentScore(double value) { SetCurrentScore(value); return *this;}
     ///@}
   private:
 
-    double m_maxScore;
+    double m_maxScore{0.0};
     bool m_maxScoreHasBeenSet = false;
 
-    double m_currentScore;
+    double m_currentScore{0.0};
     bool m_currentScoreHasBeenSet = false;
   };
 

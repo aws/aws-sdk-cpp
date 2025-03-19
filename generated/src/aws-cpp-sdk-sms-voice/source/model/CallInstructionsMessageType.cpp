@@ -18,13 +18,7 @@ namespace PinpointSMSVoice
 namespace Model
 {
 
-CallInstructionsMessageType::CallInstructionsMessageType() : 
-    m_textHasBeenSet(false)
-{
-}
-
 CallInstructionsMessageType::CallInstructionsMessageType(JsonView jsonValue)
-  : CallInstructionsMessageType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CallInstructionsMessageType& CallInstructionsMessageType::operator =(JsonView js
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

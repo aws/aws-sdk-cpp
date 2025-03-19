@@ -34,7 +34,7 @@ namespace Model
   class GetDataAutomationStatusResult
   {
   public:
-    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API GetDataAutomationStatusResult();
+    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API GetDataAutomationStatusResult() = default;
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API GetDataAutomationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API GetDataAutomationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,71 +43,68 @@ namespace Model
     /**
      * <p>Job Status.</p>
      */
-    inline const AutomationJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AutomationJobStatus& value) { m_status = value; }
-    inline void SetStatus(AutomationJobStatus&& value) { m_status = std::move(value); }
-    inline GetDataAutomationStatusResult& WithStatus(const AutomationJobStatus& value) { SetStatus(value); return *this;}
-    inline GetDataAutomationStatusResult& WithStatus(AutomationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AutomationJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AutomationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDataAutomationStatusResult& WithStatus(AutomationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error Type.</p>
      */
-    inline const Aws::String& GetErrorType() const{ return m_errorType; }
-    inline void SetErrorType(const Aws::String& value) { m_errorType = value; }
-    inline void SetErrorType(Aws::String&& value) { m_errorType = std::move(value); }
-    inline void SetErrorType(const char* value) { m_errorType.assign(value); }
-    inline GetDataAutomationStatusResult& WithErrorType(const Aws::String& value) { SetErrorType(value); return *this;}
-    inline GetDataAutomationStatusResult& WithErrorType(Aws::String&& value) { SetErrorType(std::move(value)); return *this;}
-    inline GetDataAutomationStatusResult& WithErrorType(const char* value) { SetErrorType(value); return *this;}
+    inline const Aws::String& GetErrorType() const { return m_errorType; }
+    template<typename ErrorTypeT = Aws::String>
+    void SetErrorType(ErrorTypeT&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::forward<ErrorTypeT>(value); }
+    template<typename ErrorTypeT = Aws::String>
+    GetDataAutomationStatusResult& WithErrorType(ErrorTypeT&& value) { SetErrorType(std::forward<ErrorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error Message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline GetDataAutomationStatusResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GetDataAutomationStatusResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GetDataAutomationStatusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GetDataAutomationStatusResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Output configuration.</p>
      */
-    inline const OutputConfiguration& GetOutputConfiguration() const{ return m_outputConfiguration; }
-    inline void SetOutputConfiguration(const OutputConfiguration& value) { m_outputConfiguration = value; }
-    inline void SetOutputConfiguration(OutputConfiguration&& value) { m_outputConfiguration = std::move(value); }
-    inline GetDataAutomationStatusResult& WithOutputConfiguration(const OutputConfiguration& value) { SetOutputConfiguration(value); return *this;}
-    inline GetDataAutomationStatusResult& WithOutputConfiguration(OutputConfiguration&& value) { SetOutputConfiguration(std::move(value)); return *this;}
+    inline const OutputConfiguration& GetOutputConfiguration() const { return m_outputConfiguration; }
+    template<typename OutputConfigurationT = OutputConfiguration>
+    void SetOutputConfiguration(OutputConfigurationT&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::forward<OutputConfigurationT>(value); }
+    template<typename OutputConfigurationT = OutputConfiguration>
+    GetDataAutomationStatusResult& WithOutputConfiguration(OutputConfigurationT&& value) { SetOutputConfiguration(std::forward<OutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataAutomationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataAutomationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataAutomationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataAutomationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AutomationJobStatus m_status;
+    AutomationJobStatus m_status{AutomationJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorType;
+    bool m_errorTypeHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     OutputConfiguration m_outputConfiguration;
+    bool m_outputConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

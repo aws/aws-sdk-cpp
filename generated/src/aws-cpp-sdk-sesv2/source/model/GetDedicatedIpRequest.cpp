@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDedicatedIpRequest::GetDedicatedIpRequest() : 
-    m_ipHasBeenSet(false)
-{
-}
-
 Aws::String GetDedicatedIpRequest::SerializePayload() const
 {
   return {};

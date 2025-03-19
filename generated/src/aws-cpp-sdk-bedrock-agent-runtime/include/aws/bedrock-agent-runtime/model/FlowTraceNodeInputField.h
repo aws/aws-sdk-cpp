@@ -36,7 +36,7 @@ namespace Model
   class FlowTraceNodeInputField
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeInputField();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeInputField() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeInputField(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeInputField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>The content of the node input.</p>
      */
-    inline const FlowTraceNodeInputContent& GetContent() const{ return m_content; }
+    inline const FlowTraceNodeInputContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const FlowTraceNodeInputContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(FlowTraceNodeInputContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline FlowTraceNodeInputField& WithContent(const FlowTraceNodeInputContent& value) { SetContent(value); return *this;}
-    inline FlowTraceNodeInputField& WithContent(FlowTraceNodeInputContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = FlowTraceNodeInputContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = FlowTraceNodeInputContent>
+    FlowTraceNodeInputField& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the node input.</p>
      */
-    inline const Aws::String& GetNodeInputName() const{ return m_nodeInputName; }
+    inline const Aws::String& GetNodeInputName() const { return m_nodeInputName; }
     inline bool NodeInputNameHasBeenSet() const { return m_nodeInputNameHasBeenSet; }
-    inline void SetNodeInputName(const Aws::String& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = value; }
-    inline void SetNodeInputName(Aws::String&& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = std::move(value); }
-    inline void SetNodeInputName(const char* value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName.assign(value); }
-    inline FlowTraceNodeInputField& WithNodeInputName(const Aws::String& value) { SetNodeInputName(value); return *this;}
-    inline FlowTraceNodeInputField& WithNodeInputName(Aws::String&& value) { SetNodeInputName(std::move(value)); return *this;}
-    inline FlowTraceNodeInputField& WithNodeInputName(const char* value) { SetNodeInputName(value); return *this;}
+    template<typename NodeInputNameT = Aws::String>
+    void SetNodeInputName(NodeInputNameT&& value) { m_nodeInputNameHasBeenSet = true; m_nodeInputName = std::forward<NodeInputNameT>(value); }
+    template<typename NodeInputNameT = Aws::String>
+    FlowTraceNodeInputField& WithNodeInputName(NodeInputNameT&& value) { SetNodeInputName(std::forward<NodeInputNameT>(value)); return *this;}
     ///@}
   private:
 

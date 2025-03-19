@@ -22,7 +22,7 @@ namespace Model
   class DeleteAuditSuppressionRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteAuditSuppressionRequest();
+    AWS_IOT_API DeleteAuditSuppressionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,24 +35,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetCheckName() const{ return m_checkName; }
+    inline const Aws::String& GetCheckName() const { return m_checkName; }
     inline bool CheckNameHasBeenSet() const { return m_checkNameHasBeenSet; }
-    inline void SetCheckName(const Aws::String& value) { m_checkNameHasBeenSet = true; m_checkName = value; }
-    inline void SetCheckName(Aws::String&& value) { m_checkNameHasBeenSet = true; m_checkName = std::move(value); }
-    inline void SetCheckName(const char* value) { m_checkNameHasBeenSet = true; m_checkName.assign(value); }
-    inline DeleteAuditSuppressionRequest& WithCheckName(const Aws::String& value) { SetCheckName(value); return *this;}
-    inline DeleteAuditSuppressionRequest& WithCheckName(Aws::String&& value) { SetCheckName(std::move(value)); return *this;}
-    inline DeleteAuditSuppressionRequest& WithCheckName(const char* value) { SetCheckName(value); return *this;}
+    template<typename CheckNameT = Aws::String>
+    void SetCheckName(CheckNameT&& value) { m_checkNameHasBeenSet = true; m_checkName = std::forward<CheckNameT>(value); }
+    template<typename CheckNameT = Aws::String>
+    DeleteAuditSuppressionRequest& WithCheckName(CheckNameT&& value) { SetCheckName(std::forward<CheckNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const ResourceIdentifier& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline DeleteAuditSuppressionRequest& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
-    inline DeleteAuditSuppressionRequest& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+    template<typename ResourceIdentifierT = ResourceIdentifier>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = ResourceIdentifier>
+    DeleteAuditSuppressionRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
   private:
 

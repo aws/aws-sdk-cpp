@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTestSetDiscrepancyReportResult::CreateTestSetDiscrepancyReportResult()
-{
-}
-
 CreateTestSetDiscrepancyReportResult::CreateTestSetDiscrepancyReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ CreateTestSetDiscrepancyReportResult& CreateTestSetDiscrepancyReportResult::oper
   if(jsonValue.ValueExists("testSetDiscrepancyReportId"))
   {
     m_testSetDiscrepancyReportId = jsonValue.GetString("testSetDiscrepancyReportId");
-
+    m_testSetDiscrepancyReportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetId"))
   {
     m_testSetId = jsonValue.GetString("testSetId");
-
+    m_testSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
+    m_targetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

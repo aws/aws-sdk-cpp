@@ -18,24 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-GatewayInstance::GatewayInstance() : 
-    m_bridgePlacement(BridgePlacement::NOT_SET),
-    m_bridgePlacementHasBeenSet(false),
-    m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false),
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayInstanceArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceMessagesHasBeenSet(false),
-    m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false),
-    m_runningBridgeCount(0),
-    m_runningBridgeCountHasBeenSet(false)
-{
-}
-
 GatewayInstance::GatewayInstance(JsonView jsonValue)
-  : GatewayInstance()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ GatewayInstance& GatewayInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bridgePlacement"))
   {
     m_bridgePlacement = BridgePlacementMapper::GetBridgePlacementForName(jsonValue.GetString("bridgePlacement"));
-
     m_bridgePlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionStatus"))
   {
     m_connectionStatus = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("connectionStatus"));
-
     m_connectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayArn"))
   {
     m_gatewayArn = jsonValue.GetString("gatewayArn");
-
     m_gatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayInstanceArn"))
   {
     m_gatewayInstanceArn = jsonValue.GetString("gatewayInstanceArn");
-
     m_gatewayInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceMessages"))
   {
     Aws::Utils::Array<JsonView> instanceMessagesJsonList = jsonValue.GetArray("instanceMessages");
@@ -86,21 +59,16 @@ GatewayInstance& GatewayInstance::operator =(JsonView jsonValue)
     }
     m_instanceMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceState"))
   {
     m_instanceState = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("instanceState"));
-
     m_instanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningBridgeCount"))
   {
     m_runningBridgeCount = jsonValue.GetInteger("runningBridgeCount");
-
     m_runningBridgeCountHasBeenSet = true;
   }
-
   return *this;
 }
 

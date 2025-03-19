@@ -28,7 +28,7 @@ namespace Model
   class CreateOpsItemRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API CreateOpsItemRequest();
+    AWS_SSM_API CreateOpsItemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * format. </p>  <p>Provide enough information so that users viewing this
      * OpsItem for the first time understand the issue. </p> 
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateOpsItemRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateOpsItemRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateOpsItemRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
-    inline const Aws::String& GetOpsItemType() const{ return m_opsItemType; }
+    inline const Aws::String& GetOpsItemType() const { return m_opsItemType; }
     inline bool OpsItemTypeHasBeenSet() const { return m_opsItemTypeHasBeenSet; }
-    inline void SetOpsItemType(const Aws::String& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = value; }
-    inline void SetOpsItemType(Aws::String&& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = std::move(value); }
-    inline void SetOpsItemType(const char* value) { m_opsItemTypeHasBeenSet = true; m_opsItemType.assign(value); }
-    inline CreateOpsItemRequest& WithOpsItemType(const Aws::String& value) { SetOpsItemType(value); return *this;}
-    inline CreateOpsItemRequest& WithOpsItemType(Aws::String&& value) { SetOpsItemType(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithOpsItemType(const char* value) { SetOpsItemType(value); return *this;}
+    template<typename OpsItemTypeT = Aws::String>
+    void SetOpsItemType(OpsItemTypeT&& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = std::forward<OpsItemTypeT>(value); }
+    template<typename OpsItemTypeT = Aws::String>
+    CreateOpsItemRequest& WithOpsItemType(OpsItemTypeT&& value) { SetOpsItemType(std::forward<OpsItemTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,18 +97,16 @@ namespace Model
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, OpsItemDataValue>& GetOperationalData() const{ return m_operationalData; }
+    inline const Aws::Map<Aws::String, OpsItemDataValue>& GetOperationalData() const { return m_operationalData; }
     inline bool OperationalDataHasBeenSet() const { return m_operationalDataHasBeenSet; }
-    inline void SetOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { m_operationalDataHasBeenSet = true; m_operationalData = value; }
-    inline void SetOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { m_operationalDataHasBeenSet = true; m_operationalData = std::move(value); }
-    inline CreateOpsItemRequest& WithOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { SetOperationalData(value); return *this;}
-    inline CreateOpsItemRequest& WithOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { SetOperationalData(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& AddOperationalData(const Aws::String& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
-    inline CreateOpsItemRequest& AddOperationalData(Aws::String&& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), value); return *this; }
-    inline CreateOpsItemRequest& AddOperationalData(const Aws::String& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
-    inline CreateOpsItemRequest& AddOperationalData(Aws::String&& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateOpsItemRequest& AddOperationalData(const char* key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
-    inline CreateOpsItemRequest& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
+    template<typename OperationalDataT = Aws::Map<Aws::String, OpsItemDataValue>>
+    void SetOperationalData(OperationalDataT&& value) { m_operationalDataHasBeenSet = true; m_operationalData = std::forward<OperationalDataT>(value); }
+    template<typename OperationalDataT = Aws::Map<Aws::String, OpsItemDataValue>>
+    CreateOpsItemRequest& WithOperationalData(OperationalDataT&& value) { SetOperationalData(std::forward<OperationalDataT>(value)); return *this;}
+    template<typename OperationalDataKeyT = Aws::String, typename OperationalDataValueT = OpsItemDataValue>
+    CreateOpsItemRequest& AddOperationalData(OperationalDataKeyT&& key, OperationalDataValueT&& value) {
+      m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::forward<OperationalDataKeyT>(key), std::forward<OperationalDataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -120,14 +114,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
      * when this OpsItem is edited or changed.</p>
      */
-    inline const Aws::Vector<OpsItemNotification>& GetNotifications() const{ return m_notifications; }
+    inline const Aws::Vector<OpsItemNotification>& GetNotifications() const { return m_notifications; }
     inline bool NotificationsHasBeenSet() const { return m_notificationsHasBeenSet; }
-    inline void SetNotifications(const Aws::Vector<OpsItemNotification>& value) { m_notificationsHasBeenSet = true; m_notifications = value; }
-    inline void SetNotifications(Aws::Vector<OpsItemNotification>&& value) { m_notificationsHasBeenSet = true; m_notifications = std::move(value); }
-    inline CreateOpsItemRequest& WithNotifications(const Aws::Vector<OpsItemNotification>& value) { SetNotifications(value); return *this;}
-    inline CreateOpsItemRequest& WithNotifications(Aws::Vector<OpsItemNotification>&& value) { SetNotifications(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& AddNotifications(const OpsItemNotification& value) { m_notificationsHasBeenSet = true; m_notifications.push_back(value); return *this; }
-    inline CreateOpsItemRequest& AddNotifications(OpsItemNotification&& value) { m_notificationsHasBeenSet = true; m_notifications.push_back(std::move(value)); return *this; }
+    template<typename NotificationsT = Aws::Vector<OpsItemNotification>>
+    void SetNotifications(NotificationsT&& value) { m_notificationsHasBeenSet = true; m_notifications = std::forward<NotificationsT>(value); }
+    template<typename NotificationsT = Aws::Vector<OpsItemNotification>>
+    CreateOpsItemRequest& WithNotifications(NotificationsT&& value) { SetNotifications(std::forward<NotificationsT>(value)); return *this;}
+    template<typename NotificationsT = OpsItemNotification>
+    CreateOpsItemRequest& AddNotifications(NotificationsT&& value) { m_notificationsHasBeenSet = true; m_notifications.emplace_back(std::forward<NotificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,7 +129,7 @@ namespace Model
      * <p>The importance of this OpsItem in relation to other OpsItems in the
      * system.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline CreateOpsItemRequest& WithPriority(int value) { SetPriority(value); return *this;}
@@ -147,14 +141,14 @@ namespace Model
      * OpsItems. For example, related OpsItems can include OpsItems with similar error
      * messages, impacted resources, or statuses for the impacted resource.</p>
      */
-    inline const Aws::Vector<RelatedOpsItem>& GetRelatedOpsItems() const{ return m_relatedOpsItems; }
+    inline const Aws::Vector<RelatedOpsItem>& GetRelatedOpsItems() const { return m_relatedOpsItems; }
     inline bool RelatedOpsItemsHasBeenSet() const { return m_relatedOpsItemsHasBeenSet; }
-    inline void SetRelatedOpsItems(const Aws::Vector<RelatedOpsItem>& value) { m_relatedOpsItemsHasBeenSet = true; m_relatedOpsItems = value; }
-    inline void SetRelatedOpsItems(Aws::Vector<RelatedOpsItem>&& value) { m_relatedOpsItemsHasBeenSet = true; m_relatedOpsItems = std::move(value); }
-    inline CreateOpsItemRequest& WithRelatedOpsItems(const Aws::Vector<RelatedOpsItem>& value) { SetRelatedOpsItems(value); return *this;}
-    inline CreateOpsItemRequest& WithRelatedOpsItems(Aws::Vector<RelatedOpsItem>&& value) { SetRelatedOpsItems(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& AddRelatedOpsItems(const RelatedOpsItem& value) { m_relatedOpsItemsHasBeenSet = true; m_relatedOpsItems.push_back(value); return *this; }
-    inline CreateOpsItemRequest& AddRelatedOpsItems(RelatedOpsItem&& value) { m_relatedOpsItemsHasBeenSet = true; m_relatedOpsItems.push_back(std::move(value)); return *this; }
+    template<typename RelatedOpsItemsT = Aws::Vector<RelatedOpsItem>>
+    void SetRelatedOpsItems(RelatedOpsItemsT&& value) { m_relatedOpsItemsHasBeenSet = true; m_relatedOpsItems = std::forward<RelatedOpsItemsT>(value); }
+    template<typename RelatedOpsItemsT = Aws::Vector<RelatedOpsItem>>
+    CreateOpsItemRequest& WithRelatedOpsItems(RelatedOpsItemsT&& value) { SetRelatedOpsItems(std::forward<RelatedOpsItemsT>(value)); return *this;}
+    template<typename RelatedOpsItemsT = RelatedOpsItem>
+    CreateOpsItemRequest& AddRelatedOpsItems(RelatedOpsItemsT&& value) { m_relatedOpsItemsHasBeenSet = true; m_relatedOpsItems.emplace_back(std::forward<RelatedOpsItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -163,14 +157,12 @@ namespace Model
      * <p>The source name can't contain the following strings: <code>aws</code>,
      * <code>amazon</code>, and <code>amzn</code>. </p> 
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline CreateOpsItemRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline CreateOpsItemRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    CreateOpsItemRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +170,12 @@ namespace Model
      * <p>A short heading that describes the nature of the OpsItem and the impacted
      * resource.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline CreateOpsItemRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline CreateOpsItemRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    CreateOpsItemRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,42 +187,38 @@ namespace Model
      * <code>ssm:AddTagsToResource</code> operation. To add tags to an existing
      * OpsItem, use the <a>AddTagsToResource</a> operation.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateOpsItemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateOpsItemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateOpsItemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateOpsItemRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateOpsItemRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specify a category to assign to an OpsItem. </p>
      */
-    inline const Aws::String& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-    inline CreateOpsItemRequest& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-    inline CreateOpsItemRequest& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithCategory(const char* value) { SetCategory(value); return *this;}
+    template<typename CategoryT = Aws::String>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::String>
+    CreateOpsItemRequest& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify a severity to assign to an OpsItem.</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline const Aws::String& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-    inline CreateOpsItemRequest& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-    inline CreateOpsItemRequest& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+    template<typename SeverityT = Aws::String>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = Aws::String>
+    CreateOpsItemRequest& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,12 +226,12 @@ namespace Model
      * <p>The time a runbook workflow started. Currently reported only for the OpsItem
      * type <code>/aws/changerequest</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetActualStartTime() const{ return m_actualStartTime; }
+    inline const Aws::Utils::DateTime& GetActualStartTime() const { return m_actualStartTime; }
     inline bool ActualStartTimeHasBeenSet() const { return m_actualStartTimeHasBeenSet; }
-    inline void SetActualStartTime(const Aws::Utils::DateTime& value) { m_actualStartTimeHasBeenSet = true; m_actualStartTime = value; }
-    inline void SetActualStartTime(Aws::Utils::DateTime&& value) { m_actualStartTimeHasBeenSet = true; m_actualStartTime = std::move(value); }
-    inline CreateOpsItemRequest& WithActualStartTime(const Aws::Utils::DateTime& value) { SetActualStartTime(value); return *this;}
-    inline CreateOpsItemRequest& WithActualStartTime(Aws::Utils::DateTime&& value) { SetActualStartTime(std::move(value)); return *this;}
+    template<typename ActualStartTimeT = Aws::Utils::DateTime>
+    void SetActualStartTime(ActualStartTimeT&& value) { m_actualStartTimeHasBeenSet = true; m_actualStartTime = std::forward<ActualStartTimeT>(value); }
+    template<typename ActualStartTimeT = Aws::Utils::DateTime>
+    CreateOpsItemRequest& WithActualStartTime(ActualStartTimeT&& value) { SetActualStartTime(std::forward<ActualStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,12 +239,12 @@ namespace Model
      * <p>The time a runbook workflow ended. Currently reported only for the OpsItem
      * type <code>/aws/changerequest</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetActualEndTime() const{ return m_actualEndTime; }
+    inline const Aws::Utils::DateTime& GetActualEndTime() const { return m_actualEndTime; }
     inline bool ActualEndTimeHasBeenSet() const { return m_actualEndTimeHasBeenSet; }
-    inline void SetActualEndTime(const Aws::Utils::DateTime& value) { m_actualEndTimeHasBeenSet = true; m_actualEndTime = value; }
-    inline void SetActualEndTime(Aws::Utils::DateTime&& value) { m_actualEndTimeHasBeenSet = true; m_actualEndTime = std::move(value); }
-    inline CreateOpsItemRequest& WithActualEndTime(const Aws::Utils::DateTime& value) { SetActualEndTime(value); return *this;}
-    inline CreateOpsItemRequest& WithActualEndTime(Aws::Utils::DateTime&& value) { SetActualEndTime(std::move(value)); return *this;}
+    template<typename ActualEndTimeT = Aws::Utils::DateTime>
+    void SetActualEndTime(ActualEndTimeT&& value) { m_actualEndTimeHasBeenSet = true; m_actualEndTime = std::forward<ActualEndTimeT>(value); }
+    template<typename ActualEndTimeT = Aws::Utils::DateTime>
+    CreateOpsItemRequest& WithActualEndTime(ActualEndTimeT&& value) { SetActualEndTime(std::forward<ActualEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,12 +253,12 @@ namespace Model
      * Currently supported only for the OpsItem type
      * <code>/aws/changerequest</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetPlannedStartTime() const{ return m_plannedStartTime; }
+    inline const Aws::Utils::DateTime& GetPlannedStartTime() const { return m_plannedStartTime; }
     inline bool PlannedStartTimeHasBeenSet() const { return m_plannedStartTimeHasBeenSet; }
-    inline void SetPlannedStartTime(const Aws::Utils::DateTime& value) { m_plannedStartTimeHasBeenSet = true; m_plannedStartTime = value; }
-    inline void SetPlannedStartTime(Aws::Utils::DateTime&& value) { m_plannedStartTimeHasBeenSet = true; m_plannedStartTime = std::move(value); }
-    inline CreateOpsItemRequest& WithPlannedStartTime(const Aws::Utils::DateTime& value) { SetPlannedStartTime(value); return *this;}
-    inline CreateOpsItemRequest& WithPlannedStartTime(Aws::Utils::DateTime&& value) { SetPlannedStartTime(std::move(value)); return *this;}
+    template<typename PlannedStartTimeT = Aws::Utils::DateTime>
+    void SetPlannedStartTime(PlannedStartTimeT&& value) { m_plannedStartTimeHasBeenSet = true; m_plannedStartTime = std::forward<PlannedStartTimeT>(value); }
+    template<typename PlannedStartTimeT = Aws::Utils::DateTime>
+    CreateOpsItemRequest& WithPlannedStartTime(PlannedStartTimeT&& value) { SetPlannedStartTime(std::forward<PlannedStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -281,12 +267,12 @@ namespace Model
      * Currently supported only for the OpsItem type
      * <code>/aws/changerequest</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetPlannedEndTime() const{ return m_plannedEndTime; }
+    inline const Aws::Utils::DateTime& GetPlannedEndTime() const { return m_plannedEndTime; }
     inline bool PlannedEndTimeHasBeenSet() const { return m_plannedEndTimeHasBeenSet; }
-    inline void SetPlannedEndTime(const Aws::Utils::DateTime& value) { m_plannedEndTimeHasBeenSet = true; m_plannedEndTime = value; }
-    inline void SetPlannedEndTime(Aws::Utils::DateTime&& value) { m_plannedEndTimeHasBeenSet = true; m_plannedEndTime = std::move(value); }
-    inline CreateOpsItemRequest& WithPlannedEndTime(const Aws::Utils::DateTime& value) { SetPlannedEndTime(value); return *this;}
-    inline CreateOpsItemRequest& WithPlannedEndTime(Aws::Utils::DateTime&& value) { SetPlannedEndTime(std::move(value)); return *this;}
+    template<typename PlannedEndTimeT = Aws::Utils::DateTime>
+    void SetPlannedEndTime(PlannedEndTimeT&& value) { m_plannedEndTimeHasBeenSet = true; m_plannedEndTime = std::forward<PlannedEndTimeT>(value); }
+    template<typename PlannedEndTimeT = Aws::Utils::DateTime>
+    CreateOpsItemRequest& WithPlannedEndTime(PlannedEndTimeT&& value) { SetPlannedEndTime(std::forward<PlannedEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -298,14 +284,12 @@ namespace Model
      * up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreateOpsItemRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreateOpsItemRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreateOpsItemRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreateOpsItemRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -321,7 +305,7 @@ namespace Model
     Aws::Vector<OpsItemNotification> m_notifications;
     bool m_notificationsHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
@@ -342,16 +326,16 @@ namespace Model
     Aws::String m_severity;
     bool m_severityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_actualStartTime;
+    Aws::Utils::DateTime m_actualStartTime{};
     bool m_actualStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_actualEndTime;
+    Aws::Utils::DateTime m_actualEndTime{};
     bool m_actualEndTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_plannedStartTime;
+    Aws::Utils::DateTime m_plannedStartTime{};
     bool m_plannedStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_plannedEndTime;
+    Aws::Utils::DateTime m_plannedEndTime{};
     bool m_plannedEndTimeHasBeenSet = false;
 
     Aws::String m_accountId;

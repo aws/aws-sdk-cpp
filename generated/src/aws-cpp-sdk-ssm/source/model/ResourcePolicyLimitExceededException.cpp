@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourcePolicyLimitExceededException::ResourcePolicyLimitExceededException() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_limitTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourcePolicyLimitExceededException::ResourcePolicyLimitExceededException(JsonView jsonValue)
-  : ResourcePolicyLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourcePolicyLimitExceededException& ResourcePolicyLimitExceededException::oper
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetInteger("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitType"))
   {
     m_limitType = jsonValue.GetString("LimitType");
-
     m_limitTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

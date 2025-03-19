@@ -18,15 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-ContractIdentifier::ContractIdentifier() : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_contractAddressHasBeenSet(false)
-{
-}
-
 ContractIdentifier::ContractIdentifier(JsonView jsonValue)
-  : ContractIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContractIdentifier& ContractIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("network"))
   {
     m_network = QueryNetworkMapper::GetQueryNetworkForName(jsonValue.GetString("network"));
-
     m_networkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contractAddress"))
   {
     m_contractAddress = jsonValue.GetString("contractAddress");
-
     m_contractAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

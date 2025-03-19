@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemIdentity::OpsItemIdentity() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 OpsItemIdentity::OpsItemIdentity(JsonView jsonValue)
-  : OpsItemIdentity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OpsItemIdentity& OpsItemIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

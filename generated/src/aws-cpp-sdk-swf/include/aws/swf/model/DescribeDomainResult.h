@@ -34,7 +34,7 @@ namespace Model
   class DescribeDomainResult
   {
   public:
-    AWS_SWF_API DescribeDomainResult();
+    AWS_SWF_API DescribeDomainResult() = default;
     AWS_SWF_API DescribeDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SWF_API DescribeDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,11 +44,11 @@ namespace Model
      * <p>The basic information about a domain, such as its name, status, and
      * description.</p>
      */
-    inline const DomainInfo& GetDomainInfo() const{ return m_domainInfo; }
-    inline void SetDomainInfo(const DomainInfo& value) { m_domainInfo = value; }
-    inline void SetDomainInfo(DomainInfo&& value) { m_domainInfo = std::move(value); }
-    inline DescribeDomainResult& WithDomainInfo(const DomainInfo& value) { SetDomainInfo(value); return *this;}
-    inline DescribeDomainResult& WithDomainInfo(DomainInfo&& value) { SetDomainInfo(std::move(value)); return *this;}
+    inline const DomainInfo& GetDomainInfo() const { return m_domainInfo; }
+    template<typename DomainInfoT = DomainInfo>
+    void SetDomainInfo(DomainInfoT&& value) { m_domainInfoHasBeenSet = true; m_domainInfo = std::forward<DomainInfoT>(value); }
+    template<typename DomainInfoT = DomainInfo>
+    DescribeDomainResult& WithDomainInfo(DomainInfoT&& value) { SetDomainInfo(std::forward<DomainInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,30 +56,31 @@ namespace Model
      * <p>The domain configuration. Currently, this includes only the domain's
      * retention period.</p>
      */
-    inline const DomainConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const DomainConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(DomainConfiguration&& value) { m_configuration = std::move(value); }
-    inline DescribeDomainResult& WithConfiguration(const DomainConfiguration& value) { SetConfiguration(value); return *this;}
-    inline DescribeDomainResult& WithConfiguration(DomainConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const DomainConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = DomainConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = DomainConfiguration>
+    DescribeDomainResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainInfo m_domainInfo;
+    bool m_domainInfoHasBeenSet = false;
 
     DomainConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class DeleteExtensionAssociationRequest : public AppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API DeleteExtensionAssociationRequest();
+    AWS_APPCONFIG_API DeleteExtensionAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the extension association to delete.</p>
      */
-    inline const Aws::String& GetExtensionAssociationId() const{ return m_extensionAssociationId; }
+    inline const Aws::String& GetExtensionAssociationId() const { return m_extensionAssociationId; }
     inline bool ExtensionAssociationIdHasBeenSet() const { return m_extensionAssociationIdHasBeenSet; }
-    inline void SetExtensionAssociationId(const Aws::String& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = value; }
-    inline void SetExtensionAssociationId(Aws::String&& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = std::move(value); }
-    inline void SetExtensionAssociationId(const char* value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId.assign(value); }
-    inline DeleteExtensionAssociationRequest& WithExtensionAssociationId(const Aws::String& value) { SetExtensionAssociationId(value); return *this;}
-    inline DeleteExtensionAssociationRequest& WithExtensionAssociationId(Aws::String&& value) { SetExtensionAssociationId(std::move(value)); return *this;}
-    inline DeleteExtensionAssociationRequest& WithExtensionAssociationId(const char* value) { SetExtensionAssociationId(value); return *this;}
+    template<typename ExtensionAssociationIdT = Aws::String>
+    void SetExtensionAssociationId(ExtensionAssociationIdT&& value) { m_extensionAssociationIdHasBeenSet = true; m_extensionAssociationId = std::forward<ExtensionAssociationIdT>(value); }
+    template<typename ExtensionAssociationIdT = Aws::String>
+    DeleteExtensionAssociationRequest& WithExtensionAssociationId(ExtensionAssociationIdT&& value) { SetExtensionAssociationId(std::forward<ExtensionAssociationIdT>(value)); return *this;}
     ///@}
   private:
 

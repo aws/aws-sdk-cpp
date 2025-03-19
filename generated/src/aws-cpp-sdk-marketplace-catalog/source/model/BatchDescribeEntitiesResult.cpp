@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDescribeEntitiesResult::BatchDescribeEntitiesResult()
-{
-}
-
 BatchDescribeEntitiesResult::BatchDescribeEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDescribeEntitiesResult& BatchDescribeEntitiesResult::operator =(const Aws::
     {
       m_entityDetails[entityDetailsItem.first] = entityDetailsItem.second.AsObject();
     }
+    m_entityDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Map<Aws::String, JsonView> errorsJsonMap = jsonValue.GetObject("Errors").GetAllObjects();
@@ -45,14 +41,15 @@ BatchDescribeEntitiesResult& BatchDescribeEntitiesResult::operator =(const Aws::
     {
       m_errors[errorsItem.first] = errorsItem.second.AsObject();
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

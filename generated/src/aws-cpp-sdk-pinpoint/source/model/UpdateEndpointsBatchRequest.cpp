@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointsBatchRequest::UpdateEndpointsBatchRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_endpointBatchRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointsBatchRequest::SerializePayload() const
 {
   JsonValue payload;

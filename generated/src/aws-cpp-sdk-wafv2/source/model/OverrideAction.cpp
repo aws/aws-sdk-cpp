@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-OverrideAction::OverrideAction() : 
-    m_countHasBeenSet(false),
-    m_noneHasBeenSet(false)
-{
-}
-
 OverrideAction::OverrideAction(JsonView jsonValue)
-  : OverrideAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OverrideAction& OverrideAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetObject("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("None"))
   {
     m_none = jsonValue.GetObject("None");
-
     m_noneHasBeenSet = true;
   }
-
   return *this;
 }
 

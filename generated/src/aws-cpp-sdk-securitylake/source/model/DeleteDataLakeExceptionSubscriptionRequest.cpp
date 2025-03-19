@@ -12,10 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataLakeExceptionSubscriptionRequest::DeleteDataLakeExceptionSubscriptionRequest()
-{
-}
-
 Aws::String DeleteDataLakeExceptionSubscriptionRequest::SerializePayload() const
 {
   return {};

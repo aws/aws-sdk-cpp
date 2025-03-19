@@ -18,14 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-NameValuePair::NameValuePair() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 NameValuePair::NameValuePair(JsonView jsonValue)
-  : NameValuePair()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NameValuePair& NameValuePair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

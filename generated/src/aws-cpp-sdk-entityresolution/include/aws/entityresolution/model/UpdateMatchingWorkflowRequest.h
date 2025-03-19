@@ -26,7 +26,7 @@ namespace Model
   class UpdateMatchingWorkflowRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API UpdateMatchingWorkflowRequest();
+    AWS_ENTITYRESOLUTION_API UpdateMatchingWorkflowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A description of the workflow.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateMatchingWorkflowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateMatchingWorkflowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,12 @@ namespace Model
      * <p>An object which defines an incremental run type and has only
      * <code>incrementalRunType</code> as a field.</p>
      */
-    inline const IncrementalRunConfig& GetIncrementalRunConfig() const{ return m_incrementalRunConfig; }
+    inline const IncrementalRunConfig& GetIncrementalRunConfig() const { return m_incrementalRunConfig; }
     inline bool IncrementalRunConfigHasBeenSet() const { return m_incrementalRunConfigHasBeenSet; }
-    inline void SetIncrementalRunConfig(const IncrementalRunConfig& value) { m_incrementalRunConfigHasBeenSet = true; m_incrementalRunConfig = value; }
-    inline void SetIncrementalRunConfig(IncrementalRunConfig&& value) { m_incrementalRunConfigHasBeenSet = true; m_incrementalRunConfig = std::move(value); }
-    inline UpdateMatchingWorkflowRequest& WithIncrementalRunConfig(const IncrementalRunConfig& value) { SetIncrementalRunConfig(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithIncrementalRunConfig(IncrementalRunConfig&& value) { SetIncrementalRunConfig(std::move(value)); return *this;}
+    template<typename IncrementalRunConfigT = IncrementalRunConfig>
+    void SetIncrementalRunConfig(IncrementalRunConfigT&& value) { m_incrementalRunConfigHasBeenSet = true; m_incrementalRunConfig = std::forward<IncrementalRunConfigT>(value); }
+    template<typename IncrementalRunConfigT = IncrementalRunConfig>
+    UpdateMatchingWorkflowRequest& WithIncrementalRunConfig(IncrementalRunConfigT&& value) { SetIncrementalRunConfig(std::forward<IncrementalRunConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,14 @@ namespace Model
      * <p>A list of <code>InputSource</code> objects, which have the fields
      * <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
      */
-    inline const Aws::Vector<InputSource>& GetInputSourceConfig() const{ return m_inputSourceConfig; }
+    inline const Aws::Vector<InputSource>& GetInputSourceConfig() const { return m_inputSourceConfig; }
     inline bool InputSourceConfigHasBeenSet() const { return m_inputSourceConfigHasBeenSet; }
-    inline void SetInputSourceConfig(const Aws::Vector<InputSource>& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig = value; }
-    inline void SetInputSourceConfig(Aws::Vector<InputSource>&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig = std::move(value); }
-    inline UpdateMatchingWorkflowRequest& WithInputSourceConfig(const Aws::Vector<InputSource>& value) { SetInputSourceConfig(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithInputSourceConfig(Aws::Vector<InputSource>&& value) { SetInputSourceConfig(std::move(value)); return *this;}
-    inline UpdateMatchingWorkflowRequest& AddInputSourceConfig(const InputSource& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig.push_back(value); return *this; }
-    inline UpdateMatchingWorkflowRequest& AddInputSourceConfig(InputSource&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig.push_back(std::move(value)); return *this; }
+    template<typename InputSourceConfigT = Aws::Vector<InputSource>>
+    void SetInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig = std::forward<InputSourceConfigT>(value); }
+    template<typename InputSourceConfigT = Aws::Vector<InputSource>>
+    UpdateMatchingWorkflowRequest& WithInputSourceConfig(InputSourceConfigT&& value) { SetInputSourceConfig(std::forward<InputSourceConfigT>(value)); return *this;}
+    template<typename InputSourceConfigT = InputSource>
+    UpdateMatchingWorkflowRequest& AddInputSourceConfig(InputSourceConfigT&& value) { m_inputSourceConfigHasBeenSet = true; m_inputSourceConfig.emplace_back(std::forward<InputSourceConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,14 +83,14 @@ namespace Model
      * <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and
      * <code>Output</code>.</p>
      */
-    inline const Aws::Vector<OutputSource>& GetOutputSourceConfig() const{ return m_outputSourceConfig; }
+    inline const Aws::Vector<OutputSource>& GetOutputSourceConfig() const { return m_outputSourceConfig; }
     inline bool OutputSourceConfigHasBeenSet() const { return m_outputSourceConfigHasBeenSet; }
-    inline void SetOutputSourceConfig(const Aws::Vector<OutputSource>& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig = value; }
-    inline void SetOutputSourceConfig(Aws::Vector<OutputSource>&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig = std::move(value); }
-    inline UpdateMatchingWorkflowRequest& WithOutputSourceConfig(const Aws::Vector<OutputSource>& value) { SetOutputSourceConfig(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithOutputSourceConfig(Aws::Vector<OutputSource>&& value) { SetOutputSourceConfig(std::move(value)); return *this;}
-    inline UpdateMatchingWorkflowRequest& AddOutputSourceConfig(const OutputSource& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.push_back(value); return *this; }
-    inline UpdateMatchingWorkflowRequest& AddOutputSourceConfig(OutputSource&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.push_back(std::move(value)); return *this; }
+    template<typename OutputSourceConfigT = Aws::Vector<OutputSource>>
+    void SetOutputSourceConfig(OutputSourceConfigT&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig = std::forward<OutputSourceConfigT>(value); }
+    template<typename OutputSourceConfigT = Aws::Vector<OutputSource>>
+    UpdateMatchingWorkflowRequest& WithOutputSourceConfig(OutputSourceConfigT&& value) { SetOutputSourceConfig(std::forward<OutputSourceConfigT>(value)); return *this;}
+    template<typename OutputSourceConfigT = OutputSource>
+    UpdateMatchingWorkflowRequest& AddOutputSourceConfig(OutputSourceConfigT&& value) { m_outputSourceConfigHasBeenSet = true; m_outputSourceConfig.emplace_back(std::forward<OutputSourceConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,12 +98,12 @@ namespace Model
      * <p>An object which defines the <code>resolutionType</code> and the
      * <code>ruleBasedProperties</code>.</p>
      */
-    inline const ResolutionTechniques& GetResolutionTechniques() const{ return m_resolutionTechniques; }
+    inline const ResolutionTechniques& GetResolutionTechniques() const { return m_resolutionTechniques; }
     inline bool ResolutionTechniquesHasBeenSet() const { return m_resolutionTechniquesHasBeenSet; }
-    inline void SetResolutionTechniques(const ResolutionTechniques& value) { m_resolutionTechniquesHasBeenSet = true; m_resolutionTechniques = value; }
-    inline void SetResolutionTechniques(ResolutionTechniques&& value) { m_resolutionTechniquesHasBeenSet = true; m_resolutionTechniques = std::move(value); }
-    inline UpdateMatchingWorkflowRequest& WithResolutionTechniques(const ResolutionTechniques& value) { SetResolutionTechniques(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithResolutionTechniques(ResolutionTechniques&& value) { SetResolutionTechniques(std::move(value)); return *this;}
+    template<typename ResolutionTechniquesT = ResolutionTechniques>
+    void SetResolutionTechniques(ResolutionTechniquesT&& value) { m_resolutionTechniquesHasBeenSet = true; m_resolutionTechniques = std::forward<ResolutionTechniquesT>(value); }
+    template<typename ResolutionTechniquesT = ResolutionTechniques>
+    UpdateMatchingWorkflowRequest& WithResolutionTechniques(ResolutionTechniquesT&& value) { SetResolutionTechniques(std::forward<ResolutionTechniquesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +111,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateMatchingWorkflowRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateMatchingWorkflowRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workflow to be retrieved.</p>
      */
-    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-    inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-    inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-    inline UpdateMatchingWorkflowRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-    inline UpdateMatchingWorkflowRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    UpdateMatchingWorkflowRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
   private:
 

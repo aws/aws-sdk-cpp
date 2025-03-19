@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ItemSizeLimitExceededException::ItemSizeLimitExceededException() : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ItemSizeLimitExceededException::ItemSizeLimitExceededException(JsonView jsonValue)
-  : ItemSizeLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ItemSizeLimitExceededException& ItemSizeLimitExceededException::operator =(JsonV
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

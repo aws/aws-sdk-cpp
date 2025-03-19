@@ -21,7 +21,7 @@ namespace Model
   class DeleteRuleRequest : public CloudWatchEventsRequest
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API DeleteRuleRequest();
+    AWS_CLOUDWATCHEVENTS_API DeleteRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The name or ARN of the event bus associated with the rule. If you omit this,
      * the default event bus is used.</p>
      */
-    inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
+    inline const Aws::String& GetEventBusName() const { return m_eventBusName; }
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
-    inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
-    inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
-    inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
-    inline DeleteRuleRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
-    inline DeleteRuleRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
-    inline DeleteRuleRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
+    template<typename EventBusNameT = Aws::String>
+    void SetEventBusName(EventBusNameT&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::forward<EventBusNameT>(value); }
+    template<typename EventBusNameT = Aws::String>
+    DeleteRuleRequest& WithEventBusName(EventBusNameT&& value) { SetEventBusName(std::forward<EventBusNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
      * response.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteRuleRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_eventBusName;
     bool m_eventBusNameHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

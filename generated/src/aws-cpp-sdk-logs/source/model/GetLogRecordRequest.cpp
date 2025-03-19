@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLogRecordRequest::GetLogRecordRequest() : 
-    m_logRecordPointerHasBeenSet(false),
-    m_unmask(false),
-    m_unmaskHasBeenSet(false)
-{
-}
-
 Aws::String GetLogRecordRequest::SerializePayload() const
 {
   JsonValue payload;

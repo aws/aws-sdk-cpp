@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoadSnapTrailerOptions::RoadSnapTrailerOptions() : 
-    m_trailerCount(0),
-    m_trailerCountHasBeenSet(false)
-{
-}
-
 RoadSnapTrailerOptions::RoadSnapTrailerOptions(JsonView jsonValue)
-  : RoadSnapTrailerOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RoadSnapTrailerOptions& RoadSnapTrailerOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrailerCount"))
   {
     m_trailerCount = jsonValue.GetInteger("TrailerCount");
-
     m_trailerCountHasBeenSet = true;
   }
-
   return *this;
 }
 

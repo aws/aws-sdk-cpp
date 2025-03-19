@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackResourceDriftInformationSummary::StackResourceDriftInformationSummary() : 
-    m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
-    m_stackResourceDriftStatusHasBeenSet(false),
-    m_lastCheckTimestampHasBeenSet(false)
-{
-}
-
 StackResourceDriftInformationSummary::StackResourceDriftInformationSummary(const XmlNode& xmlNode)
-  : StackResourceDriftInformationSummary()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ StackResourceDriftInformationSummary& StackResourceDriftInformationSummary::oper
     XmlNode stackResourceDriftStatusNode = resultNode.FirstChild("StackResourceDriftStatus");
     if(!stackResourceDriftStatusNode.IsNull())
     {
-      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()).c_str());
+      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()));
       m_stackResourceDriftStatusHasBeenSet = true;
     }
     XmlNode lastCheckTimestampNode = resultNode.FirstChild("LastCheckTimestamp");

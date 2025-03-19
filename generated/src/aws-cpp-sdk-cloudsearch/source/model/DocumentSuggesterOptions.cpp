@@ -20,16 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-DocumentSuggesterOptions::DocumentSuggesterOptions() : 
-    m_sourceFieldHasBeenSet(false),
-    m_fuzzyMatching(SuggesterFuzzyMatching::NOT_SET),
-    m_fuzzyMatchingHasBeenSet(false),
-    m_sortExpressionHasBeenSet(false)
-{
-}
-
 DocumentSuggesterOptions::DocumentSuggesterOptions(const XmlNode& xmlNode)
-  : DocumentSuggesterOptions()
 {
   *this = xmlNode;
 }
@@ -49,7 +40,7 @@ DocumentSuggesterOptions& DocumentSuggesterOptions::operator =(const XmlNode& xm
     XmlNode fuzzyMatchingNode = resultNode.FirstChild("FuzzyMatching");
     if(!fuzzyMatchingNode.IsNull())
     {
-      m_fuzzyMatching = SuggesterFuzzyMatchingMapper::GetSuggesterFuzzyMatchingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fuzzyMatchingNode.GetText()).c_str()).c_str());
+      m_fuzzyMatching = SuggesterFuzzyMatchingMapper::GetSuggesterFuzzyMatchingForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fuzzyMatchingNode.GetText()).c_str()));
       m_fuzzyMatchingHasBeenSet = true;
     }
     XmlNode sortExpressionNode = resultNode.FirstChild("SortExpression");

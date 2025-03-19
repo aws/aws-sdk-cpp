@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTopicRequest::CreateTopicRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_topicHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_folderArnsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTopicRequest::SerializePayload() const
 {
   JsonValue payload;

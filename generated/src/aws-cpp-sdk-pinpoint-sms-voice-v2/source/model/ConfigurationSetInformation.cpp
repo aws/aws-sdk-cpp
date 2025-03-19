@@ -18,22 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-ConfigurationSetInformation::ConfigurationSetInformation() : 
-    m_configurationSetArnHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationsHasBeenSet(false),
-    m_defaultMessageType(MessageType::NOT_SET),
-    m_defaultMessageTypeHasBeenSet(false),
-    m_defaultSenderIdHasBeenSet(false),
-    m_defaultMessageFeedbackEnabled(false),
-    m_defaultMessageFeedbackEnabledHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_protectConfigurationIdHasBeenSet(false)
-{
-}
-
 ConfigurationSetInformation::ConfigurationSetInformation(JsonView jsonValue)
-  : ConfigurationSetInformation()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ ConfigurationSetInformation& ConfigurationSetInformation::operator =(JsonView js
   if(jsonValue.ValueExists("ConfigurationSetArn"))
   {
     m_configurationSetArn = jsonValue.GetString("ConfigurationSetArn");
-
     m_configurationSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationSetName"))
   {
     m_configurationSetName = jsonValue.GetString("ConfigurationSetName");
-
     m_configurationSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDestinations"))
   {
     Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("EventDestinations");
@@ -63,42 +44,31 @@ ConfigurationSetInformation& ConfigurationSetInformation::operator =(JsonView js
     }
     m_eventDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultMessageType"))
   {
     m_defaultMessageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("DefaultMessageType"));
-
     m_defaultMessageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSenderId"))
   {
     m_defaultSenderId = jsonValue.GetString("DefaultSenderId");
-
     m_defaultSenderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultMessageFeedbackEnabled"))
   {
     m_defaultMessageFeedbackEnabled = jsonValue.GetBool("DefaultMessageFeedbackEnabled");
-
     m_defaultMessageFeedbackEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectConfigurationId"))
   {
     m_protectConfigurationId = jsonValue.GetString("ProtectConfigurationId");
-
     m_protectConfigurationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

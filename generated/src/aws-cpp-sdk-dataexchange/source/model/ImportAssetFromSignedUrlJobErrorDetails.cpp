@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetFromSignedUrlJobErrorDetails::ImportAssetFromSignedUrlJobErrorDetails() : 
-    m_assetNameHasBeenSet(false)
-{
-}
-
 ImportAssetFromSignedUrlJobErrorDetails::ImportAssetFromSignedUrlJobErrorDetails(JsonView jsonValue)
-  : ImportAssetFromSignedUrlJobErrorDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImportAssetFromSignedUrlJobErrorDetails& ImportAssetFromSignedUrlJobErrorDetails
   if(jsonValue.ValueExists("AssetName"))
   {
     m_assetName = jsonValue.GetString("AssetName");
-
     m_assetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

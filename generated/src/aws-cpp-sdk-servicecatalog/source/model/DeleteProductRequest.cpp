@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProductRequest::DeleteProductRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProductRequest::SerializePayload() const
 {
   JsonValue payload;

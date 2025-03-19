@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExecutionPreviewRequest::StartExecutionPreviewRequest() : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_executionInputsHasBeenSet(false)
-{
-}
-
 Aws::String StartExecutionPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

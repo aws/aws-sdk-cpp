@@ -18,16 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdMappingWorkflowSummary::IdMappingWorkflowSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_workflowArnHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 IdMappingWorkflowSummary::IdMappingWorkflowSummary(JsonView jsonValue)
-  : IdMappingWorkflowSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ IdMappingWorkflowSummary& IdMappingWorkflowSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowArn"))
   {
     m_workflowArn = jsonValue.GetString("workflowArn");
-
     m_workflowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowName"))
   {
     m_workflowName = jsonValue.GetString("workflowName");
-
     m_workflowNameHasBeenSet = true;
   }
-
   return *this;
 }
 

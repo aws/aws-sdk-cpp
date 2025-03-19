@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput() : 
-    m_retrievedReferencesHasBeenSet(false)
-{
-}
-
 KnowledgeBaseLookupOutput::KnowledgeBaseLookupOutput(JsonView jsonValue)
-  : KnowledgeBaseLookupOutput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ KnowledgeBaseLookupOutput& KnowledgeBaseLookupOutput::operator =(JsonView jsonVa
     }
     m_retrievedReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

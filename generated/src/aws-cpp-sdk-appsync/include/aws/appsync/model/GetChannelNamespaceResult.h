@@ -28,7 +28,7 @@ namespace Model
   class GetChannelNamespaceResult
   {
   public:
-    AWS_APPSYNC_API GetChannelNamespaceResult();
+    AWS_APPSYNC_API GetChannelNamespaceResult() = default;
     AWS_APPSYNC_API GetChannelNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API GetChannelNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <code>ChannelNamespace</code> object.</p>
      */
-    inline const ChannelNamespace& GetChannelNamespace() const{ return m_channelNamespace; }
-    inline void SetChannelNamespace(const ChannelNamespace& value) { m_channelNamespace = value; }
-    inline void SetChannelNamespace(ChannelNamespace&& value) { m_channelNamespace = std::move(value); }
-    inline GetChannelNamespaceResult& WithChannelNamespace(const ChannelNamespace& value) { SetChannelNamespace(value); return *this;}
-    inline GetChannelNamespaceResult& WithChannelNamespace(ChannelNamespace&& value) { SetChannelNamespace(std::move(value)); return *this;}
+    inline const ChannelNamespace& GetChannelNamespace() const { return m_channelNamespace; }
+    template<typename ChannelNamespaceT = ChannelNamespace>
+    void SetChannelNamespace(ChannelNamespaceT&& value) { m_channelNamespaceHasBeenSet = true; m_channelNamespace = std::forward<ChannelNamespaceT>(value); }
+    template<typename ChannelNamespaceT = ChannelNamespace>
+    GetChannelNamespaceResult& WithChannelNamespace(ChannelNamespaceT&& value) { SetChannelNamespace(std::forward<ChannelNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetChannelNamespaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetChannelNamespaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetChannelNamespaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetChannelNamespaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChannelNamespace m_channelNamespace;
+    bool m_channelNamespaceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

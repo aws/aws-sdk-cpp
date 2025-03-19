@@ -28,7 +28,7 @@ namespace Model
   class GetEvidenceFolderResult
   {
   public:
-    AWS_AUDITMANAGER_API GetEvidenceFolderResult();
+    AWS_AUDITMANAGER_API GetEvidenceFolderResult() = default;
     AWS_AUDITMANAGER_API GetEvidenceFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API GetEvidenceFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The folder that the evidence is stored in. </p>
      */
-    inline const AssessmentEvidenceFolder& GetEvidenceFolder() const{ return m_evidenceFolder; }
-    inline void SetEvidenceFolder(const AssessmentEvidenceFolder& value) { m_evidenceFolder = value; }
-    inline void SetEvidenceFolder(AssessmentEvidenceFolder&& value) { m_evidenceFolder = std::move(value); }
-    inline GetEvidenceFolderResult& WithEvidenceFolder(const AssessmentEvidenceFolder& value) { SetEvidenceFolder(value); return *this;}
-    inline GetEvidenceFolderResult& WithEvidenceFolder(AssessmentEvidenceFolder&& value) { SetEvidenceFolder(std::move(value)); return *this;}
+    inline const AssessmentEvidenceFolder& GetEvidenceFolder() const { return m_evidenceFolder; }
+    template<typename EvidenceFolderT = AssessmentEvidenceFolder>
+    void SetEvidenceFolder(EvidenceFolderT&& value) { m_evidenceFolderHasBeenSet = true; m_evidenceFolder = std::forward<EvidenceFolderT>(value); }
+    template<typename EvidenceFolderT = AssessmentEvidenceFolder>
+    GetEvidenceFolderResult& WithEvidenceFolder(EvidenceFolderT&& value) { SetEvidenceFolder(std::forward<EvidenceFolderT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEvidenceFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEvidenceFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEvidenceFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEvidenceFolderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AssessmentEvidenceFolder m_evidenceFolder;
+    bool m_evidenceFolderHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

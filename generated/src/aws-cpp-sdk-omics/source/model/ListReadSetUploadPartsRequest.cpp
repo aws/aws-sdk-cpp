@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListReadSetUploadPartsRequest::ListReadSetUploadPartsRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_partSource(ReadSetPartSource::NOT_SET),
-    m_partSourceHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListReadSetUploadPartsRequest::SerializePayload() const
 {
   JsonValue payload;

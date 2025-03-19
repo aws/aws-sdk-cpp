@@ -32,7 +32,7 @@ namespace Model
   class X12FunctionalGroupHeaders
   {
   public:
-    AWS_B2BI_API X12FunctionalGroupHeaders();
+    AWS_B2BI_API X12FunctionalGroupHeaders() = default;
     AWS_B2BI_API X12FunctionalGroupHeaders(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API X12FunctionalGroupHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>A value representing the code used to identify the party transmitting a
      * message, at position GS-02.</p>
      */
-    inline const Aws::String& GetApplicationSenderCode() const{ return m_applicationSenderCode; }
+    inline const Aws::String& GetApplicationSenderCode() const { return m_applicationSenderCode; }
     inline bool ApplicationSenderCodeHasBeenSet() const { return m_applicationSenderCodeHasBeenSet; }
-    inline void SetApplicationSenderCode(const Aws::String& value) { m_applicationSenderCodeHasBeenSet = true; m_applicationSenderCode = value; }
-    inline void SetApplicationSenderCode(Aws::String&& value) { m_applicationSenderCodeHasBeenSet = true; m_applicationSenderCode = std::move(value); }
-    inline void SetApplicationSenderCode(const char* value) { m_applicationSenderCodeHasBeenSet = true; m_applicationSenderCode.assign(value); }
-    inline X12FunctionalGroupHeaders& WithApplicationSenderCode(const Aws::String& value) { SetApplicationSenderCode(value); return *this;}
-    inline X12FunctionalGroupHeaders& WithApplicationSenderCode(Aws::String&& value) { SetApplicationSenderCode(std::move(value)); return *this;}
-    inline X12FunctionalGroupHeaders& WithApplicationSenderCode(const char* value) { SetApplicationSenderCode(value); return *this;}
+    template<typename ApplicationSenderCodeT = Aws::String>
+    void SetApplicationSenderCode(ApplicationSenderCodeT&& value) { m_applicationSenderCodeHasBeenSet = true; m_applicationSenderCode = std::forward<ApplicationSenderCodeT>(value); }
+    template<typename ApplicationSenderCodeT = Aws::String>
+    X12FunctionalGroupHeaders& WithApplicationSenderCode(ApplicationSenderCodeT&& value) { SetApplicationSenderCode(std::forward<ApplicationSenderCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <p>A value representing the code used to identify the party receiving a message,
      * at position GS-03.</p>
      */
-    inline const Aws::String& GetApplicationReceiverCode() const{ return m_applicationReceiverCode; }
+    inline const Aws::String& GetApplicationReceiverCode() const { return m_applicationReceiverCode; }
     inline bool ApplicationReceiverCodeHasBeenSet() const { return m_applicationReceiverCodeHasBeenSet; }
-    inline void SetApplicationReceiverCode(const Aws::String& value) { m_applicationReceiverCodeHasBeenSet = true; m_applicationReceiverCode = value; }
-    inline void SetApplicationReceiverCode(Aws::String&& value) { m_applicationReceiverCodeHasBeenSet = true; m_applicationReceiverCode = std::move(value); }
-    inline void SetApplicationReceiverCode(const char* value) { m_applicationReceiverCodeHasBeenSet = true; m_applicationReceiverCode.assign(value); }
-    inline X12FunctionalGroupHeaders& WithApplicationReceiverCode(const Aws::String& value) { SetApplicationReceiverCode(value); return *this;}
-    inline X12FunctionalGroupHeaders& WithApplicationReceiverCode(Aws::String&& value) { SetApplicationReceiverCode(std::move(value)); return *this;}
-    inline X12FunctionalGroupHeaders& WithApplicationReceiverCode(const char* value) { SetApplicationReceiverCode(value); return *this;}
+    template<typename ApplicationReceiverCodeT = Aws::String>
+    void SetApplicationReceiverCode(ApplicationReceiverCodeT&& value) { m_applicationReceiverCodeHasBeenSet = true; m_applicationReceiverCode = std::forward<ApplicationReceiverCodeT>(value); }
+    template<typename ApplicationReceiverCodeT = Aws::String>
+    X12FunctionalGroupHeaders& WithApplicationReceiverCode(ApplicationReceiverCodeT&& value) { SetApplicationReceiverCode(std::forward<ApplicationReceiverCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A code that identifies the issuer of the standard, at position GS-07.</p>
      */
-    inline const Aws::String& GetResponsibleAgencyCode() const{ return m_responsibleAgencyCode; }
+    inline const Aws::String& GetResponsibleAgencyCode() const { return m_responsibleAgencyCode; }
     inline bool ResponsibleAgencyCodeHasBeenSet() const { return m_responsibleAgencyCodeHasBeenSet; }
-    inline void SetResponsibleAgencyCode(const Aws::String& value) { m_responsibleAgencyCodeHasBeenSet = true; m_responsibleAgencyCode = value; }
-    inline void SetResponsibleAgencyCode(Aws::String&& value) { m_responsibleAgencyCodeHasBeenSet = true; m_responsibleAgencyCode = std::move(value); }
-    inline void SetResponsibleAgencyCode(const char* value) { m_responsibleAgencyCodeHasBeenSet = true; m_responsibleAgencyCode.assign(value); }
-    inline X12FunctionalGroupHeaders& WithResponsibleAgencyCode(const Aws::String& value) { SetResponsibleAgencyCode(value); return *this;}
-    inline X12FunctionalGroupHeaders& WithResponsibleAgencyCode(Aws::String&& value) { SetResponsibleAgencyCode(std::move(value)); return *this;}
-    inline X12FunctionalGroupHeaders& WithResponsibleAgencyCode(const char* value) { SetResponsibleAgencyCode(value); return *this;}
+    template<typename ResponsibleAgencyCodeT = Aws::String>
+    void SetResponsibleAgencyCode(ResponsibleAgencyCodeT&& value) { m_responsibleAgencyCodeHasBeenSet = true; m_responsibleAgencyCode = std::forward<ResponsibleAgencyCodeT>(value); }
+    template<typename ResponsibleAgencyCodeT = Aws::String>
+    X12FunctionalGroupHeaders& WithResponsibleAgencyCode(ResponsibleAgencyCodeT&& value) { SetResponsibleAgencyCode(std::forward<ResponsibleAgencyCodeT>(value)); return *this;}
     ///@}
   private:
 

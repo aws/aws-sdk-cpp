@@ -31,7 +31,7 @@ namespace Model
   class ProfileTemplateChoice
   {
   public:
-    AWS_WELLARCHITECTED_API ProfileTemplateChoice();
+    AWS_WELLARCHITECTED_API ProfileTemplateChoice() = default;
     AWS_WELLARCHITECTED_API ProfileTemplateChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API ProfileTemplateChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,38 +39,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetChoiceId() const{ return m_choiceId; }
+    inline const Aws::String& GetChoiceId() const { return m_choiceId; }
     inline bool ChoiceIdHasBeenSet() const { return m_choiceIdHasBeenSet; }
-    inline void SetChoiceId(const Aws::String& value) { m_choiceIdHasBeenSet = true; m_choiceId = value; }
-    inline void SetChoiceId(Aws::String&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::move(value); }
-    inline void SetChoiceId(const char* value) { m_choiceIdHasBeenSet = true; m_choiceId.assign(value); }
-    inline ProfileTemplateChoice& WithChoiceId(const Aws::String& value) { SetChoiceId(value); return *this;}
-    inline ProfileTemplateChoice& WithChoiceId(Aws::String&& value) { SetChoiceId(std::move(value)); return *this;}
-    inline ProfileTemplateChoice& WithChoiceId(const char* value) { SetChoiceId(value); return *this;}
+    template<typename ChoiceIdT = Aws::String>
+    void SetChoiceId(ChoiceIdT&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::forward<ChoiceIdT>(value); }
+    template<typename ChoiceIdT = Aws::String>
+    ProfileTemplateChoice& WithChoiceId(ChoiceIdT&& value) { SetChoiceId(std::forward<ChoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetChoiceTitle() const{ return m_choiceTitle; }
+    inline const Aws::String& GetChoiceTitle() const { return m_choiceTitle; }
     inline bool ChoiceTitleHasBeenSet() const { return m_choiceTitleHasBeenSet; }
-    inline void SetChoiceTitle(const Aws::String& value) { m_choiceTitleHasBeenSet = true; m_choiceTitle = value; }
-    inline void SetChoiceTitle(Aws::String&& value) { m_choiceTitleHasBeenSet = true; m_choiceTitle = std::move(value); }
-    inline void SetChoiceTitle(const char* value) { m_choiceTitleHasBeenSet = true; m_choiceTitle.assign(value); }
-    inline ProfileTemplateChoice& WithChoiceTitle(const Aws::String& value) { SetChoiceTitle(value); return *this;}
-    inline ProfileTemplateChoice& WithChoiceTitle(Aws::String&& value) { SetChoiceTitle(std::move(value)); return *this;}
-    inline ProfileTemplateChoice& WithChoiceTitle(const char* value) { SetChoiceTitle(value); return *this;}
+    template<typename ChoiceTitleT = Aws::String>
+    void SetChoiceTitle(ChoiceTitleT&& value) { m_choiceTitleHasBeenSet = true; m_choiceTitle = std::forward<ChoiceTitleT>(value); }
+    template<typename ChoiceTitleT = Aws::String>
+    ProfileTemplateChoice& WithChoiceTitle(ChoiceTitleT&& value) { SetChoiceTitle(std::forward<ChoiceTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetChoiceDescription() const{ return m_choiceDescription; }
+    inline const Aws::String& GetChoiceDescription() const { return m_choiceDescription; }
     inline bool ChoiceDescriptionHasBeenSet() const { return m_choiceDescriptionHasBeenSet; }
-    inline void SetChoiceDescription(const Aws::String& value) { m_choiceDescriptionHasBeenSet = true; m_choiceDescription = value; }
-    inline void SetChoiceDescription(Aws::String&& value) { m_choiceDescriptionHasBeenSet = true; m_choiceDescription = std::move(value); }
-    inline void SetChoiceDescription(const char* value) { m_choiceDescriptionHasBeenSet = true; m_choiceDescription.assign(value); }
-    inline ProfileTemplateChoice& WithChoiceDescription(const Aws::String& value) { SetChoiceDescription(value); return *this;}
-    inline ProfileTemplateChoice& WithChoiceDescription(Aws::String&& value) { SetChoiceDescription(std::move(value)); return *this;}
-    inline ProfileTemplateChoice& WithChoiceDescription(const char* value) { SetChoiceDescription(value); return *this;}
+    template<typename ChoiceDescriptionT = Aws::String>
+    void SetChoiceDescription(ChoiceDescriptionT&& value) { m_choiceDescriptionHasBeenSet = true; m_choiceDescription = std::forward<ChoiceDescriptionT>(value); }
+    template<typename ChoiceDescriptionT = Aws::String>
+    ProfileTemplateChoice& WithChoiceDescription(ChoiceDescriptionT&& value) { SetChoiceDescription(std::forward<ChoiceDescriptionT>(value)); return *this;}
     ///@}
   private:
 

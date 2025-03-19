@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest() : 
-    m_licenseConfigurationArnHasBeenSet(false)
-{
-}
-
 ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest(const XmlNode& xmlNode)
-  : ImportImageLicenseConfigurationRequest()
 {
   *this = xmlNode;
 }

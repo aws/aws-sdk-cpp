@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteVirtualServiceRequest::DeleteVirtualServiceRequest() : 
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_virtualServiceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVirtualServiceRequest::SerializePayload() const
 {
   return {};

@@ -18,17 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AutoTuneOptionsInput::AutoTuneOptionsInput() : 
-    m_desiredState(AutoTuneDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_maintenanceSchedulesHasBeenSet(false),
-    m_useOffPeakWindow(false),
-    m_useOffPeakWindowHasBeenSet(false)
-{
-}
-
 AutoTuneOptionsInput::AutoTuneOptionsInput(JsonView jsonValue)
-  : AutoTuneOptionsInput()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ AutoTuneOptionsInput& AutoTuneOptionsInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = AutoTuneDesiredStateMapper::GetAutoTuneDesiredStateForName(jsonValue.GetString("DesiredState"));
-
     m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceSchedules"))
   {
     Aws::Utils::Array<JsonView> maintenanceSchedulesJsonList = jsonValue.GetArray("MaintenanceSchedules");
@@ -51,14 +39,11 @@ AutoTuneOptionsInput& AutoTuneOptionsInput::operator =(JsonView jsonValue)
     }
     m_maintenanceSchedulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseOffPeakWindow"))
   {
     m_useOffPeakWindow = jsonValue.GetBool("UseOffPeakWindow");
-
     m_useOffPeakWindowHasBeenSet = true;
   }
-
   return *this;
 }
 

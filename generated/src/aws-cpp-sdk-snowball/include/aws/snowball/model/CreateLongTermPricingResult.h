@@ -27,7 +27,7 @@ namespace Model
   class CreateLongTermPricingResult
   {
   public:
-    AWS_SNOWBALL_API CreateLongTermPricingResult();
+    AWS_SNOWBALL_API CreateLongTermPricingResult() = default;
     AWS_SNOWBALL_API CreateLongTermPricingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWBALL_API CreateLongTermPricingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID of the long-term pricing type for the device.</p>
      */
-    inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
-    inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingId = value; }
-    inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingId = std::move(value); }
-    inline void SetLongTermPricingId(const char* value) { m_longTermPricingId.assign(value); }
-    inline CreateLongTermPricingResult& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
-    inline CreateLongTermPricingResult& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
-    inline CreateLongTermPricingResult& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
+    inline const Aws::String& GetLongTermPricingId() const { return m_longTermPricingId; }
+    template<typename LongTermPricingIdT = Aws::String>
+    void SetLongTermPricingId(LongTermPricingIdT&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::forward<LongTermPricingIdT>(value); }
+    template<typename LongTermPricingIdT = Aws::String>
+    CreateLongTermPricingResult& WithLongTermPricingId(LongTermPricingIdT&& value) { SetLongTermPricingId(std::forward<LongTermPricingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLongTermPricingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLongTermPricingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLongTermPricingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLongTermPricingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_longTermPricingId;
+    bool m_longTermPricingIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

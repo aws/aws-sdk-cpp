@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceIntegrationRequest::UpdateServiceIntegrationRequest() : 
-    m_serviceIntegrationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

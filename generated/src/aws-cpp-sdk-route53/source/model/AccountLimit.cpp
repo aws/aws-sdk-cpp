@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-AccountLimit::AccountLimit() : 
-    m_type(AccountLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AccountLimit::AccountLimit(const XmlNode& xmlNode)
-  : AccountLimit()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ AccountLimit& AccountLimit::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = AccountLimitTypeMapper::GetAccountLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = AccountLimitTypeMapper::GetAccountLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");

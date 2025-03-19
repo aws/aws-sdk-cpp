@@ -31,7 +31,7 @@ namespace Model
   class GetDiscoverySummaryResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,8 +40,8 @@ namespace Model
     /**
      * <p>The number of servers discovered.</p>
      */
-    inline long long GetServers() const{ return m_servers; }
-    inline void SetServers(long long value) { m_servers = value; }
+    inline long long GetServers() const { return m_servers; }
+    inline void SetServers(long long value) { m_serversHasBeenSet = true; m_servers = value; }
     inline GetDiscoverySummaryResult& WithServers(long long value) { SetServers(value); return *this;}
     ///@}
 
@@ -49,8 +49,8 @@ namespace Model
     /**
      * <p>The number of applications discovered.</p>
      */
-    inline long long GetApplications() const{ return m_applications; }
-    inline void SetApplications(long long value) { m_applications = value; }
+    inline long long GetApplications() const { return m_applications; }
+    inline void SetApplications(long long value) { m_applicationsHasBeenSet = true; m_applications = value; }
     inline GetDiscoverySummaryResult& WithApplications(long long value) { SetApplications(value); return *this;}
     ///@}
 
@@ -58,8 +58,8 @@ namespace Model
     /**
      * <p>The number of servers mapped to applications.</p>
      */
-    inline long long GetServersMappedToApplications() const{ return m_serversMappedToApplications; }
-    inline void SetServersMappedToApplications(long long value) { m_serversMappedToApplications = value; }
+    inline long long GetServersMappedToApplications() const { return m_serversMappedToApplications; }
+    inline void SetServersMappedToApplications(long long value) { m_serversMappedToApplicationsHasBeenSet = true; m_serversMappedToApplications = value; }
     inline GetDiscoverySummaryResult& WithServersMappedToApplications(long long value) { SetServersMappedToApplications(value); return *this;}
     ///@}
 
@@ -67,8 +67,8 @@ namespace Model
     /**
      * <p>The number of servers mapped to tags.</p>
      */
-    inline long long GetServersMappedtoTags() const{ return m_serversMappedtoTags; }
-    inline void SetServersMappedtoTags(long long value) { m_serversMappedtoTags = value; }
+    inline long long GetServersMappedtoTags() const { return m_serversMappedtoTags; }
+    inline void SetServersMappedtoTags(long long value) { m_serversMappedtoTagsHasBeenSet = true; m_serversMappedtoTags = value; }
     inline GetDiscoverySummaryResult& WithServersMappedtoTags(long long value) { SetServersMappedtoTags(value); return *this;}
     ///@}
 
@@ -76,11 +76,11 @@ namespace Model
     /**
      * <p>Details about discovered agents, including agent status and health.</p>
      */
-    inline const CustomerAgentInfo& GetAgentSummary() const{ return m_agentSummary; }
-    inline void SetAgentSummary(const CustomerAgentInfo& value) { m_agentSummary = value; }
-    inline void SetAgentSummary(CustomerAgentInfo&& value) { m_agentSummary = std::move(value); }
-    inline GetDiscoverySummaryResult& WithAgentSummary(const CustomerAgentInfo& value) { SetAgentSummary(value); return *this;}
-    inline GetDiscoverySummaryResult& WithAgentSummary(CustomerAgentInfo&& value) { SetAgentSummary(std::move(value)); return *this;}
+    inline const CustomerAgentInfo& GetAgentSummary() const { return m_agentSummary; }
+    template<typename AgentSummaryT = CustomerAgentInfo>
+    void SetAgentSummary(AgentSummaryT&& value) { m_agentSummaryHasBeenSet = true; m_agentSummary = std::forward<AgentSummaryT>(value); }
+    template<typename AgentSummaryT = CustomerAgentInfo>
+    GetDiscoverySummaryResult& WithAgentSummary(AgentSummaryT&& value) { SetAgentSummary(std::forward<AgentSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,11 +88,11 @@ namespace Model
      * <p>Details about discovered connectors, including connector status and
      * health.</p>
      */
-    inline const CustomerConnectorInfo& GetConnectorSummary() const{ return m_connectorSummary; }
-    inline void SetConnectorSummary(const CustomerConnectorInfo& value) { m_connectorSummary = value; }
-    inline void SetConnectorSummary(CustomerConnectorInfo&& value) { m_connectorSummary = std::move(value); }
-    inline GetDiscoverySummaryResult& WithConnectorSummary(const CustomerConnectorInfo& value) { SetConnectorSummary(value); return *this;}
-    inline GetDiscoverySummaryResult& WithConnectorSummary(CustomerConnectorInfo&& value) { SetConnectorSummary(std::move(value)); return *this;}
+    inline const CustomerConnectorInfo& GetConnectorSummary() const { return m_connectorSummary; }
+    template<typename ConnectorSummaryT = CustomerConnectorInfo>
+    void SetConnectorSummary(ConnectorSummaryT&& value) { m_connectorSummaryHasBeenSet = true; m_connectorSummary = std::forward<ConnectorSummaryT>(value); }
+    template<typename ConnectorSummaryT = CustomerConnectorInfo>
+    GetDiscoverySummaryResult& WithConnectorSummary(ConnectorSummaryT&& value) { SetConnectorSummary(std::forward<ConnectorSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,53 +100,60 @@ namespace Model
      * <p> Details about Migration Evaluator collectors, including collector status and
      * health. </p>
      */
-    inline const CustomerMeCollectorInfo& GetMeCollectorSummary() const{ return m_meCollectorSummary; }
-    inline void SetMeCollectorSummary(const CustomerMeCollectorInfo& value) { m_meCollectorSummary = value; }
-    inline void SetMeCollectorSummary(CustomerMeCollectorInfo&& value) { m_meCollectorSummary = std::move(value); }
-    inline GetDiscoverySummaryResult& WithMeCollectorSummary(const CustomerMeCollectorInfo& value) { SetMeCollectorSummary(value); return *this;}
-    inline GetDiscoverySummaryResult& WithMeCollectorSummary(CustomerMeCollectorInfo&& value) { SetMeCollectorSummary(std::move(value)); return *this;}
+    inline const CustomerMeCollectorInfo& GetMeCollectorSummary() const { return m_meCollectorSummary; }
+    template<typename MeCollectorSummaryT = CustomerMeCollectorInfo>
+    void SetMeCollectorSummary(MeCollectorSummaryT&& value) { m_meCollectorSummaryHasBeenSet = true; m_meCollectorSummary = std::forward<MeCollectorSummaryT>(value); }
+    template<typename MeCollectorSummaryT = CustomerMeCollectorInfo>
+    GetDiscoverySummaryResult& WithMeCollectorSummary(MeCollectorSummaryT&& value) { SetMeCollectorSummary(std::forward<MeCollectorSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Details about Agentless Collector collectors, including status. </p>
      */
-    inline const CustomerAgentlessCollectorInfo& GetAgentlessCollectorSummary() const{ return m_agentlessCollectorSummary; }
-    inline void SetAgentlessCollectorSummary(const CustomerAgentlessCollectorInfo& value) { m_agentlessCollectorSummary = value; }
-    inline void SetAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { m_agentlessCollectorSummary = std::move(value); }
-    inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(const CustomerAgentlessCollectorInfo& value) { SetAgentlessCollectorSummary(value); return *this;}
-    inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { SetAgentlessCollectorSummary(std::move(value)); return *this;}
+    inline const CustomerAgentlessCollectorInfo& GetAgentlessCollectorSummary() const { return m_agentlessCollectorSummary; }
+    template<typename AgentlessCollectorSummaryT = CustomerAgentlessCollectorInfo>
+    void SetAgentlessCollectorSummary(AgentlessCollectorSummaryT&& value) { m_agentlessCollectorSummaryHasBeenSet = true; m_agentlessCollectorSummary = std::forward<AgentlessCollectorSummaryT>(value); }
+    template<typename AgentlessCollectorSummaryT = CustomerAgentlessCollectorInfo>
+    GetDiscoverySummaryResult& WithAgentlessCollectorSummary(AgentlessCollectorSummaryT&& value) { SetAgentlessCollectorSummary(std::forward<AgentlessCollectorSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDiscoverySummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDiscoverySummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDiscoverySummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDiscoverySummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_servers;
+    long long m_servers{0};
+    bool m_serversHasBeenSet = false;
 
-    long long m_applications;
+    long long m_applications{0};
+    bool m_applicationsHasBeenSet = false;
 
-    long long m_serversMappedToApplications;
+    long long m_serversMappedToApplications{0};
+    bool m_serversMappedToApplicationsHasBeenSet = false;
 
-    long long m_serversMappedtoTags;
+    long long m_serversMappedtoTags{0};
+    bool m_serversMappedtoTagsHasBeenSet = false;
 
     CustomerAgentInfo m_agentSummary;
+    bool m_agentSummaryHasBeenSet = false;
 
     CustomerConnectorInfo m_connectorSummary;
+    bool m_connectorSummaryHasBeenSet = false;
 
     CustomerMeCollectorInfo m_meCollectorSummary;
+    bool m_meCollectorSummaryHasBeenSet = false;
 
     CustomerAgentlessCollectorInfo m_agentlessCollectorSummary;
+    bool m_agentlessCollectorSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

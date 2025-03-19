@@ -18,14 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-SelectedPillar::SelectedPillar() : 
-    m_pillarIdHasBeenSet(false),
-    m_selectedQuestionIdsHasBeenSet(false)
-{
-}
-
 SelectedPillar::SelectedPillar(JsonView jsonValue)
-  : SelectedPillar()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SelectedPillar& SelectedPillar::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedQuestionIds"))
   {
     Aws::Utils::Array<JsonView> selectedQuestionIdsJsonList = jsonValue.GetArray("SelectedQuestionIds");
@@ -48,7 +39,6 @@ SelectedPillar& SelectedPillar::operator =(JsonView jsonValue)
     }
     m_selectedQuestionIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

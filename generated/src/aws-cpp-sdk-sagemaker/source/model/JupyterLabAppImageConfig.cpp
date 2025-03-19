@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-JupyterLabAppImageConfig::JupyterLabAppImageConfig() : 
-    m_fileSystemConfigHasBeenSet(false),
-    m_containerConfigHasBeenSet(false)
-{
-}
-
 JupyterLabAppImageConfig::JupyterLabAppImageConfig(JsonView jsonValue)
-  : JupyterLabAppImageConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JupyterLabAppImageConfig& JupyterLabAppImageConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FileSystemConfig"))
   {
     m_fileSystemConfig = jsonValue.GetObject("FileSystemConfig");
-
     m_fileSystemConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerConfig"))
   {
     m_containerConfig = jsonValue.GetObject("ContainerConfig");
-
     m_containerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

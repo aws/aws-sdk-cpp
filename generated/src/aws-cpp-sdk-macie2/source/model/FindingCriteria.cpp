@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-FindingCriteria::FindingCriteria() : 
-    m_criterionHasBeenSet(false)
-{
-}
-
 FindingCriteria::FindingCriteria(JsonView jsonValue)
-  : FindingCriteria()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FindingCriteria& FindingCriteria::operator =(JsonView jsonValue)
     }
     m_criterionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteWorkloadEstimateUsageResult
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchDeleteWorkloadEstimateUsageResult();
+    AWS_BCMPRICINGCALCULATOR_API BatchDeleteWorkloadEstimateUsageResult() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchDeleteWorkloadEstimateUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMPRICINGCALCULATOR_API BatchDeleteWorkloadEstimateUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p> Returns the list of errors reason and the usage item keys that cannot be
      * deleted from the Workload estimate. </p>
      */
-    inline const Aws::Vector<BatchDeleteWorkloadEstimateUsageError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteWorkloadEstimateUsageError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteWorkloadEstimateUsageError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteWorkloadEstimateUsageResult& WithErrors(const Aws::Vector<BatchDeleteWorkloadEstimateUsageError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageResult& WithErrors(Aws::Vector<BatchDeleteWorkloadEstimateUsageError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageResult& AddErrors(const BatchDeleteWorkloadEstimateUsageError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteWorkloadEstimateUsageResult& AddErrors(BatchDeleteWorkloadEstimateUsageError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteWorkloadEstimateUsageError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteWorkloadEstimateUsageError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteWorkloadEstimateUsageError>>
+    BatchDeleteWorkloadEstimateUsageResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteWorkloadEstimateUsageError>
+    BatchDeleteWorkloadEstimateUsageResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteWorkloadEstimateUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteWorkloadEstimateUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteWorkloadEstimateUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteWorkloadEstimateUsageError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

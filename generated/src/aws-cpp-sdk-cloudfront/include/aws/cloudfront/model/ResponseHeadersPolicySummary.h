@@ -31,7 +31,7 @@ namespace Model
   class ResponseHeadersPolicySummary
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicySummary();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySummary() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,26 @@ namespace Model
      * Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services
      * account).</p>
      */
-    inline const ResponseHeadersPolicyType& GetType() const{ return m_type; }
+    inline ResponseHeadersPolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ResponseHeadersPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ResponseHeadersPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ResponseHeadersPolicySummary& WithType(const ResponseHeadersPolicyType& value) { SetType(value); return *this;}
-    inline ResponseHeadersPolicySummary& WithType(ResponseHeadersPolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ResponseHeadersPolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ResponseHeadersPolicySummary& WithType(ResponseHeadersPolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The response headers policy.</p>
      */
-    inline const ResponseHeadersPolicy& GetResponseHeadersPolicy() const{ return m_responseHeadersPolicy; }
+    inline const ResponseHeadersPolicy& GetResponseHeadersPolicy() const { return m_responseHeadersPolicy; }
     inline bool ResponseHeadersPolicyHasBeenSet() const { return m_responseHeadersPolicyHasBeenSet; }
-    inline void SetResponseHeadersPolicy(const ResponseHeadersPolicy& value) { m_responseHeadersPolicyHasBeenSet = true; m_responseHeadersPolicy = value; }
-    inline void SetResponseHeadersPolicy(ResponseHeadersPolicy&& value) { m_responseHeadersPolicyHasBeenSet = true; m_responseHeadersPolicy = std::move(value); }
-    inline ResponseHeadersPolicySummary& WithResponseHeadersPolicy(const ResponseHeadersPolicy& value) { SetResponseHeadersPolicy(value); return *this;}
-    inline ResponseHeadersPolicySummary& WithResponseHeadersPolicy(ResponseHeadersPolicy&& value) { SetResponseHeadersPolicy(std::move(value)); return *this;}
+    template<typename ResponseHeadersPolicyT = ResponseHeadersPolicy>
+    void SetResponseHeadersPolicy(ResponseHeadersPolicyT&& value) { m_responseHeadersPolicyHasBeenSet = true; m_responseHeadersPolicy = std::forward<ResponseHeadersPolicyT>(value); }
+    template<typename ResponseHeadersPolicyT = ResponseHeadersPolicy>
+    ResponseHeadersPolicySummary& WithResponseHeadersPolicy(ResponseHeadersPolicyT&& value) { SetResponseHeadersPolicy(std::forward<ResponseHeadersPolicyT>(value)); return *this;}
     ///@}
   private:
 
-    ResponseHeadersPolicyType m_type;
+    ResponseHeadersPolicyType m_type{ResponseHeadersPolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ResponseHeadersPolicy m_responseHeadersPolicy;

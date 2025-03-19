@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-PackageVersionHistory::PackageVersionHistory() : 
-    m_packageVersionHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 PackageVersionHistory::PackageVersionHistory(JsonView jsonValue)
-  : PackageVersionHistory()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PackageVersionHistory& PackageVersionHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PackageVersion"))
   {
     m_packageVersion = jsonValue.GetString("PackageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitMessage"))
   {
     m_commitMessage = jsonValue.GetString("CommitMessage");
-
     m_commitMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

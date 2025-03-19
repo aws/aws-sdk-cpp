@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachStaticIpRequest::DetachStaticIpRequest() : 
-    m_staticIpNameHasBeenSet(false)
-{
-}
-
 Aws::String DetachStaticIpRequest::SerializePayload() const
 {
   JsonValue payload;

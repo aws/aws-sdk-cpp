@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutManagedInsightRulesRequest::PutManagedInsightRulesRequest() : 
-    m_managedRulesHasBeenSet(false)
-{
-}
-
 Aws::String PutManagedInsightRulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

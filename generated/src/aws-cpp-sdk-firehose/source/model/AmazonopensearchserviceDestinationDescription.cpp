@@ -18,28 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-AmazonopensearchserviceDestinationDescription::AmazonopensearchserviceDestinationDescription() : 
-    m_roleARNHasBeenSet(false),
-    m_domainARNHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_indexRotationPeriod(AmazonopensearchserviceIndexRotationPeriod::NOT_SET),
-    m_indexRotationPeriodHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3BackupMode(AmazonopensearchserviceS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationDescriptionHasBeenSet(false),
-    m_documentIdOptionsHasBeenSet(false)
-{
-}
-
 AmazonopensearchserviceDestinationDescription::AmazonopensearchserviceDestinationDescription(JsonView jsonValue)
-  : AmazonopensearchserviceDestinationDescription()
 {
   *this = jsonValue;
 }
@@ -49,101 +28,73 @@ AmazonopensearchserviceDestinationDescription& AmazonopensearchserviceDestinatio
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainARN"))
   {
     m_domainARN = jsonValue.GetString("DomainARN");
-
     m_domainARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterEndpoint"))
   {
     m_clusterEndpoint = jsonValue.GetString("ClusterEndpoint");
-
     m_clusterEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexRotationPeriod"))
   {
     m_indexRotationPeriod = AmazonopensearchserviceIndexRotationPeriodMapper::GetAmazonopensearchserviceIndexRotationPeriodForName(jsonValue.GetString("IndexRotationPeriod"));
-
     m_indexRotationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferingHints"))
   {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
-
     m_bufferingHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryOptions"))
   {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
-
     m_retryOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BackupMode"))
   {
     m_s3BackupMode = AmazonopensearchserviceS3BackupModeMapper::GetAmazonopensearchserviceS3BackupModeForName(jsonValue.GetString("S3BackupMode"));
-
     m_s3BackupModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DestinationDescription"))
   {
     m_s3DestinationDescription = jsonValue.GetObject("S3DestinationDescription");
-
     m_s3DestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingConfiguration"))
   {
     m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
-
     m_processingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
-
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfigurationDescription"))
   {
     m_vpcConfigurationDescription = jsonValue.GetObject("VpcConfigurationDescription");
-
     m_vpcConfigurationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentIdOptions"))
   {
     m_documentIdOptions = jsonValue.GetObject("DocumentIdOptions");
-
     m_documentIdOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

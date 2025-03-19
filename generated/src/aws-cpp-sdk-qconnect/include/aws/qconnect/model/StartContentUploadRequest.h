@@ -21,7 +21,7 @@ namespace Model
   class StartContentUploadRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API StartContentUploadRequest();
+    AWS_QCONNECT_API StartContentUploadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The type of content to upload.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline StartContentUploadRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline StartContentUploadRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline StartContentUploadRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    StartContentUploadRequest& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline StartContentUploadRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline StartContentUploadRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline StartContentUploadRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    StartContentUploadRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +62,7 @@ namespace Model
      * <p>The expected expiration time of the generated presigned URL, specified in
      * minutes.</p>
      */
-    inline int GetPresignedUrlTimeToLive() const{ return m_presignedUrlTimeToLive; }
+    inline int GetPresignedUrlTimeToLive() const { return m_presignedUrlTimeToLive; }
     inline bool PresignedUrlTimeToLiveHasBeenSet() const { return m_presignedUrlTimeToLiveHasBeenSet; }
     inline void SetPresignedUrlTimeToLive(int value) { m_presignedUrlTimeToLiveHasBeenSet = true; m_presignedUrlTimeToLive = value; }
     inline StartContentUploadRequest& WithPresignedUrlTimeToLive(int value) { SetPresignedUrlTimeToLive(value); return *this;}
@@ -79,7 +75,7 @@ namespace Model
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    int m_presignedUrlTimeToLive;
+    int m_presignedUrlTimeToLive{0};
     bool m_presignedUrlTimeToLiveHasBeenSet = false;
   };
 

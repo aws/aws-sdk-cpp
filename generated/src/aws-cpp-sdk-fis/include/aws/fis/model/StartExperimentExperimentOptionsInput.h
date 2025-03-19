@@ -32,7 +32,7 @@ namespace Model
   class StartExperimentExperimentOptionsInput
   {
   public:
-    AWS_FIS_API StartExperimentExperimentOptionsInput();
+    AWS_FIS_API StartExperimentExperimentOptionsInput() = default;
     AWS_FIS_API StartExperimentExperimentOptionsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API StartExperimentExperimentOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Specifies the actions mode for experiment options.</p>
      */
-    inline const ActionsMode& GetActionsMode() const{ return m_actionsMode; }
+    inline ActionsMode GetActionsMode() const { return m_actionsMode; }
     inline bool ActionsModeHasBeenSet() const { return m_actionsModeHasBeenSet; }
-    inline void SetActionsMode(const ActionsMode& value) { m_actionsModeHasBeenSet = true; m_actionsMode = value; }
-    inline void SetActionsMode(ActionsMode&& value) { m_actionsModeHasBeenSet = true; m_actionsMode = std::move(value); }
-    inline StartExperimentExperimentOptionsInput& WithActionsMode(const ActionsMode& value) { SetActionsMode(value); return *this;}
-    inline StartExperimentExperimentOptionsInput& WithActionsMode(ActionsMode&& value) { SetActionsMode(std::move(value)); return *this;}
+    inline void SetActionsMode(ActionsMode value) { m_actionsModeHasBeenSet = true; m_actionsMode = value; }
+    inline StartExperimentExperimentOptionsInput& WithActionsMode(ActionsMode value) { SetActionsMode(value); return *this;}
     ///@}
   private:
 
-    ActionsMode m_actionsMode;
+    ActionsMode m_actionsMode{ActionsMode::NOT_SET};
     bool m_actionsModeHasBeenSet = false;
   };
 

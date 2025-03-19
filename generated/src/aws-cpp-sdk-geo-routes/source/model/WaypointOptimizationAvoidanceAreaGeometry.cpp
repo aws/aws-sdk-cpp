@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationAvoidanceAreaGeometry::WaypointOptimizationAvoidanceAreaGeometry() : 
-    m_boundingBoxHasBeenSet(false)
-{
-}
-
 WaypointOptimizationAvoidanceAreaGeometry::WaypointOptimizationAvoidanceAreaGeometry(JsonView jsonValue)
-  : WaypointOptimizationAvoidanceAreaGeometry()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ WaypointOptimizationAvoidanceAreaGeometry& WaypointOptimizationAvoidanceAreaGeom
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class PivotTableAggregatedFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableAggregatedFieldWells();
+    AWS_QUICKSIGHT_API PivotTableAggregatedFieldWells() = default;
     AWS_QUICKSIGHT_API PivotTableAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The rows field well for a pivot table. Values are grouped by rows fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetRows() const{ return m_rows; }
+    inline const Aws::Vector<DimensionField>& GetRows() const { return m_rows; }
     inline bool RowsHasBeenSet() const { return m_rowsHasBeenSet; }
-    inline void SetRows(const Aws::Vector<DimensionField>& value) { m_rowsHasBeenSet = true; m_rows = value; }
-    inline void SetRows(Aws::Vector<DimensionField>&& value) { m_rowsHasBeenSet = true; m_rows = std::move(value); }
-    inline PivotTableAggregatedFieldWells& WithRows(const Aws::Vector<DimensionField>& value) { SetRows(value); return *this;}
-    inline PivotTableAggregatedFieldWells& WithRows(Aws::Vector<DimensionField>&& value) { SetRows(std::move(value)); return *this;}
-    inline PivotTableAggregatedFieldWells& AddRows(const DimensionField& value) { m_rowsHasBeenSet = true; m_rows.push_back(value); return *this; }
-    inline PivotTableAggregatedFieldWells& AddRows(DimensionField&& value) { m_rowsHasBeenSet = true; m_rows.push_back(std::move(value)); return *this; }
+    template<typename RowsT = Aws::Vector<DimensionField>>
+    void SetRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows = std::forward<RowsT>(value); }
+    template<typename RowsT = Aws::Vector<DimensionField>>
+    PivotTableAggregatedFieldWells& WithRows(RowsT&& value) { SetRows(std::forward<RowsT>(value)); return *this;}
+    template<typename RowsT = DimensionField>
+    PivotTableAggregatedFieldWells& AddRows(RowsT&& value) { m_rowsHasBeenSet = true; m_rows.emplace_back(std::forward<RowsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,14 +58,14 @@ namespace Model
      * <p>The columns field well for a pivot table. Values are grouped by columns
      * fields.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<DimensionField>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<DimensionField>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<DimensionField>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline PivotTableAggregatedFieldWells& WithColumns(const Aws::Vector<DimensionField>& value) { SetColumns(value); return *this;}
-    inline PivotTableAggregatedFieldWells& WithColumns(Aws::Vector<DimensionField>&& value) { SetColumns(std::move(value)); return *this;}
-    inline PivotTableAggregatedFieldWells& AddColumns(const DimensionField& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline PivotTableAggregatedFieldWells& AddColumns(DimensionField&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
+    template<typename ColumnsT = Aws::Vector<DimensionField>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<DimensionField>>
+    PivotTableAggregatedFieldWells& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = DimensionField>
+    PivotTableAggregatedFieldWells& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +73,14 @@ namespace Model
      * <p>The values field well for a pivot table. Values are aggregated based on rows
      * and columns fields.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<MeasureField>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<MeasureField>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<MeasureField>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline PivotTableAggregatedFieldWells& WithValues(const Aws::Vector<MeasureField>& value) { SetValues(value); return *this;}
-    inline PivotTableAggregatedFieldWells& WithValues(Aws::Vector<MeasureField>&& value) { SetValues(std::move(value)); return *this;}
-    inline PivotTableAggregatedFieldWells& AddValues(const MeasureField& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline PivotTableAggregatedFieldWells& AddValues(MeasureField&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<MeasureField>>
+    PivotTableAggregatedFieldWells& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = MeasureField>
+    PivotTableAggregatedFieldWells& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

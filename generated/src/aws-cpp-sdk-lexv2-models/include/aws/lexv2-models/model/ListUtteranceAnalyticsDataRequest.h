@@ -25,7 +25,7 @@ namespace Model
   class ListUtteranceAnalyticsDataRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListUtteranceAnalyticsDataRequest();
+    AWS_LEXMODELSV2_API ListUtteranceAnalyticsDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The identifier for the bot for which you want to retrieve utterance
      * analytics.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline ListUtteranceAnalyticsDataRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListUtteranceAnalyticsDataRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,12 @@ namespace Model
      * <p>The date and time that marks the beginning of the range of time for which you
      * want to see utterance analytics.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
+    inline const Aws::Utils::DateTime& GetStartDateTime() const { return m_startDateTime; }
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-    inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-    inline ListUtteranceAnalyticsDataRequest& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
+    template<typename StartDateTimeT = Aws::Utils::DateTime>
+    void SetStartDateTime(StartDateTimeT&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::forward<StartDateTimeT>(value); }
+    template<typename StartDateTimeT = Aws::Utils::DateTime>
+    ListUtteranceAnalyticsDataRequest& WithStartDateTime(StartDateTimeT&& value) { SetStartDateTime(std::forward<StartDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,12 @@ namespace Model
      * <p>The date and time that marks the end of the range of time for which you want
      * to see utterance analytics.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
+    inline const Aws::Utils::DateTime& GetEndDateTime() const { return m_endDateTime; }
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-    inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-    inline ListUtteranceAnalyticsDataRequest& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
+    template<typename EndDateTimeT = Aws::Utils::DateTime>
+    void SetEndDateTime(EndDateTimeT&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::forward<EndDateTimeT>(value); }
+    template<typename EndDateTimeT = Aws::Utils::DateTime>
+    ListUtteranceAnalyticsDataRequest& WithEndDateTime(EndDateTimeT&& value) { SetEndDateTime(std::forward<EndDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +80,12 @@ namespace Model
      * <p>An object specifying the measure and method by which to sort the utterance
      * analytics data.</p>
      */
-    inline const UtteranceDataSortBy& GetSortBy() const{ return m_sortBy; }
+    inline const UtteranceDataSortBy& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const UtteranceDataSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(UtteranceDataSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListUtteranceAnalyticsDataRequest& WithSortBy(const UtteranceDataSortBy& value) { SetSortBy(value); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithSortBy(UtteranceDataSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = UtteranceDataSortBy>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = UtteranceDataSortBy>
+    ListUtteranceAnalyticsDataRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +93,14 @@ namespace Model
      * <p>A list of objects, each of which describes a condition by which you want to
      * filter the results.</p>
      */
-    inline const Aws::Vector<AnalyticsUtteranceFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<AnalyticsUtteranceFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<AnalyticsUtteranceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<AnalyticsUtteranceFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListUtteranceAnalyticsDataRequest& WithFilters(const Aws::Vector<AnalyticsUtteranceFilter>& value) { SetFilters(value); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithFilters(Aws::Vector<AnalyticsUtteranceFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& AddFilters(const AnalyticsUtteranceFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListUtteranceAnalyticsDataRequest& AddFilters(AnalyticsUtteranceFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<AnalyticsUtteranceFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<AnalyticsUtteranceFilter>>
+    ListUtteranceAnalyticsDataRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = AnalyticsUtteranceFilter>
+    ListUtteranceAnalyticsDataRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,7 +109,7 @@ namespace Model
      * fewer results than the maximum page size, only the actual number of results are
      * returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListUtteranceAnalyticsDataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -126,24 +124,22 @@ namespace Model
      * complete set of results, call the ListUtteranceAnalyticsData operation until the
      * nextToken returned in the response is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListUtteranceAnalyticsDataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUtteranceAnalyticsDataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
     bool m_botIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDateTime;
+    Aws::Utils::DateTime m_startDateTime{};
     bool m_startDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDateTime;
+    Aws::Utils::DateTime m_endDateTime{};
     bool m_endDateTimeHasBeenSet = false;
 
     UtteranceDataSortBy m_sortBy;
@@ -152,7 +148,7 @@ namespace Model
     Aws::Vector<AnalyticsUtteranceFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

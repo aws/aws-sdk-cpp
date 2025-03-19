@@ -38,7 +38,7 @@ namespace Model
   class ResponseAction
   {
   public:
-    AWS_SHIELD_API ResponseAction();
+    AWS_SHIELD_API ResponseAction() = default;
     AWS_SHIELD_API ResponseAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API ResponseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <code>Block</code> action. </p> <p>You must specify exactly one action, either
      * <code>Block</code> or <code>Count</code>.</p>
      */
-    inline const BlockAction& GetBlock() const{ return m_block; }
+    inline const BlockAction& GetBlock() const { return m_block; }
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
-    inline void SetBlock(const BlockAction& value) { m_blockHasBeenSet = true; m_block = value; }
-    inline void SetBlock(BlockAction&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
-    inline ResponseAction& WithBlock(const BlockAction& value) { SetBlock(value); return *this;}
-    inline ResponseAction& WithBlock(BlockAction&& value) { SetBlock(std::move(value)); return *this;}
+    template<typename BlockT = BlockAction>
+    void SetBlock(BlockT&& value) { m_blockHasBeenSet = true; m_block = std::forward<BlockT>(value); }
+    template<typename BlockT = BlockAction>
+    ResponseAction& WithBlock(BlockT&& value) { SetBlock(std::forward<BlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * <code>Count</code> action. </p> <p>You must specify exactly one action, either
      * <code>Block</code> or <code>Count</code>.</p>
      */
-    inline const CountAction& GetCount() const{ return m_count; }
+    inline const CountAction& GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-    inline void SetCount(const CountAction& value) { m_countHasBeenSet = true; m_count = value; }
-    inline void SetCount(CountAction&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
-    inline ResponseAction& WithCount(const CountAction& value) { SetCount(value); return *this;}
-    inline ResponseAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
+    template<typename CountT = CountAction>
+    void SetCount(CountT&& value) { m_countHasBeenSet = true; m_count = std::forward<CountT>(value); }
+    template<typename CountT = CountAction>
+    ResponseAction& WithCount(CountT&& value) { SetCount(std::forward<CountT>(value)); return *this;}
     ///@}
   private:
 

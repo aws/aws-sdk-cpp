@@ -18,22 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxRegistrationEntry::TaxRegistrationEntry() : 
-    m_additionalTaxInformationHasBeenSet(false),
-    m_certifiedEmailIdHasBeenSet(false),
-    m_legalAddressHasBeenSet(false),
-    m_legalNameHasBeenSet(false),
-    m_registrationIdHasBeenSet(false),
-    m_registrationType(TaxRegistrationType::NOT_SET),
-    m_registrationTypeHasBeenSet(false),
-    m_sector(Sector::NOT_SET),
-    m_sectorHasBeenSet(false),
-    m_verificationDetailsHasBeenSet(false)
-{
-}
-
 TaxRegistrationEntry::TaxRegistrationEntry(JsonView jsonValue)
-  : TaxRegistrationEntry()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ TaxRegistrationEntry& TaxRegistrationEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalTaxInformation"))
   {
     m_additionalTaxInformation = jsonValue.GetObject("additionalTaxInformation");
-
     m_additionalTaxInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certifiedEmailId"))
   {
     m_certifiedEmailId = jsonValue.GetString("certifiedEmailId");
-
     m_certifiedEmailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("legalAddress"))
   {
     m_legalAddress = jsonValue.GetObject("legalAddress");
-
     m_legalAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("legalName"))
   {
     m_legalName = jsonValue.GetString("legalName");
-
     m_legalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationId"))
   {
     m_registrationId = jsonValue.GetString("registrationId");
-
     m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationType"))
   {
     m_registrationType = TaxRegistrationTypeMapper::GetTaxRegistrationTypeForName(jsonValue.GetString("registrationType"));
-
     m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sector"))
   {
     m_sector = SectorMapper::GetSectorForName(jsonValue.GetString("sector"));
-
     m_sectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verificationDetails"))
   {
     m_verificationDetails = jsonValue.GetObject("verificationDetails");
-
     m_verificationDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

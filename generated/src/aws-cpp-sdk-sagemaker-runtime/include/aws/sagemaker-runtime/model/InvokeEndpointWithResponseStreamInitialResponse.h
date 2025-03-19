@@ -27,7 +27,7 @@ namespace Model
   class InvokeEndpointWithResponseStreamInitialResponse
   {
   public:
-    AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse() = default;
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERRUNTIME_API InvokeEndpointWithResponseStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The MIME type of the inference returned from the model container.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    InvokeEndpointWithResponseStreamInitialResponse& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies the production variant that was invoked.</p>
      */
-    inline const Aws::String& GetInvokedProductionVariant() const{ return m_invokedProductionVariant; }
+    inline const Aws::String& GetInvokedProductionVariant() const { return m_invokedProductionVariant; }
     inline bool InvokedProductionVariantHasBeenSet() const { return m_invokedProductionVariantHasBeenSet; }
-    inline void SetInvokedProductionVariant(const Aws::String& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = value; }
-    inline void SetInvokedProductionVariant(Aws::String&& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = std::move(value); }
-    inline void SetInvokedProductionVariant(const char* value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant.assign(value); }
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(const Aws::String& value) { SetInvokedProductionVariant(value); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(Aws::String&& value) { SetInvokedProductionVariant(std::move(value)); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(const char* value) { SetInvokedProductionVariant(value); return *this;}
+    template<typename InvokedProductionVariantT = Aws::String>
+    void SetInvokedProductionVariant(InvokedProductionVariantT&& value) { m_invokedProductionVariantHasBeenSet = true; m_invokedProductionVariant = std::forward<InvokedProductionVariantT>(value); }
+    template<typename InvokedProductionVariantT = Aws::String>
+    InvokeEndpointWithResponseStreamInitialResponse& WithInvokedProductionVariant(InvokedProductionVariantT&& value) { SetInvokedProductionVariant(std::forward<InvokedProductionVariantT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * function.</p> <p>This feature is currently supported in the Amazon Web Services
      * SDKs but not in the Amazon SageMaker Python SDK.</p>
      */
-    inline const Aws::String& GetCustomAttributes() const{ return m_customAttributes; }
+    inline const Aws::String& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
-    inline void SetCustomAttributes(const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
-    inline void SetCustomAttributes(Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
-    inline void SetCustomAttributes(const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.assign(value); }
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithCustomAttributes(const Aws::String& value) { SetCustomAttributes(value); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithCustomAttributes(Aws::String&& value) { SetCustomAttributes(std::move(value)); return *this;}
-    inline InvokeEndpointWithResponseStreamInitialResponse& WithCustomAttributes(const char* value) { SetCustomAttributes(value); return *this;}
+    template<typename CustomAttributesT = Aws::String>
+    void SetCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::forward<CustomAttributesT>(value); }
+    template<typename CustomAttributesT = Aws::String>
+    InvokeEndpointWithResponseStreamInitialResponse& WithCustomAttributes(CustomAttributesT&& value) { SetCustomAttributes(std::forward<CustomAttributesT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class GetRepositoryTriggersResult
   {
   public:
-    AWS_CODECOMMIT_API GetRepositoryTriggersResult();
+    AWS_CODECOMMIT_API GetRepositoryTriggersResult() = default;
     AWS_CODECOMMIT_API GetRepositoryTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API GetRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
     /**
      * <p>The system-generated unique ID for the trigger.</p>
      */
-    inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
-    inline void SetConfigurationId(const Aws::String& value) { m_configurationId = value; }
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationId = std::move(value); }
-    inline void SetConfigurationId(const char* value) { m_configurationId.assign(value); }
-    inline GetRepositoryTriggersResult& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-    inline GetRepositoryTriggersResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-    inline GetRepositoryTriggersResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    inline const Aws::String& GetConfigurationId() const { return m_configurationId; }
+    template<typename ConfigurationIdT = Aws::String>
+    void SetConfigurationId(ConfigurationIdT&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::forward<ConfigurationIdT>(value); }
+    template<typename ConfigurationIdT = Aws::String>
+    GetRepositoryTriggersResult& WithConfigurationId(ConfigurationIdT&& value) { SetConfigurationId(std::forward<ConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
-    inline const Aws::Vector<RepositoryTrigger>& GetTriggers() const{ return m_triggers; }
-    inline void SetTriggers(const Aws::Vector<RepositoryTrigger>& value) { m_triggers = value; }
-    inline void SetTriggers(Aws::Vector<RepositoryTrigger>&& value) { m_triggers = std::move(value); }
-    inline GetRepositoryTriggersResult& WithTriggers(const Aws::Vector<RepositoryTrigger>& value) { SetTriggers(value); return *this;}
-    inline GetRepositoryTriggersResult& WithTriggers(Aws::Vector<RepositoryTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
-    inline GetRepositoryTriggersResult& AddTriggers(const RepositoryTrigger& value) { m_triggers.push_back(value); return *this; }
-    inline GetRepositoryTriggersResult& AddTriggers(RepositoryTrigger&& value) { m_triggers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RepositoryTrigger>& GetTriggers() const { return m_triggers; }
+    template<typename TriggersT = Aws::Vector<RepositoryTrigger>>
+    void SetTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers = std::forward<TriggersT>(value); }
+    template<typename TriggersT = Aws::Vector<RepositoryTrigger>>
+    GetRepositoryTriggersResult& WithTriggers(TriggersT&& value) { SetTriggers(std::forward<TriggersT>(value)); return *this;}
+    template<typename TriggersT = RepositoryTrigger>
+    GetRepositoryTriggersResult& AddTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers.emplace_back(std::forward<TriggersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRepositoryTriggersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRepositoryTriggersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRepositoryTriggersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRepositoryTriggersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationId;
+    bool m_configurationIdHasBeenSet = false;
 
     Aws::Vector<RepositoryTrigger> m_triggers;
+    bool m_triggersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

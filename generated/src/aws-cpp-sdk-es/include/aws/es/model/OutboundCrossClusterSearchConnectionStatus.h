@@ -33,7 +33,7 @@ namespace Model
   class OutboundCrossClusterSearchConnectionStatus
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus();
+    AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus() = default;
     AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,30 +52,26 @@ namespace Model
      * progress.</li> <li>DELETED: Outbound connection is deleted and cannot be used
      * further.</li> </ul>
      */
-    inline const OutboundCrossClusterSearchConnectionStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline OutboundCrossClusterSearchConnectionStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const OutboundCrossClusterSearchConnectionStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(OutboundCrossClusterSearchConnectionStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline OutboundCrossClusterSearchConnectionStatus& WithStatusCode(const OutboundCrossClusterSearchConnectionStatusCode& value) { SetStatusCode(value); return *this;}
-    inline OutboundCrossClusterSearchConnectionStatus& WithStatusCode(OutboundCrossClusterSearchConnectionStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(OutboundCrossClusterSearchConnectionStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline OutboundCrossClusterSearchConnectionStatus& WithStatusCode(OutboundCrossClusterSearchConnectionStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies verbose information for the outbound connection status.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline OutboundCrossClusterSearchConnectionStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline OutboundCrossClusterSearchConnectionStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline OutboundCrossClusterSearchConnectionStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    OutboundCrossClusterSearchConnectionStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    OutboundCrossClusterSearchConnectionStatusCode m_statusCode;
+    OutboundCrossClusterSearchConnectionStatusCode m_statusCode{OutboundCrossClusterSearchConnectionStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;

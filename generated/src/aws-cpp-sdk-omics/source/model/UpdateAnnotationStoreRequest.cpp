@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAnnotationStoreRequest::UpdateAnnotationStoreRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAnnotationStoreRequest::SerializePayload() const
 {
   JsonValue payload;

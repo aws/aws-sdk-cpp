@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchImportFindingsRequest::BatchImportFindingsRequest() : 
-    m_findingsHasBeenSet(false)
-{
-}
-
 Aws::String BatchImportFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

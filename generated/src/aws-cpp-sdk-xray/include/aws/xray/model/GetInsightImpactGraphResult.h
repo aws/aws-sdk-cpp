@@ -30,7 +30,7 @@ namespace Model
   class GetInsightImpactGraphResult
   {
   public:
-    AWS_XRAY_API GetInsightImpactGraphResult();
+    AWS_XRAY_API GetInsightImpactGraphResult() = default;
     AWS_XRAY_API GetInsightImpactGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API GetInsightImpactGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,112 +39,114 @@ namespace Model
     /**
      * <p>The insight's unique identifier.</p>
      */
-    inline const Aws::String& GetInsightId() const{ return m_insightId; }
-    inline void SetInsightId(const Aws::String& value) { m_insightId = value; }
-    inline void SetInsightId(Aws::String&& value) { m_insightId = std::move(value); }
-    inline void SetInsightId(const char* value) { m_insightId.assign(value); }
-    inline GetInsightImpactGraphResult& WithInsightId(const Aws::String& value) { SetInsightId(value); return *this;}
-    inline GetInsightImpactGraphResult& WithInsightId(Aws::String&& value) { SetInsightId(std::move(value)); return *this;}
-    inline GetInsightImpactGraphResult& WithInsightId(const char* value) { SetInsightId(value); return *this;}
+    inline const Aws::String& GetInsightId() const { return m_insightId; }
+    template<typename InsightIdT = Aws::String>
+    void SetInsightId(InsightIdT&& value) { m_insightIdHasBeenSet = true; m_insightId = std::forward<InsightIdT>(value); }
+    template<typename InsightIdT = Aws::String>
+    GetInsightImpactGraphResult& WithInsightId(InsightIdT&& value) { SetInsightId(std::forward<InsightIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provided start time.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetInsightImpactGraphResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetInsightImpactGraphResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetInsightImpactGraphResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The provided end time. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetInsightImpactGraphResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetInsightImpactGraphResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetInsightImpactGraphResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in Unix seconds, at which the service graph started.</p>
      */
-    inline const Aws::Utils::DateTime& GetServiceGraphStartTime() const{ return m_serviceGraphStartTime; }
-    inline void SetServiceGraphStartTime(const Aws::Utils::DateTime& value) { m_serviceGraphStartTime = value; }
-    inline void SetServiceGraphStartTime(Aws::Utils::DateTime&& value) { m_serviceGraphStartTime = std::move(value); }
-    inline GetInsightImpactGraphResult& WithServiceGraphStartTime(const Aws::Utils::DateTime& value) { SetServiceGraphStartTime(value); return *this;}
-    inline GetInsightImpactGraphResult& WithServiceGraphStartTime(Aws::Utils::DateTime&& value) { SetServiceGraphStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetServiceGraphStartTime() const { return m_serviceGraphStartTime; }
+    template<typename ServiceGraphStartTimeT = Aws::Utils::DateTime>
+    void SetServiceGraphStartTime(ServiceGraphStartTimeT&& value) { m_serviceGraphStartTimeHasBeenSet = true; m_serviceGraphStartTime = std::forward<ServiceGraphStartTimeT>(value); }
+    template<typename ServiceGraphStartTimeT = Aws::Utils::DateTime>
+    GetInsightImpactGraphResult& WithServiceGraphStartTime(ServiceGraphStartTimeT&& value) { SetServiceGraphStartTime(std::forward<ServiceGraphStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in Unix seconds, at which the service graph ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetServiceGraphEndTime() const{ return m_serviceGraphEndTime; }
-    inline void SetServiceGraphEndTime(const Aws::Utils::DateTime& value) { m_serviceGraphEndTime = value; }
-    inline void SetServiceGraphEndTime(Aws::Utils::DateTime&& value) { m_serviceGraphEndTime = std::move(value); }
-    inline GetInsightImpactGraphResult& WithServiceGraphEndTime(const Aws::Utils::DateTime& value) { SetServiceGraphEndTime(value); return *this;}
-    inline GetInsightImpactGraphResult& WithServiceGraphEndTime(Aws::Utils::DateTime&& value) { SetServiceGraphEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetServiceGraphEndTime() const { return m_serviceGraphEndTime; }
+    template<typename ServiceGraphEndTimeT = Aws::Utils::DateTime>
+    void SetServiceGraphEndTime(ServiceGraphEndTimeT&& value) { m_serviceGraphEndTimeHasBeenSet = true; m_serviceGraphEndTime = std::forward<ServiceGraphEndTimeT>(value); }
+    template<typename ServiceGraphEndTimeT = Aws::Utils::DateTime>
+    GetInsightImpactGraphResult& WithServiceGraphEndTime(ServiceGraphEndTimeT&& value) { SetServiceGraphEndTime(std::forward<ServiceGraphEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services instrumented services related to the insight.</p>
      */
-    inline const Aws::Vector<InsightImpactGraphService>& GetServices() const{ return m_services; }
-    inline void SetServices(const Aws::Vector<InsightImpactGraphService>& value) { m_services = value; }
-    inline void SetServices(Aws::Vector<InsightImpactGraphService>&& value) { m_services = std::move(value); }
-    inline GetInsightImpactGraphResult& WithServices(const Aws::Vector<InsightImpactGraphService>& value) { SetServices(value); return *this;}
-    inline GetInsightImpactGraphResult& WithServices(Aws::Vector<InsightImpactGraphService>&& value) { SetServices(std::move(value)); return *this;}
-    inline GetInsightImpactGraphResult& AddServices(const InsightImpactGraphService& value) { m_services.push_back(value); return *this; }
-    inline GetInsightImpactGraphResult& AddServices(InsightImpactGraphService&& value) { m_services.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InsightImpactGraphService>& GetServices() const { return m_services; }
+    template<typename ServicesT = Aws::Vector<InsightImpactGraphService>>
+    void SetServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services = std::forward<ServicesT>(value); }
+    template<typename ServicesT = Aws::Vector<InsightImpactGraphService>>
+    GetInsightImpactGraphResult& WithServices(ServicesT&& value) { SetServices(std::forward<ServicesT>(value)); return *this;}
+    template<typename ServicesT = InsightImpactGraphService>
+    GetInsightImpactGraphResult& AddServices(ServicesT&& value) { m_servicesHasBeenSet = true; m_services.emplace_back(std::forward<ServicesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetInsightImpactGraphResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetInsightImpactGraphResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetInsightImpactGraphResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetInsightImpactGraphResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInsightImpactGraphResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInsightImpactGraphResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInsightImpactGraphResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInsightImpactGraphResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_insightId;
+    bool m_insightIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_serviceGraphStartTime;
+    Aws::Utils::DateTime m_serviceGraphStartTime{};
+    bool m_serviceGraphStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_serviceGraphEndTime;
+    Aws::Utils::DateTime m_serviceGraphEndTime{};
+    bool m_serviceGraphEndTimeHasBeenSet = false;
 
     Aws::Vector<InsightImpactGraphService> m_services;
+    bool m_servicesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

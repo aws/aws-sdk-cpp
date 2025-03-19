@@ -30,7 +30,7 @@ namespace Model
   class WebCrawlerLimits
   {
   public:
-    AWS_QCONNECT_API WebCrawlerLimits();
+    AWS_QCONNECT_API WebCrawlerLimits() = default;
     AWS_QCONNECT_API WebCrawlerLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API WebCrawlerLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Rate of web URLs retrieved per minute.</p>
      */
-    inline int GetRateLimit() const{ return m_rateLimit; }
+    inline int GetRateLimit() const { return m_rateLimit; }
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
     inline void SetRateLimit(int value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
     inline WebCrawlerLimits& WithRateLimit(int value) { SetRateLimit(value); return *this;}
     ///@}
   private:
 
-    int m_rateLimit;
+    int m_rateLimit{0};
     bool m_rateLimitHasBeenSet = false;
   };
 

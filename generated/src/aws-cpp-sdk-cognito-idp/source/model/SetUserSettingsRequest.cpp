@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetUserSettingsRequest::SetUserSettingsRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_mFAOptionsHasBeenSet(false)
-{
-}
-
 Aws::String SetUserSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

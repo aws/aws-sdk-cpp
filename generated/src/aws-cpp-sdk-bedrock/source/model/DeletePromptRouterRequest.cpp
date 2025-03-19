@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePromptRouterRequest::DeletePromptRouterRequest() : 
-    m_promptRouterArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePromptRouterRequest::SerializePayload() const
 {
   return {};

@@ -12,16 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHostRequest::CreateHostRequest() : 
-    m_nameHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_providerEndpointHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateHostRequest::SerializePayload() const
 {
   JsonValue payload;

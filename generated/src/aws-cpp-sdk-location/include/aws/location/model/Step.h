@@ -32,7 +32,7 @@ namespace Model
   class Step
   {
   public:
-    AWS_LOCATIONSERVICE_API Step();
+    AWS_LOCATIONSERVICE_API Step() = default;
     AWS_LOCATIONSERVICE_API Step(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The starting position of a step. If the position is the first step in the
      * leg, this position is the same as the start position of the leg.</p>
      */
-    inline const Aws::Vector<double>& GetStartPosition() const{ return m_startPosition; }
+    inline const Aws::Vector<double>& GetStartPosition() const { return m_startPosition; }
     inline bool StartPositionHasBeenSet() const { return m_startPositionHasBeenSet; }
-    inline void SetStartPosition(const Aws::Vector<double>& value) { m_startPositionHasBeenSet = true; m_startPosition = value; }
-    inline void SetStartPosition(Aws::Vector<double>&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::move(value); }
-    inline Step& WithStartPosition(const Aws::Vector<double>& value) { SetStartPosition(value); return *this;}
-    inline Step& WithStartPosition(Aws::Vector<double>&& value) { SetStartPosition(std::move(value)); return *this;}
+    template<typename StartPositionT = Aws::Vector<double>>
+    void SetStartPosition(StartPositionT&& value) { m_startPositionHasBeenSet = true; m_startPosition = std::forward<StartPositionT>(value); }
+    template<typename StartPositionT = Aws::Vector<double>>
+    Step& WithStartPosition(StartPositionT&& value) { SetStartPosition(std::forward<StartPositionT>(value)); return *this;}
     inline Step& AddStartPosition(double value) { m_startPositionHasBeenSet = true; m_startPosition.push_back(value); return *this; }
     ///@}
 
@@ -57,12 +57,12 @@ namespace Model
      * <p>The end position of a step. If the position the last step in the leg, this
      * position is the same as the end position of the leg.</p>
      */
-    inline const Aws::Vector<double>& GetEndPosition() const{ return m_endPosition; }
+    inline const Aws::Vector<double>& GetEndPosition() const { return m_endPosition; }
     inline bool EndPositionHasBeenSet() const { return m_endPositionHasBeenSet; }
-    inline void SetEndPosition(const Aws::Vector<double>& value) { m_endPositionHasBeenSet = true; m_endPosition = value; }
-    inline void SetEndPosition(Aws::Vector<double>&& value) { m_endPositionHasBeenSet = true; m_endPosition = std::move(value); }
-    inline Step& WithEndPosition(const Aws::Vector<double>& value) { SetEndPosition(value); return *this;}
-    inline Step& WithEndPosition(Aws::Vector<double>&& value) { SetEndPosition(std::move(value)); return *this;}
+    template<typename EndPositionT = Aws::Vector<double>>
+    void SetEndPosition(EndPositionT&& value) { m_endPositionHasBeenSet = true; m_endPosition = std::forward<EndPositionT>(value); }
+    template<typename EndPositionT = Aws::Vector<double>>
+    Step& WithEndPosition(EndPositionT&& value) { SetEndPosition(std::forward<EndPositionT>(value)); return *this;}
     inline Step& AddEndPosition(double value) { m_endPositionHasBeenSet = true; m_endPosition.push_back(value); return *this; }
     ///@}
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>The travel distance between the step's <code>StartPosition</code> and
      * <code>EndPosition</code>.</p>
      */
-    inline double GetDistance() const{ return m_distance; }
+    inline double GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline Step& WithDistance(double value) { SetDistance(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
      * and departure time that you specify in the request determines the calculated
      * time.</p>
      */
-    inline double GetDurationSeconds() const{ return m_durationSeconds; }
+    inline double GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline Step& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
@@ -97,7 +97,7 @@ namespace Model
      * geometry is <code>0</code>. </p> <p>Included in the response for queries that
      * set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
      */
-    inline int GetGeometryOffset() const{ return m_geometryOffset; }
+    inline int GetGeometryOffset() const { return m_geometryOffset; }
     inline bool GeometryOffsetHasBeenSet() const { return m_geometryOffsetHasBeenSet; }
     inline void SetGeometryOffset(int value) { m_geometryOffsetHasBeenSet = true; m_geometryOffset = value; }
     inline Step& WithGeometryOffset(int value) { SetGeometryOffset(value); return *this;}
@@ -110,13 +110,13 @@ namespace Model
     Aws::Vector<double> m_endPosition;
     bool m_endPositionHasBeenSet = false;
 
-    double m_distance;
+    double m_distance{0.0};
     bool m_distanceHasBeenSet = false;
 
-    double m_durationSeconds;
+    double m_durationSeconds{0.0};
     bool m_durationSecondsHasBeenSet = false;
 
-    int m_geometryOffset;
+    int m_geometryOffset{0};
     bool m_geometryOffsetHasBeenSet = false;
   };
 

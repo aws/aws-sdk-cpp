@@ -21,7 +21,7 @@ namespace Model
   class GetCommandRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetCommandRequest();
+    AWS_IOT_API GetCommandRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The unique identifier of the command for which you want to retrieve
      * information.</p>
      */
-    inline const Aws::String& GetCommandId() const{ return m_commandId; }
+    inline const Aws::String& GetCommandId() const { return m_commandId; }
     inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
-    inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
-    inline void SetCommandId(Aws::String&& value) { m_commandIdHasBeenSet = true; m_commandId = std::move(value); }
-    inline void SetCommandId(const char* value) { m_commandIdHasBeenSet = true; m_commandId.assign(value); }
-    inline GetCommandRequest& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
-    inline GetCommandRequest& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
-    inline GetCommandRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+    template<typename CommandIdT = Aws::String>
+    void SetCommandId(CommandIdT&& value) { m_commandIdHasBeenSet = true; m_commandId = std::forward<CommandIdT>(value); }
+    template<typename CommandIdT = Aws::String>
+    GetCommandRequest& WithCommandId(CommandIdT&& value) { SetCommandId(std::forward<CommandIdT>(value)); return *this;}
     ///@}
   private:
 

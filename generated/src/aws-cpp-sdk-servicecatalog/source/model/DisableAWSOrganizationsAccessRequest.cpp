@@ -12,10 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableAWSOrganizationsAccessRequest::DisableAWSOrganizationsAccessRequest()
-{
-}
-
 Aws::String DisableAWSOrganizationsAccessRequest::SerializePayload() const
 {
   return "{}";

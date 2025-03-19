@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-SessionManagerOutputUrl::SessionManagerOutputUrl() : 
-    m_s3OutputUrlHasBeenSet(false),
-    m_cloudWatchOutputUrlHasBeenSet(false)
-{
-}
-
 SessionManagerOutputUrl::SessionManagerOutputUrl(JsonView jsonValue)
-  : SessionManagerOutputUrl()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SessionManagerOutputUrl& SessionManagerOutputUrl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3OutputUrl"))
   {
     m_s3OutputUrl = jsonValue.GetString("S3OutputUrl");
-
     m_s3OutputUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchOutputUrl"))
   {
     m_cloudWatchOutputUrl = jsonValue.GetString("CloudWatchOutputUrl");
-
     m_cloudWatchOutputUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

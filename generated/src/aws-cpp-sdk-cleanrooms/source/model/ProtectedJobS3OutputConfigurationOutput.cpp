@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobS3OutputConfigurationOutput::ProtectedJobS3OutputConfigurationOutput() : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
-{
-}
-
 ProtectedJobS3OutputConfigurationOutput::ProtectedJobS3OutputConfigurationOutput(JsonView jsonValue)
-  : ProtectedJobS3OutputConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProtectedJobS3OutputConfigurationOutput& ProtectedJobS3OutputConfigurationOutput
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPrefix"))
   {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
-
     m_keyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

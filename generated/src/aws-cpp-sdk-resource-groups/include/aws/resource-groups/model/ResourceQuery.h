@@ -57,7 +57,7 @@ namespace Model
   class ResourceQuery
   {
   public:
-    AWS_RESOURCEGROUPS_API ResourceQuery();
+    AWS_RESOURCEGROUPS_API ResourceQuery() = default;
     AWS_RESOURCEGROUPS_API ResourceQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API ResourceQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -73,12 +73,10 @@ namespace Model
      * <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include
      * resource that have tags that match the query. </p> </li> </ul>
      */
-    inline const QueryType& GetType() const{ return m_type; }
+    inline QueryType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const QueryType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(QueryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ResourceQuery& WithType(const QueryType& value) { SetType(value); return *this;}
-    inline ResourceQuery& WithType(QueryType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(QueryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ResourceQuery& WithType(QueryType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -133,18 +131,16 @@ namespace Model
      * parameter is the Amazon Resource Name (ARN) of the CloudFormation stack whose
      * resources you want included in the group.</p> </li> </ul>
      */
-    inline const Aws::String& GetQuery() const{ return m_query; }
+    inline const Aws::String& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-    inline ResourceQuery& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-    inline ResourceQuery& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-    inline ResourceQuery& WithQuery(const char* value) { SetQuery(value); return *this;}
+    template<typename QueryT = Aws::String>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Aws::String>
+    ResourceQuery& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
   private:
 
-    QueryType m_type;
+    QueryType m_type{QueryType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_query;

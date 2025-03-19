@@ -18,14 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-S3DestinationConfig::S3DestinationConfig() : 
-    m_bucketNameHasBeenSet(false),
-    m_destinationPathHasBeenSet(false)
-{
-}
-
 S3DestinationConfig::S3DestinationConfig(JsonView jsonValue)
-  : S3DestinationConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3DestinationConfig& S3DestinationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPath"))
   {
     m_destinationPath = jsonValue.GetString("DestinationPath");
-
     m_destinationPathHasBeenSet = true;
   }
-
   return *this;
 }
 

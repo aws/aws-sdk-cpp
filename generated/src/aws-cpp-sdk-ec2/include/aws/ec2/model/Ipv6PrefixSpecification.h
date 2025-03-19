@@ -31,7 +31,7 @@ namespace Model
   class Ipv6PrefixSpecification
   {
   public:
-    AWS_EC2_API Ipv6PrefixSpecification();
+    AWS_EC2_API Ipv6PrefixSpecification() = default;
     AWS_EC2_API Ipv6PrefixSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Ipv6PrefixSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The IPv6 prefix.</p>
      */
-    inline const Aws::String& GetIpv6Prefix() const{ return m_ipv6Prefix; }
+    inline const Aws::String& GetIpv6Prefix() const { return m_ipv6Prefix; }
     inline bool Ipv6PrefixHasBeenSet() const { return m_ipv6PrefixHasBeenSet; }
-    inline void SetIpv6Prefix(const Aws::String& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = value; }
-    inline void SetIpv6Prefix(Aws::String&& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = std::move(value); }
-    inline void SetIpv6Prefix(const char* value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix.assign(value); }
-    inline Ipv6PrefixSpecification& WithIpv6Prefix(const Aws::String& value) { SetIpv6Prefix(value); return *this;}
-    inline Ipv6PrefixSpecification& WithIpv6Prefix(Aws::String&& value) { SetIpv6Prefix(std::move(value)); return *this;}
-    inline Ipv6PrefixSpecification& WithIpv6Prefix(const char* value) { SetIpv6Prefix(value); return *this;}
+    template<typename Ipv6PrefixT = Aws::String>
+    void SetIpv6Prefix(Ipv6PrefixT&& value) { m_ipv6PrefixHasBeenSet = true; m_ipv6Prefix = std::forward<Ipv6PrefixT>(value); }
+    template<typename Ipv6PrefixT = Aws::String>
+    Ipv6PrefixSpecification& WithIpv6Prefix(Ipv6PrefixT&& value) { SetIpv6Prefix(std::forward<Ipv6PrefixT>(value)); return *this;}
     ///@}
   private:
 

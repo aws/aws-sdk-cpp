@@ -34,7 +34,7 @@ namespace Model
   class DescribeIdentityUsageResult
   {
   public:
-    AWS_COGNITOSYNC_API DescribeIdentityUsageResult();
+    AWS_COGNITOSYNC_API DescribeIdentityUsageResult() = default;
     AWS_COGNITOSYNC_API DescribeIdentityUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API DescribeIdentityUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * Usage information for the identity.
      */
-    inline const IdentityUsage& GetIdentityUsage() const{ return m_identityUsage; }
-    inline void SetIdentityUsage(const IdentityUsage& value) { m_identityUsage = value; }
-    inline void SetIdentityUsage(IdentityUsage&& value) { m_identityUsage = std::move(value); }
-    inline DescribeIdentityUsageResult& WithIdentityUsage(const IdentityUsage& value) { SetIdentityUsage(value); return *this;}
-    inline DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsage&& value) { SetIdentityUsage(std::move(value)); return *this;}
+    inline const IdentityUsage& GetIdentityUsage() const { return m_identityUsage; }
+    template<typename IdentityUsageT = IdentityUsage>
+    void SetIdentityUsage(IdentityUsageT&& value) { m_identityUsageHasBeenSet = true; m_identityUsage = std::forward<IdentityUsageT>(value); }
+    template<typename IdentityUsageT = IdentityUsage>
+    DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsageT&& value) { SetIdentityUsage(std::forward<IdentityUsageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeIdentityUsageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeIdentityUsageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeIdentityUsageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeIdentityUsageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IdentityUsage m_identityUsage;
+    bool m_identityUsageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

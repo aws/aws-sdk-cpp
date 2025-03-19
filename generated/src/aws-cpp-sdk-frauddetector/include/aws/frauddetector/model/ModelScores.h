@@ -33,7 +33,7 @@ namespace Model
   class ModelScores
   {
   public:
-    AWS_FRAUDDETECTOR_API ModelScores();
+    AWS_FRAUDDETECTOR_API ModelScores() = default;
     AWS_FRAUDDETECTOR_API ModelScores(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API ModelScores& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,27 +43,27 @@ namespace Model
     /**
      * <p>The model version.</p>
      */
-    inline const ModelVersion& GetModelVersion() const{ return m_modelVersion; }
+    inline const ModelVersion& GetModelVersion() const { return m_modelVersion; }
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-    inline void SetModelVersion(const ModelVersion& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
-    inline void SetModelVersion(ModelVersion&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
-    inline ModelScores& WithModelVersion(const ModelVersion& value) { SetModelVersion(value); return *this;}
-    inline ModelScores& WithModelVersion(ModelVersion&& value) { SetModelVersion(std::move(value)); return *this;}
+    template<typename ModelVersionT = ModelVersion>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = ModelVersion>
+    ModelScores& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model's fraud prediction scores.</p>
      */
-    inline const Aws::Map<Aws::String, double>& GetScores() const{ return m_scores; }
+    inline const Aws::Map<Aws::String, double>& GetScores() const { return m_scores; }
     inline bool ScoresHasBeenSet() const { return m_scoresHasBeenSet; }
-    inline void SetScores(const Aws::Map<Aws::String, double>& value) { m_scoresHasBeenSet = true; m_scores = value; }
-    inline void SetScores(Aws::Map<Aws::String, double>&& value) { m_scoresHasBeenSet = true; m_scores = std::move(value); }
-    inline ModelScores& WithScores(const Aws::Map<Aws::String, double>& value) { SetScores(value); return *this;}
-    inline ModelScores& WithScores(Aws::Map<Aws::String, double>&& value) { SetScores(std::move(value)); return *this;}
-    inline ModelScores& AddScores(const Aws::String& key, double value) { m_scoresHasBeenSet = true; m_scores.emplace(key, value); return *this; }
-    inline ModelScores& AddScores(Aws::String&& key, double value) { m_scoresHasBeenSet = true; m_scores.emplace(std::move(key), value); return *this; }
-    inline ModelScores& AddScores(const char* key, double value) { m_scoresHasBeenSet = true; m_scores.emplace(key, value); return *this; }
+    template<typename ScoresT = Aws::Map<Aws::String, double>>
+    void SetScores(ScoresT&& value) { m_scoresHasBeenSet = true; m_scores = std::forward<ScoresT>(value); }
+    template<typename ScoresT = Aws::Map<Aws::String, double>>
+    ModelScores& WithScores(ScoresT&& value) { SetScores(std::forward<ScoresT>(value)); return *this;}
+    inline ModelScores& AddScores(Aws::String key, double value) {
+      m_scoresHasBeenSet = true; m_scores.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

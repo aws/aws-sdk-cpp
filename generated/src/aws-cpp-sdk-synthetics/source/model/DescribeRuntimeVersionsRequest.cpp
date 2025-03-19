@@ -12,13 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRuntimeVersionsRequest::DescribeRuntimeVersionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRuntimeVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

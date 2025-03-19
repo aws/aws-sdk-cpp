@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayListenerTls::VirtualGatewayListenerTls() : 
-    m_certificateHasBeenSet(false),
-    m_mode(VirtualGatewayListenerTlsMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_validationHasBeenSet(false)
-{
-}
-
 VirtualGatewayListenerTls::VirtualGatewayListenerTls(JsonView jsonValue)
-  : VirtualGatewayListenerTls()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ VirtualGatewayListenerTls& VirtualGatewayListenerTls::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("certificate"))
   {
     m_certificate = jsonValue.GetObject("certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = VirtualGatewayListenerTlsModeMapper::GetVirtualGatewayListenerTlsModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validation"))
   {
     m_validation = jsonValue.GetObject("validation");
-
     m_validationHasBeenSet = true;
   }
-
   return *this;
 }
 

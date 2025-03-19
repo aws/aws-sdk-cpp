@@ -18,20 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregateEvaluationResult::AggregateEvaluationResult() : 
-    m_evaluationResultIdentifierHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_resultRecordedTimeHasBeenSet(false),
-    m_configRuleInvokedTimeHasBeenSet(false),
-    m_annotationHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 AggregateEvaluationResult::AggregateEvaluationResult(JsonView jsonValue)
-  : AggregateEvaluationResult()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ AggregateEvaluationResult& AggregateEvaluationResult::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("EvaluationResultIdentifier"))
   {
     m_evaluationResultIdentifier = jsonValue.GetObject("EvaluationResultIdentifier");
-
     m_evaluationResultIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultRecordedTime"))
   {
     m_resultRecordedTime = jsonValue.GetDouble("ResultRecordedTime");
-
     m_resultRecordedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleInvokedTime"))
   {
     m_configRuleInvokedTime = jsonValue.GetDouble("ConfigRuleInvokedTime");
-
     m_configRuleInvokedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Annotation"))
   {
     m_annotation = jsonValue.GetString("Annotation");
-
     m_annotationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

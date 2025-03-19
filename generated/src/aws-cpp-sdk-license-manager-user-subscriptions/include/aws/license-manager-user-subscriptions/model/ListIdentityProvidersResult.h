@@ -29,7 +29,7 @@ namespace Model
   class ListIdentityProvidersResult
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListIdentityProvidersResult();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListIdentityProvidersResult() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListIdentityProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ListIdentityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * details about the Active Directory identity providers that meet the request
      * criteria.</p>
      */
-    inline const Aws::Vector<IdentityProviderSummary>& GetIdentityProviderSummaries() const{ return m_identityProviderSummaries; }
-    inline void SetIdentityProviderSummaries(const Aws::Vector<IdentityProviderSummary>& value) { m_identityProviderSummaries = value; }
-    inline void SetIdentityProviderSummaries(Aws::Vector<IdentityProviderSummary>&& value) { m_identityProviderSummaries = std::move(value); }
-    inline ListIdentityProvidersResult& WithIdentityProviderSummaries(const Aws::Vector<IdentityProviderSummary>& value) { SetIdentityProviderSummaries(value); return *this;}
-    inline ListIdentityProvidersResult& WithIdentityProviderSummaries(Aws::Vector<IdentityProviderSummary>&& value) { SetIdentityProviderSummaries(std::move(value)); return *this;}
-    inline ListIdentityProvidersResult& AddIdentityProviderSummaries(const IdentityProviderSummary& value) { m_identityProviderSummaries.push_back(value); return *this; }
-    inline ListIdentityProvidersResult& AddIdentityProviderSummaries(IdentityProviderSummary&& value) { m_identityProviderSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdentityProviderSummary>& GetIdentityProviderSummaries() const { return m_identityProviderSummaries; }
+    template<typename IdentityProviderSummariesT = Aws::Vector<IdentityProviderSummary>>
+    void SetIdentityProviderSummaries(IdentityProviderSummariesT&& value) { m_identityProviderSummariesHasBeenSet = true; m_identityProviderSummaries = std::forward<IdentityProviderSummariesT>(value); }
+    template<typename IdentityProviderSummariesT = Aws::Vector<IdentityProviderSummary>>
+    ListIdentityProvidersResult& WithIdentityProviderSummaries(IdentityProviderSummariesT&& value) { SetIdentityProviderSummaries(std::forward<IdentityProviderSummariesT>(value)); return *this;}
+    template<typename IdentityProviderSummariesT = IdentityProviderSummary>
+    ListIdentityProvidersResult& AddIdentityProviderSummaries(IdentityProviderSummariesT&& value) { m_identityProviderSummariesHasBeenSet = true; m_identityProviderSummaries.emplace_back(std::forward<IdentityProviderSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * there are additional elements that the service hasn't included in this request.
      * Use this token with the next request to retrieve additional objects.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIdentityProvidersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIdentityProvidersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIdentityProvidersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIdentityProvidersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIdentityProvidersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIdentityProvidersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIdentityProvidersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIdentityProvidersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IdentityProviderSummary> m_identityProviderSummaries;
+    bool m_identityProviderSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

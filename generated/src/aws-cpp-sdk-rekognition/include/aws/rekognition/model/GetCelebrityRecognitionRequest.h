@@ -22,7 +22,7 @@ namespace Model
   class GetCelebrityRecognitionRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API GetCelebrityRecognitionRequest();
+    AWS_REKOGNITION_API GetCelebrityRecognitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Job identifier for the required celebrity recognition analysis. You can get
      * the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline GetCelebrityRecognitionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetCelebrityRecognitionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetCelebrityRecognitionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetCelebrityRecognitionRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
      * results is returned. The default value is 1000.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetCelebrityRecognitionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,14 +67,12 @@ namespace Model
      * the response. You can use this pagination token to retrieve the next set of
      * celebrities. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetCelebrityRecognitionRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCelebrityRecognitionRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCelebrityRecognitionRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCelebrityRecognitionRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,25 +81,23 @@ namespace Model
      * Specify <code>ID</code> to sort by the celebrity identifier, specify
      * <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
      */
-    inline const CelebrityRecognitionSortBy& GetSortBy() const{ return m_sortBy; }
+    inline CelebrityRecognitionSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const CelebrityRecognitionSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(CelebrityRecognitionSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetCelebrityRecognitionRequest& WithSortBy(const CelebrityRecognitionSortBy& value) { SetSortBy(value); return *this;}
-    inline GetCelebrityRecognitionRequest& WithSortBy(CelebrityRecognitionSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(CelebrityRecognitionSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline GetCelebrityRecognitionRequest& WithSortBy(CelebrityRecognitionSortBy value) { SetSortBy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    CelebrityRecognitionSortBy m_sortBy;
+    CelebrityRecognitionSortBy m_sortBy{CelebrityRecognitionSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
   };
 

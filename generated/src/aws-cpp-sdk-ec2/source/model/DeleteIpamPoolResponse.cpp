@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteIpamPoolResponse::DeleteIpamPoolResponse()
-{
-}
-
 DeleteIpamPoolResponse::DeleteIpamPoolResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteIpamPoolResponse& DeleteIpamPoolResponse::operator =(const Aws::AmazonWebS
     if(!ipamPoolNode.IsNull())
     {
       m_ipamPool = ipamPoolNode;
+      m_ipamPoolHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteIpamPoolResponse& DeleteIpamPoolResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteIpamPoolResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ServiceNowParameters::ServiceNowParameters() : 
-    m_siteBaseUrlHasBeenSet(false)
-{
-}
-
 ServiceNowParameters::ServiceNowParameters(JsonView jsonValue)
-  : ServiceNowParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceNowParameters& ServiceNowParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SiteBaseUrl"))
   {
     m_siteBaseUrl = jsonValue.GetString("SiteBaseUrl");
-
     m_siteBaseUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

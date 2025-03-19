@@ -29,7 +29,7 @@ namespace Model
   class ListRecipesResult
   {
   public:
-    AWS_PERSONALIZE_API ListRecipesResult();
+    AWS_PERSONALIZE_API ListRecipesResult() = default;
     AWS_PERSONALIZE_API ListRecipesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API ListRecipesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of available recipes.</p>
      */
-    inline const Aws::Vector<RecipeSummary>& GetRecipes() const{ return m_recipes; }
-    inline void SetRecipes(const Aws::Vector<RecipeSummary>& value) { m_recipes = value; }
-    inline void SetRecipes(Aws::Vector<RecipeSummary>&& value) { m_recipes = std::move(value); }
-    inline ListRecipesResult& WithRecipes(const Aws::Vector<RecipeSummary>& value) { SetRecipes(value); return *this;}
-    inline ListRecipesResult& WithRecipes(Aws::Vector<RecipeSummary>&& value) { SetRecipes(std::move(value)); return *this;}
-    inline ListRecipesResult& AddRecipes(const RecipeSummary& value) { m_recipes.push_back(value); return *this; }
-    inline ListRecipesResult& AddRecipes(RecipeSummary&& value) { m_recipes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecipeSummary>& GetRecipes() const { return m_recipes; }
+    template<typename RecipesT = Aws::Vector<RecipeSummary>>
+    void SetRecipes(RecipesT&& value) { m_recipesHasBeenSet = true; m_recipes = std::forward<RecipesT>(value); }
+    template<typename RecipesT = Aws::Vector<RecipeSummary>>
+    ListRecipesResult& WithRecipes(RecipesT&& value) { SetRecipes(std::forward<RecipesT>(value)); return *this;}
+    template<typename RecipesT = RecipeSummary>
+    ListRecipesResult& AddRecipes(RecipesT&& value) { m_recipesHasBeenSet = true; m_recipes.emplace_back(std::forward<RecipesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token for getting the next set of recipes.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRecipesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRecipesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRecipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRecipesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRecipesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRecipesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRecipesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRecipesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RecipeSummary> m_recipes;
+    bool m_recipesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

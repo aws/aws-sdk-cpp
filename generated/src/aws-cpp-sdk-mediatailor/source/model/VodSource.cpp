@@ -18,19 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-VodSource::VodSource() : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_httpPackageConfigurationsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
-{
-}
-
 VodSource::VodSource(JsonView jsonValue)
-  : VodSource()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ VodSource& VodSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpPackageConfigurations"))
   {
     Aws::Utils::Array<JsonView> httpPackageConfigurationsJsonList = jsonValue.GetArray("HttpPackageConfigurations");
@@ -60,21 +44,16 @@ VodSource& VodSource::operator =(JsonView jsonValue)
     }
     m_httpPackageConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
-
     m_sourceLocationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -84,14 +63,11 @@ VodSource& VodSource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VodSourceName"))
   {
     m_vodSourceName = jsonValue.GetString("VodSourceName");
-
     m_vodSourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

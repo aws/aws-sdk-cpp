@@ -31,7 +31,7 @@ namespace Model
   class NodeOwnerInfo
   {
   public:
-    AWS_SSM_API NodeOwnerInfo();
+    AWS_SSM_API NodeOwnerInfo() = default;
     AWS_SSM_API NodeOwnerInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API NodeOwnerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the managed node.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline NodeOwnerInfo& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline NodeOwnerInfo& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline NodeOwnerInfo& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    NodeOwnerInfo& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the organization unit (OU) that the account is part of.</p>
      */
-    inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
-    inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
-    inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
-    inline NodeOwnerInfo& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
-    inline NodeOwnerInfo& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
-    inline NodeOwnerInfo& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    NodeOwnerInfo& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/</code>
      * </p>
      */
-    inline const Aws::String& GetOrganizationalUnitPath() const{ return m_organizationalUnitPath; }
+    inline const Aws::String& GetOrganizationalUnitPath() const { return m_organizationalUnitPath; }
     inline bool OrganizationalUnitPathHasBeenSet() const { return m_organizationalUnitPathHasBeenSet; }
-    inline void SetOrganizationalUnitPath(const Aws::String& value) { m_organizationalUnitPathHasBeenSet = true; m_organizationalUnitPath = value; }
-    inline void SetOrganizationalUnitPath(Aws::String&& value) { m_organizationalUnitPathHasBeenSet = true; m_organizationalUnitPath = std::move(value); }
-    inline void SetOrganizationalUnitPath(const char* value) { m_organizationalUnitPathHasBeenSet = true; m_organizationalUnitPath.assign(value); }
-    inline NodeOwnerInfo& WithOrganizationalUnitPath(const Aws::String& value) { SetOrganizationalUnitPath(value); return *this;}
-    inline NodeOwnerInfo& WithOrganizationalUnitPath(Aws::String&& value) { SetOrganizationalUnitPath(std::move(value)); return *this;}
-    inline NodeOwnerInfo& WithOrganizationalUnitPath(const char* value) { SetOrganizationalUnitPath(value); return *this;}
+    template<typename OrganizationalUnitPathT = Aws::String>
+    void SetOrganizationalUnitPath(OrganizationalUnitPathT&& value) { m_organizationalUnitPathHasBeenSet = true; m_organizationalUnitPath = std::forward<OrganizationalUnitPathT>(value); }
+    template<typename OrganizationalUnitPathT = Aws::String>
+    NodeOwnerInfo& WithOrganizationalUnitPath(OrganizationalUnitPathT&& value) { SetOrganizationalUnitPath(std::forward<OrganizationalUnitPathT>(value)); return *this;}
     ///@}
   private:
 

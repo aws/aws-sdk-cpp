@@ -18,16 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-DestinationConfigurationRequest::DestinationConfigurationRequest() : 
-    m_destinationIpHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_interfaceHasBeenSet(false)
-{
-}
-
 DestinationConfigurationRequest::DestinationConfigurationRequest(JsonView jsonValue)
-  : DestinationConfigurationRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DestinationConfigurationRequest& DestinationConfigurationRequest::operator =(Jso
   if(jsonValue.ValueExists("destinationIp"))
   {
     m_destinationIp = jsonValue.GetString("destinationIp");
-
     m_destinationIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationPort"))
   {
     m_destinationPort = jsonValue.GetInteger("destinationPort");
-
     m_destinationPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interface"))
   {
     m_interface = jsonValue.GetObject("interface");
-
     m_interfaceHasBeenSet = true;
   }
-
   return *this;
 }
 

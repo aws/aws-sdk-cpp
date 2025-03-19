@@ -25,7 +25,7 @@ namespace Model
   class BatchGetQueryExecutionRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API BatchGetQueryExecutionRequest();
+    AWS_ATHENA_API BatchGetQueryExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>An array of query execution IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueryExecutionIds() const{ return m_queryExecutionIds; }
+    inline const Aws::Vector<Aws::String>& GetQueryExecutionIds() const { return m_queryExecutionIds; }
     inline bool QueryExecutionIdsHasBeenSet() const { return m_queryExecutionIdsHasBeenSet; }
-    inline void SetQueryExecutionIds(const Aws::Vector<Aws::String>& value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds = value; }
-    inline void SetQueryExecutionIds(Aws::Vector<Aws::String>&& value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds = std::move(value); }
-    inline BatchGetQueryExecutionRequest& WithQueryExecutionIds(const Aws::Vector<Aws::String>& value) { SetQueryExecutionIds(value); return *this;}
-    inline BatchGetQueryExecutionRequest& WithQueryExecutionIds(Aws::Vector<Aws::String>&& value) { SetQueryExecutionIds(std::move(value)); return *this;}
-    inline BatchGetQueryExecutionRequest& AddQueryExecutionIds(const Aws::String& value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds.push_back(value); return *this; }
-    inline BatchGetQueryExecutionRequest& AddQueryExecutionIds(Aws::String&& value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds.push_back(std::move(value)); return *this; }
-    inline BatchGetQueryExecutionRequest& AddQueryExecutionIds(const char* value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds.push_back(value); return *this; }
+    template<typename QueryExecutionIdsT = Aws::Vector<Aws::String>>
+    void SetQueryExecutionIds(QueryExecutionIdsT&& value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds = std::forward<QueryExecutionIdsT>(value); }
+    template<typename QueryExecutionIdsT = Aws::Vector<Aws::String>>
+    BatchGetQueryExecutionRequest& WithQueryExecutionIds(QueryExecutionIdsT&& value) { SetQueryExecutionIds(std::forward<QueryExecutionIdsT>(value)); return *this;}
+    template<typename QueryExecutionIdsT = Aws::String>
+    BatchGetQueryExecutionRequest& AddQueryExecutionIds(QueryExecutionIdsT&& value) { m_queryExecutionIdsHasBeenSet = true; m_queryExecutionIds.emplace_back(std::forward<QueryExecutionIdsT>(value)); return *this; }
     ///@}
   private:
 

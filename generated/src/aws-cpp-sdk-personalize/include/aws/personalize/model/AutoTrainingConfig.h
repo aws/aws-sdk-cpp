@@ -32,7 +32,7 @@ namespace Model
   class AutoTrainingConfig
   {
   public:
-    AWS_PERSONALIZE_API AutoTrainingConfig();
+    AWS_PERSONALIZE_API AutoTrainingConfig() = default;
     AWS_PERSONALIZE_API AutoTrainingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API AutoTrainingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/customizing-solution-config.html">Creating
      * and configuring a solution</a>.</p>
      */
-    inline const Aws::String& GetSchedulingExpression() const{ return m_schedulingExpression; }
+    inline const Aws::String& GetSchedulingExpression() const { return m_schedulingExpression; }
     inline bool SchedulingExpressionHasBeenSet() const { return m_schedulingExpressionHasBeenSet; }
-    inline void SetSchedulingExpression(const Aws::String& value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression = value; }
-    inline void SetSchedulingExpression(Aws::String&& value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression = std::move(value); }
-    inline void SetSchedulingExpression(const char* value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression.assign(value); }
-    inline AutoTrainingConfig& WithSchedulingExpression(const Aws::String& value) { SetSchedulingExpression(value); return *this;}
-    inline AutoTrainingConfig& WithSchedulingExpression(Aws::String&& value) { SetSchedulingExpression(std::move(value)); return *this;}
-    inline AutoTrainingConfig& WithSchedulingExpression(const char* value) { SetSchedulingExpression(value); return *this;}
+    template<typename SchedulingExpressionT = Aws::String>
+    void SetSchedulingExpression(SchedulingExpressionT&& value) { m_schedulingExpressionHasBeenSet = true; m_schedulingExpression = std::forward<SchedulingExpressionT>(value); }
+    template<typename SchedulingExpressionT = Aws::String>
+    AutoTrainingConfig& WithSchedulingExpression(SchedulingExpressionT&& value) { SetSchedulingExpression(std::forward<SchedulingExpressionT>(value)); return *this;}
     ///@}
   private:
 

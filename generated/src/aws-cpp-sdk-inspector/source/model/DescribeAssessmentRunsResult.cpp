@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAssessmentRunsResult::DescribeAssessmentRunsResult()
-{
-}
-
 DescribeAssessmentRunsResult::DescribeAssessmentRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeAssessmentRunsResult& DescribeAssessmentRunsResult::operator =(const Aws
     {
       m_assessmentRuns.push_back(assessmentRunsJsonList[assessmentRunsIndex].AsObject());
     }
+    m_assessmentRunsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedItems"))
   {
     Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
@@ -45,14 +41,15 @@ DescribeAssessmentRunsResult& DescribeAssessmentRunsResult::operator =(const Aws
     {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();
     }
+    m_failedItemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

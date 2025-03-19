@@ -12,29 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSiteRackPhysicalPropertiesRequest::UpdateSiteRackPhysicalPropertiesRequest() : 
-    m_siteIdHasBeenSet(false),
-    m_powerDrawKva(PowerDrawKva::NOT_SET),
-    m_powerDrawKvaHasBeenSet(false),
-    m_powerPhase(PowerPhase::NOT_SET),
-    m_powerPhaseHasBeenSet(false),
-    m_powerConnector(PowerConnector::NOT_SET),
-    m_powerConnectorHasBeenSet(false),
-    m_powerFeedDrop(PowerFeedDrop::NOT_SET),
-    m_powerFeedDropHasBeenSet(false),
-    m_uplinkGbps(UplinkGbps::NOT_SET),
-    m_uplinkGbpsHasBeenSet(false),
-    m_uplinkCount(UplinkCount::NOT_SET),
-    m_uplinkCountHasBeenSet(false),
-    m_fiberOpticCableType(FiberOpticCableType::NOT_SET),
-    m_fiberOpticCableTypeHasBeenSet(false),
-    m_opticalStandard(OpticalStandard::NOT_SET),
-    m_opticalStandardHasBeenSet(false),
-    m_maximumSupportedWeightLbs(MaximumSupportedWeightLbs::NOT_SET),
-    m_maximumSupportedWeightLbsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSiteRackPhysicalPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

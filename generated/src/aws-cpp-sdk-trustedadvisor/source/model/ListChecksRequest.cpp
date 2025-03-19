@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListChecksRequest::ListChecksRequest() : 
-    m_awsServiceHasBeenSet(false),
-    m_language(RecommendationLanguage::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pillar(RecommendationPillar::NOT_SET),
-    m_pillarHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 Aws::String ListChecksRequest::SerializePayload() const
 {
   return {};

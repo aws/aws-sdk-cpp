@@ -31,7 +31,7 @@ namespace Model
   class VirtualGatewayLogging
   {
   public:
-    AWS_APPMESH_API VirtualGatewayLogging();
+    AWS_APPMESH_API VirtualGatewayLogging() = default;
     AWS_APPMESH_API VirtualGatewayLogging(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayLogging& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The access log configuration.</p>
      */
-    inline const VirtualGatewayAccessLog& GetAccessLog() const{ return m_accessLog; }
+    inline const VirtualGatewayAccessLog& GetAccessLog() const { return m_accessLog; }
     inline bool AccessLogHasBeenSet() const { return m_accessLogHasBeenSet; }
-    inline void SetAccessLog(const VirtualGatewayAccessLog& value) { m_accessLogHasBeenSet = true; m_accessLog = value; }
-    inline void SetAccessLog(VirtualGatewayAccessLog&& value) { m_accessLogHasBeenSet = true; m_accessLog = std::move(value); }
-    inline VirtualGatewayLogging& WithAccessLog(const VirtualGatewayAccessLog& value) { SetAccessLog(value); return *this;}
-    inline VirtualGatewayLogging& WithAccessLog(VirtualGatewayAccessLog&& value) { SetAccessLog(std::move(value)); return *this;}
+    template<typename AccessLogT = VirtualGatewayAccessLog>
+    void SetAccessLog(AccessLogT&& value) { m_accessLogHasBeenSet = true; m_accessLog = std::forward<AccessLogT>(value); }
+    template<typename AccessLogT = VirtualGatewayAccessLog>
+    VirtualGatewayLogging& WithAccessLog(AccessLogT&& value) { SetAccessLog(std::forward<AccessLogT>(value)); return *this;}
     ///@}
   private:
 

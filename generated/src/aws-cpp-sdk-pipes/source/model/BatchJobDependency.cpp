@@ -18,15 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-BatchJobDependency::BatchJobDependency() : 
-    m_jobIdHasBeenSet(false),
-    m_type(BatchJobDependencyType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 BatchJobDependency::BatchJobDependency(JsonView jsonValue)
-  : BatchJobDependency()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchJobDependency& BatchJobDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BatchJobDependencyTypeMapper::GetBatchJobDependencyTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

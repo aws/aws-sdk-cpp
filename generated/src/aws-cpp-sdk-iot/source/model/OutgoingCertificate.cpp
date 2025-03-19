@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-OutgoingCertificate::OutgoingCertificate() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_transferredToHasBeenSet(false),
-    m_transferDateHasBeenSet(false),
-    m_transferMessageHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 OutgoingCertificate::OutgoingCertificate(JsonView jsonValue)
-  : OutgoingCertificate()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ OutgoingCertificate& OutgoingCertificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateId"))
   {
     m_certificateId = jsonValue.GetString("certificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferredTo"))
   {
     m_transferredTo = jsonValue.GetString("transferredTo");
-
     m_transferredToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferDate"))
   {
     m_transferDate = jsonValue.GetDouble("transferDate");
-
     m_transferDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferMessage"))
   {
     m_transferMessage = jsonValue.GetString("transferMessage");
-
     m_transferMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

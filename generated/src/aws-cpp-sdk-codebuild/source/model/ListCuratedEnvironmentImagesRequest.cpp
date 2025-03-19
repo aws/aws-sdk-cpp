@@ -12,10 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCuratedEnvironmentImagesRequest::ListCuratedEnvironmentImagesRequest()
-{
-}
-
 Aws::String ListCuratedEnvironmentImagesRequest::SerializePayload() const
 {
   return "{}";

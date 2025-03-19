@@ -29,7 +29,7 @@ namespace Model
   class DescribeQueriesResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeQueriesResult();
+    AWS_CLOUDWATCHLOGS_API DescribeQueriesResult() = default;
     AWS_CLOUDWATCHLOGS_API DescribeQueriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API DescribeQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
     /**
      * <p>The list of queries that match the request.</p>
      */
-    inline const Aws::Vector<QueryInfo>& GetQueries() const{ return m_queries; }
-    inline void SetQueries(const Aws::Vector<QueryInfo>& value) { m_queries = value; }
-    inline void SetQueries(Aws::Vector<QueryInfo>&& value) { m_queries = std::move(value); }
-    inline DescribeQueriesResult& WithQueries(const Aws::Vector<QueryInfo>& value) { SetQueries(value); return *this;}
-    inline DescribeQueriesResult& WithQueries(Aws::Vector<QueryInfo>&& value) { SetQueries(std::move(value)); return *this;}
-    inline DescribeQueriesResult& AddQueries(const QueryInfo& value) { m_queries.push_back(value); return *this; }
-    inline DescribeQueriesResult& AddQueries(QueryInfo&& value) { m_queries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueryInfo>& GetQueries() const { return m_queries; }
+    template<typename QueriesT = Aws::Vector<QueryInfo>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<QueryInfo>>
+    DescribeQueriesResult& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = QueryInfo>
+    DescribeQueriesResult& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeQueriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeQueriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeQueriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeQueriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeQueriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeQueriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeQueriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeQueriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QueryInfo> m_queries;
+    bool m_queriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

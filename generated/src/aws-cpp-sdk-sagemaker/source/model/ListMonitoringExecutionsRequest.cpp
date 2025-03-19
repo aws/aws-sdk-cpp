@@ -12,30 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMonitoringExecutionsRequest::ListMonitoringExecutionsRequest() : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_sortBy(MonitoringExecutionSortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_scheduledTimeBeforeHasBeenSet(false),
-    m_scheduledTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_lastModifiedTimeBeforeHasBeenSet(false),
-    m_lastModifiedTimeAfterHasBeenSet(false),
-    m_statusEquals(ExecutionStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_monitoringJobDefinitionNameHasBeenSet(false),
-    m_monitoringTypeEquals(MonitoringType::NOT_SET),
-    m_monitoringTypeEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListMonitoringExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

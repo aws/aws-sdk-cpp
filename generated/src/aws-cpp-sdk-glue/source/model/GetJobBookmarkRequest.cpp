@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobBookmarkRequest::GetJobBookmarkRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String GetJobBookmarkRequest::SerializePayload() const
 {
   JsonValue payload;

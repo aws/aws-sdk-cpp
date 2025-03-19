@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTrafficMirrorTargetRequest::CreateTrafficMirrorTargetRequest() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkLoadBalancerArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_gatewayLoadBalancerEndpointIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrafficMirrorTargetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

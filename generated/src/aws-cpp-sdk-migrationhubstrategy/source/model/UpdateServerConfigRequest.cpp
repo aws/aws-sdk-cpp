@@ -12,12 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServerConfigRequest::UpdateServerConfigRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_strategyOptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServerConfigRequest::SerializePayload() const
 {
   JsonValue payload;

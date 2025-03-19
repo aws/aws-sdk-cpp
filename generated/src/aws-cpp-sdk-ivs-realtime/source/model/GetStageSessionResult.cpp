@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetStageSessionResult::GetStageSessionResult()
-{
-}
-
 GetStageSessionResult::GetStageSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetStageSessionResult& GetStageSessionResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("stageSession"))
   {
     m_stageSession = jsonValue.GetObject("stageSession");
-
+    m_stageSessionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -29,7 +29,7 @@ namespace Model
   class ValidateFlowDefinitionResult
   {
   public:
-    AWS_BEDROCKAGENT_API ValidateFlowDefinitionResult();
+    AWS_BEDROCKAGENT_API ValidateFlowDefinitionResult() = default;
     AWS_BEDROCKAGENT_API ValidateFlowDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API ValidateFlowDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>Contains an array of objects, each of which contains an error identified by
      * validation.</p>
      */
-    inline const Aws::Vector<FlowValidation>& GetValidations() const{ return m_validations; }
-    inline void SetValidations(const Aws::Vector<FlowValidation>& value) { m_validations = value; }
-    inline void SetValidations(Aws::Vector<FlowValidation>&& value) { m_validations = std::move(value); }
-    inline ValidateFlowDefinitionResult& WithValidations(const Aws::Vector<FlowValidation>& value) { SetValidations(value); return *this;}
-    inline ValidateFlowDefinitionResult& WithValidations(Aws::Vector<FlowValidation>&& value) { SetValidations(std::move(value)); return *this;}
-    inline ValidateFlowDefinitionResult& AddValidations(const FlowValidation& value) { m_validations.push_back(value); return *this; }
-    inline ValidateFlowDefinitionResult& AddValidations(FlowValidation&& value) { m_validations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FlowValidation>& GetValidations() const { return m_validations; }
+    template<typename ValidationsT = Aws::Vector<FlowValidation>>
+    void SetValidations(ValidationsT&& value) { m_validationsHasBeenSet = true; m_validations = std::forward<ValidationsT>(value); }
+    template<typename ValidationsT = Aws::Vector<FlowValidation>>
+    ValidateFlowDefinitionResult& WithValidations(ValidationsT&& value) { SetValidations(std::forward<ValidationsT>(value)); return *this;}
+    template<typename ValidationsT = FlowValidation>
+    ValidateFlowDefinitionResult& AddValidations(ValidationsT&& value) { m_validationsHasBeenSet = true; m_validations.emplace_back(std::forward<ValidationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ValidateFlowDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ValidateFlowDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ValidateFlowDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ValidateFlowDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FlowValidation> m_validations;
+    bool m_validationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

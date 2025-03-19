@@ -18,14 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-OfferingPromotion::OfferingPromotion() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 OfferingPromotion::OfferingPromotion(JsonView jsonValue)
-  : OfferingPromotion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OfferingPromotion& OfferingPromotion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

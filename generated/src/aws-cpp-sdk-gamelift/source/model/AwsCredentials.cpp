@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-AwsCredentials::AwsCredentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
-{
-}
-
 AwsCredentials::AwsCredentials(JsonView jsonValue)
-  : AwsCredentials()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsCredentials& AwsCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("SecretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionToken"))
   {
     m_sessionToken = jsonValue.GetString("SessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

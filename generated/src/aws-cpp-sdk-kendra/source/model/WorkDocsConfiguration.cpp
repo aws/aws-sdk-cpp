@@ -18,20 +18,7 @@ namespace kendra
 namespace Model
 {
 
-WorkDocsConfiguration::WorkDocsConfiguration() : 
-    m_organizationIdHasBeenSet(false),
-    m_crawlComments(false),
-    m_crawlCommentsHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
-{
-}
-
 WorkDocsConfiguration::WorkDocsConfiguration(JsonView jsonValue)
-  : WorkDocsConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ WorkDocsConfiguration& WorkDocsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OrganizationId"))
   {
     m_organizationId = jsonValue.GetString("OrganizationId");
-
     m_organizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlComments"))
   {
     m_crawlComments = jsonValue.GetBool("CrawlComments");
-
     m_crawlCommentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseChangeLog"))
   {
     m_useChangeLog = jsonValue.GetBool("UseChangeLog");
-
     m_useChangeLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -68,7 +49,6 @@ WorkDocsConfiguration& WorkDocsConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -78,7 +58,6 @@ WorkDocsConfiguration& WorkDocsConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldMappings"))
   {
     Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
@@ -88,7 +67,6 @@ WorkDocsConfiguration& WorkDocsConfiguration::operator =(JsonView jsonValue)
     }
     m_fieldMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

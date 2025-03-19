@@ -33,7 +33,7 @@ namespace Model
   class ProviderIdNameSpaceConfiguration
   {
   public:
-    AWS_ENTITYRESOLUTION_API ProviderIdNameSpaceConfiguration();
+    AWS_ENTITYRESOLUTION_API ProviderIdNameSpaceConfiguration() = default;
     AWS_ENTITYRESOLUTION_API ProviderIdNameSpaceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API ProviderIdNameSpaceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,36 @@ namespace Model
     /**
      * <p>The description of the ID namespace.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ProviderIdNameSpaceConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ProviderIdNameSpaceConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ProviderIdNameSpaceConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ProviderIdNameSpaceConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configurations required for the source ID namespace.</p>
      */
-    inline Aws::Utils::DocumentView GetProviderSourceConfigurationDefinition() const{ return m_providerSourceConfigurationDefinition; }
+    inline Aws::Utils::DocumentView GetProviderSourceConfigurationDefinition() const { return m_providerSourceConfigurationDefinition; }
     inline bool ProviderSourceConfigurationDefinitionHasBeenSet() const { return m_providerSourceConfigurationDefinitionHasBeenSet; }
-    inline void SetProviderSourceConfigurationDefinition(const Aws::Utils::Document& value) { m_providerSourceConfigurationDefinitionHasBeenSet = true; m_providerSourceConfigurationDefinition = value; }
-    inline void SetProviderSourceConfigurationDefinition(Aws::Utils::Document&& value) { m_providerSourceConfigurationDefinitionHasBeenSet = true; m_providerSourceConfigurationDefinition = std::move(value); }
-    inline ProviderIdNameSpaceConfiguration& WithProviderSourceConfigurationDefinition(const Aws::Utils::Document& value) { SetProviderSourceConfigurationDefinition(value); return *this;}
-    inline ProviderIdNameSpaceConfiguration& WithProviderSourceConfigurationDefinition(Aws::Utils::Document&& value) { SetProviderSourceConfigurationDefinition(std::move(value)); return *this;}
+    template<typename ProviderSourceConfigurationDefinitionT = Aws::Utils::Document>
+    void SetProviderSourceConfigurationDefinition(ProviderSourceConfigurationDefinitionT&& value) { m_providerSourceConfigurationDefinitionHasBeenSet = true; m_providerSourceConfigurationDefinition = std::forward<ProviderSourceConfigurationDefinitionT>(value); }
+    template<typename ProviderSourceConfigurationDefinitionT = Aws::Utils::Document>
+    ProviderIdNameSpaceConfiguration& WithProviderSourceConfigurationDefinition(ProviderSourceConfigurationDefinitionT&& value) { SetProviderSourceConfigurationDefinition(std::forward<ProviderSourceConfigurationDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configurations required for the target ID namespace.</p>
      */
-    inline Aws::Utils::DocumentView GetProviderTargetConfigurationDefinition() const{ return m_providerTargetConfigurationDefinition; }
+    inline Aws::Utils::DocumentView GetProviderTargetConfigurationDefinition() const { return m_providerTargetConfigurationDefinition; }
     inline bool ProviderTargetConfigurationDefinitionHasBeenSet() const { return m_providerTargetConfigurationDefinitionHasBeenSet; }
-    inline void SetProviderTargetConfigurationDefinition(const Aws::Utils::Document& value) { m_providerTargetConfigurationDefinitionHasBeenSet = true; m_providerTargetConfigurationDefinition = value; }
-    inline void SetProviderTargetConfigurationDefinition(Aws::Utils::Document&& value) { m_providerTargetConfigurationDefinitionHasBeenSet = true; m_providerTargetConfigurationDefinition = std::move(value); }
-    inline ProviderIdNameSpaceConfiguration& WithProviderTargetConfigurationDefinition(const Aws::Utils::Document& value) { SetProviderTargetConfigurationDefinition(value); return *this;}
-    inline ProviderIdNameSpaceConfiguration& WithProviderTargetConfigurationDefinition(Aws::Utils::Document&& value) { SetProviderTargetConfigurationDefinition(std::move(value)); return *this;}
+    template<typename ProviderTargetConfigurationDefinitionT = Aws::Utils::Document>
+    void SetProviderTargetConfigurationDefinition(ProviderTargetConfigurationDefinitionT&& value) { m_providerTargetConfigurationDefinitionHasBeenSet = true; m_providerTargetConfigurationDefinition = std::forward<ProviderTargetConfigurationDefinitionT>(value); }
+    template<typename ProviderTargetConfigurationDefinitionT = Aws::Utils::Document>
+    ProviderIdNameSpaceConfiguration& WithProviderTargetConfigurationDefinition(ProviderTargetConfigurationDefinitionT&& value) { SetProviderTargetConfigurationDefinition(std::forward<ProviderTargetConfigurationDefinitionT>(value)); return *this;}
     ///@}
   private:
 

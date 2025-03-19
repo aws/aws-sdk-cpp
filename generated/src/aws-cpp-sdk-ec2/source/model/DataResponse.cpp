@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DataResponse::DataResponse() : 
-    m_idHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_metric(MetricType::NOT_SET),
-    m_metricHasBeenSet(false),
-    m_statistic(StatisticType::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_period(PeriodType::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_metricPointsHasBeenSet(false)
-{
-}
-
 DataResponse::DataResponse(const XmlNode& xmlNode)
-  : DataResponse()
 {
   *this = xmlNode;
 }
@@ -67,25 +52,26 @@ DataResponse& DataResponse::operator =(const XmlNode& xmlNode)
     XmlNode metricNode = resultNode.FirstChild("metric");
     if(!metricNode.IsNull())
     {
-      m_metric = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText()).c_str()).c_str());
+      m_metric = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText()).c_str()));
       m_metricHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = StatisticTypeMapper::GetStatisticTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = StatisticTypeMapper::GetStatisticTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("period");
     if(!periodNode.IsNull())
     {
-      m_period = PeriodTypeMapper::GetPeriodTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+      m_period = PeriodTypeMapper::GetPeriodTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()));
       m_periodHasBeenSet = true;
     }
     XmlNode metricPointsNode = resultNode.FirstChild("metricPointSet");
     if(!metricPointsNode.IsNull())
     {
       XmlNode metricPointsMember = metricPointsNode.FirstChild("item");
+      m_metricPointsHasBeenSet = !metricPointsMember.IsNull();
       while(!metricPointsMember.IsNull())
       {
         m_metricPoints.push_back(metricPointsMember);

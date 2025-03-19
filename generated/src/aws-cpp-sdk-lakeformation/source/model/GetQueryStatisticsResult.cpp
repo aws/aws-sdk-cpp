@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryStatisticsResult::GetQueryStatisticsResult()
-{
-}
-
 GetQueryStatisticsResult::GetQueryStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetQueryStatisticsResult& GetQueryStatisticsResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ExecutionStatistics"))
   {
     m_executionStatistics = jsonValue.GetObject("ExecutionStatistics");
-
+    m_executionStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlanningStatistics"))
   {
     m_planningStatistics = jsonValue.GetObject("PlanningStatistics");
-
+    m_planningStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuerySubmissionTime"))
   {
     m_querySubmissionTime = jsonValue.GetString("QuerySubmissionTime");
-
+    m_querySubmissionTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

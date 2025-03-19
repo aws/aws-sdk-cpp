@@ -18,23 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DestinationDescription::DestinationDescription() : 
-    m_destinationIdHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false),
-    m_extendedS3DestinationDescriptionHasBeenSet(false),
-    m_redshiftDestinationDescriptionHasBeenSet(false),
-    m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_amazonopensearchserviceDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false),
-    m_httpEndpointDestinationDescriptionHasBeenSet(false),
-    m_snowflakeDestinationDescriptionHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet(false),
-    m_icebergDestinationDescriptionHasBeenSet(false)
-{
-}
-
 DestinationDescription::DestinationDescription(JsonView jsonValue)
-  : DestinationDescription()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationId"))
   {
     m_destinationId = jsonValue.GetString("DestinationId");
-
     m_destinationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DestinationDescription"))
   {
     m_s3DestinationDescription = jsonValue.GetObject("S3DestinationDescription");
-
     m_s3DestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtendedS3DestinationDescription"))
   {
     m_extendedS3DestinationDescription = jsonValue.GetObject("ExtendedS3DestinationDescription");
-
     m_extendedS3DestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDestinationDescription"))
   {
     m_redshiftDestinationDescription = jsonValue.GetObject("RedshiftDestinationDescription");
-
     m_redshiftDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticsearchDestinationDescription"))
   {
     m_elasticsearchDestinationDescription = jsonValue.GetObject("ElasticsearchDestinationDescription");
-
     m_elasticsearchDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonopensearchserviceDestinationDescription"))
   {
     m_amazonopensearchserviceDestinationDescription = jsonValue.GetObject("AmazonopensearchserviceDestinationDescription");
-
     m_amazonopensearchserviceDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SplunkDestinationDescription"))
   {
     m_splunkDestinationDescription = jsonValue.GetObject("SplunkDestinationDescription");
-
     m_splunkDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpEndpointDestinationDescription"))
   {
     m_httpEndpointDestinationDescription = jsonValue.GetObject("HttpEndpointDestinationDescription");
-
     m_httpEndpointDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowflakeDestinationDescription"))
   {
     m_snowflakeDestinationDescription = jsonValue.GetObject("SnowflakeDestinationDescription");
-
     m_snowflakeDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonOpenSearchServerlessDestinationDescription"))
   {
     m_amazonOpenSearchServerlessDestinationDescription = jsonValue.GetObject("AmazonOpenSearchServerlessDestinationDescription");
-
     m_amazonOpenSearchServerlessDestinationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IcebergDestinationDescription"))
   {
     m_icebergDestinationDescription = jsonValue.GetObject("IcebergDestinationDescription");
-
     m_icebergDestinationDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

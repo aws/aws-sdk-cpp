@@ -21,7 +21,7 @@ namespace Model
   class DeleteCaseRuleRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API DeleteCaseRuleRequest();
+    AWS_CONNECTCASES_API DeleteCaseRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>Unique identifier of a case rule.</p>
      */
-    inline const Aws::String& GetCaseRuleId() const{ return m_caseRuleId; }
+    inline const Aws::String& GetCaseRuleId() const { return m_caseRuleId; }
     inline bool CaseRuleIdHasBeenSet() const { return m_caseRuleIdHasBeenSet; }
-    inline void SetCaseRuleId(const Aws::String& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = value; }
-    inline void SetCaseRuleId(Aws::String&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::move(value); }
-    inline void SetCaseRuleId(const char* value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId.assign(value); }
-    inline DeleteCaseRuleRequest& WithCaseRuleId(const Aws::String& value) { SetCaseRuleId(value); return *this;}
-    inline DeleteCaseRuleRequest& WithCaseRuleId(Aws::String&& value) { SetCaseRuleId(std::move(value)); return *this;}
-    inline DeleteCaseRuleRequest& WithCaseRuleId(const char* value) { SetCaseRuleId(value); return *this;}
+    template<typename CaseRuleIdT = Aws::String>
+    void SetCaseRuleId(CaseRuleIdT&& value) { m_caseRuleIdHasBeenSet = true; m_caseRuleId = std::forward<CaseRuleIdT>(value); }
+    template<typename CaseRuleIdT = Aws::String>
+    DeleteCaseRuleRequest& WithCaseRuleId(CaseRuleIdT&& value) { SetCaseRuleId(std::forward<CaseRuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique identifier of a Cases domain.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline DeleteCaseRuleRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline DeleteCaseRuleRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline DeleteCaseRuleRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    DeleteCaseRuleRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
   private:
 

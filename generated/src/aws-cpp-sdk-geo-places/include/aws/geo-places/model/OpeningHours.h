@@ -34,7 +34,7 @@ namespace Model
   class OpeningHours
   {
   public:
-    AWS_GEOPLACES_API OpeningHours();
+    AWS_GEOPLACES_API OpeningHours() = default;
     AWS_GEOPLACES_API OpeningHours(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API OpeningHours& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,22 +46,21 @@ namespace Model
      * result and in most cases represents how the result uniquely formats their
      * opening hours. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDisplay() const{ return m_display; }
+    inline const Aws::Vector<Aws::String>& GetDisplay() const { return m_display; }
     inline bool DisplayHasBeenSet() const { return m_displayHasBeenSet; }
-    inline void SetDisplay(const Aws::Vector<Aws::String>& value) { m_displayHasBeenSet = true; m_display = value; }
-    inline void SetDisplay(Aws::Vector<Aws::String>&& value) { m_displayHasBeenSet = true; m_display = std::move(value); }
-    inline OpeningHours& WithDisplay(const Aws::Vector<Aws::String>& value) { SetDisplay(value); return *this;}
-    inline OpeningHours& WithDisplay(Aws::Vector<Aws::String>&& value) { SetDisplay(std::move(value)); return *this;}
-    inline OpeningHours& AddDisplay(const Aws::String& value) { m_displayHasBeenSet = true; m_display.push_back(value); return *this; }
-    inline OpeningHours& AddDisplay(Aws::String&& value) { m_displayHasBeenSet = true; m_display.push_back(std::move(value)); return *this; }
-    inline OpeningHours& AddDisplay(const char* value) { m_displayHasBeenSet = true; m_display.push_back(value); return *this; }
+    template<typename DisplayT = Aws::Vector<Aws::String>>
+    void SetDisplay(DisplayT&& value) { m_displayHasBeenSet = true; m_display = std::forward<DisplayT>(value); }
+    template<typename DisplayT = Aws::Vector<Aws::String>>
+    OpeningHours& WithDisplay(DisplayT&& value) { SetDisplay(std::forward<DisplayT>(value)); return *this;}
+    template<typename DisplayT = Aws::String>
+    OpeningHours& AddDisplay(DisplayT&& value) { m_displayHasBeenSet = true; m_display.emplace_back(std::forward<DisplayT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Boolean which indicates if the result/place is currently open. </p>
      */
-    inline bool GetOpenNow() const{ return m_openNow; }
+    inline bool GetOpenNow() const { return m_openNow; }
     inline bool OpenNowHasBeenSet() const { return m_openNowHasBeenSet; }
     inline void SetOpenNow(bool value) { m_openNowHasBeenSet = true; m_openNow = value; }
     inline OpeningHours& WithOpenNow(bool value) { SetOpenNow(value); return *this;}
@@ -71,35 +70,35 @@ namespace Model
     /**
      * <p>Components of the opening hours object.</p>
      */
-    inline const Aws::Vector<OpeningHoursComponents>& GetComponents() const{ return m_components; }
+    inline const Aws::Vector<OpeningHoursComponents>& GetComponents() const { return m_components; }
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
-    inline void SetComponents(const Aws::Vector<OpeningHoursComponents>& value) { m_componentsHasBeenSet = true; m_components = value; }
-    inline void SetComponents(Aws::Vector<OpeningHoursComponents>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
-    inline OpeningHours& WithComponents(const Aws::Vector<OpeningHoursComponents>& value) { SetComponents(value); return *this;}
-    inline OpeningHours& WithComponents(Aws::Vector<OpeningHoursComponents>&& value) { SetComponents(std::move(value)); return *this;}
-    inline OpeningHours& AddComponents(const OpeningHoursComponents& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
-    inline OpeningHours& AddComponents(OpeningHoursComponents&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
+    template<typename ComponentsT = Aws::Vector<OpeningHoursComponents>>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = Aws::Vector<OpeningHoursComponents>>
+    OpeningHours& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
+    template<typename ComponentsT = OpeningHoursComponents>
+    OpeningHours& AddComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components.emplace_back(std::forward<ComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Categories of results that results must belong too.</p>
      */
-    inline const Aws::Vector<Category>& GetCategories() const{ return m_categories; }
+    inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-    inline void SetCategories(const Aws::Vector<Category>& value) { m_categoriesHasBeenSet = true; m_categories = value; }
-    inline void SetCategories(Aws::Vector<Category>&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
-    inline OpeningHours& WithCategories(const Aws::Vector<Category>& value) { SetCategories(value); return *this;}
-    inline OpeningHours& WithCategories(Aws::Vector<Category>&& value) { SetCategories(std::move(value)); return *this;}
-    inline OpeningHours& AddCategories(const Category& value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
-    inline OpeningHours& AddCategories(Category&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    OpeningHours& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
+    template<typename CategoriesT = Category>
+    OpeningHours& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_display;
     bool m_displayHasBeenSet = false;
 
-    bool m_openNow;
+    bool m_openNow{false};
     bool m_openNowHasBeenSet = false;
 
     Aws::Vector<OpeningHoursComponents> m_components;

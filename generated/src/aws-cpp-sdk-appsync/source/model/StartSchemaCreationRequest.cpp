@@ -13,12 +13,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSchemaCreationRequest::StartSchemaCreationRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_definitionHasBeenSet(false)
-{
-}
-
 Aws::String StartSchemaCreationRequest::SerializePayload() const
 {
   JsonValue payload;

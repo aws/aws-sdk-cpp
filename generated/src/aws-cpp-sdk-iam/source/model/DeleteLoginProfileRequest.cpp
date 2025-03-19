@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteLoginProfileRequest::DeleteLoginProfileRequest() : 
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoginProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

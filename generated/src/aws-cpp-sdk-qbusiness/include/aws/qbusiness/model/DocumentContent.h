@@ -32,7 +32,7 @@ namespace Model
   class DocumentContent
   {
   public:
-    AWS_QBUSINESS_API DocumentContent();
+    AWS_QBUSINESS_API DocumentContent() = default;
     AWS_QBUSINESS_API DocumentContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,28 @@ namespace Model
      * Business APIs. If you are calling the Amazon Q Business endpoint directly using
      * REST, you must base64 encode the contents before sending.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBlob() const{ return m_blob; }
+    inline const Aws::Utils::ByteBuffer& GetBlob() const { return m_blob; }
     inline bool BlobHasBeenSet() const { return m_blobHasBeenSet; }
-    inline void SetBlob(const Aws::Utils::ByteBuffer& value) { m_blobHasBeenSet = true; m_blob = value; }
-    inline void SetBlob(Aws::Utils::ByteBuffer&& value) { m_blobHasBeenSet = true; m_blob = std::move(value); }
-    inline DocumentContent& WithBlob(const Aws::Utils::ByteBuffer& value) { SetBlob(value); return *this;}
-    inline DocumentContent& WithBlob(Aws::Utils::ByteBuffer&& value) { SetBlob(std::move(value)); return *this;}
+    template<typename BlobT = Aws::Utils::ByteBuffer>
+    void SetBlob(BlobT&& value) { m_blobHasBeenSet = true; m_blob = std::forward<BlobT>(value); }
+    template<typename BlobT = Aws::Utils::ByteBuffer>
+    DocumentContent& WithBlob(BlobT&& value) { SetBlob(std::forward<BlobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the document in an Amazon S3 bucket.</p>
      */
-    inline const S3& GetS3() const{ return m_s3; }
+    inline const S3& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline DocumentContent& WithS3(const S3& value) { SetS3(value); return *this;}
-    inline DocumentContent& WithS3(S3&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3>
+    DocumentContent& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_blob;
+    Aws::Utils::ByteBuffer m_blob{};
     bool m_blobHasBeenSet = false;
 
     S3 m_s3;

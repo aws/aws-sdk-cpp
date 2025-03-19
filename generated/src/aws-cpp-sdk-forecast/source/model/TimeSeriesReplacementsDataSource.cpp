@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-TimeSeriesReplacementsDataSource::TimeSeriesReplacementsDataSource() : 
-    m_s3ConfigHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false)
-{
-}
-
 TimeSeriesReplacementsDataSource::TimeSeriesReplacementsDataSource(JsonView jsonValue)
-  : TimeSeriesReplacementsDataSource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TimeSeriesReplacementsDataSource& TimeSeriesReplacementsDataSource::operator =(J
   if(jsonValue.ValueExists("S3Config"))
   {
     m_s3Config = jsonValue.GetObject("S3Config");
-
     m_s3ConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetObject("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestampFormat"))
   {
     m_timestampFormat = jsonValue.GetString("TimestampFormat");
-
     m_timestampFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRuleRequest::DeleteRuleRequest() : 
-    m_ruleHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRuleRequest::SerializePayload() const
 {
   JsonValue payload;

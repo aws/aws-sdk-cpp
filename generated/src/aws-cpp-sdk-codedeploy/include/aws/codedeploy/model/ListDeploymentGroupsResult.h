@@ -34,7 +34,7 @@ namespace Model
   class ListDeploymentGroupsResult
   {
   public:
-    AWS_CODEDEPLOY_API ListDeploymentGroupsResult();
+    AWS_CODEDEPLOY_API ListDeploymentGroupsResult() = default;
     AWS_CODEDEPLOY_API ListDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API ListDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,27 +43,24 @@ namespace Model
     /**
      * <p>The application name.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
-    inline ListDeploymentGroupsResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline ListDeploymentGroupsResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline ListDeploymentGroupsResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    ListDeploymentGroupsResult& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of deployment group names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeploymentGroups() const{ return m_deploymentGroups; }
-    inline void SetDeploymentGroups(const Aws::Vector<Aws::String>& value) { m_deploymentGroups = value; }
-    inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroups = std::move(value); }
-    inline ListDeploymentGroupsResult& WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
-    inline ListDeploymentGroupsResult& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(std::move(value)); return *this;}
-    inline ListDeploymentGroupsResult& AddDeploymentGroups(const Aws::String& value) { m_deploymentGroups.push_back(value); return *this; }
-    inline ListDeploymentGroupsResult& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroups.push_back(std::move(value)); return *this; }
-    inline ListDeploymentGroupsResult& AddDeploymentGroups(const char* value) { m_deploymentGroups.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDeploymentGroups() const { return m_deploymentGroups; }
+    template<typename DeploymentGroupsT = Aws::Vector<Aws::String>>
+    void SetDeploymentGroups(DeploymentGroupsT&& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups = std::forward<DeploymentGroupsT>(value); }
+    template<typename DeploymentGroupsT = Aws::Vector<Aws::String>>
+    ListDeploymentGroupsResult& WithDeploymentGroups(DeploymentGroupsT&& value) { SetDeploymentGroups(std::forward<DeploymentGroupsT>(value)); return *this;}
+    template<typename DeploymentGroupsT = Aws::String>
+    ListDeploymentGroupsResult& AddDeploymentGroups(DeploymentGroupsT&& value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.emplace_back(std::forward<DeploymentGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,34 +69,34 @@ namespace Model
      * It can be used in a subsequent list deployment groups call to return the next
      * set of deployment groups in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDeploymentGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDeploymentGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDeploymentGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDeploymentGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDeploymentGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDeploymentGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDeploymentGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDeploymentGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentGroups;
+    bool m_deploymentGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

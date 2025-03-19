@@ -28,35 +28,35 @@ namespace Model
   class DeleteApnsVoipChannelResult
   {
   public:
-    AWS_PINPOINT_API DeleteApnsVoipChannelResult();
+    AWS_PINPOINT_API DeleteApnsVoipChannelResult() = default;
     AWS_PINPOINT_API DeleteApnsVoipChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API DeleteApnsVoipChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const APNSVoipChannelResponse& GetAPNSVoipChannelResponse() const{ return m_aPNSVoipChannelResponse; }
-    inline void SetAPNSVoipChannelResponse(const APNSVoipChannelResponse& value) { m_aPNSVoipChannelResponse = value; }
-    inline void SetAPNSVoipChannelResponse(APNSVoipChannelResponse&& value) { m_aPNSVoipChannelResponse = std::move(value); }
-    inline DeleteApnsVoipChannelResult& WithAPNSVoipChannelResponse(const APNSVoipChannelResponse& value) { SetAPNSVoipChannelResponse(value); return *this;}
-    inline DeleteApnsVoipChannelResult& WithAPNSVoipChannelResponse(APNSVoipChannelResponse&& value) { SetAPNSVoipChannelResponse(std::move(value)); return *this;}
+    inline const APNSVoipChannelResponse& GetAPNSVoipChannelResponse() const { return m_aPNSVoipChannelResponse; }
+    template<typename APNSVoipChannelResponseT = APNSVoipChannelResponse>
+    void SetAPNSVoipChannelResponse(APNSVoipChannelResponseT&& value) { m_aPNSVoipChannelResponseHasBeenSet = true; m_aPNSVoipChannelResponse = std::forward<APNSVoipChannelResponseT>(value); }
+    template<typename APNSVoipChannelResponseT = APNSVoipChannelResponse>
+    DeleteApnsVoipChannelResult& WithAPNSVoipChannelResponse(APNSVoipChannelResponseT&& value) { SetAPNSVoipChannelResponse(std::forward<APNSVoipChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteApnsVoipChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteApnsVoipChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteApnsVoipChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteApnsVoipChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     APNSVoipChannelResponse m_aPNSVoipChannelResponse;
+    bool m_aPNSVoipChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

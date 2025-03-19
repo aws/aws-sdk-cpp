@@ -21,7 +21,7 @@ namespace Model
   class EnableImageDeregistrationProtectionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API EnableImageDeregistrationProtectionRequest();
+    AWS_EC2_API EnableImageDeregistrationProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline EnableImageDeregistrationProtectionRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline EnableImageDeregistrationProtectionRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline EnableImageDeregistrationProtectionRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    EnableImageDeregistrationProtectionRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * <p>If <code>true</code>, enforces deregistration protection for 24 hours after
      * deregistration protection is disabled.</p>
      */
-    inline bool GetWithCooldown() const{ return m_withCooldown; }
+    inline bool GetWithCooldown() const { return m_withCooldown; }
     inline bool WithCooldownHasBeenSet() const { return m_withCooldownHasBeenSet; }
     inline void SetWithCooldown(bool value) { m_withCooldownHasBeenSet = true; m_withCooldown = value; }
     inline EnableImageDeregistrationProtectionRequest& WithWithCooldown(bool value) { SetWithCooldown(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline EnableImageDeregistrationProtectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -78,10 +76,10 @@ namespace Model
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
 
-    bool m_withCooldown;
+    bool m_withCooldown{false};
     bool m_withCooldownHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

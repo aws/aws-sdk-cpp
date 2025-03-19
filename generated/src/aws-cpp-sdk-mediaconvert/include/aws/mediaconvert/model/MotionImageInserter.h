@@ -39,7 +39,7 @@ namespace Model
   class MotionImageInserter
   {
   public:
-    AWS_MEDIACONVERT_API MotionImageInserter();
+    AWS_MEDIACONVERT_API MotionImageInserter() = default;
     AWS_MEDIACONVERT_API MotionImageInserter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MotionImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
      * at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need
      * to match the frame rate of the underlying video.
      */
-    inline const MotionImageInsertionFramerate& GetFramerate() const{ return m_framerate; }
+    inline const MotionImageInsertionFramerate& GetFramerate() const { return m_framerate; }
     inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
-    inline void SetFramerate(const MotionImageInsertionFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
-    inline void SetFramerate(MotionImageInsertionFramerate&& value) { m_framerateHasBeenSet = true; m_framerate = std::move(value); }
-    inline MotionImageInserter& WithFramerate(const MotionImageInsertionFramerate& value) { SetFramerate(value); return *this;}
-    inline MotionImageInserter& WithFramerate(MotionImageInsertionFramerate&& value) { SetFramerate(std::move(value)); return *this;}
+    template<typename FramerateT = MotionImageInsertionFramerate>
+    void SetFramerate(FramerateT&& value) { m_framerateHasBeenSet = true; m_framerate = std::forward<FramerateT>(value); }
+    template<typename FramerateT = MotionImageInsertionFramerate>
+    MotionImageInserter& WithFramerate(FramerateT&& value) { SetFramerate(std::forward<FramerateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +76,12 @@ namespace Model
      * last image being overlay_9.png. But if the first image is overlay_00.png, there
      * can be 100 images in the sequence.
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline MotionImageInserter& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline MotionImageInserter& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline MotionImageInserter& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    MotionImageInserter& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,10 @@ namespace Model
      * Choose the type of motion graphic asset that you are providing for your overlay.
      * You can choose either a .mov file or a series of .png files.
      */
-    inline const MotionImageInsertionMode& GetInsertionMode() const{ return m_insertionMode; }
+    inline MotionImageInsertionMode GetInsertionMode() const { return m_insertionMode; }
     inline bool InsertionModeHasBeenSet() const { return m_insertionModeHasBeenSet; }
-    inline void SetInsertionMode(const MotionImageInsertionMode& value) { m_insertionModeHasBeenSet = true; m_insertionMode = value; }
-    inline void SetInsertionMode(MotionImageInsertionMode&& value) { m_insertionModeHasBeenSet = true; m_insertionMode = std::move(value); }
-    inline MotionImageInserter& WithInsertionMode(const MotionImageInsertionMode& value) { SetInsertionMode(value); return *this;}
-    inline MotionImageInserter& WithInsertionMode(MotionImageInsertionMode&& value) { SetInsertionMode(std::move(value)); return *this;}
+    inline void SetInsertionMode(MotionImageInsertionMode value) { m_insertionModeHasBeenSet = true; m_insertionMode = value; }
+    inline MotionImageInserter& WithInsertionMode(MotionImageInsertionMode value) { SetInsertionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +103,12 @@ namespace Model
      * frame. Otherwise, the service inserts the overlay at its native resolution and
      * scales the size up or down with any video scaling.
      */
-    inline const MotionImageInsertionOffset& GetOffset() const{ return m_offset; }
+    inline const MotionImageInsertionOffset& GetOffset() const { return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
-    inline void SetOffset(const MotionImageInsertionOffset& value) { m_offsetHasBeenSet = true; m_offset = value; }
-    inline void SetOffset(MotionImageInsertionOffset&& value) { m_offsetHasBeenSet = true; m_offset = std::move(value); }
-    inline MotionImageInserter& WithOffset(const MotionImageInsertionOffset& value) { SetOffset(value); return *this;}
-    inline MotionImageInserter& WithOffset(MotionImageInsertionOffset&& value) { SetOffset(std::move(value)); return *this;}
+    template<typename OffsetT = MotionImageInsertionOffset>
+    void SetOffset(OffsetT&& value) { m_offsetHasBeenSet = true; m_offset = std::forward<OffsetT>(value); }
+    template<typename OffsetT = MotionImageInsertionOffset>
+    MotionImageInserter& WithOffset(OffsetT&& value) { SetOffset(std::forward<OffsetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +116,10 @@ namespace Model
      * Specify whether your motion graphic overlay repeats on a loop or plays only
      * once.
      */
-    inline const MotionImagePlayback& GetPlayback() const{ return m_playback; }
+    inline MotionImagePlayback GetPlayback() const { return m_playback; }
     inline bool PlaybackHasBeenSet() const { return m_playbackHasBeenSet; }
-    inline void SetPlayback(const MotionImagePlayback& value) { m_playbackHasBeenSet = true; m_playback = value; }
-    inline void SetPlayback(MotionImagePlayback&& value) { m_playbackHasBeenSet = true; m_playback = std::move(value); }
-    inline MotionImageInserter& WithPlayback(const MotionImagePlayback& value) { SetPlayback(value); return *this;}
-    inline MotionImageInserter& WithPlayback(MotionImagePlayback&& value) { SetPlayback(std::move(value)); return *this;}
+    inline void SetPlayback(MotionImagePlayback value) { m_playbackHasBeenSet = true; m_playback = value; }
+    inline MotionImageInserter& WithPlayback(MotionImagePlayback value) { SetPlayback(value); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +133,12 @@ namespace Model
      * embedded timecode. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline MotionImageInserter& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline MotionImageInserter& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline MotionImageInserter& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    MotionImageInserter& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,13 +148,13 @@ namespace Model
     Aws::String m_input;
     bool m_inputHasBeenSet = false;
 
-    MotionImageInsertionMode m_insertionMode;
+    MotionImageInsertionMode m_insertionMode{MotionImageInsertionMode::NOT_SET};
     bool m_insertionModeHasBeenSet = false;
 
     MotionImageInsertionOffset m_offset;
     bool m_offsetHasBeenSet = false;
 
-    MotionImagePlayback m_playback;
+    MotionImagePlayback m_playback{MotionImagePlayback::NOT_SET};
     bool m_playbackHasBeenSet = false;
 
     Aws::String m_startTime;

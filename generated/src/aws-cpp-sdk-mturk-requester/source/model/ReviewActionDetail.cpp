@@ -18,21 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-ReviewActionDetail::ReviewActionDetail() : 
-    m_actionIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetTypeHasBeenSet(false),
-    m_status(ReviewActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_completeTimeHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 ReviewActionDetail::ReviewActionDetail(JsonView jsonValue)
-  : ReviewActionDetail()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ReviewActionDetail& ReviewActionDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionId"))
   {
     m_actionId = jsonValue.GetString("ActionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionName"))
   {
     m_actionName = jsonValue.GetString("ActionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetId"))
   {
     m_targetId = jsonValue.GetString("TargetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetType"))
   {
     m_targetType = jsonValue.GetString("TargetType");
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ReviewActionStatusMapper::GetReviewActionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompleteTime"))
   {
     m_completeTime = jsonValue.GetDouble("CompleteTime");
-
     m_completeTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetString("Result");
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

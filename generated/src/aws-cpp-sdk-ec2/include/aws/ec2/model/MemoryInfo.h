@@ -29,7 +29,7 @@ namespace Model
   class MemoryInfo
   {
   public:
-    AWS_EC2_API MemoryInfo();
+    AWS_EC2_API MemoryInfo() = default;
     AWS_EC2_API MemoryInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API MemoryInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The size of the memory, in MiB.</p>
      */
-    inline long long GetSizeInMiB() const{ return m_sizeInMiB; }
+    inline long long GetSizeInMiB() const { return m_sizeInMiB; }
     inline bool SizeInMiBHasBeenSet() const { return m_sizeInMiBHasBeenSet; }
     inline void SetSizeInMiB(long long value) { m_sizeInMiBHasBeenSet = true; m_sizeInMiB = value; }
     inline MemoryInfo& WithSizeInMiB(long long value) { SetSizeInMiB(value); return *this;}
     ///@}
   private:
 
-    long long m_sizeInMiB;
+    long long m_sizeInMiB{0};
     bool m_sizeInMiBHasBeenSet = false;
   };
 

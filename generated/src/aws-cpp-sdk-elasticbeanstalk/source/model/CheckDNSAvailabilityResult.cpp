@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckDNSAvailabilityResult::CheckDNSAvailabilityResult() : 
-    m_available(false)
-{
-}
-
 CheckDNSAvailabilityResult::CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CheckDNSAvailabilityResult()
 {
   *this = result;
 }
@@ -44,17 +38,20 @@ CheckDNSAvailabilityResult& CheckDNSAvailabilityResult::operator =(const Aws::Am
     if(!availableNode.IsNull())
     {
       m_available = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableNode.GetText()).c_str()).c_str());
+      m_availableHasBeenSet = true;
     }
     XmlNode fullyQualifiedCNAMENode = resultNode.FirstChild("FullyQualifiedCNAME");
     if(!fullyQualifiedCNAMENode.IsNull())
     {
       m_fullyQualifiedCNAME = Aws::Utils::Xml::DecodeEscapedXmlText(fullyQualifiedCNAMENode.GetText());
+      m_fullyQualifiedCNAMEHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::CheckDNSAvailabilityResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

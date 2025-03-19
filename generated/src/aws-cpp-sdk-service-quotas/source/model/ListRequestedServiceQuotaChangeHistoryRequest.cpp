@@ -12,18 +12,6 @@ using namespace Aws::ServiceQuotas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRequestedServiceQuotaChangeHistoryRequest::ListRequestedServiceQuotaChangeHistoryRequest() : 
-    m_serviceCodeHasBeenSet(false),
-    m_status(RequestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_quotaRequestedAtLevel(AppliedLevelEnum::NOT_SET),
-    m_quotaRequestedAtLevelHasBeenSet(false)
-{
-}
-
 Aws::String ListRequestedServiceQuotaChangeHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

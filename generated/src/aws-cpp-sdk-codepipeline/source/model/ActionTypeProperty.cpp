@@ -18,22 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionTypeProperty::ActionTypeProperty() : 
-    m_nameHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false),
-    m_key(false),
-    m_keyHasBeenSet(false),
-    m_noEcho(false),
-    m_noEchoHasBeenSet(false),
-    m_queryable(false),
-    m_queryableHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ActionTypeProperty::ActionTypeProperty(JsonView jsonValue)
-  : ActionTypeProperty()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ActionTypeProperty& ActionTypeProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("optional"))
   {
     m_optional = jsonValue.GetBool("optional");
-
     m_optionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetBool("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noEcho"))
   {
     m_noEcho = jsonValue.GetBool("noEcho");
-
     m_noEchoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryable"))
   {
     m_queryable = jsonValue.GetBool("queryable");
-
     m_queryableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

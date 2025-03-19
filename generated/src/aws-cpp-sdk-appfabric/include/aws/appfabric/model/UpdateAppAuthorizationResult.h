@@ -28,7 +28,7 @@ namespace Model
   class UpdateAppAuthorizationResult
   {
   public:
-    AWS_APPFABRIC_API UpdateAppAuthorizationResult();
+    AWS_APPFABRIC_API UpdateAppAuthorizationResult() = default;
     AWS_APPFABRIC_API UpdateAppAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFABRIC_API UpdateAppAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains information about an app authorization.</p>
      */
-    inline const AppAuthorization& GetAppAuthorization() const{ return m_appAuthorization; }
-    inline void SetAppAuthorization(const AppAuthorization& value) { m_appAuthorization = value; }
-    inline void SetAppAuthorization(AppAuthorization&& value) { m_appAuthorization = std::move(value); }
-    inline UpdateAppAuthorizationResult& WithAppAuthorization(const AppAuthorization& value) { SetAppAuthorization(value); return *this;}
-    inline UpdateAppAuthorizationResult& WithAppAuthorization(AppAuthorization&& value) { SetAppAuthorization(std::move(value)); return *this;}
+    inline const AppAuthorization& GetAppAuthorization() const { return m_appAuthorization; }
+    template<typename AppAuthorizationT = AppAuthorization>
+    void SetAppAuthorization(AppAuthorizationT&& value) { m_appAuthorizationHasBeenSet = true; m_appAuthorization = std::forward<AppAuthorizationT>(value); }
+    template<typename AppAuthorizationT = AppAuthorization>
+    UpdateAppAuthorizationResult& WithAppAuthorization(AppAuthorizationT&& value) { SetAppAuthorization(std::forward<AppAuthorizationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAppAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAppAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAppAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAppAuthorizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppAuthorization m_appAuthorization;
+    bool m_appAuthorizationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

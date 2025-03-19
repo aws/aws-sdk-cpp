@@ -12,11 +12,6 @@ using namespace Aws::RedshiftDataAPIService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelStatementRequest::CancelStatementRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String CancelStatementRequest::SerializePayload() const
 {
   JsonValue payload;

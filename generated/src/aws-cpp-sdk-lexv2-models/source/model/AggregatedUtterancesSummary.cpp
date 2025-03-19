@@ -18,21 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AggregatedUtterancesSummary::AggregatedUtterancesSummary() : 
-    m_utteranceHasBeenSet(false),
-    m_hitCount(0),
-    m_hitCountHasBeenSet(false),
-    m_missedCount(0),
-    m_missedCountHasBeenSet(false),
-    m_utteranceFirstRecordedInAggregationDurationHasBeenSet(false),
-    m_utteranceLastRecordedInAggregationDurationHasBeenSet(false),
-    m_containsDataFromDeletedResources(false),
-    m_containsDataFromDeletedResourcesHasBeenSet(false)
-{
-}
-
 AggregatedUtterancesSummary::AggregatedUtterancesSummary(JsonView jsonValue)
-  : AggregatedUtterancesSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AggregatedUtterancesSummary& AggregatedUtterancesSummary::operator =(JsonView js
   if(jsonValue.ValueExists("utterance"))
   {
     m_utterance = jsonValue.GetString("utterance");
-
     m_utteranceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hitCount"))
   {
     m_hitCount = jsonValue.GetInteger("hitCount");
-
     m_hitCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("missedCount"))
   {
     m_missedCount = jsonValue.GetInteger("missedCount");
-
     m_missedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utteranceFirstRecordedInAggregationDuration"))
   {
     m_utteranceFirstRecordedInAggregationDuration = jsonValue.GetDouble("utteranceFirstRecordedInAggregationDuration");
-
     m_utteranceFirstRecordedInAggregationDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utteranceLastRecordedInAggregationDuration"))
   {
     m_utteranceLastRecordedInAggregationDuration = jsonValue.GetDouble("utteranceLastRecordedInAggregationDuration");
-
     m_utteranceLastRecordedInAggregationDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containsDataFromDeletedResources"))
   {
     m_containsDataFromDeletedResources = jsonValue.GetBool("containsDataFromDeletedResources");
-
     m_containsDataFromDeletedResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

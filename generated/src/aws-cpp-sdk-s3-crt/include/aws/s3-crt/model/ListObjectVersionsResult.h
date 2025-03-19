@@ -33,7 +33,7 @@ namespace Model
   class ListObjectVersionsResult
   {
   public:
-    AWS_S3CRT_API ListObjectVersionsResult();
+    AWS_S3CRT_API ListObjectVersionsResult() = default;
     AWS_S3CRT_API ListObjectVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API ListObjectVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,8 +46,8 @@ namespace Model
      * <code>NextVersionIdMarker</code> response parameters as a starting place in
      * another request to return the rest of the results.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListObjectVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -55,26 +55,22 @@ namespace Model
     /**
      * <p>Marks the last key returned in a truncated response.</p>
      */
-    inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
-    inline void SetKeyMarker(const Aws::String& value) { m_keyMarker = value; }
-    inline void SetKeyMarker(Aws::String&& value) { m_keyMarker = std::move(value); }
-    inline void SetKeyMarker(const char* value) { m_keyMarker.assign(value); }
-    inline ListObjectVersionsResult& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
-    inline ListObjectVersionsResult& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
+    inline const Aws::String& GetKeyMarker() const { return m_keyMarker; }
+    template<typename KeyMarkerT = Aws::String>
+    void SetKeyMarker(KeyMarkerT&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = std::forward<KeyMarkerT>(value); }
+    template<typename KeyMarkerT = Aws::String>
+    ListObjectVersionsResult& WithKeyMarker(KeyMarkerT&& value) { SetKeyMarker(std::forward<KeyMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Marks the last version of the key returned in a truncated response.</p>
      */
-    inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
-    inline void SetVersionIdMarker(const Aws::String& value) { m_versionIdMarker = value; }
-    inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarker = std::move(value); }
-    inline void SetVersionIdMarker(const char* value) { m_versionIdMarker.assign(value); }
-    inline ListObjectVersionsResult& WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
-    inline ListObjectVersionsResult& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
+    inline const Aws::String& GetVersionIdMarker() const { return m_versionIdMarker; }
+    template<typename VersionIdMarkerT = Aws::String>
+    void SetVersionIdMarker(VersionIdMarkerT&& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = std::forward<VersionIdMarkerT>(value); }
+    template<typename VersionIdMarkerT = Aws::String>
+    ListObjectVersionsResult& WithVersionIdMarker(VersionIdMarkerT&& value) { SetVersionIdMarker(std::forward<VersionIdMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,13 +80,11 @@ namespace Model
      * the search criteria. Use this value for the key-marker request parameter in a
      * subsequent request.</p>
      */
-    inline const Aws::String& GetNextKeyMarker() const{ return m_nextKeyMarker; }
-    inline void SetNextKeyMarker(const Aws::String& value) { m_nextKeyMarker = value; }
-    inline void SetNextKeyMarker(Aws::String&& value) { m_nextKeyMarker = std::move(value); }
-    inline void SetNextKeyMarker(const char* value) { m_nextKeyMarker.assign(value); }
-    inline ListObjectVersionsResult& WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
-    inline ListObjectVersionsResult& WithNextKeyMarker(Aws::String&& value) { SetNextKeyMarker(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
+    inline const Aws::String& GetNextKeyMarker() const { return m_nextKeyMarker; }
+    template<typename NextKeyMarkerT = Aws::String>
+    void SetNextKeyMarker(NextKeyMarkerT&& value) { m_nextKeyMarkerHasBeenSet = true; m_nextKeyMarker = std::forward<NextKeyMarkerT>(value); }
+    template<typename NextKeyMarkerT = Aws::String>
+    ListObjectVersionsResult& WithNextKeyMarker(NextKeyMarkerT&& value) { SetNextKeyMarker(std::forward<NextKeyMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,26 +94,24 @@ namespace Model
      * that satisfies the search criteria. Use this value for the
      * <code>version-id-marker</code> request parameter in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextVersionIdMarker() const{ return m_nextVersionIdMarker; }
-    inline void SetNextVersionIdMarker(const Aws::String& value) { m_nextVersionIdMarker = value; }
-    inline void SetNextVersionIdMarker(Aws::String&& value) { m_nextVersionIdMarker = std::move(value); }
-    inline void SetNextVersionIdMarker(const char* value) { m_nextVersionIdMarker.assign(value); }
-    inline ListObjectVersionsResult& WithNextVersionIdMarker(const Aws::String& value) { SetNextVersionIdMarker(value); return *this;}
-    inline ListObjectVersionsResult& WithNextVersionIdMarker(Aws::String&& value) { SetNextVersionIdMarker(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithNextVersionIdMarker(const char* value) { SetNextVersionIdMarker(value); return *this;}
+    inline const Aws::String& GetNextVersionIdMarker() const { return m_nextVersionIdMarker; }
+    template<typename NextVersionIdMarkerT = Aws::String>
+    void SetNextVersionIdMarker(NextVersionIdMarkerT&& value) { m_nextVersionIdMarkerHasBeenSet = true; m_nextVersionIdMarker = std::forward<NextVersionIdMarkerT>(value); }
+    template<typename NextVersionIdMarkerT = Aws::String>
+    ListObjectVersionsResult& WithNextVersionIdMarker(NextVersionIdMarkerT&& value) { SetNextVersionIdMarker(std::forward<NextVersionIdMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Container for version information.</p>
      */
-    inline const Aws::Vector<ObjectVersion>& GetVersions() const{ return m_versions; }
-    inline void SetVersions(const Aws::Vector<ObjectVersion>& value) { m_versions = value; }
-    inline void SetVersions(Aws::Vector<ObjectVersion>&& value) { m_versions = std::move(value); }
-    inline ListObjectVersionsResult& WithVersions(const Aws::Vector<ObjectVersion>& value) { SetVersions(value); return *this;}
-    inline ListObjectVersionsResult& WithVersions(Aws::Vector<ObjectVersion>&& value) { SetVersions(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& AddVersions(const ObjectVersion& value) { m_versions.push_back(value); return *this; }
-    inline ListObjectVersionsResult& AddVersions(ObjectVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ObjectVersion>& GetVersions() const { return m_versions; }
+    template<typename VersionsT = Aws::Vector<ObjectVersion>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<ObjectVersion>>
+    ListObjectVersionsResult& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = ObjectVersion>
+    ListObjectVersionsResult& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,39 +121,35 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working
      * with delete markers</a>.</p>
      */
-    inline const Aws::Vector<DeleteMarkerEntry>& GetDeleteMarkers() const{ return m_deleteMarkers; }
-    inline void SetDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { m_deleteMarkers = value; }
-    inline void SetDeleteMarkers(Aws::Vector<DeleteMarkerEntry>&& value) { m_deleteMarkers = std::move(value); }
-    inline ListObjectVersionsResult& WithDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { SetDeleteMarkers(value); return *this;}
-    inline ListObjectVersionsResult& WithDeleteMarkers(Aws::Vector<DeleteMarkerEntry>&& value) { SetDeleteMarkers(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& AddDeleteMarkers(const DeleteMarkerEntry& value) { m_deleteMarkers.push_back(value); return *this; }
-    inline ListObjectVersionsResult& AddDeleteMarkers(DeleteMarkerEntry&& value) { m_deleteMarkers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeleteMarkerEntry>& GetDeleteMarkers() const { return m_deleteMarkers; }
+    template<typename DeleteMarkersT = Aws::Vector<DeleteMarkerEntry>>
+    void SetDeleteMarkers(DeleteMarkersT&& value) { m_deleteMarkersHasBeenSet = true; m_deleteMarkers = std::forward<DeleteMarkersT>(value); }
+    template<typename DeleteMarkersT = Aws::Vector<DeleteMarkerEntry>>
+    ListObjectVersionsResult& WithDeleteMarkers(DeleteMarkersT&& value) { SetDeleteMarkers(std::forward<DeleteMarkersT>(value)); return *this;}
+    template<typename DeleteMarkersT = DeleteMarkerEntry>
+    ListObjectVersionsResult& AddDeleteMarkers(DeleteMarkersT&& value) { m_deleteMarkersHasBeenSet = true; m_deleteMarkers.emplace_back(std::forward<DeleteMarkersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The bucket name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline ListObjectVersionsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListObjectVersionsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListObjectVersionsResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Selects objects that start with the value supplied by this parameter.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
-    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
-    inline ListObjectVersionsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ListObjectVersionsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ListObjectVersionsResult& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,21 +161,19 @@ namespace Model
      * against the <code>max-keys</code> limitation. These keys are not returned
      * elsewhere in the response.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
-    inline ListObjectVersionsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline ListObjectVersionsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    ListObjectVersionsResult& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the maximum number of objects to return.</p>
      */
-    inline int GetMaxKeys() const{ return m_maxKeys; }
-    inline void SetMaxKeys(int value) { m_maxKeys = value; }
+    inline int GetMaxKeys() const { return m_maxKeys; }
+    inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
     inline ListObjectVersionsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
     ///@}
 
@@ -196,13 +182,13 @@ namespace Model
      * <p>All of the keys rolled up into a common prefix count as a single return when
      * calculating the number of returns.</p>
      */
-    inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
-    inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
-    inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
-    inline ListObjectVersionsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
-    inline ListObjectVersionsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
-    inline ListObjectVersionsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const { return m_commonPrefixes; }
+    template<typename CommonPrefixesT = Aws::Vector<CommonPrefix>>
+    void SetCommonPrefixes(CommonPrefixesT&& value) { m_commonPrefixesHasBeenSet = true; m_commonPrefixes = std::forward<CommonPrefixesT>(value); }
+    template<typename CommonPrefixesT = Aws::Vector<CommonPrefix>>
+    ListObjectVersionsResult& WithCommonPrefixes(CommonPrefixesT&& value) { SetCommonPrefixes(std::forward<CommonPrefixesT>(value)); return *this;}
+    template<typename CommonPrefixesT = CommonPrefix>
+    ListObjectVersionsResult& AddCommonPrefixes(CommonPrefixesT&& value) { m_commonPrefixesHasBeenSet = true; m_commonPrefixes.emplace_back(std::forward<CommonPrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -213,63 +199,72 @@ namespace Model
      * key name values in the following response elements:</p> <p> <code>KeyMarker,
      * NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
      */
-    inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
-    inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
-    inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
-    inline ListObjectVersionsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
-    inline ListObjectVersionsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+    inline EncodingType GetEncodingType() const { return m_encodingType; }
+    inline void SetEncodingType(EncodingType value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline ListObjectVersionsResult& WithEncodingType(EncodingType value) { SetEncodingType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-    inline ListObjectVersionsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-    inline ListObjectVersionsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    inline RequestCharged GetRequestCharged() const { return m_requestCharged; }
+    inline void SetRequestCharged(RequestCharged value) { m_requestChargedHasBeenSet = true; m_requestCharged = value; }
+    inline ListObjectVersionsResult& WithRequestCharged(RequestCharged value) { SetRequestCharged(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListObjectVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListObjectVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListObjectVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListObjectVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_keyMarker;
+    bool m_keyMarkerHasBeenSet = false;
 
     Aws::String m_versionIdMarker;
+    bool m_versionIdMarkerHasBeenSet = false;
 
     Aws::String m_nextKeyMarker;
+    bool m_nextKeyMarkerHasBeenSet = false;
 
     Aws::String m_nextVersionIdMarker;
+    bool m_nextVersionIdMarkerHasBeenSet = false;
 
     Aws::Vector<ObjectVersion> m_versions;
+    bool m_versionsHasBeenSet = false;
 
     Aws::Vector<DeleteMarkerEntry> m_deleteMarkers;
+    bool m_deleteMarkersHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_prefix;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_delimiter;
+    bool m_delimiterHasBeenSet = false;
 
-    int m_maxKeys;
+    int m_maxKeys{0};
+    bool m_maxKeysHasBeenSet = false;
 
     Aws::Vector<CommonPrefix> m_commonPrefixes;
+    bool m_commonPrefixesHasBeenSet = false;
 
-    EncodingType m_encodingType;
+    EncodingType m_encodingType{EncodingType::NOT_SET};
+    bool m_encodingTypeHasBeenSet = false;
 
-    RequestCharged m_requestCharged;
+    RequestCharged m_requestCharged{RequestCharged::NOT_SET};
+    bool m_requestChargedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

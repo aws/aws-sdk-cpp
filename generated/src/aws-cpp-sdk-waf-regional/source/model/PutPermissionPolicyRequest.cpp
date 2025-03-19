@@ -12,12 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPermissionPolicyRequest::PutPermissionPolicyRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutPermissionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

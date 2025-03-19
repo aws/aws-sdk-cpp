@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-GitConfigForUpdate::GitConfigForUpdate() : 
-    m_secretArnHasBeenSet(false)
-{
-}
-
 GitConfigForUpdate::GitConfigForUpdate(JsonView jsonValue)
-  : GitConfigForUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GitConfigForUpdate& GitConfigForUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

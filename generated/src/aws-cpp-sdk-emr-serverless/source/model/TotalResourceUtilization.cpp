@@ -18,18 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-TotalResourceUtilization::TotalResourceUtilization() : 
-    m_vCPUHour(0.0),
-    m_vCPUHourHasBeenSet(false),
-    m_memoryGBHour(0.0),
-    m_memoryGBHourHasBeenSet(false),
-    m_storageGBHour(0.0),
-    m_storageGBHourHasBeenSet(false)
-{
-}
-
 TotalResourceUtilization::TotalResourceUtilization(JsonView jsonValue)
-  : TotalResourceUtilization()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TotalResourceUtilization& TotalResourceUtilization::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("vCPUHour"))
   {
     m_vCPUHour = jsonValue.GetDouble("vCPUHour");
-
     m_vCPUHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryGBHour"))
   {
     m_memoryGBHour = jsonValue.GetDouble("memoryGBHour");
-
     m_memoryGBHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageGBHour"))
   {
     m_storageGBHour = jsonValue.GetDouble("storageGBHour");
-
     m_storageGBHourHasBeenSet = true;
   }
-
   return *this;
 }
 

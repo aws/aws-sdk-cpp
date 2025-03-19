@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApnsVoipChannelRequest::UpdateApnsVoipChannelRequest() : 
-    m_aPNSVoipChannelRequestHasBeenSet(false),
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApnsVoipChannelRequest::SerializePayload() const
 {
   JsonValue payload;

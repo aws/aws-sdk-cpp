@@ -28,7 +28,7 @@ namespace Model
   class CreateCodeSigningConfigResult
   {
   public:
-    AWS_LAMBDA_API CreateCodeSigningConfigResult();
+    AWS_LAMBDA_API CreateCodeSigningConfigResult() = default;
     AWS_LAMBDA_API CreateCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API CreateCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The code signing configuration.</p>
      */
-    inline const CodeSigningConfig& GetCodeSigningConfig() const{ return m_codeSigningConfig; }
-    inline void SetCodeSigningConfig(const CodeSigningConfig& value) { m_codeSigningConfig = value; }
-    inline void SetCodeSigningConfig(CodeSigningConfig&& value) { m_codeSigningConfig = std::move(value); }
-    inline CreateCodeSigningConfigResult& WithCodeSigningConfig(const CodeSigningConfig& value) { SetCodeSigningConfig(value); return *this;}
-    inline CreateCodeSigningConfigResult& WithCodeSigningConfig(CodeSigningConfig&& value) { SetCodeSigningConfig(std::move(value)); return *this;}
+    inline const CodeSigningConfig& GetCodeSigningConfig() const { return m_codeSigningConfig; }
+    template<typename CodeSigningConfigT = CodeSigningConfig>
+    void SetCodeSigningConfig(CodeSigningConfigT&& value) { m_codeSigningConfigHasBeenSet = true; m_codeSigningConfig = std::forward<CodeSigningConfigT>(value); }
+    template<typename CodeSigningConfigT = CodeSigningConfig>
+    CreateCodeSigningConfigResult& WithCodeSigningConfig(CodeSigningConfigT&& value) { SetCodeSigningConfig(std::forward<CodeSigningConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCodeSigningConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCodeSigningConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCodeSigningConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCodeSigningConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CodeSigningConfig m_codeSigningConfig;
+    bool m_codeSigningConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

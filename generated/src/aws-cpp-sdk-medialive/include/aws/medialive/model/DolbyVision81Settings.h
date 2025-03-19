@@ -29,7 +29,7 @@ namespace Model
   class DolbyVision81Settings
   {
   public:
-    AWS_MEDIALIVE_API DolbyVision81Settings();
+    AWS_MEDIALIVE_API DolbyVision81Settings() = default;
     AWS_MEDIALIVE_API DolbyVision81Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API DolbyVision81Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -12,12 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CountPendingDecisionTasksRequest::CountPendingDecisionTasksRequest() : 
-    m_domainHasBeenSet(false),
-    m_taskListHasBeenSet(false)
-{
-}
-
 Aws::String CountPendingDecisionTasksRequest::SerializePayload() const
 {
   JsonValue payload;

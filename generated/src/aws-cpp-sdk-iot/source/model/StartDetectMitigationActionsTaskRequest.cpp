@@ -12,20 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDetectMitigationActionsTaskRequest::StartDetectMitigationActionsTaskRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_violationEventOccurrenceRangeHasBeenSet(false),
-    m_includeOnlyActiveViolations(false),
-    m_includeOnlyActiveViolationsHasBeenSet(false),
-    m_includeSuppressedAlerts(false),
-    m_includeSuppressedAlertsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartDetectMitigationActionsTaskRequest::SerializePayload() const
 {
   JsonValue payload;

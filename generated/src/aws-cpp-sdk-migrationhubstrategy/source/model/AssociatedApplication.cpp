@@ -18,14 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AssociatedApplication::AssociatedApplication() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AssociatedApplication::AssociatedApplication(JsonView jsonValue)
-  : AssociatedApplication()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssociatedApplication& AssociatedApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

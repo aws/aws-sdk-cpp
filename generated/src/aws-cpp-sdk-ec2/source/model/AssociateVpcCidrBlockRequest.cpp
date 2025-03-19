@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateVpcCidrBlockRequest::AssociateVpcCidrBlockRequest() : 
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false),
-    m_ipv6PoolHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv4IpamPoolIdHasBeenSet(false),
-    m_ipv4NetmaskLength(0),
-    m_ipv4NetmaskLengthHasBeenSet(false),
-    m_ipv6IpamPoolIdHasBeenSet(false),
-    m_ipv6NetmaskLength(0),
-    m_ipv6NetmaskLengthHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_amazonProvidedIpv6CidrBlock(false),
-    m_amazonProvidedIpv6CidrBlockHasBeenSet(false)
-{
-}
-
 Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
 {
   Aws::StringStream ss;

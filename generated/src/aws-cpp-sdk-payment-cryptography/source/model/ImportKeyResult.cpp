@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportKeyResult::ImportKeyResult()
-{
-}
-
 ImportKeyResult::ImportKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ImportKeyResult& ImportKeyResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetObject("Key");
-
+    m_keyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

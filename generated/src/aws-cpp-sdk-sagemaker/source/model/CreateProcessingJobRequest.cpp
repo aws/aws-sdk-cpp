@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProcessingJobRequest::CreateProcessingJobRequest() : 
-    m_processingInputsHasBeenSet(false),
-    m_processingOutputConfigHasBeenSet(false),
-    m_processingJobNameHasBeenSet(false),
-    m_processingResourcesHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_appSpecificationHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_experimentConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateProcessingJobRequest::SerializePayload() const
 {
   JsonValue payload;

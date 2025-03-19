@@ -18,15 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-IncompatibilityMessage::IncompatibilityMessage() : 
-    m_messageHasBeenSet(false),
-    m_type(DeviceAttribute::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 IncompatibilityMessage::IncompatibilityMessage(JsonView jsonValue)
-  : IncompatibilityMessage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IncompatibilityMessage& IncompatibilityMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DeviceAttributeMapper::GetDeviceAttributeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

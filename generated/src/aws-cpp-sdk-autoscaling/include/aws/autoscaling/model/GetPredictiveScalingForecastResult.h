@@ -31,7 +31,7 @@ namespace Model
   class GetPredictiveScalingForecastResult
   {
   public:
-    AWS_AUTOSCALING_API GetPredictiveScalingForecastResult();
+    AWS_AUTOSCALING_API GetPredictiveScalingForecastResult() = default;
     AWS_AUTOSCALING_API GetPredictiveScalingForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API GetPredictiveScalingForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,54 +40,58 @@ namespace Model
     /**
      * <p>The load forecast.</p>
      */
-    inline const Aws::Vector<LoadForecast>& GetLoadForecast() const{ return m_loadForecast; }
-    inline void SetLoadForecast(const Aws::Vector<LoadForecast>& value) { m_loadForecast = value; }
-    inline void SetLoadForecast(Aws::Vector<LoadForecast>&& value) { m_loadForecast = std::move(value); }
-    inline GetPredictiveScalingForecastResult& WithLoadForecast(const Aws::Vector<LoadForecast>& value) { SetLoadForecast(value); return *this;}
-    inline GetPredictiveScalingForecastResult& WithLoadForecast(Aws::Vector<LoadForecast>&& value) { SetLoadForecast(std::move(value)); return *this;}
-    inline GetPredictiveScalingForecastResult& AddLoadForecast(const LoadForecast& value) { m_loadForecast.push_back(value); return *this; }
-    inline GetPredictiveScalingForecastResult& AddLoadForecast(LoadForecast&& value) { m_loadForecast.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LoadForecast>& GetLoadForecast() const { return m_loadForecast; }
+    template<typename LoadForecastT = Aws::Vector<LoadForecast>>
+    void SetLoadForecast(LoadForecastT&& value) { m_loadForecastHasBeenSet = true; m_loadForecast = std::forward<LoadForecastT>(value); }
+    template<typename LoadForecastT = Aws::Vector<LoadForecast>>
+    GetPredictiveScalingForecastResult& WithLoadForecast(LoadForecastT&& value) { SetLoadForecast(std::forward<LoadForecastT>(value)); return *this;}
+    template<typename LoadForecastT = LoadForecast>
+    GetPredictiveScalingForecastResult& AddLoadForecast(LoadForecastT&& value) { m_loadForecastHasBeenSet = true; m_loadForecast.emplace_back(std::forward<LoadForecastT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The capacity forecast.</p>
      */
-    inline const CapacityForecast& GetCapacityForecast() const{ return m_capacityForecast; }
-    inline void SetCapacityForecast(const CapacityForecast& value) { m_capacityForecast = value; }
-    inline void SetCapacityForecast(CapacityForecast&& value) { m_capacityForecast = std::move(value); }
-    inline GetPredictiveScalingForecastResult& WithCapacityForecast(const CapacityForecast& value) { SetCapacityForecast(value); return *this;}
-    inline GetPredictiveScalingForecastResult& WithCapacityForecast(CapacityForecast&& value) { SetCapacityForecast(std::move(value)); return *this;}
+    inline const CapacityForecast& GetCapacityForecast() const { return m_capacityForecast; }
+    template<typename CapacityForecastT = CapacityForecast>
+    void SetCapacityForecast(CapacityForecastT&& value) { m_capacityForecastHasBeenSet = true; m_capacityForecast = std::forward<CapacityForecastT>(value); }
+    template<typename CapacityForecastT = CapacityForecast>
+    GetPredictiveScalingForecastResult& WithCapacityForecast(CapacityForecastT&& value) { SetCapacityForecast(std::forward<CapacityForecastT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the forecast was made.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline GetPredictiveScalingForecastResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline GetPredictiveScalingForecastResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetPredictiveScalingForecastResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetPredictiveScalingForecastResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetPredictiveScalingForecastResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetPredictiveScalingForecastResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LoadForecast> m_loadForecast;
+    bool m_loadForecastHasBeenSet = false;
 
     CapacityForecast m_capacityForecast;
+    bool m_capacityForecastHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

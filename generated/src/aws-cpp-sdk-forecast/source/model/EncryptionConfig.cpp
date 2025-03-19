@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-EncryptionConfig::EncryptionConfig() : 
-    m_roleArnHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false)
-{
-}
-
 EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-  : EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSKeyArn"))
   {
     m_kMSKeyArn = jsonValue.GetString("KMSKeyArn");
-
     m_kMSKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

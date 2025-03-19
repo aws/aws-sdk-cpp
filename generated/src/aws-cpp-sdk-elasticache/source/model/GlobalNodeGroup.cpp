@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-GlobalNodeGroup::GlobalNodeGroup() : 
-    m_globalNodeGroupIdHasBeenSet(false),
-    m_slotsHasBeenSet(false)
-{
-}
-
 GlobalNodeGroup::GlobalNodeGroup(const XmlNode& xmlNode)
-  : GlobalNodeGroup()
 {
   *this = xmlNode;
 }

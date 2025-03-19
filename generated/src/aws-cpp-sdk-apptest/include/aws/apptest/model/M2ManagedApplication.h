@@ -33,7 +33,7 @@ namespace Model
   class M2ManagedApplication
   {
   public:
-    AWS_APPTEST_API M2ManagedApplication();
+    AWS_APPTEST_API M2ManagedApplication() = default;
     AWS_APPTEST_API M2ManagedApplication(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2ManagedApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
      * <p>The application ID of the AWS Mainframe Modernization managed
      * application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline M2ManagedApplication& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline M2ManagedApplication& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline M2ManagedApplication& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    M2ManagedApplication& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime of the AWS Mainframe Modernization managed application.</p>
      */
-    inline const M2ManagedRuntime& GetRuntime() const{ return m_runtime; }
+    inline M2ManagedRuntime GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const M2ManagedRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(M2ManagedRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline M2ManagedApplication& WithRuntime(const M2ManagedRuntime& value) { SetRuntime(value); return *this;}
-    inline M2ManagedApplication& WithRuntime(M2ManagedRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+    inline void SetRuntime(M2ManagedRuntime value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline M2ManagedApplication& WithRuntime(M2ManagedRuntime value) { SetRuntime(value); return *this;}
     ///@}
 
     ///@{
@@ -71,35 +67,31 @@ namespace Model
      * <p>The VPC endpoint service name of the AWS Mainframe Modernization managed
      * application.</p>
      */
-    inline const Aws::String& GetVpcEndpointServiceName() const{ return m_vpcEndpointServiceName; }
+    inline const Aws::String& GetVpcEndpointServiceName() const { return m_vpcEndpointServiceName; }
     inline bool VpcEndpointServiceNameHasBeenSet() const { return m_vpcEndpointServiceNameHasBeenSet; }
-    inline void SetVpcEndpointServiceName(const Aws::String& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = value; }
-    inline void SetVpcEndpointServiceName(Aws::String&& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = std::move(value); }
-    inline void SetVpcEndpointServiceName(const char* value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName.assign(value); }
-    inline M2ManagedApplication& WithVpcEndpointServiceName(const Aws::String& value) { SetVpcEndpointServiceName(value); return *this;}
-    inline M2ManagedApplication& WithVpcEndpointServiceName(Aws::String&& value) { SetVpcEndpointServiceName(std::move(value)); return *this;}
-    inline M2ManagedApplication& WithVpcEndpointServiceName(const char* value) { SetVpcEndpointServiceName(value); return *this;}
+    template<typename VpcEndpointServiceNameT = Aws::String>
+    void SetVpcEndpointServiceName(VpcEndpointServiceNameT&& value) { m_vpcEndpointServiceNameHasBeenSet = true; m_vpcEndpointServiceName = std::forward<VpcEndpointServiceNameT>(value); }
+    template<typename VpcEndpointServiceNameT = Aws::String>
+    M2ManagedApplication& WithVpcEndpointServiceName(VpcEndpointServiceNameT&& value) { SetVpcEndpointServiceName(std::forward<VpcEndpointServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The listener port of the AWS Mainframe Modernization managed application.</p>
      */
-    inline const Aws::String& GetListenerPort() const{ return m_listenerPort; }
+    inline const Aws::String& GetListenerPort() const { return m_listenerPort; }
     inline bool ListenerPortHasBeenSet() const { return m_listenerPortHasBeenSet; }
-    inline void SetListenerPort(const Aws::String& value) { m_listenerPortHasBeenSet = true; m_listenerPort = value; }
-    inline void SetListenerPort(Aws::String&& value) { m_listenerPortHasBeenSet = true; m_listenerPort = std::move(value); }
-    inline void SetListenerPort(const char* value) { m_listenerPortHasBeenSet = true; m_listenerPort.assign(value); }
-    inline M2ManagedApplication& WithListenerPort(const Aws::String& value) { SetListenerPort(value); return *this;}
-    inline M2ManagedApplication& WithListenerPort(Aws::String&& value) { SetListenerPort(std::move(value)); return *this;}
-    inline M2ManagedApplication& WithListenerPort(const char* value) { SetListenerPort(value); return *this;}
+    template<typename ListenerPortT = Aws::String>
+    void SetListenerPort(ListenerPortT&& value) { m_listenerPortHasBeenSet = true; m_listenerPort = std::forward<ListenerPortT>(value); }
+    template<typename ListenerPortT = Aws::String>
+    M2ManagedApplication& WithListenerPort(ListenerPortT&& value) { SetListenerPort(std::forward<ListenerPortT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    M2ManagedRuntime m_runtime;
+    M2ManagedRuntime m_runtime{M2ManagedRuntime::NOT_SET};
     bool m_runtimeHasBeenSet = false;
 
     Aws::String m_vpcEndpointServiceName;

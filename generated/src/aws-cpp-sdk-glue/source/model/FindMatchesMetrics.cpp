@@ -18,22 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FindMatchesMetrics::FindMatchesMetrics() : 
-    m_areaUnderPRCurve(0.0),
-    m_areaUnderPRCurveHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false),
-    m_f1(0.0),
-    m_f1HasBeenSet(false),
-    m_confusionMatrixHasBeenSet(false),
-    m_columnImportancesHasBeenSet(false)
-{
-}
-
 FindMatchesMetrics::FindMatchesMetrics(JsonView jsonValue)
-  : FindMatchesMetrics()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ FindMatchesMetrics& FindMatchesMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AreaUnderPRCurve"))
   {
     m_areaUnderPRCurve = jsonValue.GetDouble("AreaUnderPRCurve");
-
     m_areaUnderPRCurveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Precision"))
   {
     m_precision = jsonValue.GetDouble("Precision");
-
     m_precisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recall"))
   {
     m_recall = jsonValue.GetDouble("Recall");
-
     m_recallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("F1"))
   {
     m_f1 = jsonValue.GetDouble("F1");
-
     m_f1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfusionMatrix"))
   {
     m_confusionMatrix = jsonValue.GetObject("ConfusionMatrix");
-
     m_confusionMatrixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnImportances"))
   {
     Aws::Utils::Array<JsonView> columnImportancesJsonList = jsonValue.GetArray("ColumnImportances");
@@ -84,7 +59,6 @@ FindMatchesMetrics& FindMatchesMetrics::operator =(JsonView jsonValue)
     }
     m_columnImportancesHasBeenSet = true;
   }
-
   return *this;
 }
 

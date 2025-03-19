@@ -33,7 +33,7 @@ namespace Model
   class KxClusterCodeDeploymentConfiguration
   {
   public:
-    AWS_FINSPACE_API KxClusterCodeDeploymentConfiguration();
+    AWS_FINSPACE_API KxClusterCodeDeploymentConfiguration() = default;
     AWS_FINSPACE_API KxClusterCodeDeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxClusterCodeDeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,16 +53,14 @@ namespace Model
      * immediately stopping all the running processes before starting up new ones with
      * the updated configuration. </p> </li> </ul>
      */
-    inline const KxClusterCodeDeploymentStrategy& GetDeploymentStrategy() const{ return m_deploymentStrategy; }
+    inline KxClusterCodeDeploymentStrategy GetDeploymentStrategy() const { return m_deploymentStrategy; }
     inline bool DeploymentStrategyHasBeenSet() const { return m_deploymentStrategyHasBeenSet; }
-    inline void SetDeploymentStrategy(const KxClusterCodeDeploymentStrategy& value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = value; }
-    inline void SetDeploymentStrategy(KxClusterCodeDeploymentStrategy&& value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = std::move(value); }
-    inline KxClusterCodeDeploymentConfiguration& WithDeploymentStrategy(const KxClusterCodeDeploymentStrategy& value) { SetDeploymentStrategy(value); return *this;}
-    inline KxClusterCodeDeploymentConfiguration& WithDeploymentStrategy(KxClusterCodeDeploymentStrategy&& value) { SetDeploymentStrategy(std::move(value)); return *this;}
+    inline void SetDeploymentStrategy(KxClusterCodeDeploymentStrategy value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = value; }
+    inline KxClusterCodeDeploymentConfiguration& WithDeploymentStrategy(KxClusterCodeDeploymentStrategy value) { SetDeploymentStrategy(value); return *this;}
     ///@}
   private:
 
-    KxClusterCodeDeploymentStrategy m_deploymentStrategy;
+    KxClusterCodeDeploymentStrategy m_deploymentStrategy{KxClusterCodeDeploymentStrategy::NOT_SET};
     bool m_deploymentStrategyHasBeenSet = false;
   };
 

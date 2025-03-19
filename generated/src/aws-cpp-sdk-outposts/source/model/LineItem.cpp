@@ -18,22 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-LineItem::LineItem() : 
-    m_catalogItemIdHasBeenSet(false),
-    m_lineItemIdHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_status(LineItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_shipmentInformationHasBeenSet(false),
-    m_assetInformationListHasBeenSet(false),
-    m_previousLineItemIdHasBeenSet(false),
-    m_previousOrderIdHasBeenSet(false)
-{
-}
-
 LineItem::LineItem(JsonView jsonValue)
-  : LineItem()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ LineItem& LineItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogItemId"))
   {
     m_catalogItemId = jsonValue.GetString("CatalogItemId");
-
     m_catalogItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineItemId"))
   {
     m_lineItemId = jsonValue.GetString("LineItemId");
-
     m_lineItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quantity"))
   {
     m_quantity = jsonValue.GetInteger("Quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LineItemStatusMapper::GetLineItemStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShipmentInformation"))
   {
     m_shipmentInformation = jsonValue.GetObject("ShipmentInformation");
-
     m_shipmentInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetInformationList"))
   {
     Aws::Utils::Array<JsonView> assetInformationListJsonList = jsonValue.GetArray("AssetInformationList");
@@ -84,21 +59,16 @@ LineItem& LineItem::operator =(JsonView jsonValue)
     }
     m_assetInformationListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousLineItemId"))
   {
     m_previousLineItemId = jsonValue.GetString("PreviousLineItemId");
-
     m_previousLineItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousOrderId"))
   {
     m_previousOrderId = jsonValue.GetString("PreviousOrderId");
-
     m_previousOrderIdHasBeenSet = true;
   }
-
   return *this;
 }
 

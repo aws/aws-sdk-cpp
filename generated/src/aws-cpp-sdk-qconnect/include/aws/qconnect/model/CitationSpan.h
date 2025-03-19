@@ -30,7 +30,7 @@ namespace Model
   class CitationSpan
   {
   public:
-    AWS_QCONNECT_API CitationSpan();
+    AWS_QCONNECT_API CitationSpan() = default;
     AWS_QCONNECT_API CitationSpan(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API CitationSpan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Where the text with a citation starts in the generated output.</p>
      */
-    inline int GetBeginOffsetInclusive() const{ return m_beginOffsetInclusive; }
+    inline int GetBeginOffsetInclusive() const { return m_beginOffsetInclusive; }
     inline bool BeginOffsetInclusiveHasBeenSet() const { return m_beginOffsetInclusiveHasBeenSet; }
     inline void SetBeginOffsetInclusive(int value) { m_beginOffsetInclusiveHasBeenSet = true; m_beginOffsetInclusive = value; }
     inline CitationSpan& WithBeginOffsetInclusive(int value) { SetBeginOffsetInclusive(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>Where the text with a citation ends in the generated output.</p>
      */
-    inline int GetEndOffsetExclusive() const{ return m_endOffsetExclusive; }
+    inline int GetEndOffsetExclusive() const { return m_endOffsetExclusive; }
     inline bool EndOffsetExclusiveHasBeenSet() const { return m_endOffsetExclusiveHasBeenSet; }
     inline void SetEndOffsetExclusive(int value) { m_endOffsetExclusiveHasBeenSet = true; m_endOffsetExclusive = value; }
     inline CitationSpan& WithEndOffsetExclusive(int value) { SetEndOffsetExclusive(value); return *this;}
     ///@}
   private:
 
-    int m_beginOffsetInclusive;
+    int m_beginOffsetInclusive{0};
     bool m_beginOffsetInclusiveHasBeenSet = false;
 
-    int m_endOffsetExclusive;
+    int m_endOffsetExclusive{0};
     bool m_endOffsetExclusiveHasBeenSet = false;
   };
 

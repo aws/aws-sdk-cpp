@@ -36,7 +36,7 @@ namespace Model
   class BrokerEBSVolumeInfo
   {
   public:
-    AWS_KAFKA_API BrokerEBSVolumeInfo();
+    AWS_KAFKA_API BrokerEBSVolumeInfo() = default;
     AWS_KAFKA_API BrokerEBSVolumeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API BrokerEBSVolumeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
             <p>The ID of the broker to update.</p>
          
      */
-    inline const Aws::String& GetKafkaBrokerNodeId() const{ return m_kafkaBrokerNodeId; }
+    inline const Aws::String& GetKafkaBrokerNodeId() const { return m_kafkaBrokerNodeId; }
     inline bool KafkaBrokerNodeIdHasBeenSet() const { return m_kafkaBrokerNodeIdHasBeenSet; }
-    inline void SetKafkaBrokerNodeId(const Aws::String& value) { m_kafkaBrokerNodeIdHasBeenSet = true; m_kafkaBrokerNodeId = value; }
-    inline void SetKafkaBrokerNodeId(Aws::String&& value) { m_kafkaBrokerNodeIdHasBeenSet = true; m_kafkaBrokerNodeId = std::move(value); }
-    inline void SetKafkaBrokerNodeId(const char* value) { m_kafkaBrokerNodeIdHasBeenSet = true; m_kafkaBrokerNodeId.assign(value); }
-    inline BrokerEBSVolumeInfo& WithKafkaBrokerNodeId(const Aws::String& value) { SetKafkaBrokerNodeId(value); return *this;}
-    inline BrokerEBSVolumeInfo& WithKafkaBrokerNodeId(Aws::String&& value) { SetKafkaBrokerNodeId(std::move(value)); return *this;}
-    inline BrokerEBSVolumeInfo& WithKafkaBrokerNodeId(const char* value) { SetKafkaBrokerNodeId(value); return *this;}
+    template<typename KafkaBrokerNodeIdT = Aws::String>
+    void SetKafkaBrokerNodeId(KafkaBrokerNodeIdT&& value) { m_kafkaBrokerNodeIdHasBeenSet = true; m_kafkaBrokerNodeId = std::forward<KafkaBrokerNodeIdT>(value); }
+    template<typename KafkaBrokerNodeIdT = Aws::String>
+    BrokerEBSVolumeInfo& WithKafkaBrokerNodeId(KafkaBrokerNodeIdT&& value) { SetKafkaBrokerNodeId(std::forward<KafkaBrokerNodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
             <p>EBS volume provisioned throughput information.</p>
          
      */
-    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline BrokerEBSVolumeInfo& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-    inline BrokerEBSVolumeInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    BrokerEBSVolumeInfo& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +76,7 @@ namespace Model
             <p>Size of the EBS volume to update.</p>
          
      */
-    inline int GetVolumeSizeGB() const{ return m_volumeSizeGB; }
+    inline int GetVolumeSizeGB() const { return m_volumeSizeGB; }
     inline bool VolumeSizeGBHasBeenSet() const { return m_volumeSizeGBHasBeenSet; }
     inline void SetVolumeSizeGB(int value) { m_volumeSizeGBHasBeenSet = true; m_volumeSizeGB = value; }
     inline BrokerEBSVolumeInfo& WithVolumeSizeGB(int value) { SetVolumeSizeGB(value); return *this;}
@@ -91,7 +89,7 @@ namespace Model
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet = false;
 
-    int m_volumeSizeGB;
+    int m_volumeSizeGB{0};
     bool m_volumeSizeGBHasBeenSet = false;
   };
 

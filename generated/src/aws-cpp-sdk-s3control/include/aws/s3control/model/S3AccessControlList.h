@@ -32,7 +32,7 @@ namespace Model
   class S3AccessControlList
   {
   public:
-    AWS_S3CONTROL_API S3AccessControlList();
+    AWS_S3CONTROL_API S3AccessControlList() = default;
     AWS_S3CONTROL_API S3AccessControlList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API S3AccessControlList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p/>
      */
-    inline const S3ObjectOwner& GetOwner() const{ return m_owner; }
+    inline const S3ObjectOwner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const S3ObjectOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(S3ObjectOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline S3AccessControlList& WithOwner(const S3ObjectOwner& value) { SetOwner(value); return *this;}
-    inline S3AccessControlList& WithOwner(S3ObjectOwner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = S3ObjectOwner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = S3ObjectOwner>
+    S3AccessControlList& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<S3Grant>& GetGrants() const{ return m_grants; }
+    inline const Aws::Vector<S3Grant>& GetGrants() const { return m_grants; }
     inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
-    inline void SetGrants(const Aws::Vector<S3Grant>& value) { m_grantsHasBeenSet = true; m_grants = value; }
-    inline void SetGrants(Aws::Vector<S3Grant>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
-    inline S3AccessControlList& WithGrants(const Aws::Vector<S3Grant>& value) { SetGrants(value); return *this;}
-    inline S3AccessControlList& WithGrants(Aws::Vector<S3Grant>&& value) { SetGrants(std::move(value)); return *this;}
-    inline S3AccessControlList& AddGrants(const S3Grant& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
-    inline S3AccessControlList& AddGrants(S3Grant&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
+    template<typename GrantsT = Aws::Vector<S3Grant>>
+    void SetGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants = std::forward<GrantsT>(value); }
+    template<typename GrantsT = Aws::Vector<S3Grant>>
+    S3AccessControlList& WithGrants(GrantsT&& value) { SetGrants(std::forward<GrantsT>(value)); return *this;}
+    template<typename GrantsT = S3Grant>
+    S3AccessControlList& AddGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants.emplace_back(std::forward<GrantsT>(value)); return *this; }
     ///@}
   private:
 

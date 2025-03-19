@@ -18,16 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-OutboundCallConfig::OutboundCallConfig() : 
-    m_connectContactFlowIdHasBeenSet(false),
-    m_connectSourcePhoneNumberHasBeenSet(false),
-    m_connectQueueIdHasBeenSet(false),
-    m_answerMachineDetectionConfigHasBeenSet(false)
-{
-}
-
 OutboundCallConfig::OutboundCallConfig(JsonView jsonValue)
-  : OutboundCallConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OutboundCallConfig& OutboundCallConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectContactFlowId"))
   {
     m_connectContactFlowId = jsonValue.GetString("connectContactFlowId");
-
     m_connectContactFlowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectSourcePhoneNumber"))
   {
     m_connectSourcePhoneNumber = jsonValue.GetString("connectSourcePhoneNumber");
-
     m_connectSourcePhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectQueueId"))
   {
     m_connectQueueId = jsonValue.GetString("connectQueueId");
-
     m_connectQueueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("answerMachineDetectionConfig"))
   {
     m_answerMachineDetectionConfig = jsonValue.GetObject("answerMachineDetectionConfig");
-
     m_answerMachineDetectionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

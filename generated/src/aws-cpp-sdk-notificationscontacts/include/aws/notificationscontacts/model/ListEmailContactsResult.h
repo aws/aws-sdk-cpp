@@ -29,7 +29,7 @@ namespace Model
   class ListEmailContactsResult
   {
   public:
-    AWS_NOTIFICATIONSCONTACTS_API ListEmailContactsResult();
+    AWS_NOTIFICATIONSCONTACTS_API ListEmailContactsResult() = default;
     AWS_NOTIFICATIONSCONTACTS_API ListEmailContactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONSCONTACTS_API ListEmailContactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * MaxResults.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEmailContactsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEmailContactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEmailContactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEmailContactsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of email contacts.</p>
      */
-    inline const Aws::Vector<EmailContact>& GetEmailContacts() const{ return m_emailContacts; }
-    inline void SetEmailContacts(const Aws::Vector<EmailContact>& value) { m_emailContacts = value; }
-    inline void SetEmailContacts(Aws::Vector<EmailContact>&& value) { m_emailContacts = std::move(value); }
-    inline ListEmailContactsResult& WithEmailContacts(const Aws::Vector<EmailContact>& value) { SetEmailContacts(value); return *this;}
-    inline ListEmailContactsResult& WithEmailContacts(Aws::Vector<EmailContact>&& value) { SetEmailContacts(std::move(value)); return *this;}
-    inline ListEmailContactsResult& AddEmailContacts(const EmailContact& value) { m_emailContacts.push_back(value); return *this; }
-    inline ListEmailContactsResult& AddEmailContacts(EmailContact&& value) { m_emailContacts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EmailContact>& GetEmailContacts() const { return m_emailContacts; }
+    template<typename EmailContactsT = Aws::Vector<EmailContact>>
+    void SetEmailContacts(EmailContactsT&& value) { m_emailContactsHasBeenSet = true; m_emailContacts = std::forward<EmailContactsT>(value); }
+    template<typename EmailContactsT = Aws::Vector<EmailContact>>
+    ListEmailContactsResult& WithEmailContacts(EmailContactsT&& value) { SetEmailContacts(std::forward<EmailContactsT>(value)); return *this;}
+    template<typename EmailContactsT = EmailContact>
+    ListEmailContactsResult& AddEmailContacts(EmailContactsT&& value) { m_emailContactsHasBeenSet = true; m_emailContacts.emplace_back(std::forward<EmailContactsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEmailContactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEmailContactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEmailContactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEmailContactsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<EmailContact> m_emailContacts;
+    bool m_emailContactsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

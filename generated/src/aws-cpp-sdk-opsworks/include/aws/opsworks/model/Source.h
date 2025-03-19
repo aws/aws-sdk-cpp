@@ -37,7 +37,7 @@ namespace Model
   class Source
   {
   public:
-    AWS_OPSWORKS_API Source();
+    AWS_OPSWORKS_API Source() = default;
     AWS_OPSWORKS_API Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>The repository type.</p>
      */
-    inline const SourceType& GetType() const{ return m_type; }
+    inline SourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Source& WithType(const SourceType& value) { SetType(value); return *this;}
-    inline Source& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Source& WithType(SourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The source URL. The following is an example of an Amazon S3 source URL:
      * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline Source& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline Source& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline Source& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Source& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * </li> <li> <p>For HTTP bundles, Git repositories, and Subversion repositories,
      * set <code>Username</code> to the user name.</p> </li> </ul>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline Source& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline Source& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline Source& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    Source& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * <p>In responses, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
      * of the actual value.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline Source& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline Source& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline Source& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    Source& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +105,12 @@ namespace Model
      * <p>In requests, the repository's SSH key.</p> <p>In responses, OpsWorks Stacks
      * returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
-    inline const Aws::String& GetSshKey() const{ return m_sshKey; }
+    inline const Aws::String& GetSshKey() const { return m_sshKey; }
     inline bool SshKeyHasBeenSet() const { return m_sshKeyHasBeenSet; }
-    inline void SetSshKey(const Aws::String& value) { m_sshKeyHasBeenSet = true; m_sshKey = value; }
-    inline void SetSshKey(Aws::String&& value) { m_sshKeyHasBeenSet = true; m_sshKey = std::move(value); }
-    inline void SetSshKey(const char* value) { m_sshKeyHasBeenSet = true; m_sshKey.assign(value); }
-    inline Source& WithSshKey(const Aws::String& value) { SetSshKey(value); return *this;}
-    inline Source& WithSshKey(Aws::String&& value) { SetSshKey(std::move(value)); return *this;}
-    inline Source& WithSshKey(const char* value) { SetSshKey(value); return *this;}
+    template<typename SshKeyT = Aws::String>
+    void SetSshKey(SshKeyT&& value) { m_sshKeyHasBeenSet = true; m_sshKey = std::forward<SshKeyT>(value); }
+    template<typename SshKeyT = Aws::String>
+    Source& WithSshKey(SshKeyT&& value) { SetSshKey(std::forward<SshKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,18 +120,16 @@ namespace Model
      * or revisions in your repository that represent different versions that can
      * potentially be deployed.</p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-    inline Source& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline Source& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline Source& WithRevision(const char* value) { SetRevision(value); return *this;}
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    Source& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
   private:
 
-    SourceType m_type;
+    SourceType m_type{SourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_url;

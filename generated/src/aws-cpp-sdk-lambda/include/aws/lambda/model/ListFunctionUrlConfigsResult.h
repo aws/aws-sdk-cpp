@@ -29,7 +29,7 @@ namespace Model
   class ListFunctionUrlConfigsResult
   {
   public:
-    AWS_LAMBDA_API ListFunctionUrlConfigsResult();
+    AWS_LAMBDA_API ListFunctionUrlConfigsResult() = default;
     AWS_LAMBDA_API ListFunctionUrlConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API ListFunctionUrlConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of function URL configurations.</p>
      */
-    inline const Aws::Vector<FunctionUrlConfig>& GetFunctionUrlConfigs() const{ return m_functionUrlConfigs; }
-    inline void SetFunctionUrlConfigs(const Aws::Vector<FunctionUrlConfig>& value) { m_functionUrlConfigs = value; }
-    inline void SetFunctionUrlConfigs(Aws::Vector<FunctionUrlConfig>&& value) { m_functionUrlConfigs = std::move(value); }
-    inline ListFunctionUrlConfigsResult& WithFunctionUrlConfigs(const Aws::Vector<FunctionUrlConfig>& value) { SetFunctionUrlConfigs(value); return *this;}
-    inline ListFunctionUrlConfigsResult& WithFunctionUrlConfigs(Aws::Vector<FunctionUrlConfig>&& value) { SetFunctionUrlConfigs(std::move(value)); return *this;}
-    inline ListFunctionUrlConfigsResult& AddFunctionUrlConfigs(const FunctionUrlConfig& value) { m_functionUrlConfigs.push_back(value); return *this; }
-    inline ListFunctionUrlConfigsResult& AddFunctionUrlConfigs(FunctionUrlConfig&& value) { m_functionUrlConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FunctionUrlConfig>& GetFunctionUrlConfigs() const { return m_functionUrlConfigs; }
+    template<typename FunctionUrlConfigsT = Aws::Vector<FunctionUrlConfig>>
+    void SetFunctionUrlConfigs(FunctionUrlConfigsT&& value) { m_functionUrlConfigsHasBeenSet = true; m_functionUrlConfigs = std::forward<FunctionUrlConfigsT>(value); }
+    template<typename FunctionUrlConfigsT = Aws::Vector<FunctionUrlConfig>>
+    ListFunctionUrlConfigsResult& WithFunctionUrlConfigs(FunctionUrlConfigsT&& value) { SetFunctionUrlConfigs(std::forward<FunctionUrlConfigsT>(value)); return *this;}
+    template<typename FunctionUrlConfigsT = FunctionUrlConfig>
+    ListFunctionUrlConfigsResult& AddFunctionUrlConfigs(FunctionUrlConfigsT&& value) { m_functionUrlConfigsHasBeenSet = true; m_functionUrlConfigs.emplace_back(std::forward<FunctionUrlConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListFunctionUrlConfigsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListFunctionUrlConfigsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListFunctionUrlConfigsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListFunctionUrlConfigsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFunctionUrlConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFunctionUrlConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFunctionUrlConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFunctionUrlConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FunctionUrlConfig> m_functionUrlConfigs;
+    bool m_functionUrlConfigsHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

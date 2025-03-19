@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-EmbeddedPlusScte20DestinationSettings::EmbeddedPlusScte20DestinationSettings()
-{
-}
-
 EmbeddedPlusScte20DestinationSettings::EmbeddedPlusScte20DestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;

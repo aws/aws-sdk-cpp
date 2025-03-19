@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-Hash::Hash() : 
-    m_sha256HasBeenSet(false)
-{
-}
-
 Hash::Hash(JsonView jsonValue)
-  : Hash()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Hash& Hash::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sha256"))
   {
     m_sha256 = jsonValue.GetString("sha256");
-
     m_sha256HasBeenSet = true;
   }
-
   return *this;
 }
 

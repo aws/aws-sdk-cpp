@@ -33,7 +33,7 @@ namespace Model
   class MonitorLocalResource
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API MonitorLocalResource();
+    AWS_NETWORKFLOWMONITOR_API MonitorLocalResource() = default;
     AWS_NETWORKFLOWMONITOR_API MonitorLocalResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API MonitorLocalResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The type of the local resource. Valid values are <code>AWS::EC2::VPC</code>
      * <code>AWS::AvailabilityZone</code> or <code>AWS::EC2::Subnet</code>.</p>
      */
-    inline const MonitorLocalResourceType& GetType() const{ return m_type; }
+    inline MonitorLocalResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MonitorLocalResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MonitorLocalResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MonitorLocalResource& WithType(const MonitorLocalResourceType& value) { SetType(value); return *this;}
-    inline MonitorLocalResource& WithType(MonitorLocalResourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MonitorLocalResourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MonitorLocalResource& WithType(MonitorLocalResourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the local resource, such as an ARN.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline MonitorLocalResource& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline MonitorLocalResource& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline MonitorLocalResource& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    MonitorLocalResource& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    MonitorLocalResourceType m_type;
+    MonitorLocalResourceType m_type{MonitorLocalResourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_identifier;

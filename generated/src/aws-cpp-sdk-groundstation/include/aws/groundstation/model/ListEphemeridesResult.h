@@ -29,7 +29,7 @@ namespace Model
   class ListEphemeridesResult
   {
   public:
-    AWS_GROUNDSTATION_API ListEphemeridesResult();
+    AWS_GROUNDSTATION_API ListEphemeridesResult() = default;
     AWS_GROUNDSTATION_API ListEphemeridesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GROUNDSTATION_API ListEphemeridesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>List of ephemerides.</p>
      */
-    inline const Aws::Vector<EphemerisItem>& GetEphemerides() const{ return m_ephemerides; }
-    inline void SetEphemerides(const Aws::Vector<EphemerisItem>& value) { m_ephemerides = value; }
-    inline void SetEphemerides(Aws::Vector<EphemerisItem>&& value) { m_ephemerides = std::move(value); }
-    inline ListEphemeridesResult& WithEphemerides(const Aws::Vector<EphemerisItem>& value) { SetEphemerides(value); return *this;}
-    inline ListEphemeridesResult& WithEphemerides(Aws::Vector<EphemerisItem>&& value) { SetEphemerides(std::move(value)); return *this;}
-    inline ListEphemeridesResult& AddEphemerides(const EphemerisItem& value) { m_ephemerides.push_back(value); return *this; }
-    inline ListEphemeridesResult& AddEphemerides(EphemerisItem&& value) { m_ephemerides.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EphemerisItem>& GetEphemerides() const { return m_ephemerides; }
+    template<typename EphemeridesT = Aws::Vector<EphemerisItem>>
+    void SetEphemerides(EphemeridesT&& value) { m_ephemeridesHasBeenSet = true; m_ephemerides = std::forward<EphemeridesT>(value); }
+    template<typename EphemeridesT = Aws::Vector<EphemerisItem>>
+    ListEphemeridesResult& WithEphemerides(EphemeridesT&& value) { SetEphemerides(std::forward<EphemeridesT>(value)); return *this;}
+    template<typename EphemeridesT = EphemerisItem>
+    ListEphemeridesResult& AddEphemerides(EphemeridesT&& value) { m_ephemeridesHasBeenSet = true; m_ephemerides.emplace_back(std::forward<EphemeridesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEphemeridesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEphemeridesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEphemeridesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEphemeridesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEphemeridesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEphemeridesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEphemeridesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEphemeridesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EphemerisItem> m_ephemerides;
+    bool m_ephemeridesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

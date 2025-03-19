@@ -18,17 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ServiceLimitExceededException::ServiceLimitExceededException() : 
-    m_limitName(LimitName::NOT_SET),
-    m_limitNameHasBeenSet(false),
-    m_limitValue(0.0),
-    m_limitValueHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ServiceLimitExceededException::ServiceLimitExceededException(JsonView jsonValue)
-  : ServiceLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ServiceLimitExceededException& ServiceLimitExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("LimitName"))
   {
     m_limitName = LimitNameMapper::GetLimitNameForName(jsonValue.GetString("LimitName"));
-
     m_limitNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitValue"))
   {
     m_limitValue = jsonValue.GetDouble("LimitValue");
-
     m_limitValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

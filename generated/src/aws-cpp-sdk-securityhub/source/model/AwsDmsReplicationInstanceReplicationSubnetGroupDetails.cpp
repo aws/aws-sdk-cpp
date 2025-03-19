@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDmsReplicationInstanceReplicationSubnetGroupDetails::AwsDmsReplicationInstanceReplicationSubnetGroupDetails() : 
-    m_replicationSubnetGroupIdentifierHasBeenSet(false)
-{
-}
-
 AwsDmsReplicationInstanceReplicationSubnetGroupDetails::AwsDmsReplicationInstanceReplicationSubnetGroupDetails(JsonView jsonValue)
-  : AwsDmsReplicationInstanceReplicationSubnetGroupDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsDmsReplicationInstanceReplicationSubnetGroupDetails& AwsDmsReplicationInstanc
   if(jsonValue.ValueExists("ReplicationSubnetGroupIdentifier"))
   {
     m_replicationSubnetGroupIdentifier = jsonValue.GetString("ReplicationSubnetGroupIdentifier");
-
     m_replicationSubnetGroupIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

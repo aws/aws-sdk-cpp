@@ -32,7 +32,7 @@ namespace Model
   class ACLPendingChanges
   {
   public:
-    AWS_MEMORYDB_API ACLPendingChanges();
+    AWS_MEMORYDB_API ACLPendingChanges() = default;
     AWS_MEMORYDB_API ACLPendingChanges(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ACLPendingChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>A list of user names being removed from the ACL</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserNamesToRemove() const{ return m_userNamesToRemove; }
+    inline const Aws::Vector<Aws::String>& GetUserNamesToRemove() const { return m_userNamesToRemove; }
     inline bool UserNamesToRemoveHasBeenSet() const { return m_userNamesToRemoveHasBeenSet; }
-    inline void SetUserNamesToRemove(const Aws::Vector<Aws::String>& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove = value; }
-    inline void SetUserNamesToRemove(Aws::Vector<Aws::String>&& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove = std::move(value); }
-    inline ACLPendingChanges& WithUserNamesToRemove(const Aws::Vector<Aws::String>& value) { SetUserNamesToRemove(value); return *this;}
-    inline ACLPendingChanges& WithUserNamesToRemove(Aws::Vector<Aws::String>&& value) { SetUserNamesToRemove(std::move(value)); return *this;}
-    inline ACLPendingChanges& AddUserNamesToRemove(const Aws::String& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.push_back(value); return *this; }
-    inline ACLPendingChanges& AddUserNamesToRemove(Aws::String&& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.push_back(std::move(value)); return *this; }
-    inline ACLPendingChanges& AddUserNamesToRemove(const char* value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.push_back(value); return *this; }
+    template<typename UserNamesToRemoveT = Aws::Vector<Aws::String>>
+    void SetUserNamesToRemove(UserNamesToRemoveT&& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove = std::forward<UserNamesToRemoveT>(value); }
+    template<typename UserNamesToRemoveT = Aws::Vector<Aws::String>>
+    ACLPendingChanges& WithUserNamesToRemove(UserNamesToRemoveT&& value) { SetUserNamesToRemove(std::forward<UserNamesToRemoveT>(value)); return *this;}
+    template<typename UserNamesToRemoveT = Aws::String>
+    ACLPendingChanges& AddUserNamesToRemove(UserNamesToRemoveT&& value) { m_userNamesToRemoveHasBeenSet = true; m_userNamesToRemove.emplace_back(std::forward<UserNamesToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of users being added to the ACL</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserNamesToAdd() const{ return m_userNamesToAdd; }
+    inline const Aws::Vector<Aws::String>& GetUserNamesToAdd() const { return m_userNamesToAdd; }
     inline bool UserNamesToAddHasBeenSet() const { return m_userNamesToAddHasBeenSet; }
-    inline void SetUserNamesToAdd(const Aws::Vector<Aws::String>& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd = value; }
-    inline void SetUserNamesToAdd(Aws::Vector<Aws::String>&& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd = std::move(value); }
-    inline ACLPendingChanges& WithUserNamesToAdd(const Aws::Vector<Aws::String>& value) { SetUserNamesToAdd(value); return *this;}
-    inline ACLPendingChanges& WithUserNamesToAdd(Aws::Vector<Aws::String>&& value) { SetUserNamesToAdd(std::move(value)); return *this;}
-    inline ACLPendingChanges& AddUserNamesToAdd(const Aws::String& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.push_back(value); return *this; }
-    inline ACLPendingChanges& AddUserNamesToAdd(Aws::String&& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.push_back(std::move(value)); return *this; }
-    inline ACLPendingChanges& AddUserNamesToAdd(const char* value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.push_back(value); return *this; }
+    template<typename UserNamesToAddT = Aws::Vector<Aws::String>>
+    void SetUserNamesToAdd(UserNamesToAddT&& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd = std::forward<UserNamesToAddT>(value); }
+    template<typename UserNamesToAddT = Aws::Vector<Aws::String>>
+    ACLPendingChanges& WithUserNamesToAdd(UserNamesToAddT&& value) { SetUserNamesToAdd(std::forward<UserNamesToAddT>(value)); return *this;}
+    template<typename UserNamesToAddT = Aws::String>
+    ACLPendingChanges& AddUserNamesToAdd(UserNamesToAddT&& value) { m_userNamesToAddHasBeenSet = true; m_userNamesToAdd.emplace_back(std::forward<UserNamesToAddT>(value)); return *this; }
     ///@}
   private:
 

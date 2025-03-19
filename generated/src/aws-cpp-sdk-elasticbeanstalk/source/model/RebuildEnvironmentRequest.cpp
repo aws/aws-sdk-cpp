@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-RebuildEnvironmentRequest::RebuildEnvironmentRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String RebuildEnvironmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

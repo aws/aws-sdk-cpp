@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>. </p>
      */
-    inline const Aws::String& GetIpv4Prefix() const{ return m_ipv4Prefix; }
+    inline const Aws::String& GetIpv4Prefix() const { return m_ipv4Prefix; }
     inline bool Ipv4PrefixHasBeenSet() const { return m_ipv4PrefixHasBeenSet; }
-    inline void SetIpv4Prefix(const Aws::String& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = value; }
-    inline void SetIpv4Prefix(Aws::String&& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = std::move(value); }
-    inline void SetIpv4Prefix(const char* value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix.assign(value); }
-    inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails& WithIpv4Prefix(const Aws::String& value) { SetIpv4Prefix(value); return *this;}
-    inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails& WithIpv4Prefix(Aws::String&& value) { SetIpv4Prefix(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails& WithIpv4Prefix(const char* value) { SetIpv4Prefix(value); return *this;}
+    template<typename Ipv4PrefixT = Aws::String>
+    void SetIpv4Prefix(Ipv4PrefixT&& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = std::forward<Ipv4PrefixT>(value); }
+    template<typename Ipv4PrefixT = Aws::String>
+    AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails& WithIpv4Prefix(Ipv4PrefixT&& value) { SetIpv4Prefix(std::forward<Ipv4PrefixT>(value)); return *this;}
     ///@}
   private:
 

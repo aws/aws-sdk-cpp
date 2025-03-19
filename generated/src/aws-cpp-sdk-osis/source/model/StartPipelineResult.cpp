@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartPipelineResult::StartPipelineResult()
-{
-}
-
 StartPipelineResult::StartPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartPipelineResult& StartPipelineResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Pipeline"))
   {
     m_pipeline = jsonValue.GetObject("Pipeline");
-
+    m_pipelineHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

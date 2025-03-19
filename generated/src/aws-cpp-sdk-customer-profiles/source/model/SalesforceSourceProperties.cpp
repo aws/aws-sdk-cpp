@@ -18,17 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-SalesforceSourceProperties::SalesforceSourceProperties() : 
-    m_objectHasBeenSet(false),
-    m_enableDynamicFieldUpdate(false),
-    m_enableDynamicFieldUpdateHasBeenSet(false),
-    m_includeDeletedRecords(false),
-    m_includeDeletedRecordsHasBeenSet(false)
-{
-}
-
 SalesforceSourceProperties::SalesforceSourceProperties(JsonView jsonValue)
-  : SalesforceSourceProperties()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SalesforceSourceProperties& SalesforceSourceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("Object"))
   {
     m_object = jsonValue.GetString("Object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableDynamicFieldUpdate"))
   {
     m_enableDynamicFieldUpdate = jsonValue.GetBool("EnableDynamicFieldUpdate");
-
     m_enableDynamicFieldUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeDeletedRecords"))
   {
     m_includeDeletedRecords = jsonValue.GetBool("IncludeDeletedRecords");
-
     m_includeDeletedRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

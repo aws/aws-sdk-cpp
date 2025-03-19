@@ -12,13 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-OptimizePromptRequest::OptimizePromptRequest() : 
-    m_inputHasBeenSet(false),
-    m_targetModelIdHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String OptimizePromptRequest::SerializePayload() const
 {
   JsonValue payload;

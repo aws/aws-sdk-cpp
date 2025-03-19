@@ -33,7 +33,7 @@ namespace Model
   class TimeoutConfiguration
   {
   public:
-    AWS_ECS_API TimeoutConfiguration();
+    AWS_ECS_API TimeoutConfiguration() = default;
     AWS_ECS_API TimeoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API TimeoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <code>HTTP</code>/<code>HTTP2</code>/<code>GRPC</code> is 5 minutes.</p> <p>The
      * <code>idleTimeout</code> default for <code>TCP</code> is 1 hour.</p>
      */
-    inline int GetIdleTimeoutSeconds() const{ return m_idleTimeoutSeconds; }
+    inline int GetIdleTimeoutSeconds() const { return m_idleTimeoutSeconds; }
     inline bool IdleTimeoutSecondsHasBeenSet() const { return m_idleTimeoutSecondsHasBeenSet; }
     inline void SetIdleTimeoutSeconds(int value) { m_idleTimeoutSecondsHasBeenSet = true; m_idleTimeoutSeconds = value; }
     inline TimeoutConfiguration& WithIdleTimeoutSeconds(int value) { SetIdleTimeoutSeconds(value); return *this;}
@@ -62,17 +62,17 @@ namespace Model
      * <code>idleTimeout</code> is allowed for <code>TCP</code>
      * <code>appProtocol</code>.</p>
      */
-    inline int GetPerRequestTimeoutSeconds() const{ return m_perRequestTimeoutSeconds; }
+    inline int GetPerRequestTimeoutSeconds() const { return m_perRequestTimeoutSeconds; }
     inline bool PerRequestTimeoutSecondsHasBeenSet() const { return m_perRequestTimeoutSecondsHasBeenSet; }
     inline void SetPerRequestTimeoutSeconds(int value) { m_perRequestTimeoutSecondsHasBeenSet = true; m_perRequestTimeoutSeconds = value; }
     inline TimeoutConfiguration& WithPerRequestTimeoutSeconds(int value) { SetPerRequestTimeoutSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_idleTimeoutSeconds;
+    int m_idleTimeoutSeconds{0};
     bool m_idleTimeoutSecondsHasBeenSet = false;
 
-    int m_perRequestTimeoutSeconds;
+    int m_perRequestTimeoutSeconds{0};
     bool m_perRequestTimeoutSecondsHasBeenSet = false;
   };
 

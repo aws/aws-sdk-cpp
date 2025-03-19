@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutVoiceConnectorLoggingConfigurationRequest::PutVoiceConnectorLoggingConfigurationRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutVoiceConnectorLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

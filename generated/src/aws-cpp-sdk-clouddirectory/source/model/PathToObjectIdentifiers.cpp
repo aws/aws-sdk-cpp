@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-PathToObjectIdentifiers::PathToObjectIdentifiers() : 
-    m_pathHasBeenSet(false),
-    m_objectIdentifiersHasBeenSet(false)
-{
-}
-
 PathToObjectIdentifiers::PathToObjectIdentifiers(JsonView jsonValue)
-  : PathToObjectIdentifiers()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectIdentifiers"))
   {
     Aws::Utils::Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
@@ -48,7 +39,6 @@ PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(JsonView jsonValue)
     }
     m_objectIdentifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

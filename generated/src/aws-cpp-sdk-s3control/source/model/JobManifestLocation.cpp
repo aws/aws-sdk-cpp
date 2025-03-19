@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobManifestLocation::JobManifestLocation() : 
-    m_objectArnHasBeenSet(false),
-    m_objectVersionIdHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 JobManifestLocation::JobManifestLocation(const XmlNode& xmlNode)
-  : JobManifestLocation()
 {
   *this = xmlNode;
 }

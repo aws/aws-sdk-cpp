@@ -36,7 +36,7 @@ namespace Model
   class RootCause
   {
   public:
-    AWS_COSTEXPLORER_API RootCause();
+    AWS_COSTEXPLORER_API RootCause() = default;
     AWS_COSTEXPLORER_API RootCause(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API RootCause& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,56 +47,48 @@ namespace Model
      * <p>The Amazon Web Services service name that's associated with the cost anomaly.
      * </p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline RootCause& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline RootCause& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline RootCause& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    RootCause& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline RootCause& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline RootCause& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline RootCause& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    RootCause& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The member account value that's associated with the cost anomaly. </p>
      */
-    inline const Aws::String& GetLinkedAccount() const{ return m_linkedAccount; }
+    inline const Aws::String& GetLinkedAccount() const { return m_linkedAccount; }
     inline bool LinkedAccountHasBeenSet() const { return m_linkedAccountHasBeenSet; }
-    inline void SetLinkedAccount(const Aws::String& value) { m_linkedAccountHasBeenSet = true; m_linkedAccount = value; }
-    inline void SetLinkedAccount(Aws::String&& value) { m_linkedAccountHasBeenSet = true; m_linkedAccount = std::move(value); }
-    inline void SetLinkedAccount(const char* value) { m_linkedAccountHasBeenSet = true; m_linkedAccount.assign(value); }
-    inline RootCause& WithLinkedAccount(const Aws::String& value) { SetLinkedAccount(value); return *this;}
-    inline RootCause& WithLinkedAccount(Aws::String&& value) { SetLinkedAccount(std::move(value)); return *this;}
-    inline RootCause& WithLinkedAccount(const char* value) { SetLinkedAccount(value); return *this;}
+    template<typename LinkedAccountT = Aws::String>
+    void SetLinkedAccount(LinkedAccountT&& value) { m_linkedAccountHasBeenSet = true; m_linkedAccount = std::forward<LinkedAccountT>(value); }
+    template<typename LinkedAccountT = Aws::String>
+    RootCause& WithLinkedAccount(LinkedAccountT&& value) { SetLinkedAccount(std::forward<LinkedAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The member account name value that's associated with the cost anomaly.</p>
      */
-    inline const Aws::String& GetLinkedAccountName() const{ return m_linkedAccountName; }
+    inline const Aws::String& GetLinkedAccountName() const { return m_linkedAccountName; }
     inline bool LinkedAccountNameHasBeenSet() const { return m_linkedAccountNameHasBeenSet; }
-    inline void SetLinkedAccountName(const Aws::String& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = value; }
-    inline void SetLinkedAccountName(Aws::String&& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = std::move(value); }
-    inline void SetLinkedAccountName(const char* value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName.assign(value); }
-    inline RootCause& WithLinkedAccountName(const Aws::String& value) { SetLinkedAccountName(value); return *this;}
-    inline RootCause& WithLinkedAccountName(Aws::String&& value) { SetLinkedAccountName(std::move(value)); return *this;}
-    inline RootCause& WithLinkedAccountName(const char* value) { SetLinkedAccountName(value); return *this;}
+    template<typename LinkedAccountNameT = Aws::String>
+    void SetLinkedAccountName(LinkedAccountNameT&& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = std::forward<LinkedAccountNameT>(value); }
+    template<typename LinkedAccountNameT = Aws::String>
+    RootCause& WithLinkedAccountName(LinkedAccountNameT&& value) { SetLinkedAccountName(std::forward<LinkedAccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,26 +96,24 @@ namespace Model
      * <p>The <code>UsageType</code> value that's associated with the cost anomaly.
      * </p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline RootCause& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline RootCause& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline RootCause& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    RootCause& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dollar impact for the root cause.</p>
      */
-    inline const RootCauseImpact& GetImpact() const{ return m_impact; }
+    inline const RootCauseImpact& GetImpact() const { return m_impact; }
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
-    inline void SetImpact(const RootCauseImpact& value) { m_impactHasBeenSet = true; m_impact = value; }
-    inline void SetImpact(RootCauseImpact&& value) { m_impactHasBeenSet = true; m_impact = std::move(value); }
-    inline RootCause& WithImpact(const RootCauseImpact& value) { SetImpact(value); return *this;}
-    inline RootCause& WithImpact(RootCauseImpact&& value) { SetImpact(std::move(value)); return *this;}
+    template<typename ImpactT = RootCauseImpact>
+    void SetImpact(ImpactT&& value) { m_impactHasBeenSet = true; m_impact = std::forward<ImpactT>(value); }
+    template<typename ImpactT = RootCauseImpact>
+    RootCause& WithImpact(ImpactT&& value) { SetImpact(std::forward<ImpactT>(value)); return *this;}
     ///@}
   private:
 

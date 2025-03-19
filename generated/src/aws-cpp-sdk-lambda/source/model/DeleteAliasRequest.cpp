@@ -12,12 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAliasRequest::DeleteAliasRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAliasRequest::SerializePayload() const
 {
   return {};

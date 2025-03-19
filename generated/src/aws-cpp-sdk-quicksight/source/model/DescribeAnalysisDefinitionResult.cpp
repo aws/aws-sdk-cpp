@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAnalysisDefinitionResult::DescribeAnalysisDefinitionResult() : 
-    m_resourceStatus(ResourceStatus::NOT_SET),
-    m_status(0)
-{
-}
-
 DescribeAnalysisDefinitionResult::DescribeAnalysisDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAnalysisDefinitionResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ DescribeAnalysisDefinitionResult& DescribeAnalysisDefinitionResult::operator =(c
   if(jsonValue.ValueExists("AnalysisId"))
   {
     m_analysisId = jsonValue.GetString("AnalysisId");
-
+    m_analysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -51,36 +42,34 @@ DescribeAnalysisDefinitionResult& DescribeAnalysisDefinitionResult::operator =(c
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceStatus"))
   {
     m_resourceStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("ResourceStatus"));
-
+    m_resourceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeArn"))
   {
     m_themeArn = jsonValue.GetString("ThemeArn");
-
+    m_themeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definition"))
   {
     m_definition = jsonValue.GetObject("Definition");
-
+    m_definitionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

@@ -29,7 +29,7 @@ namespace Model
   class ProgressiveDialerConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig();
+    AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig() = default;
     AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNS_API ProgressiveDialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     
-    inline double GetBandwidthAllocation() const{ return m_bandwidthAllocation; }
+    inline double GetBandwidthAllocation() const { return m_bandwidthAllocation; }
     inline bool BandwidthAllocationHasBeenSet() const { return m_bandwidthAllocationHasBeenSet; }
     inline void SetBandwidthAllocation(double value) { m_bandwidthAllocationHasBeenSet = true; m_bandwidthAllocation = value; }
     inline ProgressiveDialerConfig& WithBandwidthAllocation(double value) { SetBandwidthAllocation(value); return *this;}
@@ -45,17 +45,17 @@ namespace Model
 
     ///@{
     
-    inline double GetDialingCapacity() const{ return m_dialingCapacity; }
+    inline double GetDialingCapacity() const { return m_dialingCapacity; }
     inline bool DialingCapacityHasBeenSet() const { return m_dialingCapacityHasBeenSet; }
     inline void SetDialingCapacity(double value) { m_dialingCapacityHasBeenSet = true; m_dialingCapacity = value; }
     inline ProgressiveDialerConfig& WithDialingCapacity(double value) { SetDialingCapacity(value); return *this;}
     ///@}
   private:
 
-    double m_bandwidthAllocation;
+    double m_bandwidthAllocation{0.0};
     bool m_bandwidthAllocationHasBeenSet = false;
 
-    double m_dialingCapacity;
+    double m_dialingCapacity{0.0};
     bool m_dialingCapacityHasBeenSet = false;
   };
 

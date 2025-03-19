@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeletePartitionRequest::BatchDeletePartitionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_partitionsToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeletePartitionRequest::SerializePayload() const
 {
   JsonValue payload;

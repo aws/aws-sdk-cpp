@@ -28,7 +28,7 @@ namespace Model
   class UpdateContributorInsightsResult
   {
   public:
-    AWS_DYNAMODB_API UpdateContributorInsightsResult();
+    AWS_DYNAMODB_API UpdateContributorInsightsResult() = default;
     AWS_DYNAMODB_API UpdateContributorInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API UpdateContributorInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
-    inline void SetTableName(const Aws::String& value) { m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableName.assign(value); }
-    inline UpdateContributorInsightsResult& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline UpdateContributorInsightsResult& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline UpdateContributorInsightsResult& WithTableName(const char* value) { SetTableName(value); return *this;}
+    inline const Aws::String& GetTableName() const { return m_tableName; }
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    UpdateContributorInsightsResult& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the global secondary index, if applicable.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
-    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
-    inline UpdateContributorInsightsResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline UpdateContributorInsightsResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline UpdateContributorInsightsResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    UpdateContributorInsightsResult& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of contributor insights</p>
      */
-    inline const ContributorInsightsStatus& GetContributorInsightsStatus() const{ return m_contributorInsightsStatus; }
-    inline void SetContributorInsightsStatus(const ContributorInsightsStatus& value) { m_contributorInsightsStatus = value; }
-    inline void SetContributorInsightsStatus(ContributorInsightsStatus&& value) { m_contributorInsightsStatus = std::move(value); }
-    inline UpdateContributorInsightsResult& WithContributorInsightsStatus(const ContributorInsightsStatus& value) { SetContributorInsightsStatus(value); return *this;}
-    inline UpdateContributorInsightsResult& WithContributorInsightsStatus(ContributorInsightsStatus&& value) { SetContributorInsightsStatus(std::move(value)); return *this;}
+    inline ContributorInsightsStatus GetContributorInsightsStatus() const { return m_contributorInsightsStatus; }
+    inline void SetContributorInsightsStatus(ContributorInsightsStatus value) { m_contributorInsightsStatusHasBeenSet = true; m_contributorInsightsStatus = value; }
+    inline UpdateContributorInsightsResult& WithContributorInsightsStatus(ContributorInsightsStatus value) { SetContributorInsightsStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateContributorInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateContributorInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateContributorInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateContributorInsightsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tableName;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_indexName;
+    bool m_indexNameHasBeenSet = false;
 
-    ContributorInsightsStatus m_contributorInsightsStatus;
+    ContributorInsightsStatus m_contributorInsightsStatus{ContributorInsightsStatus::NOT_SET};
+    bool m_contributorInsightsStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

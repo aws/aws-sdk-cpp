@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlMapsResult::XmlMapsResult()
-{
-}
-
 XmlMapsResult::XmlMapsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ XmlMapsResult& XmlMapsResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
     if(!myMapNode.IsNull())
     {
       XmlNode myMapEntry = myMapNode.FirstChild("entry");
+      m_myMapHasBeenSet = !myMapEntry.IsNull();
       while(!myMapEntry.IsNull())
       {
         XmlNode keyNode = myMapEntry.FirstChild("key");
@@ -52,12 +49,14 @@ XmlMapsResult& XmlMapsResult::operator =(const Aws::AmazonWebServiceResult<XmlDo
         myMapEntry = myMapEntry.NextNode("entry");
       }
 
+      m_myMapHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::XmlMapsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

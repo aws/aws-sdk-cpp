@@ -18,17 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails() : 
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_signedUrlHasBeenSet(false),
-    m_signedUrlExpiresAtHasBeenSet(false)
-{
-}
-
 ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails(JsonView jsonValue)
-  : ExportAssetToSignedUrlResponseDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ExportAssetToSignedUrlResponseDetails& ExportAssetToSignedUrlResponseDetails::op
   if(jsonValue.ValueExists("AssetId"))
   {
     m_assetId = jsonValue.GetString("AssetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignedUrl"))
   {
     m_signedUrl = jsonValue.GetString("SignedUrl");
-
     m_signedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignedUrlExpiresAt"))
   {
     m_signedUrlExpiresAt = jsonValue.GetString("SignedUrlExpiresAt");
-
     m_signedUrlExpiresAtHasBeenSet = true;
   }
-
   return *this;
 }
 

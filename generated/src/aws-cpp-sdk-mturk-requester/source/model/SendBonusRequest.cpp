@@ -12,15 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendBonusRequest::SendBonusRequest() : 
-    m_workerIdHasBeenSet(false),
-    m_bonusAmountHasBeenSet(false),
-    m_assignmentIdHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_uniqueRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String SendBonusRequest::SerializePayload() const
 {
   JsonValue payload;

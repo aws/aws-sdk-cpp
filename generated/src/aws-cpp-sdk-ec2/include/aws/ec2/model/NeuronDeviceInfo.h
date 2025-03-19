@@ -34,7 +34,7 @@ namespace Model
   class NeuronDeviceInfo
   {
   public:
-    AWS_EC2_API NeuronDeviceInfo();
+    AWS_EC2_API NeuronDeviceInfo() = default;
     AWS_EC2_API NeuronDeviceInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NeuronDeviceInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The number of neuron accelerators for the instance type.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline NeuronDeviceInfo& WithCount(int value) { SetCount(value); return *this;}
@@ -56,42 +56,40 @@ namespace Model
     /**
      * <p>The name of the neuron accelerator.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline NeuronDeviceInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline NeuronDeviceInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline NeuronDeviceInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    NeuronDeviceInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the cores available to each neuron accelerator.</p>
      */
-    inline const NeuronDeviceCoreInfo& GetCoreInfo() const{ return m_coreInfo; }
+    inline const NeuronDeviceCoreInfo& GetCoreInfo() const { return m_coreInfo; }
     inline bool CoreInfoHasBeenSet() const { return m_coreInfoHasBeenSet; }
-    inline void SetCoreInfo(const NeuronDeviceCoreInfo& value) { m_coreInfoHasBeenSet = true; m_coreInfo = value; }
-    inline void SetCoreInfo(NeuronDeviceCoreInfo&& value) { m_coreInfoHasBeenSet = true; m_coreInfo = std::move(value); }
-    inline NeuronDeviceInfo& WithCoreInfo(const NeuronDeviceCoreInfo& value) { SetCoreInfo(value); return *this;}
-    inline NeuronDeviceInfo& WithCoreInfo(NeuronDeviceCoreInfo&& value) { SetCoreInfo(std::move(value)); return *this;}
+    template<typename CoreInfoT = NeuronDeviceCoreInfo>
+    void SetCoreInfo(CoreInfoT&& value) { m_coreInfoHasBeenSet = true; m_coreInfo = std::forward<CoreInfoT>(value); }
+    template<typename CoreInfoT = NeuronDeviceCoreInfo>
+    NeuronDeviceInfo& WithCoreInfo(CoreInfoT&& value) { SetCoreInfo(std::forward<CoreInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the memory available to each neuron accelerator.</p>
      */
-    inline const NeuronDeviceMemoryInfo& GetMemoryInfo() const{ return m_memoryInfo; }
+    inline const NeuronDeviceMemoryInfo& GetMemoryInfo() const { return m_memoryInfo; }
     inline bool MemoryInfoHasBeenSet() const { return m_memoryInfoHasBeenSet; }
-    inline void SetMemoryInfo(const NeuronDeviceMemoryInfo& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = value; }
-    inline void SetMemoryInfo(NeuronDeviceMemoryInfo&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::move(value); }
-    inline NeuronDeviceInfo& WithMemoryInfo(const NeuronDeviceMemoryInfo& value) { SetMemoryInfo(value); return *this;}
-    inline NeuronDeviceInfo& WithMemoryInfo(NeuronDeviceMemoryInfo&& value) { SetMemoryInfo(std::move(value)); return *this;}
+    template<typename MemoryInfoT = NeuronDeviceMemoryInfo>
+    void SetMemoryInfo(MemoryInfoT&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::forward<MemoryInfoT>(value); }
+    template<typename MemoryInfoT = NeuronDeviceMemoryInfo>
+    NeuronDeviceInfo& WithMemoryInfo(MemoryInfoT&& value) { SetMemoryInfo(std::forward<MemoryInfoT>(value)); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::String m_name;

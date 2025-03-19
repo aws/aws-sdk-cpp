@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceDefinitionRequest::DeleteResourceDefinitionRequest() : 
-    m_resourceDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceDefinitionRequest::SerializePayload() const
 {
   return {};

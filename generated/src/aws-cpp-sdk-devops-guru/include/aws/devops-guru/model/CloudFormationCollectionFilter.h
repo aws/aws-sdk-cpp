@@ -37,7 +37,7 @@ namespace Model
   class CloudFormationCollectionFilter
   {
   public:
-    AWS_DEVOPSGURU_API CloudFormationCollectionFilter();
+    AWS_DEVOPSGURU_API CloudFormationCollectionFilter() = default;
     AWS_DEVOPSGURU_API CloudFormationCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API CloudFormationCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
     /**
      * <p> An array of CloudFormation stack names. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStackNames() const{ return m_stackNames; }
+    inline const Aws::Vector<Aws::String>& GetStackNames() const { return m_stackNames; }
     inline bool StackNamesHasBeenSet() const { return m_stackNamesHasBeenSet; }
-    inline void SetStackNames(const Aws::Vector<Aws::String>& value) { m_stackNamesHasBeenSet = true; m_stackNames = value; }
-    inline void SetStackNames(Aws::Vector<Aws::String>&& value) { m_stackNamesHasBeenSet = true; m_stackNames = std::move(value); }
-    inline CloudFormationCollectionFilter& WithStackNames(const Aws::Vector<Aws::String>& value) { SetStackNames(value); return *this;}
-    inline CloudFormationCollectionFilter& WithStackNames(Aws::Vector<Aws::String>&& value) { SetStackNames(std::move(value)); return *this;}
-    inline CloudFormationCollectionFilter& AddStackNames(const Aws::String& value) { m_stackNamesHasBeenSet = true; m_stackNames.push_back(value); return *this; }
-    inline CloudFormationCollectionFilter& AddStackNames(Aws::String&& value) { m_stackNamesHasBeenSet = true; m_stackNames.push_back(std::move(value)); return *this; }
-    inline CloudFormationCollectionFilter& AddStackNames(const char* value) { m_stackNamesHasBeenSet = true; m_stackNames.push_back(value); return *this; }
+    template<typename StackNamesT = Aws::Vector<Aws::String>>
+    void SetStackNames(StackNamesT&& value) { m_stackNamesHasBeenSet = true; m_stackNames = std::forward<StackNamesT>(value); }
+    template<typename StackNamesT = Aws::Vector<Aws::String>>
+    CloudFormationCollectionFilter& WithStackNames(StackNamesT&& value) { SetStackNames(std::forward<StackNamesT>(value)); return *this;}
+    template<typename StackNamesT = Aws::String>
+    CloudFormationCollectionFilter& AddStackNames(StackNamesT&& value) { m_stackNamesHasBeenSet = true; m_stackNames.emplace_back(std::forward<StackNamesT>(value)); return *this; }
     ///@}
   private:
 

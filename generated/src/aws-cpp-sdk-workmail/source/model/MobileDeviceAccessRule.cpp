@@ -18,27 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-MobileDeviceAccessRule::MobileDeviceAccessRule() : 
-    m_mobileDeviceAccessRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_effect(MobileDeviceAccessRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_deviceTypesHasBeenSet(false),
-    m_notDeviceTypesHasBeenSet(false),
-    m_deviceModelsHasBeenSet(false),
-    m_notDeviceModelsHasBeenSet(false),
-    m_deviceOperatingSystemsHasBeenSet(false),
-    m_notDeviceOperatingSystemsHasBeenSet(false),
-    m_deviceUserAgentsHasBeenSet(false),
-    m_notDeviceUserAgentsHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
-{
-}
-
 MobileDeviceAccessRule::MobileDeviceAccessRule(JsonView jsonValue)
-  : MobileDeviceAccessRule()
 {
   *this = jsonValue;
 }
@@ -48,31 +28,23 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MobileDeviceAccessRuleId"))
   {
     m_mobileDeviceAccessRuleId = jsonValue.GetString("MobileDeviceAccessRuleId");
-
     m_mobileDeviceAccessRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Effect"))
   {
     m_effect = MobileDeviceAccessRuleEffectMapper::GetMobileDeviceAccessRuleEffectForName(jsonValue.GetString("Effect"));
-
     m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceTypes"))
   {
     Aws::Utils::Array<JsonView> deviceTypesJsonList = jsonValue.GetArray("DeviceTypes");
@@ -82,7 +54,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_deviceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotDeviceTypes"))
   {
     Aws::Utils::Array<JsonView> notDeviceTypesJsonList = jsonValue.GetArray("NotDeviceTypes");
@@ -92,7 +63,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_notDeviceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceModels"))
   {
     Aws::Utils::Array<JsonView> deviceModelsJsonList = jsonValue.GetArray("DeviceModels");
@@ -102,7 +72,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_deviceModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotDeviceModels"))
   {
     Aws::Utils::Array<JsonView> notDeviceModelsJsonList = jsonValue.GetArray("NotDeviceModels");
@@ -112,7 +81,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_notDeviceModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceOperatingSystems"))
   {
     Aws::Utils::Array<JsonView> deviceOperatingSystemsJsonList = jsonValue.GetArray("DeviceOperatingSystems");
@@ -122,7 +90,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_deviceOperatingSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotDeviceOperatingSystems"))
   {
     Aws::Utils::Array<JsonView> notDeviceOperatingSystemsJsonList = jsonValue.GetArray("NotDeviceOperatingSystems");
@@ -132,7 +99,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_notDeviceOperatingSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceUserAgents"))
   {
     Aws::Utils::Array<JsonView> deviceUserAgentsJsonList = jsonValue.GetArray("DeviceUserAgents");
@@ -142,7 +108,6 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_deviceUserAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotDeviceUserAgents"))
   {
     Aws::Utils::Array<JsonView> notDeviceUserAgentsJsonList = jsonValue.GetArray("NotDeviceUserAgents");
@@ -152,21 +117,16 @@ MobileDeviceAccessRule& MobileDeviceAccessRule::operator =(JsonView jsonValue)
     }
     m_notDeviceUserAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("DateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateModified"))
   {
     m_dateModified = jsonValue.GetDouble("DateModified");
-
     m_dateModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class FindingActor
   {
   public:
-    AWS_MACIE2_API FindingActor();
+    AWS_MACIE2_API FindingActor() = default;
     AWS_MACIE2_API FindingActor(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API FindingActor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The domain name of the device that the entity used to perform the action on
      * the affected resource.</p>
      */
-    inline const DomainDetails& GetDomainDetails() const{ return m_domainDetails; }
+    inline const DomainDetails& GetDomainDetails() const { return m_domainDetails; }
     inline bool DomainDetailsHasBeenSet() const { return m_domainDetailsHasBeenSet; }
-    inline void SetDomainDetails(const DomainDetails& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = value; }
-    inline void SetDomainDetails(DomainDetails&& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = std::move(value); }
-    inline FindingActor& WithDomainDetails(const DomainDetails& value) { SetDomainDetails(value); return *this;}
-    inline FindingActor& WithDomainDetails(DomainDetails&& value) { SetDomainDetails(std::move(value)); return *this;}
+    template<typename DomainDetailsT = DomainDetails>
+    void SetDomainDetails(DomainDetailsT&& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = std::forward<DomainDetailsT>(value); }
+    template<typename DomainDetailsT = DomainDetails>
+    FindingActor& WithDomainDetails(DomainDetailsT&& value) { SetDomainDetails(std::forward<DomainDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * perform the action on the affected resource. The details can include information
      * such as the owner and geographic location of the IP address.</p>
      */
-    inline const IpAddressDetails& GetIpAddressDetails() const{ return m_ipAddressDetails; }
+    inline const IpAddressDetails& GetIpAddressDetails() const { return m_ipAddressDetails; }
     inline bool IpAddressDetailsHasBeenSet() const { return m_ipAddressDetailsHasBeenSet; }
-    inline void SetIpAddressDetails(const IpAddressDetails& value) { m_ipAddressDetailsHasBeenSet = true; m_ipAddressDetails = value; }
-    inline void SetIpAddressDetails(IpAddressDetails&& value) { m_ipAddressDetailsHasBeenSet = true; m_ipAddressDetails = std::move(value); }
-    inline FindingActor& WithIpAddressDetails(const IpAddressDetails& value) { SetIpAddressDetails(value); return *this;}
-    inline FindingActor& WithIpAddressDetails(IpAddressDetails&& value) { SetIpAddressDetails(std::move(value)); return *this;}
+    template<typename IpAddressDetailsT = IpAddressDetails>
+    void SetIpAddressDetails(IpAddressDetailsT&& value) { m_ipAddressDetailsHasBeenSet = true; m_ipAddressDetails = std::forward<IpAddressDetailsT>(value); }
+    template<typename IpAddressDetailsT = IpAddressDetails>
+    FindingActor& WithIpAddressDetails(IpAddressDetailsT&& value) { SetIpAddressDetails(std::forward<IpAddressDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * the affected resource. This value is null if the action was performed by an
      * anonymous (unauthenticated) entity.</p>
      */
-    inline const UserIdentity& GetUserIdentity() const{ return m_userIdentity; }
+    inline const UserIdentity& GetUserIdentity() const { return m_userIdentity; }
     inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
-    inline void SetUserIdentity(const UserIdentity& value) { m_userIdentityHasBeenSet = true; m_userIdentity = value; }
-    inline void SetUserIdentity(UserIdentity&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::move(value); }
-    inline FindingActor& WithUserIdentity(const UserIdentity& value) { SetUserIdentity(value); return *this;}
-    inline FindingActor& WithUserIdentity(UserIdentity&& value) { SetUserIdentity(std::move(value)); return *this;}
+    template<typename UserIdentityT = UserIdentity>
+    void SetUserIdentity(UserIdentityT&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::forward<UserIdentityT>(value); }
+    template<typename UserIdentityT = UserIdentity>
+    FindingActor& WithUserIdentity(UserIdentityT&& value) { SetUserIdentity(std::forward<UserIdentityT>(value)); return *this;}
     ///@}
   private:
 

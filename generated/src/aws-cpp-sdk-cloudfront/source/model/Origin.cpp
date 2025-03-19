@@ -20,25 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Origin::Origin() : 
-    m_idHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_originPathHasBeenSet(false),
-    m_customHeadersHasBeenSet(false),
-    m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false),
-    m_vpcOriginConfigHasBeenSet(false),
-    m_connectionAttempts(0),
-    m_connectionAttemptsHasBeenSet(false),
-    m_connectionTimeout(0),
-    m_connectionTimeoutHasBeenSet(false),
-    m_originShieldHasBeenSet(false),
-    m_originAccessControlIdHasBeenSet(false)
-{
-}
-
 Origin::Origin(const XmlNode& xmlNode)
-  : Origin()
 {
   *this = xmlNode;
 }

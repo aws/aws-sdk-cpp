@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-UserUnion::UserUnion() : 
-    m_userArnHasBeenSet(false)
-{
-}
-
 UserUnion::UserUnion(JsonView jsonValue)
-  : UserUnion()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserUnion& UserUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userArn"))
   {
     m_userArn = jsonValue.GetString("userArn");
-
     m_userArnHasBeenSet = true;
   }
-
   return *this;
 }
 

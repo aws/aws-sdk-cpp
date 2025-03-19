@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-S3BucketSinkConfiguration::S3BucketSinkConfiguration() : 
-    m_destinationHasBeenSet(false)
-{
-}
-
 S3BucketSinkConfiguration::S3BucketSinkConfiguration(JsonView jsonValue)
-  : S3BucketSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3BucketSinkConfiguration& S3BucketSinkConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

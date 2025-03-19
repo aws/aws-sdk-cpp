@@ -12,11 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePhoneNumberRequest::DescribePhoneNumberRequest() : 
-    m_phoneNumberIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePhoneNumberRequest::SerializePayload() const
 {
   return {};

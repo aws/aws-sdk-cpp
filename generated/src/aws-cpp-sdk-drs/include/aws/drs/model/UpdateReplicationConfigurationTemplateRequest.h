@@ -27,7 +27,7 @@ namespace Model
   class UpdateReplicationConfigurationTemplateRequest : public DrsRequest
   {
   public:
-    AWS_DRS_API UpdateReplicationConfigurationTemplateRequest();
+    AWS_DRS_API UpdateReplicationConfigurationTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Replication Configuration Template ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Whether to associate the default Elastic Disaster Recovery Security group
      * with the Replication Configuration Template.</p>
      */
-    inline bool GetAssociateDefaultSecurityGroup() const{ return m_associateDefaultSecurityGroup; }
+    inline bool GetAssociateDefaultSecurityGroup() const { return m_associateDefaultSecurityGroup; }
     inline bool AssociateDefaultSecurityGroupHasBeenSet() const { return m_associateDefaultSecurityGroupHasBeenSet; }
     inline void SetAssociateDefaultSecurityGroup(bool value) { m_associateDefaultSecurityGroupHasBeenSet = true; m_associateDefaultSecurityGroup = value; }
     inline UpdateReplicationConfigurationTemplateRequest& WithAssociateDefaultSecurityGroup(bool value) { SetAssociateDefaultSecurityGroup(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
      * <p>Whether to allow the AWS replication agent to automatically replicate newly
      * added disks.</p>
      */
-    inline bool GetAutoReplicateNewDisks() const{ return m_autoReplicateNewDisks; }
+    inline bool GetAutoReplicateNewDisks() const { return m_autoReplicateNewDisks; }
     inline bool AutoReplicateNewDisksHasBeenSet() const { return m_autoReplicateNewDisksHasBeenSet; }
     inline void SetAutoReplicateNewDisks(bool value) { m_autoReplicateNewDisksHasBeenSet = true; m_autoReplicateNewDisks = value; }
     inline UpdateReplicationConfigurationTemplateRequest& WithAutoReplicateNewDisks(bool value) { SetAutoReplicateNewDisks(value); return *this;}
@@ -79,7 +77,7 @@ namespace Model
      * <p>Configure bandwidth throttling for the outbound data transfer rate of the
      * Source Server in Mbps.</p>
      */
-    inline long long GetBandwidthThrottling() const{ return m_bandwidthThrottling; }
+    inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
     inline bool BandwidthThrottlingHasBeenSet() const { return m_bandwidthThrottlingHasBeenSet; }
     inline void SetBandwidthThrottling(long long value) { m_bandwidthThrottlingHasBeenSet = true; m_bandwidthThrottling = value; }
     inline UpdateReplicationConfigurationTemplateRequest& WithBandwidthThrottling(long long value) { SetBandwidthThrottling(value); return *this;}
@@ -89,7 +87,7 @@ namespace Model
     /**
      * <p>Whether to create a Public IP for the Recovery Instance by default.</p>
      */
-    inline bool GetCreatePublicIP() const{ return m_createPublicIP; }
+    inline bool GetCreatePublicIP() const { return m_createPublicIP; }
     inline bool CreatePublicIPHasBeenSet() const { return m_createPublicIPHasBeenSet; }
     inline void SetCreatePublicIP(bool value) { m_createPublicIPHasBeenSet = true; m_createPublicIP = value; }
     inline UpdateReplicationConfigurationTemplateRequest& WithCreatePublicIP(bool value) { SetCreatePublicIP(value); return *this;}
@@ -99,50 +97,42 @@ namespace Model
     /**
      * <p>The data plane routing mechanism that will be used for replication.</p>
      */
-    inline const ReplicationConfigurationDataPlaneRouting& GetDataPlaneRouting() const{ return m_dataPlaneRouting; }
+    inline ReplicationConfigurationDataPlaneRouting GetDataPlaneRouting() const { return m_dataPlaneRouting; }
     inline bool DataPlaneRoutingHasBeenSet() const { return m_dataPlaneRoutingHasBeenSet; }
-    inline void SetDataPlaneRouting(const ReplicationConfigurationDataPlaneRouting& value) { m_dataPlaneRoutingHasBeenSet = true; m_dataPlaneRouting = value; }
-    inline void SetDataPlaneRouting(ReplicationConfigurationDataPlaneRouting&& value) { m_dataPlaneRoutingHasBeenSet = true; m_dataPlaneRouting = std::move(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithDataPlaneRouting(const ReplicationConfigurationDataPlaneRouting& value) { SetDataPlaneRouting(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithDataPlaneRouting(ReplicationConfigurationDataPlaneRouting&& value) { SetDataPlaneRouting(std::move(value)); return *this;}
+    inline void SetDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) { m_dataPlaneRoutingHasBeenSet = true; m_dataPlaneRouting = value; }
+    inline UpdateReplicationConfigurationTemplateRequest& WithDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) { SetDataPlaneRouting(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Staging Disk EBS volume type to be used during replication.</p>
      */
-    inline const ReplicationConfigurationDefaultLargeStagingDiskType& GetDefaultLargeStagingDiskType() const{ return m_defaultLargeStagingDiskType; }
+    inline ReplicationConfigurationDefaultLargeStagingDiskType GetDefaultLargeStagingDiskType() const { return m_defaultLargeStagingDiskType; }
     inline bool DefaultLargeStagingDiskTypeHasBeenSet() const { return m_defaultLargeStagingDiskTypeHasBeenSet; }
-    inline void SetDefaultLargeStagingDiskType(const ReplicationConfigurationDefaultLargeStagingDiskType& value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = value; }
-    inline void SetDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType&& value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = std::move(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithDefaultLargeStagingDiskType(const ReplicationConfigurationDefaultLargeStagingDiskType& value) { SetDefaultLargeStagingDiskType(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType&& value) { SetDefaultLargeStagingDiskType(std::move(value)); return *this;}
+    inline void SetDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType value) { m_defaultLargeStagingDiskTypeHasBeenSet = true; m_defaultLargeStagingDiskType = value; }
+    inline UpdateReplicationConfigurationTemplateRequest& WithDefaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType value) { SetDefaultLargeStagingDiskType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of EBS encryption to be used during replication.</p>
      */
-    inline const ReplicationConfigurationEbsEncryption& GetEbsEncryption() const{ return m_ebsEncryption; }
+    inline ReplicationConfigurationEbsEncryption GetEbsEncryption() const { return m_ebsEncryption; }
     inline bool EbsEncryptionHasBeenSet() const { return m_ebsEncryptionHasBeenSet; }
-    inline void SetEbsEncryption(const ReplicationConfigurationEbsEncryption& value) { m_ebsEncryptionHasBeenSet = true; m_ebsEncryption = value; }
-    inline void SetEbsEncryption(ReplicationConfigurationEbsEncryption&& value) { m_ebsEncryptionHasBeenSet = true; m_ebsEncryption = std::move(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithEbsEncryption(const ReplicationConfigurationEbsEncryption& value) { SetEbsEncryption(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithEbsEncryption(ReplicationConfigurationEbsEncryption&& value) { SetEbsEncryption(std::move(value)); return *this;}
+    inline void SetEbsEncryption(ReplicationConfigurationEbsEncryption value) { m_ebsEncryptionHasBeenSet = true; m_ebsEncryption = value; }
+    inline UpdateReplicationConfigurationTemplateRequest& WithEbsEncryption(ReplicationConfigurationEbsEncryption value) { SetEbsEncryption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the EBS encryption key to be used during replication.</p>
      */
-    inline const Aws::String& GetEbsEncryptionKeyArn() const{ return m_ebsEncryptionKeyArn; }
+    inline const Aws::String& GetEbsEncryptionKeyArn() const { return m_ebsEncryptionKeyArn; }
     inline bool EbsEncryptionKeyArnHasBeenSet() const { return m_ebsEncryptionKeyArnHasBeenSet; }
-    inline void SetEbsEncryptionKeyArn(const Aws::String& value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn = value; }
-    inline void SetEbsEncryptionKeyArn(Aws::String&& value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn = std::move(value); }
-    inline void SetEbsEncryptionKeyArn(const char* value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn.assign(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(const Aws::String& value) { SetEbsEncryptionKeyArn(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(Aws::String&& value) { SetEbsEncryptionKeyArn(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(const char* value) { SetEbsEncryptionKeyArn(value); return *this;}
+    template<typename EbsEncryptionKeyArnT = Aws::String>
+    void SetEbsEncryptionKeyArn(EbsEncryptionKeyArnT&& value) { m_ebsEncryptionKeyArnHasBeenSet = true; m_ebsEncryptionKeyArn = std::forward<EbsEncryptionKeyArnT>(value); }
+    template<typename EbsEncryptionKeyArnT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& WithEbsEncryptionKeyArn(EbsEncryptionKeyArnT&& value) { SetEbsEncryptionKeyArn(std::forward<EbsEncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,71 +140,64 @@ namespace Model
      * <p>The Point in time (PIT) policy to manage snapshots taken during
      * replication.</p>
      */
-    inline const Aws::Vector<PITPolicyRule>& GetPitPolicy() const{ return m_pitPolicy; }
+    inline const Aws::Vector<PITPolicyRule>& GetPitPolicy() const { return m_pitPolicy; }
     inline bool PitPolicyHasBeenSet() const { return m_pitPolicyHasBeenSet; }
-    inline void SetPitPolicy(const Aws::Vector<PITPolicyRule>& value) { m_pitPolicyHasBeenSet = true; m_pitPolicy = value; }
-    inline void SetPitPolicy(Aws::Vector<PITPolicyRule>&& value) { m_pitPolicyHasBeenSet = true; m_pitPolicy = std::move(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithPitPolicy(const Aws::Vector<PITPolicyRule>& value) { SetPitPolicy(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithPitPolicy(Aws::Vector<PITPolicyRule>&& value) { SetPitPolicy(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& AddPitPolicy(const PITPolicyRule& value) { m_pitPolicyHasBeenSet = true; m_pitPolicy.push_back(value); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddPitPolicy(PITPolicyRule&& value) { m_pitPolicyHasBeenSet = true; m_pitPolicy.push_back(std::move(value)); return *this; }
+    template<typename PitPolicyT = Aws::Vector<PITPolicyRule>>
+    void SetPitPolicy(PitPolicyT&& value) { m_pitPolicyHasBeenSet = true; m_pitPolicy = std::forward<PitPolicyT>(value); }
+    template<typename PitPolicyT = Aws::Vector<PITPolicyRule>>
+    UpdateReplicationConfigurationTemplateRequest& WithPitPolicy(PitPolicyT&& value) { SetPitPolicy(std::forward<PitPolicyT>(value)); return *this;}
+    template<typename PitPolicyT = PITPolicyRule>
+    UpdateReplicationConfigurationTemplateRequest& AddPitPolicy(PitPolicyT&& value) { m_pitPolicyHasBeenSet = true; m_pitPolicy.emplace_back(std::forward<PitPolicyT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Replication Configuration Template ID.</p>
      */
-    inline const Aws::String& GetReplicationConfigurationTemplateID() const{ return m_replicationConfigurationTemplateID; }
+    inline const Aws::String& GetReplicationConfigurationTemplateID() const { return m_replicationConfigurationTemplateID; }
     inline bool ReplicationConfigurationTemplateIDHasBeenSet() const { return m_replicationConfigurationTemplateIDHasBeenSet; }
-    inline void SetReplicationConfigurationTemplateID(const Aws::String& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = value; }
-    inline void SetReplicationConfigurationTemplateID(Aws::String&& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = std::move(value); }
-    inline void SetReplicationConfigurationTemplateID(const char* value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID.assign(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(const Aws::String& value) { SetReplicationConfigurationTemplateID(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(Aws::String&& value) { SetReplicationConfigurationTemplateID(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(const char* value) { SetReplicationConfigurationTemplateID(value); return *this;}
+    template<typename ReplicationConfigurationTemplateIDT = Aws::String>
+    void SetReplicationConfigurationTemplateID(ReplicationConfigurationTemplateIDT&& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = std::forward<ReplicationConfigurationTemplateIDT>(value); }
+    template<typename ReplicationConfigurationTemplateIDT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(ReplicationConfigurationTemplateIDT&& value) { SetReplicationConfigurationTemplateID(std::forward<ReplicationConfigurationTemplateIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type to be used for the replication server.</p>
      */
-    inline const Aws::String& GetReplicationServerInstanceType() const{ return m_replicationServerInstanceType; }
+    inline const Aws::String& GetReplicationServerInstanceType() const { return m_replicationServerInstanceType; }
     inline bool ReplicationServerInstanceTypeHasBeenSet() const { return m_replicationServerInstanceTypeHasBeenSet; }
-    inline void SetReplicationServerInstanceType(const Aws::String& value) { m_replicationServerInstanceTypeHasBeenSet = true; m_replicationServerInstanceType = value; }
-    inline void SetReplicationServerInstanceType(Aws::String&& value) { m_replicationServerInstanceTypeHasBeenSet = true; m_replicationServerInstanceType = std::move(value); }
-    inline void SetReplicationServerInstanceType(const char* value) { m_replicationServerInstanceTypeHasBeenSet = true; m_replicationServerInstanceType.assign(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationServerInstanceType(const Aws::String& value) { SetReplicationServerInstanceType(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationServerInstanceType(Aws::String&& value) { SetReplicationServerInstanceType(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationServerInstanceType(const char* value) { SetReplicationServerInstanceType(value); return *this;}
+    template<typename ReplicationServerInstanceTypeT = Aws::String>
+    void SetReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) { m_replicationServerInstanceTypeHasBeenSet = true; m_replicationServerInstanceType = std::forward<ReplicationServerInstanceTypeT>(value); }
+    template<typename ReplicationServerInstanceTypeT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& WithReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) { SetReplicationServerInstanceType(std::forward<ReplicationServerInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group IDs that will be used by the replication server.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const{ return m_replicationServersSecurityGroupsIDs; }
+    inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const { return m_replicationServersSecurityGroupsIDs; }
     inline bool ReplicationServersSecurityGroupsIDsHasBeenSet() const { return m_replicationServersSecurityGroupsIDsHasBeenSet; }
-    inline void SetReplicationServersSecurityGroupsIDs(const Aws::Vector<Aws::String>& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs = value; }
-    inline void SetReplicationServersSecurityGroupsIDs(Aws::Vector<Aws::String>&& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs = std::move(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(const Aws::Vector<Aws::String>& value) { SetReplicationServersSecurityGroupsIDs(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(Aws::Vector<Aws::String>&& value) { SetReplicationServersSecurityGroupsIDs(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(const Aws::String& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.push_back(value); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(Aws::String&& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.push_back(std::move(value)); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(const char* value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.push_back(value); return *this; }
+    template<typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
+    void SetReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs = std::forward<ReplicationServersSecurityGroupsIDsT>(value); }
+    template<typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
+    UpdateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) { SetReplicationServersSecurityGroupsIDs(std::forward<ReplicationServersSecurityGroupsIDsT>(value)); return *this;}
+    template<typename ReplicationServersSecurityGroupsIDsT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) { m_replicationServersSecurityGroupsIDsHasBeenSet = true; m_replicationServersSecurityGroupsIDs.emplace_back(std::forward<ReplicationServersSecurityGroupsIDsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subnet to be used by the replication staging area.</p>
      */
-    inline const Aws::String& GetStagingAreaSubnetId() const{ return m_stagingAreaSubnetId; }
+    inline const Aws::String& GetStagingAreaSubnetId() const { return m_stagingAreaSubnetId; }
     inline bool StagingAreaSubnetIdHasBeenSet() const { return m_stagingAreaSubnetIdHasBeenSet; }
-    inline void SetStagingAreaSubnetId(const Aws::String& value) { m_stagingAreaSubnetIdHasBeenSet = true; m_stagingAreaSubnetId = value; }
-    inline void SetStagingAreaSubnetId(Aws::String&& value) { m_stagingAreaSubnetIdHasBeenSet = true; m_stagingAreaSubnetId = std::move(value); }
-    inline void SetStagingAreaSubnetId(const char* value) { m_stagingAreaSubnetIdHasBeenSet = true; m_stagingAreaSubnetId.assign(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithStagingAreaSubnetId(const Aws::String& value) { SetStagingAreaSubnetId(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithStagingAreaSubnetId(Aws::String&& value) { SetStagingAreaSubnetId(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithStagingAreaSubnetId(const char* value) { SetStagingAreaSubnetId(value); return *this;}
+    template<typename StagingAreaSubnetIdT = Aws::String>
+    void SetStagingAreaSubnetId(StagingAreaSubnetIdT&& value) { m_stagingAreaSubnetIdHasBeenSet = true; m_stagingAreaSubnetId = std::forward<StagingAreaSubnetIdT>(value); }
+    template<typename StagingAreaSubnetIdT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& WithStagingAreaSubnetId(StagingAreaSubnetIdT&& value) { SetStagingAreaSubnetId(std::forward<StagingAreaSubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,19 +205,16 @@ namespace Model
      * <p>A set of tags to be associated with all resources created in the replication
      * staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStagingAreaTags() const{ return m_stagingAreaTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStagingAreaTags() const { return m_stagingAreaTags; }
     inline bool StagingAreaTagsHasBeenSet() const { return m_stagingAreaTagsHasBeenSet; }
-    inline void SetStagingAreaTags(const Aws::Map<Aws::String, Aws::String>& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags = value; }
-    inline void SetStagingAreaTags(Aws::Map<Aws::String, Aws::String>&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags = std::move(value); }
-    inline UpdateReplicationConfigurationTemplateRequest& WithStagingAreaTags(const Aws::Map<Aws::String, Aws::String>& value) { SetStagingAreaTags(value); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& WithStagingAreaTags(Aws::Map<Aws::String, Aws::String>&& value) { SetStagingAreaTags(std::move(value)); return *this;}
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const Aws::String& key, const Aws::String& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, value); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(Aws::String&& key, const Aws::String& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::move(key), value); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const Aws::String& key, Aws::String&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, std::move(value)); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(Aws::String&& key, Aws::String&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const char* key, Aws::String&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, std::move(value)); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(Aws::String&& key, const char* value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::move(key), value); return *this; }
-    inline UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(const char* key, const char* value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(key, value); return *this; }
+    template<typename StagingAreaTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetStagingAreaTags(StagingAreaTagsT&& value) { m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags = std::forward<StagingAreaTagsT>(value); }
+    template<typename StagingAreaTagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateReplicationConfigurationTemplateRequest& WithStagingAreaTags(StagingAreaTagsT&& value) { SetStagingAreaTags(std::forward<StagingAreaTagsT>(value)); return *this;}
+    template<typename StagingAreaTagsKeyT = Aws::String, typename StagingAreaTagsValueT = Aws::String>
+    UpdateReplicationConfigurationTemplateRequest& AddStagingAreaTags(StagingAreaTagsKeyT&& key, StagingAreaTagsValueT&& value) {
+      m_stagingAreaTagsHasBeenSet = true; m_stagingAreaTags.emplace(std::forward<StagingAreaTagsKeyT>(key), std::forward<StagingAreaTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -242,7 +222,7 @@ namespace Model
      * <p>Whether to use a dedicated Replication Server in the replication staging
      * area.</p>
      */
-    inline bool GetUseDedicatedReplicationServer() const{ return m_useDedicatedReplicationServer; }
+    inline bool GetUseDedicatedReplicationServer() const { return m_useDedicatedReplicationServer; }
     inline bool UseDedicatedReplicationServerHasBeenSet() const { return m_useDedicatedReplicationServerHasBeenSet; }
     inline void SetUseDedicatedReplicationServer(bool value) { m_useDedicatedReplicationServerHasBeenSet = true; m_useDedicatedReplicationServer = value; }
     inline UpdateReplicationConfigurationTemplateRequest& WithUseDedicatedReplicationServer(bool value) { SetUseDedicatedReplicationServer(value); return *this;}
@@ -252,25 +232,25 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_associateDefaultSecurityGroup;
+    bool m_associateDefaultSecurityGroup{false};
     bool m_associateDefaultSecurityGroupHasBeenSet = false;
 
-    bool m_autoReplicateNewDisks;
+    bool m_autoReplicateNewDisks{false};
     bool m_autoReplicateNewDisksHasBeenSet = false;
 
-    long long m_bandwidthThrottling;
+    long long m_bandwidthThrottling{0};
     bool m_bandwidthThrottlingHasBeenSet = false;
 
-    bool m_createPublicIP;
+    bool m_createPublicIP{false};
     bool m_createPublicIPHasBeenSet = false;
 
-    ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting;
+    ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting{ReplicationConfigurationDataPlaneRouting::NOT_SET};
     bool m_dataPlaneRoutingHasBeenSet = false;
 
-    ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType;
+    ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType{ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET};
     bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
 
-    ReplicationConfigurationEbsEncryption m_ebsEncryption;
+    ReplicationConfigurationEbsEncryption m_ebsEncryption{ReplicationConfigurationEbsEncryption::NOT_SET};
     bool m_ebsEncryptionHasBeenSet = false;
 
     Aws::String m_ebsEncryptionKeyArn;
@@ -294,7 +274,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
     bool m_stagingAreaTagsHasBeenSet = false;
 
-    bool m_useDedicatedReplicationServer;
+    bool m_useDedicatedReplicationServer{false};
     bool m_useDedicatedReplicationServerHasBeenSet = false;
   };
 

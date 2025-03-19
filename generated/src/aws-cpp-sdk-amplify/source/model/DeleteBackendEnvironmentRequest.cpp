@@ -12,12 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBackendEnvironmentRequest::DeleteBackendEnvironmentRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBackendEnvironmentRequest::SerializePayload() const
 {
   return {};

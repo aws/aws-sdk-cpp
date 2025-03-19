@@ -33,7 +33,7 @@ namespace Model
   class ResourceMapping
   {
   public:
-    AWS_RESILIENCEHUB_API ResourceMapping();
+    AWS_RESILIENCEHUB_API ResourceMapping() = default;
     AWS_RESILIENCEHUB_API ResourceMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API ResourceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Name of the application this resource is mapped to when the
      * <code>mappingType</code> is <code>AppRegistryApp</code>.</p>
      */
-    inline const Aws::String& GetAppRegistryAppName() const{ return m_appRegistryAppName; }
+    inline const Aws::String& GetAppRegistryAppName() const { return m_appRegistryAppName; }
     inline bool AppRegistryAppNameHasBeenSet() const { return m_appRegistryAppNameHasBeenSet; }
-    inline void SetAppRegistryAppName(const Aws::String& value) { m_appRegistryAppNameHasBeenSet = true; m_appRegistryAppName = value; }
-    inline void SetAppRegistryAppName(Aws::String&& value) { m_appRegistryAppNameHasBeenSet = true; m_appRegistryAppName = std::move(value); }
-    inline void SetAppRegistryAppName(const char* value) { m_appRegistryAppNameHasBeenSet = true; m_appRegistryAppName.assign(value); }
-    inline ResourceMapping& WithAppRegistryAppName(const Aws::String& value) { SetAppRegistryAppName(value); return *this;}
-    inline ResourceMapping& WithAppRegistryAppName(Aws::String&& value) { SetAppRegistryAppName(std::move(value)); return *this;}
-    inline ResourceMapping& WithAppRegistryAppName(const char* value) { SetAppRegistryAppName(value); return *this;}
+    template<typename AppRegistryAppNameT = Aws::String>
+    void SetAppRegistryAppName(AppRegistryAppNameT&& value) { m_appRegistryAppNameHasBeenSet = true; m_appRegistryAppName = std::forward<AppRegistryAppNameT>(value); }
+    template<typename AppRegistryAppNameT = Aws::String>
+    ResourceMapping& WithAppRegistryAppName(AppRegistryAppNameT&& value) { SetAppRegistryAppName(std::forward<AppRegistryAppNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      *  <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
      * 
      */
-    inline const Aws::String& GetEksSourceName() const{ return m_eksSourceName; }
+    inline const Aws::String& GetEksSourceName() const { return m_eksSourceName; }
     inline bool EksSourceNameHasBeenSet() const { return m_eksSourceNameHasBeenSet; }
-    inline void SetEksSourceName(const Aws::String& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = value; }
-    inline void SetEksSourceName(Aws::String&& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = std::move(value); }
-    inline void SetEksSourceName(const char* value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName.assign(value); }
-    inline ResourceMapping& WithEksSourceName(const Aws::String& value) { SetEksSourceName(value); return *this;}
-    inline ResourceMapping& WithEksSourceName(Aws::String&& value) { SetEksSourceName(std::move(value)); return *this;}
-    inline ResourceMapping& WithEksSourceName(const char* value) { SetEksSourceName(value); return *this;}
+    template<typename EksSourceNameT = Aws::String>
+    void SetEksSourceName(EksSourceNameT&& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = std::forward<EksSourceNameT>(value); }
+    template<typename EksSourceNameT = Aws::String>
+    ResourceMapping& WithEksSourceName(EksSourceNameT&& value) { SetEksSourceName(std::forward<EksSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,38 +72,34 @@ namespace Model
      * <p>Name of the CloudFormation stack this resource is mapped to when the
      * <code>mappingType</code> is <code>CfnStack</code>.</p>
      */
-    inline const Aws::String& GetLogicalStackName() const{ return m_logicalStackName; }
+    inline const Aws::String& GetLogicalStackName() const { return m_logicalStackName; }
     inline bool LogicalStackNameHasBeenSet() const { return m_logicalStackNameHasBeenSet; }
-    inline void SetLogicalStackName(const Aws::String& value) { m_logicalStackNameHasBeenSet = true; m_logicalStackName = value; }
-    inline void SetLogicalStackName(Aws::String&& value) { m_logicalStackNameHasBeenSet = true; m_logicalStackName = std::move(value); }
-    inline void SetLogicalStackName(const char* value) { m_logicalStackNameHasBeenSet = true; m_logicalStackName.assign(value); }
-    inline ResourceMapping& WithLogicalStackName(const Aws::String& value) { SetLogicalStackName(value); return *this;}
-    inline ResourceMapping& WithLogicalStackName(Aws::String&& value) { SetLogicalStackName(std::move(value)); return *this;}
-    inline ResourceMapping& WithLogicalStackName(const char* value) { SetLogicalStackName(value); return *this;}
+    template<typename LogicalStackNameT = Aws::String>
+    void SetLogicalStackName(LogicalStackNameT&& value) { m_logicalStackNameHasBeenSet = true; m_logicalStackName = std::forward<LogicalStackNameT>(value); }
+    template<typename LogicalStackNameT = Aws::String>
+    ResourceMapping& WithLogicalStackName(LogicalStackNameT&& value) { SetLogicalStackName(std::forward<LogicalStackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the type of resource mapping.</p>
      */
-    inline const ResourceMappingType& GetMappingType() const{ return m_mappingType; }
+    inline ResourceMappingType GetMappingType() const { return m_mappingType; }
     inline bool MappingTypeHasBeenSet() const { return m_mappingTypeHasBeenSet; }
-    inline void SetMappingType(const ResourceMappingType& value) { m_mappingTypeHasBeenSet = true; m_mappingType = value; }
-    inline void SetMappingType(ResourceMappingType&& value) { m_mappingTypeHasBeenSet = true; m_mappingType = std::move(value); }
-    inline ResourceMapping& WithMappingType(const ResourceMappingType& value) { SetMappingType(value); return *this;}
-    inline ResourceMapping& WithMappingType(ResourceMappingType&& value) { SetMappingType(std::move(value)); return *this;}
+    inline void SetMappingType(ResourceMappingType value) { m_mappingTypeHasBeenSet = true; m_mappingType = value; }
+    inline ResourceMapping& WithMappingType(ResourceMappingType value) { SetMappingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the physical resource.</p>
      */
-    inline const PhysicalResourceId& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+    inline const PhysicalResourceId& GetPhysicalResourceId() const { return m_physicalResourceId; }
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
-    inline void SetPhysicalResourceId(const PhysicalResourceId& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
-    inline void SetPhysicalResourceId(PhysicalResourceId&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
-    inline ResourceMapping& WithPhysicalResourceId(const PhysicalResourceId& value) { SetPhysicalResourceId(value); return *this;}
-    inline ResourceMapping& WithPhysicalResourceId(PhysicalResourceId&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
+    template<typename PhysicalResourceIdT = PhysicalResourceId>
+    void SetPhysicalResourceId(PhysicalResourceIdT&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::forward<PhysicalResourceIdT>(value); }
+    template<typename PhysicalResourceIdT = PhysicalResourceId>
+    ResourceMapping& WithPhysicalResourceId(PhysicalResourceIdT&& value) { SetPhysicalResourceId(std::forward<PhysicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * <p>Name of the Resource Groups that this resource is mapped to when the
      * <code>mappingType</code> is <code>ResourceGroup</code>.</p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-    inline ResourceMapping& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline ResourceMapping& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline ResourceMapping& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    ResourceMapping& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +120,12 @@ namespace Model
      * <p>Name of the resource that this resource is mapped to when the
      * <code>mappingType</code> is <code>Resource</code>.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline ResourceMapping& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline ResourceMapping& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline ResourceMapping& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    ResourceMapping& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +133,12 @@ namespace Model
      * <p>Name of the Terraform source that this resource is mapped to when the
      * <code>mappingType</code> is <code>Terraform</code>.</p>
      */
-    inline const Aws::String& GetTerraformSourceName() const{ return m_terraformSourceName; }
+    inline const Aws::String& GetTerraformSourceName() const { return m_terraformSourceName; }
     inline bool TerraformSourceNameHasBeenSet() const { return m_terraformSourceNameHasBeenSet; }
-    inline void SetTerraformSourceName(const Aws::String& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = value; }
-    inline void SetTerraformSourceName(Aws::String&& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = std::move(value); }
-    inline void SetTerraformSourceName(const char* value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName.assign(value); }
-    inline ResourceMapping& WithTerraformSourceName(const Aws::String& value) { SetTerraformSourceName(value); return *this;}
-    inline ResourceMapping& WithTerraformSourceName(Aws::String&& value) { SetTerraformSourceName(std::move(value)); return *this;}
-    inline ResourceMapping& WithTerraformSourceName(const char* value) { SetTerraformSourceName(value); return *this;}
+    template<typename TerraformSourceNameT = Aws::String>
+    void SetTerraformSourceName(TerraformSourceNameT&& value) { m_terraformSourceNameHasBeenSet = true; m_terraformSourceName = std::forward<TerraformSourceNameT>(value); }
+    template<typename TerraformSourceNameT = Aws::String>
+    ResourceMapping& WithTerraformSourceName(TerraformSourceNameT&& value) { SetTerraformSourceName(std::forward<TerraformSourceNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,7 +151,7 @@ namespace Model
     Aws::String m_logicalStackName;
     bool m_logicalStackNameHasBeenSet = false;
 
-    ResourceMappingType m_mappingType;
+    ResourceMappingType m_mappingType{ResourceMappingType::NOT_SET};
     bool m_mappingTypeHasBeenSet = false;
 
     PhysicalResourceId m_physicalResourceId;

@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAppInstanceUserExpirationSettingsRequest::PutAppInstanceUserExpirationSettingsRequest() : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_expirationSettingsHasBeenSet(false)
-{
-}
-
 Aws::String PutAppInstanceUserExpirationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class OtaTaskExecutionSummaries
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionSummaries();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionSummaries() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionSummaries(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskExecutionSummaries& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>Structure representing one over-the-air (OTA) task execution summary</p>
      */
-    inline const OtaTaskExecutionSummary& GetTaskExecutionSummary() const{ return m_taskExecutionSummary; }
+    inline const OtaTaskExecutionSummary& GetTaskExecutionSummary() const { return m_taskExecutionSummary; }
     inline bool TaskExecutionSummaryHasBeenSet() const { return m_taskExecutionSummaryHasBeenSet; }
-    inline void SetTaskExecutionSummary(const OtaTaskExecutionSummary& value) { m_taskExecutionSummaryHasBeenSet = true; m_taskExecutionSummary = value; }
-    inline void SetTaskExecutionSummary(OtaTaskExecutionSummary&& value) { m_taskExecutionSummaryHasBeenSet = true; m_taskExecutionSummary = std::move(value); }
-    inline OtaTaskExecutionSummaries& WithTaskExecutionSummary(const OtaTaskExecutionSummary& value) { SetTaskExecutionSummary(value); return *this;}
-    inline OtaTaskExecutionSummaries& WithTaskExecutionSummary(OtaTaskExecutionSummary&& value) { SetTaskExecutionSummary(std::move(value)); return *this;}
+    template<typename TaskExecutionSummaryT = OtaTaskExecutionSummary>
+    void SetTaskExecutionSummary(TaskExecutionSummaryT&& value) { m_taskExecutionSummaryHasBeenSet = true; m_taskExecutionSummary = std::forward<TaskExecutionSummaryT>(value); }
+    template<typename TaskExecutionSummaryT = OtaTaskExecutionSummary>
+    OtaTaskExecutionSummaries& WithTaskExecutionSummary(TaskExecutionSummaryT&& value) { SetTaskExecutionSummary(std::forward<TaskExecutionSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The id of a managed thing.</p>
      */
-    inline const Aws::String& GetManagedThingId() const{ return m_managedThingId; }
+    inline const Aws::String& GetManagedThingId() const { return m_managedThingId; }
     inline bool ManagedThingIdHasBeenSet() const { return m_managedThingIdHasBeenSet; }
-    inline void SetManagedThingId(const Aws::String& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = value; }
-    inline void SetManagedThingId(Aws::String&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::move(value); }
-    inline void SetManagedThingId(const char* value) { m_managedThingIdHasBeenSet = true; m_managedThingId.assign(value); }
-    inline OtaTaskExecutionSummaries& WithManagedThingId(const Aws::String& value) { SetManagedThingId(value); return *this;}
-    inline OtaTaskExecutionSummaries& WithManagedThingId(Aws::String&& value) { SetManagedThingId(std::move(value)); return *this;}
-    inline OtaTaskExecutionSummaries& WithManagedThingId(const char* value) { SetManagedThingId(value); return *this;}
+    template<typename ManagedThingIdT = Aws::String>
+    void SetManagedThingId(ManagedThingIdT&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::forward<ManagedThingIdT>(value); }
+    template<typename ManagedThingIdT = Aws::String>
+    OtaTaskExecutionSummaries& WithManagedThingId(ManagedThingIdT&& value) { SetManagedThingId(std::forward<ManagedThingIdT>(value)); return *this;}
     ///@}
   private:
 

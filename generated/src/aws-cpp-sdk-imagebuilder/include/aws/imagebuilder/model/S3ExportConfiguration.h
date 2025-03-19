@@ -33,7 +33,7 @@ namespace Model
   class S3ExportConfiguration
   {
   public:
-    AWS_IMAGEBUILDER_API S3ExportConfiguration();
+    AWS_IMAGEBUILDER_API S3ExportConfiguration() = default;
     AWS_IMAGEBUILDER_API S3ExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API S3ExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the role that grants VM Import/Export permission to export images
      * to your S3 bucket.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline S3ExportConfiguration& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline S3ExportConfiguration& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline S3ExportConfiguration& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    S3ExportConfiguration& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,26 +61,22 @@ namespace Model
      * ESX and VMware vSphere versions 4, 5, and 6.</p> </li> <li> <p> <b>Raw</b> – Raw
      * format.</p> </li> </ul>
      */
-    inline const DiskImageFormat& GetDiskImageFormat() const{ return m_diskImageFormat; }
+    inline DiskImageFormat GetDiskImageFormat() const { return m_diskImageFormat; }
     inline bool DiskImageFormatHasBeenSet() const { return m_diskImageFormatHasBeenSet; }
-    inline void SetDiskImageFormat(const DiskImageFormat& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
-    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = std::move(value); }
-    inline S3ExportConfiguration& WithDiskImageFormat(const DiskImageFormat& value) { SetDiskImageFormat(value); return *this;}
-    inline S3ExportConfiguration& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
+    inline void SetDiskImageFormat(DiskImageFormat value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
+    inline S3ExportConfiguration& WithDiskImageFormat(DiskImageFormat value) { SetDiskImageFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket in which to store the output disk images for your VM.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline S3ExportConfiguration& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline S3ExportConfiguration& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline S3ExportConfiguration& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    S3ExportConfiguration& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,21 +84,19 @@ namespace Model
      * <p>The Amazon S3 path for the bucket where the output disk images for your VM
      * are stored.</p>
      */
-    inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+    inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
-    inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
-    inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
-    inline S3ExportConfiguration& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
-    inline S3ExportConfiguration& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
-    inline S3ExportConfiguration& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
+    template<typename S3PrefixT = Aws::String>
+    void SetS3Prefix(S3PrefixT&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::forward<S3PrefixT>(value); }
+    template<typename S3PrefixT = Aws::String>
+    S3ExportConfiguration& WithS3Prefix(S3PrefixT&& value) { SetS3Prefix(std::forward<S3PrefixT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet = false;
 
-    DiskImageFormat m_diskImageFormat;
+    DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
     bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;

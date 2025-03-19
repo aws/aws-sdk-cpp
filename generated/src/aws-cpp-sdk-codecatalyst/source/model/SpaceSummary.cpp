@@ -18,16 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-SpaceSummary::SpaceSummary() : 
-    m_nameHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 SpaceSummary::SpaceSummary(JsonView jsonValue)
-  : SpaceSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SpaceSummary& SpaceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regionName"))
   {
     m_regionName = jsonValue.GetString("regionName");
-
     m_regionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

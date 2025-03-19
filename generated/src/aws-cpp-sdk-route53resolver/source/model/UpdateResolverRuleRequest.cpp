@@ -12,12 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResolverRuleRequest::UpdateResolverRuleRequest() : 
-    m_resolverRuleIdHasBeenSet(false),
-    m_configHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResolverRuleRequest::SerializePayload() const
 {
   JsonValue payload;

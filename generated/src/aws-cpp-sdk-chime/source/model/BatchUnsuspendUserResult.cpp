@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchUnsuspendUserResult::BatchUnsuspendUserResult()
-{
-}
-
 BatchUnsuspendUserResult::BatchUnsuspendUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchUnsuspendUserResult& BatchUnsuspendUserResult::operator =(const Aws::Amazon
     {
       m_userErrors.push_back(userErrorsJsonList[userErrorsIndex].AsObject());
     }
+    m_userErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

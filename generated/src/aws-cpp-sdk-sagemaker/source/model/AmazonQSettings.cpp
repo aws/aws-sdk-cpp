@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AmazonQSettings::AmazonQSettings() : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_qProfileArnHasBeenSet(false)
-{
-}
-
 AmazonQSettings::AmazonQSettings(JsonView jsonValue)
-  : AmazonQSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AmazonQSettings& AmazonQSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QProfileArn"))
   {
     m_qProfileArn = jsonValue.GetString("QProfileArn");
-
     m_qProfileArnHasBeenSet = true;
   }
-
   return *this;
 }
 

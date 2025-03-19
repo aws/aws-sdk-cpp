@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ExportErrorDetails::ExportErrorDetails() : 
-    m_exportResultsHasBeenSet(false),
-    m_exportSourceImagesHasBeenSet(false)
-{
-}
-
 ExportErrorDetails::ExportErrorDetails(JsonView jsonValue)
-  : ExportErrorDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExportErrorDetails& ExportErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportResults"))
   {
     m_exportResults = jsonValue.GetObject("ExportResults");
-
     m_exportResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportSourceImages"))
   {
     m_exportSourceImages = jsonValue.GetObject("ExportSourceImages");
-
     m_exportSourceImagesHasBeenSet = true;
   }
-
   return *this;
 }
 

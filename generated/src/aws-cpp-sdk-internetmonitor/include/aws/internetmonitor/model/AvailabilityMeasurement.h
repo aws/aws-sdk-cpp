@@ -46,7 +46,7 @@ namespace Model
   class AvailabilityMeasurement
   {
   public:
-    AWS_INTERNETMONITOR_API AvailabilityMeasurement();
+    AWS_INTERNETMONITOR_API AvailabilityMeasurement() = default;
     AWS_INTERNETMONITOR_API AvailabilityMeasurement(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API AvailabilityMeasurement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,7 +68,7 @@ namespace Model
      * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
      * Guide</i>.</p>
      */
-    inline double GetExperienceScore() const{ return m_experienceScore; }
+    inline double GetExperienceScore() const { return m_experienceScore; }
     inline bool ExperienceScoreHasBeenSet() const { return m_experienceScoreHasBeenSet; }
     inline void SetExperienceScore(double value) { m_experienceScoreHasBeenSet = true; m_experienceScore = value; }
     inline AvailabilityMeasurement& WithExperienceScore(double value) { SetExperienceScore(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
      * Internet Monitor works</a> in the Amazon CloudWatch Internet Monitor section of
      * the Amazon CloudWatch User Guide.</p>
      */
-    inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
+    inline double GetPercentOfTotalTrafficImpacted() const { return m_percentOfTotalTrafficImpacted; }
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
     inline AvailabilityMeasurement& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
@@ -101,20 +101,20 @@ namespace Model
      * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
      * Amazon CloudWatch User Guide.</p>
      */
-    inline double GetPercentOfClientLocationImpacted() const{ return m_percentOfClientLocationImpacted; }
+    inline double GetPercentOfClientLocationImpacted() const { return m_percentOfClientLocationImpacted; }
     inline bool PercentOfClientLocationImpactedHasBeenSet() const { return m_percentOfClientLocationImpactedHasBeenSet; }
     inline void SetPercentOfClientLocationImpacted(double value) { m_percentOfClientLocationImpactedHasBeenSet = true; m_percentOfClientLocationImpacted = value; }
     inline AvailabilityMeasurement& WithPercentOfClientLocationImpacted(double value) { SetPercentOfClientLocationImpacted(value); return *this;}
     ///@}
   private:
 
-    double m_experienceScore;
+    double m_experienceScore{0.0};
     bool m_experienceScoreHasBeenSet = false;
 
-    double m_percentOfTotalTrafficImpacted;
+    double m_percentOfTotalTrafficImpacted{0.0};
     bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
 
-    double m_percentOfClientLocationImpacted;
+    double m_percentOfClientLocationImpacted{0.0};
     bool m_percentOfClientLocationImpactedHasBeenSet = false;
   };
 

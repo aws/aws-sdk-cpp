@@ -12,19 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppAuthorizationRequest::CreateAppAuthorizationRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_appHasBeenSet(false),
-    m_credentialHasBeenSet(false),
-    m_tenantHasBeenSet(false),
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

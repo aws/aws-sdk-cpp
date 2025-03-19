@@ -33,7 +33,7 @@ namespace Model
   class PredefinedMetricSpecification
   {
   public:
-    AWS_AUTOSCALING_API PredefinedMetricSpecification();
+    AWS_AUTOSCALING_API PredefinedMetricSpecification() = default;
     AWS_AUTOSCALING_API PredefinedMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API PredefinedMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,12 +52,10 @@ namespace Model
      * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
      * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
      */
-    inline const MetricType& GetPredefinedMetricType() const{ return m_predefinedMetricType; }
+    inline MetricType GetPredefinedMetricType() const { return m_predefinedMetricType; }
     inline bool PredefinedMetricTypeHasBeenSet() const { return m_predefinedMetricTypeHasBeenSet; }
-    inline void SetPredefinedMetricType(const MetricType& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
-    inline void SetPredefinedMetricType(MetricType&& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = std::move(value); }
-    inline PredefinedMetricSpecification& WithPredefinedMetricType(const MetricType& value) { SetPredefinedMetricType(value); return *this;}
-    inline PredefinedMetricSpecification& WithPredefinedMetricType(MetricType&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
+    inline void SetPredefinedMetricType(MetricType value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
+    inline PredefinedMetricSpecification& WithPredefinedMetricType(MetricType value) { SetPredefinedMetricType(value); return *this;}
     ///@}
 
     ///@{
@@ -81,18 +79,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
      * API operation.</p>
      */
-    inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
+    inline const Aws::String& GetResourceLabel() const { return m_resourceLabel; }
     inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
-    inline void SetResourceLabel(const Aws::String& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = value; }
-    inline void SetResourceLabel(Aws::String&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::move(value); }
-    inline void SetResourceLabel(const char* value) { m_resourceLabelHasBeenSet = true; m_resourceLabel.assign(value); }
-    inline PredefinedMetricSpecification& WithResourceLabel(const Aws::String& value) { SetResourceLabel(value); return *this;}
-    inline PredefinedMetricSpecification& WithResourceLabel(Aws::String&& value) { SetResourceLabel(std::move(value)); return *this;}
-    inline PredefinedMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
+    template<typename ResourceLabelT = Aws::String>
+    void SetResourceLabel(ResourceLabelT&& value) { m_resourceLabelHasBeenSet = true; m_resourceLabel = std::forward<ResourceLabelT>(value); }
+    template<typename ResourceLabelT = Aws::String>
+    PredefinedMetricSpecification& WithResourceLabel(ResourceLabelT&& value) { SetResourceLabel(std::forward<ResourceLabelT>(value)); return *this;}
     ///@}
   private:
 
-    MetricType m_predefinedMetricType;
+    MetricType m_predefinedMetricType{MetricType::NOT_SET};
     bool m_predefinedMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;

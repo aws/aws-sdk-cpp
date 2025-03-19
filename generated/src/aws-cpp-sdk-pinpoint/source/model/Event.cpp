@@ -18,22 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-Event::Event() : 
-    m_appPackageNameHasBeenSet(false),
-    m_appTitleHasBeenSet(false),
-    m_appVersionCodeHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_clientSdkVersionHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_sdkNameHasBeenSet(false),
-    m_sessionHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppPackageName"))
   {
     m_appPackageName = jsonValue.GetString("AppPackageName");
-
     m_appPackageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppTitle"))
   {
     m_appTitle = jsonValue.GetString("AppTitle");
-
     m_appTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppVersionCode"))
   {
     m_appVersionCode = jsonValue.GetString("AppVersionCode");
-
     m_appVersionCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -70,21 +49,16 @@ Event& Event::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientSdkVersion"))
   {
     m_clientSdkVersion = jsonValue.GetString("ClientSdkVersion");
-
     m_clientSdkVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = jsonValue.GetString("EventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
@@ -94,28 +68,21 @@ Event& Event::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SdkName"))
   {
     m_sdkName = jsonValue.GetString("SdkName");
-
     m_sdkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetObject("Session");
-
     m_sessionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetString("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

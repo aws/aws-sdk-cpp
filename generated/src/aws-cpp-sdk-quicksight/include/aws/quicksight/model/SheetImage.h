@@ -37,7 +37,7 @@ namespace Model
   class SheetImage
   {
   public:
-    AWS_QUICKSIGHT_API SheetImage();
+    AWS_QUICKSIGHT_API SheetImage() = default;
     AWS_QUICKSIGHT_API SheetImage(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,90 +47,86 @@ namespace Model
     /**
      * <p>The ID of the sheet image.</p>
      */
-    inline const Aws::String& GetSheetImageId() const{ return m_sheetImageId; }
+    inline const Aws::String& GetSheetImageId() const { return m_sheetImageId; }
     inline bool SheetImageIdHasBeenSet() const { return m_sheetImageIdHasBeenSet; }
-    inline void SetSheetImageId(const Aws::String& value) { m_sheetImageIdHasBeenSet = true; m_sheetImageId = value; }
-    inline void SetSheetImageId(Aws::String&& value) { m_sheetImageIdHasBeenSet = true; m_sheetImageId = std::move(value); }
-    inline void SetSheetImageId(const char* value) { m_sheetImageIdHasBeenSet = true; m_sheetImageId.assign(value); }
-    inline SheetImage& WithSheetImageId(const Aws::String& value) { SetSheetImageId(value); return *this;}
-    inline SheetImage& WithSheetImageId(Aws::String&& value) { SetSheetImageId(std::move(value)); return *this;}
-    inline SheetImage& WithSheetImageId(const char* value) { SetSheetImageId(value); return *this;}
+    template<typename SheetImageIdT = Aws::String>
+    void SetSheetImageId(SheetImageIdT&& value) { m_sheetImageIdHasBeenSet = true; m_sheetImageId = std::forward<SheetImageIdT>(value); }
+    template<typename SheetImageIdT = Aws::String>
+    SheetImage& WithSheetImageId(SheetImageIdT&& value) { SetSheetImageId(std::forward<SheetImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the image.</p>
      */
-    inline const SheetImageSource& GetSource() const{ return m_source; }
+    inline const SheetImageSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const SheetImageSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(SheetImageSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline SheetImage& WithSource(const SheetImageSource& value) { SetSource(value); return *this;}
-    inline SheetImage& WithSource(SheetImageSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = SheetImageSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = SheetImageSource>
+    SheetImage& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines how the image is scaled.</p>
      */
-    inline const SheetImageScalingConfiguration& GetScaling() const{ return m_scaling; }
+    inline const SheetImageScalingConfiguration& GetScaling() const { return m_scaling; }
     inline bool ScalingHasBeenSet() const { return m_scalingHasBeenSet; }
-    inline void SetScaling(const SheetImageScalingConfiguration& value) { m_scalingHasBeenSet = true; m_scaling = value; }
-    inline void SetScaling(SheetImageScalingConfiguration&& value) { m_scalingHasBeenSet = true; m_scaling = std::move(value); }
-    inline SheetImage& WithScaling(const SheetImageScalingConfiguration& value) { SetScaling(value); return *this;}
-    inline SheetImage& WithScaling(SheetImageScalingConfiguration&& value) { SetScaling(std::move(value)); return *this;}
+    template<typename ScalingT = SheetImageScalingConfiguration>
+    void SetScaling(ScalingT&& value) { m_scalingHasBeenSet = true; m_scaling = std::forward<ScalingT>(value); }
+    template<typename ScalingT = SheetImageScalingConfiguration>
+    SheetImage& WithScaling(ScalingT&& value) { SetScaling(std::forward<ScalingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tooltip to be shown when hovering over the image.</p>
      */
-    inline const SheetImageTooltipConfiguration& GetTooltip() const{ return m_tooltip; }
+    inline const SheetImageTooltipConfiguration& GetTooltip() const { return m_tooltip; }
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-    inline void SetTooltip(const SheetImageTooltipConfiguration& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-    inline void SetTooltip(SheetImageTooltipConfiguration&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-    inline SheetImage& WithTooltip(const SheetImageTooltipConfiguration& value) { SetTooltip(value); return *this;}
-    inline SheetImage& WithTooltip(SheetImageTooltipConfiguration&& value) { SetTooltip(std::move(value)); return *this;}
+    template<typename TooltipT = SheetImageTooltipConfiguration>
+    void SetTooltip(TooltipT&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::forward<TooltipT>(value); }
+    template<typename TooltipT = SheetImageTooltipConfiguration>
+    SheetImage& WithTooltip(TooltipT&& value) { SetTooltip(std::forward<TooltipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alt text for the image.</p>
      */
-    inline const Aws::String& GetImageContentAltText() const{ return m_imageContentAltText; }
+    inline const Aws::String& GetImageContentAltText() const { return m_imageContentAltText; }
     inline bool ImageContentAltTextHasBeenSet() const { return m_imageContentAltTextHasBeenSet; }
-    inline void SetImageContentAltText(const Aws::String& value) { m_imageContentAltTextHasBeenSet = true; m_imageContentAltText = value; }
-    inline void SetImageContentAltText(Aws::String&& value) { m_imageContentAltTextHasBeenSet = true; m_imageContentAltText = std::move(value); }
-    inline void SetImageContentAltText(const char* value) { m_imageContentAltTextHasBeenSet = true; m_imageContentAltText.assign(value); }
-    inline SheetImage& WithImageContentAltText(const Aws::String& value) { SetImageContentAltText(value); return *this;}
-    inline SheetImage& WithImageContentAltText(Aws::String&& value) { SetImageContentAltText(std::move(value)); return *this;}
-    inline SheetImage& WithImageContentAltText(const char* value) { SetImageContentAltText(value); return *this;}
+    template<typename ImageContentAltTextT = Aws::String>
+    void SetImageContentAltText(ImageContentAltTextT&& value) { m_imageContentAltTextHasBeenSet = true; m_imageContentAltText = std::forward<ImageContentAltTextT>(value); }
+    template<typename ImageContentAltTextT = Aws::String>
+    SheetImage& WithImageContentAltText(ImageContentAltTextT&& value) { SetImageContentAltText(std::forward<ImageContentAltTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general image interactions setup for an image.</p>
      */
-    inline const ImageInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const ImageInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const ImageInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(ImageInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline SheetImage& WithInteractions(const ImageInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline SheetImage& WithInteractions(ImageInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = ImageInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = ImageInteractionOptions>
+    SheetImage& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of custom actions that are configured for an image.</p>
      */
-    inline const Aws::Vector<ImageCustomAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<ImageCustomAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<ImageCustomAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<ImageCustomAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline SheetImage& WithActions(const Aws::Vector<ImageCustomAction>& value) { SetActions(value); return *this;}
-    inline SheetImage& WithActions(Aws::Vector<ImageCustomAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline SheetImage& AddActions(const ImageCustomAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline SheetImage& AddActions(ImageCustomAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<ImageCustomAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<ImageCustomAction>>
+    SheetImage& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = ImageCustomAction>
+    SheetImage& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 

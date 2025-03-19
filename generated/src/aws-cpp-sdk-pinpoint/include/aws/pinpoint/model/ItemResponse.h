@@ -35,7 +35,7 @@ namespace Model
   class ItemResponse
   {
   public:
-    AWS_PINPOINT_API ItemResponse();
+    AWS_PINPOINT_API ItemResponse() = default;
     AWS_PINPOINT_API ItemResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ItemResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The response that was received after the endpoint data was accepted.</p>
      */
-    inline const EndpointItemResponse& GetEndpointItemResponse() const{ return m_endpointItemResponse; }
+    inline const EndpointItemResponse& GetEndpointItemResponse() const { return m_endpointItemResponse; }
     inline bool EndpointItemResponseHasBeenSet() const { return m_endpointItemResponseHasBeenSet; }
-    inline void SetEndpointItemResponse(const EndpointItemResponse& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = value; }
-    inline void SetEndpointItemResponse(EndpointItemResponse&& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = std::move(value); }
-    inline ItemResponse& WithEndpointItemResponse(const EndpointItemResponse& value) { SetEndpointItemResponse(value); return *this;}
-    inline ItemResponse& WithEndpointItemResponse(EndpointItemResponse&& value) { SetEndpointItemResponse(std::move(value)); return *this;}
+    template<typename EndpointItemResponseT = EndpointItemResponse>
+    void SetEndpointItemResponse(EndpointItemResponseT&& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = std::forward<EndpointItemResponseT>(value); }
+    template<typename EndpointItemResponseT = EndpointItemResponse>
+    ItemResponse& WithEndpointItemResponse(EndpointItemResponseT&& value) { SetEndpointItemResponse(std::forward<EndpointItemResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +59,16 @@ namespace Model
      * the request. In each object, the event ID is the key and an EventItemResponse
      * object is the value.</p>
      */
-    inline const Aws::Map<Aws::String, EventItemResponse>& GetEventsItemResponse() const{ return m_eventsItemResponse; }
+    inline const Aws::Map<Aws::String, EventItemResponse>& GetEventsItemResponse() const { return m_eventsItemResponse; }
     inline bool EventsItemResponseHasBeenSet() const { return m_eventsItemResponseHasBeenSet; }
-    inline void SetEventsItemResponse(const Aws::Map<Aws::String, EventItemResponse>& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = value; }
-    inline void SetEventsItemResponse(Aws::Map<Aws::String, EventItemResponse>&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = std::move(value); }
-    inline ItemResponse& WithEventsItemResponse(const Aws::Map<Aws::String, EventItemResponse>& value) { SetEventsItemResponse(value); return *this;}
-    inline ItemResponse& WithEventsItemResponse(Aws::Map<Aws::String, EventItemResponse>&& value) { SetEventsItemResponse(std::move(value)); return *this;}
-    inline ItemResponse& AddEventsItemResponse(const Aws::String& key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, value); return *this; }
-    inline ItemResponse& AddEventsItemResponse(Aws::String&& key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::move(key), value); return *this; }
-    inline ItemResponse& AddEventsItemResponse(const Aws::String& key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, std::move(value)); return *this; }
-    inline ItemResponse& AddEventsItemResponse(Aws::String&& key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::move(key), std::move(value)); return *this; }
-    inline ItemResponse& AddEventsItemResponse(const char* key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, std::move(value)); return *this; }
-    inline ItemResponse& AddEventsItemResponse(const char* key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, value); return *this; }
+    template<typename EventsItemResponseT = Aws::Map<Aws::String, EventItemResponse>>
+    void SetEventsItemResponse(EventsItemResponseT&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = std::forward<EventsItemResponseT>(value); }
+    template<typename EventsItemResponseT = Aws::Map<Aws::String, EventItemResponse>>
+    ItemResponse& WithEventsItemResponse(EventsItemResponseT&& value) { SetEventsItemResponse(std::forward<EventsItemResponseT>(value)); return *this;}
+    template<typename EventsItemResponseKeyT = Aws::String, typename EventsItemResponseValueT = EventItemResponse>
+    ItemResponse& AddEventsItemResponse(EventsItemResponseKeyT&& key, EventsItemResponseValueT&& value) {
+      m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::forward<EventsItemResponseKeyT>(key), std::forward<EventsItemResponseValueT>(value)); return *this;
+    }
     ///@}
   private:
 

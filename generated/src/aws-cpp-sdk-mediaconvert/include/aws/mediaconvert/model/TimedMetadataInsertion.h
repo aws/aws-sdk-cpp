@@ -34,7 +34,7 @@ namespace Model
   class TimedMetadataInsertion
   {
   public:
-    AWS_MEDIACONVERT_API TimedMetadataInsertion();
+    AWS_MEDIACONVERT_API TimedMetadataInsertion() = default;
     AWS_MEDIACONVERT_API TimedMetadataInsertion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API TimedMetadataInsertion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * Id3Insertions contains the array of Id3Insertion instances.
      */
-    inline const Aws::Vector<Id3Insertion>& GetId3Insertions() const{ return m_id3Insertions; }
+    inline const Aws::Vector<Id3Insertion>& GetId3Insertions() const { return m_id3Insertions; }
     inline bool Id3InsertionsHasBeenSet() const { return m_id3InsertionsHasBeenSet; }
-    inline void SetId3Insertions(const Aws::Vector<Id3Insertion>& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions = value; }
-    inline void SetId3Insertions(Aws::Vector<Id3Insertion>&& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions = std::move(value); }
-    inline TimedMetadataInsertion& WithId3Insertions(const Aws::Vector<Id3Insertion>& value) { SetId3Insertions(value); return *this;}
-    inline TimedMetadataInsertion& WithId3Insertions(Aws::Vector<Id3Insertion>&& value) { SetId3Insertions(std::move(value)); return *this;}
-    inline TimedMetadataInsertion& AddId3Insertions(const Id3Insertion& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions.push_back(value); return *this; }
-    inline TimedMetadataInsertion& AddId3Insertions(Id3Insertion&& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions.push_back(std::move(value)); return *this; }
+    template<typename Id3InsertionsT = Aws::Vector<Id3Insertion>>
+    void SetId3Insertions(Id3InsertionsT&& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions = std::forward<Id3InsertionsT>(value); }
+    template<typename Id3InsertionsT = Aws::Vector<Id3Insertion>>
+    TimedMetadataInsertion& WithId3Insertions(Id3InsertionsT&& value) { SetId3Insertions(std::forward<Id3InsertionsT>(value)); return *this;}
+    template<typename Id3InsertionsT = Id3Insertion>
+    TimedMetadataInsertion& AddId3Insertions(Id3InsertionsT&& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions.emplace_back(std::forward<Id3InsertionsT>(value)); return *this; }
     ///@}
   private:
 

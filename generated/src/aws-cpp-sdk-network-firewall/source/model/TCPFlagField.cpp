@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-TCPFlagField::TCPFlagField() : 
-    m_flagsHasBeenSet(false),
-    m_masksHasBeenSet(false)
-{
-}
-
 TCPFlagField::TCPFlagField(JsonView jsonValue)
-  : TCPFlagField()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ TCPFlagField& TCPFlagField::operator =(JsonView jsonValue)
     }
     m_flagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Masks"))
   {
     Aws::Utils::Array<JsonView> masksJsonList = jsonValue.GetArray("Masks");
@@ -51,7 +43,6 @@ TCPFlagField& TCPFlagField::operator =(JsonView jsonValue)
     }
     m_masksHasBeenSet = true;
   }
-
   return *this;
 }
 

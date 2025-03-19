@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobResult::ProtectedJobResult() : 
-    m_outputHasBeenSet(false)
-{
-}
-
 ProtectedJobResult::ProtectedJobResult(JsonView jsonValue)
-  : ProtectedJobResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedJobResult& ProtectedJobResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
-
     m_outputHasBeenSet = true;
   }
-
   return *this;
 }
 

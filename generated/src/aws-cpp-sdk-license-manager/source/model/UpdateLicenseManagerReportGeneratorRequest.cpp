@@ -12,17 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLicenseManagerReportGeneratorRequest::UpdateLicenseManagerReportGeneratorRequest() : 
-    m_licenseManagerReportGeneratorArnHasBeenSet(false),
-    m_reportGeneratorNameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_reportContextHasBeenSet(false),
-    m_reportFrequencyHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLicenseManagerReportGeneratorRequest::SerializePayload() const
 {
   JsonValue payload;

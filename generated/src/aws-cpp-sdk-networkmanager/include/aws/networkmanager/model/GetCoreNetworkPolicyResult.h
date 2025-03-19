@@ -28,7 +28,7 @@ namespace Model
   class GetCoreNetworkPolicyResult
   {
   public:
-    AWS_NETWORKMANAGER_API GetCoreNetworkPolicyResult();
+    AWS_NETWORKMANAGER_API GetCoreNetworkPolicyResult() = default;
     AWS_NETWORKMANAGER_API GetCoreNetworkPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API GetCoreNetworkPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details about a core network policy.</p>
      */
-    inline const CoreNetworkPolicy& GetCoreNetworkPolicy() const{ return m_coreNetworkPolicy; }
-    inline void SetCoreNetworkPolicy(const CoreNetworkPolicy& value) { m_coreNetworkPolicy = value; }
-    inline void SetCoreNetworkPolicy(CoreNetworkPolicy&& value) { m_coreNetworkPolicy = std::move(value); }
-    inline GetCoreNetworkPolicyResult& WithCoreNetworkPolicy(const CoreNetworkPolicy& value) { SetCoreNetworkPolicy(value); return *this;}
-    inline GetCoreNetworkPolicyResult& WithCoreNetworkPolicy(CoreNetworkPolicy&& value) { SetCoreNetworkPolicy(std::move(value)); return *this;}
+    inline const CoreNetworkPolicy& GetCoreNetworkPolicy() const { return m_coreNetworkPolicy; }
+    template<typename CoreNetworkPolicyT = CoreNetworkPolicy>
+    void SetCoreNetworkPolicy(CoreNetworkPolicyT&& value) { m_coreNetworkPolicyHasBeenSet = true; m_coreNetworkPolicy = std::forward<CoreNetworkPolicyT>(value); }
+    template<typename CoreNetworkPolicyT = CoreNetworkPolicy>
+    GetCoreNetworkPolicyResult& WithCoreNetworkPolicy(CoreNetworkPolicyT&& value) { SetCoreNetworkPolicy(std::forward<CoreNetworkPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCoreNetworkPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCoreNetworkPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCoreNetworkPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCoreNetworkPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CoreNetworkPolicy m_coreNetworkPolicy;
+    bool m_coreNetworkPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

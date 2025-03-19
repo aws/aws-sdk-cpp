@@ -34,7 +34,7 @@ namespace Model
   class AwsEc2TransitGatewayDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails();
+    AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails() = default;
     AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2TransitGatewayDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ID of the transit gateway. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the transit gateway. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,28 +69,24 @@ namespace Model
      * <p>Turn on or turn off automatic propagation of routes to the default
      * propagation route table. </p>
      */
-    inline const Aws::String& GetDefaultRouteTablePropagation() const{ return m_defaultRouteTablePropagation; }
+    inline const Aws::String& GetDefaultRouteTablePropagation() const { return m_defaultRouteTablePropagation; }
     inline bool DefaultRouteTablePropagationHasBeenSet() const { return m_defaultRouteTablePropagationHasBeenSet; }
-    inline void SetDefaultRouteTablePropagation(const Aws::String& value) { m_defaultRouteTablePropagationHasBeenSet = true; m_defaultRouteTablePropagation = value; }
-    inline void SetDefaultRouteTablePropagation(Aws::String&& value) { m_defaultRouteTablePropagationHasBeenSet = true; m_defaultRouteTablePropagation = std::move(value); }
-    inline void SetDefaultRouteTablePropagation(const char* value) { m_defaultRouteTablePropagationHasBeenSet = true; m_defaultRouteTablePropagation.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithDefaultRouteTablePropagation(const Aws::String& value) { SetDefaultRouteTablePropagation(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDefaultRouteTablePropagation(Aws::String&& value) { SetDefaultRouteTablePropagation(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDefaultRouteTablePropagation(const char* value) { SetDefaultRouteTablePropagation(value); return *this;}
+    template<typename DefaultRouteTablePropagationT = Aws::String>
+    void SetDefaultRouteTablePropagation(DefaultRouteTablePropagationT&& value) { m_defaultRouteTablePropagationHasBeenSet = true; m_defaultRouteTablePropagation = std::forward<DefaultRouteTablePropagationT>(value); }
+    template<typename DefaultRouteTablePropagationT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithDefaultRouteTablePropagation(DefaultRouteTablePropagationT&& value) { SetDefaultRouteTablePropagation(std::forward<DefaultRouteTablePropagationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Turn on or turn off automatic acceptance of attachment requests. </p>
      */
-    inline const Aws::String& GetAutoAcceptSharedAttachments() const{ return m_autoAcceptSharedAttachments; }
+    inline const Aws::String& GetAutoAcceptSharedAttachments() const { return m_autoAcceptSharedAttachments; }
     inline bool AutoAcceptSharedAttachmentsHasBeenSet() const { return m_autoAcceptSharedAttachmentsHasBeenSet; }
-    inline void SetAutoAcceptSharedAttachments(const Aws::String& value) { m_autoAcceptSharedAttachmentsHasBeenSet = true; m_autoAcceptSharedAttachments = value; }
-    inline void SetAutoAcceptSharedAttachments(Aws::String&& value) { m_autoAcceptSharedAttachmentsHasBeenSet = true; m_autoAcceptSharedAttachments = std::move(value); }
-    inline void SetAutoAcceptSharedAttachments(const char* value) { m_autoAcceptSharedAttachmentsHasBeenSet = true; m_autoAcceptSharedAttachments.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithAutoAcceptSharedAttachments(const Aws::String& value) { SetAutoAcceptSharedAttachments(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithAutoAcceptSharedAttachments(Aws::String&& value) { SetAutoAcceptSharedAttachments(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithAutoAcceptSharedAttachments(const char* value) { SetAutoAcceptSharedAttachments(value); return *this;}
+    template<typename AutoAcceptSharedAttachmentsT = Aws::String>
+    void SetAutoAcceptSharedAttachments(AutoAcceptSharedAttachmentsT&& value) { m_autoAcceptSharedAttachmentsHasBeenSet = true; m_autoAcceptSharedAttachments = std::forward<AutoAcceptSharedAttachmentsT>(value); }
+    template<typename AutoAcceptSharedAttachmentsT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithAutoAcceptSharedAttachments(AutoAcceptSharedAttachmentsT&& value) { SetAutoAcceptSharedAttachments(std::forward<AutoAcceptSharedAttachmentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,99 +94,86 @@ namespace Model
      * <p>Turn on or turn off automatic association with the default association route
      * table. </p>
      */
-    inline const Aws::String& GetDefaultRouteTableAssociation() const{ return m_defaultRouteTableAssociation; }
+    inline const Aws::String& GetDefaultRouteTableAssociation() const { return m_defaultRouteTableAssociation; }
     inline bool DefaultRouteTableAssociationHasBeenSet() const { return m_defaultRouteTableAssociationHasBeenSet; }
-    inline void SetDefaultRouteTableAssociation(const Aws::String& value) { m_defaultRouteTableAssociationHasBeenSet = true; m_defaultRouteTableAssociation = value; }
-    inline void SetDefaultRouteTableAssociation(Aws::String&& value) { m_defaultRouteTableAssociationHasBeenSet = true; m_defaultRouteTableAssociation = std::move(value); }
-    inline void SetDefaultRouteTableAssociation(const char* value) { m_defaultRouteTableAssociationHasBeenSet = true; m_defaultRouteTableAssociation.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithDefaultRouteTableAssociation(const Aws::String& value) { SetDefaultRouteTableAssociation(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDefaultRouteTableAssociation(Aws::String&& value) { SetDefaultRouteTableAssociation(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDefaultRouteTableAssociation(const char* value) { SetDefaultRouteTableAssociation(value); return *this;}
+    template<typename DefaultRouteTableAssociationT = Aws::String>
+    void SetDefaultRouteTableAssociation(DefaultRouteTableAssociationT&& value) { m_defaultRouteTableAssociationHasBeenSet = true; m_defaultRouteTableAssociation = std::forward<DefaultRouteTableAssociationT>(value); }
+    template<typename DefaultRouteTableAssociationT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithDefaultRouteTableAssociation(DefaultRouteTableAssociationT&& value) { SetDefaultRouteTableAssociation(std::forward<DefaultRouteTableAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The transit gateway Classless Inter-Domain Routing (CIDR) blocks. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetTransitGatewayCidrBlocks() const{ return m_transitGatewayCidrBlocks; }
+    inline const Aws::Vector<Aws::String>& GetTransitGatewayCidrBlocks() const { return m_transitGatewayCidrBlocks; }
     inline bool TransitGatewayCidrBlocksHasBeenSet() const { return m_transitGatewayCidrBlocksHasBeenSet; }
-    inline void SetTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = value; }
-    inline void SetTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = std::move(value); }
-    inline AwsEc2TransitGatewayDetails& WithTransitGatewayCidrBlocks(const Aws::Vector<Aws::String>& value) { SetTransitGatewayCidrBlocks(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithTransitGatewayCidrBlocks(Aws::Vector<Aws::String>&& value) { SetTransitGatewayCidrBlocks(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& AddTransitGatewayCidrBlocks(const Aws::String& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(value); return *this; }
-    inline AwsEc2TransitGatewayDetails& AddTransitGatewayCidrBlocks(Aws::String&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(std::move(value)); return *this; }
-    inline AwsEc2TransitGatewayDetails& AddTransitGatewayCidrBlocks(const char* value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.push_back(value); return *this; }
+    template<typename TransitGatewayCidrBlocksT = Aws::Vector<Aws::String>>
+    void SetTransitGatewayCidrBlocks(TransitGatewayCidrBlocksT&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks = std::forward<TransitGatewayCidrBlocksT>(value); }
+    template<typename TransitGatewayCidrBlocksT = Aws::Vector<Aws::String>>
+    AwsEc2TransitGatewayDetails& WithTransitGatewayCidrBlocks(TransitGatewayCidrBlocksT&& value) { SetTransitGatewayCidrBlocks(std::forward<TransitGatewayCidrBlocksT>(value)); return *this;}
+    template<typename TransitGatewayCidrBlocksT = Aws::String>
+    AwsEc2TransitGatewayDetails& AddTransitGatewayCidrBlocks(TransitGatewayCidrBlocksT&& value) { m_transitGatewayCidrBlocksHasBeenSet = true; m_transitGatewayCidrBlocks.emplace_back(std::forward<TransitGatewayCidrBlocksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the default association route table. </p>
      */
-    inline const Aws::String& GetAssociationDefaultRouteTableId() const{ return m_associationDefaultRouteTableId; }
+    inline const Aws::String& GetAssociationDefaultRouteTableId() const { return m_associationDefaultRouteTableId; }
     inline bool AssociationDefaultRouteTableIdHasBeenSet() const { return m_associationDefaultRouteTableIdHasBeenSet; }
-    inline void SetAssociationDefaultRouteTableId(const Aws::String& value) { m_associationDefaultRouteTableIdHasBeenSet = true; m_associationDefaultRouteTableId = value; }
-    inline void SetAssociationDefaultRouteTableId(Aws::String&& value) { m_associationDefaultRouteTableIdHasBeenSet = true; m_associationDefaultRouteTableId = std::move(value); }
-    inline void SetAssociationDefaultRouteTableId(const char* value) { m_associationDefaultRouteTableIdHasBeenSet = true; m_associationDefaultRouteTableId.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithAssociationDefaultRouteTableId(const Aws::String& value) { SetAssociationDefaultRouteTableId(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithAssociationDefaultRouteTableId(Aws::String&& value) { SetAssociationDefaultRouteTableId(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithAssociationDefaultRouteTableId(const char* value) { SetAssociationDefaultRouteTableId(value); return *this;}
+    template<typename AssociationDefaultRouteTableIdT = Aws::String>
+    void SetAssociationDefaultRouteTableId(AssociationDefaultRouteTableIdT&& value) { m_associationDefaultRouteTableIdHasBeenSet = true; m_associationDefaultRouteTableId = std::forward<AssociationDefaultRouteTableIdT>(value); }
+    template<typename AssociationDefaultRouteTableIdT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithAssociationDefaultRouteTableId(AssociationDefaultRouteTableIdT&& value) { SetAssociationDefaultRouteTableId(std::forward<AssociationDefaultRouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the default propagation route table. </p>
      */
-    inline const Aws::String& GetPropagationDefaultRouteTableId() const{ return m_propagationDefaultRouteTableId; }
+    inline const Aws::String& GetPropagationDefaultRouteTableId() const { return m_propagationDefaultRouteTableId; }
     inline bool PropagationDefaultRouteTableIdHasBeenSet() const { return m_propagationDefaultRouteTableIdHasBeenSet; }
-    inline void SetPropagationDefaultRouteTableId(const Aws::String& value) { m_propagationDefaultRouteTableIdHasBeenSet = true; m_propagationDefaultRouteTableId = value; }
-    inline void SetPropagationDefaultRouteTableId(Aws::String&& value) { m_propagationDefaultRouteTableIdHasBeenSet = true; m_propagationDefaultRouteTableId = std::move(value); }
-    inline void SetPropagationDefaultRouteTableId(const char* value) { m_propagationDefaultRouteTableIdHasBeenSet = true; m_propagationDefaultRouteTableId.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithPropagationDefaultRouteTableId(const Aws::String& value) { SetPropagationDefaultRouteTableId(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithPropagationDefaultRouteTableId(Aws::String&& value) { SetPropagationDefaultRouteTableId(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithPropagationDefaultRouteTableId(const char* value) { SetPropagationDefaultRouteTableId(value); return *this;}
+    template<typename PropagationDefaultRouteTableIdT = Aws::String>
+    void SetPropagationDefaultRouteTableId(PropagationDefaultRouteTableIdT&& value) { m_propagationDefaultRouteTableIdHasBeenSet = true; m_propagationDefaultRouteTableId = std::forward<PropagationDefaultRouteTableIdT>(value); }
+    template<typename PropagationDefaultRouteTableIdT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithPropagationDefaultRouteTableId(PropagationDefaultRouteTableIdT&& value) { SetPropagationDefaultRouteTableId(std::forward<PropagationDefaultRouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Turn on or turn off Equal Cost Multipath Protocol (ECMP) support. </p>
      */
-    inline const Aws::String& GetVpnEcmpSupport() const{ return m_vpnEcmpSupport; }
+    inline const Aws::String& GetVpnEcmpSupport() const { return m_vpnEcmpSupport; }
     inline bool VpnEcmpSupportHasBeenSet() const { return m_vpnEcmpSupportHasBeenSet; }
-    inline void SetVpnEcmpSupport(const Aws::String& value) { m_vpnEcmpSupportHasBeenSet = true; m_vpnEcmpSupport = value; }
-    inline void SetVpnEcmpSupport(Aws::String&& value) { m_vpnEcmpSupportHasBeenSet = true; m_vpnEcmpSupport = std::move(value); }
-    inline void SetVpnEcmpSupport(const char* value) { m_vpnEcmpSupportHasBeenSet = true; m_vpnEcmpSupport.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithVpnEcmpSupport(const Aws::String& value) { SetVpnEcmpSupport(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithVpnEcmpSupport(Aws::String&& value) { SetVpnEcmpSupport(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithVpnEcmpSupport(const char* value) { SetVpnEcmpSupport(value); return *this;}
+    template<typename VpnEcmpSupportT = Aws::String>
+    void SetVpnEcmpSupport(VpnEcmpSupportT&& value) { m_vpnEcmpSupportHasBeenSet = true; m_vpnEcmpSupport = std::forward<VpnEcmpSupportT>(value); }
+    template<typename VpnEcmpSupportT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithVpnEcmpSupport(VpnEcmpSupportT&& value) { SetVpnEcmpSupport(std::forward<VpnEcmpSupportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Turn on or turn off DNS support. </p>
      */
-    inline const Aws::String& GetDnsSupport() const{ return m_dnsSupport; }
+    inline const Aws::String& GetDnsSupport() const { return m_dnsSupport; }
     inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
-    inline void SetDnsSupport(const Aws::String& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
-    inline void SetDnsSupport(Aws::String&& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = std::move(value); }
-    inline void SetDnsSupport(const char* value) { m_dnsSupportHasBeenSet = true; m_dnsSupport.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithDnsSupport(const Aws::String& value) { SetDnsSupport(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDnsSupport(Aws::String&& value) { SetDnsSupport(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithDnsSupport(const char* value) { SetDnsSupport(value); return *this;}
+    template<typename DnsSupportT = Aws::String>
+    void SetDnsSupport(DnsSupportT&& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = std::forward<DnsSupportT>(value); }
+    template<typename DnsSupportT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithDnsSupport(DnsSupportT&& value) { SetDnsSupport(std::forward<DnsSupportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether multicast is supported on the transit gateway. </p>
      */
-    inline const Aws::String& GetMulticastSupport() const{ return m_multicastSupport; }
+    inline const Aws::String& GetMulticastSupport() const { return m_multicastSupport; }
     inline bool MulticastSupportHasBeenSet() const { return m_multicastSupportHasBeenSet; }
-    inline void SetMulticastSupport(const Aws::String& value) { m_multicastSupportHasBeenSet = true; m_multicastSupport = value; }
-    inline void SetMulticastSupport(Aws::String&& value) { m_multicastSupportHasBeenSet = true; m_multicastSupport = std::move(value); }
-    inline void SetMulticastSupport(const char* value) { m_multicastSupportHasBeenSet = true; m_multicastSupport.assign(value); }
-    inline AwsEc2TransitGatewayDetails& WithMulticastSupport(const Aws::String& value) { SetMulticastSupport(value); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithMulticastSupport(Aws::String&& value) { SetMulticastSupport(std::move(value)); return *this;}
-    inline AwsEc2TransitGatewayDetails& WithMulticastSupport(const char* value) { SetMulticastSupport(value); return *this;}
+    template<typename MulticastSupportT = Aws::String>
+    void SetMulticastSupport(MulticastSupportT&& value) { m_multicastSupportHasBeenSet = true; m_multicastSupport = std::forward<MulticastSupportT>(value); }
+    template<typename MulticastSupportT = Aws::String>
+    AwsEc2TransitGatewayDetails& WithMulticastSupport(MulticastSupportT&& value) { SetMulticastSupport(std::forward<MulticastSupportT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,7 +181,7 @@ namespace Model
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. </p>
      */
-    inline int GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+    inline int GetAmazonSideAsn() const { return m_amazonSideAsn; }
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
     inline void SetAmazonSideAsn(int value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
     inline AwsEc2TransitGatewayDetails& WithAmazonSideAsn(int value) { SetAmazonSideAsn(value); return *this;}
@@ -242,7 +221,7 @@ namespace Model
     Aws::String m_multicastSupport;
     bool m_multicastSupportHasBeenSet = false;
 
-    int m_amazonSideAsn;
+    int m_amazonSideAsn{0};
     bool m_amazonSideAsnHasBeenSet = false;
   };
 

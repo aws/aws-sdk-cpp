@@ -18,16 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-DeleteCollectionDetail::DeleteCollectionDetail() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DeleteCollectionDetail::DeleteCollectionDetail(JsonView jsonValue)
-  : DeleteCollectionDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DeleteCollectionDetail& DeleteCollectionDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CollectionStatusMapper::GetCollectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

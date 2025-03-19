@@ -31,7 +31,7 @@ namespace Model
   class SheetImageScalingConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API SheetImageScalingConfiguration();
+    AWS_QUICKSIGHT_API SheetImageScalingConfiguration() = default;
     AWS_QUICKSIGHT_API SheetImageScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetImageScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * <code>SCALE_NONE</code>: The image is displayed in its original size and is not
      * scaled to the container.</p> </li> </ul>
      */
-    inline const SheetImageScalingType& GetScalingType() const{ return m_scalingType; }
+    inline SheetImageScalingType GetScalingType() const { return m_scalingType; }
     inline bool ScalingTypeHasBeenSet() const { return m_scalingTypeHasBeenSet; }
-    inline void SetScalingType(const SheetImageScalingType& value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
-    inline void SetScalingType(SheetImageScalingType&& value) { m_scalingTypeHasBeenSet = true; m_scalingType = std::move(value); }
-    inline SheetImageScalingConfiguration& WithScalingType(const SheetImageScalingType& value) { SetScalingType(value); return *this;}
-    inline SheetImageScalingConfiguration& WithScalingType(SheetImageScalingType&& value) { SetScalingType(std::move(value)); return *this;}
+    inline void SetScalingType(SheetImageScalingType value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
+    inline SheetImageScalingConfiguration& WithScalingType(SheetImageScalingType value) { SetScalingType(value); return *this;}
     ///@}
   private:
 
-    SheetImageScalingType m_scalingType;
+    SheetImageScalingType m_scalingType{SheetImageScalingType::NOT_SET};
     bool m_scalingTypeHasBeenSet = false;
   };
 

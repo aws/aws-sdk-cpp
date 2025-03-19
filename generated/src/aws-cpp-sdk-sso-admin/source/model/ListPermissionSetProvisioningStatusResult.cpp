@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPermissionSetProvisioningStatusResult::ListPermissionSetProvisioningStatusResult()
-{
-}
-
 ListPermissionSetProvisioningStatusResult::ListPermissionSetProvisioningStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListPermissionSetProvisioningStatusResult& ListPermissionSetProvisioningStatusRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionSetsProvisioningStatus"))
   {
     Aws::Utils::Array<JsonView> permissionSetsProvisioningStatusJsonList = jsonValue.GetArray("PermissionSetsProvisioningStatus");
@@ -42,14 +37,15 @@ ListPermissionSetProvisioningStatusResult& ListPermissionSetProvisioningStatusRe
     {
       m_permissionSetsProvisioningStatus.push_back(permissionSetsProvisioningStatusJsonList[permissionSetsProvisioningStatusIndex].AsObject());
     }
+    m_permissionSetsProvisioningStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class ForecastGeofenceEventsDeviceState
   {
   public:
-    AWS_LOCATIONSERVICE_API ForecastGeofenceEventsDeviceState();
+    AWS_LOCATIONSERVICE_API ForecastGeofenceEventsDeviceState() = default;
     AWS_LOCATIONSERVICE_API ForecastGeofenceEventsDeviceState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ForecastGeofenceEventsDeviceState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The device's position.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline ForecastGeofenceEventsDeviceState& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline ForecastGeofenceEventsDeviceState& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    ForecastGeofenceEventsDeviceState& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline ForecastGeofenceEventsDeviceState& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>The device's speed.</p>
      */
-    inline double GetSpeed() const{ return m_speed; }
+    inline double GetSpeed() const { return m_speed; }
     inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
     inline void SetSpeed(double value) { m_speedHasBeenSet = true; m_speed = value; }
     inline ForecastGeofenceEventsDeviceState& WithSpeed(double value) { SetSpeed(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
     Aws::Vector<double> m_position;
     bool m_positionHasBeenSet = false;
 
-    double m_speed;
+    double m_speed{0.0};
     bool m_speedHasBeenSet = false;
   };
 

@@ -37,7 +37,7 @@ namespace Model
   class PackageVersionSummary
   {
   public:
-    AWS_CODEARTIFACT_API PackageVersionSummary();
+    AWS_CODEARTIFACT_API PackageVersionSummary() = default;
     AWS_CODEARTIFACT_API PackageVersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p> Information about a package version. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline PackageVersionSummary& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline PackageVersionSummary& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline PackageVersionSummary& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    PackageVersionSummary& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The revision associated with a package version. </p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-    inline PackageVersionSummary& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline PackageVersionSummary& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline PackageVersionSummary& WithRevision(const char* value) { SetRevision(value); return *this;}
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    PackageVersionSummary& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * <p> A string that contains the status of the package version. It can be one of
      * the following: </p>
      */
-    inline const PackageVersionStatus& GetStatus() const{ return m_status; }
+    inline PackageVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PackageVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PackageVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PackageVersionSummary& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
-    inline PackageVersionSummary& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PackageVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PackageVersionSummary& WithStatus(PackageVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,12 @@ namespace Model
      * object that contains information about how the package version was added to the
      * repository.</p>
      */
-    inline const PackageVersionOrigin& GetOrigin() const{ return m_origin; }
+    inline const PackageVersionOrigin& GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const PackageVersionOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(PackageVersionOrigin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline PackageVersionSummary& WithOrigin(const PackageVersionOrigin& value) { SetOrigin(value); return *this;}
-    inline PackageVersionSummary& WithOrigin(PackageVersionOrigin&& value) { SetOrigin(std::move(value)); return *this;}
+    template<typename OriginT = PackageVersionOrigin>
+    void SetOrigin(OriginT&& value) { m_originHasBeenSet = true; m_origin = std::forward<OriginT>(value); }
+    template<typename OriginT = PackageVersionOrigin>
+    PackageVersionSummary& WithOrigin(OriginT&& value) { SetOrigin(std::forward<OriginT>(value)); return *this;}
     ///@}
   private:
 
@@ -106,7 +100,7 @@ namespace Model
     Aws::String m_revision;
     bool m_revisionHasBeenSet = false;
 
-    PackageVersionStatus m_status;
+    PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     PackageVersionOrigin m_origin;

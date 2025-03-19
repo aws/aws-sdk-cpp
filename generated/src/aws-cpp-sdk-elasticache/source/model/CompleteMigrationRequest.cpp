@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CompleteMigrationRequest::CompleteMigrationRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String CompleteMigrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

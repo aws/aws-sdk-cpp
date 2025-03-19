@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReportPlanResult::DescribeReportPlanResult()
-{
-}
-
 DescribeReportPlanResult::DescribeReportPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeReportPlanResult& DescribeReportPlanResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ReportPlan"))
   {
     m_reportPlan = jsonValue.GetObject("ReportPlan");
-
+    m_reportPlanHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

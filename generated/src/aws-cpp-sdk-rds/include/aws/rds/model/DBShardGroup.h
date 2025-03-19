@@ -35,7 +35,7 @@ namespace Model
   class DBShardGroup
   {
   public:
-    AWS_RDS_API DBShardGroup();
+    AWS_RDS_API DBShardGroup() = default;
     AWS_RDS_API DBShardGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DBShardGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,42 +48,36 @@ namespace Model
      * <p>The Amazon Web Services Region-unique, immutable identifier for the DB shard
      * group.</p>
      */
-    inline const Aws::String& GetDBShardGroupResourceId() const{ return m_dBShardGroupResourceId; }
+    inline const Aws::String& GetDBShardGroupResourceId() const { return m_dBShardGroupResourceId; }
     inline bool DBShardGroupResourceIdHasBeenSet() const { return m_dBShardGroupResourceIdHasBeenSet; }
-    inline void SetDBShardGroupResourceId(const Aws::String& value) { m_dBShardGroupResourceIdHasBeenSet = true; m_dBShardGroupResourceId = value; }
-    inline void SetDBShardGroupResourceId(Aws::String&& value) { m_dBShardGroupResourceIdHasBeenSet = true; m_dBShardGroupResourceId = std::move(value); }
-    inline void SetDBShardGroupResourceId(const char* value) { m_dBShardGroupResourceIdHasBeenSet = true; m_dBShardGroupResourceId.assign(value); }
-    inline DBShardGroup& WithDBShardGroupResourceId(const Aws::String& value) { SetDBShardGroupResourceId(value); return *this;}
-    inline DBShardGroup& WithDBShardGroupResourceId(Aws::String&& value) { SetDBShardGroupResourceId(std::move(value)); return *this;}
-    inline DBShardGroup& WithDBShardGroupResourceId(const char* value) { SetDBShardGroupResourceId(value); return *this;}
+    template<typename DBShardGroupResourceIdT = Aws::String>
+    void SetDBShardGroupResourceId(DBShardGroupResourceIdT&& value) { m_dBShardGroupResourceIdHasBeenSet = true; m_dBShardGroupResourceId = std::forward<DBShardGroupResourceIdT>(value); }
+    template<typename DBShardGroupResourceIdT = Aws::String>
+    DBShardGroup& WithDBShardGroupResourceId(DBShardGroupResourceIdT&& value) { SetDBShardGroupResourceId(std::forward<DBShardGroupResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the DB shard group.</p>
      */
-    inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
+    inline const Aws::String& GetDBShardGroupIdentifier() const { return m_dBShardGroupIdentifier; }
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }
-    inline void SetDBShardGroupIdentifier(const Aws::String& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = value; }
-    inline void SetDBShardGroupIdentifier(Aws::String&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::move(value); }
-    inline void SetDBShardGroupIdentifier(const char* value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier.assign(value); }
-    inline DBShardGroup& WithDBShardGroupIdentifier(const Aws::String& value) { SetDBShardGroupIdentifier(value); return *this;}
-    inline DBShardGroup& WithDBShardGroupIdentifier(Aws::String&& value) { SetDBShardGroupIdentifier(std::move(value)); return *this;}
-    inline DBShardGroup& WithDBShardGroupIdentifier(const char* value) { SetDBShardGroupIdentifier(value); return *this;}
+    template<typename DBShardGroupIdentifierT = Aws::String>
+    void SetDBShardGroupIdentifier(DBShardGroupIdentifierT&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::forward<DBShardGroupIdentifierT>(value); }
+    template<typename DBShardGroupIdentifierT = Aws::String>
+    DBShardGroup& WithDBShardGroupIdentifier(DBShardGroupIdentifierT&& value) { SetDBShardGroupIdentifier(std::forward<DBShardGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the primary DB cluster for the DB shard group.</p>
      */
-    inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+    inline const Aws::String& GetDBClusterIdentifier() const { return m_dBClusterIdentifier; }
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-    inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-    inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-    inline DBShardGroup& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-    inline DBShardGroup& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-    inline DBShardGroup& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+    template<typename DBClusterIdentifierT = Aws::String>
+    void SetDBClusterIdentifier(DBClusterIdentifierT&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::forward<DBClusterIdentifierT>(value); }
+    template<typename DBClusterIdentifierT = Aws::String>
+    DBShardGroup& WithDBClusterIdentifier(DBClusterIdentifierT&& value) { SetDBClusterIdentifier(std::forward<DBClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +85,7 @@ namespace Model
      * <p>The maximum capacity of the DB shard group in Aurora capacity units
      * (ACUs).</p>
      */
-    inline double GetMaxACU() const{ return m_maxACU; }
+    inline double GetMaxACU() const { return m_maxACU; }
     inline bool MaxACUHasBeenSet() const { return m_maxACUHasBeenSet; }
     inline void SetMaxACU(double value) { m_maxACUHasBeenSet = true; m_maxACU = value; }
     inline DBShardGroup& WithMaxACU(double value) { SetMaxACU(value); return *this;}
@@ -102,7 +96,7 @@ namespace Model
      * <p>The minimum capacity of the DB shard group in Aurora capacity units
      * (ACUs).</p>
      */
-    inline double GetMinACU() const{ return m_minACU; }
+    inline double GetMinACU() const { return m_minACU; }
     inline bool MinACUHasBeenSet() const { return m_minACUHasBeenSet; }
     inline void SetMinACU(double value) { m_minACUHasBeenSet = true; m_minACU = value; }
     inline DBShardGroup& WithMinACU(double value) { SetMinACU(value); return *this;}
@@ -117,7 +111,7 @@ namespace Model
      * Availability Zone (AZ).</p> </li> <li> <p>2 - Creates a DB shard group with two
      * standby DB shard groups in two different AZs.</p> </li> </ul>
      */
-    inline int GetComputeRedundancy() const{ return m_computeRedundancy; }
+    inline int GetComputeRedundancy() const { return m_computeRedundancy; }
     inline bool ComputeRedundancyHasBeenSet() const { return m_computeRedundancyHasBeenSet; }
     inline void SetComputeRedundancy(int value) { m_computeRedundancyHasBeenSet = true; m_computeRedundancy = value; }
     inline DBShardGroup& WithComputeRedundancy(int value) { SetComputeRedundancy(value); return *this;}
@@ -127,14 +121,12 @@ namespace Model
     /**
      * <p>The status of the DB shard group.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DBShardGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DBShardGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DBShardGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DBShardGroup& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,7 +143,7 @@ namespace Model
      * <a>CreateDBShardGroup</a>.</p> <p>This setting is only for Aurora Limitless
      * Database.</p>
      */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline DBShardGroup& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -161,49 +153,45 @@ namespace Model
     /**
      * <p>The connection endpoint for the DB shard group.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline DBShardGroup& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline DBShardGroup& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline DBShardGroup& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    DBShardGroup& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
      */
-    inline const Aws::String& GetDBShardGroupArn() const{ return m_dBShardGroupArn; }
+    inline const Aws::String& GetDBShardGroupArn() const { return m_dBShardGroupArn; }
     inline bool DBShardGroupArnHasBeenSet() const { return m_dBShardGroupArnHasBeenSet; }
-    inline void SetDBShardGroupArn(const Aws::String& value) { m_dBShardGroupArnHasBeenSet = true; m_dBShardGroupArn = value; }
-    inline void SetDBShardGroupArn(Aws::String&& value) { m_dBShardGroupArnHasBeenSet = true; m_dBShardGroupArn = std::move(value); }
-    inline void SetDBShardGroupArn(const char* value) { m_dBShardGroupArnHasBeenSet = true; m_dBShardGroupArn.assign(value); }
-    inline DBShardGroup& WithDBShardGroupArn(const Aws::String& value) { SetDBShardGroupArn(value); return *this;}
-    inline DBShardGroup& WithDBShardGroupArn(Aws::String&& value) { SetDBShardGroupArn(std::move(value)); return *this;}
-    inline DBShardGroup& WithDBShardGroupArn(const char* value) { SetDBShardGroupArn(value); return *this;}
+    template<typename DBShardGroupArnT = Aws::String>
+    void SetDBShardGroupArn(DBShardGroupArnT&& value) { m_dBShardGroupArnHasBeenSet = true; m_dBShardGroupArn = std::forward<DBShardGroupArnT>(value); }
+    template<typename DBShardGroupArnT = Aws::String>
+    DBShardGroup& WithDBShardGroupArn(DBShardGroupArnT&& value) { SetDBShardGroupArn(std::forward<DBShardGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline DBShardGroup& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline DBShardGroup& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline DBShardGroup& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline DBShardGroup& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    DBShardGroup& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    DBShardGroup& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DBShardGroup& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DBShardGroup& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DBShardGroup& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
@@ -216,19 +204,19 @@ namespace Model
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet = false;
 
-    double m_maxACU;
+    double m_maxACU{0.0};
     bool m_maxACUHasBeenSet = false;
 
-    double m_minACU;
+    double m_minACU{0.0};
     bool m_minACUHasBeenSet = false;
 
-    int m_computeRedundancy;
+    int m_computeRedundancy{0};
     bool m_computeRedundancyHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    bool m_publiclyAccessible;
+    bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_endpoint;
@@ -241,6 +229,7 @@ namespace Model
     bool m_tagListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = true;
   };
 
 } // namespace Model

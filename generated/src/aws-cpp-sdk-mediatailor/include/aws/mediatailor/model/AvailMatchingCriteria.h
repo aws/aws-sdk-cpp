@@ -47,7 +47,7 @@ namespace Model
   class AvailMatchingCriteria
   {
   public:
-    AWS_MEDIATAILOR_API AvailMatchingCriteria();
+    AWS_MEDIATAILOR_API AvailMatchingCriteria() = default;
     AWS_MEDIATAILOR_API AvailMatchingCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AvailMatchingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p> <p>You can
      * include up to 100 dynamic variables.</p>
      */
-    inline const Aws::String& GetDynamicVariable() const{ return m_dynamicVariable; }
+    inline const Aws::String& GetDynamicVariable() const { return m_dynamicVariable; }
     inline bool DynamicVariableHasBeenSet() const { return m_dynamicVariableHasBeenSet; }
-    inline void SetDynamicVariable(const Aws::String& value) { m_dynamicVariableHasBeenSet = true; m_dynamicVariable = value; }
-    inline void SetDynamicVariable(Aws::String&& value) { m_dynamicVariableHasBeenSet = true; m_dynamicVariable = std::move(value); }
-    inline void SetDynamicVariable(const char* value) { m_dynamicVariableHasBeenSet = true; m_dynamicVariable.assign(value); }
-    inline AvailMatchingCriteria& WithDynamicVariable(const Aws::String& value) { SetDynamicVariable(value); return *this;}
-    inline AvailMatchingCriteria& WithDynamicVariable(Aws::String&& value) { SetDynamicVariable(std::move(value)); return *this;}
-    inline AvailMatchingCriteria& WithDynamicVariable(const char* value) { SetDynamicVariable(value); return *this;}
+    template<typename DynamicVariableT = Aws::String>
+    void SetDynamicVariable(DynamicVariableT&& value) { m_dynamicVariableHasBeenSet = true; m_dynamicVariable = std::forward<DynamicVariableT>(value); }
+    template<typename DynamicVariableT = Aws::String>
+    AvailMatchingCriteria& WithDynamicVariable(DynamicVariableT&& value) { SetDynamicVariable(std::forward<DynamicVariableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,17 @@ namespace Model
      * <code>AvailMatchingCriteria</code>, the Operator that is used for the
      * comparison.</p>
      */
-    inline const Operator& GetOperator() const{ return m_operator; }
+    inline Operator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline AvailMatchingCriteria& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-    inline AvailMatchingCriteria& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(Operator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline AvailMatchingCriteria& WithOperator(Operator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
     Aws::String m_dynamicVariable;
     bool m_dynamicVariableHasBeenSet = false;
 
-    Operator m_operator;
+    Operator m_operator{Operator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-DeploymentLaunchConfig::DeploymentLaunchConfig() : 
-    m_packageNameHasBeenSet(false),
-    m_preLaunchFileHasBeenSet(false),
-    m_launchFileHasBeenSet(false),
-    m_postLaunchFileHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
-{
-}
-
 DeploymentLaunchConfig::DeploymentLaunchConfig(JsonView jsonValue)
-  : DeploymentLaunchConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DeploymentLaunchConfig& DeploymentLaunchConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preLaunchFile"))
   {
     m_preLaunchFile = jsonValue.GetString("preLaunchFile");
-
     m_preLaunchFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchFile"))
   {
     m_launchFile = jsonValue.GetString("launchFile");
-
     m_launchFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postLaunchFile"))
   {
     m_postLaunchFile = jsonValue.GetString("postLaunchFile");
-
     m_postLaunchFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();
@@ -72,7 +54,6 @@ DeploymentLaunchConfig& DeploymentLaunchConfig::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

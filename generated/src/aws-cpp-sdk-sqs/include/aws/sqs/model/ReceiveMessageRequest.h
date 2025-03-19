@@ -27,7 +27,7 @@ namespace Model
   class ReceiveMessageRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API ReceiveMessageRequest();
+    AWS_SQS_API ReceiveMessageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
      * <p>Queue URLs and names are case-sensitive.</p>
      */
-    inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+    inline const Aws::String& GetQueueUrl() const { return m_queueUrl; }
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
-    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
-    inline ReceiveMessageRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-    inline ReceiveMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-    inline ReceiveMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    template<typename QueueUrlT = Aws::String>
+    void SetQueueUrl(QueueUrlT&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::forward<QueueUrlT>(value); }
+    template<typename QueueUrlT = Aws::String>
+    ReceiveMessageRequest& WithQueueUrl(QueueUrlT&& value) { SetQueueUrl(std::forward<QueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,13 @@ namespace Model
      * <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<MessageSystemAttributeName>& GetMessageSystemAttributeNames() const{ return m_messageSystemAttributeNames; }
+    inline const Aws::Vector<MessageSystemAttributeName>& GetMessageSystemAttributeNames() const { return m_messageSystemAttributeNames; }
     inline bool MessageSystemAttributeNamesHasBeenSet() const { return m_messageSystemAttributeNamesHasBeenSet; }
-    inline void SetMessageSystemAttributeNames(const Aws::Vector<MessageSystemAttributeName>& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames = value; }
-    inline void SetMessageSystemAttributeNames(Aws::Vector<MessageSystemAttributeName>&& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames = std::move(value); }
-    inline ReceiveMessageRequest& WithMessageSystemAttributeNames(const Aws::Vector<MessageSystemAttributeName>& value) { SetMessageSystemAttributeNames(value); return *this;}
-    inline ReceiveMessageRequest& WithMessageSystemAttributeNames(Aws::Vector<MessageSystemAttributeName>&& value) { SetMessageSystemAttributeNames(std::move(value)); return *this;}
-    inline ReceiveMessageRequest& AddMessageSystemAttributeNames(const MessageSystemAttributeName& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames.push_back(value); return *this; }
-    inline ReceiveMessageRequest& AddMessageSystemAttributeNames(MessageSystemAttributeName&& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames.push_back(std::move(value)); return *this; }
+    template<typename MessageSystemAttributeNamesT = Aws::Vector<MessageSystemAttributeName>>
+    void SetMessageSystemAttributeNames(MessageSystemAttributeNamesT&& value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames = std::forward<MessageSystemAttributeNamesT>(value); }
+    template<typename MessageSystemAttributeNamesT = Aws::Vector<MessageSystemAttributeName>>
+    ReceiveMessageRequest& WithMessageSystemAttributeNames(MessageSystemAttributeNamesT&& value) { SetMessageSystemAttributeNames(std::forward<MessageSystemAttributeNamesT>(value)); return *this;}
+    inline ReceiveMessageRequest& AddMessageSystemAttributeNames(MessageSystemAttributeName value) { m_messageSystemAttributeNamesHasBeenSet = true; m_messageSystemAttributeNames.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -113,15 +110,14 @@ namespace Model
      * all message attributes starting with a prefix, for example
      * <code>bar.*</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMessageAttributeNames() const{ return m_messageAttributeNames; }
+    inline const Aws::Vector<Aws::String>& GetMessageAttributeNames() const { return m_messageAttributeNames; }
     inline bool MessageAttributeNamesHasBeenSet() const { return m_messageAttributeNamesHasBeenSet; }
-    inline void SetMessageAttributeNames(const Aws::Vector<Aws::String>& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = value; }
-    inline void SetMessageAttributeNames(Aws::Vector<Aws::String>&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = std::move(value); }
-    inline ReceiveMessageRequest& WithMessageAttributeNames(const Aws::Vector<Aws::String>& value) { SetMessageAttributeNames(value); return *this;}
-    inline ReceiveMessageRequest& WithMessageAttributeNames(Aws::Vector<Aws::String>&& value) { SetMessageAttributeNames(std::move(value)); return *this;}
-    inline ReceiveMessageRequest& AddMessageAttributeNames(const Aws::String& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
-    inline ReceiveMessageRequest& AddMessageAttributeNames(Aws::String&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(std::move(value)); return *this; }
-    inline ReceiveMessageRequest& AddMessageAttributeNames(const char* value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.push_back(value); return *this; }
+    template<typename MessageAttributeNamesT = Aws::Vector<Aws::String>>
+    void SetMessageAttributeNames(MessageAttributeNamesT&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames = std::forward<MessageAttributeNamesT>(value); }
+    template<typename MessageAttributeNamesT = Aws::Vector<Aws::String>>
+    ReceiveMessageRequest& WithMessageAttributeNames(MessageAttributeNamesT&& value) { SetMessageAttributeNames(std::forward<MessageAttributeNamesT>(value)); return *this;}
+    template<typename MessageAttributeNamesT = Aws::String>
+    ReceiveMessageRequest& AddMessageAttributeNames(MessageAttributeNamesT&& value) { m_messageAttributeNamesHasBeenSet = true; m_messageAttributeNames.emplace_back(std::forward<MessageAttributeNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,7 +126,7 @@ namespace Model
      * messages than this value (however, fewer messages might be returned). Valid
      * values: 1 to 10. Default: 1.</p>
      */
-    inline int GetMaxNumberOfMessages() const{ return m_maxNumberOfMessages; }
+    inline int GetMaxNumberOfMessages() const { return m_maxNumberOfMessages; }
     inline bool MaxNumberOfMessagesHasBeenSet() const { return m_maxNumberOfMessagesHasBeenSet; }
     inline void SetMaxNumberOfMessages(int value) { m_maxNumberOfMessagesHasBeenSet = true; m_maxNumberOfMessages = value; }
     inline ReceiveMessageRequest& WithMaxNumberOfMessages(int value) { SetMaxNumberOfMessages(value); return *this;}
@@ -161,7 +157,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
+    inline int GetVisibilityTimeout() const { return m_visibilityTimeout; }
     inline bool VisibilityTimeoutHasBeenSet() const { return m_visibilityTimeoutHasBeenSet; }
     inline void SetVisibilityTimeout(int value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
     inline ReceiveMessageRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
@@ -183,7 +179,7 @@ namespace Model
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
      * ApacheHttpClient</a> for synchronous clients. </p> 
      */
-    inline int GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
+    inline int GetWaitTimeSeconds() const { return m_waitTimeSeconds; }
     inline bool WaitTimeSecondsHasBeenSet() const { return m_waitTimeSecondsHasBeenSet; }
     inline void SetWaitTimeSeconds(int value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
     inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
@@ -235,14 +231,12 @@ namespace Model
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetReceiveRequestAttemptId() const{ return m_receiveRequestAttemptId; }
+    inline const Aws::String& GetReceiveRequestAttemptId() const { return m_receiveRequestAttemptId; }
     inline bool ReceiveRequestAttemptIdHasBeenSet() const { return m_receiveRequestAttemptIdHasBeenSet; }
-    inline void SetReceiveRequestAttemptId(const Aws::String& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = value; }
-    inline void SetReceiveRequestAttemptId(Aws::String&& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = std::move(value); }
-    inline void SetReceiveRequestAttemptId(const char* value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId.assign(value); }
-    inline ReceiveMessageRequest& WithReceiveRequestAttemptId(const Aws::String& value) { SetReceiveRequestAttemptId(value); return *this;}
-    inline ReceiveMessageRequest& WithReceiveRequestAttemptId(Aws::String&& value) { SetReceiveRequestAttemptId(std::move(value)); return *this;}
-    inline ReceiveMessageRequest& WithReceiveRequestAttemptId(const char* value) { SetReceiveRequestAttemptId(value); return *this;}
+    template<typename ReceiveRequestAttemptIdT = Aws::String>
+    void SetReceiveRequestAttemptId(ReceiveRequestAttemptIdT&& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = std::forward<ReceiveRequestAttemptIdT>(value); }
+    template<typename ReceiveRequestAttemptIdT = Aws::String>
+    ReceiveMessageRequest& WithReceiveRequestAttemptId(ReceiveRequestAttemptIdT&& value) { SetReceiveRequestAttemptId(std::forward<ReceiveRequestAttemptIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -255,13 +249,13 @@ namespace Model
     Aws::Vector<Aws::String> m_messageAttributeNames;
     bool m_messageAttributeNamesHasBeenSet = false;
 
-    int m_maxNumberOfMessages;
+    int m_maxNumberOfMessages{0};
     bool m_maxNumberOfMessagesHasBeenSet = false;
 
-    int m_visibilityTimeout;
+    int m_visibilityTimeout{0};
     bool m_visibilityTimeoutHasBeenSet = false;
 
-    int m_waitTimeSeconds;
+    int m_waitTimeSeconds{0};
     bool m_waitTimeSecondsHasBeenSet = false;
 
     Aws::String m_receiveRequestAttemptId;

@@ -30,7 +30,7 @@ namespace Model
   class GetSensitiveDataOccurrencesAvailabilityResult
   {
   public:
-    AWS_MACIE2_API GetSensitiveDataOccurrencesAvailabilityResult();
+    AWS_MACIE2_API GetSensitiveDataOccurrencesAvailabilityResult() = default;
     AWS_MACIE2_API GetSensitiveDataOccurrencesAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetSensitiveDataOccurrencesAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,9 @@ namespace Model
      * and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is
      * UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
      */
-    inline const AvailabilityCode& GetCode() const{ return m_code; }
-    inline void SetCode(const AvailabilityCode& value) { m_code = value; }
-    inline void SetCode(AvailabilityCode&& value) { m_code = std::move(value); }
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithCode(const AvailabilityCode& value) { SetCode(value); return *this;}
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithCode(AvailabilityCode&& value) { SetCode(std::move(value)); return *this;}
+    inline AvailabilityCode GetCode() const { return m_code; }
+    inline void SetCode(AvailabilityCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline GetSensitiveDataOccurrencesAvailabilityResult& WithCode(AvailabilityCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
@@ -94,32 +92,32 @@ namespace Model
      * sensitive data.</p></li></ul> <p>This value is null if sensitive data can be
      * retrieved for the finding.</p>
      */
-    inline const Aws::Vector<UnavailabilityReasonCode>& GetReasons() const{ return m_reasons; }
-    inline void SetReasons(const Aws::Vector<UnavailabilityReasonCode>& value) { m_reasons = value; }
-    inline void SetReasons(Aws::Vector<UnavailabilityReasonCode>&& value) { m_reasons = std::move(value); }
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithReasons(const Aws::Vector<UnavailabilityReasonCode>& value) { SetReasons(value); return *this;}
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithReasons(Aws::Vector<UnavailabilityReasonCode>&& value) { SetReasons(std::move(value)); return *this;}
-    inline GetSensitiveDataOccurrencesAvailabilityResult& AddReasons(const UnavailabilityReasonCode& value) { m_reasons.push_back(value); return *this; }
-    inline GetSensitiveDataOccurrencesAvailabilityResult& AddReasons(UnavailabilityReasonCode&& value) { m_reasons.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnavailabilityReasonCode>& GetReasons() const { return m_reasons; }
+    template<typename ReasonsT = Aws::Vector<UnavailabilityReasonCode>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<UnavailabilityReasonCode>>
+    GetSensitiveDataOccurrencesAvailabilityResult& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    inline GetSensitiveDataOccurrencesAvailabilityResult& AddReasons(UnavailabilityReasonCode value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSensitiveDataOccurrencesAvailabilityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSensitiveDataOccurrencesAvailabilityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AvailabilityCode m_code;
+    AvailabilityCode m_code{AvailabilityCode::NOT_SET};
+    bool m_codeHasBeenSet = false;
 
     Aws::Vector<UnavailabilityReasonCode> m_reasons;
+    bool m_reasonsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-StageConditionState::StageConditionState() : 
-    m_latestExecutionHasBeenSet(false),
-    m_conditionStatesHasBeenSet(false)
-{
-}
-
 StageConditionState::StageConditionState(JsonView jsonValue)
-  : StageConditionState()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StageConditionState& StageConditionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("latestExecution"))
   {
     m_latestExecution = jsonValue.GetObject("latestExecution");
-
     m_latestExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionStates"))
   {
     Aws::Utils::Array<JsonView> conditionStatesJsonList = jsonValue.GetArray("conditionStates");
@@ -48,7 +39,6 @@ StageConditionState& StageConditionState::operator =(JsonView jsonValue)
     }
     m_conditionStatesHasBeenSet = true;
   }
-
   return *this;
 }
 

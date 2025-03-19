@@ -30,7 +30,7 @@ namespace Model
   class OpusSettings
   {
   public:
-    AWS_MEDIACONVERT_API OpusSettings();
+    AWS_MEDIACONVERT_API OpusSettings() = default;
     AWS_MEDIACONVERT_API OpusSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API OpusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * multiples of 8000, from 32000 through 192000. The default value is 96000, which
      * we recommend for quality and bandwidth.
      */
-    inline int GetBitrate() const{ return m_bitrate; }
+    inline int GetBitrate() const { return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
     inline OpusSettings& WithBitrate(int value) { SetBitrate(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * gives you 1 output channel; choosing Stereo gives you 2. In the API, valid
      * values are 1 and 2.
      */
-    inline int GetChannels() const{ return m_channels; }
+    inline int GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
     inline OpusSettings& WithChannels(int value) { SetChannels(value); return *this;}
@@ -65,20 +65,20 @@ namespace Model
      * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The
      * default value is 48000.
      */
-    inline int GetSampleRate() const{ return m_sampleRate; }
+    inline int GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline OpusSettings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
     ///@}
   private:
 
-    int m_bitrate;
+    int m_bitrate{0};
     bool m_bitrateHasBeenSet = false;
 
-    int m_channels;
+    int m_channels{0};
     bool m_channelsHasBeenSet = false;
 
-    int m_sampleRate;
+    int m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
   };
 

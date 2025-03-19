@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProfileAttributeValuesResult::ListProfileAttributeValuesResult() : 
-    m_statusCode(0)
-{
-}
-
 ListProfileAttributeValuesResult::ListProfileAttributeValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListProfileAttributeValuesResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListProfileAttributeValuesResult& ListProfileAttributeValuesResult::operator =(c
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
+    m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -50,18 +42,19 @@ ListProfileAttributeValuesResult& ListProfileAttributeValuesResult::operator =(c
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
-
+  m_statusCodeHasBeenSet = true;
   return *this;
 }

@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-NetworkConfig::NetworkConfig() : 
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 NetworkConfig::NetworkConfig(JsonView jsonValue)
-  : NetworkConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ NetworkConfig& NetworkConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
   {
     m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
-
     m_enableInterContainerTrafficEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableNetworkIsolation"))
   {
     m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
-
     m_enableNetworkIsolationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

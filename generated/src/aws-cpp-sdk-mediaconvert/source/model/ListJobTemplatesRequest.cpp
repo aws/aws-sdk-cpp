@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobTemplatesRequest::ListJobTemplatesRequest() : 
-    m_categoryHasBeenSet(false),
-    m_listBy(JobTemplateListBy::NOT_SET),
-    m_listByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 Aws::String ListJobTemplatesRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class SourceAccessConfiguration
   {
   public:
-    AWS_LAMBDA_API SourceAccessConfiguration();
+    AWS_LAMBDA_API SourceAccessConfiguration() = default;
     AWS_LAMBDA_API SourceAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API SourceAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -71,12 +71,10 @@ namespace Model
      * containing the root CA certificate (X.509 PEM) used for TLS encryption of your
      * Apache Kafka brokers. </p> </li> </ul>
      */
-    inline const SourceAccessType& GetType() const{ return m_type; }
+    inline SourceAccessType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SourceAccessType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SourceAccessType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SourceAccessConfiguration& WithType(const SourceAccessType& value) { SetType(value); return *this;}
-    inline SourceAccessConfiguration& WithType(SourceAccessType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SourceAccessType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SourceAccessConfiguration& WithType(SourceAccessType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -85,18 +83,16 @@ namespace Model
      * <code>"URI":
      * "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
      */
-    inline const Aws::String& GetURI() const{ return m_uRI; }
+    inline const Aws::String& GetURI() const { return m_uRI; }
     inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
-    inline void SetURI(const Aws::String& value) { m_uRIHasBeenSet = true; m_uRI = value; }
-    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = std::move(value); }
-    inline void SetURI(const char* value) { m_uRIHasBeenSet = true; m_uRI.assign(value); }
-    inline SourceAccessConfiguration& WithURI(const Aws::String& value) { SetURI(value); return *this;}
-    inline SourceAccessConfiguration& WithURI(Aws::String&& value) { SetURI(std::move(value)); return *this;}
-    inline SourceAccessConfiguration& WithURI(const char* value) { SetURI(value); return *this;}
+    template<typename URIT = Aws::String>
+    void SetURI(URIT&& value) { m_uRIHasBeenSet = true; m_uRI = std::forward<URIT>(value); }
+    template<typename URIT = Aws::String>
+    SourceAccessConfiguration& WithURI(URIT&& value) { SetURI(std::forward<URIT>(value)); return *this;}
     ///@}
   private:
 
-    SourceAccessType m_type;
+    SourceAccessType m_type{SourceAccessType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_uRI;

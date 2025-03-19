@@ -32,7 +32,7 @@ namespace Model
   class KeyUsage
   {
   public:
-    AWS_ACM_API KeyUsage();
+    AWS_ACM_API KeyUsage() = default;
     AWS_ACM_API KeyUsage(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API KeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>A string value that contains a Key Usage extension name.</p>
      */
-    inline const KeyUsageName& GetName() const{ return m_name; }
+    inline KeyUsageName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const KeyUsageName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(KeyUsageName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline KeyUsage& WithName(const KeyUsageName& value) { SetName(value); return *this;}
-    inline KeyUsage& WithName(KeyUsageName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(KeyUsageName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline KeyUsage& WithName(KeyUsageName value) { SetName(value); return *this;}
     ///@}
   private:
 
-    KeyUsageName m_name;
+    KeyUsageName m_name{KeyUsageName::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

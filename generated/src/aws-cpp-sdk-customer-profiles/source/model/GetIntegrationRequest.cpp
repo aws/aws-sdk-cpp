@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIntegrationRequest::GetIntegrationRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_uriHasBeenSet(false)
-{
-}
-
 Aws::String GetIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

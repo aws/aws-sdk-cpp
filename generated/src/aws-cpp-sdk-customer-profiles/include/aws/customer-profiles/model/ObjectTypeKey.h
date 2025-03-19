@@ -35,7 +35,7 @@ namespace Model
   class ObjectTypeKey
   {
   public:
-    AWS_CUSTOMERPROFILES_API ObjectTypeKey();
+    AWS_CUSTOMERPROFILES_API ObjectTypeKey() = default;
     AWS_CUSTOMERPROFILES_API ObjectTypeKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ObjectTypeKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,29 +54,27 @@ namespace Model
      * before the object is ingested, otherwise it is only used for matching objects to
      * profiles.</p>
      */
-    inline const Aws::Vector<StandardIdentifier>& GetStandardIdentifiers() const{ return m_standardIdentifiers; }
+    inline const Aws::Vector<StandardIdentifier>& GetStandardIdentifiers() const { return m_standardIdentifiers; }
     inline bool StandardIdentifiersHasBeenSet() const { return m_standardIdentifiersHasBeenSet; }
-    inline void SetStandardIdentifiers(const Aws::Vector<StandardIdentifier>& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers = value; }
-    inline void SetStandardIdentifiers(Aws::Vector<StandardIdentifier>&& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers = std::move(value); }
-    inline ObjectTypeKey& WithStandardIdentifiers(const Aws::Vector<StandardIdentifier>& value) { SetStandardIdentifiers(value); return *this;}
-    inline ObjectTypeKey& WithStandardIdentifiers(Aws::Vector<StandardIdentifier>&& value) { SetStandardIdentifiers(std::move(value)); return *this;}
-    inline ObjectTypeKey& AddStandardIdentifiers(const StandardIdentifier& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers.push_back(value); return *this; }
-    inline ObjectTypeKey& AddStandardIdentifiers(StandardIdentifier&& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers.push_back(std::move(value)); return *this; }
+    template<typename StandardIdentifiersT = Aws::Vector<StandardIdentifier>>
+    void SetStandardIdentifiers(StandardIdentifiersT&& value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers = std::forward<StandardIdentifiersT>(value); }
+    template<typename StandardIdentifiersT = Aws::Vector<StandardIdentifier>>
+    ObjectTypeKey& WithStandardIdentifiers(StandardIdentifiersT&& value) { SetStandardIdentifiers(std::forward<StandardIdentifiersT>(value)); return *this;}
+    inline ObjectTypeKey& AddStandardIdentifiers(StandardIdentifier value) { m_standardIdentifiersHasBeenSet = true; m_standardIdentifiers.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The reference for the key name of the fields map.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFieldNames() const{ return m_fieldNames; }
+    inline const Aws::Vector<Aws::String>& GetFieldNames() const { return m_fieldNames; }
     inline bool FieldNamesHasBeenSet() const { return m_fieldNamesHasBeenSet; }
-    inline void SetFieldNames(const Aws::Vector<Aws::String>& value) { m_fieldNamesHasBeenSet = true; m_fieldNames = value; }
-    inline void SetFieldNames(Aws::Vector<Aws::String>&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames = std::move(value); }
-    inline ObjectTypeKey& WithFieldNames(const Aws::Vector<Aws::String>& value) { SetFieldNames(value); return *this;}
-    inline ObjectTypeKey& WithFieldNames(Aws::Vector<Aws::String>&& value) { SetFieldNames(std::move(value)); return *this;}
-    inline ObjectTypeKey& AddFieldNames(const Aws::String& value) { m_fieldNamesHasBeenSet = true; m_fieldNames.push_back(value); return *this; }
-    inline ObjectTypeKey& AddFieldNames(Aws::String&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames.push_back(std::move(value)); return *this; }
-    inline ObjectTypeKey& AddFieldNames(const char* value) { m_fieldNamesHasBeenSet = true; m_fieldNames.push_back(value); return *this; }
+    template<typename FieldNamesT = Aws::Vector<Aws::String>>
+    void SetFieldNames(FieldNamesT&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames = std::forward<FieldNamesT>(value); }
+    template<typename FieldNamesT = Aws::Vector<Aws::String>>
+    ObjectTypeKey& WithFieldNames(FieldNamesT&& value) { SetFieldNames(std::forward<FieldNamesT>(value)); return *this;}
+    template<typename FieldNamesT = Aws::String>
+    ObjectTypeKey& AddFieldNames(FieldNamesT&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames.emplace_back(std::forward<FieldNamesT>(value)); return *this; }
     ///@}
   private:
 

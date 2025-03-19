@@ -10,26 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcEndpointServiceConfigurationRequest::ModifyVpcEndpointServiceConfigurationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_removePrivateDnsName(false),
-    m_removePrivateDnsNameHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_addNetworkLoadBalancerArnsHasBeenSet(false),
-    m_removeNetworkLoadBalancerArnsHasBeenSet(false),
-    m_addGatewayLoadBalancerArnsHasBeenSet(false),
-    m_removeGatewayLoadBalancerArnsHasBeenSet(false),
-    m_addSupportedIpAddressTypesHasBeenSet(false),
-    m_removeSupportedIpAddressTypesHasBeenSet(false),
-    m_addSupportedRegionsHasBeenSet(false),
-    m_removeSupportedRegionsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcEndpointServiceConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

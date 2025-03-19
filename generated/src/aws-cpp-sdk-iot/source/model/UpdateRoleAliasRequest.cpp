@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRoleAliasRequest::UpdateRoleAliasRequest() : 
-    m_roleAliasHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_credentialDurationSeconds(0),
-    m_credentialDurationSecondsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoleAliasRequest::SerializePayload() const
 {
   JsonValue payload;

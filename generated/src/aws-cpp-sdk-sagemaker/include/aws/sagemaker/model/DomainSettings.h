@@ -38,7 +38,7 @@ namespace Model
   class DomainSettings
   {
   public:
-    AWS_SAGEMAKER_API DomainSettings();
+    AWS_SAGEMAKER_API DomainSettings() = default;
     AWS_SAGEMAKER_API DomainSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,15 +50,14 @@ namespace Model
      * <code>Domain</code> uses for communication between Domain-level apps and user
      * apps.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline DomainSettings& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline DomainSettings& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline DomainSettings& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline DomainSettings& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline DomainSettings& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    DomainSettings& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    DomainSettings& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,12 +65,12 @@ namespace Model
      * <p>A collection of settings that configure the <code>RStudioServerPro</code>
      * Domain-level app.</p>
      */
-    inline const RStudioServerProDomainSettings& GetRStudioServerProDomainSettings() const{ return m_rStudioServerProDomainSettings; }
+    inline const RStudioServerProDomainSettings& GetRStudioServerProDomainSettings() const { return m_rStudioServerProDomainSettings; }
     inline bool RStudioServerProDomainSettingsHasBeenSet() const { return m_rStudioServerProDomainSettingsHasBeenSet; }
-    inline void SetRStudioServerProDomainSettings(const RStudioServerProDomainSettings& value) { m_rStudioServerProDomainSettingsHasBeenSet = true; m_rStudioServerProDomainSettings = value; }
-    inline void SetRStudioServerProDomainSettings(RStudioServerProDomainSettings&& value) { m_rStudioServerProDomainSettingsHasBeenSet = true; m_rStudioServerProDomainSettings = std::move(value); }
-    inline DomainSettings& WithRStudioServerProDomainSettings(const RStudioServerProDomainSettings& value) { SetRStudioServerProDomainSettings(value); return *this;}
-    inline DomainSettings& WithRStudioServerProDomainSettings(RStudioServerProDomainSettings&& value) { SetRStudioServerProDomainSettings(std::move(value)); return *this;}
+    template<typename RStudioServerProDomainSettingsT = RStudioServerProDomainSettings>
+    void SetRStudioServerProDomainSettings(RStudioServerProDomainSettingsT&& value) { m_rStudioServerProDomainSettingsHasBeenSet = true; m_rStudioServerProDomainSettings = std::forward<RStudioServerProDomainSettingsT>(value); }
+    template<typename RStudioServerProDomainSettingsT = RStudioServerProDomainSettings>
+    DomainSettings& WithRStudioServerProDomainSettings(RStudioServerProDomainSettingsT&& value) { SetRStudioServerProDomainSettings(std::forward<RStudioServerProDomainSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,24 +80,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
      * key</a>.</p>
      */
-    inline const ExecutionRoleIdentityConfig& GetExecutionRoleIdentityConfig() const{ return m_executionRoleIdentityConfig; }
+    inline ExecutionRoleIdentityConfig GetExecutionRoleIdentityConfig() const { return m_executionRoleIdentityConfig; }
     inline bool ExecutionRoleIdentityConfigHasBeenSet() const { return m_executionRoleIdentityConfigHasBeenSet; }
-    inline void SetExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = value; }
-    inline void SetExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = std::move(value); }
-    inline DomainSettings& WithExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { SetExecutionRoleIdentityConfig(value); return *this;}
-    inline DomainSettings& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { SetExecutionRoleIdentityConfig(std::move(value)); return *this;}
+    inline void SetExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = value; }
+    inline DomainSettings& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig value) { SetExecutionRoleIdentityConfig(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of settings that configure the domain's Docker interaction.</p>
      */
-    inline const DockerSettings& GetDockerSettings() const{ return m_dockerSettings; }
+    inline const DockerSettings& GetDockerSettings() const { return m_dockerSettings; }
     inline bool DockerSettingsHasBeenSet() const { return m_dockerSettingsHasBeenSet; }
-    inline void SetDockerSettings(const DockerSettings& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = value; }
-    inline void SetDockerSettings(DockerSettings&& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = std::move(value); }
-    inline DomainSettings& WithDockerSettings(const DockerSettings& value) { SetDockerSettings(value); return *this;}
-    inline DomainSettings& WithDockerSettings(DockerSettings&& value) { SetDockerSettings(std::move(value)); return *this;}
+    template<typename DockerSettingsT = DockerSettings>
+    void SetDockerSettings(DockerSettingsT&& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = std::forward<DockerSettingsT>(value); }
+    template<typename DockerSettingsT = DockerSettings>
+    DomainSettings& WithDockerSettings(DockerSettingsT&& value) { SetDockerSettings(std::forward<DockerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +104,12 @@ namespace Model
      * domain. The <code>AuthMode</code> that you use to create the domain must be
      * <code>SSO</code>.</p>
      */
-    inline const AmazonQSettings& GetAmazonQSettings() const{ return m_amazonQSettings; }
+    inline const AmazonQSettings& GetAmazonQSettings() const { return m_amazonQSettings; }
     inline bool AmazonQSettingsHasBeenSet() const { return m_amazonQSettingsHasBeenSet; }
-    inline void SetAmazonQSettings(const AmazonQSettings& value) { m_amazonQSettingsHasBeenSet = true; m_amazonQSettings = value; }
-    inline void SetAmazonQSettings(AmazonQSettings&& value) { m_amazonQSettingsHasBeenSet = true; m_amazonQSettings = std::move(value); }
-    inline DomainSettings& WithAmazonQSettings(const AmazonQSettings& value) { SetAmazonQSettings(value); return *this;}
-    inline DomainSettings& WithAmazonQSettings(AmazonQSettings&& value) { SetAmazonQSettings(std::move(value)); return *this;}
+    template<typename AmazonQSettingsT = AmazonQSettings>
+    void SetAmazonQSettings(AmazonQSettingsT&& value) { m_amazonQSettingsHasBeenSet = true; m_amazonQSettings = std::forward<AmazonQSettingsT>(value); }
+    template<typename AmazonQSettingsT = AmazonQSettings>
+    DomainSettings& WithAmazonQSettings(AmazonQSettingsT&& value) { SetAmazonQSettings(std::forward<AmazonQSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -122,7 +119,7 @@ namespace Model
     RStudioServerProDomainSettings m_rStudioServerProDomainSettings;
     bool m_rStudioServerProDomainSettingsHasBeenSet = false;
 
-    ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
+    ExecutionRoleIdentityConfig m_executionRoleIdentityConfig{ExecutionRoleIdentityConfig::NOT_SET};
     bool m_executionRoleIdentityConfigHasBeenSet = false;
 
     DockerSettings m_dockerSettings;

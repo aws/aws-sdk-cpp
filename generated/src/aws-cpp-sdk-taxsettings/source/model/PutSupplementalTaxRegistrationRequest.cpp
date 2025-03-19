@@ -12,11 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSupplementalTaxRegistrationRequest::PutSupplementalTaxRegistrationRequest() : 
-    m_taxRegistrationEntryHasBeenSet(false)
-{
-}
-
 Aws::String PutSupplementalTaxRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

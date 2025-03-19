@@ -30,7 +30,7 @@ namespace Model
   class FixedResponseAction
   {
   public:
-    AWS_VPCLATTICE_API FixedResponseAction();
+    AWS_VPCLATTICE_API FixedResponseAction() = default;
     AWS_VPCLATTICE_API FixedResponseAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API FixedResponseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The HTTP response code.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
+    inline int GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline FixedResponseAction& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
     bool m_statusCodeHasBeenSet = false;
   };
 

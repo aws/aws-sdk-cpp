@@ -32,7 +32,7 @@ namespace Model
   class ProgressBarOptions
   {
   public:
-    AWS_QUICKSIGHT_API ProgressBarOptions();
+    AWS_QUICKSIGHT_API ProgressBarOptions() = default;
     AWS_QUICKSIGHT_API ProgressBarOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ProgressBarOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The visibility of the progress bar.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline ProgressBarOptions& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline ProgressBarOptions& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline ProgressBarOptions& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

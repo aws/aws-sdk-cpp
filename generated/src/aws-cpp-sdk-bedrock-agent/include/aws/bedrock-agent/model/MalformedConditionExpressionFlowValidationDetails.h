@@ -32,7 +32,7 @@ namespace Model
   class MalformedConditionExpressionFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API MalformedConditionExpressionFlowValidationDetails();
+    AWS_BEDROCKAGENT_API MalformedConditionExpressionFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API MalformedConditionExpressionFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API MalformedConditionExpressionFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The error message describing why the condition expression is malformed.</p>
      */
-    inline const Aws::String& GetCause() const{ return m_cause; }
+    inline const Aws::String& GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const Aws::String& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(Aws::String&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline void SetCause(const char* value) { m_causeHasBeenSet = true; m_cause.assign(value); }
-    inline MalformedConditionExpressionFlowValidationDetails& WithCause(const Aws::String& value) { SetCause(value); return *this;}
-    inline MalformedConditionExpressionFlowValidationDetails& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
-    inline MalformedConditionExpressionFlowValidationDetails& WithCause(const char* value) { SetCause(value); return *this;}
+    template<typename CauseT = Aws::String>
+    void SetCause(CauseT&& value) { m_causeHasBeenSet = true; m_cause = std::forward<CauseT>(value); }
+    template<typename CauseT = Aws::String>
+    MalformedConditionExpressionFlowValidationDetails& WithCause(CauseT&& value) { SetCause(std::forward<CauseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the malformed condition.</p>
      */
-    inline const Aws::String& GetCondition() const{ return m_condition; }
+    inline const Aws::String& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-    inline MalformedConditionExpressionFlowValidationDetails& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-    inline MalformedConditionExpressionFlowValidationDetails& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-    inline MalformedConditionExpressionFlowValidationDetails& WithCondition(const char* value) { SetCondition(value); return *this;}
+    template<typename ConditionT = Aws::String>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::String>
+    MalformedConditionExpressionFlowValidationDetails& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the node containing the malformed condition expression.</p>
      */
-    inline const Aws::String& GetNode() const{ return m_node; }
+    inline const Aws::String& GetNode() const { return m_node; }
     inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    inline void SetNode(const Aws::String& value) { m_nodeHasBeenSet = true; m_node = value; }
-    inline void SetNode(Aws::String&& value) { m_nodeHasBeenSet = true; m_node = std::move(value); }
-    inline void SetNode(const char* value) { m_nodeHasBeenSet = true; m_node.assign(value); }
-    inline MalformedConditionExpressionFlowValidationDetails& WithNode(const Aws::String& value) { SetNode(value); return *this;}
-    inline MalformedConditionExpressionFlowValidationDetails& WithNode(Aws::String&& value) { SetNode(std::move(value)); return *this;}
-    inline MalformedConditionExpressionFlowValidationDetails& WithNode(const char* value) { SetNode(value); return *this;}
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    MalformedConditionExpressionFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
   private:
 

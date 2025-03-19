@@ -19,41 +19,23 @@ namespace TimestreamQuery
 namespace Model
 {
 
-TimeSeriesDataPoint::TimeSeriesDataPoint() : 
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TimeSeriesDataPoint::TimeSeriesDataPoint(JsonView jsonValue)
-  : TimeSeriesDataPoint()
 {
   *this = jsonValue;
 }
-
-const Datum& TimeSeriesDataPoint::GetValue() const{ return *m_value; }
-bool TimeSeriesDataPoint::ValueHasBeenSet() const { return m_valueHasBeenSet; }
-void TimeSeriesDataPoint::SetValue(const Datum& value) { m_valueHasBeenSet = true; m_value = Aws::MakeShared<Datum>("TimeSeriesDataPoint", value); }
-void TimeSeriesDataPoint::SetValue(Datum&& value) { m_valueHasBeenSet = true; m_value = Aws::MakeShared<Datum>("TimeSeriesDataPoint", std::move(value)); }
-TimeSeriesDataPoint& TimeSeriesDataPoint::WithValue(const Datum& value) { SetValue(value); return *this;}
-TimeSeriesDataPoint& TimeSeriesDataPoint::WithValue(Datum&& value) { SetValue(std::move(value)); return *this;}
 
 TimeSeriesDataPoint& TimeSeriesDataPoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = Aws::MakeShared<Datum>("TimeSeriesDataPoint", jsonValue.GetObject("Value"));
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

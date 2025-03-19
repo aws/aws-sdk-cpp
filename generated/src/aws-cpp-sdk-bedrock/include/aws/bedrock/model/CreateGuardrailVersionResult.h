@@ -27,7 +27,7 @@ namespace Model
   class CreateGuardrailVersionResult
   {
   public:
-    AWS_BEDROCK_API CreateGuardrailVersionResult();
+    AWS_BEDROCK_API CreateGuardrailVersionResult() = default;
     AWS_BEDROCK_API CreateGuardrailVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API CreateGuardrailVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The unique identifier of the guardrail.</p>
      */
-    inline const Aws::String& GetGuardrailId() const{ return m_guardrailId; }
-    inline void SetGuardrailId(const Aws::String& value) { m_guardrailId = value; }
-    inline void SetGuardrailId(Aws::String&& value) { m_guardrailId = std::move(value); }
-    inline void SetGuardrailId(const char* value) { m_guardrailId.assign(value); }
-    inline CreateGuardrailVersionResult& WithGuardrailId(const Aws::String& value) { SetGuardrailId(value); return *this;}
-    inline CreateGuardrailVersionResult& WithGuardrailId(Aws::String&& value) { SetGuardrailId(std::move(value)); return *this;}
-    inline CreateGuardrailVersionResult& WithGuardrailId(const char* value) { SetGuardrailId(value); return *this;}
+    inline const Aws::String& GetGuardrailId() const { return m_guardrailId; }
+    template<typename GuardrailIdT = Aws::String>
+    void SetGuardrailId(GuardrailIdT&& value) { m_guardrailIdHasBeenSet = true; m_guardrailId = std::forward<GuardrailIdT>(value); }
+    template<typename GuardrailIdT = Aws::String>
+    CreateGuardrailVersionResult& WithGuardrailId(GuardrailIdT&& value) { SetGuardrailId(std::forward<GuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of the version of the guardrail.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline CreateGuardrailVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CreateGuardrailVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CreateGuardrailVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CreateGuardrailVersionResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateGuardrailVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateGuardrailVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateGuardrailVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateGuardrailVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_guardrailId;
+    bool m_guardrailIdHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

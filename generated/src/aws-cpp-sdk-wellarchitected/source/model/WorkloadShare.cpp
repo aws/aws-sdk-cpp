@@ -18,21 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-WorkloadShare::WorkloadShare() : 
-    m_shareIdHasBeenSet(false),
-    m_sharedByHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false)
-{
-}
-
 WorkloadShare::WorkloadShare(JsonView jsonValue)
-  : WorkloadShare()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ WorkloadShare& WorkloadShare::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShareId"))
   {
     m_shareId = jsonValue.GetString("ShareId");
-
     m_shareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedBy"))
   {
     m_sharedBy = jsonValue.GetString("SharedBy");
-
     m_sharedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedWith"))
   {
     m_sharedWith = jsonValue.GetString("SharedWith");
-
     m_sharedWithHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionType"))
   {
     m_permissionType = PermissionTypeMapper::GetPermissionTypeForName(jsonValue.GetString("PermissionType"));
-
     m_permissionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
     m_workloadIdHasBeenSet = true;
   }
-
   return *this;
 }
 

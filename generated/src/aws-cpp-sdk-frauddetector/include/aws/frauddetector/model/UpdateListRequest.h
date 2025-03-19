@@ -23,7 +23,7 @@ namespace Model
   class UpdateListRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API UpdateListRequest();
+    AWS_FRAUDDETECTOR_API UpdateListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p> The name of the list to update. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateListRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateListRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateListRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateListRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,29 +55,26 @@ namespace Model
      * you are deleting all elements from the list, use <code>REPLACE</code> for the
      * <code>updateMode</code> and provide an empty list (0 elements).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetElements() const{ return m_elements; }
+    inline const Aws::Vector<Aws::String>& GetElements() const { return m_elements; }
     inline bool ElementsHasBeenSet() const { return m_elementsHasBeenSet; }
-    inline void SetElements(const Aws::Vector<Aws::String>& value) { m_elementsHasBeenSet = true; m_elements = value; }
-    inline void SetElements(Aws::Vector<Aws::String>&& value) { m_elementsHasBeenSet = true; m_elements = std::move(value); }
-    inline UpdateListRequest& WithElements(const Aws::Vector<Aws::String>& value) { SetElements(value); return *this;}
-    inline UpdateListRequest& WithElements(Aws::Vector<Aws::String>&& value) { SetElements(std::move(value)); return *this;}
-    inline UpdateListRequest& AddElements(const Aws::String& value) { m_elementsHasBeenSet = true; m_elements.push_back(value); return *this; }
-    inline UpdateListRequest& AddElements(Aws::String&& value) { m_elementsHasBeenSet = true; m_elements.push_back(std::move(value)); return *this; }
-    inline UpdateListRequest& AddElements(const char* value) { m_elementsHasBeenSet = true; m_elements.push_back(value); return *this; }
+    template<typename ElementsT = Aws::Vector<Aws::String>>
+    void SetElements(ElementsT&& value) { m_elementsHasBeenSet = true; m_elements = std::forward<ElementsT>(value); }
+    template<typename ElementsT = Aws::Vector<Aws::String>>
+    UpdateListRequest& WithElements(ElementsT&& value) { SetElements(std::forward<ElementsT>(value)); return *this;}
+    template<typename ElementsT = Aws::String>
+    UpdateListRequest& AddElements(ElementsT&& value) { m_elementsHasBeenSet = true; m_elements.emplace_back(std::forward<ElementsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The new description. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateListRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateListRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateListRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateListRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +84,10 @@ namespace Model
      * replacing existing elements in the list.</p> </li> <li> <p>Use
      * <code>REMOVE</code> if you are removing elements from the list.</p> </li> </ul>
      */
-    inline const ListUpdateMode& GetUpdateMode() const{ return m_updateMode; }
+    inline ListUpdateMode GetUpdateMode() const { return m_updateMode; }
     inline bool UpdateModeHasBeenSet() const { return m_updateModeHasBeenSet; }
-    inline void SetUpdateMode(const ListUpdateMode& value) { m_updateModeHasBeenSet = true; m_updateMode = value; }
-    inline void SetUpdateMode(ListUpdateMode&& value) { m_updateModeHasBeenSet = true; m_updateMode = std::move(value); }
-    inline UpdateListRequest& WithUpdateMode(const ListUpdateMode& value) { SetUpdateMode(value); return *this;}
-    inline UpdateListRequest& WithUpdateMode(ListUpdateMode&& value) { SetUpdateMode(std::move(value)); return *this;}
+    inline void SetUpdateMode(ListUpdateMode value) { m_updateModeHasBeenSet = true; m_updateMode = value; }
+    inline UpdateListRequest& WithUpdateMode(ListUpdateMode value) { SetUpdateMode(value); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +97,12 @@ namespace Model
      * it. You can assign a variable type to a list only if the list does not already
      * have a variable type.</p> 
      */
-    inline const Aws::String& GetVariableType() const{ return m_variableType; }
+    inline const Aws::String& GetVariableType() const { return m_variableType; }
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
-    inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
-    inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
-    inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
-    inline UpdateListRequest& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
-    inline UpdateListRequest& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
-    inline UpdateListRequest& WithVariableType(const char* value) { SetVariableType(value); return *this;}
+    template<typename VariableTypeT = Aws::String>
+    void SetVariableType(VariableTypeT&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::forward<VariableTypeT>(value); }
+    template<typename VariableTypeT = Aws::String>
+    UpdateListRequest& WithVariableType(VariableTypeT&& value) { SetVariableType(std::forward<VariableTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -124,7 +115,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ListUpdateMode m_updateMode;
+    ListUpdateMode m_updateMode{ListUpdateMode::NOT_SET};
     bool m_updateModeHasBeenSet = false;
 
     Aws::String m_variableType;

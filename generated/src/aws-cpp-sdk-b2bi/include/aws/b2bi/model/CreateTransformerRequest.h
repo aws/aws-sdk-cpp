@@ -28,7 +28,7 @@ namespace Model
   class CreateTransformerRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API CreateTransformerRequest();
+    AWS_B2BI_API CreateTransformerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>Specifies the name of the transformer, used to identify it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateTransformerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTransformerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTransformerRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTransformerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateTransformerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateTransformerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateTransformerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateTransformerRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,14 @@ namespace Model
      * search for resources by type. You can attach this metadata to resources
      * (capabilities, partnerships, and so on) for any purpose.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTransformerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTransformerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTransformerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTransformerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTransformerRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTransformerRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,12 +86,12 @@ namespace Model
      * <p>Specify the <code>InputConversion</code> object, which contains the format
      * options for the inbound transformation.</p>
      */
-    inline const InputConversion& GetInputConversion() const{ return m_inputConversion; }
+    inline const InputConversion& GetInputConversion() const { return m_inputConversion; }
     inline bool InputConversionHasBeenSet() const { return m_inputConversionHasBeenSet; }
-    inline void SetInputConversion(const InputConversion& value) { m_inputConversionHasBeenSet = true; m_inputConversion = value; }
-    inline void SetInputConversion(InputConversion&& value) { m_inputConversionHasBeenSet = true; m_inputConversion = std::move(value); }
-    inline CreateTransformerRequest& WithInputConversion(const InputConversion& value) { SetInputConversion(value); return *this;}
-    inline CreateTransformerRequest& WithInputConversion(InputConversion&& value) { SetInputConversion(std::move(value)); return *this;}
+    template<typename InputConversionT = InputConversion>
+    void SetInputConversion(InputConversionT&& value) { m_inputConversionHasBeenSet = true; m_inputConversion = std::forward<InputConversionT>(value); }
+    template<typename InputConversionT = InputConversion>
+    CreateTransformerRequest& WithInputConversion(InputConversionT&& value) { SetInputConversion(std::forward<InputConversionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +99,12 @@ namespace Model
      * <p>Specify the structure that contains the mapping template and its language
      * (either XSLT or JSONATA).</p>
      */
-    inline const Mapping& GetMapping() const{ return m_mapping; }
+    inline const Mapping& GetMapping() const { return m_mapping; }
     inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
-    inline void SetMapping(const Mapping& value) { m_mappingHasBeenSet = true; m_mapping = value; }
-    inline void SetMapping(Mapping&& value) { m_mappingHasBeenSet = true; m_mapping = std::move(value); }
-    inline CreateTransformerRequest& WithMapping(const Mapping& value) { SetMapping(value); return *this;}
-    inline CreateTransformerRequest& WithMapping(Mapping&& value) { SetMapping(std::move(value)); return *this;}
+    template<typename MappingT = Mapping>
+    void SetMapping(MappingT&& value) { m_mappingHasBeenSet = true; m_mapping = std::forward<MappingT>(value); }
+    template<typename MappingT = Mapping>
+    CreateTransformerRequest& WithMapping(MappingT&& value) { SetMapping(std::forward<MappingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +112,12 @@ namespace Model
      * <p>A structure that contains the <code>OutputConversion</code> object, which
      * contains the format options for the outbound transformation.</p>
      */
-    inline const OutputConversion& GetOutputConversion() const{ return m_outputConversion; }
+    inline const OutputConversion& GetOutputConversion() const { return m_outputConversion; }
     inline bool OutputConversionHasBeenSet() const { return m_outputConversionHasBeenSet; }
-    inline void SetOutputConversion(const OutputConversion& value) { m_outputConversionHasBeenSet = true; m_outputConversion = value; }
-    inline void SetOutputConversion(OutputConversion&& value) { m_outputConversionHasBeenSet = true; m_outputConversion = std::move(value); }
-    inline CreateTransformerRequest& WithOutputConversion(const OutputConversion& value) { SetOutputConversion(value); return *this;}
-    inline CreateTransformerRequest& WithOutputConversion(OutputConversion&& value) { SetOutputConversion(std::move(value)); return *this;}
+    template<typename OutputConversionT = OutputConversion>
+    void SetOutputConversion(OutputConversionT&& value) { m_outputConversionHasBeenSet = true; m_outputConversion = std::forward<OutputConversionT>(value); }
+    template<typename OutputConversionT = OutputConversion>
+    CreateTransformerRequest& WithOutputConversion(OutputConversionT&& value) { SetOutputConversion(std::forward<OutputConversionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +125,12 @@ namespace Model
      * <p>Specify a structure that contains the Amazon S3 bucket and an array of the
      * corresponding keys used to identify the location for your sample documents.</p>
      */
-    inline const SampleDocuments& GetSampleDocuments() const{ return m_sampleDocuments; }
+    inline const SampleDocuments& GetSampleDocuments() const { return m_sampleDocuments; }
     inline bool SampleDocumentsHasBeenSet() const { return m_sampleDocumentsHasBeenSet; }
-    inline void SetSampleDocuments(const SampleDocuments& value) { m_sampleDocumentsHasBeenSet = true; m_sampleDocuments = value; }
-    inline void SetSampleDocuments(SampleDocuments&& value) { m_sampleDocumentsHasBeenSet = true; m_sampleDocuments = std::move(value); }
-    inline CreateTransformerRequest& WithSampleDocuments(const SampleDocuments& value) { SetSampleDocuments(value); return *this;}
-    inline CreateTransformerRequest& WithSampleDocuments(SampleDocuments&& value) { SetSampleDocuments(std::move(value)); return *this;}
+    template<typename SampleDocumentsT = SampleDocuments>
+    void SetSampleDocuments(SampleDocumentsT&& value) { m_sampleDocumentsHasBeenSet = true; m_sampleDocuments = std::forward<SampleDocumentsT>(value); }
+    template<typename SampleDocumentsT = SampleDocuments>
+    CreateTransformerRequest& WithSampleDocuments(SampleDocumentsT&& value) { SetSampleDocuments(std::forward<SampleDocumentsT>(value)); return *this;}
     ///@}
   private:
 

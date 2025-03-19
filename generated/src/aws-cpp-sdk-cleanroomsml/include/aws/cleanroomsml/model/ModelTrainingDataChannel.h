@@ -33,7 +33,7 @@ namespace Model
   class ModelTrainingDataChannel
   {
   public:
-    AWS_CLEANROOMSML_API ModelTrainingDataChannel();
+    AWS_CLEANROOMSML_API ModelTrainingDataChannel() = default;
     AWS_CLEANROOMSML_API ModelTrainingDataChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API ModelTrainingDataChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the ML input channel for this model
      * training data channel.</p>
      */
-    inline const Aws::String& GetMlInputChannelArn() const{ return m_mlInputChannelArn; }
+    inline const Aws::String& GetMlInputChannelArn() const { return m_mlInputChannelArn; }
     inline bool MlInputChannelArnHasBeenSet() const { return m_mlInputChannelArnHasBeenSet; }
-    inline void SetMlInputChannelArn(const Aws::String& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = value; }
-    inline void SetMlInputChannelArn(Aws::String&& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = std::move(value); }
-    inline void SetMlInputChannelArn(const char* value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn.assign(value); }
-    inline ModelTrainingDataChannel& WithMlInputChannelArn(const Aws::String& value) { SetMlInputChannelArn(value); return *this;}
-    inline ModelTrainingDataChannel& WithMlInputChannelArn(Aws::String&& value) { SetMlInputChannelArn(std::move(value)); return *this;}
-    inline ModelTrainingDataChannel& WithMlInputChannelArn(const char* value) { SetMlInputChannelArn(value); return *this;}
+    template<typename MlInputChannelArnT = Aws::String>
+    void SetMlInputChannelArn(MlInputChannelArnT&& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = std::forward<MlInputChannelArnT>(value); }
+    template<typename MlInputChannelArnT = Aws::String>
+    ModelTrainingDataChannel& WithMlInputChannelArn(MlInputChannelArnT&& value) { SetMlInputChannelArn(std::forward<MlInputChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the training data channel.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline ModelTrainingDataChannel& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline ModelTrainingDataChannel& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline ModelTrainingDataChannel& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    ModelTrainingDataChannel& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
   private:
 

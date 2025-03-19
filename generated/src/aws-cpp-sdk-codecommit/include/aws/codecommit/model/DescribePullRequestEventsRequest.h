@@ -22,7 +22,7 @@ namespace Model
   class DescribePullRequestEventsRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API DescribePullRequestEventsRequest();
+    AWS_CODECOMMIT_API DescribePullRequestEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline DescribePullRequestEventsRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline DescribePullRequestEventsRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline DescribePullRequestEventsRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    DescribePullRequestEventsRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,10 @@ namespace Model
      * <p>Optional. The pull request event type about which you want to return
      * information.</p>
      */
-    inline const PullRequestEventType& GetPullRequestEventType() const{ return m_pullRequestEventType; }
+    inline PullRequestEventType GetPullRequestEventType() const { return m_pullRequestEventType; }
     inline bool PullRequestEventTypeHasBeenSet() const { return m_pullRequestEventTypeHasBeenSet; }
-    inline void SetPullRequestEventType(const PullRequestEventType& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = value; }
-    inline void SetPullRequestEventType(PullRequestEventType&& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = std::move(value); }
-    inline DescribePullRequestEventsRequest& WithPullRequestEventType(const PullRequestEventType& value) { SetPullRequestEventType(value); return *this;}
-    inline DescribePullRequestEventsRequest& WithPullRequestEventType(PullRequestEventType&& value) { SetPullRequestEventType(std::move(value)); return *this;}
+    inline void SetPullRequestEventType(PullRequestEventType value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = value; }
+    inline DescribePullRequestEventsRequest& WithPullRequestEventType(PullRequestEventType value) { SetPullRequestEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * event. Examples include updating the pull request with more commits or changing
      * the status of a pull request.</p>
      */
-    inline const Aws::String& GetActorArn() const{ return m_actorArn; }
+    inline const Aws::String& GetActorArn() const { return m_actorArn; }
     inline bool ActorArnHasBeenSet() const { return m_actorArnHasBeenSet; }
-    inline void SetActorArn(const Aws::String& value) { m_actorArnHasBeenSet = true; m_actorArn = value; }
-    inline void SetActorArn(Aws::String&& value) { m_actorArnHasBeenSet = true; m_actorArn = std::move(value); }
-    inline void SetActorArn(const char* value) { m_actorArnHasBeenSet = true; m_actorArn.assign(value); }
-    inline DescribePullRequestEventsRequest& WithActorArn(const Aws::String& value) { SetActorArn(value); return *this;}
-    inline DescribePullRequestEventsRequest& WithActorArn(Aws::String&& value) { SetActorArn(std::move(value)); return *this;}
-    inline DescribePullRequestEventsRequest& WithActorArn(const char* value) { SetActorArn(value); return *this;}
+    template<typename ActorArnT = Aws::String>
+    void SetActorArn(ActorArnT&& value) { m_actorArnHasBeenSet = true; m_actorArn = std::forward<ActorArnT>(value); }
+    template<typename ActorArnT = Aws::String>
+    DescribePullRequestEventsRequest& WithActorArn(ActorArnT&& value) { SetActorArn(std::forward<ActorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,12 @@ namespace Model
      * <p>An enumeration token that, when provided in a request, returns the next batch
      * of the results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribePullRequestEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePullRequestEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePullRequestEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePullRequestEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +92,7 @@ namespace Model
      * results. The default is 100 events, which is also the maximum number of events
      * that can be returned in a result.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribePullRequestEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -110,7 +102,7 @@ namespace Model
     Aws::String m_pullRequestId;
     bool m_pullRequestIdHasBeenSet = false;
 
-    PullRequestEventType m_pullRequestEventType;
+    PullRequestEventType m_pullRequestEventType{PullRequestEventType::NOT_SET};
     bool m_pullRequestEventTypeHasBeenSet = false;
 
     Aws::String m_actorArn;
@@ -119,7 +111,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

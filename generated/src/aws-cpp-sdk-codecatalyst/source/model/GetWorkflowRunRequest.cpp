@@ -12,13 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkflowRunRequest::GetWorkflowRunRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowRunRequest::SerializePayload() const
 {
   return {};

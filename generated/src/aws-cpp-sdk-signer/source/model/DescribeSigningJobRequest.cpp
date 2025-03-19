@@ -12,11 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSigningJobRequest::DescribeSigningJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSigningJobRequest::SerializePayload() const
 {
   return {};

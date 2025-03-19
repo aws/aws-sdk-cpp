@@ -37,7 +37,7 @@ namespace Model
   class EntityFilter
   {
   public:
-    AWS_IOTTHINGSGRAPH_API EntityFilter();
+    AWS_IOTTHINGSGRAPH_API EntityFilter() = default;
     AWS_IOTTHINGSGRAPH_API EntityFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * filters on entities that are used by the entity in the result set. For example,
      * you can filter on the ID of a property that is used in a state.</p>
      */
-    inline const EntityFilterName& GetName() const{ return m_name; }
+    inline EntityFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const EntityFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(EntityFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline EntityFilter& WithName(const EntityFilterName& value) { SetName(value); return *this;}
-    inline EntityFilter& WithName(EntityFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(EntityFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline EntityFilter& WithName(EntityFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,18 @@ namespace Model
      * <p>An array of string values for the search filter field. Multiple values
      * function as AND criteria in the search.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValue() const{ return m_value; }
+    inline const Aws::Vector<Aws::String>& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Vector<Aws::String>& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Vector<Aws::String>&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline EntityFilter& WithValue(const Aws::Vector<Aws::String>& value) { SetValue(value); return *this;}
-    inline EntityFilter& WithValue(Aws::Vector<Aws::String>&& value) { SetValue(std::move(value)); return *this;}
-    inline EntityFilter& AddValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
-    inline EntityFilter& AddValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value.push_back(std::move(value)); return *this; }
-    inline EntityFilter& AddValue(const char* value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    EntityFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
+    template<typename ValueT = Aws::String>
+    EntityFilter& AddValue(ValueT&& value) { m_valueHasBeenSet = true; m_value.emplace_back(std::forward<ValueT>(value)); return *this; }
     ///@}
   private:
 
-    EntityFilterName m_name;
+    EntityFilterName m_name{EntityFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_value;

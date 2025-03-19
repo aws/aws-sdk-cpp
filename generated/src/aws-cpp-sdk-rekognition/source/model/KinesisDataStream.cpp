@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-KinesisDataStream::KinesisDataStream() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 KinesisDataStream::KinesisDataStream(JsonView jsonValue)
-  : KinesisDataStream()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KinesisDataStream& KinesisDataStream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

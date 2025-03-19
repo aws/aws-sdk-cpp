@@ -12,13 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateLicenseRequest::DisassociateLicenseRequest() : 
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateLicenseRequest::SerializePayload() const
 {
   return {};

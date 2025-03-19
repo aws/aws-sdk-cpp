@@ -33,7 +33,7 @@ namespace Model
   class ListMembershipItem
   {
   public:
-    AWS_SECURITYIR_API ListMembershipItem();
+    AWS_SECURITYIR_API ListMembershipItem() = default;
     AWS_SECURITYIR_API ListMembershipItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API ListMembershipItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,66 +43,56 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline ListMembershipItem& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline ListMembershipItem& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline ListMembershipItem& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    ListMembershipItem& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListMembershipItem& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListMembershipItem& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListMembershipItem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListMembershipItem& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const AwsRegion& GetRegion() const{ return m_region; }
+    inline AwsRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const AwsRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(AwsRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline ListMembershipItem& WithRegion(const AwsRegion& value) { SetRegion(value); return *this;}
-    inline ListMembershipItem& WithRegion(AwsRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(AwsRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline ListMembershipItem& WithRegion(AwsRegion value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetMembershipArn() const{ return m_membershipArn; }
+    inline const Aws::String& GetMembershipArn() const { return m_membershipArn; }
     inline bool MembershipArnHasBeenSet() const { return m_membershipArnHasBeenSet; }
-    inline void SetMembershipArn(const Aws::String& value) { m_membershipArnHasBeenSet = true; m_membershipArn = value; }
-    inline void SetMembershipArn(Aws::String&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::move(value); }
-    inline void SetMembershipArn(const char* value) { m_membershipArnHasBeenSet = true; m_membershipArn.assign(value); }
-    inline ListMembershipItem& WithMembershipArn(const Aws::String& value) { SetMembershipArn(value); return *this;}
-    inline ListMembershipItem& WithMembershipArn(Aws::String&& value) { SetMembershipArn(std::move(value)); return *this;}
-    inline ListMembershipItem& WithMembershipArn(const char* value) { SetMembershipArn(value); return *this;}
+    template<typename MembershipArnT = Aws::String>
+    void SetMembershipArn(MembershipArnT&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::forward<MembershipArnT>(value); }
+    template<typename MembershipArnT = Aws::String>
+    ListMembershipItem& WithMembershipArn(MembershipArnT&& value) { SetMembershipArn(std::forward<MembershipArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const MembershipStatus& GetMembershipStatus() const{ return m_membershipStatus; }
+    inline MembershipStatus GetMembershipStatus() const { return m_membershipStatus; }
     inline bool MembershipStatusHasBeenSet() const { return m_membershipStatusHasBeenSet; }
-    inline void SetMembershipStatus(const MembershipStatus& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
-    inline void SetMembershipStatus(MembershipStatus&& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = std::move(value); }
-    inline ListMembershipItem& WithMembershipStatus(const MembershipStatus& value) { SetMembershipStatus(value); return *this;}
-    inline ListMembershipItem& WithMembershipStatus(MembershipStatus&& value) { SetMembershipStatus(std::move(value)); return *this;}
+    inline void SetMembershipStatus(MembershipStatus value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
+    inline ListMembershipItem& WithMembershipStatus(MembershipStatus value) { SetMembershipStatus(value); return *this;}
     ///@}
   private:
 
@@ -112,13 +102,13 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    AwsRegion m_region;
+    AwsRegion m_region{AwsRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
 
     Aws::String m_membershipArn;
     bool m_membershipArnHasBeenSet = false;
 
-    MembershipStatus m_membershipStatus;
+    MembershipStatus m_membershipStatus{MembershipStatus::NOT_SET};
     bool m_membershipStatusHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CustomRoutingEndpointGroup::CustomRoutingEndpointGroup() : 
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_destinationDescriptionsHasBeenSet(false),
-    m_endpointDescriptionsHasBeenSet(false)
-{
-}
-
 CustomRoutingEndpointGroup::CustomRoutingEndpointGroup(JsonView jsonValue)
-  : CustomRoutingEndpointGroup()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CustomRoutingEndpointGroup& CustomRoutingEndpointGroup::operator =(JsonView json
   if(jsonValue.ValueExists("EndpointGroupArn"))
   {
     m_endpointGroupArn = jsonValue.GetString("EndpointGroupArn");
-
     m_endpointGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointGroupRegion"))
   {
     m_endpointGroupRegion = jsonValue.GetString("EndpointGroupRegion");
-
     m_endpointGroupRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationDescriptions"))
   {
     Aws::Utils::Array<JsonView> destinationDescriptionsJsonList = jsonValue.GetArray("DestinationDescriptions");
@@ -57,7 +44,6 @@ CustomRoutingEndpointGroup& CustomRoutingEndpointGroup::operator =(JsonView json
     }
     m_destinationDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointDescriptions"))
   {
     Aws::Utils::Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
@@ -67,7 +53,6 @@ CustomRoutingEndpointGroup& CustomRoutingEndpointGroup::operator =(JsonView json
     }
     m_endpointDescriptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

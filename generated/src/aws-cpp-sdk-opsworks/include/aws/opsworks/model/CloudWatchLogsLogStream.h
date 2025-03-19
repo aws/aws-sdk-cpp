@@ -37,7 +37,7 @@ namespace Model
   class CloudWatchLogsLogStream
   {
   public:
-    AWS_OPSWORKS_API CloudWatchLogsLogStream();
+    AWS_OPSWORKS_API CloudWatchLogsLogStream() = default;
     AWS_OPSWORKS_API CloudWatchLogsLogStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API CloudWatchLogsLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen),
      * '/' (forward slash), and '.' (period).</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline CloudWatchLogsLogStream& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline CloudWatchLogsLogStream& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline CloudWatchLogsLogStream& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    CloudWatchLogsLogStream& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch
      * Logs Agent Reference</a>.</p>
      */
-    inline const Aws::String& GetDatetimeFormat() const{ return m_datetimeFormat; }
+    inline const Aws::String& GetDatetimeFormat() const { return m_datetimeFormat; }
     inline bool DatetimeFormatHasBeenSet() const { return m_datetimeFormatHasBeenSet; }
-    inline void SetDatetimeFormat(const Aws::String& value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat = value; }
-    inline void SetDatetimeFormat(Aws::String&& value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat = std::move(value); }
-    inline void SetDatetimeFormat(const char* value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat.assign(value); }
-    inline CloudWatchLogsLogStream& WithDatetimeFormat(const Aws::String& value) { SetDatetimeFormat(value); return *this;}
-    inline CloudWatchLogsLogStream& WithDatetimeFormat(Aws::String&& value) { SetDatetimeFormat(std::move(value)); return *this;}
-    inline CloudWatchLogsLogStream& WithDatetimeFormat(const char* value) { SetDatetimeFormat(value); return *this;}
+    template<typename DatetimeFormatT = Aws::String>
+    void SetDatetimeFormat(DatetimeFormatT&& value) { m_datetimeFormatHasBeenSet = true; m_datetimeFormat = std::forward<DatetimeFormatT>(value); }
+    template<typename DatetimeFormatT = Aws::String>
+    CloudWatchLogsLogStream& WithDatetimeFormat(DatetimeFormatT&& value) { SetDatetimeFormat(std::forward<DatetimeFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the time zone of log event time stamps.</p>
      */
-    inline const CloudWatchLogsTimeZone& GetTimeZone() const{ return m_timeZone; }
+    inline CloudWatchLogsTimeZone GetTimeZone() const { return m_timeZone; }
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    inline void SetTimeZone(const CloudWatchLogsTimeZone& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
-    inline void SetTimeZone(CloudWatchLogsTimeZone&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
-    inline CloudWatchLogsLogStream& WithTimeZone(const CloudWatchLogsTimeZone& value) { SetTimeZone(value); return *this;}
-    inline CloudWatchLogsLogStream& WithTimeZone(CloudWatchLogsTimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
+    inline void SetTimeZone(CloudWatchLogsTimeZone value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
+    inline CloudWatchLogsLogStream& WithTimeZone(CloudWatchLogsTimeZone value) { SetTimeZone(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * another log stream entry to the configuration file, so that each log file type
      * is stored in a different log group.</p> <p>Zipped files are not supported.</p>
      */
-    inline const Aws::String& GetFile() const{ return m_file; }
+    inline const Aws::String& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const Aws::String& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(Aws::String&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline void SetFile(const char* value) { m_fileHasBeenSet = true; m_file.assign(value); }
-    inline CloudWatchLogsLogStream& WithFile(const Aws::String& value) { SetFile(value); return *this;}
-    inline CloudWatchLogsLogStream& WithFile(Aws::String&& value) { SetFile(std::move(value)); return *this;}
-    inline CloudWatchLogsLogStream& WithFile(const char* value) { SetFile(value); return *this;}
+    template<typename FileT = Aws::String>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = Aws::String>
+    CloudWatchLogsLogStream& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,28 +113,24 @@ namespace Model
      * lines are not sent to CloudWatch Logs unless all specified lines are
      * available.</p>
      */
-    inline const Aws::String& GetFileFingerprintLines() const{ return m_fileFingerprintLines; }
+    inline const Aws::String& GetFileFingerprintLines() const { return m_fileFingerprintLines; }
     inline bool FileFingerprintLinesHasBeenSet() const { return m_fileFingerprintLinesHasBeenSet; }
-    inline void SetFileFingerprintLines(const Aws::String& value) { m_fileFingerprintLinesHasBeenSet = true; m_fileFingerprintLines = value; }
-    inline void SetFileFingerprintLines(Aws::String&& value) { m_fileFingerprintLinesHasBeenSet = true; m_fileFingerprintLines = std::move(value); }
-    inline void SetFileFingerprintLines(const char* value) { m_fileFingerprintLinesHasBeenSet = true; m_fileFingerprintLines.assign(value); }
-    inline CloudWatchLogsLogStream& WithFileFingerprintLines(const Aws::String& value) { SetFileFingerprintLines(value); return *this;}
-    inline CloudWatchLogsLogStream& WithFileFingerprintLines(Aws::String&& value) { SetFileFingerprintLines(std::move(value)); return *this;}
-    inline CloudWatchLogsLogStream& WithFileFingerprintLines(const char* value) { SetFileFingerprintLines(value); return *this;}
+    template<typename FileFingerprintLinesT = Aws::String>
+    void SetFileFingerprintLines(FileFingerprintLinesT&& value) { m_fileFingerprintLinesHasBeenSet = true; m_fileFingerprintLines = std::forward<FileFingerprintLinesT>(value); }
+    template<typename FileFingerprintLinesT = Aws::String>
+    CloudWatchLogsLogStream& WithFileFingerprintLines(FileFingerprintLinesT&& value) { SetFileFingerprintLines(std::forward<FileFingerprintLinesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the pattern for identifying the start of a log message.</p>
      */
-    inline const Aws::String& GetMultiLineStartPattern() const{ return m_multiLineStartPattern; }
+    inline const Aws::String& GetMultiLineStartPattern() const { return m_multiLineStartPattern; }
     inline bool MultiLineStartPatternHasBeenSet() const { return m_multiLineStartPatternHasBeenSet; }
-    inline void SetMultiLineStartPattern(const Aws::String& value) { m_multiLineStartPatternHasBeenSet = true; m_multiLineStartPattern = value; }
-    inline void SetMultiLineStartPattern(Aws::String&& value) { m_multiLineStartPatternHasBeenSet = true; m_multiLineStartPattern = std::move(value); }
-    inline void SetMultiLineStartPattern(const char* value) { m_multiLineStartPatternHasBeenSet = true; m_multiLineStartPattern.assign(value); }
-    inline CloudWatchLogsLogStream& WithMultiLineStartPattern(const Aws::String& value) { SetMultiLineStartPattern(value); return *this;}
-    inline CloudWatchLogsLogStream& WithMultiLineStartPattern(Aws::String&& value) { SetMultiLineStartPattern(std::move(value)); return *this;}
-    inline CloudWatchLogsLogStream& WithMultiLineStartPattern(const char* value) { SetMultiLineStartPattern(value); return *this;}
+    template<typename MultiLineStartPatternT = Aws::String>
+    void SetMultiLineStartPattern(MultiLineStartPatternT&& value) { m_multiLineStartPatternHasBeenSet = true; m_multiLineStartPattern = std::forward<MultiLineStartPatternT>(value); }
+    template<typename MultiLineStartPatternT = Aws::String>
+    CloudWatchLogsLogStream& WithMultiLineStartPattern(MultiLineStartPatternT&& value) { SetMultiLineStartPattern(std::forward<MultiLineStartPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +139,10 @@ namespace Model
      * default is start_of_file. This setting is only used if there is no state
      * persisted for that log stream.</p>
      */
-    inline const CloudWatchLogsInitialPosition& GetInitialPosition() const{ return m_initialPosition; }
+    inline CloudWatchLogsInitialPosition GetInitialPosition() const { return m_initialPosition; }
     inline bool InitialPositionHasBeenSet() const { return m_initialPositionHasBeenSet; }
-    inline void SetInitialPosition(const CloudWatchLogsInitialPosition& value) { m_initialPositionHasBeenSet = true; m_initialPosition = value; }
-    inline void SetInitialPosition(CloudWatchLogsInitialPosition&& value) { m_initialPositionHasBeenSet = true; m_initialPosition = std::move(value); }
-    inline CloudWatchLogsLogStream& WithInitialPosition(const CloudWatchLogsInitialPosition& value) { SetInitialPosition(value); return *this;}
-    inline CloudWatchLogsLogStream& WithInitialPosition(CloudWatchLogsInitialPosition&& value) { SetInitialPosition(std::move(value)); return *this;}
+    inline void SetInitialPosition(CloudWatchLogsInitialPosition value) { m_initialPositionHasBeenSet = true; m_initialPosition = value; }
+    inline CloudWatchLogsLogStream& WithInitialPosition(CloudWatchLogsInitialPosition value) { SetInitialPosition(value); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +151,10 @@ namespace Model
      * correctly. The default is <code>utf_8</code>. Encodings supported by Python
      * <code>codecs.decode()</code> can be used here.</p>
      */
-    inline const CloudWatchLogsEncoding& GetEncoding() const{ return m_encoding; }
+    inline CloudWatchLogsEncoding GetEncoding() const { return m_encoding; }
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-    inline void SetEncoding(const CloudWatchLogsEncoding& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-    inline void SetEncoding(CloudWatchLogsEncoding&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-    inline CloudWatchLogsLogStream& WithEncoding(const CloudWatchLogsEncoding& value) { SetEncoding(value); return *this;}
-    inline CloudWatchLogsLogStream& WithEncoding(CloudWatchLogsEncoding&& value) { SetEncoding(std::move(value)); return *this;}
+    inline void SetEncoding(CloudWatchLogsEncoding value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline CloudWatchLogsLogStream& WithEncoding(CloudWatchLogsEncoding value) { SetEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -178,7 +162,7 @@ namespace Model
      * <p>Specifies the time duration for the batching of log events. The minimum value
      * is 5000ms and default value is 5000ms.</p>
      */
-    inline int GetBufferDuration() const{ return m_bufferDuration; }
+    inline int GetBufferDuration() const { return m_bufferDuration; }
     inline bool BufferDurationHasBeenSet() const { return m_bufferDurationHasBeenSet; }
     inline void SetBufferDuration(int value) { m_bufferDurationHasBeenSet = true; m_bufferDuration = value; }
     inline CloudWatchLogsLogStream& WithBufferDuration(int value) { SetBufferDuration(value); return *this;}
@@ -189,7 +173,7 @@ namespace Model
      * <p>Specifies the max number of log events in a batch, up to 10000. The default
      * value is 1000.</p>
      */
-    inline int GetBatchCount() const{ return m_batchCount; }
+    inline int GetBatchCount() const { return m_batchCount; }
     inline bool BatchCountHasBeenSet() const { return m_batchCountHasBeenSet; }
     inline void SetBatchCount(int value) { m_batchCountHasBeenSet = true; m_batchCount = value; }
     inline CloudWatchLogsLogStream& WithBatchCount(int value) { SetBatchCount(value); return *this;}
@@ -201,7 +185,7 @@ namespace Model
      * bytes. The default value is 32768 bytes. This size is calculated as the sum of
      * all event messages in UTF-8, plus 26 bytes for each log event.</p>
      */
-    inline int GetBatchSize() const{ return m_batchSize; }
+    inline int GetBatchSize() const { return m_batchSize; }
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
     inline CloudWatchLogsLogStream& WithBatchSize(int value) { SetBatchSize(value); return *this;}
@@ -214,7 +198,7 @@ namespace Model
     Aws::String m_datetimeFormat;
     bool m_datetimeFormatHasBeenSet = false;
 
-    CloudWatchLogsTimeZone m_timeZone;
+    CloudWatchLogsTimeZone m_timeZone{CloudWatchLogsTimeZone::NOT_SET};
     bool m_timeZoneHasBeenSet = false;
 
     Aws::String m_file;
@@ -226,19 +210,19 @@ namespace Model
     Aws::String m_multiLineStartPattern;
     bool m_multiLineStartPatternHasBeenSet = false;
 
-    CloudWatchLogsInitialPosition m_initialPosition;
+    CloudWatchLogsInitialPosition m_initialPosition{CloudWatchLogsInitialPosition::NOT_SET};
     bool m_initialPositionHasBeenSet = false;
 
-    CloudWatchLogsEncoding m_encoding;
+    CloudWatchLogsEncoding m_encoding{CloudWatchLogsEncoding::NOT_SET};
     bool m_encodingHasBeenSet = false;
 
-    int m_bufferDuration;
+    int m_bufferDuration{0};
     bool m_bufferDurationHasBeenSet = false;
 
-    int m_batchCount;
+    int m_batchCount{0};
     bool m_batchCountHasBeenSet = false;
 
-    int m_batchSize;
+    int m_batchSize{0};
     bool m_batchSizeHasBeenSet = false;
   };
 

@@ -37,7 +37,7 @@ namespace Model
   class HyperParameterTuningJobConfig
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningJobConfig() = default;
     AWS_SAGEMAKER_API HyperParameterTuningJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
-    inline const HyperParameterTuningJobStrategyType& GetStrategy() const{ return m_strategy; }
+    inline HyperParameterTuningJobStrategyType GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const HyperParameterTuningJobStrategyType& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(HyperParameterTuningJobStrategyType&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithStrategy(const HyperParameterTuningJobStrategyType& value) { SetStrategy(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithStrategy(HyperParameterTuningJobStrategyType&& value) { SetStrategy(std::move(value)); return *this;}
+    inline void SetStrategy(HyperParameterTuningJobStrategyType value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline HyperParameterTuningJobConfig& WithStrategy(HyperParameterTuningJobStrategyType value) { SetStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
      * parameter should be provided only if <code>Hyperband</code> is selected as the
      * strategy for <code>HyperParameterTuningJobConfig</code>.</p>
      */
-    inline const HyperParameterTuningJobStrategyConfig& GetStrategyConfig() const{ return m_strategyConfig; }
+    inline const HyperParameterTuningJobStrategyConfig& GetStrategyConfig() const { return m_strategyConfig; }
     inline bool StrategyConfigHasBeenSet() const { return m_strategyConfigHasBeenSet; }
-    inline void SetStrategyConfig(const HyperParameterTuningJobStrategyConfig& value) { m_strategyConfigHasBeenSet = true; m_strategyConfig = value; }
-    inline void SetStrategyConfig(HyperParameterTuningJobStrategyConfig&& value) { m_strategyConfigHasBeenSet = true; m_strategyConfig = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithStrategyConfig(const HyperParameterTuningJobStrategyConfig& value) { SetStrategyConfig(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithStrategyConfig(HyperParameterTuningJobStrategyConfig&& value) { SetStrategyConfig(std::move(value)); return *this;}
+    template<typename StrategyConfigT = HyperParameterTuningJobStrategyConfig>
+    void SetStrategyConfig(StrategyConfigT&& value) { m_strategyConfigHasBeenSet = true; m_strategyConfig = std::forward<StrategyConfigT>(value); }
+    template<typename StrategyConfigT = HyperParameterTuningJobStrategyConfig>
+    HyperParameterTuningJobConfig& WithStrategyConfig(StrategyConfigT&& value) { SetStrategyConfig(std::forward<StrategyConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,12 @@ namespace Model
      * specifies the objective metric used to evaluate the performance of training jobs
      * launched by this tuning job.</p>
      */
-    inline const HyperParameterTuningJobObjective& GetHyperParameterTuningJobObjective() const{ return m_hyperParameterTuningJobObjective; }
+    inline const HyperParameterTuningJobObjective& GetHyperParameterTuningJobObjective() const { return m_hyperParameterTuningJobObjective; }
     inline bool HyperParameterTuningJobObjectiveHasBeenSet() const { return m_hyperParameterTuningJobObjectiveHasBeenSet; }
-    inline void SetHyperParameterTuningJobObjective(const HyperParameterTuningJobObjective& value) { m_hyperParameterTuningJobObjectiveHasBeenSet = true; m_hyperParameterTuningJobObjective = value; }
-    inline void SetHyperParameterTuningJobObjective(HyperParameterTuningJobObjective&& value) { m_hyperParameterTuningJobObjectiveHasBeenSet = true; m_hyperParameterTuningJobObjective = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithHyperParameterTuningJobObjective(const HyperParameterTuningJobObjective& value) { SetHyperParameterTuningJobObjective(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithHyperParameterTuningJobObjective(HyperParameterTuningJobObjective&& value) { SetHyperParameterTuningJobObjective(std::move(value)); return *this;}
+    template<typename HyperParameterTuningJobObjectiveT = HyperParameterTuningJobObjective>
+    void SetHyperParameterTuningJobObjective(HyperParameterTuningJobObjectiveT&& value) { m_hyperParameterTuningJobObjectiveHasBeenSet = true; m_hyperParameterTuningJobObjective = std::forward<HyperParameterTuningJobObjectiveT>(value); }
+    template<typename HyperParameterTuningJobObjectiveT = HyperParameterTuningJobObjective>
+    HyperParameterTuningJobConfig& WithHyperParameterTuningJobObjective(HyperParameterTuningJobObjectiveT&& value) { SetHyperParameterTuningJobObjective(std::forward<HyperParameterTuningJobObjectiveT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,12 @@ namespace Model
      * object that specifies the maximum number of training and parallel training jobs
      * that can be used for this hyperparameter tuning job.</p>
      */
-    inline const ResourceLimits& GetResourceLimits() const{ return m_resourceLimits; }
+    inline const ResourceLimits& GetResourceLimits() const { return m_resourceLimits; }
     inline bool ResourceLimitsHasBeenSet() const { return m_resourceLimitsHasBeenSet; }
-    inline void SetResourceLimits(const ResourceLimits& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = value; }
-    inline void SetResourceLimits(ResourceLimits&& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithResourceLimits(const ResourceLimits& value) { SetResourceLimits(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithResourceLimits(ResourceLimits&& value) { SetResourceLimits(std::move(value)); return *this;}
+    template<typename ResourceLimitsT = ResourceLimits>
+    void SetResourceLimits(ResourceLimitsT&& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = std::forward<ResourceLimitsT>(value); }
+    template<typename ResourceLimitsT = ResourceLimits>
+    HyperParameterTuningJobConfig& WithResourceLimits(ResourceLimitsT&& value) { SetResourceLimits(std::forward<ResourceLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +109,12 @@ namespace Model
      * searches over to find the optimal configuration for the highest model
      * performance against your chosen objective metric. </p>
      */
-    inline const ParameterRanges& GetParameterRanges() const{ return m_parameterRanges; }
+    inline const ParameterRanges& GetParameterRanges() const { return m_parameterRanges; }
     inline bool ParameterRangesHasBeenSet() const { return m_parameterRangesHasBeenSet; }
-    inline void SetParameterRanges(const ParameterRanges& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = value; }
-    inline void SetParameterRanges(ParameterRanges&& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithParameterRanges(const ParameterRanges& value) { SetParameterRanges(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithParameterRanges(ParameterRanges&& value) { SetParameterRanges(std::move(value)); return *this;}
+    template<typename ParameterRangesT = ParameterRanges>
+    void SetParameterRanges(ParameterRangesT&& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = std::forward<ParameterRangesT>(value); }
+    template<typename ParameterRangesT = ParameterRanges>
+    HyperParameterTuningJobConfig& WithParameterRanges(ParameterRangesT&& value) { SetParameterRanges(std::forward<ParameterRangesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,24 +132,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
-    inline const TrainingJobEarlyStoppingType& GetTrainingJobEarlyStoppingType() const{ return m_trainingJobEarlyStoppingType; }
+    inline TrainingJobEarlyStoppingType GetTrainingJobEarlyStoppingType() const { return m_trainingJobEarlyStoppingType; }
     inline bool TrainingJobEarlyStoppingTypeHasBeenSet() const { return m_trainingJobEarlyStoppingTypeHasBeenSet; }
-    inline void SetTrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = value; }
-    inline void SetTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& value) { SetTrainingJobEarlyStoppingType(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { SetTrainingJobEarlyStoppingType(std::move(value)); return *this;}
+    inline void SetTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = value; }
+    inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType value) { SetTrainingJobEarlyStoppingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tuning job's completion criteria.</p>
      */
-    inline const TuningJobCompletionCriteria& GetTuningJobCompletionCriteria() const{ return m_tuningJobCompletionCriteria; }
+    inline const TuningJobCompletionCriteria& GetTuningJobCompletionCriteria() const { return m_tuningJobCompletionCriteria; }
     inline bool TuningJobCompletionCriteriaHasBeenSet() const { return m_tuningJobCompletionCriteriaHasBeenSet; }
-    inline void SetTuningJobCompletionCriteria(const TuningJobCompletionCriteria& value) { m_tuningJobCompletionCriteriaHasBeenSet = true; m_tuningJobCompletionCriteria = value; }
-    inline void SetTuningJobCompletionCriteria(TuningJobCompletionCriteria&& value) { m_tuningJobCompletionCriteriaHasBeenSet = true; m_tuningJobCompletionCriteria = std::move(value); }
-    inline HyperParameterTuningJobConfig& WithTuningJobCompletionCriteria(const TuningJobCompletionCriteria& value) { SetTuningJobCompletionCriteria(value); return *this;}
-    inline HyperParameterTuningJobConfig& WithTuningJobCompletionCriteria(TuningJobCompletionCriteria&& value) { SetTuningJobCompletionCriteria(std::move(value)); return *this;}
+    template<typename TuningJobCompletionCriteriaT = TuningJobCompletionCriteria>
+    void SetTuningJobCompletionCriteria(TuningJobCompletionCriteriaT&& value) { m_tuningJobCompletionCriteriaHasBeenSet = true; m_tuningJobCompletionCriteria = std::forward<TuningJobCompletionCriteriaT>(value); }
+    template<typename TuningJobCompletionCriteriaT = TuningJobCompletionCriteria>
+    HyperParameterTuningJobConfig& WithTuningJobCompletionCriteria(TuningJobCompletionCriteriaT&& value) { SetTuningJobCompletionCriteria(std::forward<TuningJobCompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,14 +157,14 @@ namespace Model
      * hyperparameter optimization to find more a consistent hyperparameter
      * configuration between the two runs.</p>
      */
-    inline int GetRandomSeed() const{ return m_randomSeed; }
+    inline int GetRandomSeed() const { return m_randomSeed; }
     inline bool RandomSeedHasBeenSet() const { return m_randomSeedHasBeenSet; }
     inline void SetRandomSeed(int value) { m_randomSeedHasBeenSet = true; m_randomSeed = value; }
     inline HyperParameterTuningJobConfig& WithRandomSeed(int value) { SetRandomSeed(value); return *this;}
     ///@}
   private:
 
-    HyperParameterTuningJobStrategyType m_strategy;
+    HyperParameterTuningJobStrategyType m_strategy{HyperParameterTuningJobStrategyType::NOT_SET};
     bool m_strategyHasBeenSet = false;
 
     HyperParameterTuningJobStrategyConfig m_strategyConfig;
@@ -183,13 +179,13 @@ namespace Model
     ParameterRanges m_parameterRanges;
     bool m_parameterRangesHasBeenSet = false;
 
-    TrainingJobEarlyStoppingType m_trainingJobEarlyStoppingType;
+    TrainingJobEarlyStoppingType m_trainingJobEarlyStoppingType{TrainingJobEarlyStoppingType::NOT_SET};
     bool m_trainingJobEarlyStoppingTypeHasBeenSet = false;
 
     TuningJobCompletionCriteria m_tuningJobCompletionCriteria;
     bool m_tuningJobCompletionCriteriaHasBeenSet = false;
 
-    int m_randomSeed;
+    int m_randomSeed{0};
     bool m_randomSeedHasBeenSet = false;
   };
 

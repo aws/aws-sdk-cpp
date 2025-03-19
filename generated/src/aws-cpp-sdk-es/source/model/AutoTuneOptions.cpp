@@ -18,17 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-AutoTuneOptions::AutoTuneOptions() : 
-    m_desiredState(AutoTuneDesiredState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_rollbackOnDisable(RollbackOnDisable::NOT_SET),
-    m_rollbackOnDisableHasBeenSet(false),
-    m_maintenanceSchedulesHasBeenSet(false)
-{
-}
-
 AutoTuneOptions::AutoTuneOptions(JsonView jsonValue)
-  : AutoTuneOptions()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AutoTuneOptions& AutoTuneOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = AutoTuneDesiredStateMapper::GetAutoTuneDesiredStateForName(jsonValue.GetString("DesiredState"));
-
     m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollbackOnDisable"))
   {
     m_rollbackOnDisable = RollbackOnDisableMapper::GetRollbackOnDisableForName(jsonValue.GetString("RollbackOnDisable"));
-
     m_rollbackOnDisableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceSchedules"))
   {
     Aws::Utils::Array<JsonView> maintenanceSchedulesJsonList = jsonValue.GetArray("MaintenanceSchedules");
@@ -58,7 +44,6 @@ AutoTuneOptions& AutoTuneOptions::operator =(JsonView jsonValue)
     }
     m_maintenanceSchedulesHasBeenSet = true;
   }
-
   return *this;
 }
 

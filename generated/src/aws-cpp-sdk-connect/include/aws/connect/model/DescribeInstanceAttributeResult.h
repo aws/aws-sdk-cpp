@@ -28,7 +28,7 @@ namespace Model
   class DescribeInstanceAttributeResult
   {
   public:
-    AWS_CONNECT_API DescribeInstanceAttributeResult();
+    AWS_CONNECT_API DescribeInstanceAttributeResult() = default;
     AWS_CONNECT_API DescribeInstanceAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeInstanceAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The type of attribute.</p>
      */
-    inline const Attribute& GetAttribute() const{ return m_attribute; }
-    inline void SetAttribute(const Attribute& value) { m_attribute = value; }
-    inline void SetAttribute(Attribute&& value) { m_attribute = std::move(value); }
-    inline DescribeInstanceAttributeResult& WithAttribute(const Attribute& value) { SetAttribute(value); return *this;}
-    inline DescribeInstanceAttributeResult& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline const Attribute& GetAttribute() const { return m_attribute; }
+    template<typename AttributeT = Attribute>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Attribute>
+    DescribeInstanceAttributeResult& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInstanceAttributeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInstanceAttributeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInstanceAttributeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInstanceAttributeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Attribute m_attribute;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

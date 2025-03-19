@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-SearchSortExpression::SearchSortExpression() : 
-    m_userJobsFirstHasBeenSet(false),
-    m_fieldSortHasBeenSet(false),
-    m_parameterSortHasBeenSet(false)
-{
-}
-
 SearchSortExpression::SearchSortExpression(JsonView jsonValue)
-  : SearchSortExpression()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SearchSortExpression& SearchSortExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userJobsFirst"))
   {
     m_userJobsFirst = jsonValue.GetObject("userJobsFirst");
-
     m_userJobsFirstHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldSort"))
   {
     m_fieldSort = jsonValue.GetObject("fieldSort");
-
     m_fieldSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterSort"))
   {
     m_parameterSort = jsonValue.GetObject("parameterSort");
-
     m_parameterSortHasBeenSet = true;
   }
-
   return *this;
 }
 

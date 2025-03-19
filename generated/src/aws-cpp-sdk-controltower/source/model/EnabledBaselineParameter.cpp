@@ -18,14 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-EnabledBaselineParameter::EnabledBaselineParameter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EnabledBaselineParameter::EnabledBaselineParameter(JsonView jsonValue)
-  : EnabledBaselineParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EnabledBaselineParameter& EnabledBaselineParameter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

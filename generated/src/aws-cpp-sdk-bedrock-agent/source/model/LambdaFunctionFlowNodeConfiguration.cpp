@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-LambdaFunctionFlowNodeConfiguration::LambdaFunctionFlowNodeConfiguration() : 
-    m_lambdaArnHasBeenSet(false)
-{
-}
-
 LambdaFunctionFlowNodeConfiguration::LambdaFunctionFlowNodeConfiguration(JsonView jsonValue)
-  : LambdaFunctionFlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaFunctionFlowNodeConfiguration& LambdaFunctionFlowNodeConfiguration::operat
   if(jsonValue.ValueExists("lambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("lambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,17 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntegrationWorkflowRequest::CreateIntegrationWorkflowRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_workflowType(WorkflowType::NOT_SET),
-    m_workflowTypeHasBeenSet(false),
-    m_integrationConfigHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntegrationWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

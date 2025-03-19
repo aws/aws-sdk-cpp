@@ -32,7 +32,7 @@ namespace Model
   class HttpEndpointRetryOptions
   {
   public:
-    AWS_FIREHOSE_API HttpEndpointRetryOptions();
+    AWS_FIREHOSE_API HttpEndpointRetryOptions() = default;
     AWS_FIREHOSE_API HttpEndpointRetryOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API HttpEndpointRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * HTTPS endpoint fails. It doesn't include the periods during which Firehose waits
      * for acknowledgment from the specified destination after each attempt. </p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline HttpEndpointRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
   };
 

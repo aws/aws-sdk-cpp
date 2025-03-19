@@ -40,7 +40,7 @@ namespace Model
   class QuerySpatialCoverage
   {
   public:
-    AWS_TIMESTREAMQUERY_API QuerySpatialCoverage();
+    AWS_TIMESTREAMQUERY_API QuerySpatialCoverage() = default;
     AWS_TIMESTREAMQUERY_API QuerySpatialCoverage(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API QuerySpatialCoverage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
      * partition key used for partitioning, which can be a default
      * <code>measure_name</code> or a CDPK.</p> </li> </ul>
      */
-    inline const QuerySpatialCoverageMax& GetMax() const{ return m_max; }
+    inline const QuerySpatialCoverageMax& GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(const QuerySpatialCoverageMax& value) { m_maxHasBeenSet = true; m_max = value; }
-    inline void SetMax(QuerySpatialCoverageMax&& value) { m_maxHasBeenSet = true; m_max = std::move(value); }
-    inline QuerySpatialCoverage& WithMax(const QuerySpatialCoverageMax& value) { SetMax(value); return *this;}
-    inline QuerySpatialCoverage& WithMax(QuerySpatialCoverageMax&& value) { SetMax(std::move(value)); return *this;}
+    template<typename MaxT = QuerySpatialCoverageMax>
+    void SetMax(MaxT&& value) { m_maxHasBeenSet = true; m_max = std::forward<MaxT>(value); }
+    template<typename MaxT = QuerySpatialCoverageMax>
+    QuerySpatialCoverage& WithMax(MaxT&& value) { SetMax(std::forward<MaxT>(value)); return *this;}
     ///@}
   private:
 

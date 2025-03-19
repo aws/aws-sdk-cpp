@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-UrlConfiguration::UrlConfiguration() : 
-    m_seedUrlsHasBeenSet(false)
-{
-}
-
 UrlConfiguration::UrlConfiguration(JsonView jsonValue)
-  : UrlConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UrlConfiguration& UrlConfiguration::operator =(JsonView jsonValue)
     }
     m_seedUrlsHasBeenSet = true;
   }
-
   return *this;
 }
 

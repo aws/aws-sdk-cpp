@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestConnectionRequest::TestConnectionRequest() : 
-    m_replicationInstanceArnHasBeenSet(false),
-    m_endpointArnHasBeenSet(false)
-{
-}
-
 Aws::String TestConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

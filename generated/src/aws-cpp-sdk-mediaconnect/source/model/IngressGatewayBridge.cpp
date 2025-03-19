@@ -18,17 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-IngressGatewayBridge::IngressGatewayBridge() : 
-    m_instanceIdHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxOutputs(0),
-    m_maxOutputsHasBeenSet(false)
-{
-}
-
 IngressGatewayBridge::IngressGatewayBridge(JsonView jsonValue)
-  : IngressGatewayBridge()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IngressGatewayBridge& IngressGatewayBridge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxBitrate"))
   {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
-
     m_maxBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxOutputs"))
   {
     m_maxOutputs = jsonValue.GetInteger("maxOutputs");
-
     m_maxOutputsHasBeenSet = true;
   }
-
   return *this;
 }
 

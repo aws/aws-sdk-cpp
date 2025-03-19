@@ -31,7 +31,7 @@ namespace Model
   class GetDocumentationPartsRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetDocumentationPartsRequest();
+    AWS_APIGATEWAY_API GetDocumentationPartsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,68 +48,58 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetDocumentationPartsRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetDocumentationPartsRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetDocumentationPartsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetDocumentationPartsRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
      */
-    inline const DocumentationPartType& GetType() const{ return m_type; }
+    inline DocumentationPartType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DocumentationPartType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetDocumentationPartsRequest& WithType(const DocumentationPartType& value) { SetType(value); return *this;}
-    inline GetDocumentationPartsRequest& WithType(DocumentationPartType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DocumentationPartType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetDocumentationPartsRequest& WithType(DocumentationPartType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
      */
-    inline const Aws::String& GetNameQuery() const{ return m_nameQuery; }
+    inline const Aws::String& GetNameQuery() const { return m_nameQuery; }
     inline bool NameQueryHasBeenSet() const { return m_nameQueryHasBeenSet; }
-    inline void SetNameQuery(const Aws::String& value) { m_nameQueryHasBeenSet = true; m_nameQuery = value; }
-    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = std::move(value); }
-    inline void SetNameQuery(const char* value) { m_nameQueryHasBeenSet = true; m_nameQuery.assign(value); }
-    inline GetDocumentationPartsRequest& WithNameQuery(const Aws::String& value) { SetNameQuery(value); return *this;}
-    inline GetDocumentationPartsRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(std::move(value)); return *this;}
-    inline GetDocumentationPartsRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
+    template<typename NameQueryT = Aws::String>
+    void SetNameQuery(NameQueryT&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = std::forward<NameQueryT>(value); }
+    template<typename NameQueryT = Aws::String>
+    GetDocumentationPartsRequest& WithNameQuery(NameQueryT&& value) { SetNameQuery(std::forward<NameQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline GetDocumentationPartsRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline GetDocumentationPartsRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline GetDocumentationPartsRequest& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    GetDocumentationPartsRequest& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline GetDocumentationPartsRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetDocumentationPartsRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetDocumentationPartsRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetDocumentationPartsRequest& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +107,7 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetDocumentationPartsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -130,19 +120,17 @@ namespace Model
      * and <code>UNDOCUMENTED</code> for DocumentationPart resources without
      * content.</p>
      */
-    inline const LocationStatusType& GetLocationStatus() const{ return m_locationStatus; }
+    inline LocationStatusType GetLocationStatus() const { return m_locationStatus; }
     inline bool LocationStatusHasBeenSet() const { return m_locationStatusHasBeenSet; }
-    inline void SetLocationStatus(const LocationStatusType& value) { m_locationStatusHasBeenSet = true; m_locationStatus = value; }
-    inline void SetLocationStatus(LocationStatusType&& value) { m_locationStatusHasBeenSet = true; m_locationStatus = std::move(value); }
-    inline GetDocumentationPartsRequest& WithLocationStatus(const LocationStatusType& value) { SetLocationStatus(value); return *this;}
-    inline GetDocumentationPartsRequest& WithLocationStatus(LocationStatusType&& value) { SetLocationStatus(std::move(value)); return *this;}
+    inline void SetLocationStatus(LocationStatusType value) { m_locationStatusHasBeenSet = true; m_locationStatus = value; }
+    inline GetDocumentationPartsRequest& WithLocationStatus(LocationStatusType value) { SetLocationStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet = false;
 
-    DocumentationPartType m_type;
+    DocumentationPartType m_type{DocumentationPartType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_nameQuery;
@@ -154,10 +142,10 @@ namespace Model
     Aws::String m_position;
     bool m_positionHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    LocationStatusType m_locationStatus;
+    LocationStatusType m_locationStatus{LocationStatusType::NOT_SET};
     bool m_locationStatusHasBeenSet = false;
   };
 

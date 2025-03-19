@@ -20,55 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceTypeInfo::InstanceTypeInfo() : 
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_freeTierEligible(false),
-    m_freeTierEligibleHasBeenSet(false),
-    m_supportedUsageClassesHasBeenSet(false),
-    m_supportedRootDeviceTypesHasBeenSet(false),
-    m_supportedVirtualizationTypesHasBeenSet(false),
-    m_bareMetal(false),
-    m_bareMetalHasBeenSet(false),
-    m_hypervisor(InstanceTypeHypervisor::NOT_SET),
-    m_hypervisorHasBeenSet(false),
-    m_processorInfoHasBeenSet(false),
-    m_vCpuInfoHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false),
-    m_instanceStorageSupported(false),
-    m_instanceStorageSupportedHasBeenSet(false),
-    m_instanceStorageInfoHasBeenSet(false),
-    m_ebsInfoHasBeenSet(false),
-    m_networkInfoHasBeenSet(false),
-    m_gpuInfoHasBeenSet(false),
-    m_fpgaInfoHasBeenSet(false),
-    m_placementGroupInfoHasBeenSet(false),
-    m_inferenceAcceleratorInfoHasBeenSet(false),
-    m_hibernationSupported(false),
-    m_hibernationSupportedHasBeenSet(false),
-    m_burstablePerformanceSupported(false),
-    m_burstablePerformanceSupportedHasBeenSet(false),
-    m_dedicatedHostsSupported(false),
-    m_dedicatedHostsSupportedHasBeenSet(false),
-    m_autoRecoverySupported(false),
-    m_autoRecoverySupportedHasBeenSet(false),
-    m_supportedBootModesHasBeenSet(false),
-    m_nitroEnclavesSupport(NitroEnclavesSupport::NOT_SET),
-    m_nitroEnclavesSupportHasBeenSet(false),
-    m_nitroTpmSupport(NitroTpmSupport::NOT_SET),
-    m_nitroTpmSupportHasBeenSet(false),
-    m_nitroTpmInfoHasBeenSet(false),
-    m_mediaAcceleratorInfoHasBeenSet(false),
-    m_neuronInfoHasBeenSet(false),
-    m_phcSupport(PhcSupport::NOT_SET),
-    m_phcSupportHasBeenSet(false)
-{
-}
-
 InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode)
-  : InstanceTypeInfo()
 {
   *this = xmlNode;
 }
@@ -82,7 +34,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode currentGenerationNode = resultNode.FirstChild("currentGeneration");
@@ -101,6 +53,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     if(!supportedUsageClassesNode.IsNull())
     {
       XmlNode supportedUsageClassesMember = supportedUsageClassesNode.FirstChild("item");
+      m_supportedUsageClassesHasBeenSet = !supportedUsageClassesMember.IsNull();
       while(!supportedUsageClassesMember.IsNull())
       {
         m_supportedUsageClasses.push_back(UsageClassTypeMapper::GetUsageClassTypeForName(StringUtils::Trim(supportedUsageClassesMember.GetText().c_str())));
@@ -113,6 +66,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     if(!supportedRootDeviceTypesNode.IsNull())
     {
       XmlNode supportedRootDeviceTypesMember = supportedRootDeviceTypesNode.FirstChild("item");
+      m_supportedRootDeviceTypesHasBeenSet = !supportedRootDeviceTypesMember.IsNull();
       while(!supportedRootDeviceTypesMember.IsNull())
       {
         m_supportedRootDeviceTypes.push_back(RootDeviceTypeMapper::GetRootDeviceTypeForName(StringUtils::Trim(supportedRootDeviceTypesMember.GetText().c_str())));
@@ -125,6 +79,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     if(!supportedVirtualizationTypesNode.IsNull())
     {
       XmlNode supportedVirtualizationTypesMember = supportedVirtualizationTypesNode.FirstChild("item");
+      m_supportedVirtualizationTypesHasBeenSet = !supportedVirtualizationTypesMember.IsNull();
       while(!supportedVirtualizationTypesMember.IsNull())
       {
         m_supportedVirtualizationTypes.push_back(VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(supportedVirtualizationTypesMember.GetText().c_str())));
@@ -142,7 +97,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
-      m_hypervisor = InstanceTypeHypervisorMapper::GetInstanceTypeHypervisorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()).c_str());
+      m_hypervisor = InstanceTypeHypervisorMapper::GetInstanceTypeHypervisorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()));
       m_hypervisorHasBeenSet = true;
     }
     XmlNode processorInfoNode = resultNode.FirstChild("processorInfo");
@@ -239,6 +194,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     if(!supportedBootModesNode.IsNull())
     {
       XmlNode supportedBootModesMember = supportedBootModesNode.FirstChild("item");
+      m_supportedBootModesHasBeenSet = !supportedBootModesMember.IsNull();
       while(!supportedBootModesMember.IsNull())
       {
         m_supportedBootModes.push_back(BootModeTypeMapper::GetBootModeTypeForName(StringUtils::Trim(supportedBootModesMember.GetText().c_str())));
@@ -250,13 +206,13 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     XmlNode nitroEnclavesSupportNode = resultNode.FirstChild("nitroEnclavesSupport");
     if(!nitroEnclavesSupportNode.IsNull())
     {
-      m_nitroEnclavesSupport = NitroEnclavesSupportMapper::GetNitroEnclavesSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroEnclavesSupportNode.GetText()).c_str()).c_str());
+      m_nitroEnclavesSupport = NitroEnclavesSupportMapper::GetNitroEnclavesSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroEnclavesSupportNode.GetText()).c_str()));
       m_nitroEnclavesSupportHasBeenSet = true;
     }
     XmlNode nitroTpmSupportNode = resultNode.FirstChild("nitroTpmSupport");
     if(!nitroTpmSupportNode.IsNull())
     {
-      m_nitroTpmSupport = NitroTpmSupportMapper::GetNitroTpmSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroTpmSupportNode.GetText()).c_str()).c_str());
+      m_nitroTpmSupport = NitroTpmSupportMapper::GetNitroTpmSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroTpmSupportNode.GetText()).c_str()));
       m_nitroTpmSupportHasBeenSet = true;
     }
     XmlNode nitroTpmInfoNode = resultNode.FirstChild("nitroTpmInfo");
@@ -280,7 +236,7 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     XmlNode phcSupportNode = resultNode.FirstChild("phcSupport");
     if(!phcSupportNode.IsNull())
     {
-      m_phcSupport = PhcSupportMapper::GetPhcSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(phcSupportNode.GetText()).c_str()).c_str());
+      m_phcSupport = PhcSupportMapper::GetPhcSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(phcSupportNode.GetText()).c_str()));
       m_phcSupportHasBeenSet = true;
     }
   }

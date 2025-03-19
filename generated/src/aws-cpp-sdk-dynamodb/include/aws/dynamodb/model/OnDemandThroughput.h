@@ -32,7 +32,7 @@ namespace Model
   class OnDemandThroughput
   {
   public:
-    AWS_DYNAMODB_API OnDemandThroughput();
+    AWS_DYNAMODB_API OnDemandThroughput() = default;
     AWS_DYNAMODB_API OnDemandThroughput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API OnDemandThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * maximum <code>OnDemandThroughput</code> that is currently set on your table, set
      * the value of <code>MaxReadRequestUnits</code> to -1.</p>
      */
-    inline long long GetMaxReadRequestUnits() const{ return m_maxReadRequestUnits; }
+    inline long long GetMaxReadRequestUnits() const { return m_maxReadRequestUnits; }
     inline bool MaxReadRequestUnitsHasBeenSet() const { return m_maxReadRequestUnitsHasBeenSet; }
     inline void SetMaxReadRequestUnits(long long value) { m_maxReadRequestUnitsHasBeenSet = true; m_maxReadRequestUnits = value; }
     inline OnDemandThroughput& WithMaxReadRequestUnits(long long value) { SetMaxReadRequestUnits(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * the maximum <code>OnDemandThroughput</code> that is currently set on your table,
      * set the value of <code>MaxWriteRequestUnits</code> to -1.</p>
      */
-    inline long long GetMaxWriteRequestUnits() const{ return m_maxWriteRequestUnits; }
+    inline long long GetMaxWriteRequestUnits() const { return m_maxWriteRequestUnits; }
     inline bool MaxWriteRequestUnitsHasBeenSet() const { return m_maxWriteRequestUnitsHasBeenSet; }
     inline void SetMaxWriteRequestUnits(long long value) { m_maxWriteRequestUnitsHasBeenSet = true; m_maxWriteRequestUnits = value; }
     inline OnDemandThroughput& WithMaxWriteRequestUnits(long long value) { SetMaxWriteRequestUnits(value); return *this;}
     ///@}
   private:
 
-    long long m_maxReadRequestUnits;
+    long long m_maxReadRequestUnits{0};
     bool m_maxReadRequestUnitsHasBeenSet = false;
 
-    long long m_maxWriteRequestUnits;
+    long long m_maxWriteRequestUnits{0};
     bool m_maxWriteRequestUnitsHasBeenSet = false;
   };
 

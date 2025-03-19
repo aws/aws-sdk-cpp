@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ContainerConfiguration::ContainerConfiguration() : 
-    m_containerNameHasBeenSet(false),
-    m_memorySizeConfigurationHasBeenSet(false),
-    m_cpu(0),
-    m_cpuHasBeenSet(false)
-{
-}
-
 ContainerConfiguration::ContainerConfiguration(JsonView jsonValue)
-  : ContainerConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContainerConfiguration& ContainerConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memorySizeConfiguration"))
   {
     m_memorySizeConfiguration = jsonValue.GetObject("memorySizeConfiguration");
-
     m_memorySizeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetInteger("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   return *this;
 }
 

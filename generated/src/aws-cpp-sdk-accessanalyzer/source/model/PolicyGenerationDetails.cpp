@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-PolicyGenerationDetails::PolicyGenerationDetails() : 
-    m_principalArnHasBeenSet(false)
-{
-}
-
 PolicyGenerationDetails::PolicyGenerationDetails(JsonView jsonValue)
-  : PolicyGenerationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PolicyGenerationDetails& PolicyGenerationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("principalArn"))
   {
     m_principalArn = jsonValue.GetString("principalArn");
-
     m_principalArnHasBeenSet = true;
   }
-
   return *this;
 }
 

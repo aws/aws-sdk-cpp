@@ -33,7 +33,7 @@ namespace Model
   class CachePolicyQueryStringsConfig
   {
   public:
-    AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig();
+    AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig() = default;
     AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -58,12 +58,10 @@ namespace Model
      * <code>all</code> – All query strings in viewer requests are included in the
      * cache key and in requests that CloudFront sends to the origin.</p> </li> </ul>
      */
-    inline const CachePolicyQueryStringBehavior& GetQueryStringBehavior() const{ return m_queryStringBehavior; }
+    inline CachePolicyQueryStringBehavior GetQueryStringBehavior() const { return m_queryStringBehavior; }
     inline bool QueryStringBehaviorHasBeenSet() const { return m_queryStringBehaviorHasBeenSet; }
-    inline void SetQueryStringBehavior(const CachePolicyQueryStringBehavior& value) { m_queryStringBehaviorHasBeenSet = true; m_queryStringBehavior = value; }
-    inline void SetQueryStringBehavior(CachePolicyQueryStringBehavior&& value) { m_queryStringBehaviorHasBeenSet = true; m_queryStringBehavior = std::move(value); }
-    inline CachePolicyQueryStringsConfig& WithQueryStringBehavior(const CachePolicyQueryStringBehavior& value) { SetQueryStringBehavior(value); return *this;}
-    inline CachePolicyQueryStringsConfig& WithQueryStringBehavior(CachePolicyQueryStringBehavior&& value) { SetQueryStringBehavior(std::move(value)); return *this;}
+    inline void SetQueryStringBehavior(CachePolicyQueryStringBehavior value) { m_queryStringBehaviorHasBeenSet = true; m_queryStringBehavior = value; }
+    inline CachePolicyQueryStringsConfig& WithQueryStringBehavior(CachePolicyQueryStringBehavior value) { SetQueryStringBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -77,16 +75,16 @@ namespace Model
      * <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i>
      * included, but all other query strings are).</p>
      */
-    inline const QueryStringNames& GetQueryStrings() const{ return m_queryStrings; }
+    inline const QueryStringNames& GetQueryStrings() const { return m_queryStrings; }
     inline bool QueryStringsHasBeenSet() const { return m_queryStringsHasBeenSet; }
-    inline void SetQueryStrings(const QueryStringNames& value) { m_queryStringsHasBeenSet = true; m_queryStrings = value; }
-    inline void SetQueryStrings(QueryStringNames&& value) { m_queryStringsHasBeenSet = true; m_queryStrings = std::move(value); }
-    inline CachePolicyQueryStringsConfig& WithQueryStrings(const QueryStringNames& value) { SetQueryStrings(value); return *this;}
-    inline CachePolicyQueryStringsConfig& WithQueryStrings(QueryStringNames&& value) { SetQueryStrings(std::move(value)); return *this;}
+    template<typename QueryStringsT = QueryStringNames>
+    void SetQueryStrings(QueryStringsT&& value) { m_queryStringsHasBeenSet = true; m_queryStrings = std::forward<QueryStringsT>(value); }
+    template<typename QueryStringsT = QueryStringNames>
+    CachePolicyQueryStringsConfig& WithQueryStrings(QueryStringsT&& value) { SetQueryStrings(std::forward<QueryStringsT>(value)); return *this;}
     ///@}
   private:
 
-    CachePolicyQueryStringBehavior m_queryStringBehavior;
+    CachePolicyQueryStringBehavior m_queryStringBehavior{CachePolicyQueryStringBehavior::NOT_SET};
     bool m_queryStringBehaviorHasBeenSet = false;
 
     QueryStringNames m_queryStrings;

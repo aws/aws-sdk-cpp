@@ -31,7 +31,7 @@ namespace Model
   class PrivateDnsNamespaceProperties
   {
   public:
-    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties();
+    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties() = default;
     AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>DNS properties for the private DNS namespace.</p>
      */
-    inline const PrivateDnsPropertiesMutable& GetDnsProperties() const{ return m_dnsProperties; }
+    inline const PrivateDnsPropertiesMutable& GetDnsProperties() const { return m_dnsProperties; }
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-    inline void SetDnsProperties(const PrivateDnsPropertiesMutable& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
-    inline void SetDnsProperties(PrivateDnsPropertiesMutable&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
-    inline PrivateDnsNamespaceProperties& WithDnsProperties(const PrivateDnsPropertiesMutable& value) { SetDnsProperties(value); return *this;}
-    inline PrivateDnsNamespaceProperties& WithDnsProperties(PrivateDnsPropertiesMutable&& value) { SetDnsProperties(std::move(value)); return *this;}
+    template<typename DnsPropertiesT = PrivateDnsPropertiesMutable>
+    void SetDnsProperties(DnsPropertiesT&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::forward<DnsPropertiesT>(value); }
+    template<typename DnsPropertiesT = PrivateDnsPropertiesMutable>
+    PrivateDnsNamespaceProperties& WithDnsProperties(DnsPropertiesT&& value) { SetDnsProperties(std::forward<DnsPropertiesT>(value)); return *this;}
     ///@}
   private:
 

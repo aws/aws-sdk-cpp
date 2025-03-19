@@ -40,7 +40,7 @@ namespace Model
   class ReplicationConfiguration
   {
   public:
-    AWS_CONNECT_API ReplicationConfiguration();
+    AWS_CONNECT_API ReplicationConfiguration() = default;
     AWS_CONNECT_API ReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * the replication of configuration information for Amazon Connect resources, for
      * each Amazon Web Services Region.</p>
      */
-    inline const Aws::Vector<ReplicationStatusSummary>& GetReplicationStatusSummaryList() const{ return m_replicationStatusSummaryList; }
+    inline const Aws::Vector<ReplicationStatusSummary>& GetReplicationStatusSummaryList() const { return m_replicationStatusSummaryList; }
     inline bool ReplicationStatusSummaryListHasBeenSet() const { return m_replicationStatusSummaryListHasBeenSet; }
-    inline void SetReplicationStatusSummaryList(const Aws::Vector<ReplicationStatusSummary>& value) { m_replicationStatusSummaryListHasBeenSet = true; m_replicationStatusSummaryList = value; }
-    inline void SetReplicationStatusSummaryList(Aws::Vector<ReplicationStatusSummary>&& value) { m_replicationStatusSummaryListHasBeenSet = true; m_replicationStatusSummaryList = std::move(value); }
-    inline ReplicationConfiguration& WithReplicationStatusSummaryList(const Aws::Vector<ReplicationStatusSummary>& value) { SetReplicationStatusSummaryList(value); return *this;}
-    inline ReplicationConfiguration& WithReplicationStatusSummaryList(Aws::Vector<ReplicationStatusSummary>&& value) { SetReplicationStatusSummaryList(std::move(value)); return *this;}
-    inline ReplicationConfiguration& AddReplicationStatusSummaryList(const ReplicationStatusSummary& value) { m_replicationStatusSummaryListHasBeenSet = true; m_replicationStatusSummaryList.push_back(value); return *this; }
-    inline ReplicationConfiguration& AddReplicationStatusSummaryList(ReplicationStatusSummary&& value) { m_replicationStatusSummaryListHasBeenSet = true; m_replicationStatusSummaryList.push_back(std::move(value)); return *this; }
+    template<typename ReplicationStatusSummaryListT = Aws::Vector<ReplicationStatusSummary>>
+    void SetReplicationStatusSummaryList(ReplicationStatusSummaryListT&& value) { m_replicationStatusSummaryListHasBeenSet = true; m_replicationStatusSummaryList = std::forward<ReplicationStatusSummaryListT>(value); }
+    template<typename ReplicationStatusSummaryListT = Aws::Vector<ReplicationStatusSummary>>
+    ReplicationConfiguration& WithReplicationStatusSummaryList(ReplicationStatusSummaryListT&& value) { SetReplicationStatusSummaryList(std::forward<ReplicationStatusSummaryListT>(value)); return *this;}
+    template<typename ReplicationStatusSummaryListT = ReplicationStatusSummary>
+    ReplicationConfiguration& AddReplicationStatusSummaryList(ReplicationStatusSummaryListT&& value) { m_replicationStatusSummaryListHasBeenSet = true; m_replicationStatusSummaryList.emplace_back(std::forward<ReplicationStatusSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
      * API was called to start the replication process.</p>
      */
-    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+    inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
-    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
-    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
-    inline ReplicationConfiguration& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
-    inline ReplicationConfiguration& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
-    inline ReplicationConfiguration& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+    template<typename SourceRegionT = Aws::String>
+    void SetSourceRegion(SourceRegionT&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::forward<SourceRegionT>(value); }
+    template<typename SourceRegionT = Aws::String>
+    ReplicationConfiguration& WithSourceRegion(SourceRegionT&& value) { SetSourceRegion(std::forward<SourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +86,12 @@ namespace Model
      * things to know</a> in the <i>Create traffic distribution groups</i> topic in the
      * <i>Amazon Connect Administrator Guide</i>. </p>
      */
-    inline const Aws::String& GetGlobalSignInEndpoint() const{ return m_globalSignInEndpoint; }
+    inline const Aws::String& GetGlobalSignInEndpoint() const { return m_globalSignInEndpoint; }
     inline bool GlobalSignInEndpointHasBeenSet() const { return m_globalSignInEndpointHasBeenSet; }
-    inline void SetGlobalSignInEndpoint(const Aws::String& value) { m_globalSignInEndpointHasBeenSet = true; m_globalSignInEndpoint = value; }
-    inline void SetGlobalSignInEndpoint(Aws::String&& value) { m_globalSignInEndpointHasBeenSet = true; m_globalSignInEndpoint = std::move(value); }
-    inline void SetGlobalSignInEndpoint(const char* value) { m_globalSignInEndpointHasBeenSet = true; m_globalSignInEndpoint.assign(value); }
-    inline ReplicationConfiguration& WithGlobalSignInEndpoint(const Aws::String& value) { SetGlobalSignInEndpoint(value); return *this;}
-    inline ReplicationConfiguration& WithGlobalSignInEndpoint(Aws::String&& value) { SetGlobalSignInEndpoint(std::move(value)); return *this;}
-    inline ReplicationConfiguration& WithGlobalSignInEndpoint(const char* value) { SetGlobalSignInEndpoint(value); return *this;}
+    template<typename GlobalSignInEndpointT = Aws::String>
+    void SetGlobalSignInEndpoint(GlobalSignInEndpointT&& value) { m_globalSignInEndpointHasBeenSet = true; m_globalSignInEndpoint = std::forward<GlobalSignInEndpointT>(value); }
+    template<typename GlobalSignInEndpointT = Aws::String>
+    ReplicationConfiguration& WithGlobalSignInEndpoint(GlobalSignInEndpointT&& value) { SetGlobalSignInEndpoint(std::forward<GlobalSignInEndpointT>(value)); return *this;}
     ///@}
   private:
 

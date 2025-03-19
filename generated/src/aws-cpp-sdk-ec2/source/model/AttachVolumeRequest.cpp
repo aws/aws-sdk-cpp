@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AttachVolumeRequest::AttachVolumeRequest() : 
-    m_deviceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AttachVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

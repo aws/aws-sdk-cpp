@@ -34,7 +34,7 @@ namespace Model
   class ListFilteredTransactionEventsSort
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsSort();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsSort() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API ListFilteredTransactionEventsSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>Container on how the results will be sorted by?</p>
      */
-    inline const ListFilteredTransactionEventsSortBy& GetSortBy() const{ return m_sortBy; }
+    inline ListFilteredTransactionEventsSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ListFilteredTransactionEventsSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ListFilteredTransactionEventsSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListFilteredTransactionEventsSort& WithSortBy(const ListFilteredTransactionEventsSortBy& value) { SetSortBy(value); return *this;}
-    inline ListFilteredTransactionEventsSort& WithSortBy(ListFilteredTransactionEventsSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ListFilteredTransactionEventsSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListFilteredTransactionEventsSort& WithSortBy(ListFilteredTransactionEventsSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>. Not
      * providing <code>SortOrder</code> will default to <code>ASCENDING</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListFilteredTransactionEventsSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListFilteredTransactionEventsSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListFilteredTransactionEventsSort& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    ListFilteredTransactionEventsSortBy m_sortBy;
+    ListFilteredTransactionEventsSortBy m_sortBy{ListFilteredTransactionEventsSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

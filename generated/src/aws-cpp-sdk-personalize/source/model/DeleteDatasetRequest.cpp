@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatasetRequest::DeleteDatasetRequest() : 
-    m_datasetArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

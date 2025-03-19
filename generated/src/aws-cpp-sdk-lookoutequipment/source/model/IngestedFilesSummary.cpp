@@ -18,17 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-IngestedFilesSummary::IngestedFilesSummary() : 
-    m_totalNumberOfFiles(0),
-    m_totalNumberOfFilesHasBeenSet(false),
-    m_ingestedNumberOfFiles(0),
-    m_ingestedNumberOfFilesHasBeenSet(false),
-    m_discardedFilesHasBeenSet(false)
-{
-}
-
 IngestedFilesSummary::IngestedFilesSummary(JsonView jsonValue)
-  : IngestedFilesSummary()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ IngestedFilesSummary& IngestedFilesSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalNumberOfFiles"))
   {
     m_totalNumberOfFiles = jsonValue.GetInteger("TotalNumberOfFiles");
-
     m_totalNumberOfFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestedNumberOfFiles"))
   {
     m_ingestedNumberOfFiles = jsonValue.GetInteger("IngestedNumberOfFiles");
-
     m_ingestedNumberOfFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscardedFiles"))
   {
     Aws::Utils::Array<JsonView> discardedFilesJsonList = jsonValue.GetArray("DiscardedFiles");
@@ -58,7 +44,6 @@ IngestedFilesSummary& IngestedFilesSummary::operator =(JsonView jsonValue)
     }
     m_discardedFilesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateTransitGatewayPolicyTableResponse
   {
   public:
-    AWS_EC2_API CreateTransitGatewayPolicyTableResponse();
+    AWS_EC2_API CreateTransitGatewayPolicyTableResponse() = default;
     AWS_EC2_API CreateTransitGatewayPolicyTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateTransitGatewayPolicyTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Describes the created transit gateway policy table.</p>
      */
-    inline const TransitGatewayPolicyTable& GetTransitGatewayPolicyTable() const{ return m_transitGatewayPolicyTable; }
-    inline void SetTransitGatewayPolicyTable(const TransitGatewayPolicyTable& value) { m_transitGatewayPolicyTable = value; }
-    inline void SetTransitGatewayPolicyTable(TransitGatewayPolicyTable&& value) { m_transitGatewayPolicyTable = std::move(value); }
-    inline CreateTransitGatewayPolicyTableResponse& WithTransitGatewayPolicyTable(const TransitGatewayPolicyTable& value) { SetTransitGatewayPolicyTable(value); return *this;}
-    inline CreateTransitGatewayPolicyTableResponse& WithTransitGatewayPolicyTable(TransitGatewayPolicyTable&& value) { SetTransitGatewayPolicyTable(std::move(value)); return *this;}
+    inline const TransitGatewayPolicyTable& GetTransitGatewayPolicyTable() const { return m_transitGatewayPolicyTable; }
+    template<typename TransitGatewayPolicyTableT = TransitGatewayPolicyTable>
+    void SetTransitGatewayPolicyTable(TransitGatewayPolicyTableT&& value) { m_transitGatewayPolicyTableHasBeenSet = true; m_transitGatewayPolicyTable = std::forward<TransitGatewayPolicyTableT>(value); }
+    template<typename TransitGatewayPolicyTableT = TransitGatewayPolicyTable>
+    CreateTransitGatewayPolicyTableResponse& WithTransitGatewayPolicyTable(TransitGatewayPolicyTableT&& value) { SetTransitGatewayPolicyTable(std::forward<TransitGatewayPolicyTableT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTransitGatewayPolicyTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTransitGatewayPolicyTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTransitGatewayPolicyTableResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayPolicyTable m_transitGatewayPolicyTable;
+    bool m_transitGatewayPolicyTableHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

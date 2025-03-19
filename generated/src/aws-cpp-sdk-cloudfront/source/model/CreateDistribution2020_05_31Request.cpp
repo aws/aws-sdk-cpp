@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateDistribution2020_05_31Request::CreateDistribution2020_05_31Request() : 
-    m_distributionConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateDistribution2020_05_31Request::SerializePayload() const
 {

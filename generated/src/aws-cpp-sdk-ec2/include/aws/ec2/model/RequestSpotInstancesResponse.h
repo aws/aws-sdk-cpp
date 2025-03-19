@@ -34,7 +34,7 @@ namespace Model
   class RequestSpotInstancesResponse
   {
   public:
-    AWS_EC2_API RequestSpotInstancesResponse();
+    AWS_EC2_API RequestSpotInstancesResponse() = default;
     AWS_EC2_API RequestSpotInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API RequestSpotInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,30 @@ namespace Model
     /**
      * <p>The Spot Instance requests.</p>
      */
-    inline const Aws::Vector<SpotInstanceRequest>& GetSpotInstanceRequests() const{ return m_spotInstanceRequests; }
-    inline void SetSpotInstanceRequests(const Aws::Vector<SpotInstanceRequest>& value) { m_spotInstanceRequests = value; }
-    inline void SetSpotInstanceRequests(Aws::Vector<SpotInstanceRequest>&& value) { m_spotInstanceRequests = std::move(value); }
-    inline RequestSpotInstancesResponse& WithSpotInstanceRequests(const Aws::Vector<SpotInstanceRequest>& value) { SetSpotInstanceRequests(value); return *this;}
-    inline RequestSpotInstancesResponse& WithSpotInstanceRequests(Aws::Vector<SpotInstanceRequest>&& value) { SetSpotInstanceRequests(std::move(value)); return *this;}
-    inline RequestSpotInstancesResponse& AddSpotInstanceRequests(const SpotInstanceRequest& value) { m_spotInstanceRequests.push_back(value); return *this; }
-    inline RequestSpotInstancesResponse& AddSpotInstanceRequests(SpotInstanceRequest&& value) { m_spotInstanceRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SpotInstanceRequest>& GetSpotInstanceRequests() const { return m_spotInstanceRequests; }
+    template<typename SpotInstanceRequestsT = Aws::Vector<SpotInstanceRequest>>
+    void SetSpotInstanceRequests(SpotInstanceRequestsT&& value) { m_spotInstanceRequestsHasBeenSet = true; m_spotInstanceRequests = std::forward<SpotInstanceRequestsT>(value); }
+    template<typename SpotInstanceRequestsT = Aws::Vector<SpotInstanceRequest>>
+    RequestSpotInstancesResponse& WithSpotInstanceRequests(SpotInstanceRequestsT&& value) { SetSpotInstanceRequests(std::forward<SpotInstanceRequestsT>(value)); return *this;}
+    template<typename SpotInstanceRequestsT = SpotInstanceRequest>
+    RequestSpotInstancesResponse& AddSpotInstanceRequests(SpotInstanceRequestsT&& value) { m_spotInstanceRequestsHasBeenSet = true; m_spotInstanceRequests.emplace_back(std::forward<SpotInstanceRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RequestSpotInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RequestSpotInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RequestSpotInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SpotInstanceRequest> m_spotInstanceRequests;
+    bool m_spotInstanceRequestsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class CreateReusableDelegationSetResult
   {
   public:
-    AWS_ROUTE53_API CreateReusableDelegationSetResult();
+    AWS_ROUTE53_API CreateReusableDelegationSetResult() = default;
     AWS_ROUTE53_API CreateReusableDelegationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API CreateReusableDelegationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>A complex type that contains name server information.</p>
      */
-    inline const DelegationSet& GetDelegationSet() const{ return m_delegationSet; }
-    inline void SetDelegationSet(const DelegationSet& value) { m_delegationSet = value; }
-    inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = std::move(value); }
-    inline CreateReusableDelegationSetResult& WithDelegationSet(const DelegationSet& value) { SetDelegationSet(value); return *this;}
-    inline CreateReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
+    inline const DelegationSet& GetDelegationSet() const { return m_delegationSet; }
+    template<typename DelegationSetT = DelegationSet>
+    void SetDelegationSet(DelegationSetT&& value) { m_delegationSetHasBeenSet = true; m_delegationSet = std::forward<DelegationSetT>(value); }
+    template<typename DelegationSetT = DelegationSet>
+    CreateReusableDelegationSetResult& WithDelegationSet(DelegationSetT&& value) { SetDelegationSet(std::forward<DelegationSetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique URL representing the new reusable delegation set.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateReusableDelegationSetResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateReusableDelegationSetResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateReusableDelegationSetResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateReusableDelegationSetResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateReusableDelegationSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateReusableDelegationSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateReusableDelegationSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateReusableDelegationSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DelegationSet m_delegationSet;
+    bool m_delegationSetHasBeenSet = false;
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

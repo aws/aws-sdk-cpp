@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SubSlotValueElicitationSetting::SubSlotValueElicitationSetting() : 
-    m_defaultValueSpecificationHasBeenSet(false),
-    m_promptSpecificationHasBeenSet(false),
-    m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false)
-{
-}
-
 SubSlotValueElicitationSetting::SubSlotValueElicitationSetting(JsonView jsonValue)
-  : SubSlotValueElicitationSetting()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SubSlotValueElicitationSetting& SubSlotValueElicitationSetting::operator =(JsonV
   if(jsonValue.ValueExists("defaultValueSpecification"))
   {
     m_defaultValueSpecification = jsonValue.GetObject("defaultValueSpecification");
-
     m_defaultValueSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptSpecification"))
   {
     m_promptSpecification = jsonValue.GetObject("promptSpecification");
-
     m_promptSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleUtterances"))
   {
     Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
@@ -57,14 +44,11 @@ SubSlotValueElicitationSetting& SubSlotValueElicitationSetting::operator =(JsonV
     }
     m_sampleUtterancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waitAndContinueSpecification"))
   {
     m_waitAndContinueSpecification = jsonValue.GetObject("waitAndContinueSpecification");
-
     m_waitAndContinueSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

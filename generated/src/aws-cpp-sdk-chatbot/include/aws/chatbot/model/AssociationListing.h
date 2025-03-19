@@ -32,7 +32,7 @@ namespace Model
   class AssociationListing
   {
   public:
-    AWS_CHATBOT_API AssociationListing();
+    AWS_CHATBOT_API AssociationListing() = default;
     AWS_CHATBOT_API AssociationListing(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API AssociationListing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource (for example, a custom
      * action).</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline AssociationListing& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline AssociationListing& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline AssociationListing& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    AssociationListing& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
   private:
 

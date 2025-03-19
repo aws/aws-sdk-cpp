@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterEbsVolumeConfig::ClusterEbsVolumeConfig() : 
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
-{
-}
-
 ClusterEbsVolumeConfig::ClusterEbsVolumeConfig(JsonView jsonValue)
-  : ClusterEbsVolumeConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ClusterEbsVolumeConfig& ClusterEbsVolumeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   return *this;
 }
 

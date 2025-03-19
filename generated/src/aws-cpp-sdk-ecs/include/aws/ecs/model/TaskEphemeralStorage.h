@@ -32,7 +32,7 @@ namespace Model
   class TaskEphemeralStorage
   {
   public:
-    AWS_ECS_API TaskEphemeralStorage();
+    AWS_ECS_API TaskEphemeralStorage() = default;
     AWS_ECS_API TaskEphemeralStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API TaskEphemeralStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * minimum supported value is <code>20</code> GiB and the maximum supported value
      * is&#x2028; <code>200</code> GiB.</p>
      */
-    inline int GetSizeInGiB() const{ return m_sizeInGiB; }
+    inline int GetSizeInGiB() const { return m_sizeInGiB; }
     inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }
     inline void SetSizeInGiB(int value) { m_sizeInGiBHasBeenSet = true; m_sizeInGiB = value; }
     inline TaskEphemeralStorage& WithSizeInGiB(int value) { SetSizeInGiB(value); return *this;}
@@ -55,18 +55,16 @@ namespace Model
      * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
      * the task.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline TaskEphemeralStorage& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline TaskEphemeralStorage& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline TaskEphemeralStorage& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    TaskEphemeralStorage& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_sizeInGiB;
+    int m_sizeInGiB{0};
     bool m_sizeInGiBHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

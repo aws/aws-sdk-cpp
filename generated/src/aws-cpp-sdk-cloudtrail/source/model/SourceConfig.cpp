@@ -18,15 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-SourceConfig::SourceConfig() : 
-    m_applyToAllRegions(false),
-    m_applyToAllRegionsHasBeenSet(false),
-    m_advancedEventSelectorsHasBeenSet(false)
-{
-}
-
 SourceConfig::SourceConfig(JsonView jsonValue)
-  : SourceConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SourceConfig& SourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplyToAllRegions"))
   {
     m_applyToAllRegions = jsonValue.GetBool("ApplyToAllRegions");
-
     m_applyToAllRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedEventSelectors"))
   {
     Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
@@ -49,7 +39,6 @@ SourceConfig& SourceConfig::operator =(JsonView jsonValue)
     }
     m_advancedEventSelectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

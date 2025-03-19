@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrafficPattern::TrafficPattern() : 
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_phasesHasBeenSet(false),
-    m_stairsHasBeenSet(false)
-{
-}
-
 TrafficPattern::TrafficPattern(JsonView jsonValue)
-  : TrafficPattern()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ TrafficPattern& TrafficPattern::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrafficType"))
   {
     m_trafficType = TrafficTypeMapper::GetTrafficTypeForName(jsonValue.GetString("TrafficType"));
-
     m_trafficTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phases"))
   {
     Aws::Utils::Array<JsonView> phasesJsonList = jsonValue.GetArray("Phases");
@@ -50,14 +39,11 @@ TrafficPattern& TrafficPattern::operator =(JsonView jsonValue)
     }
     m_phasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stairs"))
   {
     m_stairs = jsonValue.GetObject("Stairs");
-
     m_stairsHasBeenSet = true;
   }
-
   return *this;
 }
 

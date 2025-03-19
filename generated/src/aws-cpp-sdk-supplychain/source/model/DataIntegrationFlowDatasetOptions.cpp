@@ -18,16 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowDatasetOptions::DataIntegrationFlowDatasetOptions() : 
-    m_loadType(DataIntegrationFlowLoadType::NOT_SET),
-    m_loadTypeHasBeenSet(false),
-    m_dedupeRecords(false),
-    m_dedupeRecordsHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowDatasetOptions::DataIntegrationFlowDatasetOptions(JsonView jsonValue)
-  : DataIntegrationFlowDatasetOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DataIntegrationFlowDatasetOptions& DataIntegrationFlowDatasetOptions::operator =
   if(jsonValue.ValueExists("loadType"))
   {
     m_loadType = DataIntegrationFlowLoadTypeMapper::GetDataIntegrationFlowLoadTypeForName(jsonValue.GetString("loadType"));
-
     m_loadTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dedupeRecords"))
   {
     m_dedupeRecords = jsonValue.GetBool("dedupeRecords");
-
     m_dedupeRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-StatusDetailFilters::StatusDetailFilters() : 
-    m_accountIdHasBeenSet(false),
-    m_memberAccountRuleStatus(MemberAccountRuleStatus::NOT_SET),
-    m_memberAccountRuleStatusHasBeenSet(false)
-{
-}
-
 StatusDetailFilters::StatusDetailFilters(JsonView jsonValue)
-  : StatusDetailFilters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StatusDetailFilters& StatusDetailFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberAccountRuleStatus"))
   {
     m_memberAccountRuleStatus = MemberAccountRuleStatusMapper::GetMemberAccountRuleStatusForName(jsonValue.GetString("MemberAccountRuleStatus"));
-
     m_memberAccountRuleStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

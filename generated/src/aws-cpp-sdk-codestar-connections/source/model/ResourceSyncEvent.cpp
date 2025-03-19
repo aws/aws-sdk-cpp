@@ -18,16 +18,7 @@ namespace CodeStarconnections
 namespace Model
 {
 
-ResourceSyncEvent::ResourceSyncEvent() : 
-    m_eventHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ResourceSyncEvent::ResourceSyncEvent(JsonView jsonValue)
-  : ResourceSyncEvent()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourceSyncEvent& ResourceSyncEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Event"))
   {
     m_event = jsonValue.GetString("Event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetDouble("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

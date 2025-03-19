@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ClusterConfigStatus::ClusterConfigStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClusterConfigStatus::ClusterConfigStatus(JsonView jsonValue)
-  : ClusterConfigStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClusterConfigStatus& ClusterConfigStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAssessmentReportRequest::GetAssessmentReportRequest() : 
-    m_assessmentRunArnHasBeenSet(false),
-    m_reportFileFormat(ReportFileFormat::NOT_SET),
-    m_reportFileFormatHasBeenSet(false),
-    m_reportType(ReportType::NOT_SET),
-    m_reportTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetAssessmentReportRequest::SerializePayload() const
 {
   JsonValue payload;

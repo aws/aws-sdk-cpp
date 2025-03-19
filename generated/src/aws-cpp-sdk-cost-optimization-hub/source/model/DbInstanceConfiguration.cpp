@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-DbInstanceConfiguration::DbInstanceConfiguration() : 
-    m_dbInstanceClassHasBeenSet(false)
-{
-}
-
 DbInstanceConfiguration::DbInstanceConfiguration(JsonView jsonValue)
-  : DbInstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DbInstanceConfiguration& DbInstanceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dbInstanceClass"))
   {
     m_dbInstanceClass = jsonValue.GetString("dbInstanceClass");
-
     m_dbInstanceClassHasBeenSet = true;
   }
-
   return *this;
 }
 

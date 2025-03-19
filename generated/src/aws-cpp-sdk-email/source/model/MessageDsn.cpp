@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-MessageDsn::MessageDsn() : 
-    m_reportingMtaHasBeenSet(false),
-    m_arrivalDateHasBeenSet(false),
-    m_extensionFieldsHasBeenSet(false)
-{
-}
-
 MessageDsn::MessageDsn(const XmlNode& xmlNode)
-  : MessageDsn()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ MessageDsn& MessageDsn::operator =(const XmlNode& xmlNode)
     if(!extensionFieldsNode.IsNull())
     {
       XmlNode extensionFieldsMember = extensionFieldsNode.FirstChild("member");
+      m_extensionFieldsHasBeenSet = !extensionFieldsMember.IsNull();
       while(!extensionFieldsMember.IsNull())
       {
         m_extensionFields.push_back(extensionFieldsMember);

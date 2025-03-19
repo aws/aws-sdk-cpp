@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepRequiredCapabilities::StepRequiredCapabilities() : 
-    m_attributesHasBeenSet(false),
-    m_amountsHasBeenSet(false)
-{
-}
-
 StepRequiredCapabilities::StepRequiredCapabilities(JsonView jsonValue)
-  : StepRequiredCapabilities()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ StepRequiredCapabilities& StepRequiredCapabilities::operator =(JsonView jsonValu
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amounts"))
   {
     Aws::Utils::Array<JsonView> amountsJsonList = jsonValue.GetArray("amounts");
@@ -51,7 +43,6 @@ StepRequiredCapabilities& StepRequiredCapabilities::operator =(JsonView jsonValu
     }
     m_amountsHasBeenSet = true;
   }
-
   return *this;
 }
 

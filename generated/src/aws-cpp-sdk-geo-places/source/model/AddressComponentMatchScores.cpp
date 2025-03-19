@@ -18,35 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AddressComponentMatchScores::AddressComponentMatchScores() : 
-    m_country(0.0),
-    m_countryHasBeenSet(false),
-    m_region(0.0),
-    m_regionHasBeenSet(false),
-    m_subRegion(0.0),
-    m_subRegionHasBeenSet(false),
-    m_locality(0.0),
-    m_localityHasBeenSet(false),
-    m_district(0.0),
-    m_districtHasBeenSet(false),
-    m_subDistrict(0.0),
-    m_subDistrictHasBeenSet(false),
-    m_postalCode(0.0),
-    m_postalCodeHasBeenSet(false),
-    m_block(0.0),
-    m_blockHasBeenSet(false),
-    m_subBlock(0.0),
-    m_subBlockHasBeenSet(false),
-    m_intersectionHasBeenSet(false),
-    m_addressNumber(0.0),
-    m_addressNumberHasBeenSet(false),
-    m_building(0.0),
-    m_buildingHasBeenSet(false)
-{
-}
-
 AddressComponentMatchScores::AddressComponentMatchScores(JsonView jsonValue)
-  : AddressComponentMatchScores()
 {
   *this = jsonValue;
 }
@@ -56,66 +28,48 @@ AddressComponentMatchScores& AddressComponentMatchScores::operator =(JsonView js
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetDouble("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetDouble("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubRegion"))
   {
     m_subRegion = jsonValue.GetDouble("SubRegion");
-
     m_subRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locality"))
   {
     m_locality = jsonValue.GetDouble("Locality");
-
     m_localityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("District"))
   {
     m_district = jsonValue.GetDouble("District");
-
     m_districtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubDistrict"))
   {
     m_subDistrict = jsonValue.GetDouble("SubDistrict");
-
     m_subDistrictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetDouble("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Block"))
   {
     m_block = jsonValue.GetDouble("Block");
-
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubBlock"))
   {
     m_subBlock = jsonValue.GetDouble("SubBlock");
-
     m_subBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Intersection"))
   {
     Aws::Utils::Array<JsonView> intersectionJsonList = jsonValue.GetArray("Intersection");
@@ -125,21 +79,16 @@ AddressComponentMatchScores& AddressComponentMatchScores::operator =(JsonView js
     }
     m_intersectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumber"))
   {
     m_addressNumber = jsonValue.GetDouble("AddressNumber");
-
     m_addressNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Building"))
   {
     m_building = jsonValue.GetDouble("Building");
-
     m_buildingHasBeenSet = true;
   }
-
   return *this;
 }
 

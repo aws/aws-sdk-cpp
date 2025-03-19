@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SimpleEmailPart::SimpleEmailPart() : 
-    m_charsetHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 SimpleEmailPart::SimpleEmailPart(JsonView jsonValue)
-  : SimpleEmailPart()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SimpleEmailPart& SimpleEmailPart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Charset"))
   {
     m_charset = jsonValue.GetString("Charset");
-
     m_charsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetString("Data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ChannelBanSummary
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ChannelBanSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelBanSummary() = default;
     AWS_CHIMESDKMESSAGING_API ChannelBanSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API ChannelBanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The member being banned from a channel.</p>
      */
-    inline const Identity& GetMember() const{ return m_member; }
+    inline const Identity& GetMember() const { return m_member; }
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-    inline void SetMember(const Identity& value) { m_memberHasBeenSet = true; m_member = value; }
-    inline void SetMember(Identity&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-    inline ChannelBanSummary& WithMember(const Identity& value) { SetMember(value); return *this;}
-    inline ChannelBanSummary& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
+    template<typename MemberT = Identity>
+    void SetMember(MemberT&& value) { m_memberHasBeenSet = true; m_member = std::forward<MemberT>(value); }
+    template<typename MemberT = Identity>
+    ChannelBanSummary& WithMember(MemberT&& value) { SetMember(std::forward<MemberT>(value)); return *this;}
     ///@}
   private:
 

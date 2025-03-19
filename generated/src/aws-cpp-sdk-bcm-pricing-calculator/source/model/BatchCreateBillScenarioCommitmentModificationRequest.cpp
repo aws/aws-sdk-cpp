@@ -12,14 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateBillScenarioCommitmentModificationRequest::BatchCreateBillScenarioCommitmentModificationRequest() : 
-    m_billScenarioIdHasBeenSet(false),
-    m_commitmentModificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String BatchCreateBillScenarioCommitmentModificationRequest::SerializePayload() const
 {
   JsonValue payload;

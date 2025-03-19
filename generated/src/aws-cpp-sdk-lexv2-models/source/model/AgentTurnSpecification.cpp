@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AgentTurnSpecification::AgentTurnSpecification() : 
-    m_agentPromptHasBeenSet(false)
-{
-}
-
 AgentTurnSpecification::AgentTurnSpecification(JsonView jsonValue)
-  : AgentTurnSpecification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentTurnSpecification& AgentTurnSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentPrompt"))
   {
     m_agentPrompt = jsonValue.GetString("agentPrompt");
-
     m_agentPromptHasBeenSet = true;
   }
-
   return *this;
 }
 

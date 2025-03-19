@@ -37,7 +37,7 @@ namespace Model
   class SalesforceConfiguration
   {
   public:
-    AWS_KENDRA_API SalesforceConfiguration();
+    AWS_KENDRA_API SalesforceConfiguration() = default;
     AWS_KENDRA_API SalesforceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SalesforceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The instance URL for the Salesforce site that you want to index.</p>
      */
-    inline const Aws::String& GetServerUrl() const{ return m_serverUrl; }
+    inline const Aws::String& GetServerUrl() const { return m_serverUrl; }
     inline bool ServerUrlHasBeenSet() const { return m_serverUrlHasBeenSet; }
-    inline void SetServerUrl(const Aws::String& value) { m_serverUrlHasBeenSet = true; m_serverUrl = value; }
-    inline void SetServerUrl(Aws::String&& value) { m_serverUrlHasBeenSet = true; m_serverUrl = std::move(value); }
-    inline void SetServerUrl(const char* value) { m_serverUrlHasBeenSet = true; m_serverUrl.assign(value); }
-    inline SalesforceConfiguration& WithServerUrl(const Aws::String& value) { SetServerUrl(value); return *this;}
-    inline SalesforceConfiguration& WithServerUrl(Aws::String&& value) { SetServerUrl(std::move(value)); return *this;}
-    inline SalesforceConfiguration& WithServerUrl(const char* value) { SetServerUrl(value); return *this;}
+    template<typename ServerUrlT = Aws::String>
+    void SetServerUrl(ServerUrlT&& value) { m_serverUrlHasBeenSet = true; m_serverUrl = std::forward<ServerUrlT>(value); }
+    template<typename ServerUrlT = Aws::String>
+    SalesforceConfiguration& WithServerUrl(ServerUrlT&& value) { SetServerUrl(std::forward<ServerUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline SalesforceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline SalesforceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline SalesforceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    SalesforceConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,14 @@ namespace Model
      * <p>Configuration of the Salesforce standard objects that Amazon Kendra
      * indexes.</p>
      */
-    inline const Aws::Vector<SalesforceStandardObjectConfiguration>& GetStandardObjectConfigurations() const{ return m_standardObjectConfigurations; }
+    inline const Aws::Vector<SalesforceStandardObjectConfiguration>& GetStandardObjectConfigurations() const { return m_standardObjectConfigurations; }
     inline bool StandardObjectConfigurationsHasBeenSet() const { return m_standardObjectConfigurationsHasBeenSet; }
-    inline void SetStandardObjectConfigurations(const Aws::Vector<SalesforceStandardObjectConfiguration>& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations = value; }
-    inline void SetStandardObjectConfigurations(Aws::Vector<SalesforceStandardObjectConfiguration>&& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations = std::move(value); }
-    inline SalesforceConfiguration& WithStandardObjectConfigurations(const Aws::Vector<SalesforceStandardObjectConfiguration>& value) { SetStandardObjectConfigurations(value); return *this;}
-    inline SalesforceConfiguration& WithStandardObjectConfigurations(Aws::Vector<SalesforceStandardObjectConfiguration>&& value) { SetStandardObjectConfigurations(std::move(value)); return *this;}
-    inline SalesforceConfiguration& AddStandardObjectConfigurations(const SalesforceStandardObjectConfiguration& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations.push_back(value); return *this; }
-    inline SalesforceConfiguration& AddStandardObjectConfigurations(SalesforceStandardObjectConfiguration&& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations.push_back(std::move(value)); return *this; }
+    template<typename StandardObjectConfigurationsT = Aws::Vector<SalesforceStandardObjectConfiguration>>
+    void SetStandardObjectConfigurations(StandardObjectConfigurationsT&& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations = std::forward<StandardObjectConfigurationsT>(value); }
+    template<typename StandardObjectConfigurationsT = Aws::Vector<SalesforceStandardObjectConfiguration>>
+    SalesforceConfiguration& WithStandardObjectConfigurations(StandardObjectConfigurationsT&& value) { SetStandardObjectConfigurations(std::forward<StandardObjectConfigurationsT>(value)); return *this;}
+    template<typename StandardObjectConfigurationsT = SalesforceStandardObjectConfiguration>
+    SalesforceConfiguration& AddStandardObjectConfigurations(StandardObjectConfigurationsT&& value) { m_standardObjectConfigurationsHasBeenSet = true; m_standardObjectConfigurations.emplace_back(std::forward<StandardObjectConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,24 +100,24 @@ namespace Model
      * fields of knowledge articles, or the custom fields of custom knowledge articles,
      * but not both.</p>
      */
-    inline const SalesforceKnowledgeArticleConfiguration& GetKnowledgeArticleConfiguration() const{ return m_knowledgeArticleConfiguration; }
+    inline const SalesforceKnowledgeArticleConfiguration& GetKnowledgeArticleConfiguration() const { return m_knowledgeArticleConfiguration; }
     inline bool KnowledgeArticleConfigurationHasBeenSet() const { return m_knowledgeArticleConfigurationHasBeenSet; }
-    inline void SetKnowledgeArticleConfiguration(const SalesforceKnowledgeArticleConfiguration& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = value; }
-    inline void SetKnowledgeArticleConfiguration(SalesforceKnowledgeArticleConfiguration&& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = std::move(value); }
-    inline SalesforceConfiguration& WithKnowledgeArticleConfiguration(const SalesforceKnowledgeArticleConfiguration& value) { SetKnowledgeArticleConfiguration(value); return *this;}
-    inline SalesforceConfiguration& WithKnowledgeArticleConfiguration(SalesforceKnowledgeArticleConfiguration&& value) { SetKnowledgeArticleConfiguration(std::move(value)); return *this;}
+    template<typename KnowledgeArticleConfigurationT = SalesforceKnowledgeArticleConfiguration>
+    void SetKnowledgeArticleConfiguration(KnowledgeArticleConfigurationT&& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = std::forward<KnowledgeArticleConfigurationT>(value); }
+    template<typename KnowledgeArticleConfigurationT = SalesforceKnowledgeArticleConfiguration>
+    SalesforceConfiguration& WithKnowledgeArticleConfiguration(KnowledgeArticleConfigurationT&& value) { SetKnowledgeArticleConfiguration(std::forward<KnowledgeArticleConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for Salesforce chatter feeds.</p>
      */
-    inline const SalesforceChatterFeedConfiguration& GetChatterFeedConfiguration() const{ return m_chatterFeedConfiguration; }
+    inline const SalesforceChatterFeedConfiguration& GetChatterFeedConfiguration() const { return m_chatterFeedConfiguration; }
     inline bool ChatterFeedConfigurationHasBeenSet() const { return m_chatterFeedConfigurationHasBeenSet; }
-    inline void SetChatterFeedConfiguration(const SalesforceChatterFeedConfiguration& value) { m_chatterFeedConfigurationHasBeenSet = true; m_chatterFeedConfiguration = value; }
-    inline void SetChatterFeedConfiguration(SalesforceChatterFeedConfiguration&& value) { m_chatterFeedConfigurationHasBeenSet = true; m_chatterFeedConfiguration = std::move(value); }
-    inline SalesforceConfiguration& WithChatterFeedConfiguration(const SalesforceChatterFeedConfiguration& value) { SetChatterFeedConfiguration(value); return *this;}
-    inline SalesforceConfiguration& WithChatterFeedConfiguration(SalesforceChatterFeedConfiguration&& value) { SetChatterFeedConfiguration(std::move(value)); return *this;}
+    template<typename ChatterFeedConfigurationT = SalesforceChatterFeedConfiguration>
+    void SetChatterFeedConfiguration(ChatterFeedConfigurationT&& value) { m_chatterFeedConfigurationHasBeenSet = true; m_chatterFeedConfiguration = std::forward<ChatterFeedConfigurationT>(value); }
+    template<typename ChatterFeedConfigurationT = SalesforceChatterFeedConfiguration>
+    SalesforceConfiguration& WithChatterFeedConfiguration(ChatterFeedConfigurationT&& value) { SetChatterFeedConfiguration(std::forward<ChatterFeedConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,7 +125,7 @@ namespace Model
      * <p>Indicates whether Amazon Kendra should index attachments to Salesforce
      * objects.</p>
      */
-    inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
+    inline bool GetCrawlAttachments() const { return m_crawlAttachments; }
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
     inline SalesforceConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
@@ -140,12 +136,12 @@ namespace Model
      * <p>Configuration information for processing attachments to Salesforce standard
      * objects. </p>
      */
-    inline const SalesforceStandardObjectAttachmentConfiguration& GetStandardObjectAttachmentConfiguration() const{ return m_standardObjectAttachmentConfiguration; }
+    inline const SalesforceStandardObjectAttachmentConfiguration& GetStandardObjectAttachmentConfiguration() const { return m_standardObjectAttachmentConfiguration; }
     inline bool StandardObjectAttachmentConfigurationHasBeenSet() const { return m_standardObjectAttachmentConfigurationHasBeenSet; }
-    inline void SetStandardObjectAttachmentConfiguration(const SalesforceStandardObjectAttachmentConfiguration& value) { m_standardObjectAttachmentConfigurationHasBeenSet = true; m_standardObjectAttachmentConfiguration = value; }
-    inline void SetStandardObjectAttachmentConfiguration(SalesforceStandardObjectAttachmentConfiguration&& value) { m_standardObjectAttachmentConfigurationHasBeenSet = true; m_standardObjectAttachmentConfiguration = std::move(value); }
-    inline SalesforceConfiguration& WithStandardObjectAttachmentConfiguration(const SalesforceStandardObjectAttachmentConfiguration& value) { SetStandardObjectAttachmentConfiguration(value); return *this;}
-    inline SalesforceConfiguration& WithStandardObjectAttachmentConfiguration(SalesforceStandardObjectAttachmentConfiguration&& value) { SetStandardObjectAttachmentConfiguration(std::move(value)); return *this;}
+    template<typename StandardObjectAttachmentConfigurationT = SalesforceStandardObjectAttachmentConfiguration>
+    void SetStandardObjectAttachmentConfiguration(StandardObjectAttachmentConfigurationT&& value) { m_standardObjectAttachmentConfigurationHasBeenSet = true; m_standardObjectAttachmentConfiguration = std::forward<StandardObjectAttachmentConfigurationT>(value); }
+    template<typename StandardObjectAttachmentConfigurationT = SalesforceStandardObjectAttachmentConfiguration>
+    SalesforceConfiguration& WithStandardObjectAttachmentConfiguration(StandardObjectAttachmentConfigurationT&& value) { SetStandardObjectAttachmentConfiguration(std::forward<StandardObjectAttachmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,15 +153,14 @@ namespace Model
      * takes precedence and the document isn't included in the index.</p> <p>The
      * pattern is applied to the name of the attached file.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const{ return m_includeAttachmentFilePatterns; }
+    inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const { return m_includeAttachmentFilePatterns; }
     inline bool IncludeAttachmentFilePatternsHasBeenSet() const { return m_includeAttachmentFilePatternsHasBeenSet; }
-    inline void SetIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = value; }
-    inline void SetIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::move(value); }
-    inline SalesforceConfiguration& WithIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetIncludeAttachmentFilePatterns(value); return *this;}
-    inline SalesforceConfiguration& WithIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetIncludeAttachmentFilePatterns(std::move(value)); return *this;}
-    inline SalesforceConfiguration& AddIncludeAttachmentFilePatterns(const Aws::String& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
-    inline SalesforceConfiguration& AddIncludeAttachmentFilePatterns(Aws::String&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
-    inline SalesforceConfiguration& AddIncludeAttachmentFilePatterns(const char* value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
+    template<typename IncludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    void SetIncludeAttachmentFilePatterns(IncludeAttachmentFilePatternsT&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::forward<IncludeAttachmentFilePatternsT>(value); }
+    template<typename IncludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    SalesforceConfiguration& WithIncludeAttachmentFilePatterns(IncludeAttachmentFilePatternsT&& value) { SetIncludeAttachmentFilePatterns(std::forward<IncludeAttachmentFilePatternsT>(value)); return *this;}
+    template<typename IncludeAttachmentFilePatternsT = Aws::String>
+    SalesforceConfiguration& AddIncludeAttachmentFilePatterns(IncludeAttachmentFilePatternsT&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.emplace_back(std::forward<IncludeAttachmentFilePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -177,15 +172,14 @@ namespace Model
      * precedence and the document isn't included in the index.</p> <p>The pattern is
      * applied to the name of the attached file.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const{ return m_excludeAttachmentFilePatterns; }
+    inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const { return m_excludeAttachmentFilePatterns; }
     inline bool ExcludeAttachmentFilePatternsHasBeenSet() const { return m_excludeAttachmentFilePatternsHasBeenSet; }
-    inline void SetExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = value; }
-    inline void SetExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::move(value); }
-    inline SalesforceConfiguration& WithExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetExcludeAttachmentFilePatterns(value); return *this;}
-    inline SalesforceConfiguration& WithExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetExcludeAttachmentFilePatterns(std::move(value)); return *this;}
-    inline SalesforceConfiguration& AddExcludeAttachmentFilePatterns(const Aws::String& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
-    inline SalesforceConfiguration& AddExcludeAttachmentFilePatterns(Aws::String&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
-    inline SalesforceConfiguration& AddExcludeAttachmentFilePatterns(const char* value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
+    template<typename ExcludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    void SetExcludeAttachmentFilePatterns(ExcludeAttachmentFilePatternsT&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::forward<ExcludeAttachmentFilePatternsT>(value); }
+    template<typename ExcludeAttachmentFilePatternsT = Aws::Vector<Aws::String>>
+    SalesforceConfiguration& WithExcludeAttachmentFilePatterns(ExcludeAttachmentFilePatternsT&& value) { SetExcludeAttachmentFilePatterns(std::forward<ExcludeAttachmentFilePatternsT>(value)); return *this;}
+    template<typename ExcludeAttachmentFilePatternsT = Aws::String>
+    SalesforceConfiguration& AddExcludeAttachmentFilePatterns(ExcludeAttachmentFilePatternsT&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.emplace_back(std::forward<ExcludeAttachmentFilePatternsT>(value)); return *this; }
     ///@}
   private:
 
@@ -204,7 +198,7 @@ namespace Model
     SalesforceChatterFeedConfiguration m_chatterFeedConfiguration;
     bool m_chatterFeedConfigurationHasBeenSet = false;
 
-    bool m_crawlAttachments;
+    bool m_crawlAttachments{false};
     bool m_crawlAttachmentsHasBeenSet = false;
 
     SalesforceStandardObjectAttachmentConfiguration m_standardObjectAttachmentConfiguration;

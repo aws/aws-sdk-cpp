@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListUnsupportedAppVersionResourcesResult::ListUnsupportedAppVersionResourcesResult()
-{
-}
-
 ListUnsupportedAppVersionResourcesResult::ListUnsupportedAppVersionResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListUnsupportedAppVersionResourcesResult& ListUnsupportedAppVersionResourcesResu
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolutionId"))
   {
     m_resolutionId = jsonValue.GetString("resolutionId");
-
+    m_resolutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unsupportedResources"))
   {
     Aws::Utils::Array<JsonView> unsupportedResourcesJsonList = jsonValue.GetArray("unsupportedResources");
@@ -48,14 +42,15 @@ ListUnsupportedAppVersionResourcesResult& ListUnsupportedAppVersionResourcesResu
     {
       m_unsupportedResources.push_back(unsupportedResourcesJsonList[unsupportedResourcesIndex].AsObject());
     }
+    m_unsupportedResourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

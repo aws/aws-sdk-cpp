@@ -12,16 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartVariantImportJobRequest::StartVariantImportJobRequest() : 
-    m_destinationNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
-    m_annotationFieldsHasBeenSet(false)
-{
-}
-
 Aws::String StartVariantImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

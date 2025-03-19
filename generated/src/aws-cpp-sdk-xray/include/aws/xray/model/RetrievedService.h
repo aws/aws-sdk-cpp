@@ -35,7 +35,7 @@ namespace Model
   class RetrievedService
   {
   public:
-    AWS_XRAY_API RetrievedService();
+    AWS_XRAY_API RetrievedService() = default;
     AWS_XRAY_API RetrievedService(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API RetrievedService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
 
     ///@{
     
-    inline const Service& GetService() const{ return m_service; }
+    inline const Service& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Service& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Service&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline RetrievedService& WithService(const Service& value) { SetService(value); return *this;}
-    inline RetrievedService& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    template<typename ServiceT = Service>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Service>
+    RetrievedService& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Relation between two 2 services. </p>
      */
-    inline const Aws::Vector<GraphLink>& GetLinks() const{ return m_links; }
+    inline const Aws::Vector<GraphLink>& GetLinks() const { return m_links; }
     inline bool LinksHasBeenSet() const { return m_linksHasBeenSet; }
-    inline void SetLinks(const Aws::Vector<GraphLink>& value) { m_linksHasBeenSet = true; m_links = value; }
-    inline void SetLinks(Aws::Vector<GraphLink>&& value) { m_linksHasBeenSet = true; m_links = std::move(value); }
-    inline RetrievedService& WithLinks(const Aws::Vector<GraphLink>& value) { SetLinks(value); return *this;}
-    inline RetrievedService& WithLinks(Aws::Vector<GraphLink>&& value) { SetLinks(std::move(value)); return *this;}
-    inline RetrievedService& AddLinks(const GraphLink& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
-    inline RetrievedService& AddLinks(GraphLink&& value) { m_linksHasBeenSet = true; m_links.push_back(std::move(value)); return *this; }
+    template<typename LinksT = Aws::Vector<GraphLink>>
+    void SetLinks(LinksT&& value) { m_linksHasBeenSet = true; m_links = std::forward<LinksT>(value); }
+    template<typename LinksT = Aws::Vector<GraphLink>>
+    RetrievedService& WithLinks(LinksT&& value) { SetLinks(std::forward<LinksT>(value)); return *this;}
+    template<typename LinksT = GraphLink>
+    RetrievedService& AddLinks(LinksT&& value) { m_linksHasBeenSet = true; m_links.emplace_back(std::forward<LinksT>(value)); return *this; }
     ///@}
   private:
 

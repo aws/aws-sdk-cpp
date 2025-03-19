@@ -37,7 +37,7 @@ namespace Model
   class CreateConnectionAuthRequestParameters
   {
   public:
-    AWS_EVENTBRIDGE_API CreateConnectionAuthRequestParameters();
+    AWS_EVENTBRIDGE_API CreateConnectionAuthRequestParameters() = default;
     AWS_EVENTBRIDGE_API CreateConnectionAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API CreateConnectionAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,36 +47,36 @@ namespace Model
     /**
      * <p>The Basic authorization parameters to use for the connection.</p>
      */
-    inline const CreateConnectionBasicAuthRequestParameters& GetBasicAuthParameters() const{ return m_basicAuthParameters; }
+    inline const CreateConnectionBasicAuthRequestParameters& GetBasicAuthParameters() const { return m_basicAuthParameters; }
     inline bool BasicAuthParametersHasBeenSet() const { return m_basicAuthParametersHasBeenSet; }
-    inline void SetBasicAuthParameters(const CreateConnectionBasicAuthRequestParameters& value) { m_basicAuthParametersHasBeenSet = true; m_basicAuthParameters = value; }
-    inline void SetBasicAuthParameters(CreateConnectionBasicAuthRequestParameters&& value) { m_basicAuthParametersHasBeenSet = true; m_basicAuthParameters = std::move(value); }
-    inline CreateConnectionAuthRequestParameters& WithBasicAuthParameters(const CreateConnectionBasicAuthRequestParameters& value) { SetBasicAuthParameters(value); return *this;}
-    inline CreateConnectionAuthRequestParameters& WithBasicAuthParameters(CreateConnectionBasicAuthRequestParameters&& value) { SetBasicAuthParameters(std::move(value)); return *this;}
+    template<typename BasicAuthParametersT = CreateConnectionBasicAuthRequestParameters>
+    void SetBasicAuthParameters(BasicAuthParametersT&& value) { m_basicAuthParametersHasBeenSet = true; m_basicAuthParameters = std::forward<BasicAuthParametersT>(value); }
+    template<typename BasicAuthParametersT = CreateConnectionBasicAuthRequestParameters>
+    CreateConnectionAuthRequestParameters& WithBasicAuthParameters(BasicAuthParametersT&& value) { SetBasicAuthParameters(std::forward<BasicAuthParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OAuth authorization parameters to use for the connection.</p>
      */
-    inline const CreateConnectionOAuthRequestParameters& GetOAuthParameters() const{ return m_oAuthParameters; }
+    inline const CreateConnectionOAuthRequestParameters& GetOAuthParameters() const { return m_oAuthParameters; }
     inline bool OAuthParametersHasBeenSet() const { return m_oAuthParametersHasBeenSet; }
-    inline void SetOAuthParameters(const CreateConnectionOAuthRequestParameters& value) { m_oAuthParametersHasBeenSet = true; m_oAuthParameters = value; }
-    inline void SetOAuthParameters(CreateConnectionOAuthRequestParameters&& value) { m_oAuthParametersHasBeenSet = true; m_oAuthParameters = std::move(value); }
-    inline CreateConnectionAuthRequestParameters& WithOAuthParameters(const CreateConnectionOAuthRequestParameters& value) { SetOAuthParameters(value); return *this;}
-    inline CreateConnectionAuthRequestParameters& WithOAuthParameters(CreateConnectionOAuthRequestParameters&& value) { SetOAuthParameters(std::move(value)); return *this;}
+    template<typename OAuthParametersT = CreateConnectionOAuthRequestParameters>
+    void SetOAuthParameters(OAuthParametersT&& value) { m_oAuthParametersHasBeenSet = true; m_oAuthParameters = std::forward<OAuthParametersT>(value); }
+    template<typename OAuthParametersT = CreateConnectionOAuthRequestParameters>
+    CreateConnectionAuthRequestParameters& WithOAuthParameters(OAuthParametersT&& value) { SetOAuthParameters(std::forward<OAuthParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API key authorization parameters to use for the connection.</p>
      */
-    inline const CreateConnectionApiKeyAuthRequestParameters& GetApiKeyAuthParameters() const{ return m_apiKeyAuthParameters; }
+    inline const CreateConnectionApiKeyAuthRequestParameters& GetApiKeyAuthParameters() const { return m_apiKeyAuthParameters; }
     inline bool ApiKeyAuthParametersHasBeenSet() const { return m_apiKeyAuthParametersHasBeenSet; }
-    inline void SetApiKeyAuthParameters(const CreateConnectionApiKeyAuthRequestParameters& value) { m_apiKeyAuthParametersHasBeenSet = true; m_apiKeyAuthParameters = value; }
-    inline void SetApiKeyAuthParameters(CreateConnectionApiKeyAuthRequestParameters&& value) { m_apiKeyAuthParametersHasBeenSet = true; m_apiKeyAuthParameters = std::move(value); }
-    inline CreateConnectionAuthRequestParameters& WithApiKeyAuthParameters(const CreateConnectionApiKeyAuthRequestParameters& value) { SetApiKeyAuthParameters(value); return *this;}
-    inline CreateConnectionAuthRequestParameters& WithApiKeyAuthParameters(CreateConnectionApiKeyAuthRequestParameters&& value) { SetApiKeyAuthParameters(std::move(value)); return *this;}
+    template<typename ApiKeyAuthParametersT = CreateConnectionApiKeyAuthRequestParameters>
+    void SetApiKeyAuthParameters(ApiKeyAuthParametersT&& value) { m_apiKeyAuthParametersHasBeenSet = true; m_apiKeyAuthParameters = std::forward<ApiKeyAuthParametersT>(value); }
+    template<typename ApiKeyAuthParametersT = CreateConnectionApiKeyAuthRequestParameters>
+    CreateConnectionAuthRequestParameters& WithApiKeyAuthParameters(ApiKeyAuthParametersT&& value) { SetApiKeyAuthParameters(std::forward<ApiKeyAuthParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * <code>HttpParameters</code>, including query strings, the parameters added for
      * the connection take precedence.</p>
      */
-    inline const ConnectionHttpParameters& GetInvocationHttpParameters() const{ return m_invocationHttpParameters; }
+    inline const ConnectionHttpParameters& GetInvocationHttpParameters() const { return m_invocationHttpParameters; }
     inline bool InvocationHttpParametersHasBeenSet() const { return m_invocationHttpParametersHasBeenSet; }
-    inline void SetInvocationHttpParameters(const ConnectionHttpParameters& value) { m_invocationHttpParametersHasBeenSet = true; m_invocationHttpParameters = value; }
-    inline void SetInvocationHttpParameters(ConnectionHttpParameters&& value) { m_invocationHttpParametersHasBeenSet = true; m_invocationHttpParameters = std::move(value); }
-    inline CreateConnectionAuthRequestParameters& WithInvocationHttpParameters(const ConnectionHttpParameters& value) { SetInvocationHttpParameters(value); return *this;}
-    inline CreateConnectionAuthRequestParameters& WithInvocationHttpParameters(ConnectionHttpParameters&& value) { SetInvocationHttpParameters(std::move(value)); return *this;}
+    template<typename InvocationHttpParametersT = ConnectionHttpParameters>
+    void SetInvocationHttpParameters(InvocationHttpParametersT&& value) { m_invocationHttpParametersHasBeenSet = true; m_invocationHttpParameters = std::forward<InvocationHttpParametersT>(value); }
+    template<typename InvocationHttpParametersT = ConnectionHttpParameters>
+    CreateConnectionAuthRequestParameters& WithInvocationHttpParameters(InvocationHttpParametersT&& value) { SetInvocationHttpParameters(std::forward<InvocationHttpParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +103,12 @@ namespace Model
      * methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i>
      * </i>.</p>
      */
-    inline const ConnectivityResourceParameters& GetConnectivityParameters() const{ return m_connectivityParameters; }
+    inline const ConnectivityResourceParameters& GetConnectivityParameters() const { return m_connectivityParameters; }
     inline bool ConnectivityParametersHasBeenSet() const { return m_connectivityParametersHasBeenSet; }
-    inline void SetConnectivityParameters(const ConnectivityResourceParameters& value) { m_connectivityParametersHasBeenSet = true; m_connectivityParameters = value; }
-    inline void SetConnectivityParameters(ConnectivityResourceParameters&& value) { m_connectivityParametersHasBeenSet = true; m_connectivityParameters = std::move(value); }
-    inline CreateConnectionAuthRequestParameters& WithConnectivityParameters(const ConnectivityResourceParameters& value) { SetConnectivityParameters(value); return *this;}
-    inline CreateConnectionAuthRequestParameters& WithConnectivityParameters(ConnectivityResourceParameters&& value) { SetConnectivityParameters(std::move(value)); return *this;}
+    template<typename ConnectivityParametersT = ConnectivityResourceParameters>
+    void SetConnectivityParameters(ConnectivityParametersT&& value) { m_connectivityParametersHasBeenSet = true; m_connectivityParameters = std::forward<ConnectivityParametersT>(value); }
+    template<typename ConnectivityParametersT = ConnectivityResourceParameters>
+    CreateConnectionAuthRequestParameters& WithConnectivityParameters(ConnectivityParametersT&& value) { SetConnectivityParameters(std::forward<ConnectivityParametersT>(value)); return *this;}
     ///@}
   private:
 

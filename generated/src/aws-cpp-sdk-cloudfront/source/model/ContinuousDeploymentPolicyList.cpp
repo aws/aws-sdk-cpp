@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentPolicyList::ContinuousDeploymentPolicyList() : 
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentPolicyList::ContinuousDeploymentPolicyList(const XmlNode& xmlNode)
-  : ContinuousDeploymentPolicyList()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ ContinuousDeploymentPolicyList& ContinuousDeploymentPolicyList::operator =(const
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("ContinuousDeploymentPolicySummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

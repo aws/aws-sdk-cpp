@@ -21,7 +21,7 @@ namespace Model
   class DeleteMultiRegionClusterRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API DeleteMultiRegionClusterRequest();
+    AWS_MEMORYDB_API DeleteMultiRegionClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the multi-Region cluster to be deleted.</p>
      */
-    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline const Aws::String& GetMultiRegionClusterName() const { return m_multiRegionClusterName; }
     inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
-    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
-    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
-    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
-    inline DeleteMultiRegionClusterRequest& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
-    inline DeleteMultiRegionClusterRequest& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
-    inline DeleteMultiRegionClusterRequest& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    template<typename MultiRegionClusterNameT = Aws::String>
+    void SetMultiRegionClusterName(MultiRegionClusterNameT&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::forward<MultiRegionClusterNameT>(value); }
+    template<typename MultiRegionClusterNameT = Aws::String>
+    DeleteMultiRegionClusterRequest& WithMultiRegionClusterName(MultiRegionClusterNameT&& value) { SetMultiRegionClusterName(std::forward<MultiRegionClusterNameT>(value)); return *this;}
     ///@}
   private:
 

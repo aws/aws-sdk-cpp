@@ -18,16 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TN3270StepOutput::TN3270StepOutput() : 
-    m_dataSetExportLocationHasBeenSet(false),
-    m_dmsOutputLocationHasBeenSet(false),
-    m_dataSetDetailsHasBeenSet(false),
-    m_scriptOutputLocationHasBeenSet(false)
-{
-}
-
 TN3270StepOutput::TN3270StepOutput(JsonView jsonValue)
-  : TN3270StepOutput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TN3270StepOutput& TN3270StepOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSetExportLocation"))
   {
     m_dataSetExportLocation = jsonValue.GetString("dataSetExportLocation");
-
     m_dataSetExportLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dmsOutputLocation"))
   {
     m_dmsOutputLocation = jsonValue.GetString("dmsOutputLocation");
-
     m_dmsOutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSetDetails"))
   {
     Aws::Utils::Array<JsonView> dataSetDetailsJsonList = jsonValue.GetArray("dataSetDetails");
@@ -57,14 +44,11 @@ TN3270StepOutput& TN3270StepOutput::operator =(JsonView jsonValue)
     }
     m_dataSetDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scriptOutputLocation"))
   {
     m_scriptOutputLocation = jsonValue.GetString("scriptOutputLocation");
-
     m_scriptOutputLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

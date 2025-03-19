@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference() : 
-    m_optIn(false),
-    m_optInHasBeenSet(false)
-{
-}
-
 StreamProcessorDataSharingPreference::StreamProcessorDataSharingPreference(JsonView jsonValue)
-  : StreamProcessorDataSharingPreference()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StreamProcessorDataSharingPreference& StreamProcessorDataSharingPreference::oper
   if(jsonValue.ValueExists("OptIn"))
   {
     m_optIn = jsonValue.GetBool("OptIn");
-
     m_optInHasBeenSet = true;
   }
-
   return *this;
 }
 

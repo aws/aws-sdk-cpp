@@ -18,16 +18,7 @@ namespace DAX
 namespace Model
 {
 
-SubnetGroup::SubnetGroup() : 
-    m_subnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 SubnetGroup::SubnetGroup(JsonView jsonValue)
-  : SubnetGroup()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SubnetGroup& SubnetGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubnetGroupName"))
   {
     m_subnetGroupName = jsonValue.GetString("SubnetGroupName");
-
     m_subnetGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -64,7 +49,6 @@ SubnetGroup& SubnetGroup::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

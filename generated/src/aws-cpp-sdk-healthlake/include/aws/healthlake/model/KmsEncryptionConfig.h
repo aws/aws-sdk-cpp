@@ -34,7 +34,7 @@ namespace Model
   class KmsEncryptionConfig
   {
   public:
-    AWS_HEALTHLAKE_API KmsEncryptionConfig();
+    AWS_HEALTHLAKE_API KmsEncryptionConfig() = default;
     AWS_HEALTHLAKE_API KmsEncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API KmsEncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p> The type of customer-managed-key(CMK) used for encryption. The two types of
      * supported CMKs are customer owned CMKs and AWS owned CMKs. </p>
      */
-    inline const CmkType& GetCmkType() const{ return m_cmkType; }
+    inline CmkType GetCmkType() const { return m_cmkType; }
     inline bool CmkTypeHasBeenSet() const { return m_cmkTypeHasBeenSet; }
-    inline void SetCmkType(const CmkType& value) { m_cmkTypeHasBeenSet = true; m_cmkType = value; }
-    inline void SetCmkType(CmkType&& value) { m_cmkTypeHasBeenSet = true; m_cmkType = std::move(value); }
-    inline KmsEncryptionConfig& WithCmkType(const CmkType& value) { SetCmkType(value); return *this;}
-    inline KmsEncryptionConfig& WithCmkType(CmkType&& value) { SetCmkType(std::move(value)); return *this;}
+    inline void SetCmkType(CmkType value) { m_cmkTypeHasBeenSet = true; m_cmkType = value; }
+    inline KmsEncryptionConfig& WithCmkType(CmkType value) { SetCmkType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <p> The KMS encryption key id/alias used to encrypt the data store contents at
      * rest. </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline KmsEncryptionConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline KmsEncryptionConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline KmsEncryptionConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    KmsEncryptionConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    CmkType m_cmkType;
+    CmkType m_cmkType{CmkType::NOT_SET};
     bool m_cmkTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

@@ -12,17 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDimensionRequest::CreateDimensionRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(DimensionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stringValuesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateDimensionRequest::SerializePayload() const
 {
   JsonValue payload;

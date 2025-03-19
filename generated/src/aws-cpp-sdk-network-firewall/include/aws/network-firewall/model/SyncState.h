@@ -42,7 +42,7 @@ namespace Model
   class SyncState
   {
   public:
-    AWS_NETWORKFIREWALL_API SyncState();
+    AWS_NETWORKFIREWALL_API SyncState() = default;
     AWS_NETWORKFIREWALL_API SyncState(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API SyncState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
      * instantiating the firewall endpoint in the subnet so that it's ready to take
      * traffic. This is part of the <a>FirewallStatus</a>.</p>
      */
-    inline const Attachment& GetAttachment() const{ return m_attachment; }
+    inline const Attachment& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const Attachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(Attachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline SyncState& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-    inline SyncState& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = Attachment>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = Attachment>
+    SyncState& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +72,16 @@ namespace Model
      * can properly filter network traffic. This is part of the
      * <a>FirewallStatus</a>.</p>
      */
-    inline const Aws::Map<Aws::String, PerObjectStatus>& GetConfig() const{ return m_config; }
+    inline const Aws::Map<Aws::String, PerObjectStatus>& GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const Aws::Map<Aws::String, PerObjectStatus>& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(Aws::Map<Aws::String, PerObjectStatus>&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline SyncState& WithConfig(const Aws::Map<Aws::String, PerObjectStatus>& value) { SetConfig(value); return *this;}
-    inline SyncState& WithConfig(Aws::Map<Aws::String, PerObjectStatus>&& value) { SetConfig(std::move(value)); return *this;}
-    inline SyncState& AddConfig(const Aws::String& key, const PerObjectStatus& value) { m_configHasBeenSet = true; m_config.emplace(key, value); return *this; }
-    inline SyncState& AddConfig(Aws::String&& key, const PerObjectStatus& value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), value); return *this; }
-    inline SyncState& AddConfig(const Aws::String& key, PerObjectStatus&& value) { m_configHasBeenSet = true; m_config.emplace(key, std::move(value)); return *this; }
-    inline SyncState& AddConfig(Aws::String&& key, PerObjectStatus&& value) { m_configHasBeenSet = true; m_config.emplace(std::move(key), std::move(value)); return *this; }
-    inline SyncState& AddConfig(const char* key, PerObjectStatus&& value) { m_configHasBeenSet = true; m_config.emplace(key, std::move(value)); return *this; }
-    inline SyncState& AddConfig(const char* key, const PerObjectStatus& value) { m_configHasBeenSet = true; m_config.emplace(key, value); return *this; }
+    template<typename ConfigT = Aws::Map<Aws::String, PerObjectStatus>>
+    void SetConfig(ConfigT&& value) { m_configHasBeenSet = true; m_config = std::forward<ConfigT>(value); }
+    template<typename ConfigT = Aws::Map<Aws::String, PerObjectStatus>>
+    SyncState& WithConfig(ConfigT&& value) { SetConfig(std::forward<ConfigT>(value)); return *this;}
+    template<typename ConfigKeyT = Aws::String, typename ConfigValueT = PerObjectStatus>
+    SyncState& AddConfig(ConfigKeyT&& key, ConfigValueT&& value) {
+      m_configHasBeenSet = true; m_config.emplace(std::forward<ConfigKeyT>(key), std::forward<ConfigValueT>(value)); return *this;
+    }
     ///@}
   private:
 

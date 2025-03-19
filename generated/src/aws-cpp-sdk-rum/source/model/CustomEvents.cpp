@@ -18,14 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-CustomEvents::CustomEvents() : 
-    m_status(CustomEventsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 CustomEvents::CustomEvents(JsonView jsonValue)
-  : CustomEvents()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomEvents& CustomEvents::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CustomEventsStatusMapper::GetCustomEventsStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

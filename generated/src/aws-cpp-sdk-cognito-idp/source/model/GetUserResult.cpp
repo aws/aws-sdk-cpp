@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUserResult::GetUserResult()
-{
-}
-
 GetUserResult::GetUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
+    m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAttributes"))
   {
     Aws::Utils::Array<JsonView> userAttributesJsonList = jsonValue.GetArray("UserAttributes");
@@ -42,8 +37,8 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_userAttributes.push_back(userAttributesJsonList[userAttributesIndex].AsObject());
     }
+    m_userAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MFAOptions"))
   {
     Aws::Utils::Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
@@ -51,14 +46,13 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_mFAOptions.push_back(mFAOptionsJsonList[mFAOptionsIndex].AsObject());
     }
+    m_mFAOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMfaSetting"))
   {
     m_preferredMfaSetting = jsonValue.GetString("PreferredMfaSetting");
-
+    m_preferredMfaSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserMFASettingList"))
   {
     Aws::Utils::Array<JsonView> userMFASettingListJsonList = jsonValue.GetArray("UserMFASettingList");
@@ -66,14 +60,15 @@ GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_userMFASettingList.push_back(userMFASettingListJsonList[userMFASettingListIndex].AsString());
     }
+    m_userMFASettingListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

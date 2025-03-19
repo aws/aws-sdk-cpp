@@ -18,13 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-ImportSource::ImportSource() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 ImportSource::ImportSource(JsonView jsonValue)
-  : ImportSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImportSource& ImportSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

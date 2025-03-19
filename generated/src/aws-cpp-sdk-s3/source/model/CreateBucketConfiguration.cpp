@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-CreateBucketConfiguration::CreateBucketConfiguration() : 
-    m_locationConstraint(BucketLocationConstraint::NOT_SET),
-    m_locationConstraintHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_bucketHasBeenSet(false)
-{
-}
-
 CreateBucketConfiguration::CreateBucketConfiguration(const XmlNode& xmlNode)
-  : CreateBucketConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ CreateBucketConfiguration& CreateBucketConfiguration::operator =(const XmlNode& 
     XmlNode locationConstraintNode = resultNode.FirstChild("LocationConstraint");
     if(!locationConstraintNode.IsNull())
     {
-      m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(locationConstraintNode.GetText()).c_str()).c_str());
+      m_locationConstraint = BucketLocationConstraintMapper::GetBucketLocationConstraintForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(locationConstraintNode.GetText()).c_str()));
       m_locationConstraintHasBeenSet = true;
     }
     XmlNode locationNode = resultNode.FirstChild("Location");

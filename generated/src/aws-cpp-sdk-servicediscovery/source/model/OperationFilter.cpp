@@ -18,17 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-OperationFilter::OperationFilter() : 
-    m_name(OperationFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_condition(FilterCondition::NOT_SET),
-    m_conditionHasBeenSet(false)
-{
-}
-
 OperationFilter::OperationFilter(JsonView jsonValue)
-  : OperationFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ OperationFilter& OperationFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = OperationFilterNameMapper::GetOperationFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,14 +39,11 @@ OperationFilter& OperationFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = FilterConditionMapper::GetFilterConditionForName(jsonValue.GetString("Condition"));
-
     m_conditionHasBeenSet = true;
   }
-
   return *this;
 }
 

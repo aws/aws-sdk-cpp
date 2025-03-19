@@ -18,19 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FarmSummary::FarmSummary() : 
-    m_farmIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
-{
-}
-
 FarmSummary::FarmSummary(JsonView jsonValue)
-  : FarmSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ FarmSummary& FarmSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
-
     m_farmIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

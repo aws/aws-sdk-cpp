@@ -35,7 +35,7 @@ namespace Model
   class AnomalyDetectorConfiguration
   {
   public:
-    AWS_CLOUDWATCH_API AnomalyDetectorConfiguration();
+    AWS_CLOUDWATCH_API AnomalyDetectorConfiguration() = default;
     AWS_CLOUDWATCH_API AnomalyDetectorConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API AnomalyDetectorConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,14 @@ namespace Model
      * for the metric, such as deployments, aren't used when CloudWatch creates the
      * model.</p>
      */
-    inline const Aws::Vector<Range>& GetExcludedTimeRanges() const{ return m_excludedTimeRanges; }
+    inline const Aws::Vector<Range>& GetExcludedTimeRanges() const { return m_excludedTimeRanges; }
     inline bool ExcludedTimeRangesHasBeenSet() const { return m_excludedTimeRangesHasBeenSet; }
-    inline void SetExcludedTimeRanges(const Aws::Vector<Range>& value) { m_excludedTimeRangesHasBeenSet = true; m_excludedTimeRanges = value; }
-    inline void SetExcludedTimeRanges(Aws::Vector<Range>&& value) { m_excludedTimeRangesHasBeenSet = true; m_excludedTimeRanges = std::move(value); }
-    inline AnomalyDetectorConfiguration& WithExcludedTimeRanges(const Aws::Vector<Range>& value) { SetExcludedTimeRanges(value); return *this;}
-    inline AnomalyDetectorConfiguration& WithExcludedTimeRanges(Aws::Vector<Range>&& value) { SetExcludedTimeRanges(std::move(value)); return *this;}
-    inline AnomalyDetectorConfiguration& AddExcludedTimeRanges(const Range& value) { m_excludedTimeRangesHasBeenSet = true; m_excludedTimeRanges.push_back(value); return *this; }
-    inline AnomalyDetectorConfiguration& AddExcludedTimeRanges(Range&& value) { m_excludedTimeRangesHasBeenSet = true; m_excludedTimeRanges.push_back(std::move(value)); return *this; }
+    template<typename ExcludedTimeRangesT = Aws::Vector<Range>>
+    void SetExcludedTimeRanges(ExcludedTimeRangesT&& value) { m_excludedTimeRangesHasBeenSet = true; m_excludedTimeRanges = std::forward<ExcludedTimeRangesT>(value); }
+    template<typename ExcludedTimeRangesT = Aws::Vector<Range>>
+    AnomalyDetectorConfiguration& WithExcludedTimeRanges(ExcludedTimeRangesT&& value) { SetExcludedTimeRanges(std::forward<ExcludedTimeRangesT>(value)); return *this;}
+    template<typename ExcludedTimeRangesT = Range>
+    AnomalyDetectorConfiguration& AddExcludedTimeRanges(ExcludedTimeRangesT&& value) { m_excludedTimeRangesHasBeenSet = true; m_excludedTimeRanges.emplace_back(std::forward<ExcludedTimeRangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,14 +68,12 @@ namespace Model
      * the time zone as specified in the standard tz database. For more information,
      * see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
      */
-    inline const Aws::String& GetMetricTimezone() const{ return m_metricTimezone; }
+    inline const Aws::String& GetMetricTimezone() const { return m_metricTimezone; }
     inline bool MetricTimezoneHasBeenSet() const { return m_metricTimezoneHasBeenSet; }
-    inline void SetMetricTimezone(const Aws::String& value) { m_metricTimezoneHasBeenSet = true; m_metricTimezone = value; }
-    inline void SetMetricTimezone(Aws::String&& value) { m_metricTimezoneHasBeenSet = true; m_metricTimezone = std::move(value); }
-    inline void SetMetricTimezone(const char* value) { m_metricTimezoneHasBeenSet = true; m_metricTimezone.assign(value); }
-    inline AnomalyDetectorConfiguration& WithMetricTimezone(const Aws::String& value) { SetMetricTimezone(value); return *this;}
-    inline AnomalyDetectorConfiguration& WithMetricTimezone(Aws::String&& value) { SetMetricTimezone(std::move(value)); return *this;}
-    inline AnomalyDetectorConfiguration& WithMetricTimezone(const char* value) { SetMetricTimezone(value); return *this;}
+    template<typename MetricTimezoneT = Aws::String>
+    void SetMetricTimezone(MetricTimezoneT&& value) { m_metricTimezoneHasBeenSet = true; m_metricTimezone = std::forward<MetricTimezoneT>(value); }
+    template<typename MetricTimezoneT = Aws::String>
+    AnomalyDetectorConfiguration& WithMetricTimezone(MetricTimezoneT&& value) { SetMetricTimezone(std::forward<MetricTimezoneT>(value)); return *this;}
     ///@}
   private:
 

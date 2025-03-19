@@ -33,20 +33,18 @@ namespace Model
   class DescribeWorkingStorageResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult();
+    AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult() = default;
     AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeWorkingStorageResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeWorkingStorageResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeWorkingStorageResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeWorkingStorageResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,13 @@ namespace Model
      * maximum length of 300). If no local disks are configured as working storage,
      * then the DiskIds array is empty.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
-    inline void SetDiskIds(const Aws::Vector<Aws::String>& value) { m_diskIds = value; }
-    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = std::move(value); }
-    inline DescribeWorkingStorageResult& WithDiskIds(const Aws::Vector<Aws::String>& value) { SetDiskIds(value); return *this;}
-    inline DescribeWorkingStorageResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
-    inline DescribeWorkingStorageResult& AddDiskIds(const Aws::String& value) { m_diskIds.push_back(value); return *this; }
-    inline DescribeWorkingStorageResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(std::move(value)); return *this; }
-    inline DescribeWorkingStorageResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDiskIds() const { return m_diskIds; }
+    template<typename DiskIdsT = Aws::Vector<Aws::String>>
+    void SetDiskIds(DiskIdsT&& value) { m_diskIdsHasBeenSet = true; m_diskIds = std::forward<DiskIdsT>(value); }
+    template<typename DiskIdsT = Aws::Vector<Aws::String>>
+    DescribeWorkingStorageResult& WithDiskIds(DiskIdsT&& value) { SetDiskIds(std::forward<DiskIdsT>(value)); return *this;}
+    template<typename DiskIdsT = Aws::String>
+    DescribeWorkingStorageResult& AddDiskIds(DiskIdsT&& value) { m_diskIdsHasBeenSet = true; m_diskIds.emplace_back(std::forward<DiskIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,8 +68,8 @@ namespace Model
      * <p>The total working storage in bytes in use by the gateway. If no working
      * storage is configured for the gateway, this field returns 0.</p>
      */
-    inline long long GetWorkingStorageUsedInBytes() const{ return m_workingStorageUsedInBytes; }
-    inline void SetWorkingStorageUsedInBytes(long long value) { m_workingStorageUsedInBytes = value; }
+    inline long long GetWorkingStorageUsedInBytes() const { return m_workingStorageUsedInBytes; }
+    inline void SetWorkingStorageUsedInBytes(long long value) { m_workingStorageUsedInBytesHasBeenSet = true; m_workingStorageUsedInBytes = value; }
     inline DescribeWorkingStorageResult& WithWorkingStorageUsedInBytes(long long value) { SetWorkingStorageUsedInBytes(value); return *this;}
     ///@}
 
@@ -81,32 +78,35 @@ namespace Model
      * <p>The total working storage in bytes allocated for the gateway. If no working
      * storage is configured for the gateway, this field returns 0.</p>
      */
-    inline long long GetWorkingStorageAllocatedInBytes() const{ return m_workingStorageAllocatedInBytes; }
-    inline void SetWorkingStorageAllocatedInBytes(long long value) { m_workingStorageAllocatedInBytes = value; }
+    inline long long GetWorkingStorageAllocatedInBytes() const { return m_workingStorageAllocatedInBytes; }
+    inline void SetWorkingStorageAllocatedInBytes(long long value) { m_workingStorageAllocatedInBytesHasBeenSet = true; m_workingStorageAllocatedInBytes = value; }
     inline DescribeWorkingStorageResult& WithWorkingStorageAllocatedInBytes(long long value) { SetWorkingStorageAllocatedInBytes(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWorkingStorageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWorkingStorageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWorkingStorageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWorkingStorageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_diskIds;
+    bool m_diskIdsHasBeenSet = false;
 
-    long long m_workingStorageUsedInBytes;
+    long long m_workingStorageUsedInBytes{0};
+    bool m_workingStorageUsedInBytesHasBeenSet = false;
 
-    long long m_workingStorageAllocatedInBytes;
+    long long m_workingStorageAllocatedInBytes{0};
+    bool m_workingStorageAllocatedInBytesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

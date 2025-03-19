@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultContentColumn::RetrievalResultContentColumn() : 
-    m_columnNameHasBeenSet(false),
-    m_columnValueHasBeenSet(false),
-    m_type(RetrievalResultContentColumnType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RetrievalResultContentColumn::RetrievalResultContentColumn(JsonView jsonValue)
-  : RetrievalResultContentColumn()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RetrievalResultContentColumn& RetrievalResultContentColumn::operator =(JsonView 
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columnValue"))
   {
     m_columnValue = jsonValue.GetString("columnValue");
-
     m_columnValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RetrievalResultContentColumnTypeMapper::GetRetrievalResultContentColumnTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

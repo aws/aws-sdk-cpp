@@ -45,7 +45,7 @@ namespace Model
   class KmsKeyConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API KmsKeyConfiguration();
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration() = default;
     AWS_ACCESSANALYZER_API KmsKeyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API KmsKeyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,19 +58,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
      * key policy</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetKeyPolicies() const{ return m_keyPolicies; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKeyPolicies() const { return m_keyPolicies; }
     inline bool KeyPoliciesHasBeenSet() const { return m_keyPoliciesHasBeenSet; }
-    inline void SetKeyPolicies(const Aws::Map<Aws::String, Aws::String>& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies = value; }
-    inline void SetKeyPolicies(Aws::Map<Aws::String, Aws::String>&& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies = std::move(value); }
-    inline KmsKeyConfiguration& WithKeyPolicies(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyPolicies(value); return *this;}
-    inline KmsKeyConfiguration& WithKeyPolicies(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyPolicies(std::move(value)); return *this;}
-    inline KmsKeyConfiguration& AddKeyPolicies(const Aws::String& key, const Aws::String& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(key, value); return *this; }
-    inline KmsKeyConfiguration& AddKeyPolicies(Aws::String&& key, const Aws::String& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(std::move(key), value); return *this; }
-    inline KmsKeyConfiguration& AddKeyPolicies(const Aws::String& key, Aws::String&& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(key, std::move(value)); return *this; }
-    inline KmsKeyConfiguration& AddKeyPolicies(Aws::String&& key, Aws::String&& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(std::move(key), std::move(value)); return *this; }
-    inline KmsKeyConfiguration& AddKeyPolicies(const char* key, Aws::String&& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(key, std::move(value)); return *this; }
-    inline KmsKeyConfiguration& AddKeyPolicies(Aws::String&& key, const char* value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(std::move(key), value); return *this; }
-    inline KmsKeyConfiguration& AddKeyPolicies(const char* key, const char* value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(key, value); return *this; }
+    template<typename KeyPoliciesT = Aws::Map<Aws::String, Aws::String>>
+    void SetKeyPolicies(KeyPoliciesT&& value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies = std::forward<KeyPoliciesT>(value); }
+    template<typename KeyPoliciesT = Aws::Map<Aws::String, Aws::String>>
+    KmsKeyConfiguration& WithKeyPolicies(KeyPoliciesT&& value) { SetKeyPolicies(std::forward<KeyPoliciesT>(value)); return *this;}
+    template<typename KeyPoliciesKeyT = Aws::String, typename KeyPoliciesValueT = Aws::String>
+    KmsKeyConfiguration& AddKeyPolicies(KeyPoliciesKeyT&& key, KeyPoliciesValueT&& value) {
+      m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(std::forward<KeyPoliciesKeyT>(key), std::forward<KeyPoliciesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -80,14 +77,14 @@ namespace Model
      * list of grant configurations in place of the existing grants. Otherwise, the
      * access preview uses the existing grants for the key.</p>
      */
-    inline const Aws::Vector<KmsGrantConfiguration>& GetGrants() const{ return m_grants; }
+    inline const Aws::Vector<KmsGrantConfiguration>& GetGrants() const { return m_grants; }
     inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
-    inline void SetGrants(const Aws::Vector<KmsGrantConfiguration>& value) { m_grantsHasBeenSet = true; m_grants = value; }
-    inline void SetGrants(Aws::Vector<KmsGrantConfiguration>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
-    inline KmsKeyConfiguration& WithGrants(const Aws::Vector<KmsGrantConfiguration>& value) { SetGrants(value); return *this;}
-    inline KmsKeyConfiguration& WithGrants(Aws::Vector<KmsGrantConfiguration>&& value) { SetGrants(std::move(value)); return *this;}
-    inline KmsKeyConfiguration& AddGrants(const KmsGrantConfiguration& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
-    inline KmsKeyConfiguration& AddGrants(KmsGrantConfiguration&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
+    template<typename GrantsT = Aws::Vector<KmsGrantConfiguration>>
+    void SetGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants = std::forward<GrantsT>(value); }
+    template<typename GrantsT = Aws::Vector<KmsGrantConfiguration>>
+    KmsKeyConfiguration& WithGrants(GrantsT&& value) { SetGrants(std::forward<GrantsT>(value)); return *this;}
+    template<typename GrantsT = KmsGrantConfiguration>
+    KmsKeyConfiguration& AddGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants.emplace_back(std::forward<GrantsT>(value)); return *this; }
     ///@}
   private:
 

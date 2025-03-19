@@ -30,7 +30,7 @@ namespace Model
   class SendBulkTemplatedEmailRequest : public SESRequest
   {
   public:
-    AWS_SES_API SendBulkTemplatedEmailRequest();
+    AWS_SES_API SendBulkTemplatedEmailRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -70,14 +70,12 @@ namespace Model
      * email using the Amazon SES API</a>. For more information about Punycode, see <a
      * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +93,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,15 +106,14 @@ namespace Model
      * <p>The reply-to email address(es) for the message. If the recipient replies to
      * the message, each reply-to address receives the reply.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const{ return m_replyToAddresses; }
+    inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const { return m_replyToAddresses; }
     inline bool ReplyToAddressesHasBeenSet() const { return m_replyToAddressesHasBeenSet; }
-    inline void SetReplyToAddresses(const Aws::Vector<Aws::String>& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = value; }
-    inline void SetReplyToAddresses(Aws::Vector<Aws::String>&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = std::move(value); }
-    inline SendBulkTemplatedEmailRequest& WithReplyToAddresses(const Aws::Vector<Aws::String>& value) { SetReplyToAddresses(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithReplyToAddresses(Aws::Vector<Aws::String>&& value) { SetReplyToAddresses(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& AddReplyToAddresses(const Aws::String& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
-    inline SendBulkTemplatedEmailRequest& AddReplyToAddresses(Aws::String&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(std::move(value)); return *this; }
-    inline SendBulkTemplatedEmailRequest& AddReplyToAddresses(const char* value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
+    template<typename ReplyToAddressesT = Aws::Vector<Aws::String>>
+    void SetReplyToAddresses(ReplyToAddressesT&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = std::forward<ReplyToAddressesT>(value); }
+    template<typename ReplyToAddressesT = Aws::Vector<Aws::String>>
+    SendBulkTemplatedEmailRequest& WithReplyToAddresses(ReplyToAddressesT&& value) { SetReplyToAddresses(std::forward<ReplyToAddressesT>(value)); return *this;}
+    template<typename ReplyToAddressesT = Aws::String>
+    SendBulkTemplatedEmailRequest& AddReplyToAddresses(ReplyToAddressesT&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.emplace_back(std::forward<ReplyToAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,14 +126,12 @@ namespace Model
      * be either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. </p>
      */
-    inline const Aws::String& GetReturnPath() const{ return m_returnPath; }
+    inline const Aws::String& GetReturnPath() const { return m_returnPath; }
     inline bool ReturnPathHasBeenSet() const { return m_returnPathHasBeenSet; }
-    inline void SetReturnPath(const Aws::String& value) { m_returnPathHasBeenSet = true; m_returnPath = value; }
-    inline void SetReturnPath(Aws::String&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::move(value); }
-    inline void SetReturnPath(const char* value) { m_returnPathHasBeenSet = true; m_returnPath.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithReturnPath(const Aws::String& value) { SetReturnPath(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithReturnPath(Aws::String&& value) { SetReturnPath(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithReturnPath(const char* value) { SetReturnPath(value); return *this;}
+    template<typename ReturnPathT = Aws::String>
+    void SetReturnPath(ReturnPathT&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::forward<ReturnPathT>(value); }
+    template<typename ReturnPathT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithReturnPath(ReturnPathT&& value) { SetReturnPath(std::forward<ReturnPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,14 +150,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
+    inline const Aws::String& GetReturnPathArn() const { return m_returnPathArn; }
     inline bool ReturnPathArnHasBeenSet() const { return m_returnPathArnHasBeenSet; }
-    inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
-    inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
-    inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
+    template<typename ReturnPathArnT = Aws::String>
+    void SetReturnPathArn(ReturnPathArnT&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::forward<ReturnPathArnT>(value); }
+    template<typename ReturnPathArnT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithReturnPathArn(ReturnPathArnT&& value) { SetReturnPathArn(std::forward<ReturnPathArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,14 +163,12 @@ namespace Model
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendBulkTemplatedEmail</code>.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,42 +176,38 @@ namespace Model
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
      * you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
      */
-    inline const Aws::Vector<MessageTag>& GetDefaultTags() const{ return m_defaultTags; }
+    inline const Aws::Vector<MessageTag>& GetDefaultTags() const { return m_defaultTags; }
     inline bool DefaultTagsHasBeenSet() const { return m_defaultTagsHasBeenSet; }
-    inline void SetDefaultTags(const Aws::Vector<MessageTag>& value) { m_defaultTagsHasBeenSet = true; m_defaultTags = value; }
-    inline void SetDefaultTags(Aws::Vector<MessageTag>&& value) { m_defaultTagsHasBeenSet = true; m_defaultTags = std::move(value); }
-    inline SendBulkTemplatedEmailRequest& WithDefaultTags(const Aws::Vector<MessageTag>& value) { SetDefaultTags(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithDefaultTags(Aws::Vector<MessageTag>&& value) { SetDefaultTags(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& AddDefaultTags(const MessageTag& value) { m_defaultTagsHasBeenSet = true; m_defaultTags.push_back(value); return *this; }
-    inline SendBulkTemplatedEmailRequest& AddDefaultTags(MessageTag&& value) { m_defaultTagsHasBeenSet = true; m_defaultTags.push_back(std::move(value)); return *this; }
+    template<typename DefaultTagsT = Aws::Vector<MessageTag>>
+    void SetDefaultTags(DefaultTagsT&& value) { m_defaultTagsHasBeenSet = true; m_defaultTags = std::forward<DefaultTagsT>(value); }
+    template<typename DefaultTagsT = Aws::Vector<MessageTag>>
+    SendBulkTemplatedEmailRequest& WithDefaultTags(DefaultTagsT&& value) { SetDefaultTags(std::forward<DefaultTagsT>(value)); return *this;}
+    template<typename DefaultTagsT = MessageTag>
+    SendBulkTemplatedEmailRequest& AddDefaultTags(DefaultTagsT&& value) { m_defaultTagsHasBeenSet = true; m_defaultTags.emplace_back(std::forward<DefaultTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The template to use when sending this email.</p>
      */
-    inline const Aws::String& GetTemplate() const{ return m_template; }
+    inline const Aws::String& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Aws::String& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Aws::String&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline void SetTemplate(const char* value) { m_templateHasBeenSet = true; m_template.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithTemplate(const char* value) { SetTemplate(value); return *this;}
+    template<typename TemplateT = Aws::String>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the template to use when sending this email.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,14 +218,12 @@ namespace Model
      * JSON object, typically consisting of key-value pairs in which the keys
      * correspond to replacement tags in the email template.</p>
      */
-    inline const Aws::String& GetDefaultTemplateData() const{ return m_defaultTemplateData; }
+    inline const Aws::String& GetDefaultTemplateData() const { return m_defaultTemplateData; }
     inline bool DefaultTemplateDataHasBeenSet() const { return m_defaultTemplateDataHasBeenSet; }
-    inline void SetDefaultTemplateData(const Aws::String& value) { m_defaultTemplateDataHasBeenSet = true; m_defaultTemplateData = value; }
-    inline void SetDefaultTemplateData(Aws::String&& value) { m_defaultTemplateDataHasBeenSet = true; m_defaultTemplateData = std::move(value); }
-    inline void SetDefaultTemplateData(const char* value) { m_defaultTemplateDataHasBeenSet = true; m_defaultTemplateData.assign(value); }
-    inline SendBulkTemplatedEmailRequest& WithDefaultTemplateData(const Aws::String& value) { SetDefaultTemplateData(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithDefaultTemplateData(Aws::String&& value) { SetDefaultTemplateData(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithDefaultTemplateData(const char* value) { SetDefaultTemplateData(value); return *this;}
+    template<typename DefaultTemplateDataT = Aws::String>
+    void SetDefaultTemplateData(DefaultTemplateDataT&& value) { m_defaultTemplateDataHasBeenSet = true; m_defaultTemplateData = std::forward<DefaultTemplateDataT>(value); }
+    template<typename DefaultTemplateDataT = Aws::String>
+    SendBulkTemplatedEmailRequest& WithDefaultTemplateData(DefaultTemplateDataT&& value) { SetDefaultTemplateData(std::forward<DefaultTemplateDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,14 +233,14 @@ namespace Model
      * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
      * array.</p>
      */
-    inline const Aws::Vector<BulkEmailDestination>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<BulkEmailDestination>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<BulkEmailDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<BulkEmailDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline SendBulkTemplatedEmailRequest& WithDestinations(const Aws::Vector<BulkEmailDestination>& value) { SetDestinations(value); return *this;}
-    inline SendBulkTemplatedEmailRequest& WithDestinations(Aws::Vector<BulkEmailDestination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline SendBulkTemplatedEmailRequest& AddDestinations(const BulkEmailDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline SendBulkTemplatedEmailRequest& AddDestinations(BulkEmailDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<BulkEmailDestination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<BulkEmailDestination>>
+    SendBulkTemplatedEmailRequest& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = BulkEmailDestination>
+    SendBulkTemplatedEmailRequest& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
   private:
 

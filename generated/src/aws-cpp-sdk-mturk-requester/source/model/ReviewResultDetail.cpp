@@ -18,18 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-ReviewResultDetail::ReviewResultDetail() : 
-    m_actionIdHasBeenSet(false),
-    m_subjectIdHasBeenSet(false),
-    m_subjectTypeHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ReviewResultDetail::ReviewResultDetail(JsonView jsonValue)
-  : ReviewResultDetail()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ReviewResultDetail& ReviewResultDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionId"))
   {
     m_actionId = jsonValue.GetString("ActionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectId"))
   {
     m_subjectId = jsonValue.GetString("SubjectId");
-
     m_subjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectType"))
   {
     m_subjectType = jsonValue.GetString("SubjectType");
-
     m_subjectTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

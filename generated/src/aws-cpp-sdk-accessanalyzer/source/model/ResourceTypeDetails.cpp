@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-ResourceTypeDetails::ResourceTypeDetails() : 
-    m_totalActivePublic(0),
-    m_totalActivePublicHasBeenSet(false),
-    m_totalActiveCrossAccount(0),
-    m_totalActiveCrossAccountHasBeenSet(false)
-{
-}
-
 ResourceTypeDetails::ResourceTypeDetails(JsonView jsonValue)
-  : ResourceTypeDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResourceTypeDetails& ResourceTypeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalActivePublic"))
   {
     m_totalActivePublic = jsonValue.GetInteger("totalActivePublic");
-
     m_totalActivePublicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalActiveCrossAccount"))
   {
     m_totalActiveCrossAccount = jsonValue.GetInteger("totalActiveCrossAccount");
-
     m_totalActiveCrossAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

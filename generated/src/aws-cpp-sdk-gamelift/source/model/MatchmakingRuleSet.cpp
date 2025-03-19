@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-MatchmakingRuleSet::MatchmakingRuleSet() : 
-    m_ruleSetNameHasBeenSet(false),
-    m_ruleSetArnHasBeenSet(false),
-    m_ruleSetBodyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 MatchmakingRuleSet::MatchmakingRuleSet(JsonView jsonValue)
-  : MatchmakingRuleSet()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MatchmakingRuleSet& MatchmakingRuleSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleSetName"))
   {
     m_ruleSetName = jsonValue.GetString("RuleSetName");
-
     m_ruleSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetArn"))
   {
     m_ruleSetArn = jsonValue.GetString("RuleSetArn");
-
     m_ruleSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetBody"))
   {
     m_ruleSetBody = jsonValue.GetString("RuleSetBody");
-
     m_ruleSetBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

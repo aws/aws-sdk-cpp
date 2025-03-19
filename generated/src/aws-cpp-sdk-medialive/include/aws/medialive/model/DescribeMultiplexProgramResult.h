@@ -37,7 +37,7 @@ namespace Model
   class DescribeMultiplexProgramResult
   {
   public:
-    AWS_MEDIALIVE_API DescribeMultiplexProgramResult();
+    AWS_MEDIALIVE_API DescribeMultiplexProgramResult() = default;
     AWS_MEDIALIVE_API DescribeMultiplexProgramResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API DescribeMultiplexProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,35 +46,33 @@ namespace Model
     /**
      * The MediaLive channel associated with the program.
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
-    inline void SetChannelId(const Aws::String& value) { m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelId.assign(value); }
-    inline DescribeMultiplexProgramResult& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline DescribeMultiplexProgramResult& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline DescribeMultiplexProgramResult& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    DescribeMultiplexProgramResult& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The settings for this multiplex program.
      */
-    inline const MultiplexProgramSettings& GetMultiplexProgramSettings() const{ return m_multiplexProgramSettings; }
-    inline void SetMultiplexProgramSettings(const MultiplexProgramSettings& value) { m_multiplexProgramSettings = value; }
-    inline void SetMultiplexProgramSettings(MultiplexProgramSettings&& value) { m_multiplexProgramSettings = std::move(value); }
-    inline DescribeMultiplexProgramResult& WithMultiplexProgramSettings(const MultiplexProgramSettings& value) { SetMultiplexProgramSettings(value); return *this;}
-    inline DescribeMultiplexProgramResult& WithMultiplexProgramSettings(MultiplexProgramSettings&& value) { SetMultiplexProgramSettings(std::move(value)); return *this;}
+    inline const MultiplexProgramSettings& GetMultiplexProgramSettings() const { return m_multiplexProgramSettings; }
+    template<typename MultiplexProgramSettingsT = MultiplexProgramSettings>
+    void SetMultiplexProgramSettings(MultiplexProgramSettingsT&& value) { m_multiplexProgramSettingsHasBeenSet = true; m_multiplexProgramSettings = std::forward<MultiplexProgramSettingsT>(value); }
+    template<typename MultiplexProgramSettingsT = MultiplexProgramSettings>
+    DescribeMultiplexProgramResult& WithMultiplexProgramSettings(MultiplexProgramSettingsT&& value) { SetMultiplexProgramSettings(std::forward<MultiplexProgramSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The packet identifier map for this multiplex program.
      */
-    inline const MultiplexProgramPacketIdentifiersMap& GetPacketIdentifiersMap() const{ return m_packetIdentifiersMap; }
-    inline void SetPacketIdentifiersMap(const MultiplexProgramPacketIdentifiersMap& value) { m_packetIdentifiersMap = value; }
-    inline void SetPacketIdentifiersMap(MultiplexProgramPacketIdentifiersMap&& value) { m_packetIdentifiersMap = std::move(value); }
-    inline DescribeMultiplexProgramResult& WithPacketIdentifiersMap(const MultiplexProgramPacketIdentifiersMap& value) { SetPacketIdentifiersMap(value); return *this;}
-    inline DescribeMultiplexProgramResult& WithPacketIdentifiersMap(MultiplexProgramPacketIdentifiersMap&& value) { SetPacketIdentifiersMap(std::move(value)); return *this;}
+    inline const MultiplexProgramPacketIdentifiersMap& GetPacketIdentifiersMap() const { return m_packetIdentifiersMap; }
+    template<typename PacketIdentifiersMapT = MultiplexProgramPacketIdentifiersMap>
+    void SetPacketIdentifiersMap(PacketIdentifiersMapT&& value) { m_packetIdentifiersMapHasBeenSet = true; m_packetIdentifiersMap = std::forward<PacketIdentifiersMapT>(value); }
+    template<typename PacketIdentifiersMapT = MultiplexProgramPacketIdentifiersMap>
+    DescribeMultiplexProgramResult& WithPacketIdentifiersMap(PacketIdentifiersMapT&& value) { SetPacketIdentifiersMap(std::forward<PacketIdentifiersMapT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,51 +82,53 @@ namespace Model
      * pipelines in a given source channel (the channel identified by the program). But
      * only one of those channel pipelines is ever active at one time.
      */
-    inline const Aws::Vector<MultiplexProgramPipelineDetail>& GetPipelineDetails() const{ return m_pipelineDetails; }
-    inline void SetPipelineDetails(const Aws::Vector<MultiplexProgramPipelineDetail>& value) { m_pipelineDetails = value; }
-    inline void SetPipelineDetails(Aws::Vector<MultiplexProgramPipelineDetail>&& value) { m_pipelineDetails = std::move(value); }
-    inline DescribeMultiplexProgramResult& WithPipelineDetails(const Aws::Vector<MultiplexProgramPipelineDetail>& value) { SetPipelineDetails(value); return *this;}
-    inline DescribeMultiplexProgramResult& WithPipelineDetails(Aws::Vector<MultiplexProgramPipelineDetail>&& value) { SetPipelineDetails(std::move(value)); return *this;}
-    inline DescribeMultiplexProgramResult& AddPipelineDetails(const MultiplexProgramPipelineDetail& value) { m_pipelineDetails.push_back(value); return *this; }
-    inline DescribeMultiplexProgramResult& AddPipelineDetails(MultiplexProgramPipelineDetail&& value) { m_pipelineDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MultiplexProgramPipelineDetail>& GetPipelineDetails() const { return m_pipelineDetails; }
+    template<typename PipelineDetailsT = Aws::Vector<MultiplexProgramPipelineDetail>>
+    void SetPipelineDetails(PipelineDetailsT&& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails = std::forward<PipelineDetailsT>(value); }
+    template<typename PipelineDetailsT = Aws::Vector<MultiplexProgramPipelineDetail>>
+    DescribeMultiplexProgramResult& WithPipelineDetails(PipelineDetailsT&& value) { SetPipelineDetails(std::forward<PipelineDetailsT>(value)); return *this;}
+    template<typename PipelineDetailsT = MultiplexProgramPipelineDetail>
+    DescribeMultiplexProgramResult& AddPipelineDetails(PipelineDetailsT&& value) { m_pipelineDetailsHasBeenSet = true; m_pipelineDetails.emplace_back(std::forward<PipelineDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The name of the multiplex program.
      */
-    inline const Aws::String& GetProgramName() const{ return m_programName; }
-    inline void SetProgramName(const Aws::String& value) { m_programName = value; }
-    inline void SetProgramName(Aws::String&& value) { m_programName = std::move(value); }
-    inline void SetProgramName(const char* value) { m_programName.assign(value); }
-    inline DescribeMultiplexProgramResult& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-    inline DescribeMultiplexProgramResult& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-    inline DescribeMultiplexProgramResult& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    inline const Aws::String& GetProgramName() const { return m_programName; }
+    template<typename ProgramNameT = Aws::String>
+    void SetProgramName(ProgramNameT&& value) { m_programNameHasBeenSet = true; m_programName = std::forward<ProgramNameT>(value); }
+    template<typename ProgramNameT = Aws::String>
+    DescribeMultiplexProgramResult& WithProgramName(ProgramNameT&& value) { SetProgramName(std::forward<ProgramNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMultiplexProgramResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMultiplexProgramResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMultiplexProgramResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMultiplexProgramResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelId;
+    bool m_channelIdHasBeenSet = false;
 
     MultiplexProgramSettings m_multiplexProgramSettings;
+    bool m_multiplexProgramSettingsHasBeenSet = false;
 
     MultiplexProgramPacketIdentifiersMap m_packetIdentifiersMap;
+    bool m_packetIdentifiersMapHasBeenSet = false;
 
     Aws::Vector<MultiplexProgramPipelineDetail> m_pipelineDetails;
+    bool m_pipelineDetailsHasBeenSet = false;
 
     Aws::String m_programName;
+    bool m_programNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

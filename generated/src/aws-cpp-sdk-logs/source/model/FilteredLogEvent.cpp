@@ -18,19 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-FilteredLogEvent::FilteredLogEvent() : 
-    m_logStreamNameHasBeenSet(false),
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_ingestionTime(0),
-    m_ingestionTimeHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
-{
-}
-
 FilteredLogEvent::FilteredLogEvent(JsonView jsonValue)
-  : FilteredLogEvent()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ FilteredLogEvent& FilteredLogEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logStreamName"))
   {
     m_logStreamName = jsonValue.GetString("logStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestionTime"))
   {
     m_ingestionTime = jsonValue.GetInt64("ingestionTime");
-
     m_ingestionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

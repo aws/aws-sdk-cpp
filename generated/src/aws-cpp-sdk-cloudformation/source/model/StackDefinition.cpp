@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackDefinition::StackDefinition() : 
-    m_stackNameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false)
-{
-}
-
 StackDefinition::StackDefinition(const XmlNode& xmlNode)
-  : StackDefinition()
 {
   *this = xmlNode;
 }

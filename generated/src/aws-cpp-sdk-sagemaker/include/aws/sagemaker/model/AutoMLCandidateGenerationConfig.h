@@ -34,7 +34,7 @@ namespace Model
   class AutoMLCandidateGenerationConfig
   {
   public:
-    AWS_SAGEMAKER_API AutoMLCandidateGenerationConfig();
+    AWS_SAGEMAKER_API AutoMLCandidateGenerationConfig() = default;
     AWS_SAGEMAKER_API AutoMLCandidateGenerationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLCandidateGenerationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,14 +65,12 @@ namespace Model
      * in the input data. The list of columns provided must not include the target
      * column.</p>
      */
-    inline const Aws::String& GetFeatureSpecificationS3Uri() const{ return m_featureSpecificationS3Uri; }
+    inline const Aws::String& GetFeatureSpecificationS3Uri() const { return m_featureSpecificationS3Uri; }
     inline bool FeatureSpecificationS3UriHasBeenSet() const { return m_featureSpecificationS3UriHasBeenSet; }
-    inline void SetFeatureSpecificationS3Uri(const Aws::String& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = value; }
-    inline void SetFeatureSpecificationS3Uri(Aws::String&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::move(value); }
-    inline void SetFeatureSpecificationS3Uri(const char* value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri.assign(value); }
-    inline AutoMLCandidateGenerationConfig& WithFeatureSpecificationS3Uri(const Aws::String& value) { SetFeatureSpecificationS3Uri(value); return *this;}
-    inline AutoMLCandidateGenerationConfig& WithFeatureSpecificationS3Uri(Aws::String&& value) { SetFeatureSpecificationS3Uri(std::move(value)); return *this;}
-    inline AutoMLCandidateGenerationConfig& WithFeatureSpecificationS3Uri(const char* value) { SetFeatureSpecificationS3Uri(value); return *this;}
+    template<typename FeatureSpecificationS3UriT = Aws::String>
+    void SetFeatureSpecificationS3Uri(FeatureSpecificationS3UriT&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::forward<FeatureSpecificationS3UriT>(value); }
+    template<typename FeatureSpecificationS3UriT = Aws::String>
+    AutoMLCandidateGenerationConfig& WithFeatureSpecificationS3Uri(FeatureSpecificationS3UriT&& value) { SetFeatureSpecificationS3Uri(std::forward<FeatureSpecificationS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +96,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
-    inline const Aws::Vector<AutoMLAlgorithmConfig>& GetAlgorithmsConfig() const{ return m_algorithmsConfig; }
+    inline const Aws::Vector<AutoMLAlgorithmConfig>& GetAlgorithmsConfig() const { return m_algorithmsConfig; }
     inline bool AlgorithmsConfigHasBeenSet() const { return m_algorithmsConfigHasBeenSet; }
-    inline void SetAlgorithmsConfig(const Aws::Vector<AutoMLAlgorithmConfig>& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = value; }
-    inline void SetAlgorithmsConfig(Aws::Vector<AutoMLAlgorithmConfig>&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = std::move(value); }
-    inline AutoMLCandidateGenerationConfig& WithAlgorithmsConfig(const Aws::Vector<AutoMLAlgorithmConfig>& value) { SetAlgorithmsConfig(value); return *this;}
-    inline AutoMLCandidateGenerationConfig& WithAlgorithmsConfig(Aws::Vector<AutoMLAlgorithmConfig>&& value) { SetAlgorithmsConfig(std::move(value)); return *this;}
-    inline AutoMLCandidateGenerationConfig& AddAlgorithmsConfig(const AutoMLAlgorithmConfig& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.push_back(value); return *this; }
-    inline AutoMLCandidateGenerationConfig& AddAlgorithmsConfig(AutoMLAlgorithmConfig&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.push_back(std::move(value)); return *this; }
+    template<typename AlgorithmsConfigT = Aws::Vector<AutoMLAlgorithmConfig>>
+    void SetAlgorithmsConfig(AlgorithmsConfigT&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = std::forward<AlgorithmsConfigT>(value); }
+    template<typename AlgorithmsConfigT = Aws::Vector<AutoMLAlgorithmConfig>>
+    AutoMLCandidateGenerationConfig& WithAlgorithmsConfig(AlgorithmsConfigT&& value) { SetAlgorithmsConfig(std::forward<AlgorithmsConfigT>(value)); return *this;}
+    template<typename AlgorithmsConfigT = AutoMLAlgorithmConfig>
+    AutoMLCandidateGenerationConfig& AddAlgorithmsConfig(AlgorithmsConfigT&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.emplace_back(std::forward<AlgorithmsConfigT>(value)); return *this; }
     ///@}
   private:
 

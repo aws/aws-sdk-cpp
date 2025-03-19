@@ -18,13 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-MemberId::MemberId() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 MemberId::MemberId(JsonView jsonValue)
-  : MemberId()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MemberId& MemberId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

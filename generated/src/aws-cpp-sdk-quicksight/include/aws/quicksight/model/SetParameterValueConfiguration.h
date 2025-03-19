@@ -33,7 +33,7 @@ namespace Model
   class SetParameterValueConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API SetParameterValueConfiguration();
+    AWS_QUICKSIGHT_API SetParameterValueConfiguration() = default;
     AWS_QUICKSIGHT_API SetParameterValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SetParameterValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,22 @@ namespace Model
      * <p>The destination parameter name of the
      * <code>SetParameterValueConfiguration</code>.</p>
      */
-    inline const Aws::String& GetDestinationParameterName() const{ return m_destinationParameterName; }
+    inline const Aws::String& GetDestinationParameterName() const { return m_destinationParameterName; }
     inline bool DestinationParameterNameHasBeenSet() const { return m_destinationParameterNameHasBeenSet; }
-    inline void SetDestinationParameterName(const Aws::String& value) { m_destinationParameterNameHasBeenSet = true; m_destinationParameterName = value; }
-    inline void SetDestinationParameterName(Aws::String&& value) { m_destinationParameterNameHasBeenSet = true; m_destinationParameterName = std::move(value); }
-    inline void SetDestinationParameterName(const char* value) { m_destinationParameterNameHasBeenSet = true; m_destinationParameterName.assign(value); }
-    inline SetParameterValueConfiguration& WithDestinationParameterName(const Aws::String& value) { SetDestinationParameterName(value); return *this;}
-    inline SetParameterValueConfiguration& WithDestinationParameterName(Aws::String&& value) { SetDestinationParameterName(std::move(value)); return *this;}
-    inline SetParameterValueConfiguration& WithDestinationParameterName(const char* value) { SetDestinationParameterName(value); return *this;}
+    template<typename DestinationParameterNameT = Aws::String>
+    void SetDestinationParameterName(DestinationParameterNameT&& value) { m_destinationParameterNameHasBeenSet = true; m_destinationParameterName = std::forward<DestinationParameterNameT>(value); }
+    template<typename DestinationParameterNameT = Aws::String>
+    SetParameterValueConfiguration& WithDestinationParameterName(DestinationParameterNameT&& value) { SetDestinationParameterName(std::forward<DestinationParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DestinationParameterValueConfiguration& GetValue() const{ return m_value; }
+    inline const DestinationParameterValueConfiguration& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const DestinationParameterValueConfiguration& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(DestinationParameterValueConfiguration&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline SetParameterValueConfiguration& WithValue(const DestinationParameterValueConfiguration& value) { SetValue(value); return *this;}
-    inline SetParameterValueConfiguration& WithValue(DestinationParameterValueConfiguration&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = DestinationParameterValueConfiguration>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = DestinationParameterValueConfiguration>
+    SetParameterValueConfiguration& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteCarrierGatewayRequest::DeleteCarrierGatewayRequest() : 
-    m_carrierGatewayIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCarrierGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

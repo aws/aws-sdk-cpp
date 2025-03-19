@@ -34,7 +34,7 @@ namespace Model
   class PendingLogDeliveryConfiguration
   {
   public:
-    AWS_ELASTICACHE_API PendingLogDeliveryConfiguration();
+    AWS_ELASTICACHE_API PendingLogDeliveryConfiguration() = default;
     AWS_ELASTICACHE_API PendingLogDeliveryConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API PendingLogDeliveryConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,10 @@ namespace Model
      * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
      * engine-log..</p>
      */
-    inline const LogType& GetLogType() const{ return m_logType; }
+    inline LogType GetLogType() const { return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-    inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-    inline PendingLogDeliveryConfiguration& WithLogType(const LogType& value) { SetLogType(value); return *this;}
-    inline PendingLogDeliveryConfiguration& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+    inline void SetLogType(LogType value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline PendingLogDeliveryConfiguration& WithLogType(LogType value) { SetLogType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * <p>Returns the destination type, either CloudWatch Logs or Kinesis Data
      * Firehose.</p>
      */
-    inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
+    inline DestinationType GetDestinationType() const { return m_destinationType; }
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
-    inline void SetDestinationType(const DestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
-    inline void SetDestinationType(DestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
-    inline PendingLogDeliveryConfiguration& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
-    inline PendingLogDeliveryConfiguration& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    inline void SetDestinationType(DestinationType value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
+    inline PendingLogDeliveryConfiguration& WithDestinationType(DestinationType value) { SetDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,37 +69,35 @@ namespace Model
      * <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data
      * Firehose destination.</p>
      */
-    inline const DestinationDetails& GetDestinationDetails() const{ return m_destinationDetails; }
+    inline const DestinationDetails& GetDestinationDetails() const { return m_destinationDetails; }
     inline bool DestinationDetailsHasBeenSet() const { return m_destinationDetailsHasBeenSet; }
-    inline void SetDestinationDetails(const DestinationDetails& value) { m_destinationDetailsHasBeenSet = true; m_destinationDetails = value; }
-    inline void SetDestinationDetails(DestinationDetails&& value) { m_destinationDetailsHasBeenSet = true; m_destinationDetails = std::move(value); }
-    inline PendingLogDeliveryConfiguration& WithDestinationDetails(const DestinationDetails& value) { SetDestinationDetails(value); return *this;}
-    inline PendingLogDeliveryConfiguration& WithDestinationDetails(DestinationDetails&& value) { SetDestinationDetails(std::move(value)); return *this;}
+    template<typename DestinationDetailsT = DestinationDetails>
+    void SetDestinationDetails(DestinationDetailsT&& value) { m_destinationDetailsHasBeenSet = true; m_destinationDetails = std::forward<DestinationDetailsT>(value); }
+    template<typename DestinationDetailsT = DestinationDetails>
+    PendingLogDeliveryConfiguration& WithDestinationDetails(DestinationDetailsT&& value) { SetDestinationDetails(std::forward<DestinationDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the log format, either JSON or TEXT</p>
      */
-    inline const LogFormat& GetLogFormat() const{ return m_logFormat; }
+    inline LogFormat GetLogFormat() const { return m_logFormat; }
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
-    inline void SetLogFormat(const LogFormat& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
-    inline void SetLogFormat(LogFormat&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
-    inline PendingLogDeliveryConfiguration& WithLogFormat(const LogFormat& value) { SetLogFormat(value); return *this;}
-    inline PendingLogDeliveryConfiguration& WithLogFormat(LogFormat&& value) { SetLogFormat(std::move(value)); return *this;}
+    inline void SetLogFormat(LogFormat value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
+    inline PendingLogDeliveryConfiguration& WithLogFormat(LogFormat value) { SetLogFormat(value); return *this;}
     ///@}
   private:
 
-    LogType m_logType;
+    LogType m_logType{LogType::NOT_SET};
     bool m_logTypeHasBeenSet = false;
 
-    DestinationType m_destinationType;
+    DestinationType m_destinationType{DestinationType::NOT_SET};
     bool m_destinationTypeHasBeenSet = false;
 
     DestinationDetails m_destinationDetails;
     bool m_destinationDetailsHasBeenSet = false;
 
-    LogFormat m_logFormat;
+    LogFormat m_logFormat{LogFormat::NOT_SET};
     bool m_logFormatHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchPutMessageResult
   {
   public:
-    AWS_IOTEVENTSDATA_API BatchPutMessageResult();
+    AWS_IOTEVENTSDATA_API BatchPutMessageResult() = default;
     AWS_IOTEVENTSDATA_API BatchPutMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTSDATA_API BatchPutMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of any errors encountered when sending the messages.</p>
      */
-    inline const Aws::Vector<BatchPutMessageErrorEntry>& GetBatchPutMessageErrorEntries() const{ return m_batchPutMessageErrorEntries; }
-    inline void SetBatchPutMessageErrorEntries(const Aws::Vector<BatchPutMessageErrorEntry>& value) { m_batchPutMessageErrorEntries = value; }
-    inline void SetBatchPutMessageErrorEntries(Aws::Vector<BatchPutMessageErrorEntry>&& value) { m_batchPutMessageErrorEntries = std::move(value); }
-    inline BatchPutMessageResult& WithBatchPutMessageErrorEntries(const Aws::Vector<BatchPutMessageErrorEntry>& value) { SetBatchPutMessageErrorEntries(value); return *this;}
-    inline BatchPutMessageResult& WithBatchPutMessageErrorEntries(Aws::Vector<BatchPutMessageErrorEntry>&& value) { SetBatchPutMessageErrorEntries(std::move(value)); return *this;}
-    inline BatchPutMessageResult& AddBatchPutMessageErrorEntries(const BatchPutMessageErrorEntry& value) { m_batchPutMessageErrorEntries.push_back(value); return *this; }
-    inline BatchPutMessageResult& AddBatchPutMessageErrorEntries(BatchPutMessageErrorEntry&& value) { m_batchPutMessageErrorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchPutMessageErrorEntry>& GetBatchPutMessageErrorEntries() const { return m_batchPutMessageErrorEntries; }
+    template<typename BatchPutMessageErrorEntriesT = Aws::Vector<BatchPutMessageErrorEntry>>
+    void SetBatchPutMessageErrorEntries(BatchPutMessageErrorEntriesT&& value) { m_batchPutMessageErrorEntriesHasBeenSet = true; m_batchPutMessageErrorEntries = std::forward<BatchPutMessageErrorEntriesT>(value); }
+    template<typename BatchPutMessageErrorEntriesT = Aws::Vector<BatchPutMessageErrorEntry>>
+    BatchPutMessageResult& WithBatchPutMessageErrorEntries(BatchPutMessageErrorEntriesT&& value) { SetBatchPutMessageErrorEntries(std::forward<BatchPutMessageErrorEntriesT>(value)); return *this;}
+    template<typename BatchPutMessageErrorEntriesT = BatchPutMessageErrorEntry>
+    BatchPutMessageResult& AddBatchPutMessageErrorEntries(BatchPutMessageErrorEntriesT&& value) { m_batchPutMessageErrorEntriesHasBeenSet = true; m_batchPutMessageErrorEntries.emplace_back(std::forward<BatchPutMessageErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchPutMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchPutMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchPutMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchPutMessageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchPutMessageErrorEntry> m_batchPutMessageErrorEntries;
+    bool m_batchPutMessageErrorEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

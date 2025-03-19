@@ -12,11 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceRequest::GetServiceRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceRequest::SerializePayload() const
 {
   JsonValue payload;

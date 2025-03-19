@@ -35,7 +35,7 @@ namespace Model
   class AccessDescription
   {
   public:
-    AWS_ACMPCA_API AccessDescription();
+    AWS_ACMPCA_API AccessDescription() = default;
     AWS_ACMPCA_API AccessDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API AccessDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The type and format of <code>AccessDescription</code> information.</p>
      */
-    inline const AccessMethod& GetAccessMethod() const{ return m_accessMethod; }
+    inline const AccessMethod& GetAccessMethod() const { return m_accessMethod; }
     inline bool AccessMethodHasBeenSet() const { return m_accessMethodHasBeenSet; }
-    inline void SetAccessMethod(const AccessMethod& value) { m_accessMethodHasBeenSet = true; m_accessMethod = value; }
-    inline void SetAccessMethod(AccessMethod&& value) { m_accessMethodHasBeenSet = true; m_accessMethod = std::move(value); }
-    inline AccessDescription& WithAccessMethod(const AccessMethod& value) { SetAccessMethod(value); return *this;}
-    inline AccessDescription& WithAccessMethod(AccessMethod&& value) { SetAccessMethod(std::move(value)); return *this;}
+    template<typename AccessMethodT = AccessMethod>
+    void SetAccessMethod(AccessMethodT&& value) { m_accessMethodHasBeenSet = true; m_accessMethod = std::forward<AccessMethodT>(value); }
+    template<typename AccessMethodT = AccessMethod>
+    AccessDescription& WithAccessMethod(AccessMethodT&& value) { SetAccessMethod(std::forward<AccessMethodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of <code>AccessDescription</code> information.</p>
      */
-    inline const GeneralName& GetAccessLocation() const{ return m_accessLocation; }
+    inline const GeneralName& GetAccessLocation() const { return m_accessLocation; }
     inline bool AccessLocationHasBeenSet() const { return m_accessLocationHasBeenSet; }
-    inline void SetAccessLocation(const GeneralName& value) { m_accessLocationHasBeenSet = true; m_accessLocation = value; }
-    inline void SetAccessLocation(GeneralName&& value) { m_accessLocationHasBeenSet = true; m_accessLocation = std::move(value); }
-    inline AccessDescription& WithAccessLocation(const GeneralName& value) { SetAccessLocation(value); return *this;}
-    inline AccessDescription& WithAccessLocation(GeneralName&& value) { SetAccessLocation(std::move(value)); return *this;}
+    template<typename AccessLocationT = GeneralName>
+    void SetAccessLocation(AccessLocationT&& value) { m_accessLocationHasBeenSet = true; m_accessLocation = std::forward<AccessLocationT>(value); }
+    template<typename AccessLocationT = GeneralName>
+    AccessDescription& WithAccessLocation(AccessLocationT&& value) { SetAccessLocation(std::forward<AccessLocationT>(value)); return *this;}
     ///@}
   private:
 

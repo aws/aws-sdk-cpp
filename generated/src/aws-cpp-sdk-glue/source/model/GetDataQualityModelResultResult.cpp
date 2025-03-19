@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataQualityModelResultResult::GetDataQualityModelResultResult()
-{
-}
-
 GetDataQualityModelResultResult::GetDataQualityModelResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetDataQualityModelResultResult& GetDataQualityModelResultResult::operator =(con
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
+    m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     Aws::Utils::Array<JsonView> modelJsonList = jsonValue.GetArray("Model");
@@ -42,14 +37,15 @@ GetDataQualityModelResultResult& GetDataQualityModelResultResult::operator =(con
     {
       m_model.push_back(modelJsonList[modelIndex].AsObject());
     }
+    m_modelHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

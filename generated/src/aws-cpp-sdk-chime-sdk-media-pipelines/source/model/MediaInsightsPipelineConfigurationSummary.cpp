@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSummary() : 
-    m_mediaInsightsPipelineConfigurationNameHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationIdHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false)
-{
-}
-
 MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSummary(JsonView jsonValue)
-  : MediaInsightsPipelineConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MediaInsightsPipelineConfigurationSummary& MediaInsightsPipelineConfigurationSum
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationName"))
   {
     m_mediaInsightsPipelineConfigurationName = jsonValue.GetString("MediaInsightsPipelineConfigurationName");
-
     m_mediaInsightsPipelineConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationId"))
   {
     m_mediaInsightsPipelineConfigurationId = jsonValue.GetString("MediaInsightsPipelineConfigurationId");
-
     m_mediaInsightsPipelineConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationArn"))
   {
     m_mediaInsightsPipelineConfigurationArn = jsonValue.GetString("MediaInsightsPipelineConfigurationArn");
-
     m_mediaInsightsPipelineConfigurationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

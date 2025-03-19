@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeChannelFlowRequest::DescribeChannelFlowRequest() : 
-    m_channelFlowArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelFlowRequest::SerializePayload() const
 {
   return {};

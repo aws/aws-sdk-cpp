@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ErrorInfo::ErrorInfo() : 
-    m_errorStringHasBeenSet(false)
-{
-}
-
 ErrorInfo::ErrorInfo(JsonView jsonValue)
-  : ErrorInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ErrorInfo& ErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorString"))
   {
     m_errorString = jsonValue.GetString("ErrorString");
-
     m_errorStringHasBeenSet = true;
   }
-
   return *this;
 }
 

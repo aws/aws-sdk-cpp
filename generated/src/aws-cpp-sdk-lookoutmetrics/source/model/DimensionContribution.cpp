@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DimensionContribution::DimensionContribution() : 
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueContributionListHasBeenSet(false)
-{
-}
-
 DimensionContribution::DimensionContribution(JsonView jsonValue)
-  : DimensionContribution()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DimensionContribution& DimensionContribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionName"))
   {
     m_dimensionName = jsonValue.GetString("DimensionName");
-
     m_dimensionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValueContributionList"))
   {
     Aws::Utils::Array<JsonView> dimensionValueContributionListJsonList = jsonValue.GetArray("DimensionValueContributionList");
@@ -48,7 +39,6 @@ DimensionContribution& DimensionContribution::operator =(JsonView jsonValue)
     }
     m_dimensionValueContributionListHasBeenSet = true;
   }
-
   return *this;
 }
 

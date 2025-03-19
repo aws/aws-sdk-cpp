@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ServerCertificateConfig::ServerCertificateConfig() : 
-    m_enableOCSPCheck(false),
-    m_enableOCSPCheckHasBeenSet(false),
-    m_ocspLambdaArnHasBeenSet(false),
-    m_ocspAuthorizedResponderArnHasBeenSet(false)
-{
-}
-
 ServerCertificateConfig::ServerCertificateConfig(JsonView jsonValue)
-  : ServerCertificateConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ServerCertificateConfig& ServerCertificateConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enableOCSPCheck"))
   {
     m_enableOCSPCheck = jsonValue.GetBool("enableOCSPCheck");
-
     m_enableOCSPCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ocspLambdaArn"))
   {
     m_ocspLambdaArn = jsonValue.GetString("ocspLambdaArn");
-
     m_ocspLambdaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ocspAuthorizedResponderArn"))
   {
     m_ocspAuthorizedResponderArn = jsonValue.GetString("ocspAuthorizedResponderArn");
-
     m_ocspAuthorizedResponderArnHasBeenSet = true;
   }
-
   return *this;
 }
 

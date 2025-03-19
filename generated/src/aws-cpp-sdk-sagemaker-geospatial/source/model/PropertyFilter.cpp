@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-PropertyFilter::PropertyFilter() : 
-    m_propertyHasBeenSet(false)
-{
-}
-
 PropertyFilter::PropertyFilter(JsonView jsonValue)
-  : PropertyFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PropertyFilter& PropertyFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Property"))
   {
     m_property = jsonValue.GetObject("Property");
-
     m_propertyHasBeenSet = true;
   }
-
   return *this;
 }
 

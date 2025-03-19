@@ -18,24 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BoxPlotChartConfiguration::BoxPlotChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_boxPlotOptionsHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_primaryYAxisDisplayOptionsHasBeenSet(false),
-    m_primaryYAxisLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 BoxPlotChartConfiguration::BoxPlotChartConfiguration(JsonView jsonValue)
-  : BoxPlotChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ BoxPlotChartConfiguration& BoxPlotChartConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoxPlotOptions"))
   {
     m_boxPlotOptions = jsonValue.GetObject("BoxPlotOptions");
-
     m_boxPlotOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryAxis"))
   {
     m_categoryAxis = jsonValue.GetObject("CategoryAxis");
-
     m_categoryAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelOptions"))
   {
     m_categoryLabelOptions = jsonValue.GetObject("CategoryLabelOptions");
-
     m_categoryLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryYAxisDisplayOptions"))
   {
     m_primaryYAxisDisplayOptions = jsonValue.GetObject("PrimaryYAxisDisplayOptions");
-
     m_primaryYAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryYAxisLabelOptions"))
   {
     m_primaryYAxisLabelOptions = jsonValue.GetObject("PrimaryYAxisLabelOptions");
-
     m_primaryYAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceLines"))
   {
     Aws::Utils::Array<JsonView> referenceLinesJsonList = jsonValue.GetArray("ReferenceLines");
@@ -114,21 +79,16 @@ BoxPlotChartConfiguration& BoxPlotChartConfiguration::operator =(JsonView jsonVa
     }
     m_referenceLinesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

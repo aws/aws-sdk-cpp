@@ -32,7 +32,7 @@ namespace Model
   class LoggerDefinitionVersion
   {
   public:
-    AWS_GREENGRASS_API LoggerDefinitionVersion();
+    AWS_GREENGRASS_API LoggerDefinitionVersion() = default;
     AWS_GREENGRASS_API LoggerDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API LoggerDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * A list of loggers.
      */
-    inline const Aws::Vector<Logger>& GetLoggers() const{ return m_loggers; }
+    inline const Aws::Vector<Logger>& GetLoggers() const { return m_loggers; }
     inline bool LoggersHasBeenSet() const { return m_loggersHasBeenSet; }
-    inline void SetLoggers(const Aws::Vector<Logger>& value) { m_loggersHasBeenSet = true; m_loggers = value; }
-    inline void SetLoggers(Aws::Vector<Logger>&& value) { m_loggersHasBeenSet = true; m_loggers = std::move(value); }
-    inline LoggerDefinitionVersion& WithLoggers(const Aws::Vector<Logger>& value) { SetLoggers(value); return *this;}
-    inline LoggerDefinitionVersion& WithLoggers(Aws::Vector<Logger>&& value) { SetLoggers(std::move(value)); return *this;}
-    inline LoggerDefinitionVersion& AddLoggers(const Logger& value) { m_loggersHasBeenSet = true; m_loggers.push_back(value); return *this; }
-    inline LoggerDefinitionVersion& AddLoggers(Logger&& value) { m_loggersHasBeenSet = true; m_loggers.push_back(std::move(value)); return *this; }
+    template<typename LoggersT = Aws::Vector<Logger>>
+    void SetLoggers(LoggersT&& value) { m_loggersHasBeenSet = true; m_loggers = std::forward<LoggersT>(value); }
+    template<typename LoggersT = Aws::Vector<Logger>>
+    LoggerDefinitionVersion& WithLoggers(LoggersT&& value) { SetLoggers(std::forward<LoggersT>(value)); return *this;}
+    template<typename LoggersT = Logger>
+    LoggerDefinitionVersion& AddLoggers(LoggersT&& value) { m_loggersHasBeenSet = true; m_loggers.emplace_back(std::forward<LoggersT>(value)); return *this; }
     ///@}
   private:
 

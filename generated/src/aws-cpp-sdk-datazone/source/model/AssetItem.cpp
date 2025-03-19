@@ -18,26 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetItem::AssetItem() : 
-    m_additionalAttributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_externalIdentifierHasBeenSet(false),
-    m_firstRevisionCreatedAtHasBeenSet(false),
-    m_firstRevisionCreatedByHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_typeIdentifierHasBeenSet(false),
-    m_typeRevisionHasBeenSet(false)
-{
-}
-
 AssetItem::AssetItem(JsonView jsonValue)
-  : AssetItem()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ AssetItem& AssetItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalAttributes"))
   {
     m_additionalAttributes = jsonValue.GetObject("additionalAttributes");
-
     m_additionalAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalIdentifier"))
   {
     m_externalIdentifier = jsonValue.GetString("externalIdentifier");
-
     m_externalIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstRevisionCreatedAt"))
   {
     m_firstRevisionCreatedAt = jsonValue.GetDouble("firstRevisionCreatedAt");
-
     m_firstRevisionCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstRevisionCreatedBy"))
   {
     m_firstRevisionCreatedBy = jsonValue.GetString("firstRevisionCreatedBy");
-
     m_firstRevisionCreatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -109,42 +74,31 @@ AssetItem& AssetItem::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
     m_owningProjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeIdentifier"))
   {
     m_typeIdentifier = jsonValue.GetString("typeIdentifier");
-
     m_typeIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("typeRevision"))
   {
     m_typeRevision = jsonValue.GetString("typeRevision");
-
     m_typeRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

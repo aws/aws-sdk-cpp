@@ -41,7 +41,7 @@ namespace Model
   class CoverageNormalizedUnits
   {
   public:
-    AWS_COSTEXPLORER_API CoverageNormalizedUnits();
+    AWS_COSTEXPLORER_API CoverageNormalizedUnits() = default;
     AWS_COSTEXPLORER_API CoverageNormalizedUnits(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API CoverageNormalizedUnits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,42 +52,36 @@ namespace Model
      * <p>The number of normalized units that are covered by On-Demand Instances
      * instead of a reservation.</p>
      */
-    inline const Aws::String& GetOnDemandNormalizedUnits() const{ return m_onDemandNormalizedUnits; }
+    inline const Aws::String& GetOnDemandNormalizedUnits() const { return m_onDemandNormalizedUnits; }
     inline bool OnDemandNormalizedUnitsHasBeenSet() const { return m_onDemandNormalizedUnitsHasBeenSet; }
-    inline void SetOnDemandNormalizedUnits(const Aws::String& value) { m_onDemandNormalizedUnitsHasBeenSet = true; m_onDemandNormalizedUnits = value; }
-    inline void SetOnDemandNormalizedUnits(Aws::String&& value) { m_onDemandNormalizedUnitsHasBeenSet = true; m_onDemandNormalizedUnits = std::move(value); }
-    inline void SetOnDemandNormalizedUnits(const char* value) { m_onDemandNormalizedUnitsHasBeenSet = true; m_onDemandNormalizedUnits.assign(value); }
-    inline CoverageNormalizedUnits& WithOnDemandNormalizedUnits(const Aws::String& value) { SetOnDemandNormalizedUnits(value); return *this;}
-    inline CoverageNormalizedUnits& WithOnDemandNormalizedUnits(Aws::String&& value) { SetOnDemandNormalizedUnits(std::move(value)); return *this;}
-    inline CoverageNormalizedUnits& WithOnDemandNormalizedUnits(const char* value) { SetOnDemandNormalizedUnits(value); return *this;}
+    template<typename OnDemandNormalizedUnitsT = Aws::String>
+    void SetOnDemandNormalizedUnits(OnDemandNormalizedUnitsT&& value) { m_onDemandNormalizedUnitsHasBeenSet = true; m_onDemandNormalizedUnits = std::forward<OnDemandNormalizedUnitsT>(value); }
+    template<typename OnDemandNormalizedUnitsT = Aws::String>
+    CoverageNormalizedUnits& WithOnDemandNormalizedUnits(OnDemandNormalizedUnitsT&& value) { SetOnDemandNormalizedUnits(std::forward<OnDemandNormalizedUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of normalized units that a reservation covers.</p>
      */
-    inline const Aws::String& GetReservedNormalizedUnits() const{ return m_reservedNormalizedUnits; }
+    inline const Aws::String& GetReservedNormalizedUnits() const { return m_reservedNormalizedUnits; }
     inline bool ReservedNormalizedUnitsHasBeenSet() const { return m_reservedNormalizedUnitsHasBeenSet; }
-    inline void SetReservedNormalizedUnits(const Aws::String& value) { m_reservedNormalizedUnitsHasBeenSet = true; m_reservedNormalizedUnits = value; }
-    inline void SetReservedNormalizedUnits(Aws::String&& value) { m_reservedNormalizedUnitsHasBeenSet = true; m_reservedNormalizedUnits = std::move(value); }
-    inline void SetReservedNormalizedUnits(const char* value) { m_reservedNormalizedUnitsHasBeenSet = true; m_reservedNormalizedUnits.assign(value); }
-    inline CoverageNormalizedUnits& WithReservedNormalizedUnits(const Aws::String& value) { SetReservedNormalizedUnits(value); return *this;}
-    inline CoverageNormalizedUnits& WithReservedNormalizedUnits(Aws::String&& value) { SetReservedNormalizedUnits(std::move(value)); return *this;}
-    inline CoverageNormalizedUnits& WithReservedNormalizedUnits(const char* value) { SetReservedNormalizedUnits(value); return *this;}
+    template<typename ReservedNormalizedUnitsT = Aws::String>
+    void SetReservedNormalizedUnits(ReservedNormalizedUnitsT&& value) { m_reservedNormalizedUnitsHasBeenSet = true; m_reservedNormalizedUnits = std::forward<ReservedNormalizedUnitsT>(value); }
+    template<typename ReservedNormalizedUnitsT = Aws::String>
+    CoverageNormalizedUnits& WithReservedNormalizedUnits(ReservedNormalizedUnitsT&& value) { SetReservedNormalizedUnits(std::forward<ReservedNormalizedUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total number of normalized units that you used.</p>
      */
-    inline const Aws::String& GetTotalRunningNormalizedUnits() const{ return m_totalRunningNormalizedUnits; }
+    inline const Aws::String& GetTotalRunningNormalizedUnits() const { return m_totalRunningNormalizedUnits; }
     inline bool TotalRunningNormalizedUnitsHasBeenSet() const { return m_totalRunningNormalizedUnitsHasBeenSet; }
-    inline void SetTotalRunningNormalizedUnits(const Aws::String& value) { m_totalRunningNormalizedUnitsHasBeenSet = true; m_totalRunningNormalizedUnits = value; }
-    inline void SetTotalRunningNormalizedUnits(Aws::String&& value) { m_totalRunningNormalizedUnitsHasBeenSet = true; m_totalRunningNormalizedUnits = std::move(value); }
-    inline void SetTotalRunningNormalizedUnits(const char* value) { m_totalRunningNormalizedUnitsHasBeenSet = true; m_totalRunningNormalizedUnits.assign(value); }
-    inline CoverageNormalizedUnits& WithTotalRunningNormalizedUnits(const Aws::String& value) { SetTotalRunningNormalizedUnits(value); return *this;}
-    inline CoverageNormalizedUnits& WithTotalRunningNormalizedUnits(Aws::String&& value) { SetTotalRunningNormalizedUnits(std::move(value)); return *this;}
-    inline CoverageNormalizedUnits& WithTotalRunningNormalizedUnits(const char* value) { SetTotalRunningNormalizedUnits(value); return *this;}
+    template<typename TotalRunningNormalizedUnitsT = Aws::String>
+    void SetTotalRunningNormalizedUnits(TotalRunningNormalizedUnitsT&& value) { m_totalRunningNormalizedUnitsHasBeenSet = true; m_totalRunningNormalizedUnits = std::forward<TotalRunningNormalizedUnitsT>(value); }
+    template<typename TotalRunningNormalizedUnitsT = Aws::String>
+    CoverageNormalizedUnits& WithTotalRunningNormalizedUnits(TotalRunningNormalizedUnitsT&& value) { SetTotalRunningNormalizedUnits(std::forward<TotalRunningNormalizedUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>The percentage of your used instance normalized units that a reservation
      * covers.</p>
      */
-    inline const Aws::String& GetCoverageNormalizedUnitsPercentage() const{ return m_coverageNormalizedUnitsPercentage; }
+    inline const Aws::String& GetCoverageNormalizedUnitsPercentage() const { return m_coverageNormalizedUnitsPercentage; }
     inline bool CoverageNormalizedUnitsPercentageHasBeenSet() const { return m_coverageNormalizedUnitsPercentageHasBeenSet; }
-    inline void SetCoverageNormalizedUnitsPercentage(const Aws::String& value) { m_coverageNormalizedUnitsPercentageHasBeenSet = true; m_coverageNormalizedUnitsPercentage = value; }
-    inline void SetCoverageNormalizedUnitsPercentage(Aws::String&& value) { m_coverageNormalizedUnitsPercentageHasBeenSet = true; m_coverageNormalizedUnitsPercentage = std::move(value); }
-    inline void SetCoverageNormalizedUnitsPercentage(const char* value) { m_coverageNormalizedUnitsPercentageHasBeenSet = true; m_coverageNormalizedUnitsPercentage.assign(value); }
-    inline CoverageNormalizedUnits& WithCoverageNormalizedUnitsPercentage(const Aws::String& value) { SetCoverageNormalizedUnitsPercentage(value); return *this;}
-    inline CoverageNormalizedUnits& WithCoverageNormalizedUnitsPercentage(Aws::String&& value) { SetCoverageNormalizedUnitsPercentage(std::move(value)); return *this;}
-    inline CoverageNormalizedUnits& WithCoverageNormalizedUnitsPercentage(const char* value) { SetCoverageNormalizedUnitsPercentage(value); return *this;}
+    template<typename CoverageNormalizedUnitsPercentageT = Aws::String>
+    void SetCoverageNormalizedUnitsPercentage(CoverageNormalizedUnitsPercentageT&& value) { m_coverageNormalizedUnitsPercentageHasBeenSet = true; m_coverageNormalizedUnitsPercentage = std::forward<CoverageNormalizedUnitsPercentageT>(value); }
+    template<typename CoverageNormalizedUnitsPercentageT = Aws::String>
+    CoverageNormalizedUnits& WithCoverageNormalizedUnitsPercentage(CoverageNormalizedUnitsPercentageT&& value) { SetCoverageNormalizedUnitsPercentage(std::forward<CoverageNormalizedUnitsPercentageT>(value)); return *this;}
     ///@}
   private:
 

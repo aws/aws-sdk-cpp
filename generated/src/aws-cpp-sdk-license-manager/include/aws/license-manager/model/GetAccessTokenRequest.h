@@ -22,7 +22,7 @@ namespace Model
   class GetAccessTokenRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API GetAccessTokenRequest();
+    AWS_LICENSEMANAGER_API GetAccessTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>Refresh token, encoded as a JWT token.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline GetAccessTokenRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline GetAccessTokenRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline GetAccessTokenRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    GetAccessTokenRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Token properties to validate against those present in the JWT token.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTokenProperties() const{ return m_tokenProperties; }
+    inline const Aws::Vector<Aws::String>& GetTokenProperties() const { return m_tokenProperties; }
     inline bool TokenPropertiesHasBeenSet() const { return m_tokenPropertiesHasBeenSet; }
-    inline void SetTokenProperties(const Aws::Vector<Aws::String>& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties = value; }
-    inline void SetTokenProperties(Aws::Vector<Aws::String>&& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties = std::move(value); }
-    inline GetAccessTokenRequest& WithTokenProperties(const Aws::Vector<Aws::String>& value) { SetTokenProperties(value); return *this;}
-    inline GetAccessTokenRequest& WithTokenProperties(Aws::Vector<Aws::String>&& value) { SetTokenProperties(std::move(value)); return *this;}
-    inline GetAccessTokenRequest& AddTokenProperties(const Aws::String& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.push_back(value); return *this; }
-    inline GetAccessTokenRequest& AddTokenProperties(Aws::String&& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.push_back(std::move(value)); return *this; }
-    inline GetAccessTokenRequest& AddTokenProperties(const char* value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.push_back(value); return *this; }
+    template<typename TokenPropertiesT = Aws::Vector<Aws::String>>
+    void SetTokenProperties(TokenPropertiesT&& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties = std::forward<TokenPropertiesT>(value); }
+    template<typename TokenPropertiesT = Aws::Vector<Aws::String>>
+    GetAccessTokenRequest& WithTokenProperties(TokenPropertiesT&& value) { SetTokenProperties(std::forward<TokenPropertiesT>(value)); return *this;}
+    template<typename TokenPropertiesT = Aws::String>
+    GetAccessTokenRequest& AddTokenProperties(TokenPropertiesT&& value) { m_tokenPropertiesHasBeenSet = true; m_tokenProperties.emplace_back(std::forward<TokenPropertiesT>(value)); return *this; }
     ///@}
   private:
 

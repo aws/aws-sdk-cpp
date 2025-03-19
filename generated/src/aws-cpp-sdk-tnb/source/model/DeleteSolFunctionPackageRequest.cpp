@@ -12,11 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSolFunctionPackageRequest::DeleteSolFunctionPackageRequest() : 
-    m_vnfPkgIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSolFunctionPackageRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-IpGeoLocation::IpGeoLocation() : 
-    m_lat(0.0),
-    m_latHasBeenSet(false),
-    m_lon(0.0),
-    m_lonHasBeenSet(false)
-{
-}
-
 IpGeoLocation::IpGeoLocation(JsonView jsonValue)
-  : IpGeoLocation()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IpGeoLocation& IpGeoLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lat"))
   {
     m_lat = jsonValue.GetDouble("lat");
-
     m_latHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lon"))
   {
     m_lon = jsonValue.GetDouble("lon");
-
     m_lonHasBeenSet = true;
   }
-
   return *this;
 }
 

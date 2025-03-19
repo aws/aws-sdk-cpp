@@ -18,13 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-AddressIdentifierFilter::AddressIdentifierFilter() : 
-    m_transactionEventToAddressHasBeenSet(false)
-{
-}
-
 AddressIdentifierFilter::AddressIdentifierFilter(JsonView jsonValue)
-  : AddressIdentifierFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AddressIdentifierFilter& AddressIdentifierFilter::operator =(JsonView jsonValue)
     }
     m_transactionEventToAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

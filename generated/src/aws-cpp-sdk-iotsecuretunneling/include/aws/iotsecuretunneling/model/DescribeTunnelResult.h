@@ -28,7 +28,7 @@ namespace Model
   class DescribeTunnelResult
   {
   public:
-    AWS_IOTSECURETUNNELING_API DescribeTunnelResult();
+    AWS_IOTSECURETUNNELING_API DescribeTunnelResult() = default;
     AWS_IOTSECURETUNNELING_API DescribeTunnelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSECURETUNNELING_API DescribeTunnelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The tunnel being described.</p>
      */
-    inline const Tunnel& GetTunnel() const{ return m_tunnel; }
-    inline void SetTunnel(const Tunnel& value) { m_tunnel = value; }
-    inline void SetTunnel(Tunnel&& value) { m_tunnel = std::move(value); }
-    inline DescribeTunnelResult& WithTunnel(const Tunnel& value) { SetTunnel(value); return *this;}
-    inline DescribeTunnelResult& WithTunnel(Tunnel&& value) { SetTunnel(std::move(value)); return *this;}
+    inline const Tunnel& GetTunnel() const { return m_tunnel; }
+    template<typename TunnelT = Tunnel>
+    void SetTunnel(TunnelT&& value) { m_tunnelHasBeenSet = true; m_tunnel = std::forward<TunnelT>(value); }
+    template<typename TunnelT = Tunnel>
+    DescribeTunnelResult& WithTunnel(TunnelT&& value) { SetTunnel(std::forward<TunnelT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTunnelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTunnelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTunnelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTunnelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Tunnel m_tunnel;
+    bool m_tunnelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

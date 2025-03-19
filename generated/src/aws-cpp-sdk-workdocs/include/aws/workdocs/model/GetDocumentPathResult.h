@@ -28,7 +28,7 @@ namespace Model
   class GetDocumentPathResult
   {
   public:
-    AWS_WORKDOCS_API GetDocumentPathResult();
+    AWS_WORKDOCS_API GetDocumentPathResult() = default;
     AWS_WORKDOCS_API GetDocumentPathResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKDOCS_API GetDocumentPathResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The path information.</p>
      */
-    inline const ResourcePath& GetPath() const{ return m_path; }
-    inline void SetPath(const ResourcePath& value) { m_path = value; }
-    inline void SetPath(ResourcePath&& value) { m_path = std::move(value); }
-    inline GetDocumentPathResult& WithPath(const ResourcePath& value) { SetPath(value); return *this;}
-    inline GetDocumentPathResult& WithPath(ResourcePath&& value) { SetPath(std::move(value)); return *this;}
+    inline const ResourcePath& GetPath() const { return m_path; }
+    template<typename PathT = ResourcePath>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = ResourcePath>
+    GetDocumentPathResult& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDocumentPathResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDocumentPathResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDocumentPathResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDocumentPathResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourcePath m_path;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

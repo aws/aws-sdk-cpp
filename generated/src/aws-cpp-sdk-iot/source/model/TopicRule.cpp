@@ -18,21 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TopicRule::TopicRule() : 
-    m_ruleNameHasBeenSet(false),
-    m_sqlHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_ruleDisabled(false),
-    m_ruleDisabledHasBeenSet(false),
-    m_awsIotSqlVersionHasBeenSet(false),
-    m_errorActionHasBeenSet(false)
-{
-}
-
 TopicRule::TopicRule(JsonView jsonValue)
-  : TopicRule()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ TopicRule& TopicRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleName"))
   {
     m_ruleName = jsonValue.GetString("ruleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sql"))
   {
     m_sql = jsonValue.GetString("sql");
-
     m_sqlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -76,28 +54,21 @@ TopicRule& TopicRule::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleDisabled"))
   {
     m_ruleDisabled = jsonValue.GetBool("ruleDisabled");
-
     m_ruleDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsIotSqlVersion"))
   {
     m_awsIotSqlVersion = jsonValue.GetString("awsIotSqlVersion");
-
     m_awsIotSqlVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorAction"))
   {
     m_errorAction = jsonValue.GetObject("errorAction");
-
     m_errorActionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ModelInferenceDataSource
   {
   public:
-    AWS_CLEANROOMSML_API ModelInferenceDataSource();
+    AWS_CLEANROOMSML_API ModelInferenceDataSource() = default;
     AWS_CLEANROOMSML_API ModelInferenceDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API ModelInferenceDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the ML input channel for this model
      * inference data source.</p>
      */
-    inline const Aws::String& GetMlInputChannelArn() const{ return m_mlInputChannelArn; }
+    inline const Aws::String& GetMlInputChannelArn() const { return m_mlInputChannelArn; }
     inline bool MlInputChannelArnHasBeenSet() const { return m_mlInputChannelArnHasBeenSet; }
-    inline void SetMlInputChannelArn(const Aws::String& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = value; }
-    inline void SetMlInputChannelArn(Aws::String&& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = std::move(value); }
-    inline void SetMlInputChannelArn(const char* value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn.assign(value); }
-    inline ModelInferenceDataSource& WithMlInputChannelArn(const Aws::String& value) { SetMlInputChannelArn(value); return *this;}
-    inline ModelInferenceDataSource& WithMlInputChannelArn(Aws::String&& value) { SetMlInputChannelArn(std::move(value)); return *this;}
-    inline ModelInferenceDataSource& WithMlInputChannelArn(const char* value) { SetMlInputChannelArn(value); return *this;}
+    template<typename MlInputChannelArnT = Aws::String>
+    void SetMlInputChannelArn(MlInputChannelArnT&& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = std::forward<MlInputChannelArnT>(value); }
+    template<typename MlInputChannelArnT = Aws::String>
+    ModelInferenceDataSource& WithMlInputChannelArn(MlInputChannelArnT&& value) { SetMlInputChannelArn(std::forward<MlInputChannelArnT>(value)); return *this;}
     ///@}
   private:
 

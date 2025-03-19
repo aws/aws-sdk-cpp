@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateServiceRoleToAccountRequest::AssociateServiceRoleToAccountRequest() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateServiceRoleToAccountRequest::SerializePayload() const
 {
   JsonValue payload;

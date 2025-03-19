@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ApplySecurityGroupsToClientVpnTargetNetworkRequest::ApplySecurityGroupsToClientVpnTargetNetworkRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ApplySecurityGroupsToClientVpnTargetNetworkRequest::SerializePayload() const
 {
   Aws::StringStream ss;

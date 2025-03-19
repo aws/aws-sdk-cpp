@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Filter::Filter() : 
-    m_categoryFilterHasBeenSet(false),
-    m_numericRangeFilterHasBeenSet(false),
-    m_numericEqualityFilterHasBeenSet(false),
-    m_timeEqualityFilterHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false),
-    m_relativeDatesFilterHasBeenSet(false),
-    m_topBottomFilterHasBeenSet(false),
-    m_nestedFilterHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CategoryFilter"))
   {
     m_categoryFilter = jsonValue.GetObject("CategoryFilter");
-
     m_categoryFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumericRangeFilter"))
   {
     m_numericRangeFilter = jsonValue.GetObject("NumericRangeFilter");
-
     m_numericRangeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumericEqualityFilter"))
   {
     m_numericEqualityFilter = jsonValue.GetObject("NumericEqualityFilter");
-
     m_numericEqualityFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeEqualityFilter"))
   {
     m_timeEqualityFilter = jsonValue.GetObject("TimeEqualityFilter");
-
     m_timeEqualityFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeRangeFilter"))
   {
     m_timeRangeFilter = jsonValue.GetObject("TimeRangeFilter");
-
     m_timeRangeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeDatesFilter"))
   {
     m_relativeDatesFilter = jsonValue.GetObject("RelativeDatesFilter");
-
     m_relativeDatesFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopBottomFilter"))
   {
     m_topBottomFilter = jsonValue.GetObject("TopBottomFilter");
-
     m_topBottomFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NestedFilter"))
   {
     m_nestedFilter = jsonValue.GetObject("NestedFilter");
-
     m_nestedFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

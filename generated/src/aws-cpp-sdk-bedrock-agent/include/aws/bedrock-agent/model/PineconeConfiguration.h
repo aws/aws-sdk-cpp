@@ -35,7 +35,7 @@ namespace Model
   class PineconeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API PineconeConfiguration();
+    AWS_BEDROCKAGENT_API PineconeConfiguration() = default;
     AWS_BEDROCKAGENT_API PineconeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PineconeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The endpoint URL for your index management page.</p>
      */
-    inline const Aws::String& GetConnectionString() const{ return m_connectionString; }
+    inline const Aws::String& GetConnectionString() const { return m_connectionString; }
     inline bool ConnectionStringHasBeenSet() const { return m_connectionStringHasBeenSet; }
-    inline void SetConnectionString(const Aws::String& value) { m_connectionStringHasBeenSet = true; m_connectionString = value; }
-    inline void SetConnectionString(Aws::String&& value) { m_connectionStringHasBeenSet = true; m_connectionString = std::move(value); }
-    inline void SetConnectionString(const char* value) { m_connectionStringHasBeenSet = true; m_connectionString.assign(value); }
-    inline PineconeConfiguration& WithConnectionString(const Aws::String& value) { SetConnectionString(value); return *this;}
-    inline PineconeConfiguration& WithConnectionString(Aws::String&& value) { SetConnectionString(std::move(value)); return *this;}
-    inline PineconeConfiguration& WithConnectionString(const char* value) { SetConnectionString(value); return *this;}
+    template<typename ConnectionStringT = Aws::String>
+    void SetConnectionString(ConnectionStringT&& value) { m_connectionStringHasBeenSet = true; m_connectionString = std::forward<ConnectionStringT>(value); }
+    template<typename ConnectionStringT = Aws::String>
+    PineconeConfiguration& WithConnectionString(ConnectionStringT&& value) { SetConnectionString(std::forward<ConnectionStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the secret that you created in Secrets
      * Manager that is linked to your Pinecone API key.</p>
      */
-    inline const Aws::String& GetCredentialsSecretArn() const{ return m_credentialsSecretArn; }
+    inline const Aws::String& GetCredentialsSecretArn() const { return m_credentialsSecretArn; }
     inline bool CredentialsSecretArnHasBeenSet() const { return m_credentialsSecretArnHasBeenSet; }
-    inline void SetCredentialsSecretArn(const Aws::String& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = value; }
-    inline void SetCredentialsSecretArn(Aws::String&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::move(value); }
-    inline void SetCredentialsSecretArn(const char* value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn.assign(value); }
-    inline PineconeConfiguration& WithCredentialsSecretArn(const Aws::String& value) { SetCredentialsSecretArn(value); return *this;}
-    inline PineconeConfiguration& WithCredentialsSecretArn(Aws::String&& value) { SetCredentialsSecretArn(std::move(value)); return *this;}
-    inline PineconeConfiguration& WithCredentialsSecretArn(const char* value) { SetCredentialsSecretArn(value); return *this;}
+    template<typename CredentialsSecretArnT = Aws::String>
+    void SetCredentialsSecretArn(CredentialsSecretArnT&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::forward<CredentialsSecretArnT>(value); }
+    template<typename CredentialsSecretArnT = Aws::String>
+    PineconeConfiguration& WithCredentialsSecretArn(CredentialsSecretArnT&& value) { SetCredentialsSecretArn(std::forward<CredentialsSecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,26 +71,24 @@ namespace Model
      * <p>Contains the names of the fields to which to map information about the vector
      * store.</p>
      */
-    inline const PineconeFieldMapping& GetFieldMapping() const{ return m_fieldMapping; }
+    inline const PineconeFieldMapping& GetFieldMapping() const { return m_fieldMapping; }
     inline bool FieldMappingHasBeenSet() const { return m_fieldMappingHasBeenSet; }
-    inline void SetFieldMapping(const PineconeFieldMapping& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = value; }
-    inline void SetFieldMapping(PineconeFieldMapping&& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = std::move(value); }
-    inline PineconeConfiguration& WithFieldMapping(const PineconeFieldMapping& value) { SetFieldMapping(value); return *this;}
-    inline PineconeConfiguration& WithFieldMapping(PineconeFieldMapping&& value) { SetFieldMapping(std::move(value)); return *this;}
+    template<typename FieldMappingT = PineconeFieldMapping>
+    void SetFieldMapping(FieldMappingT&& value) { m_fieldMappingHasBeenSet = true; m_fieldMapping = std::forward<FieldMappingT>(value); }
+    template<typename FieldMappingT = PineconeFieldMapping>
+    PineconeConfiguration& WithFieldMapping(FieldMappingT&& value) { SetFieldMapping(std::forward<FieldMappingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace to be used to write new data to your database.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline PineconeConfiguration& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline PineconeConfiguration& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline PineconeConfiguration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PineconeConfiguration& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 

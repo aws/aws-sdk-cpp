@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ListTasksSortBase::ListTasksSortBase() : 
-    m_sortBy(ListTasksSortName::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 ListTasksSortBase::ListTasksSortBase(JsonView jsonValue)
-  : ListTasksSortBase()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ListTasksSortBase& ListTasksSortBase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = ListTasksSortNameMapper::GetListTasksSortNameForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

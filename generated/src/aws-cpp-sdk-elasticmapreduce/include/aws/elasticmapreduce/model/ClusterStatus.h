@@ -35,7 +35,7 @@ namespace Model
   class ClusterStatus
   {
   public:
-    AWS_EMR_API ClusterStatus();
+    AWS_EMR_API ClusterStatus() = default;
     AWS_EMR_API ClusterStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ClusterStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,22 @@ namespace Model
     /**
      * <p>The current state of the cluster.</p>
      */
-    inline const ClusterState& GetState() const{ return m_state; }
+    inline ClusterState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ClusterState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ClusterState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ClusterStatus& WithState(const ClusterState& value) { SetState(value); return *this;}
-    inline ClusterStatus& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ClusterState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ClusterStatus& WithState(ClusterState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the cluster status change.</p>
      */
-    inline const ClusterStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+    inline const ClusterStateChangeReason& GetStateChangeReason() const { return m_stateChangeReason; }
     inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
-    inline void SetStateChangeReason(const ClusterStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
-    inline void SetStateChangeReason(ClusterStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
-    inline ClusterStatus& WithStateChangeReason(const ClusterStateChangeReason& value) { SetStateChangeReason(value); return *this;}
-    inline ClusterStatus& WithStateChangeReason(ClusterStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+    template<typename StateChangeReasonT = ClusterStateChangeReason>
+    void SetStateChangeReason(StateChangeReasonT&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::forward<StateChangeReasonT>(value); }
+    template<typename StateChangeReasonT = ClusterStateChangeReason>
+    ClusterStatus& WithStateChangeReason(StateChangeReasonT&& value) { SetStateChangeReason(std::forward<StateChangeReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,12 @@ namespace Model
      * <p>A timeline that represents the status of a cluster over the lifetime of the
      * cluster.</p>
      */
-    inline const ClusterTimeline& GetTimeline() const{ return m_timeline; }
+    inline const ClusterTimeline& GetTimeline() const { return m_timeline; }
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-    inline void SetTimeline(const ClusterTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-    inline void SetTimeline(ClusterTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-    inline ClusterStatus& WithTimeline(const ClusterTimeline& value) { SetTimeline(value); return *this;}
-    inline ClusterStatus& WithTimeline(ClusterTimeline&& value) { SetTimeline(std::move(value)); return *this;}
+    template<typename TimelineT = ClusterTimeline>
+    void SetTimeline(TimelineT&& value) { m_timelineHasBeenSet = true; m_timeline = std::forward<TimelineT>(value); }
+    template<typename TimelineT = ClusterTimeline>
+    ClusterStatus& WithTimeline(TimelineT&& value) { SetTimeline(std::forward<TimelineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,18 +82,18 @@ namespace Model
      * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
-    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
+    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-    inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-    inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-    inline ClusterStatus& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
-    inline ClusterStatus& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
-    inline ClusterStatus& AddErrorDetails(const ErrorDetail& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(value); return *this; }
-    inline ClusterStatus& AddErrorDetails(ErrorDetail&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(std::move(value)); return *this; }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+    void SetErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::forward<ErrorDetailsT>(value); }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+    ClusterStatus& WithErrorDetails(ErrorDetailsT&& value) { SetErrorDetails(std::forward<ErrorDetailsT>(value)); return *this;}
+    template<typename ErrorDetailsT = ErrorDetail>
+    ClusterStatus& AddErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value)); return *this; }
     ///@}
   private:
 
-    ClusterState m_state;
+    ClusterState m_state{ClusterState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     ClusterStateChangeReason m_stateChangeReason;

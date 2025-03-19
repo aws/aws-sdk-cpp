@@ -18,14 +18,7 @@ namespace Detective
 namespace Model
 {
 
-Graph::Graph() : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 Graph::Graph(JsonView jsonValue)
-  : Graph()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Graph& Graph::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

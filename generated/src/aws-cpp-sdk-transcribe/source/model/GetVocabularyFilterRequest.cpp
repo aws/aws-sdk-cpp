@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVocabularyFilterRequest::GetVocabularyFilterRequest() : 
-    m_vocabularyFilterNameHasBeenSet(false)
-{
-}
-
 Aws::String GetVocabularyFilterRequest::SerializePayload() const
 {
   JsonValue payload;

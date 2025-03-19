@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamAccessKeySessionContextAttributes::AwsIamAccessKeySessionContextAttributes() : 
-    m_mfaAuthenticated(false),
-    m_mfaAuthenticatedHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 AwsIamAccessKeySessionContextAttributes::AwsIamAccessKeySessionContextAttributes(JsonView jsonValue)
-  : AwsIamAccessKeySessionContextAttributes()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsIamAccessKeySessionContextAttributes& AwsIamAccessKeySessionContextAttributes
   if(jsonValue.ValueExists("MfaAuthenticated"))
   {
     m_mfaAuthenticated = jsonValue.GetBool("MfaAuthenticated");
-
     m_mfaAuthenticatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

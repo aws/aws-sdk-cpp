@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-UsageProfileDefinition::UsageProfileDefinition() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false)
-{
-}
-
 UsageProfileDefinition::UsageProfileDefinition(JsonView jsonValue)
-  : UsageProfileDefinition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ UsageProfileDefinition& UsageProfileDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedOn"))
   {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
-
     m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   return *this;
 }
 

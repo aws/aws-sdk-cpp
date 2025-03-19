@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProfilePermissionsResult::ListProfilePermissionsResult() : 
-    m_policySizeBytes(0)
-{
-}
-
 ListProfilePermissionsResult::ListProfilePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListProfilePermissionsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListProfilePermissionsResult& ListProfilePermissionsResult::operator =(const Aws
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
+    m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policySizeBytes"))
   {
     m_policySizeBytes = jsonValue.GetInteger("policySizeBytes");
-
+    m_policySizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
@@ -50,20 +42,20 @@ ListProfilePermissionsResult& ListProfilePermissionsResult::operator =(const Aws
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
+    m_permissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

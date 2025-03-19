@@ -35,52 +35,51 @@ namespace Model
   class ListCloudWatchAlarmTemplatesResult
   {
   public:
-    AWS_MEDIALIVE_API ListCloudWatchAlarmTemplatesResult();
+    AWS_MEDIALIVE_API ListCloudWatchAlarmTemplatesResult() = default;
     AWS_MEDIALIVE_API ListCloudWatchAlarmTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API ListCloudWatchAlarmTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<CloudWatchAlarmTemplateSummary>& GetCloudWatchAlarmTemplates() const{ return m_cloudWatchAlarmTemplates; }
-    inline void SetCloudWatchAlarmTemplates(const Aws::Vector<CloudWatchAlarmTemplateSummary>& value) { m_cloudWatchAlarmTemplates = value; }
-    inline void SetCloudWatchAlarmTemplates(Aws::Vector<CloudWatchAlarmTemplateSummary>&& value) { m_cloudWatchAlarmTemplates = std::move(value); }
-    inline ListCloudWatchAlarmTemplatesResult& WithCloudWatchAlarmTemplates(const Aws::Vector<CloudWatchAlarmTemplateSummary>& value) { SetCloudWatchAlarmTemplates(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesResult& WithCloudWatchAlarmTemplates(Aws::Vector<CloudWatchAlarmTemplateSummary>&& value) { SetCloudWatchAlarmTemplates(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesResult& AddCloudWatchAlarmTemplates(const CloudWatchAlarmTemplateSummary& value) { m_cloudWatchAlarmTemplates.push_back(value); return *this; }
-    inline ListCloudWatchAlarmTemplatesResult& AddCloudWatchAlarmTemplates(CloudWatchAlarmTemplateSummary&& value) { m_cloudWatchAlarmTemplates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CloudWatchAlarmTemplateSummary>& GetCloudWatchAlarmTemplates() const { return m_cloudWatchAlarmTemplates; }
+    template<typename CloudWatchAlarmTemplatesT = Aws::Vector<CloudWatchAlarmTemplateSummary>>
+    void SetCloudWatchAlarmTemplates(CloudWatchAlarmTemplatesT&& value) { m_cloudWatchAlarmTemplatesHasBeenSet = true; m_cloudWatchAlarmTemplates = std::forward<CloudWatchAlarmTemplatesT>(value); }
+    template<typename CloudWatchAlarmTemplatesT = Aws::Vector<CloudWatchAlarmTemplateSummary>>
+    ListCloudWatchAlarmTemplatesResult& WithCloudWatchAlarmTemplates(CloudWatchAlarmTemplatesT&& value) { SetCloudWatchAlarmTemplates(std::forward<CloudWatchAlarmTemplatesT>(value)); return *this;}
+    template<typename CloudWatchAlarmTemplatesT = CloudWatchAlarmTemplateSummary>
+    ListCloudWatchAlarmTemplatesResult& AddCloudWatchAlarmTemplates(CloudWatchAlarmTemplatesT&& value) { m_cloudWatchAlarmTemplatesHasBeenSet = true; m_cloudWatchAlarmTemplates.emplace_back(std::forward<CloudWatchAlarmTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * A token used to retrieve the next set of results in paginated list responses.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCloudWatchAlarmTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCloudWatchAlarmTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCloudWatchAlarmTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCloudWatchAlarmTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCloudWatchAlarmTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCloudWatchAlarmTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CloudWatchAlarmTemplateSummary> m_cloudWatchAlarmTemplates;
+    bool m_cloudWatchAlarmTemplatesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

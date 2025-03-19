@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult()
-{
-}
-
 DownloadDefaultKeyPairResult::DownloadDefaultKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DownloadDefaultKeyPairResult& DownloadDefaultKeyPairResult::operator =(const Aws
   if(jsonValue.ValueExists("publicKeyBase64"))
   {
     m_publicKeyBase64 = jsonValue.GetString("publicKeyBase64");
-
+    m_publicKeyBase64HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateKeyBase64"))
   {
     m_privateKeyBase64 = jsonValue.GetString("privateKeyBase64");
-
+    m_privateKeyBase64HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ConfigurationObject::ConfigurationObject() : 
-    m_defaultValueHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
-{
-}
-
 ConfigurationObject::ConfigurationObject(JsonView jsonValue)
-  : ConfigurationObject()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ConfigurationObject& ConfigurationObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedValues"))
   {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("AllowedValues");
@@ -50,21 +39,16 @@ ConfigurationObject& ConfigurationObject::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetString("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetString("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   return *this;
 }
 

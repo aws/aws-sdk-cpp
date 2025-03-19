@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InterfaceMapping::InterfaceMapping() : 
-    m_logicalInterfaceNameHasBeenSet(false),
-    m_networkIdHasBeenSet(false)
-{
-}
-
 InterfaceMapping::InterfaceMapping(JsonView jsonValue)
-  : InterfaceMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InterfaceMapping& InterfaceMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logicalInterfaceName"))
   {
     m_logicalInterfaceName = jsonValue.GetString("logicalInterfaceName");
-
     m_logicalInterfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkId"))
   {
     m_networkId = jsonValue.GetString("networkId");
-
     m_networkIdHasBeenSet = true;
   }
-
   return *this;
 }
 

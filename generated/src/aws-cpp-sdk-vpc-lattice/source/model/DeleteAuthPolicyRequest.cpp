@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAuthPolicyRequest::DeleteAuthPolicyRequest() : 
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAuthPolicyRequest::SerializePayload() const
 {
   return {};

@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AssociationStatus::AssociationStatus() : 
-    m_dateHasBeenSet(false),
-    m_name(AssociationStatusName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false)
-{
-}
-
 AssociationStatus::AssociationStatus(JsonView jsonValue)
-  : AssociationStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AssociationStatus& AssociationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetDouble("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = AssociationStatusNameMapper::GetAssociationStatusNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalInfo"))
   {
     m_additionalInfo = jsonValue.GetString("AdditionalInfo");
-
     m_additionalInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

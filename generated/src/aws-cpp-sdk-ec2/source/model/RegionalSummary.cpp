@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RegionalSummary::RegionalSummary() : 
-    m_regionNameHasBeenSet(false),
-    m_numberOfMatchedAccounts(0),
-    m_numberOfMatchedAccountsHasBeenSet(false),
-    m_numberOfUnmatchedAccounts(0),
-    m_numberOfUnmatchedAccountsHasBeenSet(false)
-{
-}
-
 RegionalSummary::RegionalSummary(const XmlNode& xmlNode)
-  : RegionalSummary()
 {
   *this = xmlNode;
 }

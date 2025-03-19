@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListValue(const XmlNode& xmlNode)
-  : Phase2IntegrityAlgorithmsRequestListValue()
 {
   *this = xmlNode;
 }

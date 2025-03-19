@@ -28,7 +28,7 @@ namespace Model
   class GetClassifierResult
   {
   public:
-    AWS_GLUE_API GetClassifierResult();
+    AWS_GLUE_API GetClassifierResult() = default;
     AWS_GLUE_API GetClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The requested classifier.</p>
      */
-    inline const Classifier& GetClassifier() const{ return m_classifier; }
-    inline void SetClassifier(const Classifier& value) { m_classifier = value; }
-    inline void SetClassifier(Classifier&& value) { m_classifier = std::move(value); }
-    inline GetClassifierResult& WithClassifier(const Classifier& value) { SetClassifier(value); return *this;}
-    inline GetClassifierResult& WithClassifier(Classifier&& value) { SetClassifier(std::move(value)); return *this;}
+    inline const Classifier& GetClassifier() const { return m_classifier; }
+    template<typename ClassifierT = Classifier>
+    void SetClassifier(ClassifierT&& value) { m_classifierHasBeenSet = true; m_classifier = std::forward<ClassifierT>(value); }
+    template<typename ClassifierT = Classifier>
+    GetClassifierResult& WithClassifier(ClassifierT&& value) { SetClassifier(std::forward<ClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetClassifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetClassifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetClassifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetClassifierResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Classifier m_classifier;
+    bool m_classifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

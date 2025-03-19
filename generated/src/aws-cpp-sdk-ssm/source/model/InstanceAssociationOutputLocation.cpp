@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InstanceAssociationOutputLocation::InstanceAssociationOutputLocation() : 
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(JsonView jsonValue)
-  : InstanceAssociationOutputLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceAssociationOutputLocation& InstanceAssociationOutputLocation::operator =
   if(jsonValue.ValueExists("S3Location"))
   {
     m_s3Location = jsonValue.GetObject("S3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

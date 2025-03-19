@@ -34,7 +34,7 @@ namespace Model
   class ProxyConfiguration
   {
   public:
-    AWS_CODEBUILD_API ProxyConfiguration();
+    AWS_CODEBUILD_API ProxyConfiguration() = default;
     AWS_CODEBUILD_API ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The default behavior of outgoing traffic.</p>
      */
-    inline const FleetProxyRuleBehavior& GetDefaultBehavior() const{ return m_defaultBehavior; }
+    inline FleetProxyRuleBehavior GetDefaultBehavior() const { return m_defaultBehavior; }
     inline bool DefaultBehaviorHasBeenSet() const { return m_defaultBehaviorHasBeenSet; }
-    inline void SetDefaultBehavior(const FleetProxyRuleBehavior& value) { m_defaultBehaviorHasBeenSet = true; m_defaultBehavior = value; }
-    inline void SetDefaultBehavior(FleetProxyRuleBehavior&& value) { m_defaultBehaviorHasBeenSet = true; m_defaultBehavior = std::move(value); }
-    inline ProxyConfiguration& WithDefaultBehavior(const FleetProxyRuleBehavior& value) { SetDefaultBehavior(value); return *this;}
-    inline ProxyConfiguration& WithDefaultBehavior(FleetProxyRuleBehavior&& value) { SetDefaultBehavior(std::move(value)); return *this;}
+    inline void SetDefaultBehavior(FleetProxyRuleBehavior value) { m_defaultBehaviorHasBeenSet = true; m_defaultBehavior = value; }
+    inline ProxyConfiguration& WithDefaultBehavior(FleetProxyRuleBehavior value) { SetDefaultBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,18 @@ namespace Model
      * <p>An array of <code>FleetProxyRule</code> objects that represent the specified
      * destination domains or IPs to allow or deny network access control to.</p>
      */
-    inline const Aws::Vector<FleetProxyRule>& GetOrderedProxyRules() const{ return m_orderedProxyRules; }
+    inline const Aws::Vector<FleetProxyRule>& GetOrderedProxyRules() const { return m_orderedProxyRules; }
     inline bool OrderedProxyRulesHasBeenSet() const { return m_orderedProxyRulesHasBeenSet; }
-    inline void SetOrderedProxyRules(const Aws::Vector<FleetProxyRule>& value) { m_orderedProxyRulesHasBeenSet = true; m_orderedProxyRules = value; }
-    inline void SetOrderedProxyRules(Aws::Vector<FleetProxyRule>&& value) { m_orderedProxyRulesHasBeenSet = true; m_orderedProxyRules = std::move(value); }
-    inline ProxyConfiguration& WithOrderedProxyRules(const Aws::Vector<FleetProxyRule>& value) { SetOrderedProxyRules(value); return *this;}
-    inline ProxyConfiguration& WithOrderedProxyRules(Aws::Vector<FleetProxyRule>&& value) { SetOrderedProxyRules(std::move(value)); return *this;}
-    inline ProxyConfiguration& AddOrderedProxyRules(const FleetProxyRule& value) { m_orderedProxyRulesHasBeenSet = true; m_orderedProxyRules.push_back(value); return *this; }
-    inline ProxyConfiguration& AddOrderedProxyRules(FleetProxyRule&& value) { m_orderedProxyRulesHasBeenSet = true; m_orderedProxyRules.push_back(std::move(value)); return *this; }
+    template<typename OrderedProxyRulesT = Aws::Vector<FleetProxyRule>>
+    void SetOrderedProxyRules(OrderedProxyRulesT&& value) { m_orderedProxyRulesHasBeenSet = true; m_orderedProxyRules = std::forward<OrderedProxyRulesT>(value); }
+    template<typename OrderedProxyRulesT = Aws::Vector<FleetProxyRule>>
+    ProxyConfiguration& WithOrderedProxyRules(OrderedProxyRulesT&& value) { SetOrderedProxyRules(std::forward<OrderedProxyRulesT>(value)); return *this;}
+    template<typename OrderedProxyRulesT = FleetProxyRule>
+    ProxyConfiguration& AddOrderedProxyRules(OrderedProxyRulesT&& value) { m_orderedProxyRulesHasBeenSet = true; m_orderedProxyRules.emplace_back(std::forward<OrderedProxyRulesT>(value)); return *this; }
     ///@}
   private:
 
-    FleetProxyRuleBehavior m_defaultBehavior;
+    FleetProxyRuleBehavior m_defaultBehavior{FleetProxyRuleBehavior::NOT_SET};
     bool m_defaultBehaviorHasBeenSet = false;
 
     Aws::Vector<FleetProxyRule> m_orderedProxyRules;

@@ -12,12 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBackupPlanRequest::UpdateBackupPlanRequest() : 
-    m_backupPlanIdHasBeenSet(false),
-    m_backupPlanHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBackupPlanRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppInstanceBotRequest::DeleteAppInstanceBotRequest() : 
-    m_appInstanceBotArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppInstanceBotRequest::SerializePayload() const
 {
   return {};

@@ -36,7 +36,7 @@ namespace Model
   class RuleGroupSourceStatelessRuleMatchAttributes
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributes();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributes() = default;
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>A list of port ranges to specify the destination ports to inspect for.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>& GetDestinationPorts() const{ return m_destinationPorts; }
+    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>& GetDestinationPorts() const { return m_destinationPorts; }
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
-    inline void SetDestinationPorts(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = value; }
-    inline void SetDestinationPorts(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithDestinationPorts(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>& value) { SetDestinationPorts(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithDestinationPorts(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>&& value) { SetDestinationPorts(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddDestinationPorts(const RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddDestinationPorts(RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(std::move(value)); return *this; }
+    template<typename DestinationPortsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>>
+    void SetDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::forward<DestinationPortsT>(value); }
+    template<typename DestinationPortsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>>
+    RuleGroupSourceStatelessRuleMatchAttributes& WithDestinationPorts(DestinationPortsT&& value) { SetDestinationPorts(std::forward<DestinationPortsT>(value)); return *this;}
+    template<typename DestinationPortsT = RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>
+    RuleGroupSourceStatelessRuleMatchAttributes& AddDestinationPorts(DestinationPortsT&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.emplace_back(std::forward<DestinationPortsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,26 +61,26 @@ namespace Model
      * <p>The destination IP addresses and address ranges to inspect for, in CIDR
      * notation.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithDestinations(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>& value) { SetDestinations(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithDestinations(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddDestinations(const RuleGroupSourceStatelessRuleMatchAttributesDestinations& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddDestinations(RuleGroupSourceStatelessRuleMatchAttributesDestinations&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesDestinations>>
+    RuleGroupSourceStatelessRuleMatchAttributes& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = RuleGroupSourceStatelessRuleMatchAttributesDestinations>
+    RuleGroupSourceStatelessRuleMatchAttributes& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The protocols to inspect for.</p>
      */
-    inline const Aws::Vector<int>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<int>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<int>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<int>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithProtocols(const Aws::Vector<int>& value) { SetProtocols(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithProtocols(Aws::Vector<int>&& value) { SetProtocols(std::move(value)); return *this;}
+    template<typename ProtocolsT = Aws::Vector<int>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<int>>
+    RuleGroupSourceStatelessRuleMatchAttributes& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
     inline RuleGroupSourceStatelessRuleMatchAttributes& AddProtocols(int value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
@@ -88,14 +88,14 @@ namespace Model
     /**
      * <p>A list of port ranges to specify the source ports to inspect for.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>& GetSourcePorts() const{ return m_sourcePorts; }
+    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>& GetSourcePorts() const { return m_sourcePorts; }
     inline bool SourcePortsHasBeenSet() const { return m_sourcePortsHasBeenSet; }
-    inline void SetSourcePorts(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = value; }
-    inline void SetSourcePorts(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithSourcePorts(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>& value) { SetSourcePorts(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithSourcePorts(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>&& value) { SetSourcePorts(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddSourcePorts(const RuleGroupSourceStatelessRuleMatchAttributesSourcePorts& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddSourcePorts(RuleGroupSourceStatelessRuleMatchAttributesSourcePorts&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(std::move(value)); return *this; }
+    template<typename SourcePortsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>>
+    void SetSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::forward<SourcePortsT>(value); }
+    template<typename SourcePortsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>>
+    RuleGroupSourceStatelessRuleMatchAttributes& WithSourcePorts(SourcePortsT&& value) { SetSourcePorts(std::forward<SourcePortsT>(value)); return *this;}
+    template<typename SourcePortsT = RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>
+    RuleGroupSourceStatelessRuleMatchAttributes& AddSourcePorts(SourcePortsT&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.emplace_back(std::forward<SourcePortsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,28 +103,28 @@ namespace Model
      * <p>The source IP addresses and address ranges to inspect for, in CIDR
      * notation.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithSources(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>& value) { SetSources(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithSources(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>&& value) { SetSources(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddSources(const RuleGroupSourceStatelessRuleMatchAttributesSources& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddSources(RuleGroupSourceStatelessRuleMatchAttributesSources&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesSources>>
+    RuleGroupSourceStatelessRuleMatchAttributes& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = RuleGroupSourceStatelessRuleMatchAttributesSources>
+    RuleGroupSourceStatelessRuleMatchAttributes& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The TCP flags and masks to inspect for.</p>
      */
-    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>& GetTcpFlags() const{ return m_tcpFlags; }
+    inline const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>& GetTcpFlags() const { return m_tcpFlags; }
     inline bool TcpFlagsHasBeenSet() const { return m_tcpFlagsHasBeenSet; }
-    inline void SetTcpFlags(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>& value) { m_tcpFlagsHasBeenSet = true; m_tcpFlags = value; }
-    inline void SetTcpFlags(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>&& value) { m_tcpFlagsHasBeenSet = true; m_tcpFlags = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithTcpFlags(const Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>& value) { SetTcpFlags(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& WithTcpFlags(Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>&& value) { SetTcpFlags(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddTcpFlags(const RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& value) { m_tcpFlagsHasBeenSet = true; m_tcpFlags.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributes& AddTcpFlags(RuleGroupSourceStatelessRuleMatchAttributesTcpFlags&& value) { m_tcpFlagsHasBeenSet = true; m_tcpFlags.push_back(std::move(value)); return *this; }
+    template<typename TcpFlagsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>>
+    void SetTcpFlags(TcpFlagsT&& value) { m_tcpFlagsHasBeenSet = true; m_tcpFlags = std::forward<TcpFlagsT>(value); }
+    template<typename TcpFlagsT = Aws::Vector<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>>
+    RuleGroupSourceStatelessRuleMatchAttributes& WithTcpFlags(TcpFlagsT&& value) { SetTcpFlags(std::forward<TcpFlagsT>(value)); return *this;}
+    template<typename TcpFlagsT = RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>
+    RuleGroupSourceStatelessRuleMatchAttributes& AddTcpFlags(TcpFlagsT&& value) { m_tcpFlagsHasBeenSet = true; m_tcpFlags.emplace_back(std::forward<TcpFlagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-FileMetadata::FileMetadata() : 
-    m_dataSetsHasBeenSet(false),
-    m_databaseCDCHasBeenSet(false)
-{
-}
-
 FileMetadata::FileMetadata(JsonView jsonValue)
-  : FileMetadata()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ FileMetadata& FileMetadata::operator =(JsonView jsonValue)
     }
     m_dataSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseCDC"))
   {
     m_databaseCDC = jsonValue.GetObject("databaseCDC");
-
     m_databaseCDCHasBeenSet = true;
   }
-
   return *this;
 }
 

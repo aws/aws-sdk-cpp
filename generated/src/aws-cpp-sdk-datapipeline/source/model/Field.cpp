@@ -18,15 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-Field::Field() : 
-    m_keyHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_refValueHasBeenSet(false)
-{
-}
-
 Field::Field(JsonView jsonValue)
-  : Field()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Field& Field::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refValue"))
   {
     m_refValue = jsonValue.GetString("refValue");
-
     m_refValueHasBeenSet = true;
   }
-
   return *this;
 }
 

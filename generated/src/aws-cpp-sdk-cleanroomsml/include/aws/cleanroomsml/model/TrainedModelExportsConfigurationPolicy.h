@@ -34,7 +34,7 @@ namespace Model
   class TrainedModelExportsConfigurationPolicy
   {
   public:
-    AWS_CLEANROOMSML_API TrainedModelExportsConfigurationPolicy();
+    AWS_CLEANROOMSML_API TrainedModelExportsConfigurationPolicy() = default;
     AWS_CLEANROOMSML_API TrainedModelExportsConfigurationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API TrainedModelExportsConfigurationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,25 @@ namespace Model
     /**
      * <p>The maximum size of the data that can be exported.</p>
      */
-    inline const TrainedModelExportsMaxSize& GetMaxSize() const{ return m_maxSize; }
+    inline const TrainedModelExportsMaxSize& GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
-    inline void SetMaxSize(const TrainedModelExportsMaxSize& value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
-    inline void SetMaxSize(TrainedModelExportsMaxSize&& value) { m_maxSizeHasBeenSet = true; m_maxSize = std::move(value); }
-    inline TrainedModelExportsConfigurationPolicy& WithMaxSize(const TrainedModelExportsMaxSize& value) { SetMaxSize(value); return *this;}
-    inline TrainedModelExportsConfigurationPolicy& WithMaxSize(TrainedModelExportsMaxSize&& value) { SetMaxSize(std::move(value)); return *this;}
+    template<typename MaxSizeT = TrainedModelExportsMaxSize>
+    void SetMaxSize(MaxSizeT&& value) { m_maxSizeHasBeenSet = true; m_maxSize = std::forward<MaxSizeT>(value); }
+    template<typename MaxSizeT = TrainedModelExportsMaxSize>
+    TrainedModelExportsConfigurationPolicy& WithMaxSize(MaxSizeT&& value) { SetMaxSize(std::forward<MaxSizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The files that are exported during the trained model export job.</p>
      */
-    inline const Aws::Vector<TrainedModelExportFileType>& GetFilesToExport() const{ return m_filesToExport; }
+    inline const Aws::Vector<TrainedModelExportFileType>& GetFilesToExport() const { return m_filesToExport; }
     inline bool FilesToExportHasBeenSet() const { return m_filesToExportHasBeenSet; }
-    inline void SetFilesToExport(const Aws::Vector<TrainedModelExportFileType>& value) { m_filesToExportHasBeenSet = true; m_filesToExport = value; }
-    inline void SetFilesToExport(Aws::Vector<TrainedModelExportFileType>&& value) { m_filesToExportHasBeenSet = true; m_filesToExport = std::move(value); }
-    inline TrainedModelExportsConfigurationPolicy& WithFilesToExport(const Aws::Vector<TrainedModelExportFileType>& value) { SetFilesToExport(value); return *this;}
-    inline TrainedModelExportsConfigurationPolicy& WithFilesToExport(Aws::Vector<TrainedModelExportFileType>&& value) { SetFilesToExport(std::move(value)); return *this;}
-    inline TrainedModelExportsConfigurationPolicy& AddFilesToExport(const TrainedModelExportFileType& value) { m_filesToExportHasBeenSet = true; m_filesToExport.push_back(value); return *this; }
-    inline TrainedModelExportsConfigurationPolicy& AddFilesToExport(TrainedModelExportFileType&& value) { m_filesToExportHasBeenSet = true; m_filesToExport.push_back(std::move(value)); return *this; }
+    template<typename FilesToExportT = Aws::Vector<TrainedModelExportFileType>>
+    void SetFilesToExport(FilesToExportT&& value) { m_filesToExportHasBeenSet = true; m_filesToExport = std::forward<FilesToExportT>(value); }
+    template<typename FilesToExportT = Aws::Vector<TrainedModelExportFileType>>
+    TrainedModelExportsConfigurationPolicy& WithFilesToExport(FilesToExportT&& value) { SetFilesToExport(std::forward<FilesToExportT>(value)); return *this;}
+    inline TrainedModelExportsConfigurationPolicy& AddFilesToExport(TrainedModelExportFileType value) { m_filesToExportHasBeenSet = true; m_filesToExport.push_back(value); return *this; }
     ///@}
   private:
 

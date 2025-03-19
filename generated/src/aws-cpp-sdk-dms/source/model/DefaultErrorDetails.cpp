@@ -18,13 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DefaultErrorDetails::DefaultErrorDetails() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 DefaultErrorDetails::DefaultErrorDetails(JsonView jsonValue)
-  : DefaultErrorDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DefaultErrorDetails& DefaultErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-SecurityLakeDirectQueryDataSource::SecurityLakeDirectQueryDataSource() : 
-    m_roleArnHasBeenSet(false)
-{
-}
-
 SecurityLakeDirectQueryDataSource::SecurityLakeDirectQueryDataSource(JsonView jsonValue)
-  : SecurityLakeDirectQueryDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SecurityLakeDirectQueryDataSource& SecurityLakeDirectQueryDataSource::operator =
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

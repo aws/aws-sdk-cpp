@@ -19,23 +19,7 @@ namespace mgn
 namespace Model
 {
 
-Wave::Wave() : 
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_lastModifiedDateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_waveAggregatedStatusHasBeenSet(false),
-    m_waveIDHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Wave::Wave(JsonView jsonValue)
-  : Wave()
 {
   *this = jsonValue;
 }
@@ -45,45 +29,33 @@ Wave& Wave::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetString("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isArchived"))
   {
     m_isArchived = jsonValue.GetBool("isArchived");
-
     m_isArchivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDateTime"))
   {
     m_lastModifiedDateTime = jsonValue.GetString("lastModifiedDateTime");
-
     m_lastModifiedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -93,21 +65,16 @@ Wave& Wave::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waveAggregatedStatus"))
   {
     m_waveAggregatedStatus = jsonValue.GetObject("waveAggregatedStatus");
-
     m_waveAggregatedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waveID"))
   {
     m_waveID = jsonValue.GetString("waveID");
-
     m_waveIDHasBeenSet = true;
   }
-
   return *this;
 }
 

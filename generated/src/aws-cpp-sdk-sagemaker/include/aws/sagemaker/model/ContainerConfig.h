@@ -34,7 +34,7 @@ namespace Model
   class ContainerConfig
   {
   public:
-    AWS_SAGEMAKER_API ContainerConfig();
+    AWS_SAGEMAKER_API ContainerConfig() = default;
     AWS_SAGEMAKER_API ContainerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ContainerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,49 +44,44 @@ namespace Model
     /**
      * <p>The arguments for the container when you're running the application.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerArguments() const{ return m_containerArguments; }
+    inline const Aws::Vector<Aws::String>& GetContainerArguments() const { return m_containerArguments; }
     inline bool ContainerArgumentsHasBeenSet() const { return m_containerArgumentsHasBeenSet; }
-    inline void SetContainerArguments(const Aws::Vector<Aws::String>& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = value; }
-    inline void SetContainerArguments(Aws::Vector<Aws::String>&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::move(value); }
-    inline ContainerConfig& WithContainerArguments(const Aws::Vector<Aws::String>& value) { SetContainerArguments(value); return *this;}
-    inline ContainerConfig& WithContainerArguments(Aws::Vector<Aws::String>&& value) { SetContainerArguments(std::move(value)); return *this;}
-    inline ContainerConfig& AddContainerArguments(const Aws::String& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
-    inline ContainerConfig& AddContainerArguments(Aws::String&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(std::move(value)); return *this; }
-    inline ContainerConfig& AddContainerArguments(const char* value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
+    template<typename ContainerArgumentsT = Aws::Vector<Aws::String>>
+    void SetContainerArguments(ContainerArgumentsT&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::forward<ContainerArgumentsT>(value); }
+    template<typename ContainerArgumentsT = Aws::Vector<Aws::String>>
+    ContainerConfig& WithContainerArguments(ContainerArgumentsT&& value) { SetContainerArguments(std::forward<ContainerArgumentsT>(value)); return *this;}
+    template<typename ContainerArgumentsT = Aws::String>
+    ContainerConfig& AddContainerArguments(ContainerArgumentsT&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.emplace_back(std::forward<ContainerArgumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The entrypoint used to run the application in the container.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const{ return m_containerEntrypoint; }
+    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const { return m_containerEntrypoint; }
     inline bool ContainerEntrypointHasBeenSet() const { return m_containerEntrypointHasBeenSet; }
-    inline void SetContainerEntrypoint(const Aws::Vector<Aws::String>& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = value; }
-    inline void SetContainerEntrypoint(Aws::Vector<Aws::String>&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::move(value); }
-    inline ContainerConfig& WithContainerEntrypoint(const Aws::Vector<Aws::String>& value) { SetContainerEntrypoint(value); return *this;}
-    inline ContainerConfig& WithContainerEntrypoint(Aws::Vector<Aws::String>&& value) { SetContainerEntrypoint(std::move(value)); return *this;}
-    inline ContainerConfig& AddContainerEntrypoint(const Aws::String& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
-    inline ContainerConfig& AddContainerEntrypoint(Aws::String&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(std::move(value)); return *this; }
-    inline ContainerConfig& AddContainerEntrypoint(const char* value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
+    template<typename ContainerEntrypointT = Aws::Vector<Aws::String>>
+    void SetContainerEntrypoint(ContainerEntrypointT&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::forward<ContainerEntrypointT>(value); }
+    template<typename ContainerEntrypointT = Aws::Vector<Aws::String>>
+    ContainerConfig& WithContainerEntrypoint(ContainerEntrypointT&& value) { SetContainerEntrypoint(std::forward<ContainerEntrypointT>(value)); return *this;}
+    template<typename ContainerEntrypointT = Aws::String>
+    ContainerConfig& AddContainerEntrypoint(ContainerEntrypointT&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.emplace_back(std::forward<ContainerEntrypointT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The environment variables to set in the container</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContainerEnvironmentVariables() const{ return m_containerEnvironmentVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetContainerEnvironmentVariables() const { return m_containerEnvironmentVariables; }
     inline bool ContainerEnvironmentVariablesHasBeenSet() const { return m_containerEnvironmentVariablesHasBeenSet; }
-    inline void SetContainerEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables = value; }
-    inline void SetContainerEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables = std::move(value); }
-    inline ContainerConfig& WithContainerEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetContainerEnvironmentVariables(value); return *this;}
-    inline ContainerConfig& WithContainerEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetContainerEnvironmentVariables(std::move(value)); return *this;}
-    inline ContainerConfig& AddContainerEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(key, value); return *this; }
-    inline ContainerConfig& AddContainerEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(std::move(key), value); return *this; }
-    inline ContainerConfig& AddContainerEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(key, std::move(value)); return *this; }
-    inline ContainerConfig& AddContainerEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline ContainerConfig& AddContainerEnvironmentVariables(const char* key, Aws::String&& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(key, std::move(value)); return *this; }
-    inline ContainerConfig& AddContainerEnvironmentVariables(Aws::String&& key, const char* value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(std::move(key), value); return *this; }
-    inline ContainerConfig& AddContainerEnvironmentVariables(const char* key, const char* value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(key, value); return *this; }
+    template<typename ContainerEnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetContainerEnvironmentVariables(ContainerEnvironmentVariablesT&& value) { m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables = std::forward<ContainerEnvironmentVariablesT>(value); }
+    template<typename ContainerEnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    ContainerConfig& WithContainerEnvironmentVariables(ContainerEnvironmentVariablesT&& value) { SetContainerEnvironmentVariables(std::forward<ContainerEnvironmentVariablesT>(value)); return *this;}
+    template<typename ContainerEnvironmentVariablesKeyT = Aws::String, typename ContainerEnvironmentVariablesValueT = Aws::String>
+    ContainerConfig& AddContainerEnvironmentVariables(ContainerEnvironmentVariablesKeyT&& key, ContainerEnvironmentVariablesValueT&& value) {
+      m_containerEnvironmentVariablesHasBeenSet = true; m_containerEnvironmentVariables.emplace(std::forward<ContainerEnvironmentVariablesKeyT>(key), std::forward<ContainerEnvironmentVariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

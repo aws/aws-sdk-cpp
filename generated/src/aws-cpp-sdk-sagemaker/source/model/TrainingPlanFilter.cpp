@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingPlanFilter::TrainingPlanFilter() : 
-    m_name(TrainingPlanFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TrainingPlanFilter::TrainingPlanFilter(JsonView jsonValue)
-  : TrainingPlanFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TrainingPlanFilter& TrainingPlanFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = TrainingPlanFilterNameMapper::GetTrainingPlanFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-EdgeStructure::EdgeStructure() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_edgePropertiesHasBeenSet(false)
-{
-}
-
 EdgeStructure::EdgeStructure(JsonView jsonValue)
-  : EdgeStructure()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EdgeStructure& EdgeStructure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("edgeProperties"))
   {
     Aws::Utils::Array<JsonView> edgePropertiesJsonList = jsonValue.GetArray("edgeProperties");
@@ -49,7 +39,6 @@ EdgeStructure& EdgeStructure::operator =(JsonView jsonValue)
     }
     m_edgePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

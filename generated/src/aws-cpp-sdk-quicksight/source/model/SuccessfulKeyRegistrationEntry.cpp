@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SuccessfulKeyRegistrationEntry::SuccessfulKeyRegistrationEntry() : 
-    m_keyArnHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 SuccessfulKeyRegistrationEntry::SuccessfulKeyRegistrationEntry(JsonView jsonValue)
-  : SuccessfulKeyRegistrationEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SuccessfulKeyRegistrationEntry& SuccessfulKeyRegistrationEntry::operator =(JsonV
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

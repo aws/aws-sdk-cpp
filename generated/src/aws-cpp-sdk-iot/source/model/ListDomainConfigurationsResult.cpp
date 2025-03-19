@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDomainConfigurationsResult::ListDomainConfigurationsResult()
-{
-}
-
 ListDomainConfigurationsResult::ListDomainConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListDomainConfigurationsResult& ListDomainConfigurationsResult::operator =(const
     {
       m_domainConfigurations.push_back(domainConfigurationsJsonList[domainConfigurationsIndex].AsObject());
     }
+    m_domainConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextMarker"))
   {
     m_nextMarker = jsonValue.GetString("nextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRunRequest::DeleteRunRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRunRequest::SerializePayload() const
 {
   JsonValue payload;

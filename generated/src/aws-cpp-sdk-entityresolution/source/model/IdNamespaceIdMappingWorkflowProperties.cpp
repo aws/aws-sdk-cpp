@@ -18,16 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdNamespaceIdMappingWorkflowProperties::IdNamespaceIdMappingWorkflowProperties() : 
-    m_idMappingType(IdMappingType::NOT_SET),
-    m_idMappingTypeHasBeenSet(false),
-    m_providerPropertiesHasBeenSet(false),
-    m_ruleBasedPropertiesHasBeenSet(false)
-{
-}
-
 IdNamespaceIdMappingWorkflowProperties::IdNamespaceIdMappingWorkflowProperties(JsonView jsonValue)
-  : IdNamespaceIdMappingWorkflowProperties()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ IdNamespaceIdMappingWorkflowProperties& IdNamespaceIdMappingWorkflowProperties::
   if(jsonValue.ValueExists("idMappingType"))
   {
     m_idMappingType = IdMappingTypeMapper::GetIdMappingTypeForName(jsonValue.GetString("idMappingType"));
-
     m_idMappingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerProperties"))
   {
     m_providerProperties = jsonValue.GetObject("providerProperties");
-
     m_providerPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleBasedProperties"))
   {
     m_ruleBasedProperties = jsonValue.GetObject("ruleBasedProperties");
-
     m_ruleBasedPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

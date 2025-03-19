@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTrafficMirrorTargetResponse::DeleteTrafficMirrorTargetResponse()
-{
-}
-
 DeleteTrafficMirrorTargetResponse::DeleteTrafficMirrorTargetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteTrafficMirrorTargetResponse& DeleteTrafficMirrorTargetResponse::operator =
     if(!trafficMirrorTargetIdNode.IsNull())
     {
       m_trafficMirrorTargetId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorTargetIdNode.GetText());
+      m_trafficMirrorTargetIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteTrafficMirrorTargetResponse& DeleteTrafficMirrorTargetResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteTrafficMirrorTargetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

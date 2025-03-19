@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFpgaImageResponse::CreateFpgaImageResponse()
-{
-}
-
 CreateFpgaImageResponse::CreateFpgaImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateFpgaImageResponse& CreateFpgaImageResponse::operator =(const Aws::AmazonWe
     if(!fpgaImageIdNode.IsNull())
     {
       m_fpgaImageId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageIdNode.GetText());
+      m_fpgaImageIdHasBeenSet = true;
     }
     XmlNode fpgaImageGlobalIdNode = resultNode.FirstChild("fpgaImageGlobalId");
     if(!fpgaImageGlobalIdNode.IsNull())
     {
       m_fpgaImageGlobalId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageGlobalIdNode.GetText());
+      m_fpgaImageGlobalIdHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ CreateFpgaImageResponse& CreateFpgaImageResponse::operator =(const Aws::AmazonWe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateFpgaImageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

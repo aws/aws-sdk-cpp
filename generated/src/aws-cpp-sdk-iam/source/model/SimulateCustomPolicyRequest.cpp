@@ -10,22 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-SimulateCustomPolicyRequest::SimulateCustomPolicyRequest() : 
-    m_policyInputListHasBeenSet(false),
-    m_permissionsBoundaryPolicyInputListHasBeenSet(false),
-    m_actionNamesHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_resourcePolicyHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_callerArnHasBeenSet(false),
-    m_contextEntriesHasBeenSet(false),
-    m_resourceHandlingOptionHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String SimulateCustomPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

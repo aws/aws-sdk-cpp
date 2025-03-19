@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetMembershipDatasourcesResult::BatchGetMembershipDatasourcesResult()
-{
-}
-
 BatchGetMembershipDatasourcesResult::BatchGetMembershipDatasourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetMembershipDatasourcesResult& BatchGetMembershipDatasourcesResult::operat
     {
       m_membershipDatasources.push_back(membershipDatasourcesJsonList[membershipDatasourcesIndex].AsObject());
     }
+    m_membershipDatasourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedGraphs"))
   {
     Aws::Utils::Array<JsonView> unprocessedGraphsJsonList = jsonValue.GetArray("UnprocessedGraphs");
@@ -45,14 +41,15 @@ BatchGetMembershipDatasourcesResult& BatchGetMembershipDatasourcesResult::operat
     {
       m_unprocessedGraphs.push_back(unprocessedGraphsJsonList[unprocessedGraphsIndex].AsObject());
     }
+    m_unprocessedGraphsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

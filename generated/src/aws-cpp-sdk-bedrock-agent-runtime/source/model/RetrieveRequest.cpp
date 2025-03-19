@@ -12,15 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetrieveRequest::RetrieveRequest() : 
-    m_guardrailConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_retrievalConfigurationHasBeenSet(false),
-    m_retrievalQueryHasBeenSet(false)
-{
-}
-
 Aws::String RetrieveRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,24 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation() : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
-    m_savingsPlansTypeHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_savingsPlansPurchaseRecommendationDetailsHasBeenSet(false),
-    m_savingsPlansPurchaseRecommendationSummaryHasBeenSet(false)
-{
-}
-
 SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView jsonValue)
-  : SavingsPlansPurchaseRecommendation()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator
   if(jsonValue.ValueExists("AccountScope"))
   {
     m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("AccountScope"));
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansType"))
   {
     m_savingsPlansType = SupportedSavingsPlansTypeMapper::GetSupportedSavingsPlansTypeForName(jsonValue.GetString("SavingsPlansType"));
-
     m_savingsPlansTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TermInYears"))
   {
     m_termInYears = TermInYearsMapper::GetTermInYearsForName(jsonValue.GetString("TermInYears"));
-
     m_termInYearsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookbackPeriodInDays"))
   {
     m_lookbackPeriodInDays = LookbackPeriodInDaysMapper::GetLookbackPeriodInDaysForName(jsonValue.GetString("LookbackPeriodInDays"));
-
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansPurchaseRecommendationDetails"))
   {
     Aws::Utils::Array<JsonView> savingsPlansPurchaseRecommendationDetailsJsonList = jsonValue.GetArray("SavingsPlansPurchaseRecommendationDetails");
@@ -86,14 +59,11 @@ SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator
     }
     m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SavingsPlansPurchaseRecommendationSummary"))
   {
     m_savingsPlansPurchaseRecommendationSummary = jsonValue.GetObject("SavingsPlansPurchaseRecommendationSummary");
-
     m_savingsPlansPurchaseRecommendationSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

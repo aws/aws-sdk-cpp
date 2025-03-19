@@ -12,19 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_targetArnHasBeenSet(false),
-    m_deploymentNameHasBeenSet(false),
-    m_componentsHasBeenSet(false),
-    m_iotJobConfigurationHasBeenSet(false),
-    m_deploymentPoliciesHasBeenSet(false),
-    m_parentTargetArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

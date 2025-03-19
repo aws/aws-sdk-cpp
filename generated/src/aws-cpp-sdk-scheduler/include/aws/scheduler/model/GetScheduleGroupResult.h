@@ -29,7 +29,7 @@ namespace Model
   class GetScheduleGroupResult
   {
   public:
-    AWS_SCHEDULER_API GetScheduleGroupResult();
+    AWS_SCHEDULER_API GetScheduleGroupResult() = default;
     AWS_SCHEDULER_API GetScheduleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SCHEDULER_API GetScheduleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,84 +38,82 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the schedule group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetScheduleGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetScheduleGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetScheduleGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetScheduleGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the schedule group was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline GetScheduleGroupResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline GetScheduleGroupResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    GetScheduleGroupResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the schedule group was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationDate() const{ return m_lastModificationDate; }
-    inline void SetLastModificationDate(const Aws::Utils::DateTime& value) { m_lastModificationDate = value; }
-    inline void SetLastModificationDate(Aws::Utils::DateTime&& value) { m_lastModificationDate = std::move(value); }
-    inline GetScheduleGroupResult& WithLastModificationDate(const Aws::Utils::DateTime& value) { SetLastModificationDate(value); return *this;}
-    inline GetScheduleGroupResult& WithLastModificationDate(Aws::Utils::DateTime&& value) { SetLastModificationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationDate() const { return m_lastModificationDate; }
+    template<typename LastModificationDateT = Aws::Utils::DateTime>
+    void SetLastModificationDate(LastModificationDateT&& value) { m_lastModificationDateHasBeenSet = true; m_lastModificationDate = std::forward<LastModificationDateT>(value); }
+    template<typename LastModificationDateT = Aws::Utils::DateTime>
+    GetScheduleGroupResult& WithLastModificationDate(LastModificationDateT&& value) { SetLastModificationDate(std::forward<LastModificationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schedule group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetScheduleGroupResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetScheduleGroupResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetScheduleGroupResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetScheduleGroupResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the state of the schedule group.</p>
      */
-    inline const ScheduleGroupState& GetState() const{ return m_state; }
-    inline void SetState(const ScheduleGroupState& value) { m_state = value; }
-    inline void SetState(ScheduleGroupState&& value) { m_state = std::move(value); }
-    inline GetScheduleGroupResult& WithState(const ScheduleGroupState& value) { SetState(value); return *this;}
-    inline GetScheduleGroupResult& WithState(ScheduleGroupState&& value) { SetState(std::move(value)); return *this;}
+    inline ScheduleGroupState GetState() const { return m_state; }
+    inline void SetState(ScheduleGroupState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline GetScheduleGroupResult& WithState(ScheduleGroupState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetScheduleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetScheduleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetScheduleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetScheduleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationDate;
+    Aws::Utils::DateTime m_lastModificationDate{};
+    bool m_lastModificationDateHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    ScheduleGroupState m_state;
+    ScheduleGroupState m_state{ScheduleGroupState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

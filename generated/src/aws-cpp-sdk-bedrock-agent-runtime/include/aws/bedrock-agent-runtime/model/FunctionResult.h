@@ -40,7 +40,7 @@ namespace Model
   class FunctionResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FunctionResult();
+    AWS_BEDROCKAGENTRUNTIME_API FunctionResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API FunctionResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FunctionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
     /**
      * <p>The action group that the function belongs to.</p>
      */
-    inline const Aws::String& GetActionGroup() const{ return m_actionGroup; }
+    inline const Aws::String& GetActionGroup() const { return m_actionGroup; }
     inline bool ActionGroupHasBeenSet() const { return m_actionGroupHasBeenSet; }
-    inline void SetActionGroup(const Aws::String& value) { m_actionGroupHasBeenSet = true; m_actionGroup = value; }
-    inline void SetActionGroup(Aws::String&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::move(value); }
-    inline void SetActionGroup(const char* value) { m_actionGroupHasBeenSet = true; m_actionGroup.assign(value); }
-    inline FunctionResult& WithActionGroup(const Aws::String& value) { SetActionGroup(value); return *this;}
-    inline FunctionResult& WithActionGroup(Aws::String&& value) { SetActionGroup(std::move(value)); return *this;}
-    inline FunctionResult& WithActionGroup(const char* value) { SetActionGroup(value); return *this;}
+    template<typename ActionGroupT = Aws::String>
+    void SetActionGroup(ActionGroupT&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::forward<ActionGroupT>(value); }
+    template<typename ActionGroupT = Aws::String>
+    FunctionResult& WithActionGroup(ActionGroupT&& value) { SetActionGroup(std::forward<ActionGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent's ID.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline FunctionResult& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline FunctionResult& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline FunctionResult& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    FunctionResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,26 +75,22 @@ namespace Model
      * <p>Contains the user confirmation information about the function that was
      * called.</p>
      */
-    inline const ConfirmationState& GetConfirmationState() const{ return m_confirmationState; }
+    inline ConfirmationState GetConfirmationState() const { return m_confirmationState; }
     inline bool ConfirmationStateHasBeenSet() const { return m_confirmationStateHasBeenSet; }
-    inline void SetConfirmationState(const ConfirmationState& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
-    inline void SetConfirmationState(ConfirmationState&& value) { m_confirmationStateHasBeenSet = true; m_confirmationState = std::move(value); }
-    inline FunctionResult& WithConfirmationState(const ConfirmationState& value) { SetConfirmationState(value); return *this;}
-    inline FunctionResult& WithConfirmationState(ConfirmationState&& value) { SetConfirmationState(std::move(value)); return *this;}
+    inline void SetConfirmationState(ConfirmationState value) { m_confirmationStateHasBeenSet = true; m_confirmationState = value; }
+    inline FunctionResult& WithConfirmationState(ConfirmationState value) { SetConfirmationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the function that was called.</p>
      */
-    inline const Aws::String& GetFunction() const{ return m_function; }
+    inline const Aws::String& GetFunction() const { return m_function; }
     inline bool FunctionHasBeenSet() const { return m_functionHasBeenSet; }
-    inline void SetFunction(const Aws::String& value) { m_functionHasBeenSet = true; m_function = value; }
-    inline void SetFunction(Aws::String&& value) { m_functionHasBeenSet = true; m_function = std::move(value); }
-    inline void SetFunction(const char* value) { m_functionHasBeenSet = true; m_function.assign(value); }
-    inline FunctionResult& WithFunction(const Aws::String& value) { SetFunction(value); return *this;}
-    inline FunctionResult& WithFunction(Aws::String&& value) { SetFunction(std::move(value)); return *this;}
-    inline FunctionResult& WithFunction(const char* value) { SetFunction(value); return *this;}
+    template<typename FunctionT = Aws::String>
+    void SetFunction(FunctionT&& value) { m_functionHasBeenSet = true; m_function = std::forward<FunctionT>(value); }
+    template<typename FunctionT = Aws::String>
+    FunctionResult& WithFunction(FunctionT&& value) { SetFunction(std::forward<FunctionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,18 +105,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
      * an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
      */
-    inline const Aws::Map<Aws::String, ContentBody>& GetResponseBody() const{ return m_responseBody; }
+    inline const Aws::Map<Aws::String, ContentBody>& GetResponseBody() const { return m_responseBody; }
     inline bool ResponseBodyHasBeenSet() const { return m_responseBodyHasBeenSet; }
-    inline void SetResponseBody(const Aws::Map<Aws::String, ContentBody>& value) { m_responseBodyHasBeenSet = true; m_responseBody = value; }
-    inline void SetResponseBody(Aws::Map<Aws::String, ContentBody>&& value) { m_responseBodyHasBeenSet = true; m_responseBody = std::move(value); }
-    inline FunctionResult& WithResponseBody(const Aws::Map<Aws::String, ContentBody>& value) { SetResponseBody(value); return *this;}
-    inline FunctionResult& WithResponseBody(Aws::Map<Aws::String, ContentBody>&& value) { SetResponseBody(std::move(value)); return *this;}
-    inline FunctionResult& AddResponseBody(const Aws::String& key, const ContentBody& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, value); return *this; }
-    inline FunctionResult& AddResponseBody(Aws::String&& key, const ContentBody& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(std::move(key), value); return *this; }
-    inline FunctionResult& AddResponseBody(const Aws::String& key, ContentBody&& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, std::move(value)); return *this; }
-    inline FunctionResult& AddResponseBody(Aws::String&& key, ContentBody&& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(std::move(key), std::move(value)); return *this; }
-    inline FunctionResult& AddResponseBody(const char* key, ContentBody&& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, std::move(value)); return *this; }
-    inline FunctionResult& AddResponseBody(const char* key, const ContentBody& value) { m_responseBodyHasBeenSet = true; m_responseBody.emplace(key, value); return *this; }
+    template<typename ResponseBodyT = Aws::Map<Aws::String, ContentBody>>
+    void SetResponseBody(ResponseBodyT&& value) { m_responseBodyHasBeenSet = true; m_responseBody = std::forward<ResponseBodyT>(value); }
+    template<typename ResponseBodyT = Aws::Map<Aws::String, ContentBody>>
+    FunctionResult& WithResponseBody(ResponseBodyT&& value) { SetResponseBody(std::forward<ResponseBodyT>(value)); return *this;}
+    template<typename ResponseBodyKeyT = Aws::String, typename ResponseBodyValueT = ContentBody>
+    FunctionResult& AddResponseBody(ResponseBodyKeyT&& key, ResponseBodyValueT&& value) {
+      m_responseBodyHasBeenSet = true; m_responseBody.emplace(std::forward<ResponseBodyKeyT>(key), std::forward<ResponseBodyValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -134,12 +124,10 @@ namespace Model
      * dependency failure exception. When this state is REPROMPT, the API/function
      * response will be sent to model for re-prompt</p>
      */
-    inline const ResponseState& GetResponseState() const{ return m_responseState; }
+    inline ResponseState GetResponseState() const { return m_responseState; }
     inline bool ResponseStateHasBeenSet() const { return m_responseStateHasBeenSet; }
-    inline void SetResponseState(const ResponseState& value) { m_responseStateHasBeenSet = true; m_responseState = value; }
-    inline void SetResponseState(ResponseState&& value) { m_responseStateHasBeenSet = true; m_responseState = std::move(value); }
-    inline FunctionResult& WithResponseState(const ResponseState& value) { SetResponseState(value); return *this;}
-    inline FunctionResult& WithResponseState(ResponseState&& value) { SetResponseState(std::move(value)); return *this;}
+    inline void SetResponseState(ResponseState value) { m_responseStateHasBeenSet = true; m_responseState = value; }
+    inline FunctionResult& WithResponseState(ResponseState value) { SetResponseState(value); return *this;}
     ///@}
   private:
 
@@ -149,7 +137,7 @@ namespace Model
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    ConfirmationState m_confirmationState;
+    ConfirmationState m_confirmationState{ConfirmationState::NOT_SET};
     bool m_confirmationStateHasBeenSet = false;
 
     Aws::String m_function;
@@ -158,7 +146,7 @@ namespace Model
     Aws::Map<Aws::String, ContentBody> m_responseBody;
     bool m_responseBodyHasBeenSet = false;
 
-    ResponseState m_responseState;
+    ResponseState m_responseState{ResponseState::NOT_SET};
     bool m_responseStateHasBeenSet = false;
   };
 

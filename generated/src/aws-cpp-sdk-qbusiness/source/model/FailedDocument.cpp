@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-FailedDocument::FailedDocument() : 
-    m_idHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
-{
-}
-
 FailedDocument::FailedDocument(JsonView jsonValue)
-  : FailedDocument()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FailedDocument& FailedDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

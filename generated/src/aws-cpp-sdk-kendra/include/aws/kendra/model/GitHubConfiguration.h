@@ -49,7 +49,7 @@ namespace Model
   class GitHubConfiguration
   {
   public:
-    AWS_KENDRA_API GitHubConfiguration();
+    AWS_KENDRA_API GitHubConfiguration() = default;
     AWS_KENDRA_API GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,12 @@ namespace Model
     /**
      * <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
      */
-    inline const SaaSConfiguration& GetSaaSConfiguration() const{ return m_saaSConfiguration; }
+    inline const SaaSConfiguration& GetSaaSConfiguration() const { return m_saaSConfiguration; }
     inline bool SaaSConfigurationHasBeenSet() const { return m_saaSConfigurationHasBeenSet; }
-    inline void SetSaaSConfiguration(const SaaSConfiguration& value) { m_saaSConfigurationHasBeenSet = true; m_saaSConfiguration = value; }
-    inline void SetSaaSConfiguration(SaaSConfiguration&& value) { m_saaSConfigurationHasBeenSet = true; m_saaSConfiguration = std::move(value); }
-    inline GitHubConfiguration& WithSaaSConfiguration(const SaaSConfiguration& value) { SetSaaSConfiguration(value); return *this;}
-    inline GitHubConfiguration& WithSaaSConfiguration(SaaSConfiguration&& value) { SetSaaSConfiguration(std::move(value)); return *this;}
+    template<typename SaaSConfigurationT = SaaSConfiguration>
+    void SetSaaSConfiguration(SaaSConfigurationT&& value) { m_saaSConfigurationHasBeenSet = true; m_saaSConfiguration = std::forward<SaaSConfigurationT>(value); }
+    template<typename SaaSConfigurationT = SaaSConfiguration>
+    GitHubConfiguration& WithSaaSConfiguration(SaaSConfigurationT&& value) { SetSaaSConfiguration(std::forward<SaaSConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>Configuration information to connect to GitHub Enterprise Server (on
      * premises).</p>
      */
-    inline const OnPremiseConfiguration& GetOnPremiseConfiguration() const{ return m_onPremiseConfiguration; }
+    inline const OnPremiseConfiguration& GetOnPremiseConfiguration() const { return m_onPremiseConfiguration; }
     inline bool OnPremiseConfigurationHasBeenSet() const { return m_onPremiseConfigurationHasBeenSet; }
-    inline void SetOnPremiseConfiguration(const OnPremiseConfiguration& value) { m_onPremiseConfigurationHasBeenSet = true; m_onPremiseConfiguration = value; }
-    inline void SetOnPremiseConfiguration(OnPremiseConfiguration&& value) { m_onPremiseConfigurationHasBeenSet = true; m_onPremiseConfiguration = std::move(value); }
-    inline GitHubConfiguration& WithOnPremiseConfiguration(const OnPremiseConfiguration& value) { SetOnPremiseConfiguration(value); return *this;}
-    inline GitHubConfiguration& WithOnPremiseConfiguration(OnPremiseConfiguration&& value) { SetOnPremiseConfiguration(std::move(value)); return *this;}
+    template<typename OnPremiseConfigurationT = OnPremiseConfiguration>
+    void SetOnPremiseConfiguration(OnPremiseConfigurationT&& value) { m_onPremiseConfigurationHasBeenSet = true; m_onPremiseConfiguration = std::forward<OnPremiseConfigurationT>(value); }
+    template<typename OnPremiseConfigurationT = OnPremiseConfiguration>
+    GitHubConfiguration& WithOnPremiseConfiguration(OnPremiseConfigurationT&& value) { SetOnPremiseConfiguration(std::forward<OnPremiseConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +85,10 @@ namespace Model
      * <p>The type of GitHub service you want to connect to—GitHub Enterprise Cloud
      * (SaaS) or GitHub Enterprise Server (on premises).</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GitHubConfiguration& WithType(const Type& value) { SetType(value); return *this;}
-    inline GitHubConfiguration& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GitHubConfiguration& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +101,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using
      * a GitHub data source</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline GitHubConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline GitHubConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline GitHubConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    GitHubConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +116,7 @@ namespace Model
      * take longer for Amazon Kendra to use the change log than to scan all of your
      * documents in GitHub.</p>
      */
-    inline bool GetUseChangeLog() const{ return m_useChangeLog; }
+    inline bool GetUseChangeLog() const { return m_useChangeLog; }
     inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
     inline void SetUseChangeLog(bool value) { m_useChangeLogHasBeenSet = true; m_useChangeLog = value; }
     inline GitHubConfiguration& WithUseChangeLog(bool value) { SetUseChangeLog(value); return *this;}
@@ -132,27 +128,26 @@ namespace Model
      * configure to index repository files only, or also include issues and pull
      * requests, comments, and comment attachments.</p>
      */
-    inline const GitHubDocumentCrawlProperties& GetGitHubDocumentCrawlProperties() const{ return m_gitHubDocumentCrawlProperties; }
+    inline const GitHubDocumentCrawlProperties& GetGitHubDocumentCrawlProperties() const { return m_gitHubDocumentCrawlProperties; }
     inline bool GitHubDocumentCrawlPropertiesHasBeenSet() const { return m_gitHubDocumentCrawlPropertiesHasBeenSet; }
-    inline void SetGitHubDocumentCrawlProperties(const GitHubDocumentCrawlProperties& value) { m_gitHubDocumentCrawlPropertiesHasBeenSet = true; m_gitHubDocumentCrawlProperties = value; }
-    inline void SetGitHubDocumentCrawlProperties(GitHubDocumentCrawlProperties&& value) { m_gitHubDocumentCrawlPropertiesHasBeenSet = true; m_gitHubDocumentCrawlProperties = std::move(value); }
-    inline GitHubConfiguration& WithGitHubDocumentCrawlProperties(const GitHubDocumentCrawlProperties& value) { SetGitHubDocumentCrawlProperties(value); return *this;}
-    inline GitHubConfiguration& WithGitHubDocumentCrawlProperties(GitHubDocumentCrawlProperties&& value) { SetGitHubDocumentCrawlProperties(std::move(value)); return *this;}
+    template<typename GitHubDocumentCrawlPropertiesT = GitHubDocumentCrawlProperties>
+    void SetGitHubDocumentCrawlProperties(GitHubDocumentCrawlPropertiesT&& value) { m_gitHubDocumentCrawlPropertiesHasBeenSet = true; m_gitHubDocumentCrawlProperties = std::forward<GitHubDocumentCrawlPropertiesT>(value); }
+    template<typename GitHubDocumentCrawlPropertiesT = GitHubDocumentCrawlProperties>
+    GitHubConfiguration& WithGitHubDocumentCrawlProperties(GitHubDocumentCrawlPropertiesT&& value) { SetGitHubDocumentCrawlProperties(std::forward<GitHubDocumentCrawlPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of names of the specific repositories you want to index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRepositoryFilter() const{ return m_repositoryFilter; }
+    inline const Aws::Vector<Aws::String>& GetRepositoryFilter() const { return m_repositoryFilter; }
     inline bool RepositoryFilterHasBeenSet() const { return m_repositoryFilterHasBeenSet; }
-    inline void SetRepositoryFilter(const Aws::Vector<Aws::String>& value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter = value; }
-    inline void SetRepositoryFilter(Aws::Vector<Aws::String>&& value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter = std::move(value); }
-    inline GitHubConfiguration& WithRepositoryFilter(const Aws::Vector<Aws::String>& value) { SetRepositoryFilter(value); return *this;}
-    inline GitHubConfiguration& WithRepositoryFilter(Aws::Vector<Aws::String>&& value) { SetRepositoryFilter(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddRepositoryFilter(const Aws::String& value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter.push_back(value); return *this; }
-    inline GitHubConfiguration& AddRepositoryFilter(Aws::String&& value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddRepositoryFilter(const char* value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter.push_back(value); return *this; }
+    template<typename RepositoryFilterT = Aws::Vector<Aws::String>>
+    void SetRepositoryFilter(RepositoryFilterT&& value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter = std::forward<RepositoryFilterT>(value); }
+    template<typename RepositoryFilterT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithRepositoryFilter(RepositoryFilterT&& value) { SetRepositoryFilter(std::forward<RepositoryFilterT>(value)); return *this;}
+    template<typename RepositoryFilterT = Aws::String>
+    GitHubConfiguration& AddRepositoryFilter(RepositoryFilterT&& value) { m_repositoryFilterHasBeenSet = true; m_repositoryFilter.emplace_back(std::forward<RepositoryFilterT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -164,15 +159,14 @@ namespace Model
      * exclusion pattern takes precedence and the folder isn't included in the
      * index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionFolderNamePatterns() const{ return m_inclusionFolderNamePatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionFolderNamePatterns() const { return m_inclusionFolderNamePatterns; }
     inline bool InclusionFolderNamePatternsHasBeenSet() const { return m_inclusionFolderNamePatternsHasBeenSet; }
-    inline void SetInclusionFolderNamePatterns(const Aws::Vector<Aws::String>& value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns = value; }
-    inline void SetInclusionFolderNamePatterns(Aws::Vector<Aws::String>&& value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns = std::move(value); }
-    inline GitHubConfiguration& WithInclusionFolderNamePatterns(const Aws::Vector<Aws::String>& value) { SetInclusionFolderNamePatterns(value); return *this;}
-    inline GitHubConfiguration& WithInclusionFolderNamePatterns(Aws::Vector<Aws::String>&& value) { SetInclusionFolderNamePatterns(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddInclusionFolderNamePatterns(const Aws::String& value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns.push_back(value); return *this; }
-    inline GitHubConfiguration& AddInclusionFolderNamePatterns(Aws::String&& value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddInclusionFolderNamePatterns(const char* value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns.push_back(value); return *this; }
+    template<typename InclusionFolderNamePatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionFolderNamePatterns(InclusionFolderNamePatternsT&& value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns = std::forward<InclusionFolderNamePatternsT>(value); }
+    template<typename InclusionFolderNamePatternsT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithInclusionFolderNamePatterns(InclusionFolderNamePatternsT&& value) { SetInclusionFolderNamePatterns(std::forward<InclusionFolderNamePatternsT>(value)); return *this;}
+    template<typename InclusionFolderNamePatternsT = Aws::String>
+    GitHubConfiguration& AddInclusionFolderNamePatterns(InclusionFolderNamePatternsT&& value) { m_inclusionFolderNamePatternsHasBeenSet = true; m_inclusionFolderNamePatterns.emplace_back(std::forward<InclusionFolderNamePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -183,15 +177,14 @@ namespace Model
      * from the index. If a file matches both an inclusion and exclusion pattern, the
      * exclusion pattern takes precedence and the file isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionFileTypePatterns() const{ return m_inclusionFileTypePatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionFileTypePatterns() const { return m_inclusionFileTypePatterns; }
     inline bool InclusionFileTypePatternsHasBeenSet() const { return m_inclusionFileTypePatternsHasBeenSet; }
-    inline void SetInclusionFileTypePatterns(const Aws::Vector<Aws::String>& value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns = value; }
-    inline void SetInclusionFileTypePatterns(Aws::Vector<Aws::String>&& value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns = std::move(value); }
-    inline GitHubConfiguration& WithInclusionFileTypePatterns(const Aws::Vector<Aws::String>& value) { SetInclusionFileTypePatterns(value); return *this;}
-    inline GitHubConfiguration& WithInclusionFileTypePatterns(Aws::Vector<Aws::String>&& value) { SetInclusionFileTypePatterns(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddInclusionFileTypePatterns(const Aws::String& value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns.push_back(value); return *this; }
-    inline GitHubConfiguration& AddInclusionFileTypePatterns(Aws::String&& value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddInclusionFileTypePatterns(const char* value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns.push_back(value); return *this; }
+    template<typename InclusionFileTypePatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionFileTypePatterns(InclusionFileTypePatternsT&& value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns = std::forward<InclusionFileTypePatternsT>(value); }
+    template<typename InclusionFileTypePatternsT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithInclusionFileTypePatterns(InclusionFileTypePatternsT&& value) { SetInclusionFileTypePatterns(std::forward<InclusionFileTypePatternsT>(value)); return *this;}
+    template<typename InclusionFileTypePatternsT = Aws::String>
+    GitHubConfiguration& AddInclusionFileTypePatterns(InclusionFileTypePatternsT&& value) { m_inclusionFileTypePatternsHasBeenSet = true; m_inclusionFileTypePatterns.emplace_back(std::forward<InclusionFileTypePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -202,15 +195,14 @@ namespace Model
      * from the index. If a file matches both an inclusion and exclusion pattern, the
      * exclusion pattern takes precedence and the file isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionFileNamePatterns() const{ return m_inclusionFileNamePatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionFileNamePatterns() const { return m_inclusionFileNamePatterns; }
     inline bool InclusionFileNamePatternsHasBeenSet() const { return m_inclusionFileNamePatternsHasBeenSet; }
-    inline void SetInclusionFileNamePatterns(const Aws::Vector<Aws::String>& value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns = value; }
-    inline void SetInclusionFileNamePatterns(Aws::Vector<Aws::String>&& value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns = std::move(value); }
-    inline GitHubConfiguration& WithInclusionFileNamePatterns(const Aws::Vector<Aws::String>& value) { SetInclusionFileNamePatterns(value); return *this;}
-    inline GitHubConfiguration& WithInclusionFileNamePatterns(Aws::Vector<Aws::String>&& value) { SetInclusionFileNamePatterns(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddInclusionFileNamePatterns(const Aws::String& value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns.push_back(value); return *this; }
-    inline GitHubConfiguration& AddInclusionFileNamePatterns(Aws::String&& value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddInclusionFileNamePatterns(const char* value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns.push_back(value); return *this; }
+    template<typename InclusionFileNamePatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionFileNamePatterns(InclusionFileNamePatternsT&& value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns = std::forward<InclusionFileNamePatternsT>(value); }
+    template<typename InclusionFileNamePatternsT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithInclusionFileNamePatterns(InclusionFileNamePatternsT&& value) { SetInclusionFileNamePatterns(std::forward<InclusionFileNamePatternsT>(value)); return *this;}
+    template<typename InclusionFileNamePatternsT = Aws::String>
+    GitHubConfiguration& AddInclusionFileNamePatterns(InclusionFileNamePatternsT&& value) { m_inclusionFileNamePatternsHasBeenSet = true; m_inclusionFileNamePatterns.emplace_back(std::forward<InclusionFileNamePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -222,15 +214,14 @@ namespace Model
      * exclusion pattern takes precedence and the folder isn't included in the
      * index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionFolderNamePatterns() const{ return m_exclusionFolderNamePatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionFolderNamePatterns() const { return m_exclusionFolderNamePatterns; }
     inline bool ExclusionFolderNamePatternsHasBeenSet() const { return m_exclusionFolderNamePatternsHasBeenSet; }
-    inline void SetExclusionFolderNamePatterns(const Aws::Vector<Aws::String>& value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns = value; }
-    inline void SetExclusionFolderNamePatterns(Aws::Vector<Aws::String>&& value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns = std::move(value); }
-    inline GitHubConfiguration& WithExclusionFolderNamePatterns(const Aws::Vector<Aws::String>& value) { SetExclusionFolderNamePatterns(value); return *this;}
-    inline GitHubConfiguration& WithExclusionFolderNamePatterns(Aws::Vector<Aws::String>&& value) { SetExclusionFolderNamePatterns(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddExclusionFolderNamePatterns(const Aws::String& value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns.push_back(value); return *this; }
-    inline GitHubConfiguration& AddExclusionFolderNamePatterns(Aws::String&& value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddExclusionFolderNamePatterns(const char* value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns.push_back(value); return *this; }
+    template<typename ExclusionFolderNamePatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionFolderNamePatterns(ExclusionFolderNamePatternsT&& value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns = std::forward<ExclusionFolderNamePatternsT>(value); }
+    template<typename ExclusionFolderNamePatternsT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithExclusionFolderNamePatterns(ExclusionFolderNamePatternsT&& value) { SetExclusionFolderNamePatterns(std::forward<ExclusionFolderNamePatternsT>(value)); return *this;}
+    template<typename ExclusionFolderNamePatternsT = Aws::String>
+    GitHubConfiguration& AddExclusionFolderNamePatterns(ExclusionFolderNamePatternsT&& value) { m_exclusionFolderNamePatternsHasBeenSet = true; m_exclusionFolderNamePatterns.emplace_back(std::forward<ExclusionFolderNamePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -241,15 +232,14 @@ namespace Model
      * in the index. If a file matches both an exclusion and inclusion pattern, the
      * exclusion pattern takes precedence and the file isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionFileTypePatterns() const{ return m_exclusionFileTypePatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionFileTypePatterns() const { return m_exclusionFileTypePatterns; }
     inline bool ExclusionFileTypePatternsHasBeenSet() const { return m_exclusionFileTypePatternsHasBeenSet; }
-    inline void SetExclusionFileTypePatterns(const Aws::Vector<Aws::String>& value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns = value; }
-    inline void SetExclusionFileTypePatterns(Aws::Vector<Aws::String>&& value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns = std::move(value); }
-    inline GitHubConfiguration& WithExclusionFileTypePatterns(const Aws::Vector<Aws::String>& value) { SetExclusionFileTypePatterns(value); return *this;}
-    inline GitHubConfiguration& WithExclusionFileTypePatterns(Aws::Vector<Aws::String>&& value) { SetExclusionFileTypePatterns(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddExclusionFileTypePatterns(const Aws::String& value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns.push_back(value); return *this; }
-    inline GitHubConfiguration& AddExclusionFileTypePatterns(Aws::String&& value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddExclusionFileTypePatterns(const char* value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns.push_back(value); return *this; }
+    template<typename ExclusionFileTypePatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionFileTypePatterns(ExclusionFileTypePatternsT&& value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns = std::forward<ExclusionFileTypePatternsT>(value); }
+    template<typename ExclusionFileTypePatternsT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithExclusionFileTypePatterns(ExclusionFileTypePatternsT&& value) { SetExclusionFileTypePatterns(std::forward<ExclusionFileTypePatternsT>(value)); return *this;}
+    template<typename ExclusionFileTypePatternsT = Aws::String>
+    GitHubConfiguration& AddExclusionFileTypePatterns(ExclusionFileTypePatternsT&& value) { m_exclusionFileTypePatternsHasBeenSet = true; m_exclusionFileTypePatterns.emplace_back(std::forward<ExclusionFileTypePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -260,15 +250,14 @@ namespace Model
      * in the index. If a file matches both an exclusion and inclusion pattern, the
      * exclusion pattern takes precedence and the file isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionFileNamePatterns() const{ return m_exclusionFileNamePatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionFileNamePatterns() const { return m_exclusionFileNamePatterns; }
     inline bool ExclusionFileNamePatternsHasBeenSet() const { return m_exclusionFileNamePatternsHasBeenSet; }
-    inline void SetExclusionFileNamePatterns(const Aws::Vector<Aws::String>& value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns = value; }
-    inline void SetExclusionFileNamePatterns(Aws::Vector<Aws::String>&& value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns = std::move(value); }
-    inline GitHubConfiguration& WithExclusionFileNamePatterns(const Aws::Vector<Aws::String>& value) { SetExclusionFileNamePatterns(value); return *this;}
-    inline GitHubConfiguration& WithExclusionFileNamePatterns(Aws::Vector<Aws::String>&& value) { SetExclusionFileNamePatterns(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddExclusionFileNamePatterns(const Aws::String& value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns.push_back(value); return *this; }
-    inline GitHubConfiguration& AddExclusionFileNamePatterns(Aws::String&& value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns.push_back(std::move(value)); return *this; }
-    inline GitHubConfiguration& AddExclusionFileNamePatterns(const char* value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns.push_back(value); return *this; }
+    template<typename ExclusionFileNamePatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionFileNamePatterns(ExclusionFileNamePatternsT&& value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns = std::forward<ExclusionFileNamePatternsT>(value); }
+    template<typename ExclusionFileNamePatternsT = Aws::Vector<Aws::String>>
+    GitHubConfiguration& WithExclusionFileNamePatterns(ExclusionFileNamePatternsT&& value) { SetExclusionFileNamePatterns(std::forward<ExclusionFileNamePatternsT>(value)); return *this;}
+    template<typename ExclusionFileNamePatternsT = Aws::String>
+    GitHubConfiguration& AddExclusionFileNamePatterns(ExclusionFileNamePatternsT&& value) { m_exclusionFileNamePatternsHasBeenSet = true; m_exclusionFileNamePatterns.emplace_back(std::forward<ExclusionFileNamePatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -278,12 +267,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
      * a VPC</a>.</p>
      */
-    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const DataSourceVpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline GitHubConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline GitHubConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = DataSourceVpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = DataSourceVpcConfiguration>
+    GitHubConfiguration& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -296,14 +285,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubRepositoryConfigurationFieldMappings() const{ return m_gitHubRepositoryConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubRepositoryConfigurationFieldMappings() const { return m_gitHubRepositoryConfigurationFieldMappings; }
     inline bool GitHubRepositoryConfigurationFieldMappingsHasBeenSet() const { return m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubRepositoryConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true; m_gitHubRepositoryConfigurationFieldMappings = value; }
-    inline void SetGitHubRepositoryConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true; m_gitHubRepositoryConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubRepositoryConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubRepositoryConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubRepositoryConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubRepositoryConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubRepositoryConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true; m_gitHubRepositoryConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubRepositoryConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true; m_gitHubRepositoryConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubRepositoryConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubRepositoryConfigurationFieldMappings(GitHubRepositoryConfigurationFieldMappingsT&& value) { m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true; m_gitHubRepositoryConfigurationFieldMappings = std::forward<GitHubRepositoryConfigurationFieldMappingsT>(value); }
+    template<typename GitHubRepositoryConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubRepositoryConfigurationFieldMappings(GitHubRepositoryConfigurationFieldMappingsT&& value) { SetGitHubRepositoryConfigurationFieldMappings(std::forward<GitHubRepositoryConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubRepositoryConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubRepositoryConfigurationFieldMappings(GitHubRepositoryConfigurationFieldMappingsT&& value) { m_gitHubRepositoryConfigurationFieldMappingsHasBeenSet = true; m_gitHubRepositoryConfigurationFieldMappings.emplace_back(std::forward<GitHubRepositoryConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -316,14 +305,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubCommitConfigurationFieldMappings() const{ return m_gitHubCommitConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubCommitConfigurationFieldMappings() const { return m_gitHubCommitConfigurationFieldMappings; }
     inline bool GitHubCommitConfigurationFieldMappingsHasBeenSet() const { return m_gitHubCommitConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubCommitConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true; m_gitHubCommitConfigurationFieldMappings = value; }
-    inline void SetGitHubCommitConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true; m_gitHubCommitConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubCommitConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubCommitConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubCommitConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubCommitConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubCommitConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true; m_gitHubCommitConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubCommitConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true; m_gitHubCommitConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubCommitConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubCommitConfigurationFieldMappings(GitHubCommitConfigurationFieldMappingsT&& value) { m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true; m_gitHubCommitConfigurationFieldMappings = std::forward<GitHubCommitConfigurationFieldMappingsT>(value); }
+    template<typename GitHubCommitConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubCommitConfigurationFieldMappings(GitHubCommitConfigurationFieldMappingsT&& value) { SetGitHubCommitConfigurationFieldMappings(std::forward<GitHubCommitConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubCommitConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubCommitConfigurationFieldMappings(GitHubCommitConfigurationFieldMappingsT&& value) { m_gitHubCommitConfigurationFieldMappingsHasBeenSet = true; m_gitHubCommitConfigurationFieldMappings.emplace_back(std::forward<GitHubCommitConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -336,14 +325,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubIssueDocumentConfigurationFieldMappings() const{ return m_gitHubIssueDocumentConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubIssueDocumentConfigurationFieldMappings() const { return m_gitHubIssueDocumentConfigurationFieldMappings; }
     inline bool GitHubIssueDocumentConfigurationFieldMappingsHasBeenSet() const { return m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubIssueDocumentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueDocumentConfigurationFieldMappings = value; }
-    inline void SetGitHubIssueDocumentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueDocumentConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubIssueDocumentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubIssueDocumentConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubIssueDocumentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubIssueDocumentConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubIssueDocumentConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueDocumentConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubIssueDocumentConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueDocumentConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubIssueDocumentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubIssueDocumentConfigurationFieldMappings(GitHubIssueDocumentConfigurationFieldMappingsT&& value) { m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueDocumentConfigurationFieldMappings = std::forward<GitHubIssueDocumentConfigurationFieldMappingsT>(value); }
+    template<typename GitHubIssueDocumentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubIssueDocumentConfigurationFieldMappings(GitHubIssueDocumentConfigurationFieldMappingsT&& value) { SetGitHubIssueDocumentConfigurationFieldMappings(std::forward<GitHubIssueDocumentConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubIssueDocumentConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubIssueDocumentConfigurationFieldMappings(GitHubIssueDocumentConfigurationFieldMappingsT&& value) { m_gitHubIssueDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueDocumentConfigurationFieldMappings.emplace_back(std::forward<GitHubIssueDocumentConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -356,14 +345,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubIssueCommentConfigurationFieldMappings() const{ return m_gitHubIssueCommentConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubIssueCommentConfigurationFieldMappings() const { return m_gitHubIssueCommentConfigurationFieldMappings; }
     inline bool GitHubIssueCommentConfigurationFieldMappingsHasBeenSet() const { return m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubIssueCommentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueCommentConfigurationFieldMappings = value; }
-    inline void SetGitHubIssueCommentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueCommentConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubIssueCommentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubIssueCommentConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubIssueCommentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubIssueCommentConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubIssueCommentConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueCommentConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubIssueCommentConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueCommentConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubIssueCommentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubIssueCommentConfigurationFieldMappings(GitHubIssueCommentConfigurationFieldMappingsT&& value) { m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueCommentConfigurationFieldMappings = std::forward<GitHubIssueCommentConfigurationFieldMappingsT>(value); }
+    template<typename GitHubIssueCommentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubIssueCommentConfigurationFieldMappings(GitHubIssueCommentConfigurationFieldMappingsT&& value) { SetGitHubIssueCommentConfigurationFieldMappings(std::forward<GitHubIssueCommentConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubIssueCommentConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubIssueCommentConfigurationFieldMappings(GitHubIssueCommentConfigurationFieldMappingsT&& value) { m_gitHubIssueCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueCommentConfigurationFieldMappings.emplace_back(std::forward<GitHubIssueCommentConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -376,14 +365,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubIssueAttachmentConfigurationFieldMappings() const{ return m_gitHubIssueAttachmentConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubIssueAttachmentConfigurationFieldMappings() const { return m_gitHubIssueAttachmentConfigurationFieldMappings; }
     inline bool GitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet() const { return m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubIssueAttachmentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueAttachmentConfigurationFieldMappings = value; }
-    inline void SetGitHubIssueAttachmentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueAttachmentConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubIssueAttachmentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubIssueAttachmentConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubIssueAttachmentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubIssueAttachmentConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubIssueAttachmentConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueAttachmentConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubIssueAttachmentConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueAttachmentConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubIssueAttachmentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubIssueAttachmentConfigurationFieldMappings(GitHubIssueAttachmentConfigurationFieldMappingsT&& value) { m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueAttachmentConfigurationFieldMappings = std::forward<GitHubIssueAttachmentConfigurationFieldMappingsT>(value); }
+    template<typename GitHubIssueAttachmentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubIssueAttachmentConfigurationFieldMappings(GitHubIssueAttachmentConfigurationFieldMappingsT&& value) { SetGitHubIssueAttachmentConfigurationFieldMappings(std::forward<GitHubIssueAttachmentConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubIssueAttachmentConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubIssueAttachmentConfigurationFieldMappings(GitHubIssueAttachmentConfigurationFieldMappingsT&& value) { m_gitHubIssueAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubIssueAttachmentConfigurationFieldMappings.emplace_back(std::forward<GitHubIssueAttachmentConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -396,14 +385,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubPullRequestCommentConfigurationFieldMappings() const{ return m_gitHubPullRequestCommentConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubPullRequestCommentConfigurationFieldMappings() const { return m_gitHubPullRequestCommentConfigurationFieldMappings; }
     inline bool GitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet() const { return m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubPullRequestCommentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestCommentConfigurationFieldMappings = value; }
-    inline void SetGitHubPullRequestCommentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestCommentConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubPullRequestCommentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubPullRequestCommentConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubPullRequestCommentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubPullRequestCommentConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubPullRequestCommentConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestCommentConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubPullRequestCommentConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestCommentConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubPullRequestCommentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubPullRequestCommentConfigurationFieldMappings(GitHubPullRequestCommentConfigurationFieldMappingsT&& value) { m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestCommentConfigurationFieldMappings = std::forward<GitHubPullRequestCommentConfigurationFieldMappingsT>(value); }
+    template<typename GitHubPullRequestCommentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubPullRequestCommentConfigurationFieldMappings(GitHubPullRequestCommentConfigurationFieldMappingsT&& value) { SetGitHubPullRequestCommentConfigurationFieldMappings(std::forward<GitHubPullRequestCommentConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubPullRequestCommentConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubPullRequestCommentConfigurationFieldMappings(GitHubPullRequestCommentConfigurationFieldMappingsT&& value) { m_gitHubPullRequestCommentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestCommentConfigurationFieldMappings.emplace_back(std::forward<GitHubPullRequestCommentConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -416,14 +405,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubPullRequestDocumentConfigurationFieldMappings() const{ return m_gitHubPullRequestDocumentConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubPullRequestDocumentConfigurationFieldMappings() const { return m_gitHubPullRequestDocumentConfigurationFieldMappings; }
     inline bool GitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet() const { return m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubPullRequestDocumentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentConfigurationFieldMappings = value; }
-    inline void SetGitHubPullRequestDocumentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubPullRequestDocumentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubPullRequestDocumentConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubPullRequestDocumentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubPullRequestDocumentConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubPullRequestDocumentConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubPullRequestDocumentConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubPullRequestDocumentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubPullRequestDocumentConfigurationFieldMappings(GitHubPullRequestDocumentConfigurationFieldMappingsT&& value) { m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentConfigurationFieldMappings = std::forward<GitHubPullRequestDocumentConfigurationFieldMappingsT>(value); }
+    template<typename GitHubPullRequestDocumentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubPullRequestDocumentConfigurationFieldMappings(GitHubPullRequestDocumentConfigurationFieldMappingsT&& value) { SetGitHubPullRequestDocumentConfigurationFieldMappings(std::forward<GitHubPullRequestDocumentConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubPullRequestDocumentConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubPullRequestDocumentConfigurationFieldMappings(GitHubPullRequestDocumentConfigurationFieldMappingsT&& value) { m_gitHubPullRequestDocumentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentConfigurationFieldMappings.emplace_back(std::forward<GitHubPullRequestDocumentConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -436,14 +425,14 @@ namespace Model
      * data source fields</a>. The GitHub data source field names must exist in your
      * GitHub custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings() const{ return m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings() const { return m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings; }
     inline bool GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet() const { return m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet; }
-    inline void SetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings = value; }
-    inline void SetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings = std::move(value); }
-    inline GitHubConfiguration& WithGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(value); return *this;}
-    inline GitHubConfiguration& WithGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(std::move(value)); return *this;}
-    inline GitHubConfiguration& AddGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(const DataSourceToIndexFieldMapping& value) { m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.push_back(value); return *this; }
-    inline GitHubConfiguration& AddGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(DataSourceToIndexFieldMapping&& value) { m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT&& value) { m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings = std::forward<GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT>(value); }
+    template<typename GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    GitHubConfiguration& WithGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT&& value) { SetGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(std::forward<GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT>(value)); return *this;}
+    template<typename GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT = DataSourceToIndexFieldMapping>
+    GitHubConfiguration& AddGitHubPullRequestDocumentAttachmentConfigurationFieldMappings(GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT&& value) { m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappingsHasBeenSet = true; m_gitHubPullRequestDocumentAttachmentConfigurationFieldMappings.emplace_back(std::forward<GitHubPullRequestDocumentAttachmentConfigurationFieldMappingsT>(value)); return *this; }
     ///@}
   private:
 
@@ -453,13 +442,13 @@ namespace Model
     OnPremiseConfiguration m_onPremiseConfiguration;
     bool m_onPremiseConfigurationHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;
 
-    bool m_useChangeLog;
+    bool m_useChangeLog{false};
     bool m_useChangeLogHasBeenSet = false;
 
     GitHubDocumentCrawlProperties m_gitHubDocumentCrawlProperties;

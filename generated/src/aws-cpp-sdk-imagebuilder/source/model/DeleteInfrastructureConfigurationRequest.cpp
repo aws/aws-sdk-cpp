@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteInfrastructureConfigurationRequest::DeleteInfrastructureConfigurationRequest() : 
-    m_infrastructureConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInfrastructureConfigurationRequest::SerializePayload() const
 {
   return {};

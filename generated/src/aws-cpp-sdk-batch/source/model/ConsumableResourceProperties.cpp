@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ConsumableResourceProperties::ConsumableResourceProperties() : 
-    m_consumableResourceListHasBeenSet(false)
-{
-}
-
 ConsumableResourceProperties::ConsumableResourceProperties(JsonView jsonValue)
-  : ConsumableResourceProperties()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConsumableResourceProperties& ConsumableResourceProperties::operator =(JsonView 
     }
     m_consumableResourceListHasBeenSet = true;
   }
-
   return *this;
 }
 

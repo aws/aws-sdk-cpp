@@ -34,7 +34,7 @@ namespace Model
   class TextResponseEvent
   {
   public:
-    AWS_LEXRUNTIMEV2_API TextResponseEvent();
+    AWS_LEXRUNTIMEV2_API TextResponseEvent() = default;
     AWS_LEXRUNTIMEV2_API TextResponseEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API TextResponseEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * order that you returned the messages from your Lambda function or the order that
      * the messages are defined in the bot.</p>
      */
-    inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
+    inline const Aws::Vector<Message>& GetMessages() const { return m_messages; }
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-    inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-    inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-    inline TextResponseEvent& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
-    inline TextResponseEvent& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
-    inline TextResponseEvent& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-    inline TextResponseEvent& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    template<typename MessagesT = Aws::Vector<Message>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<Message>>
+    TextResponseEvent& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = Message>
+    TextResponseEvent& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,12 @@ namespace Model
      * the form <code>RESPONSE-N</code>, where N is a number starting with one and
      * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline TextResponseEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline TextResponseEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline TextResponseEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    TextResponseEvent& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-TelemetryConfiguration::TelemetryConfiguration() : 
-    m_configurationSyncStatus(ConfigurationSyncStatus::NOT_SET),
-    m_configurationSyncStatusHasBeenSet(false),
-    m_telemetry(Telemetry::NOT_SET),
-    m_telemetryHasBeenSet(false)
-{
-}
-
 TelemetryConfiguration::TelemetryConfiguration(JsonView jsonValue)
-  : TelemetryConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TelemetryConfiguration& TelemetryConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationSyncStatus"))
   {
     m_configurationSyncStatus = ConfigurationSyncStatusMapper::GetConfigurationSyncStatusForName(jsonValue.GetString("ConfigurationSyncStatus"));
-
     m_configurationSyncStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Telemetry"))
   {
     m_telemetry = TelemetryMapper::GetTelemetryForName(jsonValue.GetString("Telemetry"));
-
     m_telemetryHasBeenSet = true;
   }
-
   return *this;
 }
 

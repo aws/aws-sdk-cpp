@@ -12,12 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSinkRequest::CreateSinkRequest() : 
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSinkRequest::SerializePayload() const
 {
   JsonValue payload;

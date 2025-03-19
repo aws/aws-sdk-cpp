@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMemberFromFleetRequest::DisassociateMemberFromFleetRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMemberFromFleetRequest::SerializePayload() const
 {
   return {};

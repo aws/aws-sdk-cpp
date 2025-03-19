@@ -34,7 +34,7 @@ namespace Model
   class OrganizationAdditionalConfiguration
   {
   public:
-    AWS_GUARDDUTY_API OrganizationAdditionalConfiguration();
+    AWS_GUARDDUTY_API OrganizationAdditionalConfiguration() = default;
     AWS_GUARDDUTY_API OrganizationAdditionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationAdditionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * organization. These values are applicable to only Runtime Monitoring protection
      * plan.</p>
      */
-    inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
+    inline OrgFeatureAdditionalConfiguration GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OrgFeatureAdditionalConfiguration& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OrgFeatureAdditionalConfiguration&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline OrganizationAdditionalConfiguration& WithName(const OrgFeatureAdditionalConfiguration& value) { SetName(value); return *this;}
-    inline OrganizationAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OrgFeatureAdditionalConfiguration value) { m_nameHasBeenSet = true; m_name = value; }
+    inline OrganizationAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,17 @@ namespace Model
      * must manage the additional configuration for each account individually.</p>
      * </li> </ul>
      */
-    inline const OrgFeatureStatus& GetAutoEnable() const{ return m_autoEnable; }
+    inline OrgFeatureStatus GetAutoEnable() const { return m_autoEnable; }
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-    inline void SetAutoEnable(const OrgFeatureStatus& value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-    inline void SetAutoEnable(OrgFeatureStatus&& value) { m_autoEnableHasBeenSet = true; m_autoEnable = std::move(value); }
-    inline OrganizationAdditionalConfiguration& WithAutoEnable(const OrgFeatureStatus& value) { SetAutoEnable(value); return *this;}
-    inline OrganizationAdditionalConfiguration& WithAutoEnable(OrgFeatureStatus&& value) { SetAutoEnable(std::move(value)); return *this;}
+    inline void SetAutoEnable(OrgFeatureStatus value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
+    inline OrganizationAdditionalConfiguration& WithAutoEnable(OrgFeatureStatus value) { SetAutoEnable(value); return *this;}
     ///@}
   private:
 
-    OrgFeatureAdditionalConfiguration m_name;
+    OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    OrgFeatureStatus m_autoEnable;
+    OrgFeatureStatus m_autoEnable{OrgFeatureStatus::NOT_SET};
     bool m_autoEnableHasBeenSet = false;
   };
 

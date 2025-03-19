@@ -12,10 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPhoneNumberSettingsRequest::GetPhoneNumberSettingsRequest()
-{
-}
-
 Aws::String GetPhoneNumberSettingsRequest::SerializePayload() const
 {
   return {};

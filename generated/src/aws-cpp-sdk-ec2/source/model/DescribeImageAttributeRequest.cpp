@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeImageAttributeRequest::DescribeImageAttributeRequest() : 
-    m_attribute(ImageAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImageAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

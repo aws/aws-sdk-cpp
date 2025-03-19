@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-UtilizationPreference::UtilizationPreference() : 
-    m_metricName(CustomizableMetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_metricParametersHasBeenSet(false)
-{
-}
-
 UtilizationPreference::UtilizationPreference(JsonView jsonValue)
-  : UtilizationPreference()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UtilizationPreference& UtilizationPreference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = CustomizableMetricNameMapper::GetCustomizableMetricNameForName(jsonValue.GetString("metricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricParameters"))
   {
     m_metricParameters = jsonValue.GetObject("metricParameters");
-
     m_metricParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

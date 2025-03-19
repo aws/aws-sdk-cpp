@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Details::Details() : 
-    m_routesDetailsHasBeenSet(false)
-{
-}
-
 Details::Details(JsonView jsonValue)
-  : Details()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Details& Details::operator =(JsonView jsonValue)
     }
     m_routesDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

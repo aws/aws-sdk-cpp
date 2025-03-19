@@ -18,14 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-JobDriver::JobDriver() : 
-    m_sparkSubmitJobDriverHasBeenSet(false),
-    m_sparkSqlJobDriverHasBeenSet(false)
-{
-}
-
 JobDriver::JobDriver(JsonView jsonValue)
-  : JobDriver()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobDriver& JobDriver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sparkSubmitJobDriver"))
   {
     m_sparkSubmitJobDriver = jsonValue.GetObject("sparkSubmitJobDriver");
-
     m_sparkSubmitJobDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sparkSqlJobDriver"))
   {
     m_sparkSqlJobDriver = jsonValue.GetObject("sparkSqlJobDriver");
-
     m_sparkSqlJobDriverHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ComplianceSummaryItem
   {
   public:
-    AWS_SSM_API ComplianceSummaryItem();
+    AWS_SSM_API ComplianceSummaryItem() = default;
     AWS_SSM_API ComplianceSummaryItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ComplianceSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,36 @@ namespace Model
      * <p>The type of compliance item. For example, the compliance type can be
      * Association, Patch, or Custom:string.</p>
      */
-    inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
+    inline const Aws::String& GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
-    inline ComplianceSummaryItem& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
-    inline ComplianceSummaryItem& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
-    inline ComplianceSummaryItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
+    template<typename ComplianceTypeT = Aws::String>
+    void SetComplianceType(ComplianceTypeT&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::forward<ComplianceTypeT>(value); }
+    template<typename ComplianceTypeT = Aws::String>
+    ComplianceSummaryItem& WithComplianceType(ComplianceTypeT&& value) { SetComplianceType(std::forward<ComplianceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of COMPLIANT items for the specified compliance type.</p>
      */
-    inline const CompliantSummary& GetCompliantSummary() const{ return m_compliantSummary; }
+    inline const CompliantSummary& GetCompliantSummary() const { return m_compliantSummary; }
     inline bool CompliantSummaryHasBeenSet() const { return m_compliantSummaryHasBeenSet; }
-    inline void SetCompliantSummary(const CompliantSummary& value) { m_compliantSummaryHasBeenSet = true; m_compliantSummary = value; }
-    inline void SetCompliantSummary(CompliantSummary&& value) { m_compliantSummaryHasBeenSet = true; m_compliantSummary = std::move(value); }
-    inline ComplianceSummaryItem& WithCompliantSummary(const CompliantSummary& value) { SetCompliantSummary(value); return *this;}
-    inline ComplianceSummaryItem& WithCompliantSummary(CompliantSummary&& value) { SetCompliantSummary(std::move(value)); return *this;}
+    template<typename CompliantSummaryT = CompliantSummary>
+    void SetCompliantSummary(CompliantSummaryT&& value) { m_compliantSummaryHasBeenSet = true; m_compliantSummary = std::forward<CompliantSummaryT>(value); }
+    template<typename CompliantSummaryT = CompliantSummary>
+    ComplianceSummaryItem& WithCompliantSummary(CompliantSummaryT&& value) { SetCompliantSummary(std::forward<CompliantSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
      */
-    inline const NonCompliantSummary& GetNonCompliantSummary() const{ return m_nonCompliantSummary; }
+    inline const NonCompliantSummary& GetNonCompliantSummary() const { return m_nonCompliantSummary; }
     inline bool NonCompliantSummaryHasBeenSet() const { return m_nonCompliantSummaryHasBeenSet; }
-    inline void SetNonCompliantSummary(const NonCompliantSummary& value) { m_nonCompliantSummaryHasBeenSet = true; m_nonCompliantSummary = value; }
-    inline void SetNonCompliantSummary(NonCompliantSummary&& value) { m_nonCompliantSummaryHasBeenSet = true; m_nonCompliantSummary = std::move(value); }
-    inline ComplianceSummaryItem& WithNonCompliantSummary(const NonCompliantSummary& value) { SetNonCompliantSummary(value); return *this;}
-    inline ComplianceSummaryItem& WithNonCompliantSummary(NonCompliantSummary&& value) { SetNonCompliantSummary(std::move(value)); return *this;}
+    template<typename NonCompliantSummaryT = NonCompliantSummary>
+    void SetNonCompliantSummary(NonCompliantSummaryT&& value) { m_nonCompliantSummaryHasBeenSet = true; m_nonCompliantSummary = std::forward<NonCompliantSummaryT>(value); }
+    template<typename NonCompliantSummaryT = NonCompliantSummary>
+    ComplianceSummaryItem& WithNonCompliantSummary(NonCompliantSummaryT&& value) { SetNonCompliantSummary(std::forward<NonCompliantSummaryT>(value)); return *this;}
     ///@}
   private:
 

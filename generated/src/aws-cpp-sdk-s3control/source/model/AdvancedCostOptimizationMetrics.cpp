@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AdvancedCostOptimizationMetrics::AdvancedCostOptimizationMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 AdvancedCostOptimizationMetrics::AdvancedCostOptimizationMetrics(const XmlNode& xmlNode)
-  : AdvancedCostOptimizationMetrics()
 {
   *this = xmlNode;
 }

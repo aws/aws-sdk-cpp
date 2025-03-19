@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-WriteRequest::WriteRequest() : 
-    m_putRequestHasBeenSet(false),
-    m_deleteRequestHasBeenSet(false)
-{
-}
-
 WriteRequest::WriteRequest(JsonView jsonValue)
-  : WriteRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WriteRequest& WriteRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PutRequest"))
   {
     m_putRequest = jsonValue.GetObject("PutRequest");
-
     m_putRequestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteRequest"))
   {
     m_deleteRequest = jsonValue.GetObject("DeleteRequest");
-
     m_deleteRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

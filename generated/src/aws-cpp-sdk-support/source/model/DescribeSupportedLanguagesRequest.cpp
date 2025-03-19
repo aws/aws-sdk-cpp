@@ -12,13 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSupportedLanguagesRequest::DescribeSupportedLanguagesRequest() : 
-    m_issueTypeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_categoryCodeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSupportedLanguagesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,21 +18,7 @@ namespace WorkSpacesThinClient
 namespace Model
 {
 
-SoftwareSet::SoftwareSet() : 
-    m_idHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releasedAtHasBeenSet(false),
-    m_supportedUntilHasBeenSet(false),
-    m_validationStatus(SoftwareSetValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_softwareHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SoftwareSet::SoftwareSet(JsonView jsonValue)
-  : SoftwareSet()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ SoftwareSet& SoftwareSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releasedAt"))
   {
     m_releasedAt = jsonValue.GetDouble("releasedAt");
-
     m_releasedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedUntil"))
   {
     m_supportedUntil = jsonValue.GetDouble("supportedUntil");
-
     m_supportedUntilHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationStatus"))
   {
     m_validationStatus = SoftwareSetValidationStatusMapper::GetSoftwareSetValidationStatusForName(jsonValue.GetString("validationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("software"))
   {
     Aws::Utils::Array<JsonView> softwareJsonList = jsonValue.GetArray("software");
@@ -83,14 +59,11 @@ SoftwareSet& SoftwareSet::operator =(JsonView jsonValue)
     }
     m_softwareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -100,7 +73,6 @@ SoftwareSet& SoftwareSet::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

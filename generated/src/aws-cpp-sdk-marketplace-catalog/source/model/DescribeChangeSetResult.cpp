@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeChangeSetResult::DescribeChangeSetResult() : 
-    m_intent(Intent::NOT_SET),
-    m_status(ChangeStatus::NOT_SET),
-    m_failureCode(FailureCode::NOT_SET)
-{
-}
-
 DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeChangeSetResult()
 {
   *this = result;
 }
@@ -36,57 +28,48 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ChangeSetId"))
   {
     m_changeSetId = jsonValue.GetString("ChangeSetId");
-
+    m_changeSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSetArn"))
   {
     m_changeSetArn = jsonValue.GetString("ChangeSetArn");
-
+    m_changeSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSetName"))
   {
     m_changeSetName = jsonValue.GetString("ChangeSetName");
-
+    m_changeSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Intent"))
   {
     m_intent = IntentMapper::GetIntentForName(jsonValue.GetString("Intent"));
-
+    m_intentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChangeStatusMapper::GetChangeStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCode"))
   {
     m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("FailureCode"));
-
+    m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDescription"))
   {
     m_failureDescription = jsonValue.GetString("FailureDescription");
-
+    m_failureDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSet"))
   {
     Aws::Utils::Array<JsonView> changeSetJsonList = jsonValue.GetArray("ChangeSet");
@@ -94,14 +77,15 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     {
       m_changeSet.push_back(changeSetJsonList[changeSetIndex].AsObject());
     }
+    m_changeSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

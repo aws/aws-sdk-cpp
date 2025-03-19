@@ -18,16 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-WorkerResourceConfig::WorkerResourceConfig() : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_diskHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
-{
-}
-
 WorkerResourceConfig::WorkerResourceConfig(JsonView jsonValue)
-  : WorkerResourceConfig()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ WorkerResourceConfig& WorkerResourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetString("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetString("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disk"))
   {
     m_disk = jsonValue.GetString("disk");
-
     m_diskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diskType"))
   {
     m_diskType = jsonValue.GetString("diskType");
-
     m_diskTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectSource::AwsCodeBuildProjectSource() : 
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_gitCloneDepth(0),
-    m_gitCloneDepthHasBeenSet(false),
-    m_insecureSsl(false),
-    m_insecureSslHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectSource::AwsCodeBuildProjectSource(JsonView jsonValue)
-  : AwsCodeBuildProjectSource()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsCodeBuildProjectSource& AwsCodeBuildProjectSource::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GitCloneDepth"))
   {
     m_gitCloneDepth = jsonValue.GetInteger("GitCloneDepth");
-
     m_gitCloneDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsecureSsl"))
   {
     m_insecureSsl = jsonValue.GetBool("InsecureSsl");
-
     m_insecureSslHasBeenSet = true;
   }
-
   return *this;
 }
 

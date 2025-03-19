@@ -21,7 +21,7 @@ namespace Model
   class UpdateEnrollmentStatusRequest : public CostOptimizationHubRequest
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API UpdateEnrollmentStatusRequest();
+    AWS_COSTOPTIMIZATIONHUB_API UpdateEnrollmentStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,10 @@ namespace Model
     /**
      * <p>Sets the account status.</p>
      */
-    inline const EnrollmentStatus& GetStatus() const{ return m_status; }
+    inline EnrollmentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EnrollmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EnrollmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateEnrollmentStatusRequest& WithStatus(const EnrollmentStatus& value) { SetStatus(value); return *this;}
-    inline UpdateEnrollmentStatusRequest& WithStatus(EnrollmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EnrollmentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateEnrollmentStatusRequest& WithStatus(EnrollmentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -51,17 +49,17 @@ namespace Model
      * <p>Indicates whether to enroll member accounts of the organization if the
      * account is the management account or delegated administrator.</p>
      */
-    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
+    inline bool GetIncludeMemberAccounts() const { return m_includeMemberAccounts; }
     inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
     inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
     inline UpdateEnrollmentStatusRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
     ///@}
   private:
 
-    EnrollmentStatus m_status;
+    EnrollmentStatus m_status{EnrollmentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    bool m_includeMemberAccounts;
+    bool m_includeMemberAccounts{false};
     bool m_includeMemberAccountsHasBeenSet = false;
   };
 

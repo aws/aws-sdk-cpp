@@ -12,13 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBackupPlanRequest::CreateBackupPlanRequest() : 
-    m_backupPlanHasBeenSet(false),
-    m_backupPlanTagsHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateBackupPlanRequest::SerializePayload() const
 {
   JsonValue payload;

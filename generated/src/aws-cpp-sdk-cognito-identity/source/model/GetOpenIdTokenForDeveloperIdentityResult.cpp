@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOpenIdTokenForDeveloperIdentityResult::GetOpenIdTokenForDeveloperIdentityResult()
-{
-}
-
 GetOpenIdTokenForDeveloperIdentityResult::GetOpenIdTokenForDeveloperIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetOpenIdTokenForDeveloperIdentityResult& GetOpenIdTokenForDeveloperIdentityResu
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
+    m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Token"))
   {
     m_token = jsonValue.GetString("Token");
-
+    m_tokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

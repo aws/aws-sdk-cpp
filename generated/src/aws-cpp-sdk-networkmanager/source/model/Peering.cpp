@@ -18,25 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Peering::Peering() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_peeringIdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_peeringType(PeeringType::NOT_SET),
-    m_peeringTypeHasBeenSet(false),
-    m_state(PeeringState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastModificationErrorsHasBeenSet(false)
-{
-}
-
 Peering::Peering(JsonView jsonValue)
-  : Peering()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ Peering& Peering::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkArn"))
   {
     m_coreNetworkArn = jsonValue.GetString("CoreNetworkArn");
-
     m_coreNetworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeeringId"))
   {
     m_peeringId = jsonValue.GetString("PeeringId");
-
     m_peeringIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeeringType"))
   {
     m_peeringType = PeeringTypeMapper::GetPeeringTypeForName(jsonValue.GetString("PeeringType"));
-
     m_peeringTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = PeeringStateMapper::GetPeeringStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocation"))
   {
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
-
     m_edgeLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -108,14 +74,11 @@ Peering& Peering::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationErrors"))
   {
     Aws::Utils::Array<JsonView> lastModificationErrorsJsonList = jsonValue.GetArray("LastModificationErrors");
@@ -125,7 +88,6 @@ Peering& Peering::operator =(JsonView jsonValue)
     }
     m_lastModificationErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

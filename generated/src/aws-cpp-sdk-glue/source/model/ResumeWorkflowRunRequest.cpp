@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResumeWorkflowRunRequest::ResumeWorkflowRunRequest() : 
-    m_nameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_nodeIdsHasBeenSet(false)
-{
-}
-
 Aws::String ResumeWorkflowRunRequest::SerializePayload() const
 {
   JsonValue payload;

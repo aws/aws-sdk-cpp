@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexContainerSettings::MultiplexContainerSettings() : 
-    m_multiplexM2tsSettingsHasBeenSet(false)
-{
-}
-
 MultiplexContainerSettings::MultiplexContainerSettings(JsonView jsonValue)
-  : MultiplexContainerSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MultiplexContainerSettings& MultiplexContainerSettings::operator =(JsonView json
   if(jsonValue.ValueExists("multiplexM2tsSettings"))
   {
     m_multiplexM2tsSettings = jsonValue.GetObject("multiplexM2tsSettings");
-
     m_multiplexM2tsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

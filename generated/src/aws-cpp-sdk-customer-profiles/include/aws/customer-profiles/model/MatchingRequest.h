@@ -34,7 +34,7 @@ namespace Model
   class MatchingRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API MatchingRequest();
+    AWS_CUSTOMERPROFILES_API MatchingRequest() = default;
     AWS_CUSTOMERPROFILES_API MatchingRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API MatchingRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The flag that enables the matching process of duplicate profiles.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline MatchingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -55,24 +55,24 @@ namespace Model
      * <p>The day and time when do you want to start the Identity Resolution Job every
      * week.</p>
      */
-    inline const JobSchedule& GetJobSchedule() const{ return m_jobSchedule; }
+    inline const JobSchedule& GetJobSchedule() const { return m_jobSchedule; }
     inline bool JobScheduleHasBeenSet() const { return m_jobScheduleHasBeenSet; }
-    inline void SetJobSchedule(const JobSchedule& value) { m_jobScheduleHasBeenSet = true; m_jobSchedule = value; }
-    inline void SetJobSchedule(JobSchedule&& value) { m_jobScheduleHasBeenSet = true; m_jobSchedule = std::move(value); }
-    inline MatchingRequest& WithJobSchedule(const JobSchedule& value) { SetJobSchedule(value); return *this;}
-    inline MatchingRequest& WithJobSchedule(JobSchedule&& value) { SetJobSchedule(std::move(value)); return *this;}
+    template<typename JobScheduleT = JobSchedule>
+    void SetJobSchedule(JobScheduleT&& value) { m_jobScheduleHasBeenSet = true; m_jobSchedule = std::forward<JobScheduleT>(value); }
+    template<typename JobScheduleT = JobSchedule>
+    MatchingRequest& WithJobSchedule(JobScheduleT&& value) { SetJobSchedule(std::forward<JobScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information about the auto-merging process.</p>
      */
-    inline const AutoMerging& GetAutoMerging() const{ return m_autoMerging; }
+    inline const AutoMerging& GetAutoMerging() const { return m_autoMerging; }
     inline bool AutoMergingHasBeenSet() const { return m_autoMergingHasBeenSet; }
-    inline void SetAutoMerging(const AutoMerging& value) { m_autoMergingHasBeenSet = true; m_autoMerging = value; }
-    inline void SetAutoMerging(AutoMerging&& value) { m_autoMergingHasBeenSet = true; m_autoMerging = std::move(value); }
-    inline MatchingRequest& WithAutoMerging(const AutoMerging& value) { SetAutoMerging(value); return *this;}
-    inline MatchingRequest& WithAutoMerging(AutoMerging&& value) { SetAutoMerging(std::move(value)); return *this;}
+    template<typename AutoMergingT = AutoMerging>
+    void SetAutoMerging(AutoMergingT&& value) { m_autoMergingHasBeenSet = true; m_autoMerging = std::forward<AutoMergingT>(value); }
+    template<typename AutoMergingT = AutoMerging>
+    MatchingRequest& WithAutoMerging(AutoMergingT&& value) { SetAutoMerging(std::forward<AutoMergingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,16 +80,16 @@ namespace Model
      * <p>Configuration information for exporting Identity Resolution results, for
      * example, to an S3 bucket.</p>
      */
-    inline const ExportingConfig& GetExportingConfig() const{ return m_exportingConfig; }
+    inline const ExportingConfig& GetExportingConfig() const { return m_exportingConfig; }
     inline bool ExportingConfigHasBeenSet() const { return m_exportingConfigHasBeenSet; }
-    inline void SetExportingConfig(const ExportingConfig& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = value; }
-    inline void SetExportingConfig(ExportingConfig&& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = std::move(value); }
-    inline MatchingRequest& WithExportingConfig(const ExportingConfig& value) { SetExportingConfig(value); return *this;}
-    inline MatchingRequest& WithExportingConfig(ExportingConfig&& value) { SetExportingConfig(std::move(value)); return *this;}
+    template<typename ExportingConfigT = ExportingConfig>
+    void SetExportingConfig(ExportingConfigT&& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = std::forward<ExportingConfigT>(value); }
+    template<typename ExportingConfigT = ExportingConfig>
+    MatchingRequest& WithExportingConfig(ExportingConfigT&& value) { SetExportingConfig(std::forward<ExportingConfigT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     JobSchedule m_jobSchedule;

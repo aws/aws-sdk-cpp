@@ -12,15 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableSecurityHubRequest::EnableSecurityHubRequest() : 
-    m_tagsHasBeenSet(false),
-    m_enableDefaultStandards(false),
-    m_enableDefaultStandardsHasBeenSet(false),
-    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET),
-    m_controlFindingGeneratorHasBeenSet(false)
-{
-}
-
 Aws::String EnableSecurityHubRequest::SerializePayload() const
 {
   JsonValue payload;

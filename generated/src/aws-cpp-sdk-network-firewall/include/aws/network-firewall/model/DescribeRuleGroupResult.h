@@ -29,7 +29,7 @@ namespace Model
   class DescribeRuleGroupResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DescribeRuleGroupResult();
+    AWS_NETWORKFIREWALL_API DescribeRuleGroupResult() = default;
     AWS_NETWORKFIREWALL_API DescribeRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DescribeRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,11 @@ namespace Model
      * current token. Reapply your changes as needed, then try the operation again
      * using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateToken.assign(value); }
-    inline DescribeRuleGroupResult& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline DescribeRuleGroupResult& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline DescribeRuleGroupResult& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    DescribeRuleGroupResult& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,11 +66,11 @@ namespace Model
      * one firewall policy, and you can use a firewall policy in more than one
      * firewall. </p>
      */
-    inline const RuleGroup& GetRuleGroup() const{ return m_ruleGroup; }
-    inline void SetRuleGroup(const RuleGroup& value) { m_ruleGroup = value; }
-    inline void SetRuleGroup(RuleGroup&& value) { m_ruleGroup = std::move(value); }
-    inline DescribeRuleGroupResult& WithRuleGroup(const RuleGroup& value) { SetRuleGroup(value); return *this;}
-    inline DescribeRuleGroupResult& WithRuleGroup(RuleGroup&& value) { SetRuleGroup(std::move(value)); return *this;}
+    inline const RuleGroup& GetRuleGroup() const { return m_ruleGroup; }
+    template<typename RuleGroupT = RuleGroup>
+    void SetRuleGroup(RuleGroupT&& value) { m_ruleGroupHasBeenSet = true; m_ruleGroup = std::forward<RuleGroupT>(value); }
+    template<typename RuleGroupT = RuleGroup>
+    DescribeRuleGroupResult& WithRuleGroup(RuleGroupT&& value) { SetRuleGroup(std::forward<RuleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,32 +79,34 @@ namespace Model
      * <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule
      * group by calling <a>DescribeRuleGroup</a>. </p>
      */
-    inline const RuleGroupResponse& GetRuleGroupResponse() const{ return m_ruleGroupResponse; }
-    inline void SetRuleGroupResponse(const RuleGroupResponse& value) { m_ruleGroupResponse = value; }
-    inline void SetRuleGroupResponse(RuleGroupResponse&& value) { m_ruleGroupResponse = std::move(value); }
-    inline DescribeRuleGroupResult& WithRuleGroupResponse(const RuleGroupResponse& value) { SetRuleGroupResponse(value); return *this;}
-    inline DescribeRuleGroupResult& WithRuleGroupResponse(RuleGroupResponse&& value) { SetRuleGroupResponse(std::move(value)); return *this;}
+    inline const RuleGroupResponse& GetRuleGroupResponse() const { return m_ruleGroupResponse; }
+    template<typename RuleGroupResponseT = RuleGroupResponse>
+    void SetRuleGroupResponse(RuleGroupResponseT&& value) { m_ruleGroupResponseHasBeenSet = true; m_ruleGroupResponse = std::forward<RuleGroupResponseT>(value); }
+    template<typename RuleGroupResponseT = RuleGroupResponse>
+    DescribeRuleGroupResult& WithRuleGroupResponse(RuleGroupResponseT&& value) { SetRuleGroupResponse(std::forward<RuleGroupResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRuleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_updateToken;
+    bool m_updateTokenHasBeenSet = false;
 
     RuleGroup m_ruleGroup;
+    bool m_ruleGroupHasBeenSet = false;
 
     RuleGroupResponse m_ruleGroupResponse;
+    bool m_ruleGroupResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

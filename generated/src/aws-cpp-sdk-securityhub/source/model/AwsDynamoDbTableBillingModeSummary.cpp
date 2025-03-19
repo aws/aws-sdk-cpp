@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary() : 
-    m_billingModeHasBeenSet(false),
-    m_lastUpdateToPayPerRequestDateTimeHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableBillingModeSummary::AwsDynamoDbTableBillingModeSummary(JsonView jsonValue)
-  : AwsDynamoDbTableBillingModeSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsDynamoDbTableBillingModeSummary& AwsDynamoDbTableBillingModeSummary::operator
   if(jsonValue.ValueExists("BillingMode"))
   {
     m_billingMode = jsonValue.GetString("BillingMode");
-
     m_billingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateToPayPerRequestDateTime"))
   {
     m_lastUpdateToPayPerRequestDateTime = jsonValue.GetString("LastUpdateToPayPerRequestDateTime");
-
     m_lastUpdateToPayPerRequestDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

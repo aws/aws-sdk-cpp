@@ -15,11 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-HttpPayloadWithXmlNamespaceAndPrefixRequest::HttpPayloadWithXmlNamespaceAndPrefixRequest() : 
-    m_nestedHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String HttpPayloadWithXmlNamespaceAndPrefixRequest::SerializePayload() const
 {

@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AttachmentOutput::AttachmentOutput() : 
-    m_nameHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_conversationIdHasBeenSet(false)
-{
-}
-
 AttachmentOutput::AttachmentOutput(JsonView jsonValue)
-  : AttachmentOutput()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AttachmentOutput& AttachmentOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentId"))
   {
     m_attachmentId = jsonValue.GetString("attachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class TestCase
   {
   public:
-    AWS_CODEBUILD_API TestCase();
+    AWS_CODEBUILD_API TestCase() = default;
     AWS_CODEBUILD_API TestCase(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API TestCase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p> The ARN of the report to which the test case belongs. </p>
      */
-    inline const Aws::String& GetReportArn() const{ return m_reportArn; }
+    inline const Aws::String& GetReportArn() const { return m_reportArn; }
     inline bool ReportArnHasBeenSet() const { return m_reportArnHasBeenSet; }
-    inline void SetReportArn(const Aws::String& value) { m_reportArnHasBeenSet = true; m_reportArn = value; }
-    inline void SetReportArn(Aws::String&& value) { m_reportArnHasBeenSet = true; m_reportArn = std::move(value); }
-    inline void SetReportArn(const char* value) { m_reportArnHasBeenSet = true; m_reportArn.assign(value); }
-    inline TestCase& WithReportArn(const Aws::String& value) { SetReportArn(value); return *this;}
-    inline TestCase& WithReportArn(Aws::String&& value) { SetReportArn(std::move(value)); return *this;}
-    inline TestCase& WithReportArn(const char* value) { SetReportArn(value); return *this;}
+    template<typename ReportArnT = Aws::String>
+    void SetReportArn(ReportArnT&& value) { m_reportArnHasBeenSet = true; m_reportArn = std::forward<ReportArnT>(value); }
+    template<typename ReportArnT = Aws::String>
+    TestCase& WithReportArn(ReportArnT&& value) { SetReportArn(std::forward<ReportArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The path to the raw data file that contains the test result. </p>
      */
-    inline const Aws::String& GetTestRawDataPath() const{ return m_testRawDataPath; }
+    inline const Aws::String& GetTestRawDataPath() const { return m_testRawDataPath; }
     inline bool TestRawDataPathHasBeenSet() const { return m_testRawDataPathHasBeenSet; }
-    inline void SetTestRawDataPath(const Aws::String& value) { m_testRawDataPathHasBeenSet = true; m_testRawDataPath = value; }
-    inline void SetTestRawDataPath(Aws::String&& value) { m_testRawDataPathHasBeenSet = true; m_testRawDataPath = std::move(value); }
-    inline void SetTestRawDataPath(const char* value) { m_testRawDataPathHasBeenSet = true; m_testRawDataPath.assign(value); }
-    inline TestCase& WithTestRawDataPath(const Aws::String& value) { SetTestRawDataPath(value); return *this;}
-    inline TestCase& WithTestRawDataPath(Aws::String&& value) { SetTestRawDataPath(std::move(value)); return *this;}
-    inline TestCase& WithTestRawDataPath(const char* value) { SetTestRawDataPath(value); return *this;}
+    template<typename TestRawDataPathT = Aws::String>
+    void SetTestRawDataPath(TestRawDataPathT&& value) { m_testRawDataPathHasBeenSet = true; m_testRawDataPath = std::forward<TestRawDataPathT>(value); }
+    template<typename TestRawDataPathT = Aws::String>
+    TestCase& WithTestRawDataPath(TestRawDataPathT&& value) { SetTestRawDataPath(std::forward<TestRawDataPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * generates the prefix. The prefix depends on the framework used to generate the
      * tests. </p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline TestCase& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline TestCase& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline TestCase& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    TestCase& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the test case. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TestCase& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TestCase& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TestCase& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TestCase& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,21 +96,19 @@ namespace Model
      * <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>,
      * <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TestCase& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TestCase& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TestCase& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TestCase& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of nanoseconds it took to run this test case. </p>
      */
-    inline long long GetDurationInNanoSeconds() const{ return m_durationInNanoSeconds; }
+    inline long long GetDurationInNanoSeconds() const { return m_durationInNanoSeconds; }
     inline bool DurationInNanoSecondsHasBeenSet() const { return m_durationInNanoSecondsHasBeenSet; }
     inline void SetDurationInNanoSeconds(long long value) { m_durationInNanoSecondsHasBeenSet = true; m_durationInNanoSeconds = value; }
     inline TestCase& WithDurationInNanoSeconds(long long value) { SetDurationInNanoSeconds(value); return *this;}
@@ -129,14 +119,12 @@ namespace Model
      * <p> A message associated with a test case. For example, an error message or
      * stack trace. </p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline TestCase& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline TestCase& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline TestCase& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    TestCase& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,26 +132,24 @@ namespace Model
      * <p> The date and time a test case expires. A test case expires 30 days after it
      * is created. An expired test case is not available to view in CodeBuild. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpired() const{ return m_expired; }
+    inline const Aws::Utils::DateTime& GetExpired() const { return m_expired; }
     inline bool ExpiredHasBeenSet() const { return m_expiredHasBeenSet; }
-    inline void SetExpired(const Aws::Utils::DateTime& value) { m_expiredHasBeenSet = true; m_expired = value; }
-    inline void SetExpired(Aws::Utils::DateTime&& value) { m_expiredHasBeenSet = true; m_expired = std::move(value); }
-    inline TestCase& WithExpired(const Aws::Utils::DateTime& value) { SetExpired(value); return *this;}
-    inline TestCase& WithExpired(Aws::Utils::DateTime&& value) { SetExpired(std::move(value)); return *this;}
+    template<typename ExpiredT = Aws::Utils::DateTime>
+    void SetExpired(ExpiredT&& value) { m_expiredHasBeenSet = true; m_expired = std::forward<ExpiredT>(value); }
+    template<typename ExpiredT = Aws::Utils::DateTime>
+    TestCase& WithExpired(ExpiredT&& value) { SetExpired(std::forward<ExpiredT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the test suite that the test case is a part of.</p>
      */
-    inline const Aws::String& GetTestSuiteName() const{ return m_testSuiteName; }
+    inline const Aws::String& GetTestSuiteName() const { return m_testSuiteName; }
     inline bool TestSuiteNameHasBeenSet() const { return m_testSuiteNameHasBeenSet; }
-    inline void SetTestSuiteName(const Aws::String& value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName = value; }
-    inline void SetTestSuiteName(Aws::String&& value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName = std::move(value); }
-    inline void SetTestSuiteName(const char* value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName.assign(value); }
-    inline TestCase& WithTestSuiteName(const Aws::String& value) { SetTestSuiteName(value); return *this;}
-    inline TestCase& WithTestSuiteName(Aws::String&& value) { SetTestSuiteName(std::move(value)); return *this;}
-    inline TestCase& WithTestSuiteName(const char* value) { SetTestSuiteName(value); return *this;}
+    template<typename TestSuiteNameT = Aws::String>
+    void SetTestSuiteName(TestSuiteNameT&& value) { m_testSuiteNameHasBeenSet = true; m_testSuiteName = std::forward<TestSuiteNameT>(value); }
+    template<typename TestSuiteNameT = Aws::String>
+    TestCase& WithTestSuiteName(TestSuiteNameT&& value) { SetTestSuiteName(std::forward<TestSuiteNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,13 +168,13 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    long long m_durationInNanoSeconds;
+    long long m_durationInNanoSeconds{0};
     bool m_durationInNanoSecondsHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expired;
+    Aws::Utils::DateTime m_expired{};
     bool m_expiredHasBeenSet = false;
 
     Aws::String m_testSuiteName;

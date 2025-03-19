@@ -12,18 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePresignedDomainUrlRequest::CreatePresignedDomainUrlRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_sessionExpirationDurationInSeconds(0),
-    m_sessionExpirationDurationInSecondsHasBeenSet(false),
-    m_expiresInSeconds(0),
-    m_expiresInSecondsHasBeenSet(false),
-    m_spaceNameHasBeenSet(false),
-    m_landingUriHasBeenSet(false)
-{
-}
-
 Aws::String CreatePresignedDomainUrlRequest::SerializePayload() const
 {
   JsonValue payload;

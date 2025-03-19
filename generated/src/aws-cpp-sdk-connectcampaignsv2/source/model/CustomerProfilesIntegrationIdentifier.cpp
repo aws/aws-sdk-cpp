@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CustomerProfilesIntegrationIdentifier::CustomerProfilesIntegrationIdentifier() : 
-    m_domainArnHasBeenSet(false)
-{
-}
-
 CustomerProfilesIntegrationIdentifier::CustomerProfilesIntegrationIdentifier(JsonView jsonValue)
-  : CustomerProfilesIntegrationIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomerProfilesIntegrationIdentifier& CustomerProfilesIntegrationIdentifier::op
   if(jsonValue.ValueExists("domainArn"))
   {
     m_domainArn = jsonValue.GetString("domainArn");
-
     m_domainArnHasBeenSet = true;
   }
-
   return *this;
 }
 

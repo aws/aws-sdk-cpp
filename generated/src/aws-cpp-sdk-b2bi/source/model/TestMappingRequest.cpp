@@ -12,14 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestMappingRequest::TestMappingRequest() : 
-    m_inputFileContentHasBeenSet(false),
-    m_mappingTemplateHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false)
-{
-}
-
 Aws::String TestMappingRequest::SerializePayload() const
 {
   JsonValue payload;

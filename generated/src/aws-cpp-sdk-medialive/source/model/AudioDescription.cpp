@@ -18,29 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioDescription::AudioDescription() : 
-    m_audioNormalizationSettingsHasBeenSet(false),
-    m_audioSelectorNameHasBeenSet(false),
-    m_audioType(AudioType::NOT_SET),
-    m_audioTypeHasBeenSet(false),
-    m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
-    m_audioTypeControlHasBeenSet(false),
-    m_audioWatermarkingSettingsHasBeenSet(false),
-    m_codecSettingsHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
-    m_languageCodeControlHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_remixSettingsHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_audioDashRolesHasBeenSet(false),
-    m_dvbDashAccessibility(DvbDashAccessibility::NOT_SET),
-    m_dvbDashAccessibilityHasBeenSet(false)
-{
-}
-
 AudioDescription::AudioDescription(JsonView jsonValue)
-  : AudioDescription()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ AudioDescription& AudioDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioNormalizationSettings"))
   {
     m_audioNormalizationSettings = jsonValue.GetObject("audioNormalizationSettings");
-
     m_audioNormalizationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioSelectorName"))
   {
     m_audioSelectorName = jsonValue.GetString("audioSelectorName");
-
     m_audioSelectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioType"))
   {
     m_audioType = AudioTypeMapper::GetAudioTypeForName(jsonValue.GetString("audioType"));
-
     m_audioTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioTypeControl"))
   {
     m_audioTypeControl = AudioDescriptionAudioTypeControlMapper::GetAudioDescriptionAudioTypeControlForName(jsonValue.GetString("audioTypeControl"));
-
     m_audioTypeControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioWatermarkingSettings"))
   {
     m_audioWatermarkingSettings = jsonValue.GetObject("audioWatermarkingSettings");
-
     m_audioWatermarkingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codecSettings"))
   {
     m_codecSettings = jsonValue.GetObject("codecSettings");
-
     m_codecSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCodeControl"))
   {
     m_languageCodeControl = AudioDescriptionLanguageCodeControlMapper::GetAudioDescriptionLanguageCodeControlForName(jsonValue.GetString("languageCodeControl"));
-
     m_languageCodeControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remixSettings"))
   {
     m_remixSettings = jsonValue.GetObject("remixSettings");
-
     m_remixSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamName"))
   {
     m_streamName = jsonValue.GetString("streamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioDashRoles"))
   {
     Aws::Utils::Array<JsonView> audioDashRolesJsonList = jsonValue.GetArray("audioDashRoles");
@@ -133,14 +89,11 @@ AudioDescription& AudioDescription::operator =(JsonView jsonValue)
     }
     m_audioDashRolesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dvbDashAccessibility"))
   {
     m_dvbDashAccessibility = DvbDashAccessibilityMapper::GetDvbDashAccessibilityForName(jsonValue.GetString("dvbDashAccessibility"));
-
     m_dvbDashAccessibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

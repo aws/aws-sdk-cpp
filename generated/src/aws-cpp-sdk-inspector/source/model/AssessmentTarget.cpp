@@ -18,17 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentTarget::AssessmentTarget() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceGroupArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AssessmentTarget::AssessmentTarget(JsonView jsonValue)
-  : AssessmentTarget()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AssessmentTarget& AssessmentTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceGroupArn"))
   {
     m_resourceGroupArn = jsonValue.GetString("resourceGroupArn");
-
     m_resourceGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

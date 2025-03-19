@@ -18,17 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-ApplicationTagResult::ApplicationTagResult() : 
-    m_applicationTagStatus(ApplicationTagStatus::NOT_SET),
-    m_applicationTagStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 ApplicationTagResult::ApplicationTagResult(JsonView jsonValue)
-  : ApplicationTagResult()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ApplicationTagResult& ApplicationTagResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationTagStatus"))
   {
     m_applicationTagStatus = ApplicationTagStatusMapper::GetApplicationTagStatusForName(jsonValue.GetString("applicationTagStatus"));
-
     m_applicationTagStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -58,14 +44,11 @@ ApplicationTagResult& ApplicationTagResult::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class OutputFileUriValue
   {
   public:
-    AWS_IOTANALYTICS_API OutputFileUriValue();
+    AWS_IOTANALYTICS_API OutputFileUriValue() = default;
     AWS_IOTANALYTICS_API OutputFileUriValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API OutputFileUriValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The URI of the location where dataset contents are stored, usually the URI of
      * a file in an S3 bucket.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline OutputFileUriValue& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline OutputFileUriValue& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline OutputFileUriValue& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    OutputFileUriValue& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
   private:
 

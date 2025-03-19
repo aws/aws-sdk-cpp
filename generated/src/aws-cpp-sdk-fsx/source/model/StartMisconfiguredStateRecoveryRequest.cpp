@@ -12,13 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMisconfiguredStateRecoveryRequest::StartMisconfiguredStateRecoveryRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 Aws::String StartMisconfiguredStateRecoveryRequest::SerializePayload() const
 {
   JsonValue payload;

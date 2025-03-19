@@ -18,27 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterPendingModifiedValues::AwsRedshiftClusterPendingModifiedValues() : 
-    m_automatedSnapshotRetentionPeriod(0),
-    m_automatedSnapshotRetentionPeriodHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false),
-    m_encryptionTypeHasBeenSet(false),
-    m_enhancedVpcRouting(false),
-    m_enhancedVpcRoutingHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterPendingModifiedValues::AwsRedshiftClusterPendingModifiedValues(JsonView jsonValue)
-  : AwsRedshiftClusterPendingModifiedValues()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ AwsRedshiftClusterPendingModifiedValues& AwsRedshiftClusterPendingModifiedValues
   if(jsonValue.ValueExists("AutomatedSnapshotRetentionPeriod"))
   {
     m_automatedSnapshotRetentionPeriod = jsonValue.GetInteger("AutomatedSnapshotRetentionPeriod");
-
     m_automatedSnapshotRetentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterIdentifier"))
   {
     m_clusterIdentifier = jsonValue.GetString("ClusterIdentifier");
-
     m_clusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterType"))
   {
     m_clusterType = jsonValue.GetString("ClusterType");
-
     m_clusterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterVersion"))
   {
     m_clusterVersion = jsonValue.GetString("ClusterVersion");
-
     m_clusterVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = jsonValue.GetString("EncryptionType");
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnhancedVpcRouting"))
   {
     m_enhancedVpcRouting = jsonValue.GetBool("EnhancedVpcRouting");
-
     m_enhancedVpcRoutingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceTrackName"))
   {
     m_maintenanceTrackName = jsonValue.GetString("MaintenanceTrackName");
-
     m_maintenanceTrackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserPassword"))
   {
     m_masterUserPassword = jsonValue.GetString("MasterUserPassword");
-
     m_masterUserPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNodes"))
   {
     m_numberOfNodes = jsonValue.GetInteger("NumberOfNodes");
-
     m_numberOfNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PubliclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("PubliclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   return *this;
 }
 

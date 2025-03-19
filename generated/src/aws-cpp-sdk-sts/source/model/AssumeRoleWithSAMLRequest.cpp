@@ -10,17 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_sAMLAssertionHasBeenSet(false),
-    m_policyArnsHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
-{
-}
-
 Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const
 {
   Aws::StringStream ss;

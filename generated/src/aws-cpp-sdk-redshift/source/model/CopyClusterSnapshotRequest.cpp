@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CopyClusterSnapshotRequest::CopyClusterSnapshotRequest() : 
-    m_sourceSnapshotIdentifierHasBeenSet(false),
-    m_sourceSnapshotClusterIdentifierHasBeenSet(false),
-    m_targetSnapshotIdentifierHasBeenSet(false),
-    m_manualSnapshotRetentionPeriod(0),
-    m_manualSnapshotRetentionPeriodHasBeenSet(false)
-{
-}
-
 Aws::String CopyClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -34,7 +34,7 @@ namespace Model
   class HistoryRecord
   {
   public:
-    AWS_EC2_API HistoryRecord();
+    AWS_EC2_API HistoryRecord() = default;
     AWS_EC2_API HistoryRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API HistoryRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>Information about the event.</p>
      */
-    inline const EventInformation& GetEventInformation() const{ return m_eventInformation; }
+    inline const EventInformation& GetEventInformation() const { return m_eventInformation; }
     inline bool EventInformationHasBeenSet() const { return m_eventInformationHasBeenSet; }
-    inline void SetEventInformation(const EventInformation& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
-    inline void SetEventInformation(EventInformation&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = std::move(value); }
-    inline HistoryRecord& WithEventInformation(const EventInformation& value) { SetEventInformation(value); return *this;}
-    inline HistoryRecord& WithEventInformation(EventInformation&& value) { SetEventInformation(std::move(value)); return *this;}
+    template<typename EventInformationT = EventInformation>
+    void SetEventInformation(EventInformationT&& value) { m_eventInformationHasBeenSet = true; m_eventInformation = std::forward<EventInformationT>(value); }
+    template<typename EventInformationT = EventInformation>
+    HistoryRecord& WithEventInformation(EventInformationT&& value) { SetEventInformation(std::forward<EventInformationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,10 @@ namespace Model
      * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline HistoryRecord& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline HistoryRecord& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline HistoryRecord& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,22 +73,22 @@ namespace Model
      * <p>The date and time of the event, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline HistoryRecord& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline HistoryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    HistoryRecord& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
     EventInformation m_eventInformation;
     bool m_eventInformationHasBeenSet = false;
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

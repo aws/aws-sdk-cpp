@@ -12,13 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContactChannelRequest::UpdateContactChannelRequest() : 
-    m_contactChannelIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_deliveryAddressHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContactChannelRequest::SerializePayload() const
 {
   JsonValue payload;

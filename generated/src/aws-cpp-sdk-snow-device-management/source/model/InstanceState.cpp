@@ -18,16 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-InstanceState::InstanceState() : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_name(InstanceStateName::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 InstanceState::InstanceState(JsonView jsonValue)
-  : InstanceState()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InstanceState& InstanceState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetInteger("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = InstanceStateNameMapper::GetInstanceStateNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

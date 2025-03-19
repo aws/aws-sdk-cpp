@@ -20,31 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBProxy::DBProxy() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_dBProxyArnHasBeenSet(false),
-    m_status(DBProxyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_engineFamilyHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_vpcSubnetIdsHasBeenSet(false),
-    m_authHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_requireTLS(false),
-    m_requireTLSHasBeenSet(false),
-    m_idleClientTimeout(0),
-    m_idleClientTimeoutHasBeenSet(false),
-    m_debugLogging(false),
-    m_debugLoggingHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
-{
-}
-
 DBProxy::DBProxy(const XmlNode& xmlNode)
-  : DBProxy()
 {
   *this = xmlNode;
 }
@@ -70,7 +46,7 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = DBProxyStatusMapper::GetDBProxyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = DBProxyStatusMapper::GetDBProxyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode engineFamilyNode = resultNode.FirstChild("EngineFamily");
@@ -89,6 +65,7 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     if(!vpcSecurityGroupIdsNode.IsNull())
     {
       XmlNode vpcSecurityGroupIdsMember = vpcSecurityGroupIdsNode.FirstChild("member");
+      m_vpcSecurityGroupIdsHasBeenSet = !vpcSecurityGroupIdsMember.IsNull();
       while(!vpcSecurityGroupIdsMember.IsNull())
       {
         m_vpcSecurityGroupIds.push_back(vpcSecurityGroupIdsMember.GetText());
@@ -101,6 +78,7 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     if(!vpcSubnetIdsNode.IsNull())
     {
       XmlNode vpcSubnetIdsMember = vpcSubnetIdsNode.FirstChild("member");
+      m_vpcSubnetIdsHasBeenSet = !vpcSubnetIdsMember.IsNull();
       while(!vpcSubnetIdsMember.IsNull())
       {
         m_vpcSubnetIds.push_back(vpcSubnetIdsMember.GetText());
@@ -113,6 +91,7 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     if(!authNode.IsNull())
     {
       XmlNode authMember = authNode.FirstChild("member");
+      m_authHasBeenSet = !authMember.IsNull();
       while(!authMember.IsNull())
       {
         m_auth.push_back(authMember);

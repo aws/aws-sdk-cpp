@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-VideoSelector::VideoSelector() : 
-    m_colorSpace(VideoSelectorColorSpace::NOT_SET),
-    m_colorSpaceHasBeenSet(false),
-    m_colorSpaceSettingsHasBeenSet(false),
-    m_colorSpaceUsage(VideoSelectorColorSpaceUsage::NOT_SET),
-    m_colorSpaceUsageHasBeenSet(false),
-    m_selectorSettingsHasBeenSet(false)
-{
-}
-
 VideoSelector::VideoSelector(JsonView jsonValue)
-  : VideoSelector()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("colorSpace"))
   {
     m_colorSpace = VideoSelectorColorSpaceMapper::GetVideoSelectorColorSpaceForName(jsonValue.GetString("colorSpace"));
-
     m_colorSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorSpaceSettings"))
   {
     m_colorSpaceSettings = jsonValue.GetObject("colorSpaceSettings");
-
     m_colorSpaceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorSpaceUsage"))
   {
     m_colorSpaceUsage = VideoSelectorColorSpaceUsageMapper::GetVideoSelectorColorSpaceUsageForName(jsonValue.GetString("colorSpaceUsage"));
-
     m_colorSpaceUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectorSettings"))
   {
     m_selectorSettings = jsonValue.GetObject("selectorSettings");
-
     m_selectorSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

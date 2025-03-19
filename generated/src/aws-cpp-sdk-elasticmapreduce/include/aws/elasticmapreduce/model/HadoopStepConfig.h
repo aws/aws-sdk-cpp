@@ -35,7 +35,7 @@ namespace Model
   class HadoopStepConfig
   {
   public:
-    AWS_EMR_API HadoopStepConfig();
+    AWS_EMR_API HadoopStepConfig() = default;
     AWS_EMR_API HadoopStepConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API HadoopStepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The path to the JAR file that runs during the step.</p>
      */
-    inline const Aws::String& GetJar() const{ return m_jar; }
+    inline const Aws::String& GetJar() const { return m_jar; }
     inline bool JarHasBeenSet() const { return m_jarHasBeenSet; }
-    inline void SetJar(const Aws::String& value) { m_jarHasBeenSet = true; m_jar = value; }
-    inline void SetJar(Aws::String&& value) { m_jarHasBeenSet = true; m_jar = std::move(value); }
-    inline void SetJar(const char* value) { m_jarHasBeenSet = true; m_jar.assign(value); }
-    inline HadoopStepConfig& WithJar(const Aws::String& value) { SetJar(value); return *this;}
-    inline HadoopStepConfig& WithJar(Aws::String&& value) { SetJar(std::move(value)); return *this;}
-    inline HadoopStepConfig& WithJar(const char* value) { SetJar(value); return *this;}
+    template<typename JarT = Aws::String>
+    void SetJar(JarT&& value) { m_jarHasBeenSet = true; m_jar = std::forward<JarT>(value); }
+    template<typename JarT = Aws::String>
+    HadoopStepConfig& WithJar(JarT&& value) { SetJar(std::forward<JarT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,16 @@ namespace Model
      * <p>The list of Java properties that are set when the step runs. You can use
      * these properties to pass key-value pairs to your main function.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline HadoopStepConfig& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
-    inline HadoopStepConfig& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
-    inline HadoopStepConfig& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
-    inline HadoopStepConfig& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline HadoopStepConfig& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline HadoopStepConfig& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline HadoopStepConfig& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline HadoopStepConfig& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline HadoopStepConfig& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    HadoopStepConfig& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesKeyT = Aws::String, typename PropertiesValueT = Aws::String>
+    HadoopStepConfig& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+      m_propertiesHasBeenSet = true; m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -80,14 +75,12 @@ namespace Model
      * <p>The name of the main class in the specified Java file. If not specified, the
      * JAR file should specify a main class in its manifest file.</p>
      */
-    inline const Aws::String& GetMainClass() const{ return m_mainClass; }
+    inline const Aws::String& GetMainClass() const { return m_mainClass; }
     inline bool MainClassHasBeenSet() const { return m_mainClassHasBeenSet; }
-    inline void SetMainClass(const Aws::String& value) { m_mainClassHasBeenSet = true; m_mainClass = value; }
-    inline void SetMainClass(Aws::String&& value) { m_mainClassHasBeenSet = true; m_mainClass = std::move(value); }
-    inline void SetMainClass(const char* value) { m_mainClassHasBeenSet = true; m_mainClass.assign(value); }
-    inline HadoopStepConfig& WithMainClass(const Aws::String& value) { SetMainClass(value); return *this;}
-    inline HadoopStepConfig& WithMainClass(Aws::String&& value) { SetMainClass(std::move(value)); return *this;}
-    inline HadoopStepConfig& WithMainClass(const char* value) { SetMainClass(value); return *this;}
+    template<typename MainClassT = Aws::String>
+    void SetMainClass(MainClassT&& value) { m_mainClassHasBeenSet = true; m_mainClass = std::forward<MainClassT>(value); }
+    template<typename MainClassT = Aws::String>
+    HadoopStepConfig& WithMainClass(MainClassT&& value) { SetMainClass(std::forward<MainClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,15 +88,14 @@ namespace Model
      * <p>The list of command line arguments to pass to the JAR file's main function
      * for execution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+    inline const Aws::Vector<Aws::String>& GetArgs() const { return m_args; }
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-    inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
-    inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-    inline HadoopStepConfig& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
-    inline HadoopStepConfig& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
-    inline HadoopStepConfig& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
-    inline HadoopStepConfig& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
-    inline HadoopStepConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    void SetArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args = std::forward<ArgsT>(value); }
+    template<typename ArgsT = Aws::Vector<Aws::String>>
+    HadoopStepConfig& WithArgs(ArgsT&& value) { SetArgs(std::forward<ArgsT>(value)); return *this;}
+    template<typename ArgsT = Aws::String>
+    HadoopStepConfig& AddArgs(ArgsT&& value) { m_argsHasBeenSet = true; m_args.emplace_back(std::forward<ArgsT>(value)); return *this; }
     ///@}
   private:
 

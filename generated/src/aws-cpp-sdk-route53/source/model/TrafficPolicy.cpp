@@ -20,20 +20,7 @@ namespace Route53
 namespace Model
 {
 
-TrafficPolicy::TrafficPolicy() : 
-    m_idHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 TrafficPolicy::TrafficPolicy(const XmlNode& xmlNode)
-  : TrafficPolicy()
 {
   *this = xmlNode;
 }
@@ -65,7 +52,7 @@ TrafficPolicy& TrafficPolicy::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode documentNode = resultNode.FirstChild("Document");

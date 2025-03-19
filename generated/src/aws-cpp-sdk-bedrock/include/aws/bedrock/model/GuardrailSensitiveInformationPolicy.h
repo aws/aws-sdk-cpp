@@ -34,7 +34,7 @@ namespace Model
   class GuardrailSensitiveInformationPolicy
   {
   public:
-    AWS_BEDROCK_API GuardrailSensitiveInformationPolicy();
+    AWS_BEDROCK_API GuardrailSensitiveInformationPolicy() = default;
     AWS_BEDROCK_API GuardrailSensitiveInformationPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailSensitiveInformationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>The list of PII entities configured for the guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailPiiEntity>& GetPiiEntities() const{ return m_piiEntities; }
+    inline const Aws::Vector<GuardrailPiiEntity>& GetPiiEntities() const { return m_piiEntities; }
     inline bool PiiEntitiesHasBeenSet() const { return m_piiEntitiesHasBeenSet; }
-    inline void SetPiiEntities(const Aws::Vector<GuardrailPiiEntity>& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = value; }
-    inline void SetPiiEntities(Aws::Vector<GuardrailPiiEntity>&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = std::move(value); }
-    inline GuardrailSensitiveInformationPolicy& WithPiiEntities(const Aws::Vector<GuardrailPiiEntity>& value) { SetPiiEntities(value); return *this;}
-    inline GuardrailSensitiveInformationPolicy& WithPiiEntities(Aws::Vector<GuardrailPiiEntity>&& value) { SetPiiEntities(std::move(value)); return *this;}
-    inline GuardrailSensitiveInformationPolicy& AddPiiEntities(const GuardrailPiiEntity& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.push_back(value); return *this; }
-    inline GuardrailSensitiveInformationPolicy& AddPiiEntities(GuardrailPiiEntity&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.push_back(std::move(value)); return *this; }
+    template<typename PiiEntitiesT = Aws::Vector<GuardrailPiiEntity>>
+    void SetPiiEntities(PiiEntitiesT&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = std::forward<PiiEntitiesT>(value); }
+    template<typename PiiEntitiesT = Aws::Vector<GuardrailPiiEntity>>
+    GuardrailSensitiveInformationPolicy& WithPiiEntities(PiiEntitiesT&& value) { SetPiiEntities(std::forward<PiiEntitiesT>(value)); return *this;}
+    template<typename PiiEntitiesT = GuardrailPiiEntity>
+    GuardrailSensitiveInformationPolicy& AddPiiEntities(PiiEntitiesT&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.emplace_back(std::forward<PiiEntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of regular expressions configured for the guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailRegex>& GetRegexes() const{ return m_regexes; }
+    inline const Aws::Vector<GuardrailRegex>& GetRegexes() const { return m_regexes; }
     inline bool RegexesHasBeenSet() const { return m_regexesHasBeenSet; }
-    inline void SetRegexes(const Aws::Vector<GuardrailRegex>& value) { m_regexesHasBeenSet = true; m_regexes = value; }
-    inline void SetRegexes(Aws::Vector<GuardrailRegex>&& value) { m_regexesHasBeenSet = true; m_regexes = std::move(value); }
-    inline GuardrailSensitiveInformationPolicy& WithRegexes(const Aws::Vector<GuardrailRegex>& value) { SetRegexes(value); return *this;}
-    inline GuardrailSensitiveInformationPolicy& WithRegexes(Aws::Vector<GuardrailRegex>&& value) { SetRegexes(std::move(value)); return *this;}
-    inline GuardrailSensitiveInformationPolicy& AddRegexes(const GuardrailRegex& value) { m_regexesHasBeenSet = true; m_regexes.push_back(value); return *this; }
-    inline GuardrailSensitiveInformationPolicy& AddRegexes(GuardrailRegex&& value) { m_regexesHasBeenSet = true; m_regexes.push_back(std::move(value)); return *this; }
+    template<typename RegexesT = Aws::Vector<GuardrailRegex>>
+    void SetRegexes(RegexesT&& value) { m_regexesHasBeenSet = true; m_regexes = std::forward<RegexesT>(value); }
+    template<typename RegexesT = Aws::Vector<GuardrailRegex>>
+    GuardrailSensitiveInformationPolicy& WithRegexes(RegexesT&& value) { SetRegexes(std::forward<RegexesT>(value)); return *this;}
+    template<typename RegexesT = GuardrailRegex>
+    GuardrailSensitiveInformationPolicy& AddRegexes(RegexesT&& value) { m_regexesHasBeenSet = true; m_regexes.emplace_back(std::forward<RegexesT>(value)); return *this; }
     ///@}
   private:
 

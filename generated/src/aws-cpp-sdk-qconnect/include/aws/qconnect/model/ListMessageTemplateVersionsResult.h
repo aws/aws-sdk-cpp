@@ -29,7 +29,7 @@ namespace Model
   class ListMessageTemplateVersionsResult
   {
   public:
-    AWS_QCONNECT_API ListMessageTemplateVersionsResult();
+    AWS_QCONNECT_API ListMessageTemplateVersionsResult() = default;
     AWS_QCONNECT_API ListMessageTemplateVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API ListMessageTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information about the versions of a message template.</p>
      */
-    inline const Aws::Vector<MessageTemplateVersionSummary>& GetMessageTemplateVersionSummaries() const{ return m_messageTemplateVersionSummaries; }
-    inline void SetMessageTemplateVersionSummaries(const Aws::Vector<MessageTemplateVersionSummary>& value) { m_messageTemplateVersionSummaries = value; }
-    inline void SetMessageTemplateVersionSummaries(Aws::Vector<MessageTemplateVersionSummary>&& value) { m_messageTemplateVersionSummaries = std::move(value); }
-    inline ListMessageTemplateVersionsResult& WithMessageTemplateVersionSummaries(const Aws::Vector<MessageTemplateVersionSummary>& value) { SetMessageTemplateVersionSummaries(value); return *this;}
-    inline ListMessageTemplateVersionsResult& WithMessageTemplateVersionSummaries(Aws::Vector<MessageTemplateVersionSummary>&& value) { SetMessageTemplateVersionSummaries(std::move(value)); return *this;}
-    inline ListMessageTemplateVersionsResult& AddMessageTemplateVersionSummaries(const MessageTemplateVersionSummary& value) { m_messageTemplateVersionSummaries.push_back(value); return *this; }
-    inline ListMessageTemplateVersionsResult& AddMessageTemplateVersionSummaries(MessageTemplateVersionSummary&& value) { m_messageTemplateVersionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MessageTemplateVersionSummary>& GetMessageTemplateVersionSummaries() const { return m_messageTemplateVersionSummaries; }
+    template<typename MessageTemplateVersionSummariesT = Aws::Vector<MessageTemplateVersionSummary>>
+    void SetMessageTemplateVersionSummaries(MessageTemplateVersionSummariesT&& value) { m_messageTemplateVersionSummariesHasBeenSet = true; m_messageTemplateVersionSummaries = std::forward<MessageTemplateVersionSummariesT>(value); }
+    template<typename MessageTemplateVersionSummariesT = Aws::Vector<MessageTemplateVersionSummary>>
+    ListMessageTemplateVersionsResult& WithMessageTemplateVersionSummaries(MessageTemplateVersionSummariesT&& value) { SetMessageTemplateVersionSummaries(std::forward<MessageTemplateVersionSummariesT>(value)); return *this;}
+    template<typename MessageTemplateVersionSummariesT = MessageTemplateVersionSummary>
+    ListMessageTemplateVersionsResult& AddMessageTemplateVersionSummaries(MessageTemplateVersionSummariesT&& value) { m_messageTemplateVersionSummariesHasBeenSet = true; m_messageTemplateVersionSummaries.emplace_back(std::forward<MessageTemplateVersionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMessageTemplateVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMessageTemplateVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMessageTemplateVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMessageTemplateVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMessageTemplateVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMessageTemplateVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMessageTemplateVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMessageTemplateVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MessageTemplateVersionSummary> m_messageTemplateVersionSummaries;
+    bool m_messageTemplateVersionSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

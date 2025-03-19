@@ -18,13 +18,7 @@ namespace SWF
 namespace Model
 {
 
-DomainConfiguration::DomainConfiguration() : 
-    m_workflowExecutionRetentionPeriodInDaysHasBeenSet(false)
-{
-}
-
 DomainConfiguration::DomainConfiguration(JsonView jsonValue)
-  : DomainConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DomainConfiguration& DomainConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workflowExecutionRetentionPeriodInDays"))
   {
     m_workflowExecutionRetentionPeriodInDays = jsonValue.GetString("workflowExecutionRetentionPeriodInDays");
-
     m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

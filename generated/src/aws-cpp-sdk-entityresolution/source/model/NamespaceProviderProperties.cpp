@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-NamespaceProviderProperties::NamespaceProviderProperties() : 
-    m_providerConfigurationHasBeenSet(false),
-    m_providerServiceArnHasBeenSet(false)
-{
-}
-
 NamespaceProviderProperties::NamespaceProviderProperties(JsonView jsonValue)
-  : NamespaceProviderProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NamespaceProviderProperties& NamespaceProviderProperties::operator =(JsonView js
   if(jsonValue.ValueExists("providerConfiguration"))
   {
     m_providerConfiguration = jsonValue.GetObject("providerConfiguration");
-
     m_providerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerServiceArn"))
   {
     m_providerServiceArn = jsonValue.GetString("providerServiceArn");
-
     m_providerServiceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

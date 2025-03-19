@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkInsightsAccessScopeAnalysesResponse::DescribeNetworkInsightsAccessScopeAnalysesResponse()
-{
-}
-
 DescribeNetworkInsightsAccessScopeAnalysesResponse::DescribeNetworkInsightsAccessScopeAnalysesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeNetworkInsightsAccessScopeAnalysesResponse& DescribeNetworkInsightsAcces
     if(!networkInsightsAccessScopeAnalysesNode.IsNull())
     {
       XmlNode networkInsightsAccessScopeAnalysesMember = networkInsightsAccessScopeAnalysesNode.FirstChild("item");
+      m_networkInsightsAccessScopeAnalysesHasBeenSet = !networkInsightsAccessScopeAnalysesMember.IsNull();
       while(!networkInsightsAccessScopeAnalysesMember.IsNull())
       {
         m_networkInsightsAccessScopeAnalyses.push_back(networkInsightsAccessScopeAnalysesMember);
         networkInsightsAccessScopeAnalysesMember = networkInsightsAccessScopeAnalysesMember.NextNode("item");
       }
 
+      m_networkInsightsAccessScopeAnalysesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeNetworkInsightsAccessScopeAnalysesResponse& DescribeNetworkInsightsAcces
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkInsightsAccessScopeAnalysesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

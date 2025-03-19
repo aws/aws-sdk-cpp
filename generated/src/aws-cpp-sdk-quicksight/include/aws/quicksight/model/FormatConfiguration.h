@@ -34,7 +34,7 @@ namespace Model
   class FormatConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API FormatConfiguration();
+    AWS_QUICKSIGHT_API FormatConfiguration() = default;
     AWS_QUICKSIGHT_API FormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>Formatting configuration for string fields.</p>
      */
-    inline const StringFormatConfiguration& GetStringFormatConfiguration() const{ return m_stringFormatConfiguration; }
+    inline const StringFormatConfiguration& GetStringFormatConfiguration() const { return m_stringFormatConfiguration; }
     inline bool StringFormatConfigurationHasBeenSet() const { return m_stringFormatConfigurationHasBeenSet; }
-    inline void SetStringFormatConfiguration(const StringFormatConfiguration& value) { m_stringFormatConfigurationHasBeenSet = true; m_stringFormatConfiguration = value; }
-    inline void SetStringFormatConfiguration(StringFormatConfiguration&& value) { m_stringFormatConfigurationHasBeenSet = true; m_stringFormatConfiguration = std::move(value); }
-    inline FormatConfiguration& WithStringFormatConfiguration(const StringFormatConfiguration& value) { SetStringFormatConfiguration(value); return *this;}
-    inline FormatConfiguration& WithStringFormatConfiguration(StringFormatConfiguration&& value) { SetStringFormatConfiguration(std::move(value)); return *this;}
+    template<typename StringFormatConfigurationT = StringFormatConfiguration>
+    void SetStringFormatConfiguration(StringFormatConfigurationT&& value) { m_stringFormatConfigurationHasBeenSet = true; m_stringFormatConfiguration = std::forward<StringFormatConfigurationT>(value); }
+    template<typename StringFormatConfigurationT = StringFormatConfiguration>
+    FormatConfiguration& WithStringFormatConfiguration(StringFormatConfigurationT&& value) { SetStringFormatConfiguration(std::forward<StringFormatConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Formatting configuration for number fields.</p>
      */
-    inline const NumberFormatConfiguration& GetNumberFormatConfiguration() const{ return m_numberFormatConfiguration; }
+    inline const NumberFormatConfiguration& GetNumberFormatConfiguration() const { return m_numberFormatConfiguration; }
     inline bool NumberFormatConfigurationHasBeenSet() const { return m_numberFormatConfigurationHasBeenSet; }
-    inline void SetNumberFormatConfiguration(const NumberFormatConfiguration& value) { m_numberFormatConfigurationHasBeenSet = true; m_numberFormatConfiguration = value; }
-    inline void SetNumberFormatConfiguration(NumberFormatConfiguration&& value) { m_numberFormatConfigurationHasBeenSet = true; m_numberFormatConfiguration = std::move(value); }
-    inline FormatConfiguration& WithNumberFormatConfiguration(const NumberFormatConfiguration& value) { SetNumberFormatConfiguration(value); return *this;}
-    inline FormatConfiguration& WithNumberFormatConfiguration(NumberFormatConfiguration&& value) { SetNumberFormatConfiguration(std::move(value)); return *this;}
+    template<typename NumberFormatConfigurationT = NumberFormatConfiguration>
+    void SetNumberFormatConfiguration(NumberFormatConfigurationT&& value) { m_numberFormatConfigurationHasBeenSet = true; m_numberFormatConfiguration = std::forward<NumberFormatConfigurationT>(value); }
+    template<typename NumberFormatConfigurationT = NumberFormatConfiguration>
+    FormatConfiguration& WithNumberFormatConfiguration(NumberFormatConfigurationT&& value) { SetNumberFormatConfiguration(std::forward<NumberFormatConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Formatting configuration for <code>DateTime</code> fields.</p>
      */
-    inline const DateTimeFormatConfiguration& GetDateTimeFormatConfiguration() const{ return m_dateTimeFormatConfiguration; }
+    inline const DateTimeFormatConfiguration& GetDateTimeFormatConfiguration() const { return m_dateTimeFormatConfiguration; }
     inline bool DateTimeFormatConfigurationHasBeenSet() const { return m_dateTimeFormatConfigurationHasBeenSet; }
-    inline void SetDateTimeFormatConfiguration(const DateTimeFormatConfiguration& value) { m_dateTimeFormatConfigurationHasBeenSet = true; m_dateTimeFormatConfiguration = value; }
-    inline void SetDateTimeFormatConfiguration(DateTimeFormatConfiguration&& value) { m_dateTimeFormatConfigurationHasBeenSet = true; m_dateTimeFormatConfiguration = std::move(value); }
-    inline FormatConfiguration& WithDateTimeFormatConfiguration(const DateTimeFormatConfiguration& value) { SetDateTimeFormatConfiguration(value); return *this;}
-    inline FormatConfiguration& WithDateTimeFormatConfiguration(DateTimeFormatConfiguration&& value) { SetDateTimeFormatConfiguration(std::move(value)); return *this;}
+    template<typename DateTimeFormatConfigurationT = DateTimeFormatConfiguration>
+    void SetDateTimeFormatConfiguration(DateTimeFormatConfigurationT&& value) { m_dateTimeFormatConfigurationHasBeenSet = true; m_dateTimeFormatConfiguration = std::forward<DateTimeFormatConfigurationT>(value); }
+    template<typename DateTimeFormatConfigurationT = DateTimeFormatConfiguration>
+    FormatConfiguration& WithDateTimeFormatConfiguration(DateTimeFormatConfigurationT&& value) { SetDateTimeFormatConfiguration(std::forward<DateTimeFormatConfigurationT>(value)); return *this;}
     ///@}
   private:
 

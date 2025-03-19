@@ -12,19 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSchemaRequest::CreateSchemaRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_compatibility(Compatibility::NOT_SET),
-    m_compatibilityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_schemaDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String CreateSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePrefixListsResponse::DescribePrefixListsResponse()
-{
-}
-
 DescribePrefixListsResponse::DescribePrefixListsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Aws::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode prefixListsNode = resultNode.FirstChild("prefixListSet");
     if(!prefixListsNode.IsNull())
     {
       XmlNode prefixListsMember = prefixListsNode.FirstChild("item");
+      m_prefixListsHasBeenSet = !prefixListsMember.IsNull();
       while(!prefixListsMember.IsNull())
       {
         m_prefixLists.push_back(prefixListsMember);
         prefixListsMember = prefixListsMember.NextNode("item");
       }
 
+      m_prefixListsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribePrefixListsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

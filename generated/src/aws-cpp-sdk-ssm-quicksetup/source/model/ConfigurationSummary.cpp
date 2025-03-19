@@ -18,22 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-ConfigurationSummary::ConfigurationSummary() : 
-    m_accountHasBeenSet(false),
-    m_configurationDefinitionIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_firstClassParametersHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_managerArnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_statusSummariesHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_typeVersionHasBeenSet(false)
-{
-}
-
 ConfigurationSummary::ConfigurationSummary(JsonView jsonValue)
-  : ConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetString("Account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationDefinitionId"))
   {
     m_configurationDefinitionId = jsonValue.GetString("ConfigurationDefinitionId");
-
     m_configurationDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstClassParameters"))
   {
     Aws::Map<Aws::String, JsonView> firstClassParametersJsonMap = jsonValue.GetObject("FirstClassParameters").GetAllObjects();
@@ -70,28 +49,21 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
     }
     m_firstClassParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagerArn"))
   {
     m_managerArn = jsonValue.GetString("ManagerArn");
-
     m_managerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusSummaries"))
   {
     Aws::Utils::Array<JsonView> statusSummariesJsonList = jsonValue.GetArray("StatusSummaries");
@@ -101,21 +73,16 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
     }
     m_statusSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeVersion"))
   {
     m_typeVersion = jsonValue.GetString("TypeVersion");
-
     m_typeVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

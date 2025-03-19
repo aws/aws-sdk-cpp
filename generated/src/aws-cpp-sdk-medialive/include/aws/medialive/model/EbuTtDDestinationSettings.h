@@ -33,7 +33,7 @@ namespace Model
   class EbuTtDDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API EbuTtDDestinationSettings();
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings() = default;
     AWS_MEDIALIVE_API EbuTtDDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API EbuTtDDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * Complete this field if you want to include the name of the copyright holder in
      * the copyright tag in the captions metadata.
      */
-    inline const Aws::String& GetCopyrightHolder() const{ return m_copyrightHolder; }
+    inline const Aws::String& GetCopyrightHolder() const { return m_copyrightHolder; }
     inline bool CopyrightHolderHasBeenSet() const { return m_copyrightHolderHasBeenSet; }
-    inline void SetCopyrightHolder(const Aws::String& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = value; }
-    inline void SetCopyrightHolder(Aws::String&& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = std::move(value); }
-    inline void SetCopyrightHolder(const char* value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder.assign(value); }
-    inline EbuTtDDestinationSettings& WithCopyrightHolder(const Aws::String& value) { SetCopyrightHolder(value); return *this;}
-    inline EbuTtDDestinationSettings& WithCopyrightHolder(Aws::String&& value) { SetCopyrightHolder(std::move(value)); return *this;}
-    inline EbuTtDDestinationSettings& WithCopyrightHolder(const char* value) { SetCopyrightHolder(value); return *this;}
+    template<typename CopyrightHolderT = Aws::String>
+    void SetCopyrightHolder(CopyrightHolderT&& value) { m_copyrightHolderHasBeenSet = true; m_copyrightHolder = std::forward<CopyrightHolderT>(value); }
+    template<typename CopyrightHolderT = Aws::String>
+    EbuTtDDestinationSettings& WithCopyrightHolder(CopyrightHolderT&& value) { SetCopyrightHolder(std::forward<CopyrightHolderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * ENABLED: Fill with the captions background color (as specified in the input
      * captions). DISABLED: Leave the gap unfilled
      */
-    inline const EbuTtDFillLineGapControl& GetFillLineGap() const{ return m_fillLineGap; }
+    inline EbuTtDFillLineGapControl GetFillLineGap() const { return m_fillLineGap; }
     inline bool FillLineGapHasBeenSet() const { return m_fillLineGapHasBeenSet; }
-    inline void SetFillLineGap(const EbuTtDFillLineGapControl& value) { m_fillLineGapHasBeenSet = true; m_fillLineGap = value; }
-    inline void SetFillLineGap(EbuTtDFillLineGapControl&& value) { m_fillLineGapHasBeenSet = true; m_fillLineGap = std::move(value); }
-    inline EbuTtDDestinationSettings& WithFillLineGap(const EbuTtDFillLineGapControl& value) { SetFillLineGap(value); return *this;}
-    inline EbuTtDDestinationSettings& WithFillLineGap(EbuTtDFillLineGapControl&& value) { SetFillLineGap(std::move(value)); return *this;}
+    inline void SetFillLineGap(EbuTtDFillLineGapControl value) { m_fillLineGapHasBeenSet = true; m_fillLineGap = value; }
+    inline EbuTtDDestinationSettings& WithFillLineGap(EbuTtDFillLineGapControl value) { SetFillLineGap(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * from the input captions. The size is always set to 100% to allow the downstream
      * player to choose the size.
      */
-    inline const Aws::String& GetFontFamily() const{ return m_fontFamily; }
+    inline const Aws::String& GetFontFamily() const { return m_fontFamily; }
     inline bool FontFamilyHasBeenSet() const { return m_fontFamilyHasBeenSet; }
-    inline void SetFontFamily(const Aws::String& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = value; }
-    inline void SetFontFamily(Aws::String&& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = std::move(value); }
-    inline void SetFontFamily(const char* value) { m_fontFamilyHasBeenSet = true; m_fontFamily.assign(value); }
-    inline EbuTtDDestinationSettings& WithFontFamily(const Aws::String& value) { SetFontFamily(value); return *this;}
-    inline EbuTtDDestinationSettings& WithFontFamily(Aws::String&& value) { SetFontFamily(std::move(value)); return *this;}
-    inline EbuTtDDestinationSettings& WithFontFamily(const char* value) { SetFontFamily(value); return *this;}
+    template<typename FontFamilyT = Aws::String>
+    void SetFontFamily(FontFamilyT&& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = std::forward<FontFamilyT>(value); }
+    template<typename FontFamilyT = Aws::String>
+    EbuTtDDestinationSettings& WithFontFamily(FontFamilyT&& value) { SetFontFamily(std::forward<FontFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +94,10 @@ namespace Model
      * Teletext. EXCLUDE: Set the font family to monospaced. Do not include any other
      * style information.
      */
-    inline const EbuTtDDestinationStyleControl& GetStyleControl() const{ return m_styleControl; }
+    inline EbuTtDDestinationStyleControl GetStyleControl() const { return m_styleControl; }
     inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
-    inline void SetStyleControl(const EbuTtDDestinationStyleControl& value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
-    inline void SetStyleControl(EbuTtDDestinationStyleControl&& value) { m_styleControlHasBeenSet = true; m_styleControl = std::move(value); }
-    inline EbuTtDDestinationSettings& WithStyleControl(const EbuTtDDestinationStyleControl& value) { SetStyleControl(value); return *this;}
-    inline EbuTtDDestinationSettings& WithStyleControl(EbuTtDDestinationStyleControl&& value) { SetStyleControl(std::move(value)); return *this;}
+    inline void SetStyleControl(EbuTtDDestinationStyleControl value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
+    inline EbuTtDDestinationSettings& WithStyleControl(EbuTtDDestinationStyleControl value) { SetStyleControl(value); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +106,7 @@ namespace Model
      * only if the defaultLineHeight is also set. If you leave this field empty, the
      * default font size is 80% of the cell size.
      */
-    inline int GetDefaultFontSize() const{ return m_defaultFontSize; }
+    inline int GetDefaultFontSize() const { return m_defaultFontSize; }
     inline bool DefaultFontSizeHasBeenSet() const { return m_defaultFontSizeHasBeenSet; }
     inline void SetDefaultFontSize(int value) { m_defaultFontSizeHasBeenSet = true; m_defaultFontSize = value; }
     inline EbuTtDDestinationSettings& WithDefaultFontSize(int value) { SetDefaultFontSize(value); return *this;}
@@ -124,7 +116,7 @@ namespace Model
     /**
      * Documentation update needed
      */
-    inline int GetDefaultLineHeight() const{ return m_defaultLineHeight; }
+    inline int GetDefaultLineHeight() const { return m_defaultLineHeight; }
     inline bool DefaultLineHeightHasBeenSet() const { return m_defaultLineHeightHasBeenSet; }
     inline void SetDefaultLineHeight(int value) { m_defaultLineHeightHasBeenSet = true; m_defaultLineHeight = value; }
     inline EbuTtDDestinationSettings& WithDefaultLineHeight(int value) { SetDefaultLineHeight(value); return *this;}
@@ -134,19 +126,19 @@ namespace Model
     Aws::String m_copyrightHolder;
     bool m_copyrightHolderHasBeenSet = false;
 
-    EbuTtDFillLineGapControl m_fillLineGap;
+    EbuTtDFillLineGapControl m_fillLineGap{EbuTtDFillLineGapControl::NOT_SET};
     bool m_fillLineGapHasBeenSet = false;
 
     Aws::String m_fontFamily;
     bool m_fontFamilyHasBeenSet = false;
 
-    EbuTtDDestinationStyleControl m_styleControl;
+    EbuTtDDestinationStyleControl m_styleControl{EbuTtDDestinationStyleControl::NOT_SET};
     bool m_styleControlHasBeenSet = false;
 
-    int m_defaultFontSize;
+    int m_defaultFontSize{0};
     bool m_defaultFontSizeHasBeenSet = false;
 
-    int m_defaultLineHeight;
+    int m_defaultLineHeight{0};
     bool m_defaultLineHeightHasBeenSet = false;
   };
 

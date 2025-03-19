@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetVerifiedAccessEndpointPolicyRequest::GetVerifiedAccessEndpointPolicyRequest() : 
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetVerifiedAccessEndpointPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

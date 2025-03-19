@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-Secondary::Secondary() : 
-    m_routeHasBeenSet(false)
-{
-}
-
 Secondary::Secondary(JsonView jsonValue)
-  : Secondary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Secondary& Secondary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Route"))
   {
     m_route = jsonValue.GetString("Route");
-
     m_routeHasBeenSet = true;
   }
-
   return *this;
 }
 

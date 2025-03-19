@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SupportedPlatform::SupportedPlatform() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 SupportedPlatform::SupportedPlatform(const XmlNode& xmlNode)
-  : SupportedPlatform()
 {
   *this = xmlNode;
 }

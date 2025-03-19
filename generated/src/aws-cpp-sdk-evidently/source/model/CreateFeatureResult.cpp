@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFeatureResult::CreateFeatureResult()
-{
-}
-
 CreateFeatureResult::CreateFeatureResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateFeatureResult& CreateFeatureResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("feature"))
   {
     m_feature = jsonValue.GetObject("feature");
-
+    m_featureHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

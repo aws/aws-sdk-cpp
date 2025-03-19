@@ -12,29 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContactRequest::CreateContactRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_relatedContactIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_initiationMethod(ContactInitiationMethod::NOT_SET),
-    m_initiationMethodHasBeenSet(false),
-    m_expiryDurationInMinutes(0),
-    m_expiryDurationInMinutesHasBeenSet(false),
-    m_userInfoHasBeenSet(false),
-    m_initiateAs(InitiateAs::NOT_SET),
-    m_initiateAsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false),
-    m_previousContactIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateContactRequest::SerializePayload() const
 {
   JsonValue payload;

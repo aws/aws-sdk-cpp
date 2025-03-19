@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RebuildWorkspacesRequest::RebuildWorkspacesRequest() : 
-    m_rebuildWorkspaceRequestsHasBeenSet(false)
-{
-}
-
 Aws::String RebuildWorkspacesRequest::SerializePayload() const
 {
   JsonValue payload;

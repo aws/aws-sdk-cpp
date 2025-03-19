@@ -18,18 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-RecommendationResourcesAggregates::RecommendationResourcesAggregates() : 
-    m_errorCount(0),
-    m_errorCountHasBeenSet(false),
-    m_okCount(0),
-    m_okCountHasBeenSet(false),
-    m_warningCount(0),
-    m_warningCountHasBeenSet(false)
-{
-}
-
 RecommendationResourcesAggregates::RecommendationResourcesAggregates(JsonView jsonValue)
-  : RecommendationResourcesAggregates()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RecommendationResourcesAggregates& RecommendationResourcesAggregates::operator =
   if(jsonValue.ValueExists("errorCount"))
   {
     m_errorCount = jsonValue.GetInt64("errorCount");
-
     m_errorCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("okCount"))
   {
     m_okCount = jsonValue.GetInt64("okCount");
-
     m_okCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warningCount"))
   {
     m_warningCount = jsonValue.GetInt64("warningCount");
-
     m_warningCountHasBeenSet = true;
   }
-
   return *this;
 }
 

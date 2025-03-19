@@ -30,7 +30,7 @@ namespace Model
   class TimestampRange
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API TimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The time, in milliseconds, from the beginning of the audio stream to the
      * start of the category match.</p>
      */
-    inline long long GetBeginOffsetMillis() const{ return m_beginOffsetMillis; }
+    inline long long GetBeginOffsetMillis() const { return m_beginOffsetMillis; }
     inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
     inline void SetBeginOffsetMillis(long long value) { m_beginOffsetMillisHasBeenSet = true; m_beginOffsetMillis = value; }
     inline TimestampRange& WithBeginOffsetMillis(long long value) { SetBeginOffsetMillis(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The time, in milliseconds, from the beginning of the audio stream to the end
      * of the category match.</p>
      */
-    inline long long GetEndOffsetMillis() const{ return m_endOffsetMillis; }
+    inline long long GetEndOffsetMillis() const { return m_endOffsetMillis; }
     inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
     inline void SetEndOffsetMillis(long long value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
     inline TimestampRange& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_beginOffsetMillis;
+    long long m_beginOffsetMillis{0};
     bool m_beginOffsetMillisHasBeenSet = false;
 
-    long long m_endOffsetMillis;
+    long long m_endOffsetMillis{0};
     bool m_endOffsetMillisHasBeenSet = false;
   };
 

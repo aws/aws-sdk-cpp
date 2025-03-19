@@ -27,7 +27,7 @@ namespace Model
   class CreateContactChannelResult
   {
   public:
-    AWS_SSMCONTACTS_API CreateContactChannelResult();
+    AWS_SSMCONTACTS_API CreateContactChannelResult() = default;
     AWS_SSMCONTACTS_API CreateContactChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMCONTACTS_API CreateContactChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
-    inline const Aws::String& GetContactChannelArn() const{ return m_contactChannelArn; }
-    inline void SetContactChannelArn(const Aws::String& value) { m_contactChannelArn = value; }
-    inline void SetContactChannelArn(Aws::String&& value) { m_contactChannelArn = std::move(value); }
-    inline void SetContactChannelArn(const char* value) { m_contactChannelArn.assign(value); }
-    inline CreateContactChannelResult& WithContactChannelArn(const Aws::String& value) { SetContactChannelArn(value); return *this;}
-    inline CreateContactChannelResult& WithContactChannelArn(Aws::String&& value) { SetContactChannelArn(std::move(value)); return *this;}
-    inline CreateContactChannelResult& WithContactChannelArn(const char* value) { SetContactChannelArn(value); return *this;}
+    inline const Aws::String& GetContactChannelArn() const { return m_contactChannelArn; }
+    template<typename ContactChannelArnT = Aws::String>
+    void SetContactChannelArn(ContactChannelArnT&& value) { m_contactChannelArnHasBeenSet = true; m_contactChannelArn = std::forward<ContactChannelArnT>(value); }
+    template<typename ContactChannelArnT = Aws::String>
+    CreateContactChannelResult& WithContactChannelArn(ContactChannelArnT&& value) { SetContactChannelArn(std::forward<ContactChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContactChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContactChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContactChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContactChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contactChannelArn;
+    bool m_contactChannelArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

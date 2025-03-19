@@ -32,7 +32,7 @@ namespace Model
   class Scte35TimeSignalScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings() = default;
     AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
      */
-    inline const Aws::Vector<Scte35Descriptor>& GetScte35Descriptors() const{ return m_scte35Descriptors; }
+    inline const Aws::Vector<Scte35Descriptor>& GetScte35Descriptors() const { return m_scte35Descriptors; }
     inline bool Scte35DescriptorsHasBeenSet() const { return m_scte35DescriptorsHasBeenSet; }
-    inline void SetScte35Descriptors(const Aws::Vector<Scte35Descriptor>& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors = value; }
-    inline void SetScte35Descriptors(Aws::Vector<Scte35Descriptor>&& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors = std::move(value); }
-    inline Scte35TimeSignalScheduleActionSettings& WithScte35Descriptors(const Aws::Vector<Scte35Descriptor>& value) { SetScte35Descriptors(value); return *this;}
-    inline Scte35TimeSignalScheduleActionSettings& WithScte35Descriptors(Aws::Vector<Scte35Descriptor>&& value) { SetScte35Descriptors(std::move(value)); return *this;}
-    inline Scte35TimeSignalScheduleActionSettings& AddScte35Descriptors(const Scte35Descriptor& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors.push_back(value); return *this; }
-    inline Scte35TimeSignalScheduleActionSettings& AddScte35Descriptors(Scte35Descriptor&& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors.push_back(std::move(value)); return *this; }
+    template<typename Scte35DescriptorsT = Aws::Vector<Scte35Descriptor>>
+    void SetScte35Descriptors(Scte35DescriptorsT&& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors = std::forward<Scte35DescriptorsT>(value); }
+    template<typename Scte35DescriptorsT = Aws::Vector<Scte35Descriptor>>
+    Scte35TimeSignalScheduleActionSettings& WithScte35Descriptors(Scte35DescriptorsT&& value) { SetScte35Descriptors(std::forward<Scte35DescriptorsT>(value)); return *this;}
+    template<typename Scte35DescriptorsT = Scte35Descriptor>
+    Scte35TimeSignalScheduleActionSettings& AddScte35Descriptors(Scte35DescriptorsT&& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors.emplace_back(std::forward<Scte35DescriptorsT>(value)); return *this; }
     ///@}
   private:
 

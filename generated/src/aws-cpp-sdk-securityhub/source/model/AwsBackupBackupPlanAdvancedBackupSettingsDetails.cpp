@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupPlanAdvancedBackupSettingsDetails::AwsBackupBackupPlanAdvancedBackupSettingsDetails() : 
-    m_backupOptionsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 AwsBackupBackupPlanAdvancedBackupSettingsDetails::AwsBackupBackupPlanAdvancedBackupSettingsDetails(JsonView jsonValue)
-  : AwsBackupBackupPlanAdvancedBackupSettingsDetails()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AwsBackupBackupPlanAdvancedBackupSettingsDetails& AwsBackupBackupPlanAdvancedBac
     }
     m_backupOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

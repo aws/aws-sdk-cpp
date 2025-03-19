@@ -18,26 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DataAutomationProject::DataAutomationProject() : 
-    m_projectArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_projectStage(DataAutomationProjectStage::NOT_SET),
-    m_projectStageHasBeenSet(false),
-    m_projectDescriptionHasBeenSet(false),
-    m_standardOutputConfigurationHasBeenSet(false),
-    m_customOutputConfigurationHasBeenSet(false),
-    m_overrideConfigurationHasBeenSet(false),
-    m_status(DataAutomationProjectStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_kmsEncryptionContextHasBeenSet(false)
-{
-}
-
 DataAutomationProject::DataAutomationProject(JsonView jsonValue)
-  : DataAutomationProject()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ DataAutomationProject& DataAutomationProject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("projectArn"))
   {
     m_projectArn = jsonValue.GetString("projectArn");
-
     m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectStage"))
   {
     m_projectStage = DataAutomationProjectStageMapper::GetDataAutomationProjectStageForName(jsonValue.GetString("projectStage"));
-
     m_projectStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectDescription"))
   {
     m_projectDescription = jsonValue.GetString("projectDescription");
-
     m_projectDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("standardOutputConfiguration"))
   {
     m_standardOutputConfiguration = jsonValue.GetObject("standardOutputConfiguration");
-
     m_standardOutputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customOutputConfiguration"))
   {
     m_customOutputConfiguration = jsonValue.GetObject("customOutputConfiguration");
-
     m_customOutputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideConfiguration"))
   {
     m_overrideConfiguration = jsonValue.GetObject("overrideConfiguration");
-
     m_overrideConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataAutomationProjectStatusMapper::GetDataAutomationProjectStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsEncryptionContext"))
   {
     Aws::Map<Aws::String, JsonView> kmsEncryptionContextJsonMap = jsonValue.GetObject("kmsEncryptionContext").GetAllObjects();
@@ -130,7 +89,6 @@ DataAutomationProject& DataAutomationProject::operator =(JsonView jsonValue)
     }
     m_kmsEncryptionContextHasBeenSet = true;
   }
-
   return *this;
 }
 

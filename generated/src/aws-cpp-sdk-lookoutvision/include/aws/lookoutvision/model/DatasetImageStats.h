@@ -29,7 +29,7 @@ namespace Model
   class DatasetImageStats
   {
   public:
-    AWS_LOOKOUTFORVISION_API DatasetImageStats();
+    AWS_LOOKOUTFORVISION_API DatasetImageStats() = default;
     AWS_LOOKOUTFORVISION_API DatasetImageStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API DatasetImageStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The total number of images in the dataset.</p>
      */
-    inline int GetTotal() const{ return m_total; }
+    inline int GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
     inline DatasetImageStats& WithTotal(int value) { SetTotal(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The total number of labeled images.</p>
      */
-    inline int GetLabeled() const{ return m_labeled; }
+    inline int GetLabeled() const { return m_labeled; }
     inline bool LabeledHasBeenSet() const { return m_labeledHasBeenSet; }
     inline void SetLabeled(int value) { m_labeledHasBeenSet = true; m_labeled = value; }
     inline DatasetImageStats& WithLabeled(int value) { SetLabeled(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The total number of images labeled as normal.</p>
      */
-    inline int GetNormal() const{ return m_normal; }
+    inline int GetNormal() const { return m_normal; }
     inline bool NormalHasBeenSet() const { return m_normalHasBeenSet; }
     inline void SetNormal(int value) { m_normalHasBeenSet = true; m_normal = value; }
     inline DatasetImageStats& WithNormal(int value) { SetNormal(value); return *this;}
@@ -69,23 +69,23 @@ namespace Model
     /**
      * <p>the total number of images labeled as an anomaly.</p>
      */
-    inline int GetAnomaly() const{ return m_anomaly; }
+    inline int GetAnomaly() const { return m_anomaly; }
     inline bool AnomalyHasBeenSet() const { return m_anomalyHasBeenSet; }
     inline void SetAnomaly(int value) { m_anomalyHasBeenSet = true; m_anomaly = value; }
     inline DatasetImageStats& WithAnomaly(int value) { SetAnomaly(value); return *this;}
     ///@}
   private:
 
-    int m_total;
+    int m_total{0};
     bool m_totalHasBeenSet = false;
 
-    int m_labeled;
+    int m_labeled{0};
     bool m_labeledHasBeenSet = false;
 
-    int m_normal;
+    int m_normal{0};
     bool m_normalHasBeenSet = false;
 
-    int m_anomaly;
+    int m_anomaly{0};
     bool m_anomalyHasBeenSet = false;
   };
 

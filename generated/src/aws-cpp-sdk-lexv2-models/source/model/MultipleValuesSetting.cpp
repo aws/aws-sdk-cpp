@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-MultipleValuesSetting::MultipleValuesSetting() : 
-    m_allowMultipleValues(false),
-    m_allowMultipleValuesHasBeenSet(false)
-{
-}
-
 MultipleValuesSetting::MultipleValuesSetting(JsonView jsonValue)
-  : MultipleValuesSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MultipleValuesSetting& MultipleValuesSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowMultipleValues"))
   {
     m_allowMultipleValues = jsonValue.GetBool("allowMultipleValues");
-
     m_allowMultipleValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

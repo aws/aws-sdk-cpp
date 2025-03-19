@@ -32,7 +32,7 @@ namespace Model
   class TimestreamSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API TimestreamSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API TimestreamSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API TimestreamSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API TimestreamSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Database name for the endpoint.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline TimestreamSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline TimestreamSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline TimestreamSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    TimestreamSettings& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * resides in memory for the specified duration, which allows quick access to
      * it.</p>
      */
-    inline int GetMemoryDuration() const{ return m_memoryDuration; }
+    inline int GetMemoryDuration() const { return m_memoryDuration; }
     inline bool MemoryDurationHasBeenSet() const { return m_memoryDurationHasBeenSet; }
     inline void SetMemoryDuration(int value) { m_memoryDurationHasBeenSet = true; m_memoryDuration = value; }
     inline TimestreamSettings& WithMemoryDuration(int value) { SetMemoryDuration(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon
      * Timestream Developer Guide</a>.</p>
      */
-    inline int GetMagneticDuration() const{ return m_magneticDuration; }
+    inline int GetMagneticDuration() const { return m_magneticDuration; }
     inline bool MagneticDurationHasBeenSet() const { return m_magneticDurationHasBeenSet; }
     inline void SetMagneticDuration(int value) { m_magneticDurationHasBeenSet = true; m_magneticDuration = value; }
     inline TimestreamSettings& WithMagneticDuration(int value) { SetMagneticDuration(value); return *this;}
@@ -89,7 +87,7 @@ namespace Model
      * records, so if this value is <code>false</code>, DMS nulls out the corresponding
      * record in the Timestream database rather than deleting it.</p>
      */
-    inline bool GetCdcInsertsAndUpdates() const{ return m_cdcInsertsAndUpdates; }
+    inline bool GetCdcInsertsAndUpdates() const { return m_cdcInsertsAndUpdates; }
     inline bool CdcInsertsAndUpdatesHasBeenSet() const { return m_cdcInsertsAndUpdatesHasBeenSet; }
     inline void SetCdcInsertsAndUpdates(bool value) { m_cdcInsertsAndUpdatesHasBeenSet = true; m_cdcInsertsAndUpdates = value; }
     inline TimestreamSettings& WithCdcInsertsAndUpdates(bool value) { SetCdcInsertsAndUpdates(value); return *this;}
@@ -106,7 +104,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon
      * Timestream Developer Guide</a>.</p>
      */
-    inline bool GetEnableMagneticStoreWrites() const{ return m_enableMagneticStoreWrites; }
+    inline bool GetEnableMagneticStoreWrites() const { return m_enableMagneticStoreWrites; }
     inline bool EnableMagneticStoreWritesHasBeenSet() const { return m_enableMagneticStoreWritesHasBeenSet; }
     inline void SetEnableMagneticStoreWrites(bool value) { m_enableMagneticStoreWritesHasBeenSet = true; m_enableMagneticStoreWrites = value; }
     inline TimestreamSettings& WithEnableMagneticStoreWrites(bool value) { SetEnableMagneticStoreWrites(value); return *this;}
@@ -116,16 +114,16 @@ namespace Model
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
 
-    int m_memoryDuration;
+    int m_memoryDuration{0};
     bool m_memoryDurationHasBeenSet = false;
 
-    int m_magneticDuration;
+    int m_magneticDuration{0};
     bool m_magneticDurationHasBeenSet = false;
 
-    bool m_cdcInsertsAndUpdates;
+    bool m_cdcInsertsAndUpdates{false};
     bool m_cdcInsertsAndUpdatesHasBeenSet = false;
 
-    bool m_enableMagneticStoreWrites;
+    bool m_enableMagneticStoreWrites{false};
     bool m_enableMagneticStoreWritesHasBeenSet = false;
   };
 

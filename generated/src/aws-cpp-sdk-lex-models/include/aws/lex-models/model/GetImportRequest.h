@@ -21,7 +21,7 @@ namespace Model
   class GetImportRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetImportRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetImportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The identifier of the import job information to return.</p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
+    inline const Aws::String& GetImportId() const { return m_importId; }
     inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
-    inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importIdHasBeenSet = true; m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importIdHasBeenSet = true; m_importId.assign(value); }
-    inline GetImportRequest& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline GetImportRequest& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline GetImportRequest& WithImportId(const char* value) { SetImportId(value); return *this;}
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    GetImportRequest& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
   private:
 

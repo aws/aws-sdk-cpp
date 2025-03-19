@@ -29,7 +29,7 @@ namespace Model
   class ListNamespacesResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ListNamespacesResult();
+    AWS_REDSHIFTSERVERLESS_API ListNamespacesResult() = default;
     AWS_REDSHIFTSERVERLESS_API ListNamespacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API ListNamespacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of returned namespaces.</p>
      */
-    inline const Aws::Vector<Namespace>& GetNamespaces() const{ return m_namespaces; }
-    inline void SetNamespaces(const Aws::Vector<Namespace>& value) { m_namespaces = value; }
-    inline void SetNamespaces(Aws::Vector<Namespace>&& value) { m_namespaces = std::move(value); }
-    inline ListNamespacesResult& WithNamespaces(const Aws::Vector<Namespace>& value) { SetNamespaces(value); return *this;}
-    inline ListNamespacesResult& WithNamespaces(Aws::Vector<Namespace>&& value) { SetNamespaces(std::move(value)); return *this;}
-    inline ListNamespacesResult& AddNamespaces(const Namespace& value) { m_namespaces.push_back(value); return *this; }
-    inline ListNamespacesResult& AddNamespaces(Namespace&& value) { m_namespaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Namespace>& GetNamespaces() const { return m_namespaces; }
+    template<typename NamespacesT = Aws::Vector<Namespace>>
+    void SetNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces = std::forward<NamespacesT>(value); }
+    template<typename NamespacesT = Aws::Vector<Namespace>>
+    ListNamespacesResult& WithNamespaces(NamespacesT&& value) { SetNamespaces(std::forward<NamespacesT>(value)); return *this;}
+    template<typename NamespacesT = Namespace>
+    ListNamespacesResult& AddNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces.emplace_back(std::forward<NamespacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Make the call again using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNamespacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNamespacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNamespacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNamespacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNamespacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNamespacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNamespacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNamespacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Namespace> m_namespaces;
+    bool m_namespacesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

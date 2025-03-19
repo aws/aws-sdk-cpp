@@ -18,14 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-Nameserver::Nameserver() : 
-    m_nameHasBeenSet(false),
-    m_glueIpsHasBeenSet(false)
-{
-}
-
 Nameserver::Nameserver(JsonView jsonValue)
-  : Nameserver()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Nameserver& Nameserver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlueIps"))
   {
     Aws::Utils::Array<JsonView> glueIpsJsonList = jsonValue.GetArray("GlueIps");
@@ -48,7 +39,6 @@ Nameserver& Nameserver::operator =(JsonView jsonValue)
     }
     m_glueIpsHasBeenSet = true;
   }
-
   return *this;
 }
 

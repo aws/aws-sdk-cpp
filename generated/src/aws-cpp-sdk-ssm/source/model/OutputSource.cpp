@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OutputSource::OutputSource() : 
-    m_outputSourceIdHasBeenSet(false),
-    m_outputSourceTypeHasBeenSet(false)
-{
-}
-
 OutputSource::OutputSource(JsonView jsonValue)
-  : OutputSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OutputSource& OutputSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputSourceId"))
   {
     m_outputSourceId = jsonValue.GetString("OutputSourceId");
-
     m_outputSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSourceType"))
   {
     m_outputSourceType = jsonValue.GetString("OutputSourceType");
-
     m_outputSourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-ScalingParametersStatus::ScalingParametersStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ScalingParametersStatus::ScalingParametersStatus(const XmlNode& xmlNode)
-  : ScalingParametersStatus()
 {
   *this = xmlNode;
 }

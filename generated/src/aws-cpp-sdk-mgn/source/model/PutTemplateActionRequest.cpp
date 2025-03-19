@@ -12,29 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutTemplateActionRequest::PutTemplateActionRequest() : 
-    m_actionIDHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_documentIdentifierHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_externalParametersHasBeenSet(false),
-    m_launchConfigurationTemplateIDHasBeenSet(false),
-    m_mustSucceedForCutover(false),
-    m_mustSucceedForCutoverHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
-{
-}
-
 Aws::String PutTemplateActionRequest::SerializePayload() const
 {
   JsonValue payload;

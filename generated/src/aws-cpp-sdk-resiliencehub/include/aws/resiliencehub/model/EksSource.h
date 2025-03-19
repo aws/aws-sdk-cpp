@@ -33,7 +33,7 @@ namespace Model
   class EksSource
   {
   public:
-    AWS_RESILIENCEHUB_API EksSource();
+    AWS_RESILIENCEHUB_API EksSource() = default;
     AWS_RESILIENCEHUB_API EksSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API EksSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetEksClusterArn() const{ return m_eksClusterArn; }
+    inline const Aws::String& GetEksClusterArn() const { return m_eksClusterArn; }
     inline bool EksClusterArnHasBeenSet() const { return m_eksClusterArnHasBeenSet; }
-    inline void SetEksClusterArn(const Aws::String& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = value; }
-    inline void SetEksClusterArn(Aws::String&& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = std::move(value); }
-    inline void SetEksClusterArn(const char* value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn.assign(value); }
-    inline EksSource& WithEksClusterArn(const Aws::String& value) { SetEksClusterArn(value); return *this;}
-    inline EksSource& WithEksClusterArn(Aws::String&& value) { SetEksClusterArn(std::move(value)); return *this;}
-    inline EksSource& WithEksClusterArn(const char* value) { SetEksClusterArn(value); return *this;}
+    template<typename EksClusterArnT = Aws::String>
+    void SetEksClusterArn(EksClusterArnT&& value) { m_eksClusterArnHasBeenSet = true; m_eksClusterArn = std::forward<EksClusterArnT>(value); }
+    template<typename EksClusterArnT = Aws::String>
+    EksSource& WithEksClusterArn(EksClusterArnT&& value) { SetEksClusterArn(std::forward<EksClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * <p>The list of namespaces located on your Amazon Elastic Kubernetes Service
      * cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNamespaces() const{ return m_namespaces; }
+    inline const Aws::Vector<Aws::String>& GetNamespaces() const { return m_namespaces; }
     inline bool NamespacesHasBeenSet() const { return m_namespacesHasBeenSet; }
-    inline void SetNamespaces(const Aws::Vector<Aws::String>& value) { m_namespacesHasBeenSet = true; m_namespaces = value; }
-    inline void SetNamespaces(Aws::Vector<Aws::String>&& value) { m_namespacesHasBeenSet = true; m_namespaces = std::move(value); }
-    inline EksSource& WithNamespaces(const Aws::Vector<Aws::String>& value) { SetNamespaces(value); return *this;}
-    inline EksSource& WithNamespaces(Aws::Vector<Aws::String>&& value) { SetNamespaces(std::move(value)); return *this;}
-    inline EksSource& AddNamespaces(const Aws::String& value) { m_namespacesHasBeenSet = true; m_namespaces.push_back(value); return *this; }
-    inline EksSource& AddNamespaces(Aws::String&& value) { m_namespacesHasBeenSet = true; m_namespaces.push_back(std::move(value)); return *this; }
-    inline EksSource& AddNamespaces(const char* value) { m_namespacesHasBeenSet = true; m_namespaces.push_back(value); return *this; }
+    template<typename NamespacesT = Aws::Vector<Aws::String>>
+    void SetNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces = std::forward<NamespacesT>(value); }
+    template<typename NamespacesT = Aws::Vector<Aws::String>>
+    EksSource& WithNamespaces(NamespacesT&& value) { SetNamespaces(std::forward<NamespacesT>(value)); return *this;}
+    template<typename NamespacesT = Aws::String>
+    EksSource& AddNamespaces(NamespacesT&& value) { m_namespacesHasBeenSet = true; m_namespaces.emplace_back(std::forward<NamespacesT>(value)); return *this; }
     ///@}
   private:
 

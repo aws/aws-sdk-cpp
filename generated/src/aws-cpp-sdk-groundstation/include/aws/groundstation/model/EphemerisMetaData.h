@@ -33,7 +33,7 @@ namespace Model
   class EphemerisMetaData
   {
   public:
-    AWS_GROUNDSTATION_API EphemerisMetaData();
+    AWS_GROUNDSTATION_API EphemerisMetaData() = default;
     AWS_GROUNDSTATION_API EphemerisMetaData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API EphemerisMetaData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for
      * default ephemerides from Space Track.</p>
      */
-    inline const Aws::String& GetEphemerisId() const{ return m_ephemerisId; }
+    inline const Aws::String& GetEphemerisId() const { return m_ephemerisId; }
     inline bool EphemerisIdHasBeenSet() const { return m_ephemerisIdHasBeenSet; }
-    inline void SetEphemerisId(const Aws::String& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = value; }
-    inline void SetEphemerisId(Aws::String&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::move(value); }
-    inline void SetEphemerisId(const char* value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId.assign(value); }
-    inline EphemerisMetaData& WithEphemerisId(const Aws::String& value) { SetEphemerisId(value); return *this;}
-    inline EphemerisMetaData& WithEphemerisId(Aws::String&& value) { SetEphemerisId(std::move(value)); return *this;}
-    inline EphemerisMetaData& WithEphemerisId(const char* value) { SetEphemerisId(value); return *this;}
+    template<typename EphemerisIdT = Aws::String>
+    void SetEphemerisId(EphemerisIdT&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::forward<EphemerisIdT>(value); }
+    template<typename EphemerisIdT = Aws::String>
+    EphemerisMetaData& WithEphemerisId(EphemerisIdT&& value) { SetEphemerisId(std::forward<EphemerisIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The epoch of a default, ephemeris from Space Track in UTC.</p> <p>This field
      * is not populated for customer-provided ephemerides.</p>
      */
-    inline const Aws::Utils::DateTime& GetEpoch() const{ return m_epoch; }
+    inline const Aws::Utils::DateTime& GetEpoch() const { return m_epoch; }
     inline bool EpochHasBeenSet() const { return m_epochHasBeenSet; }
-    inline void SetEpoch(const Aws::Utils::DateTime& value) { m_epochHasBeenSet = true; m_epoch = value; }
-    inline void SetEpoch(Aws::Utils::DateTime&& value) { m_epochHasBeenSet = true; m_epoch = std::move(value); }
-    inline EphemerisMetaData& WithEpoch(const Aws::Utils::DateTime& value) { SetEpoch(value); return *this;}
-    inline EphemerisMetaData& WithEpoch(Aws::Utils::DateTime&& value) { SetEpoch(std::move(value)); return *this;}
+    template<typename EpochT = Aws::Utils::DateTime>
+    void SetEpoch(EpochT&& value) { m_epochHasBeenSet = true; m_epoch = std::forward<EpochT>(value); }
+    template<typename EpochT = Aws::Utils::DateTime>
+    EphemerisMetaData& WithEpoch(EpochT&& value) { SetEpoch(std::forward<EpochT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,39 +71,35 @@ namespace Model
      * identifier for the ephemeris.</p> <p>A name is only returned for
      * customer-provider ephemerides that have a name associated.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EphemerisMetaData& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EphemerisMetaData& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EphemerisMetaData& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EphemerisMetaData& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
      */
-    inline const EphemerisSource& GetSource() const{ return m_source; }
+    inline EphemerisSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const EphemerisSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(EphemerisSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline EphemerisMetaData& WithSource(const EphemerisSource& value) { SetSource(value); return *this;}
-    inline EphemerisMetaData& WithSource(EphemerisSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(EphemerisSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline EphemerisMetaData& WithSource(EphemerisSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
     Aws::String m_ephemerisId;
     bool m_ephemerisIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_epoch;
+    Aws::Utils::DateTime m_epoch{};
     bool m_epochHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    EphemerisSource m_source;
+    EphemerisSource m_source{EphemerisSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-BrokerEBSVolumeInfo::BrokerEBSVolumeInfo() : 
-    m_kafkaBrokerNodeIdHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_volumeSizeGB(0),
-    m_volumeSizeGBHasBeenSet(false)
-{
-}
-
 BrokerEBSVolumeInfo::BrokerEBSVolumeInfo(JsonView jsonValue)
-  : BrokerEBSVolumeInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BrokerEBSVolumeInfo& BrokerEBSVolumeInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kafkaBrokerNodeId"))
   {
     m_kafkaBrokerNodeId = jsonValue.GetString("kafkaBrokerNodeId");
-
     m_kafkaBrokerNodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("provisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeSizeGB"))
   {
     m_volumeSizeGB = jsonValue.GetInteger("volumeSizeGB");
-
     m_volumeSizeGBHasBeenSet = true;
   }
-
   return *this;
 }
 

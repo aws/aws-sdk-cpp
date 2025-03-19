@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-RoutingCriteria::RoutingCriteria() : 
-    m_responseQualityDifference(0.0),
-    m_responseQualityDifferenceHasBeenSet(false)
-{
-}
-
 RoutingCriteria::RoutingCriteria(JsonView jsonValue)
-  : RoutingCriteria()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RoutingCriteria& RoutingCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("responseQualityDifference"))
   {
     m_responseQualityDifference = jsonValue.GetDouble("responseQualityDifference");
-
     m_responseQualityDifferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

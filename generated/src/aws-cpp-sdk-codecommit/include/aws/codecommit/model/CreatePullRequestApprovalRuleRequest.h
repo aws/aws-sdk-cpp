@@ -21,7 +21,7 @@ namespace Model
   class CreatePullRequestApprovalRuleRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API CreatePullRequestApprovalRuleRequest();
+    AWS_CODECOMMIT_API CreatePullRequestApprovalRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The system-generated ID of the pull request for which you want to create the
      * approval rule.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline CreatePullRequestApprovalRuleRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline CreatePullRequestApprovalRuleRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline CreatePullRequestApprovalRuleRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    CreatePullRequestApprovalRuleRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the approval rule.</p>
      */
-    inline const Aws::String& GetApprovalRuleName() const{ return m_approvalRuleName; }
+    inline const Aws::String& GetApprovalRuleName() const { return m_approvalRuleName; }
     inline bool ApprovalRuleNameHasBeenSet() const { return m_approvalRuleNameHasBeenSet; }
-    inline void SetApprovalRuleName(const Aws::String& value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName = value; }
-    inline void SetApprovalRuleName(Aws::String&& value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName = std::move(value); }
-    inline void SetApprovalRuleName(const char* value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName.assign(value); }
-    inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleName(const Aws::String& value) { SetApprovalRuleName(value); return *this;}
-    inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleName(Aws::String&& value) { SetApprovalRuleName(std::move(value)); return *this;}
-    inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleName(const char* value) { SetApprovalRuleName(value); return *this;}
+    template<typename ApprovalRuleNameT = Aws::String>
+    void SetApprovalRuleName(ApprovalRuleNameT&& value) { m_approvalRuleNameHasBeenSet = true; m_approvalRuleName = std::forward<ApprovalRuleNameT>(value); }
+    template<typename ApprovalRuleNameT = Aws::String>
+    CreatePullRequestApprovalRuleRequest& WithApprovalRuleName(ApprovalRuleNameT&& value) { SetApprovalRuleName(std::forward<ApprovalRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
-    inline const Aws::String& GetApprovalRuleContent() const{ return m_approvalRuleContent; }
+    inline const Aws::String& GetApprovalRuleContent() const { return m_approvalRuleContent; }
     inline bool ApprovalRuleContentHasBeenSet() const { return m_approvalRuleContentHasBeenSet; }
-    inline void SetApprovalRuleContent(const Aws::String& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = value; }
-    inline void SetApprovalRuleContent(Aws::String&& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = std::move(value); }
-    inline void SetApprovalRuleContent(const char* value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent.assign(value); }
-    inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(const Aws::String& value) { SetApprovalRuleContent(value); return *this;}
-    inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(Aws::String&& value) { SetApprovalRuleContent(std::move(value)); return *this;}
-    inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(const char* value) { SetApprovalRuleContent(value); return *this;}
+    template<typename ApprovalRuleContentT = Aws::String>
+    void SetApprovalRuleContent(ApprovalRuleContentT&& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = std::forward<ApprovalRuleContentT>(value); }
+    template<typename ApprovalRuleContentT = Aws::String>
+    CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(ApprovalRuleContentT&& value) { SetApprovalRuleContent(std::forward<ApprovalRuleContentT>(value)); return *this;}
     ///@}
   private:
 

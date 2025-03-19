@@ -28,65 +28,63 @@ namespace Model
   class RestoreFromSnapshotResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API RestoreFromSnapshotResult();
+    AWS_REDSHIFTSERVERLESS_API RestoreFromSnapshotResult() = default;
     AWS_REDSHIFTSERVERLESS_API RestoreFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API RestoreFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Namespace& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Namespace& value) { m_namespace = value; }
-    inline void SetNamespace(Namespace&& value) { m_namespace = std::move(value); }
-    inline RestoreFromSnapshotResult& WithNamespace(const Namespace& value) { SetNamespace(value); return *this;}
-    inline RestoreFromSnapshotResult& WithNamespace(Namespace&& value) { SetNamespace(std::move(value)); return *this;}
+    inline const Namespace& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Namespace>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Namespace>
+    RestoreFromSnapshotResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner Amazon Web Services; account of the snapshot that was restored.</p>
      */
-    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
-    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccount = value; }
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = std::move(value); }
-    inline void SetOwnerAccount(const char* value) { m_ownerAccount.assign(value); }
-    inline RestoreFromSnapshotResult& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
-    inline RestoreFromSnapshotResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
-    inline RestoreFromSnapshotResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    RestoreFromSnapshotResult& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the snapshot used to restore the namespace.</p>
      */
-    inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
-    inline void SetSnapshotName(const Aws::String& value) { m_snapshotName = value; }
-    inline void SetSnapshotName(Aws::String&& value) { m_snapshotName = std::move(value); }
-    inline void SetSnapshotName(const char* value) { m_snapshotName.assign(value); }
-    inline RestoreFromSnapshotResult& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
-    inline RestoreFromSnapshotResult& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
-    inline RestoreFromSnapshotResult& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+    inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
+    template<typename SnapshotNameT = Aws::String>
+    void SetSnapshotName(SnapshotNameT&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::forward<SnapshotNameT>(value); }
+    template<typename SnapshotNameT = Aws::String>
+    RestoreFromSnapshotResult& WithSnapshotName(SnapshotNameT&& value) { SetSnapshotName(std::forward<SnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RestoreFromSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RestoreFromSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RestoreFromSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RestoreFromSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Namespace m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_snapshotName;
+    bool m_snapshotNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

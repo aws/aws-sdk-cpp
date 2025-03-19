@@ -32,7 +32,7 @@ namespace Model
   class PolicyDescriptorType
   {
   public:
-    AWS_STS_API PolicyDescriptorType();
+    AWS_STS_API PolicyDescriptorType() = default;
     AWS_STS_API PolicyDescriptorType(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_STS_API PolicyDescriptorType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * <i>Amazon Web Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline PolicyDescriptorType& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline PolicyDescriptorType& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline PolicyDescriptorType& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    PolicyDescriptorType& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class Logger
   {
   public:
-    AWS_GREENGRASS_API Logger();
+    AWS_GREENGRASS_API Logger() = default;
     AWS_GREENGRASS_API Logger(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Logger& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * The component that will be subject to logging.
      */
-    inline const LoggerComponent& GetComponent() const{ return m_component; }
+    inline LoggerComponent GetComponent() const { return m_component; }
     inline bool ComponentHasBeenSet() const { return m_componentHasBeenSet; }
-    inline void SetComponent(const LoggerComponent& value) { m_componentHasBeenSet = true; m_component = value; }
-    inline void SetComponent(LoggerComponent&& value) { m_componentHasBeenSet = true; m_component = std::move(value); }
-    inline Logger& WithComponent(const LoggerComponent& value) { SetComponent(value); return *this;}
-    inline Logger& WithComponent(LoggerComponent&& value) { SetComponent(std::move(value)); return *this;}
+    inline void SetComponent(LoggerComponent value) { m_componentHasBeenSet = true; m_component = value; }
+    inline Logger& WithComponent(LoggerComponent value) { SetComponent(value); return *this;}
     ///@}
 
     ///@{
@@ -58,26 +56,22 @@ namespace Model
      * the logger definition version. Max length is 128 characters with pattern
      * ''[a-zA-Z0-9:_-]+''.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Logger& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Logger& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Logger& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Logger& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The level of the logs.
      */
-    inline const LoggerLevel& GetLevel() const{ return m_level; }
+    inline LoggerLevel GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const LoggerLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(LoggerLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline Logger& WithLevel(const LoggerLevel& value) { SetLevel(value); return *this;}
-    inline Logger& WithLevel(LoggerLevel&& value) { SetLevel(std::move(value)); return *this;}
+    inline void SetLevel(LoggerLevel value) { m_levelHasBeenSet = true; m_level = value; }
+    inline Logger& WithLevel(LoggerLevel value) { SetLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +79,7 @@ namespace Model
      * The amount of file space, in KB, to use if the local file system is used for
      * logging purposes.
      */
-    inline int GetSpace() const{ return m_space; }
+    inline int GetSpace() const { return m_space; }
     inline bool SpaceHasBeenSet() const { return m_spaceHasBeenSet; }
     inline void SetSpace(int value) { m_spaceHasBeenSet = true; m_space = value; }
     inline Logger& WithSpace(int value) { SetSpace(value); return *this;}
@@ -95,28 +89,26 @@ namespace Model
     /**
      * The type of log output which will be used.
      */
-    inline const LoggerType& GetType() const{ return m_type; }
+    inline LoggerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LoggerType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LoggerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Logger& WithType(const LoggerType& value) { SetType(value); return *this;}
-    inline Logger& WithType(LoggerType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LoggerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Logger& WithType(LoggerType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    LoggerComponent m_component;
+    LoggerComponent m_component{LoggerComponent::NOT_SET};
     bool m_componentHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    LoggerLevel m_level;
+    LoggerLevel m_level{LoggerLevel::NOT_SET};
     bool m_levelHasBeenSet = false;
 
-    int m_space;
+    int m_space{0};
     bool m_spaceHasBeenSet = false;
 
-    LoggerType m_type;
+    LoggerType m_type{LoggerType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

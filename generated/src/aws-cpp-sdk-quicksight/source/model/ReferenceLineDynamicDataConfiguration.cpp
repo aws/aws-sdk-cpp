@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ReferenceLineDynamicDataConfiguration::ReferenceLineDynamicDataConfiguration() : 
-    m_columnHasBeenSet(false),
-    m_measureAggregationFunctionHasBeenSet(false),
-    m_calculationHasBeenSet(false)
-{
-}
-
 ReferenceLineDynamicDataConfiguration::ReferenceLineDynamicDataConfiguration(JsonView jsonValue)
-  : ReferenceLineDynamicDataConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReferenceLineDynamicDataConfiguration& ReferenceLineDynamicDataConfiguration::op
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureAggregationFunction"))
   {
     m_measureAggregationFunction = jsonValue.GetObject("MeasureAggregationFunction");
-
     m_measureAggregationFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Calculation"))
   {
     m_calculation = jsonValue.GetObject("Calculation");
-
     m_calculationHasBeenSet = true;
   }
-
   return *this;
 }
 

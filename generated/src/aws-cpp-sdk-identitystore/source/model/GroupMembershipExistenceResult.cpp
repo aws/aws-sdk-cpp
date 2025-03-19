@@ -18,16 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-GroupMembershipExistenceResult::GroupMembershipExistenceResult() : 
-    m_groupIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_membershipExists(false),
-    m_membershipExistsHasBeenSet(false)
-{
-}
-
 GroupMembershipExistenceResult::GroupMembershipExistenceResult(JsonView jsonValue)
-  : GroupMembershipExistenceResult()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GroupMembershipExistenceResult& GroupMembershipExistenceResult::operator =(JsonV
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberId"))
   {
     m_memberId = jsonValue.GetObject("MemberId");
-
     m_memberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MembershipExists"))
   {
     m_membershipExists = jsonValue.GetBool("MembershipExists");
-
     m_membershipExistsHasBeenSet = true;
   }
-
   return *this;
 }
 

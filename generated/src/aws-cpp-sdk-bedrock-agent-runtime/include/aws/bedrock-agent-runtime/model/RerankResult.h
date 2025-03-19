@@ -32,7 +32,7 @@ namespace Model
   class RerankResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RerankResult();
+    AWS_BEDROCKAGENTRUNTIME_API RerankResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API RerankResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RerankResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains information about the document.</p>
      */
-    inline const RerankDocument& GetDocument() const{ return m_document; }
+    inline const RerankDocument& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const RerankDocument& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(RerankDocument&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline RerankResult& WithDocument(const RerankDocument& value) { SetDocument(value); return *this;}
-    inline RerankResult& WithDocument(RerankDocument&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = RerankDocument>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = RerankDocument>
+    RerankResult& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +55,7 @@ namespace Model
      * <p>The ranking of the document. The lower a number, the higher the document is
      * ranked.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline RerankResult& WithIndex(int value) { SetIndex(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>The relevance score of the document.</p>
      */
-    inline double GetRelevanceScore() const{ return m_relevanceScore; }
+    inline double GetRelevanceScore() const { return m_relevanceScore; }
     inline bool RelevanceScoreHasBeenSet() const { return m_relevanceScoreHasBeenSet; }
     inline void SetRelevanceScore(double value) { m_relevanceScoreHasBeenSet = true; m_relevanceScore = value; }
     inline RerankResult& WithRelevanceScore(double value) { SetRelevanceScore(value); return *this;}
@@ -75,10 +75,10 @@ namespace Model
     RerankDocument m_document;
     bool m_documentHasBeenSet = false;
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
-    double m_relevanceScore;
+    double m_relevanceScore{0.0};
     bool m_relevanceScoreHasBeenSet = false;
   };
 

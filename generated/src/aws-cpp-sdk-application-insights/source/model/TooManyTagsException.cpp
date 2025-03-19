@@ -18,14 +18,7 @@ namespace ApplicationInsights
 namespace Model
 {
 
-TooManyTagsException::TooManyTagsException() : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 TooManyTagsException::TooManyTagsException(JsonView jsonValue)
-  : TooManyTagsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyTagsException& TooManyTagsException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

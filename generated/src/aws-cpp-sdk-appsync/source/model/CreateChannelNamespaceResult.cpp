@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChannelNamespaceResult::CreateChannelNamespaceResult()
-{
-}
-
 CreateChannelNamespaceResult::CreateChannelNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateChannelNamespaceResult& CreateChannelNamespaceResult::operator =(const Aws
   if(jsonValue.ValueExists("channelNamespace"))
   {
     m_channelNamespace = jsonValue.GetObject("channelNamespace");
-
+    m_channelNamespaceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-DashboardDetail::DashboardDetail() : 
-    m_dashboardArnHasBeenSet(false),
-    m_type(DashboardType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 DashboardDetail::DashboardDetail(JsonView jsonValue)
-  : DashboardDetail()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DashboardDetail& DashboardDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DashboardArn"))
   {
     m_dashboardArn = jsonValue.GetString("DashboardArn");
-
     m_dashboardArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DashboardTypeMapper::GetDashboardTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListAvailableMeteredProductsResult
   {
   public:
-    AWS_DEADLINE_API ListAvailableMeteredProductsResult();
+    AWS_DEADLINE_API ListAvailableMeteredProductsResult() = default;
     AWS_DEADLINE_API ListAvailableMeteredProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListAvailableMeteredProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The metered products.</p>
      */
-    inline const Aws::Vector<MeteredProductSummary>& GetMeteredProducts() const{ return m_meteredProducts; }
-    inline void SetMeteredProducts(const Aws::Vector<MeteredProductSummary>& value) { m_meteredProducts = value; }
-    inline void SetMeteredProducts(Aws::Vector<MeteredProductSummary>&& value) { m_meteredProducts = std::move(value); }
-    inline ListAvailableMeteredProductsResult& WithMeteredProducts(const Aws::Vector<MeteredProductSummary>& value) { SetMeteredProducts(value); return *this;}
-    inline ListAvailableMeteredProductsResult& WithMeteredProducts(Aws::Vector<MeteredProductSummary>&& value) { SetMeteredProducts(std::move(value)); return *this;}
-    inline ListAvailableMeteredProductsResult& AddMeteredProducts(const MeteredProductSummary& value) { m_meteredProducts.push_back(value); return *this; }
-    inline ListAvailableMeteredProductsResult& AddMeteredProducts(MeteredProductSummary&& value) { m_meteredProducts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MeteredProductSummary>& GetMeteredProducts() const { return m_meteredProducts; }
+    template<typename MeteredProductsT = Aws::Vector<MeteredProductSummary>>
+    void SetMeteredProducts(MeteredProductsT&& value) { m_meteredProductsHasBeenSet = true; m_meteredProducts = std::forward<MeteredProductsT>(value); }
+    template<typename MeteredProductsT = Aws::Vector<MeteredProductSummary>>
+    ListAvailableMeteredProductsResult& WithMeteredProducts(MeteredProductsT&& value) { SetMeteredProducts(std::forward<MeteredProductsT>(value)); return *this;}
+    template<typename MeteredProductsT = MeteredProductSummary>
+    ListAvailableMeteredProductsResult& AddMeteredProducts(MeteredProductsT&& value) { m_meteredProductsHasBeenSet = true; m_meteredProducts.emplace_back(std::forward<MeteredProductsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAvailableMeteredProductsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAvailableMeteredProductsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAvailableMeteredProductsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAvailableMeteredProductsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAvailableMeteredProductsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAvailableMeteredProductsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAvailableMeteredProductsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAvailableMeteredProductsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MeteredProductSummary> m_meteredProducts;
+    bool m_meteredProductsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

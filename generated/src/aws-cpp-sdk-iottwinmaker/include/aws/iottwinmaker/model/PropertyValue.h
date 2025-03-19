@@ -33,7 +33,7 @@ namespace Model
   class PropertyValue
   {
   public:
-    AWS_IOTTWINMAKER_API PropertyValue();
+    AWS_IOTTWINMAKER_API PropertyValue() = default;
     AWS_IOTTWINMAKER_API PropertyValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API PropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>An object that specifies a value for a time series property.</p>
      */
-    inline const DataValue& GetValue() const{ return m_value; }
+    inline const DataValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const DataValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(DataValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline PropertyValue& WithValue(const DataValue& value) { SetValue(value); return *this;}
-    inline PropertyValue& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = DataValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = DataValue>
+    PropertyValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +65,12 @@ namespace Model
      * offset in Hours and Minutes.</p> </li> </ul> <p> <i>Required sub-fields</i>:
      * YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
      */
-    inline const Aws::String& GetTime() const{ return m_time; }
+    inline const Aws::String& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-    inline PropertyValue& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-    inline PropertyValue& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-    inline PropertyValue& WithTime(const char* value) { SetTime(value); return *this;}
+    template<typename TimeT = Aws::String>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::String>
+    PropertyValue& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
   private:
 

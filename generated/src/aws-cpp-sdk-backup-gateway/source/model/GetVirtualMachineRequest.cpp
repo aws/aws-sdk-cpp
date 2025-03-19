@@ -12,11 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVirtualMachineRequest::GetVirtualMachineRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetVirtualMachineRequest::SerializePayload() const
 {
   JsonValue payload;

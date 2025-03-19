@@ -36,7 +36,7 @@ namespace Model
   class TsvStoreOptions
   {
   public:
-    AWS_OMICS_API TsvStoreOptions();
+    AWS_OMICS_API TsvStoreOptions() = default;
     AWS_OMICS_API TsvStoreOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API TsvStoreOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,43 @@ namespace Model
     /**
      * <p>The store's annotation type.</p>
      */
-    inline const AnnotationType& GetAnnotationType() const{ return m_annotationType; }
+    inline AnnotationType GetAnnotationType() const { return m_annotationType; }
     inline bool AnnotationTypeHasBeenSet() const { return m_annotationTypeHasBeenSet; }
-    inline void SetAnnotationType(const AnnotationType& value) { m_annotationTypeHasBeenSet = true; m_annotationType = value; }
-    inline void SetAnnotationType(AnnotationType&& value) { m_annotationTypeHasBeenSet = true; m_annotationType = std::move(value); }
-    inline TsvStoreOptions& WithAnnotationType(const AnnotationType& value) { SetAnnotationType(value); return *this;}
-    inline TsvStoreOptions& WithAnnotationType(AnnotationType&& value) { SetAnnotationType(std::move(value)); return *this;}
+    inline void SetAnnotationType(AnnotationType value) { m_annotationTypeHasBeenSet = true; m_annotationType = value; }
+    inline TsvStoreOptions& WithAnnotationType(AnnotationType value) { SetAnnotationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's header key to column name mapping.</p>
      */
-    inline const Aws::Map<FormatToHeaderKey, Aws::String>& GetFormatToHeader() const{ return m_formatToHeader; }
+    inline const Aws::Map<FormatToHeaderKey, Aws::String>& GetFormatToHeader() const { return m_formatToHeader; }
     inline bool FormatToHeaderHasBeenSet() const { return m_formatToHeaderHasBeenSet; }
-    inline void SetFormatToHeader(const Aws::Map<FormatToHeaderKey, Aws::String>& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader = value; }
-    inline void SetFormatToHeader(Aws::Map<FormatToHeaderKey, Aws::String>&& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader = std::move(value); }
-    inline TsvStoreOptions& WithFormatToHeader(const Aws::Map<FormatToHeaderKey, Aws::String>& value) { SetFormatToHeader(value); return *this;}
-    inline TsvStoreOptions& WithFormatToHeader(Aws::Map<FormatToHeaderKey, Aws::String>&& value) { SetFormatToHeader(std::move(value)); return *this;}
-    inline TsvStoreOptions& AddFormatToHeader(const FormatToHeaderKey& key, const Aws::String& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(key, value); return *this; }
-    inline TsvStoreOptions& AddFormatToHeader(FormatToHeaderKey&& key, const Aws::String& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(std::move(key), value); return *this; }
-    inline TsvStoreOptions& AddFormatToHeader(const FormatToHeaderKey& key, Aws::String&& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(key, std::move(value)); return *this; }
-    inline TsvStoreOptions& AddFormatToHeader(FormatToHeaderKey&& key, Aws::String&& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(std::move(key), std::move(value)); return *this; }
-    inline TsvStoreOptions& AddFormatToHeader(FormatToHeaderKey&& key, const char* value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(std::move(key), value); return *this; }
-    inline TsvStoreOptions& AddFormatToHeader(const FormatToHeaderKey& key, const char* value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(key, value); return *this; }
+    template<typename FormatToHeaderT = Aws::Map<FormatToHeaderKey, Aws::String>>
+    void SetFormatToHeader(FormatToHeaderT&& value) { m_formatToHeaderHasBeenSet = true; m_formatToHeader = std::forward<FormatToHeaderT>(value); }
+    template<typename FormatToHeaderT = Aws::Map<FormatToHeaderKey, Aws::String>>
+    TsvStoreOptions& WithFormatToHeader(FormatToHeaderT&& value) { SetFormatToHeader(std::forward<FormatToHeaderT>(value)); return *this;}
+    inline TsvStoreOptions& AddFormatToHeader(FormatToHeaderKey key, Aws::String value) {
+      m_formatToHeaderHasBeenSet = true; m_formatToHeader.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The store's schema.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>& GetSchema() const{ return m_schema; }
+    inline const Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline TsvStoreOptions& WithSchema(const Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>& value) { SetSchema(value); return *this;}
-    inline TsvStoreOptions& WithSchema(Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>&& value) { SetSchema(std::move(value)); return *this;}
-    inline TsvStoreOptions& AddSchema(const Aws::Map<Aws::String, SchemaValueType>& value) { m_schemaHasBeenSet = true; m_schema.push_back(value); return *this; }
-    inline TsvStoreOptions& AddSchema(Aws::Map<Aws::String, SchemaValueType>&& value) { m_schemaHasBeenSet = true; m_schema.push_back(std::move(value)); return *this; }
+    template<typename SchemaT = Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::Vector<Aws::Map<Aws::String, SchemaValueType>>>
+    TsvStoreOptions& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
+    template<typename SchemaT = Aws::Map<Aws::String, SchemaValueType>>
+    TsvStoreOptions& AddSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema.emplace_back(std::forward<SchemaT>(value)); return *this; }
     ///@}
   private:
 
-    AnnotationType m_annotationType;
+    AnnotationType m_annotationType{AnnotationType::NOT_SET};
     bool m_annotationTypeHasBeenSet = false;
 
     Aws::Map<FormatToHeaderKey, Aws::String> m_formatToHeader;

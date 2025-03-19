@@ -12,13 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBlockRequest::GetBlockRequest() : 
-    m_nameHasBeenSet(false),
-    m_blockAddressHasBeenSet(false),
-    m_digestTipAddressHasBeenSet(false)
-{
-}
-
 Aws::String GetBlockRequest::SerializePayload() const
 {
   JsonValue payload;

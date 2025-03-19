@@ -33,7 +33,7 @@ namespace Model
   class ExternalMetricStatus
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ExternalMetricStatus();
+    AWS_COMPUTEOPTIMIZER_API ExternalMetricStatus() = default;
     AWS_COMPUTEOPTIMIZER_API ExternalMetricStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ExternalMetricStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p> The status code for Compute Optimizer's integration with an external metrics
      * provider. </p>
      */
-    inline const ExternalMetricStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline ExternalMetricStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const ExternalMetricStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(ExternalMetricStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline ExternalMetricStatus& WithStatusCode(const ExternalMetricStatusCode& value) { SetStatusCode(value); return *this;}
-    inline ExternalMetricStatus& WithStatusCode(ExternalMetricStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(ExternalMetricStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline ExternalMetricStatus& WithStatusCode(ExternalMetricStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,16 @@ namespace Model
      * <p> The reason for Compute Optimizer's integration status with your external
      * metric provider. </p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline ExternalMetricStatus& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline ExternalMetricStatus& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline ExternalMetricStatus& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    ExternalMetricStatus& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
   private:
 
-    ExternalMetricStatusCode m_statusCode;
+    ExternalMetricStatusCode m_statusCode{ExternalMetricStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusReason;

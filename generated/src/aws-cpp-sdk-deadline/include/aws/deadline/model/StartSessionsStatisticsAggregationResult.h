@@ -27,7 +27,7 @@ namespace Model
   class StartSessionsStatisticsAggregationResult
   {
   public:
-    AWS_DEADLINE_API StartSessionsStatisticsAggregationResult();
+    AWS_DEADLINE_API StartSessionsStatisticsAggregationResult() = default;
     AWS_DEADLINE_API StartSessionsStatisticsAggregationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API StartSessionsStatisticsAggregationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * the <code>GetAggregatedStatisticsForSessions</code> operation to return the
      * statistics.</p>
      */
-    inline const Aws::String& GetAggregationId() const{ return m_aggregationId; }
-    inline void SetAggregationId(const Aws::String& value) { m_aggregationId = value; }
-    inline void SetAggregationId(Aws::String&& value) { m_aggregationId = std::move(value); }
-    inline void SetAggregationId(const char* value) { m_aggregationId.assign(value); }
-    inline StartSessionsStatisticsAggregationResult& WithAggregationId(const Aws::String& value) { SetAggregationId(value); return *this;}
-    inline StartSessionsStatisticsAggregationResult& WithAggregationId(Aws::String&& value) { SetAggregationId(std::move(value)); return *this;}
-    inline StartSessionsStatisticsAggregationResult& WithAggregationId(const char* value) { SetAggregationId(value); return *this;}
+    inline const Aws::String& GetAggregationId() const { return m_aggregationId; }
+    template<typename AggregationIdT = Aws::String>
+    void SetAggregationId(AggregationIdT&& value) { m_aggregationIdHasBeenSet = true; m_aggregationId = std::forward<AggregationIdT>(value); }
+    template<typename AggregationIdT = Aws::String>
+    StartSessionsStatisticsAggregationResult& WithAggregationId(AggregationIdT&& value) { SetAggregationId(std::forward<AggregationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSessionsStatisticsAggregationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSessionsStatisticsAggregationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSessionsStatisticsAggregationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSessionsStatisticsAggregationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aggregationId;
+    bool m_aggregationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

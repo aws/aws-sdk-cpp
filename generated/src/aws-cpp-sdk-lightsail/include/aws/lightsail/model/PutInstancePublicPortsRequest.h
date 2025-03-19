@@ -23,7 +23,7 @@ namespace Model
   class PutInstancePublicPortsRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API PutInstancePublicPortsRequest();
+    AWS_LIGHTSAIL_API PutInstancePublicPortsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
      * <p>An array of objects to describe the ports to open for the specified
      * instance.</p>
      */
-    inline const Aws::Vector<PortInfo>& GetPortInfos() const{ return m_portInfos; }
+    inline const Aws::Vector<PortInfo>& GetPortInfos() const { return m_portInfos; }
     inline bool PortInfosHasBeenSet() const { return m_portInfosHasBeenSet; }
-    inline void SetPortInfos(const Aws::Vector<PortInfo>& value) { m_portInfosHasBeenSet = true; m_portInfos = value; }
-    inline void SetPortInfos(Aws::Vector<PortInfo>&& value) { m_portInfosHasBeenSet = true; m_portInfos = std::move(value); }
-    inline PutInstancePublicPortsRequest& WithPortInfos(const Aws::Vector<PortInfo>& value) { SetPortInfos(value); return *this;}
-    inline PutInstancePublicPortsRequest& WithPortInfos(Aws::Vector<PortInfo>&& value) { SetPortInfos(std::move(value)); return *this;}
-    inline PutInstancePublicPortsRequest& AddPortInfos(const PortInfo& value) { m_portInfosHasBeenSet = true; m_portInfos.push_back(value); return *this; }
-    inline PutInstancePublicPortsRequest& AddPortInfos(PortInfo&& value) { m_portInfosHasBeenSet = true; m_portInfos.push_back(std::move(value)); return *this; }
+    template<typename PortInfosT = Aws::Vector<PortInfo>>
+    void SetPortInfos(PortInfosT&& value) { m_portInfosHasBeenSet = true; m_portInfos = std::forward<PortInfosT>(value); }
+    template<typename PortInfosT = Aws::Vector<PortInfo>>
+    PutInstancePublicPortsRequest& WithPortInfos(PortInfosT&& value) { SetPortInfos(std::forward<PortInfosT>(value)); return *this;}
+    template<typename PortInfosT = PortInfo>
+    PutInstancePublicPortsRequest& AddPortInfos(PortInfosT&& value) { m_portInfosHasBeenSet = true; m_portInfos.emplace_back(std::forward<PortInfosT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the instance for which to open ports.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline PutInstancePublicPortsRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline PutInstancePublicPortsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline PutInstancePublicPortsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    PutInstancePublicPortsRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
   private:
 

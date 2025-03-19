@@ -13,12 +13,6 @@ using namespace Aws::MediaStoreData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetObjectRequest::GetObjectRequest() : 
-    m_pathHasBeenSet(false),
-    m_rangeHasBeenSet(false)
-{
-}
-
 Aws::String GetObjectRequest::SerializePayload() const
 {
   return {};

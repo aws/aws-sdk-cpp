@@ -18,19 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-WorkloadShareSummary::WorkloadShareSummary() : 
-    m_shareIdHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 WorkloadShareSummary::WorkloadShareSummary(JsonView jsonValue)
-  : WorkloadShareSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ WorkloadShareSummary& WorkloadShareSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShareId"))
   {
     m_shareId = jsonValue.GetString("ShareId");
-
     m_shareIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedWith"))
   {
     m_sharedWith = jsonValue.GetString("SharedWith");
-
     m_sharedWithHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionType"))
   {
     m_permissionType = PermissionTypeMapper::GetPermissionTypeForName(jsonValue.GetString("PermissionType"));
-
     m_permissionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

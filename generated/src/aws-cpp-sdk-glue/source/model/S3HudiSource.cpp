@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3HudiSource::S3HudiSource() : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_additionalHudiOptionsHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 S3HudiSource::S3HudiSource(JsonView jsonValue)
-  : S3HudiSource()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ S3HudiSource& S3HudiSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Paths"))
   {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
@@ -51,7 +39,6 @@ S3HudiSource& S3HudiSource::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalHudiOptions"))
   {
     Aws::Map<Aws::String, JsonView> additionalHudiOptionsJsonMap = jsonValue.GetObject("AdditionalHudiOptions").GetAllObjects();
@@ -61,14 +48,11 @@ S3HudiSource& S3HudiSource::operator =(JsonView jsonValue)
     }
     m_additionalHudiOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
-
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -78,7 +62,6 @@ S3HudiSource& S3HudiSource::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

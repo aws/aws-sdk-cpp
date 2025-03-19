@@ -18,20 +18,7 @@ namespace IoT
 namespace Model
 {
 
-RoleAliasDescription::RoleAliasDescription() : 
-    m_roleAliasHasBeenSet(false),
-    m_roleAliasArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_credentialDurationSeconds(0),
-    m_credentialDurationSecondsHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 RoleAliasDescription::RoleAliasDescription(JsonView jsonValue)
-  : RoleAliasDescription()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ RoleAliasDescription& RoleAliasDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleAlias"))
   {
     m_roleAlias = jsonValue.GetString("roleAlias");
-
     m_roleAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleAliasArn"))
   {
     m_roleAliasArn = jsonValue.GetString("roleAliasArn");
-
     m_roleAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialDurationSeconds"))
   {
     m_credentialDurationSeconds = jsonValue.GetInteger("credentialDurationSeconds");
-
     m_credentialDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

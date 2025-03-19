@@ -29,7 +29,7 @@ namespace Model
   class SearchContactFlowsResult
   {
   public:
-    AWS_CONNECT_API SearchContactFlowsResult();
+    AWS_CONNECT_API SearchContactFlowsResult() = default;
     AWS_CONNECT_API SearchContactFlowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API SearchContactFlowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the flows.</p>
      */
-    inline const Aws::Vector<ContactFlow>& GetContactFlows() const{ return m_contactFlows; }
-    inline void SetContactFlows(const Aws::Vector<ContactFlow>& value) { m_contactFlows = value; }
-    inline void SetContactFlows(Aws::Vector<ContactFlow>&& value) { m_contactFlows = std::move(value); }
-    inline SearchContactFlowsResult& WithContactFlows(const Aws::Vector<ContactFlow>& value) { SetContactFlows(value); return *this;}
-    inline SearchContactFlowsResult& WithContactFlows(Aws::Vector<ContactFlow>&& value) { SetContactFlows(std::move(value)); return *this;}
-    inline SearchContactFlowsResult& AddContactFlows(const ContactFlow& value) { m_contactFlows.push_back(value); return *this; }
-    inline SearchContactFlowsResult& AddContactFlows(ContactFlow&& value) { m_contactFlows.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContactFlow>& GetContactFlows() const { return m_contactFlows; }
+    template<typename ContactFlowsT = Aws::Vector<ContactFlow>>
+    void SetContactFlows(ContactFlowsT&& value) { m_contactFlowsHasBeenSet = true; m_contactFlows = std::forward<ContactFlowsT>(value); }
+    template<typename ContactFlowsT = Aws::Vector<ContactFlow>>
+    SearchContactFlowsResult& WithContactFlows(ContactFlowsT&& value) { SetContactFlows(std::forward<ContactFlowsT>(value)); return *this;}
+    template<typename ContactFlowsT = ContactFlow>
+    SearchContactFlowsResult& AddContactFlows(ContactFlowsT&& value) { m_contactFlowsHasBeenSet = true; m_contactFlows.emplace_back(std::forward<ContactFlowsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,43 +52,43 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchContactFlowsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchContactFlowsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchContactFlowsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchContactFlowsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total number of flows which matched your search query.</p>
      */
-    inline long long GetApproximateTotalCount() const{ return m_approximateTotalCount; }
-    inline void SetApproximateTotalCount(long long value) { m_approximateTotalCount = value; }
+    inline long long GetApproximateTotalCount() const { return m_approximateTotalCount; }
+    inline void SetApproximateTotalCount(long long value) { m_approximateTotalCountHasBeenSet = true; m_approximateTotalCount = value; }
     inline SearchContactFlowsResult& WithApproximateTotalCount(long long value) { SetApproximateTotalCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchContactFlowsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchContactFlowsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchContactFlowsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchContactFlowsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContactFlow> m_contactFlows;
+    bool m_contactFlowsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    long long m_approximateTotalCount;
+    long long m_approximateTotalCount{0};
+    bool m_approximateTotalCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

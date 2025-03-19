@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-RepositorySyncAttempt::RepositorySyncAttempt() : 
-    m_eventsHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_status(RepositorySyncStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RepositorySyncAttempt::RepositorySyncAttempt(JsonView jsonValue)
-  : RepositorySyncAttempt()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ RepositorySyncAttempt& RepositorySyncAttempt::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RepositorySyncStatusMapper::GetRepositorySyncStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,13 +19,7 @@ namespace Rekognition
 namespace Model
 {
 
-DatasetChanges::DatasetChanges() : 
-    m_groundTruthHasBeenSet(false)
-{
-}
-
 DatasetChanges::DatasetChanges(JsonView jsonValue)
-  : DatasetChanges()
 {
   *this = jsonValue;
 }
@@ -37,7 +31,6 @@ DatasetChanges& DatasetChanges::operator =(JsonView jsonValue)
     m_groundTruth = HashingUtils::Base64Decode(jsonValue.GetString("GroundTruth"));
     m_groundTruthHasBeenSet = true;
   }
-
   return *this;
 }
 

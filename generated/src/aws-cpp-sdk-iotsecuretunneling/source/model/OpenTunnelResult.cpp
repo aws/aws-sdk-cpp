@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-OpenTunnelResult::OpenTunnelResult()
-{
-}
-
 OpenTunnelResult::OpenTunnelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ OpenTunnelResult& OpenTunnelResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("tunnelId"))
   {
     m_tunnelId = jsonValue.GetString("tunnelId");
-
+    m_tunnelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tunnelArn"))
   {
     m_tunnelArn = jsonValue.GetString("tunnelArn");
-
+    m_tunnelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceAccessToken"))
   {
     m_sourceAccessToken = jsonValue.GetString("sourceAccessToken");
-
+    m_sourceAccessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationAccessToken"))
   {
     m_destinationAccessToken = jsonValue.GetString("destinationAccessToken");
-
+    m_destinationAccessTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

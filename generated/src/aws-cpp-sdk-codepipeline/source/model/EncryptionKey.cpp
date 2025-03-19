@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-EncryptionKey::EncryptionKey() : 
-    m_idHasBeenSet(false),
-    m_type(EncryptionKeyType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EncryptionKey::EncryptionKey(JsonView jsonValue)
-  : EncryptionKey()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionKey& EncryptionKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EncryptionKeyTypeMapper::GetEncryptionKeyTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

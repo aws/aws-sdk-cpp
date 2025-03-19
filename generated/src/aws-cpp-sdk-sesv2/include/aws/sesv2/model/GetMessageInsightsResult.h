@@ -35,7 +35,7 @@ namespace Model
   class GetMessageInsightsResult
   {
   public:
-    AWS_SESV2_API GetMessageInsightsResult();
+    AWS_SESV2_API GetMessageInsightsResult() = default;
     AWS_SESV2_API GetMessageInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetMessageInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,39 +44,33 @@ namespace Model
     /**
      * <p>A unique identifier for the message.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
-    inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageId.assign(value); }
-    inline GetMessageInsightsResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline GetMessageInsightsResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline GetMessageInsightsResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    GetMessageInsightsResult& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The from address used to send the message.</p>
      */
-    inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
-    inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddress = value; }
-    inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddress = std::move(value); }
-    inline void SetFromEmailAddress(const char* value) { m_fromEmailAddress.assign(value); }
-    inline GetMessageInsightsResult& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
-    inline GetMessageInsightsResult& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-    inline GetMessageInsightsResult& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
+    inline const Aws::String& GetFromEmailAddress() const { return m_fromEmailAddress; }
+    template<typename FromEmailAddressT = Aws::String>
+    void SetFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::forward<FromEmailAddressT>(value); }
+    template<typename FromEmailAddressT = Aws::String>
+    GetMessageInsightsResult& WithFromEmailAddress(FromEmailAddressT&& value) { SetFromEmailAddress(std::forward<FromEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subject line of the message.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
-    inline void SetSubject(const Aws::String& value) { m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subject.assign(value); }
-    inline GetMessageInsightsResult& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline GetMessageInsightsResult& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline GetMessageInsightsResult& WithSubject(const char* value) { SetSubject(value); return *this;}
+    inline const Aws::String& GetSubject() const { return m_subject; }
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    GetMessageInsightsResult& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,51 +80,55 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-using-event-publishing.html">Auto-Tags</a>.
      * </p>
      */
-    inline const Aws::Vector<MessageTag>& GetEmailTags() const{ return m_emailTags; }
-    inline void SetEmailTags(const Aws::Vector<MessageTag>& value) { m_emailTags = value; }
-    inline void SetEmailTags(Aws::Vector<MessageTag>&& value) { m_emailTags = std::move(value); }
-    inline GetMessageInsightsResult& WithEmailTags(const Aws::Vector<MessageTag>& value) { SetEmailTags(value); return *this;}
-    inline GetMessageInsightsResult& WithEmailTags(Aws::Vector<MessageTag>&& value) { SetEmailTags(std::move(value)); return *this;}
-    inline GetMessageInsightsResult& AddEmailTags(const MessageTag& value) { m_emailTags.push_back(value); return *this; }
-    inline GetMessageInsightsResult& AddEmailTags(MessageTag&& value) { m_emailTags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MessageTag>& GetEmailTags() const { return m_emailTags; }
+    template<typename EmailTagsT = Aws::Vector<MessageTag>>
+    void SetEmailTags(EmailTagsT&& value) { m_emailTagsHasBeenSet = true; m_emailTags = std::forward<EmailTagsT>(value); }
+    template<typename EmailTagsT = Aws::Vector<MessageTag>>
+    GetMessageInsightsResult& WithEmailTags(EmailTagsT&& value) { SetEmailTags(std::forward<EmailTagsT>(value)); return *this;}
+    template<typename EmailTagsT = MessageTag>
+    GetMessageInsightsResult& AddEmailTags(EmailTagsT&& value) { m_emailTagsHasBeenSet = true; m_emailTags.emplace_back(std::forward<EmailTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A set of insights associated with the message.</p>
      */
-    inline const Aws::Vector<EmailInsights>& GetInsights() const{ return m_insights; }
-    inline void SetInsights(const Aws::Vector<EmailInsights>& value) { m_insights = value; }
-    inline void SetInsights(Aws::Vector<EmailInsights>&& value) { m_insights = std::move(value); }
-    inline GetMessageInsightsResult& WithInsights(const Aws::Vector<EmailInsights>& value) { SetInsights(value); return *this;}
-    inline GetMessageInsightsResult& WithInsights(Aws::Vector<EmailInsights>&& value) { SetInsights(std::move(value)); return *this;}
-    inline GetMessageInsightsResult& AddInsights(const EmailInsights& value) { m_insights.push_back(value); return *this; }
-    inline GetMessageInsightsResult& AddInsights(EmailInsights&& value) { m_insights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EmailInsights>& GetInsights() const { return m_insights; }
+    template<typename InsightsT = Aws::Vector<EmailInsights>>
+    void SetInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights = std::forward<InsightsT>(value); }
+    template<typename InsightsT = Aws::Vector<EmailInsights>>
+    GetMessageInsightsResult& WithInsights(InsightsT&& value) { SetInsights(std::forward<InsightsT>(value)); return *this;}
+    template<typename InsightsT = EmailInsights>
+    GetMessageInsightsResult& AddInsights(InsightsT&& value) { m_insightsHasBeenSet = true; m_insights.emplace_back(std::forward<InsightsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMessageInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMessageInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMessageInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMessageInsightsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_messageId;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_subject;
+    bool m_subjectHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_emailTags;
+    bool m_emailTagsHasBeenSet = false;
 
     Aws::Vector<EmailInsights> m_insights;
+    bool m_insightsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class MainframeAction
   {
   public:
-    AWS_APPTEST_API MainframeAction();
+    AWS_APPTEST_API MainframeAction() = default;
     AWS_APPTEST_API MainframeAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API MainframeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,38 +43,36 @@ namespace Model
     /**
      * <p>The resource of the mainframe action.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline MainframeAction& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline MainframeAction& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline MainframeAction& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    MainframeAction& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action type of the mainframe action.</p>
      */
-    inline const MainframeActionType& GetActionType() const{ return m_actionType; }
+    inline const MainframeActionType& GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const MainframeActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(MainframeActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline MainframeAction& WithActionType(const MainframeActionType& value) { SetActionType(value); return *this;}
-    inline MainframeAction& WithActionType(MainframeActionType&& value) { SetActionType(std::move(value)); return *this;}
+    template<typename ActionTypeT = MainframeActionType>
+    void SetActionType(ActionTypeT&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::forward<ActionTypeT>(value); }
+    template<typename ActionTypeT = MainframeActionType>
+    MainframeAction& WithActionType(ActionTypeT&& value) { SetActionType(std::forward<ActionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the mainframe action.</p>
      */
-    inline const MainframeActionProperties& GetProperties() const{ return m_properties; }
+    inline const MainframeActionProperties& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const MainframeActionProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(MainframeActionProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline MainframeAction& WithProperties(const MainframeActionProperties& value) { SetProperties(value); return *this;}
-    inline MainframeAction& WithProperties(MainframeActionProperties&& value) { SetProperties(std::move(value)); return *this;}
+    template<typename PropertiesT = MainframeActionProperties>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = MainframeActionProperties>
+    MainframeAction& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
     ///@}
   private:
 

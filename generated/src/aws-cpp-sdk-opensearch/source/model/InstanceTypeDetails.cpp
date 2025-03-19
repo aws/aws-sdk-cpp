@@ -18,26 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-InstanceTypeDetails::InstanceTypeDetails() : 
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_encryptionEnabled(false),
-    m_encryptionEnabledHasBeenSet(false),
-    m_cognitoEnabled(false),
-    m_cognitoEnabledHasBeenSet(false),
-    m_appLogsEnabled(false),
-    m_appLogsEnabledHasBeenSet(false),
-    m_advancedSecurityEnabled(false),
-    m_advancedSecurityEnabledHasBeenSet(false),
-    m_warmEnabled(false),
-    m_warmEnabledHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 InstanceTypeDetails::InstanceTypeDetails(JsonView jsonValue)
-  : InstanceTypeDetails()
 {
   *this = jsonValue;
 }
@@ -47,45 +28,33 @@ InstanceTypeDetails& InstanceTypeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = OpenSearchPartitionInstanceTypeMapper::GetOpenSearchPartitionInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionEnabled"))
   {
     m_encryptionEnabled = jsonValue.GetBool("EncryptionEnabled");
-
     m_encryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CognitoEnabled"))
   {
     m_cognitoEnabled = jsonValue.GetBool("CognitoEnabled");
-
     m_cognitoEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppLogsEnabled"))
   {
     m_appLogsEnabled = jsonValue.GetBool("AppLogsEnabled");
-
     m_appLogsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedSecurityEnabled"))
   {
     m_advancedSecurityEnabled = jsonValue.GetBool("AdvancedSecurityEnabled");
-
     m_advancedSecurityEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmEnabled"))
   {
     m_warmEnabled = jsonValue.GetBool("WarmEnabled");
-
     m_warmEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceRole"))
   {
     Aws::Utils::Array<JsonView> instanceRoleJsonList = jsonValue.GetArray("InstanceRole");
@@ -95,7 +64,6 @@ InstanceTypeDetails& InstanceTypeDetails::operator =(JsonView jsonValue)
     }
     m_instanceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -105,7 +73,6 @@ InstanceTypeDetails& InstanceTypeDetails::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   return *this;
 }
 

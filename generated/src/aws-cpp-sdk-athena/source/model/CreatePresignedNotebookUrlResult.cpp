@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePresignedNotebookUrlResult::CreatePresignedNotebookUrlResult() : 
-    m_authTokenExpirationTime(0)
-{
-}
-
 CreatePresignedNotebookUrlResult::CreatePresignedNotebookUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreatePresignedNotebookUrlResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreatePresignedNotebookUrlResult& CreatePresignedNotebookUrlResult::operator =(c
   if(jsonValue.ValueExists("NotebookUrl"))
   {
     m_notebookUrl = jsonValue.GetString("NotebookUrl");
-
+    m_notebookUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthToken"))
   {
     m_authToken = jsonValue.GetString("AuthToken");
-
+    m_authTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthTokenExpirationTime"))
   {
     m_authTokenExpirationTime = jsonValue.GetInt64("AuthTokenExpirationTime");
-
+    m_authTokenExpirationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

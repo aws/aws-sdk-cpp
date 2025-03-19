@@ -21,7 +21,7 @@ namespace Model
   class GetOTAUpdateRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetOTAUpdateRequest();
+    AWS_IOT_API GetOTAUpdateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The OTA update ID.</p>
      */
-    inline const Aws::String& GetOtaUpdateId() const{ return m_otaUpdateId; }
+    inline const Aws::String& GetOtaUpdateId() const { return m_otaUpdateId; }
     inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
-    inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
-    inline void SetOtaUpdateId(Aws::String&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::move(value); }
-    inline void SetOtaUpdateId(const char* value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId.assign(value); }
-    inline GetOTAUpdateRequest& WithOtaUpdateId(const Aws::String& value) { SetOtaUpdateId(value); return *this;}
-    inline GetOTAUpdateRequest& WithOtaUpdateId(Aws::String&& value) { SetOtaUpdateId(std::move(value)); return *this;}
-    inline GetOTAUpdateRequest& WithOtaUpdateId(const char* value) { SetOtaUpdateId(value); return *this;}
+    template<typename OtaUpdateIdT = Aws::String>
+    void SetOtaUpdateId(OtaUpdateIdT&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::forward<OtaUpdateIdT>(value); }
+    template<typename OtaUpdateIdT = Aws::String>
+    GetOTAUpdateRequest& WithOtaUpdateId(OtaUpdateIdT&& value) { SetOtaUpdateId(std::forward<OtaUpdateIdT>(value)); return *this;}
     ///@}
   private:
 

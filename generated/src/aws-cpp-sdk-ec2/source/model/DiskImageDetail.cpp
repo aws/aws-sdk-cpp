@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DiskImageDetail::DiskImageDetail() : 
-    m_format(DiskImageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_bytes(0),
-    m_bytesHasBeenSet(false),
-    m_importManifestUrlHasBeenSet(false)
-{
-}
-
 DiskImageDetail::DiskImageDetail(const XmlNode& xmlNode)
-  : DiskImageDetail()
 {
   *this = xmlNode;
 }
@@ -44,7 +34,7 @@ DiskImageDetail& DiskImageDetail::operator =(const XmlNode& xmlNode)
     XmlNode formatNode = resultNode.FirstChild("format");
     if(!formatNode.IsNull())
     {
-      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()).c_str());
+      m_format = DiskImageFormatMapper::GetDiskImageFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode bytesNode = resultNode.FirstChild("bytes");

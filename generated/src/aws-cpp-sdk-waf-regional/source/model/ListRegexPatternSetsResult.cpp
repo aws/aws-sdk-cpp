@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRegexPatternSetsResult::ListRegexPatternSetsResult()
-{
-}
-
 ListRegexPatternSetsResult::ListRegexPatternSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRegexPatternSetsResult& ListRegexPatternSetsResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegexPatternSets"))
   {
     Aws::Utils::Array<JsonView> regexPatternSetsJsonList = jsonValue.GetArray("RegexPatternSets");
@@ -42,14 +37,15 @@ ListRegexPatternSetsResult& ListRegexPatternSetsResult::operator =(const Aws::Am
     {
       m_regexPatternSets.push_back(regexPatternSetsJsonList[regexPatternSetsIndex].AsObject());
     }
+    m_regexPatternSetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

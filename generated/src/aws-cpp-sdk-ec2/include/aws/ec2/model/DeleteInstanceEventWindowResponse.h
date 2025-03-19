@@ -28,7 +28,7 @@ namespace Model
   class DeleteInstanceEventWindowResponse
   {
   public:
-    AWS_EC2_API DeleteInstanceEventWindowResponse();
+    AWS_EC2_API DeleteInstanceEventWindowResponse() = default;
     AWS_EC2_API DeleteInstanceEventWindowResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteInstanceEventWindowResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The state of the event window.</p>
      */
-    inline const InstanceEventWindowStateChange& GetInstanceEventWindowState() const{ return m_instanceEventWindowState; }
-    inline void SetInstanceEventWindowState(const InstanceEventWindowStateChange& value) { m_instanceEventWindowState = value; }
-    inline void SetInstanceEventWindowState(InstanceEventWindowStateChange&& value) { m_instanceEventWindowState = std::move(value); }
-    inline DeleteInstanceEventWindowResponse& WithInstanceEventWindowState(const InstanceEventWindowStateChange& value) { SetInstanceEventWindowState(value); return *this;}
-    inline DeleteInstanceEventWindowResponse& WithInstanceEventWindowState(InstanceEventWindowStateChange&& value) { SetInstanceEventWindowState(std::move(value)); return *this;}
+    inline const InstanceEventWindowStateChange& GetInstanceEventWindowState() const { return m_instanceEventWindowState; }
+    template<typename InstanceEventWindowStateT = InstanceEventWindowStateChange>
+    void SetInstanceEventWindowState(InstanceEventWindowStateT&& value) { m_instanceEventWindowStateHasBeenSet = true; m_instanceEventWindowState = std::forward<InstanceEventWindowStateT>(value); }
+    template<typename InstanceEventWindowStateT = InstanceEventWindowStateChange>
+    DeleteInstanceEventWindowResponse& WithInstanceEventWindowState(InstanceEventWindowStateT&& value) { SetInstanceEventWindowState(std::forward<InstanceEventWindowStateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteInstanceEventWindowResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteInstanceEventWindowResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteInstanceEventWindowResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     InstanceEventWindowStateChange m_instanceEventWindowState;
+    bool m_instanceEventWindowStateHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

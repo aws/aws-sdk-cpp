@@ -34,7 +34,7 @@ namespace Model
   class ClassicLoadBalancersConfig
   {
   public:
-    AWS_EC2_API ClassicLoadBalancersConfig();
+    AWS_EC2_API ClassicLoadBalancersConfig() = default;
     AWS_EC2_API ClassicLoadBalancersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClassicLoadBalancersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>One or more Classic Load Balancers.</p>
      */
-    inline const Aws::Vector<ClassicLoadBalancer>& GetClassicLoadBalancers() const{ return m_classicLoadBalancers; }
+    inline const Aws::Vector<ClassicLoadBalancer>& GetClassicLoadBalancers() const { return m_classicLoadBalancers; }
     inline bool ClassicLoadBalancersHasBeenSet() const { return m_classicLoadBalancersHasBeenSet; }
-    inline void SetClassicLoadBalancers(const Aws::Vector<ClassicLoadBalancer>& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers = value; }
-    inline void SetClassicLoadBalancers(Aws::Vector<ClassicLoadBalancer>&& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers = std::move(value); }
-    inline ClassicLoadBalancersConfig& WithClassicLoadBalancers(const Aws::Vector<ClassicLoadBalancer>& value) { SetClassicLoadBalancers(value); return *this;}
-    inline ClassicLoadBalancersConfig& WithClassicLoadBalancers(Aws::Vector<ClassicLoadBalancer>&& value) { SetClassicLoadBalancers(std::move(value)); return *this;}
-    inline ClassicLoadBalancersConfig& AddClassicLoadBalancers(const ClassicLoadBalancer& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers.push_back(value); return *this; }
-    inline ClassicLoadBalancersConfig& AddClassicLoadBalancers(ClassicLoadBalancer&& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers.push_back(std::move(value)); return *this; }
+    template<typename ClassicLoadBalancersT = Aws::Vector<ClassicLoadBalancer>>
+    void SetClassicLoadBalancers(ClassicLoadBalancersT&& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers = std::forward<ClassicLoadBalancersT>(value); }
+    template<typename ClassicLoadBalancersT = Aws::Vector<ClassicLoadBalancer>>
+    ClassicLoadBalancersConfig& WithClassicLoadBalancers(ClassicLoadBalancersT&& value) { SetClassicLoadBalancers(std::forward<ClassicLoadBalancersT>(value)); return *this;}
+    template<typename ClassicLoadBalancersT = ClassicLoadBalancer>
+    ClassicLoadBalancersConfig& AddClassicLoadBalancers(ClassicLoadBalancersT&& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers.emplace_back(std::forward<ClassicLoadBalancersT>(value)); return *this; }
     ///@}
   private:
 

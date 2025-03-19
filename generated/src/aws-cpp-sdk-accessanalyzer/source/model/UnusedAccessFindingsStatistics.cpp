@@ -18,20 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedAccessFindingsStatistics::UnusedAccessFindingsStatistics() : 
-    m_unusedAccessTypeStatisticsHasBeenSet(false),
-    m_topAccountsHasBeenSet(false),
-    m_totalActiveFindings(0),
-    m_totalActiveFindingsHasBeenSet(false),
-    m_totalArchivedFindings(0),
-    m_totalArchivedFindingsHasBeenSet(false),
-    m_totalResolvedFindings(0),
-    m_totalResolvedFindingsHasBeenSet(false)
-{
-}
-
 UnusedAccessFindingsStatistics::UnusedAccessFindingsStatistics(JsonView jsonValue)
-  : UnusedAccessFindingsStatistics()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ UnusedAccessFindingsStatistics& UnusedAccessFindingsStatistics::operator =(JsonV
     }
     m_unusedAccessTypeStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topAccounts"))
   {
     Aws::Utils::Array<JsonView> topAccountsJsonList = jsonValue.GetArray("topAccounts");
@@ -57,28 +43,21 @@ UnusedAccessFindingsStatistics& UnusedAccessFindingsStatistics::operator =(JsonV
     }
     m_topAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalActiveFindings"))
   {
     m_totalActiveFindings = jsonValue.GetInteger("totalActiveFindings");
-
     m_totalActiveFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalArchivedFindings"))
   {
     m_totalArchivedFindings = jsonValue.GetInteger("totalArchivedFindings");
-
     m_totalArchivedFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResolvedFindings"))
   {
     m_totalResolvedFindings = jsonValue.GetInteger("totalResolvedFindings");
-
     m_totalResolvedFindingsHasBeenSet = true;
   }
-
   return *this;
 }
 

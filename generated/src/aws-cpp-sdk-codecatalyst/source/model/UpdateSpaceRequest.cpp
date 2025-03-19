@@ -12,12 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSpaceRequest::UpdateSpaceRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSpaceRequest::SerializePayload() const
 {
   JsonValue payload;

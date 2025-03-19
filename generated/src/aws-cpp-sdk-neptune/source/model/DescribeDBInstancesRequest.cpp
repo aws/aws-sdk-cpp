@@ -10,15 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribeDBInstancesRequest::DescribeDBInstancesRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

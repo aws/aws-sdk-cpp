@@ -32,7 +32,7 @@ namespace Model
   class BuildConfiguration
   {
   public:
-    AWS_ELASTICBEANSTALK_API BuildConfiguration();
+    AWS_ELASTICBEANSTALK_API BuildConfiguration() = default;
     AWS_ELASTICBEANSTALK_API BuildConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API BuildConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
      * </p>
      */
-    inline const Aws::String& GetArtifactName() const{ return m_artifactName; }
+    inline const Aws::String& GetArtifactName() const { return m_artifactName; }
     inline bool ArtifactNameHasBeenSet() const { return m_artifactNameHasBeenSet; }
-    inline void SetArtifactName(const Aws::String& value) { m_artifactNameHasBeenSet = true; m_artifactName = value; }
-    inline void SetArtifactName(Aws::String&& value) { m_artifactNameHasBeenSet = true; m_artifactName = std::move(value); }
-    inline void SetArtifactName(const char* value) { m_artifactNameHasBeenSet = true; m_artifactName.assign(value); }
-    inline BuildConfiguration& WithArtifactName(const Aws::String& value) { SetArtifactName(value); return *this;}
-    inline BuildConfiguration& WithArtifactName(Aws::String&& value) { SetArtifactName(std::move(value)); return *this;}
-    inline BuildConfiguration& WithArtifactName(const char* value) { SetArtifactName(value); return *this;}
+    template<typename ArtifactNameT = Aws::String>
+    void SetArtifactName(ArtifactNameT&& value) { m_artifactNameHasBeenSet = true; m_artifactName = std::forward<ArtifactNameT>(value); }
+    template<typename ArtifactNameT = Aws::String>
+    BuildConfiguration& WithArtifactName(ArtifactNameT&& value) { SetArtifactName(std::forward<ArtifactNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on
      * behalf of the AWS account.</p>
      */
-    inline const Aws::String& GetCodeBuildServiceRole() const{ return m_codeBuildServiceRole; }
+    inline const Aws::String& GetCodeBuildServiceRole() const { return m_codeBuildServiceRole; }
     inline bool CodeBuildServiceRoleHasBeenSet() const { return m_codeBuildServiceRoleHasBeenSet; }
-    inline void SetCodeBuildServiceRole(const Aws::String& value) { m_codeBuildServiceRoleHasBeenSet = true; m_codeBuildServiceRole = value; }
-    inline void SetCodeBuildServiceRole(Aws::String&& value) { m_codeBuildServiceRoleHasBeenSet = true; m_codeBuildServiceRole = std::move(value); }
-    inline void SetCodeBuildServiceRole(const char* value) { m_codeBuildServiceRoleHasBeenSet = true; m_codeBuildServiceRole.assign(value); }
-    inline BuildConfiguration& WithCodeBuildServiceRole(const Aws::String& value) { SetCodeBuildServiceRole(value); return *this;}
-    inline BuildConfiguration& WithCodeBuildServiceRole(Aws::String&& value) { SetCodeBuildServiceRole(std::move(value)); return *this;}
-    inline BuildConfiguration& WithCodeBuildServiceRole(const char* value) { SetCodeBuildServiceRole(value); return *this;}
+    template<typename CodeBuildServiceRoleT = Aws::String>
+    void SetCodeBuildServiceRole(CodeBuildServiceRoleT&& value) { m_codeBuildServiceRoleHasBeenSet = true; m_codeBuildServiceRole = std::forward<CodeBuildServiceRoleT>(value); }
+    template<typename CodeBuildServiceRoleT = Aws::String>
+    BuildConfiguration& WithCodeBuildServiceRole(CodeBuildServiceRoleT&& value) { SetCodeBuildServiceRole(std::forward<CodeBuildServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,26 +80,22 @@ namespace Model
      * <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
      * </p> </li> </ul>
      */
-    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+    inline ComputeType GetComputeType() const { return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
-    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
-    inline BuildConfiguration& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
-    inline BuildConfiguration& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    inline void SetComputeType(ComputeType value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline BuildConfiguration& WithComputeType(ComputeType value) { SetComputeType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline BuildConfiguration& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline BuildConfiguration& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline BuildConfiguration& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    BuildConfiguration& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,7 +104,7 @@ namespace Model
      * timing out any related build that does not get marked as completed. The default
      * is 60 minutes.</p>
      */
-    inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
+    inline int GetTimeoutInMinutes() const { return m_timeoutInMinutes; }
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
     inline BuildConfiguration& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
@@ -125,13 +117,13 @@ namespace Model
     Aws::String m_codeBuildServiceRole;
     bool m_codeBuildServiceRoleHasBeenSet = false;
 
-    ComputeType m_computeType;
+    ComputeType m_computeType{ComputeType::NOT_SET};
     bool m_computeTypeHasBeenSet = false;
 
     Aws::String m_image;
     bool m_imageHasBeenSet = false;
 
-    int m_timeoutInMinutes;
+    int m_timeoutInMinutes{0};
     bool m_timeoutInMinutesHasBeenSet = false;
   };
 

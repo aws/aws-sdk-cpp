@@ -34,7 +34,7 @@ namespace Model
   class WarningDetail
   {
   public:
-    AWS_CLOUDFORMATION_API WarningDetail();
+    AWS_CLOUDFORMATION_API WarningDetail() = default;
     AWS_CLOUDFORMATION_API WarningDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API WarningDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -64,30 +64,28 @@ namespace Model
      * <code>oneOf</code> or <code>anyOf</code>. You need to look at the resource
      * provider schema.</p> 
      */
-    inline const WarningType& GetType() const{ return m_type; }
+    inline WarningType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WarningType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WarningType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WarningDetail& WithType(const WarningType& value) { SetType(value); return *this;}
-    inline WarningDetail& WithType(WarningType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WarningType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WarningDetail& WithType(WarningType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the resource that are impacted by this warning.</p>
      */
-    inline const Aws::Vector<WarningProperty>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<WarningProperty>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<WarningProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<WarningProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline WarningDetail& WithProperties(const Aws::Vector<WarningProperty>& value) { SetProperties(value); return *this;}
-    inline WarningDetail& WithProperties(Aws::Vector<WarningProperty>&& value) { SetProperties(std::move(value)); return *this;}
-    inline WarningDetail& AddProperties(const WarningProperty& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline WarningDetail& AddProperties(WarningProperty&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<WarningProperty>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<WarningProperty>>
+    WarningDetail& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = WarningProperty>
+    WarningDetail& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
   private:
 
-    WarningType m_type;
+    WarningType m_type{WarningType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<WarningProperty> m_properties;

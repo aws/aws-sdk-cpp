@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationDataset::EvaluationDataset() : 
-    m_nameHasBeenSet(false),
-    m_datasetLocationHasBeenSet(false)
-{
-}
-
 EvaluationDataset::EvaluationDataset(JsonView jsonValue)
-  : EvaluationDataset()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EvaluationDataset& EvaluationDataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetLocation"))
   {
     m_datasetLocation = jsonValue.GetObject("datasetLocation");
-
     m_datasetLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AutoDetectionS3SourceConfig::AutoDetectionS3SourceConfig() : 
-    m_templatedPathListHasBeenSet(false),
-    m_historicalDataPathListHasBeenSet(false)
-{
-}
-
 AutoDetectionS3SourceConfig::AutoDetectionS3SourceConfig(JsonView jsonValue)
-  : AutoDetectionS3SourceConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AutoDetectionS3SourceConfig& AutoDetectionS3SourceConfig::operator =(JsonView js
     }
     m_templatedPathListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HistoricalDataPathList"))
   {
     Aws::Utils::Array<JsonView> historicalDataPathListJsonList = jsonValue.GetArray("HistoricalDataPathList");
@@ -51,7 +43,6 @@ AutoDetectionS3SourceConfig& AutoDetectionS3SourceConfig::operator =(JsonView js
     }
     m_historicalDataPathListHasBeenSet = true;
   }
-
   return *this;
 }
 

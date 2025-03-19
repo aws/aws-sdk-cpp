@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetDeclarativePoliciesReportSummaryRequest::GetDeclarativePoliciesReportSummaryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_reportIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDeclarativePoliciesReportSummaryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

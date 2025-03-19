@@ -25,7 +25,7 @@ namespace Model
   class StartLiveTailInitialResponse
   {
   public:
-    AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse();
+    AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse() = default;
     AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API StartLiveTailInitialResponse(const Http::HeaderValueCollection& responseHeaders);

@@ -18,14 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RedshiftDatabase::RedshiftDatabase() : 
-    m_databaseNameHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 RedshiftDatabase::RedshiftDatabase(JsonView jsonValue)
-  : RedshiftDatabase()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedshiftDatabase& RedshiftDatabase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterIdentifier"))
   {
     m_clusterIdentifier = jsonValue.GetString("ClusterIdentifier");
-
     m_clusterIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

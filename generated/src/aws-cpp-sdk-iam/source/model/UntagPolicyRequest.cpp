@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagPolicyRequest::UntagPolicyRequest() : 
-    m_policyArnHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

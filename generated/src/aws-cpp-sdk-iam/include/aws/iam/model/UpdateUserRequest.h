@@ -21,7 +21,7 @@ namespace Model
   class UpdateUserRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateUserRequest();
+    AWS_IAM_API UpdateUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline UpdateUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UpdateUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UpdateUserRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
      * and lowercased letters.</p>
      */
-    inline const Aws::String& GetNewPath() const{ return m_newPath; }
+    inline const Aws::String& GetNewPath() const { return m_newPath; }
     inline bool NewPathHasBeenSet() const { return m_newPathHasBeenSet; }
-    inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
-    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = std::move(value); }
-    inline void SetNewPath(const char* value) { m_newPathHasBeenSet = true; m_newPath.assign(value); }
-    inline UpdateUserRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
-    inline UpdateUserRequest& WithNewPath(Aws::String&& value) { SetNewPath(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
+    template<typename NewPathT = Aws::String>
+    void SetNewPath(NewPathT&& value) { m_newPathHasBeenSet = true; m_newPath = std::forward<NewPathT>(value); }
+    template<typename NewPathT = Aws::String>
+    UpdateUserRequest& WithNewPath(NewPathT&& value) { SetNewPath(std::forward<NewPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * within the account. Names are not distinguished by case. For example, you cannot
      * create resources named both "MyResource" and "myresource".</p>
      */
-    inline const Aws::String& GetNewUserName() const{ return m_newUserName; }
+    inline const Aws::String& GetNewUserName() const { return m_newUserName; }
     inline bool NewUserNameHasBeenSet() const { return m_newUserNameHasBeenSet; }
-    inline void SetNewUserName(const Aws::String& value) { m_newUserNameHasBeenSet = true; m_newUserName = value; }
-    inline void SetNewUserName(Aws::String&& value) { m_newUserNameHasBeenSet = true; m_newUserName = std::move(value); }
-    inline void SetNewUserName(const char* value) { m_newUserNameHasBeenSet = true; m_newUserName.assign(value); }
-    inline UpdateUserRequest& WithNewUserName(const Aws::String& value) { SetNewUserName(value); return *this;}
-    inline UpdateUserRequest& WithNewUserName(Aws::String&& value) { SetNewUserName(std::move(value)); return *this;}
-    inline UpdateUserRequest& WithNewUserName(const char* value) { SetNewUserName(value); return *this;}
+    template<typename NewUserNameT = Aws::String>
+    void SetNewUserName(NewUserNameT&& value) { m_newUserNameHasBeenSet = true; m_newUserName = std::forward<NewUserNameT>(value); }
+    template<typename NewUserNameT = Aws::String>
+    UpdateUserRequest& WithNewUserName(NewUserNameT&& value) { SetNewUserName(std::forward<NewUserNameT>(value)); return *this;}
     ///@}
   private:
 

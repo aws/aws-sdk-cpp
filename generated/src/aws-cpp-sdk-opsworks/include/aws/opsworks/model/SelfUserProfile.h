@@ -31,7 +31,7 @@ namespace Model
   class SelfUserProfile
   {
   public:
-    AWS_OPSWORKS_API SelfUserProfile();
+    AWS_OPSWORKS_API SelfUserProfile() = default;
     AWS_OPSWORKS_API SelfUserProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API SelfUserProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,56 +41,48 @@ namespace Model
     /**
      * <p>The user's IAM ARN.</p>
      */
-    inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+    inline const Aws::String& GetIamUserArn() const { return m_iamUserArn; }
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
-    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
-    inline SelfUserProfile& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-    inline SelfUserProfile& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-    inline SelfUserProfile& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    template<typename IamUserArnT = Aws::String>
+    void SetIamUserArn(IamUserArnT&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::forward<IamUserArnT>(value); }
+    template<typename IamUserArnT = Aws::String>
+    SelfUserProfile& WithIamUserArn(IamUserArnT&& value) { SetIamUserArn(std::forward<IamUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SelfUserProfile& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SelfUserProfile& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SelfUserProfile& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SelfUserProfile& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user's SSH user name.</p>
      */
-    inline const Aws::String& GetSshUsername() const{ return m_sshUsername; }
+    inline const Aws::String& GetSshUsername() const { return m_sshUsername; }
     inline bool SshUsernameHasBeenSet() const { return m_sshUsernameHasBeenSet; }
-    inline void SetSshUsername(const Aws::String& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
-    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::move(value); }
-    inline void SetSshUsername(const char* value) { m_sshUsernameHasBeenSet = true; m_sshUsername.assign(value); }
-    inline SelfUserProfile& WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
-    inline SelfUserProfile& WithSshUsername(Aws::String&& value) { SetSshUsername(std::move(value)); return *this;}
-    inline SelfUserProfile& WithSshUsername(const char* value) { SetSshUsername(value); return *this;}
+    template<typename SshUsernameT = Aws::String>
+    void SetSshUsername(SshUsernameT&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::forward<SshUsernameT>(value); }
+    template<typename SshUsernameT = Aws::String>
+    SelfUserProfile& WithSshUsername(SshUsernameT&& value) { SetSshUsername(std::forward<SshUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user's SSH public key.</p>
      */
-    inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+    inline const Aws::String& GetSshPublicKey() const { return m_sshPublicKey; }
     inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
-    inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
-    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
-    inline void SetSshPublicKey(const char* value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey.assign(value); }
-    inline SelfUserProfile& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
-    inline SelfUserProfile& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
-    inline SelfUserProfile& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
+    template<typename SshPublicKeyT = Aws::String>
+    void SetSshPublicKey(SshPublicKeyT&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::forward<SshPublicKeyT>(value); }
+    template<typename SshPublicKeyT = Aws::String>
+    SelfUserProfile& WithSshPublicKey(SshPublicKeyT&& value) { SetSshPublicKey(std::forward<SshPublicKeyT>(value)); return *this;}
     ///@}
   private:
 

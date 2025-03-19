@@ -32,7 +32,7 @@ namespace Model
   class ParallelismConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * application's <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
      */
-    inline const ConfigurationType& GetConfigurationTypeUpdate() const{ return m_configurationTypeUpdate; }
+    inline ConfigurationType GetConfigurationTypeUpdate() const { return m_configurationTypeUpdate; }
     inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
-    inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
-    inline void SetConfigurationTypeUpdate(ConfigurationType&& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = std::move(value); }
-    inline ParallelismConfigurationUpdate& WithConfigurationTypeUpdate(const ConfigurationType& value) { SetConfigurationTypeUpdate(value); return *this;}
-    inline ParallelismConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType&& value) { SetConfigurationTypeUpdate(std::move(value)); return *this;}
+    inline void SetConfigurationTypeUpdate(ConfigurationType value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
+    inline ParallelismConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType value) { SetConfigurationTypeUpdate(value); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * reduce <code>CurrentParallelism</code> down to the <code>Parallelism</code>
      * setting.</p>
      */
-    inline int GetParallelismUpdate() const{ return m_parallelismUpdate; }
+    inline int GetParallelismUpdate() const { return m_parallelismUpdate; }
     inline bool ParallelismUpdateHasBeenSet() const { return m_parallelismUpdateHasBeenSet; }
     inline void SetParallelismUpdate(int value) { m_parallelismUpdateHasBeenSet = true; m_parallelismUpdate = value; }
     inline ParallelismConfigurationUpdate& WithParallelismUpdate(int value) { SetParallelismUpdate(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
      * <p>Describes updates to the number of parallel tasks an application can perform
      * per Kinesis Processing Unit (KPU) used by the application.</p>
      */
-    inline int GetParallelismPerKPUUpdate() const{ return m_parallelismPerKPUUpdate; }
+    inline int GetParallelismPerKPUUpdate() const { return m_parallelismPerKPUUpdate; }
     inline bool ParallelismPerKPUUpdateHasBeenSet() const { return m_parallelismPerKPUUpdateHasBeenSet; }
     inline void SetParallelismPerKPUUpdate(int value) { m_parallelismPerKPUUpdateHasBeenSet = true; m_parallelismPerKPUUpdate = value; }
     inline ParallelismConfigurationUpdate& WithParallelismPerKPUUpdate(int value) { SetParallelismPerKPUUpdate(value); return *this;}
@@ -90,23 +88,23 @@ namespace Model
      * increase the parallelism of a Managed Service for Apache Flink application in
      * response to increased throughput.</p>
      */
-    inline bool GetAutoScalingEnabledUpdate() const{ return m_autoScalingEnabledUpdate; }
+    inline bool GetAutoScalingEnabledUpdate() const { return m_autoScalingEnabledUpdate; }
     inline bool AutoScalingEnabledUpdateHasBeenSet() const { return m_autoScalingEnabledUpdateHasBeenSet; }
     inline void SetAutoScalingEnabledUpdate(bool value) { m_autoScalingEnabledUpdateHasBeenSet = true; m_autoScalingEnabledUpdate = value; }
     inline ParallelismConfigurationUpdate& WithAutoScalingEnabledUpdate(bool value) { SetAutoScalingEnabledUpdate(value); return *this;}
     ///@}
   private:
 
-    ConfigurationType m_configurationTypeUpdate;
+    ConfigurationType m_configurationTypeUpdate{ConfigurationType::NOT_SET};
     bool m_configurationTypeUpdateHasBeenSet = false;
 
-    int m_parallelismUpdate;
+    int m_parallelismUpdate{0};
     bool m_parallelismUpdateHasBeenSet = false;
 
-    int m_parallelismPerKPUUpdate;
+    int m_parallelismPerKPUUpdate{0};
     bool m_parallelismPerKPUUpdateHasBeenSet = false;
 
-    bool m_autoScalingEnabledUpdate;
+    bool m_autoScalingEnabledUpdate{false};
     bool m_autoScalingEnabledUpdateHasBeenSet = false;
   };
 

@@ -25,7 +25,7 @@ namespace Model
   class SearchCasesRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API SearchCasesRequest();
+    AWS_CONNECTCASES_API SearchCasesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,38 @@ namespace Model
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline SearchCasesRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline SearchCasesRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline SearchCasesRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    SearchCasesRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of field identifiers to be returned as part of the response.</p>
      */
-    inline const Aws::Vector<FieldIdentifier>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<FieldIdentifier>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<FieldIdentifier>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<FieldIdentifier>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline SearchCasesRequest& WithFields(const Aws::Vector<FieldIdentifier>& value) { SetFields(value); return *this;}
-    inline SearchCasesRequest& WithFields(Aws::Vector<FieldIdentifier>&& value) { SetFields(std::move(value)); return *this;}
-    inline SearchCasesRequest& AddFields(const FieldIdentifier& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline SearchCasesRequest& AddFields(FieldIdentifier&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<FieldIdentifier>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FieldIdentifier>>
+    SearchCasesRequest& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FieldIdentifier>
+    SearchCasesRequest& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of filter objects.</p>
      */
-    inline const CaseFilter& GetFilter() const{ return m_filter; }
+    inline const CaseFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const CaseFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(CaseFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline SearchCasesRequest& WithFilter(const CaseFilter& value) { SetFilter(value); return *this;}
-    inline SearchCasesRequest& WithFilter(CaseFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = CaseFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = CaseFilter>
+    SearchCasesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +79,7 @@ namespace Model
      * <p>The maximum number of cases to return. The current maximum supported value is
      * 25. This is also the default value when no other value is provided.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchCasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -92,28 +90,24 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchCasesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchCasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchCasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchCasesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A word or phrase used to perform a quick search.</p>
      */
-    inline const Aws::String& GetSearchTerm() const{ return m_searchTerm; }
+    inline const Aws::String& GetSearchTerm() const { return m_searchTerm; }
     inline bool SearchTermHasBeenSet() const { return m_searchTermHasBeenSet; }
-    inline void SetSearchTerm(const Aws::String& value) { m_searchTermHasBeenSet = true; m_searchTerm = value; }
-    inline void SetSearchTerm(Aws::String&& value) { m_searchTermHasBeenSet = true; m_searchTerm = std::move(value); }
-    inline void SetSearchTerm(const char* value) { m_searchTermHasBeenSet = true; m_searchTerm.assign(value); }
-    inline SearchCasesRequest& WithSearchTerm(const Aws::String& value) { SetSearchTerm(value); return *this;}
-    inline SearchCasesRequest& WithSearchTerm(Aws::String&& value) { SetSearchTerm(std::move(value)); return *this;}
-    inline SearchCasesRequest& WithSearchTerm(const char* value) { SetSearchTerm(value); return *this;}
+    template<typename SearchTermT = Aws::String>
+    void SetSearchTerm(SearchTermT&& value) { m_searchTermHasBeenSet = true; m_searchTerm = std::forward<SearchTermT>(value); }
+    template<typename SearchTermT = Aws::String>
+    SearchCasesRequest& WithSearchTerm(SearchTermT&& value) { SetSearchTerm(std::forward<SearchTermT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,14 @@ namespace Model
      * <p>A list of sorts where each sort specifies a field and their sort order to be
      * applied to the results. </p>
      */
-    inline const Aws::Vector<Sort>& GetSorts() const{ return m_sorts; }
+    inline const Aws::Vector<Sort>& GetSorts() const { return m_sorts; }
     inline bool SortsHasBeenSet() const { return m_sortsHasBeenSet; }
-    inline void SetSorts(const Aws::Vector<Sort>& value) { m_sortsHasBeenSet = true; m_sorts = value; }
-    inline void SetSorts(Aws::Vector<Sort>&& value) { m_sortsHasBeenSet = true; m_sorts = std::move(value); }
-    inline SearchCasesRequest& WithSorts(const Aws::Vector<Sort>& value) { SetSorts(value); return *this;}
-    inline SearchCasesRequest& WithSorts(Aws::Vector<Sort>&& value) { SetSorts(std::move(value)); return *this;}
-    inline SearchCasesRequest& AddSorts(const Sort& value) { m_sortsHasBeenSet = true; m_sorts.push_back(value); return *this; }
-    inline SearchCasesRequest& AddSorts(Sort&& value) { m_sortsHasBeenSet = true; m_sorts.push_back(std::move(value)); return *this; }
+    template<typename SortsT = Aws::Vector<Sort>>
+    void SetSorts(SortsT&& value) { m_sortsHasBeenSet = true; m_sorts = std::forward<SortsT>(value); }
+    template<typename SortsT = Aws::Vector<Sort>>
+    SearchCasesRequest& WithSorts(SortsT&& value) { SetSorts(std::forward<SortsT>(value)); return *this;}
+    template<typename SortsT = Sort>
+    SearchCasesRequest& AddSorts(SortsT&& value) { m_sortsHasBeenSet = true; m_sorts.emplace_back(std::forward<SortsT>(value)); return *this; }
     ///@}
   private:
 
@@ -141,7 +135,7 @@ namespace Model
     CaseFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

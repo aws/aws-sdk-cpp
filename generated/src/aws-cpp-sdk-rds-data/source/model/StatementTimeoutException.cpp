@@ -18,15 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-StatementTimeoutException::StatementTimeoutException() : 
-    m_messageHasBeenSet(false),
-    m_dbConnectionId(0),
-    m_dbConnectionIdHasBeenSet(false)
-{
-}
-
 StatementTimeoutException::StatementTimeoutException(JsonView jsonValue)
-  : StatementTimeoutException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StatementTimeoutException& StatementTimeoutException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbConnectionId"))
   {
     m_dbConnectionId = jsonValue.GetInt64("dbConnectionId");
-
     m_dbConnectionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

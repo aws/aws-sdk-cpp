@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobOverrideTags::AssetBundleImportJobOverrideTags() : 
-    m_vPCConnectionsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_dataSetsHasBeenSet(false),
-    m_themesHasBeenSet(false),
-    m_analysesHasBeenSet(false),
-    m_dashboardsHasBeenSet(false),
-    m_foldersHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobOverrideTags::AssetBundleImportJobOverrideTags(JsonView jsonValue)
-  : AssetBundleImportJobOverrideTags()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_vPCConnectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSources"))
   {
     Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("DataSources");
@@ -56,7 +43,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSets"))
   {
     Aws::Utils::Array<JsonView> dataSetsJsonList = jsonValue.GetArray("DataSets");
@@ -66,7 +52,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_dataSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Themes"))
   {
     Aws::Utils::Array<JsonView> themesJsonList = jsonValue.GetArray("Themes");
@@ -76,7 +61,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_themesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Analyses"))
   {
     Aws::Utils::Array<JsonView> analysesJsonList = jsonValue.GetArray("Analyses");
@@ -86,7 +70,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_analysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dashboards"))
   {
     Aws::Utils::Array<JsonView> dashboardsJsonList = jsonValue.GetArray("Dashboards");
@@ -96,7 +79,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_dashboardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Folders"))
   {
     Aws::Utils::Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
@@ -106,7 +88,6 @@ AssetBundleImportJobOverrideTags& AssetBundleImportJobOverrideTags::operator =(J
     }
     m_foldersHasBeenSet = true;
   }
-
   return *this;
 }
 

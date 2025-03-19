@@ -28,7 +28,7 @@ namespace Model
   class GetLicenseResult
   {
   public:
-    AWS_LICENSEMANAGER_API GetLicenseResult();
+    AWS_LICENSEMANAGER_API GetLicenseResult() = default;
     AWS_LICENSEMANAGER_API GetLicenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API GetLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>License details.</p>
      */
-    inline const License& GetLicense() const{ return m_license; }
-    inline void SetLicense(const License& value) { m_license = value; }
-    inline void SetLicense(License&& value) { m_license = std::move(value); }
-    inline GetLicenseResult& WithLicense(const License& value) { SetLicense(value); return *this;}
-    inline GetLicenseResult& WithLicense(License&& value) { SetLicense(std::move(value)); return *this;}
+    inline const License& GetLicense() const { return m_license; }
+    template<typename LicenseT = License>
+    void SetLicense(LicenseT&& value) { m_licenseHasBeenSet = true; m_license = std::forward<LicenseT>(value); }
+    template<typename LicenseT = License>
+    GetLicenseResult& WithLicense(LicenseT&& value) { SetLicense(std::forward<LicenseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLicenseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLicenseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLicenseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLicenseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     License m_license;
+    bool m_licenseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

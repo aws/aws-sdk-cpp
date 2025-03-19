@@ -20,13 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ParameterConstraints::ParameterConstraints() : 
-    m_allowedValuesHasBeenSet(false)
-{
-}
-
 ParameterConstraints::ParameterConstraints(const XmlNode& xmlNode)
-  : ParameterConstraints()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ ParameterConstraints& ParameterConstraints::operator =(const XmlNode& xmlNode)
     if(!allowedValuesNode.IsNull())
     {
       XmlNode allowedValuesMember = allowedValuesNode.FirstChild("member");
+      m_allowedValuesHasBeenSet = !allowedValuesMember.IsNull();
       while(!allowedValuesMember.IsNull())
       {
         m_allowedValues.push_back(allowedValuesMember.GetText());

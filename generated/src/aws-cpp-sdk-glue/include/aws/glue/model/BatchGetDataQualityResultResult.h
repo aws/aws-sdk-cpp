@@ -29,7 +29,7 @@ namespace Model
   class BatchGetDataQualityResultResult
   {
   public:
-    AWS_GLUE_API BatchGetDataQualityResultResult();
+    AWS_GLUE_API BatchGetDataQualityResultResult() = default;
     AWS_GLUE_API BatchGetDataQualityResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchGetDataQualityResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,46 +39,46 @@ namespace Model
      * <p>A list of <code>DataQualityResult</code> objects representing the data
      * quality results.</p>
      */
-    inline const Aws::Vector<DataQualityResult>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<DataQualityResult>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<DataQualityResult>&& value) { m_results = std::move(value); }
-    inline BatchGetDataQualityResultResult& WithResults(const Aws::Vector<DataQualityResult>& value) { SetResults(value); return *this;}
-    inline BatchGetDataQualityResultResult& WithResults(Aws::Vector<DataQualityResult>&& value) { SetResults(std::move(value)); return *this;}
-    inline BatchGetDataQualityResultResult& AddResults(const DataQualityResult& value) { m_results.push_back(value); return *this; }
-    inline BatchGetDataQualityResultResult& AddResults(DataQualityResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataQualityResult>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<DataQualityResult>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<DataQualityResult>>
+    BatchGetDataQualityResultResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = DataQualityResult>
+    BatchGetDataQualityResultResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of result IDs for which results were not found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResultsNotFound() const{ return m_resultsNotFound; }
-    inline void SetResultsNotFound(const Aws::Vector<Aws::String>& value) { m_resultsNotFound = value; }
-    inline void SetResultsNotFound(Aws::Vector<Aws::String>&& value) { m_resultsNotFound = std::move(value); }
-    inline BatchGetDataQualityResultResult& WithResultsNotFound(const Aws::Vector<Aws::String>& value) { SetResultsNotFound(value); return *this;}
-    inline BatchGetDataQualityResultResult& WithResultsNotFound(Aws::Vector<Aws::String>&& value) { SetResultsNotFound(std::move(value)); return *this;}
-    inline BatchGetDataQualityResultResult& AddResultsNotFound(const Aws::String& value) { m_resultsNotFound.push_back(value); return *this; }
-    inline BatchGetDataQualityResultResult& AddResultsNotFound(Aws::String&& value) { m_resultsNotFound.push_back(std::move(value)); return *this; }
-    inline BatchGetDataQualityResultResult& AddResultsNotFound(const char* value) { m_resultsNotFound.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetResultsNotFound() const { return m_resultsNotFound; }
+    template<typename ResultsNotFoundT = Aws::Vector<Aws::String>>
+    void SetResultsNotFound(ResultsNotFoundT&& value) { m_resultsNotFoundHasBeenSet = true; m_resultsNotFound = std::forward<ResultsNotFoundT>(value); }
+    template<typename ResultsNotFoundT = Aws::Vector<Aws::String>>
+    BatchGetDataQualityResultResult& WithResultsNotFound(ResultsNotFoundT&& value) { SetResultsNotFound(std::forward<ResultsNotFoundT>(value)); return *this;}
+    template<typename ResultsNotFoundT = Aws::String>
+    BatchGetDataQualityResultResult& AddResultsNotFound(ResultsNotFoundT&& value) { m_resultsNotFoundHasBeenSet = true; m_resultsNotFound.emplace_back(std::forward<ResultsNotFoundT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetDataQualityResultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetDataQualityResultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetDataQualityResultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetDataQualityResultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataQualityResult> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resultsNotFound;
+    bool m_resultsNotFoundHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

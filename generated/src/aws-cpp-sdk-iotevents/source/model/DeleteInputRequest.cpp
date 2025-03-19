@@ -12,11 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInputRequest::DeleteInputRequest() : 
-    m_inputNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInputRequest::SerializePayload() const
 {
   return {};

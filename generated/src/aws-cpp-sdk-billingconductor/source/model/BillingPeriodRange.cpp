@@ -18,14 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-BillingPeriodRange::BillingPeriodRange() : 
-    m_inclusiveStartBillingPeriodHasBeenSet(false),
-    m_exclusiveEndBillingPeriodHasBeenSet(false)
-{
-}
-
 BillingPeriodRange::BillingPeriodRange(JsonView jsonValue)
-  : BillingPeriodRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BillingPeriodRange& BillingPeriodRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InclusiveStartBillingPeriod"))
   {
     m_inclusiveStartBillingPeriod = jsonValue.GetString("InclusiveStartBillingPeriod");
-
     m_inclusiveStartBillingPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusiveEndBillingPeriod"))
   {
     m_exclusiveEndBillingPeriod = jsonValue.GetString("ExclusiveEndBillingPeriod");
-
     m_exclusiveEndBillingPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

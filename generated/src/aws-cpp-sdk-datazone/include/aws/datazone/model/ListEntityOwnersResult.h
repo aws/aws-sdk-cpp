@@ -29,7 +29,7 @@ namespace Model
   class ListEntityOwnersResult
   {
   public:
-    AWS_DATAZONE_API ListEntityOwnersResult();
+    AWS_DATAZONE_API ListEntityOwnersResult() = default;
     AWS_DATAZONE_API ListEntityOwnersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API ListEntityOwnersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,44 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to
      * <code>ListEntityOwners</code> to list the next set of entities.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEntityOwnersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEntityOwnersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEntityOwnersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEntityOwnersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owners of the entity.</p>
      */
-    inline const Aws::Vector<OwnerPropertiesOutput>& GetOwners() const{ return m_owners; }
-    inline void SetOwners(const Aws::Vector<OwnerPropertiesOutput>& value) { m_owners = value; }
-    inline void SetOwners(Aws::Vector<OwnerPropertiesOutput>&& value) { m_owners = std::move(value); }
-    inline ListEntityOwnersResult& WithOwners(const Aws::Vector<OwnerPropertiesOutput>& value) { SetOwners(value); return *this;}
-    inline ListEntityOwnersResult& WithOwners(Aws::Vector<OwnerPropertiesOutput>&& value) { SetOwners(std::move(value)); return *this;}
-    inline ListEntityOwnersResult& AddOwners(const OwnerPropertiesOutput& value) { m_owners.push_back(value); return *this; }
-    inline ListEntityOwnersResult& AddOwners(OwnerPropertiesOutput&& value) { m_owners.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OwnerPropertiesOutput>& GetOwners() const { return m_owners; }
+    template<typename OwnersT = Aws::Vector<OwnerPropertiesOutput>>
+    void SetOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners = std::forward<OwnersT>(value); }
+    template<typename OwnersT = Aws::Vector<OwnerPropertiesOutput>>
+    ListEntityOwnersResult& WithOwners(OwnersT&& value) { SetOwners(std::forward<OwnersT>(value)); return *this;}
+    template<typename OwnersT = OwnerPropertiesOutput>
+    ListEntityOwnersResult& AddOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners.emplace_back(std::forward<OwnersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEntityOwnersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEntityOwnersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEntityOwnersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEntityOwnersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<OwnerPropertiesOutput> m_owners;
+    bool m_ownersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

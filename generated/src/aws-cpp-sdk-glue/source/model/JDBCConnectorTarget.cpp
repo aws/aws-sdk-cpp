@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JDBCConnectorTarget::JDBCConnectorTarget() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectionTableHasBeenSet(false),
-    m_connectorNameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 JDBCConnectorTarget::JDBCConnectorTarget(JsonView jsonValue)
-  : JDBCConnectorTarget()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ JDBCConnectorTarget& JDBCConnectorTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -54,35 +39,26 @@ JDBCConnectorTarget& JDBCConnectorTarget::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionTable"))
   {
     m_connectionTable = jsonValue.GetString("ConnectionTable");
-
     m_connectionTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorName"))
   {
     m_connectorName = jsonValue.GetString("ConnectorName");
-
     m_connectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionType"))
   {
     m_connectionType = jsonValue.GetString("ConnectionType");
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     Aws::Map<Aws::String, JsonView> additionalOptionsJsonMap = jsonValue.GetObject("AdditionalOptions").GetAllObjects();
@@ -92,7 +68,6 @@ JDBCConnectorTarget& JDBCConnectorTarget::operator =(JsonView jsonValue)
     }
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -102,7 +77,6 @@ JDBCConnectorTarget& JDBCConnectorTarget::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

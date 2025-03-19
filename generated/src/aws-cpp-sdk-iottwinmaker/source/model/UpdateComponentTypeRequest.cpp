@@ -12,21 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateComponentTypeRequest::UpdateComponentTypeRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_isSingleton(false),
-    m_isSingletonHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertyDefinitionsHasBeenSet(false),
-    m_extendsFromHasBeenSet(false),
-    m_functionsHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false),
-    m_componentTypeNameHasBeenSet(false),
-    m_compositeComponentTypesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateComponentTypeRequest::SerializePayload() const
 {
   JsonValue payload;

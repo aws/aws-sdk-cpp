@@ -35,7 +35,7 @@ namespace Model
   class ECSServiceRecommendationFilter
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationFilter();
+    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationFilter() = default;
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,12 +60,10 @@ namespace Model
      * find your Amazon ECS service recommendations with a tag key value of
      * <code>Owner</code> or without any tag keys assigned.</p>
      */
-    inline const ECSServiceRecommendationFilterName& GetName() const{ return m_name; }
+    inline ECSServiceRecommendationFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ECSServiceRecommendationFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ECSServiceRecommendationFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ECSServiceRecommendationFilter& WithName(const ECSServiceRecommendationFilterName& value) { SetName(value); return *this;}
-    inline ECSServiceRecommendationFilter& WithName(ECSServiceRecommendationFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ECSServiceRecommendationFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ECSServiceRecommendationFilter& WithName(ECSServiceRecommendationFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,18 @@ namespace Model
      * <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, or
      * <code>MemoryOverprovisioned</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ECSServiceRecommendationFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ECSServiceRecommendationFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ECSServiceRecommendationFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ECSServiceRecommendationFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ECSServiceRecommendationFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ECSServiceRecommendationFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ECSServiceRecommendationFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    ECSServiceRecommendationFilterName m_name;
+    ECSServiceRecommendationFilterName m_name{ECSServiceRecommendationFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

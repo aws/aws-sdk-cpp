@@ -21,7 +21,7 @@ namespace Model
   class DescribeConfigurationRevisionRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API DescribeConfigurationRevisionRequest();
+    AWS_KAFKA_API DescribeConfigurationRevisionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * configuration and all of its revisions.</p>
          
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribeConfigurationRevisionRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeConfigurationRevisionRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeConfigurationRevisionRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeConfigurationRevisionRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * configuration.</p>
          
      */
-    inline long long GetRevision() const{ return m_revision; }
+    inline long long GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
     inline void SetRevision(long long value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline DescribeConfigurationRevisionRequest& WithRevision(long long value) { SetRevision(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    long long m_revision;
+    long long m_revision{0};
     bool m_revisionHasBeenSet = false;
   };
 

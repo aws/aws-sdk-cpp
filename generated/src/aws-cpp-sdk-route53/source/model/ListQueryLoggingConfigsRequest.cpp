@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListQueryLoggingConfigsRequest::ListQueryLoggingConfigsRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResultsHasBeenSet(false)
-{
-}
 
 Aws::String ListQueryLoggingConfigsRequest::SerializePayload() const
 {

@@ -34,7 +34,7 @@ namespace Model
   class OnDemandCapacityReservationOptions
   {
   public:
-    AWS_EMR_API OnDemandCapacityReservationOptions();
+    AWS_EMR_API OnDemandCapacityReservationOptions() = default;
     AWS_EMR_API OnDemandCapacityReservationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API OnDemandCapacityReservationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * value, the fleet fulfills the On-Demand capacity according to the chosen
      * On-Demand allocation strategy.</p>
      */
-    inline const OnDemandCapacityReservationUsageStrategy& GetUsageStrategy() const{ return m_usageStrategy; }
+    inline OnDemandCapacityReservationUsageStrategy GetUsageStrategy() const { return m_usageStrategy; }
     inline bool UsageStrategyHasBeenSet() const { return m_usageStrategyHasBeenSet; }
-    inline void SetUsageStrategy(const OnDemandCapacityReservationUsageStrategy& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = value; }
-    inline void SetUsageStrategy(OnDemandCapacityReservationUsageStrategy&& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = std::move(value); }
-    inline OnDemandCapacityReservationOptions& WithUsageStrategy(const OnDemandCapacityReservationUsageStrategy& value) { SetUsageStrategy(value); return *this;}
-    inline OnDemandCapacityReservationOptions& WithUsageStrategy(OnDemandCapacityReservationUsageStrategy&& value) { SetUsageStrategy(std::move(value)); return *this;}
+    inline void SetUsageStrategy(OnDemandCapacityReservationUsageStrategy value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = value; }
+    inline OnDemandCapacityReservationOptions& WithUsageStrategy(OnDemandCapacityReservationUsageStrategy value) { SetUsageStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * instance avoids running in a Capacity Reservation even if one is available. The
      * instance runs as an On-Demand Instance.</p> </li> </ul>
      */
-    inline const OnDemandCapacityReservationPreference& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
+    inline OnDemandCapacityReservationPreference GetCapacityReservationPreference() const { return m_capacityReservationPreference; }
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
-    inline void SetCapacityReservationPreference(const OnDemandCapacityReservationPreference& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
-    inline void SetCapacityReservationPreference(OnDemandCapacityReservationPreference&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::move(value); }
-    inline OnDemandCapacityReservationOptions& WithCapacityReservationPreference(const OnDemandCapacityReservationPreference& value) { SetCapacityReservationPreference(value); return *this;}
-    inline OnDemandCapacityReservationOptions& WithCapacityReservationPreference(OnDemandCapacityReservationPreference&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
+    inline void SetCapacityReservationPreference(OnDemandCapacityReservationPreference value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
+    inline OnDemandCapacityReservationOptions& WithCapacityReservationPreference(OnDemandCapacityReservationPreference value) { SetCapacityReservationPreference(value); return *this;}
     ///@}
 
     ///@{
@@ -84,21 +80,19 @@ namespace Model
      * <p>The ARN of the Capacity Reservation resource group in which to run the
      * instance.</p>
      */
-    inline const Aws::String& GetCapacityReservationResourceGroupArn() const{ return m_capacityReservationResourceGroupArn; }
+    inline const Aws::String& GetCapacityReservationResourceGroupArn() const { return m_capacityReservationResourceGroupArn; }
     inline bool CapacityReservationResourceGroupArnHasBeenSet() const { return m_capacityReservationResourceGroupArnHasBeenSet; }
-    inline void SetCapacityReservationResourceGroupArn(const Aws::String& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = value; }
-    inline void SetCapacityReservationResourceGroupArn(Aws::String&& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = std::move(value); }
-    inline void SetCapacityReservationResourceGroupArn(const char* value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn.assign(value); }
-    inline OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(const Aws::String& value) { SetCapacityReservationResourceGroupArn(value); return *this;}
-    inline OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(Aws::String&& value) { SetCapacityReservationResourceGroupArn(std::move(value)); return *this;}
-    inline OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(const char* value) { SetCapacityReservationResourceGroupArn(value); return *this;}
+    template<typename CapacityReservationResourceGroupArnT = Aws::String>
+    void SetCapacityReservationResourceGroupArn(CapacityReservationResourceGroupArnT&& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = std::forward<CapacityReservationResourceGroupArnT>(value); }
+    template<typename CapacityReservationResourceGroupArnT = Aws::String>
+    OnDemandCapacityReservationOptions& WithCapacityReservationResourceGroupArn(CapacityReservationResourceGroupArnT&& value) { SetCapacityReservationResourceGroupArn(std::forward<CapacityReservationResourceGroupArnT>(value)); return *this;}
     ///@}
   private:
 
-    OnDemandCapacityReservationUsageStrategy m_usageStrategy;
+    OnDemandCapacityReservationUsageStrategy m_usageStrategy{OnDemandCapacityReservationUsageStrategy::NOT_SET};
     bool m_usageStrategyHasBeenSet = false;
 
-    OnDemandCapacityReservationPreference m_capacityReservationPreference;
+    OnDemandCapacityReservationPreference m_capacityReservationPreference{OnDemandCapacityReservationPreference::NOT_SET};
     bool m_capacityReservationPreferenceHasBeenSet = false;
 
     Aws::String m_capacityReservationResourceGroupArn;

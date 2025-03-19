@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DataSourceSyncJobMetrics::DataSourceSyncJobMetrics() : 
-    m_documentsAddedHasBeenSet(false),
-    m_documentsModifiedHasBeenSet(false),
-    m_documentsDeletedHasBeenSet(false),
-    m_documentsFailedHasBeenSet(false),
-    m_documentsScannedHasBeenSet(false)
-{
-}
-
 DataSourceSyncJobMetrics::DataSourceSyncJobMetrics(JsonView jsonValue)
-  : DataSourceSyncJobMetrics()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataSourceSyncJobMetrics& DataSourceSyncJobMetrics::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("DocumentsAdded"))
   {
     m_documentsAdded = jsonValue.GetString("DocumentsAdded");
-
     m_documentsAddedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentsModified"))
   {
     m_documentsModified = jsonValue.GetString("DocumentsModified");
-
     m_documentsModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentsDeleted"))
   {
     m_documentsDeleted = jsonValue.GetString("DocumentsDeleted");
-
     m_documentsDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentsFailed"))
   {
     m_documentsFailed = jsonValue.GetString("DocumentsFailed");
-
     m_documentsFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentsScanned"))
   {
     m_documentsScanned = jsonValue.GetString("DocumentsScanned");
-
     m_documentsScannedHasBeenSet = true;
   }
-
   return *this;
 }
 

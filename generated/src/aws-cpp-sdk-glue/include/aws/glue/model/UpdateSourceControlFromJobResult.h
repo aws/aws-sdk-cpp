@@ -27,7 +27,7 @@ namespace Model
   class UpdateSourceControlFromJobResult
   {
   public:
-    AWS_GLUE_API UpdateSourceControlFromJobResult();
+    AWS_GLUE_API UpdateSourceControlFromJobResult() = default;
     AWS_GLUE_API UpdateSourceControlFromJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API UpdateSourceControlFromJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The name of the Glue job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
-    inline void SetJobName(const Aws::String& value) { m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobName.assign(value); }
-    inline UpdateSourceControlFromJobResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline UpdateSourceControlFromJobResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+    inline const Aws::String& GetJobName() const { return m_jobName; }
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    UpdateSourceControlFromJobResult& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSourceControlFromJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSourceControlFromJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSourceControlFromJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobName;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-StaticPolicyDefinitionItem::StaticPolicyDefinitionItem() : 
-    m_descriptionHasBeenSet(false)
-{
-}
-
 StaticPolicyDefinitionItem::StaticPolicyDefinitionItem(JsonView jsonValue)
-  : StaticPolicyDefinitionItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StaticPolicyDefinitionItem& StaticPolicyDefinitionItem::operator =(JsonView json
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

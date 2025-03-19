@@ -12,24 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTaskSetRequest::CreateTaskSetRequest() : 
-    m_serviceHasBeenSet(false),
-    m_clusterHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_scaleHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTaskSetRequest::SerializePayload() const
 {
   JsonValue payload;

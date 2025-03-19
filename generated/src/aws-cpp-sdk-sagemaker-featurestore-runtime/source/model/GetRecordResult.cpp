@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRecordResult::GetRecordResult()
-{
-}
-
 GetRecordResult::GetRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetRecordResult& GetRecordResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_record.push_back(recordJsonList[recordIndex].AsObject());
     }
+    m_recordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiresAt"))
   {
     m_expiresAt = jsonValue.GetString("ExpiresAt");
-
+    m_expiresAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

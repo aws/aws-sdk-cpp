@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteGuardrailRequest::DeleteGuardrailRequest() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGuardrailRequest::SerializePayload() const
 {
   return {};

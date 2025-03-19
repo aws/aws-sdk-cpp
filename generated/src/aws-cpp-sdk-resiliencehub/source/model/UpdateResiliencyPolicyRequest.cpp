@@ -12,18 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResiliencyPolicyRequest::UpdateResiliencyPolicyRequest() : 
-    m_dataLocationConstraint(DataLocationConstraint::NOT_SET),
-    m_dataLocationConstraintHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_policyDescriptionHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_tier(ResiliencyPolicyTier::NOT_SET),
-    m_tierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResiliencyPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

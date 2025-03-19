@@ -20,17 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ChangeInfo::ChangeInfo() : 
-    m_idHasBeenSet(false),
-    m_status(ChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_submittedAtHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 ChangeInfo::ChangeInfo(const XmlNode& xmlNode)
-  : ChangeInfo()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ ChangeInfo& ChangeInfo::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ChangeStatusMapper::GetChangeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ChangeStatusMapper::GetChangeStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode submittedAtNode = resultNode.FirstChild("SubmittedAt");

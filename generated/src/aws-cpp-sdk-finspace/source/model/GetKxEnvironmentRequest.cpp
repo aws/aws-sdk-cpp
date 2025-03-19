@@ -12,11 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKxEnvironmentRequest::GetKxEnvironmentRequest() : 
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetKxEnvironmentRequest::SerializePayload() const
 {
   return {};

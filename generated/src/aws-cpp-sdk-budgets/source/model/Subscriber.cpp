@@ -18,15 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-Subscriber::Subscriber() : 
-    m_subscriptionType(SubscriptionType::NOT_SET),
-    m_subscriptionTypeHasBeenSet(false),
-    m_addressHasBeenSet(false)
-{
-}
-
 Subscriber::Subscriber(JsonView jsonValue)
-  : Subscriber()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Subscriber& Subscriber::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubscriptionType"))
   {
     m_subscriptionType = SubscriptionTypeMapper::GetSubscriptionTypeForName(jsonValue.GetString("SubscriptionType"));
-
     m_subscriptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   return *this;
 }
 

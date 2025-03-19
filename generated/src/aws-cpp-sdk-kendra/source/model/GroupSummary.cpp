@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-GroupSummary::GroupSummary() : 
-    m_groupIdHasBeenSet(false),
-    m_orderingId(0),
-    m_orderingIdHasBeenSet(false)
-{
-}
-
 GroupSummary::GroupSummary(JsonView jsonValue)
-  : GroupSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GroupSummary& GroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderingId"))
   {
     m_orderingId = jsonValue.GetInt64("OrderingId");
-
     m_orderingIdHasBeenSet = true;
   }
-
   return *this;
 }
 

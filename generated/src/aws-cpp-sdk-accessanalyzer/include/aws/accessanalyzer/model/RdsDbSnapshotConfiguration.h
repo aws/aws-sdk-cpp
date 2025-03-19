@@ -38,7 +38,7 @@ namespace Model
   class RdsDbSnapshotConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API RdsDbSnapshotConfiguration();
+    AWS_ACCESSANALYZER_API RdsDbSnapshotConfiguration() = default;
     AWS_ACCESSANALYZER_API RdsDbSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API RdsDbSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,18 +51,16 @@ namespace Model
      * manual DB snapshot. The only valid value for <code>attributeName</code> for the
      * attribute map is restore.</p>
      */
-    inline const Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline RdsDbSnapshotConfiguration& WithAttributes(const Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>& value) { SetAttributes(value); return *this;}
-    inline RdsDbSnapshotConfiguration& WithAttributes(Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline RdsDbSnapshotConfiguration& AddAttributes(const Aws::String& key, const RdsDbSnapshotAttributeValue& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline RdsDbSnapshotConfiguration& AddAttributes(Aws::String&& key, const RdsDbSnapshotAttributeValue& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline RdsDbSnapshotConfiguration& AddAttributes(const Aws::String& key, RdsDbSnapshotAttributeValue&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline RdsDbSnapshotConfiguration& AddAttributes(Aws::String&& key, RdsDbSnapshotAttributeValue&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline RdsDbSnapshotConfiguration& AddAttributes(const char* key, RdsDbSnapshotAttributeValue&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline RdsDbSnapshotConfiguration& AddAttributes(const char* key, const RdsDbSnapshotAttributeValue& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, RdsDbSnapshotAttributeValue>>
+    RdsDbSnapshotConfiguration& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = RdsDbSnapshotAttributeValue>
+    RdsDbSnapshotConfiguration& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * do not specify the specify the <code>kmsKeyId</code>, then the access preview
      * considers the snapshot as unencrypted.</p> </li> </ul>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline RdsDbSnapshotConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline RdsDbSnapshotConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline RdsDbSnapshotConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    RdsDbSnapshotConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

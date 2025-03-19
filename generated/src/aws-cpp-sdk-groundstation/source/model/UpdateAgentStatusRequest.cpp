@@ -12,14 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAgentStatusRequest::UpdateAgentStatusRequest() : 
-    m_agentIdHasBeenSet(false),
-    m_aggregateStatusHasBeenSet(false),
-    m_componentStatusesHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAgentStatusRequest::SerializePayload() const
 {
   JsonValue payload;

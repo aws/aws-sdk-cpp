@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-VersionDeleteError::VersionDeleteError() : 
-    m_versionNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 VersionDeleteError::VersionDeleteError(JsonView jsonValue)
-  : VersionDeleteError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VersionDeleteError& VersionDeleteError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("versionName"))
   {
     m_versionName = jsonValue.GetString("versionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

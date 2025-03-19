@@ -18,15 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceSummary::ServiceSummary() : 
-    m_keyAttributesHasBeenSet(false),
-    m_attributeMapsHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
-{
-}
-
 ServiceSummary::ServiceSummary(JsonView jsonValue)
-  : ServiceSummary()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     }
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeMaps"))
   {
     Aws::Utils::Array<JsonView> attributeMapsJsonList = jsonValue.GetArray("AttributeMaps");
@@ -58,7 +49,6 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     }
     m_attributeMapsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricReferences"))
   {
     Aws::Utils::Array<JsonView> metricReferencesJsonList = jsonValue.GetArray("MetricReferences");
@@ -68,7 +58,6 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     }
     m_metricReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

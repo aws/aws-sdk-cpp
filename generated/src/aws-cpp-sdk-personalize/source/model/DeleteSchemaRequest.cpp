@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSchemaRequest::DeleteSchemaRequest() : 
-    m_schemaArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

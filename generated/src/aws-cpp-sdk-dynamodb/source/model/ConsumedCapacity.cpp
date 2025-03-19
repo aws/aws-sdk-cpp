@@ -18,22 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ConsumedCapacity::ConsumedCapacity() : 
-    m_tableNameHasBeenSet(false),
-    m_capacityUnits(0.0),
-    m_capacityUnitsHasBeenSet(false),
-    m_readCapacityUnits(0.0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0.0),
-    m_writeCapacityUnitsHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_localSecondaryIndexesHasBeenSet(false),
-    m_globalSecondaryIndexesHasBeenSet(false)
-{
-}
-
 ConsumedCapacity::ConsumedCapacity(JsonView jsonValue)
-  : ConsumedCapacity()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ConsumedCapacity& ConsumedCapacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityUnits"))
   {
     m_capacityUnits = jsonValue.GetDouble("CapacityUnits");
-
     m_capacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetDouble("ReadCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteCapacityUnits"))
   {
     m_writeCapacityUnits = jsonValue.GetDouble("WriteCapacityUnits");
-
     m_writeCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetObject("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
     Aws::Map<Aws::String, JsonView> localSecondaryIndexesJsonMap = jsonValue.GetObject("LocalSecondaryIndexes").GetAllObjects();
@@ -84,7 +59,6 @@ ConsumedCapacity& ConsumedCapacity::operator =(JsonView jsonValue)
     }
     m_localSecondaryIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
     Aws::Map<Aws::String, JsonView> globalSecondaryIndexesJsonMap = jsonValue.GetObject("GlobalSecondaryIndexes").GetAllObjects();
@@ -94,7 +68,6 @@ ConsumedCapacity& ConsumedCapacity::operator =(JsonView jsonValue)
     }
     m_globalSecondaryIndexesHasBeenSet = true;
   }
-
   return *this;
 }
 

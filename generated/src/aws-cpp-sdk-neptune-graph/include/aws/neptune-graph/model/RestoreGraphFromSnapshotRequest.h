@@ -22,7 +22,7 @@ namespace Model
   class RestoreGraphFromSnapshotRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API RestoreGraphFromSnapshotRequest();
+    AWS_NEPTUNEGRAPH_API RestoreGraphFromSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the snapshot in question.</p>
      */
-    inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+    inline const Aws::String& GetSnapshotIdentifier() const { return m_snapshotIdentifier; }
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
-    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
-    inline RestoreGraphFromSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
-    inline RestoreGraphFromSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
-    inline RestoreGraphFromSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+    template<typename SnapshotIdentifierT = Aws::String>
+    void SetSnapshotIdentifier(SnapshotIdentifierT&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::forward<SnapshotIdentifierT>(value); }
+    template<typename SnapshotIdentifierT = Aws::String>
+    RestoreGraphFromSnapshotRequest& WithSnapshotIdentifier(SnapshotIdentifierT&& value) { SetSnapshotIdentifier(std::forward<SnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * hyphens, and its first character must be a letter. It cannot end with a hyphen
      * or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
      */
-    inline const Aws::String& GetGraphName() const{ return m_graphName; }
+    inline const Aws::String& GetGraphName() const { return m_graphName; }
     inline bool GraphNameHasBeenSet() const { return m_graphNameHasBeenSet; }
-    inline void SetGraphName(const Aws::String& value) { m_graphNameHasBeenSet = true; m_graphName = value; }
-    inline void SetGraphName(Aws::String&& value) { m_graphNameHasBeenSet = true; m_graphName = std::move(value); }
-    inline void SetGraphName(const char* value) { m_graphNameHasBeenSet = true; m_graphName.assign(value); }
-    inline RestoreGraphFromSnapshotRequest& WithGraphName(const Aws::String& value) { SetGraphName(value); return *this;}
-    inline RestoreGraphFromSnapshotRequest& WithGraphName(Aws::String&& value) { SetGraphName(std::move(value)); return *this;}
-    inline RestoreGraphFromSnapshotRequest& WithGraphName(const char* value) { SetGraphName(value); return *this;}
+    template<typename GraphNameT = Aws::String>
+    void SetGraphName(GraphNameT&& value) { m_graphNameHasBeenSet = true; m_graphName = std::forward<GraphNameT>(value); }
+    template<typename GraphNameT = Aws::String>
+    RestoreGraphFromSnapshotRequest& WithGraphName(GraphNameT&& value) { SetGraphName(std::forward<GraphNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
      * the graph.</p> <p>Min = 16</p>
      */
-    inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
+    inline int GetProvisionedMemory() const { return m_provisionedMemory; }
     inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
     inline void SetProvisionedMemory(int value) { m_provisionedMemoryHasBeenSet = true; m_provisionedMemory = value; }
     inline RestoreGraphFromSnapshotRequest& WithProvisionedMemory(int value) { SetProvisionedMemory(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
      * <p>A value that indicates whether the graph has deletion protection enabled. The
      * graph can't be deleted when deletion protection is enabled.</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline RestoreGraphFromSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -95,19 +91,16 @@ namespace Model
      * <p>Adds metadata tags to the snapshot. These tags can also be used with cost
      * allocation reporting, or used in a Condition statement in an IAM policy.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RestoreGraphFromSnapshotRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline RestoreGraphFromSnapshotRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline RestoreGraphFromSnapshotRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline RestoreGraphFromSnapshotRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline RestoreGraphFromSnapshotRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline RestoreGraphFromSnapshotRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline RestoreGraphFromSnapshotRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline RestoreGraphFromSnapshotRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline RestoreGraphFromSnapshotRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    RestoreGraphFromSnapshotRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    RestoreGraphFromSnapshotRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -116,7 +109,7 @@ namespace Model
      *  <p> Additional charges equivalent to the m-NCUs selected for the
      * graph apply for each replica. </p> 
      */
-    inline int GetReplicaCount() const{ return m_replicaCount; }
+    inline int GetReplicaCount() const { return m_replicaCount; }
     inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
     inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
     inline RestoreGraphFromSnapshotRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
@@ -128,7 +121,7 @@ namespace Model
      * access to graphs is IAM authenticated. (<code>true</code> to enable, or
      * <code>false</code> to disable).</p>
      */
-    inline bool GetPublicConnectivity() const{ return m_publicConnectivity; }
+    inline bool GetPublicConnectivity() const { return m_publicConnectivity; }
     inline bool PublicConnectivityHasBeenSet() const { return m_publicConnectivityHasBeenSet; }
     inline void SetPublicConnectivity(bool value) { m_publicConnectivityHasBeenSet = true; m_publicConnectivity = value; }
     inline RestoreGraphFromSnapshotRequest& WithPublicConnectivity(bool value) { SetPublicConnectivity(value); return *this;}
@@ -141,19 +134,19 @@ namespace Model
     Aws::String m_graphName;
     bool m_graphNameHasBeenSet = false;
 
-    int m_provisionedMemory;
+    int m_provisionedMemory{0};
     bool m_provisionedMemoryHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_replicaCount;
+    int m_replicaCount{0};
     bool m_replicaCountHasBeenSet = false;
 
-    bool m_publicConnectivity;
+    bool m_publicConnectivity{false};
     bool m_publicConnectivityHasBeenSet = false;
   };
 

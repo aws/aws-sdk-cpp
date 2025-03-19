@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCustomDomainAssociationsResult::DescribeCustomDomainAssociationsResult()
-{
-}
-
 DescribeCustomDomainAssociationsResult::DescribeCustomDomainAssociationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeCustomDomainAssociationsResult& DescribeCustomDomainAssociationsResult::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode associationsNode = resultNode.FirstChild("Associations");
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("Association");
+      m_associationsHasBeenSet = !associationsMember.IsNull();
       while(!associationsMember.IsNull())
       {
         m_associations.push_back(associationsMember);
         associationsMember = associationsMember.NextNode("Association");
       }
 
+      m_associationsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeCustomDomainAssociationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

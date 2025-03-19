@@ -32,7 +32,7 @@ namespace Model
   class LongCondition
   {
   public:
-    AWS_BACKUPSEARCH_API LongCondition();
+    AWS_BACKUPSEARCH_API LongCondition() = default;
     AWS_BACKUPSEARCH_API LongCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API LongCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The value of an item included in one of the search item filters.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline LongCondition& WithValue(long long value) { SetValue(value); return *this;}
@@ -56,19 +56,17 @@ namespace Model
      * <code>NOT_EQUALS_TO</code> with a value of <code>4</code> will return all
      * values.</p>
      */
-    inline const LongConditionOperator& GetOperator() const{ return m_operator; }
+    inline LongConditionOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const LongConditionOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(LongConditionOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline LongCondition& WithOperator(const LongConditionOperator& value) { SetOperator(value); return *this;}
-    inline LongCondition& WithOperator(LongConditionOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(LongConditionOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline LongCondition& WithOperator(LongConditionOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
 
-    LongConditionOperator m_operator;
+    LongConditionOperator m_operator{LongConditionOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

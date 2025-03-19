@@ -18,13 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WhatsAppSignupCallback::WhatsAppSignupCallback() : 
-    m_accessTokenHasBeenSet(false)
-{
-}
-
 WhatsAppSignupCallback::WhatsAppSignupCallback(JsonView jsonValue)
-  : WhatsAppSignupCallback()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WhatsAppSignupCallback& WhatsAppSignupCallback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SearchResultItem::SearchResultItem() : 
-    m_assetListingHasBeenSet(false),
-    m_dataProductListingHasBeenSet(false)
-{
-}
-
 SearchResultItem::SearchResultItem(JsonView jsonValue)
-  : SearchResultItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SearchResultItem& SearchResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetListing"))
   {
     m_assetListing = jsonValue.GetObject("assetListing");
-
     m_assetListingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProductListing"))
   {
     m_dataProductListing = jsonValue.GetObject("dataProductListing");
-
     m_dataProductListingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeReplicatorRequest : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API DescribeReplicatorRequest();
+    AWS_KAFKA_API DescribeReplicatorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicator to be described.</p>
      */
-    inline const Aws::String& GetReplicatorArn() const{ return m_replicatorArn; }
+    inline const Aws::String& GetReplicatorArn() const { return m_replicatorArn; }
     inline bool ReplicatorArnHasBeenSet() const { return m_replicatorArnHasBeenSet; }
-    inline void SetReplicatorArn(const Aws::String& value) { m_replicatorArnHasBeenSet = true; m_replicatorArn = value; }
-    inline void SetReplicatorArn(Aws::String&& value) { m_replicatorArnHasBeenSet = true; m_replicatorArn = std::move(value); }
-    inline void SetReplicatorArn(const char* value) { m_replicatorArnHasBeenSet = true; m_replicatorArn.assign(value); }
-    inline DescribeReplicatorRequest& WithReplicatorArn(const Aws::String& value) { SetReplicatorArn(value); return *this;}
-    inline DescribeReplicatorRequest& WithReplicatorArn(Aws::String&& value) { SetReplicatorArn(std::move(value)); return *this;}
-    inline DescribeReplicatorRequest& WithReplicatorArn(const char* value) { SetReplicatorArn(value); return *this;}
+    template<typename ReplicatorArnT = Aws::String>
+    void SetReplicatorArn(ReplicatorArnT&& value) { m_replicatorArnHasBeenSet = true; m_replicatorArn = std::forward<ReplicatorArnT>(value); }
+    template<typename ReplicatorArnT = Aws::String>
+    DescribeReplicatorRequest& WithReplicatorArn(ReplicatorArnT&& value) { SetReplicatorArn(std::forward<ReplicatorArnT>(value)); return *this;}
     ///@}
   private:
 

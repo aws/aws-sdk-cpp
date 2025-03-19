@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-Message::Message() : 
-    m_role(ConversationRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("role"))
   {
     m_role = ConversationRoleMapper::GetConversationRoleForName(jsonValue.GetString("role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("content");
@@ -49,7 +39,6 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

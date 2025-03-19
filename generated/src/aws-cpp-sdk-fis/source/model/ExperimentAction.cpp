@@ -18,20 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentAction::ExperimentAction() : 
-    m_actionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_startAfterHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 ExperimentAction::ExperimentAction(JsonView jsonValue)
-  : ExperimentAction()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ ExperimentAction& ExperimentAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionId"))
   {
     m_actionId = jsonValue.GetString("actionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -61,7 +44,6 @@ ExperimentAction& ExperimentAction::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     Aws::Map<Aws::String, JsonView> targetsJsonMap = jsonValue.GetObject("targets").GetAllObjects();
@@ -71,7 +53,6 @@ ExperimentAction& ExperimentAction::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startAfter"))
   {
     Aws::Utils::Array<JsonView> startAfterJsonList = jsonValue.GetArray("startAfter");
@@ -81,28 +62,21 @@ ExperimentAction& ExperimentAction::operator =(JsonView jsonValue)
     }
     m_startAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

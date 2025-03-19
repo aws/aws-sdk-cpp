@@ -19,19 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-RequestValidator::RequestValidator() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_validateRequestBody(false),
-    m_validateRequestBodyHasBeenSet(false),
-    m_validateRequestParameters(false),
-    m_validateRequestParametersHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 RequestValidator::RequestValidator(JsonView jsonValue)
-  : RequestValidator()
 {
   *this = jsonValue;
 }
@@ -41,31 +29,23 @@ RequestValidator& RequestValidator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validateRequestBody"))
   {
     m_validateRequestBody = jsonValue.GetBool("validateRequestBody");
-
     m_validateRequestBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validateRequestParameters"))
   {
     m_validateRequestParameters = jsonValue.GetBool("validateRequestParameters");
-
     m_validateRequestParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

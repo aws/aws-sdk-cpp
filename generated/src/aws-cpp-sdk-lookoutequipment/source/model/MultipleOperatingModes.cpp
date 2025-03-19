@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-MultipleOperatingModes::MultipleOperatingModes() : 
-    m_status(StatisticalIssueStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 MultipleOperatingModes::MultipleOperatingModes(JsonView jsonValue)
-  : MultipleOperatingModes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MultipleOperatingModes& MultipleOperatingModes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatisticalIssueStatusMapper::GetStatisticalIssueStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

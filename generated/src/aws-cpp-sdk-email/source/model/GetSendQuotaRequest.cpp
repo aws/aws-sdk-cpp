@@ -10,10 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetSendQuotaRequest::GetSendQuotaRequest()
-{
-}
-
 Aws::String GetSendQuotaRequest::SerializePayload() const
 {
   Aws::StringStream ss;

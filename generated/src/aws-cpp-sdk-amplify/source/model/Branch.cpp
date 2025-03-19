@@ -18,49 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-Branch::Branch() : 
-    m_branchArnHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_enableNotification(false),
-    m_enableNotificationHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_enableAutoBuild(false),
-    m_enableAutoBuildHasBeenSet(false),
-    m_enableSkewProtection(false),
-    m_enableSkewProtectionHasBeenSet(false),
-    m_customDomainsHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_activeJobIdHasBeenSet(false),
-    m_totalNumberOfJobsHasBeenSet(false),
-    m_enableBasicAuth(false),
-    m_enableBasicAuthHasBeenSet(false),
-    m_enablePerformanceMode(false),
-    m_enablePerformanceModeHasBeenSet(false),
-    m_thumbnailUrlHasBeenSet(false),
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_buildSpecHasBeenSet(false),
-    m_ttlHasBeenSet(false),
-    m_associatedResourcesHasBeenSet(false),
-    m_enablePullRequestPreview(false),
-    m_enablePullRequestPreviewHasBeenSet(false),
-    m_pullRequestEnvironmentNameHasBeenSet(false),
-    m_destinationBranchHasBeenSet(false),
-    m_sourceBranchHasBeenSet(false),
-    m_backendEnvironmentArnHasBeenSet(false),
-    m_backendHasBeenSet(false),
-    m_computeRoleArnHasBeenSet(false)
-{
-}
-
 Branch::Branch(JsonView jsonValue)
-  : Branch()
 {
   *this = jsonValue;
 }
@@ -70,24 +28,18 @@ Branch& Branch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branchArn"))
   {
     m_branchArn = jsonValue.GetString("branchArn");
-
     m_branchArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchName"))
   {
     m_branchName = jsonValue.GetString("branchName");
-
     m_branchNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -97,42 +49,31 @@ Branch& Branch::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableNotification"))
   {
     m_enableNotification = jsonValue.GetBool("enableNotification");
-
     m_enableNotificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();
@@ -142,21 +83,16 @@ Branch& Branch::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableAutoBuild"))
   {
     m_enableAutoBuild = jsonValue.GetBool("enableAutoBuild");
-
     m_enableAutoBuildHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableSkewProtection"))
   {
     m_enableSkewProtection = jsonValue.GetBool("enableSkewProtection");
-
     m_enableSkewProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomains"))
   {
     Aws::Utils::Array<JsonView> customDomainsJsonList = jsonValue.GetArray("customDomains");
@@ -166,70 +102,51 @@ Branch& Branch::operator =(JsonView jsonValue)
     }
     m_customDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framework"))
   {
     m_framework = jsonValue.GetString("framework");
-
     m_frameworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeJobId"))
   {
     m_activeJobId = jsonValue.GetString("activeJobId");
-
     m_activeJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalNumberOfJobs"))
   {
     m_totalNumberOfJobs = jsonValue.GetString("totalNumberOfJobs");
-
     m_totalNumberOfJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableBasicAuth"))
   {
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
-
     m_enableBasicAuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enablePerformanceMode"))
   {
     m_enablePerformanceMode = jsonValue.GetBool("enablePerformanceMode");
-
     m_enablePerformanceModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailUrl"))
   {
     m_thumbnailUrl = jsonValue.GetString("thumbnailUrl");
-
     m_thumbnailUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("basicAuthCredentials"))
   {
     m_basicAuthCredentials = jsonValue.GetString("basicAuthCredentials");
-
     m_basicAuthCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildSpec"))
   {
     m_buildSpec = jsonValue.GetString("buildSpec");
-
     m_buildSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ttl"))
   {
     m_ttl = jsonValue.GetString("ttl");
-
     m_ttlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedResources"))
   {
     Aws::Utils::Array<JsonView> associatedResourcesJsonList = jsonValue.GetArray("associatedResources");
@@ -239,56 +156,41 @@ Branch& Branch::operator =(JsonView jsonValue)
     }
     m_associatedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enablePullRequestPreview"))
   {
     m_enablePullRequestPreview = jsonValue.GetBool("enablePullRequestPreview");
-
     m_enablePullRequestPreviewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pullRequestEnvironmentName"))
   {
     m_pullRequestEnvironmentName = jsonValue.GetString("pullRequestEnvironmentName");
-
     m_pullRequestEnvironmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationBranch"))
   {
     m_destinationBranch = jsonValue.GetString("destinationBranch");
-
     m_destinationBranchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceBranch"))
   {
     m_sourceBranch = jsonValue.GetString("sourceBranch");
-
     m_sourceBranchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backendEnvironmentArn"))
   {
     m_backendEnvironmentArn = jsonValue.GetString("backendEnvironmentArn");
-
     m_backendEnvironmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("backend"))
   {
     m_backend = jsonValue.GetObject("backend");
-
     m_backendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeRoleArn"))
   {
     m_computeRoleArn = jsonValue.GetString("computeRoleArn");
-
     m_computeRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

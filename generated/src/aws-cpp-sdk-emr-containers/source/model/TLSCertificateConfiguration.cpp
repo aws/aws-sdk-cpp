@@ -18,16 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-TLSCertificateConfiguration::TLSCertificateConfiguration() : 
-    m_certificateProviderType(CertificateProviderType::NOT_SET),
-    m_certificateProviderTypeHasBeenSet(false),
-    m_publicCertificateSecretArnHasBeenSet(false),
-    m_privateCertificateSecretArnHasBeenSet(false)
-{
-}
-
 TLSCertificateConfiguration::TLSCertificateConfiguration(JsonView jsonValue)
-  : TLSCertificateConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TLSCertificateConfiguration& TLSCertificateConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("certificateProviderType"))
   {
     m_certificateProviderType = CertificateProviderTypeMapper::GetCertificateProviderTypeForName(jsonValue.GetString("certificateProviderType"));
-
     m_certificateProviderTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicCertificateSecretArn"))
   {
     m_publicCertificateSecretArn = jsonValue.GetString("publicCertificateSecretArn");
-
     m_publicCertificateSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateCertificateSecretArn"))
   {
     m_privateCertificateSecretArn = jsonValue.GetString("privateCertificateSecretArn");
-
     m_privateCertificateSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

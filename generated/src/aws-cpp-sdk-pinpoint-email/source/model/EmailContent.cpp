@@ -18,15 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-EmailContent::EmailContent() : 
-    m_simpleHasBeenSet(false),
-    m_rawHasBeenSet(false),
-    m_templateHasBeenSet(false)
-{
-}
-
 EmailContent::EmailContent(JsonView jsonValue)
-  : EmailContent()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EmailContent& EmailContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Simple"))
   {
     m_simple = jsonValue.GetObject("Simple");
-
     m_simpleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Raw"))
   {
     m_raw = jsonValue.GetObject("Raw");
-
     m_rawHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Template"))
   {
     m_template = jsonValue.GetObject("Template");
-
     m_templateHasBeenSet = true;
   }
-
   return *this;
 }
 

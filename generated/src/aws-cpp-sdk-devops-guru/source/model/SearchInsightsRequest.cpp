@@ -12,17 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchInsightsRequest::SearchInsightsRequest() : 
-    m_startTimeRangeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String SearchInsightsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectPHIRequest::DetectPHIRequest() : 
-    m_textHasBeenSet(false)
-{
-}
-
 Aws::String DetectPHIRequest::SerializePayload() const
 {
   JsonValue payload;

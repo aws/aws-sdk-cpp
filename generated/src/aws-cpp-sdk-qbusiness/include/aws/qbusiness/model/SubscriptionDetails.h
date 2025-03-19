@@ -32,7 +32,7 @@ namespace Model
   class SubscriptionDetails
   {
   public:
-    AWS_QBUSINESS_API SubscriptionDetails();
+    AWS_QBUSINESS_API SubscriptionDetails() = default;
     AWS_QBUSINESS_API SubscriptionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SubscriptionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p> The type of an Amazon Q Business subscription. </p>
      */
-    inline const SubscriptionType& GetType() const{ return m_type; }
+    inline SubscriptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SubscriptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SubscriptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SubscriptionDetails& WithType(const SubscriptionType& value) { SetType(value); return *this;}
-    inline SubscriptionDetails& WithType(SubscriptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SubscriptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SubscriptionDetails& WithType(SubscriptionType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    SubscriptionType m_type;
+    SubscriptionType m_type{SubscriptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

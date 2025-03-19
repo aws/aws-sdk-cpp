@@ -12,17 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSessionRequest::StartSessionRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_engineConfigurationHasBeenSet(false),
-    m_notebookVersionHasBeenSet(false),
-    m_sessionIdleTimeoutInMinutes(0),
-    m_sessionIdleTimeoutInMinutesHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String StartSessionRequest::SerializePayload() const
 {
   JsonValue payload;

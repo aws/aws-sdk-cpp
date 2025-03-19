@@ -21,7 +21,7 @@ namespace Model
   class DeleteResourceDefinitionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API DeleteResourceDefinitionRequest();
+    AWS_GREENGRASS_API DeleteResourceDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the resource definition.
      */
-    inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
+    inline const Aws::String& GetResourceDefinitionId() const { return m_resourceDefinitionId; }
     inline bool ResourceDefinitionIdHasBeenSet() const { return m_resourceDefinitionIdHasBeenSet; }
-    inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
-    inline void SetResourceDefinitionId(Aws::String&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::move(value); }
-    inline void SetResourceDefinitionId(const char* value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId.assign(value); }
-    inline DeleteResourceDefinitionRequest& WithResourceDefinitionId(const Aws::String& value) { SetResourceDefinitionId(value); return *this;}
-    inline DeleteResourceDefinitionRequest& WithResourceDefinitionId(Aws::String&& value) { SetResourceDefinitionId(std::move(value)); return *this;}
-    inline DeleteResourceDefinitionRequest& WithResourceDefinitionId(const char* value) { SetResourceDefinitionId(value); return *this;}
+    template<typename ResourceDefinitionIdT = Aws::String>
+    void SetResourceDefinitionId(ResourceDefinitionIdT&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::forward<ResourceDefinitionIdT>(value); }
+    template<typename ResourceDefinitionIdT = Aws::String>
+    DeleteResourceDefinitionRequest& WithResourceDefinitionId(ResourceDefinitionIdT&& value) { SetResourceDefinitionId(std::forward<ResourceDefinitionIdT>(value)); return *this;}
     ///@}
   private:
 

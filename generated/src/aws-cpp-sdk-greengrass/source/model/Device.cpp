@@ -18,17 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-Device::Device() : 
-    m_certificateArnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_syncShadow(false),
-    m_syncShadowHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
-{
-}
-
 Device::Device(JsonView jsonValue)
-  : Device()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Device& Device::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncShadow"))
   {
     m_syncShadow = jsonValue.GetBool("SyncShadow");
-
     m_syncShadowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThingArn"))
   {
     m_thingArn = jsonValue.GetString("ThingArn");
-
     m_thingArnHasBeenSet = true;
   }
-
   return *this;
 }
 

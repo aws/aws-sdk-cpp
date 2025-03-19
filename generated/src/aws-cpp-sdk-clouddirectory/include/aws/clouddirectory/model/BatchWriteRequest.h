@@ -23,7 +23,7 @@ namespace Model
   class BatchWriteRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchWriteRequest();
+    AWS_CLOUDDIRECTORY_API BatchWriteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
      * For more information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline BatchWriteRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline BatchWriteRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline BatchWriteRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    BatchWriteRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of operations that are part of the batch.</p>
      */
-    inline const Aws::Vector<BatchWriteOperation>& GetOperations() const{ return m_operations; }
+    inline const Aws::Vector<BatchWriteOperation>& GetOperations() const { return m_operations; }
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
-    inline void SetOperations(const Aws::Vector<BatchWriteOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
-    inline void SetOperations(Aws::Vector<BatchWriteOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
-    inline BatchWriteRequest& WithOperations(const Aws::Vector<BatchWriteOperation>& value) { SetOperations(value); return *this;}
-    inline BatchWriteRequest& WithOperations(Aws::Vector<BatchWriteOperation>&& value) { SetOperations(std::move(value)); return *this;}
-    inline BatchWriteRequest& AddOperations(const BatchWriteOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
-    inline BatchWriteRequest& AddOperations(BatchWriteOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
+    template<typename OperationsT = Aws::Vector<BatchWriteOperation>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<BatchWriteOperation>>
+    BatchWriteRequest& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    template<typename OperationsT = BatchWriteOperation>
+    BatchWriteRequest& AddOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations.emplace_back(std::forward<OperationsT>(value)); return *this; }
     ///@}
   private:
 

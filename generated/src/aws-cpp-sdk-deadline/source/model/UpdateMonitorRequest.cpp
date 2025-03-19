@@ -12,14 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMonitorRequest::UpdateMonitorRequest() : 
-    m_monitorIdHasBeenSet(false),
-    m_subdomainHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

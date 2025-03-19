@@ -18,27 +18,7 @@ namespace deadline
 namespace Model
 {
 
-TaskSummary::TaskSummary() : 
-    m_taskIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_runStatus(TaskRunStatus::NOT_SET),
-    m_runStatusHasBeenSet(false),
-    m_targetRunStatus(TaskTargetRunStatus::NOT_SET),
-    m_targetRunStatusHasBeenSet(false),
-    m_failureRetryCount(0),
-    m_failureRetryCountHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_latestSessionActionIdHasBeenSet(false)
-{
-}
-
 TaskSummary::TaskSummary(JsonView jsonValue)
-  : TaskSummary()
 {
   *this = jsonValue;
 }
@@ -48,45 +28,33 @@ TaskSummary& TaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runStatus"))
   {
     m_runStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("runStatus"));
-
     m_runStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRunStatus"))
   {
     m_targetRunStatus = TaskTargetRunStatusMapper::GetTaskTargetRunStatusForName(jsonValue.GetString("targetRunStatus"));
-
     m_targetRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureRetryCount"))
   {
     m_failureRetryCount = jsonValue.GetInteger("failureRetryCount");
-
     m_failureRetryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -96,42 +64,31 @@ TaskSummary& TaskSummary::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestSessionActionId"))
   {
     m_latestSessionActionId = jsonValue.GetString("latestSessionActionId");
-
     m_latestSessionActionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

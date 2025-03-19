@@ -33,7 +33,7 @@ namespace Model
   class AccessControlPolicy
   {
   public:
-    AWS_S3_API AccessControlPolicy();
+    AWS_S3_API AccessControlPolicy() = default;
     AWS_S3_API AccessControlPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API AccessControlPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>A list of grants.</p>
      */
-    inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
+    inline const Aws::Vector<Grant>& GetGrants() const { return m_grants; }
     inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
-    inline void SetGrants(const Aws::Vector<Grant>& value) { m_grantsHasBeenSet = true; m_grants = value; }
-    inline void SetGrants(Aws::Vector<Grant>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
-    inline AccessControlPolicy& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
-    inline AccessControlPolicy& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(std::move(value)); return *this;}
-    inline AccessControlPolicy& AddGrants(const Grant& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
-    inline AccessControlPolicy& AddGrants(Grant&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
+    template<typename GrantsT = Aws::Vector<Grant>>
+    void SetGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants = std::forward<GrantsT>(value); }
+    template<typename GrantsT = Aws::Vector<Grant>>
+    AccessControlPolicy& WithGrants(GrantsT&& value) { SetGrants(std::forward<GrantsT>(value)); return *this;}
+    template<typename GrantsT = Grant>
+    AccessControlPolicy& AddGrants(GrantsT&& value) { m_grantsHasBeenSet = true; m_grants.emplace_back(std::forward<GrantsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Container for the bucket owner's display name and ID.</p>
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
+    inline const Owner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline AccessControlPolicy& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline AccessControlPolicy& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = Owner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Owner>
+    AccessControlPolicy& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
   private:
 

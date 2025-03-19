@@ -35,7 +35,7 @@ namespace Model
   class CreateClusterRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API CreateClusterRequest();
+    AWS_EKS_API CreateClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * The name must be unique within the Amazon Web Services Region and Amazon Web
      * Services account that you're creating the cluster in.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateClusterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateClusterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateClusterRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * here, the default version available in Amazon EKS is used.</p>  <p>The
      * default version might not be the latest version available.</p> 
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline CreateClusterRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CreateClusterRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CreateClusterRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateClusterRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateClusterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateClusterRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,24 +105,24 @@ namespace Model
      * However, we recommend that you use a dedicated security group for your cluster
      * control plane.</p>
      */
-    inline const VpcConfigRequest& GetResourcesVpcConfig() const{ return m_resourcesVpcConfig; }
+    inline const VpcConfigRequest& GetResourcesVpcConfig() const { return m_resourcesVpcConfig; }
     inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
-    inline void SetResourcesVpcConfig(const VpcConfigRequest& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
-    inline void SetResourcesVpcConfig(VpcConfigRequest&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::move(value); }
-    inline CreateClusterRequest& WithResourcesVpcConfig(const VpcConfigRequest& value) { SetResourcesVpcConfig(value); return *this;}
-    inline CreateClusterRequest& WithResourcesVpcConfig(VpcConfigRequest&& value) { SetResourcesVpcConfig(std::move(value)); return *this;}
+    template<typename ResourcesVpcConfigT = VpcConfigRequest>
+    void SetResourcesVpcConfig(ResourcesVpcConfigT&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::forward<ResourcesVpcConfigT>(value); }
+    template<typename ResourcesVpcConfigT = VpcConfigRequest>
+    CreateClusterRequest& WithResourcesVpcConfig(ResourcesVpcConfigT&& value) { SetResourcesVpcConfig(std::forward<ResourcesVpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Kubernetes network configuration for the cluster.</p>
      */
-    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const{ return m_kubernetesNetworkConfig; }
+    inline const KubernetesNetworkConfigRequest& GetKubernetesNetworkConfig() const { return m_kubernetesNetworkConfig; }
     inline bool KubernetesNetworkConfigHasBeenSet() const { return m_kubernetesNetworkConfigHasBeenSet; }
-    inline void SetKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = value; }
-    inline void SetKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::move(value); }
-    inline CreateClusterRequest& WithKubernetesNetworkConfig(const KubernetesNetworkConfigRequest& value) { SetKubernetesNetworkConfig(value); return *this;}
-    inline CreateClusterRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigRequest&& value) { SetKubernetesNetworkConfig(std::move(value)); return *this;}
+    template<typename KubernetesNetworkConfigT = KubernetesNetworkConfigRequest>
+    void SetKubernetesNetworkConfig(KubernetesNetworkConfigT&& value) { m_kubernetesNetworkConfigHasBeenSet = true; m_kubernetesNetworkConfig = std::forward<KubernetesNetworkConfigT>(value); }
+    template<typename KubernetesNetworkConfigT = KubernetesNetworkConfigRequest>
+    CreateClusterRequest& WithKubernetesNetworkConfig(KubernetesNetworkConfigT&& value) { SetKubernetesNetworkConfig(std::forward<KubernetesNetworkConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +137,12 @@ namespace Model
      * <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
      * 
      */
-    inline const Logging& GetLogging() const{ return m_logging; }
+    inline const Logging& GetLogging() const { return m_logging; }
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
-    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
-    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
-    inline CreateClusterRequest& WithLogging(const Logging& value) { SetLogging(value); return *this;}
-    inline CreateClusterRequest& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+    template<typename LoggingT = Logging>
+    void SetLogging(LoggingT&& value) { m_loggingHasBeenSet = true; m_logging = std::forward<LoggingT>(value); }
+    template<typename LoggingT = Logging>
+    CreateClusterRequest& WithLogging(LoggingT&& value) { SetLogging(std::forward<LoggingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +150,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateClusterRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateClusterRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateClusterRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,33 +164,30 @@ namespace Model
      * of a key and an optional value. You define both. Tags don't propagate to any
      * other cluster or Amazon Web Services resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateClusterRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateClusterRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateClusterRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateClusterRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateClusterRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateClusterRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateClusterRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateClusterRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateClusterRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The encryption configuration for the cluster.</p>
      */
-    inline const Aws::Vector<EncryptionConfig>& GetEncryptionConfig() const{ return m_encryptionConfig; }
+    inline const Aws::Vector<EncryptionConfig>& GetEncryptionConfig() const { return m_encryptionConfig; }
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    inline void SetEncryptionConfig(const Aws::Vector<EncryptionConfig>& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(Aws::Vector<EncryptionConfig>&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-    inline CreateClusterRequest& WithEncryptionConfig(const Aws::Vector<EncryptionConfig>& value) { SetEncryptionConfig(value); return *this;}
-    inline CreateClusterRequest& WithEncryptionConfig(Aws::Vector<EncryptionConfig>&& value) { SetEncryptionConfig(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig.push_back(value); return *this; }
-    inline CreateClusterRequest& AddEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig.push_back(std::move(value)); return *this; }
+    template<typename EncryptionConfigT = Aws::Vector<EncryptionConfig>>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = Aws::Vector<EncryptionConfig>>
+    CreateClusterRequest& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
+    template<typename EncryptionConfigT = EncryptionConfig>
+    CreateClusterRequest& AddEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig.emplace_back(std::forward<EncryptionConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -211,24 +200,24 @@ namespace Model
      * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
      * the Amazon Web Services cloud.</p>
      */
-    inline const OutpostConfigRequest& GetOutpostConfig() const{ return m_outpostConfig; }
+    inline const OutpostConfigRequest& GetOutpostConfig() const { return m_outpostConfig; }
     inline bool OutpostConfigHasBeenSet() const { return m_outpostConfigHasBeenSet; }
-    inline void SetOutpostConfig(const OutpostConfigRequest& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = value; }
-    inline void SetOutpostConfig(OutpostConfigRequest&& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = std::move(value); }
-    inline CreateClusterRequest& WithOutpostConfig(const OutpostConfigRequest& value) { SetOutpostConfig(value); return *this;}
-    inline CreateClusterRequest& WithOutpostConfig(OutpostConfigRequest&& value) { SetOutpostConfig(std::move(value)); return *this;}
+    template<typename OutpostConfigT = OutpostConfigRequest>
+    void SetOutpostConfig(OutpostConfigT&& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = std::forward<OutpostConfigT>(value); }
+    template<typename OutpostConfigT = OutpostConfigRequest>
+    CreateClusterRequest& WithOutpostConfig(OutpostConfigT&& value) { SetOutpostConfig(std::forward<OutpostConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The access configuration for the cluster.</p>
      */
-    inline const CreateAccessConfigRequest& GetAccessConfig() const{ return m_accessConfig; }
+    inline const CreateAccessConfigRequest& GetAccessConfig() const { return m_accessConfig; }
     inline bool AccessConfigHasBeenSet() const { return m_accessConfigHasBeenSet; }
-    inline void SetAccessConfig(const CreateAccessConfigRequest& value) { m_accessConfigHasBeenSet = true; m_accessConfig = value; }
-    inline void SetAccessConfig(CreateAccessConfigRequest&& value) { m_accessConfigHasBeenSet = true; m_accessConfig = std::move(value); }
-    inline CreateClusterRequest& WithAccessConfig(const CreateAccessConfigRequest& value) { SetAccessConfig(value); return *this;}
-    inline CreateClusterRequest& WithAccessConfig(CreateAccessConfigRequest&& value) { SetAccessConfig(std::move(value)); return *this;}
+    template<typename AccessConfigT = CreateAccessConfigRequest>
+    void SetAccessConfig(AccessConfigT&& value) { m_accessConfigHasBeenSet = true; m_accessConfig = std::forward<AccessConfigT>(value); }
+    template<typename AccessConfigT = CreateAccessConfigRequest>
+    CreateClusterRequest& WithAccessConfig(AccessConfigT&& value) { SetAccessConfig(std::forward<AccessConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,7 +228,7 @@ namespace Model
      * plan to install third-party alternative add-ons or self-manage the default
      * networking add-ons.</p>
      */
-    inline bool GetBootstrapSelfManagedAddons() const{ return m_bootstrapSelfManagedAddons; }
+    inline bool GetBootstrapSelfManagedAddons() const { return m_bootstrapSelfManagedAddons; }
     inline bool BootstrapSelfManagedAddonsHasBeenSet() const { return m_bootstrapSelfManagedAddonsHasBeenSet; }
     inline void SetBootstrapSelfManagedAddons(bool value) { m_bootstrapSelfManagedAddonsHasBeenSet = true; m_bootstrapSelfManagedAddons = value; }
     inline CreateClusterRequest& WithBootstrapSelfManagedAddons(bool value) { SetBootstrapSelfManagedAddons(value); return *this;}
@@ -251,12 +240,12 @@ namespace Model
      * extended support when creating a cluster by setting this value to
      * <code>STANDARD</code>.</p>
      */
-    inline const UpgradePolicyRequest& GetUpgradePolicy() const{ return m_upgradePolicy; }
+    inline const UpgradePolicyRequest& GetUpgradePolicy() const { return m_upgradePolicy; }
     inline bool UpgradePolicyHasBeenSet() const { return m_upgradePolicyHasBeenSet; }
-    inline void SetUpgradePolicy(const UpgradePolicyRequest& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = value; }
-    inline void SetUpgradePolicy(UpgradePolicyRequest&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::move(value); }
-    inline CreateClusterRequest& WithUpgradePolicy(const UpgradePolicyRequest& value) { SetUpgradePolicy(value); return *this;}
-    inline CreateClusterRequest& WithUpgradePolicy(UpgradePolicyRequest&& value) { SetUpgradePolicy(std::move(value)); return *this;}
+    template<typename UpgradePolicyT = UpgradePolicyRequest>
+    void SetUpgradePolicy(UpgradePolicyT&& value) { m_upgradePolicyHasBeenSet = true; m_upgradePolicy = std::forward<UpgradePolicyT>(value); }
+    template<typename UpgradePolicyT = UpgradePolicyRequest>
+    CreateClusterRequest& WithUpgradePolicy(UpgradePolicyT&& value) { SetUpgradePolicy(std::forward<UpgradePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -278,12 +267,12 @@ namespace Model
      * about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a>
      * in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
-    inline const ZonalShiftConfigRequest& GetZonalShiftConfig() const{ return m_zonalShiftConfig; }
+    inline const ZonalShiftConfigRequest& GetZonalShiftConfig() const { return m_zonalShiftConfig; }
     inline bool ZonalShiftConfigHasBeenSet() const { return m_zonalShiftConfigHasBeenSet; }
-    inline void SetZonalShiftConfig(const ZonalShiftConfigRequest& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = value; }
-    inline void SetZonalShiftConfig(ZonalShiftConfigRequest&& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = std::move(value); }
-    inline CreateClusterRequest& WithZonalShiftConfig(const ZonalShiftConfigRequest& value) { SetZonalShiftConfig(value); return *this;}
-    inline CreateClusterRequest& WithZonalShiftConfig(ZonalShiftConfigRequest&& value) { SetZonalShiftConfig(std::move(value)); return *this;}
+    template<typename ZonalShiftConfigT = ZonalShiftConfigRequest>
+    void SetZonalShiftConfig(ZonalShiftConfigT&& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = std::forward<ZonalShiftConfigT>(value); }
+    template<typename ZonalShiftConfigT = ZonalShiftConfigRequest>
+    CreateClusterRequest& WithZonalShiftConfig(ZonalShiftConfigT&& value) { SetZonalShiftConfig(std::forward<ZonalShiftConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -291,12 +280,12 @@ namespace Model
      * <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or
      * update this configuration after the cluster is created.</p>
      */
-    inline const RemoteNetworkConfigRequest& GetRemoteNetworkConfig() const{ return m_remoteNetworkConfig; }
+    inline const RemoteNetworkConfigRequest& GetRemoteNetworkConfig() const { return m_remoteNetworkConfig; }
     inline bool RemoteNetworkConfigHasBeenSet() const { return m_remoteNetworkConfigHasBeenSet; }
-    inline void SetRemoteNetworkConfig(const RemoteNetworkConfigRequest& value) { m_remoteNetworkConfigHasBeenSet = true; m_remoteNetworkConfig = value; }
-    inline void SetRemoteNetworkConfig(RemoteNetworkConfigRequest&& value) { m_remoteNetworkConfigHasBeenSet = true; m_remoteNetworkConfig = std::move(value); }
-    inline CreateClusterRequest& WithRemoteNetworkConfig(const RemoteNetworkConfigRequest& value) { SetRemoteNetworkConfig(value); return *this;}
-    inline CreateClusterRequest& WithRemoteNetworkConfig(RemoteNetworkConfigRequest&& value) { SetRemoteNetworkConfig(std::move(value)); return *this;}
+    template<typename RemoteNetworkConfigT = RemoteNetworkConfigRequest>
+    void SetRemoteNetworkConfig(RemoteNetworkConfigT&& value) { m_remoteNetworkConfigHasBeenSet = true; m_remoteNetworkConfig = std::forward<RemoteNetworkConfigT>(value); }
+    template<typename RemoteNetworkConfigT = RemoteNetworkConfigRequest>
+    CreateClusterRequest& WithRemoteNetworkConfig(RemoteNetworkConfigT&& value) { SetRemoteNetworkConfig(std::forward<RemoteNetworkConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -305,12 +294,12 @@ namespace Model
      * EKS Auto Mode cluster. If the compute capability is enabled, EKS Auto Mode will
      * create and delete EC2 Managed Instances in your Amazon Web Services account</p>
      */
-    inline const ComputeConfigRequest& GetComputeConfig() const{ return m_computeConfig; }
+    inline const ComputeConfigRequest& GetComputeConfig() const { return m_computeConfig; }
     inline bool ComputeConfigHasBeenSet() const { return m_computeConfigHasBeenSet; }
-    inline void SetComputeConfig(const ComputeConfigRequest& value) { m_computeConfigHasBeenSet = true; m_computeConfig = value; }
-    inline void SetComputeConfig(ComputeConfigRequest&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::move(value); }
-    inline CreateClusterRequest& WithComputeConfig(const ComputeConfigRequest& value) { SetComputeConfig(value); return *this;}
-    inline CreateClusterRequest& WithComputeConfig(ComputeConfigRequest&& value) { SetComputeConfig(std::move(value)); return *this;}
+    template<typename ComputeConfigT = ComputeConfigRequest>
+    void SetComputeConfig(ComputeConfigT&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::forward<ComputeConfigT>(value); }
+    template<typename ComputeConfigT = ComputeConfigRequest>
+    CreateClusterRequest& WithComputeConfig(ComputeConfigT&& value) { SetComputeConfig(std::forward<ComputeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -319,12 +308,12 @@ namespace Model
      * your EKS Auto Mode cluster. If the block storage capability is enabled, EKS Auto
      * Mode will create and delete EBS volumes in your Amazon Web Services account.</p>
      */
-    inline const StorageConfigRequest& GetStorageConfig() const{ return m_storageConfig; }
+    inline const StorageConfigRequest& GetStorageConfig() const { return m_storageConfig; }
     inline bool StorageConfigHasBeenSet() const { return m_storageConfigHasBeenSet; }
-    inline void SetStorageConfig(const StorageConfigRequest& value) { m_storageConfigHasBeenSet = true; m_storageConfig = value; }
-    inline void SetStorageConfig(StorageConfigRequest&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::move(value); }
-    inline CreateClusterRequest& WithStorageConfig(const StorageConfigRequest& value) { SetStorageConfig(value); return *this;}
-    inline CreateClusterRequest& WithStorageConfig(StorageConfigRequest&& value) { SetStorageConfig(std::move(value)); return *this;}
+    template<typename StorageConfigT = StorageConfigRequest>
+    void SetStorageConfig(StorageConfigT&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::forward<StorageConfigT>(value); }
+    template<typename StorageConfigT = StorageConfigRequest>
+    CreateClusterRequest& WithStorageConfig(StorageConfigT&& value) { SetStorageConfig(std::forward<StorageConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -361,7 +350,7 @@ namespace Model
     CreateAccessConfigRequest m_accessConfig;
     bool m_accessConfigHasBeenSet = false;
 
-    bool m_bootstrapSelfManagedAddons;
+    bool m_bootstrapSelfManagedAddons{false};
     bool m_bootstrapSelfManagedAddonsHasBeenSet = false;
 
     UpgradePolicyRequest m_upgradePolicy;

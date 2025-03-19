@@ -12,22 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProductRequest::UpdateProductRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_distributorHasBeenSet(false),
-    m_supportDescriptionHasBeenSet(false),
-    m_supportEmailHasBeenSet(false),
-    m_supportUrlHasBeenSet(false),
-    m_addTagsHasBeenSet(false),
-    m_removeTagsHasBeenSet(false),
-    m_sourceConnectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProductRequest::SerializePayload() const
 {
   JsonValue payload;

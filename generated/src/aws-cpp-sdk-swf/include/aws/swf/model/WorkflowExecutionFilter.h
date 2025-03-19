@@ -32,7 +32,7 @@ namespace Model
   class WorkflowExecutionFilter
   {
   public:
-    AWS_SWF_API WorkflowExecutionFilter();
+    AWS_SWF_API WorkflowExecutionFilter() = default;
     AWS_SWF_API WorkflowExecutionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecutionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline WorkflowExecutionFilter& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline WorkflowExecutionFilter& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline WorkflowExecutionFilter& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    WorkflowExecutionFilter& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
   private:
 

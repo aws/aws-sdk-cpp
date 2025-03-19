@@ -32,7 +32,7 @@ namespace Model
   class RuleGroupSourceStatelessRuleMatchAttributesSources
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources() = default;
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>An IP address or a block of IP addresses.</p>
      */
-    inline const Aws::String& GetAddressDefinition() const{ return m_addressDefinition; }
+    inline const Aws::String& GetAddressDefinition() const { return m_addressDefinition; }
     inline bool AddressDefinitionHasBeenSet() const { return m_addressDefinitionHasBeenSet; }
-    inline void SetAddressDefinition(const Aws::String& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = value; }
-    inline void SetAddressDefinition(Aws::String&& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = std::move(value); }
-    inline void SetAddressDefinition(const char* value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition.assign(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributesSources& WithAddressDefinition(const Aws::String& value) { SetAddressDefinition(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributesSources& WithAddressDefinition(Aws::String&& value) { SetAddressDefinition(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributesSources& WithAddressDefinition(const char* value) { SetAddressDefinition(value); return *this;}
+    template<typename AddressDefinitionT = Aws::String>
+    void SetAddressDefinition(AddressDefinitionT&& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = std::forward<AddressDefinitionT>(value); }
+    template<typename AddressDefinitionT = Aws::String>
+    RuleGroupSourceStatelessRuleMatchAttributesSources& WithAddressDefinition(AddressDefinitionT&& value) { SetAddressDefinition(std::forward<AddressDefinitionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SlackConnectorProfileProperties::SlackConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 SlackConnectorProfileProperties::SlackConnectorProfileProperties(JsonView jsonValue)
-  : SlackConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SlackConnectorProfileProperties& SlackConnectorProfileProperties::operator =(Jso
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

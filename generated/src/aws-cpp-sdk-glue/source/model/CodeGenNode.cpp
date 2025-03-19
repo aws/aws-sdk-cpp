@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CodeGenNode::CodeGenNode() : 
-    m_idHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_argsHasBeenSet(false),
-    m_lineNumber(0),
-    m_lineNumberHasBeenSet(false)
-{
-}
-
 CodeGenNode::CodeGenNode(JsonView jsonValue)
-  : CodeGenNode()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ CodeGenNode& CodeGenNode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Args"))
   {
     Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
@@ -58,14 +44,11 @@ CodeGenNode& CodeGenNode::operator =(JsonView jsonValue)
     }
     m_argsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineNumber"))
   {
     m_lineNumber = jsonValue.GetInteger("LineNumber");
-
     m_lineNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

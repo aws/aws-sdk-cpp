@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFeaturesRequest::ListFeaturesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 Aws::String ListFeaturesRequest::SerializePayload() const
 {
   return {};

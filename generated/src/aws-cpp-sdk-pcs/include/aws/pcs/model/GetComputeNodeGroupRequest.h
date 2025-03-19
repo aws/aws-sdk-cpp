@@ -21,7 +21,7 @@ namespace Model
   class GetComputeNodeGroupRequest : public PCSRequest
   {
   public:
-    AWS_PCS_API GetComputeNodeGroupRequest();
+    AWS_PCS_API GetComputeNodeGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name or ID of the cluster.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline GetComputeNodeGroupRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline GetComputeNodeGroupRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline GetComputeNodeGroupRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    GetComputeNodeGroupRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ID of the compute node group.</p>
      */
-    inline const Aws::String& GetComputeNodeGroupIdentifier() const{ return m_computeNodeGroupIdentifier; }
+    inline const Aws::String& GetComputeNodeGroupIdentifier() const { return m_computeNodeGroupIdentifier; }
     inline bool ComputeNodeGroupIdentifierHasBeenSet() const { return m_computeNodeGroupIdentifierHasBeenSet; }
-    inline void SetComputeNodeGroupIdentifier(const Aws::String& value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier = value; }
-    inline void SetComputeNodeGroupIdentifier(Aws::String&& value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier = std::move(value); }
-    inline void SetComputeNodeGroupIdentifier(const char* value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier.assign(value); }
-    inline GetComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(const Aws::String& value) { SetComputeNodeGroupIdentifier(value); return *this;}
-    inline GetComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(Aws::String&& value) { SetComputeNodeGroupIdentifier(std::move(value)); return *this;}
-    inline GetComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(const char* value) { SetComputeNodeGroupIdentifier(value); return *this;}
+    template<typename ComputeNodeGroupIdentifierT = Aws::String>
+    void SetComputeNodeGroupIdentifier(ComputeNodeGroupIdentifierT&& value) { m_computeNodeGroupIdentifierHasBeenSet = true; m_computeNodeGroupIdentifier = std::forward<ComputeNodeGroupIdentifierT>(value); }
+    template<typename ComputeNodeGroupIdentifierT = Aws::String>
+    GetComputeNodeGroupRequest& WithComputeNodeGroupIdentifier(ComputeNodeGroupIdentifierT&& value) { SetComputeNodeGroupIdentifier(std::forward<ComputeNodeGroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

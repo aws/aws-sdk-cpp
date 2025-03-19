@@ -12,13 +12,6 @@ using namespace Aws::LexRuntimeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSessionRequest::DeleteSessionRequest() : 
-    m_botNameHasBeenSet(false),
-    m_botAliasHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSessionRequest::SerializePayload() const
 {
   return {};

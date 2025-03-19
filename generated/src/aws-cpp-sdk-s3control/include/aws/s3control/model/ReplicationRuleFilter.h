@@ -35,7 +35,7 @@ namespace Model
   class ReplicationRuleFilter
   {
   public:
-    AWS_S3CONTROL_API ReplicationRuleFilter();
+    AWS_S3CONTROL_API ReplicationRuleFilter() = default;
     AWS_S3CONTROL_API ReplicationRuleFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ReplicationRuleFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,24 +52,22 @@ namespace Model
      * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
      * 
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ReplicationRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ReplicationRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ReplicationRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ReplicationRuleFilter& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Tag& GetTag() const{ return m_tag; }
+    inline const S3Tag& GetTag() const { return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-    inline void SetTag(const S3Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
-    inline void SetTag(S3Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-    inline ReplicationRuleFilter& WithTag(const S3Tag& value) { SetTag(value); return *this;}
-    inline ReplicationRuleFilter& WithTag(S3Tag&& value) { SetTag(std::move(value)); return *this;}
+    template<typename TagT = S3Tag>
+    void SetTag(TagT&& value) { m_tagHasBeenSet = true; m_tag = std::forward<TagT>(value); }
+    template<typename TagT = S3Tag>
+    ReplicationRuleFilter& WithTag(TagT&& value) { SetTag(std::forward<TagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +80,12 @@ namespace Model
      * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
      * element.</p> </li> </ul>
      */
-    inline const ReplicationRuleAndOperator& GetAnd() const{ return m_and; }
+    inline const ReplicationRuleAndOperator& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const ReplicationRuleAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(ReplicationRuleAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline ReplicationRuleFilter& WithAnd(const ReplicationRuleAndOperator& value) { SetAnd(value); return *this;}
-    inline ReplicationRuleFilter& WithAnd(ReplicationRuleAndOperator&& value) { SetAnd(std::move(value)); return *this;}
+    template<typename AndT = ReplicationRuleAndOperator>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = ReplicationRuleAndOperator>
+    ReplicationRuleFilter& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class ApplicationVersionChangeDetails
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationVersionChangeDetails();
+    AWS_KINESISANALYTICSV2_API ApplicationVersionChangeDetails() = default;
     AWS_KINESISANALYTICSV2_API ApplicationVersionChangeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationVersionChangeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * The operation was performed on this version of the application
      */
-    inline long long GetApplicationVersionUpdatedFrom() const{ return m_applicationVersionUpdatedFrom; }
+    inline long long GetApplicationVersionUpdatedFrom() const { return m_applicationVersionUpdatedFrom; }
     inline bool ApplicationVersionUpdatedFromHasBeenSet() const { return m_applicationVersionUpdatedFromHasBeenSet; }
     inline void SetApplicationVersionUpdatedFrom(long long value) { m_applicationVersionUpdatedFromHasBeenSet = true; m_applicationVersionUpdatedFrom = value; }
     inline ApplicationVersionChangeDetails& WithApplicationVersionUpdatedFrom(long long value) { SetApplicationVersionUpdatedFrom(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * The operation execution resulted in the transition to the following version of
      * the application
      */
-    inline long long GetApplicationVersionUpdatedTo() const{ return m_applicationVersionUpdatedTo; }
+    inline long long GetApplicationVersionUpdatedTo() const { return m_applicationVersionUpdatedTo; }
     inline bool ApplicationVersionUpdatedToHasBeenSet() const { return m_applicationVersionUpdatedToHasBeenSet; }
     inline void SetApplicationVersionUpdatedTo(long long value) { m_applicationVersionUpdatedToHasBeenSet = true; m_applicationVersionUpdatedTo = value; }
     inline ApplicationVersionChangeDetails& WithApplicationVersionUpdatedTo(long long value) { SetApplicationVersionUpdatedTo(value); return *this;}
     ///@}
   private:
 
-    long long m_applicationVersionUpdatedFrom;
+    long long m_applicationVersionUpdatedFrom{0};
     bool m_applicationVersionUpdatedFromHasBeenSet = false;
 
-    long long m_applicationVersionUpdatedTo;
+    long long m_applicationVersionUpdatedTo{0};
     bool m_applicationVersionUpdatedToHasBeenSet = false;
   };
 

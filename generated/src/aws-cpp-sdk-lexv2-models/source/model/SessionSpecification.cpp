@@ -18,29 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SessionSpecification::SessionSpecification() : 
-    m_botAliasIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_channelHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_conversationStartTimeHasBeenSet(false),
-    m_conversationEndTimeHasBeenSet(false),
-    m_conversationDurationSeconds(0),
-    m_conversationDurationSecondsHasBeenSet(false),
-    m_conversationEndState(ConversationEndState::NOT_SET),
-    m_conversationEndStateHasBeenSet(false),
-    m_mode(AnalyticsModality::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_numberOfTurns(0),
-    m_numberOfTurnsHasBeenSet(false),
-    m_invokedIntentSamplesHasBeenSet(false),
-    m_originatingRequestIdHasBeenSet(false)
-{
-}
-
 SessionSpecification::SessionSpecification(JsonView jsonValue)
-  : SessionSpecification()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ SessionSpecification& SessionSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botAliasId"))
   {
     m_botAliasId = jsonValue.GetString("botAliasId");
-
     m_botAliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
     m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetString("channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationStartTime"))
   {
     m_conversationStartTime = jsonValue.GetDouble("conversationStartTime");
-
     m_conversationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationEndTime"))
   {
     m_conversationEndTime = jsonValue.GetDouble("conversationEndTime");
-
     m_conversationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationDurationSeconds"))
   {
     m_conversationDurationSeconds = jsonValue.GetInt64("conversationDurationSeconds");
-
     m_conversationDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationEndState"))
   {
     m_conversationEndState = ConversationEndStateMapper::GetConversationEndStateForName(jsonValue.GetString("conversationEndState"));
-
     m_conversationEndStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = AnalyticsModalityMapper::GetAnalyticsModalityForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfTurns"))
   {
     m_numberOfTurns = jsonValue.GetInt64("numberOfTurns");
-
     m_numberOfTurnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invokedIntentSamples"))
   {
     Aws::Utils::Array<JsonView> invokedIntentSamplesJsonList = jsonValue.GetArray("invokedIntentSamples");
@@ -133,14 +89,11 @@ SessionSpecification& SessionSpecification::operator =(JsonView jsonValue)
     }
     m_invokedIntentSamplesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originatingRequestId"))
   {
     m_originatingRequestId = jsonValue.GetString("originatingRequestId");
-
     m_originatingRequestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

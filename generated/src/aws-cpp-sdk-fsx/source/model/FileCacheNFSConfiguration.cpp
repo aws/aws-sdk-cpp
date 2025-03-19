@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileCacheNFSConfiguration::FileCacheNFSConfiguration() : 
-    m_version(NfsVersion::NOT_SET),
-    m_versionHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
-{
-}
-
 FileCacheNFSConfiguration::FileCacheNFSConfiguration(JsonView jsonValue)
-  : FileCacheNFSConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FileCacheNFSConfiguration& FileCacheNFSConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Version"))
   {
     m_version = NfsVersionMapper::GetNfsVersionForName(jsonValue.GetString("Version"));
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIps"))
   {
     Aws::Utils::Array<JsonView> dnsIpsJsonList = jsonValue.GetArray("DnsIps");
@@ -49,7 +39,6 @@ FileCacheNFSConfiguration& FileCacheNFSConfiguration::operator =(JsonView jsonVa
     }
     m_dnsIpsHasBeenSet = true;
   }
-
   return *this;
 }
 

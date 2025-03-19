@@ -21,7 +21,7 @@ namespace Model
   class GetFolderRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API GetFolderRequest();
+    AWS_CODECOMMIT_API GetFolderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the repository.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline GetFolderRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline GetFolderRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline GetFolderRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    GetFolderRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * commit ID, branch name, tag, or reference such as HEAD. If no specifier is
      * provided, the folder content is returned as it exists in the HEAD commit.</p>
      */
-    inline const Aws::String& GetCommitSpecifier() const{ return m_commitSpecifier; }
+    inline const Aws::String& GetCommitSpecifier() const { return m_commitSpecifier; }
     inline bool CommitSpecifierHasBeenSet() const { return m_commitSpecifierHasBeenSet; }
-    inline void SetCommitSpecifier(const Aws::String& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = value; }
-    inline void SetCommitSpecifier(Aws::String&& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = std::move(value); }
-    inline void SetCommitSpecifier(const char* value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier.assign(value); }
-    inline GetFolderRequest& WithCommitSpecifier(const Aws::String& value) { SetCommitSpecifier(value); return *this;}
-    inline GetFolderRequest& WithCommitSpecifier(Aws::String&& value) { SetCommitSpecifier(std::move(value)); return *this;}
-    inline GetFolderRequest& WithCommitSpecifier(const char* value) { SetCommitSpecifier(value); return *this;}
+    template<typename CommitSpecifierT = Aws::String>
+    void SetCommitSpecifier(CommitSpecifierT&& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = std::forward<CommitSpecifierT>(value); }
+    template<typename CommitSpecifierT = Aws::String>
+    GetFolderRequest& WithCommitSpecifier(CommitSpecifierT&& value) { SetCommitSpecifier(std::forward<CommitSpecifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * named examples that was created off of the root directory (/) of a repository.
      * </p>
      */
-    inline const Aws::String& GetFolderPath() const{ return m_folderPath; }
+    inline const Aws::String& GetFolderPath() const { return m_folderPath; }
     inline bool FolderPathHasBeenSet() const { return m_folderPathHasBeenSet; }
-    inline void SetFolderPath(const Aws::String& value) { m_folderPathHasBeenSet = true; m_folderPath = value; }
-    inline void SetFolderPath(Aws::String&& value) { m_folderPathHasBeenSet = true; m_folderPath = std::move(value); }
-    inline void SetFolderPath(const char* value) { m_folderPathHasBeenSet = true; m_folderPath.assign(value); }
-    inline GetFolderRequest& WithFolderPath(const Aws::String& value) { SetFolderPath(value); return *this;}
-    inline GetFolderRequest& WithFolderPath(Aws::String&& value) { SetFolderPath(std::move(value)); return *this;}
-    inline GetFolderRequest& WithFolderPath(const char* value) { SetFolderPath(value); return *this;}
+    template<typename FolderPathT = Aws::String>
+    void SetFolderPath(FolderPathT&& value) { m_folderPathHasBeenSet = true; m_folderPath = std::forward<FolderPathT>(value); }
+    template<typename FolderPathT = Aws::String>
+    GetFolderRequest& WithFolderPath(FolderPathT&& value) { SetFolderPath(std::forward<FolderPathT>(value)); return *this;}
     ///@}
   private:
 

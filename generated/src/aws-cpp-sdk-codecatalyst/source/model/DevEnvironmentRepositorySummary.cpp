@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-DevEnvironmentRepositorySummary::DevEnvironmentRepositorySummary() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
-{
-}
-
 DevEnvironmentRepositorySummary::DevEnvironmentRepositorySummary(JsonView jsonValue)
-  : DevEnvironmentRepositorySummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DevEnvironmentRepositorySummary& DevEnvironmentRepositorySummary::operator =(Jso
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchName"))
   {
     m_branchName = jsonValue.GetString("branchName");
-
     m_branchNameHasBeenSet = true;
   }
-
   return *this;
 }
 

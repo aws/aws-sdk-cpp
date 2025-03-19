@@ -23,7 +23,7 @@ namespace Model
   class CreatePermissionRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API CreatePermissionRequest();
+    AWS_RAM_API CreatePermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Specifies the name of the customer managed permission. The name must be
      * unique within the Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreatePermissionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreatePermissionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreatePermissionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePermissionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <code>ec2:subnet</code>. To see the list of valid values for this parameter,
      * query the <a>ListResourceTypes</a> operation.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline CreatePermissionRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline CreatePermissionRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline CreatePermissionRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    CreatePermissionRequest& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * the specific resource that you are sharing. The <code>Principal</code> comes
      * from the list of identities added to the resource share.</p>
      */
-    inline const Aws::String& GetPolicyTemplate() const{ return m_policyTemplate; }
+    inline const Aws::String& GetPolicyTemplate() const { return m_policyTemplate; }
     inline bool PolicyTemplateHasBeenSet() const { return m_policyTemplateHasBeenSet; }
-    inline void SetPolicyTemplate(const Aws::String& value) { m_policyTemplateHasBeenSet = true; m_policyTemplate = value; }
-    inline void SetPolicyTemplate(Aws::String&& value) { m_policyTemplateHasBeenSet = true; m_policyTemplate = std::move(value); }
-    inline void SetPolicyTemplate(const char* value) { m_policyTemplateHasBeenSet = true; m_policyTemplate.assign(value); }
-    inline CreatePermissionRequest& WithPolicyTemplate(const Aws::String& value) { SetPolicyTemplate(value); return *this;}
-    inline CreatePermissionRequest& WithPolicyTemplate(Aws::String&& value) { SetPolicyTemplate(std::move(value)); return *this;}
-    inline CreatePermissionRequest& WithPolicyTemplate(const char* value) { SetPolicyTemplate(value); return *this;}
+    template<typename PolicyTemplateT = Aws::String>
+    void SetPolicyTemplate(PolicyTemplateT&& value) { m_policyTemplateHasBeenSet = true; m_policyTemplate = std::forward<PolicyTemplateT>(value); }
+    template<typename PolicyTemplateT = Aws::String>
+    CreatePermissionRequest& WithPolicyTemplate(PolicyTemplateT&& value) { SetPolicyTemplate(std::forward<PolicyTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreatePermissionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreatePermissionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreatePermissionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePermissionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +121,14 @@ namespace Model
      * <p>Specifies a list of one or more tag key and value pairs to attach to the
      * permission.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePermissionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreatePermissionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePermissionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreatePermissionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreatePermissionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreatePermissionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

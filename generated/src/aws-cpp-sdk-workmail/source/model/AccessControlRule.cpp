@@ -18,26 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-AccessControlRule::AccessControlRule() : 
-    m_nameHasBeenSet(false),
-    m_effect(AccessControlRuleEffect::NOT_SET),
-    m_effectHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ipRangesHasBeenSet(false),
-    m_notIpRangesHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_notActionsHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_notUserIdsHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false),
-    m_impersonationRoleIdsHasBeenSet(false),
-    m_notImpersonationRoleIdsHasBeenSet(false)
-{
-}
-
 AccessControlRule::AccessControlRule(JsonView jsonValue)
-  : AccessControlRule()
 {
   *this = jsonValue;
 }
@@ -47,24 +28,18 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Effect"))
   {
     m_effect = AccessControlRuleEffectMapper::GetAccessControlRuleEffectForName(jsonValue.GetString("Effect"));
-
     m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRanges"))
   {
     Aws::Utils::Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
@@ -74,7 +49,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_ipRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotIpRanges"))
   {
     Aws::Utils::Array<JsonView> notIpRangesJsonList = jsonValue.GetArray("NotIpRanges");
@@ -84,7 +58,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_notIpRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -94,7 +67,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotActions"))
   {
     Aws::Utils::Array<JsonView> notActionsJsonList = jsonValue.GetArray("NotActions");
@@ -104,7 +76,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_notActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserIds"))
   {
     Aws::Utils::Array<JsonView> userIdsJsonList = jsonValue.GetArray("UserIds");
@@ -114,7 +85,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_userIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotUserIds"))
   {
     Aws::Utils::Array<JsonView> notUserIdsJsonList = jsonValue.GetArray("NotUserIds");
@@ -124,21 +94,16 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_notUserIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("DateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateModified"))
   {
     m_dateModified = jsonValue.GetDouble("DateModified");
-
     m_dateModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpersonationRoleIds"))
   {
     Aws::Utils::Array<JsonView> impersonationRoleIdsJsonList = jsonValue.GetArray("ImpersonationRoleIds");
@@ -148,7 +113,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_impersonationRoleIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotImpersonationRoleIds"))
   {
     Aws::Utils::Array<JsonView> notImpersonationRoleIdsJsonList = jsonValue.GetArray("NotImpersonationRoleIds");
@@ -158,7 +122,6 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     }
     m_notImpersonationRoleIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

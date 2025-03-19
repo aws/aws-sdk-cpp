@@ -31,7 +31,7 @@ namespace Model
   class DescribeChangeSetHooksResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeChangeSetHooksResult();
+    AWS_CLOUDFORMATION_API DescribeChangeSetHooksResult() = default;
     AWS_CLOUDFORMATION_API DescribeChangeSetHooksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribeChangeSetHooksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,116 +40,112 @@ namespace Model
     /**
      * <p>The change set identifier (stack ID).</p>
      */
-    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
-    inline void SetChangeSetId(const Aws::String& value) { m_changeSetId = value; }
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
-    inline void SetChangeSetId(const char* value) { m_changeSetId.assign(value); }
-    inline DescribeChangeSetHooksResult& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
-    inline DescribeChangeSetHooksResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+    inline const Aws::String& GetChangeSetId() const { return m_changeSetId; }
+    template<typename ChangeSetIdT = Aws::String>
+    void SetChangeSetId(ChangeSetIdT&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::forward<ChangeSetIdT>(value); }
+    template<typename ChangeSetIdT = Aws::String>
+    DescribeChangeSetHooksResult& WithChangeSetId(ChangeSetIdT&& value) { SetChangeSetId(std::forward<ChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The change set name.</p>
      */
-    inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
-    inline void SetChangeSetName(const Aws::String& value) { m_changeSetName = value; }
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetName = std::move(value); }
-    inline void SetChangeSetName(const char* value) { m_changeSetName.assign(value); }
-    inline DescribeChangeSetHooksResult& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
-    inline DescribeChangeSetHooksResult& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+    inline const Aws::String& GetChangeSetName() const { return m_changeSetName; }
+    template<typename ChangeSetNameT = Aws::String>
+    void SetChangeSetName(ChangeSetNameT&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::forward<ChangeSetNameT>(value); }
+    template<typename ChangeSetNameT = Aws::String>
+    DescribeChangeSetHooksResult& WithChangeSetName(ChangeSetNameT&& value) { SetChangeSetName(std::forward<ChangeSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of hook objects.</p>
      */
-    inline const Aws::Vector<ChangeSetHook>& GetHooks() const{ return m_hooks; }
-    inline void SetHooks(const Aws::Vector<ChangeSetHook>& value) { m_hooks = value; }
-    inline void SetHooks(Aws::Vector<ChangeSetHook>&& value) { m_hooks = std::move(value); }
-    inline DescribeChangeSetHooksResult& WithHooks(const Aws::Vector<ChangeSetHook>& value) { SetHooks(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithHooks(Aws::Vector<ChangeSetHook>&& value) { SetHooks(std::move(value)); return *this;}
-    inline DescribeChangeSetHooksResult& AddHooks(const ChangeSetHook& value) { m_hooks.push_back(value); return *this; }
-    inline DescribeChangeSetHooksResult& AddHooks(ChangeSetHook&& value) { m_hooks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChangeSetHook>& GetHooks() const { return m_hooks; }
+    template<typename HooksT = Aws::Vector<ChangeSetHook>>
+    void SetHooks(HooksT&& value) { m_hooksHasBeenSet = true; m_hooks = std::forward<HooksT>(value); }
+    template<typename HooksT = Aws::Vector<ChangeSetHook>>
+    DescribeChangeSetHooksResult& WithHooks(HooksT&& value) { SetHooks(std::forward<HooksT>(value)); return *this;}
+    template<typename HooksT = ChangeSetHook>
+    DescribeChangeSetHooksResult& AddHooks(HooksT&& value) { m_hooksHasBeenSet = true; m_hooks.emplace_back(std::forward<HooksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Provides the status of the change set hook.</p>
      */
-    inline const ChangeSetHooksStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ChangeSetHooksStatus& value) { m_status = value; }
-    inline void SetStatus(ChangeSetHooksStatus&& value) { m_status = std::move(value); }
-    inline DescribeChangeSetHooksResult& WithStatus(const ChangeSetHooksStatus& value) { SetStatus(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithStatus(ChangeSetHooksStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ChangeSetHooksStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ChangeSetHooksStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeChangeSetHooksResult& WithStatus(ChangeSetHooksStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Pagination token, <code>null</code> or empty if no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeChangeSetHooksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeChangeSetHooksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeChangeSetHooksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack identifier (stack ID).</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
-    inline DescribeChangeSetHooksResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DescribeChangeSetHooksResult& WithStackId(const char* value) { SetStackId(value); return *this;}
+    inline const Aws::String& GetStackId() const { return m_stackId; }
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DescribeChangeSetHooksResult& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack name.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
-    inline void SetStackName(const Aws::String& value) { m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackName.assign(value); }
-    inline DescribeChangeSetHooksResult& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline DescribeChangeSetHooksResult& WithStackName(const char* value) { SetStackName(value); return *this;}
+    inline const Aws::String& GetStackName() const { return m_stackName; }
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    DescribeChangeSetHooksResult& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeChangeSetHooksResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeChangeSetHooksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeChangeSetHooksResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet = false;
 
     Aws::String m_changeSetName;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::Vector<ChangeSetHook> m_hooks;
+    bool m_hooksHasBeenSet = false;
 
-    ChangeSetHooksStatus m_status;
+    ChangeSetHooksStatus m_status{ChangeSetHooksStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
+    bool m_stackNameHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

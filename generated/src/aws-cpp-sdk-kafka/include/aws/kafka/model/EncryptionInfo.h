@@ -36,7 +36,7 @@ namespace Model
   class EncryptionInfo
   {
   public:
-    AWS_KAFKA_API EncryptionInfo();
+    AWS_KAFKA_API EncryptionInfo() = default;
     AWS_KAFKA_API EncryptionInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API EncryptionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
             <p>The data-volume encryption details.</p>
          
      */
-    inline const EncryptionAtRest& GetEncryptionAtRest() const{ return m_encryptionAtRest; }
+    inline const EncryptionAtRest& GetEncryptionAtRest() const { return m_encryptionAtRest; }
     inline bool EncryptionAtRestHasBeenSet() const { return m_encryptionAtRestHasBeenSet; }
-    inline void SetEncryptionAtRest(const EncryptionAtRest& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = value; }
-    inline void SetEncryptionAtRest(EncryptionAtRest&& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = std::move(value); }
-    inline EncryptionInfo& WithEncryptionAtRest(const EncryptionAtRest& value) { SetEncryptionAtRest(value); return *this;}
-    inline EncryptionInfo& WithEncryptionAtRest(EncryptionAtRest&& value) { SetEncryptionAtRest(std::move(value)); return *this;}
+    template<typename EncryptionAtRestT = EncryptionAtRest>
+    void SetEncryptionAtRest(EncryptionAtRestT&& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = std::forward<EncryptionAtRestT>(value); }
+    template<typename EncryptionAtRestT = EncryptionAtRest>
+    EncryptionInfo& WithEncryptionAtRest(EncryptionAtRestT&& value) { SetEncryptionAtRest(std::forward<EncryptionAtRestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
             <p>The details for encryption in transit.</p>
          
      */
-    inline const EncryptionInTransit& GetEncryptionInTransit() const{ return m_encryptionInTransit; }
+    inline const EncryptionInTransit& GetEncryptionInTransit() const { return m_encryptionInTransit; }
     inline bool EncryptionInTransitHasBeenSet() const { return m_encryptionInTransitHasBeenSet; }
-    inline void SetEncryptionInTransit(const EncryptionInTransit& value) { m_encryptionInTransitHasBeenSet = true; m_encryptionInTransit = value; }
-    inline void SetEncryptionInTransit(EncryptionInTransit&& value) { m_encryptionInTransitHasBeenSet = true; m_encryptionInTransit = std::move(value); }
-    inline EncryptionInfo& WithEncryptionInTransit(const EncryptionInTransit& value) { SetEncryptionInTransit(value); return *this;}
-    inline EncryptionInfo& WithEncryptionInTransit(EncryptionInTransit&& value) { SetEncryptionInTransit(std::move(value)); return *this;}
+    template<typename EncryptionInTransitT = EncryptionInTransit>
+    void SetEncryptionInTransit(EncryptionInTransitT&& value) { m_encryptionInTransitHasBeenSet = true; m_encryptionInTransit = std::forward<EncryptionInTransitT>(value); }
+    template<typename EncryptionInTransitT = EncryptionInTransit>
+    EncryptionInfo& WithEncryptionInTransit(EncryptionInTransitT&& value) { SetEncryptionInTransit(std::forward<EncryptionInTransitT>(value)); return *this;}
     ///@}
   private:
 

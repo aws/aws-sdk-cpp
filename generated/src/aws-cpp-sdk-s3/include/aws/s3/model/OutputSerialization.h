@@ -32,7 +32,7 @@ namespace Model
   class OutputSerialization
   {
   public:
-    AWS_S3_API OutputSerialization();
+    AWS_S3_API OutputSerialization() = default;
     AWS_S3_API OutputSerialization(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API OutputSerialization& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Describes the serialization of CSV-encoded Select results.</p>
      */
-    inline const CSVOutput& GetCSV() const{ return m_cSV; }
+    inline const CSVOutput& GetCSV() const { return m_cSV; }
     inline bool CSVHasBeenSet() const { return m_cSVHasBeenSet; }
-    inline void SetCSV(const CSVOutput& value) { m_cSVHasBeenSet = true; m_cSV = value; }
-    inline void SetCSV(CSVOutput&& value) { m_cSVHasBeenSet = true; m_cSV = std::move(value); }
-    inline OutputSerialization& WithCSV(const CSVOutput& value) { SetCSV(value); return *this;}
-    inline OutputSerialization& WithCSV(CSVOutput&& value) { SetCSV(std::move(value)); return *this;}
+    template<typename CSVT = CSVOutput>
+    void SetCSV(CSVT&& value) { m_cSVHasBeenSet = true; m_cSV = std::forward<CSVT>(value); }
+    template<typename CSVT = CSVOutput>
+    OutputSerialization& WithCSV(CSVT&& value) { SetCSV(std::forward<CSVT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies JSON as request's output serialization format.</p>
      */
-    inline const JSONOutput& GetJSON() const{ return m_jSON; }
+    inline const JSONOutput& GetJSON() const { return m_jSON; }
     inline bool JSONHasBeenSet() const { return m_jSONHasBeenSet; }
-    inline void SetJSON(const JSONOutput& value) { m_jSONHasBeenSet = true; m_jSON = value; }
-    inline void SetJSON(JSONOutput&& value) { m_jSONHasBeenSet = true; m_jSON = std::move(value); }
-    inline OutputSerialization& WithJSON(const JSONOutput& value) { SetJSON(value); return *this;}
-    inline OutputSerialization& WithJSON(JSONOutput&& value) { SetJSON(std::move(value)); return *this;}
+    template<typename JSONT = JSONOutput>
+    void SetJSON(JSONT&& value) { m_jSONHasBeenSet = true; m_jSON = std::forward<JSONT>(value); }
+    template<typename JSONT = JSONOutput>
+    OutputSerialization& WithJSON(JSONT&& value) { SetJSON(std::forward<JSONT>(value)); return *this;}
     ///@}
   private:
 

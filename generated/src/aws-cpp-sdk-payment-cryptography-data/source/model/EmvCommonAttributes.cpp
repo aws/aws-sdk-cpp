@@ -18,23 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-EmvCommonAttributes::EmvCommonAttributes() : 
-    m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_applicationCryptogramHasBeenSet(false),
-    m_mode(EmvEncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_pinBlockPaddingType(PinBlockPaddingType::NOT_SET),
-    m_pinBlockPaddingTypeHasBeenSet(false),
-    m_pinBlockLengthPosition(PinBlockLengthPosition::NOT_SET),
-    m_pinBlockLengthPositionHasBeenSet(false)
-{
-}
-
 EmvCommonAttributes::EmvCommonAttributes(JsonView jsonValue)
-  : EmvCommonAttributes()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ EmvCommonAttributes& EmvCommonAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MajorKeyDerivationMode"))
   {
     m_majorKeyDerivationMode = MajorKeyDerivationModeMapper::GetMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
-
     m_majorKeyDerivationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationCryptogram"))
   {
     m_applicationCryptogram = jsonValue.GetString("ApplicationCryptogram");
-
     m_applicationCryptogramHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = EmvEncryptionModeMapper::GetEmvEncryptionModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinBlockPaddingType"))
   {
     m_pinBlockPaddingType = PinBlockPaddingTypeMapper::GetPinBlockPaddingTypeForName(jsonValue.GetString("PinBlockPaddingType"));
-
     m_pinBlockPaddingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinBlockLengthPosition"))
   {
     m_pinBlockLengthPosition = PinBlockLengthPositionMapper::GetPinBlockLengthPositionForName(jsonValue.GetString("PinBlockLengthPosition"));
-
     m_pinBlockLengthPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

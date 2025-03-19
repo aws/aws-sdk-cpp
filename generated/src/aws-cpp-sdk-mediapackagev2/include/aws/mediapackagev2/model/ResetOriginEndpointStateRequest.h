@@ -21,7 +21,7 @@ namespace Model
   class ResetOriginEndpointStateRequest : public Mediapackagev2Request
   {
   public:
-    AWS_MEDIAPACKAGEV2_API ResetOriginEndpointStateRequest();
+    AWS_MEDIAPACKAGEV2_API ResetOriginEndpointStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
      * <p>The name of the channel group that contains the channel with the origin
      * endpoint that you are resetting.</p>
      */
-    inline const Aws::String& GetChannelGroupName() const{ return m_channelGroupName; }
+    inline const Aws::String& GetChannelGroupName() const { return m_channelGroupName; }
     inline bool ChannelGroupNameHasBeenSet() const { return m_channelGroupNameHasBeenSet; }
-    inline void SetChannelGroupName(const Aws::String& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = value; }
-    inline void SetChannelGroupName(Aws::String&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::move(value); }
-    inline void SetChannelGroupName(const char* value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName.assign(value); }
-    inline ResetOriginEndpointStateRequest& WithChannelGroupName(const Aws::String& value) { SetChannelGroupName(value); return *this;}
-    inline ResetOriginEndpointStateRequest& WithChannelGroupName(Aws::String&& value) { SetChannelGroupName(std::move(value)); return *this;}
-    inline ResetOriginEndpointStateRequest& WithChannelGroupName(const char* value) { SetChannelGroupName(value); return *this;}
+    template<typename ChannelGroupNameT = Aws::String>
+    void SetChannelGroupName(ChannelGroupNameT&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::forward<ChannelGroupNameT>(value); }
+    template<typename ChannelGroupNameT = Aws::String>
+    ResetOriginEndpointStateRequest& WithChannelGroupName(ChannelGroupNameT&& value) { SetChannelGroupName(std::forward<ChannelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the channel with the origin endpoint that you are resetting.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline ResetOriginEndpointStateRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline ResetOriginEndpointStateRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline ResetOriginEndpointStateRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    ResetOriginEndpointStateRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the origin endpoint that you are resetting.</p>
      */
-    inline const Aws::String& GetOriginEndpointName() const{ return m_originEndpointName; }
+    inline const Aws::String& GetOriginEndpointName() const { return m_originEndpointName; }
     inline bool OriginEndpointNameHasBeenSet() const { return m_originEndpointNameHasBeenSet; }
-    inline void SetOriginEndpointName(const Aws::String& value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName = value; }
-    inline void SetOriginEndpointName(Aws::String&& value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName = std::move(value); }
-    inline void SetOriginEndpointName(const char* value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName.assign(value); }
-    inline ResetOriginEndpointStateRequest& WithOriginEndpointName(const Aws::String& value) { SetOriginEndpointName(value); return *this;}
-    inline ResetOriginEndpointStateRequest& WithOriginEndpointName(Aws::String&& value) { SetOriginEndpointName(std::move(value)); return *this;}
-    inline ResetOriginEndpointStateRequest& WithOriginEndpointName(const char* value) { SetOriginEndpointName(value); return *this;}
+    template<typename OriginEndpointNameT = Aws::String>
+    void SetOriginEndpointName(OriginEndpointNameT&& value) { m_originEndpointNameHasBeenSet = true; m_originEndpointName = std::forward<OriginEndpointNameT>(value); }
+    template<typename OriginEndpointNameT = Aws::String>
+    ResetOriginEndpointStateRequest& WithOriginEndpointName(OriginEndpointNameT&& value) { SetOriginEndpointName(std::forward<OriginEndpointNameT>(value)); return *this;}
     ///@}
   private:
 

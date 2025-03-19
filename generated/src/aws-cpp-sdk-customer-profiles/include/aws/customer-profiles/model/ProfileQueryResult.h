@@ -33,7 +33,7 @@ namespace Model
   class ProfileQueryResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API ProfileQueryResult();
+    AWS_CUSTOMERPROFILES_API ProfileQueryResult() = default;
     AWS_CUSTOMERPROFILES_API ProfileQueryResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ProfileQueryResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,43 +43,39 @@ namespace Model
     /**
      * <p>The profile id the result belongs to.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline ProfileQueryResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline ProfileQueryResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline ProfileQueryResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    ProfileQueryResult& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes whether the profile was absent or present in the segment.</p>
      */
-    inline const QueryResult& GetQueryResult() const{ return m_queryResult; }
+    inline QueryResult GetQueryResult() const { return m_queryResult; }
     inline bool QueryResultHasBeenSet() const { return m_queryResultHasBeenSet; }
-    inline void SetQueryResult(const QueryResult& value) { m_queryResultHasBeenSet = true; m_queryResult = value; }
-    inline void SetQueryResult(QueryResult&& value) { m_queryResultHasBeenSet = true; m_queryResult = std::move(value); }
-    inline ProfileQueryResult& WithQueryResult(const QueryResult& value) { SetQueryResult(value); return *this;}
-    inline ProfileQueryResult& WithQueryResult(QueryResult&& value) { SetQueryResult(std::move(value)); return *this;}
+    inline void SetQueryResult(QueryResult value) { m_queryResultHasBeenSet = true; m_queryResult = value; }
+    inline ProfileQueryResult& WithQueryResult(QueryResult value) { SetQueryResult(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Profile& GetProfile() const{ return m_profile; }
+    inline const Profile& GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const Profile& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(Profile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline ProfileQueryResult& WithProfile(const Profile& value) { SetProfile(value); return *this;}
-    inline ProfileQueryResult& WithProfile(Profile&& value) { SetProfile(std::move(value)); return *this;}
+    template<typename ProfileT = Profile>
+    void SetProfile(ProfileT&& value) { m_profileHasBeenSet = true; m_profile = std::forward<ProfileT>(value); }
+    template<typename ProfileT = Profile>
+    ProfileQueryResult& WithProfile(ProfileT&& value) { SetProfile(std::forward<ProfileT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_profileId;
     bool m_profileIdHasBeenSet = false;
 
-    QueryResult m_queryResult;
+    QueryResult m_queryResult{QueryResult::NOT_SET};
     bool m_queryResultHasBeenSet = false;
 
     Profile m_profile;

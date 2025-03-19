@@ -34,7 +34,7 @@ namespace Model
   class UpdatedSessionActionInfo
   {
   public:
-    AWS_DEADLINE_API UpdatedSessionActionInfo();
+    AWS_DEADLINE_API UpdatedSessionActionInfo() = default;
     AWS_DEADLINE_API UpdatedSessionActionInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API UpdatedSessionActionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,17 @@ namespace Model
     /**
      * <p>The status of the session upon completion.</p>
      */
-    inline const CompletedStatus& GetCompletedStatus() const{ return m_completedStatus; }
+    inline CompletedStatus GetCompletedStatus() const { return m_completedStatus; }
     inline bool CompletedStatusHasBeenSet() const { return m_completedStatusHasBeenSet; }
-    inline void SetCompletedStatus(const CompletedStatus& value) { m_completedStatusHasBeenSet = true; m_completedStatus = value; }
-    inline void SetCompletedStatus(CompletedStatus&& value) { m_completedStatusHasBeenSet = true; m_completedStatus = std::move(value); }
-    inline UpdatedSessionActionInfo& WithCompletedStatus(const CompletedStatus& value) { SetCompletedStatus(value); return *this;}
-    inline UpdatedSessionActionInfo& WithCompletedStatus(CompletedStatus&& value) { SetCompletedStatus(std::move(value)); return *this;}
+    inline void SetCompletedStatus(CompletedStatus value) { m_completedStatusHasBeenSet = true; m_completedStatus = value; }
+    inline UpdatedSessionActionInfo& WithCompletedStatus(CompletedStatus value) { SetCompletedStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The process exit code.</p>
      */
-    inline int GetProcessExitCode() const{ return m_processExitCode; }
+    inline int GetProcessExitCode() const { return m_processExitCode; }
     inline bool ProcessExitCodeHasBeenSet() const { return m_processExitCodeHasBeenSet; }
     inline void SetProcessExitCode(int value) { m_processExitCodeHasBeenSet = true; m_processExitCode = value; }
     inline UpdatedSessionActionInfo& WithProcessExitCode(int value) { SetProcessExitCode(value); return *this;}
@@ -66,82 +64,80 @@ namespace Model
     /**
      * <p>A message to indicate the progress of the updated session action.</p>
      */
-    inline const Aws::String& GetProgressMessage() const{ return m_progressMessage; }
+    inline const Aws::String& GetProgressMessage() const { return m_progressMessage; }
     inline bool ProgressMessageHasBeenSet() const { return m_progressMessageHasBeenSet; }
-    inline void SetProgressMessage(const Aws::String& value) { m_progressMessageHasBeenSet = true; m_progressMessage = value; }
-    inline void SetProgressMessage(Aws::String&& value) { m_progressMessageHasBeenSet = true; m_progressMessage = std::move(value); }
-    inline void SetProgressMessage(const char* value) { m_progressMessageHasBeenSet = true; m_progressMessage.assign(value); }
-    inline UpdatedSessionActionInfo& WithProgressMessage(const Aws::String& value) { SetProgressMessage(value); return *this;}
-    inline UpdatedSessionActionInfo& WithProgressMessage(Aws::String&& value) { SetProgressMessage(std::move(value)); return *this;}
-    inline UpdatedSessionActionInfo& WithProgressMessage(const char* value) { SetProgressMessage(value); return *this;}
+    template<typename ProgressMessageT = Aws::String>
+    void SetProgressMessage(ProgressMessageT&& value) { m_progressMessageHasBeenSet = true; m_progressMessage = std::forward<ProgressMessageT>(value); }
+    template<typename ProgressMessageT = Aws::String>
+    UpdatedSessionActionInfo& WithProgressMessage(ProgressMessageT&& value) { SetProgressMessage(std::forward<ProgressMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource started running.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline UpdatedSessionActionInfo& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline UpdatedSessionActionInfo& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    UpdatedSessionActionInfo& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource ended running.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
     inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
-    inline UpdatedSessionActionInfo& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline UpdatedSessionActionInfo& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    UpdatedSessionActionInfo& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated time.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline UpdatedSessionActionInfo& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline UpdatedSessionActionInfo& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    UpdatedSessionActionInfo& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage completed.</p>
      */
-    inline double GetProgressPercent() const{ return m_progressPercent; }
+    inline double GetProgressPercent() const { return m_progressPercent; }
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
     inline void SetProgressPercent(double value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
     inline UpdatedSessionActionInfo& WithProgressPercent(double value) { SetProgressPercent(value); return *this;}
     ///@}
   private:
 
-    CompletedStatus m_completedStatus;
+    CompletedStatus m_completedStatus{CompletedStatus::NOT_SET};
     bool m_completedStatusHasBeenSet = false;
 
-    int m_processExitCode;
+    int m_processExitCode{0};
     bool m_processExitCodeHasBeenSet = false;
 
     Aws::String m_progressMessage;
     bool m_progressMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt;
+    Aws::Utils::DateTime m_endedAt{};
     bool m_endedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
-    double m_progressPercent;
+    double m_progressPercent{0.0};
     bool m_progressPercentHasBeenSet = false;
   };
 

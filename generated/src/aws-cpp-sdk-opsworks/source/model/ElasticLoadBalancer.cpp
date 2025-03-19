@@ -18,21 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-ElasticLoadBalancer::ElasticLoadBalancer() : 
-    m_elasticLoadBalancerNameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_layerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_ec2InstanceIdsHasBeenSet(false)
-{
-}
-
 ElasticLoadBalancer::ElasticLoadBalancer(JsonView jsonValue)
-  : ElasticLoadBalancer()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ElasticLoadBalancerName"))
   {
     m_elasticLoadBalancerName = jsonValue.GetString("ElasticLoadBalancerName");
-
     m_elasticLoadBalancerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerId"))
   {
     m_layerId = jsonValue.GetString("LayerId");
-
     m_layerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -90,7 +64,6 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -100,7 +73,6 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceIds"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceIdsJsonList = jsonValue.GetArray("Ec2InstanceIds");
@@ -110,7 +82,6 @@ ElasticLoadBalancer& ElasticLoadBalancer::operator =(JsonView jsonValue)
     }
     m_ec2InstanceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-MonthlySetting::MonthlySetting() : 
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_handOffTimeHasBeenSet(false)
-{
-}
-
 MonthlySetting::MonthlySetting(JsonView jsonValue)
-  : MonthlySetting()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MonthlySetting& MonthlySetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetInteger("DayOfMonth");
-
     m_dayOfMonthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HandOffTime"))
   {
     m_handOffTime = jsonValue.GetObject("HandOffTime");
-
     m_handOffTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

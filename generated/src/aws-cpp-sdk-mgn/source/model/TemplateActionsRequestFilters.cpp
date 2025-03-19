@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-TemplateActionsRequestFilters::TemplateActionsRequestFilters() : 
-    m_actionIDsHasBeenSet(false)
-{
-}
-
 TemplateActionsRequestFilters::TemplateActionsRequestFilters(JsonView jsonValue)
-  : TemplateActionsRequestFilters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TemplateActionsRequestFilters& TemplateActionsRequestFilters::operator =(JsonVie
     }
     m_actionIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

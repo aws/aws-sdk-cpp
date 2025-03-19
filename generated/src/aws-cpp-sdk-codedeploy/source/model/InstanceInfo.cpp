@@ -18,19 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-InstanceInfo::InstanceInfo() : 
-    m_instanceNameHasBeenSet(false),
-    m_iamSessionArnHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_registerTimeHasBeenSet(false),
-    m_deregisterTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InstanceInfo::InstanceInfo(JsonView jsonValue)
-  : InstanceInfo()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ InstanceInfo& InstanceInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceName"))
   {
     m_instanceName = jsonValue.GetString("instanceName");
-
     m_instanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamSessionArn"))
   {
     m_iamSessionArn = jsonValue.GetString("iamSessionArn");
-
     m_iamSessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamUserArn"))
   {
     m_iamUserArn = jsonValue.GetString("iamUserArn");
-
     m_iamUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registerTime"))
   {
     m_registerTime = jsonValue.GetDouble("registerTime");
-
     m_registerTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deregisterTime"))
   {
     m_deregisterTime = jsonValue.GetDouble("deregisterTime");
-
     m_deregisterTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -88,7 +64,6 @@ InstanceInfo& InstanceInfo::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

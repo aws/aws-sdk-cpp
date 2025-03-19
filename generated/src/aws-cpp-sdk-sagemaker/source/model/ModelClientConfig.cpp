@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelClientConfig::ModelClientConfig() : 
-    m_invocationsTimeoutInSeconds(0),
-    m_invocationsTimeoutInSecondsHasBeenSet(false),
-    m_invocationsMaxRetries(0),
-    m_invocationsMaxRetriesHasBeenSet(false)
-{
-}
-
 ModelClientConfig::ModelClientConfig(JsonView jsonValue)
-  : ModelClientConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ModelClientConfig& ModelClientConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvocationsTimeoutInSeconds"))
   {
     m_invocationsTimeoutInSeconds = jsonValue.GetInteger("InvocationsTimeoutInSeconds");
-
     m_invocationsTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationsMaxRetries"))
   {
     m_invocationsMaxRetries = jsonValue.GetInteger("InvocationsMaxRetries");
-
     m_invocationsMaxRetriesHasBeenSet = true;
   }
-
   return *this;
 }
 

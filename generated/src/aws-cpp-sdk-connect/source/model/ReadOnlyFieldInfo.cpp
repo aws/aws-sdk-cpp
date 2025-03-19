@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ReadOnlyFieldInfo::ReadOnlyFieldInfo() : 
-    m_idHasBeenSet(false)
-{
-}
-
 ReadOnlyFieldInfo::ReadOnlyFieldInfo(JsonView jsonValue)
-  : ReadOnlyFieldInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReadOnlyFieldInfo& ReadOnlyFieldInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetObject("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

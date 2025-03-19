@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage() : 
-    m_storageHasBeenSet(false),
-    m_validProcessorFeaturesHasBeenSet(false),
-    m_supportsDedicatedLogVolume(false),
-    m_supportsDedicatedLogVolumeHasBeenSet(false)
-{
-}
-
 ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode)
-  : ValidDBInstanceModificationsMessage()
 {
   *this = xmlNode;
 }
@@ -44,6 +35,7 @@ ValidDBInstanceModificationsMessage& ValidDBInstanceModificationsMessage::operat
     if(!storageNode.IsNull())
     {
       XmlNode storageMember = storageNode.FirstChild("ValidStorageOptions");
+      m_storageHasBeenSet = !storageMember.IsNull();
       while(!storageMember.IsNull())
       {
         m_storage.push_back(storageMember);
@@ -56,6 +48,7 @@ ValidDBInstanceModificationsMessage& ValidDBInstanceModificationsMessage::operat
     if(!validProcessorFeaturesNode.IsNull())
     {
       XmlNode validProcessorFeaturesMember = validProcessorFeaturesNode.FirstChild("AvailableProcessorFeature");
+      m_validProcessorFeaturesHasBeenSet = !validProcessorFeaturesMember.IsNull();
       while(!validProcessorFeaturesMember.IsNull())
       {
         m_validProcessorFeatures.push_back(validProcessorFeaturesMember);

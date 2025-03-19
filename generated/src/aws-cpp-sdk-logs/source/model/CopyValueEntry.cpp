@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-CopyValueEntry::CopyValueEntry() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_overwriteIfExists(false),
-    m_overwriteIfExistsHasBeenSet(false)
-{
-}
-
 CopyValueEntry::CopyValueEntry(JsonView jsonValue)
-  : CopyValueEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CopyValueEntry& CopyValueEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overwriteIfExists"))
   {
     m_overwriteIfExists = jsonValue.GetBool("overwriteIfExists");
-
     m_overwriteIfExistsHasBeenSet = true;
   }
-
   return *this;
 }
 

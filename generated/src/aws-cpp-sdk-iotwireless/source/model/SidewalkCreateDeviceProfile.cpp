@@ -18,10 +18,6 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkCreateDeviceProfile::SidewalkCreateDeviceProfile()
-{
-}
-
 SidewalkCreateDeviceProfile::SidewalkCreateDeviceProfile(JsonView jsonValue)
 {
   *this = jsonValue;

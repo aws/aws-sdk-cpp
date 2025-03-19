@@ -20,26 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-Datapoint::Datapoint() : 
-    m_timestampHasBeenSet(false),
-    m_sampleCount(0.0),
-    m_sampleCountHasBeenSet(false),
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_extendedStatisticsHasBeenSet(false)
-{
-}
-
 Datapoint::Datapoint(const XmlNode& xmlNode)
-  : Datapoint()
 {
   *this = xmlNode;
 }
@@ -89,7 +70,7 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
     }
     XmlNode extendedStatisticsNode = resultNode.FirstChild("ExtendedStatistics");
@@ -97,6 +78,7 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
     if(!extendedStatisticsNode.IsNull())
     {
       XmlNode extendedStatisticsEntry = extendedStatisticsNode.FirstChild("entry");
+      m_extendedStatisticsHasBeenSet = !extendedStatisticsEntry.IsNull();
       while(!extendedStatisticsEntry.IsNull())
       {
         XmlNode keyNode = extendedStatisticsEntry.FirstChild("key");

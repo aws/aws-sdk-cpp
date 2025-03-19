@@ -41,7 +41,7 @@ namespace Model
   class TimeSignalMessage
   {
   public:
-    AWS_MEDIATAILOR_API TimeSignalMessage();
+    AWS_MEDIATAILOR_API TimeSignalMessage() = default;
     AWS_MEDIATAILOR_API TimeSignalMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API TimeSignalMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * <p>The configurations for the SCTE-35 <code>segmentation_descriptor</code>
      * message(s) sent with the <code>time_signal</code> message.</p>
      */
-    inline const Aws::Vector<SegmentationDescriptor>& GetSegmentationDescriptors() const{ return m_segmentationDescriptors; }
+    inline const Aws::Vector<SegmentationDescriptor>& GetSegmentationDescriptors() const { return m_segmentationDescriptors; }
     inline bool SegmentationDescriptorsHasBeenSet() const { return m_segmentationDescriptorsHasBeenSet; }
-    inline void SetSegmentationDescriptors(const Aws::Vector<SegmentationDescriptor>& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors = value; }
-    inline void SetSegmentationDescriptors(Aws::Vector<SegmentationDescriptor>&& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors = std::move(value); }
-    inline TimeSignalMessage& WithSegmentationDescriptors(const Aws::Vector<SegmentationDescriptor>& value) { SetSegmentationDescriptors(value); return *this;}
-    inline TimeSignalMessage& WithSegmentationDescriptors(Aws::Vector<SegmentationDescriptor>&& value) { SetSegmentationDescriptors(std::move(value)); return *this;}
-    inline TimeSignalMessage& AddSegmentationDescriptors(const SegmentationDescriptor& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors.push_back(value); return *this; }
-    inline TimeSignalMessage& AddSegmentationDescriptors(SegmentationDescriptor&& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors.push_back(std::move(value)); return *this; }
+    template<typename SegmentationDescriptorsT = Aws::Vector<SegmentationDescriptor>>
+    void SetSegmentationDescriptors(SegmentationDescriptorsT&& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors = std::forward<SegmentationDescriptorsT>(value); }
+    template<typename SegmentationDescriptorsT = Aws::Vector<SegmentationDescriptor>>
+    TimeSignalMessage& WithSegmentationDescriptors(SegmentationDescriptorsT&& value) { SetSegmentationDescriptors(std::forward<SegmentationDescriptorsT>(value)); return *this;}
+    template<typename SegmentationDescriptorsT = SegmentationDescriptor>
+    TimeSignalMessage& AddSegmentationDescriptors(SegmentationDescriptorsT&& value) { m_segmentationDescriptorsHasBeenSet = true; m_segmentationDescriptors.emplace_back(std::forward<SegmentationDescriptorsT>(value)); return *this; }
     ///@}
   private:
 

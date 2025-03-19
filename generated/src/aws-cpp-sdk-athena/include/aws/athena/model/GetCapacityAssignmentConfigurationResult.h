@@ -28,7 +28,7 @@ namespace Model
   class GetCapacityAssignmentConfigurationResult
   {
   public:
-    AWS_ATHENA_API GetCapacityAssignmentConfigurationResult();
+    AWS_ATHENA_API GetCapacityAssignmentConfigurationResult() = default;
     AWS_ATHENA_API GetCapacityAssignmentConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetCapacityAssignmentConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The requested capacity assignment configuration for the specified capacity
      * reservation.</p>
      */
-    inline const CapacityAssignmentConfiguration& GetCapacityAssignmentConfiguration() const{ return m_capacityAssignmentConfiguration; }
-    inline void SetCapacityAssignmentConfiguration(const CapacityAssignmentConfiguration& value) { m_capacityAssignmentConfiguration = value; }
-    inline void SetCapacityAssignmentConfiguration(CapacityAssignmentConfiguration&& value) { m_capacityAssignmentConfiguration = std::move(value); }
-    inline GetCapacityAssignmentConfigurationResult& WithCapacityAssignmentConfiguration(const CapacityAssignmentConfiguration& value) { SetCapacityAssignmentConfiguration(value); return *this;}
-    inline GetCapacityAssignmentConfigurationResult& WithCapacityAssignmentConfiguration(CapacityAssignmentConfiguration&& value) { SetCapacityAssignmentConfiguration(std::move(value)); return *this;}
+    inline const CapacityAssignmentConfiguration& GetCapacityAssignmentConfiguration() const { return m_capacityAssignmentConfiguration; }
+    template<typename CapacityAssignmentConfigurationT = CapacityAssignmentConfiguration>
+    void SetCapacityAssignmentConfiguration(CapacityAssignmentConfigurationT&& value) { m_capacityAssignmentConfigurationHasBeenSet = true; m_capacityAssignmentConfiguration = std::forward<CapacityAssignmentConfigurationT>(value); }
+    template<typename CapacityAssignmentConfigurationT = CapacityAssignmentConfiguration>
+    GetCapacityAssignmentConfigurationResult& WithCapacityAssignmentConfiguration(CapacityAssignmentConfigurationT&& value) { SetCapacityAssignmentConfiguration(std::forward<CapacityAssignmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCapacityAssignmentConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCapacityAssignmentConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCapacityAssignmentConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCapacityAssignmentConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CapacityAssignmentConfiguration m_capacityAssignmentConfiguration;
+    bool m_capacityAssignmentConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

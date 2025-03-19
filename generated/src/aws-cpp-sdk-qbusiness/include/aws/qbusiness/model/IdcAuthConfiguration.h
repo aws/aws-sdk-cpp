@@ -32,7 +32,7 @@ namespace Model
   class IdcAuthConfiguration
   {
   public:
-    AWS_QBUSINESS_API IdcAuthConfiguration();
+    AWS_QBUSINESS_API IdcAuthConfiguration() = default;
     AWS_QBUSINESS_API IdcAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API IdcAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM Identity Center Application used to
      * configure authentication.</p>
      */
-    inline const Aws::String& GetIdcApplicationArn() const{ return m_idcApplicationArn; }
+    inline const Aws::String& GetIdcApplicationArn() const { return m_idcApplicationArn; }
     inline bool IdcApplicationArnHasBeenSet() const { return m_idcApplicationArnHasBeenSet; }
-    inline void SetIdcApplicationArn(const Aws::String& value) { m_idcApplicationArnHasBeenSet = true; m_idcApplicationArn = value; }
-    inline void SetIdcApplicationArn(Aws::String&& value) { m_idcApplicationArnHasBeenSet = true; m_idcApplicationArn = std::move(value); }
-    inline void SetIdcApplicationArn(const char* value) { m_idcApplicationArnHasBeenSet = true; m_idcApplicationArn.assign(value); }
-    inline IdcAuthConfiguration& WithIdcApplicationArn(const Aws::String& value) { SetIdcApplicationArn(value); return *this;}
-    inline IdcAuthConfiguration& WithIdcApplicationArn(Aws::String&& value) { SetIdcApplicationArn(std::move(value)); return *this;}
-    inline IdcAuthConfiguration& WithIdcApplicationArn(const char* value) { SetIdcApplicationArn(value); return *this;}
+    template<typename IdcApplicationArnT = Aws::String>
+    void SetIdcApplicationArn(IdcApplicationArnT&& value) { m_idcApplicationArnHasBeenSet = true; m_idcApplicationArn = std::forward<IdcApplicationArnT>(value); }
+    template<typename IdcApplicationArnT = Aws::String>
+    IdcAuthConfiguration& WithIdcApplicationArn(IdcApplicationArnT&& value) { SetIdcApplicationArn(std::forward<IdcApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to perform
      * actions on Amazon Web Services services on your behalf.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline IdcAuthConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline IdcAuthConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline IdcAuthConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    IdcAuthConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

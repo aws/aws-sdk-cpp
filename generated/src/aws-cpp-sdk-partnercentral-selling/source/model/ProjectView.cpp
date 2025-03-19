@@ -18,17 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ProjectView::ProjectView() : 
-    m_customerUseCaseHasBeenSet(false),
-    m_deliveryModelsHasBeenSet(false),
-    m_expectedCustomerSpendHasBeenSet(false),
-    m_otherSolutionDescriptionHasBeenSet(false),
-    m_salesActivitiesHasBeenSet(false)
-{
-}
-
 ProjectView::ProjectView(JsonView jsonValue)
-  : ProjectView()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ProjectView& ProjectView::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomerUseCase"))
   {
     m_customerUseCase = jsonValue.GetString("CustomerUseCase");
-
     m_customerUseCaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryModels"))
   {
     Aws::Utils::Array<JsonView> deliveryModelsJsonList = jsonValue.GetArray("DeliveryModels");
@@ -51,7 +39,6 @@ ProjectView& ProjectView::operator =(JsonView jsonValue)
     }
     m_deliveryModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedCustomerSpend"))
   {
     Aws::Utils::Array<JsonView> expectedCustomerSpendJsonList = jsonValue.GetArray("ExpectedCustomerSpend");
@@ -61,14 +48,11 @@ ProjectView& ProjectView::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherSolutionDescription"))
   {
     m_otherSolutionDescription = jsonValue.GetString("OtherSolutionDescription");
-
     m_otherSolutionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SalesActivities"))
   {
     Aws::Utils::Array<JsonView> salesActivitiesJsonList = jsonValue.GetArray("SalesActivities");
@@ -78,7 +62,6 @@ ProjectView& ProjectView::operator =(JsonView jsonValue)
     }
     m_salesActivitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

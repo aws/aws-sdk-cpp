@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVodSourcesRequest::ListVodSourcesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false)
-{
-}
-
 Aws::String ListVodSourcesRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-SqsQueueConfiguration::SqsQueueConfiguration() : 
-    m_queuePolicyHasBeenSet(false)
-{
-}
-
 SqsQueueConfiguration::SqsQueueConfiguration(JsonView jsonValue)
-  : SqsQueueConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SqsQueueConfiguration& SqsQueueConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queuePolicy"))
   {
     m_queuePolicy = jsonValue.GetString("queuePolicy");
-
     m_queuePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

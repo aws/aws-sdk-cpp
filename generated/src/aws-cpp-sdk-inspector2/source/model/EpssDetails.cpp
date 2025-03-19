@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-EpssDetails::EpssDetails() : 
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 EpssDetails::EpssDetails(JsonView jsonValue)
-  : EpssDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EpssDetails& EpssDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

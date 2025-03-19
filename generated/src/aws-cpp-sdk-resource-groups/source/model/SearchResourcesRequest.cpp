@@ -12,14 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchResourcesRequest::SearchResourcesRequest() : 
-    m_resourceQueryHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

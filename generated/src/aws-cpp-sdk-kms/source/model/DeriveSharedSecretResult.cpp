@@ -18,14 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeriveSharedSecretResult::DeriveSharedSecretResult() : 
-    m_keyAgreementAlgorithm(KeyAgreementAlgorithmSpec::NOT_SET),
-    m_keyOrigin(OriginType::NOT_SET)
-{
-}
-
 DeriveSharedSecretResult::DeriveSharedSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeriveSharedSecretResult()
 {
   *this = result;
 }
@@ -36,37 +29,35 @@ DeriveSharedSecretResult& DeriveSharedSecretResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedSecret"))
   {
     m_sharedSecret = HashingUtils::Base64Decode(jsonValue.GetString("SharedSecret"));
+    m_sharedSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CiphertextForRecipient"))
   {
     m_ciphertextForRecipient = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextForRecipient"));
+    m_ciphertextForRecipientHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAgreementAlgorithm"))
   {
     m_keyAgreementAlgorithm = KeyAgreementAlgorithmSpecMapper::GetKeyAgreementAlgorithmSpecForName(jsonValue.GetString("KeyAgreementAlgorithm"));
-
+    m_keyAgreementAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyOrigin"))
   {
     m_keyOrigin = OriginTypeMapper::GetOriginTypeForName(jsonValue.GetString("KeyOrigin"));
-
+    m_keyOriginHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDisassociateServiceActionFromProvisioningArtifactRequest::BatchDisassociateServiceActionFromProvisioningArtifactRequest() : 
-    m_serviceActionAssociationsHasBeenSet(false),
-    m_acceptLanguageHasBeenSet(false)
-{
-}
-
 Aws::String BatchDisassociateServiceActionFromProvisioningArtifactRequest::SerializePayload() const
 {
   JsonValue payload;

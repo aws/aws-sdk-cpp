@@ -18,14 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-S3MonitoringConfiguration::S3MonitoringConfiguration() : 
-    m_logUriHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false)
-{
-}
-
 S3MonitoringConfiguration::S3MonitoringConfiguration(JsonView jsonValue)
-  : S3MonitoringConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3MonitoringConfiguration& S3MonitoringConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("logUri"))
   {
     m_logUri = jsonValue.GetString("logUri");
-
     m_logUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-
     m_encryptionKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

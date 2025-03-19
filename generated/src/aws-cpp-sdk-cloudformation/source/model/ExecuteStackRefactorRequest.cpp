@@ -10,11 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ExecuteStackRefactorRequest::ExecuteStackRefactorRequest() : 
-    m_stackRefactorIdHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteStackRefactorRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ProviderComponentSchema::ProviderComponentSchema() : 
-    m_providerSchemaAttributesHasBeenSet(false),
-    m_schemasHasBeenSet(false)
-{
-}
-
 ProviderComponentSchema::ProviderComponentSchema(JsonView jsonValue)
-  : ProviderComponentSchema()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ProviderComponentSchema& ProviderComponentSchema::operator =(JsonView jsonValue)
     }
     m_providerSchemaAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemas"))
   {
     Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("schemas");
@@ -58,7 +50,6 @@ ProviderComponentSchema& ProviderComponentSchema::operator =(JsonView jsonValue)
     }
     m_schemasHasBeenSet = true;
   }
-
   return *this;
 }
 

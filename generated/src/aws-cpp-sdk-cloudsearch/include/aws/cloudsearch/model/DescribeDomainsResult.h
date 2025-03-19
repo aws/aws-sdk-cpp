@@ -36,35 +36,37 @@ namespace Model
   class DescribeDomainsResult
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeDomainsResult();
+    AWS_CLOUDSEARCH_API DescribeDomainsResult() = default;
     AWS_CLOUDSEARCH_API DescribeDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DescribeDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<DomainStatus>& GetDomainStatusList() const{ return m_domainStatusList; }
-    inline void SetDomainStatusList(const Aws::Vector<DomainStatus>& value) { m_domainStatusList = value; }
-    inline void SetDomainStatusList(Aws::Vector<DomainStatus>&& value) { m_domainStatusList = std::move(value); }
-    inline DescribeDomainsResult& WithDomainStatusList(const Aws::Vector<DomainStatus>& value) { SetDomainStatusList(value); return *this;}
-    inline DescribeDomainsResult& WithDomainStatusList(Aws::Vector<DomainStatus>&& value) { SetDomainStatusList(std::move(value)); return *this;}
-    inline DescribeDomainsResult& AddDomainStatusList(const DomainStatus& value) { m_domainStatusList.push_back(value); return *this; }
-    inline DescribeDomainsResult& AddDomainStatusList(DomainStatus&& value) { m_domainStatusList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainStatus>& GetDomainStatusList() const { return m_domainStatusList; }
+    template<typename DomainStatusListT = Aws::Vector<DomainStatus>>
+    void SetDomainStatusList(DomainStatusListT&& value) { m_domainStatusListHasBeenSet = true; m_domainStatusList = std::forward<DomainStatusListT>(value); }
+    template<typename DomainStatusListT = Aws::Vector<DomainStatus>>
+    DescribeDomainsResult& WithDomainStatusList(DomainStatusListT&& value) { SetDomainStatusList(std::forward<DomainStatusListT>(value)); return *this;}
+    template<typename DomainStatusListT = DomainStatus>
+    DescribeDomainsResult& AddDomainStatusList(DomainStatusListT&& value) { m_domainStatusListHasBeenSet = true; m_domainStatusList.emplace_back(std::forward<DomainStatusListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDomainsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDomainsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDomainsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainStatus> m_domainStatusList;
+    bool m_domainStatusListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

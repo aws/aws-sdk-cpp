@@ -18,13 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-PartitionKey::PartitionKey() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 PartitionKey::PartitionKey(JsonView jsonValue)
-  : PartitionKey()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PartitionKey& PartitionKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

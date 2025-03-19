@@ -21,7 +21,7 @@ namespace Model
   class AssociateSoftwareTokenRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AssociateSoftwareTokenRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AssociateSoftwareTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <code>aws.cognito.signin.user.admin</code>.</p> <p>You can provide either an
      * access token or a session ID in the request.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline AssociateSoftwareTokenRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline AssociateSoftwareTokenRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline AssociateSoftwareTokenRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    AssociateSoftwareTokenRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * session ID from a successful sign-in. You can provide either an access token or
      * a session ID in the request.</p>
      */
-    inline const Aws::String& GetSession() const{ return m_session; }
+    inline const Aws::String& GetSession() const { return m_session; }
     inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
-    inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
-    inline void SetSession(Aws::String&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
-    inline void SetSession(const char* value) { m_sessionHasBeenSet = true; m_session.assign(value); }
-    inline AssociateSoftwareTokenRequest& WithSession(const Aws::String& value) { SetSession(value); return *this;}
-    inline AssociateSoftwareTokenRequest& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
-    inline AssociateSoftwareTokenRequest& WithSession(const char* value) { SetSession(value); return *this;}
+    template<typename SessionT = Aws::String>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Aws::String>
+    AssociateSoftwareTokenRequest& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
   private:
 

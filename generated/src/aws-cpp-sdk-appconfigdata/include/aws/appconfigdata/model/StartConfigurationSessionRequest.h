@@ -21,7 +21,7 @@ namespace Model
   class StartConfigurationSessionRequest : public AppConfigDataRequest
   {
   public:
-    AWS_APPCONFIGDATA_API StartConfigurationSessionRequest();
+    AWS_APPCONFIGDATA_API StartConfigurationSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The application ID or the application name.</p>
      */
-    inline const Aws::String& GetApplicationIdentifier() const{ return m_applicationIdentifier; }
+    inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-    inline void SetApplicationIdentifier(const Aws::String& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = value; }
-    inline void SetApplicationIdentifier(Aws::String&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::move(value); }
-    inline void SetApplicationIdentifier(const char* value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier.assign(value); }
-    inline StartConfigurationSessionRequest& WithApplicationIdentifier(const Aws::String& value) { SetApplicationIdentifier(value); return *this;}
-    inline StartConfigurationSessionRequest& WithApplicationIdentifier(Aws::String&& value) { SetApplicationIdentifier(std::move(value)); return *this;}
-    inline StartConfigurationSessionRequest& WithApplicationIdentifier(const char* value) { SetApplicationIdentifier(value); return *this;}
+    template<typename ApplicationIdentifierT = Aws::String>
+    void SetApplicationIdentifier(ApplicationIdentifierT&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value); }
+    template<typename ApplicationIdentifierT = Aws::String>
+    StartConfigurationSessionRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) { SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The environment ID or the environment name.</p>
      */
-    inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
+    inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-    inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-    inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-    inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-    inline StartConfigurationSessionRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-    inline StartConfigurationSessionRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-    inline StartConfigurationSessionRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
+    template<typename EnvironmentIdentifierT = Aws::String>
+    void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value); }
+    template<typename EnvironmentIdentifierT = Aws::String>
+    StartConfigurationSessionRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) { SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration profile ID or the configuration profile name.</p>
      */
-    inline const Aws::String& GetConfigurationProfileIdentifier() const{ return m_configurationProfileIdentifier; }
+    inline const Aws::String& GetConfigurationProfileIdentifier() const { return m_configurationProfileIdentifier; }
     inline bool ConfigurationProfileIdentifierHasBeenSet() const { return m_configurationProfileIdentifierHasBeenSet; }
-    inline void SetConfigurationProfileIdentifier(const Aws::String& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = value; }
-    inline void SetConfigurationProfileIdentifier(Aws::String&& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = std::move(value); }
-    inline void SetConfigurationProfileIdentifier(const char* value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier.assign(value); }
-    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(const Aws::String& value) { SetConfigurationProfileIdentifier(value); return *this;}
-    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(Aws::String&& value) { SetConfigurationProfileIdentifier(std::move(value)); return *this;}
-    inline StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(const char* value) { SetConfigurationProfileIdentifier(value); return *this;}
+    template<typename ConfigurationProfileIdentifierT = Aws::String>
+    void SetConfigurationProfileIdentifier(ConfigurationProfileIdentifierT&& value) { m_configurationProfileIdentifierHasBeenSet = true; m_configurationProfileIdentifier = std::forward<ConfigurationProfileIdentifierT>(value); }
+    template<typename ConfigurationProfileIdentifierT = Aws::String>
+    StartConfigurationSessionRequest& WithConfigurationProfileIdentifier(ConfigurationProfileIdentifierT&& value) { SetConfigurationProfileIdentifier(std::forward<ConfigurationProfileIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +74,7 @@ namespace Model
      * seconds, then the client that established the session can't call
      * <a>GetLatestConfiguration</a> more frequently than every 60 seconds.</p>
      */
-    inline int GetRequiredMinimumPollIntervalInSeconds() const{ return m_requiredMinimumPollIntervalInSeconds; }
+    inline int GetRequiredMinimumPollIntervalInSeconds() const { return m_requiredMinimumPollIntervalInSeconds; }
     inline bool RequiredMinimumPollIntervalInSecondsHasBeenSet() const { return m_requiredMinimumPollIntervalInSecondsHasBeenSet; }
     inline void SetRequiredMinimumPollIntervalInSeconds(int value) { m_requiredMinimumPollIntervalInSecondsHasBeenSet = true; m_requiredMinimumPollIntervalInSeconds = value; }
     inline StartConfigurationSessionRequest& WithRequiredMinimumPollIntervalInSeconds(int value) { SetRequiredMinimumPollIntervalInSeconds(value); return *this;}
@@ -96,7 +90,7 @@ namespace Model
     Aws::String m_configurationProfileIdentifier;
     bool m_configurationProfileIdentifierHasBeenSet = false;
 
-    int m_requiredMinimumPollIntervalInSeconds;
+    int m_requiredMinimumPollIntervalInSeconds{0};
     bool m_requiredMinimumPollIntervalInSecondsHasBeenSet = false;
   };
 

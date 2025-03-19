@@ -10,14 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribeGlobalClustersRequest::DescribeGlobalClustersRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGlobalClustersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

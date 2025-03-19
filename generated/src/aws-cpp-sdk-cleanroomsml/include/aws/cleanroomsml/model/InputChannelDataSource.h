@@ -32,7 +32,7 @@ namespace Model
   class InputChannelDataSource
   {
   public:
-    AWS_CLEANROOMSML_API InputChannelDataSource();
+    AWS_CLEANROOMSML_API InputChannelDataSource() = default;
     AWS_CLEANROOMSML_API InputChannelDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API InputChannelDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const ProtectedQueryInputParameters& GetProtectedQueryInputParameters() const{ return m_protectedQueryInputParameters; }
+    inline const ProtectedQueryInputParameters& GetProtectedQueryInputParameters() const { return m_protectedQueryInputParameters; }
     inline bool ProtectedQueryInputParametersHasBeenSet() const { return m_protectedQueryInputParametersHasBeenSet; }
-    inline void SetProtectedQueryInputParameters(const ProtectedQueryInputParameters& value) { m_protectedQueryInputParametersHasBeenSet = true; m_protectedQueryInputParameters = value; }
-    inline void SetProtectedQueryInputParameters(ProtectedQueryInputParameters&& value) { m_protectedQueryInputParametersHasBeenSet = true; m_protectedQueryInputParameters = std::move(value); }
-    inline InputChannelDataSource& WithProtectedQueryInputParameters(const ProtectedQueryInputParameters& value) { SetProtectedQueryInputParameters(value); return *this;}
-    inline InputChannelDataSource& WithProtectedQueryInputParameters(ProtectedQueryInputParameters&& value) { SetProtectedQueryInputParameters(std::move(value)); return *this;}
+    template<typename ProtectedQueryInputParametersT = ProtectedQueryInputParameters>
+    void SetProtectedQueryInputParameters(ProtectedQueryInputParametersT&& value) { m_protectedQueryInputParametersHasBeenSet = true; m_protectedQueryInputParameters = std::forward<ProtectedQueryInputParametersT>(value); }
+    template<typename ProtectedQueryInputParametersT = ProtectedQueryInputParameters>
+    InputChannelDataSource& WithProtectedQueryInputParameters(ProtectedQueryInputParametersT&& value) { SetProtectedQueryInputParameters(std::forward<ProtectedQueryInputParametersT>(value)); return *this;}
     ///@}
   private:
 

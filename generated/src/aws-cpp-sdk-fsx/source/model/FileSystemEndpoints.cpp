@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileSystemEndpoints::FileSystemEndpoints() : 
-    m_interclusterHasBeenSet(false),
-    m_managementHasBeenSet(false)
-{
-}
-
 FileSystemEndpoints::FileSystemEndpoints(JsonView jsonValue)
-  : FileSystemEndpoints()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FileSystemEndpoints& FileSystemEndpoints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Intercluster"))
   {
     m_intercluster = jsonValue.GetObject("Intercluster");
-
     m_interclusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Management"))
   {
     m_management = jsonValue.GetObject("Management");
-
     m_managementHasBeenSet = true;
   }
-
   return *this;
 }
 

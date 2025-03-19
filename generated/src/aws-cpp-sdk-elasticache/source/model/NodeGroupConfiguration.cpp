@@ -20,20 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeGroupConfiguration::NodeGroupConfiguration() : 
-    m_nodeGroupIdHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_primaryAvailabilityZoneHasBeenSet(false),
-    m_replicaAvailabilityZonesHasBeenSet(false),
-    m_primaryOutpostArnHasBeenSet(false),
-    m_replicaOutpostArnsHasBeenSet(false)
-{
-}
-
 NodeGroupConfiguration::NodeGroupConfiguration(const XmlNode& xmlNode)
-  : NodeGroupConfiguration()
 {
   *this = xmlNode;
 }
@@ -72,6 +59,7 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
     if(!replicaAvailabilityZonesNode.IsNull())
     {
       XmlNode replicaAvailabilityZonesMember = replicaAvailabilityZonesNode.FirstChild("AvailabilityZone");
+      m_replicaAvailabilityZonesHasBeenSet = !replicaAvailabilityZonesMember.IsNull();
       while(!replicaAvailabilityZonesMember.IsNull())
       {
         m_replicaAvailabilityZones.push_back(replicaAvailabilityZonesMember.GetText());
@@ -90,6 +78,7 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
     if(!replicaOutpostArnsNode.IsNull())
     {
       XmlNode replicaOutpostArnsMember = replicaOutpostArnsNode.FirstChild("OutpostArn");
+      m_replicaOutpostArnsHasBeenSet = !replicaOutpostArnsMember.IsNull();
       while(!replicaOutpostArnsMember.IsNull())
       {
         m_replicaOutpostArns.push_back(replicaOutpostArnsMember.GetText());

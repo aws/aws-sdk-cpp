@@ -18,14 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-CsrExtensions::CsrExtensions() : 
-    m_keyUsageHasBeenSet(false),
-    m_subjectInformationAccessHasBeenSet(false)
-{
-}
-
 CsrExtensions::CsrExtensions(JsonView jsonValue)
-  : CsrExtensions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CsrExtensions& CsrExtensions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyUsage"))
   {
     m_keyUsage = jsonValue.GetObject("KeyUsage");
-
     m_keyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectInformationAccess"))
   {
     Aws::Utils::Array<JsonView> subjectInformationAccessJsonList = jsonValue.GetArray("SubjectInformationAccess");
@@ -48,7 +39,6 @@ CsrExtensions& CsrExtensions::operator =(JsonView jsonValue)
     }
     m_subjectInformationAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

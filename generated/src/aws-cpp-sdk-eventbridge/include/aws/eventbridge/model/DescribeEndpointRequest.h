@@ -21,7 +21,7 @@ namespace Model
   class DescribeEndpointRequest : public EventBridgeRequest
   {
   public:
-    AWS_EVENTBRIDGE_API DescribeEndpointRequest();
+    AWS_EVENTBRIDGE_API DescribeEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the endpoint you want to get information about. For example,
      * <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DescribeEndpointRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeEndpointRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeEndpointRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeEndpointRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The primary Region of the endpoint you want to get information about. For
      * example <code>"HomeRegion": "us-east-1"</code>.</p>
      */
-    inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
+    inline const Aws::String& GetHomeRegion() const { return m_homeRegion; }
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
-    inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
-    inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
-    inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
-    inline DescribeEndpointRequest& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
-    inline DescribeEndpointRequest& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
-    inline DescribeEndpointRequest& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
+    template<typename HomeRegionT = Aws::String>
+    void SetHomeRegion(HomeRegionT&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::forward<HomeRegionT>(value); }
+    template<typename HomeRegionT = Aws::String>
+    DescribeEndpointRequest& WithHomeRegion(HomeRegionT&& value) { SetHomeRegion(std::forward<HomeRegionT>(value)); return *this;}
     ///@}
   private:
 

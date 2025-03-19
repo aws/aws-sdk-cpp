@@ -32,7 +32,7 @@ namespace Model
   class PreloadDataConfig
   {
   public:
-    AWS_HEALTHLAKE_API PreloadDataConfig();
+    AWS_HEALTHLAKE_API PreloadDataConfig() = default;
     AWS_HEALTHLAKE_API PreloadDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API PreloadDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
      */
-    inline const PreloadDataType& GetPreloadDataType() const{ return m_preloadDataType; }
+    inline PreloadDataType GetPreloadDataType() const { return m_preloadDataType; }
     inline bool PreloadDataTypeHasBeenSet() const { return m_preloadDataTypeHasBeenSet; }
-    inline void SetPreloadDataType(const PreloadDataType& value) { m_preloadDataTypeHasBeenSet = true; m_preloadDataType = value; }
-    inline void SetPreloadDataType(PreloadDataType&& value) { m_preloadDataTypeHasBeenSet = true; m_preloadDataType = std::move(value); }
-    inline PreloadDataConfig& WithPreloadDataType(const PreloadDataType& value) { SetPreloadDataType(value); return *this;}
-    inline PreloadDataConfig& WithPreloadDataType(PreloadDataType&& value) { SetPreloadDataType(std::move(value)); return *this;}
+    inline void SetPreloadDataType(PreloadDataType value) { m_preloadDataTypeHasBeenSet = true; m_preloadDataType = value; }
+    inline PreloadDataConfig& WithPreloadDataType(PreloadDataType value) { SetPreloadDataType(value); return *this;}
     ///@}
   private:
 
-    PreloadDataType m_preloadDataType;
+    PreloadDataType m_preloadDataType{PreloadDataType::NOT_SET};
     bool m_preloadDataTypeHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelLatencyThreshold::ModelLatencyThreshold() : 
-    m_percentileHasBeenSet(false),
-    m_valueInMilliseconds(0),
-    m_valueInMillisecondsHasBeenSet(false)
-{
-}
-
 ModelLatencyThreshold::ModelLatencyThreshold(JsonView jsonValue)
-  : ModelLatencyThreshold()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelLatencyThreshold& ModelLatencyThreshold::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Percentile"))
   {
     m_percentile = jsonValue.GetString("Percentile");
-
     m_percentileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueInMilliseconds"))
   {
     m_valueInMilliseconds = jsonValue.GetInteger("ValueInMilliseconds");
-
     m_valueInMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

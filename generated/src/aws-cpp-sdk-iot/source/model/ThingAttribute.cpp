@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingAttribute::ThingAttribute() : 
-    m_thingNameHasBeenSet(false),
-    m_thingTypeNameHasBeenSet(false),
-    m_thingArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 ThingAttribute::ThingAttribute(JsonView jsonValue)
-  : ThingAttribute()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ThingAttribute& ThingAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingTypeName"))
   {
     m_thingTypeName = jsonValue.GetString("thingTypeName");
-
     m_thingTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingArn"))
   {
     m_thingArn = jsonValue.GetString("thingArn");
-
     m_thingArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -66,14 +49,11 @@ ThingAttribute& ThingAttribute::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLFTagExpressionResult::GetLFTagExpressionResult()
-{
-}
-
 GetLFTagExpressionResult::GetLFTagExpressionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetLFTagExpressionResult& GetLFTagExpressionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
+    m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     Aws::Utils::Array<JsonView> expressionJsonList = jsonValue.GetArray("Expression");
@@ -54,14 +47,15 @@ GetLFTagExpressionResult& GetLFTagExpressionResult::operator =(const Aws::Amazon
     {
       m_expression.push_back(expressionJsonList[expressionIndex].AsObject());
     }
+    m_expressionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

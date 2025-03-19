@@ -42,7 +42,7 @@ namespace Model
   class Cluster
   {
   public:
-    AWS_EMR_API Cluster();
+    AWS_EMR_API Cluster() = default;
     AWS_EMR_API Cluster(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The unique identifier for the cluster.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Cluster& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Cluster& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Cluster& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Cluster& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,24 @@ namespace Model
      * <p>The name of the cluster. This parameter can't contain the characters &lt;,
      * &gt;, $, |, or ` (backtick).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Cluster& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Cluster& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Cluster& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Cluster& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status details about the cluster.</p>
      */
-    inline const ClusterStatus& GetStatus() const{ return m_status; }
+    inline const ClusterStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ClusterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ClusterStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Cluster& WithStatus(const ClusterStatus& value) { SetStatus(value); return *this;}
-    inline Cluster& WithStatus(ClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = ClusterStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ClusterStatus>
+    Cluster& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,12 @@ namespace Model
      * <p>Provides information about the Amazon EC2 instances in a cluster grouped by
      * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
      */
-    inline const Ec2InstanceAttributes& GetEc2InstanceAttributes() const{ return m_ec2InstanceAttributes; }
+    inline const Ec2InstanceAttributes& GetEc2InstanceAttributes() const { return m_ec2InstanceAttributes; }
     inline bool Ec2InstanceAttributesHasBeenSet() const { return m_ec2InstanceAttributesHasBeenSet; }
-    inline void SetEc2InstanceAttributes(const Ec2InstanceAttributes& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = value; }
-    inline void SetEc2InstanceAttributes(Ec2InstanceAttributes&& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = std::move(value); }
-    inline Cluster& WithEc2InstanceAttributes(const Ec2InstanceAttributes& value) { SetEc2InstanceAttributes(value); return *this;}
-    inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(std::move(value)); return *this;}
+    template<typename Ec2InstanceAttributesT = Ec2InstanceAttributes>
+    void SetEc2InstanceAttributes(Ec2InstanceAttributesT&& value) { m_ec2InstanceAttributesHasBeenSet = true; m_ec2InstanceAttributes = std::forward<Ec2InstanceAttributesT>(value); }
+    template<typename Ec2InstanceAttributesT = Ec2InstanceAttributes>
+    Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributesT&& value) { SetEc2InstanceAttributes(std::forward<Ec2InstanceAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +106,10 @@ namespace Model
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
      */
-    inline const InstanceCollectionType& GetInstanceCollectionType() const{ return m_instanceCollectionType; }
+    inline InstanceCollectionType GetInstanceCollectionType() const { return m_instanceCollectionType; }
     inline bool InstanceCollectionTypeHasBeenSet() const { return m_instanceCollectionTypeHasBeenSet; }
-    inline void SetInstanceCollectionType(const InstanceCollectionType& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = value; }
-    inline void SetInstanceCollectionType(InstanceCollectionType&& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = std::move(value); }
-    inline Cluster& WithInstanceCollectionType(const InstanceCollectionType& value) { SetInstanceCollectionType(value); return *this;}
-    inline Cluster& WithInstanceCollectionType(InstanceCollectionType&& value) { SetInstanceCollectionType(std::move(value)); return *this;}
+    inline void SetInstanceCollectionType(InstanceCollectionType value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = value; }
+    inline Cluster& WithInstanceCollectionType(InstanceCollectionType value) { SetInstanceCollectionType(value); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +117,12 @@ namespace Model
      * <p>The path to the Amazon S3 location where logs for this cluster are
      * stored.</p>
      */
-    inline const Aws::String& GetLogUri() const{ return m_logUri; }
+    inline const Aws::String& GetLogUri() const { return m_logUri; }
     inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
-    inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
-    inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
-    inline void SetLogUri(const char* value) { m_logUriHasBeenSet = true; m_logUri.assign(value); }
-    inline Cluster& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
-    inline Cluster& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
-    inline Cluster& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+    template<typename LogUriT = Aws::String>
+    void SetLogUri(LogUriT&& value) { m_logUriHasBeenSet = true; m_logUri = std::forward<LogUriT>(value); }
+    template<typename LogUriT = Aws::String>
+    Cluster& WithLogUri(LogUriT&& value) { SetLogUri(std::forward<LogUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,42 +130,36 @@ namespace Model
      * <p> The KMS key used for encrypting log files. This attribute is only available
      * with Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. </p>
      */
-    inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
+    inline const Aws::String& GetLogEncryptionKmsKeyId() const { return m_logEncryptionKmsKeyId; }
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
-    inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
-    inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
-    inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
-    inline Cluster& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
-    inline Cluster& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
-    inline Cluster& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
+    template<typename LogEncryptionKmsKeyIdT = Aws::String>
+    void SetLogEncryptionKmsKeyId(LogEncryptionKmsKeyIdT&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::forward<LogEncryptionKmsKeyIdT>(value); }
+    template<typename LogEncryptionKmsKeyIdT = Aws::String>
+    Cluster& WithLogEncryptionKmsKeyId(LogEncryptionKmsKeyIdT&& value) { SetLogEncryptionKmsKeyId(std::forward<LogEncryptionKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AMI version requested for this cluster.</p>
      */
-    inline const Aws::String& GetRequestedAmiVersion() const{ return m_requestedAmiVersion; }
+    inline const Aws::String& GetRequestedAmiVersion() const { return m_requestedAmiVersion; }
     inline bool RequestedAmiVersionHasBeenSet() const { return m_requestedAmiVersionHasBeenSet; }
-    inline void SetRequestedAmiVersion(const Aws::String& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = value; }
-    inline void SetRequestedAmiVersion(Aws::String&& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = std::move(value); }
-    inline void SetRequestedAmiVersion(const char* value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion.assign(value); }
-    inline Cluster& WithRequestedAmiVersion(const Aws::String& value) { SetRequestedAmiVersion(value); return *this;}
-    inline Cluster& WithRequestedAmiVersion(Aws::String&& value) { SetRequestedAmiVersion(std::move(value)); return *this;}
-    inline Cluster& WithRequestedAmiVersion(const char* value) { SetRequestedAmiVersion(value); return *this;}
+    template<typename RequestedAmiVersionT = Aws::String>
+    void SetRequestedAmiVersion(RequestedAmiVersionT&& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = std::forward<RequestedAmiVersionT>(value); }
+    template<typename RequestedAmiVersionT = Aws::String>
+    Cluster& WithRequestedAmiVersion(RequestedAmiVersionT&& value) { SetRequestedAmiVersion(std::forward<RequestedAmiVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AMI version running on this cluster.</p>
      */
-    inline const Aws::String& GetRunningAmiVersion() const{ return m_runningAmiVersion; }
+    inline const Aws::String& GetRunningAmiVersion() const { return m_runningAmiVersion; }
     inline bool RunningAmiVersionHasBeenSet() const { return m_runningAmiVersionHasBeenSet; }
-    inline void SetRunningAmiVersion(const Aws::String& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
-    inline void SetRunningAmiVersion(Aws::String&& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = std::move(value); }
-    inline void SetRunningAmiVersion(const char* value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion.assign(value); }
-    inline Cluster& WithRunningAmiVersion(const Aws::String& value) { SetRunningAmiVersion(value); return *this;}
-    inline Cluster& WithRunningAmiVersion(Aws::String&& value) { SetRunningAmiVersion(std::move(value)); return *this;}
-    inline Cluster& WithRunningAmiVersion(const char* value) { SetRunningAmiVersion(value); return *this;}
+    template<typename RunningAmiVersionT = Aws::String>
+    void SetRunningAmiVersion(RunningAmiVersionT&& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = std::forward<RunningAmiVersionT>(value); }
+    template<typename RunningAmiVersionT = Aws::String>
+    Cluster& WithRunningAmiVersion(RunningAmiVersionT&& value) { SetRunningAmiVersion(std::forward<RunningAmiVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,14 +173,12 @@ namespace Model
      * The release label applies only to Amazon EMR releases version 4.0 and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
-    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+    inline const Aws::String& GetReleaseLabel() const { return m_releaseLabel; }
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
-    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
-    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
-    inline Cluster& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
-    inline Cluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
-    inline Cluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+    template<typename ReleaseLabelT = Aws::String>
+    void SetReleaseLabel(ReleaseLabelT&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::forward<ReleaseLabelT>(value); }
+    template<typename ReleaseLabelT = Aws::String>
+    Cluster& WithReleaseLabel(ReleaseLabelT&& value) { SetReleaseLabel(std::forward<ReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,7 +186,7 @@ namespace Model
      * <p>Specifies whether the cluster should terminate after completing all
      * steps.</p>
      */
-    inline bool GetAutoTerminate() const{ return m_autoTerminate; }
+    inline bool GetAutoTerminate() const { return m_autoTerminate; }
     inline bool AutoTerminateHasBeenSet() const { return m_autoTerminateHasBeenSet; }
     inline void SetAutoTerminate(bool value) { m_autoTerminateHasBeenSet = true; m_autoTerminate = value; }
     inline Cluster& WithAutoTerminate(bool value) { SetAutoTerminate(value); return *this;}
@@ -214,7 +198,7 @@ namespace Model
      * instances from being terminated by an API call or user intervention, or in the
      * event of a cluster error.</p>
      */
-    inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+    inline bool GetTerminationProtected() const { return m_terminationProtected; }
     inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
     inline Cluster& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
@@ -225,7 +209,7 @@ namespace Model
      * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
      * instances that have degraded within the cluster.</p>
      */
-    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+    inline bool GetUnhealthyNodeReplacement() const { return m_unhealthyNodeReplacement; }
     inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
     inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
     inline Cluster& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
@@ -245,7 +229,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command, or the Amazon Web Services Management Console.</p>
      */
-    inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
+    inline bool GetVisibleToAllUsers() const { return m_visibleToAllUsers; }
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
     inline Cluster& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
@@ -255,28 +239,28 @@ namespace Model
     /**
      * <p>The applications installed on this cluster.</p>
      */
-    inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+    inline const Aws::Vector<Application>& GetApplications() const { return m_applications; }
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
-    inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
-    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
-    inline Cluster& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
-    inline Cluster& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
-    inline Cluster& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
-    inline Cluster& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+    template<typename ApplicationsT = Aws::Vector<Application>>
+    void SetApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications = std::forward<ApplicationsT>(value); }
+    template<typename ApplicationsT = Aws::Vector<Application>>
+    Cluster& WithApplications(ApplicationsT&& value) { SetApplications(std::forward<ApplicationsT>(value)); return *this;}
+    template<typename ApplicationsT = Application>
+    Cluster& AddApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications.emplace_back(std::forward<ApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of tags associated with a cluster.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Cluster& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Cluster& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Cluster& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Cluster& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Cluster& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -284,14 +268,12 @@ namespace Model
      * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-    inline Cluster& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline Cluster& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline Cluster& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    Cluster& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -303,7 +285,7 @@ namespace Model
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
-    inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+    inline int GetNormalizedInstanceHours() const { return m_normalizedInstanceHours; }
     inline bool NormalizedInstanceHoursHasBeenSet() const { return m_normalizedInstanceHoursHasBeenSet; }
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
     inline Cluster& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
@@ -314,14 +296,12 @@ namespace Model
      * <p>The DNS name of the master node. If the cluster is on a private subnet, this
      * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
-    inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
+    inline const Aws::String& GetMasterPublicDnsName() const { return m_masterPublicDnsName; }
     inline bool MasterPublicDnsNameHasBeenSet() const { return m_masterPublicDnsNameHasBeenSet; }
-    inline void SetMasterPublicDnsName(const Aws::String& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = value; }
-    inline void SetMasterPublicDnsName(Aws::String&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = std::move(value); }
-    inline void SetMasterPublicDnsName(const char* value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName.assign(value); }
-    inline Cluster& WithMasterPublicDnsName(const Aws::String& value) { SetMasterPublicDnsName(value); return *this;}
-    inline Cluster& WithMasterPublicDnsName(Aws::String&& value) { SetMasterPublicDnsName(std::move(value)); return *this;}
-    inline Cluster& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
+    template<typename MasterPublicDnsNameT = Aws::String>
+    void SetMasterPublicDnsName(MasterPublicDnsNameT&& value) { m_masterPublicDnsNameHasBeenSet = true; m_masterPublicDnsName = std::forward<MasterPublicDnsNameT>(value); }
+    template<typename MasterPublicDnsNameT = Aws::String>
+    Cluster& WithMasterPublicDnsName(MasterPublicDnsNameT&& value) { SetMasterPublicDnsName(std::forward<MasterPublicDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -329,28 +309,26 @@ namespace Model
      * <p>Applies only to Amazon EMR releases 4.x and later. The list of configurations
      * that are supplied to the Amazon EMR cluster.</p>
      */
-    inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline Cluster& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
-    inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline Cluster& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
-    inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    Cluster& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsT = Configuration>
+    Cluster& AddConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace_back(std::forward<ConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
-    inline Cluster& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline Cluster& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline Cluster& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    Cluster& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -360,14 +338,12 @@ namespace Model
      * the automatic scaling feature requires to launch and terminate Amazon EC2
      * instances in an instance group.</p>
      */
-    inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
+    inline const Aws::String& GetAutoScalingRole() const { return m_autoScalingRole; }
     inline bool AutoScalingRoleHasBeenSet() const { return m_autoScalingRoleHasBeenSet; }
-    inline void SetAutoScalingRole(const Aws::String& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
-    inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = std::move(value); }
-    inline void SetAutoScalingRole(const char* value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole.assign(value); }
-    inline Cluster& WithAutoScalingRole(const Aws::String& value) { SetAutoScalingRole(value); return *this;}
-    inline Cluster& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(std::move(value)); return *this;}
-    inline Cluster& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+    template<typename AutoScalingRoleT = Aws::String>
+    void SetAutoScalingRole(AutoScalingRoleT&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = std::forward<AutoScalingRoleT>(value); }
+    template<typename AutoScalingRoleT = Aws::String>
+    Cluster& WithAutoScalingRole(AutoScalingRoleT&& value) { SetAutoScalingRole(std::forward<AutoScalingRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -386,12 +362,10 @@ namespace Model
      * is available only in Amazon EMR releases 4.1.0 and later, and is the default for
      * versions of Amazon EMR earlier than 5.1.0.</p>
      */
-    inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
+    inline ScaleDownBehavior GetScaleDownBehavior() const { return m_scaleDownBehavior; }
     inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
-    inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
-    inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
-    inline Cluster& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
-    inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
+    inline void SetScaleDownBehavior(ScaleDownBehavior value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
+    inline Cluster& WithScaleDownBehavior(ScaleDownBehavior value) { SetScaleDownBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -399,14 +373,12 @@ namespace Model
      * <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
-    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+    inline const Aws::String& GetCustomAmiId() const { return m_customAmiId; }
     inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
-    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
-    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
-    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
-    inline Cluster& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
-    inline Cluster& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
-    inline Cluster& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+    template<typename CustomAmiIdT = Aws::String>
+    void SetCustomAmiId(CustomAmiIdT&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::forward<CustomAmiIdT>(value); }
+    template<typename CustomAmiIdT = Aws::String>
+    Cluster& WithCustomAmiId(CustomAmiIdT&& value) { SetCustomAmiId(std::forward<CustomAmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -415,7 +387,7 @@ namespace Model
      * is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and
      * later.</p>
      */
-    inline int GetEbsRootVolumeSize() const{ return m_ebsRootVolumeSize; }
+    inline int GetEbsRootVolumeSize() const { return m_ebsRootVolumeSize; }
     inline bool EbsRootVolumeSizeHasBeenSet() const { return m_ebsRootVolumeSizeHasBeenSet; }
     inline void SetEbsRootVolumeSize(int value) { m_ebsRootVolumeSizeHasBeenSet = true; m_ebsRootVolumeSize = value; }
     inline Cluster& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
@@ -427,12 +399,10 @@ namespace Model
      * updates that the Amazon Linux AMI package repositories apply when an instance
      * boots using the AMI.</p>
      */
-    inline const RepoUpgradeOnBoot& GetRepoUpgradeOnBoot() const{ return m_repoUpgradeOnBoot; }
+    inline RepoUpgradeOnBoot GetRepoUpgradeOnBoot() const { return m_repoUpgradeOnBoot; }
     inline bool RepoUpgradeOnBootHasBeenSet() const { return m_repoUpgradeOnBootHasBeenSet; }
-    inline void SetRepoUpgradeOnBoot(const RepoUpgradeOnBoot& value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = value; }
-    inline void SetRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = std::move(value); }
-    inline Cluster& WithRepoUpgradeOnBoot(const RepoUpgradeOnBoot& value) { SetRepoUpgradeOnBoot(value); return *this;}
-    inline Cluster& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
+    inline void SetRepoUpgradeOnBoot(RepoUpgradeOnBoot value) { m_repoUpgradeOnBootHasBeenSet = true; m_repoUpgradeOnBoot = value; }
+    inline Cluster& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot value) { SetRepoUpgradeOnBoot(value); return *this;}
     ///@}
 
     ///@{
@@ -442,26 +412,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
      */
-    inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
+    inline const KerberosAttributes& GetKerberosAttributes() const { return m_kerberosAttributes; }
     inline bool KerberosAttributesHasBeenSet() const { return m_kerberosAttributesHasBeenSet; }
-    inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
-    inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
-    inline Cluster& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
-    inline Cluster& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}
+    template<typename KerberosAttributesT = KerberosAttributes>
+    void SetKerberosAttributes(KerberosAttributesT&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::forward<KerberosAttributesT>(value); }
+    template<typename KerberosAttributesT = KerberosAttributes>
+    Cluster& WithKerberosAttributes(KerberosAttributesT&& value) { SetKerberosAttributes(std::forward<KerberosAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name of the cluster.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline Cluster& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline Cluster& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline Cluster& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    Cluster& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -469,21 +437,19 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
      * </p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
-    inline Cluster& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline Cluster& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline Cluster& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    Cluster& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the number of steps that can be executed concurrently.</p>
      */
-    inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
+    inline int GetStepConcurrencyLevel() const { return m_stepConcurrencyLevel; }
     inline bool StepConcurrencyLevelHasBeenSet() const { return m_stepConcurrencyLevelHasBeenSet; }
     inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
     inline Cluster& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
@@ -493,14 +459,14 @@ namespace Model
     /**
      * <p>Placement group configured for an Amazon EMR cluster.</p>
      */
-    inline const Aws::Vector<PlacementGroupConfig>& GetPlacementGroups() const{ return m_placementGroups; }
+    inline const Aws::Vector<PlacementGroupConfig>& GetPlacementGroups() const { return m_placementGroups; }
     inline bool PlacementGroupsHasBeenSet() const { return m_placementGroupsHasBeenSet; }
-    inline void SetPlacementGroups(const Aws::Vector<PlacementGroupConfig>& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = value; }
-    inline void SetPlacementGroups(Aws::Vector<PlacementGroupConfig>&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = std::move(value); }
-    inline Cluster& WithPlacementGroups(const Aws::Vector<PlacementGroupConfig>& value) { SetPlacementGroups(value); return *this;}
-    inline Cluster& WithPlacementGroups(Aws::Vector<PlacementGroupConfig>&& value) { SetPlacementGroups(std::move(value)); return *this;}
-    inline Cluster& AddPlacementGroups(const PlacementGroupConfig& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(value); return *this; }
-    inline Cluster& AddPlacementGroups(PlacementGroupConfig&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.push_back(std::move(value)); return *this; }
+    template<typename PlacementGroupsT = Aws::Vector<PlacementGroupConfig>>
+    void SetPlacementGroups(PlacementGroupsT&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups = std::forward<PlacementGroupsT>(value); }
+    template<typename PlacementGroupsT = Aws::Vector<PlacementGroupConfig>>
+    Cluster& WithPlacementGroups(PlacementGroupsT&& value) { SetPlacementGroups(std::forward<PlacementGroupsT>(value)); return *this;}
+    template<typename PlacementGroupsT = PlacementGroupConfig>
+    Cluster& AddPlacementGroups(PlacementGroupsT&& value) { m_placementGroupsHasBeenSet = true; m_placementGroups.emplace_back(std::forward<PlacementGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -509,14 +475,12 @@ namespace Model
      * no Amazon Linux release was specified, the default Amazon Linux release is shown
      * in the response.</p>
      */
-    inline const Aws::String& GetOSReleaseLabel() const{ return m_oSReleaseLabel; }
+    inline const Aws::String& GetOSReleaseLabel() const { return m_oSReleaseLabel; }
     inline bool OSReleaseLabelHasBeenSet() const { return m_oSReleaseLabelHasBeenSet; }
-    inline void SetOSReleaseLabel(const Aws::String& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = value; }
-    inline void SetOSReleaseLabel(Aws::String&& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = std::move(value); }
-    inline void SetOSReleaseLabel(const char* value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel.assign(value); }
-    inline Cluster& WithOSReleaseLabel(const Aws::String& value) { SetOSReleaseLabel(value); return *this;}
-    inline Cluster& WithOSReleaseLabel(Aws::String&& value) { SetOSReleaseLabel(std::move(value)); return *this;}
-    inline Cluster& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
+    template<typename OSReleaseLabelT = Aws::String>
+    void SetOSReleaseLabel(OSReleaseLabelT&& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = std::forward<OSReleaseLabelT>(value); }
+    template<typename OSReleaseLabelT = Aws::String>
+    Cluster& WithOSReleaseLabel(OSReleaseLabelT&& value) { SetOSReleaseLabel(std::forward<OSReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -525,7 +489,7 @@ namespace Model
      * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
      * later.</p>
      */
-    inline int GetEbsRootVolumeIops() const{ return m_ebsRootVolumeIops; }
+    inline int GetEbsRootVolumeIops() const { return m_ebsRootVolumeIops; }
     inline bool EbsRootVolumeIopsHasBeenSet() const { return m_ebsRootVolumeIopsHasBeenSet; }
     inline void SetEbsRootVolumeIops(int value) { m_ebsRootVolumeIopsHasBeenSet = true; m_ebsRootVolumeIops = value; }
     inline Cluster& WithEbsRootVolumeIops(int value) { SetEbsRootVolumeIops(value); return *this;}
@@ -537,7 +501,7 @@ namespace Model
      * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
      * 6.15.0 and later.</p>
      */
-    inline int GetEbsRootVolumeThroughput() const{ return m_ebsRootVolumeThroughput; }
+    inline int GetEbsRootVolumeThroughput() const { return m_ebsRootVolumeThroughput; }
     inline bool EbsRootVolumeThroughputHasBeenSet() const { return m_ebsRootVolumeThroughputHasBeenSet; }
     inline void SetEbsRootVolumeThroughput(int value) { m_ebsRootVolumeThroughputHasBeenSet = true; m_ebsRootVolumeThroughput = value; }
     inline Cluster& WithEbsRootVolumeThroughput(int value) { SetEbsRootVolumeThroughput(value); return *this;}
@@ -556,7 +520,7 @@ namespace Model
     Ec2InstanceAttributes m_ec2InstanceAttributes;
     bool m_ec2InstanceAttributesHasBeenSet = false;
 
-    InstanceCollectionType m_instanceCollectionType;
+    InstanceCollectionType m_instanceCollectionType{InstanceCollectionType::NOT_SET};
     bool m_instanceCollectionTypeHasBeenSet = false;
 
     Aws::String m_logUri;
@@ -574,16 +538,16 @@ namespace Model
     Aws::String m_releaseLabel;
     bool m_releaseLabelHasBeenSet = false;
 
-    bool m_autoTerminate;
+    bool m_autoTerminate{false};
     bool m_autoTerminateHasBeenSet = false;
 
-    bool m_terminationProtected;
+    bool m_terminationProtected{false};
     bool m_terminationProtectedHasBeenSet = false;
 
-    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacement{false};
     bool m_unhealthyNodeReplacementHasBeenSet = false;
 
-    bool m_visibleToAllUsers;
+    bool m_visibleToAllUsers{false};
     bool m_visibleToAllUsersHasBeenSet = false;
 
     Aws::Vector<Application> m_applications;
@@ -595,7 +559,7 @@ namespace Model
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet = false;
 
-    int m_normalizedInstanceHours;
+    int m_normalizedInstanceHours{0};
     bool m_normalizedInstanceHoursHasBeenSet = false;
 
     Aws::String m_masterPublicDnsName;
@@ -610,16 +574,16 @@ namespace Model
     Aws::String m_autoScalingRole;
     bool m_autoScalingRoleHasBeenSet = false;
 
-    ScaleDownBehavior m_scaleDownBehavior;
+    ScaleDownBehavior m_scaleDownBehavior{ScaleDownBehavior::NOT_SET};
     bool m_scaleDownBehaviorHasBeenSet = false;
 
     Aws::String m_customAmiId;
     bool m_customAmiIdHasBeenSet = false;
 
-    int m_ebsRootVolumeSize;
+    int m_ebsRootVolumeSize{0};
     bool m_ebsRootVolumeSizeHasBeenSet = false;
 
-    RepoUpgradeOnBoot m_repoUpgradeOnBoot;
+    RepoUpgradeOnBoot m_repoUpgradeOnBoot{RepoUpgradeOnBoot::NOT_SET};
     bool m_repoUpgradeOnBootHasBeenSet = false;
 
     KerberosAttributes m_kerberosAttributes;
@@ -631,7 +595,7 @@ namespace Model
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
 
-    int m_stepConcurrencyLevel;
+    int m_stepConcurrencyLevel{0};
     bool m_stepConcurrencyLevelHasBeenSet = false;
 
     Aws::Vector<PlacementGroupConfig> m_placementGroups;
@@ -640,10 +604,10 @@ namespace Model
     Aws::String m_oSReleaseLabel;
     bool m_oSReleaseLabelHasBeenSet = false;
 
-    int m_ebsRootVolumeIops;
+    int m_ebsRootVolumeIops{0};
     bool m_ebsRootVolumeIopsHasBeenSet = false;
 
-    int m_ebsRootVolumeThroughput;
+    int m_ebsRootVolumeThroughput{0};
     bool m_ebsRootVolumeThroughputHasBeenSet = false;
   };
 

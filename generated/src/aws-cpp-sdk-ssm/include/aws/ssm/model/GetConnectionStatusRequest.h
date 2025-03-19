@@ -21,7 +21,7 @@ namespace Model
   class GetConnectionStatusRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetConnectionStatusRequest();
+    AWS_SSM_API GetConnectionStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The managed node ID.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline GetConnectionStatusRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline GetConnectionStatusRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline GetConnectionStatusRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    GetConnectionStatusRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

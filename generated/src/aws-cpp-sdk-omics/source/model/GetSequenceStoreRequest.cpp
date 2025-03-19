@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSequenceStoreRequest::GetSequenceStoreRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetSequenceStoreRequest::SerializePayload() const
 {
   return {};

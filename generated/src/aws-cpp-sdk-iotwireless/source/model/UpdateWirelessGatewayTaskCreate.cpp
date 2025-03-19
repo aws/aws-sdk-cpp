@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-UpdateWirelessGatewayTaskCreate::UpdateWirelessGatewayTaskCreate() : 
-    m_updateDataSourceHasBeenSet(false),
-    m_updateDataRoleHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
-{
-}
-
 UpdateWirelessGatewayTaskCreate::UpdateWirelessGatewayTaskCreate(JsonView jsonValue)
-  : UpdateWirelessGatewayTaskCreate()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateWirelessGatewayTaskCreate& UpdateWirelessGatewayTaskCreate::operator =(Jso
   if(jsonValue.ValueExists("UpdateDataSource"))
   {
     m_updateDataSource = jsonValue.GetString("UpdateDataSource");
-
     m_updateDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDataRole"))
   {
     m_updateDataRole = jsonValue.GetString("UpdateDataRole");
-
     m_updateDataRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   return *this;
 }
 

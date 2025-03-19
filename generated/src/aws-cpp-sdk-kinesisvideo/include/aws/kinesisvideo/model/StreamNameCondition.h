@@ -36,7 +36,7 @@ namespace Model
   class StreamNameCondition
   {
   public:
-    AWS_KINESISVIDEO_API StreamNameCondition();
+    AWS_KINESISVIDEO_API StreamNameCondition() = default;
     AWS_KINESISVIDEO_API StreamNameCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API StreamNameCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,30 +48,26 @@ namespace Model
      * <code>BEGINS_WITH</code> operator, which finds streams whose names start with a
      * given prefix.</p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline StreamNameCondition& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline StreamNameCondition& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline StreamNameCondition& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value to compare.</p>
      */
-    inline const Aws::String& GetComparisonValue() const{ return m_comparisonValue; }
+    inline const Aws::String& GetComparisonValue() const { return m_comparisonValue; }
     inline bool ComparisonValueHasBeenSet() const { return m_comparisonValueHasBeenSet; }
-    inline void SetComparisonValue(const Aws::String& value) { m_comparisonValueHasBeenSet = true; m_comparisonValue = value; }
-    inline void SetComparisonValue(Aws::String&& value) { m_comparisonValueHasBeenSet = true; m_comparisonValue = std::move(value); }
-    inline void SetComparisonValue(const char* value) { m_comparisonValueHasBeenSet = true; m_comparisonValue.assign(value); }
-    inline StreamNameCondition& WithComparisonValue(const Aws::String& value) { SetComparisonValue(value); return *this;}
-    inline StreamNameCondition& WithComparisonValue(Aws::String&& value) { SetComparisonValue(std::move(value)); return *this;}
-    inline StreamNameCondition& WithComparisonValue(const char* value) { SetComparisonValue(value); return *this;}
+    template<typename ComparisonValueT = Aws::String>
+    void SetComparisonValue(ComparisonValueT&& value) { m_comparisonValueHasBeenSet = true; m_comparisonValue = std::forward<ComparisonValueT>(value); }
+    template<typename ComparisonValueT = Aws::String>
+    StreamNameCondition& WithComparisonValue(ComparisonValueT&& value) { SetComparisonValue(std::forward<ComparisonValueT>(value)); return *this;}
     ///@}
   private:
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_comparisonValue;

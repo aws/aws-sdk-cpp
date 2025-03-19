@@ -12,12 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutMessageRequest::BatchPutMessageRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_messagesHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutMessageRequest::SerializePayload() const
 {
   JsonValue payload;

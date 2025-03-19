@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteTemplateRequest::DeleteTemplateRequest() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

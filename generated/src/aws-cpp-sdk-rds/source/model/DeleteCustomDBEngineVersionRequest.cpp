@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteCustomDBEngineVersionRequest::DeleteCustomDBEngineVersionRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomDBEngineVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

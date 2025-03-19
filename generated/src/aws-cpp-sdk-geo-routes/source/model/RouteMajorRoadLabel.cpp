@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMajorRoadLabel::RouteMajorRoadLabel() : 
-    m_roadNameHasBeenSet(false),
-    m_routeNumberHasBeenSet(false)
-{
-}
-
 RouteMajorRoadLabel::RouteMajorRoadLabel(JsonView jsonValue)
-  : RouteMajorRoadLabel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RouteMajorRoadLabel& RouteMajorRoadLabel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoadName"))
   {
     m_roadName = jsonValue.GetObject("RoadName");
-
     m_roadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteNumber"))
   {
     m_routeNumber = jsonValue.GetObject("RouteNumber");
-
     m_routeNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

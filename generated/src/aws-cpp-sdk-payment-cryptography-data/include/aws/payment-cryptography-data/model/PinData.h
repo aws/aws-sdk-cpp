@@ -32,7 +32,7 @@ namespace Model
   class PinData
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API PinData();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API PinData() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API PinData(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API PinData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The PIN offset value.</p>
      */
-    inline const Aws::String& GetPinOffset() const{ return m_pinOffset; }
+    inline const Aws::String& GetPinOffset() const { return m_pinOffset; }
     inline bool PinOffsetHasBeenSet() const { return m_pinOffsetHasBeenSet; }
-    inline void SetPinOffset(const Aws::String& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = value; }
-    inline void SetPinOffset(Aws::String&& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = std::move(value); }
-    inline void SetPinOffset(const char* value) { m_pinOffsetHasBeenSet = true; m_pinOffset.assign(value); }
-    inline PinData& WithPinOffset(const Aws::String& value) { SetPinOffset(value); return *this;}
-    inline PinData& WithPinOffset(Aws::String&& value) { SetPinOffset(std::move(value)); return *this;}
-    inline PinData& WithPinOffset(const char* value) { SetPinOffset(value); return *this;}
+    template<typename PinOffsetT = Aws::String>
+    void SetPinOffset(PinOffsetT&& value) { m_pinOffsetHasBeenSet = true; m_pinOffset = std::forward<PinOffsetT>(value); }
+    template<typename PinOffsetT = Aws::String>
+    PinData& WithPinOffset(PinOffsetT&& value) { SetPinOffset(std::forward<PinOffsetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * cardholder's Primary Account Number (PAN). If a value is not provided, it
      * defaults to PAN.</p>
      */
-    inline const Aws::String& GetVerificationValue() const{ return m_verificationValue; }
+    inline const Aws::String& GetVerificationValue() const { return m_verificationValue; }
     inline bool VerificationValueHasBeenSet() const { return m_verificationValueHasBeenSet; }
-    inline void SetVerificationValue(const Aws::String& value) { m_verificationValueHasBeenSet = true; m_verificationValue = value; }
-    inline void SetVerificationValue(Aws::String&& value) { m_verificationValueHasBeenSet = true; m_verificationValue = std::move(value); }
-    inline void SetVerificationValue(const char* value) { m_verificationValueHasBeenSet = true; m_verificationValue.assign(value); }
-    inline PinData& WithVerificationValue(const Aws::String& value) { SetVerificationValue(value); return *this;}
-    inline PinData& WithVerificationValue(Aws::String&& value) { SetVerificationValue(std::move(value)); return *this;}
-    inline PinData& WithVerificationValue(const char* value) { SetVerificationValue(value); return *this;}
+    template<typename VerificationValueT = Aws::String>
+    void SetVerificationValue(VerificationValueT&& value) { m_verificationValueHasBeenSet = true; m_verificationValue = std::forward<VerificationValueT>(value); }
+    template<typename VerificationValueT = Aws::String>
+    PinData& WithVerificationValue(VerificationValueT&& value) { SetVerificationValue(std::forward<VerificationValueT>(value)); return *this;}
     ///@}
   private:
 

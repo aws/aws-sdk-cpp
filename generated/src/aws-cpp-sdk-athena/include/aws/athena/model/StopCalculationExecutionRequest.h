@@ -21,7 +21,7 @@ namespace Model
   class StopCalculationExecutionRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API StopCalculationExecutionRequest();
+    AWS_ATHENA_API StopCalculationExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The calculation execution UUID.</p>
      */
-    inline const Aws::String& GetCalculationExecutionId() const{ return m_calculationExecutionId; }
+    inline const Aws::String& GetCalculationExecutionId() const { return m_calculationExecutionId; }
     inline bool CalculationExecutionIdHasBeenSet() const { return m_calculationExecutionIdHasBeenSet; }
-    inline void SetCalculationExecutionId(const Aws::String& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = value; }
-    inline void SetCalculationExecutionId(Aws::String&& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = std::move(value); }
-    inline void SetCalculationExecutionId(const char* value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId.assign(value); }
-    inline StopCalculationExecutionRequest& WithCalculationExecutionId(const Aws::String& value) { SetCalculationExecutionId(value); return *this;}
-    inline StopCalculationExecutionRequest& WithCalculationExecutionId(Aws::String&& value) { SetCalculationExecutionId(std::move(value)); return *this;}
-    inline StopCalculationExecutionRequest& WithCalculationExecutionId(const char* value) { SetCalculationExecutionId(value); return *this;}
+    template<typename CalculationExecutionIdT = Aws::String>
+    void SetCalculationExecutionId(CalculationExecutionIdT&& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = std::forward<CalculationExecutionIdT>(value); }
+    template<typename CalculationExecutionIdT = Aws::String>
+    StopCalculationExecutionRequest& WithCalculationExecutionId(CalculationExecutionIdT&& value) { SetCalculationExecutionId(std::forward<CalculationExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

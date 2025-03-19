@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListWorkflowsRequest::ListWorkflowsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_adsApplicationConfigurationNameHasBeenSet(false),
-    m_status(MigrationWorkflowStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkflowsRequest::SerializePayload() const
 {
   return {};

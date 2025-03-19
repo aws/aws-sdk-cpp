@@ -36,7 +36,7 @@ namespace Model
   class OutputGroupSettings
   {
   public:
-    AWS_MEDIACONVERT_API OutputGroupSettings();
+    AWS_MEDIACONVERT_API OutputGroupSettings() = default;
     AWS_MEDIACONVERT_API OutputGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API OutputGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * Settings related to your CMAF output package. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
-    inline const CmafGroupSettings& GetCmafGroupSettings() const{ return m_cmafGroupSettings; }
+    inline const CmafGroupSettings& GetCmafGroupSettings() const { return m_cmafGroupSettings; }
     inline bool CmafGroupSettingsHasBeenSet() const { return m_cmafGroupSettingsHasBeenSet; }
-    inline void SetCmafGroupSettings(const CmafGroupSettings& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = value; }
-    inline void SetCmafGroupSettings(CmafGroupSettings&& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = std::move(value); }
-    inline OutputGroupSettings& WithCmafGroupSettings(const CmafGroupSettings& value) { SetCmafGroupSettings(value); return *this;}
-    inline OutputGroupSettings& WithCmafGroupSettings(CmafGroupSettings&& value) { SetCmafGroupSettings(std::move(value)); return *this;}
+    template<typename CmafGroupSettingsT = CmafGroupSettings>
+    void SetCmafGroupSettings(CmafGroupSettingsT&& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = std::forward<CmafGroupSettingsT>(value); }
+    template<typename CmafGroupSettingsT = CmafGroupSettings>
+    OutputGroupSettings& WithCmafGroupSettings(CmafGroupSettingsT&& value) { SetCmafGroupSettings(std::forward<CmafGroupSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * Settings related to your DASH output package. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
-    inline const DashIsoGroupSettings& GetDashIsoGroupSettings() const{ return m_dashIsoGroupSettings; }
+    inline const DashIsoGroupSettings& GetDashIsoGroupSettings() const { return m_dashIsoGroupSettings; }
     inline bool DashIsoGroupSettingsHasBeenSet() const { return m_dashIsoGroupSettingsHasBeenSet; }
-    inline void SetDashIsoGroupSettings(const DashIsoGroupSettings& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = value; }
-    inline void SetDashIsoGroupSettings(DashIsoGroupSettings&& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = std::move(value); }
-    inline OutputGroupSettings& WithDashIsoGroupSettings(const DashIsoGroupSettings& value) { SetDashIsoGroupSettings(value); return *this;}
-    inline OutputGroupSettings& WithDashIsoGroupSettings(DashIsoGroupSettings&& value) { SetDashIsoGroupSettings(std::move(value)); return *this;}
+    template<typename DashIsoGroupSettingsT = DashIsoGroupSettings>
+    void SetDashIsoGroupSettings(DashIsoGroupSettingsT&& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = std::forward<DashIsoGroupSettingsT>(value); }
+    template<typename DashIsoGroupSettingsT = DashIsoGroupSettings>
+    OutputGroupSettings& WithDashIsoGroupSettings(DashIsoGroupSettingsT&& value) { SetDashIsoGroupSettings(std::forward<DashIsoGroupSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * Settings related to your File output group. MediaConvert uses this group of
      * settings to generate a single standalone file, rather than a streaming package.
      */
-    inline const FileGroupSettings& GetFileGroupSettings() const{ return m_fileGroupSettings; }
+    inline const FileGroupSettings& GetFileGroupSettings() const { return m_fileGroupSettings; }
     inline bool FileGroupSettingsHasBeenSet() const { return m_fileGroupSettingsHasBeenSet; }
-    inline void SetFileGroupSettings(const FileGroupSettings& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = value; }
-    inline void SetFileGroupSettings(FileGroupSettings&& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = std::move(value); }
-    inline OutputGroupSettings& WithFileGroupSettings(const FileGroupSettings& value) { SetFileGroupSettings(value); return *this;}
-    inline OutputGroupSettings& WithFileGroupSettings(FileGroupSettings&& value) { SetFileGroupSettings(std::move(value)); return *this;}
+    template<typename FileGroupSettingsT = FileGroupSettings>
+    void SetFileGroupSettings(FileGroupSettingsT&& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = std::forward<FileGroupSettingsT>(value); }
+    template<typename FileGroupSettingsT = FileGroupSettings>
+    OutputGroupSettings& WithFileGroupSettings(FileGroupSettingsT&& value) { SetFileGroupSettings(std::forward<FileGroupSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * Settings related to your HLS output package. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
-    inline const HlsGroupSettings& GetHlsGroupSettings() const{ return m_hlsGroupSettings; }
+    inline const HlsGroupSettings& GetHlsGroupSettings() const { return m_hlsGroupSettings; }
     inline bool HlsGroupSettingsHasBeenSet() const { return m_hlsGroupSettingsHasBeenSet; }
-    inline void SetHlsGroupSettings(const HlsGroupSettings& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = value; }
-    inline void SetHlsGroupSettings(HlsGroupSettings&& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = std::move(value); }
-    inline OutputGroupSettings& WithHlsGroupSettings(const HlsGroupSettings& value) { SetHlsGroupSettings(value); return *this;}
-    inline OutputGroupSettings& WithHlsGroupSettings(HlsGroupSettings&& value) { SetHlsGroupSettings(std::move(value)); return *this;}
+    template<typename HlsGroupSettingsT = HlsGroupSettings>
+    void SetHlsGroupSettings(HlsGroupSettingsT&& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = std::forward<HlsGroupSettingsT>(value); }
+    template<typename HlsGroupSettingsT = HlsGroupSettings>
+    OutputGroupSettings& WithHlsGroupSettings(HlsGroupSettingsT&& value) { SetHlsGroupSettings(std::forward<HlsGroupSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +100,12 @@ namespace Model
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
-    inline const MsSmoothGroupSettings& GetMsSmoothGroupSettings() const{ return m_msSmoothGroupSettings; }
+    inline const MsSmoothGroupSettings& GetMsSmoothGroupSettings() const { return m_msSmoothGroupSettings; }
     inline bool MsSmoothGroupSettingsHasBeenSet() const { return m_msSmoothGroupSettingsHasBeenSet; }
-    inline void SetMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = value; }
-    inline void SetMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = std::move(value); }
-    inline OutputGroupSettings& WithMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { SetMsSmoothGroupSettings(value); return *this;}
-    inline OutputGroupSettings& WithMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { SetMsSmoothGroupSettings(std::move(value)); return *this;}
+    template<typename MsSmoothGroupSettingsT = MsSmoothGroupSettings>
+    void SetMsSmoothGroupSettings(MsSmoothGroupSettingsT&& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = std::forward<MsSmoothGroupSettingsT>(value); }
+    template<typename MsSmoothGroupSettingsT = MsSmoothGroupSettings>
+    OutputGroupSettings& WithMsSmoothGroupSettings(MsSmoothGroupSettingsT&& value) { SetMsSmoothGroupSettings(std::forward<MsSmoothGroupSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +113,10 @@ namespace Model
      * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
      * Streaming, CMAF)
      */
-    inline const OutputGroupType& GetType() const{ return m_type; }
+    inline OutputGroupType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const OutputGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(OutputGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline OutputGroupSettings& WithType(const OutputGroupType& value) { SetType(value); return *this;}
-    inline OutputGroupSettings& WithType(OutputGroupType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(OutputGroupType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline OutputGroupSettings& WithType(OutputGroupType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -137,7 +135,7 @@ namespace Model
     MsSmoothGroupSettings m_msSmoothGroupSettings;
     bool m_msSmoothGroupSettingsHasBeenSet = false;
 
-    OutputGroupType m_type;
+    OutputGroupType m_type{OutputGroupType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

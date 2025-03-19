@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationComponentDetailsRequest::GetApplicationComponentDetailsRequest() : 
-    m_applicationComponentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationComponentDetailsRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachCertificateFromDistributionRequest::DetachCertificateFromDistributionRequest() : 
-    m_distributionNameHasBeenSet(false)
-{
-}
-
 Aws::String DetachCertificateFromDistributionRequest::SerializePayload() const
 {
   JsonValue payload;

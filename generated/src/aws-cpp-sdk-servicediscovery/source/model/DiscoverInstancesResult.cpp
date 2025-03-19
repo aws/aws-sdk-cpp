@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DiscoverInstancesResult::DiscoverInstancesResult() : 
-    m_instancesRevision(0)
-{
-}
-
 DiscoverInstancesResult::DiscoverInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DiscoverInstancesResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ DiscoverInstancesResult& DiscoverInstancesResult::operator =(const Aws::AmazonWe
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
     }
+    m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstancesRevision"))
   {
     m_instancesRevision = jsonValue.GetInt64("InstancesRevision");
-
+    m_instancesRevisionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMLInputChannelsResult::ListMLInputChannelsResult()
-{
-}
-
 ListMLInputChannelsResult::ListMLInputChannelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMLInputChannelsResult& ListMLInputChannelsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mlInputChannelsList"))
   {
     Aws::Utils::Array<JsonView> mlInputChannelsListJsonList = jsonValue.GetArray("mlInputChannelsList");
@@ -42,14 +37,15 @@ ListMLInputChannelsResult& ListMLInputChannelsResult::operator =(const Aws::Amaz
     {
       m_mlInputChannelsList.push_back(mlInputChannelsListJsonList[mlInputChannelsListIndex].AsObject());
     }
+    m_mlInputChannelsListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

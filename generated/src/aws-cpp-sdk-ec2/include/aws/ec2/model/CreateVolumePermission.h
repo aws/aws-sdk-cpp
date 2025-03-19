@@ -33,7 +33,7 @@ namespace Model
   class CreateVolumePermission
   {
   public:
-    AWS_EC2_API CreateVolumePermission();
+    AWS_EC2_API CreateVolumePermission() = default;
     AWS_EC2_API CreateVolumePermission(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CreateVolumePermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,33 +45,29 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline CreateVolumePermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    CreateVolumePermission& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
-    inline const PermissionGroup& GetGroup() const{ return m_group; }
+    inline PermissionGroup GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
+    inline void SetGroup(PermissionGroup value) { m_groupHasBeenSet = true; m_group = value; }
+    inline CreateVolumePermission& WithGroup(PermissionGroup value) { SetGroup(value); return *this;}
     ///@}
   private:
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    PermissionGroup m_group;
+    PermissionGroup m_group{PermissionGroup::NOT_SET};
     bool m_groupHasBeenSet = false;
   };
 

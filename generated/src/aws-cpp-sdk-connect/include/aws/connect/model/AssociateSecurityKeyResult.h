@@ -27,7 +27,7 @@ namespace Model
   class AssociateSecurityKeyResult
   {
   public:
-    AWS_CONNECT_API AssociateSecurityKeyResult();
+    AWS_CONNECT_API AssociateSecurityKeyResult() = default;
     AWS_CONNECT_API AssociateSecurityKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API AssociateSecurityKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The existing association identifier that uniquely identifies the resource
      * type and storage config for the given instance ID.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-    inline AssociateSecurityKeyResult& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline AssociateSecurityKeyResult& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline AssociateSecurityKeyResult& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    AssociateSecurityKeyResult& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateSecurityKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateSecurityKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateSecurityKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateSecurityKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

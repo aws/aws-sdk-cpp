@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-XmlTimestampsRequest::XmlTimestampsRequest()
-{
-}
-
 Aws::String XmlTimestampsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

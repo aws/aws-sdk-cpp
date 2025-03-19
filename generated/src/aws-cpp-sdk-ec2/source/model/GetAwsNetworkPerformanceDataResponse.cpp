@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAwsNetworkPerformanceDataResponse::GetAwsNetworkPerformanceDataResponse()
-{
-}
-
 GetAwsNetworkPerformanceDataResponse::GetAwsNetworkPerformanceDataResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetAwsNetworkPerformanceDataResponse& GetAwsNetworkPerformanceDataResponse::oper
     if(!dataResponsesNode.IsNull())
     {
       XmlNode dataResponsesMember = dataResponsesNode.FirstChild("item");
+      m_dataResponsesHasBeenSet = !dataResponsesMember.IsNull();
       while(!dataResponsesMember.IsNull())
       {
         m_dataResponses.push_back(dataResponsesMember);
         dataResponsesMember = dataResponsesMember.NextNode("item");
       }
 
+      m_dataResponsesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetAwsNetworkPerformanceDataResponse& GetAwsNetworkPerformanceDataResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetAwsNetworkPerformanceDataResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

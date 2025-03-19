@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-OpenSearchAction::OpenSearchAction() : 
-    m_roleArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_indexHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 OpenSearchAction::OpenSearchAction(JsonView jsonValue)
-  : OpenSearchAction()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ OpenSearchAction& OpenSearchAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetString("index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

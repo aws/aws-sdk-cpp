@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TemplateAttributes::TemplateAttributes() : 
-    m_customAttributesHasBeenSet(false),
-    m_customerProfileAttributesHasBeenSet(false)
-{
-}
-
 TemplateAttributes::TemplateAttributes(JsonView jsonValue)
-  : TemplateAttributes()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TemplateAttributes& TemplateAttributes::operator =(JsonView jsonValue)
     }
     m_customAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerProfileAttributes"))
   {
     m_customerProfileAttributes = jsonValue.GetString("CustomerProfileAttributes");
-
     m_customerProfileAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

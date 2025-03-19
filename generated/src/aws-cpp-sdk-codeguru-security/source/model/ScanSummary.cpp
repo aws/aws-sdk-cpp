@@ -18,19 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-ScanSummary::ScanSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scanNameArnHasBeenSet(false),
-    m_scanState(ScanState::NOT_SET),
-    m_scanStateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ScanSummary::ScanSummary(JsonView jsonValue)
-  : ScanSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ScanSummary& ScanSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanName"))
   {
     m_scanName = jsonValue.GetString("scanName");
-
     m_scanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanNameArn"))
   {
     m_scanNameArn = jsonValue.GetString("scanNameArn");
-
     m_scanNameArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanState"))
   {
     m_scanState = ScanStateMapper::GetScanStateForName(jsonValue.GetString("scanState"));
-
     m_scanStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

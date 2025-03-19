@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-OrCondition::OrCondition() : 
-    m_andConditionsHasBeenSet(false),
-    m_tagConditionHasBeenSet(false)
-{
-}
-
 OrCondition::OrCondition(JsonView jsonValue)
-  : OrCondition()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ OrCondition& OrCondition::operator =(JsonView jsonValue)
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagCondition"))
   {
     m_tagCondition = jsonValue.GetObject("tagCondition");
-
     m_tagConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

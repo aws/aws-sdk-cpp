@@ -12,14 +12,6 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBillingViewRequest::UpdateBillingViewRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataFilterExpressionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBillingViewRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class GetPipelineBlueprintResult
   {
   public:
-    AWS_OSIS_API GetPipelineBlueprintResult();
+    AWS_OSIS_API GetPipelineBlueprintResult() = default;
     AWS_OSIS_API GetPipelineBlueprintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OSIS_API GetPipelineBlueprintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The requested blueprint in YAML format.</p>
      */
-    inline const PipelineBlueprint& GetBlueprint() const{ return m_blueprint; }
-    inline void SetBlueprint(const PipelineBlueprint& value) { m_blueprint = value; }
-    inline void SetBlueprint(PipelineBlueprint&& value) { m_blueprint = std::move(value); }
-    inline GetPipelineBlueprintResult& WithBlueprint(const PipelineBlueprint& value) { SetBlueprint(value); return *this;}
-    inline GetPipelineBlueprintResult& WithBlueprint(PipelineBlueprint&& value) { SetBlueprint(std::move(value)); return *this;}
+    inline const PipelineBlueprint& GetBlueprint() const { return m_blueprint; }
+    template<typename BlueprintT = PipelineBlueprint>
+    void SetBlueprint(BlueprintT&& value) { m_blueprintHasBeenSet = true; m_blueprint = std::forward<BlueprintT>(value); }
+    template<typename BlueprintT = PipelineBlueprint>
+    GetPipelineBlueprintResult& WithBlueprint(BlueprintT&& value) { SetBlueprint(std::forward<BlueprintT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the blueprint.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
-    inline void SetFormat(const Aws::String& value) { m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_format.assign(value); }
-    inline GetPipelineBlueprintResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline GetPipelineBlueprintResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline GetPipelineBlueprintResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+    inline const Aws::String& GetFormat() const { return m_format; }
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    GetPipelineBlueprintResult& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPipelineBlueprintResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPipelineBlueprintResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPipelineBlueprintResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPipelineBlueprintResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PipelineBlueprint m_blueprint;
+    bool m_blueprintHasBeenSet = false;
 
     Aws::String m_format;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

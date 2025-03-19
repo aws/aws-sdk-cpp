@@ -33,7 +33,7 @@ namespace Model
   class RealTimeContactAnalysisIssueDetected
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisIssueDetected();
+    AWS_CONNECT_API RealTimeContactAnalysisIssueDetected() = default;
     AWS_CONNECT_API RealTimeContactAnalysisIssueDetected(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisIssueDetected& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>List of the transcript items (segments) that are associated with a given
      * issue.</p>
      */
-    inline const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>& GetTranscriptItems() const{ return m_transcriptItems; }
+    inline const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>& GetTranscriptItems() const { return m_transcriptItems; }
     inline bool TranscriptItemsHasBeenSet() const { return m_transcriptItemsHasBeenSet; }
-    inline void SetTranscriptItems(const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems = value; }
-    inline void SetTranscriptItems(Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>&& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems = std::move(value); }
-    inline RealTimeContactAnalysisIssueDetected& WithTranscriptItems(const Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>& value) { SetTranscriptItems(value); return *this;}
-    inline RealTimeContactAnalysisIssueDetected& WithTranscriptItems(Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>&& value) { SetTranscriptItems(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisIssueDetected& AddTranscriptItems(const RealTimeContactAnalysisTranscriptItemWithContent& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems.push_back(value); return *this; }
-    inline RealTimeContactAnalysisIssueDetected& AddTranscriptItems(RealTimeContactAnalysisTranscriptItemWithContent&& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems.push_back(std::move(value)); return *this; }
+    template<typename TranscriptItemsT = Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>>
+    void SetTranscriptItems(TranscriptItemsT&& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems = std::forward<TranscriptItemsT>(value); }
+    template<typename TranscriptItemsT = Aws::Vector<RealTimeContactAnalysisTranscriptItemWithContent>>
+    RealTimeContactAnalysisIssueDetected& WithTranscriptItems(TranscriptItemsT&& value) { SetTranscriptItems(std::forward<TranscriptItemsT>(value)); return *this;}
+    template<typename TranscriptItemsT = RealTimeContactAnalysisTranscriptItemWithContent>
+    RealTimeContactAnalysisIssueDetected& AddTranscriptItems(TranscriptItemsT&& value) { m_transcriptItemsHasBeenSet = true; m_transcriptItems.emplace_back(std::forward<TranscriptItemsT>(value)); return *this; }
     ///@}
   private:
 

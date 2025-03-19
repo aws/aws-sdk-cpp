@@ -12,19 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetRequest::CreateDatasetRequest() : 
-    m_flywheelArnHasBeenSet(false),
-    m_datasetNameHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

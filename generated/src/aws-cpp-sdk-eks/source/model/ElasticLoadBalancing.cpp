@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ElasticLoadBalancing::ElasticLoadBalancing() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 ElasticLoadBalancing::ElasticLoadBalancing(JsonView jsonValue)
-  : ElasticLoadBalancing()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ElasticLoadBalancing& ElasticLoadBalancing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

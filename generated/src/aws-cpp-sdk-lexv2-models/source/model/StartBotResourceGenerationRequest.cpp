@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBotResourceGenerationRequest::StartBotResourceGenerationRequest() : 
-    m_generationInputPromptHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
-{
-}
-
 Aws::String StartBotResourceGenerationRequest::SerializePayload() const
 {
   JsonValue payload;

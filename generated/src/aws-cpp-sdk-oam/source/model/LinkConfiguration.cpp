@@ -18,14 +18,7 @@ namespace OAM
 namespace Model
 {
 
-LinkConfiguration::LinkConfiguration() : 
-    m_logGroupConfigurationHasBeenSet(false),
-    m_metricConfigurationHasBeenSet(false)
-{
-}
-
 LinkConfiguration::LinkConfiguration(JsonView jsonValue)
-  : LinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LinkConfiguration& LinkConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogGroupConfiguration"))
   {
     m_logGroupConfiguration = jsonValue.GetObject("LogGroupConfiguration");
-
     m_logGroupConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricConfiguration"))
   {
     m_metricConfiguration = jsonValue.GetObject("MetricConfiguration");
-
     m_metricConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

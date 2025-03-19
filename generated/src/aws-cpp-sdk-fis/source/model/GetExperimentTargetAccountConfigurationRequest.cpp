@@ -12,12 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExperimentTargetAccountConfigurationRequest::GetExperimentTargetAccountConfigurationRequest() : 
-    m_experimentIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetExperimentTargetAccountConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -20,20 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-AlarmHistoryItem::AlarmHistoryItem() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmType(AlarmType::NOT_SET),
-    m_alarmTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_historyItemType(HistoryItemType::NOT_SET),
-    m_historyItemTypeHasBeenSet(false),
-    m_historySummaryHasBeenSet(false),
-    m_historyDataHasBeenSet(false)
-{
-}
-
 AlarmHistoryItem::AlarmHistoryItem(const XmlNode& xmlNode)
-  : AlarmHistoryItem()
 {
   *this = xmlNode;
 }
@@ -53,7 +40,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode alarmTypeNode = resultNode.FirstChild("AlarmType");
     if(!alarmTypeNode.IsNull())
     {
-      m_alarmType = AlarmTypeMapper::GetAlarmTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmTypeNode.GetText()).c_str()).c_str());
+      m_alarmType = AlarmTypeMapper::GetAlarmTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmTypeNode.GetText()).c_str()));
       m_alarmTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
@@ -65,7 +52,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     XmlNode historyItemTypeNode = resultNode.FirstChild("HistoryItemType");
     if(!historyItemTypeNode.IsNull())
     {
-      m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(historyItemTypeNode.GetText()).c_str()).c_str());
+      m_historyItemType = HistoryItemTypeMapper::GetHistoryItemTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(historyItemTypeNode.GetText()).c_str()));
       m_historyItemTypeHasBeenSet = true;
     }
     XmlNode historySummaryNode = resultNode.FirstChild("HistorySummary");

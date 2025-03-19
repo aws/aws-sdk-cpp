@@ -20,23 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationVersionDescription::ApplicationVersionDescription() : 
-    m_applicationVersionArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_sourceBuildInformationHasBeenSet(false),
-    m_buildArnHasBeenSet(false),
-    m_sourceBundleHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_status(ApplicationVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlNode)
-  : ApplicationVersionDescription()
 {
   *this = xmlNode;
 }
@@ -104,7 +88,7 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ApplicationVersionStatusMapper::GetApplicationVersionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ApplicationVersionStatusMapper::GetApplicationVersionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

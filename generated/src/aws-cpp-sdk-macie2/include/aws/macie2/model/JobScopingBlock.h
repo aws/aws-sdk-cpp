@@ -34,7 +34,7 @@ namespace Model
   class JobScopingBlock
   {
   public:
-    AWS_MACIE2_API JobScopingBlock();
+    AWS_MACIE2_API JobScopingBlock() = default;
     AWS_MACIE2_API JobScopingBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API JobScopingBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * determines which objects to include or exclude from the job. If you specify more
      * than one condition, Amazon Macie uses AND logic to join the conditions.</p>
      */
-    inline const Aws::Vector<JobScopeTerm>& GetAnd() const{ return m_and; }
+    inline const Aws::Vector<JobScopeTerm>& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const Aws::Vector<JobScopeTerm>& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(Aws::Vector<JobScopeTerm>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline JobScopingBlock& WithAnd(const Aws::Vector<JobScopeTerm>& value) { SetAnd(value); return *this;}
-    inline JobScopingBlock& WithAnd(Aws::Vector<JobScopeTerm>&& value) { SetAnd(std::move(value)); return *this;}
-    inline JobScopingBlock& AddAnd(const JobScopeTerm& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
-    inline JobScopingBlock& AddAnd(JobScopeTerm&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
+    template<typename AndT = Aws::Vector<JobScopeTerm>>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = Aws::Vector<JobScopeTerm>>
+    JobScopingBlock& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
+    template<typename AndT = JobScopeTerm>
+    JobScopingBlock& AddAnd(AndT&& value) { m_andHasBeenSet = true; m_and.emplace_back(std::forward<AndT>(value)); return *this; }
     ///@}
   private:
 

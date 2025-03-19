@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFrontDistributionOriginGroup
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Provides the criteria for an origin group to fail over.</p>
      */
-    inline const AwsCloudFrontDistributionOriginGroupFailover& GetFailoverCriteria() const{ return m_failoverCriteria; }
+    inline const AwsCloudFrontDistributionOriginGroupFailover& GetFailoverCriteria() const { return m_failoverCriteria; }
     inline bool FailoverCriteriaHasBeenSet() const { return m_failoverCriteriaHasBeenSet; }
-    inline void SetFailoverCriteria(const AwsCloudFrontDistributionOriginGroupFailover& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = value; }
-    inline void SetFailoverCriteria(AwsCloudFrontDistributionOriginGroupFailover&& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = std::move(value); }
-    inline AwsCloudFrontDistributionOriginGroup& WithFailoverCriteria(const AwsCloudFrontDistributionOriginGroupFailover& value) { SetFailoverCriteria(value); return *this;}
-    inline AwsCloudFrontDistributionOriginGroup& WithFailoverCriteria(AwsCloudFrontDistributionOriginGroupFailover&& value) { SetFailoverCriteria(std::move(value)); return *this;}
+    template<typename FailoverCriteriaT = AwsCloudFrontDistributionOriginGroupFailover>
+    void SetFailoverCriteria(FailoverCriteriaT&& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = std::forward<FailoverCriteriaT>(value); }
+    template<typename FailoverCriteriaT = AwsCloudFrontDistributionOriginGroupFailover>
+    AwsCloudFrontDistributionOriginGroup& WithFailoverCriteria(FailoverCriteriaT&& value) { SetFailoverCriteria(std::forward<FailoverCriteriaT>(value)); return *this;}
     ///@}
   private:
 

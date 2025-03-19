@@ -12,12 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccessTokenRequest::GetAccessTokenRequest() : 
-    m_tokenHasBeenSet(false),
-    m_tokenPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessTokenRequest::SerializePayload() const
 {
   JsonValue payload;

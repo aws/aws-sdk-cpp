@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyAquaConfigurationRequest::ModifyAquaConfigurationRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_aquaConfigurationStatus(AquaConfigurationStatus::NOT_SET),
-    m_aquaConfigurationStatusHasBeenSet(false)
-{
-}
-
 Aws::String ModifyAquaConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

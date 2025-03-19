@@ -45,7 +45,7 @@ namespace Model
   class SampledHTTPRequest
   {
   public:
-    AWS_WAF_API SampledHTTPRequest();
+    AWS_WAF_API SampledHTTPRequest() = default;
     AWS_WAF_API SampledHTTPRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API SampledHTTPRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
     /**
      * <p>A complex type that contains detailed information about the request.</p>
      */
-    inline const HTTPRequest& GetRequest() const{ return m_request; }
+    inline const HTTPRequest& GetRequest() const { return m_request; }
     inline bool RequestHasBeenSet() const { return m_requestHasBeenSet; }
-    inline void SetRequest(const HTTPRequest& value) { m_requestHasBeenSet = true; m_request = value; }
-    inline void SetRequest(HTTPRequest&& value) { m_requestHasBeenSet = true; m_request = std::move(value); }
-    inline SampledHTTPRequest& WithRequest(const HTTPRequest& value) { SetRequest(value); return *this;}
-    inline SampledHTTPRequest& WithRequest(HTTPRequest&& value) { SetRequest(std::move(value)); return *this;}
+    template<typename RequestT = HTTPRequest>
+    void SetRequest(RequestT&& value) { m_requestHasBeenSet = true; m_request = std::forward<RequestT>(value); }
+    template<typename RequestT = HTTPRequest>
+    SampledHTTPRequest& WithRequest(RequestT&& value) { SetRequest(std::forward<RequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +70,7 @@ namespace Model
      * represents roughly twice as many CloudFront web requests as a result that has a
      * weight of <code>1</code>.</p>
      */
-    inline long long GetWeight() const{ return m_weight; }
+    inline long long GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(long long value) { m_weightHasBeenSet = true; m_weight = value; }
     inline SampledHTTPRequest& WithWeight(long long value) { SetWeight(value); return *this;}
@@ -81,12 +81,12 @@ namespace Model
      * <p>The time at which AWS WAF received the request from your AWS resource, in
      * Unix time format (in seconds).</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline SampledHTTPRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    SampledHTTPRequest& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +94,12 @@ namespace Model
      * <p>The action for the <code>Rule</code> that the request matched:
      * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
      */
-    inline const Aws::String& GetAction() const{ return m_action; }
+    inline const Aws::String& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
-    inline SampledHTTPRequest& WithAction(const Aws::String& value) { SetAction(value); return *this;}
-    inline SampledHTTPRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
-    inline SampledHTTPRequest& WithAction(const char* value) { SetAction(value); return *this;}
+    template<typename ActionT = Aws::String>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Aws::String>
+    SampledHTTPRequest& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,24 +109,22 @@ namespace Model
      * rule. <code>RuleWithinRuleGroup</code> is the rule within the specified
      * <code>RuleGroup</code> that matched the request listed in the response.</p>
      */
-    inline const Aws::String& GetRuleWithinRuleGroup() const{ return m_ruleWithinRuleGroup; }
+    inline const Aws::String& GetRuleWithinRuleGroup() const { return m_ruleWithinRuleGroup; }
     inline bool RuleWithinRuleGroupHasBeenSet() const { return m_ruleWithinRuleGroupHasBeenSet; }
-    inline void SetRuleWithinRuleGroup(const Aws::String& value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup = value; }
-    inline void SetRuleWithinRuleGroup(Aws::String&& value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup = std::move(value); }
-    inline void SetRuleWithinRuleGroup(const char* value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup.assign(value); }
-    inline SampledHTTPRequest& WithRuleWithinRuleGroup(const Aws::String& value) { SetRuleWithinRuleGroup(value); return *this;}
-    inline SampledHTTPRequest& WithRuleWithinRuleGroup(Aws::String&& value) { SetRuleWithinRuleGroup(std::move(value)); return *this;}
-    inline SampledHTTPRequest& WithRuleWithinRuleGroup(const char* value) { SetRuleWithinRuleGroup(value); return *this;}
+    template<typename RuleWithinRuleGroupT = Aws::String>
+    void SetRuleWithinRuleGroup(RuleWithinRuleGroupT&& value) { m_ruleWithinRuleGroupHasBeenSet = true; m_ruleWithinRuleGroup = std::forward<RuleWithinRuleGroupT>(value); }
+    template<typename RuleWithinRuleGroupT = Aws::String>
+    SampledHTTPRequest& WithRuleWithinRuleGroup(RuleWithinRuleGroupT&& value) { SetRuleWithinRuleGroup(std::forward<RuleWithinRuleGroupT>(value)); return *this;}
     ///@}
   private:
 
     HTTPRequest m_request;
     bool m_requestHasBeenSet = false;
 
-    long long m_weight;
+    long long m_weight{0};
     bool m_weightHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_action;

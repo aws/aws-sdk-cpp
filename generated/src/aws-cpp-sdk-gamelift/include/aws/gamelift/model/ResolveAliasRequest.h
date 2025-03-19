@@ -21,7 +21,7 @@ namespace Model
   class ResolveAliasRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API ResolveAliasRequest();
+    AWS_GAMELIFT_API ResolveAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique identifier of the alias that you want to retrieve a fleet ID for.
      * You can use either the alias ID or ARN value.</p>
      */
-    inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+    inline const Aws::String& GetAliasId() const { return m_aliasId; }
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
-    inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
-    inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
-    inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
-    inline ResolveAliasRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-    inline ResolveAliasRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-    inline ResolveAliasRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+    template<typename AliasIdT = Aws::String>
+    void SetAliasId(AliasIdT&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::forward<AliasIdT>(value); }
+    template<typename AliasIdT = Aws::String>
+    ResolveAliasRequest& WithAliasId(AliasIdT&& value) { SetAliasId(std::forward<AliasIdT>(value)); return *this;}
     ///@}
   private:
 

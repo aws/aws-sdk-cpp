@@ -25,7 +25,7 @@ namespace Model
   class DeleteWhatsAppMessageMediaRequest : public SocialMessagingRequest
   {
   public:
-    AWS_SOCIALMESSAGING_API DeleteWhatsAppMessageMediaRequest();
+    AWS_SOCIALMESSAGING_API DeleteWhatsAppMessageMediaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>mediaId</code> returned from <a
      * href="https://console.aws.amazon.com/social-messaging/latest/APIReference/API_PostWhatsAppMessageMedia.html">PostWhatsAppMessageMedia</a>.</p>
      */
-    inline const Aws::String& GetMediaId() const{ return m_mediaId; }
+    inline const Aws::String& GetMediaId() const { return m_mediaId; }
     inline bool MediaIdHasBeenSet() const { return m_mediaIdHasBeenSet; }
-    inline void SetMediaId(const Aws::String& value) { m_mediaIdHasBeenSet = true; m_mediaId = value; }
-    inline void SetMediaId(Aws::String&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::move(value); }
-    inline void SetMediaId(const char* value) { m_mediaIdHasBeenSet = true; m_mediaId.assign(value); }
-    inline DeleteWhatsAppMessageMediaRequest& WithMediaId(const Aws::String& value) { SetMediaId(value); return *this;}
-    inline DeleteWhatsAppMessageMediaRequest& WithMediaId(Aws::String&& value) { SetMediaId(std::move(value)); return *this;}
-    inline DeleteWhatsAppMessageMediaRequest& WithMediaId(const char* value) { SetMediaId(value); return *this;}
+    template<typename MediaIdT = Aws::String>
+    void SetMediaId(MediaIdT&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::forward<MediaIdT>(value); }
+    template<typename MediaIdT = Aws::String>
+    DeleteWhatsAppMessageMediaRequest& WithMediaId(MediaIdT&& value) { SetMediaId(std::forward<MediaIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_GetLinkedWhatsAppBusinessAccountPhoneNumber.html">GetLinkedWhatsAppBusinessAccount</a>
      * to find a phone number's id.</p>
      */
-    inline const Aws::String& GetOriginationPhoneNumberId() const{ return m_originationPhoneNumberId; }
+    inline const Aws::String& GetOriginationPhoneNumberId() const { return m_originationPhoneNumberId; }
     inline bool OriginationPhoneNumberIdHasBeenSet() const { return m_originationPhoneNumberIdHasBeenSet; }
-    inline void SetOriginationPhoneNumberId(const Aws::String& value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId = value; }
-    inline void SetOriginationPhoneNumberId(Aws::String&& value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId = std::move(value); }
-    inline void SetOriginationPhoneNumberId(const char* value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId.assign(value); }
-    inline DeleteWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(const Aws::String& value) { SetOriginationPhoneNumberId(value); return *this;}
-    inline DeleteWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(Aws::String&& value) { SetOriginationPhoneNumberId(std::move(value)); return *this;}
-    inline DeleteWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(const char* value) { SetOriginationPhoneNumberId(value); return *this;}
+    template<typename OriginationPhoneNumberIdT = Aws::String>
+    void SetOriginationPhoneNumberId(OriginationPhoneNumberIdT&& value) { m_originationPhoneNumberIdHasBeenSet = true; m_originationPhoneNumberId = std::forward<OriginationPhoneNumberIdT>(value); }
+    template<typename OriginationPhoneNumberIdT = Aws::String>
+    DeleteWhatsAppMessageMediaRequest& WithOriginationPhoneNumberId(OriginationPhoneNumberIdT&& value) { SetOriginationPhoneNumberId(std::forward<OriginationPhoneNumberIdT>(value)); return *this;}
     ///@}
   private:
 

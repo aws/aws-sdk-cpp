@@ -13,18 +13,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeriveSharedSecretRequest::DeriveSharedSecretRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_keyAgreementAlgorithm(KeyAgreementAlgorithmSpec::NOT_SET),
-    m_keyAgreementAlgorithmHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_grantTokensHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_recipientHasBeenSet(false)
-{
-}
-
 Aws::String DeriveSharedSecretRequest::SerializePayload() const
 {
   JsonValue payload;

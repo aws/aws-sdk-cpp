@@ -28,7 +28,7 @@ namespace Model
   class CreateMediaCapturePipelineResult
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink
      * ARN of a media pipeline object.</p>
      */
-    inline const MediaCapturePipeline& GetMediaCapturePipeline() const{ return m_mediaCapturePipeline; }
-    inline void SetMediaCapturePipeline(const MediaCapturePipeline& value) { m_mediaCapturePipeline = value; }
-    inline void SetMediaCapturePipeline(MediaCapturePipeline&& value) { m_mediaCapturePipeline = std::move(value); }
-    inline CreateMediaCapturePipelineResult& WithMediaCapturePipeline(const MediaCapturePipeline& value) { SetMediaCapturePipeline(value); return *this;}
-    inline CreateMediaCapturePipelineResult& WithMediaCapturePipeline(MediaCapturePipeline&& value) { SetMediaCapturePipeline(std::move(value)); return *this;}
+    inline const MediaCapturePipeline& GetMediaCapturePipeline() const { return m_mediaCapturePipeline; }
+    template<typename MediaCapturePipelineT = MediaCapturePipeline>
+    void SetMediaCapturePipeline(MediaCapturePipelineT&& value) { m_mediaCapturePipelineHasBeenSet = true; m_mediaCapturePipeline = std::forward<MediaCapturePipelineT>(value); }
+    template<typename MediaCapturePipelineT = MediaCapturePipeline>
+    CreateMediaCapturePipelineResult& WithMediaCapturePipeline(MediaCapturePipelineT&& value) { SetMediaCapturePipeline(std::forward<MediaCapturePipelineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMediaCapturePipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMediaCapturePipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMediaCapturePipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMediaCapturePipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MediaCapturePipeline m_mediaCapturePipeline;
+    bool m_mediaCapturePipelineHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

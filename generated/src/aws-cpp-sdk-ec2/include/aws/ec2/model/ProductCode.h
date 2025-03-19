@@ -32,7 +32,7 @@ namespace Model
   class ProductCode
   {
   public:
-    AWS_EC2_API ProductCode();
+    AWS_EC2_API ProductCode() = default;
     AWS_EC2_API ProductCode(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ProductCode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p>The product code.</p>
      */
-    inline const Aws::String& GetProductCodeId() const{ return m_productCodeId; }
+    inline const Aws::String& GetProductCodeId() const { return m_productCodeId; }
     inline bool ProductCodeIdHasBeenSet() const { return m_productCodeIdHasBeenSet; }
-    inline void SetProductCodeId(const Aws::String& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = value; }
-    inline void SetProductCodeId(Aws::String&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = std::move(value); }
-    inline void SetProductCodeId(const char* value) { m_productCodeIdHasBeenSet = true; m_productCodeId.assign(value); }
-    inline ProductCode& WithProductCodeId(const Aws::String& value) { SetProductCodeId(value); return *this;}
-    inline ProductCode& WithProductCodeId(Aws::String&& value) { SetProductCodeId(std::move(value)); return *this;}
-    inline ProductCode& WithProductCodeId(const char* value) { SetProductCodeId(value); return *this;}
+    template<typename ProductCodeIdT = Aws::String>
+    void SetProductCodeId(ProductCodeIdT&& value) { m_productCodeIdHasBeenSet = true; m_productCodeId = std::forward<ProductCodeIdT>(value); }
+    template<typename ProductCodeIdT = Aws::String>
+    ProductCode& WithProductCodeId(ProductCodeIdT&& value) { SetProductCodeId(std::forward<ProductCodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of product code.</p>
      */
-    inline const ProductCodeValues& GetProductCodeType() const{ return m_productCodeType; }
+    inline ProductCodeValues GetProductCodeType() const { return m_productCodeType; }
     inline bool ProductCodeTypeHasBeenSet() const { return m_productCodeTypeHasBeenSet; }
-    inline void SetProductCodeType(const ProductCodeValues& value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = value; }
-    inline void SetProductCodeType(ProductCodeValues&& value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = std::move(value); }
-    inline ProductCode& WithProductCodeType(const ProductCodeValues& value) { SetProductCodeType(value); return *this;}
-    inline ProductCode& WithProductCodeType(ProductCodeValues&& value) { SetProductCodeType(std::move(value)); return *this;}
+    inline void SetProductCodeType(ProductCodeValues value) { m_productCodeTypeHasBeenSet = true; m_productCodeType = value; }
+    inline ProductCode& WithProductCodeType(ProductCodeValues value) { SetProductCodeType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_productCodeId;
     bool m_productCodeIdHasBeenSet = false;
 
-    ProductCodeValues m_productCodeType;
+    ProductCodeValues m_productCodeType{ProductCodeValues::NOT_SET};
     bool m_productCodeTypeHasBeenSet = false;
   };
 

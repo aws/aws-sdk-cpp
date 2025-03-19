@@ -18,21 +18,7 @@ namespace DLM
 namespace Model
 {
 
-CreateRule::CreateRule() : 
-    m_location(LocationValues::NOT_SET),
-    m_locationHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_intervalUnit(IntervalUnitValues::NOT_SET),
-    m_intervalUnitHasBeenSet(false),
-    m_timesHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_scriptsHasBeenSet(false)
-{
-}
-
 CreateRule::CreateRule(JsonView jsonValue)
-  : CreateRule()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = LocationValuesMapper::GetLocationValuesForName(jsonValue.GetString("Location"));
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntervalUnit"))
   {
     m_intervalUnit = IntervalUnitValuesMapper::GetIntervalUnitValuesForName(jsonValue.GetString("IntervalUnit"));
-
     m_intervalUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Times"))
   {
     Aws::Utils::Array<JsonView> timesJsonList = jsonValue.GetArray("Times");
@@ -69,14 +49,11 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
     }
     m_timesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CronExpression"))
   {
     m_cronExpression = jsonValue.GetString("CronExpression");
-
     m_cronExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scripts"))
   {
     Aws::Utils::Array<JsonView> scriptsJsonList = jsonValue.GetArray("Scripts");
@@ -86,7 +63,6 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
     }
     m_scriptsHasBeenSet = true;
   }
-
   return *this;
 }
 

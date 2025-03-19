@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableFieldWells::PivotTableFieldWells() : 
-    m_pivotTableAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 PivotTableFieldWells::PivotTableFieldWells(JsonView jsonValue)
-  : PivotTableFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PivotTableFieldWells& PivotTableFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PivotTableAggregatedFieldWells"))
   {
     m_pivotTableAggregatedFieldWells = jsonValue.GetObject("PivotTableAggregatedFieldWells");
-
     m_pivotTableAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-DeviceiSCSIAttributes::DeviceiSCSIAttributes() : 
-    m_targetARNHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfacePort(0),
-    m_networkInterfacePortHasBeenSet(false),
-    m_chapEnabled(false),
-    m_chapEnabledHasBeenSet(false)
-{
-}
-
 DeviceiSCSIAttributes::DeviceiSCSIAttributes(JsonView jsonValue)
-  : DeviceiSCSIAttributes()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DeviceiSCSIAttributes& DeviceiSCSIAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetARN"))
   {
     m_targetARN = jsonValue.GetString("TargetARN");
-
     m_targetARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfacePort"))
   {
     m_networkInterfacePort = jsonValue.GetInteger("NetworkInterfacePort");
-
     m_networkInterfacePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChapEnabled"))
   {
     m_chapEnabled = jsonValue.GetBool("ChapEnabled");
-
     m_chapEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

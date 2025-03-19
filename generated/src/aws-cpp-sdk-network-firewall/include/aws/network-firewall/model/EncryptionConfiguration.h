@@ -40,7 +40,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_NETWORKFIREWALL_API EncryptionConfiguration();
+    AWS_NETWORKFIREWALL_API EncryptionConfiguration() = default;
     AWS_NETWORKFIREWALL_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
      * ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline EncryptionConfiguration& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline EncryptionConfiguration& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline EncryptionConfiguration& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    EncryptionConfiguration& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,17 @@ namespace Model
      * <p>The type of Amazon Web Services KMS key to use for encryption of your Network
      * Firewall resources.</p>
      */
-    inline const EncryptionType& GetType() const{ return m_type; }
+    inline EncryptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EncryptionConfiguration& WithType(const EncryptionType& value) { SetType(value); return *this;}
-    inline EncryptionConfiguration& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EncryptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EncryptionConfiguration& WithType(EncryptionType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    EncryptionType m_type;
+    EncryptionType m_type{EncryptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

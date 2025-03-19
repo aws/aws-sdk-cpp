@@ -29,7 +29,7 @@ namespace Model
   class ListActionsResult
   {
   public:
-    AWS_IOTSITEWISE_API ListActionsResult();
+    AWS_IOTSITEWISE_API ListActionsResult() = default;
     AWS_IOTSITEWISE_API ListActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API ListActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list that summarizes the actions associated with the specified asset.</p>
      */
-    inline const Aws::Vector<ActionSummary>& GetActionSummaries() const{ return m_actionSummaries; }
-    inline void SetActionSummaries(const Aws::Vector<ActionSummary>& value) { m_actionSummaries = value; }
-    inline void SetActionSummaries(Aws::Vector<ActionSummary>&& value) { m_actionSummaries = std::move(value); }
-    inline ListActionsResult& WithActionSummaries(const Aws::Vector<ActionSummary>& value) { SetActionSummaries(value); return *this;}
-    inline ListActionsResult& WithActionSummaries(Aws::Vector<ActionSummary>&& value) { SetActionSummaries(std::move(value)); return *this;}
-    inline ListActionsResult& AddActionSummaries(const ActionSummary& value) { m_actionSummaries.push_back(value); return *this; }
-    inline ListActionsResult& AddActionSummaries(ActionSummary&& value) { m_actionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActionSummary>& GetActionSummaries() const { return m_actionSummaries; }
+    template<typename ActionSummariesT = Aws::Vector<ActionSummary>>
+    void SetActionSummaries(ActionSummariesT&& value) { m_actionSummariesHasBeenSet = true; m_actionSummaries = std::forward<ActionSummariesT>(value); }
+    template<typename ActionSummariesT = Aws::Vector<ActionSummary>>
+    ListActionsResult& WithActionSummaries(ActionSummariesT&& value) { SetActionSummaries(std::forward<ActionSummariesT>(value)); return *this;}
+    template<typename ActionSummariesT = ActionSummary>
+    ListActionsResult& AddActionSummaries(ActionSummariesT&& value) { m_actionSummariesHasBeenSet = true; m_actionSummaries.emplace_back(std::forward<ActionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListActionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListActionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ActionSummary> m_actionSummaries;
+    bool m_actionSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

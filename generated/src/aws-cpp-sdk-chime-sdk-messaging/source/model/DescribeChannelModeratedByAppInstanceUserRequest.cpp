@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeChannelModeratedByAppInstanceUserRequest::DescribeChannelModeratedByAppInstanceUserRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_appInstanceUserArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelModeratedByAppInstanceUserRequest::SerializePayload() const
 {
   return {};

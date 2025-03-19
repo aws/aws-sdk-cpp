@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateTimeSeriesToAssetPropertyRequest::AssociateTimeSeriesToAssetPropertyRequest() : 
-    m_aliasHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String AssociateTimeSeriesToAssetPropertyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class TestStateRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API TestStateRequest();
+    AWS_SFN_API TestStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
      * States Language</a> (ASL) definition of the state.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const Aws::String& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
-    inline TestStateRequest& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline TestStateRequest& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline TestStateRequest& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    TestStateRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the execution role with the required IAM
      * permissions for the state.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline TestStateRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline TestStateRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline TestStateRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    TestStateRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that contains the JSON input data for the state.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline TestStateRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline TestStateRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline TestStateRequest& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    TestStateRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,10 @@ namespace Model
      * <p>Each of these levels also provide information about the status of the state
      * execution and the next state to transition to.</p>
      */
-    inline const InspectionLevel& GetInspectionLevel() const{ return m_inspectionLevel; }
+    inline InspectionLevel GetInspectionLevel() const { return m_inspectionLevel; }
     inline bool InspectionLevelHasBeenSet() const { return m_inspectionLevelHasBeenSet; }
-    inline void SetInspectionLevel(const InspectionLevel& value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = value; }
-    inline void SetInspectionLevel(InspectionLevel&& value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = std::move(value); }
-    inline TestStateRequest& WithInspectionLevel(const InspectionLevel& value) { SetInspectionLevel(value); return *this;}
-    inline TestStateRequest& WithInspectionLevel(InspectionLevel&& value) { SetInspectionLevel(std::move(value)); return *this;}
+    inline void SetInspectionLevel(InspectionLevel value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = value; }
+    inline TestStateRequest& WithInspectionLevel(InspectionLevel value) { SetInspectionLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -116,7 +108,7 @@ namespace Model
      * an access denied error.</p> <p>By default, <code>revealSecrets</code> is set to
      * <code>false</code>.</p>
      */
-    inline bool GetRevealSecrets() const{ return m_revealSecrets; }
+    inline bool GetRevealSecrets() const { return m_revealSecrets; }
     inline bool RevealSecretsHasBeenSet() const { return m_revealSecretsHasBeenSet; }
     inline void SetRevealSecrets(bool value) { m_revealSecretsHasBeenSet = true; m_revealSecrets = value; }
     inline TestStateRequest& WithRevealSecrets(bool value) { SetRevealSecrets(value); return *this;}
@@ -127,14 +119,12 @@ namespace Model
      * <p>JSON object literal that sets variables used in the state under test. Object
      * keys are the variable names and values are the variable values.</p>
      */
-    inline const Aws::String& GetVariables() const{ return m_variables; }
+    inline const Aws::String& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::String& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::String&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline void SetVariables(const char* value) { m_variablesHasBeenSet = true; m_variables.assign(value); }
-    inline TestStateRequest& WithVariables(const Aws::String& value) { SetVariables(value); return *this;}
-    inline TestStateRequest& WithVariables(Aws::String&& value) { SetVariables(std::move(value)); return *this;}
-    inline TestStateRequest& WithVariables(const char* value) { SetVariables(value); return *this;}
+    template<typename VariablesT = Aws::String>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::String>
+    TestStateRequest& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,10 +137,10 @@ namespace Model
     Aws::String m_input;
     bool m_inputHasBeenSet = false;
 
-    InspectionLevel m_inspectionLevel;
+    InspectionLevel m_inspectionLevel{InspectionLevel::NOT_SET};
     bool m_inspectionLevelHasBeenSet = false;
 
-    bool m_revealSecrets;
+    bool m_revealSecrets{false};
     bool m_revealSecretsHasBeenSet = false;
 
     Aws::String m_variables;

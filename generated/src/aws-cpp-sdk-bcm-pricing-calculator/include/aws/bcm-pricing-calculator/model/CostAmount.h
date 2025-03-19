@@ -32,7 +32,7 @@ namespace Model
   class CostAmount
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API CostAmount();
+    AWS_BCMPRICINGCALCULATOR_API CostAmount() = default;
     AWS_BCMPRICINGCALCULATOR_API CostAmount(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API CostAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> The numeric value of the cost. </p>
      */
-    inline double GetAmount() const{ return m_amount; }
+    inline double GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
     inline CostAmount& WithAmount(double value) { SetAmount(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p> The currency code for the cost amount. </p>
      */
-    inline const CurrencyCode& GetCurrency() const{ return m_currency; }
+    inline CurrencyCode GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const CurrencyCode& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(CurrencyCode&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline CostAmount& WithCurrency(const CurrencyCode& value) { SetCurrency(value); return *this;}
-    inline CostAmount& WithCurrency(CurrencyCode&& value) { SetCurrency(std::move(value)); return *this;}
+    inline void SetCurrency(CurrencyCode value) { m_currencyHasBeenSet = true; m_currency = value; }
+    inline CostAmount& WithCurrency(CurrencyCode value) { SetCurrency(value); return *this;}
     ///@}
   private:
 
-    double m_amount;
+    double m_amount{0.0};
     bool m_amountHasBeenSet = false;
 
-    CurrencyCode m_currency;
+    CurrencyCode m_currency{CurrencyCode::NOT_SET};
     bool m_currencyHasBeenSet = false;
   };
 

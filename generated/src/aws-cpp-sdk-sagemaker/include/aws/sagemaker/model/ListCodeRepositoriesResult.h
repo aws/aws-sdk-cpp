@@ -29,7 +29,7 @@ namespace Model
   class ListCodeRepositoriesResult
   {
   public:
-    AWS_SAGEMAKER_API ListCodeRepositoriesResult();
+    AWS_SAGEMAKER_API ListCodeRepositoriesResult() = default;
     AWS_SAGEMAKER_API ListCodeRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListCodeRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
      * Manager secret that contains the credentials used to access the repository.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<CodeRepositorySummary>& GetCodeRepositorySummaryList() const{ return m_codeRepositorySummaryList; }
-    inline void SetCodeRepositorySummaryList(const Aws::Vector<CodeRepositorySummary>& value) { m_codeRepositorySummaryList = value; }
-    inline void SetCodeRepositorySummaryList(Aws::Vector<CodeRepositorySummary>&& value) { m_codeRepositorySummaryList = std::move(value); }
-    inline ListCodeRepositoriesResult& WithCodeRepositorySummaryList(const Aws::Vector<CodeRepositorySummary>& value) { SetCodeRepositorySummaryList(value); return *this;}
-    inline ListCodeRepositoriesResult& WithCodeRepositorySummaryList(Aws::Vector<CodeRepositorySummary>&& value) { SetCodeRepositorySummaryList(std::move(value)); return *this;}
-    inline ListCodeRepositoriesResult& AddCodeRepositorySummaryList(const CodeRepositorySummary& value) { m_codeRepositorySummaryList.push_back(value); return *this; }
-    inline ListCodeRepositoriesResult& AddCodeRepositorySummaryList(CodeRepositorySummary&& value) { m_codeRepositorySummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CodeRepositorySummary>& GetCodeRepositorySummaryList() const { return m_codeRepositorySummaryList; }
+    template<typename CodeRepositorySummaryListT = Aws::Vector<CodeRepositorySummary>>
+    void SetCodeRepositorySummaryList(CodeRepositorySummaryListT&& value) { m_codeRepositorySummaryListHasBeenSet = true; m_codeRepositorySummaryList = std::forward<CodeRepositorySummaryListT>(value); }
+    template<typename CodeRepositorySummaryListT = Aws::Vector<CodeRepositorySummary>>
+    ListCodeRepositoriesResult& WithCodeRepositorySummaryList(CodeRepositorySummaryListT&& value) { SetCodeRepositorySummaryList(std::forward<CodeRepositorySummaryListT>(value)); return *this;}
+    template<typename CodeRepositorySummaryListT = CodeRepositorySummary>
+    ListCodeRepositoriesResult& AddCodeRepositorySummaryList(CodeRepositorySummaryListT&& value) { m_codeRepositorySummaryListHasBeenSet = true; m_codeRepositorySummaryList.emplace_back(std::forward<CodeRepositorySummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To get the next set
      * of Git repositories, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCodeRepositoriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCodeRepositoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCodeRepositoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCodeRepositoriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCodeRepositoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCodeRepositoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCodeRepositoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCodeRepositoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CodeRepositorySummary> m_codeRepositorySummaryList;
+    bool m_codeRepositorySummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ namespace Model
   class DeleteContextResult
   {
   public:
-    AWS_SAGEMAKER_API DeleteContextResult();
+    AWS_SAGEMAKER_API DeleteContextResult() = default;
     AWS_SAGEMAKER_API DeleteContextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DeleteContextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the context.</p>
      */
-    inline const Aws::String& GetContextArn() const{ return m_contextArn; }
-    inline void SetContextArn(const Aws::String& value) { m_contextArn = value; }
-    inline void SetContextArn(Aws::String&& value) { m_contextArn = std::move(value); }
-    inline void SetContextArn(const char* value) { m_contextArn.assign(value); }
-    inline DeleteContextResult& WithContextArn(const Aws::String& value) { SetContextArn(value); return *this;}
-    inline DeleteContextResult& WithContextArn(Aws::String&& value) { SetContextArn(std::move(value)); return *this;}
-    inline DeleteContextResult& WithContextArn(const char* value) { SetContextArn(value); return *this;}
+    inline const Aws::String& GetContextArn() const { return m_contextArn; }
+    template<typename ContextArnT = Aws::String>
+    void SetContextArn(ContextArnT&& value) { m_contextArnHasBeenSet = true; m_contextArn = std::forward<ContextArnT>(value); }
+    template<typename ContextArnT = Aws::String>
+    DeleteContextResult& WithContextArn(ContextArnT&& value) { SetContextArn(std::forward<ContextArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteContextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteContextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteContextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteContextResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contextArn;
+    bool m_contextArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

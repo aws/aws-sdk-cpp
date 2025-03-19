@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-WebAppUnits::WebAppUnits() : 
-    m_provisioned(0),
-    m_provisionedHasBeenSet(false)
-{
-}
-
 WebAppUnits::WebAppUnits(JsonView jsonValue)
-  : WebAppUnits()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WebAppUnits& WebAppUnits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Provisioned"))
   {
     m_provisioned = jsonValue.GetInteger("Provisioned");
-
     m_provisionedHasBeenSet = true;
   }
-
   return *this;
 }
 

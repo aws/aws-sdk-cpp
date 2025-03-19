@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-NotificationTargetActions::NotificationTargetActions() : 
-    m_lambdaActionHasBeenSet(false)
-{
-}
-
 NotificationTargetActions::NotificationTargetActions(JsonView jsonValue)
-  : NotificationTargetActions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NotificationTargetActions& NotificationTargetActions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("lambdaAction"))
   {
     m_lambdaAction = jsonValue.GetObject("lambdaAction");
-
     m_lambdaActionHasBeenSet = true;
   }
-
   return *this;
 }
 

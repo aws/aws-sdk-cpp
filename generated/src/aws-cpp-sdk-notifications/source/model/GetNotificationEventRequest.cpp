@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetNotificationEventRequest::GetNotificationEventRequest() : 
-    m_arnHasBeenSet(false),
-    m_locale(LocaleCode::NOT_SET),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String GetNotificationEventRequest::SerializePayload() const
 {
   return {};

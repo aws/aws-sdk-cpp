@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWhatIfAnalysisRequest::DescribeWhatIfAnalysisRequest() : 
-    m_whatIfAnalysisArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWhatIfAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

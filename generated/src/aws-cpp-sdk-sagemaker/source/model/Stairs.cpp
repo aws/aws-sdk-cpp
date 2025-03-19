@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Stairs::Stairs() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_numberOfSteps(0),
-    m_numberOfStepsHasBeenSet(false),
-    m_usersPerStep(0),
-    m_usersPerStepHasBeenSet(false)
-{
-}
-
 Stairs::Stairs(JsonView jsonValue)
-  : Stairs()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Stairs& Stairs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfSteps"))
   {
     m_numberOfSteps = jsonValue.GetInteger("NumberOfSteps");
-
     m_numberOfStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsersPerStep"))
   {
     m_usersPerStep = jsonValue.GetInteger("UsersPerStep");
-
     m_usersPerStepHasBeenSet = true;
   }
-
   return *this;
 }
 

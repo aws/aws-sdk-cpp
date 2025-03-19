@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRotationOverrideResult::CreateRotationOverrideResult()
-{
-}
-
 CreateRotationOverrideResult::CreateRotationOverrideResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateRotationOverrideResult& CreateRotationOverrideResult::operator =(const Aws
   if(jsonValue.ValueExists("RotationOverrideId"))
   {
     m_rotationOverrideId = jsonValue.GetString("RotationOverrideId");
-
+    m_rotationOverrideIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace EFS
 namespace Model
 {
 
-FileSystemAlreadyExists::FileSystemAlreadyExists() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 FileSystemAlreadyExists::FileSystemAlreadyExists(JsonView jsonValue)
-  : FileSystemAlreadyExists()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FileSystemAlreadyExists& FileSystemAlreadyExists::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

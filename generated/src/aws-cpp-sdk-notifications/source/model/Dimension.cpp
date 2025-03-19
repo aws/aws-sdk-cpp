@@ -18,14 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(JsonView jsonValue)
-  : Dimension()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Dimension& Dimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

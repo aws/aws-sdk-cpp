@@ -32,7 +32,7 @@ namespace Model
   class AwsS3BucketNotificationConfigurationS3KeyFilter
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationS3KeyFilter();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationS3KeyFilter() = default;
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationS3KeyFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationS3KeyFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The filter rules for the filter.</p>
      */
-    inline const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& GetFilterRules() const{ return m_filterRules; }
+    inline const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& GetFilterRules() const { return m_filterRules; }
     inline bool FilterRulesHasBeenSet() const { return m_filterRulesHasBeenSet; }
-    inline void SetFilterRules(const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
-    inline void SetFilterRules(Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>&& value) { m_filterRulesHasBeenSet = true; m_filterRules = std::move(value); }
-    inline AwsS3BucketNotificationConfigurationS3KeyFilter& WithFilterRules(const Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>& value) { SetFilterRules(value); return *this;}
-    inline AwsS3BucketNotificationConfigurationS3KeyFilter& WithFilterRules(Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>&& value) { SetFilterRules(std::move(value)); return *this;}
-    inline AwsS3BucketNotificationConfigurationS3KeyFilter& AddFilterRules(const AwsS3BucketNotificationConfigurationS3KeyFilterRule& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(value); return *this; }
-    inline AwsS3BucketNotificationConfigurationS3KeyFilter& AddFilterRules(AwsS3BucketNotificationConfigurationS3KeyFilterRule&& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(std::move(value)); return *this; }
+    template<typename FilterRulesT = Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>>
+    void SetFilterRules(FilterRulesT&& value) { m_filterRulesHasBeenSet = true; m_filterRules = std::forward<FilterRulesT>(value); }
+    template<typename FilterRulesT = Aws::Vector<AwsS3BucketNotificationConfigurationS3KeyFilterRule>>
+    AwsS3BucketNotificationConfigurationS3KeyFilter& WithFilterRules(FilterRulesT&& value) { SetFilterRules(std::forward<FilterRulesT>(value)); return *this;}
+    template<typename FilterRulesT = AwsS3BucketNotificationConfigurationS3KeyFilterRule>
+    AwsS3BucketNotificationConfigurationS3KeyFilter& AddFilterRules(FilterRulesT&& value) { m_filterRulesHasBeenSet = true; m_filterRules.emplace_back(std::forward<FilterRulesT>(value)); return *this; }
     ///@}
   private:
 

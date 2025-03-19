@@ -18,13 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-EventFilter::EventFilter() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 EventFilter::EventFilter(JsonView jsonValue)
-  : EventFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventFilter& EventFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

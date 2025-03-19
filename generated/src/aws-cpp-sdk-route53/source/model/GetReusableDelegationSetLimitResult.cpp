@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReusableDelegationSetLimitResult::GetReusableDelegationSetLimitResult() : 
-    m_count(0)
-{
-}
-
 GetReusableDelegationSetLimitResult::GetReusableDelegationSetLimitResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetReusableDelegationSetLimitResult()
 {
   *this = result;
 }
@@ -38,11 +32,13 @@ GetReusableDelegationSetLimitResult& GetReusableDelegationSetLimitResult::operat
     if(!limitNode.IsNull())
     {
       m_limit = limitNode;
+      m_limitHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("Count");
     if(!countNode.IsNull())
     {
       m_count = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
+      m_countHasBeenSet = true;
     }
   }
 
@@ -51,6 +47,7 @@ GetReusableDelegationSetLimitResult& GetReusableDelegationSetLimitResult::operat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

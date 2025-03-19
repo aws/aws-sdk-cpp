@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-StrategySummary::StrategySummary() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_strategy(Strategy::NOT_SET),
-    m_strategyHasBeenSet(false)
-{
-}
-
 StrategySummary::StrategySummary(JsonView jsonValue)
-  : StrategySummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StrategySummary& StrategySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strategy"))
   {
     m_strategy = StrategyMapper::GetStrategyForName(jsonValue.GetString("strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   return *this;
 }
 

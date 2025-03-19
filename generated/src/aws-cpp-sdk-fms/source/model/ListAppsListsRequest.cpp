@@ -12,15 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAppsListsRequest::ListAppsListsRequest() : 
-    m_defaultLists(false),
-    m_defaultListsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAppsListsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-SnapshotFilter::SnapshotFilter() : 
-    m_name(SnapshotFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SnapshotFilter::SnapshotFilter(JsonView jsonValue)
-  : SnapshotFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SnapshotFilter& SnapshotFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = SnapshotFilterNameMapper::GetSnapshotFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ SnapshotFilter& SnapshotFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

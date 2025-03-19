@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeExportTasksResult::DescribeExportTasksResult()
-{
-}
-
 DescribeExportTasksResult::DescribeExportTasksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeExportTasksResult& DescribeExportTasksResult::operator =(const Aws::Amaz
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode exportTasksNode = resultNode.FirstChild("ExportTasks");
     if(!exportTasksNode.IsNull())
     {
       XmlNode exportTasksMember = exportTasksNode.FirstChild("ExportTask");
+      m_exportTasksHasBeenSet = !exportTasksMember.IsNull();
       while(!exportTasksMember.IsNull())
       {
         m_exportTasks.push_back(exportTasksMember);
         exportTasksMember = exportTasksMember.NextNode("ExportTask");
       }
 
+      m_exportTasksHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeExportTasksResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

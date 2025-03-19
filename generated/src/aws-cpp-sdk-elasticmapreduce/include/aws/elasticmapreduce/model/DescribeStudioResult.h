@@ -28,7 +28,7 @@ namespace Model
   class DescribeStudioResult
   {
   public:
-    AWS_EMR_API DescribeStudioResult();
+    AWS_EMR_API DescribeStudioResult() = default;
     AWS_EMR_API DescribeStudioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API DescribeStudioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The Amazon EMR Studio details.</p>
      */
-    inline const Studio& GetStudio() const{ return m_studio; }
-    inline void SetStudio(const Studio& value) { m_studio = value; }
-    inline void SetStudio(Studio&& value) { m_studio = std::move(value); }
-    inline DescribeStudioResult& WithStudio(const Studio& value) { SetStudio(value); return *this;}
-    inline DescribeStudioResult& WithStudio(Studio&& value) { SetStudio(std::move(value)); return *this;}
+    inline const Studio& GetStudio() const { return m_studio; }
+    template<typename StudioT = Studio>
+    void SetStudio(StudioT&& value) { m_studioHasBeenSet = true; m_studio = std::forward<StudioT>(value); }
+    template<typename StudioT = Studio>
+    DescribeStudioResult& WithStudio(StudioT&& value) { SetStudio(std::forward<StudioT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStudioResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStudioResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStudioResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStudioResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Studio m_studio;
+    bool m_studioHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

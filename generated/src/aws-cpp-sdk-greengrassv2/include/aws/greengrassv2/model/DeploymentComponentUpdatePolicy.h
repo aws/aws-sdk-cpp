@@ -37,7 +37,7 @@ namespace Model
   class DeploymentComponentUpdatePolicy
   {
   public:
-    AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy();
+    AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy() = default;
     AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * that it's safe to update. If the component waits for longer than this timeout,
      * then the deployment proceeds on the device.</p> <p>Default: <code>60</code> </p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline DeploymentComponentUpdatePolicy& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -72,19 +72,17 @@ namespace Model
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */
-    inline const DeploymentComponentUpdatePolicyAction& GetAction() const{ return m_action; }
+    inline DeploymentComponentUpdatePolicyAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const DeploymentComponentUpdatePolicyAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(DeploymentComponentUpdatePolicyAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline DeploymentComponentUpdatePolicy& WithAction(const DeploymentComponentUpdatePolicyAction& value) { SetAction(value); return *this;}
-    inline DeploymentComponentUpdatePolicy& WithAction(DeploymentComponentUpdatePolicyAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(DeploymentComponentUpdatePolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline DeploymentComponentUpdatePolicy& WithAction(DeploymentComponentUpdatePolicyAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
-    DeploymentComponentUpdatePolicyAction m_action;
+    DeploymentComponentUpdatePolicyAction m_action{DeploymentComponentUpdatePolicyAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

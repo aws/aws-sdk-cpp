@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDataQualityProfileAnnotationRequest::PutDataQualityProfileAnnotationRequest() : 
-    m_profileIdHasBeenSet(false),
-    m_inclusionAnnotation(InclusionAnnotationValue::NOT_SET),
-    m_inclusionAnnotationHasBeenSet(false)
-{
-}
-
 Aws::String PutDataQualityProfileAnnotationRequest::SerializePayload() const
 {
   JsonValue payload;

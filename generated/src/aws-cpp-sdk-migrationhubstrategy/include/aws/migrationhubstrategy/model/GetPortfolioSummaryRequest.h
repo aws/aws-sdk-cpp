@@ -19,7 +19,7 @@ namespace Model
   class GetPortfolioSummaryRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioSummaryRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

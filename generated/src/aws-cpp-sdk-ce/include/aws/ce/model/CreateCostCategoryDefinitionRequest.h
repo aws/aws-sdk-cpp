@@ -26,7 +26,7 @@ namespace Model
   class CreateCostCategoryDefinitionRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionRequest();
+    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateCostCategoryDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCostCategoryDefinitionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,24 +56,20 @@ namespace Model
      * current month. Dates can't be before the previous twelve months, or in the
      * future.</p>
      */
-    inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
+    inline const Aws::String& GetEffectiveStart() const { return m_effectiveStart; }
     inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
-    inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = value; }
-    inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::move(value); }
-    inline void SetEffectiveStart(const char* value) { m_effectiveStartHasBeenSet = true; m_effectiveStart.assign(value); }
-    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
+    template<typename EffectiveStartT = Aws::String>
+    void SetEffectiveStart(EffectiveStartT&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::forward<EffectiveStartT>(value); }
+    template<typename EffectiveStartT = Aws::String>
+    CreateCostCategoryDefinitionRequest& WithEffectiveStart(EffectiveStartT&& value) { SetEffectiveStart(std::forward<EffectiveStartT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CostCategoryRuleVersion& GetRuleVersion() const{ return m_ruleVersion; }
+    inline CostCategoryRuleVersion GetRuleVersion() const { return m_ruleVersion; }
     inline bool RuleVersionHasBeenSet() const { return m_ruleVersionHasBeenSet; }
-    inline void SetRuleVersion(const CostCategoryRuleVersion& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = value; }
-    inline void SetRuleVersion(CostCategoryRuleVersion&& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = std::move(value); }
-    inline CreateCostCategoryDefinitionRequest& WithRuleVersion(const CostCategoryRuleVersion& value) { SetRuleVersion(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithRuleVersion(CostCategoryRuleVersion&& value) { SetRuleVersion(std::move(value)); return *this;}
+    inline void SetRuleVersion(CostCategoryRuleVersion value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = value; }
+    inline CreateCostCategoryDefinitionRequest& WithRuleVersion(CostCategoryRuleVersion value) { SetRuleVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -84,26 +78,24 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
-    inline const Aws::Vector<CostCategoryRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<CostCategoryRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<CostCategoryRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<CostCategoryRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline CreateCostCategoryDefinitionRequest& WithRules(const Aws::Vector<CostCategoryRule>& value) { SetRules(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithRules(Aws::Vector<CostCategoryRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionRequest& AddRules(const CostCategoryRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline CreateCostCategoryDefinitionRequest& AddRules(CostCategoryRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<CostCategoryRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<CostCategoryRule>>
+    CreateCostCategoryDefinitionRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = CostCategoryRule>
+    CreateCostCategoryDefinitionRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline CreateCostCategoryDefinitionRequest& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    CreateCostCategoryDefinitionRequest& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +103,14 @@ namespace Model
      * <p> The split charge rules used to allocate your charges between your Cost
      * Category values. </p>
      */
-    inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const{ return m_splitChargeRules; }
+    inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const { return m_splitChargeRules; }
     inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }
-    inline void SetSplitChargeRules(const Aws::Vector<CostCategorySplitChargeRule>& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = value; }
-    inline void SetSplitChargeRules(Aws::Vector<CostCategorySplitChargeRule>&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = std::move(value); }
-    inline CreateCostCategoryDefinitionRequest& WithSplitChargeRules(const Aws::Vector<CostCategorySplitChargeRule>& value) { SetSplitChargeRules(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithSplitChargeRules(Aws::Vector<CostCategorySplitChargeRule>&& value) { SetSplitChargeRules(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionRequest& AddSplitChargeRules(const CostCategorySplitChargeRule& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.push_back(value); return *this; }
-    inline CreateCostCategoryDefinitionRequest& AddSplitChargeRules(CostCategorySplitChargeRule&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.push_back(std::move(value)); return *this; }
+    template<typename SplitChargeRulesT = Aws::Vector<CostCategorySplitChargeRule>>
+    void SetSplitChargeRules(SplitChargeRulesT&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules = std::forward<SplitChargeRulesT>(value); }
+    template<typename SplitChargeRulesT = Aws::Vector<CostCategorySplitChargeRule>>
+    CreateCostCategoryDefinitionRequest& WithSplitChargeRules(SplitChargeRulesT&& value) { SetSplitChargeRules(std::forward<SplitChargeRulesT>(value)); return *this;}
+    template<typename SplitChargeRulesT = CostCategorySplitChargeRule>
+    CreateCostCategoryDefinitionRequest& AddSplitChargeRules(SplitChargeRulesT&& value) { m_splitChargeRulesHasBeenSet = true; m_splitChargeRules.emplace_back(std::forward<SplitChargeRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,14 +131,14 @@ namespace Model
      * whitespaces</p> </li> <li> <p>Don’t use <code>aws:</code> as a prefix for your
      * keys. This prefix is reserved for Amazon Web Services use</p> </li> </ul>
      */
-    inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline CreateCostCategoryDefinitionRequest& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline CreateCostCategoryDefinitionRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline CreateCostCategoryDefinitionRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline CreateCostCategoryDefinitionRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<ResourceTag>>
+    CreateCostCategoryDefinitionRequest& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = ResourceTag>
+    CreateCostCategoryDefinitionRequest& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -156,7 +148,7 @@ namespace Model
     Aws::String m_effectiveStart;
     bool m_effectiveStartHasBeenSet = false;
 
-    CostCategoryRuleVersion m_ruleVersion;
+    CostCategoryRuleVersion m_ruleVersion{CostCategoryRuleVersion::NOT_SET};
     bool m_ruleVersionHasBeenSet = false;
 
     Aws::Vector<CostCategoryRule> m_rules;

@@ -18,19 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ReportSetting::ReportSetting() : 
-    m_reportTemplateHasBeenSet(false),
-    m_frameworkArnsHasBeenSet(false),
-    m_numberOfFrameworks(0),
-    m_numberOfFrameworksHasBeenSet(false),
-    m_accountsHasBeenSet(false),
-    m_organizationUnitsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 ReportSetting::ReportSetting(JsonView jsonValue)
-  : ReportSetting()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportTemplate"))
   {
     m_reportTemplate = jsonValue.GetString("ReportTemplate");
-
     m_reportTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkArns"))
   {
     Aws::Utils::Array<JsonView> frameworkArnsJsonList = jsonValue.GetArray("FrameworkArns");
@@ -53,14 +39,11 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
     }
     m_frameworkArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfFrameworks"))
   {
     m_numberOfFrameworks = jsonValue.GetInteger("NumberOfFrameworks");
-
     m_numberOfFrameworksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accounts"))
   {
     Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("Accounts");
@@ -70,7 +53,6 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
     }
     m_accountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationUnits"))
   {
     Aws::Utils::Array<JsonView> organizationUnitsJsonList = jsonValue.GetArray("OrganizationUnits");
@@ -80,7 +62,6 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
     }
     m_organizationUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
@@ -90,7 +71,6 @@ ReportSetting& ReportSetting::operator =(JsonView jsonValue)
     }
     m_regionsHasBeenSet = true;
   }
-
   return *this;
 }
 

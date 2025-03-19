@@ -12,15 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNodeRequest::UpdateNodeRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nodeIdHasBeenSet(false),
-    m_role(NodeRole::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNodeRequest::SerializePayload() const
 {
   JsonValue payload;

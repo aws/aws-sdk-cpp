@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBuyerDashboardResult::GetBuyerDashboardResult()
-{
-}
-
 GetBuyerDashboardResult::GetBuyerDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetBuyerDashboardResult& GetBuyerDashboardResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("embedUrl"))
   {
     m_embedUrl = jsonValue.GetString("embedUrl");
-
+    m_embedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashboardIdentifier"))
   {
     m_dashboardIdentifier = jsonValue.GetString("dashboardIdentifier");
-
+    m_dashboardIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("embeddingDomains"))
   {
     Aws::Utils::Array<JsonView> embeddingDomainsJsonList = jsonValue.GetArray("embeddingDomains");
@@ -48,14 +42,15 @@ GetBuyerDashboardResult& GetBuyerDashboardResult::operator =(const Aws::AmazonWe
     {
       m_embeddingDomains.push_back(embeddingDomainsJsonList[embeddingDomainsIndex].AsString());
     }
+    m_embeddingDomainsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,20 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationComponentConfigRequest::UpdateApplicationComponentConfigRequest() : 
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_applicationComponentIdHasBeenSet(false),
-    m_configureOnly(false),
-    m_configureOnlyHasBeenSet(false),
-    m_inclusionStatus(InclusionStatus::NOT_SET),
-    m_inclusionStatusHasBeenSet(false),
-    m_secretsManagerKeyHasBeenSet(false),
-    m_sourceCodeListHasBeenSet(false),
-    m_strategyOptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationComponentConfigRequest::SerializePayload() const
 {
   JsonValue payload;

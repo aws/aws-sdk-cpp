@@ -31,7 +31,7 @@ namespace Model
   class InfraCheckConfig
   {
   public:
-    AWS_SAGEMAKER_API InfraCheckConfig();
+    AWS_SAGEMAKER_API InfraCheckConfig() = default;
     AWS_SAGEMAKER_API InfraCheckConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InfraCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>Enables an infrastructure health check.</p>
      */
-    inline bool GetEnableInfraCheck() const{ return m_enableInfraCheck; }
+    inline bool GetEnableInfraCheck() const { return m_enableInfraCheck; }
     inline bool EnableInfraCheckHasBeenSet() const { return m_enableInfraCheckHasBeenSet; }
     inline void SetEnableInfraCheck(bool value) { m_enableInfraCheckHasBeenSet = true; m_enableInfraCheck = value; }
     inline InfraCheckConfig& WithEnableInfraCheck(bool value) { SetEnableInfraCheck(value); return *this;}
     ///@}
   private:
 
-    bool m_enableInfraCheck;
+    bool m_enableInfraCheck{false};
     bool m_enableInfraCheckHasBeenSet = false;
   };
 

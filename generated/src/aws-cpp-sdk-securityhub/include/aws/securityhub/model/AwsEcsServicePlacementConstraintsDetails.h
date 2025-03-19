@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsServicePlacementConstraintsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsServicePlacementConstraintsDetails();
+    AWS_SECURITYHUB_API AwsEcsServicePlacementConstraintsDetails() = default;
     AWS_SECURITYHUB_API AwsEcsServicePlacementConstraintsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsServicePlacementConstraintsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * specify an expression if the constraint type is
      * <code>distinctInstance</code>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline AwsEcsServicePlacementConstraintsDetails& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline AwsEcsServicePlacementConstraintsDetails& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline AwsEcsServicePlacementConstraintsDetails& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    AwsEcsServicePlacementConstraintsDetails& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * to restrict the selection to a group of valid candidates.</p> <p>Valid values:
      * <code>distinctInstance</code> | <code>memberOf</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsEcsServicePlacementConstraintsDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsEcsServicePlacementConstraintsDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsEcsServicePlacementConstraintsDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsEcsServicePlacementConstraintsDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

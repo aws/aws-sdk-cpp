@@ -33,7 +33,7 @@ namespace Model
   class ApplicationComponentStrategy
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> Set to true if the recommendation is set as preferred. </p>
      */
-    inline bool GetIsPreferred() const{ return m_isPreferred; }
+    inline bool GetIsPreferred() const { return m_isPreferred; }
     inline bool IsPreferredHasBeenSet() const { return m_isPreferredHasBeenSet; }
     inline void SetIsPreferred(bool value) { m_isPreferredHasBeenSet = true; m_isPreferred = value; }
     inline ApplicationComponentStrategy& WithIsPreferred(bool value) { SetIsPreferred(value); return *this;}
@@ -53,34 +53,32 @@ namespace Model
     /**
      * <p> Strategy recommendation for the application component. </p>
      */
-    inline const RecommendationSet& GetRecommendation() const{ return m_recommendation; }
+    inline const RecommendationSet& GetRecommendation() const { return m_recommendation; }
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-    inline void SetRecommendation(const RecommendationSet& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-    inline void SetRecommendation(RecommendationSet&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-    inline ApplicationComponentStrategy& WithRecommendation(const RecommendationSet& value) { SetRecommendation(value); return *this;}
-    inline ApplicationComponentStrategy& WithRecommendation(RecommendationSet&& value) { SetRecommendation(std::move(value)); return *this;}
+    template<typename RecommendationT = RecommendationSet>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = RecommendationSet>
+    ApplicationComponentStrategy& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The recommendation status of a strategy for an application component. </p>
      */
-    inline const StrategyRecommendation& GetStatus() const{ return m_status; }
+    inline StrategyRecommendation GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StrategyRecommendation& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StrategyRecommendation&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApplicationComponentStrategy& WithStatus(const StrategyRecommendation& value) { SetStatus(value); return *this;}
-    inline ApplicationComponentStrategy& WithStatus(StrategyRecommendation&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StrategyRecommendation value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApplicationComponentStrategy& WithStatus(StrategyRecommendation value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    bool m_isPreferred;
+    bool m_isPreferred{false};
     bool m_isPreferredHasBeenSet = false;
 
     RecommendationSet m_recommendation;
     bool m_recommendationHasBeenSet = false;
 
-    StrategyRecommendation m_status;
+    StrategyRecommendation m_status{StrategyRecommendation::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

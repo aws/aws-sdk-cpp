@@ -18,15 +18,7 @@ namespace signer
 namespace Model
 {
 
-HashAlgorithmOptions::HashAlgorithmOptions() : 
-    m_allowedValuesHasBeenSet(false),
-    m_defaultValue(HashAlgorithm::NOT_SET),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 HashAlgorithmOptions::HashAlgorithmOptions(JsonView jsonValue)
-  : HashAlgorithmOptions()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ HashAlgorithmOptions& HashAlgorithmOptions::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = HashAlgorithmMapper::GetHashAlgorithmForName(jsonValue.GetString("defaultValue"));
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

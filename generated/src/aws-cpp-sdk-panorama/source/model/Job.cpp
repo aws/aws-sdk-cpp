@@ -18,14 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-Job::Job() : 
-    m_deviceIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Job::Job(JsonView jsonValue)
-  : Job()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Job& Job::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   return *this;
 }
 

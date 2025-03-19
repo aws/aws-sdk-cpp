@@ -18,17 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-BatchGetRepositoriesError::BatchGetRepositoriesError() : 
-    m_repositoryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_errorCode(BatchGetRepositoriesErrorCodeEnum::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchGetRepositoriesError::BatchGetRepositoriesError(JsonView jsonValue)
-  : BatchGetRepositoriesError()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ BatchGetRepositoriesError& BatchGetRepositoriesError::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("repositoryId"))
   {
     m_repositoryId = jsonValue.GetString("repositoryId");
-
     m_repositoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = BatchGetRepositoriesErrorCodeEnumMapper::GetBatchGetRepositoriesErrorCodeEnumForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

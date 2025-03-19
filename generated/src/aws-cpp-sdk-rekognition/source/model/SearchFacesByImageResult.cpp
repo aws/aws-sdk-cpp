@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchFacesByImageResult::SearchFacesByImageResult() : 
-    m_searchedFaceConfidence(0.0)
-{
-}
-
 SearchFacesByImageResult::SearchFacesByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchFacesByImageResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ SearchFacesByImageResult& SearchFacesByImageResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("SearchedFaceBoundingBox"))
   {
     m_searchedFaceBoundingBox = jsonValue.GetObject("SearchedFaceBoundingBox");
-
+    m_searchedFaceBoundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchedFaceConfidence"))
   {
     m_searchedFaceConfidence = jsonValue.GetDouble("SearchedFaceConfidence");
-
+    m_searchedFaceConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceMatches"))
   {
     Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
@@ -50,20 +42,20 @@ SearchFacesByImageResult& SearchFacesByImageResult::operator =(const Aws::Amazon
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
     }
+    m_faceMatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersion"))
   {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
-
+    m_faceModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

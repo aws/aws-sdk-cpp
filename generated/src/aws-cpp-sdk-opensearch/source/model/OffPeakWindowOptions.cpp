@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-OffPeakWindowOptions::OffPeakWindowOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_offPeakWindowHasBeenSet(false)
-{
-}
-
 OffPeakWindowOptions::OffPeakWindowOptions(JsonView jsonValue)
-  : OffPeakWindowOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OffPeakWindowOptions& OffPeakWindowOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OffPeakWindow"))
   {
     m_offPeakWindow = jsonValue.GetObject("OffPeakWindow");
-
     m_offPeakWindowHasBeenSet = true;
   }
-
   return *this;
 }
 

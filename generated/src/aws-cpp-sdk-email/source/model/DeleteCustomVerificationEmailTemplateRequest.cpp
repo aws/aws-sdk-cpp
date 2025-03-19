@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteCustomVerificationEmailTemplateRequest::DeleteCustomVerificationEmailTemplateRequest() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomVerificationEmailTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

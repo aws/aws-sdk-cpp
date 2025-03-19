@@ -12,16 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIpRestrictionRequest::UpdateIpRestrictionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_ipRestrictionRuleMapHasBeenSet(false),
-    m_vpcIdRestrictionRuleMapHasBeenSet(false),
-    m_vpcEndpointIdRestrictionRuleMapHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIpRestrictionRequest::SerializePayload() const
 {
   JsonValue payload;

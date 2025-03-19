@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDashboardResult::CreateDashboardResult() : 
-    m_type(DashboardType::NOT_SET),
-    m_terminationProtectionEnabled(false)
-{
-}
-
 CreateDashboardResult::CreateDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDashboardResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ CreateDashboardResult& CreateDashboardResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("DashboardArn"))
   {
     m_dashboardArn = jsonValue.GetString("DashboardArn");
-
+    m_dashboardArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DashboardTypeMapper::GetDashboardTypeForName(jsonValue.GetString("Type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Widgets"))
   {
     Aws::Utils::Array<JsonView> widgetsJsonList = jsonValue.GetArray("Widgets");
@@ -57,8 +47,8 @@ CreateDashboardResult& CreateDashboardResult::operator =(const Aws::AmazonWebSer
     {
       m_widgets.push_back(widgetsJsonList[widgetsIndex].AsObject());
     }
+    m_widgetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagsList"))
   {
     Aws::Utils::Array<JsonView> tagsListJsonList = jsonValue.GetArray("TagsList");
@@ -66,26 +56,25 @@ CreateDashboardResult& CreateDashboardResult::operator =(const Aws::AmazonWebSer
     {
       m_tagsList.push_back(tagsListJsonList[tagsListIndex].AsObject());
     }
+    m_tagsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshSchedule"))
   {
     m_refreshSchedule = jsonValue.GetObject("RefreshSchedule");
-
+    m_refreshScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminationProtectionEnabled"))
   {
     m_terminationProtectionEnabled = jsonValue.GetBool("TerminationProtectionEnabled");
-
+    m_terminationProtectionEnabledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

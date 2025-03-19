@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIndexingConfigurationRequest::UpdateIndexingConfigurationRequest() : 
-    m_thingIndexingConfigurationHasBeenSet(false),
-    m_thingGroupIndexingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIndexingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

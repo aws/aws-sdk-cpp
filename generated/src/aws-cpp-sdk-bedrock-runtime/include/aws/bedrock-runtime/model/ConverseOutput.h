@@ -33,7 +33,7 @@ namespace Model
   class ConverseOutput
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseOutput();
+    AWS_BEDROCKRUNTIME_API ConverseOutput() = default;
     AWS_BEDROCKRUNTIME_API ConverseOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The message that the model generates.</p>
      */
-    inline const Message& GetMessage() const{ return m_message; }
+    inline const Message& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Message& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Message&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline ConverseOutput& WithMessage(const Message& value) { SetMessage(value); return *this;}
-    inline ConverseOutput& WithMessage(Message&& value) { SetMessage(std::move(value)); return *this;}
+    template<typename MessageT = Message>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Message>
+    ConverseOutput& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

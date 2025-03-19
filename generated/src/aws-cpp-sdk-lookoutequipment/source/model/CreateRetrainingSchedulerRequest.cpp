@@ -12,18 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRetrainingSchedulerRequest::CreateRetrainingSchedulerRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_retrainingStartDateHasBeenSet(false),
-    m_retrainingFrequencyHasBeenSet(false),
-    m_lookbackWindowHasBeenSet(false),
-    m_promoteMode(ModelPromoteMode::NOT_SET),
-    m_promoteModeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateRetrainingSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

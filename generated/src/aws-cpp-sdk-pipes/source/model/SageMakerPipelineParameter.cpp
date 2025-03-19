@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-SageMakerPipelineParameter::SageMakerPipelineParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 SageMakerPipelineParameter::SageMakerPipelineParameter(JsonView jsonValue)
-  : SageMakerPipelineParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SageMakerPipelineParameter& SageMakerPipelineParameter::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

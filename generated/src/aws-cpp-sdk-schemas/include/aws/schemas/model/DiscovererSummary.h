@@ -28,7 +28,7 @@ namespace Model
   class DiscovererSummary
   {
   public:
-    AWS_SCHEMAS_API DiscovererSummary();
+    AWS_SCHEMAS_API DiscovererSummary() = default;
     AWS_SCHEMAS_API DiscovererSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEMAS_API DiscovererSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -38,54 +38,46 @@ namespace Model
     /**
      * <p>The ARN of the discoverer.</p>
      */
-    inline const Aws::String& GetDiscovererArn() const{ return m_discovererArn; }
+    inline const Aws::String& GetDiscovererArn() const { return m_discovererArn; }
     inline bool DiscovererArnHasBeenSet() const { return m_discovererArnHasBeenSet; }
-    inline void SetDiscovererArn(const Aws::String& value) { m_discovererArnHasBeenSet = true; m_discovererArn = value; }
-    inline void SetDiscovererArn(Aws::String&& value) { m_discovererArnHasBeenSet = true; m_discovererArn = std::move(value); }
-    inline void SetDiscovererArn(const char* value) { m_discovererArnHasBeenSet = true; m_discovererArn.assign(value); }
-    inline DiscovererSummary& WithDiscovererArn(const Aws::String& value) { SetDiscovererArn(value); return *this;}
-    inline DiscovererSummary& WithDiscovererArn(Aws::String&& value) { SetDiscovererArn(std::move(value)); return *this;}
-    inline DiscovererSummary& WithDiscovererArn(const char* value) { SetDiscovererArn(value); return *this;}
+    template<typename DiscovererArnT = Aws::String>
+    void SetDiscovererArn(DiscovererArnT&& value) { m_discovererArnHasBeenSet = true; m_discovererArn = std::forward<DiscovererArnT>(value); }
+    template<typename DiscovererArnT = Aws::String>
+    DiscovererSummary& WithDiscovererArn(DiscovererArnT&& value) { SetDiscovererArn(std::forward<DiscovererArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the discoverer.</p>
      */
-    inline const Aws::String& GetDiscovererId() const{ return m_discovererId; }
+    inline const Aws::String& GetDiscovererId() const { return m_discovererId; }
     inline bool DiscovererIdHasBeenSet() const { return m_discovererIdHasBeenSet; }
-    inline void SetDiscovererId(const Aws::String& value) { m_discovererIdHasBeenSet = true; m_discovererId = value; }
-    inline void SetDiscovererId(Aws::String&& value) { m_discovererIdHasBeenSet = true; m_discovererId = std::move(value); }
-    inline void SetDiscovererId(const char* value) { m_discovererIdHasBeenSet = true; m_discovererId.assign(value); }
-    inline DiscovererSummary& WithDiscovererId(const Aws::String& value) { SetDiscovererId(value); return *this;}
-    inline DiscovererSummary& WithDiscovererId(Aws::String&& value) { SetDiscovererId(std::move(value)); return *this;}
-    inline DiscovererSummary& WithDiscovererId(const char* value) { SetDiscovererId(value); return *this;}
+    template<typename DiscovererIdT = Aws::String>
+    void SetDiscovererId(DiscovererIdT&& value) { m_discovererIdHasBeenSet = true; m_discovererId = std::forward<DiscovererIdT>(value); }
+    template<typename DiscovererIdT = Aws::String>
+    DiscovererSummary& WithDiscovererId(DiscovererIdT&& value) { SetDiscovererId(std::forward<DiscovererIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the event bus.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline DiscovererSummary& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline DiscovererSummary& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline DiscovererSummary& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    DiscovererSummary& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the discoverer.</p>
      */
-    inline const DiscovererState& GetState() const{ return m_state; }
+    inline DiscovererState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const DiscovererState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(DiscovererState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline DiscovererSummary& WithState(const DiscovererState& value) { SetState(value); return *this;}
-    inline DiscovererSummary& WithState(DiscovererState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(DiscovererState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DiscovererSummary& WithState(DiscovererState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +85,7 @@ namespace Model
      * <p>The Status if the discoverer will discover schemas from events sent from
      * another account.</p>
      */
-    inline bool GetCrossAccount() const{ return m_crossAccount; }
+    inline bool GetCrossAccount() const { return m_crossAccount; }
     inline bool CrossAccountHasBeenSet() const { return m_crossAccountHasBeenSet; }
     inline void SetCrossAccount(bool value) { m_crossAccountHasBeenSet = true; m_crossAccount = value; }
     inline DiscovererSummary& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
@@ -103,19 +95,16 @@ namespace Model
     /**
      * <p>Tags associated with the resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DiscovererSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DiscovererSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DiscovererSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline DiscovererSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline DiscovererSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline DiscovererSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DiscovererSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline DiscovererSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline DiscovererSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DiscovererSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DiscovererSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -128,10 +117,10 @@ namespace Model
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet = false;
 
-    DiscovererState m_state;
+    DiscovererState m_state{DiscovererState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    bool m_crossAccount;
+    bool m_crossAccount{false};
     bool m_crossAccountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

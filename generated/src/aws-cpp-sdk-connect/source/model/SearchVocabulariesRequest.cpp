@@ -12,19 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchVocabulariesRequest::SearchVocabulariesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_state(VocabularyState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_nameStartsWithHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Aws::String SearchVocabulariesRequest::SerializePayload() const
 {
   JsonValue payload;

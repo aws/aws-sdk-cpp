@@ -32,7 +32,7 @@ namespace Model
   class TemplateVersionResponse
   {
   public:
-    AWS_PINPOINT_API TemplateVersionResponse();
+    AWS_PINPOINT_API TemplateVersionResponse() = default;
     AWS_PINPOINT_API TemplateVersionResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API TemplateVersionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The date, in ISO 8601 format, when the version of the message template was
      * created.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline TemplateVersionResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline TemplateVersionResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    TemplateVersionResponse& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * key-value pairs. Each key defines a message variable in the template. The
      * corresponding value defines the default value for that variable.</p>
      */
-    inline const Aws::String& GetDefaultSubstitutions() const{ return m_defaultSubstitutions; }
+    inline const Aws::String& GetDefaultSubstitutions() const { return m_defaultSubstitutions; }
     inline bool DefaultSubstitutionsHasBeenSet() const { return m_defaultSubstitutionsHasBeenSet; }
-    inline void SetDefaultSubstitutions(const Aws::String& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = value; }
-    inline void SetDefaultSubstitutions(Aws::String&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::move(value); }
-    inline void SetDefaultSubstitutions(const char* value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions.assign(value); }
-    inline TemplateVersionResponse& WithDefaultSubstitutions(const Aws::String& value) { SetDefaultSubstitutions(value); return *this;}
-    inline TemplateVersionResponse& WithDefaultSubstitutions(Aws::String&& value) { SetDefaultSubstitutions(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithDefaultSubstitutions(const char* value) { SetDefaultSubstitutions(value); return *this;}
+    template<typename DefaultSubstitutionsT = Aws::String>
+    void SetDefaultSubstitutions(DefaultSubstitutionsT&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::forward<DefaultSubstitutionsT>(value); }
+    template<typename DefaultSubstitutionsT = Aws::String>
+    TemplateVersionResponse& WithDefaultSubstitutions(DefaultSubstitutionsT&& value) { SetDefaultSubstitutions(std::forward<DefaultSubstitutionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,42 +71,36 @@ namespace Model
      * <p>The date, in ISO 8601 format, when the version of the message template was
      * last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::String& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
-    inline TemplateVersionResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
-    inline TemplateVersionResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+    template<typename LastModifiedDateT = Aws::String>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::String>
+    TemplateVersionResponse& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom description of the version of the message template.</p>
      */
-    inline const Aws::String& GetTemplateDescription() const{ return m_templateDescription; }
+    inline const Aws::String& GetTemplateDescription() const { return m_templateDescription; }
     inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
-    inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
-    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
-    inline void SetTemplateDescription(const char* value) { m_templateDescriptionHasBeenSet = true; m_templateDescription.assign(value); }
-    inline TemplateVersionResponse& WithTemplateDescription(const Aws::String& value) { SetTemplateDescription(value); return *this;}
-    inline TemplateVersionResponse& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
+    template<typename TemplateDescriptionT = Aws::String>
+    void SetTemplateDescription(TemplateDescriptionT&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::forward<TemplateDescriptionT>(value); }
+    template<typename TemplateDescriptionT = Aws::String>
+    TemplateVersionResponse& WithTemplateDescription(TemplateDescriptionT&& value) { SetTemplateDescription(std::forward<TemplateDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the message template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline TemplateVersionResponse& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline TemplateVersionResponse& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    TemplateVersionResponse& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +108,12 @@ namespace Model
      * <p>The type of channel that the message template is designed for. Possible
      * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
-    inline const Aws::String& GetTemplateType() const{ return m_templateType; }
+    inline const Aws::String& GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const Aws::String& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(Aws::String&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline void SetTemplateType(const char* value) { m_templateTypeHasBeenSet = true; m_templateType.assign(value); }
-    inline TemplateVersionResponse& WithTemplateType(const Aws::String& value) { SetTemplateType(value); return *this;}
-    inline TemplateVersionResponse& WithTemplateType(Aws::String&& value) { SetTemplateType(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithTemplateType(const char* value) { SetTemplateType(value); return *this;}
+    template<typename TemplateTypeT = Aws::String>
+    void SetTemplateType(TemplateTypeT&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::forward<TemplateTypeT>(value); }
+    template<typename TemplateTypeT = Aws::String>
+    TemplateVersionResponse& WithTemplateType(TemplateTypeT&& value) { SetTemplateType(std::forward<TemplateTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +122,12 @@ namespace Model
      * an integer that Amazon Pinpoint automatically increments and assigns to each new
      * version of a template.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline TemplateVersionResponse& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline TemplateVersionResponse& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline TemplateVersionResponse& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    TemplateVersionResponse& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

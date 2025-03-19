@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetFindingDetailsRequest::BatchGetFindingDetailsRequest() : 
-    m_findingArnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetFindingDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-ServiceUnavailableError::ServiceUnavailableError() : 
-    m_messageHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 ServiceUnavailableError::ServiceUnavailableError(JsonView jsonValue)
-  : ServiceUnavailableError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServiceUnavailableError& ServiceUnavailableError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

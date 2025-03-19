@@ -23,7 +23,7 @@ namespace Model
   class AddTrustStoreRevocationsRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API AddTrustStoreRevocationsRequest();
+    AWS_ELASTICLOADBALANCINGV2_API AddTrustStoreRevocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-    inline AddTrustStoreRevocationsRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline AddTrustStoreRevocationsRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline AddTrustStoreRevocationsRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    AddTrustStoreRevocationsRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revocation file to add.</p>
      */
-    inline const Aws::Vector<RevocationContent>& GetRevocationContents() const{ return m_revocationContents; }
+    inline const Aws::Vector<RevocationContent>& GetRevocationContents() const { return m_revocationContents; }
     inline bool RevocationContentsHasBeenSet() const { return m_revocationContentsHasBeenSet; }
-    inline void SetRevocationContents(const Aws::Vector<RevocationContent>& value) { m_revocationContentsHasBeenSet = true; m_revocationContents = value; }
-    inline void SetRevocationContents(Aws::Vector<RevocationContent>&& value) { m_revocationContentsHasBeenSet = true; m_revocationContents = std::move(value); }
-    inline AddTrustStoreRevocationsRequest& WithRevocationContents(const Aws::Vector<RevocationContent>& value) { SetRevocationContents(value); return *this;}
-    inline AddTrustStoreRevocationsRequest& WithRevocationContents(Aws::Vector<RevocationContent>&& value) { SetRevocationContents(std::move(value)); return *this;}
-    inline AddTrustStoreRevocationsRequest& AddRevocationContents(const RevocationContent& value) { m_revocationContentsHasBeenSet = true; m_revocationContents.push_back(value); return *this; }
-    inline AddTrustStoreRevocationsRequest& AddRevocationContents(RevocationContent&& value) { m_revocationContentsHasBeenSet = true; m_revocationContents.push_back(std::move(value)); return *this; }
+    template<typename RevocationContentsT = Aws::Vector<RevocationContent>>
+    void SetRevocationContents(RevocationContentsT&& value) { m_revocationContentsHasBeenSet = true; m_revocationContents = std::forward<RevocationContentsT>(value); }
+    template<typename RevocationContentsT = Aws::Vector<RevocationContent>>
+    AddTrustStoreRevocationsRequest& WithRevocationContents(RevocationContentsT&& value) { SetRevocationContents(std::forward<RevocationContentsT>(value)); return *this;}
+    template<typename RevocationContentsT = RevocationContent>
+    AddTrustStoreRevocationsRequest& AddRevocationContents(RevocationContentsT&& value) { m_revocationContentsHasBeenSet = true; m_revocationContents.emplace_back(std::forward<RevocationContentsT>(value)); return *this; }
     ///@}
   private:
 

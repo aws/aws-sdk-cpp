@@ -32,7 +32,7 @@ namespace Model
   class ListVariantImportJobsFilter
   {
   public:
-    AWS_OMICS_API ListVariantImportJobsFilter();
+    AWS_OMICS_API ListVariantImportJobsFilter() = default;
     AWS_OMICS_API ListVariantImportJobsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ListVariantImportJobsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>A status to filter on.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline JobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListVariantImportJobsFilter& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline ListVariantImportJobsFilter& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListVariantImportJobsFilter& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A store name to filter on.</p>
      */
-    inline const Aws::String& GetStoreName() const{ return m_storeName; }
+    inline const Aws::String& GetStoreName() const { return m_storeName; }
     inline bool StoreNameHasBeenSet() const { return m_storeNameHasBeenSet; }
-    inline void SetStoreName(const Aws::String& value) { m_storeNameHasBeenSet = true; m_storeName = value; }
-    inline void SetStoreName(Aws::String&& value) { m_storeNameHasBeenSet = true; m_storeName = std::move(value); }
-    inline void SetStoreName(const char* value) { m_storeNameHasBeenSet = true; m_storeName.assign(value); }
-    inline ListVariantImportJobsFilter& WithStoreName(const Aws::String& value) { SetStoreName(value); return *this;}
-    inline ListVariantImportJobsFilter& WithStoreName(Aws::String&& value) { SetStoreName(std::move(value)); return *this;}
-    inline ListVariantImportJobsFilter& WithStoreName(const char* value) { SetStoreName(value); return *this;}
+    template<typename StoreNameT = Aws::String>
+    void SetStoreName(StoreNameT&& value) { m_storeNameHasBeenSet = true; m_storeName = std::forward<StoreNameT>(value); }
+    template<typename StoreNameT = Aws::String>
+    ListVariantImportJobsFilter& WithStoreName(StoreNameT&& value) { SetStoreName(std::forward<StoreNameT>(value)); return *this;}
     ///@}
   private:
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_storeName;

@@ -34,7 +34,7 @@ namespace Model
   class AwsEfsAccessPointRootDirectoryDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails();
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails() = default;
     AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Specifies the POSIX IDs and permissions to apply to the access point's root
      * directory. </p>
      */
-    inline const AwsEfsAccessPointRootDirectoryCreationInfoDetails& GetCreationInfo() const{ return m_creationInfo; }
+    inline const AwsEfsAccessPointRootDirectoryCreationInfoDetails& GetCreationInfo() const { return m_creationInfo; }
     inline bool CreationInfoHasBeenSet() const { return m_creationInfoHasBeenSet; }
-    inline void SetCreationInfo(const AwsEfsAccessPointRootDirectoryCreationInfoDetails& value) { m_creationInfoHasBeenSet = true; m_creationInfo = value; }
-    inline void SetCreationInfo(AwsEfsAccessPointRootDirectoryCreationInfoDetails&& value) { m_creationInfoHasBeenSet = true; m_creationInfo = std::move(value); }
-    inline AwsEfsAccessPointRootDirectoryDetails& WithCreationInfo(const AwsEfsAccessPointRootDirectoryCreationInfoDetails& value) { SetCreationInfo(value); return *this;}
-    inline AwsEfsAccessPointRootDirectoryDetails& WithCreationInfo(AwsEfsAccessPointRootDirectoryCreationInfoDetails&& value) { SetCreationInfo(std::move(value)); return *this;}
+    template<typename CreationInfoT = AwsEfsAccessPointRootDirectoryCreationInfoDetails>
+    void SetCreationInfo(CreationInfoT&& value) { m_creationInfoHasBeenSet = true; m_creationInfo = std::forward<CreationInfoT>(value); }
+    template<typename CreationInfoT = AwsEfsAccessPointRootDirectoryCreationInfoDetails>
+    AwsEfsAccessPointRootDirectoryDetails& WithCreationInfo(CreationInfoT&& value) { SetCreationInfo(std::forward<CreationInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * path can have up to four subdirectories. If the specified path does not exist,
      * you are required to provide <code>CreationInfo</code>. </p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline AwsEfsAccessPointRootDirectoryDetails& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline AwsEfsAccessPointRootDirectoryDetails& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline AwsEfsAccessPointRootDirectoryDetails& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    AwsEfsAccessPointRootDirectoryDetails& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

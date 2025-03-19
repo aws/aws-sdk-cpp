@@ -28,7 +28,7 @@ namespace Model
   class DeleteDeploymentResult
   {
   public:
-    AWS_PROTON_API DeleteDeploymentResult();
+    AWS_PROTON_API DeleteDeploymentResult() = default;
     AWS_PROTON_API DeleteDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API DeleteDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the deployment being deleted.</p>
      */
-    inline const Deployment& GetDeployment() const{ return m_deployment; }
-    inline void SetDeployment(const Deployment& value) { m_deployment = value; }
-    inline void SetDeployment(Deployment&& value) { m_deployment = std::move(value); }
-    inline DeleteDeploymentResult& WithDeployment(const Deployment& value) { SetDeployment(value); return *this;}
-    inline DeleteDeploymentResult& WithDeployment(Deployment&& value) { SetDeployment(std::move(value)); return *this;}
+    inline const Deployment& GetDeployment() const { return m_deployment; }
+    template<typename DeploymentT = Deployment>
+    void SetDeployment(DeploymentT&& value) { m_deploymentHasBeenSet = true; m_deployment = std::forward<DeploymentT>(value); }
+    template<typename DeploymentT = Deployment>
+    DeleteDeploymentResult& WithDeployment(DeploymentT&& value) { SetDeployment(std::forward<DeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDeploymentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Deployment m_deployment;
+    bool m_deploymentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

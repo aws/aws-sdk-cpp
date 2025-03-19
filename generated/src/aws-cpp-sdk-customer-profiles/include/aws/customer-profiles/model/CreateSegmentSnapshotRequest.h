@@ -22,7 +22,7 @@ namespace Model
   class CreateSegmentSnapshotRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API CreateSegmentSnapshotRequest();
+    AWS_CUSTOMERPROFILES_API CreateSegmentSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,40 +37,34 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateSegmentSnapshotRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateSegmentSnapshotRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateSegmentSnapshotRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateSegmentSnapshotRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the segment definition used in this snapshot request.</p>
      */
-    inline const Aws::String& GetSegmentDefinitionName() const{ return m_segmentDefinitionName; }
+    inline const Aws::String& GetSegmentDefinitionName() const { return m_segmentDefinitionName; }
     inline bool SegmentDefinitionNameHasBeenSet() const { return m_segmentDefinitionNameHasBeenSet; }
-    inline void SetSegmentDefinitionName(const Aws::String& value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName = value; }
-    inline void SetSegmentDefinitionName(Aws::String&& value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName = std::move(value); }
-    inline void SetSegmentDefinitionName(const char* value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName.assign(value); }
-    inline CreateSegmentSnapshotRequest& WithSegmentDefinitionName(const Aws::String& value) { SetSegmentDefinitionName(value); return *this;}
-    inline CreateSegmentSnapshotRequest& WithSegmentDefinitionName(Aws::String&& value) { SetSegmentDefinitionName(std::move(value)); return *this;}
-    inline CreateSegmentSnapshotRequest& WithSegmentDefinitionName(const char* value) { SetSegmentDefinitionName(value); return *this;}
+    template<typename SegmentDefinitionNameT = Aws::String>
+    void SetSegmentDefinitionName(SegmentDefinitionNameT&& value) { m_segmentDefinitionNameHasBeenSet = true; m_segmentDefinitionName = std::forward<SegmentDefinitionNameT>(value); }
+    template<typename SegmentDefinitionNameT = Aws::String>
+    CreateSegmentSnapshotRequest& WithSegmentDefinitionName(SegmentDefinitionNameT&& value) { SetSegmentDefinitionName(std::forward<SegmentDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format in which the segment will be exported.</p>
      */
-    inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
+    inline DataFormat GetDataFormat() const { return m_dataFormat; }
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-    inline void SetDataFormat(const DataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-    inline void SetDataFormat(DataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-    inline CreateSegmentSnapshotRequest& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
-    inline CreateSegmentSnapshotRequest& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline void SetDataFormat(DataFormat value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline CreateSegmentSnapshotRequest& WithDataFormat(DataFormat value) { SetDataFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +72,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the exported
      * segment.</p>
      */
-    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+    inline const Aws::String& GetEncryptionKey() const { return m_encryptionKey; }
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
-    inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
-    inline CreateSegmentSnapshotRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
-    inline CreateSegmentSnapshotRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
-    inline CreateSegmentSnapshotRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+    template<typename EncryptionKeyT = Aws::String>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = Aws::String>
+    CreateSegmentSnapshotRequest& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +85,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that allows Customer Profiles
      * service principal to assume the role for conducting KMS and S3 operations.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateSegmentSnapshotRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateSegmentSnapshotRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateSegmentSnapshotRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateSegmentSnapshotRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +99,12 @@ namespace Model
      * provided if the request is not submitted from the Amazon Connect Admin
      * Website.</p>
      */
-    inline const Aws::String& GetDestinationUri() const{ return m_destinationUri; }
+    inline const Aws::String& GetDestinationUri() const { return m_destinationUri; }
     inline bool DestinationUriHasBeenSet() const { return m_destinationUriHasBeenSet; }
-    inline void SetDestinationUri(const Aws::String& value) { m_destinationUriHasBeenSet = true; m_destinationUri = value; }
-    inline void SetDestinationUri(Aws::String&& value) { m_destinationUriHasBeenSet = true; m_destinationUri = std::move(value); }
-    inline void SetDestinationUri(const char* value) { m_destinationUriHasBeenSet = true; m_destinationUri.assign(value); }
-    inline CreateSegmentSnapshotRequest& WithDestinationUri(const Aws::String& value) { SetDestinationUri(value); return *this;}
-    inline CreateSegmentSnapshotRequest& WithDestinationUri(Aws::String&& value) { SetDestinationUri(std::move(value)); return *this;}
-    inline CreateSegmentSnapshotRequest& WithDestinationUri(const char* value) { SetDestinationUri(value); return *this;}
+    template<typename DestinationUriT = Aws::String>
+    void SetDestinationUri(DestinationUriT&& value) { m_destinationUriHasBeenSet = true; m_destinationUri = std::forward<DestinationUriT>(value); }
+    template<typename DestinationUriT = Aws::String>
+    CreateSegmentSnapshotRequest& WithDestinationUri(DestinationUriT&& value) { SetDestinationUri(std::forward<DestinationUriT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,7 +114,7 @@ namespace Model
     Aws::String m_segmentDefinitionName;
     bool m_segmentDefinitionNameHasBeenSet = false;
 
-    DataFormat m_dataFormat;
+    DataFormat m_dataFormat{DataFormat::NOT_SET};
     bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_encryptionKey;

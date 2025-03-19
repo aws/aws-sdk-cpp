@@ -30,7 +30,7 @@ namespace Model
   class KeyGroupSummary
   {
   public:
-    AWS_CLOUDFRONT_API KeyGroupSummary();
+    AWS_CLOUDFRONT_API KeyGroupSummary() = default;
     AWS_CLOUDFRONT_API KeyGroupSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API KeyGroupSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A key group.</p>
      */
-    inline const KeyGroup& GetKeyGroup() const{ return m_keyGroup; }
+    inline const KeyGroup& GetKeyGroup() const { return m_keyGroup; }
     inline bool KeyGroupHasBeenSet() const { return m_keyGroupHasBeenSet; }
-    inline void SetKeyGroup(const KeyGroup& value) { m_keyGroupHasBeenSet = true; m_keyGroup = value; }
-    inline void SetKeyGroup(KeyGroup&& value) { m_keyGroupHasBeenSet = true; m_keyGroup = std::move(value); }
-    inline KeyGroupSummary& WithKeyGroup(const KeyGroup& value) { SetKeyGroup(value); return *this;}
-    inline KeyGroupSummary& WithKeyGroup(KeyGroup&& value) { SetKeyGroup(std::move(value)); return *this;}
+    template<typename KeyGroupT = KeyGroup>
+    void SetKeyGroup(KeyGroupT&& value) { m_keyGroupHasBeenSet = true; m_keyGroup = std::forward<KeyGroupT>(value); }
+    template<typename KeyGroupT = KeyGroup>
+    KeyGroupSummary& WithKeyGroup(KeyGroupT&& value) { SetKeyGroup(std::forward<KeyGroupT>(value)); return *this;}
     ///@}
   private:
 

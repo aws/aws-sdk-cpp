@@ -12,22 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTasksRequest::ListTasksRequest() : 
-    m_clusterHasBeenSet(false),
-    m_containerInstanceHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_desiredStatus(DesiredStatus::NOT_SET),
-    m_desiredStatusHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListTasksRequest::SerializePayload() const
 {
   JsonValue payload;

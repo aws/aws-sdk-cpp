@@ -29,7 +29,7 @@ namespace Model
   class ListReadSetUploadPartsResult
   {
   public:
-    AWS_OMICS_API ListReadSetUploadPartsResult();
+    AWS_OMICS_API ListReadSetUploadPartsResult() = default;
     AWS_OMICS_API ListReadSetUploadPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListReadSetUploadPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>Next token returned in the response of a previous ListReadSetUploadParts
      * call. Used to get the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReadSetUploadPartsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReadSetUploadPartsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReadSetUploadPartsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReadSetUploadPartsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of upload parts.</p>
      */
-    inline const Aws::Vector<ReadSetUploadPartListItem>& GetParts() const{ return m_parts; }
-    inline void SetParts(const Aws::Vector<ReadSetUploadPartListItem>& value) { m_parts = value; }
-    inline void SetParts(Aws::Vector<ReadSetUploadPartListItem>&& value) { m_parts = std::move(value); }
-    inline ListReadSetUploadPartsResult& WithParts(const Aws::Vector<ReadSetUploadPartListItem>& value) { SetParts(value); return *this;}
-    inline ListReadSetUploadPartsResult& WithParts(Aws::Vector<ReadSetUploadPartListItem>&& value) { SetParts(std::move(value)); return *this;}
-    inline ListReadSetUploadPartsResult& AddParts(const ReadSetUploadPartListItem& value) { m_parts.push_back(value); return *this; }
-    inline ListReadSetUploadPartsResult& AddParts(ReadSetUploadPartListItem&& value) { m_parts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReadSetUploadPartListItem>& GetParts() const { return m_parts; }
+    template<typename PartsT = Aws::Vector<ReadSetUploadPartListItem>>
+    void SetParts(PartsT&& value) { m_partsHasBeenSet = true; m_parts = std::forward<PartsT>(value); }
+    template<typename PartsT = Aws::Vector<ReadSetUploadPartListItem>>
+    ListReadSetUploadPartsResult& WithParts(PartsT&& value) { SetParts(std::forward<PartsT>(value)); return *this;}
+    template<typename PartsT = ReadSetUploadPartListItem>
+    ListReadSetUploadPartsResult& AddParts(PartsT&& value) { m_partsHasBeenSet = true; m_parts.emplace_back(std::forward<PartsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReadSetUploadPartsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReadSetUploadPartsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReadSetUploadPartsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReadSetUploadPartsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ReadSetUploadPartListItem> m_parts;
+    bool m_partsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

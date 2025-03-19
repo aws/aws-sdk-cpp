@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetModelCopyJobRequest::GetModelCopyJobRequest() : 
-    m_jobArnHasBeenSet(false)
-{
-}
-
 Aws::String GetModelCopyJobRequest::SerializePayload() const
 {
   return {};

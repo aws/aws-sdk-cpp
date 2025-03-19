@@ -12,11 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateAppRequest::TerminateAppRequest() : 
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String TerminateAppRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -39,7 +39,7 @@ namespace Model
   class M3u8Settings
   {
   public:
-    AWS_MEDIACONVERT_API M3u8Settings();
+    AWS_MEDIACONVERT_API M3u8Settings() = default;
     AWS_MEDIACONVERT_API M3u8Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API M3u8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,19 +60,17 @@ namespace Model
      * to the end of the file. When you keep the default value, any minor discrepancies
      * between audio and video duration will depend on your output audio codec.
      */
-    inline const M3u8AudioDuration& GetAudioDuration() const{ return m_audioDuration; }
+    inline M3u8AudioDuration GetAudioDuration() const { return m_audioDuration; }
     inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
-    inline void SetAudioDuration(const M3u8AudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
-    inline void SetAudioDuration(M3u8AudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
-    inline M3u8Settings& WithAudioDuration(const M3u8AudioDuration& value) { SetAudioDuration(value); return *this;}
-    inline M3u8Settings& WithAudioDuration(M3u8AudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
+    inline void SetAudioDuration(M3u8AudioDuration value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
+    inline M3u8Settings& WithAudioDuration(M3u8AudioDuration value) { SetAudioDuration(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The number of audio frames to insert for each PES packet.
      */
-    inline int GetAudioFramesPerPes() const{ return m_audioFramesPerPes; }
+    inline int GetAudioFramesPerPes() const { return m_audioFramesPerPes; }
     inline bool AudioFramesPerPesHasBeenSet() const { return m_audioFramesPerPesHasBeenSet; }
     inline void SetAudioFramesPerPes(int value) { m_audioFramesPerPesHasBeenSet = true; m_audioFramesPerPes = value; }
     inline M3u8Settings& WithAudioFramesPerPes(int value) { SetAudioFramesPerPes(value); return *this;}
@@ -84,12 +82,12 @@ namespace Model
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
      * comma separation.
      */
-    inline const Aws::Vector<int>& GetAudioPids() const{ return m_audioPids; }
+    inline const Aws::Vector<int>& GetAudioPids() const { return m_audioPids; }
     inline bool AudioPidsHasBeenSet() const { return m_audioPidsHasBeenSet; }
-    inline void SetAudioPids(const Aws::Vector<int>& value) { m_audioPidsHasBeenSet = true; m_audioPids = value; }
-    inline void SetAudioPids(Aws::Vector<int>&& value) { m_audioPidsHasBeenSet = true; m_audioPids = std::move(value); }
-    inline M3u8Settings& WithAudioPids(const Aws::Vector<int>& value) { SetAudioPids(value); return *this;}
-    inline M3u8Settings& WithAudioPids(Aws::Vector<int>&& value) { SetAudioPids(std::move(value)); return *this;}
+    template<typename AudioPidsT = Aws::Vector<int>>
+    void SetAudioPids(AudioPidsT&& value) { m_audioPidsHasBeenSet = true; m_audioPids = std::forward<AudioPidsT>(value); }
+    template<typename AudioPidsT = Aws::Vector<int>>
+    M3u8Settings& WithAudioPids(AudioPidsT&& value) { SetAudioPids(std::forward<AudioPidsT>(value)); return *this;}
     inline M3u8Settings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
     ///@}
 
@@ -100,7 +98,7 @@ namespace Model
      * Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the
      * default value 0.
      */
-    inline int GetAudioPtsOffsetDelta() const{ return m_audioPtsOffsetDelta; }
+    inline int GetAudioPtsOffsetDelta() const { return m_audioPtsOffsetDelta; }
     inline bool AudioPtsOffsetDeltaHasBeenSet() const { return m_audioPtsOffsetDeltaHasBeenSet; }
     inline void SetAudioPtsOffsetDelta(int value) { m_audioPtsOffsetDeltaHasBeenSet = true; m_audioPtsOffsetDelta = value; }
     inline M3u8Settings& WithAudioPtsOffsetDelta(int value) { SetAudioPtsOffsetDelta(value); return *this;}
@@ -113,12 +111,10 @@ namespace Model
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
      * values). Keep the default value AUTO to allow all PTS values.
      */
-    inline const M3u8DataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
+    inline M3u8DataPtsControl GetDataPTSControl() const { return m_dataPTSControl; }
     inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
-    inline void SetDataPTSControl(const M3u8DataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
-    inline void SetDataPTSControl(M3u8DataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
-    inline M3u8Settings& WithDataPTSControl(const M3u8DataPtsControl& value) { SetDataPTSControl(value); return *this;}
-    inline M3u8Settings& WithDataPTSControl(M3u8DataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
+    inline void SetDataPTSControl(M3u8DataPtsControl value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
+    inline M3u8Settings& WithDataPTSControl(M3u8DataPtsControl value) { SetDataPTSControl(value); return *this;}
     ///@}
 
     ///@{
@@ -126,7 +122,7 @@ namespace Model
      * Specify the maximum time, in milliseconds, between Program Clock References
      * (PCRs) inserted into the transport stream.
      */
-    inline int GetMaxPcrInterval() const{ return m_maxPcrInterval; }
+    inline int GetMaxPcrInterval() const { return m_maxPcrInterval; }
     inline bool MaxPcrIntervalHasBeenSet() const { return m_maxPcrIntervalHasBeenSet; }
     inline void SetMaxPcrInterval(int value) { m_maxPcrIntervalHasBeenSet = true; m_maxPcrInterval = value; }
     inline M3u8Settings& WithMaxPcrInterval(int value) { SetMaxPcrInterval(value); return *this;}
@@ -137,12 +133,10 @@ namespace Model
      * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
      * input audio and an equivalent ID3 tag will be inserted in the output.
      */
-    inline const M3u8NielsenId3& GetNielsenId3() const{ return m_nielsenId3; }
+    inline M3u8NielsenId3 GetNielsenId3() const { return m_nielsenId3; }
     inline bool NielsenId3HasBeenSet() const { return m_nielsenId3HasBeenSet; }
-    inline void SetNielsenId3(const M3u8NielsenId3& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
-    inline void SetNielsenId3(M3u8NielsenId3&& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = std::move(value); }
-    inline M3u8Settings& WithNielsenId3(const M3u8NielsenId3& value) { SetNielsenId3(value); return *this;}
-    inline M3u8Settings& WithNielsenId3(M3u8NielsenId3&& value) { SetNielsenId3(std::move(value)); return *this;}
+    inline void SetNielsenId3(M3u8NielsenId3 value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
+    inline M3u8Settings& WithNielsenId3(M3u8NielsenId3 value) { SetNielsenId3(value); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +144,7 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
-    inline int GetPatInterval() const{ return m_patInterval; }
+    inline int GetPatInterval() const { return m_patInterval; }
     inline bool PatIntervalHasBeenSet() const { return m_patIntervalHasBeenSet; }
     inline void SetPatInterval(int value) { m_patIntervalHasBeenSet = true; m_patInterval = value; }
     inline M3u8Settings& WithPatInterval(int value) { SetPatInterval(value); return *this;}
@@ -162,12 +156,10 @@ namespace Model
      * every Packetized Elementary Stream (PES) header. This parameter is effective
      * only when the PCR PID is the same as the video or audio elementary stream.
      */
-    inline const M3u8PcrControl& GetPcrControl() const{ return m_pcrControl; }
+    inline M3u8PcrControl GetPcrControl() const { return m_pcrControl; }
     inline bool PcrControlHasBeenSet() const { return m_pcrControlHasBeenSet; }
-    inline void SetPcrControl(const M3u8PcrControl& value) { m_pcrControlHasBeenSet = true; m_pcrControl = value; }
-    inline void SetPcrControl(M3u8PcrControl&& value) { m_pcrControlHasBeenSet = true; m_pcrControl = std::move(value); }
-    inline M3u8Settings& WithPcrControl(const M3u8PcrControl& value) { SetPcrControl(value); return *this;}
-    inline M3u8Settings& WithPcrControl(M3u8PcrControl&& value) { SetPcrControl(std::move(value)); return *this;}
+    inline void SetPcrControl(M3u8PcrControl value) { m_pcrControlHasBeenSet = true; m_pcrControl = value; }
+    inline M3u8Settings& WithPcrControl(M3u8PcrControl value) { SetPcrControl(value); return *this;}
     ///@}
 
     ///@{
@@ -176,7 +168,7 @@ namespace Model
      * stream. When no value is given, the encoder will assign the same value as the
      * Video PID.
      */
-    inline int GetPcrPid() const{ return m_pcrPid; }
+    inline int GetPcrPid() const { return m_pcrPid; }
     inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
     inline M3u8Settings& WithPcrPid(int value) { SetPcrPid(value); return *this;}
@@ -187,7 +179,7 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
-    inline int GetPmtInterval() const{ return m_pmtInterval; }
+    inline int GetPmtInterval() const { return m_pmtInterval; }
     inline bool PmtIntervalHasBeenSet() const { return m_pmtIntervalHasBeenSet; }
     inline void SetPmtInterval(int value) { m_pmtIntervalHasBeenSet = true; m_pmtInterval = value; }
     inline M3u8Settings& WithPmtInterval(int value) { SetPmtInterval(value); return *this;}
@@ -197,7 +189,7 @@ namespace Model
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
      */
-    inline int GetPmtPid() const{ return m_pmtPid; }
+    inline int GetPmtPid() const { return m_pmtPid; }
     inline bool PmtPidHasBeenSet() const { return m_pmtPidHasBeenSet; }
     inline void SetPmtPid(int value) { m_pmtPidHasBeenSet = true; m_pmtPid = value; }
     inline M3u8Settings& WithPmtPid(int value) { SetPmtPid(value); return *this;}
@@ -207,7 +199,7 @@ namespace Model
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
      */
-    inline int GetPrivateMetadataPid() const{ return m_privateMetadataPid; }
+    inline int GetPrivateMetadataPid() const { return m_privateMetadataPid; }
     inline bool PrivateMetadataPidHasBeenSet() const { return m_privateMetadataPidHasBeenSet; }
     inline void SetPrivateMetadataPid(int value) { m_privateMetadataPidHasBeenSet = true; m_privateMetadataPid = value; }
     inline M3u8Settings& WithPrivateMetadataPid(int value) { SetPrivateMetadataPid(value); return *this;}
@@ -217,7 +209,7 @@ namespace Model
     /**
      * The value of the program number field in the Program Map Table.
      */
-    inline int GetProgramNumber() const{ return m_programNumber; }
+    inline int GetProgramNumber() const { return m_programNumber; }
     inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
     inline M3u8Settings& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
@@ -229,7 +221,7 @@ namespace Model
      * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
      * 2.
      */
-    inline int GetPtsOffset() const{ return m_ptsOffset; }
+    inline int GetPtsOffset() const { return m_ptsOffset; }
     inline bool PtsOffsetHasBeenSet() const { return m_ptsOffsetHasBeenSet; }
     inline void SetPtsOffset(int value) { m_ptsOffsetHasBeenSet = true; m_ptsOffset = value; }
     inline M3u8Settings& WithPtsOffset(int value) { SetPtsOffset(value); return *this;}
@@ -246,19 +238,17 @@ namespace Model
      * Milliseconds. Then specify the number of seconds or milliseconds with PTS
      * offset.
      */
-    inline const TsPtsOffset& GetPtsOffsetMode() const{ return m_ptsOffsetMode; }
+    inline TsPtsOffset GetPtsOffsetMode() const { return m_ptsOffsetMode; }
     inline bool PtsOffsetModeHasBeenSet() const { return m_ptsOffsetModeHasBeenSet; }
-    inline void SetPtsOffsetMode(const TsPtsOffset& value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = value; }
-    inline void SetPtsOffsetMode(TsPtsOffset&& value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = std::move(value); }
-    inline M3u8Settings& WithPtsOffsetMode(const TsPtsOffset& value) { SetPtsOffsetMode(value); return *this;}
-    inline M3u8Settings& WithPtsOffsetMode(TsPtsOffset&& value) { SetPtsOffsetMode(std::move(value)); return *this;}
+    inline void SetPtsOffsetMode(TsPtsOffset value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = value; }
+    inline M3u8Settings& WithPtsOffsetMode(TsPtsOffset value) { SetPtsOffsetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
-    inline int GetScte35Pid() const{ return m_scte35Pid; }
+    inline int GetScte35Pid() const { return m_scte35Pid; }
     inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
     inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
     inline M3u8Settings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
@@ -274,12 +264,10 @@ namespace Model
      * cases, also provide the ESAM XML as a string in the setting Signal processing
      * notification XML.
      */
-    inline const M3u8Scte35Source& GetScte35Source() const{ return m_scte35Source; }
+    inline M3u8Scte35Source GetScte35Source() const { return m_scte35Source; }
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
-    inline void SetScte35Source(const M3u8Scte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
-    inline void SetScte35Source(M3u8Scte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
-    inline M3u8Settings& WithScte35Source(const M3u8Scte35Source& value) { SetScte35Source(value); return *this;}
-    inline M3u8Settings& WithScte35Source(M3u8Scte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
+    inline void SetScte35Source(M3u8Scte35Source value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
+    inline M3u8Settings& WithScte35Source(M3u8Scte35Source value) { SetScte35Source(value); return *this;}
     ///@}
 
     ///@{
@@ -289,19 +277,17 @@ namespace Model
      * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
      * ID3 metadata to None or leave blank.
      */
-    inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+    inline TimedMetadata GetTimedMetadata() const { return m_timedMetadata; }
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
-    inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
-    inline void SetTimedMetadata(TimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
-    inline M3u8Settings& WithTimedMetadata(const TimedMetadata& value) { SetTimedMetadata(value); return *this;}
-    inline M3u8Settings& WithTimedMetadata(TimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
+    inline void SetTimedMetadata(TimedMetadata value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
+    inline M3u8Settings& WithTimedMetadata(TimedMetadata value) { SetTimedMetadata(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
-    inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+    inline int GetTimedMetadataPid() const { return m_timedMetadataPid; }
     inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
     inline M3u8Settings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
@@ -311,7 +297,7 @@ namespace Model
     /**
      * The value of the transport stream ID field in the Program Map Table.
      */
-    inline int GetTransportStreamId() const{ return m_transportStreamId; }
+    inline int GetTransportStreamId() const { return m_transportStreamId; }
     inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
     inline M3u8Settings& WithTransportStreamId(int value) { SetTransportStreamId(value); return *this;}
@@ -321,77 +307,77 @@ namespace Model
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
      */
-    inline int GetVideoPid() const{ return m_videoPid; }
+    inline int GetVideoPid() const { return m_videoPid; }
     inline bool VideoPidHasBeenSet() const { return m_videoPidHasBeenSet; }
     inline void SetVideoPid(int value) { m_videoPidHasBeenSet = true; m_videoPid = value; }
     inline M3u8Settings& WithVideoPid(int value) { SetVideoPid(value); return *this;}
     ///@}
   private:
 
-    M3u8AudioDuration m_audioDuration;
+    M3u8AudioDuration m_audioDuration{M3u8AudioDuration::NOT_SET};
     bool m_audioDurationHasBeenSet = false;
 
-    int m_audioFramesPerPes;
+    int m_audioFramesPerPes{0};
     bool m_audioFramesPerPesHasBeenSet = false;
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet = false;
 
-    int m_audioPtsOffsetDelta;
+    int m_audioPtsOffsetDelta{0};
     bool m_audioPtsOffsetDeltaHasBeenSet = false;
 
-    M3u8DataPtsControl m_dataPTSControl;
+    M3u8DataPtsControl m_dataPTSControl{M3u8DataPtsControl::NOT_SET};
     bool m_dataPTSControlHasBeenSet = false;
 
-    int m_maxPcrInterval;
+    int m_maxPcrInterval{0};
     bool m_maxPcrIntervalHasBeenSet = false;
 
-    M3u8NielsenId3 m_nielsenId3;
+    M3u8NielsenId3 m_nielsenId3{M3u8NielsenId3::NOT_SET};
     bool m_nielsenId3HasBeenSet = false;
 
-    int m_patInterval;
+    int m_patInterval{0};
     bool m_patIntervalHasBeenSet = false;
 
-    M3u8PcrControl m_pcrControl;
+    M3u8PcrControl m_pcrControl{M3u8PcrControl::NOT_SET};
     bool m_pcrControlHasBeenSet = false;
 
-    int m_pcrPid;
+    int m_pcrPid{0};
     bool m_pcrPidHasBeenSet = false;
 
-    int m_pmtInterval;
+    int m_pmtInterval{0};
     bool m_pmtIntervalHasBeenSet = false;
 
-    int m_pmtPid;
+    int m_pmtPid{0};
     bool m_pmtPidHasBeenSet = false;
 
-    int m_privateMetadataPid;
+    int m_privateMetadataPid{0};
     bool m_privateMetadataPidHasBeenSet = false;
 
-    int m_programNumber;
+    int m_programNumber{0};
     bool m_programNumberHasBeenSet = false;
 
-    int m_ptsOffset;
+    int m_ptsOffset{0};
     bool m_ptsOffsetHasBeenSet = false;
 
-    TsPtsOffset m_ptsOffsetMode;
+    TsPtsOffset m_ptsOffsetMode{TsPtsOffset::NOT_SET};
     bool m_ptsOffsetModeHasBeenSet = false;
 
-    int m_scte35Pid;
+    int m_scte35Pid{0};
     bool m_scte35PidHasBeenSet = false;
 
-    M3u8Scte35Source m_scte35Source;
+    M3u8Scte35Source m_scte35Source{M3u8Scte35Source::NOT_SET};
     bool m_scte35SourceHasBeenSet = false;
 
-    TimedMetadata m_timedMetadata;
+    TimedMetadata m_timedMetadata{TimedMetadata::NOT_SET};
     bool m_timedMetadataHasBeenSet = false;
 
-    int m_timedMetadataPid;
+    int m_timedMetadataPid{0};
     bool m_timedMetadataPidHasBeenSet = false;
 
-    int m_transportStreamId;
+    int m_transportStreamId{0};
     bool m_transportStreamIdHasBeenSet = false;
 
-    int m_videoPid;
+    int m_videoPid{0};
     bool m_videoPidHasBeenSet = false;
   };
 

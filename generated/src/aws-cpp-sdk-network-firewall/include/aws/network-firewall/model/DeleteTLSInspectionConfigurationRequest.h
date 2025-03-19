@@ -21,7 +21,7 @@ namespace Model
   class DeleteTLSInspectionConfigurationRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API DeleteTLSInspectionConfigurationRequest();
+    AWS_NETWORKFIREWALL_API DeleteTLSInspectionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
      * <p>You must specify the ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetTLSInspectionConfigurationArn() const{ return m_tLSInspectionConfigurationArn; }
+    inline const Aws::String& GetTLSInspectionConfigurationArn() const { return m_tLSInspectionConfigurationArn; }
     inline bool TLSInspectionConfigurationArnHasBeenSet() const { return m_tLSInspectionConfigurationArnHasBeenSet; }
-    inline void SetTLSInspectionConfigurationArn(const Aws::String& value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn = value; }
-    inline void SetTLSInspectionConfigurationArn(Aws::String&& value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn = std::move(value); }
-    inline void SetTLSInspectionConfigurationArn(const char* value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn.assign(value); }
-    inline DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationArn(const Aws::String& value) { SetTLSInspectionConfigurationArn(value); return *this;}
-    inline DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationArn(Aws::String&& value) { SetTLSInspectionConfigurationArn(std::move(value)); return *this;}
-    inline DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationArn(const char* value) { SetTLSInspectionConfigurationArn(value); return *this;}
+    template<typename TLSInspectionConfigurationArnT = Aws::String>
+    void SetTLSInspectionConfigurationArn(TLSInspectionConfigurationArnT&& value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn = std::forward<TLSInspectionConfigurationArnT>(value); }
+    template<typename TLSInspectionConfigurationArnT = Aws::String>
+    DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationArn(TLSInspectionConfigurationArnT&& value) { SetTLSInspectionConfigurationArn(std::forward<TLSInspectionConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * the name of a TLS inspection configuration after you create it.</p> <p>You must
      * specify the ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetTLSInspectionConfigurationName() const{ return m_tLSInspectionConfigurationName; }
+    inline const Aws::String& GetTLSInspectionConfigurationName() const { return m_tLSInspectionConfigurationName; }
     inline bool TLSInspectionConfigurationNameHasBeenSet() const { return m_tLSInspectionConfigurationNameHasBeenSet; }
-    inline void SetTLSInspectionConfigurationName(const Aws::String& value) { m_tLSInspectionConfigurationNameHasBeenSet = true; m_tLSInspectionConfigurationName = value; }
-    inline void SetTLSInspectionConfigurationName(Aws::String&& value) { m_tLSInspectionConfigurationNameHasBeenSet = true; m_tLSInspectionConfigurationName = std::move(value); }
-    inline void SetTLSInspectionConfigurationName(const char* value) { m_tLSInspectionConfigurationNameHasBeenSet = true; m_tLSInspectionConfigurationName.assign(value); }
-    inline DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationName(const Aws::String& value) { SetTLSInspectionConfigurationName(value); return *this;}
-    inline DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationName(Aws::String&& value) { SetTLSInspectionConfigurationName(std::move(value)); return *this;}
-    inline DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationName(const char* value) { SetTLSInspectionConfigurationName(value); return *this;}
+    template<typename TLSInspectionConfigurationNameT = Aws::String>
+    void SetTLSInspectionConfigurationName(TLSInspectionConfigurationNameT&& value) { m_tLSInspectionConfigurationNameHasBeenSet = true; m_tLSInspectionConfigurationName = std::forward<TLSInspectionConfigurationNameT>(value); }
+    template<typename TLSInspectionConfigurationNameT = Aws::String>
+    DeleteTLSInspectionConfigurationRequest& WithTLSInspectionConfigurationName(TLSInspectionConfigurationNameT&& value) { SetTLSInspectionConfigurationName(std::forward<TLSInspectionConfigurationNameT>(value)); return *this;}
     ///@}
   private:
 

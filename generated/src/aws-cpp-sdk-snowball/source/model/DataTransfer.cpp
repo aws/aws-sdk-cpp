@@ -18,20 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-DataTransfer::DataTransfer() : 
-    m_bytesTransferred(0),
-    m_bytesTransferredHasBeenSet(false),
-    m_objectsTransferred(0),
-    m_objectsTransferredHasBeenSet(false),
-    m_totalBytes(0),
-    m_totalBytesHasBeenSet(false),
-    m_totalObjects(0),
-    m_totalObjectsHasBeenSet(false)
-{
-}
-
 DataTransfer::DataTransfer(JsonView jsonValue)
-  : DataTransfer()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DataTransfer& DataTransfer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BytesTransferred"))
   {
     m_bytesTransferred = jsonValue.GetInt64("BytesTransferred");
-
     m_bytesTransferredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectsTransferred"))
   {
     m_objectsTransferred = jsonValue.GetInt64("ObjectsTransferred");
-
     m_objectsTransferredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalBytes"))
   {
     m_totalBytes = jsonValue.GetInt64("TotalBytes");
-
     m_totalBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalObjects"))
   {
     m_totalObjects = jsonValue.GetInt64("TotalObjects");
-
     m_totalObjectsHasBeenSet = true;
   }
-
   return *this;
 }
 

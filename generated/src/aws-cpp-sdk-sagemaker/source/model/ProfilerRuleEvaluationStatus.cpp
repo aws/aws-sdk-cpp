@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProfilerRuleEvaluationStatus::ProfilerRuleEvaluationStatus() : 
-    m_ruleConfigurationNameHasBeenSet(false),
-    m_ruleEvaluationJobArnHasBeenSet(false),
-    m_ruleEvaluationStatus(RuleEvaluationStatus::NOT_SET),
-    m_ruleEvaluationStatusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 ProfilerRuleEvaluationStatus::ProfilerRuleEvaluationStatus(JsonView jsonValue)
-  : ProfilerRuleEvaluationStatus()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ProfilerRuleEvaluationStatus& ProfilerRuleEvaluationStatus::operator =(JsonView 
   if(jsonValue.ValueExists("RuleConfigurationName"))
   {
     m_ruleConfigurationName = jsonValue.GetString("RuleConfigurationName");
-
     m_ruleConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleEvaluationJobArn"))
   {
     m_ruleEvaluationJobArn = jsonValue.GetString("RuleEvaluationJobArn");
-
     m_ruleEvaluationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleEvaluationStatus"))
   {
     m_ruleEvaluationStatus = RuleEvaluationStatusMapper::GetRuleEvaluationStatusForName(jsonValue.GetString("RuleEvaluationStatus"));
-
     m_ruleEvaluationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     m_statusDetails = jsonValue.GetString("StatusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

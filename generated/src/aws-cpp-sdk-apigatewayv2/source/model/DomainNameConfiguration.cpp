@@ -18,25 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-DomainNameConfiguration::DomainNameConfiguration() : 
-    m_apiGatewayDomainNameHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_certificateUploadDateHasBeenSet(false),
-    m_domainNameStatus(DomainNameStatus::NOT_SET),
-    m_domainNameStatusHasBeenSet(false),
-    m_domainNameStatusMessageHasBeenSet(false),
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_securityPolicy(SecurityPolicy::NOT_SET),
-    m_securityPolicyHasBeenSet(false),
-    m_ownershipVerificationCertificateArnHasBeenSet(false)
-{
-}
-
 DomainNameConfiguration::DomainNameConfiguration(JsonView jsonValue)
-  : DomainNameConfiguration()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ DomainNameConfiguration& DomainNameConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiGatewayDomainName"))
   {
     m_apiGatewayDomainName = jsonValue.GetString("apiGatewayDomainName");
-
     m_apiGatewayDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateName"))
   {
     m_certificateName = jsonValue.GetString("certificateName");
-
     m_certificateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateUploadDate"))
   {
     m_certificateUploadDate = jsonValue.GetString("certificateUploadDate");
-
     m_certificateUploadDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainNameStatus"))
   {
     m_domainNameStatus = DomainNameStatusMapper::GetDomainNameStatusForName(jsonValue.GetString("domainNameStatus"));
-
     m_domainNameStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainNameStatusMessage"))
   {
     m_domainNameStatusMessage = jsonValue.GetString("domainNameStatusMessage");
-
     m_domainNameStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointType"))
   {
     m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("endpointType"));
-
     m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostedZoneId"))
   {
     m_hostedZoneId = jsonValue.GetString("hostedZoneId");
-
     m_hostedZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityPolicy"))
   {
     m_securityPolicy = SecurityPolicyMapper::GetSecurityPolicyForName(jsonValue.GetString("securityPolicy"));
-
     m_securityPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownershipVerificationCertificateArn"))
   {
     m_ownershipVerificationCertificateArn = jsonValue.GetString("ownershipVerificationCertificateArn");
-
     m_ownershipVerificationCertificateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

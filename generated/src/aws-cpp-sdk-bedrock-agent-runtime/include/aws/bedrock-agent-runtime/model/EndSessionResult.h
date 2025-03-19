@@ -28,7 +28,7 @@ namespace Model
   class EndSessionResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API EndSessionResult();
+    AWS_BEDROCKAGENTRUNTIME_API EndSessionResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API EndSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENTRUNTIME_API EndSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the session you ended.</p>
      */
-    inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
-    inline void SetSessionArn(const Aws::String& value) { m_sessionArn = value; }
-    inline void SetSessionArn(Aws::String&& value) { m_sessionArn = std::move(value); }
-    inline void SetSessionArn(const char* value) { m_sessionArn.assign(value); }
-    inline EndSessionResult& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-    inline EndSessionResult& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-    inline EndSessionResult& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
+    template<typename SessionArnT = Aws::String>
+    void SetSessionArn(SessionArnT&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::forward<SessionArnT>(value); }
+    template<typename SessionArnT = Aws::String>
+    EndSessionResult& WithSessionArn(SessionArnT&& value) { SetSessionArn(std::forward<SessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the session you ended.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline EndSessionResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline EndSessionResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline EndSessionResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    EndSessionResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the session you ended.</p>
      */
-    inline const SessionStatus& GetSessionStatus() const{ return m_sessionStatus; }
-    inline void SetSessionStatus(const SessionStatus& value) { m_sessionStatus = value; }
-    inline void SetSessionStatus(SessionStatus&& value) { m_sessionStatus = std::move(value); }
-    inline EndSessionResult& WithSessionStatus(const SessionStatus& value) { SetSessionStatus(value); return *this;}
-    inline EndSessionResult& WithSessionStatus(SessionStatus&& value) { SetSessionStatus(std::move(value)); return *this;}
+    inline SessionStatus GetSessionStatus() const { return m_sessionStatus; }
+    inline void SetSessionStatus(SessionStatus value) { m_sessionStatusHasBeenSet = true; m_sessionStatus = value; }
+    inline EndSessionResult& WithSessionStatus(SessionStatus value) { SetSessionStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EndSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EndSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EndSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EndSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sessionArn;
+    bool m_sessionArnHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
-    SessionStatus m_sessionStatus;
+    SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
+    bool m_sessionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

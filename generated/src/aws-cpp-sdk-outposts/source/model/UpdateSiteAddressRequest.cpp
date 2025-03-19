@@ -12,14 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSiteAddressRequest::UpdateSiteAddressRequest() : 
-    m_siteIdHasBeenSet(false),
-    m_addressType(AddressType::NOT_SET),
-    m_addressTypeHasBeenSet(false),
-    m_addressHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSiteAddressRequest::SerializePayload() const
 {
   JsonValue payload;

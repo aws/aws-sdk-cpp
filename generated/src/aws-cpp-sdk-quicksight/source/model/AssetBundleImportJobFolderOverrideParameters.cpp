@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobFolderOverrideParameters::AssetBundleImportJobFolderOverrideParameters() : 
-    m_folderIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentFolderArnHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobFolderOverrideParameters::AssetBundleImportJobFolderOverrideParameters(JsonView jsonValue)
-  : AssetBundleImportJobFolderOverrideParameters()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssetBundleImportJobFolderOverrideParameters& AssetBundleImportJobFolderOverride
   if(jsonValue.ValueExists("FolderId"))
   {
     m_folderId = jsonValue.GetString("FolderId");
-
     m_folderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentFolderArn"))
   {
     m_parentFolderArn = jsonValue.GetString("ParentFolderArn");
-
     m_parentFolderArnHasBeenSet = true;
   }
-
   return *this;
 }
 

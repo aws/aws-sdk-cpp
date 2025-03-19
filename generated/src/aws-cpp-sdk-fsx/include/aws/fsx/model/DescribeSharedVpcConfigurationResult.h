@@ -27,7 +27,7 @@ namespace Model
   class DescribeSharedVpcConfigurationResult
   {
   public:
-    AWS_FSX_API DescribeSharedVpcConfigurationResult();
+    AWS_FSX_API DescribeSharedVpcConfigurationResult() = default;
     AWS_FSX_API DescribeSharedVpcConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API DescribeSharedVpcConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file
      * systems in shared subnets.</p>
      */
-    inline const Aws::String& GetEnableFsxRouteTableUpdatesFromParticipantAccounts() const{ return m_enableFsxRouteTableUpdatesFromParticipantAccounts; }
-    inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { m_enableFsxRouteTableUpdatesFromParticipantAccounts = value; }
-    inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { m_enableFsxRouteTableUpdatesFromParticipantAccounts = std::move(value); }
-    inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { m_enableFsxRouteTableUpdatesFromParticipantAccounts.assign(value); }
-    inline DescribeSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
-    inline DescribeSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(std::move(value)); return *this;}
-    inline DescribeSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
+    inline const Aws::String& GetEnableFsxRouteTableUpdatesFromParticipantAccounts() const { return m_enableFsxRouteTableUpdatesFromParticipantAccounts; }
+    template<typename EnableFsxRouteTableUpdatesFromParticipantAccountsT = Aws::String>
+    void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(EnableFsxRouteTableUpdatesFromParticipantAccountsT&& value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts = std::forward<EnableFsxRouteTableUpdatesFromParticipantAccountsT>(value); }
+    template<typename EnableFsxRouteTableUpdatesFromParticipantAccountsT = Aws::String>
+    DescribeSharedVpcConfigurationResult& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(EnableFsxRouteTableUpdatesFromParticipantAccountsT&& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(std::forward<EnableFsxRouteTableUpdatesFromParticipantAccountsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSharedVpcConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSharedVpcConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSharedVpcConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSharedVpcConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_enableFsxRouteTableUpdatesFromParticipantAccounts;
+    bool m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,7 +41,7 @@ namespace Model
   class Schedule
   {
   public:
-    AWS_DLM_API Schedule();
+    AWS_DLM_API Schedule() = default;
     AWS_DLM_API Schedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The name of the schedule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Schedule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Schedule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Schedule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Schedule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * <p>Copy all user-defined tags on a source volume to snapshots of the volume
      * created by this policy.</p>
      */
-    inline bool GetCopyTags() const{ return m_copyTags; }
+    inline bool GetCopyTags() const { return m_copyTags; }
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
     inline Schedule& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
@@ -77,14 +75,14 @@ namespace Model
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
      * addition to the Amazon Web Services-added lifecycle tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagsToAdd() const{ return m_tagsToAdd; }
+    inline const Aws::Vector<Tag>& GetTagsToAdd() const { return m_tagsToAdd; }
     inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
-    inline void SetTagsToAdd(const Aws::Vector<Tag>& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = value; }
-    inline void SetTagsToAdd(Aws::Vector<Tag>&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::move(value); }
-    inline Schedule& WithTagsToAdd(const Aws::Vector<Tag>& value) { SetTagsToAdd(value); return *this;}
-    inline Schedule& WithTagsToAdd(Aws::Vector<Tag>&& value) { SetTagsToAdd(std::move(value)); return *this;}
-    inline Schedule& AddTagsToAdd(const Tag& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
-    inline Schedule& AddTagsToAdd(Tag&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(std::move(value)); return *this; }
+    template<typename TagsToAddT = Aws::Vector<Tag>>
+    void SetTagsToAdd(TagsToAddT&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd = std::forward<TagsToAddT>(value); }
+    template<typename TagsToAddT = Aws::Vector<Tag>>
+    Schedule& WithTagsToAdd(TagsToAddT&& value) { SetTagsToAdd(std::forward<TagsToAddT>(value)); return *this;}
+    template<typename TagsToAddT = Tag>
+    Schedule& AddTagsToAdd(TagsToAddT&& value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.emplace_back(std::forward<TagsToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,38 +94,38 @@ namespace Model
      * <code>$(timestamp)</code>. Variable tags are only valid for EBS Snapshot
      * Management – Instance policies.</p>
      */
-    inline const Aws::Vector<Tag>& GetVariableTags() const{ return m_variableTags; }
+    inline const Aws::Vector<Tag>& GetVariableTags() const { return m_variableTags; }
     inline bool VariableTagsHasBeenSet() const { return m_variableTagsHasBeenSet; }
-    inline void SetVariableTags(const Aws::Vector<Tag>& value) { m_variableTagsHasBeenSet = true; m_variableTags = value; }
-    inline void SetVariableTags(Aws::Vector<Tag>&& value) { m_variableTagsHasBeenSet = true; m_variableTags = std::move(value); }
-    inline Schedule& WithVariableTags(const Aws::Vector<Tag>& value) { SetVariableTags(value); return *this;}
-    inline Schedule& WithVariableTags(Aws::Vector<Tag>&& value) { SetVariableTags(std::move(value)); return *this;}
-    inline Schedule& AddVariableTags(const Tag& value) { m_variableTagsHasBeenSet = true; m_variableTags.push_back(value); return *this; }
-    inline Schedule& AddVariableTags(Tag&& value) { m_variableTagsHasBeenSet = true; m_variableTags.push_back(std::move(value)); return *this; }
+    template<typename VariableTagsT = Aws::Vector<Tag>>
+    void SetVariableTags(VariableTagsT&& value) { m_variableTagsHasBeenSet = true; m_variableTags = std::forward<VariableTagsT>(value); }
+    template<typename VariableTagsT = Aws::Vector<Tag>>
+    Schedule& WithVariableTags(VariableTagsT&& value) { SetVariableTags(std::forward<VariableTagsT>(value)); return *this;}
+    template<typename VariableTagsT = Tag>
+    Schedule& AddVariableTags(VariableTagsT&& value) { m_variableTagsHasBeenSet = true; m_variableTags.emplace_back(std::forward<VariableTagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The creation rule.</p>
      */
-    inline const CreateRule& GetCreateRule() const{ return m_createRule; }
+    inline const CreateRule& GetCreateRule() const { return m_createRule; }
     inline bool CreateRuleHasBeenSet() const { return m_createRuleHasBeenSet; }
-    inline void SetCreateRule(const CreateRule& value) { m_createRuleHasBeenSet = true; m_createRule = value; }
-    inline void SetCreateRule(CreateRule&& value) { m_createRuleHasBeenSet = true; m_createRule = std::move(value); }
-    inline Schedule& WithCreateRule(const CreateRule& value) { SetCreateRule(value); return *this;}
-    inline Schedule& WithCreateRule(CreateRule&& value) { SetCreateRule(std::move(value)); return *this;}
+    template<typename CreateRuleT = CreateRule>
+    void SetCreateRule(CreateRuleT&& value) { m_createRuleHasBeenSet = true; m_createRule = std::forward<CreateRuleT>(value); }
+    template<typename CreateRuleT = CreateRule>
+    Schedule& WithCreateRule(CreateRuleT&& value) { SetCreateRule(std::forward<CreateRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention rule for snapshots or AMIs created by the policy.</p>
      */
-    inline const RetainRule& GetRetainRule() const{ return m_retainRule; }
+    inline const RetainRule& GetRetainRule() const { return m_retainRule; }
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
-    inline void SetRetainRule(const RetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
-    inline void SetRetainRule(RetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
-    inline Schedule& WithRetainRule(const RetainRule& value) { SetRetainRule(value); return *this;}
-    inline Schedule& WithRetainRule(RetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
+    template<typename RetainRuleT = RetainRule>
+    void SetRetainRule(RetainRuleT&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::forward<RetainRuleT>(value); }
+    template<typename RetainRuleT = RetainRule>
+    Schedule& WithRetainRule(RetainRuleT&& value) { SetRetainRule(std::forward<RetainRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +133,12 @@ namespace Model
      * <p> <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot
      * restore.</p>
      */
-    inline const FastRestoreRule& GetFastRestoreRule() const{ return m_fastRestoreRule; }
+    inline const FastRestoreRule& GetFastRestoreRule() const { return m_fastRestoreRule; }
     inline bool FastRestoreRuleHasBeenSet() const { return m_fastRestoreRuleHasBeenSet; }
-    inline void SetFastRestoreRule(const FastRestoreRule& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = value; }
-    inline void SetFastRestoreRule(FastRestoreRule&& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = std::move(value); }
-    inline Schedule& WithFastRestoreRule(const FastRestoreRule& value) { SetFastRestoreRule(value); return *this;}
-    inline Schedule& WithFastRestoreRule(FastRestoreRule&& value) { SetFastRestoreRule(std::move(value)); return *this;}
+    template<typename FastRestoreRuleT = FastRestoreRule>
+    void SetFastRestoreRule(FastRestoreRuleT&& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = std::forward<FastRestoreRuleT>(value); }
+    template<typename FastRestoreRuleT = FastRestoreRule>
+    Schedule& WithFastRestoreRule(FastRestoreRuleT&& value) { SetFastRestoreRule(std::forward<FastRestoreRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +148,14 @@ namespace Model
      * on an Outpost or in a Local Zone. If the policy creates snapshots in a Region,
      * then snapshots can be copied to up to three Regions or Outposts.</p> 
      */
-    inline const Aws::Vector<CrossRegionCopyRule>& GetCrossRegionCopyRules() const{ return m_crossRegionCopyRules; }
+    inline const Aws::Vector<CrossRegionCopyRule>& GetCrossRegionCopyRules() const { return m_crossRegionCopyRules; }
     inline bool CrossRegionCopyRulesHasBeenSet() const { return m_crossRegionCopyRulesHasBeenSet; }
-    inline void SetCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = value; }
-    inline void SetCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = std::move(value); }
-    inline Schedule& WithCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { SetCrossRegionCopyRules(value); return *this;}
-    inline Schedule& WithCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { SetCrossRegionCopyRules(std::move(value)); return *this;}
-    inline Schedule& AddCrossRegionCopyRules(const CrossRegionCopyRule& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(value); return *this; }
-    inline Schedule& AddCrossRegionCopyRules(CrossRegionCopyRule&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(std::move(value)); return *this; }
+    template<typename CrossRegionCopyRulesT = Aws::Vector<CrossRegionCopyRule>>
+    void SetCrossRegionCopyRules(CrossRegionCopyRulesT&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = std::forward<CrossRegionCopyRulesT>(value); }
+    template<typename CrossRegionCopyRulesT = Aws::Vector<CrossRegionCopyRule>>
+    Schedule& WithCrossRegionCopyRules(CrossRegionCopyRulesT&& value) { SetCrossRegionCopyRules(std::forward<CrossRegionCopyRulesT>(value)); return *this;}
+    template<typename CrossRegionCopyRulesT = CrossRegionCopyRule>
+    Schedule& AddCrossRegionCopyRules(CrossRegionCopyRulesT&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.emplace_back(std::forward<CrossRegionCopyRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,14 +163,14 @@ namespace Model
      * <p> <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with
      * other Amazon Web Services accounts.</p>
      */
-    inline const Aws::Vector<ShareRule>& GetShareRules() const{ return m_shareRules; }
+    inline const Aws::Vector<ShareRule>& GetShareRules() const { return m_shareRules; }
     inline bool ShareRulesHasBeenSet() const { return m_shareRulesHasBeenSet; }
-    inline void SetShareRules(const Aws::Vector<ShareRule>& value) { m_shareRulesHasBeenSet = true; m_shareRules = value; }
-    inline void SetShareRules(Aws::Vector<ShareRule>&& value) { m_shareRulesHasBeenSet = true; m_shareRules = std::move(value); }
-    inline Schedule& WithShareRules(const Aws::Vector<ShareRule>& value) { SetShareRules(value); return *this;}
-    inline Schedule& WithShareRules(Aws::Vector<ShareRule>&& value) { SetShareRules(std::move(value)); return *this;}
-    inline Schedule& AddShareRules(const ShareRule& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(value); return *this; }
-    inline Schedule& AddShareRules(ShareRule&& value) { m_shareRulesHasBeenSet = true; m_shareRules.push_back(std::move(value)); return *this; }
+    template<typename ShareRulesT = Aws::Vector<ShareRule>>
+    void SetShareRules(ShareRulesT&& value) { m_shareRulesHasBeenSet = true; m_shareRules = std::forward<ShareRulesT>(value); }
+    template<typename ShareRulesT = Aws::Vector<ShareRule>>
+    Schedule& WithShareRules(ShareRulesT&& value) { SetShareRules(std::forward<ShareRulesT>(value)); return *this;}
+    template<typename ShareRulesT = ShareRule>
+    Schedule& AddShareRules(ShareRulesT&& value) { m_shareRulesHasBeenSet = true; m_shareRules.emplace_back(std::forward<ShareRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -180,12 +178,12 @@ namespace Model
      * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for the
      * schedule.</p>
      */
-    inline const DeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
+    inline const DeprecateRule& GetDeprecateRule() const { return m_deprecateRule; }
     inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
-    inline void SetDeprecateRule(const DeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
-    inline void SetDeprecateRule(DeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
-    inline Schedule& WithDeprecateRule(const DeprecateRule& value) { SetDeprecateRule(value); return *this;}
-    inline Schedule& WithDeprecateRule(DeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
+    template<typename DeprecateRuleT = DeprecateRule>
+    void SetDeprecateRule(DeprecateRuleT&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::forward<DeprecateRuleT>(value); }
+    template<typename DeprecateRuleT = DeprecateRule>
+    Schedule& WithDeprecateRule(DeprecateRuleT&& value) { SetDeprecateRule(std::forward<DeprecateRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,19 +197,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
      * for snapshot lifecycle policies</a>.</p>
      */
-    inline const ArchiveRule& GetArchiveRule() const{ return m_archiveRule; }
+    inline const ArchiveRule& GetArchiveRule() const { return m_archiveRule; }
     inline bool ArchiveRuleHasBeenSet() const { return m_archiveRuleHasBeenSet; }
-    inline void SetArchiveRule(const ArchiveRule& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = value; }
-    inline void SetArchiveRule(ArchiveRule&& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = std::move(value); }
-    inline Schedule& WithArchiveRule(const ArchiveRule& value) { SetArchiveRule(value); return *this;}
-    inline Schedule& WithArchiveRule(ArchiveRule&& value) { SetArchiveRule(std::move(value)); return *this;}
+    template<typename ArchiveRuleT = ArchiveRule>
+    void SetArchiveRule(ArchiveRuleT&& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = std::forward<ArchiveRuleT>(value); }
+    template<typename ArchiveRuleT = ArchiveRule>
+    Schedule& WithArchiveRule(ArchiveRuleT&& value) { SetArchiveRule(std::forward<ArchiveRuleT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_copyTags;
+    bool m_copyTags{false};
     bool m_copyTagsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsToAdd;

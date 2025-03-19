@@ -18,20 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameServerContainerDefinition::GameServerContainerDefinition() : 
-    m_containerNameHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_environmentOverrideHasBeenSet(false),
-    m_imageUriHasBeenSet(false),
-    m_portConfigurationHasBeenSet(false),
-    m_resolvedImageDigestHasBeenSet(false),
-    m_serverSdkVersionHasBeenSet(false)
-{
-}
-
 GameServerContainerDefinition::GameServerContainerDefinition(JsonView jsonValue)
-  : GameServerContainerDefinition()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator =(JsonVie
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependsOn"))
   {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("DependsOn");
@@ -54,7 +39,6 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator =(JsonVie
     }
     m_dependsOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountPoints"))
   {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
@@ -64,7 +48,6 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator =(JsonVie
     }
     m_mountPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentOverride"))
   {
     Aws::Utils::Array<JsonView> environmentOverrideJsonList = jsonValue.GetArray("EnvironmentOverride");
@@ -74,35 +57,26 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator =(JsonVie
     }
     m_environmentOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortConfiguration"))
   {
     m_portConfiguration = jsonValue.GetObject("PortConfiguration");
-
     m_portConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolvedImageDigest"))
   {
     m_resolvedImageDigest = jsonValue.GetString("ResolvedImageDigest");
-
     m_resolvedImageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerSdkVersion"))
   {
     m_serverSdkVersion = jsonValue.GetString("ServerSdkVersion");
-
     m_serverSdkVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

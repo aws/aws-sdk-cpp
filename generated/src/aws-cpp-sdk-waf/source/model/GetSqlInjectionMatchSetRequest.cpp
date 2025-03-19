@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSqlInjectionMatchSetRequest::GetSqlInjectionMatchSetRequest() : 
-    m_sqlInjectionMatchSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSqlInjectionMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

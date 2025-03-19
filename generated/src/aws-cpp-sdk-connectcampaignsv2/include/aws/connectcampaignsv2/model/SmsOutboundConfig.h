@@ -31,7 +31,7 @@ namespace Model
   class SmsOutboundConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundConfig();
+    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API SmsOutboundConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API SmsOutboundConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,26 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetConnectSourcePhoneNumberArn() const{ return m_connectSourcePhoneNumberArn; }
+    inline const Aws::String& GetConnectSourcePhoneNumberArn() const { return m_connectSourcePhoneNumberArn; }
     inline bool ConnectSourcePhoneNumberArnHasBeenSet() const { return m_connectSourcePhoneNumberArnHasBeenSet; }
-    inline void SetConnectSourcePhoneNumberArn(const Aws::String& value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn = value; }
-    inline void SetConnectSourcePhoneNumberArn(Aws::String&& value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn = std::move(value); }
-    inline void SetConnectSourcePhoneNumberArn(const char* value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn.assign(value); }
-    inline SmsOutboundConfig& WithConnectSourcePhoneNumberArn(const Aws::String& value) { SetConnectSourcePhoneNumberArn(value); return *this;}
-    inline SmsOutboundConfig& WithConnectSourcePhoneNumberArn(Aws::String&& value) { SetConnectSourcePhoneNumberArn(std::move(value)); return *this;}
-    inline SmsOutboundConfig& WithConnectSourcePhoneNumberArn(const char* value) { SetConnectSourcePhoneNumberArn(value); return *this;}
+    template<typename ConnectSourcePhoneNumberArnT = Aws::String>
+    void SetConnectSourcePhoneNumberArn(ConnectSourcePhoneNumberArnT&& value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn = std::forward<ConnectSourcePhoneNumberArnT>(value); }
+    template<typename ConnectSourcePhoneNumberArnT = Aws::String>
+    SmsOutboundConfig& WithConnectSourcePhoneNumberArn(ConnectSourcePhoneNumberArnT&& value) { SetConnectSourcePhoneNumberArn(std::forward<ConnectSourcePhoneNumberArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWisdomTemplateArn() const{ return m_wisdomTemplateArn; }
+    inline const Aws::String& GetWisdomTemplateArn() const { return m_wisdomTemplateArn; }
     inline bool WisdomTemplateArnHasBeenSet() const { return m_wisdomTemplateArnHasBeenSet; }
-    inline void SetWisdomTemplateArn(const Aws::String& value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn = value; }
-    inline void SetWisdomTemplateArn(Aws::String&& value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn = std::move(value); }
-    inline void SetWisdomTemplateArn(const char* value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn.assign(value); }
-    inline SmsOutboundConfig& WithWisdomTemplateArn(const Aws::String& value) { SetWisdomTemplateArn(value); return *this;}
-    inline SmsOutboundConfig& WithWisdomTemplateArn(Aws::String&& value) { SetWisdomTemplateArn(std::move(value)); return *this;}
-    inline SmsOutboundConfig& WithWisdomTemplateArn(const char* value) { SetWisdomTemplateArn(value); return *this;}
+    template<typename WisdomTemplateArnT = Aws::String>
+    void SetWisdomTemplateArn(WisdomTemplateArnT&& value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn = std::forward<WisdomTemplateArnT>(value); }
+    template<typename WisdomTemplateArnT = Aws::String>
+    SmsOutboundConfig& WithWisdomTemplateArn(WisdomTemplateArnT&& value) { SetWisdomTemplateArn(std::forward<WisdomTemplateArnT>(value)); return *this;}
     ///@}
   private:
 

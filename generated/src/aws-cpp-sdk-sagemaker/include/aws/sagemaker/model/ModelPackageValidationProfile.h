@@ -35,7 +35,7 @@ namespace Model
   class ModelPackageValidationProfile
   {
   public:
-    AWS_SAGEMAKER_API ModelPackageValidationProfile();
+    AWS_SAGEMAKER_API ModelPackageValidationProfile() = default;
     AWS_SAGEMAKER_API ModelPackageValidationProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelPackageValidationProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the profile for the model package.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline ModelPackageValidationProfile& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline ModelPackageValidationProfile& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline ModelPackageValidationProfile& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    ModelPackageValidationProfile& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>The <code>TransformJobDefinition</code> object that describes the transform
      * job used for the validation of the model package.</p>
      */
-    inline const TransformJobDefinition& GetTransformJobDefinition() const{ return m_transformJobDefinition; }
+    inline const TransformJobDefinition& GetTransformJobDefinition() const { return m_transformJobDefinition; }
     inline bool TransformJobDefinitionHasBeenSet() const { return m_transformJobDefinitionHasBeenSet; }
-    inline void SetTransformJobDefinition(const TransformJobDefinition& value) { m_transformJobDefinitionHasBeenSet = true; m_transformJobDefinition = value; }
-    inline void SetTransformJobDefinition(TransformJobDefinition&& value) { m_transformJobDefinitionHasBeenSet = true; m_transformJobDefinition = std::move(value); }
-    inline ModelPackageValidationProfile& WithTransformJobDefinition(const TransformJobDefinition& value) { SetTransformJobDefinition(value); return *this;}
-    inline ModelPackageValidationProfile& WithTransformJobDefinition(TransformJobDefinition&& value) { SetTransformJobDefinition(std::move(value)); return *this;}
+    template<typename TransformJobDefinitionT = TransformJobDefinition>
+    void SetTransformJobDefinition(TransformJobDefinitionT&& value) { m_transformJobDefinitionHasBeenSet = true; m_transformJobDefinition = std::forward<TransformJobDefinitionT>(value); }
+    template<typename TransformJobDefinitionT = TransformJobDefinition>
+    ModelPackageValidationProfile& WithTransformJobDefinition(TransformJobDefinitionT&& value) { SetTransformJobDefinition(std::forward<TransformJobDefinitionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-StreetComponents::StreetComponents() : 
-    m_baseNameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_typePlacement(TypePlacement::NOT_SET),
-    m_typePlacementHasBeenSet(false),
-    m_typeSeparatorHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_suffixHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_languageHasBeenSet(false)
-{
-}
-
 StreetComponents::StreetComponents(JsonView jsonValue)
-  : StreetComponents()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ StreetComponents& StreetComponents::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BaseName"))
   {
     m_baseName = jsonValue.GetString("BaseName");
-
     m_baseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypePlacement"))
   {
     m_typePlacement = TypePlacementMapper::GetTypePlacementForName(jsonValue.GetString("TypePlacement"));
-
     m_typePlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeSeparator"))
   {
     m_typeSeparator = jsonValue.GetString("TypeSeparator");
-
     m_typeSeparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Suffix"))
   {
     m_suffix = jsonValue.GetString("Suffix");
-
     m_suffixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = jsonValue.GetString("Direction");
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   return *this;
 }
 

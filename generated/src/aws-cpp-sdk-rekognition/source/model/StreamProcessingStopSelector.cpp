@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessingStopSelector::StreamProcessingStopSelector() : 
-    m_maxDurationInSeconds(0),
-    m_maxDurationInSecondsHasBeenSet(false)
-{
-}
-
 StreamProcessingStopSelector::StreamProcessingStopSelector(JsonView jsonValue)
-  : StreamProcessingStopSelector()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StreamProcessingStopSelector& StreamProcessingStopSelector::operator =(JsonView 
   if(jsonValue.ValueExists("MaxDurationInSeconds"))
   {
     m_maxDurationInSeconds = jsonValue.GetInt64("MaxDurationInSeconds");
-
     m_maxDurationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

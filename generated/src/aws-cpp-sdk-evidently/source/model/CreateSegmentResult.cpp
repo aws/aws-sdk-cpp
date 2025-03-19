@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSegmentResult::CreateSegmentResult()
-{
-}
-
 CreateSegmentResult::CreateSegmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSegmentResult& CreateSegmentResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("segment"))
   {
     m_segment = jsonValue.GetObject("segment");
-
+    m_segmentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration() : 
-    m_httpUrlConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
-{
-}
-
 TopicRuleDestinationConfiguration::TopicRuleDestinationConfiguration(JsonView jsonValue)
-  : TopicRuleDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TopicRuleDestinationConfiguration& TopicRuleDestinationConfiguration::operator =
   if(jsonValue.ValueExists("httpUrlConfiguration"))
   {
     m_httpUrlConfiguration = jsonValue.GetObject("httpUrlConfiguration");
-
     m_httpUrlConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

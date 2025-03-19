@@ -29,7 +29,7 @@ namespace Model
   class CloseCaseResult
   {
   public:
-    AWS_SECURITYIR_API CloseCaseResult();
+    AWS_SECURITYIR_API CloseCaseResult() = default;
     AWS_SECURITYIR_API CloseCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYIR_API CloseCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,9 @@ namespace Model
      * <p>A response element providing responses for requests to CloseCase. This
      * element responds with the case status following the action. </p>
      */
-    inline const CaseStatus& GetCaseStatus() const{ return m_caseStatus; }
-    inline void SetCaseStatus(const CaseStatus& value) { m_caseStatus = value; }
-    inline void SetCaseStatus(CaseStatus&& value) { m_caseStatus = std::move(value); }
-    inline CloseCaseResult& WithCaseStatus(const CaseStatus& value) { SetCaseStatus(value); return *this;}
-    inline CloseCaseResult& WithCaseStatus(CaseStatus&& value) { SetCaseStatus(std::move(value)); return *this;}
+    inline CaseStatus GetCaseStatus() const { return m_caseStatus; }
+    inline void SetCaseStatus(CaseStatus value) { m_caseStatusHasBeenSet = true; m_caseStatus = value; }
+    inline CloseCaseResult& WithCaseStatus(CaseStatus value) { SetCaseStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,31 @@ namespace Model
      * <p>A response element providing responses for requests to CloseCase. This
      * element responds with the case closure date following the action. </p>
      */
-    inline const Aws::Utils::DateTime& GetClosedDate() const{ return m_closedDate; }
-    inline void SetClosedDate(const Aws::Utils::DateTime& value) { m_closedDate = value; }
-    inline void SetClosedDate(Aws::Utils::DateTime&& value) { m_closedDate = std::move(value); }
-    inline CloseCaseResult& WithClosedDate(const Aws::Utils::DateTime& value) { SetClosedDate(value); return *this;}
-    inline CloseCaseResult& WithClosedDate(Aws::Utils::DateTime&& value) { SetClosedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetClosedDate() const { return m_closedDate; }
+    template<typename ClosedDateT = Aws::Utils::DateTime>
+    void SetClosedDate(ClosedDateT&& value) { m_closedDateHasBeenSet = true; m_closedDate = std::forward<ClosedDateT>(value); }
+    template<typename ClosedDateT = Aws::Utils::DateTime>
+    CloseCaseResult& WithClosedDate(ClosedDateT&& value) { SetClosedDate(std::forward<ClosedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CloseCaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CloseCaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CloseCaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CloseCaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CaseStatus m_caseStatus;
+    CaseStatus m_caseStatus{CaseStatus::NOT_SET};
+    bool m_caseStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_closedDate;
+    Aws::Utils::DateTime m_closedDate{};
+    bool m_closedDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

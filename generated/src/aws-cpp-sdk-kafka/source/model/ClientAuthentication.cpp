@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClientAuthentication::ClientAuthentication() : 
-    m_saslHasBeenSet(false),
-    m_tlsHasBeenSet(false),
-    m_unauthenticatedHasBeenSet(false)
-{
-}
-
 ClientAuthentication::ClientAuthentication(JsonView jsonValue)
-  : ClientAuthentication()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ClientAuthentication& ClientAuthentication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sasl"))
   {
     m_sasl = jsonValue.GetObject("sasl");
-
     m_saslHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
-
     m_tlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unauthenticated"))
   {
     m_unauthenticated = jsonValue.GetObject("unauthenticated");
-
     m_unauthenticatedHasBeenSet = true;
   }
-
   return *this;
 }
 

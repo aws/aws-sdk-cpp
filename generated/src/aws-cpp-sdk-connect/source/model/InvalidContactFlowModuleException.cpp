@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InvalidContactFlowModuleException::InvalidContactFlowModuleException() : 
-    m_problemsHasBeenSet(false)
-{
-}
-
 InvalidContactFlowModuleException::InvalidContactFlowModuleException(JsonView jsonValue)
-  : InvalidContactFlowModuleException()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ InvalidContactFlowModuleException& InvalidContactFlowModuleException::operator =
     }
     m_problemsHasBeenSet = true;
   }
-
   return *this;
 }
 

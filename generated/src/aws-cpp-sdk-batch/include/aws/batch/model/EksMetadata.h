@@ -37,7 +37,7 @@ namespace Model
   class EksMetadata
   {
   public:
-    AWS_BATCH_API EksMetadata();
+    AWS_BATCH_API EksMetadata() = default;
     AWS_BATCH_API EksMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,19 +50,16 @@ namespace Model
      * underscores (_). Labels can be added or modified at any time. Each resource can
      * have multiple labels, but each key must be unique for a given object.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline EksMetadata& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
-    inline EksMetadata& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline EksMetadata& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
-    inline EksMetadata& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline EksMetadata& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline EksMetadata& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
-    inline EksMetadata& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline EksMetadata& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline EksMetadata& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    EksMetadata& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsKeyT = Aws::String, typename LabelsValueT = Aws::String>
+    EksMetadata& AddLabels(LabelsKeyT&& key, LabelsValueT&& value) {
+      m_labelsHasBeenSet = true; m_labels.emplace(std::forward<LabelsKeyT>(key), std::forward<LabelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -79,19 +76,16 @@ namespace Model
      * less.</p>  <p>Annotations can be added or modified at any time. Each
      * resource can have multiple annotations. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotations() const{ return m_annotations; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotations() const { return m_annotations; }
     inline bool AnnotationsHasBeenSet() const { return m_annotationsHasBeenSet; }
-    inline void SetAnnotations(const Aws::Map<Aws::String, Aws::String>& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
-    inline void SetAnnotations(Aws::Map<Aws::String, Aws::String>&& value) { m_annotationsHasBeenSet = true; m_annotations = std::move(value); }
-    inline EksMetadata& WithAnnotations(const Aws::Map<Aws::String, Aws::String>& value) { SetAnnotations(value); return *this;}
-    inline EksMetadata& WithAnnotations(Aws::Map<Aws::String, Aws::String>&& value) { SetAnnotations(std::move(value)); return *this;}
-    inline EksMetadata& AddAnnotations(const Aws::String& key, const Aws::String& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
-    inline EksMetadata& AddAnnotations(Aws::String&& key, const Aws::String& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), value); return *this; }
-    inline EksMetadata& AddAnnotations(const Aws::String& key, Aws::String&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, std::move(value)); return *this; }
-    inline EksMetadata& AddAnnotations(Aws::String&& key, Aws::String&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), std::move(value)); return *this; }
-    inline EksMetadata& AddAnnotations(const char* key, Aws::String&& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, std::move(value)); return *this; }
-    inline EksMetadata& AddAnnotations(Aws::String&& key, const char* value) { m_annotationsHasBeenSet = true; m_annotations.emplace(std::move(key), value); return *this; }
-    inline EksMetadata& AddAnnotations(const char* key, const char* value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
+    template<typename AnnotationsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAnnotations(AnnotationsT&& value) { m_annotationsHasBeenSet = true; m_annotations = std::forward<AnnotationsT>(value); }
+    template<typename AnnotationsT = Aws::Map<Aws::String, Aws::String>>
+    EksMetadata& WithAnnotations(AnnotationsT&& value) { SetAnnotations(std::forward<AnnotationsT>(value)); return *this;}
+    template<typename AnnotationsKeyT = Aws::String, typename AnnotationsValueT = Aws::String>
+    EksMetadata& AddAnnotations(AnnotationsKeyT&& key, AnnotationsValueT&& value) {
+      m_annotationsHasBeenSet = true; m_annotations.emplace(std::forward<AnnotationsKeyT>(key), std::forward<AnnotationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -113,14 +107,12 @@ namespace Model
      * multi-node parallel jobs, the same value must be provided across all the node
      * ranges.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline EksMetadata& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline EksMetadata& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline EksMetadata& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    EksMetadata& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 

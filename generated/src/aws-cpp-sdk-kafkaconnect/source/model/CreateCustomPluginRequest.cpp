@@ -12,16 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomPluginRequest::CreateCustomPluginRequest() : 
-    m_contentType(CustomPluginContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomPluginRequest::SerializePayload() const
 {
   JsonValue payload;

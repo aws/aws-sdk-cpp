@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IncrementalRunConfig::IncrementalRunConfig() : 
-    m_incrementalRunType(IncrementalRunType::NOT_SET),
-    m_incrementalRunTypeHasBeenSet(false)
-{
-}
-
 IncrementalRunConfig::IncrementalRunConfig(JsonView jsonValue)
-  : IncrementalRunConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IncrementalRunConfig& IncrementalRunConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("incrementalRunType"))
   {
     m_incrementalRunType = IncrementalRunTypeMapper::GetIncrementalRunTypeForName(jsonValue.GetString("incrementalRunType"));
-
     m_incrementalRunTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

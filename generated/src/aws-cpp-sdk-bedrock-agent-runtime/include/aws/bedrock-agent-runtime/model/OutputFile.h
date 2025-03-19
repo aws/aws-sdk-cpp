@@ -33,7 +33,7 @@ namespace Model
   class OutputFile
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OutputFile();
+    AWS_BEDROCKAGENTRUNTIME_API OutputFile() = default;
     AWS_BEDROCKAGENTRUNTIME_API OutputFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OutputFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,40 @@ namespace Model
     /**
      * <p>The byte count of files that contains response from code interpreter.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetBytes() const{ return m_bytes; }
+    inline const Aws::Utils::CryptoBuffer& GetBytes() const { return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(const Aws::Utils::CryptoBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline void SetBytes(Aws::Utils::CryptoBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-    inline OutputFile& WithBytes(const Aws::Utils::CryptoBuffer& value) { SetBytes(value); return *this;}
-    inline OutputFile& WithBytes(Aws::Utils::CryptoBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    template<typename BytesT = Aws::Utils::CryptoBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::CryptoBuffer>
+    OutputFile& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the file containing response from code interpreter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline OutputFile& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline OutputFile& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline OutputFile& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    OutputFile& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of file that contains response from the code interpreter.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline OutputFile& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline OutputFile& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline OutputFile& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    OutputFile& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::CryptoBuffer m_bytes;
+    Aws::Utils::CryptoBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
 
     Aws::String m_name;

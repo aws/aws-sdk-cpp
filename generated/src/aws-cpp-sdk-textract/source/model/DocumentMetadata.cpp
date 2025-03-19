@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-DocumentMetadata::DocumentMetadata() : 
-    m_pages(0),
-    m_pagesHasBeenSet(false)
-{
-}
-
 DocumentMetadata::DocumentMetadata(JsonView jsonValue)
-  : DocumentMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Pages"))
   {
     m_pages = jsonValue.GetInteger("Pages");
-
     m_pagesHasBeenSet = true;
   }
-
   return *this;
 }
 

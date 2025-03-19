@@ -13,12 +13,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachThingPrincipalRequest::DetachThingPrincipalRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_principalHasBeenSet(false)
-{
-}
-
 Aws::String DetachThingPrincipalRequest::SerializePayload() const
 {
   return {};

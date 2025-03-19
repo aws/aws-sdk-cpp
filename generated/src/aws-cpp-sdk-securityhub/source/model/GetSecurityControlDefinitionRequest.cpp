@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSecurityControlDefinitionRequest::GetSecurityControlDefinitionRequest() : 
-    m_securityControlIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSecurityControlDefinitionRequest::SerializePayload() const
 {
   return {};

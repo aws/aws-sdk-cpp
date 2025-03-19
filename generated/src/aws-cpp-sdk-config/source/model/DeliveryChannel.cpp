@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-DeliveryChannel::DeliveryChannel() : 
-    m_nameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_s3KmsKeyArnHasBeenSet(false),
-    m_snsTopicARNHasBeenSet(false),
-    m_configSnapshotDeliveryPropertiesHasBeenSet(false)
-{
-}
-
 DeliveryChannel::DeliveryChannel(JsonView jsonValue)
-  : DeliveryChannel()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ DeliveryChannel& DeliveryChannel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("s3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3KmsKeyArn"))
   {
     m_s3KmsKeyArn = jsonValue.GetString("s3KmsKeyArn");
-
     m_s3KmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snsTopicARN"))
   {
     m_snsTopicARN = jsonValue.GetString("snsTopicARN");
-
     m_snsTopicARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configSnapshotDeliveryProperties"))
   {
     m_configSnapshotDeliveryProperties = jsonValue.GetObject("configSnapshotDeliveryProperties");
-
     m_configSnapshotDeliveryPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-UserIdentity::UserIdentity() : 
-    m_type(UserIdentityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
-{
-}
-
 UserIdentity::UserIdentity(JsonView jsonValue)
-  : UserIdentity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UserIdentity& UserIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = UserIdentityTypeMapper::GetUserIdentityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   return *this;
 }
 

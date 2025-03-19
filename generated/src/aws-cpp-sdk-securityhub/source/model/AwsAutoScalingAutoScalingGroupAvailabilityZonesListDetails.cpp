@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails(JsonView jsonValue)
-  : AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails& AwsAutoScalingAutoSc
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

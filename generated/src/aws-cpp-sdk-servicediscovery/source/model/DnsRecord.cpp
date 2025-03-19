@@ -18,16 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-DnsRecord::DnsRecord() : 
-    m_type(RecordType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tTL(0),
-    m_tTLHasBeenSet(false)
-{
-}
-
 DnsRecord::DnsRecord(JsonView jsonValue)
-  : DnsRecord()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DnsRecord& DnsRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RecordTypeMapper::GetRecordTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TTL"))
   {
     m_tTL = jsonValue.GetInt64("TTL");
-
     m_tTLHasBeenSet = true;
   }
-
   return *this;
 }
 

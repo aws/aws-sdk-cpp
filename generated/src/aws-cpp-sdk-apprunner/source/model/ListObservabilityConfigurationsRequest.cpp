@@ -12,16 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListObservabilityConfigurationsRequest::ListObservabilityConfigurationsRequest() : 
-    m_observabilityConfigurationNameHasBeenSet(false),
-    m_latestOnly(false),
-    m_latestOnlyHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListObservabilityConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

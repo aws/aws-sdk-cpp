@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AttachNetworkInterfaceRequest::AttachNetworkInterfaceRequest() : 
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_enaSrdSpecificationHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false)
-{
-}
-
 Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

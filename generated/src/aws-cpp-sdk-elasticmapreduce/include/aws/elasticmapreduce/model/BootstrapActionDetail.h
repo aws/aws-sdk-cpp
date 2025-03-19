@@ -32,7 +32,7 @@ namespace Model
   class BootstrapActionDetail
   {
   public:
-    AWS_EMR_API BootstrapActionDetail();
+    AWS_EMR_API BootstrapActionDetail() = default;
     AWS_EMR_API BootstrapActionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API BootstrapActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A description of the bootstrap action.</p>
      */
-    inline const BootstrapActionConfig& GetBootstrapActionConfig() const{ return m_bootstrapActionConfig; }
+    inline const BootstrapActionConfig& GetBootstrapActionConfig() const { return m_bootstrapActionConfig; }
     inline bool BootstrapActionConfigHasBeenSet() const { return m_bootstrapActionConfigHasBeenSet; }
-    inline void SetBootstrapActionConfig(const BootstrapActionConfig& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = value; }
-    inline void SetBootstrapActionConfig(BootstrapActionConfig&& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = std::move(value); }
-    inline BootstrapActionDetail& WithBootstrapActionConfig(const BootstrapActionConfig& value) { SetBootstrapActionConfig(value); return *this;}
-    inline BootstrapActionDetail& WithBootstrapActionConfig(BootstrapActionConfig&& value) { SetBootstrapActionConfig(std::move(value)); return *this;}
+    template<typename BootstrapActionConfigT = BootstrapActionConfig>
+    void SetBootstrapActionConfig(BootstrapActionConfigT&& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = std::forward<BootstrapActionConfigT>(value); }
+    template<typename BootstrapActionConfigT = BootstrapActionConfig>
+    BootstrapActionDetail& WithBootstrapActionConfig(BootstrapActionConfigT&& value) { SetBootstrapActionConfig(std::forward<BootstrapActionConfigT>(value)); return *this;}
     ///@}
   private:
 

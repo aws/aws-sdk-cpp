@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateStageResult::UpdateStageResult()
-{
-}
-
 UpdateStageResult::UpdateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateStageResult& UpdateStageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetObject("stage");
-
+    m_stageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

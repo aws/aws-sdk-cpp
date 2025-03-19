@@ -33,7 +33,7 @@ namespace Model
   class FindingStatisticsSortCriteria
   {
   public:
-    AWS_MACIE2_API FindingStatisticsSortCriteria();
+    AWS_MACIE2_API FindingStatisticsSortCriteria() = default;
     AWS_MACIE2_API FindingStatisticsSortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API FindingStatisticsSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * results by the number of findings in each group of results; and, groupKey, sort
      * the results by the name of each group of results.</p>
      */
-    inline const FindingStatisticsSortAttributeName& GetAttributeName() const{ return m_attributeName; }
+    inline FindingStatisticsSortAttributeName GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const FindingStatisticsSortAttributeName& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(FindingStatisticsSortAttributeName&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline FindingStatisticsSortCriteria& WithAttributeName(const FindingStatisticsSortAttributeName& value) { SetAttributeName(value); return *this;}
-    inline FindingStatisticsSortCriteria& WithAttributeName(FindingStatisticsSortAttributeName&& value) { SetAttributeName(std::move(value)); return *this;}
+    inline void SetAttributeName(FindingStatisticsSortAttributeName value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline FindingStatisticsSortCriteria& WithAttributeName(FindingStatisticsSortAttributeName value) { SetAttributeName(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * specified by the attributeName property. Valid values are: ASC, sort the results
      * in ascending order; and, DESC, sort the results in descending order.</p>
      */
-    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+    inline OrderBy GetOrderBy() const { return m_orderBy; }
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-    inline FindingStatisticsSortCriteria& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-    inline FindingStatisticsSortCriteria& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+    inline void SetOrderBy(OrderBy value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline FindingStatisticsSortCriteria& WithOrderBy(OrderBy value) { SetOrderBy(value); return *this;}
     ///@}
   private:
 
-    FindingStatisticsSortAttributeName m_attributeName;
+    FindingStatisticsSortAttributeName m_attributeName{FindingStatisticsSortAttributeName::NOT_SET};
     bool m_attributeNameHasBeenSet = false;
 
-    OrderBy m_orderBy;
+    OrderBy m_orderBy{OrderBy::NOT_SET};
     bool m_orderByHasBeenSet = false;
   };
 

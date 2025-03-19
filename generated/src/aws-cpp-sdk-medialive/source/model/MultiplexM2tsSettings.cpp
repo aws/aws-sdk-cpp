@@ -18,40 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexM2tsSettings::MultiplexM2tsSettings() : 
-    m_absentInputAudioBehavior(M2tsAbsentInputAudioBehavior::NOT_SET),
-    m_absentInputAudioBehaviorHasBeenSet(false),
-    m_arib(M2tsArib::NOT_SET),
-    m_aribHasBeenSet(false),
-    m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
-    m_audioBufferModelHasBeenSet(false),
-    m_audioFramesPerPes(0),
-    m_audioFramesPerPesHasBeenSet(false),
-    m_audioStreamType(M2tsAudioStreamType::NOT_SET),
-    m_audioStreamTypeHasBeenSet(false),
-    m_ccDescriptor(M2tsCcDescriptor::NOT_SET),
-    m_ccDescriptorHasBeenSet(false),
-    m_ebif(M2tsEbifControl::NOT_SET),
-    m_ebifHasBeenSet(false),
-    m_esRateInPes(M2tsEsRateInPes::NOT_SET),
-    m_esRateInPesHasBeenSet(false),
-    m_klv(M2tsKlv::NOT_SET),
-    m_klvHasBeenSet(false),
-    m_nielsenId3Behavior(M2tsNielsenId3Behavior::NOT_SET),
-    m_nielsenId3BehaviorHasBeenSet(false),
-    m_pcrControl(M2tsPcrControl::NOT_SET),
-    m_pcrControlHasBeenSet(false),
-    m_pcrPeriod(0),
-    m_pcrPeriodHasBeenSet(false),
-    m_scte35Control(M2tsScte35Control::NOT_SET),
-    m_scte35ControlHasBeenSet(false),
-    m_scte35PrerollPullupMilliseconds(0.0),
-    m_scte35PrerollPullupMillisecondsHasBeenSet(false)
-{
-}
-
 MultiplexM2tsSettings::MultiplexM2tsSettings(JsonView jsonValue)
-  : MultiplexM2tsSettings()
 {
   *this = jsonValue;
 }
@@ -61,101 +28,73 @@ MultiplexM2tsSettings& MultiplexM2tsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("absentInputAudioBehavior"))
   {
     m_absentInputAudioBehavior = M2tsAbsentInputAudioBehaviorMapper::GetM2tsAbsentInputAudioBehaviorForName(jsonValue.GetString("absentInputAudioBehavior"));
-
     m_absentInputAudioBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arib"))
   {
     m_arib = M2tsAribMapper::GetM2tsAribForName(jsonValue.GetString("arib"));
-
     m_aribHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioBufferModel"))
   {
     m_audioBufferModel = M2tsAudioBufferModelMapper::GetM2tsAudioBufferModelForName(jsonValue.GetString("audioBufferModel"));
-
     m_audioBufferModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {
     m_audioFramesPerPes = jsonValue.GetInteger("audioFramesPerPes");
-
     m_audioFramesPerPesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioStreamType"))
   {
     m_audioStreamType = M2tsAudioStreamTypeMapper::GetM2tsAudioStreamTypeForName(jsonValue.GetString("audioStreamType"));
-
     m_audioStreamTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ccDescriptor"))
   {
     m_ccDescriptor = M2tsCcDescriptorMapper::GetM2tsCcDescriptorForName(jsonValue.GetString("ccDescriptor"));
-
     m_ccDescriptorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebif"))
   {
     m_ebif = M2tsEbifControlMapper::GetM2tsEbifControlForName(jsonValue.GetString("ebif"));
-
     m_ebifHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("esRateInPes"))
   {
     m_esRateInPes = M2tsEsRateInPesMapper::GetM2tsEsRateInPesForName(jsonValue.GetString("esRateInPes"));
-
     m_esRateInPesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("klv"))
   {
     m_klv = M2tsKlvMapper::GetM2tsKlvForName(jsonValue.GetString("klv"));
-
     m_klvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nielsenId3Behavior"))
   {
     m_nielsenId3Behavior = M2tsNielsenId3BehaviorMapper::GetM2tsNielsenId3BehaviorForName(jsonValue.GetString("nielsenId3Behavior"));
-
     m_nielsenId3BehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pcrControl"))
   {
     m_pcrControl = M2tsPcrControlMapper::GetM2tsPcrControlForName(jsonValue.GetString("pcrControl"));
-
     m_pcrControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pcrPeriod"))
   {
     m_pcrPeriod = jsonValue.GetInteger("pcrPeriod");
-
     m_pcrPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Control"))
   {
     m_scte35Control = M2tsScte35ControlMapper::GetM2tsScte35ControlForName(jsonValue.GetString("scte35Control"));
-
     m_scte35ControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35PrerollPullupMilliseconds"))
   {
     m_scte35PrerollPullupMilliseconds = jsonValue.GetDouble("scte35PrerollPullupMilliseconds");
-
     m_scte35PrerollPullupMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

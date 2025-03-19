@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DynamicPartitioningConfiguration::DynamicPartitioningConfiguration() : 
-    m_retryOptionsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 DynamicPartitioningConfiguration::DynamicPartitioningConfiguration(JsonView jsonValue)
-  : DynamicPartitioningConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DynamicPartitioningConfiguration& DynamicPartitioningConfiguration::operator =(J
   if(jsonValue.ValueExists("RetryOptions"))
   {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
-
     m_retryOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class IdMappingWorkflowInputSource
   {
   public:
-    AWS_ENTITYRESOLUTION_API IdMappingWorkflowInputSource();
+    AWS_ENTITYRESOLUTION_API IdMappingWorkflowInputSource() = default;
     AWS_ENTITYRESOLUTION_API IdMappingWorkflowInputSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API IdMappingWorkflowInputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>An Glue table Amazon Resource Name (ARN) or a matching workflow ARN for the
      * input source table.</p>
      */
-    inline const Aws::String& GetInputSourceARN() const{ return m_inputSourceARN; }
+    inline const Aws::String& GetInputSourceARN() const { return m_inputSourceARN; }
     inline bool InputSourceARNHasBeenSet() const { return m_inputSourceARNHasBeenSet; }
-    inline void SetInputSourceARN(const Aws::String& value) { m_inputSourceARNHasBeenSet = true; m_inputSourceARN = value; }
-    inline void SetInputSourceARN(Aws::String&& value) { m_inputSourceARNHasBeenSet = true; m_inputSourceARN = std::move(value); }
-    inline void SetInputSourceARN(const char* value) { m_inputSourceARNHasBeenSet = true; m_inputSourceARN.assign(value); }
-    inline IdMappingWorkflowInputSource& WithInputSourceARN(const Aws::String& value) { SetInputSourceARN(value); return *this;}
-    inline IdMappingWorkflowInputSource& WithInputSourceARN(Aws::String&& value) { SetInputSourceARN(std::move(value)); return *this;}
-    inline IdMappingWorkflowInputSource& WithInputSourceARN(const char* value) { SetInputSourceARN(value); return *this;}
+    template<typename InputSourceARNT = Aws::String>
+    void SetInputSourceARN(InputSourceARNT&& value) { m_inputSourceARNHasBeenSet = true; m_inputSourceARN = std::forward<InputSourceARNT>(value); }
+    template<typename InputSourceARNT = Aws::String>
+    IdMappingWorkflowInputSource& WithInputSourceARN(InputSourceARNT&& value) { SetInputSourceARN(std::forward<InputSourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema to be retrieved.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-    inline IdMappingWorkflowInputSource& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline IdMappingWorkflowInputSource& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline IdMappingWorkflowInputSource& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    IdMappingWorkflowInputSource& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * </p> <p>The <code>TARGET</code> contains a configuration of
      * <code>targetId</code> which all <code>sourceIds</code> will resolve to.</p>
      */
-    inline const IdNamespaceType& GetType() const{ return m_type; }
+    inline IdNamespaceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const IdNamespaceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(IdNamespaceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline IdMappingWorkflowInputSource& WithType(const IdNamespaceType& value) { SetType(value); return *this;}
-    inline IdMappingWorkflowInputSource& WithType(IdNamespaceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(IdNamespaceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline IdMappingWorkflowInputSource& WithType(IdNamespaceType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -91,7 +85,7 @@ namespace Model
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet = false;
 
-    IdNamespaceType m_type;
+    IdNamespaceType m_type{IdNamespaceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

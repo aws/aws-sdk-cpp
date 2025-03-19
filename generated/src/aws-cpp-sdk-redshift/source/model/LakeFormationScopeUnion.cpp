@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-LakeFormationScopeUnion::LakeFormationScopeUnion() : 
-    m_lakeFormationQueryHasBeenSet(false)
-{
-}
-
 LakeFormationScopeUnion::LakeFormationScopeUnion(const XmlNode& xmlNode)
-  : LakeFormationScopeUnion()
 {
   *this = xmlNode;
 }

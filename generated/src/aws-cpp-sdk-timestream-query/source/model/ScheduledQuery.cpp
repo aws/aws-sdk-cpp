@@ -18,23 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ScheduledQuery::ScheduledQuery() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_state(ScheduledQueryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_previousInvocationTimeHasBeenSet(false),
-    m_nextInvocationTimeHasBeenSet(false),
-    m_errorReportConfigurationHasBeenSet(false),
-    m_targetDestinationHasBeenSet(false),
-    m_lastRunStatus(ScheduledQueryRunStatus::NOT_SET),
-    m_lastRunStatusHasBeenSet(false)
-{
-}
-
 ScheduledQuery::ScheduledQuery(JsonView jsonValue)
-  : ScheduledQuery()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ScheduledQuery& ScheduledQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ScheduledQueryStateMapper::GetScheduledQueryStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousInvocationTime"))
   {
     m_previousInvocationTime = jsonValue.GetDouble("PreviousInvocationTime");
-
     m_previousInvocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextInvocationTime"))
   {
     m_nextInvocationTime = jsonValue.GetDouble("NextInvocationTime");
-
     m_nextInvocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorReportConfiguration"))
   {
     m_errorReportConfiguration = jsonValue.GetObject("ErrorReportConfiguration");
-
     m_errorReportConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDestination"))
   {
     m_targetDestination = jsonValue.GetObject("TargetDestination");
-
     m_targetDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRunStatus"))
   {
     m_lastRunStatus = ScheduledQueryRunStatusMapper::GetScheduledQueryRunStatusForName(jsonValue.GetString("LastRunStatus"));
-
     m_lastRunStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

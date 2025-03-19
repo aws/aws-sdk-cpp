@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchGroupsRequest::SearchGroupsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String SearchGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

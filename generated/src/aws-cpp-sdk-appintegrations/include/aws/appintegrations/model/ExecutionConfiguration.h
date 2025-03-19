@@ -34,7 +34,7 @@ namespace Model
   class ExecutionConfiguration
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API ExecutionConfiguration();
+    AWS_APPINTEGRATIONSSERVICE_API ExecutionConfiguration() = default;
     AWS_APPINTEGRATIONSSERVICE_API ExecutionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API ExecutionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,34 @@ namespace Model
     /**
      * <p>The mode for data import/export execution.</p>
      */
-    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+    inline ExecutionMode GetExecutionMode() const { return m_executionMode; }
     inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
-    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
-    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
-    inline ExecutionConfiguration& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
-    inline ExecutionConfiguration& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+    inline void SetExecutionMode(ExecutionMode value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+    inline ExecutionConfiguration& WithExecutionMode(ExecutionMode value) { SetExecutionMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const OnDemandConfiguration& GetOnDemandConfiguration() const{ return m_onDemandConfiguration; }
+    inline const OnDemandConfiguration& GetOnDemandConfiguration() const { return m_onDemandConfiguration; }
     inline bool OnDemandConfigurationHasBeenSet() const { return m_onDemandConfigurationHasBeenSet; }
-    inline void SetOnDemandConfiguration(const OnDemandConfiguration& value) { m_onDemandConfigurationHasBeenSet = true; m_onDemandConfiguration = value; }
-    inline void SetOnDemandConfiguration(OnDemandConfiguration&& value) { m_onDemandConfigurationHasBeenSet = true; m_onDemandConfiguration = std::move(value); }
-    inline ExecutionConfiguration& WithOnDemandConfiguration(const OnDemandConfiguration& value) { SetOnDemandConfiguration(value); return *this;}
-    inline ExecutionConfiguration& WithOnDemandConfiguration(OnDemandConfiguration&& value) { SetOnDemandConfiguration(std::move(value)); return *this;}
+    template<typename OnDemandConfigurationT = OnDemandConfiguration>
+    void SetOnDemandConfiguration(OnDemandConfigurationT&& value) { m_onDemandConfigurationHasBeenSet = true; m_onDemandConfiguration = std::forward<OnDemandConfigurationT>(value); }
+    template<typename OnDemandConfigurationT = OnDemandConfiguration>
+    ExecutionConfiguration& WithOnDemandConfiguration(OnDemandConfigurationT&& value) { SetOnDemandConfiguration(std::forward<OnDemandConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ScheduleConfiguration& GetScheduleConfiguration() const{ return m_scheduleConfiguration; }
+    inline const ScheduleConfiguration& GetScheduleConfiguration() const { return m_scheduleConfiguration; }
     inline bool ScheduleConfigurationHasBeenSet() const { return m_scheduleConfigurationHasBeenSet; }
-    inline void SetScheduleConfiguration(const ScheduleConfiguration& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = value; }
-    inline void SetScheduleConfiguration(ScheduleConfiguration&& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = std::move(value); }
-    inline ExecutionConfiguration& WithScheduleConfiguration(const ScheduleConfiguration& value) { SetScheduleConfiguration(value); return *this;}
-    inline ExecutionConfiguration& WithScheduleConfiguration(ScheduleConfiguration&& value) { SetScheduleConfiguration(std::move(value)); return *this;}
+    template<typename ScheduleConfigurationT = ScheduleConfiguration>
+    void SetScheduleConfiguration(ScheduleConfigurationT&& value) { m_scheduleConfigurationHasBeenSet = true; m_scheduleConfiguration = std::forward<ScheduleConfigurationT>(value); }
+    template<typename ScheduleConfigurationT = ScheduleConfiguration>
+    ExecutionConfiguration& WithScheduleConfiguration(ScheduleConfigurationT&& value) { SetScheduleConfiguration(std::forward<ScheduleConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    ExecutionMode m_executionMode;
+    ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
     bool m_executionModeHasBeenSet = false;
 
     OnDemandConfiguration m_onDemandConfiguration;

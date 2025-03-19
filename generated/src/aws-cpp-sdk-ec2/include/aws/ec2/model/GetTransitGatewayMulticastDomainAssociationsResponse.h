@@ -30,7 +30,7 @@ namespace Model
   class GetTransitGatewayMulticastDomainAssociationsResponse
   {
   public:
-    AWS_EC2_API GetTransitGatewayMulticastDomainAssociationsResponse();
+    AWS_EC2_API GetTransitGatewayMulticastDomainAssociationsResponse() = default;
     AWS_EC2_API GetTransitGatewayMulticastDomainAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetTransitGatewayMulticastDomainAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the multicast domain associations.</p>
      */
-    inline const Aws::Vector<TransitGatewayMulticastDomainAssociation>& GetMulticastDomainAssociations() const{ return m_multicastDomainAssociations; }
-    inline void SetMulticastDomainAssociations(const Aws::Vector<TransitGatewayMulticastDomainAssociation>& value) { m_multicastDomainAssociations = value; }
-    inline void SetMulticastDomainAssociations(Aws::Vector<TransitGatewayMulticastDomainAssociation>&& value) { m_multicastDomainAssociations = std::move(value); }
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithMulticastDomainAssociations(const Aws::Vector<TransitGatewayMulticastDomainAssociation>& value) { SetMulticastDomainAssociations(value); return *this;}
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithMulticastDomainAssociations(Aws::Vector<TransitGatewayMulticastDomainAssociation>&& value) { SetMulticastDomainAssociations(std::move(value)); return *this;}
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& AddMulticastDomainAssociations(const TransitGatewayMulticastDomainAssociation& value) { m_multicastDomainAssociations.push_back(value); return *this; }
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& AddMulticastDomainAssociations(TransitGatewayMulticastDomainAssociation&& value) { m_multicastDomainAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TransitGatewayMulticastDomainAssociation>& GetMulticastDomainAssociations() const { return m_multicastDomainAssociations; }
+    template<typename MulticastDomainAssociationsT = Aws::Vector<TransitGatewayMulticastDomainAssociation>>
+    void SetMulticastDomainAssociations(MulticastDomainAssociationsT&& value) { m_multicastDomainAssociationsHasBeenSet = true; m_multicastDomainAssociations = std::forward<MulticastDomainAssociationsT>(value); }
+    template<typename MulticastDomainAssociationsT = Aws::Vector<TransitGatewayMulticastDomainAssociation>>
+    GetTransitGatewayMulticastDomainAssociationsResponse& WithMulticastDomainAssociations(MulticastDomainAssociationsT&& value) { SetMulticastDomainAssociations(std::forward<MulticastDomainAssociationsT>(value)); return *this;}
+    template<typename MulticastDomainAssociationsT = TransitGatewayMulticastDomainAssociation>
+    GetTransitGatewayMulticastDomainAssociationsResponse& AddMulticastDomainAssociations(MulticastDomainAssociationsT&& value) { m_multicastDomainAssociationsHasBeenSet = true; m_multicastDomainAssociations.emplace_back(std::forward<MulticastDomainAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetTransitGatewayMulticastDomainAssociationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetTransitGatewayMulticastDomainAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetTransitGatewayMulticastDomainAssociationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TransitGatewayMulticastDomainAssociation> m_multicastDomainAssociations;
+    bool m_multicastDomainAssociationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

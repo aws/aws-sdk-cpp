@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTimeSeriesDataPointsRequest::ListTimeSeriesDataPointsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_entityType(TimeSeriesEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_formNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startedAtHasBeenSet(false)
-{
-}
-
 Aws::String ListTimeSeriesDataPointsRequest::SerializePayload() const
 {
   return {};

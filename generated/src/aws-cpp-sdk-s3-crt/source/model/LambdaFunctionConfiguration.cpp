@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-LambdaFunctionConfiguration::LambdaFunctionConfiguration() : 
-    m_idHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 LambdaFunctionConfiguration::LambdaFunctionConfiguration(const XmlNode& xmlNode)
-  : LambdaFunctionConfiguration()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(const XmlNo
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));

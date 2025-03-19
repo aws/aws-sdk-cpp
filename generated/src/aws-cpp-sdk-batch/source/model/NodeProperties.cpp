@@ -18,17 +18,7 @@ namespace Batch
 namespace Model
 {
 
-NodeProperties::NodeProperties() : 
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_mainNode(0),
-    m_mainNodeHasBeenSet(false),
-    m_nodeRangePropertiesHasBeenSet(false)
-{
-}
-
 NodeProperties::NodeProperties(JsonView jsonValue)
-  : NodeProperties()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ NodeProperties& NodeProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("numNodes"))
   {
     m_numNodes = jsonValue.GetInteger("numNodes");
-
     m_numNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mainNode"))
   {
     m_mainNode = jsonValue.GetInteger("mainNode");
-
     m_mainNodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeRangeProperties"))
   {
     Aws::Utils::Array<JsonView> nodeRangePropertiesJsonList = jsonValue.GetArray("nodeRangeProperties");
@@ -58,7 +44,6 @@ NodeProperties& NodeProperties::operator =(JsonView jsonValue)
     }
     m_nodeRangePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

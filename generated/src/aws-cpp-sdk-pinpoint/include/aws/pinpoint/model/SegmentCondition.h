@@ -32,7 +32,7 @@ namespace Model
   class SegmentCondition
   {
   public:
-    AWS_PINPOINT_API SegmentCondition();
+    AWS_PINPOINT_API SegmentCondition() = default;
     AWS_PINPOINT_API SegmentCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SegmentCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier for the segment to associate with the activity.</p>
      */
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline SegmentCondition& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline SegmentCondition& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline SegmentCondition& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    SegmentCondition& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
   private:
 

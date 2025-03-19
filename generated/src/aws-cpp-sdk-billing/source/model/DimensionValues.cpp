@@ -18,15 +18,7 @@ namespace Billing
 namespace Model
 {
 
-DimensionValues::DimensionValues() : 
-    m_key(Dimension::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DimensionValues::DimensionValues(JsonView jsonValue)
-  : DimensionValues()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DimensionValues& DimensionValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = DimensionMapper::GetDimensionForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ DimensionValues& DimensionValues::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

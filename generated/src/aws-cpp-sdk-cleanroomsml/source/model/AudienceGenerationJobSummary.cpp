@@ -18,22 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-AudienceGenerationJobSummary::AudienceGenerationJobSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_audienceGenerationJobArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(AudienceGenerationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_startedByHasBeenSet(false)
-{
-}
-
 AudienceGenerationJobSummary::AudienceGenerationJobSummary(JsonView jsonValue)
-  : AudienceGenerationJobSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AudienceGenerationJobSummary& AudienceGenerationJobSummary::operator =(JsonView 
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audienceGenerationJobArn"))
   {
     m_audienceGenerationJobArn = jsonValue.GetString("audienceGenerationJobArn");
-
     m_audienceGenerationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AudienceGenerationJobStatusMapper::GetAudienceGenerationJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredAudienceModelArn"))
   {
     m_configuredAudienceModelArn = jsonValue.GetString("configuredAudienceModelArn");
-
     m_configuredAudienceModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationId"))
   {
     m_collaborationId = jsonValue.GetString("collaborationId");
-
     m_collaborationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedBy"))
   {
     m_startedBy = jsonValue.GetString("startedBy");
-
     m_startedByHasBeenSet = true;
   }
-
   return *this;
 }
 

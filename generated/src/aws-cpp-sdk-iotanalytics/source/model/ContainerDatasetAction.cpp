@@ -18,16 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ContainerDatasetAction::ContainerDatasetAction() : 
-    m_imageHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_resourceConfigurationHasBeenSet(false),
-    m_variablesHasBeenSet(false)
-{
-}
-
 ContainerDatasetAction::ContainerDatasetAction(JsonView jsonValue)
-  : ContainerDatasetAction()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContainerDatasetAction& ContainerDatasetAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceConfiguration"))
   {
     m_resourceConfiguration = jsonValue.GetObject("resourceConfiguration");
-
     m_resourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variables"))
   {
     Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
@@ -64,7 +49,6 @@ ContainerDatasetAction& ContainerDatasetAction::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   return *this;
 }
 

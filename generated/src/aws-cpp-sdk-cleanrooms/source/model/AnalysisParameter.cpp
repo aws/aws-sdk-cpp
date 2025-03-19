@@ -18,16 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisParameter::AnalysisParameter() : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 AnalysisParameter::AnalysisParameter(JsonView jsonValue)
-  : AnalysisParameter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AnalysisParameter& AnalysisParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

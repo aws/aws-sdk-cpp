@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMemberFromGroupRequest::DisassociateMemberFromGroupRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMemberFromGroupRequest::SerializePayload() const
 {
   JsonValue payload;

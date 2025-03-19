@@ -12,11 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelTagSyncTaskRequest::CancelTagSyncTaskRequest() : 
-    m_taskArnHasBeenSet(false)
-{
-}
-
 Aws::String CancelTagSyncTaskRequest::SerializePayload() const
 {
   JsonValue payload;

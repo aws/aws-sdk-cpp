@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput() : 
-    m_featureGroupNameHasBeenSet(false)
-{
-}
-
 ProcessingFeatureStoreOutput::ProcessingFeatureStoreOutput(JsonView jsonValue)
-  : ProcessingFeatureStoreOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProcessingFeatureStoreOutput& ProcessingFeatureStoreOutput::operator =(JsonView 
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
     m_featureGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

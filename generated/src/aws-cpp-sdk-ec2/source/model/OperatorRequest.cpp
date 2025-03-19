@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-OperatorRequest::OperatorRequest() : 
-    m_principalHasBeenSet(false)
-{
-}
-
 OperatorRequest::OperatorRequest(const XmlNode& xmlNode)
-  : OperatorRequest()
 {
   *this = xmlNode;
 }

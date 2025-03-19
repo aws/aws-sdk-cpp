@@ -34,7 +34,7 @@ namespace Model
   class SqlStatementResult
   {
   public:
-    AWS_RDSDATASERVICE_API SqlStatementResult();
+    AWS_RDSDATASERVICE_API SqlStatementResult() = default;
     AWS_RDSDATASERVICE_API SqlStatementResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API SqlStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,19 @@ namespace Model
     /**
      * <p>The result set of the SQL statement.</p>
      */
-    inline const ResultFrame& GetResultFrame() const{ return m_resultFrame; }
+    inline const ResultFrame& GetResultFrame() const { return m_resultFrame; }
     inline bool ResultFrameHasBeenSet() const { return m_resultFrameHasBeenSet; }
-    inline void SetResultFrame(const ResultFrame& value) { m_resultFrameHasBeenSet = true; m_resultFrame = value; }
-    inline void SetResultFrame(ResultFrame&& value) { m_resultFrameHasBeenSet = true; m_resultFrame = std::move(value); }
-    inline SqlStatementResult& WithResultFrame(const ResultFrame& value) { SetResultFrame(value); return *this;}
-    inline SqlStatementResult& WithResultFrame(ResultFrame&& value) { SetResultFrame(std::move(value)); return *this;}
+    template<typename ResultFrameT = ResultFrame>
+    void SetResultFrame(ResultFrameT&& value) { m_resultFrameHasBeenSet = true; m_resultFrame = std::forward<ResultFrameT>(value); }
+    template<typename ResultFrameT = ResultFrame>
+    SqlStatementResult& WithResultFrame(ResultFrameT&& value) { SetResultFrame(std::forward<ResultFrameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of records updated by a SQL statement.</p>
      */
-    inline long long GetNumberOfRecordsUpdated() const{ return m_numberOfRecordsUpdated; }
+    inline long long GetNumberOfRecordsUpdated() const { return m_numberOfRecordsUpdated; }
     inline bool NumberOfRecordsUpdatedHasBeenSet() const { return m_numberOfRecordsUpdatedHasBeenSet; }
     inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdatedHasBeenSet = true; m_numberOfRecordsUpdated = value; }
     inline SqlStatementResult& WithNumberOfRecordsUpdated(long long value) { SetNumberOfRecordsUpdated(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
     ResultFrame m_resultFrame;
     bool m_resultFrameHasBeenSet = false;
 
-    long long m_numberOfRecordsUpdated;
+    long long m_numberOfRecordsUpdated{0};
     bool m_numberOfRecordsUpdatedHasBeenSet = false;
   };
 

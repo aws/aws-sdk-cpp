@@ -12,18 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendMessageRequest::SendMessageRequest() : 
-    m_assistantIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_conversationContextHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_type(MessageType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String SendMessageRequest::SerializePayload() const
 {
   JsonValue payload;

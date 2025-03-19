@@ -27,7 +27,7 @@ namespace Model
   class CreateAlgorithmResult
   {
   public:
-    AWS_SAGEMAKER_API CreateAlgorithmResult();
+    AWS_SAGEMAKER_API CreateAlgorithmResult() = default;
     AWS_SAGEMAKER_API CreateAlgorithmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateAlgorithmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the new algorithm.</p>
      */
-    inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
-    inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArn = value; }
-    inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArn = std::move(value); }
-    inline void SetAlgorithmArn(const char* value) { m_algorithmArn.assign(value); }
-    inline CreateAlgorithmResult& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
-    inline CreateAlgorithmResult& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
-    inline CreateAlgorithmResult& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
+    inline const Aws::String& GetAlgorithmArn() const { return m_algorithmArn; }
+    template<typename AlgorithmArnT = Aws::String>
+    void SetAlgorithmArn(AlgorithmArnT&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::forward<AlgorithmArnT>(value); }
+    template<typename AlgorithmArnT = Aws::String>
+    CreateAlgorithmResult& WithAlgorithmArn(AlgorithmArnT&& value) { SetAlgorithmArn(std::forward<AlgorithmArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAlgorithmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAlgorithmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAlgorithmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAlgorithmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_algorithmArn;
+    bool m_algorithmArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

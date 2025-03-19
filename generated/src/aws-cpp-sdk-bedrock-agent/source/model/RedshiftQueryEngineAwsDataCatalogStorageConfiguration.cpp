@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftQueryEngineAwsDataCatalogStorageConfiguration::RedshiftQueryEngineAwsDataCatalogStorageConfiguration() : 
-    m_tableNamesHasBeenSet(false)
-{
-}
-
 RedshiftQueryEngineAwsDataCatalogStorageConfiguration::RedshiftQueryEngineAwsDataCatalogStorageConfiguration(JsonView jsonValue)
-  : RedshiftQueryEngineAwsDataCatalogStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RedshiftQueryEngineAwsDataCatalogStorageConfiguration& RedshiftQueryEngineAwsDat
     }
     m_tableNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

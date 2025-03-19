@@ -18,19 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-ProtectConfigurationInformation::ProtectConfigurationInformation() : 
-    m_protectConfigurationArnHasBeenSet(false),
-    m_protectConfigurationIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_accountDefault(false),
-    m_accountDefaultHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
-{
-}
-
 ProtectConfigurationInformation::ProtectConfigurationInformation(JsonView jsonValue)
-  : ProtectConfigurationInformation()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ProtectConfigurationInformation& ProtectConfigurationInformation::operator =(Jso
   if(jsonValue.ValueExists("ProtectConfigurationArn"))
   {
     m_protectConfigurationArn = jsonValue.GetString("ProtectConfigurationArn");
-
     m_protectConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectConfigurationId"))
   {
     m_protectConfigurationId = jsonValue.GetString("ProtectConfigurationId");
-
     m_protectConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountDefault"))
   {
     m_accountDefault = jsonValue.GetBool("AccountDefault");
-
     m_accountDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
-
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class Limitation
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API Limitation();
+    AWS_DATABASEMIGRATIONSERVICE_API Limitation() = default;
     AWS_DATABASEMIGRATIONSERVICE_API Limitation(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Limitation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The identifier of the source database.</p>
      */
-    inline const Aws::String& GetDatabaseId() const{ return m_databaseId; }
+    inline const Aws::String& GetDatabaseId() const { return m_databaseId; }
     inline bool DatabaseIdHasBeenSet() const { return m_databaseIdHasBeenSet; }
-    inline void SetDatabaseId(const Aws::String& value) { m_databaseIdHasBeenSet = true; m_databaseId = value; }
-    inline void SetDatabaseId(Aws::String&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::move(value); }
-    inline void SetDatabaseId(const char* value) { m_databaseIdHasBeenSet = true; m_databaseId.assign(value); }
-    inline Limitation& WithDatabaseId(const Aws::String& value) { SetDatabaseId(value); return *this;}
-    inline Limitation& WithDatabaseId(Aws::String&& value) { SetDatabaseId(std::move(value)); return *this;}
-    inline Limitation& WithDatabaseId(const char* value) { SetDatabaseId(value); return *this;}
+    template<typename DatabaseIdT = Aws::String>
+    void SetDatabaseId(DatabaseIdT&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::forward<DatabaseIdT>(value); }
+    template<typename DatabaseIdT = Aws::String>
+    Limitation& WithDatabaseId(DatabaseIdT&& value) { SetDatabaseId(std::forward<DatabaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and
      * <code>"rds-postgresql"</code>.</p>
      */
-    inline const Aws::String& GetEngineName() const{ return m_engineName; }
+    inline const Aws::String& GetEngineName() const { return m_engineName; }
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
-    inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
-    inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
-    inline Limitation& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
-    inline Limitation& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
-    inline Limitation& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+    template<typename EngineNameT = Aws::String>
+    void SetEngineName(EngineNameT&& value) { m_engineNameHasBeenSet = true; m_engineName = std::forward<EngineNameT>(value); }
+    template<typename EngineNameT = Aws::String>
+    Limitation& WithEngineName(EngineNameT&& value) { SetEngineName(std::forward<EngineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * <p>The name of the limitation. Describes unsupported database features,
      * migration action items, and other limitations.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Limitation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Limitation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Limitation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Limitation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * limitation, and includes recommended actions that you can take to address or
      * avoid this limitation.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Limitation& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Limitation& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Limitation& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Limitation& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * <code>"Blocker"</code>, <code>"High"</code>, <code>"Medium"</code>, and
      * <code>"Low"</code>.</p>
      */
-    inline const Aws::String& GetImpact() const{ return m_impact; }
+    inline const Aws::String& GetImpact() const { return m_impact; }
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
-    inline void SetImpact(const Aws::String& value) { m_impactHasBeenSet = true; m_impact = value; }
-    inline void SetImpact(Aws::String&& value) { m_impactHasBeenSet = true; m_impact = std::move(value); }
-    inline void SetImpact(const char* value) { m_impactHasBeenSet = true; m_impact.assign(value); }
-    inline Limitation& WithImpact(const Aws::String& value) { SetImpact(value); return *this;}
-    inline Limitation& WithImpact(Aws::String&& value) { SetImpact(std::move(value)); return *this;}
-    inline Limitation& WithImpact(const char* value) { SetImpact(value); return *this;}
+    template<typename ImpactT = Aws::String>
+    void SetImpact(ImpactT&& value) { m_impactHasBeenSet = true; m_impact = std::forward<ImpactT>(value); }
+    template<typename ImpactT = Aws::String>
+    Limitation& WithImpact(ImpactT&& value) { SetImpact(std::forward<ImpactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +117,12 @@ namespace Model
      * <p>The type of the limitation, such as action required, upgrade required, and
      * limited feature.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Limitation& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Limitation& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Limitation& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Limitation& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

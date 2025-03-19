@@ -32,7 +32,7 @@ namespace Model
   class TransitGatewayAttachmentPropagation
   {
   public:
-    AWS_EC2_API TransitGatewayAttachmentPropagation();
+    AWS_EC2_API TransitGatewayAttachmentPropagation() = default;
     AWS_EC2_API TransitGatewayAttachmentPropagation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayAttachmentPropagation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p>The ID of the propagation route table.</p>
      */
-    inline const Aws::String& GetTransitGatewayRouteTableId() const{ return m_transitGatewayRouteTableId; }
+    inline const Aws::String& GetTransitGatewayRouteTableId() const { return m_transitGatewayRouteTableId; }
     inline bool TransitGatewayRouteTableIdHasBeenSet() const { return m_transitGatewayRouteTableIdHasBeenSet; }
-    inline void SetTransitGatewayRouteTableId(const Aws::String& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = value; }
-    inline void SetTransitGatewayRouteTableId(Aws::String&& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = std::move(value); }
-    inline void SetTransitGatewayRouteTableId(const char* value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId.assign(value); }
-    inline TransitGatewayAttachmentPropagation& WithTransitGatewayRouteTableId(const Aws::String& value) { SetTransitGatewayRouteTableId(value); return *this;}
-    inline TransitGatewayAttachmentPropagation& WithTransitGatewayRouteTableId(Aws::String&& value) { SetTransitGatewayRouteTableId(std::move(value)); return *this;}
-    inline TransitGatewayAttachmentPropagation& WithTransitGatewayRouteTableId(const char* value) { SetTransitGatewayRouteTableId(value); return *this;}
+    template<typename TransitGatewayRouteTableIdT = Aws::String>
+    void SetTransitGatewayRouteTableId(TransitGatewayRouteTableIdT&& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = std::forward<TransitGatewayRouteTableIdT>(value); }
+    template<typename TransitGatewayRouteTableIdT = Aws::String>
+    TransitGatewayAttachmentPropagation& WithTransitGatewayRouteTableId(TransitGatewayRouteTableIdT&& value) { SetTransitGatewayRouteTableId(std::forward<TransitGatewayRouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the propagation route table.</p>
      */
-    inline const TransitGatewayPropagationState& GetState() const{ return m_state; }
+    inline TransitGatewayPropagationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const TransitGatewayPropagationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(TransitGatewayPropagationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline TransitGatewayAttachmentPropagation& WithState(const TransitGatewayPropagationState& value) { SetState(value); return *this;}
-    inline TransitGatewayAttachmentPropagation& WithState(TransitGatewayPropagationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(TransitGatewayPropagationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TransitGatewayAttachmentPropagation& WithState(TransitGatewayPropagationState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_transitGatewayRouteTableId;
     bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
-    TransitGatewayPropagationState m_state;
+    TransitGatewayPropagationState m_state{TransitGatewayPropagationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

@@ -41,7 +41,7 @@ namespace Model
   class ConnectorSummary
   {
   public:
-    AWS_KAFKACONNECT_API ConnectorSummary();
+    AWS_KAFKACONNECT_API ConnectorSummary() = default;
     AWS_KAFKACONNECT_API ConnectorSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API ConnectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,92 +51,82 @@ namespace Model
     /**
      * <p>The connector's compute capacity settings.</p>
      */
-    inline const CapacityDescription& GetCapacity() const{ return m_capacity; }
+    inline const CapacityDescription& GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
-    inline void SetCapacity(const CapacityDescription& value) { m_capacityHasBeenSet = true; m_capacity = value; }
-    inline void SetCapacity(CapacityDescription&& value) { m_capacityHasBeenSet = true; m_capacity = std::move(value); }
-    inline ConnectorSummary& WithCapacity(const CapacityDescription& value) { SetCapacity(value); return *this;}
-    inline ConnectorSummary& WithCapacity(CapacityDescription&& value) { SetCapacity(std::move(value)); return *this;}
+    template<typename CapacityT = CapacityDescription>
+    void SetCapacity(CapacityT&& value) { m_capacityHasBeenSet = true; m_capacity = std::forward<CapacityT>(value); }
+    template<typename CapacityT = CapacityDescription>
+    ConnectorSummary& WithCapacity(CapacityT&& value) { SetCapacity(std::forward<CapacityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the connector.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-    inline ConnectorSummary& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline ConnectorSummary& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline ConnectorSummary& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    ConnectorSummary& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the connector.</p>
      */
-    inline const Aws::String& GetConnectorDescription() const{ return m_connectorDescription; }
+    inline const Aws::String& GetConnectorDescription() const { return m_connectorDescription; }
     inline bool ConnectorDescriptionHasBeenSet() const { return m_connectorDescriptionHasBeenSet; }
-    inline void SetConnectorDescription(const Aws::String& value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription = value; }
-    inline void SetConnectorDescription(Aws::String&& value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription = std::move(value); }
-    inline void SetConnectorDescription(const char* value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription.assign(value); }
-    inline ConnectorSummary& WithConnectorDescription(const Aws::String& value) { SetConnectorDescription(value); return *this;}
-    inline ConnectorSummary& WithConnectorDescription(Aws::String&& value) { SetConnectorDescription(std::move(value)); return *this;}
-    inline ConnectorSummary& WithConnectorDescription(const char* value) { SetConnectorDescription(value); return *this;}
+    template<typename ConnectorDescriptionT = Aws::String>
+    void SetConnectorDescription(ConnectorDescriptionT&& value) { m_connectorDescriptionHasBeenSet = true; m_connectorDescription = std::forward<ConnectorDescriptionT>(value); }
+    template<typename ConnectorDescriptionT = Aws::String>
+    ConnectorSummary& WithConnectorDescription(ConnectorDescriptionT&& value) { SetConnectorDescription(std::forward<ConnectorDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the connector.</p>
      */
-    inline const Aws::String& GetConnectorName() const{ return m_connectorName; }
+    inline const Aws::String& GetConnectorName() const { return m_connectorName; }
     inline bool ConnectorNameHasBeenSet() const { return m_connectorNameHasBeenSet; }
-    inline void SetConnectorName(const Aws::String& value) { m_connectorNameHasBeenSet = true; m_connectorName = value; }
-    inline void SetConnectorName(Aws::String&& value) { m_connectorNameHasBeenSet = true; m_connectorName = std::move(value); }
-    inline void SetConnectorName(const char* value) { m_connectorNameHasBeenSet = true; m_connectorName.assign(value); }
-    inline ConnectorSummary& WithConnectorName(const Aws::String& value) { SetConnectorName(value); return *this;}
-    inline ConnectorSummary& WithConnectorName(Aws::String&& value) { SetConnectorName(std::move(value)); return *this;}
-    inline ConnectorSummary& WithConnectorName(const char* value) { SetConnectorName(value); return *this;}
+    template<typename ConnectorNameT = Aws::String>
+    void SetConnectorName(ConnectorNameT&& value) { m_connectorNameHasBeenSet = true; m_connectorName = std::forward<ConnectorNameT>(value); }
+    template<typename ConnectorNameT = Aws::String>
+    ConnectorSummary& WithConnectorName(ConnectorNameT&& value) { SetConnectorName(std::forward<ConnectorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the connector.</p>
      */
-    inline const ConnectorState& GetConnectorState() const{ return m_connectorState; }
+    inline ConnectorState GetConnectorState() const { return m_connectorState; }
     inline bool ConnectorStateHasBeenSet() const { return m_connectorStateHasBeenSet; }
-    inline void SetConnectorState(const ConnectorState& value) { m_connectorStateHasBeenSet = true; m_connectorState = value; }
-    inline void SetConnectorState(ConnectorState&& value) { m_connectorStateHasBeenSet = true; m_connectorState = std::move(value); }
-    inline ConnectorSummary& WithConnectorState(const ConnectorState& value) { SetConnectorState(value); return *this;}
-    inline ConnectorSummary& WithConnectorState(ConnectorState&& value) { SetConnectorState(std::move(value)); return *this;}
+    inline void SetConnectorState(ConnectorState value) { m_connectorStateHasBeenSet = true; m_connectorState = value; }
+    inline ConnectorSummary& WithConnectorState(ConnectorState value) { SetConnectorState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the connector was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ConnectorSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ConnectorSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ConnectorSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current version of the connector.</p>
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline ConnectorSummary& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline ConnectorSummary& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline ConnectorSummary& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    ConnectorSummary& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +134,12 @@ namespace Model
      * <p>The details of the Apache Kafka cluster to which the connector is
      * connected.</p>
      */
-    inline const KafkaClusterDescription& GetKafkaCluster() const{ return m_kafkaCluster; }
+    inline const KafkaClusterDescription& GetKafkaCluster() const { return m_kafkaCluster; }
     inline bool KafkaClusterHasBeenSet() const { return m_kafkaClusterHasBeenSet; }
-    inline void SetKafkaCluster(const KafkaClusterDescription& value) { m_kafkaClusterHasBeenSet = true; m_kafkaCluster = value; }
-    inline void SetKafkaCluster(KafkaClusterDescription&& value) { m_kafkaClusterHasBeenSet = true; m_kafkaCluster = std::move(value); }
-    inline ConnectorSummary& WithKafkaCluster(const KafkaClusterDescription& value) { SetKafkaCluster(value); return *this;}
-    inline ConnectorSummary& WithKafkaCluster(KafkaClusterDescription&& value) { SetKafkaCluster(std::move(value)); return *this;}
+    template<typename KafkaClusterT = KafkaClusterDescription>
+    void SetKafkaCluster(KafkaClusterT&& value) { m_kafkaClusterHasBeenSet = true; m_kafkaCluster = std::forward<KafkaClusterT>(value); }
+    template<typename KafkaClusterT = KafkaClusterDescription>
+    ConnectorSummary& WithKafkaCluster(KafkaClusterT&& value) { SetKafkaCluster(std::forward<KafkaClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,24 +147,24 @@ namespace Model
      * <p>The type of client authentication used to connect to the Apache Kafka
      * cluster. The value is NONE when no client authentication is used.</p>
      */
-    inline const KafkaClusterClientAuthenticationDescription& GetKafkaClusterClientAuthentication() const{ return m_kafkaClusterClientAuthentication; }
+    inline const KafkaClusterClientAuthenticationDescription& GetKafkaClusterClientAuthentication() const { return m_kafkaClusterClientAuthentication; }
     inline bool KafkaClusterClientAuthenticationHasBeenSet() const { return m_kafkaClusterClientAuthenticationHasBeenSet; }
-    inline void SetKafkaClusterClientAuthentication(const KafkaClusterClientAuthenticationDescription& value) { m_kafkaClusterClientAuthenticationHasBeenSet = true; m_kafkaClusterClientAuthentication = value; }
-    inline void SetKafkaClusterClientAuthentication(KafkaClusterClientAuthenticationDescription&& value) { m_kafkaClusterClientAuthenticationHasBeenSet = true; m_kafkaClusterClientAuthentication = std::move(value); }
-    inline ConnectorSummary& WithKafkaClusterClientAuthentication(const KafkaClusterClientAuthenticationDescription& value) { SetKafkaClusterClientAuthentication(value); return *this;}
-    inline ConnectorSummary& WithKafkaClusterClientAuthentication(KafkaClusterClientAuthenticationDescription&& value) { SetKafkaClusterClientAuthentication(std::move(value)); return *this;}
+    template<typename KafkaClusterClientAuthenticationT = KafkaClusterClientAuthenticationDescription>
+    void SetKafkaClusterClientAuthentication(KafkaClusterClientAuthenticationT&& value) { m_kafkaClusterClientAuthenticationHasBeenSet = true; m_kafkaClusterClientAuthentication = std::forward<KafkaClusterClientAuthenticationT>(value); }
+    template<typename KafkaClusterClientAuthenticationT = KafkaClusterClientAuthenticationDescription>
+    ConnectorSummary& WithKafkaClusterClientAuthentication(KafkaClusterClientAuthenticationT&& value) { SetKafkaClusterClientAuthentication(std::forward<KafkaClusterClientAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of encryption in transit to the Apache Kafka cluster.</p>
      */
-    inline const KafkaClusterEncryptionInTransitDescription& GetKafkaClusterEncryptionInTransit() const{ return m_kafkaClusterEncryptionInTransit; }
+    inline const KafkaClusterEncryptionInTransitDescription& GetKafkaClusterEncryptionInTransit() const { return m_kafkaClusterEncryptionInTransit; }
     inline bool KafkaClusterEncryptionInTransitHasBeenSet() const { return m_kafkaClusterEncryptionInTransitHasBeenSet; }
-    inline void SetKafkaClusterEncryptionInTransit(const KafkaClusterEncryptionInTransitDescription& value) { m_kafkaClusterEncryptionInTransitHasBeenSet = true; m_kafkaClusterEncryptionInTransit = value; }
-    inline void SetKafkaClusterEncryptionInTransit(KafkaClusterEncryptionInTransitDescription&& value) { m_kafkaClusterEncryptionInTransitHasBeenSet = true; m_kafkaClusterEncryptionInTransit = std::move(value); }
-    inline ConnectorSummary& WithKafkaClusterEncryptionInTransit(const KafkaClusterEncryptionInTransitDescription& value) { SetKafkaClusterEncryptionInTransit(value); return *this;}
-    inline ConnectorSummary& WithKafkaClusterEncryptionInTransit(KafkaClusterEncryptionInTransitDescription&& value) { SetKafkaClusterEncryptionInTransit(std::move(value)); return *this;}
+    template<typename KafkaClusterEncryptionInTransitT = KafkaClusterEncryptionInTransitDescription>
+    void SetKafkaClusterEncryptionInTransit(KafkaClusterEncryptionInTransitT&& value) { m_kafkaClusterEncryptionInTransitHasBeenSet = true; m_kafkaClusterEncryptionInTransit = std::forward<KafkaClusterEncryptionInTransitT>(value); }
+    template<typename KafkaClusterEncryptionInTransitT = KafkaClusterEncryptionInTransitDescription>
+    ConnectorSummary& WithKafkaClusterEncryptionInTransit(KafkaClusterEncryptionInTransitT&& value) { SetKafkaClusterEncryptionInTransit(std::forward<KafkaClusterEncryptionInTransitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,40 +172,38 @@ namespace Model
      * <p>The version of Kafka Connect. It has to be compatible with both the Apache
      * Kafka cluster's version and the plugins.</p>
      */
-    inline const Aws::String& GetKafkaConnectVersion() const{ return m_kafkaConnectVersion; }
+    inline const Aws::String& GetKafkaConnectVersion() const { return m_kafkaConnectVersion; }
     inline bool KafkaConnectVersionHasBeenSet() const { return m_kafkaConnectVersionHasBeenSet; }
-    inline void SetKafkaConnectVersion(const Aws::String& value) { m_kafkaConnectVersionHasBeenSet = true; m_kafkaConnectVersion = value; }
-    inline void SetKafkaConnectVersion(Aws::String&& value) { m_kafkaConnectVersionHasBeenSet = true; m_kafkaConnectVersion = std::move(value); }
-    inline void SetKafkaConnectVersion(const char* value) { m_kafkaConnectVersionHasBeenSet = true; m_kafkaConnectVersion.assign(value); }
-    inline ConnectorSummary& WithKafkaConnectVersion(const Aws::String& value) { SetKafkaConnectVersion(value); return *this;}
-    inline ConnectorSummary& WithKafkaConnectVersion(Aws::String&& value) { SetKafkaConnectVersion(std::move(value)); return *this;}
-    inline ConnectorSummary& WithKafkaConnectVersion(const char* value) { SetKafkaConnectVersion(value); return *this;}
+    template<typename KafkaConnectVersionT = Aws::String>
+    void SetKafkaConnectVersion(KafkaConnectVersionT&& value) { m_kafkaConnectVersionHasBeenSet = true; m_kafkaConnectVersion = std::forward<KafkaConnectVersionT>(value); }
+    template<typename KafkaConnectVersionT = Aws::String>
+    ConnectorSummary& WithKafkaConnectVersion(KafkaConnectVersionT&& value) { SetKafkaConnectVersion(std::forward<KafkaConnectVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
      */
-    inline const LogDeliveryDescription& GetLogDelivery() const{ return m_logDelivery; }
+    inline const LogDeliveryDescription& GetLogDelivery() const { return m_logDelivery; }
     inline bool LogDeliveryHasBeenSet() const { return m_logDeliveryHasBeenSet; }
-    inline void SetLogDelivery(const LogDeliveryDescription& value) { m_logDeliveryHasBeenSet = true; m_logDelivery = value; }
-    inline void SetLogDelivery(LogDeliveryDescription&& value) { m_logDeliveryHasBeenSet = true; m_logDelivery = std::move(value); }
-    inline ConnectorSummary& WithLogDelivery(const LogDeliveryDescription& value) { SetLogDelivery(value); return *this;}
-    inline ConnectorSummary& WithLogDelivery(LogDeliveryDescription&& value) { SetLogDelivery(std::move(value)); return *this;}
+    template<typename LogDeliveryT = LogDeliveryDescription>
+    void SetLogDelivery(LogDeliveryT&& value) { m_logDeliveryHasBeenSet = true; m_logDelivery = std::forward<LogDeliveryT>(value); }
+    template<typename LogDeliveryT = LogDeliveryDescription>
+    ConnectorSummary& WithLogDelivery(LogDeliveryT&& value) { SetLogDelivery(std::forward<LogDeliveryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies which plugins were used for this connector.</p>
      */
-    inline const Aws::Vector<PluginDescription>& GetPlugins() const{ return m_plugins; }
+    inline const Aws::Vector<PluginDescription>& GetPlugins() const { return m_plugins; }
     inline bool PluginsHasBeenSet() const { return m_pluginsHasBeenSet; }
-    inline void SetPlugins(const Aws::Vector<PluginDescription>& value) { m_pluginsHasBeenSet = true; m_plugins = value; }
-    inline void SetPlugins(Aws::Vector<PluginDescription>&& value) { m_pluginsHasBeenSet = true; m_plugins = std::move(value); }
-    inline ConnectorSummary& WithPlugins(const Aws::Vector<PluginDescription>& value) { SetPlugins(value); return *this;}
-    inline ConnectorSummary& WithPlugins(Aws::Vector<PluginDescription>&& value) { SetPlugins(std::move(value)); return *this;}
-    inline ConnectorSummary& AddPlugins(const PluginDescription& value) { m_pluginsHasBeenSet = true; m_plugins.push_back(value); return *this; }
-    inline ConnectorSummary& AddPlugins(PluginDescription&& value) { m_pluginsHasBeenSet = true; m_plugins.push_back(std::move(value)); return *this; }
+    template<typename PluginsT = Aws::Vector<PluginDescription>>
+    void SetPlugins(PluginsT&& value) { m_pluginsHasBeenSet = true; m_plugins = std::forward<PluginsT>(value); }
+    template<typename PluginsT = Aws::Vector<PluginDescription>>
+    ConnectorSummary& WithPlugins(PluginsT&& value) { SetPlugins(std::forward<PluginsT>(value)); return *this;}
+    template<typename PluginsT = PluginDescription>
+    ConnectorSummary& AddPlugins(PluginsT&& value) { m_pluginsHasBeenSet = true; m_plugins.emplace_back(std::forward<PluginsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -223,26 +211,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to
      * access Amazon Web Services resources.</p>
      */
-    inline const Aws::String& GetServiceExecutionRoleArn() const{ return m_serviceExecutionRoleArn; }
+    inline const Aws::String& GetServiceExecutionRoleArn() const { return m_serviceExecutionRoleArn; }
     inline bool ServiceExecutionRoleArnHasBeenSet() const { return m_serviceExecutionRoleArnHasBeenSet; }
-    inline void SetServiceExecutionRoleArn(const Aws::String& value) { m_serviceExecutionRoleArnHasBeenSet = true; m_serviceExecutionRoleArn = value; }
-    inline void SetServiceExecutionRoleArn(Aws::String&& value) { m_serviceExecutionRoleArnHasBeenSet = true; m_serviceExecutionRoleArn = std::move(value); }
-    inline void SetServiceExecutionRoleArn(const char* value) { m_serviceExecutionRoleArnHasBeenSet = true; m_serviceExecutionRoleArn.assign(value); }
-    inline ConnectorSummary& WithServiceExecutionRoleArn(const Aws::String& value) { SetServiceExecutionRoleArn(value); return *this;}
-    inline ConnectorSummary& WithServiceExecutionRoleArn(Aws::String&& value) { SetServiceExecutionRoleArn(std::move(value)); return *this;}
-    inline ConnectorSummary& WithServiceExecutionRoleArn(const char* value) { SetServiceExecutionRoleArn(value); return *this;}
+    template<typename ServiceExecutionRoleArnT = Aws::String>
+    void SetServiceExecutionRoleArn(ServiceExecutionRoleArnT&& value) { m_serviceExecutionRoleArnHasBeenSet = true; m_serviceExecutionRoleArn = std::forward<ServiceExecutionRoleArnT>(value); }
+    template<typename ServiceExecutionRoleArnT = Aws::String>
+    ConnectorSummary& WithServiceExecutionRoleArn(ServiceExecutionRoleArnT&& value) { SetServiceExecutionRoleArn(std::forward<ServiceExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker configurations that are in use with the connector.</p>
      */
-    inline const WorkerConfigurationDescription& GetWorkerConfiguration() const{ return m_workerConfiguration; }
+    inline const WorkerConfigurationDescription& GetWorkerConfiguration() const { return m_workerConfiguration; }
     inline bool WorkerConfigurationHasBeenSet() const { return m_workerConfigurationHasBeenSet; }
-    inline void SetWorkerConfiguration(const WorkerConfigurationDescription& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = value; }
-    inline void SetWorkerConfiguration(WorkerConfigurationDescription&& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = std::move(value); }
-    inline ConnectorSummary& WithWorkerConfiguration(const WorkerConfigurationDescription& value) { SetWorkerConfiguration(value); return *this;}
-    inline ConnectorSummary& WithWorkerConfiguration(WorkerConfigurationDescription&& value) { SetWorkerConfiguration(std::move(value)); return *this;}
+    template<typename WorkerConfigurationT = WorkerConfigurationDescription>
+    void SetWorkerConfiguration(WorkerConfigurationT&& value) { m_workerConfigurationHasBeenSet = true; m_workerConfiguration = std::forward<WorkerConfigurationT>(value); }
+    template<typename WorkerConfigurationT = WorkerConfigurationDescription>
+    ConnectorSummary& WithWorkerConfiguration(WorkerConfigurationT&& value) { SetWorkerConfiguration(std::forward<WorkerConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -258,10 +244,10 @@ namespace Model
     Aws::String m_connectorName;
     bool m_connectorNameHasBeenSet = false;
 
-    ConnectorState m_connectorState;
+    ConnectorState m_connectorState{ConnectorState::NOT_SET};
     bool m_connectorStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_currentVersion;

@@ -12,17 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchUsersRequest::SearchUsersRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_faceIdHasBeenSet(false),
-    m_userMatchThreshold(0.0),
-    m_userMatchThresholdHasBeenSet(false),
-    m_maxUsers(0),
-    m_maxUsersHasBeenSet(false)
-{
-}
-
 Aws::String SearchUsersRequest::SerializePayload() const
 {
   JsonValue payload;

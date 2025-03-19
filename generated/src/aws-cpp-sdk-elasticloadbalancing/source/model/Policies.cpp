@@ -20,15 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-Policies::Policies() : 
-    m_appCookieStickinessPoliciesHasBeenSet(false),
-    m_lBCookieStickinessPoliciesHasBeenSet(false),
-    m_otherPoliciesHasBeenSet(false)
-{
-}
-
 Policies::Policies(const XmlNode& xmlNode)
-  : Policies()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ Policies& Policies::operator =(const XmlNode& xmlNode)
     if(!appCookieStickinessPoliciesNode.IsNull())
     {
       XmlNode appCookieStickinessPoliciesMember = appCookieStickinessPoliciesNode.FirstChild("member");
+      m_appCookieStickinessPoliciesHasBeenSet = !appCookieStickinessPoliciesMember.IsNull();
       while(!appCookieStickinessPoliciesMember.IsNull())
       {
         m_appCookieStickinessPolicies.push_back(appCookieStickinessPoliciesMember);
@@ -55,6 +48,7 @@ Policies& Policies::operator =(const XmlNode& xmlNode)
     if(!lBCookieStickinessPoliciesNode.IsNull())
     {
       XmlNode lBCookieStickinessPoliciesMember = lBCookieStickinessPoliciesNode.FirstChild("member");
+      m_lBCookieStickinessPoliciesHasBeenSet = !lBCookieStickinessPoliciesMember.IsNull();
       while(!lBCookieStickinessPoliciesMember.IsNull())
       {
         m_lBCookieStickinessPolicies.push_back(lBCookieStickinessPoliciesMember);
@@ -67,6 +61,7 @@ Policies& Policies::operator =(const XmlNode& xmlNode)
     if(!otherPoliciesNode.IsNull())
     {
       XmlNode otherPoliciesMember = otherPoliciesNode.FirstChild("member");
+      m_otherPoliciesHasBeenSet = !otherPoliciesMember.IsNull();
       while(!otherPoliciesMember.IsNull())
       {
         m_otherPolicies.push_back(otherPoliciesMember.GetText());

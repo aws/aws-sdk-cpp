@@ -29,7 +29,7 @@ namespace Model
   class ListCisScanResultsAggregatedByChecksResult
   {
   public:
-    AWS_INSPECTOR2_API ListCisScanResultsAggregatedByChecksResult();
+    AWS_INSPECTOR2_API ListCisScanResultsAggregatedByChecksResult() = default;
     AWS_INSPECTOR2_API ListCisScanResultsAggregatedByChecksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API ListCisScanResultsAggregatedByChecksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The check aggregations.</p>
      */
-    inline const Aws::Vector<CisCheckAggregation>& GetCheckAggregations() const{ return m_checkAggregations; }
-    inline void SetCheckAggregations(const Aws::Vector<CisCheckAggregation>& value) { m_checkAggregations = value; }
-    inline void SetCheckAggregations(Aws::Vector<CisCheckAggregation>&& value) { m_checkAggregations = std::move(value); }
-    inline ListCisScanResultsAggregatedByChecksResult& WithCheckAggregations(const Aws::Vector<CisCheckAggregation>& value) { SetCheckAggregations(value); return *this;}
-    inline ListCisScanResultsAggregatedByChecksResult& WithCheckAggregations(Aws::Vector<CisCheckAggregation>&& value) { SetCheckAggregations(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByChecksResult& AddCheckAggregations(const CisCheckAggregation& value) { m_checkAggregations.push_back(value); return *this; }
-    inline ListCisScanResultsAggregatedByChecksResult& AddCheckAggregations(CisCheckAggregation&& value) { m_checkAggregations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CisCheckAggregation>& GetCheckAggregations() const { return m_checkAggregations; }
+    template<typename CheckAggregationsT = Aws::Vector<CisCheckAggregation>>
+    void SetCheckAggregations(CheckAggregationsT&& value) { m_checkAggregationsHasBeenSet = true; m_checkAggregations = std::forward<CheckAggregationsT>(value); }
+    template<typename CheckAggregationsT = Aws::Vector<CisCheckAggregation>>
+    ListCisScanResultsAggregatedByChecksResult& WithCheckAggregations(CheckAggregationsT&& value) { SetCheckAggregations(std::forward<CheckAggregationsT>(value)); return *this;}
+    template<typename CheckAggregationsT = CisCheckAggregation>
+    ListCisScanResultsAggregatedByChecksResult& AddCheckAggregations(CheckAggregationsT&& value) { m_checkAggregationsHasBeenSet = true; m_checkAggregations.emplace_back(std::forward<CheckAggregationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCisScanResultsAggregatedByChecksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCisScanResultsAggregatedByChecksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByChecksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScanResultsAggregatedByChecksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCisScanResultsAggregatedByChecksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCisScanResultsAggregatedByChecksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByChecksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCisScanResultsAggregatedByChecksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CisCheckAggregation> m_checkAggregations;
+    bool m_checkAggregationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class EcrConfiguration
   {
   public:
-    AWS_IMAGEBUILDER_API EcrConfiguration();
+    AWS_IMAGEBUILDER_API EcrConfiguration() = default;
     AWS_IMAGEBUILDER_API EcrConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API EcrConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>image-builder-image-scanning-repository</code> for vulnerability scans of
      * your output container images.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline EcrConfiguration& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline EcrConfiguration& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline EcrConfiguration& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    EcrConfiguration& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * <p>Tags for Image Builder to apply to the output container image that Amazon
      * Inspector scans. Tags can help you identify and manage your scanned images.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerTags() const{ return m_containerTags; }
+    inline const Aws::Vector<Aws::String>& GetContainerTags() const { return m_containerTags; }
     inline bool ContainerTagsHasBeenSet() const { return m_containerTagsHasBeenSet; }
-    inline void SetContainerTags(const Aws::Vector<Aws::String>& value) { m_containerTagsHasBeenSet = true; m_containerTags = value; }
-    inline void SetContainerTags(Aws::Vector<Aws::String>&& value) { m_containerTagsHasBeenSet = true; m_containerTags = std::move(value); }
-    inline EcrConfiguration& WithContainerTags(const Aws::Vector<Aws::String>& value) { SetContainerTags(value); return *this;}
-    inline EcrConfiguration& WithContainerTags(Aws::Vector<Aws::String>&& value) { SetContainerTags(std::move(value)); return *this;}
-    inline EcrConfiguration& AddContainerTags(const Aws::String& value) { m_containerTagsHasBeenSet = true; m_containerTags.push_back(value); return *this; }
-    inline EcrConfiguration& AddContainerTags(Aws::String&& value) { m_containerTagsHasBeenSet = true; m_containerTags.push_back(std::move(value)); return *this; }
-    inline EcrConfiguration& AddContainerTags(const char* value) { m_containerTagsHasBeenSet = true; m_containerTags.push_back(value); return *this; }
+    template<typename ContainerTagsT = Aws::Vector<Aws::String>>
+    void SetContainerTags(ContainerTagsT&& value) { m_containerTagsHasBeenSet = true; m_containerTags = std::forward<ContainerTagsT>(value); }
+    template<typename ContainerTagsT = Aws::Vector<Aws::String>>
+    EcrConfiguration& WithContainerTags(ContainerTagsT&& value) { SetContainerTags(std::forward<ContainerTagsT>(value)); return *this;}
+    template<typename ContainerTagsT = Aws::String>
+    EcrConfiguration& AddContainerTags(ContainerTagsT&& value) { m_containerTagsHasBeenSet = true; m_containerTags.emplace_back(std::forward<ContainerTagsT>(value)); return *this; }
     ///@}
   private:
 

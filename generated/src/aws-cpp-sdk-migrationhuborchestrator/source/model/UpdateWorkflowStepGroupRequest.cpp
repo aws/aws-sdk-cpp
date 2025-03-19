@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateWorkflowStepGroupRequest::UpdateWorkflowStepGroupRequest() : 
-    m_workflowIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nextHasBeenSet(false),
-    m_previousHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkflowStepGroupRequest::SerializePayload() const
 {
   JsonValue payload;

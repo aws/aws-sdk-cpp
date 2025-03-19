@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-TrainingDataResult::TrainingDataResult() : 
-    m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_validationHasBeenSet(false)
-{
-}
-
 TrainingDataResult::TrainingDataResult(JsonView jsonValue)
-  : TrainingDataResult()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TrainingDataResult& TrainingDataResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetObject("Input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Output"))
   {
     m_output = jsonValue.GetObject("Output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Validation"))
   {
     m_validation = jsonValue.GetObject("Validation");
-
     m_validationHasBeenSet = true;
   }
-
   return *this;
 }
 

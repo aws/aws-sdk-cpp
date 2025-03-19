@@ -30,7 +30,7 @@ namespace Model
   class DeregisterTargetsResult
   {
   public:
-    AWS_VPCLATTICE_API DeregisterTargetsResult();
+    AWS_VPCLATTICE_API DeregisterTargetsResult() = default;
     AWS_VPCLATTICE_API DeregisterTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API DeregisterTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The targets that were successfully deregistered.</p>
      */
-    inline const Aws::Vector<Target>& GetSuccessful() const{ return m_successful; }
-    inline void SetSuccessful(const Aws::Vector<Target>& value) { m_successful = value; }
-    inline void SetSuccessful(Aws::Vector<Target>&& value) { m_successful = std::move(value); }
-    inline DeregisterTargetsResult& WithSuccessful(const Aws::Vector<Target>& value) { SetSuccessful(value); return *this;}
-    inline DeregisterTargetsResult& WithSuccessful(Aws::Vector<Target>&& value) { SetSuccessful(std::move(value)); return *this;}
-    inline DeregisterTargetsResult& AddSuccessful(const Target& value) { m_successful.push_back(value); return *this; }
-    inline DeregisterTargetsResult& AddSuccessful(Target&& value) { m_successful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Target>& GetSuccessful() const { return m_successful; }
+    template<typename SuccessfulT = Aws::Vector<Target>>
+    void SetSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful = std::forward<SuccessfulT>(value); }
+    template<typename SuccessfulT = Aws::Vector<Target>>
+    DeregisterTargetsResult& WithSuccessful(SuccessfulT&& value) { SetSuccessful(std::forward<SuccessfulT>(value)); return *this;}
+    template<typename SuccessfulT = Target>
+    DeregisterTargetsResult& AddSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful.emplace_back(std::forward<SuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The targets that the operation couldn't deregister.</p>
      */
-    inline const Aws::Vector<TargetFailure>& GetUnsuccessful() const{ return m_unsuccessful; }
-    inline void SetUnsuccessful(const Aws::Vector<TargetFailure>& value) { m_unsuccessful = value; }
-    inline void SetUnsuccessful(Aws::Vector<TargetFailure>&& value) { m_unsuccessful = std::move(value); }
-    inline DeregisterTargetsResult& WithUnsuccessful(const Aws::Vector<TargetFailure>& value) { SetUnsuccessful(value); return *this;}
-    inline DeregisterTargetsResult& WithUnsuccessful(Aws::Vector<TargetFailure>&& value) { SetUnsuccessful(std::move(value)); return *this;}
-    inline DeregisterTargetsResult& AddUnsuccessful(const TargetFailure& value) { m_unsuccessful.push_back(value); return *this; }
-    inline DeregisterTargetsResult& AddUnsuccessful(TargetFailure&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetFailure>& GetUnsuccessful() const { return m_unsuccessful; }
+    template<typename UnsuccessfulT = Aws::Vector<TargetFailure>>
+    void SetUnsuccessful(UnsuccessfulT&& value) { m_unsuccessfulHasBeenSet = true; m_unsuccessful = std::forward<UnsuccessfulT>(value); }
+    template<typename UnsuccessfulT = Aws::Vector<TargetFailure>>
+    DeregisterTargetsResult& WithUnsuccessful(UnsuccessfulT&& value) { SetUnsuccessful(std::forward<UnsuccessfulT>(value)); return *this;}
+    template<typename UnsuccessfulT = TargetFailure>
+    DeregisterTargetsResult& AddUnsuccessful(UnsuccessfulT&& value) { m_unsuccessfulHasBeenSet = true; m_unsuccessful.emplace_back(std::forward<UnsuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeregisterTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeregisterTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeregisterTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeregisterTargetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Target> m_successful;
+    bool m_successfulHasBeenSet = false;
 
     Aws::Vector<TargetFailure> m_unsuccessful;
+    bool m_unsuccessfulHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

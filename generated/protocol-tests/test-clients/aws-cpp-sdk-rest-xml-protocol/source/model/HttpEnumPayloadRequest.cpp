@@ -15,11 +15,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-HttpEnumPayloadRequest::HttpEnumPayloadRequest() : 
-    m_payload(StringEnum::NOT_SET),
-    m_requestIdHasBeenSet(false)
-{
-}
 
 Aws::String HttpEnumPayloadRequest::SerializePayload() const
 {

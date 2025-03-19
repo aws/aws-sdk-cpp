@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFindingRequest::GetFindingRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingRequest::SerializePayload() const
 {
   return {};

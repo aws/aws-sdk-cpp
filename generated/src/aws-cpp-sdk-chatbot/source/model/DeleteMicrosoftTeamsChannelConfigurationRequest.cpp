@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMicrosoftTeamsChannelConfigurationRequest::DeleteMicrosoftTeamsChannelConfigurationRequest() : 
-    m_chatConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMicrosoftTeamsChannelConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

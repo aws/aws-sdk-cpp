@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ThirdPartyJobDetails::ThirdPartyJobDetails() : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_nonceHasBeenSet(false)
-{
-}
-
 ThirdPartyJobDetails::ThirdPartyJobDetails(JsonView jsonValue)
-  : ThirdPartyJobDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ThirdPartyJobDetails& ThirdPartyJobDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetObject("data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nonce"))
   {
     m_nonce = jsonValue.GetString("nonce");
-
     m_nonceHasBeenSet = true;
   }
-
   return *this;
 }
 

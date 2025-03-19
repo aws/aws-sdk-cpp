@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-EsamSettings::EsamSettings() : 
-    m_manifestConfirmConditionNotificationHasBeenSet(false),
-    m_responseSignalPreroll(0),
-    m_responseSignalPrerollHasBeenSet(false),
-    m_signalProcessingNotificationHasBeenSet(false)
-{
-}
-
 EsamSettings::EsamSettings(JsonView jsonValue)
-  : EsamSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EsamSettings& EsamSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("manifestConfirmConditionNotification"))
   {
     m_manifestConfirmConditionNotification = jsonValue.GetObject("manifestConfirmConditionNotification");
-
     m_manifestConfirmConditionNotificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseSignalPreroll"))
   {
     m_responseSignalPreroll = jsonValue.GetInteger("responseSignalPreroll");
-
     m_responseSignalPrerollHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signalProcessingNotification"))
   {
     m_signalProcessingNotification = jsonValue.GetObject("signalProcessingNotification");
-
     m_signalProcessingNotificationHasBeenSet = true;
   }
-
   return *this;
 }
 

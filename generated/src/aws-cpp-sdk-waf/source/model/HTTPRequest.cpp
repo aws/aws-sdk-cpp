@@ -18,18 +18,7 @@ namespace WAF
 namespace Model
 {
 
-HTTPRequest::HTTPRequest() : 
-    m_clientIPHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_uRIHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_hTTPVersionHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 HTTPRequest::HTTPRequest(JsonView jsonValue)
-  : HTTPRequest()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ HTTPRequest& HTTPRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientIP"))
   {
     m_clientIP = jsonValue.GetString("ClientIP");
-
     m_clientIPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URI"))
   {
     m_uRI = jsonValue.GetString("URI");
-
     m_uRIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Method"))
   {
     m_method = jsonValue.GetString("Method");
-
     m_methodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HTTPVersion"))
   {
     m_hTTPVersion = jsonValue.GetString("HTTPVersion");
-
     m_hTTPVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
@@ -80,7 +59,6 @@ HTTPRequest& HTTPRequest::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

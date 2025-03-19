@@ -18,16 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-UncertaintyRange::UncertaintyRange() : 
-    m_lowerBoundValue(0.0),
-    m_lowerBoundValueHasBeenSet(false),
-    m_upperBoundValue(0.0),
-    m_upperBoundValueHasBeenSet(false)
-{
-}
-
 UncertaintyRange::UncertaintyRange(JsonView jsonValue)
-  : UncertaintyRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UncertaintyRange& UncertaintyRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lowerBoundValue"))
   {
     m_lowerBoundValue = jsonValue.GetDouble("lowerBoundValue");
-
     m_lowerBoundValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upperBoundValue"))
   {
     m_upperBoundValue = jsonValue.GetDouble("upperBoundValue");
-
     m_upperBoundValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class KafkaSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * Apache Kafka as a target for Database Migration Service</a> in the <i>Database
      * Migration Service User Guide</i>. </p>
      */
-    inline const Aws::String& GetBroker() const{ return m_broker; }
+    inline const Aws::String& GetBroker() const { return m_broker; }
     inline bool BrokerHasBeenSet() const { return m_brokerHasBeenSet; }
-    inline void SetBroker(const Aws::String& value) { m_brokerHasBeenSet = true; m_broker = value; }
-    inline void SetBroker(Aws::String&& value) { m_brokerHasBeenSet = true; m_broker = std::move(value); }
-    inline void SetBroker(const char* value) { m_brokerHasBeenSet = true; m_broker.assign(value); }
-    inline KafkaSettings& WithBroker(const Aws::String& value) { SetBroker(value); return *this;}
-    inline KafkaSettings& WithBroker(Aws::String&& value) { SetBroker(std::move(value)); return *this;}
-    inline KafkaSettings& WithBroker(const char* value) { SetBroker(value); return *this;}
+    template<typename BrokerT = Aws::String>
+    void SetBroker(BrokerT&& value) { m_brokerHasBeenSet = true; m_broker = std::forward<BrokerT>(value); }
+    template<typename BrokerT = Aws::String>
+    KafkaSettings& WithBroker(BrokerT&& value) { SetBroker(std::forward<BrokerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The topic to which you migrate the data. If you don't specify a topic, DMS
      * specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
+    inline const Aws::String& GetTopic() const { return m_topic; }
     inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
-    inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topicHasBeenSet = true; m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topicHasBeenSet = true; m_topic.assign(value); }
-    inline KafkaSettings& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline KafkaSettings& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline KafkaSettings& WithTopic(const char* value) { SetTopic(value); return *this;}
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    KafkaSettings& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line
      * with no tab).</p>
      */
-    inline const MessageFormatValue& GetMessageFormat() const{ return m_messageFormat; }
+    inline MessageFormatValue GetMessageFormat() const { return m_messageFormat; }
     inline bool MessageFormatHasBeenSet() const { return m_messageFormatHasBeenSet; }
-    inline void SetMessageFormat(const MessageFormatValue& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
-    inline void SetMessageFormat(MessageFormatValue&& value) { m_messageFormatHasBeenSet = true; m_messageFormat = std::move(value); }
-    inline KafkaSettings& WithMessageFormat(const MessageFormatValue& value) { SetMessageFormat(value); return *this;}
-    inline KafkaSettings& WithMessageFormat(MessageFormatValue&& value) { SetMessageFormat(std::move(value)); return *this;}
+    inline void SetMessageFormat(MessageFormatValue value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
+    inline KafkaSettings& WithMessageFormat(MessageFormatValue value) { SetMessageFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +96,7 @@ namespace Model
      * <code>transaction_record_id</code> (the record offset within a transaction). The
      * default is <code>false</code>.</p>
      */
-    inline bool GetIncludeTransactionDetails() const{ return m_includeTransactionDetails; }
+    inline bool GetIncludeTransactionDetails() const { return m_includeTransactionDetails; }
     inline bool IncludeTransactionDetailsHasBeenSet() const { return m_includeTransactionDetailsHasBeenSet; }
     inline void SetIncludeTransactionDetails(bool value) { m_includeTransactionDetailsHasBeenSet = true; m_includeTransactionDetails = value; }
     inline KafkaSettings& WithIncludeTransactionDetails(bool value) { SetIncludeTransactionDetails(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
      * partition type is <code>schema-table-type</code>. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetIncludePartitionValue() const{ return m_includePartitionValue; }
+    inline bool GetIncludePartitionValue() const { return m_includePartitionValue; }
     inline bool IncludePartitionValueHasBeenSet() const { return m_includePartitionValueHasBeenSet; }
     inline void SetIncludePartitionValue(bool value) { m_includePartitionValueHasBeenSet = true; m_includePartitionValue = value; }
     inline KafkaSettings& WithIncludePartitionValue(bool value) { SetIncludePartitionValue(value); return *this;}
@@ -129,7 +123,7 @@ namespace Model
      * the same primary key is sent from thousands of tables to the same partition,
      * which causes throttling. The default is <code>false</code>.</p>
      */
-    inline bool GetPartitionIncludeSchemaTable() const{ return m_partitionIncludeSchemaTable; }
+    inline bool GetPartitionIncludeSchemaTable() const { return m_partitionIncludeSchemaTable; }
     inline bool PartitionIncludeSchemaTableHasBeenSet() const { return m_partitionIncludeSchemaTableHasBeenSet; }
     inline void SetPartitionIncludeSchemaTable(bool value) { m_partitionIncludeSchemaTableHasBeenSet = true; m_partitionIncludeSchemaTable = value; }
     inline KafkaSettings& WithPartitionIncludeSchemaTable(bool value) { SetPartitionIncludeSchemaTable(value); return *this;}
@@ -142,7 +136,7 @@ namespace Model
      * <code>add-column</code>, <code>drop-column</code>, and
      * <code>rename-column</code>. The default is <code>false</code>.</p>
      */
-    inline bool GetIncludeTableAlterOperations() const{ return m_includeTableAlterOperations; }
+    inline bool GetIncludeTableAlterOperations() const { return m_includeTableAlterOperations; }
     inline bool IncludeTableAlterOperationsHasBeenSet() const { return m_includeTableAlterOperationsHasBeenSet; }
     inline void SetIncludeTableAlterOperations(bool value) { m_includeTableAlterOperationsHasBeenSet = true; m_includeTableAlterOperations = value; }
     inline KafkaSettings& WithIncludeTableAlterOperations(bool value) { SetIncludeTableAlterOperations(value); return *this;}
@@ -154,7 +148,7 @@ namespace Model
      * and table and column changes in the Kafka message output. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetIncludeControlDetails() const{ return m_includeControlDetails; }
+    inline bool GetIncludeControlDetails() const { return m_includeControlDetails; }
     inline bool IncludeControlDetailsHasBeenSet() const { return m_includeControlDetailsHasBeenSet; }
     inline void SetIncludeControlDetails(bool value) { m_includeControlDetailsHasBeenSet = true; m_includeControlDetails = value; }
     inline KafkaSettings& WithIncludeControlDetails(bool value) { SetIncludeControlDetails(value); return *this;}
@@ -165,7 +159,7 @@ namespace Model
      * <p>The maximum size in bytes for records created on the endpoint The default is
      * 1,000,000.</p>
      */
-    inline int GetMessageMaxBytes() const{ return m_messageMaxBytes; }
+    inline int GetMessageMaxBytes() const { return m_messageMaxBytes; }
     inline bool MessageMaxBytesHasBeenSet() const { return m_messageMaxBytesHasBeenSet; }
     inline void SetMessageMaxBytes(int value) { m_messageMaxBytesHasBeenSet = true; m_messageMaxBytes = value; }
     inline KafkaSettings& WithMessageMaxBytes(int value) { SetMessageMaxBytes(value); return *this;}
@@ -176,7 +170,7 @@ namespace Model
      * <p>Include NULL and empty columns for records migrated to the endpoint. The
      * default is <code>false</code>.</p>
      */
-    inline bool GetIncludeNullAndEmpty() const{ return m_includeNullAndEmpty; }
+    inline bool GetIncludeNullAndEmpty() const { return m_includeNullAndEmpty; }
     inline bool IncludeNullAndEmptyHasBeenSet() const { return m_includeNullAndEmptyHasBeenSet; }
     inline void SetIncludeNullAndEmpty(bool value) { m_includeNullAndEmptyHasBeenSet = true; m_includeNullAndEmpty = value; }
     inline KafkaSettings& WithIncludeNullAndEmpty(bool value) { SetIncludeNullAndEmpty(value); return *this;}
@@ -190,12 +184,10 @@ namespace Model
      * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
      * <code>SaslPassword</code>.</p>
      */
-    inline const KafkaSecurityProtocol& GetSecurityProtocol() const{ return m_securityProtocol; }
+    inline KafkaSecurityProtocol GetSecurityProtocol() const { return m_securityProtocol; }
     inline bool SecurityProtocolHasBeenSet() const { return m_securityProtocolHasBeenSet; }
-    inline void SetSecurityProtocol(const KafkaSecurityProtocol& value) { m_securityProtocolHasBeenSet = true; m_securityProtocol = value; }
-    inline void SetSecurityProtocol(KafkaSecurityProtocol&& value) { m_securityProtocolHasBeenSet = true; m_securityProtocol = std::move(value); }
-    inline KafkaSettings& WithSecurityProtocol(const KafkaSecurityProtocol& value) { SetSecurityProtocol(value); return *this;}
-    inline KafkaSettings& WithSecurityProtocol(KafkaSecurityProtocol&& value) { SetSecurityProtocol(std::move(value)); return *this;}
+    inline void SetSecurityProtocol(KafkaSecurityProtocol value) { m_securityProtocolHasBeenSet = true; m_securityProtocol = value; }
+    inline KafkaSettings& WithSecurityProtocol(KafkaSecurityProtocol value) { SetSecurityProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -203,14 +195,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
      * connect to a Kafka target endpoint.</p>
      */
-    inline const Aws::String& GetSslClientCertificateArn() const{ return m_sslClientCertificateArn; }
+    inline const Aws::String& GetSslClientCertificateArn() const { return m_sslClientCertificateArn; }
     inline bool SslClientCertificateArnHasBeenSet() const { return m_sslClientCertificateArnHasBeenSet; }
-    inline void SetSslClientCertificateArn(const Aws::String& value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn = value; }
-    inline void SetSslClientCertificateArn(Aws::String&& value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn = std::move(value); }
-    inline void SetSslClientCertificateArn(const char* value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn.assign(value); }
-    inline KafkaSettings& WithSslClientCertificateArn(const Aws::String& value) { SetSslClientCertificateArn(value); return *this;}
-    inline KafkaSettings& WithSslClientCertificateArn(Aws::String&& value) { SetSslClientCertificateArn(std::move(value)); return *this;}
-    inline KafkaSettings& WithSslClientCertificateArn(const char* value) { SetSslClientCertificateArn(value); return *this;}
+    template<typename SslClientCertificateArnT = Aws::String>
+    void SetSslClientCertificateArn(SslClientCertificateArnT&& value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn = std::forward<SslClientCertificateArnT>(value); }
+    template<typename SslClientCertificateArnT = Aws::String>
+    KafkaSettings& WithSslClientCertificateArn(SslClientCertificateArnT&& value) { SetSslClientCertificateArn(std::forward<SslClientCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,14 +208,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the client private key used to securely
      * connect to a Kafka target endpoint.</p>
      */
-    inline const Aws::String& GetSslClientKeyArn() const{ return m_sslClientKeyArn; }
+    inline const Aws::String& GetSslClientKeyArn() const { return m_sslClientKeyArn; }
     inline bool SslClientKeyArnHasBeenSet() const { return m_sslClientKeyArnHasBeenSet; }
-    inline void SetSslClientKeyArn(const Aws::String& value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn = value; }
-    inline void SetSslClientKeyArn(Aws::String&& value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn = std::move(value); }
-    inline void SetSslClientKeyArn(const char* value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn.assign(value); }
-    inline KafkaSettings& WithSslClientKeyArn(const Aws::String& value) { SetSslClientKeyArn(value); return *this;}
-    inline KafkaSettings& WithSslClientKeyArn(Aws::String&& value) { SetSslClientKeyArn(std::move(value)); return *this;}
-    inline KafkaSettings& WithSslClientKeyArn(const char* value) { SetSslClientKeyArn(value); return *this;}
+    template<typename SslClientKeyArnT = Aws::String>
+    void SetSslClientKeyArn(SslClientKeyArnT&& value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn = std::forward<SslClientKeyArnT>(value); }
+    template<typename SslClientKeyArnT = Aws::String>
+    KafkaSettings& WithSslClientKeyArn(SslClientKeyArnT&& value) { SetSslClientKeyArn(std::forward<SslClientKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,14 +221,12 @@ namespace Model
      * <p> The password for the client private key used to securely connect to a Kafka
      * target endpoint.</p>
      */
-    inline const Aws::String& GetSslClientKeyPassword() const{ return m_sslClientKeyPassword; }
+    inline const Aws::String& GetSslClientKeyPassword() const { return m_sslClientKeyPassword; }
     inline bool SslClientKeyPasswordHasBeenSet() const { return m_sslClientKeyPasswordHasBeenSet; }
-    inline void SetSslClientKeyPassword(const Aws::String& value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword = value; }
-    inline void SetSslClientKeyPassword(Aws::String&& value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword = std::move(value); }
-    inline void SetSslClientKeyPassword(const char* value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword.assign(value); }
-    inline KafkaSettings& WithSslClientKeyPassword(const Aws::String& value) { SetSslClientKeyPassword(value); return *this;}
-    inline KafkaSettings& WithSslClientKeyPassword(Aws::String&& value) { SetSslClientKeyPassword(std::move(value)); return *this;}
-    inline KafkaSettings& WithSslClientKeyPassword(const char* value) { SetSslClientKeyPassword(value); return *this;}
+    template<typename SslClientKeyPasswordT = Aws::String>
+    void SetSslClientKeyPassword(SslClientKeyPasswordT&& value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword = std::forward<SslClientKeyPasswordT>(value); }
+    template<typename SslClientKeyPasswordT = Aws::String>
+    KafkaSettings& WithSslClientKeyPassword(SslClientKeyPasswordT&& value) { SetSslClientKeyPassword(std::forward<SslClientKeyPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,14 +234,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) for the private certificate authority (CA)
      * cert that DMS uses to securely connect to your Kafka target endpoint.</p>
      */
-    inline const Aws::String& GetSslCaCertificateArn() const{ return m_sslCaCertificateArn; }
+    inline const Aws::String& GetSslCaCertificateArn() const { return m_sslCaCertificateArn; }
     inline bool SslCaCertificateArnHasBeenSet() const { return m_sslCaCertificateArnHasBeenSet; }
-    inline void SetSslCaCertificateArn(const Aws::String& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = value; }
-    inline void SetSslCaCertificateArn(Aws::String&& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = std::move(value); }
-    inline void SetSslCaCertificateArn(const char* value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn.assign(value); }
-    inline KafkaSettings& WithSslCaCertificateArn(const Aws::String& value) { SetSslCaCertificateArn(value); return *this;}
-    inline KafkaSettings& WithSslCaCertificateArn(Aws::String&& value) { SetSslCaCertificateArn(std::move(value)); return *this;}
-    inline KafkaSettings& WithSslCaCertificateArn(const char* value) { SetSslCaCertificateArn(value); return *this;}
+    template<typename SslCaCertificateArnT = Aws::String>
+    void SetSslCaCertificateArn(SslCaCertificateArnT&& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = std::forward<SslCaCertificateArnT>(value); }
+    template<typename SslCaCertificateArnT = Aws::String>
+    KafkaSettings& WithSslCaCertificateArn(SslCaCertificateArnT&& value) { SetSslCaCertificateArn(std::forward<SslCaCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -264,14 +248,12 @@ namespace Model
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
-    inline const Aws::String& GetSaslUsername() const{ return m_saslUsername; }
+    inline const Aws::String& GetSaslUsername() const { return m_saslUsername; }
     inline bool SaslUsernameHasBeenSet() const { return m_saslUsernameHasBeenSet; }
-    inline void SetSaslUsername(const Aws::String& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = value; }
-    inline void SetSaslUsername(Aws::String&& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = std::move(value); }
-    inline void SetSaslUsername(const char* value) { m_saslUsernameHasBeenSet = true; m_saslUsername.assign(value); }
-    inline KafkaSettings& WithSaslUsername(const Aws::String& value) { SetSaslUsername(value); return *this;}
-    inline KafkaSettings& WithSaslUsername(Aws::String&& value) { SetSaslUsername(std::move(value)); return *this;}
-    inline KafkaSettings& WithSaslUsername(const char* value) { SetSaslUsername(value); return *this;}
+    template<typename SaslUsernameT = Aws::String>
+    void SetSaslUsername(SaslUsernameT&& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = std::forward<SaslUsernameT>(value); }
+    template<typename SaslUsernameT = Aws::String>
+    KafkaSettings& WithSaslUsername(SaslUsernameT&& value) { SetSaslUsername(std::forward<SaslUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -280,14 +262,12 @@ namespace Model
      * validate a client identity and make an encrypted connection between server and
      * client using SASL-SSL authentication.</p>
      */
-    inline const Aws::String& GetSaslPassword() const{ return m_saslPassword; }
+    inline const Aws::String& GetSaslPassword() const { return m_saslPassword; }
     inline bool SaslPasswordHasBeenSet() const { return m_saslPasswordHasBeenSet; }
-    inline void SetSaslPassword(const Aws::String& value) { m_saslPasswordHasBeenSet = true; m_saslPassword = value; }
-    inline void SetSaslPassword(Aws::String&& value) { m_saslPasswordHasBeenSet = true; m_saslPassword = std::move(value); }
-    inline void SetSaslPassword(const char* value) { m_saslPasswordHasBeenSet = true; m_saslPassword.assign(value); }
-    inline KafkaSettings& WithSaslPassword(const Aws::String& value) { SetSaslPassword(value); return *this;}
-    inline KafkaSettings& WithSaslPassword(Aws::String&& value) { SetSaslPassword(std::move(value)); return *this;}
-    inline KafkaSettings& WithSaslPassword(const char* value) { SetSaslPassword(value); return *this;}
+    template<typename SaslPasswordT = Aws::String>
+    void SetSaslPassword(SaslPasswordT&& value) { m_saslPasswordHasBeenSet = true; m_saslPassword = std::forward<SaslPasswordT>(value); }
+    template<typename SaslPasswordT = Aws::String>
+    KafkaSettings& WithSaslPassword(SaslPasswordT&& value) { SetSaslPassword(std::forward<SaslPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -298,7 +278,7 @@ namespace Model
      * source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to
      * enable migration of RAW data type columns without adding the '0x' prefix.</p>
      */
-    inline bool GetNoHexPrefix() const{ return m_noHexPrefix; }
+    inline bool GetNoHexPrefix() const { return m_noHexPrefix; }
     inline bool NoHexPrefixHasBeenSet() const { return m_noHexPrefixHasBeenSet; }
     inline void SetNoHexPrefix(bool value) { m_noHexPrefixHasBeenSet = true; m_noHexPrefix = value; }
     inline KafkaSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
@@ -311,12 +291,10 @@ namespace Model
      * <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
      * parameter to <code>PLAIN.</code> </p>
      */
-    inline const KafkaSaslMechanism& GetSaslMechanism() const{ return m_saslMechanism; }
+    inline KafkaSaslMechanism GetSaslMechanism() const { return m_saslMechanism; }
     inline bool SaslMechanismHasBeenSet() const { return m_saslMechanismHasBeenSet; }
-    inline void SetSaslMechanism(const KafkaSaslMechanism& value) { m_saslMechanismHasBeenSet = true; m_saslMechanism = value; }
-    inline void SetSaslMechanism(KafkaSaslMechanism&& value) { m_saslMechanismHasBeenSet = true; m_saslMechanism = std::move(value); }
-    inline KafkaSettings& WithSaslMechanism(const KafkaSaslMechanism& value) { SetSaslMechanism(value); return *this;}
-    inline KafkaSettings& WithSaslMechanism(KafkaSaslMechanism&& value) { SetSaslMechanism(std::move(value)); return *this;}
+    inline void SetSaslMechanism(KafkaSaslMechanism value) { m_saslMechanismHasBeenSet = true; m_saslMechanism = value; }
+    inline KafkaSettings& WithSaslMechanism(KafkaSaslMechanism value) { SetSaslMechanism(value); return *this;}
     ///@}
 
     ///@{
@@ -324,19 +302,17 @@ namespace Model
      * <p>Sets hostname verification for the certificate. This setting is supported in
      * DMS version 3.5.1 and later. </p>
      */
-    inline const KafkaSslEndpointIdentificationAlgorithm& GetSslEndpointIdentificationAlgorithm() const{ return m_sslEndpointIdentificationAlgorithm; }
+    inline KafkaSslEndpointIdentificationAlgorithm GetSslEndpointIdentificationAlgorithm() const { return m_sslEndpointIdentificationAlgorithm; }
     inline bool SslEndpointIdentificationAlgorithmHasBeenSet() const { return m_sslEndpointIdentificationAlgorithmHasBeenSet; }
-    inline void SetSslEndpointIdentificationAlgorithm(const KafkaSslEndpointIdentificationAlgorithm& value) { m_sslEndpointIdentificationAlgorithmHasBeenSet = true; m_sslEndpointIdentificationAlgorithm = value; }
-    inline void SetSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm&& value) { m_sslEndpointIdentificationAlgorithmHasBeenSet = true; m_sslEndpointIdentificationAlgorithm = std::move(value); }
-    inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(const KafkaSslEndpointIdentificationAlgorithm& value) { SetSslEndpointIdentificationAlgorithm(value); return *this;}
-    inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm&& value) { SetSslEndpointIdentificationAlgorithm(std::move(value)); return *this;}
+    inline void SetSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm value) { m_sslEndpointIdentificationAlgorithmHasBeenSet = true; m_sslEndpointIdentificationAlgorithm = value; }
+    inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm value) { SetSslEndpointIdentificationAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies using the large integer value with Kafka.</p>
      */
-    inline bool GetUseLargeIntegerValue() const{ return m_useLargeIntegerValue; }
+    inline bool GetUseLargeIntegerValue() const { return m_useLargeIntegerValue; }
     inline bool UseLargeIntegerValueHasBeenSet() const { return m_useLargeIntegerValueHasBeenSet; }
     inline void SetUseLargeIntegerValue(bool value) { m_useLargeIntegerValueHasBeenSet = true; m_useLargeIntegerValue = value; }
     inline KafkaSettings& WithUseLargeIntegerValue(bool value) { SetUseLargeIntegerValue(value); return *this;}
@@ -349,31 +325,31 @@ namespace Model
     Aws::String m_topic;
     bool m_topicHasBeenSet = false;
 
-    MessageFormatValue m_messageFormat;
+    MessageFormatValue m_messageFormat{MessageFormatValue::NOT_SET};
     bool m_messageFormatHasBeenSet = false;
 
-    bool m_includeTransactionDetails;
+    bool m_includeTransactionDetails{false};
     bool m_includeTransactionDetailsHasBeenSet = false;
 
-    bool m_includePartitionValue;
+    bool m_includePartitionValue{false};
     bool m_includePartitionValueHasBeenSet = false;
 
-    bool m_partitionIncludeSchemaTable;
+    bool m_partitionIncludeSchemaTable{false};
     bool m_partitionIncludeSchemaTableHasBeenSet = false;
 
-    bool m_includeTableAlterOperations;
+    bool m_includeTableAlterOperations{false};
     bool m_includeTableAlterOperationsHasBeenSet = false;
 
-    bool m_includeControlDetails;
+    bool m_includeControlDetails{false};
     bool m_includeControlDetailsHasBeenSet = false;
 
-    int m_messageMaxBytes;
+    int m_messageMaxBytes{0};
     bool m_messageMaxBytesHasBeenSet = false;
 
-    bool m_includeNullAndEmpty;
+    bool m_includeNullAndEmpty{false};
     bool m_includeNullAndEmptyHasBeenSet = false;
 
-    KafkaSecurityProtocol m_securityProtocol;
+    KafkaSecurityProtocol m_securityProtocol{KafkaSecurityProtocol::NOT_SET};
     bool m_securityProtocolHasBeenSet = false;
 
     Aws::String m_sslClientCertificateArn;
@@ -394,16 +370,16 @@ namespace Model
     Aws::String m_saslPassword;
     bool m_saslPasswordHasBeenSet = false;
 
-    bool m_noHexPrefix;
+    bool m_noHexPrefix{false};
     bool m_noHexPrefixHasBeenSet = false;
 
-    KafkaSaslMechanism m_saslMechanism;
+    KafkaSaslMechanism m_saslMechanism{KafkaSaslMechanism::NOT_SET};
     bool m_saslMechanismHasBeenSet = false;
 
-    KafkaSslEndpointIdentificationAlgorithm m_sslEndpointIdentificationAlgorithm;
+    KafkaSslEndpointIdentificationAlgorithm m_sslEndpointIdentificationAlgorithm{KafkaSslEndpointIdentificationAlgorithm::NOT_SET};
     bool m_sslEndpointIdentificationAlgorithmHasBeenSet = false;
 
-    bool m_useLargeIntegerValue;
+    bool m_useLargeIntegerValue{false};
     bool m_useLargeIntegerValueHasBeenSet = false;
   };
 

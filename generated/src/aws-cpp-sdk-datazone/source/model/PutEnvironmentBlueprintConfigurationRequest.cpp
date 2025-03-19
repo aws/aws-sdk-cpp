@@ -12,18 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEnvironmentBlueprintConfigurationRequest::PutEnvironmentBlueprintConfigurationRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_enabledRegionsHasBeenSet(false),
-    m_environmentBlueprintIdentifierHasBeenSet(false),
-    m_environmentRolePermissionBoundaryHasBeenSet(false),
-    m_manageAccessRoleArnHasBeenSet(false),
-    m_provisioningConfigurationsHasBeenSet(false),
-    m_provisioningRoleArnHasBeenSet(false),
-    m_regionalParametersHasBeenSet(false)
-{
-}
-
 Aws::String PutEnvironmentBlueprintConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

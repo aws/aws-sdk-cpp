@@ -34,7 +34,7 @@ namespace Model
   class KubernetesUserDetails
   {
   public:
-    AWS_GUARDDUTY_API KubernetesUserDetails();
+    AWS_GUARDDUTY_API KubernetesUserDetails() = default;
     AWS_GUARDDUTY_API KubernetesUserDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API KubernetesUserDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,43 +44,38 @@ namespace Model
     /**
      * <p>The username of the user who called the Kubernetes API.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline KubernetesUserDetails& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline KubernetesUserDetails& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline KubernetesUserDetails& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    KubernetesUserDetails& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user ID of the user who called the Kubernetes API.</p>
      */
-    inline const Aws::String& GetUid() const{ return m_uid; }
+    inline const Aws::String& GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-    inline void SetUid(const Aws::String& value) { m_uidHasBeenSet = true; m_uid = value; }
-    inline void SetUid(Aws::String&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
-    inline void SetUid(const char* value) { m_uidHasBeenSet = true; m_uid.assign(value); }
-    inline KubernetesUserDetails& WithUid(const Aws::String& value) { SetUid(value); return *this;}
-    inline KubernetesUserDetails& WithUid(Aws::String&& value) { SetUid(std::move(value)); return *this;}
-    inline KubernetesUserDetails& WithUid(const char* value) { SetUid(value); return *this;}
+    template<typename UidT = Aws::String>
+    void SetUid(UidT&& value) { m_uidHasBeenSet = true; m_uid = std::forward<UidT>(value); }
+    template<typename UidT = Aws::String>
+    KubernetesUserDetails& WithUid(UidT&& value) { SetUid(std::forward<UidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The groups that include the user who called the Kubernetes API.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<Aws::String>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline KubernetesUserDetails& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-    inline KubernetesUserDetails& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-    inline KubernetesUserDetails& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline KubernetesUserDetails& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-    inline KubernetesUserDetails& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<Aws::String>>
+    KubernetesUserDetails& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = Aws::String>
+    KubernetesUserDetails& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,27 +83,26 @@ namespace Model
      * <p>Entity that assumes the IAM role when Kubernetes RBAC permissions are
      * assigned to that role.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSessionName() const{ return m_sessionName; }
+    inline const Aws::Vector<Aws::String>& GetSessionName() const { return m_sessionName; }
     inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
-    inline void SetSessionName(const Aws::Vector<Aws::String>& value) { m_sessionNameHasBeenSet = true; m_sessionName = value; }
-    inline void SetSessionName(Aws::Vector<Aws::String>&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::move(value); }
-    inline KubernetesUserDetails& WithSessionName(const Aws::Vector<Aws::String>& value) { SetSessionName(value); return *this;}
-    inline KubernetesUserDetails& WithSessionName(Aws::Vector<Aws::String>&& value) { SetSessionName(std::move(value)); return *this;}
-    inline KubernetesUserDetails& AddSessionName(const Aws::String& value) { m_sessionNameHasBeenSet = true; m_sessionName.push_back(value); return *this; }
-    inline KubernetesUserDetails& AddSessionName(Aws::String&& value) { m_sessionNameHasBeenSet = true; m_sessionName.push_back(std::move(value)); return *this; }
-    inline KubernetesUserDetails& AddSessionName(const char* value) { m_sessionNameHasBeenSet = true; m_sessionName.push_back(value); return *this; }
+    template<typename SessionNameT = Aws::Vector<Aws::String>>
+    void SetSessionName(SessionNameT&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::forward<SessionNameT>(value); }
+    template<typename SessionNameT = Aws::Vector<Aws::String>>
+    KubernetesUserDetails& WithSessionName(SessionNameT&& value) { SetSessionName(std::forward<SessionNameT>(value)); return *this;}
+    template<typename SessionNameT = Aws::String>
+    KubernetesUserDetails& AddSessionName(SessionNameT&& value) { m_sessionNameHasBeenSet = true; m_sessionName.emplace_back(std::forward<SessionNameT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the impersonated user.</p>
      */
-    inline const ImpersonatedUser& GetImpersonatedUser() const{ return m_impersonatedUser; }
+    inline const ImpersonatedUser& GetImpersonatedUser() const { return m_impersonatedUser; }
     inline bool ImpersonatedUserHasBeenSet() const { return m_impersonatedUserHasBeenSet; }
-    inline void SetImpersonatedUser(const ImpersonatedUser& value) { m_impersonatedUserHasBeenSet = true; m_impersonatedUser = value; }
-    inline void SetImpersonatedUser(ImpersonatedUser&& value) { m_impersonatedUserHasBeenSet = true; m_impersonatedUser = std::move(value); }
-    inline KubernetesUserDetails& WithImpersonatedUser(const ImpersonatedUser& value) { SetImpersonatedUser(value); return *this;}
-    inline KubernetesUserDetails& WithImpersonatedUser(ImpersonatedUser&& value) { SetImpersonatedUser(std::move(value)); return *this;}
+    template<typename ImpersonatedUserT = ImpersonatedUser>
+    void SetImpersonatedUser(ImpersonatedUserT&& value) { m_impersonatedUserHasBeenSet = true; m_impersonatedUser = std::forward<ImpersonatedUserT>(value); }
+    template<typename ImpersonatedUserT = ImpersonatedUser>
+    KubernetesUserDetails& WithImpersonatedUser(ImpersonatedUserT&& value) { SetImpersonatedUser(std::forward<ImpersonatedUserT>(value)); return *this;}
     ///@}
   private:
 

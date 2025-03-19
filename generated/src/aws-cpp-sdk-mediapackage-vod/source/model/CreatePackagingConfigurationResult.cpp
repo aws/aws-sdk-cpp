@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePackagingConfigurationResult::CreatePackagingConfigurationResult()
-{
-}
-
 CreatePackagingConfigurationResult::CreatePackagingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,51 +28,43 @@ CreatePackagingConfigurationResult& CreatePackagingConfigurationResult::operator
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cmafPackage"))
   {
     m_cmafPackage = jsonValue.GetObject("cmafPackage");
-
+    m_cmafPackageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashPackage"))
   {
     m_dashPackage = jsonValue.GetObject("dashPackage");
-
+    m_dashPackageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsPackage"))
   {
     m_hlsPackage = jsonValue.GetObject("hlsPackage");
-
+    m_hlsPackageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mssPackage"))
   {
     m_mssPackage = jsonValue.GetObject("mssPackage");
-
+    m_mssPackageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packagingGroupId"))
   {
     m_packagingGroupId = jsonValue.GetString("packagingGroupId");
-
+    m_packagingGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -84,14 +72,15 @@ CreatePackagingConfigurationResult& CreatePackagingConfigurationResult::operator
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

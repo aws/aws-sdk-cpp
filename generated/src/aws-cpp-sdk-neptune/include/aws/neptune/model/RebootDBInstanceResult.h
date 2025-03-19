@@ -28,33 +28,35 @@ namespace Model
   class RebootDBInstanceResult
   {
   public:
-    AWS_NEPTUNE_API RebootDBInstanceResult();
+    AWS_NEPTUNE_API RebootDBInstanceResult() = default;
     AWS_NEPTUNE_API RebootDBInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_NEPTUNE_API RebootDBInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBInstance& GetDBInstance() const{ return m_dBInstance; }
-    inline void SetDBInstance(const DBInstance& value) { m_dBInstance = value; }
-    inline void SetDBInstance(DBInstance&& value) { m_dBInstance = std::move(value); }
-    inline RebootDBInstanceResult& WithDBInstance(const DBInstance& value) { SetDBInstance(value); return *this;}
-    inline RebootDBInstanceResult& WithDBInstance(DBInstance&& value) { SetDBInstance(std::move(value)); return *this;}
+    inline const DBInstance& GetDBInstance() const { return m_dBInstance; }
+    template<typename DBInstanceT = DBInstance>
+    void SetDBInstance(DBInstanceT&& value) { m_dBInstanceHasBeenSet = true; m_dBInstance = std::forward<DBInstanceT>(value); }
+    template<typename DBInstanceT = DBInstance>
+    RebootDBInstanceResult& WithDBInstance(DBInstanceT&& value) { SetDBInstance(std::forward<DBInstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RebootDBInstanceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RebootDBInstanceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RebootDBInstanceResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBInstance m_dBInstance;
+    bool m_dBInstanceHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

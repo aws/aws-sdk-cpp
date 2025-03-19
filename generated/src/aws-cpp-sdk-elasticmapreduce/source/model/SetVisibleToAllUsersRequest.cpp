@@ -12,13 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetVisibleToAllUsersRequest::SetVisibleToAllUsersRequest() : 
-    m_jobFlowIdsHasBeenSet(false),
-    m_visibleToAllUsers(false),
-    m_visibleToAllUsersHasBeenSet(false)
-{
-}
-
 Aws::String SetVisibleToAllUsersRequest::SerializePayload() const
 {
   JsonValue payload;

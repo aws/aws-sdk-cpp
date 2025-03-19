@@ -18,19 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifactProperties::ProvisioningArtifactProperties() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_infoHasBeenSet(false),
-    m_type(ProvisioningArtifactType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_disableTemplateValidation(false),
-    m_disableTemplateValidationHasBeenSet(false)
-{
-}
-
 ProvisioningArtifactProperties::ProvisioningArtifactProperties(JsonView jsonValue)
-  : ProvisioningArtifactProperties()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ ProvisioningArtifactProperties& ProvisioningArtifactProperties::operator =(JsonV
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Info"))
   {
     Aws::Map<Aws::String, JsonView> infoJsonMap = jsonValue.GetObject("Info").GetAllObjects();
@@ -60,21 +44,16 @@ ProvisioningArtifactProperties& ProvisioningArtifactProperties::operator =(JsonV
     }
     m_infoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ProvisioningArtifactTypeMapper::GetProvisioningArtifactTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableTemplateValidation"))
   {
     m_disableTemplateValidation = jsonValue.GetBool("DisableTemplateValidation");
-
     m_disableTemplateValidationHasBeenSet = true;
   }
-
   return *this;
 }
 

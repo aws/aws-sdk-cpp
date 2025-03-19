@@ -29,7 +29,7 @@ namespace Model
   class ListConfigurationPoliciesResult
   {
   public:
-    AWS_SECURITYHUB_API ListConfigurationPoliciesResult();
+    AWS_SECURITYHUB_API ListConfigurationPoliciesResult() = default;
     AWS_SECURITYHUB_API ListConfigurationPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API ListConfigurationPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> Provides metadata for each of your configuration policies. </p>
      */
-    inline const Aws::Vector<ConfigurationPolicySummary>& GetConfigurationPolicySummaries() const{ return m_configurationPolicySummaries; }
-    inline void SetConfigurationPolicySummaries(const Aws::Vector<ConfigurationPolicySummary>& value) { m_configurationPolicySummaries = value; }
-    inline void SetConfigurationPolicySummaries(Aws::Vector<ConfigurationPolicySummary>&& value) { m_configurationPolicySummaries = std::move(value); }
-    inline ListConfigurationPoliciesResult& WithConfigurationPolicySummaries(const Aws::Vector<ConfigurationPolicySummary>& value) { SetConfigurationPolicySummaries(value); return *this;}
-    inline ListConfigurationPoliciesResult& WithConfigurationPolicySummaries(Aws::Vector<ConfigurationPolicySummary>&& value) { SetConfigurationPolicySummaries(std::move(value)); return *this;}
-    inline ListConfigurationPoliciesResult& AddConfigurationPolicySummaries(const ConfigurationPolicySummary& value) { m_configurationPolicySummaries.push_back(value); return *this; }
-    inline ListConfigurationPoliciesResult& AddConfigurationPolicySummaries(ConfigurationPolicySummary&& value) { m_configurationPolicySummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConfigurationPolicySummary>& GetConfigurationPolicySummaries() const { return m_configurationPolicySummaries; }
+    template<typename ConfigurationPolicySummariesT = Aws::Vector<ConfigurationPolicySummary>>
+    void SetConfigurationPolicySummaries(ConfigurationPolicySummariesT&& value) { m_configurationPolicySummariesHasBeenSet = true; m_configurationPolicySummaries = std::forward<ConfigurationPolicySummariesT>(value); }
+    template<typename ConfigurationPolicySummariesT = Aws::Vector<ConfigurationPolicySummary>>
+    ListConfigurationPoliciesResult& WithConfigurationPolicySummaries(ConfigurationPolicySummariesT&& value) { SetConfigurationPolicySummaries(std::forward<ConfigurationPolicySummariesT>(value)); return *this;}
+    template<typename ConfigurationPolicySummariesT = ConfigurationPolicySummary>
+    ListConfigurationPoliciesResult& AddConfigurationPolicySummaries(ConfigurationPolicySummariesT&& value) { m_configurationPolicySummariesHasBeenSet = true; m_configurationPolicySummaries.emplace_back(std::forward<ConfigurationPolicySummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * this value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConfigurationPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConfigurationPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConfigurationPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConfigurationPoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConfigurationPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConfigurationPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConfigurationPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConfigurationPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConfigurationPolicySummary> m_configurationPolicySummaries;
+    bool m_configurationPolicySummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

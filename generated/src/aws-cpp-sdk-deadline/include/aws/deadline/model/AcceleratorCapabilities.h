@@ -34,7 +34,7 @@ namespace Model
   class AcceleratorCapabilities
   {
   public:
-    AWS_DEADLINE_API AcceleratorCapabilities();
+    AWS_DEADLINE_API AcceleratorCapabilities() = default;
     AWS_DEADLINE_API AcceleratorCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API AcceleratorCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,26 @@ namespace Model
      * For example, if you specify both L4 and T4 chips, Deadline Cloud will use Amazon
      * EC2 instances that have either the L4 or the T4 chip installed.</p>
      */
-    inline const Aws::Vector<AcceleratorSelection>& GetSelections() const{ return m_selections; }
+    inline const Aws::Vector<AcceleratorSelection>& GetSelections() const { return m_selections; }
     inline bool SelectionsHasBeenSet() const { return m_selectionsHasBeenSet; }
-    inline void SetSelections(const Aws::Vector<AcceleratorSelection>& value) { m_selectionsHasBeenSet = true; m_selections = value; }
-    inline void SetSelections(Aws::Vector<AcceleratorSelection>&& value) { m_selectionsHasBeenSet = true; m_selections = std::move(value); }
-    inline AcceleratorCapabilities& WithSelections(const Aws::Vector<AcceleratorSelection>& value) { SetSelections(value); return *this;}
-    inline AcceleratorCapabilities& WithSelections(Aws::Vector<AcceleratorSelection>&& value) { SetSelections(std::move(value)); return *this;}
-    inline AcceleratorCapabilities& AddSelections(const AcceleratorSelection& value) { m_selectionsHasBeenSet = true; m_selections.push_back(value); return *this; }
-    inline AcceleratorCapabilities& AddSelections(AcceleratorSelection&& value) { m_selectionsHasBeenSet = true; m_selections.push_back(std::move(value)); return *this; }
+    template<typename SelectionsT = Aws::Vector<AcceleratorSelection>>
+    void SetSelections(SelectionsT&& value) { m_selectionsHasBeenSet = true; m_selections = std::forward<SelectionsT>(value); }
+    template<typename SelectionsT = Aws::Vector<AcceleratorSelection>>
+    AcceleratorCapabilities& WithSelections(SelectionsT&& value) { SetSelections(std::forward<SelectionsT>(value)); return *this;}
+    template<typename SelectionsT = AcceleratorSelection>
+    AcceleratorCapabilities& AddSelections(SelectionsT&& value) { m_selectionsHasBeenSet = true; m_selections.emplace_back(std::forward<SelectionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of GPU accelerators specified for worker hosts in this fleet. </p>
      */
-    inline const AcceleratorCountRange& GetCount() const{ return m_count; }
+    inline const AcceleratorCountRange& GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-    inline void SetCount(const AcceleratorCountRange& value) { m_countHasBeenSet = true; m_count = value; }
-    inline void SetCount(AcceleratorCountRange&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
-    inline AcceleratorCapabilities& WithCount(const AcceleratorCountRange& value) { SetCount(value); return *this;}
-    inline AcceleratorCapabilities& WithCount(AcceleratorCountRange&& value) { SetCount(std::move(value)); return *this;}
+    template<typename CountT = AcceleratorCountRange>
+    void SetCount(CountT&& value) { m_countHasBeenSet = true; m_count = std::forward<CountT>(value); }
+    template<typename CountT = AcceleratorCountRange>
+    AcceleratorCapabilities& WithCount(CountT&& value) { SetCount(std::forward<CountT>(value)); return *this;}
     ///@}
   private:
 

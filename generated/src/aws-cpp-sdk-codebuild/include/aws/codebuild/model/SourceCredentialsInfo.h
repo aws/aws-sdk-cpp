@@ -34,7 +34,7 @@ namespace Model
   class SourceCredentialsInfo
   {
   public:
-    AWS_CODEBUILD_API SourceCredentialsInfo();
+    AWS_CODEBUILD_API SourceCredentialsInfo() = default;
     AWS_CODEBUILD_API SourceCredentialsInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API SourceCredentialsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the token. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline SourceCredentialsInfo& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline SourceCredentialsInfo& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline SourceCredentialsInfo& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    SourceCredentialsInfo& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p> The type of source provider. The valid options are GITHUB,
      * GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or BITBUCKET. </p>
      */
-    inline const ServerType& GetServerType() const{ return m_serverType; }
+    inline ServerType GetServerType() const { return m_serverType; }
     inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-    inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-    inline void SetServerType(ServerType&& value) { m_serverTypeHasBeenSet = true; m_serverType = std::move(value); }
-    inline SourceCredentialsInfo& WithServerType(const ServerType& value) { SetServerType(value); return *this;}
-    inline SourceCredentialsInfo& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
+    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
+    inline SourceCredentialsInfo& WithServerType(ServerType value) { SetServerType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * <p> The type of authentication used by the credentials. Valid options are OAUTH,
      * BASIC_AUTH, PERSONAL_ACCESS_TOKEN, CODECONNECTIONS, or SECRETS_MANAGER. </p>
      */
-    inline const AuthType& GetAuthType() const{ return m_authType; }
+    inline AuthType GetAuthType() const { return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-    inline SourceCredentialsInfo& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-    inline SourceCredentialsInfo& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline SourceCredentialsInfo& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -85,24 +79,22 @@ namespace Model
      * <p>The connection ARN if your authType is CODECONNECTIONS or
      * SECRETS_MANAGER.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline SourceCredentialsInfo& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline SourceCredentialsInfo& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline SourceCredentialsInfo& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    SourceCredentialsInfo& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    ServerType m_serverType;
+    ServerType m_serverType{ServerType::NOT_SET};
     bool m_serverTypeHasBeenSet = false;
 
-    AuthType m_authType;
+    AuthType m_authType{AuthType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
     Aws::String m_resource;

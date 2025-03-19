@@ -33,7 +33,7 @@ namespace Model
   class ProcessedUpdateAction
   {
   public:
-    AWS_ELASTICACHE_API ProcessedUpdateAction();
+    AWS_ELASTICACHE_API ProcessedUpdateAction() = default;
     AWS_ELASTICACHE_API ProcessedUpdateAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API ProcessedUpdateAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,54 +45,46 @@ namespace Model
     /**
      * <p>The ID of the replication group</p>
      */
-    inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+    inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-    inline ProcessedUpdateAction& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-    inline ProcessedUpdateAction& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-    inline ProcessedUpdateAction& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    template<typename ReplicationGroupIdT = Aws::String>
+    void SetReplicationGroupId(ReplicationGroupIdT&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::forward<ReplicationGroupIdT>(value); }
+    template<typename ReplicationGroupIdT = Aws::String>
+    ProcessedUpdateAction& WithReplicationGroupId(ReplicationGroupIdT&& value) { SetReplicationGroupId(std::forward<ReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the cache cluster</p>
      */
-    inline const Aws::String& GetCacheClusterId() const{ return m_cacheClusterId; }
+    inline const Aws::String& GetCacheClusterId() const { return m_cacheClusterId; }
     inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
-    inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
-    inline void SetCacheClusterId(Aws::String&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::move(value); }
-    inline void SetCacheClusterId(const char* value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId.assign(value); }
-    inline ProcessedUpdateAction& WithCacheClusterId(const Aws::String& value) { SetCacheClusterId(value); return *this;}
-    inline ProcessedUpdateAction& WithCacheClusterId(Aws::String&& value) { SetCacheClusterId(std::move(value)); return *this;}
-    inline ProcessedUpdateAction& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+    template<typename CacheClusterIdT = Aws::String>
+    void SetCacheClusterId(CacheClusterIdT&& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = std::forward<CacheClusterIdT>(value); }
+    template<typename CacheClusterIdT = Aws::String>
+    ProcessedUpdateAction& WithCacheClusterId(CacheClusterIdT&& value) { SetCacheClusterId(std::forward<CacheClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the service update</p>
      */
-    inline const Aws::String& GetServiceUpdateName() const{ return m_serviceUpdateName; }
+    inline const Aws::String& GetServiceUpdateName() const { return m_serviceUpdateName; }
     inline bool ServiceUpdateNameHasBeenSet() const { return m_serviceUpdateNameHasBeenSet; }
-    inline void SetServiceUpdateName(const Aws::String& value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName = value; }
-    inline void SetServiceUpdateName(Aws::String&& value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName = std::move(value); }
-    inline void SetServiceUpdateName(const char* value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName.assign(value); }
-    inline ProcessedUpdateAction& WithServiceUpdateName(const Aws::String& value) { SetServiceUpdateName(value); return *this;}
-    inline ProcessedUpdateAction& WithServiceUpdateName(Aws::String&& value) { SetServiceUpdateName(std::move(value)); return *this;}
-    inline ProcessedUpdateAction& WithServiceUpdateName(const char* value) { SetServiceUpdateName(value); return *this;}
+    template<typename ServiceUpdateNameT = Aws::String>
+    void SetServiceUpdateName(ServiceUpdateNameT&& value) { m_serviceUpdateNameHasBeenSet = true; m_serviceUpdateName = std::forward<ServiceUpdateNameT>(value); }
+    template<typename ServiceUpdateNameT = Aws::String>
+    ProcessedUpdateAction& WithServiceUpdateName(ServiceUpdateNameT&& value) { SetServiceUpdateName(std::forward<ServiceUpdateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the update action on the Valkey or Redis OSS cluster</p>
      */
-    inline const UpdateActionStatus& GetUpdateActionStatus() const{ return m_updateActionStatus; }
+    inline UpdateActionStatus GetUpdateActionStatus() const { return m_updateActionStatus; }
     inline bool UpdateActionStatusHasBeenSet() const { return m_updateActionStatusHasBeenSet; }
-    inline void SetUpdateActionStatus(const UpdateActionStatus& value) { m_updateActionStatusHasBeenSet = true; m_updateActionStatus = value; }
-    inline void SetUpdateActionStatus(UpdateActionStatus&& value) { m_updateActionStatusHasBeenSet = true; m_updateActionStatus = std::move(value); }
-    inline ProcessedUpdateAction& WithUpdateActionStatus(const UpdateActionStatus& value) { SetUpdateActionStatus(value); return *this;}
-    inline ProcessedUpdateAction& WithUpdateActionStatus(UpdateActionStatus&& value) { SetUpdateActionStatus(std::move(value)); return *this;}
+    inline void SetUpdateActionStatus(UpdateActionStatus value) { m_updateActionStatusHasBeenSet = true; m_updateActionStatus = value; }
+    inline ProcessedUpdateAction& WithUpdateActionStatus(UpdateActionStatus value) { SetUpdateActionStatus(value); return *this;}
     ///@}
   private:
 
@@ -105,7 +97,7 @@ namespace Model
     Aws::String m_serviceUpdateName;
     bool m_serviceUpdateNameHasBeenSet = false;
 
-    UpdateActionStatus m_updateActionStatus;
+    UpdateActionStatus m_updateActionStatus{UpdateActionStatus::NOT_SET};
     bool m_updateActionStatusHasBeenSet = false;
   };
 

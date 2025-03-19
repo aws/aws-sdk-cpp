@@ -29,7 +29,7 @@ namespace Model
   class SpotFleetMonitoring
   {
   public:
-    AWS_EC2_API SpotFleetMonitoring();
+    AWS_EC2_API SpotFleetMonitoring() = default;
     AWS_EC2_API SpotFleetMonitoring(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SpotFleetMonitoring& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SpotFleetMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

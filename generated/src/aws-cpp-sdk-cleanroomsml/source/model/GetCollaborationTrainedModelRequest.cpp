@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCollaborationTrainedModelRequest::GetCollaborationTrainedModelRequest() : 
-    m_trainedModelArnHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCollaborationTrainedModelRequest::SerializePayload() const
 {
   return {};

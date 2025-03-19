@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservationResult::DescribeReservationResult()
-{
-}
-
 DescribeReservationResult::DescribeReservationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeReservationResult& DescribeReservationResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("reservation"))
   {
     m_reservation = jsonValue.GetObject("reservation");
-
+    m_reservationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

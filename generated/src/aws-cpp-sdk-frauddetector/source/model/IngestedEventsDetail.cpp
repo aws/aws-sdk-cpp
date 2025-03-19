@@ -18,13 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-IngestedEventsDetail::IngestedEventsDetail() : 
-    m_ingestedEventsTimeWindowHasBeenSet(false)
-{
-}
-
 IngestedEventsDetail::IngestedEventsDetail(JsonView jsonValue)
-  : IngestedEventsDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IngestedEventsDetail& IngestedEventsDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ingestedEventsTimeWindow"))
   {
     m_ingestedEventsTimeWindow = jsonValue.GetObject("ingestedEventsTimeWindow");
-
     m_ingestedEventsTimeWindowHasBeenSet = true;
   }
-
   return *this;
 }
 

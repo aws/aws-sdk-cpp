@@ -31,7 +31,7 @@ namespace Model
   class S3SourceConfiguration
   {
   public:
-    AWS_IOTTWINMAKER_API S3SourceConfiguration();
+    AWS_IOTTWINMAKER_API S3SourceConfiguration() = default;
     AWS_IOTTWINMAKER_API S3SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API S3SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The S3 destination source configuration location.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline S3SourceConfiguration& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline S3SourceConfiguration& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline S3SourceConfiguration& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    S3SourceConfiguration& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

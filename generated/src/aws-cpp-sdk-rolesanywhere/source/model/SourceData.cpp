@@ -18,14 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-SourceData::SourceData() : 
-    m_acmPcaArnHasBeenSet(false),
-    m_x509CertificateDataHasBeenSet(false)
-{
-}
-
 SourceData::SourceData(JsonView jsonValue)
-  : SourceData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SourceData& SourceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("acmPcaArn"))
   {
     m_acmPcaArn = jsonValue.GetString("acmPcaArn");
-
     m_acmPcaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("x509CertificateData"))
   {
     m_x509CertificateData = jsonValue.GetString("x509CertificateData");
-
     m_x509CertificateDataHasBeenSet = true;
   }
-
   return *this;
 }
 

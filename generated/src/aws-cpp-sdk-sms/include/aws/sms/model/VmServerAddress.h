@@ -31,7 +31,7 @@ namespace Model
   class VmServerAddress
   {
   public:
-    AWS_SMS_API VmServerAddress();
+    AWS_SMS_API VmServerAddress() = default;
     AWS_SMS_API VmServerAddress(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API VmServerAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID of the VM manager.</p>
      */
-    inline const Aws::String& GetVmManagerId() const{ return m_vmManagerId; }
+    inline const Aws::String& GetVmManagerId() const { return m_vmManagerId; }
     inline bool VmManagerIdHasBeenSet() const { return m_vmManagerIdHasBeenSet; }
-    inline void SetVmManagerId(const Aws::String& value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId = value; }
-    inline void SetVmManagerId(Aws::String&& value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId = std::move(value); }
-    inline void SetVmManagerId(const char* value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId.assign(value); }
-    inline VmServerAddress& WithVmManagerId(const Aws::String& value) { SetVmManagerId(value); return *this;}
-    inline VmServerAddress& WithVmManagerId(Aws::String&& value) { SetVmManagerId(std::move(value)); return *this;}
-    inline VmServerAddress& WithVmManagerId(const char* value) { SetVmManagerId(value); return *this;}
+    template<typename VmManagerIdT = Aws::String>
+    void SetVmManagerId(VmManagerIdT&& value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId = std::forward<VmManagerIdT>(value); }
+    template<typename VmManagerIdT = Aws::String>
+    VmServerAddress& WithVmManagerId(VmManagerIdT&& value) { SetVmManagerId(std::forward<VmManagerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VM.</p>
      */
-    inline const Aws::String& GetVmId() const{ return m_vmId; }
+    inline const Aws::String& GetVmId() const { return m_vmId; }
     inline bool VmIdHasBeenSet() const { return m_vmIdHasBeenSet; }
-    inline void SetVmId(const Aws::String& value) { m_vmIdHasBeenSet = true; m_vmId = value; }
-    inline void SetVmId(Aws::String&& value) { m_vmIdHasBeenSet = true; m_vmId = std::move(value); }
-    inline void SetVmId(const char* value) { m_vmIdHasBeenSet = true; m_vmId.assign(value); }
-    inline VmServerAddress& WithVmId(const Aws::String& value) { SetVmId(value); return *this;}
-    inline VmServerAddress& WithVmId(Aws::String&& value) { SetVmId(std::move(value)); return *this;}
-    inline VmServerAddress& WithVmId(const char* value) { SetVmId(value); return *this;}
+    template<typename VmIdT = Aws::String>
+    void SetVmId(VmIdT&& value) { m_vmIdHasBeenSet = true; m_vmId = std::forward<VmIdT>(value); }
+    template<typename VmIdT = Aws::String>
+    VmServerAddress& WithVmId(VmIdT&& value) { SetVmId(std::forward<VmIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-LoggingConfig::LoggingConfig() : 
-    m_logFormat(LogFormat::NOT_SET),
-    m_logFormatHasBeenSet(false),
-    m_applicationLogLevel(ApplicationLogLevel::NOT_SET),
-    m_applicationLogLevelHasBeenSet(false),
-    m_systemLogLevel(SystemLogLevel::NOT_SET),
-    m_systemLogLevelHasBeenSet(false),
-    m_logGroupHasBeenSet(false)
-{
-}
-
 LoggingConfig::LoggingConfig(JsonView jsonValue)
-  : LoggingConfig()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ LoggingConfig& LoggingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogFormat"))
   {
     m_logFormat = LogFormatMapper::GetLogFormatForName(jsonValue.GetString("LogFormat"));
-
     m_logFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationLogLevel"))
   {
     m_applicationLogLevel = ApplicationLogLevelMapper::GetApplicationLogLevelForName(jsonValue.GetString("ApplicationLogLevel"));
-
     m_applicationLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SystemLogLevel"))
   {
     m_systemLogLevel = SystemLogLevelMapper::GetSystemLogLevelForName(jsonValue.GetString("SystemLogLevel"));
-
     m_systemLogLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroup"))
   {
     m_logGroup = jsonValue.GetString("LogGroup");
-
     m_logGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

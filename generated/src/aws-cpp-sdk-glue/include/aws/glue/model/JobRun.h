@@ -40,7 +40,7 @@ namespace Model
   class JobRun
   {
   public:
-    AWS_GLUE_API JobRun();
+    AWS_GLUE_API JobRun() = default;
     AWS_GLUE_API JobRun(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API JobRun& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,21 +50,19 @@ namespace Model
     /**
      * <p>The ID of this job run.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline JobRun& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline JobRun& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline JobRun& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    JobRun& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of the attempt to run this job.</p>
      */
-    inline int GetAttempt() const{ return m_attempt; }
+    inline int GetAttempt() const { return m_attempt; }
     inline bool AttemptHasBeenSet() const { return m_attemptHasBeenSet; }
     inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
     inline JobRun& WithAttempt(int value) { SetAttempt(value); return *this;}
@@ -75,42 +73,36 @@ namespace Model
      * <p>The ID of the previous run of this job. For example, the
      * <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
      */
-    inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
+    inline const Aws::String& GetPreviousRunId() const { return m_previousRunId; }
     inline bool PreviousRunIdHasBeenSet() const { return m_previousRunIdHasBeenSet; }
-    inline void SetPreviousRunId(const Aws::String& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = value; }
-    inline void SetPreviousRunId(Aws::String&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::move(value); }
-    inline void SetPreviousRunId(const char* value) { m_previousRunIdHasBeenSet = true; m_previousRunId.assign(value); }
-    inline JobRun& WithPreviousRunId(const Aws::String& value) { SetPreviousRunId(value); return *this;}
-    inline JobRun& WithPreviousRunId(Aws::String&& value) { SetPreviousRunId(std::move(value)); return *this;}
-    inline JobRun& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
+    template<typename PreviousRunIdT = Aws::String>
+    void SetPreviousRunId(PreviousRunIdT&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::forward<PreviousRunIdT>(value); }
+    template<typename PreviousRunIdT = Aws::String>
+    JobRun& WithPreviousRunId(PreviousRunIdT&& value) { SetPreviousRunId(std::forward<PreviousRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the trigger that started this job run.</p>
      */
-    inline const Aws::String& GetTriggerName() const{ return m_triggerName; }
+    inline const Aws::String& GetTriggerName() const { return m_triggerName; }
     inline bool TriggerNameHasBeenSet() const { return m_triggerNameHasBeenSet; }
-    inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
-    inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::move(value); }
-    inline void SetTriggerName(const char* value) { m_triggerNameHasBeenSet = true; m_triggerName.assign(value); }
-    inline JobRun& WithTriggerName(const Aws::String& value) { SetTriggerName(value); return *this;}
-    inline JobRun& WithTriggerName(Aws::String&& value) { SetTriggerName(std::move(value)); return *this;}
-    inline JobRun& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
+    template<typename TriggerNameT = Aws::String>
+    void SetTriggerName(TriggerNameT&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::forward<TriggerNameT>(value); }
+    template<typename TriggerNameT = Aws::String>
+    JobRun& WithTriggerName(TriggerNameT&& value) { SetTriggerName(std::forward<TriggerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the job definition being used in this run.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline JobRun& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline JobRun& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline JobRun& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    JobRun& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,10 @@ namespace Model
      * <code>JobMode</code> field is missing or null, <code>SCRIPT</code> is assigned
      * as the default value.</p>
      */
-    inline const JobMode& GetJobMode() const{ return m_jobMode; }
+    inline JobMode GetJobMode() const { return m_jobMode; }
     inline bool JobModeHasBeenSet() const { return m_jobModeHasBeenSet; }
-    inline void SetJobMode(const JobMode& value) { m_jobModeHasBeenSet = true; m_jobMode = value; }
-    inline void SetJobMode(JobMode&& value) { m_jobModeHasBeenSet = true; m_jobMode = std::move(value); }
-    inline JobRun& WithJobMode(const JobMode& value) { SetJobMode(value); return *this;}
-    inline JobRun& WithJobMode(JobMode&& value) { SetJobMode(std::move(value)); return *this;}
+    inline void SetJobMode(JobMode value) { m_jobModeHasBeenSet = true; m_jobMode = value; }
+    inline JobRun& WithJobMode(JobMode value) { SetJobMode(value); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +127,7 @@ namespace Model
      * of true means job run queuing is enabled for the job run. If false or not
      * populated, the job run will not be considered for queueing.</p>
      */
-    inline bool GetJobRunQueuingEnabled() const{ return m_jobRunQueuingEnabled; }
+    inline bool GetJobRunQueuingEnabled() const { return m_jobRunQueuingEnabled; }
     inline bool JobRunQueuingEnabledHasBeenSet() const { return m_jobRunQueuingEnabledHasBeenSet; }
     inline void SetJobRunQueuingEnabled(bool value) { m_jobRunQueuingEnabledHasBeenSet = true; m_jobRunQueuingEnabled = value; }
     inline JobRun& WithJobRunQueuingEnabled(bool value) { SetJobRunQueuingEnabled(value); return *this;}
@@ -147,36 +137,36 @@ namespace Model
     /**
      * <p>The date and time at which this job run was started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
+    inline const Aws::Utils::DateTime& GetStartedOn() const { return m_startedOn; }
     inline bool StartedOnHasBeenSet() const { return m_startedOnHasBeenSet; }
-    inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOnHasBeenSet = true; m_startedOn = value; }
-    inline void SetStartedOn(Aws::Utils::DateTime&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::move(value); }
-    inline JobRun& WithStartedOn(const Aws::Utils::DateTime& value) { SetStartedOn(value); return *this;}
-    inline JobRun& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    void SetStartedOn(StartedOnT&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::forward<StartedOnT>(value); }
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    JobRun& WithStartedOn(StartedOnT&& value) { SetStartedOn(std::forward<StartedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that this job run was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
-    inline JobRun& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline JobRun& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    JobRun& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that this job run completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
+    inline const Aws::Utils::DateTime& GetCompletedOn() const { return m_completedOn; }
     inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
-    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
-    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
-    inline JobRun& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
-    inline JobRun& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+    template<typename CompletedOnT = Aws::Utils::DateTime>
+    void SetCompletedOn(CompletedOnT&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::forward<CompletedOnT>(value); }
+    template<typename CompletedOnT = Aws::Utils::DateTime>
+    JobRun& WithCompletedOn(CompletedOnT&& value) { SetCompletedOn(std::forward<CompletedOnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,12 +176,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
      * Run Statuses</a>.</p>
      */
-    inline const JobRunState& GetJobRunState() const{ return m_jobRunState; }
+    inline JobRunState GetJobRunState() const { return m_jobRunState; }
     inline bool JobRunStateHasBeenSet() const { return m_jobRunStateHasBeenSet; }
-    inline void SetJobRunState(const JobRunState& value) { m_jobRunStateHasBeenSet = true; m_jobRunState = value; }
-    inline void SetJobRunState(JobRunState&& value) { m_jobRunStateHasBeenSet = true; m_jobRunState = std::move(value); }
-    inline JobRun& WithJobRunState(const JobRunState& value) { SetJobRunState(value); return *this;}
-    inline JobRun& WithJobRunState(JobRunState&& value) { SetJobRunState(std::move(value)); return *this;}
+    inline void SetJobRunState(JobRunState value) { m_jobRunStateHasBeenSet = true; m_jobRunState = value; }
+    inline JobRun& WithJobRunState(JobRunState value) { SetJobRunState(value); return *this;}
     ///@}
 
     ///@{
@@ -215,54 +203,49 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
      * job parameters in Ray jobs</a> in the developer guide.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const { return m_arguments; }
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
-    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
-    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
-    inline JobRun& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
-    inline JobRun& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
-    inline JobRun& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
-    inline JobRun& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline JobRun& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline JobRun& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
-    inline JobRun& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline JobRun& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline JobRun& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetArguments(ArgumentsT&& value) { m_argumentsHasBeenSet = true; m_arguments = std::forward<ArgumentsT>(value); }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    JobRun& WithArguments(ArgumentsT&& value) { SetArguments(std::forward<ArgumentsT>(value)); return *this;}
+    template<typename ArgumentsKeyT = Aws::String, typename ArgumentsValueT = Aws::String>
+    JobRun& AddArguments(ArgumentsKeyT&& key, ArgumentsValueT&& value) {
+      m_argumentsHasBeenSet = true; m_arguments.emplace(std::forward<ArgumentsKeyT>(key), std::forward<ArgumentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>An error message associated with this job run.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline JobRun& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline JobRun& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline JobRun& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    JobRun& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of predecessors to this job run.</p>
      */
-    inline const Aws::Vector<Predecessor>& GetPredecessorRuns() const{ return m_predecessorRuns; }
+    inline const Aws::Vector<Predecessor>& GetPredecessorRuns() const { return m_predecessorRuns; }
     inline bool PredecessorRunsHasBeenSet() const { return m_predecessorRunsHasBeenSet; }
-    inline void SetPredecessorRuns(const Aws::Vector<Predecessor>& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns = value; }
-    inline void SetPredecessorRuns(Aws::Vector<Predecessor>&& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns = std::move(value); }
-    inline JobRun& WithPredecessorRuns(const Aws::Vector<Predecessor>& value) { SetPredecessorRuns(value); return *this;}
-    inline JobRun& WithPredecessorRuns(Aws::Vector<Predecessor>&& value) { SetPredecessorRuns(std::move(value)); return *this;}
-    inline JobRun& AddPredecessorRuns(const Predecessor& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns.push_back(value); return *this; }
-    inline JobRun& AddPredecessorRuns(Predecessor&& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns.push_back(std::move(value)); return *this; }
+    template<typename PredecessorRunsT = Aws::Vector<Predecessor>>
+    void SetPredecessorRuns(PredecessorRunsT&& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns = std::forward<PredecessorRunsT>(value); }
+    template<typename PredecessorRunsT = Aws::Vector<Predecessor>>
+    JobRun& WithPredecessorRuns(PredecessorRunsT&& value) { SetPredecessorRuns(std::forward<PredecessorRunsT>(value)); return *this;}
+    template<typename PredecessorRunsT = Predecessor>
+    JobRun& AddPredecessorRuns(PredecessorRunsT&& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns.emplace_back(std::forward<PredecessorRunsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The amount of time (in seconds) that the job run consumed resources.</p>
      */
-    inline int GetExecutionTime() const{ return m_executionTime; }
+    inline int GetExecutionTime() const { return m_executionTime; }
     inline bool ExecutionTimeHasBeenSet() const { return m_executionTimeHasBeenSet; }
     inline void SetExecutionTime(int value) { m_executionTimeHasBeenSet = true; m_executionTime = value; }
     inline JobRun& WithExecutionTime(int value) { SetExecutionTime(value); return *this;}
@@ -282,7 +265,7 @@ namespace Model
      * maintenance window, it will be restarted during the maintenance window after 7
      * days.</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline JobRun& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -309,7 +292,7 @@ namespace Model
      * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline JobRun& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
@@ -349,12 +332,10 @@ namespace Model
      * type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk,
      * and provides up to 8 Ray workers based on the autoscaler.</p> </li> </ul>
      */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
+    inline WorkerType GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-    inline JobRun& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-    inline JobRun& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+    inline void SetWorkerType(WorkerType value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline JobRun& WithWorkerType(WorkerType value) { SetWorkerType(value); return *this;}
     ///@}
 
     ///@{
@@ -362,7 +343,7 @@ namespace Model
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
      * when a job runs.</p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline JobRun& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
@@ -373,14 +354,12 @@ namespace Model
      * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
      * this job run.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
-    inline JobRun& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline JobRun& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline JobRun& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    JobRun& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -393,26 +372,24 @@ namespace Model
      * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
      * that security configuration is used to encrypt the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline JobRun& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline JobRun& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline JobRun& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    JobRun& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies configuration properties of a job run notification.</p>
      */
-    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+    inline const NotificationProperty& GetNotificationProperty() const { return m_notificationProperty; }
     inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
-    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
-    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
-    inline JobRun& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
-    inline JobRun& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+    template<typename NotificationPropertyT = NotificationProperty>
+    void SetNotificationProperty(NotificationPropertyT&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::forward<NotificationPropertyT>(value); }
+    template<typename NotificationPropertyT = NotificationProperty>
+    JobRun& WithNotificationProperty(NotificationPropertyT&& value) { SetNotificationProperty(std::forward<NotificationPropertyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -429,14 +406,12 @@ namespace Model
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
-    inline JobRun& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline JobRun& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline JobRun& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    JobRun& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -452,7 +427,7 @@ namespace Model
      * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
      * <code>MaxCapacity</code>.</p>
      */
-    inline double GetDPUSeconds() const{ return m_dPUSeconds; }
+    inline double GetDPUSeconds() const { return m_dPUSeconds; }
     inline bool DPUSecondsHasBeenSet() const { return m_dPUSecondsHasBeenSet; }
     inline void SetDPUSeconds(double value) { m_dPUSecondsHasBeenSet = true; m_dPUSeconds = value; }
     inline JobRun& WithDPUSeconds(double value) { SetDPUSeconds(value); return *this;}
@@ -468,12 +443,10 @@ namespace Model
      * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
      * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
      */
-    inline const ExecutionClass& GetExecutionClass() const{ return m_executionClass; }
+    inline ExecutionClass GetExecutionClass() const { return m_executionClass; }
     inline bool ExecutionClassHasBeenSet() const { return m_executionClassHasBeenSet; }
-    inline void SetExecutionClass(const ExecutionClass& value) { m_executionClassHasBeenSet = true; m_executionClass = value; }
-    inline void SetExecutionClass(ExecutionClass&& value) { m_executionClassHasBeenSet = true; m_executionClass = std::move(value); }
-    inline JobRun& WithExecutionClass(const ExecutionClass& value) { SetExecutionClass(value); return *this;}
-    inline JobRun& WithExecutionClass(ExecutionClass&& value) { SetExecutionClass(std::move(value)); return *this;}
+    inline void SetExecutionClass(ExecutionClass value) { m_executionClassHasBeenSet = true; m_executionClass = value; }
+    inline JobRun& WithExecutionClass(ExecutionClass value) { SetExecutionClass(value); return *this;}
     ///@}
 
     ///@{
@@ -485,28 +458,24 @@ namespace Model
      * instance, if you set up the maintenance window for Monday at 10:00AM GMT, your
      * jobs will be restarted between 10:00AM GMT to 1:00PM GMT.</p>
      */
-    inline const Aws::String& GetMaintenanceWindow() const{ return m_maintenanceWindow; }
+    inline const Aws::String& GetMaintenanceWindow() const { return m_maintenanceWindow; }
     inline bool MaintenanceWindowHasBeenSet() const { return m_maintenanceWindowHasBeenSet; }
-    inline void SetMaintenanceWindow(const Aws::String& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = value; }
-    inline void SetMaintenanceWindow(Aws::String&& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = std::move(value); }
-    inline void SetMaintenanceWindow(const char* value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow.assign(value); }
-    inline JobRun& WithMaintenanceWindow(const Aws::String& value) { SetMaintenanceWindow(value); return *this;}
-    inline JobRun& WithMaintenanceWindow(Aws::String&& value) { SetMaintenanceWindow(std::move(value)); return *this;}
-    inline JobRun& WithMaintenanceWindow(const char* value) { SetMaintenanceWindow(value); return *this;}
+    template<typename MaintenanceWindowT = Aws::String>
+    void SetMaintenanceWindow(MaintenanceWindowT&& value) { m_maintenanceWindowHasBeenSet = true; m_maintenanceWindow = std::forward<MaintenanceWindowT>(value); }
+    template<typename MaintenanceWindowT = Aws::String>
+    JobRun& WithMaintenanceWindow(MaintenanceWindowT&& value) { SetMaintenanceWindow(std::forward<MaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of an Glue usage profile associated with the job run.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline JobRun& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline JobRun& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline JobRun& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    JobRun& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -516,21 +485,19 @@ namespace Model
      * of job run queuing, the field has the reason why the job run is in that
      * state.</p>
      */
-    inline const Aws::String& GetStateDetail() const{ return m_stateDetail; }
+    inline const Aws::String& GetStateDetail() const { return m_stateDetail; }
     inline bool StateDetailHasBeenSet() const { return m_stateDetailHasBeenSet; }
-    inline void SetStateDetail(const Aws::String& value) { m_stateDetailHasBeenSet = true; m_stateDetail = value; }
-    inline void SetStateDetail(Aws::String&& value) { m_stateDetailHasBeenSet = true; m_stateDetail = std::move(value); }
-    inline void SetStateDetail(const char* value) { m_stateDetailHasBeenSet = true; m_stateDetail.assign(value); }
-    inline JobRun& WithStateDetail(const Aws::String& value) { SetStateDetail(value); return *this;}
-    inline JobRun& WithStateDetail(Aws::String&& value) { SetStateDetail(std::move(value)); return *this;}
-    inline JobRun& WithStateDetail(const char* value) { SetStateDetail(value); return *this;}
+    template<typename StateDetailT = Aws::String>
+    void SetStateDetail(StateDetailT&& value) { m_stateDetailHasBeenSet = true; m_stateDetail = std::forward<StateDetailT>(value); }
+    template<typename StateDetailT = Aws::String>
+    JobRun& WithStateDetail(StateDetailT&& value) { SetStateDetail(std::forward<StateDetailT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_attempt;
+    int m_attempt{0};
     bool m_attemptHasBeenSet = false;
 
     Aws::String m_previousRunId;
@@ -542,22 +509,22 @@ namespace Model
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    JobMode m_jobMode;
+    JobMode m_jobMode{JobMode::NOT_SET};
     bool m_jobModeHasBeenSet = false;
 
-    bool m_jobRunQueuingEnabled;
+    bool m_jobRunQueuingEnabled{false};
     bool m_jobRunQueuingEnabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedOn;
+    Aws::Utils::DateTime m_startedOn{};
     bool m_startedOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
     bool m_lastModifiedOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedOn;
+    Aws::Utils::DateTime m_completedOn{};
     bool m_completedOnHasBeenSet = false;
 
-    JobRunState m_jobRunState;
+    JobRunState m_jobRunState{JobRunState::NOT_SET};
     bool m_jobRunStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
@@ -569,19 +536,19 @@ namespace Model
     Aws::Vector<Predecessor> m_predecessorRuns;
     bool m_predecessorRunsHasBeenSet = false;
 
-    int m_executionTime;
+    int m_executionTime{0};
     bool m_executionTimeHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
 
-    WorkerType m_workerType;
+    WorkerType m_workerType{WorkerType::NOT_SET};
     bool m_workerTypeHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
     bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
@@ -596,10 +563,10 @@ namespace Model
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
 
-    double m_dPUSeconds;
+    double m_dPUSeconds{0.0};
     bool m_dPUSecondsHasBeenSet = false;
 
-    ExecutionClass m_executionClass;
+    ExecutionClass m_executionClass{ExecutionClass::NOT_SET};
     bool m_executionClassHasBeenSet = false;
 
     Aws::String m_maintenanceWindow;

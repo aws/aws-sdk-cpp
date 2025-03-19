@@ -12,12 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAnalyzerRequest::UpdateAnalyzerRequest() : 
-    m_analyzerNameHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAnalyzerRequest::SerializePayload() const
 {
   JsonValue payload;

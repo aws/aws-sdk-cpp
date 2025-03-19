@@ -32,7 +32,7 @@ namespace Model
   class TargetRedshiftCatalog
   {
   public:
-    AWS_GLUE_API TargetRedshiftCatalog();
+    AWS_GLUE_API TargetRedshiftCatalog() = default;
     AWS_GLUE_API TargetRedshiftCatalog(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TargetRedshiftCatalog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the catalog resource.</p>
      */
-    inline const Aws::String& GetCatalogArn() const{ return m_catalogArn; }
+    inline const Aws::String& GetCatalogArn() const { return m_catalogArn; }
     inline bool CatalogArnHasBeenSet() const { return m_catalogArnHasBeenSet; }
-    inline void SetCatalogArn(const Aws::String& value) { m_catalogArnHasBeenSet = true; m_catalogArn = value; }
-    inline void SetCatalogArn(Aws::String&& value) { m_catalogArnHasBeenSet = true; m_catalogArn = std::move(value); }
-    inline void SetCatalogArn(const char* value) { m_catalogArnHasBeenSet = true; m_catalogArn.assign(value); }
-    inline TargetRedshiftCatalog& WithCatalogArn(const Aws::String& value) { SetCatalogArn(value); return *this;}
-    inline TargetRedshiftCatalog& WithCatalogArn(Aws::String&& value) { SetCatalogArn(std::move(value)); return *this;}
-    inline TargetRedshiftCatalog& WithCatalogArn(const char* value) { SetCatalogArn(value); return *this;}
+    template<typename CatalogArnT = Aws::String>
+    void SetCatalogArn(CatalogArnT&& value) { m_catalogArnHasBeenSet = true; m_catalogArn = std::forward<CatalogArnT>(value); }
+    template<typename CatalogArnT = Aws::String>
+    TargetRedshiftCatalog& WithCatalogArn(CatalogArnT&& value) { SetCatalogArn(std::forward<CatalogArnT>(value)); return *this;}
     ///@}
   private:
 

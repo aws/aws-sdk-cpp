@@ -12,11 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTerminologyRequest::DeleteTerminologyRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTerminologyRequest::SerializePayload() const
 {
   JsonValue payload;

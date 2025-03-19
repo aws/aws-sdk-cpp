@@ -18,17 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-Extensions::Extensions() : 
-    m_certificatePoliciesHasBeenSet(false),
-    m_extendedKeyUsageHasBeenSet(false),
-    m_keyUsageHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_customExtensionsHasBeenSet(false)
-{
-}
-
 Extensions::Extensions(JsonView jsonValue)
-  : Extensions()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ Extensions& Extensions::operator =(JsonView jsonValue)
     }
     m_certificatePoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtendedKeyUsage"))
   {
     Aws::Utils::Array<JsonView> extendedKeyUsageJsonList = jsonValue.GetArray("ExtendedKeyUsage");
@@ -54,14 +43,11 @@ Extensions& Extensions::operator =(JsonView jsonValue)
     }
     m_extendedKeyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyUsage"))
   {
     m_keyUsage = jsonValue.GetObject("KeyUsage");
-
     m_keyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubjectAlternativeNames"))
   {
     Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
@@ -71,7 +57,6 @@ Extensions& Extensions::operator =(JsonView jsonValue)
     }
     m_subjectAlternativeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomExtensions"))
   {
     Aws::Utils::Array<JsonView> customExtensionsJsonList = jsonValue.GetArray("CustomExtensions");
@@ -81,7 +66,6 @@ Extensions& Extensions::operator =(JsonView jsonValue)
     }
     m_customExtensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

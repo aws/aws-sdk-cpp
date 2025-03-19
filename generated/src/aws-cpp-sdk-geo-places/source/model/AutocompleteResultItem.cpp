@@ -18,22 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AutocompleteResultItem::AutocompleteResultItem() : 
-    m_placeIdHasBeenSet(false),
-    m_placeType(PlaceType::NOT_SET),
-    m_placeTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_highlightsHasBeenSet(false)
-{
-}
-
 AutocompleteResultItem::AutocompleteResultItem(JsonView jsonValue)
-  : AutocompleteResultItem()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AutocompleteResultItem& AutocompleteResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlaceId"))
   {
     m_placeId = jsonValue.GetString("PlaceId");
-
     m_placeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceType"))
   {
     m_placeType = PlaceTypeMapper::GetPlaceTypeForName(jsonValue.GetString("PlaceType"));
-
     m_placeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoliticalView"))
   {
     m_politicalView = jsonValue.GetString("PoliticalView");
-
     m_politicalViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Highlights"))
   {
     m_highlights = jsonValue.GetObject("Highlights");
-
     m_highlightsHasBeenSet = true;
   }
-
   return *this;
 }
 

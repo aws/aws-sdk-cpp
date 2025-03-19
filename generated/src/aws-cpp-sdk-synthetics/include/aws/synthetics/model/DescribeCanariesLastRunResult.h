@@ -29,7 +29,7 @@ namespace Model
   class DescribeCanariesLastRunResult
   {
   public:
-    AWS_SYNTHETICS_API DescribeCanariesLastRunResult();
+    AWS_SYNTHETICS_API DescribeCanariesLastRunResult() = default;
     AWS_SYNTHETICS_API DescribeCanariesLastRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SYNTHETICS_API DescribeCanariesLastRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array that contains the information from the most recent run of each
      * canary.</p>
      */
-    inline const Aws::Vector<CanaryLastRun>& GetCanariesLastRun() const{ return m_canariesLastRun; }
-    inline void SetCanariesLastRun(const Aws::Vector<CanaryLastRun>& value) { m_canariesLastRun = value; }
-    inline void SetCanariesLastRun(Aws::Vector<CanaryLastRun>&& value) { m_canariesLastRun = std::move(value); }
-    inline DescribeCanariesLastRunResult& WithCanariesLastRun(const Aws::Vector<CanaryLastRun>& value) { SetCanariesLastRun(value); return *this;}
-    inline DescribeCanariesLastRunResult& WithCanariesLastRun(Aws::Vector<CanaryLastRun>&& value) { SetCanariesLastRun(std::move(value)); return *this;}
-    inline DescribeCanariesLastRunResult& AddCanariesLastRun(const CanaryLastRun& value) { m_canariesLastRun.push_back(value); return *this; }
-    inline DescribeCanariesLastRunResult& AddCanariesLastRun(CanaryLastRun&& value) { m_canariesLastRun.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CanaryLastRun>& GetCanariesLastRun() const { return m_canariesLastRun; }
+    template<typename CanariesLastRunT = Aws::Vector<CanaryLastRun>>
+    void SetCanariesLastRun(CanariesLastRunT&& value) { m_canariesLastRunHasBeenSet = true; m_canariesLastRun = std::forward<CanariesLastRunT>(value); }
+    template<typename CanariesLastRunT = Aws::Vector<CanaryLastRun>>
+    DescribeCanariesLastRunResult& WithCanariesLastRun(CanariesLastRunT&& value) { SetCanariesLastRun(std::forward<CanariesLastRunT>(value)); return *this;}
+    template<typename CanariesLastRunT = CanaryLastRun>
+    DescribeCanariesLastRunResult& AddCanariesLastRun(CanariesLastRunT&& value) { m_canariesLastRunHasBeenSet = true; m_canariesLastRun.emplace_back(std::forward<CanariesLastRunT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
      * the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeCanariesLastRunResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCanariesLastRunResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCanariesLastRunResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCanariesLastRunResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCanariesLastRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCanariesLastRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCanariesLastRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCanariesLastRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CanaryLastRun> m_canariesLastRun;
+    bool m_canariesLastRunHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

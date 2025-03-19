@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeDomainChangeProgressRequest::DescribeDomainChangeProgressRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_changeIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDomainChangeProgressRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class SheetImageTooltipText
   {
   public:
-    AWS_QUICKSIGHT_API SheetImageTooltipText();
+    AWS_QUICKSIGHT_API SheetImageTooltipText() = default;
     AWS_QUICKSIGHT_API SheetImageTooltipText(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetImageTooltipText& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The plain text format.</p>
      */
-    inline const Aws::String& GetPlainText() const{ return m_plainText; }
+    inline const Aws::String& GetPlainText() const { return m_plainText; }
     inline bool PlainTextHasBeenSet() const { return m_plainTextHasBeenSet; }
-    inline void SetPlainText(const Aws::String& value) { m_plainTextHasBeenSet = true; m_plainText = value; }
-    inline void SetPlainText(Aws::String&& value) { m_plainTextHasBeenSet = true; m_plainText = std::move(value); }
-    inline void SetPlainText(const char* value) { m_plainTextHasBeenSet = true; m_plainText.assign(value); }
-    inline SheetImageTooltipText& WithPlainText(const Aws::String& value) { SetPlainText(value); return *this;}
-    inline SheetImageTooltipText& WithPlainText(Aws::String&& value) { SetPlainText(std::move(value)); return *this;}
-    inline SheetImageTooltipText& WithPlainText(const char* value) { SetPlainText(value); return *this;}
+    template<typename PlainTextT = Aws::String>
+    void SetPlainText(PlainTextT&& value) { m_plainTextHasBeenSet = true; m_plainText = std::forward<PlainTextT>(value); }
+    template<typename PlainTextT = Aws::String>
+    SheetImageTooltipText& WithPlainText(PlainTextT&& value) { SetPlainText(std::forward<PlainTextT>(value)); return *this;}
     ///@}
   private:
 

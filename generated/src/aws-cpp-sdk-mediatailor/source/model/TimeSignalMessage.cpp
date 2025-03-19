@@ -18,13 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-TimeSignalMessage::TimeSignalMessage() : 
-    m_segmentationDescriptorsHasBeenSet(false)
-{
-}
-
 TimeSignalMessage::TimeSignalMessage(JsonView jsonValue)
-  : TimeSignalMessage()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TimeSignalMessage& TimeSignalMessage::operator =(JsonView jsonValue)
     }
     m_segmentationDescriptorsHasBeenSet = true;
   }
-
   return *this;
 }
 

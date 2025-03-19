@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIpAccessSettingsRequest::DeleteIpAccessSettingsRequest() : 
-    m_ipAccessSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIpAccessSettingsRequest::SerializePayload() const
 {
   return {};

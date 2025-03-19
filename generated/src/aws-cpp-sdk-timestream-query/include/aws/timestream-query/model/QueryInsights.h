@@ -59,7 +59,7 @@ namespace Model
   class QueryInsights
   {
   public:
-    AWS_TIMESTREAMQUERY_API QueryInsights();
+    AWS_TIMESTREAMQUERY_API QueryInsights() = default;
     AWS_TIMESTREAMQUERY_API QueryInsights(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API QueryInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -74,16 +74,14 @@ namespace Model
      * feature to 1 query per second (QPS).</p> </li> <li> <p> <code>DISABLED</code> –
      * Disables <code>QueryInsights</code>.</p> </li> </ul>
      */
-    inline const QueryInsightsMode& GetMode() const{ return m_mode; }
+    inline QueryInsightsMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const QueryInsightsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(QueryInsightsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline QueryInsights& WithMode(const QueryInsightsMode& value) { SetMode(value); return *this;}
-    inline QueryInsights& WithMode(QueryInsightsMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(QueryInsightsMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline QueryInsights& WithMode(QueryInsightsMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    QueryInsightsMode m_mode;
+    QueryInsightsMode m_mode{QueryInsightsMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace STS
 namespace Model
 {
 
-FederatedUser::FederatedUser() : 
-    m_federatedUserIdHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 FederatedUser::FederatedUser(const XmlNode& xmlNode)
-  : FederatedUser()
 {
   *this = xmlNode;
 }

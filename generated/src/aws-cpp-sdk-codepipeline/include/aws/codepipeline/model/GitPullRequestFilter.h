@@ -37,7 +37,7 @@ namespace Model
   class GitPullRequestFilter
   {
   public:
-    AWS_CODEPIPELINE_API GitPullRequestFilter();
+    AWS_CODEPIPELINE_API GitPullRequestFilter() = default;
     AWS_CODEPIPELINE_API GitPullRequestFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API GitPullRequestFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,13 @@ namespace Model
      * <p>The field that specifies which pull request events to filter on (OPEN,
      * UPDATED, CLOSED) for the trigger configuration.</p>
      */
-    inline const Aws::Vector<GitPullRequestEventType>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<GitPullRequestEventType>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<GitPullRequestEventType>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<GitPullRequestEventType>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline GitPullRequestFilter& WithEvents(const Aws::Vector<GitPullRequestEventType>& value) { SetEvents(value); return *this;}
-    inline GitPullRequestFilter& WithEvents(Aws::Vector<GitPullRequestEventType>&& value) { SetEvents(std::move(value)); return *this;}
-    inline GitPullRequestFilter& AddEvents(const GitPullRequestEventType& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline GitPullRequestFilter& AddEvents(GitPullRequestEventType&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<GitPullRequestEventType>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<GitPullRequestEventType>>
+    GitPullRequestFilter& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    inline GitPullRequestFilter& AddEvents(GitPullRequestEventType value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -63,12 +62,12 @@ namespace Model
      * <p>The field that specifies to filter on branches for the pull request trigger
      * configuration.</p>
      */
-    inline const GitBranchFilterCriteria& GetBranches() const{ return m_branches; }
+    inline const GitBranchFilterCriteria& GetBranches() const { return m_branches; }
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
-    inline void SetBranches(const GitBranchFilterCriteria& value) { m_branchesHasBeenSet = true; m_branches = value; }
-    inline void SetBranches(GitBranchFilterCriteria&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
-    inline GitPullRequestFilter& WithBranches(const GitBranchFilterCriteria& value) { SetBranches(value); return *this;}
-    inline GitPullRequestFilter& WithBranches(GitBranchFilterCriteria&& value) { SetBranches(std::move(value)); return *this;}
+    template<typename BranchesT = GitBranchFilterCriteria>
+    void SetBranches(BranchesT&& value) { m_branchesHasBeenSet = true; m_branches = std::forward<BranchesT>(value); }
+    template<typename BranchesT = GitBranchFilterCriteria>
+    GitPullRequestFilter& WithBranches(BranchesT&& value) { SetBranches(std::forward<BranchesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +75,12 @@ namespace Model
      * <p>The field that specifies to filter on file paths for the pull request trigger
      * configuration.</p>
      */
-    inline const GitFilePathFilterCriteria& GetFilePaths() const{ return m_filePaths; }
+    inline const GitFilePathFilterCriteria& GetFilePaths() const { return m_filePaths; }
     inline bool FilePathsHasBeenSet() const { return m_filePathsHasBeenSet; }
-    inline void SetFilePaths(const GitFilePathFilterCriteria& value) { m_filePathsHasBeenSet = true; m_filePaths = value; }
-    inline void SetFilePaths(GitFilePathFilterCriteria&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::move(value); }
-    inline GitPullRequestFilter& WithFilePaths(const GitFilePathFilterCriteria& value) { SetFilePaths(value); return *this;}
-    inline GitPullRequestFilter& WithFilePaths(GitFilePathFilterCriteria&& value) { SetFilePaths(std::move(value)); return *this;}
+    template<typename FilePathsT = GitFilePathFilterCriteria>
+    void SetFilePaths(FilePathsT&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::forward<FilePathsT>(value); }
+    template<typename FilePathsT = GitFilePathFilterCriteria>
+    GitPullRequestFilter& WithFilePaths(FilePathsT&& value) { SetFilePaths(std::forward<FilePathsT>(value)); return *this;}
     ///@}
   private:
 

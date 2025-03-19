@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVpcEndpointResult::DeleteVpcEndpointResult()
-{
-}
-
 DeleteVpcEndpointResult::DeleteVpcEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteVpcEndpointResult& DeleteVpcEndpointResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("VpcEndpointSummary"))
   {
     m_vpcEndpointSummary = jsonValue.GetObject("VpcEndpointSummary");
-
+    m_vpcEndpointSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

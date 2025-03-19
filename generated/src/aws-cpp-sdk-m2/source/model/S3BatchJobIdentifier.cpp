@@ -18,15 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-S3BatchJobIdentifier::S3BatchJobIdentifier() : 
-    m_bucketHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
-{
-}
-
 S3BatchJobIdentifier::S3BatchJobIdentifier(JsonView jsonValue)
-  : S3BatchJobIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3BatchJobIdentifier& S3BatchJobIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetObject("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPrefix"))
   {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
-
     m_keyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

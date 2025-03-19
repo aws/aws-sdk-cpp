@@ -31,7 +31,7 @@ namespace Model
   class DataSetRefreshProperties
   {
   public:
-    AWS_QUICKSIGHT_API DataSetRefreshProperties();
+    AWS_QUICKSIGHT_API DataSetRefreshProperties() = default;
     AWS_QUICKSIGHT_API DataSetRefreshProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataSetRefreshProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The refresh configuration for a dataset.</p>
      */
-    inline const RefreshConfiguration& GetRefreshConfiguration() const{ return m_refreshConfiguration; }
+    inline const RefreshConfiguration& GetRefreshConfiguration() const { return m_refreshConfiguration; }
     inline bool RefreshConfigurationHasBeenSet() const { return m_refreshConfigurationHasBeenSet; }
-    inline void SetRefreshConfiguration(const RefreshConfiguration& value) { m_refreshConfigurationHasBeenSet = true; m_refreshConfiguration = value; }
-    inline void SetRefreshConfiguration(RefreshConfiguration&& value) { m_refreshConfigurationHasBeenSet = true; m_refreshConfiguration = std::move(value); }
-    inline DataSetRefreshProperties& WithRefreshConfiguration(const RefreshConfiguration& value) { SetRefreshConfiguration(value); return *this;}
-    inline DataSetRefreshProperties& WithRefreshConfiguration(RefreshConfiguration&& value) { SetRefreshConfiguration(std::move(value)); return *this;}
+    template<typename RefreshConfigurationT = RefreshConfiguration>
+    void SetRefreshConfiguration(RefreshConfigurationT&& value) { m_refreshConfigurationHasBeenSet = true; m_refreshConfiguration = std::forward<RefreshConfigurationT>(value); }
+    template<typename RefreshConfigurationT = RefreshConfiguration>
+    DataSetRefreshProperties& WithRefreshConfiguration(RefreshConfigurationT&& value) { SetRefreshConfiguration(std::forward<RefreshConfigurationT>(value)); return *this;}
     ///@}
   private:
 

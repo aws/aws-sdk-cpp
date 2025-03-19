@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeContextRequest::DescribeContextRequest() : 
-    m_contextNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeContextRequest::SerializePayload() const
 {
   JsonValue payload;

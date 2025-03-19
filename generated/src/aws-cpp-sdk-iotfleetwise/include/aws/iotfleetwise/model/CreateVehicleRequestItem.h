@@ -36,7 +36,7 @@ namespace Model
   class CreateVehicleRequestItem
   {
   public:
-    AWS_IOTFLEETWISE_API CreateVehicleRequestItem();
+    AWS_IOTFLEETWISE_API CreateVehicleRequestItem() = default;
     AWS_IOTFLEETWISE_API CreateVehicleRequestItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API CreateVehicleRequestItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The unique ID of the vehicle to create.</p>
      */
-    inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
+    inline const Aws::String& GetVehicleName() const { return m_vehicleName; }
     inline bool VehicleNameHasBeenSet() const { return m_vehicleNameHasBeenSet; }
-    inline void SetVehicleName(const Aws::String& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = value; }
-    inline void SetVehicleName(Aws::String&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::move(value); }
-    inline void SetVehicleName(const char* value) { m_vehicleNameHasBeenSet = true; m_vehicleName.assign(value); }
-    inline CreateVehicleRequestItem& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-    inline CreateVehicleRequestItem& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-    inline CreateVehicleRequestItem& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
+    template<typename VehicleNameT = Aws::String>
+    void SetVehicleName(VehicleNameT&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::forward<VehicleNameT>(value); }
+    template<typename VehicleNameT = Aws::String>
+    CreateVehicleRequestItem& WithVehicleName(VehicleNameT&& value) { SetVehicleName(std::forward<VehicleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
      */
-    inline const Aws::String& GetModelManifestArn() const{ return m_modelManifestArn; }
+    inline const Aws::String& GetModelManifestArn() const { return m_modelManifestArn; }
     inline bool ModelManifestArnHasBeenSet() const { return m_modelManifestArnHasBeenSet; }
-    inline void SetModelManifestArn(const Aws::String& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = value; }
-    inline void SetModelManifestArn(Aws::String&& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = std::move(value); }
-    inline void SetModelManifestArn(const char* value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn.assign(value); }
-    inline CreateVehicleRequestItem& WithModelManifestArn(const Aws::String& value) { SetModelManifestArn(value); return *this;}
-    inline CreateVehicleRequestItem& WithModelManifestArn(Aws::String&& value) { SetModelManifestArn(std::move(value)); return *this;}
-    inline CreateVehicleRequestItem& WithModelManifestArn(const char* value) { SetModelManifestArn(value); return *this;}
+    template<typename ModelManifestArnT = Aws::String>
+    void SetModelManifestArn(ModelManifestArnT&& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = std::forward<ModelManifestArnT>(value); }
+    template<typename ModelManifestArnT = Aws::String>
+    CreateVehicleRequestItem& WithModelManifestArn(ModelManifestArnT&& value) { SetModelManifestArn(std::forward<ModelManifestArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the
      * vehicle to create. </p>
      */
-    inline const Aws::String& GetDecoderManifestArn() const{ return m_decoderManifestArn; }
+    inline const Aws::String& GetDecoderManifestArn() const { return m_decoderManifestArn; }
     inline bool DecoderManifestArnHasBeenSet() const { return m_decoderManifestArnHasBeenSet; }
-    inline void SetDecoderManifestArn(const Aws::String& value) { m_decoderManifestArnHasBeenSet = true; m_decoderManifestArn = value; }
-    inline void SetDecoderManifestArn(Aws::String&& value) { m_decoderManifestArnHasBeenSet = true; m_decoderManifestArn = std::move(value); }
-    inline void SetDecoderManifestArn(const char* value) { m_decoderManifestArnHasBeenSet = true; m_decoderManifestArn.assign(value); }
-    inline CreateVehicleRequestItem& WithDecoderManifestArn(const Aws::String& value) { SetDecoderManifestArn(value); return *this;}
-    inline CreateVehicleRequestItem& WithDecoderManifestArn(Aws::String&& value) { SetDecoderManifestArn(std::move(value)); return *this;}
-    inline CreateVehicleRequestItem& WithDecoderManifestArn(const char* value) { SetDecoderManifestArn(value); return *this;}
+    template<typename DecoderManifestArnT = Aws::String>
+    void SetDecoderManifestArn(DecoderManifestArnT&& value) { m_decoderManifestArnHasBeenSet = true; m_decoderManifestArn = std::forward<DecoderManifestArnT>(value); }
+    template<typename DecoderManifestArnT = Aws::String>
+    CreateVehicleRequestItem& WithDecoderManifestArn(DecoderManifestArnT&& value) { SetDecoderManifestArn(std::forward<DecoderManifestArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,19 +84,16 @@ namespace Model
      * <p>Static information about a vehicle in a key-value pair. For example:
      * <code>"engine Type"</code> : <code>"v6"</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CreateVehicleRequestItem& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CreateVehicleRequestItem& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreateVehicleRequestItem& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline CreateVehicleRequestItem& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateVehicleRequestItem& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateVehicleRequestItem& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateVehicleRequestItem& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateVehicleRequestItem& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateVehicleRequestItem& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    CreateVehicleRequestItem& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    CreateVehicleRequestItem& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -110,26 +101,24 @@ namespace Model
      * <p>An option to create a new Amazon Web Services IoT thing when creating a
      * vehicle, or to validate an existing thing as a vehicle.</p>
      */
-    inline const VehicleAssociationBehavior& GetAssociationBehavior() const{ return m_associationBehavior; }
+    inline VehicleAssociationBehavior GetAssociationBehavior() const { return m_associationBehavior; }
     inline bool AssociationBehaviorHasBeenSet() const { return m_associationBehaviorHasBeenSet; }
-    inline void SetAssociationBehavior(const VehicleAssociationBehavior& value) { m_associationBehaviorHasBeenSet = true; m_associationBehavior = value; }
-    inline void SetAssociationBehavior(VehicleAssociationBehavior&& value) { m_associationBehaviorHasBeenSet = true; m_associationBehavior = std::move(value); }
-    inline CreateVehicleRequestItem& WithAssociationBehavior(const VehicleAssociationBehavior& value) { SetAssociationBehavior(value); return *this;}
-    inline CreateVehicleRequestItem& WithAssociationBehavior(VehicleAssociationBehavior&& value) { SetAssociationBehavior(std::move(value)); return *this;}
+    inline void SetAssociationBehavior(VehicleAssociationBehavior value) { m_associationBehaviorHasBeenSet = true; m_associationBehavior = value; }
+    inline CreateVehicleRequestItem& WithAssociationBehavior(VehicleAssociationBehavior value) { SetAssociationBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata which can be used to manage the vehicle.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateVehicleRequestItem& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateVehicleRequestItem& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateVehicleRequestItem& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateVehicleRequestItem& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateVehicleRequestItem& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateVehicleRequestItem& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,14 +126,14 @@ namespace Model
      * <p>Associate state templates to track the state of the vehicle. State templates
      * determine which signal updates the vehicle sends to the cloud.</p>
      */
-    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplates() const{ return m_stateTemplates; }
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplates() const { return m_stateTemplates; }
     inline bool StateTemplatesHasBeenSet() const { return m_stateTemplatesHasBeenSet; }
-    inline void SetStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = value; }
-    inline void SetStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = std::move(value); }
-    inline CreateVehicleRequestItem& WithStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { SetStateTemplates(value); return *this;}
-    inline CreateVehicleRequestItem& WithStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { SetStateTemplates(std::move(value)); return *this;}
-    inline CreateVehicleRequestItem& AddStateTemplates(const StateTemplateAssociation& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.push_back(value); return *this; }
-    inline CreateVehicleRequestItem& AddStateTemplates(StateTemplateAssociation&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.push_back(std::move(value)); return *this; }
+    template<typename StateTemplatesT = Aws::Vector<StateTemplateAssociation>>
+    void SetStateTemplates(StateTemplatesT&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = std::forward<StateTemplatesT>(value); }
+    template<typename StateTemplatesT = Aws::Vector<StateTemplateAssociation>>
+    CreateVehicleRequestItem& WithStateTemplates(StateTemplatesT&& value) { SetStateTemplates(std::forward<StateTemplatesT>(value)); return *this;}
+    template<typename StateTemplatesT = StateTemplateAssociation>
+    CreateVehicleRequestItem& AddStateTemplates(StateTemplatesT&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.emplace_back(std::forward<StateTemplatesT>(value)); return *this; }
     ///@}
   private:
 
@@ -160,7 +149,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet = false;
 
-    VehicleAssociationBehavior m_associationBehavior;
+    VehicleAssociationBehavior m_associationBehavior{VehicleAssociationBehavior::NOT_SET};
     bool m_associationBehaviorHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

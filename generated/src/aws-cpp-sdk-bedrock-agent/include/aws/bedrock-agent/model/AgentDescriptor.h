@@ -31,7 +31,7 @@ namespace Model
   class AgentDescriptor
   {
   public:
-    AWS_BEDROCKAGENT_API AgentDescriptor();
+    AWS_BEDROCKAGENT_API AgentDescriptor() = default;
     AWS_BEDROCKAGENT_API AgentDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API AgentDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The agent's alias ARN.</p>
      */
-    inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
+    inline const Aws::String& GetAliasArn() const { return m_aliasArn; }
     inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
-    inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
-    inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
-    inline void SetAliasArn(const char* value) { m_aliasArnHasBeenSet = true; m_aliasArn.assign(value); }
-    inline AgentDescriptor& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
-    inline AgentDescriptor& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
-    inline AgentDescriptor& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
+    template<typename AliasArnT = Aws::String>
+    void SetAliasArn(AliasArnT&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::forward<AliasArnT>(value); }
+    template<typename AliasArnT = Aws::String>
+    AgentDescriptor& WithAliasArn(AliasArnT&& value) { SetAliasArn(std::forward<AliasArnT>(value)); return *this;}
     ///@}
   private:
 

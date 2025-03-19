@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitiateDeviceClaimResult::InitiateDeviceClaimResult()
-{
-}
-
 InitiateDeviceClaimResult::InitiateDeviceClaimResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ InitiateDeviceClaimResult& InitiateDeviceClaimResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

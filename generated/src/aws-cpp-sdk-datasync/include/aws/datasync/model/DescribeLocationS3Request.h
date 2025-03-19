@@ -24,7 +24,7 @@ namespace Model
   class DescribeLocationS3Request : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API DescribeLocationS3Request();
+    AWS_DATASYNC_API DescribeLocationS3Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline DescribeLocationS3Request& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline DescribeLocationS3Request& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline DescribeLocationS3Request& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    DescribeLocationS3Request& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
   private:
 

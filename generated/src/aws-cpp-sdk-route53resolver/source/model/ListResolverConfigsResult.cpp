@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResolverConfigsResult::ListResolverConfigsResult()
-{
-}
-
 ListResolverConfigsResult::ListResolverConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListResolverConfigsResult& ListResolverConfigsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverConfigs"))
   {
     Aws::Utils::Array<JsonView> resolverConfigsJsonList = jsonValue.GetArray("ResolverConfigs");
@@ -42,14 +37,15 @@ ListResolverConfigsResult& ListResolverConfigsResult::operator =(const Aws::Amaz
     {
       m_resolverConfigs.push_back(resolverConfigsJsonList[resolverConfigsIndex].AsObject());
     }
+    m_resolverConfigsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

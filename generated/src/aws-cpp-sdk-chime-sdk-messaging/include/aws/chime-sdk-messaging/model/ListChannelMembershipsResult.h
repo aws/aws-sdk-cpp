@@ -29,7 +29,7 @@ namespace Model
   class ListChannelMembershipsResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult();
+    AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult() = default;
     AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API ListChannelMembershipsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The ARN of the channel.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-    inline ListChannelMembershipsResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline ListChannelMembershipsResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline ListChannelMembershipsResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    ListChannelMembershipsResult& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information for the requested channel memberships.</p>
      */
-    inline const Aws::Vector<ChannelMembershipSummary>& GetChannelMemberships() const{ return m_channelMemberships; }
-    inline void SetChannelMemberships(const Aws::Vector<ChannelMembershipSummary>& value) { m_channelMemberships = value; }
-    inline void SetChannelMemberships(Aws::Vector<ChannelMembershipSummary>&& value) { m_channelMemberships = std::move(value); }
-    inline ListChannelMembershipsResult& WithChannelMemberships(const Aws::Vector<ChannelMembershipSummary>& value) { SetChannelMemberships(value); return *this;}
-    inline ListChannelMembershipsResult& WithChannelMemberships(Aws::Vector<ChannelMembershipSummary>&& value) { SetChannelMemberships(std::move(value)); return *this;}
-    inline ListChannelMembershipsResult& AddChannelMemberships(const ChannelMembershipSummary& value) { m_channelMemberships.push_back(value); return *this; }
-    inline ListChannelMembershipsResult& AddChannelMemberships(ChannelMembershipSummary&& value) { m_channelMemberships.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChannelMembershipSummary>& GetChannelMemberships() const { return m_channelMemberships; }
+    template<typename ChannelMembershipsT = Aws::Vector<ChannelMembershipSummary>>
+    void SetChannelMemberships(ChannelMembershipsT&& value) { m_channelMembershipsHasBeenSet = true; m_channelMemberships = std::forward<ChannelMembershipsT>(value); }
+    template<typename ChannelMembershipsT = Aws::Vector<ChannelMembershipSummary>>
+    ListChannelMembershipsResult& WithChannelMemberships(ChannelMembershipsT&& value) { SetChannelMemberships(std::forward<ChannelMembershipsT>(value)); return *this;}
+    template<typename ChannelMembershipsT = ChannelMembershipSummary>
+    ListChannelMembershipsResult& AddChannelMemberships(ChannelMembershipsT&& value) { m_channelMembershipsHasBeenSet = true; m_channelMemberships.emplace_back(std::forward<ChannelMembershipsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,34 +63,34 @@ namespace Model
      * <p>The token passed by previous API calls until all requested channel
      * memberships are returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListChannelMembershipsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListChannelMembershipsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListChannelMembershipsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListChannelMembershipsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListChannelMembershipsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListChannelMembershipsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListChannelMembershipsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListChannelMembershipsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelArn;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::Vector<ChannelMembershipSummary> m_channelMemberships;
+    bool m_channelMembershipsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

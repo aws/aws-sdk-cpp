@@ -18,22 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisTargetResourceAggregation::CisTargetResourceAggregation() : 
-    m_accountIdHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_statusCountsHasBeenSet(false),
-    m_targetResourceIdHasBeenSet(false),
-    m_targetResourceTagsHasBeenSet(false),
-    m_targetStatus(CisTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false),
-    m_targetStatusReason(CisTargetStatusReason::NOT_SET),
-    m_targetStatusReasonHasBeenSet(false)
-{
-}
-
 CisTargetResourceAggregation::CisTargetResourceAggregation(JsonView jsonValue)
-  : CisTargetResourceAggregation()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ CisTargetResourceAggregation& CisTargetResourceAggregation::operator =(JsonView 
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanArn"))
   {
     m_scanArn = jsonValue.GetString("scanArn");
-
     m_scanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCounts"))
   {
     m_statusCounts = jsonValue.GetObject("statusCounts");
-
     m_statusCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceId"))
   {
     m_targetResourceId = jsonValue.GetString("targetResourceId");
-
     m_targetResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceTags"))
   {
     Aws::Map<Aws::String, JsonView> targetResourceTagsJsonMap = jsonValue.GetObject("targetResourceTags").GetAllObjects();
@@ -91,21 +66,16 @@ CisTargetResourceAggregation& CisTargetResourceAggregation::operator =(JsonView 
     }
     m_targetResourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetStatus"))
   {
     m_targetStatus = CisTargetStatusMapper::GetCisTargetStatusForName(jsonValue.GetString("targetStatus"));
-
     m_targetStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetStatusReason"))
   {
     m_targetStatusReason = CisTargetStatusReasonMapper::GetCisTargetStatusReasonForName(jsonValue.GetString("targetStatusReason"));
-
     m_targetStatusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

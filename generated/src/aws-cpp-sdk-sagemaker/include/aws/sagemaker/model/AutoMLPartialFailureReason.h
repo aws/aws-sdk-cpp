@@ -32,7 +32,7 @@ namespace Model
   class AutoMLPartialFailureReason
   {
   public:
-    AWS_SAGEMAKER_API AutoMLPartialFailureReason();
+    AWS_SAGEMAKER_API AutoMLPartialFailureReason() = default;
     AWS_SAGEMAKER_API AutoMLPartialFailureReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLPartialFailureReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The message containing the reason for a partial failure of an AutoML job.</p>
      */
-    inline const Aws::String& GetPartialFailureMessage() const{ return m_partialFailureMessage; }
+    inline const Aws::String& GetPartialFailureMessage() const { return m_partialFailureMessage; }
     inline bool PartialFailureMessageHasBeenSet() const { return m_partialFailureMessageHasBeenSet; }
-    inline void SetPartialFailureMessage(const Aws::String& value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage = value; }
-    inline void SetPartialFailureMessage(Aws::String&& value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage = std::move(value); }
-    inline void SetPartialFailureMessage(const char* value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage.assign(value); }
-    inline AutoMLPartialFailureReason& WithPartialFailureMessage(const Aws::String& value) { SetPartialFailureMessage(value); return *this;}
-    inline AutoMLPartialFailureReason& WithPartialFailureMessage(Aws::String&& value) { SetPartialFailureMessage(std::move(value)); return *this;}
-    inline AutoMLPartialFailureReason& WithPartialFailureMessage(const char* value) { SetPartialFailureMessage(value); return *this;}
+    template<typename PartialFailureMessageT = Aws::String>
+    void SetPartialFailureMessage(PartialFailureMessageT&& value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage = std::forward<PartialFailureMessageT>(value); }
+    template<typename PartialFailureMessageT = Aws::String>
+    AutoMLPartialFailureReason& WithPartialFailureMessage(PartialFailureMessageT&& value) { SetPartialFailureMessage(std::forward<PartialFailureMessageT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class OnlineAbConfig
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig() = default;
     AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the variation that is to be the default variation that the other
      * variations are compared to.</p>
      */
-    inline const Aws::String& GetControlTreatmentName() const{ return m_controlTreatmentName; }
+    inline const Aws::String& GetControlTreatmentName() const { return m_controlTreatmentName; }
     inline bool ControlTreatmentNameHasBeenSet() const { return m_controlTreatmentNameHasBeenSet; }
-    inline void SetControlTreatmentName(const Aws::String& value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName = value; }
-    inline void SetControlTreatmentName(Aws::String&& value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName = std::move(value); }
-    inline void SetControlTreatmentName(const char* value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName.assign(value); }
-    inline OnlineAbConfig& WithControlTreatmentName(const Aws::String& value) { SetControlTreatmentName(value); return *this;}
-    inline OnlineAbConfig& WithControlTreatmentName(Aws::String&& value) { SetControlTreatmentName(std::move(value)); return *this;}
-    inline OnlineAbConfig& WithControlTreatmentName(const char* value) { SetControlTreatmentName(value); return *this;}
+    template<typename ControlTreatmentNameT = Aws::String>
+    void SetControlTreatmentName(ControlTreatmentNameT&& value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName = std::forward<ControlTreatmentNameT>(value); }
+    template<typename ControlTreatmentNameT = Aws::String>
+    OnlineAbConfig& WithControlTreatmentName(ControlTreatmentNameT&& value) { SetControlTreatmentName(std::forward<ControlTreatmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,15 @@ namespace Model
      * traffic portion in thousandths of a percent, so 20,000 for a variation would
      * allocate 20% of the experiment traffic to that variation.</p>
      */
-    inline const Aws::Map<Aws::String, long long>& GetTreatmentWeights() const{ return m_treatmentWeights; }
+    inline const Aws::Map<Aws::String, long long>& GetTreatmentWeights() const { return m_treatmentWeights; }
     inline bool TreatmentWeightsHasBeenSet() const { return m_treatmentWeightsHasBeenSet; }
-    inline void SetTreatmentWeights(const Aws::Map<Aws::String, long long>& value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights = value; }
-    inline void SetTreatmentWeights(Aws::Map<Aws::String, long long>&& value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights = std::move(value); }
-    inline OnlineAbConfig& WithTreatmentWeights(const Aws::Map<Aws::String, long long>& value) { SetTreatmentWeights(value); return *this;}
-    inline OnlineAbConfig& WithTreatmentWeights(Aws::Map<Aws::String, long long>&& value) { SetTreatmentWeights(std::move(value)); return *this;}
-    inline OnlineAbConfig& AddTreatmentWeights(const Aws::String& key, long long value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(key, value); return *this; }
-    inline OnlineAbConfig& AddTreatmentWeights(Aws::String&& key, long long value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(std::move(key), value); return *this; }
-    inline OnlineAbConfig& AddTreatmentWeights(const char* key, long long value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(key, value); return *this; }
+    template<typename TreatmentWeightsT = Aws::Map<Aws::String, long long>>
+    void SetTreatmentWeights(TreatmentWeightsT&& value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights = std::forward<TreatmentWeightsT>(value); }
+    template<typename TreatmentWeightsT = Aws::Map<Aws::String, long long>>
+    OnlineAbConfig& WithTreatmentWeights(TreatmentWeightsT&& value) { SetTreatmentWeights(std::forward<TreatmentWeightsT>(value)); return *this;}
+    inline OnlineAbConfig& AddTreatmentWeights(Aws::String key, long long value) {
+      m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

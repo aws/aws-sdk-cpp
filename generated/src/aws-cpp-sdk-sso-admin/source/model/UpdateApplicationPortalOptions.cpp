@@ -18,13 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-UpdateApplicationPortalOptions::UpdateApplicationPortalOptions() : 
-    m_signInOptionsHasBeenSet(false)
-{
-}
-
 UpdateApplicationPortalOptions::UpdateApplicationPortalOptions(JsonView jsonValue)
-  : UpdateApplicationPortalOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateApplicationPortalOptions& UpdateApplicationPortalOptions::operator =(JsonV
   if(jsonValue.ValueExists("SignInOptions"))
   {
     m_signInOptions = jsonValue.GetObject("SignInOptions");
-
     m_signInOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ConfigurationPolicyAssociation::ConfigurationPolicyAssociation() : 
-    m_targetHasBeenSet(false)
-{
-}
-
 ConfigurationPolicyAssociation::ConfigurationPolicyAssociation(JsonView jsonValue)
-  : ConfigurationPolicyAssociation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConfigurationPolicyAssociation& ConfigurationPolicyAssociation::operator =(JsonV
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetObject("Target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

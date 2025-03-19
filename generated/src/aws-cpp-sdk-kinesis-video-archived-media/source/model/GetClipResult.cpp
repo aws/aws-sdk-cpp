@@ -16,31 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetClipResult::GetClipResult()
-{
-}
-
-GetClipResult::GetClipResult(GetClipResult&& toMove) : 
-    m_contentType(std::move(toMove.m_contentType)),
-    m_payload(std::move(toMove.m_payload)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetClipResult& GetClipResult::operator=(GetClipResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_contentType = std::move(toMove.m_contentType);
-   m_payload = std::move(toMove.m_payload);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetClipResult::GetClipResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -49,18 +24,21 @@ GetClipResult::GetClipResult(Aws::AmazonWebServiceResult<ResponseStream>&& resul
 GetClipResult& GetClipResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_payload = result.TakeOwnershipOfPayload();
+  m_payloadHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

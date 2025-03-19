@@ -13,20 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonListsRequest::JsonListsRequest() : 
-    m_stringListHasBeenSet(false),
-    m_stringSetHasBeenSet(false),
-    m_integerListHasBeenSet(false),
-    m_booleanListHasBeenSet(false),
-    m_timestampListHasBeenSet(false),
-    m_enumListHasBeenSet(false),
-    m_intEnumListHasBeenSet(false),
-    m_nestedStringListHasBeenSet(false),
-    m_structureListHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String JsonListsRequest::SerializePayload() const
 {
   JsonValue payload;

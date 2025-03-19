@@ -18,23 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-AssetEntry::AssetEntry() : 
-    m_arnHasBeenSet(false),
-    m_assetDetailsHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AssetEntry::AssetEntry(JsonView jsonValue)
-  : AssetEntry()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ AssetEntry& AssetEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetDetails"))
   {
     m_assetDetails = jsonValue.GetObject("AssetDetails");
-
     m_assetDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetType"))
   {
     m_assetType = AssetTypeMapper::GetAssetTypeForName(jsonValue.GetString("AssetType"));
-
     m_assetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceId"))
   {
     m_sourceId = jsonValue.GetString("SourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

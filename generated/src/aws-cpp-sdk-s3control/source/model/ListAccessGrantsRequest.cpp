@@ -17,20 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccessGrantsRequest::ListAccessGrantsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_granteeType(GranteeType::NOT_SET),
-    m_granteeTypeHasBeenSet(false),
-    m_granteeIdentifierHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
 
 Aws::String ListAccessGrantsRequest::SerializePayload() const
 {

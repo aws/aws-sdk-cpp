@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAutoMLJobRequest::CreateAutoMLJobRequest() : 
-    m_autoMLJobNameHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_problemType(ProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false),
-    m_autoMLJobObjectiveHasBeenSet(false),
-    m_autoMLJobConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_generateCandidateDefinitionsOnly(false),
-    m_generateCandidateDefinitionsOnlyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_modelDeployConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateAutoMLJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-HudiTarget::HudiTarget() : 
-    m_pathsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_maximumTraversalDepth(0),
-    m_maximumTraversalDepthHasBeenSet(false)
-{
-}
-
 HudiTarget::HudiTarget(JsonView jsonValue)
-  : HudiTarget()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ HudiTarget& HudiTarget::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
@@ -61,14 +48,11 @@ HudiTarget& HudiTarget::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumTraversalDepth"))
   {
     m_maximumTraversalDepth = jsonValue.GetInteger("MaximumTraversalDepth");
-
     m_maximumTraversalDepthHasBeenSet = true;
   }
-
   return *this;
 }
 

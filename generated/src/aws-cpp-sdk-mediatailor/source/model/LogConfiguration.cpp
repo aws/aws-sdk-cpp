@@ -18,15 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-LogConfiguration::LogConfiguration() : 
-    m_percentEnabled(0),
-    m_percentEnabledHasBeenSet(false),
-    m_enabledLoggingStrategiesHasBeenSet(false)
-{
-}
-
 LogConfiguration::LogConfiguration(JsonView jsonValue)
-  : LogConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PercentEnabled"))
   {
     m_percentEnabled = jsonValue.GetInteger("PercentEnabled");
-
     m_percentEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledLoggingStrategies"))
   {
     Aws::Utils::Array<JsonView> enabledLoggingStrategiesJsonList = jsonValue.GetArray("EnabledLoggingStrategies");
@@ -49,7 +39,6 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     }
     m_enabledLoggingStrategiesHasBeenSet = true;
   }
-
   return *this;
 }
 

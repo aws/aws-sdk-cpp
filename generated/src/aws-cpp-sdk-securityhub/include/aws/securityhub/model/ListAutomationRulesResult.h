@@ -29,7 +29,7 @@ namespace Model
   class ListAutomationRulesResult
   {
   public:
-    AWS_SECURITYHUB_API ListAutomationRulesResult();
+    AWS_SECURITYHUB_API ListAutomationRulesResult() = default;
     AWS_SECURITYHUB_API ListAutomationRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API ListAutomationRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.
      * </p>
      */
-    inline const Aws::Vector<AutomationRulesMetadata>& GetAutomationRulesMetadata() const{ return m_automationRulesMetadata; }
-    inline void SetAutomationRulesMetadata(const Aws::Vector<AutomationRulesMetadata>& value) { m_automationRulesMetadata = value; }
-    inline void SetAutomationRulesMetadata(Aws::Vector<AutomationRulesMetadata>&& value) { m_automationRulesMetadata = std::move(value); }
-    inline ListAutomationRulesResult& WithAutomationRulesMetadata(const Aws::Vector<AutomationRulesMetadata>& value) { SetAutomationRulesMetadata(value); return *this;}
-    inline ListAutomationRulesResult& WithAutomationRulesMetadata(Aws::Vector<AutomationRulesMetadata>&& value) { SetAutomationRulesMetadata(std::move(value)); return *this;}
-    inline ListAutomationRulesResult& AddAutomationRulesMetadata(const AutomationRulesMetadata& value) { m_automationRulesMetadata.push_back(value); return *this; }
-    inline ListAutomationRulesResult& AddAutomationRulesMetadata(AutomationRulesMetadata&& value) { m_automationRulesMetadata.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AutomationRulesMetadata>& GetAutomationRulesMetadata() const { return m_automationRulesMetadata; }
+    template<typename AutomationRulesMetadataT = Aws::Vector<AutomationRulesMetadata>>
+    void SetAutomationRulesMetadata(AutomationRulesMetadataT&& value) { m_automationRulesMetadataHasBeenSet = true; m_automationRulesMetadata = std::forward<AutomationRulesMetadataT>(value); }
+    template<typename AutomationRulesMetadataT = Aws::Vector<AutomationRulesMetadata>>
+    ListAutomationRulesResult& WithAutomationRulesMetadata(AutomationRulesMetadataT&& value) { SetAutomationRulesMetadata(std::forward<AutomationRulesMetadataT>(value)); return *this;}
+    template<typename AutomationRulesMetadataT = AutomationRulesMetadata>
+    ListAutomationRulesResult& AddAutomationRulesMetadata(AutomationRulesMetadataT&& value) { m_automationRulesMetadataHasBeenSet = true; m_automationRulesMetadata.emplace_back(std::forward<AutomationRulesMetadataT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> A pagination token for the response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAutomationRulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAutomationRulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAutomationRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAutomationRulesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAutomationRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAutomationRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAutomationRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAutomationRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AutomationRulesMetadata> m_automationRulesMetadata;
+    bool m_automationRulesMetadataHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

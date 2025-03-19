@@ -31,7 +31,7 @@ namespace Model
   class KeyValueStoreAssociations
   {
   public:
-    AWS_CLOUDFRONT_API KeyValueStoreAssociations();
+    AWS_CLOUDFRONT_API KeyValueStoreAssociations() = default;
     AWS_CLOUDFRONT_API KeyValueStoreAssociations(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API KeyValueStoreAssociations& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The quantity of key value store associations.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline KeyValueStoreAssociations& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -52,18 +52,18 @@ namespace Model
     /**
      * <p>The items of the key value store association.</p>
      */
-    inline const Aws::Vector<KeyValueStoreAssociation>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<KeyValueStoreAssociation>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<KeyValueStoreAssociation>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<KeyValueStoreAssociation>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline KeyValueStoreAssociations& WithItems(const Aws::Vector<KeyValueStoreAssociation>& value) { SetItems(value); return *this;}
-    inline KeyValueStoreAssociations& WithItems(Aws::Vector<KeyValueStoreAssociation>&& value) { SetItems(std::move(value)); return *this;}
-    inline KeyValueStoreAssociations& AddItems(const KeyValueStoreAssociation& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline KeyValueStoreAssociations& AddItems(KeyValueStoreAssociation&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<KeyValueStoreAssociation>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<KeyValueStoreAssociation>>
+    KeyValueStoreAssociations& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = KeyValueStoreAssociation>
+    KeyValueStoreAssociations& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<KeyValueStoreAssociation> m_items;

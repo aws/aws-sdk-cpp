@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioSilenceFailoverSettings::AudioSilenceFailoverSettings() : 
-    m_audioSelectorNameHasBeenSet(false),
-    m_audioSilenceThresholdMsec(0),
-    m_audioSilenceThresholdMsecHasBeenSet(false)
-{
-}
-
 AudioSilenceFailoverSettings::AudioSilenceFailoverSettings(JsonView jsonValue)
-  : AudioSilenceFailoverSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AudioSilenceFailoverSettings& AudioSilenceFailoverSettings::operator =(JsonView 
   if(jsonValue.ValueExists("audioSelectorName"))
   {
     m_audioSelectorName = jsonValue.GetString("audioSelectorName");
-
     m_audioSelectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioSilenceThresholdMsec"))
   {
     m_audioSilenceThresholdMsec = jsonValue.GetInteger("audioSilenceThresholdMsec");
-
     m_audioSilenceThresholdMsecHasBeenSet = true;
   }
-
   return *this;
 }
 

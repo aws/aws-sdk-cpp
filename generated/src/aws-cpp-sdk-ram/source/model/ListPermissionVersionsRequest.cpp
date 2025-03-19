@@ -12,14 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPermissionVersionsRequest::ListPermissionVersionsRequest() : 
-    m_permissionArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPermissionVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

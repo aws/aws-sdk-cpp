@@ -18,14 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration() : 
-    m_endpointIdHasBeenSet(false),
-    m_attachmentArnHasBeenSet(false)
-{
-}
-
 CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration(JsonView jsonValue)
-  : CustomRoutingEndpointConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomRoutingEndpointConfiguration& CustomRoutingEndpointConfiguration::operator
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentArn"))
   {
     m_attachmentArn = jsonValue.GetString("AttachmentArn");
-
     m_attachmentArnHasBeenSet = true;
   }
-
   return *this;
 }
 

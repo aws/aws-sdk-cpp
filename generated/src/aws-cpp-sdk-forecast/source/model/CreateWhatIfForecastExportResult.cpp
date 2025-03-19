@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWhatIfForecastExportResult::CreateWhatIfForecastExportResult()
-{
-}
-
 CreateWhatIfForecastExportResult::CreateWhatIfForecastExportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWhatIfForecastExportResult& CreateWhatIfForecastExportResult::operator =(c
   if(jsonValue.ValueExists("WhatIfForecastExportArn"))
   {
     m_whatIfForecastExportArn = jsonValue.GetString("WhatIfForecastExportArn");
-
+    m_whatIfForecastExportArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

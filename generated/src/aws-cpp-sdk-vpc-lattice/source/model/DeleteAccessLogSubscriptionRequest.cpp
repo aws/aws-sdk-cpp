@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessLogSubscriptionRequest::DeleteAccessLogSubscriptionRequest() : 
-    m_accessLogSubscriptionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessLogSubscriptionRequest::SerializePayload() const
 {
   return {};

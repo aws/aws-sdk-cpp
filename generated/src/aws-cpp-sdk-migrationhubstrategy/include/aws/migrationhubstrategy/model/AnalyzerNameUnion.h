@@ -33,7 +33,7 @@ namespace Model
   class AnalyzerNameUnion
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalyzerNameUnion();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalyzerNameUnion() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalyzerNameUnion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AnalyzerNameUnion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,46 +43,40 @@ namespace Model
     /**
      * <p>The binary analyzer names.</p>
      */
-    inline const BinaryAnalyzerName& GetBinaryAnalyzerName() const{ return m_binaryAnalyzerName; }
+    inline BinaryAnalyzerName GetBinaryAnalyzerName() const { return m_binaryAnalyzerName; }
     inline bool BinaryAnalyzerNameHasBeenSet() const { return m_binaryAnalyzerNameHasBeenSet; }
-    inline void SetBinaryAnalyzerName(const BinaryAnalyzerName& value) { m_binaryAnalyzerNameHasBeenSet = true; m_binaryAnalyzerName = value; }
-    inline void SetBinaryAnalyzerName(BinaryAnalyzerName&& value) { m_binaryAnalyzerNameHasBeenSet = true; m_binaryAnalyzerName = std::move(value); }
-    inline AnalyzerNameUnion& WithBinaryAnalyzerName(const BinaryAnalyzerName& value) { SetBinaryAnalyzerName(value); return *this;}
-    inline AnalyzerNameUnion& WithBinaryAnalyzerName(BinaryAnalyzerName&& value) { SetBinaryAnalyzerName(std::move(value)); return *this;}
+    inline void SetBinaryAnalyzerName(BinaryAnalyzerName value) { m_binaryAnalyzerNameHasBeenSet = true; m_binaryAnalyzerName = value; }
+    inline AnalyzerNameUnion& WithBinaryAnalyzerName(BinaryAnalyzerName value) { SetBinaryAnalyzerName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The assessment analyzer names.</p>
      */
-    inline const RunTimeAnalyzerName& GetRunTimeAnalyzerName() const{ return m_runTimeAnalyzerName; }
+    inline RunTimeAnalyzerName GetRunTimeAnalyzerName() const { return m_runTimeAnalyzerName; }
     inline bool RunTimeAnalyzerNameHasBeenSet() const { return m_runTimeAnalyzerNameHasBeenSet; }
-    inline void SetRunTimeAnalyzerName(const RunTimeAnalyzerName& value) { m_runTimeAnalyzerNameHasBeenSet = true; m_runTimeAnalyzerName = value; }
-    inline void SetRunTimeAnalyzerName(RunTimeAnalyzerName&& value) { m_runTimeAnalyzerNameHasBeenSet = true; m_runTimeAnalyzerName = std::move(value); }
-    inline AnalyzerNameUnion& WithRunTimeAnalyzerName(const RunTimeAnalyzerName& value) { SetRunTimeAnalyzerName(value); return *this;}
-    inline AnalyzerNameUnion& WithRunTimeAnalyzerName(RunTimeAnalyzerName&& value) { SetRunTimeAnalyzerName(std::move(value)); return *this;}
+    inline void SetRunTimeAnalyzerName(RunTimeAnalyzerName value) { m_runTimeAnalyzerNameHasBeenSet = true; m_runTimeAnalyzerName = value; }
+    inline AnalyzerNameUnion& WithRunTimeAnalyzerName(RunTimeAnalyzerName value) { SetRunTimeAnalyzerName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source code analyzer names.</p>
      */
-    inline const SourceCodeAnalyzerName& GetSourceCodeAnalyzerName() const{ return m_sourceCodeAnalyzerName; }
+    inline SourceCodeAnalyzerName GetSourceCodeAnalyzerName() const { return m_sourceCodeAnalyzerName; }
     inline bool SourceCodeAnalyzerNameHasBeenSet() const { return m_sourceCodeAnalyzerNameHasBeenSet; }
-    inline void SetSourceCodeAnalyzerName(const SourceCodeAnalyzerName& value) { m_sourceCodeAnalyzerNameHasBeenSet = true; m_sourceCodeAnalyzerName = value; }
-    inline void SetSourceCodeAnalyzerName(SourceCodeAnalyzerName&& value) { m_sourceCodeAnalyzerNameHasBeenSet = true; m_sourceCodeAnalyzerName = std::move(value); }
-    inline AnalyzerNameUnion& WithSourceCodeAnalyzerName(const SourceCodeAnalyzerName& value) { SetSourceCodeAnalyzerName(value); return *this;}
-    inline AnalyzerNameUnion& WithSourceCodeAnalyzerName(SourceCodeAnalyzerName&& value) { SetSourceCodeAnalyzerName(std::move(value)); return *this;}
+    inline void SetSourceCodeAnalyzerName(SourceCodeAnalyzerName value) { m_sourceCodeAnalyzerNameHasBeenSet = true; m_sourceCodeAnalyzerName = value; }
+    inline AnalyzerNameUnion& WithSourceCodeAnalyzerName(SourceCodeAnalyzerName value) { SetSourceCodeAnalyzerName(value); return *this;}
     ///@}
   private:
 
-    BinaryAnalyzerName m_binaryAnalyzerName;
+    BinaryAnalyzerName m_binaryAnalyzerName{BinaryAnalyzerName::NOT_SET};
     bool m_binaryAnalyzerNameHasBeenSet = false;
 
-    RunTimeAnalyzerName m_runTimeAnalyzerName;
+    RunTimeAnalyzerName m_runTimeAnalyzerName{RunTimeAnalyzerName::NOT_SET};
     bool m_runTimeAnalyzerNameHasBeenSet = false;
 
-    SourceCodeAnalyzerName m_sourceCodeAnalyzerName;
+    SourceCodeAnalyzerName m_sourceCodeAnalyzerName{SourceCodeAnalyzerName::NOT_SET};
     bool m_sourceCodeAnalyzerNameHasBeenSet = false;
   };
 

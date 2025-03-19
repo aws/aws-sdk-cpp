@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AppLifecycleManagement::AppLifecycleManagement() : 
-    m_idleSettingsHasBeenSet(false)
-{
-}
-
 AppLifecycleManagement::AppLifecycleManagement(JsonView jsonValue)
-  : AppLifecycleManagement()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AppLifecycleManagement& AppLifecycleManagement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdleSettings"))
   {
     m_idleSettings = jsonValue.GetObject("IdleSettings");
-
     m_idleSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

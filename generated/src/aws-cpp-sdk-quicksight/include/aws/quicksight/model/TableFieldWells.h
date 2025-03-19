@@ -34,7 +34,7 @@ namespace Model
   class TableFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API TableFieldWells();
+    AWS_QUICKSIGHT_API TableFieldWells() = default;
     AWS_QUICKSIGHT_API TableFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The aggregated field well for the table.</p>
      */
-    inline const TableAggregatedFieldWells& GetTableAggregatedFieldWells() const{ return m_tableAggregatedFieldWells; }
+    inline const TableAggregatedFieldWells& GetTableAggregatedFieldWells() const { return m_tableAggregatedFieldWells; }
     inline bool TableAggregatedFieldWellsHasBeenSet() const { return m_tableAggregatedFieldWellsHasBeenSet; }
-    inline void SetTableAggregatedFieldWells(const TableAggregatedFieldWells& value) { m_tableAggregatedFieldWellsHasBeenSet = true; m_tableAggregatedFieldWells = value; }
-    inline void SetTableAggregatedFieldWells(TableAggregatedFieldWells&& value) { m_tableAggregatedFieldWellsHasBeenSet = true; m_tableAggregatedFieldWells = std::move(value); }
-    inline TableFieldWells& WithTableAggregatedFieldWells(const TableAggregatedFieldWells& value) { SetTableAggregatedFieldWells(value); return *this;}
-    inline TableFieldWells& WithTableAggregatedFieldWells(TableAggregatedFieldWells&& value) { SetTableAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename TableAggregatedFieldWellsT = TableAggregatedFieldWells>
+    void SetTableAggregatedFieldWells(TableAggregatedFieldWellsT&& value) { m_tableAggregatedFieldWellsHasBeenSet = true; m_tableAggregatedFieldWells = std::forward<TableAggregatedFieldWellsT>(value); }
+    template<typename TableAggregatedFieldWellsT = TableAggregatedFieldWells>
+    TableFieldWells& WithTableAggregatedFieldWells(TableAggregatedFieldWellsT&& value) { SetTableAggregatedFieldWells(std::forward<TableAggregatedFieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unaggregated field well for the table.</p>
      */
-    inline const TableUnaggregatedFieldWells& GetTableUnaggregatedFieldWells() const{ return m_tableUnaggregatedFieldWells; }
+    inline const TableUnaggregatedFieldWells& GetTableUnaggregatedFieldWells() const { return m_tableUnaggregatedFieldWells; }
     inline bool TableUnaggregatedFieldWellsHasBeenSet() const { return m_tableUnaggregatedFieldWellsHasBeenSet; }
-    inline void SetTableUnaggregatedFieldWells(const TableUnaggregatedFieldWells& value) { m_tableUnaggregatedFieldWellsHasBeenSet = true; m_tableUnaggregatedFieldWells = value; }
-    inline void SetTableUnaggregatedFieldWells(TableUnaggregatedFieldWells&& value) { m_tableUnaggregatedFieldWellsHasBeenSet = true; m_tableUnaggregatedFieldWells = std::move(value); }
-    inline TableFieldWells& WithTableUnaggregatedFieldWells(const TableUnaggregatedFieldWells& value) { SetTableUnaggregatedFieldWells(value); return *this;}
-    inline TableFieldWells& WithTableUnaggregatedFieldWells(TableUnaggregatedFieldWells&& value) { SetTableUnaggregatedFieldWells(std::move(value)); return *this;}
+    template<typename TableUnaggregatedFieldWellsT = TableUnaggregatedFieldWells>
+    void SetTableUnaggregatedFieldWells(TableUnaggregatedFieldWellsT&& value) { m_tableUnaggregatedFieldWellsHasBeenSet = true; m_tableUnaggregatedFieldWells = std::forward<TableUnaggregatedFieldWellsT>(value); }
+    template<typename TableUnaggregatedFieldWellsT = TableUnaggregatedFieldWells>
+    TableFieldWells& WithTableUnaggregatedFieldWells(TableUnaggregatedFieldWellsT&& value) { SetTableUnaggregatedFieldWells(std::forward<TableUnaggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

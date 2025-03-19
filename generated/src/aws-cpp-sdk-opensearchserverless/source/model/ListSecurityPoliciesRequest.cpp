@@ -12,16 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSecurityPoliciesRequest::ListSecurityPoliciesRequest() : 
-    m_type(SecurityPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSecurityPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerServiceDeploymentRequest::CreateContainerServiceDeploymentRequest() : 
-    m_serviceNameHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_publicEndpointHasBeenSet(false)
-{
-}
-
 Aws::String CreateContainerServiceDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

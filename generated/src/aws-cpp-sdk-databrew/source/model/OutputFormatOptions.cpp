@@ -18,13 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-OutputFormatOptions::OutputFormatOptions() : 
-    m_csvHasBeenSet(false)
-{
-}
-
 OutputFormatOptions::OutputFormatOptions(JsonView jsonValue)
-  : OutputFormatOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputFormatOptions& OutputFormatOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Csv"))
   {
     m_csv = jsonValue.GetObject("Csv");
-
     m_csvHasBeenSet = true;
   }
-
   return *this;
 }
 

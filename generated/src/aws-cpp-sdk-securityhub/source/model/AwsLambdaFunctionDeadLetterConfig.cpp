@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionDeadLetterConfig::AwsLambdaFunctionDeadLetterConfig() : 
-    m_targetArnHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionDeadLetterConfig::AwsLambdaFunctionDeadLetterConfig(JsonView jsonValue)
-  : AwsLambdaFunctionDeadLetterConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsLambdaFunctionDeadLetterConfig& AwsLambdaFunctionDeadLetterConfig::operator =
   if(jsonValue.ValueExists("TargetArn"))
   {
     m_targetArn = jsonValue.GetString("TargetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

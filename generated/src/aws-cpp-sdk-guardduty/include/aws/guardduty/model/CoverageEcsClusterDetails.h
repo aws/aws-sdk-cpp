@@ -34,7 +34,7 @@ namespace Model
   class CoverageEcsClusterDetails
   {
   public:
-    AWS_GUARDDUTY_API CoverageEcsClusterDetails();
+    AWS_GUARDDUTY_API CoverageEcsClusterDetails() = default;
     AWS_GUARDDUTY_API CoverageEcsClusterDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CoverageEcsClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the Amazon ECS cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline CoverageEcsClusterDetails& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline CoverageEcsClusterDetails& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline CoverageEcsClusterDetails& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    CoverageEcsClusterDetails& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>Information about the Fargate details associated with the Amazon ECS
      * cluster.</p>
      */
-    inline const FargateDetails& GetFargateDetails() const{ return m_fargateDetails; }
+    inline const FargateDetails& GetFargateDetails() const { return m_fargateDetails; }
     inline bool FargateDetailsHasBeenSet() const { return m_fargateDetailsHasBeenSet; }
-    inline void SetFargateDetails(const FargateDetails& value) { m_fargateDetailsHasBeenSet = true; m_fargateDetails = value; }
-    inline void SetFargateDetails(FargateDetails&& value) { m_fargateDetailsHasBeenSet = true; m_fargateDetails = std::move(value); }
-    inline CoverageEcsClusterDetails& WithFargateDetails(const FargateDetails& value) { SetFargateDetails(value); return *this;}
-    inline CoverageEcsClusterDetails& WithFargateDetails(FargateDetails&& value) { SetFargateDetails(std::move(value)); return *this;}
+    template<typename FargateDetailsT = FargateDetails>
+    void SetFargateDetails(FargateDetailsT&& value) { m_fargateDetailsHasBeenSet = true; m_fargateDetails = std::forward<FargateDetailsT>(value); }
+    template<typename FargateDetailsT = FargateDetails>
+    CoverageEcsClusterDetails& WithFargateDetails(FargateDetailsT&& value) { SetFargateDetails(std::forward<FargateDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>Information about the Amazon ECS container running on Amazon EC2
      * instance.</p>
      */
-    inline const ContainerInstanceDetails& GetContainerInstanceDetails() const{ return m_containerInstanceDetails; }
+    inline const ContainerInstanceDetails& GetContainerInstanceDetails() const { return m_containerInstanceDetails; }
     inline bool ContainerInstanceDetailsHasBeenSet() const { return m_containerInstanceDetailsHasBeenSet; }
-    inline void SetContainerInstanceDetails(const ContainerInstanceDetails& value) { m_containerInstanceDetailsHasBeenSet = true; m_containerInstanceDetails = value; }
-    inline void SetContainerInstanceDetails(ContainerInstanceDetails&& value) { m_containerInstanceDetailsHasBeenSet = true; m_containerInstanceDetails = std::move(value); }
-    inline CoverageEcsClusterDetails& WithContainerInstanceDetails(const ContainerInstanceDetails& value) { SetContainerInstanceDetails(value); return *this;}
-    inline CoverageEcsClusterDetails& WithContainerInstanceDetails(ContainerInstanceDetails&& value) { SetContainerInstanceDetails(std::move(value)); return *this;}
+    template<typename ContainerInstanceDetailsT = ContainerInstanceDetails>
+    void SetContainerInstanceDetails(ContainerInstanceDetailsT&& value) { m_containerInstanceDetailsHasBeenSet = true; m_containerInstanceDetails = std::forward<ContainerInstanceDetailsT>(value); }
+    template<typename ContainerInstanceDetailsT = ContainerInstanceDetails>
+    CoverageEcsClusterDetails& WithContainerInstanceDetails(ContainerInstanceDetailsT&& value) { SetContainerInstanceDetails(std::forward<ContainerInstanceDetailsT>(value)); return *this;}
     ///@}
   private:
 

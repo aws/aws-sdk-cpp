@@ -28,7 +28,7 @@ namespace Model
   class GetVpcAttachmentResult
   {
   public:
-    AWS_NETWORKMANAGER_API GetVpcAttachmentResult();
+    AWS_NETWORKMANAGER_API GetVpcAttachmentResult() = default;
     AWS_NETWORKMANAGER_API GetVpcAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API GetVpcAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns details about a VPC attachment.</p>
      */
-    inline const VpcAttachment& GetVpcAttachment() const{ return m_vpcAttachment; }
-    inline void SetVpcAttachment(const VpcAttachment& value) { m_vpcAttachment = value; }
-    inline void SetVpcAttachment(VpcAttachment&& value) { m_vpcAttachment = std::move(value); }
-    inline GetVpcAttachmentResult& WithVpcAttachment(const VpcAttachment& value) { SetVpcAttachment(value); return *this;}
-    inline GetVpcAttachmentResult& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(std::move(value)); return *this;}
+    inline const VpcAttachment& GetVpcAttachment() const { return m_vpcAttachment; }
+    template<typename VpcAttachmentT = VpcAttachment>
+    void SetVpcAttachment(VpcAttachmentT&& value) { m_vpcAttachmentHasBeenSet = true; m_vpcAttachment = std::forward<VpcAttachmentT>(value); }
+    template<typename VpcAttachmentT = VpcAttachment>
+    GetVpcAttachmentResult& WithVpcAttachment(VpcAttachmentT&& value) { SetVpcAttachment(std::forward<VpcAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVpcAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVpcAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVpcAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVpcAttachmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcAttachment m_vpcAttachment;
+    bool m_vpcAttachmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

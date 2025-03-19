@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSecurityProfileResult::UpdateSecurityProfileResult() : 
-    m_version(0)
-{
-}
-
 UpdateSecurityProfileResult::UpdateSecurityProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateSecurityProfileResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ UpdateSecurityProfileResult& UpdateSecurityProfileResult::operator =(const Aws::
   if(jsonValue.ValueExists("securityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("securityProfileName");
-
+    m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityProfileArn"))
   {
     m_securityProfileArn = jsonValue.GetString("securityProfileArn");
-
+    m_securityProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityProfileDescription"))
   {
     m_securityProfileDescription = jsonValue.GetString("securityProfileDescription");
-
+    m_securityProfileDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("behaviors"))
   {
     Aws::Utils::Array<JsonView> behaviorsJsonList = jsonValue.GetArray("behaviors");
@@ -56,8 +47,8 @@ UpdateSecurityProfileResult& UpdateSecurityProfileResult::operator =(const Aws::
     {
       m_behaviors.push_back(behaviorsJsonList[behaviorsIndex].AsObject());
     }
+    m_behaviorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alertTargets"))
   {
     Aws::Map<Aws::String, JsonView> alertTargetsJsonMap = jsonValue.GetObject("alertTargets").GetAllObjects();
@@ -65,8 +56,8 @@ UpdateSecurityProfileResult& UpdateSecurityProfileResult::operator =(const Aws::
     {
       m_alertTargets[AlertTargetTypeMapper::GetAlertTargetTypeForName(alertTargetsItem.first)] = alertTargetsItem.second.AsObject();
     }
+    m_alertTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalMetricsToRetainV2"))
   {
     Aws::Utils::Array<JsonView> additionalMetricsToRetainV2JsonList = jsonValue.GetArray("additionalMetricsToRetainV2");
@@ -74,38 +65,35 @@ UpdateSecurityProfileResult& UpdateSecurityProfileResult::operator =(const Aws::
     {
       m_additionalMetricsToRetainV2.push_back(additionalMetricsToRetainV2JsonList[additionalMetricsToRetainV2Index].AsObject());
     }
+    m_additionalMetricsToRetainV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
+    m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricsExportConfig"))
   {
     m_metricsExportConfig = jsonValue.GetObject("metricsExportConfig");
-
+    m_metricsExportConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

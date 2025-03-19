@@ -27,7 +27,7 @@ namespace Model
   class CreateBucketResult
   {
   public:
-    AWS_S3CONTROL_API CreateBucketResult();
+    AWS_S3CONTROL_API CreateBucketResult() = default;
     AWS_S3CONTROL_API CreateBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API CreateBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The location of the bucket.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
-    inline void SetLocation(const Aws::String& value) { m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_location.assign(value); }
-    inline CreateBucketResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CreateBucketResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CreateBucketResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+    inline const Aws::String& GetLocation() const { return m_location; }
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CreateBucketResult& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,49 +57,47 @@ namespace Model
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
      * The value must be URL encoded. </p>
      */
-    inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
-    inline void SetBucketArn(const Aws::String& value) { m_bucketArn = value; }
-    inline void SetBucketArn(Aws::String&& value) { m_bucketArn = std::move(value); }
-    inline void SetBucketArn(const char* value) { m_bucketArn.assign(value); }
-    inline CreateBucketResult& WithBucketArn(const Aws::String& value) { SetBucketArn(value); return *this;}
-    inline CreateBucketResult& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
-    inline CreateBucketResult& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    CreateBucketResult& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBucketResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBucketResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBucketResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBucketResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline CreateBucketResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline CreateBucketResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline CreateBucketResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    CreateBucketResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_bucketArn;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

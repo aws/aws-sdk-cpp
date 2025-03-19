@@ -32,7 +32,7 @@ namespace Model
   class AwsS3BucketWebsiteConfigurationRoutingRuleCondition
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition() = default;
     AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>Indicates to redirect the request if the HTTP error code matches this
      * value.</p>
      */
-    inline const Aws::String& GetHttpErrorCodeReturnedEquals() const{ return m_httpErrorCodeReturnedEquals; }
+    inline const Aws::String& GetHttpErrorCodeReturnedEquals() const { return m_httpErrorCodeReturnedEquals; }
     inline bool HttpErrorCodeReturnedEqualsHasBeenSet() const { return m_httpErrorCodeReturnedEqualsHasBeenSet; }
-    inline void SetHttpErrorCodeReturnedEquals(const Aws::String& value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals = value; }
-    inline void SetHttpErrorCodeReturnedEquals(Aws::String&& value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals = std::move(value); }
-    inline void SetHttpErrorCodeReturnedEquals(const char* value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals.assign(value); }
-    inline AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithHttpErrorCodeReturnedEquals(const Aws::String& value) { SetHttpErrorCodeReturnedEquals(value); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithHttpErrorCodeReturnedEquals(Aws::String&& value) { SetHttpErrorCodeReturnedEquals(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithHttpErrorCodeReturnedEquals(const char* value) { SetHttpErrorCodeReturnedEquals(value); return *this;}
+    template<typename HttpErrorCodeReturnedEqualsT = Aws::String>
+    void SetHttpErrorCodeReturnedEquals(HttpErrorCodeReturnedEqualsT&& value) { m_httpErrorCodeReturnedEqualsHasBeenSet = true; m_httpErrorCodeReturnedEquals = std::forward<HttpErrorCodeReturnedEqualsT>(value); }
+    template<typename HttpErrorCodeReturnedEqualsT = Aws::String>
+    AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithHttpErrorCodeReturnedEquals(HttpErrorCodeReturnedEqualsT&& value) { SetHttpErrorCodeReturnedEquals(std::forward<HttpErrorCodeReturnedEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates to redirect the request if the key prefix matches this value.</p>
      */
-    inline const Aws::String& GetKeyPrefixEquals() const{ return m_keyPrefixEquals; }
+    inline const Aws::String& GetKeyPrefixEquals() const { return m_keyPrefixEquals; }
     inline bool KeyPrefixEqualsHasBeenSet() const { return m_keyPrefixEqualsHasBeenSet; }
-    inline void SetKeyPrefixEquals(const Aws::String& value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals = value; }
-    inline void SetKeyPrefixEquals(Aws::String&& value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals = std::move(value); }
-    inline void SetKeyPrefixEquals(const char* value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals.assign(value); }
-    inline AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithKeyPrefixEquals(const Aws::String& value) { SetKeyPrefixEquals(value); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithKeyPrefixEquals(Aws::String&& value) { SetKeyPrefixEquals(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithKeyPrefixEquals(const char* value) { SetKeyPrefixEquals(value); return *this;}
+    template<typename KeyPrefixEqualsT = Aws::String>
+    void SetKeyPrefixEquals(KeyPrefixEqualsT&& value) { m_keyPrefixEqualsHasBeenSet = true; m_keyPrefixEquals = std::forward<KeyPrefixEqualsT>(value); }
+    template<typename KeyPrefixEqualsT = Aws::String>
+    AwsS3BucketWebsiteConfigurationRoutingRuleCondition& WithKeyPrefixEquals(KeyPrefixEqualsT&& value) { SetKeyPrefixEquals(std::forward<KeyPrefixEqualsT>(value)); return *this;}
     ///@}
   private:
 

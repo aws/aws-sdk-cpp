@@ -21,7 +21,7 @@ namespace Model
   class SendAlexaOfferToMasterRequest : public KinesisVideoSignalingChannelsRequest
   {
   public:
-    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterRequest();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
      * <p>The ARN of the signaling channel by which Alexa and the master peer
      * communicate.</p>
      */
-    inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
+    inline const Aws::String& GetChannelARN() const { return m_channelARN; }
     inline bool ChannelARNHasBeenSet() const { return m_channelARNHasBeenSet; }
-    inline void SetChannelARN(const Aws::String& value) { m_channelARNHasBeenSet = true; m_channelARN = value; }
-    inline void SetChannelARN(Aws::String&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::move(value); }
-    inline void SetChannelARN(const char* value) { m_channelARNHasBeenSet = true; m_channelARN.assign(value); }
-    inline SendAlexaOfferToMasterRequest& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
-    inline SendAlexaOfferToMasterRequest& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
-    inline SendAlexaOfferToMasterRequest& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
+    template<typename ChannelARNT = Aws::String>
+    void SetChannelARN(ChannelARNT&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::forward<ChannelARNT>(value); }
+    template<typename ChannelARNT = Aws::String>
+    SendAlexaOfferToMasterRequest& WithChannelARN(ChannelARNT&& value) { SetChannelARN(std::forward<ChannelARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the sender client.</p>
      */
-    inline const Aws::String& GetSenderClientId() const{ return m_senderClientId; }
+    inline const Aws::String& GetSenderClientId() const { return m_senderClientId; }
     inline bool SenderClientIdHasBeenSet() const { return m_senderClientIdHasBeenSet; }
-    inline void SetSenderClientId(const Aws::String& value) { m_senderClientIdHasBeenSet = true; m_senderClientId = value; }
-    inline void SetSenderClientId(Aws::String&& value) { m_senderClientIdHasBeenSet = true; m_senderClientId = std::move(value); }
-    inline void SetSenderClientId(const char* value) { m_senderClientIdHasBeenSet = true; m_senderClientId.assign(value); }
-    inline SendAlexaOfferToMasterRequest& WithSenderClientId(const Aws::String& value) { SetSenderClientId(value); return *this;}
-    inline SendAlexaOfferToMasterRequest& WithSenderClientId(Aws::String&& value) { SetSenderClientId(std::move(value)); return *this;}
-    inline SendAlexaOfferToMasterRequest& WithSenderClientId(const char* value) { SetSenderClientId(value); return *this;}
+    template<typename SenderClientIdT = Aws::String>
+    void SetSenderClientId(SenderClientIdT&& value) { m_senderClientIdHasBeenSet = true; m_senderClientId = std::forward<SenderClientIdT>(value); }
+    template<typename SenderClientIdT = Aws::String>
+    SendAlexaOfferToMasterRequest& WithSenderClientId(SenderClientIdT&& value) { SetSenderClientId(std::forward<SenderClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The base64-encoded SDP offer content.</p>
      */
-    inline const Aws::String& GetMessagePayload() const{ return m_messagePayload; }
+    inline const Aws::String& GetMessagePayload() const { return m_messagePayload; }
     inline bool MessagePayloadHasBeenSet() const { return m_messagePayloadHasBeenSet; }
-    inline void SetMessagePayload(const Aws::String& value) { m_messagePayloadHasBeenSet = true; m_messagePayload = value; }
-    inline void SetMessagePayload(Aws::String&& value) { m_messagePayloadHasBeenSet = true; m_messagePayload = std::move(value); }
-    inline void SetMessagePayload(const char* value) { m_messagePayloadHasBeenSet = true; m_messagePayload.assign(value); }
-    inline SendAlexaOfferToMasterRequest& WithMessagePayload(const Aws::String& value) { SetMessagePayload(value); return *this;}
-    inline SendAlexaOfferToMasterRequest& WithMessagePayload(Aws::String&& value) { SetMessagePayload(std::move(value)); return *this;}
-    inline SendAlexaOfferToMasterRequest& WithMessagePayload(const char* value) { SetMessagePayload(value); return *this;}
+    template<typename MessagePayloadT = Aws::String>
+    void SetMessagePayload(MessagePayloadT&& value) { m_messagePayloadHasBeenSet = true; m_messagePayload = std::forward<MessagePayloadT>(value); }
+    template<typename MessagePayloadT = Aws::String>
+    SendAlexaOfferToMasterRequest& WithMessagePayload(MessagePayloadT&& value) { SetMessagePayload(std::forward<MessagePayloadT>(value)); return *this;}
     ///@}
   private:
 

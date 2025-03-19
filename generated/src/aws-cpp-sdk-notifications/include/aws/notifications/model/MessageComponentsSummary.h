@@ -31,7 +31,7 @@ namespace Model
   class MessageComponentsSummary
   {
   public:
-    AWS_NOTIFICATIONS_API MessageComponentsSummary();
+    AWS_NOTIFICATIONS_API MessageComponentsSummary() = default;
     AWS_NOTIFICATIONS_API MessageComponentsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API MessageComponentsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A sentence long summary. For example, titles or an email subject line.</p>
      */
-    inline const Aws::String& GetHeadline() const{ return m_headline; }
+    inline const Aws::String& GetHeadline() const { return m_headline; }
     inline bool HeadlineHasBeenSet() const { return m_headlineHasBeenSet; }
-    inline void SetHeadline(const Aws::String& value) { m_headlineHasBeenSet = true; m_headline = value; }
-    inline void SetHeadline(Aws::String&& value) { m_headlineHasBeenSet = true; m_headline = std::move(value); }
-    inline void SetHeadline(const char* value) { m_headlineHasBeenSet = true; m_headline.assign(value); }
-    inline MessageComponentsSummary& WithHeadline(const Aws::String& value) { SetHeadline(value); return *this;}
-    inline MessageComponentsSummary& WithHeadline(Aws::String&& value) { SetHeadline(std::move(value)); return *this;}
-    inline MessageComponentsSummary& WithHeadline(const char* value) { SetHeadline(value); return *this;}
+    template<typename HeadlineT = Aws::String>
+    void SetHeadline(HeadlineT&& value) { m_headlineHasBeenSet = true; m_headline = std::forward<HeadlineT>(value); }
+    template<typename HeadlineT = Aws::String>
+    MessageComponentsSummary& WithHeadline(HeadlineT&& value) { SetHeadline(std::forward<HeadlineT>(value)); return *this;}
     ///@}
   private:
 

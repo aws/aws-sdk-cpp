@@ -12,17 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSecurityProfileRequest::CreateSecurityProfileRequest() : 
-    m_securityProfileNameHasBeenSet(false),
-    m_securityProfileDescriptionHasBeenSet(false),
-    m_behaviorsHasBeenSet(false),
-    m_alertTargetsHasBeenSet(false),
-    m_additionalMetricsToRetainV2HasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_metricsExportConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateSecurityProfileRequest::SerializePayload() const
 {
   JsonValue payload;

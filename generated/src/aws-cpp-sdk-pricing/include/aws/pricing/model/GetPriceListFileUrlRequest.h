@@ -21,7 +21,7 @@ namespace Model
   class GetPriceListFileUrlRequest : public PricingRequest
   {
   public:
-    AWS_PRICING_API GetPriceListFileUrlRequest();
+    AWS_PRICING_API GetPriceListFileUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
      * response. </p>
      */
-    inline const Aws::String& GetPriceListArn() const{ return m_priceListArn; }
+    inline const Aws::String& GetPriceListArn() const { return m_priceListArn; }
     inline bool PriceListArnHasBeenSet() const { return m_priceListArnHasBeenSet; }
-    inline void SetPriceListArn(const Aws::String& value) { m_priceListArnHasBeenSet = true; m_priceListArn = value; }
-    inline void SetPriceListArn(Aws::String&& value) { m_priceListArnHasBeenSet = true; m_priceListArn = std::move(value); }
-    inline void SetPriceListArn(const char* value) { m_priceListArnHasBeenSet = true; m_priceListArn.assign(value); }
-    inline GetPriceListFileUrlRequest& WithPriceListArn(const Aws::String& value) { SetPriceListArn(value); return *this;}
-    inline GetPriceListFileUrlRequest& WithPriceListArn(Aws::String&& value) { SetPriceListArn(std::move(value)); return *this;}
-    inline GetPriceListFileUrlRequest& WithPriceListArn(const char* value) { SetPriceListArn(value); return *this;}
+    template<typename PriceListArnT = Aws::String>
+    void SetPriceListArn(PriceListArnT&& value) { m_priceListArnHasBeenSet = true; m_priceListArn = std::forward<PriceListArnT>(value); }
+    template<typename PriceListArnT = Aws::String>
+    GetPriceListFileUrlRequest& WithPriceListArn(PriceListArnT&& value) { SetPriceListArn(std::forward<PriceListArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
      * response. </p>
      */
-    inline const Aws::String& GetFileFormat() const{ return m_fileFormat; }
+    inline const Aws::String& GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const Aws::String& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(Aws::String&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline void SetFileFormat(const char* value) { m_fileFormatHasBeenSet = true; m_fileFormat.assign(value); }
-    inline GetPriceListFileUrlRequest& WithFileFormat(const Aws::String& value) { SetFileFormat(value); return *this;}
-    inline GetPriceListFileUrlRequest& WithFileFormat(Aws::String&& value) { SetFileFormat(std::move(value)); return *this;}
-    inline GetPriceListFileUrlRequest& WithFileFormat(const char* value) { SetFileFormat(value); return *this;}
+    template<typename FileFormatT = Aws::String>
+    void SetFileFormat(FileFormatT&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::forward<FileFormatT>(value); }
+    template<typename FileFormatT = Aws::String>
+    GetPriceListFileUrlRequest& WithFileFormat(FileFormatT&& value) { SetFileFormat(std::forward<FileFormatT>(value)); return *this;}
     ///@}
   private:
 

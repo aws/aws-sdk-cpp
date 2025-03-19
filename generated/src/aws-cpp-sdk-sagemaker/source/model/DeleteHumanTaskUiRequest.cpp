@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHumanTaskUiRequest::DeleteHumanTaskUiRequest() : 
-    m_humanTaskUiNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHumanTaskUiRequest::SerializePayload() const
 {
   JsonValue payload;

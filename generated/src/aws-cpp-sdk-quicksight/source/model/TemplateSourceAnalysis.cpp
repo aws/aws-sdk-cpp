@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TemplateSourceAnalysis::TemplateSourceAnalysis() : 
-    m_arnHasBeenSet(false),
-    m_dataSetReferencesHasBeenSet(false)
-{
-}
-
 TemplateSourceAnalysis::TemplateSourceAnalysis(JsonView jsonValue)
-  : TemplateSourceAnalysis()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TemplateSourceAnalysis& TemplateSourceAnalysis::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetReferences"))
   {
     Aws::Utils::Array<JsonView> dataSetReferencesJsonList = jsonValue.GetArray("DataSetReferences");
@@ -48,7 +39,6 @@ TemplateSourceAnalysis& TemplateSourceAnalysis::operator =(JsonView jsonValue)
     }
     m_dataSetReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

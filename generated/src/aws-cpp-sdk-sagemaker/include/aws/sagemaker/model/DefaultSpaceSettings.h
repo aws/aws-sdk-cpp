@@ -40,7 +40,7 @@ namespace Model
   class DefaultSpaceSettings
   {
   public:
-    AWS_SAGEMAKER_API DefaultSpaceSettings();
+    AWS_SAGEMAKER_API DefaultSpaceSettings() = default;
     AWS_SAGEMAKER_API DefaultSpaceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DefaultSpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The ARN of the execution role for the space.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline DefaultSpaceSettings& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline DefaultSpaceSettings& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline DefaultSpaceSettings& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    DefaultSpaceSettings& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,65 +63,64 @@ namespace Model
      * <p>The security group IDs for the Amazon VPC that the space uses for
      * communication.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline DefaultSpaceSettings& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline DefaultSpaceSettings& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline DefaultSpaceSettings& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline DefaultSpaceSettings& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline DefaultSpaceSettings& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    DefaultSpaceSettings& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    DefaultSpaceSettings& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const JupyterServerAppSettings& GetJupyterServerAppSettings() const{ return m_jupyterServerAppSettings; }
+    inline const JupyterServerAppSettings& GetJupyterServerAppSettings() const { return m_jupyterServerAppSettings; }
     inline bool JupyterServerAppSettingsHasBeenSet() const { return m_jupyterServerAppSettingsHasBeenSet; }
-    inline void SetJupyterServerAppSettings(const JupyterServerAppSettings& value) { m_jupyterServerAppSettingsHasBeenSet = true; m_jupyterServerAppSettings = value; }
-    inline void SetJupyterServerAppSettings(JupyterServerAppSettings&& value) { m_jupyterServerAppSettingsHasBeenSet = true; m_jupyterServerAppSettings = std::move(value); }
-    inline DefaultSpaceSettings& WithJupyterServerAppSettings(const JupyterServerAppSettings& value) { SetJupyterServerAppSettings(value); return *this;}
-    inline DefaultSpaceSettings& WithJupyterServerAppSettings(JupyterServerAppSettings&& value) { SetJupyterServerAppSettings(std::move(value)); return *this;}
+    template<typename JupyterServerAppSettingsT = JupyterServerAppSettings>
+    void SetJupyterServerAppSettings(JupyterServerAppSettingsT&& value) { m_jupyterServerAppSettingsHasBeenSet = true; m_jupyterServerAppSettings = std::forward<JupyterServerAppSettingsT>(value); }
+    template<typename JupyterServerAppSettingsT = JupyterServerAppSettings>
+    DefaultSpaceSettings& WithJupyterServerAppSettings(JupyterServerAppSettingsT&& value) { SetJupyterServerAppSettings(std::forward<JupyterServerAppSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const KernelGatewayAppSettings& GetKernelGatewayAppSettings() const{ return m_kernelGatewayAppSettings; }
+    inline const KernelGatewayAppSettings& GetKernelGatewayAppSettings() const { return m_kernelGatewayAppSettings; }
     inline bool KernelGatewayAppSettingsHasBeenSet() const { return m_kernelGatewayAppSettingsHasBeenSet; }
-    inline void SetKernelGatewayAppSettings(const KernelGatewayAppSettings& value) { m_kernelGatewayAppSettingsHasBeenSet = true; m_kernelGatewayAppSettings = value; }
-    inline void SetKernelGatewayAppSettings(KernelGatewayAppSettings&& value) { m_kernelGatewayAppSettingsHasBeenSet = true; m_kernelGatewayAppSettings = std::move(value); }
-    inline DefaultSpaceSettings& WithKernelGatewayAppSettings(const KernelGatewayAppSettings& value) { SetKernelGatewayAppSettings(value); return *this;}
-    inline DefaultSpaceSettings& WithKernelGatewayAppSettings(KernelGatewayAppSettings&& value) { SetKernelGatewayAppSettings(std::move(value)); return *this;}
+    template<typename KernelGatewayAppSettingsT = KernelGatewayAppSettings>
+    void SetKernelGatewayAppSettings(KernelGatewayAppSettingsT&& value) { m_kernelGatewayAppSettingsHasBeenSet = true; m_kernelGatewayAppSettings = std::forward<KernelGatewayAppSettingsT>(value); }
+    template<typename KernelGatewayAppSettingsT = KernelGatewayAppSettings>
+    DefaultSpaceSettings& WithKernelGatewayAppSettings(KernelGatewayAppSettingsT&& value) { SetKernelGatewayAppSettings(std::forward<KernelGatewayAppSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const JupyterLabAppSettings& GetJupyterLabAppSettings() const{ return m_jupyterLabAppSettings; }
+    inline const JupyterLabAppSettings& GetJupyterLabAppSettings() const { return m_jupyterLabAppSettings; }
     inline bool JupyterLabAppSettingsHasBeenSet() const { return m_jupyterLabAppSettingsHasBeenSet; }
-    inline void SetJupyterLabAppSettings(const JupyterLabAppSettings& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = value; }
-    inline void SetJupyterLabAppSettings(JupyterLabAppSettings&& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = std::move(value); }
-    inline DefaultSpaceSettings& WithJupyterLabAppSettings(const JupyterLabAppSettings& value) { SetJupyterLabAppSettings(value); return *this;}
-    inline DefaultSpaceSettings& WithJupyterLabAppSettings(JupyterLabAppSettings&& value) { SetJupyterLabAppSettings(std::move(value)); return *this;}
+    template<typename JupyterLabAppSettingsT = JupyterLabAppSettings>
+    void SetJupyterLabAppSettings(JupyterLabAppSettingsT&& value) { m_jupyterLabAppSettingsHasBeenSet = true; m_jupyterLabAppSettings = std::forward<JupyterLabAppSettingsT>(value); }
+    template<typename JupyterLabAppSettingsT = JupyterLabAppSettings>
+    DefaultSpaceSettings& WithJupyterLabAppSettings(JupyterLabAppSettingsT&& value) { SetJupyterLabAppSettings(std::forward<JupyterLabAppSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DefaultSpaceStorageSettings& GetSpaceStorageSettings() const{ return m_spaceStorageSettings; }
+    inline const DefaultSpaceStorageSettings& GetSpaceStorageSettings() const { return m_spaceStorageSettings; }
     inline bool SpaceStorageSettingsHasBeenSet() const { return m_spaceStorageSettingsHasBeenSet; }
-    inline void SetSpaceStorageSettings(const DefaultSpaceStorageSettings& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = value; }
-    inline void SetSpaceStorageSettings(DefaultSpaceStorageSettings&& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = std::move(value); }
-    inline DefaultSpaceSettings& WithSpaceStorageSettings(const DefaultSpaceStorageSettings& value) { SetSpaceStorageSettings(value); return *this;}
-    inline DefaultSpaceSettings& WithSpaceStorageSettings(DefaultSpaceStorageSettings&& value) { SetSpaceStorageSettings(std::move(value)); return *this;}
+    template<typename SpaceStorageSettingsT = DefaultSpaceStorageSettings>
+    void SetSpaceStorageSettings(SpaceStorageSettingsT&& value) { m_spaceStorageSettingsHasBeenSet = true; m_spaceStorageSettings = std::forward<SpaceStorageSettingsT>(value); }
+    template<typename SpaceStorageSettingsT = DefaultSpaceStorageSettings>
+    DefaultSpaceSettings& WithSpaceStorageSettings(SpaceStorageSettingsT&& value) { SetSpaceStorageSettings(std::forward<SpaceStorageSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CustomPosixUserConfig& GetCustomPosixUserConfig() const{ return m_customPosixUserConfig; }
+    inline const CustomPosixUserConfig& GetCustomPosixUserConfig() const { return m_customPosixUserConfig; }
     inline bool CustomPosixUserConfigHasBeenSet() const { return m_customPosixUserConfigHasBeenSet; }
-    inline void SetCustomPosixUserConfig(const CustomPosixUserConfig& value) { m_customPosixUserConfigHasBeenSet = true; m_customPosixUserConfig = value; }
-    inline void SetCustomPosixUserConfig(CustomPosixUserConfig&& value) { m_customPosixUserConfigHasBeenSet = true; m_customPosixUserConfig = std::move(value); }
-    inline DefaultSpaceSettings& WithCustomPosixUserConfig(const CustomPosixUserConfig& value) { SetCustomPosixUserConfig(value); return *this;}
-    inline DefaultSpaceSettings& WithCustomPosixUserConfig(CustomPosixUserConfig&& value) { SetCustomPosixUserConfig(std::move(value)); return *this;}
+    template<typename CustomPosixUserConfigT = CustomPosixUserConfig>
+    void SetCustomPosixUserConfig(CustomPosixUserConfigT&& value) { m_customPosixUserConfigHasBeenSet = true; m_customPosixUserConfig = std::forward<CustomPosixUserConfigT>(value); }
+    template<typename CustomPosixUserConfigT = CustomPosixUserConfig>
+    DefaultSpaceSettings& WithCustomPosixUserConfig(CustomPosixUserConfigT&& value) { SetCustomPosixUserConfig(std::forward<CustomPosixUserConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +128,14 @@ namespace Model
      * <p>The settings for assigning a custom file system to a domain. Permitted users
      * can access this file system in Amazon SageMaker AI Studio.</p>
      */
-    inline const Aws::Vector<CustomFileSystemConfig>& GetCustomFileSystemConfigs() const{ return m_customFileSystemConfigs; }
+    inline const Aws::Vector<CustomFileSystemConfig>& GetCustomFileSystemConfigs() const { return m_customFileSystemConfigs; }
     inline bool CustomFileSystemConfigsHasBeenSet() const { return m_customFileSystemConfigsHasBeenSet; }
-    inline void SetCustomFileSystemConfigs(const Aws::Vector<CustomFileSystemConfig>& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs = value; }
-    inline void SetCustomFileSystemConfigs(Aws::Vector<CustomFileSystemConfig>&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs = std::move(value); }
-    inline DefaultSpaceSettings& WithCustomFileSystemConfigs(const Aws::Vector<CustomFileSystemConfig>& value) { SetCustomFileSystemConfigs(value); return *this;}
-    inline DefaultSpaceSettings& WithCustomFileSystemConfigs(Aws::Vector<CustomFileSystemConfig>&& value) { SetCustomFileSystemConfigs(std::move(value)); return *this;}
-    inline DefaultSpaceSettings& AddCustomFileSystemConfigs(const CustomFileSystemConfig& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.push_back(value); return *this; }
-    inline DefaultSpaceSettings& AddCustomFileSystemConfigs(CustomFileSystemConfig&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.push_back(std::move(value)); return *this; }
+    template<typename CustomFileSystemConfigsT = Aws::Vector<CustomFileSystemConfig>>
+    void SetCustomFileSystemConfigs(CustomFileSystemConfigsT&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs = std::forward<CustomFileSystemConfigsT>(value); }
+    template<typename CustomFileSystemConfigsT = Aws::Vector<CustomFileSystemConfig>>
+    DefaultSpaceSettings& WithCustomFileSystemConfigs(CustomFileSystemConfigsT&& value) { SetCustomFileSystemConfigs(std::forward<CustomFileSystemConfigsT>(value)); return *this;}
+    template<typename CustomFileSystemConfigsT = CustomFileSystemConfig>
+    DefaultSpaceSettings& AddCustomFileSystemConfigs(CustomFileSystemConfigsT&& value) { m_customFileSystemConfigsHasBeenSet = true; m_customFileSystemConfigs.emplace_back(std::forward<CustomFileSystemConfigsT>(value)); return *this; }
     ///@}
   private:
 

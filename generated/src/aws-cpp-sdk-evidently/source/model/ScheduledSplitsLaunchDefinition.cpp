@@ -18,13 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ScheduledSplitsLaunchDefinition::ScheduledSplitsLaunchDefinition() : 
-    m_stepsHasBeenSet(false)
-{
-}
-
 ScheduledSplitsLaunchDefinition::ScheduledSplitsLaunchDefinition(JsonView jsonValue)
-  : ScheduledSplitsLaunchDefinition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ScheduledSplitsLaunchDefinition& ScheduledSplitsLaunchDefinition::operator =(Jso
     }
     m_stepsHasBeenSet = true;
   }
-
   return *this;
 }
 

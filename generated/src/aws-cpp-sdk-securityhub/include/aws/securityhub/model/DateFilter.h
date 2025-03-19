@@ -32,7 +32,7 @@ namespace Model
   class DateFilter
   {
   public:
-    AWS_SECURITYHUB_API DateFilter();
+    AWS_SECURITYHUB_API DateFilter() = default;
     AWS_SECURITYHUB_API DateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API DateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetStart() const{ return m_start; }
+    inline const Aws::String& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
-    inline DateFilter& WithStart(const Aws::String& value) { SetStart(value); return *this;}
-    inline DateFilter& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
-    inline DateFilter& WithStart(const char* value) { SetStart(value); return *this;}
+    template<typename StartT = Aws::String>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::String>
+    DateFilter& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetEnd() const{ return m_end; }
+    inline const Aws::String& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
-    inline DateFilter& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
-    inline DateFilter& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
-    inline DateFilter& WithEnd(const char* value) { SetEnd(value); return *this;}
+    template<typename EndT = Aws::String>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Aws::String>
+    DateFilter& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A date range for the date filter.</p>
      */
-    inline const DateRange& GetDateRange() const{ return m_dateRange; }
+    inline const DateRange& GetDateRange() const { return m_dateRange; }
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-    inline void SetDateRange(const DateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-    inline void SetDateRange(DateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-    inline DateFilter& WithDateRange(const DateRange& value) { SetDateRange(value); return *this;}
-    inline DateFilter& WithDateRange(DateRange&& value) { SetDateRange(std::move(value)); return *this;}
+    template<typename DateRangeT = DateRange>
+    void SetDateRange(DateRangeT&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::forward<DateRangeT>(value); }
+    template<typename DateRangeT = DateRange>
+    DateFilter& WithDateRange(DateRangeT&& value) { SetDateRange(std::forward<DateRangeT>(value)); return *this;}
     ///@}
   private:
 

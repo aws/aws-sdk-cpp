@@ -18,13 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ReshardingStatus::ReshardingStatus() : 
-    m_slotMigrationHasBeenSet(false)
-{
-}
-
 ReshardingStatus::ReshardingStatus(JsonView jsonValue)
-  : ReshardingStatus()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReshardingStatus& ReshardingStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SlotMigration"))
   {
     m_slotMigration = jsonValue.GetObject("SlotMigration");
-
     m_slotMigrationHasBeenSet = true;
   }
-
   return *this;
 }
 

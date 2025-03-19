@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-HttpRequestMethodConditionConfig::HttpRequestMethodConditionConfig() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 HttpRequestMethodConditionConfig::HttpRequestMethodConditionConfig(const XmlNode& xmlNode)
-  : HttpRequestMethodConditionConfig()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ HttpRequestMethodConditionConfig& HttpRequestMethodConditionConfig::operator =(c
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

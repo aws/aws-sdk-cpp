@@ -35,7 +35,7 @@ namespace Model
   class ZeppelinMonitoringConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfiguration();
+    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfiguration() = default;
     AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
     /**
      * <p>The verbosity of the CloudWatch Logs for an application.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline ZeppelinMonitoringConfiguration& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline ZeppelinMonitoringConfiguration& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline ZeppelinMonitoringConfiguration& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
   private:
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-QueryTextInputData::QueryTextInputData() : 
-    m_textHasBeenSet(false)
-{
-}
-
 QueryTextInputData::QueryTextInputData(JsonView jsonValue)
-  : QueryTextInputData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryTextInputData& QueryTextInputData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

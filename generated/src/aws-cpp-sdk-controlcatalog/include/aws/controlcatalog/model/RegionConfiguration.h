@@ -47,7 +47,7 @@ namespace Model
   class RegionConfiguration
   {
   public:
-    AWS_CONTROLCATALOG_API RegionConfiguration();
+    AWS_CONTROLCATALOG_API RegionConfiguration() = default;
     AWS_CONTROLCATALOG_API RegionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API RegionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,31 +65,28 @@ namespace Model
      * usually are Regional in scope. Security Hub controls usually are Regional in
      * scope.</p>
      */
-    inline const ControlScope& GetScope() const{ return m_scope; }
+    inline ControlScope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const ControlScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(ControlScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline RegionConfiguration& WithScope(const ControlScope& value) { SetScope(value); return *this;}
-    inline RegionConfiguration& WithScope(ControlScope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(ControlScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline RegionConfiguration& WithScope(ControlScope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Regions in which the control is available to be deployed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeployableRegions() const{ return m_deployableRegions; }
+    inline const Aws::Vector<Aws::String>& GetDeployableRegions() const { return m_deployableRegions; }
     inline bool DeployableRegionsHasBeenSet() const { return m_deployableRegionsHasBeenSet; }
-    inline void SetDeployableRegions(const Aws::Vector<Aws::String>& value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions = value; }
-    inline void SetDeployableRegions(Aws::Vector<Aws::String>&& value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions = std::move(value); }
-    inline RegionConfiguration& WithDeployableRegions(const Aws::Vector<Aws::String>& value) { SetDeployableRegions(value); return *this;}
-    inline RegionConfiguration& WithDeployableRegions(Aws::Vector<Aws::String>&& value) { SetDeployableRegions(std::move(value)); return *this;}
-    inline RegionConfiguration& AddDeployableRegions(const Aws::String& value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions.push_back(value); return *this; }
-    inline RegionConfiguration& AddDeployableRegions(Aws::String&& value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions.push_back(std::move(value)); return *this; }
-    inline RegionConfiguration& AddDeployableRegions(const char* value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions.push_back(value); return *this; }
+    template<typename DeployableRegionsT = Aws::Vector<Aws::String>>
+    void SetDeployableRegions(DeployableRegionsT&& value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions = std::forward<DeployableRegionsT>(value); }
+    template<typename DeployableRegionsT = Aws::Vector<Aws::String>>
+    RegionConfiguration& WithDeployableRegions(DeployableRegionsT&& value) { SetDeployableRegions(std::forward<DeployableRegionsT>(value)); return *this;}
+    template<typename DeployableRegionsT = Aws::String>
+    RegionConfiguration& AddDeployableRegions(DeployableRegionsT&& value) { m_deployableRegionsHasBeenSet = true; m_deployableRegions.emplace_back(std::forward<DeployableRegionsT>(value)); return *this; }
     ///@}
   private:
 
-    ControlScope m_scope;
+    ControlScope m_scope{ControlScope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deployableRegions;

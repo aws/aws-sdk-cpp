@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-FlowDefinition::FlowDefinition() : 
-    m_descriptionHasBeenSet(false),
-    m_flowNameHasBeenSet(false),
-    m_kmsArnHasBeenSet(false),
-    m_sourceFlowConfigHasBeenSet(false),
-    m_tasksHasBeenSet(false),
-    m_triggerConfigHasBeenSet(false)
-{
-}
-
 FlowDefinition::FlowDefinition(JsonView jsonValue)
-  : FlowDefinition()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowName"))
   {
     m_flowName = jsonValue.GetString("FlowName");
-
     m_flowNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsArn"))
   {
     m_kmsArn = jsonValue.GetString("KmsArn");
-
     m_kmsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFlowConfig"))
   {
     m_sourceFlowConfig = jsonValue.GetObject("SourceFlowConfig");
-
     m_sourceFlowConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tasks"))
   {
     Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("Tasks");
@@ -73,14 +54,11 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
     }
     m_tasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerConfig"))
   {
     m_triggerConfig = jsonValue.GetObject("TriggerConfig");
-
     m_triggerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

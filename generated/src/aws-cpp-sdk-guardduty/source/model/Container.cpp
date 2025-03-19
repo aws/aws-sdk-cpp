@@ -18,19 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Container::Container() : 
-    m_containerRuntimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imagePrefixHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
-    m_securityContextHasBeenSet(false)
-{
-}
-
 Container::Container(JsonView jsonValue)
-  : Container()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Container& Container::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerRuntime"))
   {
     m_containerRuntime = jsonValue.GetString("containerRuntime");
-
     m_containerRuntimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePrefix"))
   {
     m_imagePrefix = jsonValue.GetString("imagePrefix");
-
     m_imagePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeMounts"))
   {
     Aws::Utils::Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("volumeMounts");
@@ -81,14 +59,11 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_volumeMountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityContext"))
   {
     m_securityContext = jsonValue.GetObject("securityContext");
-
     m_securityContextHasBeenSet = true;
   }
-
   return *this;
 }
 

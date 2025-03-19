@@ -34,7 +34,7 @@ namespace Model
   class JavaScriptSourceMaps
   {
   public:
-    AWS_CLOUDWATCHRUM_API JavaScriptSourceMaps();
+    AWS_CLOUDWATCHRUM_API JavaScriptSourceMaps() = default;
     AWS_CLOUDWATCHRUM_API JavaScriptSourceMaps(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API JavaScriptSourceMaps& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p> The S3Uri of the bucket or folder that stores the source map files. It is
      * required if status is ENABLED. </p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline JavaScriptSourceMaps& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline JavaScriptSourceMaps& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline JavaScriptSourceMaps& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    JavaScriptSourceMaps& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * this app monitor. The default is for JavaScript error stack trace unminification
      * to be <code>DISABLED</code>. </p>
      */
-    inline const DeobfuscationStatus& GetStatus() const{ return m_status; }
+    inline DeobfuscationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DeobfuscationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DeobfuscationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JavaScriptSourceMaps& WithStatus(const DeobfuscationStatus& value) { SetStatus(value); return *this;}
-    inline JavaScriptSourceMaps& WithStatus(DeobfuscationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DeobfuscationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JavaScriptSourceMaps& WithStatus(DeobfuscationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet = false;
 
-    DeobfuscationStatus m_status;
+    DeobfuscationStatus m_status{DeobfuscationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAssetModelCompositeModelResult::DeleteAssetModelCompositeModelResult()
-{
-}
-
 DeleteAssetModelCompositeModelResult::DeleteAssetModelCompositeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteAssetModelCompositeModelResult& DeleteAssetModelCompositeModelResult::oper
   if(jsonValue.ValueExists("assetModelStatus"))
   {
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");
-
+    m_assetModelStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

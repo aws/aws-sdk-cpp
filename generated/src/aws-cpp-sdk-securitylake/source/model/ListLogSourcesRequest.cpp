@@ -12,16 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLogSourcesRequest::ListLogSourcesRequest() : 
-    m_accountsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 Aws::String ListLogSourcesRequest::SerializePayload() const
 {
   JsonValue payload;

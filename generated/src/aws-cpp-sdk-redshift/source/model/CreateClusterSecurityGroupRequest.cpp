@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateClusterSecurityGroupRequest::CreateClusterSecurityGroupRequest() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

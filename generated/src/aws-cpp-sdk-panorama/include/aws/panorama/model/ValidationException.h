@@ -36,7 +36,7 @@ namespace Model
   class ValidationException
   {
   public:
-    AWS_PANORAMA_API ValidationException();
+    AWS_PANORAMA_API ValidationException() = default;
     AWS_PANORAMA_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,66 +46,60 @@ namespace Model
     /**
      * <p>A list of attributes that led to the exception and their values.</p>
      */
-    inline const Aws::Vector<ValidationExceptionErrorArgument>& GetErrorArguments() const{ return m_errorArguments; }
+    inline const Aws::Vector<ValidationExceptionErrorArgument>& GetErrorArguments() const { return m_errorArguments; }
     inline bool ErrorArgumentsHasBeenSet() const { return m_errorArgumentsHasBeenSet; }
-    inline void SetErrorArguments(const Aws::Vector<ValidationExceptionErrorArgument>& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = value; }
-    inline void SetErrorArguments(Aws::Vector<ValidationExceptionErrorArgument>&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = std::move(value); }
-    inline ValidationException& WithErrorArguments(const Aws::Vector<ValidationExceptionErrorArgument>& value) { SetErrorArguments(value); return *this;}
-    inline ValidationException& WithErrorArguments(Aws::Vector<ValidationExceptionErrorArgument>&& value) { SetErrorArguments(std::move(value)); return *this;}
-    inline ValidationException& AddErrorArguments(const ValidationExceptionErrorArgument& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.push_back(value); return *this; }
-    inline ValidationException& AddErrorArguments(ValidationExceptionErrorArgument&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.push_back(std::move(value)); return *this; }
+    template<typename ErrorArgumentsT = Aws::Vector<ValidationExceptionErrorArgument>>
+    void SetErrorArguments(ErrorArgumentsT&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments = std::forward<ErrorArgumentsT>(value); }
+    template<typename ErrorArgumentsT = Aws::Vector<ValidationExceptionErrorArgument>>
+    ValidationException& WithErrorArguments(ErrorArgumentsT&& value) { SetErrorArguments(std::forward<ErrorArgumentsT>(value)); return *this;}
+    template<typename ErrorArgumentsT = ValidationExceptionErrorArgument>
+    ValidationException& AddErrorArguments(ErrorArgumentsT&& value) { m_errorArgumentsHasBeenSet = true; m_errorArguments.emplace_back(std::forward<ErrorArgumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique ID for the error.</p>
      */
-    inline const Aws::String& GetErrorId() const{ return m_errorId; }
+    inline const Aws::String& GetErrorId() const { return m_errorId; }
     inline bool ErrorIdHasBeenSet() const { return m_errorIdHasBeenSet; }
-    inline void SetErrorId(const Aws::String& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
-    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = std::move(value); }
-    inline void SetErrorId(const char* value) { m_errorIdHasBeenSet = true; m_errorId.assign(value); }
-    inline ValidationException& WithErrorId(const Aws::String& value) { SetErrorId(value); return *this;}
-    inline ValidationException& WithErrorId(Aws::String&& value) { SetErrorId(std::move(value)); return *this;}
-    inline ValidationException& WithErrorId(const char* value) { SetErrorId(value); return *this;}
+    template<typename ErrorIdT = Aws::String>
+    void SetErrorId(ErrorIdT&& value) { m_errorIdHasBeenSet = true; m_errorId = std::forward<ErrorIdT>(value); }
+    template<typename ErrorIdT = Aws::String>
+    ValidationException& WithErrorId(ErrorIdT&& value) { SetErrorId(std::forward<ErrorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of request parameters that failed validation.</p>
      */
-    inline const Aws::Vector<ValidationExceptionField>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<ValidationExceptionField>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<ValidationExceptionField>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline ValidationException& WithFields(const Aws::Vector<ValidationExceptionField>& value) { SetFields(value); return *this;}
-    inline ValidationException& WithFields(Aws::Vector<ValidationExceptionField>&& value) { SetFields(std::move(value)); return *this;}
-    inline ValidationException& AddFields(const ValidationExceptionField& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline ValidationException& AddFields(ValidationExceptionField&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
+    ValidationException& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = ValidationExceptionField>
+    ValidationException& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason that validation failed.</p>
      */
-    inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
+    inline ValidationExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ValidationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ValidationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline ValidationException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
-    inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ValidationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ValidationException& WithReason(ValidationExceptionReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
@@ -121,7 +115,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ValidationExceptionReason m_reason;
+    ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

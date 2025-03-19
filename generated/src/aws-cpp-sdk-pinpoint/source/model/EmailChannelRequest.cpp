@@ -18,19 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EmailChannelRequest::EmailChannelRequest() : 
-    m_configurationSetHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_identityHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_orchestrationSendingRoleArnHasBeenSet(false)
-{
-}
-
 EmailChannelRequest::EmailChannelRequest(JsonView jsonValue)
-  : EmailChannelRequest()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ EmailChannelRequest& EmailChannelRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationSet"))
   {
     m_configurationSet = jsonValue.GetString("ConfigurationSet");
-
     m_configurationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromAddress"))
   {
     m_fromAddress = jsonValue.GetString("FromAddress");
-
     m_fromAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identity"))
   {
     m_identity = jsonValue.GetString("Identity");
-
     m_identityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrchestrationSendingRoleArn"))
   {
     m_orchestrationSendingRoleArn = jsonValue.GetString("OrchestrationSendingRoleArn");
-
     m_orchestrationSendingRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

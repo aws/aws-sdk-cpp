@@ -12,48 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RunJobFlowRequest::RunJobFlowRequest() : 
-    m_nameHasBeenSet(false),
-    m_logUriHasBeenSet(false),
-    m_logEncryptionKmsKeyIdHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_amiVersionHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_bootstrapActionsHasBeenSet(false),
-    m_supportedProductsHasBeenSet(false),
-    m_newSupportedProductsHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_visibleToAllUsers(false),
-    m_visibleToAllUsersHasBeenSet(false),
-    m_jobFlowRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_autoScalingRoleHasBeenSet(false),
-    m_scaleDownBehavior(ScaleDownBehavior::NOT_SET),
-    m_scaleDownBehaviorHasBeenSet(false),
-    m_customAmiIdHasBeenSet(false),
-    m_ebsRootVolumeSize(0),
-    m_ebsRootVolumeSizeHasBeenSet(false),
-    m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
-    m_repoUpgradeOnBootHasBeenSet(false),
-    m_kerberosAttributesHasBeenSet(false),
-    m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false),
-    m_managedScalingPolicyHasBeenSet(false),
-    m_placementGroupConfigsHasBeenSet(false),
-    m_autoTerminationPolicyHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false),
-    m_ebsRootVolumeIops(0),
-    m_ebsRootVolumeIopsHasBeenSet(false),
-    m_ebsRootVolumeThroughput(0),
-    m_ebsRootVolumeThroughputHasBeenSet(false)
-{
-}
-
 Aws::String RunJobFlowRequest::SerializePayload() const
 {
   JsonValue payload;

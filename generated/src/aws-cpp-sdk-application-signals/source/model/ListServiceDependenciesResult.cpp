@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceDependenciesResult::ListServiceDependenciesResult()
-{
-}
-
 ListServiceDependenciesResult::ListServiceDependenciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListServiceDependenciesResult& ListServiceDependenciesResult::operator =(const A
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceDependencies"))
   {
     Aws::Utils::Array<JsonView> serviceDependenciesJsonList = jsonValue.GetArray("ServiceDependencies");
@@ -48,20 +42,20 @@ ListServiceDependenciesResult& ListServiceDependenciesResult::operator =(const A
     {
       m_serviceDependencies.push_back(serviceDependenciesJsonList[serviceDependenciesIndex].AsObject());
     }
+    m_serviceDependenciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

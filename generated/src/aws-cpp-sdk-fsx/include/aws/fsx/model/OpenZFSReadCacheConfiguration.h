@@ -33,7 +33,7 @@ namespace Model
   class OpenZFSReadCacheConfiguration
   {
   public:
-    AWS_FSX_API OpenZFSReadCacheConfiguration();
+    AWS_FSX_API OpenZFSReadCacheConfiguration() = default;
     AWS_FSX_API OpenZFSReadCacheConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API OpenZFSReadCacheConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * to have your SSD read cache automatically sized based on your throughput
      * capacity.</p> </li> </ul>
      */
-    inline const OpenZFSReadCacheSizingMode& GetSizingMode() const{ return m_sizingMode; }
+    inline OpenZFSReadCacheSizingMode GetSizingMode() const { return m_sizingMode; }
     inline bool SizingModeHasBeenSet() const { return m_sizingModeHasBeenSet; }
-    inline void SetSizingMode(const OpenZFSReadCacheSizingMode& value) { m_sizingModeHasBeenSet = true; m_sizingMode = value; }
-    inline void SetSizingMode(OpenZFSReadCacheSizingMode&& value) { m_sizingModeHasBeenSet = true; m_sizingMode = std::move(value); }
-    inline OpenZFSReadCacheConfiguration& WithSizingMode(const OpenZFSReadCacheSizingMode& value) { SetSizingMode(value); return *this;}
-    inline OpenZFSReadCacheConfiguration& WithSizingMode(OpenZFSReadCacheSizingMode&& value) { SetSizingMode(std::move(value)); return *this;}
+    inline void SetSizingMode(OpenZFSReadCacheSizingMode value) { m_sizingModeHasBeenSet = true; m_sizingMode = value; }
+    inline OpenZFSReadCacheConfiguration& WithSizingMode(OpenZFSReadCacheSizingMode value) { SetSizingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -62,17 +60,17 @@ namespace Model
      * <p> Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>.
      * Specifies the size of the file system's SSD read cache, in gibibytes (GiB). </p>
      */
-    inline int GetSizeGiB() const{ return m_sizeGiB; }
+    inline int GetSizeGiB() const { return m_sizeGiB; }
     inline bool SizeGiBHasBeenSet() const { return m_sizeGiBHasBeenSet; }
     inline void SetSizeGiB(int value) { m_sizeGiBHasBeenSet = true; m_sizeGiB = value; }
     inline OpenZFSReadCacheConfiguration& WithSizeGiB(int value) { SetSizeGiB(value); return *this;}
     ///@}
   private:
 
-    OpenZFSReadCacheSizingMode m_sizingMode;
+    OpenZFSReadCacheSizingMode m_sizingMode{OpenZFSReadCacheSizingMode::NOT_SET};
     bool m_sizingModeHasBeenSet = false;
 
-    int m_sizeGiB;
+    int m_sizeGiB{0};
     bool m_sizeGiBHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class CalculateRouteSummary
   {
   public:
-    AWS_LOCATIONSERVICE_API CalculateRouteSummary();
+    AWS_LOCATIONSERVICE_API CalculateRouteSummary() = default;
     AWS_LOCATIONSERVICE_API CalculateRouteSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API CalculateRouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,12 @@ namespace Model
      * northeast corner. </p> </li> <li> <p>The fourth <code>bbox</code> position is
      * the Y coordinate, or latitude of the upper northeast corner. </p> </li> </ul>
      */
-    inline const Aws::Vector<double>& GetRouteBBox() const{ return m_routeBBox; }
+    inline const Aws::Vector<double>& GetRouteBBox() const { return m_routeBBox; }
     inline bool RouteBBoxHasBeenSet() const { return m_routeBBoxHasBeenSet; }
-    inline void SetRouteBBox(const Aws::Vector<double>& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = value; }
-    inline void SetRouteBBox(Aws::Vector<double>&& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = std::move(value); }
-    inline CalculateRouteSummary& WithRouteBBox(const Aws::Vector<double>& value) { SetRouteBBox(value); return *this;}
-    inline CalculateRouteSummary& WithRouteBBox(Aws::Vector<double>&& value) { SetRouteBBox(std::move(value)); return *this;}
+    template<typename RouteBBoxT = Aws::Vector<double>>
+    void SetRouteBBox(RouteBBoxT&& value) { m_routeBBoxHasBeenSet = true; m_routeBBox = std::forward<RouteBBoxT>(value); }
+    template<typename RouteBBoxT = Aws::Vector<double>>
+    CalculateRouteSummary& WithRouteBBox(RouteBBoxT&& value) { SetRouteBBox(std::forward<RouteBBoxT>(value)); return *this;}
     inline CalculateRouteSummary& AddRouteBBox(double value) { m_routeBBoxHasBeenSet = true; m_routeBBox.push_back(value); return *this; }
     ///@}
 
@@ -72,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
+    inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-    inline CalculateRouteSummary& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-    inline CalculateRouteSummary& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-    inline CalculateRouteSummary& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    template<typename DataSourceT = Aws::String>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = Aws::String>
+    CalculateRouteSummary& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +88,7 @@ namespace Model
      * route exceeds 400 km, the response is a <code>400
      * RoutesValidationException</code> error.</p> 
      */
-    inline double GetDistance() const{ return m_distance; }
+    inline double GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline CalculateRouteSummary& WithDistance(double value) { SetDistance(value); return *this;}
@@ -101,7 +99,7 @@ namespace Model
      * <p>The total travel time for the route measured in seconds. The sum of the
      * travel time between every stop on the route.</p>
      */
-    inline double GetDurationSeconds() const{ return m_durationSeconds; }
+    inline double GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(double value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline CalculateRouteSummary& WithDurationSeconds(double value) { SetDurationSeconds(value); return *this;}
@@ -111,12 +109,10 @@ namespace Model
     /**
      * <p>The unit of measurement for route distances.</p>
      */
-    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
+    inline DistanceUnit GetDistanceUnit() const { return m_distanceUnit; }
     inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
-    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
-    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
-    inline CalculateRouteSummary& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
-    inline CalculateRouteSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
+    inline void SetDistanceUnit(DistanceUnit value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
+    inline CalculateRouteSummary& WithDistanceUnit(DistanceUnit value) { SetDistanceUnit(value); return *this;}
     ///@}
   private:
 
@@ -126,13 +122,13 @@ namespace Model
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    double m_distance;
+    double m_distance{0.0};
     bool m_distanceHasBeenSet = false;
 
-    double m_durationSeconds;
+    double m_durationSeconds{0.0};
     bool m_durationSecondsHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
+    DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
     bool m_distanceUnitHasBeenSet = false;
   };
 

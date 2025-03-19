@@ -33,7 +33,7 @@ namespace Model
   class FilterGroup
   {
   public:
-    AWS_CUSTOMERPROFILES_API FilterGroup();
+    AWS_CUSTOMERPROFILES_API FilterGroup() = default;
     AWS_CUSTOMERPROFILES_API FilterGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API FilterGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,28 @@ namespace Model
      * <p>The type of logical relationship between the dimensions of the Filter
      * group.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FilterGroup& WithType(const Type& value) { SetType(value); return *this;}
-    inline FilterGroup& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FilterGroup& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Object that holds the attributes to filter on.</p>
      */
-    inline const Aws::Vector<FilterDimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<FilterDimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<FilterDimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<FilterDimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline FilterGroup& WithDimensions(const Aws::Vector<FilterDimension>& value) { SetDimensions(value); return *this;}
-    inline FilterGroup& WithDimensions(Aws::Vector<FilterDimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline FilterGroup& AddDimensions(const FilterDimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline FilterGroup& AddDimensions(FilterDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<FilterDimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<FilterDimension>>
+    FilterGroup& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = FilterDimension>
+    FilterGroup& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
   private:
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<FilterDimension> m_dimensions;

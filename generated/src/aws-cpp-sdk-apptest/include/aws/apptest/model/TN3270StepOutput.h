@@ -33,7 +33,7 @@ namespace Model
   class TN3270StepOutput
   {
   public:
-    AWS_APPTEST_API TN3270StepOutput();
+    AWS_APPTEST_API TN3270StepOutput() = default;
     AWS_APPTEST_API TN3270StepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TN3270StepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,50 @@ namespace Model
     /**
      * <p>The data set export location of the TN3270 step output.</p>
      */
-    inline const Aws::String& GetDataSetExportLocation() const{ return m_dataSetExportLocation; }
+    inline const Aws::String& GetDataSetExportLocation() const { return m_dataSetExportLocation; }
     inline bool DataSetExportLocationHasBeenSet() const { return m_dataSetExportLocationHasBeenSet; }
-    inline void SetDataSetExportLocation(const Aws::String& value) { m_dataSetExportLocationHasBeenSet = true; m_dataSetExportLocation = value; }
-    inline void SetDataSetExportLocation(Aws::String&& value) { m_dataSetExportLocationHasBeenSet = true; m_dataSetExportLocation = std::move(value); }
-    inline void SetDataSetExportLocation(const char* value) { m_dataSetExportLocationHasBeenSet = true; m_dataSetExportLocation.assign(value); }
-    inline TN3270StepOutput& WithDataSetExportLocation(const Aws::String& value) { SetDataSetExportLocation(value); return *this;}
-    inline TN3270StepOutput& WithDataSetExportLocation(Aws::String&& value) { SetDataSetExportLocation(std::move(value)); return *this;}
-    inline TN3270StepOutput& WithDataSetExportLocation(const char* value) { SetDataSetExportLocation(value); return *this;}
+    template<typename DataSetExportLocationT = Aws::String>
+    void SetDataSetExportLocation(DataSetExportLocationT&& value) { m_dataSetExportLocationHasBeenSet = true; m_dataSetExportLocation = std::forward<DataSetExportLocationT>(value); }
+    template<typename DataSetExportLocationT = Aws::String>
+    TN3270StepOutput& WithDataSetExportLocation(DataSetExportLocationT&& value) { SetDataSetExportLocation(std::forward<DataSetExportLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output location of the TN3270 step output.</p>
      */
-    inline const Aws::String& GetDmsOutputLocation() const{ return m_dmsOutputLocation; }
+    inline const Aws::String& GetDmsOutputLocation() const { return m_dmsOutputLocation; }
     inline bool DmsOutputLocationHasBeenSet() const { return m_dmsOutputLocationHasBeenSet; }
-    inline void SetDmsOutputLocation(const Aws::String& value) { m_dmsOutputLocationHasBeenSet = true; m_dmsOutputLocation = value; }
-    inline void SetDmsOutputLocation(Aws::String&& value) { m_dmsOutputLocationHasBeenSet = true; m_dmsOutputLocation = std::move(value); }
-    inline void SetDmsOutputLocation(const char* value) { m_dmsOutputLocationHasBeenSet = true; m_dmsOutputLocation.assign(value); }
-    inline TN3270StepOutput& WithDmsOutputLocation(const Aws::String& value) { SetDmsOutputLocation(value); return *this;}
-    inline TN3270StepOutput& WithDmsOutputLocation(Aws::String&& value) { SetDmsOutputLocation(std::move(value)); return *this;}
-    inline TN3270StepOutput& WithDmsOutputLocation(const char* value) { SetDmsOutputLocation(value); return *this;}
+    template<typename DmsOutputLocationT = Aws::String>
+    void SetDmsOutputLocation(DmsOutputLocationT&& value) { m_dmsOutputLocationHasBeenSet = true; m_dmsOutputLocation = std::forward<DmsOutputLocationT>(value); }
+    template<typename DmsOutputLocationT = Aws::String>
+    TN3270StepOutput& WithDmsOutputLocation(DmsOutputLocationT&& value) { SetDmsOutputLocation(std::forward<DmsOutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data set details of the TN3270 step output.</p>
      */
-    inline const Aws::Vector<DataSet>& GetDataSetDetails() const{ return m_dataSetDetails; }
+    inline const Aws::Vector<DataSet>& GetDataSetDetails() const { return m_dataSetDetails; }
     inline bool DataSetDetailsHasBeenSet() const { return m_dataSetDetailsHasBeenSet; }
-    inline void SetDataSetDetails(const Aws::Vector<DataSet>& value) { m_dataSetDetailsHasBeenSet = true; m_dataSetDetails = value; }
-    inline void SetDataSetDetails(Aws::Vector<DataSet>&& value) { m_dataSetDetailsHasBeenSet = true; m_dataSetDetails = std::move(value); }
-    inline TN3270StepOutput& WithDataSetDetails(const Aws::Vector<DataSet>& value) { SetDataSetDetails(value); return *this;}
-    inline TN3270StepOutput& WithDataSetDetails(Aws::Vector<DataSet>&& value) { SetDataSetDetails(std::move(value)); return *this;}
-    inline TN3270StepOutput& AddDataSetDetails(const DataSet& value) { m_dataSetDetailsHasBeenSet = true; m_dataSetDetails.push_back(value); return *this; }
-    inline TN3270StepOutput& AddDataSetDetails(DataSet&& value) { m_dataSetDetailsHasBeenSet = true; m_dataSetDetails.push_back(std::move(value)); return *this; }
+    template<typename DataSetDetailsT = Aws::Vector<DataSet>>
+    void SetDataSetDetails(DataSetDetailsT&& value) { m_dataSetDetailsHasBeenSet = true; m_dataSetDetails = std::forward<DataSetDetailsT>(value); }
+    template<typename DataSetDetailsT = Aws::Vector<DataSet>>
+    TN3270StepOutput& WithDataSetDetails(DataSetDetailsT&& value) { SetDataSetDetails(std::forward<DataSetDetailsT>(value)); return *this;}
+    template<typename DataSetDetailsT = DataSet>
+    TN3270StepOutput& AddDataSetDetails(DataSetDetailsT&& value) { m_dataSetDetailsHasBeenSet = true; m_dataSetDetails.emplace_back(std::forward<DataSetDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The script output location of the TN3270 step output.</p>
      */
-    inline const Aws::String& GetScriptOutputLocation() const{ return m_scriptOutputLocation; }
+    inline const Aws::String& GetScriptOutputLocation() const { return m_scriptOutputLocation; }
     inline bool ScriptOutputLocationHasBeenSet() const { return m_scriptOutputLocationHasBeenSet; }
-    inline void SetScriptOutputLocation(const Aws::String& value) { m_scriptOutputLocationHasBeenSet = true; m_scriptOutputLocation = value; }
-    inline void SetScriptOutputLocation(Aws::String&& value) { m_scriptOutputLocationHasBeenSet = true; m_scriptOutputLocation = std::move(value); }
-    inline void SetScriptOutputLocation(const char* value) { m_scriptOutputLocationHasBeenSet = true; m_scriptOutputLocation.assign(value); }
-    inline TN3270StepOutput& WithScriptOutputLocation(const Aws::String& value) { SetScriptOutputLocation(value); return *this;}
-    inline TN3270StepOutput& WithScriptOutputLocation(Aws::String&& value) { SetScriptOutputLocation(std::move(value)); return *this;}
-    inline TN3270StepOutput& WithScriptOutputLocation(const char* value) { SetScriptOutputLocation(value); return *this;}
+    template<typename ScriptOutputLocationT = Aws::String>
+    void SetScriptOutputLocation(ScriptOutputLocationT&& value) { m_scriptOutputLocationHasBeenSet = true; m_scriptOutputLocation = std::forward<ScriptOutputLocationT>(value); }
+    template<typename ScriptOutputLocationT = Aws::String>
+    TN3270StepOutput& WithScriptOutputLocation(ScriptOutputLocationT&& value) { SetScriptOutputLocation(std::forward<ScriptOutputLocationT>(value)); return *this;}
     ///@}
   private:
 

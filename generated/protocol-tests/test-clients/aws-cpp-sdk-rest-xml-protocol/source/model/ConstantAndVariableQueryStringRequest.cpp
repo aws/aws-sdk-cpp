@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ConstantAndVariableQueryStringRequest::ConstantAndVariableQueryStringRequest() : 
-    m_bazHasBeenSet(false),
-    m_maybeSetHasBeenSet(false)
-{
-}
 
 Aws::String ConstantAndVariableQueryStringRequest::SerializePayload() const
 {

@@ -28,7 +28,7 @@ namespace Model
   class DescribeContinuousBackupsResult
   {
   public:
-    AWS_DYNAMODB_API DescribeContinuousBackupsResult();
+    AWS_DYNAMODB_API DescribeContinuousBackupsResult() = default;
     AWS_DYNAMODB_API DescribeContinuousBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API DescribeContinuousBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Represents the continuous backups and point in time recovery settings on the
      * table.</p>
      */
-    inline const ContinuousBackupsDescription& GetContinuousBackupsDescription() const{ return m_continuousBackupsDescription; }
-    inline void SetContinuousBackupsDescription(const ContinuousBackupsDescription& value) { m_continuousBackupsDescription = value; }
-    inline void SetContinuousBackupsDescription(ContinuousBackupsDescription&& value) { m_continuousBackupsDescription = std::move(value); }
-    inline DescribeContinuousBackupsResult& WithContinuousBackupsDescription(const ContinuousBackupsDescription& value) { SetContinuousBackupsDescription(value); return *this;}
-    inline DescribeContinuousBackupsResult& WithContinuousBackupsDescription(ContinuousBackupsDescription&& value) { SetContinuousBackupsDescription(std::move(value)); return *this;}
+    inline const ContinuousBackupsDescription& GetContinuousBackupsDescription() const { return m_continuousBackupsDescription; }
+    template<typename ContinuousBackupsDescriptionT = ContinuousBackupsDescription>
+    void SetContinuousBackupsDescription(ContinuousBackupsDescriptionT&& value) { m_continuousBackupsDescriptionHasBeenSet = true; m_continuousBackupsDescription = std::forward<ContinuousBackupsDescriptionT>(value); }
+    template<typename ContinuousBackupsDescriptionT = ContinuousBackupsDescription>
+    DescribeContinuousBackupsResult& WithContinuousBackupsDescription(ContinuousBackupsDescriptionT&& value) { SetContinuousBackupsDescription(std::forward<ContinuousBackupsDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeContinuousBackupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeContinuousBackupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeContinuousBackupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeContinuousBackupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContinuousBackupsDescription m_continuousBackupsDescription;
+    bool m_continuousBackupsDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

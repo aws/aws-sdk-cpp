@@ -38,7 +38,7 @@ namespace Model
   class Document
   {
   public:
-    AWS_KENDRA_API Document();
+    AWS_KENDRA_API Document() = default;
     AWS_KENDRA_API Document(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,28 +53,24 @@ namespace Model
      * use the <code>BatchPutDocument</code> API to index the same documents, or vice
      * versa.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Document& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Document& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Document& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Document& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the document.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Document& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Document& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Document& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Document& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,22 +81,22 @@ namespace Model
      * call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
      * using REST, you must base64 encode the contents before sending.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBlob() const{ return m_blob; }
+    inline const Aws::Utils::ByteBuffer& GetBlob() const { return m_blob; }
     inline bool BlobHasBeenSet() const { return m_blobHasBeenSet; }
-    inline void SetBlob(const Aws::Utils::ByteBuffer& value) { m_blobHasBeenSet = true; m_blob = value; }
-    inline void SetBlob(Aws::Utils::ByteBuffer&& value) { m_blobHasBeenSet = true; m_blob = std::move(value); }
-    inline Document& WithBlob(const Aws::Utils::ByteBuffer& value) { SetBlob(value); return *this;}
-    inline Document& WithBlob(Aws::Utils::ByteBuffer&& value) { SetBlob(std::move(value)); return *this;}
+    template<typename BlobT = Aws::Utils::ByteBuffer>
+    void SetBlob(BlobT&& value) { m_blobHasBeenSet = true; m_blob = std::forward<BlobT>(value); }
+    template<typename BlobT = Aws::Utils::ByteBuffer>
+    Document& WithBlob(BlobT&& value) { SetBlob(std::forward<BlobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Path& GetS3Path() const{ return m_s3Path; }
+    inline const S3Path& GetS3Path() const { return m_s3Path; }
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
-    inline void SetS3Path(const S3Path& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
-    inline void SetS3Path(S3Path&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
-    inline Document& WithS3Path(const S3Path& value) { SetS3Path(value); return *this;}
-    inline Document& WithS3Path(S3Path&& value) { SetS3Path(std::move(value)); return *this;}
+    template<typename S3PathT = S3Path>
+    void SetS3Path(S3PathT&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::forward<S3PathT>(value); }
+    template<typename S3PathT = S3Path>
+    Document& WithS3Path(S3PathT&& value) { SetS3Path(std::forward<S3PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +109,14 @@ namespace Model
      * source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as
      * Amazon Kendra will use the ID of a running sync job.</p>
      */
-    inline const Aws::Vector<DocumentAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<DocumentAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<DocumentAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<DocumentAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline Document& WithAttributes(const Aws::Vector<DocumentAttribute>& value) { SetAttributes(value); return *this;}
-    inline Document& WithAttributes(Aws::Vector<DocumentAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline Document& AddAttributes(const DocumentAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline Document& AddAttributes(DocumentAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<DocumentAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<DocumentAttribute>>
+    Document& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = DocumentAttribute>
+    Document& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,14 +125,14 @@ namespace Model
      * should have access to. This is useful for user context filtering, where search
      * results are filtered based on the user or their group access to documents.</p>
      */
-    inline const Aws::Vector<Principal>& GetAccessControlList() const{ return m_accessControlList; }
+    inline const Aws::Vector<Principal>& GetAccessControlList() const { return m_accessControlList; }
     inline bool AccessControlListHasBeenSet() const { return m_accessControlListHasBeenSet; }
-    inline void SetAccessControlList(const Aws::Vector<Principal>& value) { m_accessControlListHasBeenSet = true; m_accessControlList = value; }
-    inline void SetAccessControlList(Aws::Vector<Principal>&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::move(value); }
-    inline Document& WithAccessControlList(const Aws::Vector<Principal>& value) { SetAccessControlList(value); return *this;}
-    inline Document& WithAccessControlList(Aws::Vector<Principal>&& value) { SetAccessControlList(std::move(value)); return *this;}
-    inline Document& AddAccessControlList(const Principal& value) { m_accessControlListHasBeenSet = true; m_accessControlList.push_back(value); return *this; }
-    inline Document& AddAccessControlList(Principal&& value) { m_accessControlListHasBeenSet = true; m_accessControlList.push_back(std::move(value)); return *this; }
+    template<typename AccessControlListT = Aws::Vector<Principal>>
+    void SetAccessControlList(AccessControlListT&& value) { m_accessControlListHasBeenSet = true; m_accessControlList = std::forward<AccessControlListT>(value); }
+    template<typename AccessControlListT = Aws::Vector<Principal>>
+    Document& WithAccessControlList(AccessControlListT&& value) { SetAccessControlList(std::forward<AccessControlListT>(value)); return *this;}
+    template<typename AccessControlListT = Principal>
+    Document& AddAccessControlList(AccessControlListT&& value) { m_accessControlListHasBeenSet = true; m_accessControlList.emplace_back(std::forward<AccessControlListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,14 +142,14 @@ namespace Model
      * lists that define the hierarchy for which documents users should have access
      * to.</p>
      */
-    inline const Aws::Vector<HierarchicalPrincipal>& GetHierarchicalAccessControlList() const{ return m_hierarchicalAccessControlList; }
+    inline const Aws::Vector<HierarchicalPrincipal>& GetHierarchicalAccessControlList() const { return m_hierarchicalAccessControlList; }
     inline bool HierarchicalAccessControlListHasBeenSet() const { return m_hierarchicalAccessControlListHasBeenSet; }
-    inline void SetHierarchicalAccessControlList(const Aws::Vector<HierarchicalPrincipal>& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList = value; }
-    inline void SetHierarchicalAccessControlList(Aws::Vector<HierarchicalPrincipal>&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList = std::move(value); }
-    inline Document& WithHierarchicalAccessControlList(const Aws::Vector<HierarchicalPrincipal>& value) { SetHierarchicalAccessControlList(value); return *this;}
-    inline Document& WithHierarchicalAccessControlList(Aws::Vector<HierarchicalPrincipal>&& value) { SetHierarchicalAccessControlList(std::move(value)); return *this;}
-    inline Document& AddHierarchicalAccessControlList(const HierarchicalPrincipal& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList.push_back(value); return *this; }
-    inline Document& AddHierarchicalAccessControlList(HierarchicalPrincipal&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList.push_back(std::move(value)); return *this; }
+    template<typename HierarchicalAccessControlListT = Aws::Vector<HierarchicalPrincipal>>
+    void SetHierarchicalAccessControlList(HierarchicalAccessControlListT&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList = std::forward<HierarchicalAccessControlListT>(value); }
+    template<typename HierarchicalAccessControlListT = Aws::Vector<HierarchicalPrincipal>>
+    Document& WithHierarchicalAccessControlList(HierarchicalAccessControlListT&& value) { SetHierarchicalAccessControlList(std::forward<HierarchicalAccessControlListT>(value)); return *this;}
+    template<typename HierarchicalAccessControlListT = HierarchicalPrincipal>
+    Document& AddHierarchicalAccessControlList(HierarchicalAccessControlListT&& value) { m_hierarchicalAccessControlListHasBeenSet = true; m_hierarchicalAccessControlList.emplace_back(std::forward<HierarchicalAccessControlListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -163,12 +159,10 @@ namespace Model
      * the HTML documents, you must add the <code>HTML</code> start and closing tags
      * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
-    inline const ContentType& GetContentType() const{ return m_contentType; }
+    inline ContentType GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const ContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(ContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline Document& WithContentType(const ContentType& value) { SetContentType(value); return *this;}
-    inline Document& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline void SetContentType(ContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline Document& WithContentType(ContentType value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +170,12 @@ namespace Model
      * <p>The identifier of the access control configuration that you want to apply to
      * the document.</p>
      */
-    inline const Aws::String& GetAccessControlConfigurationId() const{ return m_accessControlConfigurationId; }
+    inline const Aws::String& GetAccessControlConfigurationId() const { return m_accessControlConfigurationId; }
     inline bool AccessControlConfigurationIdHasBeenSet() const { return m_accessControlConfigurationIdHasBeenSet; }
-    inline void SetAccessControlConfigurationId(const Aws::String& value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId = value; }
-    inline void SetAccessControlConfigurationId(Aws::String&& value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId = std::move(value); }
-    inline void SetAccessControlConfigurationId(const char* value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId.assign(value); }
-    inline Document& WithAccessControlConfigurationId(const Aws::String& value) { SetAccessControlConfigurationId(value); return *this;}
-    inline Document& WithAccessControlConfigurationId(Aws::String&& value) { SetAccessControlConfigurationId(std::move(value)); return *this;}
-    inline Document& WithAccessControlConfigurationId(const char* value) { SetAccessControlConfigurationId(value); return *this;}
+    template<typename AccessControlConfigurationIdT = Aws::String>
+    void SetAccessControlConfigurationId(AccessControlConfigurationIdT&& value) { m_accessControlConfigurationIdHasBeenSet = true; m_accessControlConfigurationId = std::forward<AccessControlConfigurationIdT>(value); }
+    template<typename AccessControlConfigurationIdT = Aws::String>
+    Document& WithAccessControlConfigurationId(AccessControlConfigurationIdT&& value) { SetAccessControlConfigurationId(std::forward<AccessControlConfigurationIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -193,7 +185,7 @@ namespace Model
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_blob;
+    Aws::Utils::ByteBuffer m_blob{};
     bool m_blobHasBeenSet = false;
 
     S3Path m_s3Path;
@@ -208,7 +200,7 @@ namespace Model
     Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
     bool m_hierarchicalAccessControlListHasBeenSet = false;
 
-    ContentType m_contentType;
+    ContentType m_contentType{ContentType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_accessControlConfigurationId;

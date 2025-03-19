@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_topicARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

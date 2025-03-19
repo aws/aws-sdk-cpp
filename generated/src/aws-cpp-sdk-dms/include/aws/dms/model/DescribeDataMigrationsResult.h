@@ -29,7 +29,7 @@ namespace Model
   class DescribeDataMigrationsResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeDataMigrationsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeDataMigrationsResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeDataMigrationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeDataMigrationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns information about the data migrations used in the project.</p>
      */
-    inline const Aws::Vector<DataMigration>& GetDataMigrations() const{ return m_dataMigrations; }
-    inline void SetDataMigrations(const Aws::Vector<DataMigration>& value) { m_dataMigrations = value; }
-    inline void SetDataMigrations(Aws::Vector<DataMigration>&& value) { m_dataMigrations = std::move(value); }
-    inline DescribeDataMigrationsResult& WithDataMigrations(const Aws::Vector<DataMigration>& value) { SetDataMigrations(value); return *this;}
-    inline DescribeDataMigrationsResult& WithDataMigrations(Aws::Vector<DataMigration>&& value) { SetDataMigrations(std::move(value)); return *this;}
-    inline DescribeDataMigrationsResult& AddDataMigrations(const DataMigration& value) { m_dataMigrations.push_back(value); return *this; }
-    inline DescribeDataMigrationsResult& AddDataMigrations(DataMigration&& value) { m_dataMigrations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataMigration>& GetDataMigrations() const { return m_dataMigrations; }
+    template<typename DataMigrationsT = Aws::Vector<DataMigration>>
+    void SetDataMigrations(DataMigrationsT&& value) { m_dataMigrationsHasBeenSet = true; m_dataMigrations = std::forward<DataMigrationsT>(value); }
+    template<typename DataMigrationsT = Aws::Vector<DataMigration>>
+    DescribeDataMigrationsResult& WithDataMigrations(DataMigrationsT&& value) { SetDataMigrations(std::forward<DataMigrationsT>(value)); return *this;}
+    template<typename DataMigrationsT = DataMigration>
+    DescribeDataMigrationsResult& AddDataMigrations(DataMigrationsT&& value) { m_dataMigrationsHasBeenSet = true; m_dataMigrations.emplace_back(std::forward<DataMigrationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeDataMigrationsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDataMigrationsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDataMigrationsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDataMigrationsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDataMigrationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDataMigrationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDataMigrationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDataMigrationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataMigration> m_dataMigrations;
+    bool m_dataMigrationsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class GetHealthEventResult
   {
   public:
-    AWS_INTERNETMONITOR_API GetHealthEventResult();
+    AWS_INTERNETMONITOR_API GetHealthEventResult() = default;
     AWS_INTERNETMONITOR_API GetHealthEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INTERNETMONITOR_API GetHealthEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,37 +41,33 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the event.</p>
      */
-    inline const Aws::String& GetEventArn() const{ return m_eventArn; }
-    inline void SetEventArn(const Aws::String& value) { m_eventArn = value; }
-    inline void SetEventArn(Aws::String&& value) { m_eventArn = std::move(value); }
-    inline void SetEventArn(const char* value) { m_eventArn.assign(value); }
-    inline GetHealthEventResult& WithEventArn(const Aws::String& value) { SetEventArn(value); return *this;}
-    inline GetHealthEventResult& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
-    inline GetHealthEventResult& WithEventArn(const char* value) { SetEventArn(value); return *this;}
+    inline const Aws::String& GetEventArn() const { return m_eventArn; }
+    template<typename EventArnT = Aws::String>
+    void SetEventArn(EventArnT&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::forward<EventArnT>(value); }
+    template<typename EventArnT = Aws::String>
+    GetHealthEventResult& WithEventArn(EventArnT&& value) { SetEventArn(std::forward<EventArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The internally-generated identifier of a health event.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
-    inline void SetEventId(const Aws::String& value) { m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventId.assign(value); }
-    inline GetHealthEventResult& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline GetHealthEventResult& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline GetHealthEventResult& WithEventId(const char* value) { SetEventId(value); return *this;}
+    inline const Aws::String& GetEventId() const { return m_eventId; }
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    GetHealthEventResult& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when a health event started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
-    inline GetHealthEventResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline GetHealthEventResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    GetHealthEventResult& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,57 +75,55 @@ namespace Model
      * <p>The time when a health event was resolved. If the health event is still
      * active, the end time is not set.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAt = std::move(value); }
-    inline GetHealthEventResult& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline GetHealthEventResult& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    GetHealthEventResult& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when a health event was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetHealthEventResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetHealthEventResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetHealthEventResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when a health event was last updated or recalculated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetHealthEventResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetHealthEventResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetHealthEventResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The locations affected by a health event.</p>
      */
-    inline const Aws::Vector<ImpactedLocation>& GetImpactedLocations() const{ return m_impactedLocations; }
-    inline void SetImpactedLocations(const Aws::Vector<ImpactedLocation>& value) { m_impactedLocations = value; }
-    inline void SetImpactedLocations(Aws::Vector<ImpactedLocation>&& value) { m_impactedLocations = std::move(value); }
-    inline GetHealthEventResult& WithImpactedLocations(const Aws::Vector<ImpactedLocation>& value) { SetImpactedLocations(value); return *this;}
-    inline GetHealthEventResult& WithImpactedLocations(Aws::Vector<ImpactedLocation>&& value) { SetImpactedLocations(std::move(value)); return *this;}
-    inline GetHealthEventResult& AddImpactedLocations(const ImpactedLocation& value) { m_impactedLocations.push_back(value); return *this; }
-    inline GetHealthEventResult& AddImpactedLocations(ImpactedLocation&& value) { m_impactedLocations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImpactedLocation>& GetImpactedLocations() const { return m_impactedLocations; }
+    template<typename ImpactedLocationsT = Aws::Vector<ImpactedLocation>>
+    void SetImpactedLocations(ImpactedLocationsT&& value) { m_impactedLocationsHasBeenSet = true; m_impactedLocations = std::forward<ImpactedLocationsT>(value); }
+    template<typename ImpactedLocationsT = Aws::Vector<ImpactedLocation>>
+    GetHealthEventResult& WithImpactedLocations(ImpactedLocationsT&& value) { SetImpactedLocations(std::forward<ImpactedLocationsT>(value)); return *this;}
+    template<typename ImpactedLocationsT = ImpactedLocation>
+    GetHealthEventResult& AddImpactedLocations(ImpactedLocationsT&& value) { m_impactedLocationsHasBeenSet = true; m_impactedLocations.emplace_back(std::forward<ImpactedLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of a health event.</p>
      */
-    inline const HealthEventStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const HealthEventStatus& value) { m_status = value; }
-    inline void SetStatus(HealthEventStatus&& value) { m_status = std::move(value); }
-    inline GetHealthEventResult& WithStatus(const HealthEventStatus& value) { SetStatus(value); return *this;}
-    inline GetHealthEventResult& WithStatus(HealthEventStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline HealthEventStatus GetStatus() const { return m_status; }
+    inline void SetStatus(HealthEventStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetHealthEventResult& WithStatus(HealthEventStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -140,8 +134,8 @@ namespace Model
      * traffic from this client location to the Amazon Web Services location using this
      * client network.</p>
      */
-    inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
-    inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpacted = value; }
+    inline double GetPercentOfTotalTrafficImpacted() const { return m_percentOfTotalTrafficImpacted; }
+    inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
     inline GetHealthEventResult& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
     ///@}
 
@@ -149,11 +143,9 @@ namespace Model
     /**
      * <p>The type of impairment of a specific health event.</p>
      */
-    inline const HealthEventImpactType& GetImpactType() const{ return m_impactType; }
-    inline void SetImpactType(const HealthEventImpactType& value) { m_impactType = value; }
-    inline void SetImpactType(HealthEventImpactType&& value) { m_impactType = std::move(value); }
-    inline GetHealthEventResult& WithImpactType(const HealthEventImpactType& value) { SetImpactType(value); return *this;}
-    inline GetHealthEventResult& WithImpactType(HealthEventImpactType&& value) { SetImpactType(std::move(value)); return *this;}
+    inline HealthEventImpactType GetImpactType() const { return m_impactType; }
+    inline void SetImpactType(HealthEventImpactType value) { m_impactTypeHasBeenSet = true; m_impactType = value; }
+    inline GetHealthEventResult& WithImpactType(HealthEventImpactType value) { SetImpactType(value); return *this;}
     ///@}
 
     ///@{
@@ -162,46 +154,56 @@ namespace Model
      * configuration information, when Internet Monitor creates a health event when
      * there's an internet issue that affects your application end users.</p>
      */
-    inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
-    inline void SetHealthScoreThreshold(double value) { m_healthScoreThreshold = value; }
+    inline double GetHealthScoreThreshold() const { return m_healthScoreThreshold; }
+    inline void SetHealthScoreThreshold(double value) { m_healthScoreThresholdHasBeenSet = true; m_healthScoreThreshold = value; }
     inline GetHealthEventResult& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHealthEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHealthEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHealthEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHealthEventResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventArn;
+    bool m_eventArnHasBeenSet = false;
 
     Aws::String m_eventId;
+    bool m_eventIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
+    bool m_startedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt;
+    Aws::Utils::DateTime m_endedAt{};
+    bool m_endedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<ImpactedLocation> m_impactedLocations;
+    bool m_impactedLocationsHasBeenSet = false;
 
-    HealthEventStatus m_status;
+    HealthEventStatus m_status{HealthEventStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    double m_percentOfTotalTrafficImpacted;
+    double m_percentOfTotalTrafficImpacted{0.0};
+    bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
 
-    HealthEventImpactType m_impactType;
+    HealthEventImpactType m_impactType{HealthEventImpactType::NOT_SET};
+    bool m_impactTypeHasBeenSet = false;
 
-    double m_healthScoreThreshold;
+    double m_healthScoreThreshold{0.0};
+    bool m_healthScoreThresholdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

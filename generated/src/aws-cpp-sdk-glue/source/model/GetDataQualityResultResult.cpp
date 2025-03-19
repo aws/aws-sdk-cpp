@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataQualityResultResult::GetDataQualityResultResult() : 
-    m_score(0.0)
-{
-}
-
 GetDataQualityResultResult::GetDataQualityResultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataQualityResultResult()
 {
   *this = result;
 }
@@ -34,69 +28,58 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ResultId"))
   {
     m_resultId = jsonValue.GetString("ResultId");
-
+    m_resultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
+    m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
+    m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
+    m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RulesetName"))
   {
     m_rulesetName = jsonValue.GetString("RulesetName");
-
+    m_rulesetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationContext"))
   {
     m_evaluationContext = jsonValue.GetString("EvaluationContext");
-
+    m_evaluationContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
+    m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
+    m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
+    m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunId"))
   {
     m_jobRunId = jsonValue.GetString("JobRunId");
-
+    m_jobRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RulesetEvaluationRunId"))
   {
     m_rulesetEvaluationRunId = jsonValue.GetString("RulesetEvaluationRunId");
-
+    m_rulesetEvaluationRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleResults"))
   {
     Aws::Utils::Array<JsonView> ruleResultsJsonList = jsonValue.GetArray("RuleResults");
@@ -104,8 +87,8 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
     {
       m_ruleResults.push_back(ruleResultsJsonList[ruleResultsIndex].AsObject());
     }
+    m_ruleResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzerResults"))
   {
     Aws::Utils::Array<JsonView> analyzerResultsJsonList = jsonValue.GetArray("AnalyzerResults");
@@ -113,8 +96,8 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
     {
       m_analyzerResults.push_back(analyzerResultsJsonList[analyzerResultsIndex].AsObject());
     }
+    m_analyzerResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Observations"))
   {
     Aws::Utils::Array<JsonView> observationsJsonList = jsonValue.GetArray("Observations");
@@ -122,14 +105,15 @@ GetDataQualityResultResult& GetDataQualityResultResult::operator =(const Aws::Am
     {
       m_observations.push_back(observationsJsonList[observationsIndex].AsObject());
     }
+    m_observationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

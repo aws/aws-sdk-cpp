@@ -41,7 +41,7 @@ namespace Model
   class RuntimeHints
   {
   public:
-    AWS_LEXMODELSV2_API RuntimeHints();
+    AWS_LEXMODELSV2_API RuntimeHints() = default;
     AWS_LEXMODELSV2_API RuntimeHints(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API RuntimeHints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,18 +56,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using hints
      * to improve accuracy</a>.</p> <p>The intent name and slot name must exist.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>& GetSlotHints() const{ return m_slotHints; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>& GetSlotHints() const { return m_slotHints; }
     inline bool SlotHintsHasBeenSet() const { return m_slotHintsHasBeenSet; }
-    inline void SetSlotHints(const Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>& value) { m_slotHintsHasBeenSet = true; m_slotHints = value; }
-    inline void SetSlotHints(Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>&& value) { m_slotHintsHasBeenSet = true; m_slotHints = std::move(value); }
-    inline RuntimeHints& WithSlotHints(const Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>& value) { SetSlotHints(value); return *this;}
-    inline RuntimeHints& WithSlotHints(Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>&& value) { SetSlotHints(std::move(value)); return *this;}
-    inline RuntimeHints& AddSlotHints(const Aws::String& key, const Aws::Map<Aws::String, RuntimeHintDetails>& value) { m_slotHintsHasBeenSet = true; m_slotHints.emplace(key, value); return *this; }
-    inline RuntimeHints& AddSlotHints(Aws::String&& key, const Aws::Map<Aws::String, RuntimeHintDetails>& value) { m_slotHintsHasBeenSet = true; m_slotHints.emplace(std::move(key), value); return *this; }
-    inline RuntimeHints& AddSlotHints(const Aws::String& key, Aws::Map<Aws::String, RuntimeHintDetails>&& value) { m_slotHintsHasBeenSet = true; m_slotHints.emplace(key, std::move(value)); return *this; }
-    inline RuntimeHints& AddSlotHints(Aws::String&& key, Aws::Map<Aws::String, RuntimeHintDetails>&& value) { m_slotHintsHasBeenSet = true; m_slotHints.emplace(std::move(key), std::move(value)); return *this; }
-    inline RuntimeHints& AddSlotHints(const char* key, Aws::Map<Aws::String, RuntimeHintDetails>&& value) { m_slotHintsHasBeenSet = true; m_slotHints.emplace(key, std::move(value)); return *this; }
-    inline RuntimeHints& AddSlotHints(const char* key, const Aws::Map<Aws::String, RuntimeHintDetails>& value) { m_slotHintsHasBeenSet = true; m_slotHints.emplace(key, value); return *this; }
+    template<typename SlotHintsT = Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>>
+    void SetSlotHints(SlotHintsT&& value) { m_slotHintsHasBeenSet = true; m_slotHints = std::forward<SlotHintsT>(value); }
+    template<typename SlotHintsT = Aws::Map<Aws::String, Aws::Map<Aws::String, RuntimeHintDetails>>>
+    RuntimeHints& WithSlotHints(SlotHintsT&& value) { SetSlotHints(std::forward<SlotHintsT>(value)); return *this;}
+    template<typename SlotHintsKeyT = Aws::String, typename SlotHintsValueT = Aws::Map<Aws::String, RuntimeHintDetails>>
+    RuntimeHints& AddSlotHints(SlotHintsKeyT&& key, SlotHintsValueT&& value) {
+      m_slotHintsHasBeenSet = true; m_slotHints.emplace(std::forward<SlotHintsKeyT>(key), std::forward<SlotHintsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

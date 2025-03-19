@@ -18,21 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollPass::RouteTollPass() : 
-    m_includesReturnTrip(false),
-    m_includesReturnTripHasBeenSet(false),
-    m_seniorPass(false),
-    m_seniorPassHasBeenSet(false),
-    m_transferCount(0),
-    m_transferCountHasBeenSet(false),
-    m_tripCount(0),
-    m_tripCountHasBeenSet(false),
-    m_validityPeriodHasBeenSet(false)
-{
-}
-
 RouteTollPass::RouteTollPass(JsonView jsonValue)
-  : RouteTollPass()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ RouteTollPass& RouteTollPass::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IncludesReturnTrip"))
   {
     m_includesReturnTrip = jsonValue.GetBool("IncludesReturnTrip");
-
     m_includesReturnTripHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeniorPass"))
   {
     m_seniorPass = jsonValue.GetBool("SeniorPass");
-
     m_seniorPassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransferCount"))
   {
     m_transferCount = jsonValue.GetInteger("TransferCount");
-
     m_transferCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TripCount"))
   {
     m_tripCount = jsonValue.GetInteger("TripCount");
-
     m_tripCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidityPeriod"))
   {
     m_validityPeriod = jsonValue.GetObject("ValidityPeriod");
-
     m_validityPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

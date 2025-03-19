@@ -18,19 +18,7 @@ namespace SSM
 namespace Model
 {
 
-PatchBaselineIdentity::PatchBaselineIdentity() : 
-    m_baselineIdHasBeenSet(false),
-    m_baselineNameHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_baselineDescriptionHasBeenSet(false),
-    m_defaultBaseline(false),
-    m_defaultBaselineHasBeenSet(false)
-{
-}
-
 PatchBaselineIdentity::PatchBaselineIdentity(JsonView jsonValue)
-  : PatchBaselineIdentity()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ PatchBaselineIdentity& PatchBaselineIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BaselineId"))
   {
     m_baselineId = jsonValue.GetString("BaselineId");
-
     m_baselineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaselineName"))
   {
     m_baselineName = jsonValue.GetString("BaselineName");
-
     m_baselineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaselineDescription"))
   {
     m_baselineDescription = jsonValue.GetString("BaselineDescription");
-
     m_baselineDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultBaseline"))
   {
     m_defaultBaseline = jsonValue.GetBool("DefaultBaseline");
-
     m_defaultBaselineHasBeenSet = true;
   }
-
   return *this;
 }
 

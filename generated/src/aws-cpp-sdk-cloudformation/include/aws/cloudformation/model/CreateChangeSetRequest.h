@@ -33,7 +33,7 @@ namespace Model
   class CreateChangeSetRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API CreateChangeSetRequest();
+    AWS_CLOUDFORMATION_API CreateChangeSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,14 +55,12 @@ namespace Model
      * information with the information that you submit, such as a modified template or
      * different parameter input values.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline CreateChangeSetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline CreateChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    CreateChangeSetRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * you specified.</p> <p>Conditional: You must specify only
      * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline CreateChangeSetRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline CreateChangeSetRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    CreateChangeSetRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * must start with <code>https://</code>.</p> <p>Conditional: You must specify only
      * <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
-    inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+    inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
-    inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
-    inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
-    inline CreateChangeSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
-    inline CreateChangeSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+    template<typename TemplateURLT = Aws::String>
+    void SetTemplateURL(TemplateURLT&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::forward<TemplateURLT>(value); }
+    template<typename TemplateURLT = Aws::String>
+    CreateChangeSetRequest& WithTemplateURL(TemplateURLT&& value) { SetTemplateURL(std::forward<TemplateURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +101,7 @@ namespace Model
      * <p>Whether to reuse the template that's associated with the stack to create the
      * change set.</p>
      */
-    inline bool GetUsePreviousTemplate() const{ return m_usePreviousTemplate; }
+    inline bool GetUsePreviousTemplate() const { return m_usePreviousTemplate; }
     inline bool UsePreviousTemplateHasBeenSet() const { return m_usePreviousTemplateHasBeenSet; }
     inline void SetUsePreviousTemplate(bool value) { m_usePreviousTemplateHasBeenSet = true; m_usePreviousTemplate = value; }
     inline CreateChangeSetRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
@@ -118,14 +112,14 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreateChangeSetRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline CreateChangeSetRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline CreateChangeSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    CreateChangeSetRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    CreateChangeSetRequest& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -189,14 +183,13 @@ namespace Model
      * </li> </ul>  <p>Only one of the <code>Capabilities</code> and
      * <code>ResourceType</code> parameters can be specified.</p> 
      */
-    inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
+    inline const Aws::Vector<Capability>& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline CreateChangeSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
-    inline CreateChangeSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline CreateChangeSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    CreateChangeSetRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    inline CreateChangeSetRequest& AddCapabilities(Capability value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -213,15 +206,14 @@ namespace Model
      * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
      * <code>ResourceType</code> parameters can be specified.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline CreateChangeSetRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
-    inline CreateChangeSetRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline CreateChangeSetRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-    inline CreateChangeSetRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    CreateChangeSetRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = Aws::String>
+    CreateChangeSetRequest& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -236,14 +228,12 @@ namespace Model
      * with the stack. If no role is available, CloudFormation uses a temporary session
      * that is generated from your user credentials.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline CreateChangeSetRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline CreateChangeSetRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    CreateChangeSetRequest& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -251,12 +241,12 @@ namespace Model
      * <p>The rollback triggers for CloudFormation to monitor during stack creation and
      * updating operations, and for the specified monitoring period afterwards.</p>
      */
-    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
+    inline const RollbackConfiguration& GetRollbackConfiguration() const { return m_rollbackConfiguration; }
     inline bool RollbackConfigurationHasBeenSet() const { return m_rollbackConfigurationHasBeenSet; }
-    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
-    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
-    inline CreateChangeSetRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
-    inline CreateChangeSetRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+    template<typename RollbackConfigurationT = RollbackConfiguration>
+    void SetRollbackConfiguration(RollbackConfigurationT&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::forward<RollbackConfigurationT>(value); }
+    template<typename RollbackConfigurationT = RollbackConfiguration>
+    CreateChangeSetRequest& WithRollbackConfiguration(RollbackConfigurationT&& value) { SetRollbackConfiguration(std::forward<RollbackConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,15 +255,14 @@ namespace Model
      * associates with the stack. To remove all associated notification topics, specify
      * an empty list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
+    inline const Aws::Vector<Aws::String>& GetNotificationARNs() const { return m_notificationARNs; }
     inline bool NotificationARNsHasBeenSet() const { return m_notificationARNsHasBeenSet; }
-    inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
-    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::move(value); }
-    inline CreateChangeSetRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
-    inline CreateChangeSetRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
-    inline CreateChangeSetRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(std::move(value)); return *this; }
-    inline CreateChangeSetRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
+    template<typename NotificationARNsT = Aws::Vector<Aws::String>>
+    void SetNotificationARNs(NotificationARNsT&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::forward<NotificationARNsT>(value); }
+    template<typename NotificationARNsT = Aws::Vector<Aws::String>>
+    CreateChangeSetRequest& WithNotificationARNs(NotificationARNsT&& value) { SetNotificationARNs(std::forward<NotificationARNsT>(value)); return *this;}
+    template<typename NotificationARNsT = Aws::String>
+    CreateChangeSetRequest& AddNotificationARNs(NotificationARNsT&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.emplace_back(std::forward<NotificationARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -281,14 +270,14 @@ namespace Model
      * <p>Key-value pairs to associate with this stack. CloudFormation also propagates
      * these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateChangeSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateChangeSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateChangeSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateChangeSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateChangeSetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -298,14 +287,12 @@ namespace Model
      * contain only alphanumeric, case sensitive characters, and hyphens. It must start
      * with an alphabetical character and can't exceed 128 characters.</p>
      */
-    inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
+    inline const Aws::String& GetChangeSetName() const { return m_changeSetName; }
     inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
-    inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
-    inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
-    inline CreateChangeSetRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
-    inline CreateChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+    template<typename ChangeSetNameT = Aws::String>
+    void SetChangeSetName(ChangeSetNameT&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::forward<ChangeSetNameT>(value); }
+    template<typename ChangeSetNameT = Aws::String>
+    CreateChangeSetRequest& WithChangeSetName(ChangeSetNameT&& value) { SetChangeSetName(std::forward<ChangeSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -316,28 +303,24 @@ namespace Model
      * retry <code>CreateChangeSet</code> requests to ensure that CloudFormation
      * successfully received them.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateChangeSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateChangeSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateChangeSetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description to help you identify this change set.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateChangeSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateChangeSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateChangeSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -353,26 +336,24 @@ namespace Model
      * change set for a new stack or the <code>CREATE</code> type to create a change
      * set for an existing stack.</p>
      */
-    inline const ChangeSetType& GetChangeSetType() const{ return m_changeSetType; }
+    inline ChangeSetType GetChangeSetType() const { return m_changeSetType; }
     inline bool ChangeSetTypeHasBeenSet() const { return m_changeSetTypeHasBeenSet; }
-    inline void SetChangeSetType(const ChangeSetType& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
-    inline void SetChangeSetType(ChangeSetType&& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = std::move(value); }
-    inline CreateChangeSetRequest& WithChangeSetType(const ChangeSetType& value) { SetChangeSetType(value); return *this;}
-    inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(std::move(value)); return *this;}
+    inline void SetChangeSetType(ChangeSetType value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
+    inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType value) { SetChangeSetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resources to import into your stack.</p>
      */
-    inline const Aws::Vector<ResourceToImport>& GetResourcesToImport() const{ return m_resourcesToImport; }
+    inline const Aws::Vector<ResourceToImport>& GetResourcesToImport() const { return m_resourcesToImport; }
     inline bool ResourcesToImportHasBeenSet() const { return m_resourcesToImportHasBeenSet; }
-    inline void SetResourcesToImport(const Aws::Vector<ResourceToImport>& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport = value; }
-    inline void SetResourcesToImport(Aws::Vector<ResourceToImport>&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport = std::move(value); }
-    inline CreateChangeSetRequest& WithResourcesToImport(const Aws::Vector<ResourceToImport>& value) { SetResourcesToImport(value); return *this;}
-    inline CreateChangeSetRequest& WithResourcesToImport(Aws::Vector<ResourceToImport>&& value) { SetResourcesToImport(std::move(value)); return *this;}
-    inline CreateChangeSetRequest& AddResourcesToImport(const ResourceToImport& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport.push_back(value); return *this; }
-    inline CreateChangeSetRequest& AddResourcesToImport(ResourceToImport&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport.push_back(std::move(value)); return *this; }
+    template<typename ResourcesToImportT = Aws::Vector<ResourceToImport>>
+    void SetResourcesToImport(ResourcesToImportT&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport = std::forward<ResourcesToImportT>(value); }
+    template<typename ResourcesToImportT = Aws::Vector<ResourceToImport>>
+    CreateChangeSetRequest& WithResourcesToImport(ResourcesToImportT&& value) { SetResourcesToImport(std::forward<ResourcesToImportT>(value)); return *this;}
+    template<typename ResourcesToImportT = ResourceToImport>
+    CreateChangeSetRequest& AddResourcesToImport(ResourcesToImportT&& value) { m_resourcesToImportHasBeenSet = true; m_resourcesToImport.emplace_back(std::forward<ResourcesToImportT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -381,7 +362,7 @@ namespace Model
      * default behavior of this action is set to <code>False</code>. To include nested
      * sets in a change set, specify <code>True</code>.</p>
      */
-    inline bool GetIncludeNestedStacks() const{ return m_includeNestedStacks; }
+    inline bool GetIncludeNestedStacks() const { return m_includeNestedStacks; }
     inline bool IncludeNestedStacksHasBeenSet() const { return m_includeNestedStacksHasBeenSet; }
     inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacksHasBeenSet = true; m_includeNestedStacks = value; }
     inline CreateChangeSetRequest& WithIncludeNestedStacks(bool value) { SetIncludeNestedStacks(value); return *this;}
@@ -409,12 +390,10 @@ namespace Model
      * change set for the parent stack, any failure in a child stack will cause the
      * parent stack creation to fail and all stacks to be deleted.</p>
      */
-    inline const OnStackFailure& GetOnStackFailure() const{ return m_onStackFailure; }
+    inline OnStackFailure GetOnStackFailure() const { return m_onStackFailure; }
     inline bool OnStackFailureHasBeenSet() const { return m_onStackFailureHasBeenSet; }
-    inline void SetOnStackFailure(const OnStackFailure& value) { m_onStackFailureHasBeenSet = true; m_onStackFailure = value; }
-    inline void SetOnStackFailure(OnStackFailure&& value) { m_onStackFailureHasBeenSet = true; m_onStackFailure = std::move(value); }
-    inline CreateChangeSetRequest& WithOnStackFailure(const OnStackFailure& value) { SetOnStackFailure(value); return *this;}
-    inline CreateChangeSetRequest& WithOnStackFailure(OnStackFailure&& value) { SetOnStackFailure(std::move(value)); return *this;}
+    inline void SetOnStackFailure(OnStackFailure value) { m_onStackFailureHasBeenSet = true; m_onStackFailure = value; }
+    inline CreateChangeSetRequest& WithOnStackFailure(OnStackFailure value) { SetOnStackFailure(value); return *this;}
     ///@}
 
     ///@{
@@ -430,7 +409,7 @@ namespace Model
      * Amazon Web Services resources into a CloudFormation stack with a resource
      * import</a> in the <i>CloudFormation User Guide</i>.</p> 
      */
-    inline bool GetImportExistingResources() const{ return m_importExistingResources; }
+    inline bool GetImportExistingResources() const { return m_importExistingResources; }
     inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }
     inline void SetImportExistingResources(bool value) { m_importExistingResourcesHasBeenSet = true; m_importExistingResources = value; }
     inline CreateChangeSetRequest& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
@@ -446,7 +425,7 @@ namespace Model
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet = false;
 
-    bool m_usePreviousTemplate;
+    bool m_usePreviousTemplate{false};
     bool m_usePreviousTemplateHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
@@ -479,19 +458,19 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ChangeSetType m_changeSetType;
+    ChangeSetType m_changeSetType{ChangeSetType::NOT_SET};
     bool m_changeSetTypeHasBeenSet = false;
 
     Aws::Vector<ResourceToImport> m_resourcesToImport;
     bool m_resourcesToImportHasBeenSet = false;
 
-    bool m_includeNestedStacks;
+    bool m_includeNestedStacks{false};
     bool m_includeNestedStacksHasBeenSet = false;
 
-    OnStackFailure m_onStackFailure;
+    OnStackFailure m_onStackFailure{OnStackFailure::NOT_SET};
     bool m_onStackFailureHasBeenSet = false;
 
-    bool m_importExistingResources;
+    bool m_importExistingResources{false};
     bool m_importExistingResourcesHasBeenSet = false;
   };
 

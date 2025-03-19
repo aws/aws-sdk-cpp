@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SentimentAnalysisSettings::SentimentAnalysisSettings() : 
-    m_detectSentiment(false),
-    m_detectSentimentHasBeenSet(false)
-{
-}
-
 SentimentAnalysisSettings::SentimentAnalysisSettings(JsonView jsonValue)
-  : SentimentAnalysisSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SentimentAnalysisSettings& SentimentAnalysisSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("detectSentiment"))
   {
     m_detectSentiment = jsonValue.GetBool("detectSentiment");
-
     m_detectSentimentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSecurityGroupResponse::DeleteSecurityGroupResponse() : 
-    m_return(false)
-{
-}
-
 DeleteSecurityGroupResponse::DeleteSecurityGroupResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DeleteSecurityGroupResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ DeleteSecurityGroupResponse& DeleteSecurityGroupResponse::operator =(const Aws::
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
+      m_groupIdHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ DeleteSecurityGroupResponse& DeleteSecurityGroupResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteSecurityGroupResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

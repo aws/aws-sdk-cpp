@@ -13,20 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCommentRequest::CreateCommentRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_threadIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_visibility(CommentVisibilityType::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_notifyCollaborators(false),
-    m_notifyCollaboratorsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCommentRequest::SerializePayload() const
 {
   JsonValue payload;

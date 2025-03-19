@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-UsernameField::UsernameField() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 UsernameField::UsernameField(JsonView jsonValue)
-  : UsernameField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UsernameField& UsernameField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,15 +19,7 @@ namespace Glue
 namespace Model
 {
 
-DecimalNumber::DecimalNumber() : 
-    m_unscaledValueHasBeenSet(false),
-    m_scale(0),
-    m_scaleHasBeenSet(false)
-{
-}
-
 DecimalNumber::DecimalNumber(JsonView jsonValue)
-  : DecimalNumber()
 {
   *this = jsonValue;
 }
@@ -39,14 +31,11 @@ DecimalNumber& DecimalNumber::operator =(JsonView jsonValue)
     m_unscaledValue = HashingUtils::Base64Decode(jsonValue.GetString("UnscaledValue"));
     m_unscaledValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scale"))
   {
     m_scale = jsonValue.GetInteger("Scale");
-
     m_scaleHasBeenSet = true;
   }
-
   return *this;
 }
 

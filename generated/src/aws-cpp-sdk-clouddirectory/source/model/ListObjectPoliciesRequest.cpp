@@ -13,17 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListObjectPoliciesRequest::ListObjectPoliciesRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_consistencyLevel(ConsistencyLevel::NOT_SET),
-    m_consistencyLevelHasBeenSet(false)
-{
-}
-
 Aws::String ListObjectPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

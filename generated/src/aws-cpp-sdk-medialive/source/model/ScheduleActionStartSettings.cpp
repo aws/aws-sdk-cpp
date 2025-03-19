@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ScheduleActionStartSettings::ScheduleActionStartSettings() : 
-    m_fixedModeScheduleActionStartSettingsHasBeenSet(false),
-    m_followModeScheduleActionStartSettingsHasBeenSet(false),
-    m_immediateModeScheduleActionStartSettingsHasBeenSet(false)
-{
-}
-
 ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue)
-  : ScheduleActionStartSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ScheduleActionStartSettings& ScheduleActionStartSettings::operator =(JsonView js
   if(jsonValue.ValueExists("fixedModeScheduleActionStartSettings"))
   {
     m_fixedModeScheduleActionStartSettings = jsonValue.GetObject("fixedModeScheduleActionStartSettings");
-
     m_fixedModeScheduleActionStartSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("followModeScheduleActionStartSettings"))
   {
     m_followModeScheduleActionStartSettings = jsonValue.GetObject("followModeScheduleActionStartSettings");
-
     m_followModeScheduleActionStartSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("immediateModeScheduleActionStartSettings"))
   {
     m_immediateModeScheduleActionStartSettings = jsonValue.GetObject("immediateModeScheduleActionStartSettings");
-
     m_immediateModeScheduleActionStartSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

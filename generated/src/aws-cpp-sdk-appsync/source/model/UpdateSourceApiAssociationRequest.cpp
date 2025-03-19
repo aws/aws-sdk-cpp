@@ -12,14 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSourceApiAssociationRequest::UpdateSourceApiAssociationRequest() : 
-    m_associationIdHasBeenSet(false),
-    m_mergedApiIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceApiAssociationConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSourceApiAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

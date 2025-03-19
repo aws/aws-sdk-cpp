@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixAvoidanceZoneCategory::RouteMatrixAvoidanceZoneCategory() : 
-    m_category(RouteMatrixZoneCategory::NOT_SET),
-    m_categoryHasBeenSet(false)
-{
-}
-
 RouteMatrixAvoidanceZoneCategory::RouteMatrixAvoidanceZoneCategory(JsonView jsonValue)
-  : RouteMatrixAvoidanceZoneCategory()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RouteMatrixAvoidanceZoneCategory& RouteMatrixAvoidanceZoneCategory::operator =(J
   if(jsonValue.ValueExists("Category"))
   {
     m_category = RouteMatrixZoneCategoryMapper::GetRouteMatrixZoneCategoryForName(jsonValue.GetString("Category"));
-
     m_categoryHasBeenSet = true;
   }
-
   return *this;
 }
 

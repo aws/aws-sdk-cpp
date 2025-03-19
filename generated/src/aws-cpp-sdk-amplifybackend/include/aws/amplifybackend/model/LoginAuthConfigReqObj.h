@@ -31,7 +31,7 @@ namespace Model
   class LoginAuthConfigReqObj
   {
   public:
-    AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj();
+    AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj() = default;
     AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
-    inline const Aws::String& GetAwsCognitoIdentityPoolId() const{ return m_awsCognitoIdentityPoolId; }
+    inline const Aws::String& GetAwsCognitoIdentityPoolId() const { return m_awsCognitoIdentityPoolId; }
     inline bool AwsCognitoIdentityPoolIdHasBeenSet() const { return m_awsCognitoIdentityPoolIdHasBeenSet; }
-    inline void SetAwsCognitoIdentityPoolId(const Aws::String& value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId = value; }
-    inline void SetAwsCognitoIdentityPoolId(Aws::String&& value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId = std::move(value); }
-    inline void SetAwsCognitoIdentityPoolId(const char* value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId.assign(value); }
-    inline LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(const Aws::String& value) { SetAwsCognitoIdentityPoolId(value); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(Aws::String&& value) { SetAwsCognitoIdentityPoolId(std::move(value)); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(const char* value) { SetAwsCognitoIdentityPoolId(value); return *this;}
+    template<typename AwsCognitoIdentityPoolIdT = Aws::String>
+    void SetAwsCognitoIdentityPoolId(AwsCognitoIdentityPoolIdT&& value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId = std::forward<AwsCognitoIdentityPoolIdT>(value); }
+    template<typename AwsCognitoIdentityPoolIdT = Aws::String>
+    LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(AwsCognitoIdentityPoolIdT&& value) { SetAwsCognitoIdentityPoolId(std::forward<AwsCognitoIdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS Region for the Amplify Admin UI login.</p>
      */
-    inline const Aws::String& GetAwsCognitoRegion() const{ return m_awsCognitoRegion; }
+    inline const Aws::String& GetAwsCognitoRegion() const { return m_awsCognitoRegion; }
     inline bool AwsCognitoRegionHasBeenSet() const { return m_awsCognitoRegionHasBeenSet; }
-    inline void SetAwsCognitoRegion(const Aws::String& value) { m_awsCognitoRegionHasBeenSet = true; m_awsCognitoRegion = value; }
-    inline void SetAwsCognitoRegion(Aws::String&& value) { m_awsCognitoRegionHasBeenSet = true; m_awsCognitoRegion = std::move(value); }
-    inline void SetAwsCognitoRegion(const char* value) { m_awsCognitoRegionHasBeenSet = true; m_awsCognitoRegion.assign(value); }
-    inline LoginAuthConfigReqObj& WithAwsCognitoRegion(const Aws::String& value) { SetAwsCognitoRegion(value); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsCognitoRegion(Aws::String&& value) { SetAwsCognitoRegion(std::move(value)); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsCognitoRegion(const char* value) { SetAwsCognitoRegion(value); return *this;}
+    template<typename AwsCognitoRegionT = Aws::String>
+    void SetAwsCognitoRegion(AwsCognitoRegionT&& value) { m_awsCognitoRegionHasBeenSet = true; m_awsCognitoRegion = std::forward<AwsCognitoRegionT>(value); }
+    template<typename AwsCognitoRegionT = Aws::String>
+    LoginAuthConfigReqObj& WithAwsCognitoRegion(AwsCognitoRegionT&& value) { SetAwsCognitoRegion(std::forward<AwsCognitoRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * <p>The Amazon Cognito user pool ID used for Amplify Admin UI login
      * authentication.</p>
      */
-    inline const Aws::String& GetAwsUserPoolsId() const{ return m_awsUserPoolsId; }
+    inline const Aws::String& GetAwsUserPoolsId() const { return m_awsUserPoolsId; }
     inline bool AwsUserPoolsIdHasBeenSet() const { return m_awsUserPoolsIdHasBeenSet; }
-    inline void SetAwsUserPoolsId(const Aws::String& value) { m_awsUserPoolsIdHasBeenSet = true; m_awsUserPoolsId = value; }
-    inline void SetAwsUserPoolsId(Aws::String&& value) { m_awsUserPoolsIdHasBeenSet = true; m_awsUserPoolsId = std::move(value); }
-    inline void SetAwsUserPoolsId(const char* value) { m_awsUserPoolsIdHasBeenSet = true; m_awsUserPoolsId.assign(value); }
-    inline LoginAuthConfigReqObj& WithAwsUserPoolsId(const Aws::String& value) { SetAwsUserPoolsId(value); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsUserPoolsId(Aws::String&& value) { SetAwsUserPoolsId(std::move(value)); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsUserPoolsId(const char* value) { SetAwsUserPoolsId(value); return *this;}
+    template<typename AwsUserPoolsIdT = Aws::String>
+    void SetAwsUserPoolsId(AwsUserPoolsIdT&& value) { m_awsUserPoolsIdHasBeenSet = true; m_awsUserPoolsId = std::forward<AwsUserPoolsIdT>(value); }
+    template<typename AwsUserPoolsIdT = Aws::String>
+    LoginAuthConfigReqObj& WithAwsUserPoolsId(AwsUserPoolsIdT&& value) { SetAwsUserPoolsId(std::forward<AwsUserPoolsIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The web client ID for the Amazon Cognito user pools.</p>
      */
-    inline const Aws::String& GetAwsUserPoolsWebClientId() const{ return m_awsUserPoolsWebClientId; }
+    inline const Aws::String& GetAwsUserPoolsWebClientId() const { return m_awsUserPoolsWebClientId; }
     inline bool AwsUserPoolsWebClientIdHasBeenSet() const { return m_awsUserPoolsWebClientIdHasBeenSet; }
-    inline void SetAwsUserPoolsWebClientId(const Aws::String& value) { m_awsUserPoolsWebClientIdHasBeenSet = true; m_awsUserPoolsWebClientId = value; }
-    inline void SetAwsUserPoolsWebClientId(Aws::String&& value) { m_awsUserPoolsWebClientIdHasBeenSet = true; m_awsUserPoolsWebClientId = std::move(value); }
-    inline void SetAwsUserPoolsWebClientId(const char* value) { m_awsUserPoolsWebClientIdHasBeenSet = true; m_awsUserPoolsWebClientId.assign(value); }
-    inline LoginAuthConfigReqObj& WithAwsUserPoolsWebClientId(const Aws::String& value) { SetAwsUserPoolsWebClientId(value); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsUserPoolsWebClientId(Aws::String&& value) { SetAwsUserPoolsWebClientId(std::move(value)); return *this;}
-    inline LoginAuthConfigReqObj& WithAwsUserPoolsWebClientId(const char* value) { SetAwsUserPoolsWebClientId(value); return *this;}
+    template<typename AwsUserPoolsWebClientIdT = Aws::String>
+    void SetAwsUserPoolsWebClientId(AwsUserPoolsWebClientIdT&& value) { m_awsUserPoolsWebClientIdHasBeenSet = true; m_awsUserPoolsWebClientId = std::forward<AwsUserPoolsWebClientIdT>(value); }
+    template<typename AwsUserPoolsWebClientIdT = Aws::String>
+    LoginAuthConfigReqObj& WithAwsUserPoolsWebClientId(AwsUserPoolsWebClientIdT&& value) { SetAwsUserPoolsWebClientId(std::forward<AwsUserPoolsWebClientIdT>(value)); return *this;}
     ///@}
   private:
 

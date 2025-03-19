@@ -18,20 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-DataProtectionSettings::DataProtectionSettings() : 
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_associatedPortalArnsHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_customerManagedKeyHasBeenSet(false),
-    m_dataProtectionSettingsArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_inlineRedactionConfigurationHasBeenSet(false)
-{
-}
-
 DataProtectionSettings::DataProtectionSettings(JsonView jsonValue)
-  : DataProtectionSettings()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ DataProtectionSettings& DataProtectionSettings::operator =(JsonView jsonValue)
     }
     m_additionalEncryptionContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
     Aws::Utils::Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
@@ -57,49 +43,36 @@ DataProtectionSettings& DataProtectionSettings::operator =(JsonView jsonValue)
     }
     m_associatedPortalArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerManagedKey"))
   {
     m_customerManagedKey = jsonValue.GetString("customerManagedKey");
-
     m_customerManagedKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProtectionSettingsArn"))
   {
     m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
-
     m_dataProtectionSettingsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inlineRedactionConfiguration"))
   {
     m_inlineRedactionConfiguration = jsonValue.GetObject("inlineRedactionConfiguration");
-
     m_inlineRedactionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

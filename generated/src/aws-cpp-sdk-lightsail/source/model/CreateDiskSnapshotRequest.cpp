@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDiskSnapshotRequest::CreateDiskSnapshotRequest() : 
-    m_diskNameHasBeenSet(false),
-    m_diskSnapshotNameHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDiskSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

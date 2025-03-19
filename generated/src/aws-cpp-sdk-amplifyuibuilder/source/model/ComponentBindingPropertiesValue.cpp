@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ComponentBindingPropertiesValue::ComponentBindingPropertiesValue() : 
-    m_typeHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 ComponentBindingPropertiesValue::ComponentBindingPropertiesValue(JsonView jsonValue)
-  : ComponentBindingPropertiesValue()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComponentBindingPropertiesValue& ComponentBindingPropertiesValue::operator =(Jso
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindingProperties"))
   {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
-
     m_bindingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

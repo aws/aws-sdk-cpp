@@ -36,7 +36,7 @@ namespace Model
   class LastRunErrorStatus
   {
   public:
-    AWS_MACIE2_API LastRunErrorStatus();
+    AWS_MACIE2_API LastRunErrorStatus() = default;
     AWS_MACIE2_API LastRunErrorStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API LastRunErrorStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,16 +51,14 @@ namespace Model
      * job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data
      * specified for the job.</p></li></ul>
      */
-    inline const LastRunErrorStatusCode& GetCode() const{ return m_code; }
+    inline LastRunErrorStatusCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const LastRunErrorStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(LastRunErrorStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline LastRunErrorStatus& WithCode(const LastRunErrorStatusCode& value) { SetCode(value); return *this;}
-    inline LastRunErrorStatus& WithCode(LastRunErrorStatusCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(LastRunErrorStatusCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline LastRunErrorStatus& WithCode(LastRunErrorStatusCode value) { SetCode(value); return *this;}
     ///@}
   private:
 
-    LastRunErrorStatusCode m_code;
+    LastRunErrorStatusCode m_code{LastRunErrorStatusCode::NOT_SET};
     bool m_codeHasBeenSet = false;
   };
 

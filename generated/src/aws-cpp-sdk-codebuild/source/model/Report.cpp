@@ -18,27 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-Report::Report() : 
-    m_arnHasBeenSet(false),
-    m_type(ReportType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_reportGroupArnHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_status(ReportStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_expiredHasBeenSet(false),
-    m_exportConfigHasBeenSet(false),
-    m_truncated(false),
-    m_truncatedHasBeenSet(false),
-    m_testSummaryHasBeenSet(false),
-    m_codeCoverageSummaryHasBeenSet(false)
-{
-}
-
 Report::Report(JsonView jsonValue)
-  : Report()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ Report& Report::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ReportTypeMapper::GetReportTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reportGroupArn"))
   {
     m_reportGroupArn = jsonValue.GetString("reportGroupArn");
-
     m_reportGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReportStatusTypeMapper::GetReportStatusTypeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expired"))
   {
     m_expired = jsonValue.GetDouble("expired");
-
     m_expiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportConfig"))
   {
     m_exportConfig = jsonValue.GetObject("exportConfig");
-
     m_exportConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truncated"))
   {
     m_truncated = jsonValue.GetBool("truncated");
-
     m_truncatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSummary"))
   {
     m_testSummary = jsonValue.GetObject("testSummary");
-
     m_testSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeCoverageSummary"))
   {
     m_codeCoverageSummary = jsonValue.GetObject("codeCoverageSummary");
-
     m_codeCoverageSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

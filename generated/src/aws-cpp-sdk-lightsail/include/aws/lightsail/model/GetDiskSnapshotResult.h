@@ -28,7 +28,7 @@ namespace Model
   class GetDiskSnapshotResult
   {
   public:
-    AWS_LIGHTSAIL_API GetDiskSnapshotResult();
+    AWS_LIGHTSAIL_API GetDiskSnapshotResult() = default;
     AWS_LIGHTSAIL_API GetDiskSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetDiskSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object containing information about the disk snapshot.</p>
      */
-    inline const DiskSnapshot& GetDiskSnapshot() const{ return m_diskSnapshot; }
-    inline void SetDiskSnapshot(const DiskSnapshot& value) { m_diskSnapshot = value; }
-    inline void SetDiskSnapshot(DiskSnapshot&& value) { m_diskSnapshot = std::move(value); }
-    inline GetDiskSnapshotResult& WithDiskSnapshot(const DiskSnapshot& value) { SetDiskSnapshot(value); return *this;}
-    inline GetDiskSnapshotResult& WithDiskSnapshot(DiskSnapshot&& value) { SetDiskSnapshot(std::move(value)); return *this;}
+    inline const DiskSnapshot& GetDiskSnapshot() const { return m_diskSnapshot; }
+    template<typename DiskSnapshotT = DiskSnapshot>
+    void SetDiskSnapshot(DiskSnapshotT&& value) { m_diskSnapshotHasBeenSet = true; m_diskSnapshot = std::forward<DiskSnapshotT>(value); }
+    template<typename DiskSnapshotT = DiskSnapshot>
+    GetDiskSnapshotResult& WithDiskSnapshot(DiskSnapshotT&& value) { SetDiskSnapshot(std::forward<DiskSnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDiskSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDiskSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDiskSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDiskSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DiskSnapshot m_diskSnapshot;
+    bool m_diskSnapshotHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

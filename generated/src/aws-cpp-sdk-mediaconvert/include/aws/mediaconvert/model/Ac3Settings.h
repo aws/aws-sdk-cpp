@@ -37,7 +37,7 @@ namespace Model
   class Ac3Settings
   {
   public:
-    AWS_MEDIACONVERT_API Ac3Settings();
+    AWS_MEDIACONVERT_API Ac3Settings() = default;
     AWS_MEDIACONVERT_API Ac3Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Ac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,7 +54,7 @@ namespace Model
      * Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE:
      * Default: 384000. Minimum: 384000. Maximum: 640000.
      */
-    inline int GetBitrate() const{ return m_bitrate; }
+    inline int GetBitrate() const { return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
     inline Ac3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
@@ -65,24 +65,20 @@ namespace Model
      * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more
      * information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
      */
-    inline const Ac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
+    inline Ac3BitstreamMode GetBitstreamMode() const { return m_bitstreamMode; }
     inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
-    inline void SetBitstreamMode(const Ac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
-    inline void SetBitstreamMode(Ac3BitstreamMode&& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = std::move(value); }
-    inline Ac3Settings& WithBitstreamMode(const Ac3BitstreamMode& value) { SetBitstreamMode(value); return *this;}
-    inline Ac3Settings& WithBitstreamMode(Ac3BitstreamMode&& value) { SetBitstreamMode(std::move(value)); return *this;}
+    inline void SetBitstreamMode(Ac3BitstreamMode value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
+    inline Ac3Settings& WithBitstreamMode(Ac3BitstreamMode value) { SetBitstreamMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Dolby Digital coding mode. Determines number of channels.
      */
-    inline const Ac3CodingMode& GetCodingMode() const{ return m_codingMode; }
+    inline Ac3CodingMode GetCodingMode() const { return m_codingMode; }
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
-    inline void SetCodingMode(const Ac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
-    inline void SetCodingMode(Ac3CodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
-    inline Ac3Settings& WithCodingMode(const Ac3CodingMode& value) { SetCodingMode(value); return *this;}
-    inline Ac3Settings& WithCodingMode(Ac3CodingMode&& value) { SetCodingMode(std::move(value)); return *this;}
+    inline void SetCodingMode(Ac3CodingMode value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
+    inline Ac3Settings& WithCodingMode(Ac3CodingMode value) { SetCodingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * Sets the dialnorm for the output. If blank and input audio is Dolby Digital,
      * dialnorm will be passed through.
      */
-    inline int GetDialnorm() const{ return m_dialnorm; }
+    inline int GetDialnorm() const { return m_dialnorm; }
     inline bool DialnormHasBeenSet() const { return m_dialnormHasBeenSet; }
     inline void SetDialnorm(int value) { m_dialnormHasBeenSet = true; m_dialnorm = value; }
     inline Ac3Settings& WithDialnorm(int value) { SetDialnorm(value); return *this;}
@@ -106,12 +102,10 @@ namespace Model
      * Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
-    inline const Ac3DynamicRangeCompressionLine& GetDynamicRangeCompressionLine() const{ return m_dynamicRangeCompressionLine; }
+    inline Ac3DynamicRangeCompressionLine GetDynamicRangeCompressionLine() const { return m_dynamicRangeCompressionLine; }
     inline bool DynamicRangeCompressionLineHasBeenSet() const { return m_dynamicRangeCompressionLineHasBeenSet; }
-    inline void SetDynamicRangeCompressionLine(const Ac3DynamicRangeCompressionLine& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
-    inline void SetDynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine&& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = std::move(value); }
-    inline Ac3Settings& WithDynamicRangeCompressionLine(const Ac3DynamicRangeCompressionLine& value) { SetDynamicRangeCompressionLine(value); return *this;}
-    inline Ac3Settings& WithDynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine&& value) { SetDynamicRangeCompressionLine(std::move(value)); return *this;}
+    inline void SetDynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
+    inline Ac3Settings& WithDynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine value) { SetDynamicRangeCompressionLine(value); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +120,10 @@ namespace Model
      * signaling. Keep the default Film standard to set the profile to Dolby's film
      * standard profile for all operating modes.
      */
-    inline const Ac3DynamicRangeCompressionProfile& GetDynamicRangeCompressionProfile() const{ return m_dynamicRangeCompressionProfile; }
+    inline Ac3DynamicRangeCompressionProfile GetDynamicRangeCompressionProfile() const { return m_dynamicRangeCompressionProfile; }
     inline bool DynamicRangeCompressionProfileHasBeenSet() const { return m_dynamicRangeCompressionProfileHasBeenSet; }
-    inline void SetDynamicRangeCompressionProfile(const Ac3DynamicRangeCompressionProfile& value) { m_dynamicRangeCompressionProfileHasBeenSet = true; m_dynamicRangeCompressionProfile = value; }
-    inline void SetDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile&& value) { m_dynamicRangeCompressionProfileHasBeenSet = true; m_dynamicRangeCompressionProfile = std::move(value); }
-    inline Ac3Settings& WithDynamicRangeCompressionProfile(const Ac3DynamicRangeCompressionProfile& value) { SetDynamicRangeCompressionProfile(value); return *this;}
-    inline Ac3Settings& WithDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile&& value) { SetDynamicRangeCompressionProfile(std::move(value)); return *this;}
+    inline void SetDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile value) { m_dynamicRangeCompressionProfileHasBeenSet = true; m_dynamicRangeCompressionProfile = value; }
+    inline Ac3Settings& WithDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile value) { SetDynamicRangeCompressionProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +136,10 @@ namespace Model
      * chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
-    inline const Ac3DynamicRangeCompressionRf& GetDynamicRangeCompressionRf() const{ return m_dynamicRangeCompressionRf; }
+    inline Ac3DynamicRangeCompressionRf GetDynamicRangeCompressionRf() const { return m_dynamicRangeCompressionRf; }
     inline bool DynamicRangeCompressionRfHasBeenSet() const { return m_dynamicRangeCompressionRfHasBeenSet; }
-    inline void SetDynamicRangeCompressionRf(const Ac3DynamicRangeCompressionRf& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
-    inline void SetDynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf&& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = std::move(value); }
-    inline Ac3Settings& WithDynamicRangeCompressionRf(const Ac3DynamicRangeCompressionRf& value) { SetDynamicRangeCompressionRf(value); return *this;}
-    inline Ac3Settings& WithDynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf&& value) { SetDynamicRangeCompressionRf(std::move(value)); return *this;}
+    inline void SetDynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
+    inline Ac3Settings& WithDynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf value) { SetDynamicRangeCompressionRf(value); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +147,10 @@ namespace Model
      * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
      * with 3_2_LFE coding mode.
      */
-    inline const Ac3LfeFilter& GetLfeFilter() const{ return m_lfeFilter; }
+    inline Ac3LfeFilter GetLfeFilter() const { return m_lfeFilter; }
     inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
-    inline void SetLfeFilter(const Ac3LfeFilter& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
-    inline void SetLfeFilter(Ac3LfeFilter&& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = std::move(value); }
-    inline Ac3Settings& WithLfeFilter(const Ac3LfeFilter& value) { SetLfeFilter(value); return *this;}
-    inline Ac3Settings& WithLfeFilter(Ac3LfeFilter&& value) { SetLfeFilter(std::move(value)); return *this;}
+    inline void SetLfeFilter(Ac3LfeFilter value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
+    inline Ac3Settings& WithLfeFilter(Ac3LfeFilter value) { SetLfeFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -171,53 +159,51 @@ namespace Model
      * DolbyE decoder that supplied this audio data. If audio was not supplied from one
      * of these streams, then the static metadata settings will be used.
      */
-    inline const Ac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
+    inline Ac3MetadataControl GetMetadataControl() const { return m_metadataControl; }
     inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
-    inline void SetMetadataControl(const Ac3MetadataControl& value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
-    inline void SetMetadataControl(Ac3MetadataControl&& value) { m_metadataControlHasBeenSet = true; m_metadataControl = std::move(value); }
-    inline Ac3Settings& WithMetadataControl(const Ac3MetadataControl& value) { SetMetadataControl(value); return *this;}
-    inline Ac3Settings& WithMetadataControl(Ac3MetadataControl&& value) { SetMetadataControl(std::move(value)); return *this;}
+    inline void SetMetadataControl(Ac3MetadataControl value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
+    inline Ac3Settings& WithMetadataControl(Ac3MetadataControl value) { SetMetadataControl(value); return *this;}
     ///@}
 
     ///@{
     /**
      * This value is always 48000. It represents the sample rate in Hz.
      */
-    inline int GetSampleRate() const{ return m_sampleRate; }
+    inline int GetSampleRate() const { return m_sampleRate; }
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
     inline Ac3Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
     ///@}
   private:
 
-    int m_bitrate;
+    int m_bitrate{0};
     bool m_bitrateHasBeenSet = false;
 
-    Ac3BitstreamMode m_bitstreamMode;
+    Ac3BitstreamMode m_bitstreamMode{Ac3BitstreamMode::NOT_SET};
     bool m_bitstreamModeHasBeenSet = false;
 
-    Ac3CodingMode m_codingMode;
+    Ac3CodingMode m_codingMode{Ac3CodingMode::NOT_SET};
     bool m_codingModeHasBeenSet = false;
 
-    int m_dialnorm;
+    int m_dialnorm{0};
     bool m_dialnormHasBeenSet = false;
 
-    Ac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine;
+    Ac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine{Ac3DynamicRangeCompressionLine::NOT_SET};
     bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
-    Ac3DynamicRangeCompressionProfile m_dynamicRangeCompressionProfile;
+    Ac3DynamicRangeCompressionProfile m_dynamicRangeCompressionProfile{Ac3DynamicRangeCompressionProfile::NOT_SET};
     bool m_dynamicRangeCompressionProfileHasBeenSet = false;
 
-    Ac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf;
+    Ac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf{Ac3DynamicRangeCompressionRf::NOT_SET};
     bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
-    Ac3LfeFilter m_lfeFilter;
+    Ac3LfeFilter m_lfeFilter{Ac3LfeFilter::NOT_SET};
     bool m_lfeFilterHasBeenSet = false;
 
-    Ac3MetadataControl m_metadataControl;
+    Ac3MetadataControl m_metadataControl{Ac3MetadataControl::NOT_SET};
     bool m_metadataControlHasBeenSet = false;
 
-    int m_sampleRate;
+    int m_sampleRate{0};
     bool m_sampleRateHasBeenSet = false;
   };
 

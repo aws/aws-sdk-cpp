@@ -32,7 +32,7 @@ namespace Model
   class ScheduledQueryInsights
   {
   public:
-    AWS_TIMESTREAMQUERY_API ScheduledQueryInsights();
+    AWS_TIMESTREAMQUERY_API ScheduledQueryInsights() = default;
     AWS_TIMESTREAMQUERY_API ScheduledQueryInsights(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ScheduledQueryInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * <p> <code>DISABLED</code> – Disables <code>ScheduledQueryInsights</code>.</p>
      * </li> </ul>
      */
-    inline const ScheduledQueryInsightsMode& GetMode() const{ return m_mode; }
+    inline ScheduledQueryInsightsMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ScheduledQueryInsightsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ScheduledQueryInsightsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ScheduledQueryInsights& WithMode(const ScheduledQueryInsightsMode& value) { SetMode(value); return *this;}
-    inline ScheduledQueryInsights& WithMode(ScheduledQueryInsightsMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ScheduledQueryInsightsMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ScheduledQueryInsights& WithMode(ScheduledQueryInsightsMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    ScheduledQueryInsightsMode m_mode;
+    ScheduledQueryInsightsMode m_mode{ScheduledQueryInsightsMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class ConversionTarget
   {
   public:
-    AWS_B2BI_API ConversionTarget();
+    AWS_B2BI_API ConversionTarget() = default;
     AWS_B2BI_API ConversionTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API ConversionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>Currently, only X12 format is supported.</p>
      */
-    inline const ConversionTargetFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline ConversionTargetFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const ConversionTargetFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(ConversionTargetFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline ConversionTarget& WithFileFormat(const ConversionTargetFormat& value) { SetFileFormat(value); return *this;}
-    inline ConversionTarget& WithFileFormat(ConversionTargetFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(ConversionTargetFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline ConversionTarget& WithFileFormat(ConversionTargetFormat value) { SetFileFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>A structure that contains the formatting details for the conversion
      * target.</p>
      */
-    inline const ConversionTargetFormatDetails& GetFormatDetails() const{ return m_formatDetails; }
+    inline const ConversionTargetFormatDetails& GetFormatDetails() const { return m_formatDetails; }
     inline bool FormatDetailsHasBeenSet() const { return m_formatDetailsHasBeenSet; }
-    inline void SetFormatDetails(const ConversionTargetFormatDetails& value) { m_formatDetailsHasBeenSet = true; m_formatDetails = value; }
-    inline void SetFormatDetails(ConversionTargetFormatDetails&& value) { m_formatDetailsHasBeenSet = true; m_formatDetails = std::move(value); }
-    inline ConversionTarget& WithFormatDetails(const ConversionTargetFormatDetails& value) { SetFormatDetails(value); return *this;}
-    inline ConversionTarget& WithFormatDetails(ConversionTargetFormatDetails&& value) { SetFormatDetails(std::move(value)); return *this;}
+    template<typename FormatDetailsT = ConversionTargetFormatDetails>
+    void SetFormatDetails(FormatDetailsT&& value) { m_formatDetailsHasBeenSet = true; m_formatDetails = std::forward<FormatDetailsT>(value); }
+    template<typename FormatDetailsT = ConversionTargetFormatDetails>
+    ConversionTarget& WithFormatDetails(FormatDetailsT&& value) { SetFormatDetails(std::forward<FormatDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,16 +68,16 @@ namespace Model
      * <p>Customer uses this to provide a sample on what should file look like after
      * conversion X12 EDI use case around this would be discovering the file syntax</p>
      */
-    inline const OutputSampleFileSource& GetOutputSampleFile() const{ return m_outputSampleFile; }
+    inline const OutputSampleFileSource& GetOutputSampleFile() const { return m_outputSampleFile; }
     inline bool OutputSampleFileHasBeenSet() const { return m_outputSampleFileHasBeenSet; }
-    inline void SetOutputSampleFile(const OutputSampleFileSource& value) { m_outputSampleFileHasBeenSet = true; m_outputSampleFile = value; }
-    inline void SetOutputSampleFile(OutputSampleFileSource&& value) { m_outputSampleFileHasBeenSet = true; m_outputSampleFile = std::move(value); }
-    inline ConversionTarget& WithOutputSampleFile(const OutputSampleFileSource& value) { SetOutputSampleFile(value); return *this;}
-    inline ConversionTarget& WithOutputSampleFile(OutputSampleFileSource&& value) { SetOutputSampleFile(std::move(value)); return *this;}
+    template<typename OutputSampleFileT = OutputSampleFileSource>
+    void SetOutputSampleFile(OutputSampleFileT&& value) { m_outputSampleFileHasBeenSet = true; m_outputSampleFile = std::forward<OutputSampleFileT>(value); }
+    template<typename OutputSampleFileT = OutputSampleFileSource>
+    ConversionTarget& WithOutputSampleFile(OutputSampleFileT&& value) { SetOutputSampleFile(std::forward<OutputSampleFileT>(value)); return *this;}
     ///@}
   private:
 
-    ConversionTargetFormat m_fileFormat;
+    ConversionTargetFormat m_fileFormat{ConversionTargetFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
     ConversionTargetFormatDetails m_formatDetails;

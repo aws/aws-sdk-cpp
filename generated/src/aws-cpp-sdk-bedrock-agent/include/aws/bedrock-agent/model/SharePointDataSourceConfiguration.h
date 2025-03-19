@@ -33,7 +33,7 @@ namespace Model
   class SharePointDataSourceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API SharePointDataSourceConfiguration();
+    AWS_BEDROCKAGENT_API SharePointDataSourceConfiguration() = default;
     AWS_BEDROCKAGENT_API SharePointDataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SharePointDataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The configuration of the SharePoint content. For example, configuring
      * specific types of SharePoint content.</p>
      */
-    inline const SharePointCrawlerConfiguration& GetCrawlerConfiguration() const{ return m_crawlerConfiguration; }
+    inline const SharePointCrawlerConfiguration& GetCrawlerConfiguration() const { return m_crawlerConfiguration; }
     inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }
-    inline void SetCrawlerConfiguration(const SharePointCrawlerConfiguration& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = value; }
-    inline void SetCrawlerConfiguration(SharePointCrawlerConfiguration&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::move(value); }
-    inline SharePointDataSourceConfiguration& WithCrawlerConfiguration(const SharePointCrawlerConfiguration& value) { SetCrawlerConfiguration(value); return *this;}
-    inline SharePointDataSourceConfiguration& WithCrawlerConfiguration(SharePointCrawlerConfiguration&& value) { SetCrawlerConfiguration(std::move(value)); return *this;}
+    template<typename CrawlerConfigurationT = SharePointCrawlerConfiguration>
+    void SetCrawlerConfiguration(CrawlerConfigurationT&& value) { m_crawlerConfigurationHasBeenSet = true; m_crawlerConfiguration = std::forward<CrawlerConfigurationT>(value); }
+    template<typename CrawlerConfigurationT = SharePointCrawlerConfiguration>
+    SharePointDataSourceConfiguration& WithCrawlerConfiguration(CrawlerConfigurationT&& value) { SetCrawlerConfiguration(std::forward<CrawlerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint information to connect to your SharePoint data source.</p>
      */
-    inline const SharePointSourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
+    inline const SharePointSourceConfiguration& GetSourceConfiguration() const { return m_sourceConfiguration; }
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
-    inline void SetSourceConfiguration(const SharePointSourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
-    inline void SetSourceConfiguration(SharePointSourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
-    inline SharePointDataSourceConfiguration& WithSourceConfiguration(const SharePointSourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
-    inline SharePointDataSourceConfiguration& WithSourceConfiguration(SharePointSourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
+    template<typename SourceConfigurationT = SharePointSourceConfiguration>
+    void SetSourceConfiguration(SourceConfigurationT&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::forward<SourceConfigurationT>(value); }
+    template<typename SourceConfigurationT = SharePointSourceConfiguration>
+    SharePointDataSourceConfiguration& WithSourceConfiguration(SourceConfigurationT&& value) { SetSourceConfiguration(std::forward<SourceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

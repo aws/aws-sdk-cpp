@@ -36,7 +36,7 @@ namespace Model
   class StartTextDetectionFilters
   {
   public:
-    AWS_REKOGNITION_API StartTextDetectionFilters();
+    AWS_REKOGNITION_API StartTextDetectionFilters() = default;
     AWS_REKOGNITION_API StartTextDetectionFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StartTextDetectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>Filters focusing on qualities of the text, such as confidence or size.</p>
      */
-    inline const DetectionFilter& GetWordFilter() const{ return m_wordFilter; }
+    inline const DetectionFilter& GetWordFilter() const { return m_wordFilter; }
     inline bool WordFilterHasBeenSet() const { return m_wordFilterHasBeenSet; }
-    inline void SetWordFilter(const DetectionFilter& value) { m_wordFilterHasBeenSet = true; m_wordFilter = value; }
-    inline void SetWordFilter(DetectionFilter&& value) { m_wordFilterHasBeenSet = true; m_wordFilter = std::move(value); }
-    inline StartTextDetectionFilters& WithWordFilter(const DetectionFilter& value) { SetWordFilter(value); return *this;}
-    inline StartTextDetectionFilters& WithWordFilter(DetectionFilter&& value) { SetWordFilter(std::move(value)); return *this;}
+    template<typename WordFilterT = DetectionFilter>
+    void SetWordFilter(WordFilterT&& value) { m_wordFilterHasBeenSet = true; m_wordFilter = std::forward<WordFilterT>(value); }
+    template<typename WordFilterT = DetectionFilter>
+    StartTextDetectionFilters& WithWordFilter(WordFilterT&& value) { SetWordFilter(std::forward<WordFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>Filter focusing on a certain area of the frame. Uses a
      * <code>BoundingBox</code> object to set the region of the screen.</p>
      */
-    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const{ return m_regionsOfInterest; }
+    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const { return m_regionsOfInterest; }
     inline bool RegionsOfInterestHasBeenSet() const { return m_regionsOfInterestHasBeenSet; }
-    inline void SetRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = value; }
-    inline void SetRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::move(value); }
-    inline StartTextDetectionFilters& WithRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { SetRegionsOfInterest(value); return *this;}
-    inline StartTextDetectionFilters& WithRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { SetRegionsOfInterest(std::move(value)); return *this;}
-    inline StartTextDetectionFilters& AddRegionsOfInterest(const RegionOfInterest& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(value); return *this; }
-    inline StartTextDetectionFilters& AddRegionsOfInterest(RegionOfInterest&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(std::move(value)); return *this; }
+    template<typename RegionsOfInterestT = Aws::Vector<RegionOfInterest>>
+    void SetRegionsOfInterest(RegionsOfInterestT&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::forward<RegionsOfInterestT>(value); }
+    template<typename RegionsOfInterestT = Aws::Vector<RegionOfInterest>>
+    StartTextDetectionFilters& WithRegionsOfInterest(RegionsOfInterestT&& value) { SetRegionsOfInterest(std::forward<RegionsOfInterestT>(value)); return *this;}
+    template<typename RegionsOfInterestT = RegionOfInterest>
+    StartTextDetectionFilters& AddRegionsOfInterest(RegionsOfInterestT&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.emplace_back(std::forward<RegionsOfInterestT>(value)); return *this; }
     ///@}
   private:
 

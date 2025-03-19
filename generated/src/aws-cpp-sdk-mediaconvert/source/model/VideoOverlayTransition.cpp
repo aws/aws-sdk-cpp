@@ -18,15 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoOverlayTransition::VideoOverlayTransition() : 
-    m_endPositionHasBeenSet(false),
-    m_endTimecodeHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false)
-{
-}
-
 VideoOverlayTransition::VideoOverlayTransition(JsonView jsonValue)
-  : VideoOverlayTransition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VideoOverlayTransition& VideoOverlayTransition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endPosition"))
   {
     m_endPosition = jsonValue.GetObject("endPosition");
-
     m_endPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimecode"))
   {
     m_endTimecode = jsonValue.GetString("endTimecode");
-
     m_endTimecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimecode"))
   {
     m_startTimecode = jsonValue.GetString("startTimecode");
-
     m_startTimecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

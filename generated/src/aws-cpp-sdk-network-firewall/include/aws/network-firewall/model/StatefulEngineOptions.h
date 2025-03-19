@@ -34,7 +34,7 @@ namespace Model
   class StatefulEngineOptions
   {
   public:
-    AWS_NETWORKFIREWALL_API StatefulEngineOptions();
+    AWS_NETWORKFIREWALL_API StatefulEngineOptions() = default;
     AWS_NETWORKFIREWALL_API StatefulEngineOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API StatefulEngineOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
      * </p>
      */
-    inline const RuleOrder& GetRuleOrder() const{ return m_ruleOrder; }
+    inline RuleOrder GetRuleOrder() const { return m_ruleOrder; }
     inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
-    inline void SetRuleOrder(const RuleOrder& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
-    inline void SetRuleOrder(RuleOrder&& value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = std::move(value); }
-    inline StatefulEngineOptions& WithRuleOrder(const RuleOrder& value) { SetRuleOrder(value); return *this;}
-    inline StatefulEngineOptions& WithRuleOrder(RuleOrder&& value) { SetRuleOrder(std::move(value)); return *this;}
+    inline void SetRuleOrder(RuleOrder value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
+    inline StatefulEngineOptions& WithRuleOrder(RuleOrder value) { SetRuleOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,10 @@ namespace Model
      * Network Firewall will have context about the new session and will apply rules to
      * the subsequent traffic.</p> </li> </ul>
      */
-    inline const StreamExceptionPolicy& GetStreamExceptionPolicy() const{ return m_streamExceptionPolicy; }
+    inline StreamExceptionPolicy GetStreamExceptionPolicy() const { return m_streamExceptionPolicy; }
     inline bool StreamExceptionPolicyHasBeenSet() const { return m_streamExceptionPolicyHasBeenSet; }
-    inline void SetStreamExceptionPolicy(const StreamExceptionPolicy& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = value; }
-    inline void SetStreamExceptionPolicy(StreamExceptionPolicy&& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = std::move(value); }
-    inline StatefulEngineOptions& WithStreamExceptionPolicy(const StreamExceptionPolicy& value) { SetStreamExceptionPolicy(value); return *this;}
-    inline StatefulEngineOptions& WithStreamExceptionPolicy(StreamExceptionPolicy&& value) { SetStreamExceptionPolicy(std::move(value)); return *this;}
+    inline void SetStreamExceptionPolicy(StreamExceptionPolicy value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = value; }
+    inline StatefulEngineOptions& WithStreamExceptionPolicy(StreamExceptionPolicy value) { SetStreamExceptionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -98,19 +94,19 @@ namespace Model
      * <p>Configures the amount of time that can pass without any traffic sent through
      * the firewall before the firewall determines that the connection is idle. </p>
      */
-    inline const FlowTimeouts& GetFlowTimeouts() const{ return m_flowTimeouts; }
+    inline const FlowTimeouts& GetFlowTimeouts() const { return m_flowTimeouts; }
     inline bool FlowTimeoutsHasBeenSet() const { return m_flowTimeoutsHasBeenSet; }
-    inline void SetFlowTimeouts(const FlowTimeouts& value) { m_flowTimeoutsHasBeenSet = true; m_flowTimeouts = value; }
-    inline void SetFlowTimeouts(FlowTimeouts&& value) { m_flowTimeoutsHasBeenSet = true; m_flowTimeouts = std::move(value); }
-    inline StatefulEngineOptions& WithFlowTimeouts(const FlowTimeouts& value) { SetFlowTimeouts(value); return *this;}
-    inline StatefulEngineOptions& WithFlowTimeouts(FlowTimeouts&& value) { SetFlowTimeouts(std::move(value)); return *this;}
+    template<typename FlowTimeoutsT = FlowTimeouts>
+    void SetFlowTimeouts(FlowTimeoutsT&& value) { m_flowTimeoutsHasBeenSet = true; m_flowTimeouts = std::forward<FlowTimeoutsT>(value); }
+    template<typename FlowTimeoutsT = FlowTimeouts>
+    StatefulEngineOptions& WithFlowTimeouts(FlowTimeoutsT&& value) { SetFlowTimeouts(std::forward<FlowTimeoutsT>(value)); return *this;}
     ///@}
   private:
 
-    RuleOrder m_ruleOrder;
+    RuleOrder m_ruleOrder{RuleOrder::NOT_SET};
     bool m_ruleOrderHasBeenSet = false;
 
-    StreamExceptionPolicy m_streamExceptionPolicy;
+    StreamExceptionPolicy m_streamExceptionPolicy{StreamExceptionPolicy::NOT_SET};
     bool m_streamExceptionPolicyHasBeenSet = false;
 
     FlowTimeouts m_flowTimeouts;

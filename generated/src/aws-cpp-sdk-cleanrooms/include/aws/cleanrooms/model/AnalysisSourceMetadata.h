@@ -31,7 +31,7 @@ namespace Model
   class AnalysisSourceMetadata
   {
   public:
-    AWS_CLEANROOMS_API AnalysisSourceMetadata();
+    AWS_CLEANROOMS_API AnalysisSourceMetadata() = default;
     AWS_CLEANROOMS_API AnalysisSourceMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AnalysisSourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> The artifacts of the analysis source metadata.</p>
      */
-    inline const AnalysisTemplateArtifactMetadata& GetArtifacts() const{ return m_artifacts; }
+    inline const AnalysisTemplateArtifactMetadata& GetArtifacts() const { return m_artifacts; }
     inline bool ArtifactsHasBeenSet() const { return m_artifactsHasBeenSet; }
-    inline void SetArtifacts(const AnalysisTemplateArtifactMetadata& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
-    inline void SetArtifacts(AnalysisTemplateArtifactMetadata&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::move(value); }
-    inline AnalysisSourceMetadata& WithArtifacts(const AnalysisTemplateArtifactMetadata& value) { SetArtifacts(value); return *this;}
-    inline AnalysisSourceMetadata& WithArtifacts(AnalysisTemplateArtifactMetadata&& value) { SetArtifacts(std::move(value)); return *this;}
+    template<typename ArtifactsT = AnalysisTemplateArtifactMetadata>
+    void SetArtifacts(ArtifactsT&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::forward<ArtifactsT>(value); }
+    template<typename ArtifactsT = AnalysisTemplateArtifactMetadata>
+    AnalysisSourceMetadata& WithArtifacts(ArtifactsT&& value) { SetArtifacts(std::forward<ArtifactsT>(value)); return *this;}
     ///@}
   private:
 

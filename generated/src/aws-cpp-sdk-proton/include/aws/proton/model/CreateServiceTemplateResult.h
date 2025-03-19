@@ -28,7 +28,7 @@ namespace Model
   class CreateServiceTemplateResult
   {
   public:
-    AWS_PROTON_API CreateServiceTemplateResult();
+    AWS_PROTON_API CreateServiceTemplateResult() = default;
     AWS_PROTON_API CreateServiceTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API CreateServiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The service template detail data that's returned by Proton.</p>
      */
-    inline const ServiceTemplate& GetServiceTemplate() const{ return m_serviceTemplate; }
-    inline void SetServiceTemplate(const ServiceTemplate& value) { m_serviceTemplate = value; }
-    inline void SetServiceTemplate(ServiceTemplate&& value) { m_serviceTemplate = std::move(value); }
-    inline CreateServiceTemplateResult& WithServiceTemplate(const ServiceTemplate& value) { SetServiceTemplate(value); return *this;}
-    inline CreateServiceTemplateResult& WithServiceTemplate(ServiceTemplate&& value) { SetServiceTemplate(std::move(value)); return *this;}
+    inline const ServiceTemplate& GetServiceTemplate() const { return m_serviceTemplate; }
+    template<typename ServiceTemplateT = ServiceTemplate>
+    void SetServiceTemplate(ServiceTemplateT&& value) { m_serviceTemplateHasBeenSet = true; m_serviceTemplate = std::forward<ServiceTemplateT>(value); }
+    template<typename ServiceTemplateT = ServiceTemplate>
+    CreateServiceTemplateResult& WithServiceTemplate(ServiceTemplateT&& value) { SetServiceTemplate(std::forward<ServiceTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateServiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateServiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateServiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateServiceTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceTemplate m_serviceTemplate;
+    bool m_serviceTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

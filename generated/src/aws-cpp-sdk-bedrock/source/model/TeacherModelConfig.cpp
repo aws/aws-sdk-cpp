@@ -18,15 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-TeacherModelConfig::TeacherModelConfig() : 
-    m_teacherModelIdentifierHasBeenSet(false),
-    m_maxResponseLengthForInference(0),
-    m_maxResponseLengthForInferenceHasBeenSet(false)
-{
-}
-
 TeacherModelConfig::TeacherModelConfig(JsonView jsonValue)
-  : TeacherModelConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TeacherModelConfig& TeacherModelConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("teacherModelIdentifier"))
   {
     m_teacherModelIdentifier = jsonValue.GetString("teacherModelIdentifier");
-
     m_teacherModelIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxResponseLengthForInference"))
   {
     m_maxResponseLengthForInference = jsonValue.GetInteger("maxResponseLengthForInference");
-
     m_maxResponseLengthForInferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

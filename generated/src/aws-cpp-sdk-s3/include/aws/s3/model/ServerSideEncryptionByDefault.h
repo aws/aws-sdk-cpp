@@ -47,7 +47,7 @@ namespace Model
   class ServerSideEncryptionByDefault
   {
   public:
-    AWS_S3_API ServerSideEncryptionByDefault();
+    AWS_S3_API ServerSideEncryptionByDefault() = default;
     AWS_S3_API ServerSideEncryptionByDefault(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API ServerSideEncryptionByDefault& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -61,12 +61,10 @@ namespace Model
      * server-side encryption: <code>AES256</code> and <code>aws:kms</code>.</p>
      * 
      */
-    inline const ServerSideEncryption& GetSSEAlgorithm() const{ return m_sSEAlgorithm; }
+    inline ServerSideEncryption GetSSEAlgorithm() const { return m_sSEAlgorithm; }
     inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
-    inline void SetSSEAlgorithm(const ServerSideEncryption& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
-    inline void SetSSEAlgorithm(ServerSideEncryption&& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = std::move(value); }
-    inline ServerSideEncryptionByDefault& WithSSEAlgorithm(const ServerSideEncryption& value) { SetSSEAlgorithm(value); return *this;}
-    inline ServerSideEncryptionByDefault& WithSSEAlgorithm(ServerSideEncryption&& value) { SetSSEAlgorithm(std::move(value)); return *this;}
+    inline void SetSSEAlgorithm(ServerSideEncryption value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
+    inline ServerSideEncryptionByDefault& WithSSEAlgorithm(ServerSideEncryption value) { SetSSEAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -103,18 +101,16 @@ namespace Model
      * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
-    inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
+    inline const Aws::String& GetKMSMasterKeyID() const { return m_kMSMasterKeyID; }
     inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
-    inline void SetKMSMasterKeyID(const Aws::String& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = value; }
-    inline void SetKMSMasterKeyID(Aws::String&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::move(value); }
-    inline void SetKMSMasterKeyID(const char* value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID.assign(value); }
-    inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const Aws::String& value) { SetKMSMasterKeyID(value); return *this;}
-    inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(Aws::String&& value) { SetKMSMasterKeyID(std::move(value)); return *this;}
-    inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const char* value) { SetKMSMasterKeyID(value); return *this;}
+    template<typename KMSMasterKeyIDT = Aws::String>
+    void SetKMSMasterKeyID(KMSMasterKeyIDT&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::forward<KMSMasterKeyIDT>(value); }
+    template<typename KMSMasterKeyIDT = Aws::String>
+    ServerSideEncryptionByDefault& WithKMSMasterKeyID(KMSMasterKeyIDT&& value) { SetKMSMasterKeyID(std::forward<KMSMasterKeyIDT>(value)); return *this;}
     ///@}
   private:
 
-    ServerSideEncryption m_sSEAlgorithm;
+    ServerSideEncryption m_sSEAlgorithm{ServerSideEncryption::NOT_SET};
     bool m_sSEAlgorithmHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyID;

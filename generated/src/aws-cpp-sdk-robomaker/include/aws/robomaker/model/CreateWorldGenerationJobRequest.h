@@ -24,7 +24,7 @@ namespace Model
   class CreateWorldGenerationJobRequest : public RoboMakerRequest
   {
   public:
-    AWS_ROBOMAKER_API CreateWorldGenerationJobRequest();
+    AWS_ROBOMAKER_API CreateWorldGenerationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateWorldGenerationJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateWorldGenerationJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateWorldGenerationJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateWorldGenerationJobRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,26 +53,24 @@ namespace Model
      * <p>The Amazon Resource Name (arn) of the world template describing the worlds
      * you want to create.</p>
      */
-    inline const Aws::String& GetTemplate() const{ return m_template; }
+    inline const Aws::String& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Aws::String& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Aws::String&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline void SetTemplate(const char* value) { m_templateHasBeenSet = true; m_template.assign(value); }
-    inline CreateWorldGenerationJobRequest& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-    inline CreateWorldGenerationJobRequest& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-    inline CreateWorldGenerationJobRequest& WithTemplate(const char* value) { SetTemplate(value); return *this;}
+    template<typename TemplateT = Aws::String>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::String>
+    CreateWorldGenerationJobRequest& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the world count.</p>
      */
-    inline const WorldCount& GetWorldCount() const{ return m_worldCount; }
+    inline const WorldCount& GetWorldCount() const { return m_worldCount; }
     inline bool WorldCountHasBeenSet() const { return m_worldCountHasBeenSet; }
-    inline void SetWorldCount(const WorldCount& value) { m_worldCountHasBeenSet = true; m_worldCount = value; }
-    inline void SetWorldCount(WorldCount&& value) { m_worldCountHasBeenSet = true; m_worldCount = std::move(value); }
-    inline CreateWorldGenerationJobRequest& WithWorldCount(const WorldCount& value) { SetWorldCount(value); return *this;}
-    inline CreateWorldGenerationJobRequest& WithWorldCount(WorldCount&& value) { SetWorldCount(std::move(value)); return *this;}
+    template<typename WorldCountT = WorldCount>
+    void SetWorldCount(WorldCountT&& value) { m_worldCountHasBeenSet = true; m_worldCount = std::forward<WorldCountT>(value); }
+    template<typename WorldCountT = WorldCount>
+    CreateWorldGenerationJobRequest& WithWorldCount(WorldCountT&& value) { SetWorldCount(std::forward<WorldCountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,19 +78,16 @@ namespace Model
      * <p>A map that contains tag keys and tag values that are attached to the world
      * generator job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWorldGenerationJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateWorldGenerationJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWorldGenerationJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateWorldGenerationJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorldGenerationJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorldGenerationJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWorldGenerationJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorldGenerationJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateWorldGenerationJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateWorldGenerationJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateWorldGenerationJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -102,19 +95,16 @@ namespace Model
      * <p>A map that contains tag keys and tag values that are attached to the
      * generated worlds.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetWorldTags() const{ return m_worldTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetWorldTags() const { return m_worldTags; }
     inline bool WorldTagsHasBeenSet() const { return m_worldTagsHasBeenSet; }
-    inline void SetWorldTags(const Aws::Map<Aws::String, Aws::String>& value) { m_worldTagsHasBeenSet = true; m_worldTags = value; }
-    inline void SetWorldTags(Aws::Map<Aws::String, Aws::String>&& value) { m_worldTagsHasBeenSet = true; m_worldTags = std::move(value); }
-    inline CreateWorldGenerationJobRequest& WithWorldTags(const Aws::Map<Aws::String, Aws::String>& value) { SetWorldTags(value); return *this;}
-    inline CreateWorldGenerationJobRequest& WithWorldTags(Aws::Map<Aws::String, Aws::String>&& value) { SetWorldTags(std::move(value)); return *this;}
-    inline CreateWorldGenerationJobRequest& AddWorldTags(const Aws::String& key, const Aws::String& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, value); return *this; }
-    inline CreateWorldGenerationJobRequest& AddWorldTags(Aws::String&& key, const Aws::String& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::move(key), value); return *this; }
-    inline CreateWorldGenerationJobRequest& AddWorldTags(const Aws::String& key, Aws::String&& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorldGenerationJobRequest& AddWorldTags(Aws::String&& key, Aws::String&& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateWorldGenerationJobRequest& AddWorldTags(const char* key, Aws::String&& value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, std::move(value)); return *this; }
-    inline CreateWorldGenerationJobRequest& AddWorldTags(Aws::String&& key, const char* value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::move(key), value); return *this; }
-    inline CreateWorldGenerationJobRequest& AddWorldTags(const char* key, const char* value) { m_worldTagsHasBeenSet = true; m_worldTags.emplace(key, value); return *this; }
+    template<typename WorldTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetWorldTags(WorldTagsT&& value) { m_worldTagsHasBeenSet = true; m_worldTags = std::forward<WorldTagsT>(value); }
+    template<typename WorldTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateWorldGenerationJobRequest& WithWorldTags(WorldTagsT&& value) { SetWorldTags(std::forward<WorldTagsT>(value)); return *this;}
+    template<typename WorldTagsKeyT = Aws::String, typename WorldTagsValueT = Aws::String>
+    CreateWorldGenerationJobRequest& AddWorldTags(WorldTagsKeyT&& key, WorldTagsValueT&& value) {
+      m_worldTagsHasBeenSet = true; m_worldTags.emplace(std::forward<WorldTagsKeyT>(key), std::forward<WorldTagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

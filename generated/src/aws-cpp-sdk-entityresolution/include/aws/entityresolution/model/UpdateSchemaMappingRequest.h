@@ -23,7 +23,7 @@ namespace Model
   class UpdateSchemaMappingRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API UpdateSchemaMappingRequest();
+    AWS_ENTITYRESOLUTION_API UpdateSchemaMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A description of the schema.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateSchemaMappingRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateSchemaMappingRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateSchemaMappingRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSchemaMappingRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,14 @@ namespace Model
      * corresponds to a column the source data table, and contains column name plus
      * additional information that Entity Resolution uses for matching.</p>
      */
-    inline const Aws::Vector<SchemaInputAttribute>& GetMappedInputFields() const{ return m_mappedInputFields; }
+    inline const Aws::Vector<SchemaInputAttribute>& GetMappedInputFields() const { return m_mappedInputFields; }
     inline bool MappedInputFieldsHasBeenSet() const { return m_mappedInputFieldsHasBeenSet; }
-    inline void SetMappedInputFields(const Aws::Vector<SchemaInputAttribute>& value) { m_mappedInputFieldsHasBeenSet = true; m_mappedInputFields = value; }
-    inline void SetMappedInputFields(Aws::Vector<SchemaInputAttribute>&& value) { m_mappedInputFieldsHasBeenSet = true; m_mappedInputFields = std::move(value); }
-    inline UpdateSchemaMappingRequest& WithMappedInputFields(const Aws::Vector<SchemaInputAttribute>& value) { SetMappedInputFields(value); return *this;}
-    inline UpdateSchemaMappingRequest& WithMappedInputFields(Aws::Vector<SchemaInputAttribute>&& value) { SetMappedInputFields(std::move(value)); return *this;}
-    inline UpdateSchemaMappingRequest& AddMappedInputFields(const SchemaInputAttribute& value) { m_mappedInputFieldsHasBeenSet = true; m_mappedInputFields.push_back(value); return *this; }
-    inline UpdateSchemaMappingRequest& AddMappedInputFields(SchemaInputAttribute&& value) { m_mappedInputFieldsHasBeenSet = true; m_mappedInputFields.push_back(std::move(value)); return *this; }
+    template<typename MappedInputFieldsT = Aws::Vector<SchemaInputAttribute>>
+    void SetMappedInputFields(MappedInputFieldsT&& value) { m_mappedInputFieldsHasBeenSet = true; m_mappedInputFields = std::forward<MappedInputFieldsT>(value); }
+    template<typename MappedInputFieldsT = Aws::Vector<SchemaInputAttribute>>
+    UpdateSchemaMappingRequest& WithMappedInputFields(MappedInputFieldsT&& value) { SetMappedInputFields(std::forward<MappedInputFieldsT>(value)); return *this;}
+    template<typename MappedInputFieldsT = SchemaInputAttribute>
+    UpdateSchemaMappingRequest& AddMappedInputFields(MappedInputFieldsT&& value) { m_mappedInputFieldsHasBeenSet = true; m_mappedInputFields.emplace_back(std::forward<MappedInputFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <p>The name of the schema. There can't be multiple <code>SchemaMappings</code>
      * with the same name.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-    inline UpdateSchemaMappingRequest& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline UpdateSchemaMappingRequest& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline UpdateSchemaMappingRequest& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    UpdateSchemaMappingRequest& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-QConnectIntegrationIdentifier::QConnectIntegrationIdentifier() : 
-    m_knowledgeBaseArnHasBeenSet(false)
-{
-}
-
 QConnectIntegrationIdentifier::QConnectIntegrationIdentifier(JsonView jsonValue)
-  : QConnectIntegrationIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QConnectIntegrationIdentifier& QConnectIntegrationIdentifier::operator =(JsonVie
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   return *this;
 }
 

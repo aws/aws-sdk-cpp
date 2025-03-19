@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-BedrockFoundationModelConfigurationForParsing::BedrockFoundationModelConfigurationForParsing() : 
-    m_modelArnHasBeenSet(false),
-    m_parsingPromptHasBeenSet(false)
-{
-}
-
 BedrockFoundationModelConfigurationForParsing::BedrockFoundationModelConfigurationForParsing(JsonView jsonValue)
-  : BedrockFoundationModelConfigurationForParsing()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BedrockFoundationModelConfigurationForParsing& BedrockFoundationModelConfigurati
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsingPrompt"))
   {
     m_parsingPrompt = jsonValue.GetObject("parsingPrompt");
-
     m_parsingPromptHasBeenSet = true;
   }
-
   return *this;
 }
 

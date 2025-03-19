@@ -28,7 +28,7 @@ namespace Model
   class CancelHandshakeResult
   {
   public:
-    AWS_ORGANIZATIONS_API CancelHandshakeResult();
+    AWS_ORGANIZATIONS_API CancelHandshakeResult() = default;
     AWS_ORGANIZATIONS_API CancelHandshakeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API CancelHandshakeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A structure that contains details about the handshake that you canceled.</p>
      */
-    inline const Handshake& GetHandshake() const{ return m_handshake; }
-    inline void SetHandshake(const Handshake& value) { m_handshake = value; }
-    inline void SetHandshake(Handshake&& value) { m_handshake = std::move(value); }
-    inline CancelHandshakeResult& WithHandshake(const Handshake& value) { SetHandshake(value); return *this;}
-    inline CancelHandshakeResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
+    inline const Handshake& GetHandshake() const { return m_handshake; }
+    template<typename HandshakeT = Handshake>
+    void SetHandshake(HandshakeT&& value) { m_handshakeHasBeenSet = true; m_handshake = std::forward<HandshakeT>(value); }
+    template<typename HandshakeT = Handshake>
+    CancelHandshakeResult& WithHandshake(HandshakeT&& value) { SetHandshake(std::forward<HandshakeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelHandshakeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelHandshakeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelHandshakeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelHandshakeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Handshake m_handshake;
+    bool m_handshakeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

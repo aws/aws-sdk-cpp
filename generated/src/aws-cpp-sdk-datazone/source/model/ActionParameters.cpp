@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ActionParameters::ActionParameters() : 
-    m_awsConsoleLinkHasBeenSet(false)
-{
-}
-
 ActionParameters::ActionParameters(JsonView jsonValue)
-  : ActionParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionParameters& ActionParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsConsoleLink"))
   {
     m_awsConsoleLink = jsonValue.GetObject("awsConsoleLink");
-
     m_awsConsoleLinkHasBeenSet = true;
   }
-
   return *this;
 }
 

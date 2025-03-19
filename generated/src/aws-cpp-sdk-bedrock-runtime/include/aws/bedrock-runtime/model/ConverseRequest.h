@@ -31,7 +31,7 @@ namespace Model
   class ConverseRequest : public BedrockRuntimeRequest
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseRequest();
+    AWS_BEDROCKRUNTIME_API ConverseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -70,28 +70,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
      * models</a>.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline ConverseRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline ConverseRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline ConverseRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    ConverseRequest& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The messages that you want to send to the model.</p>
      */
-    inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
+    inline const Aws::Vector<Message>& GetMessages() const { return m_messages; }
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-    inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-    inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-    inline ConverseRequest& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
-    inline ConverseRequest& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
-    inline ConverseRequest& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-    inline ConverseRequest& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    template<typename MessagesT = Aws::Vector<Message>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<Message>>
+    ConverseRequest& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = Message>
+    ConverseRequest& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,14 +97,14 @@ namespace Model
      * <p>A prompt that provides instructions or context to the model about the task it
      * should perform, or the persona it should adopt during the conversation.</p>
      */
-    inline const Aws::Vector<SystemContentBlock>& GetSystem() const{ return m_system; }
+    inline const Aws::Vector<SystemContentBlock>& GetSystem() const { return m_system; }
     inline bool SystemHasBeenSet() const { return m_systemHasBeenSet; }
-    inline void SetSystem(const Aws::Vector<SystemContentBlock>& value) { m_systemHasBeenSet = true; m_system = value; }
-    inline void SetSystem(Aws::Vector<SystemContentBlock>&& value) { m_systemHasBeenSet = true; m_system = std::move(value); }
-    inline ConverseRequest& WithSystem(const Aws::Vector<SystemContentBlock>& value) { SetSystem(value); return *this;}
-    inline ConverseRequest& WithSystem(Aws::Vector<SystemContentBlock>&& value) { SetSystem(std::move(value)); return *this;}
-    inline ConverseRequest& AddSystem(const SystemContentBlock& value) { m_systemHasBeenSet = true; m_system.push_back(value); return *this; }
-    inline ConverseRequest& AddSystem(SystemContentBlock&& value) { m_systemHasBeenSet = true; m_system.push_back(std::move(value)); return *this; }
+    template<typename SystemT = Aws::Vector<SystemContentBlock>>
+    void SetSystem(SystemT&& value) { m_systemHasBeenSet = true; m_system = std::forward<SystemT>(value); }
+    template<typename SystemT = Aws::Vector<SystemContentBlock>>
+    ConverseRequest& WithSystem(SystemT&& value) { SetSystem(std::forward<SystemT>(value)); return *this;}
+    template<typename SystemT = SystemContentBlock>
+    ConverseRequest& AddSystem(SystemT&& value) { m_systemHasBeenSet = true; m_system.emplace_back(std::forward<SystemT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,12 +114,12 @@ namespace Model
      * need to pass additional parameters that the model supports, use the
      * <code>additionalModelRequestFields</code> request field.</p>
      */
-    inline const InferenceConfiguration& GetInferenceConfig() const{ return m_inferenceConfig; }
+    inline const InferenceConfiguration& GetInferenceConfig() const { return m_inferenceConfig; }
     inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
-    inline void SetInferenceConfig(const InferenceConfiguration& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = value; }
-    inline void SetInferenceConfig(InferenceConfiguration&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::move(value); }
-    inline ConverseRequest& WithInferenceConfig(const InferenceConfiguration& value) { SetInferenceConfig(value); return *this;}
-    inline ConverseRequest& WithInferenceConfig(InferenceConfiguration&& value) { SetInferenceConfig(std::move(value)); return *this;}
+    template<typename InferenceConfigT = InferenceConfiguration>
+    void SetInferenceConfig(InferenceConfigT&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::forward<InferenceConfigT>(value); }
+    template<typename InferenceConfigT = InferenceConfiguration>
+    ConverseRequest& WithInferenceConfig(InferenceConfigT&& value) { SetInferenceConfig(std::forward<InferenceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +130,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported
      * models and model features</a>.</p>
      */
-    inline const ToolConfiguration& GetToolConfig() const{ return m_toolConfig; }
+    inline const ToolConfiguration& GetToolConfig() const { return m_toolConfig; }
     inline bool ToolConfigHasBeenSet() const { return m_toolConfigHasBeenSet; }
-    inline void SetToolConfig(const ToolConfiguration& value) { m_toolConfigHasBeenSet = true; m_toolConfig = value; }
-    inline void SetToolConfig(ToolConfiguration&& value) { m_toolConfigHasBeenSet = true; m_toolConfig = std::move(value); }
-    inline ConverseRequest& WithToolConfig(const ToolConfiguration& value) { SetToolConfig(value); return *this;}
-    inline ConverseRequest& WithToolConfig(ToolConfiguration&& value) { SetToolConfig(std::move(value)); return *this;}
+    template<typename ToolConfigT = ToolConfiguration>
+    void SetToolConfig(ToolConfigT&& value) { m_toolConfigHasBeenSet = true; m_toolConfig = std::forward<ToolConfigT>(value); }
+    template<typename ToolConfigT = ToolConfiguration>
+    ConverseRequest& WithToolConfig(ToolConfigT&& value) { SetToolConfig(std::forward<ToolConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +147,12 @@ namespace Model
      * blocks, the guardrail operates on all messages in the request body and in any
      * included prompt resource.</p>
      */
-    inline const GuardrailConfiguration& GetGuardrailConfig() const{ return m_guardrailConfig; }
+    inline const GuardrailConfiguration& GetGuardrailConfig() const { return m_guardrailConfig; }
     inline bool GuardrailConfigHasBeenSet() const { return m_guardrailConfigHasBeenSet; }
-    inline void SetGuardrailConfig(const GuardrailConfiguration& value) { m_guardrailConfigHasBeenSet = true; m_guardrailConfig = value; }
-    inline void SetGuardrailConfig(GuardrailConfiguration&& value) { m_guardrailConfigHasBeenSet = true; m_guardrailConfig = std::move(value); }
-    inline ConverseRequest& WithGuardrailConfig(const GuardrailConfiguration& value) { SetGuardrailConfig(value); return *this;}
-    inline ConverseRequest& WithGuardrailConfig(GuardrailConfiguration&& value) { SetGuardrailConfig(std::move(value)); return *this;}
+    template<typename GuardrailConfigT = GuardrailConfiguration>
+    void SetGuardrailConfig(GuardrailConfigT&& value) { m_guardrailConfigHasBeenSet = true; m_guardrailConfig = std::forward<GuardrailConfigT>(value); }
+    template<typename GuardrailConfigT = GuardrailConfiguration>
+    ConverseRequest& WithGuardrailConfig(GuardrailConfigT&& value) { SetGuardrailConfig(std::forward<GuardrailConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,12 +164,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model
      * parameters</a>.</p>
      */
-    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
     inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
-    inline void SetAdditionalModelRequestFields(const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
-    inline void SetAdditionalModelRequestFields(Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
-    inline ConverseRequest& WithAdditionalModelRequestFields(const Aws::Utils::Document& value) { SetAdditionalModelRequestFields(value); return *this;}
-    inline ConverseRequest& WithAdditionalModelRequestFields(Aws::Utils::Document&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
+    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
+    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+    ConverseRequest& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,18 +179,16 @@ namespace Model
      * field is ignored if you don't specify a prompt resource in the
      * <code>modelId</code> field.</p>
      */
-    inline const Aws::Map<Aws::String, PromptVariableValues>& GetPromptVariables() const{ return m_promptVariables; }
+    inline const Aws::Map<Aws::String, PromptVariableValues>& GetPromptVariables() const { return m_promptVariables; }
     inline bool PromptVariablesHasBeenSet() const { return m_promptVariablesHasBeenSet; }
-    inline void SetPromptVariables(const Aws::Map<Aws::String, PromptVariableValues>& value) { m_promptVariablesHasBeenSet = true; m_promptVariables = value; }
-    inline void SetPromptVariables(Aws::Map<Aws::String, PromptVariableValues>&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables = std::move(value); }
-    inline ConverseRequest& WithPromptVariables(const Aws::Map<Aws::String, PromptVariableValues>& value) { SetPromptVariables(value); return *this;}
-    inline ConverseRequest& WithPromptVariables(Aws::Map<Aws::String, PromptVariableValues>&& value) { SetPromptVariables(std::move(value)); return *this;}
-    inline ConverseRequest& AddPromptVariables(const Aws::String& key, const PromptVariableValues& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, value); return *this; }
-    inline ConverseRequest& AddPromptVariables(Aws::String&& key, const PromptVariableValues& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(std::move(key), value); return *this; }
-    inline ConverseRequest& AddPromptVariables(const Aws::String& key, PromptVariableValues&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, std::move(value)); return *this; }
-    inline ConverseRequest& AddPromptVariables(Aws::String&& key, PromptVariableValues&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline ConverseRequest& AddPromptVariables(const char* key, PromptVariableValues&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, std::move(value)); return *this; }
-    inline ConverseRequest& AddPromptVariables(const char* key, const PromptVariableValues& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, value); return *this; }
+    template<typename PromptVariablesT = Aws::Map<Aws::String, PromptVariableValues>>
+    void SetPromptVariables(PromptVariablesT&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables = std::forward<PromptVariablesT>(value); }
+    template<typename PromptVariablesT = Aws::Map<Aws::String, PromptVariableValues>>
+    ConverseRequest& WithPromptVariables(PromptVariablesT&& value) { SetPromptVariables(std::forward<PromptVariablesT>(value)); return *this;}
+    template<typename PromptVariablesKeyT = Aws::String, typename PromptVariablesValueT = PromptVariableValues>
+    ConverseRequest& AddPromptVariables(PromptVariablesKeyT&& key, PromptVariablesValueT&& value) {
+      m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(std::forward<PromptVariablesKeyT>(key), std::forward<PromptVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -210,46 +206,42 @@ namespace Model
      * is valid, but the requested field is not in the model response, it is ignored by
      * <code>Converse</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalModelResponseFieldPaths() const{ return m_additionalModelResponseFieldPaths; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalModelResponseFieldPaths() const { return m_additionalModelResponseFieldPaths; }
     inline bool AdditionalModelResponseFieldPathsHasBeenSet() const { return m_additionalModelResponseFieldPathsHasBeenSet; }
-    inline void SetAdditionalModelResponseFieldPaths(const Aws::Vector<Aws::String>& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths = value; }
-    inline void SetAdditionalModelResponseFieldPaths(Aws::Vector<Aws::String>&& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths = std::move(value); }
-    inline ConverseRequest& WithAdditionalModelResponseFieldPaths(const Aws::Vector<Aws::String>& value) { SetAdditionalModelResponseFieldPaths(value); return *this;}
-    inline ConverseRequest& WithAdditionalModelResponseFieldPaths(Aws::Vector<Aws::String>&& value) { SetAdditionalModelResponseFieldPaths(std::move(value)); return *this;}
-    inline ConverseRequest& AddAdditionalModelResponseFieldPaths(const Aws::String& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths.push_back(value); return *this; }
-    inline ConverseRequest& AddAdditionalModelResponseFieldPaths(Aws::String&& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths.push_back(std::move(value)); return *this; }
-    inline ConverseRequest& AddAdditionalModelResponseFieldPaths(const char* value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths.push_back(value); return *this; }
+    template<typename AdditionalModelResponseFieldPathsT = Aws::Vector<Aws::String>>
+    void SetAdditionalModelResponseFieldPaths(AdditionalModelResponseFieldPathsT&& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths = std::forward<AdditionalModelResponseFieldPathsT>(value); }
+    template<typename AdditionalModelResponseFieldPathsT = Aws::Vector<Aws::String>>
+    ConverseRequest& WithAdditionalModelResponseFieldPaths(AdditionalModelResponseFieldPathsT&& value) { SetAdditionalModelResponseFieldPaths(std::forward<AdditionalModelResponseFieldPathsT>(value)); return *this;}
+    template<typename AdditionalModelResponseFieldPathsT = Aws::String>
+    ConverseRequest& AddAdditionalModelResponseFieldPaths(AdditionalModelResponseFieldPathsT&& value) { m_additionalModelResponseFieldPathsHasBeenSet = true; m_additionalModelResponseFieldPaths.emplace_back(std::forward<AdditionalModelResponseFieldPathsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs that you can use to filter invocation logs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestMetadata() const{ return m_requestMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestMetadata() const { return m_requestMetadata; }
     inline bool RequestMetadataHasBeenSet() const { return m_requestMetadataHasBeenSet; }
-    inline void SetRequestMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = value; }
-    inline void SetRequestMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = std::move(value); }
-    inline ConverseRequest& WithRequestMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestMetadata(value); return *this;}
-    inline ConverseRequest& WithRequestMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestMetadata(std::move(value)); return *this;}
-    inline ConverseRequest& AddRequestMetadata(const Aws::String& key, const Aws::String& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, value); return *this; }
-    inline ConverseRequest& AddRequestMetadata(Aws::String&& key, const Aws::String& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), value); return *this; }
-    inline ConverseRequest& AddRequestMetadata(const Aws::String& key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, std::move(value)); return *this; }
-    inline ConverseRequest& AddRequestMetadata(Aws::String&& key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline ConverseRequest& AddRequestMetadata(const char* key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, std::move(value)); return *this; }
-    inline ConverseRequest& AddRequestMetadata(Aws::String&& key, const char* value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), value); return *this; }
-    inline ConverseRequest& AddRequestMetadata(const char* key, const char* value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, value); return *this; }
+    template<typename RequestMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestMetadata(RequestMetadataT&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = std::forward<RequestMetadataT>(value); }
+    template<typename RequestMetadataT = Aws::Map<Aws::String, Aws::String>>
+    ConverseRequest& WithRequestMetadata(RequestMetadataT&& value) { SetRequestMetadata(std::forward<RequestMetadataT>(value)); return *this;}
+    template<typename RequestMetadataKeyT = Aws::String, typename RequestMetadataValueT = Aws::String>
+    ConverseRequest& AddRequestMetadata(RequestMetadataKeyT&& key, RequestMetadataValueT&& value) {
+      m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::forward<RequestMetadataKeyT>(key), std::forward<RequestMetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Model performance settings for the request.</p>
      */
-    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline const PerformanceConfiguration& GetPerformanceConfig() const { return m_performanceConfig; }
     inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
-    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
-    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
-    inline ConverseRequest& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
-    inline ConverseRequest& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    void SetPerformanceConfig(PerformanceConfigT&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::forward<PerformanceConfigT>(value); }
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    ConverseRequest& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
   private:
 

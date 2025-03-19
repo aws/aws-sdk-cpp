@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregateComplianceCount::AggregateComplianceCount() : 
-    m_groupNameHasBeenSet(false),
-    m_complianceSummaryHasBeenSet(false)
-{
-}
-
 AggregateComplianceCount::AggregateComplianceCount(JsonView jsonValue)
-  : AggregateComplianceCount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AggregateComplianceCount& AggregateComplianceCount::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceSummary"))
   {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");
-
     m_complianceSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

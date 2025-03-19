@@ -18,25 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-BackupSummary::BackupSummary() : 
-    m_tableNameHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_backupArnHasBeenSet(false),
-    m_backupNameHasBeenSet(false),
-    m_backupCreationDateTimeHasBeenSet(false),
-    m_backupExpiryDateTimeHasBeenSet(false),
-    m_backupStatus(BackupStatus::NOT_SET),
-    m_backupStatusHasBeenSet(false),
-    m_backupType(BackupType::NOT_SET),
-    m_backupTypeHasBeenSet(false),
-    m_backupSizeBytes(0),
-    m_backupSizeBytesHasBeenSet(false)
-{
-}
-
 BackupSummary::BackupSummary(JsonView jsonValue)
-  : BackupSummary()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ BackupSummary& BackupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableId"))
   {
     m_tableId = jsonValue.GetString("TableId");
-
     m_tableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableArn"))
   {
     m_tableArn = jsonValue.GetString("TableArn");
-
     m_tableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupArn"))
   {
     m_backupArn = jsonValue.GetString("BackupArn");
-
     m_backupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupName"))
   {
     m_backupName = jsonValue.GetString("BackupName");
-
     m_backupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupCreationDateTime"))
   {
     m_backupCreationDateTime = jsonValue.GetDouble("BackupCreationDateTime");
-
     m_backupCreationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupExpiryDateTime"))
   {
     m_backupExpiryDateTime = jsonValue.GetDouble("BackupExpiryDateTime");
-
     m_backupExpiryDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupStatus"))
   {
     m_backupStatus = BackupStatusMapper::GetBackupStatusForName(jsonValue.GetString("BackupStatus"));
-
     m_backupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupType"))
   {
     m_backupType = BackupTypeMapper::GetBackupTypeForName(jsonValue.GetString("BackupType"));
-
     m_backupTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupSizeBytes"))
   {
     m_backupSizeBytes = jsonValue.GetInt64("BackupSizeBytes");
-
     m_backupSizeBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

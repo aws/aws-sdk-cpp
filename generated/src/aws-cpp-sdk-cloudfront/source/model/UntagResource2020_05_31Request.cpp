@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UntagResource2020_05_31Request::UntagResource2020_05_31Request() : 
-    m_resourceHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
 
 Aws::String UntagResource2020_05_31Request::SerializePayload() const
 {

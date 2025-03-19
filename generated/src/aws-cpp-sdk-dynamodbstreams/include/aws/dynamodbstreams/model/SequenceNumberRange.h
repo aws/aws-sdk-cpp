@@ -32,7 +32,7 @@ namespace Model
   class SequenceNumberRange
   {
   public:
-    AWS_DYNAMODBSTREAMS_API SequenceNumberRange();
+    AWS_DYNAMODBSTREAMS_API SequenceNumberRange() = default;
     AWS_DYNAMODBSTREAMS_API SequenceNumberRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API SequenceNumberRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The first sequence number for the stream records contained within a shard.
      * String contains numeric characters only.</p>
      */
-    inline const Aws::String& GetStartingSequenceNumber() const{ return m_startingSequenceNumber; }
+    inline const Aws::String& GetStartingSequenceNumber() const { return m_startingSequenceNumber; }
     inline bool StartingSequenceNumberHasBeenSet() const { return m_startingSequenceNumberHasBeenSet; }
-    inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
-    inline void SetStartingSequenceNumber(Aws::String&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = std::move(value); }
-    inline void SetStartingSequenceNumber(const char* value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber.assign(value); }
-    inline SequenceNumberRange& WithStartingSequenceNumber(const Aws::String& value) { SetStartingSequenceNumber(value); return *this;}
-    inline SequenceNumberRange& WithStartingSequenceNumber(Aws::String&& value) { SetStartingSequenceNumber(std::move(value)); return *this;}
-    inline SequenceNumberRange& WithStartingSequenceNumber(const char* value) { SetStartingSequenceNumber(value); return *this;}
+    template<typename StartingSequenceNumberT = Aws::String>
+    void SetStartingSequenceNumber(StartingSequenceNumberT&& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = std::forward<StartingSequenceNumberT>(value); }
+    template<typename StartingSequenceNumberT = Aws::String>
+    SequenceNumberRange& WithStartingSequenceNumber(StartingSequenceNumberT&& value) { SetStartingSequenceNumber(std::forward<StartingSequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The last sequence number for the stream records contained within a shard.
      * String contains numeric characters only.</p>
      */
-    inline const Aws::String& GetEndingSequenceNumber() const{ return m_endingSequenceNumber; }
+    inline const Aws::String& GetEndingSequenceNumber() const { return m_endingSequenceNumber; }
     inline bool EndingSequenceNumberHasBeenSet() const { return m_endingSequenceNumberHasBeenSet; }
-    inline void SetEndingSequenceNumber(const Aws::String& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = value; }
-    inline void SetEndingSequenceNumber(Aws::String&& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = std::move(value); }
-    inline void SetEndingSequenceNumber(const char* value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber.assign(value); }
-    inline SequenceNumberRange& WithEndingSequenceNumber(const Aws::String& value) { SetEndingSequenceNumber(value); return *this;}
-    inline SequenceNumberRange& WithEndingSequenceNumber(Aws::String&& value) { SetEndingSequenceNumber(std::move(value)); return *this;}
-    inline SequenceNumberRange& WithEndingSequenceNumber(const char* value) { SetEndingSequenceNumber(value); return *this;}
+    template<typename EndingSequenceNumberT = Aws::String>
+    void SetEndingSequenceNumber(EndingSequenceNumberT&& value) { m_endingSequenceNumberHasBeenSet = true; m_endingSequenceNumber = std::forward<EndingSequenceNumberT>(value); }
+    template<typename EndingSequenceNumberT = Aws::String>
+    SequenceNumberRange& WithEndingSequenceNumber(EndingSequenceNumberT&& value) { SetEndingSequenceNumber(std::forward<EndingSequenceNumberT>(value)); return *this;}
     ///@}
   private:
 

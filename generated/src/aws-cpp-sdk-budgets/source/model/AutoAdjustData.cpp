@@ -18,16 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-AutoAdjustData::AutoAdjustData() : 
-    m_autoAdjustType(AutoAdjustType::NOT_SET),
-    m_autoAdjustTypeHasBeenSet(false),
-    m_historicalOptionsHasBeenSet(false),
-    m_lastAutoAdjustTimeHasBeenSet(false)
-{
-}
-
 AutoAdjustData::AutoAdjustData(JsonView jsonValue)
-  : AutoAdjustData()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AutoAdjustData& AutoAdjustData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutoAdjustType"))
   {
     m_autoAdjustType = AutoAdjustTypeMapper::GetAutoAdjustTypeForName(jsonValue.GetString("AutoAdjustType"));
-
     m_autoAdjustTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HistoricalOptions"))
   {
     m_historicalOptions = jsonValue.GetObject("HistoricalOptions");
-
     m_historicalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAutoAdjustTime"))
   {
     m_lastAutoAdjustTime = jsonValue.GetDouble("LastAutoAdjustTime");
-
     m_lastAutoAdjustTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

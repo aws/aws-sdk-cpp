@@ -12,11 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartResourceGroupingRecommendationTaskRequest::StartResourceGroupingRecommendationTaskRequest() : 
-    m_appArnHasBeenSet(false)
-{
-}
-
 Aws::String StartResourceGroupingRecommendationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

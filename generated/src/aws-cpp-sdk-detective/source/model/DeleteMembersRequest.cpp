@@ -12,12 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMembersRequest::DeleteMembersRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMembersRequest::SerializePayload() const
 {
   JsonValue payload;

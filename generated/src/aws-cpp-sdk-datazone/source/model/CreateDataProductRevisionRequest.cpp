@@ -12,19 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataProductRevisionRequest::CreateDataProductRevisionRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_formsInputHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataProductRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-NewBGPPeer::NewBGPPeer() : 
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_authKeyHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_amazonAddressHasBeenSet(false),
-    m_customerAddressHasBeenSet(false)
-{
-}
-
 NewBGPPeer::NewBGPPeer(JsonView jsonValue)
-  : NewBGPPeer()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ NewBGPPeer& NewBGPPeer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("asn"))
   {
     m_asn = jsonValue.GetInteger("asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authKey"))
   {
     m_authKey = jsonValue.GetString("authKey");
-
     m_authKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressFamily"))
   {
     m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
-
     m_addressFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amazonAddress"))
   {
     m_amazonAddress = jsonValue.GetString("amazonAddress");
-
     m_amazonAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerAddress"))
   {
     m_customerAddress = jsonValue.GetString("customerAddress");
-
     m_customerAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

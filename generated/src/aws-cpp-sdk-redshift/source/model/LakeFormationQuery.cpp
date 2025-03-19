@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-LakeFormationQuery::LakeFormationQuery() : 
-    m_authorization(ServiceAuthorization::NOT_SET),
-    m_authorizationHasBeenSet(false)
-{
-}
-
 LakeFormationQuery::LakeFormationQuery(const XmlNode& xmlNode)
-  : LakeFormationQuery()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ LakeFormationQuery& LakeFormationQuery::operator =(const XmlNode& xmlNode)
     XmlNode authorizationNode = resultNode.FirstChild("Authorization");
     if(!authorizationNode.IsNull())
     {
-      m_authorization = ServiceAuthorizationMapper::GetServiceAuthorizationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizationNode.GetText()).c_str()).c_str());
+      m_authorization = ServiceAuthorizationMapper::GetServiceAuthorizationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizationNode.GetText()).c_str()));
       m_authorizationHasBeenSet = true;
     }
   }

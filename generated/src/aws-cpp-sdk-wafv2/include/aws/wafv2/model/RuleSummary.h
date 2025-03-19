@@ -36,7 +36,7 @@ namespace Model
   class RuleSummary
   {
   public:
-    AWS_WAFV2_API RuleSummary();
+    AWS_WAFV2_API RuleSummary() = default;
     AWS_WAFV2_API RuleSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the rule. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RuleSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RuleSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RuleSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RuleSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p>
      */
-    inline const RuleAction& GetAction() const{ return m_action; }
+    inline const RuleAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline RuleSummary& WithAction(const RuleAction& value) { SetAction(value); return *this;}
-    inline RuleSummary& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = RuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RuleAction>
+    RuleSummary& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-InternalServerError::InternalServerError() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InternalServerError::InternalServerError(JsonView jsonValue)
-  : InternalServerError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalServerError& InternalServerError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

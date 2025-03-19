@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSipMediaApplicationRequest::GetSipMediaApplicationRequest() : 
-    m_sipMediaApplicationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSipMediaApplicationRequest::SerializePayload() const
 {
   return {};

@@ -18,38 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_arnHasBeenSet(false),
-    m_awsServicesHasBeenSet(false),
-    m_checkArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleStage(RecommendationLifecycleStage::NOT_SET),
-    m_lifecycleStageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pillarSpecificAggregatesHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_resolvedAtHasBeenSet(false),
-    m_resourcesAggregatesHasBeenSet(false),
-    m_source(RecommendationSource::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_status(RecommendationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(RecommendationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updateReasonHasBeenSet(false),
-    m_updateReasonCode(UpdateRecommendationLifecycleStageReasonCode::NOT_SET),
-    m_updateReasonCodeHasBeenSet(false),
-    m_updatedOnBehalfOfHasBeenSet(false),
-    m_updatedOnBehalfOfJobTitleHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -59,10 +28,8 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsServices"))
   {
     Aws::Utils::Array<JsonView> awsServicesJsonList = jsonValue.GetArray("awsServices");
@@ -72,70 +39,51 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     }
     m_awsServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checkArn"))
   {
     m_checkArn = jsonValue.GetString("checkArn");
-
     m_checkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStage"))
   {
     m_lifecycleStage = RecommendationLifecycleStageMapper::GetRecommendationLifecycleStageForName(jsonValue.GetString("lifecycleStage"));
-
     m_lifecycleStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pillarSpecificAggregates"))
   {
     m_pillarSpecificAggregates = jsonValue.GetObject("pillarSpecificAggregates");
-
     m_pillarSpecificAggregatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pillars"))
   {
     Aws::Utils::Array<JsonView> pillarsJsonList = jsonValue.GetArray("pillars");
@@ -145,70 +93,51 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     }
     m_pillarsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedAt"))
   {
     m_resolvedAt = jsonValue.GetString("resolvedAt");
-
     m_resolvedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesAggregates"))
   {
     m_resourcesAggregates = jsonValue.GetObject("resourcesAggregates");
-
     m_resourcesAggregatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = RecommendationSourceMapper::GetRecommendationSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RecommendationTypeMapper::GetRecommendationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateReason"))
   {
     m_updateReason = jsonValue.GetString("updateReason");
-
     m_updateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateReasonCode"))
   {
     m_updateReasonCode = UpdateRecommendationLifecycleStageReasonCodeMapper::GetUpdateRecommendationLifecycleStageReasonCodeForName(jsonValue.GetString("updateReasonCode"));
-
     m_updateReasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedOnBehalfOf"))
   {
     m_updatedOnBehalfOf = jsonValue.GetString("updatedOnBehalfOf");
-
     m_updatedOnBehalfOfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedOnBehalfOfJobTitle"))
   {
     m_updatedOnBehalfOfJobTitle = jsonValue.GetString("updatedOnBehalfOfJobTitle");
-
     m_updatedOnBehalfOfJobTitleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class PutDialRequestBatchRequest : public ConnectCampaignsRequest
   {
   public:
-    AWS_CONNECTCAMPAIGNS_API PutDialRequestBatchRequest();
+    AWS_CONNECTCAMPAIGNS_API PutDialRequestBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PutDialRequestBatchRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PutDialRequestBatchRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PutDialRequestBatchRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PutDialRequestBatchRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<DialRequest>& GetDialRequests() const{ return m_dialRequests; }
+    inline const Aws::Vector<DialRequest>& GetDialRequests() const { return m_dialRequests; }
     inline bool DialRequestsHasBeenSet() const { return m_dialRequestsHasBeenSet; }
-    inline void SetDialRequests(const Aws::Vector<DialRequest>& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = value; }
-    inline void SetDialRequests(Aws::Vector<DialRequest>&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = std::move(value); }
-    inline PutDialRequestBatchRequest& WithDialRequests(const Aws::Vector<DialRequest>& value) { SetDialRequests(value); return *this;}
-    inline PutDialRequestBatchRequest& WithDialRequests(Aws::Vector<DialRequest>&& value) { SetDialRequests(std::move(value)); return *this;}
-    inline PutDialRequestBatchRequest& AddDialRequests(const DialRequest& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(value); return *this; }
-    inline PutDialRequestBatchRequest& AddDialRequests(DialRequest&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(std::move(value)); return *this; }
+    template<typename DialRequestsT = Aws::Vector<DialRequest>>
+    void SetDialRequests(DialRequestsT&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = std::forward<DialRequestsT>(value); }
+    template<typename DialRequestsT = Aws::Vector<DialRequest>>
+    PutDialRequestBatchRequest& WithDialRequests(DialRequestsT&& value) { SetDialRequests(std::forward<DialRequestsT>(value)); return *this;}
+    template<typename DialRequestsT = DialRequest>
+    PutDialRequestBatchRequest& AddDialRequests(DialRequestsT&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.emplace_back(std::forward<DialRequestsT>(value)); return *this; }
     ///@}
   private:
 

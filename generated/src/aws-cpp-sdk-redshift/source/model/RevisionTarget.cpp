@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RevisionTarget::RevisionTarget() : 
-    m_databaseRevisionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_databaseRevisionReleaseDateHasBeenSet(false)
-{
-}
-
 RevisionTarget::RevisionTarget(const XmlNode& xmlNode)
-  : RevisionTarget()
 {
   *this = xmlNode;
 }

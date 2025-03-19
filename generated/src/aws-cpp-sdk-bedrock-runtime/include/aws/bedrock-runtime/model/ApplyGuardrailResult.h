@@ -33,7 +33,7 @@ namespace Model
   class ApplyGuardrailResult
   {
   public:
-    AWS_BEDROCKRUNTIME_API ApplyGuardrailResult();
+    AWS_BEDROCKRUNTIME_API ApplyGuardrailResult() = default;
     AWS_BEDROCKRUNTIME_API ApplyGuardrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKRUNTIME_API ApplyGuardrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,84 +42,86 @@ namespace Model
     /**
      * <p>The usage details in the response from the guardrail.</p>
      */
-    inline const GuardrailUsage& GetUsage() const{ return m_usage; }
-    inline void SetUsage(const GuardrailUsage& value) { m_usage = value; }
-    inline void SetUsage(GuardrailUsage&& value) { m_usage = std::move(value); }
-    inline ApplyGuardrailResult& WithUsage(const GuardrailUsage& value) { SetUsage(value); return *this;}
-    inline ApplyGuardrailResult& WithUsage(GuardrailUsage&& value) { SetUsage(std::move(value)); return *this;}
+    inline const GuardrailUsage& GetUsage() const { return m_usage; }
+    template<typename UsageT = GuardrailUsage>
+    void SetUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage = std::forward<UsageT>(value); }
+    template<typename UsageT = GuardrailUsage>
+    ApplyGuardrailResult& WithUsage(UsageT&& value) { SetUsage(std::forward<UsageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action taken in the response from the guardrail.</p>
      */
-    inline const GuardrailAction& GetAction() const{ return m_action; }
-    inline void SetAction(const GuardrailAction& value) { m_action = value; }
-    inline void SetAction(GuardrailAction&& value) { m_action = std::move(value); }
-    inline ApplyGuardrailResult& WithAction(const GuardrailAction& value) { SetAction(value); return *this;}
-    inline ApplyGuardrailResult& WithAction(GuardrailAction&& value) { SetAction(std::move(value)); return *this;}
+    inline GuardrailAction GetAction() const { return m_action; }
+    inline void SetAction(GuardrailAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ApplyGuardrailResult& WithAction(GuardrailAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output details in the response from the guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailOutputContent>& GetOutputs() const{ return m_outputs; }
-    inline void SetOutputs(const Aws::Vector<GuardrailOutputContent>& value) { m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<GuardrailOutputContent>&& value) { m_outputs = std::move(value); }
-    inline ApplyGuardrailResult& WithOutputs(const Aws::Vector<GuardrailOutputContent>& value) { SetOutputs(value); return *this;}
-    inline ApplyGuardrailResult& WithOutputs(Aws::Vector<GuardrailOutputContent>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline ApplyGuardrailResult& AddOutputs(const GuardrailOutputContent& value) { m_outputs.push_back(value); return *this; }
-    inline ApplyGuardrailResult& AddOutputs(GuardrailOutputContent&& value) { m_outputs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GuardrailOutputContent>& GetOutputs() const { return m_outputs; }
+    template<typename OutputsT = Aws::Vector<GuardrailOutputContent>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<GuardrailOutputContent>>
+    ApplyGuardrailResult& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = GuardrailOutputContent>
+    ApplyGuardrailResult& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The assessment details in the response from the guardrail.</p>
      */
-    inline const Aws::Vector<GuardrailAssessment>& GetAssessments() const{ return m_assessments; }
-    inline void SetAssessments(const Aws::Vector<GuardrailAssessment>& value) { m_assessments = value; }
-    inline void SetAssessments(Aws::Vector<GuardrailAssessment>&& value) { m_assessments = std::move(value); }
-    inline ApplyGuardrailResult& WithAssessments(const Aws::Vector<GuardrailAssessment>& value) { SetAssessments(value); return *this;}
-    inline ApplyGuardrailResult& WithAssessments(Aws::Vector<GuardrailAssessment>&& value) { SetAssessments(std::move(value)); return *this;}
-    inline ApplyGuardrailResult& AddAssessments(const GuardrailAssessment& value) { m_assessments.push_back(value); return *this; }
-    inline ApplyGuardrailResult& AddAssessments(GuardrailAssessment&& value) { m_assessments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GuardrailAssessment>& GetAssessments() const { return m_assessments; }
+    template<typename AssessmentsT = Aws::Vector<GuardrailAssessment>>
+    void SetAssessments(AssessmentsT&& value) { m_assessmentsHasBeenSet = true; m_assessments = std::forward<AssessmentsT>(value); }
+    template<typename AssessmentsT = Aws::Vector<GuardrailAssessment>>
+    ApplyGuardrailResult& WithAssessments(AssessmentsT&& value) { SetAssessments(std::forward<AssessmentsT>(value)); return *this;}
+    template<typename AssessmentsT = GuardrailAssessment>
+    ApplyGuardrailResult& AddAssessments(AssessmentsT&& value) { m_assessmentsHasBeenSet = true; m_assessments.emplace_back(std::forward<AssessmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The guardrail coverage details in the apply guardrail response.</p>
      */
-    inline const GuardrailCoverage& GetGuardrailCoverage() const{ return m_guardrailCoverage; }
-    inline void SetGuardrailCoverage(const GuardrailCoverage& value) { m_guardrailCoverage = value; }
-    inline void SetGuardrailCoverage(GuardrailCoverage&& value) { m_guardrailCoverage = std::move(value); }
-    inline ApplyGuardrailResult& WithGuardrailCoverage(const GuardrailCoverage& value) { SetGuardrailCoverage(value); return *this;}
-    inline ApplyGuardrailResult& WithGuardrailCoverage(GuardrailCoverage&& value) { SetGuardrailCoverage(std::move(value)); return *this;}
+    inline const GuardrailCoverage& GetGuardrailCoverage() const { return m_guardrailCoverage; }
+    template<typename GuardrailCoverageT = GuardrailCoverage>
+    void SetGuardrailCoverage(GuardrailCoverageT&& value) { m_guardrailCoverageHasBeenSet = true; m_guardrailCoverage = std::forward<GuardrailCoverageT>(value); }
+    template<typename GuardrailCoverageT = GuardrailCoverage>
+    ApplyGuardrailResult& WithGuardrailCoverage(GuardrailCoverageT&& value) { SetGuardrailCoverage(std::forward<GuardrailCoverageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ApplyGuardrailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ApplyGuardrailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ApplyGuardrailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ApplyGuardrailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GuardrailUsage m_usage;
+    bool m_usageHasBeenSet = false;
 
-    GuardrailAction m_action;
+    GuardrailAction m_action{GuardrailAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<GuardrailOutputContent> m_outputs;
+    bool m_outputsHasBeenSet = false;
 
     Aws::Vector<GuardrailAssessment> m_assessments;
+    bool m_assessmentsHasBeenSet = false;
 
     GuardrailCoverage m_guardrailCoverage;
+    bool m_guardrailCoverageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

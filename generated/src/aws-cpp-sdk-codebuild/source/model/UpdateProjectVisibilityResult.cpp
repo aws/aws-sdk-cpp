@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProjectVisibilityResult::UpdateProjectVisibilityResult() : 
-    m_projectVisibility(ProjectVisibilityType::NOT_SET)
-{
-}
-
 UpdateProjectVisibilityResult::UpdateProjectVisibilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateProjectVisibilityResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ UpdateProjectVisibilityResult& UpdateProjectVisibilityResult::operator =(const A
   if(jsonValue.ValueExists("projectArn"))
   {
     m_projectArn = jsonValue.GetString("projectArn");
-
+    m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicProjectAlias"))
   {
     m_publicProjectAlias = jsonValue.GetString("publicProjectAlias");
-
+    m_publicProjectAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectVisibility"))
   {
     m_projectVisibility = ProjectVisibilityTypeMapper::GetProjectVisibilityTypeForName(jsonValue.GetString("projectVisibility"));
-
+    m_projectVisibilityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

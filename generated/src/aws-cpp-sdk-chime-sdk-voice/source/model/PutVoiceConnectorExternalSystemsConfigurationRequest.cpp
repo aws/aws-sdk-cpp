@@ -12,13 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutVoiceConnectorExternalSystemsConfigurationRequest::PutVoiceConnectorExternalSystemsConfigurationRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_sessionBorderControllerTypesHasBeenSet(false),
-    m_contactCenterSystemTypesHasBeenSet(false)
-{
-}
-
 Aws::String PutVoiceConnectorExternalSystemsConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

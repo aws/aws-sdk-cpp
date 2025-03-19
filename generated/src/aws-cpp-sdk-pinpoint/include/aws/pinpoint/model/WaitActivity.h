@@ -35,7 +35,7 @@ namespace Model
   class WaitActivity
   {
   public:
-    AWS_PINPOINT_API WaitActivity();
+    AWS_PINPOINT_API WaitActivity() = default;
     AWS_PINPOINT_API WaitActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API WaitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The unique identifier for the next activity to perform, after performing the
      * wait activity.</p>
      */
-    inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
+    inline const Aws::String& GetNextActivity() const { return m_nextActivity; }
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-    inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-    inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-    inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-    inline WaitActivity& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-    inline WaitActivity& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-    inline WaitActivity& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
+    template<typename NextActivityT = Aws::String>
+    void SetNextActivity(NextActivityT&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::forward<NextActivityT>(value); }
+    template<typename NextActivityT = Aws::String>
+    WaitActivity& WithNextActivity(NextActivityT&& value) { SetNextActivity(std::forward<NextActivityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>The amount of time to wait or the date and time when the activity moves
      * participants to the next activity in the journey.</p>
      */
-    inline const WaitTime& GetWaitTime() const{ return m_waitTime; }
+    inline const WaitTime& GetWaitTime() const { return m_waitTime; }
     inline bool WaitTimeHasBeenSet() const { return m_waitTimeHasBeenSet; }
-    inline void SetWaitTime(const WaitTime& value) { m_waitTimeHasBeenSet = true; m_waitTime = value; }
-    inline void SetWaitTime(WaitTime&& value) { m_waitTimeHasBeenSet = true; m_waitTime = std::move(value); }
-    inline WaitActivity& WithWaitTime(const WaitTime& value) { SetWaitTime(value); return *this;}
-    inline WaitActivity& WithWaitTime(WaitTime&& value) { SetWaitTime(std::move(value)); return *this;}
+    template<typename WaitTimeT = WaitTime>
+    void SetWaitTime(WaitTimeT&& value) { m_waitTimeHasBeenSet = true; m_waitTime = std::forward<WaitTimeT>(value); }
+    template<typename WaitTimeT = WaitTime>
+    WaitActivity& WithWaitTime(WaitTimeT&& value) { SetWaitTime(std::forward<WaitTimeT>(value)); return *this;}
     ///@}
   private:
 

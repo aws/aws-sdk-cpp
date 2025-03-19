@@ -18,14 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ToscaOverride::ToscaOverride() : 
-    m_defaultValueHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ToscaOverride::ToscaOverride(JsonView jsonValue)
-  : ToscaOverride()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ToscaOverride& ToscaOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

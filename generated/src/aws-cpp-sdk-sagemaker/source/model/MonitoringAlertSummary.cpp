@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringAlertSummary::MonitoringAlertSummary() : 
-    m_monitoringAlertNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_alertStatus(MonitoringAlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false),
-    m_datapointsToAlert(0),
-    m_datapointsToAlertHasBeenSet(false),
-    m_evaluationPeriod(0),
-    m_evaluationPeriodHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 MonitoringAlertSummary::MonitoringAlertSummary(JsonView jsonValue)
-  : MonitoringAlertSummary()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ MonitoringAlertSummary& MonitoringAlertSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MonitoringAlertName"))
   {
     m_monitoringAlertName = jsonValue.GetString("MonitoringAlertName");
-
     m_monitoringAlertNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertStatus"))
   {
     m_alertStatus = MonitoringAlertStatusMapper::GetMonitoringAlertStatusForName(jsonValue.GetString("AlertStatus"));
-
     m_alertStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatapointsToAlert"))
   {
     m_datapointsToAlert = jsonValue.GetInteger("DatapointsToAlert");
-
     m_datapointsToAlertHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationPeriod"))
   {
     m_evaluationPeriod = jsonValue.GetInteger("EvaluationPeriod");
-
     m_evaluationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     m_actions = jsonValue.GetObject("Actions");
-
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class InputDestination
   {
   public:
-    AWS_MEDIALIVE_API InputDestination();
+    AWS_MEDIALIVE_API InputDestination() = default;
     AWS_MEDIALIVE_API InputDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
 It remains fixed for the
      * lifetime of the input.
      */
-    inline const Aws::String& GetIp() const{ return m_ip; }
+    inline const Aws::String& GetIp() const { return m_ip; }
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-    inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
-    inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-    inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
-    inline InputDestination& WithIp(const Aws::String& value) { SetIp(value); return *this;}
-    inline InputDestination& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
-    inline InputDestination& WithIp(const char* value) { SetIp(value); return *this;}
+    template<typename IpT = Aws::String>
+    void SetIp(IpT&& value) { m_ipHasBeenSet = true; m_ip = std::forward<IpT>(value); }
+    template<typename IpT = Aws::String>
+    InputDestination& WithIp(IpT&& value) { SetIp(std::forward<IpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The port number for the input.
      */
-    inline const Aws::String& GetPort() const{ return m_port; }
+    inline const Aws::String& GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-    inline void SetPort(const Aws::String& value) { m_portHasBeenSet = true; m_port = value; }
-    inline void SetPort(Aws::String&& value) { m_portHasBeenSet = true; m_port = std::move(value); }
-    inline void SetPort(const char* value) { m_portHasBeenSet = true; m_port.assign(value); }
-    inline InputDestination& WithPort(const Aws::String& value) { SetPort(value); return *this;}
-    inline InputDestination& WithPort(Aws::String&& value) { SetPort(std::move(value)); return *this;}
-    inline InputDestination& WithPort(const char* value) { SetPort(value); return *this;}
+    template<typename PortT = Aws::String>
+    void SetPort(PortT&& value) { m_portHasBeenSet = true; m_port = std::forward<PortT>(value); }
+    template<typename PortT = Aws::String>
+    InputDestination& WithPort(PortT&& value) { SetPort(std::forward<PortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,38 +71,34 @@ It remains fixed for the
      * This represents the endpoint that the customer stream will be
 pushed to.
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline InputDestination& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline InputDestination& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline InputDestination& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    InputDestination& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InputDestinationVpc& GetVpc() const{ return m_vpc; }
+    inline const InputDestinationVpc& GetVpc() const { return m_vpc; }
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
-    inline void SetVpc(const InputDestinationVpc& value) { m_vpcHasBeenSet = true; m_vpc = value; }
-    inline void SetVpc(InputDestinationVpc&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
-    inline InputDestination& WithVpc(const InputDestinationVpc& value) { SetVpc(value); return *this;}
-    inline InputDestination& WithVpc(InputDestinationVpc&& value) { SetVpc(std::move(value)); return *this;}
+    template<typename VpcT = InputDestinationVpc>
+    void SetVpc(VpcT&& value) { m_vpcHasBeenSet = true; m_vpc = std::forward<VpcT>(value); }
+    template<typename VpcT = InputDestinationVpc>
+    InputDestination& WithVpc(VpcT&& value) { SetVpc(std::forward<VpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the attached network.
      */
-    inline const Aws::String& GetNetwork() const{ return m_network; }
+    inline const Aws::String& GetNetwork() const { return m_network; }
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    inline void SetNetwork(const Aws::String& value) { m_networkHasBeenSet = true; m_network = value; }
-    inline void SetNetwork(Aws::String&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-    inline void SetNetwork(const char* value) { m_networkHasBeenSet = true; m_network.assign(value); }
-    inline InputDestination& WithNetwork(const Aws::String& value) { SetNetwork(value); return *this;}
-    inline InputDestination& WithNetwork(Aws::String&& value) { SetNetwork(std::move(value)); return *this;}
-    inline InputDestination& WithNetwork(const char* value) { SetNetwork(value); return *this;}
+    template<typename NetworkT = Aws::String>
+    void SetNetwork(NetworkT&& value) { m_networkHasBeenSet = true; m_network = std::forward<NetworkT>(value); }
+    template<typename NetworkT = Aws::String>
+    InputDestination& WithNetwork(NetworkT&& value) { SetNetwork(std::forward<NetworkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,14 @@ pushed to.
      * what the route of the input
 is going to be on the customer local network.
      */
-    inline const Aws::Vector<InputDestinationRoute>& GetNetworkRoutes() const{ return m_networkRoutes; }
+    inline const Aws::Vector<InputDestinationRoute>& GetNetworkRoutes() const { return m_networkRoutes; }
     inline bool NetworkRoutesHasBeenSet() const { return m_networkRoutesHasBeenSet; }
-    inline void SetNetworkRoutes(const Aws::Vector<InputDestinationRoute>& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes = value; }
-    inline void SetNetworkRoutes(Aws::Vector<InputDestinationRoute>&& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes = std::move(value); }
-    inline InputDestination& WithNetworkRoutes(const Aws::Vector<InputDestinationRoute>& value) { SetNetworkRoutes(value); return *this;}
-    inline InputDestination& WithNetworkRoutes(Aws::Vector<InputDestinationRoute>&& value) { SetNetworkRoutes(std::move(value)); return *this;}
-    inline InputDestination& AddNetworkRoutes(const InputDestinationRoute& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes.push_back(value); return *this; }
-    inline InputDestination& AddNetworkRoutes(InputDestinationRoute&& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes.push_back(std::move(value)); return *this; }
+    template<typename NetworkRoutesT = Aws::Vector<InputDestinationRoute>>
+    void SetNetworkRoutes(NetworkRoutesT&& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes = std::forward<NetworkRoutesT>(value); }
+    template<typename NetworkRoutesT = Aws::Vector<InputDestinationRoute>>
+    InputDestination& WithNetworkRoutes(NetworkRoutesT&& value) { SetNetworkRoutes(std::forward<NetworkRoutesT>(value)); return *this;}
+    template<typename NetworkRoutesT = InputDestinationRoute>
+    InputDestination& AddNetworkRoutes(NetworkRoutesT&& value) { m_networkRoutesHasBeenSet = true; m_networkRoutes.emplace_back(std::forward<NetworkRoutesT>(value)); return *this; }
     ///@}
   private:
 

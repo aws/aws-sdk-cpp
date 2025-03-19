@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEmailTemplateRequest::CreateEmailTemplateRequest() : 
-    m_emailTemplateRequestHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateEmailTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

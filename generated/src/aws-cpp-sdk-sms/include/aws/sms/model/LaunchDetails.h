@@ -33,7 +33,7 @@ namespace Model
   class LaunchDetails
   {
   public:
-    AWS_SMS_API LaunchDetails();
+    AWS_SMS_API LaunchDetails() = default;
     AWS_SMS_API LaunchDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API LaunchDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,40 @@ namespace Model
     /**
      * <p>The latest time that this application was launched successfully.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestLaunchTime() const{ return m_latestLaunchTime; }
+    inline const Aws::Utils::DateTime& GetLatestLaunchTime() const { return m_latestLaunchTime; }
     inline bool LatestLaunchTimeHasBeenSet() const { return m_latestLaunchTimeHasBeenSet; }
-    inline void SetLatestLaunchTime(const Aws::Utils::DateTime& value) { m_latestLaunchTimeHasBeenSet = true; m_latestLaunchTime = value; }
-    inline void SetLatestLaunchTime(Aws::Utils::DateTime&& value) { m_latestLaunchTimeHasBeenSet = true; m_latestLaunchTime = std::move(value); }
-    inline LaunchDetails& WithLatestLaunchTime(const Aws::Utils::DateTime& value) { SetLatestLaunchTime(value); return *this;}
-    inline LaunchDetails& WithLatestLaunchTime(Aws::Utils::DateTime&& value) { SetLatestLaunchTime(std::move(value)); return *this;}
+    template<typename LatestLaunchTimeT = Aws::Utils::DateTime>
+    void SetLatestLaunchTime(LatestLaunchTimeT&& value) { m_latestLaunchTimeHasBeenSet = true; m_latestLaunchTime = std::forward<LatestLaunchTimeT>(value); }
+    template<typename LatestLaunchTimeT = Aws::Utils::DateTime>
+    LaunchDetails& WithLatestLaunchTime(LatestLaunchTimeT&& value) { SetLatestLaunchTime(std::forward<LatestLaunchTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the latest stack launched for this application.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline LaunchDetails& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline LaunchDetails& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline LaunchDetails& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    LaunchDetails& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the latest stack launched for this application.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline LaunchDetails& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline LaunchDetails& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline LaunchDetails& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    LaunchDetails& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_latestLaunchTime;
+    Aws::Utils::DateTime m_latestLaunchTime{};
     bool m_latestLaunchTimeHasBeenSet = false;
 
     Aws::String m_stackName;

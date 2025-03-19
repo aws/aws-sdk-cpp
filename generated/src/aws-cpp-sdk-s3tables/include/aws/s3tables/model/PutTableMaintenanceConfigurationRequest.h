@@ -23,7 +23,7 @@ namespace Model
   class PutTableMaintenanceConfigurationRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API PutTableMaintenanceConfigurationRequest();
+    AWS_S3TABLES_API PutTableMaintenanceConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,66 +39,58 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the table associated with the maintenance
      * configuration.</p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline PutTableMaintenanceConfigurationRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    PutTableMaintenanceConfigurationRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace of the table.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline PutTableMaintenanceConfigurationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PutTableMaintenanceConfigurationRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the maintenance configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutTableMaintenanceConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutTableMaintenanceConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the maintenance configuration.</p>
      */
-    inline const TableMaintenanceType& GetType() const{ return m_type; }
+    inline TableMaintenanceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TableMaintenanceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TableMaintenanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PutTableMaintenanceConfigurationRequest& WithType(const TableMaintenanceType& value) { SetType(value); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithType(TableMaintenanceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TableMaintenanceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PutTableMaintenanceConfigurationRequest& WithType(TableMaintenanceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the values of the maintenance configuration for the table.</p>
      */
-    inline const TableMaintenanceConfigurationValue& GetValue() const{ return m_value; }
+    inline const TableMaintenanceConfigurationValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const TableMaintenanceConfigurationValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(TableMaintenanceConfigurationValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline PutTableMaintenanceConfigurationRequest& WithValue(const TableMaintenanceConfigurationValue& value) { SetValue(value); return *this;}
-    inline PutTableMaintenanceConfigurationRequest& WithValue(TableMaintenanceConfigurationValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = TableMaintenanceConfigurationValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = TableMaintenanceConfigurationValue>
+    PutTableMaintenanceConfigurationRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
@@ -111,7 +103,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TableMaintenanceType m_type;
+    TableMaintenanceType m_type{TableMaintenanceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     TableMaintenanceConfigurationValue m_value;

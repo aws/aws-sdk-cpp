@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AncillarySourceSettings::AncillarySourceSettings() : 
-    m_convert608To708(AncillaryConvert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_sourceAncillaryChannelNumber(0),
-    m_sourceAncillaryChannelNumberHasBeenSet(false),
-    m_terminateCaptions(AncillaryTerminateCaptions::NOT_SET),
-    m_terminateCaptionsHasBeenSet(false)
-{
-}
-
 AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue)
-  : AncillarySourceSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AncillarySourceSettings& AncillarySourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("convert608To708"))
   {
     m_convert608To708 = AncillaryConvert608To708Mapper::GetAncillaryConvert608To708ForName(jsonValue.GetString("convert608To708"));
-
     m_convert608To708HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceAncillaryChannelNumber"))
   {
     m_sourceAncillaryChannelNumber = jsonValue.GetInteger("sourceAncillaryChannelNumber");
-
     m_sourceAncillaryChannelNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terminateCaptions"))
   {
     m_terminateCaptions = AncillaryTerminateCaptionsMapper::GetAncillaryTerminateCaptionsForName(jsonValue.GetString("terminateCaptions"));
-
     m_terminateCaptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

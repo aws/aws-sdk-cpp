@@ -12,15 +12,6 @@ using namespace Aws::MarketplaceEntitlementService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEntitlementsRequest::GetEntitlementsRequest() : 
-    m_productCodeHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetEntitlementsRequest::SerializePayload() const
 {
   JsonValue payload;

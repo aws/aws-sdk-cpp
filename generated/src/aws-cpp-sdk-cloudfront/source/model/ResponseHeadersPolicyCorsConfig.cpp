@@ -20,22 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyCorsConfig::ResponseHeadersPolicyCorsConfig() : 
-    m_accessControlAllowOriginsHasBeenSet(false),
-    m_accessControlAllowHeadersHasBeenSet(false),
-    m_accessControlAllowMethodsHasBeenSet(false),
-    m_accessControlAllowCredentials(false),
-    m_accessControlAllowCredentialsHasBeenSet(false),
-    m_accessControlExposeHeadersHasBeenSet(false),
-    m_accessControlMaxAgeSec(0),
-    m_accessControlMaxAgeSecHasBeenSet(false),
-    m_originOverride(false),
-    m_originOverrideHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyCorsConfig::ResponseHeadersPolicyCorsConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyCorsConfig()
 {
   *this = xmlNode;
 }

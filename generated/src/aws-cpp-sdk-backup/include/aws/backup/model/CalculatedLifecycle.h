@@ -43,7 +43,7 @@ namespace Model
   class CalculatedLifecycle
   {
   public:
-    AWS_BACKUP_API CalculatedLifecycle();
+    AWS_BACKUP_API CalculatedLifecycle() = default;
     AWS_BACKUP_API CalculatedLifecycle(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API CalculatedLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,31 +54,31 @@ namespace Model
      * <p>A timestamp that specifies when to transition a recovery point to cold
      * storage.</p>
      */
-    inline const Aws::Utils::DateTime& GetMoveToColdStorageAt() const{ return m_moveToColdStorageAt; }
+    inline const Aws::Utils::DateTime& GetMoveToColdStorageAt() const { return m_moveToColdStorageAt; }
     inline bool MoveToColdStorageAtHasBeenSet() const { return m_moveToColdStorageAtHasBeenSet; }
-    inline void SetMoveToColdStorageAt(const Aws::Utils::DateTime& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = value; }
-    inline void SetMoveToColdStorageAt(Aws::Utils::DateTime&& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = std::move(value); }
-    inline CalculatedLifecycle& WithMoveToColdStorageAt(const Aws::Utils::DateTime& value) { SetMoveToColdStorageAt(value); return *this;}
-    inline CalculatedLifecycle& WithMoveToColdStorageAt(Aws::Utils::DateTime&& value) { SetMoveToColdStorageAt(std::move(value)); return *this;}
+    template<typename MoveToColdStorageAtT = Aws::Utils::DateTime>
+    void SetMoveToColdStorageAt(MoveToColdStorageAtT&& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = std::forward<MoveToColdStorageAtT>(value); }
+    template<typename MoveToColdStorageAtT = Aws::Utils::DateTime>
+    CalculatedLifecycle& WithMoveToColdStorageAt(MoveToColdStorageAtT&& value) { SetMoveToColdStorageAt(std::forward<MoveToColdStorageAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that specifies when to delete a recovery point.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeleteAt() const{ return m_deleteAt; }
+    inline const Aws::Utils::DateTime& GetDeleteAt() const { return m_deleteAt; }
     inline bool DeleteAtHasBeenSet() const { return m_deleteAtHasBeenSet; }
-    inline void SetDeleteAt(const Aws::Utils::DateTime& value) { m_deleteAtHasBeenSet = true; m_deleteAt = value; }
-    inline void SetDeleteAt(Aws::Utils::DateTime&& value) { m_deleteAtHasBeenSet = true; m_deleteAt = std::move(value); }
-    inline CalculatedLifecycle& WithDeleteAt(const Aws::Utils::DateTime& value) { SetDeleteAt(value); return *this;}
-    inline CalculatedLifecycle& WithDeleteAt(Aws::Utils::DateTime&& value) { SetDeleteAt(std::move(value)); return *this;}
+    template<typename DeleteAtT = Aws::Utils::DateTime>
+    void SetDeleteAt(DeleteAtT&& value) { m_deleteAtHasBeenSet = true; m_deleteAt = std::forward<DeleteAtT>(value); }
+    template<typename DeleteAtT = Aws::Utils::DateTime>
+    CalculatedLifecycle& WithDeleteAt(DeleteAtT&& value) { SetDeleteAt(std::forward<DeleteAtT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_moveToColdStorageAt;
+    Aws::Utils::DateTime m_moveToColdStorageAt{};
     bool m_moveToColdStorageAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deleteAt;
+    Aws::Utils::DateTime m_deleteAt{};
     bool m_deleteAtHasBeenSet = false;
   };
 

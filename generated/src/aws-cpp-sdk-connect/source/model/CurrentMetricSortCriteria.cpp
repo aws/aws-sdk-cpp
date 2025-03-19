@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CurrentMetricSortCriteria::CurrentMetricSortCriteria() : 
-    m_sortByMetric(CurrentMetricName::NOT_SET),
-    m_sortByMetricHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 CurrentMetricSortCriteria::CurrentMetricSortCriteria(JsonView jsonValue)
-  : CurrentMetricSortCriteria()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CurrentMetricSortCriteria& CurrentMetricSortCriteria::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SortByMetric"))
   {
     m_sortByMetric = CurrentMetricNameMapper::GetCurrentMetricNameForName(jsonValue.GetString("SortByMetric"));
-
     m_sortByMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

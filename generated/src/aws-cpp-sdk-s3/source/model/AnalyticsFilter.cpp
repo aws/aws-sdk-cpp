@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-AnalyticsFilter::AnalyticsFilter() : 
-    m_prefixHasBeenSet(false),
-    m_tagHasBeenSet(false),
-    m_andHasBeenSet(false)
-{
-}
-
 AnalyticsFilter::AnalyticsFilter(const XmlNode& xmlNode)
-  : AnalyticsFilter()
 {
   *this = xmlNode;
 }

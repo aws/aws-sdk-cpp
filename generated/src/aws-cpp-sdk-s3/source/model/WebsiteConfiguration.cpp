@@ -20,16 +20,7 @@ namespace S3
 namespace Model
 {
 
-WebsiteConfiguration::WebsiteConfiguration() : 
-    m_errorDocumentHasBeenSet(false),
-    m_indexDocumentHasBeenSet(false),
-    m_redirectAllRequestsToHasBeenSet(false),
-    m_routingRulesHasBeenSet(false)
-{
-}
-
 WebsiteConfiguration::WebsiteConfiguration(const XmlNode& xmlNode)
-  : WebsiteConfiguration()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ WebsiteConfiguration& WebsiteConfiguration::operator =(const XmlNode& xmlNode)
     if(!routingRulesNode.IsNull())
     {
       XmlNode routingRulesMember = routingRulesNode.FirstChild("RoutingRule");
+      m_routingRulesHasBeenSet = !routingRulesMember.IsNull();
       while(!routingRulesMember.IsNull())
       {
         m_routingRules.push_back(routingRulesMember);

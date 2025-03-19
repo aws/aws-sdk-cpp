@@ -29,7 +29,7 @@ namespace Model
   class PutFeedbackResult
   {
   public:
-    AWS_QCONNECT_API PutFeedbackResult();
+    AWS_QCONNECT_API PutFeedbackResult() = default;
     AWS_QCONNECT_API PutFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API PutFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,86 +38,82 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
-    inline const Aws::String& GetAssistantArn() const{ return m_assistantArn; }
-    inline void SetAssistantArn(const Aws::String& value) { m_assistantArn = value; }
-    inline void SetAssistantArn(Aws::String&& value) { m_assistantArn = std::move(value); }
-    inline void SetAssistantArn(const char* value) { m_assistantArn.assign(value); }
-    inline PutFeedbackResult& WithAssistantArn(const Aws::String& value) { SetAssistantArn(value); return *this;}
-    inline PutFeedbackResult& WithAssistantArn(Aws::String&& value) { SetAssistantArn(std::move(value)); return *this;}
-    inline PutFeedbackResult& WithAssistantArn(const char* value) { SetAssistantArn(value); return *this;}
+    inline const Aws::String& GetAssistantArn() const { return m_assistantArn; }
+    template<typename AssistantArnT = Aws::String>
+    void SetAssistantArn(AssistantArnT&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::forward<AssistantArnT>(value); }
+    template<typename AssistantArnT = Aws::String>
+    PutFeedbackResult& WithAssistantArn(AssistantArnT&& value) { SetAssistantArn(std::forward<AssistantArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Q in Connect assistant.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantId.assign(value); }
-    inline PutFeedbackResult& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline PutFeedbackResult& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline PutFeedbackResult& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    PutFeedbackResult& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the feedback provided.</p>
      */
-    inline const ContentFeedbackData& GetContentFeedback() const{ return m_contentFeedback; }
-    inline void SetContentFeedback(const ContentFeedbackData& value) { m_contentFeedback = value; }
-    inline void SetContentFeedback(ContentFeedbackData&& value) { m_contentFeedback = std::move(value); }
-    inline PutFeedbackResult& WithContentFeedback(const ContentFeedbackData& value) { SetContentFeedback(value); return *this;}
-    inline PutFeedbackResult& WithContentFeedback(ContentFeedbackData&& value) { SetContentFeedback(std::move(value)); return *this;}
+    inline const ContentFeedbackData& GetContentFeedback() const { return m_contentFeedback; }
+    template<typename ContentFeedbackT = ContentFeedbackData>
+    void SetContentFeedback(ContentFeedbackT&& value) { m_contentFeedbackHasBeenSet = true; m_contentFeedback = std::forward<ContentFeedbackT>(value); }
+    template<typename ContentFeedbackT = ContentFeedbackData>
+    PutFeedbackResult& WithContentFeedback(ContentFeedbackT&& value) { SetContentFeedback(std::forward<ContentFeedbackT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the feedback target.</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
-    inline void SetTargetId(const Aws::String& value) { m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetId.assign(value); }
-    inline PutFeedbackResult& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline PutFeedbackResult& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline PutFeedbackResult& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    PutFeedbackResult& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the feedback target.</p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
-    inline void SetTargetType(const TargetType& value) { m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetType = std::move(value); }
-    inline PutFeedbackResult& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline PutFeedbackResult& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline TargetType GetTargetType() const { return m_targetType; }
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline PutFeedbackResult& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutFeedbackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutFeedbackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutFeedbackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutFeedbackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_assistantArn;
+    bool m_assistantArnHasBeenSet = false;
 
     Aws::String m_assistantId;
+    bool m_assistantIdHasBeenSet = false;
 
     ContentFeedbackData m_contentFeedback;
+    bool m_contentFeedbackHasBeenSet = false;
 
     Aws::String m_targetId;
+    bool m_targetIdHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

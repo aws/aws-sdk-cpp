@@ -13,19 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListOutgoingTypedLinksRequest::ListOutgoingTypedLinksRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false),
-    m_filterAttributeRangesHasBeenSet(false),
-    m_filterTypedLinkHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_consistencyLevel(ConsistencyLevel::NOT_SET),
-    m_consistencyLevelHasBeenSet(false)
-{
-}
-
 Aws::String ListOutgoingTypedLinksRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopLabelingJobRequest::StopLabelingJobRequest() : 
-    m_labelingJobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopLabelingJobRequest::SerializePayload() const
 {
   JsonValue payload;

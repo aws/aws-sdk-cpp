@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-FormattedVss::FormattedVss() : 
-    m_vssJsonHasBeenSet(false)
-{
-}
-
 FormattedVss::FormattedVss(JsonView jsonValue)
-  : FormattedVss()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FormattedVss& FormattedVss::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vssJson"))
   {
     m_vssJson = jsonValue.GetString("vssJson");
-
     m_vssJsonHasBeenSet = true;
   }
-
   return *this;
 }
 

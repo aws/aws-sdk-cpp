@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ValidateSolFunctionPackageContentMetadata::ValidateSolFunctionPackageContentMetadata() : 
-    m_vnfdHasBeenSet(false)
-{
-}
-
 ValidateSolFunctionPackageContentMetadata::ValidateSolFunctionPackageContentMetadata(JsonView jsonValue)
-  : ValidateSolFunctionPackageContentMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ValidateSolFunctionPackageContentMetadata& ValidateSolFunctionPackageContentMeta
   if(jsonValue.ValueExists("vnfd"))
   {
     m_vnfd = jsonValue.GetObject("vnfd");
-
     m_vnfdHasBeenSet = true;
   }
-
   return *this;
 }
 

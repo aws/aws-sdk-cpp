@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AnalysisRule::AnalysisRule() : 
-    m_exclusionsHasBeenSet(false)
-{
-}
-
 AnalysisRule::AnalysisRule(JsonView jsonValue)
-  : AnalysisRule()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AnalysisRule& AnalysisRule::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   return *this;
 }
 

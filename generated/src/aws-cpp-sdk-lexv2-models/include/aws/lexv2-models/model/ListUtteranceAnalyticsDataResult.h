@@ -29,7 +29,7 @@ namespace Model
   class ListUtteranceAnalyticsDataResult
   {
   public:
-    AWS_LEXMODELSV2_API ListUtteranceAnalyticsDataResult();
+    AWS_LEXMODELSV2_API ListUtteranceAnalyticsDataResult() = default;
     AWS_LEXMODELSV2_API ListUtteranceAnalyticsDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListUtteranceAnalyticsDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The unique identifier of the bot that the utterances belong to.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListUtteranceAnalyticsDataResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListUtteranceAnalyticsDataResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +54,11 @@ namespace Model
      * complete set of results, call the ListUtteranceAnalyticsData operation until the
      * nextToken returned in the response is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListUtteranceAnalyticsDataResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUtteranceAnalyticsDataResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,34 +66,36 @@ namespace Model
      * <p>A list of objects, each of which contains information about an utterance in a
      * user session with your bot.</p>
      */
-    inline const Aws::Vector<UtteranceSpecification>& GetUtterances() const{ return m_utterances; }
-    inline void SetUtterances(const Aws::Vector<UtteranceSpecification>& value) { m_utterances = value; }
-    inline void SetUtterances(Aws::Vector<UtteranceSpecification>&& value) { m_utterances = std::move(value); }
-    inline ListUtteranceAnalyticsDataResult& WithUtterances(const Aws::Vector<UtteranceSpecification>& value) { SetUtterances(value); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithUtterances(Aws::Vector<UtteranceSpecification>&& value) { SetUtterances(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataResult& AddUtterances(const UtteranceSpecification& value) { m_utterances.push_back(value); return *this; }
-    inline ListUtteranceAnalyticsDataResult& AddUtterances(UtteranceSpecification&& value) { m_utterances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UtteranceSpecification>& GetUtterances() const { return m_utterances; }
+    template<typename UtterancesT = Aws::Vector<UtteranceSpecification>>
+    void SetUtterances(UtterancesT&& value) { m_utterancesHasBeenSet = true; m_utterances = std::forward<UtterancesT>(value); }
+    template<typename UtterancesT = Aws::Vector<UtteranceSpecification>>
+    ListUtteranceAnalyticsDataResult& WithUtterances(UtterancesT&& value) { SetUtterances(std::forward<UtterancesT>(value)); return *this;}
+    template<typename UtterancesT = UtteranceSpecification>
+    ListUtteranceAnalyticsDataResult& AddUtterances(UtterancesT&& value) { m_utterancesHasBeenSet = true; m_utterances.emplace_back(std::forward<UtterancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListUtteranceAnalyticsDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListUtteranceAnalyticsDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListUtteranceAnalyticsDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<UtteranceSpecification> m_utterances;
+    bool m_utterancesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

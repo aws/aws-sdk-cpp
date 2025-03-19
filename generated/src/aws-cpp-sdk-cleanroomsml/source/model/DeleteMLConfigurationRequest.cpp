@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMLConfigurationRequest::DeleteMLConfigurationRequest() : 
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMLConfigurationRequest::SerializePayload() const
 {
   return {};

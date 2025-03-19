@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIntegrationRequest::GetIntegrationRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_integrationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIntegrationRequest::SerializePayload() const
 {
   return {};

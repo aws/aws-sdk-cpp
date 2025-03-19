@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionExecutionOutput::ActionExecutionOutput() : 
-    m_outputArtifactsHasBeenSet(false),
-    m_executionResultHasBeenSet(false),
-    m_outputVariablesHasBeenSet(false)
-{
-}
-
 ActionExecutionOutput::ActionExecutionOutput(JsonView jsonValue)
-  : ActionExecutionOutput()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ActionExecutionOutput& ActionExecutionOutput::operator =(JsonView jsonValue)
     }
     m_outputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionResult"))
   {
     m_executionResult = jsonValue.GetObject("executionResult");
-
     m_executionResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputVariables"))
   {
     Aws::Map<Aws::String, JsonView> outputVariablesJsonMap = jsonValue.GetObject("outputVariables").GetAllObjects();
@@ -59,7 +48,6 @@ ActionExecutionOutput& ActionExecutionOutput::operator =(JsonView jsonValue)
     }
     m_outputVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

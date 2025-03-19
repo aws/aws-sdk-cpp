@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-QueueConfiguration::QueueConfiguration() : 
-    m_idHasBeenSet(false),
-    m_queueArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 QueueConfiguration::QueueConfiguration(const XmlNode& xmlNode)
-  : QueueConfiguration()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ QueueConfiguration& QueueConfiguration::operator =(const XmlNode& xmlNode)
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));

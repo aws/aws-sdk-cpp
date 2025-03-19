@@ -28,7 +28,7 @@ namespace Model
   class StartFraudsterRegistrationJobResult
   {
   public:
-    AWS_VOICEID_API StartFraudsterRegistrationJobResult();
+    AWS_VOICEID_API StartFraudsterRegistrationJobResult() = default;
     AWS_VOICEID_API StartFraudsterRegistrationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API StartFraudsterRegistrationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the started fraudster registration job.</p>
      */
-    inline const FraudsterRegistrationJob& GetJob() const{ return m_job; }
-    inline void SetJob(const FraudsterRegistrationJob& value) { m_job = value; }
-    inline void SetJob(FraudsterRegistrationJob&& value) { m_job = std::move(value); }
-    inline StartFraudsterRegistrationJobResult& WithJob(const FraudsterRegistrationJob& value) { SetJob(value); return *this;}
-    inline StartFraudsterRegistrationJobResult& WithJob(FraudsterRegistrationJob&& value) { SetJob(std::move(value)); return *this;}
+    inline const FraudsterRegistrationJob& GetJob() const { return m_job; }
+    template<typename JobT = FraudsterRegistrationJob>
+    void SetJob(JobT&& value) { m_jobHasBeenSet = true; m_job = std::forward<JobT>(value); }
+    template<typename JobT = FraudsterRegistrationJob>
+    StartFraudsterRegistrationJobResult& WithJob(JobT&& value) { SetJob(std::forward<JobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartFraudsterRegistrationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartFraudsterRegistrationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartFraudsterRegistrationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartFraudsterRegistrationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FraudsterRegistrationJob m_job;
+    bool m_jobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

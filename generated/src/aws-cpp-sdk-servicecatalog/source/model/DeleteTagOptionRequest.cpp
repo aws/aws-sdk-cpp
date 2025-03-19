@@ -12,11 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTagOptionRequest::DeleteTagOptionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTagOptionRequest::SerializePayload() const
 {
   JsonValue payload;

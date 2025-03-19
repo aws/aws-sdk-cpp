@@ -12,12 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStreamModeRequest::UpdateStreamModeRequest() : 
-    m_streamARNHasBeenSet(false),
-    m_streamModeDetailsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStreamModeRequest::SerializePayload() const
 {
   JsonValue payload;

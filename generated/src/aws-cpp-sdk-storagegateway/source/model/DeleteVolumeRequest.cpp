@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVolumeRequest::DeleteVolumeRequest() : 
-    m_volumeARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

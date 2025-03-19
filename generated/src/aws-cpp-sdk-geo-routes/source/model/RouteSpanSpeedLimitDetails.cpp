@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteSpanSpeedLimitDetails::RouteSpanSpeedLimitDetails() : 
-    m_maxSpeed(0.0),
-    m_maxSpeedHasBeenSet(false),
-    m_unlimited(false),
-    m_unlimitedHasBeenSet(false)
-{
-}
-
 RouteSpanSpeedLimitDetails::RouteSpanSpeedLimitDetails(JsonView jsonValue)
-  : RouteSpanSpeedLimitDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteSpanSpeedLimitDetails& RouteSpanSpeedLimitDetails::operator =(JsonView json
   if(jsonValue.ValueExists("MaxSpeed"))
   {
     m_maxSpeed = jsonValue.GetDouble("MaxSpeed");
-
     m_maxSpeedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unlimited"))
   {
     m_unlimited = jsonValue.GetBool("Unlimited");
-
     m_unlimitedHasBeenSet = true;
   }
-
   return *this;
 }
 

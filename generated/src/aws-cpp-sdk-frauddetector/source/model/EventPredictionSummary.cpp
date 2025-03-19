@@ -18,18 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-EventPredictionSummary::EventPredictionSummary() : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_eventTimestampHasBeenSet(false),
-    m_predictionTimestampHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_detectorVersionIdHasBeenSet(false)
-{
-}
-
 EventPredictionSummary::EventPredictionSummary(JsonView jsonValue)
-  : EventPredictionSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EventPredictionSummary& EventPredictionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
     m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTimestamp"))
   {
     m_eventTimestamp = jsonValue.GetString("eventTimestamp");
-
     m_eventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictionTimestamp"))
   {
     m_predictionTimestamp = jsonValue.GetString("predictionTimestamp");
-
     m_predictionTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorVersionId"))
   {
     m_detectorVersionId = jsonValue.GetString("detectorVersionId");
-
     m_detectorVersionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPublicKeyResult::GetPublicKeyResult() : 
-    m_keySpec(KeySpec::NOT_SET),
-    m_keyUsage(KeyUsageType::NOT_SET)
-{
-}
-
 GetPublicKeyResult::GetPublicKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPublicKeyResult()
 {
   *this = result;
 }
@@ -36,26 +29,23 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = HashingUtils::Base64Decode(jsonValue.GetString("PublicKey"));
+    m_publicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySpec"))
   {
     m_keySpec = KeySpecMapper::GetKeySpecForName(jsonValue.GetString("KeySpec"));
-
+    m_keySpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyUsage"))
   {
     m_keyUsage = KeyUsageTypeMapper::GetKeyUsageTypeForName(jsonValue.GetString("KeyUsage"));
-
+    m_keyUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionAlgorithms"))
   {
     Aws::Utils::Array<JsonView> encryptionAlgorithmsJsonList = jsonValue.GetArray("EncryptionAlgorithms");
@@ -63,8 +53,8 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_encryptionAlgorithms.push_back(EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(encryptionAlgorithmsJsonList[encryptionAlgorithmsIndex].AsString()));
     }
+    m_encryptionAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningAlgorithms"))
   {
     Aws::Utils::Array<JsonView> signingAlgorithmsJsonList = jsonValue.GetArray("SigningAlgorithms");
@@ -72,8 +62,8 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));
     }
+    m_signingAlgorithmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyAgreementAlgorithms"))
   {
     Aws::Utils::Array<JsonView> keyAgreementAlgorithmsJsonList = jsonValue.GetArray("KeyAgreementAlgorithms");
@@ -81,14 +71,15 @@ GetPublicKeyResult& GetPublicKeyResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_keyAgreementAlgorithms.push_back(KeyAgreementAlgorithmSpecMapper::GetKeyAgreementAlgorithmSpecForName(keyAgreementAlgorithmsJsonList[keyAgreementAlgorithmsIndex].AsString()));
     }
+    m_keyAgreementAlgorithmsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

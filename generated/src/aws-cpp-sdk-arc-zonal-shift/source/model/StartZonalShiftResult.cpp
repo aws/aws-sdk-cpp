@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartZonalShiftResult::StartZonalShiftResult() : 
-    m_status(ZonalShiftStatus::NOT_SET)
-{
-}
-
 StartZonalShiftResult::StartZonalShiftResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartZonalShiftResult()
 {
   *this = result;
 }
@@ -34,51 +28,45 @@ StartZonalShiftResult& StartZonalShiftResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("awayFrom"))
   {
     m_awayFrom = jsonValue.GetString("awayFrom");
-
+    m_awayFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
+    m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiryTime"))
   {
     m_expiryTime = jsonValue.GetDouble("expiryTime");
-
+    m_expiryTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
-
+    m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ZonalShiftStatusMapper::GetZonalShiftStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalShiftId"))
   {
     m_zonalShiftId = jsonValue.GetString("zonalShiftId");
-
+    m_zonalShiftIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

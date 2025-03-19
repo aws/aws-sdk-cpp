@@ -28,7 +28,7 @@ namespace Model
   class UpdateAgentKnowledgeBaseResult
   {
   public:
-    AWS_BEDROCKAGENT_API UpdateAgentKnowledgeBaseResult();
+    AWS_BEDROCKAGENT_API UpdateAgentKnowledgeBaseResult() = default;
     AWS_BEDROCKAGENT_API UpdateAgentKnowledgeBaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API UpdateAgentKnowledgeBaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Contains details about the knowledge base that has been associated with an
      * agent.</p>
      */
-    inline const AgentKnowledgeBase& GetAgentKnowledgeBase() const{ return m_agentKnowledgeBase; }
-    inline void SetAgentKnowledgeBase(const AgentKnowledgeBase& value) { m_agentKnowledgeBase = value; }
-    inline void SetAgentKnowledgeBase(AgentKnowledgeBase&& value) { m_agentKnowledgeBase = std::move(value); }
-    inline UpdateAgentKnowledgeBaseResult& WithAgentKnowledgeBase(const AgentKnowledgeBase& value) { SetAgentKnowledgeBase(value); return *this;}
-    inline UpdateAgentKnowledgeBaseResult& WithAgentKnowledgeBase(AgentKnowledgeBase&& value) { SetAgentKnowledgeBase(std::move(value)); return *this;}
+    inline const AgentKnowledgeBase& GetAgentKnowledgeBase() const { return m_agentKnowledgeBase; }
+    template<typename AgentKnowledgeBaseT = AgentKnowledgeBase>
+    void SetAgentKnowledgeBase(AgentKnowledgeBaseT&& value) { m_agentKnowledgeBaseHasBeenSet = true; m_agentKnowledgeBase = std::forward<AgentKnowledgeBaseT>(value); }
+    template<typename AgentKnowledgeBaseT = AgentKnowledgeBase>
+    UpdateAgentKnowledgeBaseResult& WithAgentKnowledgeBase(AgentKnowledgeBaseT&& value) { SetAgentKnowledgeBase(std::forward<AgentKnowledgeBaseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAgentKnowledgeBaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAgentKnowledgeBaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAgentKnowledgeBaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAgentKnowledgeBaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AgentKnowledgeBase m_agentKnowledgeBase;
+    bool m_agentKnowledgeBaseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

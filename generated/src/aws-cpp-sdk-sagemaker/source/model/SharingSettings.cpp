@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SharingSettings::SharingSettings() : 
-    m_notebookOutputOption(NotebookOutputOption::NOT_SET),
-    m_notebookOutputOptionHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false),
-    m_s3KmsKeyIdHasBeenSet(false)
-{
-}
-
 SharingSettings::SharingSettings(JsonView jsonValue)
-  : SharingSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SharingSettings& SharingSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotebookOutputOption"))
   {
     m_notebookOutputOption = NotebookOutputOptionMapper::GetNotebookOutputOptionForName(jsonValue.GetString("NotebookOutputOption"));
-
     m_notebookOutputOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KmsKeyId"))
   {
     m_s3KmsKeyId = jsonValue.GetString("S3KmsKeyId");
-
     m_s3KmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

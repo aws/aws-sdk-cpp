@@ -31,7 +31,7 @@ namespace Model
   class MinimumLabelType
   {
   public:
-    AWS_QUICKSIGHT_API MinimumLabelType();
+    AWS_QUICKSIGHT_API MinimumLabelType() = default;
     AWS_QUICKSIGHT_API MinimumLabelType(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API MinimumLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The visibility of the minimum label.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline MinimumLabelType& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline MinimumLabelType& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline MinimumLabelType& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

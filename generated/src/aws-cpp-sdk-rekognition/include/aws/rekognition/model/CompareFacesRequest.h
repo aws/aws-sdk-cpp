@@ -22,7 +22,7 @@ namespace Model
   class CompareFacesRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API CompareFacesRequest();
+    AWS_REKOGNITION_API CompareFacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
-    inline const Image& GetSourceImage() const{ return m_sourceImage; }
+    inline const Image& GetSourceImage() const { return m_sourceImage; }
     inline bool SourceImageHasBeenSet() const { return m_sourceImageHasBeenSet; }
-    inline void SetSourceImage(const Image& value) { m_sourceImageHasBeenSet = true; m_sourceImage = value; }
-    inline void SetSourceImage(Image&& value) { m_sourceImageHasBeenSet = true; m_sourceImage = std::move(value); }
-    inline CompareFacesRequest& WithSourceImage(const Image& value) { SetSourceImage(value); return *this;}
-    inline CompareFacesRequest& WithSourceImage(Image&& value) { SetSourceImage(std::move(value)); return *this;}
+    template<typename SourceImageT = Image>
+    void SetSourceImage(SourceImageT&& value) { m_sourceImageHasBeenSet = true; m_sourceImage = std::forward<SourceImageT>(value); }
+    template<typename SourceImageT = Image>
+    CompareFacesRequest& WithSourceImage(SourceImageT&& value) { SetSourceImage(std::forward<SourceImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
-    inline const Image& GetTargetImage() const{ return m_targetImage; }
+    inline const Image& GetTargetImage() const { return m_targetImage; }
     inline bool TargetImageHasBeenSet() const { return m_targetImageHasBeenSet; }
-    inline void SetTargetImage(const Image& value) { m_targetImageHasBeenSet = true; m_targetImage = value; }
-    inline void SetTargetImage(Image&& value) { m_targetImageHasBeenSet = true; m_targetImage = std::move(value); }
-    inline CompareFacesRequest& WithTargetImage(const Image& value) { SetTargetImage(value); return *this;}
-    inline CompareFacesRequest& WithTargetImage(Image&& value) { SetTargetImage(std::move(value)); return *this;}
+    template<typename TargetImageT = Image>
+    void SetTargetImage(TargetImageT&& value) { m_targetImageHasBeenSet = true; m_targetImage = std::forward<TargetImageT>(value); }
+    template<typename TargetImageT = Image>
+    CompareFacesRequest& WithTargetImage(TargetImageT&& value) { SetTargetImage(std::forward<TargetImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +74,7 @@ namespace Model
      * <p>The minimum level of confidence in the face matches that a match must meet to
      * be included in the <code>FaceMatches</code> array.</p>
      */
-    inline double GetSimilarityThreshold() const{ return m_similarityThreshold; }
+    inline double GetSimilarityThreshold() const { return m_similarityThreshold; }
     inline bool SimilarityThresholdHasBeenSet() const { return m_similarityThresholdHasBeenSet; }
     inline void SetSimilarityThreshold(double value) { m_similarityThresholdHasBeenSet = true; m_similarityThreshold = value; }
     inline CompareFacesRequest& WithSimilarityThreshold(double value) { SetSimilarityThreshold(value); return *this;}
@@ -94,12 +94,10 @@ namespace Model
      * <code>NONE</code>. </p> <p>To use quality filtering, the collection you are
      * using must be associated with version 3 of the face model or higher.</p>
      */
-    inline const QualityFilter& GetQualityFilter() const{ return m_qualityFilter; }
+    inline QualityFilter GetQualityFilter() const { return m_qualityFilter; }
     inline bool QualityFilterHasBeenSet() const { return m_qualityFilterHasBeenSet; }
-    inline void SetQualityFilter(const QualityFilter& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
-    inline void SetQualityFilter(QualityFilter&& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = std::move(value); }
-    inline CompareFacesRequest& WithQualityFilter(const QualityFilter& value) { SetQualityFilter(value); return *this;}
-    inline CompareFacesRequest& WithQualityFilter(QualityFilter&& value) { SetQualityFilter(std::move(value)); return *this;}
+    inline void SetQualityFilter(QualityFilter value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
+    inline CompareFacesRequest& WithQualityFilter(QualityFilter value) { SetQualityFilter(value); return *this;}
     ///@}
   private:
 
@@ -109,10 +107,10 @@ namespace Model
     Image m_targetImage;
     bool m_targetImageHasBeenSet = false;
 
-    double m_similarityThreshold;
+    double m_similarityThreshold{0.0};
     bool m_similarityThresholdHasBeenSet = false;
 
-    QualityFilter m_qualityFilter;
+    QualityFilter m_qualityFilter{QualityFilter::NOT_SET};
     bool m_qualityFilterHasBeenSet = false;
   };
 

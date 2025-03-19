@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnIdentifier::ColumnIdentifier() : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_columnNameHasBeenSet(false)
-{
-}
-
 ColumnIdentifier::ColumnIdentifier(JsonView jsonValue)
-  : ColumnIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ColumnIdentifier& ColumnIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSetIdentifier"))
   {
     m_dataSetIdentifier = jsonValue.GetString("DataSetIdentifier");
-
     m_dataSetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   return *this;
 }
 

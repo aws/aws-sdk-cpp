@@ -44,7 +44,7 @@ namespace Model
   class RequestInspectionACFP
   {
   public:
-    AWS_WAFV2_API RequestInspectionACFP();
+    AWS_WAFV2_API RequestInspectionACFP() = default;
     AWS_WAFV2_API RequestInspectionACFP(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RequestInspectionACFP& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * <p>The payload type for your account creation endpoint, either JSON or form
      * encoded.</p>
      */
-    inline const PayloadType& GetPayloadType() const{ return m_payloadType; }
+    inline PayloadType GetPayloadType() const { return m_payloadType; }
     inline bool PayloadTypeHasBeenSet() const { return m_payloadTypeHasBeenSet; }
-    inline void SetPayloadType(const PayloadType& value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
-    inline void SetPayloadType(PayloadType&& value) { m_payloadTypeHasBeenSet = true; m_payloadType = std::move(value); }
-    inline RequestInspectionACFP& WithPayloadType(const PayloadType& value) { SetPayloadType(value); return *this;}
-    inline RequestInspectionACFP& WithPayloadType(PayloadType&& value) { SetPayloadType(std::move(value)); return *this;}
+    inline void SetPayloadType(PayloadType value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
+    inline RequestInspectionACFP& WithPayloadType(PayloadType value) { SetPayloadType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,12 @@ namespace Model
      * element named <code>username1</code>, the username field specification is
      * <code>username1</code> </p> </li> </ul>
      */
-    inline const UsernameField& GetUsernameField() const{ return m_usernameField; }
+    inline const UsernameField& GetUsernameField() const { return m_usernameField; }
     inline bool UsernameFieldHasBeenSet() const { return m_usernameFieldHasBeenSet; }
-    inline void SetUsernameField(const UsernameField& value) { m_usernameFieldHasBeenSet = true; m_usernameField = value; }
-    inline void SetUsernameField(UsernameField&& value) { m_usernameFieldHasBeenSet = true; m_usernameField = std::move(value); }
-    inline RequestInspectionACFP& WithUsernameField(const UsernameField& value) { SetUsernameField(value); return *this;}
-    inline RequestInspectionACFP& WithUsernameField(UsernameField&& value) { SetUsernameField(std::move(value)); return *this;}
+    template<typename UsernameFieldT = UsernameField>
+    void SetUsernameField(UsernameFieldT&& value) { m_usernameFieldHasBeenSet = true; m_usernameField = std::forward<UsernameFieldT>(value); }
+    template<typename UsernameFieldT = UsernameField>
+    RequestInspectionACFP& WithUsernameField(UsernameFieldT&& value) { SetUsernameField(std::forward<UsernameFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +99,12 @@ namespace Model
      * element named <code>password1</code>, the password field specification is
      * <code>password1</code>.</p> </li> </ul>
      */
-    inline const PasswordField& GetPasswordField() const{ return m_passwordField; }
+    inline const PasswordField& GetPasswordField() const { return m_passwordField; }
     inline bool PasswordFieldHasBeenSet() const { return m_passwordFieldHasBeenSet; }
-    inline void SetPasswordField(const PasswordField& value) { m_passwordFieldHasBeenSet = true; m_passwordField = value; }
-    inline void SetPasswordField(PasswordField&& value) { m_passwordFieldHasBeenSet = true; m_passwordField = std::move(value); }
-    inline RequestInspectionACFP& WithPasswordField(const PasswordField& value) { SetPasswordField(value); return *this;}
-    inline RequestInspectionACFP& WithPasswordField(PasswordField&& value) { SetPasswordField(std::move(value)); return *this;}
+    template<typename PasswordFieldT = PasswordField>
+    void SetPasswordField(PasswordFieldT&& value) { m_passwordFieldHasBeenSet = true; m_passwordField = std::forward<PasswordFieldT>(value); }
+    template<typename PasswordFieldT = PasswordField>
+    RequestInspectionACFP& WithPasswordField(PasswordFieldT&& value) { SetPasswordField(std::forward<PasswordFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +122,12 @@ namespace Model
      * named <code>email1</code>, the email field specification is
      * <code>email1</code>.</p> </li> </ul>
      */
-    inline const EmailField& GetEmailField() const{ return m_emailField; }
+    inline const EmailField& GetEmailField() const { return m_emailField; }
     inline bool EmailFieldHasBeenSet() const { return m_emailFieldHasBeenSet; }
-    inline void SetEmailField(const EmailField& value) { m_emailFieldHasBeenSet = true; m_emailField = value; }
-    inline void SetEmailField(EmailField&& value) { m_emailFieldHasBeenSet = true; m_emailField = std::move(value); }
-    inline RequestInspectionACFP& WithEmailField(const EmailField& value) { SetEmailField(value); return *this;}
-    inline RequestInspectionACFP& WithEmailField(EmailField&& value) { SetEmailField(std::move(value)); return *this;}
+    template<typename EmailFieldT = EmailField>
+    void SetEmailField(EmailFieldT&& value) { m_emailFieldHasBeenSet = true; m_emailField = std::forward<EmailFieldT>(value); }
+    template<typename EmailFieldT = EmailField>
+    RequestInspectionACFP& WithEmailField(EmailFieldT&& value) { SetEmailField(std::forward<EmailFieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +152,14 @@ namespace Model
      * <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>. </p> </li>
      * </ul>
      */
-    inline const Aws::Vector<PhoneNumberField>& GetPhoneNumberFields() const{ return m_phoneNumberFields; }
+    inline const Aws::Vector<PhoneNumberField>& GetPhoneNumberFields() const { return m_phoneNumberFields; }
     inline bool PhoneNumberFieldsHasBeenSet() const { return m_phoneNumberFieldsHasBeenSet; }
-    inline void SetPhoneNumberFields(const Aws::Vector<PhoneNumberField>& value) { m_phoneNumberFieldsHasBeenSet = true; m_phoneNumberFields = value; }
-    inline void SetPhoneNumberFields(Aws::Vector<PhoneNumberField>&& value) { m_phoneNumberFieldsHasBeenSet = true; m_phoneNumberFields = std::move(value); }
-    inline RequestInspectionACFP& WithPhoneNumberFields(const Aws::Vector<PhoneNumberField>& value) { SetPhoneNumberFields(value); return *this;}
-    inline RequestInspectionACFP& WithPhoneNumberFields(Aws::Vector<PhoneNumberField>&& value) { SetPhoneNumberFields(std::move(value)); return *this;}
-    inline RequestInspectionACFP& AddPhoneNumberFields(const PhoneNumberField& value) { m_phoneNumberFieldsHasBeenSet = true; m_phoneNumberFields.push_back(value); return *this; }
-    inline RequestInspectionACFP& AddPhoneNumberFields(PhoneNumberField&& value) { m_phoneNumberFieldsHasBeenSet = true; m_phoneNumberFields.push_back(std::move(value)); return *this; }
+    template<typename PhoneNumberFieldsT = Aws::Vector<PhoneNumberField>>
+    void SetPhoneNumberFields(PhoneNumberFieldsT&& value) { m_phoneNumberFieldsHasBeenSet = true; m_phoneNumberFields = std::forward<PhoneNumberFieldsT>(value); }
+    template<typename PhoneNumberFieldsT = Aws::Vector<PhoneNumberField>>
+    RequestInspectionACFP& WithPhoneNumberFields(PhoneNumberFieldsT&& value) { SetPhoneNumberFields(std::forward<PhoneNumberFieldsT>(value)); return *this;}
+    template<typename PhoneNumberFieldsT = PhoneNumberField>
+    RequestInspectionACFP& AddPhoneNumberFields(PhoneNumberFieldsT&& value) { m_phoneNumberFieldsHasBeenSet = true; m_phoneNumberFields.emplace_back(std::forward<PhoneNumberFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,18 +184,18 @@ namespace Model
      * <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>. </p>
      * </li> </ul>
      */
-    inline const Aws::Vector<AddressField>& GetAddressFields() const{ return m_addressFields; }
+    inline const Aws::Vector<AddressField>& GetAddressFields() const { return m_addressFields; }
     inline bool AddressFieldsHasBeenSet() const { return m_addressFieldsHasBeenSet; }
-    inline void SetAddressFields(const Aws::Vector<AddressField>& value) { m_addressFieldsHasBeenSet = true; m_addressFields = value; }
-    inline void SetAddressFields(Aws::Vector<AddressField>&& value) { m_addressFieldsHasBeenSet = true; m_addressFields = std::move(value); }
-    inline RequestInspectionACFP& WithAddressFields(const Aws::Vector<AddressField>& value) { SetAddressFields(value); return *this;}
-    inline RequestInspectionACFP& WithAddressFields(Aws::Vector<AddressField>&& value) { SetAddressFields(std::move(value)); return *this;}
-    inline RequestInspectionACFP& AddAddressFields(const AddressField& value) { m_addressFieldsHasBeenSet = true; m_addressFields.push_back(value); return *this; }
-    inline RequestInspectionACFP& AddAddressFields(AddressField&& value) { m_addressFieldsHasBeenSet = true; m_addressFields.push_back(std::move(value)); return *this; }
+    template<typename AddressFieldsT = Aws::Vector<AddressField>>
+    void SetAddressFields(AddressFieldsT&& value) { m_addressFieldsHasBeenSet = true; m_addressFields = std::forward<AddressFieldsT>(value); }
+    template<typename AddressFieldsT = Aws::Vector<AddressField>>
+    RequestInspectionACFP& WithAddressFields(AddressFieldsT&& value) { SetAddressFields(std::forward<AddressFieldsT>(value)); return *this;}
+    template<typename AddressFieldsT = AddressField>
+    RequestInspectionACFP& AddAddressFields(AddressFieldsT&& value) { m_addressFieldsHasBeenSet = true; m_addressFields.emplace_back(std::forward<AddressFieldsT>(value)); return *this; }
     ///@}
   private:
 
-    PayloadType m_payloadType;
+    PayloadType m_payloadType{PayloadType::NOT_SET};
     bool m_payloadTypeHasBeenSet = false;
 
     UsernameField m_usernameField;

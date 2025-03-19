@@ -10,16 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-GetFederationTokenRequest::GetFederationTokenRequest() : 
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_policyArnsHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String GetFederationTokenRequest::SerializePayload() const
 {
   Aws::StringStream ss;

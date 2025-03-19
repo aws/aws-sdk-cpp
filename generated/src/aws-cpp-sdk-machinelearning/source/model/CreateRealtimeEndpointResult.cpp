@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRealtimeEndpointResult::CreateRealtimeEndpointResult()
-{
-}
-
 CreateRealtimeEndpointResult::CreateRealtimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateRealtimeEndpointResult& CreateRealtimeEndpointResult::operator =(const Aws
   if(jsonValue.ValueExists("MLModelId"))
   {
     m_mLModelId = jsonValue.GetString("MLModelId");
-
+    m_mLModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RealtimeEndpointInfo"))
   {
     m_realtimeEndpointInfo = jsonValue.GetObject("RealtimeEndpointInfo");
-
+    m_realtimeEndpointInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

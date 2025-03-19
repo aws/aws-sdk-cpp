@@ -10,13 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-SetTopicAttributesRequest::SetTopicAttributesRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 Aws::String SetTopicAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

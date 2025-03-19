@@ -33,7 +33,7 @@ namespace Model
   class BasicLayout
   {
   public:
-    AWS_CONNECTCASES_API BasicLayout();
+    AWS_CONNECTCASES_API BasicLayout() = default;
     AWS_CONNECTCASES_API BasicLayout(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API BasicLayout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>This represents sections in a tab of the page layout.</p>
      */
-    inline const LayoutSections& GetMoreInfo() const{ return m_moreInfo; }
+    inline const LayoutSections& GetMoreInfo() const { return m_moreInfo; }
     inline bool MoreInfoHasBeenSet() const { return m_moreInfoHasBeenSet; }
-    inline void SetMoreInfo(const LayoutSections& value) { m_moreInfoHasBeenSet = true; m_moreInfo = value; }
-    inline void SetMoreInfo(LayoutSections&& value) { m_moreInfoHasBeenSet = true; m_moreInfo = std::move(value); }
-    inline BasicLayout& WithMoreInfo(const LayoutSections& value) { SetMoreInfo(value); return *this;}
-    inline BasicLayout& WithMoreInfo(LayoutSections&& value) { SetMoreInfo(std::move(value)); return *this;}
+    template<typename MoreInfoT = LayoutSections>
+    void SetMoreInfo(MoreInfoT&& value) { m_moreInfoHasBeenSet = true; m_moreInfo = std::forward<MoreInfoT>(value); }
+    template<typename MoreInfoT = LayoutSections>
+    BasicLayout& WithMoreInfo(MoreInfoT&& value) { SetMoreInfo(std::forward<MoreInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This represents sections in a panel of the page layout.</p>
      */
-    inline const LayoutSections& GetTopPanel() const{ return m_topPanel; }
+    inline const LayoutSections& GetTopPanel() const { return m_topPanel; }
     inline bool TopPanelHasBeenSet() const { return m_topPanelHasBeenSet; }
-    inline void SetTopPanel(const LayoutSections& value) { m_topPanelHasBeenSet = true; m_topPanel = value; }
-    inline void SetTopPanel(LayoutSections&& value) { m_topPanelHasBeenSet = true; m_topPanel = std::move(value); }
-    inline BasicLayout& WithTopPanel(const LayoutSections& value) { SetTopPanel(value); return *this;}
-    inline BasicLayout& WithTopPanel(LayoutSections&& value) { SetTopPanel(std::move(value)); return *this;}
+    template<typename TopPanelT = LayoutSections>
+    void SetTopPanel(TopPanelT&& value) { m_topPanelHasBeenSet = true; m_topPanel = std::forward<TopPanelT>(value); }
+    template<typename TopPanelT = LayoutSections>
+    BasicLayout& WithTopPanel(TopPanelT&& value) { SetTopPanel(std::forward<TopPanelT>(value)); return *this;}
     ///@}
   private:
 

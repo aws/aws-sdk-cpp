@@ -23,7 +23,7 @@ namespace Model
   class ListInferenceRecommendationsJobStepsRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListInferenceRecommendationsJobStepsRequest();
+    AWS_SAGEMAKER_API ListInferenceRecommendationsJobStepsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name for the Inference Recommender job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline ListInferenceRecommendationsJobStepsRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline ListInferenceRecommendationsJobStepsRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline ListInferenceRecommendationsJobStepsRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    ListInferenceRecommendationsJobStepsRequest& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,10 @@ namespace Model
      * <p>A filter to return benchmarks of a specified status. If this field is left
      * empty, then all benchmarks are returned.</p>
      */
-    inline const RecommendationJobStatus& GetStatus() const{ return m_status; }
+    inline RecommendationJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RecommendationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RecommendationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListInferenceRecommendationsJobStepsRequest& WithStatus(const RecommendationJobStatus& value) { SetStatus(value); return *this;}
-    inline ListInferenceRecommendationsJobStepsRequest& WithStatus(RecommendationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RecommendationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListInferenceRecommendationsJobStepsRequest& WithStatus(RecommendationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -69,19 +65,17 @@ namespace Model
      * <code>BENCHMARK</code>: Evaluate the performance of your model on different
      * instance types.</p>
      */
-    inline const RecommendationStepType& GetStepType() const{ return m_stepType; }
+    inline RecommendationStepType GetStepType() const { return m_stepType; }
     inline bool StepTypeHasBeenSet() const { return m_stepTypeHasBeenSet; }
-    inline void SetStepType(const RecommendationStepType& value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
-    inline void SetStepType(RecommendationStepType&& value) { m_stepTypeHasBeenSet = true; m_stepType = std::move(value); }
-    inline ListInferenceRecommendationsJobStepsRequest& WithStepType(const RecommendationStepType& value) { SetStepType(value); return *this;}
-    inline ListInferenceRecommendationsJobStepsRequest& WithStepType(RecommendationStepType&& value) { SetStepType(std::move(value)); return *this;}
+    inline void SetStepType(RecommendationStepType value) { m_stepTypeHasBeenSet = true; m_stepType = value; }
+    inline ListInferenceRecommendationsJobStepsRequest& WithStepType(RecommendationStepType value) { SetStepType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListInferenceRecommendationsJobStepsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -92,27 +86,25 @@ namespace Model
      * <p>A token that you can specify to return more results from the list. Specify
      * this field if you have a token that was returned from a previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListInferenceRecommendationsJobStepsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInferenceRecommendationsJobStepsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInferenceRecommendationsJobStepsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInferenceRecommendationsJobStepsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    RecommendationJobStatus m_status;
+    RecommendationJobStatus m_status{RecommendationJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    RecommendationStepType m_stepType;
+    RecommendationStepType m_stepType{RecommendationStepType::NOT_SET};
     bool m_stepTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

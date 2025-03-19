@@ -25,7 +25,7 @@ namespace Model
   class UpdateMonitorRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API UpdateMonitorRequest();
+    AWS_NETWORKFLOWMONITOR_API UpdateMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the monitor.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline UpdateMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline UpdateMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    UpdateMonitorRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,14 @@ namespace Model
      * <p>The local resources to add, as an array of resources with identifiers and
      * types.</p>
      */
-    inline const Aws::Vector<MonitorLocalResource>& GetLocalResourcesToAdd() const{ return m_localResourcesToAdd; }
+    inline const Aws::Vector<MonitorLocalResource>& GetLocalResourcesToAdd() const { return m_localResourcesToAdd; }
     inline bool LocalResourcesToAddHasBeenSet() const { return m_localResourcesToAddHasBeenSet; }
-    inline void SetLocalResourcesToAdd(const Aws::Vector<MonitorLocalResource>& value) { m_localResourcesToAddHasBeenSet = true; m_localResourcesToAdd = value; }
-    inline void SetLocalResourcesToAdd(Aws::Vector<MonitorLocalResource>&& value) { m_localResourcesToAddHasBeenSet = true; m_localResourcesToAdd = std::move(value); }
-    inline UpdateMonitorRequest& WithLocalResourcesToAdd(const Aws::Vector<MonitorLocalResource>& value) { SetLocalResourcesToAdd(value); return *this;}
-    inline UpdateMonitorRequest& WithLocalResourcesToAdd(Aws::Vector<MonitorLocalResource>&& value) { SetLocalResourcesToAdd(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& AddLocalResourcesToAdd(const MonitorLocalResource& value) { m_localResourcesToAddHasBeenSet = true; m_localResourcesToAdd.push_back(value); return *this; }
-    inline UpdateMonitorRequest& AddLocalResourcesToAdd(MonitorLocalResource&& value) { m_localResourcesToAddHasBeenSet = true; m_localResourcesToAdd.push_back(std::move(value)); return *this; }
+    template<typename LocalResourcesToAddT = Aws::Vector<MonitorLocalResource>>
+    void SetLocalResourcesToAdd(LocalResourcesToAddT&& value) { m_localResourcesToAddHasBeenSet = true; m_localResourcesToAdd = std::forward<LocalResourcesToAddT>(value); }
+    template<typename LocalResourcesToAddT = Aws::Vector<MonitorLocalResource>>
+    UpdateMonitorRequest& WithLocalResourcesToAdd(LocalResourcesToAddT&& value) { SetLocalResourcesToAdd(std::forward<LocalResourcesToAddT>(value)); return *this;}
+    template<typename LocalResourcesToAddT = MonitorLocalResource>
+    UpdateMonitorRequest& AddLocalResourcesToAdd(LocalResourcesToAddT&& value) { m_localResourcesToAddHasBeenSet = true; m_localResourcesToAdd.emplace_back(std::forward<LocalResourcesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,14 +68,14 @@ namespace Model
      * <p>The local resources to remove, as an array of resources with identifiers and
      * types.</p>
      */
-    inline const Aws::Vector<MonitorLocalResource>& GetLocalResourcesToRemove() const{ return m_localResourcesToRemove; }
+    inline const Aws::Vector<MonitorLocalResource>& GetLocalResourcesToRemove() const { return m_localResourcesToRemove; }
     inline bool LocalResourcesToRemoveHasBeenSet() const { return m_localResourcesToRemoveHasBeenSet; }
-    inline void SetLocalResourcesToRemove(const Aws::Vector<MonitorLocalResource>& value) { m_localResourcesToRemoveHasBeenSet = true; m_localResourcesToRemove = value; }
-    inline void SetLocalResourcesToRemove(Aws::Vector<MonitorLocalResource>&& value) { m_localResourcesToRemoveHasBeenSet = true; m_localResourcesToRemove = std::move(value); }
-    inline UpdateMonitorRequest& WithLocalResourcesToRemove(const Aws::Vector<MonitorLocalResource>& value) { SetLocalResourcesToRemove(value); return *this;}
-    inline UpdateMonitorRequest& WithLocalResourcesToRemove(Aws::Vector<MonitorLocalResource>&& value) { SetLocalResourcesToRemove(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& AddLocalResourcesToRemove(const MonitorLocalResource& value) { m_localResourcesToRemoveHasBeenSet = true; m_localResourcesToRemove.push_back(value); return *this; }
-    inline UpdateMonitorRequest& AddLocalResourcesToRemove(MonitorLocalResource&& value) { m_localResourcesToRemoveHasBeenSet = true; m_localResourcesToRemove.push_back(std::move(value)); return *this; }
+    template<typename LocalResourcesToRemoveT = Aws::Vector<MonitorLocalResource>>
+    void SetLocalResourcesToRemove(LocalResourcesToRemoveT&& value) { m_localResourcesToRemoveHasBeenSet = true; m_localResourcesToRemove = std::forward<LocalResourcesToRemoveT>(value); }
+    template<typename LocalResourcesToRemoveT = Aws::Vector<MonitorLocalResource>>
+    UpdateMonitorRequest& WithLocalResourcesToRemove(LocalResourcesToRemoveT&& value) { SetLocalResourcesToRemove(std::forward<LocalResourcesToRemoveT>(value)); return *this;}
+    template<typename LocalResourcesToRemoveT = MonitorLocalResource>
+    UpdateMonitorRequest& AddLocalResourcesToRemove(LocalResourcesToRemoveT&& value) { m_localResourcesToRemoveHasBeenSet = true; m_localResourcesToRemove.emplace_back(std::forward<LocalResourcesToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,14 +83,14 @@ namespace Model
      * <p>The remove resources to add, as an array of resources with identifiers and
      * types.</p>
      */
-    inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResourcesToAdd() const{ return m_remoteResourcesToAdd; }
+    inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResourcesToAdd() const { return m_remoteResourcesToAdd; }
     inline bool RemoteResourcesToAddHasBeenSet() const { return m_remoteResourcesToAddHasBeenSet; }
-    inline void SetRemoteResourcesToAdd(const Aws::Vector<MonitorRemoteResource>& value) { m_remoteResourcesToAddHasBeenSet = true; m_remoteResourcesToAdd = value; }
-    inline void SetRemoteResourcesToAdd(Aws::Vector<MonitorRemoteResource>&& value) { m_remoteResourcesToAddHasBeenSet = true; m_remoteResourcesToAdd = std::move(value); }
-    inline UpdateMonitorRequest& WithRemoteResourcesToAdd(const Aws::Vector<MonitorRemoteResource>& value) { SetRemoteResourcesToAdd(value); return *this;}
-    inline UpdateMonitorRequest& WithRemoteResourcesToAdd(Aws::Vector<MonitorRemoteResource>&& value) { SetRemoteResourcesToAdd(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& AddRemoteResourcesToAdd(const MonitorRemoteResource& value) { m_remoteResourcesToAddHasBeenSet = true; m_remoteResourcesToAdd.push_back(value); return *this; }
-    inline UpdateMonitorRequest& AddRemoteResourcesToAdd(MonitorRemoteResource&& value) { m_remoteResourcesToAddHasBeenSet = true; m_remoteResourcesToAdd.push_back(std::move(value)); return *this; }
+    template<typename RemoteResourcesToAddT = Aws::Vector<MonitorRemoteResource>>
+    void SetRemoteResourcesToAdd(RemoteResourcesToAddT&& value) { m_remoteResourcesToAddHasBeenSet = true; m_remoteResourcesToAdd = std::forward<RemoteResourcesToAddT>(value); }
+    template<typename RemoteResourcesToAddT = Aws::Vector<MonitorRemoteResource>>
+    UpdateMonitorRequest& WithRemoteResourcesToAdd(RemoteResourcesToAddT&& value) { SetRemoteResourcesToAdd(std::forward<RemoteResourcesToAddT>(value)); return *this;}
+    template<typename RemoteResourcesToAddT = MonitorRemoteResource>
+    UpdateMonitorRequest& AddRemoteResourcesToAdd(RemoteResourcesToAddT&& value) { m_remoteResourcesToAddHasBeenSet = true; m_remoteResourcesToAdd.emplace_back(std::forward<RemoteResourcesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,14 +98,14 @@ namespace Model
      * <p>The remove resources to remove, as an array of resources with identifiers and
      * types.</p>
      */
-    inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResourcesToRemove() const{ return m_remoteResourcesToRemove; }
+    inline const Aws::Vector<MonitorRemoteResource>& GetRemoteResourcesToRemove() const { return m_remoteResourcesToRemove; }
     inline bool RemoteResourcesToRemoveHasBeenSet() const { return m_remoteResourcesToRemoveHasBeenSet; }
-    inline void SetRemoteResourcesToRemove(const Aws::Vector<MonitorRemoteResource>& value) { m_remoteResourcesToRemoveHasBeenSet = true; m_remoteResourcesToRemove = value; }
-    inline void SetRemoteResourcesToRemove(Aws::Vector<MonitorRemoteResource>&& value) { m_remoteResourcesToRemoveHasBeenSet = true; m_remoteResourcesToRemove = std::move(value); }
-    inline UpdateMonitorRequest& WithRemoteResourcesToRemove(const Aws::Vector<MonitorRemoteResource>& value) { SetRemoteResourcesToRemove(value); return *this;}
-    inline UpdateMonitorRequest& WithRemoteResourcesToRemove(Aws::Vector<MonitorRemoteResource>&& value) { SetRemoteResourcesToRemove(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& AddRemoteResourcesToRemove(const MonitorRemoteResource& value) { m_remoteResourcesToRemoveHasBeenSet = true; m_remoteResourcesToRemove.push_back(value); return *this; }
-    inline UpdateMonitorRequest& AddRemoteResourcesToRemove(MonitorRemoteResource&& value) { m_remoteResourcesToRemoveHasBeenSet = true; m_remoteResourcesToRemove.push_back(std::move(value)); return *this; }
+    template<typename RemoteResourcesToRemoveT = Aws::Vector<MonitorRemoteResource>>
+    void SetRemoteResourcesToRemove(RemoteResourcesToRemoveT&& value) { m_remoteResourcesToRemoveHasBeenSet = true; m_remoteResourcesToRemove = std::forward<RemoteResourcesToRemoveT>(value); }
+    template<typename RemoteResourcesToRemoveT = Aws::Vector<MonitorRemoteResource>>
+    UpdateMonitorRequest& WithRemoteResourcesToRemove(RemoteResourcesToRemoveT&& value) { SetRemoteResourcesToRemove(std::forward<RemoteResourcesToRemoveT>(value)); return *this;}
+    template<typename RemoteResourcesToRemoveT = MonitorRemoteResource>
+    UpdateMonitorRequest& AddRemoteResourcesToRemove(RemoteResourcesToRemoveT&& value) { m_remoteResourcesToRemoveHasBeenSet = true; m_remoteResourcesToRemove.emplace_back(std::forward<RemoteResourcesToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,14 +114,12 @@ namespace Model
      * to make an idempotent API request. Don't reuse the same client token for other
      * API requests.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateMonitorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateMonitorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateMonitorRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

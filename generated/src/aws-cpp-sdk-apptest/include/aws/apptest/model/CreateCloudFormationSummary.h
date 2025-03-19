@@ -32,7 +32,7 @@ namespace Model
   class CreateCloudFormationSummary
   {
   public:
-    AWS_APPTEST_API CreateCloudFormationSummary();
+    AWS_APPTEST_API CreateCloudFormationSummary() = default;
     AWS_APPTEST_API CreateCloudFormationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CreateCloudFormationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The step input of the CloudFormation summary.</p>
      */
-    inline const CreateCloudFormationStepInput& GetStepInput() const{ return m_stepInput; }
+    inline const CreateCloudFormationStepInput& GetStepInput() const { return m_stepInput; }
     inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
-    inline void SetStepInput(const CreateCloudFormationStepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
-    inline void SetStepInput(CreateCloudFormationStepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
-    inline CreateCloudFormationSummary& WithStepInput(const CreateCloudFormationStepInput& value) { SetStepInput(value); return *this;}
-    inline CreateCloudFormationSummary& WithStepInput(CreateCloudFormationStepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    template<typename StepInputT = CreateCloudFormationStepInput>
+    void SetStepInput(StepInputT&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::forward<StepInputT>(value); }
+    template<typename StepInputT = CreateCloudFormationStepInput>
+    CreateCloudFormationSummary& WithStepInput(StepInputT&& value) { SetStepInput(std::forward<StepInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step output of the CloudFormation summary.</p>
      */
-    inline const CreateCloudFormationStepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline const CreateCloudFormationStepOutput& GetStepOutput() const { return m_stepOutput; }
     inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
-    inline void SetStepOutput(const CreateCloudFormationStepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
-    inline void SetStepOutput(CreateCloudFormationStepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
-    inline CreateCloudFormationSummary& WithStepOutput(const CreateCloudFormationStepOutput& value) { SetStepOutput(value); return *this;}
-    inline CreateCloudFormationSummary& WithStepOutput(CreateCloudFormationStepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    template<typename StepOutputT = CreateCloudFormationStepOutput>
+    void SetStepOutput(StepOutputT&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::forward<StepOutputT>(value); }
+    template<typename StepOutputT = CreateCloudFormationStepOutput>
+    CreateCloudFormationSummary& WithStepOutput(StepOutputT&& value) { SetStepOutput(std::forward<StepOutputT>(value)); return *this;}
     ///@}
   private:
 

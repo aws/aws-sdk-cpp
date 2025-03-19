@@ -34,7 +34,7 @@ namespace Model
   class DescribeActivityTypeResult
   {
   public:
-    AWS_SWF_API DescribeActivityTypeResult();
+    AWS_SWF_API DescribeActivityTypeResult() = default;
     AWS_SWF_API DescribeActivityTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SWF_API DescribeActivityTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -50,41 +50,42 @@ namespace Model
      * supporting this type running. You cannot create new tasks of this type. </p>
      * </li> </ul>
      */
-    inline const ActivityTypeInfo& GetTypeInfo() const{ return m_typeInfo; }
-    inline void SetTypeInfo(const ActivityTypeInfo& value) { m_typeInfo = value; }
-    inline void SetTypeInfo(ActivityTypeInfo&& value) { m_typeInfo = std::move(value); }
-    inline DescribeActivityTypeResult& WithTypeInfo(const ActivityTypeInfo& value) { SetTypeInfo(value); return *this;}
-    inline DescribeActivityTypeResult& WithTypeInfo(ActivityTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
+    inline const ActivityTypeInfo& GetTypeInfo() const { return m_typeInfo; }
+    template<typename TypeInfoT = ActivityTypeInfo>
+    void SetTypeInfo(TypeInfoT&& value) { m_typeInfoHasBeenSet = true; m_typeInfo = std::forward<TypeInfoT>(value); }
+    template<typename TypeInfoT = ActivityTypeInfo>
+    DescribeActivityTypeResult& WithTypeInfo(TypeInfoT&& value) { SetTypeInfo(std::forward<TypeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration settings registered with the activity type.</p>
      */
-    inline const ActivityTypeConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const ActivityTypeConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(ActivityTypeConfiguration&& value) { m_configuration = std::move(value); }
-    inline DescribeActivityTypeResult& WithConfiguration(const ActivityTypeConfiguration& value) { SetConfiguration(value); return *this;}
-    inline DescribeActivityTypeResult& WithConfiguration(ActivityTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const ActivityTypeConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = ActivityTypeConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ActivityTypeConfiguration>
+    DescribeActivityTypeResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeActivityTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeActivityTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeActivityTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeActivityTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ActivityTypeInfo m_typeInfo;
+    bool m_typeInfoHasBeenSet = false;
 
     ActivityTypeConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

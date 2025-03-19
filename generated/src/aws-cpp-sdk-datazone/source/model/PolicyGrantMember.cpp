@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-PolicyGrantMember::PolicyGrantMember() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_principalHasBeenSet(false)
-{
-}
-
 PolicyGrantMember::PolicyGrantMember(JsonView jsonValue)
-  : PolicyGrantMember()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PolicyGrantMember& PolicyGrantMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detail"))
   {
     m_detail = jsonValue.GetObject("detail");
-
     m_detailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetObject("principal");
-
     m_principalHasBeenSet = true;
   }
-
   return *this;
 }
 

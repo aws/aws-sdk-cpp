@@ -34,7 +34,7 @@ namespace Model
   class GetDirectoryLimitsResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API GetDirectoryLimitsResult();
+    AWS_DIRECTORYSERVICE_API GetDirectoryLimitsResult() = default;
     AWS_DIRECTORYSERVICE_API GetDirectoryLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API GetDirectoryLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
      * current Region.</p>
      */
-    inline const DirectoryLimits& GetDirectoryLimits() const{ return m_directoryLimits; }
-    inline void SetDirectoryLimits(const DirectoryLimits& value) { m_directoryLimits = value; }
-    inline void SetDirectoryLimits(DirectoryLimits&& value) { m_directoryLimits = std::move(value); }
-    inline GetDirectoryLimitsResult& WithDirectoryLimits(const DirectoryLimits& value) { SetDirectoryLimits(value); return *this;}
-    inline GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimits&& value) { SetDirectoryLimits(std::move(value)); return *this;}
+    inline const DirectoryLimits& GetDirectoryLimits() const { return m_directoryLimits; }
+    template<typename DirectoryLimitsT = DirectoryLimits>
+    void SetDirectoryLimits(DirectoryLimitsT&& value) { m_directoryLimitsHasBeenSet = true; m_directoryLimits = std::forward<DirectoryLimitsT>(value); }
+    template<typename DirectoryLimitsT = DirectoryLimits>
+    GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimitsT&& value) { SetDirectoryLimits(std::forward<DirectoryLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDirectoryLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDirectoryLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDirectoryLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDirectoryLimitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DirectoryLimits m_directoryLimits;
+    bool m_directoryLimitsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

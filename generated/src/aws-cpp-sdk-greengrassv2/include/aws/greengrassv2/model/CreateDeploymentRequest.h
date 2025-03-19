@@ -26,7 +26,7 @@ namespace Model
   class CreateDeploymentRequest : public GreengrassV2Request
   {
   public:
-    AWS_GREENGRASSV2_API CreateDeploymentRequest();
+    AWS_GREENGRASSV2_API CreateDeploymentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
      * of the target IoT thing or thing group. When creating a subdeployment, the
      * targetARN can only be a thing group.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline CreateDeploymentRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline CreateDeploymentRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    CreateDeploymentRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the deployment.</p>
      */
-    inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
+    inline const Aws::String& GetDeploymentName() const { return m_deploymentName; }
     inline bool DeploymentNameHasBeenSet() const { return m_deploymentNameHasBeenSet; }
-    inline void SetDeploymentName(const Aws::String& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = value; }
-    inline void SetDeploymentName(Aws::String&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::move(value); }
-    inline void SetDeploymentName(const char* value) { m_deploymentNameHasBeenSet = true; m_deploymentName.assign(value); }
-    inline CreateDeploymentRequest& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
+    template<typename DeploymentNameT = Aws::String>
+    void SetDeploymentName(DeploymentNameT&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::forward<DeploymentNameT>(value); }
+    template<typename DeploymentNameT = Aws::String>
+    CreateDeploymentRequest& WithDeploymentName(DeploymentNameT&& value) { SetDeploymentName(std::forward<DeploymentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,18 +70,16 @@ namespace Model
      * a component, and each key's value is the version and configuration to deploy for
      * that component.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentDeploymentSpecification>& GetComponents() const{ return m_components; }
+    inline const Aws::Map<Aws::String, ComponentDeploymentSpecification>& GetComponents() const { return m_components; }
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
-    inline void SetComponents(const Aws::Map<Aws::String, ComponentDeploymentSpecification>& value) { m_componentsHasBeenSet = true; m_components = value; }
-    inline void SetComponents(Aws::Map<Aws::String, ComponentDeploymentSpecification>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
-    inline CreateDeploymentRequest& WithComponents(const Aws::Map<Aws::String, ComponentDeploymentSpecification>& value) { SetComponents(value); return *this;}
-    inline CreateDeploymentRequest& WithComponents(Aws::Map<Aws::String, ComponentDeploymentSpecification>&& value) { SetComponents(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& AddComponents(const Aws::String& key, const ComponentDeploymentSpecification& value) { m_componentsHasBeenSet = true; m_components.emplace(key, value); return *this; }
-    inline CreateDeploymentRequest& AddComponents(Aws::String&& key, const ComponentDeploymentSpecification& value) { m_componentsHasBeenSet = true; m_components.emplace(std::move(key), value); return *this; }
-    inline CreateDeploymentRequest& AddComponents(const Aws::String& key, ComponentDeploymentSpecification&& value) { m_componentsHasBeenSet = true; m_components.emplace(key, std::move(value)); return *this; }
-    inline CreateDeploymentRequest& AddComponents(Aws::String&& key, ComponentDeploymentSpecification&& value) { m_componentsHasBeenSet = true; m_components.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDeploymentRequest& AddComponents(const char* key, ComponentDeploymentSpecification&& value) { m_componentsHasBeenSet = true; m_components.emplace(key, std::move(value)); return *this; }
-    inline CreateDeploymentRequest& AddComponents(const char* key, const ComponentDeploymentSpecification& value) { m_componentsHasBeenSet = true; m_components.emplace(key, value); return *this; }
+    template<typename ComponentsT = Aws::Map<Aws::String, ComponentDeploymentSpecification>>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = Aws::Map<Aws::String, ComponentDeploymentSpecification>>
+    CreateDeploymentRequest& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
+    template<typename ComponentsKeyT = Aws::String, typename ComponentsValueT = ComponentDeploymentSpecification>
+    CreateDeploymentRequest& AddComponents(ComponentsKeyT&& key, ComponentsValueT&& value) {
+      m_componentsHasBeenSet = true; m_components.emplace(std::forward<ComponentsKeyT>(key), std::forward<ComponentsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -94,12 +88,12 @@ namespace Model
      * specifies the rollout, timeout, and stop configurations for the deployment
      * configuration.</p>
      */
-    inline const DeploymentIoTJobConfiguration& GetIotJobConfiguration() const{ return m_iotJobConfiguration; }
+    inline const DeploymentIoTJobConfiguration& GetIotJobConfiguration() const { return m_iotJobConfiguration; }
     inline bool IotJobConfigurationHasBeenSet() const { return m_iotJobConfigurationHasBeenSet; }
-    inline void SetIotJobConfiguration(const DeploymentIoTJobConfiguration& value) { m_iotJobConfigurationHasBeenSet = true; m_iotJobConfiguration = value; }
-    inline void SetIotJobConfiguration(DeploymentIoTJobConfiguration&& value) { m_iotJobConfigurationHasBeenSet = true; m_iotJobConfiguration = std::move(value); }
-    inline CreateDeploymentRequest& WithIotJobConfiguration(const DeploymentIoTJobConfiguration& value) { SetIotJobConfiguration(value); return *this;}
-    inline CreateDeploymentRequest& WithIotJobConfiguration(DeploymentIoTJobConfiguration&& value) { SetIotJobConfiguration(std::move(value)); return *this;}
+    template<typename IotJobConfigurationT = DeploymentIoTJobConfiguration>
+    void SetIotJobConfiguration(IotJobConfigurationT&& value) { m_iotJobConfigurationHasBeenSet = true; m_iotJobConfiguration = std::forward<IotJobConfigurationT>(value); }
+    template<typename IotJobConfigurationT = DeploymentIoTJobConfiguration>
+    CreateDeploymentRequest& WithIotJobConfiguration(IotJobConfigurationT&& value) { SetIotJobConfiguration(std::forward<IotJobConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +101,12 @@ namespace Model
      * <p>The deployment policies for the deployment. These policies define how the
      * deployment updates components and handles failure.</p>
      */
-    inline const DeploymentPolicies& GetDeploymentPolicies() const{ return m_deploymentPolicies; }
+    inline const DeploymentPolicies& GetDeploymentPolicies() const { return m_deploymentPolicies; }
     inline bool DeploymentPoliciesHasBeenSet() const { return m_deploymentPoliciesHasBeenSet; }
-    inline void SetDeploymentPolicies(const DeploymentPolicies& value) { m_deploymentPoliciesHasBeenSet = true; m_deploymentPolicies = value; }
-    inline void SetDeploymentPolicies(DeploymentPolicies&& value) { m_deploymentPoliciesHasBeenSet = true; m_deploymentPolicies = std::move(value); }
-    inline CreateDeploymentRequest& WithDeploymentPolicies(const DeploymentPolicies& value) { SetDeploymentPolicies(value); return *this;}
-    inline CreateDeploymentRequest& WithDeploymentPolicies(DeploymentPolicies&& value) { SetDeploymentPolicies(std::move(value)); return *this;}
+    template<typename DeploymentPoliciesT = DeploymentPolicies>
+    void SetDeploymentPolicies(DeploymentPoliciesT&& value) { m_deploymentPoliciesHasBeenSet = true; m_deploymentPolicies = std::forward<DeploymentPoliciesT>(value); }
+    template<typename DeploymentPoliciesT = DeploymentPolicies>
+    CreateDeploymentRequest& WithDeploymentPolicies(DeploymentPoliciesT&& value) { SetDeploymentPolicies(std::forward<DeploymentPoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
      * within a subdeployment.</p>
      */
-    inline const Aws::String& GetParentTargetArn() const{ return m_parentTargetArn; }
+    inline const Aws::String& GetParentTargetArn() const { return m_parentTargetArn; }
     inline bool ParentTargetArnHasBeenSet() const { return m_parentTargetArnHasBeenSet; }
-    inline void SetParentTargetArn(const Aws::String& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = value; }
-    inline void SetParentTargetArn(Aws::String&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::move(value); }
-    inline void SetParentTargetArn(const char* value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn.assign(value); }
-    inline CreateDeploymentRequest& WithParentTargetArn(const Aws::String& value) { SetParentTargetArn(value); return *this;}
-    inline CreateDeploymentRequest& WithParentTargetArn(Aws::String&& value) { SetParentTargetArn(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithParentTargetArn(const char* value) { SetParentTargetArn(value); return *this;}
+    template<typename ParentTargetArnT = Aws::String>
+    void SetParentTargetArn(ParentTargetArnT&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::forward<ParentTargetArnT>(value); }
+    template<typename ParentTargetArnT = Aws::String>
+    CreateDeploymentRequest& WithParentTargetArn(ParentTargetArnT&& value) { SetParentTargetArn(std::forward<ParentTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,19 +130,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
      * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDeploymentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateDeploymentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateDeploymentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDeploymentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDeploymentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDeploymentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDeploymentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDeploymentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDeploymentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateDeploymentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -163,14 +152,12 @@ namespace Model
      * caches from the previous request. IoT Greengrass V2 caches successful responses
      * for idempotent requests for up to 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateDeploymentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateDeploymentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateDeploymentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateDeploymentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

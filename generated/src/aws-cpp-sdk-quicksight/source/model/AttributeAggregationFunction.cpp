@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AttributeAggregationFunction::AttributeAggregationFunction() : 
-    m_simpleAttributeAggregation(SimpleAttributeAggregationFunction::NOT_SET),
-    m_simpleAttributeAggregationHasBeenSet(false),
-    m_valueForMultipleValuesHasBeenSet(false)
-{
-}
-
 AttributeAggregationFunction::AttributeAggregationFunction(JsonView jsonValue)
-  : AttributeAggregationFunction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AttributeAggregationFunction& AttributeAggregationFunction::operator =(JsonView 
   if(jsonValue.ValueExists("SimpleAttributeAggregation"))
   {
     m_simpleAttributeAggregation = SimpleAttributeAggregationFunctionMapper::GetSimpleAttributeAggregationFunctionForName(jsonValue.GetString("SimpleAttributeAggregation"));
-
     m_simpleAttributeAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueForMultipleValues"))
   {
     m_valueForMultipleValues = jsonValue.GetString("ValueForMultipleValues");
-
     m_valueForMultipleValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

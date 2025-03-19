@@ -35,7 +35,7 @@ namespace Model
   class ConfluenceBlogConfiguration
   {
   public:
-    AWS_KENDRA_API ConfluenceBlogConfiguration();
+    AWS_KENDRA_API ConfluenceBlogConfiguration() = default;
     AWS_KENDRA_API ConfluenceBlogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ConfluenceBlogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * <code>BlogFieldMappings</code> parameter, you must specify at least one field
      * mapping.</p>
      */
-    inline const Aws::Vector<ConfluenceBlogToIndexFieldMapping>& GetBlogFieldMappings() const{ return m_blogFieldMappings; }
+    inline const Aws::Vector<ConfluenceBlogToIndexFieldMapping>& GetBlogFieldMappings() const { return m_blogFieldMappings; }
     inline bool BlogFieldMappingsHasBeenSet() const { return m_blogFieldMappingsHasBeenSet; }
-    inline void SetBlogFieldMappings(const Aws::Vector<ConfluenceBlogToIndexFieldMapping>& value) { m_blogFieldMappingsHasBeenSet = true; m_blogFieldMappings = value; }
-    inline void SetBlogFieldMappings(Aws::Vector<ConfluenceBlogToIndexFieldMapping>&& value) { m_blogFieldMappingsHasBeenSet = true; m_blogFieldMappings = std::move(value); }
-    inline ConfluenceBlogConfiguration& WithBlogFieldMappings(const Aws::Vector<ConfluenceBlogToIndexFieldMapping>& value) { SetBlogFieldMappings(value); return *this;}
-    inline ConfluenceBlogConfiguration& WithBlogFieldMappings(Aws::Vector<ConfluenceBlogToIndexFieldMapping>&& value) { SetBlogFieldMappings(std::move(value)); return *this;}
-    inline ConfluenceBlogConfiguration& AddBlogFieldMappings(const ConfluenceBlogToIndexFieldMapping& value) { m_blogFieldMappingsHasBeenSet = true; m_blogFieldMappings.push_back(value); return *this; }
-    inline ConfluenceBlogConfiguration& AddBlogFieldMappings(ConfluenceBlogToIndexFieldMapping&& value) { m_blogFieldMappingsHasBeenSet = true; m_blogFieldMappings.push_back(std::move(value)); return *this; }
+    template<typename BlogFieldMappingsT = Aws::Vector<ConfluenceBlogToIndexFieldMapping>>
+    void SetBlogFieldMappings(BlogFieldMappingsT&& value) { m_blogFieldMappingsHasBeenSet = true; m_blogFieldMappings = std::forward<BlogFieldMappingsT>(value); }
+    template<typename BlogFieldMappingsT = Aws::Vector<ConfluenceBlogToIndexFieldMapping>>
+    ConfluenceBlogConfiguration& WithBlogFieldMappings(BlogFieldMappingsT&& value) { SetBlogFieldMappings(std::forward<BlogFieldMappingsT>(value)); return *this;}
+    template<typename BlogFieldMappingsT = ConfluenceBlogToIndexFieldMapping>
+    ConfluenceBlogConfiguration& AddBlogFieldMappings(BlogFieldMappingsT&& value) { m_blogFieldMappingsHasBeenSet = true; m_blogFieldMappings.emplace_back(std::forward<BlogFieldMappingsT>(value)); return *this; }
     ///@}
   private:
 

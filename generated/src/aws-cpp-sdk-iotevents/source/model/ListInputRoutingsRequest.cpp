@@ -12,14 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInputRoutingsRequest::ListInputRoutingsRequest() : 
-    m_inputIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListInputRoutingsRequest::SerializePayload() const
 {
   JsonValue payload;

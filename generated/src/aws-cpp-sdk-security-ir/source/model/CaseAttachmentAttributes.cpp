@@ -18,18 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-CaseAttachmentAttributes::CaseAttachmentAttributes() : 
-    m_attachmentIdHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_attachmentStatus(CaseAttachmentStatus::NOT_SET),
-    m_attachmentStatusHasBeenSet(false),
-    m_creatorHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
-{
-}
-
 CaseAttachmentAttributes::CaseAttachmentAttributes(JsonView jsonValue)
-  : CaseAttachmentAttributes()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CaseAttachmentAttributes& CaseAttachmentAttributes::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("attachmentId"))
   {
     m_attachmentId = jsonValue.GetString("attachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentStatus"))
   {
     m_attachmentStatus = CaseAttachmentStatusMapper::GetCaseAttachmentStatusForName(jsonValue.GetString("attachmentStatus"));
-
     m_attachmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creator"))
   {
     m_creator = jsonValue.GetString("creator");
-
     m_creatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class StartCostAllocationTagBackfillRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API StartCostAllocationTagBackfillRequest();
+    AWS_COSTEXPLORER_API StartCostAllocationTagBackfillRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * day of the month (a billing start date). Dates can't precede the previous twelve
      * months, or in the future.</p>
      */
-    inline const Aws::String& GetBackfillFrom() const{ return m_backfillFrom; }
+    inline const Aws::String& GetBackfillFrom() const { return m_backfillFrom; }
     inline bool BackfillFromHasBeenSet() const { return m_backfillFromHasBeenSet; }
-    inline void SetBackfillFrom(const Aws::String& value) { m_backfillFromHasBeenSet = true; m_backfillFrom = value; }
-    inline void SetBackfillFrom(Aws::String&& value) { m_backfillFromHasBeenSet = true; m_backfillFrom = std::move(value); }
-    inline void SetBackfillFrom(const char* value) { m_backfillFromHasBeenSet = true; m_backfillFrom.assign(value); }
-    inline StartCostAllocationTagBackfillRequest& WithBackfillFrom(const Aws::String& value) { SetBackfillFrom(value); return *this;}
-    inline StartCostAllocationTagBackfillRequest& WithBackfillFrom(Aws::String&& value) { SetBackfillFrom(std::move(value)); return *this;}
-    inline StartCostAllocationTagBackfillRequest& WithBackfillFrom(const char* value) { SetBackfillFrom(value); return *this;}
+    template<typename BackfillFromT = Aws::String>
+    void SetBackfillFrom(BackfillFromT&& value) { m_backfillFromHasBeenSet = true; m_backfillFrom = std::forward<BackfillFromT>(value); }
+    template<typename BackfillFromT = Aws::String>
+    StartCostAllocationTagBackfillRequest& WithBackfillFrom(BackfillFromT&& value) { SetBackfillFrom(std::forward<BackfillFromT>(value)); return *this;}
     ///@}
   private:
 

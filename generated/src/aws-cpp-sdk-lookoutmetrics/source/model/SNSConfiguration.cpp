@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-SNSConfiguration::SNSConfiguration() : 
-    m_roleArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsFormat(SnsFormat::NOT_SET),
-    m_snsFormatHasBeenSet(false)
-{
-}
-
 SNSConfiguration::SNSConfiguration(JsonView jsonValue)
-  : SNSConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SNSConfiguration& SNSConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsFormat"))
   {
     m_snsFormat = SnsFormatMapper::GetSnsFormatForName(jsonValue.GetString("SnsFormat"));
-
     m_snsFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

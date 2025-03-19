@@ -12,13 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcEndpointRequest::DeleteVpcEndpointRequest() : 
-    m_idHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteVpcEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-BucketLevel::BucketLevel() : 
-    m_activityMetricsHasBeenSet(false),
-    m_prefixLevelHasBeenSet(false),
-    m_advancedCostOptimizationMetricsHasBeenSet(false),
-    m_advancedDataProtectionMetricsHasBeenSet(false),
-    m_detailedStatusCodesMetricsHasBeenSet(false)
-{
-}
-
 BucketLevel::BucketLevel(const XmlNode& xmlNode)
-  : BucketLevel()
 {
   *this = xmlNode;
 }

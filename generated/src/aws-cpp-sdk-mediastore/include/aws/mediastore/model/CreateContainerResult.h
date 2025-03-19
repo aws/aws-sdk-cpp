@@ -28,7 +28,7 @@ namespace Model
   class CreateContainerResult
   {
   public:
-    AWS_MEDIASTORE_API CreateContainerResult();
+    AWS_MEDIASTORE_API CreateContainerResult() = default;
     AWS_MEDIASTORE_API CreateContainerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIASTORE_API CreateContainerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,28 +48,28 @@ namespace Model
      * include the container's endpoint. To make downstream requests, you must obtain
      * this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
      */
-    inline const Container& GetContainer() const{ return m_container; }
-    inline void SetContainer(const Container& value) { m_container = value; }
-    inline void SetContainer(Container&& value) { m_container = std::move(value); }
-    inline CreateContainerResult& WithContainer(const Container& value) { SetContainer(value); return *this;}
-    inline CreateContainerResult& WithContainer(Container&& value) { SetContainer(std::move(value)); return *this;}
+    inline const Container& GetContainer() const { return m_container; }
+    template<typename ContainerT = Container>
+    void SetContainer(ContainerT&& value) { m_containerHasBeenSet = true; m_container = std::forward<ContainerT>(value); }
+    template<typename ContainerT = Container>
+    CreateContainerResult& WithContainer(ContainerT&& value) { SetContainer(std::forward<ContainerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContainerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContainerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContainerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContainerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Container m_container;
+    bool m_containerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class CreateOpportunityRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API CreateOpportunityRequest();
+    AWS_PARTNERCENTRALSELLING_API CreateOpportunityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and
      * <code>Sandbox</code> for testing in secure, isolated environments.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline CreateOpportunityRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline CreateOpportunityRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline CreateOpportunityRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    CreateOpportunityRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +72,24 @@ namespace Model
      * API returns the following error: "Conflicting client token submitted for a new
      * request body."</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateOpportunityRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateOpportunityRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateOpportunityRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateOpportunityRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies customer details associated with the <code>Opportunity</code>.</p>
      */
-    inline const Customer& GetCustomer() const{ return m_customer; }
+    inline const Customer& GetCustomer() const { return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    inline void SetCustomer(const Customer& value) { m_customerHasBeenSet = true; m_customer = value; }
-    inline void SetCustomer(Customer&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
-    inline CreateOpportunityRequest& WithCustomer(const Customer& value) { SetCustomer(value); return *this;}
-    inline CreateOpportunityRequest& WithCustomer(Customer&& value) { SetCustomer(std::move(value)); return *this;}
+    template<typename CustomerT = Customer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = Customer>
+    CreateOpportunityRequest& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +97,12 @@ namespace Model
      * <p>An object that contains lifecycle details for the
      * <code>Opportunity</code>.</p>
      */
-    inline const LifeCycle& GetLifeCycle() const{ return m_lifeCycle; }
+    inline const LifeCycle& GetLifeCycle() const { return m_lifeCycle; }
     inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
-    inline void SetLifeCycle(const LifeCycle& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = value; }
-    inline void SetLifeCycle(LifeCycle&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::move(value); }
-    inline CreateOpportunityRequest& WithLifeCycle(const LifeCycle& value) { SetLifeCycle(value); return *this;}
-    inline CreateOpportunityRequest& WithLifeCycle(LifeCycle&& value) { SetLifeCycle(std::move(value)); return *this;}
+    template<typename LifeCycleT = LifeCycle>
+    void SetLifeCycle(LifeCycleT&& value) { m_lifeCycleHasBeenSet = true; m_lifeCycle = std::forward<LifeCycleT>(value); }
+    template<typename LifeCycleT = LifeCycle>
+    CreateOpportunityRequest& WithLifeCycle(LifeCycleT&& value) { SetLifeCycle(std::forward<LifeCycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +110,12 @@ namespace Model
      * <p>This object contains marketing details and is optional for an
      * opportunity.</p>
      */
-    inline const Marketing& GetMarketing() const{ return m_marketing; }
+    inline const Marketing& GetMarketing() const { return m_marketing; }
     inline bool MarketingHasBeenSet() const { return m_marketingHasBeenSet; }
-    inline void SetMarketing(const Marketing& value) { m_marketingHasBeenSet = true; m_marketing = value; }
-    inline void SetMarketing(Marketing&& value) { m_marketingHasBeenSet = true; m_marketing = std::move(value); }
-    inline CreateOpportunityRequest& WithMarketing(const Marketing& value) { SetMarketing(value); return *this;}
-    inline CreateOpportunityRequest& WithMarketing(Marketing&& value) { SetMarketing(std::move(value)); return *this;}
+    template<typename MarketingT = Marketing>
+    void SetMarketing(MarketingT&& value) { m_marketingHasBeenSet = true; m_marketing = std::forward<MarketingT>(value); }
+    template<typename MarketingT = Marketing>
+    CreateOpportunityRequest& WithMarketing(MarketingT&& value) { SetMarketing(std::forward<MarketingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +126,10 @@ namespace Model
      * measures apply during the review and management process for opportunities marked
      * as <code>NationalSecurity</code>.</p>
      */
-    inline const NationalSecurity& GetNationalSecurity() const{ return m_nationalSecurity; }
+    inline NationalSecurity GetNationalSecurity() const { return m_nationalSecurity; }
     inline bool NationalSecurityHasBeenSet() const { return m_nationalSecurityHasBeenSet; }
-    inline void SetNationalSecurity(const NationalSecurity& value) { m_nationalSecurityHasBeenSet = true; m_nationalSecurity = value; }
-    inline void SetNationalSecurity(NationalSecurity&& value) { m_nationalSecurityHasBeenSet = true; m_nationalSecurity = std::move(value); }
-    inline CreateOpportunityRequest& WithNationalSecurity(const NationalSecurity& value) { SetNationalSecurity(value); return *this;}
-    inline CreateOpportunityRequest& WithNationalSecurity(NationalSecurity&& value) { SetNationalSecurity(std::move(value)); return *this;}
+    inline void SetNationalSecurity(NationalSecurity value) { m_nationalSecurityHasBeenSet = true; m_nationalSecurity = value; }
+    inline CreateOpportunityRequest& WithNationalSecurity(NationalSecurity value) { SetNationalSecurity(value); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +137,14 @@ namespace Model
      * <p>Represents the internal team handling the opportunity. Specify collaborating
      * members of this opportunity who are within the partner's organization.</p>
      */
-    inline const Aws::Vector<Contact>& GetOpportunityTeam() const{ return m_opportunityTeam; }
+    inline const Aws::Vector<Contact>& GetOpportunityTeam() const { return m_opportunityTeam; }
     inline bool OpportunityTeamHasBeenSet() const { return m_opportunityTeamHasBeenSet; }
-    inline void SetOpportunityTeam(const Aws::Vector<Contact>& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam = value; }
-    inline void SetOpportunityTeam(Aws::Vector<Contact>&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam = std::move(value); }
-    inline CreateOpportunityRequest& WithOpportunityTeam(const Aws::Vector<Contact>& value) { SetOpportunityTeam(value); return *this;}
-    inline CreateOpportunityRequest& WithOpportunityTeam(Aws::Vector<Contact>&& value) { SetOpportunityTeam(std::move(value)); return *this;}
-    inline CreateOpportunityRequest& AddOpportunityTeam(const Contact& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam.push_back(value); return *this; }
-    inline CreateOpportunityRequest& AddOpportunityTeam(Contact&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam.push_back(std::move(value)); return *this; }
+    template<typename OpportunityTeamT = Aws::Vector<Contact>>
+    void SetOpportunityTeam(OpportunityTeamT&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam = std::forward<OpportunityTeamT>(value); }
+    template<typename OpportunityTeamT = Aws::Vector<Contact>>
+    CreateOpportunityRequest& WithOpportunityTeam(OpportunityTeamT&& value) { SetOpportunityTeam(std::forward<OpportunityTeamT>(value)); return *this;}
+    template<typename OpportunityTeamT = Contact>
+    CreateOpportunityRequest& AddOpportunityTeam(OpportunityTeamT&& value) { m_opportunityTeamHasBeenSet = true; m_opportunityTeam.emplace_back(std::forward<OpportunityTeamT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -165,12 +159,10 @@ namespace Model
      * contract or subscription, either by adding new services or increasing the volume
      * of existing services for a current customer.</p> </li> </ul>
      */
-    inline const OpportunityType& GetOpportunityType() const{ return m_opportunityType; }
+    inline OpportunityType GetOpportunityType() const { return m_opportunityType; }
     inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
-    inline void SetOpportunityType(const OpportunityType& value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
-    inline void SetOpportunityType(OpportunityType&& value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = std::move(value); }
-    inline CreateOpportunityRequest& WithOpportunityType(const OpportunityType& value) { SetOpportunityType(value); return *this;}
-    inline CreateOpportunityRequest& WithOpportunityType(OpportunityType&& value) { SetOpportunityType(std::move(value)); return *this;}
+    inline void SetOpportunityType(OpportunityType value) { m_opportunityTypeHasBeenSet = true; m_opportunityType = value; }
+    inline CreateOpportunityRequest& WithOpportunityType(OpportunityType value) { SetOpportunityType(value); return *this;}
     ///@}
 
     ///@{
@@ -183,12 +175,10 @@ namespace Model
      * creation. This allows Amazon Web Services-originated flows testing in the
      * sandbox catalog.</p>
      */
-    inline const OpportunityOrigin& GetOrigin() const{ return m_origin; }
+    inline OpportunityOrigin GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const OpportunityOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(OpportunityOrigin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline CreateOpportunityRequest& WithOrigin(const OpportunityOrigin& value) { SetOrigin(value); return *this;}
-    inline CreateOpportunityRequest& WithOrigin(OpportunityOrigin&& value) { SetOrigin(std::move(value)); return *this;}
+    inline void SetOrigin(OpportunityOrigin value) { m_originHasBeenSet = true; m_origin = value; }
+    inline CreateOpportunityRequest& WithOrigin(OpportunityOrigin value) { SetOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +190,12 @@ namespace Model
      * accurate synchronization between the Partner Central API and the partner's
      * internal systems.</p>
      */
-    inline const Aws::String& GetPartnerOpportunityIdentifier() const{ return m_partnerOpportunityIdentifier; }
+    inline const Aws::String& GetPartnerOpportunityIdentifier() const { return m_partnerOpportunityIdentifier; }
     inline bool PartnerOpportunityIdentifierHasBeenSet() const { return m_partnerOpportunityIdentifierHasBeenSet; }
-    inline void SetPartnerOpportunityIdentifier(const Aws::String& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = value; }
-    inline void SetPartnerOpportunityIdentifier(Aws::String&& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = std::move(value); }
-    inline void SetPartnerOpportunityIdentifier(const char* value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier.assign(value); }
-    inline CreateOpportunityRequest& WithPartnerOpportunityIdentifier(const Aws::String& value) { SetPartnerOpportunityIdentifier(value); return *this;}
-    inline CreateOpportunityRequest& WithPartnerOpportunityIdentifier(Aws::String&& value) { SetPartnerOpportunityIdentifier(std::move(value)); return *this;}
-    inline CreateOpportunityRequest& WithPartnerOpportunityIdentifier(const char* value) { SetPartnerOpportunityIdentifier(value); return *this;}
+    template<typename PartnerOpportunityIdentifierT = Aws::String>
+    void SetPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { m_partnerOpportunityIdentifierHasBeenSet = true; m_partnerOpportunityIdentifier = std::forward<PartnerOpportunityIdentifierT>(value); }
+    template<typename PartnerOpportunityIdentifierT = Aws::String>
+    CreateOpportunityRequest& WithPartnerOpportunityIdentifier(PartnerOpportunityIdentifierT&& value) { SetPartnerOpportunityIdentifier(std::forward<PartnerOpportunityIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,26 +221,25 @@ namespace Model
      * <li> <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public
      * sector where the partner needs Amazon Web Services RFx support.</p> </li> </ul>
      */
-    inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
+    inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const { return m_primaryNeedsFromAws; }
     inline bool PrimaryNeedsFromAwsHasBeenSet() const { return m_primaryNeedsFromAwsHasBeenSet; }
-    inline void SetPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws = value; }
-    inline void SetPrimaryNeedsFromAws(Aws::Vector<PrimaryNeedFromAws>&& value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws = std::move(value); }
-    inline CreateOpportunityRequest& WithPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { SetPrimaryNeedsFromAws(value); return *this;}
-    inline CreateOpportunityRequest& WithPrimaryNeedsFromAws(Aws::Vector<PrimaryNeedFromAws>&& value) { SetPrimaryNeedsFromAws(std::move(value)); return *this;}
-    inline CreateOpportunityRequest& AddPrimaryNeedsFromAws(const PrimaryNeedFromAws& value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws.push_back(value); return *this; }
-    inline CreateOpportunityRequest& AddPrimaryNeedsFromAws(PrimaryNeedFromAws&& value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws.push_back(std::move(value)); return *this; }
+    template<typename PrimaryNeedsFromAwsT = Aws::Vector<PrimaryNeedFromAws>>
+    void SetPrimaryNeedsFromAws(PrimaryNeedsFromAwsT&& value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws = std::forward<PrimaryNeedsFromAwsT>(value); }
+    template<typename PrimaryNeedsFromAwsT = Aws::Vector<PrimaryNeedFromAws>>
+    CreateOpportunityRequest& WithPrimaryNeedsFromAws(PrimaryNeedsFromAwsT&& value) { SetPrimaryNeedsFromAws(std::forward<PrimaryNeedsFromAwsT>(value)); return *this;}
+    inline CreateOpportunityRequest& AddPrimaryNeedsFromAws(PrimaryNeedFromAws value) { m_primaryNeedsFromAwsHasBeenSet = true; m_primaryNeedsFromAws.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An object that contains project details for the <code>Opportunity</code>.</p>
      */
-    inline const Project& GetProject() const{ return m_project; }
+    inline const Project& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Project& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Project&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline CreateOpportunityRequest& WithProject(const Project& value) { SetProject(value); return *this;}
-    inline CreateOpportunityRequest& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+    template<typename ProjectT = Project>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Project>
+    CreateOpportunityRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -260,12 +247,12 @@ namespace Model
      * <p>Specifies details of a customer's procurement terms. This is required only
      * for partners in eligible programs.</p>
      */
-    inline const SoftwareRevenue& GetSoftwareRevenue() const{ return m_softwareRevenue; }
+    inline const SoftwareRevenue& GetSoftwareRevenue() const { return m_softwareRevenue; }
     inline bool SoftwareRevenueHasBeenSet() const { return m_softwareRevenueHasBeenSet; }
-    inline void SetSoftwareRevenue(const SoftwareRevenue& value) { m_softwareRevenueHasBeenSet = true; m_softwareRevenue = value; }
-    inline void SetSoftwareRevenue(SoftwareRevenue&& value) { m_softwareRevenueHasBeenSet = true; m_softwareRevenue = std::move(value); }
-    inline CreateOpportunityRequest& WithSoftwareRevenue(const SoftwareRevenue& value) { SetSoftwareRevenue(value); return *this;}
-    inline CreateOpportunityRequest& WithSoftwareRevenue(SoftwareRevenue&& value) { SetSoftwareRevenue(std::move(value)); return *this;}
+    template<typename SoftwareRevenueT = SoftwareRevenue>
+    void SetSoftwareRevenue(SoftwareRevenueT&& value) { m_softwareRevenueHasBeenSet = true; m_softwareRevenue = std::forward<SoftwareRevenueT>(value); }
+    template<typename SoftwareRevenueT = SoftwareRevenue>
+    CreateOpportunityRequest& WithSoftwareRevenue(SoftwareRevenueT&& value) { SetSoftwareRevenue(std::forward<SoftwareRevenueT>(value)); return *this;}
     ///@}
   private:
 
@@ -284,16 +271,16 @@ namespace Model
     Marketing m_marketing;
     bool m_marketingHasBeenSet = false;
 
-    NationalSecurity m_nationalSecurity;
+    NationalSecurity m_nationalSecurity{NationalSecurity::NOT_SET};
     bool m_nationalSecurityHasBeenSet = false;
 
     Aws::Vector<Contact> m_opportunityTeam;
     bool m_opportunityTeamHasBeenSet = false;
 
-    OpportunityType m_opportunityType;
+    OpportunityType m_opportunityType{OpportunityType::NOT_SET};
     bool m_opportunityTypeHasBeenSet = false;
 
-    OpportunityOrigin m_origin;
+    OpportunityOrigin m_origin{OpportunityOrigin::NOT_SET};
     bool m_originHasBeenSet = false;
 
     Aws::String m_partnerOpportunityIdentifier;

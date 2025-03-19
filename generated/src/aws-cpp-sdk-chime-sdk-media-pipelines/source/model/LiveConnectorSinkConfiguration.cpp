@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration() : 
-    m_sinkType(LiveConnectorSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_rTMPConfigurationHasBeenSet(false)
-{
-}
-
 LiveConnectorSinkConfiguration::LiveConnectorSinkConfiguration(JsonView jsonValue)
-  : LiveConnectorSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LiveConnectorSinkConfiguration& LiveConnectorSinkConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("SinkType"))
   {
     m_sinkType = LiveConnectorSinkTypeMapper::GetLiveConnectorSinkTypeForName(jsonValue.GetString("SinkType"));
-
     m_sinkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RTMPConfiguration"))
   {
     m_rTMPConfiguration = jsonValue.GetObject("RTMPConfiguration");
-
     m_rTMPConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

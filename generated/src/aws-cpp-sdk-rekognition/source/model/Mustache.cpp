@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Mustache::Mustache() : 
-    m_value(false),
-    m_valueHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 Mustache::Mustache(JsonView jsonValue)
-  : Mustache()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Mustache& Mustache::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetBool("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

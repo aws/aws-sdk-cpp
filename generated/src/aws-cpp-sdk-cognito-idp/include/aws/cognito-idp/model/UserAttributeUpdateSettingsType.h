@@ -38,7 +38,7 @@ namespace Model
   class UserAttributeUpdateSettingsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,13 @@ namespace Model
      * that change attribute values can immediately update a user’s <code>email</code>
      * or <code>phone_number</code> attribute.</p>
      */
-    inline const Aws::Vector<VerifiedAttributeType>& GetAttributesRequireVerificationBeforeUpdate() const{ return m_attributesRequireVerificationBeforeUpdate; }
+    inline const Aws::Vector<VerifiedAttributeType>& GetAttributesRequireVerificationBeforeUpdate() const { return m_attributesRequireVerificationBeforeUpdate; }
     inline bool AttributesRequireVerificationBeforeUpdateHasBeenSet() const { return m_attributesRequireVerificationBeforeUpdateHasBeenSet; }
-    inline void SetAttributesRequireVerificationBeforeUpdate(const Aws::Vector<VerifiedAttributeType>& value) { m_attributesRequireVerificationBeforeUpdateHasBeenSet = true; m_attributesRequireVerificationBeforeUpdate = value; }
-    inline void SetAttributesRequireVerificationBeforeUpdate(Aws::Vector<VerifiedAttributeType>&& value) { m_attributesRequireVerificationBeforeUpdateHasBeenSet = true; m_attributesRequireVerificationBeforeUpdate = std::move(value); }
-    inline UserAttributeUpdateSettingsType& WithAttributesRequireVerificationBeforeUpdate(const Aws::Vector<VerifiedAttributeType>& value) { SetAttributesRequireVerificationBeforeUpdate(value); return *this;}
-    inline UserAttributeUpdateSettingsType& WithAttributesRequireVerificationBeforeUpdate(Aws::Vector<VerifiedAttributeType>&& value) { SetAttributesRequireVerificationBeforeUpdate(std::move(value)); return *this;}
-    inline UserAttributeUpdateSettingsType& AddAttributesRequireVerificationBeforeUpdate(const VerifiedAttributeType& value) { m_attributesRequireVerificationBeforeUpdateHasBeenSet = true; m_attributesRequireVerificationBeforeUpdate.push_back(value); return *this; }
-    inline UserAttributeUpdateSettingsType& AddAttributesRequireVerificationBeforeUpdate(VerifiedAttributeType&& value) { m_attributesRequireVerificationBeforeUpdateHasBeenSet = true; m_attributesRequireVerificationBeforeUpdate.push_back(std::move(value)); return *this; }
+    template<typename AttributesRequireVerificationBeforeUpdateT = Aws::Vector<VerifiedAttributeType>>
+    void SetAttributesRequireVerificationBeforeUpdate(AttributesRequireVerificationBeforeUpdateT&& value) { m_attributesRequireVerificationBeforeUpdateHasBeenSet = true; m_attributesRequireVerificationBeforeUpdate = std::forward<AttributesRequireVerificationBeforeUpdateT>(value); }
+    template<typename AttributesRequireVerificationBeforeUpdateT = Aws::Vector<VerifiedAttributeType>>
+    UserAttributeUpdateSettingsType& WithAttributesRequireVerificationBeforeUpdate(AttributesRequireVerificationBeforeUpdateT&& value) { SetAttributesRequireVerificationBeforeUpdate(std::forward<AttributesRequireVerificationBeforeUpdateT>(value)); return *this;}
+    inline UserAttributeUpdateSettingsType& AddAttributesRequireVerificationBeforeUpdate(VerifiedAttributeType value) { m_attributesRequireVerificationBeforeUpdateHasBeenSet = true; m_attributesRequireVerificationBeforeUpdate.push_back(value); return *this; }
     ///@}
   private:
 

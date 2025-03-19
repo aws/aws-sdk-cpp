@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ETag::ETag() : 
-    m_algorithm(ETagAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_source1HasBeenSet(false),
-    m_source2HasBeenSet(false)
-{
-}
-
 ETag::ETag(JsonView jsonValue)
-  : ETag()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ETag& ETag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("algorithm"))
   {
     m_algorithm = ETagAlgorithmMapper::GetETagAlgorithmForName(jsonValue.GetString("algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source1"))
   {
     m_source1 = jsonValue.GetString("source1");
-
     m_source1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source2"))
   {
     m_source2 = jsonValue.GetString("source2");
-
     m_source2HasBeenSet = true;
   }
-
   return *this;
 }
 

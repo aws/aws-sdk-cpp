@@ -43,7 +43,7 @@ namespace Model
   class EcrRepositoryConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API EcrRepositoryConfiguration();
+    AWS_ACCESSANALYZER_API EcrRepositoryConfiguration() = default;
     AWS_ACCESSANALYZER_API EcrRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API EcrRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
      * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
      */
-    inline const Aws::String& GetRepositoryPolicy() const{ return m_repositoryPolicy; }
+    inline const Aws::String& GetRepositoryPolicy() const { return m_repositoryPolicy; }
     inline bool RepositoryPolicyHasBeenSet() const { return m_repositoryPolicyHasBeenSet; }
-    inline void SetRepositoryPolicy(const Aws::String& value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy = value; }
-    inline void SetRepositoryPolicy(Aws::String&& value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy = std::move(value); }
-    inline void SetRepositoryPolicy(const char* value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy.assign(value); }
-    inline EcrRepositoryConfiguration& WithRepositoryPolicy(const Aws::String& value) { SetRepositoryPolicy(value); return *this;}
-    inline EcrRepositoryConfiguration& WithRepositoryPolicy(Aws::String&& value) { SetRepositoryPolicy(std::move(value)); return *this;}
-    inline EcrRepositoryConfiguration& WithRepositoryPolicy(const char* value) { SetRepositoryPolicy(value); return *this;}
+    template<typename RepositoryPolicyT = Aws::String>
+    void SetRepositoryPolicy(RepositoryPolicyT&& value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy = std::forward<RepositoryPolicyT>(value); }
+    template<typename RepositoryPolicyT = Aws::String>
+    EcrRepositoryConfiguration& WithRepositoryPolicy(RepositoryPolicyT&& value) { SetRepositoryPolicy(std::forward<RepositoryPolicyT>(value)); return *this;}
     ///@}
   private:
 

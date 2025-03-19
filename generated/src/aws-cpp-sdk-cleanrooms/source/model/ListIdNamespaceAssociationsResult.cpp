@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIdNamespaceAssociationsResult::ListIdNamespaceAssociationsResult()
-{
-}
-
 ListIdNamespaceAssociationsResult::ListIdNamespaceAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListIdNamespaceAssociationsResult& ListIdNamespaceAssociationsResult::operator =
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idNamespaceAssociationSummaries"))
   {
     Aws::Utils::Array<JsonView> idNamespaceAssociationSummariesJsonList = jsonValue.GetArray("idNamespaceAssociationSummaries");
@@ -42,14 +37,15 @@ ListIdNamespaceAssociationsResult& ListIdNamespaceAssociationsResult::operator =
     {
       m_idNamespaceAssociationSummaries.push_back(idNamespaceAssociationSummariesJsonList[idNamespaceAssociationSummariesIndex].AsObject());
     }
+    m_idNamespaceAssociationSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

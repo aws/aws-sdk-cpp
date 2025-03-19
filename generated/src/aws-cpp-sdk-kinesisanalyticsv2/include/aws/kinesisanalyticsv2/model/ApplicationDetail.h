@@ -41,7 +41,7 @@ namespace Model
   class ApplicationDetail
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationDetail();
+    AWS_KINESISANALYTICSV2_API ApplicationDetail() = default;
     AWS_KINESISANALYTICSV2_API ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,54 +51,46 @@ namespace Model
     /**
      * <p>The ARN of the application.</p>
      */
-    inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
+    inline const Aws::String& GetApplicationARN() const { return m_applicationARN; }
     inline bool ApplicationARNHasBeenSet() const { return m_applicationARNHasBeenSet; }
-    inline void SetApplicationARN(const Aws::String& value) { m_applicationARNHasBeenSet = true; m_applicationARN = value; }
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::move(value); }
-    inline void SetApplicationARN(const char* value) { m_applicationARNHasBeenSet = true; m_applicationARN.assign(value); }
-    inline ApplicationDetail& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-    inline ApplicationDetail& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    template<typename ApplicationARNT = Aws::String>
+    void SetApplicationARN(ApplicationARNT&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::forward<ApplicationARNT>(value); }
+    template<typename ApplicationARNT = Aws::String>
+    ApplicationDetail& WithApplicationARN(ApplicationARNT&& value) { SetApplicationARN(std::forward<ApplicationARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the application.</p>
      */
-    inline const Aws::String& GetApplicationDescription() const{ return m_applicationDescription; }
+    inline const Aws::String& GetApplicationDescription() const { return m_applicationDescription; }
     inline bool ApplicationDescriptionHasBeenSet() const { return m_applicationDescriptionHasBeenSet; }
-    inline void SetApplicationDescription(const Aws::String& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = value; }
-    inline void SetApplicationDescription(Aws::String&& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = std::move(value); }
-    inline void SetApplicationDescription(const char* value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription.assign(value); }
-    inline ApplicationDetail& WithApplicationDescription(const Aws::String& value) { SetApplicationDescription(value); return *this;}
-    inline ApplicationDetail& WithApplicationDescription(Aws::String&& value) { SetApplicationDescription(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationDescription(const char* value) { SetApplicationDescription(value); return *this;}
+    template<typename ApplicationDescriptionT = Aws::String>
+    void SetApplicationDescription(ApplicationDescriptionT&& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = std::forward<ApplicationDescriptionT>(value); }
+    template<typename ApplicationDescriptionT = Aws::String>
+    ApplicationDetail& WithApplicationDescription(ApplicationDescriptionT&& value) { SetApplicationDescription(std::forward<ApplicationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline ApplicationDetail& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline ApplicationDetail& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    ApplicationDetail& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime environment for the application.</p>
      */
-    inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
+    inline RuntimeEnvironment GetRuntimeEnvironment() const { return m_runtimeEnvironment; }
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
-    inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
-    inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
-    inline ApplicationDetail& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
-    inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
+    inline void SetRuntimeEnvironment(RuntimeEnvironment value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
+    inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment value) { SetRuntimeEnvironment(value); return *this;}
     ///@}
 
     ///@{
@@ -106,26 +98,22 @@ namespace Model
      * <p>Specifies the IAM role that the application uses to access external
      * resources.</p>
      */
-    inline const Aws::String& GetServiceExecutionRole() const{ return m_serviceExecutionRole; }
+    inline const Aws::String& GetServiceExecutionRole() const { return m_serviceExecutionRole; }
     inline bool ServiceExecutionRoleHasBeenSet() const { return m_serviceExecutionRoleHasBeenSet; }
-    inline void SetServiceExecutionRole(const Aws::String& value) { m_serviceExecutionRoleHasBeenSet = true; m_serviceExecutionRole = value; }
-    inline void SetServiceExecutionRole(Aws::String&& value) { m_serviceExecutionRoleHasBeenSet = true; m_serviceExecutionRole = std::move(value); }
-    inline void SetServiceExecutionRole(const char* value) { m_serviceExecutionRoleHasBeenSet = true; m_serviceExecutionRole.assign(value); }
-    inline ApplicationDetail& WithServiceExecutionRole(const Aws::String& value) { SetServiceExecutionRole(value); return *this;}
-    inline ApplicationDetail& WithServiceExecutionRole(Aws::String&& value) { SetServiceExecutionRole(std::move(value)); return *this;}
-    inline ApplicationDetail& WithServiceExecutionRole(const char* value) { SetServiceExecutionRole(value); return *this;}
+    template<typename ServiceExecutionRoleT = Aws::String>
+    void SetServiceExecutionRole(ServiceExecutionRoleT&& value) { m_serviceExecutionRoleHasBeenSet = true; m_serviceExecutionRole = std::forward<ServiceExecutionRoleT>(value); }
+    template<typename ServiceExecutionRoleT = Aws::String>
+    ApplicationDetail& WithServiceExecutionRole(ServiceExecutionRoleT&& value) { SetServiceExecutionRole(std::forward<ServiceExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the application.</p>
      */
-    inline const ApplicationStatus& GetApplicationStatus() const{ return m_applicationStatus; }
+    inline ApplicationStatus GetApplicationStatus() const { return m_applicationStatus; }
     inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
-    inline void SetApplicationStatus(const ApplicationStatus& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
-    inline void SetApplicationStatus(ApplicationStatus&& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = std::move(value); }
-    inline ApplicationDetail& WithApplicationStatus(const ApplicationStatus& value) { SetApplicationStatus(value); return *this;}
-    inline ApplicationDetail& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
+    inline void SetApplicationStatus(ApplicationStatus value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
+    inline ApplicationDetail& WithApplicationStatus(ApplicationStatus value) { SetApplicationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -134,7 +122,7 @@ namespace Model
      * updates the <code>ApplicationVersionId</code> each time you update the
      * application.</p>
      */
-    inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
+    inline long long GetApplicationVersionId() const { return m_applicationVersionId; }
     inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
     inline ApplicationDetail& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
@@ -144,24 +132,24 @@ namespace Model
     /**
      * <p>The current timestamp when the application was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreateTimestamp() const { return m_createTimestamp; }
     inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
-    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
-    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
-    inline ApplicationDetail& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
-    inline ApplicationDetail& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    void SetCreateTimestamp(CreateTimestampT&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::forward<CreateTimestampT>(value); }
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    ApplicationDetail& WithCreateTimestamp(CreateTimestampT&& value) { SetCreateTimestamp(std::forward<CreateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current timestamp when the application was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const { return m_lastUpdateTimestamp; }
     inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
-    inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
-    inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::move(value); }
-    inline ApplicationDetail& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
-    inline ApplicationDetail& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdateTimestamp(LastUpdateTimestampT&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::forward<LastUpdateTimestampT>(value); }
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    ApplicationDetail& WithLastUpdateTimestamp(LastUpdateTimestampT&& value) { SetLastUpdateTimestamp(std::forward<LastUpdateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,38 +157,38 @@ namespace Model
      * <p>Describes details about the application code and starting parameters for a
      * Managed Service for Apache Flink application.</p>
      */
-    inline const ApplicationConfigurationDescription& GetApplicationConfigurationDescription() const{ return m_applicationConfigurationDescription; }
+    inline const ApplicationConfigurationDescription& GetApplicationConfigurationDescription() const { return m_applicationConfigurationDescription; }
     inline bool ApplicationConfigurationDescriptionHasBeenSet() const { return m_applicationConfigurationDescriptionHasBeenSet; }
-    inline void SetApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = value; }
-    inline void SetApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = std::move(value); }
-    inline ApplicationDetail& WithApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { SetApplicationConfigurationDescription(value); return *this;}
-    inline ApplicationDetail& WithApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { SetApplicationConfigurationDescription(std::move(value)); return *this;}
+    template<typename ApplicationConfigurationDescriptionT = ApplicationConfigurationDescription>
+    void SetApplicationConfigurationDescription(ApplicationConfigurationDescriptionT&& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = std::forward<ApplicationConfigurationDescriptionT>(value); }
+    template<typename ApplicationConfigurationDescriptionT = ApplicationConfigurationDescription>
+    ApplicationDetail& WithApplicationConfigurationDescription(ApplicationConfigurationDescriptionT&& value) { SetApplicationConfigurationDescription(std::forward<ApplicationConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the application Amazon CloudWatch logging options.</p>
      */
-    inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
+    inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const { return m_cloudWatchLoggingOptionDescriptions; }
     inline bool CloudWatchLoggingOptionDescriptionsHasBeenSet() const { return m_cloudWatchLoggingOptionDescriptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = value; }
-    inline void SetCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = std::move(value); }
-    inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { SetCloudWatchLoggingOptionDescriptions(value); return *this;}
-    inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { SetCloudWatchLoggingOptionDescriptions(std::move(value)); return *this;}
-    inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(const CloudWatchLoggingOptionDescription& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(value); return *this; }
-    inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
+    template<typename CloudWatchLoggingOptionDescriptionsT = Aws::Vector<CloudWatchLoggingOptionDescription>>
+    void SetCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescriptionsT&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = std::forward<CloudWatchLoggingOptionDescriptionsT>(value); }
+    template<typename CloudWatchLoggingOptionDescriptionsT = Aws::Vector<CloudWatchLoggingOptionDescription>>
+    ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescriptionsT&& value) { SetCloudWatchLoggingOptionDescriptions(std::forward<CloudWatchLoggingOptionDescriptionsT>(value)); return *this;}
+    template<typename CloudWatchLoggingOptionDescriptionsT = CloudWatchLoggingOptionDescription>
+    ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescriptionsT&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.emplace_back(std::forward<CloudWatchLoggingOptionDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The details of the maintenance configuration for the application.</p>
      */
-    inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const{ return m_applicationMaintenanceConfigurationDescription; }
+    inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const { return m_applicationMaintenanceConfigurationDescription; }
     inline bool ApplicationMaintenanceConfigurationDescriptionHasBeenSet() const { return m_applicationMaintenanceConfigurationDescriptionHasBeenSet; }
-    inline void SetApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = value; }
-    inline void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = std::move(value); }
-    inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { SetApplicationMaintenanceConfigurationDescription(value); return *this;}
-    inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { SetApplicationMaintenanceConfigurationDescription(std::move(value)); return *this;}
+    template<typename ApplicationMaintenanceConfigurationDescriptionT = ApplicationMaintenanceConfigurationDescription>
+    void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionT&& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = std::forward<ApplicationMaintenanceConfigurationDescriptionT>(value); }
+    template<typename ApplicationMaintenanceConfigurationDescriptionT = ApplicationMaintenanceConfigurationDescription>
+    ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionT&& value) { SetApplicationMaintenanceConfigurationDescription(std::forward<ApplicationMaintenanceConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,7 +196,7 @@ namespace Model
      * <p>The previous application version before the latest application update.
      * <a>RollbackApplication</a> reverts the application to this version.</p>
      */
-    inline long long GetApplicationVersionUpdatedFrom() const{ return m_applicationVersionUpdatedFrom; }
+    inline long long GetApplicationVersionUpdatedFrom() const { return m_applicationVersionUpdatedFrom; }
     inline bool ApplicationVersionUpdatedFromHasBeenSet() const { return m_applicationVersionUpdatedFromHasBeenSet; }
     inline void SetApplicationVersionUpdatedFrom(long long value) { m_applicationVersionUpdatedFromHasBeenSet = true; m_applicationVersionUpdatedFrom = value; }
     inline ApplicationDetail& WithApplicationVersionUpdatedFrom(long long value) { SetApplicationVersionUpdatedFrom(value); return *this;}
@@ -219,7 +207,7 @@ namespace Model
      * <p>If you reverted the application using <a>RollbackApplication</a>, the
      * application version when <code>RollbackApplication</code> was called.</p>
      */
-    inline long long GetApplicationVersionRolledBackFrom() const{ return m_applicationVersionRolledBackFrom; }
+    inline long long GetApplicationVersionRolledBackFrom() const { return m_applicationVersionRolledBackFrom; }
     inline bool ApplicationVersionRolledBackFromHasBeenSet() const { return m_applicationVersionRolledBackFromHasBeenSet; }
     inline void SetApplicationVersionRolledBackFrom(long long value) { m_applicationVersionRolledBackFromHasBeenSet = true; m_applicationVersionRolledBackFrom = value; }
     inline ApplicationDetail& WithApplicationVersionRolledBackFrom(long long value) { SetApplicationVersionRolledBackFrom(value); return *this;}
@@ -229,33 +217,31 @@ namespace Model
     /**
      * The current timestamp when the application version was created.
      */
-    inline const Aws::Utils::DateTime& GetApplicationVersionCreateTimestamp() const{ return m_applicationVersionCreateTimestamp; }
+    inline const Aws::Utils::DateTime& GetApplicationVersionCreateTimestamp() const { return m_applicationVersionCreateTimestamp; }
     inline bool ApplicationVersionCreateTimestampHasBeenSet() const { return m_applicationVersionCreateTimestampHasBeenSet; }
-    inline void SetApplicationVersionCreateTimestamp(const Aws::Utils::DateTime& value) { m_applicationVersionCreateTimestampHasBeenSet = true; m_applicationVersionCreateTimestamp = value; }
-    inline void SetApplicationVersionCreateTimestamp(Aws::Utils::DateTime&& value) { m_applicationVersionCreateTimestampHasBeenSet = true; m_applicationVersionCreateTimestamp = std::move(value); }
-    inline ApplicationDetail& WithApplicationVersionCreateTimestamp(const Aws::Utils::DateTime& value) { SetApplicationVersionCreateTimestamp(value); return *this;}
-    inline ApplicationDetail& WithApplicationVersionCreateTimestamp(Aws::Utils::DateTime&& value) { SetApplicationVersionCreateTimestamp(std::move(value)); return *this;}
+    template<typename ApplicationVersionCreateTimestampT = Aws::Utils::DateTime>
+    void SetApplicationVersionCreateTimestamp(ApplicationVersionCreateTimestampT&& value) { m_applicationVersionCreateTimestampHasBeenSet = true; m_applicationVersionCreateTimestamp = std::forward<ApplicationVersionCreateTimestampT>(value); }
+    template<typename ApplicationVersionCreateTimestampT = Aws::Utils::DateTime>
+    ApplicationDetail& WithApplicationVersionCreateTimestamp(ApplicationVersionCreateTimestampT&& value) { SetApplicationVersionCreateTimestamp(std::forward<ApplicationVersionCreateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value you use to implement strong concurrency for application updates.</p>
      */
-    inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
+    inline const Aws::String& GetConditionalToken() const { return m_conditionalToken; }
     inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
-    inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
-    inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
-    inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
-    inline ApplicationDetail& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
-    inline ApplicationDetail& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
-    inline ApplicationDetail& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
+    template<typename ConditionalTokenT = Aws::String>
+    void SetConditionalToken(ConditionalTokenT&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::forward<ConditionalTokenT>(value); }
+    template<typename ConditionalTokenT = Aws::String>
+    ApplicationDetail& WithConditionalToken(ConditionalTokenT&& value) { SetConditionalToken(std::forward<ConditionalTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version to which you want to roll back the application.</p>
      */
-    inline long long GetApplicationVersionRolledBackTo() const{ return m_applicationVersionRolledBackTo; }
+    inline long long GetApplicationVersionRolledBackTo() const { return m_applicationVersionRolledBackTo; }
     inline bool ApplicationVersionRolledBackToHasBeenSet() const { return m_applicationVersionRolledBackToHasBeenSet; }
     inline void SetApplicationVersionRolledBackTo(long long value) { m_applicationVersionRolledBackToHasBeenSet = true; m_applicationVersionRolledBackTo = value; }
     inline ApplicationDetail& WithApplicationVersionRolledBackTo(long long value) { SetApplicationVersionRolledBackTo(value); return *this;}
@@ -267,12 +253,10 @@ namespace Model
      * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
      * Flink application, the mode is optional.</p>
      */
-    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+    inline ApplicationMode GetApplicationMode() const { return m_applicationMode; }
     inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
-    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
-    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
-    inline ApplicationDetail& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
-    inline ApplicationDetail& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
+    inline void SetApplicationMode(ApplicationMode value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+    inline ApplicationDetail& WithApplicationMode(ApplicationMode value) { SetApplicationMode(value); return *this;}
     ///@}
   private:
 
@@ -285,22 +269,22 @@ namespace Model
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet = false;
 
-    RuntimeEnvironment m_runtimeEnvironment;
+    RuntimeEnvironment m_runtimeEnvironment{RuntimeEnvironment::NOT_SET};
     bool m_runtimeEnvironmentHasBeenSet = false;
 
     Aws::String m_serviceExecutionRole;
     bool m_serviceExecutionRoleHasBeenSet = false;
 
-    ApplicationStatus m_applicationStatus;
+    ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
     bool m_applicationStatusHasBeenSet = false;
 
-    long long m_applicationVersionId;
+    long long m_applicationVersionId{0};
     bool m_applicationVersionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTimestamp;
+    Aws::Utils::DateTime m_createTimestamp{};
     bool m_createTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTimestamp;
+    Aws::Utils::DateTime m_lastUpdateTimestamp{};
     bool m_lastUpdateTimestampHasBeenSet = false;
 
     ApplicationConfigurationDescription m_applicationConfigurationDescription;
@@ -312,22 +296,22 @@ namespace Model
     ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
     bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
 
-    long long m_applicationVersionUpdatedFrom;
+    long long m_applicationVersionUpdatedFrom{0};
     bool m_applicationVersionUpdatedFromHasBeenSet = false;
 
-    long long m_applicationVersionRolledBackFrom;
+    long long m_applicationVersionRolledBackFrom{0};
     bool m_applicationVersionRolledBackFromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_applicationVersionCreateTimestamp;
+    Aws::Utils::DateTime m_applicationVersionCreateTimestamp{};
     bool m_applicationVersionCreateTimestampHasBeenSet = false;
 
     Aws::String m_conditionalToken;
     bool m_conditionalTokenHasBeenSet = false;
 
-    long long m_applicationVersionRolledBackTo;
+    long long m_applicationVersionRolledBackTo{0};
     bool m_applicationVersionRolledBackToHasBeenSet = false;
 
-    ApplicationMode m_applicationMode;
+    ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
     bool m_applicationModeHasBeenSet = false;
   };
 

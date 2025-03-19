@@ -34,7 +34,7 @@ namespace Model
   class RealTimeContactAnalysisSegmentPostContactSummary
   {
   public:
-    AWS_CONNECT_API RealTimeContactAnalysisSegmentPostContactSummary();
+    AWS_CONNECT_API RealTimeContactAnalysisSegmentPostContactSummary() = default;
     AWS_CONNECT_API RealTimeContactAnalysisSegmentPostContactSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RealTimeContactAnalysisSegmentPostContactSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The content of the summary.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    RealTimeContactAnalysisSegmentPostContactSummary& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the summary was successfully COMPLETED or FAILED to be generated.</p>
      */
-    inline const RealTimeContactAnalysisPostContactSummaryStatus& GetStatus() const{ return m_status; }
+    inline RealTimeContactAnalysisPostContactSummaryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RealTimeContactAnalysisPostContactSummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RealTimeContactAnalysisPostContactSummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithStatus(const RealTimeContactAnalysisPostContactSummaryStatus& value) { SetStatus(value); return *this;}
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithStatus(RealTimeContactAnalysisPostContactSummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RealTimeContactAnalysisPostContactSummaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RealTimeContactAnalysisSegmentPostContactSummary& WithStatus(RealTimeContactAnalysisPostContactSummaryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -81,22 +77,20 @@ namespace Model
      * that isn't supported by generative AI-powered post-contact summaries. </p> </li>
      * <li> <p> <code>INTERNAL_ERROR</code>: Internal system error.</p> </li> </ul>
      */
-    inline const RealTimeContactAnalysisPostContactSummaryFailureCode& GetFailureCode() const{ return m_failureCode; }
+    inline RealTimeContactAnalysisPostContactSummaryFailureCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const RealTimeContactAnalysisPostContactSummaryFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(RealTimeContactAnalysisPostContactSummaryFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithFailureCode(const RealTimeContactAnalysisPostContactSummaryFailureCode& value) { SetFailureCode(value); return *this;}
-    inline RealTimeContactAnalysisSegmentPostContactSummary& WithFailureCode(RealTimeContactAnalysisPostContactSummaryFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(RealTimeContactAnalysisPostContactSummaryFailureCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline RealTimeContactAnalysisSegmentPostContactSummary& WithFailureCode(RealTimeContactAnalysisPostContactSummaryFailureCode value) { SetFailureCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    RealTimeContactAnalysisPostContactSummaryStatus m_status;
+    RealTimeContactAnalysisPostContactSummaryStatus m_status{RealTimeContactAnalysisPostContactSummaryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    RealTimeContactAnalysisPostContactSummaryFailureCode m_failureCode;
+    RealTimeContactAnalysisPostContactSummaryFailureCode m_failureCode{RealTimeContactAnalysisPostContactSummaryFailureCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
   };
 

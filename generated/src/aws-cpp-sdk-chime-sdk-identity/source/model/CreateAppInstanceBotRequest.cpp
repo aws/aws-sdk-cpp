@@ -12,17 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppInstanceBotRequest::CreateAppInstanceBotRequest() : 
-    m_appInstanceArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppInstanceBotRequest::SerializePayload() const
 {
   JsonValue payload;

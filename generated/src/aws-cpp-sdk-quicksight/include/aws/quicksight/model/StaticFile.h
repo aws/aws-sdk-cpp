@@ -32,7 +32,7 @@ namespace Model
   class StaticFile
   {
   public:
-    AWS_QUICKSIGHT_API StaticFile();
+    AWS_QUICKSIGHT_API StaticFile() = default;
     AWS_QUICKSIGHT_API StaticFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API StaticFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The image static file.</p>
      */
-    inline const ImageStaticFile& GetImageStaticFile() const{ return m_imageStaticFile; }
+    inline const ImageStaticFile& GetImageStaticFile() const { return m_imageStaticFile; }
     inline bool ImageStaticFileHasBeenSet() const { return m_imageStaticFileHasBeenSet; }
-    inline void SetImageStaticFile(const ImageStaticFile& value) { m_imageStaticFileHasBeenSet = true; m_imageStaticFile = value; }
-    inline void SetImageStaticFile(ImageStaticFile&& value) { m_imageStaticFileHasBeenSet = true; m_imageStaticFile = std::move(value); }
-    inline StaticFile& WithImageStaticFile(const ImageStaticFile& value) { SetImageStaticFile(value); return *this;}
-    inline StaticFile& WithImageStaticFile(ImageStaticFile&& value) { SetImageStaticFile(std::move(value)); return *this;}
+    template<typename ImageStaticFileT = ImageStaticFile>
+    void SetImageStaticFile(ImageStaticFileT&& value) { m_imageStaticFileHasBeenSet = true; m_imageStaticFile = std::forward<ImageStaticFileT>(value); }
+    template<typename ImageStaticFileT = ImageStaticFile>
+    StaticFile& WithImageStaticFile(ImageStaticFileT&& value) { SetImageStaticFile(std::forward<ImageStaticFileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The spacial static file.</p>
      */
-    inline const SpatialStaticFile& GetSpatialStaticFile() const{ return m_spatialStaticFile; }
+    inline const SpatialStaticFile& GetSpatialStaticFile() const { return m_spatialStaticFile; }
     inline bool SpatialStaticFileHasBeenSet() const { return m_spatialStaticFileHasBeenSet; }
-    inline void SetSpatialStaticFile(const SpatialStaticFile& value) { m_spatialStaticFileHasBeenSet = true; m_spatialStaticFile = value; }
-    inline void SetSpatialStaticFile(SpatialStaticFile&& value) { m_spatialStaticFileHasBeenSet = true; m_spatialStaticFile = std::move(value); }
-    inline StaticFile& WithSpatialStaticFile(const SpatialStaticFile& value) { SetSpatialStaticFile(value); return *this;}
-    inline StaticFile& WithSpatialStaticFile(SpatialStaticFile&& value) { SetSpatialStaticFile(std::move(value)); return *this;}
+    template<typename SpatialStaticFileT = SpatialStaticFile>
+    void SetSpatialStaticFile(SpatialStaticFileT&& value) { m_spatialStaticFileHasBeenSet = true; m_spatialStaticFile = std::forward<SpatialStaticFileT>(value); }
+    template<typename SpatialStaticFileT = SpatialStaticFile>
+    StaticFile& WithSpatialStaticFile(SpatialStaticFileT&& value) { SetSpatialStaticFile(std::forward<SpatialStaticFileT>(value)); return *this;}
     ///@}
   private:
 

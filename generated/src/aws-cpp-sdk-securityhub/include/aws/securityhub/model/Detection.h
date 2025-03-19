@@ -38,7 +38,7 @@ namespace Model
   class Detection
   {
   public:
-    AWS_SECURITYHUB_API Detection();
+    AWS_SECURITYHUB_API Detection() = default;
     AWS_SECURITYHUB_API Detection(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Detection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
     /**
      * <p> Provides details about an attack sequence. </p>
      */
-    inline const Sequence& GetSequence() const{ return m_sequence; }
+    inline const Sequence& GetSequence() const { return m_sequence; }
     inline bool SequenceHasBeenSet() const { return m_sequenceHasBeenSet; }
-    inline void SetSequence(const Sequence& value) { m_sequenceHasBeenSet = true; m_sequence = value; }
-    inline void SetSequence(Sequence&& value) { m_sequenceHasBeenSet = true; m_sequence = std::move(value); }
-    inline Detection& WithSequence(const Sequence& value) { SetSequence(value); return *this;}
-    inline Detection& WithSequence(Sequence&& value) { SetSequence(std::move(value)); return *this;}
+    template<typename SequenceT = Sequence>
+    void SetSequence(SequenceT&& value) { m_sequenceHasBeenSet = true; m_sequence = std::forward<SequenceT>(value); }
+    template<typename SequenceT = Sequence>
+    Detection& WithSequence(SequenceT&& value) { SetSequence(std::forward<SequenceT>(value)); return *this;}
     ///@}
   private:
 

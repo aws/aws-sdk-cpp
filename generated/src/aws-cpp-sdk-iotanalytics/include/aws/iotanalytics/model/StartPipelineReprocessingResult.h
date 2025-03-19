@@ -27,7 +27,7 @@ namespace Model
   class StartPipelineReprocessingResult
   {
   public:
-    AWS_IOTANALYTICS_API StartPipelineReprocessingResult();
+    AWS_IOTANALYTICS_API StartPipelineReprocessingResult() = default;
     AWS_IOTANALYTICS_API StartPipelineReprocessingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTANALYTICS_API StartPipelineReprocessingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ID of the pipeline reprocessing activity that was started.</p>
      */
-    inline const Aws::String& GetReprocessingId() const{ return m_reprocessingId; }
-    inline void SetReprocessingId(const Aws::String& value) { m_reprocessingId = value; }
-    inline void SetReprocessingId(Aws::String&& value) { m_reprocessingId = std::move(value); }
-    inline void SetReprocessingId(const char* value) { m_reprocessingId.assign(value); }
-    inline StartPipelineReprocessingResult& WithReprocessingId(const Aws::String& value) { SetReprocessingId(value); return *this;}
-    inline StartPipelineReprocessingResult& WithReprocessingId(Aws::String&& value) { SetReprocessingId(std::move(value)); return *this;}
-    inline StartPipelineReprocessingResult& WithReprocessingId(const char* value) { SetReprocessingId(value); return *this;}
+    inline const Aws::String& GetReprocessingId() const { return m_reprocessingId; }
+    template<typename ReprocessingIdT = Aws::String>
+    void SetReprocessingId(ReprocessingIdT&& value) { m_reprocessingIdHasBeenSet = true; m_reprocessingId = std::forward<ReprocessingIdT>(value); }
+    template<typename ReprocessingIdT = Aws::String>
+    StartPipelineReprocessingResult& WithReprocessingId(ReprocessingIdT&& value) { SetReprocessingId(std::forward<ReprocessingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartPipelineReprocessingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartPipelineReprocessingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartPipelineReprocessingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartPipelineReprocessingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reprocessingId;
+    bool m_reprocessingIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

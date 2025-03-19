@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TotalLocalStorageGB::TotalLocalStorageGB() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 TotalLocalStorageGB::TotalLocalStorageGB(const XmlNode& xmlNode)
-  : TotalLocalStorageGB()
 {
   *this = xmlNode;
 }

@@ -36,7 +36,7 @@ namespace Model
   class AvailSuppression
   {
   public:
-    AWS_MEDIATAILOR_API AvailSuppression();
+    AWS_MEDIATAILOR_API AvailSuppression() = default;
     AWS_MEDIATAILOR_API AvailSuppression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AvailSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * suppression is active and MediaTailor won't fill ad breaks that are within the
      * live edge plus the avail suppression value.</p>
      */
-    inline const Mode& GetMode() const{ return m_mode; }
+    inline Mode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline AvailSuppression& WithMode(const Mode& value) { SetMode(value); return *this;}
-    inline AvailSuppression& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(Mode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline AvailSuppression& WithMode(Mode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
      * behind the live edge.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AvailSuppression& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AvailSuppression& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AvailSuppression& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AvailSuppression& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,22 +84,20 @@ namespace Model
      * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
      * when a session starts mid-break.</p>
      */
-    inline const FillPolicy& GetFillPolicy() const{ return m_fillPolicy; }
+    inline FillPolicy GetFillPolicy() const { return m_fillPolicy; }
     inline bool FillPolicyHasBeenSet() const { return m_fillPolicyHasBeenSet; }
-    inline void SetFillPolicy(const FillPolicy& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = value; }
-    inline void SetFillPolicy(FillPolicy&& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = std::move(value); }
-    inline AvailSuppression& WithFillPolicy(const FillPolicy& value) { SetFillPolicy(value); return *this;}
-    inline AvailSuppression& WithFillPolicy(FillPolicy&& value) { SetFillPolicy(std::move(value)); return *this;}
+    inline void SetFillPolicy(FillPolicy value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = value; }
+    inline AvailSuppression& WithFillPolicy(FillPolicy value) { SetFillPolicy(value); return *this;}
     ///@}
   private:
 
-    Mode m_mode;
+    Mode m_mode{Mode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    FillPolicy m_fillPolicy;
+    FillPolicy m_fillPolicy{FillPolicy::NOT_SET};
     bool m_fillPolicyHasBeenSet = false;
   };
 

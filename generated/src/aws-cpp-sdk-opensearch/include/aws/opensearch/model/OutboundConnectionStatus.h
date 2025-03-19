@@ -33,7 +33,7 @@ namespace Model
   class OutboundConnectionStatus
   {
   public:
-    AWS_OPENSEARCHSERVICE_API OutboundConnectionStatus();
+    AWS_OPENSEARCHSERVICE_API OutboundConnectionStatus() = default;
     AWS_OPENSEARCHSERVICE_API OutboundConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API OutboundConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,30 +56,26 @@ namespace Model
      * Outbound connection deletion is in progress.</p> </li> <li> <p> <b>DELETED</b> -
      * Outbound connection is deleted and can no longer be used.</p> </li> </ul>
      */
-    inline const OutboundConnectionStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline OutboundConnectionStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const OutboundConnectionStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(OutboundConnectionStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline OutboundConnectionStatus& WithStatusCode(const OutboundConnectionStatusCode& value) { SetStatusCode(value); return *this;}
-    inline OutboundConnectionStatus& WithStatusCode(OutboundConnectionStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(OutboundConnectionStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline OutboundConnectionStatus& WithStatusCode(OutboundConnectionStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Verbose information for the outbound connection.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline OutboundConnectionStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline OutboundConnectionStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline OutboundConnectionStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    OutboundConnectionStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    OutboundConnectionStatusCode m_statusCode;
+    OutboundConnectionStatusCode m_statusCode{OutboundConnectionStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;

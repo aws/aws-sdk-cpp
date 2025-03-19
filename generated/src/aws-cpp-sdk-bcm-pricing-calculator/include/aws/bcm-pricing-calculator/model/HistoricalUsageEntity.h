@@ -34,7 +34,7 @@ namespace Model
   class HistoricalUsageEntity
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API HistoricalUsageEntity();
+    AWS_BCMPRICINGCALCULATOR_API HistoricalUsageEntity() = default;
     AWS_BCMPRICINGCALCULATOR_API HistoricalUsageEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API HistoricalUsageEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,94 +44,84 @@ namespace Model
     /**
      * <p> The Amazon Web Services service code associated with the usage. </p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline HistoricalUsageEntity& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline HistoricalUsageEntity& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline HistoricalUsageEntity& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    HistoricalUsageEntity& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of usage. </p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline HistoricalUsageEntity& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline HistoricalUsageEntity& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline HistoricalUsageEntity& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    HistoricalUsageEntity& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The specific operation associated with the usage. </p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline HistoricalUsageEntity& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline HistoricalUsageEntity& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline HistoricalUsageEntity& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    HistoricalUsageEntity& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The location associated with the usage. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline HistoricalUsageEntity& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline HistoricalUsageEntity& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline HistoricalUsageEntity& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    HistoricalUsageEntity& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Web Services account ID associated with the usage. </p>
      */
-    inline const Aws::String& GetUsageAccountId() const{ return m_usageAccountId; }
+    inline const Aws::String& GetUsageAccountId() const { return m_usageAccountId; }
     inline bool UsageAccountIdHasBeenSet() const { return m_usageAccountIdHasBeenSet; }
-    inline void SetUsageAccountId(const Aws::String& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = value; }
-    inline void SetUsageAccountId(Aws::String&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::move(value); }
-    inline void SetUsageAccountId(const char* value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId.assign(value); }
-    inline HistoricalUsageEntity& WithUsageAccountId(const Aws::String& value) { SetUsageAccountId(value); return *this;}
-    inline HistoricalUsageEntity& WithUsageAccountId(Aws::String&& value) { SetUsageAccountId(std::move(value)); return *this;}
-    inline HistoricalUsageEntity& WithUsageAccountId(const char* value) { SetUsageAccountId(value); return *this;}
+    template<typename UsageAccountIdT = Aws::String>
+    void SetUsageAccountId(UsageAccountIdT&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::forward<UsageAccountIdT>(value); }
+    template<typename UsageAccountIdT = Aws::String>
+    HistoricalUsageEntity& WithUsageAccountId(UsageAccountIdT&& value) { SetUsageAccountId(std::forward<UsageAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time interval for the historical usage data. </p>
      */
-    inline const BillInterval& GetBillInterval() const{ return m_billInterval; }
+    inline const BillInterval& GetBillInterval() const { return m_billInterval; }
     inline bool BillIntervalHasBeenSet() const { return m_billIntervalHasBeenSet; }
-    inline void SetBillInterval(const BillInterval& value) { m_billIntervalHasBeenSet = true; m_billInterval = value; }
-    inline void SetBillInterval(BillInterval&& value) { m_billIntervalHasBeenSet = true; m_billInterval = std::move(value); }
-    inline HistoricalUsageEntity& WithBillInterval(const BillInterval& value) { SetBillInterval(value); return *this;}
-    inline HistoricalUsageEntity& WithBillInterval(BillInterval&& value) { SetBillInterval(std::move(value)); return *this;}
+    template<typename BillIntervalT = BillInterval>
+    void SetBillInterval(BillIntervalT&& value) { m_billIntervalHasBeenSet = true; m_billInterval = std::forward<BillIntervalT>(value); }
+    template<typename BillIntervalT = BillInterval>
+    HistoricalUsageEntity& WithBillInterval(BillIntervalT&& value) { SetBillInterval(std::forward<BillIntervalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An optional filter expression to apply to the historical usage data. </p>
      */
-    inline const Expression& GetFilterExpression() const{ return m_filterExpression; }
+    inline const Expression& GetFilterExpression() const { return m_filterExpression; }
     inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
-    inline void SetFilterExpression(const Expression& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
-    inline void SetFilterExpression(Expression&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::move(value); }
-    inline HistoricalUsageEntity& WithFilterExpression(const Expression& value) { SetFilterExpression(value); return *this;}
-    inline HistoricalUsageEntity& WithFilterExpression(Expression&& value) { SetFilterExpression(std::move(value)); return *this;}
+    template<typename FilterExpressionT = Expression>
+    void SetFilterExpression(FilterExpressionT&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = std::forward<FilterExpressionT>(value); }
+    template<typename FilterExpressionT = Expression>
+    HistoricalUsageEntity& WithFilterExpression(FilterExpressionT&& value) { SetFilterExpression(std::forward<FilterExpressionT>(value)); return *this;}
     ///@}
   private:
 

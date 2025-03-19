@@ -36,7 +36,7 @@ namespace Model
   class EmptyVisual
   {
   public:
-    AWS_QUICKSIGHT_API EmptyVisual();
+    AWS_QUICKSIGHT_API EmptyVisual() = default;
     AWS_QUICKSIGHT_API EmptyVisual(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API EmptyVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * context of a dashboard, template, or analysis. Two dashboards, analyses, or
      * templates can have visuals with the same identifiers.</p>
      */
-    inline const Aws::String& GetVisualId() const{ return m_visualId; }
+    inline const Aws::String& GetVisualId() const { return m_visualId; }
     inline bool VisualIdHasBeenSet() const { return m_visualIdHasBeenSet; }
-    inline void SetVisualId(const Aws::String& value) { m_visualIdHasBeenSet = true; m_visualId = value; }
-    inline void SetVisualId(Aws::String&& value) { m_visualIdHasBeenSet = true; m_visualId = std::move(value); }
-    inline void SetVisualId(const char* value) { m_visualIdHasBeenSet = true; m_visualId.assign(value); }
-    inline EmptyVisual& WithVisualId(const Aws::String& value) { SetVisualId(value); return *this;}
-    inline EmptyVisual& WithVisualId(Aws::String&& value) { SetVisualId(std::move(value)); return *this;}
-    inline EmptyVisual& WithVisualId(const char* value) { SetVisualId(value); return *this;}
+    template<typename VisualIdT = Aws::String>
+    void SetVisualId(VisualIdT&& value) { m_visualIdHasBeenSet = true; m_visualId = std::forward<VisualIdT>(value); }
+    template<typename VisualIdT = Aws::String>
+    EmptyVisual& WithVisualId(VisualIdT&& value) { SetVisualId(std::forward<VisualIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,28 +61,26 @@ namespace Model
      * <p>The data set that is used in the empty visual. Every visual requires a
      * dataset to render.</p>
      */
-    inline const Aws::String& GetDataSetIdentifier() const{ return m_dataSetIdentifier; }
+    inline const Aws::String& GetDataSetIdentifier() const { return m_dataSetIdentifier; }
     inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
-    inline void SetDataSetIdentifier(const Aws::String& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = value; }
-    inline void SetDataSetIdentifier(Aws::String&& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = std::move(value); }
-    inline void SetDataSetIdentifier(const char* value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier.assign(value); }
-    inline EmptyVisual& WithDataSetIdentifier(const Aws::String& value) { SetDataSetIdentifier(value); return *this;}
-    inline EmptyVisual& WithDataSetIdentifier(Aws::String&& value) { SetDataSetIdentifier(std::move(value)); return *this;}
-    inline EmptyVisual& WithDataSetIdentifier(const char* value) { SetDataSetIdentifier(value); return *this;}
+    template<typename DataSetIdentifierT = Aws::String>
+    void SetDataSetIdentifier(DataSetIdentifierT&& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = std::forward<DataSetIdentifierT>(value); }
+    template<typename DataSetIdentifierT = Aws::String>
+    EmptyVisual& WithDataSetIdentifier(DataSetIdentifierT&& value) { SetDataSetIdentifier(std::forward<DataSetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of custom actions that are configured for a visual.</p>
      */
-    inline const Aws::Vector<VisualCustomAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<VisualCustomAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<VisualCustomAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<VisualCustomAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline EmptyVisual& WithActions(const Aws::Vector<VisualCustomAction>& value) { SetActions(value); return *this;}
-    inline EmptyVisual& WithActions(Aws::Vector<VisualCustomAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline EmptyVisual& AddActions(const VisualCustomAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline EmptyVisual& AddActions(VisualCustomAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<VisualCustomAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<VisualCustomAction>>
+    EmptyVisual& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = VisualCustomAction>
+    EmptyVisual& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 

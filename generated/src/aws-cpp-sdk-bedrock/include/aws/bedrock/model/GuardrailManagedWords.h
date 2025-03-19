@@ -33,7 +33,7 @@ namespace Model
   class GuardrailManagedWords
   {
   public:
-    AWS_BEDROCK_API GuardrailManagedWords();
+    AWS_BEDROCK_API GuardrailManagedWords() = default;
     AWS_BEDROCK_API GuardrailManagedWords(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailManagedWords& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * <p>ManagedWords$type The managed word type that was configured for the
      * guardrail. (For now, we only offer profanity word list)</p>
      */
-    inline const GuardrailManagedWordsType& GetType() const{ return m_type; }
+    inline GuardrailManagedWordsType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GuardrailManagedWordsType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GuardrailManagedWordsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GuardrailManagedWords& WithType(const GuardrailManagedWordsType& value) { SetType(value); return *this;}
-    inline GuardrailManagedWords& WithType(GuardrailManagedWordsType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GuardrailManagedWordsType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailManagedWords& WithType(GuardrailManagedWordsType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    GuardrailManagedWordsType m_type;
+    GuardrailManagedWordsType m_type{GuardrailManagedWordsType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPolicyRequest::GetPolicyRequest() : 
-    m_policyIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

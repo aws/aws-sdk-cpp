@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ApiConfiguration::ApiConfiguration() : 
-    m_graphQLConfigHasBeenSet(false),
-    m_dataStoreConfigHasBeenSet(false),
-    m_noApiConfigHasBeenSet(false)
-{
-}
-
 ApiConfiguration::ApiConfiguration(JsonView jsonValue)
-  : ApiConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ApiConfiguration& ApiConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("graphQLConfig"))
   {
     m_graphQLConfig = jsonValue.GetObject("graphQLConfig");
-
     m_graphQLConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataStoreConfig"))
   {
     m_dataStoreConfig = jsonValue.GetObject("dataStoreConfig");
-
     m_dataStoreConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noApiConfig"))
   {
     m_noApiConfig = jsonValue.GetObject("noApiConfig");
-
     m_noApiConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

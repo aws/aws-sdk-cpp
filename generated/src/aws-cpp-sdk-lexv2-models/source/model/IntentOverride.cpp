@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentOverride::IntentOverride() : 
-    m_nameHasBeenSet(false),
-    m_slotsHasBeenSet(false)
-{
-}
-
 IntentOverride::IntentOverride(JsonView jsonValue)
-  : IntentOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IntentOverride& IntentOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slots"))
   {
     Aws::Map<Aws::String, JsonView> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
@@ -48,7 +39,6 @@ IntentOverride& IntentOverride::operator =(JsonView jsonValue)
     }
     m_slotsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class DimensionValues
   {
   public:
-    AWS_FREETIER_API DimensionValues();
+    AWS_FREETIER_API DimensionValues() = default;
     AWS_FREETIER_API DimensionValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_FREETIER_API DimensionValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FREETIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The name of the dimension that you want to filter on.</p>
      */
-    inline const Dimension& GetKey() const{ return m_key; }
+    inline Dimension GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Dimension& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Dimension&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline DimensionValues& WithKey(const Dimension& value) { SetKey(value); return *this;}
-    inline DimensionValues& WithKey(Dimension&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(Dimension value) { m_keyHasBeenSet = true; m_key = value; }
+    inline DimensionValues& WithKey(Dimension value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,13 @@ namespace Model
      * <p>The match options that you can use to filter your results. You can specify
      * only one of these values in the array.</p>
      */
-    inline const Aws::Vector<MatchOption>& GetMatchOptions() const{ return m_matchOptions; }
+    inline const Aws::Vector<MatchOption>& GetMatchOptions() const { return m_matchOptions; }
     inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
-    inline void SetMatchOptions(const Aws::Vector<MatchOption>& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = value; }
-    inline void SetMatchOptions(Aws::Vector<MatchOption>&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::move(value); }
-    inline DimensionValues& WithMatchOptions(const Aws::Vector<MatchOption>& value) { SetMatchOptions(value); return *this;}
-    inline DimensionValues& WithMatchOptions(Aws::Vector<MatchOption>&& value) { SetMatchOptions(std::move(value)); return *this;}
-    inline DimensionValues& AddMatchOptions(const MatchOption& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
-    inline DimensionValues& AddMatchOptions(MatchOption&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(std::move(value)); return *this; }
+    template<typename MatchOptionsT = Aws::Vector<MatchOption>>
+    void SetMatchOptions(MatchOptionsT&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::forward<MatchOptionsT>(value); }
+    template<typename MatchOptionsT = Aws::Vector<MatchOption>>
+    DimensionValues& WithMatchOptions(MatchOptionsT&& value) { SetMatchOptions(std::forward<MatchOptionsT>(value)); return *this;}
+    inline DimensionValues& AddMatchOptions(MatchOption value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -73,19 +70,18 @@ namespace Model
      * <p>The metadata values you can specify to filter upon, so that the results all
      * match at least one of the specified values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DimensionValues& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DimensionValues& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DimensionValues& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DimensionValues& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DimensionValues& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DimensionValues& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DimensionValues& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    Dimension m_key;
+    Dimension m_key{Dimension::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<MatchOption> m_matchOptions;

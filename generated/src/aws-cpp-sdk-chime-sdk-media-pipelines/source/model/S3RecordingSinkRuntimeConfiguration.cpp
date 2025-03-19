@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-S3RecordingSinkRuntimeConfiguration::S3RecordingSinkRuntimeConfiguration() : 
-    m_destinationHasBeenSet(false),
-    m_recordingFileFormat(RecordingFileFormat::NOT_SET),
-    m_recordingFileFormatHasBeenSet(false)
-{
-}
-
 S3RecordingSinkRuntimeConfiguration::S3RecordingSinkRuntimeConfiguration(JsonView jsonValue)
-  : S3RecordingSinkRuntimeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3RecordingSinkRuntimeConfiguration& S3RecordingSinkRuntimeConfiguration::operat
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordingFileFormat"))
   {
     m_recordingFileFormat = RecordingFileFormatMapper::GetRecordingFileFormatForName(jsonValue.GetString("RecordingFileFormat"));
-
     m_recordingFileFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

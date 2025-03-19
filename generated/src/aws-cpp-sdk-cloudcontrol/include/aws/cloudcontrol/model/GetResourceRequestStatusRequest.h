@@ -21,7 +21,7 @@ namespace Model
   class GetResourceRequestStatusRequest : public CloudControlApiRequest
   {
   public:
-    AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusRequest();
+    AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * request.</p> <p>Request tokens are included in the <code>ProgressEvent</code>
      * type returned by a resource operation request.</p>
      */
-    inline const Aws::String& GetRequestToken() const{ return m_requestToken; }
+    inline const Aws::String& GetRequestToken() const { return m_requestToken; }
     inline bool RequestTokenHasBeenSet() const { return m_requestTokenHasBeenSet; }
-    inline void SetRequestToken(const Aws::String& value) { m_requestTokenHasBeenSet = true; m_requestToken = value; }
-    inline void SetRequestToken(Aws::String&& value) { m_requestTokenHasBeenSet = true; m_requestToken = std::move(value); }
-    inline void SetRequestToken(const char* value) { m_requestTokenHasBeenSet = true; m_requestToken.assign(value); }
-    inline GetResourceRequestStatusRequest& WithRequestToken(const Aws::String& value) { SetRequestToken(value); return *this;}
-    inline GetResourceRequestStatusRequest& WithRequestToken(Aws::String&& value) { SetRequestToken(std::move(value)); return *this;}
-    inline GetResourceRequestStatusRequest& WithRequestToken(const char* value) { SetRequestToken(value); return *this;}
+    template<typename RequestTokenT = Aws::String>
+    void SetRequestToken(RequestTokenT&& value) { m_requestTokenHasBeenSet = true; m_requestToken = std::forward<RequestTokenT>(value); }
+    template<typename RequestTokenT = Aws::String>
+    GetResourceRequestStatusRequest& WithRequestToken(RequestTokenT&& value) { SetRequestToken(std::forward<RequestTokenT>(value)); return *this;}
     ///@}
   private:
 

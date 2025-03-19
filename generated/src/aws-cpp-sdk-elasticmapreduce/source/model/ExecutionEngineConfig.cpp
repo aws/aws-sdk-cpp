@@ -18,17 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ExecutionEngineConfig::ExecutionEngineConfig() : 
-    m_idHasBeenSet(false),
-    m_type(ExecutionEngineType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_masterInstanceSecurityGroupIdHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
-{
-}
-
 ExecutionEngineConfig::ExecutionEngineConfig(JsonView jsonValue)
-  : ExecutionEngineConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ExecutionEngineConfig& ExecutionEngineConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ExecutionEngineTypeMapper::GetExecutionEngineTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterInstanceSecurityGroupId"))
   {
     m_masterInstanceSecurityGroupId = jsonValue.GetString("MasterInstanceSecurityGroupId");
-
     m_masterInstanceSecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

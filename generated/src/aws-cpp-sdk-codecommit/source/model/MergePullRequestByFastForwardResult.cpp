@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MergePullRequestByFastForwardResult::MergePullRequestByFastForwardResult()
-{
-}
-
 MergePullRequestByFastForwardResult::MergePullRequestByFastForwardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ MergePullRequestByFastForwardResult& MergePullRequestByFastForwardResult::operat
   if(jsonValue.ValueExists("pullRequest"))
   {
     m_pullRequest = jsonValue.GetObject("pullRequest");
-
+    m_pullRequestHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

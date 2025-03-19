@@ -12,17 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_capacityProvidersHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false),
-    m_serviceConnectDefaultsHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

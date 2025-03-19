@@ -35,7 +35,7 @@ namespace Model
   class LogGroup
   {
   public:
-    AWS_CLOUDWATCHLOGS_API LogGroup();
+    AWS_CLOUDWATCHLOGS_API LogGroup() = default;
     AWS_CLOUDWATCHLOGS_API LogGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API LogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline LogGroup& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline LogGroup& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline LogGroup& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    LogGroup& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The creation time of the log group, expressed as the number of milliseconds
      * after Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline long long GetCreationTime() const{ return m_creationTime; }
+    inline long long GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
     inline LogGroup& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
 
     ///@{
     
-    inline int GetRetentionInDays() const{ return m_retentionInDays; }
+    inline int GetRetentionInDays() const { return m_retentionInDays; }
     inline bool RetentionInDaysHasBeenSet() const { return m_retentionInDaysHasBeenSet; }
     inline void SetRetentionInDays(int value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
     inline LogGroup& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
     /**
      * <p>The number of metric filters.</p>
      */
-    inline int GetMetricFilterCount() const{ return m_metricFilterCount; }
+    inline int GetMetricFilterCount() const { return m_metricFilterCount; }
     inline bool MetricFilterCountHasBeenSet() const { return m_metricFilterCountHasBeenSet; }
     inline void SetMetricFilterCount(int value) { m_metricFilterCountHasBeenSet = true; m_metricFilterCount = value; }
     inline LogGroup& WithMetricFilterCount(int value) { SetMetricFilterCount(value); return *this;}
@@ -98,21 +96,19 @@ namespace Model
      * The permissions for those three actions require the ARN version that doesn't
      * include a trailing <code>:*</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline LogGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline LogGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline LogGroup& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    LogGroup& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of bytes stored.</p>
      */
-    inline long long GetStoredBytes() const{ return m_storedBytes; }
+    inline long long GetStoredBytes() const { return m_storedBytes; }
     inline bool StoredBytesHasBeenSet() const { return m_storedBytesHasBeenSet; }
     inline void SetStoredBytes(long long value) { m_storedBytesHasBeenSet = true; m_storedBytes = value; }
     inline LogGroup& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
@@ -123,14 +119,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline LogGroup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline LogGroup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline LogGroup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    LogGroup& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +133,10 @@ namespace Model
      * one in the past. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
      */
-    inline const DataProtectionStatus& GetDataProtectionStatus() const{ return m_dataProtectionStatus; }
+    inline DataProtectionStatus GetDataProtectionStatus() const { return m_dataProtectionStatus; }
     inline bool DataProtectionStatusHasBeenSet() const { return m_dataProtectionStatusHasBeenSet; }
-    inline void SetDataProtectionStatus(const DataProtectionStatus& value) { m_dataProtectionStatusHasBeenSet = true; m_dataProtectionStatus = value; }
-    inline void SetDataProtectionStatus(DataProtectionStatus&& value) { m_dataProtectionStatusHasBeenSet = true; m_dataProtectionStatus = std::move(value); }
-    inline LogGroup& WithDataProtectionStatus(const DataProtectionStatus& value) { SetDataProtectionStatus(value); return *this;}
-    inline LogGroup& WithDataProtectionStatus(DataProtectionStatus&& value) { SetDataProtectionStatus(std::move(value)); return *this;}
+    inline void SetDataProtectionStatus(DataProtectionStatus value) { m_dataProtectionStatusHasBeenSet = true; m_dataProtectionStatus = value; }
+    inline LogGroup& WithDataProtectionStatus(DataProtectionStatus value) { SetDataProtectionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +144,13 @@ namespace Model
      * <p>Displays all the properties that this log group has inherited from
      * account-level settings.</p>
      */
-    inline const Aws::Vector<InheritedProperty>& GetInheritedProperties() const{ return m_inheritedProperties; }
+    inline const Aws::Vector<InheritedProperty>& GetInheritedProperties() const { return m_inheritedProperties; }
     inline bool InheritedPropertiesHasBeenSet() const { return m_inheritedPropertiesHasBeenSet; }
-    inline void SetInheritedProperties(const Aws::Vector<InheritedProperty>& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties = value; }
-    inline void SetInheritedProperties(Aws::Vector<InheritedProperty>&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties = std::move(value); }
-    inline LogGroup& WithInheritedProperties(const Aws::Vector<InheritedProperty>& value) { SetInheritedProperties(value); return *this;}
-    inline LogGroup& WithInheritedProperties(Aws::Vector<InheritedProperty>&& value) { SetInheritedProperties(std::move(value)); return *this;}
-    inline LogGroup& AddInheritedProperties(const InheritedProperty& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(value); return *this; }
-    inline LogGroup& AddInheritedProperties(InheritedProperty&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(std::move(value)); return *this; }
+    template<typename InheritedPropertiesT = Aws::Vector<InheritedProperty>>
+    void SetInheritedProperties(InheritedPropertiesT&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties = std::forward<InheritedPropertiesT>(value); }
+    template<typename InheritedPropertiesT = Aws::Vector<InheritedProperty>>
+    LogGroup& WithInheritedProperties(InheritedPropertiesT&& value) { SetInheritedProperties(std::forward<InheritedPropertiesT>(value)); return *this;}
+    inline LogGroup& AddInheritedProperties(InheritedProperty value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -173,12 +164,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
-    inline const LogGroupClass& GetLogGroupClass() const{ return m_logGroupClass; }
+    inline LogGroupClass GetLogGroupClass() const { return m_logGroupClass; }
     inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
-    inline void SetLogGroupClass(const LogGroupClass& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
-    inline void SetLogGroupClass(LogGroupClass&& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = std::move(value); }
-    inline LogGroup& WithLogGroupClass(const LogGroupClass& value) { SetLogGroupClass(value); return *this;}
-    inline LogGroup& WithLogGroupClass(LogGroupClass&& value) { SetLogGroupClass(std::move(value)); return *this;}
+    inline void SetLogGroupClass(LogGroupClass value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
+    inline LogGroup& WithLogGroupClass(LogGroupClass value) { SetLogGroupClass(value); return *this;}
     ///@}
 
     ///@{
@@ -196,45 +185,43 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+    inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-    inline LogGroup& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-    inline LogGroup& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-    inline LogGroup& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
+    template<typename LogGroupArnT = Aws::String>
+    void SetLogGroupArn(LogGroupArnT&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::forward<LogGroupArnT>(value); }
+    template<typename LogGroupArnT = Aws::String>
+    LogGroup& WithLogGroupArn(LogGroupArnT&& value) { SetLogGroupArn(std::forward<LogGroupArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    long long m_creationTime;
+    long long m_creationTime{0};
     bool m_creationTimeHasBeenSet = false;
 
-    int m_retentionInDays;
+    int m_retentionInDays{0};
     bool m_retentionInDaysHasBeenSet = false;
 
-    int m_metricFilterCount;
+    int m_metricFilterCount{0};
     bool m_metricFilterCountHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    long long m_storedBytes;
+    long long m_storedBytes{0};
     bool m_storedBytesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    DataProtectionStatus m_dataProtectionStatus;
+    DataProtectionStatus m_dataProtectionStatus{DataProtectionStatus::NOT_SET};
     bool m_dataProtectionStatusHasBeenSet = false;
 
     Aws::Vector<InheritedProperty> m_inheritedProperties;
     bool m_inheritedPropertiesHasBeenSet = false;
 
-    LogGroupClass m_logGroupClass;
+    LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
     bool m_logGroupClassHasBeenSet = false;
 
     Aws::String m_logGroupArn;

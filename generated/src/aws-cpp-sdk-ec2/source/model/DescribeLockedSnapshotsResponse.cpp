@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLockedSnapshotsResponse::DescribeLockedSnapshotsResponse()
-{
-}
-
 DescribeLockedSnapshotsResponse::DescribeLockedSnapshotsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeLockedSnapshotsResponse& DescribeLockedSnapshotsResponse::operator =(con
     if(!snapshotsNode.IsNull())
     {
       XmlNode snapshotsMember = snapshotsNode.FirstChild("item");
+      m_snapshotsHasBeenSet = !snapshotsMember.IsNull();
       while(!snapshotsMember.IsNull())
       {
         m_snapshots.push_back(snapshotsMember);
         snapshotsMember = snapshotsMember.NextNode("item");
       }
 
+      m_snapshotsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeLockedSnapshotsResponse& DescribeLockedSnapshotsResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeLockedSnapshotsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

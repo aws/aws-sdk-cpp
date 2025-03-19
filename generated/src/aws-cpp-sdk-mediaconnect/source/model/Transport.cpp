@@ -18,33 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-Transport::Transport() : 
-    m_cidrAllowListHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxLatency(0),
-    m_maxLatencyHasBeenSet(false),
-    m_maxSyncBuffer(0),
-    m_maxSyncBufferHasBeenSet(false),
-    m_minLatency(0),
-    m_minLatencyHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_remoteIdHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_smoothingLatency(0),
-    m_smoothingLatencyHasBeenSet(false),
-    m_sourceListenerAddressHasBeenSet(false),
-    m_sourceListenerPort(0),
-    m_sourceListenerPortHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
-{
-}
-
 Transport::Transport(JsonView jsonValue)
-  : Transport()
 {
   *this = jsonValue;
 }
@@ -60,91 +34,66 @@ Transport& Transport::operator =(JsonView jsonValue)
     }
     m_cidrAllowListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxBitrate"))
   {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
-
     m_maxBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxLatency"))
   {
     m_maxLatency = jsonValue.GetInteger("maxLatency");
-
     m_maxLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSyncBuffer"))
   {
     m_maxSyncBuffer = jsonValue.GetInteger("maxSyncBuffer");
-
     m_maxSyncBufferHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minLatency"))
   {
     m_minLatency = jsonValue.GetInteger("minLatency");
-
     m_minLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteId"))
   {
     m_remoteId = jsonValue.GetString("remoteId");
-
     m_remoteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderControlPort"))
   {
     m_senderControlPort = jsonValue.GetInteger("senderControlPort");
-
     m_senderControlPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderIpAddress"))
   {
     m_senderIpAddress = jsonValue.GetString("senderIpAddress");
-
     m_senderIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smoothingLatency"))
   {
     m_smoothingLatency = jsonValue.GetInteger("smoothingLatency");
-
     m_smoothingLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceListenerAddress"))
   {
     m_sourceListenerAddress = jsonValue.GetString("sourceListenerAddress");
-
     m_sourceListenerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceListenerPort"))
   {
     m_sourceListenerPort = jsonValue.GetInteger("sourceListenerPort");
-
     m_sourceListenerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class SchemaVersionNumber
   {
   public:
-    AWS_GLUE_API SchemaVersionNumber();
+    AWS_GLUE_API SchemaVersionNumber() = default;
     AWS_GLUE_API SchemaVersionNumber(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SchemaVersionNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The latest version available for the schema.</p>
      */
-    inline bool GetLatestVersion() const{ return m_latestVersion; }
+    inline bool GetLatestVersion() const { return m_latestVersion; }
     inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
     inline void SetLatestVersion(bool value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
     inline SchemaVersionNumber& WithLatestVersion(bool value) { SetLatestVersion(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The version number of the schema.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline SchemaVersionNumber& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
     ///@}
   private:
 
-    bool m_latestVersion;
+    bool m_latestVersion{false};
     bool m_latestVersionHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
   };
 

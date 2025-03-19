@@ -12,20 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExportTaskRequest::StartExportTaskRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_format(ExportFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_parquetType(ParquetType::NOT_SET),
-    m_parquetTypeHasBeenSet(false),
-    m_exportFilterHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartExportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

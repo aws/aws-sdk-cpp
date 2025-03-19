@@ -34,7 +34,7 @@ namespace Model
   class SensitivityAggregations
   {
   public:
-    AWS_MACIE2_API SensitivityAggregations();
+    AWS_MACIE2_API SensitivityAggregations() = default;
     AWS_MACIE2_API SensitivityAggregations(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SensitivityAggregations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * version of each applicable object in the buckets. This value doesn't reflect the
      * storage size of all versions of all applicable objects in the buckets.</p>
      */
-    inline long long GetClassifiableSizeInBytes() const{ return m_classifiableSizeInBytes; }
+    inline long long GetClassifiableSizeInBytes() const { return m_classifiableSizeInBytes; }
     inline bool ClassifiableSizeInBytesHasBeenSet() const { return m_classifiableSizeInBytesHasBeenSet; }
     inline void SetClassifiableSizeInBytes(long long value) { m_classifiableSizeInBytesHasBeenSet = true; m_classifiableSizeInBytes = value; }
     inline SensitivityAggregations& WithClassifiableSizeInBytes(long long value) { SetClassifiableSizeInBytes(value); return *this;}
@@ -60,7 +60,7 @@ namespace Model
      * <p>The total number of buckets that are publicly accessible due to a combination
      * of permissions settings for each bucket.</p>
      */
-    inline long long GetPubliclyAccessibleCount() const{ return m_publiclyAccessibleCount; }
+    inline long long GetPubliclyAccessibleCount() const { return m_publiclyAccessibleCount; }
     inline bool PubliclyAccessibleCountHasBeenSet() const { return m_publiclyAccessibleCountHasBeenSet; }
     inline void SetPubliclyAccessibleCount(long long value) { m_publiclyAccessibleCountHasBeenSet = true; m_publiclyAccessibleCount = value; }
     inline SensitivityAggregations& WithPubliclyAccessibleCount(long long value) { SetPubliclyAccessibleCount(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>The total number of buckets.</p>
      */
-    inline long long GetTotalCount() const{ return m_totalCount; }
+    inline long long GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline SensitivityAggregations& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
@@ -83,23 +83,23 @@ namespace Model
      * version of each object in the buckets. This value doesn't reflect the storage
      * size of all versions of the objects in the buckets.</p>
      */
-    inline long long GetTotalSizeInBytes() const{ return m_totalSizeInBytes; }
+    inline long long GetTotalSizeInBytes() const { return m_totalSizeInBytes; }
     inline bool TotalSizeInBytesHasBeenSet() const { return m_totalSizeInBytesHasBeenSet; }
     inline void SetTotalSizeInBytes(long long value) { m_totalSizeInBytesHasBeenSet = true; m_totalSizeInBytes = value; }
     inline SensitivityAggregations& WithTotalSizeInBytes(long long value) { SetTotalSizeInBytes(value); return *this;}
     ///@}
   private:
 
-    long long m_classifiableSizeInBytes;
+    long long m_classifiableSizeInBytes{0};
     bool m_classifiableSizeInBytesHasBeenSet = false;
 
-    long long m_publiclyAccessibleCount;
+    long long m_publiclyAccessibleCount{0};
     bool m_publiclyAccessibleCountHasBeenSet = false;
 
-    long long m_totalCount;
+    long long m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
 
-    long long m_totalSizeInBytes;
+    long long m_totalSizeInBytes{0};
     bool m_totalSizeInBytesHasBeenSet = false;
   };
 

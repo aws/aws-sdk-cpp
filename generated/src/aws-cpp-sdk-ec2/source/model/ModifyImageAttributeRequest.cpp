@@ -10,25 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyImageAttributeRequest::ModifyImageAttributeRequest() : 
-    m_attributeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_launchPermissionHasBeenSet(false),
-    m_operationType(OperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_organizationArnsHasBeenSet(false),
-    m_organizationalUnitArnsHasBeenSet(false),
-    m_imdsSupportHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyImageAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

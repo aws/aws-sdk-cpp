@@ -20,23 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EndpointAccess::EndpointAccess() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_endpointStatusHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_endpointCreateTimeHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_vpcEndpointHasBeenSet(false)
-{
-}
-
 EndpointAccess::EndpointAccess(const XmlNode& xmlNode)
-  : EndpointAccess()
 {
   *this = xmlNode;
 }
@@ -99,6 +83,7 @@ EndpointAccess& EndpointAccess::operator =(const XmlNode& xmlNode)
     if(!vpcSecurityGroupsNode.IsNull())
     {
       XmlNode vpcSecurityGroupsMember = vpcSecurityGroupsNode.FirstChild("VpcSecurityGroup");
+      m_vpcSecurityGroupsHasBeenSet = !vpcSecurityGroupsMember.IsNull();
       while(!vpcSecurityGroupsMember.IsNull())
       {
         m_vpcSecurityGroups.push_back(vpcSecurityGroupsMember);

@@ -18,22 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ObjectCountByEncryptionType::ObjectCountByEncryptionType() : 
-    m_customerManaged(0),
-    m_customerManagedHasBeenSet(false),
-    m_kmsManaged(0),
-    m_kmsManagedHasBeenSet(false),
-    m_s3Managed(0),
-    m_s3ManagedHasBeenSet(false),
-    m_unencrypted(0),
-    m_unencryptedHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
-{
-}
-
 ObjectCountByEncryptionType::ObjectCountByEncryptionType(JsonView jsonValue)
-  : ObjectCountByEncryptionType()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ObjectCountByEncryptionType& ObjectCountByEncryptionType::operator =(JsonView js
   if(jsonValue.ValueExists("customerManaged"))
   {
     m_customerManaged = jsonValue.GetInt64("customerManaged");
-
     m_customerManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsManaged"))
   {
     m_kmsManaged = jsonValue.GetInt64("kmsManaged");
-
     m_kmsManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Managed"))
   {
     m_s3Managed = jsonValue.GetInt64("s3Managed");
-
     m_s3ManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unencrypted"))
   {
     m_unencrypted = jsonValue.GetInt64("unencrypted");
-
     m_unencryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknown"))
   {
     m_unknown = jsonValue.GetInt64("unknown");
-
     m_unknownHasBeenSet = true;
   }
-
   return *this;
 }
 

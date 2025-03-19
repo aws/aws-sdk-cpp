@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDataLakeResult::CreateDataLakeResult()
-{
-}
-
 CreateDataLakeResult::CreateDataLakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ CreateDataLakeResult& CreateDataLakeResult::operator =(const Aws::AmazonWebServi
     {
       m_dataLakes.push_back(dataLakesJsonList[dataLakesIndex].AsObject());
     }
+    m_dataLakesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

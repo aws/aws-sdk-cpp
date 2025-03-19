@@ -25,7 +25,7 @@ namespace Model
   class CreateWirelessGatewayTaskDefinitionRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API CreateWirelessGatewayTaskDefinitionRequest();
+    AWS_IOTWIRELESS_API CreateWirelessGatewayTaskDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
      * gateways with the specified current version. If <code>false</code>, the task
      * must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
      */
-    inline bool GetAutoCreateTasks() const{ return m_autoCreateTasks; }
+    inline bool GetAutoCreateTasks() const { return m_autoCreateTasks; }
     inline bool AutoCreateTasksHasBeenSet() const { return m_autoCreateTasksHasBeenSet; }
     inline void SetAutoCreateTasks(bool value) { m_autoCreateTasksHasBeenSet = true; m_autoCreateTasks = value; }
     inline CreateWirelessGatewayTaskDefinitionRequest& WithAutoCreateTasks(bool value) { SetAutoCreateTasks(value); return *this;}
@@ -52,26 +52,24 @@ namespace Model
     /**
      * <p>The name of the new resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateWirelessGatewayTaskDefinitionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the gateways to update.</p>
      */
-    inline const UpdateWirelessGatewayTaskCreate& GetUpdate() const{ return m_update; }
+    inline const UpdateWirelessGatewayTaskCreate& GetUpdate() const { return m_update; }
     inline bool UpdateHasBeenSet() const { return m_updateHasBeenSet; }
-    inline void SetUpdate(const UpdateWirelessGatewayTaskCreate& value) { m_updateHasBeenSet = true; m_update = value; }
-    inline void SetUpdate(UpdateWirelessGatewayTaskCreate&& value) { m_updateHasBeenSet = true; m_update = std::move(value); }
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithUpdate(const UpdateWirelessGatewayTaskCreate& value) { SetUpdate(value); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithUpdate(UpdateWirelessGatewayTaskCreate&& value) { SetUpdate(std::move(value)); return *this;}
+    template<typename UpdateT = UpdateWirelessGatewayTaskCreate>
+    void SetUpdate(UpdateT&& value) { m_updateHasBeenSet = true; m_update = std::forward<UpdateT>(value); }
+    template<typename UpdateT = UpdateWirelessGatewayTaskCreate>
+    CreateWirelessGatewayTaskDefinitionRequest& WithUpdate(UpdateT&& value) { SetUpdate(std::forward<UpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency in Amazon EC2 API requests</a>.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateWirelessGatewayTaskDefinitionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,18 +97,18 @@ namespace Model
      * <p>The tags to attach to the specified resource. Tags are metadata that you can
      * use to manage a resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWirelessGatewayTaskDefinitionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateWirelessGatewayTaskDefinitionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateWirelessGatewayTaskDefinitionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateWirelessGatewayTaskDefinitionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_autoCreateTasks;
+    bool m_autoCreateTasks{false};
     bool m_autoCreateTasksHasBeenSet = false;
 
     Aws::String m_name;

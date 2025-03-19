@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeletePartnerResult::DeletePartnerResult()
-{
-}
-
 DeletePartnerResult::DeletePartnerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DeletePartnerResult& DeletePartnerResult::operator =(const Aws::AmazonWebService
     if(!databaseNameNode.IsNull())
     {
       m_databaseName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseNameNode.GetText());
+      m_databaseNameHasBeenSet = true;
     }
     XmlNode partnerNameNode = resultNode.FirstChild("PartnerName");
     if(!partnerNameNode.IsNull())
     {
       m_partnerName = Aws::Utils::Xml::DecodeEscapedXmlText(partnerNameNode.GetText());
+      m_partnerNameHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DeletePartnerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

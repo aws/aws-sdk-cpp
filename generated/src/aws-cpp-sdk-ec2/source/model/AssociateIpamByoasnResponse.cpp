@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateIpamByoasnResponse::AssociateIpamByoasnResponse()
-{
-}
-
 AssociateIpamByoasnResponse::AssociateIpamByoasnResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AssociateIpamByoasnResponse& AssociateIpamByoasnResponse::operator =(const Aws::
     if(!asnAssociationNode.IsNull())
     {
       m_asnAssociation = asnAssociationNode;
+      m_asnAssociationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AssociateIpamByoasnResponse& AssociateIpamByoasnResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateIpamByoasnResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

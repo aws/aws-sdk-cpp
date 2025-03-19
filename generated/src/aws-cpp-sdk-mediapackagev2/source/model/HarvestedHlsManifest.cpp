@@ -18,13 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-HarvestedHlsManifest::HarvestedHlsManifest() : 
-    m_manifestNameHasBeenSet(false)
-{
-}
-
 HarvestedHlsManifest::HarvestedHlsManifest(JsonView jsonValue)
-  : HarvestedHlsManifest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HarvestedHlsManifest& HarvestedHlsManifest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   return *this;
 }
 

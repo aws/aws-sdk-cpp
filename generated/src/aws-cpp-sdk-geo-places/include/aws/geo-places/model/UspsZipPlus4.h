@@ -31,7 +31,7 @@ namespace Model
   class UspsZipPlus4
   {
   public:
-    AWS_GEOPLACES_API UspsZipPlus4();
+    AWS_GEOPLACES_API UspsZipPlus4() = default;
     AWS_GEOPLACES_API UspsZipPlus4(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API UspsZipPlus4& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The USPS ZIP+4 Record Type Code.</p>
      */
-    inline const RecordTypeCode& GetRecordTypeCode() const{ return m_recordTypeCode; }
+    inline RecordTypeCode GetRecordTypeCode() const { return m_recordTypeCode; }
     inline bool RecordTypeCodeHasBeenSet() const { return m_recordTypeCodeHasBeenSet; }
-    inline void SetRecordTypeCode(const RecordTypeCode& value) { m_recordTypeCodeHasBeenSet = true; m_recordTypeCode = value; }
-    inline void SetRecordTypeCode(RecordTypeCode&& value) { m_recordTypeCodeHasBeenSet = true; m_recordTypeCode = std::move(value); }
-    inline UspsZipPlus4& WithRecordTypeCode(const RecordTypeCode& value) { SetRecordTypeCode(value); return *this;}
-    inline UspsZipPlus4& WithRecordTypeCode(RecordTypeCode&& value) { SetRecordTypeCode(std::move(value)); return *this;}
+    inline void SetRecordTypeCode(RecordTypeCode value) { m_recordTypeCodeHasBeenSet = true; m_recordTypeCode = value; }
+    inline UspsZipPlus4& WithRecordTypeCode(RecordTypeCode value) { SetRecordTypeCode(value); return *this;}
     ///@}
   private:
 
-    RecordTypeCode m_recordTypeCode;
+    RecordTypeCode m_recordTypeCode{RecordTypeCode::NOT_SET};
     bool m_recordTypeCodeHasBeenSet = false;
   };
 

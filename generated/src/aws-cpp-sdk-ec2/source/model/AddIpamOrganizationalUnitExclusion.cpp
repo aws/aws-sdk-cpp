@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddIpamOrganizationalUnitExclusion::AddIpamOrganizationalUnitExclusion() : 
-    m_organizationsEntityPathHasBeenSet(false)
-{
-}
-
 AddIpamOrganizationalUnitExclusion::AddIpamOrganizationalUnitExclusion(const XmlNode& xmlNode)
-  : AddIpamOrganizationalUnitExclusion()
 {
   *this = xmlNode;
 }

@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-IamPropertiesInput::IamPropertiesInput() : 
-    m_glueLineageSyncEnabled(false),
-    m_glueLineageSyncEnabledHasBeenSet(false)
-{
-}
-
 IamPropertiesInput::IamPropertiesInput(JsonView jsonValue)
-  : IamPropertiesInput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IamPropertiesInput& IamPropertiesInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("glueLineageSyncEnabled"))
   {
     m_glueLineageSyncEnabled = jsonValue.GetBool("glueLineageSyncEnabled");
-
     m_glueLineageSyncEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

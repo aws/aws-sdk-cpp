@@ -29,48 +29,46 @@ namespace Model
   class DescribeAuditSuppressionResult
   {
   public:
-    AWS_IOT_API DescribeAuditSuppressionResult();
+    AWS_IOT_API DescribeAuditSuppressionResult() = default;
     AWS_IOT_API DescribeAuditSuppressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeAuditSuppressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetCheckName() const{ return m_checkName; }
-    inline void SetCheckName(const Aws::String& value) { m_checkName = value; }
-    inline void SetCheckName(Aws::String&& value) { m_checkName = std::move(value); }
-    inline void SetCheckName(const char* value) { m_checkName.assign(value); }
-    inline DescribeAuditSuppressionResult& WithCheckName(const Aws::String& value) { SetCheckName(value); return *this;}
-    inline DescribeAuditSuppressionResult& WithCheckName(Aws::String&& value) { SetCheckName(std::move(value)); return *this;}
-    inline DescribeAuditSuppressionResult& WithCheckName(const char* value) { SetCheckName(value); return *this;}
+    inline const Aws::String& GetCheckName() const { return m_checkName; }
+    template<typename CheckNameT = Aws::String>
+    void SetCheckName(CheckNameT&& value) { m_checkNameHasBeenSet = true; m_checkName = std::forward<CheckNameT>(value); }
+    template<typename CheckNameT = Aws::String>
+    DescribeAuditSuppressionResult& WithCheckName(CheckNameT&& value) { SetCheckName(std::forward<CheckNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
-    inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifier = std::move(value); }
-    inline DescribeAuditSuppressionResult& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
-    inline DescribeAuditSuppressionResult& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+    inline const ResourceIdentifier& GetResourceIdentifier() const { return m_resourceIdentifier; }
+    template<typename ResourceIdentifierT = ResourceIdentifier>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = ResourceIdentifier>
+    DescribeAuditSuppressionResult& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The epoch timestamp in seconds at which this suppression expires. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
-    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = std::move(value); }
-    inline DescribeAuditSuppressionResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-    inline DescribeAuditSuppressionResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    DescribeAuditSuppressionResult& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether a suppression should exist indefinitely or not. </p>
      */
-    inline bool GetSuppressIndefinitely() const{ return m_suppressIndefinitely; }
-    inline void SetSuppressIndefinitely(bool value) { m_suppressIndefinitely = value; }
+    inline bool GetSuppressIndefinitely() const { return m_suppressIndefinitely; }
+    inline void SetSuppressIndefinitely(bool value) { m_suppressIndefinitelyHasBeenSet = true; m_suppressIndefinitely = value; }
     inline DescribeAuditSuppressionResult& WithSuppressIndefinitely(bool value) { SetSuppressIndefinitely(value); return *this;}
     ///@}
 
@@ -78,38 +76,40 @@ namespace Model
     /**
      * <p> The description of the audit suppression. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeAuditSuppressionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeAuditSuppressionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeAuditSuppressionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeAuditSuppressionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAuditSuppressionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAuditSuppressionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAuditSuppressionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAuditSuppressionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_checkName;
+    bool m_checkNameHasBeenSet = false;
 
     ResourceIdentifier m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate{};
+    bool m_expirationDateHasBeenSet = false;
 
-    bool m_suppressIndefinitely;
+    bool m_suppressIndefinitely{false};
+    bool m_suppressIndefinitelyHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

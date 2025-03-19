@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAvailabilityMonitorTestResult::DescribeAvailabilityMonitorTestResult() : 
-    m_status(AvailabilityMonitorTestStatus::NOT_SET)
-{
-}
-
 DescribeAvailabilityMonitorTestResult::DescribeAvailabilityMonitorTestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAvailabilityMonitorTestResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DescribeAvailabilityMonitorTestResult& DescribeAvailabilityMonitorTestResult::op
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AvailabilityMonitorTestStatusMapper::GetAvailabilityMonitorTestStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

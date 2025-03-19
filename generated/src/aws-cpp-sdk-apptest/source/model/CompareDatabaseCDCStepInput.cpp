@@ -18,17 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CompareDatabaseCDCStepInput::CompareDatabaseCDCStepInput() : 
-    m_sourceLocationHasBeenSet(false),
-    m_targetLocationHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_sourceMetadataHasBeenSet(false),
-    m_targetMetadataHasBeenSet(false)
-{
-}
-
 CompareDatabaseCDCStepInput::CompareDatabaseCDCStepInput(JsonView jsonValue)
-  : CompareDatabaseCDCStepInput()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CompareDatabaseCDCStepInput& CompareDatabaseCDCStepInput::operator =(JsonView js
   if(jsonValue.ValueExists("sourceLocation"))
   {
     m_sourceLocation = jsonValue.GetString("sourceLocation");
-
     m_sourceLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetLocation"))
   {
     m_targetLocation = jsonValue.GetString("targetLocation");
-
     m_targetLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLocation"))
   {
     m_outputLocation = jsonValue.GetString("outputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceMetadata"))
   {
     m_sourceMetadata = jsonValue.GetObject("sourceMetadata");
-
     m_sourceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetMetadata"))
   {
     m_targetMetadata = jsonValue.GetObject("targetMetadata");
-
     m_targetMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateRandomResult::GenerateRandomResult()
-{
-}
-
 GenerateRandomResult::GenerateRandomResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,19 +29,20 @@ GenerateRandomResult& GenerateRandomResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
+    m_plaintextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CiphertextForRecipient"))
   {
     m_ciphertextForRecipient = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextForRecipient"));
+    m_ciphertextForRecipientHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

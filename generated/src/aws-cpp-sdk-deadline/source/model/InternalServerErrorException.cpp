@@ -19,15 +19,7 @@ namespace deadline
 namespace Model
 {
 
-InternalServerErrorException::InternalServerErrorException() : 
-    m_messageHasBeenSet(false),
-    m_retryAfterSeconds(0),
-    m_retryAfterSecondsHasBeenSet(false)
-{
-}
-
 InternalServerErrorException::InternalServerErrorException(JsonView jsonValue)
-  : InternalServerErrorException()
 {
   *this = jsonValue;
 }
@@ -37,10 +29,8 @@ InternalServerErrorException& InternalServerErrorException::operator =(JsonView 
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

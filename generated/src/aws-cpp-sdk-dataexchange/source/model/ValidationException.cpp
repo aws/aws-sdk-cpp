@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_messageHasBeenSet(false),
-    m_exceptionCause(ExceptionCause::NOT_SET),
-    m_exceptionCauseHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExceptionCause"))
   {
     m_exceptionCause = ExceptionCauseMapper::GetExceptionCauseForName(jsonValue.GetString("ExceptionCause"));
-
     m_exceptionCauseHasBeenSet = true;
   }
-
   return *this;
 }
 

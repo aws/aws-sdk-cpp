@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteSignpostLabel::RouteSignpostLabel() : 
-    m_routeNumberHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 RouteSignpostLabel::RouteSignpostLabel(JsonView jsonValue)
-  : RouteSignpostLabel()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RouteSignpostLabel& RouteSignpostLabel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RouteNumber"))
   {
     m_routeNumber = jsonValue.GetObject("RouteNumber");
-
     m_routeNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetObject("Text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

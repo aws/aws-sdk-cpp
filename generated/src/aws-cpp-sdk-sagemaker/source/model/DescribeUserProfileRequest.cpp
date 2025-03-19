@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUserProfileRequest::DescribeUserProfileRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

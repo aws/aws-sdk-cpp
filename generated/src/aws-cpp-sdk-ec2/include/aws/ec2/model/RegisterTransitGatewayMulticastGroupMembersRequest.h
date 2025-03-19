@@ -22,7 +22,7 @@ namespace Model
   class RegisterTransitGatewayMulticastGroupMembersRequest : public EC2Request
   {
   public:
-    AWS_EC2_API RegisterTransitGatewayMulticastGroupMembersRequest();
+    AWS_EC2_API RegisterTransitGatewayMulticastGroupMembersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID of the transit gateway multicast domain.</p>
      */
-    inline const Aws::String& GetTransitGatewayMulticastDomainId() const{ return m_transitGatewayMulticastDomainId; }
+    inline const Aws::String& GetTransitGatewayMulticastDomainId() const { return m_transitGatewayMulticastDomainId; }
     inline bool TransitGatewayMulticastDomainIdHasBeenSet() const { return m_transitGatewayMulticastDomainIdHasBeenSet; }
-    inline void SetTransitGatewayMulticastDomainId(const Aws::String& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = value; }
-    inline void SetTransitGatewayMulticastDomainId(Aws::String&& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = std::move(value); }
-    inline void SetTransitGatewayMulticastDomainId(const char* value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId.assign(value); }
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithTransitGatewayMulticastDomainId(const Aws::String& value) { SetTransitGatewayMulticastDomainId(value); return *this;}
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithTransitGatewayMulticastDomainId(Aws::String&& value) { SetTransitGatewayMulticastDomainId(std::move(value)); return *this;}
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithTransitGatewayMulticastDomainId(const char* value) { SetTransitGatewayMulticastDomainId(value); return *this;}
+    template<typename TransitGatewayMulticastDomainIdT = Aws::String>
+    void SetTransitGatewayMulticastDomainId(TransitGatewayMulticastDomainIdT&& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = std::forward<TransitGatewayMulticastDomainIdT>(value); }
+    template<typename TransitGatewayMulticastDomainIdT = Aws::String>
+    RegisterTransitGatewayMulticastGroupMembersRequest& WithTransitGatewayMulticastDomainId(TransitGatewayMulticastDomainIdT&& value) { SetTransitGatewayMulticastDomainId(std::forward<TransitGatewayMulticastDomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address assigned to the transit gateway multicast group.</p>
      */
-    inline const Aws::String& GetGroupIpAddress() const{ return m_groupIpAddress; }
+    inline const Aws::String& GetGroupIpAddress() const { return m_groupIpAddress; }
     inline bool GroupIpAddressHasBeenSet() const { return m_groupIpAddressHasBeenSet; }
-    inline void SetGroupIpAddress(const Aws::String& value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress = value; }
-    inline void SetGroupIpAddress(Aws::String&& value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress = std::move(value); }
-    inline void SetGroupIpAddress(const char* value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress.assign(value); }
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithGroupIpAddress(const Aws::String& value) { SetGroupIpAddress(value); return *this;}
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithGroupIpAddress(Aws::String&& value) { SetGroupIpAddress(std::move(value)); return *this;}
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithGroupIpAddress(const char* value) { SetGroupIpAddress(value); return *this;}
+    template<typename GroupIpAddressT = Aws::String>
+    void SetGroupIpAddress(GroupIpAddressT&& value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress = std::forward<GroupIpAddressT>(value); }
+    template<typename GroupIpAddressT = Aws::String>
+    RegisterTransitGatewayMulticastGroupMembersRequest& WithGroupIpAddress(GroupIpAddressT&& value) { SetGroupIpAddress(std::forward<GroupIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,15 +66,14 @@ namespace Model
      * <p>The group members' network interface IDs to register with the transit gateway
      * multicast group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
+    inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const { return m_networkInterfaceIds; }
     inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
-    inline void SetNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = value; }
-    inline void SetNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = std::move(value); }
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { SetNetworkInterfaceIds(value); return *this;}
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& WithNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { SetNetworkInterfaceIds(std::move(value)); return *this;}
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& AddNetworkInterfaceIds(const Aws::String& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& AddNetworkInterfaceIds(Aws::String&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(std::move(value)); return *this; }
-    inline RegisterTransitGatewayMulticastGroupMembersRequest& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
+    template<typename NetworkInterfaceIdsT = Aws::Vector<Aws::String>>
+    void SetNetworkInterfaceIds(NetworkInterfaceIdsT&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds = std::forward<NetworkInterfaceIdsT>(value); }
+    template<typename NetworkInterfaceIdsT = Aws::Vector<Aws::String>>
+    RegisterTransitGatewayMulticastGroupMembersRequest& WithNetworkInterfaceIds(NetworkInterfaceIdsT&& value) { SetNetworkInterfaceIds(std::forward<NetworkInterfaceIdsT>(value)); return *this;}
+    template<typename NetworkInterfaceIdsT = Aws::String>
+    RegisterTransitGatewayMulticastGroupMembersRequest& AddNetworkInterfaceIds(NetworkInterfaceIdsT&& value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.emplace_back(std::forward<NetworkInterfaceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,7 +83,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RegisterTransitGatewayMulticastGroupMembersRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -104,7 +99,7 @@ namespace Model
     Aws::Vector<Aws::String> m_networkInterfaceIds;
     bool m_networkInterfaceIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

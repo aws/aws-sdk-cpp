@@ -18,20 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsBasicPutSettings::HlsBasicPutSettings() : 
-    m_connectionRetryInterval(0),
-    m_connectionRetryIntervalHasBeenSet(false),
-    m_filecacheDuration(0),
-    m_filecacheDurationHasBeenSet(false),
-    m_numRetries(0),
-    m_numRetriesHasBeenSet(false),
-    m_restartDelay(0),
-    m_restartDelayHasBeenSet(false)
-{
-}
-
 HlsBasicPutSettings::HlsBasicPutSettings(JsonView jsonValue)
-  : HlsBasicPutSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ HlsBasicPutSettings& HlsBasicPutSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {
     m_connectionRetryInterval = jsonValue.GetInteger("connectionRetryInterval");
-
     m_connectionRetryIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filecacheDuration"))
   {
     m_filecacheDuration = jsonValue.GetInteger("filecacheDuration");
-
     m_filecacheDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numRetries"))
   {
     m_numRetries = jsonValue.GetInteger("numRetries");
-
     m_numRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restartDelay"))
   {
     m_restartDelay = jsonValue.GetInteger("restartDelay");
-
     m_restartDelayHasBeenSet = true;
   }
-
   return *this;
 }
 

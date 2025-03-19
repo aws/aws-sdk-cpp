@@ -18,17 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-AgentConfiguration::AgentConfiguration() : 
-    m_agentParametersHasBeenSet(false),
-    m_periodInSeconds(0),
-    m_periodInSecondsHasBeenSet(false),
-    m_shouldProfile(false),
-    m_shouldProfileHasBeenSet(false)
-{
-}
-
 AgentConfiguration::AgentConfiguration(JsonView jsonValue)
-  : AgentConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ AgentConfiguration& AgentConfiguration::operator =(JsonView jsonValue)
     }
     m_agentParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("periodInSeconds"))
   {
     m_periodInSeconds = jsonValue.GetInteger("periodInSeconds");
-
     m_periodInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shouldProfile"))
   {
     m_shouldProfile = jsonValue.GetBool("shouldProfile");
-
     m_shouldProfileHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-AutoScalingPolicy::AutoScalingPolicy() : 
-    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false)
-{
-}
-
 AutoScalingPolicy::AutoScalingPolicy(JsonView jsonValue)
-  : AutoScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoScalingPolicy& AutoScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetTrackingScalingPolicyConfiguration"))
   {
     m_targetTrackingScalingPolicyConfiguration = jsonValue.GetObject("targetTrackingScalingPolicyConfiguration");
-
     m_targetTrackingScalingPolicyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

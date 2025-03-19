@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AutoScalingGroup::AutoScalingGroup() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AutoScalingGroup::AutoScalingGroup(JsonView jsonValue)
-  : AutoScalingGroup()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoScalingGroup& AutoScalingGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

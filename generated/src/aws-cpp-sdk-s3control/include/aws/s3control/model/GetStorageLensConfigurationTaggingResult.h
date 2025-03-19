@@ -29,7 +29,7 @@ namespace Model
   class GetStorageLensConfigurationTaggingResult
   {
   public:
-    AWS_S3CONTROL_API GetStorageLensConfigurationTaggingResult();
+    AWS_S3CONTROL_API GetStorageLensConfigurationTaggingResult() = default;
     AWS_S3CONTROL_API GetStorageLensConfigurationTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API GetStorageLensConfigurationTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,47 +38,46 @@ namespace Model
     /**
      * <p>The tags of S3 Storage Lens configuration requested.</p>
      */
-    inline const Aws::Vector<StorageLensTag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<StorageLensTag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<StorageLensTag>&& value) { m_tags = std::move(value); }
-    inline GetStorageLensConfigurationTaggingResult& WithTags(const Aws::Vector<StorageLensTag>& value) { SetTags(value); return *this;}
-    inline GetStorageLensConfigurationTaggingResult& WithTags(Aws::Vector<StorageLensTag>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetStorageLensConfigurationTaggingResult& AddTags(const StorageLensTag& value) { m_tags.push_back(value); return *this; }
-    inline GetStorageLensConfigurationTaggingResult& AddTags(StorageLensTag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StorageLensTag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<StorageLensTag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<StorageLensTag>>
+    GetStorageLensConfigurationTaggingResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = StorageLensTag>
+    GetStorageLensConfigurationTaggingResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStorageLensConfigurationTaggingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStorageLensConfigurationTaggingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStorageLensConfigurationTaggingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStorageLensConfigurationTaggingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline GetStorageLensConfigurationTaggingResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline GetStorageLensConfigurationTaggingResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline GetStorageLensConfigurationTaggingResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    GetStorageLensConfigurationTaggingResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StorageLensTag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

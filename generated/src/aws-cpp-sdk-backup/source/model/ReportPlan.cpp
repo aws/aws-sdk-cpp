@@ -18,21 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ReportPlan::ReportPlan() : 
-    m_reportPlanArnHasBeenSet(false),
-    m_reportPlanNameHasBeenSet(false),
-    m_reportPlanDescriptionHasBeenSet(false),
-    m_reportSettingHasBeenSet(false),
-    m_reportDeliveryChannelHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastAttemptedExecutionTimeHasBeenSet(false),
-    m_lastSuccessfulExecutionTimeHasBeenSet(false)
-{
-}
-
 ReportPlan::ReportPlan(JsonView jsonValue)
-  : ReportPlan()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ ReportPlan& ReportPlan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportPlanArn"))
   {
     m_reportPlanArn = jsonValue.GetString("ReportPlanArn");
-
     m_reportPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportPlanName"))
   {
     m_reportPlanName = jsonValue.GetString("ReportPlanName");
-
     m_reportPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportPlanDescription"))
   {
     m_reportPlanDescription = jsonValue.GetString("ReportPlanDescription");
-
     m_reportPlanDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportSetting"))
   {
     m_reportSetting = jsonValue.GetObject("ReportSetting");
-
     m_reportSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportDeliveryChannel"))
   {
     m_reportDeliveryChannel = jsonValue.GetObject("ReportDeliveryChannel");
-
     m_reportDeliveryChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAttemptedExecutionTime"))
   {
     m_lastAttemptedExecutionTime = jsonValue.GetDouble("LastAttemptedExecutionTime");
-
     m_lastAttemptedExecutionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfulExecutionTime"))
   {
     m_lastSuccessfulExecutionTime = jsonValue.GetDouble("LastSuccessfulExecutionTime");
-
     m_lastSuccessfulExecutionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

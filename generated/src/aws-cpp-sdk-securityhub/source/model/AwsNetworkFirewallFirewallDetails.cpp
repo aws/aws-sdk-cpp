@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsNetworkFirewallFirewallDetails::AwsNetworkFirewallFirewallDetails() : 
-    m_deleteProtection(false),
-    m_deleteProtectionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallIdHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_firewallPolicyChangeProtection(false),
-    m_firewallPolicyChangeProtectionHasBeenSet(false),
-    m_subnetChangeProtection(false),
-    m_subnetChangeProtectionHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 AwsNetworkFirewallFirewallDetails::AwsNetworkFirewallFirewallDetails(JsonView jsonValue)
-  : AwsNetworkFirewallFirewallDetails()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ AwsNetworkFirewallFirewallDetails& AwsNetworkFirewallFirewallDetails::operator =
   if(jsonValue.ValueExists("DeleteProtection"))
   {
     m_deleteProtection = jsonValue.GetBool("DeleteProtection");
-
     m_deleteProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallArn"))
   {
     m_firewallArn = jsonValue.GetString("FirewallArn");
-
     m_firewallArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallId"))
   {
     m_firewallId = jsonValue.GetString("FirewallId");
-
     m_firewallIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallName"))
   {
     m_firewallName = jsonValue.GetString("FirewallName");
-
     m_firewallNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyArn"))
   {
     m_firewallPolicyArn = jsonValue.GetString("FirewallPolicyArn");
-
     m_firewallPolicyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyChangeProtection"))
   {
     m_firewallPolicyChangeProtection = jsonValue.GetBool("FirewallPolicyChangeProtection");
-
     m_firewallPolicyChangeProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetChangeProtection"))
   {
     m_subnetChangeProtection = jsonValue.GetBool("SubnetChangeProtection");
-
     m_subnetChangeProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetMappings"))
   {
     Aws::Utils::Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
@@ -108,14 +74,11 @@ AwsNetworkFirewallFirewallDetails& AwsNetworkFirewallFirewallDetails::operator =
     }
     m_subnetMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

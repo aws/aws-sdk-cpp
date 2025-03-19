@@ -12,11 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetDeploymentsRequest::BatchGetDeploymentsRequest() : 
-    m_deploymentIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetDeploymentsRequest::SerializePayload() const
 {
   JsonValue payload;

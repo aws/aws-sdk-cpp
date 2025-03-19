@@ -18,10 +18,6 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-CloudMaskingConfigInput::CloudMaskingConfigInput()
-{
-}
-
 CloudMaskingConfigInput::CloudMaskingConfigInput(JsonView jsonValue)
 {
   *this = jsonValue;

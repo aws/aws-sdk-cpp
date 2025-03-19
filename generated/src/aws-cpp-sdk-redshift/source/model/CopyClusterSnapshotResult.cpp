@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyClusterSnapshotResult::CopyClusterSnapshotResult()
-{
-}
-
 CopyClusterSnapshotResult::CopyClusterSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CopyClusterSnapshotResult& CopyClusterSnapshotResult::operator =(const Aws::Amaz
     if(!snapshotNode.IsNull())
     {
       m_snapshot = snapshotNode;
+      m_snapshotHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::CopyClusterSnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

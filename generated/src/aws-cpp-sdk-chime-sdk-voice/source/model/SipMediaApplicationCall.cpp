@@ -18,13 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SipMediaApplicationCall::SipMediaApplicationCall() : 
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 SipMediaApplicationCall::SipMediaApplicationCall(JsonView jsonValue)
-  : SipMediaApplicationCall()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SipMediaApplicationCall& SipMediaApplicationCall::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransactionId"))
   {
     m_transactionId = jsonValue.GetString("TransactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

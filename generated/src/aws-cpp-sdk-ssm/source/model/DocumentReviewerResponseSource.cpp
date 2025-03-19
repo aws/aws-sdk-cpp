@@ -18,18 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentReviewerResponseSource::DocumentReviewerResponseSource() : 
-    m_createTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_reviewerHasBeenSet(false)
-{
-}
-
 DocumentReviewerResponseSource::DocumentReviewerResponseSource(JsonView jsonValue)
-  : DocumentReviewerResponseSource()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DocumentReviewerResponseSource& DocumentReviewerResponseSource::operator =(JsonV
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTime"))
   {
     m_updatedTime = jsonValue.GetDouble("UpdatedTime");
-
     m_updatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-
     m_reviewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     Aws::Utils::Array<JsonView> commentJsonList = jsonValue.GetArray("Comment");
@@ -66,14 +49,11 @@ DocumentReviewerResponseSource& DocumentReviewerResponseSource::operator =(JsonV
     }
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reviewer"))
   {
     m_reviewer = jsonValue.GetString("Reviewer");
-
     m_reviewerHasBeenSet = true;
   }
-
   return *this;
 }
 

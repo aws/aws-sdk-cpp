@@ -28,7 +28,7 @@ namespace Model
   class ListMLTransformsResult
   {
   public:
-    AWS_GLUE_API ListMLTransformsResult();
+    AWS_GLUE_API ListMLTransformsResult() = default;
     AWS_GLUE_API ListMLTransformsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API ListMLTransformsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
      * <p>The identifiers of all the machine learning transforms in the account, or the
      * machine learning transforms with the specified tags.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTransformIds() const{ return m_transformIds; }
-    inline void SetTransformIds(const Aws::Vector<Aws::String>& value) { m_transformIds = value; }
-    inline void SetTransformIds(Aws::Vector<Aws::String>&& value) { m_transformIds = std::move(value); }
-    inline ListMLTransformsResult& WithTransformIds(const Aws::Vector<Aws::String>& value) { SetTransformIds(value); return *this;}
-    inline ListMLTransformsResult& WithTransformIds(Aws::Vector<Aws::String>&& value) { SetTransformIds(std::move(value)); return *this;}
-    inline ListMLTransformsResult& AddTransformIds(const Aws::String& value) { m_transformIds.push_back(value); return *this; }
-    inline ListMLTransformsResult& AddTransformIds(Aws::String&& value) { m_transformIds.push_back(std::move(value)); return *this; }
-    inline ListMLTransformsResult& AddTransformIds(const char* value) { m_transformIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetTransformIds() const { return m_transformIds; }
+    template<typename TransformIdsT = Aws::Vector<Aws::String>>
+    void SetTransformIds(TransformIdsT&& value) { m_transformIdsHasBeenSet = true; m_transformIds = std::forward<TransformIdsT>(value); }
+    template<typename TransformIdsT = Aws::Vector<Aws::String>>
+    ListMLTransformsResult& WithTransformIds(TransformIdsT&& value) { SetTransformIds(std::forward<TransformIdsT>(value)); return *this;}
+    template<typename TransformIdsT = Aws::String>
+    ListMLTransformsResult& AddTransformIds(TransformIdsT&& value) { m_transformIdsHasBeenSet = true; m_transformIds.emplace_back(std::forward<TransformIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +52,31 @@ namespace Model
      * <p>A continuation token, if the returned list does not contain the last metric
      * available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMLTransformsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMLTransformsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMLTransformsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMLTransformsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMLTransformsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMLTransformsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMLTransformsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMLTransformsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_transformIds;
+    bool m_transformIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

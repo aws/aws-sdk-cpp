@@ -36,7 +36,7 @@ namespace Model
   class RecoveryInstanceDataReplicationInfo
   {
   public:
-    AWS_DRS_API RecoveryInstanceDataReplicationInfo();
+    AWS_DRS_API RecoveryInstanceDataReplicationInfo() = default;
     AWS_DRS_API RecoveryInstanceDataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API RecoveryInstanceDataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,106 +46,96 @@ namespace Model
     /**
      * <p>Information about Data Replication</p>
      */
-    inline const RecoveryInstanceDataReplicationError& GetDataReplicationError() const{ return m_dataReplicationError; }
+    inline const RecoveryInstanceDataReplicationError& GetDataReplicationError() const { return m_dataReplicationError; }
     inline bool DataReplicationErrorHasBeenSet() const { return m_dataReplicationErrorHasBeenSet; }
-    inline void SetDataReplicationError(const RecoveryInstanceDataReplicationError& value) { m_dataReplicationErrorHasBeenSet = true; m_dataReplicationError = value; }
-    inline void SetDataReplicationError(RecoveryInstanceDataReplicationError&& value) { m_dataReplicationErrorHasBeenSet = true; m_dataReplicationError = std::move(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationError(const RecoveryInstanceDataReplicationError& value) { SetDataReplicationError(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationError(RecoveryInstanceDataReplicationError&& value) { SetDataReplicationError(std::move(value)); return *this;}
+    template<typename DataReplicationErrorT = RecoveryInstanceDataReplicationError>
+    void SetDataReplicationError(DataReplicationErrorT&& value) { m_dataReplicationErrorHasBeenSet = true; m_dataReplicationError = std::forward<DataReplicationErrorT>(value); }
+    template<typename DataReplicationErrorT = RecoveryInstanceDataReplicationError>
+    RecoveryInstanceDataReplicationInfo& WithDataReplicationError(DataReplicationErrorT&& value) { SetDataReplicationError(std::forward<DataReplicationErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about whether the data replication has been initiated.</p>
      */
-    inline const RecoveryInstanceDataReplicationInitiation& GetDataReplicationInitiation() const{ return m_dataReplicationInitiation; }
+    inline const RecoveryInstanceDataReplicationInitiation& GetDataReplicationInitiation() const { return m_dataReplicationInitiation; }
     inline bool DataReplicationInitiationHasBeenSet() const { return m_dataReplicationInitiationHasBeenSet; }
-    inline void SetDataReplicationInitiation(const RecoveryInstanceDataReplicationInitiation& value) { m_dataReplicationInitiationHasBeenSet = true; m_dataReplicationInitiation = value; }
-    inline void SetDataReplicationInitiation(RecoveryInstanceDataReplicationInitiation&& value) { m_dataReplicationInitiationHasBeenSet = true; m_dataReplicationInitiation = std::move(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationInitiation(const RecoveryInstanceDataReplicationInitiation& value) { SetDataReplicationInitiation(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationInitiation(RecoveryInstanceDataReplicationInitiation&& value) { SetDataReplicationInitiation(std::move(value)); return *this;}
+    template<typename DataReplicationInitiationT = RecoveryInstanceDataReplicationInitiation>
+    void SetDataReplicationInitiation(DataReplicationInitiationT&& value) { m_dataReplicationInitiationHasBeenSet = true; m_dataReplicationInitiation = std::forward<DataReplicationInitiationT>(value); }
+    template<typename DataReplicationInitiationT = RecoveryInstanceDataReplicationInitiation>
+    RecoveryInstanceDataReplicationInfo& WithDataReplicationInitiation(DataReplicationInitiationT&& value) { SetDataReplicationInitiation(std::forward<DataReplicationInitiationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the data replication.</p>
      */
-    inline const RecoveryInstanceDataReplicationState& GetDataReplicationState() const{ return m_dataReplicationState; }
+    inline RecoveryInstanceDataReplicationState GetDataReplicationState() const { return m_dataReplicationState; }
     inline bool DataReplicationStateHasBeenSet() const { return m_dataReplicationStateHasBeenSet; }
-    inline void SetDataReplicationState(const RecoveryInstanceDataReplicationState& value) { m_dataReplicationStateHasBeenSet = true; m_dataReplicationState = value; }
-    inline void SetDataReplicationState(RecoveryInstanceDataReplicationState&& value) { m_dataReplicationStateHasBeenSet = true; m_dataReplicationState = std::move(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationState(const RecoveryInstanceDataReplicationState& value) { SetDataReplicationState(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationState(RecoveryInstanceDataReplicationState&& value) { SetDataReplicationState(std::move(value)); return *this;}
+    inline void SetDataReplicationState(RecoveryInstanceDataReplicationState value) { m_dataReplicationStateHasBeenSet = true; m_dataReplicationState = value; }
+    inline RecoveryInstanceDataReplicationInfo& WithDataReplicationState(RecoveryInstanceDataReplicationState value) { SetDataReplicationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An estimate of when the data replication will be completed.</p>
      */
-    inline const Aws::String& GetEtaDateTime() const{ return m_etaDateTime; }
+    inline const Aws::String& GetEtaDateTime() const { return m_etaDateTime; }
     inline bool EtaDateTimeHasBeenSet() const { return m_etaDateTimeHasBeenSet; }
-    inline void SetEtaDateTime(const Aws::String& value) { m_etaDateTimeHasBeenSet = true; m_etaDateTime = value; }
-    inline void SetEtaDateTime(Aws::String&& value) { m_etaDateTimeHasBeenSet = true; m_etaDateTime = std::move(value); }
-    inline void SetEtaDateTime(const char* value) { m_etaDateTimeHasBeenSet = true; m_etaDateTime.assign(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithEtaDateTime(const Aws::String& value) { SetEtaDateTime(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithEtaDateTime(Aws::String&& value) { SetEtaDateTime(std::move(value)); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithEtaDateTime(const char* value) { SetEtaDateTime(value); return *this;}
+    template<typename EtaDateTimeT = Aws::String>
+    void SetEtaDateTime(EtaDateTimeT&& value) { m_etaDateTimeHasBeenSet = true; m_etaDateTime = std::forward<EtaDateTimeT>(value); }
+    template<typename EtaDateTimeT = Aws::String>
+    RecoveryInstanceDataReplicationInfo& WithEtaDateTime(EtaDateTimeT&& value) { SetEtaDateTime(std::forward<EtaDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Data replication lag duration.</p>
      */
-    inline const Aws::String& GetLagDuration() const{ return m_lagDuration; }
+    inline const Aws::String& GetLagDuration() const { return m_lagDuration; }
     inline bool LagDurationHasBeenSet() const { return m_lagDurationHasBeenSet; }
-    inline void SetLagDuration(const Aws::String& value) { m_lagDurationHasBeenSet = true; m_lagDuration = value; }
-    inline void SetLagDuration(Aws::String&& value) { m_lagDurationHasBeenSet = true; m_lagDuration = std::move(value); }
-    inline void SetLagDuration(const char* value) { m_lagDurationHasBeenSet = true; m_lagDuration.assign(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithLagDuration(const Aws::String& value) { SetLagDuration(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithLagDuration(Aws::String&& value) { SetLagDuration(std::move(value)); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithLagDuration(const char* value) { SetLagDuration(value); return *this;}
+    template<typename LagDurationT = Aws::String>
+    void SetLagDuration(LagDurationT&& value) { m_lagDurationHasBeenSet = true; m_lagDuration = std::forward<LagDurationT>(value); }
+    template<typename LagDurationT = Aws::String>
+    RecoveryInstanceDataReplicationInfo& WithLagDuration(LagDurationT&& value) { SetLagDuration(std::forward<LagDurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The disks that should be replicated.</p>
      */
-    inline const Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>& GetReplicatedDisks() const{ return m_replicatedDisks; }
+    inline const Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>& GetReplicatedDisks() const { return m_replicatedDisks; }
     inline bool ReplicatedDisksHasBeenSet() const { return m_replicatedDisksHasBeenSet; }
-    inline void SetReplicatedDisks(const Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks = value; }
-    inline void SetReplicatedDisks(Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>&& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks = std::move(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithReplicatedDisks(const Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>& value) { SetReplicatedDisks(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithReplicatedDisks(Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>&& value) { SetReplicatedDisks(std::move(value)); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& AddReplicatedDisks(const RecoveryInstanceDataReplicationInfoReplicatedDisk& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks.push_back(value); return *this; }
-    inline RecoveryInstanceDataReplicationInfo& AddReplicatedDisks(RecoveryInstanceDataReplicationInfoReplicatedDisk&& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks.push_back(std::move(value)); return *this; }
+    template<typename ReplicatedDisksT = Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>>
+    void SetReplicatedDisks(ReplicatedDisksT&& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks = std::forward<ReplicatedDisksT>(value); }
+    template<typename ReplicatedDisksT = Aws::Vector<RecoveryInstanceDataReplicationInfoReplicatedDisk>>
+    RecoveryInstanceDataReplicationInfo& WithReplicatedDisks(ReplicatedDisksT&& value) { SetReplicatedDisks(std::forward<ReplicatedDisksT>(value)); return *this;}
+    template<typename ReplicatedDisksT = RecoveryInstanceDataReplicationInfoReplicatedDisk>
+    RecoveryInstanceDataReplicationInfo& AddReplicatedDisks(ReplicatedDisksT&& value) { m_replicatedDisksHasBeenSet = true; m_replicatedDisks.emplace_back(std::forward<ReplicatedDisksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>AWS Availability zone into which data is being replicated.</p>
      */
-    inline const Aws::String& GetStagingAvailabilityZone() const{ return m_stagingAvailabilityZone; }
+    inline const Aws::String& GetStagingAvailabilityZone() const { return m_stagingAvailabilityZone; }
     inline bool StagingAvailabilityZoneHasBeenSet() const { return m_stagingAvailabilityZoneHasBeenSet; }
-    inline void SetStagingAvailabilityZone(const Aws::String& value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone = value; }
-    inline void SetStagingAvailabilityZone(Aws::String&& value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone = std::move(value); }
-    inline void SetStagingAvailabilityZone(const char* value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone.assign(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(const Aws::String& value) { SetStagingAvailabilityZone(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(Aws::String&& value) { SetStagingAvailabilityZone(std::move(value)); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(const char* value) { SetStagingAvailabilityZone(value); return *this;}
+    template<typename StagingAvailabilityZoneT = Aws::String>
+    void SetStagingAvailabilityZone(StagingAvailabilityZoneT&& value) { m_stagingAvailabilityZoneHasBeenSet = true; m_stagingAvailabilityZone = std::forward<StagingAvailabilityZoneT>(value); }
+    template<typename StagingAvailabilityZoneT = Aws::String>
+    RecoveryInstanceDataReplicationInfo& WithStagingAvailabilityZone(StagingAvailabilityZoneT&& value) { SetStagingAvailabilityZone(std::forward<StagingAvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the staging Outpost</p>
      */
-    inline const Aws::String& GetStagingOutpostArn() const{ return m_stagingOutpostArn; }
+    inline const Aws::String& GetStagingOutpostArn() const { return m_stagingOutpostArn; }
     inline bool StagingOutpostArnHasBeenSet() const { return m_stagingOutpostArnHasBeenSet; }
-    inline void SetStagingOutpostArn(const Aws::String& value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn = value; }
-    inline void SetStagingOutpostArn(Aws::String&& value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn = std::move(value); }
-    inline void SetStagingOutpostArn(const char* value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn.assign(value); }
-    inline RecoveryInstanceDataReplicationInfo& WithStagingOutpostArn(const Aws::String& value) { SetStagingOutpostArn(value); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithStagingOutpostArn(Aws::String&& value) { SetStagingOutpostArn(std::move(value)); return *this;}
-    inline RecoveryInstanceDataReplicationInfo& WithStagingOutpostArn(const char* value) { SetStagingOutpostArn(value); return *this;}
+    template<typename StagingOutpostArnT = Aws::String>
+    void SetStagingOutpostArn(StagingOutpostArnT&& value) { m_stagingOutpostArnHasBeenSet = true; m_stagingOutpostArn = std::forward<StagingOutpostArnT>(value); }
+    template<typename StagingOutpostArnT = Aws::String>
+    RecoveryInstanceDataReplicationInfo& WithStagingOutpostArn(StagingOutpostArnT&& value) { SetStagingOutpostArn(std::forward<StagingOutpostArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -155,7 +145,7 @@ namespace Model
     RecoveryInstanceDataReplicationInitiation m_dataReplicationInitiation;
     bool m_dataReplicationInitiationHasBeenSet = false;
 
-    RecoveryInstanceDataReplicationState m_dataReplicationState;
+    RecoveryInstanceDataReplicationState m_dataReplicationState{RecoveryInstanceDataReplicationState::NOT_SET};
     bool m_dataReplicationStateHasBeenSet = false;
 
     Aws::String m_etaDateTime;

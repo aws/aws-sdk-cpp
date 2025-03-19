@@ -31,7 +31,7 @@ namespace Model
   class PackageEncryptionOptions
   {
   public:
-    AWS_OPENSEARCHSERVICE_API PackageEncryptionOptions();
+    AWS_OPENSEARCHSERVICE_API PackageEncryptionOptions() = default;
     AWS_OPENSEARCHSERVICE_API PackageEncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API PackageEncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p> KMS key ID for encrypting the package.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
     inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
-    inline PackageEncryptionOptions& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline PackageEncryptionOptions& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline PackageEncryptionOptions& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    PackageEncryptionOptions& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This indicates whether encryption is enabled for the package.</p>
      */
-    inline bool GetEncryptionEnabled() const{ return m_encryptionEnabled; }
+    inline bool GetEncryptionEnabled() const { return m_encryptionEnabled; }
     inline bool EncryptionEnabledHasBeenSet() const { return m_encryptionEnabledHasBeenSet; }
     inline void SetEncryptionEnabled(bool value) { m_encryptionEnabledHasBeenSet = true; m_encryptionEnabled = value; }
     inline PackageEncryptionOptions& WithEncryptionEnabled(bool value) { SetEncryptionEnabled(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_kmsKeyIdentifier;
     bool m_kmsKeyIdentifierHasBeenSet = false;
 
-    bool m_encryptionEnabled;
+    bool m_encryptionEnabled{false};
     bool m_encryptionEnabledHasBeenSet = false;
   };
 

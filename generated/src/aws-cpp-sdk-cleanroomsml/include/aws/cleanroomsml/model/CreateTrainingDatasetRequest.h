@@ -24,7 +24,7 @@ namespace Model
   class CreateTrainingDatasetRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API CreateTrainingDatasetRequest();
+    AWS_CLEANROOMSML_API CreateTrainingDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The name of the training dataset. This name must be unique in your account
      * and region.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateTrainingDatasetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTrainingDatasetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * a role across AWS accounts is not allowed. If you pass a role that isn't in your
      * account, you get an <code>AccessDeniedException</code> error.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateTrainingDatasetRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateTrainingDatasetRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,14 @@ namespace Model
      * dataset type and details on its location and schema. You must provide a role
      * that has read access to these tables.</p>
      */
-    inline const Aws::Vector<Dataset>& GetTrainingData() const{ return m_trainingData; }
+    inline const Aws::Vector<Dataset>& GetTrainingData() const { return m_trainingData; }
     inline bool TrainingDataHasBeenSet() const { return m_trainingDataHasBeenSet; }
-    inline void SetTrainingData(const Aws::Vector<Dataset>& value) { m_trainingDataHasBeenSet = true; m_trainingData = value; }
-    inline void SetTrainingData(Aws::Vector<Dataset>&& value) { m_trainingDataHasBeenSet = true; m_trainingData = std::move(value); }
-    inline CreateTrainingDatasetRequest& WithTrainingData(const Aws::Vector<Dataset>& value) { SetTrainingData(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithTrainingData(Aws::Vector<Dataset>&& value) { SetTrainingData(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& AddTrainingData(const Dataset& value) { m_trainingDataHasBeenSet = true; m_trainingData.push_back(value); return *this; }
-    inline CreateTrainingDatasetRequest& AddTrainingData(Dataset&& value) { m_trainingDataHasBeenSet = true; m_trainingData.push_back(std::move(value)); return *this; }
+    template<typename TrainingDataT = Aws::Vector<Dataset>>
+    void SetTrainingData(TrainingDataT&& value) { m_trainingDataHasBeenSet = true; m_trainingData = std::forward<TrainingDataT>(value); }
+    template<typename TrainingDataT = Aws::Vector<Dataset>>
+    CreateTrainingDatasetRequest& WithTrainingData(TrainingDataT&& value) { SetTrainingData(std::forward<TrainingDataT>(value)); return *this;}
+    template<typename TrainingDataT = Dataset>
+    CreateTrainingDatasetRequest& AddTrainingData(TrainingDataT&& value) { m_trainingDataHasBeenSet = true; m_trainingData.emplace_back(std::forward<TrainingDataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,33 +100,28 @@ namespace Model
      * count against the limit of 50 tags. Tags with only the key prefix of aws do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTrainingDatasetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateTrainingDatasetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateTrainingDatasetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateTrainingDatasetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateTrainingDatasetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateTrainingDatasetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateTrainingDatasetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateTrainingDatasetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateTrainingDatasetRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The description of the training dataset.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateTrainingDatasetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateTrainingDatasetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateTrainingDatasetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateTrainingDatasetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

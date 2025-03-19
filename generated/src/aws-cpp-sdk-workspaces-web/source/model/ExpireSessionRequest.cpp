@@ -12,12 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExpireSessionRequest::ExpireSessionRequest() : 
-    m_portalIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String ExpireSessionRequest::SerializePayload() const
 {
   return {};

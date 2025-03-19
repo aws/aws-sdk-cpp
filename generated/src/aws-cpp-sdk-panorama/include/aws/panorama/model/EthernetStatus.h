@@ -32,7 +32,7 @@ namespace Model
   class EthernetStatus
   {
   public:
-    AWS_PANORAMA_API EthernetStatus();
+    AWS_PANORAMA_API EthernetStatus() = default;
     AWS_PANORAMA_API EthernetStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API EthernetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>The device's connection status.</p>
      */
-    inline const NetworkConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
+    inline NetworkConnectionStatus GetConnectionStatus() const { return m_connectionStatus; }
     inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
-    inline void SetConnectionStatus(const NetworkConnectionStatus& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
-    inline void SetConnectionStatus(NetworkConnectionStatus&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::move(value); }
-    inline EthernetStatus& WithConnectionStatus(const NetworkConnectionStatus& value) { SetConnectionStatus(value); return *this;}
-    inline EthernetStatus& WithConnectionStatus(NetworkConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+    inline void SetConnectionStatus(NetworkConnectionStatus value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
+    inline EthernetStatus& WithConnectionStatus(NetworkConnectionStatus value) { SetConnectionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's physical address.</p>
      */
-    inline const Aws::String& GetHwAddress() const{ return m_hwAddress; }
+    inline const Aws::String& GetHwAddress() const { return m_hwAddress; }
     inline bool HwAddressHasBeenSet() const { return m_hwAddressHasBeenSet; }
-    inline void SetHwAddress(const Aws::String& value) { m_hwAddressHasBeenSet = true; m_hwAddress = value; }
-    inline void SetHwAddress(Aws::String&& value) { m_hwAddressHasBeenSet = true; m_hwAddress = std::move(value); }
-    inline void SetHwAddress(const char* value) { m_hwAddressHasBeenSet = true; m_hwAddress.assign(value); }
-    inline EthernetStatus& WithHwAddress(const Aws::String& value) { SetHwAddress(value); return *this;}
-    inline EthernetStatus& WithHwAddress(Aws::String&& value) { SetHwAddress(std::move(value)); return *this;}
-    inline EthernetStatus& WithHwAddress(const char* value) { SetHwAddress(value); return *this;}
+    template<typename HwAddressT = Aws::String>
+    void SetHwAddress(HwAddressT&& value) { m_hwAddressHasBeenSet = true; m_hwAddress = std::forward<HwAddressT>(value); }
+    template<typename HwAddressT = Aws::String>
+    EthernetStatus& WithHwAddress(HwAddressT&& value) { SetHwAddress(std::forward<HwAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device's IP address.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline EthernetStatus& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline EthernetStatus& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline EthernetStatus& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    EthernetStatus& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
   private:
 
-    NetworkConnectionStatus m_connectionStatus;
+    NetworkConnectionStatus m_connectionStatus{NetworkConnectionStatus::NOT_SET};
     bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_hwAddress;

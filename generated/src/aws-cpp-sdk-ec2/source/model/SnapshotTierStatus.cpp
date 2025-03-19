@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SnapshotTierStatus::SnapshotTierStatus() : 
-    m_snapshotIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_status(SnapshotState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageTier(StorageTier::NOT_SET),
-    m_storageTierHasBeenSet(false),
-    m_lastTieringStartTimeHasBeenSet(false),
-    m_lastTieringProgress(0),
-    m_lastTieringProgressHasBeenSet(false),
-    m_lastTieringOperationStatus(TieringOperationStatus::NOT_SET),
-    m_lastTieringOperationStatusHasBeenSet(false),
-    m_lastTieringOperationStatusDetailHasBeenSet(false),
-    m_archivalCompleteTimeHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false)
-{
-}
-
 SnapshotTierStatus::SnapshotTierStatus(const XmlNode& xmlNode)
-  : SnapshotTierStatus()
 {
   *this = xmlNode;
 }
@@ -67,7 +46,7 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
@@ -80,6 +59,7 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -91,7 +71,7 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     XmlNode storageTierNode = resultNode.FirstChild("storageTier");
     if(!storageTierNode.IsNull())
     {
-      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()).c_str());
+      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()));
       m_storageTierHasBeenSet = true;
     }
     XmlNode lastTieringStartTimeNode = resultNode.FirstChild("lastTieringStartTime");
@@ -109,7 +89,7 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     XmlNode lastTieringOperationStatusNode = resultNode.FirstChild("lastTieringOperationStatus");
     if(!lastTieringOperationStatusNode.IsNull())
     {
-      m_lastTieringOperationStatus = TieringOperationStatusMapper::GetTieringOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringOperationStatusNode.GetText()).c_str()).c_str());
+      m_lastTieringOperationStatus = TieringOperationStatusMapper::GetTieringOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringOperationStatusNode.GetText()).c_str()));
       m_lastTieringOperationStatusHasBeenSet = true;
     }
     XmlNode lastTieringOperationStatusDetailNode = resultNode.FirstChild("lastTieringOperationStatusDetail");

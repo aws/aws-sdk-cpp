@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListReportsForReportGroupResult::ListReportsForReportGroupResult()
-{
-}
-
 ListReportsForReportGroupResult::ListReportsForReportGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListReportsForReportGroupResult& ListReportsForReportGroupResult::operator =(con
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reports"))
   {
     Aws::Utils::Array<JsonView> reportsJsonList = jsonValue.GetArray("reports");
@@ -42,14 +37,15 @@ ListReportsForReportGroupResult& ListReportsForReportGroupResult::operator =(con
     {
       m_reports.push_back(reportsJsonList[reportsIndex].AsString());
     }
+    m_reportsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

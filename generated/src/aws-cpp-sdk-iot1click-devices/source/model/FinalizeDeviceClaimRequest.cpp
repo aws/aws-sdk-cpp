@@ -12,12 +12,6 @@ using namespace Aws::IoT1ClickDevicesService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-FinalizeDeviceClaimRequest::FinalizeDeviceClaimRequest() : 
-    m_deviceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String FinalizeDeviceClaimRequest::SerializePayload() const
 {
   JsonValue payload;

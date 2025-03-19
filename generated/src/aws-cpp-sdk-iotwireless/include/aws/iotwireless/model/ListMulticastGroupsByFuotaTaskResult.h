@@ -29,7 +29,7 @@ namespace Model
   class ListMulticastGroupsByFuotaTaskResult
   {
   public:
-    AWS_IOTWIRELESS_API ListMulticastGroupsByFuotaTaskResult();
+    AWS_IOTWIRELESS_API ListMulticastGroupsByFuotaTaskResult() = default;
     AWS_IOTWIRELESS_API ListMulticastGroupsByFuotaTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API ListMulticastGroupsByFuotaTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,43 +40,42 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMulticastGroupsByFuotaTaskResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMulticastGroupsByFuotaTaskResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMulticastGroupsByFuotaTaskResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMulticastGroupsByFuotaTaskResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<MulticastGroupByFuotaTask>& GetMulticastGroupList() const{ return m_multicastGroupList; }
-    inline void SetMulticastGroupList(const Aws::Vector<MulticastGroupByFuotaTask>& value) { m_multicastGroupList = value; }
-    inline void SetMulticastGroupList(Aws::Vector<MulticastGroupByFuotaTask>&& value) { m_multicastGroupList = std::move(value); }
-    inline ListMulticastGroupsByFuotaTaskResult& WithMulticastGroupList(const Aws::Vector<MulticastGroupByFuotaTask>& value) { SetMulticastGroupList(value); return *this;}
-    inline ListMulticastGroupsByFuotaTaskResult& WithMulticastGroupList(Aws::Vector<MulticastGroupByFuotaTask>&& value) { SetMulticastGroupList(std::move(value)); return *this;}
-    inline ListMulticastGroupsByFuotaTaskResult& AddMulticastGroupList(const MulticastGroupByFuotaTask& value) { m_multicastGroupList.push_back(value); return *this; }
-    inline ListMulticastGroupsByFuotaTaskResult& AddMulticastGroupList(MulticastGroupByFuotaTask&& value) { m_multicastGroupList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MulticastGroupByFuotaTask>& GetMulticastGroupList() const { return m_multicastGroupList; }
+    template<typename MulticastGroupListT = Aws::Vector<MulticastGroupByFuotaTask>>
+    void SetMulticastGroupList(MulticastGroupListT&& value) { m_multicastGroupListHasBeenSet = true; m_multicastGroupList = std::forward<MulticastGroupListT>(value); }
+    template<typename MulticastGroupListT = Aws::Vector<MulticastGroupByFuotaTask>>
+    ListMulticastGroupsByFuotaTaskResult& WithMulticastGroupList(MulticastGroupListT&& value) { SetMulticastGroupList(std::forward<MulticastGroupListT>(value)); return *this;}
+    template<typename MulticastGroupListT = MulticastGroupByFuotaTask>
+    ListMulticastGroupsByFuotaTaskResult& AddMulticastGroupList(MulticastGroupListT&& value) { m_multicastGroupListHasBeenSet = true; m_multicastGroupList.emplace_back(std::forward<MulticastGroupListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMulticastGroupsByFuotaTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMulticastGroupsByFuotaTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMulticastGroupsByFuotaTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMulticastGroupsByFuotaTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MulticastGroupByFuotaTask> m_multicastGroupList;
+    bool m_multicastGroupListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

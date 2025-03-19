@@ -32,7 +32,7 @@ namespace Model
   class TestSetExportSpecification
   {
   public:
-    AWS_LEXMODELSV2_API TestSetExportSpecification();
+    AWS_LEXMODELSV2_API TestSetExportSpecification() = default;
     AWS_LEXMODELSV2_API TestSetExportSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the test set.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
     inline bool TestSetIdHasBeenSet() const { return m_testSetIdHasBeenSet; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetIdHasBeenSet = true; m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetIdHasBeenSet = true; m_testSetId.assign(value); }
-    inline TestSetExportSpecification& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline TestSetExportSpecification& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline TestSetExportSpecification& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    TestSetExportSpecification& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ModelStreamErrorException
   {
   public:
-    AWS_BEDROCKRUNTIME_API ModelStreamErrorException();
+    AWS_BEDROCKRUNTIME_API ModelStreamErrorException() = default;
     AWS_BEDROCKRUNTIME_API ModelStreamErrorException(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ModelStreamErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,21 +40,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ModelStreamErrorException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ModelStreamErrorException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ModelStreamErrorException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ModelStreamErrorException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The original status code.</p>
      */
-    inline int GetOriginalStatusCode() const{ return m_originalStatusCode; }
+    inline int GetOriginalStatusCode() const { return m_originalStatusCode; }
     inline bool OriginalStatusCodeHasBeenSet() const { return m_originalStatusCodeHasBeenSet; }
     inline void SetOriginalStatusCode(int value) { m_originalStatusCodeHasBeenSet = true; m_originalStatusCode = value; }
     inline ModelStreamErrorException& WithOriginalStatusCode(int value) { SetOriginalStatusCode(value); return *this;}
@@ -64,21 +62,19 @@ namespace Model
     /**
      * <p>The original message.</p>
      */
-    inline const Aws::String& GetOriginalMessage() const{ return m_originalMessage; }
+    inline const Aws::String& GetOriginalMessage() const { return m_originalMessage; }
     inline bool OriginalMessageHasBeenSet() const { return m_originalMessageHasBeenSet; }
-    inline void SetOriginalMessage(const Aws::String& value) { m_originalMessageHasBeenSet = true; m_originalMessage = value; }
-    inline void SetOriginalMessage(Aws::String&& value) { m_originalMessageHasBeenSet = true; m_originalMessage = std::move(value); }
-    inline void SetOriginalMessage(const char* value) { m_originalMessageHasBeenSet = true; m_originalMessage.assign(value); }
-    inline ModelStreamErrorException& WithOriginalMessage(const Aws::String& value) { SetOriginalMessage(value); return *this;}
-    inline ModelStreamErrorException& WithOriginalMessage(Aws::String&& value) { SetOriginalMessage(std::move(value)); return *this;}
-    inline ModelStreamErrorException& WithOriginalMessage(const char* value) { SetOriginalMessage(value); return *this;}
+    template<typename OriginalMessageT = Aws::String>
+    void SetOriginalMessage(OriginalMessageT&& value) { m_originalMessageHasBeenSet = true; m_originalMessage = std::forward<OriginalMessageT>(value); }
+    template<typename OriginalMessageT = Aws::String>
+    ModelStreamErrorException& WithOriginalMessage(OriginalMessageT&& value) { SetOriginalMessage(std::forward<OriginalMessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    int m_originalStatusCode;
+    int m_originalStatusCode{0};
     bool m_originalStatusCodeHasBeenSet = false;
 
     Aws::String m_originalMessage;

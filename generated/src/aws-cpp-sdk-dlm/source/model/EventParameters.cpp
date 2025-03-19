@@ -18,16 +18,7 @@ namespace DLM
 namespace Model
 {
 
-EventParameters::EventParameters() : 
-    m_eventType(EventTypeValues::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_snapshotOwnerHasBeenSet(false),
-    m_descriptionRegexHasBeenSet(false)
-{
-}
-
 EventParameters::EventParameters(JsonView jsonValue)
-  : EventParameters()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ EventParameters& EventParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = EventTypeValuesMapper::GetEventTypeValuesForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotOwner"))
   {
     Aws::Utils::Array<JsonView> snapshotOwnerJsonList = jsonValue.GetArray("SnapshotOwner");
@@ -50,14 +39,11 @@ EventParameters& EventParameters::operator =(JsonView jsonValue)
     }
     m_snapshotOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DescriptionRegex"))
   {
     m_descriptionRegex = jsonValue.GetString("DescriptionRegex");
-
     m_descriptionRegexHasBeenSet = true;
   }
-
   return *this;
 }
 

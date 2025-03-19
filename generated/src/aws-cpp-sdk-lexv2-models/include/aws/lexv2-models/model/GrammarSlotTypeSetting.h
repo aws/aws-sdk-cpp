@@ -32,7 +32,7 @@ namespace Model
   class GrammarSlotTypeSetting
   {
   public:
-    AWS_LEXMODELSV2_API GrammarSlotTypeSetting();
+    AWS_LEXMODELSV2_API GrammarSlotTypeSetting() = default;
     AWS_LEXMODELSV2_API GrammarSlotTypeSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API GrammarSlotTypeSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The source of the grammar used to create the slot type.</p>
      */
-    inline const GrammarSlotTypeSource& GetSource() const{ return m_source; }
+    inline const GrammarSlotTypeSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const GrammarSlotTypeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(GrammarSlotTypeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline GrammarSlotTypeSetting& WithSource(const GrammarSlotTypeSource& value) { SetSource(value); return *this;}
-    inline GrammarSlotTypeSetting& WithSource(GrammarSlotTypeSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = GrammarSlotTypeSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = GrammarSlotTypeSource>
+    GrammarSlotTypeSetting& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadDocumentsResult::UploadDocumentsResult() : 
-    m_adds(0),
-    m_deletes(0)
-{
-}
-
 UploadDocumentsResult::UploadDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UploadDocumentsResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ UploadDocumentsResult& UploadDocumentsResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adds"))
   {
     m_adds = jsonValue.GetInt64("adds");
-
+    m_addsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletes"))
   {
     m_deletes = jsonValue.GetInt64("deletes");
-
+    m_deletesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
@@ -57,14 +47,15 @@ UploadDocumentsResult& UploadDocumentsResult::operator =(const Aws::AmazonWebSer
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
+    m_warningsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

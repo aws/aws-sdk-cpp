@@ -29,7 +29,7 @@ namespace Model
   class ListAnomalyGroupRelatedMetricsResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API ListAnomalyGroupRelatedMetricsResult();
+    AWS_LOOKOUTMETRICS_API ListAnomalyGroupRelatedMetricsResult() = default;
     AWS_LOOKOUTMETRICS_API ListAnomalyGroupRelatedMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API ListAnomalyGroupRelatedMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>Aggregated details about the measures contributing to the anomaly group, and
      * the measures potentially impacted by the anomaly group.</p>
      */
-    inline const Aws::Vector<InterMetricImpactDetails>& GetInterMetricImpactList() const{ return m_interMetricImpactList; }
-    inline void SetInterMetricImpactList(const Aws::Vector<InterMetricImpactDetails>& value) { m_interMetricImpactList = value; }
-    inline void SetInterMetricImpactList(Aws::Vector<InterMetricImpactDetails>&& value) { m_interMetricImpactList = std::move(value); }
-    inline ListAnomalyGroupRelatedMetricsResult& WithInterMetricImpactList(const Aws::Vector<InterMetricImpactDetails>& value) { SetInterMetricImpactList(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsResult& WithInterMetricImpactList(Aws::Vector<InterMetricImpactDetails>&& value) { SetInterMetricImpactList(std::move(value)); return *this;}
-    inline ListAnomalyGroupRelatedMetricsResult& AddInterMetricImpactList(const InterMetricImpactDetails& value) { m_interMetricImpactList.push_back(value); return *this; }
-    inline ListAnomalyGroupRelatedMetricsResult& AddInterMetricImpactList(InterMetricImpactDetails&& value) { m_interMetricImpactList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InterMetricImpactDetails>& GetInterMetricImpactList() const { return m_interMetricImpactList; }
+    template<typename InterMetricImpactListT = Aws::Vector<InterMetricImpactDetails>>
+    void SetInterMetricImpactList(InterMetricImpactListT&& value) { m_interMetricImpactListHasBeenSet = true; m_interMetricImpactList = std::forward<InterMetricImpactListT>(value); }
+    template<typename InterMetricImpactListT = Aws::Vector<InterMetricImpactDetails>>
+    ListAnomalyGroupRelatedMetricsResult& WithInterMetricImpactList(InterMetricImpactListT&& value) { SetInterMetricImpactList(std::forward<InterMetricImpactListT>(value)); return *this;}
+    template<typename InterMetricImpactListT = InterMetricImpactDetails>
+    ListAnomalyGroupRelatedMetricsResult& AddInterMetricImpactList(InterMetricImpactListT&& value) { m_interMetricImpactListHasBeenSet = true; m_interMetricImpactList.emplace_back(std::forward<InterMetricImpactListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAnomalyGroupRelatedMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnomalyGroupRelatedMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnomalyGroupRelatedMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAnomalyGroupRelatedMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAnomalyGroupRelatedMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAnomalyGroupRelatedMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InterMetricImpactDetails> m_interMetricImpactList;
+    bool m_interMetricImpactListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

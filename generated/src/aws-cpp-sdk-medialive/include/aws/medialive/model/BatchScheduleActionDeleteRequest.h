@@ -32,7 +32,7 @@ namespace Model
   class BatchScheduleActionDeleteRequest
   {
   public:
-    AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest();
+    AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest() = default;
     AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * A list of schedule actions to delete.
      */
-    inline const Aws::Vector<Aws::String>& GetActionNames() const{ return m_actionNames; }
+    inline const Aws::Vector<Aws::String>& GetActionNames() const { return m_actionNames; }
     inline bool ActionNamesHasBeenSet() const { return m_actionNamesHasBeenSet; }
-    inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
-    inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::move(value); }
-    inline BatchScheduleActionDeleteRequest& WithActionNames(const Aws::Vector<Aws::String>& value) { SetActionNames(value); return *this;}
-    inline BatchScheduleActionDeleteRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(std::move(value)); return *this;}
-    inline BatchScheduleActionDeleteRequest& AddActionNames(const Aws::String& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
-    inline BatchScheduleActionDeleteRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(std::move(value)); return *this; }
-    inline BatchScheduleActionDeleteRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
+    template<typename ActionNamesT = Aws::Vector<Aws::String>>
+    void SetActionNames(ActionNamesT&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::forward<ActionNamesT>(value); }
+    template<typename ActionNamesT = Aws::Vector<Aws::String>>
+    BatchScheduleActionDeleteRequest& WithActionNames(ActionNamesT&& value) { SetActionNames(std::forward<ActionNamesT>(value)); return *this;}
+    template<typename ActionNamesT = Aws::String>
+    BatchScheduleActionDeleteRequest& AddActionNames(ActionNamesT&& value) { m_actionNamesHasBeenSet = true; m_actionNames.emplace_back(std::forward<ActionNamesT>(value)); return *this; }
     ///@}
   private:
 

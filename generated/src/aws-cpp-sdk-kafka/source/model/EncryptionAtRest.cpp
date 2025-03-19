@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-EncryptionAtRest::EncryptionAtRest() : 
-    m_dataVolumeKMSKeyIdHasBeenSet(false)
-{
-}
-
 EncryptionAtRest::EncryptionAtRest(JsonView jsonValue)
-  : EncryptionAtRest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EncryptionAtRest& EncryptionAtRest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataVolumeKMSKeyId"))
   {
     m_dataVolumeKMSKeyId = jsonValue.GetString("dataVolumeKMSKeyId");
-
     m_dataVolumeKMSKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

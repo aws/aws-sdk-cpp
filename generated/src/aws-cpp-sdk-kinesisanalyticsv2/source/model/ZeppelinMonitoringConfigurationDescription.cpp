@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ZeppelinMonitoringConfigurationDescription::ZeppelinMonitoringConfigurationDescription() : 
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 ZeppelinMonitoringConfigurationDescription::ZeppelinMonitoringConfigurationDescription(JsonView jsonValue)
-  : ZeppelinMonitoringConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ZeppelinMonitoringConfigurationDescription& ZeppelinMonitoringConfigurationDescr
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

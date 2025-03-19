@@ -33,7 +33,7 @@ namespace Model
   class ClusterParameterGroupStatus
   {
   public:
-    AWS_REDSHIFT_API ClusterParameterGroupStatus();
+    AWS_REDSHIFT_API ClusterParameterGroupStatus() = default;
     AWS_REDSHIFT_API ClusterParameterGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ClusterParameterGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group.</p>
      */
-    inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+    inline const Aws::String& GetParameterGroupName() const { return m_parameterGroupName; }
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-    inline ClusterParameterGroupStatus& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-    inline ClusterParameterGroupStatus& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-    inline ClusterParameterGroupStatus& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    template<typename ParameterGroupNameT = Aws::String>
+    void SetParameterGroupName(ParameterGroupNameT&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::forward<ParameterGroupNameT>(value); }
+    template<typename ParameterGroupNameT = Aws::String>
+    ClusterParameterGroupStatus& WithParameterGroupName(ParameterGroupNameT&& value) { SetParameterGroupName(std::forward<ParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of parameter updates.</p>
      */
-    inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+    inline const Aws::String& GetParameterApplyStatus() const { return m_parameterApplyStatus; }
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
-    inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
-    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
-    inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
-    inline ClusterParameterGroupStatus& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
-    inline ClusterParameterGroupStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
-    inline ClusterParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+    template<typename ParameterApplyStatusT = Aws::String>
+    void SetParameterApplyStatus(ParameterApplyStatusT&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::forward<ParameterApplyStatusT>(value); }
+    template<typename ParameterApplyStatusT = Aws::String>
+    ClusterParameterGroupStatus& WithParameterApplyStatus(ParameterApplyStatusT&& value) { SetParameterApplyStatus(std::forward<ParameterApplyStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,14 @@ namespace Model
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<ClusterParameterStatus>& GetClusterParameterStatusList() const{ return m_clusterParameterStatusList; }
+    inline const Aws::Vector<ClusterParameterStatus>& GetClusterParameterStatusList() const { return m_clusterParameterStatusList; }
     inline bool ClusterParameterStatusListHasBeenSet() const { return m_clusterParameterStatusListHasBeenSet; }
-    inline void SetClusterParameterStatusList(const Aws::Vector<ClusterParameterStatus>& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList = value; }
-    inline void SetClusterParameterStatusList(Aws::Vector<ClusterParameterStatus>&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList = std::move(value); }
-    inline ClusterParameterGroupStatus& WithClusterParameterStatusList(const Aws::Vector<ClusterParameterStatus>& value) { SetClusterParameterStatusList(value); return *this;}
-    inline ClusterParameterGroupStatus& WithClusterParameterStatusList(Aws::Vector<ClusterParameterStatus>&& value) { SetClusterParameterStatusList(std::move(value)); return *this;}
-    inline ClusterParameterGroupStatus& AddClusterParameterStatusList(const ClusterParameterStatus& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList.push_back(value); return *this; }
-    inline ClusterParameterGroupStatus& AddClusterParameterStatusList(ClusterParameterStatus&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList.push_back(std::move(value)); return *this; }
+    template<typename ClusterParameterStatusListT = Aws::Vector<ClusterParameterStatus>>
+    void SetClusterParameterStatusList(ClusterParameterStatusListT&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList = std::forward<ClusterParameterStatusListT>(value); }
+    template<typename ClusterParameterStatusListT = Aws::Vector<ClusterParameterStatus>>
+    ClusterParameterGroupStatus& WithClusterParameterStatusList(ClusterParameterStatusListT&& value) { SetClusterParameterStatusList(std::forward<ClusterParameterStatusListT>(value)); return *this;}
+    template<typename ClusterParameterStatusListT = ClusterParameterStatus>
+    ClusterParameterGroupStatus& AddClusterParameterStatusList(ClusterParameterStatusListT&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList.emplace_back(std::forward<ClusterParameterStatusListT>(value)); return *this; }
     ///@}
   private:
 

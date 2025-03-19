@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSequenceStoreRequest::DeleteSequenceStoreRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSequenceStoreRequest::SerializePayload() const
 {
   return {};

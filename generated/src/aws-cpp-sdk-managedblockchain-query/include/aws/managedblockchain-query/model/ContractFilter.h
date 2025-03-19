@@ -34,7 +34,7 @@ namespace Model
   class ContractFilter
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ContractFilter();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ContractFilter() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API ContractFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API ContractFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,39 @@ namespace Model
     /**
      * <p>The blockchain network of the contract.</p>
      */
-    inline const QueryNetwork& GetNetwork() const{ return m_network; }
+    inline QueryNetwork GetNetwork() const { return m_network; }
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-    inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-    inline ContractFilter& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-    inline ContractFilter& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
+    inline void SetNetwork(QueryNetwork value) { m_networkHasBeenSet = true; m_network = value; }
+    inline ContractFilter& WithNetwork(QueryNetwork value) { SetNetwork(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container for the token standard.</p>
      */
-    inline const QueryTokenStandard& GetTokenStandard() const{ return m_tokenStandard; }
+    inline QueryTokenStandard GetTokenStandard() const { return m_tokenStandard; }
     inline bool TokenStandardHasBeenSet() const { return m_tokenStandardHasBeenSet; }
-    inline void SetTokenStandard(const QueryTokenStandard& value) { m_tokenStandardHasBeenSet = true; m_tokenStandard = value; }
-    inline void SetTokenStandard(QueryTokenStandard&& value) { m_tokenStandardHasBeenSet = true; m_tokenStandard = std::move(value); }
-    inline ContractFilter& WithTokenStandard(const QueryTokenStandard& value) { SetTokenStandard(value); return *this;}
-    inline ContractFilter& WithTokenStandard(QueryTokenStandard&& value) { SetTokenStandard(std::move(value)); return *this;}
+    inline void SetTokenStandard(QueryTokenStandard value) { m_tokenStandardHasBeenSet = true; m_tokenStandard = value; }
+    inline ContractFilter& WithTokenStandard(QueryTokenStandard value) { SetTokenStandard(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network address of the deployer.</p>
      */
-    inline const Aws::String& GetDeployerAddress() const{ return m_deployerAddress; }
+    inline const Aws::String& GetDeployerAddress() const { return m_deployerAddress; }
     inline bool DeployerAddressHasBeenSet() const { return m_deployerAddressHasBeenSet; }
-    inline void SetDeployerAddress(const Aws::String& value) { m_deployerAddressHasBeenSet = true; m_deployerAddress = value; }
-    inline void SetDeployerAddress(Aws::String&& value) { m_deployerAddressHasBeenSet = true; m_deployerAddress = std::move(value); }
-    inline void SetDeployerAddress(const char* value) { m_deployerAddressHasBeenSet = true; m_deployerAddress.assign(value); }
-    inline ContractFilter& WithDeployerAddress(const Aws::String& value) { SetDeployerAddress(value); return *this;}
-    inline ContractFilter& WithDeployerAddress(Aws::String&& value) { SetDeployerAddress(std::move(value)); return *this;}
-    inline ContractFilter& WithDeployerAddress(const char* value) { SetDeployerAddress(value); return *this;}
+    template<typename DeployerAddressT = Aws::String>
+    void SetDeployerAddress(DeployerAddressT&& value) { m_deployerAddressHasBeenSet = true; m_deployerAddress = std::forward<DeployerAddressT>(value); }
+    template<typename DeployerAddressT = Aws::String>
+    ContractFilter& WithDeployerAddress(DeployerAddressT&& value) { SetDeployerAddress(std::forward<DeployerAddressT>(value)); return *this;}
     ///@}
   private:
 
-    QueryNetwork m_network;
+    QueryNetwork m_network{QueryNetwork::NOT_SET};
     bool m_networkHasBeenSet = false;
 
-    QueryTokenStandard m_tokenStandard;
+    QueryTokenStandard m_tokenStandard{QueryTokenStandard::NOT_SET};
     bool m_tokenStandardHasBeenSet = false;
 
     Aws::String m_deployerAddress;

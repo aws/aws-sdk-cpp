@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSubscriptionDefinitionRequest::DeleteSubscriptionDefinitionRequest() : 
-    m_subscriptionDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSubscriptionDefinitionRequest::SerializePayload() const
 {
   return {};

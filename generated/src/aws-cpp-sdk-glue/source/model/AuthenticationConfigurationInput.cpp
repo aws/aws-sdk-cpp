@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AuthenticationConfigurationInput::AuthenticationConfigurationInput() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_basicAuthenticationCredentialsHasBeenSet(false),
-    m_customAuthenticationCredentialsHasBeenSet(false)
-{
-}
-
 AuthenticationConfigurationInput::AuthenticationConfigurationInput(JsonView jsonValue)
-  : AuthenticationConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator =(J
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("OAuth2Properties");
-
     m_oAuth2PropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BasicAuthenticationCredentials"))
   {
     m_basicAuthenticationCredentials = jsonValue.GetObject("BasicAuthenticationCredentials");
-
     m_basicAuthenticationCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomAuthenticationCredentials"))
   {
     Aws::Map<Aws::String, JsonView> customAuthenticationCredentialsJsonMap = jsonValue.GetObject("CustomAuthenticationCredentials").GetAllObjects();
@@ -81,7 +59,6 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator =(J
     }
     m_customAuthenticationCredentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-TriggerConfig::TriggerConfig() : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerPropertiesHasBeenSet(false)
-{
-}
-
 TriggerConfig::TriggerConfig(JsonView jsonValue)
-  : TriggerConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TriggerType"))
   {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("TriggerType"));
-
     m_triggerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerProperties"))
   {
     m_triggerProperties = jsonValue.GetObject("TriggerProperties");
-
     m_triggerPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

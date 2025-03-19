@@ -35,7 +35,7 @@ namespace Model
   class RDSInstanceSavingsOpportunityAfterDiscounts
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RDSInstanceSavingsOpportunityAfterDiscounts();
+    AWS_COMPUTEOPTIMIZER_API RDSInstanceSavingsOpportunityAfterDiscounts() = default;
     AWS_COMPUTEOPTIMIZER_API RDSInstanceSavingsOpportunityAfterDiscounts(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RDSInstanceSavingsOpportunityAfterDiscounts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * adopting Compute Optimizer’s Amazon RDS instance recommendations. This includes
      * any applicable Savings Plans discounts. </p>
      */
-    inline double GetSavingsOpportunityPercentage() const{ return m_savingsOpportunityPercentage; }
+    inline double GetSavingsOpportunityPercentage() const { return m_savingsOpportunityPercentage; }
     inline bool SavingsOpportunityPercentageHasBeenSet() const { return m_savingsOpportunityPercentageHasBeenSet; }
     inline void SetSavingsOpportunityPercentage(double value) { m_savingsOpportunityPercentageHasBeenSet = true; m_savingsOpportunityPercentage = value; }
     inline RDSInstanceSavingsOpportunityAfterDiscounts& WithSavingsOpportunityPercentage(double value) { SetSavingsOpportunityPercentage(value); return *this;}
@@ -59,16 +59,16 @@ namespace Model
      * Amazon RDS instance recommendations. This includes any applicable Savings Plans
      * discounts. </p>
      */
-    inline const RDSInstanceEstimatedMonthlySavings& GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
+    inline const RDSInstanceEstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
-    inline void SetEstimatedMonthlySavings(const RDSInstanceEstimatedMonthlySavings& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
-    inline void SetEstimatedMonthlySavings(RDSInstanceEstimatedMonthlySavings&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::move(value); }
-    inline RDSInstanceSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(const RDSInstanceEstimatedMonthlySavings& value) { SetEstimatedMonthlySavings(value); return *this;}
-    inline RDSInstanceSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(RDSInstanceEstimatedMonthlySavings&& value) { SetEstimatedMonthlySavings(std::move(value)); return *this;}
+    template<typename EstimatedMonthlySavingsT = RDSInstanceEstimatedMonthlySavings>
+    void SetEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::forward<EstimatedMonthlySavingsT>(value); }
+    template<typename EstimatedMonthlySavingsT = RDSInstanceEstimatedMonthlySavings>
+    RDSInstanceSavingsOpportunityAfterDiscounts& WithEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) { SetEstimatedMonthlySavings(std::forward<EstimatedMonthlySavingsT>(value)); return *this;}
     ///@}
   private:
 
-    double m_savingsOpportunityPercentage;
+    double m_savingsOpportunityPercentage{0.0};
     bool m_savingsOpportunityPercentageHasBeenSet = false;
 
     RDSInstanceEstimatedMonthlySavings m_estimatedMonthlySavings;

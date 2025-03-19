@@ -20,16 +20,7 @@ namespace DirectConnect
 namespace Model
 {
 
-Loa::Loa() : 
-    m_loaContentHasBeenSet(false),
-    m_loaContentType(LoaContentType::NOT_SET),
-    m_loaContentTypeHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Loa::Loa(JsonView jsonValue)
-  : Loa()
 {
   *this = jsonValue;
 }
@@ -41,14 +32,11 @@ Loa& Loa::operator =(JsonView jsonValue)
     m_loaContent = HashingUtils::Base64Decode(jsonValue.GetString("loaContent"));
     m_loaContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loaContentType"))
   {
     m_loaContentType = LoaContentTypeMapper::GetLoaContentTypeForName(jsonValue.GetString("loaContentType"));
-
     m_loaContentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

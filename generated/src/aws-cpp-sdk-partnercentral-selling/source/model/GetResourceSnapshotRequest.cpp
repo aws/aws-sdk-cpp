@@ -12,18 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceSnapshotRequest::GetResourceSnapshotRequest() : 
-    m_catalogHasBeenSet(false),
-    m_engagementIdentifierHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceSnapshotTemplateIdentifierHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

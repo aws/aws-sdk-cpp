@@ -17,12 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-UpdateThingShadowRequest::UpdateThingShadowRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_shadowNameHasBeenSet(false)
-{
-}
-
 
 void UpdateThingShadowRequest::AddQueryStringParameters(URI& uri) const
 {

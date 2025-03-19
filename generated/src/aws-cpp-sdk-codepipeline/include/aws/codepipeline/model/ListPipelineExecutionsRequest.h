@@ -26,7 +26,7 @@ namespace Model
   class ListPipelineExecutionsRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API ListPipelineExecutionsRequest();
+    AWS_CODEPIPELINE_API ListPipelineExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the pipeline for which you want to get execution summary
      * information.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline ListPipelineExecutionsRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline ListPipelineExecutionsRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline ListPipelineExecutionsRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    ListPipelineExecutionsRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * history is limited to the most recent 12 months, based on pipeline execution
      * start times. Default value is 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPipelineExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -71,12 +69,12 @@ namespace Model
     /**
      * <p>The pipeline execution to filter on.</p>
      */
-    inline const PipelineExecutionFilter& GetFilter() const{ return m_filter; }
+    inline const PipelineExecutionFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const PipelineExecutionFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(PipelineExecutionFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListPipelineExecutionsRequest& WithFilter(const PipelineExecutionFilter& value) { SetFilter(value); return *this;}
-    inline ListPipelineExecutionsRequest& WithFilter(PipelineExecutionFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = PipelineExecutionFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = PipelineExecutionFilter>
+    ListPipelineExecutionsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,21 +83,19 @@ namespace Model
      * <code>ListPipelineExecutions</code> call, which can be used to return the next
      * set of pipeline executions in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPipelineExecutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPipelineExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPipelineExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPipelineExecutionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     PipelineExecutionFilter m_filter;

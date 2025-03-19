@@ -26,7 +26,7 @@ namespace Model
   class CopyOptionGroupRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CopyOptionGroupRequest();
+    AWS_RDS_API CopyOptionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The identifier for the source option group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must specify a valid option group.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceOptionGroupIdentifier() const{ return m_sourceOptionGroupIdentifier; }
+    inline const Aws::String& GetSourceOptionGroupIdentifier() const { return m_sourceOptionGroupIdentifier; }
     inline bool SourceOptionGroupIdentifierHasBeenSet() const { return m_sourceOptionGroupIdentifierHasBeenSet; }
-    inline void SetSourceOptionGroupIdentifier(const Aws::String& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = value; }
-    inline void SetSourceOptionGroupIdentifier(Aws::String&& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = std::move(value); }
-    inline void SetSourceOptionGroupIdentifier(const char* value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier.assign(value); }
-    inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const Aws::String& value) { SetSourceOptionGroupIdentifier(value); return *this;}
-    inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(Aws::String&& value) { SetSourceOptionGroupIdentifier(std::move(value)); return *this;}
-    inline CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(const char* value) { SetSourceOptionGroupIdentifier(value); return *this;}
+    template<typename SourceOptionGroupIdentifierT = Aws::String>
+    void SetSourceOptionGroupIdentifier(SourceOptionGroupIdentifierT&& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = std::forward<SourceOptionGroupIdentifierT>(value); }
+    template<typename SourceOptionGroupIdentifierT = Aws::String>
+    CopyOptionGroupRequest& WithSourceOptionGroupIdentifier(SourceOptionGroupIdentifierT&& value) { SetSourceOptionGroupIdentifier(std::forward<SourceOptionGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,40 +62,36 @@ namespace Model
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
-    inline const Aws::String& GetTargetOptionGroupIdentifier() const{ return m_targetOptionGroupIdentifier; }
+    inline const Aws::String& GetTargetOptionGroupIdentifier() const { return m_targetOptionGroupIdentifier; }
     inline bool TargetOptionGroupIdentifierHasBeenSet() const { return m_targetOptionGroupIdentifierHasBeenSet; }
-    inline void SetTargetOptionGroupIdentifier(const Aws::String& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = value; }
-    inline void SetTargetOptionGroupIdentifier(Aws::String&& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = std::move(value); }
-    inline void SetTargetOptionGroupIdentifier(const char* value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier.assign(value); }
-    inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(const Aws::String& value) { SetTargetOptionGroupIdentifier(value); return *this;}
-    inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(Aws::String&& value) { SetTargetOptionGroupIdentifier(std::move(value)); return *this;}
-    inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(const char* value) { SetTargetOptionGroupIdentifier(value); return *this;}
+    template<typename TargetOptionGroupIdentifierT = Aws::String>
+    void SetTargetOptionGroupIdentifier(TargetOptionGroupIdentifierT&& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = std::forward<TargetOptionGroupIdentifierT>(value); }
+    template<typename TargetOptionGroupIdentifierT = Aws::String>
+    CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(TargetOptionGroupIdentifierT&& value) { SetTargetOptionGroupIdentifier(std::forward<TargetOptionGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the copied option group.</p>
      */
-    inline const Aws::String& GetTargetOptionGroupDescription() const{ return m_targetOptionGroupDescription; }
+    inline const Aws::String& GetTargetOptionGroupDescription() const { return m_targetOptionGroupDescription; }
     inline bool TargetOptionGroupDescriptionHasBeenSet() const { return m_targetOptionGroupDescriptionHasBeenSet; }
-    inline void SetTargetOptionGroupDescription(const Aws::String& value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription = value; }
-    inline void SetTargetOptionGroupDescription(Aws::String&& value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription = std::move(value); }
-    inline void SetTargetOptionGroupDescription(const char* value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription.assign(value); }
-    inline CopyOptionGroupRequest& WithTargetOptionGroupDescription(const Aws::String& value) { SetTargetOptionGroupDescription(value); return *this;}
-    inline CopyOptionGroupRequest& WithTargetOptionGroupDescription(Aws::String&& value) { SetTargetOptionGroupDescription(std::move(value)); return *this;}
-    inline CopyOptionGroupRequest& WithTargetOptionGroupDescription(const char* value) { SetTargetOptionGroupDescription(value); return *this;}
+    template<typename TargetOptionGroupDescriptionT = Aws::String>
+    void SetTargetOptionGroupDescription(TargetOptionGroupDescriptionT&& value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription = std::forward<TargetOptionGroupDescriptionT>(value); }
+    template<typename TargetOptionGroupDescriptionT = Aws::String>
+    CopyOptionGroupRequest& WithTargetOptionGroupDescription(TargetOptionGroupDescriptionT&& value) { SetTargetOptionGroupDescription(std::forward<TargetOptionGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CopyOptionGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CopyOptionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CopyOptionGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CopyOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CopyOptionGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CopyOptionGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

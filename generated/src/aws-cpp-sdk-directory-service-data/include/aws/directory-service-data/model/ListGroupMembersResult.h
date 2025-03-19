@@ -29,7 +29,7 @@ namespace Model
   class ListGroupMembersResult
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API ListGroupMembersResult();
+    AWS_DIRECTORYSERVICEDATA_API ListGroupMembersResult() = default;
     AWS_DIRECTORYSERVICEDATA_API ListGroupMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICEDATA_API ListGroupMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,39 +38,35 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory associated with the group.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
-    inline ListGroupMembersResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline ListGroupMembersResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline ListGroupMembersResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    ListGroupMembersResult& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The domain name that's associated with the member. </p>
      */
-    inline const Aws::String& GetMemberRealm() const{ return m_memberRealm; }
-    inline void SetMemberRealm(const Aws::String& value) { m_memberRealm = value; }
-    inline void SetMemberRealm(Aws::String&& value) { m_memberRealm = std::move(value); }
-    inline void SetMemberRealm(const char* value) { m_memberRealm.assign(value); }
-    inline ListGroupMembersResult& WithMemberRealm(const Aws::String& value) { SetMemberRealm(value); return *this;}
-    inline ListGroupMembersResult& WithMemberRealm(Aws::String&& value) { SetMemberRealm(std::move(value)); return *this;}
-    inline ListGroupMembersResult& WithMemberRealm(const char* value) { SetMemberRealm(value); return *this;}
+    inline const Aws::String& GetMemberRealm() const { return m_memberRealm; }
+    template<typename MemberRealmT = Aws::String>
+    void SetMemberRealm(MemberRealmT&& value) { m_memberRealmHasBeenSet = true; m_memberRealm = std::forward<MemberRealmT>(value); }
+    template<typename MemberRealmT = Aws::String>
+    ListGroupMembersResult& WithMemberRealm(MemberRealmT&& value) { SetMemberRealm(std::forward<MemberRealmT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The member information that the request returns. </p>
      */
-    inline const Aws::Vector<Member>& GetMembers() const{ return m_members; }
-    inline void SetMembers(const Aws::Vector<Member>& value) { m_members = value; }
-    inline void SetMembers(Aws::Vector<Member>&& value) { m_members = std::move(value); }
-    inline ListGroupMembersResult& WithMembers(const Aws::Vector<Member>& value) { SetMembers(value); return *this;}
-    inline ListGroupMembersResult& WithMembers(Aws::Vector<Member>&& value) { SetMembers(std::move(value)); return *this;}
-    inline ListGroupMembersResult& AddMembers(const Member& value) { m_members.push_back(value); return *this; }
-    inline ListGroupMembersResult& AddMembers(Member&& value) { m_members.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Member>& GetMembers() const { return m_members; }
+    template<typename MembersT = Aws::Vector<Member>>
+    void SetMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members = std::forward<MembersT>(value); }
+    template<typename MembersT = Aws::Vector<Member>>
+    ListGroupMembersResult& WithMembers(MembersT&& value) { SetMembers(std::forward<MembersT>(value)); return *this;}
+    template<typename MembersT = Member>
+    ListGroupMembersResult& AddMembers(MembersT&& value) { m_membersHasBeenSet = true; m_members.emplace_back(std::forward<MembersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,51 +74,51 @@ namespace Model
      * <p> An encoded paging token for paginated calls that can be passed back to
      * retrieve the next page. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListGroupMembersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGroupMembersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGroupMembersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGroupMembersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The domain name that's associated with the group. </p>
      */
-    inline const Aws::String& GetRealm() const{ return m_realm; }
-    inline void SetRealm(const Aws::String& value) { m_realm = value; }
-    inline void SetRealm(Aws::String&& value) { m_realm = std::move(value); }
-    inline void SetRealm(const char* value) { m_realm.assign(value); }
-    inline ListGroupMembersResult& WithRealm(const Aws::String& value) { SetRealm(value); return *this;}
-    inline ListGroupMembersResult& WithRealm(Aws::String&& value) { SetRealm(std::move(value)); return *this;}
-    inline ListGroupMembersResult& WithRealm(const char* value) { SetRealm(value); return *this;}
+    inline const Aws::String& GetRealm() const { return m_realm; }
+    template<typename RealmT = Aws::String>
+    void SetRealm(RealmT&& value) { m_realmHasBeenSet = true; m_realm = std::forward<RealmT>(value); }
+    template<typename RealmT = Aws::String>
+    ListGroupMembersResult& WithRealm(RealmT&& value) { SetRealm(std::forward<RealmT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGroupMembersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGroupMembersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGroupMembersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGroupMembersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_memberRealm;
+    bool m_memberRealmHasBeenSet = false;
 
     Aws::Vector<Member> m_members;
+    bool m_membersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_realm;
+    bool m_realmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

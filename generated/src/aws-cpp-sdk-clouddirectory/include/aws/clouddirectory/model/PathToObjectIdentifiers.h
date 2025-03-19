@@ -33,7 +33,7 @@ namespace Model
   class PathToObjectIdentifiers
   {
   public:
-    AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers();
+    AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers() = default;
     AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The path that is used to identify the object starting from directory
      * root.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline PathToObjectIdentifiers& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline PathToObjectIdentifiers& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline PathToObjectIdentifiers& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    PathToObjectIdentifiers& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,15 +57,14 @@ namespace Model
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
      * object in the request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectIdentifiers() const{ return m_objectIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetObjectIdentifiers() const { return m_objectIdentifiers; }
     inline bool ObjectIdentifiersHasBeenSet() const { return m_objectIdentifiersHasBeenSet; }
-    inline void SetObjectIdentifiers(const Aws::Vector<Aws::String>& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers = value; }
-    inline void SetObjectIdentifiers(Aws::Vector<Aws::String>&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers = std::move(value); }
-    inline PathToObjectIdentifiers& WithObjectIdentifiers(const Aws::Vector<Aws::String>& value) { SetObjectIdentifiers(value); return *this;}
-    inline PathToObjectIdentifiers& WithObjectIdentifiers(Aws::Vector<Aws::String>&& value) { SetObjectIdentifiers(std::move(value)); return *this;}
-    inline PathToObjectIdentifiers& AddObjectIdentifiers(const Aws::String& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(value); return *this; }
-    inline PathToObjectIdentifiers& AddObjectIdentifiers(Aws::String&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(std::move(value)); return *this; }
-    inline PathToObjectIdentifiers& AddObjectIdentifiers(const char* value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(value); return *this; }
+    template<typename ObjectIdentifiersT = Aws::Vector<Aws::String>>
+    void SetObjectIdentifiers(ObjectIdentifiersT&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers = std::forward<ObjectIdentifiersT>(value); }
+    template<typename ObjectIdentifiersT = Aws::Vector<Aws::String>>
+    PathToObjectIdentifiers& WithObjectIdentifiers(ObjectIdentifiersT&& value) { SetObjectIdentifiers(std::forward<ObjectIdentifiersT>(value)); return *this;}
+    template<typename ObjectIdentifiersT = Aws::String>
+    PathToObjectIdentifiers& AddObjectIdentifiers(ObjectIdentifiersT&& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.emplace_back(std::forward<ObjectIdentifiersT>(value)); return *this; }
     ///@}
   private:
 

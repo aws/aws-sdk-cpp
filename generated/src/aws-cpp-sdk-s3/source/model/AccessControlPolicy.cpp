@@ -20,14 +20,7 @@ namespace S3
 namespace Model
 {
 
-AccessControlPolicy::AccessControlPolicy() : 
-    m_grantsHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 AccessControlPolicy::AccessControlPolicy(const XmlNode& xmlNode)
-  : AccessControlPolicy()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ AccessControlPolicy& AccessControlPolicy::operator =(const XmlNode& xmlNode)
     if(!grantsNode.IsNull())
     {
       XmlNode grantsMember = grantsNode.FirstChild("Grant");
+      m_grantsHasBeenSet = !grantsMember.IsNull();
       while(!grantsMember.IsNull())
       {
         m_grants.push_back(grantsMember);

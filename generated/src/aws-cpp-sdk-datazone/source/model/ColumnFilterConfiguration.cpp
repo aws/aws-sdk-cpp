@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ColumnFilterConfiguration::ColumnFilterConfiguration() : 
-    m_includedColumnNamesHasBeenSet(false)
-{
-}
-
 ColumnFilterConfiguration::ColumnFilterConfiguration(JsonView jsonValue)
-  : ColumnFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ColumnFilterConfiguration& ColumnFilterConfiguration::operator =(JsonView jsonVa
     }
     m_includedColumnNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

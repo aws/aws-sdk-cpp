@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ThrottledClientException::ThrottledClientException() : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ThrottledClientException::ThrottledClientException(JsonView jsonValue)
-  : ThrottledClientException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ThrottledClientException& ThrottledClientException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

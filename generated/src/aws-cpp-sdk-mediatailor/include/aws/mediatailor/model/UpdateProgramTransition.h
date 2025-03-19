@@ -29,7 +29,7 @@ namespace Model
   class UpdateProgramTransition
   {
   public:
-    AWS_MEDIATAILOR_API UpdateProgramTransition();
+    AWS_MEDIATAILOR_API UpdateProgramTransition() = default;
     AWS_MEDIATAILOR_API UpdateProgramTransition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API UpdateProgramTransition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>The date and time that the program is scheduled to start, in epoch
      * milliseconds.</p>
      */
-    inline long long GetScheduledStartTimeMillis() const{ return m_scheduledStartTimeMillis; }
+    inline long long GetScheduledStartTimeMillis() const { return m_scheduledStartTimeMillis; }
     inline bool ScheduledStartTimeMillisHasBeenSet() const { return m_scheduledStartTimeMillisHasBeenSet; }
     inline void SetScheduledStartTimeMillis(long long value) { m_scheduledStartTimeMillisHasBeenSet = true; m_scheduledStartTimeMillis = value; }
     inline UpdateProgramTransition& WithScheduledStartTimeMillis(long long value) { SetScheduledStartTimeMillis(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The duration of the live program in seconds.</p>
      */
-    inline long long GetDurationMillis() const{ return m_durationMillis; }
+    inline long long GetDurationMillis() const { return m_durationMillis; }
     inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
     inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
     inline UpdateProgramTransition& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_scheduledStartTimeMillis;
+    long long m_scheduledStartTimeMillis{0};
     bool m_scheduledStartTimeMillisHasBeenSet = false;
 
-    long long m_durationMillis;
+    long long m_durationMillis{0};
     bool m_durationMillisHasBeenSet = false;
   };
 

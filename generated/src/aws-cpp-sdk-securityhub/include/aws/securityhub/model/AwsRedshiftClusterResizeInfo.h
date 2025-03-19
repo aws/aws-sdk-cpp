@@ -32,7 +32,7 @@ namespace Model
   class AwsRedshiftClusterResizeInfo
   {
   public:
-    AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo();
+    AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo() = default;
     AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether the resize operation can be canceled.</p>
      */
-    inline bool GetAllowCancelResize() const{ return m_allowCancelResize; }
+    inline bool GetAllowCancelResize() const { return m_allowCancelResize; }
     inline bool AllowCancelResizeHasBeenSet() const { return m_allowCancelResizeHasBeenSet; }
     inline void SetAllowCancelResize(bool value) { m_allowCancelResizeHasBeenSet = true; m_allowCancelResize = value; }
     inline AwsRedshiftClusterResizeInfo& WithAllowCancelResize(bool value) { SetAllowCancelResize(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
      * <p>The type of resize operation.</p> <p>Valid values: <code>ClassicResize</code>
      * </p>
      */
-    inline const Aws::String& GetResizeType() const{ return m_resizeType; }
+    inline const Aws::String& GetResizeType() const { return m_resizeType; }
     inline bool ResizeTypeHasBeenSet() const { return m_resizeTypeHasBeenSet; }
-    inline void SetResizeType(const Aws::String& value) { m_resizeTypeHasBeenSet = true; m_resizeType = value; }
-    inline void SetResizeType(Aws::String&& value) { m_resizeTypeHasBeenSet = true; m_resizeType = std::move(value); }
-    inline void SetResizeType(const char* value) { m_resizeTypeHasBeenSet = true; m_resizeType.assign(value); }
-    inline AwsRedshiftClusterResizeInfo& WithResizeType(const Aws::String& value) { SetResizeType(value); return *this;}
-    inline AwsRedshiftClusterResizeInfo& WithResizeType(Aws::String&& value) { SetResizeType(std::move(value)); return *this;}
-    inline AwsRedshiftClusterResizeInfo& WithResizeType(const char* value) { SetResizeType(value); return *this;}
+    template<typename ResizeTypeT = Aws::String>
+    void SetResizeType(ResizeTypeT&& value) { m_resizeTypeHasBeenSet = true; m_resizeType = std::forward<ResizeTypeT>(value); }
+    template<typename ResizeTypeT = Aws::String>
+    AwsRedshiftClusterResizeInfo& WithResizeType(ResizeTypeT&& value) { SetResizeType(std::forward<ResizeTypeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allowCancelResize;
+    bool m_allowCancelResize{false};
     bool m_allowCancelResizeHasBeenSet = false;
 
     Aws::String m_resizeType;

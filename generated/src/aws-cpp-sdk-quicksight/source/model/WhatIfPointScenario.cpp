@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WhatIfPointScenario::WhatIfPointScenario() : 
-    m_dateHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 WhatIfPointScenario::WhatIfPointScenario(JsonView jsonValue)
-  : WhatIfPointScenario()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WhatIfPointScenario& WhatIfPointScenario::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetDouble("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

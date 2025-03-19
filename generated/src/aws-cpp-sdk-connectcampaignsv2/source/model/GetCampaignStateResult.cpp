@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCampaignStateResult::GetCampaignStateResult() : 
-    m_state(CampaignState::NOT_SET)
-{
-}
-
 GetCampaignStateResult::GetCampaignStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCampaignStateResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetCampaignStateResult& GetCampaignStateResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("state"))
   {
     m_state = CampaignStateMapper::GetCampaignStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

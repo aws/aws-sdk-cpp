@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-InputFormatConfiguration::InputFormatConfiguration() : 
-    m_deserializerHasBeenSet(false)
-{
-}
-
 InputFormatConfiguration::InputFormatConfiguration(JsonView jsonValue)
-  : InputFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputFormatConfiguration& InputFormatConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Deserializer"))
   {
     m_deserializer = jsonValue.GetObject("Deserializer");
-
     m_deserializerHasBeenSet = true;
   }
-
   return *this;
 }
 

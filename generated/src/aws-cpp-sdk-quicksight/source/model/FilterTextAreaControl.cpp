@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterTextAreaControl::FilterTextAreaControl() : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
-{
-}
-
 FilterTextAreaControl::FilterTextAreaControl(JsonView jsonValue)
-  : FilterTextAreaControl()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ FilterTextAreaControl& FilterTextAreaControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterControlId"))
   {
     m_filterControlId = jsonValue.GetString("FilterControlId");
-
     m_filterControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFilterId"))
   {
     m_sourceFilterId = jsonValue.GetString("SourceFilterId");
-
     m_sourceFilterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

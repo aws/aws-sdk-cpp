@@ -32,7 +32,7 @@ namespace Model
   class DashEncryption
   {
   public:
-    AWS_MEDIAPACKAGE_API DashEncryption();
+    AWS_MEDIAPACKAGE_API DashEncryption() = default;
     AWS_MEDIAPACKAGE_API DashEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API DashEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * Time (in seconds) between each encryption key rotation.
      */
-    inline int GetKeyRotationIntervalSeconds() const{ return m_keyRotationIntervalSeconds; }
+    inline int GetKeyRotationIntervalSeconds() const { return m_keyRotationIntervalSeconds; }
     inline bool KeyRotationIntervalSecondsHasBeenSet() const { return m_keyRotationIntervalSecondsHasBeenSet; }
     inline void SetKeyRotationIntervalSeconds(int value) { m_keyRotationIntervalSecondsHasBeenSet = true; m_keyRotationIntervalSeconds = value; }
     inline DashEncryption& WithKeyRotationIntervalSeconds(int value) { SetKeyRotationIntervalSeconds(value); return *this;}
@@ -50,16 +50,16 @@ namespace Model
 
     ///@{
     
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline DashEncryption& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline DashEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    DashEncryption& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
   private:
 
-    int m_keyRotationIntervalSeconds;
+    int m_keyRotationIntervalSeconds{0};
     bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;

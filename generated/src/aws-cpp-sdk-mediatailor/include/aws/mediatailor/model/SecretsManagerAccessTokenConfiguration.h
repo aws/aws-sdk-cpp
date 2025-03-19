@@ -35,7 +35,7 @@ namespace Model
   class SecretsManagerAccessTokenConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration();
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration() = default;
     AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the HTTP header used to supply the access token in requests to
      * the source location.</p>
      */
-    inline const Aws::String& GetHeaderName() const{ return m_headerName; }
+    inline const Aws::String& GetHeaderName() const { return m_headerName; }
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
-    inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
-    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
-    inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
-    inline SecretsManagerAccessTokenConfiguration& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
-    inline SecretsManagerAccessTokenConfiguration& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
-    inline SecretsManagerAccessTokenConfiguration& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
+    template<typename HeaderNameT = Aws::String>
+    void SetHeaderName(HeaderNameT&& value) { m_headerNameHasBeenSet = true; m_headerName = std::forward<HeaderNameT>(value); }
+    template<typename HeaderNameT = Aws::String>
+    SecretsManagerAccessTokenConfiguration& WithHeaderName(HeaderNameT&& value) { SetHeaderName(std::forward<HeaderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
      * contains the access token.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline SecretsManagerAccessTokenConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline SecretsManagerAccessTokenConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline SecretsManagerAccessTokenConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    SecretsManagerAccessTokenConfiguration& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * key associated with the access token. MediaTailor uses the key to look up
      * SecretString key and value pair containing the access token.</p>
      */
-    inline const Aws::String& GetSecretStringKey() const{ return m_secretStringKey; }
+    inline const Aws::String& GetSecretStringKey() const { return m_secretStringKey; }
     inline bool SecretStringKeyHasBeenSet() const { return m_secretStringKeyHasBeenSet; }
-    inline void SetSecretStringKey(const Aws::String& value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey = value; }
-    inline void SetSecretStringKey(Aws::String&& value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey = std::move(value); }
-    inline void SetSecretStringKey(const char* value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey.assign(value); }
-    inline SecretsManagerAccessTokenConfiguration& WithSecretStringKey(const Aws::String& value) { SetSecretStringKey(value); return *this;}
-    inline SecretsManagerAccessTokenConfiguration& WithSecretStringKey(Aws::String&& value) { SetSecretStringKey(std::move(value)); return *this;}
-    inline SecretsManagerAccessTokenConfiguration& WithSecretStringKey(const char* value) { SetSecretStringKey(value); return *this;}
+    template<typename SecretStringKeyT = Aws::String>
+    void SetSecretStringKey(SecretStringKeyT&& value) { m_secretStringKeyHasBeenSet = true; m_secretStringKey = std::forward<SecretStringKeyT>(value); }
+    template<typename SecretStringKeyT = Aws::String>
+    SecretsManagerAccessTokenConfiguration& WithSecretStringKey(SecretStringKeyT&& value) { SetSecretStringKey(std::forward<SecretStringKeyT>(value)); return *this;}
     ///@}
   private:
 

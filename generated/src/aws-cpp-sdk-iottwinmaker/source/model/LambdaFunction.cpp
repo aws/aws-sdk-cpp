@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-LambdaFunction::LambdaFunction() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 LambdaFunction::LambdaFunction(JsonView jsonValue)
-  : LambdaFunction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaFunction& LambdaFunction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

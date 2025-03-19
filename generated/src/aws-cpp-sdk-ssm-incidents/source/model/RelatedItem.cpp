@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-RelatedItem::RelatedItem() : 
-    m_generatedIdHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 RelatedItem::RelatedItem(JsonView jsonValue)
-  : RelatedItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RelatedItem& RelatedItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("generatedId"))
   {
     m_generatedId = jsonValue.GetString("generatedId");
-
     m_generatedIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetObject("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

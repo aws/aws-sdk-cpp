@@ -18,20 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AudioSourceDetails::AudioSourceDetails() : 
-    m_mediaIdHasBeenSet(false),
-    m_mediaMimeTypeHasBeenSet(false),
-    m_startTimeMilliseconds(0),
-    m_startTimeMillisecondsHasBeenSet(false),
-    m_endTimeMilliseconds(0),
-    m_endTimeMillisecondsHasBeenSet(false),
-    m_audioExtractionType(AudioExtractionType::NOT_SET),
-    m_audioExtractionTypeHasBeenSet(false)
-{
-}
-
 AudioSourceDetails::AudioSourceDetails(JsonView jsonValue)
-  : AudioSourceDetails()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AudioSourceDetails& AudioSourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mediaId"))
   {
     m_mediaId = jsonValue.GetString("mediaId");
-
     m_mediaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaMimeType"))
   {
     m_mediaMimeType = jsonValue.GetString("mediaMimeType");
-
     m_mediaMimeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimeMilliseconds"))
   {
     m_startTimeMilliseconds = jsonValue.GetInt64("startTimeMilliseconds");
-
     m_startTimeMillisecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTimeMilliseconds"))
   {
     m_endTimeMilliseconds = jsonValue.GetInt64("endTimeMilliseconds");
-
     m_endTimeMillisecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioExtractionType"))
   {
     m_audioExtractionType = AudioExtractionTypeMapper::GetAudioExtractionTypeForName(jsonValue.GetString("audioExtractionType"));
-
     m_audioExtractionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

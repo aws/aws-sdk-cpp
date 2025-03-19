@@ -18,13 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-DisassociateClientDeviceFromCoreDeviceEntry::DisassociateClientDeviceFromCoreDeviceEntry() : 
-    m_thingNameHasBeenSet(false)
-{
-}
-
 DisassociateClientDeviceFromCoreDeviceEntry::DisassociateClientDeviceFromCoreDeviceEntry(JsonView jsonValue)
-  : DisassociateClientDeviceFromCoreDeviceEntry()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DisassociateClientDeviceFromCoreDeviceEntry& DisassociateClientDeviceFromCoreDev
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   return *this;
 }
 

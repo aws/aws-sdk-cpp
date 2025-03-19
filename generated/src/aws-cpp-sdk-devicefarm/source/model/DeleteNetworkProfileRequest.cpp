@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNetworkProfileRequest::DeleteNetworkProfileRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkProfileRequest::SerializePayload() const
 {
   JsonValue payload;

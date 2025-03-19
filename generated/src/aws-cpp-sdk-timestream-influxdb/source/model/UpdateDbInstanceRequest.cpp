@@ -12,23 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDbInstanceRequest::UpdateDbInstanceRequest() : 
-    m_identifierHasBeenSet(false),
-    m_logDeliveryConfigurationHasBeenSet(false),
-    m_dbParameterGroupIdentifierHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbInstanceTypeHasBeenSet(false),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_dbStorageType(DbStorageType::NOT_SET),
-    m_dbStorageTypeHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

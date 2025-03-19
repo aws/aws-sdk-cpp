@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SearchResourcesTagCriterion::SearchResourcesTagCriterion() : 
-    m_comparator(SearchResourcesComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 SearchResourcesTagCriterion::SearchResourcesTagCriterion(JsonView jsonValue)
-  : SearchResourcesTagCriterion()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SearchResourcesTagCriterion& SearchResourcesTagCriterion::operator =(JsonView js
   if(jsonValue.ValueExists("comparator"))
   {
     m_comparator = SearchResourcesComparatorMapper::GetSearchResourcesComparatorForName(jsonValue.GetString("comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagValues"))
   {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("tagValues");
@@ -49,7 +39,6 @@ SearchResourcesTagCriterion& SearchResourcesTagCriterion::operator =(JsonView js
     }
     m_tagValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

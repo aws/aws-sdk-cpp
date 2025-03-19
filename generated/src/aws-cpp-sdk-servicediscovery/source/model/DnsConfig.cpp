@@ -18,15 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-DnsConfig::DnsConfig() : 
-    m_routingPolicy(RoutingPolicy::NOT_SET),
-    m_routingPolicyHasBeenSet(false),
-    m_dnsRecordsHasBeenSet(false)
-{
-}
-
 DnsConfig::DnsConfig(JsonView jsonValue)
-  : DnsConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DnsConfig& DnsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoutingPolicy"))
   {
     m_routingPolicy = RoutingPolicyMapper::GetRoutingPolicyForName(jsonValue.GetString("RoutingPolicy"));
-
     m_routingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsRecords"))
   {
     Aws::Utils::Array<JsonView> dnsRecordsJsonList = jsonValue.GetArray("DnsRecords");
@@ -49,7 +39,6 @@ DnsConfig& DnsConfig::operator =(JsonView jsonValue)
     }
     m_dnsRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

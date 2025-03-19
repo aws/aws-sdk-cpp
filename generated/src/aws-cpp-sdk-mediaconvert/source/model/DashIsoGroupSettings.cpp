@@ -18,49 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DashIsoGroupSettings::DashIsoGroupSettings() : 
-    m_additionalManifestsHasBeenSet(false),
-    m_audioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri::NOT_SET),
-    m_audioChannelConfigSchemeIdUriHasBeenSet(false),
-    m_baseUrlHasBeenSet(false),
-    m_dashIFrameTrickPlayNameModifierHasBeenSet(false),
-    m_dashManifestStyle(DashManifestStyle::NOT_SET),
-    m_dashManifestStyleHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_fragmentLength(0),
-    m_fragmentLengthHasBeenSet(false),
-    m_hbbtvCompliance(DashIsoHbbtvCompliance::NOT_SET),
-    m_hbbtvComplianceHasBeenSet(false),
-    m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
-    m_imageBasedTrickPlayHasBeenSet(false),
-    m_imageBasedTrickPlaySettingsHasBeenSet(false),
-    m_minBufferTime(0),
-    m_minBufferTimeHasBeenSet(false),
-    m_minFinalSegmentLength(0.0),
-    m_minFinalSegmentLengthHasBeenSet(false),
-    m_mpdManifestBandwidthType(DashIsoMpdManifestBandwidthType::NOT_SET),
-    m_mpdManifestBandwidthTypeHasBeenSet(false),
-    m_mpdProfile(DashIsoMpdProfile::NOT_SET),
-    m_mpdProfileHasBeenSet(false),
-    m_ptsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames::NOT_SET),
-    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
-    m_segmentControl(DashIsoSegmentControl::NOT_SET),
-    m_segmentControlHasBeenSet(false),
-    m_segmentLength(0),
-    m_segmentLengthHasBeenSet(false),
-    m_segmentLengthControl(DashIsoSegmentLengthControl::NOT_SET),
-    m_segmentLengthControlHasBeenSet(false),
-    m_videoCompositionOffsets(DashIsoVideoCompositionOffsets::NOT_SET),
-    m_videoCompositionOffsetsHasBeenSet(false),
-    m_writeSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation::NOT_SET),
-    m_writeSegmentTimelineInRepresentationHasBeenSet(false)
-{
-}
-
 DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue)
-  : DashIsoGroupSettings()
 {
   *this = jsonValue;
 }
@@ -76,154 +34,111 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     }
     m_additionalManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioChannelConfigSchemeIdUri"))
   {
     m_audioChannelConfigSchemeIdUri = DashIsoGroupAudioChannelConfigSchemeIdUriMapper::GetDashIsoGroupAudioChannelConfigSchemeIdUriForName(jsonValue.GetString("audioChannelConfigSchemeIdUri"));
-
     m_audioChannelConfigSchemeIdUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseUrl"))
   {
     m_baseUrl = jsonValue.GetString("baseUrl");
-
     m_baseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashIFrameTrickPlayNameModifier"))
   {
     m_dashIFrameTrickPlayNameModifier = jsonValue.GetString("dashIFrameTrickPlayNameModifier");
-
     m_dashIFrameTrickPlayNameModifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashManifestStyle"))
   {
     m_dashManifestStyle = DashManifestStyleMapper::GetDashManifestStyleForName(jsonValue.GetString("dashManifestStyle"));
-
     m_dashManifestStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fragmentLength"))
   {
     m_fragmentLength = jsonValue.GetInteger("fragmentLength");
-
     m_fragmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hbbtvCompliance"))
   {
     m_hbbtvCompliance = DashIsoHbbtvComplianceMapper::GetDashIsoHbbtvComplianceForName(jsonValue.GetString("hbbtvCompliance"));
-
     m_hbbtvComplianceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBasedTrickPlay"))
   {
     m_imageBasedTrickPlay = DashIsoImageBasedTrickPlayMapper::GetDashIsoImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
-
     m_imageBasedTrickPlayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
   {
     m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
-
     m_imageBasedTrickPlaySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minBufferTime"))
   {
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
-
     m_minBufferTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minFinalSegmentLength"))
   {
     m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
-
     m_minFinalSegmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpdManifestBandwidthType"))
   {
     m_mpdManifestBandwidthType = DashIsoMpdManifestBandwidthTypeMapper::GetDashIsoMpdManifestBandwidthTypeForName(jsonValue.GetString("mpdManifestBandwidthType"));
-
     m_mpdManifestBandwidthTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpdProfile"))
   {
     m_mpdProfile = DashIsoMpdProfileMapper::GetDashIsoMpdProfileForName(jsonValue.GetString("mpdProfile"));
-
     m_mpdProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ptsOffsetHandlingForBFrames"))
   {
     m_ptsOffsetHandlingForBFrames = DashIsoPtsOffsetHandlingForBFramesMapper::GetDashIsoPtsOffsetHandlingForBFramesForName(jsonValue.GetString("ptsOffsetHandlingForBFrames"));
-
     m_ptsOffsetHandlingForBFramesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentControl"))
   {
     m_segmentControl = DashIsoSegmentControlMapper::GetDashIsoSegmentControlForName(jsonValue.GetString("segmentControl"));
-
     m_segmentControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentLength"))
   {
     m_segmentLength = jsonValue.GetInteger("segmentLength");
-
     m_segmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentLengthControl"))
   {
     m_segmentLengthControl = DashIsoSegmentLengthControlMapper::GetDashIsoSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
-
     m_segmentLengthControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoCompositionOffsets"))
   {
     m_videoCompositionOffsets = DashIsoVideoCompositionOffsetsMapper::GetDashIsoVideoCompositionOffsetsForName(jsonValue.GetString("videoCompositionOffsets"));
-
     m_videoCompositionOffsetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeSegmentTimelineInRepresentation"))
   {
     m_writeSegmentTimelineInRepresentation = DashIsoWriteSegmentTimelineInRepresentationMapper::GetDashIsoWriteSegmentTimelineInRepresentationForName(jsonValue.GetString("writeSegmentTimelineInRepresentation"));
-
     m_writeSegmentTimelineInRepresentationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails() : 
-    m_dataSetIdHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_revisionDestinationsHasBeenSet(false),
-    m_eventActionArnHasBeenSet(false)
-{
-}
-
 ExportRevisionsToS3ResponseDetails::ExportRevisionsToS3ResponseDetails(JsonView jsonValue)
-  : ExportRevisionsToS3ResponseDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ExportRevisionsToS3ResponseDetails& ExportRevisionsToS3ResponseDetails::operator
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionDestinations"))
   {
     Aws::Utils::Array<JsonView> revisionDestinationsJsonList = jsonValue.GetArray("RevisionDestinations");
@@ -57,14 +44,11 @@ ExportRevisionsToS3ResponseDetails& ExportRevisionsToS3ResponseDetails::operator
     }
     m_revisionDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventActionArn"))
   {
     m_eventActionArn = jsonValue.GetString("EventActionArn");
-
     m_eventActionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

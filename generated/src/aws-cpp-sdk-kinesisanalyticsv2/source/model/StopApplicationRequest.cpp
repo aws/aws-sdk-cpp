@@ -12,13 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopApplicationRequest::StopApplicationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String StopApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

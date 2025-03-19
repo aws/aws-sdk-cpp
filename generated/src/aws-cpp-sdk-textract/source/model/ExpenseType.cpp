@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-ExpenseType::ExpenseType() : 
-    m_textHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 ExpenseType::ExpenseType(JsonView jsonValue)
-  : ExpenseType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExpenseType& ExpenseType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

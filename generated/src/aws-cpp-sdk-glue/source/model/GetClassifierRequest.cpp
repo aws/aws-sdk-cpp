@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClassifierRequest::GetClassifierRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingResources::ProcessingResources() : 
-    m_clusterConfigHasBeenSet(false)
-{
-}
-
 ProcessingResources::ProcessingResources(JsonView jsonValue)
-  : ProcessingResources()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProcessingResources& ProcessingResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterConfig"))
   {
     m_clusterConfig = jsonValue.GetObject("ClusterConfig");
-
     m_clusterConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

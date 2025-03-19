@@ -33,7 +33,7 @@ namespace Model
   class PersonDetail
   {
   public:
-    AWS_REKOGNITION_API PersonDetail();
+    AWS_REKOGNITION_API PersonDetail() = default;
     AWS_REKOGNITION_API PersonDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API PersonDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * of the person throughout the video. The identifier is not stored by Amazon
      * Rekognition.</p>
      */
-    inline long long GetIndex() const{ return m_index; }
+    inline long long GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(long long value) { m_indexHasBeenSet = true; m_index = value; }
     inline PersonDetail& WithIndex(long long value) { SetIndex(value); return *this;}
@@ -55,28 +55,28 @@ namespace Model
     /**
      * <p>Bounding box around the detected person.</p>
      */
-    inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+    inline const BoundingBox& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline PersonDetail& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-    inline PersonDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = BoundingBox>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = BoundingBox>
+    PersonDetail& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Face details for the detected person.</p>
      */
-    inline const FaceDetail& GetFace() const{ return m_face; }
+    inline const FaceDetail& GetFace() const { return m_face; }
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-    inline void SetFace(const FaceDetail& value) { m_faceHasBeenSet = true; m_face = value; }
-    inline void SetFace(FaceDetail&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-    inline PersonDetail& WithFace(const FaceDetail& value) { SetFace(value); return *this;}
-    inline PersonDetail& WithFace(FaceDetail&& value) { SetFace(std::move(value)); return *this;}
+    template<typename FaceT = FaceDetail>
+    void SetFace(FaceT&& value) { m_faceHasBeenSet = true; m_face = std::forward<FaceT>(value); }
+    template<typename FaceT = FaceDetail>
+    PersonDetail& WithFace(FaceT&& value) { SetFace(std::forward<FaceT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_index;
+    long long m_index{0};
     bool m_indexHasBeenSet = false;
 
     BoundingBox m_boundingBox;

@@ -12,14 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSignalingChannelsRequest::ListSignalingChannelsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_channelNameConditionHasBeenSet(false)
-{
-}
-
 Aws::String ListSignalingChannelsRequest::SerializePayload() const
 {
   JsonValue payload;

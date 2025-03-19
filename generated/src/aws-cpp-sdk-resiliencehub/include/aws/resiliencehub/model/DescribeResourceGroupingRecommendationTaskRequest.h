@@ -21,7 +21,7 @@ namespace Model
   class DescribeResourceGroupingRecommendationTaskRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeResourceGroupingRecommendationTaskRequest();
+    AWS_RESILIENCEHUB_API DescribeResourceGroupingRecommendationTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline DescribeResourceGroupingRecommendationTaskRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DescribeResourceGroupingRecommendationTaskRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the grouping recommendation task.</p>
      */
-    inline const Aws::String& GetGroupingId() const{ return m_groupingId; }
+    inline const Aws::String& GetGroupingId() const { return m_groupingId; }
     inline bool GroupingIdHasBeenSet() const { return m_groupingIdHasBeenSet; }
-    inline void SetGroupingId(const Aws::String& value) { m_groupingIdHasBeenSet = true; m_groupingId = value; }
-    inline void SetGroupingId(Aws::String&& value) { m_groupingIdHasBeenSet = true; m_groupingId = std::move(value); }
-    inline void SetGroupingId(const char* value) { m_groupingIdHasBeenSet = true; m_groupingId.assign(value); }
-    inline DescribeResourceGroupingRecommendationTaskRequest& WithGroupingId(const Aws::String& value) { SetGroupingId(value); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskRequest& WithGroupingId(Aws::String&& value) { SetGroupingId(std::move(value)); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskRequest& WithGroupingId(const char* value) { SetGroupingId(value); return *this;}
+    template<typename GroupingIdT = Aws::String>
+    void SetGroupingId(GroupingIdT&& value) { m_groupingIdHasBeenSet = true; m_groupingId = std::forward<GroupingIdT>(value); }
+    template<typename GroupingIdT = Aws::String>
+    DescribeResourceGroupingRecommendationTaskRequest& WithGroupingId(GroupingIdT&& value) { SetGroupingId(std::forward<GroupingIdT>(value)); return *this;}
     ///@}
   private:
 

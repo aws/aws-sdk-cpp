@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBatchJobExecutionsRequest::ListBatchJobExecutionsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_executionIdsHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startedAfterHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false),
-    m_status(BatchJobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListBatchJobExecutionsRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddJobFlowStepsResult::AddJobFlowStepsResult()
-{
-}
-
 AddJobFlowStepsResult::AddJobFlowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ AddJobFlowStepsResult& AddJobFlowStepsResult::operator =(const Aws::AmazonWebSer
     {
       m_stepIds.push_back(stepIdsJsonList[stepIdsIndex].AsString());
     }
+    m_stepIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

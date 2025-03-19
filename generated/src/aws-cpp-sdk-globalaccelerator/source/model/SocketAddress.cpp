@@ -18,15 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-SocketAddress::SocketAddress() : 
-    m_ipAddressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 SocketAddress::SocketAddress(JsonView jsonValue)
-  : SocketAddress()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SocketAddress& SocketAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

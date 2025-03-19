@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartContentUploadResult::StartContentUploadResult()
-{
-}
-
 StartContentUploadResult::StartContentUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,32 +32,30 @@ StartContentUploadResult& StartContentUploadResult::operator =(const Aws::Amazon
     {
       m_headersToInclude[headersToIncludeItem.first] = headersToIncludeItem.second.AsString();
     }
+    m_headersToIncludeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
-
+    m_uploadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
+    m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("urlExpiry"))
   {
     m_urlExpiry = jsonValue.GetDouble("urlExpiry");
-
+    m_urlExpiryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

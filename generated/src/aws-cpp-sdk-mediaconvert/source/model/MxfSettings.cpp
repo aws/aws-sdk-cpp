@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MxfSettings::MxfSettings() : 
-    m_afdSignaling(MxfAfdSignaling::NOT_SET),
-    m_afdSignalingHasBeenSet(false),
-    m_profile(MxfProfile::NOT_SET),
-    m_profileHasBeenSet(false),
-    m_xavcProfileSettingsHasBeenSet(false)
-{
-}
-
 MxfSettings::MxfSettings(JsonView jsonValue)
-  : MxfSettings()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ MxfSettings& MxfSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("afdSignaling"))
   {
     m_afdSignaling = MxfAfdSignalingMapper::GetMxfAfdSignalingForName(jsonValue.GetString("afdSignaling"));
-
     m_afdSignalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profile"))
   {
     m_profile = MxfProfileMapper::GetMxfProfileForName(jsonValue.GetString("profile"));
-
     m_profileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("xavcProfileSettings"))
   {
     m_xavcProfileSettings = jsonValue.GetObject("xavcProfileSettings");
-
     m_xavcProfileSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

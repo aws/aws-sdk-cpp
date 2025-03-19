@@ -29,7 +29,7 @@ namespace Model
   class ListPublicKeysResult
   {
   public:
-    AWS_IVSREALTIME_API ListPublicKeysResult();
+    AWS_IVSREALTIME_API ListPublicKeysResult() = default;
     AWS_IVSREALTIME_API ListPublicKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API ListPublicKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of the matching public keys (summary information only).</p>
      */
-    inline const Aws::Vector<PublicKeySummary>& GetPublicKeys() const{ return m_publicKeys; }
-    inline void SetPublicKeys(const Aws::Vector<PublicKeySummary>& value) { m_publicKeys = value; }
-    inline void SetPublicKeys(Aws::Vector<PublicKeySummary>&& value) { m_publicKeys = std::move(value); }
-    inline ListPublicKeysResult& WithPublicKeys(const Aws::Vector<PublicKeySummary>& value) { SetPublicKeys(value); return *this;}
-    inline ListPublicKeysResult& WithPublicKeys(Aws::Vector<PublicKeySummary>&& value) { SetPublicKeys(std::move(value)); return *this;}
-    inline ListPublicKeysResult& AddPublicKeys(const PublicKeySummary& value) { m_publicKeys.push_back(value); return *this; }
-    inline ListPublicKeysResult& AddPublicKeys(PublicKeySummary&& value) { m_publicKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PublicKeySummary>& GetPublicKeys() const { return m_publicKeys; }
+    template<typename PublicKeysT = Aws::Vector<PublicKeySummary>>
+    void SetPublicKeys(PublicKeysT&& value) { m_publicKeysHasBeenSet = true; m_publicKeys = std::forward<PublicKeysT>(value); }
+    template<typename PublicKeysT = Aws::Vector<PublicKeySummary>>
+    ListPublicKeysResult& WithPublicKeys(PublicKeysT&& value) { SetPublicKeys(std::forward<PublicKeysT>(value)); return *this;}
+    template<typename PublicKeysT = PublicKeySummary>
+    ListPublicKeysResult& AddPublicKeys(PublicKeysT&& value) { m_publicKeysHasBeenSet = true; m_publicKeys.emplace_back(std::forward<PublicKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more public keys than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPublicKeysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPublicKeysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPublicKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPublicKeysResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPublicKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPublicKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPublicKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPublicKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PublicKeySummary> m_publicKeys;
+    bool m_publicKeysHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

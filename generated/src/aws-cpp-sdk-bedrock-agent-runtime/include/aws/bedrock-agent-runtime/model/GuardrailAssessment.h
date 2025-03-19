@@ -35,7 +35,7 @@ namespace Model
   class GuardrailAssessment
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GuardrailAssessment();
+    AWS_BEDROCKAGENTRUNTIME_API GuardrailAssessment() = default;
     AWS_BEDROCKAGENTRUNTIME_API GuardrailAssessment(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API GuardrailAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,48 @@ namespace Model
     /**
      * <p>Content policy details of the Guardrail.</p>
      */
-    inline const GuardrailContentPolicyAssessment& GetContentPolicy() const{ return m_contentPolicy; }
+    inline const GuardrailContentPolicyAssessment& GetContentPolicy() const { return m_contentPolicy; }
     inline bool ContentPolicyHasBeenSet() const { return m_contentPolicyHasBeenSet; }
-    inline void SetContentPolicy(const GuardrailContentPolicyAssessment& value) { m_contentPolicyHasBeenSet = true; m_contentPolicy = value; }
-    inline void SetContentPolicy(GuardrailContentPolicyAssessment&& value) { m_contentPolicyHasBeenSet = true; m_contentPolicy = std::move(value); }
-    inline GuardrailAssessment& WithContentPolicy(const GuardrailContentPolicyAssessment& value) { SetContentPolicy(value); return *this;}
-    inline GuardrailAssessment& WithContentPolicy(GuardrailContentPolicyAssessment&& value) { SetContentPolicy(std::move(value)); return *this;}
+    template<typename ContentPolicyT = GuardrailContentPolicyAssessment>
+    void SetContentPolicy(ContentPolicyT&& value) { m_contentPolicyHasBeenSet = true; m_contentPolicy = std::forward<ContentPolicyT>(value); }
+    template<typename ContentPolicyT = GuardrailContentPolicyAssessment>
+    GuardrailAssessment& WithContentPolicy(ContentPolicyT&& value) { SetContentPolicy(std::forward<ContentPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sensitive Information policy details of Guardrail.</p>
      */
-    inline const GuardrailSensitiveInformationPolicyAssessment& GetSensitiveInformationPolicy() const{ return m_sensitiveInformationPolicy; }
+    inline const GuardrailSensitiveInformationPolicyAssessment& GetSensitiveInformationPolicy() const { return m_sensitiveInformationPolicy; }
     inline bool SensitiveInformationPolicyHasBeenSet() const { return m_sensitiveInformationPolicyHasBeenSet; }
-    inline void SetSensitiveInformationPolicy(const GuardrailSensitiveInformationPolicyAssessment& value) { m_sensitiveInformationPolicyHasBeenSet = true; m_sensitiveInformationPolicy = value; }
-    inline void SetSensitiveInformationPolicy(GuardrailSensitiveInformationPolicyAssessment&& value) { m_sensitiveInformationPolicyHasBeenSet = true; m_sensitiveInformationPolicy = std::move(value); }
-    inline GuardrailAssessment& WithSensitiveInformationPolicy(const GuardrailSensitiveInformationPolicyAssessment& value) { SetSensitiveInformationPolicy(value); return *this;}
-    inline GuardrailAssessment& WithSensitiveInformationPolicy(GuardrailSensitiveInformationPolicyAssessment&& value) { SetSensitiveInformationPolicy(std::move(value)); return *this;}
+    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicyAssessment>
+    void SetSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { m_sensitiveInformationPolicyHasBeenSet = true; m_sensitiveInformationPolicy = std::forward<SensitiveInformationPolicyT>(value); }
+    template<typename SensitiveInformationPolicyT = GuardrailSensitiveInformationPolicyAssessment>
+    GuardrailAssessment& WithSensitiveInformationPolicy(SensitiveInformationPolicyT&& value) { SetSensitiveInformationPolicy(std::forward<SensitiveInformationPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Topic policy details of the Guardrail.</p>
      */
-    inline const GuardrailTopicPolicyAssessment& GetTopicPolicy() const{ return m_topicPolicy; }
+    inline const GuardrailTopicPolicyAssessment& GetTopicPolicy() const { return m_topicPolicy; }
     inline bool TopicPolicyHasBeenSet() const { return m_topicPolicyHasBeenSet; }
-    inline void SetTopicPolicy(const GuardrailTopicPolicyAssessment& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = value; }
-    inline void SetTopicPolicy(GuardrailTopicPolicyAssessment&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::move(value); }
-    inline GuardrailAssessment& WithTopicPolicy(const GuardrailTopicPolicyAssessment& value) { SetTopicPolicy(value); return *this;}
-    inline GuardrailAssessment& WithTopicPolicy(GuardrailTopicPolicyAssessment&& value) { SetTopicPolicy(std::move(value)); return *this;}
+    template<typename TopicPolicyT = GuardrailTopicPolicyAssessment>
+    void SetTopicPolicy(TopicPolicyT&& value) { m_topicPolicyHasBeenSet = true; m_topicPolicy = std::forward<TopicPolicyT>(value); }
+    template<typename TopicPolicyT = GuardrailTopicPolicyAssessment>
+    GuardrailAssessment& WithTopicPolicy(TopicPolicyT&& value) { SetTopicPolicy(std::forward<TopicPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Word policy details of the Guardrail.</p>
      */
-    inline const GuardrailWordPolicyAssessment& GetWordPolicy() const{ return m_wordPolicy; }
+    inline const GuardrailWordPolicyAssessment& GetWordPolicy() const { return m_wordPolicy; }
     inline bool WordPolicyHasBeenSet() const { return m_wordPolicyHasBeenSet; }
-    inline void SetWordPolicy(const GuardrailWordPolicyAssessment& value) { m_wordPolicyHasBeenSet = true; m_wordPolicy = value; }
-    inline void SetWordPolicy(GuardrailWordPolicyAssessment&& value) { m_wordPolicyHasBeenSet = true; m_wordPolicy = std::move(value); }
-    inline GuardrailAssessment& WithWordPolicy(const GuardrailWordPolicyAssessment& value) { SetWordPolicy(value); return *this;}
-    inline GuardrailAssessment& WithWordPolicy(GuardrailWordPolicyAssessment&& value) { SetWordPolicy(std::move(value)); return *this;}
+    template<typename WordPolicyT = GuardrailWordPolicyAssessment>
+    void SetWordPolicy(WordPolicyT&& value) { m_wordPolicyHasBeenSet = true; m_wordPolicy = std::forward<WordPolicyT>(value); }
+    template<typename WordPolicyT = GuardrailWordPolicyAssessment>
+    GuardrailAssessment& WithWordPolicy(WordPolicyT&& value) { SetWordPolicy(std::forward<WordPolicyT>(value)); return *this;}
     ///@}
   private:
 

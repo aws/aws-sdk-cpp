@@ -12,16 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIndexRequest::UpdateIndexRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_capacityConfigurationHasBeenSet(false),
-    m_documentAttributeConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIndexRequest::SerializePayload() const
 {
   JsonValue payload;

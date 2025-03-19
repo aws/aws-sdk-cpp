@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-SourceConfiguration::SourceConfiguration() : 
-    m_selectedVideoStreamsHasBeenSet(false)
-{
-}
-
 SourceConfiguration::SourceConfiguration(JsonView jsonValue)
-  : SourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceConfiguration& SourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SelectedVideoStreams"))
   {
     m_selectedVideoStreams = jsonValue.GetObject("SelectedVideoStreams");
-
     m_selectedVideoStreamsHasBeenSet = true;
   }
-
   return *this;
 }
 

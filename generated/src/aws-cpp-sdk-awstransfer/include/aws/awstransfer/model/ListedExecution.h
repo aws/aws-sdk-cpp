@@ -35,7 +35,7 @@ namespace Model
   class ListedExecution
   {
   public:
-    AWS_TRANSFER_API ListedExecution();
+    AWS_TRANSFER_API ListedExecution() = default;
     AWS_TRANSFER_API ListedExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ListedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>A unique identifier for the execution of a workflow.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline ListedExecution& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline ListedExecution& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline ListedExecution& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    ListedExecution& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * file location when the execution begins: if the file is being copied, this is
      * the initial (as opposed to destination) file location.</p>
      */
-    inline const FileLocation& GetInitialFileLocation() const{ return m_initialFileLocation; }
+    inline const FileLocation& GetInitialFileLocation() const { return m_initialFileLocation; }
     inline bool InitialFileLocationHasBeenSet() const { return m_initialFileLocationHasBeenSet; }
-    inline void SetInitialFileLocation(const FileLocation& value) { m_initialFileLocationHasBeenSet = true; m_initialFileLocation = value; }
-    inline void SetInitialFileLocation(FileLocation&& value) { m_initialFileLocationHasBeenSet = true; m_initialFileLocation = std::move(value); }
-    inline ListedExecution& WithInitialFileLocation(const FileLocation& value) { SetInitialFileLocation(value); return *this;}
-    inline ListedExecution& WithInitialFileLocation(FileLocation&& value) { SetInitialFileLocation(std::move(value)); return *this;}
+    template<typename InitialFileLocationT = FileLocation>
+    void SetInitialFileLocation(InitialFileLocationT&& value) { m_initialFileLocationHasBeenSet = true; m_initialFileLocation = std::forward<InitialFileLocationT>(value); }
+    template<typename InitialFileLocationT = FileLocation>
+    ListedExecution& WithInitialFileLocation(InitialFileLocationT&& value) { SetInitialFileLocation(std::forward<InitialFileLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * <p>A container object for the session details that are associated with a
      * workflow.</p>
      */
-    inline const ServiceMetadata& GetServiceMetadata() const{ return m_serviceMetadata; }
+    inline const ServiceMetadata& GetServiceMetadata() const { return m_serviceMetadata; }
     inline bool ServiceMetadataHasBeenSet() const { return m_serviceMetadataHasBeenSet; }
-    inline void SetServiceMetadata(const ServiceMetadata& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = value; }
-    inline void SetServiceMetadata(ServiceMetadata&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::move(value); }
-    inline ListedExecution& WithServiceMetadata(const ServiceMetadata& value) { SetServiceMetadata(value); return *this;}
-    inline ListedExecution& WithServiceMetadata(ServiceMetadata&& value) { SetServiceMetadata(std::move(value)); return *this;}
+    template<typename ServiceMetadataT = ServiceMetadata>
+    void SetServiceMetadata(ServiceMetadataT&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::forward<ServiceMetadataT>(value); }
+    template<typename ServiceMetadataT = ServiceMetadata>
+    ListedExecution& WithServiceMetadata(ServiceMetadataT&& value) { SetServiceMetadata(std::forward<ServiceMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,10 @@ namespace Model
      * <p>The status is one of the execution. Can be in progress, completed, exception
      * encountered, or handling the exception.</p>
      */
-    inline const ExecutionStatus& GetStatus() const{ return m_status; }
+    inline ExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListedExecution& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
-    inline ListedExecution& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListedExecution& WithStatus(ExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -105,7 +101,7 @@ namespace Model
     ServiceMetadata m_serviceMetadata;
     bool m_serviceMetadataHasBeenSet = false;
 
-    ExecutionStatus m_status;
+    ExecutionStatus m_status{ExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

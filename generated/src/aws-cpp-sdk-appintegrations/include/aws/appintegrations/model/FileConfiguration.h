@@ -34,7 +34,7 @@ namespace Model
   class FileConfiguration
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API FileConfiguration();
+    AWS_APPINTEGRATIONSSERVICE_API FileConfiguration() = default;
     AWS_APPINTEGRATIONSSERVICE_API FileConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API FileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,30 @@ namespace Model
     /**
      * <p>Identifiers for the source folders to pull all files from recursively.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFolders() const{ return m_folders; }
+    inline const Aws::Vector<Aws::String>& GetFolders() const { return m_folders; }
     inline bool FoldersHasBeenSet() const { return m_foldersHasBeenSet; }
-    inline void SetFolders(const Aws::Vector<Aws::String>& value) { m_foldersHasBeenSet = true; m_folders = value; }
-    inline void SetFolders(Aws::Vector<Aws::String>&& value) { m_foldersHasBeenSet = true; m_folders = std::move(value); }
-    inline FileConfiguration& WithFolders(const Aws::Vector<Aws::String>& value) { SetFolders(value); return *this;}
-    inline FileConfiguration& WithFolders(Aws::Vector<Aws::String>&& value) { SetFolders(std::move(value)); return *this;}
-    inline FileConfiguration& AddFolders(const Aws::String& value) { m_foldersHasBeenSet = true; m_folders.push_back(value); return *this; }
-    inline FileConfiguration& AddFolders(Aws::String&& value) { m_foldersHasBeenSet = true; m_folders.push_back(std::move(value)); return *this; }
-    inline FileConfiguration& AddFolders(const char* value) { m_foldersHasBeenSet = true; m_folders.push_back(value); return *this; }
+    template<typename FoldersT = Aws::Vector<Aws::String>>
+    void SetFolders(FoldersT&& value) { m_foldersHasBeenSet = true; m_folders = std::forward<FoldersT>(value); }
+    template<typename FoldersT = Aws::Vector<Aws::String>>
+    FileConfiguration& WithFolders(FoldersT&& value) { SetFolders(std::forward<FoldersT>(value)); return *this;}
+    template<typename FoldersT = Aws::String>
+    FileConfiguration& AddFolders(FoldersT&& value) { m_foldersHasBeenSet = true; m_folders.emplace_back(std::forward<FoldersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Restrictions for what files should be pulled from the source.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline FileConfiguration& WithFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetFilters(value); return *this;}
-    inline FileConfiguration& WithFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetFilters(std::move(value)); return *this;}
-    inline FileConfiguration& AddFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
-    inline FileConfiguration& AddFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
-    inline FileConfiguration& AddFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
-    inline FileConfiguration& AddFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
-    inline FileConfiguration& AddFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
-    inline FileConfiguration& AddFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
+    template<typename FiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    FileConfiguration& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersKeyT = Aws::String, typename FiltersValueT = Aws::Vector<Aws::String>>
+    FileConfiguration& AddFilters(FiltersKeyT&& key, FiltersValueT&& value) {
+      m_filtersHasBeenSet = true; m_filters.emplace(std::forward<FiltersKeyT>(key), std::forward<FiltersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

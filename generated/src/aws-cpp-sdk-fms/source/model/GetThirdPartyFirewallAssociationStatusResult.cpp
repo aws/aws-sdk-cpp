@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetThirdPartyFirewallAssociationStatusResult::GetThirdPartyFirewallAssociationStatusResult() : 
-    m_thirdPartyFirewallStatus(ThirdPartyFirewallAssociationStatus::NOT_SET),
-    m_marketplaceOnboardingStatus(MarketplaceSubscriptionOnboardingStatus::NOT_SET)
-{
-}
-
 GetThirdPartyFirewallAssociationStatusResult::GetThirdPartyFirewallAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetThirdPartyFirewallAssociationStatusResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ GetThirdPartyFirewallAssociationStatusResult& GetThirdPartyFirewallAssociationSt
   if(jsonValue.ValueExists("ThirdPartyFirewallStatus"))
   {
     m_thirdPartyFirewallStatus = ThirdPartyFirewallAssociationStatusMapper::GetThirdPartyFirewallAssociationStatusForName(jsonValue.GetString("ThirdPartyFirewallStatus"));
-
+    m_thirdPartyFirewallStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarketplaceOnboardingStatus"))
   {
     m_marketplaceOnboardingStatus = MarketplaceSubscriptionOnboardingStatusMapper::GetMarketplaceSubscriptionOnboardingStatusForName(jsonValue.GetString("MarketplaceOnboardingStatus"));
-
+    m_marketplaceOnboardingStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

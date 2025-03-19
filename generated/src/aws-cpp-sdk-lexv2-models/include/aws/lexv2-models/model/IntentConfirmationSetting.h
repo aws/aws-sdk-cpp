@@ -37,7 +37,7 @@ namespace Model
   class IntentConfirmationSetting
   {
   public:
-    AWS_LEXMODELSV2_API IntentConfirmationSetting();
+    AWS_LEXMODELSV2_API IntentConfirmationSetting() = default;
     AWS_LEXMODELSV2_API IntentConfirmationSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API IntentConfirmationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,12 @@ namespace Model
      * respond to user questions, you might not need to ask the user for confirmation
      * before providing the information. </p>
      */
-    inline const PromptSpecification& GetPromptSpecification() const{ return m_promptSpecification; }
+    inline const PromptSpecification& GetPromptSpecification() const { return m_promptSpecification; }
     inline bool PromptSpecificationHasBeenSet() const { return m_promptSpecificationHasBeenSet; }
-    inline void SetPromptSpecification(const PromptSpecification& value) { m_promptSpecificationHasBeenSet = true; m_promptSpecification = value; }
-    inline void SetPromptSpecification(PromptSpecification&& value) { m_promptSpecificationHasBeenSet = true; m_promptSpecification = std::move(value); }
-    inline IntentConfirmationSetting& WithPromptSpecification(const PromptSpecification& value) { SetPromptSpecification(value); return *this;}
-    inline IntentConfirmationSetting& WithPromptSpecification(PromptSpecification&& value) { SetPromptSpecification(std::move(value)); return *this;}
+    template<typename PromptSpecificationT = PromptSpecification>
+    void SetPromptSpecification(PromptSpecificationT&& value) { m_promptSpecificationHasBeenSet = true; m_promptSpecification = std::forward<PromptSpecificationT>(value); }
+    template<typename PromptSpecificationT = PromptSpecification>
+    IntentConfirmationSetting& WithPromptSpecification(PromptSpecificationT&& value) { SetPromptSpecification(std::forward<PromptSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +67,12 @@ namespace Model
      * <code>promptSpecification</code>, Amazon Lex responds with this response to
      * acknowledge that the intent was canceled. </p>
      */
-    inline const ResponseSpecification& GetDeclinationResponse() const{ return m_declinationResponse; }
+    inline const ResponseSpecification& GetDeclinationResponse() const { return m_declinationResponse; }
     inline bool DeclinationResponseHasBeenSet() const { return m_declinationResponseHasBeenSet; }
-    inline void SetDeclinationResponse(const ResponseSpecification& value) { m_declinationResponseHasBeenSet = true; m_declinationResponse = value; }
-    inline void SetDeclinationResponse(ResponseSpecification&& value) { m_declinationResponseHasBeenSet = true; m_declinationResponse = std::move(value); }
-    inline IntentConfirmationSetting& WithDeclinationResponse(const ResponseSpecification& value) { SetDeclinationResponse(value); return *this;}
-    inline IntentConfirmationSetting& WithDeclinationResponse(ResponseSpecification&& value) { SetDeclinationResponse(std::move(value)); return *this;}
+    template<typename DeclinationResponseT = ResponseSpecification>
+    void SetDeclinationResponse(DeclinationResponseT&& value) { m_declinationResponseHasBeenSet = true; m_declinationResponse = std::forward<DeclinationResponseT>(value); }
+    template<typename DeclinationResponseT = ResponseSpecification>
+    IntentConfirmationSetting& WithDeclinationResponse(DeclinationResponseT&& value) { SetDeclinationResponse(std::forward<DeclinationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +81,7 @@ namespace Model
      * field is false, confirmation and declination responses aren't sent. If the
      * <code>active</code> field isn't specified, the default is true.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline IntentConfirmationSetting& WithActive(bool value) { SetActive(value); return *this;}
@@ -89,12 +89,12 @@ namespace Model
 
     ///@{
     
-    inline const ResponseSpecification& GetConfirmationResponse() const{ return m_confirmationResponse; }
+    inline const ResponseSpecification& GetConfirmationResponse() const { return m_confirmationResponse; }
     inline bool ConfirmationResponseHasBeenSet() const { return m_confirmationResponseHasBeenSet; }
-    inline void SetConfirmationResponse(const ResponseSpecification& value) { m_confirmationResponseHasBeenSet = true; m_confirmationResponse = value; }
-    inline void SetConfirmationResponse(ResponseSpecification&& value) { m_confirmationResponseHasBeenSet = true; m_confirmationResponse = std::move(value); }
-    inline IntentConfirmationSetting& WithConfirmationResponse(const ResponseSpecification& value) { SetConfirmationResponse(value); return *this;}
-    inline IntentConfirmationSetting& WithConfirmationResponse(ResponseSpecification&& value) { SetConfirmationResponse(std::move(value)); return *this;}
+    template<typename ConfirmationResponseT = ResponseSpecification>
+    void SetConfirmationResponse(ConfirmationResponseT&& value) { m_confirmationResponseHasBeenSet = true; m_confirmationResponse = std::forward<ConfirmationResponseT>(value); }
+    template<typename ConfirmationResponseT = ResponseSpecification>
+    IntentConfirmationSetting& WithConfirmationResponse(ConfirmationResponseT&& value) { SetConfirmationResponse(std::forward<ConfirmationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,24 +102,24 @@ namespace Model
      * <p>Specifies the next step that the bot executes when the customer confirms the
      * intent.</p>
      */
-    inline const DialogState& GetConfirmationNextStep() const{ return m_confirmationNextStep; }
+    inline const DialogState& GetConfirmationNextStep() const { return m_confirmationNextStep; }
     inline bool ConfirmationNextStepHasBeenSet() const { return m_confirmationNextStepHasBeenSet; }
-    inline void SetConfirmationNextStep(const DialogState& value) { m_confirmationNextStepHasBeenSet = true; m_confirmationNextStep = value; }
-    inline void SetConfirmationNextStep(DialogState&& value) { m_confirmationNextStepHasBeenSet = true; m_confirmationNextStep = std::move(value); }
-    inline IntentConfirmationSetting& WithConfirmationNextStep(const DialogState& value) { SetConfirmationNextStep(value); return *this;}
-    inline IntentConfirmationSetting& WithConfirmationNextStep(DialogState&& value) { SetConfirmationNextStep(std::move(value)); return *this;}
+    template<typename ConfirmationNextStepT = DialogState>
+    void SetConfirmationNextStep(ConfirmationNextStepT&& value) { m_confirmationNextStepHasBeenSet = true; m_confirmationNextStep = std::forward<ConfirmationNextStepT>(value); }
+    template<typename ConfirmationNextStepT = DialogState>
+    IntentConfirmationSetting& WithConfirmationNextStep(ConfirmationNextStepT&& value) { SetConfirmationNextStep(std::forward<ConfirmationNextStepT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of conditional branches to evaluate after the intent is closed.</p>
      */
-    inline const ConditionalSpecification& GetConfirmationConditional() const{ return m_confirmationConditional; }
+    inline const ConditionalSpecification& GetConfirmationConditional() const { return m_confirmationConditional; }
     inline bool ConfirmationConditionalHasBeenSet() const { return m_confirmationConditionalHasBeenSet; }
-    inline void SetConfirmationConditional(const ConditionalSpecification& value) { m_confirmationConditionalHasBeenSet = true; m_confirmationConditional = value; }
-    inline void SetConfirmationConditional(ConditionalSpecification&& value) { m_confirmationConditionalHasBeenSet = true; m_confirmationConditional = std::move(value); }
-    inline IntentConfirmationSetting& WithConfirmationConditional(const ConditionalSpecification& value) { SetConfirmationConditional(value); return *this;}
-    inline IntentConfirmationSetting& WithConfirmationConditional(ConditionalSpecification&& value) { SetConfirmationConditional(std::move(value)); return *this;}
+    template<typename ConfirmationConditionalT = ConditionalSpecification>
+    void SetConfirmationConditional(ConfirmationConditionalT&& value) { m_confirmationConditionalHasBeenSet = true; m_confirmationConditional = std::forward<ConfirmationConditionalT>(value); }
+    template<typename ConfirmationConditionalT = ConditionalSpecification>
+    IntentConfirmationSetting& WithConfirmationConditional(ConfirmationConditionalT&& value) { SetConfirmationConditional(std::forward<ConfirmationConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,56 +127,56 @@ namespace Model
      * <p>Specifies the next step that the bot executes when the customer declines the
      * intent.</p>
      */
-    inline const DialogState& GetDeclinationNextStep() const{ return m_declinationNextStep; }
+    inline const DialogState& GetDeclinationNextStep() const { return m_declinationNextStep; }
     inline bool DeclinationNextStepHasBeenSet() const { return m_declinationNextStepHasBeenSet; }
-    inline void SetDeclinationNextStep(const DialogState& value) { m_declinationNextStepHasBeenSet = true; m_declinationNextStep = value; }
-    inline void SetDeclinationNextStep(DialogState&& value) { m_declinationNextStepHasBeenSet = true; m_declinationNextStep = std::move(value); }
-    inline IntentConfirmationSetting& WithDeclinationNextStep(const DialogState& value) { SetDeclinationNextStep(value); return *this;}
-    inline IntentConfirmationSetting& WithDeclinationNextStep(DialogState&& value) { SetDeclinationNextStep(std::move(value)); return *this;}
+    template<typename DeclinationNextStepT = DialogState>
+    void SetDeclinationNextStep(DeclinationNextStepT&& value) { m_declinationNextStepHasBeenSet = true; m_declinationNextStep = std::forward<DeclinationNextStepT>(value); }
+    template<typename DeclinationNextStepT = DialogState>
+    IntentConfirmationSetting& WithDeclinationNextStep(DeclinationNextStepT&& value) { SetDeclinationNextStep(std::forward<DeclinationNextStepT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of conditional branches to evaluate after the intent is declined.</p>
      */
-    inline const ConditionalSpecification& GetDeclinationConditional() const{ return m_declinationConditional; }
+    inline const ConditionalSpecification& GetDeclinationConditional() const { return m_declinationConditional; }
     inline bool DeclinationConditionalHasBeenSet() const { return m_declinationConditionalHasBeenSet; }
-    inline void SetDeclinationConditional(const ConditionalSpecification& value) { m_declinationConditionalHasBeenSet = true; m_declinationConditional = value; }
-    inline void SetDeclinationConditional(ConditionalSpecification&& value) { m_declinationConditionalHasBeenSet = true; m_declinationConditional = std::move(value); }
-    inline IntentConfirmationSetting& WithDeclinationConditional(const ConditionalSpecification& value) { SetDeclinationConditional(value); return *this;}
-    inline IntentConfirmationSetting& WithDeclinationConditional(ConditionalSpecification&& value) { SetDeclinationConditional(std::move(value)); return *this;}
+    template<typename DeclinationConditionalT = ConditionalSpecification>
+    void SetDeclinationConditional(DeclinationConditionalT&& value) { m_declinationConditionalHasBeenSet = true; m_declinationConditional = std::forward<DeclinationConditionalT>(value); }
+    template<typename DeclinationConditionalT = ConditionalSpecification>
+    IntentConfirmationSetting& WithDeclinationConditional(DeclinationConditionalT&& value) { SetDeclinationConditional(std::forward<DeclinationConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseSpecification& GetFailureResponse() const{ return m_failureResponse; }
+    inline const ResponseSpecification& GetFailureResponse() const { return m_failureResponse; }
     inline bool FailureResponseHasBeenSet() const { return m_failureResponseHasBeenSet; }
-    inline void SetFailureResponse(const ResponseSpecification& value) { m_failureResponseHasBeenSet = true; m_failureResponse = value; }
-    inline void SetFailureResponse(ResponseSpecification&& value) { m_failureResponseHasBeenSet = true; m_failureResponse = std::move(value); }
-    inline IntentConfirmationSetting& WithFailureResponse(const ResponseSpecification& value) { SetFailureResponse(value); return *this;}
-    inline IntentConfirmationSetting& WithFailureResponse(ResponseSpecification&& value) { SetFailureResponse(std::move(value)); return *this;}
+    template<typename FailureResponseT = ResponseSpecification>
+    void SetFailureResponse(FailureResponseT&& value) { m_failureResponseHasBeenSet = true; m_failureResponse = std::forward<FailureResponseT>(value); }
+    template<typename FailureResponseT = ResponseSpecification>
+    IntentConfirmationSetting& WithFailureResponse(FailureResponseT&& value) { SetFailureResponse(std::forward<FailureResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next step to take in the conversation if the confirmation step fails.</p>
      */
-    inline const DialogState& GetFailureNextStep() const{ return m_failureNextStep; }
+    inline const DialogState& GetFailureNextStep() const { return m_failureNextStep; }
     inline bool FailureNextStepHasBeenSet() const { return m_failureNextStepHasBeenSet; }
-    inline void SetFailureNextStep(const DialogState& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = value; }
-    inline void SetFailureNextStep(DialogState&& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = std::move(value); }
-    inline IntentConfirmationSetting& WithFailureNextStep(const DialogState& value) { SetFailureNextStep(value); return *this;}
-    inline IntentConfirmationSetting& WithFailureNextStep(DialogState&& value) { SetFailureNextStep(std::move(value)); return *this;}
+    template<typename FailureNextStepT = DialogState>
+    void SetFailureNextStep(FailureNextStepT&& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = std::forward<FailureNextStepT>(value); }
+    template<typename FailureNextStepT = DialogState>
+    IntentConfirmationSetting& WithFailureNextStep(FailureNextStepT&& value) { SetFailureNextStep(std::forward<FailureNextStepT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConditionalSpecification& GetFailureConditional() const{ return m_failureConditional; }
+    inline const ConditionalSpecification& GetFailureConditional() const { return m_failureConditional; }
     inline bool FailureConditionalHasBeenSet() const { return m_failureConditionalHasBeenSet; }
-    inline void SetFailureConditional(const ConditionalSpecification& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = value; }
-    inline void SetFailureConditional(ConditionalSpecification&& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = std::move(value); }
-    inline IntentConfirmationSetting& WithFailureConditional(const ConditionalSpecification& value) { SetFailureConditional(value); return *this;}
-    inline IntentConfirmationSetting& WithFailureConditional(ConditionalSpecification&& value) { SetFailureConditional(std::move(value)); return *this;}
+    template<typename FailureConditionalT = ConditionalSpecification>
+    void SetFailureConditional(FailureConditionalT&& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = std::forward<FailureConditionalT>(value); }
+    template<typename FailureConditionalT = ConditionalSpecification>
+    IntentConfirmationSetting& WithFailureConditional(FailureConditionalT&& value) { SetFailureConditional(std::forward<FailureConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,12 +186,12 @@ namespace Model
      * invocation settings when the confirmation next step or declination next step or
      * failure next step is <code>InvokeDialogCodeHook</code>. </p>
      */
-    inline const DialogCodeHookInvocationSetting& GetCodeHook() const{ return m_codeHook; }
+    inline const DialogCodeHookInvocationSetting& GetCodeHook() const { return m_codeHook; }
     inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
-    inline void SetCodeHook(const DialogCodeHookInvocationSetting& value) { m_codeHookHasBeenSet = true; m_codeHook = value; }
-    inline void SetCodeHook(DialogCodeHookInvocationSetting&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::move(value); }
-    inline IntentConfirmationSetting& WithCodeHook(const DialogCodeHookInvocationSetting& value) { SetCodeHook(value); return *this;}
-    inline IntentConfirmationSetting& WithCodeHook(DialogCodeHookInvocationSetting&& value) { SetCodeHook(std::move(value)); return *this;}
+    template<typename CodeHookT = DialogCodeHookInvocationSetting>
+    void SetCodeHook(CodeHookT&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::forward<CodeHookT>(value); }
+    template<typename CodeHookT = DialogCodeHookInvocationSetting>
+    IntentConfirmationSetting& WithCodeHook(CodeHookT&& value) { SetCodeHook(std::forward<CodeHookT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,12 +199,12 @@ namespace Model
      * <p>The <code>DialogCodeHookInvocationSetting</code> used when the code hook is
      * invoked during confirmation prompt retries.</p>
      */
-    inline const ElicitationCodeHookInvocationSetting& GetElicitationCodeHook() const{ return m_elicitationCodeHook; }
+    inline const ElicitationCodeHookInvocationSetting& GetElicitationCodeHook() const { return m_elicitationCodeHook; }
     inline bool ElicitationCodeHookHasBeenSet() const { return m_elicitationCodeHookHasBeenSet; }
-    inline void SetElicitationCodeHook(const ElicitationCodeHookInvocationSetting& value) { m_elicitationCodeHookHasBeenSet = true; m_elicitationCodeHook = value; }
-    inline void SetElicitationCodeHook(ElicitationCodeHookInvocationSetting&& value) { m_elicitationCodeHookHasBeenSet = true; m_elicitationCodeHook = std::move(value); }
-    inline IntentConfirmationSetting& WithElicitationCodeHook(const ElicitationCodeHookInvocationSetting& value) { SetElicitationCodeHook(value); return *this;}
-    inline IntentConfirmationSetting& WithElicitationCodeHook(ElicitationCodeHookInvocationSetting&& value) { SetElicitationCodeHook(std::move(value)); return *this;}
+    template<typename ElicitationCodeHookT = ElicitationCodeHookInvocationSetting>
+    void SetElicitationCodeHook(ElicitationCodeHookT&& value) { m_elicitationCodeHookHasBeenSet = true; m_elicitationCodeHook = std::forward<ElicitationCodeHookT>(value); }
+    template<typename ElicitationCodeHookT = ElicitationCodeHookInvocationSetting>
+    IntentConfirmationSetting& WithElicitationCodeHook(ElicitationCodeHookT&& value) { SetElicitationCodeHook(std::forward<ElicitationCodeHookT>(value)); return *this;}
     ///@}
   private:
 
@@ -214,7 +214,7 @@ namespace Model
     ResponseSpecification m_declinationResponse;
     bool m_declinationResponseHasBeenSet = false;
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
 
     ResponseSpecification m_confirmationResponse;

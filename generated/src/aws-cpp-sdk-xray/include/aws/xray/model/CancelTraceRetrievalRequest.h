@@ -21,7 +21,7 @@ namespace Model
   class CancelTraceRetrievalRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API CancelTraceRetrievalRequest();
+    AWS_XRAY_API CancelTraceRetrievalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> Retrieval token. </p>
      */
-    inline const Aws::String& GetRetrievalToken() const{ return m_retrievalToken; }
+    inline const Aws::String& GetRetrievalToken() const { return m_retrievalToken; }
     inline bool RetrievalTokenHasBeenSet() const { return m_retrievalTokenHasBeenSet; }
-    inline void SetRetrievalToken(const Aws::String& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = value; }
-    inline void SetRetrievalToken(Aws::String&& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = std::move(value); }
-    inline void SetRetrievalToken(const char* value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken.assign(value); }
-    inline CancelTraceRetrievalRequest& WithRetrievalToken(const Aws::String& value) { SetRetrievalToken(value); return *this;}
-    inline CancelTraceRetrievalRequest& WithRetrievalToken(Aws::String&& value) { SetRetrievalToken(std::move(value)); return *this;}
-    inline CancelTraceRetrievalRequest& WithRetrievalToken(const char* value) { SetRetrievalToken(value); return *this;}
+    template<typename RetrievalTokenT = Aws::String>
+    void SetRetrievalToken(RetrievalTokenT&& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = std::forward<RetrievalTokenT>(value); }
+    template<typename RetrievalTokenT = Aws::String>
+    CancelTraceRetrievalRequest& WithRetrievalToken(RetrievalTokenT&& value) { SetRetrievalToken(std::forward<RetrievalTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeliverabilityDashboardOptionsResult::GetDeliverabilityDashboardOptionsResult() : 
-    m_dashboardEnabled(false),
-    m_accountStatus(DeliverabilityDashboardAccountStatus::NOT_SET)
-{
-}
-
 GetDeliverabilityDashboardOptionsResult::GetDeliverabilityDashboardOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDeliverabilityDashboardOptionsResult()
 {
   *this = result;
 }
@@ -35,21 +28,18 @@ GetDeliverabilityDashboardOptionsResult& GetDeliverabilityDashboardOptionsResult
   if(jsonValue.ValueExists("DashboardEnabled"))
   {
     m_dashboardEnabled = jsonValue.GetBool("DashboardEnabled");
-
+    m_dashboardEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionExpiryDate"))
   {
     m_subscriptionExpiryDate = jsonValue.GetDouble("SubscriptionExpiryDate");
-
+    m_subscriptionExpiryDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountStatus"))
   {
     m_accountStatus = DeliverabilityDashboardAccountStatusMapper::GetDeliverabilityDashboardAccountStatusForName(jsonValue.GetString("AccountStatus"));
-
+    m_accountStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveSubscribedDomains"))
   {
     Aws::Utils::Array<JsonView> activeSubscribedDomainsJsonList = jsonValue.GetArray("ActiveSubscribedDomains");
@@ -57,8 +47,8 @@ GetDeliverabilityDashboardOptionsResult& GetDeliverabilityDashboardOptionsResult
     {
       m_activeSubscribedDomains.push_back(activeSubscribedDomainsJsonList[activeSubscribedDomainsIndex].AsObject());
     }
+    m_activeSubscribedDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingExpirationSubscribedDomains"))
   {
     Aws::Utils::Array<JsonView> pendingExpirationSubscribedDomainsJsonList = jsonValue.GetArray("PendingExpirationSubscribedDomains");
@@ -66,14 +56,15 @@ GetDeliverabilityDashboardOptionsResult& GetDeliverabilityDashboardOptionsResult
     {
       m_pendingExpirationSubscribedDomains.push_back(pendingExpirationSubscribedDomainsJsonList[pendingExpirationSubscribedDomainsIndex].AsObject());
     }
+    m_pendingExpirationSubscribedDomainsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

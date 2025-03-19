@@ -18,13 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerOutputDataConfig::EntityRecognizerOutputDataConfig() : 
-    m_flywheelStatsS3PrefixHasBeenSet(false)
-{
-}
-
 EntityRecognizerOutputDataConfig::EntityRecognizerOutputDataConfig(JsonView jsonValue)
-  : EntityRecognizerOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EntityRecognizerOutputDataConfig& EntityRecognizerOutputDataConfig::operator =(J
   if(jsonValue.ValueExists("FlywheelStatsS3Prefix"))
   {
     m_flywheelStatsS3Prefix = jsonValue.GetString("FlywheelStatsS3Prefix");
-
     m_flywheelStatsS3PrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

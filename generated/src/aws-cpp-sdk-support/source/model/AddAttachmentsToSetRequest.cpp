@@ -12,12 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddAttachmentsToSetRequest::AddAttachmentsToSetRequest() : 
-    m_attachmentSetIdHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
-{
-}
-
 Aws::String AddAttachmentsToSetRequest::SerializePayload() const
 {
   JsonValue payload;

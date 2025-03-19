@@ -18,24 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-TemplateStepSummary::TemplateStepSummary() : 
-    m_idHasBeenSet(false),
-    m_stepGroupIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_stepActionType(StepActionType::NOT_SET),
-    m_stepActionTypeHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_owner(Owner::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 TemplateStepSummary::TemplateStepSummary(JsonView jsonValue)
-  : TemplateStepSummary()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ TemplateStepSummary& TemplateStepSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepGroupId"))
   {
     m_stepGroupId = jsonValue.GetString("stepGroupId");
-
     m_stepGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateId"))
   {
     m_templateId = jsonValue.GetString("templateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepActionType"))
   {
     m_stepActionType = StepActionTypeMapper::GetStepActionTypeForName(jsonValue.GetString("stepActionType"));
-
     m_stepActionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = OwnerMapper::GetOwnerForName(jsonValue.GetString("owner"));
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previous"))
   {
     Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
@@ -100,7 +69,6 @@ TemplateStepSummary& TemplateStepSummary::operator =(JsonView jsonValue)
     }
     m_previousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
@@ -110,7 +78,6 @@ TemplateStepSummary& TemplateStepSummary::operator =(JsonView jsonValue)
     }
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

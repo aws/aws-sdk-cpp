@@ -32,7 +32,7 @@ namespace Model
   class BillOfMaterialsImportJob
   {
   public:
-    AWS_SUPPLYCHAIN_API BillOfMaterialsImportJob();
+    AWS_SUPPLYCHAIN_API BillOfMaterialsImportJob() = default;
     AWS_SUPPLYCHAIN_API BillOfMaterialsImportJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API BillOfMaterialsImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,54 +42,46 @@ namespace Model
     /**
      * <p>The BillOfMaterialsImportJob instanceId.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline BillOfMaterialsImportJob& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline BillOfMaterialsImportJob& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline BillOfMaterialsImportJob& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    BillOfMaterialsImportJob& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The BillOfMaterialsImportJob jobId.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline BillOfMaterialsImportJob& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline BillOfMaterialsImportJob& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline BillOfMaterialsImportJob& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    BillOfMaterialsImportJob& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The BillOfMaterialsImportJob ConfigurationJobStatus.</p>
      */
-    inline const ConfigurationJobStatus& GetStatus() const{ return m_status; }
+    inline ConfigurationJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConfigurationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConfigurationJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline BillOfMaterialsImportJob& WithStatus(const ConfigurationJobStatus& value) { SetStatus(value); return *this;}
-    inline BillOfMaterialsImportJob& WithStatus(ConfigurationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConfigurationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BillOfMaterialsImportJob& WithStatus(ConfigurationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 URI from which the CSV is read.</p>
      */
-    inline const Aws::String& GetS3uri() const{ return m_s3uri; }
+    inline const Aws::String& GetS3uri() const { return m_s3uri; }
     inline bool S3uriHasBeenSet() const { return m_s3uriHasBeenSet; }
-    inline void SetS3uri(const Aws::String& value) { m_s3uriHasBeenSet = true; m_s3uri = value; }
-    inline void SetS3uri(Aws::String&& value) { m_s3uriHasBeenSet = true; m_s3uri = std::move(value); }
-    inline void SetS3uri(const char* value) { m_s3uriHasBeenSet = true; m_s3uri.assign(value); }
-    inline BillOfMaterialsImportJob& WithS3uri(const Aws::String& value) { SetS3uri(value); return *this;}
-    inline BillOfMaterialsImportJob& WithS3uri(Aws::String&& value) { SetS3uri(std::move(value)); return *this;}
-    inline BillOfMaterialsImportJob& WithS3uri(const char* value) { SetS3uri(value); return *this;}
+    template<typename S3uriT = Aws::String>
+    void SetS3uri(S3uriT&& value) { m_s3uriHasBeenSet = true; m_s3uri = std::forward<S3uriT>(value); }
+    template<typename S3uriT = Aws::String>
+    BillOfMaterialsImportJob& WithS3uri(S3uriT&& value) { SetS3uri(std::forward<S3uriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +89,12 @@ namespace Model
      * <p>When the BillOfMaterialsImportJob has reached a terminal state, there will be
      * a message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BillOfMaterialsImportJob& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BillOfMaterialsImportJob& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BillOfMaterialsImportJob& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BillOfMaterialsImportJob& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -114,7 +104,7 @@ namespace Model
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    ConfigurationJobStatus m_status;
+    ConfigurationJobStatus m_status{ConfigurationJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_s3uri;

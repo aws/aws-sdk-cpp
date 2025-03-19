@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountPoliciesRequest::DescribeAccountPoliciesRequest() : 
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_accountIdentifiersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

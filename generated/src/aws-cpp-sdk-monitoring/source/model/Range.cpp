@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-Range::Range() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Range::Range(const XmlNode& xmlNode)
-  : Range()
 {
   *this = xmlNode;
 }

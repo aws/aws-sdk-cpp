@@ -18,13 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ResultReuseConfiguration::ResultReuseConfiguration() : 
-    m_resultReuseByAgeConfigurationHasBeenSet(false)
-{
-}
-
 ResultReuseConfiguration::ResultReuseConfiguration(JsonView jsonValue)
-  : ResultReuseConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResultReuseConfiguration& ResultReuseConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ResultReuseByAgeConfiguration"))
   {
     m_resultReuseByAgeConfiguration = jsonValue.GetObject("ResultReuseByAgeConfiguration");
-
     m_resultReuseByAgeConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

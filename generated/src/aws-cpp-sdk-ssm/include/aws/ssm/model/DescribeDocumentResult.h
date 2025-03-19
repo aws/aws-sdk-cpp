@@ -28,7 +28,7 @@ namespace Model
   class DescribeDocumentResult
   {
   public:
-    AWS_SSM_API DescribeDocumentResult();
+    AWS_SSM_API DescribeDocumentResult() = default;
     AWS_SSM_API DescribeDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API DescribeDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the SSM document.</p>
      */
-    inline const DocumentDescription& GetDocument() const{ return m_document; }
-    inline void SetDocument(const DocumentDescription& value) { m_document = value; }
-    inline void SetDocument(DocumentDescription&& value) { m_document = std::move(value); }
-    inline DescribeDocumentResult& WithDocument(const DocumentDescription& value) { SetDocument(value); return *this;}
-    inline DescribeDocumentResult& WithDocument(DocumentDescription&& value) { SetDocument(std::move(value)); return *this;}
+    inline const DocumentDescription& GetDocument() const { return m_document; }
+    template<typename DocumentT = DocumentDescription>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = DocumentDescription>
+    DescribeDocumentResult& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDocumentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DocumentDescription m_document;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

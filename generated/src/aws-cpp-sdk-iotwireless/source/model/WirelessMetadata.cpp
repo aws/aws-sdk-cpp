@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-WirelessMetadata::WirelessMetadata() : 
-    m_loRaWANHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 WirelessMetadata::WirelessMetadata(JsonView jsonValue)
-  : WirelessMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WirelessMetadata& WirelessMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LoRaWAN"))
   {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
-
     m_loRaWANHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
     m_sidewalkHasBeenSet = true;
   }
-
   return *this;
 }
 

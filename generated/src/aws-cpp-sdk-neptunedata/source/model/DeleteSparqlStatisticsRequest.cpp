@@ -12,10 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSparqlStatisticsRequest::DeleteSparqlStatisticsRequest()
-{
-}
-
 Aws::String DeleteSparqlStatisticsRequest::SerializePayload() const
 {
   return {};

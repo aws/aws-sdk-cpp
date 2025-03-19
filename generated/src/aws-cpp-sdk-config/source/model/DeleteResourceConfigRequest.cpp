@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceConfigRequest::DeleteResourceConfigRequest() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceConfigRequest::SerializePayload() const
 {
   JsonValue payload;

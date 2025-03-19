@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlAttributesResult::XmlAttributesResult()
-{
-}
-
 XmlAttributesResult::XmlAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ XmlAttributesResult& XmlAttributesResult::operator =(const Aws::AmazonWebService
     if(!fooNode.IsNull())
     {
       m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
+      m_fooHasBeenSet = true;
     }
     auto attr = resultNode.GetAttributeValue("test");
     if(!attr.empty())
     {
       m_attr = Aws::Utils::Xml::DecodeEscapedXmlText(attr);
+      m_attrHasBeenSet = true;
     }
   }
 
@@ -49,6 +47,7 @@ XmlAttributesResult& XmlAttributesResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

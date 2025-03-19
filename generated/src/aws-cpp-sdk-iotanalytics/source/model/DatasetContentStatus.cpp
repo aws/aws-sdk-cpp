@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetContentStatus::DatasetContentStatus() : 
-    m_state(DatasetContentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 DatasetContentStatus::DatasetContentStatus(JsonView jsonValue)
-  : DatasetContentStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DatasetContentStatus& DatasetContentStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = DatasetContentStateMapper::GetDatasetContentStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

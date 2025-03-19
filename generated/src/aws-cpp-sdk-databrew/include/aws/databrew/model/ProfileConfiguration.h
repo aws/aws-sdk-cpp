@@ -38,7 +38,7 @@ namespace Model
   class ProfileConfiguration
   {
   public:
-    AWS_GLUEDATABREW_API ProfileConfiguration();
+    AWS_GLUEDATABREW_API ProfileConfiguration() = default;
     AWS_GLUEDATABREW_API ProfileConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API ProfileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * select evaluations and override parameters of evaluations. When configuration is
      * undefined, the profile job will run all supported inter-column evaluations. </p>
      */
-    inline const StatisticsConfiguration& GetDatasetStatisticsConfiguration() const{ return m_datasetStatisticsConfiguration; }
+    inline const StatisticsConfiguration& GetDatasetStatisticsConfiguration() const { return m_datasetStatisticsConfiguration; }
     inline bool DatasetStatisticsConfigurationHasBeenSet() const { return m_datasetStatisticsConfigurationHasBeenSet; }
-    inline void SetDatasetStatisticsConfiguration(const StatisticsConfiguration& value) { m_datasetStatisticsConfigurationHasBeenSet = true; m_datasetStatisticsConfiguration = value; }
-    inline void SetDatasetStatisticsConfiguration(StatisticsConfiguration&& value) { m_datasetStatisticsConfigurationHasBeenSet = true; m_datasetStatisticsConfiguration = std::move(value); }
-    inline ProfileConfiguration& WithDatasetStatisticsConfiguration(const StatisticsConfiguration& value) { SetDatasetStatisticsConfiguration(value); return *this;}
-    inline ProfileConfiguration& WithDatasetStatisticsConfiguration(StatisticsConfiguration&& value) { SetDatasetStatisticsConfiguration(std::move(value)); return *this;}
+    template<typename DatasetStatisticsConfigurationT = StatisticsConfiguration>
+    void SetDatasetStatisticsConfiguration(DatasetStatisticsConfigurationT&& value) { m_datasetStatisticsConfigurationHasBeenSet = true; m_datasetStatisticsConfiguration = std::forward<DatasetStatisticsConfigurationT>(value); }
+    template<typename DatasetStatisticsConfigurationT = StatisticsConfiguration>
+    ProfileConfiguration& WithDatasetStatisticsConfiguration(DatasetStatisticsConfigurationT&& value) { SetDatasetStatisticsConfiguration(std::forward<DatasetStatisticsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +64,14 @@ namespace Model
      * the dataset. When ProfileColumns is undefined, the profile job will profile all
      * supported columns. </p>
      */
-    inline const Aws::Vector<ColumnSelector>& GetProfileColumns() const{ return m_profileColumns; }
+    inline const Aws::Vector<ColumnSelector>& GetProfileColumns() const { return m_profileColumns; }
     inline bool ProfileColumnsHasBeenSet() const { return m_profileColumnsHasBeenSet; }
-    inline void SetProfileColumns(const Aws::Vector<ColumnSelector>& value) { m_profileColumnsHasBeenSet = true; m_profileColumns = value; }
-    inline void SetProfileColumns(Aws::Vector<ColumnSelector>&& value) { m_profileColumnsHasBeenSet = true; m_profileColumns = std::move(value); }
-    inline ProfileConfiguration& WithProfileColumns(const Aws::Vector<ColumnSelector>& value) { SetProfileColumns(value); return *this;}
-    inline ProfileConfiguration& WithProfileColumns(Aws::Vector<ColumnSelector>&& value) { SetProfileColumns(std::move(value)); return *this;}
-    inline ProfileConfiguration& AddProfileColumns(const ColumnSelector& value) { m_profileColumnsHasBeenSet = true; m_profileColumns.push_back(value); return *this; }
-    inline ProfileConfiguration& AddProfileColumns(ColumnSelector&& value) { m_profileColumnsHasBeenSet = true; m_profileColumns.push_back(std::move(value)); return *this; }
+    template<typename ProfileColumnsT = Aws::Vector<ColumnSelector>>
+    void SetProfileColumns(ProfileColumnsT&& value) { m_profileColumnsHasBeenSet = true; m_profileColumns = std::forward<ProfileColumnsT>(value); }
+    template<typename ProfileColumnsT = Aws::Vector<ColumnSelector>>
+    ProfileConfiguration& WithProfileColumns(ProfileColumnsT&& value) { SetProfileColumns(std::forward<ProfileColumnsT>(value)); return *this;}
+    template<typename ProfileColumnsT = ColumnSelector>
+    ProfileConfiguration& AddProfileColumns(ProfileColumnsT&& value) { m_profileColumnsHasBeenSet = true; m_profileColumns.emplace_back(std::forward<ProfileColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +82,14 @@ namespace Model
      * profile job will profile all supported columns and run all supported
      * evaluations. </p>
      */
-    inline const Aws::Vector<ColumnStatisticsConfiguration>& GetColumnStatisticsConfigurations() const{ return m_columnStatisticsConfigurations; }
+    inline const Aws::Vector<ColumnStatisticsConfiguration>& GetColumnStatisticsConfigurations() const { return m_columnStatisticsConfigurations; }
     inline bool ColumnStatisticsConfigurationsHasBeenSet() const { return m_columnStatisticsConfigurationsHasBeenSet; }
-    inline void SetColumnStatisticsConfigurations(const Aws::Vector<ColumnStatisticsConfiguration>& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations = value; }
-    inline void SetColumnStatisticsConfigurations(Aws::Vector<ColumnStatisticsConfiguration>&& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations = std::move(value); }
-    inline ProfileConfiguration& WithColumnStatisticsConfigurations(const Aws::Vector<ColumnStatisticsConfiguration>& value) { SetColumnStatisticsConfigurations(value); return *this;}
-    inline ProfileConfiguration& WithColumnStatisticsConfigurations(Aws::Vector<ColumnStatisticsConfiguration>&& value) { SetColumnStatisticsConfigurations(std::move(value)); return *this;}
-    inline ProfileConfiguration& AddColumnStatisticsConfigurations(const ColumnStatisticsConfiguration& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations.push_back(value); return *this; }
-    inline ProfileConfiguration& AddColumnStatisticsConfigurations(ColumnStatisticsConfiguration&& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ColumnStatisticsConfigurationsT = Aws::Vector<ColumnStatisticsConfiguration>>
+    void SetColumnStatisticsConfigurations(ColumnStatisticsConfigurationsT&& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations = std::forward<ColumnStatisticsConfigurationsT>(value); }
+    template<typename ColumnStatisticsConfigurationsT = Aws::Vector<ColumnStatisticsConfiguration>>
+    ProfileConfiguration& WithColumnStatisticsConfigurations(ColumnStatisticsConfigurationsT&& value) { SetColumnStatisticsConfigurations(std::forward<ColumnStatisticsConfigurationsT>(value)); return *this;}
+    template<typename ColumnStatisticsConfigurationsT = ColumnStatisticsConfiguration>
+    ProfileConfiguration& AddColumnStatisticsConfigurations(ColumnStatisticsConfigurationsT&& value) { m_columnStatisticsConfigurationsHasBeenSet = true; m_columnStatisticsConfigurations.emplace_back(std::forward<ColumnStatisticsConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,12 +97,12 @@ namespace Model
      * <p>Configuration of entity detection for a profile job. When undefined, entity
      * detection is disabled.</p>
      */
-    inline const EntityDetectorConfiguration& GetEntityDetectorConfiguration() const{ return m_entityDetectorConfiguration; }
+    inline const EntityDetectorConfiguration& GetEntityDetectorConfiguration() const { return m_entityDetectorConfiguration; }
     inline bool EntityDetectorConfigurationHasBeenSet() const { return m_entityDetectorConfigurationHasBeenSet; }
-    inline void SetEntityDetectorConfiguration(const EntityDetectorConfiguration& value) { m_entityDetectorConfigurationHasBeenSet = true; m_entityDetectorConfiguration = value; }
-    inline void SetEntityDetectorConfiguration(EntityDetectorConfiguration&& value) { m_entityDetectorConfigurationHasBeenSet = true; m_entityDetectorConfiguration = std::move(value); }
-    inline ProfileConfiguration& WithEntityDetectorConfiguration(const EntityDetectorConfiguration& value) { SetEntityDetectorConfiguration(value); return *this;}
-    inline ProfileConfiguration& WithEntityDetectorConfiguration(EntityDetectorConfiguration&& value) { SetEntityDetectorConfiguration(std::move(value)); return *this;}
+    template<typename EntityDetectorConfigurationT = EntityDetectorConfiguration>
+    void SetEntityDetectorConfiguration(EntityDetectorConfigurationT&& value) { m_entityDetectorConfigurationHasBeenSet = true; m_entityDetectorConfiguration = std::forward<EntityDetectorConfigurationT>(value); }
+    template<typename EntityDetectorConfigurationT = EntityDetectorConfiguration>
+    ProfileConfiguration& WithEntityDetectorConfiguration(EntityDetectorConfigurationT&& value) { SetEntityDetectorConfiguration(std::forward<EntityDetectorConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class UpdateResolverEndpointRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateResolverEndpointRequest();
+    AWS_ROUTE53RESOLVER_API UpdateResolverEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the Resolver endpoint that you want to update.</p>
      */
-    inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
+    inline const Aws::String& GetResolverEndpointId() const { return m_resolverEndpointId; }
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-    inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-    inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-    inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-    inline UpdateResolverEndpointRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-    inline UpdateResolverEndpointRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-    inline UpdateResolverEndpointRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
+    template<typename ResolverEndpointIdT = Aws::String>
+    void SetResolverEndpointId(ResolverEndpointIdT&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::forward<ResolverEndpointIdT>(value); }
+    template<typename ResolverEndpointIdT = Aws::String>
+    UpdateResolverEndpointRequest& WithResolverEndpointId(ResolverEndpointIdT&& value) { SetResolverEndpointId(std::forward<ResolverEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Resolver endpoint that you want to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateResolverEndpointRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateResolverEndpointRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateResolverEndpointRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateResolverEndpointRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,10 @@ namespace Model
      * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
      * supported.</p>
      */
-    inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
+    inline ResolverEndpointType GetResolverEndpointType() const { return m_resolverEndpointType; }
     inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
-    inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
-    inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
-    inline UpdateResolverEndpointRequest& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
-    inline UpdateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
+    inline void SetResolverEndpointType(ResolverEndpointType value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
+    inline UpdateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType value) { SetResolverEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,14 @@ namespace Model
      * to dual-stack. If you don't specify an IPv6 address, one will be automatically
      * chosen from your subnet. </p>
      */
-    inline const Aws::Vector<UpdateIpAddress>& GetUpdateIpAddresses() const{ return m_updateIpAddresses; }
+    inline const Aws::Vector<UpdateIpAddress>& GetUpdateIpAddresses() const { return m_updateIpAddresses; }
     inline bool UpdateIpAddressesHasBeenSet() const { return m_updateIpAddressesHasBeenSet; }
-    inline void SetUpdateIpAddresses(const Aws::Vector<UpdateIpAddress>& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = value; }
-    inline void SetUpdateIpAddresses(Aws::Vector<UpdateIpAddress>&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = std::move(value); }
-    inline UpdateResolverEndpointRequest& WithUpdateIpAddresses(const Aws::Vector<UpdateIpAddress>& value) { SetUpdateIpAddresses(value); return *this;}
-    inline UpdateResolverEndpointRequest& WithUpdateIpAddresses(Aws::Vector<UpdateIpAddress>&& value) { SetUpdateIpAddresses(std::move(value)); return *this;}
-    inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(const UpdateIpAddress& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(value); return *this; }
-    inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(UpdateIpAddress&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(std::move(value)); return *this; }
+    template<typename UpdateIpAddressesT = Aws::Vector<UpdateIpAddress>>
+    void SetUpdateIpAddresses(UpdateIpAddressesT&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = std::forward<UpdateIpAddressesT>(value); }
+    template<typename UpdateIpAddressesT = Aws::Vector<UpdateIpAddress>>
+    UpdateResolverEndpointRequest& WithUpdateIpAddresses(UpdateIpAddressesT&& value) { SetUpdateIpAddresses(std::forward<UpdateIpAddressesT>(value)); return *this;}
+    template<typename UpdateIpAddressesT = UpdateIpAddress>
+    UpdateResolverEndpointRequest& AddUpdateIpAddresses(UpdateIpAddressesT&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.emplace_back(std::forward<UpdateIpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,14 +108,13 @@ namespace Model
      * sure that all incoming traffic has transferred to using the DoH protocol, or
      * DoH-FIPS, and then remove the Do53.</p> 
      */
-    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline UpdateResolverEndpointRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
-    inline UpdateResolverEndpointRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline UpdateResolverEndpointRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline UpdateResolverEndpointRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    UpdateResolverEndpointRequest& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline UpdateResolverEndpointRequest& AddProtocols(Protocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
   private:
 
@@ -131,7 +124,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ResolverEndpointType m_resolverEndpointType;
+    ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
     bool m_resolverEndpointTypeHasBeenSet = false;
 
     Aws::Vector<UpdateIpAddress> m_updateIpAddresses;

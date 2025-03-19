@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteExternalModelRequest::DeleteExternalModelRequest() : 
-    m_modelEndpointHasBeenSet(false)
-{
-}
-
 Aws::String DeleteExternalModelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifactOutput::ProvisioningArtifactOutput() : 
-    m_keyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ProvisioningArtifactOutput::ProvisioningArtifactOutput(JsonView jsonValue)
-  : ProvisioningArtifactOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProvisioningArtifactOutput& ProvisioningArtifactOutput::operator =(JsonView json
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

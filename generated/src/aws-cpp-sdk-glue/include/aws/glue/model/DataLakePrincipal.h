@@ -31,7 +31,7 @@ namespace Model
   class DataLakePrincipal
   {
   public:
-    AWS_GLUE_API DataLakePrincipal();
+    AWS_GLUE_API DataLakePrincipal() = default;
     AWS_GLUE_API DataLakePrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataLakePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>An identifier for the Lake Formation principal.</p>
      */
-    inline const Aws::String& GetDataLakePrincipalIdentifier() const{ return m_dataLakePrincipalIdentifier; }
+    inline const Aws::String& GetDataLakePrincipalIdentifier() const { return m_dataLakePrincipalIdentifier; }
     inline bool DataLakePrincipalIdentifierHasBeenSet() const { return m_dataLakePrincipalIdentifierHasBeenSet; }
-    inline void SetDataLakePrincipalIdentifier(const Aws::String& value) { m_dataLakePrincipalIdentifierHasBeenSet = true; m_dataLakePrincipalIdentifier = value; }
-    inline void SetDataLakePrincipalIdentifier(Aws::String&& value) { m_dataLakePrincipalIdentifierHasBeenSet = true; m_dataLakePrincipalIdentifier = std::move(value); }
-    inline void SetDataLakePrincipalIdentifier(const char* value) { m_dataLakePrincipalIdentifierHasBeenSet = true; m_dataLakePrincipalIdentifier.assign(value); }
-    inline DataLakePrincipal& WithDataLakePrincipalIdentifier(const Aws::String& value) { SetDataLakePrincipalIdentifier(value); return *this;}
-    inline DataLakePrincipal& WithDataLakePrincipalIdentifier(Aws::String&& value) { SetDataLakePrincipalIdentifier(std::move(value)); return *this;}
-    inline DataLakePrincipal& WithDataLakePrincipalIdentifier(const char* value) { SetDataLakePrincipalIdentifier(value); return *this;}
+    template<typename DataLakePrincipalIdentifierT = Aws::String>
+    void SetDataLakePrincipalIdentifier(DataLakePrincipalIdentifierT&& value) { m_dataLakePrincipalIdentifierHasBeenSet = true; m_dataLakePrincipalIdentifier = std::forward<DataLakePrincipalIdentifierT>(value); }
+    template<typename DataLakePrincipalIdentifierT = Aws::String>
+    DataLakePrincipal& WithDataLakePrincipalIdentifier(DataLakePrincipalIdentifierT&& value) { SetDataLakePrincipalIdentifier(std::forward<DataLakePrincipalIdentifierT>(value)); return *this;}
     ///@}
   private:
 

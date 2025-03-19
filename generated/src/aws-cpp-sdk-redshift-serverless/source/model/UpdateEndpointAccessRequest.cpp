@@ -12,12 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointAccessRequest::UpdateEndpointAccessRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointAccessRequest::SerializePayload() const
 {
   JsonValue payload;

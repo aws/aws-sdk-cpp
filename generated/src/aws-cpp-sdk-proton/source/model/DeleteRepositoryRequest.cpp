@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRepositoryRequest::DeleteRepositoryRequest() : 
-    m_nameHasBeenSet(false),
-    m_provider(RepositoryProvider::NOT_SET),
-    m_providerHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRepositoryRequest::SerializePayload() const
 {
   JsonValue payload;

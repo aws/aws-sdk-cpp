@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteComponentTypeResult::DeleteComponentTypeResult() : 
-    m_state(State::NOT_SET)
-{
-}
-
 DeleteComponentTypeResult::DeleteComponentTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteComponentTypeResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteComponentTypeResult& DeleteComponentTypeResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,34 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetObjectRequest::GetObjectRequest() : 
-    m_bucketHasBeenSet(false),
-    m_ifMatchHasBeenSet(false),
-    m_ifModifiedSinceHasBeenSet(false),
-    m_ifNoneMatchHasBeenSet(false),
-    m_ifUnmodifiedSinceHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_responseCacheControlHasBeenSet(false),
-    m_responseContentDispositionHasBeenSet(false),
-    m_responseContentEncodingHasBeenSet(false),
-    m_responseContentLanguageHasBeenSet(false),
-    m_responseContentTypeHasBeenSet(false),
-    m_responseExpiresHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_sSECustomerAlgorithmHasBeenSet(false),
-    m_sSECustomerKeyHasBeenSet(false),
-    m_sSECustomerKeyMD5HasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_checksumMode(ChecksumMode::NOT_SET),
-    m_checksumModeHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 Aws::String GetObjectRequest::SerializePayload() const
 {

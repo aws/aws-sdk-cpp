@@ -28,7 +28,7 @@ namespace Model
   class GetPackageVersionReadmeResult
   {
   public:
-    AWS_CODEARTIFACT_API GetPackageVersionReadmeResult();
+    AWS_CODEARTIFACT_API GetPackageVersionReadmeResult() = default;
     AWS_CODEARTIFACT_API GetPackageVersionReadmeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API GetPackageVersionReadmeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,9 @@ namespace Model
     /**
      * <p> The format of the package with the requested readme file. </p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
-    inline void SetFormat(const PackageFormat& value) { m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
-    inline GetPackageVersionReadmeResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline PackageFormat GetFormat() const { return m_format; }
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetPackageVersionReadmeResult& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -55,92 +53,87 @@ namespace Model
      * Ruby, and Cargo package versions do not contain a corresponding component,
      * package versions of those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
-    inline GetPackageVersionReadmeResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline GetPackageVersionReadmeResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    GetPackageVersionReadmeResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the package that contains the returned readme file. </p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
-    inline void SetPackage(const Aws::String& value) { m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_package.assign(value); }
-    inline GetPackageVersionReadmeResult& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline GetPackageVersionReadmeResult& WithPackage(const char* value) { SetPackage(value); return *this;}
+    inline const Aws::String& GetPackage() const { return m_package; }
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    GetPackageVersionReadmeResult& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The version of the package with the requested readme file. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline GetPackageVersionReadmeResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetPackageVersionReadmeResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetPackageVersionReadmeResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current revision associated with the package version. </p>
      */
-    inline const Aws::String& GetVersionRevision() const{ return m_versionRevision; }
-    inline void SetVersionRevision(const Aws::String& value) { m_versionRevision = value; }
-    inline void SetVersionRevision(Aws::String&& value) { m_versionRevision = std::move(value); }
-    inline void SetVersionRevision(const char* value) { m_versionRevision.assign(value); }
-    inline GetPackageVersionReadmeResult& WithVersionRevision(const Aws::String& value) { SetVersionRevision(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithVersionRevision(Aws::String&& value) { SetVersionRevision(std::move(value)); return *this;}
-    inline GetPackageVersionReadmeResult& WithVersionRevision(const char* value) { SetVersionRevision(value); return *this;}
+    inline const Aws::String& GetVersionRevision() const { return m_versionRevision; }
+    template<typename VersionRevisionT = Aws::String>
+    void SetVersionRevision(VersionRevisionT&& value) { m_versionRevisionHasBeenSet = true; m_versionRevision = std::forward<VersionRevisionT>(value); }
+    template<typename VersionRevisionT = Aws::String>
+    GetPackageVersionReadmeResult& WithVersionRevision(VersionRevisionT&& value) { SetVersionRevision(std::forward<VersionRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The text of the returned readme file. </p>
      */
-    inline const Aws::String& GetReadme() const{ return m_readme; }
-    inline void SetReadme(const Aws::String& value) { m_readme = value; }
-    inline void SetReadme(Aws::String&& value) { m_readme = std::move(value); }
-    inline void SetReadme(const char* value) { m_readme.assign(value); }
-    inline GetPackageVersionReadmeResult& WithReadme(const Aws::String& value) { SetReadme(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithReadme(Aws::String&& value) { SetReadme(std::move(value)); return *this;}
-    inline GetPackageVersionReadmeResult& WithReadme(const char* value) { SetReadme(value); return *this;}
+    inline const Aws::String& GetReadme() const { return m_readme; }
+    template<typename ReadmeT = Aws::String>
+    void SetReadme(ReadmeT&& value) { m_readmeHasBeenSet = true; m_readme = std::forward<ReadmeT>(value); }
+    template<typename ReadmeT = Aws::String>
+    GetPackageVersionReadmeResult& WithReadme(ReadmeT&& value) { SetReadme(std::forward<ReadmeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPackageVersionReadmeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPackageVersionReadmeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPackageVersionReadmeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPackageVersionReadmeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
+    bool m_packageHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_versionRevision;
+    bool m_versionRevisionHasBeenSet = false;
 
     Aws::String m_readme;
+    bool m_readmeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

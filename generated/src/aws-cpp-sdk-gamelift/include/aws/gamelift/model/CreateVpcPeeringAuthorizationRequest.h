@@ -21,7 +21,7 @@ namespace Model
   class CreateVpcPeeringAuthorizationRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API CreateVpcPeeringAuthorizationRequest();
+    AWS_GAMELIFT_API CreateVpcPeeringAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * manage your Amazon GameLift fleet. You can find your Account ID in the Amazon
      * Web Services Management Console under account settings.</p>
      */
-    inline const Aws::String& GetGameLiftAwsAccountId() const{ return m_gameLiftAwsAccountId; }
+    inline const Aws::String& GetGameLiftAwsAccountId() const { return m_gameLiftAwsAccountId; }
     inline bool GameLiftAwsAccountIdHasBeenSet() const { return m_gameLiftAwsAccountIdHasBeenSet; }
-    inline void SetGameLiftAwsAccountId(const Aws::String& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = value; }
-    inline void SetGameLiftAwsAccountId(Aws::String&& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = std::move(value); }
-    inline void SetGameLiftAwsAccountId(const char* value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId.assign(value); }
-    inline CreateVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(const Aws::String& value) { SetGameLiftAwsAccountId(value); return *this;}
-    inline CreateVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(Aws::String&& value) { SetGameLiftAwsAccountId(std::move(value)); return *this;}
-    inline CreateVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(const char* value) { SetGameLiftAwsAccountId(value); return *this;}
+    template<typename GameLiftAwsAccountIdT = Aws::String>
+    void SetGameLiftAwsAccountId(GameLiftAwsAccountIdT&& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = std::forward<GameLiftAwsAccountIdT>(value); }
+    template<typename GameLiftAwsAccountIdT = Aws::String>
+    CreateVpcPeeringAuthorizationRequest& WithGameLiftAwsAccountId(GameLiftAwsAccountIdT&& value) { SetGameLiftAwsAccountId(std::forward<GameLiftAwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with Amazon GameLift Fleets</a>.</p>
      */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+    inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-    inline CreateVpcPeeringAuthorizationRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-    inline CreateVpcPeeringAuthorizationRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-    inline CreateVpcPeeringAuthorizationRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+    template<typename PeerVpcIdT = Aws::String>
+    void SetPeerVpcId(PeerVpcIdT&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::forward<PeerVpcIdT>(value); }
+    template<typename PeerVpcIdT = Aws::String>
+    CreateVpcPeeringAuthorizationRequest& WithPeerVpcId(PeerVpcIdT&& value) { SetPeerVpcId(std::forward<PeerVpcIdT>(value)); return *this;}
     ///@}
   private:
 

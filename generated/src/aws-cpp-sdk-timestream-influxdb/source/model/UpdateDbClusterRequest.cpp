@@ -12,19 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDbClusterRequest::UpdateDbClusterRequest() : 
-    m_dbClusterIdHasBeenSet(false),
-    m_logDeliveryConfigurationHasBeenSet(false),
-    m_dbParameterGroupIdentifierHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbInstanceTypeHasBeenSet(false),
-    m_failoverMode(FailoverMode::NOT_SET),
-    m_failoverModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDbClusterRequest::SerializePayload() const
 {
   JsonValue payload;

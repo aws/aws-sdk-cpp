@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateContainerServiceRegistryLoginResult::CreateContainerServiceRegistryLoginResult()
-{
-}
-
 CreateContainerServiceRegistryLoginResult::CreateContainerServiceRegistryLoginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateContainerServiceRegistryLoginResult& CreateContainerServiceRegistryLoginRe
   if(jsonValue.ValueExists("registryLogin"))
   {
     m_registryLogin = jsonValue.GetObject("registryLogin");
-
+    m_registryLoginHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

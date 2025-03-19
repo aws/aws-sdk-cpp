@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AccountReceiver::AccountReceiver() : 
-    m_aliasHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false)
-{
-}
-
 AccountReceiver::AccountReceiver(JsonView jsonValue)
-  : AccountReceiver()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountReceiver& AccountReceiver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetString("Alias");
-
     m_aliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

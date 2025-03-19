@@ -18,15 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-AmiProductSummary::AmiProductSummary() : 
-    m_productTitleHasBeenSet(false),
-    m_visibility(AmiProductVisibilityString::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 AmiProductSummary::AmiProductSummary(JsonView jsonValue)
-  : AmiProductSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AmiProductSummary& AmiProductSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProductTitle"))
   {
     m_productTitle = jsonValue.GetString("ProductTitle");
-
     m_productTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = AmiProductVisibilityStringMapper::GetAmiProductVisibilityStringForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

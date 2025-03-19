@@ -28,7 +28,7 @@ namespace Model
   class GetUserAccessLoggingSettingsResult
   {
   public:
-    AWS_WORKSPACESWEB_API GetUserAccessLoggingSettingsResult();
+    AWS_WORKSPACESWEB_API GetUserAccessLoggingSettingsResult() = default;
     AWS_WORKSPACESWEB_API GetUserAccessLoggingSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API GetUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The user access logging settings.</p>
      */
-    inline const UserAccessLoggingSettings& GetUserAccessLoggingSettings() const{ return m_userAccessLoggingSettings; }
-    inline void SetUserAccessLoggingSettings(const UserAccessLoggingSettings& value) { m_userAccessLoggingSettings = value; }
-    inline void SetUserAccessLoggingSettings(UserAccessLoggingSettings&& value) { m_userAccessLoggingSettings = std::move(value); }
-    inline GetUserAccessLoggingSettingsResult& WithUserAccessLoggingSettings(const UserAccessLoggingSettings& value) { SetUserAccessLoggingSettings(value); return *this;}
-    inline GetUserAccessLoggingSettingsResult& WithUserAccessLoggingSettings(UserAccessLoggingSettings&& value) { SetUserAccessLoggingSettings(std::move(value)); return *this;}
+    inline const UserAccessLoggingSettings& GetUserAccessLoggingSettings() const { return m_userAccessLoggingSettings; }
+    template<typename UserAccessLoggingSettingsT = UserAccessLoggingSettings>
+    void SetUserAccessLoggingSettings(UserAccessLoggingSettingsT&& value) { m_userAccessLoggingSettingsHasBeenSet = true; m_userAccessLoggingSettings = std::forward<UserAccessLoggingSettingsT>(value); }
+    template<typename UserAccessLoggingSettingsT = UserAccessLoggingSettings>
+    GetUserAccessLoggingSettingsResult& WithUserAccessLoggingSettings(UserAccessLoggingSettingsT&& value) { SetUserAccessLoggingSettings(std::forward<UserAccessLoggingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUserAccessLoggingSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUserAccessLoggingSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUserAccessLoggingSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUserAccessLoggingSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UserAccessLoggingSettings m_userAccessLoggingSettings;
+    bool m_userAccessLoggingSettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

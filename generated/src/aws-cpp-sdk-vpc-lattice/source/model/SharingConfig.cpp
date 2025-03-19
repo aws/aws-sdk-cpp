@@ -18,14 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-SharingConfig::SharingConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SharingConfig::SharingConfig(JsonView jsonValue)
-  : SharingConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SharingConfig& SharingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

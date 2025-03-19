@@ -12,13 +12,6 @@ using namespace Aws::SsmSap::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_appRegistryArnHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,21 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-CreateListenerRequest::CreateListenerRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_protocol(ProtocolEnum::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_sslPolicyHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false),
-    m_alpnPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
-{
-}
-
 Aws::String CreateListenerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

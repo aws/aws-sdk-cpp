@@ -18,17 +18,7 @@ namespace PCS
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_type(EndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false),
-    m_portHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(JsonView jsonValue)
-  : Endpoint()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIpAddress"))
   {
     m_publicIpAddress = jsonValue.GetString("publicIpAddress");
-
     m_publicIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetString("port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ExportFilter::ExportFilter() : 
-    m_vertexFilterHasBeenSet(false),
-    m_edgeFilterHasBeenSet(false)
-{
-}
-
 ExportFilter::ExportFilter(JsonView jsonValue)
-  : ExportFilter()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ExportFilter& ExportFilter::operator =(JsonView jsonValue)
     }
     m_vertexFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("edgeFilter"))
   {
     Aws::Map<Aws::String, JsonView> edgeFilterJsonMap = jsonValue.GetObject("edgeFilter").GetAllObjects();
@@ -51,7 +43,6 @@ ExportFilter& ExportFilter::operator =(JsonView jsonValue)
     }
     m_edgeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

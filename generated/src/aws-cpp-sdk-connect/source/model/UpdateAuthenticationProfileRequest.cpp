@@ -12,18 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAuthenticationProfileRequest::UpdateAuthenticationProfileRequest() : 
-    m_authenticationProfileIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_allowedIpsHasBeenSet(false),
-    m_blockedIpsHasBeenSet(false),
-    m_periodicSessionDuration(0),
-    m_periodicSessionDurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAuthenticationProfileRequest::SerializePayload() const
 {
   JsonValue payload;

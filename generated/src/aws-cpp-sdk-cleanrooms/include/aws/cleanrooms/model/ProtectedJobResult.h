@@ -31,7 +31,7 @@ namespace Model
   class ProtectedJobResult
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobResult();
+    AWS_CLEANROOMS_API ProtectedJobResult() = default;
     AWS_CLEANROOMS_API ProtectedJobResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> The output of the protected job.</p>
      */
-    inline const ProtectedJobOutput& GetOutput() const{ return m_output; }
+    inline const ProtectedJobOutput& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const ProtectedJobOutput& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(ProtectedJobOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline ProtectedJobResult& WithOutput(const ProtectedJobOutput& value) { SetOutput(value); return *this;}
-    inline ProtectedJobResult& WithOutput(ProtectedJobOutput&& value) { SetOutput(std::move(value)); return *this;}
+    template<typename OutputT = ProtectedJobOutput>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = ProtectedJobOutput>
+    ProtectedJobResult& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
   private:
 

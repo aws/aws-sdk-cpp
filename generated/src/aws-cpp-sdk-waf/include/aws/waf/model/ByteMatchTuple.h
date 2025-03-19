@@ -44,7 +44,7 @@ namespace Model
   class ByteMatchTuple
   {
   public:
-    AWS_WAF_API ByteMatchTuple();
+    AWS_WAF_API ByteMatchTuple() = default;
     AWS_WAF_API ByteMatchTuple(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API ByteMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,12 @@ namespace Model
      * specified header or a query string. For more information, see
      * <a>FieldToMatch</a>.</p>
      */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+    inline const FieldToMatch& GetFieldToMatch() const { return m_fieldToMatch; }
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-    inline ByteMatchTuple& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-    inline ByteMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    template<typename FieldToMatchT = FieldToMatch>
+    void SetFieldToMatch(FieldToMatchT&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::forward<FieldToMatchT>(value); }
+    template<typename FieldToMatchT = FieldToMatch>
+    ByteMatchTuple& WithFieldToMatch(FieldToMatchT&& value) { SetFieldToMatch(std::forward<FieldToMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +109,12 @@ namespace Model
      * you're using the AWS CLI or one of the AWS SDKs</b> </p> <p>The value that you
      * want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetTargetString() const{ return m_targetString; }
+    inline const Aws::Utils::ByteBuffer& GetTargetString() const { return m_targetString; }
     inline bool TargetStringHasBeenSet() const { return m_targetStringHasBeenSet; }
-    inline void SetTargetString(const Aws::Utils::ByteBuffer& value) { m_targetStringHasBeenSet = true; m_targetString = value; }
-    inline void SetTargetString(Aws::Utils::ByteBuffer&& value) { m_targetStringHasBeenSet = true; m_targetString = std::move(value); }
-    inline ByteMatchTuple& WithTargetString(const Aws::Utils::ByteBuffer& value) { SetTargetString(value); return *this;}
-    inline ByteMatchTuple& WithTargetString(Aws::Utils::ByteBuffer&& value) { SetTargetString(std::move(value)); return *this;}
+    template<typename TargetStringT = Aws::Utils::ByteBuffer>
+    void SetTargetString(TargetStringT&& value) { m_targetStringHasBeenSet = true; m_targetString = std::forward<TargetStringT>(value); }
+    template<typename TargetStringT = Aws::Utils::ByteBuffer>
+    ByteMatchTuple& WithTargetString(TargetStringT&& value) { SetTargetString(std::forward<TargetStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +153,10 @@ namespace Model
      * option to decode a URL-encoded value.</p> <p> <b>NONE</b> </p> <p>Specify
      * <code>NONE</code> if you don't want to perform any text transformations.</p>
      */
-    inline const TextTransformation& GetTextTransformation() const{ return m_textTransformation; }
+    inline TextTransformation GetTextTransformation() const { return m_textTransformation; }
     inline bool TextTransformationHasBeenSet() const { return m_textTransformationHasBeenSet; }
-    inline void SetTextTransformation(const TextTransformation& value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
-    inline void SetTextTransformation(TextTransformation&& value) { m_textTransformationHasBeenSet = true; m_textTransformation = std::move(value); }
-    inline ByteMatchTuple& WithTextTransformation(const TextTransformation& value) { SetTextTransformation(value); return *this;}
-    inline ByteMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
+    inline void SetTextTransformation(TextTransformation value) { m_textTransformationHasBeenSet = true; m_textTransformation = value; }
+    inline ByteMatchTuple& WithTextTransformation(TextTransformation value) { SetTextTransformation(value); return *this;}
     ///@}
 
     ///@{
@@ -190,25 +188,23 @@ namespace Model
      * </p> <p>The value of <code>TargetString</code> must appear at the end of the
      * specified part of the web request.</p>
      */
-    inline const PositionalConstraint& GetPositionalConstraint() const{ return m_positionalConstraint; }
+    inline PositionalConstraint GetPositionalConstraint() const { return m_positionalConstraint; }
     inline bool PositionalConstraintHasBeenSet() const { return m_positionalConstraintHasBeenSet; }
-    inline void SetPositionalConstraint(const PositionalConstraint& value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = value; }
-    inline void SetPositionalConstraint(PositionalConstraint&& value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = std::move(value); }
-    inline ByteMatchTuple& WithPositionalConstraint(const PositionalConstraint& value) { SetPositionalConstraint(value); return *this;}
-    inline ByteMatchTuple& WithPositionalConstraint(PositionalConstraint&& value) { SetPositionalConstraint(std::move(value)); return *this;}
+    inline void SetPositionalConstraint(PositionalConstraint value) { m_positionalConstraintHasBeenSet = true; m_positionalConstraint = value; }
+    inline ByteMatchTuple& WithPositionalConstraint(PositionalConstraint value) { SetPositionalConstraint(value); return *this;}
     ///@}
   private:
 
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_targetString;
+    Aws::Utils::ByteBuffer m_targetString{};
     bool m_targetStringHasBeenSet = false;
 
-    TextTransformation m_textTransformation;
+    TextTransformation m_textTransformation{TextTransformation::NOT_SET};
     bool m_textTransformationHasBeenSet = false;
 
-    PositionalConstraint m_positionalConstraint;
+    PositionalConstraint m_positionalConstraint{PositionalConstraint::NOT_SET};
     bool m_positionalConstraintHasBeenSet = false;
   };
 

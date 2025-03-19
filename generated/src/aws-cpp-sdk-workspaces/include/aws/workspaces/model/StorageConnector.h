@@ -32,7 +32,7 @@ namespace Model
   class StorageConnector
   {
   public:
-    AWS_WORKSPACES_API StorageConnector();
+    AWS_WORKSPACES_API StorageConnector() = default;
     AWS_WORKSPACES_API StorageConnector(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API StorageConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The type of connector used to save user files.</p>
      */
-    inline const StorageConnectorTypeEnum& GetConnectorType() const{ return m_connectorType; }
+    inline StorageConnectorTypeEnum GetConnectorType() const { return m_connectorType; }
     inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
-    inline void SetConnectorType(const StorageConnectorTypeEnum& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
-    inline void SetConnectorType(StorageConnectorTypeEnum&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
-    inline StorageConnector& WithConnectorType(const StorageConnectorTypeEnum& value) { SetConnectorType(value); return *this;}
-    inline StorageConnector& WithConnectorType(StorageConnectorTypeEnum&& value) { SetConnectorType(std::move(value)); return *this;}
+    inline void SetConnectorType(StorageConnectorTypeEnum value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
+    inline StorageConnector& WithConnectorType(StorageConnectorTypeEnum value) { SetConnectorType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates if the storage connetor is enabled or disabled.</p>
      */
-    inline const StorageConnectorStatusEnum& GetStatus() const{ return m_status; }
+    inline StorageConnectorStatusEnum GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StorageConnectorStatusEnum& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StorageConnectorStatusEnum&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StorageConnector& WithStatus(const StorageConnectorStatusEnum& value) { SetStatus(value); return *this;}
-    inline StorageConnector& WithStatus(StorageConnectorStatusEnum&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StorageConnectorStatusEnum value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StorageConnector& WithStatus(StorageConnectorStatusEnum value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    StorageConnectorTypeEnum m_connectorType;
+    StorageConnectorTypeEnum m_connectorType{StorageConnectorTypeEnum::NOT_SET};
     bool m_connectorTypeHasBeenSet = false;
 
-    StorageConnectorStatusEnum m_status;
+    StorageConnectorStatusEnum m_status{StorageConnectorStatusEnum::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

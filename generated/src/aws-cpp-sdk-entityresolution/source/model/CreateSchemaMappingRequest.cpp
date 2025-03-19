@@ -12,14 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSchemaMappingRequest::CreateSchemaMappingRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_mappedInputFieldsHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSchemaMappingRequest::SerializePayload() const
 {
   JsonValue payload;

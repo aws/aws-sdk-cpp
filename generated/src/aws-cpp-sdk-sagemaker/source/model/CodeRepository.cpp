@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CodeRepository::CodeRepository() : 
-    m_repositoryUrlHasBeenSet(false)
-{
-}
-
 CodeRepository::CodeRepository(JsonView jsonValue)
-  : CodeRepository()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CodeRepository& CodeRepository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryUrl"))
   {
     m_repositoryUrl = jsonValue.GetString("RepositoryUrl");
-
     m_repositoryUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

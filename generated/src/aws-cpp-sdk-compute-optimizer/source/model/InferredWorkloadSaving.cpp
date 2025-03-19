@@ -18,14 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-InferredWorkloadSaving::InferredWorkloadSaving() : 
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_estimatedMonthlySavingsHasBeenSet(false)
-{
-}
-
 InferredWorkloadSaving::InferredWorkloadSaving(JsonView jsonValue)
-  : InferredWorkloadSaving()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ InferredWorkloadSaving& InferredWorkloadSaving::operator =(JsonView jsonValue)
     }
     m_inferredWorkloadTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetObject("estimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   return *this;
 }
 

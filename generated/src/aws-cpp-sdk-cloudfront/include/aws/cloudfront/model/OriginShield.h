@@ -34,7 +34,7 @@ namespace Model
   class OriginShield
   {
   public:
-    AWS_CLOUDFRONT_API OriginShield();
+    AWS_CLOUDFRONT_API OriginShield() = default;
     AWS_CLOUDFRONT_API OriginShield(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginShield& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline OriginShield& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -67,18 +67,16 @@ namespace Model
      * the Amazon Web Services Region for Origin Shield</a> in the <i>Amazon CloudFront
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginShieldRegion() const{ return m_originShieldRegion; }
+    inline const Aws::String& GetOriginShieldRegion() const { return m_originShieldRegion; }
     inline bool OriginShieldRegionHasBeenSet() const { return m_originShieldRegionHasBeenSet; }
-    inline void SetOriginShieldRegion(const Aws::String& value) { m_originShieldRegionHasBeenSet = true; m_originShieldRegion = value; }
-    inline void SetOriginShieldRegion(Aws::String&& value) { m_originShieldRegionHasBeenSet = true; m_originShieldRegion = std::move(value); }
-    inline void SetOriginShieldRegion(const char* value) { m_originShieldRegionHasBeenSet = true; m_originShieldRegion.assign(value); }
-    inline OriginShield& WithOriginShieldRegion(const Aws::String& value) { SetOriginShieldRegion(value); return *this;}
-    inline OriginShield& WithOriginShieldRegion(Aws::String&& value) { SetOriginShieldRegion(std::move(value)); return *this;}
-    inline OriginShield& WithOriginShieldRegion(const char* value) { SetOriginShieldRegion(value); return *this;}
+    template<typename OriginShieldRegionT = Aws::String>
+    void SetOriginShieldRegion(OriginShieldRegionT&& value) { m_originShieldRegionHasBeenSet = true; m_originShieldRegion = std::forward<OriginShieldRegionT>(value); }
+    template<typename OriginShieldRegionT = Aws::String>
+    OriginShield& WithOriginShieldRegion(OriginShieldRegionT&& value) { SetOriginShieldRegion(std::forward<OriginShieldRegionT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_originShieldRegion;

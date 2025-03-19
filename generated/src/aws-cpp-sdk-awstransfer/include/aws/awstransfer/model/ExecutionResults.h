@@ -33,7 +33,7 @@ namespace Model
   class ExecutionResults
   {
   public:
-    AWS_TRANSFER_API ExecutionResults();
+    AWS_TRANSFER_API ExecutionResults() = default;
     AWS_TRANSFER_API ExecutionResults(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ExecutionResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Specifies the details for the steps that are in the specified workflow.</p>
      */
-    inline const Aws::Vector<ExecutionStepResult>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<ExecutionStepResult>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<ExecutionStepResult>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<ExecutionStepResult>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline ExecutionResults& WithSteps(const Aws::Vector<ExecutionStepResult>& value) { SetSteps(value); return *this;}
-    inline ExecutionResults& WithSteps(Aws::Vector<ExecutionStepResult>&& value) { SetSteps(std::move(value)); return *this;}
-    inline ExecutionResults& AddSteps(const ExecutionStepResult& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline ExecutionResults& AddSteps(ExecutionStepResult&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<ExecutionStepResult>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<ExecutionStepResult>>
+    ExecutionResults& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = ExecutionStepResult>
+    ExecutionResults& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,14 +58,14 @@ namespace Model
      * <p>Specifies the steps (actions) to take if errors are encountered during
      * execution of the workflow.</p>
      */
-    inline const Aws::Vector<ExecutionStepResult>& GetOnExceptionSteps() const{ return m_onExceptionSteps; }
+    inline const Aws::Vector<ExecutionStepResult>& GetOnExceptionSteps() const { return m_onExceptionSteps; }
     inline bool OnExceptionStepsHasBeenSet() const { return m_onExceptionStepsHasBeenSet; }
-    inline void SetOnExceptionSteps(const Aws::Vector<ExecutionStepResult>& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = value; }
-    inline void SetOnExceptionSteps(Aws::Vector<ExecutionStepResult>&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = std::move(value); }
-    inline ExecutionResults& WithOnExceptionSteps(const Aws::Vector<ExecutionStepResult>& value) { SetOnExceptionSteps(value); return *this;}
-    inline ExecutionResults& WithOnExceptionSteps(Aws::Vector<ExecutionStepResult>&& value) { SetOnExceptionSteps(std::move(value)); return *this;}
-    inline ExecutionResults& AddOnExceptionSteps(const ExecutionStepResult& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(value); return *this; }
-    inline ExecutionResults& AddOnExceptionSteps(ExecutionStepResult&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(std::move(value)); return *this; }
+    template<typename OnExceptionStepsT = Aws::Vector<ExecutionStepResult>>
+    void SetOnExceptionSteps(OnExceptionStepsT&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = std::forward<OnExceptionStepsT>(value); }
+    template<typename OnExceptionStepsT = Aws::Vector<ExecutionStepResult>>
+    ExecutionResults& WithOnExceptionSteps(OnExceptionStepsT&& value) { SetOnExceptionSteps(std::forward<OnExceptionStepsT>(value)); return *this;}
+    template<typename OnExceptionStepsT = ExecutionStepResult>
+    ExecutionResults& AddOnExceptionSteps(OnExceptionStepsT&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.emplace_back(std::forward<OnExceptionStepsT>(value)); return *this; }
     ///@}
   private:
 

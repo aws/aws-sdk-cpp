@@ -12,19 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_identityCenterInstanceArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_attachmentsConfigurationHasBeenSet(false),
-    m_qAppsConfigurationHasBeenSet(false),
-    m_personalizationConfigurationHasBeenSet(false),
-    m_autoSubscriptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

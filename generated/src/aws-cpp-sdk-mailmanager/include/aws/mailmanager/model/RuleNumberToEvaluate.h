@@ -32,7 +32,7 @@ namespace Model
   class RuleNumberToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API RuleNumberToEvaluate();
+    AWS_MAILMANAGER_API RuleNumberToEvaluate() = default;
     AWS_MAILMANAGER_API RuleNumberToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleNumberToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>An email attribute that is used as the number to evaluate.</p>
      */
-    inline const RuleNumberEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline RuleNumberEmailAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const RuleNumberEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(RuleNumberEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline RuleNumberToEvaluate& WithAttribute(const RuleNumberEmailAttribute& value) { SetAttribute(value); return *this;}
-    inline RuleNumberToEvaluate& WithAttribute(RuleNumberEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(RuleNumberEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline RuleNumberToEvaluate& WithAttribute(RuleNumberEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    RuleNumberEmailAttribute m_attribute;
+    RuleNumberEmailAttribute m_attribute{RuleNumberEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

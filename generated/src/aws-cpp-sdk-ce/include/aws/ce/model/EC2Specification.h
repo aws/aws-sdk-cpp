@@ -32,7 +32,7 @@ namespace Model
   class EC2Specification
   {
   public:
-    AWS_COSTEXPLORER_API EC2Specification();
+    AWS_COSTEXPLORER_API EC2Specification() = default;
     AWS_COSTEXPLORER_API EC2Specification(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API EC2Specification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Indicates whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
-    inline const OfferingClass& GetOfferingClass() const{ return m_offeringClass; }
+    inline OfferingClass GetOfferingClass() const { return m_offeringClass; }
     inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
-    inline void SetOfferingClass(const OfferingClass& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
-    inline void SetOfferingClass(OfferingClass&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
-    inline EC2Specification& WithOfferingClass(const OfferingClass& value) { SetOfferingClass(value); return *this;}
-    inline EC2Specification& WithOfferingClass(OfferingClass&& value) { SetOfferingClass(std::move(value)); return *this;}
+    inline void SetOfferingClass(OfferingClass value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+    inline EC2Specification& WithOfferingClass(OfferingClass value) { SetOfferingClass(value); return *this;}
     ///@}
   private:
 
-    OfferingClass m_offeringClass;
+    OfferingClass m_offeringClass{OfferingClass::NOT_SET};
     bool m_offeringClassHasBeenSet = false;
   };
 

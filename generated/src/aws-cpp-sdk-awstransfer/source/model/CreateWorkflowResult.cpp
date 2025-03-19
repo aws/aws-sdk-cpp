@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWorkflowResult::CreateWorkflowResult()
-{
-}
-
 CreateWorkflowResult::CreateWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWorkflowResult& CreateWorkflowResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
+    m_workflowIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

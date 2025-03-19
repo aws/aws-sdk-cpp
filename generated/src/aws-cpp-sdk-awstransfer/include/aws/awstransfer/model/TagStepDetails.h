@@ -35,7 +35,7 @@ namespace Model
   class TagStepDetails
   {
   public:
-    AWS_TRANSFER_API TagStepDetails();
+    AWS_TRANSFER_API TagStepDetails() = default;
     AWS_TRANSFER_API TagStepDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API TagStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The name of the step, used as an identifier.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TagStepDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TagStepDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TagStepDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TagStepDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Array that contains from 1 to 10 key/value pairs.</p>
      */
-    inline const Aws::Vector<S3Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<S3Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<S3Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<S3Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TagStepDetails& WithTags(const Aws::Vector<S3Tag>& value) { SetTags(value); return *this;}
-    inline TagStepDetails& WithTags(Aws::Vector<S3Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TagStepDetails& AddTags(const S3Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TagStepDetails& AddTags(S3Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<S3Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<S3Tag>>
+    TagStepDetails& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = S3Tag>
+    TagStepDetails& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * </li> <li> <p>To use the originally uploaded file location as input for this
      * step, enter <code>${original.file}</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceFileLocation() const{ return m_sourceFileLocation; }
+    inline const Aws::String& GetSourceFileLocation() const { return m_sourceFileLocation; }
     inline bool SourceFileLocationHasBeenSet() const { return m_sourceFileLocationHasBeenSet; }
-    inline void SetSourceFileLocation(const Aws::String& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = value; }
-    inline void SetSourceFileLocation(Aws::String&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::move(value); }
-    inline void SetSourceFileLocation(const char* value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation.assign(value); }
-    inline TagStepDetails& WithSourceFileLocation(const Aws::String& value) { SetSourceFileLocation(value); return *this;}
-    inline TagStepDetails& WithSourceFileLocation(Aws::String&& value) { SetSourceFileLocation(std::move(value)); return *this;}
-    inline TagStepDetails& WithSourceFileLocation(const char* value) { SetSourceFileLocation(value); return *this;}
+    template<typename SourceFileLocationT = Aws::String>
+    void SetSourceFileLocation(SourceFileLocationT&& value) { m_sourceFileLocationHasBeenSet = true; m_sourceFileLocation = std::forward<SourceFileLocationT>(value); }
+    template<typename SourceFileLocationT = Aws::String>
+    TagStepDetails& WithSourceFileLocation(SourceFileLocationT&& value) { SetSourceFileLocation(std::forward<SourceFileLocationT>(value)); return *this;}
     ///@}
   private:
 

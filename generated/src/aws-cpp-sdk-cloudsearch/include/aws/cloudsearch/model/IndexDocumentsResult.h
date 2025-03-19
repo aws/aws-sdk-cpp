@@ -36,7 +36,7 @@ namespace Model
   class IndexDocumentsResult
   {
   public:
-    AWS_CLOUDSEARCH_API IndexDocumentsResult();
+    AWS_CLOUDSEARCH_API IndexDocumentsResult() = default;
     AWS_CLOUDSEARCH_API IndexDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API IndexDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,29 +45,30 @@ namespace Model
     /**
      * <p>The names of the fields that are currently being indexed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFieldNames() const{ return m_fieldNames; }
-    inline void SetFieldNames(const Aws::Vector<Aws::String>& value) { m_fieldNames = value; }
-    inline void SetFieldNames(Aws::Vector<Aws::String>&& value) { m_fieldNames = std::move(value); }
-    inline IndexDocumentsResult& WithFieldNames(const Aws::Vector<Aws::String>& value) { SetFieldNames(value); return *this;}
-    inline IndexDocumentsResult& WithFieldNames(Aws::Vector<Aws::String>&& value) { SetFieldNames(std::move(value)); return *this;}
-    inline IndexDocumentsResult& AddFieldNames(const Aws::String& value) { m_fieldNames.push_back(value); return *this; }
-    inline IndexDocumentsResult& AddFieldNames(Aws::String&& value) { m_fieldNames.push_back(std::move(value)); return *this; }
-    inline IndexDocumentsResult& AddFieldNames(const char* value) { m_fieldNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFieldNames() const { return m_fieldNames; }
+    template<typename FieldNamesT = Aws::Vector<Aws::String>>
+    void SetFieldNames(FieldNamesT&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames = std::forward<FieldNamesT>(value); }
+    template<typename FieldNamesT = Aws::Vector<Aws::String>>
+    IndexDocumentsResult& WithFieldNames(FieldNamesT&& value) { SetFieldNames(std::forward<FieldNamesT>(value)); return *this;}
+    template<typename FieldNamesT = Aws::String>
+    IndexDocumentsResult& AddFieldNames(FieldNamesT&& value) { m_fieldNamesHasBeenSet = true; m_fieldNames.emplace_back(std::forward<FieldNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline IndexDocumentsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline IndexDocumentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    IndexDocumentsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_fieldNames;
+    bool m_fieldNamesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-DateRangeType::DateRangeType() : 
-    m_startValueHasBeenSet(false),
-    m_endValueHasBeenSet(false)
-{
-}
-
 DateRangeType::DateRangeType(JsonView jsonValue)
-  : DateRangeType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateRangeType& DateRangeType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartValue"))
   {
     m_startValue = jsonValue.GetDouble("StartValue");
-
     m_startValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndValue"))
   {
     m_endValue = jsonValue.GetDouble("EndValue");
-
     m_endValueHasBeenSet = true;
   }
-
   return *this;
 }
 

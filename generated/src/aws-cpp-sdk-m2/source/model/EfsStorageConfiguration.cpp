@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-EfsStorageConfiguration::EfsStorageConfiguration() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_mountPointHasBeenSet(false)
-{
-}
-
 EfsStorageConfiguration::EfsStorageConfiguration(JsonView jsonValue)
-  : EfsStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EfsStorageConfiguration& EfsStorageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("file-system-id"))
   {
     m_fileSystemId = jsonValue.GetString("file-system-id");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mount-point"))
   {
     m_mountPoint = jsonValue.GetString("mount-point");
-
     m_mountPointHasBeenSet = true;
   }
-
   return *this;
 }
 

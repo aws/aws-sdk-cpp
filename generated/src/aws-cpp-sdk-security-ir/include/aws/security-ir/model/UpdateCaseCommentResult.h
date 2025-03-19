@@ -27,7 +27,7 @@ namespace Model
   class UpdateCaseCommentResult
   {
   public:
-    AWS_SECURITYIR_API UpdateCaseCommentResult();
+    AWS_SECURITYIR_API UpdateCaseCommentResult() = default;
     AWS_SECURITYIR_API UpdateCaseCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYIR_API UpdateCaseCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>Response element for UpdateCaseComment providing the updated comment ID.</p>
      */
-    inline const Aws::String& GetCommentId() const{ return m_commentId; }
-    inline void SetCommentId(const Aws::String& value) { m_commentId = value; }
-    inline void SetCommentId(Aws::String&& value) { m_commentId = std::move(value); }
-    inline void SetCommentId(const char* value) { m_commentId.assign(value); }
-    inline UpdateCaseCommentResult& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-    inline UpdateCaseCommentResult& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-    inline UpdateCaseCommentResult& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+    inline const Aws::String& GetCommentId() const { return m_commentId; }
+    template<typename CommentIdT = Aws::String>
+    void SetCommentId(CommentIdT&& value) { m_commentIdHasBeenSet = true; m_commentId = std::forward<CommentIdT>(value); }
+    template<typename CommentIdT = Aws::String>
+    UpdateCaseCommentResult& WithCommentId(CommentIdT&& value) { SetCommentId(std::forward<CommentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +48,31 @@ namespace Model
      * <p>Response element for UpdateCaseComment providing the updated comment
      * content.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
-    inline void SetBody(const Aws::String& value) { m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_body.assign(value); }
-    inline UpdateCaseCommentResult& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline UpdateCaseCommentResult& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline UpdateCaseCommentResult& WithBody(const char* value) { SetBody(value); return *this;}
+    inline const Aws::String& GetBody() const { return m_body; }
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    UpdateCaseCommentResult& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCaseCommentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCaseCommentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCaseCommentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCaseCommentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_commentId;
+    bool m_commentIdHasBeenSet = false;
 
     Aws::String m_body;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

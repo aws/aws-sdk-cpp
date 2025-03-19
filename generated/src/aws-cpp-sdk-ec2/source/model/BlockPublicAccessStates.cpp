@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-BlockPublicAccessStates::BlockPublicAccessStates() : 
-    m_internetGatewayBlockMode(BlockPublicAccessMode::NOT_SET),
-    m_internetGatewayBlockModeHasBeenSet(false)
-{
-}
-
 BlockPublicAccessStates::BlockPublicAccessStates(const XmlNode& xmlNode)
-  : BlockPublicAccessStates()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ BlockPublicAccessStates& BlockPublicAccessStates::operator =(const XmlNode& xmlN
     XmlNode internetGatewayBlockModeNode = resultNode.FirstChild("internetGatewayBlockMode");
     if(!internetGatewayBlockModeNode.IsNull())
     {
-      m_internetGatewayBlockMode = BlockPublicAccessModeMapper::GetBlockPublicAccessModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayBlockModeNode.GetText()).c_str()).c_str());
+      m_internetGatewayBlockMode = BlockPublicAccessModeMapper::GetBlockPublicAccessModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayBlockModeNode.GetText()).c_str()));
       m_internetGatewayBlockModeHasBeenSet = true;
     }
   }

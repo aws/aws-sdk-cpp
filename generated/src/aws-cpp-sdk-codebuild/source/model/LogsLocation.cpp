@@ -18,20 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-LogsLocation::LogsLocation() : 
-    m_groupNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_deepLinkHasBeenSet(false),
-    m_s3DeepLinkHasBeenSet(false),
-    m_cloudWatchLogsArnHasBeenSet(false),
-    m_s3LogsArnHasBeenSet(false),
-    m_cloudWatchLogsHasBeenSet(false),
-    m_s3LogsHasBeenSet(false)
-{
-}
-
 LogsLocation::LogsLocation(JsonView jsonValue)
-  : LogsLocation()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ LogsLocation& LogsLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamName"))
   {
     m_streamName = jsonValue.GetString("streamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deepLink"))
   {
     m_deepLink = jsonValue.GetString("deepLink");
-
     m_deepLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3DeepLink"))
   {
     m_s3DeepLink = jsonValue.GetString("s3DeepLink");
-
     m_s3DeepLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchLogsArn"))
   {
     m_cloudWatchLogsArn = jsonValue.GetString("cloudWatchLogsArn");
-
     m_cloudWatchLogsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3LogsArn"))
   {
     m_s3LogsArn = jsonValue.GetString("s3LogsArn");
-
     m_s3LogsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchLogs"))
   {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
-
     m_cloudWatchLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Logs"))
   {
     m_s3Logs = jsonValue.GetObject("s3Logs");
-
     m_s3LogsHasBeenSet = true;
   }
-
   return *this;
 }
 

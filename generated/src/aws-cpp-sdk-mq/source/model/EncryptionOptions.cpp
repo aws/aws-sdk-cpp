@@ -18,15 +18,7 @@ namespace MQ
 namespace Model
 {
 
-EncryptionOptions::EncryptionOptions() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_useAwsOwnedKey(false),
-    m_useAwsOwnedKeyHasBeenSet(false)
-{
-}
-
 EncryptionOptions::EncryptionOptions(JsonView jsonValue)
-  : EncryptionOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionOptions& EncryptionOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useAwsOwnedKey"))
   {
     m_useAwsOwnedKey = jsonValue.GetBool("useAwsOwnedKey");
-
     m_useAwsOwnedKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

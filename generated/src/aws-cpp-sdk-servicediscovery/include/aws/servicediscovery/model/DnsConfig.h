@@ -35,7 +35,7 @@ namespace Model
   class DnsConfig
   {
   public:
-    AWS_SERVICEDISCOVERY_API DnsConfig();
+    AWS_SERVICEDISCOVERY_API DnsConfig() = default;
     AWS_SERVICEDISCOVERY_API DnsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API DnsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -75,12 +75,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p> </dd> </dl>
      */
-    inline const RoutingPolicy& GetRoutingPolicy() const{ return m_routingPolicy; }
+    inline RoutingPolicy GetRoutingPolicy() const { return m_routingPolicy; }
     inline bool RoutingPolicyHasBeenSet() const { return m_routingPolicyHasBeenSet; }
-    inline void SetRoutingPolicy(const RoutingPolicy& value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = value; }
-    inline void SetRoutingPolicy(RoutingPolicy&& value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = std::move(value); }
-    inline DnsConfig& WithRoutingPolicy(const RoutingPolicy& value) { SetRoutingPolicy(value); return *this;}
-    inline DnsConfig& WithRoutingPolicy(RoutingPolicy&& value) { SetRoutingPolicy(std::move(value)); return *this;}
+    inline void SetRoutingPolicy(RoutingPolicy value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = value; }
+    inline DnsConfig& WithRoutingPolicy(RoutingPolicy value) { SetRoutingPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -92,18 +90,18 @@ namespace Model
      * need to delete the service and recreate it with a new
      * <code>DnsConfig</code>.</p> 
      */
-    inline const Aws::Vector<DnsRecord>& GetDnsRecords() const{ return m_dnsRecords; }
+    inline const Aws::Vector<DnsRecord>& GetDnsRecords() const { return m_dnsRecords; }
     inline bool DnsRecordsHasBeenSet() const { return m_dnsRecordsHasBeenSet; }
-    inline void SetDnsRecords(const Aws::Vector<DnsRecord>& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = value; }
-    inline void SetDnsRecords(Aws::Vector<DnsRecord>&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = std::move(value); }
-    inline DnsConfig& WithDnsRecords(const Aws::Vector<DnsRecord>& value) { SetDnsRecords(value); return *this;}
-    inline DnsConfig& WithDnsRecords(Aws::Vector<DnsRecord>&& value) { SetDnsRecords(std::move(value)); return *this;}
-    inline DnsConfig& AddDnsRecords(const DnsRecord& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(value); return *this; }
-    inline DnsConfig& AddDnsRecords(DnsRecord&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(std::move(value)); return *this; }
+    template<typename DnsRecordsT = Aws::Vector<DnsRecord>>
+    void SetDnsRecords(DnsRecordsT&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = std::forward<DnsRecordsT>(value); }
+    template<typename DnsRecordsT = Aws::Vector<DnsRecord>>
+    DnsConfig& WithDnsRecords(DnsRecordsT&& value) { SetDnsRecords(std::forward<DnsRecordsT>(value)); return *this;}
+    template<typename DnsRecordsT = DnsRecord>
+    DnsConfig& AddDnsRecords(DnsRecordsT&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.emplace_back(std::forward<DnsRecordsT>(value)); return *this; }
     ///@}
   private:
 
-    RoutingPolicy m_routingPolicy;
+    RoutingPolicy m_routingPolicy{RoutingPolicy::NOT_SET};
     bool m_routingPolicyHasBeenSet = false;
 
     Aws::Vector<DnsRecord> m_dnsRecords;

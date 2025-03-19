@@ -23,7 +23,7 @@ namespace Model
   class BatchUpdateCategoryRequest : public QAppsRequest
   {
   public:
-    AWS_QAPPS_API BatchUpdateCategoryRequest();
+    AWS_QAPPS_API BatchUpdateCategoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
      * <p>The unique identifier of the Amazon Q Business application environment
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline BatchUpdateCategoryRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline BatchUpdateCategoryRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline BatchUpdateCategoryRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    BatchUpdateCategoryRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of categories to be updated with their new values.</p>
      */
-    inline const Aws::Vector<CategoryInput>& GetCategories() const{ return m_categories; }
+    inline const Aws::Vector<CategoryInput>& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-    inline void SetCategories(const Aws::Vector<CategoryInput>& value) { m_categoriesHasBeenSet = true; m_categories = value; }
-    inline void SetCategories(Aws::Vector<CategoryInput>&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
-    inline BatchUpdateCategoryRequest& WithCategories(const Aws::Vector<CategoryInput>& value) { SetCategories(value); return *this;}
-    inline BatchUpdateCategoryRequest& WithCategories(Aws::Vector<CategoryInput>&& value) { SetCategories(std::move(value)); return *this;}
-    inline BatchUpdateCategoryRequest& AddCategories(const CategoryInput& value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
-    inline BatchUpdateCategoryRequest& AddCategories(CategoryInput&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
+    template<typename CategoriesT = Aws::Vector<CategoryInput>>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Aws::Vector<CategoryInput>>
+    BatchUpdateCategoryRequest& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
+    template<typename CategoriesT = CategoryInput>
+    BatchUpdateCategoryRequest& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
     ///@}
   private:
 

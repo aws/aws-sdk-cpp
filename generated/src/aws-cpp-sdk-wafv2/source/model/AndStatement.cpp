@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AndStatement::AndStatement() : 
-    m_statementsHasBeenSet(false)
-{
-}
-
 AndStatement::AndStatement(JsonView jsonValue)
-  : AndStatement()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AndStatement& AndStatement::operator =(JsonView jsonValue)
     }
     m_statementsHasBeenSet = true;
   }
-
   return *this;
 }
 

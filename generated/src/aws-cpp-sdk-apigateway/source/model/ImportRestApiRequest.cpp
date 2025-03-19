@@ -17,13 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-ImportRestApiRequest::ImportRestApiRequest() : 
-    m_failOnWarnings(false),
-    m_failOnWarningsHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 
 void ImportRestApiRequest::AddQueryStringParameters(URI& uri) const
 {

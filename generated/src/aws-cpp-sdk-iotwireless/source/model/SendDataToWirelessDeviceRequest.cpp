@@ -12,15 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendDataToWirelessDeviceRequest::SendDataToWirelessDeviceRequest() : 
-    m_idHasBeenSet(false),
-    m_transmitMode(0),
-    m_transmitModeHasBeenSet(false),
-    m_payloadDataHasBeenSet(false),
-    m_wirelessMetadataHasBeenSet(false)
-{
-}
-
 Aws::String SendDataToWirelessDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

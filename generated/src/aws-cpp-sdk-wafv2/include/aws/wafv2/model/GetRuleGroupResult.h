@@ -28,7 +28,7 @@ namespace Model
   class GetRuleGroupResult
   {
   public:
-    AWS_WAFV2_API GetRuleGroupResult();
+    AWS_WAFV2_API GetRuleGroupResult() = default;
     AWS_WAFV2_API GetRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p/>
      */
-    inline const RuleGroup& GetRuleGroup() const{ return m_ruleGroup; }
-    inline void SetRuleGroup(const RuleGroup& value) { m_ruleGroup = value; }
-    inline void SetRuleGroup(RuleGroup&& value) { m_ruleGroup = std::move(value); }
-    inline GetRuleGroupResult& WithRuleGroup(const RuleGroup& value) { SetRuleGroup(value); return *this;}
-    inline GetRuleGroupResult& WithRuleGroup(RuleGroup&& value) { SetRuleGroup(std::move(value)); return *this;}
+    inline const RuleGroup& GetRuleGroup() const { return m_ruleGroup; }
+    template<typename RuleGroupT = RuleGroup>
+    void SetRuleGroup(RuleGroupT&& value) { m_ruleGroupHasBeenSet = true; m_ruleGroup = std::forward<RuleGroupT>(value); }
+    template<typename RuleGroupT = RuleGroup>
+    GetRuleGroupResult& WithRuleGroup(RuleGroupT&& value) { SetRuleGroup(std::forward<RuleGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
-    inline void SetLockToken(const Aws::String& value) { m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockToken.assign(value); }
-    inline GetRuleGroupResult& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline GetRuleGroupResult& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline GetRuleGroupResult& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    GetRuleGroupResult& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRuleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RuleGroup m_ruleGroup;
+    bool m_ruleGroupHasBeenSet = false;
 
     Aws::String m_lockToken;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

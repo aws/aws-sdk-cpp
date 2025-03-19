@@ -33,7 +33,7 @@ namespace Model
   class AxisLabelReferenceOptions
   {
   public:
-    AWS_QUICKSIGHT_API AxisLabelReferenceOptions();
+    AWS_QUICKSIGHT_API AxisLabelReferenceOptions() = default;
     AWS_QUICKSIGHT_API AxisLabelReferenceOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AxisLabelReferenceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The field that the axis label is targeted to.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline AxisLabelReferenceOptions& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline AxisLabelReferenceOptions& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline AxisLabelReferenceOptions& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    AxisLabelReferenceOptions& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column that the axis label is targeted to.</p>
      */
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline AxisLabelReferenceOptions& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline AxisLabelReferenceOptions& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    AxisLabelReferenceOptions& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
   private:
 

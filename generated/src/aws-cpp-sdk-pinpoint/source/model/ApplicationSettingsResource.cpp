@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ApplicationSettingsResource::ApplicationSettingsResource() : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignHookHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_quietTimeHasBeenSet(false),
-    m_journeyLimitsHasBeenSet(false)
-{
-}
-
 ApplicationSettingsResource::ApplicationSettingsResource(JsonView jsonValue)
-  : ApplicationSettingsResource()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ApplicationSettingsResource& ApplicationSettingsResource::operator =(JsonView js
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CampaignHook"))
   {
     m_campaignHook = jsonValue.GetObject("CampaignHook");
-
     m_campaignHookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limits"))
   {
     m_limits = jsonValue.GetObject("Limits");
-
     m_limitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuietTime"))
   {
     m_quietTime = jsonValue.GetObject("QuietTime");
-
     m_quietTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JourneyLimits"))
   {
     m_journeyLimits = jsonValue.GetObject("JourneyLimits");
-
     m_journeyLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

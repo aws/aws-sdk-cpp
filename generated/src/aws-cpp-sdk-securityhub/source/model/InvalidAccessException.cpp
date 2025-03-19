@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-InvalidAccessException::InvalidAccessException() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 InvalidAccessException::InvalidAccessException(JsonView jsonValue)
-  : InvalidAccessException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidAccessException& InvalidAccessException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

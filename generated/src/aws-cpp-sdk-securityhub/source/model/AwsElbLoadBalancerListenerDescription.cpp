@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerListenerDescription::AwsElbLoadBalancerListenerDescription() : 
-    m_listenerHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerListenerDescription::AwsElbLoadBalancerListenerDescription(JsonView jsonValue)
-  : AwsElbLoadBalancerListenerDescription()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsElbLoadBalancerListenerDescription& AwsElbLoadBalancerListenerDescription::op
   if(jsonValue.ValueExists("Listener"))
   {
     m_listener = jsonValue.GetObject("Listener");
-
     m_listenerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyNames"))
   {
     Aws::Utils::Array<JsonView> policyNamesJsonList = jsonValue.GetArray("PolicyNames");
@@ -48,7 +39,6 @@ AwsElbLoadBalancerListenerDescription& AwsElbLoadBalancerListenerDescription::op
     }
     m_policyNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

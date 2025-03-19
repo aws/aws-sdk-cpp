@@ -18,25 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Insight::Insight() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_kubernetesVersionHasBeenSet(false),
-    m_lastRefreshTimeHasBeenSet(false),
-    m_lastTransitionTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_insightStatusHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_categorySpecificSummaryHasBeenSet(false)
-{
-}
-
 Insight::Insight(JsonView jsonValue)
-  : Insight()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ Insight& Insight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = CategoryMapper::GetCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesVersion"))
   {
     m_kubernetesVersion = jsonValue.GetString("kubernetesVersion");
-
     m_kubernetesVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTime"))
   {
     m_lastRefreshTime = jsonValue.GetDouble("lastRefreshTime");
-
     m_lastRefreshTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastTransitionTime"))
   {
     m_lastTransitionTime = jsonValue.GetDouble("lastTransitionTime");
-
     m_lastTransitionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("insightStatus"))
   {
     m_insightStatus = jsonValue.GetObject("insightStatus");
-
     m_insightStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendation"))
   {
     m_recommendation = jsonValue.GetString("recommendation");
-
     m_recommendationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalInfo"))
   {
     Aws::Map<Aws::String, JsonView> additionalInfoJsonMap = jsonValue.GetObject("additionalInfo").GetAllObjects();
@@ -115,7 +79,6 @@ Insight& Insight::operator =(JsonView jsonValue)
     }
     m_additionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -125,14 +88,11 @@ Insight& Insight::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("categorySpecificSummary"))
   {
     m_categorySpecificSummary = jsonValue.GetObject("categorySpecificSummary");
-
     m_categorySpecificSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

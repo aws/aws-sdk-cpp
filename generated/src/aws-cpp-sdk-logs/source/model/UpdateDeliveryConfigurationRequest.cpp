@@ -12,14 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeliveryConfigurationRequest::UpdateDeliveryConfigurationRequest() : 
-    m_idHasBeenSet(false),
-    m_recordFieldsHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_s3DeliveryConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeliveryConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

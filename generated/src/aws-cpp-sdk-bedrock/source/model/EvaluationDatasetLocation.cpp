@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationDatasetLocation::EvaluationDatasetLocation() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 EvaluationDatasetLocation::EvaluationDatasetLocation(JsonView jsonValue)
-  : EvaluationDatasetLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationDatasetLocation& EvaluationDatasetLocation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

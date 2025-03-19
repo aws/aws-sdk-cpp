@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-OutboundAdditionalRecipients::OutboundAdditionalRecipients() : 
-    m_ccEmailAddressesHasBeenSet(false)
-{
-}
-
 OutboundAdditionalRecipients::OutboundAdditionalRecipients(JsonView jsonValue)
-  : OutboundAdditionalRecipients()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OutboundAdditionalRecipients& OutboundAdditionalRecipients::operator =(JsonView 
     }
     m_ccEmailAddressesHasBeenSet = true;
   }
-
   return *this;
 }
 

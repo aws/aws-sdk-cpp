@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-RuntimePlatform::RuntimePlatform() : 
-    m_cpuArchitecture(CPUArchitecture::NOT_SET),
-    m_cpuArchitectureHasBeenSet(false),
-    m_operatingSystemFamily(OSFamily::NOT_SET),
-    m_operatingSystemFamilyHasBeenSet(false)
-{
-}
-
 RuntimePlatform::RuntimePlatform(JsonView jsonValue)
-  : RuntimePlatform()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RuntimePlatform& RuntimePlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cpuArchitecture"))
   {
     m_cpuArchitecture = CPUArchitectureMapper::GetCPUArchitectureForName(jsonValue.GetString("cpuArchitecture"));
-
     m_cpuArchitectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystemFamily"))
   {
     m_operatingSystemFamily = OSFamilyMapper::GetOSFamilyForName(jsonValue.GetString("operatingSystemFamily"));
-
     m_operatingSystemFamilyHasBeenSet = true;
   }
-
   return *this;
 }
 

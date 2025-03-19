@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-LifeCycleLastCutoverFinalized::LifeCycleLastCutoverFinalized() : 
-    m_apiCallDateTimeHasBeenSet(false)
-{
-}
-
 LifeCycleLastCutoverFinalized::LifeCycleLastCutoverFinalized(JsonView jsonValue)
-  : LifeCycleLastCutoverFinalized()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LifeCycleLastCutoverFinalized& LifeCycleLastCutoverFinalized::operator =(JsonVie
   if(jsonValue.ValueExists("apiCallDateTime"))
   {
     m_apiCallDateTime = jsonValue.GetString("apiCallDateTime");
-
     m_apiCallDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

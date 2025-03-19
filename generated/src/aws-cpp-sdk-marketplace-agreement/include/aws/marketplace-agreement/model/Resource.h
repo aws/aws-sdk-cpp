@@ -32,7 +32,7 @@ namespace Model
   class Resource
   {
   public:
-    AWS_AGREEMENTSERVICE_API Resource();
+    AWS_AGREEMENTSERVICE_API Resource() = default;
     AWS_AGREEMENTSERVICE_API Resource(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * resource, which is most commonly a product, so a <code>resourceId</code> is also
      * a <code>productId</code>.</p> 
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Resource& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Resource& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Resource& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Resource& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Type of the resource, which is the product. Values include
      * <code>SaaSProduct</code> or <code>AmiProduct</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Resource& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Resource& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

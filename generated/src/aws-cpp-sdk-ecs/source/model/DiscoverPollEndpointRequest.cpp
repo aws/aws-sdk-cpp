@@ -12,12 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DiscoverPollEndpointRequest::DiscoverPollEndpointRequest() : 
-    m_containerInstanceHasBeenSet(false),
-    m_clusterHasBeenSet(false)
-{
-}
-
 Aws::String DiscoverPollEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

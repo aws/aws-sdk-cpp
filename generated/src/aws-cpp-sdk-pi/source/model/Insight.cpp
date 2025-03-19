@@ -18,25 +18,7 @@ namespace PI
 namespace Model
 {
 
-Insight::Insight() : 
-    m_insightIdHasBeenSet(false),
-    m_insightTypeHasBeenSet(false),
-    m_context(ContextType::NOT_SET),
-    m_contextHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_supportingInsightsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationsHasBeenSet(false),
-    m_insightDataHasBeenSet(false),
-    m_baselineDataHasBeenSet(false)
-{
-}
-
 Insight::Insight(JsonView jsonValue)
-  : Insight()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ Insight& Insight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsightId"))
   {
     m_insightId = jsonValue.GetString("InsightId");
-
     m_insightIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightType"))
   {
     m_insightType = jsonValue.GetString("InsightType");
-
     m_insightTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     m_context = ContextTypeMapper::GetContextTypeForName(jsonValue.GetString("Context"));
-
     m_contextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportingInsights"))
   {
     Aws::Utils::Array<JsonView> supportingInsightsJsonList = jsonValue.GetArray("SupportingInsights");
@@ -94,14 +64,11 @@ Insight& Insight::operator =(JsonView jsonValue)
     }
     m_supportingInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recommendations"))
   {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
@@ -111,7 +78,6 @@ Insight& Insight::operator =(JsonView jsonValue)
     }
     m_recommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightData"))
   {
     Aws::Utils::Array<JsonView> insightDataJsonList = jsonValue.GetArray("InsightData");
@@ -121,7 +87,6 @@ Insight& Insight::operator =(JsonView jsonValue)
     }
     m_insightDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaselineData"))
   {
     Aws::Utils::Array<JsonView> baselineDataJsonList = jsonValue.GetArray("BaselineData");
@@ -131,7 +96,6 @@ Insight& Insight::operator =(JsonView jsonValue)
     }
     m_baselineDataHasBeenSet = true;
   }
-
   return *this;
 }
 

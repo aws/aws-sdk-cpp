@@ -12,11 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportAppCatalogRequest::ImportAppCatalogRequest() : 
-    m_roleNameHasBeenSet(false)
-{
-}
-
 Aws::String ImportAppCatalogRequest::SerializePayload() const
 {
   JsonValue payload;

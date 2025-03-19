@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEmailTemplateResult::GetEmailTemplateResult()
-{
-}
-
 GetEmailTemplateResult::GetEmailTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetEmailTemplateResult& GetEmailTemplateResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
+    m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateContent"))
   {
     m_templateContent = jsonValue.GetObject("TemplateContent");
-
+    m_templateContentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -19,17 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-Deployment::Deployment() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_apiSummaryHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Deployment::Deployment(JsonView jsonValue)
-  : Deployment()
 {
   *this = jsonValue;
 }
@@ -39,24 +29,18 @@ Deployment& Deployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiSummary"))
   {
     Aws::Map<Aws::String, JsonView> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
@@ -72,7 +56,6 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     }
     m_apiSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

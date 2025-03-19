@@ -23,7 +23,7 @@ namespace Model
   class DescribeRegistrationTypeDefinitionsRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationTypeDefinitionsRequest();
+    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationTypeDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,29 +41,28 @@ namespace Model
      * <p>The type of registration form. The list of <b>RegistrationTypes</b> can be
      * found using the <a>DescribeRegistrationTypeDefinitions</a> action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegistrationTypes() const{ return m_registrationTypes; }
+    inline const Aws::Vector<Aws::String>& GetRegistrationTypes() const { return m_registrationTypes; }
     inline bool RegistrationTypesHasBeenSet() const { return m_registrationTypesHasBeenSet; }
-    inline void SetRegistrationTypes(const Aws::Vector<Aws::String>& value) { m_registrationTypesHasBeenSet = true; m_registrationTypes = value; }
-    inline void SetRegistrationTypes(Aws::Vector<Aws::String>&& value) { m_registrationTypesHasBeenSet = true; m_registrationTypes = std::move(value); }
-    inline DescribeRegistrationTypeDefinitionsRequest& WithRegistrationTypes(const Aws::Vector<Aws::String>& value) { SetRegistrationTypes(value); return *this;}
-    inline DescribeRegistrationTypeDefinitionsRequest& WithRegistrationTypes(Aws::Vector<Aws::String>&& value) { SetRegistrationTypes(std::move(value)); return *this;}
-    inline DescribeRegistrationTypeDefinitionsRequest& AddRegistrationTypes(const Aws::String& value) { m_registrationTypesHasBeenSet = true; m_registrationTypes.push_back(value); return *this; }
-    inline DescribeRegistrationTypeDefinitionsRequest& AddRegistrationTypes(Aws::String&& value) { m_registrationTypesHasBeenSet = true; m_registrationTypes.push_back(std::move(value)); return *this; }
-    inline DescribeRegistrationTypeDefinitionsRequest& AddRegistrationTypes(const char* value) { m_registrationTypesHasBeenSet = true; m_registrationTypes.push_back(value); return *this; }
+    template<typename RegistrationTypesT = Aws::Vector<Aws::String>>
+    void SetRegistrationTypes(RegistrationTypesT&& value) { m_registrationTypesHasBeenSet = true; m_registrationTypes = std::forward<RegistrationTypesT>(value); }
+    template<typename RegistrationTypesT = Aws::Vector<Aws::String>>
+    DescribeRegistrationTypeDefinitionsRequest& WithRegistrationTypes(RegistrationTypesT&& value) { SetRegistrationTypes(std::forward<RegistrationTypesT>(value)); return *this;}
+    template<typename RegistrationTypesT = Aws::String>
+    DescribeRegistrationTypeDefinitionsRequest& AddRegistrationTypes(RegistrationTypesT&& value) { m_registrationTypesHasBeenSet = true; m_registrationTypes.emplace_back(std::forward<RegistrationTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of RegistrationFilter objects to filter the results.</p>
      */
-    inline const Aws::Vector<RegistrationTypeFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<RegistrationTypeFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<RegistrationTypeFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<RegistrationTypeFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeRegistrationTypeDefinitionsRequest& WithFilters(const Aws::Vector<RegistrationTypeFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeRegistrationTypeDefinitionsRequest& WithFilters(Aws::Vector<RegistrationTypeFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeRegistrationTypeDefinitionsRequest& AddFilters(const RegistrationTypeFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeRegistrationTypeDefinitionsRequest& AddFilters(RegistrationTypeFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<RegistrationTypeFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<RegistrationTypeFilter>>
+    DescribeRegistrationTypeDefinitionsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = RegistrationTypeFilter>
+    DescribeRegistrationTypeDefinitionsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,21 +70,19 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeRegistrationTypeDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRegistrationTypeDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRegistrationTypeDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRegistrationTypeDefinitionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per each request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeRegistrationTypeDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -101,7 +98,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

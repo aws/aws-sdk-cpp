@@ -22,7 +22,7 @@ namespace Model
   class UpdateThingGroupsForThingRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API UpdateThingGroupsForThingRequest();
+    AWS_IOT_API UpdateThingGroupsForThingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,44 +37,40 @@ namespace Model
     /**
      * <p>The thing whose group memberships will be updated.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline UpdateThingGroupsForThingRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline UpdateThingGroupsForThingRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline UpdateThingGroupsForThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    UpdateThingGroupsForThingRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The groups to which the thing will be added.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetThingGroupsToAdd() const{ return m_thingGroupsToAdd; }
+    inline const Aws::Vector<Aws::String>& GetThingGroupsToAdd() const { return m_thingGroupsToAdd; }
     inline bool ThingGroupsToAddHasBeenSet() const { return m_thingGroupsToAddHasBeenSet; }
-    inline void SetThingGroupsToAdd(const Aws::Vector<Aws::String>& value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd = value; }
-    inline void SetThingGroupsToAdd(Aws::Vector<Aws::String>&& value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd = std::move(value); }
-    inline UpdateThingGroupsForThingRequest& WithThingGroupsToAdd(const Aws::Vector<Aws::String>& value) { SetThingGroupsToAdd(value); return *this;}
-    inline UpdateThingGroupsForThingRequest& WithThingGroupsToAdd(Aws::Vector<Aws::String>&& value) { SetThingGroupsToAdd(std::move(value)); return *this;}
-    inline UpdateThingGroupsForThingRequest& AddThingGroupsToAdd(const Aws::String& value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd.push_back(value); return *this; }
-    inline UpdateThingGroupsForThingRequest& AddThingGroupsToAdd(Aws::String&& value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd.push_back(std::move(value)); return *this; }
-    inline UpdateThingGroupsForThingRequest& AddThingGroupsToAdd(const char* value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd.push_back(value); return *this; }
+    template<typename ThingGroupsToAddT = Aws::Vector<Aws::String>>
+    void SetThingGroupsToAdd(ThingGroupsToAddT&& value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd = std::forward<ThingGroupsToAddT>(value); }
+    template<typename ThingGroupsToAddT = Aws::Vector<Aws::String>>
+    UpdateThingGroupsForThingRequest& WithThingGroupsToAdd(ThingGroupsToAddT&& value) { SetThingGroupsToAdd(std::forward<ThingGroupsToAddT>(value)); return *this;}
+    template<typename ThingGroupsToAddT = Aws::String>
+    UpdateThingGroupsForThingRequest& AddThingGroupsToAdd(ThingGroupsToAddT&& value) { m_thingGroupsToAddHasBeenSet = true; m_thingGroupsToAdd.emplace_back(std::forward<ThingGroupsToAddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The groups from which the thing will be removed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetThingGroupsToRemove() const{ return m_thingGroupsToRemove; }
+    inline const Aws::Vector<Aws::String>& GetThingGroupsToRemove() const { return m_thingGroupsToRemove; }
     inline bool ThingGroupsToRemoveHasBeenSet() const { return m_thingGroupsToRemoveHasBeenSet; }
-    inline void SetThingGroupsToRemove(const Aws::Vector<Aws::String>& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove = value; }
-    inline void SetThingGroupsToRemove(Aws::Vector<Aws::String>&& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove = std::move(value); }
-    inline UpdateThingGroupsForThingRequest& WithThingGroupsToRemove(const Aws::Vector<Aws::String>& value) { SetThingGroupsToRemove(value); return *this;}
-    inline UpdateThingGroupsForThingRequest& WithThingGroupsToRemove(Aws::Vector<Aws::String>&& value) { SetThingGroupsToRemove(std::move(value)); return *this;}
-    inline UpdateThingGroupsForThingRequest& AddThingGroupsToRemove(const Aws::String& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove.push_back(value); return *this; }
-    inline UpdateThingGroupsForThingRequest& AddThingGroupsToRemove(Aws::String&& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove.push_back(std::move(value)); return *this; }
-    inline UpdateThingGroupsForThingRequest& AddThingGroupsToRemove(const char* value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove.push_back(value); return *this; }
+    template<typename ThingGroupsToRemoveT = Aws::Vector<Aws::String>>
+    void SetThingGroupsToRemove(ThingGroupsToRemoveT&& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove = std::forward<ThingGroupsToRemoveT>(value); }
+    template<typename ThingGroupsToRemoveT = Aws::Vector<Aws::String>>
+    UpdateThingGroupsForThingRequest& WithThingGroupsToRemove(ThingGroupsToRemoveT&& value) { SetThingGroupsToRemove(std::forward<ThingGroupsToRemoveT>(value)); return *this;}
+    template<typename ThingGroupsToRemoveT = Aws::String>
+    UpdateThingGroupsForThingRequest& AddThingGroupsToRemove(ThingGroupsToRemoveT&& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove.emplace_back(std::forward<ThingGroupsToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * are dynamic thing groups, adding a thing to a static group removes the thing
      * from the last dynamic group.</p>
      */
-    inline bool GetOverrideDynamicGroups() const{ return m_overrideDynamicGroups; }
+    inline bool GetOverrideDynamicGroups() const { return m_overrideDynamicGroups; }
     inline bool OverrideDynamicGroupsHasBeenSet() const { return m_overrideDynamicGroupsHasBeenSet; }
     inline void SetOverrideDynamicGroups(bool value) { m_overrideDynamicGroupsHasBeenSet = true; m_overrideDynamicGroups = value; }
     inline UpdateThingGroupsForThingRequest& WithOverrideDynamicGroups(bool value) { SetOverrideDynamicGroups(value); return *this;}
@@ -100,7 +96,7 @@ namespace Model
     Aws::Vector<Aws::String> m_thingGroupsToRemove;
     bool m_thingGroupsToRemoveHasBeenSet = false;
 
-    bool m_overrideDynamicGroups;
+    bool m_overrideDynamicGroups{false};
     bool m_overrideDynamicGroupsHasBeenSet = false;
   };
 

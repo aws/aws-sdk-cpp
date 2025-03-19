@@ -12,16 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutImageRequest::PutImageRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageManifestHasBeenSet(false),
-    m_imageManifestMediaTypeHasBeenSet(false),
-    m_imageTagHasBeenSet(false),
-    m_imageDigestHasBeenSet(false)
-{
-}
-
 Aws::String PutImageRequest::SerializePayload() const
 {
   JsonValue payload;

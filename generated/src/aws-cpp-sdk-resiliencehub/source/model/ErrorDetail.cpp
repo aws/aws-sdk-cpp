@@ -18,13 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ErrorDetail::ErrorDetail() : 
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetail::ErrorDetail(JsonView jsonValue)
-  : ErrorDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetGraphRequest::ResetGraphRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_skipSnapshot(false),
-    m_skipSnapshotHasBeenSet(false)
-{
-}
-
 Aws::String ResetGraphRequest::SerializePayload() const
 {
   JsonValue payload;

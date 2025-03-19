@@ -18,14 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-CustomLogSourceConfiguration::CustomLogSourceConfiguration() : 
-    m_crawlerConfigurationHasBeenSet(false),
-    m_providerIdentityHasBeenSet(false)
-{
-}
-
 CustomLogSourceConfiguration::CustomLogSourceConfiguration(JsonView jsonValue)
-  : CustomLogSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomLogSourceConfiguration& CustomLogSourceConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("crawlerConfiguration"))
   {
     m_crawlerConfiguration = jsonValue.GetObject("crawlerConfiguration");
-
     m_crawlerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerIdentity"))
   {
     m_providerIdentity = jsonValue.GetObject("providerIdentity");
-
     m_providerIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

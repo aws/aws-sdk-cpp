@@ -35,7 +35,7 @@ namespace Model
   class TaskTemplateConstraints
   {
   public:
-    AWS_CONNECT_API TaskTemplateConstraints();
+    AWS_CONNECT_API TaskTemplateConstraints() = default;
     AWS_CONNECT_API TaskTemplateConstraints(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API TaskTemplateConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,42 @@ namespace Model
     /**
      * <p>Lists the fields that are required to be filled by agents.</p>
      */
-    inline const Aws::Vector<RequiredFieldInfo>& GetRequiredFields() const{ return m_requiredFields; }
+    inline const Aws::Vector<RequiredFieldInfo>& GetRequiredFields() const { return m_requiredFields; }
     inline bool RequiredFieldsHasBeenSet() const { return m_requiredFieldsHasBeenSet; }
-    inline void SetRequiredFields(const Aws::Vector<RequiredFieldInfo>& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields = value; }
-    inline void SetRequiredFields(Aws::Vector<RequiredFieldInfo>&& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields = std::move(value); }
-    inline TaskTemplateConstraints& WithRequiredFields(const Aws::Vector<RequiredFieldInfo>& value) { SetRequiredFields(value); return *this;}
-    inline TaskTemplateConstraints& WithRequiredFields(Aws::Vector<RequiredFieldInfo>&& value) { SetRequiredFields(std::move(value)); return *this;}
-    inline TaskTemplateConstraints& AddRequiredFields(const RequiredFieldInfo& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields.push_back(value); return *this; }
-    inline TaskTemplateConstraints& AddRequiredFields(RequiredFieldInfo&& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields.push_back(std::move(value)); return *this; }
+    template<typename RequiredFieldsT = Aws::Vector<RequiredFieldInfo>>
+    void SetRequiredFields(RequiredFieldsT&& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields = std::forward<RequiredFieldsT>(value); }
+    template<typename RequiredFieldsT = Aws::Vector<RequiredFieldInfo>>
+    TaskTemplateConstraints& WithRequiredFields(RequiredFieldsT&& value) { SetRequiredFields(std::forward<RequiredFieldsT>(value)); return *this;}
+    template<typename RequiredFieldsT = RequiredFieldInfo>
+    TaskTemplateConstraints& AddRequiredFields(RequiredFieldsT&& value) { m_requiredFieldsHasBeenSet = true; m_requiredFields.emplace_back(std::forward<RequiredFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Lists the fields that are read-only to agents, and cannot be edited.</p>
      */
-    inline const Aws::Vector<ReadOnlyFieldInfo>& GetReadOnlyFields() const{ return m_readOnlyFields; }
+    inline const Aws::Vector<ReadOnlyFieldInfo>& GetReadOnlyFields() const { return m_readOnlyFields; }
     inline bool ReadOnlyFieldsHasBeenSet() const { return m_readOnlyFieldsHasBeenSet; }
-    inline void SetReadOnlyFields(const Aws::Vector<ReadOnlyFieldInfo>& value) { m_readOnlyFieldsHasBeenSet = true; m_readOnlyFields = value; }
-    inline void SetReadOnlyFields(Aws::Vector<ReadOnlyFieldInfo>&& value) { m_readOnlyFieldsHasBeenSet = true; m_readOnlyFields = std::move(value); }
-    inline TaskTemplateConstraints& WithReadOnlyFields(const Aws::Vector<ReadOnlyFieldInfo>& value) { SetReadOnlyFields(value); return *this;}
-    inline TaskTemplateConstraints& WithReadOnlyFields(Aws::Vector<ReadOnlyFieldInfo>&& value) { SetReadOnlyFields(std::move(value)); return *this;}
-    inline TaskTemplateConstraints& AddReadOnlyFields(const ReadOnlyFieldInfo& value) { m_readOnlyFieldsHasBeenSet = true; m_readOnlyFields.push_back(value); return *this; }
-    inline TaskTemplateConstraints& AddReadOnlyFields(ReadOnlyFieldInfo&& value) { m_readOnlyFieldsHasBeenSet = true; m_readOnlyFields.push_back(std::move(value)); return *this; }
+    template<typename ReadOnlyFieldsT = Aws::Vector<ReadOnlyFieldInfo>>
+    void SetReadOnlyFields(ReadOnlyFieldsT&& value) { m_readOnlyFieldsHasBeenSet = true; m_readOnlyFields = std::forward<ReadOnlyFieldsT>(value); }
+    template<typename ReadOnlyFieldsT = Aws::Vector<ReadOnlyFieldInfo>>
+    TaskTemplateConstraints& WithReadOnlyFields(ReadOnlyFieldsT&& value) { SetReadOnlyFields(std::forward<ReadOnlyFieldsT>(value)); return *this;}
+    template<typename ReadOnlyFieldsT = ReadOnlyFieldInfo>
+    TaskTemplateConstraints& AddReadOnlyFields(ReadOnlyFieldsT&& value) { m_readOnlyFieldsHasBeenSet = true; m_readOnlyFields.emplace_back(std::forward<ReadOnlyFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Lists the fields that are invisible to agents.</p>
      */
-    inline const Aws::Vector<InvisibleFieldInfo>& GetInvisibleFields() const{ return m_invisibleFields; }
+    inline const Aws::Vector<InvisibleFieldInfo>& GetInvisibleFields() const { return m_invisibleFields; }
     inline bool InvisibleFieldsHasBeenSet() const { return m_invisibleFieldsHasBeenSet; }
-    inline void SetInvisibleFields(const Aws::Vector<InvisibleFieldInfo>& value) { m_invisibleFieldsHasBeenSet = true; m_invisibleFields = value; }
-    inline void SetInvisibleFields(Aws::Vector<InvisibleFieldInfo>&& value) { m_invisibleFieldsHasBeenSet = true; m_invisibleFields = std::move(value); }
-    inline TaskTemplateConstraints& WithInvisibleFields(const Aws::Vector<InvisibleFieldInfo>& value) { SetInvisibleFields(value); return *this;}
-    inline TaskTemplateConstraints& WithInvisibleFields(Aws::Vector<InvisibleFieldInfo>&& value) { SetInvisibleFields(std::move(value)); return *this;}
-    inline TaskTemplateConstraints& AddInvisibleFields(const InvisibleFieldInfo& value) { m_invisibleFieldsHasBeenSet = true; m_invisibleFields.push_back(value); return *this; }
-    inline TaskTemplateConstraints& AddInvisibleFields(InvisibleFieldInfo&& value) { m_invisibleFieldsHasBeenSet = true; m_invisibleFields.push_back(std::move(value)); return *this; }
+    template<typename InvisibleFieldsT = Aws::Vector<InvisibleFieldInfo>>
+    void SetInvisibleFields(InvisibleFieldsT&& value) { m_invisibleFieldsHasBeenSet = true; m_invisibleFields = std::forward<InvisibleFieldsT>(value); }
+    template<typename InvisibleFieldsT = Aws::Vector<InvisibleFieldInfo>>
+    TaskTemplateConstraints& WithInvisibleFields(InvisibleFieldsT&& value) { SetInvisibleFields(std::forward<InvisibleFieldsT>(value)); return *this;}
+    template<typename InvisibleFieldsT = InvisibleFieldInfo>
+    TaskTemplateConstraints& AddInvisibleFields(InvisibleFieldsT&& value) { m_invisibleFieldsHasBeenSet = true; m_invisibleFields.emplace_back(std::forward<InvisibleFieldsT>(value)); return *this; }
     ///@}
   private:
 

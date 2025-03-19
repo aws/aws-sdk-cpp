@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RenameColumnOperation::RenameColumnOperation() : 
-    m_columnNameHasBeenSet(false),
-    m_newColumnNameHasBeenSet(false)
-{
-}
-
 RenameColumnOperation::RenameColumnOperation(JsonView jsonValue)
-  : RenameColumnOperation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RenameColumnOperation& RenameColumnOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewColumnName"))
   {
     m_newColumnName = jsonValue.GetString("NewColumnName");
-
     m_newColumnNameHasBeenSet = true;
   }
-
   return *this;
 }
 

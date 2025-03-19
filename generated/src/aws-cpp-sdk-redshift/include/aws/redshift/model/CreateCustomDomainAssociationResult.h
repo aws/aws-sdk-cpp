@@ -28,7 +28,7 @@ namespace Model
   class CreateCustomDomainAssociationResult
   {
   public:
-    AWS_REDSHIFT_API CreateCustomDomainAssociationResult();
+    AWS_REDSHIFT_API CreateCustomDomainAssociationResult() = default;
     AWS_REDSHIFT_API CreateCustomDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API CreateCustomDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The custom domain name for the association result.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainName.assign(value); }
-    inline CreateCustomDomainAssociationResult& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline CreateCustomDomainAssociationResult& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline CreateCustomDomainAssociationResult& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    CreateCustomDomainAssociationResult& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,60 +49,59 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate associated with the custom
      * domain name.</p>
      */
-    inline const Aws::String& GetCustomDomainCertificateArn() const{ return m_customDomainCertificateArn; }
-    inline void SetCustomDomainCertificateArn(const Aws::String& value) { m_customDomainCertificateArn = value; }
-    inline void SetCustomDomainCertificateArn(Aws::String&& value) { m_customDomainCertificateArn = std::move(value); }
-    inline void SetCustomDomainCertificateArn(const char* value) { m_customDomainCertificateArn.assign(value); }
-    inline CreateCustomDomainAssociationResult& WithCustomDomainCertificateArn(const Aws::String& value) { SetCustomDomainCertificateArn(value); return *this;}
-    inline CreateCustomDomainAssociationResult& WithCustomDomainCertificateArn(Aws::String&& value) { SetCustomDomainCertificateArn(std::move(value)); return *this;}
-    inline CreateCustomDomainAssociationResult& WithCustomDomainCertificateArn(const char* value) { SetCustomDomainCertificateArn(value); return *this;}
+    inline const Aws::String& GetCustomDomainCertificateArn() const { return m_customDomainCertificateArn; }
+    template<typename CustomDomainCertificateArnT = Aws::String>
+    void SetCustomDomainCertificateArn(CustomDomainCertificateArnT&& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = std::forward<CustomDomainCertificateArnT>(value); }
+    template<typename CustomDomainCertificateArnT = Aws::String>
+    CreateCustomDomainAssociationResult& WithCustomDomainCertificateArn(CustomDomainCertificateArnT&& value) { SetCustomDomainCertificateArn(std::forward<CustomDomainCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the cluster that the custom domain is associated with.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifier.assign(value); }
-    inline CreateCustomDomainAssociationResult& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline CreateCustomDomainAssociationResult& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline CreateCustomDomainAssociationResult& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    CreateCustomDomainAssociationResult& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiration time for the certificate for the custom domain.</p>
      */
-    inline const Aws::String& GetCustomDomainCertExpiryTime() const{ return m_customDomainCertExpiryTime; }
-    inline void SetCustomDomainCertExpiryTime(const Aws::String& value) { m_customDomainCertExpiryTime = value; }
-    inline void SetCustomDomainCertExpiryTime(Aws::String&& value) { m_customDomainCertExpiryTime = std::move(value); }
-    inline void SetCustomDomainCertExpiryTime(const char* value) { m_customDomainCertExpiryTime.assign(value); }
-    inline CreateCustomDomainAssociationResult& WithCustomDomainCertExpiryTime(const Aws::String& value) { SetCustomDomainCertExpiryTime(value); return *this;}
-    inline CreateCustomDomainAssociationResult& WithCustomDomainCertExpiryTime(Aws::String&& value) { SetCustomDomainCertExpiryTime(std::move(value)); return *this;}
-    inline CreateCustomDomainAssociationResult& WithCustomDomainCertExpiryTime(const char* value) { SetCustomDomainCertExpiryTime(value); return *this;}
+    inline const Aws::String& GetCustomDomainCertExpiryTime() const { return m_customDomainCertExpiryTime; }
+    template<typename CustomDomainCertExpiryTimeT = Aws::String>
+    void SetCustomDomainCertExpiryTime(CustomDomainCertExpiryTimeT&& value) { m_customDomainCertExpiryTimeHasBeenSet = true; m_customDomainCertExpiryTime = std::forward<CustomDomainCertExpiryTimeT>(value); }
+    template<typename CustomDomainCertExpiryTimeT = Aws::String>
+    CreateCustomDomainAssociationResult& WithCustomDomainCertExpiryTime(CustomDomainCertExpiryTimeT&& value) { SetCustomDomainCertExpiryTime(std::forward<CustomDomainCertExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateCustomDomainAssociationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateCustomDomainAssociationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateCustomDomainAssociationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
 
     Aws::String m_customDomainCertificateArn;
+    bool m_customDomainCertificateArnHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_customDomainCertExpiryTime;
+    bool m_customDomainCertExpiryTimeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

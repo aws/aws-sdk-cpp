@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClarifyShapBaselineConfig::ClarifyShapBaselineConfig() : 
-    m_mimeTypeHasBeenSet(false),
-    m_shapBaselineHasBeenSet(false),
-    m_shapBaselineUriHasBeenSet(false)
-{
-}
-
 ClarifyShapBaselineConfig::ClarifyShapBaselineConfig(JsonView jsonValue)
-  : ClarifyShapBaselineConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ClarifyShapBaselineConfig& ClarifyShapBaselineConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("MimeType"))
   {
     m_mimeType = jsonValue.GetString("MimeType");
-
     m_mimeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShapBaseline"))
   {
     m_shapBaseline = jsonValue.GetString("ShapBaseline");
-
     m_shapBaselineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShapBaselineUri"))
   {
     m_shapBaselineUri = jsonValue.GetString("ShapBaselineUri");
-
     m_shapBaselineUriHasBeenSet = true;
   }
-
   return *this;
 }
 

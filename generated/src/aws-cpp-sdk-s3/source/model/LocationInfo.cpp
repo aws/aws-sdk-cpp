@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-LocationInfo::LocationInfo() : 
-    m_type(LocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 LocationInfo::LocationInfo(const XmlNode& xmlNode)
-  : LocationInfo()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ LocationInfo& LocationInfo::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = LocationTypeMapper::GetLocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = LocationTypeMapper::GetLocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");

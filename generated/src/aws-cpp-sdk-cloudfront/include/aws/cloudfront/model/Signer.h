@@ -33,7 +33,7 @@ namespace Model
   class Signer
   {
   public:
-    AWS_CLOUDFRONT_API Signer();
+    AWS_CLOUDFRONT_API Signer() = default;
     AWS_CLOUDFRONT_API Signer(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API Signer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,26 +48,24 @@ namespace Model
      * account that owns the CloudFront distribution, the value of this field is
      * <code>self</code>.</p>
      */
-    inline const Aws::String& GetAwsAccountNumber() const{ return m_awsAccountNumber; }
+    inline const Aws::String& GetAwsAccountNumber() const { return m_awsAccountNumber; }
     inline bool AwsAccountNumberHasBeenSet() const { return m_awsAccountNumberHasBeenSet; }
-    inline void SetAwsAccountNumber(const Aws::String& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
-    inline void SetAwsAccountNumber(Aws::String&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = std::move(value); }
-    inline void SetAwsAccountNumber(const char* value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber.assign(value); }
-    inline Signer& WithAwsAccountNumber(const Aws::String& value) { SetAwsAccountNumber(value); return *this;}
-    inline Signer& WithAwsAccountNumber(Aws::String&& value) { SetAwsAccountNumber(std::move(value)); return *this;}
-    inline Signer& WithAwsAccountNumber(const char* value) { SetAwsAccountNumber(value); return *this;}
+    template<typename AwsAccountNumberT = Aws::String>
+    void SetAwsAccountNumber(AwsAccountNumberT&& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = std::forward<AwsAccountNumberT>(value); }
+    template<typename AwsAccountNumberT = Aws::String>
+    Signer& WithAwsAccountNumber(AwsAccountNumberT&& value) { SetAwsAccountNumber(std::forward<AwsAccountNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of CloudFront key pair identifiers.</p>
      */
-    inline const KeyPairIds& GetKeyPairIds() const{ return m_keyPairIds; }
+    inline const KeyPairIds& GetKeyPairIds() const { return m_keyPairIds; }
     inline bool KeyPairIdsHasBeenSet() const { return m_keyPairIdsHasBeenSet; }
-    inline void SetKeyPairIds(const KeyPairIds& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = value; }
-    inline void SetKeyPairIds(KeyPairIds&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::move(value); }
-    inline Signer& WithKeyPairIds(const KeyPairIds& value) { SetKeyPairIds(value); return *this;}
-    inline Signer& WithKeyPairIds(KeyPairIds&& value) { SetKeyPairIds(std::move(value)); return *this;}
+    template<typename KeyPairIdsT = KeyPairIds>
+    void SetKeyPairIds(KeyPairIdsT&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::forward<KeyPairIdsT>(value); }
+    template<typename KeyPairIdsT = KeyPairIds>
+    Signer& WithKeyPairIds(KeyPairIdsT&& value) { SetKeyPairIds(std::forward<KeyPairIdsT>(value)); return *this;}
     ///@}
   private:
 

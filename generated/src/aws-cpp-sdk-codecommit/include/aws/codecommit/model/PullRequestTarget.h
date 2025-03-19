@@ -33,7 +33,7 @@ namespace Model
   class PullRequestTarget
   {
   public:
-    AWS_CODECOMMIT_API PullRequestTarget();
+    AWS_CODECOMMIT_API PullRequestTarget() = default;
     AWS_CODECOMMIT_API PullRequestTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API PullRequestTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the repository that contains the pull request source and
      * destination branches.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline PullRequestTarget& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline PullRequestTarget& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline PullRequestTarget& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    PullRequestTarget& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The branch of the repository that contains the changes for the pull request.
      * Also known as the source branch.</p>
      */
-    inline const Aws::String& GetSourceReference() const{ return m_sourceReference; }
+    inline const Aws::String& GetSourceReference() const { return m_sourceReference; }
     inline bool SourceReferenceHasBeenSet() const { return m_sourceReferenceHasBeenSet; }
-    inline void SetSourceReference(const Aws::String& value) { m_sourceReferenceHasBeenSet = true; m_sourceReference = value; }
-    inline void SetSourceReference(Aws::String&& value) { m_sourceReferenceHasBeenSet = true; m_sourceReference = std::move(value); }
-    inline void SetSourceReference(const char* value) { m_sourceReferenceHasBeenSet = true; m_sourceReference.assign(value); }
-    inline PullRequestTarget& WithSourceReference(const Aws::String& value) { SetSourceReference(value); return *this;}
-    inline PullRequestTarget& WithSourceReference(Aws::String&& value) { SetSourceReference(std::move(value)); return *this;}
-    inline PullRequestTarget& WithSourceReference(const char* value) { SetSourceReference(value); return *this;}
+    template<typename SourceReferenceT = Aws::String>
+    void SetSourceReference(SourceReferenceT&& value) { m_sourceReferenceHasBeenSet = true; m_sourceReference = std::forward<SourceReferenceT>(value); }
+    template<typename SourceReferenceT = Aws::String>
+    PullRequestTarget& WithSourceReference(SourceReferenceT&& value) { SetSourceReference(std::forward<SourceReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The branch of the repository where the pull request changes are merged. Also
      * known as the destination branch. </p>
      */
-    inline const Aws::String& GetDestinationReference() const{ return m_destinationReference; }
+    inline const Aws::String& GetDestinationReference() const { return m_destinationReference; }
     inline bool DestinationReferenceHasBeenSet() const { return m_destinationReferenceHasBeenSet; }
-    inline void SetDestinationReference(const Aws::String& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = value; }
-    inline void SetDestinationReference(Aws::String&& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = std::move(value); }
-    inline void SetDestinationReference(const char* value) { m_destinationReferenceHasBeenSet = true; m_destinationReference.assign(value); }
-    inline PullRequestTarget& WithDestinationReference(const Aws::String& value) { SetDestinationReference(value); return *this;}
-    inline PullRequestTarget& WithDestinationReference(Aws::String&& value) { SetDestinationReference(std::move(value)); return *this;}
-    inline PullRequestTarget& WithDestinationReference(const char* value) { SetDestinationReference(value); return *this;}
+    template<typename DestinationReferenceT = Aws::String>
+    void SetDestinationReference(DestinationReferenceT&& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = std::forward<DestinationReferenceT>(value); }
+    template<typename DestinationReferenceT = Aws::String>
+    PullRequestTarget& WithDestinationReference(DestinationReferenceT&& value) { SetDestinationReference(std::forward<DestinationReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * <p>The full commit ID that is the tip of the destination branch. This is the
      * commit where the pull request was or will be merged.</p>
      */
-    inline const Aws::String& GetDestinationCommit() const{ return m_destinationCommit; }
+    inline const Aws::String& GetDestinationCommit() const { return m_destinationCommit; }
     inline bool DestinationCommitHasBeenSet() const { return m_destinationCommitHasBeenSet; }
-    inline void SetDestinationCommit(const Aws::String& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = value; }
-    inline void SetDestinationCommit(Aws::String&& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = std::move(value); }
-    inline void SetDestinationCommit(const char* value) { m_destinationCommitHasBeenSet = true; m_destinationCommit.assign(value); }
-    inline PullRequestTarget& WithDestinationCommit(const Aws::String& value) { SetDestinationCommit(value); return *this;}
-    inline PullRequestTarget& WithDestinationCommit(Aws::String&& value) { SetDestinationCommit(std::move(value)); return *this;}
-    inline PullRequestTarget& WithDestinationCommit(const char* value) { SetDestinationCommit(value); return *this;}
+    template<typename DestinationCommitT = Aws::String>
+    void SetDestinationCommit(DestinationCommitT&& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = std::forward<DestinationCommitT>(value); }
+    template<typename DestinationCommitT = Aws::String>
+    PullRequestTarget& WithDestinationCommit(DestinationCommitT&& value) { SetDestinationCommit(std::forward<DestinationCommitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * request. If the pull request branch is updated by a push while the pull request
      * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
-    inline const Aws::String& GetSourceCommit() const{ return m_sourceCommit; }
+    inline const Aws::String& GetSourceCommit() const { return m_sourceCommit; }
     inline bool SourceCommitHasBeenSet() const { return m_sourceCommitHasBeenSet; }
-    inline void SetSourceCommit(const Aws::String& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = value; }
-    inline void SetSourceCommit(Aws::String&& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = std::move(value); }
-    inline void SetSourceCommit(const char* value) { m_sourceCommitHasBeenSet = true; m_sourceCommit.assign(value); }
-    inline PullRequestTarget& WithSourceCommit(const Aws::String& value) { SetSourceCommit(value); return *this;}
-    inline PullRequestTarget& WithSourceCommit(Aws::String&& value) { SetSourceCommit(std::move(value)); return *this;}
-    inline PullRequestTarget& WithSourceCommit(const char* value) { SetSourceCommit(value); return *this;}
+    template<typename SourceCommitT = Aws::String>
+    void SetSourceCommit(SourceCommitT&& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = std::forward<SourceCommitT>(value); }
+    template<typename SourceCommitT = Aws::String>
+    PullRequestTarget& WithSourceCommit(SourceCommitT&& value) { SetSourceCommit(std::forward<SourceCommitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +110,12 @@ namespace Model
      * <p>The commit ID of the most recent commit that the source branch and the
      * destination branch have in common.</p>
      */
-    inline const Aws::String& GetMergeBase() const{ return m_mergeBase; }
+    inline const Aws::String& GetMergeBase() const { return m_mergeBase; }
     inline bool MergeBaseHasBeenSet() const { return m_mergeBaseHasBeenSet; }
-    inline void SetMergeBase(const Aws::String& value) { m_mergeBaseHasBeenSet = true; m_mergeBase = value; }
-    inline void SetMergeBase(Aws::String&& value) { m_mergeBaseHasBeenSet = true; m_mergeBase = std::move(value); }
-    inline void SetMergeBase(const char* value) { m_mergeBaseHasBeenSet = true; m_mergeBase.assign(value); }
-    inline PullRequestTarget& WithMergeBase(const Aws::String& value) { SetMergeBase(value); return *this;}
-    inline PullRequestTarget& WithMergeBase(Aws::String&& value) { SetMergeBase(std::move(value)); return *this;}
-    inline PullRequestTarget& WithMergeBase(const char* value) { SetMergeBase(value); return *this;}
+    template<typename MergeBaseT = Aws::String>
+    void SetMergeBase(MergeBaseT&& value) { m_mergeBaseHasBeenSet = true; m_mergeBase = std::forward<MergeBaseT>(value); }
+    template<typename MergeBaseT = Aws::String>
+    PullRequestTarget& WithMergeBase(MergeBaseT&& value) { SetMergeBase(std::forward<MergeBaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +123,12 @@ namespace Model
      * <p>Returns metadata about the state of the merge, including whether the merge
      * has been made.</p>
      */
-    inline const MergeMetadata& GetMergeMetadata() const{ return m_mergeMetadata; }
+    inline const MergeMetadata& GetMergeMetadata() const { return m_mergeMetadata; }
     inline bool MergeMetadataHasBeenSet() const { return m_mergeMetadataHasBeenSet; }
-    inline void SetMergeMetadata(const MergeMetadata& value) { m_mergeMetadataHasBeenSet = true; m_mergeMetadata = value; }
-    inline void SetMergeMetadata(MergeMetadata&& value) { m_mergeMetadataHasBeenSet = true; m_mergeMetadata = std::move(value); }
-    inline PullRequestTarget& WithMergeMetadata(const MergeMetadata& value) { SetMergeMetadata(value); return *this;}
-    inline PullRequestTarget& WithMergeMetadata(MergeMetadata&& value) { SetMergeMetadata(std::move(value)); return *this;}
+    template<typename MergeMetadataT = MergeMetadata>
+    void SetMergeMetadata(MergeMetadataT&& value) { m_mergeMetadataHasBeenSet = true; m_mergeMetadata = std::forward<MergeMetadataT>(value); }
+    template<typename MergeMetadataT = MergeMetadata>
+    PullRequestTarget& WithMergeMetadata(MergeMetadataT&& value) { SetMergeMetadata(std::forward<MergeMetadataT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateImagePermissionsRequest::UpdateImagePermissionsRequest() : 
-    m_nameHasBeenSet(false),
-    m_sharedAccountIdHasBeenSet(false),
-    m_imagePermissionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateImagePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLoggerDefinitionRequest::DeleteLoggerDefinitionRequest() : 
-    m_loggerDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoggerDefinitionRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowS3SourceConfiguration::DataIntegrationFlowS3SourceConfiguration() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowS3SourceConfiguration::DataIntegrationFlowS3SourceConfiguration(JsonView jsonValue)
-  : DataIntegrationFlowS3SourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataIntegrationFlowS3SourceConfiguration& DataIntegrationFlowS3SourceConfigurati
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     m_options = jsonValue.GetObject("options");
-
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

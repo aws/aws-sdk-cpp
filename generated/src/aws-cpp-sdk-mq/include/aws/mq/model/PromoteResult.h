@@ -27,7 +27,7 @@ namespace Model
   class PromoteResult
   {
   public:
-    AWS_MQ_API PromoteResult();
+    AWS_MQ_API PromoteResult() = default;
     AWS_MQ_API PromoteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MQ_API PromoteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
-    inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
-    inline void SetBrokerId(const Aws::String& value) { m_brokerId = value; }
-    inline void SetBrokerId(Aws::String&& value) { m_brokerId = std::move(value); }
-    inline void SetBrokerId(const char* value) { m_brokerId.assign(value); }
-    inline PromoteResult& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
-    inline PromoteResult& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
-    inline PromoteResult& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
+    inline const Aws::String& GetBrokerId() const { return m_brokerId; }
+    template<typename BrokerIdT = Aws::String>
+    void SetBrokerId(BrokerIdT&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::forward<BrokerIdT>(value); }
+    template<typename BrokerIdT = Aws::String>
+    PromoteResult& WithBrokerId(BrokerIdT&& value) { SetBrokerId(std::forward<BrokerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PromoteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PromoteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PromoteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PromoteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_brokerId;
+    bool m_brokerIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

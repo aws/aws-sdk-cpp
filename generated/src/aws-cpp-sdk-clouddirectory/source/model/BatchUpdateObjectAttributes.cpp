@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchUpdateObjectAttributes::BatchUpdateObjectAttributes() : 
-    m_objectReferenceHasBeenSet(false),
-    m_attributeUpdatesHasBeenSet(false)
-{
-}
-
 BatchUpdateObjectAttributes::BatchUpdateObjectAttributes(JsonView jsonValue)
-  : BatchUpdateObjectAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BatchUpdateObjectAttributes& BatchUpdateObjectAttributes::operator =(JsonView js
   if(jsonValue.ValueExists("ObjectReference"))
   {
     m_objectReference = jsonValue.GetObject("ObjectReference");
-
     m_objectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeUpdates"))
   {
     Aws::Utils::Array<JsonView> attributeUpdatesJsonList = jsonValue.GetArray("AttributeUpdates");
@@ -48,7 +39,6 @@ BatchUpdateObjectAttributes& BatchUpdateObjectAttributes::operator =(JsonView js
     }
     m_attributeUpdatesHasBeenSet = true;
   }
-
   return *this;
 }
 

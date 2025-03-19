@@ -28,33 +28,35 @@ namespace Model
   class DeleteDBClusterAutomatedBackupResult
   {
   public:
-    AWS_RDS_API DeleteDBClusterAutomatedBackupResult();
+    AWS_RDS_API DeleteDBClusterAutomatedBackupResult() = default;
     AWS_RDS_API DeleteDBClusterAutomatedBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DeleteDBClusterAutomatedBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBClusterAutomatedBackup& GetDBClusterAutomatedBackup() const{ return m_dBClusterAutomatedBackup; }
-    inline void SetDBClusterAutomatedBackup(const DBClusterAutomatedBackup& value) { m_dBClusterAutomatedBackup = value; }
-    inline void SetDBClusterAutomatedBackup(DBClusterAutomatedBackup&& value) { m_dBClusterAutomatedBackup = std::move(value); }
-    inline DeleteDBClusterAutomatedBackupResult& WithDBClusterAutomatedBackup(const DBClusterAutomatedBackup& value) { SetDBClusterAutomatedBackup(value); return *this;}
-    inline DeleteDBClusterAutomatedBackupResult& WithDBClusterAutomatedBackup(DBClusterAutomatedBackup&& value) { SetDBClusterAutomatedBackup(std::move(value)); return *this;}
+    inline const DBClusterAutomatedBackup& GetDBClusterAutomatedBackup() const { return m_dBClusterAutomatedBackup; }
+    template<typename DBClusterAutomatedBackupT = DBClusterAutomatedBackup>
+    void SetDBClusterAutomatedBackup(DBClusterAutomatedBackupT&& value) { m_dBClusterAutomatedBackupHasBeenSet = true; m_dBClusterAutomatedBackup = std::forward<DBClusterAutomatedBackupT>(value); }
+    template<typename DBClusterAutomatedBackupT = DBClusterAutomatedBackup>
+    DeleteDBClusterAutomatedBackupResult& WithDBClusterAutomatedBackup(DBClusterAutomatedBackupT&& value) { SetDBClusterAutomatedBackup(std::forward<DBClusterAutomatedBackupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteDBClusterAutomatedBackupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteDBClusterAutomatedBackupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteDBClusterAutomatedBackupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBClusterAutomatedBackup m_dBClusterAutomatedBackup;
+    bool m_dBClusterAutomatedBackupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

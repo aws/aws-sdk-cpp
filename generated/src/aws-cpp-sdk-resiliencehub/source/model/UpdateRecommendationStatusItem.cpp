@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-UpdateRecommendationStatusItem::UpdateRecommendationStatusItem() : 
-    m_resourceIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false),
-    m_targetRegionHasBeenSet(false)
-{
-}
-
 UpdateRecommendationStatusItem::UpdateRecommendationStatusItem(JsonView jsonValue)
-  : UpdateRecommendationStatusItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateRecommendationStatusItem& UpdateRecommendationStatusItem::operator =(JsonV
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccountId"))
   {
     m_targetAccountId = jsonValue.GetString("targetAccountId");
-
     m_targetAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRegion"))
   {
     m_targetRegion = jsonValue.GetString("targetRegion");
-
     m_targetRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

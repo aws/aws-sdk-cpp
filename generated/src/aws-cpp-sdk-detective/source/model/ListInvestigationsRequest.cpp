@@ -12,16 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInvestigationsRequest::ListInvestigationsRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterCriteriaHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String ListInvestigationsRequest::SerializePayload() const
 {
   JsonValue payload;

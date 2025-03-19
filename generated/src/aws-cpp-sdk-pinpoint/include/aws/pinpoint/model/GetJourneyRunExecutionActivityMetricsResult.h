@@ -28,35 +28,35 @@ namespace Model
   class GetJourneyRunExecutionActivityMetricsResult
   {
   public:
-    AWS_PINPOINT_API GetJourneyRunExecutionActivityMetricsResult();
+    AWS_PINPOINT_API GetJourneyRunExecutionActivityMetricsResult() = default;
     AWS_PINPOINT_API GetJourneyRunExecutionActivityMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetJourneyRunExecutionActivityMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const JourneyRunExecutionActivityMetricsResponse& GetJourneyRunExecutionActivityMetricsResponse() const{ return m_journeyRunExecutionActivityMetricsResponse; }
-    inline void SetJourneyRunExecutionActivityMetricsResponse(const JourneyRunExecutionActivityMetricsResponse& value) { m_journeyRunExecutionActivityMetricsResponse = value; }
-    inline void SetJourneyRunExecutionActivityMetricsResponse(JourneyRunExecutionActivityMetricsResponse&& value) { m_journeyRunExecutionActivityMetricsResponse = std::move(value); }
-    inline GetJourneyRunExecutionActivityMetricsResult& WithJourneyRunExecutionActivityMetricsResponse(const JourneyRunExecutionActivityMetricsResponse& value) { SetJourneyRunExecutionActivityMetricsResponse(value); return *this;}
-    inline GetJourneyRunExecutionActivityMetricsResult& WithJourneyRunExecutionActivityMetricsResponse(JourneyRunExecutionActivityMetricsResponse&& value) { SetJourneyRunExecutionActivityMetricsResponse(std::move(value)); return *this;}
+    inline const JourneyRunExecutionActivityMetricsResponse& GetJourneyRunExecutionActivityMetricsResponse() const { return m_journeyRunExecutionActivityMetricsResponse; }
+    template<typename JourneyRunExecutionActivityMetricsResponseT = JourneyRunExecutionActivityMetricsResponse>
+    void SetJourneyRunExecutionActivityMetricsResponse(JourneyRunExecutionActivityMetricsResponseT&& value) { m_journeyRunExecutionActivityMetricsResponseHasBeenSet = true; m_journeyRunExecutionActivityMetricsResponse = std::forward<JourneyRunExecutionActivityMetricsResponseT>(value); }
+    template<typename JourneyRunExecutionActivityMetricsResponseT = JourneyRunExecutionActivityMetricsResponse>
+    GetJourneyRunExecutionActivityMetricsResult& WithJourneyRunExecutionActivityMetricsResponse(JourneyRunExecutionActivityMetricsResponseT&& value) { SetJourneyRunExecutionActivityMetricsResponse(std::forward<JourneyRunExecutionActivityMetricsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJourneyRunExecutionActivityMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJourneyRunExecutionActivityMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJourneyRunExecutionActivityMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJourneyRunExecutionActivityMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JourneyRunExecutionActivityMetricsResponse m_journeyRunExecutionActivityMetricsResponse;
+    bool m_journeyRunExecutionActivityMetricsResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

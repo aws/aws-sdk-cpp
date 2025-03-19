@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityProviderConfigResult::DescribeIdentityProviderConfigResult()
-{
-}
-
 DescribeIdentityProviderConfigResult::DescribeIdentityProviderConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeIdentityProviderConfigResult& DescribeIdentityProviderConfigResult::oper
   if(jsonValue.ValueExists("identityProviderConfig"))
   {
     m_identityProviderConfig = jsonValue.GetObject("identityProviderConfig");
-
+    m_identityProviderConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

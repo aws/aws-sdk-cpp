@@ -35,7 +35,7 @@ namespace Model
   class Record
   {
   public:
-    AWS_DYNAMODBSTREAMS_API Record();
+    AWS_DYNAMODBSTREAMS_API Record() = default;
     AWS_DYNAMODBSTREAMS_API Record(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>A globally unique identifier for the event that was recorded in this stream
      * record.</p>
      */
-    inline const Aws::String& GetEventID() const{ return m_eventID; }
+    inline const Aws::String& GetEventID() const { return m_eventID; }
     inline bool EventIDHasBeenSet() const { return m_eventIDHasBeenSet; }
-    inline void SetEventID(const Aws::String& value) { m_eventIDHasBeenSet = true; m_eventID = value; }
-    inline void SetEventID(Aws::String&& value) { m_eventIDHasBeenSet = true; m_eventID = std::move(value); }
-    inline void SetEventID(const char* value) { m_eventIDHasBeenSet = true; m_eventID.assign(value); }
-    inline Record& WithEventID(const Aws::String& value) { SetEventID(value); return *this;}
-    inline Record& WithEventID(Aws::String&& value) { SetEventID(std::move(value)); return *this;}
-    inline Record& WithEventID(const char* value) { SetEventID(value); return *this;}
+    template<typename EventIDT = Aws::String>
+    void SetEventID(EventIDT&& value) { m_eventIDHasBeenSet = true; m_eventID = std::forward<EventIDT>(value); }
+    template<typename EventIDT = Aws::String>
+    Record& WithEventID(EventIDT&& value) { SetEventID(std::forward<EventIDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the
      * table</p> </li> </ul>
      */
-    inline const OperationType& GetEventName() const{ return m_eventName; }
+    inline OperationType GetEventName() const { return m_eventName; }
     inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
-    inline void SetEventName(const OperationType& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
-    inline void SetEventName(OperationType&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
-    inline Record& WithEventName(const OperationType& value) { SetEventName(value); return *this;}
-    inline Record& WithEventName(OperationType&& value) { SetEventName(std::move(value)); return *this;}
+    inline void SetEventName(OperationType value) { m_eventNameHasBeenSet = true; m_eventName = value; }
+    inline Record& WithEventName(OperationType value) { SetEventName(value); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <code>eventVersion</code> will only increase as the low-level DynamoDB Streams
      * API evolves.</p>
      */
-    inline const Aws::String& GetEventVersion() const{ return m_eventVersion; }
+    inline const Aws::String& GetEventVersion() const { return m_eventVersion; }
     inline bool EventVersionHasBeenSet() const { return m_eventVersionHasBeenSet; }
-    inline void SetEventVersion(const Aws::String& value) { m_eventVersionHasBeenSet = true; m_eventVersion = value; }
-    inline void SetEventVersion(Aws::String&& value) { m_eventVersionHasBeenSet = true; m_eventVersion = std::move(value); }
-    inline void SetEventVersion(const char* value) { m_eventVersionHasBeenSet = true; m_eventVersion.assign(value); }
-    inline Record& WithEventVersion(const Aws::String& value) { SetEventVersion(value); return *this;}
-    inline Record& WithEventVersion(Aws::String&& value) { SetEventVersion(std::move(value)); return *this;}
-    inline Record& WithEventVersion(const char* value) { SetEventVersion(value); return *this;}
+    template<typename EventVersionT = Aws::String>
+    void SetEventVersion(EventVersionT&& value) { m_eventVersionHasBeenSet = true; m_eventVersion = std::forward<EventVersionT>(value); }
+    template<typename EventVersionT = Aws::String>
+    Record& WithEventVersion(EventVersionT&& value) { SetEventVersion(std::forward<EventVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,28 +90,24 @@ namespace Model
      * <p>The Amazon Web Services service from which the stream record originated. For
      * DynamoDB Streams, this is <code>aws:dynamodb</code>.</p>
      */
-    inline const Aws::String& GetEventSource() const{ return m_eventSource; }
+    inline const Aws::String& GetEventSource() const { return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
-    inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
-    inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
-    inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
-    inline Record& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
-    inline Record& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
-    inline Record& WithEventSource(const char* value) { SetEventSource(value); return *this;}
+    template<typename EventSourceT = Aws::String>
+    void SetEventSource(EventSourceT&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::forward<EventSourceT>(value); }
+    template<typename EventSourceT = Aws::String>
+    Record& WithEventSource(EventSourceT&& value) { SetEventSource(std::forward<EventSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The region in which the <code>GetRecords</code> request was received.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline Record& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline Record& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline Record& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    Record& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +115,12 @@ namespace Model
      * <p>The main body of the stream record, containing all of the DynamoDB-specific
      * fields.</p>
      */
-    inline const StreamRecord& GetDynamodb() const{ return m_dynamodb; }
+    inline const StreamRecord& GetDynamodb() const { return m_dynamodb; }
     inline bool DynamodbHasBeenSet() const { return m_dynamodbHasBeenSet; }
-    inline void SetDynamodb(const StreamRecord& value) { m_dynamodbHasBeenSet = true; m_dynamodb = value; }
-    inline void SetDynamodb(StreamRecord&& value) { m_dynamodbHasBeenSet = true; m_dynamodb = std::move(value); }
-    inline Record& WithDynamodb(const StreamRecord& value) { SetDynamodb(value); return *this;}
-    inline Record& WithDynamodb(StreamRecord&& value) { SetDynamodb(std::move(value)); return *this;}
+    template<typename DynamodbT = StreamRecord>
+    void SetDynamodb(DynamodbT&& value) { m_dynamodbHasBeenSet = true; m_dynamodb = std::forward<DynamodbT>(value); }
+    template<typename DynamodbT = StreamRecord>
+    Record& WithDynamodb(DynamodbT&& value) { SetDynamodb(std::forward<DynamodbT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,19 +130,19 @@ namespace Model
      * <p>"Service"</p> </li> <li> <p>Records[].userIdentity.principalId</p>
      * <p>"dynamodb.amazonaws.com"</p> </li> </ul>
      */
-    inline const Identity& GetUserIdentity() const{ return m_userIdentity; }
+    inline const Identity& GetUserIdentity() const { return m_userIdentity; }
     inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
-    inline void SetUserIdentity(const Identity& value) { m_userIdentityHasBeenSet = true; m_userIdentity = value; }
-    inline void SetUserIdentity(Identity&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::move(value); }
-    inline Record& WithUserIdentity(const Identity& value) { SetUserIdentity(value); return *this;}
-    inline Record& WithUserIdentity(Identity&& value) { SetUserIdentity(std::move(value)); return *this;}
+    template<typename UserIdentityT = Identity>
+    void SetUserIdentity(UserIdentityT&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::forward<UserIdentityT>(value); }
+    template<typename UserIdentityT = Identity>
+    Record& WithUserIdentity(UserIdentityT&& value) { SetUserIdentity(std::forward<UserIdentityT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventID;
     bool m_eventIDHasBeenSet = false;
 
-    OperationType m_eventName;
+    OperationType m_eventName{OperationType::NOT_SET};
     bool m_eventNameHasBeenSet = false;
 
     Aws::String m_eventVersion;

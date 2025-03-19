@@ -36,7 +36,7 @@ namespace Model
   class RDSDatabaseRecommendedOptionProjectedMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RDSDatabaseRecommendedOptionProjectedMetric();
+    AWS_COMPUTEOPTIMIZER_API RDSDatabaseRecommendedOptionProjectedMetric() = default;
     AWS_COMPUTEOPTIMIZER_API RDSDatabaseRecommendedOptionProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RDSDatabaseRecommendedOptionProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p> The recommended DB instance class for the Amazon RDS. </p>
      */
-    inline const Aws::String& GetRecommendedDBInstanceClass() const{ return m_recommendedDBInstanceClass; }
+    inline const Aws::String& GetRecommendedDBInstanceClass() const { return m_recommendedDBInstanceClass; }
     inline bool RecommendedDBInstanceClassHasBeenSet() const { return m_recommendedDBInstanceClassHasBeenSet; }
-    inline void SetRecommendedDBInstanceClass(const Aws::String& value) { m_recommendedDBInstanceClassHasBeenSet = true; m_recommendedDBInstanceClass = value; }
-    inline void SetRecommendedDBInstanceClass(Aws::String&& value) { m_recommendedDBInstanceClassHasBeenSet = true; m_recommendedDBInstanceClass = std::move(value); }
-    inline void SetRecommendedDBInstanceClass(const char* value) { m_recommendedDBInstanceClassHasBeenSet = true; m_recommendedDBInstanceClass.assign(value); }
-    inline RDSDatabaseRecommendedOptionProjectedMetric& WithRecommendedDBInstanceClass(const Aws::String& value) { SetRecommendedDBInstanceClass(value); return *this;}
-    inline RDSDatabaseRecommendedOptionProjectedMetric& WithRecommendedDBInstanceClass(Aws::String&& value) { SetRecommendedDBInstanceClass(std::move(value)); return *this;}
-    inline RDSDatabaseRecommendedOptionProjectedMetric& WithRecommendedDBInstanceClass(const char* value) { SetRecommendedDBInstanceClass(value); return *this;}
+    template<typename RecommendedDBInstanceClassT = Aws::String>
+    void SetRecommendedDBInstanceClass(RecommendedDBInstanceClassT&& value) { m_recommendedDBInstanceClassHasBeenSet = true; m_recommendedDBInstanceClass = std::forward<RecommendedDBInstanceClassT>(value); }
+    template<typename RecommendedDBInstanceClassT = Aws::String>
+    RDSDatabaseRecommendedOptionProjectedMetric& WithRecommendedDBInstanceClass(RecommendedDBInstanceClassT&& value) { SetRecommendedDBInstanceClass(std::forward<RecommendedDBInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rank identifier of the RDS instance recommendation option. </p>
      */
-    inline int GetRank() const{ return m_rank; }
+    inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
     inline RDSDatabaseRecommendedOptionProjectedMetric& WithRank(int value) { SetRank(value); return *this;}
@@ -70,21 +68,21 @@ namespace Model
     /**
      * <p> An array of objects that describe the projected metric. </p>
      */
-    inline const Aws::Vector<RDSDatabaseProjectedMetric>& GetProjectedMetrics() const{ return m_projectedMetrics; }
+    inline const Aws::Vector<RDSDatabaseProjectedMetric>& GetProjectedMetrics() const { return m_projectedMetrics; }
     inline bool ProjectedMetricsHasBeenSet() const { return m_projectedMetricsHasBeenSet; }
-    inline void SetProjectedMetrics(const Aws::Vector<RDSDatabaseProjectedMetric>& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = value; }
-    inline void SetProjectedMetrics(Aws::Vector<RDSDatabaseProjectedMetric>&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::move(value); }
-    inline RDSDatabaseRecommendedOptionProjectedMetric& WithProjectedMetrics(const Aws::Vector<RDSDatabaseProjectedMetric>& value) { SetProjectedMetrics(value); return *this;}
-    inline RDSDatabaseRecommendedOptionProjectedMetric& WithProjectedMetrics(Aws::Vector<RDSDatabaseProjectedMetric>&& value) { SetProjectedMetrics(std::move(value)); return *this;}
-    inline RDSDatabaseRecommendedOptionProjectedMetric& AddProjectedMetrics(const RDSDatabaseProjectedMetric& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(value); return *this; }
-    inline RDSDatabaseRecommendedOptionProjectedMetric& AddProjectedMetrics(RDSDatabaseProjectedMetric&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(std::move(value)); return *this; }
+    template<typename ProjectedMetricsT = Aws::Vector<RDSDatabaseProjectedMetric>>
+    void SetProjectedMetrics(ProjectedMetricsT&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::forward<ProjectedMetricsT>(value); }
+    template<typename ProjectedMetricsT = Aws::Vector<RDSDatabaseProjectedMetric>>
+    RDSDatabaseRecommendedOptionProjectedMetric& WithProjectedMetrics(ProjectedMetricsT&& value) { SetProjectedMetrics(std::forward<ProjectedMetricsT>(value)); return *this;}
+    template<typename ProjectedMetricsT = RDSDatabaseProjectedMetric>
+    RDSDatabaseRecommendedOptionProjectedMetric& AddProjectedMetrics(ProjectedMetricsT&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.emplace_back(std::forward<ProjectedMetricsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_recommendedDBInstanceClass;
     bool m_recommendedDBInstanceClassHasBeenSet = false;
 
-    int m_rank;
+    int m_rank{0};
     bool m_rankHasBeenSet = false;
 
     Aws::Vector<RDSDatabaseProjectedMetric> m_projectedMetrics;

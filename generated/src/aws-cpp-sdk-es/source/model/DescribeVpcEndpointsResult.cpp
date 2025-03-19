@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcEndpointsResult::DescribeVpcEndpointsResult()
-{
-}
-
 DescribeVpcEndpointsResult::DescribeVpcEndpointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeVpcEndpointsResult& DescribeVpcEndpointsResult::operator =(const Aws::Am
     {
       m_vpcEndpoints.push_back(vpcEndpointsJsonList[vpcEndpointsIndex].AsObject());
     }
+    m_vpcEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointErrors"))
   {
     Aws::Utils::Array<JsonView> vpcEndpointErrorsJsonList = jsonValue.GetArray("VpcEndpointErrors");
@@ -45,14 +41,15 @@ DescribeVpcEndpointsResult& DescribeVpcEndpointsResult::operator =(const Aws::Am
     {
       m_vpcEndpointErrors.push_back(vpcEndpointErrorsJsonList[vpcEndpointErrorsIndex].AsObject());
     }
+    m_vpcEndpointErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

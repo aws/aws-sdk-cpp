@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualNodeServiceProvider::VirtualNodeServiceProvider() : 
-    m_virtualNodeNameHasBeenSet(false)
-{
-}
-
 VirtualNodeServiceProvider::VirtualNodeServiceProvider(JsonView jsonValue)
-  : VirtualNodeServiceProvider()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualNodeServiceProvider& VirtualNodeServiceProvider::operator =(JsonView json
   if(jsonValue.ValueExists("virtualNodeName"))
   {
     m_virtualNodeName = jsonValue.GetString("virtualNodeName");
-
     m_virtualNodeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

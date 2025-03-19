@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-PathFormat::PathFormat() : 
-    m_objectPrefixesHasBeenSet(false)
-{
-}
-
 PathFormat::PathFormat(JsonView jsonValue)
-  : PathFormat()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PathFormat& PathFormat::operator =(JsonView jsonValue)
     }
     m_objectPrefixesHasBeenSet = true;
   }
-
   return *this;
 }
 

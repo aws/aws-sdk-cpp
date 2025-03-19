@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetKeyRotationStatusResult::GetKeyRotationStatusResult() : 
-    m_keyRotationEnabled(false),
-    m_rotationPeriodInDays(0)
-{
-}
-
 GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetKeyRotationStatusResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ GetKeyRotationStatusResult& GetKeyRotationStatusResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("KeyRotationEnabled"))
   {
     m_keyRotationEnabled = jsonValue.GetBool("KeyRotationEnabled");
-
+    m_keyRotationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationPeriodInDays"))
   {
     m_rotationPeriodInDays = jsonValue.GetInteger("RotationPeriodInDays");
-
+    m_rotationPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextRotationDate"))
   {
     m_nextRotationDate = jsonValue.GetDouble("NextRotationDate");
-
+    m_nextRotationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandRotationStartDate"))
   {
     m_onDemandRotationStartDate = jsonValue.GetDouble("OnDemandRotationStartDate");
-
+    m_onDemandRotationStartDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

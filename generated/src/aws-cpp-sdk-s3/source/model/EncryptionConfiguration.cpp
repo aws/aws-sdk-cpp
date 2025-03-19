@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_replicaKmsKeyIDHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(const XmlNode& xmlNode)
-  : EncryptionConfiguration()
 {
   *this = xmlNode;
 }

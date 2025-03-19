@@ -18,18 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-QualificationRequest::QualificationRequest() : 
-    m_qualificationRequestIdHasBeenSet(false),
-    m_qualificationTypeIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_answerHasBeenSet(false),
-    m_submitTimeHasBeenSet(false)
-{
-}
-
 QualificationRequest::QualificationRequest(JsonView jsonValue)
-  : QualificationRequest()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ QualificationRequest& QualificationRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QualificationRequestId"))
   {
     m_qualificationRequestId = jsonValue.GetString("QualificationRequestId");
-
     m_qualificationRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QualificationTypeId"))
   {
     m_qualificationTypeId = jsonValue.GetString("QualificationTypeId");
-
     m_qualificationTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerId"))
   {
     m_workerId = jsonValue.GetString("WorkerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Test"))
   {
     m_test = jsonValue.GetString("Test");
-
     m_testHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Answer"))
   {
     m_answer = jsonValue.GetString("Answer");
-
     m_answerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTime"))
   {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
-
     m_submitTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

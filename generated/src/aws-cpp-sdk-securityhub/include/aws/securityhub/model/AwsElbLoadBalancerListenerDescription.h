@@ -34,7 +34,7 @@ namespace Model
   class AwsElbLoadBalancerListenerDescription
   {
   public:
-    AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription() = default;
     AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,27 +44,26 @@ namespace Model
     /**
      * <p>Information about the listener.</p>
      */
-    inline const AwsElbLoadBalancerListener& GetListener() const{ return m_listener; }
+    inline const AwsElbLoadBalancerListener& GetListener() const { return m_listener; }
     inline bool ListenerHasBeenSet() const { return m_listenerHasBeenSet; }
-    inline void SetListener(const AwsElbLoadBalancerListener& value) { m_listenerHasBeenSet = true; m_listener = value; }
-    inline void SetListener(AwsElbLoadBalancerListener&& value) { m_listenerHasBeenSet = true; m_listener = std::move(value); }
-    inline AwsElbLoadBalancerListenerDescription& WithListener(const AwsElbLoadBalancerListener& value) { SetListener(value); return *this;}
-    inline AwsElbLoadBalancerListenerDescription& WithListener(AwsElbLoadBalancerListener&& value) { SetListener(std::move(value)); return *this;}
+    template<typename ListenerT = AwsElbLoadBalancerListener>
+    void SetListener(ListenerT&& value) { m_listenerHasBeenSet = true; m_listener = std::forward<ListenerT>(value); }
+    template<typename ListenerT = AwsElbLoadBalancerListener>
+    AwsElbLoadBalancerListenerDescription& WithListener(ListenerT&& value) { SetListener(std::forward<ListenerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policies enabled for the listener.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+    inline const Aws::Vector<Aws::String>& GetPolicyNames() const { return m_policyNames; }
     inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
-    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
-    inline AwsElbLoadBalancerListenerDescription& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
-    inline AwsElbLoadBalancerListenerDescription& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
-    inline AwsElbLoadBalancerListenerDescription& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
-    inline AwsElbLoadBalancerListenerDescription& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
-    inline AwsElbLoadBalancerListenerDescription& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+    template<typename PolicyNamesT = Aws::Vector<Aws::String>>
+    void SetPolicyNames(PolicyNamesT&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::forward<PolicyNamesT>(value); }
+    template<typename PolicyNamesT = Aws::Vector<Aws::String>>
+    AwsElbLoadBalancerListenerDescription& WithPolicyNames(PolicyNamesT&& value) { SetPolicyNames(std::forward<PolicyNamesT>(value)); return *this;}
+    template<typename PolicyNamesT = Aws::String>
+    AwsElbLoadBalancerListenerDescription& AddPolicyNames(PolicyNamesT&& value) { m_policyNamesHasBeenSet = true; m_policyNames.emplace_back(std::forward<PolicyNamesT>(value)); return *this; }
     ///@}
   private:
 

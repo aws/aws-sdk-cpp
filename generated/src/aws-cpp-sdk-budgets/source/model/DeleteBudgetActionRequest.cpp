@@ -12,13 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBudgetActionRequest::DeleteBudgetActionRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_actionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBudgetActionRequest::SerializePayload() const
 {
   JsonValue payload;

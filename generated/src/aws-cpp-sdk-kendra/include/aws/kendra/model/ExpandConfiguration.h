@@ -30,7 +30,7 @@ namespace Model
   class ExpandConfiguration
   {
   public:
-    AWS_KENDRA_API ExpandConfiguration();
+    AWS_KENDRA_API ExpandConfiguration() = default;
     AWS_KENDRA_API ExpandConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API ExpandConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * to 10, for example, only the first 10 out of 100 result groups will have expand
      * functionality. </p>
      */
-    inline int GetMaxResultItemsToExpand() const{ return m_maxResultItemsToExpand; }
+    inline int GetMaxResultItemsToExpand() const { return m_maxResultItemsToExpand; }
     inline bool MaxResultItemsToExpandHasBeenSet() const { return m_maxResultItemsToExpandHasBeenSet; }
     inline void SetMaxResultItemsToExpand(int value) { m_maxResultItemsToExpandHasBeenSet = true; m_maxResultItemsToExpand = value; }
     inline ExpandConfiguration& WithMaxResultItemsToExpand(int value) { SetMaxResultItemsToExpand(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * instance, if you set this value to 3, then at most 3 results per collapsed group
      * will be displayed.</p>
      */
-    inline int GetMaxExpandedResultsPerItem() const{ return m_maxExpandedResultsPerItem; }
+    inline int GetMaxExpandedResultsPerItem() const { return m_maxExpandedResultsPerItem; }
     inline bool MaxExpandedResultsPerItemHasBeenSet() const { return m_maxExpandedResultsPerItemHasBeenSet; }
     inline void SetMaxExpandedResultsPerItem(int value) { m_maxExpandedResultsPerItemHasBeenSet = true; m_maxExpandedResultsPerItem = value; }
     inline ExpandConfiguration& WithMaxExpandedResultsPerItem(int value) { SetMaxExpandedResultsPerItem(value); return *this;}
     ///@}
   private:
 
-    int m_maxResultItemsToExpand;
+    int m_maxResultItemsToExpand{0};
     bool m_maxResultItemsToExpandHasBeenSet = false;
 
-    int m_maxExpandedResultsPerItem;
+    int m_maxExpandedResultsPerItem{0};
     bool m_maxExpandedResultsPerItemHasBeenSet = false;
   };
 

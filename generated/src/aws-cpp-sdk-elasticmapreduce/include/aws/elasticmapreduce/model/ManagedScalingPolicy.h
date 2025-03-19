@@ -35,7 +35,7 @@ namespace Model
   class ManagedScalingPolicy
   {
   public:
-    AWS_EMR_API ManagedScalingPolicy();
+    AWS_EMR_API ManagedScalingPolicy() = default;
     AWS_EMR_API ManagedScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ManagedScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * limit only applies to the core and task nodes. The master node cannot be scaled
      * after initial configuration.</p>
      */
-    inline const ComputeLimits& GetComputeLimits() const{ return m_computeLimits; }
+    inline const ComputeLimits& GetComputeLimits() const { return m_computeLimits; }
     inline bool ComputeLimitsHasBeenSet() const { return m_computeLimitsHasBeenSet; }
-    inline void SetComputeLimits(const ComputeLimits& value) { m_computeLimitsHasBeenSet = true; m_computeLimits = value; }
-    inline void SetComputeLimits(ComputeLimits&& value) { m_computeLimitsHasBeenSet = true; m_computeLimits = std::move(value); }
-    inline ManagedScalingPolicy& WithComputeLimits(const ComputeLimits& value) { SetComputeLimits(value); return *this;}
-    inline ManagedScalingPolicy& WithComputeLimits(ComputeLimits&& value) { SetComputeLimits(std::move(value)); return *this;}
+    template<typename ComputeLimitsT = ComputeLimits>
+    void SetComputeLimits(ComputeLimitsT&& value) { m_computeLimitsHasBeenSet = true; m_computeLimits = std::forward<ComputeLimitsT>(value); }
+    template<typename ComputeLimitsT = ComputeLimits>
+    ManagedScalingPolicy& WithComputeLimits(ComputeLimitsT&& value) { SetComputeLimits(std::forward<ComputeLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +63,7 @@ namespace Model
      * resource conservation. Setting the value to 50 balances performance and resource
      * conservation. Possible values are 1, 25, 50, 75, and 100.</p>
      */
-    inline int GetUtilizationPerformanceIndex() const{ return m_utilizationPerformanceIndex; }
+    inline int GetUtilizationPerformanceIndex() const { return m_utilizationPerformanceIndex; }
     inline bool UtilizationPerformanceIndexHasBeenSet() const { return m_utilizationPerformanceIndexHasBeenSet; }
     inline void SetUtilizationPerformanceIndex(int value) { m_utilizationPerformanceIndexHasBeenSet = true; m_utilizationPerformanceIndex = value; }
     inline ManagedScalingPolicy& WithUtilizationPerformanceIndex(int value) { SetUtilizationPerformanceIndex(value); return *this;}
@@ -74,22 +74,20 @@ namespace Model
      * <p>Determines whether a custom scaling utilization performance index can be set.
      * Possible values include <i>ADVANCED</i> or <i>DEFAULT</i>.</p>
      */
-    inline const ScalingStrategy& GetScalingStrategy() const{ return m_scalingStrategy; }
+    inline ScalingStrategy GetScalingStrategy() const { return m_scalingStrategy; }
     inline bool ScalingStrategyHasBeenSet() const { return m_scalingStrategyHasBeenSet; }
-    inline void SetScalingStrategy(const ScalingStrategy& value) { m_scalingStrategyHasBeenSet = true; m_scalingStrategy = value; }
-    inline void SetScalingStrategy(ScalingStrategy&& value) { m_scalingStrategyHasBeenSet = true; m_scalingStrategy = std::move(value); }
-    inline ManagedScalingPolicy& WithScalingStrategy(const ScalingStrategy& value) { SetScalingStrategy(value); return *this;}
-    inline ManagedScalingPolicy& WithScalingStrategy(ScalingStrategy&& value) { SetScalingStrategy(std::move(value)); return *this;}
+    inline void SetScalingStrategy(ScalingStrategy value) { m_scalingStrategyHasBeenSet = true; m_scalingStrategy = value; }
+    inline ManagedScalingPolicy& WithScalingStrategy(ScalingStrategy value) { SetScalingStrategy(value); return *this;}
     ///@}
   private:
 
     ComputeLimits m_computeLimits;
     bool m_computeLimitsHasBeenSet = false;
 
-    int m_utilizationPerformanceIndex;
+    int m_utilizationPerformanceIndex{0};
     bool m_utilizationPerformanceIndexHasBeenSet = false;
 
-    ScalingStrategy m_scalingStrategy;
+    ScalingStrategy m_scalingStrategy{ScalingStrategy::NOT_SET};
     bool m_scalingStrategyHasBeenSet = false;
   };
 

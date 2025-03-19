@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-BrokerCountUpdateInfo::BrokerCountUpdateInfo() : 
-    m_createdBrokerIdsHasBeenSet(false),
-    m_deletedBrokerIdsHasBeenSet(false)
-{
-}
-
 BrokerCountUpdateInfo::BrokerCountUpdateInfo(JsonView jsonValue)
-  : BrokerCountUpdateInfo()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ BrokerCountUpdateInfo& BrokerCountUpdateInfo::operator =(JsonView jsonValue)
     }
     m_createdBrokerIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletedBrokerIds"))
   {
     Aws::Utils::Array<JsonView> deletedBrokerIdsJsonList = jsonValue.GetArray("deletedBrokerIds");
@@ -51,7 +43,6 @@ BrokerCountUpdateInfo& BrokerCountUpdateInfo::operator =(JsonView jsonValue)
     }
     m_deletedBrokerIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

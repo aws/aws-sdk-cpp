@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsUtteranceGroupByKey
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsUtteranceGroupByKey();
+    AWS_LEXMODELSV2_API AnalyticsUtteranceGroupByKey() = default;
     AWS_LEXMODELSV2_API AnalyticsUtteranceGroupByKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsUtteranceGroupByKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The category by which the utterance analytics were grouped.</p>
      */
-    inline const AnalyticsUtteranceField& GetName() const{ return m_name; }
+    inline AnalyticsUtteranceField GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsUtteranceField& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsUtteranceField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsUtteranceGroupByKey& WithName(const AnalyticsUtteranceField& value) { SetName(value); return *this;}
-    inline AnalyticsUtteranceGroupByKey& WithName(AnalyticsUtteranceField&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsUtteranceField value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsUtteranceGroupByKey& WithName(AnalyticsUtteranceField value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A member of the category by which the utterance analytics were grouped.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AnalyticsUtteranceGroupByKey& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AnalyticsUtteranceGroupByKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AnalyticsUtteranceGroupByKey& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AnalyticsUtteranceGroupByKey& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    AnalyticsUtteranceField m_name;
+    AnalyticsUtteranceField m_name{AnalyticsUtteranceField::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

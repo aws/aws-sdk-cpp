@@ -46,7 +46,7 @@ namespace Model
   class CommunicationTypeOptions
   {
   public:
-    AWS_SUPPORT_API CommunicationTypeOptions();
+    AWS_SUPPORT_API CommunicationTypeOptions() = default;
     AWS_SUPPORT_API CommunicationTypeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API CommunicationTypeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,28 +57,26 @@ namespace Model
      * <p> A string value indicating the communication type. At the moment the type
      * value can assume one of 3 values at the moment chat, web and call. </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline CommunicationTypeOptions& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline CommunicationTypeOptions& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline CommunicationTypeOptions& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    CommunicationTypeOptions& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A JSON-formatted list containing time ranges when support is available. </p>
      */
-    inline const Aws::Vector<SupportedHour>& GetSupportedHours() const{ return m_supportedHours; }
+    inline const Aws::Vector<SupportedHour>& GetSupportedHours() const { return m_supportedHours; }
     inline bool SupportedHoursHasBeenSet() const { return m_supportedHoursHasBeenSet; }
-    inline void SetSupportedHours(const Aws::Vector<SupportedHour>& value) { m_supportedHoursHasBeenSet = true; m_supportedHours = value; }
-    inline void SetSupportedHours(Aws::Vector<SupportedHour>&& value) { m_supportedHoursHasBeenSet = true; m_supportedHours = std::move(value); }
-    inline CommunicationTypeOptions& WithSupportedHours(const Aws::Vector<SupportedHour>& value) { SetSupportedHours(value); return *this;}
-    inline CommunicationTypeOptions& WithSupportedHours(Aws::Vector<SupportedHour>&& value) { SetSupportedHours(std::move(value)); return *this;}
-    inline CommunicationTypeOptions& AddSupportedHours(const SupportedHour& value) { m_supportedHoursHasBeenSet = true; m_supportedHours.push_back(value); return *this; }
-    inline CommunicationTypeOptions& AddSupportedHours(SupportedHour&& value) { m_supportedHoursHasBeenSet = true; m_supportedHours.push_back(std::move(value)); return *this; }
+    template<typename SupportedHoursT = Aws::Vector<SupportedHour>>
+    void SetSupportedHours(SupportedHoursT&& value) { m_supportedHoursHasBeenSet = true; m_supportedHours = std::forward<SupportedHoursT>(value); }
+    template<typename SupportedHoursT = Aws::Vector<SupportedHour>>
+    CommunicationTypeOptions& WithSupportedHours(SupportedHoursT&& value) { SetSupportedHours(std::forward<SupportedHoursT>(value)); return *this;}
+    template<typename SupportedHoursT = SupportedHour>
+    CommunicationTypeOptions& AddSupportedHours(SupportedHoursT&& value) { m_supportedHoursHasBeenSet = true; m_supportedHours.emplace_back(std::forward<SupportedHoursT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,14 +84,14 @@ namespace Model
      * <p> A JSON-formatted list containing date and time ranges for periods without
      * support </p>
      */
-    inline const Aws::Vector<DateInterval>& GetDatesWithoutSupport() const{ return m_datesWithoutSupport; }
+    inline const Aws::Vector<DateInterval>& GetDatesWithoutSupport() const { return m_datesWithoutSupport; }
     inline bool DatesWithoutSupportHasBeenSet() const { return m_datesWithoutSupportHasBeenSet; }
-    inline void SetDatesWithoutSupport(const Aws::Vector<DateInterval>& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport = value; }
-    inline void SetDatesWithoutSupport(Aws::Vector<DateInterval>&& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport = std::move(value); }
-    inline CommunicationTypeOptions& WithDatesWithoutSupport(const Aws::Vector<DateInterval>& value) { SetDatesWithoutSupport(value); return *this;}
-    inline CommunicationTypeOptions& WithDatesWithoutSupport(Aws::Vector<DateInterval>&& value) { SetDatesWithoutSupport(std::move(value)); return *this;}
-    inline CommunicationTypeOptions& AddDatesWithoutSupport(const DateInterval& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport.push_back(value); return *this; }
-    inline CommunicationTypeOptions& AddDatesWithoutSupport(DateInterval&& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport.push_back(std::move(value)); return *this; }
+    template<typename DatesWithoutSupportT = Aws::Vector<DateInterval>>
+    void SetDatesWithoutSupport(DatesWithoutSupportT&& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport = std::forward<DatesWithoutSupportT>(value); }
+    template<typename DatesWithoutSupportT = Aws::Vector<DateInterval>>
+    CommunicationTypeOptions& WithDatesWithoutSupport(DatesWithoutSupportT&& value) { SetDatesWithoutSupport(std::forward<DatesWithoutSupportT>(value)); return *this;}
+    template<typename DatesWithoutSupportT = DateInterval>
+    CommunicationTypeOptions& AddDatesWithoutSupport(DatesWithoutSupportT&& value) { m_datesWithoutSupportHasBeenSet = true; m_datesWithoutSupport.emplace_back(std::forward<DatesWithoutSupportT>(value)); return *this; }
     ///@}
   private:
 

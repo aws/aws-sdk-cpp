@@ -12,15 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRemediationExecutionStatusRequest::DescribeRemediationExecutionStatusRequest() : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceKeysHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRemediationExecutionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

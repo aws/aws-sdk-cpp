@@ -43,7 +43,7 @@ namespace Model
   class ResourcePermission
   {
   public:
-    AWS_FINSPACEDATA_API ResourcePermission();
+    AWS_FINSPACEDATA_API ResourcePermission() = default;
     AWS_FINSPACEDATA_API ResourcePermission(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API ResourcePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>Permission for a resource.</p>
      */
-    inline const Aws::String& GetPermission() const{ return m_permission; }
+    inline const Aws::String& GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const Aws::String& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(Aws::String&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline void SetPermission(const char* value) { m_permissionHasBeenSet = true; m_permission.assign(value); }
-    inline ResourcePermission& WithPermission(const Aws::String& value) { SetPermission(value); return *this;}
-    inline ResourcePermission& WithPermission(Aws::String&& value) { SetPermission(std::move(value)); return *this;}
-    inline ResourcePermission& WithPermission(const char* value) { SetPermission(value); return *this;}
+    template<typename PermissionT = Aws::String>
+    void SetPermission(PermissionT&& value) { m_permissionHasBeenSet = true; m_permission = std::forward<PermissionT>(value); }
+    template<typename PermissionT = Aws::String>
+    ResourcePermission& WithPermission(PermissionT&& value) { SetPermission(std::forward<PermissionT>(value)); return *this;}
     ///@}
   private:
 

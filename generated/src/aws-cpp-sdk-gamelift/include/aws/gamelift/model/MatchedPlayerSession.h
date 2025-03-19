@@ -36,7 +36,7 @@ namespace Model
   class MatchedPlayerSession
   {
   public:
-    AWS_GAMELIFT_API MatchedPlayerSession();
+    AWS_GAMELIFT_API MatchedPlayerSession() = default;
     AWS_GAMELIFT_API MatchedPlayerSession(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API MatchedPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>A unique identifier for a player </p>
      */
-    inline const Aws::String& GetPlayerId() const{ return m_playerId; }
+    inline const Aws::String& GetPlayerId() const { return m_playerId; }
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
-    inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
-    inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
-    inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
-    inline MatchedPlayerSession& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
-    inline MatchedPlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
-    inline MatchedPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+    template<typename PlayerIdT = Aws::String>
+    void SetPlayerId(PlayerIdT&& value) { m_playerIdHasBeenSet = true; m_playerId = std::forward<PlayerIdT>(value); }
+    template<typename PlayerIdT = Aws::String>
+    MatchedPlayerSession& WithPlayerId(PlayerIdT&& value) { SetPlayerId(std::forward<PlayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a player session</p>
      */
-    inline const Aws::String& GetPlayerSessionId() const{ return m_playerSessionId; }
+    inline const Aws::String& GetPlayerSessionId() const { return m_playerSessionId; }
     inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }
-    inline void SetPlayerSessionId(const Aws::String& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
-    inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::move(value); }
-    inline void SetPlayerSessionId(const char* value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId.assign(value); }
-    inline MatchedPlayerSession& WithPlayerSessionId(const Aws::String& value) { SetPlayerSessionId(value); return *this;}
-    inline MatchedPlayerSession& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(std::move(value)); return *this;}
-    inline MatchedPlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
+    template<typename PlayerSessionIdT = Aws::String>
+    void SetPlayerSessionId(PlayerSessionIdT&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::forward<PlayerSessionIdT>(value); }
+    template<typename PlayerSessionIdT = Aws::String>
+    MatchedPlayerSession& WithPlayerSessionId(PlayerSessionIdT&& value) { SetPlayerSessionId(std::forward<PlayerSessionIdT>(value)); return *this;}
     ///@}
   private:
 

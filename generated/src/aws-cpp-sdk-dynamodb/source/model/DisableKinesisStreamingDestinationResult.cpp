@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableKinesisStreamingDestinationResult::DisableKinesisStreamingDestinationResult() : 
-    m_destinationStatus(DestinationStatus::NOT_SET)
-{
-}
-
 DisableKinesisStreamingDestinationResult::DisableKinesisStreamingDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DisableKinesisStreamingDestinationResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ DisableKinesisStreamingDestinationResult& DisableKinesisStreamingDestinationResu
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
+    m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
+    m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationStatus"))
   {
     m_destinationStatus = DestinationStatusMapper::GetDestinationStatusForName(jsonValue.GetString("DestinationStatus"));
-
+    m_destinationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableKinesisStreamingConfiguration"))
   {
     m_enableKinesisStreamingConfiguration = jsonValue.GetObject("EnableKinesisStreamingConfiguration");
-
+    m_enableKinesisStreamingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

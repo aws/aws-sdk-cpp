@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCellReadinessSummaryResult::GetCellReadinessSummaryResult() : 
-    m_readiness(Readiness::NOT_SET)
-{
-}
-
 GetCellReadinessSummaryResult::GetCellReadinessSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCellReadinessSummaryResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetCellReadinessSummaryResult& GetCellReadinessSummaryResult::operator =(const A
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readiness"))
   {
     m_readiness = ReadinessMapper::GetReadinessForName(jsonValue.GetString("readiness"));
-
+    m_readinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readinessChecks"))
   {
     Aws::Utils::Array<JsonView> readinessChecksJsonList = jsonValue.GetArray("readinessChecks");
@@ -50,14 +42,15 @@ GetCellReadinessSummaryResult& GetCellReadinessSummaryResult::operator =(const A
     {
       m_readinessChecks.push_back(readinessChecksJsonList[readinessChecksIndex].AsObject());
     }
+    m_readinessChecksHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

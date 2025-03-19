@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImpersonationRoleRequest::DeleteImpersonationRoleRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_impersonationRoleIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImpersonationRoleRequest::SerializePayload() const
 {
   JsonValue payload;

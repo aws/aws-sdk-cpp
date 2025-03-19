@@ -35,7 +35,7 @@ namespace Model
   class AccountHealth
   {
   public:
-    AWS_DEVOPSGURU_API AccountHealth();
+    AWS_DEVOPSGURU_API AccountHealth() = default;
     AWS_DEVOPSGURU_API AccountHealth(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API AccountHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountHealth& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountHealth& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountHealth& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountHealth& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * account, including the number of open proactive, open reactive insights, and the
      * Mean Time to Recover (MTTR) of closed insights. </p>
      */
-    inline const AccountInsightHealth& GetInsight() const{ return m_insight; }
+    inline const AccountInsightHealth& GetInsight() const { return m_insight; }
     inline bool InsightHasBeenSet() const { return m_insightHasBeenSet; }
-    inline void SetInsight(const AccountInsightHealth& value) { m_insightHasBeenSet = true; m_insight = value; }
-    inline void SetInsight(AccountInsightHealth&& value) { m_insightHasBeenSet = true; m_insight = std::move(value); }
-    inline AccountHealth& WithInsight(const AccountInsightHealth& value) { SetInsight(value); return *this;}
-    inline AccountHealth& WithInsight(AccountInsightHealth&& value) { SetInsight(std::move(value)); return *this;}
+    template<typename InsightT = AccountInsightHealth>
+    void SetInsight(InsightT&& value) { m_insightHasBeenSet = true; m_insight = std::forward<InsightT>(value); }
+    template<typename InsightT = AccountInsightHealth>
+    AccountHealth& WithInsight(InsightT&& value) { SetInsight(std::forward<InsightT>(value)); return *this;}
     ///@}
   private:
 

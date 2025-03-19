@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CreateOpenZFSOriginSnapshotConfiguration::CreateOpenZFSOriginSnapshotConfiguration() : 
-    m_snapshotARNHasBeenSet(false),
-    m_copyStrategy(OpenZFSCopyStrategy::NOT_SET),
-    m_copyStrategyHasBeenSet(false)
-{
-}
-
 CreateOpenZFSOriginSnapshotConfiguration::CreateOpenZFSOriginSnapshotConfiguration(JsonView jsonValue)
-  : CreateOpenZFSOriginSnapshotConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CreateOpenZFSOriginSnapshotConfiguration& CreateOpenZFSOriginSnapshotConfigurati
   if(jsonValue.ValueExists("SnapshotARN"))
   {
     m_snapshotARN = jsonValue.GetString("SnapshotARN");
-
     m_snapshotARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyStrategy"))
   {
     m_copyStrategy = OpenZFSCopyStrategyMapper::GetOpenZFSCopyStrategyForName(jsonValue.GetString("CopyStrategy"));
-
     m_copyStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

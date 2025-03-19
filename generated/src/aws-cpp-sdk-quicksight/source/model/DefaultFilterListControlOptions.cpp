@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultFilterListControlOptions::DefaultFilterListControlOptions() : 
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlListType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_selectableValuesHasBeenSet(false)
-{
-}
-
 DefaultFilterListControlOptions::DefaultFilterListControlOptions(JsonView jsonValue)
-  : DefaultFilterListControlOptions()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DefaultFilterListControlOptions& DefaultFilterListControlOptions::operator =(Jso
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SheetControlListTypeMapper::GetSheetControlListTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectableValues"))
   {
     m_selectableValues = jsonValue.GetObject("SelectableValues");
-
     m_selectableValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

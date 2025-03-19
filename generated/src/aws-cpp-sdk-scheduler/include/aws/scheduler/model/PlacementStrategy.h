@@ -33,7 +33,7 @@ namespace Model
   class PlacementStrategy
   {
   public:
-    AWS_SCHEDULER_API PlacementStrategy();
+    AWS_SCHEDULER_API PlacementStrategy() = default;
     AWS_SCHEDULER_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>memory</code>. For the random placement strategy, this field is not
      * used.</p>
      */
-    inline const Aws::String& GetField() const{ return m_field; }
+    inline const Aws::String& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-    inline PlacementStrategy& WithField(const Aws::String& value) { SetField(value); return *this;}
-    inline PlacementStrategy& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-    inline PlacementStrategy& WithField(const char* value) { SetField(value); return *this;}
+    template<typename FieldT = Aws::String>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = Aws::String>
+    PlacementStrategy& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,19 +67,17 @@ namespace Model
      * if you binpack on memory, a task is placed on the instance with the least amount
      * of remaining memory (but still enough to run the task).</p>
      */
-    inline const PlacementStrategyType& GetType() const{ return m_type; }
+    inline PlacementStrategyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PlacementStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PlacementStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PlacementStrategy& WithType(const PlacementStrategyType& value) { SetType(value); return *this;}
-    inline PlacementStrategy& WithType(PlacementStrategyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PlacementStrategyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PlacementStrategy& WithType(PlacementStrategyType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_field;
     bool m_fieldHasBeenSet = false;
 
-    PlacementStrategyType m_type;
+    PlacementStrategyType m_type{PlacementStrategyType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

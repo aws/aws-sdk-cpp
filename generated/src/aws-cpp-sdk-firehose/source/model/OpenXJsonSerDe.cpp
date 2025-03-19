@@ -18,17 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-OpenXJsonSerDe::OpenXJsonSerDe() : 
-    m_convertDotsInJsonKeysToUnderscores(false),
-    m_convertDotsInJsonKeysToUnderscoresHasBeenSet(false),
-    m_caseInsensitive(false),
-    m_caseInsensitiveHasBeenSet(false),
-    m_columnToJsonKeyMappingsHasBeenSet(false)
-{
-}
-
 OpenXJsonSerDe::OpenXJsonSerDe(JsonView jsonValue)
-  : OpenXJsonSerDe()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ OpenXJsonSerDe& OpenXJsonSerDe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConvertDotsInJsonKeysToUnderscores"))
   {
     m_convertDotsInJsonKeysToUnderscores = jsonValue.GetBool("ConvertDotsInJsonKeysToUnderscores");
-
     m_convertDotsInJsonKeysToUnderscoresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaseInsensitive"))
   {
     m_caseInsensitive = jsonValue.GetBool("CaseInsensitive");
-
     m_caseInsensitiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnToJsonKeyMappings"))
   {
     Aws::Map<Aws::String, JsonView> columnToJsonKeyMappingsJsonMap = jsonValue.GetObject("ColumnToJsonKeyMappings").GetAllObjects();
@@ -58,7 +44,6 @@ OpenXJsonSerDe& OpenXJsonSerDe::operator =(JsonView jsonValue)
     }
     m_columnToJsonKeyMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

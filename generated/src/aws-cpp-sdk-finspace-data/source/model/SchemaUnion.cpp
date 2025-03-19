@@ -18,13 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-SchemaUnion::SchemaUnion() : 
-    m_tabularSchemaConfigHasBeenSet(false)
-{
-}
-
 SchemaUnion::SchemaUnion(JsonView jsonValue)
-  : SchemaUnion()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SchemaUnion& SchemaUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tabularSchemaConfig"))
   {
     m_tabularSchemaConfig = jsonValue.GetObject("tabularSchemaConfig");
-
     m_tabularSchemaConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

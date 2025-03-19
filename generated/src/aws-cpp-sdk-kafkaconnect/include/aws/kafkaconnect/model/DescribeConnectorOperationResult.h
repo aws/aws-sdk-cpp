@@ -35,7 +35,7 @@ namespace Model
   class DescribeConnectorOperationResult
   {
   public:
-    AWS_KAFKACONNECT_API DescribeConnectorOperationResult();
+    AWS_KAFKACONNECT_API DescribeConnectorOperationResult() = default;
     AWS_KAFKACONNECT_API DescribeConnectorOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API DescribeConnectorOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,189 +44,186 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the connector.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArn.assign(value); }
-    inline DescribeConnectorOperationResult& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline DescribeConnectorOperationResult& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline DescribeConnectorOperationResult& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    DescribeConnectorOperationResult& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the connector operation.</p>
      */
-    inline const Aws::String& GetConnectorOperationArn() const{ return m_connectorOperationArn; }
-    inline void SetConnectorOperationArn(const Aws::String& value) { m_connectorOperationArn = value; }
-    inline void SetConnectorOperationArn(Aws::String&& value) { m_connectorOperationArn = std::move(value); }
-    inline void SetConnectorOperationArn(const char* value) { m_connectorOperationArn.assign(value); }
-    inline DescribeConnectorOperationResult& WithConnectorOperationArn(const Aws::String& value) { SetConnectorOperationArn(value); return *this;}
-    inline DescribeConnectorOperationResult& WithConnectorOperationArn(Aws::String&& value) { SetConnectorOperationArn(std::move(value)); return *this;}
-    inline DescribeConnectorOperationResult& WithConnectorOperationArn(const char* value) { SetConnectorOperationArn(value); return *this;}
+    inline const Aws::String& GetConnectorOperationArn() const { return m_connectorOperationArn; }
+    template<typename ConnectorOperationArnT = Aws::String>
+    void SetConnectorOperationArn(ConnectorOperationArnT&& value) { m_connectorOperationArnHasBeenSet = true; m_connectorOperationArn = std::forward<ConnectorOperationArnT>(value); }
+    template<typename ConnectorOperationArnT = Aws::String>
+    DescribeConnectorOperationResult& WithConnectorOperationArn(ConnectorOperationArnT&& value) { SetConnectorOperationArn(std::forward<ConnectorOperationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the connector operation.</p>
      */
-    inline const ConnectorOperationState& GetConnectorOperationState() const{ return m_connectorOperationState; }
-    inline void SetConnectorOperationState(const ConnectorOperationState& value) { m_connectorOperationState = value; }
-    inline void SetConnectorOperationState(ConnectorOperationState&& value) { m_connectorOperationState = std::move(value); }
-    inline DescribeConnectorOperationResult& WithConnectorOperationState(const ConnectorOperationState& value) { SetConnectorOperationState(value); return *this;}
-    inline DescribeConnectorOperationResult& WithConnectorOperationState(ConnectorOperationState&& value) { SetConnectorOperationState(std::move(value)); return *this;}
+    inline ConnectorOperationState GetConnectorOperationState() const { return m_connectorOperationState; }
+    inline void SetConnectorOperationState(ConnectorOperationState value) { m_connectorOperationStateHasBeenSet = true; m_connectorOperationState = value; }
+    inline DescribeConnectorOperationResult& WithConnectorOperationState(ConnectorOperationState value) { SetConnectorOperationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of connector operation performed.</p>
      */
-    inline const ConnectorOperationType& GetConnectorOperationType() const{ return m_connectorOperationType; }
-    inline void SetConnectorOperationType(const ConnectorOperationType& value) { m_connectorOperationType = value; }
-    inline void SetConnectorOperationType(ConnectorOperationType&& value) { m_connectorOperationType = std::move(value); }
-    inline DescribeConnectorOperationResult& WithConnectorOperationType(const ConnectorOperationType& value) { SetConnectorOperationType(value); return *this;}
-    inline DescribeConnectorOperationResult& WithConnectorOperationType(ConnectorOperationType&& value) { SetConnectorOperationType(std::move(value)); return *this;}
+    inline ConnectorOperationType GetConnectorOperationType() const { return m_connectorOperationType; }
+    inline void SetConnectorOperationType(ConnectorOperationType value) { m_connectorOperationTypeHasBeenSet = true; m_connectorOperationType = value; }
+    inline DescribeConnectorOperationResult& WithConnectorOperationType(ConnectorOperationType value) { SetConnectorOperationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The array of operation steps taken.</p>
      */
-    inline const Aws::Vector<ConnectorOperationStep>& GetOperationSteps() const{ return m_operationSteps; }
-    inline void SetOperationSteps(const Aws::Vector<ConnectorOperationStep>& value) { m_operationSteps = value; }
-    inline void SetOperationSteps(Aws::Vector<ConnectorOperationStep>&& value) { m_operationSteps = std::move(value); }
-    inline DescribeConnectorOperationResult& WithOperationSteps(const Aws::Vector<ConnectorOperationStep>& value) { SetOperationSteps(value); return *this;}
-    inline DescribeConnectorOperationResult& WithOperationSteps(Aws::Vector<ConnectorOperationStep>&& value) { SetOperationSteps(std::move(value)); return *this;}
-    inline DescribeConnectorOperationResult& AddOperationSteps(const ConnectorOperationStep& value) { m_operationSteps.push_back(value); return *this; }
-    inline DescribeConnectorOperationResult& AddOperationSteps(ConnectorOperationStep&& value) { m_operationSteps.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConnectorOperationStep>& GetOperationSteps() const { return m_operationSteps; }
+    template<typename OperationStepsT = Aws::Vector<ConnectorOperationStep>>
+    void SetOperationSteps(OperationStepsT&& value) { m_operationStepsHasBeenSet = true; m_operationSteps = std::forward<OperationStepsT>(value); }
+    template<typename OperationStepsT = Aws::Vector<ConnectorOperationStep>>
+    DescribeConnectorOperationResult& WithOperationSteps(OperationStepsT&& value) { SetOperationSteps(std::forward<OperationStepsT>(value)); return *this;}
+    template<typename OperationStepsT = ConnectorOperationStep>
+    DescribeConnectorOperationResult& AddOperationSteps(OperationStepsT&& value) { m_operationStepsHasBeenSet = true; m_operationSteps.emplace_back(std::forward<OperationStepsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The origin worker setting.</p>
      */
-    inline const WorkerSetting& GetOriginWorkerSetting() const{ return m_originWorkerSetting; }
-    inline void SetOriginWorkerSetting(const WorkerSetting& value) { m_originWorkerSetting = value; }
-    inline void SetOriginWorkerSetting(WorkerSetting&& value) { m_originWorkerSetting = std::move(value); }
-    inline DescribeConnectorOperationResult& WithOriginWorkerSetting(const WorkerSetting& value) { SetOriginWorkerSetting(value); return *this;}
-    inline DescribeConnectorOperationResult& WithOriginWorkerSetting(WorkerSetting&& value) { SetOriginWorkerSetting(std::move(value)); return *this;}
+    inline const WorkerSetting& GetOriginWorkerSetting() const { return m_originWorkerSetting; }
+    template<typename OriginWorkerSettingT = WorkerSetting>
+    void SetOriginWorkerSetting(OriginWorkerSettingT&& value) { m_originWorkerSettingHasBeenSet = true; m_originWorkerSetting = std::forward<OriginWorkerSettingT>(value); }
+    template<typename OriginWorkerSettingT = WorkerSetting>
+    DescribeConnectorOperationResult& WithOriginWorkerSetting(OriginWorkerSettingT&& value) { SetOriginWorkerSetting(std::forward<OriginWorkerSettingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The origin connector configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOriginConnectorConfiguration() const{ return m_originConnectorConfiguration; }
-    inline void SetOriginConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_originConnectorConfiguration = value; }
-    inline void SetOriginConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_originConnectorConfiguration = std::move(value); }
-    inline DescribeConnectorOperationResult& WithOriginConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetOriginConnectorConfiguration(value); return *this;}
-    inline DescribeConnectorOperationResult& WithOriginConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetOriginConnectorConfiguration(std::move(value)); return *this;}
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(const Aws::String& key, const Aws::String& value) { m_originConnectorConfiguration.emplace(key, value); return *this; }
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(Aws::String&& key, const Aws::String& value) { m_originConnectorConfiguration.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(const Aws::String& key, Aws::String&& value) { m_originConnectorConfiguration.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(Aws::String&& key, Aws::String&& value) { m_originConnectorConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(const char* key, Aws::String&& value) { m_originConnectorConfiguration.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(Aws::String&& key, const char* value) { m_originConnectorConfiguration.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectorOperationResult& AddOriginConnectorConfiguration(const char* key, const char* value) { m_originConnectorConfiguration.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOriginConnectorConfiguration() const { return m_originConnectorConfiguration; }
+    template<typename OriginConnectorConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    void SetOriginConnectorConfiguration(OriginConnectorConfigurationT&& value) { m_originConnectorConfigurationHasBeenSet = true; m_originConnectorConfiguration = std::forward<OriginConnectorConfigurationT>(value); }
+    template<typename OriginConnectorConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    DescribeConnectorOperationResult& WithOriginConnectorConfiguration(OriginConnectorConfigurationT&& value) { SetOriginConnectorConfiguration(std::forward<OriginConnectorConfigurationT>(value)); return *this;}
+    template<typename OriginConnectorConfigurationKeyT = Aws::String, typename OriginConnectorConfigurationValueT = Aws::String>
+    DescribeConnectorOperationResult& AddOriginConnectorConfiguration(OriginConnectorConfigurationKeyT&& key, OriginConnectorConfigurationValueT&& value) {
+      m_originConnectorConfigurationHasBeenSet = true; m_originConnectorConfiguration.emplace(std::forward<OriginConnectorConfigurationKeyT>(key), std::forward<OriginConnectorConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The target worker setting.</p>
      */
-    inline const WorkerSetting& GetTargetWorkerSetting() const{ return m_targetWorkerSetting; }
-    inline void SetTargetWorkerSetting(const WorkerSetting& value) { m_targetWorkerSetting = value; }
-    inline void SetTargetWorkerSetting(WorkerSetting&& value) { m_targetWorkerSetting = std::move(value); }
-    inline DescribeConnectorOperationResult& WithTargetWorkerSetting(const WorkerSetting& value) { SetTargetWorkerSetting(value); return *this;}
-    inline DescribeConnectorOperationResult& WithTargetWorkerSetting(WorkerSetting&& value) { SetTargetWorkerSetting(std::move(value)); return *this;}
+    inline const WorkerSetting& GetTargetWorkerSetting() const { return m_targetWorkerSetting; }
+    template<typename TargetWorkerSettingT = WorkerSetting>
+    void SetTargetWorkerSetting(TargetWorkerSettingT&& value) { m_targetWorkerSettingHasBeenSet = true; m_targetWorkerSetting = std::forward<TargetWorkerSettingT>(value); }
+    template<typename TargetWorkerSettingT = WorkerSetting>
+    DescribeConnectorOperationResult& WithTargetWorkerSetting(TargetWorkerSettingT&& value) { SetTargetWorkerSetting(std::forward<TargetWorkerSettingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target connector configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTargetConnectorConfiguration() const{ return m_targetConnectorConfiguration; }
-    inline void SetTargetConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_targetConnectorConfiguration = value; }
-    inline void SetTargetConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_targetConnectorConfiguration = std::move(value); }
-    inline DescribeConnectorOperationResult& WithTargetConnectorConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetTargetConnectorConfiguration(value); return *this;}
-    inline DescribeConnectorOperationResult& WithTargetConnectorConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetTargetConnectorConfiguration(std::move(value)); return *this;}
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(const Aws::String& key, const Aws::String& value) { m_targetConnectorConfiguration.emplace(key, value); return *this; }
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(Aws::String&& key, const Aws::String& value) { m_targetConnectorConfiguration.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(const Aws::String& key, Aws::String&& value) { m_targetConnectorConfiguration.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(Aws::String&& key, Aws::String&& value) { m_targetConnectorConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(const char* key, Aws::String&& value) { m_targetConnectorConfiguration.emplace(key, std::move(value)); return *this; }
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(Aws::String&& key, const char* value) { m_targetConnectorConfiguration.emplace(std::move(key), value); return *this; }
-    inline DescribeConnectorOperationResult& AddTargetConnectorConfiguration(const char* key, const char* value) { m_targetConnectorConfiguration.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTargetConnectorConfiguration() const { return m_targetConnectorConfiguration; }
+    template<typename TargetConnectorConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    void SetTargetConnectorConfiguration(TargetConnectorConfigurationT&& value) { m_targetConnectorConfigurationHasBeenSet = true; m_targetConnectorConfiguration = std::forward<TargetConnectorConfigurationT>(value); }
+    template<typename TargetConnectorConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    DescribeConnectorOperationResult& WithTargetConnectorConfiguration(TargetConnectorConfigurationT&& value) { SetTargetConnectorConfiguration(std::forward<TargetConnectorConfigurationT>(value)); return *this;}
+    template<typename TargetConnectorConfigurationKeyT = Aws::String, typename TargetConnectorConfigurationValueT = Aws::String>
+    DescribeConnectorOperationResult& AddTargetConnectorConfiguration(TargetConnectorConfigurationKeyT&& key, TargetConnectorConfigurationValueT&& value) {
+      m_targetConnectorConfigurationHasBeenSet = true; m_targetConnectorConfiguration.emplace(std::forward<TargetConnectorConfigurationKeyT>(key), std::forward<TargetConnectorConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const StateDescription& GetErrorInfo() const{ return m_errorInfo; }
-    inline void SetErrorInfo(const StateDescription& value) { m_errorInfo = value; }
-    inline void SetErrorInfo(StateDescription&& value) { m_errorInfo = std::move(value); }
-    inline DescribeConnectorOperationResult& WithErrorInfo(const StateDescription& value) { SetErrorInfo(value); return *this;}
-    inline DescribeConnectorOperationResult& WithErrorInfo(StateDescription&& value) { SetErrorInfo(std::move(value)); return *this;}
+    inline const StateDescription& GetErrorInfo() const { return m_errorInfo; }
+    template<typename ErrorInfoT = StateDescription>
+    void SetErrorInfo(ErrorInfoT&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::forward<ErrorInfoT>(value); }
+    template<typename ErrorInfoT = StateDescription>
+    DescribeConnectorOperationResult& WithErrorInfo(ErrorInfoT&& value) { SetErrorInfo(std::forward<ErrorInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the operation was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeConnectorOperationResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeConnectorOperationResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeConnectorOperationResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the operation ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline DescribeConnectorOperationResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline DescribeConnectorOperationResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    DescribeConnectorOperationResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConnectorOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConnectorOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConnectorOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConnectorOperationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectorArn;
+    bool m_connectorArnHasBeenSet = false;
 
     Aws::String m_connectorOperationArn;
+    bool m_connectorOperationArnHasBeenSet = false;
 
-    ConnectorOperationState m_connectorOperationState;
+    ConnectorOperationState m_connectorOperationState{ConnectorOperationState::NOT_SET};
+    bool m_connectorOperationStateHasBeenSet = false;
 
-    ConnectorOperationType m_connectorOperationType;
+    ConnectorOperationType m_connectorOperationType{ConnectorOperationType::NOT_SET};
+    bool m_connectorOperationTypeHasBeenSet = false;
 
     Aws::Vector<ConnectorOperationStep> m_operationSteps;
+    bool m_operationStepsHasBeenSet = false;
 
     WorkerSetting m_originWorkerSetting;
+    bool m_originWorkerSettingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_originConnectorConfiguration;
+    bool m_originConnectorConfigurationHasBeenSet = false;
 
     WorkerSetting m_targetWorkerSetting;
+    bool m_targetWorkerSettingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_targetConnectorConfiguration;
+    bool m_targetConnectorConfigurationHasBeenSet = false;
 
     StateDescription m_errorInfo;
+    bool m_errorInfoHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

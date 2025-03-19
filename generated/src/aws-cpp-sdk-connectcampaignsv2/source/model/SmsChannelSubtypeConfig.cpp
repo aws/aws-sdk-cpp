@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-SmsChannelSubtypeConfig::SmsChannelSubtypeConfig() : 
-    m_capacity(0.0),
-    m_capacityHasBeenSet(false),
-    m_outboundModeHasBeenSet(false),
-    m_defaultOutboundConfigHasBeenSet(false)
-{
-}
-
 SmsChannelSubtypeConfig::SmsChannelSubtypeConfig(JsonView jsonValue)
-  : SmsChannelSubtypeConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SmsChannelSubtypeConfig& SmsChannelSubtypeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("capacity"))
   {
     m_capacity = jsonValue.GetDouble("capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outboundMode"))
   {
     m_outboundMode = jsonValue.GetObject("outboundMode");
-
     m_outboundModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultOutboundConfig"))
   {
     m_defaultOutboundConfig = jsonValue.GetObject("defaultOutboundConfig");
-
     m_defaultOutboundConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

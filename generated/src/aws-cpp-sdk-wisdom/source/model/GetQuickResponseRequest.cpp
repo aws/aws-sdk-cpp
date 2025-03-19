@@ -12,12 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQuickResponseRequest::GetQuickResponseRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_quickResponseIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQuickResponseRequest::SerializePayload() const
 {
   return {};

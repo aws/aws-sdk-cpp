@@ -18,25 +18,7 @@ namespace EKS
 namespace Model
 {
 
-OidcIdentityProviderConfig::OidcIdentityProviderConfig() : 
-    m_identityProviderConfigNameHasBeenSet(false),
-    m_identityProviderConfigArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_issuerUrlHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_usernameClaimHasBeenSet(false),
-    m_usernamePrefixHasBeenSet(false),
-    m_groupsClaimHasBeenSet(false),
-    m_groupsPrefixHasBeenSet(false),
-    m_requiredClaimsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_status(ConfigStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OidcIdentityProviderConfig::OidcIdentityProviderConfig(JsonView jsonValue)
-  : OidcIdentityProviderConfig()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ OidcIdentityProviderConfig& OidcIdentityProviderConfig::operator =(JsonView json
   if(jsonValue.ValueExists("identityProviderConfigName"))
   {
     m_identityProviderConfigName = jsonValue.GetString("identityProviderConfigName");
-
     m_identityProviderConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityProviderConfigArn"))
   {
     m_identityProviderConfigArn = jsonValue.GetString("identityProviderConfigArn");
-
     m_identityProviderConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuerUrl"))
   {
     m_issuerUrl = jsonValue.GetString("issuerUrl");
-
     m_issuerUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usernameClaim"))
   {
     m_usernameClaim = jsonValue.GetString("usernameClaim");
-
     m_usernameClaimHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usernamePrefix"))
   {
     m_usernamePrefix = jsonValue.GetString("usernamePrefix");
-
     m_usernamePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupsClaim"))
   {
     m_groupsClaim = jsonValue.GetString("groupsClaim");
-
     m_groupsClaimHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupsPrefix"))
   {
     m_groupsPrefix = jsonValue.GetString("groupsPrefix");
-
     m_groupsPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requiredClaims"))
   {
     Aws::Map<Aws::String, JsonView> requiredClaimsJsonMap = jsonValue.GetObject("requiredClaims").GetAllObjects();
@@ -115,7 +79,6 @@ OidcIdentityProviderConfig& OidcIdentityProviderConfig::operator =(JsonView json
     }
     m_requiredClaimsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -125,14 +88,11 @@ OidcIdentityProviderConfig& OidcIdentityProviderConfig::operator =(JsonView json
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConfigStatusMapper::GetConfigStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

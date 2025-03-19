@@ -34,7 +34,7 @@ namespace Model
   class StopRunResult
   {
   public:
-    AWS_DEVICEFARM_API StopRunResult();
+    AWS_DEVICEFARM_API StopRunResult() = default;
     AWS_DEVICEFARM_API StopRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API StopRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The run that was stopped.</p>
      */
-    inline const Run& GetRun() const{ return m_run; }
-    inline void SetRun(const Run& value) { m_run = value; }
-    inline void SetRun(Run&& value) { m_run = std::move(value); }
-    inline StopRunResult& WithRun(const Run& value) { SetRun(value); return *this;}
-    inline StopRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
+    inline const Run& GetRun() const { return m_run; }
+    template<typename RunT = Run>
+    void SetRun(RunT&& value) { m_runHasBeenSet = true; m_run = std::forward<RunT>(value); }
+    template<typename RunT = Run>
+    StopRunResult& WithRun(RunT&& value) { SetRun(std::forward<RunT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Run m_run;
+    bool m_runHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

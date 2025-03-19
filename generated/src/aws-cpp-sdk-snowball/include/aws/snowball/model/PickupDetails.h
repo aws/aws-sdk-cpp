@@ -33,7 +33,7 @@ namespace Model
   class PickupDetails
   {
   public:
-    AWS_SNOWBALL_API PickupDetails();
+    AWS_SNOWBALL_API PickupDetails() = default;
     AWS_SNOWBALL_API PickupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API PickupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The name of the person picking up the device.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PickupDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PickupDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PickupDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PickupDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phone number of the person picking up the device.</p>
      */
-    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+    inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-    inline PickupDetails& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-    inline PickupDetails& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-    inline PickupDetails& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    template<typename PhoneNumberT = Aws::String>
+    void SetPhoneNumber(PhoneNumberT&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::forward<PhoneNumberT>(value); }
+    template<typename PhoneNumberT = Aws::String>
+    PickupDetails& WithPhoneNumber(PhoneNumberT&& value) { SetPhoneNumber(std::forward<PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address of the person picking up the device.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline PickupDetails& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline PickupDetails& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline PickupDetails& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    PickupDetails& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <p>The number on the credential identifying the person picking up the
      * device.</p>
      */
-    inline const Aws::String& GetIdentificationNumber() const{ return m_identificationNumber; }
+    inline const Aws::String& GetIdentificationNumber() const { return m_identificationNumber; }
     inline bool IdentificationNumberHasBeenSet() const { return m_identificationNumberHasBeenSet; }
-    inline void SetIdentificationNumber(const Aws::String& value) { m_identificationNumberHasBeenSet = true; m_identificationNumber = value; }
-    inline void SetIdentificationNumber(Aws::String&& value) { m_identificationNumberHasBeenSet = true; m_identificationNumber = std::move(value); }
-    inline void SetIdentificationNumber(const char* value) { m_identificationNumberHasBeenSet = true; m_identificationNumber.assign(value); }
-    inline PickupDetails& WithIdentificationNumber(const Aws::String& value) { SetIdentificationNumber(value); return *this;}
-    inline PickupDetails& WithIdentificationNumber(Aws::String&& value) { SetIdentificationNumber(std::move(value)); return *this;}
-    inline PickupDetails& WithIdentificationNumber(const char* value) { SetIdentificationNumber(value); return *this;}
+    template<typename IdentificationNumberT = Aws::String>
+    void SetIdentificationNumber(IdentificationNumberT&& value) { m_identificationNumberHasBeenSet = true; m_identificationNumber = std::forward<IdentificationNumberT>(value); }
+    template<typename IdentificationNumberT = Aws::String>
+    PickupDetails& WithIdentificationNumber(IdentificationNumberT&& value) { SetIdentificationNumber(std::forward<IdentificationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +93,12 @@ namespace Model
      * <p>Expiration date of the credential identifying the person picking up the
      * device.</p>
      */
-    inline const Aws::Utils::DateTime& GetIdentificationExpirationDate() const{ return m_identificationExpirationDate; }
+    inline const Aws::Utils::DateTime& GetIdentificationExpirationDate() const { return m_identificationExpirationDate; }
     inline bool IdentificationExpirationDateHasBeenSet() const { return m_identificationExpirationDateHasBeenSet; }
-    inline void SetIdentificationExpirationDate(const Aws::Utils::DateTime& value) { m_identificationExpirationDateHasBeenSet = true; m_identificationExpirationDate = value; }
-    inline void SetIdentificationExpirationDate(Aws::Utils::DateTime&& value) { m_identificationExpirationDateHasBeenSet = true; m_identificationExpirationDate = std::move(value); }
-    inline PickupDetails& WithIdentificationExpirationDate(const Aws::Utils::DateTime& value) { SetIdentificationExpirationDate(value); return *this;}
-    inline PickupDetails& WithIdentificationExpirationDate(Aws::Utils::DateTime&& value) { SetIdentificationExpirationDate(std::move(value)); return *this;}
+    template<typename IdentificationExpirationDateT = Aws::Utils::DateTime>
+    void SetIdentificationExpirationDate(IdentificationExpirationDateT&& value) { m_identificationExpirationDateHasBeenSet = true; m_identificationExpirationDate = std::forward<IdentificationExpirationDateT>(value); }
+    template<typename IdentificationExpirationDateT = Aws::Utils::DateTime>
+    PickupDetails& WithIdentificationExpirationDate(IdentificationExpirationDateT&& value) { SetIdentificationExpirationDate(std::forward<IdentificationExpirationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,28 +106,24 @@ namespace Model
      * <p>Organization that issued the credential identifying the person picking up the
      * device.</p>
      */
-    inline const Aws::String& GetIdentificationIssuingOrg() const{ return m_identificationIssuingOrg; }
+    inline const Aws::String& GetIdentificationIssuingOrg() const { return m_identificationIssuingOrg; }
     inline bool IdentificationIssuingOrgHasBeenSet() const { return m_identificationIssuingOrgHasBeenSet; }
-    inline void SetIdentificationIssuingOrg(const Aws::String& value) { m_identificationIssuingOrgHasBeenSet = true; m_identificationIssuingOrg = value; }
-    inline void SetIdentificationIssuingOrg(Aws::String&& value) { m_identificationIssuingOrgHasBeenSet = true; m_identificationIssuingOrg = std::move(value); }
-    inline void SetIdentificationIssuingOrg(const char* value) { m_identificationIssuingOrgHasBeenSet = true; m_identificationIssuingOrg.assign(value); }
-    inline PickupDetails& WithIdentificationIssuingOrg(const Aws::String& value) { SetIdentificationIssuingOrg(value); return *this;}
-    inline PickupDetails& WithIdentificationIssuingOrg(Aws::String&& value) { SetIdentificationIssuingOrg(std::move(value)); return *this;}
-    inline PickupDetails& WithIdentificationIssuingOrg(const char* value) { SetIdentificationIssuingOrg(value); return *this;}
+    template<typename IdentificationIssuingOrgT = Aws::String>
+    void SetIdentificationIssuingOrg(IdentificationIssuingOrgT&& value) { m_identificationIssuingOrgHasBeenSet = true; m_identificationIssuingOrg = std::forward<IdentificationIssuingOrgT>(value); }
+    template<typename IdentificationIssuingOrgT = Aws::String>
+    PickupDetails& WithIdentificationIssuingOrg(IdentificationIssuingOrgT&& value) { SetIdentificationIssuingOrg(std::forward<IdentificationIssuingOrgT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID for a device that will be picked up.</p>
      */
-    inline const Aws::String& GetDevicePickupId() const{ return m_devicePickupId; }
+    inline const Aws::String& GetDevicePickupId() const { return m_devicePickupId; }
     inline bool DevicePickupIdHasBeenSet() const { return m_devicePickupIdHasBeenSet; }
-    inline void SetDevicePickupId(const Aws::String& value) { m_devicePickupIdHasBeenSet = true; m_devicePickupId = value; }
-    inline void SetDevicePickupId(Aws::String&& value) { m_devicePickupIdHasBeenSet = true; m_devicePickupId = std::move(value); }
-    inline void SetDevicePickupId(const char* value) { m_devicePickupIdHasBeenSet = true; m_devicePickupId.assign(value); }
-    inline PickupDetails& WithDevicePickupId(const Aws::String& value) { SetDevicePickupId(value); return *this;}
-    inline PickupDetails& WithDevicePickupId(Aws::String&& value) { SetDevicePickupId(std::move(value)); return *this;}
-    inline PickupDetails& WithDevicePickupId(const char* value) { SetDevicePickupId(value); return *this;}
+    template<typename DevicePickupIdT = Aws::String>
+    void SetDevicePickupId(DevicePickupIdT&& value) { m_devicePickupIdHasBeenSet = true; m_devicePickupId = std::forward<DevicePickupIdT>(value); }
+    template<typename DevicePickupIdT = Aws::String>
+    PickupDetails& WithDevicePickupId(DevicePickupIdT&& value) { SetDevicePickupId(std::forward<DevicePickupIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,7 +139,7 @@ namespace Model
     Aws::String m_identificationNumber;
     bool m_identificationNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_identificationExpirationDate;
+    Aws::Utils::DateTime m_identificationExpirationDate{};
     bool m_identificationExpirationDateHasBeenSet = false;
 
     Aws::String m_identificationIssuingOrg;

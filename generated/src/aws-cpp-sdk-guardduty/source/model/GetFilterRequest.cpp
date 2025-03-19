@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFilterRequest::GetFilterRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_filterNameHasBeenSet(false)
-{
-}
-
 Aws::String GetFilterRequest::SerializePayload() const
 {
   return {};

@@ -18,19 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigExportDeliveryInfo::ConfigExportDeliveryInfo() : 
-    m_lastStatus(DeliveryStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_lastAttemptTimeHasBeenSet(false),
-    m_lastSuccessfulTimeHasBeenSet(false),
-    m_nextDeliveryTimeHasBeenSet(false)
-{
-}
-
 ConfigExportDeliveryInfo::ConfigExportDeliveryInfo(JsonView jsonValue)
-  : ConfigExportDeliveryInfo()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ConfigExportDeliveryInfo& ConfigExportDeliveryInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("lastStatus"))
   {
     m_lastStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("lastStatus"));
-
     m_lastStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastErrorCode"))
   {
     m_lastErrorCode = jsonValue.GetString("lastErrorCode");
-
     m_lastErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastErrorMessage"))
   {
     m_lastErrorMessage = jsonValue.GetString("lastErrorMessage");
-
     m_lastErrorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAttemptTime"))
   {
     m_lastAttemptTime = jsonValue.GetDouble("lastAttemptTime");
-
     m_lastAttemptTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSuccessfulTime"))
   {
     m_lastSuccessfulTime = jsonValue.GetDouble("lastSuccessfulTime");
-
     m_lastSuccessfulTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextDeliveryTime"))
   {
     m_nextDeliveryTime = jsonValue.GetDouble("nextDeliveryTime");
-
     m_nextDeliveryTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

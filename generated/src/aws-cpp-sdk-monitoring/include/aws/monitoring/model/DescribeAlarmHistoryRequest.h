@@ -26,7 +26,7 @@ namespace Model
   class DescribeAlarmHistoryRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API DescribeAlarmHistoryRequest();
+    AWS_CLOUDWATCH_API DescribeAlarmHistoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline DescribeAlarmHistoryRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline DescribeAlarmHistoryRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    DescribeAlarmHistoryRequest& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,57 +59,54 @@ namespace Model
      * alarms or composite alarms. If you omit this parameter, only metric alarms are
      * returned.</p>
      */
-    inline const Aws::Vector<AlarmType>& GetAlarmTypes() const{ return m_alarmTypes; }
+    inline const Aws::Vector<AlarmType>& GetAlarmTypes() const { return m_alarmTypes; }
     inline bool AlarmTypesHasBeenSet() const { return m_alarmTypesHasBeenSet; }
-    inline void SetAlarmTypes(const Aws::Vector<AlarmType>& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = value; }
-    inline void SetAlarmTypes(Aws::Vector<AlarmType>&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = std::move(value); }
-    inline DescribeAlarmHistoryRequest& WithAlarmTypes(const Aws::Vector<AlarmType>& value) { SetAlarmTypes(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithAlarmTypes(Aws::Vector<AlarmType>&& value) { SetAlarmTypes(std::move(value)); return *this;}
-    inline DescribeAlarmHistoryRequest& AddAlarmTypes(const AlarmType& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(value); return *this; }
-    inline DescribeAlarmHistoryRequest& AddAlarmTypes(AlarmType&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(std::move(value)); return *this; }
+    template<typename AlarmTypesT = Aws::Vector<AlarmType>>
+    void SetAlarmTypes(AlarmTypesT&& value) { m_alarmTypesHasBeenSet = true; m_alarmTypes = std::forward<AlarmTypesT>(value); }
+    template<typename AlarmTypesT = Aws::Vector<AlarmType>>
+    DescribeAlarmHistoryRequest& WithAlarmTypes(AlarmTypesT&& value) { SetAlarmTypes(std::forward<AlarmTypesT>(value)); return *this;}
+    inline DescribeAlarmHistoryRequest& AddAlarmTypes(AlarmType value) { m_alarmTypesHasBeenSet = true; m_alarmTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of alarm histories to retrieve.</p>
      */
-    inline const HistoryItemType& GetHistoryItemType() const{ return m_historyItemType; }
+    inline HistoryItemType GetHistoryItemType() const { return m_historyItemType; }
     inline bool HistoryItemTypeHasBeenSet() const { return m_historyItemTypeHasBeenSet; }
-    inline void SetHistoryItemType(const HistoryItemType& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
-    inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = std::move(value); }
-    inline DescribeAlarmHistoryRequest& WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(std::move(value)); return *this;}
+    inline void SetHistoryItemType(HistoryItemType value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
+    inline DescribeAlarmHistoryRequest& WithHistoryItemType(HistoryItemType value) { SetHistoryItemType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The starting date to retrieve alarm history.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline DescribeAlarmHistoryRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    DescribeAlarmHistoryRequest& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ending date to retrieve alarm history.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline DescribeAlarmHistoryRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    DescribeAlarmHistoryRequest& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of alarm history records to retrieve.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeAlarmHistoryRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -122,14 +117,12 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeAlarmHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAlarmHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAlarmHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +132,10 @@ namespace Model
      * first, and specify <code>TimestampAscending</code> to have the oldest history
      * returned first.</p>
      */
-    inline const ScanBy& GetScanBy() const{ return m_scanBy; }
+    inline ScanBy GetScanBy() const { return m_scanBy; }
     inline bool ScanByHasBeenSet() const { return m_scanByHasBeenSet; }
-    inline void SetScanBy(const ScanBy& value) { m_scanByHasBeenSet = true; m_scanBy = value; }
-    inline void SetScanBy(ScanBy&& value) { m_scanByHasBeenSet = true; m_scanBy = std::move(value); }
-    inline DescribeAlarmHistoryRequest& WithScanBy(const ScanBy& value) { SetScanBy(value); return *this;}
-    inline DescribeAlarmHistoryRequest& WithScanBy(ScanBy&& value) { SetScanBy(std::move(value)); return *this;}
+    inline void SetScanBy(ScanBy value) { m_scanByHasBeenSet = true; m_scanBy = value; }
+    inline DescribeAlarmHistoryRequest& WithScanBy(ScanBy value) { SetScanBy(value); return *this;}
     ///@}
   private:
 
@@ -154,22 +145,22 @@ namespace Model
     Aws::Vector<AlarmType> m_alarmTypes;
     bool m_alarmTypesHasBeenSet = false;
 
-    HistoryItemType m_historyItemType;
+    HistoryItemType m_historyItemType{HistoryItemType::NOT_SET};
     bool m_historyItemTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    ScanBy m_scanBy;
+    ScanBy m_scanBy{ScanBy::NOT_SET};
     bool m_scanByHasBeenSet = false;
   };
 

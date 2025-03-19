@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTapeArchivesRequest::DescribeTapeArchivesRequest() : 
-    m_tapeARNsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTapeArchivesRequest::SerializePayload() const
 {
   JsonValue payload;

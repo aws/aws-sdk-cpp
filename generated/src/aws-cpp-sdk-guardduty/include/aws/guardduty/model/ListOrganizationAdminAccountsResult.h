@@ -29,7 +29,7 @@ namespace Model
   class ListOrganizationAdminAccountsResult
   {
   public:
-    AWS_GUARDDUTY_API ListOrganizationAdminAccountsResult();
+    AWS_GUARDDUTY_API ListOrganizationAdminAccountsResult() = default;
     AWS_GUARDDUTY_API ListOrganizationAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API ListOrganizationAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of accounts configured as GuardDuty delegated administrators.</p>
      */
-    inline const Aws::Vector<AdminAccount>& GetAdminAccounts() const{ return m_adminAccounts; }
-    inline void SetAdminAccounts(const Aws::Vector<AdminAccount>& value) { m_adminAccounts = value; }
-    inline void SetAdminAccounts(Aws::Vector<AdminAccount>&& value) { m_adminAccounts = std::move(value); }
-    inline ListOrganizationAdminAccountsResult& WithAdminAccounts(const Aws::Vector<AdminAccount>& value) { SetAdminAccounts(value); return *this;}
-    inline ListOrganizationAdminAccountsResult& WithAdminAccounts(Aws::Vector<AdminAccount>&& value) { SetAdminAccounts(std::move(value)); return *this;}
-    inline ListOrganizationAdminAccountsResult& AddAdminAccounts(const AdminAccount& value) { m_adminAccounts.push_back(value); return *this; }
-    inline ListOrganizationAdminAccountsResult& AddAdminAccounts(AdminAccount&& value) { m_adminAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AdminAccount>& GetAdminAccounts() const { return m_adminAccounts; }
+    template<typename AdminAccountsT = Aws::Vector<AdminAccount>>
+    void SetAdminAccounts(AdminAccountsT&& value) { m_adminAccountsHasBeenSet = true; m_adminAccounts = std::forward<AdminAccountsT>(value); }
+    template<typename AdminAccountsT = Aws::Vector<AdminAccount>>
+    ListOrganizationAdminAccountsResult& WithAdminAccounts(AdminAccountsT&& value) { SetAdminAccounts(std::forward<AdminAccountsT>(value)); return *this;}
+    template<typename AdminAccountsT = AdminAccount>
+    ListOrganizationAdminAccountsResult& AddAdminAccounts(AdminAccountsT&& value) { m_adminAccountsHasBeenSet = true; m_adminAccounts.emplace_back(std::forward<AdminAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination parameter to be used on the next list operation to retrieve
      * more items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOrganizationAdminAccountsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOrganizationAdminAccountsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOrganizationAdminAccountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOrganizationAdminAccountsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOrganizationAdminAccountsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOrganizationAdminAccountsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOrganizationAdminAccountsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOrganizationAdminAccountsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AdminAccount> m_adminAccounts;
+    bool m_adminAccountsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

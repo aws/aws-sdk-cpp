@@ -33,7 +33,7 @@ namespace Model
   class VdmOptions
   {
   public:
-    AWS_SESV2_API VdmOptions();
+    AWS_SESV2_API VdmOptions() = default;
     AWS_SESV2_API VdmOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API VdmOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Specifies additional settings for your VDM configuration as applicable to the
      * Dashboard.</p>
      */
-    inline const DashboardOptions& GetDashboardOptions() const{ return m_dashboardOptions; }
+    inline const DashboardOptions& GetDashboardOptions() const { return m_dashboardOptions; }
     inline bool DashboardOptionsHasBeenSet() const { return m_dashboardOptionsHasBeenSet; }
-    inline void SetDashboardOptions(const DashboardOptions& value) { m_dashboardOptionsHasBeenSet = true; m_dashboardOptions = value; }
-    inline void SetDashboardOptions(DashboardOptions&& value) { m_dashboardOptionsHasBeenSet = true; m_dashboardOptions = std::move(value); }
-    inline VdmOptions& WithDashboardOptions(const DashboardOptions& value) { SetDashboardOptions(value); return *this;}
-    inline VdmOptions& WithDashboardOptions(DashboardOptions&& value) { SetDashboardOptions(std::move(value)); return *this;}
+    template<typename DashboardOptionsT = DashboardOptions>
+    void SetDashboardOptions(DashboardOptionsT&& value) { m_dashboardOptionsHasBeenSet = true; m_dashboardOptions = std::forward<DashboardOptionsT>(value); }
+    template<typename DashboardOptionsT = DashboardOptions>
+    VdmOptions& WithDashboardOptions(DashboardOptionsT&& value) { SetDashboardOptions(std::forward<DashboardOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Specifies additional settings for your VDM configuration as applicable to the
      * Guardian.</p>
      */
-    inline const GuardianOptions& GetGuardianOptions() const{ return m_guardianOptions; }
+    inline const GuardianOptions& GetGuardianOptions() const { return m_guardianOptions; }
     inline bool GuardianOptionsHasBeenSet() const { return m_guardianOptionsHasBeenSet; }
-    inline void SetGuardianOptions(const GuardianOptions& value) { m_guardianOptionsHasBeenSet = true; m_guardianOptions = value; }
-    inline void SetGuardianOptions(GuardianOptions&& value) { m_guardianOptionsHasBeenSet = true; m_guardianOptions = std::move(value); }
-    inline VdmOptions& WithGuardianOptions(const GuardianOptions& value) { SetGuardianOptions(value); return *this;}
-    inline VdmOptions& WithGuardianOptions(GuardianOptions&& value) { SetGuardianOptions(std::move(value)); return *this;}
+    template<typename GuardianOptionsT = GuardianOptions>
+    void SetGuardianOptions(GuardianOptionsT&& value) { m_guardianOptionsHasBeenSet = true; m_guardianOptions = std::forward<GuardianOptionsT>(value); }
+    template<typename GuardianOptionsT = GuardianOptions>
+    VdmOptions& WithGuardianOptions(GuardianOptionsT&& value) { SetGuardianOptions(std::forward<GuardianOptionsT>(value)); return *this;}
     ///@}
   private:
 

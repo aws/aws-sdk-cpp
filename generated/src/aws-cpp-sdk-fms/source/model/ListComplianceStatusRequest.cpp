@@ -12,14 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListComplianceStatusRequest::ListComplianceStatusRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListComplianceStatusRequest::SerializePayload() const
 {
   JsonValue payload;

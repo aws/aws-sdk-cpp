@@ -34,7 +34,7 @@ namespace Model
   class DestinationTableConfiguration
   {
   public:
-    AWS_FIREHOSE_API DestinationTableConfiguration();
+    AWS_FIREHOSE_API DestinationTableConfiguration() = default;
     AWS_FIREHOSE_API DestinationTableConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DestinationTableConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p> Specifies the name of the Apache Iceberg Table. </p>
      */
-    inline const Aws::String& GetDestinationTableName() const{ return m_destinationTableName; }
+    inline const Aws::String& GetDestinationTableName() const { return m_destinationTableName; }
     inline bool DestinationTableNameHasBeenSet() const { return m_destinationTableNameHasBeenSet; }
-    inline void SetDestinationTableName(const Aws::String& value) { m_destinationTableNameHasBeenSet = true; m_destinationTableName = value; }
-    inline void SetDestinationTableName(Aws::String&& value) { m_destinationTableNameHasBeenSet = true; m_destinationTableName = std::move(value); }
-    inline void SetDestinationTableName(const char* value) { m_destinationTableNameHasBeenSet = true; m_destinationTableName.assign(value); }
-    inline DestinationTableConfiguration& WithDestinationTableName(const Aws::String& value) { SetDestinationTableName(value); return *this;}
-    inline DestinationTableConfiguration& WithDestinationTableName(Aws::String&& value) { SetDestinationTableName(std::move(value)); return *this;}
-    inline DestinationTableConfiguration& WithDestinationTableName(const char* value) { SetDestinationTableName(value); return *this;}
+    template<typename DestinationTableNameT = Aws::String>
+    void SetDestinationTableName(DestinationTableNameT&& value) { m_destinationTableNameHasBeenSet = true; m_destinationTableName = std::forward<DestinationTableNameT>(value); }
+    template<typename DestinationTableNameT = Aws::String>
+    DestinationTableConfiguration& WithDestinationTableName(DestinationTableNameT&& value) { SetDestinationTableName(std::forward<DestinationTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the Apache Iceberg database. </p>
      */
-    inline const Aws::String& GetDestinationDatabaseName() const{ return m_destinationDatabaseName; }
+    inline const Aws::String& GetDestinationDatabaseName() const { return m_destinationDatabaseName; }
     inline bool DestinationDatabaseNameHasBeenSet() const { return m_destinationDatabaseNameHasBeenSet; }
-    inline void SetDestinationDatabaseName(const Aws::String& value) { m_destinationDatabaseNameHasBeenSet = true; m_destinationDatabaseName = value; }
-    inline void SetDestinationDatabaseName(Aws::String&& value) { m_destinationDatabaseNameHasBeenSet = true; m_destinationDatabaseName = std::move(value); }
-    inline void SetDestinationDatabaseName(const char* value) { m_destinationDatabaseNameHasBeenSet = true; m_destinationDatabaseName.assign(value); }
-    inline DestinationTableConfiguration& WithDestinationDatabaseName(const Aws::String& value) { SetDestinationDatabaseName(value); return *this;}
-    inline DestinationTableConfiguration& WithDestinationDatabaseName(Aws::String&& value) { SetDestinationDatabaseName(std::move(value)); return *this;}
-    inline DestinationTableConfiguration& WithDestinationDatabaseName(const char* value) { SetDestinationDatabaseName(value); return *this;}
+    template<typename DestinationDatabaseNameT = Aws::String>
+    void SetDestinationDatabaseName(DestinationDatabaseNameT&& value) { m_destinationDatabaseNameHasBeenSet = true; m_destinationDatabaseName = std::forward<DestinationDatabaseNameT>(value); }
+    template<typename DestinationDatabaseNameT = Aws::String>
+    DestinationTableConfiguration& WithDestinationDatabaseName(DestinationDatabaseNameT&& value) { SetDestinationDatabaseName(std::forward<DestinationDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +70,14 @@ namespace Model
      * these for running Create, Update, or Delete operations on the given Iceberg
      * table. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetUniqueKeys() const{ return m_uniqueKeys; }
+    inline const Aws::Vector<Aws::String>& GetUniqueKeys() const { return m_uniqueKeys; }
     inline bool UniqueKeysHasBeenSet() const { return m_uniqueKeysHasBeenSet; }
-    inline void SetUniqueKeys(const Aws::Vector<Aws::String>& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys = value; }
-    inline void SetUniqueKeys(Aws::Vector<Aws::String>&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys = std::move(value); }
-    inline DestinationTableConfiguration& WithUniqueKeys(const Aws::Vector<Aws::String>& value) { SetUniqueKeys(value); return *this;}
-    inline DestinationTableConfiguration& WithUniqueKeys(Aws::Vector<Aws::String>&& value) { SetUniqueKeys(std::move(value)); return *this;}
-    inline DestinationTableConfiguration& AddUniqueKeys(const Aws::String& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.push_back(value); return *this; }
-    inline DestinationTableConfiguration& AddUniqueKeys(Aws::String&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.push_back(std::move(value)); return *this; }
-    inline DestinationTableConfiguration& AddUniqueKeys(const char* value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.push_back(value); return *this; }
+    template<typename UniqueKeysT = Aws::Vector<Aws::String>>
+    void SetUniqueKeys(UniqueKeysT&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys = std::forward<UniqueKeysT>(value); }
+    template<typename UniqueKeysT = Aws::Vector<Aws::String>>
+    DestinationTableConfiguration& WithUniqueKeys(UniqueKeysT&& value) { SetUniqueKeys(std::forward<UniqueKeysT>(value)); return *this;}
+    template<typename UniqueKeysT = Aws::String>
+    DestinationTableConfiguration& AddUniqueKeys(UniqueKeysT&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.emplace_back(std::forward<UniqueKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,12 +86,12 @@ namespace Model
      * creation.</p> <p>Amazon Data Firehose is in preview release and is subject to
      * change.</p>
      */
-    inline const PartitionSpec& GetPartitionSpec() const{ return m_partitionSpec; }
+    inline const PartitionSpec& GetPartitionSpec() const { return m_partitionSpec; }
     inline bool PartitionSpecHasBeenSet() const { return m_partitionSpecHasBeenSet; }
-    inline void SetPartitionSpec(const PartitionSpec& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec = value; }
-    inline void SetPartitionSpec(PartitionSpec&& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec = std::move(value); }
-    inline DestinationTableConfiguration& WithPartitionSpec(const PartitionSpec& value) { SetPartitionSpec(value); return *this;}
-    inline DestinationTableConfiguration& WithPartitionSpec(PartitionSpec&& value) { SetPartitionSpec(std::move(value)); return *this;}
+    template<typename PartitionSpecT = PartitionSpec>
+    void SetPartitionSpec(PartitionSpecT&& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec = std::forward<PartitionSpecT>(value); }
+    template<typename PartitionSpecT = PartitionSpec>
+    DestinationTableConfiguration& WithPartitionSpec(PartitionSpecT&& value) { SetPartitionSpec(std::forward<PartitionSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +100,12 @@ namespace Model
      * while delivering to this table will be prefixed with this value in S3
      * destination. </p>
      */
-    inline const Aws::String& GetS3ErrorOutputPrefix() const{ return m_s3ErrorOutputPrefix; }
+    inline const Aws::String& GetS3ErrorOutputPrefix() const { return m_s3ErrorOutputPrefix; }
     inline bool S3ErrorOutputPrefixHasBeenSet() const { return m_s3ErrorOutputPrefixHasBeenSet; }
-    inline void SetS3ErrorOutputPrefix(const Aws::String& value) { m_s3ErrorOutputPrefixHasBeenSet = true; m_s3ErrorOutputPrefix = value; }
-    inline void SetS3ErrorOutputPrefix(Aws::String&& value) { m_s3ErrorOutputPrefixHasBeenSet = true; m_s3ErrorOutputPrefix = std::move(value); }
-    inline void SetS3ErrorOutputPrefix(const char* value) { m_s3ErrorOutputPrefixHasBeenSet = true; m_s3ErrorOutputPrefix.assign(value); }
-    inline DestinationTableConfiguration& WithS3ErrorOutputPrefix(const Aws::String& value) { SetS3ErrorOutputPrefix(value); return *this;}
-    inline DestinationTableConfiguration& WithS3ErrorOutputPrefix(Aws::String&& value) { SetS3ErrorOutputPrefix(std::move(value)); return *this;}
-    inline DestinationTableConfiguration& WithS3ErrorOutputPrefix(const char* value) { SetS3ErrorOutputPrefix(value); return *this;}
+    template<typename S3ErrorOutputPrefixT = Aws::String>
+    void SetS3ErrorOutputPrefix(S3ErrorOutputPrefixT&& value) { m_s3ErrorOutputPrefixHasBeenSet = true; m_s3ErrorOutputPrefix = std::forward<S3ErrorOutputPrefixT>(value); }
+    template<typename S3ErrorOutputPrefixT = Aws::String>
+    DestinationTableConfiguration& WithS3ErrorOutputPrefix(S3ErrorOutputPrefixT&& value) { SetS3ErrorOutputPrefix(std::forward<S3ErrorOutputPrefixT>(value)); return *this;}
     ///@}
   private:
 

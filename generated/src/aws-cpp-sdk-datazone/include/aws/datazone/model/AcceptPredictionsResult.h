@@ -27,7 +27,7 @@ namespace Model
   class AcceptPredictionsResult
   {
   public:
-    AWS_DATAZONE_API AcceptPredictionsResult();
+    AWS_DATAZONE_API AcceptPredictionsResult() = default;
     AWS_DATAZONE_API AcceptPredictionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAZONE_API AcceptPredictionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The ID of the asset.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
-    inline void SetAssetId(const Aws::String& value) { m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetId.assign(value); }
-    inline AcceptPredictionsResult& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline AcceptPredictionsResult& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline AcceptPredictionsResult& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    AcceptPredictionsResult& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon DataZone domain.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline AcceptPredictionsResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline AcceptPredictionsResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline AcceptPredictionsResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    AcceptPredictionsResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision that is to be made to the asset.</p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
-    inline void SetRevision(const Aws::String& value) { m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revision.assign(value); }
-    inline AcceptPredictionsResult& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline AcceptPredictionsResult& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline AcceptPredictionsResult& WithRevision(const char* value) { SetRevision(value); return *this;}
+    inline const Aws::String& GetRevision() const { return m_revision; }
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    AcceptPredictionsResult& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AcceptPredictionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AcceptPredictionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AcceptPredictionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AcceptPredictionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_assetId;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_revision;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class InvalidTopicReviewedAnswer
   {
   public:
-    AWS_QUICKSIGHT_API InvalidTopicReviewedAnswer();
+    AWS_QUICKSIGHT_API InvalidTopicReviewedAnswer() = default;
     AWS_QUICKSIGHT_API InvalidTopicReviewedAnswer(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API InvalidTopicReviewedAnswer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The answer ID for the <code>InvalidTopicReviewedAnswer</code>.</p>
      */
-    inline const Aws::String& GetAnswerId() const{ return m_answerId; }
+    inline const Aws::String& GetAnswerId() const { return m_answerId; }
     inline bool AnswerIdHasBeenSet() const { return m_answerIdHasBeenSet; }
-    inline void SetAnswerId(const Aws::String& value) { m_answerIdHasBeenSet = true; m_answerId = value; }
-    inline void SetAnswerId(Aws::String&& value) { m_answerIdHasBeenSet = true; m_answerId = std::move(value); }
-    inline void SetAnswerId(const char* value) { m_answerIdHasBeenSet = true; m_answerId.assign(value); }
-    inline InvalidTopicReviewedAnswer& WithAnswerId(const Aws::String& value) { SetAnswerId(value); return *this;}
-    inline InvalidTopicReviewedAnswer& WithAnswerId(Aws::String&& value) { SetAnswerId(std::move(value)); return *this;}
-    inline InvalidTopicReviewedAnswer& WithAnswerId(const char* value) { SetAnswerId(value); return *this;}
+    template<typename AnswerIdT = Aws::String>
+    void SetAnswerId(AnswerIdT&& value) { m_answerIdHasBeenSet = true; m_answerId = std::forward<AnswerIdT>(value); }
+    template<typename AnswerIdT = Aws::String>
+    InvalidTopicReviewedAnswer& WithAnswerId(AnswerIdT&& value) { SetAnswerId(std::forward<AnswerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The error that is returned for the
      * <code>InvalidTopicReviewedAnswer</code>.</p>
      */
-    inline const ReviewedAnswerErrorCode& GetError() const{ return m_error; }
+    inline ReviewedAnswerErrorCode GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ReviewedAnswerErrorCode& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ReviewedAnswerErrorCode&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline InvalidTopicReviewedAnswer& WithError(const ReviewedAnswerErrorCode& value) { SetError(value); return *this;}
-    inline InvalidTopicReviewedAnswer& WithError(ReviewedAnswerErrorCode&& value) { SetError(std::move(value)); return *this;}
+    inline void SetError(ReviewedAnswerErrorCode value) { m_errorHasBeenSet = true; m_error = value; }
+    inline InvalidTopicReviewedAnswer& WithError(ReviewedAnswerErrorCode value) { SetError(value); return *this;}
     ///@}
   private:
 
     Aws::String m_answerId;
     bool m_answerIdHasBeenSet = false;
 
-    ReviewedAnswerErrorCode m_error;
+    ReviewedAnswerErrorCode m_error{ReviewedAnswerErrorCode::NOT_SET};
     bool m_errorHasBeenSet = false;
   };
 

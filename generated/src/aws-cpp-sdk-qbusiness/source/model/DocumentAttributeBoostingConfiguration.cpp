@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration() : 
-    m_numberConfigurationHasBeenSet(false),
-    m_stringConfigurationHasBeenSet(false),
-    m_dateConfigurationHasBeenSet(false),
-    m_stringListConfigurationHasBeenSet(false)
-{
-}
-
 DocumentAttributeBoostingConfiguration::DocumentAttributeBoostingConfiguration(JsonView jsonValue)
-  : DocumentAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DocumentAttributeBoostingConfiguration& DocumentAttributeBoostingConfiguration::
   if(jsonValue.ValueExists("numberConfiguration"))
   {
     m_numberConfiguration = jsonValue.GetObject("numberConfiguration");
-
     m_numberConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringConfiguration"))
   {
     m_stringConfiguration = jsonValue.GetObject("stringConfiguration");
-
     m_stringConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateConfiguration"))
   {
     m_dateConfiguration = jsonValue.GetObject("dateConfiguration");
-
     m_dateConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringListConfiguration"))
   {
     m_stringListConfiguration = jsonValue.GetObject("stringListConfiguration");
-
     m_stringListConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

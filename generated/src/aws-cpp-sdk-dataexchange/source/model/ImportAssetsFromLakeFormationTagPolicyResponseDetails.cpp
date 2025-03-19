@@ -18,18 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetsFromLakeFormationTagPolicyResponseDetails::ImportAssetsFromLakeFormationTagPolicyResponseDetails() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 ImportAssetsFromLakeFormationTagPolicyResponseDetails::ImportAssetsFromLakeFormationTagPolicyResponseDetails(JsonView jsonValue)
-  : ImportAssetsFromLakeFormationTagPolicyResponseDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ImportAssetsFromLakeFormationTagPolicyResponseDetails& ImportAssetsFromLakeForma
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetObject("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetObject("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

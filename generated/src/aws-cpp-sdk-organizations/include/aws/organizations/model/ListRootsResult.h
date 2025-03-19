@@ -29,7 +29,7 @@ namespace Model
   class ListRootsResult
   {
   public:
-    AWS_ORGANIZATIONS_API ListRootsResult();
+    AWS_ORGANIZATIONS_API ListRootsResult() = default;
     AWS_ORGANIZATIONS_API ListRootsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API ListRootsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of roots that are defined in an organization.</p>
      */
-    inline const Aws::Vector<Root>& GetRoots() const{ return m_roots; }
-    inline void SetRoots(const Aws::Vector<Root>& value) { m_roots = value; }
-    inline void SetRoots(Aws::Vector<Root>&& value) { m_roots = std::move(value); }
-    inline ListRootsResult& WithRoots(const Aws::Vector<Root>& value) { SetRoots(value); return *this;}
-    inline ListRootsResult& WithRoots(Aws::Vector<Root>&& value) { SetRoots(std::move(value)); return *this;}
-    inline ListRootsResult& AddRoots(const Root& value) { m_roots.push_back(value); return *this; }
-    inline ListRootsResult& AddRoots(Root&& value) { m_roots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Root>& GetRoots() const { return m_roots; }
+    template<typename RootsT = Aws::Vector<Root>>
+    void SetRoots(RootsT&& value) { m_rootsHasBeenSet = true; m_roots = std::forward<RootsT>(value); }
+    template<typename RootsT = Aws::Vector<Root>>
+    ListRootsResult& WithRoots(RootsT&& value) { SetRoots(std::forward<RootsT>(value)); return *this;}
+    template<typename RootsT = Root>
+    ListRootsResult& AddRoots(RootsT&& value) { m_rootsHasBeenSet = true; m_roots.emplace_back(std::forward<RootsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRootsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRootsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRootsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRootsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRootsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRootsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRootsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRootsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Root> m_roots;
+    bool m_rootsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

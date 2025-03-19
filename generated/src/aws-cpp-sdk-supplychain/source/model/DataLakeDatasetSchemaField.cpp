@@ -18,17 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataLakeDatasetSchemaField::DataLakeDatasetSchemaField() : 
-    m_nameHasBeenSet(false),
-    m_type(DataLakeDatasetSchemaFieldType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false)
-{
-}
-
 DataLakeDatasetSchemaField::DataLakeDatasetSchemaField(JsonView jsonValue)
-  : DataLakeDatasetSchemaField()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DataLakeDatasetSchemaField& DataLakeDatasetSchemaField::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DataLakeDatasetSchemaFieldTypeMapper::GetDataLakeDatasetSchemaFieldTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isRequired"))
   {
     m_isRequired = jsonValue.GetBool("isRequired");
-
     m_isRequiredHasBeenSet = true;
   }
-
   return *this;
 }
 

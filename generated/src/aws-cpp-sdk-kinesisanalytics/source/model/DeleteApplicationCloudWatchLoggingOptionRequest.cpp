@@ -12,14 +12,6 @@ using namespace Aws::KinesisAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationCloudWatchLoggingOptionRequest::DeleteApplicationCloudWatchLoggingOptionRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentApplicationVersionId(0),
-    m_currentApplicationVersionIdHasBeenSet(false),
-    m_cloudWatchLoggingOptionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationCloudWatchLoggingOptionRequest::SerializePayload() const
 {
   JsonValue payload;

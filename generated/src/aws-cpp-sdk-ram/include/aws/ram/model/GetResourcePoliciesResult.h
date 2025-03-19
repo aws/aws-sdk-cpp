@@ -28,7 +28,7 @@ namespace Model
   class GetResourcePoliciesResult
   {
   public:
-    AWS_RAM_API GetResourcePoliciesResult();
+    AWS_RAM_API GetResourcePoliciesResult() = default;
     AWS_RAM_API GetResourcePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RAM_API GetResourcePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>An array of resource policy documents in JSON format.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicies() const{ return m_policies; }
-    inline void SetPolicies(const Aws::Vector<Aws::String>& value) { m_policies = value; }
-    inline void SetPolicies(Aws::Vector<Aws::String>&& value) { m_policies = std::move(value); }
-    inline GetResourcePoliciesResult& WithPolicies(const Aws::Vector<Aws::String>& value) { SetPolicies(value); return *this;}
-    inline GetResourcePoliciesResult& WithPolicies(Aws::Vector<Aws::String>&& value) { SetPolicies(std::move(value)); return *this;}
-    inline GetResourcePoliciesResult& AddPolicies(const Aws::String& value) { m_policies.push_back(value); return *this; }
-    inline GetResourcePoliciesResult& AddPolicies(Aws::String&& value) { m_policies.push_back(std::move(value)); return *this; }
-    inline GetResourcePoliciesResult& AddPolicies(const char* value) { m_policies.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPolicies() const { return m_policies; }
+    template<typename PoliciesT = Aws::Vector<Aws::String>>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::Vector<Aws::String>>
+    GetResourcePoliciesResult& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
+    template<typename PoliciesT = Aws::String>
+    GetResourcePoliciesResult& AddPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies.emplace_back(std::forward<PoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +55,31 @@ namespace Model
      * element comes back as <code>null</code>. This indicates that this is the last
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetResourcePoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetResourcePoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetResourcePoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetResourcePoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourcePoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourcePoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourcePoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourcePoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_policies;
+    bool m_policiesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

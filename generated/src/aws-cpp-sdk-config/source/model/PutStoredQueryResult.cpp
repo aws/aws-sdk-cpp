@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutStoredQueryResult::PutStoredQueryResult()
-{
-}
-
 PutStoredQueryResult::PutStoredQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutStoredQueryResult& PutStoredQueryResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("QueryArn"))
   {
     m_queryArn = jsonValue.GetString("QueryArn");
-
+    m_queryArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

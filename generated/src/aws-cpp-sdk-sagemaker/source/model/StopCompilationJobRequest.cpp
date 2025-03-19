@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopCompilationJobRequest::StopCompilationJobRequest() : 
-    m_compilationJobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopCompilationJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateChannelRequest::AssociateChannelRequest() : 
-    m_arnHasBeenSet(false),
-    m_notificationConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateChannelRequest::SerializePayload() const
 {
   JsonValue payload;

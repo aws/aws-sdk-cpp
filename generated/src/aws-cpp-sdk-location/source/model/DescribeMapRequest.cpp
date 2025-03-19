@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMapRequest::DescribeMapRequest() : 
-    m_mapNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMapRequest::SerializePayload() const
 {
   return {};

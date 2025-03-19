@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-RuntimeSessionDataValue::RuntimeSessionDataValue() : 
-    m_stringValueHasBeenSet(false)
-{
-}
-
 RuntimeSessionDataValue::RuntimeSessionDataValue(JsonView jsonValue)
-  : RuntimeSessionDataValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuntimeSessionDataValue& RuntimeSessionDataValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

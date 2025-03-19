@@ -30,7 +30,7 @@ namespace Model
   class EntityRecognizerEvaluationMetrics
   {
   public:
-    AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics();
+    AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics() = default;
     AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * precision means that the recognizer returned substantially more relevant results
      * than irrelevant ones. </p>
      */
-    inline double GetPrecision() const{ return m_precision; }
+    inline double GetPrecision() const { return m_precision; }
     inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }
     inline void SetPrecision(double value) { m_precisionHasBeenSet = true; m_precision = value; }
     inline EntityRecognizerEvaluationMetrics& WithPrecision(double value) { SetPrecision(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
      * <p>A measure of how complete the recognizer results are for the test data. High
      * recall means that the recognizer returned most of the relevant results.</p>
      */
-    inline double GetRecall() const{ return m_recall; }
+    inline double GetRecall() const { return m_recall; }
     inline bool RecallHasBeenSet() const { return m_recallHasBeenSet; }
     inline void SetRecall(double value) { m_recallHasBeenSet = true; m_recall = value; }
     inline EntityRecognizerEvaluationMetrics& WithRecall(double value) { SetRecall(value); return *this;}
@@ -68,20 +68,20 @@ namespace Model
      * For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best
      * score. </p>
      */
-    inline double GetF1Score() const{ return m_f1Score; }
+    inline double GetF1Score() const { return m_f1Score; }
     inline bool F1ScoreHasBeenSet() const { return m_f1ScoreHasBeenSet; }
     inline void SetF1Score(double value) { m_f1ScoreHasBeenSet = true; m_f1Score = value; }
     inline EntityRecognizerEvaluationMetrics& WithF1Score(double value) { SetF1Score(value); return *this;}
     ///@}
   private:
 
-    double m_precision;
+    double m_precision{0.0};
     bool m_precisionHasBeenSet = false;
 
-    double m_recall;
+    double m_recall{0.0};
     bool m_recallHasBeenSet = false;
 
-    double m_f1Score;
+    double m_f1Score{0.0};
     bool m_f1ScoreHasBeenSet = false;
   };
 

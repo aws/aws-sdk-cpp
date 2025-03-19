@@ -28,7 +28,7 @@ namespace Model
   class CreateMatchmakingRuleSetResult
   {
   public:
-    AWS_GAMELIFT_API CreateMatchmakingRuleSetResult();
+    AWS_GAMELIFT_API CreateMatchmakingRuleSetResult() = default;
     AWS_GAMELIFT_API CreateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The newly created matchmaking rule set.</p>
      */
-    inline const MatchmakingRuleSet& GetRuleSet() const{ return m_ruleSet; }
-    inline void SetRuleSet(const MatchmakingRuleSet& value) { m_ruleSet = value; }
-    inline void SetRuleSet(MatchmakingRuleSet&& value) { m_ruleSet = std::move(value); }
-    inline CreateMatchmakingRuleSetResult& WithRuleSet(const MatchmakingRuleSet& value) { SetRuleSet(value); return *this;}
-    inline CreateMatchmakingRuleSetResult& WithRuleSet(MatchmakingRuleSet&& value) { SetRuleSet(std::move(value)); return *this;}
+    inline const MatchmakingRuleSet& GetRuleSet() const { return m_ruleSet; }
+    template<typename RuleSetT = MatchmakingRuleSet>
+    void SetRuleSet(RuleSetT&& value) { m_ruleSetHasBeenSet = true; m_ruleSet = std::forward<RuleSetT>(value); }
+    template<typename RuleSetT = MatchmakingRuleSet>
+    CreateMatchmakingRuleSetResult& WithRuleSet(RuleSetT&& value) { SetRuleSet(std::forward<RuleSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMatchmakingRuleSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMatchmakingRuleSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMatchmakingRuleSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMatchmakingRuleSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MatchmakingRuleSet m_ruleSet;
+    bool m_ruleSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

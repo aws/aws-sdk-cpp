@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-TooManyRequests::TooManyRequests() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TooManyRequests::TooManyRequests(JsonView jsonValue)
-  : TooManyRequests()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyRequests& TooManyRequests::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

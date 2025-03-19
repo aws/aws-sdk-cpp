@@ -32,7 +32,7 @@ namespace Model
   class InventoryDeletionSummary
   {
   public:
-    AWS_SSM_API InventoryDeletionSummary();
+    AWS_SSM_API InventoryDeletionSummary() = default;
     AWS_SSM_API InventoryDeletionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InventoryDeletionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The total number of items to delete. This count doesn't change during the
      * delete operation.</p>
      */
-    inline int GetTotalCount() const{ return m_totalCount; }
+    inline int GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(int value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline InventoryDeletionSummary& WithTotalCount(int value) { SetTotalCount(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Remaining number of items to delete.</p>
      */
-    inline int GetRemainingCount() const{ return m_remainingCount; }
+    inline int GetRemainingCount() const { return m_remainingCount; }
     inline bool RemainingCountHasBeenSet() const { return m_remainingCountHasBeenSet; }
     inline void SetRemainingCount(int value) { m_remainingCountHasBeenSet = true; m_remainingCount = value; }
     inline InventoryDeletionSummary& WithRemainingCount(int value) { SetRemainingCount(value); return *this;}
@@ -63,21 +63,21 @@ namespace Model
     /**
      * <p>A list of counts and versions for deleted items.</p>
      */
-    inline const Aws::Vector<InventoryDeletionSummaryItem>& GetSummaryItems() const{ return m_summaryItems; }
+    inline const Aws::Vector<InventoryDeletionSummaryItem>& GetSummaryItems() const { return m_summaryItems; }
     inline bool SummaryItemsHasBeenSet() const { return m_summaryItemsHasBeenSet; }
-    inline void SetSummaryItems(const Aws::Vector<InventoryDeletionSummaryItem>& value) { m_summaryItemsHasBeenSet = true; m_summaryItems = value; }
-    inline void SetSummaryItems(Aws::Vector<InventoryDeletionSummaryItem>&& value) { m_summaryItemsHasBeenSet = true; m_summaryItems = std::move(value); }
-    inline InventoryDeletionSummary& WithSummaryItems(const Aws::Vector<InventoryDeletionSummaryItem>& value) { SetSummaryItems(value); return *this;}
-    inline InventoryDeletionSummary& WithSummaryItems(Aws::Vector<InventoryDeletionSummaryItem>&& value) { SetSummaryItems(std::move(value)); return *this;}
-    inline InventoryDeletionSummary& AddSummaryItems(const InventoryDeletionSummaryItem& value) { m_summaryItemsHasBeenSet = true; m_summaryItems.push_back(value); return *this; }
-    inline InventoryDeletionSummary& AddSummaryItems(InventoryDeletionSummaryItem&& value) { m_summaryItemsHasBeenSet = true; m_summaryItems.push_back(std::move(value)); return *this; }
+    template<typename SummaryItemsT = Aws::Vector<InventoryDeletionSummaryItem>>
+    void SetSummaryItems(SummaryItemsT&& value) { m_summaryItemsHasBeenSet = true; m_summaryItems = std::forward<SummaryItemsT>(value); }
+    template<typename SummaryItemsT = Aws::Vector<InventoryDeletionSummaryItem>>
+    InventoryDeletionSummary& WithSummaryItems(SummaryItemsT&& value) { SetSummaryItems(std::forward<SummaryItemsT>(value)); return *this;}
+    template<typename SummaryItemsT = InventoryDeletionSummaryItem>
+    InventoryDeletionSummary& AddSummaryItems(SummaryItemsT&& value) { m_summaryItemsHasBeenSet = true; m_summaryItems.emplace_back(std::forward<SummaryItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_totalCount;
+    int m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
 
-    int m_remainingCount;
+    int m_remainingCount{0};
     bool m_remainingCountHasBeenSet = false;
 
     Aws::Vector<InventoryDeletionSummaryItem> m_summaryItems;

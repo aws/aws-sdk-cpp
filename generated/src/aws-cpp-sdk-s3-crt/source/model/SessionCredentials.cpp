@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-SessionCredentials::SessionCredentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
-    m_expirationHasBeenSet(false)
-{
-}
-
 SessionCredentials::SessionCredentials(const XmlNode& xmlNode)
-  : SessionCredentials()
 {
   *this = xmlNode;
 }

@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ColumnConfiguration::ColumnConfiguration() : 
-    m_documentIdColumnNameHasBeenSet(false),
-    m_documentDataColumnNameHasBeenSet(false),
-    m_documentTitleColumnNameHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false),
-    m_changeDetectingColumnsHasBeenSet(false)
-{
-}
-
 ColumnConfiguration::ColumnConfiguration(JsonView jsonValue)
-  : ColumnConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ColumnConfiguration& ColumnConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentIdColumnName"))
   {
     m_documentIdColumnName = jsonValue.GetString("DocumentIdColumnName");
-
     m_documentIdColumnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentDataColumnName"))
   {
     m_documentDataColumnName = jsonValue.GetString("DocumentDataColumnName");
-
     m_documentDataColumnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentTitleColumnName"))
   {
     m_documentTitleColumnName = jsonValue.GetString("DocumentTitleColumnName");
-
     m_documentTitleColumnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldMappings"))
   {
     Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
@@ -65,7 +49,6 @@ ColumnConfiguration& ColumnConfiguration::operator =(JsonView jsonValue)
     }
     m_fieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeDetectingColumns"))
   {
     Aws::Utils::Array<JsonView> changeDetectingColumnsJsonList = jsonValue.GetArray("ChangeDetectingColumns");
@@ -75,7 +58,6 @@ ColumnConfiguration& ColumnConfiguration::operator =(JsonView jsonValue)
     }
     m_changeDetectingColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-NetworkFileDefinition::NetworkFileDefinition() : 
-    m_canDbcHasBeenSet(false)
-{
-}
-
 NetworkFileDefinition::NetworkFileDefinition(JsonView jsonValue)
-  : NetworkFileDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkFileDefinition& NetworkFileDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("canDbc"))
   {
     m_canDbc = jsonValue.GetObject("canDbc");
-
     m_canDbcHasBeenSet = true;
   }
-
   return *this;
 }
 

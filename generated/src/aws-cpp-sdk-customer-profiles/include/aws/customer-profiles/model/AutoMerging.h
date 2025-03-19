@@ -33,7 +33,7 @@ namespace Model
   class AutoMerging
   {
   public:
-    AWS_CUSTOMERPROFILES_API AutoMerging();
+    AWS_CUSTOMERPROFILES_API AutoMerging() = default;
     AWS_CUSTOMERPROFILES_API AutoMerging(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API AutoMerging& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The flag that enables the auto-merging of duplicate profiles.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AutoMerging& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -55,12 +55,12 @@ namespace Model
      * profiles meet at least one of the requirements in the matching attributes list,
      * they will be merged.</p>
      */
-    inline const Consolidation& GetConsolidation() const{ return m_consolidation; }
+    inline const Consolidation& GetConsolidation() const { return m_consolidation; }
     inline bool ConsolidationHasBeenSet() const { return m_consolidationHasBeenSet; }
-    inline void SetConsolidation(const Consolidation& value) { m_consolidationHasBeenSet = true; m_consolidation = value; }
-    inline void SetConsolidation(Consolidation&& value) { m_consolidationHasBeenSet = true; m_consolidation = std::move(value); }
-    inline AutoMerging& WithConsolidation(const Consolidation& value) { SetConsolidation(value); return *this;}
-    inline AutoMerging& WithConsolidation(Consolidation&& value) { SetConsolidation(std::move(value)); return *this;}
+    template<typename ConsolidationT = Consolidation>
+    void SetConsolidation(ConsolidationT&& value) { m_consolidationHasBeenSet = true; m_consolidation = std::forward<ConsolidationT>(value); }
+    template<typename ConsolidationT = Consolidation>
+    AutoMerging& WithConsolidation(ConsolidationT&& value) { SetConsolidation(std::forward<ConsolidationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * <code>FirstName</code> and <code>LastName</code> (and that is the matching
      * criteria), which <code>EmailAddress</code> should be used? </p>
      */
-    inline const ConflictResolution& GetConflictResolution() const{ return m_conflictResolution; }
+    inline const ConflictResolution& GetConflictResolution() const { return m_conflictResolution; }
     inline bool ConflictResolutionHasBeenSet() const { return m_conflictResolutionHasBeenSet; }
-    inline void SetConflictResolution(const ConflictResolution& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = value; }
-    inline void SetConflictResolution(ConflictResolution&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::move(value); }
-    inline AutoMerging& WithConflictResolution(const ConflictResolution& value) { SetConflictResolution(value); return *this;}
-    inline AutoMerging& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
+    template<typename ConflictResolutionT = ConflictResolution>
+    void SetConflictResolution(ConflictResolutionT&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::forward<ConflictResolutionT>(value); }
+    template<typename ConflictResolutionT = ConflictResolution>
+    AutoMerging& WithConflictResolution(ConflictResolutionT&& value) { SetConflictResolution(std::forward<ConflictResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +84,14 @@ namespace Model
      * required for profiles within a matching group to be merged during the auto-merge
      * process. A higher score means higher similarity required to merge profiles. </p>
      */
-    inline double GetMinAllowedConfidenceScoreForMerging() const{ return m_minAllowedConfidenceScoreForMerging; }
+    inline double GetMinAllowedConfidenceScoreForMerging() const { return m_minAllowedConfidenceScoreForMerging; }
     inline bool MinAllowedConfidenceScoreForMergingHasBeenSet() const { return m_minAllowedConfidenceScoreForMergingHasBeenSet; }
     inline void SetMinAllowedConfidenceScoreForMerging(double value) { m_minAllowedConfidenceScoreForMergingHasBeenSet = true; m_minAllowedConfidenceScoreForMerging = value; }
     inline AutoMerging& WithMinAllowedConfidenceScoreForMerging(double value) { SetMinAllowedConfidenceScoreForMerging(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Consolidation m_consolidation;
@@ -100,7 +100,7 @@ namespace Model
     ConflictResolution m_conflictResolution;
     bool m_conflictResolutionHasBeenSet = false;
 
-    double m_minAllowedConfidenceScoreForMerging;
+    double m_minAllowedConfidenceScoreForMerging{0.0};
     bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 

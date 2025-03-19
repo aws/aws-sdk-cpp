@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-ParallelDataDataLocation::ParallelDataDataLocation() : 
-    m_repositoryTypeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 ParallelDataDataLocation::ParallelDataDataLocation(JsonView jsonValue)
-  : ParallelDataDataLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParallelDataDataLocation& ParallelDataDataLocation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RepositoryType"))
   {
     m_repositoryType = jsonValue.GetString("RepositoryType");
-
     m_repositoryTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

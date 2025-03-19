@@ -12,14 +12,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListManagedSchemaArnsRequest::ListManagedSchemaArnsRequest() : 
-    m_schemaArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListManagedSchemaArnsRequest::SerializePayload() const
 {
   JsonValue payload;

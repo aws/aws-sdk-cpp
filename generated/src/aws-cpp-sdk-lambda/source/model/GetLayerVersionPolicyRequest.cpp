@@ -12,13 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLayerVersionPolicyRequest::GetLayerVersionPolicyRequest() : 
-    m_layerNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetLayerVersionPolicyRequest::SerializePayload() const
 {
   return {};

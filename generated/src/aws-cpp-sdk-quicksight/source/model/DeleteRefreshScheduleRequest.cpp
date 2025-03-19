@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRefreshScheduleRequest::DeleteRefreshScheduleRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRefreshScheduleRequest::SerializePayload() const
 {
   return {};

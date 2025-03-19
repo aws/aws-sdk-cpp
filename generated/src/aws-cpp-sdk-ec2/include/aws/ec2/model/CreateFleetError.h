@@ -34,7 +34,7 @@ namespace Model
   class CreateFleetError
   {
   public:
-    AWS_EC2_API CreateFleetError();
+    AWS_EC2_API CreateFleetError() = default;
     AWS_EC2_API CreateFleetError(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CreateFleetError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,12 +48,12 @@ namespace Model
      * instances. The values that you specify in the Overrides replace the values in
      * the launch template.</p>
      */
-    inline const LaunchTemplateAndOverridesResponse& GetLaunchTemplateAndOverrides() const{ return m_launchTemplateAndOverrides; }
+    inline const LaunchTemplateAndOverridesResponse& GetLaunchTemplateAndOverrides() const { return m_launchTemplateAndOverrides; }
     inline bool LaunchTemplateAndOverridesHasBeenSet() const { return m_launchTemplateAndOverridesHasBeenSet; }
-    inline void SetLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = value; }
-    inline void SetLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse&& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = std::move(value); }
-    inline CreateFleetError& WithLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { SetLaunchTemplateAndOverrides(value); return *this;}
-    inline CreateFleetError& WithLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse&& value) { SetLaunchTemplateAndOverrides(std::move(value)); return *this;}
+    template<typename LaunchTemplateAndOverridesT = LaunchTemplateAndOverridesResponse>
+    void SetLaunchTemplateAndOverrides(LaunchTemplateAndOverridesT&& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = std::forward<LaunchTemplateAndOverridesT>(value); }
+    template<typename LaunchTemplateAndOverridesT = LaunchTemplateAndOverridesResponse>
+    CreateFleetError& WithLaunchTemplateAndOverrides(LaunchTemplateAndOverridesT&& value) { SetLaunchTemplateAndOverrides(std::forward<LaunchTemplateAndOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,10 @@ namespace Model
      * <p>Indicates if the instance that could not be launched was a Spot Instance or
      * On-Demand Instance.</p>
      */
-    inline const InstanceLifecycle& GetLifecycle() const{ return m_lifecycle; }
+    inline InstanceLifecycle GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const InstanceLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(InstanceLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline CreateFleetError& WithLifecycle(const InstanceLifecycle& value) { SetLifecycle(value); return *this;}
-    inline CreateFleetError& WithLifecycle(InstanceLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline void SetLifecycle(InstanceLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline CreateFleetError& WithLifecycle(InstanceLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline CreateFleetError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline CreateFleetError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline CreateFleetError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    CreateFleetError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,21 +89,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
      * codes</a>.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline CreateFleetError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline CreateFleetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline CreateFleetError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    CreateFleetError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
     LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
     bool m_launchTemplateAndOverridesHasBeenSet = false;
 
-    InstanceLifecycle m_lifecycle;
+    InstanceLifecycle m_lifecycle{InstanceLifecycle::NOT_SET};
     bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_errorCode;

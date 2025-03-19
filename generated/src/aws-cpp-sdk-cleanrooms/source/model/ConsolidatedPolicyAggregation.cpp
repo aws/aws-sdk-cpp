@@ -18,24 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConsolidatedPolicyAggregation::ConsolidatedPolicyAggregation() : 
-    m_aggregateColumnsHasBeenSet(false),
-    m_joinColumnsHasBeenSet(false),
-    m_joinRequired(JoinRequiredOption::NOT_SET),
-    m_joinRequiredHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_dimensionColumnsHasBeenSet(false),
-    m_scalarFunctionsHasBeenSet(false),
-    m_outputConstraintsHasBeenSet(false),
-    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
-    m_additionalAnalysesHasBeenSet(false),
-    m_allowedResultReceiversHasBeenSet(false),
-    m_allowedAdditionalAnalysesHasBeenSet(false)
-{
-}
-
 ConsolidatedPolicyAggregation::ConsolidatedPolicyAggregation(JsonView jsonValue)
-  : ConsolidatedPolicyAggregation()
 {
   *this = jsonValue;
 }
@@ -51,7 +34,6 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_aggregateColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("joinColumns"))
   {
     Aws::Utils::Array<JsonView> joinColumnsJsonList = jsonValue.GetArray("joinColumns");
@@ -61,14 +43,11 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_joinColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("joinRequired"))
   {
     m_joinRequired = JoinRequiredOptionMapper::GetJoinRequiredOptionForName(jsonValue.GetString("joinRequired"));
-
     m_joinRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedJoinOperators"))
   {
     Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
@@ -78,7 +57,6 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_allowedJoinOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensionColumns"))
   {
     Aws::Utils::Array<JsonView> dimensionColumnsJsonList = jsonValue.GetArray("dimensionColumns");
@@ -88,7 +66,6 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_dimensionColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalarFunctions"))
   {
     Aws::Utils::Array<JsonView> scalarFunctionsJsonList = jsonValue.GetArray("scalarFunctions");
@@ -98,7 +75,6 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_scalarFunctionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConstraints"))
   {
     Aws::Utils::Array<JsonView> outputConstraintsJsonList = jsonValue.GetArray("outputConstraints");
@@ -108,14 +84,11 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_outputConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalAnalyses"))
   {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
-
     m_additionalAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedResultReceivers"))
   {
     Aws::Utils::Array<JsonView> allowedResultReceiversJsonList = jsonValue.GetArray("allowedResultReceivers");
@@ -125,7 +98,6 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_allowedResultReceiversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedAdditionalAnalyses"))
   {
     Aws::Utils::Array<JsonView> allowedAdditionalAnalysesJsonList = jsonValue.GetArray("allowedAdditionalAnalyses");
@@ -135,7 +107,6 @@ ConsolidatedPolicyAggregation& ConsolidatedPolicyAggregation::operator =(JsonVie
     }
     m_allowedAdditionalAnalysesHasBeenSet = true;
   }
-
   return *this;
 }
 

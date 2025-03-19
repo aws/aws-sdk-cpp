@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-EmbeddedDestinationSettings::EmbeddedDestinationSettings()
-{
-}
-
 EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;

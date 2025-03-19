@@ -27,7 +27,7 @@ namespace Model
   class CreateGroupCertificateAuthorityResult
   {
   public:
-    AWS_GREENGRASS_API CreateGroupCertificateAuthorityResult();
+    AWS_GREENGRASS_API CreateGroupCertificateAuthorityResult() = default;
     AWS_GREENGRASS_API CreateGroupCertificateAuthorityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API CreateGroupCertificateAuthorityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * The ARN of the group certificate authority.
      */
-    inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
-    inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArn = value; }
-    inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArn = std::move(value); }
-    inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArn.assign(value); }
-    inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
-    inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
-    inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
+    inline const Aws::String& GetGroupCertificateAuthorityArn() const { return m_groupCertificateAuthorityArn; }
+    template<typename GroupCertificateAuthorityArnT = Aws::String>
+    void SetGroupCertificateAuthorityArn(GroupCertificateAuthorityArnT&& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = std::forward<GroupCertificateAuthorityArnT>(value); }
+    template<typename GroupCertificateAuthorityArnT = Aws::String>
+    CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(GroupCertificateAuthorityArnT&& value) { SetGroupCertificateAuthorityArn(std::forward<GroupCertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateGroupCertificateAuthorityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateGroupCertificateAuthorityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateGroupCertificateAuthorityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateGroupCertificateAuthorityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_groupCertificateAuthorityArn;
+    bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

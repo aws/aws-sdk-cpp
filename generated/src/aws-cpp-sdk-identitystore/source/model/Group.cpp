@@ -18,17 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-Group::Group() : 
-    m_groupIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_externalIdsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false)
-{
-}
-
 Group::Group(JsonView jsonValue)
-  : Group()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ Group& Group::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalIds"))
   {
     Aws::Utils::Array<JsonView> externalIdsJsonList = jsonValue.GetArray("ExternalIds");
@@ -58,21 +44,16 @@ Group& Group::operator =(JsonView jsonValue)
     }
     m_externalIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
-
     m_identityStoreIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_usernamePasswordHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(JsonView jsonValue)
-  : Credentials()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Credentials& Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UsernamePassword"))
   {
     m_usernamePassword = jsonValue.GetObject("UsernamePassword");
-
     m_usernamePasswordHasBeenSet = true;
   }
-
   return *this;
 }
 

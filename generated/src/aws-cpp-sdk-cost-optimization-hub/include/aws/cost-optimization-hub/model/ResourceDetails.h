@@ -46,7 +46,7 @@ namespace Model
   class ResourceDetails
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ResourceDetails();
+    AWS_COSTOPTIMIZATIONHUB_API ResourceDetails() = default;
     AWS_COSTOPTIMIZATIONHUB_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,180 +56,180 @@ namespace Model
     /**
      * <p>The Lambda function recommendation details.</p>
      */
-    inline const LambdaFunction& GetLambdaFunction() const{ return m_lambdaFunction; }
+    inline const LambdaFunction& GetLambdaFunction() const { return m_lambdaFunction; }
     inline bool LambdaFunctionHasBeenSet() const { return m_lambdaFunctionHasBeenSet; }
-    inline void SetLambdaFunction(const LambdaFunction& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = value; }
-    inline void SetLambdaFunction(LambdaFunction&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::move(value); }
-    inline ResourceDetails& WithLambdaFunction(const LambdaFunction& value) { SetLambdaFunction(value); return *this;}
-    inline ResourceDetails& WithLambdaFunction(LambdaFunction&& value) { SetLambdaFunction(std::move(value)); return *this;}
+    template<typename LambdaFunctionT = LambdaFunction>
+    void SetLambdaFunction(LambdaFunctionT&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::forward<LambdaFunctionT>(value); }
+    template<typename LambdaFunctionT = LambdaFunction>
+    ResourceDetails& WithLambdaFunction(LambdaFunctionT&& value) { SetLambdaFunction(std::forward<LambdaFunctionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ECS service recommendation details.</p>
      */
-    inline const EcsService& GetEcsService() const{ return m_ecsService; }
+    inline const EcsService& GetEcsService() const { return m_ecsService; }
     inline bool EcsServiceHasBeenSet() const { return m_ecsServiceHasBeenSet; }
-    inline void SetEcsService(const EcsService& value) { m_ecsServiceHasBeenSet = true; m_ecsService = value; }
-    inline void SetEcsService(EcsService&& value) { m_ecsServiceHasBeenSet = true; m_ecsService = std::move(value); }
-    inline ResourceDetails& WithEcsService(const EcsService& value) { SetEcsService(value); return *this;}
-    inline ResourceDetails& WithEcsService(EcsService&& value) { SetEcsService(std::move(value)); return *this;}
+    template<typename EcsServiceT = EcsService>
+    void SetEcsService(EcsServiceT&& value) { m_ecsServiceHasBeenSet = true; m_ecsService = std::forward<EcsServiceT>(value); }
+    template<typename EcsServiceT = EcsService>
+    ResourceDetails& WithEcsService(EcsServiceT&& value) { SetEcsService(std::forward<EcsServiceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The EC2 instance recommendation details.</p>
      */
-    inline const Ec2Instance& GetEc2Instance() const{ return m_ec2Instance; }
+    inline const Ec2Instance& GetEc2Instance() const { return m_ec2Instance; }
     inline bool Ec2InstanceHasBeenSet() const { return m_ec2InstanceHasBeenSet; }
-    inline void SetEc2Instance(const Ec2Instance& value) { m_ec2InstanceHasBeenSet = true; m_ec2Instance = value; }
-    inline void SetEc2Instance(Ec2Instance&& value) { m_ec2InstanceHasBeenSet = true; m_ec2Instance = std::move(value); }
-    inline ResourceDetails& WithEc2Instance(const Ec2Instance& value) { SetEc2Instance(value); return *this;}
-    inline ResourceDetails& WithEc2Instance(Ec2Instance&& value) { SetEc2Instance(std::move(value)); return *this;}
+    template<typename Ec2InstanceT = Ec2Instance>
+    void SetEc2Instance(Ec2InstanceT&& value) { m_ec2InstanceHasBeenSet = true; m_ec2Instance = std::forward<Ec2InstanceT>(value); }
+    template<typename Ec2InstanceT = Ec2Instance>
+    ResourceDetails& WithEc2Instance(Ec2InstanceT&& value) { SetEc2Instance(std::forward<Ec2InstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Elastic Block Store volume recommendation details.</p>
      */
-    inline const EbsVolume& GetEbsVolume() const{ return m_ebsVolume; }
+    inline const EbsVolume& GetEbsVolume() const { return m_ebsVolume; }
     inline bool EbsVolumeHasBeenSet() const { return m_ebsVolumeHasBeenSet; }
-    inline void SetEbsVolume(const EbsVolume& value) { m_ebsVolumeHasBeenSet = true; m_ebsVolume = value; }
-    inline void SetEbsVolume(EbsVolume&& value) { m_ebsVolumeHasBeenSet = true; m_ebsVolume = std::move(value); }
-    inline ResourceDetails& WithEbsVolume(const EbsVolume& value) { SetEbsVolume(value); return *this;}
-    inline ResourceDetails& WithEbsVolume(EbsVolume&& value) { SetEbsVolume(std::move(value)); return *this;}
+    template<typename EbsVolumeT = EbsVolume>
+    void SetEbsVolume(EbsVolumeT&& value) { m_ebsVolumeHasBeenSet = true; m_ebsVolume = std::forward<EbsVolumeT>(value); }
+    template<typename EbsVolumeT = EbsVolume>
+    ResourceDetails& WithEbsVolume(EbsVolumeT&& value) { SetEbsVolume(std::forward<EbsVolumeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The EC2 Auto Scaling group recommendation details.</p>
      */
-    inline const Ec2AutoScalingGroup& GetEc2AutoScalingGroup() const{ return m_ec2AutoScalingGroup; }
+    inline const Ec2AutoScalingGroup& GetEc2AutoScalingGroup() const { return m_ec2AutoScalingGroup; }
     inline bool Ec2AutoScalingGroupHasBeenSet() const { return m_ec2AutoScalingGroupHasBeenSet; }
-    inline void SetEc2AutoScalingGroup(const Ec2AutoScalingGroup& value) { m_ec2AutoScalingGroupHasBeenSet = true; m_ec2AutoScalingGroup = value; }
-    inline void SetEc2AutoScalingGroup(Ec2AutoScalingGroup&& value) { m_ec2AutoScalingGroupHasBeenSet = true; m_ec2AutoScalingGroup = std::move(value); }
-    inline ResourceDetails& WithEc2AutoScalingGroup(const Ec2AutoScalingGroup& value) { SetEc2AutoScalingGroup(value); return *this;}
-    inline ResourceDetails& WithEc2AutoScalingGroup(Ec2AutoScalingGroup&& value) { SetEc2AutoScalingGroup(std::move(value)); return *this;}
+    template<typename Ec2AutoScalingGroupT = Ec2AutoScalingGroup>
+    void SetEc2AutoScalingGroup(Ec2AutoScalingGroupT&& value) { m_ec2AutoScalingGroupHasBeenSet = true; m_ec2AutoScalingGroup = std::forward<Ec2AutoScalingGroupT>(value); }
+    template<typename Ec2AutoScalingGroupT = Ec2AutoScalingGroup>
+    ResourceDetails& WithEc2AutoScalingGroup(Ec2AutoScalingGroupT&& value) { SetEc2AutoScalingGroup(std::forward<Ec2AutoScalingGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The EC2 reserved instances recommendation details.</p>
      */
-    inline const Ec2ReservedInstances& GetEc2ReservedInstances() const{ return m_ec2ReservedInstances; }
+    inline const Ec2ReservedInstances& GetEc2ReservedInstances() const { return m_ec2ReservedInstances; }
     inline bool Ec2ReservedInstancesHasBeenSet() const { return m_ec2ReservedInstancesHasBeenSet; }
-    inline void SetEc2ReservedInstances(const Ec2ReservedInstances& value) { m_ec2ReservedInstancesHasBeenSet = true; m_ec2ReservedInstances = value; }
-    inline void SetEc2ReservedInstances(Ec2ReservedInstances&& value) { m_ec2ReservedInstancesHasBeenSet = true; m_ec2ReservedInstances = std::move(value); }
-    inline ResourceDetails& WithEc2ReservedInstances(const Ec2ReservedInstances& value) { SetEc2ReservedInstances(value); return *this;}
-    inline ResourceDetails& WithEc2ReservedInstances(Ec2ReservedInstances&& value) { SetEc2ReservedInstances(std::move(value)); return *this;}
+    template<typename Ec2ReservedInstancesT = Ec2ReservedInstances>
+    void SetEc2ReservedInstances(Ec2ReservedInstancesT&& value) { m_ec2ReservedInstancesHasBeenSet = true; m_ec2ReservedInstances = std::forward<Ec2ReservedInstancesT>(value); }
+    template<typename Ec2ReservedInstancesT = Ec2ReservedInstances>
+    ResourceDetails& WithEc2ReservedInstances(Ec2ReservedInstancesT&& value) { SetEc2ReservedInstances(std::forward<Ec2ReservedInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The RDS reserved instances recommendation details.</p>
      */
-    inline const RdsReservedInstances& GetRdsReservedInstances() const{ return m_rdsReservedInstances; }
+    inline const RdsReservedInstances& GetRdsReservedInstances() const { return m_rdsReservedInstances; }
     inline bool RdsReservedInstancesHasBeenSet() const { return m_rdsReservedInstancesHasBeenSet; }
-    inline void SetRdsReservedInstances(const RdsReservedInstances& value) { m_rdsReservedInstancesHasBeenSet = true; m_rdsReservedInstances = value; }
-    inline void SetRdsReservedInstances(RdsReservedInstances&& value) { m_rdsReservedInstancesHasBeenSet = true; m_rdsReservedInstances = std::move(value); }
-    inline ResourceDetails& WithRdsReservedInstances(const RdsReservedInstances& value) { SetRdsReservedInstances(value); return *this;}
-    inline ResourceDetails& WithRdsReservedInstances(RdsReservedInstances&& value) { SetRdsReservedInstances(std::move(value)); return *this;}
+    template<typename RdsReservedInstancesT = RdsReservedInstances>
+    void SetRdsReservedInstances(RdsReservedInstancesT&& value) { m_rdsReservedInstancesHasBeenSet = true; m_rdsReservedInstances = std::forward<RdsReservedInstancesT>(value); }
+    template<typename RdsReservedInstancesT = RdsReservedInstances>
+    ResourceDetails& WithRdsReservedInstances(RdsReservedInstancesT&& value) { SetRdsReservedInstances(std::forward<RdsReservedInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ElastiCache reserved instances recommendation details.</p>
      */
-    inline const ElastiCacheReservedInstances& GetElastiCacheReservedInstances() const{ return m_elastiCacheReservedInstances; }
+    inline const ElastiCacheReservedInstances& GetElastiCacheReservedInstances() const { return m_elastiCacheReservedInstances; }
     inline bool ElastiCacheReservedInstancesHasBeenSet() const { return m_elastiCacheReservedInstancesHasBeenSet; }
-    inline void SetElastiCacheReservedInstances(const ElastiCacheReservedInstances& value) { m_elastiCacheReservedInstancesHasBeenSet = true; m_elastiCacheReservedInstances = value; }
-    inline void SetElastiCacheReservedInstances(ElastiCacheReservedInstances&& value) { m_elastiCacheReservedInstancesHasBeenSet = true; m_elastiCacheReservedInstances = std::move(value); }
-    inline ResourceDetails& WithElastiCacheReservedInstances(const ElastiCacheReservedInstances& value) { SetElastiCacheReservedInstances(value); return *this;}
-    inline ResourceDetails& WithElastiCacheReservedInstances(ElastiCacheReservedInstances&& value) { SetElastiCacheReservedInstances(std::move(value)); return *this;}
+    template<typename ElastiCacheReservedInstancesT = ElastiCacheReservedInstances>
+    void SetElastiCacheReservedInstances(ElastiCacheReservedInstancesT&& value) { m_elastiCacheReservedInstancesHasBeenSet = true; m_elastiCacheReservedInstances = std::forward<ElastiCacheReservedInstancesT>(value); }
+    template<typename ElastiCacheReservedInstancesT = ElastiCacheReservedInstances>
+    ResourceDetails& WithElastiCacheReservedInstances(ElastiCacheReservedInstancesT&& value) { SetElastiCacheReservedInstances(std::forward<ElastiCacheReservedInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OpenSearch reserved instances recommendation details.</p>
      */
-    inline const OpenSearchReservedInstances& GetOpenSearchReservedInstances() const{ return m_openSearchReservedInstances; }
+    inline const OpenSearchReservedInstances& GetOpenSearchReservedInstances() const { return m_openSearchReservedInstances; }
     inline bool OpenSearchReservedInstancesHasBeenSet() const { return m_openSearchReservedInstancesHasBeenSet; }
-    inline void SetOpenSearchReservedInstances(const OpenSearchReservedInstances& value) { m_openSearchReservedInstancesHasBeenSet = true; m_openSearchReservedInstances = value; }
-    inline void SetOpenSearchReservedInstances(OpenSearchReservedInstances&& value) { m_openSearchReservedInstancesHasBeenSet = true; m_openSearchReservedInstances = std::move(value); }
-    inline ResourceDetails& WithOpenSearchReservedInstances(const OpenSearchReservedInstances& value) { SetOpenSearchReservedInstances(value); return *this;}
-    inline ResourceDetails& WithOpenSearchReservedInstances(OpenSearchReservedInstances&& value) { SetOpenSearchReservedInstances(std::move(value)); return *this;}
+    template<typename OpenSearchReservedInstancesT = OpenSearchReservedInstances>
+    void SetOpenSearchReservedInstances(OpenSearchReservedInstancesT&& value) { m_openSearchReservedInstancesHasBeenSet = true; m_openSearchReservedInstances = std::forward<OpenSearchReservedInstancesT>(value); }
+    template<typename OpenSearchReservedInstancesT = OpenSearchReservedInstances>
+    ResourceDetails& WithOpenSearchReservedInstances(OpenSearchReservedInstancesT&& value) { SetOpenSearchReservedInstances(std::forward<OpenSearchReservedInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Redshift reserved instances recommendation details.</p>
      */
-    inline const RedshiftReservedInstances& GetRedshiftReservedInstances() const{ return m_redshiftReservedInstances; }
+    inline const RedshiftReservedInstances& GetRedshiftReservedInstances() const { return m_redshiftReservedInstances; }
     inline bool RedshiftReservedInstancesHasBeenSet() const { return m_redshiftReservedInstancesHasBeenSet; }
-    inline void SetRedshiftReservedInstances(const RedshiftReservedInstances& value) { m_redshiftReservedInstancesHasBeenSet = true; m_redshiftReservedInstances = value; }
-    inline void SetRedshiftReservedInstances(RedshiftReservedInstances&& value) { m_redshiftReservedInstancesHasBeenSet = true; m_redshiftReservedInstances = std::move(value); }
-    inline ResourceDetails& WithRedshiftReservedInstances(const RedshiftReservedInstances& value) { SetRedshiftReservedInstances(value); return *this;}
-    inline ResourceDetails& WithRedshiftReservedInstances(RedshiftReservedInstances&& value) { SetRedshiftReservedInstances(std::move(value)); return *this;}
+    template<typename RedshiftReservedInstancesT = RedshiftReservedInstances>
+    void SetRedshiftReservedInstances(RedshiftReservedInstancesT&& value) { m_redshiftReservedInstancesHasBeenSet = true; m_redshiftReservedInstances = std::forward<RedshiftReservedInstancesT>(value); }
+    template<typename RedshiftReservedInstancesT = RedshiftReservedInstances>
+    ResourceDetails& WithRedshiftReservedInstances(RedshiftReservedInstancesT&& value) { SetRedshiftReservedInstances(std::forward<RedshiftReservedInstancesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The EC2 instance Savings Plans recommendation details.</p>
      */
-    inline const Ec2InstanceSavingsPlans& GetEc2InstanceSavingsPlans() const{ return m_ec2InstanceSavingsPlans; }
+    inline const Ec2InstanceSavingsPlans& GetEc2InstanceSavingsPlans() const { return m_ec2InstanceSavingsPlans; }
     inline bool Ec2InstanceSavingsPlansHasBeenSet() const { return m_ec2InstanceSavingsPlansHasBeenSet; }
-    inline void SetEc2InstanceSavingsPlans(const Ec2InstanceSavingsPlans& value) { m_ec2InstanceSavingsPlansHasBeenSet = true; m_ec2InstanceSavingsPlans = value; }
-    inline void SetEc2InstanceSavingsPlans(Ec2InstanceSavingsPlans&& value) { m_ec2InstanceSavingsPlansHasBeenSet = true; m_ec2InstanceSavingsPlans = std::move(value); }
-    inline ResourceDetails& WithEc2InstanceSavingsPlans(const Ec2InstanceSavingsPlans& value) { SetEc2InstanceSavingsPlans(value); return *this;}
-    inline ResourceDetails& WithEc2InstanceSavingsPlans(Ec2InstanceSavingsPlans&& value) { SetEc2InstanceSavingsPlans(std::move(value)); return *this;}
+    template<typename Ec2InstanceSavingsPlansT = Ec2InstanceSavingsPlans>
+    void SetEc2InstanceSavingsPlans(Ec2InstanceSavingsPlansT&& value) { m_ec2InstanceSavingsPlansHasBeenSet = true; m_ec2InstanceSavingsPlans = std::forward<Ec2InstanceSavingsPlansT>(value); }
+    template<typename Ec2InstanceSavingsPlansT = Ec2InstanceSavingsPlans>
+    ResourceDetails& WithEc2InstanceSavingsPlans(Ec2InstanceSavingsPlansT&& value) { SetEc2InstanceSavingsPlans(std::forward<Ec2InstanceSavingsPlansT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Compute Savings Plans recommendation details.</p>
      */
-    inline const ComputeSavingsPlans& GetComputeSavingsPlans() const{ return m_computeSavingsPlans; }
+    inline const ComputeSavingsPlans& GetComputeSavingsPlans() const { return m_computeSavingsPlans; }
     inline bool ComputeSavingsPlansHasBeenSet() const { return m_computeSavingsPlansHasBeenSet; }
-    inline void SetComputeSavingsPlans(const ComputeSavingsPlans& value) { m_computeSavingsPlansHasBeenSet = true; m_computeSavingsPlans = value; }
-    inline void SetComputeSavingsPlans(ComputeSavingsPlans&& value) { m_computeSavingsPlansHasBeenSet = true; m_computeSavingsPlans = std::move(value); }
-    inline ResourceDetails& WithComputeSavingsPlans(const ComputeSavingsPlans& value) { SetComputeSavingsPlans(value); return *this;}
-    inline ResourceDetails& WithComputeSavingsPlans(ComputeSavingsPlans&& value) { SetComputeSavingsPlans(std::move(value)); return *this;}
+    template<typename ComputeSavingsPlansT = ComputeSavingsPlans>
+    void SetComputeSavingsPlans(ComputeSavingsPlansT&& value) { m_computeSavingsPlansHasBeenSet = true; m_computeSavingsPlans = std::forward<ComputeSavingsPlansT>(value); }
+    template<typename ComputeSavingsPlansT = ComputeSavingsPlans>
+    ResourceDetails& WithComputeSavingsPlans(ComputeSavingsPlansT&& value) { SetComputeSavingsPlans(std::forward<ComputeSavingsPlansT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SageMaker AI Savings Plans recommendation details.</p>
      */
-    inline const SageMakerSavingsPlans& GetSageMakerSavingsPlans() const{ return m_sageMakerSavingsPlans; }
+    inline const SageMakerSavingsPlans& GetSageMakerSavingsPlans() const { return m_sageMakerSavingsPlans; }
     inline bool SageMakerSavingsPlansHasBeenSet() const { return m_sageMakerSavingsPlansHasBeenSet; }
-    inline void SetSageMakerSavingsPlans(const SageMakerSavingsPlans& value) { m_sageMakerSavingsPlansHasBeenSet = true; m_sageMakerSavingsPlans = value; }
-    inline void SetSageMakerSavingsPlans(SageMakerSavingsPlans&& value) { m_sageMakerSavingsPlansHasBeenSet = true; m_sageMakerSavingsPlans = std::move(value); }
-    inline ResourceDetails& WithSageMakerSavingsPlans(const SageMakerSavingsPlans& value) { SetSageMakerSavingsPlans(value); return *this;}
-    inline ResourceDetails& WithSageMakerSavingsPlans(SageMakerSavingsPlans&& value) { SetSageMakerSavingsPlans(std::move(value)); return *this;}
+    template<typename SageMakerSavingsPlansT = SageMakerSavingsPlans>
+    void SetSageMakerSavingsPlans(SageMakerSavingsPlansT&& value) { m_sageMakerSavingsPlansHasBeenSet = true; m_sageMakerSavingsPlans = std::forward<SageMakerSavingsPlansT>(value); }
+    template<typename SageMakerSavingsPlansT = SageMakerSavingsPlans>
+    ResourceDetails& WithSageMakerSavingsPlans(SageMakerSavingsPlansT&& value) { SetSageMakerSavingsPlans(std::forward<SageMakerSavingsPlansT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DB instance recommendation details.</p>
      */
-    inline const RdsDbInstance& GetRdsDbInstance() const{ return m_rdsDbInstance; }
+    inline const RdsDbInstance& GetRdsDbInstance() const { return m_rdsDbInstance; }
     inline bool RdsDbInstanceHasBeenSet() const { return m_rdsDbInstanceHasBeenSet; }
-    inline void SetRdsDbInstance(const RdsDbInstance& value) { m_rdsDbInstanceHasBeenSet = true; m_rdsDbInstance = value; }
-    inline void SetRdsDbInstance(RdsDbInstance&& value) { m_rdsDbInstanceHasBeenSet = true; m_rdsDbInstance = std::move(value); }
-    inline ResourceDetails& WithRdsDbInstance(const RdsDbInstance& value) { SetRdsDbInstance(value); return *this;}
-    inline ResourceDetails& WithRdsDbInstance(RdsDbInstance&& value) { SetRdsDbInstance(std::move(value)); return *this;}
+    template<typename RdsDbInstanceT = RdsDbInstance>
+    void SetRdsDbInstance(RdsDbInstanceT&& value) { m_rdsDbInstanceHasBeenSet = true; m_rdsDbInstance = std::forward<RdsDbInstanceT>(value); }
+    template<typename RdsDbInstanceT = RdsDbInstance>
+    ResourceDetails& WithRdsDbInstance(RdsDbInstanceT&& value) { SetRdsDbInstance(std::forward<RdsDbInstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DB instance storage recommendation details.</p>
      */
-    inline const RdsDbInstanceStorage& GetRdsDbInstanceStorage() const{ return m_rdsDbInstanceStorage; }
+    inline const RdsDbInstanceStorage& GetRdsDbInstanceStorage() const { return m_rdsDbInstanceStorage; }
     inline bool RdsDbInstanceStorageHasBeenSet() const { return m_rdsDbInstanceStorageHasBeenSet; }
-    inline void SetRdsDbInstanceStorage(const RdsDbInstanceStorage& value) { m_rdsDbInstanceStorageHasBeenSet = true; m_rdsDbInstanceStorage = value; }
-    inline void SetRdsDbInstanceStorage(RdsDbInstanceStorage&& value) { m_rdsDbInstanceStorageHasBeenSet = true; m_rdsDbInstanceStorage = std::move(value); }
-    inline ResourceDetails& WithRdsDbInstanceStorage(const RdsDbInstanceStorage& value) { SetRdsDbInstanceStorage(value); return *this;}
-    inline ResourceDetails& WithRdsDbInstanceStorage(RdsDbInstanceStorage&& value) { SetRdsDbInstanceStorage(std::move(value)); return *this;}
+    template<typename RdsDbInstanceStorageT = RdsDbInstanceStorage>
+    void SetRdsDbInstanceStorage(RdsDbInstanceStorageT&& value) { m_rdsDbInstanceStorageHasBeenSet = true; m_rdsDbInstanceStorage = std::forward<RdsDbInstanceStorageT>(value); }
+    template<typename RdsDbInstanceStorageT = RdsDbInstanceStorage>
+    ResourceDetails& WithRdsDbInstanceStorage(RdsDbInstanceStorageT&& value) { SetRdsDbInstanceStorage(std::forward<RdsDbInstanceStorageT>(value)); return *this;}
     ///@}
   private:
 

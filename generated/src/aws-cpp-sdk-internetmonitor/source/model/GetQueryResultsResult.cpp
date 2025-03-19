@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryResultsResult::GetQueryResultsResult()
-{
-}
-
 GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
     }
+    m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Utils::Array<JsonView> dataJsonList = jsonValue.GetArray("Data");
@@ -52,20 +48,20 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
       }
       m_data.push_back(std::move(queryRowList));
     }
+    m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

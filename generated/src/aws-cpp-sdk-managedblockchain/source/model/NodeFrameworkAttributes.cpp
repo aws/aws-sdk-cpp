@@ -18,14 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NodeFrameworkAttributes::NodeFrameworkAttributes() : 
-    m_fabricHasBeenSet(false),
-    m_ethereumHasBeenSet(false)
-{
-}
-
 NodeFrameworkAttributes::NodeFrameworkAttributes(JsonView jsonValue)
-  : NodeFrameworkAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NodeFrameworkAttributes& NodeFrameworkAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Fabric"))
   {
     m_fabric = jsonValue.GetObject("Fabric");
-
     m_fabricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ethereum"))
   {
     m_ethereum = jsonValue.GetObject("Ethereum");
-
     m_ethereumHasBeenSet = true;
   }
-
   return *this;
 }
 

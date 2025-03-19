@@ -12,13 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportKeyRequest::ExportKeyRequest() : 
-    m_keyMaterialHasBeenSet(false),
-    m_exportKeyIdentifierHasBeenSet(false),
-    m_exportAttributesHasBeenSet(false)
-{
-}
-
 Aws::String ExportKeyRequest::SerializePayload() const
 {
   JsonValue payload;

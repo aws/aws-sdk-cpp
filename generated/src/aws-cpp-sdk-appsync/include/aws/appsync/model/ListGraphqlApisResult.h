@@ -29,7 +29,7 @@ namespace Model
   class ListGraphqlApisResult
   {
   public:
-    AWS_APPSYNC_API ListGraphqlApisResult();
+    AWS_APPSYNC_API ListGraphqlApisResult() = default;
     AWS_APPSYNC_API ListGraphqlApisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API ListGraphqlApisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The <code>GraphqlApi</code> objects.</p>
      */
-    inline const Aws::Vector<GraphqlApi>& GetGraphqlApis() const{ return m_graphqlApis; }
-    inline void SetGraphqlApis(const Aws::Vector<GraphqlApi>& value) { m_graphqlApis = value; }
-    inline void SetGraphqlApis(Aws::Vector<GraphqlApi>&& value) { m_graphqlApis = std::move(value); }
-    inline ListGraphqlApisResult& WithGraphqlApis(const Aws::Vector<GraphqlApi>& value) { SetGraphqlApis(value); return *this;}
-    inline ListGraphqlApisResult& WithGraphqlApis(Aws::Vector<GraphqlApi>&& value) { SetGraphqlApis(std::move(value)); return *this;}
-    inline ListGraphqlApisResult& AddGraphqlApis(const GraphqlApi& value) { m_graphqlApis.push_back(value); return *this; }
-    inline ListGraphqlApisResult& AddGraphqlApis(GraphqlApi&& value) { m_graphqlApis.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GraphqlApi>& GetGraphqlApis() const { return m_graphqlApis; }
+    template<typename GraphqlApisT = Aws::Vector<GraphqlApi>>
+    void SetGraphqlApis(GraphqlApisT&& value) { m_graphqlApisHasBeenSet = true; m_graphqlApis = std::forward<GraphqlApisT>(value); }
+    template<typename GraphqlApisT = Aws::Vector<GraphqlApi>>
+    ListGraphqlApisResult& WithGraphqlApis(GraphqlApisT&& value) { SetGraphqlApis(std::forward<GraphqlApisT>(value)); return *this;}
+    template<typename GraphqlApisT = GraphqlApi>
+    ListGraphqlApisResult& AddGraphqlApis(GraphqlApisT&& value) { m_graphqlApisHasBeenSet = true; m_graphqlApis.emplace_back(std::forward<GraphqlApisT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An identifier to pass in the next request to this operation to return the
      * next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListGraphqlApisResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGraphqlApisResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGraphqlApisResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGraphqlApisResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGraphqlApisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGraphqlApisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGraphqlApisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGraphqlApisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GraphqlApi> m_graphqlApis;
+    bool m_graphqlApisHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ReasonCodeSummary::ReasonCodeSummary() : 
-    m_name(FindingReasonCode::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 ReasonCodeSummary::ReasonCodeSummary(JsonView jsonValue)
-  : ReasonCodeSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ReasonCodeSummary& ReasonCodeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = FindingReasonCodeMapper::GetFindingReasonCodeForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

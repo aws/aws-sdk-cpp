@@ -18,14 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-ResultItem::ResultItem() : 
-    m_s3ResultItemHasBeenSet(false),
-    m_eBSResultItemHasBeenSet(false)
-{
-}
-
 ResultItem::ResultItem(JsonView jsonValue)
-  : ResultItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResultItem& ResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3ResultItem"))
   {
     m_s3ResultItem = jsonValue.GetObject("S3ResultItem");
-
     m_s3ResultItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EBSResultItem"))
   {
     m_eBSResultItem = jsonValue.GetObject("EBSResultItem");
-
     m_eBSResultItemHasBeenSet = true;
   }
-
   return *this;
 }
 

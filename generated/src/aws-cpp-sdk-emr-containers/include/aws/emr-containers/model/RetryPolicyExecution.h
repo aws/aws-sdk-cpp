@@ -30,7 +30,7 @@ namespace Model
   class RetryPolicyExecution
   {
   public:
-    AWS_EMRCONTAINERS_API RetryPolicyExecution();
+    AWS_EMRCONTAINERS_API RetryPolicyExecution() = default;
     AWS_EMRCONTAINERS_API RetryPolicyExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API RetryPolicyExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The current number of attempts made on the driver of the job.</p>
      */
-    inline int GetCurrentAttemptCount() const{ return m_currentAttemptCount; }
+    inline int GetCurrentAttemptCount() const { return m_currentAttemptCount; }
     inline bool CurrentAttemptCountHasBeenSet() const { return m_currentAttemptCountHasBeenSet; }
     inline void SetCurrentAttemptCount(int value) { m_currentAttemptCountHasBeenSet = true; m_currentAttemptCount = value; }
     inline RetryPolicyExecution& WithCurrentAttemptCount(int value) { SetCurrentAttemptCount(value); return *this;}
     ///@}
   private:
 
-    int m_currentAttemptCount;
+    int m_currentAttemptCount{0};
     bool m_currentAttemptCountHasBeenSet = false;
   };
 

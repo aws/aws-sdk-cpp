@@ -33,7 +33,7 @@ namespace Model
   class CompromisedCredentialsActionsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType();
+    AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * <p>The action that Amazon Cognito takes when it detects compromised
      * credentials.</p>
      */
-    inline const CompromisedCredentialsEventActionType& GetEventAction() const{ return m_eventAction; }
+    inline CompromisedCredentialsEventActionType GetEventAction() const { return m_eventAction; }
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }
-    inline void SetEventAction(const CompromisedCredentialsEventActionType& value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
-    inline void SetEventAction(CompromisedCredentialsEventActionType&& value) { m_eventActionHasBeenSet = true; m_eventAction = std::move(value); }
-    inline CompromisedCredentialsActionsType& WithEventAction(const CompromisedCredentialsEventActionType& value) { SetEventAction(value); return *this;}
-    inline CompromisedCredentialsActionsType& WithEventAction(CompromisedCredentialsEventActionType&& value) { SetEventAction(std::move(value)); return *this;}
+    inline void SetEventAction(CompromisedCredentialsEventActionType value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
+    inline CompromisedCredentialsActionsType& WithEventAction(CompromisedCredentialsEventActionType value) { SetEventAction(value); return *this;}
     ///@}
   private:
 
-    CompromisedCredentialsEventActionType m_eventAction;
+    CompromisedCredentialsEventActionType m_eventAction{CompromisedCredentialsEventActionType::NOT_SET};
     bool m_eventActionHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::Invoicing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInvoiceUnitRequest::GetInvoiceUnitRequest() : 
-    m_invoiceUnitArnHasBeenSet(false),
-    m_asOfHasBeenSet(false)
-{
-}
-
 Aws::String GetInvoiceUnitRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class NamespaceProviderProperties
   {
   public:
-    AWS_ENTITYRESOLUTION_API NamespaceProviderProperties();
+    AWS_ENTITYRESOLUTION_API NamespaceProviderProperties() = default;
     AWS_ENTITYRESOLUTION_API NamespaceProviderProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API NamespaceProviderProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>An object which defines any additional configurations required by the
      * provider service.</p>
      */
-    inline Aws::Utils::DocumentView GetProviderConfiguration() const{ return m_providerConfiguration; }
+    inline Aws::Utils::DocumentView GetProviderConfiguration() const { return m_providerConfiguration; }
     inline bool ProviderConfigurationHasBeenSet() const { return m_providerConfigurationHasBeenSet; }
-    inline void SetProviderConfiguration(const Aws::Utils::Document& value) { m_providerConfigurationHasBeenSet = true; m_providerConfiguration = value; }
-    inline void SetProviderConfiguration(Aws::Utils::Document&& value) { m_providerConfigurationHasBeenSet = true; m_providerConfiguration = std::move(value); }
-    inline NamespaceProviderProperties& WithProviderConfiguration(const Aws::Utils::Document& value) { SetProviderConfiguration(value); return *this;}
-    inline NamespaceProviderProperties& WithProviderConfiguration(Aws::Utils::Document&& value) { SetProviderConfiguration(std::move(value)); return *this;}
+    template<typename ProviderConfigurationT = Aws::Utils::Document>
+    void SetProviderConfiguration(ProviderConfigurationT&& value) { m_providerConfigurationHasBeenSet = true; m_providerConfiguration = std::forward<ProviderConfigurationT>(value); }
+    template<typename ProviderConfigurationT = Aws::Utils::Document>
+    NamespaceProviderProperties& WithProviderConfiguration(ProviderConfigurationT&& value) { SetProviderConfiguration(std::forward<ProviderConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the provider service.</p>
      */
-    inline const Aws::String& GetProviderServiceArn() const{ return m_providerServiceArn; }
+    inline const Aws::String& GetProviderServiceArn() const { return m_providerServiceArn; }
     inline bool ProviderServiceArnHasBeenSet() const { return m_providerServiceArnHasBeenSet; }
-    inline void SetProviderServiceArn(const Aws::String& value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn = value; }
-    inline void SetProviderServiceArn(Aws::String&& value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn = std::move(value); }
-    inline void SetProviderServiceArn(const char* value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn.assign(value); }
-    inline NamespaceProviderProperties& WithProviderServiceArn(const Aws::String& value) { SetProviderServiceArn(value); return *this;}
-    inline NamespaceProviderProperties& WithProviderServiceArn(Aws::String&& value) { SetProviderServiceArn(std::move(value)); return *this;}
-    inline NamespaceProviderProperties& WithProviderServiceArn(const char* value) { SetProviderServiceArn(value); return *this;}
+    template<typename ProviderServiceArnT = Aws::String>
+    void SetProviderServiceArn(ProviderServiceArnT&& value) { m_providerServiceArnHasBeenSet = true; m_providerServiceArn = std::forward<ProviderServiceArnT>(value); }
+    template<typename ProviderServiceArnT = Aws::String>
+    NamespaceProviderProperties& WithProviderServiceArn(ProviderServiceArnT&& value) { SetProviderServiceArn(std::forward<ProviderServiceArnT>(value)); return *this;}
     ///@}
   private:
 

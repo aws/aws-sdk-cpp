@@ -18,23 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaInsightsPipeline::MediaInsightsPipeline() : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet(false),
-    m_mediaInsightsRuntimeMetadataHasBeenSet(false),
-    m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet(false),
-    m_s3RecordingSinkRuntimeConfigurationHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_elementStatusesHasBeenSet(false)
-{
-}
-
 MediaInsightsPipeline::MediaInsightsPipeline(JsonView jsonValue)
-  : MediaInsightsPipeline()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ MediaInsightsPipeline& MediaInsightsPipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaPipelineId"))
   {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
-
     m_mediaPipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationArn"))
   {
     m_mediaInsightsPipelineConfigurationArn = jsonValue.GetString("MediaInsightsPipelineConfigurationArn");
-
     m_mediaInsightsPipelineConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaPipelineStatusMapper::GetMediaPipelineStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisVideoStreamSourceRuntimeConfiguration"))
   {
     m_kinesisVideoStreamSourceRuntimeConfiguration = jsonValue.GetObject("KinesisVideoStreamSourceRuntimeConfiguration");
-
     m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaInsightsRuntimeMetadata"))
   {
     Aws::Map<Aws::String, JsonView> mediaInsightsRuntimeMetadataJsonMap = jsonValue.GetObject("MediaInsightsRuntimeMetadata").GetAllObjects();
@@ -85,28 +59,21 @@ MediaInsightsPipeline& MediaInsightsPipeline::operator =(JsonView jsonValue)
     }
     m_mediaInsightsRuntimeMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisVideoStreamRecordingSourceRuntimeConfiguration"))
   {
     m_kinesisVideoStreamRecordingSourceRuntimeConfiguration = jsonValue.GetObject("KinesisVideoStreamRecordingSourceRuntimeConfiguration");
-
     m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3RecordingSinkRuntimeConfiguration"))
   {
     m_s3RecordingSinkRuntimeConfiguration = jsonValue.GetObject("S3RecordingSinkRuntimeConfiguration");
-
     m_s3RecordingSinkRuntimeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElementStatuses"))
   {
     Aws::Utils::Array<JsonView> elementStatusesJsonList = jsonValue.GetArray("ElementStatuses");
@@ -116,7 +83,6 @@ MediaInsightsPipeline& MediaInsightsPipeline::operator =(JsonView jsonValue)
     }
     m_elementStatusesHasBeenSet = true;
   }
-
   return *this;
 }
 

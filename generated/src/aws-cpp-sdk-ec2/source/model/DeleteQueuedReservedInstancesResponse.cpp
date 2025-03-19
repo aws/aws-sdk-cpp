@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteQueuedReservedInstancesResponse::DeleteQueuedReservedInstancesResponse()
-{
-}
-
 DeleteQueuedReservedInstancesResponse::DeleteQueuedReservedInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DeleteQueuedReservedInstancesResponse& DeleteQueuedReservedInstancesResponse::op
     if(!successfulQueuedPurchaseDeletionsNode.IsNull())
     {
       XmlNode successfulQueuedPurchaseDeletionsMember = successfulQueuedPurchaseDeletionsNode.FirstChild("item");
+      m_successfulQueuedPurchaseDeletionsHasBeenSet = !successfulQueuedPurchaseDeletionsMember.IsNull();
       while(!successfulQueuedPurchaseDeletionsMember.IsNull())
       {
         m_successfulQueuedPurchaseDeletions.push_back(successfulQueuedPurchaseDeletionsMember);
         successfulQueuedPurchaseDeletionsMember = successfulQueuedPurchaseDeletionsMember.NextNode("item");
       }
 
+      m_successfulQueuedPurchaseDeletionsHasBeenSet = true;
     }
     XmlNode failedQueuedPurchaseDeletionsNode = resultNode.FirstChild("failedQueuedPurchaseDeletionSet");
     if(!failedQueuedPurchaseDeletionsNode.IsNull())
     {
       XmlNode failedQueuedPurchaseDeletionsMember = failedQueuedPurchaseDeletionsNode.FirstChild("item");
+      m_failedQueuedPurchaseDeletionsHasBeenSet = !failedQueuedPurchaseDeletionsMember.IsNull();
       while(!failedQueuedPurchaseDeletionsMember.IsNull())
       {
         m_failedQueuedPurchaseDeletions.push_back(failedQueuedPurchaseDeletionsMember);
         failedQueuedPurchaseDeletionsMember = failedQueuedPurchaseDeletionsMember.NextNode("item");
       }
 
+      m_failedQueuedPurchaseDeletionsHasBeenSet = true;
     }
   }
 
@@ -67,6 +67,7 @@ DeleteQueuedReservedInstancesResponse& DeleteQueuedReservedInstancesResponse::op
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteQueuedReservedInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

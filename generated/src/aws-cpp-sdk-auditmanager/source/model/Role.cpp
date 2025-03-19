@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Role::Role() : 
-    m_roleType(RoleType::NOT_SET),
-    m_roleTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Role::Role(JsonView jsonValue)
-  : Role()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Role& Role::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleType"))
   {
     m_roleType = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("roleType"));
-
     m_roleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

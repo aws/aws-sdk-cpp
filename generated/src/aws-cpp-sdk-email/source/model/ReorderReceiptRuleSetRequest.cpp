@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ReorderReceiptRuleSetRequest::ReorderReceiptRuleSetRequest() : 
-    m_ruleSetNameHasBeenSet(false),
-    m_ruleNamesHasBeenSet(false)
-{
-}
-
 Aws::String ReorderReceiptRuleSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

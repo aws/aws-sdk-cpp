@@ -12,19 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEventBridgeRuleTemplateRequest::CreateEventBridgeRuleTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_eventTargetsHasBeenSet(false),
-    m_eventType(EventBridgeRuleTemplateEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true)
-{
-}
-
 Aws::String CreateEventBridgeRuleTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

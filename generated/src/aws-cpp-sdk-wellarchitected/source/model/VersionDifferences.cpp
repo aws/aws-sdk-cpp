@@ -18,13 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-VersionDifferences::VersionDifferences() : 
-    m_pillarDifferencesHasBeenSet(false)
-{
-}
-
 VersionDifferences::VersionDifferences(JsonView jsonValue)
-  : VersionDifferences()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ VersionDifferences& VersionDifferences::operator =(JsonView jsonValue)
     }
     m_pillarDifferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

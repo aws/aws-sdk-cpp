@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2SecurityGroupUserIdGroupPair
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2SecurityGroupUserIdGroupPair();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupUserIdGroupPair() = default;
     AWS_SECURITYHUB_API AwsEc2SecurityGroupUserIdGroupPair(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2SecurityGroupUserIdGroupPair& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    AwsEc2SecurityGroupUserIdGroupPair& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the security group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AwsEc2SecurityGroupUserIdGroupPair& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of a VPC peering connection, if applicable.</p>
      */
-    inline const Aws::String& GetPeeringStatus() const{ return m_peeringStatus; }
+    inline const Aws::String& GetPeeringStatus() const { return m_peeringStatus; }
     inline bool PeeringStatusHasBeenSet() const { return m_peeringStatusHasBeenSet; }
-    inline void SetPeeringStatus(const Aws::String& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = value; }
-    inline void SetPeeringStatus(Aws::String&& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = std::move(value); }
-    inline void SetPeeringStatus(const char* value) { m_peeringStatusHasBeenSet = true; m_peeringStatus.assign(value); }
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithPeeringStatus(const Aws::String& value) { SetPeeringStatus(value); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithPeeringStatus(Aws::String&& value) { SetPeeringStatus(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
+    template<typename PeeringStatusT = Aws::String>
+    void SetPeeringStatus(PeeringStatusT&& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = std::forward<PeeringStatusT>(value); }
+    template<typename PeeringStatusT = Aws::String>
+    AwsEc2SecurityGroupUserIdGroupPair& WithPeeringStatus(PeeringStatusT&& value) { SetPeeringStatus(std::forward<PeeringStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,42 +82,36 @@ namespace Model
      * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
      * rules that reference a security group in another VPC. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    AwsEc2SecurityGroupUserIdGroupPair& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsEc2SecurityGroupUserIdGroupPair& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC peering connection, if applicable.</p>
      */
-    inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+    inline const Aws::String& GetVpcPeeringConnectionId() const { return m_vpcPeeringConnectionId; }
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
-    inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
-    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
-    inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupUserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
+    template<typename VpcPeeringConnectionIdT = Aws::String>
+    void SetVpcPeeringConnectionId(VpcPeeringConnectionIdT&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::forward<VpcPeeringConnectionIdT>(value); }
+    template<typename VpcPeeringConnectionIdT = Aws::String>
+    AwsEc2SecurityGroupUserIdGroupPair& WithVpcPeeringConnectionId(VpcPeeringConnectionIdT&& value) { SetVpcPeeringConnectionId(std::forward<VpcPeeringConnectionIdT>(value)); return *this;}
     ///@}
   private:
 

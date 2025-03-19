@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHealthCheckCountResult::GetHealthCheckCountResult() : 
-    m_healthCheckCount(0)
-{
-}
-
 GetHealthCheckCountResult::GetHealthCheckCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetHealthCheckCountResult()
 {
   *this = result;
 }
@@ -38,6 +32,7 @@ GetHealthCheckCountResult& GetHealthCheckCountResult::operator =(const Aws::Amaz
     if(!healthCheckCountNode.IsNull())
     {
       m_healthCheckCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckCountNode.GetText()).c_str()).c_str());
+      m_healthCheckCountHasBeenSet = true;
     }
   }
 
@@ -46,6 +41,7 @@ GetHealthCheckCountResult& GetHealthCheckCountResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePlacementGroupsResponse::DescribePlacementGroupsResponse()
-{
-}
-
 DescribePlacementGroupsResponse::DescribePlacementGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribePlacementGroupsResponse& DescribePlacementGroupsResponse::operator =(con
     if(!placementGroupsNode.IsNull())
     {
       XmlNode placementGroupsMember = placementGroupsNode.FirstChild("item");
+      m_placementGroupsHasBeenSet = !placementGroupsMember.IsNull();
       while(!placementGroupsMember.IsNull())
       {
         m_placementGroups.push_back(placementGroupsMember);
         placementGroupsMember = placementGroupsMember.NextNode("item");
       }
 
+      m_placementGroupsHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribePlacementGroupsResponse& DescribePlacementGroupsResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribePlacementGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

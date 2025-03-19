@@ -42,7 +42,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_WAFV2_API Rule();
+    AWS_WAFV2_API Rule() = default;
     AWS_WAFV2_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
      * doesn't automatically update the metric name when you update the rule name. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Rule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Rule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Rule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * value of <code>Priority</code>. WAF processes rules with lower priority first.
      * The priorities don't need to be consecutive, but they must all be different.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline Rule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -83,12 +81,12 @@ namespace Model
      * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
-    inline const Statement& GetStatement() const{ return m_statement; }
+    inline const Statement& GetStatement() const { return m_statement; }
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
-    inline void SetStatement(const Statement& value) { m_statementHasBeenSet = true; m_statement = value; }
-    inline void SetStatement(Statement&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
-    inline Rule& WithStatement(const Statement& value) { SetStatement(value); return *this;}
-    inline Rule& WithStatement(Statement&& value) { SetStatement(std::move(value)); return *this;}
+    template<typename StatementT = Statement>
+    void SetStatement(StatementT&& value) { m_statementHasBeenSet = true; m_statement = std::forward<StatementT>(value); }
+    template<typename StatementT = Statement>
+    Rule& WithStatement(StatementT&& value) { SetStatement(std::forward<StatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +103,12 @@ namespace Model
      * </p> </li> <li> <p>If the rule statement references a rule group, use the
      * override action setting and not this action setting. </p> </li> </ul>
      */
-    inline const RuleAction& GetAction() const{ return m_action; }
+    inline const RuleAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline Rule& WithAction(const RuleAction& value) { SetAction(value); return *this;}
-    inline Rule& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = RuleAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RuleAction>
+    Rule& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +124,12 @@ namespace Model
      * and instead use the rule action override option, with <code>Count</code> action,
      * in your rule group reference statement settings. </p> 
      */
-    inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
+    inline const OverrideAction& GetOverrideAction() const { return m_overrideAction; }
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
-    inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
-    inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
-    inline Rule& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
-    inline Rule& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
+    template<typename OverrideActionT = OverrideAction>
+    void SetOverrideAction(OverrideActionT&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::forward<OverrideActionT>(value); }
+    template<typename OverrideActionT = OverrideAction>
+    Rule& WithOverrideAction(OverrideActionT&& value) { SetOverrideAction(std::forward<OverrideActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +152,14 @@ namespace Model
      * <code>ipset</code>.</p> </li> </ul> <p>For example, <code>myLabelName</code> or
      * <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
      */
-    inline const Aws::Vector<Label>& GetRuleLabels() const{ return m_ruleLabels; }
+    inline const Aws::Vector<Label>& GetRuleLabels() const { return m_ruleLabels; }
     inline bool RuleLabelsHasBeenSet() const { return m_ruleLabelsHasBeenSet; }
-    inline void SetRuleLabels(const Aws::Vector<Label>& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = value; }
-    inline void SetRuleLabels(Aws::Vector<Label>&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = std::move(value); }
-    inline Rule& WithRuleLabels(const Aws::Vector<Label>& value) { SetRuleLabels(value); return *this;}
-    inline Rule& WithRuleLabels(Aws::Vector<Label>&& value) { SetRuleLabels(std::move(value)); return *this;}
-    inline Rule& AddRuleLabels(const Label& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels.push_back(value); return *this; }
-    inline Rule& AddRuleLabels(Label&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels.push_back(std::move(value)); return *this; }
+    template<typename RuleLabelsT = Aws::Vector<Label>>
+    void SetRuleLabels(RuleLabelsT&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = std::forward<RuleLabelsT>(value); }
+    template<typename RuleLabelsT = Aws::Vector<Label>>
+    Rule& WithRuleLabels(RuleLabelsT&& value) { SetRuleLabels(std::forward<RuleLabelsT>(value)); return *this;}
+    template<typename RuleLabelsT = Label>
+    Rule& AddRuleLabels(RuleLabelsT&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels.emplace_back(std::forward<RuleLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -171,12 +169,12 @@ namespace Model
      * create it and you want the rule's metric name to reflect the change, update the
      * metric name as well. WAF doesn't automatically update the metric name. </p>
      */
-    inline const VisibilityConfig& GetVisibilityConfig() const{ return m_visibilityConfig; }
+    inline const VisibilityConfig& GetVisibilityConfig() const { return m_visibilityConfig; }
     inline bool VisibilityConfigHasBeenSet() const { return m_visibilityConfigHasBeenSet; }
-    inline void SetVisibilityConfig(const VisibilityConfig& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = value; }
-    inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
-    inline Rule& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
-    inline Rule& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
+    template<typename VisibilityConfigT = VisibilityConfig>
+    void SetVisibilityConfig(VisibilityConfigT&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::forward<VisibilityConfigT>(value); }
+    template<typename VisibilityConfigT = VisibilityConfig>
+    Rule& WithVisibilityConfig(VisibilityConfigT&& value) { SetVisibilityConfig(std::forward<VisibilityConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,12 +183,12 @@ namespace Model
      * don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's
      * defined for the web ACL. </p>
      */
-    inline const CaptchaConfig& GetCaptchaConfig() const{ return m_captchaConfig; }
+    inline const CaptchaConfig& GetCaptchaConfig() const { return m_captchaConfig; }
     inline bool CaptchaConfigHasBeenSet() const { return m_captchaConfigHasBeenSet; }
-    inline void SetCaptchaConfig(const CaptchaConfig& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = value; }
-    inline void SetCaptchaConfig(CaptchaConfig&& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = std::move(value); }
-    inline Rule& WithCaptchaConfig(const CaptchaConfig& value) { SetCaptchaConfig(value); return *this;}
-    inline Rule& WithCaptchaConfig(CaptchaConfig&& value) { SetCaptchaConfig(std::move(value)); return *this;}
+    template<typename CaptchaConfigT = CaptchaConfig>
+    void SetCaptchaConfig(CaptchaConfigT&& value) { m_captchaConfigHasBeenSet = true; m_captchaConfig = std::forward<CaptchaConfigT>(value); }
+    template<typename CaptchaConfigT = CaptchaConfig>
+    Rule& WithCaptchaConfig(CaptchaConfigT&& value) { SetCaptchaConfig(std::forward<CaptchaConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,19 +197,19 @@ namespace Model
      * don't specify this, WAF uses the challenge configuration that's defined for the
      * web ACL. </p>
      */
-    inline const ChallengeConfig& GetChallengeConfig() const{ return m_challengeConfig; }
+    inline const ChallengeConfig& GetChallengeConfig() const { return m_challengeConfig; }
     inline bool ChallengeConfigHasBeenSet() const { return m_challengeConfigHasBeenSet; }
-    inline void SetChallengeConfig(const ChallengeConfig& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = value; }
-    inline void SetChallengeConfig(ChallengeConfig&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::move(value); }
-    inline Rule& WithChallengeConfig(const ChallengeConfig& value) { SetChallengeConfig(value); return *this;}
-    inline Rule& WithChallengeConfig(ChallengeConfig&& value) { SetChallengeConfig(std::move(value)); return *this;}
+    template<typename ChallengeConfigT = ChallengeConfig>
+    void SetChallengeConfig(ChallengeConfigT&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::forward<ChallengeConfigT>(value); }
+    template<typename ChallengeConfigT = ChallengeConfig>
+    Rule& WithChallengeConfig(ChallengeConfigT&& value) { SetChallengeConfig(std::forward<ChallengeConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Statement m_statement;

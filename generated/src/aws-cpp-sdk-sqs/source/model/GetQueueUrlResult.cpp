@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueueUrlResult::GetQueueUrlResult()
-{
-}
-
 GetQueueUrlResult::GetQueueUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,20 +28,21 @@ GetQueueUrlResult& GetQueueUrlResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("QueueUrl"))
   {
     m_queueUrl = jsonValue.GetString("QueueUrl");
-
+    m_queueUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& responseMetadataIter = headers.find("x-amzn-requestid");
   if(responseMetadataIter != headers.end())
   {
+    m_responseMetadataHasBeenSet = true;
      // for backward compatibility for customers used to an old XML Client interface
      m_responseMetadata.SetRequestId(responseMetadataIter->second);
   }

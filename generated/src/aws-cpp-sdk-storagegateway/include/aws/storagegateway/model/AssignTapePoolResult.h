@@ -27,7 +27,7 @@ namespace Model
   class AssignTapePoolResult
   {
   public:
-    AWS_STORAGEGATEWAY_API AssignTapePoolResult();
+    AWS_STORAGEGATEWAY_API AssignTapePoolResult() = default;
     AWS_STORAGEGATEWAY_API AssignTapePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API AssignTapePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to
      * the tape pool.</p>
      */
-    inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
-    inline void SetTapeARN(const Aws::String& value) { m_tapeARN = value; }
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARN = std::move(value); }
-    inline void SetTapeARN(const char* value) { m_tapeARN.assign(value); }
-    inline AssignTapePoolResult& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-    inline AssignTapePoolResult& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-    inline AssignTapePoolResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    inline const Aws::String& GetTapeARN() const { return m_tapeARN; }
+    template<typename TapeARNT = Aws::String>
+    void SetTapeARN(TapeARNT&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::forward<TapeARNT>(value); }
+    template<typename TapeARNT = Aws::String>
+    AssignTapePoolResult& WithTapeARN(TapeARNT&& value) { SetTapeARN(std::forward<TapeARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssignTapePoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssignTapePoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssignTapePoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssignTapePoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tapeARN;
+    bool m_tapeARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

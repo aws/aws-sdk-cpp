@@ -12,11 +12,6 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTestCaseRequest::DeleteTestCaseRequest() : 
-    m_testCaseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTestCaseRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class SelectedVideoStreams
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams();
+    AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API SelectedVideoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,28 @@ namespace Model
     /**
      * <p>The attendee IDs of the streams selected for a media pipeline. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttendeeIds() const{ return m_attendeeIds; }
+    inline const Aws::Vector<Aws::String>& GetAttendeeIds() const { return m_attendeeIds; }
     inline bool AttendeeIdsHasBeenSet() const { return m_attendeeIdsHasBeenSet; }
-    inline void SetAttendeeIds(const Aws::Vector<Aws::String>& value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds = value; }
-    inline void SetAttendeeIds(Aws::Vector<Aws::String>&& value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds = std::move(value); }
-    inline SelectedVideoStreams& WithAttendeeIds(const Aws::Vector<Aws::String>& value) { SetAttendeeIds(value); return *this;}
-    inline SelectedVideoStreams& WithAttendeeIds(Aws::Vector<Aws::String>&& value) { SetAttendeeIds(std::move(value)); return *this;}
-    inline SelectedVideoStreams& AddAttendeeIds(const Aws::String& value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds.push_back(value); return *this; }
-    inline SelectedVideoStreams& AddAttendeeIds(Aws::String&& value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds.push_back(std::move(value)); return *this; }
-    inline SelectedVideoStreams& AddAttendeeIds(const char* value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds.push_back(value); return *this; }
+    template<typename AttendeeIdsT = Aws::Vector<Aws::String>>
+    void SetAttendeeIds(AttendeeIdsT&& value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds = std::forward<AttendeeIdsT>(value); }
+    template<typename AttendeeIdsT = Aws::Vector<Aws::String>>
+    SelectedVideoStreams& WithAttendeeIds(AttendeeIdsT&& value) { SetAttendeeIds(std::forward<AttendeeIdsT>(value)); return *this;}
+    template<typename AttendeeIdsT = Aws::String>
+    SelectedVideoStreams& AddAttendeeIds(AttendeeIdsT&& value) { m_attendeeIdsHasBeenSet = true; m_attendeeIds.emplace_back(std::forward<AttendeeIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The external user IDs of the streams selected for a media pipeline.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExternalUserIds() const{ return m_externalUserIds; }
+    inline const Aws::Vector<Aws::String>& GetExternalUserIds() const { return m_externalUserIds; }
     inline bool ExternalUserIdsHasBeenSet() const { return m_externalUserIdsHasBeenSet; }
-    inline void SetExternalUserIds(const Aws::Vector<Aws::String>& value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds = value; }
-    inline void SetExternalUserIds(Aws::Vector<Aws::String>&& value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds = std::move(value); }
-    inline SelectedVideoStreams& WithExternalUserIds(const Aws::Vector<Aws::String>& value) { SetExternalUserIds(value); return *this;}
-    inline SelectedVideoStreams& WithExternalUserIds(Aws::Vector<Aws::String>&& value) { SetExternalUserIds(std::move(value)); return *this;}
-    inline SelectedVideoStreams& AddExternalUserIds(const Aws::String& value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds.push_back(value); return *this; }
-    inline SelectedVideoStreams& AddExternalUserIds(Aws::String&& value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds.push_back(std::move(value)); return *this; }
-    inline SelectedVideoStreams& AddExternalUserIds(const char* value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds.push_back(value); return *this; }
+    template<typename ExternalUserIdsT = Aws::Vector<Aws::String>>
+    void SetExternalUserIds(ExternalUserIdsT&& value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds = std::forward<ExternalUserIdsT>(value); }
+    template<typename ExternalUserIdsT = Aws::Vector<Aws::String>>
+    SelectedVideoStreams& WithExternalUserIds(ExternalUserIdsT&& value) { SetExternalUserIds(std::forward<ExternalUserIdsT>(value)); return *this;}
+    template<typename ExternalUserIdsT = Aws::String>
+    SelectedVideoStreams& AddExternalUserIds(ExternalUserIdsT&& value) { m_externalUserIdsHasBeenSet = true; m_externalUserIds.emplace_back(std::forward<ExternalUserIdsT>(value)); return *this; }
     ///@}
   private:
 

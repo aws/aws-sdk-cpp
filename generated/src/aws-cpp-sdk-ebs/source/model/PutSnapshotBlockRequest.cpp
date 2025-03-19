@@ -15,20 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSnapshotBlockRequest::PutSnapshotBlockRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_blockIndex(0),
-    m_blockIndexHasBeenSet(false),
-    m_dataLength(0),
-    m_dataLengthHasBeenSet(false),
-    m_progress(0),
-    m_progressHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection PutSnapshotBlockRequest::GetRequestSpecificHeaders() const

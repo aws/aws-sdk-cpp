@@ -12,17 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelsRequest::ListModelsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_modelNameBeginsWithHasBeenSet(false),
-    m_datasetNameBeginsWithHasBeenSet(false)
-{
-}
-
 Aws::String ListModelsRequest::SerializePayload() const
 {
   JsonValue payload;

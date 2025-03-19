@@ -26,7 +26,7 @@ namespace Model
   class EnableLoggingRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API EnableLoggingRequest();
+    AWS_REDSHIFT_API EnableLoggingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The identifier of the cluster on which logging is to be started.</p>
      * <p>Example: <code>examplecluster</code> </p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline EnableLoggingRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline EnableLoggingRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline EnableLoggingRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    EnableLoggingRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * </li> <li> <p>The cluster must have read bucket and put object permissions</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline EnableLoggingRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline EnableLoggingRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline EnableLoggingRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    EnableLoggingRequest& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol
      * (<code>@</code>).</p>
      */
-    inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
-    inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
-    inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
-    inline EnableLoggingRequest& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
-    inline EnableLoggingRequest& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
-    inline EnableLoggingRequest& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+    template<typename S3KeyPrefixT = Aws::String>
+    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
+    template<typename S3KeyPrefixT = Aws::String>
+    EnableLoggingRequest& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,10 @@ namespace Model
      * <p>The log destination type. An enum with possible values of <code>s3</code> and
      * <code>cloudwatch</code>.</p>
      */
-    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+    inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
-    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
-    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
-    inline EnableLoggingRequest& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
-    inline EnableLoggingRequest& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+    inline void SetLogDestinationType(LogDestinationType value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+    inline EnableLoggingRequest& WithLogDestinationType(LogDestinationType value) { SetLogDestinationType(value); return *this;}
     ///@}
 
     ///@{
@@ -111,15 +103,14 @@ namespace Model
      * <code>connectionlog</code>, <code>useractivitylog</code>, and
      * <code>userlog</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogExports() const{ return m_logExports; }
+    inline const Aws::Vector<Aws::String>& GetLogExports() const { return m_logExports; }
     inline bool LogExportsHasBeenSet() const { return m_logExportsHasBeenSet; }
-    inline void SetLogExports(const Aws::Vector<Aws::String>& value) { m_logExportsHasBeenSet = true; m_logExports = value; }
-    inline void SetLogExports(Aws::Vector<Aws::String>&& value) { m_logExportsHasBeenSet = true; m_logExports = std::move(value); }
-    inline EnableLoggingRequest& WithLogExports(const Aws::Vector<Aws::String>& value) { SetLogExports(value); return *this;}
-    inline EnableLoggingRequest& WithLogExports(Aws::Vector<Aws::String>&& value) { SetLogExports(std::move(value)); return *this;}
-    inline EnableLoggingRequest& AddLogExports(const Aws::String& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
-    inline EnableLoggingRequest& AddLogExports(Aws::String&& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(std::move(value)); return *this; }
-    inline EnableLoggingRequest& AddLogExports(const char* value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
+    template<typename LogExportsT = Aws::Vector<Aws::String>>
+    void SetLogExports(LogExportsT&& value) { m_logExportsHasBeenSet = true; m_logExports = std::forward<LogExportsT>(value); }
+    template<typename LogExportsT = Aws::Vector<Aws::String>>
+    EnableLoggingRequest& WithLogExports(LogExportsT&& value) { SetLogExports(std::forward<LogExportsT>(value)); return *this;}
+    template<typename LogExportsT = Aws::String>
+    EnableLoggingRequest& AddLogExports(LogExportsT&& value) { m_logExportsHasBeenSet = true; m_logExports.emplace_back(std::forward<LogExportsT>(value)); return *this; }
     ///@}
   private:
 
@@ -132,7 +123,7 @@ namespace Model
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet = false;
 
-    LogDestinationType m_logDestinationType;
+    LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
     bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logExports;

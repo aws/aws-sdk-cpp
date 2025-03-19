@@ -12,18 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportLambdaFunctionRecommendationsRequest::ExportLambdaFunctionRecommendationsRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_fieldsToExportHasBeenSet(false),
-    m_s3DestinationConfigHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_includeMemberAccounts(false),
-    m_includeMemberAccountsHasBeenSet(false)
-{
-}
-
 Aws::String ExportLambdaFunctionRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class GetBasePathMappingRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetBasePathMappingRequest();
+    AWS_APIGATEWAY_API GetBasePathMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The domain name of the BasePathMapping resource to be described.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline GetBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline GetBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline GetBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    GetBasePathMappingRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The identifier for the domain name resource. Supported only for private
      * custom domain names. </p>
      */
-    inline const Aws::String& GetDomainNameId() const{ return m_domainNameId; }
+    inline const Aws::String& GetDomainNameId() const { return m_domainNameId; }
     inline bool DomainNameIdHasBeenSet() const { return m_domainNameIdHasBeenSet; }
-    inline void SetDomainNameId(const Aws::String& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = value; }
-    inline void SetDomainNameId(Aws::String&& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = std::move(value); }
-    inline void SetDomainNameId(const char* value) { m_domainNameIdHasBeenSet = true; m_domainNameId.assign(value); }
-    inline GetBasePathMappingRequest& WithDomainNameId(const Aws::String& value) { SetDomainNameId(value); return *this;}
-    inline GetBasePathMappingRequest& WithDomainNameId(Aws::String&& value) { SetDomainNameId(std::move(value)); return *this;}
-    inline GetBasePathMappingRequest& WithDomainNameId(const char* value) { SetDomainNameId(value); return *this;}
+    template<typename DomainNameIdT = Aws::String>
+    void SetDomainNameId(DomainNameIdT&& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = std::forward<DomainNameIdT>(value); }
+    template<typename DomainNameIdT = Aws::String>
+    GetBasePathMappingRequest& WithDomainNameId(DomainNameIdT&& value) { SetDomainNameId(std::forward<DomainNameIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * a single API. Specify '(none)' if you do not want callers to specify any base
      * path name after the domain name.</p>
      */
-    inline const Aws::String& GetBasePath() const{ return m_basePath; }
+    inline const Aws::String& GetBasePath() const { return m_basePath; }
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
-    inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
-    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
-    inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
-    inline GetBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
-    inline GetBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
-    inline GetBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
+    template<typename BasePathT = Aws::String>
+    void SetBasePath(BasePathT&& value) { m_basePathHasBeenSet = true; m_basePath = std::forward<BasePathT>(value); }
+    template<typename BasePathT = Aws::String>
+    GetBasePathMappingRequest& WithBasePath(BasePathT&& value) { SetBasePath(std::forward<BasePathT>(value)); return *this;}
     ///@}
   private:
 

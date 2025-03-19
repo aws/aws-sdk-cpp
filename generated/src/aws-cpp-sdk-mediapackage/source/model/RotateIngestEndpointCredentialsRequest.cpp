@@ -12,12 +12,6 @@ using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RotateIngestEndpointCredentialsRequest::RotateIngestEndpointCredentialsRequest() : 
-    m_idHasBeenSet(false),
-    m_ingestEndpointIdHasBeenSet(false)
-{
-}
-
 Aws::String RotateIngestEndpointCredentialsRequest::SerializePayload() const
 {
   return {};

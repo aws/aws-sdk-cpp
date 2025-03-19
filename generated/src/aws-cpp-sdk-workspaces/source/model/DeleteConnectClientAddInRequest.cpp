@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectClientAddInRequest::DeleteConnectClientAddInRequest() : 
-    m_addInIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectClientAddInRequest::SerializePayload() const
 {
   JsonValue payload;

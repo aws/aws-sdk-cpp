@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyRedshiftIdcApplicationResult::ModifyRedshiftIdcApplicationResult()
-{
-}
-
 ModifyRedshiftIdcApplicationResult::ModifyRedshiftIdcApplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyRedshiftIdcApplicationResult& ModifyRedshiftIdcApplicationResult::operator
     if(!redshiftIdcApplicationNode.IsNull())
     {
       m_redshiftIdcApplication = redshiftIdcApplicationNode;
+      m_redshiftIdcApplicationHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifyRedshiftIdcApplicationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

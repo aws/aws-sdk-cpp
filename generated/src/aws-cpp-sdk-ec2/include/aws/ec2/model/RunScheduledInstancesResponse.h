@@ -34,7 +34,7 @@ namespace Model
   class RunScheduledInstancesResponse
   {
   public:
-    AWS_EC2_API RunScheduledInstancesResponse();
+    AWS_EC2_API RunScheduledInstancesResponse() = default;
     AWS_EC2_API RunScheduledInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API RunScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,29 +43,30 @@ namespace Model
     /**
      * <p>The IDs of the newly launched instances.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceIdSet() const{ return m_instanceIdSet; }
-    inline void SetInstanceIdSet(const Aws::Vector<Aws::String>& value) { m_instanceIdSet = value; }
-    inline void SetInstanceIdSet(Aws::Vector<Aws::String>&& value) { m_instanceIdSet = std::move(value); }
-    inline RunScheduledInstancesResponse& WithInstanceIdSet(const Aws::Vector<Aws::String>& value) { SetInstanceIdSet(value); return *this;}
-    inline RunScheduledInstancesResponse& WithInstanceIdSet(Aws::Vector<Aws::String>&& value) { SetInstanceIdSet(std::move(value)); return *this;}
-    inline RunScheduledInstancesResponse& AddInstanceIdSet(const Aws::String& value) { m_instanceIdSet.push_back(value); return *this; }
-    inline RunScheduledInstancesResponse& AddInstanceIdSet(Aws::String&& value) { m_instanceIdSet.push_back(std::move(value)); return *this; }
-    inline RunScheduledInstancesResponse& AddInstanceIdSet(const char* value) { m_instanceIdSet.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetInstanceIdSet() const { return m_instanceIdSet; }
+    template<typename InstanceIdSetT = Aws::Vector<Aws::String>>
+    void SetInstanceIdSet(InstanceIdSetT&& value) { m_instanceIdSetHasBeenSet = true; m_instanceIdSet = std::forward<InstanceIdSetT>(value); }
+    template<typename InstanceIdSetT = Aws::Vector<Aws::String>>
+    RunScheduledInstancesResponse& WithInstanceIdSet(InstanceIdSetT&& value) { SetInstanceIdSet(std::forward<InstanceIdSetT>(value)); return *this;}
+    template<typename InstanceIdSetT = Aws::String>
+    RunScheduledInstancesResponse& AddInstanceIdSet(InstanceIdSetT&& value) { m_instanceIdSetHasBeenSet = true; m_instanceIdSet.emplace_back(std::forward<InstanceIdSetT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RunScheduledInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RunScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RunScheduledInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_instanceIdSet;
+    bool m_instanceIdSetHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

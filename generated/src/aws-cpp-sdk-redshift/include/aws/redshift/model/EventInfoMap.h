@@ -32,7 +32,7 @@ namespace Model
   class EventInfoMap
   {
   public:
-    AWS_REDSHIFT_API EventInfoMap();
+    AWS_REDSHIFT_API EventInfoMap() = default;
     AWS_REDSHIFT_API EventInfoMap(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API EventInfoMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,57 +44,50 @@ namespace Model
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline EventInfoMap& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline EventInfoMap& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline EventInfoMap& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    EventInfoMap& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The category of an Amazon Redshift event.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+    inline const Aws::Vector<Aws::String>& GetEventCategories() const { return m_eventCategories; }
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
-    inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
-    inline EventInfoMap& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
-    inline EventInfoMap& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
-    inline EventInfoMap& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-    inline EventInfoMap& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
-    inline EventInfoMap& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    void SetEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::forward<EventCategoriesT>(value); }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    EventInfoMap& WithEventCategories(EventCategoriesT&& value) { SetEventCategories(std::forward<EventCategoriesT>(value)); return *this;}
+    template<typename EventCategoriesT = Aws::String>
+    EventInfoMap& AddEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.emplace_back(std::forward<EventCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The description of an Amazon Redshift event.</p>
      */
-    inline const Aws::String& GetEventDescription() const{ return m_eventDescription; }
+    inline const Aws::String& GetEventDescription() const { return m_eventDescription; }
     inline bool EventDescriptionHasBeenSet() const { return m_eventDescriptionHasBeenSet; }
-    inline void SetEventDescription(const Aws::String& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
-    inline void SetEventDescription(Aws::String&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::move(value); }
-    inline void SetEventDescription(const char* value) { m_eventDescriptionHasBeenSet = true; m_eventDescription.assign(value); }
-    inline EventInfoMap& WithEventDescription(const Aws::String& value) { SetEventDescription(value); return *this;}
-    inline EventInfoMap& WithEventDescription(Aws::String&& value) { SetEventDescription(std::move(value)); return *this;}
-    inline EventInfoMap& WithEventDescription(const char* value) { SetEventDescription(value); return *this;}
+    template<typename EventDescriptionT = Aws::String>
+    void SetEventDescription(EventDescriptionT&& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = std::forward<EventDescriptionT>(value); }
+    template<typename EventDescriptionT = Aws::String>
+    EventInfoMap& WithEventDescription(EventDescriptionT&& value) { SetEventDescription(std::forward<EventDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline const Aws::String& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-    inline EventInfoMap& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-    inline EventInfoMap& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-    inline EventInfoMap& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+    template<typename SeverityT = Aws::String>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = Aws::String>
+    EventInfoMap& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
   private:
 

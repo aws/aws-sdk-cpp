@@ -32,7 +32,7 @@ namespace Model
   class VideoStandardExtraction
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API VideoStandardExtraction();
+    AWS_BEDROCKDATAAUTOMATION_API VideoStandardExtraction() = default;
     AWS_BEDROCKDATAAUTOMATION_API VideoStandardExtraction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API VideoStandardExtraction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const VideoExtractionCategory& GetCategory() const{ return m_category; }
+    inline const VideoExtractionCategory& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const VideoExtractionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(VideoExtractionCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline VideoStandardExtraction& WithCategory(const VideoExtractionCategory& value) { SetCategory(value); return *this;}
-    inline VideoStandardExtraction& WithCategory(VideoExtractionCategory&& value) { SetCategory(std::move(value)); return *this;}
+    template<typename CategoryT = VideoExtractionCategory>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = VideoExtractionCategory>
+    VideoStandardExtraction& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VideoBoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+    inline const VideoBoundingBox& GetBoundingBox() const { return m_boundingBox; }
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-    inline void SetBoundingBox(const VideoBoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-    inline void SetBoundingBox(VideoBoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-    inline VideoStandardExtraction& WithBoundingBox(const VideoBoundingBox& value) { SetBoundingBox(value); return *this;}
-    inline VideoStandardExtraction& WithBoundingBox(VideoBoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    template<typename BoundingBoxT = VideoBoundingBox>
+    void SetBoundingBox(BoundingBoxT&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::forward<BoundingBoxT>(value); }
+    template<typename BoundingBoxT = VideoBoundingBox>
+    VideoStandardExtraction& WithBoundingBox(BoundingBoxT&& value) { SetBoundingBox(std::forward<BoundingBoxT>(value)); return *this;}
     ///@}
   private:
 

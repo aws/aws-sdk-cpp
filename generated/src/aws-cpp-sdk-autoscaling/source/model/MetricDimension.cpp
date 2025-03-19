@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MetricDimension::MetricDimension() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MetricDimension::MetricDimension(const XmlNode& xmlNode)
-  : MetricDimension()
 {
   *this = xmlNode;
 }

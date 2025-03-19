@@ -20,15 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-LBCookieStickinessPolicy::LBCookieStickinessPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_cookieExpirationPeriod(0),
-    m_cookieExpirationPeriodHasBeenSet(false)
-{
-}
-
 LBCookieStickinessPolicy::LBCookieStickinessPolicy(const XmlNode& xmlNode)
-  : LBCookieStickinessPolicy()
 {
   *this = xmlNode;
 }

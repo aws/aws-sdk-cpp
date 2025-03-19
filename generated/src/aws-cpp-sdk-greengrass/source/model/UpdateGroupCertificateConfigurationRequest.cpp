@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGroupCertificateConfigurationRequest::UpdateGroupCertificateConfigurationRequest() : 
-    m_certificateExpiryInMillisecondsHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGroupCertificateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

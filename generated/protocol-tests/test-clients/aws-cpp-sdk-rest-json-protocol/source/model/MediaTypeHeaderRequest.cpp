@@ -13,11 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MediaTypeHeaderRequest::MediaTypeHeaderRequest() : 
-    m_jsonHasBeenSet(false)
-{
-}
-
 Aws::String MediaTypeHeaderRequest::SerializePayload() const
 {
   return {};

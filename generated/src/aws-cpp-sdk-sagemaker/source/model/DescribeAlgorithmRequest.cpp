@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAlgorithmRequest::DescribeAlgorithmRequest() : 
-    m_algorithmNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAlgorithmRequest::SerializePayload() const
 {
   JsonValue payload;

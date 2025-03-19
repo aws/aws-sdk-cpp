@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotMember::BotMember() : 
-    m_botMemberIdHasBeenSet(false),
-    m_botMemberNameHasBeenSet(false),
-    m_botMemberAliasIdHasBeenSet(false),
-    m_botMemberAliasNameHasBeenSet(false),
-    m_botMemberVersionHasBeenSet(false)
-{
-}
-
 BotMember::BotMember(JsonView jsonValue)
-  : BotMember()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ BotMember& BotMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botMemberId"))
   {
     m_botMemberId = jsonValue.GetString("botMemberId");
-
     m_botMemberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botMemberName"))
   {
     m_botMemberName = jsonValue.GetString("botMemberName");
-
     m_botMemberNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botMemberAliasId"))
   {
     m_botMemberAliasId = jsonValue.GetString("botMemberAliasId");
-
     m_botMemberAliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botMemberAliasName"))
   {
     m_botMemberAliasName = jsonValue.GetString("botMemberAliasName");
-
     m_botMemberAliasNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botMemberVersion"))
   {
     m_botMemberVersion = jsonValue.GetString("botMemberVersion");
-
     m_botMemberVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

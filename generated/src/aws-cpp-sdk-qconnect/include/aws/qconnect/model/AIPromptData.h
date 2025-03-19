@@ -40,7 +40,7 @@ namespace Model
   class AIPromptData
   {
   public:
-    AWS_QCONNECT_API AIPromptData();
+    AWS_QCONNECT_API AIPromptData() = default;
     AWS_QCONNECT_API AIPromptData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIPromptData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,54 +50,46 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AI Prompt.</p>
      */
-    inline const Aws::String& GetAiPromptArn() const{ return m_aiPromptArn; }
+    inline const Aws::String& GetAiPromptArn() const { return m_aiPromptArn; }
     inline bool AiPromptArnHasBeenSet() const { return m_aiPromptArnHasBeenSet; }
-    inline void SetAiPromptArn(const Aws::String& value) { m_aiPromptArnHasBeenSet = true; m_aiPromptArn = value; }
-    inline void SetAiPromptArn(Aws::String&& value) { m_aiPromptArnHasBeenSet = true; m_aiPromptArn = std::move(value); }
-    inline void SetAiPromptArn(const char* value) { m_aiPromptArnHasBeenSet = true; m_aiPromptArn.assign(value); }
-    inline AIPromptData& WithAiPromptArn(const Aws::String& value) { SetAiPromptArn(value); return *this;}
-    inline AIPromptData& WithAiPromptArn(Aws::String&& value) { SetAiPromptArn(std::move(value)); return *this;}
-    inline AIPromptData& WithAiPromptArn(const char* value) { SetAiPromptArn(value); return *this;}
+    template<typename AiPromptArnT = Aws::String>
+    void SetAiPromptArn(AiPromptArnT&& value) { m_aiPromptArnHasBeenSet = true; m_aiPromptArn = std::forward<AiPromptArnT>(value); }
+    template<typename AiPromptArnT = Aws::String>
+    AIPromptData& WithAiPromptArn(AiPromptArnT&& value) { SetAiPromptArn(std::forward<AiPromptArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Q in Connect AI prompt.</p>
      */
-    inline const Aws::String& GetAiPromptId() const{ return m_aiPromptId; }
+    inline const Aws::String& GetAiPromptId() const { return m_aiPromptId; }
     inline bool AiPromptIdHasBeenSet() const { return m_aiPromptIdHasBeenSet; }
-    inline void SetAiPromptId(const Aws::String& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = value; }
-    inline void SetAiPromptId(Aws::String&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::move(value); }
-    inline void SetAiPromptId(const char* value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId.assign(value); }
-    inline AIPromptData& WithAiPromptId(const Aws::String& value) { SetAiPromptId(value); return *this;}
-    inline AIPromptData& WithAiPromptId(Aws::String&& value) { SetAiPromptId(std::move(value)); return *this;}
-    inline AIPromptData& WithAiPromptId(const char* value) { SetAiPromptId(value); return *this;}
+    template<typename AiPromptIdT = Aws::String>
+    void SetAiPromptId(AiPromptIdT&& value) { m_aiPromptIdHasBeenSet = true; m_aiPromptId = std::forward<AiPromptIdT>(value); }
+    template<typename AiPromptIdT = Aws::String>
+    AIPromptData& WithAiPromptId(AiPromptIdT&& value) { SetAiPromptId(std::forward<AiPromptIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API format used for this AI Prompt.</p>
      */
-    inline const AIPromptAPIFormat& GetApiFormat() const{ return m_apiFormat; }
+    inline AIPromptAPIFormat GetApiFormat() const { return m_apiFormat; }
     inline bool ApiFormatHasBeenSet() const { return m_apiFormatHasBeenSet; }
-    inline void SetApiFormat(const AIPromptAPIFormat& value) { m_apiFormatHasBeenSet = true; m_apiFormat = value; }
-    inline void SetApiFormat(AIPromptAPIFormat&& value) { m_apiFormatHasBeenSet = true; m_apiFormat = std::move(value); }
-    inline AIPromptData& WithApiFormat(const AIPromptAPIFormat& value) { SetApiFormat(value); return *this;}
-    inline AIPromptData& WithApiFormat(AIPromptAPIFormat&& value) { SetApiFormat(std::move(value)); return *this;}
+    inline void SetApiFormat(AIPromptAPIFormat value) { m_apiFormatHasBeenSet = true; m_apiFormat = value; }
+    inline AIPromptData& WithApiFormat(AIPromptAPIFormat value) { SetApiFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.</p>
      */
-    inline const Aws::String& GetAssistantArn() const{ return m_assistantArn; }
+    inline const Aws::String& GetAssistantArn() const { return m_assistantArn; }
     inline bool AssistantArnHasBeenSet() const { return m_assistantArnHasBeenSet; }
-    inline void SetAssistantArn(const Aws::String& value) { m_assistantArnHasBeenSet = true; m_assistantArn = value; }
-    inline void SetAssistantArn(Aws::String&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::move(value); }
-    inline void SetAssistantArn(const char* value) { m_assistantArnHasBeenSet = true; m_assistantArn.assign(value); }
-    inline AIPromptData& WithAssistantArn(const Aws::String& value) { SetAssistantArn(value); return *this;}
-    inline AIPromptData& WithAssistantArn(Aws::String&& value) { SetAssistantArn(std::move(value)); return *this;}
-    inline AIPromptData& WithAssistantArn(const char* value) { SetAssistantArn(value); return *this;}
+    template<typename AssistantArnT = Aws::String>
+    void SetAssistantArn(AssistantArnT&& value) { m_assistantArnHasBeenSet = true; m_assistantArn = std::forward<AssistantArnT>(value); }
+    template<typename AssistantArnT = Aws::String>
+    AIPromptData& WithAssistantArn(AssistantArnT&& value) { SetAssistantArn(std::forward<AssistantArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,28 +97,24 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline AIPromptData& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline AIPromptData& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline AIPromptData& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    AIPromptData& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the AI Prompt.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AIPromptData& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AIPromptData& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AIPromptData& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AIPromptData& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,40 +122,36 @@ namespace Model
      * <p>The identifier of the model used for this AI Prompt. Model Ids supported are:
      * <code>CLAUDE_3_HAIKU_20240307_V1</code>.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline AIPromptData& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline AIPromptData& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline AIPromptData& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    AIPromptData& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the AI Prompt was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedTime() const{ return m_modifiedTime; }
+    inline const Aws::Utils::DateTime& GetModifiedTime() const { return m_modifiedTime; }
     inline bool ModifiedTimeHasBeenSet() const { return m_modifiedTimeHasBeenSet; }
-    inline void SetModifiedTime(const Aws::Utils::DateTime& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = value; }
-    inline void SetModifiedTime(Aws::Utils::DateTime&& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = std::move(value); }
-    inline AIPromptData& WithModifiedTime(const Aws::Utils::DateTime& value) { SetModifiedTime(value); return *this;}
-    inline AIPromptData& WithModifiedTime(Aws::Utils::DateTime&& value) { SetModifiedTime(std::move(value)); return *this;}
+    template<typename ModifiedTimeT = Aws::Utils::DateTime>
+    void SetModifiedTime(ModifiedTimeT&& value) { m_modifiedTimeHasBeenSet = true; m_modifiedTime = std::forward<ModifiedTimeT>(value); }
+    template<typename ModifiedTimeT = Aws::Utils::DateTime>
+    AIPromptData& WithModifiedTime(ModifiedTimeT&& value) { SetModifiedTime(std::forward<ModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the AI Prompt</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AIPromptData& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AIPromptData& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AIPromptData& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AIPromptData& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,91 +160,78 @@ namespace Model
      * created by Q in Connect or <code>CUSTOMER</code> for an AI Prompt created by
      * calling AI Prompt creation APIs. </p>
      */
-    inline const Origin& GetOrigin() const{ return m_origin; }
+    inline Origin GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const Origin& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(Origin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline AIPromptData& WithOrigin(const Origin& value) { SetOrigin(value); return *this;}
-    inline AIPromptData& WithOrigin(Origin&& value) { SetOrigin(std::move(value)); return *this;}
+    inline void SetOrigin(Origin value) { m_originHasBeenSet = true; m_origin = value; }
+    inline AIPromptData& WithOrigin(Origin value) { SetOrigin(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the AI Prompt.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AIPromptData& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline AIPromptData& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AIPromptData& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AIPromptData& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline AIPromptData& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline AIPromptData& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline AIPromptData& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline AIPromptData& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline AIPromptData& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline AIPromptData& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline AIPromptData& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline AIPromptData& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    AIPromptData& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    AIPromptData& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the prompt template for this AI Prompt.</p>
      */
-    inline const AIPromptTemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+    inline const AIPromptTemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    inline void SetTemplateConfiguration(const AIPromptTemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
-    inline void SetTemplateConfiguration(AIPromptTemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
-    inline AIPromptData& WithTemplateConfiguration(const AIPromptTemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
-    inline AIPromptData& WithTemplateConfiguration(AIPromptTemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TemplateConfigurationT = AIPromptTemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = AIPromptTemplateConfiguration>
+    AIPromptData& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the prompt template for this AI Prompt.</p>
      */
-    inline const AIPromptTemplateType& GetTemplateType() const{ return m_templateType; }
+    inline AIPromptTemplateType GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const AIPromptTemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(AIPromptTemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline AIPromptData& WithTemplateType(const AIPromptTemplateType& value) { SetTemplateType(value); return *this;}
-    inline AIPromptData& WithTemplateType(AIPromptTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline void SetTemplateType(AIPromptTemplateType value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline AIPromptData& WithTemplateType(AIPromptTemplateType value) { SetTemplateType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of this AI Prompt.</p>
      */
-    inline const AIPromptType& GetType() const{ return m_type; }
+    inline AIPromptType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AIPromptType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AIPromptType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AIPromptData& WithType(const AIPromptType& value) { SetType(value); return *this;}
-    inline AIPromptData& WithType(AIPromptType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AIPromptType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AIPromptData& WithType(AIPromptType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visibility status of the AI Prompt.</p>
      */
-    inline const VisibilityStatus& GetVisibilityStatus() const{ return m_visibilityStatus; }
+    inline VisibilityStatus GetVisibilityStatus() const { return m_visibilityStatus; }
     inline bool VisibilityStatusHasBeenSet() const { return m_visibilityStatusHasBeenSet; }
-    inline void SetVisibilityStatus(const VisibilityStatus& value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
-    inline void SetVisibilityStatus(VisibilityStatus&& value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = std::move(value); }
-    inline AIPromptData& WithVisibilityStatus(const VisibilityStatus& value) { SetVisibilityStatus(value); return *this;}
-    inline AIPromptData& WithVisibilityStatus(VisibilityStatus&& value) { SetVisibilityStatus(std::move(value)); return *this;}
+    inline void SetVisibilityStatus(VisibilityStatus value) { m_visibilityStatusHasBeenSet = true; m_visibilityStatus = value; }
+    inline AIPromptData& WithVisibilityStatus(VisibilityStatus value) { SetVisibilityStatus(value); return *this;}
     ///@}
   private:
 
@@ -270,7 +241,7 @@ namespace Model
     Aws::String m_aiPromptId;
     bool m_aiPromptIdHasBeenSet = false;
 
-    AIPromptAPIFormat m_apiFormat;
+    AIPromptAPIFormat m_apiFormat{AIPromptAPIFormat::NOT_SET};
     bool m_apiFormatHasBeenSet = false;
 
     Aws::String m_assistantArn;
@@ -285,16 +256,16 @@ namespace Model
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedTime;
+    Aws::Utils::DateTime m_modifiedTime{};
     bool m_modifiedTimeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Origin m_origin;
+    Origin m_origin{Origin::NOT_SET};
     bool m_originHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
@@ -303,13 +274,13 @@ namespace Model
     AIPromptTemplateConfiguration m_templateConfiguration;
     bool m_templateConfigurationHasBeenSet = false;
 
-    AIPromptTemplateType m_templateType;
+    AIPromptTemplateType m_templateType{AIPromptTemplateType::NOT_SET};
     bool m_templateTypeHasBeenSet = false;
 
-    AIPromptType m_type;
+    AIPromptType m_type{AIPromptType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    VisibilityStatus m_visibilityStatus;
+    VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
     bool m_visibilityStatusHasBeenSet = false;
   };
 

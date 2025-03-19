@@ -12,15 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubnetChangeProtectionRequest::UpdateSubnetChangeProtectionRequest() : 
-    m_updateTokenHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_subnetChangeProtection(false),
-    m_subnetChangeProtectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubnetChangeProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

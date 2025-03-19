@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccessPolicyRequest::DescribeAccessPolicyRequest() : 
-    m_accessPolicyIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccessPolicyRequest::SerializePayload() const
 {
   return {};

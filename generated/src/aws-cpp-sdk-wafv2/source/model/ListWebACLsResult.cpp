@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWebACLsResult::ListWebACLsResult()
-{
-}
-
 ListWebACLsResult::ListWebACLsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWebACLsResult& ListWebACLsResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebACLs"))
   {
     Aws::Utils::Array<JsonView> webACLsJsonList = jsonValue.GetArray("WebACLs");
@@ -42,14 +37,15 @@ ListWebACLsResult& ListWebACLsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_webACLs.push_back(webACLsJsonList[webACLsIndex].AsObject());
     }
+    m_webACLsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

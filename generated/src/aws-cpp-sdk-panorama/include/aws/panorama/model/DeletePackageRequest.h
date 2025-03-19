@@ -25,7 +25,7 @@ namespace Model
   class DeletePackageRequest : public PanoramaRequest
   {
   public:
-    AWS_PANORAMA_API DeletePackageRequest();
+    AWS_PANORAMA_API DeletePackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * <p>Delete the package even if it has artifacts stored in its access point.
      * Deletes the package's artifacts from Amazon S3.</p>
      */
-    inline bool GetForceDelete() const{ return m_forceDelete; }
+    inline bool GetForceDelete() const { return m_forceDelete; }
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
     inline DeletePackageRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The package's ID.</p>
      */
-    inline const Aws::String& GetPackageId() const{ return m_packageId; }
+    inline const Aws::String& GetPackageId() const { return m_packageId; }
     inline bool PackageIdHasBeenSet() const { return m_packageIdHasBeenSet; }
-    inline void SetPackageId(const Aws::String& value) { m_packageIdHasBeenSet = true; m_packageId = value; }
-    inline void SetPackageId(Aws::String&& value) { m_packageIdHasBeenSet = true; m_packageId = std::move(value); }
-    inline void SetPackageId(const char* value) { m_packageIdHasBeenSet = true; m_packageId.assign(value); }
-    inline DeletePackageRequest& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-    inline DeletePackageRequest& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-    inline DeletePackageRequest& WithPackageId(const char* value) { SetPackageId(value); return *this;}
+    template<typename PackageIdT = Aws::String>
+    void SetPackageId(PackageIdT&& value) { m_packageIdHasBeenSet = true; m_packageId = std::forward<PackageIdT>(value); }
+    template<typename PackageIdT = Aws::String>
+    DeletePackageRequest& WithPackageId(PackageIdT&& value) { SetPackageId(std::forward<PackageIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_forceDelete;
+    bool m_forceDelete{false};
     bool m_forceDeleteHasBeenSet = false;
 
     Aws::String m_packageId;

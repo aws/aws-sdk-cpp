@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsSettings::HlsSettings() : 
-    m_audioOnlyHlsSettingsHasBeenSet(false),
-    m_fmp4HlsSettingsHasBeenSet(false),
-    m_frameCaptureHlsSettingsHasBeenSet(false),
-    m_standardHlsSettingsHasBeenSet(false)
-{
-}
-
 HlsSettings::HlsSettings(JsonView jsonValue)
-  : HlsSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ HlsSettings& HlsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioOnlyHlsSettings"))
   {
     m_audioOnlyHlsSettings = jsonValue.GetObject("audioOnlyHlsSettings");
-
     m_audioOnlyHlsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fmp4HlsSettings"))
   {
     m_fmp4HlsSettings = jsonValue.GetObject("fmp4HlsSettings");
-
     m_fmp4HlsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameCaptureHlsSettings"))
   {
     m_frameCaptureHlsSettings = jsonValue.GetObject("frameCaptureHlsSettings");
-
     m_frameCaptureHlsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("standardHlsSettings"))
   {
     m_standardHlsSettings = jsonValue.GetObject("standardHlsSettings");
-
     m_standardHlsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

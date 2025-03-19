@@ -32,7 +32,7 @@ namespace Model
   class ForwardingConfig
   {
   public:
-    AWS_IOTSITEWISE_API ForwardingConfig();
+    AWS_IOTSITEWISE_API ForwardingConfig() = default;
     AWS_IOTSITEWISE_API ForwardingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ForwardingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The forwarding state for the given property. </p>
      */
-    inline const ForwardingConfigState& GetState() const{ return m_state; }
+    inline ForwardingConfigState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ForwardingConfigState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ForwardingConfigState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ForwardingConfig& WithState(const ForwardingConfigState& value) { SetState(value); return *this;}
-    inline ForwardingConfig& WithState(ForwardingConfigState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ForwardingConfigState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ForwardingConfig& WithState(ForwardingConfigState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    ForwardingConfigState m_state;
+    ForwardingConfigState m_state{ForwardingConfigState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

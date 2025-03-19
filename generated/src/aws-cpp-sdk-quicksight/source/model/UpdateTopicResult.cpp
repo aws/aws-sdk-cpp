@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTopicResult::UpdateTopicResult() : 
-    m_status(0)
-{
-}
-
 UpdateTopicResult::UpdateTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateTopicResult()
 {
   *this = result;
 }
@@ -34,31 +28,29 @@ UpdateTopicResult& UpdateTopicResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("TopicId"))
   {
     m_topicId = jsonValue.GetString("TopicId");
-
+    m_topicIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshArn"))
   {
     m_refreshArn = jsonValue.GetString("RefreshArn");
-
+    m_refreshArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

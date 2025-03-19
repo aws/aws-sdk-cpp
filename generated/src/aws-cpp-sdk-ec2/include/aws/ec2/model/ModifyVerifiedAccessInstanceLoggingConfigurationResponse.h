@@ -28,7 +28,7 @@ namespace Model
   class ModifyVerifiedAccessInstanceLoggingConfigurationResponse
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessInstanceLoggingConfigurationResponse();
+    AWS_EC2_API ModifyVerifiedAccessInstanceLoggingConfigurationResponse() = default;
     AWS_EC2_API ModifyVerifiedAccessInstanceLoggingConfigurationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyVerifiedAccessInstanceLoggingConfigurationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The logging configuration for the Verified Access instance.</p>
      */
-    inline const VerifiedAccessInstanceLoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
-    inline void SetLoggingConfiguration(const VerifiedAccessInstanceLoggingConfiguration& value) { m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(VerifiedAccessInstanceLoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithLoggingConfiguration(const VerifiedAccessInstanceLoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithLoggingConfiguration(VerifiedAccessInstanceLoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    inline const VerifiedAccessInstanceLoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    template<typename LoggingConfigurationT = VerifiedAccessInstanceLoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = VerifiedAccessInstanceLoggingConfiguration>
+    ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VerifiedAccessInstanceLoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

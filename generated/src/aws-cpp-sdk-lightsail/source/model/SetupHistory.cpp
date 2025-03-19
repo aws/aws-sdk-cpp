@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-SetupHistory::SetupHistory() : 
-    m_operationIdHasBeenSet(false),
-    m_requestHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_executionDetailsHasBeenSet(false),
-    m_status(SetupStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SetupHistory::SetupHistory(JsonView jsonValue)
-  : SetupHistory()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SetupHistory& SetupHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("operationId"))
   {
     m_operationId = jsonValue.GetString("operationId");
-
     m_operationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("request"))
   {
     m_request = jsonValue.GetObject("request");
-
     m_requestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionDetails"))
   {
     Aws::Utils::Array<JsonView> executionDetailsJsonList = jsonValue.GetArray("executionDetails");
@@ -66,14 +49,11 @@ SetupHistory& SetupHistory::operator =(JsonView jsonValue)
     }
     m_executionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SetupStatusMapper::GetSetupStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

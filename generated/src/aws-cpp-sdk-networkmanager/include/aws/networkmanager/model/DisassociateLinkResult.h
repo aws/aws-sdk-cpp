@@ -28,7 +28,7 @@ namespace Model
   class DisassociateLinkResult
   {
   public:
-    AWS_NETWORKMANAGER_API DisassociateLinkResult();
+    AWS_NETWORKMANAGER_API DisassociateLinkResult() = default;
     AWS_NETWORKMANAGER_API DisassociateLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API DisassociateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the link association.</p>
      */
-    inline const LinkAssociation& GetLinkAssociation() const{ return m_linkAssociation; }
-    inline void SetLinkAssociation(const LinkAssociation& value) { m_linkAssociation = value; }
-    inline void SetLinkAssociation(LinkAssociation&& value) { m_linkAssociation = std::move(value); }
-    inline DisassociateLinkResult& WithLinkAssociation(const LinkAssociation& value) { SetLinkAssociation(value); return *this;}
-    inline DisassociateLinkResult& WithLinkAssociation(LinkAssociation&& value) { SetLinkAssociation(std::move(value)); return *this;}
+    inline const LinkAssociation& GetLinkAssociation() const { return m_linkAssociation; }
+    template<typename LinkAssociationT = LinkAssociation>
+    void SetLinkAssociation(LinkAssociationT&& value) { m_linkAssociationHasBeenSet = true; m_linkAssociation = std::forward<LinkAssociationT>(value); }
+    template<typename LinkAssociationT = LinkAssociation>
+    DisassociateLinkResult& WithLinkAssociation(LinkAssociationT&& value) { SetLinkAssociation(std::forward<LinkAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateLinkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LinkAssociation m_linkAssociation;
+    bool m_linkAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

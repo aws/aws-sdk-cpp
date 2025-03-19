@@ -35,7 +35,7 @@ namespace Model
   class ManifestPayload
   {
   public:
-    AWS_PANORAMA_API ManifestPayload();
+    AWS_PANORAMA_API ManifestPayload() = default;
     AWS_PANORAMA_API ManifestPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API ManifestPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The application manifest.</p>
      */
-    inline const Aws::String& GetPayloadData() const{ return m_payloadData; }
+    inline const Aws::String& GetPayloadData() const { return m_payloadData; }
     inline bool PayloadDataHasBeenSet() const { return m_payloadDataHasBeenSet; }
-    inline void SetPayloadData(const Aws::String& value) { m_payloadDataHasBeenSet = true; m_payloadData = value; }
-    inline void SetPayloadData(Aws::String&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::move(value); }
-    inline void SetPayloadData(const char* value) { m_payloadDataHasBeenSet = true; m_payloadData.assign(value); }
-    inline ManifestPayload& WithPayloadData(const Aws::String& value) { SetPayloadData(value); return *this;}
-    inline ManifestPayload& WithPayloadData(Aws::String&& value) { SetPayloadData(std::move(value)); return *this;}
-    inline ManifestPayload& WithPayloadData(const char* value) { SetPayloadData(value); return *this;}
+    template<typename PayloadDataT = Aws::String>
+    void SetPayloadData(PayloadDataT&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::forward<PayloadDataT>(value); }
+    template<typename PayloadDataT = Aws::String>
+    ManifestPayload& WithPayloadData(PayloadDataT&& value) { SetPayloadData(std::forward<PayloadDataT>(value)); return *this;}
     ///@}
   private:
 

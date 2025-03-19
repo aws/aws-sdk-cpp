@@ -35,7 +35,7 @@ namespace Model
   class CustomContentConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API CustomContentConfiguration();
+    AWS_QUICKSIGHT_API CustomContentConfiguration() = default;
     AWS_QUICKSIGHT_API CustomContentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomContentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The input URL that links to the custom content that you want in the custom
      * visual.</p>
      */
-    inline const Aws::String& GetContentUrl() const{ return m_contentUrl; }
+    inline const Aws::String& GetContentUrl() const { return m_contentUrl; }
     inline bool ContentUrlHasBeenSet() const { return m_contentUrlHasBeenSet; }
-    inline void SetContentUrl(const Aws::String& value) { m_contentUrlHasBeenSet = true; m_contentUrl = value; }
-    inline void SetContentUrl(Aws::String&& value) { m_contentUrlHasBeenSet = true; m_contentUrl = std::move(value); }
-    inline void SetContentUrl(const char* value) { m_contentUrlHasBeenSet = true; m_contentUrl.assign(value); }
-    inline CustomContentConfiguration& WithContentUrl(const Aws::String& value) { SetContentUrl(value); return *this;}
-    inline CustomContentConfiguration& WithContentUrl(Aws::String&& value) { SetContentUrl(std::move(value)); return *this;}
-    inline CustomContentConfiguration& WithContentUrl(const char* value) { SetContentUrl(value); return *this;}
+    template<typename ContentUrlT = Aws::String>
+    void SetContentUrl(ContentUrlT&& value) { m_contentUrlHasBeenSet = true; m_contentUrl = std::forward<ContentUrlT>(value); }
+    template<typename ContentUrlT = Aws::String>
+    CustomContentConfiguration& WithContentUrl(ContentUrlT&& value) { SetContentUrl(std::forward<ContentUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <p>The content type of the custom content visual. You can use this to have the
      * visual render as an image.</p>
      */
-    inline const CustomContentType& GetContentType() const{ return m_contentType; }
+    inline CustomContentType GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const CustomContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(CustomContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline CustomContentConfiguration& WithContentType(const CustomContentType& value) { SetContentType(value); return *this;}
-    inline CustomContentConfiguration& WithContentType(CustomContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline void SetContentType(CustomContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline CustomContentConfiguration& WithContentType(CustomContentType value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,34 +71,32 @@ namespace Model
      * is required when the <code>ContentType</code> of the visual is
      * <code>'IMAGE'</code>.</p>
      */
-    inline const CustomContentImageScalingConfiguration& GetImageScaling() const{ return m_imageScaling; }
+    inline CustomContentImageScalingConfiguration GetImageScaling() const { return m_imageScaling; }
     inline bool ImageScalingHasBeenSet() const { return m_imageScalingHasBeenSet; }
-    inline void SetImageScaling(const CustomContentImageScalingConfiguration& value) { m_imageScalingHasBeenSet = true; m_imageScaling = value; }
-    inline void SetImageScaling(CustomContentImageScalingConfiguration&& value) { m_imageScalingHasBeenSet = true; m_imageScaling = std::move(value); }
-    inline CustomContentConfiguration& WithImageScaling(const CustomContentImageScalingConfiguration& value) { SetImageScaling(value); return *this;}
-    inline CustomContentConfiguration& WithImageScaling(CustomContentImageScalingConfiguration&& value) { SetImageScaling(std::move(value)); return *this;}
+    inline void SetImageScaling(CustomContentImageScalingConfiguration value) { m_imageScalingHasBeenSet = true; m_imageScaling = value; }
+    inline CustomContentConfiguration& WithImageScaling(CustomContentImageScalingConfiguration value) { SetImageScaling(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline CustomContentConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline CustomContentConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    CustomContentConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contentUrl;
     bool m_contentUrlHasBeenSet = false;
 
-    CustomContentType m_contentType;
+    CustomContentType m_contentType{CustomContentType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
 
-    CustomContentImageScalingConfiguration m_imageScaling;
+    CustomContentImageScalingConfiguration m_imageScaling{CustomContentImageScalingConfiguration::NOT_SET};
     bool m_imageScalingHasBeenSet = false;
 
     VisualInteractionOptions m_interactions;

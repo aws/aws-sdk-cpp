@@ -12,12 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutContactPolicyRequest::PutContactPolicyRequest() : 
-    m_contactArnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutContactPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-AttachmentError::AttachmentError() : 
-    m_code(AttachmentErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 AttachmentError::AttachmentError(JsonView jsonValue)
-  : AttachmentError()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AttachmentError& AttachmentError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = AttachmentErrorCodeMapper::GetAttachmentErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

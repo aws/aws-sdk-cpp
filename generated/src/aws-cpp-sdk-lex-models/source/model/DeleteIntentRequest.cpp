@@ -12,11 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIntentRequest::DeleteIntentRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntentRequest::SerializePayload() const
 {
   return {};

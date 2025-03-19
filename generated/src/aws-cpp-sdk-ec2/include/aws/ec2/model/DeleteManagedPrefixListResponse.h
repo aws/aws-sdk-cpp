@@ -28,7 +28,7 @@ namespace Model
   class DeleteManagedPrefixListResponse
   {
   public:
-    AWS_EC2_API DeleteManagedPrefixListResponse();
+    AWS_EC2_API DeleteManagedPrefixListResponse() = default;
     AWS_EC2_API DeleteManagedPrefixListResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteManagedPrefixListResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the prefix list.</p>
      */
-    inline const ManagedPrefixList& GetPrefixList() const{ return m_prefixList; }
-    inline void SetPrefixList(const ManagedPrefixList& value) { m_prefixList = value; }
-    inline void SetPrefixList(ManagedPrefixList&& value) { m_prefixList = std::move(value); }
-    inline DeleteManagedPrefixListResponse& WithPrefixList(const ManagedPrefixList& value) { SetPrefixList(value); return *this;}
-    inline DeleteManagedPrefixListResponse& WithPrefixList(ManagedPrefixList&& value) { SetPrefixList(std::move(value)); return *this;}
+    inline const ManagedPrefixList& GetPrefixList() const { return m_prefixList; }
+    template<typename PrefixListT = ManagedPrefixList>
+    void SetPrefixList(PrefixListT&& value) { m_prefixListHasBeenSet = true; m_prefixList = std::forward<PrefixListT>(value); }
+    template<typename PrefixListT = ManagedPrefixList>
+    DeleteManagedPrefixListResponse& WithPrefixList(PrefixListT&& value) { SetPrefixList(std::forward<PrefixListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteManagedPrefixListResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteManagedPrefixListResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteManagedPrefixListResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ManagedPrefixList m_prefixList;
+    bool m_prefixListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

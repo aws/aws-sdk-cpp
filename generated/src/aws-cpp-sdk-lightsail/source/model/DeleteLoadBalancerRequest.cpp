@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLoadBalancerRequest::DeleteLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoadBalancerRequest::SerializePayload() const
 {
   JsonValue payload;

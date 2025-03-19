@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupRuleUpdate::SecurityGroupRuleUpdate() : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_securityGroupRuleHasBeenSet(false)
-{
-}
-
 SecurityGroupRuleUpdate::SecurityGroupRuleUpdate(const XmlNode& xmlNode)
-  : SecurityGroupRuleUpdate()
 {
   *this = xmlNode;
 }

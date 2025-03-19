@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EncryptionConfig::EncryptionConfig() : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
-{
-}
-
 EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-  : EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

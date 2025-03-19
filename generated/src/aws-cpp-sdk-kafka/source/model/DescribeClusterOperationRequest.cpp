@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClusterOperationRequest::DescribeClusterOperationRequest() : 
-    m_clusterOperationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterOperationRequest::SerializePayload() const
 {
   return {};

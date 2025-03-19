@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateMemberRequest::AssociateMemberRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateMemberRequest::SerializePayload() const
 {
   JsonValue payload;

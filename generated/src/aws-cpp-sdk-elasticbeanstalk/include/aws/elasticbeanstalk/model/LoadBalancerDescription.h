@@ -33,7 +33,7 @@ namespace Model
   class LoadBalancerDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API LoadBalancerDescription();
+    AWS_ELASTICBEANSTALK_API LoadBalancerDescription() = default;
     AWS_ELASTICBEANSTALK_API LoadBalancerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API LoadBalancerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,42 +45,38 @@ namespace Model
     /**
      * <p>The name of the LoadBalancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline LoadBalancerDescription& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline LoadBalancerDescription& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline LoadBalancerDescription& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    LoadBalancerDescription& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name of the LoadBalancer.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline LoadBalancerDescription& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline LoadBalancerDescription& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline LoadBalancerDescription& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    LoadBalancerDescription& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
      */
-    inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
+    inline const Aws::Vector<Listener>& GetListeners() const { return m_listeners; }
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
-    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
-    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
-    inline LoadBalancerDescription& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
-    inline LoadBalancerDescription& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
-    inline LoadBalancerDescription& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
-    inline LoadBalancerDescription& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
+    template<typename ListenersT = Aws::Vector<Listener>>
+    void SetListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners = std::forward<ListenersT>(value); }
+    template<typename ListenersT = Aws::Vector<Listener>>
+    LoadBalancerDescription& WithListeners(ListenersT&& value) { SetListeners(std::forward<ListenersT>(value)); return *this;}
+    template<typename ListenersT = Listener>
+    LoadBalancerDescription& AddListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners.emplace_back(std::forward<ListenersT>(value)); return *this; }
     ///@}
   private:
 

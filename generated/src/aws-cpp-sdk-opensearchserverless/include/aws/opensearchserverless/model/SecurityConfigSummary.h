@@ -33,7 +33,7 @@ namespace Model
   class SecurityConfigSummary
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API SecurityConfigSummary();
+    AWS_OPENSEARCHSERVERLESS_API SecurityConfigSummary() = default;
     AWS_OPENSEARCHSERVERLESS_API SecurityConfigSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API SecurityConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,61 +43,53 @@ namespace Model
     /**
      * <p>The unique identifier of the security configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline SecurityConfigSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline SecurityConfigSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline SecurityConfigSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    SecurityConfigSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of security configuration.</p>
      */
-    inline const SecurityConfigType& GetType() const{ return m_type; }
+    inline SecurityConfigType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SecurityConfigSummary& WithType(const SecurityConfigType& value) { SetType(value); return *this;}
-    inline SecurityConfigSummary& WithType(SecurityConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SecurityConfigType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SecurityConfigSummary& WithType(SecurityConfigType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the security configuration.</p>
      */
-    inline const Aws::String& GetConfigVersion() const{ return m_configVersion; }
+    inline const Aws::String& GetConfigVersion() const { return m_configVersion; }
     inline bool ConfigVersionHasBeenSet() const { return m_configVersionHasBeenSet; }
-    inline void SetConfigVersion(const Aws::String& value) { m_configVersionHasBeenSet = true; m_configVersion = value; }
-    inline void SetConfigVersion(Aws::String&& value) { m_configVersionHasBeenSet = true; m_configVersion = std::move(value); }
-    inline void SetConfigVersion(const char* value) { m_configVersionHasBeenSet = true; m_configVersion.assign(value); }
-    inline SecurityConfigSummary& WithConfigVersion(const Aws::String& value) { SetConfigVersion(value); return *this;}
-    inline SecurityConfigSummary& WithConfigVersion(Aws::String&& value) { SetConfigVersion(std::move(value)); return *this;}
-    inline SecurityConfigSummary& WithConfigVersion(const char* value) { SetConfigVersion(value); return *this;}
+    template<typename ConfigVersionT = Aws::String>
+    void SetConfigVersion(ConfigVersionT&& value) { m_configVersionHasBeenSet = true; m_configVersion = std::forward<ConfigVersionT>(value); }
+    template<typename ConfigVersionT = Aws::String>
+    SecurityConfigSummary& WithConfigVersion(ConfigVersionT&& value) { SetConfigVersion(std::forward<ConfigVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the security configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityConfigSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityConfigSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityConfigSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SecurityConfigSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Epoch time when the security configuration was created.</p>
      */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline long long GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
     inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
     inline SecurityConfigSummary& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
@@ -107,7 +99,7 @@ namespace Model
     /**
      * <p>The timestamp of when the configuration was last modified.</p>
      */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline long long GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
     inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
     inline SecurityConfigSummary& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
@@ -117,7 +109,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    SecurityConfigType m_type;
+    SecurityConfigType m_type{SecurityConfigType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_configVersion;
@@ -126,10 +118,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    long long m_createdDate;
+    long long m_createdDate{0};
     bool m_createdDateHasBeenSet = false;
 
-    long long m_lastModifiedDate;
+    long long m_lastModifiedDate{0};
     bool m_lastModifiedDateHasBeenSet = false;
   };
 

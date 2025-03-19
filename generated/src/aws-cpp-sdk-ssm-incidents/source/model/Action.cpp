@@ -18,13 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-Action::Action() : 
-    m_ssmAutomationHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ssmAutomation"))
   {
     m_ssmAutomation = jsonValue.GetObject("ssmAutomation");
-
     m_ssmAutomationHasBeenSet = true;
   }
-
   return *this;
 }
 

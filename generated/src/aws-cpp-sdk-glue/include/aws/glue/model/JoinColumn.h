@@ -32,7 +32,7 @@ namespace Model
   class JoinColumn
   {
   public:
-    AWS_GLUE_API JoinColumn();
+    AWS_GLUE_API JoinColumn() = default;
     AWS_GLUE_API JoinColumn(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API JoinColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The column to be joined.</p>
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline JoinColumn& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline JoinColumn& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline JoinColumn& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    JoinColumn& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key of the column to be joined.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetKeys() const{ return m_keys; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetKeys() const { return m_keys; }
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-    inline void SetKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_keysHasBeenSet = true; m_keys = value; }
-    inline void SetKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-    inline JoinColumn& WithKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetKeys(value); return *this;}
-    inline JoinColumn& WithKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetKeys(std::move(value)); return *this;}
-    inline JoinColumn& AddKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-    inline JoinColumn& AddKeys(Aws::Vector<Aws::String>&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
+    template<typename KeysT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<Aws::Vector<Aws::String>>>
+    JoinColumn& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = Aws::Vector<Aws::String>>
+    JoinColumn& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
   private:
 

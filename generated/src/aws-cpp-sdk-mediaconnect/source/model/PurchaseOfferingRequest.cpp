@@ -12,13 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurchaseOfferingRequest::PurchaseOfferingRequest() : 
-    m_offeringArnHasBeenSet(false),
-    m_reservationNameHasBeenSet(false),
-    m_startHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

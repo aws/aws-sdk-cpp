@@ -21,7 +21,7 @@ namespace Model
   class MoveAccountRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API MoveAccountRequest();
+    AWS_ORGANIZATIONS_API MoveAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline MoveAccountRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline MoveAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline MoveAccountRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    MoveAccountRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * the OU is in). This string is followed by a second "-" dash and from 8 to 32
      * additional lowercase letters or digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetSourceParentId() const{ return m_sourceParentId; }
+    inline const Aws::String& GetSourceParentId() const { return m_sourceParentId; }
     inline bool SourceParentIdHasBeenSet() const { return m_sourceParentIdHasBeenSet; }
-    inline void SetSourceParentId(const Aws::String& value) { m_sourceParentIdHasBeenSet = true; m_sourceParentId = value; }
-    inline void SetSourceParentId(Aws::String&& value) { m_sourceParentIdHasBeenSet = true; m_sourceParentId = std::move(value); }
-    inline void SetSourceParentId(const char* value) { m_sourceParentIdHasBeenSet = true; m_sourceParentId.assign(value); }
-    inline MoveAccountRequest& WithSourceParentId(const Aws::String& value) { SetSourceParentId(value); return *this;}
-    inline MoveAccountRequest& WithSourceParentId(Aws::String&& value) { SetSourceParentId(std::move(value)); return *this;}
-    inline MoveAccountRequest& WithSourceParentId(const char* value) { SetSourceParentId(value); return *this;}
+    template<typename SourceParentIdT = Aws::String>
+    void SetSourceParentId(SourceParentIdT&& value) { m_sourceParentIdHasBeenSet = true; m_sourceParentId = std::forward<SourceParentIdT>(value); }
+    template<typename SourceParentIdT = Aws::String>
+    MoveAccountRequest& WithSourceParentId(SourceParentIdT&& value) { SetSourceParentId(std::forward<SourceParentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * the OU is in). This string is followed by a second "-" dash and from 8 to 32
      * additional lowercase letters or digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetDestinationParentId() const{ return m_destinationParentId; }
+    inline const Aws::String& GetDestinationParentId() const { return m_destinationParentId; }
     inline bool DestinationParentIdHasBeenSet() const { return m_destinationParentIdHasBeenSet; }
-    inline void SetDestinationParentId(const Aws::String& value) { m_destinationParentIdHasBeenSet = true; m_destinationParentId = value; }
-    inline void SetDestinationParentId(Aws::String&& value) { m_destinationParentIdHasBeenSet = true; m_destinationParentId = std::move(value); }
-    inline void SetDestinationParentId(const char* value) { m_destinationParentIdHasBeenSet = true; m_destinationParentId.assign(value); }
-    inline MoveAccountRequest& WithDestinationParentId(const Aws::String& value) { SetDestinationParentId(value); return *this;}
-    inline MoveAccountRequest& WithDestinationParentId(Aws::String&& value) { SetDestinationParentId(std::move(value)); return *this;}
-    inline MoveAccountRequest& WithDestinationParentId(const char* value) { SetDestinationParentId(value); return *this;}
+    template<typename DestinationParentIdT = Aws::String>
+    void SetDestinationParentId(DestinationParentIdT&& value) { m_destinationParentIdHasBeenSet = true; m_destinationParentId = std::forward<DestinationParentIdT>(value); }
+    template<typename DestinationParentIdT = Aws::String>
+    MoveAccountRequest& WithDestinationParentId(DestinationParentIdT&& value) { SetDestinationParentId(std::forward<DestinationParentIdT>(value)); return *this;}
     ///@}
   private:
 

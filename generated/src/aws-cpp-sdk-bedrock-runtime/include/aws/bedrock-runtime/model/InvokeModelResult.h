@@ -23,10 +23,9 @@ namespace Model
   class InvokeModelResult
   {
   public:
-    AWS_BEDROCKRUNTIME_API InvokeModelResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_BEDROCKRUNTIME_API InvokeModelResult(InvokeModelResult&&);
-    AWS_BEDROCKRUNTIME_API InvokeModelResult& operator=(InvokeModelResult&&);
+    AWS_BEDROCKRUNTIME_API InvokeModelResult() = default;
+    AWS_BEDROCKRUNTIME_API InvokeModelResult(InvokeModelResult&&) = default;
+    AWS_BEDROCKRUNTIME_API InvokeModelResult& operator=(InvokeModelResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     InvokeModelResult(const InvokeModelResult&) = delete;
@@ -55,45 +54,43 @@ namespace Model
     /**
      * <p>The MIME type of the inference result.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline InvokeModelResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline InvokeModelResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline InvokeModelResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    InvokeModelResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Model performance settings for the request.</p>
      */
-    inline const PerformanceConfigLatency& GetPerformanceConfigLatency() const{ return m_performanceConfigLatency; }
-    inline void SetPerformanceConfigLatency(const PerformanceConfigLatency& value) { m_performanceConfigLatency = value; }
-    inline void SetPerformanceConfigLatency(PerformanceConfigLatency&& value) { m_performanceConfigLatency = std::move(value); }
-    inline InvokeModelResult& WithPerformanceConfigLatency(const PerformanceConfigLatency& value) { SetPerformanceConfigLatency(value); return *this;}
-    inline InvokeModelResult& WithPerformanceConfigLatency(PerformanceConfigLatency&& value) { SetPerformanceConfigLatency(std::move(value)); return *this;}
+    inline PerformanceConfigLatency GetPerformanceConfigLatency() const { return m_performanceConfigLatency; }
+    inline void SetPerformanceConfigLatency(PerformanceConfigLatency value) { m_performanceConfigLatencyHasBeenSet = true; m_performanceConfigLatency = value; }
+    inline InvokeModelResult& WithPerformanceConfigLatency(PerformanceConfigLatency value) { SetPerformanceConfigLatency(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InvokeModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InvokeModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InvokeModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InvokeModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body{};
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
-    PerformanceConfigLatency m_performanceConfigLatency;
+    PerformanceConfigLatency m_performanceConfigLatency{PerformanceConfigLatency::NOT_SET};
+    bool m_performanceConfigLatencyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

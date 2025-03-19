@@ -43,7 +43,7 @@ namespace Model
   class S3ExpressDirectoryBucketConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API S3ExpressDirectoryBucketConfiguration();
+    AWS_ACCESSANALYZER_API S3ExpressDirectoryBucketConfiguration() = default;
     AWS_ACCESSANALYZER_API S3ExpressDirectoryBucketConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API S3ExpressDirectoryBucketConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The proposed bucket policy for the Amazon S3 directory bucket.</p>
      */
-    inline const Aws::String& GetBucketPolicy() const{ return m_bucketPolicy; }
+    inline const Aws::String& GetBucketPolicy() const { return m_bucketPolicy; }
     inline bool BucketPolicyHasBeenSet() const { return m_bucketPolicyHasBeenSet; }
-    inline void SetBucketPolicy(const Aws::String& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = value; }
-    inline void SetBucketPolicy(Aws::String&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::move(value); }
-    inline void SetBucketPolicy(const char* value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy.assign(value); }
-    inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(const Aws::String& value) { SetBucketPolicy(value); return *this;}
-    inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(Aws::String&& value) { SetBucketPolicy(std::move(value)); return *this;}
-    inline S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(const char* value) { SetBucketPolicy(value); return *this;}
+    template<typename BucketPolicyT = Aws::String>
+    void SetBucketPolicy(BucketPolicyT&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::forward<BucketPolicyT>(value); }
+    template<typename BucketPolicyT = Aws::String>
+    S3ExpressDirectoryBucketConfiguration& WithBucketPolicy(BucketPolicyT&& value) { SetBucketPolicy(std::forward<BucketPolicyT>(value)); return *this;}
     ///@}
   private:
 

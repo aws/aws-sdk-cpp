@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ContainerInstanceHealthStatus::ContainerInstanceHealthStatus() : 
-    m_overallStatus(InstanceHealthCheckState::NOT_SET),
-    m_overallStatusHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 ContainerInstanceHealthStatus::ContainerInstanceHealthStatus(JsonView jsonValue)
-  : ContainerInstanceHealthStatus()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ContainerInstanceHealthStatus& ContainerInstanceHealthStatus::operator =(JsonVie
   if(jsonValue.ValueExists("overallStatus"))
   {
     m_overallStatus = InstanceHealthCheckStateMapper::GetInstanceHealthCheckStateForName(jsonValue.GetString("overallStatus"));
-
     m_overallStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
@@ -49,7 +39,6 @@ ContainerInstanceHealthStatus& ContainerInstanceHealthStatus::operator =(JsonVie
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

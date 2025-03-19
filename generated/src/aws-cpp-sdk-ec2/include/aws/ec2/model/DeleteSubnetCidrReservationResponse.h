@@ -28,7 +28,7 @@ namespace Model
   class DeleteSubnetCidrReservationResponse
   {
   public:
-    AWS_EC2_API DeleteSubnetCidrReservationResponse();
+    AWS_EC2_API DeleteSubnetCidrReservationResponse() = default;
     AWS_EC2_API DeleteSubnetCidrReservationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteSubnetCidrReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the deleted subnet CIDR reservation.</p>
      */
-    inline const SubnetCidrReservation& GetDeletedSubnetCidrReservation() const{ return m_deletedSubnetCidrReservation; }
-    inline void SetDeletedSubnetCidrReservation(const SubnetCidrReservation& value) { m_deletedSubnetCidrReservation = value; }
-    inline void SetDeletedSubnetCidrReservation(SubnetCidrReservation&& value) { m_deletedSubnetCidrReservation = std::move(value); }
-    inline DeleteSubnetCidrReservationResponse& WithDeletedSubnetCidrReservation(const SubnetCidrReservation& value) { SetDeletedSubnetCidrReservation(value); return *this;}
-    inline DeleteSubnetCidrReservationResponse& WithDeletedSubnetCidrReservation(SubnetCidrReservation&& value) { SetDeletedSubnetCidrReservation(std::move(value)); return *this;}
+    inline const SubnetCidrReservation& GetDeletedSubnetCidrReservation() const { return m_deletedSubnetCidrReservation; }
+    template<typename DeletedSubnetCidrReservationT = SubnetCidrReservation>
+    void SetDeletedSubnetCidrReservation(DeletedSubnetCidrReservationT&& value) { m_deletedSubnetCidrReservationHasBeenSet = true; m_deletedSubnetCidrReservation = std::forward<DeletedSubnetCidrReservationT>(value); }
+    template<typename DeletedSubnetCidrReservationT = SubnetCidrReservation>
+    DeleteSubnetCidrReservationResponse& WithDeletedSubnetCidrReservation(DeletedSubnetCidrReservationT&& value) { SetDeletedSubnetCidrReservation(std::forward<DeletedSubnetCidrReservationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteSubnetCidrReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteSubnetCidrReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteSubnetCidrReservationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     SubnetCidrReservation m_deletedSubnetCidrReservation;
+    bool m_deletedSubnetCidrReservationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

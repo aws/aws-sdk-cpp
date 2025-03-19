@@ -35,7 +35,7 @@ namespace Model
   class RelatedEntityIdentifiers
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API RelatedEntityIdentifiers();
+    AWS_PARTNERCENTRALSELLING_API RelatedEntityIdentifiers() = default;
     AWS_PARTNERCENTRALSELLING_API RelatedEntityIdentifiers(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API RelatedEntityIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,15 +51,14 @@ namespace Model
      * action in the Marketplace Catalog APIs for a list of offers in the associated
      * Marketplace seller account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAwsMarketplaceOffers() const{ return m_awsMarketplaceOffers; }
+    inline const Aws::Vector<Aws::String>& GetAwsMarketplaceOffers() const { return m_awsMarketplaceOffers; }
     inline bool AwsMarketplaceOffersHasBeenSet() const { return m_awsMarketplaceOffersHasBeenSet; }
-    inline void SetAwsMarketplaceOffers(const Aws::Vector<Aws::String>& value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers = value; }
-    inline void SetAwsMarketplaceOffers(Aws::Vector<Aws::String>&& value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers = std::move(value); }
-    inline RelatedEntityIdentifiers& WithAwsMarketplaceOffers(const Aws::Vector<Aws::String>& value) { SetAwsMarketplaceOffers(value); return *this;}
-    inline RelatedEntityIdentifiers& WithAwsMarketplaceOffers(Aws::Vector<Aws::String>&& value) { SetAwsMarketplaceOffers(std::move(value)); return *this;}
-    inline RelatedEntityIdentifiers& AddAwsMarketplaceOffers(const Aws::String& value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers.push_back(value); return *this; }
-    inline RelatedEntityIdentifiers& AddAwsMarketplaceOffers(Aws::String&& value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers.push_back(std::move(value)); return *this; }
-    inline RelatedEntityIdentifiers& AddAwsMarketplaceOffers(const char* value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers.push_back(value); return *this; }
+    template<typename AwsMarketplaceOffersT = Aws::Vector<Aws::String>>
+    void SetAwsMarketplaceOffers(AwsMarketplaceOffersT&& value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers = std::forward<AwsMarketplaceOffersT>(value); }
+    template<typename AwsMarketplaceOffersT = Aws::Vector<Aws::String>>
+    RelatedEntityIdentifiers& WithAwsMarketplaceOffers(AwsMarketplaceOffersT&& value) { SetAwsMarketplaceOffers(std::forward<AwsMarketplaceOffersT>(value)); return *this;}
+    template<typename AwsMarketplaceOffersT = Aws::String>
+    RelatedEntityIdentifiers& AddAwsMarketplaceOffers(AwsMarketplaceOffersT&& value) { m_awsMarketplaceOffersHasBeenSet = true; m_awsMarketplaceOffers.emplace_back(std::forward<AwsMarketplaceOffersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,15 +73,14 @@ namespace Model
      * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">
      * Amazon Web Services products</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAwsProducts() const{ return m_awsProducts; }
+    inline const Aws::Vector<Aws::String>& GetAwsProducts() const { return m_awsProducts; }
     inline bool AwsProductsHasBeenSet() const { return m_awsProductsHasBeenSet; }
-    inline void SetAwsProducts(const Aws::Vector<Aws::String>& value) { m_awsProductsHasBeenSet = true; m_awsProducts = value; }
-    inline void SetAwsProducts(Aws::Vector<Aws::String>&& value) { m_awsProductsHasBeenSet = true; m_awsProducts = std::move(value); }
-    inline RelatedEntityIdentifiers& WithAwsProducts(const Aws::Vector<Aws::String>& value) { SetAwsProducts(value); return *this;}
-    inline RelatedEntityIdentifiers& WithAwsProducts(Aws::Vector<Aws::String>&& value) { SetAwsProducts(std::move(value)); return *this;}
-    inline RelatedEntityIdentifiers& AddAwsProducts(const Aws::String& value) { m_awsProductsHasBeenSet = true; m_awsProducts.push_back(value); return *this; }
-    inline RelatedEntityIdentifiers& AddAwsProducts(Aws::String&& value) { m_awsProductsHasBeenSet = true; m_awsProducts.push_back(std::move(value)); return *this; }
-    inline RelatedEntityIdentifiers& AddAwsProducts(const char* value) { m_awsProductsHasBeenSet = true; m_awsProducts.push_back(value); return *this; }
+    template<typename AwsProductsT = Aws::Vector<Aws::String>>
+    void SetAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts = std::forward<AwsProductsT>(value); }
+    template<typename AwsProductsT = Aws::Vector<Aws::String>>
+    RelatedEntityIdentifiers& WithAwsProducts(AwsProductsT&& value) { SetAwsProducts(std::forward<AwsProductsT>(value)); return *this;}
+    template<typename AwsProductsT = Aws::String>
+    RelatedEntityIdentifiers& AddAwsProducts(AwsProductsT&& value) { m_awsProductsHasBeenSet = true; m_awsProducts.emplace_back(std::forward<AwsProductsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,15 +96,14 @@ namespace Model
      * the opportunity, you can communicate the offerings that are being considered or
      * implemented to address the customer's business problem.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSolutions() const{ return m_solutions; }
+    inline const Aws::Vector<Aws::String>& GetSolutions() const { return m_solutions; }
     inline bool SolutionsHasBeenSet() const { return m_solutionsHasBeenSet; }
-    inline void SetSolutions(const Aws::Vector<Aws::String>& value) { m_solutionsHasBeenSet = true; m_solutions = value; }
-    inline void SetSolutions(Aws::Vector<Aws::String>&& value) { m_solutionsHasBeenSet = true; m_solutions = std::move(value); }
-    inline RelatedEntityIdentifiers& WithSolutions(const Aws::Vector<Aws::String>& value) { SetSolutions(value); return *this;}
-    inline RelatedEntityIdentifiers& WithSolutions(Aws::Vector<Aws::String>&& value) { SetSolutions(std::move(value)); return *this;}
-    inline RelatedEntityIdentifiers& AddSolutions(const Aws::String& value) { m_solutionsHasBeenSet = true; m_solutions.push_back(value); return *this; }
-    inline RelatedEntityIdentifiers& AddSolutions(Aws::String&& value) { m_solutionsHasBeenSet = true; m_solutions.push_back(std::move(value)); return *this; }
-    inline RelatedEntityIdentifiers& AddSolutions(const char* value) { m_solutionsHasBeenSet = true; m_solutions.push_back(value); return *this; }
+    template<typename SolutionsT = Aws::Vector<Aws::String>>
+    void SetSolutions(SolutionsT&& value) { m_solutionsHasBeenSet = true; m_solutions = std::forward<SolutionsT>(value); }
+    template<typename SolutionsT = Aws::Vector<Aws::String>>
+    RelatedEntityIdentifiers& WithSolutions(SolutionsT&& value) { SetSolutions(std::forward<SolutionsT>(value)); return *this;}
+    template<typename SolutionsT = Aws::String>
+    RelatedEntityIdentifiers& AddSolutions(SolutionsT&& value) { m_solutionsHasBeenSet = true; m_solutions.emplace_back(std::forward<SolutionsT>(value)); return *this; }
     ///@}
   private:
 

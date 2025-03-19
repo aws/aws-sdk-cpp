@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-StorageConnector::StorageConnector() : 
-    m_connectorType(StorageConnectorTypeEnum::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_status(StorageConnectorStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 StorageConnector::StorageConnector(JsonView jsonValue)
-  : StorageConnector()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StorageConnector& StorageConnector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectorType"))
   {
     m_connectorType = StorageConnectorTypeEnumMapper::GetStorageConnectorTypeEnumForName(jsonValue.GetString("ConnectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StorageConnectorStatusEnumMapper::GetStorageConnectorStatusEnumForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

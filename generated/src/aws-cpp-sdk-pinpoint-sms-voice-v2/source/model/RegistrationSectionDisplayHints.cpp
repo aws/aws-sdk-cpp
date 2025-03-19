@@ -18,17 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationSectionDisplayHints::RegistrationSectionDisplayHints() : 
-    m_titleHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_documentationTitleHasBeenSet(false),
-    m_documentationLinkHasBeenSet(false)
-{
-}
-
 RegistrationSectionDisplayHints::RegistrationSectionDisplayHints(JsonView jsonValue)
-  : RegistrationSectionDisplayHints()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RegistrationSectionDisplayHints& RegistrationSectionDisplayHints::operator =(Jso
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortDescription"))
   {
     m_shortDescription = jsonValue.GetString("ShortDescription");
-
     m_shortDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongDescription"))
   {
     m_longDescription = jsonValue.GetString("LongDescription");
-
     m_longDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentationTitle"))
   {
     m_documentationTitle = jsonValue.GetString("DocumentationTitle");
-
     m_documentationTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentationLink"))
   {
     m_documentationLink = jsonValue.GetString("DocumentationLink");
-
     m_documentationLinkHasBeenSet = true;
   }
-
   return *this;
 }
 

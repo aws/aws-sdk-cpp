@@ -25,7 +25,7 @@ namespace Model
   class GetEvidenceFileUploadUrlRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API GetEvidenceFileUploadUrlRequest();
+    AWS_AUDITMANAGER_API GetEvidenceFileUploadUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
      * file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline GetEvidenceFileUploadUrlRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline GetEvidenceFileUploadUrlRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline GetEvidenceFileUploadUrlRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    GetEvidenceFileUploadUrlRequest& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLayerVersionsResult::ListLayerVersionsResult()
-{
-}
-
 ListLayerVersionsResult::ListLayerVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListLayerVersionsResult& ListLayerVersionsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerVersions"))
   {
     Aws::Utils::Array<JsonView> layerVersionsJsonList = jsonValue.GetArray("LayerVersions");
@@ -42,14 +37,15 @@ ListLayerVersionsResult& ListLayerVersionsResult::operator =(const Aws::AmazonWe
     {
       m_layerVersions.push_back(layerVersionsJsonList[layerVersionsIndex].AsObject());
     }
+    m_layerVersionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

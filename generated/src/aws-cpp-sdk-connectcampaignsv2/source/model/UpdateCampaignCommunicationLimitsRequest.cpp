@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignCommunicationLimitsRequest::UpdateCampaignCommunicationLimitsRequest() : 
-    m_idHasBeenSet(false),
-    m_communicationLimitsOverrideHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignCommunicationLimitsRequest::SerializePayload() const
 {
   JsonValue payload;

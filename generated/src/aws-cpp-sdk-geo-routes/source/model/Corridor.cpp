@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-Corridor::Corridor() : 
-    m_lineStringHasBeenSet(false),
-    m_radius(0),
-    m_radiusHasBeenSet(false)
-{
-}
-
 Corridor::Corridor(JsonView jsonValue)
-  : Corridor()
 {
   *this = jsonValue;
 }
@@ -49,14 +41,11 @@ Corridor& Corridor::operator =(JsonView jsonValue)
     }
     m_lineStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Radius"))
   {
     m_radius = jsonValue.GetInteger("Radius");
-
     m_radiusHasBeenSet = true;
   }
-
   return *this;
 }
 

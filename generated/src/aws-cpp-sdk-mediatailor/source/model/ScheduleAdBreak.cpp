@@ -18,17 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-ScheduleAdBreak::ScheduleAdBreak() : 
-    m_approximateDurationSeconds(0),
-    m_approximateDurationSecondsHasBeenSet(false),
-    m_approximateStartTimeHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
-{
-}
-
 ScheduleAdBreak::ScheduleAdBreak(JsonView jsonValue)
-  : ScheduleAdBreak()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ScheduleAdBreak& ScheduleAdBreak::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApproximateDurationSeconds"))
   {
     m_approximateDurationSeconds = jsonValue.GetInt64("ApproximateDurationSeconds");
-
     m_approximateDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateStartTime"))
   {
     m_approximateStartTime = jsonValue.GetDouble("ApproximateStartTime");
-
     m_approximateStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
-
     m_sourceLocationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VodSourceName"))
   {
     m_vodSourceName = jsonValue.GetString("VodSourceName");
-
     m_vodSourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

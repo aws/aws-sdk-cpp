@@ -39,7 +39,7 @@ namespace Model
   class ContentRedaction
   {
   public:
-    AWS_TRANSCRIBESERVICE_API ContentRedaction();
+    AWS_TRANSCRIBESERVICE_API ContentRedaction() = default;
     AWS_TRANSCRIBESERVICE_API ContentRedaction(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API ContentRedaction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * you do not include <code>PiiEntityTypes</code> in your request, all PII is
      * redacted.</p>
      */
-    inline const RedactionType& GetRedactionType() const{ return m_redactionType; }
+    inline RedactionType GetRedactionType() const { return m_redactionType; }
     inline bool RedactionTypeHasBeenSet() const { return m_redactionTypeHasBeenSet; }
-    inline void SetRedactionType(const RedactionType& value) { m_redactionTypeHasBeenSet = true; m_redactionType = value; }
-    inline void SetRedactionType(RedactionType&& value) { m_redactionTypeHasBeenSet = true; m_redactionType = std::move(value); }
-    inline ContentRedaction& WithRedactionType(const RedactionType& value) { SetRedactionType(value); return *this;}
-    inline ContentRedaction& WithRedactionType(RedactionType&& value) { SetRedactionType(std::move(value)); return *this;}
+    inline void SetRedactionType(RedactionType value) { m_redactionTypeHasBeenSet = true; m_redactionType = value; }
+    inline ContentRedaction& WithRedactionType(RedactionType value) { SetRedactionType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an
      * unredacted transcript (as two separate files).</p>
      */
-    inline const RedactionOutput& GetRedactionOutput() const{ return m_redactionOutput; }
+    inline RedactionOutput GetRedactionOutput() const { return m_redactionOutput; }
     inline bool RedactionOutputHasBeenSet() const { return m_redactionOutputHasBeenSet; }
-    inline void SetRedactionOutput(const RedactionOutput& value) { m_redactionOutputHasBeenSet = true; m_redactionOutput = value; }
-    inline void SetRedactionOutput(RedactionOutput&& value) { m_redactionOutputHasBeenSet = true; m_redactionOutput = std::move(value); }
-    inline ContentRedaction& WithRedactionOutput(const RedactionOutput& value) { SetRedactionOutput(value); return *this;}
-    inline ContentRedaction& WithRedactionOutput(RedactionOutput&& value) { SetRedactionOutput(std::move(value)); return *this;}
+    inline void SetRedactionOutput(RedactionOutput value) { m_redactionOutputHasBeenSet = true; m_redactionOutput = value; }
+    inline ContentRedaction& WithRedactionOutput(RedactionOutput value) { SetRedactionOutput(value); return *this;}
     ///@}
 
     ///@{
@@ -84,21 +80,20 @@ namespace Model
      * can select <code>ALL</code>. If you do not include <code>PiiEntityTypes</code>
      * in your request, all PII is redacted.</p>
      */
-    inline const Aws::Vector<PiiEntityType>& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
+    inline const Aws::Vector<PiiEntityType>& GetPiiEntityTypes() const { return m_piiEntityTypes; }
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
-    inline void SetPiiEntityTypes(const Aws::Vector<PiiEntityType>& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
-    inline void SetPiiEntityTypes(Aws::Vector<PiiEntityType>&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
-    inline ContentRedaction& WithPiiEntityTypes(const Aws::Vector<PiiEntityType>& value) { SetPiiEntityTypes(value); return *this;}
-    inline ContentRedaction& WithPiiEntityTypes(Aws::Vector<PiiEntityType>&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
-    inline ContentRedaction& AddPiiEntityTypes(const PiiEntityType& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(value); return *this; }
-    inline ContentRedaction& AddPiiEntityTypes(PiiEntityType&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(std::move(value)); return *this; }
+    template<typename PiiEntityTypesT = Aws::Vector<PiiEntityType>>
+    void SetPiiEntityTypes(PiiEntityTypesT&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::forward<PiiEntityTypesT>(value); }
+    template<typename PiiEntityTypesT = Aws::Vector<PiiEntityType>>
+    ContentRedaction& WithPiiEntityTypes(PiiEntityTypesT&& value) { SetPiiEntityTypes(std::forward<PiiEntityTypesT>(value)); return *this;}
+    inline ContentRedaction& AddPiiEntityTypes(PiiEntityType value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(value); return *this; }
     ///@}
   private:
 
-    RedactionType m_redactionType;
+    RedactionType m_redactionType{RedactionType::NOT_SET};
     bool m_redactionTypeHasBeenSet = false;
 
-    RedactionOutput m_redactionOutput;
+    RedactionOutput m_redactionOutput{RedactionOutput::NOT_SET};
     bool m_redactionOutputHasBeenSet = false;
 
     Aws::Vector<PiiEntityType> m_piiEntityTypes;

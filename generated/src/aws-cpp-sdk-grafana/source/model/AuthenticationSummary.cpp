@@ -18,15 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-AuthenticationSummary::AuthenticationSummary() : 
-    m_providersHasBeenSet(false),
-    m_samlConfigurationStatus(SamlConfigurationStatus::NOT_SET),
-    m_samlConfigurationStatusHasBeenSet(false)
-{
-}
-
 AuthenticationSummary::AuthenticationSummary(JsonView jsonValue)
-  : AuthenticationSummary()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AuthenticationSummary& AuthenticationSummary::operator =(JsonView jsonValue)
     }
     m_providersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("samlConfigurationStatus"))
   {
     m_samlConfigurationStatus = SamlConfigurationStatusMapper::GetSamlConfigurationStatusForName(jsonValue.GetString("samlConfigurationStatus"));
-
     m_samlConfigurationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-InsightResults::InsightResults() : 
-    m_insightArnHasBeenSet(false),
-    m_groupByAttributeHasBeenSet(false),
-    m_resultValuesHasBeenSet(false)
-{
-}
-
 InsightResults::InsightResults(JsonView jsonValue)
-  : InsightResults()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InsightResults& InsightResults::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsightArn"))
   {
     m_insightArn = jsonValue.GetString("InsightArn");
-
     m_insightArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupByAttribute"))
   {
     m_groupByAttribute = jsonValue.GetString("GroupByAttribute");
-
     m_groupByAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultValues"))
   {
     Aws::Utils::Array<JsonView> resultValuesJsonList = jsonValue.GetArray("ResultValues");
@@ -56,7 +44,6 @@ InsightResults& InsightResults::operator =(JsonView jsonValue)
     }
     m_resultValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

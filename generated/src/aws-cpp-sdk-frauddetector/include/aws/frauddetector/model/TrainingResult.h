@@ -33,7 +33,7 @@ namespace Model
   class TrainingResult
   {
   public:
-    AWS_FRAUDDETECTOR_API TrainingResult();
+    AWS_FRAUDDETECTOR_API TrainingResult() = default;
     AWS_FRAUDDETECTOR_API TrainingResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API TrainingResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>The validation metrics.</p>
      */
-    inline const DataValidationMetrics& GetDataValidationMetrics() const{ return m_dataValidationMetrics; }
+    inline const DataValidationMetrics& GetDataValidationMetrics() const { return m_dataValidationMetrics; }
     inline bool DataValidationMetricsHasBeenSet() const { return m_dataValidationMetricsHasBeenSet; }
-    inline void SetDataValidationMetrics(const DataValidationMetrics& value) { m_dataValidationMetricsHasBeenSet = true; m_dataValidationMetrics = value; }
-    inline void SetDataValidationMetrics(DataValidationMetrics&& value) { m_dataValidationMetricsHasBeenSet = true; m_dataValidationMetrics = std::move(value); }
-    inline TrainingResult& WithDataValidationMetrics(const DataValidationMetrics& value) { SetDataValidationMetrics(value); return *this;}
-    inline TrainingResult& WithDataValidationMetrics(DataValidationMetrics&& value) { SetDataValidationMetrics(std::move(value)); return *this;}
+    template<typename DataValidationMetricsT = DataValidationMetrics>
+    void SetDataValidationMetrics(DataValidationMetricsT&& value) { m_dataValidationMetricsHasBeenSet = true; m_dataValidationMetrics = std::forward<DataValidationMetricsT>(value); }
+    template<typename DataValidationMetricsT = DataValidationMetrics>
+    TrainingResult& WithDataValidationMetrics(DataValidationMetricsT&& value) { SetDataValidationMetrics(std::forward<DataValidationMetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The training metric details.</p>
      */
-    inline const TrainingMetrics& GetTrainingMetrics() const{ return m_trainingMetrics; }
+    inline const TrainingMetrics& GetTrainingMetrics() const { return m_trainingMetrics; }
     inline bool TrainingMetricsHasBeenSet() const { return m_trainingMetricsHasBeenSet; }
-    inline void SetTrainingMetrics(const TrainingMetrics& value) { m_trainingMetricsHasBeenSet = true; m_trainingMetrics = value; }
-    inline void SetTrainingMetrics(TrainingMetrics&& value) { m_trainingMetricsHasBeenSet = true; m_trainingMetrics = std::move(value); }
-    inline TrainingResult& WithTrainingMetrics(const TrainingMetrics& value) { SetTrainingMetrics(value); return *this;}
-    inline TrainingResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
+    template<typename TrainingMetricsT = TrainingMetrics>
+    void SetTrainingMetrics(TrainingMetricsT&& value) { m_trainingMetricsHasBeenSet = true; m_trainingMetrics = std::forward<TrainingMetricsT>(value); }
+    template<typename TrainingMetricsT = TrainingMetrics>
+    TrainingResult& WithTrainingMetrics(TrainingMetricsT&& value) { SetTrainingMetrics(std::forward<TrainingMetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The variable importance metrics.</p>
      */
-    inline const VariableImportanceMetrics& GetVariableImportanceMetrics() const{ return m_variableImportanceMetrics; }
+    inline const VariableImportanceMetrics& GetVariableImportanceMetrics() const { return m_variableImportanceMetrics; }
     inline bool VariableImportanceMetricsHasBeenSet() const { return m_variableImportanceMetricsHasBeenSet; }
-    inline void SetVariableImportanceMetrics(const VariableImportanceMetrics& value) { m_variableImportanceMetricsHasBeenSet = true; m_variableImportanceMetrics = value; }
-    inline void SetVariableImportanceMetrics(VariableImportanceMetrics&& value) { m_variableImportanceMetricsHasBeenSet = true; m_variableImportanceMetrics = std::move(value); }
-    inline TrainingResult& WithVariableImportanceMetrics(const VariableImportanceMetrics& value) { SetVariableImportanceMetrics(value); return *this;}
-    inline TrainingResult& WithVariableImportanceMetrics(VariableImportanceMetrics&& value) { SetVariableImportanceMetrics(std::move(value)); return *this;}
+    template<typename VariableImportanceMetricsT = VariableImportanceMetrics>
+    void SetVariableImportanceMetrics(VariableImportanceMetricsT&& value) { m_variableImportanceMetricsHasBeenSet = true; m_variableImportanceMetrics = std::forward<VariableImportanceMetricsT>(value); }
+    template<typename VariableImportanceMetricsT = VariableImportanceMetrics>
+    TrainingResult& WithVariableImportanceMetrics(VariableImportanceMetricsT&& value) { SetVariableImportanceMetrics(std::forward<VariableImportanceMetricsT>(value)); return *this;}
     ///@}
   private:
 

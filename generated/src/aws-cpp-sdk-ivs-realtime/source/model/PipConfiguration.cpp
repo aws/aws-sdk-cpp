@@ -18,30 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-PipConfiguration::PipConfiguration() : 
-    m_featuredParticipantAttributeHasBeenSet(false),
-    m_omitStoppedVideo(false),
-    m_omitStoppedVideoHasBeenSet(false),
-    m_videoFillMode(VideoFillMode::NOT_SET),
-    m_videoFillModeHasBeenSet(false),
-    m_gridGap(0),
-    m_gridGapHasBeenSet(false),
-    m_pipParticipantAttributeHasBeenSet(false),
-    m_pipBehavior(PipBehavior::NOT_SET),
-    m_pipBehaviorHasBeenSet(false),
-    m_pipOffset(0),
-    m_pipOffsetHasBeenSet(false),
-    m_pipPosition(PipPosition::NOT_SET),
-    m_pipPositionHasBeenSet(false),
-    m_pipWidth(0),
-    m_pipWidthHasBeenSet(false),
-    m_pipHeight(0),
-    m_pipHeightHasBeenSet(false)
-{
-}
-
 PipConfiguration::PipConfiguration(JsonView jsonValue)
-  : PipConfiguration()
 {
   *this = jsonValue;
 }
@@ -51,73 +28,53 @@ PipConfiguration& PipConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("featuredParticipantAttribute"))
   {
     m_featuredParticipantAttribute = jsonValue.GetString("featuredParticipantAttribute");
-
     m_featuredParticipantAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("omitStoppedVideo"))
   {
     m_omitStoppedVideo = jsonValue.GetBool("omitStoppedVideo");
-
     m_omitStoppedVideoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoFillMode"))
   {
     m_videoFillMode = VideoFillModeMapper::GetVideoFillModeForName(jsonValue.GetString("videoFillMode"));
-
     m_videoFillModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gridGap"))
   {
     m_gridGap = jsonValue.GetInteger("gridGap");
-
     m_gridGapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipParticipantAttribute"))
   {
     m_pipParticipantAttribute = jsonValue.GetString("pipParticipantAttribute");
-
     m_pipParticipantAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipBehavior"))
   {
     m_pipBehavior = PipBehaviorMapper::GetPipBehaviorForName(jsonValue.GetString("pipBehavior"));
-
     m_pipBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipOffset"))
   {
     m_pipOffset = jsonValue.GetInteger("pipOffset");
-
     m_pipOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipPosition"))
   {
     m_pipPosition = PipPositionMapper::GetPipPositionForName(jsonValue.GetString("pipPosition"));
-
     m_pipPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipWidth"))
   {
     m_pipWidth = jsonValue.GetInteger("pipWidth");
-
     m_pipWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipHeight"))
   {
     m_pipHeight = jsonValue.GetInteger("pipHeight");
-
     m_pipHeightHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class ImportKeyMaterialRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API ImportKeyMaterialRequest();
+    AWS_KMS_API ImportKeyMaterialRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -56,14 +56,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline ImportKeyMaterialRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline ImportKeyMaterialRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline ImportKeyMaterialRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    ImportKeyMaterialRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <a>GetParametersForImport</a> request. It must be from the same response that
      * contained the public key that you used to encrypt the key material.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetImportToken() const{ return m_importToken; }
+    inline const Aws::Utils::ByteBuffer& GetImportToken() const { return m_importToken; }
     inline bool ImportTokenHasBeenSet() const { return m_importTokenHasBeenSet; }
-    inline void SetImportToken(const Aws::Utils::ByteBuffer& value) { m_importTokenHasBeenSet = true; m_importToken = value; }
-    inline void SetImportToken(Aws::Utils::ByteBuffer&& value) { m_importTokenHasBeenSet = true; m_importToken = std::move(value); }
-    inline ImportKeyMaterialRequest& WithImportToken(const Aws::Utils::ByteBuffer& value) { SetImportToken(value); return *this;}
-    inline ImportKeyMaterialRequest& WithImportToken(Aws::Utils::ByteBuffer&& value) { SetImportToken(std::move(value)); return *this;}
+    template<typename ImportTokenT = Aws::Utils::ByteBuffer>
+    void SetImportToken(ImportTokenT&& value) { m_importTokenHasBeenSet = true; m_importToken = std::forward<ImportTokenT>(value); }
+    template<typename ImportTokenT = Aws::Utils::ByteBuffer>
+    ImportKeyMaterialRequest& WithImportToken(ImportTokenT&& value) { SetImportToken(std::forward<ImportTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,12 @@ namespace Model
      * the wrapping algorithm that you specified in the same
      * <code>GetParametersForImport</code> request.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetEncryptedKeyMaterial() const{ return m_encryptedKeyMaterial; }
+    inline const Aws::Utils::ByteBuffer& GetEncryptedKeyMaterial() const { return m_encryptedKeyMaterial; }
     inline bool EncryptedKeyMaterialHasBeenSet() const { return m_encryptedKeyMaterialHasBeenSet; }
-    inline void SetEncryptedKeyMaterial(const Aws::Utils::ByteBuffer& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = value; }
-    inline void SetEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = std::move(value); }
-    inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(const Aws::Utils::ByteBuffer& value) { SetEncryptedKeyMaterial(value); return *this;}
-    inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetEncryptedKeyMaterial(std::move(value)); return *this;}
+    template<typename EncryptedKeyMaterialT = Aws::Utils::ByteBuffer>
+    void SetEncryptedKeyMaterial(EncryptedKeyMaterialT&& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = std::forward<EncryptedKeyMaterialT>(value); }
+    template<typename EncryptedKeyMaterialT = Aws::Utils::ByteBuffer>
+    ImportKeyMaterialRequest& WithEncryptedKeyMaterial(EncryptedKeyMaterialT&& value) { SetEncryptedKeyMaterial(std::forward<EncryptedKeyMaterialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +107,12 @@ namespace Model
      * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
      * reimport the key material.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidTo() const{ return m_validTo; }
+    inline const Aws::Utils::DateTime& GetValidTo() const { return m_validTo; }
     inline bool ValidToHasBeenSet() const { return m_validToHasBeenSet; }
-    inline void SetValidTo(const Aws::Utils::DateTime& value) { m_validToHasBeenSet = true; m_validTo = value; }
-    inline void SetValidTo(Aws::Utils::DateTime&& value) { m_validToHasBeenSet = true; m_validTo = std::move(value); }
-    inline ImportKeyMaterialRequest& WithValidTo(const Aws::Utils::DateTime& value) { SetValidTo(value); return *this;}
-    inline ImportKeyMaterialRequest& WithValidTo(Aws::Utils::DateTime&& value) { SetValidTo(std::move(value)); return *this;}
+    template<typename ValidToT = Aws::Utils::DateTime>
+    void SetValidTo(ValidToT&& value) { m_validToHasBeenSet = true; m_validTo = std::forward<ValidToT>(value); }
+    template<typename ValidToT = Aws::Utils::DateTime>
+    ImportKeyMaterialRequest& WithValidTo(ValidToT&& value) { SetValidTo(std::forward<ValidToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,28 +130,26 @@ namespace Model
      * import after the request completes. To change either value, you must reimport
      * the key material.</p>
      */
-    inline const ExpirationModelType& GetExpirationModel() const{ return m_expirationModel; }
+    inline ExpirationModelType GetExpirationModel() const { return m_expirationModel; }
     inline bool ExpirationModelHasBeenSet() const { return m_expirationModelHasBeenSet; }
-    inline void SetExpirationModel(const ExpirationModelType& value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
-    inline void SetExpirationModel(ExpirationModelType&& value) { m_expirationModelHasBeenSet = true; m_expirationModel = std::move(value); }
-    inline ImportKeyMaterialRequest& WithExpirationModel(const ExpirationModelType& value) { SetExpirationModel(value); return *this;}
-    inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(std::move(value)); return *this;}
+    inline void SetExpirationModel(ExpirationModelType value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
+    inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType value) { SetExpirationModel(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_importToken;
+    Aws::Utils::ByteBuffer m_importToken{};
     bool m_importTokenHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_encryptedKeyMaterial;
+    Aws::Utils::ByteBuffer m_encryptedKeyMaterial{};
     bool m_encryptedKeyMaterialHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validTo;
+    Aws::Utils::DateTime m_validTo{};
     bool m_validToHasBeenSet = false;
 
-    ExpirationModelType m_expirationModel;
+    ExpirationModelType m_expirationModel{ExpirationModelType::NOT_SET};
     bool m_expirationModelHasBeenSet = false;
   };
 

@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-ProcessType::ProcessType() : 
-    m_processNameHasBeenSet(false)
-{
-}
-
 ProcessType::ProcessType(const XmlNode& xmlNode)
-  : ProcessType()
 {
   *this = xmlNode;
 }

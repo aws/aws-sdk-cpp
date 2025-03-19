@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ListRecordHistorySearchFilter::ListRecordHistorySearchFilter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ListRecordHistorySearchFilter::ListRecordHistorySearchFilter(JsonView jsonValue)
-  : ListRecordHistorySearchFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListRecordHistorySearchFilter& ListRecordHistorySearchFilter::operator =(JsonVie
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

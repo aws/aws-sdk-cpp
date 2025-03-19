@@ -18,18 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-Permission::Permission() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_sourceAccountHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Permission::Permission(JsonView jsonValue)
-  : Permission()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Permission& Permission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateAuthorityArn"))
   {
     m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
-
     m_certificateAuthorityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Principal"))
   {
     m_principal = jsonValue.GetString("Principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceAccount"))
   {
     m_sourceAccount = jsonValue.GetString("SourceAccount");
-
     m_sourceAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -73,14 +54,11 @@ Permission& Permission::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
     m_policyHasBeenSet = true;
   }
-
   return *this;
 }
 

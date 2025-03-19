@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateImageSetMetadataRequest::UpdateImageSetMetadataRequest() : 
-    m_datastoreIdHasBeenSet(false),
-    m_imageSetIdHasBeenSet(false),
-    m_latestVersionIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false),
-    m_updateImageSetMetadataUpdatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateImageSetMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,10 +18,6 @@ namespace BedrockAgent
 namespace Model
 {
 
-MissingEndingNodesFlowValidationDetails::MissingEndingNodesFlowValidationDetails()
-{
-}
-
 MissingEndingNodesFlowValidationDetails::MissingEndingNodesFlowValidationDetails(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -33,7 +33,7 @@ namespace Model
   class OutputResolutionStackInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput();
+    AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
      * <code>AVERAGE</code>.</p>
      */
-    inline const PredefinedResolution& GetPredefined() const{ return m_predefined; }
+    inline PredefinedResolution GetPredefined() const { return m_predefined; }
     inline bool PredefinedHasBeenSet() const { return m_predefinedHasBeenSet; }
-    inline void SetPredefined(const PredefinedResolution& value) { m_predefinedHasBeenSet = true; m_predefined = value; }
-    inline void SetPredefined(PredefinedResolution&& value) { m_predefinedHasBeenSet = true; m_predefined = std::move(value); }
-    inline OutputResolutionStackInput& WithPredefined(const PredefinedResolution& value) { SetPredefined(value); return *this;}
-    inline OutputResolutionStackInput& WithPredefined(PredefinedResolution&& value) { SetPredefined(std::move(value)); return *this;}
+    inline void SetPredefined(PredefinedResolution value) { m_predefinedHasBeenSet = true; m_predefined = value; }
+    inline OutputResolutionStackInput& WithPredefined(PredefinedResolution value) { SetPredefined(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p>The structure representing User Output Resolution for a Stacking operation
      * defined as a value and unit.</p>
      */
-    inline const UserDefined& GetUserDefined() const{ return m_userDefined; }
+    inline const UserDefined& GetUserDefined() const { return m_userDefined; }
     inline bool UserDefinedHasBeenSet() const { return m_userDefinedHasBeenSet; }
-    inline void SetUserDefined(const UserDefined& value) { m_userDefinedHasBeenSet = true; m_userDefined = value; }
-    inline void SetUserDefined(UserDefined&& value) { m_userDefinedHasBeenSet = true; m_userDefined = std::move(value); }
-    inline OutputResolutionStackInput& WithUserDefined(const UserDefined& value) { SetUserDefined(value); return *this;}
-    inline OutputResolutionStackInput& WithUserDefined(UserDefined&& value) { SetUserDefined(std::move(value)); return *this;}
+    template<typename UserDefinedT = UserDefined>
+    void SetUserDefined(UserDefinedT&& value) { m_userDefinedHasBeenSet = true; m_userDefined = std::forward<UserDefinedT>(value); }
+    template<typename UserDefinedT = UserDefined>
+    OutputResolutionStackInput& WithUserDefined(UserDefinedT&& value) { SetUserDefined(std::forward<UserDefinedT>(value)); return *this;}
     ///@}
   private:
 
-    PredefinedResolution m_predefined;
+    PredefinedResolution m_predefined{PredefinedResolution::NOT_SET};
     bool m_predefinedHasBeenSet = false;
 
     UserDefined m_userDefined;

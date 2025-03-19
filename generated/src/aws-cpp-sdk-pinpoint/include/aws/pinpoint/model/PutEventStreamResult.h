@@ -28,35 +28,35 @@ namespace Model
   class PutEventStreamResult
   {
   public:
-    AWS_PINPOINT_API PutEventStreamResult();
+    AWS_PINPOINT_API PutEventStreamResult() = default;
     AWS_PINPOINT_API PutEventStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API PutEventStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const EventStream& GetEventStream() const{ return m_eventStream; }
-    inline void SetEventStream(const EventStream& value) { m_eventStream = value; }
-    inline void SetEventStream(EventStream&& value) { m_eventStream = std::move(value); }
-    inline PutEventStreamResult& WithEventStream(const EventStream& value) { SetEventStream(value); return *this;}
-    inline PutEventStreamResult& WithEventStream(EventStream&& value) { SetEventStream(std::move(value)); return *this;}
+    inline const EventStream& GetEventStream() const { return m_eventStream; }
+    template<typename EventStreamT = EventStream>
+    void SetEventStream(EventStreamT&& value) { m_eventStreamHasBeenSet = true; m_eventStream = std::forward<EventStreamT>(value); }
+    template<typename EventStreamT = EventStream>
+    PutEventStreamResult& WithEventStream(EventStreamT&& value) { SetEventStream(std::forward<EventStreamT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEventStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEventStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEventStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEventStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EventStream m_eventStream;
+    bool m_eventStreamHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

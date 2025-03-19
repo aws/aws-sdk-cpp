@@ -18,18 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-PendingMaintenanceAction::PendingMaintenanceAction() : 
-    m_actionHasBeenSet(false),
-    m_autoAppliedAfterDateHasBeenSet(false),
-    m_forcedApplyDateHasBeenSet(false),
-    m_optInStatusHasBeenSet(false),
-    m_currentApplyDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 PendingMaintenanceAction::PendingMaintenanceAction(JsonView jsonValue)
-  : PendingMaintenanceAction()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoAppliedAfterDate"))
   {
     m_autoAppliedAfterDate = jsonValue.GetDouble("AutoAppliedAfterDate");
-
     m_autoAppliedAfterDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForcedApplyDate"))
   {
     m_forcedApplyDate = jsonValue.GetDouble("ForcedApplyDate");
-
     m_forcedApplyDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptInStatus"))
   {
     m_optInStatus = jsonValue.GetString("OptInStatus");
-
     m_optInStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentApplyDate"))
   {
     m_currentApplyDate = jsonValue.GetDouble("CurrentApplyDate");
-
     m_currentApplyDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

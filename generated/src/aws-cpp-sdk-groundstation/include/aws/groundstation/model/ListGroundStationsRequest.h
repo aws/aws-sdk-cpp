@@ -28,7 +28,7 @@ namespace Model
   class ListGroundStationsRequest : public GroundStationRequest
   {
   public:
-    AWS_GROUNDSTATION_API ListGroundStationsRequest();
+    AWS_GROUNDSTATION_API ListGroundStationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>Maximum number of ground stations returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListGroundStationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -56,32 +56,28 @@ namespace Model
      * <p>Next token that can be supplied in the next call to get the next page of
      * ground stations.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListGroundStationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGroundStationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGroundStationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGroundStationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Satellite ID to retrieve on-boarded ground stations.</p>
      */
-    inline const Aws::String& GetSatelliteId() const{ return m_satelliteId; }
+    inline const Aws::String& GetSatelliteId() const { return m_satelliteId; }
     inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
-    inline void SetSatelliteId(const Aws::String& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = value; }
-    inline void SetSatelliteId(Aws::String&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::move(value); }
-    inline void SetSatelliteId(const char* value) { m_satelliteIdHasBeenSet = true; m_satelliteId.assign(value); }
-    inline ListGroundStationsRequest& WithSatelliteId(const Aws::String& value) { SetSatelliteId(value); return *this;}
-    inline ListGroundStationsRequest& WithSatelliteId(Aws::String&& value) { SetSatelliteId(std::move(value)); return *this;}
-    inline ListGroundStationsRequest& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
+    template<typename SatelliteIdT = Aws::String>
+    void SetSatelliteId(SatelliteIdT&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::forward<SatelliteIdT>(value); }
+    template<typename SatelliteIdT = Aws::String>
+    ListGroundStationsRequest& WithSatelliteId(SatelliteIdT&& value) { SetSatelliteId(std::forward<SatelliteIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

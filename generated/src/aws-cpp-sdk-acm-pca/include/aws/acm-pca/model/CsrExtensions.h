@@ -34,7 +34,7 @@ namespace Model
   class CsrExtensions
   {
   public:
-    AWS_ACMPCA_API CsrExtensions();
+    AWS_ACMPCA_API CsrExtensions() = default;
     AWS_ACMPCA_API CsrExtensions(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API CsrExtensions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Indicates the purpose of the certificate and of the key contained in the
      * certificate.</p>
      */
-    inline const KeyUsage& GetKeyUsage() const{ return m_keyUsage; }
+    inline const KeyUsage& GetKeyUsage() const { return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
-    inline void SetKeyUsage(const KeyUsage& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
-    inline void SetKeyUsage(KeyUsage&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
-    inline CsrExtensions& WithKeyUsage(const KeyUsage& value) { SetKeyUsage(value); return *this;}
-    inline CsrExtensions& WithKeyUsage(KeyUsage&& value) { SetKeyUsage(std::move(value)); return *this;}
+    template<typename KeyUsageT = KeyUsage>
+    void SetKeyUsage(KeyUsageT&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::forward<KeyUsageT>(value); }
+    template<typename KeyUsageT = KeyUsage>
+    CsrExtensions& WithKeyUsage(KeyUsageT&& value) { SetKeyUsage(std::forward<KeyUsageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
      * Information Access</a> in RFC 5280.</p>
      */
-    inline const Aws::Vector<AccessDescription>& GetSubjectInformationAccess() const{ return m_subjectInformationAccess; }
+    inline const Aws::Vector<AccessDescription>& GetSubjectInformationAccess() const { return m_subjectInformationAccess; }
     inline bool SubjectInformationAccessHasBeenSet() const { return m_subjectInformationAccessHasBeenSet; }
-    inline void SetSubjectInformationAccess(const Aws::Vector<AccessDescription>& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess = value; }
-    inline void SetSubjectInformationAccess(Aws::Vector<AccessDescription>&& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess = std::move(value); }
-    inline CsrExtensions& WithSubjectInformationAccess(const Aws::Vector<AccessDescription>& value) { SetSubjectInformationAccess(value); return *this;}
-    inline CsrExtensions& WithSubjectInformationAccess(Aws::Vector<AccessDescription>&& value) { SetSubjectInformationAccess(std::move(value)); return *this;}
-    inline CsrExtensions& AddSubjectInformationAccess(const AccessDescription& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess.push_back(value); return *this; }
-    inline CsrExtensions& AddSubjectInformationAccess(AccessDescription&& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess.push_back(std::move(value)); return *this; }
+    template<typename SubjectInformationAccessT = Aws::Vector<AccessDescription>>
+    void SetSubjectInformationAccess(SubjectInformationAccessT&& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess = std::forward<SubjectInformationAccessT>(value); }
+    template<typename SubjectInformationAccessT = Aws::Vector<AccessDescription>>
+    CsrExtensions& WithSubjectInformationAccess(SubjectInformationAccessT&& value) { SetSubjectInformationAccess(std::forward<SubjectInformationAccessT>(value)); return *this;}
+    template<typename SubjectInformationAccessT = AccessDescription>
+    CsrExtensions& AddSubjectInformationAccess(SubjectInformationAccessT&& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess.emplace_back(std::forward<SubjectInformationAccessT>(value)); return *this; }
     ///@}
   private:
 

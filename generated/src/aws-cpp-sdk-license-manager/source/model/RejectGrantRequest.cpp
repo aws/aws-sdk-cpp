@@ -12,11 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectGrantRequest::RejectGrantRequest() : 
-    m_grantArnHasBeenSet(false)
-{
-}
-
 Aws::String RejectGrantRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class GetDevicePositionResult
   {
   public:
-    AWS_LOCATIONSERVICE_API GetDevicePositionResult();
+    AWS_LOCATIONSERVICE_API GetDevicePositionResult() = default;
     AWS_LOCATIONSERVICE_API GetDevicePositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API GetDevicePositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>The device whose position you retrieved.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
-    inline GetDevicePositionResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline GetDevicePositionResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline GetDevicePositionResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    GetDevicePositionResult& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,11 +53,11 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
-    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTime = value; }
-    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTime = std::move(value); }
-    inline GetDevicePositionResult& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-    inline GetDevicePositionResult& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetSampleTime() const { return m_sampleTime; }
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    void SetSampleTime(SampleTimeT&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::forward<SampleTimeT>(value); }
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    GetDevicePositionResult& WithSampleTime(SampleTimeT&& value) { SetSampleTime(std::forward<SampleTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,79 +66,81 @@ namespace Model
      * Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601
      * </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetReceivedTime() const{ return m_receivedTime; }
-    inline void SetReceivedTime(const Aws::Utils::DateTime& value) { m_receivedTime = value; }
-    inline void SetReceivedTime(Aws::Utils::DateTime&& value) { m_receivedTime = std::move(value); }
-    inline GetDevicePositionResult& WithReceivedTime(const Aws::Utils::DateTime& value) { SetReceivedTime(value); return *this;}
-    inline GetDevicePositionResult& WithReceivedTime(Aws::Utils::DateTime&& value) { SetReceivedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetReceivedTime() const { return m_receivedTime; }
+    template<typename ReceivedTimeT = Aws::Utils::DateTime>
+    void SetReceivedTime(ReceivedTimeT&& value) { m_receivedTimeHasBeenSet = true; m_receivedTime = std::forward<ReceivedTimeT>(value); }
+    template<typename ReceivedTimeT = Aws::Utils::DateTime>
+    GetDevicePositionResult& WithReceivedTime(ReceivedTimeT&& value) { SetReceivedTime(std::forward<ReceivedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last known device position.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_position = std::move(value); }
-    inline GetDevicePositionResult& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline GetDevicePositionResult& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetDevicePositionResult& AddPosition(double value) { m_position.push_back(value); return *this; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    GetDevicePositionResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
+    inline GetDevicePositionResult& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The accuracy of the device position.</p>
      */
-    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
-    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracy = value; }
-    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracy = std::move(value); }
-    inline GetDevicePositionResult& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
-    inline GetDevicePositionResult& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
+    inline const PositionalAccuracy& GetAccuracy() const { return m_accuracy; }
+    template<typename AccuracyT = PositionalAccuracy>
+    void SetAccuracy(AccuracyT&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::forward<AccuracyT>(value); }
+    template<typename AccuracyT = PositionalAccuracy>
+    GetDevicePositionResult& WithAccuracy(AccuracyT&& value) { SetAccuracy(std::forward<AccuracyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties associated with the position.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetPositionProperties() const{ return m_positionProperties; }
-    inline void SetPositionProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_positionProperties = value; }
-    inline void SetPositionProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_positionProperties = std::move(value); }
-    inline GetDevicePositionResult& WithPositionProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetPositionProperties(value); return *this;}
-    inline GetDevicePositionResult& WithPositionProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetPositionProperties(std::move(value)); return *this;}
-    inline GetDevicePositionResult& AddPositionProperties(const Aws::String& key, const Aws::String& value) { m_positionProperties.emplace(key, value); return *this; }
-    inline GetDevicePositionResult& AddPositionProperties(Aws::String&& key, const Aws::String& value) { m_positionProperties.emplace(std::move(key), value); return *this; }
-    inline GetDevicePositionResult& AddPositionProperties(const Aws::String& key, Aws::String&& value) { m_positionProperties.emplace(key, std::move(value)); return *this; }
-    inline GetDevicePositionResult& AddPositionProperties(Aws::String&& key, Aws::String&& value) { m_positionProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetDevicePositionResult& AddPositionProperties(const char* key, Aws::String&& value) { m_positionProperties.emplace(key, std::move(value)); return *this; }
-    inline GetDevicePositionResult& AddPositionProperties(Aws::String&& key, const char* value) { m_positionProperties.emplace(std::move(key), value); return *this; }
-    inline GetDevicePositionResult& AddPositionProperties(const char* key, const char* value) { m_positionProperties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPositionProperties() const { return m_positionProperties; }
+    template<typename PositionPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetPositionProperties(PositionPropertiesT&& value) { m_positionPropertiesHasBeenSet = true; m_positionProperties = std::forward<PositionPropertiesT>(value); }
+    template<typename PositionPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    GetDevicePositionResult& WithPositionProperties(PositionPropertiesT&& value) { SetPositionProperties(std::forward<PositionPropertiesT>(value)); return *this;}
+    template<typename PositionPropertiesKeyT = Aws::String, typename PositionPropertiesValueT = Aws::String>
+    GetDevicePositionResult& AddPositionProperties(PositionPropertiesKeyT&& key, PositionPropertiesValueT&& value) {
+      m_positionPropertiesHasBeenSet = true; m_positionProperties.emplace(std::forward<PositionPropertiesKeyT>(key), std::forward<PositionPropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDevicePositionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDevicePositionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDevicePositionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDevicePositionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceId;
+    bool m_deviceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sampleTime;
+    Aws::Utils::DateTime m_sampleTime{};
+    bool m_sampleTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_receivedTime;
+    Aws::Utils::DateTime m_receivedTime{};
+    bool m_receivedTimeHasBeenSet = false;
 
     Aws::Vector<double> m_position;
+    bool m_positionHasBeenSet = false;
 
     PositionalAccuracy m_accuracy;
+    bool m_accuracyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_positionProperties;
+    bool m_positionPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

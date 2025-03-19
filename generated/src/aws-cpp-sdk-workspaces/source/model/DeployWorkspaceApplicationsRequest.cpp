@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeployWorkspaceApplicationsRequest::DeployWorkspaceApplicationsRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeployWorkspaceApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

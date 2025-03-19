@@ -36,7 +36,7 @@ namespace Model
   class DescribeAnalysisSchemesResult
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult();
+    AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult() = default;
     AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,30 @@ namespace Model
     /**
      * <p>The analysis scheme descriptions.</p>
      */
-    inline const Aws::Vector<AnalysisSchemeStatus>& GetAnalysisSchemes() const{ return m_analysisSchemes; }
-    inline void SetAnalysisSchemes(const Aws::Vector<AnalysisSchemeStatus>& value) { m_analysisSchemes = value; }
-    inline void SetAnalysisSchemes(Aws::Vector<AnalysisSchemeStatus>&& value) { m_analysisSchemes = std::move(value); }
-    inline DescribeAnalysisSchemesResult& WithAnalysisSchemes(const Aws::Vector<AnalysisSchemeStatus>& value) { SetAnalysisSchemes(value); return *this;}
-    inline DescribeAnalysisSchemesResult& WithAnalysisSchemes(Aws::Vector<AnalysisSchemeStatus>&& value) { SetAnalysisSchemes(std::move(value)); return *this;}
-    inline DescribeAnalysisSchemesResult& AddAnalysisSchemes(const AnalysisSchemeStatus& value) { m_analysisSchemes.push_back(value); return *this; }
-    inline DescribeAnalysisSchemesResult& AddAnalysisSchemes(AnalysisSchemeStatus&& value) { m_analysisSchemes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalysisSchemeStatus>& GetAnalysisSchemes() const { return m_analysisSchemes; }
+    template<typename AnalysisSchemesT = Aws::Vector<AnalysisSchemeStatus>>
+    void SetAnalysisSchemes(AnalysisSchemesT&& value) { m_analysisSchemesHasBeenSet = true; m_analysisSchemes = std::forward<AnalysisSchemesT>(value); }
+    template<typename AnalysisSchemesT = Aws::Vector<AnalysisSchemeStatus>>
+    DescribeAnalysisSchemesResult& WithAnalysisSchemes(AnalysisSchemesT&& value) { SetAnalysisSchemes(std::forward<AnalysisSchemesT>(value)); return *this;}
+    template<typename AnalysisSchemesT = AnalysisSchemeStatus>
+    DescribeAnalysisSchemesResult& AddAnalysisSchemes(AnalysisSchemesT&& value) { m_analysisSchemesHasBeenSet = true; m_analysisSchemes.emplace_back(std::forward<AnalysisSchemesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAnalysisSchemesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAnalysisSchemesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAnalysisSchemesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnalysisSchemeStatus> m_analysisSchemes;
+    bool m_analysisSchemesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

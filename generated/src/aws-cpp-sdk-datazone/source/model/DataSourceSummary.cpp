@@ -18,32 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataSourceSummary::DataSourceSummary() : 
-    m_connectionIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_enableSetting(EnableSetting::NOT_SET),
-    m_enableSettingHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_lastRunAssetCount(0),
-    m_lastRunAssetCountHasBeenSet(false),
-    m_lastRunAtHasBeenSet(false),
-    m_lastRunErrorMessageHasBeenSet(false),
-    m_lastRunStatus(DataSourceRunStatus::NOT_SET),
-    m_lastRunStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DataSourceSummary::DataSourceSummary(JsonView jsonValue)
-  : DataSourceSummary()
 {
   *this = jsonValue;
 }
@@ -53,115 +28,83 @@ DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectionId"))
   {
     m_connectionId = jsonValue.GetString("connectionId");
-
     m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableSetting"))
   {
     m_enableSetting = EnableSettingMapper::GetEnableSettingForName(jsonValue.GetString("enableSetting"));
-
     m_enableSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRunAssetCount"))
   {
     m_lastRunAssetCount = jsonValue.GetInteger("lastRunAssetCount");
-
     m_lastRunAssetCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRunAt"))
   {
     m_lastRunAt = jsonValue.GetString("lastRunAt");
-
     m_lastRunAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRunErrorMessage"))
   {
     m_lastRunErrorMessage = jsonValue.GetObject("lastRunErrorMessage");
-
     m_lastRunErrorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRunStatus"))
   {
     m_lastRunStatus = DataSourceRunStatusMapper::GetDataSourceRunStatusForName(jsonValue.GetString("lastRunStatus"));
-
     m_lastRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

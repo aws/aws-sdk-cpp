@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAliasesRequest::ListAliasesRequest() : 
-    m_imageNameHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAliasesRequest::SerializePayload() const
 {
   JsonValue payload;

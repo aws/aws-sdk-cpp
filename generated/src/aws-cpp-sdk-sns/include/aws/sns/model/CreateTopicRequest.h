@@ -27,7 +27,7 @@ namespace Model
   class CreateTopicRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API CreateTopicRequest();
+    AWS_SNS_API CreateTopicRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * <p>For a FIFO (first-in-first-out) topic, the name must end with the
      * <code>.fifo</code> suffix. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateTopicRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTopicRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTopicRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTopicRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,19 +118,16 @@ namespace Model
      * quotas</a> in the Amazon Web Services General Reference.</p> </li> </ul> </li>
      * </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline CreateTopicRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CreateTopicRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreateTopicRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline CreateTopicRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateTopicRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateTopicRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateTopicRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreateTopicRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreateTopicRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    CreateTopicRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    CreateTopicRequest& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -141,14 +136,14 @@ namespace Model
      * topic on creation, you must have the <code>sns:CreateTopic</code> and
      * <code>sns:TagResource</code> permissions.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTopicRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTopicRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTopicRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTopicRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTopicRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTopicRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -157,14 +152,12 @@ namespace Model
      * can only add one policy per topic.</p> <p>The policy must be in JSON string
      * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
      */
-    inline const Aws::String& GetDataProtectionPolicy() const{ return m_dataProtectionPolicy; }
+    inline const Aws::String& GetDataProtectionPolicy() const { return m_dataProtectionPolicy; }
     inline bool DataProtectionPolicyHasBeenSet() const { return m_dataProtectionPolicyHasBeenSet; }
-    inline void SetDataProtectionPolicy(const Aws::String& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = value; }
-    inline void SetDataProtectionPolicy(Aws::String&& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = std::move(value); }
-    inline void SetDataProtectionPolicy(const char* value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy.assign(value); }
-    inline CreateTopicRequest& WithDataProtectionPolicy(const Aws::String& value) { SetDataProtectionPolicy(value); return *this;}
-    inline CreateTopicRequest& WithDataProtectionPolicy(Aws::String&& value) { SetDataProtectionPolicy(std::move(value)); return *this;}
-    inline CreateTopicRequest& WithDataProtectionPolicy(const char* value) { SetDataProtectionPolicy(value); return *this;}
+    template<typename DataProtectionPolicyT = Aws::String>
+    void SetDataProtectionPolicy(DataProtectionPolicyT&& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = std::forward<DataProtectionPolicyT>(value); }
+    template<typename DataProtectionPolicyT = Aws::String>
+    CreateTopicRequest& WithDataProtectionPolicy(DataProtectionPolicyT&& value) { SetDataProtectionPolicy(std::forward<DataProtectionPolicyT>(value)); return *this;}
     ///@}
   private:
 

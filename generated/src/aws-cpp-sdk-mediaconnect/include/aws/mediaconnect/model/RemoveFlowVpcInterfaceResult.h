@@ -28,7 +28,7 @@ namespace Model
   class RemoveFlowVpcInterfaceResult
   {
   public:
-    AWS_MEDIACONNECT_API RemoveFlowVpcInterfaceResult();
+    AWS_MEDIACONNECT_API RemoveFlowVpcInterfaceResult() = default;
     AWS_MEDIACONNECT_API RemoveFlowVpcInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API RemoveFlowVpcInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * The ARN of the flow that is associated with the VPC interface you removed.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline RemoveFlowVpcInterfaceResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    RemoveFlowVpcInterfaceResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,48 +49,47 @@ namespace Model
      * IDs of network interfaces associated with the removed VPC interface that Media
      * Connect was unable to remove.
      */
-    inline const Aws::Vector<Aws::String>& GetNonDeletedNetworkInterfaceIds() const{ return m_nonDeletedNetworkInterfaceIds; }
-    inline void SetNonDeletedNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { m_nonDeletedNetworkInterfaceIds = value; }
-    inline void SetNonDeletedNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { m_nonDeletedNetworkInterfaceIds = std::move(value); }
-    inline RemoveFlowVpcInterfaceResult& WithNonDeletedNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { SetNonDeletedNetworkInterfaceIds(value); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithNonDeletedNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { SetNonDeletedNetworkInterfaceIds(std::move(value)); return *this;}
-    inline RemoveFlowVpcInterfaceResult& AddNonDeletedNetworkInterfaceIds(const Aws::String& value) { m_nonDeletedNetworkInterfaceIds.push_back(value); return *this; }
-    inline RemoveFlowVpcInterfaceResult& AddNonDeletedNetworkInterfaceIds(Aws::String&& value) { m_nonDeletedNetworkInterfaceIds.push_back(std::move(value)); return *this; }
-    inline RemoveFlowVpcInterfaceResult& AddNonDeletedNetworkInterfaceIds(const char* value) { m_nonDeletedNetworkInterfaceIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNonDeletedNetworkInterfaceIds() const { return m_nonDeletedNetworkInterfaceIds; }
+    template<typename NonDeletedNetworkInterfaceIdsT = Aws::Vector<Aws::String>>
+    void SetNonDeletedNetworkInterfaceIds(NonDeletedNetworkInterfaceIdsT&& value) { m_nonDeletedNetworkInterfaceIdsHasBeenSet = true; m_nonDeletedNetworkInterfaceIds = std::forward<NonDeletedNetworkInterfaceIdsT>(value); }
+    template<typename NonDeletedNetworkInterfaceIdsT = Aws::Vector<Aws::String>>
+    RemoveFlowVpcInterfaceResult& WithNonDeletedNetworkInterfaceIds(NonDeletedNetworkInterfaceIdsT&& value) { SetNonDeletedNetworkInterfaceIds(std::forward<NonDeletedNetworkInterfaceIdsT>(value)); return *this;}
+    template<typename NonDeletedNetworkInterfaceIdsT = Aws::String>
+    RemoveFlowVpcInterfaceResult& AddNonDeletedNetworkInterfaceIds(NonDeletedNetworkInterfaceIdsT&& value) { m_nonDeletedNetworkInterfaceIdsHasBeenSet = true; m_nonDeletedNetworkInterfaceIds.emplace_back(std::forward<NonDeletedNetworkInterfaceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The name of the VPC interface that was removed.
      */
-    inline const Aws::String& GetVpcInterfaceName() const{ return m_vpcInterfaceName; }
-    inline void SetVpcInterfaceName(const Aws::String& value) { m_vpcInterfaceName = value; }
-    inline void SetVpcInterfaceName(Aws::String&& value) { m_vpcInterfaceName = std::move(value); }
-    inline void SetVpcInterfaceName(const char* value) { m_vpcInterfaceName.assign(value); }
-    inline RemoveFlowVpcInterfaceResult& WithVpcInterfaceName(const Aws::String& value) { SetVpcInterfaceName(value); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithVpcInterfaceName(Aws::String&& value) { SetVpcInterfaceName(std::move(value)); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithVpcInterfaceName(const char* value) { SetVpcInterfaceName(value); return *this;}
+    inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
+    template<typename VpcInterfaceNameT = Aws::String>
+    void SetVpcInterfaceName(VpcInterfaceNameT&& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = std::forward<VpcInterfaceNameT>(value); }
+    template<typename VpcInterfaceNameT = Aws::String>
+    RemoveFlowVpcInterfaceResult& WithVpcInterfaceName(VpcInterfaceNameT&& value) { SetVpcInterfaceName(std::forward<VpcInterfaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveFlowVpcInterfaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveFlowVpcInterfaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveFlowVpcInterfaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nonDeletedNetworkInterfaceIds;
+    bool m_nonDeletedNetworkInterfaceIdsHasBeenSet = false;
 
     Aws::String m_vpcInterfaceName;
+    bool m_vpcInterfaceNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

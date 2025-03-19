@@ -32,7 +32,7 @@ namespace Model
   class RemoteSourceCodeAnalysisServerInfo
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RemoteSourceCodeAnalysisServerInfo();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RemoteSourceCodeAnalysisServerInfo() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RemoteSourceCodeAnalysisServerInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RemoteSourceCodeAnalysisServerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The time when the remote source code server was configured.</p>
      */
-    inline const Aws::String& GetRemoteSourceCodeAnalysisServerConfigurationTimestamp() const{ return m_remoteSourceCodeAnalysisServerConfigurationTimestamp; }
+    inline const Aws::String& GetRemoteSourceCodeAnalysisServerConfigurationTimestamp() const { return m_remoteSourceCodeAnalysisServerConfigurationTimestamp; }
     inline bool RemoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet() const { return m_remoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet; }
-    inline void SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(const Aws::String& value) { m_remoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet = true; m_remoteSourceCodeAnalysisServerConfigurationTimestamp = value; }
-    inline void SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(Aws::String&& value) { m_remoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet = true; m_remoteSourceCodeAnalysisServerConfigurationTimestamp = std::move(value); }
-    inline void SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(const char* value) { m_remoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet = true; m_remoteSourceCodeAnalysisServerConfigurationTimestamp.assign(value); }
-    inline RemoteSourceCodeAnalysisServerInfo& WithRemoteSourceCodeAnalysisServerConfigurationTimestamp(const Aws::String& value) { SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(value); return *this;}
-    inline RemoteSourceCodeAnalysisServerInfo& WithRemoteSourceCodeAnalysisServerConfigurationTimestamp(Aws::String&& value) { SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(std::move(value)); return *this;}
-    inline RemoteSourceCodeAnalysisServerInfo& WithRemoteSourceCodeAnalysisServerConfigurationTimestamp(const char* value) { SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(value); return *this;}
+    template<typename RemoteSourceCodeAnalysisServerConfigurationTimestampT = Aws::String>
+    void SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(RemoteSourceCodeAnalysisServerConfigurationTimestampT&& value) { m_remoteSourceCodeAnalysisServerConfigurationTimestampHasBeenSet = true; m_remoteSourceCodeAnalysisServerConfigurationTimestamp = std::forward<RemoteSourceCodeAnalysisServerConfigurationTimestampT>(value); }
+    template<typename RemoteSourceCodeAnalysisServerConfigurationTimestampT = Aws::String>
+    RemoteSourceCodeAnalysisServerInfo& WithRemoteSourceCodeAnalysisServerConfigurationTimestamp(RemoteSourceCodeAnalysisServerConfigurationTimestampT&& value) { SetRemoteSourceCodeAnalysisServerConfigurationTimestamp(std::forward<RemoteSourceCodeAnalysisServerConfigurationTimestampT>(value)); return *this;}
     ///@}
   private:
 

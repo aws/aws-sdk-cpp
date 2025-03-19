@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCompatibleVersionsRequest::GetCompatibleVersionsRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCompatibleVersionsRequest::SerializePayload() const
 {
   return {};

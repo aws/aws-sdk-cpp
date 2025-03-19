@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TrainingDataSchema::TrainingDataSchema() : 
-    m_modelVariablesHasBeenSet(false),
-    m_labelSchemaHasBeenSet(false)
-{
-}
-
 TrainingDataSchema::TrainingDataSchema(JsonView jsonValue)
-  : TrainingDataSchema()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TrainingDataSchema& TrainingDataSchema::operator =(JsonView jsonValue)
     }
     m_modelVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labelSchema"))
   {
     m_labelSchema = jsonValue.GetObject("labelSchema");
-
     m_labelSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutDocumentRequest::BatchPutDocumentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_dataSourceSyncIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class DescribeSavingsPlansOfferingsResult
   {
   public:
-    AWS_SAVINGSPLANS_API DescribeSavingsPlansOfferingsResult();
+    AWS_SAVINGSPLANS_API DescribeSavingsPlansOfferingsResult() = default;
     AWS_SAVINGSPLANS_API DescribeSavingsPlansOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAVINGSPLANS_API DescribeSavingsPlansOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the Savings Plans offerings.</p>
      */
-    inline const Aws::Vector<SavingsPlanOffering>& GetSearchResults() const{ return m_searchResults; }
-    inline void SetSearchResults(const Aws::Vector<SavingsPlanOffering>& value) { m_searchResults = value; }
-    inline void SetSearchResults(Aws::Vector<SavingsPlanOffering>&& value) { m_searchResults = std::move(value); }
-    inline DescribeSavingsPlansOfferingsResult& WithSearchResults(const Aws::Vector<SavingsPlanOffering>& value) { SetSearchResults(value); return *this;}
-    inline DescribeSavingsPlansOfferingsResult& WithSearchResults(Aws::Vector<SavingsPlanOffering>&& value) { SetSearchResults(std::move(value)); return *this;}
-    inline DescribeSavingsPlansOfferingsResult& AddSearchResults(const SavingsPlanOffering& value) { m_searchResults.push_back(value); return *this; }
-    inline DescribeSavingsPlansOfferingsResult& AddSearchResults(SavingsPlanOffering&& value) { m_searchResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SavingsPlanOffering>& GetSearchResults() const { return m_searchResults; }
+    template<typename SearchResultsT = Aws::Vector<SavingsPlanOffering>>
+    void SetSearchResults(SearchResultsT&& value) { m_searchResultsHasBeenSet = true; m_searchResults = std::forward<SearchResultsT>(value); }
+    template<typename SearchResultsT = Aws::Vector<SavingsPlanOffering>>
+    DescribeSavingsPlansOfferingsResult& WithSearchResults(SearchResultsT&& value) { SetSearchResults(std::forward<SearchResultsT>(value)); return *this;}
+    template<typename SearchResultsT = SavingsPlanOffering>
+    DescribeSavingsPlansOfferingsResult& AddSearchResults(SearchResultsT&& value) { m_searchResultsHasBeenSet = true; m_searchResults.emplace_back(std::forward<SearchResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeSavingsPlansOfferingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSavingsPlansOfferingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSavingsPlansOfferingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSavingsPlansOfferingsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSavingsPlansOfferingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSavingsPlansOfferingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSavingsPlansOfferingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSavingsPlansOfferingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SavingsPlanOffering> m_searchResults;
+    bool m_searchResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

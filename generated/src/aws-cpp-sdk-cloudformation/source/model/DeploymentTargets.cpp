@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-DeploymentTargets::DeploymentTargets() : 
-    m_accountsHasBeenSet(false),
-    m_accountsUrlHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_accountFilterType(AccountFilterType::NOT_SET),
-    m_accountFilterTypeHasBeenSet(false)
-{
-}
-
 DeploymentTargets::DeploymentTargets(const XmlNode& xmlNode)
-  : DeploymentTargets()
 {
   *this = xmlNode;
 }
@@ -45,6 +35,7 @@ DeploymentTargets& DeploymentTargets::operator =(const XmlNode& xmlNode)
     if(!accountsNode.IsNull())
     {
       XmlNode accountsMember = accountsNode.FirstChild("member");
+      m_accountsHasBeenSet = !accountsMember.IsNull();
       while(!accountsMember.IsNull())
       {
         m_accounts.push_back(accountsMember.GetText());
@@ -63,6 +54,7 @@ DeploymentTargets& DeploymentTargets::operator =(const XmlNode& xmlNode)
     if(!organizationalUnitIdsNode.IsNull())
     {
       XmlNode organizationalUnitIdsMember = organizationalUnitIdsNode.FirstChild("member");
+      m_organizationalUnitIdsHasBeenSet = !organizationalUnitIdsMember.IsNull();
       while(!organizationalUnitIdsMember.IsNull())
       {
         m_organizationalUnitIds.push_back(organizationalUnitIdsMember.GetText());
@@ -74,7 +66,7 @@ DeploymentTargets& DeploymentTargets::operator =(const XmlNode& xmlNode)
     XmlNode accountFilterTypeNode = resultNode.FirstChild("AccountFilterType");
     if(!accountFilterTypeNode.IsNull())
     {
-      m_accountFilterType = AccountFilterTypeMapper::GetAccountFilterTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accountFilterTypeNode.GetText()).c_str()).c_str());
+      m_accountFilterType = AccountFilterTypeMapper::GetAccountFilterTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(accountFilterTypeNode.GetText()).c_str()));
       m_accountFilterTypeHasBeenSet = true;
     }
   }

@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ChangeResourceRecordSetsRequest::ChangeResourceRecordSetsRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_changeBatchHasBeenSet(false)
-{
-}
 
 Aws::String ChangeResourceRecordSetsRequest::SerializePayload() const
 {

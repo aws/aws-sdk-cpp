@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleNoticeDetail::RouteVehicleNoticeDetail() : 
-    m_titleHasBeenSet(false),
-    m_violatedConstraintsHasBeenSet(false)
-{
-}
-
 RouteVehicleNoticeDetail::RouteVehicleNoticeDetail(JsonView jsonValue)
-  : RouteVehicleNoticeDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RouteVehicleNoticeDetail& RouteVehicleNoticeDetail::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatedConstraints"))
   {
     m_violatedConstraints = jsonValue.GetObject("ViolatedConstraints");
-
     m_violatedConstraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

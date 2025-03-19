@@ -12,15 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomRoutingEndpointGroupRequest::CreateCustomRoutingEndpointGroupRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_destinationConfigurationsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateCustomRoutingEndpointGroupRequest::SerializePayload() const
 {
   JsonValue payload;

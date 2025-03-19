@@ -18,15 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-CloudWatchLogsConfiguration::CloudWatchLogsConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logStreamsHasBeenSet(false)
-{
-}
-
 CloudWatchLogsConfiguration::CloudWatchLogsConfiguration(JsonView jsonValue)
-  : CloudWatchLogsConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CloudWatchLogsConfiguration& CloudWatchLogsConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogStreams"))
   {
     Aws::Utils::Array<JsonView> logStreamsJsonList = jsonValue.GetArray("LogStreams");
@@ -49,7 +39,6 @@ CloudWatchLogsConfiguration& CloudWatchLogsConfiguration::operator =(JsonView js
     }
     m_logStreamsHasBeenSet = true;
   }
-
   return *this;
 }
 

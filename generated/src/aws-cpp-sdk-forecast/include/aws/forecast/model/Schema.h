@@ -32,7 +32,7 @@ namespace Model
   class Schema
   {
   public:
-    AWS_FORECASTSERVICE_API Schema();
+    AWS_FORECASTSERVICE_API Schema() = default;
     AWS_FORECASTSERVICE_API Schema(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Schema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>An array of attributes specifying the name and type of each field in a
      * dataset.</p>
      */
-    inline const Aws::Vector<SchemaAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<SchemaAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<SchemaAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<SchemaAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline Schema& WithAttributes(const Aws::Vector<SchemaAttribute>& value) { SetAttributes(value); return *this;}
-    inline Schema& WithAttributes(Aws::Vector<SchemaAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline Schema& AddAttributes(const SchemaAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline Schema& AddAttributes(SchemaAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<SchemaAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<SchemaAttribute>>
+    Schema& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = SchemaAttribute>
+    Schema& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

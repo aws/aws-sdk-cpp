@@ -33,7 +33,7 @@ namespace Model
   class QuerySpatialCoverageMax
   {
   public:
-    AWS_TIMESTREAMQUERY_API QuerySpatialCoverageMax();
+    AWS_TIMESTREAMQUERY_API QuerySpatialCoverageMax() = default;
     AWS_TIMESTREAMQUERY_API QuerySpatialCoverageMax(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API QuerySpatialCoverageMax& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum ratio of spatial coverage.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline QuerySpatialCoverageMax& WithValue(double value) { SetValue(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the table with the most sub-optimal spatial
      * pruning.</p>
      */
-    inline const Aws::String& GetTableArn() const{ return m_tableArn; }
+    inline const Aws::String& GetTableArn() const { return m_tableArn; }
     inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
-    inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
-    inline void SetTableArn(Aws::String&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::move(value); }
-    inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
-    inline QuerySpatialCoverageMax& WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
-    inline QuerySpatialCoverageMax& WithTableArn(Aws::String&& value) { SetTableArn(std::move(value)); return *this;}
-    inline QuerySpatialCoverageMax& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+    template<typename TableArnT = Aws::String>
+    void SetTableArn(TableArnT&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::forward<TableArnT>(value); }
+    template<typename TableArnT = Aws::String>
+    QuerySpatialCoverageMax& WithTableArn(TableArnT&& value) { SetTableArn(std::forward<TableArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/customer-defined-partition-keys.html">customer
      * defined partition key</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPartitionKey() const{ return m_partitionKey; }
+    inline const Aws::Vector<Aws::String>& GetPartitionKey() const { return m_partitionKey; }
     inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
-    inline void SetPartitionKey(const Aws::Vector<Aws::String>& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
-    inline void SetPartitionKey(Aws::Vector<Aws::String>&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
-    inline QuerySpatialCoverageMax& WithPartitionKey(const Aws::Vector<Aws::String>& value) { SetPartitionKey(value); return *this;}
-    inline QuerySpatialCoverageMax& WithPartitionKey(Aws::Vector<Aws::String>&& value) { SetPartitionKey(std::move(value)); return *this;}
-    inline QuerySpatialCoverageMax& AddPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey.push_back(value); return *this; }
-    inline QuerySpatialCoverageMax& AddPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey.push_back(std::move(value)); return *this; }
-    inline QuerySpatialCoverageMax& AddPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.push_back(value); return *this; }
+    template<typename PartitionKeyT = Aws::Vector<Aws::String>>
+    void SetPartitionKey(PartitionKeyT&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::forward<PartitionKeyT>(value); }
+    template<typename PartitionKeyT = Aws::Vector<Aws::String>>
+    QuerySpatialCoverageMax& WithPartitionKey(PartitionKeyT&& value) { SetPartitionKey(std::forward<PartitionKeyT>(value)); return *this;}
+    template<typename PartitionKeyT = Aws::String>
+    QuerySpatialCoverageMax& AddPartitionKey(PartitionKeyT&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey.emplace_back(std::forward<PartitionKeyT>(value)); return *this; }
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
     Aws::String m_tableArn;

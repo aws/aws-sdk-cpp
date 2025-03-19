@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsControlAssociationUpdate::StandardsControlAssociationUpdate() : 
-    m_standardsArnHasBeenSet(false),
-    m_securityControlIdHasBeenSet(false),
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_updatedReasonHasBeenSet(false)
-{
-}
-
 StandardsControlAssociationUpdate::StandardsControlAssociationUpdate(JsonView jsonValue)
-  : StandardsControlAssociationUpdate()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StandardsControlAssociationUpdate& StandardsControlAssociationUpdate::operator =
   if(jsonValue.ValueExists("StandardsArn"))
   {
     m_standardsArn = jsonValue.GetString("StandardsArn");
-
     m_standardsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityControlId"))
   {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
-
     m_securityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationStatus"))
   {
     m_associationStatus = AssociationStatusMapper::GetAssociationStatusForName(jsonValue.GetString("AssociationStatus"));
-
     m_associationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedReason"))
   {
     m_updatedReason = jsonValue.GetString("UpdatedReason");
-
     m_updatedReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

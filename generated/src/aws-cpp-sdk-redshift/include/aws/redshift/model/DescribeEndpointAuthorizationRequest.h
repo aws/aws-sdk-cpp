@@ -21,7 +21,7 @@ namespace Model
   class DescribeEndpointAuthorizationRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeEndpointAuthorizationRequest();
+    AWS_REDSHIFT_API DescribeEndpointAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The cluster identifier of the cluster to access.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline DescribeEndpointAuthorizationRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline DescribeEndpointAuthorizationRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline DescribeEndpointAuthorizationRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    DescribeEndpointAuthorizationRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * grantee. If <code>Grantee</code> parameter is true, then the
      * <code>Account</code> value is of the grantor.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline DescribeEndpointAuthorizationRequest& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline DescribeEndpointAuthorizationRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline DescribeEndpointAuthorizationRequest& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    DescribeEndpointAuthorizationRequest& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * granted. If false (default), checks authorization from a grantor point of
      * view.</p>
      */
-    inline bool GetGrantee() const{ return m_grantee; }
+    inline bool GetGrantee() const { return m_grantee; }
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
     inline void SetGrantee(bool value) { m_granteeHasBeenSet = true; m_grantee = value; }
     inline DescribeEndpointAuthorizationRequest& WithGrantee(bool value) { SetGrantee(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
      * called a <code>Marker</code> is included in the response so that the remaining
      * results can be retrieved.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeEndpointAuthorizationRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -99,14 +95,12 @@ namespace Model
      * specified, the response includes only records beyond the marker, up to the value
      * specified by the <code>MaxRecords</code> parameter.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeEndpointAuthorizationRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeEndpointAuthorizationRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeEndpointAuthorizationRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeEndpointAuthorizationRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -116,10 +110,10 @@ namespace Model
     Aws::String m_account;
     bool m_accountHasBeenSet = false;
 
-    bool m_grantee;
+    bool m_grantee{false};
     bool m_granteeHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

@@ -21,7 +21,7 @@ namespace Model
   class StopMlflowTrackingServerRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StopMlflowTrackingServerRequest();
+    AWS_SAGEMAKER_API StopMlflowTrackingServerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the tracking server to stop.</p>
      */
-    inline const Aws::String& GetTrackingServerName() const{ return m_trackingServerName; }
+    inline const Aws::String& GetTrackingServerName() const { return m_trackingServerName; }
     inline bool TrackingServerNameHasBeenSet() const { return m_trackingServerNameHasBeenSet; }
-    inline void SetTrackingServerName(const Aws::String& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = value; }
-    inline void SetTrackingServerName(Aws::String&& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = std::move(value); }
-    inline void SetTrackingServerName(const char* value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName.assign(value); }
-    inline StopMlflowTrackingServerRequest& WithTrackingServerName(const Aws::String& value) { SetTrackingServerName(value); return *this;}
-    inline StopMlflowTrackingServerRequest& WithTrackingServerName(Aws::String&& value) { SetTrackingServerName(std::move(value)); return *this;}
-    inline StopMlflowTrackingServerRequest& WithTrackingServerName(const char* value) { SetTrackingServerName(value); return *this;}
+    template<typename TrackingServerNameT = Aws::String>
+    void SetTrackingServerName(TrackingServerNameT&& value) { m_trackingServerNameHasBeenSet = true; m_trackingServerName = std::forward<TrackingServerNameT>(value); }
+    template<typename TrackingServerNameT = Aws::String>
+    StopMlflowTrackingServerRequest& WithTrackingServerName(TrackingServerNameT&& value) { SetTrackingServerName(std::forward<TrackingServerNameT>(value)); return *this;}
     ///@}
   private:
 

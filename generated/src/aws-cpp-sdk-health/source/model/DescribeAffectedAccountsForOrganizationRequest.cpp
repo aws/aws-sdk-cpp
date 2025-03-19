@@ -12,14 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAffectedAccountsForOrganizationRequest::DescribeAffectedAccountsForOrganizationRequest() : 
-    m_eventArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAffectedAccountsForOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

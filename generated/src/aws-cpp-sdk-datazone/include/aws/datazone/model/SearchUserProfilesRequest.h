@@ -22,7 +22,7 @@ namespace Model
   class SearchUserProfilesRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API SearchUserProfilesRequest();
+    AWS_DATAZONE_API SearchUserProfilesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which you want to search user
      * profiles.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline SearchUserProfilesRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline SearchUserProfilesRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline SearchUserProfilesRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    SearchUserProfilesRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <code>NextToken</code> value that you can use in a subsequent call to
      * <code>SearchUserProfiles</code> to list the next set of results. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchUserProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -71,47 +69,41 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to
      * <code>SearchUserProfiles</code> to list the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchUserProfilesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchUserProfilesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchUserProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchUserProfilesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the text for which to search.</p>
      */
-    inline const Aws::String& GetSearchText() const{ return m_searchText; }
+    inline const Aws::String& GetSearchText() const { return m_searchText; }
     inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
-    inline void SetSearchText(const Aws::String& value) { m_searchTextHasBeenSet = true; m_searchText = value; }
-    inline void SetSearchText(Aws::String&& value) { m_searchTextHasBeenSet = true; m_searchText = std::move(value); }
-    inline void SetSearchText(const char* value) { m_searchTextHasBeenSet = true; m_searchText.assign(value); }
-    inline SearchUserProfilesRequest& WithSearchText(const Aws::String& value) { SetSearchText(value); return *this;}
-    inline SearchUserProfilesRequest& WithSearchText(Aws::String&& value) { SetSearchText(std::move(value)); return *this;}
-    inline SearchUserProfilesRequest& WithSearchText(const char* value) { SetSearchText(value); return *this;}
+    template<typename SearchTextT = Aws::String>
+    void SetSearchText(SearchTextT&& value) { m_searchTextHasBeenSet = true; m_searchText = std::forward<SearchTextT>(value); }
+    template<typename SearchTextT = Aws::String>
+    SearchUserProfilesRequest& WithSearchText(SearchTextT&& value) { SetSearchText(std::forward<SearchTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the user type for the <code>SearchUserProfiles</code> action.</p>
      */
-    inline const UserSearchType& GetUserType() const{ return m_userType; }
+    inline UserSearchType GetUserType() const { return m_userType; }
     inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
-    inline void SetUserType(const UserSearchType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
-    inline void SetUserType(UserSearchType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
-    inline SearchUserProfilesRequest& WithUserType(const UserSearchType& value) { SetUserType(value); return *this;}
-    inline SearchUserProfilesRequest& WithUserType(UserSearchType&& value) { SetUserType(std::move(value)); return *this;}
+    inline void SetUserType(UserSearchType value) { m_userTypeHasBeenSet = true; m_userType = value; }
+    inline SearchUserProfilesRequest& WithUserType(UserSearchType value) { SetUserType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -120,7 +112,7 @@ namespace Model
     Aws::String m_searchText;
     bool m_searchTextHasBeenSet = false;
 
-    UserSearchType m_userType;
+    UserSearchType m_userType{UserSearchType::NOT_SET};
     bool m_userTypeHasBeenSet = false;
   };
 

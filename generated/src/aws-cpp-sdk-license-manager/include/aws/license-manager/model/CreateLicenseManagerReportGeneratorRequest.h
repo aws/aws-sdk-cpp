@@ -26,7 +26,7 @@ namespace Model
   class CreateLicenseManagerReportGeneratorRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorRequest();
+    AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Name of the report generator.</p>
      */
-    inline const Aws::String& GetReportGeneratorName() const{ return m_reportGeneratorName; }
+    inline const Aws::String& GetReportGeneratorName() const { return m_reportGeneratorName; }
     inline bool ReportGeneratorNameHasBeenSet() const { return m_reportGeneratorNameHasBeenSet; }
-    inline void SetReportGeneratorName(const Aws::String& value) { m_reportGeneratorNameHasBeenSet = true; m_reportGeneratorName = value; }
-    inline void SetReportGeneratorName(Aws::String&& value) { m_reportGeneratorNameHasBeenSet = true; m_reportGeneratorName = std::move(value); }
-    inline void SetReportGeneratorName(const char* value) { m_reportGeneratorNameHasBeenSet = true; m_reportGeneratorName.assign(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportGeneratorName(const Aws::String& value) { SetReportGeneratorName(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportGeneratorName(Aws::String&& value) { SetReportGeneratorName(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportGeneratorName(const char* value) { SetReportGeneratorName(value); return *this;}
+    template<typename ReportGeneratorNameT = Aws::String>
+    void SetReportGeneratorName(ReportGeneratorNameT&& value) { m_reportGeneratorNameHasBeenSet = true; m_reportGeneratorName = std::forward<ReportGeneratorNameT>(value); }
+    template<typename ReportGeneratorNameT = Aws::String>
+    CreateLicenseManagerReportGeneratorRequest& WithReportGeneratorName(ReportGeneratorNameT&& value) { SetReportGeneratorName(std::forward<ReportGeneratorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,26 +59,25 @@ namespace Model
      * - Reports the tracked licenses and resource consumption for a license
      * configuration.</p> </li> </ul>
      */
-    inline const Aws::Vector<ReportType>& GetType() const{ return m_type; }
+    inline const Aws::Vector<ReportType>& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::Vector<ReportType>& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::Vector<ReportType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithType(const Aws::Vector<ReportType>& value) { SetType(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithType(Aws::Vector<ReportType>&& value) { SetType(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& AddType(const ReportType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
-    inline CreateLicenseManagerReportGeneratorRequest& AddType(ReportType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
+    template<typename TypeT = Aws::Vector<ReportType>>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::Vector<ReportType>>
+    CreateLicenseManagerReportGeneratorRequest& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
+    inline CreateLicenseManagerReportGeneratorRequest& AddType(ReportType value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Defines the type of license configuration the report generator tracks.</p>
      */
-    inline const ReportContext& GetReportContext() const{ return m_reportContext; }
+    inline const ReportContext& GetReportContext() const { return m_reportContext; }
     inline bool ReportContextHasBeenSet() const { return m_reportContextHasBeenSet; }
-    inline void SetReportContext(const ReportContext& value) { m_reportContextHasBeenSet = true; m_reportContext = value; }
-    inline void SetReportContext(ReportContext&& value) { m_reportContextHasBeenSet = true; m_reportContext = std::move(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportContext(const ReportContext& value) { SetReportContext(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportContext(ReportContext&& value) { SetReportContext(std::move(value)); return *this;}
+    template<typename ReportContextT = ReportContext>
+    void SetReportContext(ReportContextT&& value) { m_reportContextHasBeenSet = true; m_reportContext = std::forward<ReportContextT>(value); }
+    template<typename ReportContextT = ReportContext>
+    CreateLicenseManagerReportGeneratorRequest& WithReportContext(ReportContextT&& value) { SetReportContext(std::forward<ReportContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +85,12 @@ namespace Model
      * <p>Frequency by which reports are generated. Reports can be generated daily,
      * monthly, or weekly.</p>
      */
-    inline const ReportFrequency& GetReportFrequency() const{ return m_reportFrequency; }
+    inline const ReportFrequency& GetReportFrequency() const { return m_reportFrequency; }
     inline bool ReportFrequencyHasBeenSet() const { return m_reportFrequencyHasBeenSet; }
-    inline void SetReportFrequency(const ReportFrequency& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = value; }
-    inline void SetReportFrequency(ReportFrequency&& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = std::move(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportFrequency(const ReportFrequency& value) { SetReportFrequency(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithReportFrequency(ReportFrequency&& value) { SetReportFrequency(std::move(value)); return *this;}
+    template<typename ReportFrequencyT = ReportFrequency>
+    void SetReportFrequency(ReportFrequencyT&& value) { m_reportFrequencyHasBeenSet = true; m_reportFrequency = std::forward<ReportFrequencyT>(value); }
+    template<typename ReportFrequencyT = ReportFrequency>
+    CreateLicenseManagerReportGeneratorRequest& WithReportFrequency(ReportFrequencyT&& value) { SetReportFrequency(std::forward<ReportFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,42 +98,38 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateLicenseManagerReportGeneratorRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the report generator.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateLicenseManagerReportGeneratorRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags to add to the report generator.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLicenseManagerReportGeneratorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLicenseManagerReportGeneratorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateLicenseManagerReportGeneratorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateLicenseManagerReportGeneratorRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

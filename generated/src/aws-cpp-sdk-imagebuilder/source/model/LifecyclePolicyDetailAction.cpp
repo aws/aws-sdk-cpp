@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-LifecyclePolicyDetailAction::LifecyclePolicyDetailAction() : 
-    m_type(LifecyclePolicyDetailActionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_includeResourcesHasBeenSet(false)
-{
-}
-
 LifecyclePolicyDetailAction::LifecyclePolicyDetailAction(JsonView jsonValue)
-  : LifecyclePolicyDetailAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LifecyclePolicyDetailAction& LifecyclePolicyDetailAction::operator =(JsonView js
   if(jsonValue.ValueExists("type"))
   {
     m_type = LifecyclePolicyDetailActionTypeMapper::GetLifecyclePolicyDetailActionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeResources"))
   {
     m_includeResources = jsonValue.GetObject("includeResources");
-
     m_includeResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

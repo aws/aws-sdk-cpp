@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAttachObject::BatchAttachObject() : 
-    m_parentReferenceHasBeenSet(false),
-    m_childReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
-{
-}
-
 BatchAttachObject::BatchAttachObject(JsonView jsonValue)
-  : BatchAttachObject()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchAttachObject& BatchAttachObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParentReference"))
   {
     m_parentReference = jsonValue.GetObject("ParentReference");
-
     m_parentReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChildReference"))
   {
     m_childReference = jsonValue.GetObject("ChildReference");
-
     m_childReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkName"))
   {
     m_linkName = jsonValue.GetString("LinkName");
-
     m_linkNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AttributeFilter
   {
   public:
-    AWS_QAPPS_API AttributeFilter();
+    AWS_QAPPS_API AttributeFilter() = default;
     AWS_QAPPS_API AttributeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API AttributeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,45 @@ namespace Model
     /**
      * <p>Performs a logical <code>AND</code> operation on all supplied filters.</p>
      */
-    inline const Aws::Vector<AttributeFilter>& GetAndAllFilters() const{ return m_andAllFilters; }
+    inline const Aws::Vector<AttributeFilter>& GetAndAllFilters() const { return m_andAllFilters; }
     inline bool AndAllFiltersHasBeenSet() const { return m_andAllFiltersHasBeenSet; }
-    inline void SetAndAllFilters(const Aws::Vector<AttributeFilter>& value) { m_andAllFiltersHasBeenSet = true; m_andAllFilters = value; }
-    inline void SetAndAllFilters(Aws::Vector<AttributeFilter>&& value) { m_andAllFiltersHasBeenSet = true; m_andAllFilters = std::move(value); }
-    inline AttributeFilter& WithAndAllFilters(const Aws::Vector<AttributeFilter>& value) { SetAndAllFilters(value); return *this;}
-    inline AttributeFilter& WithAndAllFilters(Aws::Vector<AttributeFilter>&& value) { SetAndAllFilters(std::move(value)); return *this;}
-    inline AttributeFilter& AddAndAllFilters(const AttributeFilter& value) { m_andAllFiltersHasBeenSet = true; m_andAllFilters.push_back(value); return *this; }
-    inline AttributeFilter& AddAndAllFilters(AttributeFilter&& value) { m_andAllFiltersHasBeenSet = true; m_andAllFilters.push_back(std::move(value)); return *this; }
+    template<typename AndAllFiltersT = Aws::Vector<AttributeFilter>>
+    void SetAndAllFilters(AndAllFiltersT&& value) { m_andAllFiltersHasBeenSet = true; m_andAllFilters = std::forward<AndAllFiltersT>(value); }
+    template<typename AndAllFiltersT = Aws::Vector<AttributeFilter>>
+    AttributeFilter& WithAndAllFilters(AndAllFiltersT&& value) { SetAndAllFilters(std::forward<AndAllFiltersT>(value)); return *this;}
+    template<typename AndAllFiltersT = AttributeFilter>
+    AttributeFilter& AddAndAllFilters(AndAllFiltersT&& value) { m_andAllFiltersHasBeenSet = true; m_andAllFilters.emplace_back(std::forward<AndAllFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Performs a logical <code>OR</code> operation on all supplied filters. </p>
      */
-    inline const Aws::Vector<AttributeFilter>& GetOrAllFilters() const{ return m_orAllFilters; }
+    inline const Aws::Vector<AttributeFilter>& GetOrAllFilters() const { return m_orAllFilters; }
     inline bool OrAllFiltersHasBeenSet() const { return m_orAllFiltersHasBeenSet; }
-    inline void SetOrAllFilters(const Aws::Vector<AttributeFilter>& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = value; }
-    inline void SetOrAllFilters(Aws::Vector<AttributeFilter>&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = std::move(value); }
-    inline AttributeFilter& WithOrAllFilters(const Aws::Vector<AttributeFilter>& value) { SetOrAllFilters(value); return *this;}
-    inline AttributeFilter& WithOrAllFilters(Aws::Vector<AttributeFilter>&& value) { SetOrAllFilters(std::move(value)); return *this;}
-    inline AttributeFilter& AddOrAllFilters(const AttributeFilter& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.push_back(value); return *this; }
-    inline AttributeFilter& AddOrAllFilters(AttributeFilter&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.push_back(std::move(value)); return *this; }
+    template<typename OrAllFiltersT = Aws::Vector<AttributeFilter>>
+    void SetOrAllFilters(OrAllFiltersT&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters = std::forward<OrAllFiltersT>(value); }
+    template<typename OrAllFiltersT = Aws::Vector<AttributeFilter>>
+    AttributeFilter& WithOrAllFilters(OrAllFiltersT&& value) { SetOrAllFilters(std::forward<OrAllFiltersT>(value)); return *this;}
+    template<typename OrAllFiltersT = AttributeFilter>
+    AttributeFilter& AddOrAllFilters(OrAllFiltersT&& value) { m_orAllFiltersHasBeenSet = true; m_orAllFilters.emplace_back(std::forward<OrAllFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters. </p>
      */
-    AWS_QAPPS_API const AttributeFilter& GetNotFilter() const;
-    AWS_QAPPS_API bool NotFilterHasBeenSet() const;
-    AWS_QAPPS_API void SetNotFilter(const AttributeFilter& value);
-    AWS_QAPPS_API void SetNotFilter(AttributeFilter&& value);
-    AWS_QAPPS_API AttributeFilter& WithNotFilter(const AttributeFilter& value);
-    AWS_QAPPS_API AttributeFilter& WithNotFilter(AttributeFilter&& value);
+    inline const AttributeFilter& GetNotFilter() const{
+      return *m_notFilter;
+    }
+    inline bool NotFilterHasBeenSet() const { return m_notFilterHasBeenSet; }
+    template<typename NotFilterT = AttributeFilter>
+    void SetNotFilter(NotFilterT&& value) {
+      m_notFilterHasBeenSet = true; 
+      m_notFilter = Aws::MakeShared<AttributeFilter>("AttributeFilter", std::forward<NotFilterT>(value));
+    }
+    template<typename NotFilterT = AttributeFilter>
+    AttributeFilter& WithNotFilter(NotFilterT&& value) { SetNotFilter(std::forward<NotFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +92,12 @@ namespace Model
      * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
      * <code>stringListValue</code> and <code>stringValue</code>.</p>
      */
-    inline const DocumentAttribute& GetEqualsTo() const{ return m_equalsTo; }
+    inline const DocumentAttribute& GetEqualsTo() const { return m_equalsTo; }
     inline bool EqualsToHasBeenSet() const { return m_equalsToHasBeenSet; }
-    inline void SetEqualsTo(const DocumentAttribute& value) { m_equalsToHasBeenSet = true; m_equalsTo = value; }
-    inline void SetEqualsTo(DocumentAttribute&& value) { m_equalsToHasBeenSet = true; m_equalsTo = std::move(value); }
-    inline AttributeFilter& WithEqualsTo(const DocumentAttribute& value) { SetEqualsTo(value); return *this;}
-    inline AttributeFilter& WithEqualsTo(DocumentAttribute&& value) { SetEqualsTo(std::move(value)); return *this;}
+    template<typename EqualsToT = DocumentAttribute>
+    void SetEqualsTo(EqualsToT&& value) { m_equalsToHasBeenSet = true; m_equalsTo = std::forward<EqualsToT>(value); }
+    template<typename EqualsToT = DocumentAttribute>
+    AttributeFilter& WithEqualsTo(EqualsToT&& value) { SetEqualsTo(std::forward<EqualsToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +107,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
      * attribute value types</a>: <code>stringListValue</code>.</p>
      */
-    inline const DocumentAttribute& GetContainsAll() const{ return m_containsAll; }
+    inline const DocumentAttribute& GetContainsAll() const { return m_containsAll; }
     inline bool ContainsAllHasBeenSet() const { return m_containsAllHasBeenSet; }
-    inline void SetContainsAll(const DocumentAttribute& value) { m_containsAllHasBeenSet = true; m_containsAll = value; }
-    inline void SetContainsAll(DocumentAttribute&& value) { m_containsAllHasBeenSet = true; m_containsAll = std::move(value); }
-    inline AttributeFilter& WithContainsAll(const DocumentAttribute& value) { SetContainsAll(value); return *this;}
-    inline AttributeFilter& WithContainsAll(DocumentAttribute&& value) { SetContainsAll(std::move(value)); return *this;}
+    template<typename ContainsAllT = DocumentAttribute>
+    void SetContainsAll(ContainsAllT&& value) { m_containsAllHasBeenSet = true; m_containsAll = std::forward<ContainsAllT>(value); }
+    template<typename ContainsAllT = DocumentAttribute>
+    AttributeFilter& WithContainsAll(ContainsAllT&& value) { SetContainsAll(std::forward<ContainsAllT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,12 +122,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
      * attribute value types</a>: <code>stringListValue</code>.</p>
      */
-    inline const DocumentAttribute& GetContainsAny() const{ return m_containsAny; }
+    inline const DocumentAttribute& GetContainsAny() const { return m_containsAny; }
     inline bool ContainsAnyHasBeenSet() const { return m_containsAnyHasBeenSet; }
-    inline void SetContainsAny(const DocumentAttribute& value) { m_containsAnyHasBeenSet = true; m_containsAny = value; }
-    inline void SetContainsAny(DocumentAttribute&& value) { m_containsAnyHasBeenSet = true; m_containsAny = std::move(value); }
-    inline AttributeFilter& WithContainsAny(const DocumentAttribute& value) { SetContainsAny(value); return *this;}
-    inline AttributeFilter& WithContainsAny(DocumentAttribute&& value) { SetContainsAny(std::move(value)); return *this;}
+    template<typename ContainsAnyT = DocumentAttribute>
+    void SetContainsAny(ContainsAnyT&& value) { m_containsAnyHasBeenSet = true; m_containsAny = std::forward<ContainsAnyT>(value); }
+    template<typename ContainsAnyT = DocumentAttribute>
+    AttributeFilter& WithContainsAny(ContainsAnyT&& value) { SetContainsAny(std::forward<ContainsAnyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +138,12 @@ namespace Model
      * attribute value types</a>: <code>dateValue</code> and
      * <code>longValue</code>.</p>
      */
-    inline const DocumentAttribute& GetGreaterThan() const{ return m_greaterThan; }
+    inline const DocumentAttribute& GetGreaterThan() const { return m_greaterThan; }
     inline bool GreaterThanHasBeenSet() const { return m_greaterThanHasBeenSet; }
-    inline void SetGreaterThan(const DocumentAttribute& value) { m_greaterThanHasBeenSet = true; m_greaterThan = value; }
-    inline void SetGreaterThan(DocumentAttribute&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::move(value); }
-    inline AttributeFilter& WithGreaterThan(const DocumentAttribute& value) { SetGreaterThan(value); return *this;}
-    inline AttributeFilter& WithGreaterThan(DocumentAttribute&& value) { SetGreaterThan(std::move(value)); return *this;}
+    template<typename GreaterThanT = DocumentAttribute>
+    void SetGreaterThan(GreaterThanT&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::forward<GreaterThanT>(value); }
+    template<typename GreaterThanT = DocumentAttribute>
+    AttributeFilter& WithGreaterThan(GreaterThanT&& value) { SetGreaterThan(std::forward<GreaterThanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +154,12 @@ namespace Model
      * attribute value types</a>: <code>dateValue</code> and <code>longValue</code>.
      * </p>
      */
-    inline const DocumentAttribute& GetGreaterThanOrEquals() const{ return m_greaterThanOrEquals; }
+    inline const DocumentAttribute& GetGreaterThanOrEquals() const { return m_greaterThanOrEquals; }
     inline bool GreaterThanOrEqualsHasBeenSet() const { return m_greaterThanOrEqualsHasBeenSet; }
-    inline void SetGreaterThanOrEquals(const DocumentAttribute& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = value; }
-    inline void SetGreaterThanOrEquals(DocumentAttribute&& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = std::move(value); }
-    inline AttributeFilter& WithGreaterThanOrEquals(const DocumentAttribute& value) { SetGreaterThanOrEquals(value); return *this;}
-    inline AttributeFilter& WithGreaterThanOrEquals(DocumentAttribute&& value) { SetGreaterThanOrEquals(std::move(value)); return *this;}
+    template<typename GreaterThanOrEqualsT = DocumentAttribute>
+    void SetGreaterThanOrEquals(GreaterThanOrEqualsT&& value) { m_greaterThanOrEqualsHasBeenSet = true; m_greaterThanOrEquals = std::forward<GreaterThanOrEqualsT>(value); }
+    template<typename GreaterThanOrEqualsT = DocumentAttribute>
+    AttributeFilter& WithGreaterThanOrEquals(GreaterThanOrEqualsT&& value) { SetGreaterThanOrEquals(std::forward<GreaterThanOrEqualsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +170,12 @@ namespace Model
      * attribute value types</a>: <code>dateValue</code> and
      * <code>longValue</code>.</p>
      */
-    inline const DocumentAttribute& GetLessThan() const{ return m_lessThan; }
+    inline const DocumentAttribute& GetLessThan() const { return m_lessThan; }
     inline bool LessThanHasBeenSet() const { return m_lessThanHasBeenSet; }
-    inline void SetLessThan(const DocumentAttribute& value) { m_lessThanHasBeenSet = true; m_lessThan = value; }
-    inline void SetLessThan(DocumentAttribute&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::move(value); }
-    inline AttributeFilter& WithLessThan(const DocumentAttribute& value) { SetLessThan(value); return *this;}
-    inline AttributeFilter& WithLessThan(DocumentAttribute&& value) { SetLessThan(std::move(value)); return *this;}
+    template<typename LessThanT = DocumentAttribute>
+    void SetLessThan(LessThanT&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::forward<LessThanT>(value); }
+    template<typename LessThanT = DocumentAttribute>
+    AttributeFilter& WithLessThan(LessThanT&& value) { SetLessThan(std::forward<LessThanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,12 +186,12 @@ namespace Model
      * attribute value type</a>: <code>dateValue</code> and <code>longValue</code>.
      * </p>
      */
-    inline const DocumentAttribute& GetLessThanOrEquals() const{ return m_lessThanOrEquals; }
+    inline const DocumentAttribute& GetLessThanOrEquals() const { return m_lessThanOrEquals; }
     inline bool LessThanOrEqualsHasBeenSet() const { return m_lessThanOrEqualsHasBeenSet; }
-    inline void SetLessThanOrEquals(const DocumentAttribute& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = value; }
-    inline void SetLessThanOrEquals(DocumentAttribute&& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = std::move(value); }
-    inline AttributeFilter& WithLessThanOrEquals(const DocumentAttribute& value) { SetLessThanOrEquals(value); return *this;}
-    inline AttributeFilter& WithLessThanOrEquals(DocumentAttribute&& value) { SetLessThanOrEquals(std::move(value)); return *this;}
+    template<typename LessThanOrEqualsT = DocumentAttribute>
+    void SetLessThanOrEquals(LessThanOrEqualsT&& value) { m_lessThanOrEqualsHasBeenSet = true; m_lessThanOrEquals = std::forward<LessThanOrEqualsT>(value); }
+    template<typename LessThanOrEqualsT = DocumentAttribute>
+    AttributeFilter& WithLessThanOrEquals(LessThanOrEqualsT&& value) { SetLessThanOrEquals(std::forward<LessThanOrEqualsT>(value)); return *this;}
     ///@}
   private:
 

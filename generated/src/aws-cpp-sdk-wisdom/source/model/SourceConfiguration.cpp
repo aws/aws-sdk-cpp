@@ -18,13 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-SourceConfiguration::SourceConfiguration() : 
-    m_appIntegrationsHasBeenSet(false)
-{
-}
-
 SourceConfiguration::SourceConfiguration(JsonView jsonValue)
-  : SourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourceConfiguration& SourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appIntegrations"))
   {
     m_appIntegrations = jsonValue.GetObject("appIntegrations");
-
     m_appIntegrationsHasBeenSet = true;
   }
-
   return *this;
 }
 

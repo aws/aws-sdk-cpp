@@ -30,7 +30,7 @@ namespace Model
   class HighAvailabilityConfig
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig();
+    AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig() = default;
     AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The number of instances in a high availability configuration. The minimum
      * possible value is 1 and the maximum is 100.</p>
      */
-    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const { return m_desiredCapacity; }
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
     inline HighAvailabilityConfig& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
     ///@}
   private:
 
-    int m_desiredCapacity;
+    int m_desiredCapacity{0};
     bool m_desiredCapacityHasBeenSet = false;
   };
 

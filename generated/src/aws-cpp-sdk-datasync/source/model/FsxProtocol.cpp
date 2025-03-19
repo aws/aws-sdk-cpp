@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-FsxProtocol::FsxProtocol() : 
-    m_nFSHasBeenSet(false),
-    m_sMBHasBeenSet(false)
-{
-}
-
 FsxProtocol::FsxProtocol(JsonView jsonValue)
-  : FsxProtocol()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FsxProtocol& FsxProtocol::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NFS"))
   {
     m_nFS = jsonValue.GetObject("NFS");
-
     m_nFSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMB"))
   {
     m_sMB = jsonValue.GetObject("SMB");
-
     m_sMBHasBeenSet = true;
   }
-
   return *this;
 }
 

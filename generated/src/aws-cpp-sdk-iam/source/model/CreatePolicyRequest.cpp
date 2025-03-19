@@ -10,15 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreatePolicyRequest::CreatePolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

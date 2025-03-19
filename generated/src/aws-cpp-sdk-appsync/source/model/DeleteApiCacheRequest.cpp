@@ -12,11 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApiCacheRequest::DeleteApiCacheRequest() : 
-    m_apiIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApiCacheRequest::SerializePayload() const
 {
   return {};

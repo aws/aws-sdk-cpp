@@ -18,23 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ClusterOperationV2::ClusterOperationV2() : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_operationArnHasBeenSet(false),
-    m_operationStateHasBeenSet(false),
-    m_operationTypeHasBeenSet(false),
-    m_provisionedHasBeenSet(false),
-    m_serverlessHasBeenSet(false)
-{
-}
-
 ClusterOperationV2::ClusterOperationV2(JsonView jsonValue)
-  : ClusterOperationV2()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ ClusterOperationV2& ClusterOperationV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterType"))
   {
     m_clusterType = ClusterTypeMapper::GetClusterTypeForName(jsonValue.GetString("clusterType"));
-
     m_clusterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationArn"))
   {
     m_operationArn = jsonValue.GetString("operationArn");
-
     m_operationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationState"))
   {
     m_operationState = jsonValue.GetString("operationState");
-
     m_operationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationType"))
   {
     m_operationType = jsonValue.GetString("operationType");
-
     m_operationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioned"))
   {
     m_provisioned = jsonValue.GetObject("provisioned");
-
     m_provisionedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverless"))
   {
     m_serverless = jsonValue.GetObject("serverless");
-
     m_serverlessHasBeenSet = true;
   }
-
   return *this;
 }
 

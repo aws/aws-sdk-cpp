@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetConfiguration::SubnetConfiguration() : 
-    m_subnetIdHasBeenSet(false),
-    m_ipv4HasBeenSet(false),
-    m_ipv6HasBeenSet(false)
-{
-}
-
 SubnetConfiguration::SubnetConfiguration(const XmlNode& xmlNode)
-  : SubnetConfiguration()
 {
   *this = xmlNode;
 }

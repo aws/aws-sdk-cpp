@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DeleteSuggesterRequest::DeleteSuggesterRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_suggesterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSuggesterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -21,7 +21,7 @@ namespace Model
   class PutAccountSettingsRequest : public ArtifactRequest
   {
   public:
-    AWS_ARTIFACT_API PutAccountSettingsRequest();
+    AWS_ARTIFACT_API PutAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,16 +36,14 @@ namespace Model
     /**
      * <p>Desired notification subscription status.</p>
      */
-    inline const NotificationSubscriptionStatus& GetNotificationSubscriptionStatus() const{ return m_notificationSubscriptionStatus; }
+    inline NotificationSubscriptionStatus GetNotificationSubscriptionStatus() const { return m_notificationSubscriptionStatus; }
     inline bool NotificationSubscriptionStatusHasBeenSet() const { return m_notificationSubscriptionStatusHasBeenSet; }
-    inline void SetNotificationSubscriptionStatus(const NotificationSubscriptionStatus& value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = value; }
-    inline void SetNotificationSubscriptionStatus(NotificationSubscriptionStatus&& value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = std::move(value); }
-    inline PutAccountSettingsRequest& WithNotificationSubscriptionStatus(const NotificationSubscriptionStatus& value) { SetNotificationSubscriptionStatus(value); return *this;}
-    inline PutAccountSettingsRequest& WithNotificationSubscriptionStatus(NotificationSubscriptionStatus&& value) { SetNotificationSubscriptionStatus(std::move(value)); return *this;}
+    inline void SetNotificationSubscriptionStatus(NotificationSubscriptionStatus value) { m_notificationSubscriptionStatusHasBeenSet = true; m_notificationSubscriptionStatus = value; }
+    inline PutAccountSettingsRequest& WithNotificationSubscriptionStatus(NotificationSubscriptionStatus value) { SetNotificationSubscriptionStatus(value); return *this;}
     ///@}
   private:
 
-    NotificationSubscriptionStatus m_notificationSubscriptionStatus;
+    NotificationSubscriptionStatus m_notificationSubscriptionStatus{NotificationSubscriptionStatus::NOT_SET};
     bool m_notificationSubscriptionStatusHasBeenSet = false;
   };
 

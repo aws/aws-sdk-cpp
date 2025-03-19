@@ -34,7 +34,7 @@ namespace Model
   class CustomResponseBody
   {
   public:
-    AWS_WAFV2_API CustomResponseBody();
+    AWS_WAFV2_API CustomResponseBody() = default;
     AWS_WAFV2_API CustomResponseBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API CustomResponseBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The type of content in the payload that you are defining in the
      * <code>Content</code> string.</p>
      */
-    inline const ResponseContentType& GetContentType() const{ return m_contentType; }
+    inline ResponseContentType GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const ResponseContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(ResponseContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline CustomResponseBody& WithContentType(const ResponseContentType& value) { SetContentType(value); return *this;}
-    inline CustomResponseBody& WithContentType(ResponseContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline void SetContentType(ResponseContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline CustomResponseBody& WithContentType(ResponseContentType value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,18 +60,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline CustomResponseBody& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline CustomResponseBody& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline CustomResponseBody& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    CustomResponseBody& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 
-    ResponseContentType m_contentType;
+    ResponseContentType m_contentType{ResponseContentType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_content;

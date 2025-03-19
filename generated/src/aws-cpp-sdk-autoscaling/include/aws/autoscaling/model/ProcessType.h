@@ -34,7 +34,7 @@ namespace Model
   class ProcessType
   {
   public:
-    AWS_AUTOSCALING_API ProcessType();
+    AWS_AUTOSCALING_API ProcessType() = default;
     AWS_AUTOSCALING_API ProcessType(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API ProcessType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
      * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetProcessName() const{ return m_processName; }
+    inline const Aws::String& GetProcessName() const { return m_processName; }
     inline bool ProcessNameHasBeenSet() const { return m_processNameHasBeenSet; }
-    inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
-    inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = std::move(value); }
-    inline void SetProcessName(const char* value) { m_processNameHasBeenSet = true; m_processName.assign(value); }
-    inline ProcessType& WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
-    inline ProcessType& WithProcessName(Aws::String&& value) { SetProcessName(std::move(value)); return *this;}
-    inline ProcessType& WithProcessName(const char* value) { SetProcessName(value); return *this;}
+    template<typename ProcessNameT = Aws::String>
+    void SetProcessName(ProcessNameT&& value) { m_processNameHasBeenSet = true; m_processName = std::forward<ProcessNameT>(value); }
+    template<typename ProcessNameT = Aws::String>
+    ProcessType& WithProcessName(ProcessNameT&& value) { SetProcessName(std::forward<ProcessNameT>(value)); return *this;}
     ///@}
   private:
 

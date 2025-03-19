@@ -18,13 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-Region::Region() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Region::Region(JsonView jsonValue)
-  : Region()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Region& Region::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

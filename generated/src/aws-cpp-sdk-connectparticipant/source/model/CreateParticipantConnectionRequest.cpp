@@ -13,14 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateParticipantConnectionRequest::CreateParticipantConnectionRequest() : 
-    m_typeHasBeenSet(false),
-    m_participantTokenHasBeenSet(false),
-    m_connectParticipant(false),
-    m_connectParticipantHasBeenSet(false)
-{
-}
-
 Aws::String CreateParticipantConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

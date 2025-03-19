@@ -26,7 +26,7 @@ namespace Model
   class DeleteStackRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DeleteStackRequest();
+    AWS_CLOUDFORMATION_API DeleteStackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name or the unique stack ID that's associated with the stack.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline DeleteStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline DeleteStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline DeleteStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    DeleteStackRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * resources.</p> <p>Retaining resources is useful when you can't delete a
      * resource, such as a non-empty S3 bucket, but you want to delete the stack.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRetainResources() const{ return m_retainResources; }
+    inline const Aws::Vector<Aws::String>& GetRetainResources() const { return m_retainResources; }
     inline bool RetainResourcesHasBeenSet() const { return m_retainResourcesHasBeenSet; }
-    inline void SetRetainResources(const Aws::Vector<Aws::String>& value) { m_retainResourcesHasBeenSet = true; m_retainResources = value; }
-    inline void SetRetainResources(Aws::Vector<Aws::String>&& value) { m_retainResourcesHasBeenSet = true; m_retainResources = std::move(value); }
-    inline DeleteStackRequest& WithRetainResources(const Aws::Vector<Aws::String>& value) { SetRetainResources(value); return *this;}
-    inline DeleteStackRequest& WithRetainResources(Aws::Vector<Aws::String>&& value) { SetRetainResources(std::move(value)); return *this;}
-    inline DeleteStackRequest& AddRetainResources(const Aws::String& value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
-    inline DeleteStackRequest& AddRetainResources(Aws::String&& value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(std::move(value)); return *this; }
-    inline DeleteStackRequest& AddRetainResources(const char* value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
+    template<typename RetainResourcesT = Aws::Vector<Aws::String>>
+    void SetRetainResources(RetainResourcesT&& value) { m_retainResourcesHasBeenSet = true; m_retainResources = std::forward<RetainResourcesT>(value); }
+    template<typename RetainResourcesT = Aws::Vector<Aws::String>>
+    DeleteStackRequest& WithRetainResources(RetainResourcesT&& value) { SetRetainResources(std::forward<RetainResourcesT>(value)); return *this;}
+    template<typename RetainResourcesT = Aws::String>
+    DeleteStackRequest& AddRetainResources(RetainResourcesT&& value) { m_retainResourcesHasBeenSet = true; m_retainResources.emplace_back(std::forward<RetainResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,14 +80,12 @@ namespace Model
      * CloudFormation uses a temporary session that's generated from your user
      * credentials.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline DeleteStackRequest& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline DeleteStackRequest& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline DeleteStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    DeleteStackRequest& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +107,12 @@ namespace Model
      * format:
      * <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline DeleteStackRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline DeleteStackRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline DeleteStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    DeleteStackRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +124,10 @@ namespace Model
      * <code>DELETE_FAILED</code> state due to resource deletion failure.</p> </li>
      * </ul>
      */
-    inline const DeletionMode& GetDeletionMode() const{ return m_deletionMode; }
+    inline DeletionMode GetDeletionMode() const { return m_deletionMode; }
     inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
-    inline void SetDeletionMode(const DeletionMode& value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
-    inline void SetDeletionMode(DeletionMode&& value) { m_deletionModeHasBeenSet = true; m_deletionMode = std::move(value); }
-    inline DeleteStackRequest& WithDeletionMode(const DeletionMode& value) { SetDeletionMode(value); return *this;}
-    inline DeleteStackRequest& WithDeletionMode(DeletionMode&& value) { SetDeletionMode(std::move(value)); return *this;}
+    inline void SetDeletionMode(DeletionMode value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
+    inline DeleteStackRequest& WithDeletionMode(DeletionMode value) { SetDeletionMode(value); return *this;}
     ///@}
   private:
 
@@ -152,7 +143,7 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    DeletionMode m_deletionMode;
+    DeletionMode m_deletionMode{DeletionMode::NOT_SET};
     bool m_deletionModeHasBeenSet = false;
   };
 

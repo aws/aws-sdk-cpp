@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 RdsDbClusterSnapshotAttributeValue::RdsDbClusterSnapshotAttributeValue(JsonView jsonValue)
-  : RdsDbClusterSnapshotAttributeValue()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RdsDbClusterSnapshotAttributeValue& RdsDbClusterSnapshotAttributeValue::operator
     }
     m_accountIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

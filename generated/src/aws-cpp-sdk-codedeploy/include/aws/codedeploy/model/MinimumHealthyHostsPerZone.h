@@ -32,7 +32,7 @@ namespace Model
   class MinimumHealthyHostsPerZone
   {
   public:
-    AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone();
+    AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone() = default;
     AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
      * <p>The <code>type</code> associated with the
      * <code>MinimumHealthyHostsPerZone</code> option.</p>
      */
-    inline const MinimumHealthyHostsPerZoneType& GetType() const{ return m_type; }
+    inline MinimumHealthyHostsPerZoneType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MinimumHealthyHostsPerZoneType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MinimumHealthyHostsPerZoneType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MinimumHealthyHostsPerZone& WithType(const MinimumHealthyHostsPerZoneType& value) { SetType(value); return *this;}
-    inline MinimumHealthyHostsPerZone& WithType(MinimumHealthyHostsPerZoneType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MinimumHealthyHostsPerZoneType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MinimumHealthyHostsPerZone& WithType(MinimumHealthyHostsPerZoneType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -56,17 +54,17 @@ namespace Model
      * <p>The <code>value</code> associated with the
      * <code>MinimumHealthyHostsPerZone</code> option.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline MinimumHealthyHostsPerZone& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    MinimumHealthyHostsPerZoneType m_type;
+    MinimumHealthyHostsPerZoneType m_type{MinimumHealthyHostsPerZoneType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

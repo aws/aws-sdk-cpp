@@ -18,16 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationInstanceTaskLog::ReplicationInstanceTaskLog() : 
-    m_replicationTaskNameHasBeenSet(false),
-    m_replicationTaskArnHasBeenSet(false),
-    m_replicationInstanceTaskLogSize(0),
-    m_replicationInstanceTaskLogSizeHasBeenSet(false)
-{
-}
-
 ReplicationInstanceTaskLog::ReplicationInstanceTaskLog(JsonView jsonValue)
-  : ReplicationInstanceTaskLog()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReplicationInstanceTaskLog& ReplicationInstanceTaskLog::operator =(JsonView json
   if(jsonValue.ValueExists("ReplicationTaskName"))
   {
     m_replicationTaskName = jsonValue.GetString("ReplicationTaskName");
-
     m_replicationTaskNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
-
     m_replicationTaskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceTaskLogSize"))
   {
     m_replicationInstanceTaskLogSize = jsonValue.GetInt64("ReplicationInstanceTaskLogSize");
-
     m_replicationInstanceTaskLogSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

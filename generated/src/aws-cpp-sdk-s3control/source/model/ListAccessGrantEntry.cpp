@@ -20,22 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListAccessGrantEntry::ListAccessGrantEntry() : 
-    m_createdAtHasBeenSet(false),
-    m_accessGrantIdHasBeenSet(false),
-    m_accessGrantArnHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_accessGrantsLocationIdHasBeenSet(false),
-    m_accessGrantsLocationConfigurationHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 ListAccessGrantEntry::ListAccessGrantEntry(const XmlNode& xmlNode)
-  : ListAccessGrantEntry()
 {
   *this = xmlNode;
 }
@@ -73,7 +58,7 @@ ListAccessGrantEntry& ListAccessGrantEntry::operator =(const XmlNode& xmlNode)
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
     }
     XmlNode accessGrantsLocationIdNode = resultNode.FirstChild("AccessGrantsLocationId");

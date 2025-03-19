@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataColor::DataColor() : 
-    m_colorHasBeenSet(false),
-    m_dataValue(0.0),
-    m_dataValueHasBeenSet(false)
-{
-}
-
 DataColor::DataColor(JsonView jsonValue)
-  : DataColor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataColor& DataColor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataValue"))
   {
     m_dataValue = jsonValue.GetDouble("DataValue");
-
     m_dataValueHasBeenSet = true;
   }
-
   return *this;
 }
 

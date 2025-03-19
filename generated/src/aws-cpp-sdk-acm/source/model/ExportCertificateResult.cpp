@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportCertificateResult::ExportCertificateResult()
-{
-}
-
 ExportCertificateResult::ExportCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ ExportCertificateResult& ExportCertificateResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetString("Certificate");
-
+    m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateChain"))
   {
     m_certificateChain = jsonValue.GetString("CertificateChain");
-
+    m_certificateChainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateKey"))
   {
     m_privateKey = jsonValue.GetString("PrivateKey");
-
+    m_privateKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

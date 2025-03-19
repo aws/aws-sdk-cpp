@@ -34,7 +34,7 @@ namespace Model
   class FreeTrialInfo
   {
   public:
-    AWS_INSPECTOR2_API FreeTrialInfo();
+    AWS_INSPECTOR2_API FreeTrialInfo() = default;
     AWS_INSPECTOR2_API FreeTrialInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API FreeTrialInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The date and time that the Amazon Inspector free trail ends for a given
      * account.</p>
      */
-    inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
+    inline const Aws::Utils::DateTime& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline FreeTrialInfo& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
-    inline FreeTrialInfo& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
+    template<typename EndT = Aws::Utils::DateTime>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Aws::Utils::DateTime>
+    FreeTrialInfo& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,49 +58,45 @@ namespace Model
      * <p>The date and time that the Amazon Inspector free trail started for a given
      * account.</p>
      */
-    inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
+    inline const Aws::Utils::DateTime& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline FreeTrialInfo& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
-    inline FreeTrialInfo& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+    template<typename StartT = Aws::Utils::DateTime>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::Utils::DateTime>
+    FreeTrialInfo& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order to sort results by.</p>
      */
-    inline const FreeTrialStatus& GetStatus() const{ return m_status; }
+    inline FreeTrialStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FreeTrialStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FreeTrialStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FreeTrialInfo& WithStatus(const FreeTrialStatus& value) { SetStatus(value); return *this;}
-    inline FreeTrialInfo& WithStatus(FreeTrialStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FreeTrialStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FreeTrialInfo& WithStatus(FreeTrialStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of scan covered by the Amazon Inspector free trail.</p>
      */
-    inline const FreeTrialType& GetType() const{ return m_type; }
+    inline FreeTrialType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FreeTrialType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FreeTrialType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FreeTrialInfo& WithType(const FreeTrialType& value) { SetType(value); return *this;}
-    inline FreeTrialInfo& WithType(FreeTrialType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FreeTrialType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FreeTrialInfo& WithType(FreeTrialType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_end;
+    Aws::Utils::DateTime m_end{};
     bool m_endHasBeenSet = false;
 
-    Aws::Utils::DateTime m_start;
+    Aws::Utils::DateTime m_start{};
     bool m_startHasBeenSet = false;
 
-    FreeTrialStatus m_status;
+    FreeTrialStatus m_status{FreeTrialStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    FreeTrialType m_type;
+    FreeTrialType m_type{FreeTrialType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIndexResult::DescribeIndexResult() : 
-    m_indexStatus(IndexStatus::NOT_SET)
-{
-}
-
 DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeIndexResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("indexName"))
   {
     m_indexName = jsonValue.GetString("indexName");
-
+    m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("indexStatus"))
   {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("indexStatus"));
-
+    m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetString("schema");
-
+    m_schemaHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

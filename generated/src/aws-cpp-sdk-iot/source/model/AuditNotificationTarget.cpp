@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuditNotificationTarget::AuditNotificationTarget() : 
-    m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AuditNotificationTarget::AuditNotificationTarget(JsonView jsonValue)
-  : AuditNotificationTarget()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AuditNotificationTarget& AuditNotificationTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class FeaturedResultsSetSummary
   {
   public:
-    AWS_KENDRA_API FeaturedResultsSetSummary();
+    AWS_KENDRA_API FeaturedResultsSetSummary() = default;
     AWS_KENDRA_API FeaturedResultsSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API FeaturedResultsSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The identifier of the set of featured results.</p>
      */
-    inline const Aws::String& GetFeaturedResultsSetId() const{ return m_featuredResultsSetId; }
+    inline const Aws::String& GetFeaturedResultsSetId() const { return m_featuredResultsSetId; }
     inline bool FeaturedResultsSetIdHasBeenSet() const { return m_featuredResultsSetIdHasBeenSet; }
-    inline void SetFeaturedResultsSetId(const Aws::String& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = value; }
-    inline void SetFeaturedResultsSetId(Aws::String&& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = std::move(value); }
-    inline void SetFeaturedResultsSetId(const char* value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId.assign(value); }
-    inline FeaturedResultsSetSummary& WithFeaturedResultsSetId(const Aws::String& value) { SetFeaturedResultsSetId(value); return *this;}
-    inline FeaturedResultsSetSummary& WithFeaturedResultsSetId(Aws::String&& value) { SetFeaturedResultsSetId(std::move(value)); return *this;}
-    inline FeaturedResultsSetSummary& WithFeaturedResultsSetId(const char* value) { SetFeaturedResultsSetId(value); return *this;}
+    template<typename FeaturedResultsSetIdT = Aws::String>
+    void SetFeaturedResultsSetId(FeaturedResultsSetIdT&& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = std::forward<FeaturedResultsSetIdT>(value); }
+    template<typename FeaturedResultsSetIdT = Aws::String>
+    FeaturedResultsSetSummary& WithFeaturedResultsSetId(FeaturedResultsSetIdT&& value) { SetFeaturedResultsSetId(std::forward<FeaturedResultsSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the set of featured results.</p>
      */
-    inline const Aws::String& GetFeaturedResultsSetName() const{ return m_featuredResultsSetName; }
+    inline const Aws::String& GetFeaturedResultsSetName() const { return m_featuredResultsSetName; }
     inline bool FeaturedResultsSetNameHasBeenSet() const { return m_featuredResultsSetNameHasBeenSet; }
-    inline void SetFeaturedResultsSetName(const Aws::String& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = value; }
-    inline void SetFeaturedResultsSetName(Aws::String&& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = std::move(value); }
-    inline void SetFeaturedResultsSetName(const char* value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName.assign(value); }
-    inline FeaturedResultsSetSummary& WithFeaturedResultsSetName(const Aws::String& value) { SetFeaturedResultsSetName(value); return *this;}
-    inline FeaturedResultsSetSummary& WithFeaturedResultsSetName(Aws::String&& value) { SetFeaturedResultsSetName(std::move(value)); return *this;}
-    inline FeaturedResultsSetSummary& WithFeaturedResultsSetName(const char* value) { SetFeaturedResultsSetName(value); return *this;}
+    template<typename FeaturedResultsSetNameT = Aws::String>
+    void SetFeaturedResultsSetName(FeaturedResultsSetNameT&& value) { m_featuredResultsSetNameHasBeenSet = true; m_featuredResultsSetName = std::forward<FeaturedResultsSetNameT>(value); }
+    template<typename FeaturedResultsSetNameT = Aws::String>
+    FeaturedResultsSetSummary& WithFeaturedResultsSetName(FeaturedResultsSetNameT&& value) { SetFeaturedResultsSetName(std::forward<FeaturedResultsSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,19 +76,17 @@ namespace Model
      * results set for each index, whether the status is <code>ACTIVE</code> or
      * <code>INACTIVE</code>.</p>
      */
-    inline const FeaturedResultsSetStatus& GetStatus() const{ return m_status; }
+    inline FeaturedResultsSetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeaturedResultsSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeaturedResultsSetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FeaturedResultsSetSummary& WithStatus(const FeaturedResultsSetStatus& value) { SetStatus(value); return *this;}
-    inline FeaturedResultsSetSummary& WithStatus(FeaturedResultsSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeaturedResultsSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FeaturedResultsSetSummary& WithStatus(FeaturedResultsSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp when the set of featured results was last updated.</p>
      */
-    inline long long GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+    inline long long GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
     inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
     inline void SetLastUpdatedTimestamp(long long value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
     inline FeaturedResultsSetSummary& WithLastUpdatedTimestamp(long long value) { SetLastUpdatedTimestamp(value); return *this;}
@@ -102,7 +96,7 @@ namespace Model
     /**
      * <p>The Unix timestamp when the set of featured results was created.</p>
      */
-    inline long long GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline long long GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
     inline void SetCreationTimestamp(long long value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
     inline FeaturedResultsSetSummary& WithCreationTimestamp(long long value) { SetCreationTimestamp(value); return *this;}
@@ -115,13 +109,13 @@ namespace Model
     Aws::String m_featuredResultsSetName;
     bool m_featuredResultsSetNameHasBeenSet = false;
 
-    FeaturedResultsSetStatus m_status;
+    FeaturedResultsSetStatus m_status{FeaturedResultsSetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    long long m_lastUpdatedTimestamp;
+    long long m_lastUpdatedTimestamp{0};
     bool m_lastUpdatedTimestampHasBeenSet = false;
 
-    long long m_creationTimestamp;
+    long long m_creationTimestamp{0};
     bool m_creationTimestampHasBeenSet = false;
   };
 

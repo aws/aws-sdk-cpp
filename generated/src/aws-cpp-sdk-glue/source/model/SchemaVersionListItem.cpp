@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SchemaVersionListItem::SchemaVersionListItem() : 
-    m_schemaArnHasBeenSet(false),
-    m_schemaVersionIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_status(SchemaVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 SchemaVersionListItem::SchemaVersionListItem(JsonView jsonValue)
-  : SchemaVersionListItem()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ SchemaVersionListItem& SchemaVersionListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersionId"))
   {
     m_schemaVersionId = jsonValue.GetString("SchemaVersionId");
-
     m_schemaVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SchemaVersionStatusMapper::GetSchemaVersionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

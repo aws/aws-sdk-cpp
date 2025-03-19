@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFlowEntitlementResult::UpdateFlowEntitlementResult()
-{
-}
-
 UpdateFlowEntitlementResult::UpdateFlowEntitlementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateFlowEntitlementResult& UpdateFlowEntitlementResult::operator =(const Aws::
   if(jsonValue.ValueExists("entitlement"))
   {
     m_entitlement = jsonValue.GetObject("entitlement");
-
+    m_entitlementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

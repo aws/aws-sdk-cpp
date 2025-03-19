@@ -17,15 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSendQuotaResult::GetSendQuotaResult() : 
-    m_max24HourSend(0.0),
-    m_maxSendRate(0.0),
-    m_sentLast24Hours(0.0)
-{
-}
-
 GetSendQuotaResult::GetSendQuotaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetSendQuotaResult()
 {
   *this = result;
 }
@@ -46,22 +38,26 @@ GetSendQuotaResult& GetSendQuotaResult::operator =(const Aws::AmazonWebServiceRe
     if(!max24HourSendNode.IsNull())
     {
       m_max24HourSend = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(max24HourSendNode.GetText()).c_str()).c_str());
+      m_max24HourSendHasBeenSet = true;
     }
     XmlNode maxSendRateNode = resultNode.FirstChild("MaxSendRate");
     if(!maxSendRateNode.IsNull())
     {
       m_maxSendRate = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSendRateNode.GetText()).c_str()).c_str());
+      m_maxSendRateHasBeenSet = true;
     }
     XmlNode sentLast24HoursNode = resultNode.FirstChild("SentLast24Hours");
     if(!sentLast24HoursNode.IsNull())
     {
       m_sentLast24Hours = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sentLast24HoursNode.GetText()).c_str()).c_str());
+      m_sentLast24HoursHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetSendQuotaResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

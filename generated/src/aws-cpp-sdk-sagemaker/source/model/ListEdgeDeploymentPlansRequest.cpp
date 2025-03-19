@@ -12,23 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEdgeDeploymentPlansRequest::ListEdgeDeploymentPlansRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_lastModifiedTimeAfterHasBeenSet(false),
-    m_lastModifiedTimeBeforeHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_deviceFleetNameContainsHasBeenSet(false),
-    m_sortBy(ListEdgeDeploymentPlansSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListEdgeDeploymentPlansRequest::SerializePayload() const
 {
   JsonValue payload;

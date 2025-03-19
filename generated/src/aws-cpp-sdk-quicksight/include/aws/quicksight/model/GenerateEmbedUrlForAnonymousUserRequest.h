@@ -24,7 +24,7 @@ namespace Model
   class GenerateEmbedUrlForAnonymousUserRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API GenerateEmbedUrlForAnonymousUserRequest();
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForAnonymousUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The ID for the Amazon Web Services account that contains the dashboard that
      * you're embedding.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    GenerateEmbedUrlForAnonymousUserRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * <p>How many minutes the session is valid. The session lifetime must be in
      * [15-600] minutes range.</p>
      */
-    inline long long GetSessionLifetimeInMinutes() const{ return m_sessionLifetimeInMinutes; }
+    inline long long GetSessionLifetimeInMinutes() const { return m_sessionLifetimeInMinutes; }
     inline bool SessionLifetimeInMinutesHasBeenSet() const { return m_sessionLifetimeInMinutesHasBeenSet; }
     inline void SetSessionLifetimeInMinutes(long long value) { m_sessionLifetimeInMinutesHasBeenSet = true; m_sessionLifetimeInMinutes = value; }
     inline GenerateEmbedUrlForAnonymousUserRequest& WithSessionLifetimeInMinutes(long long value) { SetSessionLifetimeInMinutes(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
      * If you are not using an Amazon QuickSight custom namespace, set this to
      * <code>default</code>.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    GenerateEmbedUrlForAnonymousUserRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,14 @@ namespace Model
      * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<SessionTag>& GetSessionTags() const{ return m_sessionTags; }
+    inline const Aws::Vector<SessionTag>& GetSessionTags() const { return m_sessionTags; }
     inline bool SessionTagsHasBeenSet() const { return m_sessionTagsHasBeenSet; }
-    inline void SetSessionTags(const Aws::Vector<SessionTag>& value) { m_sessionTagsHasBeenSet = true; m_sessionTags = value; }
-    inline void SetSessionTags(Aws::Vector<SessionTag>&& value) { m_sessionTagsHasBeenSet = true; m_sessionTags = std::move(value); }
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithSessionTags(const Aws::Vector<SessionTag>& value) { SetSessionTags(value); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithSessionTags(Aws::Vector<SessionTag>&& value) { SetSessionTags(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddSessionTags(const SessionTag& value) { m_sessionTagsHasBeenSet = true; m_sessionTags.push_back(value); return *this; }
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddSessionTags(SessionTag&& value) { m_sessionTagsHasBeenSet = true; m_sessionTags.push_back(std::move(value)); return *this; }
+    template<typename SessionTagsT = Aws::Vector<SessionTag>>
+    void SetSessionTags(SessionTagsT&& value) { m_sessionTagsHasBeenSet = true; m_sessionTags = std::forward<SessionTagsT>(value); }
+    template<typename SessionTagsT = Aws::Vector<SessionTag>>
+    GenerateEmbedUrlForAnonymousUserRequest& WithSessionTags(SessionTagsT&& value) { SetSessionTags(std::forward<SessionTagsT>(value)); return *this;}
+    template<typename SessionTagsT = SessionTag>
+    GenerateEmbedUrlForAnonymousUserRequest& AddSessionTags(SessionTagsT&& value) { m_sessionTagsHasBeenSet = true; m_sessionTags.emplace_back(std::forward<SessionTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,27 +105,26 @@ namespace Model
      * ARNs that the anonymous users need access to.</p> <p>Currently, you can pass up
      * to 25 theme ARNs in each API call.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthorizedResourceArns() const{ return m_authorizedResourceArns; }
+    inline const Aws::Vector<Aws::String>& GetAuthorizedResourceArns() const { return m_authorizedResourceArns; }
     inline bool AuthorizedResourceArnsHasBeenSet() const { return m_authorizedResourceArnsHasBeenSet; }
-    inline void SetAuthorizedResourceArns(const Aws::Vector<Aws::String>& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = value; }
-    inline void SetAuthorizedResourceArns(Aws::Vector<Aws::String>&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = std::move(value); }
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(const Aws::Vector<Aws::String>& value) { SetAuthorizedResourceArns(value); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(Aws::Vector<Aws::String>&& value) { SetAuthorizedResourceArns(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(const Aws::String& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(value); return *this; }
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(Aws::String&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(std::move(value)); return *this; }
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(const char* value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(value); return *this; }
+    template<typename AuthorizedResourceArnsT = Aws::Vector<Aws::String>>
+    void SetAuthorizedResourceArns(AuthorizedResourceArnsT&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = std::forward<AuthorizedResourceArnsT>(value); }
+    template<typename AuthorizedResourceArnsT = Aws::Vector<Aws::String>>
+    GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(AuthorizedResourceArnsT&& value) { SetAuthorizedResourceArns(std::forward<AuthorizedResourceArnsT>(value)); return *this;}
+    template<typename AuthorizedResourceArnsT = Aws::String>
+    GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(AuthorizedResourceArnsT&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.emplace_back(std::forward<AuthorizedResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the experience that you are embedding.</p>
      */
-    inline const AnonymousUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const{ return m_experienceConfiguration; }
+    inline const AnonymousUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const { return m_experienceConfiguration; }
     inline bool ExperienceConfigurationHasBeenSet() const { return m_experienceConfigurationHasBeenSet; }
-    inline void SetExperienceConfiguration(const AnonymousUserEmbeddingExperienceConfiguration& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = value; }
-    inline void SetExperienceConfiguration(AnonymousUserEmbeddingExperienceConfiguration&& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = std::move(value); }
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithExperienceConfiguration(const AnonymousUserEmbeddingExperienceConfiguration& value) { SetExperienceConfiguration(value); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithExperienceConfiguration(AnonymousUserEmbeddingExperienceConfiguration&& value) { SetExperienceConfiguration(std::move(value)); return *this;}
+    template<typename ExperienceConfigurationT = AnonymousUserEmbeddingExperienceConfiguration>
+    void SetExperienceConfiguration(ExperienceConfigurationT&& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = std::forward<ExperienceConfigurationT>(value); }
+    template<typename ExperienceConfigurationT = AnonymousUserEmbeddingExperienceConfiguration>
+    GenerateEmbedUrlForAnonymousUserRequest& WithExperienceConfiguration(ExperienceConfigurationT&& value) { SetExperienceConfiguration(std::forward<ExperienceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,22 +138,21 @@ namespace Model
      * <code>*</code>. For example, <code>https:// *.sapp.amazon.com</code> includes all
      * subdomains under <code>https://sapp.amazon.com</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedDomains() const{ return m_allowedDomains; }
+    inline const Aws::Vector<Aws::String>& GetAllowedDomains() const { return m_allowedDomains; }
     inline bool AllowedDomainsHasBeenSet() const { return m_allowedDomainsHasBeenSet; }
-    inline void SetAllowedDomains(const Aws::Vector<Aws::String>& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = value; }
-    inline void SetAllowedDomains(Aws::Vector<Aws::String>&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = std::move(value); }
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAllowedDomains(const Aws::Vector<Aws::String>& value) { SetAllowedDomains(value); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& WithAllowedDomains(Aws::Vector<Aws::String>&& value) { SetAllowedDomains(std::move(value)); return *this;}
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(const Aws::String& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(value); return *this; }
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(Aws::String&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(std::move(value)); return *this; }
-    inline GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(const char* value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(value); return *this; }
+    template<typename AllowedDomainsT = Aws::Vector<Aws::String>>
+    void SetAllowedDomains(AllowedDomainsT&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = std::forward<AllowedDomainsT>(value); }
+    template<typename AllowedDomainsT = Aws::Vector<Aws::String>>
+    GenerateEmbedUrlForAnonymousUserRequest& WithAllowedDomains(AllowedDomainsT&& value) { SetAllowedDomains(std::forward<AllowedDomainsT>(value)); return *this;}
+    template<typename AllowedDomainsT = Aws::String>
+    GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(AllowedDomainsT&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.emplace_back(std::forward<AllowedDomainsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
-    long long m_sessionLifetimeInMinutes;
+    long long m_sessionLifetimeInMinutes{0};
     bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     Aws::String m_namespace;

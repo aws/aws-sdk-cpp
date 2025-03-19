@@ -29,7 +29,7 @@ namespace Model
   class DescribeRegistrationFieldDefinitionsResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationFieldDefinitionsResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationFieldDefinitionsResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationFieldDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DescribeRegistrationFieldDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>The type of registration form. The list of <b>RegistrationTypes</b> can be
      * found using the <a>DescribeRegistrationTypeDefinitions</a> action.</p>
      */
-    inline const Aws::String& GetRegistrationType() const{ return m_registrationType; }
-    inline void SetRegistrationType(const Aws::String& value) { m_registrationType = value; }
-    inline void SetRegistrationType(Aws::String&& value) { m_registrationType = std::move(value); }
-    inline void SetRegistrationType(const char* value) { m_registrationType.assign(value); }
-    inline DescribeRegistrationFieldDefinitionsResult& WithRegistrationType(const Aws::String& value) { SetRegistrationType(value); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithRegistrationType(Aws::String&& value) { SetRegistrationType(std::move(value)); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithRegistrationType(const char* value) { SetRegistrationType(value); return *this;}
+    inline const Aws::String& GetRegistrationType() const { return m_registrationType; }
+    template<typename RegistrationTypeT = Aws::String>
+    void SetRegistrationType(RegistrationTypeT&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::forward<RegistrationTypeT>(value); }
+    template<typename RegistrationTypeT = Aws::String>
+    DescribeRegistrationFieldDefinitionsResult& WithRegistrationType(RegistrationTypeT&& value) { SetRegistrationType(std::forward<RegistrationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,13 @@ namespace Model
      * <p>An array of RegistrationFieldDefinitions objects that contain the details for
      * the requested fields. </p>
      */
-    inline const Aws::Vector<RegistrationFieldDefinition>& GetRegistrationFieldDefinitions() const{ return m_registrationFieldDefinitions; }
-    inline void SetRegistrationFieldDefinitions(const Aws::Vector<RegistrationFieldDefinition>& value) { m_registrationFieldDefinitions = value; }
-    inline void SetRegistrationFieldDefinitions(Aws::Vector<RegistrationFieldDefinition>&& value) { m_registrationFieldDefinitions = std::move(value); }
-    inline DescribeRegistrationFieldDefinitionsResult& WithRegistrationFieldDefinitions(const Aws::Vector<RegistrationFieldDefinition>& value) { SetRegistrationFieldDefinitions(value); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithRegistrationFieldDefinitions(Aws::Vector<RegistrationFieldDefinition>&& value) { SetRegistrationFieldDefinitions(std::move(value)); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& AddRegistrationFieldDefinitions(const RegistrationFieldDefinition& value) { m_registrationFieldDefinitions.push_back(value); return *this; }
-    inline DescribeRegistrationFieldDefinitionsResult& AddRegistrationFieldDefinitions(RegistrationFieldDefinition&& value) { m_registrationFieldDefinitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RegistrationFieldDefinition>& GetRegistrationFieldDefinitions() const { return m_registrationFieldDefinitions; }
+    template<typename RegistrationFieldDefinitionsT = Aws::Vector<RegistrationFieldDefinition>>
+    void SetRegistrationFieldDefinitions(RegistrationFieldDefinitionsT&& value) { m_registrationFieldDefinitionsHasBeenSet = true; m_registrationFieldDefinitions = std::forward<RegistrationFieldDefinitionsT>(value); }
+    template<typename RegistrationFieldDefinitionsT = Aws::Vector<RegistrationFieldDefinition>>
+    DescribeRegistrationFieldDefinitionsResult& WithRegistrationFieldDefinitions(RegistrationFieldDefinitionsT&& value) { SetRegistrationFieldDefinitions(std::forward<RegistrationFieldDefinitionsT>(value)); return *this;}
+    template<typename RegistrationFieldDefinitionsT = RegistrationFieldDefinition>
+    DescribeRegistrationFieldDefinitionsResult& AddRegistrationFieldDefinitions(RegistrationFieldDefinitionsT&& value) { m_registrationFieldDefinitionsHasBeenSet = true; m_registrationFieldDefinitions.emplace_back(std::forward<RegistrationFieldDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,34 +65,34 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeRegistrationFieldDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRegistrationFieldDefinitionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRegistrationFieldDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRegistrationFieldDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRegistrationFieldDefinitionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registrationType;
+    bool m_registrationTypeHasBeenSet = false;
 
     Aws::Vector<RegistrationFieldDefinition> m_registrationFieldDefinitions;
+    bool m_registrationFieldDefinitionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

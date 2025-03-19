@@ -10,21 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstancePlacementRequest::ModifyInstancePlacementRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tenancy(HostTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_affinity(Affinity::NOT_SET),
-    m_affinityHasBeenSet(false),
-    m_hostIdHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstancePlacementRequest::SerializePayload() const
 {
   Aws::StringStream ss;

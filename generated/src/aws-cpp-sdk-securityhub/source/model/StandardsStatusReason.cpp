@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsStatusReason::StandardsStatusReason() : 
-    m_statusReasonCode(StatusReasonCode::NOT_SET),
-    m_statusReasonCodeHasBeenSet(false)
-{
-}
-
 StandardsStatusReason::StandardsStatusReason(JsonView jsonValue)
-  : StandardsStatusReason()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StandardsStatusReason& StandardsStatusReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatusReasonCode"))
   {
     m_statusReasonCode = StatusReasonCodeMapper::GetStatusReasonCodeForName(jsonValue.GetString("StatusReasonCode"));
-
     m_statusReasonCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateSoftwareTokenResult::AssociateSoftwareTokenResult()
-{
-}
-
 AssociateSoftwareTokenResult::AssociateSoftwareTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AssociateSoftwareTokenResult& AssociateSoftwareTokenResult::operator =(const Aws
   if(jsonValue.ValueExists("SecretCode"))
   {
     m_secretCode = jsonValue.GetString("SecretCode");
-
+    m_secretCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetString("Session");
-
+    m_sessionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

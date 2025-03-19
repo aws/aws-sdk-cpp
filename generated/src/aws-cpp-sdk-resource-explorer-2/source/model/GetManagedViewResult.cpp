@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedViewResult::GetManagedViewResult()
-{
-}
-
 GetManagedViewResult::GetManagedViewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetManagedViewResult& GetManagedViewResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ManagedView"))
   {
     m_managedView = jsonValue.GetObject("ManagedView");
-
+    m_managedViewHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

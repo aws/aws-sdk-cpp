@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Sasl::Sasl() : 
-    m_scramHasBeenSet(false),
-    m_iamHasBeenSet(false)
-{
-}
-
 Sasl::Sasl(JsonView jsonValue)
-  : Sasl()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Sasl& Sasl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scram"))
   {
     m_scram = jsonValue.GetObject("scram");
-
     m_scramHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iam"))
   {
     m_iam = jsonValue.GetObject("iam");
-
     m_iamHasBeenSet = true;
   }
-
   return *this;
 }
 

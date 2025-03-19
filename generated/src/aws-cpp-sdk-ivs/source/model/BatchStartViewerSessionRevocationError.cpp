@@ -18,16 +18,7 @@ namespace IVS
 namespace Model
 {
 
-BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError() : 
-    m_channelArnHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_viewerIdHasBeenSet(false)
-{
-}
-
 BatchStartViewerSessionRevocationError::BatchStartViewerSessionRevocationError(JsonView jsonValue)
-  : BatchStartViewerSessionRevocationError()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BatchStartViewerSessionRevocationError& BatchStartViewerSessionRevocationError::
   if(jsonValue.ValueExists("channelArn"))
   {
     m_channelArn = jsonValue.GetString("channelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("viewerId"))
   {
     m_viewerId = jsonValue.GetString("viewerId");
-
     m_viewerIdHasBeenSet = true;
   }
-
   return *this;
 }
 

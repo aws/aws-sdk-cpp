@@ -18,18 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-Engagement::Engagement() : 
-    m_engagementArnHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_senderHasBeenSet(false),
-    m_incidentIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_stopTimeHasBeenSet(false)
-{
-}
-
 Engagement::Engagement(JsonView jsonValue)
-  : Engagement()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Engagement& Engagement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EngagementArn"))
   {
     m_engagementArn = jsonValue.GetString("EngagementArn");
-
     m_engagementArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sender"))
   {
     m_sender = jsonValue.GetString("Sender");
-
     m_senderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncidentId"))
   {
     m_incidentId = jsonValue.GetString("IncidentId");
-
     m_incidentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopTime"))
   {
     m_stopTime = jsonValue.GetDouble("StopTime");
-
     m_stopTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

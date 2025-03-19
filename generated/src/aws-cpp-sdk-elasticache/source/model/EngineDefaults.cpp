@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-EngineDefaults::EngineDefaults() : 
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_cacheNodeTypeSpecificParametersHasBeenSet(false)
-{
-}
-
 EngineDefaults::EngineDefaults(const XmlNode& xmlNode)
-  : EngineDefaults()
 {
   *this = xmlNode;
 }
@@ -56,6 +47,7 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
@@ -68,6 +60,7 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
     if(!cacheNodeTypeSpecificParametersNode.IsNull())
     {
       XmlNode cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersNode.FirstChild("CacheNodeTypeSpecificParameter");
+      m_cacheNodeTypeSpecificParametersHasBeenSet = !cacheNodeTypeSpecificParametersMember.IsNull();
       while(!cacheNodeTypeSpecificParametersMember.IsNull())
       {
         m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParametersMember);

@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-TargetTrackingScalingConfiguration::TargetTrackingScalingConfiguration() : 
-    m_metricType(FleetScalingMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
-{
-}
-
 TargetTrackingScalingConfiguration::TargetTrackingScalingConfiguration(JsonView jsonValue)
-  : TargetTrackingScalingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TargetTrackingScalingConfiguration& TargetTrackingScalingConfiguration::operator
   if(jsonValue.ValueExists("metricType"))
   {
     m_metricType = FleetScalingMetricTypeMapper::GetFleetScalingMetricTypeForName(jsonValue.GetString("metricType"));
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetValue"))
   {
     m_targetValue = jsonValue.GetDouble("targetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   return *this;
 }
 

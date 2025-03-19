@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DockerSettings::DockerSettings() : 
-    m_enableDockerAccess(FeatureStatus::NOT_SET),
-    m_enableDockerAccessHasBeenSet(false),
-    m_vpcOnlyTrustedAccountsHasBeenSet(false)
-{
-}
-
 DockerSettings::DockerSettings(JsonView jsonValue)
-  : DockerSettings()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DockerSettings& DockerSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableDockerAccess"))
   {
     m_enableDockerAccess = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("EnableDockerAccess"));
-
     m_enableDockerAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcOnlyTrustedAccounts"))
   {
     Aws::Utils::Array<JsonView> vpcOnlyTrustedAccountsJsonList = jsonValue.GetArray("VpcOnlyTrustedAccounts");
@@ -49,7 +39,6 @@ DockerSettings& DockerSettings::operator =(JsonView jsonValue)
     }
     m_vpcOnlyTrustedAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

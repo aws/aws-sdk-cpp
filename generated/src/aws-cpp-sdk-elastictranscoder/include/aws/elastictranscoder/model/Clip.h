@@ -32,7 +32,7 @@ namespace Model
   class Clip
   {
   public:
-    AWS_ELASTICTRANSCODER_API Clip();
+    AWS_ELASTICTRANSCODER_API Clip() = default;
     AWS_ELASTICTRANSCODER_API Clip(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Clip& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
      */
-    inline const TimeSpan& GetTimeSpan() const{ return m_timeSpan; }
+    inline const TimeSpan& GetTimeSpan() const { return m_timeSpan; }
     inline bool TimeSpanHasBeenSet() const { return m_timeSpanHasBeenSet; }
-    inline void SetTimeSpan(const TimeSpan& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
-    inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = std::move(value); }
-    inline Clip& WithTimeSpan(const TimeSpan& value) { SetTimeSpan(value); return *this;}
-    inline Clip& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(std::move(value)); return *this;}
+    template<typename TimeSpanT = TimeSpan>
+    void SetTimeSpan(TimeSpanT&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = std::forward<TimeSpanT>(value); }
+    template<typename TimeSpanT = TimeSpan>
+    Clip& WithTimeSpan(TimeSpanT&& value) { SetTimeSpan(std::forward<TimeSpanT>(value)); return *this;}
     ///@}
   private:
 

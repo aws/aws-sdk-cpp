@@ -12,12 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMonitoringMemberRequest::StartMonitoringMemberRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String StartMonitoringMemberRequest::SerializePayload() const
 {
   JsonValue payload;

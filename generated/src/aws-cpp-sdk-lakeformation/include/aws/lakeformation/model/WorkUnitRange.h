@@ -32,7 +32,7 @@ namespace Model
   class WorkUnitRange
   {
   public:
-    AWS_LAKEFORMATION_API WorkUnitRange();
+    AWS_LAKEFORMATION_API WorkUnitRange() = default;
     AWS_LAKEFORMATION_API WorkUnitRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API WorkUnitRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Defines the maximum work unit ID in the range. The maximum value is
      * inclusive.</p>
      */
-    inline long long GetWorkUnitIdMax() const{ return m_workUnitIdMax; }
+    inline long long GetWorkUnitIdMax() const { return m_workUnitIdMax; }
     inline bool WorkUnitIdMaxHasBeenSet() const { return m_workUnitIdMaxHasBeenSet; }
     inline void SetWorkUnitIdMax(long long value) { m_workUnitIdMaxHasBeenSet = true; m_workUnitIdMax = value; }
     inline WorkUnitRange& WithWorkUnitIdMax(long long value) { SetWorkUnitIdMax(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Defines the minimum work unit ID in the range.</p>
      */
-    inline long long GetWorkUnitIdMin() const{ return m_workUnitIdMin; }
+    inline long long GetWorkUnitIdMin() const { return m_workUnitIdMin; }
     inline bool WorkUnitIdMinHasBeenSet() const { return m_workUnitIdMinHasBeenSet; }
     inline void SetWorkUnitIdMin(long long value) { m_workUnitIdMinHasBeenSet = true; m_workUnitIdMin = value; }
     inline WorkUnitRange& WithWorkUnitIdMin(long long value) { SetWorkUnitIdMin(value); return *this;}
@@ -63,21 +63,19 @@ namespace Model
     /**
      * <p>A work token used to query the execution service.</p>
      */
-    inline const Aws::String& GetWorkUnitToken() const{ return m_workUnitToken; }
+    inline const Aws::String& GetWorkUnitToken() const { return m_workUnitToken; }
     inline bool WorkUnitTokenHasBeenSet() const { return m_workUnitTokenHasBeenSet; }
-    inline void SetWorkUnitToken(const Aws::String& value) { m_workUnitTokenHasBeenSet = true; m_workUnitToken = value; }
-    inline void SetWorkUnitToken(Aws::String&& value) { m_workUnitTokenHasBeenSet = true; m_workUnitToken = std::move(value); }
-    inline void SetWorkUnitToken(const char* value) { m_workUnitTokenHasBeenSet = true; m_workUnitToken.assign(value); }
-    inline WorkUnitRange& WithWorkUnitToken(const Aws::String& value) { SetWorkUnitToken(value); return *this;}
-    inline WorkUnitRange& WithWorkUnitToken(Aws::String&& value) { SetWorkUnitToken(std::move(value)); return *this;}
-    inline WorkUnitRange& WithWorkUnitToken(const char* value) { SetWorkUnitToken(value); return *this;}
+    template<typename WorkUnitTokenT = Aws::String>
+    void SetWorkUnitToken(WorkUnitTokenT&& value) { m_workUnitTokenHasBeenSet = true; m_workUnitToken = std::forward<WorkUnitTokenT>(value); }
+    template<typename WorkUnitTokenT = Aws::String>
+    WorkUnitRange& WithWorkUnitToken(WorkUnitTokenT&& value) { SetWorkUnitToken(std::forward<WorkUnitTokenT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_workUnitIdMax;
+    long long m_workUnitIdMax{0};
     bool m_workUnitIdMaxHasBeenSet = false;
 
-    long long m_workUnitIdMin;
+    long long m_workUnitIdMin{0};
     bool m_workUnitIdMinHasBeenSet = false;
 
     Aws::String m_workUnitToken;

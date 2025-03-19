@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CustomCode::CustomCode() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 CustomCode::CustomCode(JsonView jsonValue)
-  : CustomCode()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ CustomCode& CustomCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -51,21 +39,16 @@ CustomCode& CustomCode::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClassName"))
   {
     m_className = jsonValue.GetString("ClassName");
-
     m_classNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -75,7 +58,6 @@ CustomCode& CustomCode::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

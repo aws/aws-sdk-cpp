@@ -20,20 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ValidStorageOptions::ValidStorageOptions() : 
-    m_storageTypeHasBeenSet(false),
-    m_storageSizeHasBeenSet(false),
-    m_provisionedIopsHasBeenSet(false),
-    m_iopsToStorageRatioHasBeenSet(false),
-    m_supportsStorageAutoscaling(false),
-    m_supportsStorageAutoscalingHasBeenSet(false),
-    m_provisionedStorageThroughputHasBeenSet(false),
-    m_storageThroughputToIopsRatioHasBeenSet(false)
-{
-}
-
 ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode)
-  : ValidStorageOptions()
 {
   *this = xmlNode;
 }
@@ -54,6 +41,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     if(!storageSizeNode.IsNull())
     {
       XmlNode storageSizeMember = storageSizeNode.FirstChild("Range");
+      m_storageSizeHasBeenSet = !storageSizeMember.IsNull();
       while(!storageSizeMember.IsNull())
       {
         m_storageSize.push_back(storageSizeMember);
@@ -66,6 +54,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     if(!provisionedIopsNode.IsNull())
     {
       XmlNode provisionedIopsMember = provisionedIopsNode.FirstChild("Range");
+      m_provisionedIopsHasBeenSet = !provisionedIopsMember.IsNull();
       while(!provisionedIopsMember.IsNull())
       {
         m_provisionedIops.push_back(provisionedIopsMember);
@@ -78,6 +67,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     if(!iopsToStorageRatioNode.IsNull())
     {
       XmlNode iopsToStorageRatioMember = iopsToStorageRatioNode.FirstChild("DoubleRange");
+      m_iopsToStorageRatioHasBeenSet = !iopsToStorageRatioMember.IsNull();
       while(!iopsToStorageRatioMember.IsNull())
       {
         m_iopsToStorageRatio.push_back(iopsToStorageRatioMember);
@@ -96,6 +86,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     if(!provisionedStorageThroughputNode.IsNull())
     {
       XmlNode provisionedStorageThroughputMember = provisionedStorageThroughputNode.FirstChild("Range");
+      m_provisionedStorageThroughputHasBeenSet = !provisionedStorageThroughputMember.IsNull();
       while(!provisionedStorageThroughputMember.IsNull())
       {
         m_provisionedStorageThroughput.push_back(provisionedStorageThroughputMember);
@@ -108,6 +99,7 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
     if(!storageThroughputToIopsRatioNode.IsNull())
     {
       XmlNode storageThroughputToIopsRatioMember = storageThroughputToIopsRatioNode.FirstChild("DoubleRange");
+      m_storageThroughputToIopsRatioHasBeenSet = !storageThroughputToIopsRatioMember.IsNull();
       while(!storageThroughputToIopsRatioMember.IsNull())
       {
         m_storageThroughputToIopsRatio.push_back(storageThroughputToIopsRatioMember);

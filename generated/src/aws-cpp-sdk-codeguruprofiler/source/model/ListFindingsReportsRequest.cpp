@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFindingsReportsRequest::ListFindingsReportsRequest() : 
-    m_dailyReportsOnly(false),
-    m_dailyReportsOnlyHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String ListFindingsReportsRequest::SerializePayload() const
 {
   return {};

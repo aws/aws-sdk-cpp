@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterParameterStatus::ClusterParameterStatus() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_parameterApplyErrorDescriptionHasBeenSet(false)
-{
-}
-
 ClusterParameterStatus::ClusterParameterStatus(const XmlNode& xmlNode)
-  : ClusterParameterStatus()
 {
   *this = xmlNode;
 }

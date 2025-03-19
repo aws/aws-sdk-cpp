@@ -18,19 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UICustomizationType::UICustomizationType() : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_cSSHasBeenSet(false),
-    m_cSSVersionHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 UICustomizationType::UICustomizationType(JsonView jsonValue)
-  : UICustomizationType()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ UICustomizationType& UICustomizationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUrl"))
   {
     m_imageUrl = jsonValue.GetString("ImageUrl");
-
     m_imageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CSS"))
   {
     m_cSS = jsonValue.GetString("CSS");
-
     m_cSSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CSSVersion"))
   {
     m_cSSVersion = jsonValue.GetString("CSSVersion");
-
     m_cSSVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

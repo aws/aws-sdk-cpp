@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKeyPairsRequest::GetKeyPairsRequest() : 
-    m_pageTokenHasBeenSet(false),
-    m_includeDefaultKeyPair(false),
-    m_includeDefaultKeyPairHasBeenSet(false)
-{
-}
-
 Aws::String GetKeyPairsRequest::SerializePayload() const
 {
   JsonValue payload;

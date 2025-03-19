@@ -34,7 +34,7 @@ namespace Model
   class StorageInfo
   {
   public:
-    AWS_KAFKA_API StorageInfo();
+    AWS_KAFKA_API StorageInfo() = default;
     AWS_KAFKA_API StorageInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API StorageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
             <p>EBS volume information.</p>
          
      */
-    inline const EBSStorageInfo& GetEbsStorageInfo() const{ return m_ebsStorageInfo; }
+    inline const EBSStorageInfo& GetEbsStorageInfo() const { return m_ebsStorageInfo; }
     inline bool EbsStorageInfoHasBeenSet() const { return m_ebsStorageInfoHasBeenSet; }
-    inline void SetEbsStorageInfo(const EBSStorageInfo& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = value; }
-    inline void SetEbsStorageInfo(EBSStorageInfo&& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = std::move(value); }
-    inline StorageInfo& WithEbsStorageInfo(const EBSStorageInfo& value) { SetEbsStorageInfo(value); return *this;}
-    inline StorageInfo& WithEbsStorageInfo(EBSStorageInfo&& value) { SetEbsStorageInfo(std::move(value)); return *this;}
+    template<typename EbsStorageInfoT = EBSStorageInfo>
+    void SetEbsStorageInfo(EbsStorageInfoT&& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = std::forward<EbsStorageInfoT>(value); }
+    template<typename EbsStorageInfoT = EBSStorageInfo>
+    StorageInfo& WithEbsStorageInfo(EbsStorageInfoT&& value) { SetEbsStorageInfo(std::forward<EbsStorageInfoT>(value)); return *this;}
     ///@}
   private:
 

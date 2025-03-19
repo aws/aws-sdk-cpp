@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportLabelsTaskRunRequest::StartImportLabelsTaskRunRequest() : 
-    m_transformIdHasBeenSet(false),
-    m_inputS3PathHasBeenSet(false),
-    m_replaceAllLabels(false),
-    m_replaceAllLabelsHasBeenSet(false)
-{
-}
-
 Aws::String StartImportLabelsTaskRunRequest::SerializePayload() const
 {
   JsonValue payload;

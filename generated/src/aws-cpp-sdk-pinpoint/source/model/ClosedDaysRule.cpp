@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ClosedDaysRule::ClosedDaysRule() : 
-    m_nameHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 ClosedDaysRule::ClosedDaysRule(JsonView jsonValue)
-  : ClosedDaysRule()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ClosedDaysRule& ClosedDaysRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDateTime"))
   {
     m_startDateTime = jsonValue.GetString("StartDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetString("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingLoggingConfig::StreamingLoggingConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 StreamingLoggingConfig::StreamingLoggingConfig(const XmlNode& xmlNode)
-  : StreamingLoggingConfig()
 {
   *this = xmlNode;
 }

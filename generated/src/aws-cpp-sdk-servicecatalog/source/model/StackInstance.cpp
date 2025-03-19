@@ -18,16 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-StackInstance::StackInstance() : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_stackInstanceStatus(StackInstanceStatus::NOT_SET),
-    m_stackInstanceStatusHasBeenSet(false)
-{
-}
-
 StackInstance::StackInstance(JsonView jsonValue)
-  : StackInstance()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StackInstance& StackInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetString("Account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackInstanceStatus"))
   {
     m_stackInstanceStatus = StackInstanceStatusMapper::GetStackInstanceStatusForName(jsonValue.GetString("StackInstanceStatus"));
-
     m_stackInstanceStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

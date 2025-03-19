@@ -18,18 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-Listener::Listener() : 
-    m_listenerArnHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_clientAffinity(ClientAffinity::NOT_SET),
-    m_clientAffinityHasBeenSet(false)
-{
-}
-
 Listener::Listener(JsonView jsonValue)
-  : Listener()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ Listener& Listener::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ListenerArn"))
   {
     m_listenerArn = jsonValue.GetString("ListenerArn");
-
     m_listenerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortRanges"))
   {
     Aws::Utils::Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
@@ -52,21 +39,16 @@ Listener& Listener::operator =(JsonView jsonValue)
     }
     m_portRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientAffinity"))
   {
     m_clientAffinity = ClientAffinityMapper::GetClientAffinityForName(jsonValue.GetString("ClientAffinity"));
-
     m_clientAffinityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetInvalidation2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API GetInvalidation2020_05_31Request();
+    AWS_CLOUDFRONT_API GetInvalidation2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The distribution's ID.</p>
      */
-    inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+    inline const Aws::String& GetDistributionId() const { return m_distributionId; }
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-    inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-    inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-    inline GetInvalidation2020_05_31Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-    inline GetInvalidation2020_05_31Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-    inline GetInvalidation2020_05_31Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+    template<typename DistributionIdT = Aws::String>
+    void SetDistributionId(DistributionIdT&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::forward<DistributionIdT>(value); }
+    template<typename DistributionIdT = Aws::String>
+    GetInvalidation2020_05_31Request& WithDistributionId(DistributionIdT&& value) { SetDistributionId(std::forward<DistributionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The identifier for the invalidation request, for example,
      * <code>IDFDVBD632BHDS5</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetInvalidation2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetInvalidation2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetInvalidation2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetInvalidation2020_05_31Request& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

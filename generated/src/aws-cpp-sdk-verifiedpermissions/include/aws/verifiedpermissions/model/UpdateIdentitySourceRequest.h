@@ -22,7 +22,7 @@ namespace Model
   class UpdateIdentitySourceRequest : public VerifiedPermissionsRequest
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdateIdentitySourceRequest();
+    AWS_VERIFIEDPERMISSIONS_API UpdateIdentitySourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p>Specifies the ID of the policy store that contains the identity source that
      * you want to update.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-    inline UpdateIdentitySourceRequest& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline UpdateIdentitySourceRequest& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline UpdateIdentitySourceRequest& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    UpdateIdentitySourceRequest& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the ID of the identity source that you want to update.</p>
      */
-    inline const Aws::String& GetIdentitySourceId() const{ return m_identitySourceId; }
+    inline const Aws::String& GetIdentitySourceId() const { return m_identitySourceId; }
     inline bool IdentitySourceIdHasBeenSet() const { return m_identitySourceIdHasBeenSet; }
-    inline void SetIdentitySourceId(const Aws::String& value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId = value; }
-    inline void SetIdentitySourceId(Aws::String&& value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId = std::move(value); }
-    inline void SetIdentitySourceId(const char* value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId.assign(value); }
-    inline UpdateIdentitySourceRequest& WithIdentitySourceId(const Aws::String& value) { SetIdentitySourceId(value); return *this;}
-    inline UpdateIdentitySourceRequest& WithIdentitySourceId(Aws::String&& value) { SetIdentitySourceId(std::move(value)); return *this;}
-    inline UpdateIdentitySourceRequest& WithIdentitySourceId(const char* value) { SetIdentitySourceId(value); return *this;}
+    template<typename IdentitySourceIdT = Aws::String>
+    void SetIdentitySourceId(IdentitySourceIdT&& value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId = std::forward<IdentitySourceIdT>(value); }
+    template<typename IdentitySourceIdT = Aws::String>
+    UpdateIdentitySourceRequest& WithIdentitySourceId(IdentitySourceIdT&& value) { SetIdentitySourceId(std::forward<IdentitySourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * <p>Specifies the details required to communicate with the identity provider
      * (IdP) associated with this identity source.</p>
      */
-    inline const UpdateConfiguration& GetUpdateConfiguration() const{ return m_updateConfiguration; }
+    inline const UpdateConfiguration& GetUpdateConfiguration() const { return m_updateConfiguration; }
     inline bool UpdateConfigurationHasBeenSet() const { return m_updateConfigurationHasBeenSet; }
-    inline void SetUpdateConfiguration(const UpdateConfiguration& value) { m_updateConfigurationHasBeenSet = true; m_updateConfiguration = value; }
-    inline void SetUpdateConfiguration(UpdateConfiguration&& value) { m_updateConfigurationHasBeenSet = true; m_updateConfiguration = std::move(value); }
-    inline UpdateIdentitySourceRequest& WithUpdateConfiguration(const UpdateConfiguration& value) { SetUpdateConfiguration(value); return *this;}
-    inline UpdateIdentitySourceRequest& WithUpdateConfiguration(UpdateConfiguration&& value) { SetUpdateConfiguration(std::move(value)); return *this;}
+    template<typename UpdateConfigurationT = UpdateConfiguration>
+    void SetUpdateConfiguration(UpdateConfigurationT&& value) { m_updateConfigurationHasBeenSet = true; m_updateConfiguration = std::forward<UpdateConfigurationT>(value); }
+    template<typename UpdateConfigurationT = UpdateConfiguration>
+    UpdateIdentitySourceRequest& WithUpdateConfiguration(UpdateConfigurationT&& value) { SetUpdateConfiguration(std::forward<UpdateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * <p>Specifies the data type of principals generated for identities authenticated
      * by the identity source.</p>
      */
-    inline const Aws::String& GetPrincipalEntityType() const{ return m_principalEntityType; }
+    inline const Aws::String& GetPrincipalEntityType() const { return m_principalEntityType; }
     inline bool PrincipalEntityTypeHasBeenSet() const { return m_principalEntityTypeHasBeenSet; }
-    inline void SetPrincipalEntityType(const Aws::String& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = value; }
-    inline void SetPrincipalEntityType(Aws::String&& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = std::move(value); }
-    inline void SetPrincipalEntityType(const char* value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType.assign(value); }
-    inline UpdateIdentitySourceRequest& WithPrincipalEntityType(const Aws::String& value) { SetPrincipalEntityType(value); return *this;}
-    inline UpdateIdentitySourceRequest& WithPrincipalEntityType(Aws::String&& value) { SetPrincipalEntityType(std::move(value)); return *this;}
-    inline UpdateIdentitySourceRequest& WithPrincipalEntityType(const char* value) { SetPrincipalEntityType(value); return *this;}
+    template<typename PrincipalEntityTypeT = Aws::String>
+    void SetPrincipalEntityType(PrincipalEntityTypeT&& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = std::forward<PrincipalEntityTypeT>(value); }
+    template<typename PrincipalEntityTypeT = Aws::String>
+    UpdateIdentitySourceRequest& WithPrincipalEntityType(PrincipalEntityTypeT&& value) { SetPrincipalEntityType(std::forward<PrincipalEntityTypeT>(value)); return *this;}
     ///@}
   private:
 

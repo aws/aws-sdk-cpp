@@ -31,7 +31,7 @@ namespace Model
   class RouteAvoidanceZoneCategory
   {
   public:
-    AWS_GEOROUTES_API RouteAvoidanceZoneCategory();
+    AWS_GEOROUTES_API RouteAvoidanceZoneCategory() = default;
     AWS_GEOROUTES_API RouteAvoidanceZoneCategory(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteAvoidanceZoneCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Zone category to be avoided.</p>
      */
-    inline const RouteZoneCategory& GetCategory() const{ return m_category; }
+    inline RouteZoneCategory GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const RouteZoneCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(RouteZoneCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline RouteAvoidanceZoneCategory& WithCategory(const RouteZoneCategory& value) { SetCategory(value); return *this;}
-    inline RouteAvoidanceZoneCategory& WithCategory(RouteZoneCategory&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(RouteZoneCategory value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline RouteAvoidanceZoneCategory& WithCategory(RouteZoneCategory value) { SetCategory(value); return *this;}
     ///@}
   private:
 
-    RouteZoneCategory m_category;
+    RouteZoneCategory m_category{RouteZoneCategory::NOT_SET};
     bool m_categoryHasBeenSet = false;
   };
 

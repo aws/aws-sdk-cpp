@@ -29,7 +29,7 @@ namespace Model
   class ListCommitmentPurchaseAnalysesResult
   {
   public:
-    AWS_COSTEXPLORER_API ListCommitmentPurchaseAnalysesResult();
+    AWS_COSTEXPLORER_API ListCommitmentPurchaseAnalysesResult() = default;
     AWS_COSTEXPLORER_API ListCommitmentPurchaseAnalysesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API ListCommitmentPurchaseAnalysesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of analyses.</p>
      */
-    inline const Aws::Vector<AnalysisSummary>& GetAnalysisSummaryList() const{ return m_analysisSummaryList; }
-    inline void SetAnalysisSummaryList(const Aws::Vector<AnalysisSummary>& value) { m_analysisSummaryList = value; }
-    inline void SetAnalysisSummaryList(Aws::Vector<AnalysisSummary>&& value) { m_analysisSummaryList = std::move(value); }
-    inline ListCommitmentPurchaseAnalysesResult& WithAnalysisSummaryList(const Aws::Vector<AnalysisSummary>& value) { SetAnalysisSummaryList(value); return *this;}
-    inline ListCommitmentPurchaseAnalysesResult& WithAnalysisSummaryList(Aws::Vector<AnalysisSummary>&& value) { SetAnalysisSummaryList(std::move(value)); return *this;}
-    inline ListCommitmentPurchaseAnalysesResult& AddAnalysisSummaryList(const AnalysisSummary& value) { m_analysisSummaryList.push_back(value); return *this; }
-    inline ListCommitmentPurchaseAnalysesResult& AddAnalysisSummaryList(AnalysisSummary&& value) { m_analysisSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalysisSummary>& GetAnalysisSummaryList() const { return m_analysisSummaryList; }
+    template<typename AnalysisSummaryListT = Aws::Vector<AnalysisSummary>>
+    void SetAnalysisSummaryList(AnalysisSummaryListT&& value) { m_analysisSummaryListHasBeenSet = true; m_analysisSummaryList = std::forward<AnalysisSummaryListT>(value); }
+    template<typename AnalysisSummaryListT = Aws::Vector<AnalysisSummary>>
+    ListCommitmentPurchaseAnalysesResult& WithAnalysisSummaryList(AnalysisSummaryListT&& value) { SetAnalysisSummaryList(std::forward<AnalysisSummaryListT>(value)); return *this;}
+    template<typename AnalysisSummaryListT = AnalysisSummary>
+    ListCommitmentPurchaseAnalysesResult& AddAnalysisSummaryList(AnalysisSummaryListT&& value) { m_analysisSummaryListHasBeenSet = true; m_analysisSummaryList.emplace_back(std::forward<AnalysisSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListCommitmentPurchaseAnalysesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListCommitmentPurchaseAnalysesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListCommitmentPurchaseAnalysesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListCommitmentPurchaseAnalysesResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCommitmentPurchaseAnalysesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCommitmentPurchaseAnalysesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCommitmentPurchaseAnalysesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCommitmentPurchaseAnalysesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnalysisSummary> m_analysisSummaryList;
+    bool m_analysisSummaryListHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace AugmentedAIRuntime
 namespace Model
 {
 
-HumanLoopSummary::HumanLoopSummary() : 
-    m_humanLoopNameHasBeenSet(false),
-    m_humanLoopStatus(HumanLoopStatus::NOT_SET),
-    m_humanLoopStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false)
-{
-}
-
 HumanLoopSummary::HumanLoopSummary(JsonView jsonValue)
-  : HumanLoopSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ HumanLoopSummary& HumanLoopSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HumanLoopName"))
   {
     m_humanLoopName = jsonValue.GetString("HumanLoopName");
-
     m_humanLoopNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanLoopStatus"))
   {
     m_humanLoopStatus = HumanLoopStatusMapper::GetHumanLoopStatusForName(jsonValue.GetString("HumanLoopStatus"));
-
     m_humanLoopStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowDefinitionArn"))
   {
     m_flowDefinitionArn = jsonValue.GetString("FlowDefinitionArn");
-
     m_flowDefinitionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

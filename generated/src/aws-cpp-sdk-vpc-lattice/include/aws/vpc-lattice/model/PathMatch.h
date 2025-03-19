@@ -32,7 +32,7 @@ namespace Model
   class PathMatch
   {
   public:
-    AWS_VPCLATTICE_API PathMatch();
+    AWS_VPCLATTICE_API PathMatch() = default;
     AWS_VPCLATTICE_API PathMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API PathMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether the match is case sensitive.</p>
      */
-    inline bool GetCaseSensitive() const{ return m_caseSensitive; }
+    inline bool GetCaseSensitive() const { return m_caseSensitive; }
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
     inline PathMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
     /**
      * <p>The type of path match.</p>
      */
-    inline const PathMatchType& GetMatch() const{ return m_match; }
+    inline const PathMatchType& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const PathMatchType& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(PathMatchType&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline PathMatch& WithMatch(const PathMatchType& value) { SetMatch(value); return *this;}
-    inline PathMatch& WithMatch(PathMatchType&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = PathMatchType>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = PathMatchType>
+    PathMatch& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_caseSensitive;
+    bool m_caseSensitive{false};
     bool m_caseSensitiveHasBeenSet = false;
 
     PathMatchType m_match;

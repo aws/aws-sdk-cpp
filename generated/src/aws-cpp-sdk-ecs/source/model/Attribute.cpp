@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Attribute::Attribute() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_targetIdHasBeenSet(false)
-{
-}
-
 Attribute::Attribute(JsonView jsonValue)
-  : Attribute()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Attribute& Attribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetType"))
   {
     m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("targetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetId"))
   {
     m_targetId = jsonValue.GetString("targetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

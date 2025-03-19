@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBulkImportJobResult::CreateBulkImportJobResult() : 
-    m_jobStatus(JobStatus::NOT_SET)
-{
-}
-
 CreateBulkImportJobResult::CreateBulkImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateBulkImportJobResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateBulkImportJobResult& CreateBulkImportJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
+    m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("jobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

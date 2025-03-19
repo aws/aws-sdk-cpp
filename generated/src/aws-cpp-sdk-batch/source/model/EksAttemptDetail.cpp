@@ -18,23 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksAttemptDetail::EksAttemptDetail() : 
-    m_containersHasBeenSet(false),
-    m_initContainersHasBeenSet(false),
-    m_eksClusterArnHasBeenSet(false),
-    m_podNameHasBeenSet(false),
-    m_podNamespaceHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 EksAttemptDetail::EksAttemptDetail(JsonView jsonValue)
-  : EksAttemptDetail()
 {
   *this = jsonValue;
 }
@@ -50,7 +34,6 @@ EksAttemptDetail& EksAttemptDetail::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initContainers"))
   {
     Aws::Utils::Array<JsonView> initContainersJsonList = jsonValue.GetArray("initContainers");
@@ -60,56 +43,41 @@ EksAttemptDetail& EksAttemptDetail::operator =(JsonView jsonValue)
     }
     m_initContainersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksClusterArn"))
   {
     m_eksClusterArn = jsonValue.GetString("eksClusterArn");
-
     m_eksClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("podName"))
   {
     m_podName = jsonValue.GetString("podName");
-
     m_podNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("podNamespace"))
   {
     m_podNamespace = jsonValue.GetString("podNamespace");
-
     m_podNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeName"))
   {
     m_nodeName = jsonValue.GetString("nodeName");
-
     m_nodeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetInt64("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stoppedAt"))
   {
     m_stoppedAt = jsonValue.GetInt64("stoppedAt");
-
     m_stoppedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

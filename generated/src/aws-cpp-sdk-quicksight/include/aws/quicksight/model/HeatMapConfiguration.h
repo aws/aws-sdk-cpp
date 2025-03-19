@@ -38,7 +38,7 @@ namespace Model
   class HeatMapConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API HeatMapConfiguration();
+    AWS_QUICKSIGHT_API HeatMapConfiguration() = default;
     AWS_QUICKSIGHT_API HeatMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API HeatMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,24 +48,24 @@ namespace Model
     /**
      * <p>The field wells of the visual.</p>
      */
-    inline const HeatMapFieldWells& GetFieldWells() const{ return m_fieldWells; }
+    inline const HeatMapFieldWells& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const HeatMapFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(HeatMapFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline HeatMapConfiguration& WithFieldWells(const HeatMapFieldWells& value) { SetFieldWells(value); return *this;}
-    inline HeatMapConfiguration& WithFieldWells(HeatMapFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    template<typename FieldWellsT = HeatMapFieldWells>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = HeatMapFieldWells>
+    HeatMapConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of a heat map.</p>
      */
-    inline const HeatMapSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const HeatMapSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const HeatMapSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(HeatMapSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline HeatMapConfiguration& WithSortConfiguration(const HeatMapSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline HeatMapConfiguration& WithSortConfiguration(HeatMapSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = HeatMapSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = HeatMapSortConfiguration>
+    HeatMapConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,84 +73,84 @@ namespace Model
      * <p>The label options of the row that is displayed in a <code>heat
      * map</code>.</p>
      */
-    inline const ChartAxisLabelOptions& GetRowLabelOptions() const{ return m_rowLabelOptions; }
+    inline const ChartAxisLabelOptions& GetRowLabelOptions() const { return m_rowLabelOptions; }
     inline bool RowLabelOptionsHasBeenSet() const { return m_rowLabelOptionsHasBeenSet; }
-    inline void SetRowLabelOptions(const ChartAxisLabelOptions& value) { m_rowLabelOptionsHasBeenSet = true; m_rowLabelOptions = value; }
-    inline void SetRowLabelOptions(ChartAxisLabelOptions&& value) { m_rowLabelOptionsHasBeenSet = true; m_rowLabelOptions = std::move(value); }
-    inline HeatMapConfiguration& WithRowLabelOptions(const ChartAxisLabelOptions& value) { SetRowLabelOptions(value); return *this;}
-    inline HeatMapConfiguration& WithRowLabelOptions(ChartAxisLabelOptions&& value) { SetRowLabelOptions(std::move(value)); return *this;}
+    template<typename RowLabelOptionsT = ChartAxisLabelOptions>
+    void SetRowLabelOptions(RowLabelOptionsT&& value) { m_rowLabelOptionsHasBeenSet = true; m_rowLabelOptions = std::forward<RowLabelOptionsT>(value); }
+    template<typename RowLabelOptionsT = ChartAxisLabelOptions>
+    HeatMapConfiguration& WithRowLabelOptions(RowLabelOptionsT&& value) { SetRowLabelOptions(std::forward<RowLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The label options of the column that is displayed in a heat map.</p>
      */
-    inline const ChartAxisLabelOptions& GetColumnLabelOptions() const{ return m_columnLabelOptions; }
+    inline const ChartAxisLabelOptions& GetColumnLabelOptions() const { return m_columnLabelOptions; }
     inline bool ColumnLabelOptionsHasBeenSet() const { return m_columnLabelOptionsHasBeenSet; }
-    inline void SetColumnLabelOptions(const ChartAxisLabelOptions& value) { m_columnLabelOptionsHasBeenSet = true; m_columnLabelOptions = value; }
-    inline void SetColumnLabelOptions(ChartAxisLabelOptions&& value) { m_columnLabelOptionsHasBeenSet = true; m_columnLabelOptions = std::move(value); }
-    inline HeatMapConfiguration& WithColumnLabelOptions(const ChartAxisLabelOptions& value) { SetColumnLabelOptions(value); return *this;}
-    inline HeatMapConfiguration& WithColumnLabelOptions(ChartAxisLabelOptions&& value) { SetColumnLabelOptions(std::move(value)); return *this;}
+    template<typename ColumnLabelOptionsT = ChartAxisLabelOptions>
+    void SetColumnLabelOptions(ColumnLabelOptionsT&& value) { m_columnLabelOptionsHasBeenSet = true; m_columnLabelOptions = std::forward<ColumnLabelOptionsT>(value); }
+    template<typename ColumnLabelOptionsT = ChartAxisLabelOptions>
+    HeatMapConfiguration& WithColumnLabelOptions(ColumnLabelOptionsT&& value) { SetColumnLabelOptions(std::forward<ColumnLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color options (gradient color, point of divergence) in a heat map.</p>
      */
-    inline const ColorScale& GetColorScale() const{ return m_colorScale; }
+    inline const ColorScale& GetColorScale() const { return m_colorScale; }
     inline bool ColorScaleHasBeenSet() const { return m_colorScaleHasBeenSet; }
-    inline void SetColorScale(const ColorScale& value) { m_colorScaleHasBeenSet = true; m_colorScale = value; }
-    inline void SetColorScale(ColorScale&& value) { m_colorScaleHasBeenSet = true; m_colorScale = std::move(value); }
-    inline HeatMapConfiguration& WithColorScale(const ColorScale& value) { SetColorScale(value); return *this;}
-    inline HeatMapConfiguration& WithColorScale(ColorScale&& value) { SetColorScale(std::move(value)); return *this;}
+    template<typename ColorScaleT = ColorScale>
+    void SetColorScale(ColorScaleT&& value) { m_colorScaleHasBeenSet = true; m_colorScale = std::forward<ColorScaleT>(value); }
+    template<typename ColorScaleT = ColorScale>
+    HeatMapConfiguration& WithColorScale(ColorScaleT&& value) { SetColorScale(std::forward<ColorScaleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The legend display setup of the visual.</p>
      */
-    inline const LegendOptions& GetLegend() const{ return m_legend; }
+    inline const LegendOptions& GetLegend() const { return m_legend; }
     inline bool LegendHasBeenSet() const { return m_legendHasBeenSet; }
-    inline void SetLegend(const LegendOptions& value) { m_legendHasBeenSet = true; m_legend = value; }
-    inline void SetLegend(LegendOptions&& value) { m_legendHasBeenSet = true; m_legend = std::move(value); }
-    inline HeatMapConfiguration& WithLegend(const LegendOptions& value) { SetLegend(value); return *this;}
-    inline HeatMapConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
+    template<typename LegendT = LegendOptions>
+    void SetLegend(LegendT&& value) { m_legendHasBeenSet = true; m_legend = std::forward<LegendT>(value); }
+    template<typename LegendT = LegendOptions>
+    HeatMapConfiguration& WithLegend(LegendT&& value) { SetLegend(std::forward<LegendT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine if visual data labels are displayed.</p>
      */
-    inline const DataLabelOptions& GetDataLabels() const{ return m_dataLabels; }
+    inline const DataLabelOptions& GetDataLabels() const { return m_dataLabels; }
     inline bool DataLabelsHasBeenSet() const { return m_dataLabelsHasBeenSet; }
-    inline void SetDataLabels(const DataLabelOptions& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = value; }
-    inline void SetDataLabels(DataLabelOptions&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::move(value); }
-    inline HeatMapConfiguration& WithDataLabels(const DataLabelOptions& value) { SetDataLabels(value); return *this;}
-    inline HeatMapConfiguration& WithDataLabels(DataLabelOptions&& value) { SetDataLabels(std::move(value)); return *this;}
+    template<typename DataLabelsT = DataLabelOptions>
+    void SetDataLabels(DataLabelsT&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::forward<DataLabelsT>(value); }
+    template<typename DataLabelsT = DataLabelOptions>
+    HeatMapConfiguration& WithDataLabels(DataLabelsT&& value) { SetDataLabels(std::forward<DataLabelsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tooltip display setup of the visual.</p>
      */
-    inline const TooltipOptions& GetTooltip() const{ return m_tooltip; }
+    inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-    inline void SetTooltip(const TooltipOptions& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-    inline void SetTooltip(TooltipOptions&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-    inline HeatMapConfiguration& WithTooltip(const TooltipOptions& value) { SetTooltip(value); return *this;}
-    inline HeatMapConfiguration& WithTooltip(TooltipOptions&& value) { SetTooltip(std::move(value)); return *this;}
+    template<typename TooltipT = TooltipOptions>
+    void SetTooltip(TooltipT&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::forward<TooltipT>(value); }
+    template<typename TooltipT = TooltipOptions>
+    HeatMapConfiguration& WithTooltip(TooltipT&& value) { SetTooltip(std::forward<TooltipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline HeatMapConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline HeatMapConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    HeatMapConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 

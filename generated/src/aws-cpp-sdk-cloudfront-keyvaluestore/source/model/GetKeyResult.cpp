@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetKeyResult::GetKeyResult() : 
-    m_itemCount(0),
-    m_totalSizeInBytes(0)
-{
-}
-
 GetKeyResult::GetKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetKeyResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ GetKeyResult& GetKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
+    m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
+    m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInteger("ItemCount");
-
+    m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSizeInBytes"))
   {
     m_totalSizeInBytes = jsonValue.GetInt64("TotalSizeInBytes");
-
+    m_totalSizeInBytesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

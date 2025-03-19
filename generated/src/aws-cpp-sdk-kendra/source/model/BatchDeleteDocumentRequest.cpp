@@ -12,13 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteDocumentRequest::BatchDeleteDocumentRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_documentIdListHasBeenSet(false),
-    m_dataSourceSyncJobMetricTargetHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

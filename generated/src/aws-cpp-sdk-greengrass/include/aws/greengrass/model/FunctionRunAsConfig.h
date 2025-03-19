@@ -35,7 +35,7 @@ namespace Model
   class FunctionRunAsConfig
   {
   public:
-    AWS_GREENGRASS_API FunctionRunAsConfig();
+    AWS_GREENGRASS_API FunctionRunAsConfig() = default;
     AWS_GREENGRASS_API FunctionRunAsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API FunctionRunAsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * The group ID whose permissions are used to run a Lambda function.
      */
-    inline int GetGid() const{ return m_gid; }
+    inline int GetGid() const { return m_gid; }
     inline bool GidHasBeenSet() const { return m_gidHasBeenSet; }
     inline void SetGid(int value) { m_gidHasBeenSet = true; m_gid = value; }
     inline FunctionRunAsConfig& WithGid(int value) { SetGid(value); return *this;}
@@ -55,17 +55,17 @@ namespace Model
     /**
      * The user ID whose permissions are used to run a Lambda function.
      */
-    inline int GetUid() const{ return m_uid; }
+    inline int GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
     inline void SetUid(int value) { m_uidHasBeenSet = true; m_uid = value; }
     inline FunctionRunAsConfig& WithUid(int value) { SetUid(value); return *this;}
     ///@}
   private:
 
-    int m_gid;
+    int m_gid{0};
     bool m_gidHasBeenSet = false;
 
-    int m_uid;
+    int m_uid{0};
     bool m_uidHasBeenSet = false;
   };
 

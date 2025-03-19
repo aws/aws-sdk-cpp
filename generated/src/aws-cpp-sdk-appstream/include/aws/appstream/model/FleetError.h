@@ -32,7 +32,7 @@ namespace Model
   class FleetError
   {
   public:
-    AWS_APPSTREAM_API FleetError();
+    AWS_APPSTREAM_API FleetError() = default;
     AWS_APPSTREAM_API FleetError(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API FleetError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const FleetErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline FleetErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const FleetErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(FleetErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline FleetError& WithErrorCode(const FleetErrorCode& value) { SetErrorCode(value); return *this;}
-    inline FleetError& WithErrorCode(FleetErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(FleetErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline FleetError& WithErrorCode(FleetErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline FleetError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline FleetError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline FleetError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    FleetError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    FleetErrorCode m_errorCode;
+    FleetErrorCode m_errorCode{FleetErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

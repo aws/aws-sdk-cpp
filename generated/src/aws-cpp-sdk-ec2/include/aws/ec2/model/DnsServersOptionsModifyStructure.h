@@ -32,7 +32,7 @@ namespace Model
   class DnsServersOptionsModifyStructure
   {
   public:
-    AWS_EC2_API DnsServersOptionsModifyStructure();
+    AWS_EC2_API DnsServersOptionsModifyStructure() = default;
     AWS_EC2_API DnsServersOptionsModifyStructure(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DnsServersOptionsModifyStructure& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,15 +46,14 @@ namespace Model
      * can specify up to two DNS servers. Ensure that the DNS servers can be reached by
      * the clients. The specified values overwrite the existing values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomDnsServers() const{ return m_customDnsServers; }
+    inline const Aws::Vector<Aws::String>& GetCustomDnsServers() const { return m_customDnsServers; }
     inline bool CustomDnsServersHasBeenSet() const { return m_customDnsServersHasBeenSet; }
-    inline void SetCustomDnsServers(const Aws::Vector<Aws::String>& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers = value; }
-    inline void SetCustomDnsServers(Aws::Vector<Aws::String>&& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers = std::move(value); }
-    inline DnsServersOptionsModifyStructure& WithCustomDnsServers(const Aws::Vector<Aws::String>& value) { SetCustomDnsServers(value); return *this;}
-    inline DnsServersOptionsModifyStructure& WithCustomDnsServers(Aws::Vector<Aws::String>&& value) { SetCustomDnsServers(std::move(value)); return *this;}
-    inline DnsServersOptionsModifyStructure& AddCustomDnsServers(const Aws::String& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers.push_back(value); return *this; }
-    inline DnsServersOptionsModifyStructure& AddCustomDnsServers(Aws::String&& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers.push_back(std::move(value)); return *this; }
-    inline DnsServersOptionsModifyStructure& AddCustomDnsServers(const char* value) { m_customDnsServersHasBeenSet = true; m_customDnsServers.push_back(value); return *this; }
+    template<typename CustomDnsServersT = Aws::Vector<Aws::String>>
+    void SetCustomDnsServers(CustomDnsServersT&& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers = std::forward<CustomDnsServersT>(value); }
+    template<typename CustomDnsServersT = Aws::Vector<Aws::String>>
+    DnsServersOptionsModifyStructure& WithCustomDnsServers(CustomDnsServersT&& value) { SetCustomDnsServers(std::forward<CustomDnsServersT>(value)); return *this;}
+    template<typename CustomDnsServersT = Aws::String>
+    DnsServersOptionsModifyStructure& AddCustomDnsServers(CustomDnsServersT&& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers.emplace_back(std::forward<CustomDnsServersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,7 +61,7 @@ namespace Model
      * <p>Indicates whether DNS servers should be used. Specify <code>False</code> to
      * delete the existing DNS servers.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline DnsServersOptionsModifyStructure& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -72,7 +71,7 @@ namespace Model
     Aws::Vector<Aws::String> m_customDnsServers;
     bool m_customDnsServersHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

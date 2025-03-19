@@ -18,18 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TagSearchCondition::TagSearchCondition() : 
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_tagKeyComparisonType(StringComparisonType::NOT_SET),
-    m_tagKeyComparisonTypeHasBeenSet(false),
-    m_tagValueComparisonType(StringComparisonType::NOT_SET),
-    m_tagValueComparisonTypeHasBeenSet(false)
-{
-}
-
 TagSearchCondition::TagSearchCondition(JsonView jsonValue)
-  : TagSearchCondition()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TagSearchCondition& TagSearchCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tagKey"))
   {
     m_tagKey = jsonValue.GetString("tagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagValue"))
   {
     m_tagValue = jsonValue.GetString("tagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagKeyComparisonType"))
   {
     m_tagKeyComparisonType = StringComparisonTypeMapper::GetStringComparisonTypeForName(jsonValue.GetString("tagKeyComparisonType"));
-
     m_tagKeyComparisonTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagValueComparisonType"))
   {
     m_tagValueComparisonType = StringComparisonTypeMapper::GetStringComparisonTypeForName(jsonValue.GetString("tagValueComparisonType"));
-
     m_tagValueComparisonTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

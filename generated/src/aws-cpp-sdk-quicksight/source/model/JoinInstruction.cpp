@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-JoinInstruction::JoinInstruction() : 
-    m_leftOperandHasBeenSet(false),
-    m_rightOperandHasBeenSet(false),
-    m_leftJoinKeyPropertiesHasBeenSet(false),
-    m_rightJoinKeyPropertiesHasBeenSet(false),
-    m_type(JoinType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_onClauseHasBeenSet(false)
-{
-}
-
 JoinInstruction::JoinInstruction(JsonView jsonValue)
-  : JoinInstruction()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ JoinInstruction& JoinInstruction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LeftOperand"))
   {
     m_leftOperand = jsonValue.GetString("LeftOperand");
-
     m_leftOperandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RightOperand"))
   {
     m_rightOperand = jsonValue.GetString("RightOperand");
-
     m_rightOperandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LeftJoinKeyProperties"))
   {
     m_leftJoinKeyProperties = jsonValue.GetObject("LeftJoinKeyProperties");
-
     m_leftJoinKeyPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RightJoinKeyProperties"))
   {
     m_rightJoinKeyProperties = jsonValue.GetObject("RightJoinKeyProperties");
-
     m_rightJoinKeyPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = JoinTypeMapper::GetJoinTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnClause"))
   {
     m_onClause = jsonValue.GetString("OnClause");
-
     m_onClauseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Label::Label() : 
-    m_nameHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_parentsHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 Label::Label(JsonView jsonValue)
-  : Label()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ Label& Label::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Instances"))
   {
     Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
@@ -60,7 +44,6 @@ Label& Label::operator =(JsonView jsonValue)
     }
     m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parents"))
   {
     Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
@@ -70,7 +53,6 @@ Label& Label::operator =(JsonView jsonValue)
     }
     m_parentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aliases"))
   {
     Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
@@ -80,7 +62,6 @@ Label& Label::operator =(JsonView jsonValue)
     }
     m_aliasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -90,7 +71,6 @@ Label& Label::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

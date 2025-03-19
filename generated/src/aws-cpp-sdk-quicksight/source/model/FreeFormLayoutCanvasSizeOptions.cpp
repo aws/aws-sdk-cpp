@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions() : 
-    m_screenCanvasSizeOptionsHasBeenSet(false)
-{
-}
-
 FreeFormLayoutCanvasSizeOptions::FreeFormLayoutCanvasSizeOptions(JsonView jsonValue)
-  : FreeFormLayoutCanvasSizeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FreeFormLayoutCanvasSizeOptions& FreeFormLayoutCanvasSizeOptions::operator =(Jso
   if(jsonValue.ValueExists("ScreenCanvasSizeOptions"))
   {
     m_screenCanvasSizeOptions = jsonValue.GetObject("ScreenCanvasSizeOptions");
-
     m_screenCanvasSizeOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

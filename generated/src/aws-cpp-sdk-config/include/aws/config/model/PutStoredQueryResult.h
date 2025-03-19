@@ -27,7 +27,7 @@ namespace Model
   class PutStoredQueryResult
   {
   public:
-    AWS_CONFIGSERVICE_API PutStoredQueryResult();
+    AWS_CONFIGSERVICE_API PutStoredQueryResult() = default;
     AWS_CONFIGSERVICE_API PutStoredQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API PutStoredQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the query. For example,
      * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
-    inline const Aws::String& GetQueryArn() const{ return m_queryArn; }
-    inline void SetQueryArn(const Aws::String& value) { m_queryArn = value; }
-    inline void SetQueryArn(Aws::String&& value) { m_queryArn = std::move(value); }
-    inline void SetQueryArn(const char* value) { m_queryArn.assign(value); }
-    inline PutStoredQueryResult& WithQueryArn(const Aws::String& value) { SetQueryArn(value); return *this;}
-    inline PutStoredQueryResult& WithQueryArn(Aws::String&& value) { SetQueryArn(std::move(value)); return *this;}
-    inline PutStoredQueryResult& WithQueryArn(const char* value) { SetQueryArn(value); return *this;}
+    inline const Aws::String& GetQueryArn() const { return m_queryArn; }
+    template<typename QueryArnT = Aws::String>
+    void SetQueryArn(QueryArnT&& value) { m_queryArnHasBeenSet = true; m_queryArn = std::forward<QueryArnT>(value); }
+    template<typename QueryArnT = Aws::String>
+    PutStoredQueryResult& WithQueryArn(QueryArnT&& value) { SetQueryArn(std::forward<QueryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutStoredQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutStoredQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutStoredQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutStoredQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryArn;
+    bool m_queryArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

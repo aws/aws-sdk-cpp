@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterFromWorkMailRequest::DeregisterFromWorkMailRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterFromWorkMailRequest::SerializePayload() const
 {
   JsonValue payload;

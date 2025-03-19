@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingGroupProperties::ThingGroupProperties() : 
-    m_thingGroupDescriptionHasBeenSet(false),
-    m_attributePayloadHasBeenSet(false)
-{
-}
-
 ThingGroupProperties::ThingGroupProperties(JsonView jsonValue)
-  : ThingGroupProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ThingGroupProperties& ThingGroupProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingGroupDescription"))
   {
     m_thingGroupDescription = jsonValue.GetString("thingGroupDescription");
-
     m_thingGroupDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributePayload"))
   {
     m_attributePayload = jsonValue.GetObject("attributePayload");
-
     m_attributePayloadHasBeenSet = true;
   }
-
   return *this;
 }
 

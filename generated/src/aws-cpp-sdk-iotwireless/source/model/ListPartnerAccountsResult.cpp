@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPartnerAccountsResult::ListPartnerAccountsResult()
-{
-}
-
 ListPartnerAccountsResult::ListPartnerAccountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListPartnerAccountsResult& ListPartnerAccountsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sidewalk"))
   {
     Aws::Utils::Array<JsonView> sidewalkJsonList = jsonValue.GetArray("Sidewalk");
@@ -42,14 +37,15 @@ ListPartnerAccountsResult& ListPartnerAccountsResult::operator =(const Aws::Amaz
     {
       m_sidewalk.push_back(sidewalkJsonList[sidewalkIndex].AsObject());
     }
+    m_sidewalkHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

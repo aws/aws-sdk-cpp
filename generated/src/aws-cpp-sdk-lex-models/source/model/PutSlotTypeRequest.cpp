@@ -12,20 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSlotTypeRequest::PutSlotTypeRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enumerationValuesHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET),
-    m_valueSelectionStrategyHasBeenSet(false),
-    m_createVersion(false),
-    m_createVersionHasBeenSet(false),
-    m_parentSlotTypeSignatureHasBeenSet(false),
-    m_slotTypeConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String PutSlotTypeRequest::SerializePayload() const
 {
   JsonValue payload;

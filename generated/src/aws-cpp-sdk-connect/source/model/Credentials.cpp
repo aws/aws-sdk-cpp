@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Credentials::Credentials() : 
-    m_accessTokenHasBeenSet(false),
-    m_accessTokenExpirationHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_refreshTokenExpirationHasBeenSet(false)
-{
-}
-
 Credentials::Credentials(JsonView jsonValue)
-  : Credentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Credentials& Credentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessToken"))
   {
     m_accessToken = jsonValue.GetString("AccessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessTokenExpiration"))
   {
     m_accessTokenExpiration = jsonValue.GetDouble("AccessTokenExpiration");
-
     m_accessTokenExpirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshToken"))
   {
     m_refreshToken = jsonValue.GetString("RefreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshTokenExpiration"))
   {
     m_refreshTokenExpiration = jsonValue.GetDouble("RefreshTokenExpiration");
-
     m_refreshTokenExpirationHasBeenSet = true;
   }
-
   return *this;
 }
 

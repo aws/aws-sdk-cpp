@@ -18,13 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-HlsConfiguration::HlsConfiguration() : 
-    m_manifestEndpointPrefixHasBeenSet(false)
-{
-}
-
 HlsConfiguration::HlsConfiguration(JsonView jsonValue)
-  : HlsConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HlsConfiguration& HlsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestEndpointPrefix"))
   {
     m_manifestEndpointPrefix = jsonValue.GetString("ManifestEndpointPrefix");
-
     m_manifestEndpointPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

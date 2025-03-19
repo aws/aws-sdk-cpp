@@ -34,7 +34,7 @@ namespace Model
   class UpdateSettings
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,28 @@ namespace Model
      * <p>The ID of one or more subnets in which License Manager will create a VPC
      * endpoint for products that require connectivity to activation servers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddSubnets() const{ return m_addSubnets; }
+    inline const Aws::Vector<Aws::String>& GetAddSubnets() const { return m_addSubnets; }
     inline bool AddSubnetsHasBeenSet() const { return m_addSubnetsHasBeenSet; }
-    inline void SetAddSubnets(const Aws::Vector<Aws::String>& value) { m_addSubnetsHasBeenSet = true; m_addSubnets = value; }
-    inline void SetAddSubnets(Aws::Vector<Aws::String>&& value) { m_addSubnetsHasBeenSet = true; m_addSubnets = std::move(value); }
-    inline UpdateSettings& WithAddSubnets(const Aws::Vector<Aws::String>& value) { SetAddSubnets(value); return *this;}
-    inline UpdateSettings& WithAddSubnets(Aws::Vector<Aws::String>&& value) { SetAddSubnets(std::move(value)); return *this;}
-    inline UpdateSettings& AddAddSubnets(const Aws::String& value) { m_addSubnetsHasBeenSet = true; m_addSubnets.push_back(value); return *this; }
-    inline UpdateSettings& AddAddSubnets(Aws::String&& value) { m_addSubnetsHasBeenSet = true; m_addSubnets.push_back(std::move(value)); return *this; }
-    inline UpdateSettings& AddAddSubnets(const char* value) { m_addSubnetsHasBeenSet = true; m_addSubnets.push_back(value); return *this; }
+    template<typename AddSubnetsT = Aws::Vector<Aws::String>>
+    void SetAddSubnets(AddSubnetsT&& value) { m_addSubnetsHasBeenSet = true; m_addSubnets = std::forward<AddSubnetsT>(value); }
+    template<typename AddSubnetsT = Aws::Vector<Aws::String>>
+    UpdateSettings& WithAddSubnets(AddSubnetsT&& value) { SetAddSubnets(std::forward<AddSubnetsT>(value)); return *this;}
+    template<typename AddSubnetsT = Aws::String>
+    UpdateSettings& AddAddSubnets(AddSubnetsT&& value) { m_addSubnetsHasBeenSet = true; m_addSubnets.emplace_back(std::forward<AddSubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of one or more subnets to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveSubnets() const{ return m_removeSubnets; }
+    inline const Aws::Vector<Aws::String>& GetRemoveSubnets() const { return m_removeSubnets; }
     inline bool RemoveSubnetsHasBeenSet() const { return m_removeSubnetsHasBeenSet; }
-    inline void SetRemoveSubnets(const Aws::Vector<Aws::String>& value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets = value; }
-    inline void SetRemoveSubnets(Aws::Vector<Aws::String>&& value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets = std::move(value); }
-    inline UpdateSettings& WithRemoveSubnets(const Aws::Vector<Aws::String>& value) { SetRemoveSubnets(value); return *this;}
-    inline UpdateSettings& WithRemoveSubnets(Aws::Vector<Aws::String>&& value) { SetRemoveSubnets(std::move(value)); return *this;}
-    inline UpdateSettings& AddRemoveSubnets(const Aws::String& value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets.push_back(value); return *this; }
-    inline UpdateSettings& AddRemoveSubnets(Aws::String&& value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets.push_back(std::move(value)); return *this; }
-    inline UpdateSettings& AddRemoveSubnets(const char* value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets.push_back(value); return *this; }
+    template<typename RemoveSubnetsT = Aws::Vector<Aws::String>>
+    void SetRemoveSubnets(RemoveSubnetsT&& value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets = std::forward<RemoveSubnetsT>(value); }
+    template<typename RemoveSubnetsT = Aws::Vector<Aws::String>>
+    UpdateSettings& WithRemoveSubnets(RemoveSubnetsT&& value) { SetRemoveSubnets(std::forward<RemoveSubnetsT>(value)); return *this;}
+    template<typename RemoveSubnetsT = Aws::String>
+    UpdateSettings& AddRemoveSubnets(RemoveSubnetsT&& value) { m_removeSubnetsHasBeenSet = true; m_removeSubnets.emplace_back(std::forward<RemoveSubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * <p>A security group ID that allows inbound TCP port 1688 communication between
      * resources in your VPC and the VPC endpoints for activation servers.</p>
      */
-    inline const Aws::String& GetSecurityGroupId() const{ return m_securityGroupId; }
+    inline const Aws::String& GetSecurityGroupId() const { return m_securityGroupId; }
     inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
-    inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
-    inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::move(value); }
-    inline void SetSecurityGroupId(const char* value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId.assign(value); }
-    inline UpdateSettings& WithSecurityGroupId(const Aws::String& value) { SetSecurityGroupId(value); return *this;}
-    inline UpdateSettings& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(std::move(value)); return *this;}
-    inline UpdateSettings& WithSecurityGroupId(const char* value) { SetSecurityGroupId(value); return *this;}
+    template<typename SecurityGroupIdT = Aws::String>
+    void SetSecurityGroupId(SecurityGroupIdT&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::forward<SecurityGroupIdT>(value); }
+    template<typename SecurityGroupIdT = Aws::String>
+    UpdateSettings& WithSecurityGroupId(SecurityGroupIdT&& value) { SetSecurityGroupId(std::forward<SecurityGroupIdT>(value)); return *this;}
     ///@}
   private:
 

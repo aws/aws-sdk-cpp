@@ -18,19 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-StateTemplateSummary::StateTemplateSummary() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_signalCatalogArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 StateTemplateSummary::StateTemplateSummary(JsonView jsonValue)
-  : StateTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ StateTemplateSummary& StateTemplateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signalCatalogArn"))
   {
     m_signalCatalogArn = jsonValue.GetString("signalCatalogArn");
-
     m_signalCatalogArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("lastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

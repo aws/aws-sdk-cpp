@@ -32,7 +32,7 @@ namespace Model
   class Ec2InstanceConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Ec2InstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Details about the instance.</p>
      */
-    inline const InstanceConfiguration& GetInstance() const{ return m_instance; }
+    inline const InstanceConfiguration& GetInstance() const { return m_instance; }
     inline bool InstanceHasBeenSet() const { return m_instanceHasBeenSet; }
-    inline void SetInstance(const InstanceConfiguration& value) { m_instanceHasBeenSet = true; m_instance = value; }
-    inline void SetInstance(InstanceConfiguration&& value) { m_instanceHasBeenSet = true; m_instance = std::move(value); }
-    inline Ec2InstanceConfiguration& WithInstance(const InstanceConfiguration& value) { SetInstance(value); return *this;}
-    inline Ec2InstanceConfiguration& WithInstance(InstanceConfiguration&& value) { SetInstance(std::move(value)); return *this;}
+    template<typename InstanceT = InstanceConfiguration>
+    void SetInstance(InstanceT&& value) { m_instanceHasBeenSet = true; m_instance = std::forward<InstanceT>(value); }
+    template<typename InstanceT = InstanceConfiguration>
+    Ec2InstanceConfiguration& WithInstance(InstanceT&& value) { SetInstance(std::forward<InstanceT>(value)); return *this;}
     ///@}
   private:
 

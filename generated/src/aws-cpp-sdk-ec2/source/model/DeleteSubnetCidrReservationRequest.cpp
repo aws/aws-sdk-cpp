@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteSubnetCidrReservationRequest::DeleteSubnetCidrReservationRequest() : 
-    m_subnetCidrReservationIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSubnetCidrReservationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

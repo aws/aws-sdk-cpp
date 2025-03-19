@@ -18,16 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-Encryption::Encryption() : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_kMSContextHasBeenSet(false)
-{
-}
-
 Encryption::Encryption(JsonView jsonValue)
-  : Encryption()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Encryption& Encryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSKeyId"))
   {
     m_kMSKeyId = jsonValue.GetString("KMSKeyId");
-
     m_kMSKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KMSContext"))
   {
     m_kMSContext = jsonValue.GetString("KMSContext");
-
     m_kMSContextHasBeenSet = true;
   }
-
   return *this;
 }
 

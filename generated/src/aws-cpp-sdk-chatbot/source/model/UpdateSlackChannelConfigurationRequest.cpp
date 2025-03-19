@@ -12,19 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSlackChannelConfigurationRequest::UpdateSlackChannelConfigurationRequest() : 
-    m_chatConfigurationArnHasBeenSet(false),
-    m_slackChannelIdHasBeenSet(false),
-    m_slackChannelNameHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_guardrailPolicyArnsHasBeenSet(false),
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSlackChannelConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

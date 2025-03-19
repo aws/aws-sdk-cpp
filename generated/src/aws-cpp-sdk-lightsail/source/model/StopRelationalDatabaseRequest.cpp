@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopRelationalDatabaseRequest::StopRelationalDatabaseRequest() : 
-    m_relationalDatabaseNameHasBeenSet(false),
-    m_relationalDatabaseSnapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String StopRelationalDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

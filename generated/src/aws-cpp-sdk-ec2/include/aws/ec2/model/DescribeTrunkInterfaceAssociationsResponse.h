@@ -30,7 +30,7 @@ namespace Model
   class DescribeTrunkInterfaceAssociationsResponse
   {
   public:
-    AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse();
+    AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse() = default;
     AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the trunk associations.</p>
      */
-    inline const Aws::Vector<TrunkInterfaceAssociation>& GetInterfaceAssociations() const{ return m_interfaceAssociations; }
-    inline void SetInterfaceAssociations(const Aws::Vector<TrunkInterfaceAssociation>& value) { m_interfaceAssociations = value; }
-    inline void SetInterfaceAssociations(Aws::Vector<TrunkInterfaceAssociation>&& value) { m_interfaceAssociations = std::move(value); }
-    inline DescribeTrunkInterfaceAssociationsResponse& WithInterfaceAssociations(const Aws::Vector<TrunkInterfaceAssociation>& value) { SetInterfaceAssociations(value); return *this;}
-    inline DescribeTrunkInterfaceAssociationsResponse& WithInterfaceAssociations(Aws::Vector<TrunkInterfaceAssociation>&& value) { SetInterfaceAssociations(std::move(value)); return *this;}
-    inline DescribeTrunkInterfaceAssociationsResponse& AddInterfaceAssociations(const TrunkInterfaceAssociation& value) { m_interfaceAssociations.push_back(value); return *this; }
-    inline DescribeTrunkInterfaceAssociationsResponse& AddInterfaceAssociations(TrunkInterfaceAssociation&& value) { m_interfaceAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrunkInterfaceAssociation>& GetInterfaceAssociations() const { return m_interfaceAssociations; }
+    template<typename InterfaceAssociationsT = Aws::Vector<TrunkInterfaceAssociation>>
+    void SetInterfaceAssociations(InterfaceAssociationsT&& value) { m_interfaceAssociationsHasBeenSet = true; m_interfaceAssociations = std::forward<InterfaceAssociationsT>(value); }
+    template<typename InterfaceAssociationsT = Aws::Vector<TrunkInterfaceAssociation>>
+    DescribeTrunkInterfaceAssociationsResponse& WithInterfaceAssociations(InterfaceAssociationsT&& value) { SetInterfaceAssociations(std::forward<InterfaceAssociationsT>(value)); return *this;}
+    template<typename InterfaceAssociationsT = TrunkInterfaceAssociation>
+    DescribeTrunkInterfaceAssociationsResponse& AddInterfaceAssociations(InterfaceAssociationsT&& value) { m_interfaceAssociationsHasBeenSet = true; m_interfaceAssociations.emplace_back(std::forward<InterfaceAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeTrunkInterfaceAssociationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTrunkInterfaceAssociationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTrunkInterfaceAssociationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTrunkInterfaceAssociationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTrunkInterfaceAssociationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTrunkInterfaceAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTrunkInterfaceAssociationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrunkInterfaceAssociation> m_interfaceAssociations;
+    bool m_interfaceAssociationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

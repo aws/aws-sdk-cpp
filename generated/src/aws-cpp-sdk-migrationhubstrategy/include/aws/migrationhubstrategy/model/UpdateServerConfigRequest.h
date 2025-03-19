@@ -22,7 +22,7 @@ namespace Model
   class UpdateServerConfigRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API UpdateServerConfigRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API UpdateServerConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p> The ID of the server. </p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline UpdateServerConfigRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline UpdateServerConfigRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline UpdateServerConfigRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    UpdateServerConfigRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,12 +50,12 @@ namespace Model
      * <p> The preferred strategy options for the application component. See the
      * response from <a>GetServerStrategies</a>.</p>
      */
-    inline const StrategyOption& GetStrategyOption() const{ return m_strategyOption; }
+    inline const StrategyOption& GetStrategyOption() const { return m_strategyOption; }
     inline bool StrategyOptionHasBeenSet() const { return m_strategyOptionHasBeenSet; }
-    inline void SetStrategyOption(const StrategyOption& value) { m_strategyOptionHasBeenSet = true; m_strategyOption = value; }
-    inline void SetStrategyOption(StrategyOption&& value) { m_strategyOptionHasBeenSet = true; m_strategyOption = std::move(value); }
-    inline UpdateServerConfigRequest& WithStrategyOption(const StrategyOption& value) { SetStrategyOption(value); return *this;}
-    inline UpdateServerConfigRequest& WithStrategyOption(StrategyOption&& value) { SetStrategyOption(std::move(value)); return *this;}
+    template<typename StrategyOptionT = StrategyOption>
+    void SetStrategyOption(StrategyOptionT&& value) { m_strategyOptionHasBeenSet = true; m_strategyOption = std::forward<StrategyOptionT>(value); }
+    template<typename StrategyOptionT = StrategyOption>
+    UpdateServerConfigRequest& WithStrategyOption(StrategyOptionT&& value) { SetStrategyOption(std::forward<StrategyOptionT>(value)); return *this;}
     ///@}
   private:
 

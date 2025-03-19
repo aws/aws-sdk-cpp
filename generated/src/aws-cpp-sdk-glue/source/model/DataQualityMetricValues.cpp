@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityMetricValues::DataQualityMetricValues() : 
-    m_actualValue(0.0),
-    m_actualValueHasBeenSet(false),
-    m_expectedValue(0.0),
-    m_expectedValueHasBeenSet(false),
-    m_lowerLimit(0.0),
-    m_lowerLimitHasBeenSet(false),
-    m_upperLimit(0.0),
-    m_upperLimitHasBeenSet(false)
-{
-}
-
 DataQualityMetricValues::DataQualityMetricValues(JsonView jsonValue)
-  : DataQualityMetricValues()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DataQualityMetricValues& DataQualityMetricValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActualValue"))
   {
     m_actualValue = jsonValue.GetDouble("ActualValue");
-
     m_actualValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedValue"))
   {
     m_expectedValue = jsonValue.GetDouble("ExpectedValue");
-
     m_expectedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LowerLimit"))
   {
     m_lowerLimit = jsonValue.GetDouble("LowerLimit");
-
     m_lowerLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperLimit"))
   {
     m_upperLimit = jsonValue.GetDouble("UpperLimit");
-
     m_upperLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

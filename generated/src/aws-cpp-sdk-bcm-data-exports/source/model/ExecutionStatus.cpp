@@ -18,19 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-ExecutionStatus::ExecutionStatus() : 
-    m_completedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_statusCode(ExecutionStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReason(ExecutionStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 ExecutionStatus::ExecutionStatus(JsonView jsonValue)
-  : ExecutionStatus()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ExecutionStatus& ExecutionStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompletedAt"))
   {
     m_completedAt = jsonValue.GetString("CompletedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = ExecutionStatusCodeMapper::GetExecutionStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = ExecutionStatusReasonMapper::GetExecutionStatusReasonForName(jsonValue.GetString("StatusReason"));
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

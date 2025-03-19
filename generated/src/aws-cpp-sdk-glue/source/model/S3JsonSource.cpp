@@ -18,30 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3JsonSource::S3JsonSource() : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_groupSizeHasBeenSet(false),
-    m_groupFilesHasBeenSet(false),
-    m_recurse(false),
-    m_recurseHasBeenSet(false),
-    m_maxBand(0),
-    m_maxBandHasBeenSet(false),
-    m_maxFilesInBand(0),
-    m_maxFilesInBandHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_jsonPathHasBeenSet(false),
-    m_multiline(false),
-    m_multilineHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 S3JsonSource::S3JsonSource(JsonView jsonValue)
-  : S3JsonSource()
 {
   *this = jsonValue;
 }
@@ -51,10 +28,8 @@ S3JsonSource& S3JsonSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Paths"))
   {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
@@ -64,14 +39,11 @@ S3JsonSource& S3JsonSource::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionType"))
   {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("CompressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
@@ -81,63 +53,46 @@ S3JsonSource& S3JsonSource::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupSize"))
   {
     m_groupSize = jsonValue.GetString("GroupSize");
-
     m_groupSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupFiles"))
   {
     m_groupFiles = jsonValue.GetString("GroupFiles");
-
     m_groupFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recurse"))
   {
     m_recurse = jsonValue.GetBool("Recurse");
-
     m_recurseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxBand"))
   {
     m_maxBand = jsonValue.GetInteger("MaxBand");
-
     m_maxBandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFilesInBand"))
   {
     m_maxFilesInBand = jsonValue.GetInteger("MaxFilesInBand");
-
     m_maxFilesInBandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
-
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonPath"))
   {
     m_jsonPath = jsonValue.GetString("JsonPath");
-
     m_jsonPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Multiline"))
   {
     m_multiline = jsonValue.GetBool("Multiline");
-
     m_multilineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -147,7 +102,6 @@ S3JsonSource& S3JsonSource::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

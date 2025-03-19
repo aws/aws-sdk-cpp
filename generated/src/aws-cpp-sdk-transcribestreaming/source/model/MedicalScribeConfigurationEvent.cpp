@@ -18,20 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeConfigurationEvent::MedicalScribeConfigurationEvent() : 
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(MedicalScribeVocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_resourceAccessRoleArnHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false),
-    m_encryptionSettingsHasBeenSet(false),
-    m_postStreamAnalyticsSettingsHasBeenSet(false)
-{
-}
-
 MedicalScribeConfigurationEvent::MedicalScribeConfigurationEvent(JsonView jsonValue)
-  : MedicalScribeConfigurationEvent()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MedicalScribeConfigurationEvent& MedicalScribeConfigurationEvent::operator =(Jso
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterName"))
   {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
-
     m_vocabularyFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterMethod"))
   {
     m_vocabularyFilterMethod = MedicalScribeVocabularyFilterMethodMapper::GetMedicalScribeVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
-
     m_vocabularyFilterMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceAccessRoleArn"))
   {
     m_resourceAccessRoleArn = jsonValue.GetString("ResourceAccessRoleArn");
-
     m_resourceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelDefinitions"))
   {
     Aws::Utils::Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
@@ -75,21 +54,16 @@ MedicalScribeConfigurationEvent& MedicalScribeConfigurationEvent::operator =(Jso
     }
     m_channelDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionSettings"))
   {
     m_encryptionSettings = jsonValue.GetObject("EncryptionSettings");
-
     m_encryptionSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostStreamAnalyticsSettings"))
   {
     m_postStreamAnalyticsSettings = jsonValue.GetObject("PostStreamAnalyticsSettings");
-
     m_postStreamAnalyticsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

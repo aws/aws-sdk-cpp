@@ -12,16 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddProfilePermissionRequest::AddProfilePermissionRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 Aws::String AddProfilePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

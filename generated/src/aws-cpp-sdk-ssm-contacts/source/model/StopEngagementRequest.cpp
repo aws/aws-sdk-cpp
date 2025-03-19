@@ -12,12 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopEngagementRequest::StopEngagementRequest() : 
-    m_engagementIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String StopEngagementRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class DescribeThumbnailsRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API DescribeThumbnailsRequest();
+    AWS_MEDIALIVE_API DescribeThumbnailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,42 +46,36 @@ namespace Model
     /**
      * Unique ID of the channel
      */
-    inline const Aws::String& GetChannelId() const{ return m_channelId; }
+    inline const Aws::String& GetChannelId() const { return m_channelId; }
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-    inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-    inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-    inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-    inline DescribeThumbnailsRequest& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-    inline DescribeThumbnailsRequest& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-    inline DescribeThumbnailsRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+    template<typename ChannelIdT = Aws::String>
+    void SetChannelId(ChannelIdT&& value) { m_channelIdHasBeenSet = true; m_channelId = std::forward<ChannelIdT>(value); }
+    template<typename ChannelIdT = Aws::String>
+    DescribeThumbnailsRequest& WithChannelId(ChannelIdT&& value) { SetChannelId(std::forward<ChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Pipeline ID ("0" or "1")
      */
-    inline const Aws::String& GetPipelineId() const{ return m_pipelineId; }
+    inline const Aws::String& GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(Aws::String&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline void SetPipelineId(const char* value) { m_pipelineIdHasBeenSet = true; m_pipelineId.assign(value); }
-    inline DescribeThumbnailsRequest& WithPipelineId(const Aws::String& value) { SetPipelineId(value); return *this;}
-    inline DescribeThumbnailsRequest& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
-    inline DescribeThumbnailsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+    template<typename PipelineIdT = Aws::String>
+    void SetPipelineId(PipelineIdT&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::forward<PipelineIdT>(value); }
+    template<typename PipelineIdT = Aws::String>
+    DescribeThumbnailsRequest& WithPipelineId(PipelineIdT&& value) { SetPipelineId(std::forward<PipelineIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * thumbnail type
      */
-    inline const Aws::String& GetThumbnailType() const{ return m_thumbnailType; }
+    inline const Aws::String& GetThumbnailType() const { return m_thumbnailType; }
     inline bool ThumbnailTypeHasBeenSet() const { return m_thumbnailTypeHasBeenSet; }
-    inline void SetThumbnailType(const Aws::String& value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType = value; }
-    inline void SetThumbnailType(Aws::String&& value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType = std::move(value); }
-    inline void SetThumbnailType(const char* value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType.assign(value); }
-    inline DescribeThumbnailsRequest& WithThumbnailType(const Aws::String& value) { SetThumbnailType(value); return *this;}
-    inline DescribeThumbnailsRequest& WithThumbnailType(Aws::String&& value) { SetThumbnailType(std::move(value)); return *this;}
-    inline DescribeThumbnailsRequest& WithThumbnailType(const char* value) { SetThumbnailType(value); return *this;}
+    template<typename ThumbnailTypeT = Aws::String>
+    void SetThumbnailType(ThumbnailTypeT&& value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType = std::forward<ThumbnailTypeT>(value); }
+    template<typename ThumbnailTypeT = Aws::String>
+    DescribeThumbnailsRequest& WithThumbnailType(ThumbnailTypeT&& value) { SetThumbnailType(std::forward<ThumbnailTypeT>(value)); return *this;}
     ///@}
   private:
 

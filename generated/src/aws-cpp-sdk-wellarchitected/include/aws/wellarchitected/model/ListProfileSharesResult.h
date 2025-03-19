@@ -29,7 +29,7 @@ namespace Model
   class ListProfileSharesResult
   {
   public:
-    AWS_WELLARCHITECTED_API ListProfileSharesResult();
+    AWS_WELLARCHITECTED_API ListProfileSharesResult() = default;
     AWS_WELLARCHITECTED_API ListProfileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API ListProfileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
     /**
      * <p>Profile share summaries.</p>
      */
-    inline const Aws::Vector<ProfileShareSummary>& GetProfileShareSummaries() const{ return m_profileShareSummaries; }
-    inline void SetProfileShareSummaries(const Aws::Vector<ProfileShareSummary>& value) { m_profileShareSummaries = value; }
-    inline void SetProfileShareSummaries(Aws::Vector<ProfileShareSummary>&& value) { m_profileShareSummaries = std::move(value); }
-    inline ListProfileSharesResult& WithProfileShareSummaries(const Aws::Vector<ProfileShareSummary>& value) { SetProfileShareSummaries(value); return *this;}
-    inline ListProfileSharesResult& WithProfileShareSummaries(Aws::Vector<ProfileShareSummary>&& value) { SetProfileShareSummaries(std::move(value)); return *this;}
-    inline ListProfileSharesResult& AddProfileShareSummaries(const ProfileShareSummary& value) { m_profileShareSummaries.push_back(value); return *this; }
-    inline ListProfileSharesResult& AddProfileShareSummaries(ProfileShareSummary&& value) { m_profileShareSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProfileShareSummary>& GetProfileShareSummaries() const { return m_profileShareSummaries; }
+    template<typename ProfileShareSummariesT = Aws::Vector<ProfileShareSummary>>
+    void SetProfileShareSummaries(ProfileShareSummariesT&& value) { m_profileShareSummariesHasBeenSet = true; m_profileShareSummaries = std::forward<ProfileShareSummariesT>(value); }
+    template<typename ProfileShareSummariesT = Aws::Vector<ProfileShareSummary>>
+    ListProfileSharesResult& WithProfileShareSummaries(ProfileShareSummariesT&& value) { SetProfileShareSummaries(std::forward<ProfileShareSummariesT>(value)); return *this;}
+    template<typename ProfileShareSummariesT = ProfileShareSummary>
+    ListProfileSharesResult& AddProfileShareSummaries(ProfileShareSummariesT&& value) { m_profileShareSummariesHasBeenSet = true; m_profileShareSummaries.emplace_back(std::forward<ProfileShareSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProfileSharesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProfileSharesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProfileSharesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProfileSharesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProfileSharesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProfileSharesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProfileSharesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProfileSharesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProfileShareSummary> m_profileShareSummaries;
+    bool m_profileShareSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

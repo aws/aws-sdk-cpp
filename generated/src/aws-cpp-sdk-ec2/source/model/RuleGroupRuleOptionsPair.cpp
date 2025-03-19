@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair() : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
-{
-}
-
 RuleGroupRuleOptionsPair::RuleGroupRuleOptionsPair(const XmlNode& xmlNode)
-  : RuleGroupRuleOptionsPair()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ RuleGroupRuleOptionsPair& RuleGroupRuleOptionsPair::operator =(const XmlNode& xm
     if(!ruleOptionsNode.IsNull())
     {
       XmlNode ruleOptionsMember = ruleOptionsNode.FirstChild("item");
+      m_ruleOptionsHasBeenSet = !ruleOptionsMember.IsNull();
       while(!ruleOptionsMember.IsNull())
       {
         m_ruleOptions.push_back(ruleOptionsMember);

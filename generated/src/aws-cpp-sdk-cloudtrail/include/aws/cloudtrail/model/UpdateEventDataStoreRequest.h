@@ -24,7 +24,7 @@ namespace Model
   class UpdateEventDataStoreRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API UpdateEventDataStoreRequest();
+    AWS_CLOUDTRAIL_API UpdateEventDataStoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <p>The ARN (or the ID suffix of the ARN) of the event data store that you want
      * to update.</p>
      */
-    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
+    inline const Aws::String& GetEventDataStore() const { return m_eventDataStore; }
     inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-    inline UpdateEventDataStoreRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-    inline UpdateEventDataStoreRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-    inline UpdateEventDataStoreRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
+    template<typename EventDataStoreT = Aws::String>
+    void SetEventDataStore(EventDataStoreT&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::forward<EventDataStoreT>(value); }
+    template<typename EventDataStoreT = Aws::String>
+    UpdateEventDataStoreRequest& WithEventDataStore(EventDataStoreT&& value) { SetEventDataStore(std::forward<EventDataStoreT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event data store name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateEventDataStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateEventDataStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateEventDataStoreRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateEventDataStoreRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
-    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
+    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const { return m_advancedEventSelectors; }
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
-    inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
-    inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
-    inline UpdateEventDataStoreRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
-    inline UpdateEventDataStoreRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
-    inline UpdateEventDataStoreRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
-    inline UpdateEventDataStoreRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    void SetAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::forward<AdvancedEventSelectorsT>(value); }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    UpdateEventDataStoreRequest& WithAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { SetAdvancedEventSelectors(std::forward<AdvancedEventSelectorsT>(value)); return *this;}
+    template<typename AdvancedEventSelectorsT = AdvancedEventSelector>
+    UpdateEventDataStoreRequest& AddAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.emplace_back(std::forward<AdvancedEventSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,7 +83,7 @@ namespace Model
      * <p>Specifies whether an event data store collects events from all Regions, or
      * only from the Region in which it was created.</p>
      */
-    inline bool GetMultiRegionEnabled() const{ return m_multiRegionEnabled; }
+    inline bool GetMultiRegionEnabled() const { return m_multiRegionEnabled; }
     inline bool MultiRegionEnabledHasBeenSet() const { return m_multiRegionEnabledHasBeenSet; }
     inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabledHasBeenSet = true; m_multiRegionEnabled = value; }
     inline UpdateEventDataStoreRequest& WithMultiRegionEnabled(bool value) { SetMultiRegionEnabled(value); return *this;}
@@ -101,7 +97,7 @@ namespace Model
      * event data store, or convert a non-organization event data store to an
      * organization event data store.</p> 
      */
-    inline bool GetOrganizationEnabled() const{ return m_organizationEnabled; }
+    inline bool GetOrganizationEnabled() const { return m_organizationEnabled; }
     inline bool OrganizationEnabledHasBeenSet() const { return m_organizationEnabledHasBeenSet; }
     inline void SetOrganizationEnabled(bool value) { m_organizationEnabledHasBeenSet = true; m_organizationEnabled = value; }
     inline UpdateEventDataStoreRequest& WithOrganizationEnabled(bool value) { SetOrganizationEnabled(value); return *this;}
@@ -124,7 +120,7 @@ namespace Model
      * decrease it to 100 days, CloudTrail will remove events with an
      * <code>eventTime</code> older than 100 days.</p> 
      */
-    inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline int GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
     inline UpdateEventDataStoreRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
@@ -135,7 +131,7 @@ namespace Model
      * <p>Indicates that termination protection is enabled and the event data store
      * cannot be automatically deleted.</p>
      */
-    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
+    inline bool GetTerminationProtectionEnabled() const { return m_terminationProtectionEnabled; }
     inline bool TerminationProtectionEnabledHasBeenSet() const { return m_terminationProtectionEnabledHasBeenSet; }
     inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
     inline UpdateEventDataStoreRequest& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
@@ -163,14 +159,12 @@ namespace Model
      * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline UpdateEventDataStoreRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline UpdateEventDataStoreRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline UpdateEventDataStoreRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    UpdateEventDataStoreRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,12 +191,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
      * CloudTrail Lake costs</a>.</p>
      */
-    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+    inline BillingMode GetBillingMode() const { return m_billingMode; }
     inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
-    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
-    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
-    inline UpdateEventDataStoreRequest& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
-    inline UpdateEventDataStoreRequest& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+    inline void SetBillingMode(BillingMode value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+    inline UpdateEventDataStoreRequest& WithBillingMode(BillingMode value) { SetBillingMode(value); return *this;}
     ///@}
   private:
 
@@ -215,22 +207,22 @@ namespace Model
     Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
     bool m_advancedEventSelectorsHasBeenSet = false;
 
-    bool m_multiRegionEnabled;
+    bool m_multiRegionEnabled{false};
     bool m_multiRegionEnabledHasBeenSet = false;
 
-    bool m_organizationEnabled;
+    bool m_organizationEnabled{false};
     bool m_organizationEnabledHasBeenSet = false;
 
-    int m_retentionPeriod;
+    int m_retentionPeriod{0};
     bool m_retentionPeriodHasBeenSet = false;
 
-    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabled{false};
     bool m_terminationProtectionEnabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    BillingMode m_billingMode;
+    BillingMode m_billingMode{BillingMode::NOT_SET};
     bool m_billingModeHasBeenSet = false;
   };
 

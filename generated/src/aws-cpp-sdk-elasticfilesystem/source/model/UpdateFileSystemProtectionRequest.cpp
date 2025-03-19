@@ -12,13 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFileSystemProtectionRequest::UpdateFileSystemProtectionRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_replicationOverwriteProtection(ReplicationOverwriteProtection::NOT_SET),
-    m_replicationOverwriteProtectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFileSystemProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

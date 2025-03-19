@@ -18,17 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResolverConfig::ResolverConfig() : 
-    m_idHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_autodefinedReverse(ResolverAutodefinedReverseStatus::NOT_SET),
-    m_autodefinedReverseHasBeenSet(false)
-{
-}
-
 ResolverConfig::ResolverConfig(JsonView jsonValue)
-  : ResolverConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ResolverConfig& ResolverConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutodefinedReverse"))
   {
     m_autodefinedReverse = ResolverAutodefinedReverseStatusMapper::GetResolverAutodefinedReverseStatusForName(jsonValue.GetString("AutodefinedReverse"));
-
     m_autodefinedReverseHasBeenSet = true;
   }
-
   return *this;
 }
 

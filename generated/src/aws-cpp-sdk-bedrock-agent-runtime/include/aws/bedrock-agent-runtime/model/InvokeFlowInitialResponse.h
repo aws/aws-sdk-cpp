@@ -27,7 +27,7 @@ namespace Model
   class InvokeFlowInitialResponse
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InvokeFlowInitialResponse();
+    AWS_BEDROCKAGENTRUNTIME_API InvokeFlowInitialResponse() = default;
     AWS_BEDROCKAGENTRUNTIME_API InvokeFlowInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvokeFlowInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvokeFlowInitialResponse(const Http::HeaderValueCollection& responseHeaders);
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier for the current flow execution.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline InvokeFlowInitialResponse& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline InvokeFlowInitialResponse& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline InvokeFlowInitialResponse& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    InvokeFlowInitialResponse& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

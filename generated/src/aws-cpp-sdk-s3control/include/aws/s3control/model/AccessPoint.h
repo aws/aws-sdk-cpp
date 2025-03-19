@@ -32,7 +32,7 @@ namespace Model
   class AccessPoint
   {
   public:
-    AWS_S3CONTROL_API AccessPoint();
+    AWS_S3CONTROL_API AccessPoint() = default;
     AWS_S3CONTROL_API AccessPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AccessPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of this access point.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AccessPoint& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AccessPoint& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AccessPoint& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AccessPoint& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * <code>Internet</code>, and the access point allows access from the public
      * internet, subject to the access point and bucket access policies.</p>
      */
-    inline const NetworkOrigin& GetNetworkOrigin() const{ return m_networkOrigin; }
+    inline NetworkOrigin GetNetworkOrigin() const { return m_networkOrigin; }
     inline bool NetworkOriginHasBeenSet() const { return m_networkOriginHasBeenSet; }
-    inline void SetNetworkOrigin(const NetworkOrigin& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = value; }
-    inline void SetNetworkOrigin(NetworkOrigin&& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = std::move(value); }
-    inline AccessPoint& WithNetworkOrigin(const NetworkOrigin& value) { SetNetworkOrigin(value); return *this;}
-    inline AccessPoint& WithNetworkOrigin(NetworkOrigin&& value) { SetNetworkOrigin(std::move(value)); return *this;}
+    inline void SetNetworkOrigin(NetworkOrigin value) { m_networkOriginHasBeenSet = true; m_networkOrigin = value; }
+    inline AccessPoint& WithNetworkOrigin(NetworkOrigin value) { SetNetworkOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -77,54 +73,48 @@ namespace Model
      * on Outposts access point that is used by other Amazon Web Services services.</p>
      * 
      */
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline AccessPoint& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline AccessPoint& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    AccessPoint& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bucket associated with this access point.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline AccessPoint& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline AccessPoint& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline AccessPoint& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    AccessPoint& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the access point.</p>
      */
-    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+    inline const Aws::String& GetAccessPointArn() const { return m_accessPointArn; }
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
-    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
-    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
-    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
-    inline AccessPoint& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
-    inline AccessPoint& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
-    inline AccessPoint& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+    template<typename AccessPointArnT = Aws::String>
+    void SetAccessPointArn(AccessPointArnT&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::forward<AccessPointArnT>(value); }
+    template<typename AccessPointArnT = Aws::String>
+    AccessPoint& WithAccessPointArn(AccessPointArnT&& value) { SetAccessPointArn(std::forward<AccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or alias of the access point.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline AccessPoint& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline AccessPoint& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline AccessPoint& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    AccessPoint& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,21 +122,19 @@ namespace Model
      * <p>The Amazon Web Services account ID associated with the S3 bucket associated
      * with this access point.</p>
      */
-    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+    inline const Aws::String& GetBucketAccountId() const { return m_bucketAccountId; }
     inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
-    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
-    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
-    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
-    inline AccessPoint& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
-    inline AccessPoint& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
-    inline AccessPoint& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+    template<typename BucketAccountIdT = Aws::String>
+    void SetBucketAccountId(BucketAccountIdT&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::forward<BucketAccountIdT>(value); }
+    template<typename BucketAccountIdT = Aws::String>
+    AccessPoint& WithBucketAccountId(BucketAccountIdT&& value) { SetBucketAccountId(std::forward<BucketAccountIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    NetworkOrigin m_networkOrigin;
+    NetworkOrigin m_networkOrigin{NetworkOrigin::NOT_SET};
     bool m_networkOriginHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;

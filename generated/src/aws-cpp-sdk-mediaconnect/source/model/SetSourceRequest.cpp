@@ -18,39 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-SetSourceRequest::SetSourceRequest() : 
-    m_decryptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_ingestPort(0),
-    m_ingestPortHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxLatency(0),
-    m_maxLatencyHasBeenSet(false),
-    m_maxSyncBuffer(0),
-    m_maxSyncBufferHasBeenSet(false),
-    m_mediaStreamSourceConfigurationsHasBeenSet(false),
-    m_minLatency(0),
-    m_minLatencyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sourceListenerAddressHasBeenSet(false),
-    m_sourceListenerPort(0),
-    m_sourceListenerPortHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false),
-    m_gatewayBridgeSourceHasBeenSet(false)
-{
-}
-
 SetSourceRequest::SetSourceRequest(JsonView jsonValue)
-  : SetSourceRequest()
 {
   *this = jsonValue;
 }
@@ -60,52 +28,38 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("decryption"))
   {
     m_decryption = jsonValue.GetObject("decryption");
-
     m_decryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entitlementArn"))
   {
     m_entitlementArn = jsonValue.GetString("entitlementArn");
-
     m_entitlementArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestPort"))
   {
     m_ingestPort = jsonValue.GetInteger("ingestPort");
-
     m_ingestPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxBitrate"))
   {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
-
     m_maxBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxLatency"))
   {
     m_maxLatency = jsonValue.GetInteger("maxLatency");
-
     m_maxLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSyncBuffer"))
   {
     m_maxSyncBuffer = jsonValue.GetInteger("maxSyncBuffer");
-
     m_maxSyncBufferHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaStreamSourceConfigurations"))
   {
     Aws::Utils::Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
@@ -115,84 +69,61 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     }
     m_mediaStreamSourceConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minLatency"))
   {
     m_minLatency = jsonValue.GetInteger("minLatency");
-
     m_minLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderControlPort"))
   {
     m_senderControlPort = jsonValue.GetInteger("senderControlPort");
-
     m_senderControlPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("senderIpAddress"))
   {
     m_senderIpAddress = jsonValue.GetString("senderIpAddress");
-
     m_senderIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceListenerAddress"))
   {
     m_sourceListenerAddress = jsonValue.GetString("sourceListenerAddress");
-
     m_sourceListenerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceListenerPort"))
   {
     m_sourceListenerPort = jsonValue.GetInteger("sourceListenerPort");
-
     m_sourceListenerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcInterfaceName"))
   {
     m_vpcInterfaceName = jsonValue.GetString("vpcInterfaceName");
-
     m_vpcInterfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("whitelistCidr"))
   {
     m_whitelistCidr = jsonValue.GetString("whitelistCidr");
-
     m_whitelistCidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayBridgeSource"))
   {
     m_gatewayBridgeSource = jsonValue.GetObject("gatewayBridgeSource");
-
     m_gatewayBridgeSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

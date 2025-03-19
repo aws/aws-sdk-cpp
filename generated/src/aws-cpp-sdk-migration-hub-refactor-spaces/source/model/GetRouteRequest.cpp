@@ -12,13 +12,6 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRouteRequest::GetRouteRequest() : 
-    m_applicationIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_routeIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetRouteRequest::SerializePayload() const
 {
   return {};

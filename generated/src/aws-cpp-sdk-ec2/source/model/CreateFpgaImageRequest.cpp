@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateFpgaImageRequest::CreateFpgaImageRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_inputStorageLocationHasBeenSet(false),
-    m_logsStorageLocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFpgaImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

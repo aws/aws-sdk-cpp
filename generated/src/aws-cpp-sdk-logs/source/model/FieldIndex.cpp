@@ -18,20 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-FieldIndex::FieldIndex() : 
-    m_logGroupIdentifierHasBeenSet(false),
-    m_fieldIndexNameHasBeenSet(false),
-    m_lastScanTime(0),
-    m_lastScanTimeHasBeenSet(false),
-    m_firstEventTime(0),
-    m_firstEventTimeHasBeenSet(false),
-    m_lastEventTime(0),
-    m_lastEventTimeHasBeenSet(false)
-{
-}
-
 FieldIndex::FieldIndex(JsonView jsonValue)
-  : FieldIndex()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ FieldIndex& FieldIndex::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logGroupIdentifier"))
   {
     m_logGroupIdentifier = jsonValue.GetString("logGroupIdentifier");
-
     m_logGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldIndexName"))
   {
     m_fieldIndexName = jsonValue.GetString("fieldIndexName");
-
     m_fieldIndexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastScanTime"))
   {
     m_lastScanTime = jsonValue.GetInt64("lastScanTime");
-
     m_lastScanTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstEventTime"))
   {
     m_firstEventTime = jsonValue.GetInt64("firstEventTime");
-
     m_firstEventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastEventTime"))
   {
     m_lastEventTime = jsonValue.GetInt64("lastEventTime");
-
     m_lastEventTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class UpdateTopicResult
   {
   public:
-    AWS_QUICKSIGHT_API UpdateTopicResult();
+    AWS_QUICKSIGHT_API UpdateTopicResult() = default;
     AWS_QUICKSIGHT_API UpdateTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API UpdateTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,71 +37,68 @@ namespace Model
      * <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web
      * Services Region for each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetTopicId() const{ return m_topicId; }
-    inline void SetTopicId(const Aws::String& value) { m_topicId = value; }
-    inline void SetTopicId(Aws::String&& value) { m_topicId = std::move(value); }
-    inline void SetTopicId(const char* value) { m_topicId.assign(value); }
-    inline UpdateTopicResult& WithTopicId(const Aws::String& value) { SetTopicId(value); return *this;}
-    inline UpdateTopicResult& WithTopicId(Aws::String&& value) { SetTopicId(std::move(value)); return *this;}
-    inline UpdateTopicResult& WithTopicId(const char* value) { SetTopicId(value); return *this;}
+    inline const Aws::String& GetTopicId() const { return m_topicId; }
+    template<typename TopicIdT = Aws::String>
+    void SetTopicId(TopicIdT&& value) { m_topicIdHasBeenSet = true; m_topicId = std::forward<TopicIdT>(value); }
+    template<typename TopicIdT = Aws::String>
+    UpdateTopicResult& WithTopicId(TopicIdT&& value) { SetTopicId(std::forward<TopicIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the topic.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateTopicResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateTopicResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateTopicResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateTopicResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the topic refresh.</p>
      */
-    inline const Aws::String& GetRefreshArn() const{ return m_refreshArn; }
-    inline void SetRefreshArn(const Aws::String& value) { m_refreshArn = value; }
-    inline void SetRefreshArn(Aws::String&& value) { m_refreshArn = std::move(value); }
-    inline void SetRefreshArn(const char* value) { m_refreshArn.assign(value); }
-    inline UpdateTopicResult& WithRefreshArn(const Aws::String& value) { SetRefreshArn(value); return *this;}
-    inline UpdateTopicResult& WithRefreshArn(Aws::String&& value) { SetRefreshArn(std::move(value)); return *this;}
-    inline UpdateTopicResult& WithRefreshArn(const char* value) { SetRefreshArn(value); return *this;}
+    inline const Aws::String& GetRefreshArn() const { return m_refreshArn; }
+    template<typename RefreshArnT = Aws::String>
+    void SetRefreshArn(RefreshArnT&& value) { m_refreshArnHasBeenSet = true; m_refreshArn = std::forward<RefreshArnT>(value); }
+    template<typename RefreshArnT = Aws::String>
+    UpdateTopicResult& WithRefreshArn(RefreshArnT&& value) { SetRefreshArn(std::forward<RefreshArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTopicResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTopicResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTopicResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTopicResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline UpdateTopicResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_topicId;
+    bool m_topicIdHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_refreshArn;
+    bool m_refreshArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

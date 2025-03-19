@@ -28,7 +28,7 @@ namespace Model
   class ListNodegroupsResult
   {
   public:
-    AWS_EKS_API ListNodegroupsResult();
+    AWS_EKS_API ListNodegroupsResult() = default;
     AWS_EKS_API ListNodegroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API ListNodegroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>A list of all of the node groups associated with the specified cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNodegroups() const{ return m_nodegroups; }
-    inline void SetNodegroups(const Aws::Vector<Aws::String>& value) { m_nodegroups = value; }
-    inline void SetNodegroups(Aws::Vector<Aws::String>&& value) { m_nodegroups = std::move(value); }
-    inline ListNodegroupsResult& WithNodegroups(const Aws::Vector<Aws::String>& value) { SetNodegroups(value); return *this;}
-    inline ListNodegroupsResult& WithNodegroups(Aws::Vector<Aws::String>&& value) { SetNodegroups(std::move(value)); return *this;}
-    inline ListNodegroupsResult& AddNodegroups(const Aws::String& value) { m_nodegroups.push_back(value); return *this; }
-    inline ListNodegroupsResult& AddNodegroups(Aws::String&& value) { m_nodegroups.push_back(std::move(value)); return *this; }
-    inline ListNodegroupsResult& AddNodegroups(const char* value) { m_nodegroups.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNodegroups() const { return m_nodegroups; }
+    template<typename NodegroupsT = Aws::Vector<Aws::String>>
+    void SetNodegroups(NodegroupsT&& value) { m_nodegroupsHasBeenSet = true; m_nodegroups = std::forward<NodegroupsT>(value); }
+    template<typename NodegroupsT = Aws::Vector<Aws::String>>
+    ListNodegroupsResult& WithNodegroups(NodegroupsT&& value) { SetNodegroups(std::forward<NodegroupsT>(value)); return *this;}
+    template<typename NodegroupsT = Aws::String>
+    ListNodegroupsResult& AddNodegroups(NodegroupsT&& value) { m_nodegroupsHasBeenSet = true; m_nodegroups.emplace_back(std::forward<NodegroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +56,31 @@ namespace Model
      * identifier that is used only to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNodegroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNodegroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNodegroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNodegroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNodegroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNodegroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNodegroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNodegroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_nodegroups;
+    bool m_nodegroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

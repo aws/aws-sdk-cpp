@@ -32,7 +32,7 @@ namespace Model
   class ExecutionPreview
   {
   public:
-    AWS_SSM_API ExecutionPreview();
+    AWS_SSM_API ExecutionPreview() = default;
     AWS_SSM_API ExecutionPreview(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ExecutionPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Information about the changes that would be made if an Automation workflow
      * were run.</p>
      */
-    inline const AutomationExecutionPreview& GetAutomation() const{ return m_automation; }
+    inline const AutomationExecutionPreview& GetAutomation() const { return m_automation; }
     inline bool AutomationHasBeenSet() const { return m_automationHasBeenSet; }
-    inline void SetAutomation(const AutomationExecutionPreview& value) { m_automationHasBeenSet = true; m_automation = value; }
-    inline void SetAutomation(AutomationExecutionPreview&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
-    inline ExecutionPreview& WithAutomation(const AutomationExecutionPreview& value) { SetAutomation(value); return *this;}
-    inline ExecutionPreview& WithAutomation(AutomationExecutionPreview&& value) { SetAutomation(std::move(value)); return *this;}
+    template<typename AutomationT = AutomationExecutionPreview>
+    void SetAutomation(AutomationT&& value) { m_automationHasBeenSet = true; m_automation = std::forward<AutomationT>(value); }
+    template<typename AutomationT = AutomationExecutionPreview>
+    ExecutionPreview& WithAutomation(AutomationT&& value) { SetAutomation(std::forward<AutomationT>(value)); return *this;}
     ///@}
   private:
 

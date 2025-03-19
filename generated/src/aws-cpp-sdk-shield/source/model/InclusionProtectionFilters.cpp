@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-InclusionProtectionFilters::InclusionProtectionFilters() : 
-    m_resourceArnsHasBeenSet(false),
-    m_protectionNamesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 InclusionProtectionFilters::InclusionProtectionFilters(JsonView jsonValue)
-  : InclusionProtectionFilters()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ InclusionProtectionFilters& InclusionProtectionFilters::operator =(JsonView json
     }
     m_resourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectionNames"))
   {
     Aws::Utils::Array<JsonView> protectionNamesJsonList = jsonValue.GetArray("ProtectionNames");
@@ -52,7 +43,6 @@ InclusionProtectionFilters& InclusionProtectionFilters::operator =(JsonView json
     }
     m_protectionNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("ResourceTypes");
@@ -62,7 +52,6 @@ InclusionProtectionFilters& InclusionProtectionFilters::operator =(JsonView json
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class RelatedWorkspaceProperties
   {
   public:
-    AWS_WORKSPACES_API RelatedWorkspaceProperties();
+    AWS_WORKSPACES_API RelatedWorkspaceProperties() = default;
     AWS_WORKSPACES_API RelatedWorkspaceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API RelatedWorkspaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,52 +45,44 @@ namespace Model
     /**
      * <p>The identifier of the related WorkSpace.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-    inline RelatedWorkspaceProperties& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline RelatedWorkspaceProperties& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline RelatedWorkspaceProperties& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    RelatedWorkspaceProperties& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region of the related WorkSpace.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline RelatedWorkspaceProperties& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline RelatedWorkspaceProperties& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline RelatedWorkspaceProperties& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    RelatedWorkspaceProperties& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the state of the WorkSpace.</p>
      */
-    inline const WorkspaceState& GetState() const{ return m_state; }
+    inline WorkspaceState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const WorkspaceState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(WorkspaceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline RelatedWorkspaceProperties& WithState(const WorkspaceState& value) { SetState(value); return *this;}
-    inline RelatedWorkspaceProperties& WithState(WorkspaceState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(WorkspaceState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline RelatedWorkspaceProperties& WithState(WorkspaceState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the type of WorkSpace.</p>
      */
-    inline const StandbyWorkspaceRelationshipType& GetType() const{ return m_type; }
+    inline StandbyWorkspaceRelationshipType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const StandbyWorkspaceRelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(StandbyWorkspaceRelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RelatedWorkspaceProperties& WithType(const StandbyWorkspaceRelationshipType& value) { SetType(value); return *this;}
-    inline RelatedWorkspaceProperties& WithType(StandbyWorkspaceRelationshipType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(StandbyWorkspaceRelationshipType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RelatedWorkspaceProperties& WithType(StandbyWorkspaceRelationshipType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -100,10 +92,10 @@ namespace Model
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    WorkspaceState m_state;
+    WorkspaceState m_state{WorkspaceState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    StandbyWorkspaceRelationshipType m_type;
+    StandbyWorkspaceRelationshipType m_type{StandbyWorkspaceRelationshipType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

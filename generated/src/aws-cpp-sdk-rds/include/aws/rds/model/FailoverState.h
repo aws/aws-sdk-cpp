@@ -35,7 +35,7 @@ namespace Model
   class FailoverState
   {
   public:
-    AWS_RDS_API FailoverState();
+    AWS_RDS_API FailoverState() = default;
     AWS_RDS_API FailoverState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API FailoverState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -59,12 +59,10 @@ namespace Model
      * process, such as demoting the primary Aurora DB cluster, promoting the secondary
      * Aurora DB cluster, and synchronizing replicas.</p> </li> </ul>
      */
-    inline const FailoverStatus& GetStatus() const{ return m_status; }
+    inline FailoverStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FailoverStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FailoverStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FailoverState& WithStatus(const FailoverStatus& value) { SetStatus(value); return *this;}
-    inline FailoverState& WithStatus(FailoverStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FailoverStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FailoverState& WithStatus(FailoverStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently
      * being demoted, and which is associated with this state.</p>
      */
-    inline const Aws::String& GetFromDbClusterArn() const{ return m_fromDbClusterArn; }
+    inline const Aws::String& GetFromDbClusterArn() const { return m_fromDbClusterArn; }
     inline bool FromDbClusterArnHasBeenSet() const { return m_fromDbClusterArnHasBeenSet; }
-    inline void SetFromDbClusterArn(const Aws::String& value) { m_fromDbClusterArnHasBeenSet = true; m_fromDbClusterArn = value; }
-    inline void SetFromDbClusterArn(Aws::String&& value) { m_fromDbClusterArnHasBeenSet = true; m_fromDbClusterArn = std::move(value); }
-    inline void SetFromDbClusterArn(const char* value) { m_fromDbClusterArnHasBeenSet = true; m_fromDbClusterArn.assign(value); }
-    inline FailoverState& WithFromDbClusterArn(const Aws::String& value) { SetFromDbClusterArn(value); return *this;}
-    inline FailoverState& WithFromDbClusterArn(Aws::String&& value) { SetFromDbClusterArn(std::move(value)); return *this;}
-    inline FailoverState& WithFromDbClusterArn(const char* value) { SetFromDbClusterArn(value); return *this;}
+    template<typename FromDbClusterArnT = Aws::String>
+    void SetFromDbClusterArn(FromDbClusterArnT&& value) { m_fromDbClusterArnHasBeenSet = true; m_fromDbClusterArn = std::forward<FromDbClusterArnT>(value); }
+    template<typename FromDbClusterArnT = Aws::String>
+    FailoverState& WithFromDbClusterArn(FromDbClusterArnT&& value) { SetFromDbClusterArn(std::forward<FromDbClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +83,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently
      * being promoted, and which is associated with this state.</p>
      */
-    inline const Aws::String& GetToDbClusterArn() const{ return m_toDbClusterArn; }
+    inline const Aws::String& GetToDbClusterArn() const { return m_toDbClusterArn; }
     inline bool ToDbClusterArnHasBeenSet() const { return m_toDbClusterArnHasBeenSet; }
-    inline void SetToDbClusterArn(const Aws::String& value) { m_toDbClusterArnHasBeenSet = true; m_toDbClusterArn = value; }
-    inline void SetToDbClusterArn(Aws::String&& value) { m_toDbClusterArnHasBeenSet = true; m_toDbClusterArn = std::move(value); }
-    inline void SetToDbClusterArn(const char* value) { m_toDbClusterArnHasBeenSet = true; m_toDbClusterArn.assign(value); }
-    inline FailoverState& WithToDbClusterArn(const Aws::String& value) { SetToDbClusterArn(value); return *this;}
-    inline FailoverState& WithToDbClusterArn(Aws::String&& value) { SetToDbClusterArn(std::move(value)); return *this;}
-    inline FailoverState& WithToDbClusterArn(const char* value) { SetToDbClusterArn(value); return *this;}
+    template<typename ToDbClusterArnT = Aws::String>
+    void SetToDbClusterArn(ToDbClusterArnT&& value) { m_toDbClusterArnHasBeenSet = true; m_toDbClusterArn = std::forward<ToDbClusterArnT>(value); }
+    template<typename ToDbClusterArnT = Aws::String>
+    FailoverState& WithToDbClusterArn(ToDbClusterArnT&& value) { SetToDbClusterArn(std::forward<ToDbClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,14 @@ namespace Model
      * If data loss is allowed, then the operation is a global failover. Otherwise,
      * it's a switchover.</p>
      */
-    inline bool GetIsDataLossAllowed() const{ return m_isDataLossAllowed; }
+    inline bool GetIsDataLossAllowed() const { return m_isDataLossAllowed; }
     inline bool IsDataLossAllowedHasBeenSet() const { return m_isDataLossAllowedHasBeenSet; }
     inline void SetIsDataLossAllowed(bool value) { m_isDataLossAllowedHasBeenSet = true; m_isDataLossAllowed = value; }
     inline FailoverState& WithIsDataLossAllowed(bool value) { SetIsDataLossAllowed(value); return *this;}
     ///@}
   private:
 
-    FailoverStatus m_status;
+    FailoverStatus m_status{FailoverStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_fromDbClusterArn;
@@ -119,7 +113,7 @@ namespace Model
     Aws::String m_toDbClusterArn;
     bool m_toDbClusterArnHasBeenSet = false;
 
-    bool m_isDataLossAllowed;
+    bool m_isDataLossAllowed{false};
     bool m_isDataLossAllowedHasBeenSet = false;
   };
 

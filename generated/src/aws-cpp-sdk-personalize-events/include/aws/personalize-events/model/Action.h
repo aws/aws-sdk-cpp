@@ -34,7 +34,7 @@ namespace Model
   class Action
   {
   public:
-    AWS_PERSONALIZEEVENTS_API Action();
+    AWS_PERSONALIZEEVENTS_API Action() = default;
     AWS_PERSONALIZEEVENTS_API Action(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID associated with the action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
+    inline const Aws::String& GetActionId() const { return m_actionId; }
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-    inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-    inline Action& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline Action& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline Action& WithActionId(const char* value) { SetActionId(value); return *this;}
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    Action& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * multiple categories for a single action, separate each category with a pipe
      * separator (<code>|</code>). For example, <code>\"Deluxe|Premium\"</code>.</p>
      */
-    inline const Aws::String& GetProperties() const{ return m_properties; }
+    inline const Aws::String& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline void SetProperties(const char* value) { m_propertiesHasBeenSet = true; m_properties.assign(value); }
-    inline Action& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
-    inline Action& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
-    inline Action& WithProperties(const char* value) { SetProperties(value); return *this;}
+    template<typename PropertiesT = Aws::String>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::String>
+    Action& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
     ///@}
   private:
 

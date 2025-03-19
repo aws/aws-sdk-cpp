@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ColumnImportance::ColumnImportance() : 
-    m_columnNameHasBeenSet(false),
-    m_importance(0.0),
-    m_importanceHasBeenSet(false)
-{
-}
-
 ColumnImportance::ColumnImportance(JsonView jsonValue)
-  : ColumnImportance()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ColumnImportance& ColumnImportance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Importance"))
   {
     m_importance = jsonValue.GetDouble("Importance");
-
     m_importanceHasBeenSet = true;
   }
-
   return *this;
 }
 

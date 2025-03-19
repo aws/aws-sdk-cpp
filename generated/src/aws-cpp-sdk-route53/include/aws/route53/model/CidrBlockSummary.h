@@ -30,7 +30,7 @@ namespace Model
   class CidrBlockSummary
   {
   public:
-    AWS_ROUTE53_API CidrBlockSummary();
+    AWS_ROUTE53_API CidrBlockSummary() = default;
     AWS_ROUTE53_API CidrBlockSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API CidrBlockSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Value for the CIDR block.</p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline CidrBlockSummary& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline CidrBlockSummary& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline CidrBlockSummary& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    CidrBlockSummary& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location name of the CIDR block.</p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline CidrBlockSummary& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline CidrBlockSummary& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline CidrBlockSummary& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    CidrBlockSummary& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
   private:
 

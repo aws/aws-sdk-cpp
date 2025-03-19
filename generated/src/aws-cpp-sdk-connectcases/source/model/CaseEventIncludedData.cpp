@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-CaseEventIncludedData::CaseEventIncludedData() : 
-    m_fieldsHasBeenSet(false)
-{
-}
-
 CaseEventIncludedData::CaseEventIncludedData(JsonView jsonValue)
-  : CaseEventIncludedData()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CaseEventIncludedData& CaseEventIncludedData::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

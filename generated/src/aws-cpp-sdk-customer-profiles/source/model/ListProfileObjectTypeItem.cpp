@@ -18,21 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ListProfileObjectTypeItem::ListProfileObjectTypeItem() : 
-    m_objectTypeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_maxProfileObjectCount(0),
-    m_maxProfileObjectCountHasBeenSet(false),
-    m_maxAvailableProfileObjectCount(0),
-    m_maxAvailableProfileObjectCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ListProfileObjectTypeItem::ListProfileObjectTypeItem(JsonView jsonValue)
-  : ListProfileObjectTypeItem()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ListProfileObjectTypeItem& ListProfileObjectTypeItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ObjectTypeName"))
   {
     m_objectTypeName = jsonValue.GetString("ObjectTypeName");
-
     m_objectTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxProfileObjectCount"))
   {
     m_maxProfileObjectCount = jsonValue.GetInteger("MaxProfileObjectCount");
-
     m_maxProfileObjectCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAvailableProfileObjectCount"))
   {
     m_maxAvailableProfileObjectCount = jsonValue.GetInteger("MaxAvailableProfileObjectCount");
-
     m_maxAvailableProfileObjectCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -90,7 +64,6 @@ ListProfileObjectTypeItem& ListProfileObjectTypeItem::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

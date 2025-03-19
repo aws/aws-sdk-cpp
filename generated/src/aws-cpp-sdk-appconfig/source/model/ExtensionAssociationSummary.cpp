@@ -18,15 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-ExtensionAssociationSummary::ExtensionAssociationSummary() : 
-    m_idHasBeenSet(false),
-    m_extensionArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ExtensionAssociationSummary::ExtensionAssociationSummary(JsonView jsonValue)
-  : ExtensionAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExtensionAssociationSummary& ExtensionAssociationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtensionArn"))
   {
     m_extensionArn = jsonValue.GetString("ExtensionArn");
-
     m_extensionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

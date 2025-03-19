@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCampaignCommunicationLimitsRequest::DeleteCampaignCommunicationLimitsRequest() : 
-    m_idHasBeenSet(false),
-    m_config(CommunicationLimitsConfigType::NOT_SET),
-    m_configHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCampaignCommunicationLimitsRequest::SerializePayload() const
 {
   return {};

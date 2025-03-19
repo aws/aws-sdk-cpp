@@ -18,14 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-NodeInterface::NodeInterface() : 
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false)
-{
-}
-
 NodeInterface::NodeInterface(JsonView jsonValue)
-  : NodeInterface()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ NodeInterface& NodeInterface::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
@@ -51,7 +43,6 @@ NodeInterface& NodeInterface::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   return *this;
 }
 

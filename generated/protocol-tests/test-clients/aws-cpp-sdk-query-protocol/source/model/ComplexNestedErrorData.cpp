@@ -20,13 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-ComplexNestedErrorData::ComplexNestedErrorData() : 
-    m_fooHasBeenSet(false)
-{
-}
-
 ComplexNestedErrorData::ComplexNestedErrorData(const XmlNode& xmlNode)
-  : ComplexNestedErrorData()
 {
   *this = xmlNode;
 }

@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ServiceOverride::ServiceOverride() : 
-    m_messageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_overrideValueHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ServiceOverride::ServiceOverride(JsonView jsonValue)
-  : ServiceOverride()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ServiceOverride& ServiceOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideValue"))
   {
     m_overrideValue = jsonValue.GetString("overrideValue");
-
     m_overrideValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

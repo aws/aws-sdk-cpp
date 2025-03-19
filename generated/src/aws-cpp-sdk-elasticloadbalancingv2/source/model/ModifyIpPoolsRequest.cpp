@@ -10,13 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyIpPoolsRequest::ModifyIpPoolsRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_ipamPoolsHasBeenSet(false),
-    m_removeIpamPoolsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIpPoolsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

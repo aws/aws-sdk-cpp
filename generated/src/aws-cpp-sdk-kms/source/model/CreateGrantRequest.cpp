@@ -12,19 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGrantRequest::CreateGrantRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false),
-    m_operationsHasBeenSet(false),
-    m_constraintsHasBeenSet(false),
-    m_grantTokensHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateGrantRequest::SerializePayload() const
 {
   JsonValue payload;

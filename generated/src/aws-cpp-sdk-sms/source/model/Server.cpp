@@ -18,19 +18,7 @@ namespace SMS
 namespace Model
 {
 
-Server::Server() : 
-    m_serverIdHasBeenSet(false),
-    m_serverType(ServerType::NOT_SET),
-    m_serverTypeHasBeenSet(false),
-    m_vmServerHasBeenSet(false),
-    m_replicationJobIdHasBeenSet(false),
-    m_replicationJobTerminated(false),
-    m_replicationJobTerminatedHasBeenSet(false)
-{
-}
-
 Server::Server(JsonView jsonValue)
-  : Server()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Server& Server::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serverId"))
   {
     m_serverId = jsonValue.GetString("serverId");
-
     m_serverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverType"))
   {
     m_serverType = ServerTypeMapper::GetServerTypeForName(jsonValue.GetString("serverType"));
-
     m_serverTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vmServer"))
   {
     m_vmServer = jsonValue.GetObject("vmServer");
-
     m_vmServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationJobId"))
   {
     m_replicationJobId = jsonValue.GetString("replicationJobId");
-
     m_replicationJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationJobTerminated"))
   {
     m_replicationJobTerminated = jsonValue.GetBool("replicationJobTerminated");
-
     m_replicationJobTerminatedHasBeenSet = true;
   }
-
   return *this;
 }
 

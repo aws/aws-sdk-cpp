@@ -28,7 +28,7 @@ namespace Model
   class BatchDeleteWorldsResult
   {
   public:
-    AWS_ROBOMAKER_API BatchDeleteWorldsResult();
+    AWS_ROBOMAKER_API BatchDeleteWorldsResult() = default;
     AWS_ROBOMAKER_API BatchDeleteWorldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API BatchDeleteWorldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,31 +38,30 @@ namespace Model
      * <p>A list of unprocessed worlds associated with the call. These worlds were not
      * deleted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUnprocessedWorlds() const{ return m_unprocessedWorlds; }
-    inline void SetUnprocessedWorlds(const Aws::Vector<Aws::String>& value) { m_unprocessedWorlds = value; }
-    inline void SetUnprocessedWorlds(Aws::Vector<Aws::String>&& value) { m_unprocessedWorlds = std::move(value); }
-    inline BatchDeleteWorldsResult& WithUnprocessedWorlds(const Aws::Vector<Aws::String>& value) { SetUnprocessedWorlds(value); return *this;}
-    inline BatchDeleteWorldsResult& WithUnprocessedWorlds(Aws::Vector<Aws::String>&& value) { SetUnprocessedWorlds(std::move(value)); return *this;}
-    inline BatchDeleteWorldsResult& AddUnprocessedWorlds(const Aws::String& value) { m_unprocessedWorlds.push_back(value); return *this; }
-    inline BatchDeleteWorldsResult& AddUnprocessedWorlds(Aws::String&& value) { m_unprocessedWorlds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteWorldsResult& AddUnprocessedWorlds(const char* value) { m_unprocessedWorlds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetUnprocessedWorlds() const { return m_unprocessedWorlds; }
+    template<typename UnprocessedWorldsT = Aws::Vector<Aws::String>>
+    void SetUnprocessedWorlds(UnprocessedWorldsT&& value) { m_unprocessedWorldsHasBeenSet = true; m_unprocessedWorlds = std::forward<UnprocessedWorldsT>(value); }
+    template<typename UnprocessedWorldsT = Aws::Vector<Aws::String>>
+    BatchDeleteWorldsResult& WithUnprocessedWorlds(UnprocessedWorldsT&& value) { SetUnprocessedWorlds(std::forward<UnprocessedWorldsT>(value)); return *this;}
+    template<typename UnprocessedWorldsT = Aws::String>
+    BatchDeleteWorldsResult& AddUnprocessedWorlds(UnprocessedWorldsT&& value) { m_unprocessedWorldsHasBeenSet = true; m_unprocessedWorlds.emplace_back(std::forward<UnprocessedWorldsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteWorldsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteWorldsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteWorldsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteWorldsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_unprocessedWorlds;
+    bool m_unprocessedWorldsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

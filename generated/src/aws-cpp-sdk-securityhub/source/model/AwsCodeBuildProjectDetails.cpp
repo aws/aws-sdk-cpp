@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails() : 
-    m_encryptionKeyHasBeenSet(false),
-    m_artifactsHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_logsConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_secondaryArtifactsHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectDetails::AwsCodeBuildProjectDetails(JsonView jsonValue)
-  : AwsCodeBuildProjectDetails()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
   if(jsonValue.ValueExists("EncryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("EncryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Artifacts"))
   {
     Aws::Utils::Array<JsonView> artifactsJsonList = jsonValue.GetArray("Artifacts");
@@ -55,49 +39,36 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     }
     m_artifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     m_environment = jsonValue.GetObject("Environment");
-
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogsConfig"))
   {
     m_logsConfig = jsonValue.GetObject("LogsConfig");
-
     m_logsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryArtifacts"))
   {
     Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("SecondaryArtifacts");
@@ -107,7 +78,6 @@ AwsCodeBuildProjectDetails& AwsCodeBuildProjectDetails::operator =(JsonView json
     }
     m_secondaryArtifactsHasBeenSet = true;
   }
-
   return *this;
 }
 

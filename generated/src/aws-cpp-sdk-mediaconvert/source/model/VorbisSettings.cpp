@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VorbisSettings::VorbisSettings() : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_vbrQuality(0),
-    m_vbrQualityHasBeenSet(false)
-{
-}
-
 VorbisSettings::VorbisSettings(JsonView jsonValue)
-  : VorbisSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ VorbisSettings& VorbisSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channels"))
   {
     m_channels = jsonValue.GetInteger("channels");
-
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vbrQuality"))
   {
     m_vbrQuality = jsonValue.GetInteger("vbrQuality");
-
     m_vbrQualityHasBeenSet = true;
   }
-
   return *this;
 }
 

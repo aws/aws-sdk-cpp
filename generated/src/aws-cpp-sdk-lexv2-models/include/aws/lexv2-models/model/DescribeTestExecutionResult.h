@@ -33,7 +33,7 @@ namespace Model
   class DescribeTestExecutionResult
   {
   public:
-    AWS_LEXMODELSV2_API DescribeTestExecutionResult();
+    AWS_LEXMODELSV2_API DescribeTestExecutionResult() = default;
     AWS_LEXMODELSV2_API DescribeTestExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API DescribeTestExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,83 +42,75 @@ namespace Model
     /**
      * <p>The execution Id for the test set execution.</p>
      */
-    inline const Aws::String& GetTestExecutionId() const{ return m_testExecutionId; }
-    inline void SetTestExecutionId(const Aws::String& value) { m_testExecutionId = value; }
-    inline void SetTestExecutionId(Aws::String&& value) { m_testExecutionId = std::move(value); }
-    inline void SetTestExecutionId(const char* value) { m_testExecutionId.assign(value); }
-    inline DescribeTestExecutionResult& WithTestExecutionId(const Aws::String& value) { SetTestExecutionId(value); return *this;}
-    inline DescribeTestExecutionResult& WithTestExecutionId(Aws::String&& value) { SetTestExecutionId(std::move(value)); return *this;}
-    inline DescribeTestExecutionResult& WithTestExecutionId(const char* value) { SetTestExecutionId(value); return *this;}
+    inline const Aws::String& GetTestExecutionId() const { return m_testExecutionId; }
+    template<typename TestExecutionIdT = Aws::String>
+    void SetTestExecutionId(TestExecutionIdT&& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = std::forward<TestExecutionIdT>(value); }
+    template<typename TestExecutionIdT = Aws::String>
+    DescribeTestExecutionResult& WithTestExecutionId(TestExecutionIdT&& value) { SetTestExecutionId(std::forward<TestExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The execution creation date and time for the test set execution.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline DescribeTestExecutionResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline DescribeTestExecutionResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    DescribeTestExecutionResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time of the last update for the execution.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTime = std::move(value); }
-    inline DescribeTestExecutionResult& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline DescribeTestExecutionResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    DescribeTestExecutionResult& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test execution status for the test execution.</p>
      */
-    inline const TestExecutionStatus& GetTestExecutionStatus() const{ return m_testExecutionStatus; }
-    inline void SetTestExecutionStatus(const TestExecutionStatus& value) { m_testExecutionStatus = value; }
-    inline void SetTestExecutionStatus(TestExecutionStatus&& value) { m_testExecutionStatus = std::move(value); }
-    inline DescribeTestExecutionResult& WithTestExecutionStatus(const TestExecutionStatus& value) { SetTestExecutionStatus(value); return *this;}
-    inline DescribeTestExecutionResult& WithTestExecutionStatus(TestExecutionStatus&& value) { SetTestExecutionStatus(std::move(value)); return *this;}
+    inline TestExecutionStatus GetTestExecutionStatus() const { return m_testExecutionStatus; }
+    inline void SetTestExecutionStatus(TestExecutionStatus value) { m_testExecutionStatusHasBeenSet = true; m_testExecutionStatus = value; }
+    inline DescribeTestExecutionResult& WithTestExecutionStatus(TestExecutionStatus value) { SetTestExecutionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set Id for the test set execution.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetId.assign(value); }
-    inline DescribeTestExecutionResult& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline DescribeTestExecutionResult& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline DescribeTestExecutionResult& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    DescribeTestExecutionResult& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test set name of the test set execution.</p>
      */
-    inline const Aws::String& GetTestSetName() const{ return m_testSetName; }
-    inline void SetTestSetName(const Aws::String& value) { m_testSetName = value; }
-    inline void SetTestSetName(Aws::String&& value) { m_testSetName = std::move(value); }
-    inline void SetTestSetName(const char* value) { m_testSetName.assign(value); }
-    inline DescribeTestExecutionResult& WithTestSetName(const Aws::String& value) { SetTestSetName(value); return *this;}
-    inline DescribeTestExecutionResult& WithTestSetName(Aws::String&& value) { SetTestSetName(std::move(value)); return *this;}
-    inline DescribeTestExecutionResult& WithTestSetName(const char* value) { SetTestSetName(value); return *this;}
+    inline const Aws::String& GetTestSetName() const { return m_testSetName; }
+    template<typename TestSetNameT = Aws::String>
+    void SetTestSetName(TestSetNameT&& value) { m_testSetNameHasBeenSet = true; m_testSetName = std::forward<TestSetNameT>(value); }
+    template<typename TestSetNameT = Aws::String>
+    DescribeTestExecutionResult& WithTestSetName(TestSetNameT&& value) { SetTestSetName(std::forward<TestSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target bot for the test set execution details.</p>
      */
-    inline const TestExecutionTarget& GetTarget() const{ return m_target; }
-    inline void SetTarget(const TestExecutionTarget& value) { m_target = value; }
-    inline void SetTarget(TestExecutionTarget&& value) { m_target = std::move(value); }
-    inline DescribeTestExecutionResult& WithTarget(const TestExecutionTarget& value) { SetTarget(value); return *this;}
-    inline DescribeTestExecutionResult& WithTarget(TestExecutionTarget&& value) { SetTarget(std::move(value)); return *this;}
+    inline const TestExecutionTarget& GetTarget() const { return m_target; }
+    template<typename TargetT = TestExecutionTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = TestExecutionTarget>
+    DescribeTestExecutionResult& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,71 +120,75 @@ namespace Model
      * Runtime API is used. Whereas for non-streaming, <code>RecognizeUtterance</code>
      * and <code>RecognizeText</code> Amazon Lex Runtime API is used.</p>
      */
-    inline const TestExecutionApiMode& GetApiMode() const{ return m_apiMode; }
-    inline void SetApiMode(const TestExecutionApiMode& value) { m_apiMode = value; }
-    inline void SetApiMode(TestExecutionApiMode&& value) { m_apiMode = std::move(value); }
-    inline DescribeTestExecutionResult& WithApiMode(const TestExecutionApiMode& value) { SetApiMode(value); return *this;}
-    inline DescribeTestExecutionResult& WithApiMode(TestExecutionApiMode&& value) { SetApiMode(std::move(value)); return *this;}
+    inline TestExecutionApiMode GetApiMode() const { return m_apiMode; }
+    inline void SetApiMode(TestExecutionApiMode value) { m_apiModeHasBeenSet = true; m_apiMode = value; }
+    inline DescribeTestExecutionResult& WithApiMode(TestExecutionApiMode value) { SetApiMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether test set is audio or text.</p>
      */
-    inline const TestExecutionModality& GetTestExecutionModality() const{ return m_testExecutionModality; }
-    inline void SetTestExecutionModality(const TestExecutionModality& value) { m_testExecutionModality = value; }
-    inline void SetTestExecutionModality(TestExecutionModality&& value) { m_testExecutionModality = std::move(value); }
-    inline DescribeTestExecutionResult& WithTestExecutionModality(const TestExecutionModality& value) { SetTestExecutionModality(value); return *this;}
-    inline DescribeTestExecutionResult& WithTestExecutionModality(TestExecutionModality&& value) { SetTestExecutionModality(std::move(value)); return *this;}
+    inline TestExecutionModality GetTestExecutionModality() const { return m_testExecutionModality; }
+    inline void SetTestExecutionModality(TestExecutionModality value) { m_testExecutionModalityHasBeenSet = true; m_testExecutionModality = value; }
+    inline DescribeTestExecutionResult& WithTestExecutionModality(TestExecutionModality value) { SetTestExecutionModality(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reasons for the failure of the test set execution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
-    inline void SetFailureReasons(const Aws::Vector<Aws::String>& value) { m_failureReasons = value; }
-    inline void SetFailureReasons(Aws::Vector<Aws::String>&& value) { m_failureReasons = std::move(value); }
-    inline DescribeTestExecutionResult& WithFailureReasons(const Aws::Vector<Aws::String>& value) { SetFailureReasons(value); return *this;}
-    inline DescribeTestExecutionResult& WithFailureReasons(Aws::Vector<Aws::String>&& value) { SetFailureReasons(std::move(value)); return *this;}
-    inline DescribeTestExecutionResult& AddFailureReasons(const Aws::String& value) { m_failureReasons.push_back(value); return *this; }
-    inline DescribeTestExecutionResult& AddFailureReasons(Aws::String&& value) { m_failureReasons.push_back(std::move(value)); return *this; }
-    inline DescribeTestExecutionResult& AddFailureReasons(const char* value) { m_failureReasons.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFailureReasons() const { return m_failureReasons; }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    void SetFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::forward<FailureReasonsT>(value); }
+    template<typename FailureReasonsT = Aws::Vector<Aws::String>>
+    DescribeTestExecutionResult& WithFailureReasons(FailureReasonsT&& value) { SetFailureReasons(std::forward<FailureReasonsT>(value)); return *this;}
+    template<typename FailureReasonsT = Aws::String>
+    DescribeTestExecutionResult& AddFailureReasons(FailureReasonsT&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTestExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTestExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTestExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTestExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_testExecutionId;
+    bool m_testExecutionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
-    TestExecutionStatus m_testExecutionStatus;
+    TestExecutionStatus m_testExecutionStatus{TestExecutionStatus::NOT_SET};
+    bool m_testExecutionStatusHasBeenSet = false;
 
     Aws::String m_testSetId;
+    bool m_testSetIdHasBeenSet = false;
 
     Aws::String m_testSetName;
+    bool m_testSetNameHasBeenSet = false;
 
     TestExecutionTarget m_target;
+    bool m_targetHasBeenSet = false;
 
-    TestExecutionApiMode m_apiMode;
+    TestExecutionApiMode m_apiMode{TestExecutionApiMode::NOT_SET};
+    bool m_apiModeHasBeenSet = false;
 
-    TestExecutionModality m_testExecutionModality;
+    TestExecutionModality m_testExecutionModality{TestExecutionModality::NOT_SET};
+    bool m_testExecutionModalityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_failureReasons;
+    bool m_failureReasonsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

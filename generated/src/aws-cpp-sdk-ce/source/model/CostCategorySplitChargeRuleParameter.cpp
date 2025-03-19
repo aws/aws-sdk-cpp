@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategorySplitChargeRuleParameter::CostCategorySplitChargeRuleParameter() : 
-    m_type(CostCategorySplitChargeRuleParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 CostCategorySplitChargeRuleParameter::CostCategorySplitChargeRuleParameter(JsonView jsonValue)
-  : CostCategorySplitChargeRuleParameter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CostCategorySplitChargeRuleParameter& CostCategorySplitChargeRuleParameter::oper
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CostCategorySplitChargeRuleParameterTypeMapper::GetCostCategorySplitChargeRuleParameterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ CostCategorySplitChargeRuleParameter& CostCategorySplitChargeRuleParameter::oper
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

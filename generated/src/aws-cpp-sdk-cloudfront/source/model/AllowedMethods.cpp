@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-AllowedMethods::AllowedMethods() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_cachedMethodsHasBeenSet(false)
-{
-}
-
 AllowedMethods::AllowedMethods(const XmlNode& xmlNode)
-  : AllowedMethods()
 {
   *this = xmlNode;
 }
@@ -50,6 +41,7 @@ AllowedMethods& AllowedMethods::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Method");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(MethodMapper::GetMethodForName(StringUtils::Trim(itemsMember.GetText().c_str())));

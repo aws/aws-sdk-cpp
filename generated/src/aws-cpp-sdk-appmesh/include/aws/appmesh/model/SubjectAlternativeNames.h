@@ -32,7 +32,7 @@ namespace Model
   class SubjectAlternativeNames
   {
   public:
-    AWS_APPMESH_API SubjectAlternativeNames();
+    AWS_APPMESH_API SubjectAlternativeNames() = default;
     AWS_APPMESH_API SubjectAlternativeNames(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API SubjectAlternativeNames& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An object that represents the criteria for determining a SANs match.</p>
      */
-    inline const SubjectAlternativeNameMatchers& GetMatch() const{ return m_match; }
+    inline const SubjectAlternativeNameMatchers& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const SubjectAlternativeNameMatchers& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(SubjectAlternativeNameMatchers&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline SubjectAlternativeNames& WithMatch(const SubjectAlternativeNameMatchers& value) { SetMatch(value); return *this;}
-    inline SubjectAlternativeNames& WithMatch(SubjectAlternativeNameMatchers&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = SubjectAlternativeNameMatchers>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = SubjectAlternativeNameMatchers>
+    SubjectAlternativeNames& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class GetRotationRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API GetRotationRequest();
+    AWS_SSMCONTACTS_API GetRotationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve
      * information about.</p>
      */
-    inline const Aws::String& GetRotationId() const{ return m_rotationId; }
+    inline const Aws::String& GetRotationId() const { return m_rotationId; }
     inline bool RotationIdHasBeenSet() const { return m_rotationIdHasBeenSet; }
-    inline void SetRotationId(const Aws::String& value) { m_rotationIdHasBeenSet = true; m_rotationId = value; }
-    inline void SetRotationId(Aws::String&& value) { m_rotationIdHasBeenSet = true; m_rotationId = std::move(value); }
-    inline void SetRotationId(const char* value) { m_rotationIdHasBeenSet = true; m_rotationId.assign(value); }
-    inline GetRotationRequest& WithRotationId(const Aws::String& value) { SetRotationId(value); return *this;}
-    inline GetRotationRequest& WithRotationId(Aws::String&& value) { SetRotationId(std::move(value)); return *this;}
-    inline GetRotationRequest& WithRotationId(const char* value) { SetRotationId(value); return *this;}
+    template<typename RotationIdT = Aws::String>
+    void SetRotationId(RotationIdT&& value) { m_rotationIdHasBeenSet = true; m_rotationId = std::forward<RotationIdT>(value); }
+    template<typename RotationIdT = Aws::String>
+    GetRotationRequest& WithRotationId(RotationIdT&& value) { SetRotationId(std::forward<RotationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,25 +18,7 @@ namespace SSM
 namespace Model
 {
 
-BaselineOverride::BaselineOverride() : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_globalFiltersHasBeenSet(false),
-    m_approvalRulesHasBeenSet(false),
-    m_approvedPatchesHasBeenSet(false),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesComplianceLevelHasBeenSet(false),
-    m_rejectedPatchesHasBeenSet(false),
-    m_rejectedPatchesAction(PatchAction::NOT_SET),
-    m_rejectedPatchesActionHasBeenSet(false),
-    m_approvedPatchesEnableNonSecurity(false),
-    m_approvedPatchesEnableNonSecurityHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 BaselineOverride::BaselineOverride(JsonView jsonValue)
-  : BaselineOverride()
 {
   *this = jsonValue;
 }
@@ -46,24 +28,18 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalFilters"))
   {
     m_globalFilters = jsonValue.GetObject("GlobalFilters");
-
     m_globalFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovalRules"))
   {
     m_approvalRules = jsonValue.GetObject("ApprovalRules");
-
     m_approvalRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedPatches"))
   {
     Aws::Utils::Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
@@ -73,14 +49,11 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
     }
     m_approvedPatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedPatchesComplianceLevel"))
   {
     m_approvedPatchesComplianceLevel = PatchComplianceLevelMapper::GetPatchComplianceLevelForName(jsonValue.GetString("ApprovedPatchesComplianceLevel"));
-
     m_approvedPatchesComplianceLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RejectedPatches"))
   {
     Aws::Utils::Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
@@ -90,21 +63,16 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
     }
     m_rejectedPatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RejectedPatchesAction"))
   {
     m_rejectedPatchesAction = PatchActionMapper::GetPatchActionForName(jsonValue.GetString("RejectedPatchesAction"));
-
     m_rejectedPatchesActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovedPatchesEnableNonSecurity"))
   {
     m_approvedPatchesEnableNonSecurity = jsonValue.GetBool("ApprovedPatchesEnableNonSecurity");
-
     m_approvedPatchesEnableNonSecurityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
@@ -114,7 +82,6 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

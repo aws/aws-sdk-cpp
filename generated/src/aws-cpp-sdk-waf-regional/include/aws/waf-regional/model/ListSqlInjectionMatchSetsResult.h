@@ -35,7 +35,7 @@ namespace Model
   class ListSqlInjectionMatchSetsResult
   {
   public:
-    AWS_WAFREGIONAL_API ListSqlInjectionMatchSetsResult();
+    AWS_WAFREGIONAL_API ListSqlInjectionMatchSetsResult() = default;
     AWS_WAFREGIONAL_API ListSqlInjectionMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API ListSqlInjectionMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,45 +49,44 @@ namespace Model
      * specify the <code>NextMarker</code> value from the response in the
      * <code>NextMarker</code> value in the next request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListSqlInjectionMatchSetsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListSqlInjectionMatchSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListSqlInjectionMatchSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListSqlInjectionMatchSetsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <a>SqlInjectionMatchSetSummary</a> objects.</p>
      */
-    inline const Aws::Vector<SqlInjectionMatchSetSummary>& GetSqlInjectionMatchSets() const{ return m_sqlInjectionMatchSets; }
-    inline void SetSqlInjectionMatchSets(const Aws::Vector<SqlInjectionMatchSetSummary>& value) { m_sqlInjectionMatchSets = value; }
-    inline void SetSqlInjectionMatchSets(Aws::Vector<SqlInjectionMatchSetSummary>&& value) { m_sqlInjectionMatchSets = std::move(value); }
-    inline ListSqlInjectionMatchSetsResult& WithSqlInjectionMatchSets(const Aws::Vector<SqlInjectionMatchSetSummary>& value) { SetSqlInjectionMatchSets(value); return *this;}
-    inline ListSqlInjectionMatchSetsResult& WithSqlInjectionMatchSets(Aws::Vector<SqlInjectionMatchSetSummary>&& value) { SetSqlInjectionMatchSets(std::move(value)); return *this;}
-    inline ListSqlInjectionMatchSetsResult& AddSqlInjectionMatchSets(const SqlInjectionMatchSetSummary& value) { m_sqlInjectionMatchSets.push_back(value); return *this; }
-    inline ListSqlInjectionMatchSetsResult& AddSqlInjectionMatchSets(SqlInjectionMatchSetSummary&& value) { m_sqlInjectionMatchSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SqlInjectionMatchSetSummary>& GetSqlInjectionMatchSets() const { return m_sqlInjectionMatchSets; }
+    template<typename SqlInjectionMatchSetsT = Aws::Vector<SqlInjectionMatchSetSummary>>
+    void SetSqlInjectionMatchSets(SqlInjectionMatchSetsT&& value) { m_sqlInjectionMatchSetsHasBeenSet = true; m_sqlInjectionMatchSets = std::forward<SqlInjectionMatchSetsT>(value); }
+    template<typename SqlInjectionMatchSetsT = Aws::Vector<SqlInjectionMatchSetSummary>>
+    ListSqlInjectionMatchSetsResult& WithSqlInjectionMatchSets(SqlInjectionMatchSetsT&& value) { SetSqlInjectionMatchSets(std::forward<SqlInjectionMatchSetsT>(value)); return *this;}
+    template<typename SqlInjectionMatchSetsT = SqlInjectionMatchSetSummary>
+    ListSqlInjectionMatchSetsResult& AddSqlInjectionMatchSets(SqlInjectionMatchSetsT&& value) { m_sqlInjectionMatchSetsHasBeenSet = true; m_sqlInjectionMatchSets.emplace_back(std::forward<SqlInjectionMatchSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSqlInjectionMatchSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSqlInjectionMatchSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSqlInjectionMatchSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSqlInjectionMatchSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<SqlInjectionMatchSetSummary> m_sqlInjectionMatchSets;
+    bool m_sqlInjectionMatchSetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

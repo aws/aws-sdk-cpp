@@ -30,7 +30,7 @@ namespace Model
   class CreateDomainConfigurationRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API CreateDomainConfigurationRequest();
+    AWS_IOT_API CreateDomainConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
      * <p>The name of the domain configuration. This value must be unique to a
      * region.</p>
      */
-    inline const Aws::String& GetDomainConfigurationName() const{ return m_domainConfigurationName; }
+    inline const Aws::String& GetDomainConfigurationName() const { return m_domainConfigurationName; }
     inline bool DomainConfigurationNameHasBeenSet() const { return m_domainConfigurationNameHasBeenSet; }
-    inline void SetDomainConfigurationName(const Aws::String& value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName = value; }
-    inline void SetDomainConfigurationName(Aws::String&& value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName = std::move(value); }
-    inline void SetDomainConfigurationName(const char* value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName.assign(value); }
-    inline CreateDomainConfigurationRequest& WithDomainConfigurationName(const Aws::String& value) { SetDomainConfigurationName(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithDomainConfigurationName(Aws::String&& value) { SetDomainConfigurationName(std::move(value)); return *this;}
-    inline CreateDomainConfigurationRequest& WithDomainConfigurationName(const char* value) { SetDomainConfigurationName(value); return *this;}
+    template<typename DomainConfigurationNameT = Aws::String>
+    void SetDomainConfigurationName(DomainConfigurationNameT&& value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName = std::forward<DomainConfigurationNameT>(value); }
+    template<typename DomainConfigurationNameT = Aws::String>
+    CreateDomainConfigurationRequest& WithDomainConfigurationName(DomainConfigurationNameT&& value) { SetDomainConfigurationName(std::forward<DomainConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateDomainConfigurationRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateDomainConfigurationRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateDomainConfigurationRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +72,14 @@ namespace Model
      * handshake. Currently you can specify only one certificate ARN. This value is not
      * required for Amazon Web Services-managed domains.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServerCertificateArns() const{ return m_serverCertificateArns; }
+    inline const Aws::Vector<Aws::String>& GetServerCertificateArns() const { return m_serverCertificateArns; }
     inline bool ServerCertificateArnsHasBeenSet() const { return m_serverCertificateArnsHasBeenSet; }
-    inline void SetServerCertificateArns(const Aws::Vector<Aws::String>& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns = value; }
-    inline void SetServerCertificateArns(Aws::Vector<Aws::String>&& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithServerCertificateArns(const Aws::Vector<Aws::String>& value) { SetServerCertificateArns(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithServerCertificateArns(Aws::Vector<Aws::String>&& value) { SetServerCertificateArns(std::move(value)); return *this;}
-    inline CreateDomainConfigurationRequest& AddServerCertificateArns(const Aws::String& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.push_back(value); return *this; }
-    inline CreateDomainConfigurationRequest& AddServerCertificateArns(Aws::String&& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.push_back(std::move(value)); return *this; }
-    inline CreateDomainConfigurationRequest& AddServerCertificateArns(const char* value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.push_back(value); return *this; }
+    template<typename ServerCertificateArnsT = Aws::Vector<Aws::String>>
+    void SetServerCertificateArns(ServerCertificateArnsT&& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns = std::forward<ServerCertificateArnsT>(value); }
+    template<typename ServerCertificateArnsT = Aws::Vector<Aws::String>>
+    CreateDomainConfigurationRequest& WithServerCertificateArns(ServerCertificateArnsT&& value) { SetServerCertificateArns(std::forward<ServerCertificateArnsT>(value)); return *this;}
+    template<typename ServerCertificateArnsT = Aws::String>
+    CreateDomainConfigurationRequest& AddServerCertificateArns(ServerCertificateArnsT&& value) { m_serverCertificateArnsHasBeenSet = true; m_serverCertificateArns.emplace_back(std::forward<ServerCertificateArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,26 +88,24 @@ namespace Model
      * ownership. This certificate must be signed by a public certificate authority.
      * This value is not required for Amazon Web Services-managed domains.</p>
      */
-    inline const Aws::String& GetValidationCertificateArn() const{ return m_validationCertificateArn; }
+    inline const Aws::String& GetValidationCertificateArn() const { return m_validationCertificateArn; }
     inline bool ValidationCertificateArnHasBeenSet() const { return m_validationCertificateArnHasBeenSet; }
-    inline void SetValidationCertificateArn(const Aws::String& value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn = value; }
-    inline void SetValidationCertificateArn(Aws::String&& value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn = std::move(value); }
-    inline void SetValidationCertificateArn(const char* value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn.assign(value); }
-    inline CreateDomainConfigurationRequest& WithValidationCertificateArn(const Aws::String& value) { SetValidationCertificateArn(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithValidationCertificateArn(Aws::String&& value) { SetValidationCertificateArn(std::move(value)); return *this;}
-    inline CreateDomainConfigurationRequest& WithValidationCertificateArn(const char* value) { SetValidationCertificateArn(value); return *this;}
+    template<typename ValidationCertificateArnT = Aws::String>
+    void SetValidationCertificateArn(ValidationCertificateArnT&& value) { m_validationCertificateArnHasBeenSet = true; m_validationCertificateArn = std::forward<ValidationCertificateArnT>(value); }
+    template<typename ValidationCertificateArnT = Aws::String>
+    CreateDomainConfigurationRequest& WithValidationCertificateArn(ValidationCertificateArnT&& value) { SetValidationCertificateArn(std::forward<ValidationCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that specifies the authorization service for a domain.</p>
      */
-    inline const AuthorizerConfig& GetAuthorizerConfig() const{ return m_authorizerConfig; }
+    inline const AuthorizerConfig& GetAuthorizerConfig() const { return m_authorizerConfig; }
     inline bool AuthorizerConfigHasBeenSet() const { return m_authorizerConfigHasBeenSet; }
-    inline void SetAuthorizerConfig(const AuthorizerConfig& value) { m_authorizerConfigHasBeenSet = true; m_authorizerConfig = value; }
-    inline void SetAuthorizerConfig(AuthorizerConfig&& value) { m_authorizerConfigHasBeenSet = true; m_authorizerConfig = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithAuthorizerConfig(const AuthorizerConfig& value) { SetAuthorizerConfig(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithAuthorizerConfig(AuthorizerConfig&& value) { SetAuthorizerConfig(std::move(value)); return *this;}
+    template<typename AuthorizerConfigT = AuthorizerConfig>
+    void SetAuthorizerConfig(AuthorizerConfigT&& value) { m_authorizerConfigHasBeenSet = true; m_authorizerConfig = std::forward<AuthorizerConfigT>(value); }
+    template<typename AuthorizerConfigT = AuthorizerConfig>
+    CreateDomainConfigurationRequest& WithAuthorizerConfig(AuthorizerConfigT&& value) { SetAuthorizerConfig(std::forward<AuthorizerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +114,10 @@ namespace Model
      * Services IoT Core currently supports only the <code>DATA</code> service
      * type.</p> 
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline CreateDomainConfigurationRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
@@ -137,38 +128,38 @@ namespace Model
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
      * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDomainConfigurationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDomainConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDomainConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDomainConfigurationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An object that specifies the TLS configuration for a domain.</p>
      */
-    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+    inline const TlsConfig& GetTlsConfig() const { return m_tlsConfig; }
     inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
-    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
-    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+    template<typename TlsConfigT = TlsConfig>
+    void SetTlsConfig(TlsConfigT&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::forward<TlsConfigT>(value); }
+    template<typename TlsConfigT = TlsConfig>
+    CreateDomainConfigurationRequest& WithTlsConfig(TlsConfigT&& value) { SetTlsConfig(std::forward<TlsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The server certificate configuration.</p>
      */
-    inline const ServerCertificateConfig& GetServerCertificateConfig() const{ return m_serverCertificateConfig; }
+    inline const ServerCertificateConfig& GetServerCertificateConfig() const { return m_serverCertificateConfig; }
     inline bool ServerCertificateConfigHasBeenSet() const { return m_serverCertificateConfigHasBeenSet; }
-    inline void SetServerCertificateConfig(const ServerCertificateConfig& value) { m_serverCertificateConfigHasBeenSet = true; m_serverCertificateConfig = value; }
-    inline void SetServerCertificateConfig(ServerCertificateConfig&& value) { m_serverCertificateConfigHasBeenSet = true; m_serverCertificateConfig = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithServerCertificateConfig(const ServerCertificateConfig& value) { SetServerCertificateConfig(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithServerCertificateConfig(ServerCertificateConfig&& value) { SetServerCertificateConfig(std::move(value)); return *this;}
+    template<typename ServerCertificateConfigT = ServerCertificateConfig>
+    void SetServerCertificateConfig(ServerCertificateConfigT&& value) { m_serverCertificateConfigHasBeenSet = true; m_serverCertificateConfig = std::forward<ServerCertificateConfigT>(value); }
+    template<typename ServerCertificateConfigT = ServerCertificateConfig>
+    CreateDomainConfigurationRequest& WithServerCertificateConfig(ServerCertificateConfigT&& value) { SetServerCertificateConfig(std::forward<ServerCertificateConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,12 +183,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device
      * communication protocols</a>.</p> </li> </ul>
      */
-    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline CreateDomainConfigurationRequest& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
@@ -212,24 +201,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device
      * communication protocols</a>.</p> </li> </ul>
      */
-    inline const ApplicationProtocol& GetApplicationProtocol() const{ return m_applicationProtocol; }
+    inline ApplicationProtocol GetApplicationProtocol() const { return m_applicationProtocol; }
     inline bool ApplicationProtocolHasBeenSet() const { return m_applicationProtocolHasBeenSet; }
-    inline void SetApplicationProtocol(const ApplicationProtocol& value) { m_applicationProtocolHasBeenSet = true; m_applicationProtocol = value; }
-    inline void SetApplicationProtocol(ApplicationProtocol&& value) { m_applicationProtocolHasBeenSet = true; m_applicationProtocol = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithApplicationProtocol(const ApplicationProtocol& value) { SetApplicationProtocol(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithApplicationProtocol(ApplicationProtocol&& value) { SetApplicationProtocol(std::move(value)); return *this;}
+    inline void SetApplicationProtocol(ApplicationProtocol value) { m_applicationProtocolHasBeenSet = true; m_applicationProtocol = value; }
+    inline CreateDomainConfigurationRequest& WithApplicationProtocol(ApplicationProtocol value) { SetApplicationProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that speciﬁes the client certificate conﬁguration for a domain.</p>
      */
-    inline const ClientCertificateConfig& GetClientCertificateConfig() const{ return m_clientCertificateConfig; }
+    inline const ClientCertificateConfig& GetClientCertificateConfig() const { return m_clientCertificateConfig; }
     inline bool ClientCertificateConfigHasBeenSet() const { return m_clientCertificateConfigHasBeenSet; }
-    inline void SetClientCertificateConfig(const ClientCertificateConfig& value) { m_clientCertificateConfigHasBeenSet = true; m_clientCertificateConfig = value; }
-    inline void SetClientCertificateConfig(ClientCertificateConfig&& value) { m_clientCertificateConfigHasBeenSet = true; m_clientCertificateConfig = std::move(value); }
-    inline CreateDomainConfigurationRequest& WithClientCertificateConfig(const ClientCertificateConfig& value) { SetClientCertificateConfig(value); return *this;}
-    inline CreateDomainConfigurationRequest& WithClientCertificateConfig(ClientCertificateConfig&& value) { SetClientCertificateConfig(std::move(value)); return *this;}
+    template<typename ClientCertificateConfigT = ClientCertificateConfig>
+    void SetClientCertificateConfig(ClientCertificateConfigT&& value) { m_clientCertificateConfigHasBeenSet = true; m_clientCertificateConfig = std::forward<ClientCertificateConfigT>(value); }
+    template<typename ClientCertificateConfigT = ClientCertificateConfig>
+    CreateDomainConfigurationRequest& WithClientCertificateConfig(ClientCertificateConfigT&& value) { SetClientCertificateConfig(std::forward<ClientCertificateConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -248,7 +235,7 @@ namespace Model
     AuthorizerConfig m_authorizerConfig;
     bool m_authorizerConfigHasBeenSet = false;
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -260,10 +247,10 @@ namespace Model
     ServerCertificateConfig m_serverCertificateConfig;
     bool m_serverCertificateConfigHasBeenSet = false;
 
-    AuthenticationType m_authenticationType;
+    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
-    ApplicationProtocol m_applicationProtocol;
+    ApplicationProtocol m_applicationProtocol{ApplicationProtocol::NOT_SET};
     bool m_applicationProtocolHasBeenSet = false;
 
     ClientCertificateConfig m_clientCertificateConfig;

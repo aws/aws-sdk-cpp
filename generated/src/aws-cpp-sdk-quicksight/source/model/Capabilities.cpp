@@ -18,46 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Capabilities::Capabilities() : 
-    m_exportToCsv(CapabilityState::NOT_SET),
-    m_exportToCsvHasBeenSet(false),
-    m_exportToExcel(CapabilityState::NOT_SET),
-    m_exportToExcelHasBeenSet(false),
-    m_createAndUpdateThemes(CapabilityState::NOT_SET),
-    m_createAndUpdateThemesHasBeenSet(false),
-    m_addOrRunAnomalyDetectionForAnalyses(CapabilityState::NOT_SET),
-    m_addOrRunAnomalyDetectionForAnalysesHasBeenSet(false),
-    m_shareAnalyses(CapabilityState::NOT_SET),
-    m_shareAnalysesHasBeenSet(false),
-    m_createAndUpdateDatasets(CapabilityState::NOT_SET),
-    m_createAndUpdateDatasetsHasBeenSet(false),
-    m_shareDatasets(CapabilityState::NOT_SET),
-    m_shareDatasetsHasBeenSet(false),
-    m_subscribeDashboardEmailReports(CapabilityState::NOT_SET),
-    m_subscribeDashboardEmailReportsHasBeenSet(false),
-    m_createAndUpdateDashboardEmailReports(CapabilityState::NOT_SET),
-    m_createAndUpdateDashboardEmailReportsHasBeenSet(false),
-    m_shareDashboards(CapabilityState::NOT_SET),
-    m_shareDashboardsHasBeenSet(false),
-    m_createAndUpdateThresholdAlerts(CapabilityState::NOT_SET),
-    m_createAndUpdateThresholdAlertsHasBeenSet(false),
-    m_renameSharedFolders(CapabilityState::NOT_SET),
-    m_renameSharedFoldersHasBeenSet(false),
-    m_createSharedFolders(CapabilityState::NOT_SET),
-    m_createSharedFoldersHasBeenSet(false),
-    m_createAndUpdateDataSources(CapabilityState::NOT_SET),
-    m_createAndUpdateDataSourcesHasBeenSet(false),
-    m_shareDataSources(CapabilityState::NOT_SET),
-    m_shareDataSourcesHasBeenSet(false),
-    m_viewAccountSPICECapacity(CapabilityState::NOT_SET),
-    m_viewAccountSPICECapacityHasBeenSet(false),
-    m_createSPICEDataset(CapabilityState::NOT_SET),
-    m_createSPICEDatasetHasBeenSet(false)
-{
-}
-
 Capabilities::Capabilities(JsonView jsonValue)
-  : Capabilities()
 {
   *this = jsonValue;
 }
@@ -67,122 +28,88 @@ Capabilities& Capabilities::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportToCsv"))
   {
     m_exportToCsv = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToCsv"));
-
     m_exportToCsvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportToExcel"))
   {
     m_exportToExcel = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExportToExcel"));
-
     m_exportToExcelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateAndUpdateThemes"))
   {
     m_createAndUpdateThemes = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateThemes"));
-
     m_createAndUpdateThemesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddOrRunAnomalyDetectionForAnalyses"))
   {
     m_addOrRunAnomalyDetectionForAnalyses = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AddOrRunAnomalyDetectionForAnalyses"));
-
     m_addOrRunAnomalyDetectionForAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareAnalyses"))
   {
     m_shareAnalyses = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareAnalyses"));
-
     m_shareAnalysesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateAndUpdateDatasets"))
   {
     m_createAndUpdateDatasets = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateDatasets"));
-
     m_createAndUpdateDatasetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareDatasets"))
   {
     m_shareDatasets = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDatasets"));
-
     m_shareDatasetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscribeDashboardEmailReports"))
   {
     m_subscribeDashboardEmailReports = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SubscribeDashboardEmailReports"));
-
     m_subscribeDashboardEmailReportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateAndUpdateDashboardEmailReports"))
   {
     m_createAndUpdateDashboardEmailReports = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateDashboardEmailReports"));
-
     m_createAndUpdateDashboardEmailReportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareDashboards"))
   {
     m_shareDashboards = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDashboards"));
-
     m_shareDashboardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateAndUpdateThresholdAlerts"))
   {
     m_createAndUpdateThresholdAlerts = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateThresholdAlerts"));
-
     m_createAndUpdateThresholdAlertsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenameSharedFolders"))
   {
     m_renameSharedFolders = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("RenameSharedFolders"));
-
     m_renameSharedFoldersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateSharedFolders"))
   {
     m_createSharedFolders = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSharedFolders"));
-
     m_createSharedFoldersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateAndUpdateDataSources"))
   {
     m_createAndUpdateDataSources = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateDataSources"));
-
     m_createAndUpdateDataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareDataSources"))
   {
     m_shareDataSources = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDataSources"));
-
     m_shareDataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewAccountSPICECapacity"))
   {
     m_viewAccountSPICECapacity = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ViewAccountSPICECapacity"));
-
     m_viewAccountSPICECapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateSPICEDataset"))
   {
     m_createSPICEDataset = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSPICEDataset"));
-
     m_createSPICEDatasetHasBeenSet = true;
   }
-
   return *this;
 }
 

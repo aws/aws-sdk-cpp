@@ -34,7 +34,7 @@ namespace Model
   class ListenerTimeout
   {
   public:
-    AWS_APPMESH_API ListenerTimeout();
+    AWS_APPMESH_API ListenerTimeout() = default;
     AWS_APPMESH_API ListenerTimeout(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ListenerTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p>An object that represents types of timeouts. </p>
      */
-    inline const GrpcTimeout& GetGrpc() const{ return m_grpc; }
+    inline const GrpcTimeout& GetGrpc() const { return m_grpc; }
     inline bool GrpcHasBeenSet() const { return m_grpcHasBeenSet; }
-    inline void SetGrpc(const GrpcTimeout& value) { m_grpcHasBeenSet = true; m_grpc = value; }
-    inline void SetGrpc(GrpcTimeout&& value) { m_grpcHasBeenSet = true; m_grpc = std::move(value); }
-    inline ListenerTimeout& WithGrpc(const GrpcTimeout& value) { SetGrpc(value); return *this;}
-    inline ListenerTimeout& WithGrpc(GrpcTimeout&& value) { SetGrpc(std::move(value)); return *this;}
+    template<typename GrpcT = GrpcTimeout>
+    void SetGrpc(GrpcT&& value) { m_grpcHasBeenSet = true; m_grpc = std::forward<GrpcT>(value); }
+    template<typename GrpcT = GrpcTimeout>
+    ListenerTimeout& WithGrpc(GrpcT&& value) { SetGrpc(std::forward<GrpcT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents types of timeouts. </p>
      */
-    inline const HttpTimeout& GetHttp() const{ return m_http; }
+    inline const HttpTimeout& GetHttp() const { return m_http; }
     inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
-    inline void SetHttp(const HttpTimeout& value) { m_httpHasBeenSet = true; m_http = value; }
-    inline void SetHttp(HttpTimeout&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
-    inline ListenerTimeout& WithHttp(const HttpTimeout& value) { SetHttp(value); return *this;}
-    inline ListenerTimeout& WithHttp(HttpTimeout&& value) { SetHttp(std::move(value)); return *this;}
+    template<typename HttpT = HttpTimeout>
+    void SetHttp(HttpT&& value) { m_httpHasBeenSet = true; m_http = std::forward<HttpT>(value); }
+    template<typename HttpT = HttpTimeout>
+    ListenerTimeout& WithHttp(HttpT&& value) { SetHttp(std::forward<HttpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents types of timeouts. </p>
      */
-    inline const HttpTimeout& GetHttp2() const{ return m_http2; }
+    inline const HttpTimeout& GetHttp2() const { return m_http2; }
     inline bool Http2HasBeenSet() const { return m_http2HasBeenSet; }
-    inline void SetHttp2(const HttpTimeout& value) { m_http2HasBeenSet = true; m_http2 = value; }
-    inline void SetHttp2(HttpTimeout&& value) { m_http2HasBeenSet = true; m_http2 = std::move(value); }
-    inline ListenerTimeout& WithHttp2(const HttpTimeout& value) { SetHttp2(value); return *this;}
-    inline ListenerTimeout& WithHttp2(HttpTimeout&& value) { SetHttp2(std::move(value)); return *this;}
+    template<typename Http2T = HttpTimeout>
+    void SetHttp2(Http2T&& value) { m_http2HasBeenSet = true; m_http2 = std::forward<Http2T>(value); }
+    template<typename Http2T = HttpTimeout>
+    ListenerTimeout& WithHttp2(Http2T&& value) { SetHttp2(std::forward<Http2T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents types of timeouts. </p>
      */
-    inline const TcpTimeout& GetTcp() const{ return m_tcp; }
+    inline const TcpTimeout& GetTcp() const { return m_tcp; }
     inline bool TcpHasBeenSet() const { return m_tcpHasBeenSet; }
-    inline void SetTcp(const TcpTimeout& value) { m_tcpHasBeenSet = true; m_tcp = value; }
-    inline void SetTcp(TcpTimeout&& value) { m_tcpHasBeenSet = true; m_tcp = std::move(value); }
-    inline ListenerTimeout& WithTcp(const TcpTimeout& value) { SetTcp(value); return *this;}
-    inline ListenerTimeout& WithTcp(TcpTimeout&& value) { SetTcp(std::move(value)); return *this;}
+    template<typename TcpT = TcpTimeout>
+    void SetTcp(TcpT&& value) { m_tcpHasBeenSet = true; m_tcp = std::forward<TcpT>(value); }
+    template<typename TcpT = TcpTimeout>
+    ListenerTimeout& WithTcp(TcpT&& value) { SetTcp(std::forward<TcpT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-InvalidChangeBatch::InvalidChangeBatch() : 
-    m_messagesHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidChangeBatch::InvalidChangeBatch(const XmlNode& xmlNode)
-  : InvalidChangeBatch()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ InvalidChangeBatch& InvalidChangeBatch::operator =(const XmlNode& xmlNode)
     if(!messagesNode.IsNull())
     {
       XmlNode messagesMember = messagesNode.FirstChild("Message");
+      m_messagesHasBeenSet = !messagesMember.IsNull();
       while(!messagesMember.IsNull())
       {
         m_messages.push_back(messagesMember.GetText());

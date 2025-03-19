@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartNotebookInstanceRequest::StartNotebookInstanceRequest() : 
-    m_notebookInstanceNameHasBeenSet(false)
-{
-}
-
 Aws::String StartNotebookInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

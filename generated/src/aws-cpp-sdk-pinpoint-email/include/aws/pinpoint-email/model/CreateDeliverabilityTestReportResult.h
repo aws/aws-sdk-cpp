@@ -34,7 +34,7 @@ namespace Model
   class CreateDeliverabilityTestReportResult
   {
   public:
-    AWS_PINPOINTEMAIL_API CreateDeliverabilityTestReportResult();
+    AWS_PINPOINTEMAIL_API CreateDeliverabilityTestReportResult() = default;
     AWS_PINPOINTEMAIL_API CreateDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API CreateDeliverabilityTestReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
     /**
      * <p>A unique string that identifies the predictive inbox placement test.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
-    inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportId.assign(value); }
-    inline CreateDeliverabilityTestReportResult& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline CreateDeliverabilityTestReportResult& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline CreateDeliverabilityTestReportResult& WithReportId(const char* value) { SetReportId(value); return *this;}
+    inline const Aws::String& GetReportId() const { return m_reportId; }
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    CreateDeliverabilityTestReportResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,30 +59,29 @@ namespace Model
      * finished, and you can use the <code>GetDeliverabilityTestReport</code> to view
      * the results of the test.</p>
      */
-    inline const DeliverabilityTestStatus& GetDeliverabilityTestStatus() const{ return m_deliverabilityTestStatus; }
-    inline void SetDeliverabilityTestStatus(const DeliverabilityTestStatus& value) { m_deliverabilityTestStatus = value; }
-    inline void SetDeliverabilityTestStatus(DeliverabilityTestStatus&& value) { m_deliverabilityTestStatus = std::move(value); }
-    inline CreateDeliverabilityTestReportResult& WithDeliverabilityTestStatus(const DeliverabilityTestStatus& value) { SetDeliverabilityTestStatus(value); return *this;}
-    inline CreateDeliverabilityTestReportResult& WithDeliverabilityTestStatus(DeliverabilityTestStatus&& value) { SetDeliverabilityTestStatus(std::move(value)); return *this;}
+    inline DeliverabilityTestStatus GetDeliverabilityTestStatus() const { return m_deliverabilityTestStatus; }
+    inline void SetDeliverabilityTestStatus(DeliverabilityTestStatus value) { m_deliverabilityTestStatusHasBeenSet = true; m_deliverabilityTestStatus = value; }
+    inline CreateDeliverabilityTestReportResult& WithDeliverabilityTestStatus(DeliverabilityTestStatus value) { SetDeliverabilityTestStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeliverabilityTestReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeliverabilityTestReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeliverabilityTestReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeliverabilityTestReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reportId;
+    bool m_reportIdHasBeenSet = false;
 
-    DeliverabilityTestStatus m_deliverabilityTestStatus;
+    DeliverabilityTestStatus m_deliverabilityTestStatus{DeliverabilityTestStatus::NOT_SET};
+    bool m_deliverabilityTestStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

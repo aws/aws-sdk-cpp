@@ -31,7 +31,7 @@ namespace Model
   class GetTableResult
   {
   public:
-    AWS_S3TABLES_API GetTableResult();
+    AWS_S3TABLES_API GetTableResult() = default;
     AWS_S3TABLES_API GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,218 +40,208 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetTableResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetTableResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetTableResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetTableResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the table.</p>
      */
-    inline const TableType& GetType() const{ return m_type; }
-    inline void SetType(const TableType& value) { m_type = value; }
-    inline void SetType(TableType&& value) { m_type = std::move(value); }
-    inline GetTableResult& WithType(const TableType& value) { SetType(value); return *this;}
-    inline GetTableResult& WithType(TableType&& value) { SetType(std::move(value)); return *this;}
+    inline TableType GetType() const { return m_type; }
+    inline void SetType(TableType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetTableResult& WithType(TableType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the table.</p>
      */
-    inline const Aws::String& GetTableARN() const{ return m_tableARN; }
-    inline void SetTableARN(const Aws::String& value) { m_tableARN = value; }
-    inline void SetTableARN(Aws::String&& value) { m_tableARN = std::move(value); }
-    inline void SetTableARN(const char* value) { m_tableARN.assign(value); }
-    inline GetTableResult& WithTableARN(const Aws::String& value) { SetTableARN(value); return *this;}
-    inline GetTableResult& WithTableARN(Aws::String&& value) { SetTableARN(std::move(value)); return *this;}
-    inline GetTableResult& WithTableARN(const char* value) { SetTableARN(value); return *this;}
+    inline const Aws::String& GetTableARN() const { return m_tableARN; }
+    template<typename TableARNT = Aws::String>
+    void SetTableARN(TableARNT&& value) { m_tableARNHasBeenSet = true; m_tableARN = std::forward<TableARNT>(value); }
+    template<typename TableARNT = Aws::String>
+    GetTableResult& WithTableARN(TableARNT&& value) { SetTableARN(std::forward<TableARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace associated with the table.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Aws::Vector<Aws::String>& value) { m_namespace = value; }
-    inline void SetNamespace(Aws::Vector<Aws::String>&& value) { m_namespace = std::move(value); }
-    inline GetTableResult& WithNamespace(const Aws::Vector<Aws::String>& value) { SetNamespace(value); return *this;}
-    inline GetTableResult& WithNamespace(Aws::Vector<Aws::String>&& value) { SetNamespace(std::move(value)); return *this;}
-    inline GetTableResult& AddNamespace(const Aws::String& value) { m_namespace.push_back(value); return *this; }
-    inline GetTableResult& AddNamespace(Aws::String&& value) { m_namespace.push_back(std::move(value)); return *this; }
-    inline GetTableResult& AddNamespace(const char* value) { m_namespace.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Aws::Vector<Aws::String>>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::Vector<Aws::String>>
+    GetTableResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
+    template<typename NamespaceT = Aws::String>
+    GetTableResult& AddNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace.emplace_back(std::forward<NamespaceT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The version token of the table.</p>
      */
-    inline const Aws::String& GetVersionToken() const{ return m_versionToken; }
-    inline void SetVersionToken(const Aws::String& value) { m_versionToken = value; }
-    inline void SetVersionToken(Aws::String&& value) { m_versionToken = std::move(value); }
-    inline void SetVersionToken(const char* value) { m_versionToken.assign(value); }
-    inline GetTableResult& WithVersionToken(const Aws::String& value) { SetVersionToken(value); return *this;}
-    inline GetTableResult& WithVersionToken(Aws::String&& value) { SetVersionToken(std::move(value)); return *this;}
-    inline GetTableResult& WithVersionToken(const char* value) { SetVersionToken(value); return *this;}
+    inline const Aws::String& GetVersionToken() const { return m_versionToken; }
+    template<typename VersionTokenT = Aws::String>
+    void SetVersionToken(VersionTokenT&& value) { m_versionTokenHasBeenSet = true; m_versionToken = std::forward<VersionTokenT>(value); }
+    template<typename VersionTokenT = Aws::String>
+    GetTableResult& WithVersionToken(VersionTokenT&& value) { SetVersionToken(std::forward<VersionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata location of the table.</p>
      */
-    inline const Aws::String& GetMetadataLocation() const{ return m_metadataLocation; }
-    inline void SetMetadataLocation(const Aws::String& value) { m_metadataLocation = value; }
-    inline void SetMetadataLocation(Aws::String&& value) { m_metadataLocation = std::move(value); }
-    inline void SetMetadataLocation(const char* value) { m_metadataLocation.assign(value); }
-    inline GetTableResult& WithMetadataLocation(const Aws::String& value) { SetMetadataLocation(value); return *this;}
-    inline GetTableResult& WithMetadataLocation(Aws::String&& value) { SetMetadataLocation(std::move(value)); return *this;}
-    inline GetTableResult& WithMetadataLocation(const char* value) { SetMetadataLocation(value); return *this;}
+    inline const Aws::String& GetMetadataLocation() const { return m_metadataLocation; }
+    template<typename MetadataLocationT = Aws::String>
+    void SetMetadataLocation(MetadataLocationT&& value) { m_metadataLocationHasBeenSet = true; m_metadataLocation = std::forward<MetadataLocationT>(value); }
+    template<typename MetadataLocationT = Aws::String>
+    GetTableResult& WithMetadataLocation(MetadataLocationT&& value) { SetMetadataLocation(std::forward<MetadataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The warehouse location of the table.</p>
      */
-    inline const Aws::String& GetWarehouseLocation() const{ return m_warehouseLocation; }
-    inline void SetWarehouseLocation(const Aws::String& value) { m_warehouseLocation = value; }
-    inline void SetWarehouseLocation(Aws::String&& value) { m_warehouseLocation = std::move(value); }
-    inline void SetWarehouseLocation(const char* value) { m_warehouseLocation.assign(value); }
-    inline GetTableResult& WithWarehouseLocation(const Aws::String& value) { SetWarehouseLocation(value); return *this;}
-    inline GetTableResult& WithWarehouseLocation(Aws::String&& value) { SetWarehouseLocation(std::move(value)); return *this;}
-    inline GetTableResult& WithWarehouseLocation(const char* value) { SetWarehouseLocation(value); return *this;}
+    inline const Aws::String& GetWarehouseLocation() const { return m_warehouseLocation; }
+    template<typename WarehouseLocationT = Aws::String>
+    void SetWarehouseLocation(WarehouseLocationT&& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = std::forward<WarehouseLocationT>(value); }
+    template<typename WarehouseLocationT = Aws::String>
+    GetTableResult& WithWarehouseLocation(WarehouseLocationT&& value) { SetWarehouseLocation(std::forward<WarehouseLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the table bucket was created at.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetTableResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetTableResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetTableResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the account that created the table.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetTableResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetTableResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetTableResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetTableResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service that manages the table.</p>
      */
-    inline const Aws::String& GetManagedByService() const{ return m_managedByService; }
-    inline void SetManagedByService(const Aws::String& value) { m_managedByService = value; }
-    inline void SetManagedByService(Aws::String&& value) { m_managedByService = std::move(value); }
-    inline void SetManagedByService(const char* value) { m_managedByService.assign(value); }
-    inline GetTableResult& WithManagedByService(const Aws::String& value) { SetManagedByService(value); return *this;}
-    inline GetTableResult& WithManagedByService(Aws::String&& value) { SetManagedByService(std::move(value)); return *this;}
-    inline GetTableResult& WithManagedByService(const char* value) { SetManagedByService(value); return *this;}
+    inline const Aws::String& GetManagedByService() const { return m_managedByService; }
+    template<typename ManagedByServiceT = Aws::String>
+    void SetManagedByService(ManagedByServiceT&& value) { m_managedByServiceHasBeenSet = true; m_managedByService = std::forward<ManagedByServiceT>(value); }
+    template<typename ManagedByServiceT = Aws::String>
+    GetTableResult& WithManagedByService(ManagedByServiceT&& value) { SetManagedByService(std::forward<ManagedByServiceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the table was last modified on.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline GetTableResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline GetTableResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    GetTableResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the account that last modified the table.</p>
      */
-    inline const Aws::String& GetModifiedBy() const{ return m_modifiedBy; }
-    inline void SetModifiedBy(const Aws::String& value) { m_modifiedBy = value; }
-    inline void SetModifiedBy(Aws::String&& value) { m_modifiedBy = std::move(value); }
-    inline void SetModifiedBy(const char* value) { m_modifiedBy.assign(value); }
-    inline GetTableResult& WithModifiedBy(const Aws::String& value) { SetModifiedBy(value); return *this;}
-    inline GetTableResult& WithModifiedBy(Aws::String&& value) { SetModifiedBy(std::move(value)); return *this;}
-    inline GetTableResult& WithModifiedBy(const char* value) { SetModifiedBy(value); return *this;}
+    inline const Aws::String& GetModifiedBy() const { return m_modifiedBy; }
+    template<typename ModifiedByT = Aws::String>
+    void SetModifiedBy(ModifiedByT&& value) { m_modifiedByHasBeenSet = true; m_modifiedBy = std::forward<ModifiedByT>(value); }
+    template<typename ModifiedByT = Aws::String>
+    GetTableResult& WithModifiedBy(ModifiedByT&& value) { SetModifiedBy(std::forward<ModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the account that owns the table.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountId.assign(value); }
-    inline GetTableResult& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline GetTableResult& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline GetTableResult& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    GetTableResult& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the table.</p>
      */
-    inline const OpenTableFormat& GetFormat() const{ return m_format; }
-    inline void SetFormat(const OpenTableFormat& value) { m_format = value; }
-    inline void SetFormat(OpenTableFormat&& value) { m_format = std::move(value); }
-    inline GetTableResult& WithFormat(const OpenTableFormat& value) { SetFormat(value); return *this;}
-    inline GetTableResult& WithFormat(OpenTableFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline OpenTableFormat GetFormat() const { return m_format; }
+    inline void SetFormat(OpenTableFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetTableResult& WithFormat(OpenTableFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    TableType m_type;
+    TableType m_type{TableType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_tableARN;
+    bool m_tableARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_versionToken;
+    bool m_versionTokenHasBeenSet = false;
 
     Aws::String m_metadataLocation;
+    bool m_metadataLocationHasBeenSet = false;
 
     Aws::String m_warehouseLocation;
+    bool m_warehouseLocationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_managedByService;
+    bool m_managedByServiceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_modifiedBy;
+    bool m_modifiedByHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
+    bool m_ownerAccountIdHasBeenSet = false;
 
-    OpenTableFormat m_format;
+    OpenTableFormat m_format{OpenTableFormat::NOT_SET};
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

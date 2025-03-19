@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-ContactContent::ContactContent() : 
-    m_channelHasBeenSet(false),
-    m_connectedToSystemTimeHasBeenSet(false),
-    m_contactArnHasBeenSet(false)
-{
-}
-
 ContactContent::ContactContent(JsonView jsonValue)
-  : ContactContent()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ContactContent& ContactContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetString("channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectedToSystemTime"))
   {
     m_connectedToSystemTime = jsonValue.GetString("connectedToSystemTime");
-
     m_connectedToSystemTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contactArn"))
   {
     m_contactArn = jsonValue.GetString("contactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   return *this;
 }
 

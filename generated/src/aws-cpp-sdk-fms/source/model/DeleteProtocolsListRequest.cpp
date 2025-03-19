@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProtocolsListRequest::DeleteProtocolsListRequest() : 
-    m_listIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProtocolsListRequest::SerializePayload() const
 {
   JsonValue payload;

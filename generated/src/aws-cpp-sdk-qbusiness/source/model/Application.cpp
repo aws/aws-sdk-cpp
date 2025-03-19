@@ -18,21 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Application::Application() : 
-    m_displayNameHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_status(ApplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_quickSightConfigurationHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityType"))
   {
     m_identityType = IdentityTypeMapper::GetIdentityTypeForName(jsonValue.GetString("identityType"));
-
     m_identityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quickSightConfiguration"))
   {
     m_quickSightConfiguration = jsonValue.GetObject("quickSightConfiguration");
-
     m_quickSightConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

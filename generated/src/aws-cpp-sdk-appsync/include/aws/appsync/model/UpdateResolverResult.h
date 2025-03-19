@@ -28,7 +28,7 @@ namespace Model
   class UpdateResolverResult
   {
   public:
-    AWS_APPSYNC_API UpdateResolverResult();
+    AWS_APPSYNC_API UpdateResolverResult() = default;
     AWS_APPSYNC_API UpdateResolverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API UpdateResolverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated <code>Resolver</code> object.</p>
      */
-    inline const Resolver& GetResolver() const{ return m_resolver; }
-    inline void SetResolver(const Resolver& value) { m_resolver = value; }
-    inline void SetResolver(Resolver&& value) { m_resolver = std::move(value); }
-    inline UpdateResolverResult& WithResolver(const Resolver& value) { SetResolver(value); return *this;}
-    inline UpdateResolverResult& WithResolver(Resolver&& value) { SetResolver(std::move(value)); return *this;}
+    inline const Resolver& GetResolver() const { return m_resolver; }
+    template<typename ResolverT = Resolver>
+    void SetResolver(ResolverT&& value) { m_resolverHasBeenSet = true; m_resolver = std::forward<ResolverT>(value); }
+    template<typename ResolverT = Resolver>
+    UpdateResolverResult& WithResolver(ResolverT&& value) { SetResolver(std::forward<ResolverT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateResolverResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateResolverResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateResolverResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateResolverResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Resolver m_resolver;
+    bool m_resolverHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

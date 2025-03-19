@@ -18,30 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryLimits::DirectoryLimits() : 
-    m_cloudOnlyDirectoriesLimit(0),
-    m_cloudOnlyDirectoriesLimitHasBeenSet(false),
-    m_cloudOnlyDirectoriesCurrentCount(0),
-    m_cloudOnlyDirectoriesCurrentCountHasBeenSet(false),
-    m_cloudOnlyDirectoriesLimitReached(false),
-    m_cloudOnlyDirectoriesLimitReachedHasBeenSet(false),
-    m_cloudOnlyMicrosoftADLimit(0),
-    m_cloudOnlyMicrosoftADLimitHasBeenSet(false),
-    m_cloudOnlyMicrosoftADCurrentCount(0),
-    m_cloudOnlyMicrosoftADCurrentCountHasBeenSet(false),
-    m_cloudOnlyMicrosoftADLimitReached(false),
-    m_cloudOnlyMicrosoftADLimitReachedHasBeenSet(false),
-    m_connectedDirectoriesLimit(0),
-    m_connectedDirectoriesLimitHasBeenSet(false),
-    m_connectedDirectoriesCurrentCount(0),
-    m_connectedDirectoriesCurrentCountHasBeenSet(false),
-    m_connectedDirectoriesLimitReached(false),
-    m_connectedDirectoriesLimitReachedHasBeenSet(false)
-{
-}
-
 DirectoryLimits::DirectoryLimits(JsonView jsonValue)
-  : DirectoryLimits()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ DirectoryLimits& DirectoryLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CloudOnlyDirectoriesLimit"))
   {
     m_cloudOnlyDirectoriesLimit = jsonValue.GetInteger("CloudOnlyDirectoriesLimit");
-
     m_cloudOnlyDirectoriesLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudOnlyDirectoriesCurrentCount"))
   {
     m_cloudOnlyDirectoriesCurrentCount = jsonValue.GetInteger("CloudOnlyDirectoriesCurrentCount");
-
     m_cloudOnlyDirectoriesCurrentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudOnlyDirectoriesLimitReached"))
   {
     m_cloudOnlyDirectoriesLimitReached = jsonValue.GetBool("CloudOnlyDirectoriesLimitReached");
-
     m_cloudOnlyDirectoriesLimitReachedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudOnlyMicrosoftADLimit"))
   {
     m_cloudOnlyMicrosoftADLimit = jsonValue.GetInteger("CloudOnlyMicrosoftADLimit");
-
     m_cloudOnlyMicrosoftADLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudOnlyMicrosoftADCurrentCount"))
   {
     m_cloudOnlyMicrosoftADCurrentCount = jsonValue.GetInteger("CloudOnlyMicrosoftADCurrentCount");
-
     m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudOnlyMicrosoftADLimitReached"))
   {
     m_cloudOnlyMicrosoftADLimitReached = jsonValue.GetBool("CloudOnlyMicrosoftADLimitReached");
-
     m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedDirectoriesLimit"))
   {
     m_connectedDirectoriesLimit = jsonValue.GetInteger("ConnectedDirectoriesLimit");
-
     m_connectedDirectoriesLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedDirectoriesCurrentCount"))
   {
     m_connectedDirectoriesCurrentCount = jsonValue.GetInteger("ConnectedDirectoriesCurrentCount");
-
     m_connectedDirectoriesCurrentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedDirectoriesLimitReached"))
   {
     m_connectedDirectoriesLimitReached = jsonValue.GetBool("ConnectedDirectoriesLimitReached");
-
     m_connectedDirectoriesLimitReachedHasBeenSet = true;
   }
-
   return *this;
 }
 

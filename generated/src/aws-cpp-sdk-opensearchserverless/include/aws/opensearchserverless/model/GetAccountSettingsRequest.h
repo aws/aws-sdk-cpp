@@ -19,7 +19,7 @@ namespace Model
   class GetAccountSettingsRequest : public OpenSearchServerlessRequest
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API GetAccountSettingsRequest();
+    AWS_OPENSEARCHSERVERLESS_API GetAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

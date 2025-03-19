@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-CdmaLocalId::CdmaLocalId() : 
-    m_pnOffset(0),
-    m_pnOffsetHasBeenSet(false),
-    m_cdmaChannel(0),
-    m_cdmaChannelHasBeenSet(false)
-{
-}
-
 CdmaLocalId::CdmaLocalId(JsonView jsonValue)
-  : CdmaLocalId()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CdmaLocalId& CdmaLocalId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PnOffset"))
   {
     m_pnOffset = jsonValue.GetInteger("PnOffset");
-
     m_pnOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdmaChannel"))
   {
     m_cdmaChannel = jsonValue.GetInteger("CdmaChannel");
-
     m_cdmaChannelHasBeenSet = true;
   }
-
   return *this;
 }
 

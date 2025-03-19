@@ -12,12 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomDomainAssociationRequest::DeleteCustomDomainAssociationRequest() : 
-    m_customDomainNameHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomDomainAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

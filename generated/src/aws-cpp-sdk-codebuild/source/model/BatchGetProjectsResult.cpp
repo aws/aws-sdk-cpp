@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetProjectsResult::BatchGetProjectsResult()
-{
-}
-
 BatchGetProjectsResult::BatchGetProjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetProjectsResult& BatchGetProjectsResult::operator =(const Aws::AmazonWebS
     {
       m_projects.push_back(projectsJsonList[projectsIndex].AsObject());
     }
+    m_projectsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectsNotFound"))
   {
     Aws::Utils::Array<JsonView> projectsNotFoundJsonList = jsonValue.GetArray("projectsNotFound");
@@ -45,14 +41,15 @@ BatchGetProjectsResult& BatchGetProjectsResult::operator =(const Aws::AmazonWebS
     {
       m_projectsNotFound.push_back(projectsNotFoundJsonList[projectsNotFoundIndex].AsString());
     }
+    m_projectsNotFoundHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

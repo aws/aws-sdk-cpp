@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFlowDefinitionRequest::DescribeFlowDefinitionRequest() : 
-    m_flowDefinitionNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFlowDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

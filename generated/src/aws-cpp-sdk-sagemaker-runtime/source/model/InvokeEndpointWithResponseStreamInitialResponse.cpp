@@ -21,15 +21,7 @@ namespace SageMakerRuntime
 namespace Model
 {
 
-InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse() : 
-    m_contentTypeHasBeenSet(false),
-    m_invokedProductionVariantHasBeenSet(false),
-    m_customAttributesHasBeenSet(false)
-{
-}
-
 InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStreamInitialResponse(JsonView jsonValue)
-  : InvokeEndpointWithResponseStreamInitialResponse()
 {
   *this = jsonValue;
 }
@@ -46,18 +38,21 @@ InvokeEndpointWithResponseStreamInitialResponse::InvokeEndpointWithResponseStrea
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& invokedProductionVariantIter = headers.find("x-amzn-invoked-production-variant");
   if(invokedProductionVariantIter != headers.end())
   {
     m_invokedProductionVariant = invokedProductionVariantIter->second;
+    m_invokedProductionVariantHasBeenSet = true;
   }
 
   const auto& customAttributesIter = headers.find("x-amzn-sagemaker-custom-attributes");
   if(customAttributesIter != headers.end())
   {
     m_customAttributes = customAttributesIter->second;
+    m_customAttributesHasBeenSet = true;
   }
 
 }

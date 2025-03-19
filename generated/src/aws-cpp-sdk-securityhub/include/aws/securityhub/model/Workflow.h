@@ -32,7 +32,7 @@ namespace Model
   class Workflow
   {
   public:
-    AWS_SECURITYHUB_API Workflow();
+    AWS_SECURITYHUB_API Workflow() = default;
     AWS_SECURITYHUB_API Workflow(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Workflow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,16 +60,14 @@ namespace Model
      * finding was reviewed and remediated and is now considered resolved. </p> </li>
      * </ul>
      */
-    inline const WorkflowStatus& GetStatus() const{ return m_status; }
+    inline WorkflowStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WorkflowStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WorkflowStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Workflow& WithStatus(const WorkflowStatus& value) { SetStatus(value); return *this;}
-    inline Workflow& WithStatus(WorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WorkflowStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Workflow& WithStatus(WorkflowStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    WorkflowStatus m_status;
+    WorkflowStatus m_status{WorkflowStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

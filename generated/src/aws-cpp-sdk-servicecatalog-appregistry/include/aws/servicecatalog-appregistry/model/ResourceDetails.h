@@ -31,7 +31,7 @@ namespace Model
   class ResourceDetails
   {
   public:
-    AWS_APPREGISTRY_API ResourceDetails();
+    AWS_APPREGISTRY_API ResourceDetails() = default;
     AWS_APPREGISTRY_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The value of the tag.</p>
      */
-    inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+    inline const Aws::String& GetTagValue() const { return m_tagValue; }
     inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
-    inline void SetTagValue(const Aws::String& value) { m_tagValueHasBeenSet = true; m_tagValue = value; }
-    inline void SetTagValue(Aws::String&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::move(value); }
-    inline void SetTagValue(const char* value) { m_tagValueHasBeenSet = true; m_tagValue.assign(value); }
-    inline ResourceDetails& WithTagValue(const Aws::String& value) { SetTagValue(value); return *this;}
-    inline ResourceDetails& WithTagValue(Aws::String&& value) { SetTagValue(std::move(value)); return *this;}
-    inline ResourceDetails& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+    template<typename TagValueT = Aws::String>
+    void SetTagValue(TagValueT&& value) { m_tagValueHasBeenSet = true; m_tagValue = std::forward<TagValueT>(value); }
+    template<typename TagValueT = Aws::String>
+    ResourceDetails& WithTagValue(TagValueT&& value) { SetTagValue(std::forward<TagValueT>(value)); return *this;}
     ///@}
   private:
 

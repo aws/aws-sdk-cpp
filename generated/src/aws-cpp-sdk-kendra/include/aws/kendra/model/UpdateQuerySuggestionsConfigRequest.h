@@ -23,7 +23,7 @@ namespace Model
   class UpdateQuerySuggestionsConfigRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API UpdateQuerySuggestionsConfigRequest();
+    AWS_KENDRA_API UpdateQuerySuggestionsConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p> The identifier of the index with query suggestions you want to update.</p>
      */
-    inline const Aws::String& GetIndexId() const{ return m_indexId; }
+    inline const Aws::String& GetIndexId() const { return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-    inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-    inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-    inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-    inline UpdateQuerySuggestionsConfigRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-    inline UpdateQuerySuggestionsConfigRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-    inline UpdateQuerySuggestionsConfigRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    template<typename IndexIdT = Aws::String>
+    void SetIndexId(IndexIdT&& value) { m_indexIdHasBeenSet = true; m_indexId = std::forward<IndexIdT>(value); }
+    template<typename IndexIdT = Aws::String>
+    UpdateQuerySuggestionsConfigRequest& WithIndexId(IndexIdT&& value) { SetIndexId(std::forward<IndexIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * from new queries to keep suggestions up to date for when you are ready to switch
      * to ENABLED mode again.</p>
      */
-    inline const Mode& GetMode() const{ return m_mode; }
+    inline Mode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline UpdateQuerySuggestionsConfigRequest& WithMode(const Mode& value) { SetMode(value); return *this;}
-    inline UpdateQuerySuggestionsConfigRequest& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(Mode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline UpdateQuerySuggestionsConfigRequest& WithMode(Mode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * window is the number of days from current day to past days.</p> <p>By default,
      * Amazon Kendra sets this to 180.</p>
      */
-    inline int GetQueryLogLookBackWindowInDays() const{ return m_queryLogLookBackWindowInDays; }
+    inline int GetQueryLogLookBackWindowInDays() const { return m_queryLogLookBackWindowInDays; }
     inline bool QueryLogLookBackWindowInDaysHasBeenSet() const { return m_queryLogLookBackWindowInDaysHasBeenSet; }
     inline void SetQueryLogLookBackWindowInDays(int value) { m_queryLogLookBackWindowInDaysHasBeenSet = true; m_queryLogLookBackWindowInDays = value; }
     inline UpdateQuerySuggestionsConfigRequest& WithQueryLogLookBackWindowInDays(int value) { SetQueryLogLookBackWindowInDays(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
      * <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information
      * and learns from all queries.</p>
      */
-    inline bool GetIncludeQueriesWithoutUserInformation() const{ return m_includeQueriesWithoutUserInformation; }
+    inline bool GetIncludeQueriesWithoutUserInformation() const { return m_includeQueriesWithoutUserInformation; }
     inline bool IncludeQueriesWithoutUserInformationHasBeenSet() const { return m_includeQueriesWithoutUserInformationHasBeenSet; }
     inline void SetIncludeQueriesWithoutUserInformation(bool value) { m_includeQueriesWithoutUserInformationHasBeenSet = true; m_includeQueriesWithoutUserInformation = value; }
     inline UpdateQuerySuggestionsConfigRequest& WithIncludeQueriesWithoutUserInformation(bool value) { SetIncludeQueriesWithoutUserInformation(value); return *this;}
@@ -106,7 +102,7 @@ namespace Model
      * searched by many users and is truly popular to suggest to users.</p> <p>How you
      * tune this setting depends on your specific needs.</p>
      */
-    inline int GetMinimumNumberOfQueryingUsers() const{ return m_minimumNumberOfQueryingUsers; }
+    inline int GetMinimumNumberOfQueryingUsers() const { return m_minimumNumberOfQueryingUsers; }
     inline bool MinimumNumberOfQueryingUsersHasBeenSet() const { return m_minimumNumberOfQueryingUsersHasBeenSet; }
     inline void SetMinimumNumberOfQueryingUsers(int value) { m_minimumNumberOfQueryingUsersHasBeenSet = true; m_minimumNumberOfQueryingUsers = value; }
     inline UpdateQuerySuggestionsConfigRequest& WithMinimumNumberOfQueryingUsers(int value) { SetMinimumNumberOfQueryingUsers(value); return *this;}
@@ -120,7 +116,7 @@ namespace Model
      * sets a low bar for a query to be considered popular to suggest to users.</p>
      * <p>How you tune this setting depends on your specific needs.</p>
      */
-    inline int GetMinimumQueryCount() const{ return m_minimumQueryCount; }
+    inline int GetMinimumQueryCount() const { return m_minimumQueryCount; }
     inline bool MinimumQueryCountHasBeenSet() const { return m_minimumQueryCountHasBeenSet; }
     inline void SetMinimumQueryCount(int value) { m_minimumQueryCountHasBeenSet = true; m_minimumQueryCount = value; }
     inline UpdateQuerySuggestionsConfigRequest& WithMinimumQueryCount(int value) { SetMinimumQueryCount(value); return *this;}
@@ -131,31 +127,31 @@ namespace Model
      * <p>Configuration information for the document fields/attributes that you want to
      * base query suggestions on.</p>
      */
-    inline const AttributeSuggestionsUpdateConfig& GetAttributeSuggestionsConfig() const{ return m_attributeSuggestionsConfig; }
+    inline const AttributeSuggestionsUpdateConfig& GetAttributeSuggestionsConfig() const { return m_attributeSuggestionsConfig; }
     inline bool AttributeSuggestionsConfigHasBeenSet() const { return m_attributeSuggestionsConfigHasBeenSet; }
-    inline void SetAttributeSuggestionsConfig(const AttributeSuggestionsUpdateConfig& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = value; }
-    inline void SetAttributeSuggestionsConfig(AttributeSuggestionsUpdateConfig&& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = std::move(value); }
-    inline UpdateQuerySuggestionsConfigRequest& WithAttributeSuggestionsConfig(const AttributeSuggestionsUpdateConfig& value) { SetAttributeSuggestionsConfig(value); return *this;}
-    inline UpdateQuerySuggestionsConfigRequest& WithAttributeSuggestionsConfig(AttributeSuggestionsUpdateConfig&& value) { SetAttributeSuggestionsConfig(std::move(value)); return *this;}
+    template<typename AttributeSuggestionsConfigT = AttributeSuggestionsUpdateConfig>
+    void SetAttributeSuggestionsConfig(AttributeSuggestionsConfigT&& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = std::forward<AttributeSuggestionsConfigT>(value); }
+    template<typename AttributeSuggestionsConfigT = AttributeSuggestionsUpdateConfig>
+    UpdateQuerySuggestionsConfigRequest& WithAttributeSuggestionsConfig(AttributeSuggestionsConfigT&& value) { SetAttributeSuggestionsConfig(std::forward<AttributeSuggestionsConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_indexId;
     bool m_indexIdHasBeenSet = false;
 
-    Mode m_mode;
+    Mode m_mode{Mode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    int m_queryLogLookBackWindowInDays;
+    int m_queryLogLookBackWindowInDays{0};
     bool m_queryLogLookBackWindowInDaysHasBeenSet = false;
 
-    bool m_includeQueriesWithoutUserInformation;
+    bool m_includeQueriesWithoutUserInformation{false};
     bool m_includeQueriesWithoutUserInformationHasBeenSet = false;
 
-    int m_minimumNumberOfQueryingUsers;
+    int m_minimumNumberOfQueryingUsers{0};
     bool m_minimumNumberOfQueryingUsersHasBeenSet = false;
 
-    int m_minimumQueryCount;
+    int m_minimumQueryCount{0};
     bool m_minimumQueryCountHasBeenSet = false;
 
     AttributeSuggestionsUpdateConfig m_attributeSuggestionsConfig;

@@ -34,7 +34,7 @@ namespace Model
   class TFITrainingMetricsValue
   {
   public:
-    AWS_FRAUDDETECTOR_API TFITrainingMetricsValue();
+    AWS_FRAUDDETECTOR_API TFITrainingMetricsValue() = default;
     AWS_FRAUDDETECTOR_API TFITrainingMetricsValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API TFITrainingMetricsValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p> The model's performance metrics data points. </p>
      */
-    inline const Aws::Vector<TFIMetricDataPoint>& GetMetricDataPoints() const{ return m_metricDataPoints; }
+    inline const Aws::Vector<TFIMetricDataPoint>& GetMetricDataPoints() const { return m_metricDataPoints; }
     inline bool MetricDataPointsHasBeenSet() const { return m_metricDataPointsHasBeenSet; }
-    inline void SetMetricDataPoints(const Aws::Vector<TFIMetricDataPoint>& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints = value; }
-    inline void SetMetricDataPoints(Aws::Vector<TFIMetricDataPoint>&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints = std::move(value); }
-    inline TFITrainingMetricsValue& WithMetricDataPoints(const Aws::Vector<TFIMetricDataPoint>& value) { SetMetricDataPoints(value); return *this;}
-    inline TFITrainingMetricsValue& WithMetricDataPoints(Aws::Vector<TFIMetricDataPoint>&& value) { SetMetricDataPoints(std::move(value)); return *this;}
-    inline TFITrainingMetricsValue& AddMetricDataPoints(const TFIMetricDataPoint& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints.push_back(value); return *this; }
-    inline TFITrainingMetricsValue& AddMetricDataPoints(TFIMetricDataPoint&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints.push_back(std::move(value)); return *this; }
+    template<typename MetricDataPointsT = Aws::Vector<TFIMetricDataPoint>>
+    void SetMetricDataPoints(MetricDataPointsT&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints = std::forward<MetricDataPointsT>(value); }
+    template<typename MetricDataPointsT = Aws::Vector<TFIMetricDataPoint>>
+    TFITrainingMetricsValue& WithMetricDataPoints(MetricDataPointsT&& value) { SetMetricDataPoints(std::forward<MetricDataPointsT>(value)); return *this;}
+    template<typename MetricDataPointsT = TFIMetricDataPoint>
+    TFITrainingMetricsValue& AddMetricDataPoints(MetricDataPointsT&& value) { m_metricDataPointsHasBeenSet = true; m_metricDataPoints.emplace_back(std::forward<MetricDataPointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The model performance score. </p>
      */
-    inline const TFIModelPerformance& GetModelPerformance() const{ return m_modelPerformance; }
+    inline const TFIModelPerformance& GetModelPerformance() const { return m_modelPerformance; }
     inline bool ModelPerformanceHasBeenSet() const { return m_modelPerformanceHasBeenSet; }
-    inline void SetModelPerformance(const TFIModelPerformance& value) { m_modelPerformanceHasBeenSet = true; m_modelPerformance = value; }
-    inline void SetModelPerformance(TFIModelPerformance&& value) { m_modelPerformanceHasBeenSet = true; m_modelPerformance = std::move(value); }
-    inline TFITrainingMetricsValue& WithModelPerformance(const TFIModelPerformance& value) { SetModelPerformance(value); return *this;}
-    inline TFITrainingMetricsValue& WithModelPerformance(TFIModelPerformance&& value) { SetModelPerformance(std::move(value)); return *this;}
+    template<typename ModelPerformanceT = TFIModelPerformance>
+    void SetModelPerformance(ModelPerformanceT&& value) { m_modelPerformanceHasBeenSet = true; m_modelPerformance = std::forward<ModelPerformanceT>(value); }
+    template<typename ModelPerformanceT = TFIModelPerformance>
+    TFITrainingMetricsValue& WithModelPerformance(ModelPerformanceT&& value) { SetModelPerformance(std::forward<ModelPerformanceT>(value)); return *this;}
     ///@}
   private:
 

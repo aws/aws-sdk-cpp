@@ -18,23 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingIndexingConfiguration::ThingIndexingConfiguration() : 
-    m_thingIndexingMode(ThingIndexingMode::NOT_SET),
-    m_thingIndexingModeHasBeenSet(false),
-    m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
-    m_thingConnectivityIndexingModeHasBeenSet(false),
-    m_deviceDefenderIndexingMode(DeviceDefenderIndexingMode::NOT_SET),
-    m_deviceDefenderIndexingModeHasBeenSet(false),
-    m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
-    m_namedShadowIndexingModeHasBeenSet(false),
-    m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue)
-  : ThingIndexingConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("thingIndexingMode"))
   {
     m_thingIndexingMode = ThingIndexingModeMapper::GetThingIndexingModeForName(jsonValue.GetString("thingIndexingMode"));
-
     m_thingIndexingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingConnectivityIndexingMode"))
   {
     m_thingConnectivityIndexingMode = ThingConnectivityIndexingModeMapper::GetThingConnectivityIndexingModeForName(jsonValue.GetString("thingConnectivityIndexingMode"));
-
     m_thingConnectivityIndexingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceDefenderIndexingMode"))
   {
     m_deviceDefenderIndexingMode = DeviceDefenderIndexingModeMapper::GetDeviceDefenderIndexingModeForName(jsonValue.GetString("deviceDefenderIndexingMode"));
-
     m_deviceDefenderIndexingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namedShadowIndexingMode"))
   {
     m_namedShadowIndexingMode = NamedShadowIndexingModeMapper::GetNamedShadowIndexingModeForName(jsonValue.GetString("namedShadowIndexingMode"));
-
     m_namedShadowIndexingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedFields"))
   {
     Aws::Utils::Array<JsonView> managedFieldsJsonList = jsonValue.GetArray("managedFields");
@@ -78,7 +54,6 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
     }
     m_managedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customFields"))
   {
     Aws::Utils::Array<JsonView> customFieldsJsonList = jsonValue.GetArray("customFields");
@@ -88,14 +63,11 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
     }
     m_customFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetObject("filter");
-
     m_filterHasBeenSet = true;
   }
-
   return *this;
 }
 

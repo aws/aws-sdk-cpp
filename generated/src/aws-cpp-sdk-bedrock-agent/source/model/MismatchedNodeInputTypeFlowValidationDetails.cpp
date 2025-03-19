@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MismatchedNodeInputTypeFlowValidationDetails::MismatchedNodeInputTypeFlowValidationDetails() : 
-    m_expectedType(FlowNodeIODataType::NOT_SET),
-    m_expectedTypeHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_nodeHasBeenSet(false)
-{
-}
-
 MismatchedNodeInputTypeFlowValidationDetails::MismatchedNodeInputTypeFlowValidationDetails(JsonView jsonValue)
-  : MismatchedNodeInputTypeFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MismatchedNodeInputTypeFlowValidationDetails& MismatchedNodeInputTypeFlowValidat
   if(jsonValue.ValueExists("expectedType"))
   {
     m_expectedType = FlowNodeIODataTypeMapper::GetFlowNodeIODataTypeForName(jsonValue.GetString("expectedType"));
-
     m_expectedTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
-
     m_nodeHasBeenSet = true;
   }
-
   return *this;
 }
 

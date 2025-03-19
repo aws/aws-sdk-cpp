@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DisableMetricsCollectionRequest::DisableMetricsCollectionRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 Aws::String DisableMetricsCollectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

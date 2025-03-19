@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateClientVpnRouteRequest::CreateClientVpnRouteRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_targetVpcSubnetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateClientVpnRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

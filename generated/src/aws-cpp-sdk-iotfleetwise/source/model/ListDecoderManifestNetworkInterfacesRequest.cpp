@@ -12,14 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDecoderManifestNetworkInterfacesRequest::ListDecoderManifestNetworkInterfacesRequest() : 
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDecoderManifestNetworkInterfacesRequest::SerializePayload() const
 {
   JsonValue payload;

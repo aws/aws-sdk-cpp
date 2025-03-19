@@ -29,7 +29,7 @@ namespace Model
   class ListCategoriesResult
   {
   public:
-    AWS_QAPPS_API ListCategoriesResult();
+    AWS_QAPPS_API ListCategoriesResult() = default;
     AWS_QAPPS_API ListCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API ListCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The categories of a Amazon Q Business application environment instance.</p>
      */
-    inline const Aws::Vector<Category>& GetCategories() const{ return m_categories; }
-    inline void SetCategories(const Aws::Vector<Category>& value) { m_categories = value; }
-    inline void SetCategories(Aws::Vector<Category>&& value) { m_categories = std::move(value); }
-    inline ListCategoriesResult& WithCategories(const Aws::Vector<Category>& value) { SetCategories(value); return *this;}
-    inline ListCategoriesResult& WithCategories(Aws::Vector<Category>&& value) { SetCategories(std::move(value)); return *this;}
-    inline ListCategoriesResult& AddCategories(const Category& value) { m_categories.push_back(value); return *this; }
-    inline ListCategoriesResult& AddCategories(Category&& value) { m_categories.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    ListCategoriesResult& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
+    template<typename CategoriesT = Category>
+    ListCategoriesResult& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCategoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCategoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCategoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCategoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Category> m_categories;
+    bool m_categoriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ namespace Model
   class CreateFileCacheRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API CreateFileCacheRequest();
+    AWS_FSX_API CreateFileCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * reset. If you use the same client request token and the initial call created a
      * cache, the client receives success as long as the parameters are the same.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateFileCacheRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateFileCacheRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateFileCacheRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * <p>The type of cache that you're creating, which must be
      * <code>LUSTRE</code>.</p>
      */
-    inline const FileCacheType& GetFileCacheType() const{ return m_fileCacheType; }
+    inline FileCacheType GetFileCacheType() const { return m_fileCacheType; }
     inline bool FileCacheTypeHasBeenSet() const { return m_fileCacheTypeHasBeenSet; }
-    inline void SetFileCacheType(const FileCacheType& value) { m_fileCacheTypeHasBeenSet = true; m_fileCacheType = value; }
-    inline void SetFileCacheType(FileCacheType&& value) { m_fileCacheTypeHasBeenSet = true; m_fileCacheType = std::move(value); }
-    inline CreateFileCacheRequest& WithFileCacheType(const FileCacheType& value) { SetFileCacheType(value); return *this;}
-    inline CreateFileCacheRequest& WithFileCacheType(FileCacheType&& value) { SetFileCacheType(std::move(value)); return *this;}
+    inline void SetFileCacheType(FileCacheType value) { m_fileCacheTypeHasBeenSet = true; m_fileCacheType = value; }
+    inline CreateFileCacheRequest& WithFileCacheType(FileCacheType value) { SetFileCacheType(value); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * <p>Sets the Lustre version for the cache that you're creating, which must be
      * <code>2.12</code>.</p>
      */
-    inline const Aws::String& GetFileCacheTypeVersion() const{ return m_fileCacheTypeVersion; }
+    inline const Aws::String& GetFileCacheTypeVersion() const { return m_fileCacheTypeVersion; }
     inline bool FileCacheTypeVersionHasBeenSet() const { return m_fileCacheTypeVersionHasBeenSet; }
-    inline void SetFileCacheTypeVersion(const Aws::String& value) { m_fileCacheTypeVersionHasBeenSet = true; m_fileCacheTypeVersion = value; }
-    inline void SetFileCacheTypeVersion(Aws::String&& value) { m_fileCacheTypeVersionHasBeenSet = true; m_fileCacheTypeVersion = std::move(value); }
-    inline void SetFileCacheTypeVersion(const char* value) { m_fileCacheTypeVersionHasBeenSet = true; m_fileCacheTypeVersion.assign(value); }
-    inline CreateFileCacheRequest& WithFileCacheTypeVersion(const Aws::String& value) { SetFileCacheTypeVersion(value); return *this;}
-    inline CreateFileCacheRequest& WithFileCacheTypeVersion(Aws::String&& value) { SetFileCacheTypeVersion(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& WithFileCacheTypeVersion(const char* value) { SetFileCacheTypeVersion(value); return *this;}
+    template<typename FileCacheTypeVersionT = Aws::String>
+    void SetFileCacheTypeVersion(FileCacheTypeVersionT&& value) { m_fileCacheTypeVersionHasBeenSet = true; m_fileCacheTypeVersion = std::forward<FileCacheTypeVersionT>(value); }
+    template<typename FileCacheTypeVersionT = Aws::String>
+    CreateFileCacheRequest& WithFileCacheTypeVersion(FileCacheTypeVersionT&& value) { SetFileCacheTypeVersion(std::forward<FileCacheTypeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * <p>The storage capacity of the cache in gibibytes (GiB). Valid values are 1200
      * GiB, 2400 GiB, and increments of 2400 GiB.</p>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline CreateFileCacheRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
@@ -103,15 +97,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline CreateFileCacheRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline CreateFileCacheRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline CreateFileCacheRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline CreateFileCacheRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    CreateFileCacheRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    CreateFileCacheRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,27 +113,26 @@ namespace Model
      * interfaces created for Amazon File Cache access. This list isn't returned in
      * later requests to describe the cache.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline CreateFileCacheRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateFileCacheRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline CreateFileCacheRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateFileCacheRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateFileCacheRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateFileCacheRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFileCacheRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFileCacheRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFileCacheRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFileCacheRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFileCacheRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,7 +140,7 @@ namespace Model
      * <p>A boolean flag indicating whether tags for the cache should be copied to data
      * repository associations. This value defaults to false.</p>
      */
-    inline bool GetCopyTagsToDataRepositoryAssociations() const{ return m_copyTagsToDataRepositoryAssociations; }
+    inline bool GetCopyTagsToDataRepositoryAssociations() const { return m_copyTagsToDataRepositoryAssociations; }
     inline bool CopyTagsToDataRepositoryAssociationsHasBeenSet() const { return m_copyTagsToDataRepositoryAssociationsHasBeenSet; }
     inline void SetCopyTagsToDataRepositoryAssociations(bool value) { m_copyTagsToDataRepositoryAssociationsHasBeenSet = true; m_copyTagsToDataRepositoryAssociations = value; }
     inline CreateFileCacheRequest& WithCopyTagsToDataRepositoryAssociations(bool value) { SetCopyTagsToDataRepositoryAssociations(value); return *this;}
@@ -163,26 +155,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
      * in the <i>Key Management Service API Reference</i>.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateFileCacheRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateFileCacheRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateFileCacheRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the Amazon File Cache resource being created.</p>
      */
-    inline const CreateFileCacheLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+    inline const CreateFileCacheLustreConfiguration& GetLustreConfiguration() const { return m_lustreConfiguration; }
     inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
-    inline void SetLustreConfiguration(const CreateFileCacheLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
-    inline void SetLustreConfiguration(CreateFileCacheLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
-    inline CreateFileCacheRequest& WithLustreConfiguration(const CreateFileCacheLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
-    inline CreateFileCacheRequest& WithLustreConfiguration(CreateFileCacheLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+    template<typename LustreConfigurationT = CreateFileCacheLustreConfiguration>
+    void SetLustreConfiguration(LustreConfigurationT&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::forward<LustreConfigurationT>(value); }
+    template<typename LustreConfigurationT = CreateFileCacheLustreConfiguration>
+    CreateFileCacheRequest& WithLustreConfiguration(LustreConfigurationT&& value) { SetLustreConfiguration(std::forward<LustreConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,27 +187,27 @@ namespace Model
      * DRA must link to an NFS file system that supports the NFSv3 protocol.</p> </li>
      * </ul> <p>DRA automatic import and automatic export is not supported.</p>
      */
-    inline const Aws::Vector<FileCacheDataRepositoryAssociation>& GetDataRepositoryAssociations() const{ return m_dataRepositoryAssociations; }
+    inline const Aws::Vector<FileCacheDataRepositoryAssociation>& GetDataRepositoryAssociations() const { return m_dataRepositoryAssociations; }
     inline bool DataRepositoryAssociationsHasBeenSet() const { return m_dataRepositoryAssociationsHasBeenSet; }
-    inline void SetDataRepositoryAssociations(const Aws::Vector<FileCacheDataRepositoryAssociation>& value) { m_dataRepositoryAssociationsHasBeenSet = true; m_dataRepositoryAssociations = value; }
-    inline void SetDataRepositoryAssociations(Aws::Vector<FileCacheDataRepositoryAssociation>&& value) { m_dataRepositoryAssociationsHasBeenSet = true; m_dataRepositoryAssociations = std::move(value); }
-    inline CreateFileCacheRequest& WithDataRepositoryAssociations(const Aws::Vector<FileCacheDataRepositoryAssociation>& value) { SetDataRepositoryAssociations(value); return *this;}
-    inline CreateFileCacheRequest& WithDataRepositoryAssociations(Aws::Vector<FileCacheDataRepositoryAssociation>&& value) { SetDataRepositoryAssociations(std::move(value)); return *this;}
-    inline CreateFileCacheRequest& AddDataRepositoryAssociations(const FileCacheDataRepositoryAssociation& value) { m_dataRepositoryAssociationsHasBeenSet = true; m_dataRepositoryAssociations.push_back(value); return *this; }
-    inline CreateFileCacheRequest& AddDataRepositoryAssociations(FileCacheDataRepositoryAssociation&& value) { m_dataRepositoryAssociationsHasBeenSet = true; m_dataRepositoryAssociations.push_back(std::move(value)); return *this; }
+    template<typename DataRepositoryAssociationsT = Aws::Vector<FileCacheDataRepositoryAssociation>>
+    void SetDataRepositoryAssociations(DataRepositoryAssociationsT&& value) { m_dataRepositoryAssociationsHasBeenSet = true; m_dataRepositoryAssociations = std::forward<DataRepositoryAssociationsT>(value); }
+    template<typename DataRepositoryAssociationsT = Aws::Vector<FileCacheDataRepositoryAssociation>>
+    CreateFileCacheRequest& WithDataRepositoryAssociations(DataRepositoryAssociationsT&& value) { SetDataRepositoryAssociations(std::forward<DataRepositoryAssociationsT>(value)); return *this;}
+    template<typename DataRepositoryAssociationsT = FileCacheDataRepositoryAssociation>
+    CreateFileCacheRequest& AddDataRepositoryAssociations(DataRepositoryAssociationsT&& value) { m_dataRepositoryAssociationsHasBeenSet = true; m_dataRepositoryAssociations.emplace_back(std::forward<DataRepositoryAssociationsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    FileCacheType m_fileCacheType;
+    FileCacheType m_fileCacheType{FileCacheType::NOT_SET};
     bool m_fileCacheTypeHasBeenSet = false;
 
     Aws::String m_fileCacheTypeVersion;
     bool m_fileCacheTypeVersionHasBeenSet = false;
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -229,7 +219,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_copyTagsToDataRepositoryAssociations;
+    bool m_copyTagsToDataRepositoryAssociations{false};
     bool m_copyTagsToDataRepositoryAssociationsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

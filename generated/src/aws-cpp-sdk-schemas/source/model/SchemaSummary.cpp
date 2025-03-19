@@ -18,18 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-SchemaSummary::SchemaSummary() : 
-    m_lastModifiedHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionCount(0),
-    m_versionCountHasBeenSet(false)
-{
-}
-
 SchemaSummary::SchemaSummary(JsonView jsonValue)
-  : SchemaSummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SchemaSummary& SchemaSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -66,14 +49,11 @@ SchemaSummary& SchemaSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionCount"))
   {
     m_versionCount = jsonValue.GetInt64("VersionCount");
-
     m_versionCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class DashboardSourceEntity
   {
   public:
-    AWS_QUICKSIGHT_API DashboardSourceEntity();
+    AWS_QUICKSIGHT_API DashboardSourceEntity() = default;
     AWS_QUICKSIGHT_API DashboardSourceEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DashboardSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Source template.</p>
      */
-    inline const DashboardSourceTemplate& GetSourceTemplate() const{ return m_sourceTemplate; }
+    inline const DashboardSourceTemplate& GetSourceTemplate() const { return m_sourceTemplate; }
     inline bool SourceTemplateHasBeenSet() const { return m_sourceTemplateHasBeenSet; }
-    inline void SetSourceTemplate(const DashboardSourceTemplate& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = value; }
-    inline void SetSourceTemplate(DashboardSourceTemplate&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::move(value); }
-    inline DashboardSourceEntity& WithSourceTemplate(const DashboardSourceTemplate& value) { SetSourceTemplate(value); return *this;}
-    inline DashboardSourceEntity& WithSourceTemplate(DashboardSourceTemplate&& value) { SetSourceTemplate(std::move(value)); return *this;}
+    template<typename SourceTemplateT = DashboardSourceTemplate>
+    void SetSourceTemplate(SourceTemplateT&& value) { m_sourceTemplateHasBeenSet = true; m_sourceTemplate = std::forward<SourceTemplateT>(value); }
+    template<typename SourceTemplateT = DashboardSourceTemplate>
+    DashboardSourceEntity& WithSourceTemplate(SourceTemplateT&& value) { SetSourceTemplate(std::forward<SourceTemplateT>(value)); return *this;}
     ///@}
   private:
 

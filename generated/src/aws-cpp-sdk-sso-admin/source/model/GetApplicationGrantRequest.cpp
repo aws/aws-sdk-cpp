@@ -12,13 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationGrantRequest::GetApplicationGrantRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_grantType(GrantType::NOT_SET),
-    m_grantTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationGrantRequest::SerializePayload() const
 {
   JsonValue payload;

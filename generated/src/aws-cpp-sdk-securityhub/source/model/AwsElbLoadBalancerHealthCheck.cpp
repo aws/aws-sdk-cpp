@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbLoadBalancerHealthCheck::AwsElbLoadBalancerHealthCheck() : 
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false)
-{
-}
-
 AwsElbLoadBalancerHealthCheck::AwsElbLoadBalancerHealthCheck(JsonView jsonValue)
-  : AwsElbLoadBalancerHealthCheck()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ AwsElbLoadBalancerHealthCheck& AwsElbLoadBalancerHealthCheck::operator =(JsonVie
   if(jsonValue.ValueExists("HealthyThreshold"))
   {
     m_healthyThreshold = jsonValue.GetInteger("HealthyThreshold");
-
     m_healthyThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interval"))
   {
     m_interval = jsonValue.GetInteger("Interval");
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnhealthyThreshold"))
   {
     m_unhealthyThreshold = jsonValue.GetInteger("UnhealthyThreshold");
-
     m_unhealthyThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

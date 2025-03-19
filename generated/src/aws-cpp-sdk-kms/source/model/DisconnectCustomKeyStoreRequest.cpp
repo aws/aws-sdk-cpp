@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisconnectCustomKeyStoreRequest::DisconnectCustomKeyStoreRequest() : 
-    m_customKeyStoreIdHasBeenSet(false)
-{
-}
-
 Aws::String DisconnectCustomKeyStoreRequest::SerializePayload() const
 {
   JsonValue payload;

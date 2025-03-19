@@ -20,36 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-CompositeAlarm::CompositeAlarm() : 
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_alarmRuleHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_oKActionsHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestampHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_stateTransitionedTimestampHasBeenSet(false),
-    m_actionsSuppressedBy(ActionsSuppressedBy::NOT_SET),
-    m_actionsSuppressedByHasBeenSet(false),
-    m_actionsSuppressedReasonHasBeenSet(false),
-    m_actionsSuppressorHasBeenSet(false),
-    m_actionsSuppressorWaitPeriod(0),
-    m_actionsSuppressorWaitPeriodHasBeenSet(false),
-    m_actionsSuppressorExtensionPeriod(0),
-    m_actionsSuppressorExtensionPeriodHasBeenSet(false)
-{
-}
-
 CompositeAlarm::CompositeAlarm(const XmlNode& xmlNode)
-  : CompositeAlarm()
 {
   *this = xmlNode;
 }
@@ -70,6 +41,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     if(!alarmActionsNode.IsNull())
     {
       XmlNode alarmActionsMember = alarmActionsNode.FirstChild("member");
+      m_alarmActionsHasBeenSet = !alarmActionsMember.IsNull();
       while(!alarmActionsMember.IsNull())
       {
         m_alarmActions.push_back(alarmActionsMember.GetText());
@@ -112,6 +84,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     if(!insufficientDataActionsNode.IsNull())
     {
       XmlNode insufficientDataActionsMember = insufficientDataActionsNode.FirstChild("member");
+      m_insufficientDataActionsHasBeenSet = !insufficientDataActionsMember.IsNull();
       while(!insufficientDataActionsMember.IsNull())
       {
         m_insufficientDataActions.push_back(insufficientDataActionsMember.GetText());
@@ -124,6 +97,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     if(!oKActionsNode.IsNull())
     {
       XmlNode oKActionsMember = oKActionsNode.FirstChild("member");
+      m_oKActionsHasBeenSet = !oKActionsMember.IsNull();
       while(!oKActionsMember.IsNull())
       {
         m_oKActions.push_back(oKActionsMember.GetText());
@@ -153,7 +127,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
     if(!stateValueNode.IsNull())
     {
-      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
+      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
       m_stateValueHasBeenSet = true;
     }
     XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
@@ -165,7 +139,7 @@ CompositeAlarm& CompositeAlarm::operator =(const XmlNode& xmlNode)
     XmlNode actionsSuppressedByNode = resultNode.FirstChild("ActionsSuppressedBy");
     if(!actionsSuppressedByNode.IsNull())
     {
-      m_actionsSuppressedBy = ActionsSuppressedByMapper::GetActionsSuppressedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressedByNode.GetText()).c_str()).c_str());
+      m_actionsSuppressedBy = ActionsSuppressedByMapper::GetActionsSuppressedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionsSuppressedByNode.GetText()).c_str()));
       m_actionsSuppressedByHasBeenSet = true;
     }
     XmlNode actionsSuppressedReasonNode = resultNode.FirstChild("ActionsSuppressedReason");

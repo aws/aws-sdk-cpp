@@ -33,7 +33,7 @@ namespace Model
   class DataIntegrationFlowDatasetTargetConfiguration
   {
   public:
-    AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetTargetConfiguration();
+    AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetTargetConfiguration() = default;
     AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetTargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataIntegrationFlowDatasetTargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The dataset ARN.</p>
      */
-    inline const Aws::String& GetDatasetIdentifier() const{ return m_datasetIdentifier; }
+    inline const Aws::String& GetDatasetIdentifier() const { return m_datasetIdentifier; }
     inline bool DatasetIdentifierHasBeenSet() const { return m_datasetIdentifierHasBeenSet; }
-    inline void SetDatasetIdentifier(const Aws::String& value) { m_datasetIdentifierHasBeenSet = true; m_datasetIdentifier = value; }
-    inline void SetDatasetIdentifier(Aws::String&& value) { m_datasetIdentifierHasBeenSet = true; m_datasetIdentifier = std::move(value); }
-    inline void SetDatasetIdentifier(const char* value) { m_datasetIdentifierHasBeenSet = true; m_datasetIdentifier.assign(value); }
-    inline DataIntegrationFlowDatasetTargetConfiguration& WithDatasetIdentifier(const Aws::String& value) { SetDatasetIdentifier(value); return *this;}
-    inline DataIntegrationFlowDatasetTargetConfiguration& WithDatasetIdentifier(Aws::String&& value) { SetDatasetIdentifier(std::move(value)); return *this;}
-    inline DataIntegrationFlowDatasetTargetConfiguration& WithDatasetIdentifier(const char* value) { SetDatasetIdentifier(value); return *this;}
+    template<typename DatasetIdentifierT = Aws::String>
+    void SetDatasetIdentifier(DatasetIdentifierT&& value) { m_datasetIdentifierHasBeenSet = true; m_datasetIdentifier = std::forward<DatasetIdentifierT>(value); }
+    template<typename DatasetIdentifierT = Aws::String>
+    DataIntegrationFlowDatasetTargetConfiguration& WithDatasetIdentifier(DatasetIdentifierT&& value) { SetDatasetIdentifier(std::forward<DatasetIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset DataIntegrationFlow target options.</p>
      */
-    inline const DataIntegrationFlowDatasetOptions& GetOptions() const{ return m_options; }
+    inline const DataIntegrationFlowDatasetOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const DataIntegrationFlowDatasetOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(DataIntegrationFlowDatasetOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline DataIntegrationFlowDatasetTargetConfiguration& WithOptions(const DataIntegrationFlowDatasetOptions& value) { SetOptions(value); return *this;}
-    inline DataIntegrationFlowDatasetTargetConfiguration& WithOptions(DataIntegrationFlowDatasetOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = DataIntegrationFlowDatasetOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = DataIntegrationFlowDatasetOptions>
+    DataIntegrationFlowDatasetTargetConfiguration& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
   private:
 

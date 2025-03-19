@@ -35,7 +35,7 @@ namespace Model
   class SupportedAssociation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API SupportedAssociation();
+    AWS_PINPOINTSMSVOICEV2_API SupportedAssociation() = default;
     AWS_PINPOINTSMSVOICEV2_API SupportedAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API SupportedAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>Defines the behavior of when an origination identity and registration can be
      * associated with each other.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline SupportedAssociation& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline SupportedAssociation& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline SupportedAssociation& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    SupportedAssociation& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
      * region.</p>
      */
-    inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
+    inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
     inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }
-    inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = value; }
-    inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::move(value); }
-    inline void SetIsoCountryCode(const char* value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode.assign(value); }
-    inline SupportedAssociation& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
-    inline SupportedAssociation& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
-    inline SupportedAssociation& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
+    template<typename IsoCountryCodeT = Aws::String>
+    void SetIsoCountryCode(IsoCountryCodeT&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::forward<IsoCountryCodeT>(value); }
+    template<typename IsoCountryCodeT = Aws::String>
+    SupportedAssociation& WithIsoCountryCode(IsoCountryCodeT&& value) { SetIsoCountryCode(std::forward<IsoCountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * associate one or more phone numbers later. For example 10DLC campaigns and long
      * codes. </p> </li> </ul>
      */
-    inline const RegistrationAssociationBehavior& GetAssociationBehavior() const{ return m_associationBehavior; }
+    inline RegistrationAssociationBehavior GetAssociationBehavior() const { return m_associationBehavior; }
     inline bool AssociationBehaviorHasBeenSet() const { return m_associationBehaviorHasBeenSet; }
-    inline void SetAssociationBehavior(const RegistrationAssociationBehavior& value) { m_associationBehaviorHasBeenSet = true; m_associationBehavior = value; }
-    inline void SetAssociationBehavior(RegistrationAssociationBehavior&& value) { m_associationBehaviorHasBeenSet = true; m_associationBehavior = std::move(value); }
-    inline SupportedAssociation& WithAssociationBehavior(const RegistrationAssociationBehavior& value) { SetAssociationBehavior(value); return *this;}
-    inline SupportedAssociation& WithAssociationBehavior(RegistrationAssociationBehavior&& value) { SetAssociationBehavior(std::move(value)); return *this;}
+    inline void SetAssociationBehavior(RegistrationAssociationBehavior value) { m_associationBehaviorHasBeenSet = true; m_associationBehavior = value; }
+    inline SupportedAssociation& WithAssociationBehavior(RegistrationAssociationBehavior value) { SetAssociationBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +97,10 @@ namespace Model
      * <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted
      * and all origination identities will be disasscoiated.</p> </li> </ul>
      */
-    inline const RegistrationDisassociationBehavior& GetDisassociationBehavior() const{ return m_disassociationBehavior; }
+    inline RegistrationDisassociationBehavior GetDisassociationBehavior() const { return m_disassociationBehavior; }
     inline bool DisassociationBehaviorHasBeenSet() const { return m_disassociationBehaviorHasBeenSet; }
-    inline void SetDisassociationBehavior(const RegistrationDisassociationBehavior& value) { m_disassociationBehaviorHasBeenSet = true; m_disassociationBehavior = value; }
-    inline void SetDisassociationBehavior(RegistrationDisassociationBehavior&& value) { m_disassociationBehaviorHasBeenSet = true; m_disassociationBehavior = std::move(value); }
-    inline SupportedAssociation& WithDisassociationBehavior(const RegistrationDisassociationBehavior& value) { SetDisassociationBehavior(value); return *this;}
-    inline SupportedAssociation& WithDisassociationBehavior(RegistrationDisassociationBehavior&& value) { SetDisassociationBehavior(std::move(value)); return *this;}
+    inline void SetDisassociationBehavior(RegistrationDisassociationBehavior value) { m_disassociationBehaviorHasBeenSet = true; m_disassociationBehavior = value; }
+    inline SupportedAssociation& WithDisassociationBehavior(RegistrationDisassociationBehavior value) { SetDisassociationBehavior(value); return *this;}
     ///@}
   private:
 
@@ -118,10 +110,10 @@ namespace Model
     Aws::String m_isoCountryCode;
     bool m_isoCountryCodeHasBeenSet = false;
 
-    RegistrationAssociationBehavior m_associationBehavior;
+    RegistrationAssociationBehavior m_associationBehavior{RegistrationAssociationBehavior::NOT_SET};
     bool m_associationBehaviorHasBeenSet = false;
 
-    RegistrationDisassociationBehavior m_disassociationBehavior;
+    RegistrationDisassociationBehavior m_disassociationBehavior{RegistrationDisassociationBehavior::NOT_SET};
     bool m_disassociationBehaviorHasBeenSet = false;
   };
 

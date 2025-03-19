@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCachediSCSIVolumesResult::DescribeCachediSCSIVolumesResult()
-{
-}
-
 DescribeCachediSCSIVolumesResult::DescribeCachediSCSIVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeCachediSCSIVolumesResult& DescribeCachediSCSIVolumesResult::operator =(c
     {
       m_cachediSCSIVolumes.push_back(cachediSCSIVolumesJsonList[cachediSCSIVolumesIndex].AsObject());
     }
+    m_cachediSCSIVolumesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

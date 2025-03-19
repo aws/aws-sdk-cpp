@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCollaborationMLInputChannelRequest::GetCollaborationMLInputChannelRequest() : 
-    m_mlInputChannelArnHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCollaborationMLInputChannelRequest::SerializePayload() const
 {
   return {};

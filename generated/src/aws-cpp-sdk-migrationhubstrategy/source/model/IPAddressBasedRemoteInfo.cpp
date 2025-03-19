@@ -18,17 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-IPAddressBasedRemoteInfo::IPAddressBasedRemoteInfo() : 
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_ipAddressConfigurationTimeStampHasBeenSet(false),
-    m_osType(OSType::NOT_SET),
-    m_osTypeHasBeenSet(false)
-{
-}
-
 IPAddressBasedRemoteInfo::IPAddressBasedRemoteInfo(JsonView jsonValue)
-  : IPAddressBasedRemoteInfo()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IPAddressBasedRemoteInfo& IPAddressBasedRemoteInfo::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
-
     m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressConfigurationTimeStamp"))
   {
     m_ipAddressConfigurationTimeStamp = jsonValue.GetString("ipAddressConfigurationTimeStamp");
-
     m_ipAddressConfigurationTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osType"))
   {
     m_osType = OSTypeMapper::GetOSTypeForName(jsonValue.GetString("osType"));
-
     m_osTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

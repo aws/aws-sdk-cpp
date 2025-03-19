@@ -12,11 +12,6 @@ using namespace Aws::TranscribeStreamingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMedicalScribeStreamRequest::GetMedicalScribeStreamRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMedicalScribeStreamRequest::SerializePayload() const
 {
   return {};

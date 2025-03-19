@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-RenewalTerm::RenewalTerm() : 
-    m_configurationHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 RenewalTerm::RenewalTerm(JsonView jsonValue)
-  : RenewalTerm()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RenewalTerm& RenewalTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

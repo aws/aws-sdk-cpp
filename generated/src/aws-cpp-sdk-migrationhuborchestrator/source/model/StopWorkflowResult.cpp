@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopWorkflowResult::StopWorkflowResult() : 
-    m_status(MigrationWorkflowStatusEnum::NOT_SET)
-{
-}
-
 StopWorkflowResult::StopWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopWorkflowResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ StopWorkflowResult& StopWorkflowResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MigrationWorkflowStatusEnumMapper::GetMigrationWorkflowStatusEnumForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStopTime"))
   {
     m_lastStopTime = jsonValue.GetDouble("lastStopTime");
-
+    m_lastStopTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

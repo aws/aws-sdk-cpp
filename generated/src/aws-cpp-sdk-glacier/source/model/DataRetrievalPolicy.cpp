@@ -18,13 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-DataRetrievalPolicy::DataRetrievalPolicy() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 DataRetrievalPolicy::DataRetrievalPolicy(JsonView jsonValue)
-  : DataRetrievalPolicy()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DataRetrievalPolicy& DataRetrievalPolicy::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

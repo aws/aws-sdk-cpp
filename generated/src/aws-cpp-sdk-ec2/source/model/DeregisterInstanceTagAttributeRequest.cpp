@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeregisterInstanceTagAttributeRequest::DeregisterInstanceTagAttributeRequest() : 
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false),
-    m_instanceTagKeysHasBeenSet(false)
-{
-}
-
 DeregisterInstanceTagAttributeRequest::DeregisterInstanceTagAttributeRequest(const XmlNode& xmlNode)
-  : DeregisterInstanceTagAttributeRequest()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ DeregisterInstanceTagAttributeRequest& DeregisterInstanceTagAttributeRequest::op
     if(!instanceTagKeysNode.IsNull())
     {
       XmlNode instanceTagKeysMember = instanceTagKeysNode.FirstChild("item");
+      m_instanceTagKeysHasBeenSet = !instanceTagKeysMember.IsNull();
       while(!instanceTagKeysMember.IsNull())
       {
         m_instanceTagKeys.push_back(instanceTagKeysMember.GetText());

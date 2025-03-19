@@ -18,16 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-DataProtectionSettingsSummary::DataProtectionSettingsSummary() : 
-    m_creationDateHasBeenSet(false),
-    m_dataProtectionSettingsArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 DataProtectionSettingsSummary::DataProtectionSettingsSummary(JsonView jsonValue)
-  : DataProtectionSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DataProtectionSettingsSummary& DataProtectionSettingsSummary::operator =(JsonVie
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataProtectionSettingsArn"))
   {
     m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
-
     m_dataProtectionSettingsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

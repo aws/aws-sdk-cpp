@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration() : 
-    m_approximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision::NOT_SET),
-    m_approximateCreationDateTimePrecisionHasBeenSet(false)
-{
-}
-
 UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration(JsonView jsonValue)
-  : UpdateKinesisStreamingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UpdateKinesisStreamingConfiguration& UpdateKinesisStreamingConfiguration::operat
   if(jsonValue.ValueExists("ApproximateCreationDateTimePrecision"))
   {
     m_approximateCreationDateTimePrecision = ApproximateCreationDateTimePrecisionMapper::GetApproximateCreationDateTimePrecisionForName(jsonValue.GetString("ApproximateCreationDateTimePrecision"));
-
     m_approximateCreationDateTimePrecisionHasBeenSet = true;
   }
-
   return *this;
 }
 

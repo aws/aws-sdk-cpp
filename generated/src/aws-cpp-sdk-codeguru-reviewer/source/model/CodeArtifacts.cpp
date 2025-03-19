@@ -18,14 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-CodeArtifacts::CodeArtifacts() : 
-    m_sourceCodeArtifactsObjectKeyHasBeenSet(false),
-    m_buildArtifactsObjectKeyHasBeenSet(false)
-{
-}
-
 CodeArtifacts::CodeArtifacts(JsonView jsonValue)
-  : CodeArtifacts()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CodeArtifacts& CodeArtifacts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceCodeArtifactsObjectKey"))
   {
     m_sourceCodeArtifactsObjectKey = jsonValue.GetString("SourceCodeArtifactsObjectKey");
-
     m_sourceCodeArtifactsObjectKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BuildArtifactsObjectKey"))
   {
     m_buildArtifactsObjectKey = jsonValue.GetString("BuildArtifactsObjectKey");
-
     m_buildArtifactsObjectKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

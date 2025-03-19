@@ -12,11 +12,6 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPipelineChangeProgressRequest::GetPipelineChangeProgressRequest() : 
-    m_pipelineNameHasBeenSet(false)
-{
-}
-
 Aws::String GetPipelineChangeProgressRequest::SerializePayload() const
 {
   return {};

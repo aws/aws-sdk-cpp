@@ -18,19 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-EC2InstanceLimit::EC2InstanceLimit() : 
-    m_eC2InstanceType(EC2InstanceType::NOT_SET),
-    m_eC2InstanceTypeHasBeenSet(false),
-    m_currentInstances(0),
-    m_currentInstancesHasBeenSet(false),
-    m_instanceLimit(0),
-    m_instanceLimitHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 EC2InstanceLimit::EC2InstanceLimit(JsonView jsonValue)
-  : EC2InstanceLimit()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ EC2InstanceLimit& EC2InstanceLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EC2InstanceType"))
   {
     m_eC2InstanceType = EC2InstanceTypeMapper::GetEC2InstanceTypeForName(jsonValue.GetString("EC2InstanceType"));
-
     m_eC2InstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentInstances"))
   {
     m_currentInstances = jsonValue.GetInteger("CurrentInstances");
-
     m_currentInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceLimit"))
   {
     m_instanceLimit = jsonValue.GetInteger("InstanceLimit");
-
     m_instanceLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-BooleanConfigurationOptions::BooleanConfigurationOptions() : 
-    m_defaultValue(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 BooleanConfigurationOptions::BooleanConfigurationOptions(JsonView jsonValue)
-  : BooleanConfigurationOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BooleanConfigurationOptions& BooleanConfigurationOptions::operator =(JsonView js
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetBool("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class EndSessionRequest
   {
   public:
-    AWS_QLDBSESSION_API EndSessionRequest();
+    AWS_QLDBSESSION_API EndSessionRequest() = default;
     AWS_QLDBSESSION_API EndSessionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API EndSessionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStreamingURLResult::CreateStreamingURLResult()
-{
-}
-
 CreateStreamingURLResult::CreateStreamingURLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateStreamingURLResult& CreateStreamingURLResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("StreamingURL"))
   {
     m_streamingURL = jsonValue.GetString("StreamingURL");
-
+    m_streamingURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expires"))
   {
     m_expires = jsonValue.GetDouble("Expires");
-
+    m_expiresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

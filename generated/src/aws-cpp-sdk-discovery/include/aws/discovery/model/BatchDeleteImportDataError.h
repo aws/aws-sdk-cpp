@@ -33,7 +33,7 @@ namespace Model
   class BatchDeleteImportDataError
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError();
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,41 @@ namespace Model
     /**
      * <p>The unique import ID associated with the error that occurred.</p>
      */
-    inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
+    inline const Aws::String& GetImportTaskId() const { return m_importTaskId; }
     inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
-    inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
-    inline void SetImportTaskId(Aws::String&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::move(value); }
-    inline void SetImportTaskId(const char* value) { m_importTaskIdHasBeenSet = true; m_importTaskId.assign(value); }
-    inline BatchDeleteImportDataError& WithImportTaskId(const Aws::String& value) { SetImportTaskId(value); return *this;}
-    inline BatchDeleteImportDataError& WithImportTaskId(Aws::String&& value) { SetImportTaskId(std::move(value)); return *this;}
-    inline BatchDeleteImportDataError& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
+    template<typename ImportTaskIdT = Aws::String>
+    void SetImportTaskId(ImportTaskIdT&& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = std::forward<ImportTaskIdT>(value); }
+    template<typename ImportTaskIdT = Aws::String>
+    BatchDeleteImportDataError& WithImportTaskId(ImportTaskIdT&& value) { SetImportTaskId(std::forward<ImportTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of error that occurred for a specific import task.</p>
      */
-    inline const BatchDeleteImportDataErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline BatchDeleteImportDataErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const BatchDeleteImportDataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(BatchDeleteImportDataErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline BatchDeleteImportDataError& WithErrorCode(const BatchDeleteImportDataErrorCode& value) { SetErrorCode(value); return *this;}
-    inline BatchDeleteImportDataError& WithErrorCode(BatchDeleteImportDataErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(BatchDeleteImportDataErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchDeleteImportDataError& WithErrorCode(BatchDeleteImportDataErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the error that occurred for a specific import task.</p>
      */
-    inline const Aws::String& GetErrorDescription() const{ return m_errorDescription; }
+    inline const Aws::String& GetErrorDescription() const { return m_errorDescription; }
     inline bool ErrorDescriptionHasBeenSet() const { return m_errorDescriptionHasBeenSet; }
-    inline void SetErrorDescription(const Aws::String& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = value; }
-    inline void SetErrorDescription(Aws::String&& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = std::move(value); }
-    inline void SetErrorDescription(const char* value) { m_errorDescriptionHasBeenSet = true; m_errorDescription.assign(value); }
-    inline BatchDeleteImportDataError& WithErrorDescription(const Aws::String& value) { SetErrorDescription(value); return *this;}
-    inline BatchDeleteImportDataError& WithErrorDescription(Aws::String&& value) { SetErrorDescription(std::move(value)); return *this;}
-    inline BatchDeleteImportDataError& WithErrorDescription(const char* value) { SetErrorDescription(value); return *this;}
+    template<typename ErrorDescriptionT = Aws::String>
+    void SetErrorDescription(ErrorDescriptionT&& value) { m_errorDescriptionHasBeenSet = true; m_errorDescription = std::forward<ErrorDescriptionT>(value); }
+    template<typename ErrorDescriptionT = Aws::String>
+    BatchDeleteImportDataError& WithErrorDescription(ErrorDescriptionT&& value) { SetErrorDescription(std::forward<ErrorDescriptionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_importTaskId;
     bool m_importTaskIdHasBeenSet = false;
 
-    BatchDeleteImportDataErrorCode m_errorCode;
+    BatchDeleteImportDataErrorCode m_errorCode{BatchDeleteImportDataErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorDescription;

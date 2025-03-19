@@ -28,7 +28,7 @@ namespace Model
   class AssociateAccessPolicyResult
   {
   public:
-    AWS_EKS_API AssociateAccessPolicyResult();
+    AWS_EKS_API AssociateAccessPolicyResult() = default;
     AWS_EKS_API AssociateAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API AssociateAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterName.assign(value); }
-    inline AssociateAccessPolicyResult& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline AssociateAccessPolicyResult& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline AssociateAccessPolicyResult& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    AssociateAccessPolicyResult& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArn.assign(value); }
-    inline AssociateAccessPolicyResult& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline AssociateAccessPolicyResult& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline AssociateAccessPolicyResult& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    AssociateAccessPolicyResult& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,32 +60,34 @@ namespace Model
      * <p>The <code>AccessPolicy</code> and scope associated to the
      * <code>AccessEntry</code>.</p>
      */
-    inline const AssociatedAccessPolicy& GetAssociatedAccessPolicy() const{ return m_associatedAccessPolicy; }
-    inline void SetAssociatedAccessPolicy(const AssociatedAccessPolicy& value) { m_associatedAccessPolicy = value; }
-    inline void SetAssociatedAccessPolicy(AssociatedAccessPolicy&& value) { m_associatedAccessPolicy = std::move(value); }
-    inline AssociateAccessPolicyResult& WithAssociatedAccessPolicy(const AssociatedAccessPolicy& value) { SetAssociatedAccessPolicy(value); return *this;}
-    inline AssociateAccessPolicyResult& WithAssociatedAccessPolicy(AssociatedAccessPolicy&& value) { SetAssociatedAccessPolicy(std::move(value)); return *this;}
+    inline const AssociatedAccessPolicy& GetAssociatedAccessPolicy() const { return m_associatedAccessPolicy; }
+    template<typename AssociatedAccessPolicyT = AssociatedAccessPolicy>
+    void SetAssociatedAccessPolicy(AssociatedAccessPolicyT&& value) { m_associatedAccessPolicyHasBeenSet = true; m_associatedAccessPolicy = std::forward<AssociatedAccessPolicyT>(value); }
+    template<typename AssociatedAccessPolicyT = AssociatedAccessPolicy>
+    AssociateAccessPolicyResult& WithAssociatedAccessPolicy(AssociatedAccessPolicyT&& value) { SetAssociatedAccessPolicy(std::forward<AssociatedAccessPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateAccessPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterName;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_principalArn;
+    bool m_principalArnHasBeenSet = false;
 
     AssociatedAccessPolicy m_associatedAccessPolicy;
+    bool m_associatedAccessPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

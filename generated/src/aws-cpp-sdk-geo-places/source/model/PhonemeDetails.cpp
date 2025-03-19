@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-PhonemeDetails::PhonemeDetails() : 
-    m_titleHasBeenSet(false),
-    m_addressHasBeenSet(false)
-{
-}
-
 PhonemeDetails::PhonemeDetails(JsonView jsonValue)
-  : PhonemeDetails()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ PhonemeDetails& PhonemeDetails::operator =(JsonView jsonValue)
     }
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
     m_addressHasBeenSet = true;
   }
-
   return *this;
 }
 

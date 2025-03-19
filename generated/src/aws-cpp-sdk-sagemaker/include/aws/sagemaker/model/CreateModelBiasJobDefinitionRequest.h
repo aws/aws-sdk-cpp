@@ -30,7 +30,7 @@ namespace Model
   class CreateModelBiasJobDefinitionRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateModelBiasJobDefinitionRequest();
+    AWS_SAGEMAKER_API CreateModelBiasJobDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,82 +48,80 @@ namespace Model
      * <p>The name of the bias job definition. The name must be unique within an Amazon
      * Web Services Region in the Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
+    inline const Aws::String& GetJobDefinitionName() const { return m_jobDefinitionName; }
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
-    inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
-    inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
-    inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
+    template<typename JobDefinitionNameT = Aws::String>
+    void SetJobDefinitionName(JobDefinitionNameT&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::forward<JobDefinitionNameT>(value); }
+    template<typename JobDefinitionNameT = Aws::String>
+    CreateModelBiasJobDefinitionRequest& WithJobDefinitionName(JobDefinitionNameT&& value) { SetJobDefinitionName(std::forward<JobDefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The baseline configuration for a model bias job.</p>
      */
-    inline const ModelBiasBaselineConfig& GetModelBiasBaselineConfig() const{ return m_modelBiasBaselineConfig; }
+    inline const ModelBiasBaselineConfig& GetModelBiasBaselineConfig() const { return m_modelBiasBaselineConfig; }
     inline bool ModelBiasBaselineConfigHasBeenSet() const { return m_modelBiasBaselineConfigHasBeenSet; }
-    inline void SetModelBiasBaselineConfig(const ModelBiasBaselineConfig& value) { m_modelBiasBaselineConfigHasBeenSet = true; m_modelBiasBaselineConfig = value; }
-    inline void SetModelBiasBaselineConfig(ModelBiasBaselineConfig&& value) { m_modelBiasBaselineConfigHasBeenSet = true; m_modelBiasBaselineConfig = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasBaselineConfig(const ModelBiasBaselineConfig& value) { SetModelBiasBaselineConfig(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasBaselineConfig(ModelBiasBaselineConfig&& value) { SetModelBiasBaselineConfig(std::move(value)); return *this;}
+    template<typename ModelBiasBaselineConfigT = ModelBiasBaselineConfig>
+    void SetModelBiasBaselineConfig(ModelBiasBaselineConfigT&& value) { m_modelBiasBaselineConfigHasBeenSet = true; m_modelBiasBaselineConfig = std::forward<ModelBiasBaselineConfigT>(value); }
+    template<typename ModelBiasBaselineConfigT = ModelBiasBaselineConfig>
+    CreateModelBiasJobDefinitionRequest& WithModelBiasBaselineConfig(ModelBiasBaselineConfigT&& value) { SetModelBiasBaselineConfig(std::forward<ModelBiasBaselineConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configures the model bias job to run a specified Docker container image.</p>
      */
-    inline const ModelBiasAppSpecification& GetModelBiasAppSpecification() const{ return m_modelBiasAppSpecification; }
+    inline const ModelBiasAppSpecification& GetModelBiasAppSpecification() const { return m_modelBiasAppSpecification; }
     inline bool ModelBiasAppSpecificationHasBeenSet() const { return m_modelBiasAppSpecificationHasBeenSet; }
-    inline void SetModelBiasAppSpecification(const ModelBiasAppSpecification& value) { m_modelBiasAppSpecificationHasBeenSet = true; m_modelBiasAppSpecification = value; }
-    inline void SetModelBiasAppSpecification(ModelBiasAppSpecification&& value) { m_modelBiasAppSpecificationHasBeenSet = true; m_modelBiasAppSpecification = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasAppSpecification(const ModelBiasAppSpecification& value) { SetModelBiasAppSpecification(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasAppSpecification(ModelBiasAppSpecification&& value) { SetModelBiasAppSpecification(std::move(value)); return *this;}
+    template<typename ModelBiasAppSpecificationT = ModelBiasAppSpecification>
+    void SetModelBiasAppSpecification(ModelBiasAppSpecificationT&& value) { m_modelBiasAppSpecificationHasBeenSet = true; m_modelBiasAppSpecification = std::forward<ModelBiasAppSpecificationT>(value); }
+    template<typename ModelBiasAppSpecificationT = ModelBiasAppSpecification>
+    CreateModelBiasJobDefinitionRequest& WithModelBiasAppSpecification(ModelBiasAppSpecificationT&& value) { SetModelBiasAppSpecification(std::forward<ModelBiasAppSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Inputs for the model bias job.</p>
      */
-    inline const ModelBiasJobInput& GetModelBiasJobInput() const{ return m_modelBiasJobInput; }
+    inline const ModelBiasJobInput& GetModelBiasJobInput() const { return m_modelBiasJobInput; }
     inline bool ModelBiasJobInputHasBeenSet() const { return m_modelBiasJobInputHasBeenSet; }
-    inline void SetModelBiasJobInput(const ModelBiasJobInput& value) { m_modelBiasJobInputHasBeenSet = true; m_modelBiasJobInput = value; }
-    inline void SetModelBiasJobInput(ModelBiasJobInput&& value) { m_modelBiasJobInputHasBeenSet = true; m_modelBiasJobInput = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasJobInput(const ModelBiasJobInput& value) { SetModelBiasJobInput(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasJobInput(ModelBiasJobInput&& value) { SetModelBiasJobInput(std::move(value)); return *this;}
+    template<typename ModelBiasJobInputT = ModelBiasJobInput>
+    void SetModelBiasJobInput(ModelBiasJobInputT&& value) { m_modelBiasJobInputHasBeenSet = true; m_modelBiasJobInput = std::forward<ModelBiasJobInputT>(value); }
+    template<typename ModelBiasJobInputT = ModelBiasJobInput>
+    CreateModelBiasJobDefinitionRequest& WithModelBiasJobInput(ModelBiasJobInputT&& value) { SetModelBiasJobInput(std::forward<ModelBiasJobInputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MonitoringOutputConfig& GetModelBiasJobOutputConfig() const{ return m_modelBiasJobOutputConfig; }
+    inline const MonitoringOutputConfig& GetModelBiasJobOutputConfig() const { return m_modelBiasJobOutputConfig; }
     inline bool ModelBiasJobOutputConfigHasBeenSet() const { return m_modelBiasJobOutputConfigHasBeenSet; }
-    inline void SetModelBiasJobOutputConfig(const MonitoringOutputConfig& value) { m_modelBiasJobOutputConfigHasBeenSet = true; m_modelBiasJobOutputConfig = value; }
-    inline void SetModelBiasJobOutputConfig(MonitoringOutputConfig&& value) { m_modelBiasJobOutputConfigHasBeenSet = true; m_modelBiasJobOutputConfig = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasJobOutputConfig(const MonitoringOutputConfig& value) { SetModelBiasJobOutputConfig(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithModelBiasJobOutputConfig(MonitoringOutputConfig&& value) { SetModelBiasJobOutputConfig(std::move(value)); return *this;}
+    template<typename ModelBiasJobOutputConfigT = MonitoringOutputConfig>
+    void SetModelBiasJobOutputConfig(ModelBiasJobOutputConfigT&& value) { m_modelBiasJobOutputConfigHasBeenSet = true; m_modelBiasJobOutputConfig = std::forward<ModelBiasJobOutputConfigT>(value); }
+    template<typename ModelBiasJobOutputConfigT = MonitoringOutputConfig>
+    CreateModelBiasJobDefinitionRequest& WithModelBiasJobOutputConfig(ModelBiasJobOutputConfigT&& value) { SetModelBiasJobOutputConfig(std::forward<ModelBiasJobOutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MonitoringResources& GetJobResources() const{ return m_jobResources; }
+    inline const MonitoringResources& GetJobResources() const { return m_jobResources; }
     inline bool JobResourcesHasBeenSet() const { return m_jobResourcesHasBeenSet; }
-    inline void SetJobResources(const MonitoringResources& value) { m_jobResourcesHasBeenSet = true; m_jobResources = value; }
-    inline void SetJobResources(MonitoringResources&& value) { m_jobResourcesHasBeenSet = true; m_jobResources = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithJobResources(const MonitoringResources& value) { SetJobResources(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithJobResources(MonitoringResources&& value) { SetJobResources(std::move(value)); return *this;}
+    template<typename JobResourcesT = MonitoringResources>
+    void SetJobResources(JobResourcesT&& value) { m_jobResourcesHasBeenSet = true; m_jobResources = std::forward<JobResourcesT>(value); }
+    template<typename JobResourcesT = MonitoringResources>
+    CreateModelBiasJobDefinitionRequest& WithJobResources(JobResourcesT&& value) { SetJobResources(std::forward<JobResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Networking options for a model bias job.</p>
      */
-    inline const MonitoringNetworkConfig& GetNetworkConfig() const{ return m_networkConfig; }
+    inline const MonitoringNetworkConfig& GetNetworkConfig() const { return m_networkConfig; }
     inline bool NetworkConfigHasBeenSet() const { return m_networkConfigHasBeenSet; }
-    inline void SetNetworkConfig(const MonitoringNetworkConfig& value) { m_networkConfigHasBeenSet = true; m_networkConfig = value; }
-    inline void SetNetworkConfig(MonitoringNetworkConfig&& value) { m_networkConfigHasBeenSet = true; m_networkConfig = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithNetworkConfig(const MonitoringNetworkConfig& value) { SetNetworkConfig(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithNetworkConfig(MonitoringNetworkConfig&& value) { SetNetworkConfig(std::move(value)); return *this;}
+    template<typename NetworkConfigT = MonitoringNetworkConfig>
+    void SetNetworkConfig(NetworkConfigT&& value) { m_networkConfigHasBeenSet = true; m_networkConfig = std::forward<NetworkConfigT>(value); }
+    template<typename NetworkConfigT = MonitoringNetworkConfig>
+    CreateModelBiasJobDefinitionRequest& WithNetworkConfig(NetworkConfigT&& value) { SetNetworkConfig(std::forward<NetworkConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,24 +129,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can
      * assume to perform tasks on your behalf.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateModelBiasJobDefinitionRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MonitoringStoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
+    inline const MonitoringStoppingCondition& GetStoppingCondition() const { return m_stoppingCondition; }
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
-    inline void SetStoppingCondition(const MonitoringStoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
-    inline void SetStoppingCondition(MonitoringStoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithStoppingCondition(const MonitoringStoppingCondition& value) { SetStoppingCondition(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithStoppingCondition(MonitoringStoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
+    template<typename StoppingConditionT = MonitoringStoppingCondition>
+    void SetStoppingCondition(StoppingConditionT&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::forward<StoppingConditionT>(value); }
+    template<typename StoppingConditionT = MonitoringStoppingCondition>
+    CreateModelBiasJobDefinitionRequest& WithStoppingCondition(StoppingConditionT&& value) { SetStoppingCondition(std::forward<StoppingConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +154,14 @@ namespace Model
      * Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
      * Management User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateModelBiasJobDefinitionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateModelBiasJobDefinitionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateModelBiasJobDefinitionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateModelBiasJobDefinitionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateModelBiasJobDefinitionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

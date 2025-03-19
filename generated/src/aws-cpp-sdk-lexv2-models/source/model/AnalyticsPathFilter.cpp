@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsPathFilter::AnalyticsPathFilter() : 
-    m_name(AnalyticsCommonFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(AnalyticsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 AnalyticsPathFilter::AnalyticsPathFilter(JsonView jsonValue)
-  : AnalyticsPathFilter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AnalyticsPathFilter& AnalyticsPathFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsCommonFilterNameMapper::GetAnalyticsCommonFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = AnalyticsFilterOperatorMapper::GetAnalyticsFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ AnalyticsPathFilter& AnalyticsPathFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-SendingOptions::SendingOptions() : 
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false)
-{
-}
-
 SendingOptions::SendingOptions(JsonView jsonValue)
-  : SendingOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SendingOptions& SendingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SendingEnabled"))
   {
     m_sendingEnabled = jsonValue.GetBool("SendingEnabled");
-
     m_sendingEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

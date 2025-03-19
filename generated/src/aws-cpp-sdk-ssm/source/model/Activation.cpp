@@ -18,25 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Activation::Activation() : 
-    m_activationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultInstanceNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_registrationLimit(0),
-    m_registrationLimitHasBeenSet(false),
-    m_registrationsCount(0),
-    m_registrationsCountHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_expired(false),
-    m_expiredHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Activation::Activation(JsonView jsonValue)
-  : Activation()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ Activation& Activation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActivationId"))
   {
     m_activationId = jsonValue.GetString("ActivationId");
-
     m_activationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultInstanceName"))
   {
     m_defaultInstanceName = jsonValue.GetString("DefaultInstanceName");
-
     m_defaultInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRole"))
   {
     m_iamRole = jsonValue.GetString("IamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationLimit"))
   {
     m_registrationLimit = jsonValue.GetInteger("RegistrationLimit");
-
     m_registrationLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationsCount"))
   {
     m_registrationsCount = jsonValue.GetInteger("RegistrationsCount");
-
     m_registrationsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("ExpirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expired"))
   {
     m_expired = jsonValue.GetBool("Expired");
-
     m_expiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -115,7 +79,6 @@ Activation& Activation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

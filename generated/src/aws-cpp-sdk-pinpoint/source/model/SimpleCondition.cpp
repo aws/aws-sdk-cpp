@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SimpleCondition::SimpleCondition() : 
-    m_eventConditionHasBeenSet(false),
-    m_segmentConditionHasBeenSet(false),
-    m_segmentDimensionsHasBeenSet(false)
-{
-}
-
 SimpleCondition::SimpleCondition(JsonView jsonValue)
-  : SimpleCondition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SimpleCondition& SimpleCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventCondition"))
   {
     m_eventCondition = jsonValue.GetObject("EventCondition");
-
     m_eventConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentCondition"))
   {
     m_segmentCondition = jsonValue.GetObject("SegmentCondition");
-
     m_segmentConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDimensions"))
   {
     m_segmentDimensions = jsonValue.GetObject("segmentDimensions");
-
     m_segmentDimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

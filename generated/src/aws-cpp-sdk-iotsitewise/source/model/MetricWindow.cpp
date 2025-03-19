@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-MetricWindow::MetricWindow() : 
-    m_tumblingHasBeenSet(false)
-{
-}
-
 MetricWindow::MetricWindow(JsonView jsonValue)
-  : MetricWindow()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetricWindow& MetricWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tumbling"))
   {
     m_tumbling = jsonValue.GetObject("tumbling");
-
     m_tumblingHasBeenSet = true;
   }
-
   return *this;
 }
 

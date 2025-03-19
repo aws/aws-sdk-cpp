@@ -27,7 +27,7 @@ namespace Model
   class GetComponentVersionArtifactRequest : public GreengrassV2Request
   {
   public:
-    AWS_GREENGRASSV2_API GetComponentVersionArtifactRequest();
+    AWS_GREENGRASSV2_API GetComponentVersionArtifactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * of the component version. Specify the ARN of a public or a Lambda component
      * version.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline GetComponentVersionArtifactRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetComponentVersionArtifactRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetComponentVersionArtifactRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetComponentVersionArtifactRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the
      * artifact name is <code>SomeArtifact.zip</code>.</p>
      */
-    inline const Aws::String& GetArtifactName() const{ return m_artifactName; }
+    inline const Aws::String& GetArtifactName() const { return m_artifactName; }
     inline bool ArtifactNameHasBeenSet() const { return m_artifactNameHasBeenSet; }
-    inline void SetArtifactName(const Aws::String& value) { m_artifactNameHasBeenSet = true; m_artifactName = value; }
-    inline void SetArtifactName(Aws::String&& value) { m_artifactNameHasBeenSet = true; m_artifactName = std::move(value); }
-    inline void SetArtifactName(const char* value) { m_artifactNameHasBeenSet = true; m_artifactName.assign(value); }
-    inline GetComponentVersionArtifactRequest& WithArtifactName(const Aws::String& value) { SetArtifactName(value); return *this;}
-    inline GetComponentVersionArtifactRequest& WithArtifactName(Aws::String&& value) { SetArtifactName(std::move(value)); return *this;}
-    inline GetComponentVersionArtifactRequest& WithArtifactName(const char* value) { SetArtifactName(value); return *this;}
+    template<typename ArtifactNameT = Aws::String>
+    void SetArtifactName(ArtifactNameT&& value) { m_artifactNameHasBeenSet = true; m_artifactName = std::forward<ArtifactNameT>(value); }
+    template<typename ArtifactNameT = Aws::String>
+    GetComponentVersionArtifactRequest& WithArtifactName(ArtifactNameT&& value) { SetArtifactName(std::forward<ArtifactNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code>
      * with this parameter.</p>
      */
-    inline const S3EndpointType& GetS3EndpointType() const{ return m_s3EndpointType; }
+    inline S3EndpointType GetS3EndpointType() const { return m_s3EndpointType; }
     inline bool S3EndpointTypeHasBeenSet() const { return m_s3EndpointTypeHasBeenSet; }
-    inline void SetS3EndpointType(const S3EndpointType& value) { m_s3EndpointTypeHasBeenSet = true; m_s3EndpointType = value; }
-    inline void SetS3EndpointType(S3EndpointType&& value) { m_s3EndpointTypeHasBeenSet = true; m_s3EndpointType = std::move(value); }
-    inline GetComponentVersionArtifactRequest& WithS3EndpointType(const S3EndpointType& value) { SetS3EndpointType(value); return *this;}
-    inline GetComponentVersionArtifactRequest& WithS3EndpointType(S3EndpointType&& value) { SetS3EndpointType(std::move(value)); return *this;}
+    inline void SetS3EndpointType(S3EndpointType value) { m_s3EndpointTypeHasBeenSet = true; m_s3EndpointType = value; }
+    inline GetComponentVersionArtifactRequest& WithS3EndpointType(S3EndpointType value) { SetS3EndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,10 @@ namespace Model
      * point to an Amazon S3 FIPS endpoint. If you don't specify a value, the default
      * is <code>standard</code>.</p>
      */
-    inline const IotEndpointType& GetIotEndpointType() const{ return m_iotEndpointType; }
+    inline IotEndpointType GetIotEndpointType() const { return m_iotEndpointType; }
     inline bool IotEndpointTypeHasBeenSet() const { return m_iotEndpointTypeHasBeenSet; }
-    inline void SetIotEndpointType(const IotEndpointType& value) { m_iotEndpointTypeHasBeenSet = true; m_iotEndpointType = value; }
-    inline void SetIotEndpointType(IotEndpointType&& value) { m_iotEndpointTypeHasBeenSet = true; m_iotEndpointType = std::move(value); }
-    inline GetComponentVersionArtifactRequest& WithIotEndpointType(const IotEndpointType& value) { SetIotEndpointType(value); return *this;}
-    inline GetComponentVersionArtifactRequest& WithIotEndpointType(IotEndpointType&& value) { SetIotEndpointType(std::move(value)); return *this;}
+    inline void SetIotEndpointType(IotEndpointType value) { m_iotEndpointTypeHasBeenSet = true; m_iotEndpointType = value; }
+    inline GetComponentVersionArtifactRequest& WithIotEndpointType(IotEndpointType value) { SetIotEndpointType(value); return *this;}
     ///@}
   private:
 
@@ -116,10 +108,10 @@ namespace Model
     Aws::String m_artifactName;
     bool m_artifactNameHasBeenSet = false;
 
-    S3EndpointType m_s3EndpointType;
+    S3EndpointType m_s3EndpointType{S3EndpointType::NOT_SET};
     bool m_s3EndpointTypeHasBeenSet = false;
 
-    IotEndpointType m_iotEndpointType;
+    IotEndpointType m_iotEndpointType{IotEndpointType::NOT_SET};
     bool m_iotEndpointTypeHasBeenSet = false;
   };
 

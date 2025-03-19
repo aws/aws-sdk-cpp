@@ -33,7 +33,7 @@ namespace Model
   class PatternObjectFilterConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API PatternObjectFilterConfiguration();
+    AWS_BEDROCKAGENT_API PatternObjectFilterConfiguration() = default;
     AWS_BEDROCKAGENT_API PatternObjectFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PatternObjectFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The configuration of specific filters applied to your data source content.
      * You can filter out or include certain content.</p>
      */
-    inline const Aws::Vector<PatternObjectFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<PatternObjectFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<PatternObjectFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<PatternObjectFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline PatternObjectFilterConfiguration& WithFilters(const Aws::Vector<PatternObjectFilter>& value) { SetFilters(value); return *this;}
-    inline PatternObjectFilterConfiguration& WithFilters(Aws::Vector<PatternObjectFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline PatternObjectFilterConfiguration& AddFilters(const PatternObjectFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline PatternObjectFilterConfiguration& AddFilters(PatternObjectFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<PatternObjectFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<PatternObjectFilter>>
+    PatternObjectFilterConfiguration& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = PatternObjectFilter>
+    PatternObjectFilterConfiguration& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

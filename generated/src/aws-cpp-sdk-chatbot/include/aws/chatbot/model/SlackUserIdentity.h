@@ -32,7 +32,7 @@ namespace Model
   class SlackUserIdentity
   {
   public:
-    AWS_CHATBOT_API SlackUserIdentity();
+    AWS_CHATBOT_API SlackUserIdentity() = default;
     AWS_CHATBOT_API SlackUserIdentity(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API SlackUserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * policies for AWS Chatbot</a> in the <i> AWS Chatbot Administrator Guide</i>.
      * </p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline SlackUserIdentity& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline SlackUserIdentity& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline SlackUserIdentity& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    SlackUserIdentity& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,42 +59,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated
      * with the user identity to delete.</p>
      */
-    inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
+    inline const Aws::String& GetChatConfigurationArn() const { return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-    inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-    inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-    inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-    inline SlackUserIdentity& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-    inline SlackUserIdentity& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-    inline SlackUserIdentity& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
+    template<typename ChatConfigurationArnT = Aws::String>
+    void SetChatConfigurationArn(ChatConfigurationArnT&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::forward<ChatConfigurationArnT>(value); }
+    template<typename ChatConfigurationArnT = Aws::String>
+    SlackUserIdentity& WithChatConfigurationArn(ChatConfigurationArnT&& value) { SetChatConfigurationArn(std::forward<ChatConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Slack workspace authorized with AWS Chatbot.</p>
      */
-    inline const Aws::String& GetSlackTeamId() const{ return m_slackTeamId; }
+    inline const Aws::String& GetSlackTeamId() const { return m_slackTeamId; }
     inline bool SlackTeamIdHasBeenSet() const { return m_slackTeamIdHasBeenSet; }
-    inline void SetSlackTeamId(const Aws::String& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = value; }
-    inline void SetSlackTeamId(Aws::String&& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = std::move(value); }
-    inline void SetSlackTeamId(const char* value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId.assign(value); }
-    inline SlackUserIdentity& WithSlackTeamId(const Aws::String& value) { SetSlackTeamId(value); return *this;}
-    inline SlackUserIdentity& WithSlackTeamId(Aws::String&& value) { SetSlackTeamId(std::move(value)); return *this;}
-    inline SlackUserIdentity& WithSlackTeamId(const char* value) { SetSlackTeamId(value); return *this;}
+    template<typename SlackTeamIdT = Aws::String>
+    void SetSlackTeamId(SlackTeamIdT&& value) { m_slackTeamIdHasBeenSet = true; m_slackTeamId = std::forward<SlackTeamIdT>(value); }
+    template<typename SlackTeamIdT = Aws::String>
+    SlackUserIdentity& WithSlackTeamId(SlackTeamIdT&& value) { SetSlackTeamId(std::forward<SlackTeamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user in Slack</p>
      */
-    inline const Aws::String& GetSlackUserId() const{ return m_slackUserId; }
+    inline const Aws::String& GetSlackUserId() const { return m_slackUserId; }
     inline bool SlackUserIdHasBeenSet() const { return m_slackUserIdHasBeenSet; }
-    inline void SetSlackUserId(const Aws::String& value) { m_slackUserIdHasBeenSet = true; m_slackUserId = value; }
-    inline void SetSlackUserId(Aws::String&& value) { m_slackUserIdHasBeenSet = true; m_slackUserId = std::move(value); }
-    inline void SetSlackUserId(const char* value) { m_slackUserIdHasBeenSet = true; m_slackUserId.assign(value); }
-    inline SlackUserIdentity& WithSlackUserId(const Aws::String& value) { SetSlackUserId(value); return *this;}
-    inline SlackUserIdentity& WithSlackUserId(Aws::String&& value) { SetSlackUserId(std::move(value)); return *this;}
-    inline SlackUserIdentity& WithSlackUserId(const char* value) { SetSlackUserId(value); return *this;}
+    template<typename SlackUserIdT = Aws::String>
+    void SetSlackUserId(SlackUserIdT&& value) { m_slackUserIdHasBeenSet = true; m_slackUserId = std::forward<SlackUserIdT>(value); }
+    template<typename SlackUserIdT = Aws::String>
+    SlackUserIdentity& WithSlackUserId(SlackUserIdT&& value) { SetSlackUserId(std::forward<SlackUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +96,12 @@ namespace Model
      * <p>The AWS user identity ARN used to associate a Slack user ID with an IAM
      * Role.</p>
      */
-    inline const Aws::String& GetAwsUserIdentity() const{ return m_awsUserIdentity; }
+    inline const Aws::String& GetAwsUserIdentity() const { return m_awsUserIdentity; }
     inline bool AwsUserIdentityHasBeenSet() const { return m_awsUserIdentityHasBeenSet; }
-    inline void SetAwsUserIdentity(const Aws::String& value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity = value; }
-    inline void SetAwsUserIdentity(Aws::String&& value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity = std::move(value); }
-    inline void SetAwsUserIdentity(const char* value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity.assign(value); }
-    inline SlackUserIdentity& WithAwsUserIdentity(const Aws::String& value) { SetAwsUserIdentity(value); return *this;}
-    inline SlackUserIdentity& WithAwsUserIdentity(Aws::String&& value) { SetAwsUserIdentity(std::move(value)); return *this;}
-    inline SlackUserIdentity& WithAwsUserIdentity(const char* value) { SetAwsUserIdentity(value); return *this;}
+    template<typename AwsUserIdentityT = Aws::String>
+    void SetAwsUserIdentity(AwsUserIdentityT&& value) { m_awsUserIdentityHasBeenSet = true; m_awsUserIdentity = std::forward<AwsUserIdentityT>(value); }
+    template<typename AwsUserIdentityT = Aws::String>
+    SlackUserIdentity& WithAwsUserIdentity(AwsUserIdentityT&& value) { SetAwsUserIdentity(std::forward<AwsUserIdentityT>(value)); return *this;}
     ///@}
   private:
 

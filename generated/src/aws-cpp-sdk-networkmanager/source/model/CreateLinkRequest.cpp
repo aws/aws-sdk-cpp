@@ -12,17 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLinkRequest::CreateLinkRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLinkRequest::SerializePayload() const
 {
   JsonValue payload;

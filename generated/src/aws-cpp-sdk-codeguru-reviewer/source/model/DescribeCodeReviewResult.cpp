@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCodeReviewResult::DescribeCodeReviewResult()
-{
-}
-
 DescribeCodeReviewResult::DescribeCodeReviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeCodeReviewResult& DescribeCodeReviewResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("CodeReview"))
   {
     m_codeReview = jsonValue.GetObject("CodeReview");
-
+    m_codeReviewHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

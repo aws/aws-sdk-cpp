@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailAddressSearchCriteria::EmailAddressSearchCriteria() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
-{
-}
-
 EmailAddressSearchCriteria::EmailAddressSearchCriteria(JsonView jsonValue)
-  : EmailAddressSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EmailAddressSearchCriteria& EmailAddressSearchCriteria::operator =(JsonView json
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -52,14 +43,11 @@ EmailAddressSearchCriteria& EmailAddressSearchCriteria::operator =(JsonView json
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

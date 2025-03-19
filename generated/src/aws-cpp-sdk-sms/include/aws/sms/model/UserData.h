@@ -32,7 +32,7 @@ namespace Model
   class UserData
   {
   public:
-    AWS_SMS_API UserData();
+    AWS_SMS_API UserData() = default;
     AWS_SMS_API UserData(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Amazon S3 location of the user-data script.</p>
      */
-    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline UserData& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-    inline UserData& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3Location>
+    UserData& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 

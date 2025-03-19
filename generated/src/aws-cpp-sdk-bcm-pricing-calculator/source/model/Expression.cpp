@@ -18,28 +18,10 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-Expression::Expression() : 
-    m_andHasBeenSet(false),
-    m_orHasBeenSet(false),
-    m_notHasBeenSet(false),
-    m_costCategoriesHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Expression::Expression(JsonView jsonValue)
-  : Expression()
 {
   *this = jsonValue;
 }
-
-const Expression& Expression::GetNot() const{ return *m_not; }
-bool Expression::NotHasBeenSet() const { return m_notHasBeenSet; }
-void Expression::SetNot(const Expression& value) { m_notHasBeenSet = true; m_not = Aws::MakeShared<Expression>("Expression", value); }
-void Expression::SetNot(Expression&& value) { m_notHasBeenSet = true; m_not = Aws::MakeShared<Expression>("Expression", std::move(value)); }
-Expression& Expression::WithNot(const Expression& value) { SetNot(value); return *this;}
-Expression& Expression::WithNot(Expression&& value) { SetNot(std::move(value)); return *this;}
 
 Expression& Expression::operator =(JsonView jsonValue)
 {
@@ -52,7 +34,6 @@ Expression& Expression::operator =(JsonView jsonValue)
     }
     m_andHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("or"))
   {
     Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("or");
@@ -62,35 +43,26 @@ Expression& Expression::operator =(JsonView jsonValue)
     }
     m_orHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("not"))
   {
     m_not = Aws::MakeShared<Expression>("Expression", jsonValue.GetObject("not"));
-
     m_notHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCategories"))
   {
     m_costCategories = jsonValue.GetObject("costCategories");
-
     m_costCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensions"))
   {
     m_dimensions = jsonValue.GetObject("dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     m_tags = jsonValue.GetObject("tags");
-
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

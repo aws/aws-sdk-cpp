@@ -18,14 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-UtteranceList::UtteranceList() : 
-    m_botVersionHasBeenSet(false),
-    m_utterancesHasBeenSet(false)
-{
-}
-
 UtteranceList::UtteranceList(JsonView jsonValue)
-  : UtteranceList()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UtteranceList& UtteranceList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utterances"))
   {
     Aws::Utils::Array<JsonView> utterancesJsonList = jsonValue.GetArray("utterances");
@@ -48,7 +39,6 @@ UtteranceList& UtteranceList::operator =(JsonView jsonValue)
     }
     m_utterancesHasBeenSet = true;
   }
-
   return *this;
 }
 

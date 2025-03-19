@@ -32,7 +32,7 @@ namespace Model
   class DynatraceConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API DynatraceConnectorProfileCredentials();
+    AWS_APPFLOW_API DynatraceConnectorProfileCredentials() = default;
     AWS_APPFLOW_API DynatraceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API DynatraceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
      */
-    inline const Aws::String& GetApiToken() const{ return m_apiToken; }
+    inline const Aws::String& GetApiToken() const { return m_apiToken; }
     inline bool ApiTokenHasBeenSet() const { return m_apiTokenHasBeenSet; }
-    inline void SetApiToken(const Aws::String& value) { m_apiTokenHasBeenSet = true; m_apiToken = value; }
-    inline void SetApiToken(Aws::String&& value) { m_apiTokenHasBeenSet = true; m_apiToken = std::move(value); }
-    inline void SetApiToken(const char* value) { m_apiTokenHasBeenSet = true; m_apiToken.assign(value); }
-    inline DynatraceConnectorProfileCredentials& WithApiToken(const Aws::String& value) { SetApiToken(value); return *this;}
-    inline DynatraceConnectorProfileCredentials& WithApiToken(Aws::String&& value) { SetApiToken(std::move(value)); return *this;}
-    inline DynatraceConnectorProfileCredentials& WithApiToken(const char* value) { SetApiToken(value); return *this;}
+    template<typename ApiTokenT = Aws::String>
+    void SetApiToken(ApiTokenT&& value) { m_apiTokenHasBeenSet = true; m_apiToken = std::forward<ApiTokenT>(value); }
+    template<typename ApiTokenT = Aws::String>
+    DynatraceConnectorProfileCredentials& WithApiToken(ApiTokenT&& value) { SetApiToken(std::forward<ApiTokenT>(value)); return *this;}
     ///@}
   private:
 

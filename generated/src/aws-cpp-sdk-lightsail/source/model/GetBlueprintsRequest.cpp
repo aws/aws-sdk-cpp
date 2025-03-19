@@ -12,15 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBlueprintsRequest::GetBlueprintsRequest() : 
-    m_includeInactive(false),
-    m_includeInactiveHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_appCategory(AppCategory::NOT_SET),
-    m_appCategoryHasBeenSet(false)
-{
-}
-
 Aws::String GetBlueprintsRequest::SerializePayload() const
 {
   JsonValue payload;

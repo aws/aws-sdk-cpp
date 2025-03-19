@@ -33,7 +33,7 @@ namespace Model
   class Fleet
   {
   public:
-    AWS_ROBOMAKER_API Fleet();
+    AWS_ROBOMAKER_API Fleet() = default;
     AWS_ROBOMAKER_API Fleet(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,78 +43,70 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Fleet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Fleet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Fleet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Fleet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Fleet& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Fleet& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Fleet& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Fleet& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Fleet& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Fleet& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Fleet& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the last fleet deployment.</p>
      */
-    inline const DeploymentStatus& GetLastDeploymentStatus() const{ return m_lastDeploymentStatus; }
+    inline DeploymentStatus GetLastDeploymentStatus() const { return m_lastDeploymentStatus; }
     inline bool LastDeploymentStatusHasBeenSet() const { return m_lastDeploymentStatusHasBeenSet; }
-    inline void SetLastDeploymentStatus(const DeploymentStatus& value) { m_lastDeploymentStatusHasBeenSet = true; m_lastDeploymentStatus = value; }
-    inline void SetLastDeploymentStatus(DeploymentStatus&& value) { m_lastDeploymentStatusHasBeenSet = true; m_lastDeploymentStatus = std::move(value); }
-    inline Fleet& WithLastDeploymentStatus(const DeploymentStatus& value) { SetLastDeploymentStatus(value); return *this;}
-    inline Fleet& WithLastDeploymentStatus(DeploymentStatus&& value) { SetLastDeploymentStatus(std::move(value)); return *this;}
+    inline void SetLastDeploymentStatus(DeploymentStatus value) { m_lastDeploymentStatusHasBeenSet = true; m_lastDeploymentStatus = value; }
+    inline Fleet& WithLastDeploymentStatus(DeploymentStatus value) { SetLastDeploymentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
      */
-    inline const Aws::String& GetLastDeploymentJob() const{ return m_lastDeploymentJob; }
+    inline const Aws::String& GetLastDeploymentJob() const { return m_lastDeploymentJob; }
     inline bool LastDeploymentJobHasBeenSet() const { return m_lastDeploymentJobHasBeenSet; }
-    inline void SetLastDeploymentJob(const Aws::String& value) { m_lastDeploymentJobHasBeenSet = true; m_lastDeploymentJob = value; }
-    inline void SetLastDeploymentJob(Aws::String&& value) { m_lastDeploymentJobHasBeenSet = true; m_lastDeploymentJob = std::move(value); }
-    inline void SetLastDeploymentJob(const char* value) { m_lastDeploymentJobHasBeenSet = true; m_lastDeploymentJob.assign(value); }
-    inline Fleet& WithLastDeploymentJob(const Aws::String& value) { SetLastDeploymentJob(value); return *this;}
-    inline Fleet& WithLastDeploymentJob(Aws::String&& value) { SetLastDeploymentJob(std::move(value)); return *this;}
-    inline Fleet& WithLastDeploymentJob(const char* value) { SetLastDeploymentJob(value); return *this;}
+    template<typename LastDeploymentJobT = Aws::String>
+    void SetLastDeploymentJob(LastDeploymentJobT&& value) { m_lastDeploymentJobHasBeenSet = true; m_lastDeploymentJob = std::forward<LastDeploymentJobT>(value); }
+    template<typename LastDeploymentJobT = Aws::String>
+    Fleet& WithLastDeploymentJob(LastDeploymentJobT&& value) { SetLastDeploymentJob(std::forward<LastDeploymentJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of the last deployment.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastDeploymentTime() const{ return m_lastDeploymentTime; }
+    inline const Aws::Utils::DateTime& GetLastDeploymentTime() const { return m_lastDeploymentTime; }
     inline bool LastDeploymentTimeHasBeenSet() const { return m_lastDeploymentTimeHasBeenSet; }
-    inline void SetLastDeploymentTime(const Aws::Utils::DateTime& value) { m_lastDeploymentTimeHasBeenSet = true; m_lastDeploymentTime = value; }
-    inline void SetLastDeploymentTime(Aws::Utils::DateTime&& value) { m_lastDeploymentTimeHasBeenSet = true; m_lastDeploymentTime = std::move(value); }
-    inline Fleet& WithLastDeploymentTime(const Aws::Utils::DateTime& value) { SetLastDeploymentTime(value); return *this;}
-    inline Fleet& WithLastDeploymentTime(Aws::Utils::DateTime&& value) { SetLastDeploymentTime(std::move(value)); return *this;}
+    template<typename LastDeploymentTimeT = Aws::Utils::DateTime>
+    void SetLastDeploymentTime(LastDeploymentTimeT&& value) { m_lastDeploymentTimeHasBeenSet = true; m_lastDeploymentTime = std::forward<LastDeploymentTimeT>(value); }
+    template<typename LastDeploymentTimeT = Aws::Utils::DateTime>
+    Fleet& WithLastDeploymentTime(LastDeploymentTimeT&& value) { SetLastDeploymentTime(std::forward<LastDeploymentTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -124,16 +116,16 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    DeploymentStatus m_lastDeploymentStatus;
+    DeploymentStatus m_lastDeploymentStatus{DeploymentStatus::NOT_SET};
     bool m_lastDeploymentStatusHasBeenSet = false;
 
     Aws::String m_lastDeploymentJob;
     bool m_lastDeploymentJobHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastDeploymentTime;
+    Aws::Utils::DateTime m_lastDeploymentTime{};
     bool m_lastDeploymentTimeHasBeenSet = false;
   };
 

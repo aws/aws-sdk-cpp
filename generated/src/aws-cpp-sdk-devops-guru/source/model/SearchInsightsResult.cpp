@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchInsightsResult::SearchInsightsResult()
-{
-}
-
 SearchInsightsResult::SearchInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ SearchInsightsResult& SearchInsightsResult::operator =(const Aws::AmazonWebServi
     {
       m_proactiveInsights.push_back(proactiveInsightsJsonList[proactiveInsightsIndex].AsObject());
     }
+    m_proactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReactiveInsights"))
   {
     Aws::Utils::Array<JsonView> reactiveInsightsJsonList = jsonValue.GetArray("ReactiveInsights");
@@ -45,20 +41,20 @@ SearchInsightsResult& SearchInsightsResult::operator =(const Aws::AmazonWebServi
     {
       m_reactiveInsights.push_back(reactiveInsightsJsonList[reactiveInsightsIndex].AsObject());
     }
+    m_reactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

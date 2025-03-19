@@ -32,7 +32,7 @@ namespace Model
   class TopicDateRangeFilter
   {
   public:
-    AWS_QUICKSIGHT_API TopicDateRangeFilter();
+    AWS_QUICKSIGHT_API TopicDateRangeFilter() = default;
     AWS_QUICKSIGHT_API TopicDateRangeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicDateRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * the boundary values. If set to true, the filter includes the start and end
      * dates. If set to false, the filter excludes them.</p>
      */
-    inline bool GetInclusive() const{ return m_inclusive; }
+    inline bool GetInclusive() const { return m_inclusive; }
     inline bool InclusiveHasBeenSet() const { return m_inclusiveHasBeenSet; }
     inline void SetInclusive(bool value) { m_inclusiveHasBeenSet = true; m_inclusive = value; }
     inline TopicDateRangeFilter& WithInclusive(bool value) { SetInclusive(value); return *this;}
@@ -54,16 +54,16 @@ namespace Model
     /**
      * <p>The constant used in a date range filter.</p>
      */
-    inline const TopicRangeFilterConstant& GetConstant() const{ return m_constant; }
+    inline const TopicRangeFilterConstant& GetConstant() const { return m_constant; }
     inline bool ConstantHasBeenSet() const { return m_constantHasBeenSet; }
-    inline void SetConstant(const TopicRangeFilterConstant& value) { m_constantHasBeenSet = true; m_constant = value; }
-    inline void SetConstant(TopicRangeFilterConstant&& value) { m_constantHasBeenSet = true; m_constant = std::move(value); }
-    inline TopicDateRangeFilter& WithConstant(const TopicRangeFilterConstant& value) { SetConstant(value); return *this;}
-    inline TopicDateRangeFilter& WithConstant(TopicRangeFilterConstant&& value) { SetConstant(std::move(value)); return *this;}
+    template<typename ConstantT = TopicRangeFilterConstant>
+    void SetConstant(ConstantT&& value) { m_constantHasBeenSet = true; m_constant = std::forward<ConstantT>(value); }
+    template<typename ConstantT = TopicRangeFilterConstant>
+    TopicDateRangeFilter& WithConstant(ConstantT&& value) { SetConstant(std::forward<ConstantT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_inclusive;
+    bool m_inclusive{false};
     bool m_inclusiveHasBeenSet = false;
 
     TopicRangeFilterConstant m_constant;

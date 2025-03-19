@@ -35,7 +35,7 @@ namespace Model
   class Listener
   {
   public:
-    AWS_GLOBALACCELERATOR_API Listener();
+    AWS_GLOBALACCELERATOR_API Listener() = default;
     AWS_GLOBALACCELERATOR_API Listener(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline const Aws::String& GetListenerArn() const{ return m_listenerArn; }
+    inline const Aws::String& GetListenerArn() const { return m_listenerArn; }
     inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
-    inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
-    inline void SetListenerArn(const char* value) { m_listenerArnHasBeenSet = true; m_listenerArn.assign(value); }
-    inline Listener& WithListenerArn(const Aws::String& value) { SetListenerArn(value); return *this;}
-    inline Listener& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
-    inline Listener& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+    template<typename ListenerArnT = Aws::String>
+    void SetListenerArn(ListenerArnT&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::forward<ListenerArnT>(value); }
+    template<typename ListenerArnT = Aws::String>
+    Listener& WithListenerArn(ListenerArnT&& value) { SetListenerArn(std::forward<ListenerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,24 @@ namespace Model
      * <p>The list of port ranges for the connections from clients to the
      * accelerator.</p>
      */
-    inline const Aws::Vector<PortRange>& GetPortRanges() const{ return m_portRanges; }
+    inline const Aws::Vector<PortRange>& GetPortRanges() const { return m_portRanges; }
     inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
-    inline void SetPortRanges(const Aws::Vector<PortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
-    inline void SetPortRanges(Aws::Vector<PortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
-    inline Listener& WithPortRanges(const Aws::Vector<PortRange>& value) { SetPortRanges(value); return *this;}
-    inline Listener& WithPortRanges(Aws::Vector<PortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
-    inline Listener& AddPortRanges(const PortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
-    inline Listener& AddPortRanges(PortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
+    template<typename PortRangesT = Aws::Vector<PortRange>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<PortRange>>
+    Listener& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = PortRange>
+    Listener& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The protocol for the connections from clients to the accelerator.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline Listener& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline Listener& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline Listener& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +97,10 @@ namespace Model
      * address and destination IP address—to select the hash value.</p> <p>The default
      * value is <code>NONE</code>.</p>
      */
-    inline const ClientAffinity& GetClientAffinity() const{ return m_clientAffinity; }
+    inline ClientAffinity GetClientAffinity() const { return m_clientAffinity; }
     inline bool ClientAffinityHasBeenSet() const { return m_clientAffinityHasBeenSet; }
-    inline void SetClientAffinity(const ClientAffinity& value) { m_clientAffinityHasBeenSet = true; m_clientAffinity = value; }
-    inline void SetClientAffinity(ClientAffinity&& value) { m_clientAffinityHasBeenSet = true; m_clientAffinity = std::move(value); }
-    inline Listener& WithClientAffinity(const ClientAffinity& value) { SetClientAffinity(value); return *this;}
-    inline Listener& WithClientAffinity(ClientAffinity&& value) { SetClientAffinity(std::move(value)); return *this;}
+    inline void SetClientAffinity(ClientAffinity value) { m_clientAffinityHasBeenSet = true; m_clientAffinity = value; }
+    inline Listener& WithClientAffinity(ClientAffinity value) { SetClientAffinity(value); return *this;}
     ///@}
   private:
 
@@ -116,10 +110,10 @@ namespace Model
     Aws::Vector<PortRange> m_portRanges;
     bool m_portRangesHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    ClientAffinity m_clientAffinity;
+    ClientAffinity m_clientAffinity{ClientAffinity::NOT_SET};
     bool m_clientAffinityHasBeenSet = false;
   };
 

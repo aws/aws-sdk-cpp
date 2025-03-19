@@ -29,7 +29,7 @@ namespace Model
   class DescribeInsightResult
   {
   public:
-    AWS_DEVOPSGURU_API DescribeInsightResult();
+    AWS_DEVOPSGURU_API DescribeInsightResult() = default;
     AWS_DEVOPSGURU_API DescribeInsightResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVOPSGURU_API DescribeInsightResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
      * <p> A <code>ProactiveInsight</code> object that represents the requested
      * insight. </p>
      */
-    inline const ProactiveInsight& GetProactiveInsight() const{ return m_proactiveInsight; }
-    inline void SetProactiveInsight(const ProactiveInsight& value) { m_proactiveInsight = value; }
-    inline void SetProactiveInsight(ProactiveInsight&& value) { m_proactiveInsight = std::move(value); }
-    inline DescribeInsightResult& WithProactiveInsight(const ProactiveInsight& value) { SetProactiveInsight(value); return *this;}
-    inline DescribeInsightResult& WithProactiveInsight(ProactiveInsight&& value) { SetProactiveInsight(std::move(value)); return *this;}
+    inline const ProactiveInsight& GetProactiveInsight() const { return m_proactiveInsight; }
+    template<typename ProactiveInsightT = ProactiveInsight>
+    void SetProactiveInsight(ProactiveInsightT&& value) { m_proactiveInsightHasBeenSet = true; m_proactiveInsight = std::forward<ProactiveInsightT>(value); }
+    template<typename ProactiveInsightT = ProactiveInsight>
+    DescribeInsightResult& WithProactiveInsight(ProactiveInsightT&& value) { SetProactiveInsight(std::forward<ProactiveInsightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +51,31 @@ namespace Model
      * <p> A <code>ReactiveInsight</code> object that represents the requested insight.
      * </p>
      */
-    inline const ReactiveInsight& GetReactiveInsight() const{ return m_reactiveInsight; }
-    inline void SetReactiveInsight(const ReactiveInsight& value) { m_reactiveInsight = value; }
-    inline void SetReactiveInsight(ReactiveInsight&& value) { m_reactiveInsight = std::move(value); }
-    inline DescribeInsightResult& WithReactiveInsight(const ReactiveInsight& value) { SetReactiveInsight(value); return *this;}
-    inline DescribeInsightResult& WithReactiveInsight(ReactiveInsight&& value) { SetReactiveInsight(std::move(value)); return *this;}
+    inline const ReactiveInsight& GetReactiveInsight() const { return m_reactiveInsight; }
+    template<typename ReactiveInsightT = ReactiveInsight>
+    void SetReactiveInsight(ReactiveInsightT&& value) { m_reactiveInsightHasBeenSet = true; m_reactiveInsight = std::forward<ReactiveInsightT>(value); }
+    template<typename ReactiveInsightT = ReactiveInsight>
+    DescribeInsightResult& WithReactiveInsight(ReactiveInsightT&& value) { SetReactiveInsight(std::forward<ReactiveInsightT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInsightResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInsightResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInsightResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInsightResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProactiveInsight m_proactiveInsight;
+    bool m_proactiveInsightHasBeenSet = false;
 
     ReactiveInsight m_reactiveInsight;
+    bool m_reactiveInsightHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

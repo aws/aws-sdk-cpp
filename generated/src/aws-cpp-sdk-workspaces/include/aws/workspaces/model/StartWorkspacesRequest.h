@@ -22,7 +22,7 @@ namespace Model
   class StartWorkspacesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API StartWorkspacesRequest();
+    AWS_WORKSPACES_API StartWorkspacesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
      */
-    inline const Aws::Vector<StartRequest>& GetStartWorkspaceRequests() const{ return m_startWorkspaceRequests; }
+    inline const Aws::Vector<StartRequest>& GetStartWorkspaceRequests() const { return m_startWorkspaceRequests; }
     inline bool StartWorkspaceRequestsHasBeenSet() const { return m_startWorkspaceRequestsHasBeenSet; }
-    inline void SetStartWorkspaceRequests(const Aws::Vector<StartRequest>& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = value; }
-    inline void SetStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = std::move(value); }
-    inline StartWorkspacesRequest& WithStartWorkspaceRequests(const Aws::Vector<StartRequest>& value) { SetStartWorkspaceRequests(value); return *this;}
-    inline StartWorkspacesRequest& WithStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { SetStartWorkspaceRequests(std::move(value)); return *this;}
-    inline StartWorkspacesRequest& AddStartWorkspaceRequests(const StartRequest& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(value); return *this; }
-    inline StartWorkspacesRequest& AddStartWorkspaceRequests(StartRequest&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(std::move(value)); return *this; }
+    template<typename StartWorkspaceRequestsT = Aws::Vector<StartRequest>>
+    void SetStartWorkspaceRequests(StartWorkspaceRequestsT&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = std::forward<StartWorkspaceRequestsT>(value); }
+    template<typename StartWorkspaceRequestsT = Aws::Vector<StartRequest>>
+    StartWorkspacesRequest& WithStartWorkspaceRequests(StartWorkspaceRequestsT&& value) { SetStartWorkspaceRequests(std::forward<StartWorkspaceRequestsT>(value)); return *this;}
+    template<typename StartWorkspaceRequestsT = StartRequest>
+    StartWorkspacesRequest& AddStartWorkspaceRequests(StartWorkspaceRequestsT&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.emplace_back(std::forward<StartWorkspaceRequestsT>(value)); return *this; }
     ///@}
   private:
 

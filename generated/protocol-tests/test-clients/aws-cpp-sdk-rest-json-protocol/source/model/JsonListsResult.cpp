@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-JsonListsResult::JsonListsResult()
-{
-}
-
 JsonListsResult::JsonListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_stringList.push_back(stringListJsonList[stringListIndex].AsString());
     }
+    m_stringListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringSet"))
   {
     Aws::Utils::Array<JsonView> stringSetJsonList = jsonValue.GetArray("stringSet");
@@ -45,8 +41,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_stringSet.push_back(stringSetJsonList[stringSetIndex].AsString());
     }
+    m_stringSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerList"))
   {
     Aws::Utils::Array<JsonView> integerListJsonList = jsonValue.GetArray("integerList");
@@ -54,8 +50,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_integerList.push_back(integerListJsonList[integerListIndex].AsInteger());
     }
+    m_integerListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("booleanList"))
   {
     Aws::Utils::Array<JsonView> booleanListJsonList = jsonValue.GetArray("booleanList");
@@ -63,8 +59,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_booleanList.push_back(booleanListJsonList[booleanListIndex].AsBool());
     }
+    m_booleanListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestampList"))
   {
     Aws::Utils::Array<JsonView> timestampListJsonList = jsonValue.GetArray("timestampList");
@@ -72,8 +68,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_timestampList.push_back(timestampListJsonList[timestampListIndex].AsDouble());
     }
+    m_timestampListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enumList"))
   {
     Aws::Utils::Array<JsonView> enumListJsonList = jsonValue.GetArray("enumList");
@@ -81,8 +77,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_enumList.push_back(FooEnumMapper::GetFooEnumForName(enumListJsonList[enumListIndex].AsString()));
     }
+    m_enumListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intEnumList"))
   {
     Aws::Utils::Array<JsonView> intEnumListJsonList = jsonValue.GetArray("intEnumList");
@@ -90,8 +86,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_intEnumList.push_back(intEnumListJsonList[intEnumListIndex].AsInteger());
     }
+    m_intEnumListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nestedStringList"))
   {
     Aws::Utils::Array<JsonView> nestedStringListJsonList = jsonValue.GetArray("nestedStringList");
@@ -106,8 +102,8 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
       }
       m_nestedStringList.push_back(std::move(stringListList));
     }
+    m_nestedStringListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("myStructureList"))
   {
     Aws::Utils::Array<JsonView> myStructureListJsonList = jsonValue.GetArray("myStructureList");
@@ -115,14 +111,15 @@ JsonListsResult& JsonListsResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_structureList.push_back(myStructureListJsonList[myStructureListIndex].AsObject());
     }
+    m_structureListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

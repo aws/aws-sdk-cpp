@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-JobScheduleFrequency::JobScheduleFrequency() : 
-    m_dailyScheduleHasBeenSet(false),
-    m_monthlyScheduleHasBeenSet(false),
-    m_weeklyScheduleHasBeenSet(false)
-{
-}
-
 JobScheduleFrequency::JobScheduleFrequency(JsonView jsonValue)
-  : JobScheduleFrequency()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ JobScheduleFrequency& JobScheduleFrequency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dailySchedule"))
   {
     m_dailySchedule = jsonValue.GetObject("dailySchedule");
-
     m_dailyScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monthlySchedule"))
   {
     m_monthlySchedule = jsonValue.GetObject("monthlySchedule");
-
     m_monthlyScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weeklySchedule"))
   {
     m_weeklySchedule = jsonValue.GetObject("weeklySchedule");
-
     m_weeklyScheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

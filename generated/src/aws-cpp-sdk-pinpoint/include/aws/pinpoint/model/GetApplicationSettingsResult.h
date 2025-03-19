@@ -28,35 +28,35 @@ namespace Model
   class GetApplicationSettingsResult
   {
   public:
-    AWS_PINPOINT_API GetApplicationSettingsResult();
+    AWS_PINPOINT_API GetApplicationSettingsResult() = default;
     AWS_PINPOINT_API GetApplicationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetApplicationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ApplicationSettingsResource& GetApplicationSettingsResource() const{ return m_applicationSettingsResource; }
-    inline void SetApplicationSettingsResource(const ApplicationSettingsResource& value) { m_applicationSettingsResource = value; }
-    inline void SetApplicationSettingsResource(ApplicationSettingsResource&& value) { m_applicationSettingsResource = std::move(value); }
-    inline GetApplicationSettingsResult& WithApplicationSettingsResource(const ApplicationSettingsResource& value) { SetApplicationSettingsResource(value); return *this;}
-    inline GetApplicationSettingsResult& WithApplicationSettingsResource(ApplicationSettingsResource&& value) { SetApplicationSettingsResource(std::move(value)); return *this;}
+    inline const ApplicationSettingsResource& GetApplicationSettingsResource() const { return m_applicationSettingsResource; }
+    template<typename ApplicationSettingsResourceT = ApplicationSettingsResource>
+    void SetApplicationSettingsResource(ApplicationSettingsResourceT&& value) { m_applicationSettingsResourceHasBeenSet = true; m_applicationSettingsResource = std::forward<ApplicationSettingsResourceT>(value); }
+    template<typename ApplicationSettingsResourceT = ApplicationSettingsResource>
+    GetApplicationSettingsResult& WithApplicationSettingsResource(ApplicationSettingsResourceT&& value) { SetApplicationSettingsResource(std::forward<ApplicationSettingsResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationSettingsResource m_applicationSettingsResource;
+    bool m_applicationSettingsResourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

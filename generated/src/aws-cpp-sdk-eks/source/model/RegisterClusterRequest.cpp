@@ -12,15 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterClusterRequest::RegisterClusterRequest() : 
-    m_nameHasBeenSet(false),
-    m_connectorConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterClusterRequest::SerializePayload() const
 {
   JsonValue payload;

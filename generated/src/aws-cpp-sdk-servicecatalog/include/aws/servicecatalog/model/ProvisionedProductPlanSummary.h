@@ -32,7 +32,7 @@ namespace Model
   class ProvisionedProductPlanSummary
   {
   public:
-    AWS_SERVICECATALOG_API ProvisionedProductPlanSummary();
+    AWS_SERVICECATALOG_API ProvisionedProductPlanSummary() = default;
     AWS_SERVICECATALOG_API ProvisionedProductPlanSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProvisionedProductPlanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,82 +42,70 @@ namespace Model
     /**
      * <p>The name of the plan.</p>
      */
-    inline const Aws::String& GetPlanName() const{ return m_planName; }
+    inline const Aws::String& GetPlanName() const { return m_planName; }
     inline bool PlanNameHasBeenSet() const { return m_planNameHasBeenSet; }
-    inline void SetPlanName(const Aws::String& value) { m_planNameHasBeenSet = true; m_planName = value; }
-    inline void SetPlanName(Aws::String&& value) { m_planNameHasBeenSet = true; m_planName = std::move(value); }
-    inline void SetPlanName(const char* value) { m_planNameHasBeenSet = true; m_planName.assign(value); }
-    inline ProvisionedProductPlanSummary& WithPlanName(const Aws::String& value) { SetPlanName(value); return *this;}
-    inline ProvisionedProductPlanSummary& WithPlanName(Aws::String&& value) { SetPlanName(std::move(value)); return *this;}
-    inline ProvisionedProductPlanSummary& WithPlanName(const char* value) { SetPlanName(value); return *this;}
+    template<typename PlanNameT = Aws::String>
+    void SetPlanName(PlanNameT&& value) { m_planNameHasBeenSet = true; m_planName = std::forward<PlanNameT>(value); }
+    template<typename PlanNameT = Aws::String>
+    ProvisionedProductPlanSummary& WithPlanName(PlanNameT&& value) { SetPlanName(std::forward<PlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The plan identifier.</p>
      */
-    inline const Aws::String& GetPlanId() const{ return m_planId; }
+    inline const Aws::String& GetPlanId() const { return m_planId; }
     inline bool PlanIdHasBeenSet() const { return m_planIdHasBeenSet; }
-    inline void SetPlanId(const Aws::String& value) { m_planIdHasBeenSet = true; m_planId = value; }
-    inline void SetPlanId(Aws::String&& value) { m_planIdHasBeenSet = true; m_planId = std::move(value); }
-    inline void SetPlanId(const char* value) { m_planIdHasBeenSet = true; m_planId.assign(value); }
-    inline ProvisionedProductPlanSummary& WithPlanId(const Aws::String& value) { SetPlanId(value); return *this;}
-    inline ProvisionedProductPlanSummary& WithPlanId(Aws::String&& value) { SetPlanId(std::move(value)); return *this;}
-    inline ProvisionedProductPlanSummary& WithPlanId(const char* value) { SetPlanId(value); return *this;}
+    template<typename PlanIdT = Aws::String>
+    void SetPlanId(PlanIdT&& value) { m_planIdHasBeenSet = true; m_planId = std::forward<PlanIdT>(value); }
+    template<typename PlanIdT = Aws::String>
+    ProvisionedProductPlanSummary& WithPlanId(PlanIdT&& value) { SetPlanId(std::forward<PlanIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier.</p>
      */
-    inline const Aws::String& GetProvisionProductId() const{ return m_provisionProductId; }
+    inline const Aws::String& GetProvisionProductId() const { return m_provisionProductId; }
     inline bool ProvisionProductIdHasBeenSet() const { return m_provisionProductIdHasBeenSet; }
-    inline void SetProvisionProductId(const Aws::String& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = value; }
-    inline void SetProvisionProductId(Aws::String&& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = std::move(value); }
-    inline void SetProvisionProductId(const char* value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId.assign(value); }
-    inline ProvisionedProductPlanSummary& WithProvisionProductId(const Aws::String& value) { SetProvisionProductId(value); return *this;}
-    inline ProvisionedProductPlanSummary& WithProvisionProductId(Aws::String&& value) { SetProvisionProductId(std::move(value)); return *this;}
-    inline ProvisionedProductPlanSummary& WithProvisionProductId(const char* value) { SetProvisionProductId(value); return *this;}
+    template<typename ProvisionProductIdT = Aws::String>
+    void SetProvisionProductId(ProvisionProductIdT&& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = std::forward<ProvisionProductIdT>(value); }
+    template<typename ProvisionProductIdT = Aws::String>
+    ProvisionedProductPlanSummary& WithProvisionProductId(ProvisionProductIdT&& value) { SetProvisionProductId(std::forward<ProvisionProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user-friendly name of the provisioned product.</p>
      */
-    inline const Aws::String& GetProvisionProductName() const{ return m_provisionProductName; }
+    inline const Aws::String& GetProvisionProductName() const { return m_provisionProductName; }
     inline bool ProvisionProductNameHasBeenSet() const { return m_provisionProductNameHasBeenSet; }
-    inline void SetProvisionProductName(const Aws::String& value) { m_provisionProductNameHasBeenSet = true; m_provisionProductName = value; }
-    inline void SetProvisionProductName(Aws::String&& value) { m_provisionProductNameHasBeenSet = true; m_provisionProductName = std::move(value); }
-    inline void SetProvisionProductName(const char* value) { m_provisionProductNameHasBeenSet = true; m_provisionProductName.assign(value); }
-    inline ProvisionedProductPlanSummary& WithProvisionProductName(const Aws::String& value) { SetProvisionProductName(value); return *this;}
-    inline ProvisionedProductPlanSummary& WithProvisionProductName(Aws::String&& value) { SetProvisionProductName(std::move(value)); return *this;}
-    inline ProvisionedProductPlanSummary& WithProvisionProductName(const char* value) { SetProvisionProductName(value); return *this;}
+    template<typename ProvisionProductNameT = Aws::String>
+    void SetProvisionProductName(ProvisionProductNameT&& value) { m_provisionProductNameHasBeenSet = true; m_provisionProductName = std::forward<ProvisionProductNameT>(value); }
+    template<typename ProvisionProductNameT = Aws::String>
+    ProvisionedProductPlanSummary& WithProvisionProductName(ProvisionProductNameT&& value) { SetProvisionProductName(std::forward<ProvisionProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The plan type.</p>
      */
-    inline const ProvisionedProductPlanType& GetPlanType() const{ return m_planType; }
+    inline ProvisionedProductPlanType GetPlanType() const { return m_planType; }
     inline bool PlanTypeHasBeenSet() const { return m_planTypeHasBeenSet; }
-    inline void SetPlanType(const ProvisionedProductPlanType& value) { m_planTypeHasBeenSet = true; m_planType = value; }
-    inline void SetPlanType(ProvisionedProductPlanType&& value) { m_planTypeHasBeenSet = true; m_planType = std::move(value); }
-    inline ProvisionedProductPlanSummary& WithPlanType(const ProvisionedProductPlanType& value) { SetPlanType(value); return *this;}
-    inline ProvisionedProductPlanSummary& WithPlanType(ProvisionedProductPlanType&& value) { SetPlanType(std::move(value)); return *this;}
+    inline void SetPlanType(ProvisionedProductPlanType value) { m_planTypeHasBeenSet = true; m_planType = value; }
+    inline ProvisionedProductPlanSummary& WithPlanType(ProvisionedProductPlanType value) { SetPlanType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+    inline const Aws::String& GetProvisioningArtifactId() const { return m_provisioningArtifactId; }
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
-    inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
-    inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
-    inline ProvisionedProductPlanSummary& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
-    inline ProvisionedProductPlanSummary& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
-    inline ProvisionedProductPlanSummary& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    void SetProvisioningArtifactId(ProvisioningArtifactIdT&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::forward<ProvisioningArtifactIdT>(value); }
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    ProvisionedProductPlanSummary& WithProvisioningArtifactId(ProvisioningArtifactIdT&& value) { SetProvisioningArtifactId(std::forward<ProvisioningArtifactIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -133,7 +121,7 @@ namespace Model
     Aws::String m_provisionProductName;
     bool m_provisionProductNameHasBeenSet = false;
 
-    ProvisionedProductPlanType m_planType;
+    ProvisionedProductPlanType m_planType{ProvisionedProductPlanType::NOT_SET};
     bool m_planTypeHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;

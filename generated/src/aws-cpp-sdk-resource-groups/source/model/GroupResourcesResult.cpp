@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GroupResourcesResult::GroupResourcesResult()
-{
-}
-
 GroupResourcesResult::GroupResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GroupResourcesResult& GroupResourcesResult::operator =(const Aws::AmazonWebServi
     {
       m_succeeded.push_back(succeededJsonList[succeededIndex].AsString());
     }
+    m_succeededHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failed"))
   {
     Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
@@ -45,8 +41,8 @@ GroupResourcesResult& GroupResourcesResult::operator =(const Aws::AmazonWebServi
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());
     }
+    m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pending"))
   {
     Aws::Utils::Array<JsonView> pendingJsonList = jsonValue.GetArray("Pending");
@@ -54,14 +50,15 @@ GroupResourcesResult& GroupResourcesResult::operator =(const Aws::AmazonWebServi
     {
       m_pending.push_back(pendingJsonList[pendingIndex].AsObject());
     }
+    m_pendingHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

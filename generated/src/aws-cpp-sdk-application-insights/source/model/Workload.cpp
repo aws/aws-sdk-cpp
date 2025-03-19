@@ -18,20 +18,7 @@ namespace ApplicationInsights
 namespace Model
 {
 
-Workload::Workload() : 
-    m_workloadIdHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_workloadRemarksHasBeenSet(false),
-    m_missingWorkloadConfig(false),
-    m_missingWorkloadConfigHasBeenSet(false)
-{
-}
-
 Workload::Workload(JsonView jsonValue)
-  : Workload()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Workload& Workload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
     m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentName"))
   {
     m_componentName = jsonValue.GetString("ComponentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadRemarks"))
   {
     m_workloadRemarks = jsonValue.GetString("WorkloadRemarks");
-
     m_workloadRemarksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingWorkloadConfig"))
   {
     m_missingWorkloadConfig = jsonValue.GetBool("MissingWorkloadConfig");
-
     m_missingWorkloadConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

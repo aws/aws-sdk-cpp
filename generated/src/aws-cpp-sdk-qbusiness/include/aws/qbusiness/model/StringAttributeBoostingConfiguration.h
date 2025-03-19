@@ -46,7 +46,7 @@ namespace Model
   class StringAttributeBoostingConfiguration
   {
   public:
-    AWS_QBUSINESS_API StringAttributeBoostingConfiguration();
+    AWS_QBUSINESS_API StringAttributeBoostingConfiguration() = default;
     AWS_QBUSINESS_API StringAttributeBoostingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API StringAttributeBoostingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
     /**
      * <p>Specifies how much a document attribute is boosted.</p>
      */
-    inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
+    inline DocumentAttributeBoostingLevel GetBoostingLevel() const { return m_boostingLevel; }
     inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
-    inline void SetBoostingLevel(const DocumentAttributeBoostingLevel& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
-    inline void SetBoostingLevel(DocumentAttributeBoostingLevel&& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = std::move(value); }
-    inline StringAttributeBoostingConfiguration& WithBoostingLevel(const DocumentAttributeBoostingLevel& value) { SetBoostingLevel(value); return *this;}
-    inline StringAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
+    inline void SetBoostingLevel(DocumentAttributeBoostingLevel value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
+    inline StringAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel value) { SetBoostingLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -69,22 +67,19 @@ namespace Model
      * <p>Specifies specific values of a <code>STRING</code> type document attribute
      * being boosted.</p>
      */
-    inline const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& GetAttributeValueBoosting() const{ return m_attributeValueBoosting; }
+    inline const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& GetAttributeValueBoosting() const { return m_attributeValueBoosting; }
     inline bool AttributeValueBoostingHasBeenSet() const { return m_attributeValueBoostingHasBeenSet; }
-    inline void SetAttributeValueBoosting(const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting = value; }
-    inline void SetAttributeValueBoosting(Aws::Map<Aws::String, StringAttributeValueBoostingLevel>&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting = std::move(value); }
-    inline StringAttributeBoostingConfiguration& WithAttributeValueBoosting(const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& value) { SetAttributeValueBoosting(value); return *this;}
-    inline StringAttributeBoostingConfiguration& WithAttributeValueBoosting(Aws::Map<Aws::String, StringAttributeValueBoostingLevel>&& value) { SetAttributeValueBoosting(std::move(value)); return *this;}
-    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const Aws::String& key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, value); return *this; }
-    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(Aws::String&& key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(std::move(key), value); return *this; }
-    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const Aws::String& key, StringAttributeValueBoostingLevel&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, std::move(value)); return *this; }
-    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(Aws::String&& key, StringAttributeValueBoostingLevel&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(std::move(key), std::move(value)); return *this; }
-    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const char* key, StringAttributeValueBoostingLevel&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, std::move(value)); return *this; }
-    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const char* key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, value); return *this; }
+    template<typename AttributeValueBoostingT = Aws::Map<Aws::String, StringAttributeValueBoostingLevel>>
+    void SetAttributeValueBoosting(AttributeValueBoostingT&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting = std::forward<AttributeValueBoostingT>(value); }
+    template<typename AttributeValueBoostingT = Aws::Map<Aws::String, StringAttributeValueBoostingLevel>>
+    StringAttributeBoostingConfiguration& WithAttributeValueBoosting(AttributeValueBoostingT&& value) { SetAttributeValueBoosting(std::forward<AttributeValueBoostingT>(value)); return *this;}
+    inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(Aws::String key, StringAttributeValueBoostingLevel value) {
+      m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
-    DocumentAttributeBoostingLevel m_boostingLevel;
+    DocumentAttributeBoostingLevel m_boostingLevel{DocumentAttributeBoostingLevel::NOT_SET};
     bool m_boostingLevelHasBeenSet = false;
 
     Aws::Map<Aws::String, StringAttributeValueBoostingLevel> m_attributeValueBoosting;

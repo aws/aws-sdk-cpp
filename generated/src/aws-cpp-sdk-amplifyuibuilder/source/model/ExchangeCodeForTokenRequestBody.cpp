@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody() : 
-    m_codeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
-{
-}
-
 ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody(JsonView jsonValue)
-  : ExchangeCodeForTokenRequestBody()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExchangeCodeForTokenRequestBody& ExchangeCodeForTokenRequestBody::operator =(Jso
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redirectUri"))
   {
     m_redirectUri = jsonValue.GetString("redirectUri");
-
     m_redirectUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   return *this;
 }
 

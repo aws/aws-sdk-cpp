@@ -41,7 +41,7 @@ namespace Model
   class InternetHealth
   {
   public:
-    AWS_INTERNETMONITOR_API InternetHealth();
+    AWS_INTERNETMONITOR_API InternetHealth() = default;
     AWS_INTERNETMONITOR_API InternetHealth(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API InternetHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,12 @@ namespace Model
      * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
      * Guide</i>.</p>
      */
-    inline const AvailabilityMeasurement& GetAvailability() const{ return m_availability; }
+    inline const AvailabilityMeasurement& GetAvailability() const { return m_availability; }
     inline bool AvailabilityHasBeenSet() const { return m_availabilityHasBeenSet; }
-    inline void SetAvailability(const AvailabilityMeasurement& value) { m_availabilityHasBeenSet = true; m_availability = value; }
-    inline void SetAvailability(AvailabilityMeasurement&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
-    inline InternetHealth& WithAvailability(const AvailabilityMeasurement& value) { SetAvailability(value); return *this;}
-    inline InternetHealth& WithAvailability(AvailabilityMeasurement&& value) { SetAvailability(std::move(value)); return *this;}
+    template<typename AvailabilityT = AvailabilityMeasurement>
+    void SetAvailability(AvailabilityT&& value) { m_availabilityHasBeenSet = true; m_availability = std::forward<AvailabilityT>(value); }
+    template<typename AvailabilityT = AvailabilityMeasurement>
+    InternetHealth& WithAvailability(AvailabilityT&& value) { SetAvailability(std::forward<AvailabilityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
      * Guide</i>.</p>
      */
-    inline const PerformanceMeasurement& GetPerformance() const{ return m_performance; }
+    inline const PerformanceMeasurement& GetPerformance() const { return m_performance; }
     inline bool PerformanceHasBeenSet() const { return m_performanceHasBeenSet; }
-    inline void SetPerformance(const PerformanceMeasurement& value) { m_performanceHasBeenSet = true; m_performance = value; }
-    inline void SetPerformance(PerformanceMeasurement&& value) { m_performanceHasBeenSet = true; m_performance = std::move(value); }
-    inline InternetHealth& WithPerformance(const PerformanceMeasurement& value) { SetPerformance(value); return *this;}
-    inline InternetHealth& WithPerformance(PerformanceMeasurement&& value) { SetPerformance(std::move(value)); return *this;}
+    template<typename PerformanceT = PerformanceMeasurement>
+    void SetPerformance(PerformanceT&& value) { m_performanceHasBeenSet = true; m_performance = std::forward<PerformanceT>(value); }
+    template<typename PerformanceT = PerformanceMeasurement>
+    InternetHealth& WithPerformance(PerformanceT&& value) { SetPerformance(std::forward<PerformanceT>(value)); return *this;}
     ///@}
   private:
 

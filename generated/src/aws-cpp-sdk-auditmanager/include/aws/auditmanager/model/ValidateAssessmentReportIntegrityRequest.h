@@ -21,7 +21,7 @@ namespace Model
   class ValidateAssessmentReportIntegrityRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityRequest();
+    AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p> The relative path of the Amazon S3 bucket that the assessment report is
      * stored in. </p>
      */
-    inline const Aws::String& GetS3RelativePath() const{ return m_s3RelativePath; }
+    inline const Aws::String& GetS3RelativePath() const { return m_s3RelativePath; }
     inline bool S3RelativePathHasBeenSet() const { return m_s3RelativePathHasBeenSet; }
-    inline void SetS3RelativePath(const Aws::String& value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath = value; }
-    inline void SetS3RelativePath(Aws::String&& value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath = std::move(value); }
-    inline void SetS3RelativePath(const char* value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath.assign(value); }
-    inline ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(const Aws::String& value) { SetS3RelativePath(value); return *this;}
-    inline ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(Aws::String&& value) { SetS3RelativePath(std::move(value)); return *this;}
-    inline ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(const char* value) { SetS3RelativePath(value); return *this;}
+    template<typename S3RelativePathT = Aws::String>
+    void SetS3RelativePath(S3RelativePathT&& value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath = std::forward<S3RelativePathT>(value); }
+    template<typename S3RelativePathT = Aws::String>
+    ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(S3RelativePathT&& value) { SetS3RelativePath(std::forward<S3RelativePathT>(value)); return *this;}
     ///@}
   private:
 

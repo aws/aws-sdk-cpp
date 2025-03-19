@@ -12,20 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAuditFindingsRequest::ListAuditFindingsRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_checkNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_listSuppressedFindings(false),
-    m_listSuppressedFindingsHasBeenSet(false)
-{
-}
-
 Aws::String ListAuditFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

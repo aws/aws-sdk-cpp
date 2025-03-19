@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails() : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails(JsonView jsonValue)
-  : CloudWatchLogsLogGroupArnConfigDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CloudWatchLogsLogGroupArnConfigDetails& CloudWatchLogsLogGroupArnConfigDetails::
   if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
   {
     m_cloudWatchLogsLogGroupArn = jsonValue.GetString("CloudWatchLogsLogGroupArn");
-
     m_cloudWatchLogsLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostedZoneId"))
   {
     m_hostedZoneId = jsonValue.GetString("HostedZoneId");
-
     m_hostedZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

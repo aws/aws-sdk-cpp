@@ -23,7 +23,7 @@ namespace Model
   class ListVehiclesRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API ListVehiclesRequest();
+    AWS_IOTFLEETWISE_API ListVehiclesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * use this optional parameter to list only the vehicles created from a certain
      * vehicle model. </p>
      */
-    inline const Aws::String& GetModelManifestArn() const{ return m_modelManifestArn; }
+    inline const Aws::String& GetModelManifestArn() const { return m_modelManifestArn; }
     inline bool ModelManifestArnHasBeenSet() const { return m_modelManifestArnHasBeenSet; }
-    inline void SetModelManifestArn(const Aws::String& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = value; }
-    inline void SetModelManifestArn(Aws::String&& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = std::move(value); }
-    inline void SetModelManifestArn(const char* value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn.assign(value); }
-    inline ListVehiclesRequest& WithModelManifestArn(const Aws::String& value) { SetModelManifestArn(value); return *this;}
-    inline ListVehiclesRequest& WithModelManifestArn(Aws::String&& value) { SetModelManifestArn(std::move(value)); return *this;}
-    inline ListVehiclesRequest& WithModelManifestArn(const char* value) { SetModelManifestArn(value); return *this;}
+    template<typename ModelManifestArnT = Aws::String>
+    void SetModelManifestArn(ModelManifestArnT&& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = std::forward<ModelManifestArnT>(value); }
+    template<typename ModelManifestArnT = Aws::String>
+    ListVehiclesRequest& WithModelManifestArn(ModelManifestArnT&& value) { SetModelManifestArn(std::forward<ModelManifestArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,15 +64,14 @@ namespace Model
      * <code>attributeValues</code> filters to return the subset of vehicles that match
      * the attributes filter condition.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+    inline const Aws::Vector<Aws::String>& GetAttributeNames() const { return m_attributeNames; }
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
-    inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
-    inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
-    inline ListVehiclesRequest& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
-    inline ListVehiclesRequest& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(std::move(value)); return *this;}
-    inline ListVehiclesRequest& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-    inline ListVehiclesRequest& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
-    inline ListVehiclesRequest& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    template<typename AttributeNamesT = Aws::Vector<Aws::String>>
+    void SetAttributeNames(AttributeNamesT&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::forward<AttributeNamesT>(value); }
+    template<typename AttributeNamesT = Aws::Vector<Aws::String>>
+    ListVehiclesRequest& WithAttributeNames(AttributeNamesT&& value) { SetAttributeNames(std::forward<AttributeNamesT>(value)); return *this;}
+    template<typename AttributeNamesT = Aws::String>
+    ListVehiclesRequest& AddAttributeNames(AttributeNamesT&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.emplace_back(std::forward<AttributeNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,15 +90,14 @@ namespace Model
      * and the matching number of <code>attributeValues</code> filter to return the
      * subset of vehicles that match the attributes filter condition.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributeValues() const{ return m_attributeValues; }
+    inline const Aws::Vector<Aws::String>& GetAttributeValues() const { return m_attributeValues; }
     inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
-    inline void SetAttributeValues(const Aws::Vector<Aws::String>& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = value; }
-    inline void SetAttributeValues(Aws::Vector<Aws::String>&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::move(value); }
-    inline ListVehiclesRequest& WithAttributeValues(const Aws::Vector<Aws::String>& value) { SetAttributeValues(value); return *this;}
-    inline ListVehiclesRequest& WithAttributeValues(Aws::Vector<Aws::String>&& value) { SetAttributeValues(std::move(value)); return *this;}
-    inline ListVehiclesRequest& AddAttributeValues(const Aws::String& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
-    inline ListVehiclesRequest& AddAttributeValues(Aws::String&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
-    inline ListVehiclesRequest& AddAttributeValues(const char* value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
+    template<typename AttributeValuesT = Aws::Vector<Aws::String>>
+    void SetAttributeValues(AttributeValuesT&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues = std::forward<AttributeValuesT>(value); }
+    template<typename AttributeValuesT = Aws::Vector<Aws::String>>
+    ListVehiclesRequest& WithAttributeValues(AttributeValuesT&& value) { SetAttributeValues(std::forward<AttributeValuesT>(value)); return *this;}
+    template<typename AttributeValuesT = Aws::String>
+    ListVehiclesRequest& AddAttributeValues(AttributeValuesT&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.emplace_back(std::forward<AttributeValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,21 +109,19 @@ namespace Model
      * token. When all results have been returned, the response does not contain a
      * pagination token value. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListVehiclesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVehiclesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVehiclesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVehiclesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListVehiclesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -139,12 +133,10 @@ namespace Model
      * <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon
      * Resource Name (ARN), creation time, and last modification time.</p>
      */
-    inline const ListResponseScope& GetListResponseScope() const{ return m_listResponseScope; }
+    inline ListResponseScope GetListResponseScope() const { return m_listResponseScope; }
     inline bool ListResponseScopeHasBeenSet() const { return m_listResponseScopeHasBeenSet; }
-    inline void SetListResponseScope(const ListResponseScope& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
-    inline void SetListResponseScope(ListResponseScope&& value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = std::move(value); }
-    inline ListVehiclesRequest& WithListResponseScope(const ListResponseScope& value) { SetListResponseScope(value); return *this;}
-    inline ListVehiclesRequest& WithListResponseScope(ListResponseScope&& value) { SetListResponseScope(std::move(value)); return *this;}
+    inline void SetListResponseScope(ListResponseScope value) { m_listResponseScopeHasBeenSet = true; m_listResponseScope = value; }
+    inline ListVehiclesRequest& WithListResponseScope(ListResponseScope value) { SetListResponseScope(value); return *this;}
     ///@}
   private:
 
@@ -160,10 +152,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ListResponseScope m_listResponseScope;
+    ListResponseScope m_listResponseScope{ListResponseScope::NOT_SET};
     bool m_listResponseScopeHasBeenSet = false;
   };
 

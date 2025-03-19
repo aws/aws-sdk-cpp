@@ -28,7 +28,7 @@ namespace Model
   class DescribeRoleAliasResult
   {
   public:
-    AWS_IOT_API DescribeRoleAliasResult();
+    AWS_IOT_API DescribeRoleAliasResult() = default;
     AWS_IOT_API DescribeRoleAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeRoleAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The role alias description.</p>
      */
-    inline const RoleAliasDescription& GetRoleAliasDescription() const{ return m_roleAliasDescription; }
-    inline void SetRoleAliasDescription(const RoleAliasDescription& value) { m_roleAliasDescription = value; }
-    inline void SetRoleAliasDescription(RoleAliasDescription&& value) { m_roleAliasDescription = std::move(value); }
-    inline DescribeRoleAliasResult& WithRoleAliasDescription(const RoleAliasDescription& value) { SetRoleAliasDescription(value); return *this;}
-    inline DescribeRoleAliasResult& WithRoleAliasDescription(RoleAliasDescription&& value) { SetRoleAliasDescription(std::move(value)); return *this;}
+    inline const RoleAliasDescription& GetRoleAliasDescription() const { return m_roleAliasDescription; }
+    template<typename RoleAliasDescriptionT = RoleAliasDescription>
+    void SetRoleAliasDescription(RoleAliasDescriptionT&& value) { m_roleAliasDescriptionHasBeenSet = true; m_roleAliasDescription = std::forward<RoleAliasDescriptionT>(value); }
+    template<typename RoleAliasDescriptionT = RoleAliasDescription>
+    DescribeRoleAliasResult& WithRoleAliasDescription(RoleAliasDescriptionT&& value) { SetRoleAliasDescription(std::forward<RoleAliasDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRoleAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRoleAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRoleAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRoleAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RoleAliasDescription m_roleAliasDescription;
+    bool m_roleAliasDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

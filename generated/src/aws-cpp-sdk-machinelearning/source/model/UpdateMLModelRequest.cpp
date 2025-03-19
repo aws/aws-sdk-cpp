@@ -12,14 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMLModelRequest::UpdateMLModelRequest() : 
-    m_mLModelIdHasBeenSet(false),
-    m_mLModelNameHasBeenSet(false),
-    m_scoreThreshold(0.0),
-    m_scoreThresholdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMLModelRequest::SerializePayload() const
 {
   JsonValue payload;

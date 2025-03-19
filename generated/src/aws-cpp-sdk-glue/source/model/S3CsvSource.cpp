@@ -18,42 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3CsvSource::S3CsvSource() : 
-    m_nameHasBeenSet(false),
-    m_pathsHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_groupSizeHasBeenSet(false),
-    m_groupFilesHasBeenSet(false),
-    m_recurse(false),
-    m_recurseHasBeenSet(false),
-    m_maxBand(0),
-    m_maxBandHasBeenSet(false),
-    m_maxFilesInBand(0),
-    m_maxFilesInBandHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_separator(Separator::NOT_SET),
-    m_separatorHasBeenSet(false),
-    m_escaperHasBeenSet(false),
-    m_quoteChar(QuoteChar::NOT_SET),
-    m_quoteCharHasBeenSet(false),
-    m_multiline(false),
-    m_multilineHasBeenSet(false),
-    m_withHeader(false),
-    m_withHeaderHasBeenSet(false),
-    m_writeHeader(false),
-    m_writeHeaderHasBeenSet(false),
-    m_skipFirst(false),
-    m_skipFirstHasBeenSet(false),
-    m_optimizePerformance(false),
-    m_optimizePerformanceHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 S3CsvSource::S3CsvSource(JsonView jsonValue)
-  : S3CsvSource()
 {
   *this = jsonValue;
 }
@@ -63,10 +28,8 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Paths"))
   {
     Aws::Utils::Array<JsonView> pathsJsonList = jsonValue.GetArray("Paths");
@@ -76,14 +39,11 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
     }
     m_pathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionType"))
   {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("CompressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
@@ -93,105 +53,76 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupSize"))
   {
     m_groupSize = jsonValue.GetString("GroupSize");
-
     m_groupSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupFiles"))
   {
     m_groupFiles = jsonValue.GetString("GroupFiles");
-
     m_groupFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recurse"))
   {
     m_recurse = jsonValue.GetBool("Recurse");
-
     m_recurseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxBand"))
   {
     m_maxBand = jsonValue.GetInteger("MaxBand");
-
     m_maxBandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFilesInBand"))
   {
     m_maxFilesInBand = jsonValue.GetInteger("MaxFilesInBand");
-
     m_maxFilesInBandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     m_additionalOptions = jsonValue.GetObject("AdditionalOptions");
-
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Separator"))
   {
     m_separator = SeparatorMapper::GetSeparatorForName(jsonValue.GetString("Separator"));
-
     m_separatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Escaper"))
   {
     m_escaper = jsonValue.GetString("Escaper");
-
     m_escaperHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteChar"))
   {
     m_quoteChar = QuoteCharMapper::GetQuoteCharForName(jsonValue.GetString("QuoteChar"));
-
     m_quoteCharHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Multiline"))
   {
     m_multiline = jsonValue.GetBool("Multiline");
-
     m_multilineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WithHeader"))
   {
     m_withHeader = jsonValue.GetBool("WithHeader");
-
     m_withHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteHeader"))
   {
     m_writeHeader = jsonValue.GetBool("WriteHeader");
-
     m_writeHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SkipFirst"))
   {
     m_skipFirst = jsonValue.GetBool("SkipFirst");
-
     m_skipFirstHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizePerformance"))
   {
     m_optimizePerformance = jsonValue.GetBool("OptimizePerformance");
-
     m_optimizePerformanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -201,7 +132,6 @@ S3CsvSource& S3CsvSource::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

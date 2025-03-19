@@ -24,7 +24,7 @@ namespace Model
   class UpdateAgentRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateAgentRequest();
+    AWS_DATASYNC_API UpdateAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the agent to update.</p>
      */
-    inline const Aws::String& GetAgentArn() const{ return m_agentArn; }
+    inline const Aws::String& GetAgentArn() const { return m_agentArn; }
     inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
-    inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
-    inline void SetAgentArn(Aws::String&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::move(value); }
-    inline void SetAgentArn(const char* value) { m_agentArnHasBeenSet = true; m_agentArn.assign(value); }
-    inline UpdateAgentRequest& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
-    inline UpdateAgentRequest& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
-    inline UpdateAgentRequest& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
+    template<typename AgentArnT = Aws::String>
+    void SetAgentArn(AgentArnT&& value) { m_agentArnHasBeenSet = true; m_agentArn = std::forward<AgentArnT>(value); }
+    template<typename AgentArnT = Aws::String>
+    UpdateAgentRequest& WithAgentArn(AgentArnT&& value) { SetAgentArn(std::forward<AgentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name that you want to use to configure the agent.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAgentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAgentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAgentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAgentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace Proton
 namespace Model
 {
 
-TemplateSyncConfig::TemplateSyncConfig() : 
-    m_branchHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 TemplateSyncConfig::TemplateSyncConfig(JsonView jsonValue)
-  : TemplateSyncConfig()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ TemplateSyncConfig& TemplateSyncConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetString("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryProvider"))
   {
     m_repositoryProvider = RepositoryProviderMapper::GetRepositoryProviderForName(jsonValue.GetString("repositoryProvider"));
-
     m_repositoryProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subdirectory"))
   {
     m_subdirectory = jsonValue.GetString("subdirectory");
-
     m_subdirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateType"))
   {
     m_templateType = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("templateType"));
-
     m_templateTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

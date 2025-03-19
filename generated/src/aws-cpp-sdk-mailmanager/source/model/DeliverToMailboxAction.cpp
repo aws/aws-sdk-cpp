@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-DeliverToMailboxAction::DeliverToMailboxAction() : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_mailboxArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 DeliverToMailboxAction::DeliverToMailboxAction(JsonView jsonValue)
-  : DeliverToMailboxAction()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DeliverToMailboxAction& DeliverToMailboxAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionFailurePolicy"))
   {
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-
     m_actionFailurePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MailboxArn"))
   {
     m_mailboxArn = jsonValue.GetString("MailboxArn");
-
     m_mailboxArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

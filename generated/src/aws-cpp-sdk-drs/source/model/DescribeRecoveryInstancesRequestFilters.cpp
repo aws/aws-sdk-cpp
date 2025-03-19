@@ -18,14 +18,7 @@ namespace drs
 namespace Model
 {
 
-DescribeRecoveryInstancesRequestFilters::DescribeRecoveryInstancesRequestFilters() : 
-    m_recoveryInstanceIDsHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
-{
-}
-
 DescribeRecoveryInstancesRequestFilters::DescribeRecoveryInstancesRequestFilters(JsonView jsonValue)
-  : DescribeRecoveryInstancesRequestFilters()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ DescribeRecoveryInstancesRequestFilters& DescribeRecoveryInstancesRequestFilters
     }
     m_recoveryInstanceIDsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerIDs"))
   {
     Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
@@ -51,7 +43,6 @@ DescribeRecoveryInstancesRequestFilters& DescribeRecoveryInstancesRequestFilters
     }
     m_sourceServerIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

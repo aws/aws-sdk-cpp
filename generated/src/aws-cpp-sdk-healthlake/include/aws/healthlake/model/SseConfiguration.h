@@ -32,7 +32,7 @@ namespace Model
   class SseConfiguration
   {
   public:
-    AWS_HEALTHLAKE_API SseConfiguration();
+    AWS_HEALTHLAKE_API SseConfiguration() = default;
     AWS_HEALTHLAKE_API SseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API SseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> The KMS encryption configuration used to provide details for data
      * encryption. </p>
      */
-    inline const KmsEncryptionConfig& GetKmsEncryptionConfig() const{ return m_kmsEncryptionConfig; }
+    inline const KmsEncryptionConfig& GetKmsEncryptionConfig() const { return m_kmsEncryptionConfig; }
     inline bool KmsEncryptionConfigHasBeenSet() const { return m_kmsEncryptionConfigHasBeenSet; }
-    inline void SetKmsEncryptionConfig(const KmsEncryptionConfig& value) { m_kmsEncryptionConfigHasBeenSet = true; m_kmsEncryptionConfig = value; }
-    inline void SetKmsEncryptionConfig(KmsEncryptionConfig&& value) { m_kmsEncryptionConfigHasBeenSet = true; m_kmsEncryptionConfig = std::move(value); }
-    inline SseConfiguration& WithKmsEncryptionConfig(const KmsEncryptionConfig& value) { SetKmsEncryptionConfig(value); return *this;}
-    inline SseConfiguration& WithKmsEncryptionConfig(KmsEncryptionConfig&& value) { SetKmsEncryptionConfig(std::move(value)); return *this;}
+    template<typename KmsEncryptionConfigT = KmsEncryptionConfig>
+    void SetKmsEncryptionConfig(KmsEncryptionConfigT&& value) { m_kmsEncryptionConfigHasBeenSet = true; m_kmsEncryptionConfig = std::forward<KmsEncryptionConfigT>(value); }
+    template<typename KmsEncryptionConfigT = KmsEncryptionConfig>
+    SseConfiguration& WithKmsEncryptionConfig(KmsEncryptionConfigT&& value) { SetKmsEncryptionConfig(std::forward<KmsEncryptionConfigT>(value)); return *this;}
     ///@}
   private:
 

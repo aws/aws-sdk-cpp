@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-HttpDataSourceConfig::HttpDataSourceConfig() : 
-    m_endpointHasBeenSet(false),
-    m_authorizationConfigHasBeenSet(false)
-{
-}
-
 HttpDataSourceConfig::HttpDataSourceConfig(JsonView jsonValue)
-  : HttpDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HttpDataSourceConfig& HttpDataSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationConfig"))
   {
     m_authorizationConfig = jsonValue.GetObject("authorizationConfig");
-
     m_authorizationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

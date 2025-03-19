@@ -21,7 +21,7 @@ namespace Model
   class DeleteNotificationConfigurationRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API DeleteNotificationConfigurationRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API DeleteNotificationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,16 +37,14 @@ namespace Model
      * <p>The type of event triggering a device notification to the customer-managed
      * destination.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline DeleteNotificationConfigurationRequest& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline DeleteNotificationConfigurationRequest& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline DeleteNotificationConfigurationRequest& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
   private:
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
   };
 

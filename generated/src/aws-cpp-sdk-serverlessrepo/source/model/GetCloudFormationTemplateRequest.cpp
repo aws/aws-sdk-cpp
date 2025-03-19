@@ -12,12 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCloudFormationTemplateRequest::GetCloudFormationTemplateRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCloudFormationTemplateRequest::SerializePayload() const
 {
   return {};

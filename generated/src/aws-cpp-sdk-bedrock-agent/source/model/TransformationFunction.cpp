@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-TransformationFunction::TransformationFunction() : 
-    m_transformationLambdaConfigurationHasBeenSet(false)
-{
-}
-
 TransformationFunction::TransformationFunction(JsonView jsonValue)
-  : TransformationFunction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TransformationFunction& TransformationFunction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("transformationLambdaConfiguration"))
   {
     m_transformationLambdaConfiguration = jsonValue.GetObject("transformationLambdaConfiguration");
-
     m_transformationLambdaConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

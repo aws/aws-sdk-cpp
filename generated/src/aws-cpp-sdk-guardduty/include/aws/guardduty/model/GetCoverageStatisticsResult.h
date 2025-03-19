@@ -28,7 +28,7 @@ namespace Model
   class GetCoverageStatisticsResult
   {
   public:
-    AWS_GUARDDUTY_API GetCoverageStatisticsResult();
+    AWS_GUARDDUTY_API GetCoverageStatisticsResult() = default;
     AWS_GUARDDUTY_API GetCoverageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API GetCoverageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Represents the count aggregated by the <code>statusCode</code> and
      * <code>resourceType</code>.</p>
      */
-    inline const CoverageStatistics& GetCoverageStatistics() const{ return m_coverageStatistics; }
-    inline void SetCoverageStatistics(const CoverageStatistics& value) { m_coverageStatistics = value; }
-    inline void SetCoverageStatistics(CoverageStatistics&& value) { m_coverageStatistics = std::move(value); }
-    inline GetCoverageStatisticsResult& WithCoverageStatistics(const CoverageStatistics& value) { SetCoverageStatistics(value); return *this;}
-    inline GetCoverageStatisticsResult& WithCoverageStatistics(CoverageStatistics&& value) { SetCoverageStatistics(std::move(value)); return *this;}
+    inline const CoverageStatistics& GetCoverageStatistics() const { return m_coverageStatistics; }
+    template<typename CoverageStatisticsT = CoverageStatistics>
+    void SetCoverageStatistics(CoverageStatisticsT&& value) { m_coverageStatisticsHasBeenSet = true; m_coverageStatistics = std::forward<CoverageStatisticsT>(value); }
+    template<typename CoverageStatisticsT = CoverageStatistics>
+    GetCoverageStatisticsResult& WithCoverageStatistics(CoverageStatisticsT&& value) { SetCoverageStatistics(std::forward<CoverageStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCoverageStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCoverageStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCoverageStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCoverageStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CoverageStatistics m_coverageStatistics;
+    bool m_coverageStatisticsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

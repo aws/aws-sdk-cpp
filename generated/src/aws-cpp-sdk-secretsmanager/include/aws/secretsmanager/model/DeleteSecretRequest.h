@@ -21,7 +21,7 @@ namespace Model
   class DeleteSecretRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API DeleteSecretRequest();
+    AWS_SECRETSMANAGER_API DeleteSecretRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding
      * a secret from a partial ARN</a>.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline DeleteSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline DeleteSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline DeleteSecretRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    DeleteSecretRequest& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use
      * either, then by default Secrets Manager uses a 30 day recovery window.</p>
      */
-    inline long long GetRecoveryWindowInDays() const{ return m_recoveryWindowInDays; }
+    inline long long GetRecoveryWindowInDays() const { return m_recoveryWindowInDays; }
     inline bool RecoveryWindowInDaysHasBeenSet() const { return m_recoveryWindowInDaysHasBeenSet; }
     inline void SetRecoveryWindowInDays(long long value) { m_recoveryWindowInDaysHasBeenSet = true; m_recoveryWindowInDays = value; }
     inline DeleteSecretRequest& WithRecoveryWindowInDays(long long value) { SetRecoveryWindowInDays(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
      * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
-    inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
+    inline bool GetForceDeleteWithoutRecovery() const { return m_forceDeleteWithoutRecovery; }
     inline bool ForceDeleteWithoutRecoveryHasBeenSet() const { return m_forceDeleteWithoutRecoveryHasBeenSet; }
     inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
     inline DeleteSecretRequest& WithForceDeleteWithoutRecovery(bool value) { SetForceDeleteWithoutRecovery(value); return *this;}
@@ -92,10 +90,10 @@ namespace Model
     Aws::String m_secretId;
     bool m_secretIdHasBeenSet = false;
 
-    long long m_recoveryWindowInDays;
+    long long m_recoveryWindowInDays{0};
     bool m_recoveryWindowInDaysHasBeenSet = false;
 
-    bool m_forceDeleteWithoutRecovery;
+    bool m_forceDeleteWithoutRecovery{false};
     bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
   };
 

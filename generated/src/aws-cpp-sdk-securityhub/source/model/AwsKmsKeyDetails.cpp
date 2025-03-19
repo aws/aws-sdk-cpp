@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsKmsKeyDetails::AwsKmsKeyDetails() : 
-    m_aWSAccountIdHasBeenSet(false),
-    m_creationDate(0.0),
-    m_creationDateHasBeenSet(false),
-    m_keyIdHasBeenSet(false),
-    m_keyManagerHasBeenSet(false),
-    m_keyStateHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keyRotationStatus(false),
-    m_keyRotationStatusHasBeenSet(false)
-{
-}
-
 AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue)
-  : AwsKmsKeyDetails()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AwsKmsKeyDetails& AwsKmsKeyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AWSAccountId"))
   {
     m_aWSAccountId = jsonValue.GetString("AWSAccountId");
-
     m_aWSAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyManager"))
   {
     m_keyManager = jsonValue.GetString("KeyManager");
-
     m_keyManagerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyState"))
   {
     m_keyState = jsonValue.GetString("KeyState");
-
     m_keyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Origin"))
   {
     m_origin = jsonValue.GetString("Origin");
-
     m_originHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyRotationStatus"))
   {
     m_keyRotationStatus = jsonValue.GetBool("KeyRotationStatus");
-
     m_keyRotationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

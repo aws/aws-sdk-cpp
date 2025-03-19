@@ -12,20 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceConfigHistoryRequest::GetResourceConfigHistoryRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_laterTimeHasBeenSet(false),
-    m_earlierTimeHasBeenSet(false),
-    m_chronologicalOrder(ChronologicalOrder::NOT_SET),
-    m_chronologicalOrderHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceConfigHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class TaskTemplateDefaults
   {
   public:
-    AWS_CONNECT_API TaskTemplateDefaults();
+    AWS_CONNECT_API TaskTemplateDefaults() = default;
     AWS_CONNECT_API TaskTemplateDefaults(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API TaskTemplateDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Default value for the field.</p>
      */
-    inline const Aws::Vector<TaskTemplateDefaultFieldValue>& GetDefaultFieldValues() const{ return m_defaultFieldValues; }
+    inline const Aws::Vector<TaskTemplateDefaultFieldValue>& GetDefaultFieldValues() const { return m_defaultFieldValues; }
     inline bool DefaultFieldValuesHasBeenSet() const { return m_defaultFieldValuesHasBeenSet; }
-    inline void SetDefaultFieldValues(const Aws::Vector<TaskTemplateDefaultFieldValue>& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues = value; }
-    inline void SetDefaultFieldValues(Aws::Vector<TaskTemplateDefaultFieldValue>&& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues = std::move(value); }
-    inline TaskTemplateDefaults& WithDefaultFieldValues(const Aws::Vector<TaskTemplateDefaultFieldValue>& value) { SetDefaultFieldValues(value); return *this;}
-    inline TaskTemplateDefaults& WithDefaultFieldValues(Aws::Vector<TaskTemplateDefaultFieldValue>&& value) { SetDefaultFieldValues(std::move(value)); return *this;}
-    inline TaskTemplateDefaults& AddDefaultFieldValues(const TaskTemplateDefaultFieldValue& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues.push_back(value); return *this; }
-    inline TaskTemplateDefaults& AddDefaultFieldValues(TaskTemplateDefaultFieldValue&& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues.push_back(std::move(value)); return *this; }
+    template<typename DefaultFieldValuesT = Aws::Vector<TaskTemplateDefaultFieldValue>>
+    void SetDefaultFieldValues(DefaultFieldValuesT&& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues = std::forward<DefaultFieldValuesT>(value); }
+    template<typename DefaultFieldValuesT = Aws::Vector<TaskTemplateDefaultFieldValue>>
+    TaskTemplateDefaults& WithDefaultFieldValues(DefaultFieldValuesT&& value) { SetDefaultFieldValues(std::forward<DefaultFieldValuesT>(value)); return *this;}
+    template<typename DefaultFieldValuesT = TaskTemplateDefaultFieldValue>
+    TaskTemplateDefaults& AddDefaultFieldValues(DefaultFieldValuesT&& value) { m_defaultFieldValuesHasBeenSet = true; m_defaultFieldValues.emplace_back(std::forward<DefaultFieldValuesT>(value)); return *this; }
     ///@}
   private:
 

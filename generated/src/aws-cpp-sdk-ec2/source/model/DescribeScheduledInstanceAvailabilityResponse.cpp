@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeScheduledInstanceAvailabilityResponse::DescribeScheduledInstanceAvailabilityResponse()
-{
-}
-
 DescribeScheduledInstanceAvailabilityResponse::DescribeScheduledInstanceAvailabilityResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeScheduledInstanceAvailabilityResponse& DescribeScheduledInstanceAvailabi
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode scheduledInstanceAvailabilitySetNode = resultNode.FirstChild("scheduledInstanceAvailabilitySet");
     if(!scheduledInstanceAvailabilitySetNode.IsNull())
     {
       XmlNode scheduledInstanceAvailabilitySetMember = scheduledInstanceAvailabilitySetNode.FirstChild("item");
+      m_scheduledInstanceAvailabilitySetHasBeenSet = !scheduledInstanceAvailabilitySetMember.IsNull();
       while(!scheduledInstanceAvailabilitySetMember.IsNull())
       {
         m_scheduledInstanceAvailabilitySet.push_back(scheduledInstanceAvailabilitySetMember);
         scheduledInstanceAvailabilitySetMember = scheduledInstanceAvailabilitySetMember.NextNode("item");
       }
 
+      m_scheduledInstanceAvailabilitySetHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeScheduledInstanceAvailabilityResponse& DescribeScheduledInstanceAvailabi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeScheduledInstanceAvailabilityResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

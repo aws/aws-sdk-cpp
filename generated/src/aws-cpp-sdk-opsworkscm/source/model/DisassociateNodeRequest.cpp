@@ -12,13 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateNodeRequest::DisassociateNodeRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_engineAttributesHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateNodeRequest::SerializePayload() const
 {
   JsonValue payload;

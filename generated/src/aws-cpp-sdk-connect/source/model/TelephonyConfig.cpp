@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TelephonyConfig::TelephonyConfig() : 
-    m_distributionsHasBeenSet(false)
-{
-}
-
 TelephonyConfig::TelephonyConfig(JsonView jsonValue)
-  : TelephonyConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TelephonyConfig& TelephonyConfig::operator =(JsonView jsonValue)
     }
     m_distributionsHasBeenSet = true;
   }
-
   return *this;
 }
 

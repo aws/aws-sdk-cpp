@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ColumnType::ColumnType() : 
-    m_scalarType(ScalarType::NOT_SET),
-    m_scalarTypeHasBeenSet(false)
-{
-}
-
 ColumnType::ColumnType(JsonView jsonValue)
-  : ColumnType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ColumnType& ColumnType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scalarType"))
   {
     m_scalarType = ScalarTypeMapper::GetScalarTypeForName(jsonValue.GetString("scalarType"));
-
     m_scalarTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

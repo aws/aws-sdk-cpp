@@ -12,12 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutLifecycleConfigurationRequest::PutLifecycleConfigurationRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_lifecyclePoliciesHasBeenSet(false)
-{
-}
-
 Aws::String PutLifecycleConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

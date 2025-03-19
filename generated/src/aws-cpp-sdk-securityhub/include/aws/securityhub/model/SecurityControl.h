@@ -37,7 +37,7 @@ namespace Model
   class SecurityControl
   {
   public:
-    AWS_SECURITYHUB_API SecurityControl();
+    AWS_SECURITYHUB_API SecurityControl() = default;
     AWS_SECURITYHUB_API SecurityControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API SecurityControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * this field typically consist of an Amazon Web Services service name and a
      * number, such as APIGateway.3. </p>
      */
-    inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
+    inline const Aws::String& GetSecurityControlId() const { return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-    inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-    inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-    inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-    inline SecurityControl& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-    inline SecurityControl& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-    inline SecurityControl& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+    template<typename SecurityControlIdT = Aws::String>
+    void SetSecurityControlId(SecurityControlIdT&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::forward<SecurityControlIdT>(value); }
+    template<typename SecurityControlIdT = Aws::String>
+    SecurityControl& WithSecurityControlId(SecurityControlIdT&& value) { SetSecurityControlId(std::forward<SecurityControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +64,24 @@ namespace Model
      * <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>.
      * This parameter doesn't mention a specific standard. </p>
      */
-    inline const Aws::String& GetSecurityControlArn() const{ return m_securityControlArn; }
+    inline const Aws::String& GetSecurityControlArn() const { return m_securityControlArn; }
     inline bool SecurityControlArnHasBeenSet() const { return m_securityControlArnHasBeenSet; }
-    inline void SetSecurityControlArn(const Aws::String& value) { m_securityControlArnHasBeenSet = true; m_securityControlArn = value; }
-    inline void SetSecurityControlArn(Aws::String&& value) { m_securityControlArnHasBeenSet = true; m_securityControlArn = std::move(value); }
-    inline void SetSecurityControlArn(const char* value) { m_securityControlArnHasBeenSet = true; m_securityControlArn.assign(value); }
-    inline SecurityControl& WithSecurityControlArn(const Aws::String& value) { SetSecurityControlArn(value); return *this;}
-    inline SecurityControl& WithSecurityControlArn(Aws::String&& value) { SetSecurityControlArn(std::move(value)); return *this;}
-    inline SecurityControl& WithSecurityControlArn(const char* value) { SetSecurityControlArn(value); return *this;}
+    template<typename SecurityControlArnT = Aws::String>
+    void SetSecurityControlArn(SecurityControlArnT&& value) { m_securityControlArnHasBeenSet = true; m_securityControlArn = std::forward<SecurityControlArnT>(value); }
+    template<typename SecurityControlArnT = Aws::String>
+    SecurityControl& WithSecurityControlArn(SecurityControlArnT&& value) { SetSecurityControlArn(std::forward<SecurityControlArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of a security control. </p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline SecurityControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline SecurityControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline SecurityControl& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    SecurityControl& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * it produces a failed finding. This parameter doesn't reference a specific
      * standard. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityControl& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityControl& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityControl& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SecurityControl& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * <p> A link to Security Hub documentation that explains how to remediate a failed
      * finding for a security control. </p>
      */
-    inline const Aws::String& GetRemediationUrl() const{ return m_remediationUrl; }
+    inline const Aws::String& GetRemediationUrl() const { return m_remediationUrl; }
     inline bool RemediationUrlHasBeenSet() const { return m_remediationUrlHasBeenSet; }
-    inline void SetRemediationUrl(const Aws::String& value) { m_remediationUrlHasBeenSet = true; m_remediationUrl = value; }
-    inline void SetRemediationUrl(Aws::String&& value) { m_remediationUrlHasBeenSet = true; m_remediationUrl = std::move(value); }
-    inline void SetRemediationUrl(const char* value) { m_remediationUrlHasBeenSet = true; m_remediationUrl.assign(value); }
-    inline SecurityControl& WithRemediationUrl(const Aws::String& value) { SetRemediationUrl(value); return *this;}
-    inline SecurityControl& WithRemediationUrl(Aws::String&& value) { SetRemediationUrl(std::move(value)); return *this;}
-    inline SecurityControl& WithRemediationUrl(const char* value) { SetRemediationUrl(value); return *this;}
+    template<typename RemediationUrlT = Aws::String>
+    void SetRemediationUrl(RemediationUrlT&& value) { m_remediationUrlHasBeenSet = true; m_remediationUrl = std::forward<RemediationUrlT>(value); }
+    template<typename RemediationUrlT = Aws::String>
+    SecurityControl& WithRemediationUrl(RemediationUrlT&& value) { SetRemediationUrl(std::forward<RemediationUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,24 +119,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning
      * severity to control findings</a> in the <i>Security Hub User Guide</i>. </p>
      */
-    inline const SeverityRating& GetSeverityRating() const{ return m_severityRating; }
+    inline SeverityRating GetSeverityRating() const { return m_severityRating; }
     inline bool SeverityRatingHasBeenSet() const { return m_severityRatingHasBeenSet; }
-    inline void SetSeverityRating(const SeverityRating& value) { m_severityRatingHasBeenSet = true; m_severityRating = value; }
-    inline void SetSeverityRating(SeverityRating&& value) { m_severityRatingHasBeenSet = true; m_severityRating = std::move(value); }
-    inline SecurityControl& WithSeverityRating(const SeverityRating& value) { SetSeverityRating(value); return *this;}
-    inline SecurityControl& WithSeverityRating(SeverityRating&& value) { SetSeverityRating(std::move(value)); return *this;}
+    inline void SetSeverityRating(SeverityRating value) { m_severityRatingHasBeenSet = true; m_severityRating = value; }
+    inline SecurityControl& WithSeverityRating(SeverityRating value) { SetSeverityRating(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The enablement status of a security control in a specific standard. </p>
      */
-    inline const ControlStatus& GetSecurityControlStatus() const{ return m_securityControlStatus; }
+    inline ControlStatus GetSecurityControlStatus() const { return m_securityControlStatus; }
     inline bool SecurityControlStatusHasBeenSet() const { return m_securityControlStatusHasBeenSet; }
-    inline void SetSecurityControlStatus(const ControlStatus& value) { m_securityControlStatusHasBeenSet = true; m_securityControlStatus = value; }
-    inline void SetSecurityControlStatus(ControlStatus&& value) { m_securityControlStatusHasBeenSet = true; m_securityControlStatus = std::move(value); }
-    inline SecurityControl& WithSecurityControlStatus(const ControlStatus& value) { SetSecurityControlStatus(value); return *this;}
-    inline SecurityControl& WithSecurityControlStatus(ControlStatus&& value) { SetSecurityControlStatus(std::move(value)); return *this;}
+    inline void SetSecurityControlStatus(ControlStatus value) { m_securityControlStatusHasBeenSet = true; m_securityControlStatus = value; }
+    inline SecurityControl& WithSecurityControlStatus(ControlStatus value) { SetSecurityControlStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -157,12 +143,10 @@ namespace Model
      * security checks of the control. A status of <code>UPDATING</code> indicates that
      * all security checks might not use the current parameter values. </p>
      */
-    inline const UpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+    inline UpdateStatus GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const UpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(UpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline SecurityControl& WithUpdateStatus(const UpdateStatus& value) { SetUpdateStatus(value); return *this;}
-    inline SecurityControl& WithUpdateStatus(UpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(UpdateStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline SecurityControl& WithUpdateStatus(UpdateStatus value) { SetUpdateStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -170,18 +154,16 @@ namespace Model
      * <p> An object that identifies the name of a control parameter, its current
      * value, and whether it has been customized. </p>
      */
-    inline const Aws::Map<Aws::String, ParameterConfiguration>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, ParameterConfiguration>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, ParameterConfiguration>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, ParameterConfiguration>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline SecurityControl& WithParameters(const Aws::Map<Aws::String, ParameterConfiguration>& value) { SetParameters(value); return *this;}
-    inline SecurityControl& WithParameters(Aws::Map<Aws::String, ParameterConfiguration>&& value) { SetParameters(std::move(value)); return *this;}
-    inline SecurityControl& AddParameters(const Aws::String& key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline SecurityControl& AddParameters(Aws::String&& key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline SecurityControl& AddParameters(const Aws::String& key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SecurityControl& AddParameters(Aws::String&& key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline SecurityControl& AddParameters(const char* key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SecurityControl& AddParameters(const char* key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, ParameterConfiguration>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, ParameterConfiguration>>
+    SecurityControl& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = ParameterConfiguration>
+    SecurityControl& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -195,14 +177,12 @@ namespace Model
      * alphanumeric characters in addition to white spaces, dashes, and underscores.
      * </p>
      */
-    inline const Aws::String& GetLastUpdateReason() const{ return m_lastUpdateReason; }
+    inline const Aws::String& GetLastUpdateReason() const { return m_lastUpdateReason; }
     inline bool LastUpdateReasonHasBeenSet() const { return m_lastUpdateReasonHasBeenSet; }
-    inline void SetLastUpdateReason(const Aws::String& value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason = value; }
-    inline void SetLastUpdateReason(Aws::String&& value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason = std::move(value); }
-    inline void SetLastUpdateReason(const char* value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason.assign(value); }
-    inline SecurityControl& WithLastUpdateReason(const Aws::String& value) { SetLastUpdateReason(value); return *this;}
-    inline SecurityControl& WithLastUpdateReason(Aws::String&& value) { SetLastUpdateReason(std::move(value)); return *this;}
-    inline SecurityControl& WithLastUpdateReason(const char* value) { SetLastUpdateReason(value); return *this;}
+    template<typename LastUpdateReasonT = Aws::String>
+    void SetLastUpdateReason(LastUpdateReasonT&& value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason = std::forward<LastUpdateReasonT>(value); }
+    template<typename LastUpdateReasonT = Aws::String>
+    SecurityControl& WithLastUpdateReason(LastUpdateReasonT&& value) { SetLastUpdateReason(std::forward<LastUpdateReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -221,13 +201,13 @@ namespace Model
     Aws::String m_remediationUrl;
     bool m_remediationUrlHasBeenSet = false;
 
-    SeverityRating m_severityRating;
+    SeverityRating m_severityRating{SeverityRating::NOT_SET};
     bool m_severityRatingHasBeenSet = false;
 
-    ControlStatus m_securityControlStatus;
+    ControlStatus m_securityControlStatus{ControlStatus::NOT_SET};
     bool m_securityControlStatusHasBeenSet = false;
 
-    UpdateStatus m_updateStatus;
+    UpdateStatus m_updateStatus{UpdateStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, ParameterConfiguration> m_parameters;

@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteColumnStatisticsForPartitionRequest::DeleteColumnStatisticsForPartitionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_partitionValuesHasBeenSet(false),
-    m_columnNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteColumnStatisticsForPartitionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-RxNormConcept::RxNormConcept() : 
-    m_descriptionHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 RxNormConcept::RxNormConcept(JsonView jsonValue)
-  : RxNormConcept()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RxNormConcept& RxNormConcept::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class UpdateCisScanConfigurationResult
   {
   public:
-    AWS_INSPECTOR2_API UpdateCisScanConfigurationResult();
+    AWS_INSPECTOR2_API UpdateCisScanConfigurationResult() = default;
     AWS_INSPECTOR2_API UpdateCisScanConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API UpdateCisScanConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The CIS scan configuration ARN.</p>
      */
-    inline const Aws::String& GetScanConfigurationArn() const{ return m_scanConfigurationArn; }
-    inline void SetScanConfigurationArn(const Aws::String& value) { m_scanConfigurationArn = value; }
-    inline void SetScanConfigurationArn(Aws::String&& value) { m_scanConfigurationArn = std::move(value); }
-    inline void SetScanConfigurationArn(const char* value) { m_scanConfigurationArn.assign(value); }
-    inline UpdateCisScanConfigurationResult& WithScanConfigurationArn(const Aws::String& value) { SetScanConfigurationArn(value); return *this;}
-    inline UpdateCisScanConfigurationResult& WithScanConfigurationArn(Aws::String&& value) { SetScanConfigurationArn(std::move(value)); return *this;}
-    inline UpdateCisScanConfigurationResult& WithScanConfigurationArn(const char* value) { SetScanConfigurationArn(value); return *this;}
+    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
+    template<typename ScanConfigurationArnT = Aws::String>
+    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
+    template<typename ScanConfigurationArnT = Aws::String>
+    UpdateCisScanConfigurationResult& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCisScanConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCisScanConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCisScanConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCisScanConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scanConfigurationArn;
+    bool m_scanConfigurationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

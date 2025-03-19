@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssociationRequest::DeleteAssociationRequest() : 
-    m_nameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

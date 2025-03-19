@@ -20,22 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetOperationSummary::StackSetOperationSummary() : 
-    m_operationIdHasBeenSet(false),
-    m_action(StackSetOperationAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_status(StackSetOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_operationPreferencesHasBeenSet(false)
-{
-}
-
 StackSetOperationSummary::StackSetOperationSummary(const XmlNode& xmlNode)
-  : StackSetOperationSummary()
 {
   *this = xmlNode;
 }
@@ -55,13 +40,13 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = StackSetOperationActionMapper::GetStackSetOperationActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
+      m_action = StackSetOperationActionMapper::GetStackSetOperationActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()));
       m_actionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetOperationStatusMapper::GetStackSetOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetOperationStatusMapper::GetStackSetOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("CreationTimestamp");

@@ -33,7 +33,7 @@ namespace Model
   class ChatParticipantRoleConfig
   {
   public:
-    AWS_CONNECT_API ChatParticipantRoleConfig();
+    AWS_CONNECT_API ChatParticipantRoleConfig() = default;
     AWS_CONNECT_API ChatParticipantRoleConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ChatParticipantRoleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of participant timers. You can specify any unique combination of role
      * and timer type. Duplicate entries error out the request with a 400.</p>
      */
-    inline const Aws::Vector<ParticipantTimerConfiguration>& GetParticipantTimerConfigList() const{ return m_participantTimerConfigList; }
+    inline const Aws::Vector<ParticipantTimerConfiguration>& GetParticipantTimerConfigList() const { return m_participantTimerConfigList; }
     inline bool ParticipantTimerConfigListHasBeenSet() const { return m_participantTimerConfigListHasBeenSet; }
-    inline void SetParticipantTimerConfigList(const Aws::Vector<ParticipantTimerConfiguration>& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList = value; }
-    inline void SetParticipantTimerConfigList(Aws::Vector<ParticipantTimerConfiguration>&& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList = std::move(value); }
-    inline ChatParticipantRoleConfig& WithParticipantTimerConfigList(const Aws::Vector<ParticipantTimerConfiguration>& value) { SetParticipantTimerConfigList(value); return *this;}
-    inline ChatParticipantRoleConfig& WithParticipantTimerConfigList(Aws::Vector<ParticipantTimerConfiguration>&& value) { SetParticipantTimerConfigList(std::move(value)); return *this;}
-    inline ChatParticipantRoleConfig& AddParticipantTimerConfigList(const ParticipantTimerConfiguration& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList.push_back(value); return *this; }
-    inline ChatParticipantRoleConfig& AddParticipantTimerConfigList(ParticipantTimerConfiguration&& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList.push_back(std::move(value)); return *this; }
+    template<typename ParticipantTimerConfigListT = Aws::Vector<ParticipantTimerConfiguration>>
+    void SetParticipantTimerConfigList(ParticipantTimerConfigListT&& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList = std::forward<ParticipantTimerConfigListT>(value); }
+    template<typename ParticipantTimerConfigListT = Aws::Vector<ParticipantTimerConfiguration>>
+    ChatParticipantRoleConfig& WithParticipantTimerConfigList(ParticipantTimerConfigListT&& value) { SetParticipantTimerConfigList(std::forward<ParticipantTimerConfigListT>(value)); return *this;}
+    template<typename ParticipantTimerConfigListT = ParticipantTimerConfiguration>
+    ChatParticipantRoleConfig& AddParticipantTimerConfigList(ParticipantTimerConfigListT&& value) { m_participantTimerConfigListHasBeenSet = true; m_participantTimerConfigList.emplace_back(std::forward<ParticipantTimerConfigListT>(value)); return *this; }
     ///@}
   private:
 

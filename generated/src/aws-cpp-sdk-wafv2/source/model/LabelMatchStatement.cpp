@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-LabelMatchStatement::LabelMatchStatement() : 
-    m_scope(LabelMatchScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 LabelMatchStatement::LabelMatchStatement(JsonView jsonValue)
-  : LabelMatchStatement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LabelMatchStatement& LabelMatchStatement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = LabelMatchScopeMapper::GetLabelMatchScopeForName(jsonValue.GetString("Scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

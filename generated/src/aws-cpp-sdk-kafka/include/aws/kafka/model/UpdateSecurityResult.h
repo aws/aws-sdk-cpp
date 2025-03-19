@@ -27,7 +27,7 @@ namespace Model
   class UpdateSecurityResult
   {
   public:
-    AWS_KAFKA_API UpdateSecurityResult();
+    AWS_KAFKA_API UpdateSecurityResult() = default;
     AWS_KAFKA_API UpdateSecurityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API UpdateSecurityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
             <p>The Amazon Resource Name (ARN) of the cluster.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-    inline UpdateSecurityResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline UpdateSecurityResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline UpdateSecurityResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    UpdateSecurityResult& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,32 +52,31 @@ namespace Model
    
      *      
      */
-    inline const Aws::String& GetClusterOperationArn() const{ return m_clusterOperationArn; }
-    inline void SetClusterOperationArn(const Aws::String& value) { m_clusterOperationArn = value; }
-    inline void SetClusterOperationArn(Aws::String&& value) { m_clusterOperationArn = std::move(value); }
-    inline void SetClusterOperationArn(const char* value) { m_clusterOperationArn.assign(value); }
-    inline UpdateSecurityResult& WithClusterOperationArn(const Aws::String& value) { SetClusterOperationArn(value); return *this;}
-    inline UpdateSecurityResult& WithClusterOperationArn(Aws::String&& value) { SetClusterOperationArn(std::move(value)); return *this;}
-    inline UpdateSecurityResult& WithClusterOperationArn(const char* value) { SetClusterOperationArn(value); return *this;}
+    inline const Aws::String& GetClusterOperationArn() const { return m_clusterOperationArn; }
+    template<typename ClusterOperationArnT = Aws::String>
+    void SetClusterOperationArn(ClusterOperationArnT&& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = std::forward<ClusterOperationArnT>(value); }
+    template<typename ClusterOperationArnT = Aws::String>
+    UpdateSecurityResult& WithClusterOperationArn(ClusterOperationArnT&& value) { SetClusterOperationArn(std::forward<ClusterOperationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSecurityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSecurityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSecurityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSecurityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_clusterOperationArn;
+    bool m_clusterOperationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

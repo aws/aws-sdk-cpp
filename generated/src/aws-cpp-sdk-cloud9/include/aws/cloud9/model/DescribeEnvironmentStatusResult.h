@@ -28,7 +28,7 @@ namespace Model
   class DescribeEnvironmentStatusResult
   {
   public:
-    AWS_CLOUD9_API DescribeEnvironmentStatusResult();
+    AWS_CLOUD9_API DescribeEnvironmentStatusResult() = default;
     AWS_CLOUD9_API DescribeEnvironmentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUD9_API DescribeEnvironmentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,43 +44,40 @@ namespace Model
      * <code>stopped</code>: The environment is stopped.</p> </li> <li> <p>
      * <code>stopping</code>: The environment is stopping.</p> </li> </ul>
      */
-    inline const EnvironmentStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const EnvironmentStatus& value) { m_status = value; }
-    inline void SetStatus(EnvironmentStatus&& value) { m_status = std::move(value); }
-    inline DescribeEnvironmentStatusResult& WithStatus(const EnvironmentStatus& value) { SetStatus(value); return *this;}
-    inline DescribeEnvironmentStatusResult& WithStatus(EnvironmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline EnvironmentStatus GetStatus() const { return m_status; }
+    inline void SetStatus(EnvironmentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeEnvironmentStatusResult& WithStatus(EnvironmentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any informational message about the status of the environment.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeEnvironmentStatusResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeEnvironmentStatusResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeEnvironmentStatusResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeEnvironmentStatusResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEnvironmentStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEnvironmentStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEnvironmentStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEnvironmentStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    EnvironmentStatus m_status;
+    EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

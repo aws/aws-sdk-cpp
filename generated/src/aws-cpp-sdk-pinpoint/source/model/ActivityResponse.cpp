@@ -18,30 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ActivityResponse::ActivityResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_scheduledStartHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_successfulEndpointCount(0),
-    m_successfulEndpointCountHasBeenSet(false),
-    m_timezonesCompletedCount(0),
-    m_timezonesCompletedCountHasBeenSet(false),
-    m_timezonesTotalCount(0),
-    m_timezonesTotalCountHasBeenSet(false),
-    m_totalEndpointCount(0),
-    m_totalEndpointCountHasBeenSet(false),
-    m_treatmentIdHasBeenSet(false),
-    m_executionMetricsHasBeenSet(false)
-{
-}
-
 ActivityResponse::ActivityResponse(JsonView jsonValue)
-  : ActivityResponse()
 {
   *this = jsonValue;
 }
@@ -51,94 +28,68 @@ ActivityResponse& ActivityResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CampaignId"))
   {
     m_campaignId = jsonValue.GetString("CampaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetString("End");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetString("Result");
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledStart"))
   {
     m_scheduledStart = jsonValue.GetString("ScheduledStart");
-
     m_scheduledStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetString("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuccessfulEndpointCount"))
   {
     m_successfulEndpointCount = jsonValue.GetInteger("SuccessfulEndpointCount");
-
     m_successfulEndpointCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimezonesCompletedCount"))
   {
     m_timezonesCompletedCount = jsonValue.GetInteger("TimezonesCompletedCount");
-
     m_timezonesCompletedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimezonesTotalCount"))
   {
     m_timezonesTotalCount = jsonValue.GetInteger("TimezonesTotalCount");
-
     m_timezonesTotalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalEndpointCount"))
   {
     m_totalEndpointCount = jsonValue.GetInteger("TotalEndpointCount");
-
     m_totalEndpointCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentId"))
   {
     m_treatmentId = jsonValue.GetString("TreatmentId");
-
     m_treatmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionMetrics"))
   {
     Aws::Map<Aws::String, JsonView> executionMetricsJsonMap = jsonValue.GetObject("ExecutionMetrics").GetAllObjects();
@@ -148,7 +99,6 @@ ActivityResponse& ActivityResponse::operator =(JsonView jsonValue)
     }
     m_executionMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

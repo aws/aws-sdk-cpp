@@ -33,7 +33,7 @@ namespace Model
   class ChildWorkflowExecutionStartedEventAttributes
   {
   public:
-    AWS_SWF_API ChildWorkflowExecutionStartedEventAttributes();
+    AWS_SWF_API ChildWorkflowExecutionStartedEventAttributes() = default;
     AWS_SWF_API ChildWorkflowExecutionStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ChildWorkflowExecutionStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The child workflow execution that was started.</p>
      */
-    inline const WorkflowExecution& GetWorkflowExecution() const{ return m_workflowExecution; }
+    inline const WorkflowExecution& GetWorkflowExecution() const { return m_workflowExecution; }
     inline bool WorkflowExecutionHasBeenSet() const { return m_workflowExecutionHasBeenSet; }
-    inline void SetWorkflowExecution(const WorkflowExecution& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
-    inline void SetWorkflowExecution(WorkflowExecution&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::move(value); }
-    inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowExecution(const WorkflowExecution& value) { SetWorkflowExecution(value); return *this;}
-    inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
+    template<typename WorkflowExecutionT = WorkflowExecution>
+    void SetWorkflowExecution(WorkflowExecutionT&& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = std::forward<WorkflowExecutionT>(value); }
+    template<typename WorkflowExecutionT = WorkflowExecution>
+    ChildWorkflowExecutionStartedEventAttributes& WithWorkflowExecution(WorkflowExecutionT&& value) { SetWorkflowExecution(std::forward<WorkflowExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the child workflow execution.</p>
      */
-    inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+    inline const WorkflowType& GetWorkflowType() const { return m_workflowType; }
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
-    inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
-    inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
-    inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
-    inline ChildWorkflowExecutionStartedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+    template<typename WorkflowTypeT = WorkflowType>
+    void SetWorkflowType(WorkflowTypeT&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::forward<WorkflowTypeT>(value); }
+    template<typename WorkflowTypeT = WorkflowType>
+    ChildWorkflowExecutionStartedEventAttributes& WithWorkflowType(WorkflowTypeT&& value) { SetWorkflowType(std::forward<WorkflowTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +71,7 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
-    inline long long GetInitiatedEventId() const{ return m_initiatedEventId; }
+    inline long long GetInitiatedEventId() const { return m_initiatedEventId; }
     inline bool InitiatedEventIdHasBeenSet() const { return m_initiatedEventIdHasBeenSet; }
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
     inline ChildWorkflowExecutionStartedEventAttributes& WithInitiatedEventId(long long value) { SetInitiatedEventId(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet = false;
 
-    long long m_initiatedEventId;
+    long long m_initiatedEventId{0};
     bool m_initiatedEventIdHasBeenSet = false;
   };
 

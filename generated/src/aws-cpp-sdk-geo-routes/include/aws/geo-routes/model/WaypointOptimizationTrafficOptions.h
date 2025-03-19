@@ -31,7 +31,7 @@ namespace Model
   class WaypointOptimizationTrafficOptions
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationTrafficOptions();
+    AWS_GEOROUTES_API WaypointOptimizationTrafficOptions() = default;
     AWS_GEOROUTES_API WaypointOptimizationTrafficOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationTrafficOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * <p>Determines if traffic should be used or ignored while calculating the
      * route.</p> <p>Default Value: <code>UseTrafficData</code> </p>
      */
-    inline const TrafficUsage& GetUsage() const{ return m_usage; }
+    inline TrafficUsage GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const TrafficUsage& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(TrafficUsage&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline WaypointOptimizationTrafficOptions& WithUsage(const TrafficUsage& value) { SetUsage(value); return *this;}
-    inline WaypointOptimizationTrafficOptions& WithUsage(TrafficUsage&& value) { SetUsage(std::move(value)); return *this;}
+    inline void SetUsage(TrafficUsage value) { m_usageHasBeenSet = true; m_usage = value; }
+    inline WaypointOptimizationTrafficOptions& WithUsage(TrafficUsage value) { SetUsage(value); return *this;}
     ///@}
   private:
 
-    TrafficUsage m_usage;
+    TrafficUsage m_usage{TrafficUsage::NOT_SET};
     bool m_usageHasBeenSet = false;
   };
 

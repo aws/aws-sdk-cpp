@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendOTPMessageRequest::SendOTPMessageRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_sendOTPMessageRequestParametersHasBeenSet(false)
-{
-}
-
 Aws::String SendOTPMessageRequest::SerializePayload() const
 {
   JsonValue payload;

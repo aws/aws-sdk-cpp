@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GridLayoutScreenCanvasSizeOptions::GridLayoutScreenCanvasSizeOptions() : 
-    m_resizeOption(ResizeOption::NOT_SET),
-    m_resizeOptionHasBeenSet(false),
-    m_optimizedViewPortWidthHasBeenSet(false)
-{
-}
-
 GridLayoutScreenCanvasSizeOptions::GridLayoutScreenCanvasSizeOptions(JsonView jsonValue)
-  : GridLayoutScreenCanvasSizeOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GridLayoutScreenCanvasSizeOptions& GridLayoutScreenCanvasSizeOptions::operator =
   if(jsonValue.ValueExists("ResizeOption"))
   {
     m_resizeOption = ResizeOptionMapper::GetResizeOptionForName(jsonValue.GetString("ResizeOption"));
-
     m_resizeOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizedViewPortWidth"))
   {
     m_optimizedViewPortWidth = jsonValue.GetString("OptimizedViewPortWidth");
-
     m_optimizedViewPortWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

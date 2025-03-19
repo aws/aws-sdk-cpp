@@ -18,10 +18,6 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-Unlock::Unlock()
-{
-}
-
 Unlock::Unlock(JsonView jsonValue)
 {
   *this = jsonValue;

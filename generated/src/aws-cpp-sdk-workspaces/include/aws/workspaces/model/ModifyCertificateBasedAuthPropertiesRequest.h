@@ -24,7 +24,7 @@ namespace Model
   class ModifyCertificateBasedAuthPropertiesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ModifyCertificateBasedAuthPropertiesRequest();
+    AWS_WORKSPACES_API ModifyCertificateBasedAuthPropertiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,24 @@ namespace Model
     /**
      * <p>The resource identifiers, in the form of directory IDs.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ModifyCertificateBasedAuthPropertiesRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the certificate-based authentication.</p>
      */
-    inline const CertificateBasedAuthProperties& GetCertificateBasedAuthProperties() const{ return m_certificateBasedAuthProperties; }
+    inline const CertificateBasedAuthProperties& GetCertificateBasedAuthProperties() const { return m_certificateBasedAuthProperties; }
     inline bool CertificateBasedAuthPropertiesHasBeenSet() const { return m_certificateBasedAuthPropertiesHasBeenSet; }
-    inline void SetCertificateBasedAuthProperties(const CertificateBasedAuthProperties& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = value; }
-    inline void SetCertificateBasedAuthProperties(CertificateBasedAuthProperties&& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = std::move(value); }
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithCertificateBasedAuthProperties(const CertificateBasedAuthProperties& value) { SetCertificateBasedAuthProperties(value); return *this;}
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithCertificateBasedAuthProperties(CertificateBasedAuthProperties&& value) { SetCertificateBasedAuthProperties(std::move(value)); return *this;}
+    template<typename CertificateBasedAuthPropertiesT = CertificateBasedAuthProperties>
+    void SetCertificateBasedAuthProperties(CertificateBasedAuthPropertiesT&& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = std::forward<CertificateBasedAuthPropertiesT>(value); }
+    template<typename CertificateBasedAuthPropertiesT = CertificateBasedAuthProperties>
+    ModifyCertificateBasedAuthPropertiesRequest& WithCertificateBasedAuthProperties(CertificateBasedAuthPropertiesT&& value) { SetCertificateBasedAuthProperties(std::forward<CertificateBasedAuthPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,13 @@ namespace Model
      * <p>The properties of the certificate-based authentication you want to
      * delete.</p>
      */
-    inline const Aws::Vector<DeletableCertificateBasedAuthProperty>& GetPropertiesToDelete() const{ return m_propertiesToDelete; }
+    inline const Aws::Vector<DeletableCertificateBasedAuthProperty>& GetPropertiesToDelete() const { return m_propertiesToDelete; }
     inline bool PropertiesToDeleteHasBeenSet() const { return m_propertiesToDeleteHasBeenSet; }
-    inline void SetPropertiesToDelete(const Aws::Vector<DeletableCertificateBasedAuthProperty>& value) { m_propertiesToDeleteHasBeenSet = true; m_propertiesToDelete = value; }
-    inline void SetPropertiesToDelete(Aws::Vector<DeletableCertificateBasedAuthProperty>&& value) { m_propertiesToDeleteHasBeenSet = true; m_propertiesToDelete = std::move(value); }
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithPropertiesToDelete(const Aws::Vector<DeletableCertificateBasedAuthProperty>& value) { SetPropertiesToDelete(value); return *this;}
-    inline ModifyCertificateBasedAuthPropertiesRequest& WithPropertiesToDelete(Aws::Vector<DeletableCertificateBasedAuthProperty>&& value) { SetPropertiesToDelete(std::move(value)); return *this;}
-    inline ModifyCertificateBasedAuthPropertiesRequest& AddPropertiesToDelete(const DeletableCertificateBasedAuthProperty& value) { m_propertiesToDeleteHasBeenSet = true; m_propertiesToDelete.push_back(value); return *this; }
-    inline ModifyCertificateBasedAuthPropertiesRequest& AddPropertiesToDelete(DeletableCertificateBasedAuthProperty&& value) { m_propertiesToDeleteHasBeenSet = true; m_propertiesToDelete.push_back(std::move(value)); return *this; }
+    template<typename PropertiesToDeleteT = Aws::Vector<DeletableCertificateBasedAuthProperty>>
+    void SetPropertiesToDelete(PropertiesToDeleteT&& value) { m_propertiesToDeleteHasBeenSet = true; m_propertiesToDelete = std::forward<PropertiesToDeleteT>(value); }
+    template<typename PropertiesToDeleteT = Aws::Vector<DeletableCertificateBasedAuthProperty>>
+    ModifyCertificateBasedAuthPropertiesRequest& WithPropertiesToDelete(PropertiesToDeleteT&& value) { SetPropertiesToDelete(std::forward<PropertiesToDeleteT>(value)); return *this;}
+    inline ModifyCertificateBasedAuthPropertiesRequest& AddPropertiesToDelete(DeletableCertificateBasedAuthProperty value) { m_propertiesToDeleteHasBeenSet = true; m_propertiesToDelete.push_back(value); return *this; }
     ///@}
   private:
 

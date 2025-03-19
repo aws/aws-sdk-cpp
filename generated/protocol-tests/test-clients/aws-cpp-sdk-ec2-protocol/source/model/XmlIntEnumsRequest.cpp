@@ -10,10 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-XmlIntEnumsRequest::XmlIntEnumsRequest()
-{
-}
-
 Aws::String XmlIntEnumsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

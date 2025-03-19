@@ -35,7 +35,7 @@ namespace Model
   class ThingTypeProperties
   {
   public:
-    AWS_IOT_API ThingTypeProperties();
+    AWS_IOT_API ThingTypeProperties() = default;
     AWS_IOT_API ThingTypeProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ThingTypeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
     /**
      * <p>The description of the thing type.</p>
      */
-    inline const Aws::String& GetThingTypeDescription() const{ return m_thingTypeDescription; }
+    inline const Aws::String& GetThingTypeDescription() const { return m_thingTypeDescription; }
     inline bool ThingTypeDescriptionHasBeenSet() const { return m_thingTypeDescriptionHasBeenSet; }
-    inline void SetThingTypeDescription(const Aws::String& value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription = value; }
-    inline void SetThingTypeDescription(Aws::String&& value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription = std::move(value); }
-    inline void SetThingTypeDescription(const char* value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription.assign(value); }
-    inline ThingTypeProperties& WithThingTypeDescription(const Aws::String& value) { SetThingTypeDescription(value); return *this;}
-    inline ThingTypeProperties& WithThingTypeDescription(Aws::String&& value) { SetThingTypeDescription(std::move(value)); return *this;}
-    inline ThingTypeProperties& WithThingTypeDescription(const char* value) { SetThingTypeDescription(value); return *this;}
+    template<typename ThingTypeDescriptionT = Aws::String>
+    void SetThingTypeDescription(ThingTypeDescriptionT&& value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription = std::forward<ThingTypeDescriptionT>(value); }
+    template<typename ThingTypeDescriptionT = Aws::String>
+    ThingTypeProperties& WithThingTypeDescription(ThingTypeDescriptionT&& value) { SetThingTypeDescription(std::forward<ThingTypeDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of searchable thing attribute names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSearchableAttributes() const{ return m_searchableAttributes; }
+    inline const Aws::Vector<Aws::String>& GetSearchableAttributes() const { return m_searchableAttributes; }
     inline bool SearchableAttributesHasBeenSet() const { return m_searchableAttributesHasBeenSet; }
-    inline void SetSearchableAttributes(const Aws::Vector<Aws::String>& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes = value; }
-    inline void SetSearchableAttributes(Aws::Vector<Aws::String>&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes = std::move(value); }
-    inline ThingTypeProperties& WithSearchableAttributes(const Aws::Vector<Aws::String>& value) { SetSearchableAttributes(value); return *this;}
-    inline ThingTypeProperties& WithSearchableAttributes(Aws::Vector<Aws::String>&& value) { SetSearchableAttributes(std::move(value)); return *this;}
-    inline ThingTypeProperties& AddSearchableAttributes(const Aws::String& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.push_back(value); return *this; }
-    inline ThingTypeProperties& AddSearchableAttributes(Aws::String&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.push_back(std::move(value)); return *this; }
-    inline ThingTypeProperties& AddSearchableAttributes(const char* value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.push_back(value); return *this; }
+    template<typename SearchableAttributesT = Aws::Vector<Aws::String>>
+    void SetSearchableAttributes(SearchableAttributesT&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes = std::forward<SearchableAttributesT>(value); }
+    template<typename SearchableAttributesT = Aws::Vector<Aws::String>>
+    ThingTypeProperties& WithSearchableAttributes(SearchableAttributesT&& value) { SetSearchableAttributes(std::forward<SearchableAttributesT>(value)); return *this;}
+    template<typename SearchableAttributesT = Aws::String>
+    ThingTypeProperties& AddSearchableAttributes(SearchableAttributesT&& value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.emplace_back(std::forward<SearchableAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,12 +72,12 @@ namespace Model
      * <p>The configuration to add user-defined properties to enrich MQTT 5
      * messages.</p>
      */
-    inline const Mqtt5Configuration& GetMqtt5Configuration() const{ return m_mqtt5Configuration; }
+    inline const Mqtt5Configuration& GetMqtt5Configuration() const { return m_mqtt5Configuration; }
     inline bool Mqtt5ConfigurationHasBeenSet() const { return m_mqtt5ConfigurationHasBeenSet; }
-    inline void SetMqtt5Configuration(const Mqtt5Configuration& value) { m_mqtt5ConfigurationHasBeenSet = true; m_mqtt5Configuration = value; }
-    inline void SetMqtt5Configuration(Mqtt5Configuration&& value) { m_mqtt5ConfigurationHasBeenSet = true; m_mqtt5Configuration = std::move(value); }
-    inline ThingTypeProperties& WithMqtt5Configuration(const Mqtt5Configuration& value) { SetMqtt5Configuration(value); return *this;}
-    inline ThingTypeProperties& WithMqtt5Configuration(Mqtt5Configuration&& value) { SetMqtt5Configuration(std::move(value)); return *this;}
+    template<typename Mqtt5ConfigurationT = Mqtt5Configuration>
+    void SetMqtt5Configuration(Mqtt5ConfigurationT&& value) { m_mqtt5ConfigurationHasBeenSet = true; m_mqtt5Configuration = std::forward<Mqtt5ConfigurationT>(value); }
+    template<typename Mqtt5ConfigurationT = Mqtt5Configuration>
+    ThingTypeProperties& WithMqtt5Configuration(Mqtt5ConfigurationT&& value) { SetMqtt5Configuration(std::forward<Mqtt5ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class BatchDescribeEntitiesResult
   {
   public:
-    AWS_MARKETPLACECATALOG_API BatchDescribeEntitiesResult();
+    AWS_MARKETPLACECATALOG_API BatchDescribeEntitiesResult() = default;
     AWS_MARKETPLACECATALOG_API BatchDescribeEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MARKETPLACECATALOG_API BatchDescribeEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,17 +39,15 @@ namespace Model
     /**
      * <p>Details about each entity.</p>
      */
-    inline const Aws::Map<Aws::String, EntityDetail>& GetEntityDetails() const{ return m_entityDetails; }
-    inline void SetEntityDetails(const Aws::Map<Aws::String, EntityDetail>& value) { m_entityDetails = value; }
-    inline void SetEntityDetails(Aws::Map<Aws::String, EntityDetail>&& value) { m_entityDetails = std::move(value); }
-    inline BatchDescribeEntitiesResult& WithEntityDetails(const Aws::Map<Aws::String, EntityDetail>& value) { SetEntityDetails(value); return *this;}
-    inline BatchDescribeEntitiesResult& WithEntityDetails(Aws::Map<Aws::String, EntityDetail>&& value) { SetEntityDetails(std::move(value)); return *this;}
-    inline BatchDescribeEntitiesResult& AddEntityDetails(const Aws::String& key, const EntityDetail& value) { m_entityDetails.emplace(key, value); return *this; }
-    inline BatchDescribeEntitiesResult& AddEntityDetails(Aws::String&& key, const EntityDetail& value) { m_entityDetails.emplace(std::move(key), value); return *this; }
-    inline BatchDescribeEntitiesResult& AddEntityDetails(const Aws::String& key, EntityDetail&& value) { m_entityDetails.emplace(key, std::move(value)); return *this; }
-    inline BatchDescribeEntitiesResult& AddEntityDetails(Aws::String&& key, EntityDetail&& value) { m_entityDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchDescribeEntitiesResult& AddEntityDetails(const char* key, EntityDetail&& value) { m_entityDetails.emplace(key, std::move(value)); return *this; }
-    inline BatchDescribeEntitiesResult& AddEntityDetails(const char* key, const EntityDetail& value) { m_entityDetails.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, EntityDetail>& GetEntityDetails() const { return m_entityDetails; }
+    template<typename EntityDetailsT = Aws::Map<Aws::String, EntityDetail>>
+    void SetEntityDetails(EntityDetailsT&& value) { m_entityDetailsHasBeenSet = true; m_entityDetails = std::forward<EntityDetailsT>(value); }
+    template<typename EntityDetailsT = Aws::Map<Aws::String, EntityDetail>>
+    BatchDescribeEntitiesResult& WithEntityDetails(EntityDetailsT&& value) { SetEntityDetails(std::forward<EntityDetailsT>(value)); return *this;}
+    template<typename EntityDetailsKeyT = Aws::String, typename EntityDetailsValueT = EntityDetail>
+    BatchDescribeEntitiesResult& AddEntityDetails(EntityDetailsKeyT&& key, EntityDetailsValueT&& value) {
+      m_entityDetailsHasBeenSet = true; m_entityDetails.emplace(std::forward<EntityDetailsKeyT>(key), std::forward<EntityDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -57,36 +55,35 @@ namespace Model
      * <p>A map of errors returned, with <code>EntityId</code> as the key and
      * <code>errorDetail</code> as the value.</p>
      */
-    inline const Aws::Map<Aws::String, BatchDescribeErrorDetail>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Map<Aws::String, BatchDescribeErrorDetail>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Map<Aws::String, BatchDescribeErrorDetail>&& value) { m_errors = std::move(value); }
-    inline BatchDescribeEntitiesResult& WithErrors(const Aws::Map<Aws::String, BatchDescribeErrorDetail>& value) { SetErrors(value); return *this;}
-    inline BatchDescribeEntitiesResult& WithErrors(Aws::Map<Aws::String, BatchDescribeErrorDetail>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDescribeEntitiesResult& AddErrors(const Aws::String& key, const BatchDescribeErrorDetail& value) { m_errors.emplace(key, value); return *this; }
-    inline BatchDescribeEntitiesResult& AddErrors(Aws::String&& key, const BatchDescribeErrorDetail& value) { m_errors.emplace(std::move(key), value); return *this; }
-    inline BatchDescribeEntitiesResult& AddErrors(const Aws::String& key, BatchDescribeErrorDetail&& value) { m_errors.emplace(key, std::move(value)); return *this; }
-    inline BatchDescribeEntitiesResult& AddErrors(Aws::String&& key, BatchDescribeErrorDetail&& value) { m_errors.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchDescribeEntitiesResult& AddErrors(const char* key, BatchDescribeErrorDetail&& value) { m_errors.emplace(key, std::move(value)); return *this; }
-    inline BatchDescribeEntitiesResult& AddErrors(const char* key, const BatchDescribeErrorDetail& value) { m_errors.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, BatchDescribeErrorDetail>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Map<Aws::String, BatchDescribeErrorDetail>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Map<Aws::String, BatchDescribeErrorDetail>>
+    BatchDescribeEntitiesResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsKeyT = Aws::String, typename ErrorsValueT = BatchDescribeErrorDetail>
+    BatchDescribeEntitiesResult& AddErrors(ErrorsKeyT&& key, ErrorsValueT&& value) {
+      m_errorsHasBeenSet = true; m_errors.emplace(std::forward<ErrorsKeyT>(key), std::forward<ErrorsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDescribeEntitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDescribeEntitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDescribeEntitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDescribeEntitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, EntityDetail> m_entityDetails;
+    bool m_entityDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, BatchDescribeErrorDetail> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

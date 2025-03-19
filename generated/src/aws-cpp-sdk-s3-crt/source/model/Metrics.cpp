@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Metrics::Metrics() : 
-    m_status(MetricsStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_eventThresholdHasBeenSet(false)
-{
-}
-
 Metrics::Metrics(const XmlNode& xmlNode)
-  : Metrics()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ Metrics& Metrics::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = MetricsStatusMapper::GetMetricsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = MetricsStatusMapper::GetMetricsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode eventThresholdNode = resultNode.FirstChild("EventThreshold");

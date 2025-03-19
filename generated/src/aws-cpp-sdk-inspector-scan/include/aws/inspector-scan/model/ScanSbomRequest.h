@@ -22,7 +22,7 @@ namespace Model
   class ScanSbomRequest : public InspectorscanRequest
   {
   public:
-    AWS_INSPECTORSCAN_API ScanSbomRequest();
+    AWS_INSPECTORSCAN_API ScanSbomRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,31 +38,29 @@ namespace Model
      * <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX
      * 1.5 format.</p>
      */
-    inline Aws::Utils::DocumentView GetSbom() const{ return m_sbom; }
+    inline Aws::Utils::DocumentView GetSbom() const { return m_sbom; }
     inline bool SbomHasBeenSet() const { return m_sbomHasBeenSet; }
-    inline void SetSbom(const Aws::Utils::Document& value) { m_sbomHasBeenSet = true; m_sbom = value; }
-    inline void SetSbom(Aws::Utils::Document&& value) { m_sbomHasBeenSet = true; m_sbom = std::move(value); }
-    inline ScanSbomRequest& WithSbom(const Aws::Utils::Document& value) { SetSbom(value); return *this;}
-    inline ScanSbomRequest& WithSbom(Aws::Utils::Document&& value) { SetSbom(std::move(value)); return *this;}
+    template<typename SbomT = Aws::Utils::Document>
+    void SetSbom(SbomT&& value) { m_sbomHasBeenSet = true; m_sbom = std::forward<SbomT>(value); }
+    template<typename SbomT = Aws::Utils::Document>
+    ScanSbomRequest& WithSbom(SbomT&& value) { SetSbom(std::forward<SbomT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output format for the vulnerability report.</p>
      */
-    inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+    inline OutputFormat GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline ScanSbomRequest& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
-    inline ScanSbomRequest& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+    inline void SetOutputFormat(OutputFormat value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline ScanSbomRequest& WithOutputFormat(OutputFormat value) { SetOutputFormat(value); return *this;}
     ///@}
   private:
 
     Aws::Utils::Document m_sbom;
     bool m_sbomHasBeenSet = false;
 
-    OutputFormat m_outputFormat;
+    OutputFormat m_outputFormat{OutputFormat::NOT_SET};
     bool m_outputFormatHasBeenSet = false;
   };
 

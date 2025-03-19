@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetExportSnapshotRecordsRequest::GetExportSnapshotRecordsRequest() : 
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetExportSnapshotRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

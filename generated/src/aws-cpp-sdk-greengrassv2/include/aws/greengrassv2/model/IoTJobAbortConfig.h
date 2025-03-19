@@ -33,7 +33,7 @@ namespace Model
   class IoTJobAbortConfig
   {
   public:
-    AWS_GREENGRASSV2_API IoTJobAbortConfig();
+    AWS_GREENGRASSV2_API IoTJobAbortConfig() = default;
     AWS_GREENGRASSV2_API IoTJobAbortConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API IoTJobAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The list of criteria that define when and how to cancel the configuration
      * deployment.</p>
      */
-    inline const Aws::Vector<IoTJobAbortCriteria>& GetCriteriaList() const{ return m_criteriaList; }
+    inline const Aws::Vector<IoTJobAbortCriteria>& GetCriteriaList() const { return m_criteriaList; }
     inline bool CriteriaListHasBeenSet() const { return m_criteriaListHasBeenSet; }
-    inline void SetCriteriaList(const Aws::Vector<IoTJobAbortCriteria>& value) { m_criteriaListHasBeenSet = true; m_criteriaList = value; }
-    inline void SetCriteriaList(Aws::Vector<IoTJobAbortCriteria>&& value) { m_criteriaListHasBeenSet = true; m_criteriaList = std::move(value); }
-    inline IoTJobAbortConfig& WithCriteriaList(const Aws::Vector<IoTJobAbortCriteria>& value) { SetCriteriaList(value); return *this;}
-    inline IoTJobAbortConfig& WithCriteriaList(Aws::Vector<IoTJobAbortCriteria>&& value) { SetCriteriaList(std::move(value)); return *this;}
-    inline IoTJobAbortConfig& AddCriteriaList(const IoTJobAbortCriteria& value) { m_criteriaListHasBeenSet = true; m_criteriaList.push_back(value); return *this; }
-    inline IoTJobAbortConfig& AddCriteriaList(IoTJobAbortCriteria&& value) { m_criteriaListHasBeenSet = true; m_criteriaList.push_back(std::move(value)); return *this; }
+    template<typename CriteriaListT = Aws::Vector<IoTJobAbortCriteria>>
+    void SetCriteriaList(CriteriaListT&& value) { m_criteriaListHasBeenSet = true; m_criteriaList = std::forward<CriteriaListT>(value); }
+    template<typename CriteriaListT = Aws::Vector<IoTJobAbortCriteria>>
+    IoTJobAbortConfig& WithCriteriaList(CriteriaListT&& value) { SetCriteriaList(std::forward<CriteriaListT>(value)); return *this;}
+    template<typename CriteriaListT = IoTJobAbortCriteria>
+    IoTJobAbortConfig& AddCriteriaList(CriteriaListT&& value) { m_criteriaListHasBeenSet = true; m_criteriaList.emplace_back(std::forward<CriteriaListT>(value)); return *this; }
     ///@}
   private:
 

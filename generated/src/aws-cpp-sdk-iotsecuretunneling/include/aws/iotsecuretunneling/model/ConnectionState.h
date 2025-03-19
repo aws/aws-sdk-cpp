@@ -32,7 +32,7 @@ namespace Model
   class ConnectionState
   {
   public:
-    AWS_IOTSECURETUNNELING_API ConnectionState();
+    AWS_IOTSECURETUNNELING_API ConnectionState() = default;
     AWS_IOTSECURETUNNELING_API ConnectionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSECURETUNNELING_API ConnectionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
      * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
      * and <code>DISCONNECTED</code>.</p>
      */
-    inline const ConnectionStatus& GetStatus() const{ return m_status; }
+    inline ConnectionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ConnectionState& WithStatus(const ConnectionStatus& value) { SetStatus(value); return *this;}
-    inline ConnectionState& WithStatus(ConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConnectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ConnectionState& WithStatus(ConnectionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the connection status was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline ConnectionState& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline ConnectionState& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    ConnectionState& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    ConnectionStatus m_status;
+    ConnectionStatus m_status{ConnectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
   };
 

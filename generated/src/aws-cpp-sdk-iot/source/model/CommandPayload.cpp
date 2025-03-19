@@ -19,14 +19,7 @@ namespace IoT
 namespace Model
 {
 
-CommandPayload::CommandPayload() : 
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 CommandPayload::CommandPayload(JsonView jsonValue)
-  : CommandPayload()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ CommandPayload& CommandPayload::operator =(JsonView jsonValue)
     m_content = HashingUtils::Base64Decode(jsonValue.GetString("content"));
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = jsonValue.GetString("contentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

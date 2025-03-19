@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCustomPluginResult::CreateCustomPluginResult() : 
-    m_customPluginState(CustomPluginState::NOT_SET),
-    m_revision(0)
-{
-}
-
 CreateCustomPluginResult::CreateCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateCustomPluginResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ CreateCustomPluginResult& CreateCustomPluginResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("customPluginArn"))
   {
     m_customPluginArn = jsonValue.GetString("customPluginArn");
-
+    m_customPluginArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customPluginState"))
   {
     m_customPluginState = CustomPluginStateMapper::GetCustomPluginStateForName(jsonValue.GetString("customPluginState"));
-
+    m_customPluginStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInt64("revision");
-
+    m_revisionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

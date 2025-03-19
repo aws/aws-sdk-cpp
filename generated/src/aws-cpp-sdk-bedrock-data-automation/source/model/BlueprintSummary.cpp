@@ -18,19 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-BlueprintSummary::BlueprintSummary() : 
-    m_blueprintArnHasBeenSet(false),
-    m_blueprintVersionHasBeenSet(false),
-    m_blueprintStage(BlueprintStage::NOT_SET),
-    m_blueprintStageHasBeenSet(false),
-    m_blueprintNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 BlueprintSummary::BlueprintSummary(JsonView jsonValue)
-  : BlueprintSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BlueprintSummary& BlueprintSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blueprintArn"))
   {
     m_blueprintArn = jsonValue.GetString("blueprintArn");
-
     m_blueprintArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintVersion"))
   {
     m_blueprintVersion = jsonValue.GetString("blueprintVersion");
-
     m_blueprintVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintStage"))
   {
     m_blueprintStage = BlueprintStageMapper::GetBlueprintStageForName(jsonValue.GetString("blueprintStage"));
-
     m_blueprintStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blueprintName"))
   {
     m_blueprintName = jsonValue.GetString("blueprintName");
-
     m_blueprintNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Analysis::Analysis() : 
-    m_analysisIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_dataSetArnsHasBeenSet(false),
-    m_themeArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sheetsHasBeenSet(false)
-{
-}
-
 Analysis::Analysis(JsonView jsonValue)
-  : Analysis()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ Analysis& Analysis::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnalysisId"))
   {
     m_analysisId = jsonValue.GetString("AnalysisId");
-
     m_analysisIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -78,7 +54,6 @@ Analysis& Analysis::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetArns"))
   {
     Aws::Utils::Array<JsonView> dataSetArnsJsonList = jsonValue.GetArray("DataSetArns");
@@ -88,28 +63,21 @@ Analysis& Analysis::operator =(JsonView jsonValue)
     }
     m_dataSetArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThemeArn"))
   {
     m_themeArn = jsonValue.GetString("ThemeArn");
-
     m_themeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sheets"))
   {
     Aws::Utils::Array<JsonView> sheetsJsonList = jsonValue.GetArray("Sheets");
@@ -119,7 +87,6 @@ Analysis& Analysis::operator =(JsonView jsonValue)
     }
     m_sheetsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class StartMonitoringScheduleRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StartMonitoringScheduleRequest();
+    AWS_SAGEMAKER_API StartMonitoringScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the schedule to start.</p>
      */
-    inline const Aws::String& GetMonitoringScheduleName() const{ return m_monitoringScheduleName; }
+    inline const Aws::String& GetMonitoringScheduleName() const { return m_monitoringScheduleName; }
     inline bool MonitoringScheduleNameHasBeenSet() const { return m_monitoringScheduleNameHasBeenSet; }
-    inline void SetMonitoringScheduleName(const Aws::String& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = value; }
-    inline void SetMonitoringScheduleName(Aws::String&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::move(value); }
-    inline void SetMonitoringScheduleName(const char* value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName.assign(value); }
-    inline StartMonitoringScheduleRequest& WithMonitoringScheduleName(const Aws::String& value) { SetMonitoringScheduleName(value); return *this;}
-    inline StartMonitoringScheduleRequest& WithMonitoringScheduleName(Aws::String&& value) { SetMonitoringScheduleName(std::move(value)); return *this;}
-    inline StartMonitoringScheduleRequest& WithMonitoringScheduleName(const char* value) { SetMonitoringScheduleName(value); return *this;}
+    template<typename MonitoringScheduleNameT = Aws::String>
+    void SetMonitoringScheduleName(MonitoringScheduleNameT&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::forward<MonitoringScheduleNameT>(value); }
+    template<typename MonitoringScheduleNameT = Aws::String>
+    StartMonitoringScheduleRequest& WithMonitoringScheduleName(MonitoringScheduleNameT&& value) { SetMonitoringScheduleName(std::forward<MonitoringScheduleNameT>(value)); return *this;}
     ///@}
   private:
 

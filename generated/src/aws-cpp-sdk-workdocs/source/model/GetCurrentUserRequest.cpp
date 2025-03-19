@@ -13,11 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCurrentUserRequest::GetCurrentUserRequest() : 
-    m_authenticationTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCurrentUserRequest::SerializePayload() const
 {
   return {};

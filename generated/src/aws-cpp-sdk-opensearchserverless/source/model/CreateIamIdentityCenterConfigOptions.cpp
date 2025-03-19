@@ -18,17 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-CreateIamIdentityCenterConfigOptions::CreateIamIdentityCenterConfigOptions() : 
-    m_instanceArnHasBeenSet(false),
-    m_userAttribute(IamIdentityCenterUserAttribute::NOT_SET),
-    m_userAttributeHasBeenSet(false),
-    m_groupAttribute(IamIdentityCenterGroupAttribute::NOT_SET),
-    m_groupAttributeHasBeenSet(false)
-{
-}
-
 CreateIamIdentityCenterConfigOptions::CreateIamIdentityCenterConfigOptions(JsonView jsonValue)
-  : CreateIamIdentityCenterConfigOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CreateIamIdentityCenterConfigOptions& CreateIamIdentityCenterConfigOptions::oper
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttribute"))
   {
     m_userAttribute = IamIdentityCenterUserAttributeMapper::GetIamIdentityCenterUserAttributeForName(jsonValue.GetString("userAttribute"));
-
     m_userAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupAttribute"))
   {
     m_groupAttribute = IamIdentityCenterGroupAttributeMapper::GetIamIdentityCenterGroupAttributeForName(jsonValue.GetString("groupAttribute"));
-
     m_groupAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

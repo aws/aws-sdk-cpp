@@ -34,7 +34,7 @@ namespace Model
   class MetricAttribution
   {
   public:
-    AWS_PERSONALIZEEVENTS_API MetricAttribution();
+    AWS_PERSONALIZEEVENTS_API MetricAttribution() = default;
     AWS_PERSONALIZEEVENTS_API MetricAttribution(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API MetricAttribution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The source of the event, such as a third party.</p>
      */
-    inline const Aws::String& GetEventAttributionSource() const{ return m_eventAttributionSource; }
+    inline const Aws::String& GetEventAttributionSource() const { return m_eventAttributionSource; }
     inline bool EventAttributionSourceHasBeenSet() const { return m_eventAttributionSourceHasBeenSet; }
-    inline void SetEventAttributionSource(const Aws::String& value) { m_eventAttributionSourceHasBeenSet = true; m_eventAttributionSource = value; }
-    inline void SetEventAttributionSource(Aws::String&& value) { m_eventAttributionSourceHasBeenSet = true; m_eventAttributionSource = std::move(value); }
-    inline void SetEventAttributionSource(const char* value) { m_eventAttributionSourceHasBeenSet = true; m_eventAttributionSource.assign(value); }
-    inline MetricAttribution& WithEventAttributionSource(const Aws::String& value) { SetEventAttributionSource(value); return *this;}
-    inline MetricAttribution& WithEventAttributionSource(Aws::String&& value) { SetEventAttributionSource(std::move(value)); return *this;}
-    inline MetricAttribution& WithEventAttributionSource(const char* value) { SetEventAttributionSource(value); return *this;}
+    template<typename EventAttributionSourceT = Aws::String>
+    void SetEventAttributionSource(EventAttributionSourceT&& value) { m_eventAttributionSourceHasBeenSet = true; m_eventAttributionSource = std::forward<EventAttributionSourceT>(value); }
+    template<typename EventAttributionSourceT = Aws::String>
+    MetricAttribution& WithEventAttributionSource(EventAttributionSourceT&& value) { SetEventAttributionSource(std::forward<EventAttributionSourceT>(value)); return *this;}
     ///@}
   private:
 

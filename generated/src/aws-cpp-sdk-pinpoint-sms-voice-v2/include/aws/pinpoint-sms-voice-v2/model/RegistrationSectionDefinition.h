@@ -33,7 +33,7 @@ namespace Model
   class RegistrationSectionDefinition
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API RegistrationSectionDefinition();
+    AWS_PINPOINTSMSVOICEV2_API RegistrationSectionDefinition() = default;
     AWS_PINPOINTSMSVOICEV2_API RegistrationSectionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API RegistrationSectionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The path to the section of the registration.</p>
      */
-    inline const Aws::String& GetSectionPath() const{ return m_sectionPath; }
+    inline const Aws::String& GetSectionPath() const { return m_sectionPath; }
     inline bool SectionPathHasBeenSet() const { return m_sectionPathHasBeenSet; }
-    inline void SetSectionPath(const Aws::String& value) { m_sectionPathHasBeenSet = true; m_sectionPath = value; }
-    inline void SetSectionPath(Aws::String&& value) { m_sectionPathHasBeenSet = true; m_sectionPath = std::move(value); }
-    inline void SetSectionPath(const char* value) { m_sectionPathHasBeenSet = true; m_sectionPath.assign(value); }
-    inline RegistrationSectionDefinition& WithSectionPath(const Aws::String& value) { SetSectionPath(value); return *this;}
-    inline RegistrationSectionDefinition& WithSectionPath(Aws::String&& value) { SetSectionPath(std::move(value)); return *this;}
-    inline RegistrationSectionDefinition& WithSectionPath(const char* value) { SetSectionPath(value); return *this;}
+    template<typename SectionPathT = Aws::String>
+    void SetSectionPath(SectionPathT&& value) { m_sectionPathHasBeenSet = true; m_sectionPath = std::forward<SectionPathT>(value); }
+    template<typename SectionPathT = Aws::String>
+    RegistrationSectionDefinition& WithSectionPath(SectionPathT&& value) { SetSectionPath(std::forward<SectionPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the section of the registration.</p>
      */
-    inline const RegistrationSectionDisplayHints& GetDisplayHints() const{ return m_displayHints; }
+    inline const RegistrationSectionDisplayHints& GetDisplayHints() const { return m_displayHints; }
     inline bool DisplayHintsHasBeenSet() const { return m_displayHintsHasBeenSet; }
-    inline void SetDisplayHints(const RegistrationSectionDisplayHints& value) { m_displayHintsHasBeenSet = true; m_displayHints = value; }
-    inline void SetDisplayHints(RegistrationSectionDisplayHints&& value) { m_displayHintsHasBeenSet = true; m_displayHints = std::move(value); }
-    inline RegistrationSectionDefinition& WithDisplayHints(const RegistrationSectionDisplayHints& value) { SetDisplayHints(value); return *this;}
-    inline RegistrationSectionDefinition& WithDisplayHints(RegistrationSectionDisplayHints&& value) { SetDisplayHints(std::move(value)); return *this;}
+    template<typename DisplayHintsT = RegistrationSectionDisplayHints>
+    void SetDisplayHints(DisplayHintsT&& value) { m_displayHintsHasBeenSet = true; m_displayHints = std::forward<DisplayHintsT>(value); }
+    template<typename DisplayHintsT = RegistrationSectionDisplayHints>
+    RegistrationSectionDefinition& WithDisplayHints(DisplayHintsT&& value) { SetDisplayHints(std::forward<DisplayHintsT>(value)); return *this;}
     ///@}
   private:
 

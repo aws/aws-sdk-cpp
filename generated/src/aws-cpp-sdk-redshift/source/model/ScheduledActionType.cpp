@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ScheduledActionType::ScheduledActionType() : 
-    m_resizeClusterHasBeenSet(false),
-    m_pauseClusterHasBeenSet(false),
-    m_resumeClusterHasBeenSet(false)
-{
-}
-
 ScheduledActionType::ScheduledActionType(const XmlNode& xmlNode)
-  : ScheduledActionType()
 {
   *this = xmlNode;
 }

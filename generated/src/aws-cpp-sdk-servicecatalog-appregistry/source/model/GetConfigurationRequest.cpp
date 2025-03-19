@@ -12,10 +12,6 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfigurationRequest::GetConfigurationRequest()
-{
-}
-
 Aws::String GetConfigurationRequest::SerializePayload() const
 {
   return {};

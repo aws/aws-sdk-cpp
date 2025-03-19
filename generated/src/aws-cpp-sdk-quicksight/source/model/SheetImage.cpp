@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetImage::SheetImage() : 
-    m_sheetImageIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_scalingHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_imageContentAltTextHasBeenSet(false),
-    m_interactionsHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 SheetImage::SheetImage(JsonView jsonValue)
-  : SheetImage()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SheetImage& SheetImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SheetImageId"))
   {
     m_sheetImageId = jsonValue.GetString("SheetImageId");
-
     m_sheetImageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scaling"))
   {
     m_scaling = jsonValue.GetObject("Scaling");
-
     m_scalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageContentAltText"))
   {
     m_imageContentAltText = jsonValue.GetString("ImageContentAltText");
-
     m_imageContentAltTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -88,7 +64,6 @@ SheetImage& SheetImage::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

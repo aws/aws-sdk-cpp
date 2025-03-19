@@ -35,7 +35,7 @@ namespace Model
   class AddHeaderAction
   {
   public:
-    AWS_SES_API AddHeaderAction();
+    AWS_SES_API AddHeaderAction() = default;
     AWS_SES_API AddHeaderAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API AddHeaderAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * at least one character, and can contain up to 50 characters. It consists of
      * alphanumeric (a–z, A–Z, 0–9) characters and dashes.</p>
      */
-    inline const Aws::String& GetHeaderName() const{ return m_headerName; }
+    inline const Aws::String& GetHeaderName() const { return m_headerName; }
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
-    inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
-    inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
-    inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
-    inline AddHeaderAction& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
-    inline AddHeaderAction& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
-    inline AddHeaderAction& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
+    template<typename HeaderNameT = Aws::String>
+    void SetHeaderName(HeaderNameT&& value) { m_headerNameHasBeenSet = true; m_headerName = std::forward<HeaderNameT>(value); }
+    template<typename HeaderNameT = Aws::String>
+    AddHeaderAction& WithHeaderName(HeaderNameT&& value) { SetHeaderName(std::forward<HeaderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * characters. It can't contain newline (<code>\n</code>) or carriage return
      * (<code>\r</code>) characters.</p>
      */
-    inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
+    inline const Aws::String& GetHeaderValue() const { return m_headerValue; }
     inline bool HeaderValueHasBeenSet() const { return m_headerValueHasBeenSet; }
-    inline void SetHeaderValue(const Aws::String& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
-    inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = std::move(value); }
-    inline void SetHeaderValue(const char* value) { m_headerValueHasBeenSet = true; m_headerValue.assign(value); }
-    inline AddHeaderAction& WithHeaderValue(const Aws::String& value) { SetHeaderValue(value); return *this;}
-    inline AddHeaderAction& WithHeaderValue(Aws::String&& value) { SetHeaderValue(std::move(value)); return *this;}
-    inline AddHeaderAction& WithHeaderValue(const char* value) { SetHeaderValue(value); return *this;}
+    template<typename HeaderValueT = Aws::String>
+    void SetHeaderValue(HeaderValueT&& value) { m_headerValueHasBeenSet = true; m_headerValue = std::forward<HeaderValueT>(value); }
+    template<typename HeaderValueT = Aws::String>
+    AddHeaderAction& WithHeaderValue(HeaderValueT&& value) { SetHeaderValue(std::forward<HeaderValueT>(value)); return *this;}
     ///@}
   private:
 

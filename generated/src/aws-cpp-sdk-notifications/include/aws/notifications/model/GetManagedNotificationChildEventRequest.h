@@ -26,7 +26,7 @@ namespace Model
   class GetManagedNotificationChildEventRequest : public NotificationsRequest
   {
   public:
-    AWS_NOTIFICATIONS_API GetManagedNotificationChildEventRequest();
+    AWS_NOTIFICATIONS_API GetManagedNotificationChildEventRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the
      * <code>ManagedNotificationChildEvent</code> to return.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline GetManagedNotificationChildEventRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetManagedNotificationChildEventRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetManagedNotificationChildEventRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetManagedNotificationChildEventRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <code>ManagedNotificationChildEvent</code>. The default locale is English
      * <code>en_US</code>.</p>
      */
-    inline const LocaleCode& GetLocale() const{ return m_locale; }
+    inline LocaleCode GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const LocaleCode& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(LocaleCode&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline GetManagedNotificationChildEventRequest& WithLocale(const LocaleCode& value) { SetLocale(value); return *this;}
-    inline GetManagedNotificationChildEventRequest& WithLocale(LocaleCode&& value) { SetLocale(std::move(value)); return *this;}
+    inline void SetLocale(LocaleCode value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline GetManagedNotificationChildEventRequest& WithLocale(LocaleCode value) { SetLocale(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    LocaleCode m_locale;
+    LocaleCode m_locale{LocaleCode::NOT_SET};
     bool m_localeHasBeenSet = false;
   };
 

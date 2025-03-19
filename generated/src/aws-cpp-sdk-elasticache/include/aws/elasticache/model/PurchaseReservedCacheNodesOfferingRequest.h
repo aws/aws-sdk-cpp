@@ -27,7 +27,7 @@ namespace Model
   class PurchaseReservedCacheNodesOfferingRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingRequest();
+    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
      */
-    inline const Aws::String& GetReservedCacheNodesOfferingId() const{ return m_reservedCacheNodesOfferingId; }
+    inline const Aws::String& GetReservedCacheNodesOfferingId() const { return m_reservedCacheNodesOfferingId; }
     inline bool ReservedCacheNodesOfferingIdHasBeenSet() const { return m_reservedCacheNodesOfferingIdHasBeenSet; }
-    inline void SetReservedCacheNodesOfferingId(const Aws::String& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = value; }
-    inline void SetReservedCacheNodesOfferingId(Aws::String&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::move(value); }
-    inline void SetReservedCacheNodesOfferingId(const char* value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId.assign(value); }
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(const Aws::String& value) { SetReservedCacheNodesOfferingId(value); return *this;}
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(Aws::String&& value) { SetReservedCacheNodesOfferingId(std::move(value)); return *this;}
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+    template<typename ReservedCacheNodesOfferingIdT = Aws::String>
+    void SetReservedCacheNodesOfferingId(ReservedCacheNodesOfferingIdT&& value) { m_reservedCacheNodesOfferingIdHasBeenSet = true; m_reservedCacheNodesOfferingId = std::forward<ReservedCacheNodesOfferingIdT>(value); }
+    template<typename ReservedCacheNodesOfferingIdT = Aws::String>
+    PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(ReservedCacheNodesOfferingIdT&& value) { SetReservedCacheNodesOfferingId(std::forward<ReservedCacheNodesOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * generates an identifier for the reservation.</p>  <p>Example:
      * myreservationID</p>
      */
-    inline const Aws::String& GetReservedCacheNodeId() const{ return m_reservedCacheNodeId; }
+    inline const Aws::String& GetReservedCacheNodeId() const { return m_reservedCacheNodeId; }
     inline bool ReservedCacheNodeIdHasBeenSet() const { return m_reservedCacheNodeIdHasBeenSet; }
-    inline void SetReservedCacheNodeId(const Aws::String& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
-    inline void SetReservedCacheNodeId(Aws::String&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::move(value); }
-    inline void SetReservedCacheNodeId(const char* value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId.assign(value); }
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(const Aws::String& value) { SetReservedCacheNodeId(value); return *this;}
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(Aws::String&& value) { SetReservedCacheNodeId(std::move(value)); return *this;}
-    inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(const char* value) { SetReservedCacheNodeId(value); return *this;}
+    template<typename ReservedCacheNodeIdT = Aws::String>
+    void SetReservedCacheNodeId(ReservedCacheNodeIdT&& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = std::forward<ReservedCacheNodeIdT>(value); }
+    template<typename ReservedCacheNodeIdT = Aws::String>
+    PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(ReservedCacheNodeIdT&& value) { SetReservedCacheNodeId(std::forward<ReservedCacheNodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * <p>The number of cache node instances to reserve.</p> <p>Default: <code>1</code>
      * </p>
      */
-    inline int GetCacheNodeCount() const{ return m_cacheNodeCount; }
+    inline int GetCacheNodeCount() const { return m_cacheNodeCount; }
     inline bool CacheNodeCountHasBeenSet() const { return m_cacheNodeCountHasBeenSet; }
     inline void SetCacheNodeCount(int value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
     inline PurchaseReservedCacheNodesOfferingRequest& WithCacheNodeCount(int value) { SetCacheNodeCount(value); return *this;}
@@ -91,14 +87,14 @@ namespace Model
      * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
      * key must be accompanied by a tag value, although null is accepted.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PurchaseReservedCacheNodesOfferingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PurchaseReservedCacheNodesOfferingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PurchaseReservedCacheNodesOfferingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PurchaseReservedCacheNodesOfferingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PurchaseReservedCacheNodesOfferingRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PurchaseReservedCacheNodesOfferingRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -108,7 +104,7 @@ namespace Model
     Aws::String m_reservedCacheNodeId;
     bool m_reservedCacheNodeIdHasBeenSet = false;
 
-    int m_cacheNodeCount;
+    int m_cacheNodeCount{0};
     bool m_cacheNodeCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

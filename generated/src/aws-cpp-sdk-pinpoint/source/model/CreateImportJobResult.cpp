@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateImportJobResult::CreateImportJobResult()
-{
-}
-
 CreateImportJobResult::CreateImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ CreateImportJobResult& CreateImportJobResult::operator =(const Aws::AmazonWebSer
 {
   JsonView jsonValue = result.GetPayload().View();
   m_importJobResponse = jsonValue;
+  m_importJobResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

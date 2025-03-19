@@ -33,7 +33,7 @@ namespace Model
   class ClinicalNoteGenerationSettings
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationSettings();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationSettings() = default;
     AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API ClinicalNoteGenerationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles </a> . </p>
      */
-    inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
+    inline const Aws::String& GetOutputBucketName() const { return m_outputBucketName; }
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
-    inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
-    inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
-    inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
-    inline ClinicalNoteGenerationSettings& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
-    inline ClinicalNoteGenerationSettings& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
-    inline ClinicalNoteGenerationSettings& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
+    template<typename OutputBucketNameT = Aws::String>
+    void SetOutputBucketName(OutputBucketNameT&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::forward<OutputBucketNameT>(value); }
+    template<typename OutputBucketNameT = Aws::String>
+    ClinicalNoteGenerationSettings& WithOutputBucketName(OutputBucketNameT&& value) { SetOutputBucketName(std::forward<OutputBucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +73,17 @@ namespace Model
      * Sections include Goal, Intervention, Response, Progress, and Plan.</p> </li>
      * </ul>
      */
-    inline const MedicalScribeNoteTemplate& GetNoteTemplate() const{ return m_noteTemplate; }
+    inline MedicalScribeNoteTemplate GetNoteTemplate() const { return m_noteTemplate; }
     inline bool NoteTemplateHasBeenSet() const { return m_noteTemplateHasBeenSet; }
-    inline void SetNoteTemplate(const MedicalScribeNoteTemplate& value) { m_noteTemplateHasBeenSet = true; m_noteTemplate = value; }
-    inline void SetNoteTemplate(MedicalScribeNoteTemplate&& value) { m_noteTemplateHasBeenSet = true; m_noteTemplate = std::move(value); }
-    inline ClinicalNoteGenerationSettings& WithNoteTemplate(const MedicalScribeNoteTemplate& value) { SetNoteTemplate(value); return *this;}
-    inline ClinicalNoteGenerationSettings& WithNoteTemplate(MedicalScribeNoteTemplate&& value) { SetNoteTemplate(std::move(value)); return *this;}
+    inline void SetNoteTemplate(MedicalScribeNoteTemplate value) { m_noteTemplateHasBeenSet = true; m_noteTemplate = value; }
+    inline ClinicalNoteGenerationSettings& WithNoteTemplate(MedicalScribeNoteTemplate value) { SetNoteTemplate(value); return *this;}
     ///@}
   private:
 
     Aws::String m_outputBucketName;
     bool m_outputBucketNameHasBeenSet = false;
 
-    MedicalScribeNoteTemplate m_noteTemplate;
+    MedicalScribeNoteTemplate m_noteTemplate{MedicalScribeNoteTemplate::NOT_SET};
     bool m_noteTemplateHasBeenSet = false;
   };
 

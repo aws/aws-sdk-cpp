@@ -12,11 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcLinkRequest::DeleteVpcLinkRequest() : 
-    m_vpcLinkIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcLinkRequest::SerializePayload() const
 {
   return {};

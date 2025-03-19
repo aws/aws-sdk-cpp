@@ -12,29 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMaintenanceWindowRequest::UpdateMaintenanceWindowRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_scheduleTimezoneHasBeenSet(false),
-    m_scheduleOffset(0),
-    m_scheduleOffsetHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_cutoff(0),
-    m_cutoffHasBeenSet(false),
-    m_allowUnassociatedTargets(false),
-    m_allowUnassociatedTargetsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_replace(false),
-    m_replaceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMaintenanceWindowRequest::SerializePayload() const
 {
   JsonValue payload;

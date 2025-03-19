@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ClusterNetworkSettingsUpdateRequest::ClusterNetworkSettingsUpdateRequest() : 
-    m_defaultRouteHasBeenSet(false),
-    m_interfaceMappingsHasBeenSet(false)
-{
-}
-
 ClusterNetworkSettingsUpdateRequest::ClusterNetworkSettingsUpdateRequest(JsonView jsonValue)
-  : ClusterNetworkSettingsUpdateRequest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ClusterNetworkSettingsUpdateRequest& ClusterNetworkSettingsUpdateRequest::operat
   if(jsonValue.ValueExists("defaultRoute"))
   {
     m_defaultRoute = jsonValue.GetString("defaultRoute");
-
     m_defaultRouteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interfaceMappings"))
   {
     Aws::Utils::Array<JsonView> interfaceMappingsJsonList = jsonValue.GetArray("interfaceMappings");
@@ -48,7 +39,6 @@ ClusterNetworkSettingsUpdateRequest& ClusterNetworkSettingsUpdateRequest::operat
     }
     m_interfaceMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class RecipeStep
   {
   public:
-    AWS_GLUEDATABREW_API RecipeStep();
+    AWS_GLUEDATABREW_API RecipeStep() = default;
     AWS_GLUEDATABREW_API RecipeStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API RecipeStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The particular action to be performed in the recipe step.</p>
      */
-    inline const RecipeAction& GetAction() const{ return m_action; }
+    inline const RecipeAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const RecipeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(RecipeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline RecipeStep& WithAction(const RecipeAction& value) { SetAction(value); return *this;}
-    inline RecipeStep& WithAction(RecipeAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = RecipeAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = RecipeAction>
+    RecipeStep& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,14 @@ namespace Model
      *  <p>All of the conditions in the array must be met. In other words, all of
      * the conditions must be combined using a logical AND operation.</p> 
      */
-    inline const Aws::Vector<ConditionExpression>& GetConditionExpressions() const{ return m_conditionExpressions; }
+    inline const Aws::Vector<ConditionExpression>& GetConditionExpressions() const { return m_conditionExpressions; }
     inline bool ConditionExpressionsHasBeenSet() const { return m_conditionExpressionsHasBeenSet; }
-    inline void SetConditionExpressions(const Aws::Vector<ConditionExpression>& value) { m_conditionExpressionsHasBeenSet = true; m_conditionExpressions = value; }
-    inline void SetConditionExpressions(Aws::Vector<ConditionExpression>&& value) { m_conditionExpressionsHasBeenSet = true; m_conditionExpressions = std::move(value); }
-    inline RecipeStep& WithConditionExpressions(const Aws::Vector<ConditionExpression>& value) { SetConditionExpressions(value); return *this;}
-    inline RecipeStep& WithConditionExpressions(Aws::Vector<ConditionExpression>&& value) { SetConditionExpressions(std::move(value)); return *this;}
-    inline RecipeStep& AddConditionExpressions(const ConditionExpression& value) { m_conditionExpressionsHasBeenSet = true; m_conditionExpressions.push_back(value); return *this; }
-    inline RecipeStep& AddConditionExpressions(ConditionExpression&& value) { m_conditionExpressionsHasBeenSet = true; m_conditionExpressions.push_back(std::move(value)); return *this; }
+    template<typename ConditionExpressionsT = Aws::Vector<ConditionExpression>>
+    void SetConditionExpressions(ConditionExpressionsT&& value) { m_conditionExpressionsHasBeenSet = true; m_conditionExpressions = std::forward<ConditionExpressionsT>(value); }
+    template<typename ConditionExpressionsT = Aws::Vector<ConditionExpression>>
+    RecipeStep& WithConditionExpressions(ConditionExpressionsT&& value) { SetConditionExpressions(std::forward<ConditionExpressionsT>(value)); return *this;}
+    template<typename ConditionExpressionsT = ConditionExpression>
+    RecipeStep& AddConditionExpressions(ConditionExpressionsT&& value) { m_conditionExpressionsHasBeenSet = true; m_conditionExpressions.emplace_back(std::forward<ConditionExpressionsT>(value)); return *this; }
     ///@}
   private:
 

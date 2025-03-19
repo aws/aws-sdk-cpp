@@ -18,19 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-NetworkRouteDestination::NetworkRouteDestination() : 
-    m_coreNetworkAttachmentIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 NetworkRouteDestination::NetworkRouteDestination(JsonView jsonValue)
-  : NetworkRouteDestination()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ NetworkRouteDestination& NetworkRouteDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CoreNetworkAttachmentId"))
   {
     m_coreNetworkAttachmentId = jsonValue.GetString("CoreNetworkAttachmentId");
-
     m_coreNetworkAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayAttachmentId"))
   {
     m_transitGatewayAttachmentId = jsonValue.GetString("TransitGatewayAttachmentId");
-
     m_transitGatewayAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFunctionGroupName"))
   {
     m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
-
     m_networkFunctionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocation"))
   {
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
-
     m_edgeLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

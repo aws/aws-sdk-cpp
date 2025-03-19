@@ -18,16 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-StartTag::StartTag() : 
-    m_timeOffset(0.0),
-    m_timeOffsetHasBeenSet(false),
-    m_precise(false),
-    m_preciseHasBeenSet(false)
-{
-}
-
 StartTag::StartTag(JsonView jsonValue)
-  : StartTag()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StartTag& StartTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeOffset"))
   {
     m_timeOffset = jsonValue.GetDouble("TimeOffset");
-
     m_timeOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Precise"))
   {
     m_precise = jsonValue.GetBool("Precise");
-
     m_preciseHasBeenSet = true;
   }
-
   return *this;
 }
 

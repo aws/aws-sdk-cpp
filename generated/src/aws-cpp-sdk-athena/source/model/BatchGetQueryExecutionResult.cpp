@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetQueryExecutionResult::BatchGetQueryExecutionResult()
-{
-}
-
 BatchGetQueryExecutionResult::BatchGetQueryExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws
     {
       m_queryExecutions.push_back(queryExecutionsJsonList[queryExecutionsIndex].AsObject());
     }
+    m_queryExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedQueryExecutionIds"))
   {
     Aws::Utils::Array<JsonView> unprocessedQueryExecutionIdsJsonList = jsonValue.GetArray("UnprocessedQueryExecutionIds");
@@ -45,14 +41,15 @@ BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws
     {
       m_unprocessedQueryExecutionIds.push_back(unprocessedQueryExecutionIdsJsonList[unprocessedQueryExecutionIdsIndex].AsObject());
     }
+    m_unprocessedQueryExecutionIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBlobRequest::GetBlobRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_blobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBlobRequest::SerializePayload() const
 {
   JsonValue payload;

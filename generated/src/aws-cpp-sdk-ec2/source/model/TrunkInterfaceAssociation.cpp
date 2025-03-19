@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrunkInterfaceAssociation::TrunkInterfaceAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_branchInterfaceIdHasBeenSet(false),
-    m_trunkInterfaceIdHasBeenSet(false),
-    m_interfaceProtocol(InterfaceProtocolType::NOT_SET),
-    m_interfaceProtocolHasBeenSet(false),
-    m_vlanId(0),
-    m_vlanIdHasBeenSet(false),
-    m_greKey(0),
-    m_greKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TrunkInterfaceAssociation::TrunkInterfaceAssociation(const XmlNode& xmlNode)
-  : TrunkInterfaceAssociation()
 {
   *this = xmlNode;
 }
@@ -67,7 +52,7 @@ TrunkInterfaceAssociation& TrunkInterfaceAssociation::operator =(const XmlNode& 
     XmlNode interfaceProtocolNode = resultNode.FirstChild("interfaceProtocol");
     if(!interfaceProtocolNode.IsNull())
     {
-      m_interfaceProtocol = InterfaceProtocolTypeMapper::GetInterfaceProtocolTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interfaceProtocolNode.GetText()).c_str()).c_str());
+      m_interfaceProtocol = InterfaceProtocolTypeMapper::GetInterfaceProtocolTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(interfaceProtocolNode.GetText()).c_str()));
       m_interfaceProtocolHasBeenSet = true;
     }
     XmlNode vlanIdNode = resultNode.FirstChild("vlanId");
@@ -86,6 +71,7 @@ TrunkInterfaceAssociation& TrunkInterfaceAssociation::operator =(const XmlNode& 
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeviceInstanceResult::GetDeviceInstanceResult()
-{
-}
-
 GetDeviceInstanceResult::GetDeviceInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDeviceInstanceResult& GetDeviceInstanceResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("deviceInstance"))
   {
     m_deviceInstance = jsonValue.GetObject("deviceInstance");
-
+    m_deviceInstanceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

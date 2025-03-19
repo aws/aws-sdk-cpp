@@ -33,7 +33,7 @@ namespace Model
   class ThingGroupDocument
   {
   public:
-    AWS_IOT_API ThingGroupDocument();
+    AWS_IOT_API ThingGroupDocument() = default;
     AWS_IOT_API ThingGroupDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ThingGroupDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,76 +43,66 @@ namespace Model
     /**
      * <p>The thing group name.</p>
      */
-    inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+    inline const Aws::String& GetThingGroupName() const { return m_thingGroupName; }
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-    inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-    inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-    inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-    inline ThingGroupDocument& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-    inline ThingGroupDocument& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-    inline ThingGroupDocument& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    template<typename ThingGroupNameT = Aws::String>
+    void SetThingGroupName(ThingGroupNameT&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::forward<ThingGroupNameT>(value); }
+    template<typename ThingGroupNameT = Aws::String>
+    ThingGroupDocument& WithThingGroupName(ThingGroupNameT&& value) { SetThingGroupName(std::forward<ThingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing group ID.</p>
      */
-    inline const Aws::String& GetThingGroupId() const{ return m_thingGroupId; }
+    inline const Aws::String& GetThingGroupId() const { return m_thingGroupId; }
     inline bool ThingGroupIdHasBeenSet() const { return m_thingGroupIdHasBeenSet; }
-    inline void SetThingGroupId(const Aws::String& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = value; }
-    inline void SetThingGroupId(Aws::String&& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = std::move(value); }
-    inline void SetThingGroupId(const char* value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId.assign(value); }
-    inline ThingGroupDocument& WithThingGroupId(const Aws::String& value) { SetThingGroupId(value); return *this;}
-    inline ThingGroupDocument& WithThingGroupId(Aws::String&& value) { SetThingGroupId(std::move(value)); return *this;}
-    inline ThingGroupDocument& WithThingGroupId(const char* value) { SetThingGroupId(value); return *this;}
+    template<typename ThingGroupIdT = Aws::String>
+    void SetThingGroupId(ThingGroupIdT&& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = std::forward<ThingGroupIdT>(value); }
+    template<typename ThingGroupIdT = Aws::String>
+    ThingGroupDocument& WithThingGroupId(ThingGroupIdT&& value) { SetThingGroupId(std::forward<ThingGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing group description.</p>
      */
-    inline const Aws::String& GetThingGroupDescription() const{ return m_thingGroupDescription; }
+    inline const Aws::String& GetThingGroupDescription() const { return m_thingGroupDescription; }
     inline bool ThingGroupDescriptionHasBeenSet() const { return m_thingGroupDescriptionHasBeenSet; }
-    inline void SetThingGroupDescription(const Aws::String& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = value; }
-    inline void SetThingGroupDescription(Aws::String&& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = std::move(value); }
-    inline void SetThingGroupDescription(const char* value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription.assign(value); }
-    inline ThingGroupDocument& WithThingGroupDescription(const Aws::String& value) { SetThingGroupDescription(value); return *this;}
-    inline ThingGroupDocument& WithThingGroupDescription(Aws::String&& value) { SetThingGroupDescription(std::move(value)); return *this;}
-    inline ThingGroupDocument& WithThingGroupDescription(const char* value) { SetThingGroupDescription(value); return *this;}
+    template<typename ThingGroupDescriptionT = Aws::String>
+    void SetThingGroupDescription(ThingGroupDescriptionT&& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = std::forward<ThingGroupDescriptionT>(value); }
+    template<typename ThingGroupDescriptionT = Aws::String>
+    ThingGroupDocument& WithThingGroupDescription(ThingGroupDescriptionT&& value) { SetThingGroupDescription(std::forward<ThingGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing group attributes.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline ThingGroupDocument& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline ThingGroupDocument& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline ThingGroupDocument& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline ThingGroupDocument& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline ThingGroupDocument& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline ThingGroupDocument& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ThingGroupDocument& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline ThingGroupDocument& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline ThingGroupDocument& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    ThingGroupDocument& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    ThingGroupDocument& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Parent group names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetParentGroupNames() const{ return m_parentGroupNames; }
+    inline const Aws::Vector<Aws::String>& GetParentGroupNames() const { return m_parentGroupNames; }
     inline bool ParentGroupNamesHasBeenSet() const { return m_parentGroupNamesHasBeenSet; }
-    inline void SetParentGroupNames(const Aws::Vector<Aws::String>& value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames = value; }
-    inline void SetParentGroupNames(Aws::Vector<Aws::String>&& value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames = std::move(value); }
-    inline ThingGroupDocument& WithParentGroupNames(const Aws::Vector<Aws::String>& value) { SetParentGroupNames(value); return *this;}
-    inline ThingGroupDocument& WithParentGroupNames(Aws::Vector<Aws::String>&& value) { SetParentGroupNames(std::move(value)); return *this;}
-    inline ThingGroupDocument& AddParentGroupNames(const Aws::String& value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames.push_back(value); return *this; }
-    inline ThingGroupDocument& AddParentGroupNames(Aws::String&& value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames.push_back(std::move(value)); return *this; }
-    inline ThingGroupDocument& AddParentGroupNames(const char* value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames.push_back(value); return *this; }
+    template<typename ParentGroupNamesT = Aws::Vector<Aws::String>>
+    void SetParentGroupNames(ParentGroupNamesT&& value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames = std::forward<ParentGroupNamesT>(value); }
+    template<typename ParentGroupNamesT = Aws::Vector<Aws::String>>
+    ThingGroupDocument& WithParentGroupNames(ParentGroupNamesT&& value) { SetParentGroupNames(std::forward<ParentGroupNamesT>(value)); return *this;}
+    template<typename ParentGroupNamesT = Aws::String>
+    ThingGroupDocument& AddParentGroupNames(ParentGroupNamesT&& value) { m_parentGroupNamesHasBeenSet = true; m_parentGroupNames.emplace_back(std::forward<ParentGroupNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Video::Video() : 
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 Video::Video(JsonView jsonValue)
-  : Video()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Video& Video::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

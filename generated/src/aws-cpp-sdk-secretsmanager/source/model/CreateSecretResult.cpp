@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSecretResult::CreateSecretResult()
-{
-}
-
 CreateSecretResult::CreateSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ CreateSecretResult& CreateSecretResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
+    m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
+    m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationStatus"))
   {
     Aws::Utils::Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
@@ -54,14 +47,15 @@ CreateSecretResult& CreateSecretResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());
     }
+    m_replicationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

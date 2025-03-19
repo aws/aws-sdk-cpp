@@ -33,7 +33,7 @@ namespace Model
   class TotalAggregationOption
   {
   public:
-    AWS_QUICKSIGHT_API TotalAggregationOption();
+    AWS_QUICKSIGHT_API TotalAggregationOption() = default;
     AWS_QUICKSIGHT_API TotalAggregationOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TotalAggregationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The field id that's associated with the total aggregation option.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline TotalAggregationOption& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline TotalAggregationOption& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline TotalAggregationOption& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    TotalAggregationOption& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>The total aggregation function that you want to set for a specified field
      * id.</p>
      */
-    inline const TotalAggregationFunction& GetTotalAggregationFunction() const{ return m_totalAggregationFunction; }
+    inline const TotalAggregationFunction& GetTotalAggregationFunction() const { return m_totalAggregationFunction; }
     inline bool TotalAggregationFunctionHasBeenSet() const { return m_totalAggregationFunctionHasBeenSet; }
-    inline void SetTotalAggregationFunction(const TotalAggregationFunction& value) { m_totalAggregationFunctionHasBeenSet = true; m_totalAggregationFunction = value; }
-    inline void SetTotalAggregationFunction(TotalAggregationFunction&& value) { m_totalAggregationFunctionHasBeenSet = true; m_totalAggregationFunction = std::move(value); }
-    inline TotalAggregationOption& WithTotalAggregationFunction(const TotalAggregationFunction& value) { SetTotalAggregationFunction(value); return *this;}
-    inline TotalAggregationOption& WithTotalAggregationFunction(TotalAggregationFunction&& value) { SetTotalAggregationFunction(std::move(value)); return *this;}
+    template<typename TotalAggregationFunctionT = TotalAggregationFunction>
+    void SetTotalAggregationFunction(TotalAggregationFunctionT&& value) { m_totalAggregationFunctionHasBeenSet = true; m_totalAggregationFunction = std::forward<TotalAggregationFunctionT>(value); }
+    template<typename TotalAggregationFunctionT = TotalAggregationFunction>
+    TotalAggregationOption& WithTotalAggregationFunction(TotalAggregationFunctionT&& value) { SetTotalAggregationFunction(std::forward<TotalAggregationFunctionT>(value)); return *this;}
     ///@}
   private:
 

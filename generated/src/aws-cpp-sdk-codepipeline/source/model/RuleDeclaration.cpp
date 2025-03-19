@@ -18,21 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RuleDeclaration::RuleDeclaration() : 
-    m_nameHasBeenSet(false),
-    m_ruleTypeIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_commandsHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false)
-{
-}
-
 RuleDeclaration::RuleDeclaration(JsonView jsonValue)
-  : RuleDeclaration()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ RuleDeclaration& RuleDeclaration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleTypeId"))
   {
     m_ruleTypeId = jsonValue.GetObject("ruleTypeId");
-
     m_ruleTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
@@ -62,7 +44,6 @@ RuleDeclaration& RuleDeclaration::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commands"))
   {
     Aws::Utils::Array<JsonView> commandsJsonList = jsonValue.GetArray("commands");
@@ -72,7 +53,6 @@ RuleDeclaration& RuleDeclaration::operator =(JsonView jsonValue)
     }
     m_commandsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifacts"))
   {
     Aws::Utils::Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
@@ -82,28 +62,21 @@ RuleDeclaration& RuleDeclaration::operator =(JsonView jsonValue)
     }
     m_inputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInMinutes"))
   {
     m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
-
     m_timeoutInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

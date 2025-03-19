@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-OutputConfig::OutputConfig() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
-{
-}
-
 OutputConfig::OutputConfig(JsonView jsonValue)
-  : OutputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OutputConfig& OutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Prefix"))
   {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
-
     m_s3PrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

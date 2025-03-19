@@ -20,31 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportImageTask::ImportImageTask() : 
-    m_architectureHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_hypervisorHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_snapshotDetailsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
-{
-}
-
 ImportImageTask::ImportImageTask(const XmlNode& xmlNode)
-  : ImportImageTask()
 {
   *this = xmlNode;
 }
@@ -119,6 +95,7 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
     if(!snapshotDetailsNode.IsNull())
     {
       XmlNode snapshotDetailsMember = snapshotDetailsNode.FirstChild("item");
+      m_snapshotDetailsHasBeenSet = !snapshotDetailsMember.IsNull();
       while(!snapshotDetailsMember.IsNull())
       {
         m_snapshotDetails.push_back(snapshotDetailsMember);
@@ -143,6 +120,7 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -155,6 +133,7 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
     if(!licenseSpecificationsNode.IsNull())
     {
       XmlNode licenseSpecificationsMember = licenseSpecificationsNode.FirstChild("item");
+      m_licenseSpecificationsHasBeenSet = !licenseSpecificationsMember.IsNull();
       while(!licenseSpecificationsMember.IsNull())
       {
         m_licenseSpecifications.push_back(licenseSpecificationsMember);
@@ -172,7 +151,7 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
     XmlNode bootModeNode = resultNode.FirstChild("bootMode");
     if(!bootModeNode.IsNull())
     {
-      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()));
       m_bootModeHasBeenSet = true;
     }
   }

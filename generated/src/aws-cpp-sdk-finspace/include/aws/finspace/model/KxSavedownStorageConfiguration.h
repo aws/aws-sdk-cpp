@@ -34,7 +34,7 @@ namespace Model
   class KxSavedownStorageConfiguration
   {
   public:
-    AWS_FINSPACE_API KxSavedownStorageConfiguration();
+    AWS_FINSPACE_API KxSavedownStorageConfiguration() = default;
     AWS_FINSPACE_API KxSavedownStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxSavedownStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,19 +46,17 @@ namespace Model
      * data. The valid values are:</p> <ul> <li> <p>SDS01 – This type represents 3000
      * IOPS and io2 ebs volume type.</p> </li> </ul>
      */
-    inline const KxSavedownStorageType& GetType() const{ return m_type; }
+    inline KxSavedownStorageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const KxSavedownStorageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(KxSavedownStorageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline KxSavedownStorageConfiguration& WithType(const KxSavedownStorageType& value) { SetType(value); return *this;}
-    inline KxSavedownStorageConfiguration& WithType(KxSavedownStorageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(KxSavedownStorageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline KxSavedownStorageConfiguration& WithType(KxSavedownStorageType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of temporary storage in gibibytes.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline KxSavedownStorageConfiguration& WithSize(int value) { SetSize(value); return *this;}
@@ -69,21 +67,19 @@ namespace Model
      * <p> The name of the kdb volume that you want to use as writeable save-down
      * storage for clusters. </p>
      */
-    inline const Aws::String& GetVolumeName() const{ return m_volumeName; }
+    inline const Aws::String& GetVolumeName() const { return m_volumeName; }
     inline bool VolumeNameHasBeenSet() const { return m_volumeNameHasBeenSet; }
-    inline void SetVolumeName(const Aws::String& value) { m_volumeNameHasBeenSet = true; m_volumeName = value; }
-    inline void SetVolumeName(Aws::String&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::move(value); }
-    inline void SetVolumeName(const char* value) { m_volumeNameHasBeenSet = true; m_volumeName.assign(value); }
-    inline KxSavedownStorageConfiguration& WithVolumeName(const Aws::String& value) { SetVolumeName(value); return *this;}
-    inline KxSavedownStorageConfiguration& WithVolumeName(Aws::String&& value) { SetVolumeName(std::move(value)); return *this;}
-    inline KxSavedownStorageConfiguration& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
+    template<typename VolumeNameT = Aws::String>
+    void SetVolumeName(VolumeNameT&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::forward<VolumeNameT>(value); }
+    template<typename VolumeNameT = Aws::String>
+    KxSavedownStorageConfiguration& WithVolumeName(VolumeNameT&& value) { SetVolumeName(std::forward<VolumeNameT>(value)); return *this;}
     ///@}
   private:
 
-    KxSavedownStorageType m_type;
+    KxSavedownStorageType m_type{KxSavedownStorageType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
 
     Aws::String m_volumeName;

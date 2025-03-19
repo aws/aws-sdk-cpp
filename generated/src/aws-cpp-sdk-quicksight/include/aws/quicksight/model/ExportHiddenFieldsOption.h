@@ -32,7 +32,7 @@ namespace Model
   class ExportHiddenFieldsOption
   {
   public:
-    AWS_QUICKSIGHT_API ExportHiddenFieldsOption();
+    AWS_QUICKSIGHT_API ExportHiddenFieldsOption() = default;
     AWS_QUICKSIGHT_API ExportHiddenFieldsOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ExportHiddenFieldsOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The status of the export hidden fields options of a dashbaord.</p>
      */
-    inline const DashboardBehavior& GetAvailabilityStatus() const{ return m_availabilityStatus; }
+    inline DashboardBehavior GetAvailabilityStatus() const { return m_availabilityStatus; }
     inline bool AvailabilityStatusHasBeenSet() const { return m_availabilityStatusHasBeenSet; }
-    inline void SetAvailabilityStatus(const DashboardBehavior& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
-    inline void SetAvailabilityStatus(DashboardBehavior&& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = std::move(value); }
-    inline ExportHiddenFieldsOption& WithAvailabilityStatus(const DashboardBehavior& value) { SetAvailabilityStatus(value); return *this;}
-    inline ExportHiddenFieldsOption& WithAvailabilityStatus(DashboardBehavior&& value) { SetAvailabilityStatus(std::move(value)); return *this;}
+    inline void SetAvailabilityStatus(DashboardBehavior value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
+    inline ExportHiddenFieldsOption& WithAvailabilityStatus(DashboardBehavior value) { SetAvailabilityStatus(value); return *this;}
     ///@}
   private:
 
-    DashboardBehavior m_availabilityStatus;
+    DashboardBehavior m_availabilityStatus{DashboardBehavior::NOT_SET};
     bool m_availabilityStatusHasBeenSet = false;
   };
 

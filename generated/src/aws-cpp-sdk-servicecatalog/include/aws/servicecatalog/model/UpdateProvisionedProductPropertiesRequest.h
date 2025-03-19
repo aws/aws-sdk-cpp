@@ -24,7 +24,7 @@ namespace Model
   class UpdateProvisionedProductPropertiesRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesRequest();
+    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the provisioned product.</p>
      */
-    inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
+    inline const Aws::String& GetProvisionedProductId() const { return m_provisionedProductId; }
     inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
-    inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
-    inline void SetProvisionedProductId(Aws::String&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::move(value); }
-    inline void SetProvisionedProductId(const char* value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId.assign(value); }
-    inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductId(const Aws::String& value) { SetProvisionedProductId(value); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductId(Aws::String&& value) { SetProvisionedProductId(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
+    template<typename ProvisionedProductIdT = Aws::String>
+    void SetProvisionedProductId(ProvisionedProductIdT&& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = std::forward<ProvisionedProductIdT>(value); }
+    template<typename ProvisionedProductIdT = Aws::String>
+    UpdateProvisionedProductPropertiesRequest& WithProvisionedProductId(ProvisionedProductIdT&& value) { SetProvisionedProductId(std::forward<ProvisionedProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,18 +89,15 @@ namespace Model
      * actions through API or the Service Catalog console on that provisioned
      * product.</p>
      */
-    inline const Aws::Map<PropertyKey, Aws::String>& GetProvisionedProductProperties() const{ return m_provisionedProductProperties; }
+    inline const Aws::Map<PropertyKey, Aws::String>& GetProvisionedProductProperties() const { return m_provisionedProductProperties; }
     inline bool ProvisionedProductPropertiesHasBeenSet() const { return m_provisionedProductPropertiesHasBeenSet; }
-    inline void SetProvisionedProductProperties(const Aws::Map<PropertyKey, Aws::String>& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties = value; }
-    inline void SetProvisionedProductProperties(Aws::Map<PropertyKey, Aws::String>&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties = std::move(value); }
-    inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductProperties(const Aws::Map<PropertyKey, Aws::String>& value) { SetProvisionedProductProperties(value); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithProvisionedProductProperties(Aws::Map<PropertyKey, Aws::String>&& value) { SetProvisionedProductProperties(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(const PropertyKey& key, const Aws::String& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, value); return *this; }
-    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey&& key, const Aws::String& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(std::move(key), value); return *this; }
-    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(const PropertyKey& key, Aws::String&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, std::move(value)); return *this; }
-    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey&& key, Aws::String&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey&& key, const char* value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(std::move(key), value); return *this; }
-    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(const PropertyKey& key, const char* value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, value); return *this; }
+    template<typename ProvisionedProductPropertiesT = Aws::Map<PropertyKey, Aws::String>>
+    void SetProvisionedProductProperties(ProvisionedProductPropertiesT&& value) { m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties = std::forward<ProvisionedProductPropertiesT>(value); }
+    template<typename ProvisionedProductPropertiesT = Aws::Map<PropertyKey, Aws::String>>
+    UpdateProvisionedProductPropertiesRequest& WithProvisionedProductProperties(ProvisionedProductPropertiesT&& value) { SetProvisionedProductProperties(std::forward<ProvisionedProductPropertiesT>(value)); return *this;}
+    inline UpdateProvisionedProductPropertiesRequest& AddProvisionedProductProperties(PropertyKey key, Aws::String value) {
+      m_provisionedProductPropertiesHasBeenSet = true; m_provisionedProductProperties.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -112,14 +105,12 @@ namespace Model
      * <p>The idempotency token that uniquely identifies the provisioning product
      * update request.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline UpdateProvisionedProductPropertiesRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline UpdateProvisionedProductPropertiesRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    UpdateProvisionedProductPropertiesRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
   private:
 

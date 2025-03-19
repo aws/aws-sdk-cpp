@@ -28,7 +28,7 @@ namespace Model
   class DescribeRecipeResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeRecipeResult();
+    AWS_PERSONALIZE_API DescribeRecipeResult() = default;
     AWS_PERSONALIZE_API DescribeRecipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeRecipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object that describes the recipe.</p>
      */
-    inline const Recipe& GetRecipe() const{ return m_recipe; }
-    inline void SetRecipe(const Recipe& value) { m_recipe = value; }
-    inline void SetRecipe(Recipe&& value) { m_recipe = std::move(value); }
-    inline DescribeRecipeResult& WithRecipe(const Recipe& value) { SetRecipe(value); return *this;}
-    inline DescribeRecipeResult& WithRecipe(Recipe&& value) { SetRecipe(std::move(value)); return *this;}
+    inline const Recipe& GetRecipe() const { return m_recipe; }
+    template<typename RecipeT = Recipe>
+    void SetRecipe(RecipeT&& value) { m_recipeHasBeenSet = true; m_recipe = std::forward<RecipeT>(value); }
+    template<typename RecipeT = Recipe>
+    DescribeRecipeResult& WithRecipe(RecipeT&& value) { SetRecipe(std::forward<RecipeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRecipeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Recipe m_recipe;
+    bool m_recipeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

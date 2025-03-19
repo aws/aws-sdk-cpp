@@ -12,15 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcePoliciesRequest::GetResourcePoliciesRequest() : 
-    m_resourceArnsHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcePoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

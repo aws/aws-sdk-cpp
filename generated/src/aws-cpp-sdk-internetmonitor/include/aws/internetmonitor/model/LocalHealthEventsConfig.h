@@ -44,7 +44,7 @@ namespace Model
   class LocalHealthEventsConfig
   {
   public:
-    AWS_INTERNETMONITOR_API LocalHealthEventsConfig();
+    AWS_INTERNETMONITOR_API LocalHealthEventsConfig() = default;
     AWS_INTERNETMONITOR_API LocalHealthEventsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API LocalHealthEventsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,19 +56,17 @@ namespace Model
      * threshold percentage set for a local health score. The status can be
      * <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const LocalHealthEventsConfigStatus& GetStatus() const{ return m_status; }
+    inline LocalHealthEventsConfigStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LocalHealthEventsConfigStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LocalHealthEventsConfigStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LocalHealthEventsConfig& WithStatus(const LocalHealthEventsConfigStatus& value) { SetStatus(value); return *this;}
-    inline LocalHealthEventsConfig& WithStatus(LocalHealthEventsConfigStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LocalHealthEventsConfigStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LocalHealthEventsConfig& WithStatus(LocalHealthEventsConfigStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The health event threshold percentage set for a local health score.</p>
      */
-    inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
+    inline double GetHealthScoreThreshold() const { return m_healthScoreThreshold; }
     inline bool HealthScoreThresholdHasBeenSet() const { return m_healthScoreThresholdHasBeenSet; }
     inline void SetHealthScoreThreshold(double value) { m_healthScoreThresholdHasBeenSet = true; m_healthScoreThreshold = value; }
     inline LocalHealthEventsConfig& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
@@ -81,20 +79,20 @@ namespace Model
      * is crossed for a local health score.</p> <p>If you don't set a minimum traffic
      * impact threshold, the default value is 0.1%.</p>
      */
-    inline double GetMinTrafficImpact() const{ return m_minTrafficImpact; }
+    inline double GetMinTrafficImpact() const { return m_minTrafficImpact; }
     inline bool MinTrafficImpactHasBeenSet() const { return m_minTrafficImpactHasBeenSet; }
     inline void SetMinTrafficImpact(double value) { m_minTrafficImpactHasBeenSet = true; m_minTrafficImpact = value; }
     inline LocalHealthEventsConfig& WithMinTrafficImpact(double value) { SetMinTrafficImpact(value); return *this;}
     ///@}
   private:
 
-    LocalHealthEventsConfigStatus m_status;
+    LocalHealthEventsConfigStatus m_status{LocalHealthEventsConfigStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    double m_healthScoreThreshold;
+    double m_healthScoreThreshold{0.0};
     bool m_healthScoreThresholdHasBeenSet = false;
 
-    double m_minTrafficImpact;
+    double m_minTrafficImpact{0.0};
     bool m_minTrafficImpactHasBeenSet = false;
   };
 

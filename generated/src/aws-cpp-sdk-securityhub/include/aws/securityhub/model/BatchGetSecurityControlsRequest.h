@@ -22,7 +22,7 @@ namespace Model
   class BatchGetSecurityControlsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchGetSecurityControlsRequest();
+    AWS_SECURITYHUB_API BatchGetSecurityControlsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
      * <code>SecurityControlArn</code>, or a mix of both parameters). The security
      * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityControlIds() const{ return m_securityControlIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityControlIds() const { return m_securityControlIds; }
     inline bool SecurityControlIdsHasBeenSet() const { return m_securityControlIdsHasBeenSet; }
-    inline void SetSecurityControlIds(const Aws::Vector<Aws::String>& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds = value; }
-    inline void SetSecurityControlIds(Aws::Vector<Aws::String>&& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds = std::move(value); }
-    inline BatchGetSecurityControlsRequest& WithSecurityControlIds(const Aws::Vector<Aws::String>& value) { SetSecurityControlIds(value); return *this;}
-    inline BatchGetSecurityControlsRequest& WithSecurityControlIds(Aws::Vector<Aws::String>&& value) { SetSecurityControlIds(std::move(value)); return *this;}
-    inline BatchGetSecurityControlsRequest& AddSecurityControlIds(const Aws::String& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.push_back(value); return *this; }
-    inline BatchGetSecurityControlsRequest& AddSecurityControlIds(Aws::String&& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.push_back(std::move(value)); return *this; }
-    inline BatchGetSecurityControlsRequest& AddSecurityControlIds(const char* value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.push_back(value); return *this; }
+    template<typename SecurityControlIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityControlIds(SecurityControlIdsT&& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds = std::forward<SecurityControlIdsT>(value); }
+    template<typename SecurityControlIdsT = Aws::Vector<Aws::String>>
+    BatchGetSecurityControlsRequest& WithSecurityControlIds(SecurityControlIdsT&& value) { SetSecurityControlIds(std::forward<SecurityControlIdsT>(value)); return *this;}
+    template<typename SecurityControlIdsT = Aws::String>
+    BatchGetSecurityControlsRequest& AddSecurityControlIds(SecurityControlIdsT&& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.emplace_back(std::forward<SecurityControlIdsT>(value)); return *this; }
     ///@}
   private:
 

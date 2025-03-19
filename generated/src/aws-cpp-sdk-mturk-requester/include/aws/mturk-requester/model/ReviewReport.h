@@ -34,7 +34,7 @@ namespace Model
   class ReviewReport
   {
   public:
-    AWS_MTURK_API ReviewReport();
+    AWS_MTURK_API ReviewReport() = default;
     AWS_MTURK_API ReviewReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API ReviewReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p> A list of ReviewResults objects for each action specified in the Review
      * Policy. </p>
      */
-    inline const Aws::Vector<ReviewResultDetail>& GetReviewResults() const{ return m_reviewResults; }
+    inline const Aws::Vector<ReviewResultDetail>& GetReviewResults() const { return m_reviewResults; }
     inline bool ReviewResultsHasBeenSet() const { return m_reviewResultsHasBeenSet; }
-    inline void SetReviewResults(const Aws::Vector<ReviewResultDetail>& value) { m_reviewResultsHasBeenSet = true; m_reviewResults = value; }
-    inline void SetReviewResults(Aws::Vector<ReviewResultDetail>&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults = std::move(value); }
-    inline ReviewReport& WithReviewResults(const Aws::Vector<ReviewResultDetail>& value) { SetReviewResults(value); return *this;}
-    inline ReviewReport& WithReviewResults(Aws::Vector<ReviewResultDetail>&& value) { SetReviewResults(std::move(value)); return *this;}
-    inline ReviewReport& AddReviewResults(const ReviewResultDetail& value) { m_reviewResultsHasBeenSet = true; m_reviewResults.push_back(value); return *this; }
-    inline ReviewReport& AddReviewResults(ReviewResultDetail&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults.push_back(std::move(value)); return *this; }
+    template<typename ReviewResultsT = Aws::Vector<ReviewResultDetail>>
+    void SetReviewResults(ReviewResultsT&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults = std::forward<ReviewResultsT>(value); }
+    template<typename ReviewResultsT = Aws::Vector<ReviewResultDetail>>
+    ReviewReport& WithReviewResults(ReviewResultsT&& value) { SetReviewResults(std::forward<ReviewResultsT>(value)); return *this;}
+    template<typename ReviewResultsT = ReviewResultDetail>
+    ReviewReport& AddReviewResults(ReviewResultsT&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults.emplace_back(std::forward<ReviewResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p> A list of ReviewAction objects for each action specified in the Review
      * Policy. </p>
      */
-    inline const Aws::Vector<ReviewActionDetail>& GetReviewActions() const{ return m_reviewActions; }
+    inline const Aws::Vector<ReviewActionDetail>& GetReviewActions() const { return m_reviewActions; }
     inline bool ReviewActionsHasBeenSet() const { return m_reviewActionsHasBeenSet; }
-    inline void SetReviewActions(const Aws::Vector<ReviewActionDetail>& value) { m_reviewActionsHasBeenSet = true; m_reviewActions = value; }
-    inline void SetReviewActions(Aws::Vector<ReviewActionDetail>&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions = std::move(value); }
-    inline ReviewReport& WithReviewActions(const Aws::Vector<ReviewActionDetail>& value) { SetReviewActions(value); return *this;}
-    inline ReviewReport& WithReviewActions(Aws::Vector<ReviewActionDetail>&& value) { SetReviewActions(std::move(value)); return *this;}
-    inline ReviewReport& AddReviewActions(const ReviewActionDetail& value) { m_reviewActionsHasBeenSet = true; m_reviewActions.push_back(value); return *this; }
-    inline ReviewReport& AddReviewActions(ReviewActionDetail&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions.push_back(std::move(value)); return *this; }
+    template<typename ReviewActionsT = Aws::Vector<ReviewActionDetail>>
+    void SetReviewActions(ReviewActionsT&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions = std::forward<ReviewActionsT>(value); }
+    template<typename ReviewActionsT = Aws::Vector<ReviewActionDetail>>
+    ReviewReport& WithReviewActions(ReviewActionsT&& value) { SetReviewActions(std::forward<ReviewActionsT>(value)); return *this;}
+    template<typename ReviewActionsT = ReviewActionDetail>
+    ReviewReport& AddReviewActions(ReviewActionsT&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions.emplace_back(std::forward<ReviewActionsT>(value)); return *this; }
     ///@}
   private:
 

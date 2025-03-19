@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetCustomDataIdentifiersResult::BatchGetCustomDataIdentifiersResult()
-{
-}
-
 BatchGetCustomDataIdentifiersResult::BatchGetCustomDataIdentifiersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetCustomDataIdentifiersResult& BatchGetCustomDataIdentifiersResult::operat
     {
       m_customDataIdentifiers.push_back(customDataIdentifiersJsonList[customDataIdentifiersIndex].AsObject());
     }
+    m_customDataIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notFoundIdentifierIds"))
   {
     Aws::Utils::Array<JsonView> notFoundIdentifierIdsJsonList = jsonValue.GetArray("notFoundIdentifierIds");
@@ -45,14 +41,15 @@ BatchGetCustomDataIdentifiersResult& BatchGetCustomDataIdentifiersResult::operat
     {
       m_notFoundIdentifierIds.push_back(notFoundIdentifierIdsJsonList[notFoundIdentifierIdsIndex].AsString());
     }
+    m_notFoundIdentifierIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

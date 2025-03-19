@@ -32,7 +32,7 @@ namespace Model
   class EventBridgeConfiguration
   {
   public:
-    AWS_CONNECTCASES_API EventBridgeConfiguration();
+    AWS_CONNECTCASES_API EventBridgeConfiguration() = default;
     AWS_CONNECTCASES_API EventBridgeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API EventBridgeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether the to broadcast case event data to the customer.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline EventBridgeConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
      * <p>Details of what case and related item data is published through the case
      * event stream.</p>
      */
-    inline const EventIncludedData& GetIncludedData() const{ return m_includedData; }
+    inline const EventIncludedData& GetIncludedData() const { return m_includedData; }
     inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
-    inline void SetIncludedData(const EventIncludedData& value) { m_includedDataHasBeenSet = true; m_includedData = value; }
-    inline void SetIncludedData(EventIncludedData&& value) { m_includedDataHasBeenSet = true; m_includedData = std::move(value); }
-    inline EventBridgeConfiguration& WithIncludedData(const EventIncludedData& value) { SetIncludedData(value); return *this;}
-    inline EventBridgeConfiguration& WithIncludedData(EventIncludedData&& value) { SetIncludedData(std::move(value)); return *this;}
+    template<typename IncludedDataT = EventIncludedData>
+    void SetIncludedData(IncludedDataT&& value) { m_includedDataHasBeenSet = true; m_includedData = std::forward<IncludedDataT>(value); }
+    template<typename IncludedDataT = EventIncludedData>
+    EventBridgeConfiguration& WithIncludedData(IncludedDataT&& value) { SetIncludedData(std::forward<IncludedDataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     EventIncludedData m_includedData;

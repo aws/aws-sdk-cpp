@@ -31,7 +31,7 @@ namespace Model
   class Identifier
   {
   public:
-    AWS_QUICKSIGHT_API Identifier();
+    AWS_QUICKSIGHT_API Identifier() = default;
     AWS_QUICKSIGHT_API Identifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Identifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The identity of the identifier.</p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline Identifier& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline Identifier& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline Identifier& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    Identifier& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
   private:
 

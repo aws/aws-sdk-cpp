@@ -22,7 +22,7 @@ namespace Model
   class ListAccountPermissionsRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API ListAccountPermissionsRequest();
+    AWS_INSPECTOR2_API ListAccountPermissionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
      * value, use this value when you call the action again to get the remaining
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAccountPermissionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -55,36 +55,32 @@ namespace Model
      * NextToken value returned from the previous request to continue listing results
      * after the first page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccountPermissionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountPermissionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountPermissionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountPermissionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service scan type to check permissions for.</p>
      */
-    inline const Service& GetService() const{ return m_service; }
+    inline Service GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Service& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Service&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline ListAccountPermissionsRequest& WithService(const Service& value) { SetService(value); return *this;}
-    inline ListAccountPermissionsRequest& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    inline void SetService(Service value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline ListAccountPermissionsRequest& WithService(Service value) { SetService(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Service m_service;
+    Service m_service{Service::NOT_SET};
     bool m_serviceHasBeenSet = false;
   };
 

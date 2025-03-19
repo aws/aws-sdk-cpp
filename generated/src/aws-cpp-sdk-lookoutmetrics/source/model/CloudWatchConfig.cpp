@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-CloudWatchConfig::CloudWatchConfig() : 
-    m_roleArnHasBeenSet(false),
-    m_backTestConfigurationHasBeenSet(false)
-{
-}
-
 CloudWatchConfig::CloudWatchConfig(JsonView jsonValue)
-  : CloudWatchConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CloudWatchConfig& CloudWatchConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackTestConfiguration"))
   {
     m_backTestConfiguration = jsonValue.GetObject("BackTestConfiguration");
-
     m_backTestConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

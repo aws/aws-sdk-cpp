@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateDataProtectionSettingsResult::AssociateDataProtectionSettingsResult()
-{
-}
-
 AssociateDataProtectionSettingsResult::AssociateDataProtectionSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AssociateDataProtectionSettingsResult& AssociateDataProtectionSettingsResult::op
   if(jsonValue.ValueExists("dataProtectionSettingsArn"))
   {
     m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
-
+    m_dataProtectionSettingsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
-
+    m_portalArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

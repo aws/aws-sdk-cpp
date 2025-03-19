@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftServerlessAuthConfiguration::RedshiftServerlessAuthConfiguration() : 
-    m_type(RedshiftServerlessAuthType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_usernamePasswordSecretArnHasBeenSet(false)
-{
-}
-
 RedshiftServerlessAuthConfiguration::RedshiftServerlessAuthConfiguration(JsonView jsonValue)
-  : RedshiftServerlessAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RedshiftServerlessAuthConfiguration& RedshiftServerlessAuthConfiguration::operat
   if(jsonValue.ValueExists("type"))
   {
     m_type = RedshiftServerlessAuthTypeMapper::GetRedshiftServerlessAuthTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usernamePasswordSecretArn"))
   {
     m_usernamePasswordSecretArn = jsonValue.GetString("usernamePasswordSecretArn");
-
     m_usernamePasswordSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

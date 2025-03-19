@@ -38,7 +38,7 @@ namespace Model
   class WirelessDeviceEventLogOption
   {
   public:
-    AWS_IOTWIRELESS_API WirelessDeviceEventLogOption();
+    AWS_IOTWIRELESS_API WirelessDeviceEventLogOption() = default;
     AWS_IOTWIRELESS_API WirelessDeviceEventLogOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API WirelessDeviceEventLogOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,25 @@ namespace Model
 
     ///@{
     
-    inline const WirelessDeviceEvent& GetEvent() const{ return m_event; }
+    inline WirelessDeviceEvent GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const WirelessDeviceEvent& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(WirelessDeviceEvent&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline WirelessDeviceEventLogOption& WithEvent(const WirelessDeviceEvent& value) { SetEvent(value); return *this;}
-    inline WirelessDeviceEventLogOption& WithEvent(WirelessDeviceEvent&& value) { SetEvent(std::move(value)); return *this;}
+    inline void SetEvent(WirelessDeviceEvent value) { m_eventHasBeenSet = true; m_event = value; }
+    inline WirelessDeviceEventLogOption& WithEvent(WirelessDeviceEvent value) { SetEvent(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline WirelessDeviceEventLogOption& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline WirelessDeviceEventLogOption& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline WirelessDeviceEventLogOption& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
   private:
 
-    WirelessDeviceEvent m_event;
+    WirelessDeviceEvent m_event{WirelessDeviceEvent::NOT_SET};
     bool m_eventHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
   };
 

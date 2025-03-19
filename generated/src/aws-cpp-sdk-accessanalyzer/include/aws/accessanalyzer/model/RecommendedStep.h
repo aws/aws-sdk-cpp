@@ -32,7 +32,7 @@ namespace Model
   class RecommendedStep
   {
   public:
-    AWS_ACCESSANALYZER_API RecommendedStep();
+    AWS_ACCESSANALYZER_API RecommendedStep() = default;
     AWS_ACCESSANALYZER_API RecommendedStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API RecommendedStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A recommended step for an unused permissions finding.</p>
      */
-    inline const UnusedPermissionsRecommendedStep& GetUnusedPermissionsRecommendedStep() const{ return m_unusedPermissionsRecommendedStep; }
+    inline const UnusedPermissionsRecommendedStep& GetUnusedPermissionsRecommendedStep() const { return m_unusedPermissionsRecommendedStep; }
     inline bool UnusedPermissionsRecommendedStepHasBeenSet() const { return m_unusedPermissionsRecommendedStepHasBeenSet; }
-    inline void SetUnusedPermissionsRecommendedStep(const UnusedPermissionsRecommendedStep& value) { m_unusedPermissionsRecommendedStepHasBeenSet = true; m_unusedPermissionsRecommendedStep = value; }
-    inline void SetUnusedPermissionsRecommendedStep(UnusedPermissionsRecommendedStep&& value) { m_unusedPermissionsRecommendedStepHasBeenSet = true; m_unusedPermissionsRecommendedStep = std::move(value); }
-    inline RecommendedStep& WithUnusedPermissionsRecommendedStep(const UnusedPermissionsRecommendedStep& value) { SetUnusedPermissionsRecommendedStep(value); return *this;}
-    inline RecommendedStep& WithUnusedPermissionsRecommendedStep(UnusedPermissionsRecommendedStep&& value) { SetUnusedPermissionsRecommendedStep(std::move(value)); return *this;}
+    template<typename UnusedPermissionsRecommendedStepT = UnusedPermissionsRecommendedStep>
+    void SetUnusedPermissionsRecommendedStep(UnusedPermissionsRecommendedStepT&& value) { m_unusedPermissionsRecommendedStepHasBeenSet = true; m_unusedPermissionsRecommendedStep = std::forward<UnusedPermissionsRecommendedStepT>(value); }
+    template<typename UnusedPermissionsRecommendedStepT = UnusedPermissionsRecommendedStep>
+    RecommendedStep& WithUnusedPermissionsRecommendedStep(UnusedPermissionsRecommendedStepT&& value) { SetUnusedPermissionsRecommendedStep(std::forward<UnusedPermissionsRecommendedStepT>(value)); return *this;}
     ///@}
   private:
 

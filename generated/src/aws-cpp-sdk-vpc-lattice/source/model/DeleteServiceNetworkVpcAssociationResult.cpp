@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteServiceNetworkVpcAssociationResult::DeleteServiceNetworkVpcAssociationResult() : 
-    m_status(ServiceNetworkVpcAssociationStatus::NOT_SET)
-{
-}
-
 DeleteServiceNetworkVpcAssociationResult::DeleteServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteServiceNetworkVpcAssociationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteServiceNetworkVpcAssociationResult& DeleteServiceNetworkVpcAssociationResu
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

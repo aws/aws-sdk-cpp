@@ -18,18 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DatasetSchemaSummary::DatasetSchemaSummary() : 
-    m_nameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false)
-{
-}
-
 DatasetSchemaSummary::DatasetSchemaSummary(JsonView jsonValue)
-  : DatasetSchemaSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DatasetSchemaSummary& DatasetSchemaSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaArn"))
   {
     m_schemaArn = jsonValue.GetString("schemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("domain"));
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

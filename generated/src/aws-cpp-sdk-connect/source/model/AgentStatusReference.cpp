@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentStatusReference::AgentStatusReference() : 
-    m_statusStartTimestampHasBeenSet(false),
-    m_statusArnHasBeenSet(false),
-    m_statusNameHasBeenSet(false)
-{
-}
-
 AgentStatusReference::AgentStatusReference(JsonView jsonValue)
-  : AgentStatusReference()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AgentStatusReference& AgentStatusReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StatusStartTimestamp"))
   {
     m_statusStartTimestamp = jsonValue.GetDouble("StatusStartTimestamp");
-
     m_statusStartTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusArn"))
   {
     m_statusArn = jsonValue.GetString("StatusArn");
-
     m_statusArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusName"))
   {
     m_statusName = jsonValue.GetString("StatusName");
-
     m_statusNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class FailedItemDetails
   {
   public:
-    AWS_INSPECTOR_API FailedItemDetails();
+    AWS_INSPECTOR_API FailedItemDetails() = default;
     AWS_INSPECTOR_API FailedItemDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API FailedItemDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,10 @@ namespace Model
     /**
      * <p>The status code of a failed item.</p>
      */
-    inline const FailedItemErrorCode& GetFailureCode() const{ return m_failureCode; }
+    inline FailedItemErrorCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const FailedItemErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(FailedItemErrorCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline FailedItemDetails& WithFailureCode(const FailedItemErrorCode& value) { SetFailureCode(value); return *this;}
-    inline FailedItemDetails& WithFailureCode(FailedItemErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(FailedItemErrorCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline FailedItemDetails& WithFailureCode(FailedItemErrorCode value) { SetFailureCode(value); return *this;}
     ///@}
 
     ///@{
@@ -54,17 +52,17 @@ namespace Model
      * <p>Indicates whether you can immediately retry a request for this item for a
      * specified resource.</p>
      */
-    inline bool GetRetryable() const{ return m_retryable; }
+    inline bool GetRetryable() const { return m_retryable; }
     inline bool RetryableHasBeenSet() const { return m_retryableHasBeenSet; }
     inline void SetRetryable(bool value) { m_retryableHasBeenSet = true; m_retryable = value; }
     inline FailedItemDetails& WithRetryable(bool value) { SetRetryable(value); return *this;}
     ///@}
   private:
 
-    FailedItemErrorCode m_failureCode;
+    FailedItemErrorCode m_failureCode{FailedItemErrorCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
 
-    bool m_retryable;
+    bool m_retryable{false};
     bool m_retryableHasBeenSet = false;
   };
 

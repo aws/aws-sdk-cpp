@@ -28,7 +28,7 @@ namespace Model
   class GetPortfolioSummaryResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioSummaryResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioSummaryResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> An assessment summary for the portfolio including the number of servers to
      * rehost and the overall number of anti-patterns. </p>
      */
-    inline const AssessmentSummary& GetAssessmentSummary() const{ return m_assessmentSummary; }
-    inline void SetAssessmentSummary(const AssessmentSummary& value) { m_assessmentSummary = value; }
-    inline void SetAssessmentSummary(AssessmentSummary&& value) { m_assessmentSummary = std::move(value); }
-    inline GetPortfolioSummaryResult& WithAssessmentSummary(const AssessmentSummary& value) { SetAssessmentSummary(value); return *this;}
-    inline GetPortfolioSummaryResult& WithAssessmentSummary(AssessmentSummary&& value) { SetAssessmentSummary(std::move(value)); return *this;}
+    inline const AssessmentSummary& GetAssessmentSummary() const { return m_assessmentSummary; }
+    template<typename AssessmentSummaryT = AssessmentSummary>
+    void SetAssessmentSummary(AssessmentSummaryT&& value) { m_assessmentSummaryHasBeenSet = true; m_assessmentSummary = std::forward<AssessmentSummaryT>(value); }
+    template<typename AssessmentSummaryT = AssessmentSummary>
+    GetPortfolioSummaryResult& WithAssessmentSummary(AssessmentSummaryT&& value) { SetAssessmentSummary(std::forward<AssessmentSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPortfolioSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPortfolioSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPortfolioSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPortfolioSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AssessmentSummary m_assessmentSummary;
+    bool m_assessmentSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

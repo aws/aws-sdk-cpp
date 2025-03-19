@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableKeyRequest::DisableKeyRequest() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,22 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ForecastedEvent::ForecastedEvent() : 
-    m_eventIdHasBeenSet(false),
-    m_geofenceIdHasBeenSet(false),
-    m_isDeviceInGeofence(false),
-    m_isDeviceInGeofenceHasBeenSet(false),
-    m_nearestDistance(0.0),
-    m_nearestDistanceHasBeenSet(false),
-    m_eventType(ForecastedGeofenceEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_forecastedBreachTimeHasBeenSet(false),
-    m_geofencePropertiesHasBeenSet(false)
-{
-}
-
 ForecastedEvent::ForecastedEvent(JsonView jsonValue)
-  : ForecastedEvent()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ForecastedEvent& ForecastedEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventId"))
   {
     m_eventId = jsonValue.GetString("EventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeofenceId"))
   {
     m_geofenceId = jsonValue.GetString("GeofenceId");
-
     m_geofenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDeviceInGeofence"))
   {
     m_isDeviceInGeofence = jsonValue.GetBool("IsDeviceInGeofence");
-
     m_isDeviceInGeofenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NearestDistance"))
   {
     m_nearestDistance = jsonValue.GetDouble("NearestDistance");
-
     m_nearestDistanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = ForecastedGeofenceEventTypeMapper::GetForecastedGeofenceEventTypeForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastedBreachTime"))
   {
     m_forecastedBreachTime = jsonValue.GetString("ForecastedBreachTime");
-
     m_forecastedBreachTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeofenceProperties"))
   {
     Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
@@ -91,7 +64,6 @@ ForecastedEvent& ForecastedEvent::operator =(JsonView jsonValue)
     }
     m_geofencePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-AlternateSoftwareMetadata::AlternateSoftwareMetadata() : 
-    m_versionHasBeenSet(false)
-{
-}
-
 AlternateSoftwareMetadata::AlternateSoftwareMetadata(JsonView jsonValue)
-  : AlternateSoftwareMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AlternateSoftwareMetadata& AlternateSoftwareMetadata::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

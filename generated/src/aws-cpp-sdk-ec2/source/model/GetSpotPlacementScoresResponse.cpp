@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSpotPlacementScoresResponse::GetSpotPlacementScoresResponse()
-{
-}
-
 GetSpotPlacementScoresResponse::GetSpotPlacementScoresResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetSpotPlacementScoresResponse& GetSpotPlacementScoresResponse::operator =(const
     if(!spotPlacementScoresNode.IsNull())
     {
       XmlNode spotPlacementScoresMember = spotPlacementScoresNode.FirstChild("item");
+      m_spotPlacementScoresHasBeenSet = !spotPlacementScoresMember.IsNull();
       while(!spotPlacementScoresMember.IsNull())
       {
         m_spotPlacementScores.push_back(spotPlacementScoresMember);
         spotPlacementScoresMember = spotPlacementScoresMember.NextNode("item");
       }
 
+      m_spotPlacementScoresHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetSpotPlacementScoresResponse& GetSpotPlacementScoresResponse::operator =(const
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetSpotPlacementScoresResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

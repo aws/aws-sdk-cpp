@@ -18,14 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-RevisionInfo::RevisionInfo() : 
-    m_revisionLocationHasBeenSet(false),
-    m_genericRevisionInfoHasBeenSet(false)
-{
-}
-
 RevisionInfo::RevisionInfo(JsonView jsonValue)
-  : RevisionInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RevisionInfo& RevisionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("revisionLocation"))
   {
     m_revisionLocation = jsonValue.GetObject("revisionLocation");
-
     m_revisionLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("genericRevisionInfo"))
   {
     m_genericRevisionInfo = jsonValue.GetObject("genericRevisionInfo");
-
     m_genericRevisionInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

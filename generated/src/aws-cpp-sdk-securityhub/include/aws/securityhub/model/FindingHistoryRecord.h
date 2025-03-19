@@ -38,7 +38,7 @@ namespace Model
   class FindingHistoryRecord
   {
   public:
-    AWS_SECURITYHUB_API FindingHistoryRecord();
+    AWS_SECURITYHUB_API FindingHistoryRecord() = default;
     AWS_SECURITYHUB_API FindingHistoryRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FindingHistoryRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
 
     ///@{
     
-    inline const AwsSecurityFindingIdentifier& GetFindingIdentifier() const{ return m_findingIdentifier; }
+    inline const AwsSecurityFindingIdentifier& GetFindingIdentifier() const { return m_findingIdentifier; }
     inline bool FindingIdentifierHasBeenSet() const { return m_findingIdentifierHasBeenSet; }
-    inline void SetFindingIdentifier(const AwsSecurityFindingIdentifier& value) { m_findingIdentifierHasBeenSet = true; m_findingIdentifier = value; }
-    inline void SetFindingIdentifier(AwsSecurityFindingIdentifier&& value) { m_findingIdentifierHasBeenSet = true; m_findingIdentifier = std::move(value); }
-    inline FindingHistoryRecord& WithFindingIdentifier(const AwsSecurityFindingIdentifier& value) { SetFindingIdentifier(value); return *this;}
-    inline FindingHistoryRecord& WithFindingIdentifier(AwsSecurityFindingIdentifier&& value) { SetFindingIdentifier(std::move(value)); return *this;}
+    template<typename FindingIdentifierT = AwsSecurityFindingIdentifier>
+    void SetFindingIdentifier(FindingIdentifierT&& value) { m_findingIdentifierHasBeenSet = true; m_findingIdentifier = std::forward<FindingIdentifierT>(value); }
+    template<typename FindingIdentifierT = AwsSecurityFindingIdentifier>
+    FindingHistoryRecord& WithFindingIdentifier(FindingIdentifierT&& value) { SetFindingIdentifier(std::forward<FindingIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline FindingHistoryRecord& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline FindingHistoryRecord& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    FindingHistoryRecord& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +75,7 @@ namespace Model
      * <code>True</code> means that the finding is newly created. A value of
      * <code>False</code> means that the finding isn’t newly created. </p>
      */
-    inline bool GetFindingCreated() const{ return m_findingCreated; }
+    inline bool GetFindingCreated() const { return m_findingCreated; }
     inline bool FindingCreatedHasBeenSet() const { return m_findingCreatedHasBeenSet; }
     inline void SetFindingCreated(bool value) { m_findingCreatedHasBeenSet = true; m_findingCreated = value; }
     inline FindingHistoryRecord& WithFindingCreated(bool value) { SetFindingCreated(value); return *this;}
@@ -91,12 +91,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
      * <code>BatchUpdateFindings</code> </a>. </p>
      */
-    inline const FindingHistoryUpdateSource& GetUpdateSource() const{ return m_updateSource; }
+    inline const FindingHistoryUpdateSource& GetUpdateSource() const { return m_updateSource; }
     inline bool UpdateSourceHasBeenSet() const { return m_updateSourceHasBeenSet; }
-    inline void SetUpdateSource(const FindingHistoryUpdateSource& value) { m_updateSourceHasBeenSet = true; m_updateSource = value; }
-    inline void SetUpdateSource(FindingHistoryUpdateSource&& value) { m_updateSourceHasBeenSet = true; m_updateSource = std::move(value); }
-    inline FindingHistoryRecord& WithUpdateSource(const FindingHistoryUpdateSource& value) { SetUpdateSource(value); return *this;}
-    inline FindingHistoryRecord& WithUpdateSource(FindingHistoryUpdateSource&& value) { SetUpdateSource(std::move(value)); return *this;}
+    template<typename UpdateSourceT = FindingHistoryUpdateSource>
+    void SetUpdateSource(UpdateSourceT&& value) { m_updateSourceHasBeenSet = true; m_updateSource = std::forward<UpdateSourceT>(value); }
+    template<typename UpdateSourceT = FindingHistoryUpdateSource>
+    FindingHistoryRecord& WithUpdateSource(UpdateSourceT&& value) { SetUpdateSource(std::forward<UpdateSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +106,14 @@ namespace Model
      * changed, the value of the field before the change, and the value of the field
      * after the change. </p>
      */
-    inline const Aws::Vector<FindingHistoryUpdate>& GetUpdates() const{ return m_updates; }
+    inline const Aws::Vector<FindingHistoryUpdate>& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const Aws::Vector<FindingHistoryUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(Aws::Vector<FindingHistoryUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline FindingHistoryRecord& WithUpdates(const Aws::Vector<FindingHistoryUpdate>& value) { SetUpdates(value); return *this;}
-    inline FindingHistoryRecord& WithUpdates(Aws::Vector<FindingHistoryUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
-    inline FindingHistoryRecord& AddUpdates(const FindingHistoryUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
-    inline FindingHistoryRecord& AddUpdates(FindingHistoryUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
+    template<typename UpdatesT = Aws::Vector<FindingHistoryUpdate>>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = Aws::Vector<FindingHistoryUpdate>>
+    FindingHistoryRecord& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
+    template<typename UpdatesT = FindingHistoryUpdate>
+    FindingHistoryRecord& AddUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates.emplace_back(std::forward<UpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,24 +124,22 @@ namespace Model
      * <code>GetFindingsHistory</code> </a> to get up to an additional 100 results of
      * history for the same finding that you specified in your initial request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline FindingHistoryRecord& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline FindingHistoryRecord& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline FindingHistoryRecord& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    FindingHistoryRecord& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     AwsSecurityFindingIdentifier m_findingIdentifier;
     bool m_findingIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
 
-    bool m_findingCreated;
+    bool m_findingCreated{false};
     bool m_findingCreatedHasBeenSet = false;
 
     FindingHistoryUpdateSource m_updateSource;

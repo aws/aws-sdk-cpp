@@ -19,20 +19,7 @@ namespace AppConfig
 namespace Model
 {
 
-Environment::Environment() : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(EnvironmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_monitorsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Environment::Environment(JsonView jsonValue)
-  : Environment()
 {
   *this = jsonValue;
 }
@@ -42,38 +29,28 @@ Environment& Environment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EnvironmentStateMapper::GetEnvironmentStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Monitors"))
   {
     Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("Monitors");
@@ -83,7 +60,6 @@ Environment& Environment::operator =(JsonView jsonValue)
     }
     m_monitorsHasBeenSet = true;
   }
-
   return *this;
 }
 

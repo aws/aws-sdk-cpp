@@ -18,14 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-Timer::Timer() : 
-    m_nameHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 Timer::Timer(JsonView jsonValue)
-  : Timer()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Timer& Timer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class FpgaInfo
   {
   public:
-    AWS_EC2_API FpgaInfo();
+    AWS_EC2_API FpgaInfo() = default;
     AWS_EC2_API FpgaInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FpgaInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,21 +44,21 @@ namespace Model
     /**
      * <p>Describes the FPGAs for the instance type.</p>
      */
-    inline const Aws::Vector<FpgaDeviceInfo>& GetFpgas() const{ return m_fpgas; }
+    inline const Aws::Vector<FpgaDeviceInfo>& GetFpgas() const { return m_fpgas; }
     inline bool FpgasHasBeenSet() const { return m_fpgasHasBeenSet; }
-    inline void SetFpgas(const Aws::Vector<FpgaDeviceInfo>& value) { m_fpgasHasBeenSet = true; m_fpgas = value; }
-    inline void SetFpgas(Aws::Vector<FpgaDeviceInfo>&& value) { m_fpgasHasBeenSet = true; m_fpgas = std::move(value); }
-    inline FpgaInfo& WithFpgas(const Aws::Vector<FpgaDeviceInfo>& value) { SetFpgas(value); return *this;}
-    inline FpgaInfo& WithFpgas(Aws::Vector<FpgaDeviceInfo>&& value) { SetFpgas(std::move(value)); return *this;}
-    inline FpgaInfo& AddFpgas(const FpgaDeviceInfo& value) { m_fpgasHasBeenSet = true; m_fpgas.push_back(value); return *this; }
-    inline FpgaInfo& AddFpgas(FpgaDeviceInfo&& value) { m_fpgasHasBeenSet = true; m_fpgas.push_back(std::move(value)); return *this; }
+    template<typename FpgasT = Aws::Vector<FpgaDeviceInfo>>
+    void SetFpgas(FpgasT&& value) { m_fpgasHasBeenSet = true; m_fpgas = std::forward<FpgasT>(value); }
+    template<typename FpgasT = Aws::Vector<FpgaDeviceInfo>>
+    FpgaInfo& WithFpgas(FpgasT&& value) { SetFpgas(std::forward<FpgasT>(value)); return *this;}
+    template<typename FpgasT = FpgaDeviceInfo>
+    FpgaInfo& AddFpgas(FpgasT&& value) { m_fpgasHasBeenSet = true; m_fpgas.emplace_back(std::forward<FpgasT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total memory of all FPGA accelerators for the instance type.</p>
      */
-    inline int GetTotalFpgaMemoryInMiB() const{ return m_totalFpgaMemoryInMiB; }
+    inline int GetTotalFpgaMemoryInMiB() const { return m_totalFpgaMemoryInMiB; }
     inline bool TotalFpgaMemoryInMiBHasBeenSet() const { return m_totalFpgaMemoryInMiBHasBeenSet; }
     inline void SetTotalFpgaMemoryInMiB(int value) { m_totalFpgaMemoryInMiBHasBeenSet = true; m_totalFpgaMemoryInMiB = value; }
     inline FpgaInfo& WithTotalFpgaMemoryInMiB(int value) { SetTotalFpgaMemoryInMiB(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
     Aws::Vector<FpgaDeviceInfo> m_fpgas;
     bool m_fpgasHasBeenSet = false;
 
-    int m_totalFpgaMemoryInMiB;
+    int m_totalFpgaMemoryInMiB{0};
     bool m_totalFpgaMemoryInMiBHasBeenSet = false;
   };
 

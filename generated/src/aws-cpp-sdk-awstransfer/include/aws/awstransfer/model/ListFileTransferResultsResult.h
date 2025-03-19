@@ -29,7 +29,7 @@ namespace Model
   class ListFileTransferResultsResult
   {
   public:
-    AWS_TRANSFER_API ListFileTransferResultsResult();
+    AWS_TRANSFER_API ListFileTransferResultsResult() = default;
     AWS_TRANSFER_API ListFileTransferResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API ListFileTransferResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,13 +48,13 @@ namespace Model
      * <code>FailureMessage</code>: for transfers that fail, this parameter describes
      * the reason for the failure.</p> </li> </ul>
      */
-    inline const Aws::Vector<ConnectorFileTransferResult>& GetFileTransferResults() const{ return m_fileTransferResults; }
-    inline void SetFileTransferResults(const Aws::Vector<ConnectorFileTransferResult>& value) { m_fileTransferResults = value; }
-    inline void SetFileTransferResults(Aws::Vector<ConnectorFileTransferResult>&& value) { m_fileTransferResults = std::move(value); }
-    inline ListFileTransferResultsResult& WithFileTransferResults(const Aws::Vector<ConnectorFileTransferResult>& value) { SetFileTransferResults(value); return *this;}
-    inline ListFileTransferResultsResult& WithFileTransferResults(Aws::Vector<ConnectorFileTransferResult>&& value) { SetFileTransferResults(std::move(value)); return *this;}
-    inline ListFileTransferResultsResult& AddFileTransferResults(const ConnectorFileTransferResult& value) { m_fileTransferResults.push_back(value); return *this; }
-    inline ListFileTransferResultsResult& AddFileTransferResults(ConnectorFileTransferResult&& value) { m_fileTransferResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConnectorFileTransferResult>& GetFileTransferResults() const { return m_fileTransferResults; }
+    template<typename FileTransferResultsT = Aws::Vector<ConnectorFileTransferResult>>
+    void SetFileTransferResults(FileTransferResultsT&& value) { m_fileTransferResultsHasBeenSet = true; m_fileTransferResults = std::forward<FileTransferResultsT>(value); }
+    template<typename FileTransferResultsT = Aws::Vector<ConnectorFileTransferResult>>
+    ListFileTransferResultsResult& WithFileTransferResults(FileTransferResultsT&& value) { SetFileTransferResults(std::forward<FileTransferResultsT>(value)); return *this;}
+    template<typename FileTransferResultsT = ConnectorFileTransferResult>
+    ListFileTransferResultsResult& AddFileTransferResults(FileTransferResultsT&& value) { m_fileTransferResultsHasBeenSet = true; m_fileTransferResults.emplace_back(std::forward<FileTransferResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,32 +63,31 @@ namespace Model
      * again and receive additional results, if there are any (against the same
      * <code>TransferId</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFileTransferResultsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFileTransferResultsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFileTransferResultsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFileTransferResultsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFileTransferResultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFileTransferResultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFileTransferResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFileTransferResultsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConnectorFileTransferResult> m_fileTransferResults;
+    bool m_fileTransferResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

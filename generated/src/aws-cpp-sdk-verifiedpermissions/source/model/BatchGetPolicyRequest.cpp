@@ -12,11 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetPolicyRequest::BatchGetPolicyRequest() : 
-    m_requestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

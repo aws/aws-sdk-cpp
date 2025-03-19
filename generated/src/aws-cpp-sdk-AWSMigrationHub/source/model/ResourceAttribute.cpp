@@ -18,15 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-ResourceAttribute::ResourceAttribute() : 
-    m_type(ResourceAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ResourceAttribute::ResourceAttribute(JsonView jsonValue)
-  : ResourceAttribute()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceAttribute& ResourceAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ResourceAttributeTypeMapper::GetResourceAttributeTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

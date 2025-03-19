@@ -18,18 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-SatelliteListItem::SatelliteListItem() : 
-    m_currentEphemerisHasBeenSet(false),
-    m_groundStationsHasBeenSet(false),
-    m_noradSatelliteID(0),
-    m_noradSatelliteIDHasBeenSet(false),
-    m_satelliteArnHasBeenSet(false),
-    m_satelliteIdHasBeenSet(false)
-{
-}
-
 SatelliteListItem::SatelliteListItem(JsonView jsonValue)
-  : SatelliteListItem()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("currentEphemeris"))
   {
     m_currentEphemeris = jsonValue.GetObject("currentEphemeris");
-
     m_currentEphemerisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groundStations"))
   {
     Aws::Utils::Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
@@ -52,28 +39,21 @@ SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
     }
     m_groundStationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noradSatelliteID"))
   {
     m_noradSatelliteID = jsonValue.GetInteger("noradSatelliteID");
-
     m_noradSatelliteIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("satelliteArn"))
   {
     m_satelliteArn = jsonValue.GetString("satelliteArn");
-
     m_satelliteArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("satelliteId"))
   {
     m_satelliteId = jsonValue.GetString("satelliteId");
-
     m_satelliteIdHasBeenSet = true;
   }
-
   return *this;
 }
 

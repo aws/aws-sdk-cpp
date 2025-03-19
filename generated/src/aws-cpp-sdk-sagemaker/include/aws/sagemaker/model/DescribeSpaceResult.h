@@ -32,7 +32,7 @@ namespace Model
   class DescribeSpaceResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeSpaceResult();
+    AWS_SAGEMAKER_API DescribeSpaceResult() = default;
     AWS_SAGEMAKER_API DescribeSpaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeSpaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,144 +41,130 @@ namespace Model
     /**
      * <p>The ID of the associated domain.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
-    inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainId.assign(value); }
-    inline DescribeSpaceResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline DescribeSpaceResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    DescribeSpaceResult& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The space's Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetSpaceArn() const{ return m_spaceArn; }
-    inline void SetSpaceArn(const Aws::String& value) { m_spaceArn = value; }
-    inline void SetSpaceArn(Aws::String&& value) { m_spaceArn = std::move(value); }
-    inline void SetSpaceArn(const char* value) { m_spaceArn.assign(value); }
-    inline DescribeSpaceResult& WithSpaceArn(const Aws::String& value) { SetSpaceArn(value); return *this;}
-    inline DescribeSpaceResult& WithSpaceArn(Aws::String&& value) { SetSpaceArn(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithSpaceArn(const char* value) { SetSpaceArn(value); return *this;}
+    inline const Aws::String& GetSpaceArn() const { return m_spaceArn; }
+    template<typename SpaceArnT = Aws::String>
+    void SetSpaceArn(SpaceArnT&& value) { m_spaceArnHasBeenSet = true; m_spaceArn = std::forward<SpaceArnT>(value); }
+    template<typename SpaceArnT = Aws::String>
+    DescribeSpaceResult& WithSpaceArn(SpaceArnT&& value) { SetSpaceArn(std::forward<SpaceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
-    inline DescribeSpaceResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline DescribeSpaceResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    DescribeSpaceResult& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the space's profile in the Amazon EFS volume.</p>
      */
-    inline const Aws::String& GetHomeEfsFileSystemUid() const{ return m_homeEfsFileSystemUid; }
-    inline void SetHomeEfsFileSystemUid(const Aws::String& value) { m_homeEfsFileSystemUid = value; }
-    inline void SetHomeEfsFileSystemUid(Aws::String&& value) { m_homeEfsFileSystemUid = std::move(value); }
-    inline void SetHomeEfsFileSystemUid(const char* value) { m_homeEfsFileSystemUid.assign(value); }
-    inline DescribeSpaceResult& WithHomeEfsFileSystemUid(const Aws::String& value) { SetHomeEfsFileSystemUid(value); return *this;}
-    inline DescribeSpaceResult& WithHomeEfsFileSystemUid(Aws::String&& value) { SetHomeEfsFileSystemUid(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithHomeEfsFileSystemUid(const char* value) { SetHomeEfsFileSystemUid(value); return *this;}
+    inline const Aws::String& GetHomeEfsFileSystemUid() const { return m_homeEfsFileSystemUid; }
+    template<typename HomeEfsFileSystemUidT = Aws::String>
+    void SetHomeEfsFileSystemUid(HomeEfsFileSystemUidT&& value) { m_homeEfsFileSystemUidHasBeenSet = true; m_homeEfsFileSystemUid = std::forward<HomeEfsFileSystemUidT>(value); }
+    template<typename HomeEfsFileSystemUidT = Aws::String>
+    DescribeSpaceResult& WithHomeEfsFileSystemUid(HomeEfsFileSystemUidT&& value) { SetHomeEfsFileSystemUid(std::forward<HomeEfsFileSystemUidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status.</p>
      */
-    inline const SpaceStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SpaceStatus& value) { m_status = value; }
-    inline void SetStatus(SpaceStatus&& value) { m_status = std::move(value); }
-    inline DescribeSpaceResult& WithStatus(const SpaceStatus& value) { SetStatus(value); return *this;}
-    inline DescribeSpaceResult& WithStatus(SpaceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SpaceStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SpaceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeSpaceResult& WithStatus(SpaceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last modified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeSpaceResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeSpaceResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeSpaceResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeSpaceResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeSpaceResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeSpaceResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure reason.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeSpaceResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeSpaceResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeSpaceResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of space settings.</p>
      */
-    inline const SpaceSettings& GetSpaceSettings() const{ return m_spaceSettings; }
-    inline void SetSpaceSettings(const SpaceSettings& value) { m_spaceSettings = value; }
-    inline void SetSpaceSettings(SpaceSettings&& value) { m_spaceSettings = std::move(value); }
-    inline DescribeSpaceResult& WithSpaceSettings(const SpaceSettings& value) { SetSpaceSettings(value); return *this;}
-    inline DescribeSpaceResult& WithSpaceSettings(SpaceSettings&& value) { SetSpaceSettings(std::move(value)); return *this;}
+    inline const SpaceSettings& GetSpaceSettings() const { return m_spaceSettings; }
+    template<typename SpaceSettingsT = SpaceSettings>
+    void SetSpaceSettings(SpaceSettingsT&& value) { m_spaceSettingsHasBeenSet = true; m_spaceSettings = std::forward<SpaceSettingsT>(value); }
+    template<typename SpaceSettingsT = SpaceSettings>
+    DescribeSpaceResult& WithSpaceSettings(SpaceSettingsT&& value) { SetSpaceSettings(std::forward<SpaceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The collection of ownership settings for a space.</p>
      */
-    inline const OwnershipSettings& GetOwnershipSettings() const{ return m_ownershipSettings; }
-    inline void SetOwnershipSettings(const OwnershipSettings& value) { m_ownershipSettings = value; }
-    inline void SetOwnershipSettings(OwnershipSettings&& value) { m_ownershipSettings = std::move(value); }
-    inline DescribeSpaceResult& WithOwnershipSettings(const OwnershipSettings& value) { SetOwnershipSettings(value); return *this;}
-    inline DescribeSpaceResult& WithOwnershipSettings(OwnershipSettings&& value) { SetOwnershipSettings(std::move(value)); return *this;}
+    inline const OwnershipSettings& GetOwnershipSettings() const { return m_ownershipSettings; }
+    template<typename OwnershipSettingsT = OwnershipSettings>
+    void SetOwnershipSettings(OwnershipSettingsT&& value) { m_ownershipSettingsHasBeenSet = true; m_ownershipSettings = std::forward<OwnershipSettingsT>(value); }
+    template<typename OwnershipSettingsT = OwnershipSettings>
+    DescribeSpaceResult& WithOwnershipSettings(OwnershipSettingsT&& value) { SetOwnershipSettings(std::forward<OwnershipSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The collection of space sharing settings for a space.</p>
      */
-    inline const SpaceSharingSettings& GetSpaceSharingSettings() const{ return m_spaceSharingSettings; }
-    inline void SetSpaceSharingSettings(const SpaceSharingSettings& value) { m_spaceSharingSettings = value; }
-    inline void SetSpaceSharingSettings(SpaceSharingSettings&& value) { m_spaceSharingSettings = std::move(value); }
-    inline DescribeSpaceResult& WithSpaceSharingSettings(const SpaceSharingSettings& value) { SetSpaceSharingSettings(value); return *this;}
-    inline DescribeSpaceResult& WithSpaceSharingSettings(SpaceSharingSettings&& value) { SetSpaceSharingSettings(std::move(value)); return *this;}
+    inline const SpaceSharingSettings& GetSpaceSharingSettings() const { return m_spaceSharingSettings; }
+    template<typename SpaceSharingSettingsT = SpaceSharingSettings>
+    void SetSpaceSharingSettings(SpaceSharingSettingsT&& value) { m_spaceSharingSettingsHasBeenSet = true; m_spaceSharingSettings = std::forward<SpaceSharingSettingsT>(value); }
+    template<typename SpaceSharingSettingsT = SpaceSharingSettings>
+    DescribeSpaceResult& WithSpaceSharingSettings(SpaceSharingSettingsT&& value) { SetSpaceSharingSettings(std::forward<SpaceSharingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
      */
-    inline const Aws::String& GetSpaceDisplayName() const{ return m_spaceDisplayName; }
-    inline void SetSpaceDisplayName(const Aws::String& value) { m_spaceDisplayName = value; }
-    inline void SetSpaceDisplayName(Aws::String&& value) { m_spaceDisplayName = std::move(value); }
-    inline void SetSpaceDisplayName(const char* value) { m_spaceDisplayName.assign(value); }
-    inline DescribeSpaceResult& WithSpaceDisplayName(const Aws::String& value) { SetSpaceDisplayName(value); return *this;}
-    inline DescribeSpaceResult& WithSpaceDisplayName(Aws::String&& value) { SetSpaceDisplayName(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithSpaceDisplayName(const char* value) { SetSpaceDisplayName(value); return *this;}
+    inline const Aws::String& GetSpaceDisplayName() const { return m_spaceDisplayName; }
+    template<typename SpaceDisplayNameT = Aws::String>
+    void SetSpaceDisplayName(SpaceDisplayNameT&& value) { m_spaceDisplayNameHasBeenSet = true; m_spaceDisplayName = std::forward<SpaceDisplayNameT>(value); }
+    template<typename SpaceDisplayNameT = Aws::String>
+    DescribeSpaceResult& WithSpaceDisplayName(SpaceDisplayNameT&& value) { SetSpaceDisplayName(std::forward<SpaceDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -194,54 +180,64 @@ namespace Model
      * Code-OSS, Visual Studio Code - Open Source:
      * <code>&amp;redirect=CodeEditor</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-    inline DescribeSpaceResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline DescribeSpaceResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    inline const Aws::String& GetUrl() const { return m_url; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    DescribeSpaceResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSpaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSpaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSpaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSpaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainId;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_spaceArn;
+    bool m_spaceArnHasBeenSet = false;
 
     Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
 
     Aws::String m_homeEfsFileSystemUid;
+    bool m_homeEfsFileSystemUidHasBeenSet = false;
 
-    SpaceStatus m_status;
+    SpaceStatus m_status{SpaceStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     SpaceSettings m_spaceSettings;
+    bool m_spaceSettingsHasBeenSet = false;
 
     OwnershipSettings m_ownershipSettings;
+    bool m_ownershipSettingsHasBeenSet = false;
 
     SpaceSharingSettings m_spaceSharingSettings;
+    bool m_spaceSharingSettingsHasBeenSet = false;
 
     Aws::String m_spaceDisplayName;
+    bool m_spaceDisplayNameHasBeenSet = false;
 
     Aws::String m_url;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

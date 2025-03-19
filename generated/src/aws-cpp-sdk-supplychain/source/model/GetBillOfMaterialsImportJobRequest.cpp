@@ -12,12 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBillOfMaterialsImportJobRequest::GetBillOfMaterialsImportJobRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBillOfMaterialsImportJobRequest::SerializePayload() const
 {
   return {};

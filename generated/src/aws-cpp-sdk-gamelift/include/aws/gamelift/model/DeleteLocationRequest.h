@@ -21,7 +21,7 @@ namespace Model
   class DeleteLocationRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DeleteLocationRequest();
+    AWS_GAMELIFT_API DeleteLocationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The location name of the custom location to be deleted.</p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline DeleteLocationRequest& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline DeleteLocationRequest& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline DeleteLocationRequest& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    DeleteLocationRequest& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
   private:
 

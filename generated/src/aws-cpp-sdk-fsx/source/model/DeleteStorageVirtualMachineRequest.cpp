@@ -12,13 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStorageVirtualMachineRequest::DeleteStorageVirtualMachineRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_storageVirtualMachineIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStorageVirtualMachineRequest::SerializePayload() const
 {
   JsonValue payload;

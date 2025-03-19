@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-StorageClassAnalysisDataExport::StorageClassAnalysisDataExport() : 
-    m_outputSchemaVersion(StorageClassAnalysisSchemaVersion::NOT_SET),
-    m_outputSchemaVersionHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 StorageClassAnalysisDataExport::StorageClassAnalysisDataExport(const XmlNode& xmlNode)
-  : StorageClassAnalysisDataExport()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ StorageClassAnalysisDataExport& StorageClassAnalysisDataExport::operator =(const
     XmlNode outputSchemaVersionNode = resultNode.FirstChild("OutputSchemaVersion");
     if(!outputSchemaVersionNode.IsNull())
     {
-      m_outputSchemaVersion = StorageClassAnalysisSchemaVersionMapper::GetStorageClassAnalysisSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()).c_str());
+      m_outputSchemaVersion = StorageClassAnalysisSchemaVersionMapper::GetStorageClassAnalysisSchemaVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputSchemaVersionNode.GetText()).c_str()));
       m_outputSchemaVersionHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");

@@ -34,7 +34,7 @@ namespace Model
   class BranchDiffSourceCodeType
   {
   public:
-    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType();
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType() = default;
     AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The source branch for a diff in an associated repository.</p>
      */
-    inline const Aws::String& GetSourceBranchName() const{ return m_sourceBranchName; }
+    inline const Aws::String& GetSourceBranchName() const { return m_sourceBranchName; }
     inline bool SourceBranchNameHasBeenSet() const { return m_sourceBranchNameHasBeenSet; }
-    inline void SetSourceBranchName(const Aws::String& value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName = value; }
-    inline void SetSourceBranchName(Aws::String&& value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName = std::move(value); }
-    inline void SetSourceBranchName(const char* value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName.assign(value); }
-    inline BranchDiffSourceCodeType& WithSourceBranchName(const Aws::String& value) { SetSourceBranchName(value); return *this;}
-    inline BranchDiffSourceCodeType& WithSourceBranchName(Aws::String&& value) { SetSourceBranchName(std::move(value)); return *this;}
-    inline BranchDiffSourceCodeType& WithSourceBranchName(const char* value) { SetSourceBranchName(value); return *this;}
+    template<typename SourceBranchNameT = Aws::String>
+    void SetSourceBranchName(SourceBranchNameT&& value) { m_sourceBranchNameHasBeenSet = true; m_sourceBranchName = std::forward<SourceBranchNameT>(value); }
+    template<typename SourceBranchNameT = Aws::String>
+    BranchDiffSourceCodeType& WithSourceBranchName(SourceBranchNameT&& value) { SetSourceBranchName(std::forward<SourceBranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination branch for a diff in an associated repository.</p>
      */
-    inline const Aws::String& GetDestinationBranchName() const{ return m_destinationBranchName; }
+    inline const Aws::String& GetDestinationBranchName() const { return m_destinationBranchName; }
     inline bool DestinationBranchNameHasBeenSet() const { return m_destinationBranchNameHasBeenSet; }
-    inline void SetDestinationBranchName(const Aws::String& value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName = value; }
-    inline void SetDestinationBranchName(Aws::String&& value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName = std::move(value); }
-    inline void SetDestinationBranchName(const char* value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName.assign(value); }
-    inline BranchDiffSourceCodeType& WithDestinationBranchName(const Aws::String& value) { SetDestinationBranchName(value); return *this;}
-    inline BranchDiffSourceCodeType& WithDestinationBranchName(Aws::String&& value) { SetDestinationBranchName(std::move(value)); return *this;}
-    inline BranchDiffSourceCodeType& WithDestinationBranchName(const char* value) { SetDestinationBranchName(value); return *this;}
+    template<typename DestinationBranchNameT = Aws::String>
+    void SetDestinationBranchName(DestinationBranchNameT&& value) { m_destinationBranchNameHasBeenSet = true; m_destinationBranchName = std::forward<DestinationBranchNameT>(value); }
+    template<typename DestinationBranchNameT = Aws::String>
+    BranchDiffSourceCodeType& WithDestinationBranchName(DestinationBranchNameT&& value) { SetDestinationBranchName(std::forward<DestinationBranchNameT>(value)); return *this;}
     ///@}
   private:
 

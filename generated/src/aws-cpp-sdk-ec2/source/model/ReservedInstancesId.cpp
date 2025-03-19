@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesId::ReservedInstancesId() : 
-    m_reservedInstancesIdHasBeenSet(false)
-{
-}
-
 ReservedInstancesId::ReservedInstancesId(const XmlNode& xmlNode)
-  : ReservedInstancesId()
 {
   *this = xmlNode;
 }

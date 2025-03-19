@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayListener::VirtualGatewayListener() : 
-    m_connectionPoolHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_portMappingHasBeenSet(false),
-    m_tlsHasBeenSet(false)
-{
-}
-
 VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue)
-  : VirtualGatewayListener()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VirtualGatewayListener& VirtualGatewayListener::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connectionPool"))
   {
     m_connectionPool = jsonValue.GetObject("connectionPool");
-
     m_connectionPoolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("healthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portMapping"))
   {
     m_portMapping = jsonValue.GetObject("portMapping");
-
     m_portMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
-
     m_tlsHasBeenSet = true;
   }
-
   return *this;
 }
 

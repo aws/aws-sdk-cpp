@@ -34,7 +34,7 @@ namespace Model
   class DeleteRequest
   {
   public:
-    AWS_DYNAMODB_API DeleteRequest();
+    AWS_DYNAMODB_API DeleteRequest() = default;
     AWS_DYNAMODB_API DeleteRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API DeleteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,18 +46,16 @@ namespace Model
      * the item to delete. All of the table's primary key attributes must be specified,
      * and their data types must match those of the table's key schema.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const{ return m_key; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline DeleteRequest& WithKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetKey(value); return *this;}
-    inline DeleteRequest& WithKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetKey(std::move(value)); return *this;}
-    inline DeleteRequest& AddKey(const Aws::String& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
-    inline DeleteRequest& AddKey(Aws::String&& key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), value); return *this; }
-    inline DeleteRequest& AddKey(const Aws::String& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
-    inline DeleteRequest& AddKey(Aws::String&& key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeleteRequest& AddKey(const char* key, AttributeValue&& value) { m_keyHasBeenSet = true; m_key.emplace(key, std::move(value)); return *this; }
-    inline DeleteRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
+    template<typename KeyT = Aws::Map<Aws::String, AttributeValue>>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::Map<Aws::String, AttributeValue>>
+    DeleteRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
+    template<typename KeyKeyT = Aws::String, typename KeyValueT = AttributeValue>
+    DeleteRequest& AddKey(KeyKeyT&& key, KeyValueT&& value) {
+      m_keyHasBeenSet = true; m_key.emplace(std::forward<KeyKeyT>(key), std::forward<KeyValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ServiceSpecification::ServiceSpecification() : 
-    m_eC2SpecificationHasBeenSet(false)
-{
-}
-
 ServiceSpecification::ServiceSpecification(JsonView jsonValue)
-  : ServiceSpecification()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceSpecification& ServiceSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EC2Specification"))
   {
     m_eC2Specification = jsonValue.GetObject("EC2Specification");
-
     m_eC2SpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

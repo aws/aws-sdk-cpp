@@ -24,7 +24,7 @@ namespace Model
   class ImportDatasetRequest : public LookoutEquipmentRequest
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ImportDatasetRequest();
+    AWS_LOOKOUTEQUIPMENT_API ImportDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset to import.</p>
      */
-    inline const Aws::String& GetSourceDatasetArn() const{ return m_sourceDatasetArn; }
+    inline const Aws::String& GetSourceDatasetArn() const { return m_sourceDatasetArn; }
     inline bool SourceDatasetArnHasBeenSet() const { return m_sourceDatasetArnHasBeenSet; }
-    inline void SetSourceDatasetArn(const Aws::String& value) { m_sourceDatasetArnHasBeenSet = true; m_sourceDatasetArn = value; }
-    inline void SetSourceDatasetArn(Aws::String&& value) { m_sourceDatasetArnHasBeenSet = true; m_sourceDatasetArn = std::move(value); }
-    inline void SetSourceDatasetArn(const char* value) { m_sourceDatasetArnHasBeenSet = true; m_sourceDatasetArn.assign(value); }
-    inline ImportDatasetRequest& WithSourceDatasetArn(const Aws::String& value) { SetSourceDatasetArn(value); return *this;}
-    inline ImportDatasetRequest& WithSourceDatasetArn(Aws::String&& value) { SetSourceDatasetArn(std::move(value)); return *this;}
-    inline ImportDatasetRequest& WithSourceDatasetArn(const char* value) { SetSourceDatasetArn(value); return *this;}
+    template<typename SourceDatasetArnT = Aws::String>
+    void SetSourceDatasetArn(SourceDatasetArnT&& value) { m_sourceDatasetArnHasBeenSet = true; m_sourceDatasetArn = std::forward<SourceDatasetArnT>(value); }
+    template<typename SourceDatasetArnT = Aws::String>
+    ImportDatasetRequest& WithSourceDatasetArn(SourceDatasetArnT&& value) { SetSourceDatasetArn(std::forward<SourceDatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * you don't specify this field, it is filled with the name of the source
      * dataset.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline ImportDatasetRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline ImportDatasetRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline ImportDatasetRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    ImportDatasetRequest& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>A unique identifier for the request. If you do not set the client request
      * token, Amazon Lookout for Equipment generates one. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ImportDatasetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ImportDatasetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ImportDatasetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ImportDatasetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,28 +82,26 @@ namespace Model
      * <p>Provides the identifier of the KMS key key used to encrypt model data by
      * Amazon Lookout for Equipment. </p>
      */
-    inline const Aws::String& GetServerSideKmsKeyId() const{ return m_serverSideKmsKeyId; }
+    inline const Aws::String& GetServerSideKmsKeyId() const { return m_serverSideKmsKeyId; }
     inline bool ServerSideKmsKeyIdHasBeenSet() const { return m_serverSideKmsKeyIdHasBeenSet; }
-    inline void SetServerSideKmsKeyId(const Aws::String& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = value; }
-    inline void SetServerSideKmsKeyId(Aws::String&& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = std::move(value); }
-    inline void SetServerSideKmsKeyId(const char* value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId.assign(value); }
-    inline ImportDatasetRequest& WithServerSideKmsKeyId(const Aws::String& value) { SetServerSideKmsKeyId(value); return *this;}
-    inline ImportDatasetRequest& WithServerSideKmsKeyId(Aws::String&& value) { SetServerSideKmsKeyId(std::move(value)); return *this;}
-    inline ImportDatasetRequest& WithServerSideKmsKeyId(const char* value) { SetServerSideKmsKeyId(value); return *this;}
+    template<typename ServerSideKmsKeyIdT = Aws::String>
+    void SetServerSideKmsKeyId(ServerSideKmsKeyIdT&& value) { m_serverSideKmsKeyIdHasBeenSet = true; m_serverSideKmsKeyId = std::forward<ServerSideKmsKeyIdT>(value); }
+    template<typename ServerSideKmsKeyIdT = Aws::String>
+    ImportDatasetRequest& WithServerSideKmsKeyId(ServerSideKmsKeyIdT&& value) { SetServerSideKmsKeyId(std::forward<ServerSideKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags associated with the dataset to be created.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ImportDatasetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ImportDatasetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ImportDatasetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ImportDatasetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ImportDatasetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ImportDatasetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

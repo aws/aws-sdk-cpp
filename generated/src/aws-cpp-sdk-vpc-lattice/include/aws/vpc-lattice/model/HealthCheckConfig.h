@@ -36,7 +36,7 @@ namespace Model
   class HealthCheckConfig
   {
   public:
-    AWS_VPCLATTICE_API HealthCheckConfig();
+    AWS_VPCLATTICE_API HealthCheckConfig() = default;
     AWS_VPCLATTICE_API HealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API HealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>Indicates whether health checking is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline HealthCheckConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -57,7 +57,7 @@ namespace Model
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
      */
-    inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
+    inline int GetHealthCheckIntervalSeconds() const { return m_healthCheckIntervalSeconds; }
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
     inline HealthCheckConfig& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * <p>The amount of time, in seconds, to wait before reporting a target as
      * unhealthy. The range is 1–120 seconds. The default is 5 seconds.</p>
      */
-    inline int GetHealthCheckTimeoutSeconds() const{ return m_healthCheckTimeoutSeconds; }
+    inline int GetHealthCheckTimeoutSeconds() const { return m_healthCheckTimeoutSeconds; }
     inline bool HealthCheckTimeoutSecondsHasBeenSet() const { return m_healthCheckTimeoutSecondsHasBeenSet; }
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
     inline HealthCheckConfig& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
      * considering an unhealthy target healthy. The range is 2–10. The default is
      * 5.</p>
      */
-    inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
+    inline int GetHealthyThresholdCount() const { return m_healthyThresholdCount; }
     inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
     inline void SetHealthyThresholdCount(int value) { m_healthyThresholdCountHasBeenSet = true; m_healthyThresholdCount = value; }
     inline HealthCheckConfig& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
@@ -90,12 +90,12 @@ namespace Model
     /**
      * <p>The codes to use when checking for a successful response from a target.</p>
      */
-    inline const Matcher& GetMatcher() const{ return m_matcher; }
+    inline const Matcher& GetMatcher() const { return m_matcher; }
     inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
-    inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
-    inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
-    inline HealthCheckConfig& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
-    inline HealthCheckConfig& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
+    template<typename MatcherT = Matcher>
+    void SetMatcher(MatcherT&& value) { m_matcherHasBeenSet = true; m_matcher = std::forward<MatcherT>(value); }
+    template<typename MatcherT = Matcher>
+    HealthCheckConfig& WithMatcher(MatcherT&& value) { SetMatcher(std::forward<MatcherT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +106,12 @@ namespace Model
      * not supported if the protocol version is <code>gRPC</code>, however, you can
      * choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline HealthCheckConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline HealthCheckConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline HealthCheckConfig& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    HealthCheckConfig& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +119,7 @@ namespace Model
      * <p>The port used when performing health checks on targets. The default setting
      * is the port that a target receives traffic on.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline HealthCheckConfig& WithPort(int value) { SetPort(value); return *this;}
@@ -133,12 +131,10 @@ namespace Model
      * protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is
      * <code>HTTP</code>.</p>
      */
-    inline const TargetGroupProtocol& GetProtocol() const{ return m_protocol; }
+    inline TargetGroupProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const TargetGroupProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(TargetGroupProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline HealthCheckConfig& WithProtocol(const TargetGroupProtocol& value) { SetProtocol(value); return *this;}
-    inline HealthCheckConfig& WithProtocol(TargetGroupProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(TargetGroupProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline HealthCheckConfig& WithProtocol(TargetGroupProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +142,10 @@ namespace Model
      * <p>The protocol version used when performing health checks on targets. The
      * possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
      */
-    inline const HealthCheckProtocolVersion& GetProtocolVersion() const{ return m_protocolVersion; }
+    inline HealthCheckProtocolVersion GetProtocolVersion() const { return m_protocolVersion; }
     inline bool ProtocolVersionHasBeenSet() const { return m_protocolVersionHasBeenSet; }
-    inline void SetProtocolVersion(const HealthCheckProtocolVersion& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
-    inline void SetProtocolVersion(HealthCheckProtocolVersion&& value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = std::move(value); }
-    inline HealthCheckConfig& WithProtocolVersion(const HealthCheckProtocolVersion& value) { SetProtocolVersion(value); return *this;}
-    inline HealthCheckConfig& WithProtocolVersion(HealthCheckProtocolVersion&& value) { SetProtocolVersion(std::move(value)); return *this;}
+    inline void SetProtocolVersion(HealthCheckProtocolVersion value) { m_protocolVersionHasBeenSet = true; m_protocolVersion = value; }
+    inline HealthCheckConfig& WithProtocolVersion(HealthCheckProtocolVersion value) { SetProtocolVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -159,23 +153,23 @@ namespace Model
      * <p>The number of consecutive failed health checks required before considering a
      * target unhealthy. The range is 2–10. The default is 2.</p>
      */
-    inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
+    inline int GetUnhealthyThresholdCount() const { return m_unhealthyThresholdCount; }
     inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
     inline HealthCheckConfig& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_healthCheckIntervalSeconds;
+    int m_healthCheckIntervalSeconds{0};
     bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
-    int m_healthCheckTimeoutSeconds;
+    int m_healthCheckTimeoutSeconds{0};
     bool m_healthCheckTimeoutSecondsHasBeenSet = false;
 
-    int m_healthyThresholdCount;
+    int m_healthyThresholdCount{0};
     bool m_healthyThresholdCountHasBeenSet = false;
 
     Matcher m_matcher;
@@ -184,16 +178,16 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    TargetGroupProtocol m_protocol;
+    TargetGroupProtocol m_protocol{TargetGroupProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    HealthCheckProtocolVersion m_protocolVersion;
+    HealthCheckProtocolVersion m_protocolVersion{HealthCheckProtocolVersion::NOT_SET};
     bool m_protocolVersionHasBeenSet = false;
 
-    int m_unhealthyThresholdCount;
+    int m_unhealthyThresholdCount{0};
     bool m_unhealthyThresholdCountHasBeenSet = false;
   };
 

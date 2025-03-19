@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNotificationsRequest::ListNotificationsRequest() : 
-    m_afterTimestampHasBeenSet(false),
-    m_beforeTimestampHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_subjectsHasBeenSet(false),
-    m_taskStatus(TaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_type(NotificationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListNotificationsRequest::SerializePayload() const
 {
   return {};

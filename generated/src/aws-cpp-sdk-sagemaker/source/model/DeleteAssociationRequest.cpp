@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssociationRequest::DeleteAssociationRequest() : 
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

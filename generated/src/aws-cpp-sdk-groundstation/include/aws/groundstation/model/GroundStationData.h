@@ -31,7 +31,7 @@ namespace Model
   class GroundStationData
   {
   public:
-    AWS_GROUNDSTATION_API GroundStationData();
+    AWS_GROUNDSTATION_API GroundStationData() = default;
     AWS_GROUNDSTATION_API GroundStationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API GroundStationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>UUID of a ground station.</p>
      */
-    inline const Aws::String& GetGroundStationId() const{ return m_groundStationId; }
+    inline const Aws::String& GetGroundStationId() const { return m_groundStationId; }
     inline bool GroundStationIdHasBeenSet() const { return m_groundStationIdHasBeenSet; }
-    inline void SetGroundStationId(const Aws::String& value) { m_groundStationIdHasBeenSet = true; m_groundStationId = value; }
-    inline void SetGroundStationId(Aws::String&& value) { m_groundStationIdHasBeenSet = true; m_groundStationId = std::move(value); }
-    inline void SetGroundStationId(const char* value) { m_groundStationIdHasBeenSet = true; m_groundStationId.assign(value); }
-    inline GroundStationData& WithGroundStationId(const Aws::String& value) { SetGroundStationId(value); return *this;}
-    inline GroundStationData& WithGroundStationId(Aws::String&& value) { SetGroundStationId(std::move(value)); return *this;}
-    inline GroundStationData& WithGroundStationId(const char* value) { SetGroundStationId(value); return *this;}
+    template<typename GroundStationIdT = Aws::String>
+    void SetGroundStationId(GroundStationIdT&& value) { m_groundStationIdHasBeenSet = true; m_groundStationId = std::forward<GroundStationIdT>(value); }
+    template<typename GroundStationIdT = Aws::String>
+    GroundStationData& WithGroundStationId(GroundStationIdT&& value) { SetGroundStationId(std::forward<GroundStationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of a ground station.</p>
      */
-    inline const Aws::String& GetGroundStationName() const{ return m_groundStationName; }
+    inline const Aws::String& GetGroundStationName() const { return m_groundStationName; }
     inline bool GroundStationNameHasBeenSet() const { return m_groundStationNameHasBeenSet; }
-    inline void SetGroundStationName(const Aws::String& value) { m_groundStationNameHasBeenSet = true; m_groundStationName = value; }
-    inline void SetGroundStationName(Aws::String&& value) { m_groundStationNameHasBeenSet = true; m_groundStationName = std::move(value); }
-    inline void SetGroundStationName(const char* value) { m_groundStationNameHasBeenSet = true; m_groundStationName.assign(value); }
-    inline GroundStationData& WithGroundStationName(const Aws::String& value) { SetGroundStationName(value); return *this;}
-    inline GroundStationData& WithGroundStationName(Aws::String&& value) { SetGroundStationName(std::move(value)); return *this;}
-    inline GroundStationData& WithGroundStationName(const char* value) { SetGroundStationName(value); return *this;}
+    template<typename GroundStationNameT = Aws::String>
+    void SetGroundStationName(GroundStationNameT&& value) { m_groundStationNameHasBeenSet = true; m_groundStationName = std::forward<GroundStationNameT>(value); }
+    template<typename GroundStationNameT = Aws::String>
+    GroundStationData& WithGroundStationName(GroundStationNameT&& value) { SetGroundStationName(std::forward<GroundStationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Ground station Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline GroundStationData& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline GroundStationData& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline GroundStationData& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    GroundStationData& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

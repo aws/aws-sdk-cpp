@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3SetObjectAclOperation::S3SetObjectAclOperation() : 
-    m_accessControlPolicyHasBeenSet(false)
-{
-}
-
 S3SetObjectAclOperation::S3SetObjectAclOperation(const XmlNode& xmlNode)
-  : S3SetObjectAclOperation()
 {
   *this = xmlNode;
 }

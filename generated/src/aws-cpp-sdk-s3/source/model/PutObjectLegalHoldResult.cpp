@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutObjectLegalHoldResult::PutObjectLegalHoldResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 PutObjectLegalHoldResult::PutObjectLegalHoldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PutObjectLegalHoldResult()
 {
   *this = result;
 }
@@ -41,12 +35,14 @@ PutObjectLegalHoldResult& PutObjectLegalHoldResult::operator =(const Aws::Amazon
   if(requestChargedIter != headers.end())
   {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+    m_requestChargedHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

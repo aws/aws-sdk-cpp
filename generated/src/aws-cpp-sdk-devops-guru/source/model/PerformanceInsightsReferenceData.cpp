@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-PerformanceInsightsReferenceData::PerformanceInsightsReferenceData() : 
-    m_nameHasBeenSet(false),
-    m_comparisonValuesHasBeenSet(false)
-{
-}
-
 PerformanceInsightsReferenceData::PerformanceInsightsReferenceData(JsonView jsonValue)
-  : PerformanceInsightsReferenceData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PerformanceInsightsReferenceData& PerformanceInsightsReferenceData::operator =(J
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonValues"))
   {
     m_comparisonValues = jsonValue.GetObject("ComparisonValues");
-
     m_comparisonValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

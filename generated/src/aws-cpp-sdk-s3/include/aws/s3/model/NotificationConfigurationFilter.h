@@ -34,7 +34,7 @@ namespace Model
   class NotificationConfigurationFilter
   {
   public:
-    AWS_S3_API NotificationConfigurationFilter();
+    AWS_S3_API NotificationConfigurationFilter() = default;
     AWS_S3_API NotificationConfigurationFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API NotificationConfigurationFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const S3KeyFilter& GetKey() const{ return m_key; }
+    inline const S3KeyFilter& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const S3KeyFilter& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(S3KeyFilter&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline NotificationConfigurationFilter& WithKey(const S3KeyFilter& value) { SetKey(value); return *this;}
-    inline NotificationConfigurationFilter& WithKey(S3KeyFilter&& value) { SetKey(std::move(value)); return *this;}
+    template<typename KeyT = S3KeyFilter>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = S3KeyFilter>
+    NotificationConfigurationFilter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

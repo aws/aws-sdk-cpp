@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult() : 
-    m_actionType(ActionType::NOT_SET)
-{
-}
-
 ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ApplyEnvironmentManagedActionResult()
 {
   *this = result;
 }
@@ -44,27 +38,32 @@ ApplyEnvironmentManagedActionResult& ApplyEnvironmentManagedActionResult::operat
     if(!actionIdNode.IsNull())
     {
       m_actionId = Aws::Utils::Xml::DecodeEscapedXmlText(actionIdNode.GetText());
+      m_actionIdHasBeenSet = true;
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
       m_actionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(actionDescriptionNode.GetText());
+      m_actionDescriptionHasBeenSet = true;
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
     if(!actionTypeNode.IsNull())
     {
-      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()).c_str());
+      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()));
+      m_actionTypeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
+      m_statusHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::ApplyEnvironmentManagedActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

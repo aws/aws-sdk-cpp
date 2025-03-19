@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AutomationExecutionFilter::AutomationExecutionFilter() : 
-    m_key(AutomationExecutionFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 AutomationExecutionFilter::AutomationExecutionFilter(JsonView jsonValue)
-  : AutomationExecutionFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AutomationExecutionFilter& AutomationExecutionFilter::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Key"))
   {
     m_key = AutomationExecutionFilterKeyMapper::GetAutomationExecutionFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ AutomationExecutionFilter& AutomationExecutionFilter::operator =(JsonView jsonVa
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

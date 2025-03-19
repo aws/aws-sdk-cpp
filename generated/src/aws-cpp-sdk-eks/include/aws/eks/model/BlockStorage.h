@@ -34,7 +34,7 @@ namespace Model
   class BlockStorage
   {
   public:
-    AWS_EKS_API BlockStorage();
+    AWS_EKS_API BlockStorage() = default;
     AWS_EKS_API BlockStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API BlockStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * cluster. If the block storage capability is enabled, EKS Auto Mode will create
      * and delete EBS volumes in your Amazon Web Services account.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline BlockStorage& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

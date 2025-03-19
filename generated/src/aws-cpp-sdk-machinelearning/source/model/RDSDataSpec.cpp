@@ -18,23 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RDSDataSpec::RDSDataSpec() : 
-    m_databaseInformationHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false),
-    m_databaseCredentialsHasBeenSet(false),
-    m_s3StagingLocationHasBeenSet(false),
-    m_dataRearrangementHasBeenSet(false),
-    m_dataSchemaHasBeenSet(false),
-    m_dataSchemaUriHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 RDSDataSpec::RDSDataSpec(JsonView jsonValue)
-  : RDSDataSpec()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ RDSDataSpec& RDSDataSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseInformation"))
   {
     m_databaseInformation = jsonValue.GetObject("DatabaseInformation");
-
     m_databaseInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectSqlQuery"))
   {
     m_selectSqlQuery = jsonValue.GetString("SelectSqlQuery");
-
     m_selectSqlQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseCredentials"))
   {
     m_databaseCredentials = jsonValue.GetObject("DatabaseCredentials");
-
     m_databaseCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3StagingLocation"))
   {
     m_s3StagingLocation = jsonValue.GetString("S3StagingLocation");
-
     m_s3StagingLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRearrangement"))
   {
     m_dataRearrangement = jsonValue.GetString("DataRearrangement");
-
     m_dataRearrangementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSchema"))
   {
     m_dataSchema = jsonValue.GetString("DataSchema");
-
     m_dataSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSchemaUri"))
   {
     m_dataSchemaUri = jsonValue.GetString("DataSchemaUri");
-
     m_dataSchemaUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRole"))
   {
     m_resourceRole = jsonValue.GetString("ResourceRole");
-
     m_resourceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -120,7 +84,6 @@ RDSDataSpec& RDSDataSpec::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class StepScalingPolicyConfiguration
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration();
+    AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration() = default;
     AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * <code>PercentChangeInCapacity</code>. </p> <p> <code>AdjustmentType</code> is
      * required if you are adding a new step scaling policy configuration.</p>
      */
-    inline const AdjustmentType& GetAdjustmentType() const{ return m_adjustmentType; }
+    inline AdjustmentType GetAdjustmentType() const { return m_adjustmentType; }
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
-    inline void SetAdjustmentType(const AdjustmentType& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
-    inline void SetAdjustmentType(AdjustmentType&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
-    inline StepScalingPolicyConfiguration& WithAdjustmentType(const AdjustmentType& value) { SetAdjustmentType(value); return *this;}
-    inline StepScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
+    inline void SetAdjustmentType(AdjustmentType value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
+    inline StepScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType value) { SetAdjustmentType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,14 @@ namespace Model
      * breach.</p> <p>At least one step adjustment is required if you are adding a new
      * step scaling policy configuration.</p>
      */
-    inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const{ return m_stepAdjustments; }
+    inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const { return m_stepAdjustments; }
     inline bool StepAdjustmentsHasBeenSet() const { return m_stepAdjustmentsHasBeenSet; }
-    inline void SetStepAdjustments(const Aws::Vector<StepAdjustment>& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
-    inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::move(value); }
-    inline StepScalingPolicyConfiguration& WithStepAdjustments(const Aws::Vector<StepAdjustment>& value) { SetStepAdjustments(value); return *this;}
-    inline StepScalingPolicyConfiguration& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(std::move(value)); return *this;}
-    inline StepScalingPolicyConfiguration& AddStepAdjustments(const StepAdjustment& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(value); return *this; }
-    inline StepScalingPolicyConfiguration& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
+    template<typename StepAdjustmentsT = Aws::Vector<StepAdjustment>>
+    void SetStepAdjustments(StepAdjustmentsT&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::forward<StepAdjustmentsT>(value); }
+    template<typename StepAdjustmentsT = Aws::Vector<StepAdjustment>>
+    StepScalingPolicyConfiguration& WithStepAdjustments(StepAdjustmentsT&& value) { SetStepAdjustments(std::forward<StepAdjustmentsT>(value)); return *this;}
+    template<typename StepAdjustmentsT = StepAdjustment>
+    StepScalingPolicyConfiguration& AddStepAdjustments(StepAdjustmentsT&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.emplace_back(std::forward<StepAdjustmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,7 +85,7 @@ namespace Model
      * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling
      * scales out the service by 2 tasks.</p>
      */
-    inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
+    inline int GetMinAdjustmentMagnitude() const { return m_minAdjustmentMagnitude; }
     inline bool MinAdjustmentMagnitudeHasBeenSet() const { return m_minAdjustmentMagnitudeHasBeenSet; }
     inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
     inline StepScalingPolicyConfiguration& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
@@ -101,7 +99,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown">Cooldown
      * period</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
-    inline int GetCooldown() const{ return m_cooldown; }
+    inline int GetCooldown() const { return m_cooldown; }
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
     inline StepScalingPolicyConfiguration& WithCooldown(int value) { SetCooldown(value); return *this;}
@@ -113,28 +111,26 @@ namespace Model
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
      */
-    inline const MetricAggregationType& GetMetricAggregationType() const{ return m_metricAggregationType; }
+    inline MetricAggregationType GetMetricAggregationType() const { return m_metricAggregationType; }
     inline bool MetricAggregationTypeHasBeenSet() const { return m_metricAggregationTypeHasBeenSet; }
-    inline void SetMetricAggregationType(const MetricAggregationType& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
-    inline void SetMetricAggregationType(MetricAggregationType&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::move(value); }
-    inline StepScalingPolicyConfiguration& WithMetricAggregationType(const MetricAggregationType& value) { SetMetricAggregationType(value); return *this;}
-    inline StepScalingPolicyConfiguration& WithMetricAggregationType(MetricAggregationType&& value) { SetMetricAggregationType(std::move(value)); return *this;}
+    inline void SetMetricAggregationType(MetricAggregationType value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
+    inline StepScalingPolicyConfiguration& WithMetricAggregationType(MetricAggregationType value) { SetMetricAggregationType(value); return *this;}
     ///@}
   private:
 
-    AdjustmentType m_adjustmentType;
+    AdjustmentType m_adjustmentType{AdjustmentType::NOT_SET};
     bool m_adjustmentTypeHasBeenSet = false;
 
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet = false;
 
-    int m_minAdjustmentMagnitude;
+    int m_minAdjustmentMagnitude{0};
     bool m_minAdjustmentMagnitudeHasBeenSet = false;
 
-    int m_cooldown;
+    int m_cooldown{0};
     bool m_cooldownHasBeenSet = false;
 
-    MetricAggregationType m_metricAggregationType;
+    MetricAggregationType m_metricAggregationType{MetricAggregationType::NOT_SET};
     bool m_metricAggregationTypeHasBeenSet = false;
   };
 

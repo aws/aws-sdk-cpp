@@ -35,7 +35,7 @@ namespace Model
   class ColorCorrector
   {
   public:
-    AWS_MEDIACONVERT_API ColorCorrector();
+    AWS_MEDIACONVERT_API ColorCorrector() = default;
     AWS_MEDIACONVERT_API ColorCorrector(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ColorCorrector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * Brightness level.
      */
-    inline int GetBrightness() const{ return m_brightness; }
+    inline int GetBrightness() const { return m_brightness; }
     inline bool BrightnessHasBeenSet() const { return m_brightnessHasBeenSet; }
     inline void SetBrightness(int value) { m_brightnessHasBeenSet = true; m_brightness = value; }
     inline ColorCorrector& WithBrightness(int value) { SetBrightness(value); return *this;}
@@ -56,12 +56,12 @@ namespace Model
      * Specify YUV limits and RGB tolerances when you set Sample range conversion to
      * Limited range clip.
      */
-    inline const ClipLimits& GetClipLimits() const{ return m_clipLimits; }
+    inline const ClipLimits& GetClipLimits() const { return m_clipLimits; }
     inline bool ClipLimitsHasBeenSet() const { return m_clipLimitsHasBeenSet; }
-    inline void SetClipLimits(const ClipLimits& value) { m_clipLimitsHasBeenSet = true; m_clipLimits = value; }
-    inline void SetClipLimits(ClipLimits&& value) { m_clipLimitsHasBeenSet = true; m_clipLimits = std::move(value); }
-    inline ColorCorrector& WithClipLimits(const ClipLimits& value) { SetClipLimits(value); return *this;}
-    inline ColorCorrector& WithClipLimits(ClipLimits&& value) { SetClipLimits(std::move(value)); return *this;}
+    template<typename ClipLimitsT = ClipLimits>
+    void SetClipLimits(ClipLimitsT&& value) { m_clipLimitsHasBeenSet = true; m_clipLimits = std::forward<ClipLimitsT>(value); }
+    template<typename ClipLimitsT = ClipLimits>
+    ColorCorrector& WithClipLimits(ClipLimitsT&& value) { SetClipLimits(std::forward<ClipLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +83,17 @@ namespace Model
      * Display P3, sRGB, BT.709
   * P3D65 (HDR): Display P3, PQ, BT.709
      */
-    inline const ColorSpaceConversion& GetColorSpaceConversion() const{ return m_colorSpaceConversion; }
+    inline ColorSpaceConversion GetColorSpaceConversion() const { return m_colorSpaceConversion; }
     inline bool ColorSpaceConversionHasBeenSet() const { return m_colorSpaceConversionHasBeenSet; }
-    inline void SetColorSpaceConversion(const ColorSpaceConversion& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
-    inline void SetColorSpaceConversion(ColorSpaceConversion&& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = std::move(value); }
-    inline ColorCorrector& WithColorSpaceConversion(const ColorSpaceConversion& value) { SetColorSpaceConversion(value); return *this;}
-    inline ColorCorrector& WithColorSpaceConversion(ColorSpaceConversion&& value) { SetColorSpaceConversion(std::move(value)); return *this;}
+    inline void SetColorSpaceConversion(ColorSpaceConversion value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
+    inline ColorCorrector& WithColorSpaceConversion(ColorSpaceConversion value) { SetColorSpaceConversion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Contrast level.
      */
-    inline int GetContrast() const{ return m_contrast; }
+    inline int GetContrast() const { return m_contrast; }
     inline bool ContrastHasBeenSet() const { return m_contrastHasBeenSet; }
     inline void SetContrast(int value) { m_contrastHasBeenSet = true; m_contrast = value; }
     inline ColorCorrector& WithContrast(int value) { SetContrast(value); return *this;}
@@ -115,12 +113,12 @@ namespace Model
      * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
-    inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
+    inline const Hdr10Metadata& GetHdr10Metadata() const { return m_hdr10Metadata; }
     inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
-    inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
-    inline void SetHdr10Metadata(Hdr10Metadata&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::move(value); }
-    inline ColorCorrector& WithHdr10Metadata(const Hdr10Metadata& value) { SetHdr10Metadata(value); return *this;}
-    inline ColorCorrector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}
+    template<typename Hdr10MetadataT = Hdr10Metadata>
+    void SetHdr10Metadata(Hdr10MetadataT&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::forward<Hdr10MetadataT>(value); }
+    template<typename Hdr10MetadataT = Hdr10Metadata>
+    ColorCorrector& WithHdr10Metadata(Hdr10MetadataT&& value) { SetHdr10Metadata(std::forward<Hdr10MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,19 +135,17 @@ namespace Model
      * notice loss of details in bright or saturated areas of your output. HDR to SDR
      * tone mapping has no effect when your input is SDR.
      */
-    inline const HDRToSDRToneMapper& GetHdrToSdrToneMapper() const{ return m_hdrToSdrToneMapper; }
+    inline HDRToSDRToneMapper GetHdrToSdrToneMapper() const { return m_hdrToSdrToneMapper; }
     inline bool HdrToSdrToneMapperHasBeenSet() const { return m_hdrToSdrToneMapperHasBeenSet; }
-    inline void SetHdrToSdrToneMapper(const HDRToSDRToneMapper& value) { m_hdrToSdrToneMapperHasBeenSet = true; m_hdrToSdrToneMapper = value; }
-    inline void SetHdrToSdrToneMapper(HDRToSDRToneMapper&& value) { m_hdrToSdrToneMapperHasBeenSet = true; m_hdrToSdrToneMapper = std::move(value); }
-    inline ColorCorrector& WithHdrToSdrToneMapper(const HDRToSDRToneMapper& value) { SetHdrToSdrToneMapper(value); return *this;}
-    inline ColorCorrector& WithHdrToSdrToneMapper(HDRToSDRToneMapper&& value) { SetHdrToSdrToneMapper(std::move(value)); return *this;}
+    inline void SetHdrToSdrToneMapper(HDRToSDRToneMapper value) { m_hdrToSdrToneMapperHasBeenSet = true; m_hdrToSdrToneMapper = value; }
+    inline ColorCorrector& WithHdrToSdrToneMapper(HDRToSDRToneMapper value) { SetHdrToSdrToneMapper(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Hue in degrees.
      */
-    inline int GetHue() const{ return m_hue; }
+    inline int GetHue() const { return m_hue; }
     inline bool HueHasBeenSet() const { return m_hueHasBeenSet; }
     inline void SetHue(int value) { m_hueHasBeenSet = true; m_hue = value; }
     inline ColorCorrector& WithHue(int value) { SetHue(value); return *this;}
@@ -160,7 +156,7 @@ namespace Model
      * Specify the maximum mastering display luminance. Enter an integer from 0 to
      * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
      */
-    inline int GetMaxLuminance() const{ return m_maxLuminance; }
+    inline int GetMaxLuminance() const { return m_maxLuminance; }
     inline bool MaxLuminanceHasBeenSet() const { return m_maxLuminanceHasBeenSet; }
     inline void SetMaxLuminance(int value) { m_maxLuminanceHasBeenSet = true; m_maxLuminance = value; }
     inline ColorCorrector& WithMaxLuminance(int value) { SetMaxLuminance(value); return *this;}
@@ -183,19 +179,17 @@ namespace Model
      * Maximum RGB tolerance. With either limited range conversion, MediaConvert writes
      * the sample range metadata in the output.
      */
-    inline const SampleRangeConversion& GetSampleRangeConversion() const{ return m_sampleRangeConversion; }
+    inline SampleRangeConversion GetSampleRangeConversion() const { return m_sampleRangeConversion; }
     inline bool SampleRangeConversionHasBeenSet() const { return m_sampleRangeConversionHasBeenSet; }
-    inline void SetSampleRangeConversion(const SampleRangeConversion& value) { m_sampleRangeConversionHasBeenSet = true; m_sampleRangeConversion = value; }
-    inline void SetSampleRangeConversion(SampleRangeConversion&& value) { m_sampleRangeConversionHasBeenSet = true; m_sampleRangeConversion = std::move(value); }
-    inline ColorCorrector& WithSampleRangeConversion(const SampleRangeConversion& value) { SetSampleRangeConversion(value); return *this;}
-    inline ColorCorrector& WithSampleRangeConversion(SampleRangeConversion&& value) { SetSampleRangeConversion(std::move(value)); return *this;}
+    inline void SetSampleRangeConversion(SampleRangeConversion value) { m_sampleRangeConversionHasBeenSet = true; m_sampleRangeConversion = value; }
+    inline ColorCorrector& WithSampleRangeConversion(SampleRangeConversion value) { SetSampleRangeConversion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Saturation level.
      */
-    inline int GetSaturation() const{ return m_saturation; }
+    inline int GetSaturation() const { return m_saturation; }
     inline bool SaturationHasBeenSet() const { return m_saturationHasBeenSet; }
     inline void SetSaturation(int value) { m_saturationHasBeenSet = true; m_saturation = value; }
     inline ColorCorrector& WithSaturation(int value) { SetSaturation(value); return *this;}
@@ -212,44 +206,44 @@ namespace Model
      * you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave
      * blank to use the default value of 100, or specify an integer from 100 to 1000.
      */
-    inline int GetSdrReferenceWhiteLevel() const{ return m_sdrReferenceWhiteLevel; }
+    inline int GetSdrReferenceWhiteLevel() const { return m_sdrReferenceWhiteLevel; }
     inline bool SdrReferenceWhiteLevelHasBeenSet() const { return m_sdrReferenceWhiteLevelHasBeenSet; }
     inline void SetSdrReferenceWhiteLevel(int value) { m_sdrReferenceWhiteLevelHasBeenSet = true; m_sdrReferenceWhiteLevel = value; }
     inline ColorCorrector& WithSdrReferenceWhiteLevel(int value) { SetSdrReferenceWhiteLevel(value); return *this;}
     ///@}
   private:
 
-    int m_brightness;
+    int m_brightness{0};
     bool m_brightnessHasBeenSet = false;
 
     ClipLimits m_clipLimits;
     bool m_clipLimitsHasBeenSet = false;
 
-    ColorSpaceConversion m_colorSpaceConversion;
+    ColorSpaceConversion m_colorSpaceConversion{ColorSpaceConversion::NOT_SET};
     bool m_colorSpaceConversionHasBeenSet = false;
 
-    int m_contrast;
+    int m_contrast{0};
     bool m_contrastHasBeenSet = false;
 
     Hdr10Metadata m_hdr10Metadata;
     bool m_hdr10MetadataHasBeenSet = false;
 
-    HDRToSDRToneMapper m_hdrToSdrToneMapper;
+    HDRToSDRToneMapper m_hdrToSdrToneMapper{HDRToSDRToneMapper::NOT_SET};
     bool m_hdrToSdrToneMapperHasBeenSet = false;
 
-    int m_hue;
+    int m_hue{0};
     bool m_hueHasBeenSet = false;
 
-    int m_maxLuminance;
+    int m_maxLuminance{0};
     bool m_maxLuminanceHasBeenSet = false;
 
-    SampleRangeConversion m_sampleRangeConversion;
+    SampleRangeConversion m_sampleRangeConversion{SampleRangeConversion::NOT_SET};
     bool m_sampleRangeConversionHasBeenSet = false;
 
-    int m_saturation;
+    int m_saturation{0};
     bool m_saturationHasBeenSet = false;
 
-    int m_sdrReferenceWhiteLevel;
+    int m_sdrReferenceWhiteLevel{0};
     bool m_sdrReferenceWhiteLevelHasBeenSet = false;
   };
 

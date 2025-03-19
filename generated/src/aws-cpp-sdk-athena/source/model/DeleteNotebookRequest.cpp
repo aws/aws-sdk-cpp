@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNotebookRequest::DeleteNotebookRequest() : 
-    m_notebookIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNotebookRequest::SerializePayload() const
 {
   JsonValue payload;

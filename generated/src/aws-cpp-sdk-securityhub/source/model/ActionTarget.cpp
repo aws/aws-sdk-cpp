@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ActionTarget::ActionTarget() : 
-    m_actionTargetArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ActionTarget::ActionTarget(JsonView jsonValue)
-  : ActionTarget()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ActionTarget& ActionTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionTargetArn"))
   {
     m_actionTargetArn = jsonValue.GetString("ActionTargetArn");
-
     m_actionTargetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

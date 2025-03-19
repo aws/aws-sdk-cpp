@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFileSharesRequest::ListFileSharesRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListFileSharesRequest::SerializePayload() const
 {
   JsonValue payload;

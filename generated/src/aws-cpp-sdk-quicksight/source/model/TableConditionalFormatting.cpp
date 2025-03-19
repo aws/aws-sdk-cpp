@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableConditionalFormatting::TableConditionalFormatting() : 
-    m_conditionalFormattingOptionsHasBeenSet(false)
-{
-}
-
 TableConditionalFormatting::TableConditionalFormatting(JsonView jsonValue)
-  : TableConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TableConditionalFormatting& TableConditionalFormatting::operator =(JsonView json
     }
     m_conditionalFormattingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

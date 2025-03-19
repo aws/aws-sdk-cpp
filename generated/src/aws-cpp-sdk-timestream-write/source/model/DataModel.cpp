@@ -18,19 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-DataModel::DataModel() : 
-    m_timeColumnHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_dimensionMappingsHasBeenSet(false),
-    m_multiMeasureMappingsHasBeenSet(false),
-    m_mixedMeasureMappingsHasBeenSet(false),
-    m_measureNameColumnHasBeenSet(false)
-{
-}
-
 DataModel::DataModel(JsonView jsonValue)
-  : DataModel()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ DataModel& DataModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeColumn"))
   {
     m_timeColumn = jsonValue.GetString("TimeColumn");
-
     m_timeColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeUnit"))
   {
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
-
     m_timeUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionMappings"))
   {
     Aws::Utils::Array<JsonView> dimensionMappingsJsonList = jsonValue.GetArray("DimensionMappings");
@@ -60,14 +44,11 @@ DataModel& DataModel::operator =(JsonView jsonValue)
     }
     m_dimensionMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiMeasureMappings"))
   {
     m_multiMeasureMappings = jsonValue.GetObject("MultiMeasureMappings");
-
     m_multiMeasureMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MixedMeasureMappings"))
   {
     Aws::Utils::Array<JsonView> mixedMeasureMappingsJsonList = jsonValue.GetArray("MixedMeasureMappings");
@@ -77,14 +58,11 @@ DataModel& DataModel::operator =(JsonView jsonValue)
     }
     m_mixedMeasureMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureNameColumn"))
   {
     m_measureNameColumn = jsonValue.GetString("MeasureNameColumn");
-
     m_measureNameColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

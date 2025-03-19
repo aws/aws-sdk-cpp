@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDisassociateResourceResult::BatchDisassociateResourceResult()
-{
-}
-
 BatchDisassociateResourceResult::BatchDisassociateResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ BatchDisassociateResourceResult& BatchDisassociateResourceResult::operator =(con
   if(jsonValue.ValueExists("ResourceSetIdentifier"))
   {
     m_resourceSetIdentifier = jsonValue.GetString("ResourceSetIdentifier");
-
+    m_resourceSetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedItems"))
   {
     Aws::Utils::Array<JsonView> failedItemsJsonList = jsonValue.GetArray("FailedItems");
@@ -42,14 +37,15 @@ BatchDisassociateResourceResult& BatchDisassociateResourceResult::operator =(con
     {
       m_failedItems.push_back(failedItemsJsonList[failedItemsIndex].AsObject());
     }
+    m_failedItemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

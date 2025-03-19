@@ -33,7 +33,7 @@ namespace Model
   class S3Destination
   {
   public:
-    AWS_BCMDATAEXPORTS_API S3Destination();
+    AWS_BCMDATAEXPORTS_API S3Destination() = default;
     AWS_BCMDATAEXPORTS_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,48 @@ namespace Model
      * <p>The name of the Amazon S3 bucket used as the destination of a data export
      * file.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline S3Destination& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline S3Destination& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline S3Destination& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    S3Destination& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output configuration for the data export.</p>
      */
-    inline const S3OutputConfigurations& GetS3OutputConfigurations() const{ return m_s3OutputConfigurations; }
+    inline const S3OutputConfigurations& GetS3OutputConfigurations() const { return m_s3OutputConfigurations; }
     inline bool S3OutputConfigurationsHasBeenSet() const { return m_s3OutputConfigurationsHasBeenSet; }
-    inline void SetS3OutputConfigurations(const S3OutputConfigurations& value) { m_s3OutputConfigurationsHasBeenSet = true; m_s3OutputConfigurations = value; }
-    inline void SetS3OutputConfigurations(S3OutputConfigurations&& value) { m_s3OutputConfigurationsHasBeenSet = true; m_s3OutputConfigurations = std::move(value); }
-    inline S3Destination& WithS3OutputConfigurations(const S3OutputConfigurations& value) { SetS3OutputConfigurations(value); return *this;}
-    inline S3Destination& WithS3OutputConfigurations(S3OutputConfigurations&& value) { SetS3OutputConfigurations(std::move(value)); return *this;}
+    template<typename S3OutputConfigurationsT = S3OutputConfigurations>
+    void SetS3OutputConfigurations(S3OutputConfigurationsT&& value) { m_s3OutputConfigurationsHasBeenSet = true; m_s3OutputConfigurations = std::forward<S3OutputConfigurationsT>(value); }
+    template<typename S3OutputConfigurationsT = S3OutputConfigurations>
+    S3Destination& WithS3OutputConfigurations(S3OutputConfigurationsT&& value) { SetS3OutputConfigurations(std::forward<S3OutputConfigurationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 path prefix you want prepended to the name of your data export.</p>
      */
-    inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+    inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
-    inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
-    inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
-    inline S3Destination& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
-    inline S3Destination& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
-    inline S3Destination& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
+    template<typename S3PrefixT = Aws::String>
+    void SetS3Prefix(S3PrefixT&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::forward<S3PrefixT>(value); }
+    template<typename S3PrefixT = Aws::String>
+    S3Destination& WithS3Prefix(S3PrefixT&& value) { SetS3Prefix(std::forward<S3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 bucket Region.</p>
      */
-    inline const Aws::String& GetS3Region() const{ return m_s3Region; }
+    inline const Aws::String& GetS3Region() const { return m_s3Region; }
     inline bool S3RegionHasBeenSet() const { return m_s3RegionHasBeenSet; }
-    inline void SetS3Region(const Aws::String& value) { m_s3RegionHasBeenSet = true; m_s3Region = value; }
-    inline void SetS3Region(Aws::String&& value) { m_s3RegionHasBeenSet = true; m_s3Region = std::move(value); }
-    inline void SetS3Region(const char* value) { m_s3RegionHasBeenSet = true; m_s3Region.assign(value); }
-    inline S3Destination& WithS3Region(const Aws::String& value) { SetS3Region(value); return *this;}
-    inline S3Destination& WithS3Region(Aws::String&& value) { SetS3Region(std::move(value)); return *this;}
-    inline S3Destination& WithS3Region(const char* value) { SetS3Region(value); return *this;}
+    template<typename S3RegionT = Aws::String>
+    void SetS3Region(S3RegionT&& value) { m_s3RegionHasBeenSet = true; m_s3Region = std::forward<S3RegionT>(value); }
+    template<typename S3RegionT = Aws::String>
+    S3Destination& WithS3Region(S3RegionT&& value) { SetS3Region(std::forward<S3RegionT>(value)); return *this;}
     ///@}
   private:
 

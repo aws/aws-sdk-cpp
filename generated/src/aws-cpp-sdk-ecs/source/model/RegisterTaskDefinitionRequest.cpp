@@ -12,32 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() : 
-    m_familyHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_networkMode(NetworkMode::NOT_SET),
-    m_networkModeHasBeenSet(false),
-    m_containerDefinitionsHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_requiresCompatibilitiesHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_pidMode(PidMode::NOT_SET),
-    m_pidModeHasBeenSet(false),
-    m_ipcMode(IpcMode::NOT_SET),
-    m_ipcModeHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false),
-    m_enableFaultInjection(false),
-    m_enableFaultInjectionHasBeenSet(false)
-{
-}
-
 Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

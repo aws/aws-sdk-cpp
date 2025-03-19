@@ -23,7 +23,7 @@ namespace Model
   class ModifyTrafficMirrorSessionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyTrafficMirrorSessionRequest();
+    AWS_EC2_API ModifyTrafficMirrorSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the Traffic Mirror session.</p>
      */
-    inline const Aws::String& GetTrafficMirrorSessionId() const{ return m_trafficMirrorSessionId; }
+    inline const Aws::String& GetTrafficMirrorSessionId() const { return m_trafficMirrorSessionId; }
     inline bool TrafficMirrorSessionIdHasBeenSet() const { return m_trafficMirrorSessionIdHasBeenSet; }
-    inline void SetTrafficMirrorSessionId(const Aws::String& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = value; }
-    inline void SetTrafficMirrorSessionId(Aws::String&& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = std::move(value); }
-    inline void SetTrafficMirrorSessionId(const char* value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId.assign(value); }
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(const Aws::String& value) { SetTrafficMirrorSessionId(value); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(Aws::String&& value) { SetTrafficMirrorSessionId(std::move(value)); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(const char* value) { SetTrafficMirrorSessionId(value); return *this;}
+    template<typename TrafficMirrorSessionIdT = Aws::String>
+    void SetTrafficMirrorSessionId(TrafficMirrorSessionIdT&& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = std::forward<TrafficMirrorSessionIdT>(value); }
+    template<typename TrafficMirrorSessionIdT = Aws::String>
+    ModifyTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(TrafficMirrorSessionIdT&& value) { SetTrafficMirrorSessionId(std::forward<TrafficMirrorSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The Traffic Mirror target. The target must be in the same VPC as the source,
      * or have a VPC peering connection with the source.</p>
      */
-    inline const Aws::String& GetTrafficMirrorTargetId() const{ return m_trafficMirrorTargetId; }
+    inline const Aws::String& GetTrafficMirrorTargetId() const { return m_trafficMirrorTargetId; }
     inline bool TrafficMirrorTargetIdHasBeenSet() const { return m_trafficMirrorTargetIdHasBeenSet; }
-    inline void SetTrafficMirrorTargetId(const Aws::String& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = value; }
-    inline void SetTrafficMirrorTargetId(Aws::String&& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = std::move(value); }
-    inline void SetTrafficMirrorTargetId(const char* value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId.assign(value); }
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorTargetId(const Aws::String& value) { SetTrafficMirrorTargetId(value); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorTargetId(Aws::String&& value) { SetTrafficMirrorTargetId(std::move(value)); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorTargetId(const char* value) { SetTrafficMirrorTargetId(value); return *this;}
+    template<typename TrafficMirrorTargetIdT = Aws::String>
+    void SetTrafficMirrorTargetId(TrafficMirrorTargetIdT&& value) { m_trafficMirrorTargetIdHasBeenSet = true; m_trafficMirrorTargetId = std::forward<TrafficMirrorTargetIdT>(value); }
+    template<typename TrafficMirrorTargetIdT = Aws::String>
+    ModifyTrafficMirrorSessionRequest& WithTrafficMirrorTargetId(TrafficMirrorTargetIdT&& value) { SetTrafficMirrorTargetId(std::forward<TrafficMirrorTargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Traffic Mirror filter.</p>
      */
-    inline const Aws::String& GetTrafficMirrorFilterId() const{ return m_trafficMirrorFilterId; }
+    inline const Aws::String& GetTrafficMirrorFilterId() const { return m_trafficMirrorFilterId; }
     inline bool TrafficMirrorFilterIdHasBeenSet() const { return m_trafficMirrorFilterIdHasBeenSet; }
-    inline void SetTrafficMirrorFilterId(const Aws::String& value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId = value; }
-    inline void SetTrafficMirrorFilterId(Aws::String&& value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId = std::move(value); }
-    inline void SetTrafficMirrorFilterId(const char* value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId.assign(value); }
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorFilterId(const Aws::String& value) { SetTrafficMirrorFilterId(value); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorFilterId(Aws::String&& value) { SetTrafficMirrorFilterId(std::move(value)); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithTrafficMirrorFilterId(const char* value) { SetTrafficMirrorFilterId(value); return *this;}
+    template<typename TrafficMirrorFilterIdT = Aws::String>
+    void SetTrafficMirrorFilterId(TrafficMirrorFilterIdT&& value) { m_trafficMirrorFilterIdHasBeenSet = true; m_trafficMirrorFilterId = std::forward<TrafficMirrorFilterIdT>(value); }
+    template<typename TrafficMirrorFilterIdT = Aws::String>
+    ModifyTrafficMirrorSessionRequest& WithTrafficMirrorFilterId(TrafficMirrorFilterIdT&& value) { SetTrafficMirrorFilterId(std::forward<TrafficMirrorFilterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +86,7 @@ namespace Model
      * to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater
      * than 8500 will result in an error response.</p>
      */
-    inline int GetPacketLength() const{ return m_packetLength; }
+    inline int GetPacketLength() const { return m_packetLength; }
     inline bool PacketLengthHasBeenSet() const { return m_packetLengthHasBeenSet; }
     inline void SetPacketLength(int value) { m_packetLengthHasBeenSet = true; m_packetLength = value; }
     inline ModifyTrafficMirrorSessionRequest& WithPacketLength(int value) { SetPacketLength(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
      * an interface is used by multiple sessions. The first session with a matching
      * filter is the one that mirrors the packets.</p> <p>Valid values are 1-32766.</p>
      */
-    inline int GetSessionNumber() const{ return m_sessionNumber; }
+    inline int GetSessionNumber() const { return m_sessionNumber; }
     inline bool SessionNumberHasBeenSet() const { return m_sessionNumberHasBeenSet; }
     inline void SetSessionNumber(int value) { m_sessionNumberHasBeenSet = true; m_sessionNumber = value; }
     inline ModifyTrafficMirrorSessionRequest& WithSessionNumber(int value) { SetSessionNumber(value); return *this;}
@@ -114,7 +108,7 @@ namespace Model
     /**
      * <p>The virtual network ID of the Traffic Mirror session.</p>
      */
-    inline int GetVirtualNetworkId() const{ return m_virtualNetworkId; }
+    inline int GetVirtualNetworkId() const { return m_virtualNetworkId; }
     inline bool VirtualNetworkIdHasBeenSet() const { return m_virtualNetworkIdHasBeenSet; }
     inline void SetVirtualNetworkId(int value) { m_virtualNetworkIdHasBeenSet = true; m_virtualNetworkId = value; }
     inline ModifyTrafficMirrorSessionRequest& WithVirtualNetworkId(int value) { SetVirtualNetworkId(value); return *this;}
@@ -124,14 +118,12 @@ namespace Model
     /**
      * <p>The description to assign to the Traffic Mirror session.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ModifyTrafficMirrorSessionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ModifyTrafficMirrorSessionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +132,13 @@ namespace Model
      * <p>When you remove a property from a Traffic Mirror session, the property is set
      * to the default.</p>
      */
-    inline const Aws::Vector<TrafficMirrorSessionField>& GetRemoveFields() const{ return m_removeFields; }
+    inline const Aws::Vector<TrafficMirrorSessionField>& GetRemoveFields() const { return m_removeFields; }
     inline bool RemoveFieldsHasBeenSet() const { return m_removeFieldsHasBeenSet; }
-    inline void SetRemoveFields(const Aws::Vector<TrafficMirrorSessionField>& value) { m_removeFieldsHasBeenSet = true; m_removeFields = value; }
-    inline void SetRemoveFields(Aws::Vector<TrafficMirrorSessionField>&& value) { m_removeFieldsHasBeenSet = true; m_removeFields = std::move(value); }
-    inline ModifyTrafficMirrorSessionRequest& WithRemoveFields(const Aws::Vector<TrafficMirrorSessionField>& value) { SetRemoveFields(value); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& WithRemoveFields(Aws::Vector<TrafficMirrorSessionField>&& value) { SetRemoveFields(std::move(value)); return *this;}
-    inline ModifyTrafficMirrorSessionRequest& AddRemoveFields(const TrafficMirrorSessionField& value) { m_removeFieldsHasBeenSet = true; m_removeFields.push_back(value); return *this; }
-    inline ModifyTrafficMirrorSessionRequest& AddRemoveFields(TrafficMirrorSessionField&& value) { m_removeFieldsHasBeenSet = true; m_removeFields.push_back(std::move(value)); return *this; }
+    template<typename RemoveFieldsT = Aws::Vector<TrafficMirrorSessionField>>
+    void SetRemoveFields(RemoveFieldsT&& value) { m_removeFieldsHasBeenSet = true; m_removeFields = std::forward<RemoveFieldsT>(value); }
+    template<typename RemoveFieldsT = Aws::Vector<TrafficMirrorSessionField>>
+    ModifyTrafficMirrorSessionRequest& WithRemoveFields(RemoveFieldsT&& value) { SetRemoveFields(std::forward<RemoveFieldsT>(value)); return *this;}
+    inline ModifyTrafficMirrorSessionRequest& AddRemoveFields(TrafficMirrorSessionField value) { m_removeFieldsHasBeenSet = true; m_removeFields.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -157,7 +148,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyTrafficMirrorSessionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -173,13 +164,13 @@ namespace Model
     Aws::String m_trafficMirrorFilterId;
     bool m_trafficMirrorFilterIdHasBeenSet = false;
 
-    int m_packetLength;
+    int m_packetLength{0};
     bool m_packetLengthHasBeenSet = false;
 
-    int m_sessionNumber;
+    int m_sessionNumber{0};
     bool m_sessionNumberHasBeenSet = false;
 
-    int m_virtualNetworkId;
+    int m_virtualNetworkId{0};
     bool m_virtualNetworkIdHasBeenSet = false;
 
     Aws::String m_description;
@@ -188,7 +179,7 @@ namespace Model
     Aws::Vector<TrafficMirrorSessionField> m_removeFields;
     bool m_removeFieldsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

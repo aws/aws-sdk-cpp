@@ -18,28 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxCluster::KxCluster() : 
-    m_status(KxClusterStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterDescriptionHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_initializationScriptHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 KxCluster::KxCluster(JsonView jsonValue)
-  : KxCluster()
 {
   *this = jsonValue;
 }
@@ -49,45 +28,33 @@ KxCluster& KxCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = KxClusterStatusMapper::GetKxClusterStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterType"))
   {
     m_clusterType = KxClusterTypeMapper::GetKxClusterTypeForName(jsonValue.GetString("clusterType"));
-
     m_clusterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterDescription"))
   {
     m_clusterDescription = jsonValue.GetString("clusterDescription");
-
     m_clusterDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -97,49 +64,36 @@ KxCluster& KxCluster::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initializationScript"))
   {
     m_initializationScript = jsonValue.GetString("initializationScript");
-
     m_initializationScriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRole"))
   {
     m_executionRole = jsonValue.GetString("executionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("azMode"))
   {
     m_azMode = KxAzModeMapper::GetKxAzModeForName(jsonValue.GetString("azMode"));
-
     m_azModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("availabilityZoneId");
-
     m_availabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
     m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

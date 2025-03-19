@@ -29,7 +29,7 @@ namespace Model
   class DescribeManagedJobTemplateResult
   {
   public:
-    AWS_IOT_API DescribeManagedJobTemplateResult();
+    AWS_IOT_API DescribeManagedJobTemplateResult() = default;
     AWS_IOT_API DescribeManagedJobTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeManagedJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,66 +38,57 @@ namespace Model
     /**
      * <p>The unique name of a managed template, such as <code>AWS-Reboot</code>.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
-    inline DescribeManagedJobTemplateResult& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    DescribeManagedJobTemplateResult& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique Amazon Resource Name (ARN) of the managed template.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-    inline DescribeManagedJobTemplateResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    DescribeManagedJobTemplateResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique description of a managed template.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeManagedJobTemplateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeManagedJobTemplateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version for a managed template.</p>
      */
-    inline const Aws::String& GetTemplateVersion() const{ return m_templateVersion; }
-    inline void SetTemplateVersion(const Aws::String& value) { m_templateVersion = value; }
-    inline void SetTemplateVersion(Aws::String&& value) { m_templateVersion = std::move(value); }
-    inline void SetTemplateVersion(const char* value) { m_templateVersion.assign(value); }
-    inline DescribeManagedJobTemplateResult& WithTemplateVersion(const Aws::String& value) { SetTemplateVersion(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithTemplateVersion(Aws::String&& value) { SetTemplateVersion(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& WithTemplateVersion(const char* value) { SetTemplateVersion(value); return *this;}
+    inline const Aws::String& GetTemplateVersion() const { return m_templateVersion; }
+    template<typename TemplateVersionT = Aws::String>
+    void SetTemplateVersion(TemplateVersionT&& value) { m_templateVersionHasBeenSet = true; m_templateVersion = std::forward<TemplateVersionT>(value); }
+    template<typename TemplateVersionT = Aws::String>
+    DescribeManagedJobTemplateResult& WithTemplateVersion(TemplateVersionT&& value) { SetTemplateVersion(std::forward<TemplateVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of environments that are supported with the managed job template.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEnvironments() const{ return m_environments; }
-    inline void SetEnvironments(const Aws::Vector<Aws::String>& value) { m_environments = value; }
-    inline void SetEnvironments(Aws::Vector<Aws::String>&& value) { m_environments = std::move(value); }
-    inline DescribeManagedJobTemplateResult& WithEnvironments(const Aws::Vector<Aws::String>& value) { SetEnvironments(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithEnvironments(Aws::Vector<Aws::String>&& value) { SetEnvironments(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& AddEnvironments(const Aws::String& value) { m_environments.push_back(value); return *this; }
-    inline DescribeManagedJobTemplateResult& AddEnvironments(Aws::String&& value) { m_environments.push_back(std::move(value)); return *this; }
-    inline DescribeManagedJobTemplateResult& AddEnvironments(const char* value) { m_environments.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetEnvironments() const { return m_environments; }
+    template<typename EnvironmentsT = Aws::Vector<Aws::String>>
+    void SetEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments = std::forward<EnvironmentsT>(value); }
+    template<typename EnvironmentsT = Aws::Vector<Aws::String>>
+    DescribeManagedJobTemplateResult& WithEnvironments(EnvironmentsT&& value) { SetEnvironments(std::forward<EnvironmentsT>(value)); return *this;}
+    template<typename EnvironmentsT = Aws::String>
+    DescribeManagedJobTemplateResult& AddEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments.emplace_back(std::forward<EnvironmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,55 +99,59 @@ namespace Model
      * Web Services managed templates. This parameter can't be used with custom job
      * templates or to create jobs from them.</p> 
      */
-    inline const Aws::Vector<DocumentParameter>& GetDocumentParameters() const{ return m_documentParameters; }
-    inline void SetDocumentParameters(const Aws::Vector<DocumentParameter>& value) { m_documentParameters = value; }
-    inline void SetDocumentParameters(Aws::Vector<DocumentParameter>&& value) { m_documentParameters = std::move(value); }
-    inline DescribeManagedJobTemplateResult& WithDocumentParameters(const Aws::Vector<DocumentParameter>& value) { SetDocumentParameters(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithDocumentParameters(Aws::Vector<DocumentParameter>&& value) { SetDocumentParameters(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& AddDocumentParameters(const DocumentParameter& value) { m_documentParameters.push_back(value); return *this; }
-    inline DescribeManagedJobTemplateResult& AddDocumentParameters(DocumentParameter&& value) { m_documentParameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DocumentParameter>& GetDocumentParameters() const { return m_documentParameters; }
+    template<typename DocumentParametersT = Aws::Vector<DocumentParameter>>
+    void SetDocumentParameters(DocumentParametersT&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::forward<DocumentParametersT>(value); }
+    template<typename DocumentParametersT = Aws::Vector<DocumentParameter>>
+    DescribeManagedJobTemplateResult& WithDocumentParameters(DocumentParametersT&& value) { SetDocumentParameters(std::forward<DocumentParametersT>(value)); return *this;}
+    template<typename DocumentParametersT = DocumentParameter>
+    DescribeManagedJobTemplateResult& AddDocumentParameters(DocumentParametersT&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace_back(std::forward<DocumentParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The document schema for a managed job template.</p>
      */
-    inline const Aws::String& GetDocument() const{ return m_document; }
-    inline void SetDocument(const Aws::String& value) { m_document = value; }
-    inline void SetDocument(Aws::String&& value) { m_document = std::move(value); }
-    inline void SetDocument(const char* value) { m_document.assign(value); }
-    inline DescribeManagedJobTemplateResult& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& WithDocument(const char* value) { SetDocument(value); return *this;}
+    inline const Aws::String& GetDocument() const { return m_document; }
+    template<typename DocumentT = Aws::String>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Aws::String>
+    DescribeManagedJobTemplateResult& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeManagedJobTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeManagedJobTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeManagedJobTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeManagedJobTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_templateName;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateVersion;
+    bool m_templateVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_environments;
+    bool m_environmentsHasBeenSet = false;
 
     Aws::Vector<DocumentParameter> m_documentParameters;
+    bool m_documentParametersHasBeenSet = false;
 
     Aws::String m_document;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

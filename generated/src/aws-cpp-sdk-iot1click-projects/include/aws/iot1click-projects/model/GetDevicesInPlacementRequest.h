@@ -21,7 +21,7 @@ namespace Model
   class GetDevicesInPlacementRequest : public IoT1ClickProjectsRequest
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API GetDevicesInPlacementRequest();
+    AWS_IOT1CLICKPROJECTS_API GetDevicesInPlacementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the project containing the placement.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline GetDevicesInPlacementRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline GetDevicesInPlacementRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline GetDevicesInPlacementRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    GetDevicesInPlacementRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the placement to get the devices from.</p>
      */
-    inline const Aws::String& GetPlacementName() const{ return m_placementName; }
+    inline const Aws::String& GetPlacementName() const { return m_placementName; }
     inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
-    inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
-    inline void SetPlacementName(Aws::String&& value) { m_placementNameHasBeenSet = true; m_placementName = std::move(value); }
-    inline void SetPlacementName(const char* value) { m_placementNameHasBeenSet = true; m_placementName.assign(value); }
-    inline GetDevicesInPlacementRequest& WithPlacementName(const Aws::String& value) { SetPlacementName(value); return *this;}
-    inline GetDevicesInPlacementRequest& WithPlacementName(Aws::String&& value) { SetPlacementName(std::move(value)); return *this;}
-    inline GetDevicesInPlacementRequest& WithPlacementName(const char* value) { SetPlacementName(value); return *this;}
+    template<typename PlacementNameT = Aws::String>
+    void SetPlacementName(PlacementNameT&& value) { m_placementNameHasBeenSet = true; m_placementName = std::forward<PlacementNameT>(value); }
+    template<typename PlacementNameT = Aws::String>
+    GetDevicesInPlacementRequest& WithPlacementName(PlacementNameT&& value) { SetPlacementName(std::forward<PlacementNameT>(value)); return *this;}
     ///@}
   private:
 

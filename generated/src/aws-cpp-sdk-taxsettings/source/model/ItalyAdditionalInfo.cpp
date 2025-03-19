@@ -18,16 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-ItalyAdditionalInfo::ItalyAdditionalInfo() : 
-    m_cigNumberHasBeenSet(false),
-    m_cupNumberHasBeenSet(false),
-    m_sdiAccountIdHasBeenSet(false),
-    m_taxCodeHasBeenSet(false)
-{
-}
-
 ItalyAdditionalInfo::ItalyAdditionalInfo(JsonView jsonValue)
-  : ItalyAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ItalyAdditionalInfo& ItalyAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cigNumber"))
   {
     m_cigNumber = jsonValue.GetString("cigNumber");
-
     m_cigNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cupNumber"))
   {
     m_cupNumber = jsonValue.GetString("cupNumber");
-
     m_cupNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sdiAccountId"))
   {
     m_sdiAccountId = jsonValue.GetString("sdiAccountId");
-
     m_sdiAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxCode"))
   {
     m_taxCode = jsonValue.GetString("taxCode");
-
     m_taxCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

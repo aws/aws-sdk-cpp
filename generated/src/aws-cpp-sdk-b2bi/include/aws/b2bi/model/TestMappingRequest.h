@@ -22,7 +22,7 @@ namespace Model
   class TestMappingRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API TestMappingRequest();
+    AWS_B2BI_API TestMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Specify the contents of the EDI (electronic data interchange) XML or JSON
      * file that is used as input for the transform.</p>
      */
-    inline const Aws::String& GetInputFileContent() const{ return m_inputFileContent; }
+    inline const Aws::String& GetInputFileContent() const { return m_inputFileContent; }
     inline bool InputFileContentHasBeenSet() const { return m_inputFileContentHasBeenSet; }
-    inline void SetInputFileContent(const Aws::String& value) { m_inputFileContentHasBeenSet = true; m_inputFileContent = value; }
-    inline void SetInputFileContent(Aws::String&& value) { m_inputFileContentHasBeenSet = true; m_inputFileContent = std::move(value); }
-    inline void SetInputFileContent(const char* value) { m_inputFileContentHasBeenSet = true; m_inputFileContent.assign(value); }
-    inline TestMappingRequest& WithInputFileContent(const Aws::String& value) { SetInputFileContent(value); return *this;}
-    inline TestMappingRequest& WithInputFileContent(Aws::String&& value) { SetInputFileContent(std::move(value)); return *this;}
-    inline TestMappingRequest& WithInputFileContent(const char* value) { SetInputFileContent(value); return *this;}
+    template<typename InputFileContentT = Aws::String>
+    void SetInputFileContent(InputFileContentT&& value) { m_inputFileContentHasBeenSet = true; m_inputFileContent = std::forward<InputFileContentT>(value); }
+    template<typename InputFileContentT = Aws::String>
+    TestMappingRequest& WithInputFileContent(InputFileContentT&& value) { SetInputFileContent(std::forward<InputFileContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a>
      * data type instead.</p> 
      */
-    inline const Aws::String& GetMappingTemplate() const{ return m_mappingTemplate; }
+    inline const Aws::String& GetMappingTemplate() const { return m_mappingTemplate; }
     inline bool MappingTemplateHasBeenSet() const { return m_mappingTemplateHasBeenSet; }
-    inline void SetMappingTemplate(const Aws::String& value) { m_mappingTemplateHasBeenSet = true; m_mappingTemplate = value; }
-    inline void SetMappingTemplate(Aws::String&& value) { m_mappingTemplateHasBeenSet = true; m_mappingTemplate = std::move(value); }
-    inline void SetMappingTemplate(const char* value) { m_mappingTemplateHasBeenSet = true; m_mappingTemplate.assign(value); }
-    inline TestMappingRequest& WithMappingTemplate(const Aws::String& value) { SetMappingTemplate(value); return *this;}
-    inline TestMappingRequest& WithMappingTemplate(Aws::String&& value) { SetMappingTemplate(std::move(value)); return *this;}
-    inline TestMappingRequest& WithMappingTemplate(const char* value) { SetMappingTemplate(value); return *this;}
+    template<typename MappingTemplateT = Aws::String>
+    void SetMappingTemplate(MappingTemplateT&& value) { m_mappingTemplateHasBeenSet = true; m_mappingTemplate = std::forward<MappingTemplateT>(value); }
+    template<typename MappingTemplateT = Aws::String>
+    TestMappingRequest& WithMappingTemplate(MappingTemplateT&& value) { SetMappingTemplate(std::forward<MappingTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * <p>Specifies that the currently supported file formats for EDI transformations
      * are <code>JSON</code> and <code>XML</code>.</p>
      */
-    inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline FileFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline TestMappingRequest& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-    inline TestMappingRequest& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(FileFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline TestMappingRequest& WithFileFormat(FileFormat value) { SetFileFormat(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +82,7 @@ namespace Model
     Aws::String m_mappingTemplate;
     bool m_mappingTemplateHasBeenSet = false;
 
-    FileFormat m_fileFormat;
+    FileFormat m_fileFormat{FileFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
   };
 

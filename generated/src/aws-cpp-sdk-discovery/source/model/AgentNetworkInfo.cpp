@@ -18,14 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-AgentNetworkInfo::AgentNetworkInfo() : 
-    m_ipAddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false)
-{
-}
-
 AgentNetworkInfo::AgentNetworkInfo(JsonView jsonValue)
-  : AgentNetworkInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AgentNetworkInfo& AgentNetworkInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macAddress"))
   {
     m_macAddress = jsonValue.GetString("macAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

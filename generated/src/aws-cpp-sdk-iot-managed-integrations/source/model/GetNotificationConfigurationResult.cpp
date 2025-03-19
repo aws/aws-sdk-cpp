@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNotificationConfigurationResult::GetNotificationConfigurationResult() : 
-    m_eventType(EventType::NOT_SET)
-{
-}
-
 GetNotificationConfigurationResult::GetNotificationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetNotificationConfigurationResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ GetNotificationConfigurationResult& GetNotificationConfigurationResult::operator
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("EventType"));
-
+    m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationName"))
   {
     m_destinationName = jsonValue.GetString("DestinationName");
-
+    m_destinationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -62,14 +52,15 @@ GetNotificationConfigurationResult& GetNotificationConfigurationResult::operator
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

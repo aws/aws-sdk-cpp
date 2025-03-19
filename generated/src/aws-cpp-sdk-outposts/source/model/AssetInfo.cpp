@@ -18,18 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-AssetInfo::AssetInfo() : 
-    m_assetIdHasBeenSet(false),
-    m_rackIdHasBeenSet(false),
-    m_assetType(AssetType::NOT_SET),
-    m_assetTypeHasBeenSet(false),
-    m_computeAttributesHasBeenSet(false),
-    m_assetLocationHasBeenSet(false)
-{
-}
-
 AssetInfo::AssetInfo(JsonView jsonValue)
-  : AssetInfo()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AssetInfo& AssetInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssetId"))
   {
     m_assetId = jsonValue.GetString("AssetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RackId"))
   {
     m_rackId = jsonValue.GetString("RackId");
-
     m_rackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetType"))
   {
     m_assetType = AssetTypeMapper::GetAssetTypeForName(jsonValue.GetString("AssetType"));
-
     m_assetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeAttributes"))
   {
     m_computeAttributes = jsonValue.GetObject("ComputeAttributes");
-
     m_computeAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetLocation"))
   {
     m_assetLocation = jsonValue.GetObject("AssetLocation");
-
     m_assetLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

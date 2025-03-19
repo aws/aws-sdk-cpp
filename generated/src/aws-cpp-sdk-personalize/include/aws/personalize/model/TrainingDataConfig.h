@@ -34,7 +34,7 @@ namespace Model
   class TrainingDataConfig
   {
   public:
-    AWS_PERSONALIZE_API TrainingDataConfig();
+    AWS_PERSONALIZE_API TrainingDataConfig() = default;
     AWS_PERSONALIZE_API TrainingDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API TrainingDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,18 +49,16 @@ namespace Model
      * exclude this column from training and Amazon Personalize considers it only when
      * filtering. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetExcludedDatasetColumns() const{ return m_excludedDatasetColumns; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetExcludedDatasetColumns() const { return m_excludedDatasetColumns; }
     inline bool ExcludedDatasetColumnsHasBeenSet() const { return m_excludedDatasetColumnsHasBeenSet; }
-    inline void SetExcludedDatasetColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns = value; }
-    inline void SetExcludedDatasetColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns = std::move(value); }
-    inline TrainingDataConfig& WithExcludedDatasetColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetExcludedDatasetColumns(value); return *this;}
-    inline TrainingDataConfig& WithExcludedDatasetColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetExcludedDatasetColumns(std::move(value)); return *this;}
-    inline TrainingDataConfig& AddExcludedDatasetColumns(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(key, value); return *this; }
-    inline TrainingDataConfig& AddExcludedDatasetColumns(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(std::move(key), value); return *this; }
-    inline TrainingDataConfig& AddExcludedDatasetColumns(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(key, std::move(value)); return *this; }
-    inline TrainingDataConfig& AddExcludedDatasetColumns(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(std::move(key), std::move(value)); return *this; }
-    inline TrainingDataConfig& AddExcludedDatasetColumns(const char* key, Aws::Vector<Aws::String>&& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(key, std::move(value)); return *this; }
-    inline TrainingDataConfig& AddExcludedDatasetColumns(const char* key, const Aws::Vector<Aws::String>& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(key, value); return *this; }
+    template<typename ExcludedDatasetColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetExcludedDatasetColumns(ExcludedDatasetColumnsT&& value) { m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns = std::forward<ExcludedDatasetColumnsT>(value); }
+    template<typename ExcludedDatasetColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    TrainingDataConfig& WithExcludedDatasetColumns(ExcludedDatasetColumnsT&& value) { SetExcludedDatasetColumns(std::forward<ExcludedDatasetColumnsT>(value)); return *this;}
+    template<typename ExcludedDatasetColumnsKeyT = Aws::String, typename ExcludedDatasetColumnsValueT = Aws::Vector<Aws::String>>
+    TrainingDataConfig& AddExcludedDatasetColumns(ExcludedDatasetColumnsKeyT&& key, ExcludedDatasetColumnsValueT&& value) {
+      m_excludedDatasetColumnsHasBeenSet = true; m_excludedDatasetColumns.emplace(std::forward<ExcludedDatasetColumnsKeyT>(key), std::forward<ExcludedDatasetColumnsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

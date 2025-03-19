@@ -27,7 +27,7 @@ namespace Model
   class AssociateUserSettingsResult
   {
   public:
-    AWS_WORKSPACESWEB_API AssociateUserSettingsResult();
+    AWS_WORKSPACESWEB_API AssociateUserSettingsResult() = default;
     AWS_WORKSPACESWEB_API AssociateUserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API AssociateUserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The ARN of the web portal.</p>
      */
-    inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-    inline void SetPortalArn(const Aws::String& value) { m_portalArn = value; }
-    inline void SetPortalArn(Aws::String&& value) { m_portalArn = std::move(value); }
-    inline void SetPortalArn(const char* value) { m_portalArn.assign(value); }
-    inline AssociateUserSettingsResult& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-    inline AssociateUserSettingsResult& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-    inline AssociateUserSettingsResult& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
+    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
+    template<typename PortalArnT = Aws::String>
+    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
+    template<typename PortalArnT = Aws::String>
+    AssociateUserSettingsResult& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the user settings.</p>
      */
-    inline const Aws::String& GetUserSettingsArn() const{ return m_userSettingsArn; }
-    inline void SetUserSettingsArn(const Aws::String& value) { m_userSettingsArn = value; }
-    inline void SetUserSettingsArn(Aws::String&& value) { m_userSettingsArn = std::move(value); }
-    inline void SetUserSettingsArn(const char* value) { m_userSettingsArn.assign(value); }
-    inline AssociateUserSettingsResult& WithUserSettingsArn(const Aws::String& value) { SetUserSettingsArn(value); return *this;}
-    inline AssociateUserSettingsResult& WithUserSettingsArn(Aws::String&& value) { SetUserSettingsArn(std::move(value)); return *this;}
-    inline AssociateUserSettingsResult& WithUserSettingsArn(const char* value) { SetUserSettingsArn(value); return *this;}
+    inline const Aws::String& GetUserSettingsArn() const { return m_userSettingsArn; }
+    template<typename UserSettingsArnT = Aws::String>
+    void SetUserSettingsArn(UserSettingsArnT&& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = std::forward<UserSettingsArnT>(value); }
+    template<typename UserSettingsArnT = Aws::String>
+    AssociateUserSettingsResult& WithUserSettingsArn(UserSettingsArnT&& value) { SetUserSettingsArn(std::forward<UserSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateUserSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateUserSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateUserSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateUserSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_portalArn;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_userSettingsArn;
+    bool m_userSettingsArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

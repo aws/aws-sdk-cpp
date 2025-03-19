@@ -18,22 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollPrice::RouteTollPrice() : 
-    m_currencyHasBeenSet(false),
-    m_estimate(false),
-    m_estimateHasBeenSet(false),
-    m_perDuration(0),
-    m_perDurationHasBeenSet(false),
-    m_range(false),
-    m_rangeHasBeenSet(false),
-    m_rangeValueHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 RouteTollPrice::RouteTollPrice(JsonView jsonValue)
-  : RouteTollPrice()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ RouteTollPrice& RouteTollPrice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Currency"))
   {
     m_currency = jsonValue.GetString("Currency");
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Estimate"))
   {
     m_estimate = jsonValue.GetBool("Estimate");
-
     m_estimateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PerDuration"))
   {
     m_perDuration = jsonValue.GetInt64("PerDuration");
-
     m_perDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetBool("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RangeValue"))
   {
     m_rangeValue = jsonValue.GetObject("RangeValue");
-
     m_rangeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

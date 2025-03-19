@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLoggerDefinitionVersionRequest::GetLoggerDefinitionVersionRequest() : 
-    m_loggerDefinitionIdHasBeenSet(false),
-    m_loggerDefinitionVersionIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetLoggerDefinitionVersionRequest::SerializePayload() const
 {
   return {};

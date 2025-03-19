@@ -32,7 +32,7 @@ namespace Model
   class MaximumAllowedResources
   {
   public:
-    AWS_EMRSERVERLESS_API MaximumAllowedResources();
+    AWS_EMRSERVERLESS_API MaximumAllowedResources() = default;
     AWS_EMRSERVERLESS_API MaximumAllowedResources(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API MaximumAllowedResources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The maximum allowed CPU for an application.</p>
      */
-    inline const Aws::String& GetCpu() const{ return m_cpu; }
+    inline const Aws::String& GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-    inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
-    inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
-    inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
-    inline MaximumAllowedResources& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
-    inline MaximumAllowedResources& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
-    inline MaximumAllowedResources& WithCpu(const char* value) { SetCpu(value); return *this;}
+    template<typename CpuT = Aws::String>
+    void SetCpu(CpuT&& value) { m_cpuHasBeenSet = true; m_cpu = std::forward<CpuT>(value); }
+    template<typename CpuT = Aws::String>
+    MaximumAllowedResources& WithCpu(CpuT&& value) { SetCpu(std::forward<CpuT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum allowed resources for an application.</p>
      */
-    inline const Aws::String& GetMemory() const{ return m_memory; }
+    inline const Aws::String& GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-    inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
-    inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
-    inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
-    inline MaximumAllowedResources& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
-    inline MaximumAllowedResources& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
-    inline MaximumAllowedResources& WithMemory(const char* value) { SetMemory(value); return *this;}
+    template<typename MemoryT = Aws::String>
+    void SetMemory(MemoryT&& value) { m_memoryHasBeenSet = true; m_memory = std::forward<MemoryT>(value); }
+    template<typename MemoryT = Aws::String>
+    MaximumAllowedResources& WithMemory(MemoryT&& value) { SetMemory(std::forward<MemoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum allowed disk for an application.</p>
      */
-    inline const Aws::String& GetDisk() const{ return m_disk; }
+    inline const Aws::String& GetDisk() const { return m_disk; }
     inline bool DiskHasBeenSet() const { return m_diskHasBeenSet; }
-    inline void SetDisk(const Aws::String& value) { m_diskHasBeenSet = true; m_disk = value; }
-    inline void SetDisk(Aws::String&& value) { m_diskHasBeenSet = true; m_disk = std::move(value); }
-    inline void SetDisk(const char* value) { m_diskHasBeenSet = true; m_disk.assign(value); }
-    inline MaximumAllowedResources& WithDisk(const Aws::String& value) { SetDisk(value); return *this;}
-    inline MaximumAllowedResources& WithDisk(Aws::String&& value) { SetDisk(std::move(value)); return *this;}
-    inline MaximumAllowedResources& WithDisk(const char* value) { SetDisk(value); return *this;}
+    template<typename DiskT = Aws::String>
+    void SetDisk(DiskT&& value) { m_diskHasBeenSet = true; m_disk = std::forward<DiskT>(value); }
+    template<typename DiskT = Aws::String>
+    MaximumAllowedResources& WithDisk(DiskT&& value) { SetDisk(std::forward<DiskT>(value)); return *this;}
     ///@}
   private:
 

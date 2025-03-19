@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MaintenanceWindow::MaintenanceWindow() : 
-    m_startTimeHasBeenSet(false),
-    m_durationInMinutes(0),
-    m_durationInMinutesHasBeenSet(false)
-{
-}
-
 MaintenanceWindow::MaintenanceWindow(JsonView jsonValue)
-  : MaintenanceWindow()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MaintenanceWindow& MaintenanceWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationInMinutes"))
   {
     m_durationInMinutes = jsonValue.GetInteger("durationInMinutes");
-
     m_durationInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

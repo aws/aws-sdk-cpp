@@ -33,7 +33,7 @@ namespace Model
   class ExternalSourceConfiguration
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API ExternalSourceConfiguration();
+    AWS_CONNECTWISDOMSERVICE_API ExternalSourceConfiguration() = default;
     AWS_CONNECTWISDOMSERVICE_API ExternalSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API ExternalSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The configuration information of the external data source.</p>
      */
-    inline const Configuration& GetConfiguration() const{ return m_configuration; }
+    inline const Configuration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const Configuration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(Configuration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline ExternalSourceConfiguration& WithConfiguration(const Configuration& value) { SetConfiguration(value); return *this;}
-    inline ExternalSourceConfiguration& WithConfiguration(Configuration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = Configuration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Configuration>
+    ExternalSourceConfiguration& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the external data source.</p>
      */
-    inline const ExternalSource& GetSource() const{ return m_source; }
+    inline ExternalSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ExternalSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ExternalSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline ExternalSourceConfiguration& WithSource(const ExternalSource& value) { SetSource(value); return *this;}
-    inline ExternalSourceConfiguration& WithSource(ExternalSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(ExternalSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline ExternalSourceConfiguration& WithSource(ExternalSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
     Configuration m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    ExternalSource m_source;
+    ExternalSource m_source{ExternalSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

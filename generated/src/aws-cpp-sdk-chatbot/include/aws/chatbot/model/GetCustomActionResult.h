@@ -28,7 +28,7 @@ namespace Model
   class GetCustomActionResult
   {
   public:
-    AWS_CHATBOT_API GetCustomActionResult();
+    AWS_CHATBOT_API GetCustomActionResult() = default;
     AWS_CHATBOT_API GetCustomActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API GetCustomActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns the custom action.</p>
      */
-    inline const CustomAction& GetCustomAction() const{ return m_customAction; }
-    inline void SetCustomAction(const CustomAction& value) { m_customAction = value; }
-    inline void SetCustomAction(CustomAction&& value) { m_customAction = std::move(value); }
-    inline GetCustomActionResult& WithCustomAction(const CustomAction& value) { SetCustomAction(value); return *this;}
-    inline GetCustomActionResult& WithCustomAction(CustomAction&& value) { SetCustomAction(std::move(value)); return *this;}
+    inline const CustomAction& GetCustomAction() const { return m_customAction; }
+    template<typename CustomActionT = CustomAction>
+    void SetCustomAction(CustomActionT&& value) { m_customActionHasBeenSet = true; m_customAction = std::forward<CustomActionT>(value); }
+    template<typename CustomActionT = CustomAction>
+    GetCustomActionResult& WithCustomAction(CustomActionT&& value) { SetCustomAction(std::forward<CustomActionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCustomActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCustomActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCustomActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCustomActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CustomAction m_customAction;
+    bool m_customActionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitializeServiceRequest::InitializeServiceRequest()
-{
-}
-
 Aws::String InitializeServiceRequest::SerializePayload() const
 {
   return {};

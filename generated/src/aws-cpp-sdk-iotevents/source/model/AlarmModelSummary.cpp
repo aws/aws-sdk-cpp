@@ -18,15 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-AlarmModelSummary::AlarmModelSummary() : 
-    m_creationTimeHasBeenSet(false),
-    m_alarmModelDescriptionHasBeenSet(false),
-    m_alarmModelNameHasBeenSet(false)
-{
-}
-
 AlarmModelSummary::AlarmModelSummary(JsonView jsonValue)
-  : AlarmModelSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AlarmModelSummary& AlarmModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelDescription"))
   {
     m_alarmModelDescription = jsonValue.GetString("alarmModelDescription");
-
     m_alarmModelDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelName"))
   {
     m_alarmModelName = jsonValue.GetString("alarmModelName");
-
     m_alarmModelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

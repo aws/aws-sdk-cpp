@@ -32,7 +32,7 @@ namespace Model
   class DataIntegrationFlowS3Options
   {
   public:
-    AWS_SUPPLYCHAIN_API DataIntegrationFlowS3Options();
+    AWS_SUPPLYCHAIN_API DataIntegrationFlowS3Options() = default;
     AWS_SUPPLYCHAIN_API DataIntegrationFlowS3Options(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataIntegrationFlowS3Options& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The Amazon S3 file type in S3 options.</p>
      */
-    inline const DataIntegrationFlowFileType& GetFileType() const{ return m_fileType; }
+    inline DataIntegrationFlowFileType GetFileType() const { return m_fileType; }
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
-    inline void SetFileType(const DataIntegrationFlowFileType& value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
-    inline void SetFileType(DataIntegrationFlowFileType&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::move(value); }
-    inline DataIntegrationFlowS3Options& WithFileType(const DataIntegrationFlowFileType& value) { SetFileType(value); return *this;}
-    inline DataIntegrationFlowS3Options& WithFileType(DataIntegrationFlowFileType&& value) { SetFileType(std::move(value)); return *this;}
+    inline void SetFileType(DataIntegrationFlowFileType value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
+    inline DataIntegrationFlowS3Options& WithFileType(DataIntegrationFlowFileType value) { SetFileType(value); return *this;}
     ///@}
   private:
 
-    DataIntegrationFlowFileType m_fileType;
+    DataIntegrationFlowFileType m_fileType{DataIntegrationFlowFileType::NOT_SET};
     bool m_fileTypeHasBeenSet = false;
   };
 

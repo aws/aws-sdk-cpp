@@ -34,7 +34,7 @@ namespace Model
   class EventsResponse
   {
   public:
-    AWS_PINPOINT_API EventsResponse();
+    AWS_PINPOINT_API EventsResponse() = default;
     AWS_PINPOINT_API EventsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EventsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,18 +48,16 @@ namespace Model
      * request was processed successfully; or 400, the payload wasn't valid or required
      * fields were missing.</p>
      */
-    inline const Aws::Map<Aws::String, ItemResponse>& GetResults() const{ return m_results; }
+    inline const Aws::Map<Aws::String, ItemResponse>& GetResults() const { return m_results; }
     inline bool ResultsHasBeenSet() const { return m_resultsHasBeenSet; }
-    inline void SetResults(const Aws::Map<Aws::String, ItemResponse>& value) { m_resultsHasBeenSet = true; m_results = value; }
-    inline void SetResults(Aws::Map<Aws::String, ItemResponse>&& value) { m_resultsHasBeenSet = true; m_results = std::move(value); }
-    inline EventsResponse& WithResults(const Aws::Map<Aws::String, ItemResponse>& value) { SetResults(value); return *this;}
-    inline EventsResponse& WithResults(Aws::Map<Aws::String, ItemResponse>&& value) { SetResults(std::move(value)); return *this;}
-    inline EventsResponse& AddResults(const Aws::String& key, const ItemResponse& value) { m_resultsHasBeenSet = true; m_results.emplace(key, value); return *this; }
-    inline EventsResponse& AddResults(Aws::String&& key, const ItemResponse& value) { m_resultsHasBeenSet = true; m_results.emplace(std::move(key), value); return *this; }
-    inline EventsResponse& AddResults(const Aws::String& key, ItemResponse&& value) { m_resultsHasBeenSet = true; m_results.emplace(key, std::move(value)); return *this; }
-    inline EventsResponse& AddResults(Aws::String&& key, ItemResponse&& value) { m_resultsHasBeenSet = true; m_results.emplace(std::move(key), std::move(value)); return *this; }
-    inline EventsResponse& AddResults(const char* key, ItemResponse&& value) { m_resultsHasBeenSet = true; m_results.emplace(key, std::move(value)); return *this; }
-    inline EventsResponse& AddResults(const char* key, const ItemResponse& value) { m_resultsHasBeenSet = true; m_results.emplace(key, value); return *this; }
+    template<typename ResultsT = Aws::Map<Aws::String, ItemResponse>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Map<Aws::String, ItemResponse>>
+    EventsResponse& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsKeyT = Aws::String, typename ResultsValueT = ItemResponse>
+    EventsResponse& AddResults(ResultsKeyT&& key, ResultsValueT&& value) {
+      m_resultsHasBeenSet = true; m_results.emplace(std::forward<ResultsKeyT>(key), std::forward<ResultsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

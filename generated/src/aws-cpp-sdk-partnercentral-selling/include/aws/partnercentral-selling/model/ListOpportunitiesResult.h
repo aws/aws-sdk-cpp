@@ -29,7 +29,7 @@ namespace Model
   class ListOpportunitiesResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListOpportunitiesResult();
+    AWS_PARTNERCENTRALSELLING_API ListOpportunitiesResult() = default;
     AWS_PARTNERCENTRALSELLING_API ListOpportunitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API ListOpportunitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * calls. This token is included in the response only if there are additional
      * result pages available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOpportunitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOpportunitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOpportunitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOpportunitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * request criteria. This summary view provides a quick overview of relevant
      * opportunities.</p>
      */
-    inline const Aws::Vector<OpportunitySummary>& GetOpportunitySummaries() const{ return m_opportunitySummaries; }
-    inline void SetOpportunitySummaries(const Aws::Vector<OpportunitySummary>& value) { m_opportunitySummaries = value; }
-    inline void SetOpportunitySummaries(Aws::Vector<OpportunitySummary>&& value) { m_opportunitySummaries = std::move(value); }
-    inline ListOpportunitiesResult& WithOpportunitySummaries(const Aws::Vector<OpportunitySummary>& value) { SetOpportunitySummaries(value); return *this;}
-    inline ListOpportunitiesResult& WithOpportunitySummaries(Aws::Vector<OpportunitySummary>&& value) { SetOpportunitySummaries(std::move(value)); return *this;}
-    inline ListOpportunitiesResult& AddOpportunitySummaries(const OpportunitySummary& value) { m_opportunitySummaries.push_back(value); return *this; }
-    inline ListOpportunitiesResult& AddOpportunitySummaries(OpportunitySummary&& value) { m_opportunitySummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OpportunitySummary>& GetOpportunitySummaries() const { return m_opportunitySummaries; }
+    template<typename OpportunitySummariesT = Aws::Vector<OpportunitySummary>>
+    void SetOpportunitySummaries(OpportunitySummariesT&& value) { m_opportunitySummariesHasBeenSet = true; m_opportunitySummaries = std::forward<OpportunitySummariesT>(value); }
+    template<typename OpportunitySummariesT = Aws::Vector<OpportunitySummary>>
+    ListOpportunitiesResult& WithOpportunitySummaries(OpportunitySummariesT&& value) { SetOpportunitySummaries(std::forward<OpportunitySummariesT>(value)); return *this;}
+    template<typename OpportunitySummariesT = OpportunitySummary>
+    ListOpportunitiesResult& AddOpportunitySummaries(OpportunitySummariesT&& value) { m_opportunitySummariesHasBeenSet = true; m_opportunitySummaries.emplace_back(std::forward<OpportunitySummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOpportunitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOpportunitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOpportunitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOpportunitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<OpportunitySummary> m_opportunitySummaries;
+    bool m_opportunitySummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-PlaceGeometry::PlaceGeometry() : 
-    m_pointHasBeenSet(false)
-{
-}
-
 PlaceGeometry::PlaceGeometry(JsonView jsonValue)
-  : PlaceGeometry()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PlaceGeometry& PlaceGeometry::operator =(JsonView jsonValue)
     }
     m_pointHasBeenSet = true;
   }
-
   return *this;
 }
 

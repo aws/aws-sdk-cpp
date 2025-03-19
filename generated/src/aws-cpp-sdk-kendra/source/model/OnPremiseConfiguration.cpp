@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-OnPremiseConfiguration::OnPremiseConfiguration() : 
-    m_hostUrlHasBeenSet(false),
-    m_organizationNameHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false)
-{
-}
-
 OnPremiseConfiguration::OnPremiseConfiguration(JsonView jsonValue)
-  : OnPremiseConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OnPremiseConfiguration& OnPremiseConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HostUrl"))
   {
     m_hostUrl = jsonValue.GetString("HostUrl");
-
     m_hostUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationName"))
   {
     m_organizationName = jsonValue.GetString("OrganizationName");
-
     m_organizationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslCertificateS3Path"))
   {
     m_sslCertificateS3Path = jsonValue.GetObject("SslCertificateS3Path");
-
     m_sslCertificateS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

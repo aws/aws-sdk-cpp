@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelMessageStatusStructure::ChannelMessageStatusStructure() : 
-    m_value(ChannelMessageStatus::NOT_SET),
-    m_valueHasBeenSet(false),
-    m_detailHasBeenSet(false)
-{
-}
-
 ChannelMessageStatusStructure::ChannelMessageStatusStructure(JsonView jsonValue)
-  : ChannelMessageStatusStructure()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ChannelMessageStatusStructure& ChannelMessageStatusStructure::operator =(JsonVie
   if(jsonValue.ValueExists("Value"))
   {
     m_value = ChannelMessageStatusMapper::GetChannelMessageStatusForName(jsonValue.GetString("Value"));
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Detail"))
   {
     m_detail = jsonValue.GetString("Detail");
-
     m_detailHasBeenSet = true;
   }
-
   return *this;
 }
 

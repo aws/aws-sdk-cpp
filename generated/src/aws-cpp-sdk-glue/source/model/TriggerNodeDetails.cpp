@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TriggerNodeDetails::TriggerNodeDetails() : 
-    m_triggerHasBeenSet(false)
-{
-}
-
 TriggerNodeDetails::TriggerNodeDetails(JsonView jsonValue)
-  : TriggerNodeDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TriggerNodeDetails& TriggerNodeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Trigger"))
   {
     m_trigger = jsonValue.GetObject("Trigger");
-
     m_triggerHasBeenSet = true;
   }
-
   return *this;
 }
 

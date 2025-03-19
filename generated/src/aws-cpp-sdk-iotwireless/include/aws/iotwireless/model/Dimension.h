@@ -32,7 +32,7 @@ namespace Model
   class Dimension
   {
   public:
-    AWS_IOTWIRELESS_API Dimension();
+    AWS_IOTWIRELESS_API Dimension() = default;
     AWS_IOTWIRELESS_API Dimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The name of the dimension.</p>
      */
-    inline const DimensionName& GetName() const{ return m_name; }
+    inline DimensionName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DimensionName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DimensionName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline Dimension& WithName(const DimensionName& value) { SetName(value); return *this;}
-    inline Dimension& WithName(DimensionName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DimensionName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline Dimension& WithName(DimensionName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimension's value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Dimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Dimension& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    DimensionName m_name;
+    DimensionName m_name{DimensionName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

@@ -36,7 +36,7 @@ namespace Model
   class RDSEffectiveRecommendationPreferences
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RDSEffectiveRecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API RDSEffectiveRecommendationPreferences() = default;
     AWS_COMPUTEOPTIMIZER_API RDSEffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RDSEffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,13 @@ namespace Model
      * <p> Describes the CPU vendor and architecture for Amazon RDS recommendations.
      * </p>
      */
-    inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const{ return m_cpuVendorArchitectures; }
+    inline const Aws::Vector<CpuVendorArchitecture>& GetCpuVendorArchitectures() const { return m_cpuVendorArchitectures; }
     inline bool CpuVendorArchitecturesHasBeenSet() const { return m_cpuVendorArchitecturesHasBeenSet; }
-    inline void SetCpuVendorArchitectures(const Aws::Vector<CpuVendorArchitecture>& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = value; }
-    inline void SetCpuVendorArchitectures(Aws::Vector<CpuVendorArchitecture>&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = std::move(value); }
-    inline RDSEffectiveRecommendationPreferences& WithCpuVendorArchitectures(const Aws::Vector<CpuVendorArchitecture>& value) { SetCpuVendorArchitectures(value); return *this;}
-    inline RDSEffectiveRecommendationPreferences& WithCpuVendorArchitectures(Aws::Vector<CpuVendorArchitecture>&& value) { SetCpuVendorArchitectures(std::move(value)); return *this;}
-    inline RDSEffectiveRecommendationPreferences& AddCpuVendorArchitectures(const CpuVendorArchitecture& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(value); return *this; }
-    inline RDSEffectiveRecommendationPreferences& AddCpuVendorArchitectures(CpuVendorArchitecture&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(std::move(value)); return *this; }
+    template<typename CpuVendorArchitecturesT = Aws::Vector<CpuVendorArchitecture>>
+    void SetCpuVendorArchitectures(CpuVendorArchitecturesT&& value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures = std::forward<CpuVendorArchitecturesT>(value); }
+    template<typename CpuVendorArchitecturesT = Aws::Vector<CpuVendorArchitecture>>
+    RDSEffectiveRecommendationPreferences& WithCpuVendorArchitectures(CpuVendorArchitecturesT&& value) { SetCpuVendorArchitectures(std::forward<CpuVendorArchitecturesT>(value)); return *this;}
+    inline RDSEffectiveRecommendationPreferences& AddCpuVendorArchitectures(CpuVendorArchitecture value) { m_cpuVendorArchitecturesHasBeenSet = true; m_cpuVendorArchitectures.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -67,12 +66,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
      * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>. </p>
      */
-    inline const EnhancedInfrastructureMetrics& GetEnhancedInfrastructureMetrics() const{ return m_enhancedInfrastructureMetrics; }
+    inline EnhancedInfrastructureMetrics GetEnhancedInfrastructureMetrics() const { return m_enhancedInfrastructureMetrics; }
     inline bool EnhancedInfrastructureMetricsHasBeenSet() const { return m_enhancedInfrastructureMetricsHasBeenSet; }
-    inline void SetEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
-    inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = std::move(value); }
-    inline RDSEffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(const EnhancedInfrastructureMetrics& value) { SetEnhancedInfrastructureMetrics(value); return *this;}
-    inline RDSEffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics&& value) { SetEnhancedInfrastructureMetrics(std::move(value)); return *this;}
+    inline void SetEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics value) { m_enhancedInfrastructureMetricsHasBeenSet = true; m_enhancedInfrastructureMetrics = value; }
+    inline RDSEffectiveRecommendationPreferences& WithEnhancedInfrastructureMetrics(EnhancedInfrastructureMetrics value) { SetEnhancedInfrastructureMetrics(value); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +77,10 @@ namespace Model
      * <p> The number of days the utilization metrics of the Amazon RDS are analyzed.
      * </p>
      */
-    inline const LookBackPeriodPreference& GetLookBackPeriod() const{ return m_lookBackPeriod; }
+    inline LookBackPeriodPreference GetLookBackPeriod() const { return m_lookBackPeriod; }
     inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
-    inline void SetLookBackPeriod(const LookBackPeriodPreference& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
-    inline void SetLookBackPeriod(LookBackPeriodPreference&& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = std::move(value); }
-    inline RDSEffectiveRecommendationPreferences& WithLookBackPeriod(const LookBackPeriodPreference& value) { SetLookBackPeriod(value); return *this;}
-    inline RDSEffectiveRecommendationPreferences& WithLookBackPeriod(LookBackPeriodPreference&& value) { SetLookBackPeriod(std::move(value)); return *this;}
+    inline void SetLookBackPeriod(LookBackPeriodPreference value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
+    inline RDSEffectiveRecommendationPreferences& WithLookBackPeriod(LookBackPeriodPreference value) { SetLookBackPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -93,22 +88,22 @@ namespace Model
      * <p> Describes the savings estimation mode preference applied for calculating
      * savings opportunity for Amazon RDS. </p>
      */
-    inline const RDSSavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
+    inline const RDSSavingsEstimationMode& GetSavingsEstimationMode() const { return m_savingsEstimationMode; }
     inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
-    inline void SetSavingsEstimationMode(const RDSSavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
-    inline void SetSavingsEstimationMode(RDSSavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
-    inline RDSEffectiveRecommendationPreferences& WithSavingsEstimationMode(const RDSSavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
-    inline RDSEffectiveRecommendationPreferences& WithSavingsEstimationMode(RDSSavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+    template<typename SavingsEstimationModeT = RDSSavingsEstimationMode>
+    void SetSavingsEstimationMode(SavingsEstimationModeT&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::forward<SavingsEstimationModeT>(value); }
+    template<typename SavingsEstimationModeT = RDSSavingsEstimationMode>
+    RDSEffectiveRecommendationPreferences& WithSavingsEstimationMode(SavingsEstimationModeT&& value) { SetSavingsEstimationMode(std::forward<SavingsEstimationModeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
     bool m_cpuVendorArchitecturesHasBeenSet = false;
 
-    EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
+    EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
     bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
-    LookBackPeriodPreference m_lookBackPeriod;
+    LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
     bool m_lookBackPeriodHasBeenSet = false;
 
     RDSSavingsEstimationMode m_savingsEstimationMode;

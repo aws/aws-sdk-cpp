@@ -31,7 +31,7 @@ namespace Model
   class H264QvbrSettings
   {
   public:
-    AWS_MEDIACONVERT_API H264QvbrSettings();
+    AWS_MEDIACONVERT_API H264QvbrSettings() = default;
     AWS_MEDIACONVERT_API H264QvbrSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API H264QvbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * element is less than or equal to the value you set multiplied by the number of
      * seconds of encoded output.
      */
-    inline int GetMaxAverageBitrate() const{ return m_maxAverageBitrate; }
+    inline int GetMaxAverageBitrate() const { return m_maxAverageBitrate; }
     inline bool MaxAverageBitrateHasBeenSet() const { return m_maxAverageBitrateHasBeenSet; }
     inline void SetMaxAverageBitrate(int value) { m_maxAverageBitrateHasBeenSet = true; m_maxAverageBitrate = value; }
     inline H264QvbrSettings& WithMaxAverageBitrate(int value) { SetMaxAverageBitrate(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to
      * .33.
      */
-    inline int GetQvbrQualityLevel() const{ return m_qvbrQualityLevel; }
+    inline int GetQvbrQualityLevel() const { return m_qvbrQualityLevel; }
     inline bool QvbrQualityLevelHasBeenSet() const { return m_qvbrQualityLevelHasBeenSet; }
     inline void SetQvbrQualityLevel(int value) { m_qvbrQualityLevelHasBeenSet = true; m_qvbrQualityLevel = value; }
     inline H264QvbrSettings& WithQvbrQualityLevel(int value) { SetQvbrQualityLevel(value); return *this;}
@@ -82,20 +82,20 @@ namespace Model
      * number. For example, if you set qvbrQualityLevel to 7 and you set
      * qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
      */
-    inline double GetQvbrQualityLevelFineTune() const{ return m_qvbrQualityLevelFineTune; }
+    inline double GetQvbrQualityLevelFineTune() const { return m_qvbrQualityLevelFineTune; }
     inline bool QvbrQualityLevelFineTuneHasBeenSet() const { return m_qvbrQualityLevelFineTuneHasBeenSet; }
     inline void SetQvbrQualityLevelFineTune(double value) { m_qvbrQualityLevelFineTuneHasBeenSet = true; m_qvbrQualityLevelFineTune = value; }
     inline H264QvbrSettings& WithQvbrQualityLevelFineTune(double value) { SetQvbrQualityLevelFineTune(value); return *this;}
     ///@}
   private:
 
-    int m_maxAverageBitrate;
+    int m_maxAverageBitrate{0};
     bool m_maxAverageBitrateHasBeenSet = false;
 
-    int m_qvbrQualityLevel;
+    int m_qvbrQualityLevel{0};
     bool m_qvbrQualityLevelHasBeenSet = false;
 
-    double m_qvbrQualityLevelFineTune;
+    double m_qvbrQualityLevelFineTune{0.0};
     bool m_qvbrQualityLevelFineTuneHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSigningCertificateRequest::GetSigningCertificateRequest() : 
-    m_userPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSigningCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

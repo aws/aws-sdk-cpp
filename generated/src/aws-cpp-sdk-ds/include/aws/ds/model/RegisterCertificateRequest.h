@@ -23,7 +23,7 @@ namespace Model
   class RegisterCertificateRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API RegisterCertificateRequest();
+    AWS_DIRECTORYSERVICE_API RegisterCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline RegisterCertificateRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline RegisterCertificateRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline RegisterCertificateRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    RegisterCertificateRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The certificate PEM string that needs to be registered.</p>
      */
-    inline const Aws::String& GetCertificateData() const{ return m_certificateData; }
+    inline const Aws::String& GetCertificateData() const { return m_certificateData; }
     inline bool CertificateDataHasBeenSet() const { return m_certificateDataHasBeenSet; }
-    inline void SetCertificateData(const Aws::String& value) { m_certificateDataHasBeenSet = true; m_certificateData = value; }
-    inline void SetCertificateData(Aws::String&& value) { m_certificateDataHasBeenSet = true; m_certificateData = std::move(value); }
-    inline void SetCertificateData(const char* value) { m_certificateDataHasBeenSet = true; m_certificateData.assign(value); }
-    inline RegisterCertificateRequest& WithCertificateData(const Aws::String& value) { SetCertificateData(value); return *this;}
-    inline RegisterCertificateRequest& WithCertificateData(Aws::String&& value) { SetCertificateData(std::move(value)); return *this;}
-    inline RegisterCertificateRequest& WithCertificateData(const char* value) { SetCertificateData(value); return *this;}
+    template<typename CertificateDataT = Aws::String>
+    void SetCertificateData(CertificateDataT&& value) { m_certificateDataHasBeenSet = true; m_certificateData = std::forward<CertificateDataT>(value); }
+    template<typename CertificateDataT = Aws::String>
+    RegisterCertificateRequest& WithCertificateData(CertificateDataT&& value) { SetCertificateData(std::forward<CertificateDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +66,10 @@ namespace Model
      * <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is
      * <code>ClientLDAPS</code>.</p>
      */
-    inline const CertificateType& GetType() const{ return m_type; }
+    inline CertificateType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RegisterCertificateRequest& WithType(const CertificateType& value) { SetType(value); return *this;}
-    inline RegisterCertificateRequest& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CertificateType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RegisterCertificateRequest& WithType(CertificateType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +77,12 @@ namespace Model
      * <p>A <code>ClientCertAuthSettings</code> object that contains client certificate
      * authentication settings.</p>
      */
-    inline const ClientCertAuthSettings& GetClientCertAuthSettings() const{ return m_clientCertAuthSettings; }
+    inline const ClientCertAuthSettings& GetClientCertAuthSettings() const { return m_clientCertAuthSettings; }
     inline bool ClientCertAuthSettingsHasBeenSet() const { return m_clientCertAuthSettingsHasBeenSet; }
-    inline void SetClientCertAuthSettings(const ClientCertAuthSettings& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = value; }
-    inline void SetClientCertAuthSettings(ClientCertAuthSettings&& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = std::move(value); }
-    inline RegisterCertificateRequest& WithClientCertAuthSettings(const ClientCertAuthSettings& value) { SetClientCertAuthSettings(value); return *this;}
-    inline RegisterCertificateRequest& WithClientCertAuthSettings(ClientCertAuthSettings&& value) { SetClientCertAuthSettings(std::move(value)); return *this;}
+    template<typename ClientCertAuthSettingsT = ClientCertAuthSettings>
+    void SetClientCertAuthSettings(ClientCertAuthSettingsT&& value) { m_clientCertAuthSettingsHasBeenSet = true; m_clientCertAuthSettings = std::forward<ClientCertAuthSettingsT>(value); }
+    template<typename ClientCertAuthSettingsT = ClientCertAuthSettings>
+    RegisterCertificateRequest& WithClientCertAuthSettings(ClientCertAuthSettingsT&& value) { SetClientCertAuthSettings(std::forward<ClientCertAuthSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +92,7 @@ namespace Model
     Aws::String m_certificateData;
     bool m_certificateDataHasBeenSet = false;
 
-    CertificateType m_type;
+    CertificateType m_type{CertificateType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     ClientCertAuthSettings m_clientCertAuthSettings;

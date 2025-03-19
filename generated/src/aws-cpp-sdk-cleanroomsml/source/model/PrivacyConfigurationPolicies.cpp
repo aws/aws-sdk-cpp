@@ -18,15 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-PrivacyConfigurationPolicies::PrivacyConfigurationPolicies() : 
-    m_trainedModelsHasBeenSet(false),
-    m_trainedModelExportsHasBeenSet(false),
-    m_trainedModelInferenceJobsHasBeenSet(false)
-{
-}
-
 PrivacyConfigurationPolicies::PrivacyConfigurationPolicies(JsonView jsonValue)
-  : PrivacyConfigurationPolicies()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PrivacyConfigurationPolicies& PrivacyConfigurationPolicies::operator =(JsonView 
   if(jsonValue.ValueExists("trainedModels"))
   {
     m_trainedModels = jsonValue.GetObject("trainedModels");
-
     m_trainedModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainedModelExports"))
   {
     m_trainedModelExports = jsonValue.GetObject("trainedModelExports");
-
     m_trainedModelExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainedModelInferenceJobs"))
   {
     m_trainedModelInferenceJobs = jsonValue.GetObject("trainedModelInferenceJobs");
-
     m_trainedModelInferenceJobsHasBeenSet = true;
   }
-
   return *this;
 }
 

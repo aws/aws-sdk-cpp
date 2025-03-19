@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-InputDataConfig::InputDataConfig() : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_supplementaryFeaturesHasBeenSet(false)
-{
-}
-
 InputDataConfig::InputDataConfig(JsonView jsonValue)
-  : InputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("DatasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupplementaryFeatures"))
   {
     Aws::Utils::Array<JsonView> supplementaryFeaturesJsonList = jsonValue.GetArray("SupplementaryFeatures");
@@ -48,7 +39,6 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
     }
     m_supplementaryFeaturesHasBeenSet = true;
   }
-
   return *this;
 }
 

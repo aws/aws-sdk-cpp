@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-OutpostConfigRequest::OutpostConfigRequest() : 
-    m_outpostArnsHasBeenSet(false),
-    m_controlPlaneInstanceTypeHasBeenSet(false),
-    m_controlPlanePlacementHasBeenSet(false)
-{
-}
-
 OutpostConfigRequest::OutpostConfigRequest(JsonView jsonValue)
-  : OutpostConfigRequest()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ OutpostConfigRequest& OutpostConfigRequest::operator =(JsonView jsonValue)
     }
     m_outpostArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlPlaneInstanceType"))
   {
     m_controlPlaneInstanceType = jsonValue.GetString("controlPlaneInstanceType");
-
     m_controlPlaneInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlPlanePlacement"))
   {
     m_controlPlanePlacement = jsonValue.GetObject("controlPlanePlacement");
-
     m_controlPlanePlacementHasBeenSet = true;
   }
-
   return *this;
 }
 

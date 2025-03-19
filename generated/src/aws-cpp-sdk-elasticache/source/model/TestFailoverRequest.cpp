@@ -10,12 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-TestFailoverRequest::TestFailoverRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_nodeGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String TestFailoverRequest::SerializePayload() const
 {
   Aws::StringStream ss;

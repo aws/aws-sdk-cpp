@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-EventSourcesConfig::EventSourcesConfig() : 
-    m_amazonCodeGuruProfilerHasBeenSet(false)
-{
-}
-
 EventSourcesConfig::EventSourcesConfig(JsonView jsonValue)
-  : EventSourcesConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventSourcesConfig& EventSourcesConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AmazonCodeGuruProfiler"))
   {
     m_amazonCodeGuruProfiler = jsonValue.GetObject("AmazonCodeGuruProfiler");
-
     m_amazonCodeGuruProfilerHasBeenSet = true;
   }
-
   return *this;
 }
 

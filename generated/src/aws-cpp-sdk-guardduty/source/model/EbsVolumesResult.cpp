@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-EbsVolumesResult::EbsVolumesResult() : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 EbsVolumesResult::EbsVolumesResult(JsonView jsonValue)
-  : EbsVolumesResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EbsVolumesResult& EbsVolumesResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

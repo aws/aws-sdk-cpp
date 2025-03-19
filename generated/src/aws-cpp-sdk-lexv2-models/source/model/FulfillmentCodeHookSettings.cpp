@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-FulfillmentCodeHookSettings::FulfillmentCodeHookSettings() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_postFulfillmentStatusSpecificationHasBeenSet(false),
-    m_fulfillmentUpdatesSpecificationHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 FulfillmentCodeHookSettings::FulfillmentCodeHookSettings(JsonView jsonValue)
-  : FulfillmentCodeHookSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FulfillmentCodeHookSettings& FulfillmentCodeHookSettings::operator =(JsonView js
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postFulfillmentStatusSpecification"))
   {
     m_postFulfillmentStatusSpecification = jsonValue.GetObject("postFulfillmentStatusSpecification");
-
     m_postFulfillmentStatusSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fulfillmentUpdatesSpecification"))
   {
     m_fulfillmentUpdatesSpecification = jsonValue.GetObject("fulfillmentUpdatesSpecification");
-
     m_fulfillmentUpdatesSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   return *this;
 }
 

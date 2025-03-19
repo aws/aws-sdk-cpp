@@ -12,14 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPagesByEngagementRequest::ListPagesByEngagementRequest() : 
-    m_engagementIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPagesByEngagementRequest::SerializePayload() const
 {
   JsonValue payload;

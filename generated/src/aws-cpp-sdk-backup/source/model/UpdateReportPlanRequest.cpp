@@ -12,16 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReportPlanRequest::UpdateReportPlanRequest() : 
-    m_reportPlanNameHasBeenSet(false),
-    m_reportPlanDescriptionHasBeenSet(false),
-    m_reportDeliveryChannelHasBeenSet(false),
-    m_reportSettingHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateReportPlanRequest::SerializePayload() const
 {
   JsonValue payload;

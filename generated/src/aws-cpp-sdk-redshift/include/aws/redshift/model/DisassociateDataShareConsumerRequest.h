@@ -21,7 +21,7 @@ namespace Model
   class DisassociateDataShareConsumerRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DisassociateDataShareConsumerRequest();
+    AWS_REDSHIFT_API DisassociateDataShareConsumerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the datashare to remove association
      * for.</p>
      */
-    inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
+    inline const Aws::String& GetDataShareArn() const { return m_dataShareArn; }
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-    inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-    inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-    inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-    inline DisassociateDataShareConsumerRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-    inline DisassociateDataShareConsumerRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-    inline DisassociateDataShareConsumerRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    template<typename DataShareArnT = Aws::String>
+    void SetDataShareArn(DataShareArnT&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::forward<DataShareArnT>(value); }
+    template<typename DataShareArnT = Aws::String>
+    DisassociateDataShareConsumerRequest& WithDataShareArn(DataShareArnT&& value) { SetDataShareArn(std::forward<DataShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>A value that specifies whether association for the datashare is removed from
      * the entire account.</p>
      */
-    inline bool GetDisassociateEntireAccount() const{ return m_disassociateEntireAccount; }
+    inline bool GetDisassociateEntireAccount() const { return m_disassociateEntireAccount; }
     inline bool DisassociateEntireAccountHasBeenSet() const { return m_disassociateEntireAccountHasBeenSet; }
     inline void SetDisassociateEntireAccount(bool value) { m_disassociateEntireAccountHasBeenSet = true; m_disassociateEntireAccount = value; }
     inline DisassociateDataShareConsumerRequest& WithDisassociateEntireAccount(bool value) { SetDisassociateEntireAccount(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
      * the datashare is removed from.</p>
      */
-    inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
+    inline const Aws::String& GetConsumerArn() const { return m_consumerArn; }
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
-    inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
-    inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
-    inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
-    inline DisassociateDataShareConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
-    inline DisassociateDataShareConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
-    inline DisassociateDataShareConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
+    template<typename ConsumerArnT = Aws::String>
+    void SetConsumerArn(ConsumerArnT&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::forward<ConsumerArnT>(value); }
+    template<typename ConsumerArnT = Aws::String>
+    DisassociateDataShareConsumerRequest& WithConsumerArn(ConsumerArnT&& value) { SetConsumerArn(std::forward<ConsumerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +79,19 @@ namespace Model
      * all the existing and future namespaces in the specified Amazon Web Services
      * Region.</p>
      */
-    inline const Aws::String& GetConsumerRegion() const{ return m_consumerRegion; }
+    inline const Aws::String& GetConsumerRegion() const { return m_consumerRegion; }
     inline bool ConsumerRegionHasBeenSet() const { return m_consumerRegionHasBeenSet; }
-    inline void SetConsumerRegion(const Aws::String& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = value; }
-    inline void SetConsumerRegion(Aws::String&& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = std::move(value); }
-    inline void SetConsumerRegion(const char* value) { m_consumerRegionHasBeenSet = true; m_consumerRegion.assign(value); }
-    inline DisassociateDataShareConsumerRequest& WithConsumerRegion(const Aws::String& value) { SetConsumerRegion(value); return *this;}
-    inline DisassociateDataShareConsumerRequest& WithConsumerRegion(Aws::String&& value) { SetConsumerRegion(std::move(value)); return *this;}
-    inline DisassociateDataShareConsumerRequest& WithConsumerRegion(const char* value) { SetConsumerRegion(value); return *this;}
+    template<typename ConsumerRegionT = Aws::String>
+    void SetConsumerRegion(ConsumerRegionT&& value) { m_consumerRegionHasBeenSet = true; m_consumerRegion = std::forward<ConsumerRegionT>(value); }
+    template<typename ConsumerRegionT = Aws::String>
+    DisassociateDataShareConsumerRequest& WithConsumerRegion(ConsumerRegionT&& value) { SetConsumerRegion(std::forward<ConsumerRegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataShareArn;
     bool m_dataShareArnHasBeenSet = false;
 
-    bool m_disassociateEntireAccount;
+    bool m_disassociateEntireAccount{false};
     bool m_disassociateEntireAccountHasBeenSet = false;
 
     Aws::String m_consumerArn;

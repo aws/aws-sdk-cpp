@@ -18,21 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-EventBridgeRuleTemplateGroupSummary::EventBridgeRuleTemplateGroupSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateCount(0),
-    m_templateCountHasBeenSet(false)
-{
-}
-
 EventBridgeRuleTemplateGroupSummary::EventBridgeRuleTemplateGroupSummary(JsonView jsonValue)
-  : EventBridgeRuleTemplateGroupSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ EventBridgeRuleTemplateGroupSummary& EventBridgeRuleTemplateGroupSummary::operat
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -90,14 +64,11 @@ EventBridgeRuleTemplateGroupSummary& EventBridgeRuleTemplateGroupSummary::operat
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateCount"))
   {
     m_templateCount = jsonValue.GetInteger("templateCount");
-
     m_templateCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class TransitGatewayMulticastDeregisteredGroupMembers
   {
   public:
-    AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers();
+    AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers() = default;
     AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,43 +45,38 @@ namespace Model
     /**
      * <p>The ID of the transit gateway multicast domain.</p>
      */
-    inline const Aws::String& GetTransitGatewayMulticastDomainId() const{ return m_transitGatewayMulticastDomainId; }
+    inline const Aws::String& GetTransitGatewayMulticastDomainId() const { return m_transitGatewayMulticastDomainId; }
     inline bool TransitGatewayMulticastDomainIdHasBeenSet() const { return m_transitGatewayMulticastDomainIdHasBeenSet; }
-    inline void SetTransitGatewayMulticastDomainId(const Aws::String& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = value; }
-    inline void SetTransitGatewayMulticastDomainId(Aws::String&& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = std::move(value); }
-    inline void SetTransitGatewayMulticastDomainId(const char* value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId.assign(value); }
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithTransitGatewayMulticastDomainId(const Aws::String& value) { SetTransitGatewayMulticastDomainId(value); return *this;}
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithTransitGatewayMulticastDomainId(Aws::String&& value) { SetTransitGatewayMulticastDomainId(std::move(value)); return *this;}
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithTransitGatewayMulticastDomainId(const char* value) { SetTransitGatewayMulticastDomainId(value); return *this;}
+    template<typename TransitGatewayMulticastDomainIdT = Aws::String>
+    void SetTransitGatewayMulticastDomainId(TransitGatewayMulticastDomainIdT&& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = std::forward<TransitGatewayMulticastDomainIdT>(value); }
+    template<typename TransitGatewayMulticastDomainIdT = Aws::String>
+    TransitGatewayMulticastDeregisteredGroupMembers& WithTransitGatewayMulticastDomainId(TransitGatewayMulticastDomainIdT&& value) { SetTransitGatewayMulticastDomainId(std::forward<TransitGatewayMulticastDomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network interface IDs of the deregistered members.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeregisteredNetworkInterfaceIds() const{ return m_deregisteredNetworkInterfaceIds; }
+    inline const Aws::Vector<Aws::String>& GetDeregisteredNetworkInterfaceIds() const { return m_deregisteredNetworkInterfaceIds; }
     inline bool DeregisteredNetworkInterfaceIdsHasBeenSet() const { return m_deregisteredNetworkInterfaceIdsHasBeenSet; }
-    inline void SetDeregisteredNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds = value; }
-    inline void SetDeregisteredNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds = std::move(value); }
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithDeregisteredNetworkInterfaceIds(const Aws::Vector<Aws::String>& value) { SetDeregisteredNetworkInterfaceIds(value); return *this;}
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithDeregisteredNetworkInterfaceIds(Aws::Vector<Aws::String>&& value) { SetDeregisteredNetworkInterfaceIds(std::move(value)); return *this;}
-    inline TransitGatewayMulticastDeregisteredGroupMembers& AddDeregisteredNetworkInterfaceIds(const Aws::String& value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds.push_back(value); return *this; }
-    inline TransitGatewayMulticastDeregisteredGroupMembers& AddDeregisteredNetworkInterfaceIds(Aws::String&& value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds.push_back(std::move(value)); return *this; }
-    inline TransitGatewayMulticastDeregisteredGroupMembers& AddDeregisteredNetworkInterfaceIds(const char* value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds.push_back(value); return *this; }
+    template<typename DeregisteredNetworkInterfaceIdsT = Aws::Vector<Aws::String>>
+    void SetDeregisteredNetworkInterfaceIds(DeregisteredNetworkInterfaceIdsT&& value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds = std::forward<DeregisteredNetworkInterfaceIdsT>(value); }
+    template<typename DeregisteredNetworkInterfaceIdsT = Aws::Vector<Aws::String>>
+    TransitGatewayMulticastDeregisteredGroupMembers& WithDeregisteredNetworkInterfaceIds(DeregisteredNetworkInterfaceIdsT&& value) { SetDeregisteredNetworkInterfaceIds(std::forward<DeregisteredNetworkInterfaceIdsT>(value)); return *this;}
+    template<typename DeregisteredNetworkInterfaceIdsT = Aws::String>
+    TransitGatewayMulticastDeregisteredGroupMembers& AddDeregisteredNetworkInterfaceIds(DeregisteredNetworkInterfaceIdsT&& value) { m_deregisteredNetworkInterfaceIdsHasBeenSet = true; m_deregisteredNetworkInterfaceIds.emplace_back(std::forward<DeregisteredNetworkInterfaceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IP address assigned to the transit gateway multicast group.</p>
      */
-    inline const Aws::String& GetGroupIpAddress() const{ return m_groupIpAddress; }
+    inline const Aws::String& GetGroupIpAddress() const { return m_groupIpAddress; }
     inline bool GroupIpAddressHasBeenSet() const { return m_groupIpAddressHasBeenSet; }
-    inline void SetGroupIpAddress(const Aws::String& value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress = value; }
-    inline void SetGroupIpAddress(Aws::String&& value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress = std::move(value); }
-    inline void SetGroupIpAddress(const char* value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress.assign(value); }
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithGroupIpAddress(const Aws::String& value) { SetGroupIpAddress(value); return *this;}
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithGroupIpAddress(Aws::String&& value) { SetGroupIpAddress(std::move(value)); return *this;}
-    inline TransitGatewayMulticastDeregisteredGroupMembers& WithGroupIpAddress(const char* value) { SetGroupIpAddress(value); return *this;}
+    template<typename GroupIpAddressT = Aws::String>
+    void SetGroupIpAddress(GroupIpAddressT&& value) { m_groupIpAddressHasBeenSet = true; m_groupIpAddress = std::forward<GroupIpAddressT>(value); }
+    template<typename GroupIpAddressT = Aws::String>
+    TransitGatewayMulticastDeregisteredGroupMembers& WithGroupIpAddress(GroupIpAddressT&& value) { SetGroupIpAddress(std::forward<GroupIpAddressT>(value)); return *this;}
     ///@}
   private:
 

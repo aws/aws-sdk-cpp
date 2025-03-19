@@ -18,13 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput() : 
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 UpdateNetworkConfigurationInput::UpdateNetworkConfigurationInput(JsonView jsonValue)
-  : UpdateNetworkConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UpdateNetworkConfigurationInput& UpdateNetworkConfigurationInput::operator =(Jso
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

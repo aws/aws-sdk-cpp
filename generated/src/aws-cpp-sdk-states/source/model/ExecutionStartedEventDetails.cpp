@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-ExecutionStartedEventDetails::ExecutionStartedEventDetails() : 
-    m_inputHasBeenSet(false),
-    m_inputDetailsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_stateMachineVersionArnHasBeenSet(false)
-{
-}
-
 ExecutionStartedEventDetails::ExecutionStartedEventDetails(JsonView jsonValue)
-  : ExecutionStartedEventDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ExecutionStartedEventDetails& ExecutionStartedEventDetails::operator =(JsonView 
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDetails"))
   {
     m_inputDetails = jsonValue.GetObject("inputDetails");
-
     m_inputDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineAliasArn"))
   {
     m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
-
     m_stateMachineAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateMachineVersionArn"))
   {
     m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
-
     m_stateMachineVersionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

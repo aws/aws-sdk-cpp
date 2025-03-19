@@ -12,11 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClusterRequest::DescribeClusterRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterRequest::SerializePayload() const
 {
   return {};

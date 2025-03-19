@@ -31,7 +31,7 @@ namespace Model
   class TrafficSourceIdentifier
   {
   public:
-    AWS_AUTOSCALING_API TrafficSourceIdentifier();
+    AWS_AUTOSCALING_API TrafficSourceIdentifier() = default;
     AWS_AUTOSCALING_API TrafficSourceIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API TrafficSourceIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -62,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetTargetGroup.html">GetTargetGroup</a>
      * API operation.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline TrafficSourceIdentifier& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline TrafficSourceIdentifier& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline TrafficSourceIdentifier& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    TrafficSourceIdentifier& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * a VPC Lattice target group.</p> </li> </ul> <p>Required if the identifier is the
      * name of a Classic Load Balancer.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline TrafficSourceIdentifier& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline TrafficSourceIdentifier& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline TrafficSourceIdentifier& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    TrafficSourceIdentifier& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

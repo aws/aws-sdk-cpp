@@ -31,7 +31,7 @@ namespace Model
   class InferenceReceiverMember
   {
   public:
-    AWS_CLEANROOMSML_API InferenceReceiverMember();
+    AWS_CLEANROOMSML_API InferenceReceiverMember() = default;
     AWS_CLEANROOMSML_API InferenceReceiverMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API InferenceReceiverMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The account ID of the member that can receive inference results.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline InferenceReceiverMember& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline InferenceReceiverMember& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline InferenceReceiverMember& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    InferenceReceiverMember& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

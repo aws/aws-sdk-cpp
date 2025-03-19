@@ -12,13 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRegexPatternSetsRequest::ListRegexPatternSetsRequest() : 
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListRegexPatternSetsRequest::SerializePayload() const
 {
   JsonValue payload;

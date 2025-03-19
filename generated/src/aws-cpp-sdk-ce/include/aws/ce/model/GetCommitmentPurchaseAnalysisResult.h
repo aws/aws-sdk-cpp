@@ -31,7 +31,7 @@ namespace Model
   class GetCommitmentPurchaseAnalysisResult
   {
   public:
-    AWS_COSTEXPLORER_API GetCommitmentPurchaseAnalysisResult();
+    AWS_COSTEXPLORER_API GetCommitmentPurchaseAnalysisResult() = default;
     AWS_COSTEXPLORER_API GetCommitmentPurchaseAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetCommitmentPurchaseAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,127 +40,122 @@ namespace Model
     /**
      * <p>The estimated time for when the analysis will complete.</p>
      */
-    inline const Aws::String& GetEstimatedCompletionTime() const{ return m_estimatedCompletionTime; }
-    inline void SetEstimatedCompletionTime(const Aws::String& value) { m_estimatedCompletionTime = value; }
-    inline void SetEstimatedCompletionTime(Aws::String&& value) { m_estimatedCompletionTime = std::move(value); }
-    inline void SetEstimatedCompletionTime(const char* value) { m_estimatedCompletionTime.assign(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithEstimatedCompletionTime(const Aws::String& value) { SetEstimatedCompletionTime(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithEstimatedCompletionTime(Aws::String&& value) { SetEstimatedCompletionTime(std::move(value)); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithEstimatedCompletionTime(const char* value) { SetEstimatedCompletionTime(value); return *this;}
+    inline const Aws::String& GetEstimatedCompletionTime() const { return m_estimatedCompletionTime; }
+    template<typename EstimatedCompletionTimeT = Aws::String>
+    void SetEstimatedCompletionTime(EstimatedCompletionTimeT&& value) { m_estimatedCompletionTimeHasBeenSet = true; m_estimatedCompletionTime = std::forward<EstimatedCompletionTimeT>(value); }
+    template<typename EstimatedCompletionTimeT = Aws::String>
+    GetCommitmentPurchaseAnalysisResult& WithEstimatedCompletionTime(EstimatedCompletionTimeT&& value) { SetEstimatedCompletionTime(std::forward<EstimatedCompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The completion time of the analysis.</p>
      */
-    inline const Aws::String& GetAnalysisCompletionTime() const{ return m_analysisCompletionTime; }
-    inline void SetAnalysisCompletionTime(const Aws::String& value) { m_analysisCompletionTime = value; }
-    inline void SetAnalysisCompletionTime(Aws::String&& value) { m_analysisCompletionTime = std::move(value); }
-    inline void SetAnalysisCompletionTime(const char* value) { m_analysisCompletionTime.assign(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisCompletionTime(const Aws::String& value) { SetAnalysisCompletionTime(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisCompletionTime(Aws::String&& value) { SetAnalysisCompletionTime(std::move(value)); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisCompletionTime(const char* value) { SetAnalysisCompletionTime(value); return *this;}
+    inline const Aws::String& GetAnalysisCompletionTime() const { return m_analysisCompletionTime; }
+    template<typename AnalysisCompletionTimeT = Aws::String>
+    void SetAnalysisCompletionTime(AnalysisCompletionTimeT&& value) { m_analysisCompletionTimeHasBeenSet = true; m_analysisCompletionTime = std::forward<AnalysisCompletionTimeT>(value); }
+    template<typename AnalysisCompletionTimeT = Aws::String>
+    GetCommitmentPurchaseAnalysisResult& WithAnalysisCompletionTime(AnalysisCompletionTimeT&& value) { SetAnalysisCompletionTime(std::forward<AnalysisCompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the analysis.</p>
      */
-    inline const Aws::String& GetAnalysisStartedTime() const{ return m_analysisStartedTime; }
-    inline void SetAnalysisStartedTime(const Aws::String& value) { m_analysisStartedTime = value; }
-    inline void SetAnalysisStartedTime(Aws::String&& value) { m_analysisStartedTime = std::move(value); }
-    inline void SetAnalysisStartedTime(const char* value) { m_analysisStartedTime.assign(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisStartedTime(const Aws::String& value) { SetAnalysisStartedTime(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisStartedTime(Aws::String&& value) { SetAnalysisStartedTime(std::move(value)); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisStartedTime(const char* value) { SetAnalysisStartedTime(value); return *this;}
+    inline const Aws::String& GetAnalysisStartedTime() const { return m_analysisStartedTime; }
+    template<typename AnalysisStartedTimeT = Aws::String>
+    void SetAnalysisStartedTime(AnalysisStartedTimeT&& value) { m_analysisStartedTimeHasBeenSet = true; m_analysisStartedTime = std::forward<AnalysisStartedTimeT>(value); }
+    template<typename AnalysisStartedTimeT = Aws::String>
+    GetCommitmentPurchaseAnalysisResult& WithAnalysisStartedTime(AnalysisStartedTimeT&& value) { SetAnalysisStartedTime(std::forward<AnalysisStartedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The analysis ID that's associated with the commitment purchase analysis.</p>
      */
-    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-    inline void SetAnalysisId(const Aws::String& value) { m_analysisId = value; }
-    inline void SetAnalysisId(Aws::String&& value) { m_analysisId = std::move(value); }
-    inline void SetAnalysisId(const char* value) { m_analysisId.assign(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
+    template<typename AnalysisIdT = Aws::String>
+    void SetAnalysisId(AnalysisIdT&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::forward<AnalysisIdT>(value); }
+    template<typename AnalysisIdT = Aws::String>
+    GetCommitmentPurchaseAnalysisResult& WithAnalysisId(AnalysisIdT&& value) { SetAnalysisId(std::forward<AnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the analysis.</p>
      */
-    inline const AnalysisStatus& GetAnalysisStatus() const{ return m_analysisStatus; }
-    inline void SetAnalysisStatus(const AnalysisStatus& value) { m_analysisStatus = value; }
-    inline void SetAnalysisStatus(AnalysisStatus&& value) { m_analysisStatus = std::move(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisStatus(const AnalysisStatus& value) { SetAnalysisStatus(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisStatus(AnalysisStatus&& value) { SetAnalysisStatus(std::move(value)); return *this;}
+    inline AnalysisStatus GetAnalysisStatus() const { return m_analysisStatus; }
+    inline void SetAnalysisStatus(AnalysisStatus value) { m_analysisStatusHasBeenSet = true; m_analysisStatus = value; }
+    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisStatus(AnalysisStatus value) { SetAnalysisStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code used for the analysis.</p>
      */
-    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-    inline void SetErrorCode(const ErrorCode& value) { m_errorCode = value; }
-    inline void SetErrorCode(ErrorCode&& value) { m_errorCode = std::move(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline ErrorCode GetErrorCode() const { return m_errorCode; }
+    inline void SetErrorCode(ErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline GetCommitmentPurchaseAnalysisResult& WithErrorCode(ErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the analysis.</p>
      */
-    inline const AnalysisDetails& GetAnalysisDetails() const{ return m_analysisDetails; }
-    inline void SetAnalysisDetails(const AnalysisDetails& value) { m_analysisDetails = value; }
-    inline void SetAnalysisDetails(AnalysisDetails&& value) { m_analysisDetails = std::move(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisDetails(const AnalysisDetails& value) { SetAnalysisDetails(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithAnalysisDetails(AnalysisDetails&& value) { SetAnalysisDetails(std::move(value)); return *this;}
+    inline const AnalysisDetails& GetAnalysisDetails() const { return m_analysisDetails; }
+    template<typename AnalysisDetailsT = AnalysisDetails>
+    void SetAnalysisDetails(AnalysisDetailsT&& value) { m_analysisDetailsHasBeenSet = true; m_analysisDetails = std::forward<AnalysisDetailsT>(value); }
+    template<typename AnalysisDetailsT = AnalysisDetails>
+    GetCommitmentPurchaseAnalysisResult& WithAnalysisDetails(AnalysisDetailsT&& value) { SetAnalysisDetails(std::forward<AnalysisDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the commitment purchase analysis.</p>
      */
-    inline const CommitmentPurchaseAnalysisConfiguration& GetCommitmentPurchaseAnalysisConfiguration() const{ return m_commitmentPurchaseAnalysisConfiguration; }
-    inline void SetCommitmentPurchaseAnalysisConfiguration(const CommitmentPurchaseAnalysisConfiguration& value) { m_commitmentPurchaseAnalysisConfiguration = value; }
-    inline void SetCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfiguration&& value) { m_commitmentPurchaseAnalysisConfiguration = std::move(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithCommitmentPurchaseAnalysisConfiguration(const CommitmentPurchaseAnalysisConfiguration& value) { SetCommitmentPurchaseAnalysisConfiguration(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfiguration&& value) { SetCommitmentPurchaseAnalysisConfiguration(std::move(value)); return *this;}
+    inline const CommitmentPurchaseAnalysisConfiguration& GetCommitmentPurchaseAnalysisConfiguration() const { return m_commitmentPurchaseAnalysisConfiguration; }
+    template<typename CommitmentPurchaseAnalysisConfigurationT = CommitmentPurchaseAnalysisConfiguration>
+    void SetCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfigurationT&& value) { m_commitmentPurchaseAnalysisConfigurationHasBeenSet = true; m_commitmentPurchaseAnalysisConfiguration = std::forward<CommitmentPurchaseAnalysisConfigurationT>(value); }
+    template<typename CommitmentPurchaseAnalysisConfigurationT = CommitmentPurchaseAnalysisConfiguration>
+    GetCommitmentPurchaseAnalysisResult& WithCommitmentPurchaseAnalysisConfiguration(CommitmentPurchaseAnalysisConfigurationT&& value) { SetCommitmentPurchaseAnalysisConfiguration(std::forward<CommitmentPurchaseAnalysisConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCommitmentPurchaseAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCommitmentPurchaseAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCommitmentPurchaseAnalysisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_estimatedCompletionTime;
+    bool m_estimatedCompletionTimeHasBeenSet = false;
 
     Aws::String m_analysisCompletionTime;
+    bool m_analysisCompletionTimeHasBeenSet = false;
 
     Aws::String m_analysisStartedTime;
+    bool m_analysisStartedTimeHasBeenSet = false;
 
     Aws::String m_analysisId;
+    bool m_analysisIdHasBeenSet = false;
 
-    AnalysisStatus m_analysisStatus;
+    AnalysisStatus m_analysisStatus{AnalysisStatus::NOT_SET};
+    bool m_analysisStatusHasBeenSet = false;
 
-    ErrorCode m_errorCode;
+    ErrorCode m_errorCode{ErrorCode::NOT_SET};
+    bool m_errorCodeHasBeenSet = false;
 
     AnalysisDetails m_analysisDetails;
+    bool m_analysisDetailsHasBeenSet = false;
 
     CommitmentPurchaseAnalysisConfiguration m_commitmentPurchaseAnalysisConfiguration;
+    bool m_commitmentPurchaseAnalysisConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,7 +27,7 @@ namespace Model
   class ListActiveViolationsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListActiveViolationsRequest();
+    AWS_IOT_API ListActiveViolationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the thing whose active violations are listed.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline ListActiveViolationsRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline ListActiveViolationsRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline ListActiveViolationsRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    ListActiveViolationsRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,33 +57,29 @@ namespace Model
      * <p>The name of the Device Defender security profile for which violations are
      * listed.</p>
      */
-    inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
+    inline const Aws::String& GetSecurityProfileName() const { return m_securityProfileName; }
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-    inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-    inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-    inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-    inline ListActiveViolationsRequest& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-    inline ListActiveViolationsRequest& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-    inline ListActiveViolationsRequest& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    template<typename SecurityProfileNameT = Aws::String>
+    void SetSecurityProfileName(SecurityProfileNameT&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::forward<SecurityProfileNameT>(value); }
+    template<typename SecurityProfileNameT = Aws::String>
+    ListActiveViolationsRequest& WithSecurityProfileName(SecurityProfileNameT&& value) { SetSecurityProfileName(std::forward<SecurityProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The criteria for a behavior. </p>
      */
-    inline const BehaviorCriteriaType& GetBehaviorCriteriaType() const{ return m_behaviorCriteriaType; }
+    inline BehaviorCriteriaType GetBehaviorCriteriaType() const { return m_behaviorCriteriaType; }
     inline bool BehaviorCriteriaTypeHasBeenSet() const { return m_behaviorCriteriaTypeHasBeenSet; }
-    inline void SetBehaviorCriteriaType(const BehaviorCriteriaType& value) { m_behaviorCriteriaTypeHasBeenSet = true; m_behaviorCriteriaType = value; }
-    inline void SetBehaviorCriteriaType(BehaviorCriteriaType&& value) { m_behaviorCriteriaTypeHasBeenSet = true; m_behaviorCriteriaType = std::move(value); }
-    inline ListActiveViolationsRequest& WithBehaviorCriteriaType(const BehaviorCriteriaType& value) { SetBehaviorCriteriaType(value); return *this;}
-    inline ListActiveViolationsRequest& WithBehaviorCriteriaType(BehaviorCriteriaType&& value) { SetBehaviorCriteriaType(std::move(value)); return *this;}
+    inline void SetBehaviorCriteriaType(BehaviorCriteriaType value) { m_behaviorCriteriaTypeHasBeenSet = true; m_behaviorCriteriaType = value; }
+    inline ListActiveViolationsRequest& WithBehaviorCriteriaType(BehaviorCriteriaType value) { SetBehaviorCriteriaType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of all suppressed alerts. </p>
      */
-    inline bool GetListSuppressedAlerts() const{ return m_listSuppressedAlerts; }
+    inline bool GetListSuppressedAlerts() const { return m_listSuppressedAlerts; }
     inline bool ListSuppressedAlertsHasBeenSet() const { return m_listSuppressedAlertsHasBeenSet; }
     inline void SetListSuppressedAlerts(bool value) { m_listSuppressedAlertsHasBeenSet = true; m_listSuppressedAlerts = value; }
     inline ListActiveViolationsRequest& WithListSuppressedAlerts(bool value) { SetListSuppressedAlerts(value); return *this;}
@@ -95,33 +89,29 @@ namespace Model
     /**
      * <p>The verification state of the violation (detect alarm).</p>
      */
-    inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
+    inline VerificationState GetVerificationState() const { return m_verificationState; }
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
-    inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
-    inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
-    inline ListActiveViolationsRequest& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
-    inline ListActiveViolationsRequest& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
+    inline void SetVerificationState(VerificationState value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
+    inline ListActiveViolationsRequest& WithVerificationState(VerificationState value) { SetVerificationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token for the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListActiveViolationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListActiveViolationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListActiveViolationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListActiveViolationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListActiveViolationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -134,19 +124,19 @@ namespace Model
     Aws::String m_securityProfileName;
     bool m_securityProfileNameHasBeenSet = false;
 
-    BehaviorCriteriaType m_behaviorCriteriaType;
+    BehaviorCriteriaType m_behaviorCriteriaType{BehaviorCriteriaType::NOT_SET};
     bool m_behaviorCriteriaTypeHasBeenSet = false;
 
-    bool m_listSuppressedAlerts;
+    bool m_listSuppressedAlerts{false};
     bool m_listSuppressedAlertsHasBeenSet = false;
 
-    VerificationState m_verificationState;
+    VerificationState m_verificationState{VerificationState::NOT_SET};
     bool m_verificationStateHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

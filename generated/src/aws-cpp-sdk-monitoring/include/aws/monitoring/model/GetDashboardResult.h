@@ -28,7 +28,7 @@ namespace Model
   class GetDashboardResult
   {
   public:
-    AWS_CLOUDWATCH_API GetDashboardResult();
+    AWS_CLOUDWATCH_API GetDashboardResult() = default;
     AWS_CLOUDWATCH_API GetDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API GetDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
-    inline const Aws::String& GetDashboardArn() const{ return m_dashboardArn; }
-    inline void SetDashboardArn(const Aws::String& value) { m_dashboardArn = value; }
-    inline void SetDashboardArn(Aws::String&& value) { m_dashboardArn = std::move(value); }
-    inline void SetDashboardArn(const char* value) { m_dashboardArn.assign(value); }
-    inline GetDashboardResult& WithDashboardArn(const Aws::String& value) { SetDashboardArn(value); return *this;}
-    inline GetDashboardResult& WithDashboardArn(Aws::String&& value) { SetDashboardArn(std::move(value)); return *this;}
-    inline GetDashboardResult& WithDashboardArn(const char* value) { SetDashboardArn(value); return *this;}
+    inline const Aws::String& GetDashboardArn() const { return m_dashboardArn; }
+    template<typename DashboardArnT = Aws::String>
+    void SetDashboardArn(DashboardArnT&& value) { m_dashboardArnHasBeenSet = true; m_dashboardArn = std::forward<DashboardArnT>(value); }
+    template<typename DashboardArnT = Aws::String>
+    GetDashboardResult& WithDashboardArn(DashboardArnT&& value) { SetDashboardArn(std::forward<DashboardArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,45 +52,45 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
      * Body Structure and Syntax</a>. </p>
      */
-    inline const Aws::String& GetDashboardBody() const{ return m_dashboardBody; }
-    inline void SetDashboardBody(const Aws::String& value) { m_dashboardBody = value; }
-    inline void SetDashboardBody(Aws::String&& value) { m_dashboardBody = std::move(value); }
-    inline void SetDashboardBody(const char* value) { m_dashboardBody.assign(value); }
-    inline GetDashboardResult& WithDashboardBody(const Aws::String& value) { SetDashboardBody(value); return *this;}
-    inline GetDashboardResult& WithDashboardBody(Aws::String&& value) { SetDashboardBody(std::move(value)); return *this;}
-    inline GetDashboardResult& WithDashboardBody(const char* value) { SetDashboardBody(value); return *this;}
+    inline const Aws::String& GetDashboardBody() const { return m_dashboardBody; }
+    template<typename DashboardBodyT = Aws::String>
+    void SetDashboardBody(DashboardBodyT&& value) { m_dashboardBodyHasBeenSet = true; m_dashboardBody = std::forward<DashboardBodyT>(value); }
+    template<typename DashboardBodyT = Aws::String>
+    GetDashboardResult& WithDashboardBody(DashboardBodyT&& value) { SetDashboardBody(std::forward<DashboardBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dashboard.</p>
      */
-    inline const Aws::String& GetDashboardName() const{ return m_dashboardName; }
-    inline void SetDashboardName(const Aws::String& value) { m_dashboardName = value; }
-    inline void SetDashboardName(Aws::String&& value) { m_dashboardName = std::move(value); }
-    inline void SetDashboardName(const char* value) { m_dashboardName.assign(value); }
-    inline GetDashboardResult& WithDashboardName(const Aws::String& value) { SetDashboardName(value); return *this;}
-    inline GetDashboardResult& WithDashboardName(Aws::String&& value) { SetDashboardName(std::move(value)); return *this;}
-    inline GetDashboardResult& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
+    inline const Aws::String& GetDashboardName() const { return m_dashboardName; }
+    template<typename DashboardNameT = Aws::String>
+    void SetDashboardName(DashboardNameT&& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = std::forward<DashboardNameT>(value); }
+    template<typename DashboardNameT = Aws::String>
+    GetDashboardResult& WithDashboardName(DashboardNameT&& value) { SetDashboardName(std::forward<DashboardNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetDashboardResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetDashboardResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetDashboardResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dashboardArn;
+    bool m_dashboardArnHasBeenSet = false;
 
     Aws::String m_dashboardBody;
+    bool m_dashboardBodyHasBeenSet = false;
 
     Aws::String m_dashboardName;
+    bool m_dashboardNameHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

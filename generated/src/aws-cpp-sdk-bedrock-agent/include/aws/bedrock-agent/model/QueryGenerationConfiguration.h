@@ -34,7 +34,7 @@ namespace Model
   class QueryGenerationConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API QueryGenerationConfiguration();
+    AWS_BEDROCKAGENT_API QueryGenerationConfiguration() = default;
     AWS_BEDROCKAGENT_API QueryGenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API QueryGenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The time after which query generation will time out.</p>
      */
-    inline int GetExecutionTimeoutSeconds() const{ return m_executionTimeoutSeconds; }
+    inline int GetExecutionTimeoutSeconds() const { return m_executionTimeoutSeconds; }
     inline bool ExecutionTimeoutSecondsHasBeenSet() const { return m_executionTimeoutSecondsHasBeenSet; }
     inline void SetExecutionTimeoutSeconds(int value) { m_executionTimeoutSecondsHasBeenSet = true; m_executionTimeoutSeconds = value; }
     inline QueryGenerationConfiguration& WithExecutionTimeoutSeconds(int value) { SetExecutionTimeoutSeconds(value); return *this;}
@@ -54,16 +54,16 @@ namespace Model
     /**
      * <p>Specifies configurations for context to use during query generation.</p>
      */
-    inline const QueryGenerationContext& GetGenerationContext() const{ return m_generationContext; }
+    inline const QueryGenerationContext& GetGenerationContext() const { return m_generationContext; }
     inline bool GenerationContextHasBeenSet() const { return m_generationContextHasBeenSet; }
-    inline void SetGenerationContext(const QueryGenerationContext& value) { m_generationContextHasBeenSet = true; m_generationContext = value; }
-    inline void SetGenerationContext(QueryGenerationContext&& value) { m_generationContextHasBeenSet = true; m_generationContext = std::move(value); }
-    inline QueryGenerationConfiguration& WithGenerationContext(const QueryGenerationContext& value) { SetGenerationContext(value); return *this;}
-    inline QueryGenerationConfiguration& WithGenerationContext(QueryGenerationContext&& value) { SetGenerationContext(std::move(value)); return *this;}
+    template<typename GenerationContextT = QueryGenerationContext>
+    void SetGenerationContext(GenerationContextT&& value) { m_generationContextHasBeenSet = true; m_generationContext = std::forward<GenerationContextT>(value); }
+    template<typename GenerationContextT = QueryGenerationContext>
+    QueryGenerationConfiguration& WithGenerationContext(GenerationContextT&& value) { SetGenerationContext(std::forward<GenerationContextT>(value)); return *this;}
     ///@}
   private:
 
-    int m_executionTimeoutSeconds;
+    int m_executionTimeoutSeconds{0};
     bool m_executionTimeoutSecondsHasBeenSet = false;
 
     QueryGenerationContext m_generationContext;

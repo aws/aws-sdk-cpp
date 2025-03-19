@@ -32,7 +32,7 @@ namespace Model
   class ConnectorConfigResponse
   {
   public:
-    AWS_EKS_API ConnectorConfigResponse();
+    AWS_EKS_API ConnectorConfigResponse() = default;
     AWS_EKS_API ConnectorConfigResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API ConnectorConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A unique ID associated with the cluster for registration purposes.</p>
      */
-    inline const Aws::String& GetActivationId() const{ return m_activationId; }
+    inline const Aws::String& GetActivationId() const { return m_activationId; }
     inline bool ActivationIdHasBeenSet() const { return m_activationIdHasBeenSet; }
-    inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
-    inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = std::move(value); }
-    inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
-    inline ConnectorConfigResponse& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
-    inline ConnectorConfigResponse& WithActivationId(Aws::String&& value) { SetActivationId(std::move(value)); return *this;}
-    inline ConnectorConfigResponse& WithActivationId(const char* value) { SetActivationId(value); return *this;}
+    template<typename ActivationIdT = Aws::String>
+    void SetActivationId(ActivationIdT&& value) { m_activationIdHasBeenSet = true; m_activationId = std::forward<ActivationIdT>(value); }
+    template<typename ActivationIdT = Aws::String>
+    ConnectorConfigResponse& WithActivationId(ActivationIdT&& value) { SetActivationId(std::forward<ActivationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique code associated with the cluster for registration purposes.</p>
      */
-    inline const Aws::String& GetActivationCode() const{ return m_activationCode; }
+    inline const Aws::String& GetActivationCode() const { return m_activationCode; }
     inline bool ActivationCodeHasBeenSet() const { return m_activationCodeHasBeenSet; }
-    inline void SetActivationCode(const Aws::String& value) { m_activationCodeHasBeenSet = true; m_activationCode = value; }
-    inline void SetActivationCode(Aws::String&& value) { m_activationCodeHasBeenSet = true; m_activationCode = std::move(value); }
-    inline void SetActivationCode(const char* value) { m_activationCodeHasBeenSet = true; m_activationCode.assign(value); }
-    inline ConnectorConfigResponse& WithActivationCode(const Aws::String& value) { SetActivationCode(value); return *this;}
-    inline ConnectorConfigResponse& WithActivationCode(Aws::String&& value) { SetActivationCode(std::move(value)); return *this;}
-    inline ConnectorConfigResponse& WithActivationCode(const char* value) { SetActivationCode(value); return *this;}
+    template<typename ActivationCodeT = Aws::String>
+    void SetActivationCode(ActivationCodeT&& value) { m_activationCodeHasBeenSet = true; m_activationCode = std::forward<ActivationCodeT>(value); }
+    template<typename ActivationCodeT = Aws::String>
+    ConnectorConfigResponse& WithActivationCode(ActivationCodeT&& value) { SetActivationCode(std::forward<ActivationCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,26 +67,24 @@ namespace Model
      * <p>The expiration time of the connected cluster. The cluster's YAML file must be
      * applied through the native provider.</p>
      */
-    inline const Aws::Utils::DateTime& GetActivationExpiry() const{ return m_activationExpiry; }
+    inline const Aws::Utils::DateTime& GetActivationExpiry() const { return m_activationExpiry; }
     inline bool ActivationExpiryHasBeenSet() const { return m_activationExpiryHasBeenSet; }
-    inline void SetActivationExpiry(const Aws::Utils::DateTime& value) { m_activationExpiryHasBeenSet = true; m_activationExpiry = value; }
-    inline void SetActivationExpiry(Aws::Utils::DateTime&& value) { m_activationExpiryHasBeenSet = true; m_activationExpiry = std::move(value); }
-    inline ConnectorConfigResponse& WithActivationExpiry(const Aws::Utils::DateTime& value) { SetActivationExpiry(value); return *this;}
-    inline ConnectorConfigResponse& WithActivationExpiry(Aws::Utils::DateTime&& value) { SetActivationExpiry(std::move(value)); return *this;}
+    template<typename ActivationExpiryT = Aws::Utils::DateTime>
+    void SetActivationExpiry(ActivationExpiryT&& value) { m_activationExpiryHasBeenSet = true; m_activationExpiry = std::forward<ActivationExpiryT>(value); }
+    template<typename ActivationExpiryT = Aws::Utils::DateTime>
+    ConnectorConfigResponse& WithActivationExpiry(ActivationExpiryT&& value) { SetActivationExpiry(std::forward<ActivationExpiryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cluster's cloud service provider.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
+    inline const Aws::String& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-    inline ConnectorConfigResponse& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline ConnectorConfigResponse& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline ConnectorConfigResponse& WithProvider(const char* value) { SetProvider(value); return *this;}
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    ConnectorConfigResponse& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role to communicate with services from
      * the connected Kubernetes cluster.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ConnectorConfigResponse& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ConnectorConfigResponse& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ConnectorConfigResponse& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ConnectorConfigResponse& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,7 +107,7 @@ namespace Model
     Aws::String m_activationCode;
     bool m_activationCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_activationExpiry;
+    Aws::Utils::DateTime m_activationExpiry{};
     bool m_activationExpiryHasBeenSet = false;
 
     Aws::String m_provider;

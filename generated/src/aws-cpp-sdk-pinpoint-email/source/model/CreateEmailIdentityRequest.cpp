@@ -12,12 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEmailIdentityRequest::CreateEmailIdentityRequest() : 
-    m_emailIdentityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEmailIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

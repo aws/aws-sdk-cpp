@@ -18,13 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-CommonControlFilter::CommonControlFilter() : 
-    m_objectivesHasBeenSet(false)
-{
-}
-
 CommonControlFilter::CommonControlFilter(JsonView jsonValue)
-  : CommonControlFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CommonControlFilter& CommonControlFilter::operator =(JsonView jsonValue)
     }
     m_objectivesHasBeenSet = true;
   }
-
   return *this;
 }
 

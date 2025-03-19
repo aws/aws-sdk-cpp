@@ -12,11 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPolicyRequest::GetPolicyRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPolicyRequest::SerializePayload() const
 {
   return {};

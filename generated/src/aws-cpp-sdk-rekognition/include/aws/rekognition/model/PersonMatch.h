@@ -38,7 +38,7 @@ namespace Model
   class PersonMatch
   {
   public:
-    AWS_REKOGNITION_API PersonMatch();
+    AWS_REKOGNITION_API PersonMatch() = default;
     AWS_REKOGNITION_API PersonMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API PersonMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * <p>The time, in milliseconds from the beginning of the video, that the person
      * was matched in the video.</p>
      */
-    inline long long GetTimestamp() const{ return m_timestamp; }
+    inline long long GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
     inline PersonMatch& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
@@ -59,12 +59,12 @@ namespace Model
     /**
      * <p>Information about the matched person.</p>
      */
-    inline const PersonDetail& GetPerson() const{ return m_person; }
+    inline const PersonDetail& GetPerson() const { return m_person; }
     inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
-    inline void SetPerson(const PersonDetail& value) { m_personHasBeenSet = true; m_person = value; }
-    inline void SetPerson(PersonDetail&& value) { m_personHasBeenSet = true; m_person = std::move(value); }
-    inline PersonMatch& WithPerson(const PersonDetail& value) { SetPerson(value); return *this;}
-    inline PersonMatch& WithPerson(PersonDetail&& value) { SetPerson(std::move(value)); return *this;}
+    template<typename PersonT = PersonDetail>
+    void SetPerson(PersonT&& value) { m_personHasBeenSet = true; m_person = std::forward<PersonT>(value); }
+    template<typename PersonT = PersonDetail>
+    PersonMatch& WithPerson(PersonT&& value) { SetPerson(std::forward<PersonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +72,18 @@ namespace Model
      * <p>Information about the faces in the input collection that match the face of a
      * person in the video.</p>
      */
-    inline const Aws::Vector<FaceMatch>& GetFaceMatches() const{ return m_faceMatches; }
+    inline const Aws::Vector<FaceMatch>& GetFaceMatches() const { return m_faceMatches; }
     inline bool FaceMatchesHasBeenSet() const { return m_faceMatchesHasBeenSet; }
-    inline void SetFaceMatches(const Aws::Vector<FaceMatch>& value) { m_faceMatchesHasBeenSet = true; m_faceMatches = value; }
-    inline void SetFaceMatches(Aws::Vector<FaceMatch>&& value) { m_faceMatchesHasBeenSet = true; m_faceMatches = std::move(value); }
-    inline PersonMatch& WithFaceMatches(const Aws::Vector<FaceMatch>& value) { SetFaceMatches(value); return *this;}
-    inline PersonMatch& WithFaceMatches(Aws::Vector<FaceMatch>&& value) { SetFaceMatches(std::move(value)); return *this;}
-    inline PersonMatch& AddFaceMatches(const FaceMatch& value) { m_faceMatchesHasBeenSet = true; m_faceMatches.push_back(value); return *this; }
-    inline PersonMatch& AddFaceMatches(FaceMatch&& value) { m_faceMatchesHasBeenSet = true; m_faceMatches.push_back(std::move(value)); return *this; }
+    template<typename FaceMatchesT = Aws::Vector<FaceMatch>>
+    void SetFaceMatches(FaceMatchesT&& value) { m_faceMatchesHasBeenSet = true; m_faceMatches = std::forward<FaceMatchesT>(value); }
+    template<typename FaceMatchesT = Aws::Vector<FaceMatch>>
+    PersonMatch& WithFaceMatches(FaceMatchesT&& value) { SetFaceMatches(std::forward<FaceMatchesT>(value)); return *this;}
+    template<typename FaceMatchesT = FaceMatch>
+    PersonMatch& AddFaceMatches(FaceMatchesT&& value) { m_faceMatchesHasBeenSet = true; m_faceMatches.emplace_back(std::forward<FaceMatchesT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_timestamp;
+    long long m_timestamp{0};
     bool m_timestampHasBeenSet = false;
 
     PersonDetail m_person;

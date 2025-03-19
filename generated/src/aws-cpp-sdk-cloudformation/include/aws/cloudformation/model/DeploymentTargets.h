@@ -39,7 +39,7 @@ namespace Model
   class DeploymentTargets
   {
   public:
-    AWS_CLOUDFORMATION_API DeploymentTargets();
+    AWS_CLOUDFORMATION_API DeploymentTargets() = default;
     AWS_CLOUDFORMATION_API DeploymentTargets(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API DeploymentTargets& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,15 +53,14 @@ namespace Model
      * numbers, you can provide those accounts using the <code>AccountsUrl</code>
      * property instead.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<Aws::String>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline DeploymentTargets& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
-    inline DeploymentTargets& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline DeploymentTargets& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline DeploymentTargets& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
-    inline DeploymentTargets& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    DeploymentTargets& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = Aws::String>
+    DeploymentTargets& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,29 +71,26 @@ namespace Model
      * There is currently a 10MB limit for the data (approximately 800,000
      * accounts).</p> <p/>
      */
-    inline const Aws::String& GetAccountsUrl() const{ return m_accountsUrl; }
+    inline const Aws::String& GetAccountsUrl() const { return m_accountsUrl; }
     inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
-    inline void SetAccountsUrl(const Aws::String& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = value; }
-    inline void SetAccountsUrl(Aws::String&& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = std::move(value); }
-    inline void SetAccountsUrl(const char* value) { m_accountsUrlHasBeenSet = true; m_accountsUrl.assign(value); }
-    inline DeploymentTargets& WithAccountsUrl(const Aws::String& value) { SetAccountsUrl(value); return *this;}
-    inline DeploymentTargets& WithAccountsUrl(Aws::String&& value) { SetAccountsUrl(std::move(value)); return *this;}
-    inline DeploymentTargets& WithAccountsUrl(const char* value) { SetAccountsUrl(value); return *this;}
+    template<typename AccountsUrlT = Aws::String>
+    void SetAccountsUrl(AccountsUrlT&& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = std::forward<AccountsUrlT>(value); }
+    template<typename AccountsUrlT = Aws::String>
+    DeploymentTargets& WithAccountsUrl(AccountsUrlT&& value) { SetAccountsUrl(std::forward<AccountsUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The organization root ID or organizational unit (OU) IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
-    inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
-    inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
-    inline DeploymentTargets& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
-    inline DeploymentTargets& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
-    inline DeploymentTargets& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
-    inline DeploymentTargets& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
-    inline DeploymentTargets& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
+    template<typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+    void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value); }
+    template<typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+    DeploymentTargets& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value)); return *this;}
+    template<typename OrganizationalUnitIdsT = Aws::String>
+    DeploymentTargets& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,12 +109,10 @@ namespace Model
      * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
      * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
-    inline const AccountFilterType& GetAccountFilterType() const{ return m_accountFilterType; }
+    inline AccountFilterType GetAccountFilterType() const { return m_accountFilterType; }
     inline bool AccountFilterTypeHasBeenSet() const { return m_accountFilterTypeHasBeenSet; }
-    inline void SetAccountFilterType(const AccountFilterType& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = value; }
-    inline void SetAccountFilterType(AccountFilterType&& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = std::move(value); }
-    inline DeploymentTargets& WithAccountFilterType(const AccountFilterType& value) { SetAccountFilterType(value); return *this;}
-    inline DeploymentTargets& WithAccountFilterType(AccountFilterType&& value) { SetAccountFilterType(std::move(value)); return *this;}
+    inline void SetAccountFilterType(AccountFilterType value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = value; }
+    inline DeploymentTargets& WithAccountFilterType(AccountFilterType value) { SetAccountFilterType(value); return *this;}
     ///@}
   private:
 
@@ -131,7 +125,7 @@ namespace Model
     Aws::Vector<Aws::String> m_organizationalUnitIds;
     bool m_organizationalUnitIdsHasBeenSet = false;
 
-    AccountFilterType m_accountFilterType;
+    AccountFilterType m_accountFilterType{AccountFilterType::NOT_SET};
     bool m_accountFilterTypeHasBeenSet = false;
   };
 

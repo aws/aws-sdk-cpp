@@ -18,26 +18,7 @@ namespace CloudControlApi
 namespace Model
 {
 
-ProgressEvent::ProgressEvent() : 
-    m_typeNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_requestTokenHasBeenSet(false),
-    m_hooksRequestTokenHasBeenSet(false),
-    m_operation(Operation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_resourceModelHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_errorCode(HandlerErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_retryAfterHasBeenSet(false)
-{
-}
-
 ProgressEvent::ProgressEvent(JsonView jsonValue)
-  : ProgressEvent()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ ProgressEvent& ProgressEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestToken"))
   {
     m_requestToken = jsonValue.GetString("RequestToken");
-
     m_requestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HooksRequestToken"))
   {
     m_hooksRequestToken = jsonValue.GetString("HooksRequestToken");
-
     m_hooksRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = OperationMapper::GetOperationForName(jsonValue.GetString("Operation"));
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationStatus"))
   {
     m_operationStatus = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("OperationStatus"));
-
     m_operationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTime"))
   {
     m_eventTime = jsonValue.GetDouble("EventTime");
-
     m_eventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceModel"))
   {
     m_resourceModel = jsonValue.GetString("ResourceModel");
-
     m_resourceModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = HandlerErrorCodeMapper::GetHandlerErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryAfter"))
   {
     m_retryAfter = jsonValue.GetDouble("RetryAfter");
-
     m_retryAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

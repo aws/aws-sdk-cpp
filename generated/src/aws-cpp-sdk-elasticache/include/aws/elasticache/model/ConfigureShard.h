@@ -34,7 +34,7 @@ namespace Model
   class ConfigureShard
   {
   public:
-    AWS_ELASTICACHE_API ConfigureShard();
+    AWS_ELASTICACHE_API ConfigureShard() = default;
     AWS_ELASTICACHE_API ConfigureShard(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API ConfigureShard& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
-    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+    inline const Aws::String& GetNodeGroupId() const { return m_nodeGroupId; }
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
-    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
-    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
-    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
-    inline ConfigureShard& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
-    inline ConfigureShard& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
-    inline ConfigureShard& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
+    template<typename NodeGroupIdT = Aws::String>
+    void SetNodeGroupId(NodeGroupIdT&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::forward<NodeGroupIdT>(value); }
+    template<typename NodeGroupIdT = Aws::String>
+    ConfigureShard& WithNodeGroupId(NodeGroupIdT&& value) { SetNodeGroupId(std::forward<NodeGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * <li> <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be
      * able to failover to a replica if your primary node fails)</p> </li> </ul>
      */
-    inline int GetNewReplicaCount() const{ return m_newReplicaCount; }
+    inline int GetNewReplicaCount() const { return m_newReplicaCount; }
     inline bool NewReplicaCountHasBeenSet() const { return m_newReplicaCountHasBeenSet; }
     inline void SetNewReplicaCount(int value) { m_newReplicaCountHasBeenSet = true; m_newReplicaCount = value; }
     inline ConfigureShard& WithNewReplicaCount(int value) { SetNewReplicaCount(value); return *this;}
@@ -87,37 +85,35 @@ namespace Model
      * member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the
      * availability zone for each of the replicas.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const{ return m_preferredAvailabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const { return m_preferredAvailabilityZones; }
     inline bool PreferredAvailabilityZonesHasBeenSet() const { return m_preferredAvailabilityZonesHasBeenSet; }
-    inline void SetPreferredAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = value; }
-    inline void SetPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = std::move(value); }
-    inline ConfigureShard& WithPreferredAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetPreferredAvailabilityZones(value); return *this;}
-    inline ConfigureShard& WithPreferredAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetPreferredAvailabilityZones(std::move(value)); return *this;}
-    inline ConfigureShard& AddPreferredAvailabilityZones(const Aws::String& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
-    inline ConfigureShard& AddPreferredAvailabilityZones(Aws::String&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(std::move(value)); return *this; }
-    inline ConfigureShard& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
+    template<typename PreferredAvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetPreferredAvailabilityZones(PreferredAvailabilityZonesT&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones = std::forward<PreferredAvailabilityZonesT>(value); }
+    template<typename PreferredAvailabilityZonesT = Aws::Vector<Aws::String>>
+    ConfigureShard& WithPreferredAvailabilityZones(PreferredAvailabilityZonesT&& value) { SetPreferredAvailabilityZones(std::forward<PreferredAvailabilityZonesT>(value)); return *this;}
+    template<typename PreferredAvailabilityZonesT = Aws::String>
+    ConfigureShard& AddPreferredAvailabilityZones(PreferredAvailabilityZonesT&& value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.emplace_back(std::forward<PreferredAvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The outpost ARNs in which the cache cluster is created.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const{ return m_preferredOutpostArns; }
+    inline const Aws::Vector<Aws::String>& GetPreferredOutpostArns() const { return m_preferredOutpostArns; }
     inline bool PreferredOutpostArnsHasBeenSet() const { return m_preferredOutpostArnsHasBeenSet; }
-    inline void SetPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = value; }
-    inline void SetPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::move(value); }
-    inline ConfigureShard& WithPreferredOutpostArns(const Aws::Vector<Aws::String>& value) { SetPreferredOutpostArns(value); return *this;}
-    inline ConfigureShard& WithPreferredOutpostArns(Aws::Vector<Aws::String>&& value) { SetPreferredOutpostArns(std::move(value)); return *this;}
-    inline ConfigureShard& AddPreferredOutpostArns(const Aws::String& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
-    inline ConfigureShard& AddPreferredOutpostArns(Aws::String&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(std::move(value)); return *this; }
-    inline ConfigureShard& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
+    template<typename PreferredOutpostArnsT = Aws::Vector<Aws::String>>
+    void SetPreferredOutpostArns(PreferredOutpostArnsT&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns = std::forward<PreferredOutpostArnsT>(value); }
+    template<typename PreferredOutpostArnsT = Aws::Vector<Aws::String>>
+    ConfigureShard& WithPreferredOutpostArns(PreferredOutpostArnsT&& value) { SetPreferredOutpostArns(std::forward<PreferredOutpostArnsT>(value)); return *this;}
+    template<typename PreferredOutpostArnsT = Aws::String>
+    ConfigureShard& AddPreferredOutpostArns(PreferredOutpostArnsT&& value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.emplace_back(std::forward<PreferredOutpostArnsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nodeGroupId;
     bool m_nodeGroupIdHasBeenSet = false;
 
-    int m_newReplicaCount;
+    int m_newReplicaCount{0};
     bool m_newReplicaCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;

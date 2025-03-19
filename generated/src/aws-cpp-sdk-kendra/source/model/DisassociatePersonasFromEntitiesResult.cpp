@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociatePersonasFromEntitiesResult::DisassociatePersonasFromEntitiesResult()
-{
-}
-
 DisassociatePersonasFromEntitiesResult::DisassociatePersonasFromEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DisassociatePersonasFromEntitiesResult& DisassociatePersonasFromEntitiesResult::
     {
       m_failedEntityList.push_back(failedEntityListJsonList[failedEntityListIndex].AsObject());
     }
+    m_failedEntityListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

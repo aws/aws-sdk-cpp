@@ -28,7 +28,7 @@ namespace Model
   class GetDistributionConfigurationResult
   {
   public:
-    AWS_IMAGEBUILDER_API GetDistributionConfigurationResult();
+    AWS_IMAGEBUILDER_API GetDistributionConfigurationResult() = default;
     AWS_IMAGEBUILDER_API GetDistributionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API GetDistributionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,30 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDistributionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDistributionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDistributionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDistributionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The distribution configuration object.</p>
      */
-    inline const DistributionConfiguration& GetDistributionConfiguration() const{ return m_distributionConfiguration; }
-    inline void SetDistributionConfiguration(const DistributionConfiguration& value) { m_distributionConfiguration = value; }
-    inline void SetDistributionConfiguration(DistributionConfiguration&& value) { m_distributionConfiguration = std::move(value); }
-    inline GetDistributionConfigurationResult& WithDistributionConfiguration(const DistributionConfiguration& value) { SetDistributionConfiguration(value); return *this;}
-    inline GetDistributionConfigurationResult& WithDistributionConfiguration(DistributionConfiguration&& value) { SetDistributionConfiguration(std::move(value)); return *this;}
+    inline const DistributionConfiguration& GetDistributionConfiguration() const { return m_distributionConfiguration; }
+    template<typename DistributionConfigurationT = DistributionConfiguration>
+    void SetDistributionConfiguration(DistributionConfigurationT&& value) { m_distributionConfigurationHasBeenSet = true; m_distributionConfiguration = std::forward<DistributionConfigurationT>(value); }
+    template<typename DistributionConfigurationT = DistributionConfiguration>
+    GetDistributionConfigurationResult& WithDistributionConfiguration(DistributionConfigurationT&& value) { SetDistributionConfiguration(std::forward<DistributionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     DistributionConfiguration m_distributionConfiguration;
+    bool m_distributionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class QueryExecutionStatistics
   {
   public:
-    AWS_ATHENA_API QueryExecutionStatistics();
+    AWS_ATHENA_API QueryExecutionStatistics() = default;
     AWS_ATHENA_API QueryExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API QueryExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The number of milliseconds that the query took to execute.</p>
      */
-    inline long long GetEngineExecutionTimeInMillis() const{ return m_engineExecutionTimeInMillis; }
+    inline long long GetEngineExecutionTimeInMillis() const { return m_engineExecutionTimeInMillis; }
     inline bool EngineExecutionTimeInMillisHasBeenSet() const { return m_engineExecutionTimeInMillisHasBeenSet; }
     inline void SetEngineExecutionTimeInMillis(long long value) { m_engineExecutionTimeInMillisHasBeenSet = true; m_engineExecutionTimeInMillis = value; }
     inline QueryExecutionStatistics& WithEngineExecutionTimeInMillis(long long value) { SetEngineExecutionTimeInMillis(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The number of bytes in the data that was queried.</p>
      */
-    inline long long GetDataScannedInBytes() const{ return m_dataScannedInBytes; }
+    inline long long GetDataScannedInBytes() const { return m_dataScannedInBytes; }
     inline bool DataScannedInBytesHasBeenSet() const { return m_dataScannedInBytesHasBeenSet; }
     inline void SetDataScannedInBytes(long long value) { m_dataScannedInBytesHasBeenSet = true; m_dataScannedInBytes = value; }
     inline QueryExecutionStatistics& WithDataScannedInBytes(long long value) { SetDataScannedInBytes(value); return *this;}
@@ -72,21 +72,19 @@ namespace Model
      * Query Results, Output Files, and Query History</a> in the <i>Amazon Athena User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetDataManifestLocation() const{ return m_dataManifestLocation; }
+    inline const Aws::String& GetDataManifestLocation() const { return m_dataManifestLocation; }
     inline bool DataManifestLocationHasBeenSet() const { return m_dataManifestLocationHasBeenSet; }
-    inline void SetDataManifestLocation(const Aws::String& value) { m_dataManifestLocationHasBeenSet = true; m_dataManifestLocation = value; }
-    inline void SetDataManifestLocation(Aws::String&& value) { m_dataManifestLocationHasBeenSet = true; m_dataManifestLocation = std::move(value); }
-    inline void SetDataManifestLocation(const char* value) { m_dataManifestLocationHasBeenSet = true; m_dataManifestLocation.assign(value); }
-    inline QueryExecutionStatistics& WithDataManifestLocation(const Aws::String& value) { SetDataManifestLocation(value); return *this;}
-    inline QueryExecutionStatistics& WithDataManifestLocation(Aws::String&& value) { SetDataManifestLocation(std::move(value)); return *this;}
-    inline QueryExecutionStatistics& WithDataManifestLocation(const char* value) { SetDataManifestLocation(value); return *this;}
+    template<typename DataManifestLocationT = Aws::String>
+    void SetDataManifestLocation(DataManifestLocationT&& value) { m_dataManifestLocationHasBeenSet = true; m_dataManifestLocation = std::forward<DataManifestLocationT>(value); }
+    template<typename DataManifestLocationT = Aws::String>
+    QueryExecutionStatistics& WithDataManifestLocation(DataManifestLocationT&& value) { SetDataManifestLocation(std::forward<DataManifestLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of milliseconds that Athena took to run the query.</p>
      */
-    inline long long GetTotalExecutionTimeInMillis() const{ return m_totalExecutionTimeInMillis; }
+    inline long long GetTotalExecutionTimeInMillis() const { return m_totalExecutionTimeInMillis; }
     inline bool TotalExecutionTimeInMillisHasBeenSet() const { return m_totalExecutionTimeInMillisHasBeenSet; }
     inline void SetTotalExecutionTimeInMillis(long long value) { m_totalExecutionTimeInMillisHasBeenSet = true; m_totalExecutionTimeInMillis = value; }
     inline QueryExecutionStatistics& WithTotalExecutionTimeInMillis(long long value) { SetTotalExecutionTimeInMillis(value); return *this;}
@@ -98,7 +96,7 @@ namespace Model
      * resources. Note that if transient errors occur, Athena might automatically add
      * the query back to the queue.</p>
      */
-    inline long long GetQueryQueueTimeInMillis() const{ return m_queryQueueTimeInMillis; }
+    inline long long GetQueryQueueTimeInMillis() const { return m_queryQueueTimeInMillis; }
     inline bool QueryQueueTimeInMillisHasBeenSet() const { return m_queryQueueTimeInMillisHasBeenSet; }
     inline void SetQueryQueueTimeInMillis(long long value) { m_queryQueueTimeInMillisHasBeenSet = true; m_queryQueueTimeInMillis = value; }
     inline QueryExecutionStatistics& WithQueryQueueTimeInMillis(long long value) { SetQueryQueueTimeInMillis(value); return *this;}
@@ -109,7 +107,7 @@ namespace Model
      * <p>The number of milliseconds that Athena took to preprocess the query before
      * submitting the query to the query engine.</p>
      */
-    inline long long GetServicePreProcessingTimeInMillis() const{ return m_servicePreProcessingTimeInMillis; }
+    inline long long GetServicePreProcessingTimeInMillis() const { return m_servicePreProcessingTimeInMillis; }
     inline bool ServicePreProcessingTimeInMillisHasBeenSet() const { return m_servicePreProcessingTimeInMillisHasBeenSet; }
     inline void SetServicePreProcessingTimeInMillis(long long value) { m_servicePreProcessingTimeInMillisHasBeenSet = true; m_servicePreProcessingTimeInMillis = value; }
     inline QueryExecutionStatistics& WithServicePreProcessingTimeInMillis(long long value) { SetServicePreProcessingTimeInMillis(value); return *this;}
@@ -122,7 +120,7 @@ namespace Model
      * source. Note that because the query engine performs the query planning, query
      * planning time is a subset of engine processing time.</p>
      */
-    inline long long GetQueryPlanningTimeInMillis() const{ return m_queryPlanningTimeInMillis; }
+    inline long long GetQueryPlanningTimeInMillis() const { return m_queryPlanningTimeInMillis; }
     inline bool QueryPlanningTimeInMillisHasBeenSet() const { return m_queryPlanningTimeInMillisHasBeenSet; }
     inline void SetQueryPlanningTimeInMillis(long long value) { m_queryPlanningTimeInMillisHasBeenSet = true; m_queryPlanningTimeInMillis = value; }
     inline QueryExecutionStatistics& WithQueryPlanningTimeInMillis(long long value) { SetQueryPlanningTimeInMillis(value); return *this;}
@@ -133,7 +131,7 @@ namespace Model
      * <p>The number of milliseconds that Athena took to finalize and publish the query
      * results after the query engine finished running the query.</p>
      */
-    inline long long GetServiceProcessingTimeInMillis() const{ return m_serviceProcessingTimeInMillis; }
+    inline long long GetServiceProcessingTimeInMillis() const { return m_serviceProcessingTimeInMillis; }
     inline bool ServiceProcessingTimeInMillisHasBeenSet() const { return m_serviceProcessingTimeInMillisHasBeenSet; }
     inline void SetServiceProcessingTimeInMillis(long long value) { m_serviceProcessingTimeInMillisHasBeenSet = true; m_serviceProcessingTimeInMillis = value; }
     inline QueryExecutionStatistics& WithServiceProcessingTimeInMillis(long long value) { SetServiceProcessingTimeInMillis(value); return *this;}
@@ -144,37 +142,37 @@ namespace Model
      * <p>Contains information about whether previous query results were reused for the
      * query.</p>
      */
-    inline const ResultReuseInformation& GetResultReuseInformation() const{ return m_resultReuseInformation; }
+    inline const ResultReuseInformation& GetResultReuseInformation() const { return m_resultReuseInformation; }
     inline bool ResultReuseInformationHasBeenSet() const { return m_resultReuseInformationHasBeenSet; }
-    inline void SetResultReuseInformation(const ResultReuseInformation& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = value; }
-    inline void SetResultReuseInformation(ResultReuseInformation&& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = std::move(value); }
-    inline QueryExecutionStatistics& WithResultReuseInformation(const ResultReuseInformation& value) { SetResultReuseInformation(value); return *this;}
-    inline QueryExecutionStatistics& WithResultReuseInformation(ResultReuseInformation&& value) { SetResultReuseInformation(std::move(value)); return *this;}
+    template<typename ResultReuseInformationT = ResultReuseInformation>
+    void SetResultReuseInformation(ResultReuseInformationT&& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = std::forward<ResultReuseInformationT>(value); }
+    template<typename ResultReuseInformationT = ResultReuseInformation>
+    QueryExecutionStatistics& WithResultReuseInformation(ResultReuseInformationT&& value) { SetResultReuseInformation(std::forward<ResultReuseInformationT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_engineExecutionTimeInMillis;
+    long long m_engineExecutionTimeInMillis{0};
     bool m_engineExecutionTimeInMillisHasBeenSet = false;
 
-    long long m_dataScannedInBytes;
+    long long m_dataScannedInBytes{0};
     bool m_dataScannedInBytesHasBeenSet = false;
 
     Aws::String m_dataManifestLocation;
     bool m_dataManifestLocationHasBeenSet = false;
 
-    long long m_totalExecutionTimeInMillis;
+    long long m_totalExecutionTimeInMillis{0};
     bool m_totalExecutionTimeInMillisHasBeenSet = false;
 
-    long long m_queryQueueTimeInMillis;
+    long long m_queryQueueTimeInMillis{0};
     bool m_queryQueueTimeInMillisHasBeenSet = false;
 
-    long long m_servicePreProcessingTimeInMillis;
+    long long m_servicePreProcessingTimeInMillis{0};
     bool m_servicePreProcessingTimeInMillisHasBeenSet = false;
 
-    long long m_queryPlanningTimeInMillis;
+    long long m_queryPlanningTimeInMillis{0};
     bool m_queryPlanningTimeInMillisHasBeenSet = false;
 
-    long long m_serviceProcessingTimeInMillis;
+    long long m_serviceProcessingTimeInMillis{0};
     bool m_serviceProcessingTimeInMillisHasBeenSet = false;
 
     ResultReuseInformation m_resultReuseInformation;

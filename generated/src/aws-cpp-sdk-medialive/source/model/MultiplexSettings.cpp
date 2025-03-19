@@ -18,20 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexSettings::MultiplexSettings() : 
-    m_maximumVideoBufferDelayMilliseconds(0),
-    m_maximumVideoBufferDelayMillisecondsHasBeenSet(false),
-    m_transportStreamBitrate(0),
-    m_transportStreamBitrateHasBeenSet(false),
-    m_transportStreamId(0),
-    m_transportStreamIdHasBeenSet(false),
-    m_transportStreamReservedBitrate(0),
-    m_transportStreamReservedBitrateHasBeenSet(false)
-{
-}
-
 MultiplexSettings::MultiplexSettings(JsonView jsonValue)
-  : MultiplexSettings()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ MultiplexSettings& MultiplexSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maximumVideoBufferDelayMilliseconds"))
   {
     m_maximumVideoBufferDelayMilliseconds = jsonValue.GetInteger("maximumVideoBufferDelayMilliseconds");
-
     m_maximumVideoBufferDelayMillisecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transportStreamBitrate"))
   {
     m_transportStreamBitrate = jsonValue.GetInteger("transportStreamBitrate");
-
     m_transportStreamBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transportStreamId"))
   {
     m_transportStreamId = jsonValue.GetInteger("transportStreamId");
-
     m_transportStreamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transportStreamReservedBitrate"))
   {
     m_transportStreamReservedBitrate = jsonValue.GetInteger("transportStreamReservedBitrate");
-
     m_transportStreamReservedBitrateHasBeenSet = true;
   }
-
   return *this;
 }
 

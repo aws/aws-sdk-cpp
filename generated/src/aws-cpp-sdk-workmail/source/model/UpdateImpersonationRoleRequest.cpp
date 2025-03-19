@@ -12,17 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateImpersonationRoleRequest::UpdateImpersonationRoleRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_impersonationRoleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ImpersonationRoleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateImpersonationRoleRequest::SerializePayload() const
 {
   JsonValue payload;

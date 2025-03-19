@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMappingRequest::GetMappingRequest() : 
-    m_sourceHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String GetMappingRequest::SerializePayload() const
 {
   JsonValue payload;

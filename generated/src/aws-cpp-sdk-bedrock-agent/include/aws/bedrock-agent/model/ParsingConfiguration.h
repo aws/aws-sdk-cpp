@@ -42,7 +42,7 @@ namespace Model
   class ParsingConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ParsingConfiguration();
+    AWS_BEDROCKAGENT_API ParsingConfiguration() = default;
     AWS_BEDROCKAGENT_API ParsingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ParsingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,12 @@ namespace Model
      * for ingesting your data source, use this object to modify configurations for
      * using the Amazon Bedrock Data Automation parser.</p>
      */
-    inline const BedrockDataAutomationConfiguration& GetBedrockDataAutomationConfiguration() const{ return m_bedrockDataAutomationConfiguration; }
+    inline const BedrockDataAutomationConfiguration& GetBedrockDataAutomationConfiguration() const { return m_bedrockDataAutomationConfiguration; }
     inline bool BedrockDataAutomationConfigurationHasBeenSet() const { return m_bedrockDataAutomationConfigurationHasBeenSet; }
-    inline void SetBedrockDataAutomationConfiguration(const BedrockDataAutomationConfiguration& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = value; }
-    inline void SetBedrockDataAutomationConfiguration(BedrockDataAutomationConfiguration&& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = std::move(value); }
-    inline ParsingConfiguration& WithBedrockDataAutomationConfiguration(const BedrockDataAutomationConfiguration& value) { SetBedrockDataAutomationConfiguration(value); return *this;}
-    inline ParsingConfiguration& WithBedrockDataAutomationConfiguration(BedrockDataAutomationConfiguration&& value) { SetBedrockDataAutomationConfiguration(std::move(value)); return *this;}
+    template<typename BedrockDataAutomationConfigurationT = BedrockDataAutomationConfiguration>
+    void SetBedrockDataAutomationConfiguration(BedrockDataAutomationConfigurationT&& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = std::forward<BedrockDataAutomationConfigurationT>(value); }
+    template<typename BedrockDataAutomationConfigurationT = BedrockDataAutomationConfiguration>
+    ParsingConfiguration& WithBedrockDataAutomationConfiguration(BedrockDataAutomationConfigurationT&& value) { SetBedrockDataAutomationConfiguration(std::forward<BedrockDataAutomationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,24 +68,22 @@ namespace Model
      * for ingesting your data source, use this object to modify configurations for
      * using a foundation model to parse documents.</p>
      */
-    inline const BedrockFoundationModelConfiguration& GetBedrockFoundationModelConfiguration() const{ return m_bedrockFoundationModelConfiguration; }
+    inline const BedrockFoundationModelConfiguration& GetBedrockFoundationModelConfiguration() const { return m_bedrockFoundationModelConfiguration; }
     inline bool BedrockFoundationModelConfigurationHasBeenSet() const { return m_bedrockFoundationModelConfigurationHasBeenSet; }
-    inline void SetBedrockFoundationModelConfiguration(const BedrockFoundationModelConfiguration& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = value; }
-    inline void SetBedrockFoundationModelConfiguration(BedrockFoundationModelConfiguration&& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = std::move(value); }
-    inline ParsingConfiguration& WithBedrockFoundationModelConfiguration(const BedrockFoundationModelConfiguration& value) { SetBedrockFoundationModelConfiguration(value); return *this;}
-    inline ParsingConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfiguration&& value) { SetBedrockFoundationModelConfiguration(std::move(value)); return *this;}
+    template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelConfiguration>
+    void SetBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { m_bedrockFoundationModelConfigurationHasBeenSet = true; m_bedrockFoundationModelConfiguration = std::forward<BedrockFoundationModelConfigurationT>(value); }
+    template<typename BedrockFoundationModelConfigurationT = BedrockFoundationModelConfiguration>
+    ParsingConfiguration& WithBedrockFoundationModelConfiguration(BedrockFoundationModelConfigurationT&& value) { SetBedrockFoundationModelConfiguration(std::forward<BedrockFoundationModelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parsing strategy for the data source.</p>
      */
-    inline const ParsingStrategy& GetParsingStrategy() const{ return m_parsingStrategy; }
+    inline ParsingStrategy GetParsingStrategy() const { return m_parsingStrategy; }
     inline bool ParsingStrategyHasBeenSet() const { return m_parsingStrategyHasBeenSet; }
-    inline void SetParsingStrategy(const ParsingStrategy& value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
-    inline void SetParsingStrategy(ParsingStrategy&& value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = std::move(value); }
-    inline ParsingConfiguration& WithParsingStrategy(const ParsingStrategy& value) { SetParsingStrategy(value); return *this;}
-    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy&& value) { SetParsingStrategy(std::move(value)); return *this;}
+    inline void SetParsingStrategy(ParsingStrategy value) { m_parsingStrategyHasBeenSet = true; m_parsingStrategy = value; }
+    inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy value) { SetParsingStrategy(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +93,7 @@ namespace Model
     BedrockFoundationModelConfiguration m_bedrockFoundationModelConfiguration;
     bool m_bedrockFoundationModelConfigurationHasBeenSet = false;
 
-    ParsingStrategy m_parsingStrategy;
+    ParsingStrategy m_parsingStrategy{ParsingStrategy::NOT_SET};
     bool m_parsingStrategyHasBeenSet = false;
   };
 

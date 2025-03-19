@@ -28,20 +28,18 @@ namespace Model
   class DescribeUploadBufferResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeUploadBufferResult();
+    AWS_STORAGEGATEWAY_API DescribeUploadBufferResult() = default;
     AWS_STORAGEGATEWAY_API DescribeUploadBufferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeUploadBufferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeUploadBufferResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeUploadBufferResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeUploadBufferResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeUploadBufferResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,22 +49,21 @@ namespace Model
      * maximum length of 300). If no local disks are configured as working storage,
      * then the DiskIds array is empty.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
-    inline void SetDiskIds(const Aws::Vector<Aws::String>& value) { m_diskIds = value; }
-    inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = std::move(value); }
-    inline DescribeUploadBufferResult& WithDiskIds(const Aws::Vector<Aws::String>& value) { SetDiskIds(value); return *this;}
-    inline DescribeUploadBufferResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
-    inline DescribeUploadBufferResult& AddDiskIds(const Aws::String& value) { m_diskIds.push_back(value); return *this; }
-    inline DescribeUploadBufferResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(std::move(value)); return *this; }
-    inline DescribeUploadBufferResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDiskIds() const { return m_diskIds; }
+    template<typename DiskIdsT = Aws::Vector<Aws::String>>
+    void SetDiskIds(DiskIdsT&& value) { m_diskIdsHasBeenSet = true; m_diskIds = std::forward<DiskIdsT>(value); }
+    template<typename DiskIdsT = Aws::Vector<Aws::String>>
+    DescribeUploadBufferResult& WithDiskIds(DiskIdsT&& value) { SetDiskIds(std::forward<DiskIdsT>(value)); return *this;}
+    template<typename DiskIdsT = Aws::String>
+    DescribeUploadBufferResult& AddDiskIds(DiskIdsT&& value) { m_diskIdsHasBeenSet = true; m_diskIds.emplace_back(std::forward<DiskIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total number of bytes being used in the gateway's upload buffer.</p>
      */
-    inline long long GetUploadBufferUsedInBytes() const{ return m_uploadBufferUsedInBytes; }
-    inline void SetUploadBufferUsedInBytes(long long value) { m_uploadBufferUsedInBytes = value; }
+    inline long long GetUploadBufferUsedInBytes() const { return m_uploadBufferUsedInBytes; }
+    inline void SetUploadBufferUsedInBytes(long long value) { m_uploadBufferUsedInBytesHasBeenSet = true; m_uploadBufferUsedInBytes = value; }
     inline DescribeUploadBufferResult& WithUploadBufferUsedInBytes(long long value) { SetUploadBufferUsedInBytes(value); return *this;}
     ///@}
 
@@ -74,32 +71,35 @@ namespace Model
     /**
      * <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
      */
-    inline long long GetUploadBufferAllocatedInBytes() const{ return m_uploadBufferAllocatedInBytes; }
-    inline void SetUploadBufferAllocatedInBytes(long long value) { m_uploadBufferAllocatedInBytes = value; }
+    inline long long GetUploadBufferAllocatedInBytes() const { return m_uploadBufferAllocatedInBytes; }
+    inline void SetUploadBufferAllocatedInBytes(long long value) { m_uploadBufferAllocatedInBytesHasBeenSet = true; m_uploadBufferAllocatedInBytes = value; }
     inline DescribeUploadBufferResult& WithUploadBufferAllocatedInBytes(long long value) { SetUploadBufferAllocatedInBytes(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeUploadBufferResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeUploadBufferResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeUploadBufferResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeUploadBufferResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_diskIds;
+    bool m_diskIdsHasBeenSet = false;
 
-    long long m_uploadBufferUsedInBytes;
+    long long m_uploadBufferUsedInBytes{0};
+    bool m_uploadBufferUsedInBytesHasBeenSet = false;
 
-    long long m_uploadBufferAllocatedInBytes;
+    long long m_uploadBufferAllocatedInBytes{0};
+    bool m_uploadBufferAllocatedInBytesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomPluginRequest::DeleteCustomPluginRequest() : 
-    m_customPluginArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomPluginRequest::SerializePayload() const
 {
   return {};

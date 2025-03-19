@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Greengrass::Greengrass() : 
-    m_groupArnHasBeenSet(false)
-{
-}
-
 Greengrass::Greengrass(JsonView jsonValue)
-  : Greengrass()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Greengrass& Greengrass::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupArn"))
   {
     m_groupArn = jsonValue.GetString("groupArn");
-
     m_groupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

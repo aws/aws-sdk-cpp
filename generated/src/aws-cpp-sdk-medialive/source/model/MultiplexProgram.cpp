@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexProgram::MultiplexProgram() : 
-    m_channelIdHasBeenSet(false),
-    m_multiplexProgramSettingsHasBeenSet(false),
-    m_packetIdentifiersMapHasBeenSet(false),
-    m_pipelineDetailsHasBeenSet(false),
-    m_programNameHasBeenSet(false)
-{
-}
-
 MultiplexProgram::MultiplexProgram(JsonView jsonValue)
-  : MultiplexProgram()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ MultiplexProgram& MultiplexProgram::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelId"))
   {
     m_channelId = jsonValue.GetString("channelId");
-
     m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiplexProgramSettings"))
   {
     m_multiplexProgramSettings = jsonValue.GetObject("multiplexProgramSettings");
-
     m_multiplexProgramSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packetIdentifiersMap"))
   {
     m_packetIdentifiersMap = jsonValue.GetObject("packetIdentifiersMap");
-
     m_packetIdentifiersMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineDetails"))
   {
     Aws::Utils::Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
@@ -65,14 +49,11 @@ MultiplexProgram& MultiplexProgram::operator =(JsonView jsonValue)
     }
     m_pipelineDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programName"))
   {
     m_programName = jsonValue.GetString("programName");
-
     m_programNameHasBeenSet = true;
   }
-
   return *this;
 }
 

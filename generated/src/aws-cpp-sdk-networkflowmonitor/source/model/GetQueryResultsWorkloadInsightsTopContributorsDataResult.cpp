@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryResultsWorkloadInsightsTopContributorsDataResult::GetQueryResultsWorkloadInsightsTopContributorsDataResult() : 
-    m_unit(MetricUnit::NOT_SET)
-{
-}
-
 GetQueryResultsWorkloadInsightsTopContributorsDataResult::GetQueryResultsWorkloadInsightsTopContributorsDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQueryResultsWorkloadInsightsTopContributorsDataResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetQueryResultsWorkloadInsightsTopContributorsDataResult& GetQueryResultsWorkloa
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = MetricUnitMapper::GetMetricUnitForName(jsonValue.GetString("unit"));
-
+    m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datapoints"))
   {
     Aws::Utils::Array<JsonView> datapointsJsonList = jsonValue.GetArray("datapoints");
@@ -44,20 +37,20 @@ GetQueryResultsWorkloadInsightsTopContributorsDataResult& GetQueryResultsWorkloa
     {
       m_datapoints.push_back(datapointsJsonList[datapointsIndex].AsObject());
     }
+    m_datapointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

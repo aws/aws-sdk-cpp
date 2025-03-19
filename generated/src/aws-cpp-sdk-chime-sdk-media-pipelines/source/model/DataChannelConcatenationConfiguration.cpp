@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-DataChannelConcatenationConfiguration::DataChannelConcatenationConfiguration() : 
-    m_state(ArtifactsConcatenationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DataChannelConcatenationConfiguration::DataChannelConcatenationConfiguration(JsonView jsonValue)
-  : DataChannelConcatenationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataChannelConcatenationConfiguration& DataChannelConcatenationConfiguration::op
   if(jsonValue.ValueExists("State"))
   {
     m_state = ArtifactsConcatenationStateMapper::GetArtifactsConcatenationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

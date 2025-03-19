@@ -31,7 +31,7 @@ namespace Model
   class SoftwareInformation
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation();
+    AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation() = default;
     AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
      * <p>The state of the software that is installed or that is being installed on the
      * device.</p>
      */
-    inline const Aws::String& GetInstallState() const{ return m_installState; }
+    inline const Aws::String& GetInstallState() const { return m_installState; }
     inline bool InstallStateHasBeenSet() const { return m_installStateHasBeenSet; }
-    inline void SetInstallState(const Aws::String& value) { m_installStateHasBeenSet = true; m_installState = value; }
-    inline void SetInstallState(Aws::String&& value) { m_installStateHasBeenSet = true; m_installState = std::move(value); }
-    inline void SetInstallState(const char* value) { m_installStateHasBeenSet = true; m_installState.assign(value); }
-    inline SoftwareInformation& WithInstallState(const Aws::String& value) { SetInstallState(value); return *this;}
-    inline SoftwareInformation& WithInstallState(Aws::String&& value) { SetInstallState(std::move(value)); return *this;}
-    inline SoftwareInformation& WithInstallState(const char* value) { SetInstallState(value); return *this;}
+    template<typename InstallStateT = Aws::String>
+    void SetInstallState(InstallStateT&& value) { m_installStateHasBeenSet = true; m_installState = std::forward<InstallStateT>(value); }
+    template<typename InstallStateT = Aws::String>
+    SoftwareInformation& WithInstallState(InstallStateT&& value) { SetInstallState(std::forward<InstallStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the software currently installed on the device.</p>
      */
-    inline const Aws::String& GetInstalledVersion() const{ return m_installedVersion; }
+    inline const Aws::String& GetInstalledVersion() const { return m_installedVersion; }
     inline bool InstalledVersionHasBeenSet() const { return m_installedVersionHasBeenSet; }
-    inline void SetInstalledVersion(const Aws::String& value) { m_installedVersionHasBeenSet = true; m_installedVersion = value; }
-    inline void SetInstalledVersion(Aws::String&& value) { m_installedVersionHasBeenSet = true; m_installedVersion = std::move(value); }
-    inline void SetInstalledVersion(const char* value) { m_installedVersionHasBeenSet = true; m_installedVersion.assign(value); }
-    inline SoftwareInformation& WithInstalledVersion(const Aws::String& value) { SetInstalledVersion(value); return *this;}
-    inline SoftwareInformation& WithInstalledVersion(Aws::String&& value) { SetInstalledVersion(std::move(value)); return *this;}
-    inline SoftwareInformation& WithInstalledVersion(const char* value) { SetInstalledVersion(value); return *this;}
+    template<typename InstalledVersionT = Aws::String>
+    void SetInstalledVersion(InstalledVersionT&& value) { m_installedVersionHasBeenSet = true; m_installedVersion = std::forward<InstalledVersionT>(value); }
+    template<typename InstalledVersionT = Aws::String>
+    SoftwareInformation& WithInstalledVersion(InstalledVersionT&& value) { SetInstalledVersion(std::forward<InstalledVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the software being installed on the device.</p>
      */
-    inline const Aws::String& GetInstallingVersion() const{ return m_installingVersion; }
+    inline const Aws::String& GetInstallingVersion() const { return m_installingVersion; }
     inline bool InstallingVersionHasBeenSet() const { return m_installingVersionHasBeenSet; }
-    inline void SetInstallingVersion(const Aws::String& value) { m_installingVersionHasBeenSet = true; m_installingVersion = value; }
-    inline void SetInstallingVersion(Aws::String&& value) { m_installingVersionHasBeenSet = true; m_installingVersion = std::move(value); }
-    inline void SetInstallingVersion(const char* value) { m_installingVersionHasBeenSet = true; m_installingVersion.assign(value); }
-    inline SoftwareInformation& WithInstallingVersion(const Aws::String& value) { SetInstallingVersion(value); return *this;}
-    inline SoftwareInformation& WithInstallingVersion(Aws::String&& value) { SetInstallingVersion(std::move(value)); return *this;}
-    inline SoftwareInformation& WithInstallingVersion(const char* value) { SetInstallingVersion(value); return *this;}
+    template<typename InstallingVersionT = Aws::String>
+    void SetInstallingVersion(InstallingVersionT&& value) { m_installingVersionHasBeenSet = true; m_installingVersion = std::forward<InstallingVersionT>(value); }
+    template<typename InstallingVersionT = Aws::String>
+    SoftwareInformation& WithInstallingVersion(InstallingVersionT&& value) { SetInstallingVersion(std::forward<InstallingVersionT>(value)); return *this;}
     ///@}
   private:
 

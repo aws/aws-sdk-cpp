@@ -18,29 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-Component::Component() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_sourceIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_variantsHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_collectionPropertiesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false)
-{
-}
-
 Component::Component(JsonView jsonValue)
-  : Component()
 {
   *this = jsonValue;
 }
@@ -50,45 +28,33 @@ Component& Component::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceId"))
   {
     m_sourceId = jsonValue.GetString("sourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentType"))
   {
     m_componentType = jsonValue.GetString("componentType");
-
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
@@ -98,7 +64,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("children"))
   {
     Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("children");
@@ -108,7 +73,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_childrenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variants"))
   {
     Aws::Utils::Array<JsonView> variantsJsonList = jsonValue.GetArray("variants");
@@ -118,7 +82,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_variantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrides"))
   {
     Aws::Map<Aws::String, JsonView> overridesJsonMap = jsonValue.GetObject("overrides").GetAllObjects();
@@ -134,7 +97,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_overridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindingProperties"))
   {
     Aws::Map<Aws::String, JsonView> bindingPropertiesJsonMap = jsonValue.GetObject("bindingProperties").GetAllObjects();
@@ -144,7 +106,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_bindingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collectionProperties"))
   {
     Aws::Map<Aws::String, JsonView> collectionPropertiesJsonMap = jsonValue.GetObject("collectionProperties").GetAllObjects();
@@ -154,21 +115,16 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_collectionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -178,7 +134,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("events"))
   {
     Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("events").GetAllObjects();
@@ -188,14 +143,11 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

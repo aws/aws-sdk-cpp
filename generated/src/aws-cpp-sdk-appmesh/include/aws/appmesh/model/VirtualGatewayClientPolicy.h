@@ -31,7 +31,7 @@ namespace Model
   class VirtualGatewayClientPolicy
   {
   public:
-    AWS_APPMESH_API VirtualGatewayClientPolicy();
+    AWS_APPMESH_API VirtualGatewayClientPolicy() = default;
     AWS_APPMESH_API VirtualGatewayClientPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayClientPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>A reference to an object that represents a Transport Layer Security (TLS)
      * client policy.</p>
      */
-    inline const VirtualGatewayClientPolicyTls& GetTls() const{ return m_tls; }
+    inline const VirtualGatewayClientPolicyTls& GetTls() const { return m_tls; }
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-    inline void SetTls(const VirtualGatewayClientPolicyTls& value) { m_tlsHasBeenSet = true; m_tls = value; }
-    inline void SetTls(VirtualGatewayClientPolicyTls&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-    inline VirtualGatewayClientPolicy& WithTls(const VirtualGatewayClientPolicyTls& value) { SetTls(value); return *this;}
-    inline VirtualGatewayClientPolicy& WithTls(VirtualGatewayClientPolicyTls&& value) { SetTls(std::move(value)); return *this;}
+    template<typename TlsT = VirtualGatewayClientPolicyTls>
+    void SetTls(TlsT&& value) { m_tlsHasBeenSet = true; m_tls = std::forward<TlsT>(value); }
+    template<typename TlsT = VirtualGatewayClientPolicyTls>
+    VirtualGatewayClientPolicy& WithTls(TlsT&& value) { SetTls(std::forward<TlsT>(value)); return *this;}
     ///@}
   private:
 

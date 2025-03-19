@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOutpostRequest::DeleteOutpostRequest() : 
-    m_outpostIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOutpostRequest::SerializePayload() const
 {
   return {};

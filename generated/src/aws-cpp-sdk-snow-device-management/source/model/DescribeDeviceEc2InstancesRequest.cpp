@@ -12,12 +12,6 @@ using namespace Aws::SnowDeviceManagement::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDeviceEc2InstancesRequest::DescribeDeviceEc2InstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_managedDeviceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDeviceEc2InstancesRequest::SerializePayload() const
 {
   JsonValue payload;

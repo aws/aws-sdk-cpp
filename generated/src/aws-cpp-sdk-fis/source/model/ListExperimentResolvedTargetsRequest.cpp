@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListExperimentResolvedTargetsRequest::ListExperimentResolvedTargetsRequest() : 
-    m_experimentIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 Aws::String ListExperimentResolvedTargetsRequest::SerializePayload() const
 {
   return {};

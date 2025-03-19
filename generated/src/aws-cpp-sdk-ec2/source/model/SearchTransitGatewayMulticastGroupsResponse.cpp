@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchTransitGatewayMulticastGroupsResponse::SearchTransitGatewayMulticastGroupsResponse()
-{
-}
-
 SearchTransitGatewayMulticastGroupsResponse::SearchTransitGatewayMulticastGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ SearchTransitGatewayMulticastGroupsResponse& SearchTransitGatewayMulticastGroups
     if(!multicastGroupsNode.IsNull())
     {
       XmlNode multicastGroupsMember = multicastGroupsNode.FirstChild("item");
+      m_multicastGroupsHasBeenSet = !multicastGroupsMember.IsNull();
       while(!multicastGroupsMember.IsNull())
       {
         m_multicastGroups.push_back(multicastGroupsMember);
         multicastGroupsMember = multicastGroupsMember.NextNode("item");
       }
 
+      m_multicastGroupsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ SearchTransitGatewayMulticastGroupsResponse& SearchTransitGatewayMulticastGroups
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::SearchTransitGatewayMulticastGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

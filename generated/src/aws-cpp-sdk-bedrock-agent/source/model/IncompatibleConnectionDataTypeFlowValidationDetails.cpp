@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-IncompatibleConnectionDataTypeFlowValidationDetails::IncompatibleConnectionDataTypeFlowValidationDetails() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 IncompatibleConnectionDataTypeFlowValidationDetails::IncompatibleConnectionDataTypeFlowValidationDetails(JsonView jsonValue)
-  : IncompatibleConnectionDataTypeFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IncompatibleConnectionDataTypeFlowValidationDetails& IncompatibleConnectionDataT
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

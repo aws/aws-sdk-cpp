@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetLaunchTemplateDataRequest::GetLaunchTemplateDataRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLaunchTemplateDataRequest::SerializePayload() const
 {
   Aws::StringStream ss;

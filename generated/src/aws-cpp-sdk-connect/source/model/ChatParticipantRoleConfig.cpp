@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ChatParticipantRoleConfig::ChatParticipantRoleConfig() : 
-    m_participantTimerConfigListHasBeenSet(false)
-{
-}
-
 ChatParticipantRoleConfig::ChatParticipantRoleConfig(JsonView jsonValue)
-  : ChatParticipantRoleConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ChatParticipantRoleConfig& ChatParticipantRoleConfig::operator =(JsonView jsonVa
     }
     m_participantTimerConfigListHasBeenSet = true;
   }
-
   return *this;
 }
 

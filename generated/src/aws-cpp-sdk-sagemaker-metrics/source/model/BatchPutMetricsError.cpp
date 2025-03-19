@@ -18,16 +18,7 @@ namespace SageMakerMetrics
 namespace Model
 {
 
-BatchPutMetricsError::BatchPutMetricsError() : 
-    m_code(PutMetricsErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_metricIndex(0),
-    m_metricIndexHasBeenSet(false)
-{
-}
-
 BatchPutMetricsError::BatchPutMetricsError(JsonView jsonValue)
-  : BatchPutMetricsError()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BatchPutMetricsError& BatchPutMetricsError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = PutMetricsErrorCodeMapper::GetPutMetricsErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricIndex"))
   {
     m_metricIndex = jsonValue.GetInteger("MetricIndex");
-
     m_metricIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

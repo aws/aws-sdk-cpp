@@ -12,13 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGeofenceCollectionsRequest::ListGeofenceCollectionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListGeofenceCollectionsRequest::SerializePayload() const
 {
   JsonValue payload;

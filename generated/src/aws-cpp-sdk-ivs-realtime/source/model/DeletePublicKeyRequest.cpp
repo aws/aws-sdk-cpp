@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePublicKeyRequest::DeletePublicKeyRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePublicKeyRequest::SerializePayload() const
 {
   JsonValue payload;

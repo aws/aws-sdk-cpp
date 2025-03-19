@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteComputeQuotaRequest::DeleteComputeQuotaRequest() : 
-    m_computeQuotaIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteComputeQuotaRequest::SerializePayload() const
 {
   JsonValue payload;

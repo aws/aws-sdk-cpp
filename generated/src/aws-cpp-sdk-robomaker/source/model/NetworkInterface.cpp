@@ -18,15 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_publicIpAddressHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("networkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIpAddress"))
   {
     m_publicIpAddress = jsonValue.GetString("publicIpAddress");
-
     m_publicIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

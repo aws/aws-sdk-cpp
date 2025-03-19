@@ -18,20 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageResource::CoverageResource() : 
-    m_resourceIdHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_coverageStatus(CoverageStatus::NOT_SET),
-    m_coverageStatusHasBeenSet(false),
-    m_issueHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 CoverageResource::CoverageResource(JsonView jsonValue)
-  : CoverageResource()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ CoverageResource& CoverageResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceDetails"))
   {
     m_resourceDetails = jsonValue.GetObject("resourceDetails");
-
     m_resourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("coverageStatus"))
   {
     m_coverageStatus = CoverageStatusMapper::GetCoverageStatusForName(jsonValue.GetString("coverageStatus"));
-
     m_coverageStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issue"))
   {
     m_issue = jsonValue.GetString("issue");
-
     m_issueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class DevicePool
   {
   public:
-    AWS_DEVICEFARM_API DevicePool();
+    AWS_DEVICEFARM_API DevicePool() = default;
     AWS_DEVICEFARM_API DevicePool(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API DevicePool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The device pool's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DevicePool& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DevicePool& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DevicePool& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DevicePool& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device pool's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DevicePool& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DevicePool& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DevicePool& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DevicePool& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device pool's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DevicePool& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DevicePool& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DevicePool& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DevicePool& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +83,24 @@ namespace Model
      * </li> <li> <p>PRIVATE: A device pool that is created and managed by the device
      * pool developer.</p> </li> </ul>
      */
-    inline const DevicePoolType& GetType() const{ return m_type; }
+    inline DevicePoolType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DevicePoolType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DevicePoolType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DevicePool& WithType(const DevicePoolType& value) { SetType(value); return *this;}
-    inline DevicePool& WithType(DevicePoolType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DevicePoolType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DevicePool& WithType(DevicePoolType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the device pool's rules.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline DevicePool& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline DevicePool& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline DevicePool& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline DevicePool& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    DevicePool& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    DevicePool& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,7 +112,7 @@ namespace Model
      * this parameter.</p> <p>By specifying the maximum number of devices, you can
      * control the costs that you incur by running tests.</p>
      */
-    inline int GetMaxDevices() const{ return m_maxDevices; }
+    inline int GetMaxDevices() const { return m_maxDevices; }
     inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
     inline void SetMaxDevices(int value) { m_maxDevicesHasBeenSet = true; m_maxDevices = value; }
     inline DevicePool& WithMaxDevices(int value) { SetMaxDevices(value); return *this;}
@@ -136,13 +128,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    DevicePoolType m_type;
+    DevicePoolType m_type{DevicePoolType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;
 
-    int m_maxDevices;
+    int m_maxDevices{0};
     bool m_maxDevicesHasBeenSet = false;
   };
 

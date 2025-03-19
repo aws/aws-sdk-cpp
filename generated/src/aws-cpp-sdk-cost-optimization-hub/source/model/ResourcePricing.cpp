@@ -18,19 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ResourcePricing::ResourcePricing() : 
-    m_estimatedCostBeforeDiscounts(0.0),
-    m_estimatedCostBeforeDiscountsHasBeenSet(false),
-    m_estimatedNetUnusedAmortizedCommitments(0.0),
-    m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet(false),
-    m_estimatedDiscountsHasBeenSet(false),
-    m_estimatedCostAfterDiscounts(0.0),
-    m_estimatedCostAfterDiscountsHasBeenSet(false)
-{
-}
-
 ResourcePricing::ResourcePricing(JsonView jsonValue)
-  : ResourcePricing()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ResourcePricing& ResourcePricing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("estimatedCostBeforeDiscounts"))
   {
     m_estimatedCostBeforeDiscounts = jsonValue.GetDouble("estimatedCostBeforeDiscounts");
-
     m_estimatedCostBeforeDiscountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedNetUnusedAmortizedCommitments"))
   {
     m_estimatedNetUnusedAmortizedCommitments = jsonValue.GetDouble("estimatedNetUnusedAmortizedCommitments");
-
     m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedDiscounts"))
   {
     m_estimatedDiscounts = jsonValue.GetObject("estimatedDiscounts");
-
     m_estimatedDiscountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedCostAfterDiscounts"))
   {
     m_estimatedCostAfterDiscounts = jsonValue.GetDouble("estimatedCostAfterDiscounts");
-
     m_estimatedCostAfterDiscountsHasBeenSet = true;
   }
-
   return *this;
 }
 

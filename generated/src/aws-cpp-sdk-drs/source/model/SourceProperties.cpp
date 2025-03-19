@@ -18,23 +18,7 @@ namespace drs
 namespace Model
 {
 
-SourceProperties::SourceProperties() : 
-    m_cpusHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_identificationHintsHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_ramBytes(0),
-    m_ramBytesHasBeenSet(false),
-    m_recommendedInstanceTypeHasBeenSet(false),
-    m_supportsNitroInstances(false),
-    m_supportsNitroInstancesHasBeenSet(false)
-{
-}
-
 SourceProperties::SourceProperties(JsonView jsonValue)
-  : SourceProperties()
 {
   *this = jsonValue;
 }
@@ -50,7 +34,6 @@ SourceProperties& SourceProperties::operator =(JsonView jsonValue)
     }
     m_cpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disks"))
   {
     Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
@@ -60,21 +43,16 @@ SourceProperties& SourceProperties::operator =(JsonView jsonValue)
     }
     m_disksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identificationHints"))
   {
     m_identificationHints = jsonValue.GetObject("identificationHints");
-
     m_identificationHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetString("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -84,35 +62,26 @@ SourceProperties& SourceProperties::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("os"))
   {
     m_os = jsonValue.GetObject("os");
-
     m_osHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramBytes"))
   {
     m_ramBytes = jsonValue.GetInt64("ramBytes");
-
     m_ramBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedInstanceType"))
   {
     m_recommendedInstanceType = jsonValue.GetString("recommendedInstanceType");
-
     m_recommendedInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportsNitroInstances"))
   {
     m_supportsNitroInstances = jsonValue.GetBool("supportsNitroInstances");
-
     m_supportsNitroInstancesHasBeenSet = true;
   }
-
   return *this;
 }
 

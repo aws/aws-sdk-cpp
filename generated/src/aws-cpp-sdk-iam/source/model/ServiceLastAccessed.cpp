@@ -20,20 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ServiceLastAccessed::ServiceLastAccessed() : 
-    m_serviceNameHasBeenSet(false),
-    m_lastAuthenticatedHasBeenSet(false),
-    m_serviceNamespaceHasBeenSet(false),
-    m_lastAuthenticatedEntityHasBeenSet(false),
-    m_lastAuthenticatedRegionHasBeenSet(false),
-    m_totalAuthenticatedEntities(0),
-    m_totalAuthenticatedEntitiesHasBeenSet(false),
-    m_trackedActionsLastAccessedHasBeenSet(false)
-{
-}
-
 ServiceLastAccessed::ServiceLastAccessed(const XmlNode& xmlNode)
-  : ServiceLastAccessed()
 {
   *this = xmlNode;
 }
@@ -84,6 +71,7 @@ ServiceLastAccessed& ServiceLastAccessed::operator =(const XmlNode& xmlNode)
     if(!trackedActionsLastAccessedNode.IsNull())
     {
       XmlNode trackedActionsLastAccessedMember = trackedActionsLastAccessedNode.FirstChild("member");
+      m_trackedActionsLastAccessedHasBeenSet = !trackedActionsLastAccessedMember.IsNull();
       while(!trackedActionsLastAccessedMember.IsNull())
       {
         m_trackedActionsLastAccessed.push_back(trackedActionsLastAccessedMember);

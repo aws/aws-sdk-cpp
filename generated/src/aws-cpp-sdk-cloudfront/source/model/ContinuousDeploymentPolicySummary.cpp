@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary() : 
-    m_continuousDeploymentPolicyHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentPolicySummary::ContinuousDeploymentPolicySummary(const XmlNode& xmlNode)
-  : ContinuousDeploymentPolicySummary()
 {
   *this = xmlNode;
 }

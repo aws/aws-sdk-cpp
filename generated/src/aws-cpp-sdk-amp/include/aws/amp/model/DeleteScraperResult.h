@@ -34,7 +34,7 @@ namespace Model
   class DeleteScraperResult
   {
   public:
-    AWS_PROMETHEUSSERVICE_API DeleteScraperResult();
+    AWS_PROMETHEUSSERVICE_API DeleteScraperResult() = default;
     AWS_PROMETHEUSSERVICE_API DeleteScraperResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROMETHEUSSERVICE_API DeleteScraperResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,43 +43,42 @@ namespace Model
     /**
      * <p>The ID of the scraper to delete.</p>
      */
-    inline const Aws::String& GetScraperId() const{ return m_scraperId; }
-    inline void SetScraperId(const Aws::String& value) { m_scraperId = value; }
-    inline void SetScraperId(Aws::String&& value) { m_scraperId = std::move(value); }
-    inline void SetScraperId(const char* value) { m_scraperId.assign(value); }
-    inline DeleteScraperResult& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-    inline DeleteScraperResult& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-    inline DeleteScraperResult& WithScraperId(const char* value) { SetScraperId(value); return *this;}
+    inline const Aws::String& GetScraperId() const { return m_scraperId; }
+    template<typename ScraperIdT = Aws::String>
+    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
+    template<typename ScraperIdT = Aws::String>
+    DeleteScraperResult& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the scraper.</p>
      */
-    inline const ScraperStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ScraperStatus& value) { m_status = value; }
-    inline void SetStatus(ScraperStatus&& value) { m_status = std::move(value); }
-    inline DeleteScraperResult& WithStatus(const ScraperStatus& value) { SetStatus(value); return *this;}
-    inline DeleteScraperResult& WithStatus(ScraperStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const ScraperStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = ScraperStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = ScraperStatus>
+    DeleteScraperResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteScraperResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteScraperResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteScraperResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteScraperResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scraperId;
+    bool m_scraperIdHasBeenSet = false;
 
     ScraperStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

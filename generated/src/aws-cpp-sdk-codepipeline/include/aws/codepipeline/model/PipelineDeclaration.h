@@ -40,7 +40,7 @@ namespace Model
   class PipelineDeclaration
   {
   public:
-    AWS_CODEPIPELINE_API PipelineDeclaration();
+    AWS_CODEPIPELINE_API PipelineDeclaration() = default;
     AWS_CODEPIPELINE_API PipelineDeclaration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API PipelineDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The name of the pipeline.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PipelineDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PipelineDeclaration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PipelineDeclaration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PipelineDeclaration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * actions with no <code>actionRoleArn</code>, or to use to assume roles for
      * actions with an <code>actionRoleArn</code>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline PipelineDeclaration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline PipelineDeclaration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline PipelineDeclaration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    PipelineDeclaration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * create a cross-region action in your pipeline, you must use
      * <code>artifactStores</code>.</p> 
      */
-    inline const ArtifactStore& GetArtifactStore() const{ return m_artifactStore; }
+    inline const ArtifactStore& GetArtifactStore() const { return m_artifactStore; }
     inline bool ArtifactStoreHasBeenSet() const { return m_artifactStoreHasBeenSet; }
-    inline void SetArtifactStore(const ArtifactStore& value) { m_artifactStoreHasBeenSet = true; m_artifactStore = value; }
-    inline void SetArtifactStore(ArtifactStore&& value) { m_artifactStoreHasBeenSet = true; m_artifactStore = std::move(value); }
-    inline PipelineDeclaration& WithArtifactStore(const ArtifactStore& value) { SetArtifactStore(value); return *this;}
-    inline PipelineDeclaration& WithArtifactStore(ArtifactStore&& value) { SetArtifactStore(std::move(value)); return *this;}
+    template<typename ArtifactStoreT = ArtifactStore>
+    void SetArtifactStore(ArtifactStoreT&& value) { m_artifactStoreHasBeenSet = true; m_artifactStore = std::forward<ArtifactStoreT>(value); }
+    template<typename ArtifactStoreT = ArtifactStore>
+    PipelineDeclaration& WithArtifactStore(ArtifactStoreT&& value) { SetArtifactStore(std::forward<ArtifactStoreT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,32 +97,30 @@ namespace Model
      * pipeline, but you cannot use both. If you create a cross-region action in your
      * pipeline, you must use <code>artifactStores</code>.</p> 
      */
-    inline const Aws::Map<Aws::String, ArtifactStore>& GetArtifactStores() const{ return m_artifactStores; }
+    inline const Aws::Map<Aws::String, ArtifactStore>& GetArtifactStores() const { return m_artifactStores; }
     inline bool ArtifactStoresHasBeenSet() const { return m_artifactStoresHasBeenSet; }
-    inline void SetArtifactStores(const Aws::Map<Aws::String, ArtifactStore>& value) { m_artifactStoresHasBeenSet = true; m_artifactStores = value; }
-    inline void SetArtifactStores(Aws::Map<Aws::String, ArtifactStore>&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores = std::move(value); }
-    inline PipelineDeclaration& WithArtifactStores(const Aws::Map<Aws::String, ArtifactStore>& value) { SetArtifactStores(value); return *this;}
-    inline PipelineDeclaration& WithArtifactStores(Aws::Map<Aws::String, ArtifactStore>&& value) { SetArtifactStores(std::move(value)); return *this;}
-    inline PipelineDeclaration& AddArtifactStores(const Aws::String& key, const ArtifactStore& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, value); return *this; }
-    inline PipelineDeclaration& AddArtifactStores(Aws::String&& key, const ArtifactStore& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(std::move(key), value); return *this; }
-    inline PipelineDeclaration& AddArtifactStores(const Aws::String& key, ArtifactStore&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, std::move(value)); return *this; }
-    inline PipelineDeclaration& AddArtifactStores(Aws::String&& key, ArtifactStore&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(std::move(key), std::move(value)); return *this; }
-    inline PipelineDeclaration& AddArtifactStores(const char* key, ArtifactStore&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, std::move(value)); return *this; }
-    inline PipelineDeclaration& AddArtifactStores(const char* key, const ArtifactStore& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, value); return *this; }
+    template<typename ArtifactStoresT = Aws::Map<Aws::String, ArtifactStore>>
+    void SetArtifactStores(ArtifactStoresT&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores = std::forward<ArtifactStoresT>(value); }
+    template<typename ArtifactStoresT = Aws::Map<Aws::String, ArtifactStore>>
+    PipelineDeclaration& WithArtifactStores(ArtifactStoresT&& value) { SetArtifactStores(std::forward<ArtifactStoresT>(value)); return *this;}
+    template<typename ArtifactStoresKeyT = Aws::String, typename ArtifactStoresValueT = ArtifactStore>
+    PipelineDeclaration& AddArtifactStores(ArtifactStoresKeyT&& key, ArtifactStoresValueT&& value) {
+      m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(std::forward<ArtifactStoresKeyT>(key), std::forward<ArtifactStoresValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The stage in which to perform the action.</p>
      */
-    inline const Aws::Vector<StageDeclaration>& GetStages() const{ return m_stages; }
+    inline const Aws::Vector<StageDeclaration>& GetStages() const { return m_stages; }
     inline bool StagesHasBeenSet() const { return m_stagesHasBeenSet; }
-    inline void SetStages(const Aws::Vector<StageDeclaration>& value) { m_stagesHasBeenSet = true; m_stages = value; }
-    inline void SetStages(Aws::Vector<StageDeclaration>&& value) { m_stagesHasBeenSet = true; m_stages = std::move(value); }
-    inline PipelineDeclaration& WithStages(const Aws::Vector<StageDeclaration>& value) { SetStages(value); return *this;}
-    inline PipelineDeclaration& WithStages(Aws::Vector<StageDeclaration>&& value) { SetStages(std::move(value)); return *this;}
-    inline PipelineDeclaration& AddStages(const StageDeclaration& value) { m_stagesHasBeenSet = true; m_stages.push_back(value); return *this; }
-    inline PipelineDeclaration& AddStages(StageDeclaration&& value) { m_stagesHasBeenSet = true; m_stages.push_back(std::move(value)); return *this; }
+    template<typename StagesT = Aws::Vector<StageDeclaration>>
+    void SetStages(StagesT&& value) { m_stagesHasBeenSet = true; m_stages = std::forward<StagesT>(value); }
+    template<typename StagesT = Aws::Vector<StageDeclaration>>
+    PipelineDeclaration& WithStages(StagesT&& value) { SetStages(std::forward<StagesT>(value)); return *this;}
+    template<typename StagesT = StageDeclaration>
+    PipelineDeclaration& AddStages(StagesT&& value) { m_stagesHasBeenSet = true; m_stages.emplace_back(std::forward<StagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,7 +128,7 @@ namespace Model
      * <p>The version number of the pipeline. A new pipeline always has a version
      * number of 1. This number is incremented when a pipeline is updated.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline PipelineDeclaration& WithVersion(int value) { SetVersion(value); return *this;}
@@ -145,12 +139,10 @@ namespace Model
      * <p>The method that the pipeline will use to handle multiple executions. The
      * default mode is SUPERSEDED.</p>
      */
-    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+    inline ExecutionMode GetExecutionMode() const { return m_executionMode; }
     inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
-    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
-    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
-    inline PipelineDeclaration& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
-    inline PipelineDeclaration& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+    inline void SetExecutionMode(ExecutionMode value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+    inline PipelineDeclaration& WithExecutionMode(ExecutionMode value) { SetExecutionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -170,12 +162,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
      * type of pipeline is right for me?</a>.</p>
      */
-    inline const PipelineType& GetPipelineType() const{ return m_pipelineType; }
+    inline PipelineType GetPipelineType() const { return m_pipelineType; }
     inline bool PipelineTypeHasBeenSet() const { return m_pipelineTypeHasBeenSet; }
-    inline void SetPipelineType(const PipelineType& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
-    inline void SetPipelineType(PipelineType&& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = std::move(value); }
-    inline PipelineDeclaration& WithPipelineType(const PipelineType& value) { SetPipelineType(value); return *this;}
-    inline PipelineDeclaration& WithPipelineType(PipelineType&& value) { SetPipelineType(std::move(value)); return *this;}
+    inline void SetPipelineType(PipelineType value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
+    inline PipelineDeclaration& WithPipelineType(PipelineType value) { SetPipelineType(value); return *this;}
     ///@}
 
     ///@{
@@ -184,14 +174,14 @@ namespace Model
      * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9@\-_]+</code>.</p>
      */
-    inline const Aws::Vector<PipelineVariableDeclaration>& GetVariables() const{ return m_variables; }
+    inline const Aws::Vector<PipelineVariableDeclaration>& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::Vector<PipelineVariableDeclaration>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::Vector<PipelineVariableDeclaration>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline PipelineDeclaration& WithVariables(const Aws::Vector<PipelineVariableDeclaration>& value) { SetVariables(value); return *this;}
-    inline PipelineDeclaration& WithVariables(Aws::Vector<PipelineVariableDeclaration>&& value) { SetVariables(std::move(value)); return *this;}
-    inline PipelineDeclaration& AddVariables(const PipelineVariableDeclaration& value) { m_variablesHasBeenSet = true; m_variables.push_back(value); return *this; }
-    inline PipelineDeclaration& AddVariables(PipelineVariableDeclaration&& value) { m_variablesHasBeenSet = true; m_variables.push_back(std::move(value)); return *this; }
+    template<typename VariablesT = Aws::Vector<PipelineVariableDeclaration>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Vector<PipelineVariableDeclaration>>
+    PipelineDeclaration& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesT = PipelineVariableDeclaration>
+    PipelineDeclaration& AddVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables.emplace_back(std::forward<VariablesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -201,14 +191,14 @@ namespace Model
      * default change detection for repository and branch commits is disabled.</p>
      * 
      */
-    inline const Aws::Vector<PipelineTriggerDeclaration>& GetTriggers() const{ return m_triggers; }
+    inline const Aws::Vector<PipelineTriggerDeclaration>& GetTriggers() const { return m_triggers; }
     inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
-    inline void SetTriggers(const Aws::Vector<PipelineTriggerDeclaration>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
-    inline void SetTriggers(Aws::Vector<PipelineTriggerDeclaration>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
-    inline PipelineDeclaration& WithTriggers(const Aws::Vector<PipelineTriggerDeclaration>& value) { SetTriggers(value); return *this;}
-    inline PipelineDeclaration& WithTriggers(Aws::Vector<PipelineTriggerDeclaration>&& value) { SetTriggers(std::move(value)); return *this;}
-    inline PipelineDeclaration& AddTriggers(const PipelineTriggerDeclaration& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
-    inline PipelineDeclaration& AddTriggers(PipelineTriggerDeclaration&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
+    template<typename TriggersT = Aws::Vector<PipelineTriggerDeclaration>>
+    void SetTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers = std::forward<TriggersT>(value); }
+    template<typename TriggersT = Aws::Vector<PipelineTriggerDeclaration>>
+    PipelineDeclaration& WithTriggers(TriggersT&& value) { SetTriggers(std::forward<TriggersT>(value)); return *this;}
+    template<typename TriggersT = PipelineTriggerDeclaration>
+    PipelineDeclaration& AddTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers.emplace_back(std::forward<TriggersT>(value)); return *this; }
     ///@}
   private:
 
@@ -227,13 +217,13 @@ namespace Model
     Aws::Vector<StageDeclaration> m_stages;
     bool m_stagesHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
 
-    ExecutionMode m_executionMode;
+    ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
     bool m_executionModeHasBeenSet = false;
 
-    PipelineType m_pipelineType;
+    PipelineType m_pipelineType{PipelineType::NOT_SET};
     bool m_pipelineTypeHasBeenSet = false;
 
     Aws::Vector<PipelineVariableDeclaration> m_variables;

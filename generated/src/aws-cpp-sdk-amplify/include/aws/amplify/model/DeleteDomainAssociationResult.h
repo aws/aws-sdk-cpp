@@ -28,35 +28,35 @@ namespace Model
   class DeleteDomainAssociationResult
   {
   public:
-    AWS_AMPLIFY_API DeleteDomainAssociationResult();
+    AWS_AMPLIFY_API DeleteDomainAssociationResult() = default;
     AWS_AMPLIFY_API DeleteDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API DeleteDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const DomainAssociation& GetDomainAssociation() const{ return m_domainAssociation; }
-    inline void SetDomainAssociation(const DomainAssociation& value) { m_domainAssociation = value; }
-    inline void SetDomainAssociation(DomainAssociation&& value) { m_domainAssociation = std::move(value); }
-    inline DeleteDomainAssociationResult& WithDomainAssociation(const DomainAssociation& value) { SetDomainAssociation(value); return *this;}
-    inline DeleteDomainAssociationResult& WithDomainAssociation(DomainAssociation&& value) { SetDomainAssociation(std::move(value)); return *this;}
+    inline const DomainAssociation& GetDomainAssociation() const { return m_domainAssociation; }
+    template<typename DomainAssociationT = DomainAssociation>
+    void SetDomainAssociation(DomainAssociationT&& value) { m_domainAssociationHasBeenSet = true; m_domainAssociation = std::forward<DomainAssociationT>(value); }
+    template<typename DomainAssociationT = DomainAssociation>
+    DeleteDomainAssociationResult& WithDomainAssociation(DomainAssociationT&& value) { SetDomainAssociation(std::forward<DomainAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDomainAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDomainAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDomainAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDomainAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainAssociation m_domainAssociation;
+    bool m_domainAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

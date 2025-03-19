@@ -35,7 +35,7 @@ namespace Model
   class GetIdentityPoolConfigurationResult
   {
   public:
-    AWS_COGNITOSYNC_API GetIdentityPoolConfigurationResult();
+    AWS_COGNITOSYNC_API GetIdentityPoolConfigurationResult() = default;
     AWS_COGNITOSYNC_API GetIdentityPoolConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API GetIdentityPoolConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,56 +45,56 @@ namespace Model
      * <p>A name-spaced GUID (for example,
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
-    inline GetIdentityPoolConfigurationResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline GetIdentityPoolConfigurationResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline GetIdentityPoolConfigurationResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    GetIdentityPoolConfigurationResult& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Options to apply to this identity pool for push synchronization.</p>
      */
-    inline const PushSync& GetPushSync() const{ return m_pushSync; }
-    inline void SetPushSync(const PushSync& value) { m_pushSync = value; }
-    inline void SetPushSync(PushSync&& value) { m_pushSync = std::move(value); }
-    inline GetIdentityPoolConfigurationResult& WithPushSync(const PushSync& value) { SetPushSync(value); return *this;}
-    inline GetIdentityPoolConfigurationResult& WithPushSync(PushSync&& value) { SetPushSync(std::move(value)); return *this;}
+    inline const PushSync& GetPushSync() const { return m_pushSync; }
+    template<typename PushSyncT = PushSync>
+    void SetPushSync(PushSyncT&& value) { m_pushSyncHasBeenSet = true; m_pushSync = std::forward<PushSyncT>(value); }
+    template<typename PushSyncT = PushSync>
+    GetIdentityPoolConfigurationResult& WithPushSync(PushSyncT&& value) { SetPushSync(std::forward<PushSyncT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Options to apply to this identity pool for Amazon Cognito streams.
      */
-    inline const CognitoStreams& GetCognitoStreams() const{ return m_cognitoStreams; }
-    inline void SetCognitoStreams(const CognitoStreams& value) { m_cognitoStreams = value; }
-    inline void SetCognitoStreams(CognitoStreams&& value) { m_cognitoStreams = std::move(value); }
-    inline GetIdentityPoolConfigurationResult& WithCognitoStreams(const CognitoStreams& value) { SetCognitoStreams(value); return *this;}
-    inline GetIdentityPoolConfigurationResult& WithCognitoStreams(CognitoStreams&& value) { SetCognitoStreams(std::move(value)); return *this;}
+    inline const CognitoStreams& GetCognitoStreams() const { return m_cognitoStreams; }
+    template<typename CognitoStreamsT = CognitoStreams>
+    void SetCognitoStreams(CognitoStreamsT&& value) { m_cognitoStreamsHasBeenSet = true; m_cognitoStreams = std::forward<CognitoStreamsT>(value); }
+    template<typename CognitoStreamsT = CognitoStreams>
+    GetIdentityPoolConfigurationResult& WithCognitoStreams(CognitoStreamsT&& value) { SetCognitoStreams(std::forward<CognitoStreamsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIdentityPoolConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIdentityPoolConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIdentityPoolConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIdentityPoolConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet = false;
 
     PushSync m_pushSync;
+    bool m_pushSyncHasBeenSet = false;
 
     CognitoStreams m_cognitoStreams;
+    bool m_cognitoStreamsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

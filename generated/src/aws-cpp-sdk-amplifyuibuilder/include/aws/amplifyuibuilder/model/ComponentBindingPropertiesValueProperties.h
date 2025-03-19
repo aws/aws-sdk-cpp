@@ -36,7 +36,7 @@ namespace Model
   class ComponentBindingPropertiesValueProperties
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties();
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,112 +46,98 @@ namespace Model
     /**
      * <p>An Amplify DataStore model.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
+    inline const Aws::String& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithModel(const char* value) { SetModel(value); return *this;}
+    template<typename ModelT = Aws::String>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field to bind the data to.</p>
      */
-    inline const Aws::String& GetField() const{ return m_field; }
+    inline const Aws::String& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithField(const Aws::String& value) { SetField(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithField(const char* value) { SetField(value); return *this;}
+    template<typename FieldT = Aws::String>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of predicates for binding a component's properties to data.</p>
      */
-    inline const Aws::Vector<Predicate>& GetPredicates() const{ return m_predicates; }
+    inline const Aws::Vector<Predicate>& GetPredicates() const { return m_predicates; }
     inline bool PredicatesHasBeenSet() const { return m_predicatesHasBeenSet; }
-    inline void SetPredicates(const Aws::Vector<Predicate>& value) { m_predicatesHasBeenSet = true; m_predicates = value; }
-    inline void SetPredicates(Aws::Vector<Predicate>&& value) { m_predicatesHasBeenSet = true; m_predicates = std::move(value); }
-    inline ComponentBindingPropertiesValueProperties& WithPredicates(const Aws::Vector<Predicate>& value) { SetPredicates(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithPredicates(Aws::Vector<Predicate>&& value) { SetPredicates(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& AddPredicates(const Predicate& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(value); return *this; }
-    inline ComponentBindingPropertiesValueProperties& AddPredicates(Predicate&& value) { m_predicatesHasBeenSet = true; m_predicates.push_back(std::move(value)); return *this; }
+    template<typename PredicatesT = Aws::Vector<Predicate>>
+    void SetPredicates(PredicatesT&& value) { m_predicatesHasBeenSet = true; m_predicates = std::forward<PredicatesT>(value); }
+    template<typename PredicatesT = Aws::Vector<Predicate>>
+    ComponentBindingPropertiesValueProperties& WithPredicates(PredicatesT&& value) { SetPredicates(std::forward<PredicatesT>(value)); return *this;}
+    template<typename PredicatesT = Predicate>
+    ComponentBindingPropertiesValueProperties& AddPredicates(PredicatesT&& value) { m_predicatesHasBeenSet = true; m_predicates.emplace_back(std::forward<PredicatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An authenticated user attribute.</p>
      */
-    inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
+    inline const Aws::String& GetUserAttribute() const { return m_userAttribute; }
     inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
-    inline void SetUserAttribute(const Aws::String& value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
-    inline void SetUserAttribute(Aws::String&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::move(value); }
-    inline void SetUserAttribute(const char* value) { m_userAttributeHasBeenSet = true; m_userAttribute.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithUserAttribute(const Aws::String& value) { SetUserAttribute(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithUserAttribute(Aws::String&& value) { SetUserAttribute(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithUserAttribute(const char* value) { SetUserAttribute(value); return *this;}
+    template<typename UserAttributeT = Aws::String>
+    void SetUserAttribute(UserAttributeT&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::forward<UserAttributeT>(value); }
+    template<typename UserAttributeT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithUserAttribute(UserAttributeT&& value) { SetUserAttribute(std::forward<UserAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage key for an Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value to assign to the property.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a component slot.</p>
      */
-    inline const Aws::String& GetSlotName() const{ return m_slotName; }
+    inline const Aws::String& GetSlotName() const { return m_slotName; }
     inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
-    inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
-    inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
-    inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
-    inline ComponentBindingPropertiesValueProperties& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
-    inline ComponentBindingPropertiesValueProperties& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+    template<typename SlotNameT = Aws::String>
+    void SetSlotName(SlotNameT&& value) { m_slotNameHasBeenSet = true; m_slotName = std::forward<SlotNameT>(value); }
+    template<typename SlotNameT = Aws::String>
+    ComponentBindingPropertiesValueProperties& WithSlotName(SlotNameT&& value) { SetSlotName(std::forward<SlotNameT>(value)); return *this;}
     ///@}
   private:
 

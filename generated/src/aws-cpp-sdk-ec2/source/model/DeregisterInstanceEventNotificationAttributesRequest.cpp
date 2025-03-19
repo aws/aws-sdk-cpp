@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeregisterInstanceEventNotificationAttributesRequest::DeregisterInstanceEventNotificationAttributesRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceTagAttributeHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterInstanceEventNotificationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

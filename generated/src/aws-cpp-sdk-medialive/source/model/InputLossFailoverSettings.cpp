@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputLossFailoverSettings::InputLossFailoverSettings() : 
-    m_inputLossThresholdMsec(0),
-    m_inputLossThresholdMsecHasBeenSet(false)
-{
-}
-
 InputLossFailoverSettings::InputLossFailoverSettings(JsonView jsonValue)
-  : InputLossFailoverSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InputLossFailoverSettings& InputLossFailoverSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("inputLossThresholdMsec"))
   {
     m_inputLossThresholdMsec = jsonValue.GetInteger("inputLossThresholdMsec");
-
     m_inputLossThresholdMsecHasBeenSet = true;
   }
-
   return *this;
 }
 

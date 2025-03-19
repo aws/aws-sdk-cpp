@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddInstanceGroupsRequest::AddInstanceGroupsRequest() : 
-    m_instanceGroupsHasBeenSet(false),
-    m_jobFlowIdHasBeenSet(false)
-{
-}
-
 Aws::String AddInstanceGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

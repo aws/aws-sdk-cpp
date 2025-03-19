@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-VpcConfiguration::VpcConfiguration() : 
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 VpcConfiguration::VpcConfiguration(const XmlNode& xmlNode)
-  : VpcConfiguration()
 {
   *this = xmlNode;
 }

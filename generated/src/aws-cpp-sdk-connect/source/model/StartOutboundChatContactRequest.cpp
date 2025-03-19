@@ -12,24 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartOutboundChatContactRequest::StartOutboundChatContactRequest() : 
-    m_sourceEndpointHasBeenSet(false),
-    m_destinationEndpointHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_chatDurationInMinutes(0),
-    m_chatDurationInMinutesHasBeenSet(false),
-    m_participantDetailsHasBeenSet(false),
-    m_initialSystemMessageHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_supportedMessagingContentTypesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartOutboundChatContactRequest::SerializePayload() const
 {
   JsonValue payload;

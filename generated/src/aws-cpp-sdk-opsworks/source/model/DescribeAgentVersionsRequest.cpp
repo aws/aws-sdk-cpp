@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAgentVersionsRequest::DescribeAgentVersionsRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_configurationManagerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAgentVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

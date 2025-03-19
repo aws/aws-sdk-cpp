@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AccountDetail::AccountDetail() : 
-    m_accountIdHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 AccountDetail::AccountDetail(JsonView jsonValue)
-  : AccountDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountDetail& AccountDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

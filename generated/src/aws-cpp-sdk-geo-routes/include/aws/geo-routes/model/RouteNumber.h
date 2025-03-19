@@ -32,7 +32,7 @@ namespace Model
   class RouteNumber
   {
   public:
-    AWS_GEOROUTES_API RouteNumber();
+    AWS_GEOROUTES_API RouteNumber() = default;
     AWS_GEOROUTES_API RouteNumber(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>Directional identifier of the route.</p>
      */
-    inline const RouteDirection& GetDirection() const{ return m_direction; }
+    inline RouteDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const RouteDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(RouteDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline RouteNumber& WithDirection(const RouteDirection& value) { SetDirection(value); return *this;}
-    inline RouteNumber& WithDirection(RouteDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(RouteDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline RouteNumber& WithDirection(RouteDirection value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of languages for instructions corresponding to the route number.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline RouteNumber& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline RouteNumber& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline RouteNumber& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    RouteNumber& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The route number.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline RouteNumber& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline RouteNumber& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline RouteNumber& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    RouteNumber& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    RouteDirection m_direction;
+    RouteDirection m_direction{RouteDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
 
     Aws::String m_language;

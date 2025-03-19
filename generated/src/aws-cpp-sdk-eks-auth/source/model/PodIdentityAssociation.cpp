@@ -18,14 +18,7 @@ namespace EKSAuth
 namespace Model
 {
 
-PodIdentityAssociation::PodIdentityAssociation() : 
-    m_associationArnHasBeenSet(false),
-    m_associationIdHasBeenSet(false)
-{
-}
-
 PodIdentityAssociation::PodIdentityAssociation(JsonView jsonValue)
-  : PodIdentityAssociation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PodIdentityAssociation& PodIdentityAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("associationArn"))
   {
     m_associationArn = jsonValue.GetString("associationArn");
-
     m_associationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationId"))
   {
     m_associationId = jsonValue.GetString("associationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,16 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-TerminateEnvironmentRequest::TerminateEnvironmentRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_terminateResources(false),
-    m_terminateResourcesHasBeenSet(false),
-    m_forceTerminate(false),
-    m_forceTerminateHasBeenSet(false)
-{
-}
-
 Aws::String TerminateEnvironmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

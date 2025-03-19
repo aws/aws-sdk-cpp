@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RepositoryAuthConfig::RepositoryAuthConfig() : 
-    m_repositoryCredentialsProviderArnHasBeenSet(false)
-{
-}
-
 RepositoryAuthConfig::RepositoryAuthConfig(JsonView jsonValue)
-  : RepositoryAuthConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RepositoryAuthConfig& RepositoryAuthConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryCredentialsProviderArn"))
   {
     m_repositoryCredentialsProviderArn = jsonValue.GetString("RepositoryCredentialsProviderArn");
-
     m_repositoryCredentialsProviderArnHasBeenSet = true;
   }
-
   return *this;
 }
 

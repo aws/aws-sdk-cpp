@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-PendingAggregationRequest::PendingAggregationRequest() : 
-    m_requesterAccountIdHasBeenSet(false),
-    m_requesterAwsRegionHasBeenSet(false)
-{
-}
-
 PendingAggregationRequest::PendingAggregationRequest(JsonView jsonValue)
-  : PendingAggregationRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PendingAggregationRequest& PendingAggregationRequest::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("RequesterAccountId"))
   {
     m_requesterAccountId = jsonValue.GetString("RequesterAccountId");
-
     m_requesterAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequesterAwsRegion"))
   {
     m_requesterAwsRegion = jsonValue.GetString("RequesterAwsRegion");
-
     m_requesterAwsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

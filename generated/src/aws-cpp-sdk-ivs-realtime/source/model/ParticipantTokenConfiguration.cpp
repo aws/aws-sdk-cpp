@@ -18,17 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ParticipantTokenConfiguration::ParticipantTokenConfiguration() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 ParticipantTokenConfiguration::ParticipantTokenConfiguration(JsonView jsonValue)
-  : ParticipantTokenConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ParticipantTokenConfiguration& ParticipantTokenConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInteger("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -58,7 +44,6 @@ ParticipantTokenConfiguration& ParticipantTokenConfiguration::operator =(JsonVie
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilities"))
   {
     Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
@@ -68,7 +53,6 @@ ParticipantTokenConfiguration& ParticipantTokenConfiguration::operator =(JsonVie
     }
     m_capabilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

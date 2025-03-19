@@ -34,7 +34,7 @@ namespace Model
   class KMSServerSideEncryptionIntegrationConfig
   {
   public:
-    AWS_DEVOPSGURU_API KMSServerSideEncryptionIntegrationConfig();
+    AWS_DEVOPSGURU_API KMSServerSideEncryptionIntegrationConfig() = default;
     AWS_DEVOPSGURU_API KMSServerSideEncryptionIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API KMSServerSideEncryptionIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,26 +54,22 @@ namespace Model
      * <p>Alias name: alias/ExampleAlias</p> <p>Alias ARN:
      * arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</p>
      */
-    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
-    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
-    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
-    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
-    inline KMSServerSideEncryptionIntegrationConfig& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
-    inline KMSServerSideEncryptionIntegrationConfig& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
-    inline KMSServerSideEncryptionIntegrationConfig& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    KMSServerSideEncryptionIntegrationConfig& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies if DevOps Guru is enabled for KMS integration. </p>
      */
-    inline const OptInStatus& GetOptInStatus() const{ return m_optInStatus; }
+    inline OptInStatus GetOptInStatus() const { return m_optInStatus; }
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
-    inline void SetOptInStatus(const OptInStatus& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
-    inline void SetOptInStatus(OptInStatus&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
-    inline KMSServerSideEncryptionIntegrationConfig& WithOptInStatus(const OptInStatus& value) { SetOptInStatus(value); return *this;}
-    inline KMSServerSideEncryptionIntegrationConfig& WithOptInStatus(OptInStatus&& value) { SetOptInStatus(std::move(value)); return *this;}
+    inline void SetOptInStatus(OptInStatus value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
+    inline KMSServerSideEncryptionIntegrationConfig& WithOptInStatus(OptInStatus value) { SetOptInStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -82,22 +78,20 @@ namespace Model
      * create. Amazon Web Services owned keys are keys that are owned and managed by
      * DevOps Guru. </p>
      */
-    inline const ServerSideEncryptionType& GetType() const{ return m_type; }
+    inline ServerSideEncryptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ServerSideEncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ServerSideEncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline KMSServerSideEncryptionIntegrationConfig& WithType(const ServerSideEncryptionType& value) { SetType(value); return *this;}
-    inline KMSServerSideEncryptionIntegrationConfig& WithType(ServerSideEncryptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ServerSideEncryptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline KMSServerSideEncryptionIntegrationConfig& WithType(ServerSideEncryptionType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_kMSKeyId;
     bool m_kMSKeyIdHasBeenSet = false;
 
-    OptInStatus m_optInStatus;
+    OptInStatus m_optInStatus{OptInStatus::NOT_SET};
     bool m_optInStatusHasBeenSet = false;
 
-    ServerSideEncryptionType m_type;
+    ServerSideEncryptionType m_type{ServerSideEncryptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

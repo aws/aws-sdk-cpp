@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BodySectionRepeatPageBreakConfiguration::BodySectionRepeatPageBreakConfiguration() : 
-    m_afterHasBeenSet(false)
-{
-}
-
 BodySectionRepeatPageBreakConfiguration::BodySectionRepeatPageBreakConfiguration(JsonView jsonValue)
-  : BodySectionRepeatPageBreakConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BodySectionRepeatPageBreakConfiguration& BodySectionRepeatPageBreakConfiguration
   if(jsonValue.ValueExists("After"))
   {
     m_after = jsonValue.GetObject("After");
-
     m_afterHasBeenSet = true;
   }
-
   return *this;
 }
 

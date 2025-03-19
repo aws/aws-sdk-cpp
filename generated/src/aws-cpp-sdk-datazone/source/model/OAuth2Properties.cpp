@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-OAuth2Properties::OAuth2Properties() : 
-    m_authorizationCodePropertiesHasBeenSet(false),
-    m_oAuth2ClientApplicationHasBeenSet(false),
-    m_oAuth2CredentialsHasBeenSet(false),
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_tokenUrlHasBeenSet(false),
-    m_tokenUrlParametersMapHasBeenSet(false)
-{
-}
-
 OAuth2Properties::OAuth2Properties(JsonView jsonValue)
-  : OAuth2Properties()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authorizationCodeProperties"))
   {
     m_authorizationCodeProperties = jsonValue.GetObject("authorizationCodeProperties");
-
     m_authorizationCodePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2ClientApplication"))
   {
     m_oAuth2ClientApplication = jsonValue.GetObject("oAuth2ClientApplication");
-
     m_oAuth2ClientApplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2Credentials"))
   {
     m_oAuth2Credentials = jsonValue.GetObject("oAuth2Credentials");
-
     m_oAuth2CredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2GrantType"))
   {
     m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("oAuth2GrantType"));
-
     m_oAuth2GrantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenUrl"))
   {
     m_tokenUrl = jsonValue.GetString("tokenUrl");
-
     m_tokenUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenUrlParametersMap"))
   {
     Aws::Map<Aws::String, JsonView> tokenUrlParametersMapJsonMap = jsonValue.GetObject("tokenUrlParametersMap").GetAllObjects();
@@ -81,7 +59,6 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
     }
     m_tokenUrlParametersMapHasBeenSet = true;
   }
-
   return *this;
 }
 

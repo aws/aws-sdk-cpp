@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterSelectableValues::FilterSelectableValues() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 FilterSelectableValues::FilterSelectableValues(JsonView jsonValue)
-  : FilterSelectableValues()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilterSelectableValues& FilterSelectableValues::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

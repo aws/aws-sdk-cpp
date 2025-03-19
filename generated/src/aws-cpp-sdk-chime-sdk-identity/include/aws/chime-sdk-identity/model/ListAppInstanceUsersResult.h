@@ -29,7 +29,7 @@ namespace Model
   class ListAppInstanceUsersResult
   {
   public:
-    AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult();
+    AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult() = default;
     AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The ARN of the <code>AppInstance</code>.</p>
      */
-    inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
-    inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArn = value; }
-    inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArn = std::move(value); }
-    inline void SetAppInstanceArn(const char* value) { m_appInstanceArn.assign(value); }
-    inline ListAppInstanceUsersResult& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
-    inline ListAppInstanceUsersResult& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
-    inline ListAppInstanceUsersResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
+    inline const Aws::String& GetAppInstanceArn() const { return m_appInstanceArn; }
+    template<typename AppInstanceArnT = Aws::String>
+    void SetAppInstanceArn(AppInstanceArnT&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::forward<AppInstanceArnT>(value); }
+    template<typename AppInstanceArnT = Aws::String>
+    ListAppInstanceUsersResult& WithAppInstanceArn(AppInstanceArnT&& value) { SetAppInstanceArn(std::forward<AppInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information for each requested <code>AppInstanceUser</code>.</p>
      */
-    inline const Aws::Vector<AppInstanceUserSummary>& GetAppInstanceUsers() const{ return m_appInstanceUsers; }
-    inline void SetAppInstanceUsers(const Aws::Vector<AppInstanceUserSummary>& value) { m_appInstanceUsers = value; }
-    inline void SetAppInstanceUsers(Aws::Vector<AppInstanceUserSummary>&& value) { m_appInstanceUsers = std::move(value); }
-    inline ListAppInstanceUsersResult& WithAppInstanceUsers(const Aws::Vector<AppInstanceUserSummary>& value) { SetAppInstanceUsers(value); return *this;}
-    inline ListAppInstanceUsersResult& WithAppInstanceUsers(Aws::Vector<AppInstanceUserSummary>&& value) { SetAppInstanceUsers(std::move(value)); return *this;}
-    inline ListAppInstanceUsersResult& AddAppInstanceUsers(const AppInstanceUserSummary& value) { m_appInstanceUsers.push_back(value); return *this; }
-    inline ListAppInstanceUsersResult& AddAppInstanceUsers(AppInstanceUserSummary&& value) { m_appInstanceUsers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppInstanceUserSummary>& GetAppInstanceUsers() const { return m_appInstanceUsers; }
+    template<typename AppInstanceUsersT = Aws::Vector<AppInstanceUserSummary>>
+    void SetAppInstanceUsers(AppInstanceUsersT&& value) { m_appInstanceUsersHasBeenSet = true; m_appInstanceUsers = std::forward<AppInstanceUsersT>(value); }
+    template<typename AppInstanceUsersT = Aws::Vector<AppInstanceUserSummary>>
+    ListAppInstanceUsersResult& WithAppInstanceUsers(AppInstanceUsersT&& value) { SetAppInstanceUsers(std::forward<AppInstanceUsersT>(value)); return *this;}
+    template<typename AppInstanceUsersT = AppInstanceUserSummary>
+    ListAppInstanceUsersResult& AddAppInstanceUsers(AppInstanceUsersT&& value) { m_appInstanceUsersHasBeenSet = true; m_appInstanceUsers.emplace_back(std::forward<AppInstanceUsersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,34 +63,34 @@ namespace Model
      * <p>The token passed by previous API calls until all requested users are
      * returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppInstanceUsersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppInstanceUsersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppInstanceUsersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppInstanceUsersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppInstanceUsersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppInstanceUsersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppInstanceUsersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppInstanceUsersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appInstanceArn;
+    bool m_appInstanceArnHasBeenSet = false;
 
     Aws::Vector<AppInstanceUserSummary> m_appInstanceUsers;
+    bool m_appInstanceUsersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
   class Metric
   {
   public:
-    AWS_CODEGURUPROFILER_API Metric();
+    AWS_CODEGURUPROFILER_API Metric() = default;
     AWS_CODEGURUPROFILER_API Metric(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p> The name of the method that appears as a frame in any stack in a profile.
      * </p>
      */
-    inline const Aws::String& GetFrameName() const{ return m_frameName; }
+    inline const Aws::String& GetFrameName() const { return m_frameName; }
     inline bool FrameNameHasBeenSet() const { return m_frameNameHasBeenSet; }
-    inline void SetFrameName(const Aws::String& value) { m_frameNameHasBeenSet = true; m_frameName = value; }
-    inline void SetFrameName(Aws::String&& value) { m_frameNameHasBeenSet = true; m_frameName = std::move(value); }
-    inline void SetFrameName(const char* value) { m_frameNameHasBeenSet = true; m_frameName.assign(value); }
-    inline Metric& WithFrameName(const Aws::String& value) { SetFrameName(value); return *this;}
-    inline Metric& WithFrameName(Aws::String&& value) { SetFrameName(std::move(value)); return *this;}
-    inline Metric& WithFrameName(const char* value) { SetFrameName(value); return *this;}
+    template<typename FrameNameT = Aws::String>
+    void SetFrameName(FrameNameT&& value) { m_frameNameHasBeenSet = true; m_frameName = std::forward<FrameNameT>(value); }
+    template<typename FrameNameT = Aws::String>
+    Metric& WithFrameName(FrameNameT&& value) { SetFrameName(std::forward<FrameNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * <p> The list of application runtime thread states that is used to calculate the
      * metric value for the frame. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetThreadStates() const{ return m_threadStates; }
+    inline const Aws::Vector<Aws::String>& GetThreadStates() const { return m_threadStates; }
     inline bool ThreadStatesHasBeenSet() const { return m_threadStatesHasBeenSet; }
-    inline void SetThreadStates(const Aws::Vector<Aws::String>& value) { m_threadStatesHasBeenSet = true; m_threadStates = value; }
-    inline void SetThreadStates(Aws::Vector<Aws::String>&& value) { m_threadStatesHasBeenSet = true; m_threadStates = std::move(value); }
-    inline Metric& WithThreadStates(const Aws::Vector<Aws::String>& value) { SetThreadStates(value); return *this;}
-    inline Metric& WithThreadStates(Aws::Vector<Aws::String>&& value) { SetThreadStates(std::move(value)); return *this;}
-    inline Metric& AddThreadStates(const Aws::String& value) { m_threadStatesHasBeenSet = true; m_threadStates.push_back(value); return *this; }
-    inline Metric& AddThreadStates(Aws::String&& value) { m_threadStatesHasBeenSet = true; m_threadStates.push_back(std::move(value)); return *this; }
-    inline Metric& AddThreadStates(const char* value) { m_threadStatesHasBeenSet = true; m_threadStates.push_back(value); return *this; }
+    template<typename ThreadStatesT = Aws::Vector<Aws::String>>
+    void SetThreadStates(ThreadStatesT&& value) { m_threadStatesHasBeenSet = true; m_threadStates = std::forward<ThreadStatesT>(value); }
+    template<typename ThreadStatesT = Aws::Vector<Aws::String>>
+    Metric& WithThreadStates(ThreadStatesT&& value) { SetThreadStates(std::forward<ThreadStatesT>(value)); return *this;}
+    template<typename ThreadStatesT = Aws::String>
+    Metric& AddThreadStates(ThreadStatesT&& value) { m_threadStatesHasBeenSet = true; m_threadStates.emplace_back(std::forward<ThreadStatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,12 +77,10 @@ namespace Model
      * value for one frame that is calculated across the occurences of all frames in a
      * profile.</p>
      */
-    inline const MetricType& GetType() const{ return m_type; }
+    inline MetricType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MetricType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MetricType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Metric& WithType(const MetricType& value) { SetType(value); return *this;}
-    inline Metric& WithType(MetricType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MetricType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Metric& WithType(MetricType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +90,7 @@ namespace Model
     Aws::Vector<Aws::String> m_threadStates;
     bool m_threadStatesHasBeenSet = false;
 
-    MetricType m_type;
+    MetricType m_type{MetricType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

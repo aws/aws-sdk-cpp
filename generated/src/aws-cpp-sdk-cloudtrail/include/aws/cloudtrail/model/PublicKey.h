@@ -34,7 +34,7 @@ namespace Model
   class PublicKey
   {
   public:
-    AWS_CLOUDTRAIL_API PublicKey();
+    AWS_CLOUDTRAIL_API PublicKey() = default;
     AWS_CLOUDTRAIL_API PublicKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API PublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,60 +44,58 @@ namespace Model
     /**
      * <p>The DER encoded public key value in PKCS#1 format.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetValue() const{ return m_value; }
+    inline const Aws::Utils::ByteBuffer& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::ByteBuffer& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::ByteBuffer&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline PublicKey& WithValue(const Aws::Utils::ByteBuffer& value) { SetValue(value); return *this;}
-    inline PublicKey& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::ByteBuffer>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::ByteBuffer>
+    PublicKey& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The starting time of validity of the public key.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidityStartTime() const{ return m_validityStartTime; }
+    inline const Aws::Utils::DateTime& GetValidityStartTime() const { return m_validityStartTime; }
     inline bool ValidityStartTimeHasBeenSet() const { return m_validityStartTimeHasBeenSet; }
-    inline void SetValidityStartTime(const Aws::Utils::DateTime& value) { m_validityStartTimeHasBeenSet = true; m_validityStartTime = value; }
-    inline void SetValidityStartTime(Aws::Utils::DateTime&& value) { m_validityStartTimeHasBeenSet = true; m_validityStartTime = std::move(value); }
-    inline PublicKey& WithValidityStartTime(const Aws::Utils::DateTime& value) { SetValidityStartTime(value); return *this;}
-    inline PublicKey& WithValidityStartTime(Aws::Utils::DateTime&& value) { SetValidityStartTime(std::move(value)); return *this;}
+    template<typename ValidityStartTimeT = Aws::Utils::DateTime>
+    void SetValidityStartTime(ValidityStartTimeT&& value) { m_validityStartTimeHasBeenSet = true; m_validityStartTime = std::forward<ValidityStartTimeT>(value); }
+    template<typename ValidityStartTimeT = Aws::Utils::DateTime>
+    PublicKey& WithValidityStartTime(ValidityStartTimeT&& value) { SetValidityStartTime(std::forward<ValidityStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ending time of validity of the public key.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidityEndTime() const{ return m_validityEndTime; }
+    inline const Aws::Utils::DateTime& GetValidityEndTime() const { return m_validityEndTime; }
     inline bool ValidityEndTimeHasBeenSet() const { return m_validityEndTimeHasBeenSet; }
-    inline void SetValidityEndTime(const Aws::Utils::DateTime& value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = value; }
-    inline void SetValidityEndTime(Aws::Utils::DateTime&& value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = std::move(value); }
-    inline PublicKey& WithValidityEndTime(const Aws::Utils::DateTime& value) { SetValidityEndTime(value); return *this;}
-    inline PublicKey& WithValidityEndTime(Aws::Utils::DateTime&& value) { SetValidityEndTime(std::move(value)); return *this;}
+    template<typename ValidityEndTimeT = Aws::Utils::DateTime>
+    void SetValidityEndTime(ValidityEndTimeT&& value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = std::forward<ValidityEndTimeT>(value); }
+    template<typename ValidityEndTimeT = Aws::Utils::DateTime>
+    PublicKey& WithValidityEndTime(ValidityEndTimeT&& value) { SetValidityEndTime(std::forward<ValidityEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fingerprint of the public key.</p>
      */
-    inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
+    inline const Aws::String& GetFingerprint() const { return m_fingerprint; }
     inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
-    inline void SetFingerprint(const Aws::String& value) { m_fingerprintHasBeenSet = true; m_fingerprint = value; }
-    inline void SetFingerprint(Aws::String&& value) { m_fingerprintHasBeenSet = true; m_fingerprint = std::move(value); }
-    inline void SetFingerprint(const char* value) { m_fingerprintHasBeenSet = true; m_fingerprint.assign(value); }
-    inline PublicKey& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
-    inline PublicKey& WithFingerprint(Aws::String&& value) { SetFingerprint(std::move(value)); return *this;}
-    inline PublicKey& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
+    template<typename FingerprintT = Aws::String>
+    void SetFingerprint(FingerprintT&& value) { m_fingerprintHasBeenSet = true; m_fingerprint = std::forward<FingerprintT>(value); }
+    template<typename FingerprintT = Aws::String>
+    PublicKey& WithFingerprint(FingerprintT&& value) { SetFingerprint(std::forward<FingerprintT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_value;
+    Aws::Utils::ByteBuffer m_value{};
     bool m_valueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validityStartTime;
+    Aws::Utils::DateTime m_validityStartTime{};
     bool m_validityStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validityEndTime;
+    Aws::Utils::DateTime m_validityEndTime{};
     bool m_validityEndTimeHasBeenSet = false;
 
     Aws::String m_fingerprint;

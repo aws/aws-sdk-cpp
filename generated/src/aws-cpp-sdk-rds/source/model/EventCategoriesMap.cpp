@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-EventCategoriesMap::EventCategoriesMap() : 
-    m_sourceTypeHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false)
-{
-}
-
 EventCategoriesMap::EventCategoriesMap(const XmlNode& xmlNode)
-  : EventCategoriesMap()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
     if(!eventCategoriesNode.IsNull())
     {
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      m_eventCategoriesHasBeenSet = !eventCategoriesMember.IsNull();
       while(!eventCategoriesMember.IsNull())
       {
         m_eventCategories.push_back(eventCategoriesMember.GetText());

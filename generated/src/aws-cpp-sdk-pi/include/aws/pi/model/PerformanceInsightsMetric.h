@@ -33,7 +33,7 @@ namespace Model
   class PerformanceInsightsMetric
   {
   public:
-    AWS_PI_API PerformanceInsightsMetric();
+    AWS_PI_API PerformanceInsightsMetric() = default;
     AWS_PI_API PerformanceInsightsMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API PerformanceInsightsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,66 +43,56 @@ namespace Model
     /**
      * <p>The Performance Insights metric.</p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline PerformanceInsightsMetric& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline PerformanceInsightsMetric& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline PerformanceInsightsMetric& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    PerformanceInsightsMetric& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Performance Insights metric name.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline PerformanceInsightsMetric& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline PerformanceInsightsMetric& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline PerformanceInsightsMetric& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    PerformanceInsightsMetric& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A dimension map that contains the dimensions for this partition.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline PerformanceInsightsMetric& WithDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensions(value); return *this;}
-    inline PerformanceInsightsMetric& WithDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline PerformanceInsightsMetric& AddDimensions(const Aws::String& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
-    inline PerformanceInsightsMetric& AddDimensions(Aws::String&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline PerformanceInsightsMetric& AddDimensions(const Aws::String& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline PerformanceInsightsMetric& AddDimensions(Aws::String&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
-    inline PerformanceInsightsMetric& AddDimensions(const char* key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline PerformanceInsightsMetric& AddDimensions(Aws::String&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline PerformanceInsightsMetric& AddDimensions(const char* key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
+    template<typename DimensionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Map<Aws::String, Aws::String>>
+    PerformanceInsightsMetric& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsKeyT = Aws::String, typename DimensionsValueT = Aws::String>
+    PerformanceInsightsMetric& AddDimensions(DimensionsKeyT&& key, DimensionsValueT&& value) {
+      m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::forward<DimensionsKeyT>(key), std::forward<DimensionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The filter for the Performance Insights metric.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<Aws::String, Aws::String>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<Aws::String, Aws::String>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline PerformanceInsightsMetric& WithFilter(const Aws::Map<Aws::String, Aws::String>& value) { SetFilter(value); return *this;}
-    inline PerformanceInsightsMetric& WithFilter(Aws::Map<Aws::String, Aws::String>&& value) { SetFilter(std::move(value)); return *this;}
-    inline PerformanceInsightsMetric& AddFilter(const Aws::String& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline PerformanceInsightsMetric& AddFilter(Aws::String&& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline PerformanceInsightsMetric& AddFilter(const Aws::String& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline PerformanceInsightsMetric& AddFilter(Aws::String&& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
-    inline PerformanceInsightsMetric& AddFilter(const char* key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline PerformanceInsightsMetric& AddFilter(Aws::String&& key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline PerformanceInsightsMetric& AddFilter(const char* key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    template<typename FilterT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<Aws::String, Aws::String>>
+    PerformanceInsightsMetric& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    template<typename FilterKeyT = Aws::String, typename FilterValueT = Aws::String>
+    PerformanceInsightsMetric& AddFilter(FilterKeyT&& key, FilterValueT&& value) {
+      m_filterHasBeenSet = true; m_filter.emplace(std::forward<FilterKeyT>(key), std::forward<FilterValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -110,7 +100,7 @@ namespace Model
      * <p>The value of the metric. For example, <code>9</code> for
      * <code>db.load.avg</code>.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline PerformanceInsightsMetric& WithValue(double value) { SetValue(value); return *this;}
@@ -129,7 +119,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_filter;
     bool m_filterHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

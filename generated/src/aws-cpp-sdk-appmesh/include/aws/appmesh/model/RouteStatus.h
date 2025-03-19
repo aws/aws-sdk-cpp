@@ -32,7 +32,7 @@ namespace Model
   class RouteStatus
   {
   public:
-    AWS_APPMESH_API RouteStatus();
+    AWS_APPMESH_API RouteStatus() = default;
     AWS_APPMESH_API RouteStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API RouteStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The current status for the route.</p>
      */
-    inline const RouteStatusCode& GetStatus() const{ return m_status; }
+    inline RouteStatusCode GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RouteStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RouteStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RouteStatus& WithStatus(const RouteStatusCode& value) { SetStatus(value); return *this;}
-    inline RouteStatus& WithStatus(RouteStatusCode&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RouteStatusCode value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RouteStatus& WithStatus(RouteStatusCode value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    RouteStatusCode m_status;
+    RouteStatusCode m_status{RouteStatusCode::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

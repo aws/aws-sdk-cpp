@@ -12,13 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationRequest::UpdateConfigurationRequest() : 
-    m_configurationIdHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

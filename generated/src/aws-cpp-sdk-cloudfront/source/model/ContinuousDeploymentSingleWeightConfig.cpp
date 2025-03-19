@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentSingleWeightConfig::ContinuousDeploymentSingleWeightConfig() : 
-    m_weight(0.0),
-    m_weightHasBeenSet(false),
-    m_sessionStickinessConfigHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentSingleWeightConfig::ContinuousDeploymentSingleWeightConfig(const XmlNode& xmlNode)
-  : ContinuousDeploymentSingleWeightConfig()
 {
   *this = xmlNode;
 }

@@ -23,7 +23,7 @@ namespace Model
   class GetComplianceSummaryRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API GetComplianceSummaryRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetComplianceSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * output by. If you use this parameter, the count of returned noncompliant
      * resources includes only resources with the specified target IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetIdFilters() const{ return m_targetIdFilters; }
+    inline const Aws::Vector<Aws::String>& GetTargetIdFilters() const { return m_targetIdFilters; }
     inline bool TargetIdFiltersHasBeenSet() const { return m_targetIdFiltersHasBeenSet; }
-    inline void SetTargetIdFilters(const Aws::Vector<Aws::String>& value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters = value; }
-    inline void SetTargetIdFilters(Aws::Vector<Aws::String>&& value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters = std::move(value); }
-    inline GetComplianceSummaryRequest& WithTargetIdFilters(const Aws::Vector<Aws::String>& value) { SetTargetIdFilters(value); return *this;}
-    inline GetComplianceSummaryRequest& WithTargetIdFilters(Aws::Vector<Aws::String>&& value) { SetTargetIdFilters(std::move(value)); return *this;}
-    inline GetComplianceSummaryRequest& AddTargetIdFilters(const Aws::String& value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters.push_back(value); return *this; }
-    inline GetComplianceSummaryRequest& AddTargetIdFilters(Aws::String&& value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters.push_back(std::move(value)); return *this; }
-    inline GetComplianceSummaryRequest& AddTargetIdFilters(const char* value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters.push_back(value); return *this; }
+    template<typename TargetIdFiltersT = Aws::Vector<Aws::String>>
+    void SetTargetIdFilters(TargetIdFiltersT&& value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters = std::forward<TargetIdFiltersT>(value); }
+    template<typename TargetIdFiltersT = Aws::Vector<Aws::String>>
+    GetComplianceSummaryRequest& WithTargetIdFilters(TargetIdFiltersT&& value) { SetTargetIdFilters(std::forward<TargetIdFiltersT>(value)); return *this;}
+    template<typename TargetIdFiltersT = Aws::String>
+    GetComplianceSummaryRequest& AddTargetIdFilters(TargetIdFiltersT&& value) { m_targetIdFiltersHasBeenSet = true; m_targetIdFilters.emplace_back(std::forward<TargetIdFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,15 +58,14 @@ namespace Model
      * you use this parameter, the count of returned noncompliant resources includes
      * only resources in the specified Regions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegionFilters() const{ return m_regionFilters; }
+    inline const Aws::Vector<Aws::String>& GetRegionFilters() const { return m_regionFilters; }
     inline bool RegionFiltersHasBeenSet() const { return m_regionFiltersHasBeenSet; }
-    inline void SetRegionFilters(const Aws::Vector<Aws::String>& value) { m_regionFiltersHasBeenSet = true; m_regionFilters = value; }
-    inline void SetRegionFilters(Aws::Vector<Aws::String>&& value) { m_regionFiltersHasBeenSet = true; m_regionFilters = std::move(value); }
-    inline GetComplianceSummaryRequest& WithRegionFilters(const Aws::Vector<Aws::String>& value) { SetRegionFilters(value); return *this;}
-    inline GetComplianceSummaryRequest& WithRegionFilters(Aws::Vector<Aws::String>&& value) { SetRegionFilters(std::move(value)); return *this;}
-    inline GetComplianceSummaryRequest& AddRegionFilters(const Aws::String& value) { m_regionFiltersHasBeenSet = true; m_regionFilters.push_back(value); return *this; }
-    inline GetComplianceSummaryRequest& AddRegionFilters(Aws::String&& value) { m_regionFiltersHasBeenSet = true; m_regionFilters.push_back(std::move(value)); return *this; }
-    inline GetComplianceSummaryRequest& AddRegionFilters(const char* value) { m_regionFiltersHasBeenSet = true; m_regionFilters.push_back(value); return *this; }
+    template<typename RegionFiltersT = Aws::Vector<Aws::String>>
+    void SetRegionFilters(RegionFiltersT&& value) { m_regionFiltersHasBeenSet = true; m_regionFilters = std::forward<RegionFiltersT>(value); }
+    template<typename RegionFiltersT = Aws::Vector<Aws::String>>
+    GetComplianceSummaryRequest& WithRegionFilters(RegionFiltersT&& value) { SetRegionFilters(std::forward<RegionFiltersT>(value)); return *this;}
+    template<typename RegionFiltersT = Aws::String>
+    GetComplianceSummaryRequest& AddRegionFilters(RegionFiltersT&& value) { m_regionFiltersHasBeenSet = true; m_regionFilters.emplace_back(std::forward<RegionFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,15 +91,14 @@ namespace Model
      * array. The array can include up to 100 items. Note that the length constraint
      * requirement applies to each resource type filter. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const{ return m_resourceTypeFilters; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const { return m_resourceTypeFilters; }
     inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }
-    inline void SetResourceTypeFilters(const Aws::Vector<Aws::String>& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = value; }
-    inline void SetResourceTypeFilters(Aws::Vector<Aws::String>&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::move(value); }
-    inline GetComplianceSummaryRequest& WithResourceTypeFilters(const Aws::Vector<Aws::String>& value) { SetResourceTypeFilters(value); return *this;}
-    inline GetComplianceSummaryRequest& WithResourceTypeFilters(Aws::Vector<Aws::String>&& value) { SetResourceTypeFilters(std::move(value)); return *this;}
-    inline GetComplianceSummaryRequest& AddResourceTypeFilters(const Aws::String& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
-    inline GetComplianceSummaryRequest& AddResourceTypeFilters(Aws::String&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(std::move(value)); return *this; }
-    inline GetComplianceSummaryRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
+    template<typename ResourceTypeFiltersT = Aws::Vector<Aws::String>>
+    void SetResourceTypeFilters(ResourceTypeFiltersT&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters = std::forward<ResourceTypeFiltersT>(value); }
+    template<typename ResourceTypeFiltersT = Aws::Vector<Aws::String>>
+    GetComplianceSummaryRequest& WithResourceTypeFilters(ResourceTypeFiltersT&& value) { SetResourceTypeFilters(std::forward<ResourceTypeFiltersT>(value)); return *this;}
+    template<typename ResourceTypeFiltersT = Aws::String>
+    GetComplianceSummaryRequest& AddResourceTypeFilters(ResourceTypeFiltersT&& value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.emplace_back(std::forward<ResourceTypeFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,15 +108,14 @@ namespace Model
      * the count of returned noncompliant resources includes only resources that have
      * the specified tag keys.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTagKeyFilters() const{ return m_tagKeyFilters; }
+    inline const Aws::Vector<Aws::String>& GetTagKeyFilters() const { return m_tagKeyFilters; }
     inline bool TagKeyFiltersHasBeenSet() const { return m_tagKeyFiltersHasBeenSet; }
-    inline void SetTagKeyFilters(const Aws::Vector<Aws::String>& value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters = value; }
-    inline void SetTagKeyFilters(Aws::Vector<Aws::String>&& value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters = std::move(value); }
-    inline GetComplianceSummaryRequest& WithTagKeyFilters(const Aws::Vector<Aws::String>& value) { SetTagKeyFilters(value); return *this;}
-    inline GetComplianceSummaryRequest& WithTagKeyFilters(Aws::Vector<Aws::String>&& value) { SetTagKeyFilters(std::move(value)); return *this;}
-    inline GetComplianceSummaryRequest& AddTagKeyFilters(const Aws::String& value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters.push_back(value); return *this; }
-    inline GetComplianceSummaryRequest& AddTagKeyFilters(Aws::String&& value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters.push_back(std::move(value)); return *this; }
-    inline GetComplianceSummaryRequest& AddTagKeyFilters(const char* value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters.push_back(value); return *this; }
+    template<typename TagKeyFiltersT = Aws::Vector<Aws::String>>
+    void SetTagKeyFilters(TagKeyFiltersT&& value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters = std::forward<TagKeyFiltersT>(value); }
+    template<typename TagKeyFiltersT = Aws::Vector<Aws::String>>
+    GetComplianceSummaryRequest& WithTagKeyFilters(TagKeyFiltersT&& value) { SetTagKeyFilters(std::forward<TagKeyFiltersT>(value)); return *this;}
+    template<typename TagKeyFiltersT = Aws::String>
+    GetComplianceSummaryRequest& AddTagKeyFilters(TagKeyFiltersT&& value) { m_tagKeyFiltersHasBeenSet = true; m_tagKeyFilters.emplace_back(std::forward<TagKeyFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,14 +123,13 @@ namespace Model
      * <p>Specifies a list of attributes to group the counts of noncompliant resources
      * by. If supplied, the counts are sorted by those attributes.</p>
      */
-    inline const Aws::Vector<GroupByAttribute>& GetGroupBy() const{ return m_groupBy; }
+    inline const Aws::Vector<GroupByAttribute>& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const Aws::Vector<GroupByAttribute>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(Aws::Vector<GroupByAttribute>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline GetComplianceSummaryRequest& WithGroupBy(const Aws::Vector<GroupByAttribute>& value) { SetGroupBy(value); return *this;}
-    inline GetComplianceSummaryRequest& WithGroupBy(Aws::Vector<GroupByAttribute>&& value) { SetGroupBy(std::move(value)); return *this;}
-    inline GetComplianceSummaryRequest& AddGroupBy(const GroupByAttribute& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
-    inline GetComplianceSummaryRequest& AddGroupBy(GroupByAttribute&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
+    template<typename GroupByT = Aws::Vector<GroupByAttribute>>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = Aws::Vector<GroupByAttribute>>
+    GetComplianceSummaryRequest& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
+    inline GetComplianceSummaryRequest& AddGroupBy(GroupByAttribute value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -145,7 +140,7 @@ namespace Model
      * to see if there are more results. You can specify a minimum of 1 and a maximum
      * value of 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetComplianceSummaryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -157,14 +152,12 @@ namespace Model
      * request to indicate that you want the next page of results. Leave this parameter
      * empty in your initial request.</p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-    inline GetComplianceSummaryRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline GetComplianceSummaryRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline GetComplianceSummaryRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    GetComplianceSummaryRequest& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,7 +176,7 @@ namespace Model
     Aws::Vector<GroupByAttribute> m_groupBy;
     bool m_groupByHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_paginationToken;

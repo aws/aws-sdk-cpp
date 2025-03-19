@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbClusterAssociatedRole::AwsRdsDbClusterAssociatedRole() : 
-    m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRdsDbClusterAssociatedRole::AwsRdsDbClusterAssociatedRole(JsonView jsonValue)
-  : AwsRdsDbClusterAssociatedRole()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRdsDbClusterAssociatedRole& AwsRdsDbClusterAssociatedRole::operator =(JsonVie
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

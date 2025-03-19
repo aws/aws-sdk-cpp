@@ -12,13 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStateMachineForExecutionRequest::DescribeStateMachineForExecutionRequest() : 
-    m_executionArnHasBeenSet(false),
-    m_includedData(IncludedData::NOT_SET),
-    m_includedDataHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStateMachineForExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

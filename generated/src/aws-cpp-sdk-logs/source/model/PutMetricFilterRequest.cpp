@@ -12,16 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMetricFilterRequest::PutMetricFilterRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_filterNameHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_metricTransformationsHasBeenSet(false),
-    m_applyOnTransformedLogs(false),
-    m_applyOnTransformedLogsHasBeenSet(false)
-{
-}
-
 Aws::String PutMetricFilterRequest::SerializePayload() const
 {
   JsonValue payload;

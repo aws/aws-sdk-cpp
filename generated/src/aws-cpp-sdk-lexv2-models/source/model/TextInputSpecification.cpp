@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TextInputSpecification::TextInputSpecification() : 
-    m_startTimeoutMs(0),
-    m_startTimeoutMsHasBeenSet(false)
-{
-}
-
 TextInputSpecification::TextInputSpecification(JsonView jsonValue)
-  : TextInputSpecification()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TextInputSpecification& TextInputSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTimeoutMs"))
   {
     m_startTimeoutMs = jsonValue.GetInteger("startTimeoutMs");
-
     m_startTimeoutMsHasBeenSet = true;
   }
-
   return *this;
 }
 

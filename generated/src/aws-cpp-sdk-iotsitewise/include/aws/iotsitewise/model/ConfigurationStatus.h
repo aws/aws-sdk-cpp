@@ -33,7 +33,7 @@ namespace Model
   class ConfigurationStatus
   {
   public:
-    AWS_IOTSITEWISE_API ConfigurationStatus();
+    AWS_IOTSITEWISE_API ConfigurationStatus() = default;
     AWS_IOTSITEWISE_API ConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The current state of the configuration.</p>
      */
-    inline const ConfigurationState& GetState() const{ return m_state; }
+    inline ConfigurationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ConfigurationStatus& WithState(const ConfigurationState& value) { SetState(value); return *this;}
-    inline ConfigurationStatus& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ConfigurationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ConfigurationStatus& WithState(ConfigurationState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains associated error information, if any.</p>
      */
-    inline const ConfigurationErrorDetails& GetError() const{ return m_error; }
+    inline const ConfigurationErrorDetails& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ConfigurationErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ConfigurationErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ConfigurationStatus& WithError(const ConfigurationErrorDetails& value) { SetError(value); return *this;}
-    inline ConfigurationStatus& WithError(ConfigurationErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ConfigurationErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ConfigurationErrorDetails>
+    ConfigurationStatus& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
-    ConfigurationState m_state;
+    ConfigurationState m_state{ConfigurationState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     ConfigurationErrorDetails m_error;

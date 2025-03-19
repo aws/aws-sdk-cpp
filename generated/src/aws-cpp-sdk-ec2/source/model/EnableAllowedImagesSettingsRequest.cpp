@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableAllowedImagesSettingsRequest::EnableAllowedImagesSettingsRequest() : 
-    m_allowedImagesSettingsState(AllowedImagesSettingsEnabledState::NOT_SET),
-    m_allowedImagesSettingsStateHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EnableAllowedImagesSettingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

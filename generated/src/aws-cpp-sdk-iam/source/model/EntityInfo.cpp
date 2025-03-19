@@ -20,18 +20,7 @@ namespace IAM
 namespace Model
 {
 
-EntityInfo::EntityInfo() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PolicyOwnerEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 EntityInfo::EntityInfo(const XmlNode& xmlNode)
-  : EntityInfo()
 {
   *this = xmlNode;
 }
@@ -57,7 +46,7 @@ EntityInfo& EntityInfo::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode idNode = resultNode.FirstChild("Id");

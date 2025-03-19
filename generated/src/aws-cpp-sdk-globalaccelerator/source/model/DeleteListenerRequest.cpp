@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteListenerRequest::DeleteListenerRequest() : 
-    m_listenerArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteListenerRequest::SerializePayload() const
 {
   JsonValue payload;

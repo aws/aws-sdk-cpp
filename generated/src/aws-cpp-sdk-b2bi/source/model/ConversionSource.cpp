@@ -18,15 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-ConversionSource::ConversionSource() : 
-    m_fileFormat(ConversionSourceFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_inputFileHasBeenSet(false)
-{
-}
-
 ConversionSource::ConversionSource(JsonView jsonValue)
-  : ConversionSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConversionSource& ConversionSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileFormat"))
   {
     m_fileFormat = ConversionSourceFormatMapper::GetConversionSourceFormatForName(jsonValue.GetString("fileFormat"));
-
     m_fileFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputFile"))
   {
     m_inputFile = jsonValue.GetObject("inputFile");
-
     m_inputFileHasBeenSet = true;
   }
-
   return *this;
 }
 

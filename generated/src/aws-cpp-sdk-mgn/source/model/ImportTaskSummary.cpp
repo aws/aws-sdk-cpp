@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ImportTaskSummary::ImportTaskSummary() : 
-    m_applicationsHasBeenSet(false),
-    m_serversHasBeenSet(false),
-    m_wavesHasBeenSet(false)
-{
-}
-
 ImportTaskSummary::ImportTaskSummary(JsonView jsonValue)
-  : ImportTaskSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ImportTaskSummary& ImportTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applications"))
   {
     m_applications = jsonValue.GetObject("applications");
-
     m_applicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("servers"))
   {
     m_servers = jsonValue.GetObject("servers");
-
     m_serversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waves"))
   {
     m_waves = jsonValue.GetObject("waves");
-
     m_wavesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CvssScoreDetails::CvssScoreDetails() : 
-    m_adjustmentsHasBeenSet(false),
-    m_cvssSourceHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_scoreSourceHasBeenSet(false),
-    m_scoringVectorHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 CvssScoreDetails::CvssScoreDetails(JsonView jsonValue)
-  : CvssScoreDetails()
 {
   *this = jsonValue;
 }
@@ -46,42 +34,31 @@ CvssScoreDetails& CvssScoreDetails::operator =(JsonView jsonValue)
     }
     m_adjustmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cvssSource"))
   {
     m_cvssSource = jsonValue.GetString("cvssSource");
-
     m_cvssSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scoreSource"))
   {
     m_scoreSource = jsonValue.GetString("scoreSource");
-
     m_scoreSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scoringVector"))
   {
     m_scoringVector = jsonValue.GetString("scoringVector");
-
     m_scoringVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

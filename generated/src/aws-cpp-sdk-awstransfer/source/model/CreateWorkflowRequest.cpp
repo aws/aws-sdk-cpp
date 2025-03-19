@@ -12,14 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkflowRequest::CreateWorkflowRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_onExceptionStepsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

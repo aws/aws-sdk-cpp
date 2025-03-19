@@ -32,7 +32,7 @@ namespace Model
   class EvaluationResult
   {
   public:
-    AWS_REKOGNITION_API EvaluationResult();
+    AWS_REKOGNITION_API EvaluationResult() = default;
     AWS_REKOGNITION_API EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * higher value indicates better precision and recall performance. A lower score
      * indicates that precision, recall, or both are performing poorly. </p>
      */
-    inline double GetF1Score() const{ return m_f1Score; }
+    inline double GetF1Score() const { return m_f1Score; }
     inline bool F1ScoreHasBeenSet() const { return m_f1ScoreHasBeenSet; }
     inline void SetF1Score(double value) { m_f1ScoreHasBeenSet = true; m_f1Score = value; }
     inline EvaluationResult& WithF1Score(double value) { SetF1Score(value); return *this;}
@@ -55,16 +55,16 @@ namespace Model
     /**
      * <p>The S3 bucket that contains the training summary.</p>
      */
-    inline const Summary& GetSummary() const{ return m_summary; }
+    inline const Summary& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const Summary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(Summary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline EvaluationResult& WithSummary(const Summary& value) { SetSummary(value); return *this;}
-    inline EvaluationResult& WithSummary(Summary&& value) { SetSummary(std::move(value)); return *this;}
+    template<typename SummaryT = Summary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = Summary>
+    EvaluationResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
   private:
 
-    double m_f1Score;
+    double m_f1Score{0.0};
     bool m_f1ScoreHasBeenSet = false;
 
     Summary m_summary;

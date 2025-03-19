@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringJsonDatasetFormat::MonitoringJsonDatasetFormat() : 
-    m_line(false),
-    m_lineHasBeenSet(false)
-{
-}
-
 MonitoringJsonDatasetFormat::MonitoringJsonDatasetFormat(JsonView jsonValue)
-  : MonitoringJsonDatasetFormat()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MonitoringJsonDatasetFormat& MonitoringJsonDatasetFormat::operator =(JsonView js
   if(jsonValue.ValueExists("Line"))
   {
     m_line = jsonValue.GetBool("Line");
-
     m_lineHasBeenSet = true;
   }
-
   return *this;
 }
 

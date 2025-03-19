@@ -12,12 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UndeprecateWorkflowTypeRequest::UndeprecateWorkflowTypeRequest() : 
-    m_domainHasBeenSet(false),
-    m_workflowTypeHasBeenSet(false)
-{
-}
-
 Aws::String UndeprecateWorkflowTypeRequest::SerializePayload() const
 {
   JsonValue payload;

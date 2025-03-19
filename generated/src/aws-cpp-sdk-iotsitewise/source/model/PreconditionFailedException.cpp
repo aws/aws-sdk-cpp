@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-PreconditionFailedException::PreconditionFailedException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 PreconditionFailedException::PreconditionFailedException(JsonView jsonValue)
-  : PreconditionFailedException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PreconditionFailedException& PreconditionFailedException::operator =(JsonView js
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

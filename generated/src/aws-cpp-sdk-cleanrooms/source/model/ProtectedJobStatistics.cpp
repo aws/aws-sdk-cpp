@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedJobStatistics::ProtectedJobStatistics() : 
-    m_totalDurationInMillis(0),
-    m_totalDurationInMillisHasBeenSet(false),
-    m_billedResourceUtilizationHasBeenSet(false)
-{
-}
-
 ProtectedJobStatistics::ProtectedJobStatistics(JsonView jsonValue)
-  : ProtectedJobStatistics()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProtectedJobStatistics& ProtectedJobStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalDurationInMillis"))
   {
     m_totalDurationInMillis = jsonValue.GetInt64("totalDurationInMillis");
-
     m_totalDurationInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billedResourceUtilization"))
   {
     m_billedResourceUtilization = jsonValue.GetObject("billedResourceUtilization");
-
     m_billedResourceUtilizationHasBeenSet = true;
   }
-
   return *this;
 }
 

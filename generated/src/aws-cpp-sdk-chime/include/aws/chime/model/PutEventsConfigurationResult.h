@@ -28,7 +28,7 @@ namespace Model
   class PutEventsConfigurationResult
   {
   public:
-    AWS_CHIME_API PutEventsConfigurationResult();
+    AWS_CHIME_API PutEventsConfigurationResult() = default;
     AWS_CHIME_API PutEventsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API PutEventsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The configuration that allows a bot to receive outgoing events. Can be an
      * HTTPS endpoint or an AWS Lambda function ARN.</p>
      */
-    inline const EventsConfiguration& GetEventsConfiguration() const{ return m_eventsConfiguration; }
-    inline void SetEventsConfiguration(const EventsConfiguration& value) { m_eventsConfiguration = value; }
-    inline void SetEventsConfiguration(EventsConfiguration&& value) { m_eventsConfiguration = std::move(value); }
-    inline PutEventsConfigurationResult& WithEventsConfiguration(const EventsConfiguration& value) { SetEventsConfiguration(value); return *this;}
-    inline PutEventsConfigurationResult& WithEventsConfiguration(EventsConfiguration&& value) { SetEventsConfiguration(std::move(value)); return *this;}
+    inline const EventsConfiguration& GetEventsConfiguration() const { return m_eventsConfiguration; }
+    template<typename EventsConfigurationT = EventsConfiguration>
+    void SetEventsConfiguration(EventsConfigurationT&& value) { m_eventsConfigurationHasBeenSet = true; m_eventsConfiguration = std::forward<EventsConfigurationT>(value); }
+    template<typename EventsConfigurationT = EventsConfiguration>
+    PutEventsConfigurationResult& WithEventsConfiguration(EventsConfigurationT&& value) { SetEventsConfiguration(std::forward<EventsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEventsConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEventsConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEventsConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEventsConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EventsConfiguration m_eventsConfiguration;
+    bool m_eventsConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

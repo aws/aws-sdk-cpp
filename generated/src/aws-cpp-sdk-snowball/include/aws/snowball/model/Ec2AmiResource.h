@@ -34,7 +34,7 @@ namespace Model
   class Ec2AmiResource
   {
   public:
-    AWS_SNOWBALL_API Ec2AmiResource();
+    AWS_SNOWBALL_API Ec2AmiResource() = default;
     AWS_SNOWBALL_API Ec2AmiResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Ec2AmiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ID of the AMI in Amazon EC2.</p>
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline Ec2AmiResource& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline Ec2AmiResource& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline Ec2AmiResource& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    Ec2AmiResource& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the AMI on the Snow device.</p>
      */
-    inline const Aws::String& GetSnowballAmiId() const{ return m_snowballAmiId; }
+    inline const Aws::String& GetSnowballAmiId() const { return m_snowballAmiId; }
     inline bool SnowballAmiIdHasBeenSet() const { return m_snowballAmiIdHasBeenSet; }
-    inline void SetSnowballAmiId(const Aws::String& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = value; }
-    inline void SetSnowballAmiId(Aws::String&& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = std::move(value); }
-    inline void SetSnowballAmiId(const char* value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId.assign(value); }
-    inline Ec2AmiResource& WithSnowballAmiId(const Aws::String& value) { SetSnowballAmiId(value); return *this;}
-    inline Ec2AmiResource& WithSnowballAmiId(Aws::String&& value) { SetSnowballAmiId(std::move(value)); return *this;}
-    inline Ec2AmiResource& WithSnowballAmiId(const char* value) { SetSnowballAmiId(value); return *this;}
+    template<typename SnowballAmiIdT = Aws::String>
+    void SetSnowballAmiId(SnowballAmiIdT&& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = std::forward<SnowballAmiIdT>(value); }
+    template<typename SnowballAmiIdT = Aws::String>
+    Ec2AmiResource& WithSnowballAmiId(SnowballAmiIdT&& value) { SetSnowballAmiId(std::forward<SnowballAmiIdT>(value)); return *this;}
     ///@}
   private:
 

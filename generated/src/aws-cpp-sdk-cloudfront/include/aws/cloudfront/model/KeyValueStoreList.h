@@ -32,7 +32,7 @@ namespace Model
   class KeyValueStoreList
   {
   public:
-    AWS_CLOUDFRONT_API KeyValueStoreList();
+    AWS_CLOUDFRONT_API KeyValueStoreList() = default;
     AWS_CLOUDFRONT_API KeyValueStoreList(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API KeyValueStoreList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The next marker associated with the key value store list.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline KeyValueStoreList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline KeyValueStoreList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline KeyValueStoreList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    KeyValueStoreList& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items in the key value store list.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline KeyValueStoreList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     /**
      * <p>The quantity of the key value store list.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline KeyValueStoreList& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -77,24 +75,24 @@ namespace Model
     /**
      * <p>The items of the key value store list.</p>
      */
-    inline const Aws::Vector<KeyValueStore>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<KeyValueStore>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<KeyValueStore>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<KeyValueStore>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline KeyValueStoreList& WithItems(const Aws::Vector<KeyValueStore>& value) { SetItems(value); return *this;}
-    inline KeyValueStoreList& WithItems(Aws::Vector<KeyValueStore>&& value) { SetItems(std::move(value)); return *this;}
-    inline KeyValueStoreList& AddItems(const KeyValueStore& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline KeyValueStoreList& AddItems(KeyValueStore&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<KeyValueStore>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<KeyValueStore>>
+    KeyValueStoreList& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = KeyValueStore>
+    KeyValueStoreList& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<KeyValueStore> m_items;

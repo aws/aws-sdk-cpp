@@ -18,14 +18,7 @@ namespace CloudControlApi
 namespace Model
 {
 
-ResourceDescription::ResourceDescription() : 
-    m_identifierHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 ResourceDescription::ResourceDescription(JsonView jsonValue)
-  : ResourceDescription()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceDescription& ResourceDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     m_properties = jsonValue.GetString("Properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

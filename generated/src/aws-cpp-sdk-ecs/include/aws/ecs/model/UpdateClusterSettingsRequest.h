@@ -23,7 +23,7 @@ namespace Model
   class UpdateClusterSettingsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API UpdateClusterSettingsRequest();
+    AWS_ECS_API UpdateClusterSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the cluster to modify the settings for.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline UpdateClusterSettingsRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline UpdateClusterSettingsRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline UpdateClusterSettingsRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    UpdateClusterSettingsRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,14 @@ namespace Model
      * Container Insights, you must wait 7 days before you can re-create it.</p>
      * 
      */
-    inline const Aws::Vector<ClusterSetting>& GetSettings() const{ return m_settings; }
+    inline const Aws::Vector<ClusterSetting>& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Aws::Vector<ClusterSetting>& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Aws::Vector<ClusterSetting>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline UpdateClusterSettingsRequest& WithSettings(const Aws::Vector<ClusterSetting>& value) { SetSettings(value); return *this;}
-    inline UpdateClusterSettingsRequest& WithSettings(Aws::Vector<ClusterSetting>&& value) { SetSettings(std::move(value)); return *this;}
-    inline UpdateClusterSettingsRequest& AddSettings(const ClusterSetting& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
-    inline UpdateClusterSettingsRequest& AddSettings(ClusterSetting&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
+    template<typename SettingsT = Aws::Vector<ClusterSetting>>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Aws::Vector<ClusterSetting>>
+    UpdateClusterSettingsRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
+    template<typename SettingsT = ClusterSetting>
+    UpdateClusterSettingsRequest& AddSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings.emplace_back(std::forward<SettingsT>(value)); return *this; }
     ///@}
   private:
 

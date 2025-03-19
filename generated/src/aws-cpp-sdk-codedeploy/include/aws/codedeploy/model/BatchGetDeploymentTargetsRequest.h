@@ -22,7 +22,7 @@ namespace Model
   class BatchGetDeploymentTargetsRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetDeploymentTargetsRequest();
+    AWS_CODEDEPLOY_API BatchGetDeploymentTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline BatchGetDeploymentTargetsRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline BatchGetDeploymentTargetsRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline BatchGetDeploymentTargetsRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    BatchGetDeploymentTargetsRequest& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,15 +64,14 @@ namespace Model
      * with CloudFormation, the target IDs are CloudFormation stack IDs. Their target
      * type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetIds() const{ return m_targetIds; }
+    inline const Aws::Vector<Aws::String>& GetTargetIds() const { return m_targetIds; }
     inline bool TargetIdsHasBeenSet() const { return m_targetIdsHasBeenSet; }
-    inline void SetTargetIds(const Aws::Vector<Aws::String>& value) { m_targetIdsHasBeenSet = true; m_targetIds = value; }
-    inline void SetTargetIds(Aws::Vector<Aws::String>&& value) { m_targetIdsHasBeenSet = true; m_targetIds = std::move(value); }
-    inline BatchGetDeploymentTargetsRequest& WithTargetIds(const Aws::Vector<Aws::String>& value) { SetTargetIds(value); return *this;}
-    inline BatchGetDeploymentTargetsRequest& WithTargetIds(Aws::Vector<Aws::String>&& value) { SetTargetIds(std::move(value)); return *this;}
-    inline BatchGetDeploymentTargetsRequest& AddTargetIds(const Aws::String& value) { m_targetIdsHasBeenSet = true; m_targetIds.push_back(value); return *this; }
-    inline BatchGetDeploymentTargetsRequest& AddTargetIds(Aws::String&& value) { m_targetIdsHasBeenSet = true; m_targetIds.push_back(std::move(value)); return *this; }
-    inline BatchGetDeploymentTargetsRequest& AddTargetIds(const char* value) { m_targetIdsHasBeenSet = true; m_targetIds.push_back(value); return *this; }
+    template<typename TargetIdsT = Aws::Vector<Aws::String>>
+    void SetTargetIds(TargetIdsT&& value) { m_targetIdsHasBeenSet = true; m_targetIds = std::forward<TargetIdsT>(value); }
+    template<typename TargetIdsT = Aws::Vector<Aws::String>>
+    BatchGetDeploymentTargetsRequest& WithTargetIds(TargetIdsT&& value) { SetTargetIds(std::forward<TargetIdsT>(value)); return *this;}
+    template<typename TargetIdsT = Aws::String>
+    BatchGetDeploymentTargetsRequest& AddTargetIds(TargetIdsT&& value) { m_targetIdsHasBeenSet = true; m_targetIds.emplace_back(std::forward<TargetIdsT>(value)); return *this; }
     ///@}
   private:
 

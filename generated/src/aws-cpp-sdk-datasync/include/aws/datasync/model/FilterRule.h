@@ -33,7 +33,7 @@ namespace Model
   class FilterRule
   {
   public:
-    AWS_DATASYNC_API FilterRule();
+    AWS_DATASYNC_API FilterRule() = default;
     AWS_DATASYNC_API FilterRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API FilterRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN
      * rule type.</p>
      */
-    inline const FilterType& GetFilterType() const{ return m_filterType; }
+    inline FilterType GetFilterType() const { return m_filterType; }
     inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
-    inline void SetFilterType(const FilterType& value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
-    inline void SetFilterType(FilterType&& value) { m_filterTypeHasBeenSet = true; m_filterType = std::move(value); }
-    inline FilterRule& WithFilterType(const FilterType& value) { SetFilterType(value); return *this;}
-    inline FilterRule& WithFilterType(FilterType&& value) { SetFilterType(std::move(value)); return *this;}
+    inline void SetFilterType(FilterType value) { m_filterTypeHasBeenSet = true; m_filterType = value; }
+    inline FilterRule& WithFilterType(FilterType value) { SetFilterType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * The patterns are delimited by "|" (that is, a pipe), for example:
      * <code>/folder1|/folder2</code> </p> <p> </p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline FilterRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    FilterRule& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterType m_filterType;
+    FilterType m_filterType{FilterType::NOT_SET};
     bool m_filterTypeHasBeenSet = false;
 
     Aws::String m_value;

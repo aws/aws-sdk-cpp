@@ -31,7 +31,7 @@ namespace Model
   class InventorySchedule
   {
   public:
-    AWS_S3CRT_API InventorySchedule();
+    AWS_S3CRT_API InventorySchedule() = default;
     AWS_S3CRT_API InventorySchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API InventorySchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Specifies how frequently inventory results are produced.</p>
      */
-    inline const InventoryFrequency& GetFrequency() const{ return m_frequency; }
+    inline InventoryFrequency GetFrequency() const { return m_frequency; }
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
-    inline void SetFrequency(const InventoryFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
-    inline void SetFrequency(InventoryFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
-    inline InventorySchedule& WithFrequency(const InventoryFrequency& value) { SetFrequency(value); return *this;}
-    inline InventorySchedule& WithFrequency(InventoryFrequency&& value) { SetFrequency(std::move(value)); return *this;}
+    inline void SetFrequency(InventoryFrequency value) { m_frequencyHasBeenSet = true; m_frequency = value; }
+    inline InventorySchedule& WithFrequency(InventoryFrequency value) { SetFrequency(value); return *this;}
     ///@}
   private:
 
-    InventoryFrequency m_frequency;
+    InventoryFrequency m_frequency{InventoryFrequency::NOT_SET};
     bool m_frequencyHasBeenSet = false;
   };
 

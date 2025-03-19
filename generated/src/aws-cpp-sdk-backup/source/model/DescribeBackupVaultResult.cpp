@@ -17,18 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBackupVaultResult::DescribeBackupVaultResult() : 
-    m_vaultType(VaultType::NOT_SET),
-    m_vaultState(VaultState::NOT_SET),
-    m_numberOfRecoveryPoints(0),
-    m_locked(false),
-    m_minRetentionDays(0),
-    m_maxRetentionDays(0)
-{
-}
-
 DescribeBackupVaultResult::DescribeBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeBackupVaultResult()
 {
   *this = result;
 }
@@ -39,81 +28,70 @@ DescribeBackupVaultResult& DescribeBackupVaultResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
+    m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
+    m_backupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VaultType"))
   {
     m_vaultType = VaultTypeMapper::GetVaultTypeForName(jsonValue.GetString("VaultType"));
-
+    m_vaultTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VaultState"))
   {
     m_vaultState = VaultStateMapper::GetVaultStateForName(jsonValue.GetString("VaultState"));
-
+    m_vaultStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
-
+    m_encryptionKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
+    m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfRecoveryPoints"))
   {
     m_numberOfRecoveryPoints = jsonValue.GetInt64("NumberOfRecoveryPoints");
-
+    m_numberOfRecoveryPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locked"))
   {
     m_locked = jsonValue.GetBool("Locked");
-
+    m_lockedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinRetentionDays"))
   {
     m_minRetentionDays = jsonValue.GetInt64("MinRetentionDays");
-
+    m_minRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRetentionDays"))
   {
     m_maxRetentionDays = jsonValue.GetInt64("MaxRetentionDays");
-
+    m_maxRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LockDate"))
   {
     m_lockDate = jsonValue.GetDouble("LockDate");
-
+    m_lockDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

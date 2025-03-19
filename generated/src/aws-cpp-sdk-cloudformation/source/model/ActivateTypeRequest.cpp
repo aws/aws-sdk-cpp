@@ -10,24 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ActivateTypeRequest::ActivateTypeRequest() : 
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_publicTypeArnHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeNameAliasHasBeenSet(false),
-    m_autoUpdate(false),
-    m_autoUpdateHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_versionBump(VersionBump::NOT_SET),
-    m_versionBumpHasBeenSet(false),
-    m_majorVersion(0),
-    m_majorVersionHasBeenSet(false)
-{
-}
-
 Aws::String ActivateTypeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

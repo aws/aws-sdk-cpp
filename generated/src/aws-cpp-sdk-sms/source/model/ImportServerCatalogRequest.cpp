@@ -12,10 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportServerCatalogRequest::ImportServerCatalogRequest()
-{
-}
-
 Aws::String ImportServerCatalogRequest::SerializePayload() const
 {
   return "{}";

@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateInstanceEventWindowRequest::CreateInstanceEventWindowRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_timeRangesHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceEventWindowRequest::SerializePayload() const
 {
   Aws::StringStream ss;

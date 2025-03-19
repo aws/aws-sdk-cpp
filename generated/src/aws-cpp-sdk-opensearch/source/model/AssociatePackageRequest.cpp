@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociatePackageRequest::AssociatePackageRequest() : 
-    m_packageIDHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_prerequisitePackageIDListHasBeenSet(false),
-    m_associationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String AssociatePackageRequest::SerializePayload() const
 {
   JsonValue payload;

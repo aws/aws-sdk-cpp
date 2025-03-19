@@ -37,7 +37,7 @@ namespace Model
   class ContentBody
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ContentBody();
+    AWS_BEDROCKAGENTRUNTIME_API ContentBody() = default;
     AWS_BEDROCKAGENTRUNTIME_API ContentBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ContentBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The body of the API response.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline ContentBody& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline ContentBody& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline ContentBody& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    ContentBody& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure
      * an Amazon Bedrock Agent to complete tasks with computer use tools</a>. </p>
      */
-    inline const Aws::Vector<ImageInput>& GetImages() const{ return m_images; }
+    inline const Aws::Vector<ImageInput>& GetImages() const { return m_images; }
     inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
-    inline void SetImages(const Aws::Vector<ImageInput>& value) { m_imagesHasBeenSet = true; m_images = value; }
-    inline void SetImages(Aws::Vector<ImageInput>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
-    inline ContentBody& WithImages(const Aws::Vector<ImageInput>& value) { SetImages(value); return *this;}
-    inline ContentBody& WithImages(Aws::Vector<ImageInput>&& value) { SetImages(std::move(value)); return *this;}
-    inline ContentBody& AddImages(const ImageInput& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
-    inline ContentBody& AddImages(ImageInput&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
+    template<typename ImagesT = Aws::Vector<ImageInput>>
+    void SetImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images = std::forward<ImagesT>(value); }
+    template<typename ImagesT = Aws::Vector<ImageInput>>
+    ContentBody& WithImages(ImagesT&& value) { SetImages(std::forward<ImagesT>(value)); return *this;}
+    template<typename ImagesT = ImageInput>
+    ContentBody& AddImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images.emplace_back(std::forward<ImagesT>(value)); return *this; }
     ///@}
   private:
 

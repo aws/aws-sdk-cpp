@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-License::License() : 
-    m_idHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 License::License(JsonView jsonValue)
-  : License()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ License& License::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("token"))
   {
     m_token = jsonValue.GetString("token");
-
     m_tokenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class GetMobileSdkReleaseRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API GetMobileSdkReleaseRequest();
+    AWS_WAFV2_API GetMobileSdkReleaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
     /**
      * <p>The device platform.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
+    inline Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline GetMobileSdkReleaseRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline GetMobileSdkReleaseRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline GetMobileSdkReleaseRequest& WithPlatform(Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -52,18 +50,16 @@ namespace Model
      * <p>The release version. For the latest available version, specify
      * <code>LATEST</code>.</p>
      */
-    inline const Aws::String& GetReleaseVersion() const{ return m_releaseVersion; }
+    inline const Aws::String& GetReleaseVersion() const { return m_releaseVersion; }
     inline bool ReleaseVersionHasBeenSet() const { return m_releaseVersionHasBeenSet; }
-    inline void SetReleaseVersion(const Aws::String& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = value; }
-    inline void SetReleaseVersion(Aws::String&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::move(value); }
-    inline void SetReleaseVersion(const char* value) { m_releaseVersionHasBeenSet = true; m_releaseVersion.assign(value); }
-    inline GetMobileSdkReleaseRequest& WithReleaseVersion(const Aws::String& value) { SetReleaseVersion(value); return *this;}
-    inline GetMobileSdkReleaseRequest& WithReleaseVersion(Aws::String&& value) { SetReleaseVersion(std::move(value)); return *this;}
-    inline GetMobileSdkReleaseRequest& WithReleaseVersion(const char* value) { SetReleaseVersion(value); return *this;}
+    template<typename ReleaseVersionT = Aws::String>
+    void SetReleaseVersion(ReleaseVersionT&& value) { m_releaseVersionHasBeenSet = true; m_releaseVersion = std::forward<ReleaseVersionT>(value); }
+    template<typename ReleaseVersionT = Aws::String>
+    GetMobileSdkReleaseRequest& WithReleaseVersion(ReleaseVersionT&& value) { SetReleaseVersion(std::forward<ReleaseVersionT>(value)); return *this;}
     ///@}
   private:
 
-    Platform m_platform;
+    Platform m_platform{Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::String m_releaseVersion;

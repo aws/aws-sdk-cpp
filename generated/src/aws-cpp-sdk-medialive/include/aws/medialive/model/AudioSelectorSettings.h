@@ -34,7 +34,7 @@ namespace Model
   class AudioSelectorSettings
   {
   public:
-    AWS_MEDIALIVE_API AudioSelectorSettings();
+    AWS_MEDIALIVE_API AudioSelectorSettings() = default;
     AWS_MEDIALIVE_API AudioSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,42 @@ namespace Model
 
     ///@{
     
-    inline const AudioHlsRenditionSelection& GetAudioHlsRenditionSelection() const{ return m_audioHlsRenditionSelection; }
+    inline const AudioHlsRenditionSelection& GetAudioHlsRenditionSelection() const { return m_audioHlsRenditionSelection; }
     inline bool AudioHlsRenditionSelectionHasBeenSet() const { return m_audioHlsRenditionSelectionHasBeenSet; }
-    inline void SetAudioHlsRenditionSelection(const AudioHlsRenditionSelection& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = value; }
-    inline void SetAudioHlsRenditionSelection(AudioHlsRenditionSelection&& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = std::move(value); }
-    inline AudioSelectorSettings& WithAudioHlsRenditionSelection(const AudioHlsRenditionSelection& value) { SetAudioHlsRenditionSelection(value); return *this;}
-    inline AudioSelectorSettings& WithAudioHlsRenditionSelection(AudioHlsRenditionSelection&& value) { SetAudioHlsRenditionSelection(std::move(value)); return *this;}
+    template<typename AudioHlsRenditionSelectionT = AudioHlsRenditionSelection>
+    void SetAudioHlsRenditionSelection(AudioHlsRenditionSelectionT&& value) { m_audioHlsRenditionSelectionHasBeenSet = true; m_audioHlsRenditionSelection = std::forward<AudioHlsRenditionSelectionT>(value); }
+    template<typename AudioHlsRenditionSelectionT = AudioHlsRenditionSelection>
+    AudioSelectorSettings& WithAudioHlsRenditionSelection(AudioHlsRenditionSelectionT&& value) { SetAudioHlsRenditionSelection(std::forward<AudioHlsRenditionSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AudioLanguageSelection& GetAudioLanguageSelection() const{ return m_audioLanguageSelection; }
+    inline const AudioLanguageSelection& GetAudioLanguageSelection() const { return m_audioLanguageSelection; }
     inline bool AudioLanguageSelectionHasBeenSet() const { return m_audioLanguageSelectionHasBeenSet; }
-    inline void SetAudioLanguageSelection(const AudioLanguageSelection& value) { m_audioLanguageSelectionHasBeenSet = true; m_audioLanguageSelection = value; }
-    inline void SetAudioLanguageSelection(AudioLanguageSelection&& value) { m_audioLanguageSelectionHasBeenSet = true; m_audioLanguageSelection = std::move(value); }
-    inline AudioSelectorSettings& WithAudioLanguageSelection(const AudioLanguageSelection& value) { SetAudioLanguageSelection(value); return *this;}
-    inline AudioSelectorSettings& WithAudioLanguageSelection(AudioLanguageSelection&& value) { SetAudioLanguageSelection(std::move(value)); return *this;}
+    template<typename AudioLanguageSelectionT = AudioLanguageSelection>
+    void SetAudioLanguageSelection(AudioLanguageSelectionT&& value) { m_audioLanguageSelectionHasBeenSet = true; m_audioLanguageSelection = std::forward<AudioLanguageSelectionT>(value); }
+    template<typename AudioLanguageSelectionT = AudioLanguageSelection>
+    AudioSelectorSettings& WithAudioLanguageSelection(AudioLanguageSelectionT&& value) { SetAudioLanguageSelection(std::forward<AudioLanguageSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AudioPidSelection& GetAudioPidSelection() const{ return m_audioPidSelection; }
+    inline const AudioPidSelection& GetAudioPidSelection() const { return m_audioPidSelection; }
     inline bool AudioPidSelectionHasBeenSet() const { return m_audioPidSelectionHasBeenSet; }
-    inline void SetAudioPidSelection(const AudioPidSelection& value) { m_audioPidSelectionHasBeenSet = true; m_audioPidSelection = value; }
-    inline void SetAudioPidSelection(AudioPidSelection&& value) { m_audioPidSelectionHasBeenSet = true; m_audioPidSelection = std::move(value); }
-    inline AudioSelectorSettings& WithAudioPidSelection(const AudioPidSelection& value) { SetAudioPidSelection(value); return *this;}
-    inline AudioSelectorSettings& WithAudioPidSelection(AudioPidSelection&& value) { SetAudioPidSelection(std::move(value)); return *this;}
+    template<typename AudioPidSelectionT = AudioPidSelection>
+    void SetAudioPidSelection(AudioPidSelectionT&& value) { m_audioPidSelectionHasBeenSet = true; m_audioPidSelection = std::forward<AudioPidSelectionT>(value); }
+    template<typename AudioPidSelectionT = AudioPidSelection>
+    AudioSelectorSettings& WithAudioPidSelection(AudioPidSelectionT&& value) { SetAudioPidSelection(std::forward<AudioPidSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AudioTrackSelection& GetAudioTrackSelection() const{ return m_audioTrackSelection; }
+    inline const AudioTrackSelection& GetAudioTrackSelection() const { return m_audioTrackSelection; }
     inline bool AudioTrackSelectionHasBeenSet() const { return m_audioTrackSelectionHasBeenSet; }
-    inline void SetAudioTrackSelection(const AudioTrackSelection& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = value; }
-    inline void SetAudioTrackSelection(AudioTrackSelection&& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = std::move(value); }
-    inline AudioSelectorSettings& WithAudioTrackSelection(const AudioTrackSelection& value) { SetAudioTrackSelection(value); return *this;}
-    inline AudioSelectorSettings& WithAudioTrackSelection(AudioTrackSelection&& value) { SetAudioTrackSelection(std::move(value)); return *this;}
+    template<typename AudioTrackSelectionT = AudioTrackSelection>
+    void SetAudioTrackSelection(AudioTrackSelectionT&& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = std::forward<AudioTrackSelectionT>(value); }
+    template<typename AudioTrackSelectionT = AudioTrackSelection>
+    AudioSelectorSettings& WithAudioTrackSelection(AudioTrackSelectionT&& value) { SetAudioTrackSelection(std::forward<AudioTrackSelectionT>(value)); return *this;}
     ///@}
   private:
 

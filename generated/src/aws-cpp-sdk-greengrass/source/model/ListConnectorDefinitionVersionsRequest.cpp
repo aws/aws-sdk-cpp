@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConnectorDefinitionVersionsRequest::ListConnectorDefinitionVersionsRequest() : 
-    m_connectorDefinitionIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectorDefinitionVersionsRequest::SerializePayload() const
 {
   return {};

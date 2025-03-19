@@ -32,7 +32,7 @@ namespace Model
   class ComputationPreference
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ComputationPreference();
+    AWS_BILLINGCONDUCTOR_API ComputationPreference() = default;
     AWS_BILLINGCONDUCTOR_API ComputationPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ComputationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute
      * the Amazon Web Services charges for a billing group. </p>
      */
-    inline const Aws::String& GetPricingPlanArn() const{ return m_pricingPlanArn; }
+    inline const Aws::String& GetPricingPlanArn() const { return m_pricingPlanArn; }
     inline bool PricingPlanArnHasBeenSet() const { return m_pricingPlanArnHasBeenSet; }
-    inline void SetPricingPlanArn(const Aws::String& value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn = value; }
-    inline void SetPricingPlanArn(Aws::String&& value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn = std::move(value); }
-    inline void SetPricingPlanArn(const char* value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn.assign(value); }
-    inline ComputationPreference& WithPricingPlanArn(const Aws::String& value) { SetPricingPlanArn(value); return *this;}
-    inline ComputationPreference& WithPricingPlanArn(Aws::String&& value) { SetPricingPlanArn(std::move(value)); return *this;}
-    inline ComputationPreference& WithPricingPlanArn(const char* value) { SetPricingPlanArn(value); return *this;}
+    template<typename PricingPlanArnT = Aws::String>
+    void SetPricingPlanArn(PricingPlanArnT&& value) { m_pricingPlanArnHasBeenSet = true; m_pricingPlanArn = std::forward<PricingPlanArnT>(value); }
+    template<typename PricingPlanArnT = Aws::String>
+    ComputationPreference& WithPricingPlanArn(PricingPlanArnT&& value) { SetPricingPlanArn(std::forward<PricingPlanArnT>(value)); return *this;}
     ///@}
   private:
 

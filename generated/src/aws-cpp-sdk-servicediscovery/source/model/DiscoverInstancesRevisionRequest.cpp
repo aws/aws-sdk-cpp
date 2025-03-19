@@ -12,12 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DiscoverInstancesRevisionRequest::DiscoverInstancesRevisionRequest() : 
-    m_namespaceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String DiscoverInstancesRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

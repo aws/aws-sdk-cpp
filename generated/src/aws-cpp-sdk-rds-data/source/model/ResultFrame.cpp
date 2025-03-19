@@ -18,14 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-ResultFrame::ResultFrame() : 
-    m_resultSetMetadataHasBeenSet(false),
-    m_recordsHasBeenSet(false)
-{
-}
-
 ResultFrame::ResultFrame(JsonView jsonValue)
-  : ResultFrame()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResultFrame& ResultFrame::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resultSetMetadata"))
   {
     m_resultSetMetadata = jsonValue.GetObject("resultSetMetadata");
-
     m_resultSetMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("records"))
   {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
@@ -48,7 +39,6 @@ ResultFrame& ResultFrame::operator =(JsonView jsonValue)
     }
     m_recordsHasBeenSet = true;
   }
-
   return *this;
 }
 

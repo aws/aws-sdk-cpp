@@ -33,7 +33,7 @@ namespace Model
   class FailedAttachmentEvent
   {
   public:
-    AWS_QBUSINESS_API FailedAttachmentEvent();
+    AWS_QBUSINESS_API FailedAttachmentEvent() = default;
     AWS_QBUSINESS_API FailedAttachmentEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API FailedAttachmentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p> The identifier of the conversation associated with the failed file
      * upload.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline FailedAttachmentEvent& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline FailedAttachmentEvent& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline FailedAttachmentEvent& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    FailedAttachmentEvent& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The identifier of the end user chat message associated with the file
      * upload.</p>
      */
-    inline const Aws::String& GetUserMessageId() const{ return m_userMessageId; }
+    inline const Aws::String& GetUserMessageId() const { return m_userMessageId; }
     inline bool UserMessageIdHasBeenSet() const { return m_userMessageIdHasBeenSet; }
-    inline void SetUserMessageId(const Aws::String& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = value; }
-    inline void SetUserMessageId(Aws::String&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::move(value); }
-    inline void SetUserMessageId(const char* value) { m_userMessageIdHasBeenSet = true; m_userMessageId.assign(value); }
-    inline FailedAttachmentEvent& WithUserMessageId(const Aws::String& value) { SetUserMessageId(value); return *this;}
-    inline FailedAttachmentEvent& WithUserMessageId(Aws::String&& value) { SetUserMessageId(std::move(value)); return *this;}
-    inline FailedAttachmentEvent& WithUserMessageId(const char* value) { SetUserMessageId(value); return *this;}
+    template<typename UserMessageIdT = Aws::String>
+    void SetUserMessageId(UserMessageIdT&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::forward<UserMessageIdT>(value); }
+    template<typename UserMessageIdT = Aws::String>
+    FailedAttachmentEvent& WithUserMessageId(UserMessageIdT&& value) { SetUserMessageId(std::forward<UserMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,24 +70,22 @@ namespace Model
      * <p>The identifier of the AI-generated message associated with the file
      * upload.</p>
      */
-    inline const Aws::String& GetSystemMessageId() const{ return m_systemMessageId; }
+    inline const Aws::String& GetSystemMessageId() const { return m_systemMessageId; }
     inline bool SystemMessageIdHasBeenSet() const { return m_systemMessageIdHasBeenSet; }
-    inline void SetSystemMessageId(const Aws::String& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = value; }
-    inline void SetSystemMessageId(Aws::String&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::move(value); }
-    inline void SetSystemMessageId(const char* value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId.assign(value); }
-    inline FailedAttachmentEvent& WithSystemMessageId(const Aws::String& value) { SetSystemMessageId(value); return *this;}
-    inline FailedAttachmentEvent& WithSystemMessageId(Aws::String&& value) { SetSystemMessageId(std::move(value)); return *this;}
-    inline FailedAttachmentEvent& WithSystemMessageId(const char* value) { SetSystemMessageId(value); return *this;}
+    template<typename SystemMessageIdT = Aws::String>
+    void SetSystemMessageId(SystemMessageIdT&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::forward<SystemMessageIdT>(value); }
+    template<typename SystemMessageIdT = Aws::String>
+    FailedAttachmentEvent& WithSystemMessageId(SystemMessageIdT&& value) { SetSystemMessageId(std::forward<SystemMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AttachmentOutput& GetAttachment() const{ return m_attachment; }
+    inline const AttachmentOutput& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const AttachmentOutput& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(AttachmentOutput&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline FailedAttachmentEvent& WithAttachment(const AttachmentOutput& value) { SetAttachment(value); return *this;}
-    inline FailedAttachmentEvent& WithAttachment(AttachmentOutput&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = AttachmentOutput>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = AttachmentOutput>
+    FailedAttachmentEvent& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
   private:
 

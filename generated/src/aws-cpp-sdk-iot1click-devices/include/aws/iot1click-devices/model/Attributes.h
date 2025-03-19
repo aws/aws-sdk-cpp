@@ -24,7 +24,7 @@ namespace Model
   class Attributes
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API Attributes();
+    AWS_IOT1CLICKDEVICESSERVICE_API Attributes() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API Attributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API Attributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;

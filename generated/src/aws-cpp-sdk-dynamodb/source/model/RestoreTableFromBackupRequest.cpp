@@ -12,19 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreTableFromBackupRequest::RestoreTableFromBackupRequest() : 
-    m_targetTableNameHasBeenSet(false),
-    m_backupArnHasBeenSet(false),
-    m_billingModeOverride(BillingMode::NOT_SET),
-    m_billingModeOverrideHasBeenSet(false),
-    m_globalSecondaryIndexOverrideHasBeenSet(false),
-    m_localSecondaryIndexOverrideHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_sSESpecificationOverrideHasBeenSet(false)
-{
-}
-
 Aws::String RestoreTableFromBackupRequest::SerializePayload() const
 {
   JsonValue payload;

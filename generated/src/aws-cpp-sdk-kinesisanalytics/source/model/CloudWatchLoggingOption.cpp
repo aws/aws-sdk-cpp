@@ -18,14 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-CloudWatchLoggingOption::CloudWatchLoggingOption() : 
-    m_logStreamARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
-{
-}
-
 CloudWatchLoggingOption::CloudWatchLoggingOption(JsonView jsonValue)
-  : CloudWatchLoggingOption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CloudWatchLoggingOption& CloudWatchLoggingOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogStreamARN"))
   {
     m_logStreamARN = jsonValue.GetString("LogStreamARN");
-
     m_logStreamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   return *this;
 }
 

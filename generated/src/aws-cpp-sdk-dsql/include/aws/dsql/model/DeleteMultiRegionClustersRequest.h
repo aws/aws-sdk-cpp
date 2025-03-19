@@ -27,7 +27,7 @@ namespace Model
   class DeleteMultiRegionClustersRequest : public DSQLRequest
   {
   public:
-    AWS_DSQL_API DeleteMultiRegionClustersRequest();
+    AWS_DSQL_API DeleteMultiRegionClustersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * <p>The ARNs of the clusters linked to the cluster you want to delete. also
      * deletes these clusters as part of the operation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const{ return m_linkedClusterArns; }
+    inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const { return m_linkedClusterArns; }
     inline bool LinkedClusterArnsHasBeenSet() const { return m_linkedClusterArnsHasBeenSet; }
-    inline void SetLinkedClusterArns(const Aws::Vector<Aws::String>& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = value; }
-    inline void SetLinkedClusterArns(Aws::Vector<Aws::String>&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = std::move(value); }
-    inline DeleteMultiRegionClustersRequest& WithLinkedClusterArns(const Aws::Vector<Aws::String>& value) { SetLinkedClusterArns(value); return *this;}
-    inline DeleteMultiRegionClustersRequest& WithLinkedClusterArns(Aws::Vector<Aws::String>&& value) { SetLinkedClusterArns(std::move(value)); return *this;}
-    inline DeleteMultiRegionClustersRequest& AddLinkedClusterArns(const Aws::String& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.push_back(value); return *this; }
-    inline DeleteMultiRegionClustersRequest& AddLinkedClusterArns(Aws::String&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.push_back(std::move(value)); return *this; }
-    inline DeleteMultiRegionClustersRequest& AddLinkedClusterArns(const char* value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.push_back(value); return *this; }
+    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
+    void SetLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = std::forward<LinkedClusterArnsT>(value); }
+    template<typename LinkedClusterArnsT = Aws::Vector<Aws::String>>
+    DeleteMultiRegionClustersRequest& WithLinkedClusterArns(LinkedClusterArnsT&& value) { SetLinkedClusterArns(std::forward<LinkedClusterArnsT>(value)); return *this;}
+    template<typename LinkedClusterArnsT = Aws::String>
+    DeleteMultiRegionClustersRequest& AddLinkedClusterArns(LinkedClusterArnsT&& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns.emplace_back(std::forward<LinkedClusterArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,14 +65,12 @@ namespace Model
      * effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK
      * automatically generates one.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteMultiRegionClustersRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteMultiRegionClustersRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteMultiRegionClustersRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteMultiRegionClustersRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class IdempotentParameterMismatchException
   {
   public:
-    AWS_MACHINELEARNING_API IdempotentParameterMismatchException();
+    AWS_MACHINELEARNING_API IdempotentParameterMismatchException() = default;
     AWS_MACHINELEARNING_API IdempotentParameterMismatchException(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API IdempotentParameterMismatchException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline IdempotentParameterMismatchException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline IdempotentParameterMismatchException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline IdempotentParameterMismatchException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    IdempotentParameterMismatchException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetCode() const{ return m_code; }
+    inline int GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
     inline IdempotentParameterMismatchException& WithCode(int value) { SetCode(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    int m_code;
+    int m_code{0};
     bool m_codeHasBeenSet = false;
   };
 

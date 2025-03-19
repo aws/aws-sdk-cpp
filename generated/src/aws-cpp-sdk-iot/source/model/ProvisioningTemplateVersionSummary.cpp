@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ProvisioningTemplateVersionSummary::ProvisioningTemplateVersionSummary() : 
-    m_versionId(0),
-    m_versionIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false)
-{
-}
-
 ProvisioningTemplateVersionSummary::ProvisioningTemplateVersionSummary(JsonView jsonValue)
-  : ProvisioningTemplateVersionSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ProvisioningTemplateVersionSummary& ProvisioningTemplateVersionSummary::operator
   if(jsonValue.ValueExists("versionId"))
   {
     m_versionId = jsonValue.GetInteger("versionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefaultVersion"))
   {
     m_isDefaultVersion = jsonValue.GetBool("isDefaultVersion");
-
     m_isDefaultVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsRequest::RemoveTagsRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsRequest::SerializePayload() const
 {
   JsonValue payload;

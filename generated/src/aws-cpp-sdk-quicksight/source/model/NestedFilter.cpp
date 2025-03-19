@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NestedFilter::NestedFilter() : 
-    m_filterIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_includeInnerSet(false),
-    m_includeInnerSetHasBeenSet(false),
-    m_innerFilterHasBeenSet(false)
-{
-}
-
 NestedFilter::NestedFilter(JsonView jsonValue)
-  : NestedFilter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ NestedFilter& NestedFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterId"))
   {
     m_filterId = jsonValue.GetString("FilterId");
-
     m_filterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeInnerSet"))
   {
     m_includeInnerSet = jsonValue.GetBool("IncludeInnerSet");
-
     m_includeInnerSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InnerFilter"))
   {
     m_innerFilter = jsonValue.GetObject("InnerFilter");
-
     m_innerFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

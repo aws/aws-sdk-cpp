@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePortfolioShareStatusResult::DescribePortfolioShareStatusResult() : 
-    m_status(ShareStatus::NOT_SET)
-{
-}
-
 DescribePortfolioShareStatusResult::DescribePortfolioShareStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribePortfolioShareStatusResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ DescribePortfolioShareStatusResult& DescribePortfolioShareStatusResult::operator
   if(jsonValue.ValueExists("PortfolioShareToken"))
   {
     m_portfolioShareToken = jsonValue.GetString("PortfolioShareToken");
-
+    m_portfolioShareTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortfolioId"))
   {
     m_portfolioId = jsonValue.GetString("PortfolioId");
-
+    m_portfolioIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationNodeValue"))
   {
     m_organizationNodeValue = jsonValue.GetString("OrganizationNodeValue");
-
+    m_organizationNodeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareDetails"))
   {
     m_shareDetails = jsonValue.GetObject("ShareDetails");
-
+    m_shareDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

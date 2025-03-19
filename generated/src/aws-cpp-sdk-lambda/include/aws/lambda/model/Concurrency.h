@@ -26,7 +26,7 @@ namespace Model
   class Concurrency
   {
   public:
-    AWS_LAMBDA_API Concurrency();
+    AWS_LAMBDA_API Concurrency() = default;
     AWS_LAMBDA_API Concurrency(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Concurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing
      * Lambda reserved concurrency</a>.</p>
      */
-    inline int GetReservedConcurrentExecutions() const{ return m_reservedConcurrentExecutions; }
+    inline int GetReservedConcurrentExecutions() const { return m_reservedConcurrentExecutions; }
     inline bool ReservedConcurrentExecutionsHasBeenSet() const { return m_reservedConcurrentExecutionsHasBeenSet; }
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutionsHasBeenSet = true; m_reservedConcurrentExecutions = value; }
     inline Concurrency& WithReservedConcurrentExecutions(int value) { SetReservedConcurrentExecutions(value); return *this;}
@@ -47,18 +47,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline Concurrency& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline Concurrency& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline Concurrency& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    Concurrency& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_reservedConcurrentExecutions;
+    int m_reservedConcurrentExecutions{0};
     bool m_reservedConcurrentExecutionsHasBeenSet = false;
 
     Aws::String m_requestId;

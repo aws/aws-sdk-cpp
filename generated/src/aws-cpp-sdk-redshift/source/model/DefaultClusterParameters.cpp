@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DefaultClusterParameters::DefaultClusterParameters() : 
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 DefaultClusterParameters::DefaultClusterParameters(const XmlNode& xmlNode)
-  : DefaultClusterParameters()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ DefaultClusterParameters& DefaultClusterParameters::operator =(const XmlNode& xm
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);

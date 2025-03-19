@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateWebACLResult::UpdateWebACLResult()
-{
-}
-
 UpdateWebACLResult::UpdateWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateWebACLResult& UpdateWebACLResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("NextLockToken"))
   {
     m_nextLockToken = jsonValue.GetString("NextLockToken");
-
+    m_nextLockTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

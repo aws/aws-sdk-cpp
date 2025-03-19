@@ -33,7 +33,7 @@ namespace Model
   class Batch
   {
   public:
-    AWS_APPTEST_API Batch();
+    AWS_APPTEST_API Batch() = default;
     AWS_APPTEST_API Batch(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Batch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,42 @@ namespace Model
     /**
      * <p>The job name of the batch.</p>
      */
-    inline const Aws::String& GetBatchJobName() const{ return m_batchJobName; }
+    inline const Aws::String& GetBatchJobName() const { return m_batchJobName; }
     inline bool BatchJobNameHasBeenSet() const { return m_batchJobNameHasBeenSet; }
-    inline void SetBatchJobName(const Aws::String& value) { m_batchJobNameHasBeenSet = true; m_batchJobName = value; }
-    inline void SetBatchJobName(Aws::String&& value) { m_batchJobNameHasBeenSet = true; m_batchJobName = std::move(value); }
-    inline void SetBatchJobName(const char* value) { m_batchJobNameHasBeenSet = true; m_batchJobName.assign(value); }
-    inline Batch& WithBatchJobName(const Aws::String& value) { SetBatchJobName(value); return *this;}
-    inline Batch& WithBatchJobName(Aws::String&& value) { SetBatchJobName(std::move(value)); return *this;}
-    inline Batch& WithBatchJobName(const char* value) { SetBatchJobName(value); return *this;}
+    template<typename BatchJobNameT = Aws::String>
+    void SetBatchJobName(BatchJobNameT&& value) { m_batchJobNameHasBeenSet = true; m_batchJobName = std::forward<BatchJobNameT>(value); }
+    template<typename BatchJobNameT = Aws::String>
+    Batch& WithBatchJobName(BatchJobNameT&& value) { SetBatchJobName(std::forward<BatchJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The batch job parameters of the batch.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetBatchJobParameters() const{ return m_batchJobParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetBatchJobParameters() const { return m_batchJobParameters; }
     inline bool BatchJobParametersHasBeenSet() const { return m_batchJobParametersHasBeenSet; }
-    inline void SetBatchJobParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters = value; }
-    inline void SetBatchJobParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters = std::move(value); }
-    inline Batch& WithBatchJobParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetBatchJobParameters(value); return *this;}
-    inline Batch& WithBatchJobParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetBatchJobParameters(std::move(value)); return *this;}
-    inline Batch& AddBatchJobParameters(const Aws::String& key, const Aws::String& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(key, value); return *this; }
-    inline Batch& AddBatchJobParameters(Aws::String&& key, const Aws::String& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(std::move(key), value); return *this; }
-    inline Batch& AddBatchJobParameters(const Aws::String& key, Aws::String&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(key, std::move(value)); return *this; }
-    inline Batch& AddBatchJobParameters(Aws::String&& key, Aws::String&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline Batch& AddBatchJobParameters(const char* key, Aws::String&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(key, std::move(value)); return *this; }
-    inline Batch& AddBatchJobParameters(Aws::String&& key, const char* value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(std::move(key), value); return *this; }
-    inline Batch& AddBatchJobParameters(const char* key, const char* value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(key, value); return *this; }
+    template<typename BatchJobParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetBatchJobParameters(BatchJobParametersT&& value) { m_batchJobParametersHasBeenSet = true; m_batchJobParameters = std::forward<BatchJobParametersT>(value); }
+    template<typename BatchJobParametersT = Aws::Map<Aws::String, Aws::String>>
+    Batch& WithBatchJobParameters(BatchJobParametersT&& value) { SetBatchJobParameters(std::forward<BatchJobParametersT>(value)); return *this;}
+    template<typename BatchJobParametersKeyT = Aws::String, typename BatchJobParametersValueT = Aws::String>
+    Batch& AddBatchJobParameters(BatchJobParametersKeyT&& key, BatchJobParametersValueT&& value) {
+      m_batchJobParametersHasBeenSet = true; m_batchJobParameters.emplace(std::forward<BatchJobParametersKeyT>(key), std::forward<BatchJobParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The export data set names of the batch.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportDataSetNames() const{ return m_exportDataSetNames; }
+    inline const Aws::Vector<Aws::String>& GetExportDataSetNames() const { return m_exportDataSetNames; }
     inline bool ExportDataSetNamesHasBeenSet() const { return m_exportDataSetNamesHasBeenSet; }
-    inline void SetExportDataSetNames(const Aws::Vector<Aws::String>& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = value; }
-    inline void SetExportDataSetNames(Aws::Vector<Aws::String>&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = std::move(value); }
-    inline Batch& WithExportDataSetNames(const Aws::Vector<Aws::String>& value) { SetExportDataSetNames(value); return *this;}
-    inline Batch& WithExportDataSetNames(Aws::Vector<Aws::String>&& value) { SetExportDataSetNames(std::move(value)); return *this;}
-    inline Batch& AddExportDataSetNames(const Aws::String& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(value); return *this; }
-    inline Batch& AddExportDataSetNames(Aws::String&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(std::move(value)); return *this; }
-    inline Batch& AddExportDataSetNames(const char* value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(value); return *this; }
+    template<typename ExportDataSetNamesT = Aws::Vector<Aws::String>>
+    void SetExportDataSetNames(ExportDataSetNamesT&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = std::forward<ExportDataSetNamesT>(value); }
+    template<typename ExportDataSetNamesT = Aws::Vector<Aws::String>>
+    Batch& WithExportDataSetNames(ExportDataSetNamesT&& value) { SetExportDataSetNames(std::forward<ExportDataSetNamesT>(value)); return *this;}
+    template<typename ExportDataSetNamesT = Aws::String>
+    Batch& AddExportDataSetNames(ExportDataSetNamesT&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.emplace_back(std::forward<ExportDataSetNamesT>(value)); return *this; }
     ///@}
   private:
 

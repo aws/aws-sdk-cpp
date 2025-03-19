@@ -26,7 +26,7 @@ namespace Model
   class DeleteAnalysisSchemeRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DeleteAnalysisSchemeRequest();
+    AWS_CLOUDSEARCH_API DeleteAnalysisSchemeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DeleteAnalysisSchemeRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DeleteAnalysisSchemeRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DeleteAnalysisSchemeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DeleteAnalysisSchemeRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the analysis scheme you want to delete.</p>
      */
-    inline const Aws::String& GetAnalysisSchemeName() const{ return m_analysisSchemeName; }
+    inline const Aws::String& GetAnalysisSchemeName() const { return m_analysisSchemeName; }
     inline bool AnalysisSchemeNameHasBeenSet() const { return m_analysisSchemeNameHasBeenSet; }
-    inline void SetAnalysisSchemeName(const Aws::String& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = value; }
-    inline void SetAnalysisSchemeName(Aws::String&& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = std::move(value); }
-    inline void SetAnalysisSchemeName(const char* value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName.assign(value); }
-    inline DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(const Aws::String& value) { SetAnalysisSchemeName(value); return *this;}
-    inline DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(Aws::String&& value) { SetAnalysisSchemeName(std::move(value)); return *this;}
-    inline DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(const char* value) { SetAnalysisSchemeName(value); return *this;}
+    template<typename AnalysisSchemeNameT = Aws::String>
+    void SetAnalysisSchemeName(AnalysisSchemeNameT&& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = std::forward<AnalysisSchemeNameT>(value); }
+    template<typename AnalysisSchemeNameT = Aws::String>
+    DeleteAnalysisSchemeRequest& WithAnalysisSchemeName(AnalysisSchemeNameT&& value) { SetAnalysisSchemeName(std::forward<AnalysisSchemeNameT>(value)); return *this;}
     ///@}
   private:
 

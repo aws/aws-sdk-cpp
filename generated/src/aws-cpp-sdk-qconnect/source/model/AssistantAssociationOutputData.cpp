@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AssistantAssociationOutputData::AssistantAssociationOutputData() : 
-    m_knowledgeBaseAssociationHasBeenSet(false)
-{
-}
-
 AssistantAssociationOutputData::AssistantAssociationOutputData(JsonView jsonValue)
-  : AssistantAssociationOutputData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssistantAssociationOutputData& AssistantAssociationOutputData::operator =(JsonV
   if(jsonValue.ValueExists("knowledgeBaseAssociation"))
   {
     m_knowledgeBaseAssociation = jsonValue.GetObject("knowledgeBaseAssociation");
-
     m_knowledgeBaseAssociationHasBeenSet = true;
   }
-
   return *this;
 }
 

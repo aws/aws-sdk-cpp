@@ -18,21 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFlowSummary::ContactFlowSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contactFlowType(ContactFlowType::NOT_SET),
-    m_contactFlowTypeHasBeenSet(false),
-    m_contactFlowState(ContactFlowState::NOT_SET),
-    m_contactFlowStateHasBeenSet(false),
-    m_contactFlowStatus(ContactFlowStatus::NOT_SET),
-    m_contactFlowStatusHasBeenSet(false)
-{
-}
-
 ContactFlowSummary::ContactFlowSummary(JsonView jsonValue)
-  : ContactFlowSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ContactFlowSummary& ContactFlowSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactFlowType"))
   {
     m_contactFlowType = ContactFlowTypeMapper::GetContactFlowTypeForName(jsonValue.GetString("ContactFlowType"));
-
     m_contactFlowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactFlowState"))
   {
     m_contactFlowState = ContactFlowStateMapper::GetContactFlowStateForName(jsonValue.GetString("ContactFlowState"));
-
     m_contactFlowStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactFlowStatus"))
   {
     m_contactFlowStatus = ContactFlowStatusMapper::GetContactFlowStatusForName(jsonValue.GetString("ContactFlowStatus"));
-
     m_contactFlowStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

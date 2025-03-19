@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBudgetRequest::DeleteBudgetRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_budgetIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBudgetRequest::SerializePayload() const
 {
   return {};

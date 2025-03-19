@@ -18,17 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DataMigrationSettings::DataMigrationSettings() : 
-    m_numberOfJobs(0),
-    m_numberOfJobsHasBeenSet(false),
-    m_cloudwatchLogsEnabled(false),
-    m_cloudwatchLogsEnabledHasBeenSet(false),
-    m_selectionRulesHasBeenSet(false)
-{
-}
-
 DataMigrationSettings::DataMigrationSettings(JsonView jsonValue)
-  : DataMigrationSettings()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DataMigrationSettings& DataMigrationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfJobs"))
   {
     m_numberOfJobs = jsonValue.GetInteger("NumberOfJobs");
-
     m_numberOfJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudwatchLogsEnabled"))
   {
     m_cloudwatchLogsEnabled = jsonValue.GetBool("CloudwatchLogsEnabled");
-
     m_cloudwatchLogsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectionRules"))
   {
     m_selectionRules = jsonValue.GetString("SelectionRules");
-
     m_selectionRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

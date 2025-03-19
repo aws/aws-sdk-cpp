@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Include::Include() : 
-    m_bucketsHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 Include::Include(const XmlNode& xmlNode)
-  : Include()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ Include& Include::operator =(const XmlNode& xmlNode)
     if(!bucketsNode.IsNull())
     {
       XmlNode bucketsMember = bucketsNode.FirstChild("Arn");
+      m_bucketsHasBeenSet = !bucketsMember.IsNull();
       while(!bucketsMember.IsNull())
       {
         m_buckets.push_back(bucketsMember.GetText());
@@ -54,6 +48,7 @@ Include& Include::operator =(const XmlNode& xmlNode)
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember.GetText());

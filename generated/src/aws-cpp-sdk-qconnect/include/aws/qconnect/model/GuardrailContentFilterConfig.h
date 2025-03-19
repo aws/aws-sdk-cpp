@@ -55,7 +55,7 @@ namespace Model
   class GuardrailContentFilterConfig
   {
   public:
-    AWS_QCONNECT_API GuardrailContentFilterConfig();
+    AWS_QCONNECT_API GuardrailContentFilterConfig() = default;
     AWS_QCONNECT_API GuardrailContentFilterConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API GuardrailContentFilterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,12 +67,10 @@ namespace Model
      * filter strength, the likelihood of filtering harmful content increases and the
      * probability of seeing harmful content in your application reduces.</p>
      */
-    inline const GuardrailFilterStrength& GetInputStrength() const{ return m_inputStrength; }
+    inline GuardrailFilterStrength GetInputStrength() const { return m_inputStrength; }
     inline bool InputStrengthHasBeenSet() const { return m_inputStrengthHasBeenSet; }
-    inline void SetInputStrength(const GuardrailFilterStrength& value) { m_inputStrengthHasBeenSet = true; m_inputStrength = value; }
-    inline void SetInputStrength(GuardrailFilterStrength&& value) { m_inputStrengthHasBeenSet = true; m_inputStrength = std::move(value); }
-    inline GuardrailContentFilterConfig& WithInputStrength(const GuardrailFilterStrength& value) { SetInputStrength(value); return *this;}
-    inline GuardrailContentFilterConfig& WithInputStrength(GuardrailFilterStrength&& value) { SetInputStrength(std::move(value)); return *this;}
+    inline void SetInputStrength(GuardrailFilterStrength value) { m_inputStrengthHasBeenSet = true; m_inputStrength = value; }
+    inline GuardrailContentFilterConfig& WithInputStrength(GuardrailFilterStrength value) { SetInputStrength(value); return *this;}
     ///@}
 
     ///@{
@@ -82,34 +80,30 @@ namespace Model
      * increases and the probability of seeing harmful content in your application
      * reduces.</p>
      */
-    inline const GuardrailFilterStrength& GetOutputStrength() const{ return m_outputStrength; }
+    inline GuardrailFilterStrength GetOutputStrength() const { return m_outputStrength; }
     inline bool OutputStrengthHasBeenSet() const { return m_outputStrengthHasBeenSet; }
-    inline void SetOutputStrength(const GuardrailFilterStrength& value) { m_outputStrengthHasBeenSet = true; m_outputStrength = value; }
-    inline void SetOutputStrength(GuardrailFilterStrength&& value) { m_outputStrengthHasBeenSet = true; m_outputStrength = std::move(value); }
-    inline GuardrailContentFilterConfig& WithOutputStrength(const GuardrailFilterStrength& value) { SetOutputStrength(value); return *this;}
-    inline GuardrailContentFilterConfig& WithOutputStrength(GuardrailFilterStrength&& value) { SetOutputStrength(std::move(value)); return *this;}
+    inline void SetOutputStrength(GuardrailFilterStrength value) { m_outputStrengthHasBeenSet = true; m_outputStrength = value; }
+    inline GuardrailContentFilterConfig& WithOutputStrength(GuardrailFilterStrength value) { SetOutputStrength(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The harmful category that the content filter is applied to.</p>
      */
-    inline const GuardrailContentFilterType& GetType() const{ return m_type; }
+    inline GuardrailContentFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GuardrailContentFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GuardrailContentFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GuardrailContentFilterConfig& WithType(const GuardrailContentFilterType& value) { SetType(value); return *this;}
-    inline GuardrailContentFilterConfig& WithType(GuardrailContentFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GuardrailContentFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailContentFilterConfig& WithType(GuardrailContentFilterType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    GuardrailFilterStrength m_inputStrength;
+    GuardrailFilterStrength m_inputStrength{GuardrailFilterStrength::NOT_SET};
     bool m_inputStrengthHasBeenSet = false;
 
-    GuardrailFilterStrength m_outputStrength;
+    GuardrailFilterStrength m_outputStrength{GuardrailFilterStrength::NOT_SET};
     bool m_outputStrengthHasBeenSet = false;
 
-    GuardrailContentFilterType m_type;
+    GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

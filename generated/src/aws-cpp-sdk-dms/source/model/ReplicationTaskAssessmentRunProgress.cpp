@@ -18,16 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationTaskAssessmentRunProgress::ReplicationTaskAssessmentRunProgress() : 
-    m_individualAssessmentCount(0),
-    m_individualAssessmentCountHasBeenSet(false),
-    m_individualAssessmentCompletedCount(0),
-    m_individualAssessmentCompletedCountHasBeenSet(false)
-{
-}
-
 ReplicationTaskAssessmentRunProgress::ReplicationTaskAssessmentRunProgress(JsonView jsonValue)
-  : ReplicationTaskAssessmentRunProgress()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ReplicationTaskAssessmentRunProgress& ReplicationTaskAssessmentRunProgress::oper
   if(jsonValue.ValueExists("IndividualAssessmentCount"))
   {
     m_individualAssessmentCount = jsonValue.GetInteger("IndividualAssessmentCount");
-
     m_individualAssessmentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndividualAssessmentCompletedCount"))
   {
     m_individualAssessmentCompletedCount = jsonValue.GetInteger("IndividualAssessmentCompletedCount");
-
     m_individualAssessmentCompletedCountHasBeenSet = true;
   }
-
   return *this;
 }
 

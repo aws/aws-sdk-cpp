@@ -33,7 +33,7 @@ namespace Model
   class JourneySMSMessage
   {
   public:
-    AWS_PINPOINT_API JourneySMSMessage();
+    AWS_PINPOINT_API JourneySMSMessage() = default;
     AWS_PINPOINT_API JourneySMSMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneySMSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * messsages that aren't critical or time-sensitive, such as marketing
      * messages).</p>
      */
-    inline const MessageType& GetMessageType() const{ return m_messageType; }
+    inline MessageType GetMessageType() const { return m_messageType; }
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
-    inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
-    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
-    inline JourneySMSMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-    inline JourneySMSMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    inline void SetMessageType(MessageType value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline JourneySMSMessage& WithMessageType(MessageType value) { SetMessageType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * ensure prompt and accurate delivery of the message. For example,
      * +12065550100.</p>
      */
-    inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+    inline const Aws::String& GetOriginationNumber() const { return m_originationNumber; }
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
-    inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
-    inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
-    inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
-    inline JourneySMSMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
-    inline JourneySMSMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
-    inline JourneySMSMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
+    template<typename OriginationNumberT = Aws::String>
+    void SetOriginationNumber(OriginationNumberT&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::forward<OriginationNumberT>(value); }
+    template<typename OriginationNumberT = Aws::String>
+    JourneySMSMessage& WithOriginationNumber(OriginationNumberT&& value) { SetOriginationNumber(std::forward<OriginationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
      * Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-    inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-    inline JourneySMSMessage& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline JourneySMSMessage& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline JourneySMSMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    JourneySMSMessage& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
      * for sending SMS in your country.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline JourneySMSMessage& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline JourneySMSMessage& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline JourneySMSMessage& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    JourneySMSMessage& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,18 +102,16 @@ namespace Model
      * <p>The template ID received from the regulatory body for sending SMS in your
      * country.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-    inline JourneySMSMessage& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline JourneySMSMessage& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline JourneySMSMessage& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    JourneySMSMessage& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
   private:
 
-    MessageType m_messageType;
+    MessageType m_messageType{MessageType::NOT_SET};
     bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_originationNumber;

@@ -34,7 +34,7 @@ namespace Model
   class DescribeOrderableReplicationInstancesResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeOrderableReplicationInstancesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeOrderableReplicationInstancesResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeOrderableReplicationInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeOrderableReplicationInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>The order-able replication instances available.</p>
      */
-    inline const Aws::Vector<OrderableReplicationInstance>& GetOrderableReplicationInstances() const{ return m_orderableReplicationInstances; }
-    inline void SetOrderableReplicationInstances(const Aws::Vector<OrderableReplicationInstance>& value) { m_orderableReplicationInstances = value; }
-    inline void SetOrderableReplicationInstances(Aws::Vector<OrderableReplicationInstance>&& value) { m_orderableReplicationInstances = std::move(value); }
-    inline DescribeOrderableReplicationInstancesResult& WithOrderableReplicationInstances(const Aws::Vector<OrderableReplicationInstance>& value) { SetOrderableReplicationInstances(value); return *this;}
-    inline DescribeOrderableReplicationInstancesResult& WithOrderableReplicationInstances(Aws::Vector<OrderableReplicationInstance>&& value) { SetOrderableReplicationInstances(std::move(value)); return *this;}
-    inline DescribeOrderableReplicationInstancesResult& AddOrderableReplicationInstances(const OrderableReplicationInstance& value) { m_orderableReplicationInstances.push_back(value); return *this; }
-    inline DescribeOrderableReplicationInstancesResult& AddOrderableReplicationInstances(OrderableReplicationInstance&& value) { m_orderableReplicationInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrderableReplicationInstance>& GetOrderableReplicationInstances() const { return m_orderableReplicationInstances; }
+    template<typename OrderableReplicationInstancesT = Aws::Vector<OrderableReplicationInstance>>
+    void SetOrderableReplicationInstances(OrderableReplicationInstancesT&& value) { m_orderableReplicationInstancesHasBeenSet = true; m_orderableReplicationInstances = std::forward<OrderableReplicationInstancesT>(value); }
+    template<typename OrderableReplicationInstancesT = Aws::Vector<OrderableReplicationInstance>>
+    DescribeOrderableReplicationInstancesResult& WithOrderableReplicationInstances(OrderableReplicationInstancesT&& value) { SetOrderableReplicationInstances(std::forward<OrderableReplicationInstancesT>(value)); return *this;}
+    template<typename OrderableReplicationInstancesT = OrderableReplicationInstance>
+    DescribeOrderableReplicationInstancesResult& AddOrderableReplicationInstances(OrderableReplicationInstancesT&& value) { m_orderableReplicationInstancesHasBeenSet = true; m_orderableReplicationInstances.emplace_back(std::forward<OrderableReplicationInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeOrderableReplicationInstancesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeOrderableReplicationInstancesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeOrderableReplicationInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeOrderableReplicationInstancesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOrderableReplicationInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOrderableReplicationInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOrderableReplicationInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOrderableReplicationInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OrderableReplicationInstance> m_orderableReplicationInstances;
+    bool m_orderableReplicationInstancesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

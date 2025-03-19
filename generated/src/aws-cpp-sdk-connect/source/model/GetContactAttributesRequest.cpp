@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContactAttributesRequest::GetContactAttributesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false)
-{
-}
-
 Aws::String GetContactAttributesRequest::SerializePayload() const
 {
   return {};

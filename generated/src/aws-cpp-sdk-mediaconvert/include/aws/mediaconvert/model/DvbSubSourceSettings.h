@@ -29,7 +29,7 @@ namespace Model
   class DvbSubSourceSettings
   {
   public:
-    AWS_MEDIACONVERT_API DvbSubSourceSettings();
+    AWS_MEDIACONVERT_API DvbSubSourceSettings() = default;
     AWS_MEDIACONVERT_API DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of
      * selectors.
      */
-    inline int GetPid() const{ return m_pid; }
+    inline int GetPid() const { return m_pid; }
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
     inline DvbSubSourceSettings& WithPid(int value) { SetPid(value); return *this;}
     ///@}
   private:
 
-    int m_pid;
+    int m_pid{0};
     bool m_pidHasBeenSet = false;
   };
 

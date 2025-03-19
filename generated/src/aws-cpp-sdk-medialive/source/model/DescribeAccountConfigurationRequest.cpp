@@ -12,10 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountConfigurationRequest::DescribeAccountConfigurationRequest()
-{
-}
-
 Aws::String DescribeAccountConfigurationRequest::SerializePayload() const
 {
   return {};

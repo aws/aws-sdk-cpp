@@ -33,7 +33,7 @@ namespace Model
   class DescribeApplicableIndividualAssessmentsResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,14 +48,13 @@ namespace Model
      * with premigration assessment runs</a> in the <i>Database Migration Service User
      * Guide.</i> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIndividualAssessmentNames() const{ return m_individualAssessmentNames; }
-    inline void SetIndividualAssessmentNames(const Aws::Vector<Aws::String>& value) { m_individualAssessmentNames = value; }
-    inline void SetIndividualAssessmentNames(Aws::Vector<Aws::String>&& value) { m_individualAssessmentNames = std::move(value); }
-    inline DescribeApplicableIndividualAssessmentsResult& WithIndividualAssessmentNames(const Aws::Vector<Aws::String>& value) { SetIndividualAssessmentNames(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsResult& WithIndividualAssessmentNames(Aws::Vector<Aws::String>&& value) { SetIndividualAssessmentNames(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(const Aws::String& value) { m_individualAssessmentNames.push_back(value); return *this; }
-    inline DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(Aws::String&& value) { m_individualAssessmentNames.push_back(std::move(value)); return *this; }
-    inline DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(const char* value) { m_individualAssessmentNames.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetIndividualAssessmentNames() const { return m_individualAssessmentNames; }
+    template<typename IndividualAssessmentNamesT = Aws::Vector<Aws::String>>
+    void SetIndividualAssessmentNames(IndividualAssessmentNamesT&& value) { m_individualAssessmentNamesHasBeenSet = true; m_individualAssessmentNames = std::forward<IndividualAssessmentNamesT>(value); }
+    template<typename IndividualAssessmentNamesT = Aws::Vector<Aws::String>>
+    DescribeApplicableIndividualAssessmentsResult& WithIndividualAssessmentNames(IndividualAssessmentNamesT&& value) { SetIndividualAssessmentNames(std::forward<IndividualAssessmentNamesT>(value)); return *this;}
+    template<typename IndividualAssessmentNamesT = Aws::String>
+    DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(IndividualAssessmentNamesT&& value) { m_individualAssessmentNamesHasBeenSet = true; m_individualAssessmentNames.emplace_back(std::forward<IndividualAssessmentNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,32 +64,31 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified in
      * the request by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeApplicableIndividualAssessmentsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeApplicableIndividualAssessmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeApplicableIndividualAssessmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeApplicableIndividualAssessmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeApplicableIndividualAssessmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_individualAssessmentNames;
+    bool m_individualAssessmentNamesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRequestValidatorRequest::UpdateRequestValidatorRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_requestValidatorIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRequestValidatorRequest::SerializePayload() const
 {
   JsonValue payload;

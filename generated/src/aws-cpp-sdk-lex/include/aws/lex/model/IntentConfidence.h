@@ -31,7 +31,7 @@ namespace Model
   class IntentConfidence
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API IntentConfidence();
+    AWS_LEXRUNTIMESERVICE_API IntentConfidence() = default;
     AWS_LEXRUNTIMESERVICE_API IntentConfidence(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API IntentConfidence& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher
      * confidence.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline IntentConfidence& WithScore(double value) { SetScore(value); return *this;}
     ///@}
   private:
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

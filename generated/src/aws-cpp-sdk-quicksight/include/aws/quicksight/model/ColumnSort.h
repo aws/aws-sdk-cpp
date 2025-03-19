@@ -34,7 +34,7 @@ namespace Model
   class ColumnSort
   {
   public:
-    AWS_QUICKSIGHT_API ColumnSort();
+    AWS_QUICKSIGHT_API ColumnSort() = default;
     AWS_QUICKSIGHT_API ColumnSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColumnSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,43 +42,41 @@ namespace Model
 
     ///@{
     
-    inline const ColumnIdentifier& GetSortBy() const{ return m_sortBy; }
+    inline const ColumnIdentifier& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ColumnIdentifier& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ColumnIdentifier&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ColumnSort& WithSortBy(const ColumnIdentifier& value) { SetSortBy(value); return *this;}
-    inline ColumnSort& WithSortBy(ColumnIdentifier&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = ColumnIdentifier>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = ColumnIdentifier>
+    ColumnSort& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort direction.</p>
      */
-    inline const SortDirection& GetDirection() const{ return m_direction; }
+    inline SortDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const SortDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(SortDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline ColumnSort& WithDirection(const SortDirection& value) { SetDirection(value); return *this;}
-    inline ColumnSort& WithDirection(SortDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(SortDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline ColumnSort& WithDirection(SortDirection value) { SetDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregation function that is defined in the column sort.</p>
      */
-    inline const AggregationFunction& GetAggregationFunction() const{ return m_aggregationFunction; }
+    inline const AggregationFunction& GetAggregationFunction() const { return m_aggregationFunction; }
     inline bool AggregationFunctionHasBeenSet() const { return m_aggregationFunctionHasBeenSet; }
-    inline void SetAggregationFunction(const AggregationFunction& value) { m_aggregationFunctionHasBeenSet = true; m_aggregationFunction = value; }
-    inline void SetAggregationFunction(AggregationFunction&& value) { m_aggregationFunctionHasBeenSet = true; m_aggregationFunction = std::move(value); }
-    inline ColumnSort& WithAggregationFunction(const AggregationFunction& value) { SetAggregationFunction(value); return *this;}
-    inline ColumnSort& WithAggregationFunction(AggregationFunction&& value) { SetAggregationFunction(std::move(value)); return *this;}
+    template<typename AggregationFunctionT = AggregationFunction>
+    void SetAggregationFunction(AggregationFunctionT&& value) { m_aggregationFunctionHasBeenSet = true; m_aggregationFunction = std::forward<AggregationFunctionT>(value); }
+    template<typename AggregationFunctionT = AggregationFunction>
+    ColumnSort& WithAggregationFunction(AggregationFunctionT&& value) { SetAggregationFunction(std::forward<AggregationFunctionT>(value)); return *this;}
     ///@}
   private:
 
     ColumnIdentifier m_sortBy;
     bool m_sortByHasBeenSet = false;
 
-    SortDirection m_direction;
+    SortDirection m_direction{SortDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
 
     AggregationFunction m_aggregationFunction;

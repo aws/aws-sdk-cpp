@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGroupRequest::DescribeGroupRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGroupRequest::SerializePayload() const
 {
   JsonValue payload;

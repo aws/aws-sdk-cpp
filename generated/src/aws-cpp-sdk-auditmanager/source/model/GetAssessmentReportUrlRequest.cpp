@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAssessmentReportUrlRequest::GetAssessmentReportUrlRequest() : 
-    m_assessmentReportIdHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAssessmentReportUrlRequest::SerializePayload() const
 {
   return {};

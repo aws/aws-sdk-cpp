@@ -39,7 +39,7 @@ namespace Model
   class Filters
   {
   public:
-    AWS_WORKDOCS_API Filters();
+    AWS_WORKDOCS_API Filters() = default;
     AWS_WORKDOCS_API Filters(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,136 +49,130 @@ namespace Model
     /**
      * <p>Filters by the locale of the content or comment.</p>
      */
-    inline const Aws::Vector<LanguageCodeType>& GetTextLocales() const{ return m_textLocales; }
+    inline const Aws::Vector<LanguageCodeType>& GetTextLocales() const { return m_textLocales; }
     inline bool TextLocalesHasBeenSet() const { return m_textLocalesHasBeenSet; }
-    inline void SetTextLocales(const Aws::Vector<LanguageCodeType>& value) { m_textLocalesHasBeenSet = true; m_textLocales = value; }
-    inline void SetTextLocales(Aws::Vector<LanguageCodeType>&& value) { m_textLocalesHasBeenSet = true; m_textLocales = std::move(value); }
-    inline Filters& WithTextLocales(const Aws::Vector<LanguageCodeType>& value) { SetTextLocales(value); return *this;}
-    inline Filters& WithTextLocales(Aws::Vector<LanguageCodeType>&& value) { SetTextLocales(std::move(value)); return *this;}
-    inline Filters& AddTextLocales(const LanguageCodeType& value) { m_textLocalesHasBeenSet = true; m_textLocales.push_back(value); return *this; }
-    inline Filters& AddTextLocales(LanguageCodeType&& value) { m_textLocalesHasBeenSet = true; m_textLocales.push_back(std::move(value)); return *this; }
+    template<typename TextLocalesT = Aws::Vector<LanguageCodeType>>
+    void SetTextLocales(TextLocalesT&& value) { m_textLocalesHasBeenSet = true; m_textLocales = std::forward<TextLocalesT>(value); }
+    template<typename TextLocalesT = Aws::Vector<LanguageCodeType>>
+    Filters& WithTextLocales(TextLocalesT&& value) { SetTextLocales(std::forward<TextLocalesT>(value)); return *this;}
+    inline Filters& AddTextLocales(LanguageCodeType value) { m_textLocalesHasBeenSet = true; m_textLocales.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters by content category.</p>
      */
-    inline const Aws::Vector<ContentCategoryType>& GetContentCategories() const{ return m_contentCategories; }
+    inline const Aws::Vector<ContentCategoryType>& GetContentCategories() const { return m_contentCategories; }
     inline bool ContentCategoriesHasBeenSet() const { return m_contentCategoriesHasBeenSet; }
-    inline void SetContentCategories(const Aws::Vector<ContentCategoryType>& value) { m_contentCategoriesHasBeenSet = true; m_contentCategories = value; }
-    inline void SetContentCategories(Aws::Vector<ContentCategoryType>&& value) { m_contentCategoriesHasBeenSet = true; m_contentCategories = std::move(value); }
-    inline Filters& WithContentCategories(const Aws::Vector<ContentCategoryType>& value) { SetContentCategories(value); return *this;}
-    inline Filters& WithContentCategories(Aws::Vector<ContentCategoryType>&& value) { SetContentCategories(std::move(value)); return *this;}
-    inline Filters& AddContentCategories(const ContentCategoryType& value) { m_contentCategoriesHasBeenSet = true; m_contentCategories.push_back(value); return *this; }
-    inline Filters& AddContentCategories(ContentCategoryType&& value) { m_contentCategoriesHasBeenSet = true; m_contentCategories.push_back(std::move(value)); return *this; }
+    template<typename ContentCategoriesT = Aws::Vector<ContentCategoryType>>
+    void SetContentCategories(ContentCategoriesT&& value) { m_contentCategoriesHasBeenSet = true; m_contentCategories = std::forward<ContentCategoriesT>(value); }
+    template<typename ContentCategoriesT = Aws::Vector<ContentCategoryType>>
+    Filters& WithContentCategories(ContentCategoriesT&& value) { SetContentCategories(std::forward<ContentCategoriesT>(value)); return *this;}
+    inline Filters& AddContentCategories(ContentCategoryType value) { m_contentCategoriesHasBeenSet = true; m_contentCategories.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters based on entity type.</p>
      */
-    inline const Aws::Vector<SearchResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<SearchResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<SearchResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<SearchResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline Filters& WithResourceTypes(const Aws::Vector<SearchResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline Filters& WithResourceTypes(Aws::Vector<SearchResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline Filters& AddResourceTypes(const SearchResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline Filters& AddResourceTypes(SearchResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<SearchResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<SearchResourceType>>
+    Filters& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline Filters& AddResourceTypes(SearchResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filter by labels using exact match.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline Filters& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline Filters& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline Filters& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline Filters& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline Filters& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    Filters& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    Filters& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filter based on UserIds or GroupIds.</p>
      */
-    inline const Aws::Vector<SearchPrincipalType>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<SearchPrincipalType>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<SearchPrincipalType>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<SearchPrincipalType>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline Filters& WithPrincipals(const Aws::Vector<SearchPrincipalType>& value) { SetPrincipals(value); return *this;}
-    inline Filters& WithPrincipals(Aws::Vector<SearchPrincipalType>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline Filters& AddPrincipals(const SearchPrincipalType& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline Filters& AddPrincipals(SearchPrincipalType&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
+    template<typename PrincipalsT = Aws::Vector<SearchPrincipalType>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<SearchPrincipalType>>
+    Filters& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = SearchPrincipalType>
+    Filters& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filter based on resource’s path.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAncestorIds() const{ return m_ancestorIds; }
+    inline const Aws::Vector<Aws::String>& GetAncestorIds() const { return m_ancestorIds; }
     inline bool AncestorIdsHasBeenSet() const { return m_ancestorIdsHasBeenSet; }
-    inline void SetAncestorIds(const Aws::Vector<Aws::String>& value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds = value; }
-    inline void SetAncestorIds(Aws::Vector<Aws::String>&& value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds = std::move(value); }
-    inline Filters& WithAncestorIds(const Aws::Vector<Aws::String>& value) { SetAncestorIds(value); return *this;}
-    inline Filters& WithAncestorIds(Aws::Vector<Aws::String>&& value) { SetAncestorIds(std::move(value)); return *this;}
-    inline Filters& AddAncestorIds(const Aws::String& value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds.push_back(value); return *this; }
-    inline Filters& AddAncestorIds(Aws::String&& value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds.push_back(std::move(value)); return *this; }
-    inline Filters& AddAncestorIds(const char* value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds.push_back(value); return *this; }
+    template<typename AncestorIdsT = Aws::Vector<Aws::String>>
+    void SetAncestorIds(AncestorIdsT&& value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds = std::forward<AncestorIdsT>(value); }
+    template<typename AncestorIdsT = Aws::Vector<Aws::String>>
+    Filters& WithAncestorIds(AncestorIdsT&& value) { SetAncestorIds(std::forward<AncestorIdsT>(value)); return *this;}
+    template<typename AncestorIdsT = Aws::String>
+    Filters& AddAncestorIds(AncestorIdsT&& value) { m_ancestorIdsHasBeenSet = true; m_ancestorIds.emplace_back(std::forward<AncestorIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filter based on file groupings.</p>
      */
-    inline const Aws::Vector<SearchCollectionType>& GetSearchCollectionTypes() const{ return m_searchCollectionTypes; }
+    inline const Aws::Vector<SearchCollectionType>& GetSearchCollectionTypes() const { return m_searchCollectionTypes; }
     inline bool SearchCollectionTypesHasBeenSet() const { return m_searchCollectionTypesHasBeenSet; }
-    inline void SetSearchCollectionTypes(const Aws::Vector<SearchCollectionType>& value) { m_searchCollectionTypesHasBeenSet = true; m_searchCollectionTypes = value; }
-    inline void SetSearchCollectionTypes(Aws::Vector<SearchCollectionType>&& value) { m_searchCollectionTypesHasBeenSet = true; m_searchCollectionTypes = std::move(value); }
-    inline Filters& WithSearchCollectionTypes(const Aws::Vector<SearchCollectionType>& value) { SetSearchCollectionTypes(value); return *this;}
-    inline Filters& WithSearchCollectionTypes(Aws::Vector<SearchCollectionType>&& value) { SetSearchCollectionTypes(std::move(value)); return *this;}
-    inline Filters& AddSearchCollectionTypes(const SearchCollectionType& value) { m_searchCollectionTypesHasBeenSet = true; m_searchCollectionTypes.push_back(value); return *this; }
-    inline Filters& AddSearchCollectionTypes(SearchCollectionType&& value) { m_searchCollectionTypesHasBeenSet = true; m_searchCollectionTypes.push_back(std::move(value)); return *this; }
+    template<typename SearchCollectionTypesT = Aws::Vector<SearchCollectionType>>
+    void SetSearchCollectionTypes(SearchCollectionTypesT&& value) { m_searchCollectionTypesHasBeenSet = true; m_searchCollectionTypes = std::forward<SearchCollectionTypesT>(value); }
+    template<typename SearchCollectionTypesT = Aws::Vector<SearchCollectionType>>
+    Filters& WithSearchCollectionTypes(SearchCollectionTypesT&& value) { SetSearchCollectionTypes(std::forward<SearchCollectionTypesT>(value)); return *this;}
+    inline Filters& AddSearchCollectionTypes(SearchCollectionType value) { m_searchCollectionTypesHasBeenSet = true; m_searchCollectionTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filter based on size (in bytes).</p>
      */
-    inline const LongRangeType& GetSizeRange() const{ return m_sizeRange; }
+    inline const LongRangeType& GetSizeRange() const { return m_sizeRange; }
     inline bool SizeRangeHasBeenSet() const { return m_sizeRangeHasBeenSet; }
-    inline void SetSizeRange(const LongRangeType& value) { m_sizeRangeHasBeenSet = true; m_sizeRange = value; }
-    inline void SetSizeRange(LongRangeType&& value) { m_sizeRangeHasBeenSet = true; m_sizeRange = std::move(value); }
-    inline Filters& WithSizeRange(const LongRangeType& value) { SetSizeRange(value); return *this;}
-    inline Filters& WithSizeRange(LongRangeType&& value) { SetSizeRange(std::move(value)); return *this;}
+    template<typename SizeRangeT = LongRangeType>
+    void SetSizeRange(SizeRangeT&& value) { m_sizeRangeHasBeenSet = true; m_sizeRange = std::forward<SizeRangeT>(value); }
+    template<typename SizeRangeT = LongRangeType>
+    Filters& WithSizeRange(SizeRangeT&& value) { SetSizeRange(std::forward<SizeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter based on resource’s creation timestamp.</p>
      */
-    inline const DateRangeType& GetCreatedRange() const{ return m_createdRange; }
+    inline const DateRangeType& GetCreatedRange() const { return m_createdRange; }
     inline bool CreatedRangeHasBeenSet() const { return m_createdRangeHasBeenSet; }
-    inline void SetCreatedRange(const DateRangeType& value) { m_createdRangeHasBeenSet = true; m_createdRange = value; }
-    inline void SetCreatedRange(DateRangeType&& value) { m_createdRangeHasBeenSet = true; m_createdRange = std::move(value); }
-    inline Filters& WithCreatedRange(const DateRangeType& value) { SetCreatedRange(value); return *this;}
-    inline Filters& WithCreatedRange(DateRangeType&& value) { SetCreatedRange(std::move(value)); return *this;}
+    template<typename CreatedRangeT = DateRangeType>
+    void SetCreatedRange(CreatedRangeT&& value) { m_createdRangeHasBeenSet = true; m_createdRange = std::forward<CreatedRangeT>(value); }
+    template<typename CreatedRangeT = DateRangeType>
+    Filters& WithCreatedRange(CreatedRangeT&& value) { SetCreatedRange(std::forward<CreatedRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter based on resource’s modified timestamp.</p>
      */
-    inline const DateRangeType& GetModifiedRange() const{ return m_modifiedRange; }
+    inline const DateRangeType& GetModifiedRange() const { return m_modifiedRange; }
     inline bool ModifiedRangeHasBeenSet() const { return m_modifiedRangeHasBeenSet; }
-    inline void SetModifiedRange(const DateRangeType& value) { m_modifiedRangeHasBeenSet = true; m_modifiedRange = value; }
-    inline void SetModifiedRange(DateRangeType&& value) { m_modifiedRangeHasBeenSet = true; m_modifiedRange = std::move(value); }
-    inline Filters& WithModifiedRange(const DateRangeType& value) { SetModifiedRange(value); return *this;}
-    inline Filters& WithModifiedRange(DateRangeType&& value) { SetModifiedRange(std::move(value)); return *this;}
+    template<typename ModifiedRangeT = DateRangeType>
+    void SetModifiedRange(ModifiedRangeT&& value) { m_modifiedRangeHasBeenSet = true; m_modifiedRange = std::forward<ModifiedRangeT>(value); }
+    template<typename ModifiedRangeT = DateRangeType>
+    Filters& WithModifiedRange(ModifiedRangeT&& value) { SetModifiedRange(std::forward<ModifiedRangeT>(value)); return *this;}
     ///@}
   private:
 

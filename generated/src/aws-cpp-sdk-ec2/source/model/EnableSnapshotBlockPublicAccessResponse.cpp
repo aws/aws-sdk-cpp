@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableSnapshotBlockPublicAccessResponse::EnableSnapshotBlockPublicAccessResponse() : 
-    m_state(SnapshotBlockPublicAccessState::NOT_SET)
-{
-}
-
 EnableSnapshotBlockPublicAccessResponse::EnableSnapshotBlockPublicAccessResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : EnableSnapshotBlockPublicAccessResponse()
 {
   *this = result;
 }
@@ -43,7 +37,8 @@ EnableSnapshotBlockPublicAccessResponse& EnableSnapshotBlockPublicAccessResponse
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SnapshotBlockPublicAccessStateMapper::GetSnapshotBlockPublicAccessStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SnapshotBlockPublicAccessStateMapper::GetSnapshotBlockPublicAccessStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+      m_stateHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ EnableSnapshotBlockPublicAccessResponse& EnableSnapshotBlockPublicAccessResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableSnapshotBlockPublicAccessResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

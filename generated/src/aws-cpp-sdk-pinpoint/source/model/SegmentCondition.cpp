@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentCondition::SegmentCondition() : 
-    m_segmentIdHasBeenSet(false)
-{
-}
-
 SegmentCondition::SegmentCondition(JsonView jsonValue)
-  : SegmentCondition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SegmentCondition& SegmentCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SegmentId"))
   {
     m_segmentId = jsonValue.GetString("SegmentId");
-
     m_segmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

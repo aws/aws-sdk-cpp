@@ -18,28 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowIdentity::MaintenanceWindowIdentity() : 
-    m_windowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_cutoff(0),
-    m_cutoffHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_scheduleTimezoneHasBeenSet(false),
-    m_scheduleOffset(0),
-    m_scheduleOffsetHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_nextExecutionTimeHasBeenSet(false)
-{
-}
-
 MaintenanceWindowIdentity::MaintenanceWindowIdentity(JsonView jsonValue)
-  : MaintenanceWindowIdentity()
 {
   *this = jsonValue;
 }
@@ -49,87 +28,63 @@ MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
     m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cutoff"))
   {
     m_cutoff = jsonValue.GetInteger("Cutoff");
-
     m_cutoffHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetString("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleTimezone"))
   {
     m_scheduleTimezone = jsonValue.GetString("ScheduleTimezone");
-
     m_scheduleTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleOffset"))
   {
     m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
-
     m_scheduleOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDate"))
   {
     m_endDate = jsonValue.GetString("EndDate");
-
     m_endDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetString("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextExecutionTime"))
   {
     m_nextExecutionTime = jsonValue.GetString("NextExecutionTime");
-
     m_nextExecutionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

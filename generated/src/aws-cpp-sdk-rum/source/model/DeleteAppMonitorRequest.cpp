@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppMonitorRequest::DeleteAppMonitorRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppMonitorRequest::SerializePayload() const
 {
   return {};

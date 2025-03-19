@@ -39,7 +39,7 @@ namespace Model
   class ApiInvocationInput
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ApiInvocationInput();
+    AWS_BEDROCKAGENTRUNTIME_API ApiInvocationInput() = default;
     AWS_BEDROCKAGENTRUNTIME_API ApiInvocationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ApiInvocationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,82 +49,70 @@ namespace Model
     /**
      * <p>The action group that the API operation belongs to.</p>
      */
-    inline const Aws::String& GetActionGroup() const{ return m_actionGroup; }
+    inline const Aws::String& GetActionGroup() const { return m_actionGroup; }
     inline bool ActionGroupHasBeenSet() const { return m_actionGroupHasBeenSet; }
-    inline void SetActionGroup(const Aws::String& value) { m_actionGroupHasBeenSet = true; m_actionGroup = value; }
-    inline void SetActionGroup(Aws::String&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::move(value); }
-    inline void SetActionGroup(const char* value) { m_actionGroupHasBeenSet = true; m_actionGroup.assign(value); }
-    inline ApiInvocationInput& WithActionGroup(const Aws::String& value) { SetActionGroup(value); return *this;}
-    inline ApiInvocationInput& WithActionGroup(Aws::String&& value) { SetActionGroup(std::move(value)); return *this;}
-    inline ApiInvocationInput& WithActionGroup(const char* value) { SetActionGroup(value); return *this;}
+    template<typename ActionGroupT = Aws::String>
+    void SetActionGroup(ActionGroupT&& value) { m_actionGroupHasBeenSet = true; m_actionGroup = std::forward<ActionGroupT>(value); }
+    template<typename ActionGroupT = Aws::String>
+    ApiInvocationInput& WithActionGroup(ActionGroupT&& value) { SetActionGroup(std::forward<ActionGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the API operation to invoke.</p>
      */
-    inline const ActionInvocationType& GetActionInvocationType() const{ return m_actionInvocationType; }
+    inline ActionInvocationType GetActionInvocationType() const { return m_actionInvocationType; }
     inline bool ActionInvocationTypeHasBeenSet() const { return m_actionInvocationTypeHasBeenSet; }
-    inline void SetActionInvocationType(const ActionInvocationType& value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = value; }
-    inline void SetActionInvocationType(ActionInvocationType&& value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = std::move(value); }
-    inline ApiInvocationInput& WithActionInvocationType(const ActionInvocationType& value) { SetActionInvocationType(value); return *this;}
-    inline ApiInvocationInput& WithActionInvocationType(ActionInvocationType&& value) { SetActionInvocationType(std::move(value)); return *this;}
+    inline void SetActionInvocationType(ActionInvocationType value) { m_actionInvocationTypeHasBeenSet = true; m_actionInvocationType = value; }
+    inline ApiInvocationInput& WithActionInvocationType(ActionInvocationType value) { SetActionInvocationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent's ID.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline ApiInvocationInput& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline ApiInvocationInput& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline ApiInvocationInput& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    ApiInvocationInput& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the API operation.</p>
      */
-    inline const Aws::String& GetApiPath() const{ return m_apiPath; }
+    inline const Aws::String& GetApiPath() const { return m_apiPath; }
     inline bool ApiPathHasBeenSet() const { return m_apiPathHasBeenSet; }
-    inline void SetApiPath(const Aws::String& value) { m_apiPathHasBeenSet = true; m_apiPath = value; }
-    inline void SetApiPath(Aws::String&& value) { m_apiPathHasBeenSet = true; m_apiPath = std::move(value); }
-    inline void SetApiPath(const char* value) { m_apiPathHasBeenSet = true; m_apiPath.assign(value); }
-    inline ApiInvocationInput& WithApiPath(const Aws::String& value) { SetApiPath(value); return *this;}
-    inline ApiInvocationInput& WithApiPath(Aws::String&& value) { SetApiPath(std::move(value)); return *this;}
-    inline ApiInvocationInput& WithApiPath(const char* value) { SetApiPath(value); return *this;}
+    template<typename ApiPathT = Aws::String>
+    void SetApiPath(ApiPathT&& value) { m_apiPathHasBeenSet = true; m_apiPath = std::forward<ApiPathT>(value); }
+    template<typename ApiPathT = Aws::String>
+    ApiInvocationInput& WithApiPath(ApiPathT&& value) { SetApiPath(std::forward<ApiPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent collaborator's name.</p>
      */
-    inline const Aws::String& GetCollaboratorName() const{ return m_collaboratorName; }
+    inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
     inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
-    inline void SetCollaboratorName(const Aws::String& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = value; }
-    inline void SetCollaboratorName(Aws::String&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::move(value); }
-    inline void SetCollaboratorName(const char* value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName.assign(value); }
-    inline ApiInvocationInput& WithCollaboratorName(const Aws::String& value) { SetCollaboratorName(value); return *this;}
-    inline ApiInvocationInput& WithCollaboratorName(Aws::String&& value) { SetCollaboratorName(std::move(value)); return *this;}
-    inline ApiInvocationInput& WithCollaboratorName(const char* value) { SetCollaboratorName(value); return *this;}
+    template<typename CollaboratorNameT = Aws::String>
+    void SetCollaboratorName(CollaboratorNameT&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::forward<CollaboratorNameT>(value); }
+    template<typename CollaboratorNameT = Aws::String>
+    ApiInvocationInput& WithCollaboratorName(CollaboratorNameT&& value) { SetCollaboratorName(std::forward<CollaboratorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP method of the API operation.</p>
      */
-    inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
+    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
-    inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
-    inline ApiInvocationInput& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
-    inline ApiInvocationInput& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
-    inline ApiInvocationInput& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+    template<typename HttpMethodT = Aws::String>
+    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
+    template<typename HttpMethodT = Aws::String>
+    ApiInvocationInput& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +120,14 @@ namespace Model
      * <p>The parameters to provide for the API request, as the agent elicited from the
      * user.</p>
      */
-    inline const Aws::Vector<ApiParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<ApiParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<ApiParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<ApiParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ApiInvocationInput& WithParameters(const Aws::Vector<ApiParameter>& value) { SetParameters(value); return *this;}
-    inline ApiInvocationInput& WithParameters(Aws::Vector<ApiParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ApiInvocationInput& AddParameters(const ApiParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline ApiInvocationInput& AddParameters(ApiParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<ApiParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<ApiParameter>>
+    ApiInvocationInput& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = ApiParameter>
+    ApiInvocationInput& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -147,19 +135,19 @@ namespace Model
      * <p>The request body to provide for the API request, as the agent elicited from
      * the user.</p>
      */
-    inline const ApiRequestBody& GetRequestBody() const{ return m_requestBody; }
+    inline const ApiRequestBody& GetRequestBody() const { return m_requestBody; }
     inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
-    inline void SetRequestBody(const ApiRequestBody& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
-    inline void SetRequestBody(ApiRequestBody&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::move(value); }
-    inline ApiInvocationInput& WithRequestBody(const ApiRequestBody& value) { SetRequestBody(value); return *this;}
-    inline ApiInvocationInput& WithRequestBody(ApiRequestBody&& value) { SetRequestBody(std::move(value)); return *this;}
+    template<typename RequestBodyT = ApiRequestBody>
+    void SetRequestBody(RequestBodyT&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::forward<RequestBodyT>(value); }
+    template<typename RequestBodyT = ApiRequestBody>
+    ApiInvocationInput& WithRequestBody(RequestBodyT&& value) { SetRequestBody(std::forward<RequestBodyT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
 
-    ActionInvocationType m_actionInvocationType;
+    ActionInvocationType m_actionInvocationType{ActionInvocationType::NOT_SET};
     bool m_actionInvocationTypeHasBeenSet = false;
 
     Aws::String m_agentId;

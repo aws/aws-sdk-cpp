@@ -12,16 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContactsRequest::ListContactsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_aliasPrefixHasBeenSet(false),
-    m_type(ContactType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListContactsRequest::SerializePayload() const
 {
   JsonValue payload;

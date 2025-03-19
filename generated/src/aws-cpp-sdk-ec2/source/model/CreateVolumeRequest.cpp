@@ -10,32 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVolumeRequest::CreateVolumeRequest() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_multiAttachEnabled(false),
-    m_multiAttachEnabledHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_operatorHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,20 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-SourceEventMetadata::SourceEventMetadata() : 
-    m_eventTypeVersionHasBeenSet(false),
-    m_sourceEventIdHasBeenSet(false),
-    m_eventOriginRegionHasBeenSet(false),
-    m_relatedAccountHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_eventOccurrenceTimeHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_relatedResourcesHasBeenSet(false)
-{
-}
-
 SourceEventMetadata::SourceEventMetadata(JsonView jsonValue)
-  : SourceEventMetadata()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SourceEventMetadata& SourceEventMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventTypeVersion"))
   {
     m_eventTypeVersion = jsonValue.GetString("eventTypeVersion");
-
     m_eventTypeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEventId"))
   {
     m_sourceEventId = jsonValue.GetString("sourceEventId");
-
     m_sourceEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventOriginRegion"))
   {
     m_eventOriginRegion = jsonValue.GetString("eventOriginRegion");
-
     m_eventOriginRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedAccount"))
   {
     m_relatedAccount = jsonValue.GetString("relatedAccount");
-
     m_relatedAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventOccurrenceTime"))
   {
     m_eventOccurrenceTime = jsonValue.GetString("eventOccurrenceTime");
-
     m_eventOccurrenceTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = jsonValue.GetString("eventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedResources"))
   {
     Aws::Utils::Array<JsonView> relatedResourcesJsonList = jsonValue.GetArray("relatedResources");
@@ -96,7 +69,6 @@ SourceEventMetadata& SourceEventMetadata::operator =(JsonView jsonValue)
     }
     m_relatedResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

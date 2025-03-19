@@ -18,16 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageDependency::PackageDependency() : 
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_dependencyTypeHasBeenSet(false),
-    m_versionRequirementHasBeenSet(false)
-{
-}
-
 PackageDependency::PackageDependency(JsonView jsonValue)
-  : PackageDependency()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PackageDependency& PackageDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("package"))
   {
     m_package = jsonValue.GetString("package");
-
     m_packageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependencyType"))
   {
     m_dependencyType = jsonValue.GetString("dependencyType");
-
     m_dependencyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionRequirement"))
   {
     m_versionRequirement = jsonValue.GetString("versionRequirement");
-
     m_versionRequirementHasBeenSet = true;
   }
-
   return *this;
 }
 

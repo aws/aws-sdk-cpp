@@ -12,10 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataLakeExceptionSubscriptionRequest::GetDataLakeExceptionSubscriptionRequest()
-{
-}
-
 Aws::String GetDataLakeExceptionSubscriptionRequest::SerializePayload() const
 {
   return {};

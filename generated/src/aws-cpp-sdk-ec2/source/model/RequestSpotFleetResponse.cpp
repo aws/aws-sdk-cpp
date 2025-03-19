@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RequestSpotFleetResponse::RequestSpotFleetResponse()
-{
-}
-
 RequestSpotFleetResponse::RequestSpotFleetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RequestSpotFleetResponse& RequestSpotFleetResponse::operator =(const Aws::Amazon
     if(!spotFleetRequestIdNode.IsNull())
     {
       m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
+      m_spotFleetRequestIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ RequestSpotFleetResponse& RequestSpotFleetResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RequestSpotFleetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

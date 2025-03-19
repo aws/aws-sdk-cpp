@@ -35,7 +35,7 @@ namespace Model
   class Filters
   {
   public:
-    AWS_INVOICING_API Filters();
+    AWS_INVOICING_API Filters() = default;
     AWS_INVOICING_API Filters(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INVOICING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * invoice unit names. If multiple names are provided, the result is an
      * <code>OR</code> condition (match any) of the specified invoice unit names. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline Filters& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-    inline Filters& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-    inline Filters& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline Filters& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-    inline Filters& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    Filters& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = Aws::String>
+    Filters& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,15 +66,14 @@ namespace Model
      * the specified accounts. This filter only matches the specified accounts on the
      * invoice receivers of the invoice units. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetInvoiceReceivers() const{ return m_invoiceReceivers; }
+    inline const Aws::Vector<Aws::String>& GetInvoiceReceivers() const { return m_invoiceReceivers; }
     inline bool InvoiceReceiversHasBeenSet() const { return m_invoiceReceiversHasBeenSet; }
-    inline void SetInvoiceReceivers(const Aws::Vector<Aws::String>& value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers = value; }
-    inline void SetInvoiceReceivers(Aws::Vector<Aws::String>&& value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers = std::move(value); }
-    inline Filters& WithInvoiceReceivers(const Aws::Vector<Aws::String>& value) { SetInvoiceReceivers(value); return *this;}
-    inline Filters& WithInvoiceReceivers(Aws::Vector<Aws::String>&& value) { SetInvoiceReceivers(std::move(value)); return *this;}
-    inline Filters& AddInvoiceReceivers(const Aws::String& value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers.push_back(value); return *this; }
-    inline Filters& AddInvoiceReceivers(Aws::String&& value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers.push_back(std::move(value)); return *this; }
-    inline Filters& AddInvoiceReceivers(const char* value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers.push_back(value); return *this; }
+    template<typename InvoiceReceiversT = Aws::Vector<Aws::String>>
+    void SetInvoiceReceivers(InvoiceReceiversT&& value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers = std::forward<InvoiceReceiversT>(value); }
+    template<typename InvoiceReceiversT = Aws::Vector<Aws::String>>
+    Filters& WithInvoiceReceivers(InvoiceReceiversT&& value) { SetInvoiceReceivers(std::forward<InvoiceReceiversT>(value)); return *this;}
+    template<typename InvoiceReceiversT = Aws::String>
+    Filters& AddInvoiceReceivers(InvoiceReceiversT&& value) { m_invoiceReceiversHasBeenSet = true; m_invoiceReceivers.emplace_back(std::forward<InvoiceReceiversT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,15 +84,14 @@ namespace Model
      * the specified accounts. The specified account IDs are matched with either the
      * receiver or the linked accounts in the rules. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<Aws::String>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline Filters& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
-    inline Filters& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline Filters& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline Filters& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
-    inline Filters& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    Filters& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = Aws::String>
+    Filters& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
   private:
 

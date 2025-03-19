@@ -18,16 +18,7 @@ namespace ServerlessApplicationRepository
 namespace Model
 {
 
-VersionSummary::VersionSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_sourceCodeUrlHasBeenSet(false)
-{
-}
-
 VersionSummary::VersionSummary(JsonView jsonValue)
-  : VersionSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VersionSummary& VersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("semanticVersion"))
   {
     m_semanticVersion = jsonValue.GetString("semanticVersion");
-
     m_semanticVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeUrl"))
   {
     m_sourceCodeUrl = jsonValue.GetString("sourceCodeUrl");
-
     m_sourceCodeUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

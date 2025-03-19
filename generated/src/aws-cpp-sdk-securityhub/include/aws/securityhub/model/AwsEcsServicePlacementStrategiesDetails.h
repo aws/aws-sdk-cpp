@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsServicePlacementStrategiesDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsServicePlacementStrategiesDetails();
+    AWS_SECURITYHUB_API AwsEcsServicePlacementStrategiesDetails() = default;
     AWS_SECURITYHUB_API AwsEcsServicePlacementStrategiesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsServicePlacementStrategiesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>memory</code>.</p> <p>For the <code>random</code> placement strategy, this
      * attribute is not used.</p>
      */
-    inline const Aws::String& GetField() const{ return m_field; }
+    inline const Aws::String& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-    inline AwsEcsServicePlacementStrategiesDetails& WithField(const Aws::String& value) { SetField(value); return *this;}
-    inline AwsEcsServicePlacementStrategiesDetails& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-    inline AwsEcsServicePlacementStrategiesDetails& WithField(const char* value) { SetField(value); return *this;}
+    template<typename FieldT = Aws::String>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = Aws::String>
+    AwsEcsServicePlacementStrategiesDetails& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <code>Field</code>.</p> <p>Valid values: <code>random</code> |
      * <code>spread</code> | <code>binpack</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsEcsServicePlacementStrategiesDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsEcsServicePlacementStrategiesDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsEcsServicePlacementStrategiesDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsEcsServicePlacementStrategiesDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

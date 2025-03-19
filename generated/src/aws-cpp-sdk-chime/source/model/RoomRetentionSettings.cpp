@@ -18,14 +18,7 @@ namespace Chime
 namespace Model
 {
 
-RoomRetentionSettings::RoomRetentionSettings() : 
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false)
-{
-}
-
 RoomRetentionSettings::RoomRetentionSettings(JsonView jsonValue)
-  : RoomRetentionSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RoomRetentionSettings& RoomRetentionSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RetentionDays"))
   {
     m_retentionDays = jsonValue.GetInteger("RetentionDays");
-
     m_retentionDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

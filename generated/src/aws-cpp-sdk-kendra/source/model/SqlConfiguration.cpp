@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SqlConfiguration::SqlConfiguration() : 
-    m_queryIdentifiersEnclosingOption(QueryIdentifiersEnclosingOption::NOT_SET),
-    m_queryIdentifiersEnclosingOptionHasBeenSet(false)
-{
-}
-
 SqlConfiguration::SqlConfiguration(JsonView jsonValue)
-  : SqlConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SqlConfiguration& SqlConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryIdentifiersEnclosingOption"))
   {
     m_queryIdentifiersEnclosingOption = QueryIdentifiersEnclosingOptionMapper::GetQueryIdentifiersEnclosingOptionForName(jsonValue.GetString("QueryIdentifiersEnclosingOption"));
-
     m_queryIdentifiersEnclosingOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

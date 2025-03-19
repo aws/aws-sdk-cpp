@@ -38,7 +38,7 @@ namespace Model
   class FlowTraceNodeOutputEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputEvent();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceNodeOutputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,40 +49,38 @@ namespace Model
      * <p>An array of objects containing information about each field in the
      * output.</p>
      */
-    inline const Aws::Vector<FlowTraceNodeOutputField>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<FlowTraceNodeOutputField>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<FlowTraceNodeOutputField>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<FlowTraceNodeOutputField>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline FlowTraceNodeOutputEvent& WithFields(const Aws::Vector<FlowTraceNodeOutputField>& value) { SetFields(value); return *this;}
-    inline FlowTraceNodeOutputEvent& WithFields(Aws::Vector<FlowTraceNodeOutputField>&& value) { SetFields(std::move(value)); return *this;}
-    inline FlowTraceNodeOutputEvent& AddFields(const FlowTraceNodeOutputField& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline FlowTraceNodeOutputEvent& AddFields(FlowTraceNodeOutputField&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<FlowTraceNodeOutputField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FlowTraceNodeOutputField>>
+    FlowTraceNodeOutputEvent& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FlowTraceNodeOutputField>
+    FlowTraceNodeOutputEvent& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the node that yielded the output.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-    inline FlowTraceNodeOutputEvent& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline FlowTraceNodeOutputEvent& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline FlowTraceNodeOutputEvent& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    FlowTraceNodeOutputEvent& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the trace was returned.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline FlowTraceNodeOutputEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline FlowTraceNodeOutputEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    FlowTraceNodeOutputEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -92,7 +90,7 @@ namespace Model
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

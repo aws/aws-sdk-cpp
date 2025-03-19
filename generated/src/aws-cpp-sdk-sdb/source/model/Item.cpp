@@ -20,15 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-Item::Item() : 
-    m_nameHasBeenSet(false),
-    m_alternateNameEncodingHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Item::Item(const XmlNode& xmlNode)
-  : Item()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ Item& Item::operator =(const XmlNode& xmlNode)
     if(!attributesNode.IsNull())
     {
       XmlNode attributeMember = attributesNode;
+      m_attributesHasBeenSet = !attributeMember.IsNull();
       while(!attributeMember.IsNull())
       {
         m_attributes.push_back(attributeMember);

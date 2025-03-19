@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-ResourceDoesNotSupportTagging::ResourceDoesNotSupportTagging() : 
-    m_resourceARNHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourceDoesNotSupportTagging::ResourceDoesNotSupportTagging(JsonView jsonValue)
-  : ResourceDoesNotSupportTagging()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceDoesNotSupportTagging& ResourceDoesNotSupportTagging::operator =(JsonVie
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

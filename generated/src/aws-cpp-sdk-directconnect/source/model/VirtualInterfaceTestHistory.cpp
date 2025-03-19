@@ -18,21 +18,7 @@ namespace DirectConnect
 namespace Model
 {
 
-VirtualInterfaceTestHistory::VirtualInterfaceTestHistory() : 
-    m_testIdHasBeenSet(false),
-    m_virtualInterfaceIdHasBeenSet(false),
-    m_bgpPeersHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_testDurationInMinutes(0),
-    m_testDurationInMinutesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 VirtualInterfaceTestHistory::VirtualInterfaceTestHistory(JsonView jsonValue)
-  : VirtualInterfaceTestHistory()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ VirtualInterfaceTestHistory& VirtualInterfaceTestHistory::operator =(JsonView js
   if(jsonValue.ValueExists("testId"))
   {
     m_testId = jsonValue.GetString("testId");
-
     m_testIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualInterfaceId"))
   {
     m_virtualInterfaceId = jsonValue.GetString("virtualInterfaceId");
-
     m_virtualInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bgpPeers"))
   {
     Aws::Utils::Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
@@ -62,42 +44,31 @@ VirtualInterfaceTestHistory& VirtualInterfaceTestHistory::operator =(JsonView js
     }
     m_bgpPeersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testDurationInMinutes"))
   {
     m_testDurationInMinutes = jsonValue.GetInteger("testDurationInMinutes");
-
     m_testDurationInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

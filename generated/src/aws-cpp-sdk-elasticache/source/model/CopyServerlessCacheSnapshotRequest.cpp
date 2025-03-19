@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CopyServerlessCacheSnapshotRequest::CopyServerlessCacheSnapshotRequest() : 
-    m_sourceServerlessCacheSnapshotNameHasBeenSet(false),
-    m_targetServerlessCacheSnapshotNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CopyServerlessCacheSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

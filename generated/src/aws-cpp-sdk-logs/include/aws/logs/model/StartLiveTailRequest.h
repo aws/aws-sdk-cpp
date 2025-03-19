@@ -24,7 +24,7 @@ namespace Model
   class StartLiveTailRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API StartLiveTailRequest();
+    AWS_CLOUDWATCHLOGS_API StartLiveTailRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -65,15 +65,14 @@ namespace Model
      * an ARN, the ARN can't end with an asterisk (*).</p>  <p> You can include
      * up to 10 log groups.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const{ return m_logGroupIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const { return m_logGroupIdentifiers; }
     inline bool LogGroupIdentifiersHasBeenSet() const { return m_logGroupIdentifiersHasBeenSet; }
-    inline void SetLogGroupIdentifiers(const Aws::Vector<Aws::String>& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = value; }
-    inline void SetLogGroupIdentifiers(Aws::Vector<Aws::String>&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = std::move(value); }
-    inline StartLiveTailRequest& WithLogGroupIdentifiers(const Aws::Vector<Aws::String>& value) { SetLogGroupIdentifiers(value); return *this;}
-    inline StartLiveTailRequest& WithLogGroupIdentifiers(Aws::Vector<Aws::String>&& value) { SetLogGroupIdentifiers(std::move(value)); return *this;}
-    inline StartLiveTailRequest& AddLogGroupIdentifiers(const Aws::String& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(value); return *this; }
-    inline StartLiveTailRequest& AddLogGroupIdentifiers(Aws::String&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(std::move(value)); return *this; }
-    inline StartLiveTailRequest& AddLogGroupIdentifiers(const char* value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(value); return *this; }
+    template<typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
+    void SetLogGroupIdentifiers(LogGroupIdentifiersT&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = std::forward<LogGroupIdentifiersT>(value); }
+    template<typename LogGroupIdentifiersT = Aws::Vector<Aws::String>>
+    StartLiveTailRequest& WithLogGroupIdentifiers(LogGroupIdentifiersT&& value) { SetLogGroupIdentifiers(std::forward<LogGroupIdentifiersT>(value)); return *this;}
+    template<typename LogGroupIdentifiersT = Aws::String>
+    StartLiveTailRequest& AddLogGroupIdentifiers(LogGroupIdentifiersT&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.emplace_back(std::forward<LogGroupIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,15 +83,14 @@ namespace Model
      * field.</p>  <p>You can specify this parameter only if you specify only one
      * log group in <code>logGroupIdentifiers</code>.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
+    inline const Aws::Vector<Aws::String>& GetLogStreamNames() const { return m_logStreamNames; }
     inline bool LogStreamNamesHasBeenSet() const { return m_logStreamNamesHasBeenSet; }
-    inline void SetLogStreamNames(const Aws::Vector<Aws::String>& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
-    inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::move(value); }
-    inline StartLiveTailRequest& WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
-    inline StartLiveTailRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(std::move(value)); return *this;}
-    inline StartLiveTailRequest& AddLogStreamNames(const Aws::String& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
-    inline StartLiveTailRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(std::move(value)); return *this; }
-    inline StartLiveTailRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
+    template<typename LogStreamNamesT = Aws::Vector<Aws::String>>
+    void SetLogStreamNames(LogStreamNamesT&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::forward<LogStreamNamesT>(value); }
+    template<typename LogStreamNamesT = Aws::Vector<Aws::String>>
+    StartLiveTailRequest& WithLogStreamNames(LogStreamNamesT&& value) { SetLogStreamNames(std::forward<LogStreamNamesT>(value)); return *this;}
+    template<typename LogStreamNamesT = Aws::String>
+    StartLiveTailRequest& AddLogStreamNames(LogStreamNamesT&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.emplace_back(std::forward<LogStreamNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,15 +102,14 @@ namespace Model
      * parameter only if you specify only one log group in
      * <code>logGroupIdentifiers</code>.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLogStreamNamePrefixes() const{ return m_logStreamNamePrefixes; }
+    inline const Aws::Vector<Aws::String>& GetLogStreamNamePrefixes() const { return m_logStreamNamePrefixes; }
     inline bool LogStreamNamePrefixesHasBeenSet() const { return m_logStreamNamePrefixesHasBeenSet; }
-    inline void SetLogStreamNamePrefixes(const Aws::Vector<Aws::String>& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes = value; }
-    inline void SetLogStreamNamePrefixes(Aws::Vector<Aws::String>&& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes = std::move(value); }
-    inline StartLiveTailRequest& WithLogStreamNamePrefixes(const Aws::Vector<Aws::String>& value) { SetLogStreamNamePrefixes(value); return *this;}
-    inline StartLiveTailRequest& WithLogStreamNamePrefixes(Aws::Vector<Aws::String>&& value) { SetLogStreamNamePrefixes(std::move(value)); return *this;}
-    inline StartLiveTailRequest& AddLogStreamNamePrefixes(const Aws::String& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.push_back(value); return *this; }
-    inline StartLiveTailRequest& AddLogStreamNamePrefixes(Aws::String&& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.push_back(std::move(value)); return *this; }
-    inline StartLiveTailRequest& AddLogStreamNamePrefixes(const char* value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.push_back(value); return *this; }
+    template<typename LogStreamNamePrefixesT = Aws::Vector<Aws::String>>
+    void SetLogStreamNamePrefixes(LogStreamNamePrefixesT&& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes = std::forward<LogStreamNamePrefixesT>(value); }
+    template<typename LogStreamNamePrefixesT = Aws::Vector<Aws::String>>
+    StartLiveTailRequest& WithLogStreamNamePrefixes(LogStreamNamePrefixesT&& value) { SetLogStreamNamePrefixes(std::forward<LogStreamNamePrefixesT>(value)); return *this;}
+    template<typename LogStreamNamePrefixesT = Aws::String>
+    StartLiveTailRequest& AddLogStreamNamePrefixes(LogStreamNamePrefixesT&& value) { m_logStreamNamePrefixesHasBeenSet = true; m_logStreamNamePrefixes.emplace_back(std::forward<LogStreamNamePrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,14 +123,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p>
      */
-    inline const Aws::String& GetLogEventFilterPattern() const{ return m_logEventFilterPattern; }
+    inline const Aws::String& GetLogEventFilterPattern() const { return m_logEventFilterPattern; }
     inline bool LogEventFilterPatternHasBeenSet() const { return m_logEventFilterPatternHasBeenSet; }
-    inline void SetLogEventFilterPattern(const Aws::String& value) { m_logEventFilterPatternHasBeenSet = true; m_logEventFilterPattern = value; }
-    inline void SetLogEventFilterPattern(Aws::String&& value) { m_logEventFilterPatternHasBeenSet = true; m_logEventFilterPattern = std::move(value); }
-    inline void SetLogEventFilterPattern(const char* value) { m_logEventFilterPatternHasBeenSet = true; m_logEventFilterPattern.assign(value); }
-    inline StartLiveTailRequest& WithLogEventFilterPattern(const Aws::String& value) { SetLogEventFilterPattern(value); return *this;}
-    inline StartLiveTailRequest& WithLogEventFilterPattern(Aws::String&& value) { SetLogEventFilterPattern(std::move(value)); return *this;}
-    inline StartLiveTailRequest& WithLogEventFilterPattern(const char* value) { SetLogEventFilterPattern(value); return *this;}
+    template<typename LogEventFilterPatternT = Aws::String>
+    void SetLogEventFilterPattern(LogEventFilterPatternT&& value) { m_logEventFilterPatternHasBeenSet = true; m_logEventFilterPattern = std::forward<LogEventFilterPatternT>(value); }
+    template<typename LogEventFilterPatternT = Aws::String>
+    StartLiveTailRequest& WithLogEventFilterPattern(LogEventFilterPatternT&& value) { SetLogEventFilterPattern(std::forward<LogEventFilterPatternT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,7 +144,7 @@ namespace Model
     Aws::String m_logEventFilterPattern;
     bool m_logEventFilterPatternHasBeenSet = false;
     StartLiveTailHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

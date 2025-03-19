@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRestoreTestingInferredMetadataRequest::GetRestoreTestingInferredMetadataRequest() : 
-    m_backupVaultAccountIdHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false)
-{
-}
-
 Aws::String GetRestoreTestingInferredMetadataRequest::SerializePayload() const
 {
   return {};

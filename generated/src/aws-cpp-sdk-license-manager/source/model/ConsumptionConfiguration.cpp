@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ConsumptionConfiguration::ConsumptionConfiguration() : 
-    m_renewType(RenewType::NOT_SET),
-    m_renewTypeHasBeenSet(false),
-    m_provisionalConfigurationHasBeenSet(false),
-    m_borrowConfigurationHasBeenSet(false)
-{
-}
-
 ConsumptionConfiguration::ConsumptionConfiguration(JsonView jsonValue)
-  : ConsumptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConsumptionConfiguration& ConsumptionConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RenewType"))
   {
     m_renewType = RenewTypeMapper::GetRenewTypeForName(jsonValue.GetString("RenewType"));
-
     m_renewTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionalConfiguration"))
   {
     m_provisionalConfiguration = jsonValue.GetObject("ProvisionalConfiguration");
-
     m_provisionalConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorrowConfiguration"))
   {
     m_borrowConfiguration = jsonValue.GetObject("BorrowConfiguration");
-
     m_borrowConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

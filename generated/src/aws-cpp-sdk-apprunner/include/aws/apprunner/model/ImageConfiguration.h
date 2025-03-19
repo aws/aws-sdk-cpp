@@ -34,7 +34,7 @@ namespace Model
   class ImageConfiguration
   {
   public:
-    AWS_APPRUNNER_API ImageConfiguration();
+    AWS_APPRUNNER_API ImageConfiguration() = default;
     AWS_APPRUNNER_API ImageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API ImageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,19 +45,16 @@ namespace Model
      * <p>Environment variables that are available to your running App Runner service.
      * An array of key-value pairs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRuntimeEnvironmentVariables() const{ return m_runtimeEnvironmentVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRuntimeEnvironmentVariables() const { return m_runtimeEnvironmentVariables; }
     inline bool RuntimeEnvironmentVariablesHasBeenSet() const { return m_runtimeEnvironmentVariablesHasBeenSet; }
-    inline void SetRuntimeEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables = value; }
-    inline void SetRuntimeEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables = std::move(value); }
-    inline ImageConfiguration& WithRuntimeEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetRuntimeEnvironmentVariables(value); return *this;}
-    inline ImageConfiguration& WithRuntimeEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetRuntimeEnvironmentVariables(std::move(value)); return *this;}
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, value); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::move(key), value); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, std::move(value)); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(const char* key, Aws::String&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, std::move(value)); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(Aws::String&& key, const char* value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::move(key), value); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentVariables(const char* key, const char* value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(key, value); return *this; }
+    template<typename RuntimeEnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetRuntimeEnvironmentVariables(RuntimeEnvironmentVariablesT&& value) { m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables = std::forward<RuntimeEnvironmentVariablesT>(value); }
+    template<typename RuntimeEnvironmentVariablesT = Aws::Map<Aws::String, Aws::String>>
+    ImageConfiguration& WithRuntimeEnvironmentVariables(RuntimeEnvironmentVariablesT&& value) { SetRuntimeEnvironmentVariables(std::forward<RuntimeEnvironmentVariablesT>(value)); return *this;}
+    template<typename RuntimeEnvironmentVariablesKeyT = Aws::String, typename RuntimeEnvironmentVariablesValueT = Aws::String>
+    ImageConfiguration& AddRuntimeEnvironmentVariables(RuntimeEnvironmentVariablesKeyT&& key, RuntimeEnvironmentVariablesValueT&& value) {
+      m_runtimeEnvironmentVariablesHasBeenSet = true; m_runtimeEnvironmentVariables.emplace(std::forward<RuntimeEnvironmentVariablesKeyT>(key), std::forward<RuntimeEnvironmentVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -66,14 +63,12 @@ namespace Model
      * source image. If specified, this command overrides the Docker image’s default
      * start command.</p>
      */
-    inline const Aws::String& GetStartCommand() const{ return m_startCommand; }
+    inline const Aws::String& GetStartCommand() const { return m_startCommand; }
     inline bool StartCommandHasBeenSet() const { return m_startCommandHasBeenSet; }
-    inline void SetStartCommand(const Aws::String& value) { m_startCommandHasBeenSet = true; m_startCommand = value; }
-    inline void SetStartCommand(Aws::String&& value) { m_startCommandHasBeenSet = true; m_startCommand = std::move(value); }
-    inline void SetStartCommand(const char* value) { m_startCommandHasBeenSet = true; m_startCommand.assign(value); }
-    inline ImageConfiguration& WithStartCommand(const Aws::String& value) { SetStartCommand(value); return *this;}
-    inline ImageConfiguration& WithStartCommand(Aws::String&& value) { SetStartCommand(std::move(value)); return *this;}
-    inline ImageConfiguration& WithStartCommand(const char* value) { SetStartCommand(value); return *this;}
+    template<typename StartCommandT = Aws::String>
+    void SetStartCommand(StartCommandT&& value) { m_startCommandHasBeenSet = true; m_startCommand = std::forward<StartCommandT>(value); }
+    template<typename StartCommandT = Aws::String>
+    ImageConfiguration& WithStartCommand(StartCommandT&& value) { SetStartCommand(std::forward<StartCommandT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +76,12 @@ namespace Model
      * <p>The port that your application listens to in the container.</p> <p>Default:
      * <code>8080</code> </p>
      */
-    inline const Aws::String& GetPort() const{ return m_port; }
+    inline const Aws::String& GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-    inline void SetPort(const Aws::String& value) { m_portHasBeenSet = true; m_port = value; }
-    inline void SetPort(Aws::String&& value) { m_portHasBeenSet = true; m_port = std::move(value); }
-    inline void SetPort(const char* value) { m_portHasBeenSet = true; m_port.assign(value); }
-    inline ImageConfiguration& WithPort(const Aws::String& value) { SetPort(value); return *this;}
-    inline ImageConfiguration& WithPort(Aws::String&& value) { SetPort(std::move(value)); return *this;}
-    inline ImageConfiguration& WithPort(const char* value) { SetPort(value); return *this;}
+    template<typename PortT = Aws::String>
+    void SetPort(PortT&& value) { m_portHasBeenSet = true; m_port = std::forward<PortT>(value); }
+    template<typename PortT = Aws::String>
+    ImageConfiguration& WithPort(PortT&& value) { SetPort(std::forward<PortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,19 +98,16 @@ namespace Model
      * Web Services Systems Manager Parameter Store parameter is not supported. </p>
      * </li> </ul> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRuntimeEnvironmentSecrets() const{ return m_runtimeEnvironmentSecrets; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRuntimeEnvironmentSecrets() const { return m_runtimeEnvironmentSecrets; }
     inline bool RuntimeEnvironmentSecretsHasBeenSet() const { return m_runtimeEnvironmentSecretsHasBeenSet; }
-    inline void SetRuntimeEnvironmentSecrets(const Aws::Map<Aws::String, Aws::String>& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets = value; }
-    inline void SetRuntimeEnvironmentSecrets(Aws::Map<Aws::String, Aws::String>&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets = std::move(value); }
-    inline ImageConfiguration& WithRuntimeEnvironmentSecrets(const Aws::Map<Aws::String, Aws::String>& value) { SetRuntimeEnvironmentSecrets(value); return *this;}
-    inline ImageConfiguration& WithRuntimeEnvironmentSecrets(Aws::Map<Aws::String, Aws::String>&& value) { SetRuntimeEnvironmentSecrets(std::move(value)); return *this;}
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(const Aws::String& key, const Aws::String& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, value); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(Aws::String&& key, const Aws::String& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::move(key), value); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(const Aws::String& key, Aws::String&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, std::move(value)); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(Aws::String&& key, Aws::String&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::move(key), std::move(value)); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(const char* key, Aws::String&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, std::move(value)); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(Aws::String&& key, const char* value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::move(key), value); return *this; }
-    inline ImageConfiguration& AddRuntimeEnvironmentSecrets(const char* key, const char* value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(key, value); return *this; }
+    template<typename RuntimeEnvironmentSecretsT = Aws::Map<Aws::String, Aws::String>>
+    void SetRuntimeEnvironmentSecrets(RuntimeEnvironmentSecretsT&& value) { m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets = std::forward<RuntimeEnvironmentSecretsT>(value); }
+    template<typename RuntimeEnvironmentSecretsT = Aws::Map<Aws::String, Aws::String>>
+    ImageConfiguration& WithRuntimeEnvironmentSecrets(RuntimeEnvironmentSecretsT&& value) { SetRuntimeEnvironmentSecrets(std::forward<RuntimeEnvironmentSecretsT>(value)); return *this;}
+    template<typename RuntimeEnvironmentSecretsKeyT = Aws::String, typename RuntimeEnvironmentSecretsValueT = Aws::String>
+    ImageConfiguration& AddRuntimeEnvironmentSecrets(RuntimeEnvironmentSecretsKeyT&& key, RuntimeEnvironmentSecretsValueT&& value) {
+      m_runtimeEnvironmentSecretsHasBeenSet = true; m_runtimeEnvironmentSecrets.emplace(std::forward<RuntimeEnvironmentSecretsKeyT>(key), std::forward<RuntimeEnvironmentSecretsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -38,7 +38,7 @@ namespace Model
   class Distribution
   {
   public:
-    AWS_CLOUDFRONT_API Distribution();
+    AWS_CLOUDFRONT_API Distribution() = default;
     AWS_CLOUDFRONT_API Distribution(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API Distribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Distribution& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Distribution& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Distribution& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Distribution& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline Distribution& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline Distribution& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline Distribution& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    Distribution& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,33 +75,31 @@ namespace Model
      * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Distribution& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Distribution& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Distribution& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Distribution& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the distribution was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Distribution& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Distribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Distribution& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of invalidation batches currently in progress.</p>
      */
-    inline int GetInProgressInvalidationBatches() const{ return m_inProgressInvalidationBatches; }
+    inline int GetInProgressInvalidationBatches() const { return m_inProgressInvalidationBatches; }
     inline bool InProgressInvalidationBatchesHasBeenSet() const { return m_inProgressInvalidationBatchesHasBeenSet; }
     inline void SetInProgressInvalidationBatches(int value) { m_inProgressInvalidationBatchesHasBeenSet = true; m_inProgressInvalidationBatches = value; }
     inline Distribution& WithInProgressInvalidationBatches(int value) { SetInProgressInvalidationBatches(value); return *this;}
@@ -116,14 +110,12 @@ namespace Model
      * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline Distribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline Distribution& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline Distribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    Distribution& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +126,12 @@ namespace Model
      * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
-    inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
+    inline const ActiveTrustedSigners& GetActiveTrustedSigners() const { return m_activeTrustedSigners; }
     inline bool ActiveTrustedSignersHasBeenSet() const { return m_activeTrustedSignersHasBeenSet; }
-    inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
-    inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
-    inline Distribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
-    inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
+    template<typename ActiveTrustedSignersT = ActiveTrustedSigners>
+    void SetActiveTrustedSigners(ActiveTrustedSignersT&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::forward<ActiveTrustedSignersT>(value); }
+    template<typename ActiveTrustedSignersT = ActiveTrustedSigners>
+    Distribution& WithActiveTrustedSigners(ActiveTrustedSignersT&& value) { SetActiveTrustedSigners(std::forward<ActiveTrustedSignersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,24 +140,24 @@ namespace Model
      * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
-    inline const ActiveTrustedKeyGroups& GetActiveTrustedKeyGroups() const{ return m_activeTrustedKeyGroups; }
+    inline const ActiveTrustedKeyGroups& GetActiveTrustedKeyGroups() const { return m_activeTrustedKeyGroups; }
     inline bool ActiveTrustedKeyGroupsHasBeenSet() const { return m_activeTrustedKeyGroupsHasBeenSet; }
-    inline void SetActiveTrustedKeyGroups(const ActiveTrustedKeyGroups& value) { m_activeTrustedKeyGroupsHasBeenSet = true; m_activeTrustedKeyGroups = value; }
-    inline void SetActiveTrustedKeyGroups(ActiveTrustedKeyGroups&& value) { m_activeTrustedKeyGroupsHasBeenSet = true; m_activeTrustedKeyGroups = std::move(value); }
-    inline Distribution& WithActiveTrustedKeyGroups(const ActiveTrustedKeyGroups& value) { SetActiveTrustedKeyGroups(value); return *this;}
-    inline Distribution& WithActiveTrustedKeyGroups(ActiveTrustedKeyGroups&& value) { SetActiveTrustedKeyGroups(std::move(value)); return *this;}
+    template<typename ActiveTrustedKeyGroupsT = ActiveTrustedKeyGroups>
+    void SetActiveTrustedKeyGroups(ActiveTrustedKeyGroupsT&& value) { m_activeTrustedKeyGroupsHasBeenSet = true; m_activeTrustedKeyGroups = std::forward<ActiveTrustedKeyGroupsT>(value); }
+    template<typename ActiveTrustedKeyGroupsT = ActiveTrustedKeyGroups>
+    Distribution& WithActiveTrustedKeyGroups(ActiveTrustedKeyGroupsT&& value) { SetActiveTrustedKeyGroups(std::forward<ActiveTrustedKeyGroupsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The distribution's configuration.</p>
      */
-    inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
+    inline const DistributionConfig& GetDistributionConfig() const { return m_distributionConfig; }
     inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
-    inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
-    inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
-    inline Distribution& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
-    inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
+    template<typename DistributionConfigT = DistributionConfig>
+    void SetDistributionConfig(DistributionConfigT&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::forward<DistributionConfigT>(value); }
+    template<typename DistributionConfigT = DistributionConfig>
+    Distribution& WithDistributionConfig(DistributionConfigT&& value) { SetDistributionConfig(std::forward<DistributionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,14 +171,14 @@ namespace Model
      * Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web
      * Services services in China</i>.</p>
      */
-    inline const Aws::Vector<AliasICPRecordal>& GetAliasICPRecordals() const{ return m_aliasICPRecordals; }
+    inline const Aws::Vector<AliasICPRecordal>& GetAliasICPRecordals() const { return m_aliasICPRecordals; }
     inline bool AliasICPRecordalsHasBeenSet() const { return m_aliasICPRecordalsHasBeenSet; }
-    inline void SetAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = value; }
-    inline void SetAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = std::move(value); }
-    inline Distribution& WithAliasICPRecordals(const Aws::Vector<AliasICPRecordal>& value) { SetAliasICPRecordals(value); return *this;}
-    inline Distribution& WithAliasICPRecordals(Aws::Vector<AliasICPRecordal>&& value) { SetAliasICPRecordals(std::move(value)); return *this;}
-    inline Distribution& AddAliasICPRecordals(const AliasICPRecordal& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(value); return *this; }
-    inline Distribution& AddAliasICPRecordals(AliasICPRecordal&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(std::move(value)); return *this; }
+    template<typename AliasICPRecordalsT = Aws::Vector<AliasICPRecordal>>
+    void SetAliasICPRecordals(AliasICPRecordalsT&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals = std::forward<AliasICPRecordalsT>(value); }
+    template<typename AliasICPRecordalsT = Aws::Vector<AliasICPRecordal>>
+    Distribution& WithAliasICPRecordals(AliasICPRecordalsT&& value) { SetAliasICPRecordals(std::forward<AliasICPRecordalsT>(value)); return *this;}
+    template<typename AliasICPRecordalsT = AliasICPRecordal>
+    Distribution& AddAliasICPRecordals(AliasICPRecordalsT&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.emplace_back(std::forward<AliasICPRecordalsT>(value)); return *this; }
     ///@}
   private:
 
@@ -199,10 +191,10 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    int m_inProgressInvalidationBatches;
+    int m_inProgressInvalidationBatches{0};
     bool m_inProgressInvalidationBatchesHasBeenSet = false;
 
     Aws::String m_domainName;

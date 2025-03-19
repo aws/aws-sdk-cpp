@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStoredQueryRequest::DeleteStoredQueryRequest() : 
-    m_queryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStoredQueryRequest::SerializePayload() const
 {
   JsonValue payload;

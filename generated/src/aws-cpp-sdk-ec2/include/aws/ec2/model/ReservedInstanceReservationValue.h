@@ -33,7 +33,7 @@ namespace Model
   class ReservedInstanceReservationValue
   {
   public:
-    AWS_EC2_API ReservedInstanceReservationValue();
+    AWS_EC2_API ReservedInstanceReservationValue() = default;
     AWS_EC2_API ReservedInstanceReservationValue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ReservedInstanceReservationValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,26 +46,24 @@ namespace Model
      * <p>The total value of the Convertible Reserved Instance that you are
      * exchanging.</p>
      */
-    inline const ReservationValue& GetReservationValue() const{ return m_reservationValue; }
+    inline const ReservationValue& GetReservationValue() const { return m_reservationValue; }
     inline bool ReservationValueHasBeenSet() const { return m_reservationValueHasBeenSet; }
-    inline void SetReservationValue(const ReservationValue& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
-    inline void SetReservationValue(ReservationValue&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::move(value); }
-    inline ReservedInstanceReservationValue& WithReservationValue(const ReservationValue& value) { SetReservationValue(value); return *this;}
-    inline ReservedInstanceReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
+    template<typename ReservationValueT = ReservationValue>
+    void SetReservationValue(ReservationValueT&& value) { m_reservationValueHasBeenSet = true; m_reservationValue = std::forward<ReservationValueT>(value); }
+    template<typename ReservationValueT = ReservationValue>
+    ReservedInstanceReservationValue& WithReservationValue(ReservationValueT&& value) { SetReservationValue(std::forward<ReservationValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
      */
-    inline const Aws::String& GetReservedInstanceId() const{ return m_reservedInstanceId; }
+    inline const Aws::String& GetReservedInstanceId() const { return m_reservedInstanceId; }
     inline bool ReservedInstanceIdHasBeenSet() const { return m_reservedInstanceIdHasBeenSet; }
-    inline void SetReservedInstanceId(const Aws::String& value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId = value; }
-    inline void SetReservedInstanceId(Aws::String&& value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId = std::move(value); }
-    inline void SetReservedInstanceId(const char* value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId.assign(value); }
-    inline ReservedInstanceReservationValue& WithReservedInstanceId(const Aws::String& value) { SetReservedInstanceId(value); return *this;}
-    inline ReservedInstanceReservationValue& WithReservedInstanceId(Aws::String&& value) { SetReservedInstanceId(std::move(value)); return *this;}
-    inline ReservedInstanceReservationValue& WithReservedInstanceId(const char* value) { SetReservedInstanceId(value); return *this;}
+    template<typename ReservedInstanceIdT = Aws::String>
+    void SetReservedInstanceId(ReservedInstanceIdT&& value) { m_reservedInstanceIdHasBeenSet = true; m_reservedInstanceId = std::forward<ReservedInstanceIdT>(value); }
+    template<typename ReservedInstanceIdT = Aws::String>
+    ReservedInstanceReservationValue& WithReservedInstanceId(ReservedInstanceIdT&& value) { SetReservedInstanceId(std::forward<ReservedInstanceIdT>(value)); return *this;}
     ///@}
   private:
 

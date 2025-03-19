@@ -28,7 +28,7 @@ namespace Model
   class CreateRepositoryRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API CreateRepositoryRequest();
+    AWS_CODEARTIFACT_API CreateRepositoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p> The name of the domain that contains the created repository. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CreateRepositoryRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CreateRepositoryRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CreateRepositoryRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,42 +58,36 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline CreateRepositoryRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline CreateRepositoryRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    CreateRepositoryRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository to create. </p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline CreateRepositoryRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline CreateRepositoryRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    CreateRepositoryRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the created repository. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateRepositoryRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateRepositoryRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateRepositoryRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,28 +98,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
      * with upstream repositories</a>. </p>
      */
-    inline const Aws::Vector<UpstreamRepository>& GetUpstreams() const{ return m_upstreams; }
+    inline const Aws::Vector<UpstreamRepository>& GetUpstreams() const { return m_upstreams; }
     inline bool UpstreamsHasBeenSet() const { return m_upstreamsHasBeenSet; }
-    inline void SetUpstreams(const Aws::Vector<UpstreamRepository>& value) { m_upstreamsHasBeenSet = true; m_upstreams = value; }
-    inline void SetUpstreams(Aws::Vector<UpstreamRepository>&& value) { m_upstreamsHasBeenSet = true; m_upstreams = std::move(value); }
-    inline CreateRepositoryRequest& WithUpstreams(const Aws::Vector<UpstreamRepository>& value) { SetUpstreams(value); return *this;}
-    inline CreateRepositoryRequest& WithUpstreams(Aws::Vector<UpstreamRepository>&& value) { SetUpstreams(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& AddUpstreams(const UpstreamRepository& value) { m_upstreamsHasBeenSet = true; m_upstreams.push_back(value); return *this; }
-    inline CreateRepositoryRequest& AddUpstreams(UpstreamRepository&& value) { m_upstreamsHasBeenSet = true; m_upstreams.push_back(std::move(value)); return *this; }
+    template<typename UpstreamsT = Aws::Vector<UpstreamRepository>>
+    void SetUpstreams(UpstreamsT&& value) { m_upstreamsHasBeenSet = true; m_upstreams = std::forward<UpstreamsT>(value); }
+    template<typename UpstreamsT = Aws::Vector<UpstreamRepository>>
+    CreateRepositoryRequest& WithUpstreams(UpstreamsT&& value) { SetUpstreams(std::forward<UpstreamsT>(value)); return *this;}
+    template<typename UpstreamsT = UpstreamRepository>
+    CreateRepositoryRequest& AddUpstreams(UpstreamsT&& value) { m_upstreamsHasBeenSet = true; m_upstreams.emplace_back(std::forward<UpstreamsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>One or more tag key-value pairs for the repository.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRepositoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateRepositoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateRepositoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateRepositoryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateRepositoryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetMFADeviceRequest::GetMFADeviceRequest() : 
-    m_serialNumberHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMFADeviceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

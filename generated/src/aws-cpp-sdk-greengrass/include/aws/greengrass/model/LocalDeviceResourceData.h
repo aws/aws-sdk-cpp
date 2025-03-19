@@ -32,7 +32,7 @@ namespace Model
   class LocalDeviceResourceData
   {
   public:
-    AWS_GREENGRASS_API LocalDeviceResourceData();
+    AWS_GREENGRASS_API LocalDeviceResourceData() = default;
     AWS_GREENGRASS_API LocalDeviceResourceData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API LocalDeviceResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * Group/owner related settings for local resources.
      */
-    inline const GroupOwnerSetting& GetGroupOwnerSetting() const{ return m_groupOwnerSetting; }
+    inline const GroupOwnerSetting& GetGroupOwnerSetting() const { return m_groupOwnerSetting; }
     inline bool GroupOwnerSettingHasBeenSet() const { return m_groupOwnerSettingHasBeenSet; }
-    inline void SetGroupOwnerSetting(const GroupOwnerSetting& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = value; }
-    inline void SetGroupOwnerSetting(GroupOwnerSetting&& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = std::move(value); }
-    inline LocalDeviceResourceData& WithGroupOwnerSetting(const GroupOwnerSetting& value) { SetGroupOwnerSetting(value); return *this;}
-    inline LocalDeviceResourceData& WithGroupOwnerSetting(GroupOwnerSetting&& value) { SetGroupOwnerSetting(std::move(value)); return *this;}
+    template<typename GroupOwnerSettingT = GroupOwnerSetting>
+    void SetGroupOwnerSetting(GroupOwnerSettingT&& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = std::forward<GroupOwnerSettingT>(value); }
+    template<typename GroupOwnerSettingT = GroupOwnerSetting>
+    LocalDeviceResourceData& WithGroupOwnerSetting(GroupOwnerSettingT&& value) { SetGroupOwnerSetting(std::forward<GroupOwnerSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,12 @@ namespace Model
      * The local absolute path of the device resource. The source path for a device
      * resource can refer only to a character device or block device under ''/dev''.
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline LocalDeviceResourceData& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline LocalDeviceResourceData& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline LocalDeviceResourceData& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    LocalDeviceResourceData& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
   private:
 

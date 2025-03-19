@@ -35,7 +35,7 @@ namespace Model
   class UnsearchedFace
   {
   public:
-    AWS_REKOGNITION_API UnsearchedFace();
+    AWS_REKOGNITION_API UnsearchedFace() = default;
     AWS_REKOGNITION_API UnsearchedFace(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API UnsearchedFace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,25 @@ namespace Model
 
     ///@{
     
-    inline const FaceDetail& GetFaceDetails() const{ return m_faceDetails; }
+    inline const FaceDetail& GetFaceDetails() const { return m_faceDetails; }
     inline bool FaceDetailsHasBeenSet() const { return m_faceDetailsHasBeenSet; }
-    inline void SetFaceDetails(const FaceDetail& value) { m_faceDetailsHasBeenSet = true; m_faceDetails = value; }
-    inline void SetFaceDetails(FaceDetail&& value) { m_faceDetailsHasBeenSet = true; m_faceDetails = std::move(value); }
-    inline UnsearchedFace& WithFaceDetails(const FaceDetail& value) { SetFaceDetails(value); return *this;}
-    inline UnsearchedFace& WithFaceDetails(FaceDetail&& value) { SetFaceDetails(std::move(value)); return *this;}
+    template<typename FaceDetailsT = FaceDetail>
+    void SetFaceDetails(FaceDetailsT&& value) { m_faceDetailsHasBeenSet = true; m_faceDetails = std::forward<FaceDetailsT>(value); }
+    template<typename FaceDetailsT = FaceDetail>
+    UnsearchedFace& WithFaceDetails(FaceDetailsT&& value) { SetFaceDetails(std::forward<FaceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Reasons why a face wasn't used for Search. </p>
      */
-    inline const Aws::Vector<UnsearchedFaceReason>& GetReasons() const{ return m_reasons; }
+    inline const Aws::Vector<UnsearchedFaceReason>& GetReasons() const { return m_reasons; }
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
-    inline void SetReasons(const Aws::Vector<UnsearchedFaceReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
-    inline void SetReasons(Aws::Vector<UnsearchedFaceReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
-    inline UnsearchedFace& WithReasons(const Aws::Vector<UnsearchedFaceReason>& value) { SetReasons(value); return *this;}
-    inline UnsearchedFace& WithReasons(Aws::Vector<UnsearchedFaceReason>&& value) { SetReasons(std::move(value)); return *this;}
-    inline UnsearchedFace& AddReasons(const UnsearchedFaceReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
-    inline UnsearchedFace& AddReasons(UnsearchedFaceReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
+    template<typename ReasonsT = Aws::Vector<UnsearchedFaceReason>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<UnsearchedFaceReason>>
+    UnsearchedFace& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    inline UnsearchedFace& AddReasons(UnsearchedFaceReason value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
     ///@}
   private:
 

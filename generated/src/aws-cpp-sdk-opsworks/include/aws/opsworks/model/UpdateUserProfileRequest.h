@@ -21,7 +21,7 @@ namespace Model
   class UpdateUserProfileRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API UpdateUserProfileRequest();
+    AWS_OPSWORKS_API UpdateUserProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The user IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+    inline const Aws::String& GetIamUserArn() const { return m_iamUserArn; }
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
-    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
-    inline UpdateUserProfileRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-    inline UpdateUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-    inline UpdateUserProfileRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    template<typename IamUserArnT = Aws::String>
+    void SetIamUserArn(IamUserArnT&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::forward<IamUserArnT>(value); }
+    template<typename IamUserArnT = Aws::String>
+    UpdateUserProfileRequest& WithIamUserArn(IamUserArnT&& value) { SetIamUserArn(std::forward<IamUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks
      * generates one from the IAM user name. </p>
      */
-    inline const Aws::String& GetSshUsername() const{ return m_sshUsername; }
+    inline const Aws::String& GetSshUsername() const { return m_sshUsername; }
     inline bool SshUsernameHasBeenSet() const { return m_sshUsernameHasBeenSet; }
-    inline void SetSshUsername(const Aws::String& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
-    inline void SetSshUsername(Aws::String&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::move(value); }
-    inline void SetSshUsername(const char* value) { m_sshUsernameHasBeenSet = true; m_sshUsername.assign(value); }
-    inline UpdateUserProfileRequest& WithSshUsername(const Aws::String& value) { SetSshUsername(value); return *this;}
-    inline UpdateUserProfileRequest& WithSshUsername(Aws::String&& value) { SetSshUsername(std::move(value)); return *this;}
-    inline UpdateUserProfileRequest& WithSshUsername(const char* value) { SetSshUsername(value); return *this;}
+    template<typename SshUsernameT = Aws::String>
+    void SetSshUsername(SshUsernameT&& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = std::forward<SshUsernameT>(value); }
+    template<typename SshUsernameT = Aws::String>
+    UpdateUserProfileRequest& WithSshUsername(SshUsernameT&& value) { SetSshUsername(std::forward<SshUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user's new SSH public key.</p>
      */
-    inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+    inline const Aws::String& GetSshPublicKey() const { return m_sshPublicKey; }
     inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
-    inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
-    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
-    inline void SetSshPublicKey(const char* value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey.assign(value); }
-    inline UpdateUserProfileRequest& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
-    inline UpdateUserProfileRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
-    inline UpdateUserProfileRequest& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
+    template<typename SshPublicKeyT = Aws::String>
+    void SetSshPublicKey(SshPublicKeyT&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::forward<SshPublicKeyT>(value); }
+    template<typename SshPublicKeyT = Aws::String>
+    UpdateUserProfileRequest& WithSshPublicKey(SshPublicKeyT&& value) { SetSshPublicKey(std::forward<SshPublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      * User Permissions</a>.</p>
      */
-    inline bool GetAllowSelfManagement() const{ return m_allowSelfManagement; }
+    inline bool GetAllowSelfManagement() const { return m_allowSelfManagement; }
     inline bool AllowSelfManagementHasBeenSet() const { return m_allowSelfManagementHasBeenSet; }
     inline void SetAllowSelfManagement(bool value) { m_allowSelfManagementHasBeenSet = true; m_allowSelfManagement = value; }
     inline UpdateUserProfileRequest& WithAllowSelfManagement(bool value) { SetAllowSelfManagement(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_sshPublicKey;
     bool m_sshPublicKeyHasBeenSet = false;
 
-    bool m_allowSelfManagement;
+    bool m_allowSelfManagement{false};
     bool m_allowSelfManagementHasBeenSet = false;
   };
 

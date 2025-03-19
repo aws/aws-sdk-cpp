@@ -12,19 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInferenceRecommendationsJobRequest::CreateInferenceRecommendationsJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_jobType(RecommendationJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputConfigHasBeenSet(false),
-    m_jobDescriptionHasBeenSet(false),
-    m_stoppingConditionsHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInferenceRecommendationsJobRequest::SerializePayload() const
 {
   JsonValue payload;

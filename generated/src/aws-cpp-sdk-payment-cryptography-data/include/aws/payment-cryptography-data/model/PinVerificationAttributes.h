@@ -33,7 +33,7 @@ namespace Model
   class PinVerificationAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API PinVerificationAttributes();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API PinVerificationAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API PinVerificationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API PinVerificationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Parameters that are required to generate or verify Visa PIN.</p>
      */
-    inline const VisaPinVerification& GetVisaPin() const{ return m_visaPin; }
+    inline const VisaPinVerification& GetVisaPin() const { return m_visaPin; }
     inline bool VisaPinHasBeenSet() const { return m_visaPinHasBeenSet; }
-    inline void SetVisaPin(const VisaPinVerification& value) { m_visaPinHasBeenSet = true; m_visaPin = value; }
-    inline void SetVisaPin(VisaPinVerification&& value) { m_visaPinHasBeenSet = true; m_visaPin = std::move(value); }
-    inline PinVerificationAttributes& WithVisaPin(const VisaPinVerification& value) { SetVisaPin(value); return *this;}
-    inline PinVerificationAttributes& WithVisaPin(VisaPinVerification&& value) { SetVisaPin(std::move(value)); return *this;}
+    template<typename VisaPinT = VisaPinVerification>
+    void SetVisaPin(VisaPinT&& value) { m_visaPinHasBeenSet = true; m_visaPin = std::forward<VisaPinT>(value); }
+    template<typename VisaPinT = VisaPinVerification>
+    PinVerificationAttributes& WithVisaPin(VisaPinT&& value) { SetVisaPin(std::forward<VisaPinT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Parameters that are required to generate or verify Ibm3624 PIN.</p>
      */
-    inline const Ibm3624PinVerification& GetIbm3624Pin() const{ return m_ibm3624Pin; }
+    inline const Ibm3624PinVerification& GetIbm3624Pin() const { return m_ibm3624Pin; }
     inline bool Ibm3624PinHasBeenSet() const { return m_ibm3624PinHasBeenSet; }
-    inline void SetIbm3624Pin(const Ibm3624PinVerification& value) { m_ibm3624PinHasBeenSet = true; m_ibm3624Pin = value; }
-    inline void SetIbm3624Pin(Ibm3624PinVerification&& value) { m_ibm3624PinHasBeenSet = true; m_ibm3624Pin = std::move(value); }
-    inline PinVerificationAttributes& WithIbm3624Pin(const Ibm3624PinVerification& value) { SetIbm3624Pin(value); return *this;}
-    inline PinVerificationAttributes& WithIbm3624Pin(Ibm3624PinVerification&& value) { SetIbm3624Pin(std::move(value)); return *this;}
+    template<typename Ibm3624PinT = Ibm3624PinVerification>
+    void SetIbm3624Pin(Ibm3624PinT&& value) { m_ibm3624PinHasBeenSet = true; m_ibm3624Pin = std::forward<Ibm3624PinT>(value); }
+    template<typename Ibm3624PinT = Ibm3624PinVerification>
+    PinVerificationAttributes& WithIbm3624Pin(Ibm3624PinT&& value) { SetIbm3624Pin(std::forward<Ibm3624PinT>(value)); return *this;}
     ///@}
   private:
 

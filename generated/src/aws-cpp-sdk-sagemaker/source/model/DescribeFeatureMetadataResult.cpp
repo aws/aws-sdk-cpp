@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFeatureMetadataResult::DescribeFeatureMetadataResult() : 
-    m_featureType(FeatureType::NOT_SET)
-{
-}
-
 DescribeFeatureMetadataResult::DescribeFeatureMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeFeatureMetadataResult()
 {
   *this = result;
 }
@@ -34,45 +28,38 @@ DescribeFeatureMetadataResult& DescribeFeatureMetadataResult::operator =(const A
   if(jsonValue.ValueExists("FeatureGroupArn"))
   {
     m_featureGroupArn = jsonValue.GetString("FeatureGroupArn");
-
+    m_featureGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
+    m_featureGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureName"))
   {
     m_featureName = jsonValue.GetString("FeatureName");
-
+    m_featureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureType"))
   {
     m_featureType = FeatureTypeMapper::GetFeatureTypeForName(jsonValue.GetString("FeatureType"));
-
+    m_featureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -80,14 +67,15 @@ DescribeFeatureMetadataResult& DescribeFeatureMetadataResult::operator =(const A
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
+    m_parametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class UpdateAutoshiftObserverNotificationStatusRequest : public ARCZonalShiftRequest
   {
   public:
-    AWS_ARCZONALSHIFT_API UpdateAutoshiftObserverNotificationStatusRequest();
+    AWS_ARCZONALSHIFT_API UpdateAutoshiftObserverNotificationStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,16 +40,14 @@ namespace Model
      * status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
      * autoshifts when one or more of your resources is included in the autoshift. </p>
      */
-    inline const AutoshiftObserverNotificationStatus& GetStatus() const{ return m_status; }
+    inline AutoshiftObserverNotificationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutoshiftObserverNotificationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutoshiftObserverNotificationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateAutoshiftObserverNotificationStatusRequest& WithStatus(const AutoshiftObserverNotificationStatus& value) { SetStatus(value); return *this;}
-    inline UpdateAutoshiftObserverNotificationStatusRequest& WithStatus(AutoshiftObserverNotificationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AutoshiftObserverNotificationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateAutoshiftObserverNotificationStatusRequest& WithStatus(AutoshiftObserverNotificationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    AutoshiftObserverNotificationStatus m_status;
+    AutoshiftObserverNotificationStatus m_status{AutoshiftObserverNotificationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

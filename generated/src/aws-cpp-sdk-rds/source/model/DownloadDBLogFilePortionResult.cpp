@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult() : 
-    m_additionalDataPending(false)
-{
-}
-
 DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DownloadDBLogFilePortionResult()
 {
   *this = result;
 }
@@ -44,22 +38,26 @@ DownloadDBLogFilePortionResult& DownloadDBLogFilePortionResult::operator =(const
     if(!logFileDataNode.IsNull())
     {
       m_logFileData = Aws::Utils::Xml::DecodeEscapedXmlText(logFileDataNode.GetText());
+      m_logFileDataHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode additionalDataPendingNode = resultNode.FirstChild("AdditionalDataPending");
     if(!additionalDataPendingNode.IsNull())
     {
       m_additionalDataPending = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(additionalDataPendingNode.GetText()).c_str()).c_str());
+      m_additionalDataPendingHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DownloadDBLogFilePortionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

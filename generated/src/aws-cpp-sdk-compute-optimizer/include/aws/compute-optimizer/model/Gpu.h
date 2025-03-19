@@ -30,7 +30,7 @@ namespace Model
   class Gpu
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API Gpu();
+    AWS_COMPUTEOPTIMIZER_API Gpu() = default;
     AWS_COMPUTEOPTIMIZER_API Gpu(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Gpu& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> The number of GPUs for the instance type. </p>
      */
-    inline int GetGpuCount() const{ return m_gpuCount; }
+    inline int GetGpuCount() const { return m_gpuCount; }
     inline bool GpuCountHasBeenSet() const { return m_gpuCountHasBeenSet; }
     inline void SetGpuCount(int value) { m_gpuCountHasBeenSet = true; m_gpuCount = value; }
     inline Gpu& WithGpuCount(int value) { SetGpuCount(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p> The total size of the memory for the GPU accelerators for the instance type,
      * in MiB. </p>
      */
-    inline int GetGpuMemorySizeInMiB() const{ return m_gpuMemorySizeInMiB; }
+    inline int GetGpuMemorySizeInMiB() const { return m_gpuMemorySizeInMiB; }
     inline bool GpuMemorySizeInMiBHasBeenSet() const { return m_gpuMemorySizeInMiBHasBeenSet; }
     inline void SetGpuMemorySizeInMiB(int value) { m_gpuMemorySizeInMiBHasBeenSet = true; m_gpuMemorySizeInMiB = value; }
     inline Gpu& WithGpuMemorySizeInMiB(int value) { SetGpuMemorySizeInMiB(value); return *this;}
     ///@}
   private:
 
-    int m_gpuCount;
+    int m_gpuCount{0};
     bool m_gpuCountHasBeenSet = false;
 
-    int m_gpuMemorySizeInMiB;
+    int m_gpuMemorySizeInMiB{0};
     bool m_gpuMemorySizeInMiBHasBeenSet = false;
   };
 

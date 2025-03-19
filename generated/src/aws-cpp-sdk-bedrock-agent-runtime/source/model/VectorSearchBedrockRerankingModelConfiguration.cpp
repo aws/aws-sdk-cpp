@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-VectorSearchBedrockRerankingModelConfiguration::VectorSearchBedrockRerankingModelConfiguration() : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_modelArnHasBeenSet(false)
-{
-}
-
 VectorSearchBedrockRerankingModelConfiguration::VectorSearchBedrockRerankingModelConfiguration(JsonView jsonValue)
-  : VectorSearchBedrockRerankingModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ VectorSearchBedrockRerankingModelConfiguration& VectorSearchBedrockRerankingMode
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

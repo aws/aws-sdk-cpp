@@ -12,18 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourceSnapshotJobsRequest::ListResourceSnapshotJobsRequest() : 
-    m_catalogHasBeenSet(false),
-    m_engagementIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_status(ResourceSnapshotJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceSnapshotJobsRequest::SerializePayload() const
 {
   JsonValue payload;

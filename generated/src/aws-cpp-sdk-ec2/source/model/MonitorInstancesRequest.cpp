@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-MonitorInstancesRequest::MonitorInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String MonitorInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

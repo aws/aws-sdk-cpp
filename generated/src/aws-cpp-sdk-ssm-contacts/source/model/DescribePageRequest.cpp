@@ -12,11 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePageRequest::DescribePageRequest() : 
-    m_pageIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePageRequest::SerializePayload() const
 {
   JsonValue payload;

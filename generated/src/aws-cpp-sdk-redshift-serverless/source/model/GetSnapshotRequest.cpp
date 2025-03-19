@@ -12,13 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSnapshotRequest::GetSnapshotRequest() : 
-    m_ownerAccountHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String GetSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

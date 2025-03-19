@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationConfig::OptimizationConfig() : 
-    m_modelQuantizationConfigHasBeenSet(false),
-    m_modelCompilationConfigHasBeenSet(false),
-    m_modelShardingConfigHasBeenSet(false)
-{
-}
-
 OptimizationConfig::OptimizationConfig(JsonView jsonValue)
-  : OptimizationConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OptimizationConfig& OptimizationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelQuantizationConfig"))
   {
     m_modelQuantizationConfig = jsonValue.GetObject("ModelQuantizationConfig");
-
     m_modelQuantizationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCompilationConfig"))
   {
     m_modelCompilationConfig = jsonValue.GetObject("ModelCompilationConfig");
-
     m_modelCompilationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelShardingConfig"))
   {
     m_modelShardingConfig = jsonValue.GetObject("ModelShardingConfig");
-
     m_modelShardingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

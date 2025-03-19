@@ -33,7 +33,7 @@ namespace Model
   class CommonAttributeAndCondition
   {
   public:
-    AWS_CONNECT_API CommonAttributeAndCondition();
+    AWS_CONNECT_API CommonAttributeAndCondition() = default;
     AWS_CONNECT_API CommonAttributeAndCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CommonAttributeAndCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A leaf node condition which can be used to specify a tag condition.</p>
      */
-    inline const Aws::Vector<TagCondition>& GetTagConditions() const{ return m_tagConditions; }
+    inline const Aws::Vector<TagCondition>& GetTagConditions() const { return m_tagConditions; }
     inline bool TagConditionsHasBeenSet() const { return m_tagConditionsHasBeenSet; }
-    inline void SetTagConditions(const Aws::Vector<TagCondition>& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = value; }
-    inline void SetTagConditions(Aws::Vector<TagCondition>&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = std::move(value); }
-    inline CommonAttributeAndCondition& WithTagConditions(const Aws::Vector<TagCondition>& value) { SetTagConditions(value); return *this;}
-    inline CommonAttributeAndCondition& WithTagConditions(Aws::Vector<TagCondition>&& value) { SetTagConditions(std::move(value)); return *this;}
-    inline CommonAttributeAndCondition& AddTagConditions(const TagCondition& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.push_back(value); return *this; }
-    inline CommonAttributeAndCondition& AddTagConditions(TagCondition&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.push_back(std::move(value)); return *this; }
+    template<typename TagConditionsT = Aws::Vector<TagCondition>>
+    void SetTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions = std::forward<TagConditionsT>(value); }
+    template<typename TagConditionsT = Aws::Vector<TagCondition>>
+    CommonAttributeAndCondition& WithTagConditions(TagConditionsT&& value) { SetTagConditions(std::forward<TagConditionsT>(value)); return *this;}
+    template<typename TagConditionsT = TagCondition>
+    CommonAttributeAndCondition& AddTagConditions(TagConditionsT&& value) { m_tagConditionsHasBeenSet = true; m_tagConditions.emplace_back(std::forward<TagConditionsT>(value)); return *this; }
     ///@}
   private:
 

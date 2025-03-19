@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStoredQueryRequest::GetStoredQueryRequest() : 
-    m_queryNameHasBeenSet(false)
-{
-}
-
 Aws::String GetStoredQueryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataPlacementDetails::AwsEc2LaunchTemplateDataPlacementDetails() : 
-    m_affinityHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false),
-    m_partitionNumber(0),
-    m_partitionNumberHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false),
-    m_tenancyHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataPlacementDetails::AwsEc2LaunchTemplateDataPlacementDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataPlacementDetails()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ AwsEc2LaunchTemplateDataPlacementDetails& AwsEc2LaunchTemplateDataPlacementDetai
   if(jsonValue.ValueExists("Affinity"))
   {
     m_affinity = jsonValue.GetString("Affinity");
-
     m_affinityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostId"))
   {
     m_hostId = jsonValue.GetString("HostId");
-
     m_hostIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostResourceGroupArn"))
   {
     m_hostResourceGroupArn = jsonValue.GetString("HostResourceGroupArn");
-
     m_hostResourceGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionNumber"))
   {
     m_partitionNumber = jsonValue.GetInteger("PartitionNumber");
-
     m_partitionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpreadDomain"))
   {
     m_spreadDomain = jsonValue.GetString("SpreadDomain");
-
     m_spreadDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tenancy"))
   {
     m_tenancy = jsonValue.GetString("Tenancy");
-
     m_tenancyHasBeenSet = true;
   }
-
   return *this;
 }
 

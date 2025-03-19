@@ -34,7 +34,7 @@ namespace Model
   class PolicyGrantMember
   {
   public:
-    AWS_DATAZONE_API PolicyGrantMember();
+    AWS_DATAZONE_API PolicyGrantMember() = default;
     AWS_DATAZONE_API PolicyGrantMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API PolicyGrantMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,52 @@ namespace Model
     /**
      * <p>Specifies the timestamp at which policy grant member was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline PolicyGrantMember& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline PolicyGrantMember& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    PolicyGrantMember& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the user who created the policy grant member.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline PolicyGrantMember& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline PolicyGrantMember& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline PolicyGrantMember& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    PolicyGrantMember& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the policy grant member.</p>
      */
-    inline const PolicyGrantDetail& GetDetail() const{ return m_detail; }
+    inline const PolicyGrantDetail& GetDetail() const { return m_detail; }
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-    inline void SetDetail(const PolicyGrantDetail& value) { m_detailHasBeenSet = true; m_detail = value; }
-    inline void SetDetail(PolicyGrantDetail&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-    inline PolicyGrantMember& WithDetail(const PolicyGrantDetail& value) { SetDetail(value); return *this;}
-    inline PolicyGrantMember& WithDetail(PolicyGrantDetail&& value) { SetDetail(std::move(value)); return *this;}
+    template<typename DetailT = PolicyGrantDetail>
+    void SetDetail(DetailT&& value) { m_detailHasBeenSet = true; m_detail = std::forward<DetailT>(value); }
+    template<typename DetailT = PolicyGrantDetail>
+    PolicyGrantMember& WithDetail(DetailT&& value) { SetDetail(std::forward<DetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The principal of the policy grant member.</p>
      */
-    inline const PolicyGrantPrincipal& GetPrincipal() const{ return m_principal; }
+    inline const PolicyGrantPrincipal& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const PolicyGrantPrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(PolicyGrantPrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline PolicyGrantMember& WithPrincipal(const PolicyGrantPrincipal& value) { SetPrincipal(value); return *this;}
-    inline PolicyGrantMember& WithPrincipal(PolicyGrantPrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = PolicyGrantPrincipal>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = PolicyGrantPrincipal>
+    PolicyGrantMember& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;

@@ -32,7 +32,7 @@ namespace Model
   class ReplicationConfigurationReplicatedDisk
   {
   public:
-    AWS_MGN_API ReplicationConfigurationReplicatedDisk();
+    AWS_MGN_API ReplicationConfigurationReplicatedDisk() = default;
     AWS_MGN_API ReplicationConfigurationReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ReplicationConfigurationReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>Replication Configuration replicated disk device name.</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+    inline const Aws::String& GetDeviceName() const { return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-    inline ReplicationConfigurationReplicatedDisk& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-    inline ReplicationConfigurationReplicatedDisk& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-    inline ReplicationConfigurationReplicatedDisk& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    template<typename DeviceNameT = Aws::String>
+    void SetDeviceName(DeviceNameT&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::forward<DeviceNameT>(value); }
+    template<typename DeviceNameT = Aws::String>
+    ReplicationConfigurationReplicatedDisk& WithDeviceName(DeviceNameT&& value) { SetDeviceName(std::forward<DeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Replication Configuration replicated disk IOPs.</p>
      */
-    inline long long GetIops() const{ return m_iops; }
+    inline long long GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(long long value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline ReplicationConfigurationReplicatedDisk& WithIops(long long value) { SetIops(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>Replication Configuration replicated disk boot disk.</p>
      */
-    inline bool GetIsBootDisk() const{ return m_isBootDisk; }
+    inline bool GetIsBootDisk() const { return m_isBootDisk; }
     inline bool IsBootDiskHasBeenSet() const { return m_isBootDiskHasBeenSet; }
     inline void SetIsBootDisk(bool value) { m_isBootDiskHasBeenSet = true; m_isBootDisk = value; }
     inline ReplicationConfigurationReplicatedDisk& WithIsBootDisk(bool value) { SetIsBootDisk(value); return *this;}
@@ -76,19 +74,17 @@ namespace Model
     /**
      * <p>Replication Configuration replicated disk staging disk type.</p>
      */
-    inline const ReplicationConfigurationReplicatedDiskStagingDiskType& GetStagingDiskType() const{ return m_stagingDiskType; }
+    inline ReplicationConfigurationReplicatedDiskStagingDiskType GetStagingDiskType() const { return m_stagingDiskType; }
     inline bool StagingDiskTypeHasBeenSet() const { return m_stagingDiskTypeHasBeenSet; }
-    inline void SetStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { m_stagingDiskTypeHasBeenSet = true; m_stagingDiskType = value; }
-    inline void SetStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { m_stagingDiskTypeHasBeenSet = true; m_stagingDiskType = std::move(value); }
-    inline ReplicationConfigurationReplicatedDisk& WithStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { SetStagingDiskType(value); return *this;}
-    inline ReplicationConfigurationReplicatedDisk& WithStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { SetStagingDiskType(std::move(value)); return *this;}
+    inline void SetStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType value) { m_stagingDiskTypeHasBeenSet = true; m_stagingDiskType = value; }
+    inline ReplicationConfigurationReplicatedDisk& WithStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType value) { SetStagingDiskType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Replication Configuration replicated disk throughput.</p>
      */
-    inline long long GetThroughput() const{ return m_throughput; }
+    inline long long GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
     inline void SetThroughput(long long value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline ReplicationConfigurationReplicatedDisk& WithThroughput(long long value) { SetThroughput(value); return *this;}
@@ -98,16 +94,16 @@ namespace Model
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet = false;
 
-    long long m_iops;
+    long long m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    bool m_isBootDisk;
+    bool m_isBootDisk{false};
     bool m_isBootDiskHasBeenSet = false;
 
-    ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType;
+    ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType{ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET};
     bool m_stagingDiskTypeHasBeenSet = false;
 
-    long long m_throughput;
+    long long m_throughput{0};
     bool m_throughputHasBeenSet = false;
   };
 

@@ -19,7 +19,7 @@ namespace Model
   class ListSourceCredentialsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API ListSourceCredentialsRequest();
+    AWS_CODEBUILD_API ListSourceCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

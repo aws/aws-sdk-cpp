@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeDeveloperIdentitiesRequest::MergeDeveloperIdentitiesRequest() : 
-    m_sourceUserIdentifierHasBeenSet(false),
-    m_destinationUserIdentifierHasBeenSet(false),
-    m_developerProviderNameHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String MergeDeveloperIdentitiesRequest::SerializePayload() const
 {
   JsonValue payload;

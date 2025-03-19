@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContextRequest::UpdateContextRequest() : 
-    m_contextNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_propertiesToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContextRequest::SerializePayload() const
 {
   JsonValue payload;

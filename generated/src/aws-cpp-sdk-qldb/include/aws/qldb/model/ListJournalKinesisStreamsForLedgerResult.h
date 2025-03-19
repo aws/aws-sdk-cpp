@@ -29,7 +29,7 @@ namespace Model
   class ListJournalKinesisStreamsForLedgerResult
   {
   public:
-    AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult();
+    AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult() = default;
     AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The QLDB journal streams that are currently associated with the given
      * ledger.</p>
      */
-    inline const Aws::Vector<JournalKinesisStreamDescription>& GetStreams() const{ return m_streams; }
-    inline void SetStreams(const Aws::Vector<JournalKinesisStreamDescription>& value) { m_streams = value; }
-    inline void SetStreams(Aws::Vector<JournalKinesisStreamDescription>&& value) { m_streams = std::move(value); }
-    inline ListJournalKinesisStreamsForLedgerResult& WithStreams(const Aws::Vector<JournalKinesisStreamDescription>& value) { SetStreams(value); return *this;}
-    inline ListJournalKinesisStreamsForLedgerResult& WithStreams(Aws::Vector<JournalKinesisStreamDescription>&& value) { SetStreams(std::move(value)); return *this;}
-    inline ListJournalKinesisStreamsForLedgerResult& AddStreams(const JournalKinesisStreamDescription& value) { m_streams.push_back(value); return *this; }
-    inline ListJournalKinesisStreamsForLedgerResult& AddStreams(JournalKinesisStreamDescription&& value) { m_streams.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JournalKinesisStreamDescription>& GetStreams() const { return m_streams; }
+    template<typename StreamsT = Aws::Vector<JournalKinesisStreamDescription>>
+    void SetStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams = std::forward<StreamsT>(value); }
+    template<typename StreamsT = Aws::Vector<JournalKinesisStreamDescription>>
+    ListJournalKinesisStreamsForLedgerResult& WithStreams(StreamsT&& value) { SetStreams(std::forward<StreamsT>(value)); return *this;}
+    template<typename StreamsT = JournalKinesisStreamDescription>
+    ListJournalKinesisStreamsForLedgerResult& AddStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams.emplace_back(std::forward<StreamsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * retrieve the next page of results, use the value of <code>NextToken</code> in a
      * subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li> </ul>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListJournalKinesisStreamsForLedgerResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJournalKinesisStreamsForLedgerResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJournalKinesisStreamsForLedgerResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJournalKinesisStreamsForLedgerResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListJournalKinesisStreamsForLedgerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListJournalKinesisStreamsForLedgerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListJournalKinesisStreamsForLedgerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListJournalKinesisStreamsForLedgerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<JournalKinesisStreamDescription> m_streams;
+    bool m_streamsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

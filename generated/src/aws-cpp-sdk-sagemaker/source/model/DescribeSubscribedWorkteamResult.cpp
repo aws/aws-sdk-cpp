@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSubscribedWorkteamResult::DescribeSubscribedWorkteamResult()
-{
-}
-
 DescribeSubscribedWorkteamResult::DescribeSubscribedWorkteamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeSubscribedWorkteamResult& DescribeSubscribedWorkteamResult::operator =(c
   if(jsonValue.ValueExists("SubscribedWorkteam"))
   {
     m_subscribedWorkteam = jsonValue.GetObject("SubscribedWorkteam");
-
+    m_subscribedWorkteamHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

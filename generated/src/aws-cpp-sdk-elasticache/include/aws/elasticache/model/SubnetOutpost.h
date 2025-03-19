@@ -31,7 +31,7 @@ namespace Model
   class SubnetOutpost
   {
   public:
-    AWS_ELASTICACHE_API SubnetOutpost();
+    AWS_ELASTICACHE_API SubnetOutpost() = default;
     AWS_ELASTICACHE_API SubnetOutpost(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API SubnetOutpost& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The outpost ARN of the subnet.</p>
      */
-    inline const Aws::String& GetSubnetOutpostArn() const{ return m_subnetOutpostArn; }
+    inline const Aws::String& GetSubnetOutpostArn() const { return m_subnetOutpostArn; }
     inline bool SubnetOutpostArnHasBeenSet() const { return m_subnetOutpostArnHasBeenSet; }
-    inline void SetSubnetOutpostArn(const Aws::String& value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn = value; }
-    inline void SetSubnetOutpostArn(Aws::String&& value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn = std::move(value); }
-    inline void SetSubnetOutpostArn(const char* value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn.assign(value); }
-    inline SubnetOutpost& WithSubnetOutpostArn(const Aws::String& value) { SetSubnetOutpostArn(value); return *this;}
-    inline SubnetOutpost& WithSubnetOutpostArn(Aws::String&& value) { SetSubnetOutpostArn(std::move(value)); return *this;}
-    inline SubnetOutpost& WithSubnetOutpostArn(const char* value) { SetSubnetOutpostArn(value); return *this;}
+    template<typename SubnetOutpostArnT = Aws::String>
+    void SetSubnetOutpostArn(SubnetOutpostArnT&& value) { m_subnetOutpostArnHasBeenSet = true; m_subnetOutpostArn = std::forward<SubnetOutpostArnT>(value); }
+    template<typename SubnetOutpostArnT = Aws::String>
+    SubnetOutpost& WithSubnetOutpostArn(SubnetOutpostArnT&& value) { SetSubnetOutpostArn(std::forward<SubnetOutpostArnT>(value)); return *this;}
     ///@}
   private:
 

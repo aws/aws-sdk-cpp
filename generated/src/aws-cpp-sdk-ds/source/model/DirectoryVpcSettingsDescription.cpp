@@ -18,16 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription() : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription(JsonView jsonValue)
-  : DirectoryVpcSettingsDescription()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(Jso
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -50,14 +39,11 @@ DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(Jso
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupId"))
   {
     m_securityGroupId = jsonValue.GetString("SecurityGroupId");
-
     m_securityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -67,7 +53,6 @@ DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(Jso
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   return *this;
 }
 

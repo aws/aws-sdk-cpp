@@ -32,7 +32,7 @@ namespace Model
   class FeatureActivations
   {
   public:
-    AWS_MEDIALIVE_API FeatureActivations();
+    AWS_MEDIALIVE_API FeatureActivations() = default;
     AWS_MEDIALIVE_API FeatureActivations(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FeatureActivations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ If you disable the feature on an
      * existing schedule, make sure that you first delete all input prepare actions
      * from the schedule.
      */
-    inline const FeatureActivationsInputPrepareScheduleActions& GetInputPrepareScheduleActions() const{ return m_inputPrepareScheduleActions; }
+    inline FeatureActivationsInputPrepareScheduleActions GetInputPrepareScheduleActions() const { return m_inputPrepareScheduleActions; }
     inline bool InputPrepareScheduleActionsHasBeenSet() const { return m_inputPrepareScheduleActionsHasBeenSet; }
-    inline void SetInputPrepareScheduleActions(const FeatureActivationsInputPrepareScheduleActions& value) { m_inputPrepareScheduleActionsHasBeenSet = true; m_inputPrepareScheduleActions = value; }
-    inline void SetInputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions&& value) { m_inputPrepareScheduleActionsHasBeenSet = true; m_inputPrepareScheduleActions = std::move(value); }
-    inline FeatureActivations& WithInputPrepareScheduleActions(const FeatureActivationsInputPrepareScheduleActions& value) { SetInputPrepareScheduleActions(value); return *this;}
-    inline FeatureActivations& WithInputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions&& value) { SetInputPrepareScheduleActions(std::move(value)); return *this;}
+    inline void SetInputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions value) { m_inputPrepareScheduleActionsHasBeenSet = true; m_inputPrepareScheduleActions = value; }
+    inline FeatureActivations& WithInputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions value) { SetInputPrepareScheduleActions(value); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ If you disable the feature on an
 to display/clear/modify image overlays on
      * an output-by-output bases.
      */
-    inline const FeatureActivationsOutputStaticImageOverlayScheduleActions& GetOutputStaticImageOverlayScheduleActions() const{ return m_outputStaticImageOverlayScheduleActions; }
+    inline FeatureActivationsOutputStaticImageOverlayScheduleActions GetOutputStaticImageOverlayScheduleActions() const { return m_outputStaticImageOverlayScheduleActions; }
     inline bool OutputStaticImageOverlayScheduleActionsHasBeenSet() const { return m_outputStaticImageOverlayScheduleActionsHasBeenSet; }
-    inline void SetOutputStaticImageOverlayScheduleActions(const FeatureActivationsOutputStaticImageOverlayScheduleActions& value) { m_outputStaticImageOverlayScheduleActionsHasBeenSet = true; m_outputStaticImageOverlayScheduleActions = value; }
-    inline void SetOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions&& value) { m_outputStaticImageOverlayScheduleActionsHasBeenSet = true; m_outputStaticImageOverlayScheduleActions = std::move(value); }
-    inline FeatureActivations& WithOutputStaticImageOverlayScheduleActions(const FeatureActivationsOutputStaticImageOverlayScheduleActions& value) { SetOutputStaticImageOverlayScheduleActions(value); return *this;}
-    inline FeatureActivations& WithOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions&& value) { SetOutputStaticImageOverlayScheduleActions(std::move(value)); return *this;}
+    inline void SetOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions value) { m_outputStaticImageOverlayScheduleActionsHasBeenSet = true; m_outputStaticImageOverlayScheduleActions = value; }
+    inline FeatureActivations& WithOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions value) { SetOutputStaticImageOverlayScheduleActions(value); return *this;}
     ///@}
   private:
 
-    FeatureActivationsInputPrepareScheduleActions m_inputPrepareScheduleActions;
+    FeatureActivationsInputPrepareScheduleActions m_inputPrepareScheduleActions{FeatureActivationsInputPrepareScheduleActions::NOT_SET};
     bool m_inputPrepareScheduleActionsHasBeenSet = false;
 
-    FeatureActivationsOutputStaticImageOverlayScheduleActions m_outputStaticImageOverlayScheduleActions;
+    FeatureActivationsOutputStaticImageOverlayScheduleActions m_outputStaticImageOverlayScheduleActions{FeatureActivationsOutputStaticImageOverlayScheduleActions::NOT_SET};
     bool m_outputStaticImageOverlayScheduleActionsHasBeenSet = false;
   };
 

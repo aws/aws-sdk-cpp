@@ -34,7 +34,7 @@ namespace Model
   class PolicyVariables
   {
   public:
-    AWS_NETWORKFIREWALL_API PolicyVariables();
+    AWS_NETWORKFIREWALL_API PolicyVariables() = default;
     AWS_NETWORKFIREWALL_API PolicyVariables(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API PolicyVariables& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,18 +48,16 @@ namespace Model
      * home networks. If you don't override <code>HOME_NET</code> with your own CIDRs,
      * Network Firewall by default uses the CIDR of your inspection VPC.</p>
      */
-    inline const Aws::Map<Aws::String, IPSet>& GetRuleVariables() const{ return m_ruleVariables; }
+    inline const Aws::Map<Aws::String, IPSet>& GetRuleVariables() const { return m_ruleVariables; }
     inline bool RuleVariablesHasBeenSet() const { return m_ruleVariablesHasBeenSet; }
-    inline void SetRuleVariables(const Aws::Map<Aws::String, IPSet>& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = value; }
-    inline void SetRuleVariables(Aws::Map<Aws::String, IPSet>&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::move(value); }
-    inline PolicyVariables& WithRuleVariables(const Aws::Map<Aws::String, IPSet>& value) { SetRuleVariables(value); return *this;}
-    inline PolicyVariables& WithRuleVariables(Aws::Map<Aws::String, IPSet>&& value) { SetRuleVariables(std::move(value)); return *this;}
-    inline PolicyVariables& AddRuleVariables(const Aws::String& key, const IPSet& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, value); return *this; }
-    inline PolicyVariables& AddRuleVariables(Aws::String&& key, const IPSet& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(std::move(key), value); return *this; }
-    inline PolicyVariables& AddRuleVariables(const Aws::String& key, IPSet&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, std::move(value)); return *this; }
-    inline PolicyVariables& AddRuleVariables(Aws::String&& key, IPSet&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline PolicyVariables& AddRuleVariables(const char* key, IPSet&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, std::move(value)); return *this; }
-    inline PolicyVariables& AddRuleVariables(const char* key, const IPSet& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(key, value); return *this; }
+    template<typename RuleVariablesT = Aws::Map<Aws::String, IPSet>>
+    void SetRuleVariables(RuleVariablesT&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::forward<RuleVariablesT>(value); }
+    template<typename RuleVariablesT = Aws::Map<Aws::String, IPSet>>
+    PolicyVariables& WithRuleVariables(RuleVariablesT&& value) { SetRuleVariables(std::forward<RuleVariablesT>(value)); return *this;}
+    template<typename RuleVariablesKeyT = Aws::String, typename RuleVariablesValueT = IPSet>
+    PolicyVariables& AddRuleVariables(RuleVariablesKeyT&& key, RuleVariablesValueT&& value) {
+      m_ruleVariablesHasBeenSet = true; m_ruleVariables.emplace(std::forward<RuleVariablesKeyT>(key), std::forward<RuleVariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

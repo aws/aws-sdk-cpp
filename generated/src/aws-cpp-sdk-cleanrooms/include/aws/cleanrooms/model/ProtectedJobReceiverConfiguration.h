@@ -32,7 +32,7 @@ namespace Model
   class ProtectedJobReceiverConfiguration
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobReceiverConfiguration();
+    AWS_CLEANROOMS_API ProtectedJobReceiverConfiguration() = default;
     AWS_CLEANROOMS_API ProtectedJobReceiverConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobReceiverConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p> The analysis type for the protected job receiver configuration.</p>
      */
-    inline const ProtectedJobAnalysisType& GetAnalysisType() const{ return m_analysisType; }
+    inline ProtectedJobAnalysisType GetAnalysisType() const { return m_analysisType; }
     inline bool AnalysisTypeHasBeenSet() const { return m_analysisTypeHasBeenSet; }
-    inline void SetAnalysisType(const ProtectedJobAnalysisType& value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
-    inline void SetAnalysisType(ProtectedJobAnalysisType&& value) { m_analysisTypeHasBeenSet = true; m_analysisType = std::move(value); }
-    inline ProtectedJobReceiverConfiguration& WithAnalysisType(const ProtectedJobAnalysisType& value) { SetAnalysisType(value); return *this;}
-    inline ProtectedJobReceiverConfiguration& WithAnalysisType(ProtectedJobAnalysisType&& value) { SetAnalysisType(std::move(value)); return *this;}
+    inline void SetAnalysisType(ProtectedJobAnalysisType value) { m_analysisTypeHasBeenSet = true; m_analysisType = value; }
+    inline ProtectedJobReceiverConfiguration& WithAnalysisType(ProtectedJobAnalysisType value) { SetAnalysisType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The configuration details for the protected job receiver.</p>
      */
-    inline const ProtectedJobConfigurationDetails& GetConfigurationDetails() const{ return m_configurationDetails; }
+    inline const ProtectedJobConfigurationDetails& GetConfigurationDetails() const { return m_configurationDetails; }
     inline bool ConfigurationDetailsHasBeenSet() const { return m_configurationDetailsHasBeenSet; }
-    inline void SetConfigurationDetails(const ProtectedJobConfigurationDetails& value) { m_configurationDetailsHasBeenSet = true; m_configurationDetails = value; }
-    inline void SetConfigurationDetails(ProtectedJobConfigurationDetails&& value) { m_configurationDetailsHasBeenSet = true; m_configurationDetails = std::move(value); }
-    inline ProtectedJobReceiverConfiguration& WithConfigurationDetails(const ProtectedJobConfigurationDetails& value) { SetConfigurationDetails(value); return *this;}
-    inline ProtectedJobReceiverConfiguration& WithConfigurationDetails(ProtectedJobConfigurationDetails&& value) { SetConfigurationDetails(std::move(value)); return *this;}
+    template<typename ConfigurationDetailsT = ProtectedJobConfigurationDetails>
+    void SetConfigurationDetails(ConfigurationDetailsT&& value) { m_configurationDetailsHasBeenSet = true; m_configurationDetails = std::forward<ConfigurationDetailsT>(value); }
+    template<typename ConfigurationDetailsT = ProtectedJobConfigurationDetails>
+    ProtectedJobReceiverConfiguration& WithConfigurationDetails(ConfigurationDetailsT&& value) { SetConfigurationDetails(std::forward<ConfigurationDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    ProtectedJobAnalysisType m_analysisType;
+    ProtectedJobAnalysisType m_analysisType{ProtectedJobAnalysisType::NOT_SET};
     bool m_analysisTypeHasBeenSet = false;
 
     ProtectedJobConfigurationDetails m_configurationDetails;

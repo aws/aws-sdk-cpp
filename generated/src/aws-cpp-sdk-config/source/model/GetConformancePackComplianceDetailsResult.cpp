@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConformancePackComplianceDetailsResult::GetConformancePackComplianceDetailsResult()
-{
-}
-
 GetConformancePackComplianceDetailsResult::GetConformancePackComplianceDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetConformancePackComplianceDetailsResult& GetConformancePackComplianceDetailsRe
   if(jsonValue.ValueExists("ConformancePackName"))
   {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
-
+    m_conformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackRuleEvaluationResults"))
   {
     Aws::Utils::Array<JsonView> conformancePackRuleEvaluationResultsJsonList = jsonValue.GetArray("ConformancePackRuleEvaluationResults");
@@ -42,20 +37,20 @@ GetConformancePackComplianceDetailsResult& GetConformancePackComplianceDetailsRe
     {
       m_conformancePackRuleEvaluationResults.push_back(conformancePackRuleEvaluationResultsJsonList[conformancePackRuleEvaluationResultsIndex].AsObject());
     }
+    m_conformancePackRuleEvaluationResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

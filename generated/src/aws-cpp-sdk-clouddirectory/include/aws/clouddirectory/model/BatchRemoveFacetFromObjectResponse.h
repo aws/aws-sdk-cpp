@@ -29,7 +29,7 @@ namespace Model
   class BatchRemoveFacetFromObjectResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse();
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -34,7 +34,7 @@ namespace Model
   class CreateJobPlaylist
   {
   public:
-    AWS_ELASTICTRANSCODER_API CreateJobPlaylist();
+    AWS_ELASTICTRANSCODER_API CreateJobPlaylist() = default;
     AWS_ELASTICTRANSCODER_API CreateJobPlaylist(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API CreateJobPlaylist& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * you include a file extension in <code>Name</code>, the file name will have two
      * extensions.</p> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateJobPlaylist& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateJobPlaylist& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateJobPlaylist& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateJobPlaylist& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p>The format of the output playlist. Valid formats include <code>HLSv3</code>,
      * <code>HLSv4</code>, and <code>Smooth</code>.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline CreateJobPlaylist& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline CreateJobPlaylist& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline CreateJobPlaylist& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    CreateJobPlaylist& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,15 +104,14 @@ namespace Model
      * <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must
      * be the same for all outputs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOutputKeys() const{ return m_outputKeys; }
+    inline const Aws::Vector<Aws::String>& GetOutputKeys() const { return m_outputKeys; }
     inline bool OutputKeysHasBeenSet() const { return m_outputKeysHasBeenSet; }
-    inline void SetOutputKeys(const Aws::Vector<Aws::String>& value) { m_outputKeysHasBeenSet = true; m_outputKeys = value; }
-    inline void SetOutputKeys(Aws::Vector<Aws::String>&& value) { m_outputKeysHasBeenSet = true; m_outputKeys = std::move(value); }
-    inline CreateJobPlaylist& WithOutputKeys(const Aws::Vector<Aws::String>& value) { SetOutputKeys(value); return *this;}
-    inline CreateJobPlaylist& WithOutputKeys(Aws::Vector<Aws::String>&& value) { SetOutputKeys(std::move(value)); return *this;}
-    inline CreateJobPlaylist& AddOutputKeys(const Aws::String& value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(value); return *this; }
-    inline CreateJobPlaylist& AddOutputKeys(Aws::String&& value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(std::move(value)); return *this; }
-    inline CreateJobPlaylist& AddOutputKeys(const char* value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(value); return *this; }
+    template<typename OutputKeysT = Aws::Vector<Aws::String>>
+    void SetOutputKeys(OutputKeysT&& value) { m_outputKeysHasBeenSet = true; m_outputKeys = std::forward<OutputKeysT>(value); }
+    template<typename OutputKeysT = Aws::Vector<Aws::String>>
+    CreateJobPlaylist& WithOutputKeys(OutputKeysT&& value) { SetOutputKeys(std::forward<OutputKeysT>(value)); return *this;}
+    template<typename OutputKeysT = Aws::String>
+    CreateJobPlaylist& AddOutputKeys(OutputKeysT&& value) { m_outputKeysHasBeenSet = true; m_outputKeys.emplace_back(std::forward<OutputKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,12 +119,12 @@ namespace Model
      * <p>The HLS content protection settings, if any, that you want Elastic Transcoder
      * to apply to the output files associated with this playlist.</p>
      */
-    inline const HlsContentProtection& GetHlsContentProtection() const{ return m_hlsContentProtection; }
+    inline const HlsContentProtection& GetHlsContentProtection() const { return m_hlsContentProtection; }
     inline bool HlsContentProtectionHasBeenSet() const { return m_hlsContentProtectionHasBeenSet; }
-    inline void SetHlsContentProtection(const HlsContentProtection& value) { m_hlsContentProtectionHasBeenSet = true; m_hlsContentProtection = value; }
-    inline void SetHlsContentProtection(HlsContentProtection&& value) { m_hlsContentProtectionHasBeenSet = true; m_hlsContentProtection = std::move(value); }
-    inline CreateJobPlaylist& WithHlsContentProtection(const HlsContentProtection& value) { SetHlsContentProtection(value); return *this;}
-    inline CreateJobPlaylist& WithHlsContentProtection(HlsContentProtection&& value) { SetHlsContentProtection(std::move(value)); return *this;}
+    template<typename HlsContentProtectionT = HlsContentProtection>
+    void SetHlsContentProtection(HlsContentProtectionT&& value) { m_hlsContentProtectionHasBeenSet = true; m_hlsContentProtection = std::forward<HlsContentProtectionT>(value); }
+    template<typename HlsContentProtectionT = HlsContentProtection>
+    CreateJobPlaylist& WithHlsContentProtection(HlsContentProtectionT&& value) { SetHlsContentProtection(std::forward<HlsContentProtectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +132,12 @@ namespace Model
      * <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
      */
-    inline const PlayReadyDrm& GetPlayReadyDrm() const{ return m_playReadyDrm; }
+    inline const PlayReadyDrm& GetPlayReadyDrm() const { return m_playReadyDrm; }
     inline bool PlayReadyDrmHasBeenSet() const { return m_playReadyDrmHasBeenSet; }
-    inline void SetPlayReadyDrm(const PlayReadyDrm& value) { m_playReadyDrmHasBeenSet = true; m_playReadyDrm = value; }
-    inline void SetPlayReadyDrm(PlayReadyDrm&& value) { m_playReadyDrmHasBeenSet = true; m_playReadyDrm = std::move(value); }
-    inline CreateJobPlaylist& WithPlayReadyDrm(const PlayReadyDrm& value) { SetPlayReadyDrm(value); return *this;}
-    inline CreateJobPlaylist& WithPlayReadyDrm(PlayReadyDrm&& value) { SetPlayReadyDrm(std::move(value)); return *this;}
+    template<typename PlayReadyDrmT = PlayReadyDrm>
+    void SetPlayReadyDrm(PlayReadyDrmT&& value) { m_playReadyDrmHasBeenSet = true; m_playReadyDrm = std::forward<PlayReadyDrmT>(value); }
+    template<typename PlayReadyDrmT = PlayReadyDrm>
+    CreateJobPlaylist& WithPlayReadyDrm(PlayReadyDrmT&& value) { SetPlayReadyDrm(std::forward<PlayReadyDrmT>(value)); return *this;}
     ///@}
   private:
 

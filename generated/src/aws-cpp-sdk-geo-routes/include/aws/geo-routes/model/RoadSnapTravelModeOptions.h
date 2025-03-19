@@ -32,7 +32,7 @@ namespace Model
   class RoadSnapTravelModeOptions
   {
   public:
-    AWS_GEOROUTES_API RoadSnapTravelModeOptions();
+    AWS_GEOROUTES_API RoadSnapTravelModeOptions() = default;
     AWS_GEOROUTES_API RoadSnapTravelModeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoadSnapTravelModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Travel mode options when the provided travel mode is "Truck".</p>
      */
-    inline const RoadSnapTruckOptions& GetTruck() const{ return m_truck; }
+    inline const RoadSnapTruckOptions& GetTruck() const { return m_truck; }
     inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }
-    inline void SetTruck(const RoadSnapTruckOptions& value) { m_truckHasBeenSet = true; m_truck = value; }
-    inline void SetTruck(RoadSnapTruckOptions&& value) { m_truckHasBeenSet = true; m_truck = std::move(value); }
-    inline RoadSnapTravelModeOptions& WithTruck(const RoadSnapTruckOptions& value) { SetTruck(value); return *this;}
-    inline RoadSnapTravelModeOptions& WithTruck(RoadSnapTruckOptions&& value) { SetTruck(std::move(value)); return *this;}
+    template<typename TruckT = RoadSnapTruckOptions>
+    void SetTruck(TruckT&& value) { m_truckHasBeenSet = true; m_truck = std::forward<TruckT>(value); }
+    template<typename TruckT = RoadSnapTruckOptions>
+    RoadSnapTravelModeOptions& WithTruck(TruckT&& value) { SetTruck(std::forward<TruckT>(value)); return *this;}
     ///@}
   private:
 

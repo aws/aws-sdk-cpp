@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowCompletionEvent::FlowCompletionEvent() : 
-    m_completionReason(FlowCompletionReason::NOT_SET),
-    m_completionReasonHasBeenSet(false)
-{
-}
-
 FlowCompletionEvent::FlowCompletionEvent(JsonView jsonValue)
-  : FlowCompletionEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FlowCompletionEvent& FlowCompletionEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("completionReason"))
   {
     m_completionReason = FlowCompletionReasonMapper::GetFlowCompletionReasonForName(jsonValue.GetString("completionReason"));
-
     m_completionReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

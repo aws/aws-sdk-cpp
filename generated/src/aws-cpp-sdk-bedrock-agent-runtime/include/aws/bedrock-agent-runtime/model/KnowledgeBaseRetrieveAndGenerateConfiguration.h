@@ -41,7 +41,7 @@ namespace Model
   class KnowledgeBaseRetrieveAndGenerateConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseRetrieveAndGenerateConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseRetrieveAndGenerateConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseRetrieveAndGenerateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseRetrieveAndGenerateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,26 +52,24 @@ namespace Model
      * <p>Contains configurations for response generation based on the knowledge base
      * query results.</p>
      */
-    inline const GenerationConfiguration& GetGenerationConfiguration() const{ return m_generationConfiguration; }
+    inline const GenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
     inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
-    inline void SetGenerationConfiguration(const GenerationConfiguration& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = value; }
-    inline void SetGenerationConfiguration(GenerationConfiguration&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::move(value); }
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(const GenerationConfiguration& value) { SetGenerationConfiguration(value); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfiguration&& value) { SetGenerationConfiguration(std::move(value)); return *this;}
+    template<typename GenerationConfigurationT = GenerationConfiguration>
+    void SetGenerationConfiguration(GenerationConfigurationT&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::forward<GenerationConfigurationT>(value); }
+    template<typename GenerationConfigurationT = GenerationConfiguration>
+    KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) { SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the knowledge base that is queried.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
      * profile</a> used to generate a response.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,12 @@ namespace Model
      * <p>Settings for how the model processes the prompt prior to retrieval and
      * generation.</p>
      */
-    inline const OrchestrationConfiguration& GetOrchestrationConfiguration() const{ return m_orchestrationConfiguration; }
+    inline const OrchestrationConfiguration& GetOrchestrationConfiguration() const { return m_orchestrationConfiguration; }
     inline bool OrchestrationConfigurationHasBeenSet() const { return m_orchestrationConfigurationHasBeenSet; }
-    inline void SetOrchestrationConfiguration(const OrchestrationConfiguration& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = value; }
-    inline void SetOrchestrationConfiguration(OrchestrationConfiguration&& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = std::move(value); }
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithOrchestrationConfiguration(const OrchestrationConfiguration& value) { SetOrchestrationConfiguration(value); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithOrchestrationConfiguration(OrchestrationConfiguration&& value) { SetOrchestrationConfiguration(std::move(value)); return *this;}
+    template<typename OrchestrationConfigurationT = OrchestrationConfiguration>
+    void SetOrchestrationConfiguration(OrchestrationConfigurationT&& value) { m_orchestrationConfigurationHasBeenSet = true; m_orchestrationConfiguration = std::forward<OrchestrationConfigurationT>(value); }
+    template<typename OrchestrationConfigurationT = OrchestrationConfiguration>
+    KnowledgeBaseRetrieveAndGenerateConfiguration& WithOrchestrationConfiguration(OrchestrationConfigurationT&& value) { SetOrchestrationConfiguration(std::forward<OrchestrationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +104,12 @@ namespace Model
      * <p>Contains configurations for how to retrieve and return the knowledge base
      * query.</p>
      */
-    inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
+    inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const { return m_retrievalConfiguration; }
     inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
-    inline void SetRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
-    inline void SetRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
-    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
+    template<typename RetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
+    void SetRetrievalConfiguration(RetrievalConfigurationT&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::forward<RetrievalConfigurationT>(value); }
+    template<typename RetrievalConfigurationT = KnowledgeBaseRetrievalConfiguration>
+    KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(RetrievalConfigurationT&& value) { SetRetrievalConfiguration(std::forward<RetrievalConfigurationT>(value)); return *this;}
     ///@}
   private:
 

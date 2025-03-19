@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VpcConnectionProperties::VpcConnectionProperties() : 
-    m_vpcConnectionArnHasBeenSet(false)
-{
-}
-
 VpcConnectionProperties::VpcConnectionProperties(JsonView jsonValue)
-  : VpcConnectionProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VpcConnectionProperties& VpcConnectionProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcConnectionArn"))
   {
     m_vpcConnectionArn = jsonValue.GetString("VpcConnectionArn");
-
     m_vpcConnectionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

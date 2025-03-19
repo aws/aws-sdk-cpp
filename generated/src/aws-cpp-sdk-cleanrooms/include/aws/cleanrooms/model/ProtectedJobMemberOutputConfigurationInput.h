@@ -32,7 +32,7 @@ namespace Model
   class ProtectedJobMemberOutputConfigurationInput
   {
   public:
-    AWS_CLEANROOMS_API ProtectedJobMemberOutputConfigurationInput();
+    AWS_CLEANROOMS_API ProtectedJobMemberOutputConfigurationInput() = default;
     AWS_CLEANROOMS_API ProtectedJobMemberOutputConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedJobMemberOutputConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ProtectedJobMemberOutputConfigurationInput& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ProtectedJobMemberOutputConfigurationInput& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ProtectedJobMemberOutputConfigurationInput& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ProtectedJobMemberOutputConfigurationInput& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

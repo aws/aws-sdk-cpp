@@ -34,7 +34,7 @@ namespace Model
   class ResolutionTechniques
   {
   public:
-    AWS_ENTITYRESOLUTION_API ResolutionTechniques();
+    AWS_ENTITYRESOLUTION_API ResolutionTechniques() = default;
     AWS_ENTITYRESOLUTION_API ResolutionTechniques(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API ResolutionTechniques& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The properties of the provider service.</p>
      */
-    inline const ProviderProperties& GetProviderProperties() const{ return m_providerProperties; }
+    inline const ProviderProperties& GetProviderProperties() const { return m_providerProperties; }
     inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
-    inline void SetProviderProperties(const ProviderProperties& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = value; }
-    inline void SetProviderProperties(ProviderProperties&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::move(value); }
-    inline ResolutionTechniques& WithProviderProperties(const ProviderProperties& value) { SetProviderProperties(value); return *this;}
-    inline ResolutionTechniques& WithProviderProperties(ProviderProperties&& value) { SetProviderProperties(std::move(value)); return *this;}
+    template<typename ProviderPropertiesT = ProviderProperties>
+    void SetProviderProperties(ProviderPropertiesT&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::forward<ProviderPropertiesT>(value); }
+    template<typename ProviderPropertiesT = ProviderProperties>
+    ResolutionTechniques& WithProviderProperties(ProviderPropertiesT&& value) { SetProviderProperties(std::forward<ProviderPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,10 @@ namespace Model
      * <code>RULE_MATCHING</code>, <code>ML_MATCHING</code>, and
      * <code>PROVIDER</code>.</p>
      */
-    inline const ResolutionType& GetResolutionType() const{ return m_resolutionType; }
+    inline ResolutionType GetResolutionType() const { return m_resolutionType; }
     inline bool ResolutionTypeHasBeenSet() const { return m_resolutionTypeHasBeenSet; }
-    inline void SetResolutionType(const ResolutionType& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = value; }
-    inline void SetResolutionType(ResolutionType&& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = std::move(value); }
-    inline ResolutionTechniques& WithResolutionType(const ResolutionType& value) { SetResolutionType(value); return *this;}
-    inline ResolutionTechniques& WithResolutionType(ResolutionType&& value) { SetResolutionType(std::move(value)); return *this;}
+    inline void SetResolutionType(ResolutionType value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = value; }
+    inline ResolutionTechniques& WithResolutionType(ResolutionType value) { SetResolutionType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,19 @@ namespace Model
      * <p>An object which defines the list of matching rules to run and has a field
      * <code>Rules</code>, which is a list of rule objects.</p>
      */
-    inline const RuleBasedProperties& GetRuleBasedProperties() const{ return m_ruleBasedProperties; }
+    inline const RuleBasedProperties& GetRuleBasedProperties() const { return m_ruleBasedProperties; }
     inline bool RuleBasedPropertiesHasBeenSet() const { return m_ruleBasedPropertiesHasBeenSet; }
-    inline void SetRuleBasedProperties(const RuleBasedProperties& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = value; }
-    inline void SetRuleBasedProperties(RuleBasedProperties&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::move(value); }
-    inline ResolutionTechniques& WithRuleBasedProperties(const RuleBasedProperties& value) { SetRuleBasedProperties(value); return *this;}
-    inline ResolutionTechniques& WithRuleBasedProperties(RuleBasedProperties&& value) { SetRuleBasedProperties(std::move(value)); return *this;}
+    template<typename RuleBasedPropertiesT = RuleBasedProperties>
+    void SetRuleBasedProperties(RuleBasedPropertiesT&& value) { m_ruleBasedPropertiesHasBeenSet = true; m_ruleBasedProperties = std::forward<RuleBasedPropertiesT>(value); }
+    template<typename RuleBasedPropertiesT = RuleBasedProperties>
+    ResolutionTechniques& WithRuleBasedProperties(RuleBasedPropertiesT&& value) { SetRuleBasedProperties(std::forward<RuleBasedPropertiesT>(value)); return *this;}
     ///@}
   private:
 
     ProviderProperties m_providerProperties;
     bool m_providerPropertiesHasBeenSet = false;
 
-    ResolutionType m_resolutionType;
+    ResolutionType m_resolutionType{ResolutionType::NOT_SET};
     bool m_resolutionTypeHasBeenSet = false;
 
     RuleBasedProperties m_ruleBasedProperties;

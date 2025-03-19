@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAssistantAssociationRequest::GetAssistantAssociationRequest() : 
-    m_assistantAssociationIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAssistantAssociationRequest::SerializePayload() const
 {
   return {};

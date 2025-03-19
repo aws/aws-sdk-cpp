@@ -18,15 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-EmailConfiguration::EmailConfiguration() : 
-    m_fromHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_recipientsHasBeenSet(false)
-{
-}
-
 EmailConfiguration::EmailConfiguration(JsonView jsonValue)
-  : EmailConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EmailConfiguration& EmailConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetString("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recipients"))
   {
     m_recipients = jsonValue.GetObject("recipients");
-
     m_recipientsHasBeenSet = true;
   }
-
   return *this;
 }
 

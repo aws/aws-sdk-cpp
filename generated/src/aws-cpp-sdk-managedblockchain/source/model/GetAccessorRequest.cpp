@@ -12,11 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccessorRequest::GetAccessorRequest() : 
-    m_accessorIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessorRequest::SerializePayload() const
 {
   return {};

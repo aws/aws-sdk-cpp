@@ -12,11 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkerConfigurationRequest::DescribeWorkerConfigurationRequest() : 
-    m_workerConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkerConfigurationRequest::SerializePayload() const
 {
   return {};

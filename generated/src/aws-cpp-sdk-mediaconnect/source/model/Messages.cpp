@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-Messages::Messages() : 
-    m_errorsHasBeenSet(false)
-{
-}
-
 Messages::Messages(JsonView jsonValue)
-  : Messages()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Messages& Messages::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

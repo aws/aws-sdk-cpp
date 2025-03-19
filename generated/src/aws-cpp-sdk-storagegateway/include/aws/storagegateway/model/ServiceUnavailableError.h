@@ -34,7 +34,7 @@ namespace Model
   class ServiceUnavailableError
   {
   public:
-    AWS_STORAGEGATEWAY_API ServiceUnavailableError();
+    AWS_STORAGEGATEWAY_API ServiceUnavailableError() = default;
     AWS_STORAGEGATEWAY_API ServiceUnavailableError(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API ServiceUnavailableError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A human-readable message describing the error that occurred.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServiceUnavailableError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServiceUnavailableError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServiceUnavailableError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServiceUnavailableError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>A <a>StorageGatewayError</a> that provides more information about the cause
      * of the error.</p>
      */
-    inline const StorageGatewayError& GetError() const{ return m_error; }
+    inline const StorageGatewayError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const StorageGatewayError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(StorageGatewayError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ServiceUnavailableError& WithError(const StorageGatewayError& value) { SetError(value); return *this;}
-    inline ServiceUnavailableError& WithError(StorageGatewayError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = StorageGatewayError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = StorageGatewayError>
+    ServiceUnavailableError& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

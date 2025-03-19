@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-AdvancedEventSelector::AdvancedEventSelector() : 
-    m_nameHasBeenSet(false),
-    m_fieldSelectorsHasBeenSet(false)
-{
-}
-
 AdvancedEventSelector::AdvancedEventSelector(JsonView jsonValue)
-  : AdvancedEventSelector()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdvancedEventSelector& AdvancedEventSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldSelectors"))
   {
     Aws::Utils::Array<JsonView> fieldSelectorsJsonList = jsonValue.GetArray("FieldSelectors");
@@ -48,7 +39,6 @@ AdvancedEventSelector& AdvancedEventSelector::operator =(JsonView jsonValue)
     }
     m_fieldSelectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-CompositionThumbnailConfiguration::CompositionThumbnailConfiguration() : 
-    m_targetIntervalSeconds(0),
-    m_targetIntervalSecondsHasBeenSet(false),
-    m_storageHasBeenSet(false)
-{
-}
-
 CompositionThumbnailConfiguration::CompositionThumbnailConfiguration(JsonView jsonValue)
-  : CompositionThumbnailConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CompositionThumbnailConfiguration& CompositionThumbnailConfiguration::operator =
   if(jsonValue.ValueExists("targetIntervalSeconds"))
   {
     m_targetIntervalSeconds = jsonValue.GetInteger("targetIntervalSeconds");
-
     m_targetIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     Aws::Utils::Array<JsonView> storageJsonList = jsonValue.GetArray("storage");
@@ -49,7 +39,6 @@ CompositionThumbnailConfiguration& CompositionThumbnailConfiguration::operator =
     }
     m_storageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInsightImpactGraphRequest::GetInsightImpactGraphRequest() : 
-    m_insightIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetInsightImpactGraphRequest::SerializePayload() const
 {
   JsonValue payload;

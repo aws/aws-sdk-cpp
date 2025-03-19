@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-UpdateSafetyLeverStateInput::UpdateSafetyLeverStateInput() : 
-    m_status(SafetyLeverStatusInput::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 UpdateSafetyLeverStateInput::UpdateSafetyLeverStateInput(JsonView jsonValue)
-  : UpdateSafetyLeverStateInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpdateSafetyLeverStateInput& UpdateSafetyLeverStateInput::operator =(JsonView js
   if(jsonValue.ValueExists("status"))
   {
     m_status = SafetyLeverStatusInputMapper::GetSafetyLeverStatusInputForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

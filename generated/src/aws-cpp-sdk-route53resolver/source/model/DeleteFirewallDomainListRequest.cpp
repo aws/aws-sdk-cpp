@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFirewallDomainListRequest::DeleteFirewallDomainListRequest() : 
-    m_firewallDomainListIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFirewallDomainListRequest::SerializePayload() const
 {
   JsonValue payload;

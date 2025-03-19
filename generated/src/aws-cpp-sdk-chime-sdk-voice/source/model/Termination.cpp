@@ -18,19 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-Termination::Termination() : 
-    m_cpsLimit(0),
-    m_cpsLimitHasBeenSet(false),
-    m_defaultPhoneNumberHasBeenSet(false),
-    m_callingRegionsHasBeenSet(false),
-    m_cidrAllowedListHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false)
-{
-}
-
 Termination::Termination(JsonView jsonValue)
-  : Termination()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ Termination& Termination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CpsLimit"))
   {
     m_cpsLimit = jsonValue.GetInteger("CpsLimit");
-
     m_cpsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultPhoneNumber"))
   {
     m_defaultPhoneNumber = jsonValue.GetString("DefaultPhoneNumber");
-
     m_defaultPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallingRegions"))
   {
     Aws::Utils::Array<JsonView> callingRegionsJsonList = jsonValue.GetArray("CallingRegions");
@@ -60,7 +44,6 @@ Termination& Termination::operator =(JsonView jsonValue)
     }
     m_callingRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrAllowedList"))
   {
     Aws::Utils::Array<JsonView> cidrAllowedListJsonList = jsonValue.GetArray("CidrAllowedList");
@@ -70,14 +53,11 @@ Termination& Termination::operator =(JsonView jsonValue)
     }
     m_cidrAllowedListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Disabled"))
   {
     m_disabled = jsonValue.GetBool("Disabled");
-
     m_disabledHasBeenSet = true;
   }
-
   return *this;
 }
 

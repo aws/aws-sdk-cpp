@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-QueryStringKeyValuePair::QueryStringKeyValuePair() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 QueryStringKeyValuePair::QueryStringKeyValuePair(const XmlNode& xmlNode)
-  : QueryStringKeyValuePair()
 {
   *this = xmlNode;
 }

@@ -33,7 +33,7 @@ namespace Model
   class AccessGrantsLocationConfiguration
   {
   public:
-    AWS_S3CONTROL_API AccessGrantsLocationConfiguration();
+    AWS_S3CONTROL_API AccessGrantsLocationConfiguration() = default;
     AWS_S3CONTROL_API AccessGrantsLocationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AccessGrantsLocationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -56,14 +56,12 @@ namespace Model
      * character <code>*</code> after the prefix to indicate that you want to include
      * all object key names in the bucket that start with that prefix. </p>
      */
-    inline const Aws::String& GetS3SubPrefix() const{ return m_s3SubPrefix; }
+    inline const Aws::String& GetS3SubPrefix() const { return m_s3SubPrefix; }
     inline bool S3SubPrefixHasBeenSet() const { return m_s3SubPrefixHasBeenSet; }
-    inline void SetS3SubPrefix(const Aws::String& value) { m_s3SubPrefixHasBeenSet = true; m_s3SubPrefix = value; }
-    inline void SetS3SubPrefix(Aws::String&& value) { m_s3SubPrefixHasBeenSet = true; m_s3SubPrefix = std::move(value); }
-    inline void SetS3SubPrefix(const char* value) { m_s3SubPrefixHasBeenSet = true; m_s3SubPrefix.assign(value); }
-    inline AccessGrantsLocationConfiguration& WithS3SubPrefix(const Aws::String& value) { SetS3SubPrefix(value); return *this;}
-    inline AccessGrantsLocationConfiguration& WithS3SubPrefix(Aws::String&& value) { SetS3SubPrefix(std::move(value)); return *this;}
-    inline AccessGrantsLocationConfiguration& WithS3SubPrefix(const char* value) { SetS3SubPrefix(value); return *this;}
+    template<typename S3SubPrefixT = Aws::String>
+    void SetS3SubPrefix(S3SubPrefixT&& value) { m_s3SubPrefixHasBeenSet = true; m_s3SubPrefix = std::forward<S3SubPrefixT>(value); }
+    template<typename S3SubPrefixT = Aws::String>
+    AccessGrantsLocationConfiguration& WithS3SubPrefix(S3SubPrefixT&& value) { SetS3SubPrefix(std::forward<S3SubPrefixT>(value)); return *this;}
     ///@}
   private:
 

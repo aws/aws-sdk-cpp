@@ -34,7 +34,7 @@ namespace Model
   class RoutePedestrianPlace
   {
   public:
-    AWS_GEOROUTES_API RoutePedestrianPlace();
+    AWS_GEOROUTES_API RoutePedestrianPlace() = default;
     AWS_GEOROUTES_API RoutePedestrianPlace(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePedestrianPlace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The name of the place.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RoutePedestrianPlace& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RoutePedestrianPlace& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RoutePedestrianPlace& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RoutePedestrianPlace& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Position provided in the request.</p>
      */
-    inline const Aws::Vector<double>& GetOriginalPosition() const{ return m_originalPosition; }
+    inline const Aws::Vector<double>& GetOriginalPosition() const { return m_originalPosition; }
     inline bool OriginalPositionHasBeenSet() const { return m_originalPositionHasBeenSet; }
-    inline void SetOriginalPosition(const Aws::Vector<double>& value) { m_originalPositionHasBeenSet = true; m_originalPosition = value; }
-    inline void SetOriginalPosition(Aws::Vector<double>&& value) { m_originalPositionHasBeenSet = true; m_originalPosition = std::move(value); }
-    inline RoutePedestrianPlace& WithOriginalPosition(const Aws::Vector<double>& value) { SetOriginalPosition(value); return *this;}
-    inline RoutePedestrianPlace& WithOriginalPosition(Aws::Vector<double>&& value) { SetOriginalPosition(std::move(value)); return *this;}
+    template<typename OriginalPositionT = Aws::Vector<double>>
+    void SetOriginalPosition(OriginalPositionT&& value) { m_originalPositionHasBeenSet = true; m_originalPosition = std::forward<OriginalPositionT>(value); }
+    template<typename OriginalPositionT = Aws::Vector<double>>
+    RoutePedestrianPlace& WithOriginalPosition(OriginalPositionT&& value) { SetOriginalPosition(std::forward<OriginalPositionT>(value)); return *this;}
     inline RoutePedestrianPlace& AddOriginalPosition(double value) { m_originalPositionHasBeenSet = true; m_originalPosition.push_back(value); return *this; }
     ///@}
 
@@ -71,12 +69,12 @@ namespace Model
     /**
      * <p>Position defined as <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline RoutePedestrianPlace& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline RoutePedestrianPlace& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    RoutePedestrianPlace& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline RoutePedestrianPlace& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
@@ -85,19 +83,17 @@ namespace Model
      * <p>Options to configure matching the provided position to a side of the
      * street.</p>
      */
-    inline const RouteSideOfStreet& GetSideOfStreet() const{ return m_sideOfStreet; }
+    inline RouteSideOfStreet GetSideOfStreet() const { return m_sideOfStreet; }
     inline bool SideOfStreetHasBeenSet() const { return m_sideOfStreetHasBeenSet; }
-    inline void SetSideOfStreet(const RouteSideOfStreet& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = value; }
-    inline void SetSideOfStreet(RouteSideOfStreet&& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = std::move(value); }
-    inline RoutePedestrianPlace& WithSideOfStreet(const RouteSideOfStreet& value) { SetSideOfStreet(value); return *this;}
-    inline RoutePedestrianPlace& WithSideOfStreet(RouteSideOfStreet&& value) { SetSideOfStreet(std::move(value)); return *this;}
+    inline void SetSideOfStreet(RouteSideOfStreet value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = value; }
+    inline RoutePedestrianPlace& WithSideOfStreet(RouteSideOfStreet value) { SetSideOfStreet(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Index of the waypoint in the request.</p>
      */
-    inline int GetWaypointIndex() const{ return m_waypointIndex; }
+    inline int GetWaypointIndex() const { return m_waypointIndex; }
     inline bool WaypointIndexHasBeenSet() const { return m_waypointIndexHasBeenSet; }
     inline void SetWaypointIndex(int value) { m_waypointIndexHasBeenSet = true; m_waypointIndex = value; }
     inline RoutePedestrianPlace& WithWaypointIndex(int value) { SetWaypointIndex(value); return *this;}
@@ -113,10 +109,10 @@ namespace Model
     Aws::Vector<double> m_position;
     bool m_positionHasBeenSet = false;
 
-    RouteSideOfStreet m_sideOfStreet;
+    RouteSideOfStreet m_sideOfStreet{RouteSideOfStreet::NOT_SET};
     bool m_sideOfStreetHasBeenSet = false;
 
-    int m_waypointIndex;
+    int m_waypointIndex{0};
     bool m_waypointIndexHasBeenSet = false;
   };
 

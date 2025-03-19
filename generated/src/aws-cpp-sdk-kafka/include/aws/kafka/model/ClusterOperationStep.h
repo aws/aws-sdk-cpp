@@ -35,7 +35,7 @@ namespace Model
   class ClusterOperationStep
   {
   public:
-    AWS_KAFKA_API ClusterOperationStep();
+    AWS_KAFKA_API ClusterOperationStep() = default;
     AWS_KAFKA_API ClusterOperationStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ClusterOperationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
             <p>Information about the step and its status.</p>
          
      */
-    inline const ClusterOperationStepInfo& GetStepInfo() const{ return m_stepInfo; }
+    inline const ClusterOperationStepInfo& GetStepInfo() const { return m_stepInfo; }
     inline bool StepInfoHasBeenSet() const { return m_stepInfoHasBeenSet; }
-    inline void SetStepInfo(const ClusterOperationStepInfo& value) { m_stepInfoHasBeenSet = true; m_stepInfo = value; }
-    inline void SetStepInfo(ClusterOperationStepInfo&& value) { m_stepInfoHasBeenSet = true; m_stepInfo = std::move(value); }
-    inline ClusterOperationStep& WithStepInfo(const ClusterOperationStepInfo& value) { SetStepInfo(value); return *this;}
-    inline ClusterOperationStep& WithStepInfo(ClusterOperationStepInfo&& value) { SetStepInfo(std::move(value)); return *this;}
+    template<typename StepInfoT = ClusterOperationStepInfo>
+    void SetStepInfo(StepInfoT&& value) { m_stepInfoHasBeenSet = true; m_stepInfo = std::forward<StepInfoT>(value); }
+    template<typename StepInfoT = ClusterOperationStepInfo>
+    ClusterOperationStep& WithStepInfo(StepInfoT&& value) { SetStepInfo(std::forward<StepInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
             <p>The name of the step.</p>
          
      */
-    inline const Aws::String& GetStepName() const{ return m_stepName; }
+    inline const Aws::String& GetStepName() const { return m_stepName; }
     inline bool StepNameHasBeenSet() const { return m_stepNameHasBeenSet; }
-    inline void SetStepName(const Aws::String& value) { m_stepNameHasBeenSet = true; m_stepName = value; }
-    inline void SetStepName(Aws::String&& value) { m_stepNameHasBeenSet = true; m_stepName = std::move(value); }
-    inline void SetStepName(const char* value) { m_stepNameHasBeenSet = true; m_stepName.assign(value); }
-    inline ClusterOperationStep& WithStepName(const Aws::String& value) { SetStepName(value); return *this;}
-    inline ClusterOperationStep& WithStepName(Aws::String&& value) { SetStepName(std::move(value)); return *this;}
-    inline ClusterOperationStep& WithStepName(const char* value) { SetStepName(value); return *this;}
+    template<typename StepNameT = Aws::String>
+    void SetStepName(StepNameT&& value) { m_stepNameHasBeenSet = true; m_stepName = std::forward<StepNameT>(value); }
+    template<typename StepNameT = Aws::String>
+    ClusterOperationStep& WithStepName(StepNameT&& value) { SetStepName(std::forward<StepNameT>(value)); return *this;}
     ///@}
   private:
 

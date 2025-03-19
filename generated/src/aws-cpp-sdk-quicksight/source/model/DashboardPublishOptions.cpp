@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardPublishOptions::DashboardPublishOptions() : 
-    m_adHocFilteringOptionHasBeenSet(false),
-    m_exportToCSVOptionHasBeenSet(false),
-    m_sheetControlsOptionHasBeenSet(false),
-    m_sheetLayoutElementMaximizationOptionHasBeenSet(false),
-    m_visualMenuOptionHasBeenSet(false),
-    m_visualAxisSortOptionHasBeenSet(false),
-    m_exportWithHiddenFieldsOptionHasBeenSet(false),
-    m_dataPointDrillUpDownOptionHasBeenSet(false),
-    m_dataPointMenuLabelOptionHasBeenSet(false),
-    m_dataPointTooltipOptionHasBeenSet(false)
-{
-}
-
 DashboardPublishOptions::DashboardPublishOptions(JsonView jsonValue)
-  : DashboardPublishOptions()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ DashboardPublishOptions& DashboardPublishOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdHocFilteringOption"))
   {
     m_adHocFilteringOption = jsonValue.GetObject("AdHocFilteringOption");
-
     m_adHocFilteringOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportToCSVOption"))
   {
     m_exportToCSVOption = jsonValue.GetObject("ExportToCSVOption");
-
     m_exportToCSVOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetControlsOption"))
   {
     m_sheetControlsOption = jsonValue.GetObject("SheetControlsOption");
-
     m_sheetControlsOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetLayoutElementMaximizationOption"))
   {
     m_sheetLayoutElementMaximizationOption = jsonValue.GetObject("SheetLayoutElementMaximizationOption");
-
     m_sheetLayoutElementMaximizationOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualMenuOption"))
   {
     m_visualMenuOption = jsonValue.GetObject("VisualMenuOption");
-
     m_visualMenuOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualAxisSortOption"))
   {
     m_visualAxisSortOption = jsonValue.GetObject("VisualAxisSortOption");
-
     m_visualAxisSortOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportWithHiddenFieldsOption"))
   {
     m_exportWithHiddenFieldsOption = jsonValue.GetObject("ExportWithHiddenFieldsOption");
-
     m_exportWithHiddenFieldsOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPointDrillUpDownOption"))
   {
     m_dataPointDrillUpDownOption = jsonValue.GetObject("DataPointDrillUpDownOption");
-
     m_dataPointDrillUpDownOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPointMenuLabelOption"))
   {
     m_dataPointMenuLabelOption = jsonValue.GetObject("DataPointMenuLabelOption");
-
     m_dataPointMenuLabelOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPointTooltipOption"))
   {
     m_dataPointTooltipOption = jsonValue.GetObject("DataPointTooltipOption");
-
     m_dataPointTooltipOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

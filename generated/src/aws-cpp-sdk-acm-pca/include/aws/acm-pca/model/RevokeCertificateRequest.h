@@ -22,7 +22,7 @@ namespace Model
   class RevokeCertificateRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API RevokeCertificateRequest();
+    AWS_ACMPCA_API RevokeCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline RevokeCertificateRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline RevokeCertificateRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline RevokeCertificateRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    RevokeCertificateRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,26 +64,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
      * action in the <i>Certificate Manager API Reference</i>. </p>
      */
-    inline const Aws::String& GetCertificateSerial() const{ return m_certificateSerial; }
+    inline const Aws::String& GetCertificateSerial() const { return m_certificateSerial; }
     inline bool CertificateSerialHasBeenSet() const { return m_certificateSerialHasBeenSet; }
-    inline void SetCertificateSerial(const Aws::String& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = value; }
-    inline void SetCertificateSerial(Aws::String&& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = std::move(value); }
-    inline void SetCertificateSerial(const char* value) { m_certificateSerialHasBeenSet = true; m_certificateSerial.assign(value); }
-    inline RevokeCertificateRequest& WithCertificateSerial(const Aws::String& value) { SetCertificateSerial(value); return *this;}
-    inline RevokeCertificateRequest& WithCertificateSerial(Aws::String&& value) { SetCertificateSerial(std::move(value)); return *this;}
-    inline RevokeCertificateRequest& WithCertificateSerial(const char* value) { SetCertificateSerial(value); return *this;}
+    template<typename CertificateSerialT = Aws::String>
+    void SetCertificateSerial(CertificateSerialT&& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = std::forward<CertificateSerialT>(value); }
+    template<typename CertificateSerialT = Aws::String>
+    RevokeCertificateRequest& WithCertificateSerial(CertificateSerialT&& value) { SetCertificateSerial(std::forward<CertificateSerialT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies why you revoked the certificate.</p>
      */
-    inline const RevocationReason& GetRevocationReason() const{ return m_revocationReason; }
+    inline RevocationReason GetRevocationReason() const { return m_revocationReason; }
     inline bool RevocationReasonHasBeenSet() const { return m_revocationReasonHasBeenSet; }
-    inline void SetRevocationReason(const RevocationReason& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
-    inline void SetRevocationReason(RevocationReason&& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = std::move(value); }
-    inline RevokeCertificateRequest& WithRevocationReason(const RevocationReason& value) { SetRevocationReason(value); return *this;}
-    inline RevokeCertificateRequest& WithRevocationReason(RevocationReason&& value) { SetRevocationReason(std::move(value)); return *this;}
+    inline void SetRevocationReason(RevocationReason value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
+    inline RevokeCertificateRequest& WithRevocationReason(RevocationReason value) { SetRevocationReason(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +89,7 @@ namespace Model
     Aws::String m_certificateSerial;
     bool m_certificateSerialHasBeenSet = false;
 
-    RevocationReason m_revocationReason;
+    RevocationReason m_revocationReason{RevocationReason::NOT_SET};
     bool m_revocationReasonHasBeenSet = false;
   };
 

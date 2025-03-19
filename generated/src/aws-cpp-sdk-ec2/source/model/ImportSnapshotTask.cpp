@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportSnapshotTask::ImportSnapshotTask() : 
-    m_descriptionHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false),
-    m_snapshotTaskDetailHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ImportSnapshotTask::ImportSnapshotTask(const XmlNode& xmlNode)
-  : ImportSnapshotTask()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

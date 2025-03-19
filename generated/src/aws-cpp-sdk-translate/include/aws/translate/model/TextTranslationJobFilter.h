@@ -34,7 +34,7 @@ namespace Model
   class TextTranslationJobFilter
   {
   public:
-    AWS_TRANSLATE_API TextTranslationJobFilter();
+    AWS_TRANSLATE_API TextTranslationJobFilter() = default;
     AWS_TRANSLATE_API TextTranslationJobFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API TextTranslationJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>Filters the list of jobs by name.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline TextTranslationJobFilter& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline TextTranslationJobFilter& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline TextTranslationJobFilter& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    TextTranslationJobFilter& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters the list of jobs based by job status.</p>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-    inline TextTranslationJobFilter& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline TextTranslationJobFilter& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline TextTranslationJobFilter& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * processing and returns only the jobs submitted before the specified time. Jobs
      * are returned in ascending order, oldest to newest.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmittedBeforeTime() const{ return m_submittedBeforeTime; }
+    inline const Aws::Utils::DateTime& GetSubmittedBeforeTime() const { return m_submittedBeforeTime; }
     inline bool SubmittedBeforeTimeHasBeenSet() const { return m_submittedBeforeTimeHasBeenSet; }
-    inline void SetSubmittedBeforeTime(const Aws::Utils::DateTime& value) { m_submittedBeforeTimeHasBeenSet = true; m_submittedBeforeTime = value; }
-    inline void SetSubmittedBeforeTime(Aws::Utils::DateTime&& value) { m_submittedBeforeTimeHasBeenSet = true; m_submittedBeforeTime = std::move(value); }
-    inline TextTranslationJobFilter& WithSubmittedBeforeTime(const Aws::Utils::DateTime& value) { SetSubmittedBeforeTime(value); return *this;}
-    inline TextTranslationJobFilter& WithSubmittedBeforeTime(Aws::Utils::DateTime&& value) { SetSubmittedBeforeTime(std::move(value)); return *this;}
+    template<typename SubmittedBeforeTimeT = Aws::Utils::DateTime>
+    void SetSubmittedBeforeTime(SubmittedBeforeTimeT&& value) { m_submittedBeforeTimeHasBeenSet = true; m_submittedBeforeTime = std::forward<SubmittedBeforeTimeT>(value); }
+    template<typename SubmittedBeforeTimeT = Aws::Utils::DateTime>
+    TextTranslationJobFilter& WithSubmittedBeforeTime(SubmittedBeforeTimeT&& value) { SetSubmittedBeforeTime(std::forward<SubmittedBeforeTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,25 +82,25 @@ namespace Model
      * processing and returns only the jobs submitted after the specified time. Jobs
      * are returned in descending order, newest to oldest.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmittedAfterTime() const{ return m_submittedAfterTime; }
+    inline const Aws::Utils::DateTime& GetSubmittedAfterTime() const { return m_submittedAfterTime; }
     inline bool SubmittedAfterTimeHasBeenSet() const { return m_submittedAfterTimeHasBeenSet; }
-    inline void SetSubmittedAfterTime(const Aws::Utils::DateTime& value) { m_submittedAfterTimeHasBeenSet = true; m_submittedAfterTime = value; }
-    inline void SetSubmittedAfterTime(Aws::Utils::DateTime&& value) { m_submittedAfterTimeHasBeenSet = true; m_submittedAfterTime = std::move(value); }
-    inline TextTranslationJobFilter& WithSubmittedAfterTime(const Aws::Utils::DateTime& value) { SetSubmittedAfterTime(value); return *this;}
-    inline TextTranslationJobFilter& WithSubmittedAfterTime(Aws::Utils::DateTime&& value) { SetSubmittedAfterTime(std::move(value)); return *this;}
+    template<typename SubmittedAfterTimeT = Aws::Utils::DateTime>
+    void SetSubmittedAfterTime(SubmittedAfterTimeT&& value) { m_submittedAfterTimeHasBeenSet = true; m_submittedAfterTime = std::forward<SubmittedAfterTimeT>(value); }
+    template<typename SubmittedAfterTimeT = Aws::Utils::DateTime>
+    TextTranslationJobFilter& WithSubmittedAfterTime(SubmittedAfterTimeT&& value) { SetSubmittedAfterTime(std::forward<SubmittedAfterTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
     bool m_jobStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submittedBeforeTime;
+    Aws::Utils::DateTime m_submittedBeforeTime{};
     bool m_submittedBeforeTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submittedAfterTime;
+    Aws::Utils::DateTime m_submittedAfterTime{};
     bool m_submittedAfterTimeHasBeenSet = false;
   };
 
